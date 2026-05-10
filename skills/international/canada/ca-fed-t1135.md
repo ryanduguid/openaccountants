@@ -18,6 +18,8 @@ tax_year: 2025
 category: international
 depends_on:
   - income-tax-workflow-base
+related:
+  - ca-fed-t1-return.md
 ---
 
 # Canada T1135 Foreign Income Verification Statement Skill v2.0
@@ -51,7 +53,7 @@ Read this whole section before classifying anything.
 |---|---|
 | Basic filing threshold | File T1135 if total cost amount of specified foreign property exceeded $100,000 CAD at any time in the year |
 | Threshold basis | Cost amount, NOT fair market value |
-| Simplified boundary | If total cost exceeded $100,000 CAD but stayed below $250,000 CAD throughout the year, complete either Part A or Part B |
+| Simplified boundary | If total cost was more than $100,000 CAD but **less than $250,000 CAD throughout the entire year** (i.e., did not reach $250,000 CAD at any time), complete either Part A or Part B |
 | Detailed boundary | If total cost reached $250,000 CAD or more at any time in the year, complete Part B |
 
 ### T1135 categories
@@ -196,8 +198,8 @@ Do NOT ignore property sold before year-end. If the threshold was met during the
 
 | Condition | Filing path |
 |---|---|
-| Total cost exceeded $100,000 CAD but stayed below $250,000 CAD throughout the year | Part A or Part B |
-| Total cost reached $250,000 CAD or more at any time | Part B |
+| Total cost was more than $100,000 CAD and remained less than $250,000 CAD throughout the entire year (did not reach $250,000 CAD at any time) | Part A or Part B |
+| Total cost reached $250,000 CAD or more at any time during the year | Part B (mandatory) |
 
 ### 4.4 Part A -- Simplified reporting method
 
@@ -294,7 +296,9 @@ Capture, **country-by-country** (one aggregated line per country code):
 - gross income (aggregate across all securities of that country)
 - gain (loss) on disposition (aggregate across all securities of that country)
 
-Category 7 is a special aggregation rule that permits country-by-country reporting in lieu of security-by-security detail when property is held with a Canadian registered securities dealer or Canadian trust company. Do not force Categories 2 to 6 line-by-line reporting if valid Category 7 aggregation is available and chosen. Aggregation is by country of the issuer of the underlying property, not by dealer. Reference: CRA, "Form T1135 -- Reporting for 2015 and later tax years."
+Category 7 is a special aggregation rule that permits country-by-country reporting in lieu of security-by-security detail when property is held with a Canadian registered securities dealer or Canadian trust company. Do not force Categories 2 to 6 line-by-line reporting if valid Category 7 aggregation is available and chosen. Aggregation is by country of the issuer of the underlying property, not by dealer.
+
+**Why Category 7 uses fair market value, not cost amount.** Categories 1 to 6 use **cost amount** for both the threshold test and the in-form reporting fields. Category 7 is the deliberate exception: CRA permits FMV reporting because Canadian registered securities dealers and Canadian trust companies already track daily FMV (T5008 / T3 / T5 reporting infrastructure), and reconstructing cost amount across high-volume trading would impose disproportionate compliance burden. The Category 7 FMV concession is **reporting-side only**. The **threshold test under s. 233.3 still uses cost amount** -- you cannot use FMV to decide whether the $100,000 CAD threshold is crossed, even if every reportable asset will ultimately land in Category 7. Reference: CRA, "Form T1135 -- Reporting for 2015 and later tax years."
 
 ### 5.8 Country code rules
 
@@ -455,13 +459,28 @@ E. REVIEWER FLAGS
 
 ### 8.5 Certification and preparer fields
 
-Do not finalize the form package without:
-- certification statement
-- signer name
-- position or title where applicable
-- signature block
-- date
-- paid preparer name, address, postal code, and telephone if applicable
+Do not finalize the form package without all of the following. Capture in this template block:
+
+```text
+CANADA T1135 -- CERTIFICATION AND PREPARER BLOCK (2025)
+
+F. CERTIFICATION
+  F1. Certification statement reproduced verbatim from form        YES / NO
+  F2. Signer name                                                  ___________
+  F3. Position or title (if filer is a corporation, trust,         ___________
+      or partnership)
+  F4. Signature                                                    ___________
+  F5. Date of signature                                            YYYY-MM-DD
+
+G. PAID PREPARER (if applicable)
+  G1. Paid preparer name                                           ___________
+  G2. Paid preparer address                                        ___________
+  G3. Postal code                                                  ___________
+  G4. Telephone                                                    ___________
+  G5. EFILE number (if applicable)                                 ___________
+```
+
+If the filer is an individual, F3 is omitted. If no paid preparer is involved, leave block G blank but record `N/A` against G1 to make the omission deliberate.
 
 ---
 
