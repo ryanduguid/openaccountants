@@ -540,7 +540,7 @@ Expected result:
 
 ---
 
-## Section 9.5 -- Onboarding fallback
+## Section 10 -- Onboarding fallback
 
 When a client first asks about T1135 and the required-input list in Section 2 is incomplete, do NOT guess and do NOT refuse. Run this onboarding fallback:
 
@@ -561,7 +561,7 @@ The onboarding fallback is the entry path for any first-touch T1135 query. It is
 
 ---
 
-## Section 9.6 -- Reference material
+## Section 11 -- Reference material
 
 Primary statute and authority:
 
@@ -585,7 +585,7 @@ Versioning note: the CRA replaced IC00-1R5 with IC00-1R6 effective 1 March 2018 
 
 ---
 
-## Section 10 -- Prohibitions and disclaimer
+## Section 12 -- Prohibitions and disclaimer
 
 ### Prohibitions
 
