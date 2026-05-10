@@ -284,15 +284,15 @@ Capture:
 
 ### 5.7 Category 7 -- Property held with Canadian registered securities dealer or Canadian trust company
 
-Capture:
+Capture, **country-by-country** (one aggregated line per country code):
 - dealer / trust company name
 - country code
-- maximum fair market value during the year
-- fair market value at year-end
-- gross income
-- gain (loss) on disposition
+- maximum fair market value during the year (aggregate across all securities of that country)
+- fair market value at year-end (aggregate across all securities of that country)
+- gross income (aggregate across all securities of that country)
+- gain (loss) on disposition (aggregate across all securities of that country)
 
-Category 7 is a special aggregation rule. Do not force Categories 2 to 6 line-by-line reporting if valid Category 7 aggregation is available and chosen.
+Category 7 is a special aggregation rule that permits country-by-country reporting in lieu of security-by-security detail when property is held with a Canadian registered securities dealer or Canadian trust company. Do not force Categories 2 to 6 line-by-line reporting if valid Category 7 aggregation is available and chosen. Aggregation is by country of the issuer of the underlying property, not by dealer. Reference: CRA, "Form T1135 -- Reporting for 2015 and later tax years."
 
 ### 5.8 Country code rules
 
@@ -340,20 +340,43 @@ If prior-year T1135 filings were missed:
 - discuss voluntary disclosure only as a reviewer issue
 - do NOT promise relief
 
+#### 6.6.1 Late-filing and false-statement penalty schedule
+
+| Penalty | Statute | Amount |
+|---|---|---|
+| Late filing of T1135 | ITA s. 162(7) | $25 per day, minimum $100, maximum $2,500 (100 days). Applied automatically; due-diligence defence available but narrow. |
+| Knowing or grossly negligent failure to file | ITA s. 162(10)(a) | $500 per month, up to 24 months. Maximum $12,000, less penalties already levied under s. 162(7). |
+| Failure to file after CRA demand (knowing or gross negligence) | ITA s. 162(10)(b) | $1,000 per month, up to 24 months. Maximum $24,000, less penalties already levied. |
+| Continuing failure beyond 24 months | ITA s. 162(10.1) | 5% of the cost amount of the specified foreign property, less any penalty already levied under s. 162(7) and s. 162(10). |
+| False statement or omission on T1135 | ITA s. 163(2.4) | Greater of $24,000 and 5% of the greatest cost amount of the specified foreign property to which the false statement or omission relates. CRA bears burden of proving knowledge or gross negligence. |
+| Extended reassessment exposure | ITA s. 152(4)(b.2) | The normal reassessment period is extended by three years for unreported income from specified foreign property where T1135 was not filed, was filed late, or contained a misrepresentation. |
+
+Penalty references: CRA, "Table of penalties -- Foreign reporting." Late filing under s. 162(7) applies even where no tax is owing.
+
+#### 6.6.2 Voluntary Disclosures Program
+
+If prior-year T1135 filings were missed and the omission has not been the subject of CRA enforcement action, the Voluntary Disclosures Program (VDP) may provide penalty relief and protection from prosecution. Conditions are set out in CRA Information Circular **IC00-1R6, Voluntary Disclosures Program** (effective 1 March 2018). The five validity conditions are: voluntary, complete, involves application or potential application of a penalty, includes information that is at least one year past due, and includes payment of estimated tax owing.
+
+VDP outcomes are streamed (General Program vs Limited Program) at CRA's discretion. Do NOT promise a specific stream or relief outcome. Flag VDP eligibility for reviewer; do not file the application within routine workflow.
+
 ---
 
-## Section 7 -- Reviewer escalation protocol
+## Section 7 -- Tier 2 reviewer catalogue
 
-Escalate before finalizing if any of the following are present:
+Tier 1 (Section 4) handles deterministic threshold and category mapping. Tier 2 covers fact-sensitive issues that require a licensed Canadian CPA or cross-border practitioner to sign off before filing. Routine workflow MUST stop and escalate if any Tier 2 issue is present.
 
-1. immigration / emigration timing issues
-2. beneficial ownership or nominee issues
-3. possible foreign affiliate exposure
-4. partnership or trust attribution uncertainty
-5. digital-asset situs or characterization issues
-6. mixed-use foreign real estate with weak factual support
-7. pre-construction foreign property deposits with unclear property rights
-8. unclear functional currency election or prior-year amended filing issues
+| # | Tier 2 issue | Why it escalates |
+|---|---|---|
+| T2-1 | Immigration / emigration timing | First-year resident exception and part-year residency change the filing obligation. |
+| T2-2 | Beneficial ownership / nominee chain | Reporting attribution may differ from registered title. |
+| T2-3 | Possible foreign affiliate | T1134 may apply; T1135 routine handling is displaced. |
+| T2-4 | Partnership or trust attribution | Partner-level vs entity-level filing obligation depends on facts. |
+| T2-5 | Digital asset situs / characterization | Crypto, exchange wallets, token arrangements -- situs and property classification fact-sensitive. |
+| T2-6 | Mixed-use foreign real estate | Personal-use vs investment-use split needs documentary support. |
+| T2-7 | Pre-construction foreign deposits | Whether reportable property exists yet depends on contract terms. |
+| T2-8 | Functional currency election or amended return | Prior elections and amendments change cost amount and category mapping. |
+| T2-9 | Joint ownership with unclear contributions | Beneficial-share allocation needed before threshold conclusion. |
+| T2-10 | Missed prior-year T1135 filings | Penalty exposure under s. 162(7), s. 162(10), s. 163(2.4); VDP analysis required. |
 
 When escalating, provide:
 - taxpayer type
@@ -491,6 +514,74 @@ Input: Foreign securities held in an account with a Canadian registered securiti
 
 Expected result:
 - T1135 may be reportable through Category 7 aggregation if the facts support that method
+- Aggregation is country-by-country, not security-by-security
+
+### Test 7 -- First-year Canadian resident
+
+Input: Individual immigrated to Canada and became a Canadian tax resident on 14 March of the year. Held foreign bank account cost $180,000 CAD and foreign rental property cost $420,000 CAD throughout the entire year.
+
+Expected result:
+- ITA s. 233.3 first-year exception applies for an individual in the first year of Canadian residence
+- T1135 generally NOT required for that first resident year
+- Filing obligation begins for the FOLLOWING tax year
+- Reviewer flag: confirm immigration date and that taxpayer is an individual (the exception does NOT apply to corporations or trusts)
+
+### Test 8 -- Missed prior-year filings
+
+Input: Canadian-resident individual with foreign brokerage holdings cost $310,000 CAD for the past four years. Never filed T1135. CRA has not contacted the taxpayer.
+
+Expected result:
+- T1135 required for each year cost amount exceeded $100,000 CAD
+- Penalty exposure: s. 162(7) ($25/day, max $2,500 per year) at minimum; s. 162(10)(a) up to $12,000 per year if knowing or grossly negligent; s. 162(10.1) 5% of cost amount after 24 months; s. 163(2.4) greater of $24,000 or 5% if false statement / omission
+- Extended reassessment exposure under s. 152(4)(b.2) (additional three years for unreported foreign income)
+- Reviewer flag: assess Voluntary Disclosures Program eligibility under IC00-1R6 -- voluntary, complete, penalty applies, at least one year overdue, payment of estimated tax owing
+- Do NOT promise General Program vs Limited Program outcome; CRA's discretion
+- Do NOT file VDP application within routine workflow; escalate to Tier 2 (T2-10)
+
+---
+
+## Section 9.5 -- Onboarding fallback
+
+When a client first asks about T1135 and the required-input list in Section 2 is incomplete, do NOT guess and do NOT refuse. Run this onboarding fallback:
+
+1. Confirm the **two screening facts** before anything else: (a) Canadian tax residency status for the year, and (b) whether the client is an individual in their first year of Canadian residence. Without these, no further analysis is reliable.
+2. If residency is unclear -- fire R-CA-T1135-2 and stop.
+3. If residency is confirmed and the first-year exception does not apply, ask **one targeted question per missing input**, in this priority order:
+   1. Cost amount (CAD) of each foreign property at any time in the year
+   2. Whether any property is inside a registered plan (RRSP, RRIF, TFSA, RESP, DPSP)
+   3. Whether any property is personal-use or used exclusively in an active business
+   4. Country code and institution / issuer for each property
+   5. Whether property is held with a Canadian registered securities dealer or Canadian trust company (Category 7 path)
+   6. Joint ownership, nominee, trust, or partnership structure
+4. If cost amount is genuinely unobtainable (e.g., inherited foreign asset with no stepped-up basis records) -- fire R-CA-T1135-4 and recommend cost-basis reconstruction with a Canadian CPA.
+5. Produce a **partial working paper** (Section 8.4 template) with all confirmed facts and explicit `MISSING` markers. Do NOT produce a final filing conclusion until the asset inventory and threshold test are complete.
+6. Maintain the conservative defaults table from Section 1 throughout. Never substitute fair market value for cost amount in the threshold test.
+
+The onboarding fallback is the entry path for any first-touch T1135 query. It is NOT a substitute for the Tier 1 rules in Section 4 or the Tier 2 reviewer catalogue in Section 7.
+
+---
+
+## Section 9.6 -- Reference material
+
+Primary statute and authority:
+
+- **Income Tax Act (Canada), s. 233.3** -- Reporting obligation for specified foreign property. <https://laws-lois.justice.gc.ca/eng/acts/I-3.3/section-233.3.html>
+- **Income Tax Act (Canada), s. 162(7)** -- Late-filing penalty for information returns. <https://laws-lois.justice.gc.ca/eng/acts/I-3.3/section-162.html>
+- **Income Tax Act (Canada), s. 162(10) and 162(10.1)** -- Knowing or grossly negligent failure to file; continuing failure beyond 24 months.
+- **Income Tax Act (Canada), s. 163(2.4)** -- False statement or omission penalty. <https://laws-lois.justice.gc.ca/eng/acts/I-3.3/section-163.html>
+- **Income Tax Act (Canada), s. 152(4)(b.2)** -- Extended reassessment period for unreported foreign income.
+
+CRA guidance:
+
+- **CRA Form T1135 -- Foreign Income Verification Statement** (form and instructions). <https://www.canada.ca/en/revenue-agency/services/forms-publications/forms/t1135.html>
+- **CRA -- Form T1135 reporting for 2015 and later tax years** (Category 7 country-by-country aggregation rule). <https://www.canada.ca/en/revenue-agency/services/tax/international-non-residents/information-been-moved/foreign-reporting/form-t1135-reporting-2015-later-tax-years.html>
+- **CRA -- Questions and answers about Form T1135** (Q&A: cost amount, threshold, registered-plan exclusion, joint ownership, partnerships). <https://www.canada.ca/en/revenue-agency/services/tax/international-non-residents/information-been-moved/foreign-reporting/questions-answers-about-form-t1135.html>
+- **CRA -- Foreign Income Verification Statement (overview)**. <https://www.canada.ca/en/revenue-agency/services/tax/international-non-residents/information-been-moved/foreign-reporting/foreign-income-verification-statement.html>
+- **CRA -- Table of penalties (foreign reporting)**. <https://www.canada.ca/en/revenue-agency/services/tax/international-non-residents/information-been-moved/foreign-reporting/table-penalties.html>
+- **CRA -- Questions and answers about penalties (foreign reporting)**. <https://www.canada.ca/en/revenue-agency/services/tax/international-non-residents/information-been-moved/foreign-reporting/questions-answers-about-penalties.html>
+- **CRA Information Circular IC00-1R6, Voluntary Disclosures Program** (effective 1 March 2018). <https://www.canada.ca/en/revenue-agency/services/forms-publications/publications/ic00-1/ic00-1r6-voluntary-disclosures-program.html>
+
+Versioning note: the CRA replaced IC00-1R5 with IC00-1R6 effective 1 March 2018 for income-tax VDP applications. Confirm the current version of any CRA publication before relying on it; CRA periodically reissues these documents under new revision suffixes (e.g., IC00-1R7).
 
 ---
 
