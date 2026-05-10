@@ -12,13 +12,15 @@ description: >
   question about whether a Canadian resident individual, corporation, trust, or partnership
   must disclose foreign property. ALWAYS read this skill before touching any Canada
   T1135-related work.
-version: 2.2
+version: 2.0
 jurisdiction: CA-FED
 tax_year: 2025
 category: international
+depends_on:
+  - income-tax-workflow-base
 ---
 
-# Canada T1135 Foreign Income Verification Statement Skill v2.2
+# Canada T1135 Foreign Income Verification Statement Skill v2.0
 
 ---
 
@@ -40,8 +42,8 @@ Read this whole section before classifying anything.
 | Contributor | Open Accountants Community |
 | Validated by | Pending -- Canadian CPA sign-off required |
 | Validation date | Pending |
-| Skill version | 2.2 |
-| Confidence coverage | Tier 1: threshold testing, Part A / Part B decision, category mapping, common exclusions, form-field capture. Tier 2: mixed-use property, joint ownership, Category 7 aggregation, late filings. Tier 3: foreign affiliate issues, beneficial ownership chains, digital-asset situs. |
+| Skill version | 2.0 |
+| Confidence coverage | Tier 1: threshold testing, Part A / Part B decision, category mapping, common exclusions, form-field capture. Tier 2 (Section 7 catalogue, T2-1 to T2-10): residency timing, beneficial ownership, foreign affiliate exposure, partnership/trust attribution, digital-asset situs, mixed-use real estate, pre-construction deposits, functional currency / amended returns, joint ownership, missed prior-year filings. Tier 3: foreign affiliate filings (T1134), formal voluntary disclosure execution. |
 
 ### Core thresholds (2025 form usage)
 
@@ -71,7 +73,7 @@ Read this whole section before classifying anything.
 | Personal-use property | Excluded |
 | Property used or held exclusively in an active business | Excluded |
 | Property inside registered plans (RRSP, RRIF, TFSA, RESP, DPSP) | Excluded |
-| First year of Canadian tax residence for an individual | Generally excluded from T1135 filing obligation for that first resident year |
+| First year of Canadian tax residence for an individual (other than a trust) | Excluded under ITA s. 233.7 for that first resident year |
 
 ### Conservative defaults
 
@@ -175,7 +177,7 @@ This is the deterministic pre-classifier for T1135 assets. Each asset gets exact
 | Condition | Result |
 |---|---|
 | Non-resident for the relevant year | STOP -- fire R-CA-T1135-1 |
-| Individual in first year of Canadian tax residence | Generally no T1135 filing obligation for that first resident year |
+| Individual (other than a trust) in first year of Canadian tax residence | No T1135 filing obligation for that first resident year (ITA s. 233.7) |
 | Canadian-resident individual, corporation, trust, or partnership | Continue to threshold test |
 
 ### 4.2 Threshold test (Tier 1)
@@ -521,10 +523,10 @@ Expected result:
 Input: Individual immigrated to Canada and became a Canadian tax resident on 14 March of the year. Held foreign bank account cost $180,000 CAD and foreign rental property cost $420,000 CAD throughout the entire year.
 
 Expected result:
-- ITA s. 233.3 first-year exception applies for an individual in the first year of Canadian residence
-- T1135 generally NOT required for that first resident year
+- ITA s. 233.7 first-year exception applies for an individual (other than a trust) who first became resident in Canada in the year
+- T1135 NOT required for that first resident year
 - Filing obligation begins for the FOLLOWING tax year
-- Reviewer flag: confirm immigration date and that taxpayer is an individual (the exception does NOT apply to corporations or trusts)
+- Reviewer flag: confirm immigration date and that taxpayer is an individual; the s. 233.7 exception does NOT apply to corporations or trusts
 
 ### Test 8 -- Missed prior-year filings
 
@@ -566,6 +568,7 @@ The onboarding fallback is the entry path for any first-touch T1135 query. It is
 Primary statute and authority:
 
 - **Income Tax Act (Canada), s. 233.3** -- Reporting obligation for specified foreign property. <https://laws-lois.justice.gc.ca/eng/acts/I-3.3/section-233.3.html>
+- **Income Tax Act (Canada), s. 233.7** -- First-year resident exemption for individuals (other than trusts) from sections 233.2, 233.3, 233.4, and 233.6. <https://laws-lois.justice.gc.ca/eng/acts/I-3.3/section-233.7.html>
 - **Income Tax Act (Canada), s. 162(7)** -- Late-filing penalty for information returns. <https://laws-lois.justice.gc.ca/eng/acts/I-3.3/section-162.html>
 - **Income Tax Act (Canada), s. 162(10) and 162(10.1)** -- Knowing or grossly negligent failure to file; continuing failure beyond 24 months.
 - **Income Tax Act (Canada), s. 163(2.4)** -- False statement or omission penalty. <https://laws-lois.justice.gc.ca/eng/acts/I-3.3/section-163.html>
