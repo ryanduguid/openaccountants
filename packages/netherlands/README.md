@@ -8,6 +8,10 @@
 4. `nl-income-tax.md`
 5. `nl-zzp-deductions.md`
 6. `eu-vat-directive.md`
+7. `nl-corporate-tax.md` — Vennootschapsbelasting (VPB): rates, fiscal profit bridge, loss relief, fiscal unity, innovation box
+8. `nl-payroll-tax.md` — Loonheffingen & Werkkostenregeling (WKR): employer/employee contributions, wage tables, free space
+9. `nl-deductions.md` — Aftrekposten en regelingen: mortgage interest, medical expenses, donations, investment deductions, tax credits
+10. `nl-tax-objection.md` — Bezwaar procedures: objection letters, deadlines, court appeals, payment postponement
 
 ## How to use
 
@@ -41,6 +45,12 @@ Tax rules change. Rates get updated. Thresholds move. If something in these file
 Know a vendor pattern we're missing? Know how your local bank formats statements? Every pattern you add saves the next user from a misclassification.
 
 **Contributors get credited at [openaccountants.com](https://openaccountants.com)**
+
+---
+
+## Credits
+
+Skills 7–10 are based on work by **[John in 't Hout (@johnhout)](https://github.com/johnhout/knowledge-work-belastingzaken)**, licensed under MIT. The original repo provides Dutch tax workflow skills for AI agents; these have been adapted into the OpenAccountants format with expanded rate tables, computation logic, and structured sections.
 
 ---
 
