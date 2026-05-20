@@ -2,13 +2,26 @@
 
 ## What's in this folder
 
-1. `foundation.md`
-2. `intake.md`
-3. `fr-cfe.md`
-4. `fr-income-tax.md`
-5. `fr-social-contributions.md`
-6. `france-vat-return.md`
-7. `eu-vat-directive.md`
+### Core skills
+1. `foundation.md` — How the system works (shared across all countries)
+2. `intake.md` — Onboarding questions
+3. `fr-income-tax.md` — Self-employed income tax (micro-entrepreneur, BNC/BIC)
+4. `fr-social-contributions.md` — Urssaf / social charges
+5. `fr-cfe.md` — Cotisation Foncière des Entreprises
+6. `france-vat-return.md` — VAT return workflow
+7. `eu-vat-directive.md` — EU VAT directive
+
+### Extended skills (adapted from [paperasse](https://github.com/romainsimon/paperasse))
+8. `fr-personal-income-tax.md` — Comprehensive IR guide: brackets, quotient familial, décote, CEHR, CDHR, PAS, deductions/reductions/credits, special cases
+9. `fr-capital-gains.md` — PFU, PEA, assurance-vie, dividends, PV mobilières, RSU, BSPCE, stock-options, PEE/PERCO
+10. `fr-rental-income.md` — Revenus fonciers, LMNP, LMP, SCI à l'IR, déficit foncier
+11. `fr-crypto-tax.md` — Crypto taxation (PAMC method, form 2086, staking/mining)
+12. `fr-business-accounting.md` — TVA declarations, invoicing, e-invoicing 2026 reform, IS, FEC, annual closing
+13. `fr-tax-audit.md` — Tax audit procedures, penalties, 8 verification axes, taxpayer rights
+
+## Credits
+
+Skills 8–13 are based on work by **[Romain Simon (@romainsimon)](https://github.com/romainsimon/paperasse)**, licensed under MIT. Adapted for the OpenAccountants format with detailed rate tables, computation logic, and structured sections.
 
 ## How to use
 

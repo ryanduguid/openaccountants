@@ -11,6 +11,9 @@
 7. `eu-vat-directive.md`
 8. `spain-guided-intake.md`
 9. `spain-return-assembly.md`
+10. `es-irpf-deductions.md` — Comprehensive regional deduction guide covering all 21 Spanish territories (339+ deductions across 13 categories)
+11. `es-corporate-tax.md` — Impuesto sobre Sociedades / Modelo 200 / Modelo 202 with rate tables for 7 regimes
+12. `es-autonomous-worker.md` — Complete autónomo obligations: cuota by income brackets, tarifa plana, fiscal calendar, net take-home computation
 
 ## How to use
 
@@ -29,6 +32,17 @@ The AI will:
 **This is not tax advice.** Everything produced must be reviewed and signed off by a qualified asesor fiscal before filing.
 
 The most up-to-date, verified version of these skills is maintained at [openaccountants.com](https://openaccountants.com).
+
+---
+
+## Contributors & Attribution
+
+Skills 10-12 are based on work from the following MIT-licensed open-source projects:
+
+- **[Nambu89 / Impuestify](https://github.com/Nambu89/Impuestify)** — Spanish multi-agent fiscal assistant with IRPF simulator (8 sub-calculators), ~339 regional deductions database, and Modelo 200 corporate tax simulator covering 7 territorial regimes.
+- **[Pau March / larenta](https://github.com/paumrch/larenta)** — Spanish IRPF guide and data structure reference.
+
+Both projects are licensed under the MIT License. Adapted for the OpenAccountants skills format with permission.
 
 ---
 
