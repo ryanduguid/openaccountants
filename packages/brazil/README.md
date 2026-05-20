@@ -1,11 +1,15 @@
 # Brazil — Tax Skills Package
 
+## Contributors
+
+- **Daniel Luz** ([@Danielbluz](https://github.com/Danielbluz)) — IRPF 2026 skill, adapted from [skill-irpf-brasil](https://github.com/Danielbluz/skill-irpf-brasil) (MIT license). Covers obrigatoriedade, deduções, renda variável/REVAR, bets, ganho de capital, malha fina, restituição/cashback, and casos especiais.
+
 ## What's in this folder
 
 1. `foundation.md`
 2. `intake.md`
-3. `br-estimated-tax.md`
-4. `br-income-tax.md`
+3. `br-income-tax.md` — Comprehensive IRPF 2026 skill (based on Daniel Luz's work)
+4. `br-estimated-tax.md`
 5. `br-indirect-tax.md`
 6. `br-inss.md`
 7. `br-simples-nacional.md`
