@@ -1,3 +1,5 @@
+[![MseeP.ai Security Assessment Badge](https://mseep.net/pr/openaccountants-openaccountants-badge.png)](https://mseep.ai/app/openaccountants-openaccountants)
+
 # OpenAccountants
 
 Open-source tax computation skills for AI. **371 skills across 134 countries.**
