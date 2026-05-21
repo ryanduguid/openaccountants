@@ -17,56 +17,56 @@ version: 2.0
 | Primary legislation | Income Tax Act 58 of 1962 |
 | Supporting legislation | Tax Administration Act 28 of 2011; Sixth Schedule (Turnover Tax); Fourth Schedule (Provisional Tax) |
 | Tax authority | SARS (South African Revenue Service) |
-| Filing portal | SARS eFiling (www.sarsefiling.co.za) |
+| Filing portal | SARS eFiling (www.sars.gov.za) |
 | Currency | ZAR only |
 | Tax year | 1 March -- 28 February |
 | Return form | ITR12 |
 | Provisional tax | IRP6 (1st: 31 Aug, 2nd: last day Feb, 3rd voluntary: 30 Sep) |
-| Primary rebate | R17,235 |
-| Secondary rebate (65+) | R9,444 |
-| Tertiary rebate (75+) | R3,145 |
-| Retirement fund deduction | 27.5% of greater of remuneration/taxable income, cap R350,000 |
-| Turnover tax | Available for non-professional services, turnover up to R1,000,000 |
+| Primary rebate | R17,820 |
+| Secondary rebate (65+) | R9,768 |
+| Tertiary rebate (75+) | R3,252 |
+| Retirement fund deduction | 27.5% of greater of remuneration/taxable income, cap R430,000 |
+| Turnover tax | Available for non-professional services, turnover up to R2,300,000 |
 | Contributor | Open Accountants Community |
-| Validated by | Pending -- requires SA registered tax practitioner sign-off |
-| Validation date | Pending |
+| Validated by | Werner Britz CA(SA), Spurwing CFO |
+| Validation date | May 2026 |
 
-**Progressive tax table (2025/2026 year of assessment):**
+**Progressive tax table (2026/2027 year of assessment):**
 
 | Taxable income (ZAR) | Rate |
 |---|---|
-| 1--237,100 | 18% |
-| 237,101--370,500 | R42,678 + 26% above R237,100 |
-| 370,501--512,800 | R77,362 + 31% above R370,500 |
-| 512,801--673,000 | R121,475 + 36% above R512,800 |
-| 673,001--857,900 | R179,147 + 39% above R673,000 |
-| 857,901--1,817,000 | R251,258 + 41% above R857,900 |
-| 1,817,001+ | R644,489 + 45% above R1,817,000 |
+| 1--245,200 | 18% |
+| 245,201--383,000 | R44,136 + 26% above R245,200 |
+| 383,001--530,200 | R79,884 + 31% above R383,000 |
+| 530,201--695,800 | R125,516 + 36% above R530,200 |
+| 695,801--887,100 | R185,132 + 39% above R695,800 |
+| 887,101--1,878,300 | R259,739 + 41% above R887,100 |
+| 1,878,301+ | R666,131 + 45% above R1,878,300 |
 
 **Tax thresholds (below = no tax):**
 
 | Age | Threshold |
 |---|---|
-| Below 65 | R95,750 |
-| 65--74 | R148,217 |
-| 75+ | R165,689 |
+| Below 65 | R99,000 |
+| 65--74 | R153,278 |
+| 75+ | R171,355 |
 
-**Medical tax credits (s6A, 2025/2026):**
+**Medical tax credits (s6A, 2026/2027):**
 
 | Member | Monthly |
 |---|---|
-| Main member | R364 |
-| First dependant | R364 |
-| Each additional | R246 |
+| Main member | R376 |
+| First dependant | R376 |
+| Each additional | R254 |
 
 **Turnover tax table (Sixth Schedule):**
 
 | Turnover (ZAR) | Rate |
 |---|---|
-| 0--335,000 | 0% |
-| 335,001--500,000 | 1% above R335,000 |
-| 500,001--750,000 | R1,650 + 2% above R500,000 |
-| 750,001--1,000,000 | R6,650 + 3% above R750,000 |
+| 0--600,000 | 0% |
+| 600,001--950,000 | 1% above R600,000 |
+| 950,001--1,400,000 | R3,500 + 2% above R950,000 |
+| 1,400,001--2,300,000 | R12,500 + 3% above R1,400,000 |
 
 **Conservative defaults:**
 
@@ -76,7 +76,7 @@ version: 2.0
 | Unknown expense category | Not deductible |
 | Unknown business-use proportion | 0% |
 | Unknown whether home office qualifies | Not deductible (IN 28 strict) |
-| Entertainment expenses | NOT deductible (s23(m)) |
+| Entertainment expenses | Critically review under s 11(a) and s 23(g); conservatively disallow if no clear nexus to income production |
 
 ---
 
@@ -164,7 +164,7 @@ version: 2.0
 
 | Pattern | Treatment | Notes |
 |---|---|---|
-| ALLAN GRAY, CORONATION, 10X, SYGNIA, NINETY ONE | s11F deduction: 27.5% of taxable income, cap R350,000 | RA contributions |
+| ALLAN GRAY, CORONATION, 10X, SYGNIA, NINETY ONE | s11F deduction: 27.5% of taxable income, cap R430,000 | RA contributions |
 | OLD MUTUAL RA, MOMENTUM RA, LIBERTY RA | Same | RA fund |
 
 ### 3.8 Transport and travel
@@ -191,7 +191,7 @@ version: 2.0
 | Pattern | Treatment | Notes |
 |---|---|---|
 | PICK N PAY, WOOLWORTHS, CHECKERS, SPAR, SHOPRITE | Default: NOT deductible | Personal provisioning |
-| RESTAURANT (any) | NOT deductible -- s23(m) | Entertainment blocked for sole proprietors |
+| RESTAURANT (any) | Review under s 11(a)/s 23(g) | Bona fide business meals may be deductible; VAT input blocked under s 17(2)(a) |
 
 ### 3.11 Internal transfers and exclusions
 
@@ -208,22 +208,21 @@ version: 2.0
 ### Example 1 -- Standard self-employed, mid-range
 
 **Input:** Age 35, revenue R600,000, expenses R180,000, RA R80,000, medical R3,500/mo (main + 1 dependant), provisional paid R40,000.
-**Computation:** Net profit R420,000. s11F = 27.5% x R420,000 = R115,500. Taxable = R304,500. Tax = R42,678 + 26% x R67,400 = R60,202. Less rebate R17,235. Less medical credit R8,736 (R364 x 2 x 12). Net = R34,231. Less provisional R40,000. Refund R5,769.
+**Computation:** Net profit R420,000. s11F = 27.5% x R420,000 = R115,500 (within R430,000 cap). Taxable = R304,500. Tax = R44,136 + 26% x R59,300 = R59,554. Less rebate R17,820. Less medical credit R9,024 (R376 x 2 x 12). Net = R32,710. Less provisional R40,000. Refund R7,290.
 
 ### Example 2 -- Turnover tax
 
 **Input:** Non-professional sole proprietor, turnover R650,000.
-**Computation:** Tax = R1,650 + 2% x R150,000 = R4,650 total.
+**Computation:** R650,000 turnover falls within 2026/27 bracket R600,001--R950,000 at 1% above R600,000. Tax = 1% x R50,000 = R500.
 
 ### Example 3 -- Entertainment disallowed
 
-**Input:** Client claims R15,000 client entertainment dinners.
-**Result:** NOT deductible. s23(m) denies for sole proprietors. Remove.
+**Input:** Client claims R15,000 client entertainment dinners. **Result:** Review under s 11(a) and s 23(g). If bona fide business development with evidence of business purpose, may be deductible. If no clear nexus to income production, disallow. s 23(m) does NOT apply to sole proprietors. VAT input on entertainment is separately blocked under s 17(2)(a) VAT Act.
 
 ### Example 4 -- Retirement cap exceeded
 
 **Input:** Taxable income R2,000,000, RA R600,000.
-**Computation:** 27.5% x R2,000,000 = R550,000 but cap R350,000. Deduction = R350,000. Excess R250,000 carries forward.
+**Computation:** 27.5% x R2,000,000 = R550,000 but cap R430,000. Deduction = R430,000. Excess R170,000 carries forward.
 
 ---
 
@@ -233,31 +232,31 @@ version: 2.0
 Apply rate table to taxable income. One table for all individuals regardless of marital status. **Legislation:** Income Tax Act, rates schedule.
 
 ### 5.2 Rebates
-Primary R17,235 (all). Secondary R9,444 (65+). Tertiary R3,145 (75+). Credits against tax, not deductions from income. **Legislation:** s6.
+Primary R17,820 (all). Secondary R9,768 (65+). Tertiary R3,252 (75+). Credits against tax, not deductions from income. **Legislation:** s6.
 
 ### 5.3 Interest exemption
 R23,800 (under 65). R34,500 (65+). Excess is taxable. **Legislation:** s10(1)(i).
 
 ### 5.4 s11F retirement deduction
-27.5% of greater of remuneration or taxable income (before deduction). Cap R350,000. Excess carries forward or adds to tax-free retirement lump sum (R550,000). **Legislation:** s11F.
+27.5% of greater of remuneration or taxable income (before deduction). Cap R430,000. Excess carries forward or adds to tax-free retirement lump sum (R550,000). **Legislation:** s11F.
 
 ### 5.5 Medical tax credits (s6A)
-Main + first dependant: R364/mo each. Additional: R246/mo. Credit against tax. NOT a deduction from income. **Legislation:** s6A.
+Main + first dependant: R376/mo each. Additional: R254/mo. Credit against tax. NOT a deduction from income. **Legislation:** s6A.
 
 ### 5.6 Provisional tax (IRP6)
-Based on estimated current year. 1st: 31 Aug (50%). 2nd: last day Feb (top-up to 100%). 3rd voluntary: 30 Sep. Under-estimation: 20% penalty if < 90% of actual (income < R1M) or 80% (> R1M). **Legislation:** Fourth Schedule.
+Based on estimated current year. 1st: 31 Aug (50%). 2nd: last day Feb (top-up to 100%). 3rd voluntary: 30 Sep. Under-estimation: 20% penalty if < 90% of actual (income < R1M) or 80% (> R1M). From years of assessment commencing on or after 1 March 2026, the basic-amount safe harbour threshold is R1,800,000 (up from R1,000,000). **Legislation:** Fourth Schedule.
 
 ### 5.7 Turnover tax
-Non-professional services, turnover up to R1M. Replaces income tax, CGT, dividends tax, VAT. Cannot claim normal deductions. **Legislation:** Sixth Schedule.
+Non-professional services, turnover up to R2,300,000. Replaces income tax, CGT, dividends tax, VAT. Cannot claim normal deductions. **Legislation:** Sixth Schedule.
 
 ### 5.8 Wear-and-tear (s11(e))
-Based on SARS IN 47 useful life tables. Not straight-line -- based on write-off period. **Legislation:** s11(e).
+Straight-line over the useful life per SARS IN 47 (Issue 5). Items costing R7,000 or less: full write-off in year of acquisition under BGR 7 (small-value assets). Items above R7,000: straight-line over IN 47 useful life (computers 3 years; office furniture 6 years; office equipment 5 years; cellular phones 2 years; printers 3 years). **Legislation:** s 11(e), SARS IN 47, BGR 7.
 
 ### 5.9 Entertainment
-NOT deductible for sole proprietors. s23(m) expressly disallows. **Legislation:** s23(m).
+Sole proprietor entertainment is tested under the general deduction formula: s 11(a) (actually incurred in the production of income) plus s 23(g) (not of a domestic, private, or capital nature). Bona fide client business development meals with evidence of business purpose may be deductible. s 23(m) does NOT apply to sole proprietors -- it restricts deductions against employment income only. Note: VAT input on entertainment is separately blocked under s 17(2)(a) of the VAT Act regardless of income tax treatment. **Legislation:** s 11(a), s 23(g). Cross-reference: VAT Act s 17(2)(a).
 
 ### 5.10 Home office
-Dedicated room, regularly and exclusively for trade. IN 28 is strict. Dual-use rooms: NO deduction. Proportion = room area / total home. **Legislation:** s11(a), IN 28.
+Dedicated room, regularly and exclusively for trade. IN 28 is strict. Dual-use rooms: NO deduction. Proportion = room area / total home. **Legislation:** s11(a), IN 28. Warning: the area used for trade is 'tainted' for CGT purposes -- on disposal of the residence, the primary residence exclusion does not apply to the tainted portion. Practitioners must warn clients before first claiming home office.
 
 ### 5.11 Record keeping
 5 years from submission. Invoices, receipts, bank statements, logbooks, asset register. **Legislation:** TAA s29-32.
@@ -310,7 +309,7 @@ Step-by-step per Section 5: gross income, deductions, taxable income, tax, rebat
 ## Section 9 -- Onboarding fallback
 
 ### 9.1 Age
-*Inference:* Not inferable. Always ask. *Fallback:* "What is your age at 28 February 2026?"
+*Inference:* Not inferable. Always ask. *Fallback:* "What is your age at 28 February 2027?"
 
 ### 9.2 Residency
 *Inference:* SA bank accounts suggest resident. *Fallback:* "Are you a South African tax resident?"
@@ -336,12 +335,12 @@ Step-by-step per Section 5: gross income, deductions, taxable income, tax, rebat
 
 ### Test suite
 
-**Test 1 -- Mid-range.** Age 35, R600K revenue, R180K expenses, R80K RA, medical R3,500/mo. Net tax R34,231.
+**Test 1 -- Mid-range.** Age 35, R600K revenue, R180K expenses, R80K RA, medical R3,500/mo. Net tax R32,710.
 **Test 2 -- Senior.** Age 68, R200K revenue, R50K expenses, R30K RA. Below threshold. R0 tax.
-**Test 3 -- Turnover tax.** R650K turnover. Tax R4,650.
-**Test 4 -- RA cap.** R2M taxable, R600K RA. Deduction R350,000. Excess carries forward.
-**Test 5 -- Medical credits.** 6 members. R20,544/year credit.
-**Test 6 -- Under-estimation penalty.** R200K estimated, R450K actual. Penalty R12,406.
+**Test 3 -- Turnover tax.** R650K turnover. Tax R500.
+**Test 4 -- RA cap.** R2M taxable, R600K RA. Deduction R430,000. Excess carries forward.
+**Test 5 -- Medical credits.** 6 members. R21,216/year credit (R376 x 2 + R254 x 4 = R1,768/mo x 12).
+**Test 6 -- Under-estimation penalty.** R200K estimated, R450K actual. 20% penalty applies if estimate < 90% of actual (for income < R1,800,000 safe harbour threshold).
 
 ### Edge case registry
 
@@ -353,19 +352,20 @@ Step-by-step per Section 5: gross income, deductions, taxable income, tax, rebat
 **EC6 -- Medical credits large family.** Compute per-member.
 **EC7 -- Foreign income.** ESCALATE.
 **EC8 -- Turnover tax exit mid-year.** Transition rules apply.
-**EC9 -- Entertainment.** s23(m) blocks for sole proprietors.
+**EC9 -- Entertainment.** Sole proprietor entertainment is tested under s 11(a) and s 23(g); s 23(m) does NOT apply to sole proprietors.
 **EC10 -- Assessed loss.** Carry forward under s20; SARS may query.
 
 ### Prohibitions
 
 - NEVER compute without knowing age
 - NEVER apply tax below age-threshold
-- NEVER allow entertainment deductions for sole proprietors
-- NEVER deduct RA above R350,000 cap
+- NEVER allow entertainment deductions without evidence of business purpose under s 11(a) and s 23(g)
+- NEVER deduct RA above R430,000 cap
 - NEVER allow turnover tax for professional services
 - NEVER use prior year income for provisional tax (SA uses estimated current year)
 - NEVER treat medical credits as income deductions
 - NEVER allow home office for dual-use rooms
+- NEVER claim home office without warning the client of the CGT consequence on disposal of the residence (Eighth Schedule para 47)
 - NEVER allow income tax as a deduction
 - NEVER present calculations as definitive
 
@@ -374,7 +374,7 @@ Step-by-step per Section 5: gross income, deductions, taxable income, tax, rebat
 1. Income Tax Act 58 of 1962
 2. Tax Administration Act 28 of 2011
 3. SARS Interpretation Notes (IN 28, IN 47, IN 14)
-4. SARS eFiling -- https://www.sarsefiling.co.za
+4. SARS eFiling -- https://www.sars.gov.za
 
 ### Disclaimer
 

@@ -21,6 +21,12 @@ The AI will:
 - Produce working papers for each tax obligation
 - Flag anything that needs your SAIPA/SAICA member's attention
 
+## Validated by
+
+These skills were validated in May 2026 by **Werner Britz CA(SA)**, founder of [Spurwing CFO](https://spurwingcfo.com) — a fractional CFO practice operating across South Africa, the UK, Switzerland, and the United States. Werner is a Chartered Accountant (SA) with senior finance experience at PricewaterhouseCoopers (across three continents), WesBank Corporate (FirstRand Group), Grandmark International, and The House of Busby. Based in Gauteng, South Africa.
+
+All rates, thresholds, and rules are current for the **2026/2027 year of assessment** (1 March 2026 to 28 February 2027).
+
 ## Important
 
 **This is not tax advice.** Everything produced must be reviewed and signed off by a qualified SAIPA/SAICA member before filing.
@@ -32,16 +38,6 @@ The most up-to-date, verified version of these skills is maintained at [openacco
 ## Found an error? Improve this skill.
 
 Tax rules change. Rates get updated. Thresholds move. If something in these files is wrong for your country:
-
-1. Use Claude or ChatGPT with deep research to verify: *"Search [country] tax authority website for current VAT rate and compare against this skill"*
-2. Fork the repo: [github.com/openaccountants/openaccountants](https://github.com/openaccountants/openaccountants)
-3. Fix the error in `skills/` (the source files)
-4. Submit a PR — your name goes on the skill as a verified contributor
-
-Know a vendor pattern we're missing? Know how your local bank formats statements? Every pattern you add saves the next user from a misclassification.
-
-**Contributors get credited at [openaccountants.com](https://openaccountants.com)**
-
 ---
 
 *OpenAccountants — open-source tax computation skills*
