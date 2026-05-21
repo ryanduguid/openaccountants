@@ -1,0 +1,11 @@
+{
+  "$schema": "https://glama.ai/mcp/schemas/server.json",
+  "maintainers": [
+    "michaelcutajar1995"
+  ],
+  "related_servers": [
+    "stripe/agent-toolkit",
+    "QuantConnect/mcp-server",
+    "openMF/mcp-mifosx"
+  ]
+}
