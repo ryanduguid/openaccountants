@@ -4,8 +4,10 @@
     "michaelcutajar1995"
   ],
   "related_servers": [
-    "stripe/agent-toolkit",
+    "norman-finance/norman-mcp-server",
+    "jeremycharlesgillespie/excel-mcp",
+    "stefanoamorelli/sec-edgar-mcp",
     "QuantConnect/mcp-server",
-    "openMF/mcp-mifosx"
+    "kukapay/freqtrade-mcp"
   ]
 }
