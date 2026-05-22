@@ -2,7 +2,7 @@
 
 # OpenAccountants
 
-Open-source tax computation skills for AI. **438 skills across 133 countries + 51 US state packages.**
+Open-source tax computation skills for AI. **482 skills across 133 countries + 51 US state packages.**
 
 Upload to Claude, ChatGPT, or any LLM with your bank statement — or connect via **[MCP](#mcp-server)** so your AI loads the right country's tax skills automatically. Get a working paper ready for your accountant and **cut your accounting bill by 80%.**
 
