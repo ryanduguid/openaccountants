@@ -1,6 +1,6 @@
 # Skill Promotion Playbook — Q3 → Q2 → Q1
 
-How to systematically turn 178 AI-drafted skills into battle-tested production skills.
+How to systematically turn 178 AI-drafted skills into accountant-verified production skills.
 
 ---
 
@@ -105,7 +105,7 @@ This means an EU VAT skill verification is ~30 min instead of ~50 min. A single 
 
 ## Part 2 — Promoting Q2 → Q1 (Real-Data Testing)
 
-### What "battle-tested" actually means
+### What "accountant-verified" actually means
 
 A skill is Q1 when it has processed real transactions and produced output that a practitioner would sign. Specifically:
 
@@ -218,7 +218,7 @@ For jurisdictions where real data is hard to get:
 
 | Tier | Target count |
 |------|-------------|
-| Q1 — Battle-tested | 15–20 skills across 8–10 jurisdictions |
+| Q1 — Accountant-verified | 15–20 skills across 8–10 jurisdictions |
 | Q2 — Verified | 50–60 skills |
 | Q3 — AI-drafted | ~170 skills (decreasing as they promote) |
 | Q4 — Stubs | ~60 (being filled by agents + contributors) |
@@ -232,7 +232,7 @@ When a skill is loaded on openaccountants.com, the quality tier is visible:
 ```
 ┌─────────────────────────────────────────────┐
 │  Germany VAT Return (UStVA) v0.1            │
-│  ████████████ BATTLE-TESTED                 │
+│  ████████████ ACCOUNTANT-VERIFIED            │
 │                                             │
 │  Verified by: [Practitioner name], StB      │
 │  Tested against: Real client data (3 files) │
@@ -276,7 +276,7 @@ When a skill is loaded on openaccountants.com, the quality tier is visible:
 | Partner provides data + reviews output | $0–$100 | 3–7 days |
 | Paid practitioner test | $200–$500 | 5–10 days |
 
-### Budget scenario: 50 skills verified + 15 battle-tested in 6 months
+### Budget scenario: 50 skills verified + 15 accountant-verified in 6 months
 
 | Line item | Cost |
 |-----------|------|

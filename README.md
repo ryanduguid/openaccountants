@@ -25,7 +25,7 @@ Read this before you trust any output.
 
 - **LLMs hallucinate and misread.** These files steer the model; they do not guarantee correct numbers, classifications, or filings. Always have a qualified professional review before you act.
 - **Tax law changes.** Rates, thresholds, and forms go out of date. The repo is a snapshot; [openaccountants.com](https://openaccountants.com) may be ahead of what you cloned.
-- **Verification is tiered, not binary.** Most skills are **not** “battle-tested by a practitioner on real client data.” We publish [Q1–Q5 tiers](docs/QUALITY-TIERS.md): **Q1** is the bar for that; **Q2** is research-verified to authority sites but not yet proven on real statements; **Q3** is AI-drafted with citations but not independently verified. **Many skills are Q3 or below** — check the tier for the file you use.
+- **Verification is tiered, not binary.** Most skills are **not** “accountant-verified on real client data.” We publish [Q1–Q4 tiers](docs/QUALITY-TIERS.md): **Q1** is the bar for that; **Q2** is research-verified to authority sites but not yet proven on real statements; **Q3** is AI-drafted with citations but not independently verified. **Many skills are Q3 or below** — check the tier for the file you use.
 - **Coverage is uneven.** Only **eight** countries ship the full guided stack (VAT + income tax + SSC + walkthrough) in this repo; dozens more have multiple skills without that guided path; **many** jurisdictions are **VAT/GST-only** or partial. See **Coverage** below and each country folder’s README.
 
 Honesty is the point: if you know where the gaps are, you can use the project safely. Skeptics welcome.
@@ -166,11 +166,11 @@ When uncertain, the system always assumes MORE tax, never less. Your accountant 
 
 ## Quality tiers
 
-Skills are **partially** verified at best unless you confirm the tier. **Q1** means practitioner sign-off on real data; most files are **not** Q1. Full definitions (including Q4/Q5): [docs/QUALITY-TIERS.md](docs/QUALITY-TIERS.md).
+Skills are **partially** verified at best unless you confirm the tier. **Q1** means practitioner sign-off on real data; most files are **not** Q1. Full definitions: [docs/QUALITY-TIERS.md](docs/QUALITY-TIERS.md).
 
 | Tier | What it means |
 |------|--------------|
-| **Q1 — Battle-tested** | Run against real bank statements. Multiple iterations. Practitioner signed off. |
+| **Q1 — Accountant-verified** | Run against real bank statements. Multiple iterations. Licensed practitioner signed off. |
 | **Q2 — Research-verified** | Every rate verified against tax authority websites. Not yet tested on real data. |
 | **Q3 — AI-drafted** | Full structure and citations. Not independently verified. |
 

@@ -4,15 +4,14 @@ How we measure whether a skill is actually ready for production use.
 
 ---
 
-## The five quality tiers
+## The four quality tiers
 
 | Tier | Label | What it means | Badge |
 |------|-------|--------------|-------|
-| **Q1** | **Battle-tested** | Skill has been run against real client bank statements, real transactions, and real filings. Gone through multiple iterations. Output was reviewed and signed off by a licensed practitioner. Errors found during real use have been corrected. This skill has survived contact with reality. | `battle-tested` |
-| **Q2** | **Research-verified, Q1 format** | Skill follows the Q1 execution format (Step 0 → Step N). Every rate, threshold, form number, and deadline has been cross-checked against authoritative sources via deep research. Structure matches the battle-tested skills exactly. But it has not yet been tested against real transaction data. | `verified` |
+| **Q1** | **Accountant-verified** | Skill has been run against real client bank statements, real transactions, and real filings. Gone through multiple iterations. Output was reviewed and signed off by a licensed practitioner. Errors found during real use have been corrected. | `accountant-verified` |
+| **Q2** | **Research-verified, Q1 format** | Skill follows the Q1 execution format (Step 0 → Step N). Every rate, threshold, form number, and deadline has been cross-checked against authoritative sources via deep research. Structure matches the accountant-verified skills exactly. But it has not yet been tested against real transaction data. | `verified` |
 | **Q3** | **AI-drafted** | Skill was drafted by Claude from training data. May be in Step format (119 skills) or Section format (56 skills). Has citations, edge cases, test suites — but facts have not been independently verified and format may not match Q1. | `draft` |
 | **Q4** | **Stub with metadata** | Skill file exists with correct frontmatter, scope statement, and dependency chain, but computation rules and rates are placeholder or empty. | `stub` |
-| **Q5** | **Planned** | Skill is listed in the taxonomy but no file exists yet. | — |
 
 ---
 
@@ -24,7 +23,7 @@ This is entirely automatable with Claude Code. Two things must happen:
 
 #### A. Restructure to Q1 format
 
-The skill must follow the exact execution order proven in battle-tested skills:
+The skill must follow the exact execution order proven in accountant-verified skills:
 
 ```
 ## Skill Metadata                          ← who, what, where
@@ -95,7 +94,7 @@ This requires humans and real data. Cannot be automated.
 
 ## Part 2 — Current inventory
 
-### Q1 — Battle-tested (7 skills)
+### Q1 — Accountant-verified (7 skills)
 
 | Skill | Jurisdiction | Iterations | Data |
 |-------|-------------|------------|------|
@@ -131,10 +130,6 @@ This requires humans and real data. Cannot be automated.
 ### Q4 — Stubs (~60 skills)
 
 Income tax, social contributions, estimated tax stubs across all jurisdictions.
-
-### Q5 — Planned
-
-Skills in taxonomy with no file yet.
 
 ---
 
@@ -238,7 +233,7 @@ For each Q3 skill, an agent runs this exact process:
 ```
 ┌─────────────────────────────────────────────┐
 │  Malta VAT Return v1.0                      │
-│  ████████████ BATTLE-TESTED (Q1)            │
+│  ████████████ ACCOUNTANT-VERIFIED (Q1)      │
 │                                             │
 │  Verified by: [Practitioner name], CPA      │
 │  Tested against: Real client data           │

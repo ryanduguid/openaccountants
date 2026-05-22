@@ -29,6 +29,6 @@ Malta, United Kingdom, Germany, Australia, Canada, India, Spain, United States (
 - Build script generates packages from source skills
 
 #### Quality
-- Q1 (battle-tested): Malta VAT/IT/SSC, Germany VAT, US federal bookkeeping/SE
+- Q1 (accountant-verified): Malta VAT/IT/SSC, Germany VAT, US federal bookkeeping/SE
 - Q2 (research-verified): ~200 skills verified against tax authority websites
 - Deep research caught 200+ errors across 100+ countries during verification

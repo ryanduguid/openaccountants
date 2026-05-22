@@ -14,7 +14,7 @@ All copy is ready to paste. Edit to taste, then post.
 
 We open-sourced 371 tax classification skills covering 134 countries — VAT/GST, income tax, social contributions. Upload them to Claude, ChatGPT, or any LLM alongside your bank statement, and you get a working paper ready for your accountant's review.
 
-The honest part: most of these skills are Q3 (AI-drafted with citations, not independently verified). Eight countries are Q1 (battle-tested by a practitioner on real data). We publish the quality tier for every file so you know exactly what you're trusting. We think radical transparency about quality is more useful than pretending everything is production-ready.
+The honest part: most of these skills are Q3 (AI-drafted with citations, not independently verified). Eight countries are Q1 (accountant-verified on real data). We publish the quality tier for every file so you know exactly what you're trusting. We think radical transparency about quality is more useful than pretending everything is production-ready.
 
 How it works: every transaction on your bank statement gets one of three outcomes — Classified (enough info), Assumed (conservative default applied, flagged for reviewer), or Needs Input (one targeted question). When uncertain, the system always assumes more tax, never less.
 
@@ -28,7 +28,7 @@ We're looking for accountants and tax professionals in any country to verify the
 
 **GPT Name:** `OpenAccountants — AI Tax Prep (134 Countries)`
 
-**GPT Description:** `Open-source tax classification for 134 countries. Upload your bank statement, get a working paper for your accountant. VAT/GST, income tax, social contributions. Quality-tiered Q1–Q5.`
+**GPT Description:** `Open-source tax classification for 134 countries. Upload your bank statement, get a working paper for your accountant. VAT/GST, income tax, social contributions. Quality-tiered Q1–Q4.`
 
 **System Instructions (paste into GPT Builder "Instructions"):**
 
@@ -91,7 +91,7 @@ We built OpenAccountants — an open-source set of tax skills that you upload to
 
 134 countries covered. 8 have the full guided experience (Malta, UK, Germany, Australia, Canada, India, Spain, US-CA). The rest have varying levels of coverage.
 
-We're transparent about quality: every skill has a tier from Q1 (battle-tested on real data by a practitioner) to Q5 (stub). Most are Q3 — AI-drafted with citations but not independently verified. We publish the tier so you know what you're trusting.
+We're transparent about quality: every skill has a tier from Q1 (accountant-verified on real data) to Q4 (stub). Most are Q3 — AI-drafted with citations but not independently verified. We publish the tier so you know what you're trusting.
 
 The idea: your accountant charges by the hour. Most of that time is classifying transactions. These skills do that work before the meeting. Your accountant reviews in 20 minutes instead of 3 hours.
 
@@ -145,7 +145,7 @@ Three tools: `list_jurisdictions`, `list_files(country)`, `get_file(country, fil
 
 Works with Claude Desktop, Cursor, or any MCP-compatible client. Stdio transport. The skills themselves cover VAT/GST, income tax, and social contributions — upload a bank statement and get a classified working paper.
 
-Quality is tiered Q1–Q5 (Q1 = practitioner-tested, Q3 = AI-drafted). We're honest about where the gaps are.
+Quality is tiered Q1–Q4 (Q1 = accountant-verified, Q3 = AI-drafted). We're honest about where the gaps are.
 
 GitHub: https://github.com/openaccountants/openaccountants
 PyPI: https://pypi.org/project/openaccountants-mcp/
@@ -187,7 +187,7 @@ The rest have varying coverage — many are VAT/GST only.
 We're radically honest about quality.
 
 Every skill has a tier:
-- Q1: Battle-tested on real data by a practitioner
+- Q1: Accountant-verified on real data
 - Q2: Research-verified against tax authority sites
 - Q3: AI-drafted with citations, not independently verified
 
@@ -255,7 +255,7 @@ They were right.
 
 It's admitting that most of your AI-generated tax skills haven't been verified by a human yet.
 
-So we publish the quality tier for every file. Q1 = battle-tested. Q3 = AI-drafted. Most are Q3.
+So we publish the quality tier for every file. Q1 = accountant-verified. Q3 = AI-drafted. Most are Q3.
 
 Honesty is the product.
 

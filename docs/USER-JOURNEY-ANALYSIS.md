@@ -165,7 +165,7 @@ Claude produces the working papers. Maria gets:
 ### Q3: What's the minimum viable skill set per jurisdiction?
 
 For Malta, do we NEED all 8 files? What if we just had:
-- `malta-vat-return.md` — the one skill that's Q1, battle-tested, has the supplier pattern library
+- `malta-vat-return.md` — the one skill that's Q1, accountant-verified, has the supplier pattern library
 - That's it. Just VAT. Not income tax, not SSC. Just the one thing that works perfectly.
 
 And then income tax is a separate download. SSC is a separate download. Each one works standalone.
