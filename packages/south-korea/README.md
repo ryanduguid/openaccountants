@@ -10,7 +10,9 @@
 3. `kr-income-tax.md`
 4. `kr-social-insurance.md`
 5. `references.md`
-6. `south-korea-vat.md`
+6. `south-korea-crypto-tax.md`
+7. `south-korea-vat.md`
+8. `crypto-tax-workflow-base.md`
 
 ## Also known as
 

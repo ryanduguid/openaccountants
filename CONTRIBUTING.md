@@ -19,11 +19,22 @@ Anyone. You don't need to be an accountant to write a skill. You need to know yo
 
 1. Fork this repo
 2. Create your skill in the appropriate **source** directory (`skills/federal/`, `skills/us-states/[code]/`, `skills/international/[country]/`, etc.)
-3. Follow the [skill template](skill-template.md)
+3. Follow the [skill template](docs/skill-template.md)
 4. Run `python3 scripts/build-packages.py` to regenerate packages
 5. Open a PR with a description of what tax forms/schedules the skill covers
 
 > **Important:** never edit files under `packages/` directly. Packages are generated from `skills/` by `scripts/build-packages.py` and will be overwritten on the next build.
+
+## Website sync rule
+
+Every skill in `skills/` that should appear on [openaccountants.com](https://openaccountants.com) must either:
+
+1. Live in a **recognized country folder** (`skills/international/<country>/`, `skills/federal/`, `skills/us-states/<code>/`), **or**
+2. Include **`jurisdiction:` in YAML frontmatter** (e.g. `MT`, `GB`, `US`, `US-CA`, `GLOBAL`, `INTL`)
+
+**Merging to `main` does not publish to the site.** After merge, someone runs **Sync Skills** in the web app repo. Sync reads `skills/` only — not `packages/`. Files without a resolvable jurisdiction are **skipped** and will not appear on the website.
+
+Full details: [docs/WEBSITE-SYNC.md](docs/WEBSITE-SYNC.md)
 
 ## Skill structure
 
@@ -52,6 +63,7 @@ The `category` field in YAML frontmatter tells the system what domain a skill co
 | `financial-statements` | Annual accounts, reporting, audit | `france-financial-statements.md` |
 | `transfer-pricing` | TP documentation, arm's length, CbCR | `india-transfer-pricing.md` |
 | `tax-optimization` | Legal tax reduction strategies, timing, deductions | `malta-tax-optimization.md` |
+| `crypto` | Cryptocurrency and digital asset taxation | `uk-crypto-tax.md` |
 | `cross-border` | Multi-jurisdiction coordination, treaties, WHT | `eu-social-security-coordination.md` |
 | `vertical` | Industry-specific accounting patterns | `freelance-developer.md` |
 | `integration` | Platform export formats, column mappings | `stripe-integration.md` |
@@ -73,18 +85,35 @@ All domain skills for a country live in the same directory (e.g., `skills/intern
 - **Financial statements skills** load on top of `financial-statements-workflow-base` (in `skills/foundation/`)
 - **Transfer pricing skills** load on top of `transfer-pricing-workflow-base` (in `skills/foundation/`)
 - **Tax optimization skills** are standalone — no separate workflow base; they follow the universal `workflow-base.md`
+- **Crypto tax skills** load on top of `crypto-tax-workflow-base` (in `skills/foundation/`)
 - **Cross-border skills** load on top of `cross-border-workflow-base` (in `skills/foundation/`)
 - **Vertical skills** (industry-specific) and **integration skills** (platform-specific) are standalone in `skills/verticals/` and `skills/integrations/`
 - Citation format: for US, cite IRC sections, state statutes, or IRS notices; for international, cite the relevant tax authority and legislation
 
 ## Where to put your files
 
+### Quick reference — common cases
+
+| You're writing… | Put it here | Example |
+|-----------------|-------------|---------|
+| Country-specific (Malta crypto, UK VAT, Germany payroll) | `skills/international/[country]/` | `skills/international/malta/mt-crypto-tax.md` |
+| US federal | `skills/federal/` | `skills/federal/us-crypto-tax.md` |
+| US state | `skills/us-states/[code]/` | `skills/us-states/ny/ny-income-tax.md` |
+| Global / cross-border (not one country) | `skills/cross-border/` + `jurisdiction:` in frontmatter | `skills/cross-border/oecd-model-treaty-defaults.md` with `jurisdiction: INTL` |
+| Industry vertical (developer, e-commerce) | `skills/verticals/` + `jurisdiction: GLOBAL` | `skills/verticals/freelance-developer.md` |
+| Platform integration (Stripe, Xero) | `skills/integrations/` + `jurisdiction: GLOBAL` | `skills/integrations/stripe-integration.md` |
+| If unsure | Same folder as related skills + **`jurisdiction: XX`** in frontmatter | `jurisdiction: JP`, `MT`, `GLOBAL`, `US`, `US-CA`, etc. |
+
+**Rule:** Folder path is the primary signal. Frontmatter `jurisdiction:` is the backup — use it even when the folder makes it obvious.
+
+### Full directory map
+
 | What you're editing | Source directory |
 |---------------------|-----------------|
 | US federal skills | `skills/federal/` |
 | US state skills | `skills/us-states/[two-letter code]/` |
 | International country skills (all domains) | `skills/international/[country-slug]/` |
-| Foundation workflow bases | `skills/foundation/` |
+| Foundation workflow bases | `skills/foundation/` (usually MCP/packages only, not website sync) |
 | Cross-border / treaty corridor rules | `skills/cross-border/` (subdirectory `treaty-corridors/` for WHT rates) |
 | Industry vertical skills | `skills/verticals/` |
 | Platform integration skills | `skills/integrations/` |

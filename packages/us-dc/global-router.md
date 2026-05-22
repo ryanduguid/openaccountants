@@ -137,6 +137,7 @@ Identify which of the 10 accounting domains the user needs. A single query may t
 | "transfer pricing", "intercompany", "arm's length", "CbCR", "related party", "TP documentation" | **Transfer pricing** | Country transfer-pricing skill + `transfer-pricing-workflow-base` |
 | "save tax", "reduce tax", "optimize", "deductions I'm missing", "tax planning", "restructure" | **Tax optimization** | Country tax-optimization skill |
 | "two countries", "cross-border", "moved abroad", "foreign clients", "treaty", "relocated", "digital nomad" | **Cross-border** | `cross-border-workflow-base` + relevant country skills |
+| "crypto", "bitcoin", "ethereum", "staking", "mining", "NFT", "DeFi", "airdrop", "token", "Coinbase", "Binance", "Form 8949", "digital assets" | **Crypto tax** | Country crypto-tax skill + `crypto-tax-workflow-base` |
 | "Stripe export", "Xero", "QuickBooks", "PayPal download", "bank CSV", "Wise", "Revolut", "Shopify", "FreeAgent", "Sage" | **Platform integration** | Relevant integration skill from `_integrations/` |
 
 ### B. Business type detection
@@ -185,6 +186,8 @@ Users often need multiple domains at once. When you detect overlapping needs, lo
 | "I need to set up payroll for my new company" | Formation + payroll |
 | "Annual accounts and tax return" | Financial statements + tax |
 | "I sell on Shopify to customers in the EU" | E-invoicing + cross-border VAT + `ecommerce-seller` vertical + `shopify-integration` |
+| "I have crypto / Bitcoin / staking rewards" | Crypto tax + country tax skill (gains affect total income) |
+| "I mine crypto as a side business" | Crypto tax + bookkeeping + tax (business income) |
 
 ### D. Side hustle / dual income detection
 
@@ -209,7 +212,7 @@ If the user mentions BOTH employment AND self-employment:
 | Partnership TAX RETURNS (multi-member LLC, LLP) | Refuse | Different forms, allocation rules, K-1 complexity |
 | Corporate TAX RETURNS (Ltd, GmbH, S-corp, C-corp) | Refuse | Corporate tax is fundamentally different |
 | Large corporate groups with complex structures | Refuse | Consolidation, group relief, multi-entity tax — specialist territory |
-| Day trading / crypto as PRIMARY activity | Refuse | Capital gains, DeFi, staking — specialist territory |
+| Day trading with hundreds of leveraged positions daily | Refuse | Requires real-time portfolio tracking beyond skill scope |
 | Multi-country split-year residency | Refuse | Tax treaties, allocation, dual residency — specialist |
 | Amended returns / audit defense | Refuse | Requires review of original return and correspondence |
 | Trust / estate income | Refuse | Fiduciary rules, different forms |
@@ -231,7 +234,7 @@ If the user mentions BOTH employment AND self-employment:
 
 | Trigger | Action |
 |---------|--------|
-| Small crypto holdings (not trading) | Flag for reviewer — capital gains reporting |
+| Crypto holdings (trading or investment) | **IN SCOPE** — load country crypto-tax skill + crypto-tax-workflow-base |
 | Foreign income / clients abroad | Load cross-border skills, flag for reviewer |
 | Multiple businesses / trades | Handle each separately, flag for reviewer |
 | First year in business | Flag — may qualify for special reliefs (ACRE, tarifa plana, startersaftrek) |
@@ -301,6 +304,7 @@ Not every country has skills for every domain. Here is the current coverage:
 | **Financial statements** | AU, BE, CA, DE, ES, FR, GB, IN, IT, JP, MT, NL, PT | 13 |
 | **Transfer pricing** | AU, BR, CA, DE, ES, FR, GB, IN, IT, JP, MX, MT, NL, SG, ZA | 15 |
 | **Tax optimization** | AU, CA, DE, ES, FR, GB, IN, IT, JP, MT, NL, PT, SG | 13 |
+| **Crypto tax** | AU, BE, BR, CA, CH, DE, ES, FR, GB, IL, IN, IT, JP, KR, MT, MX, NL, NZ, PT, SE, SG, US | 22 |
 
 When a domain skill exists for the user's country, load both the country-specific skill AND the foundation workflow base for that domain.
 

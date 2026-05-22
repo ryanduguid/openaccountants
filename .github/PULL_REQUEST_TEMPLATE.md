@@ -16,6 +16,14 @@ If you cannot agree, do not open this PR — contact **info@openaaccountants.com
 
 ## Checklist
 
+### Repo & sync (required)
+
+- [ ] File is in `skills/` (not only `packages/`)
+- [ ] Jurisdiction is clear (folder path or `jurisdiction:` in frontmatter)
+- [ ] Ran `python3 scripts/build-packages.py` if packages should update
+
+### Content quality
+
 - [ ] Rates and thresholds cite a primary source (statute, tax authority website)
 - [ ] No inline [T1]/[T2]/[T3] tags (tiers are sections, not inline tags)
 - [ ] Supplier/transaction pattern library included (if content skill)

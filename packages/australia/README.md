@@ -27,8 +27,9 @@
 20. `company-formation-workflow-base.md`
 21. `financial-statements-workflow-base.md`
 22. `transfer-pricing-workflow-base.md`
-23. `australia-guided-intake.md`
-24. `australia-return-assembly.md`
+23. `crypto-tax-workflow-base.md`
+24. `australia-guided-intake.md`
+25. `australia-return-assembly.md`
 
 ## Also known as
 

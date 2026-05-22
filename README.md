@@ -2,9 +2,9 @@
 
 # OpenAccountants
 
-Open-source accounting skills for AI. **697 skills across 134 countries + 51 US state packages.**
+Open-source accounting skills for AI. **713 skills across 134 countries + 51 US state packages.**
 
-**10 accounting domains:** tax, bookkeeping, e-invoicing, payroll, company formation, financial statements, transfer pricing, tax optimization, cross-border, plus industry verticals and platform integrations.
+**11 accounting domains:** tax, bookkeeping, e-invoicing, payroll, company formation, financial statements, transfer pricing, tax optimization, **crypto tax**, cross-border, plus industry verticals and platform integrations.
 
 Upload to Claude, ChatGPT, or any LLM with your bank statement — or connect via **[MCP](#mcp-server)** so your AI loads the right skills automatically. Get a working paper ready for your accountant and **cut your accounting bill by 80%.**
 
@@ -125,6 +125,7 @@ Every country folder contains:
 | `[country]-financial-statements.md` | Annual accounts, reporting framework, filing, audit | No — 13 countries |
 | `[country]-transfer-pricing.md` | TP documentation, arm's length, CbCR, penalties | No — 15 countries |
 | `[country]-tax-optimization.md` | Legal tax reduction strategies, deductions you're missing, timing | No — 13 countries |
+| `[country]-crypto-tax.md` | Cryptocurrency/digital asset taxation, cost basis, DeFi, staking, NFTs | No — 22 countries |
 | `[country]-guided-intake.md` | Full guided experience with detailed inference (if available) | No — 13 countries have this |
 | `[country]-return-assembly.md` | Cross-checks between VAT, IT, and SSC (if available) | No — 13 countries have this |
 
@@ -211,6 +212,12 @@ Malta, UK, Germany, France, Italy, Spain, Netherlands, Australia, Canada, Japan,
 Legal tax reduction strategies, commonly missed deductions, timing optimizations, entity structure advice:
 
 Malta, UK, Germany, France, Italy, Spain, Netherlands, Australia, Canada, Japan, India, Portugal, Singapore
+
+### Crypto tax (22 countries)
+
+Cryptocurrency and digital asset taxation — capital gains, cost basis, DeFi, staking, mining, airdrops, NFTs, reporting:
+
+US, Malta, UK, Germany, France, Australia, Canada, Israel, India, Japan, Spain, Netherlands, Portugal, Italy, Singapore, Brazil, Mexico, Sweden, Belgium, Switzerland, South Korea, New Zealand
 
 ### Cross-border orchestrator
 
@@ -362,7 +369,7 @@ python3 scripts/build-packages.py
 
 ## Contribute
 
-We maintain 697 skills across 134 countries. Accounting rules change constantly — rates update, thresholds move, forms get revised. Contributions keep this accurate.
+We maintain 713 skills across 134 countries. Accounting rules change constantly — rates update, thresholds move, forms get revised. Contributions keep this accurate.
 
 ### Ways to contribute
 
@@ -399,7 +406,7 @@ We maintain 697 skills across 134 countries. Accounting rules change constantly 
 
 Every contributor is credited publicly on the skill file and at [openaccountants.com](https://openaccountants.com).
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for the full guide.
+See [CONTRIBUTING.md](CONTRIBUTING.md) for the full guide. Skills published to [openaccountants.com](https://openaccountants.com) require a resolvable jurisdiction — see [docs/WEBSITE-SYNC.md](docs/WEBSITE-SYNC.md).
 
 **Pull requests:** contributions are accepted under the [Contributor License Agreement (CLA.md)](CLA.md). You explicitly agree by ticking the CLA box in the [pull request template](.github/PULL_REQUEST_TEMPLATE.md) when you open a PR.
 

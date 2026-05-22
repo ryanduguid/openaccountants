@@ -20,7 +20,8 @@
       "has_formation": false,
       "has_financial_statements": false,
       "has_transfer_pricing": false,
-      "has_tax_optimization": false
+      "has_tax_optimization": false,
+      "has_crypto": false
     },
     {
       "jurisdiction": "DZ",
@@ -38,7 +39,8 @@
       "has_formation": false,
       "has_financial_statements": false,
       "has_transfer_pricing": false,
-      "has_tax_optimization": false
+      "has_tax_optimization": false,
+      "has_crypto": false
     },
     {
       "jurisdiction": "AD",
@@ -56,7 +58,8 @@
       "has_formation": false,
       "has_financial_statements": false,
       "has_transfer_pricing": false,
-      "has_tax_optimization": false
+      "has_tax_optimization": false,
+      "has_crypto": false
     },
     {
       "jurisdiction": "AR",
@@ -79,7 +82,8 @@
       "has_formation": false,
       "has_financial_statements": false,
       "has_transfer_pricing": false,
-      "has_tax_optimization": false
+      "has_tax_optimization": false,
+      "has_crypto": false
     },
     {
       "jurisdiction": "AM",
@@ -97,7 +101,8 @@
       "has_formation": false,
       "has_financial_statements": false,
       "has_transfer_pricing": false,
-      "has_tax_optimization": false
+      "has_tax_optimization": false,
+      "has_crypto": false
     },
     {
       "jurisdiction": "AU",
@@ -125,6 +130,7 @@
         "company-formation-workflow-base.md",
         "financial-statements-workflow-base.md",
         "transfer-pricing-workflow-base.md",
+        "crypto-tax-workflow-base.md",
         "australia-guided-intake.md",
         "australia-return-assembly.md"
       ],
@@ -136,7 +142,8 @@
       "has_formation": true,
       "has_financial_statements": true,
       "has_transfer_pricing": true,
-      "has_tax_optimization": true
+      "has_tax_optimization": true,
+      "has_crypto": true
     },
     {
       "jurisdiction": "AT",
@@ -157,7 +164,8 @@
       "has_formation": false,
       "has_financial_statements": false,
       "has_transfer_pricing": false,
-      "has_tax_optimization": false
+      "has_tax_optimization": false,
+      "has_crypto": false
     },
     {
       "jurisdiction": "AZ",
@@ -175,7 +183,8 @@
       "has_formation": false,
       "has_financial_statements": false,
       "has_transfer_pricing": false,
-      "has_tax_optimization": false
+      "has_tax_optimization": false,
+      "has_crypto": false
     },
     {
       "jurisdiction": "BS",
@@ -193,7 +202,8 @@
       "has_formation": false,
       "has_financial_statements": false,
       "has_transfer_pricing": false,
-      "has_tax_optimization": false
+      "has_tax_optimization": false,
+      "has_crypto": false
     },
     {
       "jurisdiction": "BH",
@@ -211,7 +221,8 @@
       "has_formation": false,
       "has_financial_statements": false,
       "has_transfer_pricing": false,
-      "has_tax_optimization": false
+      "has_tax_optimization": false,
+      "has_crypto": false
     },
     {
       "jurisdiction": "BD",
@@ -231,7 +242,8 @@
       "has_formation": false,
       "has_financial_statements": false,
       "has_transfer_pricing": false,
-      "has_tax_optimization": false
+      "has_tax_optimization": false,
+      "has_crypto": false
     },
     {
       "jurisdiction": "BB",
@@ -249,7 +261,8 @@
       "has_formation": false,
       "has_financial_statements": false,
       "has_transfer_pricing": false,
-      "has_tax_optimization": false
+      "has_tax_optimization": false,
+      "has_crypto": false
     },
     {
       "jurisdiction": "BY",
@@ -267,7 +280,8 @@
       "has_formation": false,
       "has_financial_statements": false,
       "has_transfer_pricing": false,
-      "has_tax_optimization": false
+      "has_tax_optimization": false,
+      "has_crypto": false
     },
     {
       "jurisdiction": "BE",
@@ -278,6 +292,7 @@
         "be-income-tax.md",
         "be-social-contributions.md",
         "belgium-bookkeeping.md",
+        "belgium-crypto-tax.md",
         "belgium-einvoice.md",
         "belgium-financial-statements.md",
         "belgium-payroll.md",
@@ -286,17 +301,19 @@
         "bookkeeping-workflow-base.md",
         "einvoice-workflow-base.md",
         "payroll-workflow-base.md",
-        "financial-statements-workflow-base.md"
+        "financial-statements-workflow-base.md",
+        "crypto-tax-workflow-base.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 7,
+      "skill_count": 8,
       "has_bookkeeping": true,
       "has_einvoice": true,
       "has_payroll": true,
       "has_formation": false,
       "has_financial_statements": true,
       "has_transfer_pricing": false,
-      "has_tax_optimization": false
+      "has_tax_optimization": false,
+      "has_crypto": true
     },
     {
       "jurisdiction": "BM",
@@ -314,7 +331,8 @@
       "has_formation": false,
       "has_financial_statements": false,
       "has_transfer_pricing": false,
-      "has_tax_optimization": false
+      "has_tax_optimization": false,
+      "has_crypto": false
     },
     {
       "jurisdiction": "BO",
@@ -332,7 +350,8 @@
       "has_formation": false,
       "has_financial_statements": false,
       "has_transfer_pricing": false,
-      "has_tax_optimization": false
+      "has_tax_optimization": false,
+      "has_crypto": false
     },
     {
       "jurisdiction": "BA",
@@ -350,7 +369,8 @@
       "has_formation": false,
       "has_financial_statements": false,
       "has_transfer_pricing": false,
-      "has_tax_optimization": false
+      "has_tax_optimization": false,
+      "has_crypto": false
     },
     {
       "jurisdiction": "BR",
@@ -363,6 +383,7 @@
         "br-indirect-tax.md",
         "br-inss.md",
         "br-simples-nacional.md",
+        "brazil-crypto-tax.md",
         "brazil-einvoice.md",
         "brazil-payroll.md",
         "brazil-transfer-pricing.md",
@@ -371,18 +392,20 @@
         "einvoice-workflow-base.md",
         "payroll-workflow-base.md",
         "transfer-pricing-workflow-base.md",
+        "crypto-tax-workflow-base.md",
         "brazil-guided-intake.md",
         "brazil-return-assembly.md"
       ],
       "has_orchestrator": true,
-      "skill_count": 9,
+      "skill_count": 10,
       "has_bookkeeping": false,
       "has_einvoice": true,
       "has_payroll": true,
       "has_formation": false,
       "has_financial_statements": false,
       "has_transfer_pricing": true,
-      "has_tax_optimization": false
+      "has_tax_optimization": false,
+      "has_crypto": true
     },
     {
       "jurisdiction": "BN",
@@ -400,7 +423,8 @@
       "has_formation": false,
       "has_financial_statements": false,
       "has_transfer_pricing": false,
-      "has_tax_optimization": false
+      "has_tax_optimization": false,
+      "has_crypto": false
     },
     {
       "jurisdiction": "BG",
@@ -419,7 +443,8 @@
       "has_formation": false,
       "has_financial_statements": false,
       "has_transfer_pricing": false,
-      "has_tax_optimization": false
+      "has_tax_optimization": false,
+      "has_crypto": false
     },
     {
       "jurisdiction": "VG",
@@ -437,7 +462,8 @@
       "has_formation": false,
       "has_financial_statements": false,
       "has_transfer_pricing": false,
-      "has_tax_optimization": false
+      "has_tax_optimization": false,
+      "has_crypto": false
     },
     {
       "jurisdiction": "KH",
@@ -455,7 +481,8 @@
       "has_formation": false,
       "has_financial_statements": false,
       "has_transfer_pricing": false,
-      "has_tax_optimization": false
+      "has_tax_optimization": false,
+      "has_crypto": false
     },
     {
       "jurisdiction": "CM",
@@ -473,7 +500,8 @@
       "has_formation": false,
       "has_financial_statements": false,
       "has_transfer_pricing": false,
-      "has_tax_optimization": false
+      "has_tax_optimization": false,
+      "has_crypto": false
     },
     {
       "jurisdiction": "CA",
@@ -511,6 +539,7 @@
         "company-formation-workflow-base.md",
         "financial-statements-workflow-base.md",
         "transfer-pricing-workflow-base.md",
+        "crypto-tax-workflow-base.md",
         "canada-guided-intake.md",
         "canada-return-assembly.md"
       ],
@@ -522,7 +551,8 @@
       "has_formation": true,
       "has_financial_statements": true,
       "has_transfer_pricing": true,
-      "has_tax_optimization": true
+      "has_tax_optimization": true,
+      "has_crypto": true
     },
     {
       "jurisdiction": "KY",
@@ -540,7 +570,8 @@
       "has_formation": false,
       "has_financial_statements": false,
       "has_transfer_pricing": false,
-      "has_tax_optimization": false
+      "has_tax_optimization": false,
+      "has_crypto": false
     },
     {
       "jurisdiction": "CL",
@@ -562,7 +593,8 @@
       "has_formation": false,
       "has_financial_statements": false,
       "has_transfer_pricing": false,
-      "has_tax_optimization": false
+      "has_tax_optimization": false,
+      "has_crypto": false
     },
     {
       "jurisdiction": "CN",
@@ -582,7 +614,8 @@
       "has_formation": false,
       "has_financial_statements": false,
       "has_transfer_pricing": false,
-      "has_tax_optimization": false
+      "has_tax_optimization": false,
+      "has_crypto": false
     },
     {
       "jurisdiction": "CO",
@@ -603,7 +636,8 @@
       "has_formation": false,
       "has_financial_statements": false,
       "has_transfer_pricing": false,
-      "has_tax_optimization": false
+      "has_tax_optimization": false,
+      "has_crypto": false
     },
     {
       "jurisdiction": "CR",
@@ -621,7 +655,8 @@
       "has_formation": false,
       "has_financial_statements": false,
       "has_transfer_pricing": false,
-      "has_tax_optimization": false
+      "has_tax_optimization": false,
+      "has_crypto": false
     },
     {
       "jurisdiction": "HR",
@@ -640,7 +675,8 @@
       "has_formation": false,
       "has_financial_statements": false,
       "has_transfer_pricing": false,
-      "has_tax_optimization": false
+      "has_tax_optimization": false,
+      "has_crypto": false
     },
     {
       "jurisdiction": "CY",
@@ -659,7 +695,8 @@
       "has_formation": false,
       "has_financial_statements": false,
       "has_transfer_pricing": false,
-      "has_tax_optimization": false
+      "has_tax_optimization": false,
+      "has_crypto": false
     },
     {
       "jurisdiction": "CZ",
@@ -681,7 +718,8 @@
       "has_formation": false,
       "has_financial_statements": false,
       "has_transfer_pricing": false,
-      "has_tax_optimization": false
+      "has_tax_optimization": false,
+      "has_crypto": false
     },
     {
       "jurisdiction": "DK",
@@ -702,7 +740,8 @@
       "has_formation": false,
       "has_financial_statements": false,
       "has_transfer_pricing": false,
-      "has_tax_optimization": false
+      "has_tax_optimization": false,
+      "has_crypto": false
     },
     {
       "jurisdiction": "DO",
@@ -720,7 +759,8 @@
       "has_formation": false,
       "has_financial_statements": false,
       "has_transfer_pricing": false,
-      "has_tax_optimization": false
+      "has_tax_optimization": false,
+      "has_crypto": false
     },
     {
       "jurisdiction": "EC",
@@ -738,7 +778,8 @@
       "has_formation": false,
       "has_financial_statements": false,
       "has_transfer_pricing": false,
-      "has_tax_optimization": false
+      "has_tax_optimization": false,
+      "has_crypto": false
     },
     {
       "jurisdiction": "EG",
@@ -756,7 +797,8 @@
       "has_formation": false,
       "has_financial_statements": false,
       "has_transfer_pricing": false,
-      "has_tax_optimization": false
+      "has_tax_optimization": false,
+      "has_crypto": false
     },
     {
       "jurisdiction": "SV",
@@ -774,7 +816,8 @@
       "has_formation": false,
       "has_financial_statements": false,
       "has_transfer_pricing": false,
-      "has_tax_optimization": false
+      "has_tax_optimization": false,
+      "has_crypto": false
     },
     {
       "jurisdiction": "EE",
@@ -793,7 +836,8 @@
       "has_formation": false,
       "has_financial_statements": false,
       "has_transfer_pricing": false,
-      "has_tax_optimization": false
+      "has_tax_optimization": false,
+      "has_crypto": false
     },
     {
       "jurisdiction": "ET",
@@ -811,7 +855,8 @@
       "has_formation": false,
       "has_financial_statements": false,
       "has_transfer_pricing": false,
-      "has_tax_optimization": false
+      "has_tax_optimization": false,
+      "has_crypto": false
     },
     {
       "jurisdiction": "FJ",
@@ -829,7 +874,8 @@
       "has_formation": false,
       "has_financial_statements": false,
       "has_transfer_pricing": false,
-      "has_tax_optimization": false
+      "has_tax_optimization": false,
+      "has_crypto": false
     },
     {
       "jurisdiction": "FI",
@@ -851,7 +897,8 @@
       "has_formation": false,
       "has_financial_statements": false,
       "has_transfer_pricing": false,
-      "has_tax_optimization": false
+      "has_tax_optimization": false,
+      "has_crypto": false
     },
     {
       "jurisdiction": "FR",
@@ -884,6 +931,7 @@
         "company-formation-workflow-base.md",
         "financial-statements-workflow-base.md",
         "transfer-pricing-workflow-base.md",
+        "crypto-tax-workflow-base.md",
         "france-guided-intake.md",
         "france-return-assembly.md"
       ],
@@ -895,7 +943,8 @@
       "has_formation": true,
       "has_financial_statements": true,
       "has_transfer_pricing": true,
-      "has_tax_optimization": true
+      "has_tax_optimization": true,
+      "has_crypto": true
     },
     {
       "jurisdiction": "GE",
@@ -913,7 +962,8 @@
       "has_formation": false,
       "has_financial_statements": false,
       "has_transfer_pricing": false,
-      "has_tax_optimization": false
+      "has_tax_optimization": false,
+      "has_crypto": false
     },
     {
       "jurisdiction": "DE",
@@ -944,6 +994,7 @@
         "company-formation-workflow-base.md",
         "financial-statements-workflow-base.md",
         "transfer-pricing-workflow-base.md",
+        "crypto-tax-workflow-base.md",
         "germany-guided-intake.md",
         "germany-return-assembly.md"
       ],
@@ -955,7 +1006,8 @@
       "has_formation": true,
       "has_financial_statements": true,
       "has_transfer_pricing": true,
-      "has_tax_optimization": true
+      "has_tax_optimization": true,
+      "has_crypto": true
     },
     {
       "jurisdiction": "GH",
@@ -975,7 +1027,8 @@
       "has_formation": false,
       "has_financial_statements": false,
       "has_transfer_pricing": false,
-      "has_tax_optimization": false
+      "has_tax_optimization": false,
+      "has_crypto": false
     },
     {
       "jurisdiction": "GR",
@@ -998,7 +1051,8 @@
       "has_formation": false,
       "has_financial_statements": false,
       "has_transfer_pricing": false,
-      "has_tax_optimization": false
+      "has_tax_optimization": false,
+      "has_crypto": false
     },
     {
       "jurisdiction": "GT",
@@ -1016,7 +1070,8 @@
       "has_formation": false,
       "has_financial_statements": false,
       "has_transfer_pricing": false,
-      "has_tax_optimization": false
+      "has_tax_optimization": false,
+      "has_crypto": false
     },
     {
       "jurisdiction": "HN",
@@ -1034,7 +1089,8 @@
       "has_formation": false,
       "has_financial_statements": false,
       "has_transfer_pricing": false,
-      "has_tax_optimization": false
+      "has_tax_optimization": false,
+      "has_crypto": false
     },
     {
       "jurisdiction": "HK",
@@ -1054,7 +1110,8 @@
       "has_formation": false,
       "has_financial_statements": false,
       "has_transfer_pricing": false,
-      "has_tax_optimization": false
+      "has_tax_optimization": false,
+      "has_crypto": false
     },
     {
       "jurisdiction": "HU",
@@ -1077,7 +1134,8 @@
       "has_formation": false,
       "has_financial_statements": false,
       "has_transfer_pricing": false,
-      "has_tax_optimization": false
+      "has_tax_optimization": false,
+      "has_crypto": false
     },
     {
       "jurisdiction": "IS",
@@ -1095,7 +1153,8 @@
       "has_formation": false,
       "has_financial_statements": false,
       "has_transfer_pricing": false,
-      "has_tax_optimization": false
+      "has_tax_optimization": false,
+      "has_crypto": false
     },
     {
       "jurisdiction": "IN",
@@ -1108,6 +1167,7 @@
         "in-pf-esi-employer.md",
         "in-professional-tax.md",
         "in-tds-freelance.md",
+        "india-crypto-tax.md",
         "india-einvoice.md",
         "india-financial-statements.md",
         "india-formation.md",
@@ -1121,18 +1181,20 @@
         "company-formation-workflow-base.md",
         "financial-statements-workflow-base.md",
         "transfer-pricing-workflow-base.md",
+        "crypto-tax-workflow-base.md",
         "india-guided-intake.md",
         "india-return-assembly.md"
       ],
       "has_orchestrator": true,
-      "skill_count": 12,
+      "skill_count": 13,
       "has_bookkeeping": false,
       "has_einvoice": true,
       "has_payroll": true,
       "has_formation": true,
       "has_financial_statements": true,
       "has_transfer_pricing": true,
-      "has_tax_optimization": true
+      "has_tax_optimization": true,
+      "has_crypto": true
     },
     {
       "jurisdiction": "ID",
@@ -1153,7 +1215,8 @@
       "has_formation": false,
       "has_financial_statements": false,
       "has_transfer_pricing": false,
-      "has_tax_optimization": false
+      "has_tax_optimization": false,
+      "has_crypto": false
     },
     {
       "jurisdiction": "IR",
@@ -1171,7 +1234,8 @@
       "has_formation": false,
       "has_financial_statements": false,
       "has_transfer_pricing": false,
-      "has_tax_optimization": false
+      "has_tax_optimization": false,
+      "has_crypto": false
     },
     {
       "jurisdiction": "IQ",
@@ -1189,7 +1253,8 @@
       "has_formation": false,
       "has_financial_statements": false,
       "has_transfer_pricing": false,
-      "has_tax_optimization": false
+      "has_tax_optimization": false,
+      "has_crypto": false
     },
     {
       "jurisdiction": "IE",
@@ -1212,7 +1277,8 @@
       "has_formation": false,
       "has_financial_statements": false,
       "has_transfer_pricing": false,
-      "has_tax_optimization": false
+      "has_tax_optimization": false,
+      "has_crypto": false
     },
     {
       "jurisdiction": "IM",
@@ -1230,7 +1296,8 @@
       "has_formation": false,
       "has_financial_statements": false,
       "has_transfer_pricing": false,
-      "has_tax_optimization": false
+      "has_tax_optimization": false,
+      "has_crypto": false
     },
     {
       "jurisdiction": "IL",
@@ -1246,7 +1313,8 @@
         "il-income-tax-returns.md",
         "il-tax-withholding.md",
         "israel-vat.md",
-        "references.md"
+        "references.md",
+        "crypto-tax-workflow-base.md"
       ],
       "has_orchestrator": false,
       "skill_count": 8,
@@ -1256,7 +1324,8 @@
       "has_formation": false,
       "has_financial_statements": false,
       "has_transfer_pricing": false,
-      "has_tax_optimization": false
+      "has_tax_optimization": false,
+      "has_crypto": true
     },
     {
       "jurisdiction": "IT",
@@ -1269,6 +1338,7 @@
         "it-inps-contributions.md",
         "it-irap.md",
         "italy-bookkeeping.md",
+        "italy-crypto-tax.md",
         "italy-einvoice.md",
         "italy-financial-statements.md",
         "italy-formation.md",
@@ -1283,17 +1353,19 @@
         "payroll-workflow-base.md",
         "company-formation-workflow-base.md",
         "financial-statements-workflow-base.md",
-        "transfer-pricing-workflow-base.md"
+        "transfer-pricing-workflow-base.md",
+        "crypto-tax-workflow-base.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 12,
+      "skill_count": 13,
       "has_bookkeeping": true,
       "has_einvoice": true,
       "has_payroll": true,
       "has_formation": true,
       "has_financial_statements": true,
       "has_transfer_pricing": true,
-      "has_tax_optimization": true
+      "has_tax_optimization": true,
+      "has_crypto": true
     },
     {
       "jurisdiction": "CI",
@@ -1311,7 +1383,8 @@
       "has_formation": false,
       "has_financial_statements": false,
       "has_transfer_pricing": false,
-      "has_tax_optimization": false
+      "has_tax_optimization": false,
+      "has_crypto": false
     },
     {
       "jurisdiction": "JM",
@@ -1329,7 +1402,8 @@
       "has_formation": false,
       "has_financial_statements": false,
       "has_transfer_pricing": false,
-      "has_tax_optimization": false
+      "has_tax_optimization": false,
+      "has_crypto": false
     },
     {
       "jurisdiction": "JP",
@@ -1339,6 +1413,7 @@
         "intake.md",
         "japan-bookkeeping.md",
         "japan-consumption-tax.md",
+        "japan-crypto-tax.md",
         "japan-financial-statements.md",
         "japan-formation.md",
         "japan-payroll.md",
@@ -1356,18 +1431,20 @@
         "company-formation-workflow-base.md",
         "financial-statements-workflow-base.md",
         "transfer-pricing-workflow-base.md",
+        "crypto-tax-workflow-base.md",
         "japan-guided-intake.md",
         "japan-return-assembly.md"
       ],
       "has_orchestrator": true,
-      "skill_count": 13,
+      "skill_count": 14,
       "has_bookkeeping": true,
       "has_einvoice": false,
       "has_payroll": true,
       "has_formation": true,
       "has_financial_statements": true,
       "has_transfer_pricing": true,
-      "has_tax_optimization": true
+      "has_tax_optimization": true,
+      "has_crypto": true
     },
     {
       "jurisdiction": "JO",
@@ -1385,7 +1462,8 @@
       "has_formation": false,
       "has_financial_statements": false,
       "has_transfer_pricing": false,
-      "has_tax_optimization": false
+      "has_tax_optimization": false,
+      "has_crypto": false
     },
     {
       "jurisdiction": "KZ",
@@ -1403,7 +1481,8 @@
       "has_formation": false,
       "has_financial_statements": false,
       "has_transfer_pricing": false,
-      "has_tax_optimization": false
+      "has_tax_optimization": false,
+      "has_crypto": false
     },
     {
       "jurisdiction": "KE",
@@ -1423,7 +1502,8 @@
       "has_formation": false,
       "has_financial_statements": false,
       "has_transfer_pricing": false,
-      "has_tax_optimization": false
+      "has_tax_optimization": false,
+      "has_crypto": false
     },
     {
       "jurisdiction": "XK",
@@ -1441,7 +1521,8 @@
       "has_formation": false,
       "has_financial_statements": false,
       "has_transfer_pricing": false,
-      "has_tax_optimization": false
+      "has_tax_optimization": false,
+      "has_crypto": false
     },
     {
       "jurisdiction": "KW",
@@ -1459,7 +1540,8 @@
       "has_formation": false,
       "has_financial_statements": false,
       "has_transfer_pricing": false,
-      "has_tax_optimization": false
+      "has_tax_optimization": false,
+      "has_crypto": false
     },
     {
       "jurisdiction": "LA",
@@ -1477,7 +1559,8 @@
       "has_formation": false,
       "has_financial_statements": false,
       "has_transfer_pricing": false,
-      "has_tax_optimization": false
+      "has_tax_optimization": false,
+      "has_crypto": false
     },
     {
       "jurisdiction": "LV",
@@ -1496,7 +1579,8 @@
       "has_formation": false,
       "has_financial_statements": false,
       "has_transfer_pricing": false,
-      "has_tax_optimization": false
+      "has_tax_optimization": false,
+      "has_crypto": false
     },
     {
       "jurisdiction": "LB",
@@ -1514,7 +1598,8 @@
       "has_formation": false,
       "has_financial_statements": false,
       "has_transfer_pricing": false,
-      "has_tax_optimization": false
+      "has_tax_optimization": false,
+      "has_crypto": false
     },
     {
       "jurisdiction": "LI",
@@ -1532,7 +1617,8 @@
       "has_formation": false,
       "has_financial_statements": false,
       "has_transfer_pricing": false,
-      "has_tax_optimization": false
+      "has_tax_optimization": false,
+      "has_crypto": false
     },
     {
       "jurisdiction": "LT",
@@ -1553,7 +1639,8 @@
       "has_formation": false,
       "has_financial_statements": false,
       "has_transfer_pricing": false,
-      "has_tax_optimization": false
+      "has_tax_optimization": false,
+      "has_crypto": false
     },
     {
       "jurisdiction": "LU",
@@ -1572,7 +1659,8 @@
       "has_formation": false,
       "has_financial_statements": false,
       "has_transfer_pricing": false,
-      "has_tax_optimization": false
+      "has_tax_optimization": false,
+      "has_crypto": false
     },
     {
       "jurisdiction": "MY",
@@ -1595,7 +1683,8 @@
       "has_formation": false,
       "has_financial_statements": false,
       "has_transfer_pricing": false,
-      "has_tax_optimization": false
+      "has_tax_optimization": false,
+      "has_crypto": false
     },
     {
       "jurisdiction": "MV",
@@ -1613,7 +1702,8 @@
       "has_formation": false,
       "has_financial_statements": false,
       "has_transfer_pricing": false,
-      "has_tax_optimization": false
+      "has_tax_optimization": false,
+      "has_crypto": false
     },
     {
       "jurisdiction": "MT",
@@ -1639,6 +1729,7 @@
         "company-formation-workflow-base.md",
         "financial-statements-workflow-base.md",
         "transfer-pricing-workflow-base.md",
+        "crypto-tax-workflow-base.md",
         "malta-guided-intake.md",
         "malta-return-assembly.md"
       ],
@@ -1650,7 +1741,8 @@
       "has_formation": true,
       "has_financial_statements": true,
       "has_transfer_pricing": true,
-      "has_tax_optimization": true
+      "has_tax_optimization": true,
+      "has_crypto": true
     },
     {
       "jurisdiction": "MU",
@@ -1668,7 +1760,8 @@
       "has_formation": false,
       "has_financial_statements": false,
       "has_transfer_pricing": false,
-      "has_tax_optimization": false
+      "has_tax_optimization": false,
+      "has_crypto": false
     },
     {
       "jurisdiction": "MX",
@@ -1676,6 +1769,7 @@
       "files": [
         "foundation.md",
         "intake.md",
+        "mexico-crypto-tax.md",
         "mexico-einvoice.md",
         "mexico-iva.md",
         "mexico-transfer-pricing.md",
@@ -1687,18 +1781,20 @@
         "references.md",
         "einvoice-workflow-base.md",
         "transfer-pricing-workflow-base.md",
+        "crypto-tax-workflow-base.md",
         "mexico-guided-intake.md",
         "mexico-return-assembly.md"
       ],
       "has_orchestrator": true,
-      "skill_count": 8,
+      "skill_count": 9,
       "has_bookkeeping": false,
       "has_einvoice": true,
       "has_payroll": false,
       "has_formation": false,
       "has_financial_statements": false,
       "has_transfer_pricing": true,
-      "has_tax_optimization": false
+      "has_tax_optimization": false,
+      "has_crypto": true
     },
     {
       "jurisdiction": "MD",
@@ -1716,7 +1812,8 @@
       "has_formation": false,
       "has_financial_statements": false,
       "has_transfer_pricing": false,
-      "has_tax_optimization": false
+      "has_tax_optimization": false,
+      "has_crypto": false
     },
     {
       "jurisdiction": "MC",
@@ -1734,7 +1831,8 @@
       "has_formation": false,
       "has_financial_statements": false,
       "has_transfer_pricing": false,
-      "has_tax_optimization": false
+      "has_tax_optimization": false,
+      "has_crypto": false
     },
     {
       "jurisdiction": "MN",
@@ -1752,7 +1850,8 @@
       "has_formation": false,
       "has_financial_statements": false,
       "has_transfer_pricing": false,
-      "has_tax_optimization": false
+      "has_tax_optimization": false,
+      "has_crypto": false
     },
     {
       "jurisdiction": "ME",
@@ -1770,7 +1869,8 @@
       "has_formation": false,
       "has_financial_statements": false,
       "has_transfer_pricing": false,
-      "has_tax_optimization": false
+      "has_tax_optimization": false,
+      "has_crypto": false
     },
     {
       "jurisdiction": "MA",
@@ -1788,7 +1888,8 @@
       "has_formation": false,
       "has_financial_statements": false,
       "has_transfer_pricing": false,
-      "has_tax_optimization": false
+      "has_tax_optimization": false,
+      "has_crypto": false
     },
     {
       "jurisdiction": "MZ",
@@ -1806,7 +1907,8 @@
       "has_formation": false,
       "has_financial_statements": false,
       "has_transfer_pricing": false,
-      "has_tax_optimization": false
+      "has_tax_optimization": false,
+      "has_crypto": false
     },
     {
       "jurisdiction": "MM",
@@ -1824,7 +1926,8 @@
       "has_formation": false,
       "has_financial_statements": false,
       "has_transfer_pricing": false,
-      "has_tax_optimization": false
+      "has_tax_optimization": false,
+      "has_crypto": false
     },
     {
       "jurisdiction": "NP",
@@ -1842,7 +1945,8 @@
       "has_formation": false,
       "has_financial_statements": false,
       "has_transfer_pricing": false,
-      "has_tax_optimization": false
+      "has_tax_optimization": false,
+      "has_crypto": false
     },
     {
       "jurisdiction": "NL",
@@ -1851,6 +1955,7 @@
         "foundation.md",
         "intake.md",
         "netherlands-bookkeeping.md",
+        "netherlands-crypto-tax.md",
         "netherlands-financial-statements.md",
         "netherlands-formation.md",
         "netherlands-payroll.md",
@@ -1870,18 +1975,20 @@
         "company-formation-workflow-base.md",
         "financial-statements-workflow-base.md",
         "transfer-pricing-workflow-base.md",
+        "crypto-tax-workflow-base.md",
         "netherlands-guided-intake.md",
         "netherlands-return-assembly.md"
       ],
       "has_orchestrator": true,
-      "skill_count": 13,
+      "skill_count": 14,
       "has_bookkeeping": true,
       "has_einvoice": false,
       "has_payroll": true,
       "has_formation": true,
       "has_financial_statements": true,
       "has_transfer_pricing": true,
-      "has_tax_optimization": true
+      "has_tax_optimization": true,
+      "has_crypto": true
     },
     {
       "jurisdiction": "NZ",
@@ -1889,22 +1996,25 @@
       "files": [
         "foundation.md",
         "intake.md",
+        "new-zealand-crypto-tax.md",
         "new-zealand-gst.md",
         "nz-acc-levies.md",
         "nz-gst-return.md",
         "nz-income-tax-ir3.md",
         "nz-provisional-tax.md",
-        "references.md"
+        "references.md",
+        "crypto-tax-workflow-base.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 5,
+      "skill_count": 6,
       "has_bookkeeping": false,
       "has_einvoice": false,
       "has_payroll": false,
       "has_formation": false,
       "has_financial_statements": false,
       "has_transfer_pricing": false,
-      "has_tax_optimization": false
+      "has_tax_optimization": false,
+      "has_crypto": true
     },
     {
       "jurisdiction": "NI",
@@ -1922,7 +2032,8 @@
       "has_formation": false,
       "has_financial_statements": false,
       "has_transfer_pricing": false,
-      "has_tax_optimization": false
+      "has_tax_optimization": false,
+      "has_crypto": false
     },
     {
       "jurisdiction": "NG",
@@ -1943,7 +2054,8 @@
       "has_formation": false,
       "has_financial_statements": false,
       "has_transfer_pricing": false,
-      "has_tax_optimization": false
+      "has_tax_optimization": false,
+      "has_crypto": false
     },
     {
       "jurisdiction": "MK",
@@ -1961,7 +2073,8 @@
       "has_formation": false,
       "has_financial_statements": false,
       "has_transfer_pricing": false,
-      "has_tax_optimization": false
+      "has_tax_optimization": false,
+      "has_crypto": false
     },
     {
       "jurisdiction": "NO",
@@ -1981,7 +2094,8 @@
       "has_formation": false,
       "has_financial_statements": false,
       "has_transfer_pricing": false,
-      "has_tax_optimization": false
+      "has_tax_optimization": false,
+      "has_crypto": false
     },
     {
       "jurisdiction": "OM",
@@ -1999,7 +2113,8 @@
       "has_formation": false,
       "has_financial_statements": false,
       "has_transfer_pricing": false,
-      "has_tax_optimization": false
+      "has_tax_optimization": false,
+      "has_crypto": false
     },
     {
       "jurisdiction": "PK",
@@ -2017,7 +2132,8 @@
       "has_formation": false,
       "has_financial_statements": false,
       "has_transfer_pricing": false,
-      "has_tax_optimization": false
+      "has_tax_optimization": false,
+      "has_crypto": false
     },
     {
       "jurisdiction": "PA",
@@ -2035,7 +2151,8 @@
       "has_formation": false,
       "has_financial_statements": false,
       "has_transfer_pricing": false,
-      "has_tax_optimization": false
+      "has_tax_optimization": false,
+      "has_crypto": false
     },
     {
       "jurisdiction": "PG",
@@ -2053,7 +2170,8 @@
       "has_formation": false,
       "has_financial_statements": false,
       "has_transfer_pricing": false,
-      "has_tax_optimization": false
+      "has_tax_optimization": false,
+      "has_crypto": false
     },
     {
       "jurisdiction": "PY",
@@ -2071,7 +2189,8 @@
       "has_formation": false,
       "has_financial_statements": false,
       "has_transfer_pricing": false,
-      "has_tax_optimization": false
+      "has_tax_optimization": false,
+      "has_crypto": false
     },
     {
       "jurisdiction": "PE",
@@ -2089,7 +2208,8 @@
       "has_formation": false,
       "has_financial_statements": false,
       "has_transfer_pricing": false,
-      "has_tax_optimization": false
+      "has_tax_optimization": false,
+      "has_crypto": false
     },
     {
       "jurisdiction": "PH",
@@ -2110,7 +2230,8 @@
       "has_formation": false,
       "has_financial_statements": false,
       "has_transfer_pricing": false,
-      "has_tax_optimization": false
+      "has_tax_optimization": false,
+      "has_crypto": false
     },
     {
       "jurisdiction": "PL",
@@ -2134,7 +2255,8 @@
       "has_formation": false,
       "has_financial_statements": false,
       "has_transfer_pricing": false,
-      "has_tax_optimization": false
+      "has_tax_optimization": false,
+      "has_crypto": false
     },
     {
       "jurisdiction": "PT",
@@ -2143,6 +2265,7 @@
         "foundation.md",
         "intake.md",
         "portugal-bookkeeping.md",
+        "portugal-crypto-tax.md",
         "portugal-einvoice.md",
         "portugal-financial-statements.md",
         "portugal-formation.md",
@@ -2156,17 +2279,19 @@
         "einvoice-workflow-base.md",
         "payroll-workflow-base.md",
         "company-formation-workflow-base.md",
-        "financial-statements-workflow-base.md"
+        "financial-statements-workflow-base.md",
+        "crypto-tax-workflow-base.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 9,
+      "skill_count": 10,
       "has_bookkeeping": true,
       "has_einvoice": true,
       "has_payroll": true,
       "has_formation": true,
       "has_financial_statements": true,
       "has_transfer_pricing": false,
-      "has_tax_optimization": true
+      "has_tax_optimization": true,
+      "has_crypto": true
     },
     {
       "jurisdiction": "QA",
@@ -2184,7 +2309,8 @@
       "has_formation": false,
       "has_financial_statements": false,
       "has_transfer_pricing": false,
-      "has_tax_optimization": false
+      "has_tax_optimization": false,
+      "has_crypto": false
     },
     {
       "jurisdiction": "RO",
@@ -2208,7 +2334,8 @@
       "has_formation": false,
       "has_financial_statements": false,
       "has_transfer_pricing": false,
-      "has_tax_optimization": false
+      "has_tax_optimization": false,
+      "has_crypto": false
     },
     {
       "jurisdiction": "RU",
@@ -2226,7 +2353,8 @@
       "has_formation": false,
       "has_financial_statements": false,
       "has_transfer_pricing": false,
-      "has_tax_optimization": false
+      "has_tax_optimization": false,
+      "has_crypto": false
     },
     {
       "jurisdiction": "RW",
@@ -2244,7 +2372,8 @@
       "has_formation": false,
       "has_financial_statements": false,
       "has_transfer_pricing": false,
-      "has_tax_optimization": false
+      "has_tax_optimization": false,
+      "has_crypto": false
     },
     {
       "jurisdiction": "SA",
@@ -2265,7 +2394,8 @@
       "has_formation": false,
       "has_financial_statements": false,
       "has_transfer_pricing": false,
-      "has_tax_optimization": false
+      "has_tax_optimization": false,
+      "has_crypto": false
     },
     {
       "jurisdiction": "SN",
@@ -2283,7 +2413,8 @@
       "has_formation": false,
       "has_financial_statements": false,
       "has_transfer_pricing": false,
-      "has_tax_optimization": false
+      "has_tax_optimization": false,
+      "has_crypto": false
     },
     {
       "jurisdiction": "RS",
@@ -2301,7 +2432,8 @@
       "has_formation": false,
       "has_financial_statements": false,
       "has_transfer_pricing": false,
-      "has_tax_optimization": false
+      "has_tax_optimization": false,
+      "has_crypto": false
     },
     {
       "jurisdiction": "SG",
@@ -2311,22 +2443,25 @@
         "intake.md",
         "sg-cpf-medisave.md",
         "sg-income-tax.md",
+        "singapore-crypto-tax.md",
         "singapore-formation.md",
         "singapore-gst.md",
         "singapore-tax-optimization.md",
         "singapore-transfer-pricing.md",
         "company-formation-workflow-base.md",
-        "transfer-pricing-workflow-base.md"
+        "transfer-pricing-workflow-base.md",
+        "crypto-tax-workflow-base.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 6,
+      "skill_count": 7,
       "has_bookkeeping": false,
       "has_einvoice": false,
       "has_payroll": false,
       "has_formation": true,
       "has_financial_statements": false,
       "has_transfer_pricing": true,
-      "has_tax_optimization": true
+      "has_tax_optimization": true,
+      "has_crypto": true
     },
     {
       "jurisdiction": "SK",
@@ -2347,7 +2482,8 @@
       "has_formation": false,
       "has_financial_statements": false,
       "has_transfer_pricing": false,
-      "has_tax_optimization": false
+      "has_tax_optimization": false,
+      "has_crypto": false
     },
     {
       "jurisdiction": "SI",
@@ -2366,7 +2502,8 @@
       "has_formation": false,
       "has_financial_statements": false,
       "has_transfer_pricing": false,
-      "has_tax_optimization": false
+      "has_tax_optimization": false,
+      "has_crypto": false
     },
     {
       "jurisdiction": "ZA",
@@ -2389,7 +2526,8 @@
       "has_formation": false,
       "has_financial_statements": false,
       "has_transfer_pricing": true,
-      "has_tax_optimization": false
+      "has_tax_optimization": false,
+      "has_crypto": false
     },
     {
       "jurisdiction": "KR",
@@ -2400,17 +2538,20 @@
         "kr-income-tax.md",
         "kr-social-insurance.md",
         "references.md",
-        "south-korea-vat.md"
+        "south-korea-crypto-tax.md",
+        "south-korea-vat.md",
+        "crypto-tax-workflow-base.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 3,
+      "skill_count": 4,
       "has_bookkeeping": false,
       "has_einvoice": false,
       "has_payroll": false,
       "has_formation": false,
       "has_financial_statements": false,
       "has_transfer_pricing": false,
-      "has_tax_optimization": false
+      "has_tax_optimization": false,
+      "has_crypto": true
     },
     {
       "jurisdiction": "ES",
@@ -2428,6 +2569,7 @@
         "es-social-contributions.md",
         "references.md",
         "spain-bookkeeping.md",
+        "spain-crypto-tax.md",
         "spain-einvoice.md",
         "spain-financial-statements.md",
         "spain-formation.md",
@@ -2442,18 +2584,20 @@
         "company-formation-workflow-base.md",
         "financial-statements-workflow-base.md",
         "transfer-pricing-workflow-base.md",
+        "crypto-tax-workflow-base.md",
         "spain-guided-intake.md",
         "spain-return-assembly.md"
       ],
       "has_orchestrator": true,
-      "skill_count": 16,
+      "skill_count": 17,
       "has_bookkeeping": true,
       "has_einvoice": true,
       "has_payroll": true,
       "has_formation": true,
       "has_financial_statements": true,
       "has_transfer_pricing": true,
-      "has_tax_optimization": true
+      "has_tax_optimization": true,
+      "has_crypto": true
     },
     {
       "jurisdiction": "LK",
@@ -2471,7 +2615,8 @@
       "has_formation": false,
       "has_financial_statements": false,
       "has_transfer_pricing": false,
-      "has_tax_optimization": false
+      "has_tax_optimization": false,
+      "has_crypto": false
     },
     {
       "jurisdiction": "SE",
@@ -2483,21 +2628,24 @@
         "se-income-tax.md",
         "se-social-contributions.md",
         "sweden-bookkeeping.md",
+        "sweden-crypto-tax.md",
         "sweden-payroll.md",
         "sweden-vat-return.md",
         "eu-vat-directive.md",
         "bookkeeping-workflow-base.md",
-        "payroll-workflow-base.md"
+        "payroll-workflow-base.md",
+        "crypto-tax-workflow-base.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 5,
+      "skill_count": 6,
       "has_bookkeeping": true,
       "has_einvoice": false,
       "has_payroll": true,
       "has_formation": false,
       "has_financial_statements": false,
       "has_transfer_pricing": false,
-      "has_tax_optimization": false
+      "has_tax_optimization": false,
+      "has_crypto": true
     },
     {
       "jurisdiction": "CH",
@@ -2508,17 +2656,20 @@
         "ch-ahv-iv.md",
         "ch-cantonal-tax.md",
         "ch-federal-income-tax.md",
-        "switzerland-vat.md"
+        "switzerland-crypto-tax.md",
+        "switzerland-vat.md",
+        "crypto-tax-workflow-base.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 4,
+      "skill_count": 5,
       "has_bookkeeping": false,
       "has_einvoice": false,
       "has_payroll": false,
       "has_formation": false,
       "has_financial_statements": false,
       "has_transfer_pricing": false,
-      "has_tax_optimization": false
+      "has_tax_optimization": false,
+      "has_crypto": true
     },
     {
       "jurisdiction": "TW",
@@ -2538,7 +2689,8 @@
       "has_formation": false,
       "has_financial_statements": false,
       "has_transfer_pricing": false,
-      "has_tax_optimization": false
+      "has_tax_optimization": false,
+      "has_crypto": false
     },
     {
       "jurisdiction": "TZ",
@@ -2556,7 +2708,8 @@
       "has_formation": false,
       "has_financial_statements": false,
       "has_transfer_pricing": false,
-      "has_tax_optimization": false
+      "has_tax_optimization": false,
+      "has_crypto": false
     },
     {
       "jurisdiction": "TH",
@@ -2576,7 +2729,8 @@
       "has_formation": false,
       "has_financial_statements": false,
       "has_transfer_pricing": false,
-      "has_tax_optimization": false
+      "has_tax_optimization": false,
+      "has_crypto": false
     },
     {
       "jurisdiction": "TT",
@@ -2594,7 +2748,8 @@
       "has_formation": false,
       "has_financial_statements": false,
       "has_transfer_pricing": false,
-      "has_tax_optimization": false
+      "has_tax_optimization": false,
+      "has_crypto": false
     },
     {
       "jurisdiction": "TN",
@@ -2612,7 +2767,8 @@
       "has_formation": false,
       "has_financial_statements": false,
       "has_transfer_pricing": false,
-      "has_tax_optimization": false
+      "has_tax_optimization": false,
+      "has_crypto": false
     },
     {
       "jurisdiction": "TR",
@@ -2632,7 +2788,8 @@
       "has_formation": false,
       "has_financial_statements": false,
       "has_transfer_pricing": false,
-      "has_tax_optimization": false
+      "has_tax_optimization": false,
+      "has_crypto": false
     },
     {
       "jurisdiction": "AE",
@@ -2651,7 +2808,8 @@
       "has_formation": false,
       "has_financial_statements": false,
       "has_transfer_pricing": false,
-      "has_tax_optimization": false
+      "has_tax_optimization": false,
+      "has_crypto": false
     },
     {
       "jurisdiction": "UG",
@@ -2669,7 +2827,8 @@
       "has_formation": false,
       "has_financial_statements": false,
       "has_transfer_pricing": false,
-      "has_tax_optimization": false
+      "has_tax_optimization": false,
+      "has_crypto": false
     },
     {
       "jurisdiction": "GB",
@@ -2680,6 +2839,7 @@
         "references.md",
         "uk-bookkeeping.md",
         "uk-capital-gains-sa108.md",
+        "uk-crypto-tax.md",
         "uk-dividends.md",
         "uk-financial-statements.md",
         "uk-formation.md",
@@ -2698,18 +2858,20 @@
         "company-formation-workflow-base.md",
         "financial-statements-workflow-base.md",
         "transfer-pricing-workflow-base.md",
+        "crypto-tax-workflow-base.md",
         "uk-guided-intake.md",
         "uk-return-assembly.md"
       ],
       "has_orchestrator": true,
-      "skill_count": 15,
+      "skill_count": 16,
       "has_bookkeeping": true,
       "has_einvoice": false,
       "has_payroll": true,
       "has_formation": true,
       "has_financial_statements": true,
       "has_transfer_pricing": true,
-      "has_tax_optimization": true
+      "has_tax_optimization": true,
+      "has_crypto": true
     },
     {
       "jurisdiction": "UA",
@@ -2727,7 +2889,8 @@
       "has_formation": false,
       "has_financial_statements": false,
       "has_transfer_pricing": false,
-      "has_tax_optimization": false
+      "has_tax_optimization": false,
+      "has_crypto": false
     },
     {
       "jurisdiction": "UY",
@@ -2745,7 +2908,8 @@
       "has_formation": false,
       "has_financial_statements": false,
       "has_transfer_pricing": false,
-      "has_tax_optimization": false
+      "has_tax_optimization": false,
+      "has_crypto": false
     },
     {
       "jurisdiction": "UZ",
@@ -2763,7 +2927,8 @@
       "has_formation": false,
       "has_financial_statements": false,
       "has_transfer_pricing": false,
-      "has_tax_optimization": false
+      "has_tax_optimization": false,
+      "has_crypto": false
     },
     {
       "jurisdiction": "VE",
@@ -2781,7 +2946,8 @@
       "has_formation": false,
       "has_financial_statements": false,
       "has_transfer_pricing": false,
-      "has_tax_optimization": false
+      "has_tax_optimization": false,
+      "has_crypto": false
     },
     {
       "jurisdiction": "VN",
@@ -2801,7 +2967,8 @@
       "has_formation": false,
       "has_financial_statements": false,
       "has_transfer_pricing": false,
-      "has_tax_optimization": false
+      "has_tax_optimization": false,
+      "has_crypto": false
     },
     {
       "jurisdiction": "ZM",
@@ -2819,7 +2986,8 @@
       "has_formation": false,
       "has_financial_statements": false,
       "has_transfer_pricing": false,
-      "has_tax_optimization": false
+      "has_tax_optimization": false,
+      "has_crypto": false
     },
     {
       "jurisdiction": "ZW",
@@ -2837,7 +3005,8 @@
       "has_formation": false,
       "has_financial_statements": false,
       "has_transfer_pricing": false,
-      "has_tax_optimization": false
+      "has_tax_optimization": false,
+      "has_crypto": false
     },
     {
       "jurisdiction": "CROSS-BORDER",

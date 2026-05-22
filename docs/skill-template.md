@@ -1,21 +1,24 @@
 ---
-name: [state]-[topic]
+name: [country-or-topic]-[domain]
 description: >
-  [One paragraph: what tax form or schedule this covers, what entity types,
-  what jurisdiction, what tax year. Be specific about scope.]
+  [One paragraph: what this skill covers, entity types, jurisdiction, tax year.
+  Include trigger phrases the AI should match. Be specific about scope.]
 version: 0.1
-jurisdiction: US-[STATE]
+jurisdiction: XX   # REQUIRED — MT, GB, DE, US, US-CA, GLOBAL, INTL, EU-27, etc.
 tax_year: 2025
-category: state
+category: international   # international | crypto | bookkeeping | payroll | formation | cross-border | vertical | integration | foundation | orchestrator | federal | state
 depends_on:
-  - us-tax-workflow-base
+  - [workflow-base-or-country-skill]
+verified_by: pending
 ---
 
 # [Skill Name] v0.1
 
+> **Jurisdiction is required.** Set `jurisdiction:` in frontmatter even when the folder path implies it (e.g. `skills/international/malta/` → still use `jurisdiction: MT`). Sync to openaccountants.com skips files without a resolvable jurisdiction. See [WEBSITE-SYNC.md](WEBSITE-SYNC.md).
+
 ## What this file is
 
-**This file is a content skill that loads on top of `us-tax-workflow-base`.**
+**This file is a content skill that loads on top of a workflow base** (e.g. `us-tax-workflow-base`, `crypto-tax-workflow-base`, `bookkeeping-workflow-base`).
 
 [Describe: what it computes, where it fits in the pipeline, what it does NOT cover.
 Reference the upstream skills it depends on and the downstream skills that consume its output.]

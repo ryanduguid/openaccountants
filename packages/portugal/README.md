@@ -8,20 +8,22 @@
 1. `foundation.md`
 2. `intake.md`
 3. `portugal-bookkeeping.md`
-4. `portugal-einvoice.md`
-5. `portugal-financial-statements.md`
-6. `portugal-formation.md`
-7. `portugal-payroll.md`
-8. `portugal-tax-optimization.md`
-9. `portugal-vat-return.md`
-10. `pt-income-tax.md`
-11. `pt-social-contributions.md`
-12. `eu-vat-directive.md`
-13. `bookkeeping-workflow-base.md`
-14. `einvoice-workflow-base.md`
-15. `payroll-workflow-base.md`
-16. `company-formation-workflow-base.md`
-17. `financial-statements-workflow-base.md`
+4. `portugal-crypto-tax.md`
+5. `portugal-einvoice.md`
+6. `portugal-financial-statements.md`
+7. `portugal-formation.md`
+8. `portugal-payroll.md`
+9. `portugal-tax-optimization.md`
+10. `portugal-vat-return.md`
+11. `pt-income-tax.md`
+12. `pt-social-contributions.md`
+13. `eu-vat-directive.md`
+14. `bookkeeping-workflow-base.md`
+15. `einvoice-workflow-base.md`
+16. `payroll-workflow-base.md`
+17. `company-formation-workflow-base.md`
+18. `financial-statements-workflow-base.md`
+19. `crypto-tax-workflow-base.md`
 
 ## Also known as
 

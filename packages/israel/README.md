@@ -16,6 +16,7 @@
 9. `il-tax-withholding.md`
 10. `israel-vat.md`
 11. `references.md`
+12. `crypto-tax-workflow-base.md`
 
 ## Also known as
 

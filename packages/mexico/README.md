@@ -7,19 +7,21 @@
 
 1. `foundation.md`
 2. `intake.md`
-3. `mexico-einvoice.md`
-4. `mexico-iva.md`
-5. `mexico-transfer-pricing.md`
-6. `mx-cfdi.md`
-7. `mx-estimated-tax.md`
-8. `mx-imss.md`
-9. `mx-income-tax.md`
-10. `mx-vat-return.md`
-11. `references.md`
-12. `einvoice-workflow-base.md`
-13. `transfer-pricing-workflow-base.md`
-14. `mexico-guided-intake.md`
-15. `mexico-return-assembly.md`
+3. `mexico-crypto-tax.md`
+4. `mexico-einvoice.md`
+5. `mexico-iva.md`
+6. `mexico-transfer-pricing.md`
+7. `mx-cfdi.md`
+8. `mx-estimated-tax.md`
+9. `mx-imss.md`
+10. `mx-income-tax.md`
+11. `mx-vat-return.md`
+12. `references.md`
+13. `einvoice-workflow-base.md`
+14. `transfer-pricing-workflow-base.md`
+15. `crypto-tax-workflow-base.md`
+16. `mexico-guided-intake.md`
+17. `mexico-return-assembly.md`
 
 ## Also known as
 

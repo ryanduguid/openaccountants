@@ -11,11 +11,13 @@
 4. `se-income-tax.md`
 5. `se-social-contributions.md`
 6. `sweden-bookkeeping.md`
-7. `sweden-payroll.md`
-8. `sweden-vat-return.md`
-9. `eu-vat-directive.md`
-10. `bookkeeping-workflow-base.md`
-11. `payroll-workflow-base.md`
+7. `sweden-crypto-tax.md`
+8. `sweden-payroll.md`
+9. `sweden-vat-return.md`
+10. `eu-vat-directive.md`
+11. `bookkeeping-workflow-base.md`
+12. `payroll-workflow-base.md`
+13. `crypto-tax-workflow-base.md`
 
 ## Also known as
 

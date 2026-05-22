@@ -25,8 +25,9 @@
 18. `company-formation-workflow-base.md`
 19. `financial-statements-workflow-base.md`
 20. `transfer-pricing-workflow-base.md`
-21. `malta-guided-intake.md`
-22. `malta-return-assembly.md`
+21. `crypto-tax-workflow-base.md`
+22. `malta-guided-intake.md`
+23. `malta-return-assembly.md`
 
 ## Also known as
 

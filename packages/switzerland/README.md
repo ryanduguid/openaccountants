@@ -10,7 +10,9 @@
 3. `ch-ahv-iv.md`
 4. `ch-cantonal-tax.md`
 5. `ch-federal-income-tax.md`
-6. `switzerland-vat.md`
+6. `switzerland-crypto-tax.md`
+7. `switzerland-vat.md`
+8. `crypto-tax-workflow-base.md`
 
 ## Also known as
 

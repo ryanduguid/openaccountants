@@ -7,12 +7,14 @@
 
 1. `foundation.md`
 2. `intake.md`
-3. `new-zealand-gst.md`
-4. `nz-acc-levies.md`
-5. `nz-gst-return.md`
-6. `nz-income-tax-ir3.md`
-7. `nz-provisional-tax.md`
-8. `references.md`
+3. `new-zealand-crypto-tax.md`
+4. `new-zealand-gst.md`
+5. `nz-acc-levies.md`
+6. `nz-gst-return.md`
+7. `nz-income-tax-ir3.md`
+8. `nz-provisional-tax.md`
+9. `references.md`
+10. `crypto-tax-workflow-base.md`
 
 ## Also known as
 

@@ -37,8 +37,9 @@
 30. `company-formation-workflow-base.md`
 31. `financial-statements-workflow-base.md`
 32. `transfer-pricing-workflow-base.md`
-33. `canada-guided-intake.md`
-34. `canada-return-assembly.md`
+33. `crypto-tax-workflow-base.md`
+34. `canada-guided-intake.md`
+35. `canada-return-assembly.md`
 
 ## Also known as
 

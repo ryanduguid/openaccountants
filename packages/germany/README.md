@@ -30,8 +30,9 @@
 23. `company-formation-workflow-base.md`
 24. `financial-statements-workflow-base.md`
 25. `transfer-pricing-workflow-base.md`
-26. `germany-guided-intake.md`
-27. `germany-return-assembly.md`
+26. `crypto-tax-workflow-base.md`
+27. `germany-guided-intake.md`
+28. `germany-return-assembly.md`
 
 ## Also known as
 

@@ -12,21 +12,23 @@
 5. `it-inps-contributions.md`
 6. `it-irap.md`
 7. `italy-bookkeeping.md`
-8. `italy-einvoice.md`
-9. `italy-financial-statements.md`
-10. `italy-formation.md`
-11. `italy-payroll.md`
-12. `italy-tax-optimization.md`
-13. `italy-transfer-pricing.md`
-14. `italy-vat-return.md`
-15. `references.md`
-16. `eu-vat-directive.md`
-17. `bookkeeping-workflow-base.md`
-18. `einvoice-workflow-base.md`
-19. `payroll-workflow-base.md`
-20. `company-formation-workflow-base.md`
-21. `financial-statements-workflow-base.md`
-22. `transfer-pricing-workflow-base.md`
+8. `italy-crypto-tax.md`
+9. `italy-einvoice.md`
+10. `italy-financial-statements.md`
+11. `italy-formation.md`
+12. `italy-payroll.md`
+13. `italy-tax-optimization.md`
+14. `italy-transfer-pricing.md`
+15. `italy-vat-return.md`
+16. `references.md`
+17. `eu-vat-directive.md`
+18. `bookkeeping-workflow-base.md`
+19. `einvoice-workflow-base.md`
+20. `payroll-workflow-base.md`
+21. `company-formation-workflow-base.md`
+22. `financial-statements-workflow-base.md`
+23. `transfer-pricing-workflow-base.md`
+24. `crypto-tax-workflow-base.md`
 
 ## Also known as
 

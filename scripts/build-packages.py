@@ -566,7 +566,8 @@ def build_package(country_dir_name, country_dir):
         "formation": "company-formation-workflow-base.md",
         "financial-statements": "financial-statements-workflow-base.md",
         "transfer-pricing": "transfer-pricing-workflow-base.md",
-        "tax-optimization": None,  # No separate workflow base needed
+        "tax-optimization": None,
+        "crypto": "crypto-tax-workflow-base.md",
     }
     for keyword, base_file in DOMAIN_BASES.items():
         if base_file and any(keyword in f for f, _ in content_skills):
@@ -598,6 +599,7 @@ def build_package(country_dir_name, country_dir):
     has_fin_statements = any("financial-statements" in f for f in skill_filenames)
     has_tp = any("transfer-pricing" in f for f in skill_filenames)
     has_tax_opt = any("tax-optimization" in f for f in skill_filenames)
+    has_crypto = any("crypto" in f for f in skill_filenames)
 
     return {
         "jurisdiction": code,
@@ -612,6 +614,7 @@ def build_package(country_dir_name, country_dir):
         "has_financial_statements": has_fin_statements,
         "has_transfer_pricing": has_tp,
         "has_tax_optimization": has_tax_opt,
+        "has_crypto": has_crypto,
     }
 
 
@@ -829,6 +832,7 @@ def main():
         with_fin_stmts = [r for r in intl_results if r.get("has_financial_statements")]
         with_tp = [r for r in intl_results if r.get("has_transfer_pricing")]
         with_tax_opt = [r for r in intl_results if r.get("has_tax_optimization")]
+        with_crypto = [r for r in intl_results if r.get("has_crypto")]
 
         print(f"\nInternational packages built: {len(intl_results)}")
         print(f"  Full (with orchestrator): {len(full)} — {', '.join(r['name'] for r in full)}")
@@ -841,6 +845,7 @@ def main():
         print(f"  With financial statements: {len(with_fin_stmts)}")
         print(f"  With transfer pricing: {len(with_tp)}")
         print(f"  With tax optimization: {len(with_tax_opt)}")
+        print(f"  With crypto tax: {len(with_crypto)}")
 
     # ---- Cross-border package ----
     xb_result = None

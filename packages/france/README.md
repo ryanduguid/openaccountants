@@ -32,8 +32,9 @@
 25. `company-formation-workflow-base.md`
 26. `financial-statements-workflow-base.md`
 27. `transfer-pricing-workflow-base.md`
-28. `france-guided-intake.md`
-29. `france-return-assembly.md`
+28. `crypto-tax-workflow-base.md`
+29. `france-guided-intake.md`
+30. `france-return-assembly.md`
 
 ## Also known as
 

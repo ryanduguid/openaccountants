@@ -12,21 +12,23 @@
 5. `in-pf-esi-employer.md`
 6. `in-professional-tax.md`
 7. `in-tds-freelance.md`
-8. `india-einvoice.md`
-9. `india-financial-statements.md`
-10. `india-formation.md`
-11. `india-gst.md`
-12. `india-payroll.md`
-13. `india-tax-optimization.md`
-14. `india-transfer-pricing.md`
-15. `references.md`
-16. `einvoice-workflow-base.md`
-17. `payroll-workflow-base.md`
-18. `company-formation-workflow-base.md`
-19. `financial-statements-workflow-base.md`
-20. `transfer-pricing-workflow-base.md`
-21. `india-guided-intake.md`
-22. `india-return-assembly.md`
+8. `india-crypto-tax.md`
+9. `india-einvoice.md`
+10. `india-financial-statements.md`
+11. `india-formation.md`
+12. `india-gst.md`
+13. `india-payroll.md`
+14. `india-tax-optimization.md`
+15. `india-transfer-pricing.md`
+16. `references.md`
+17. `einvoice-workflow-base.md`
+18. `payroll-workflow-base.md`
+19. `company-formation-workflow-base.md`
+20. `financial-statements-workflow-base.md`
+21. `transfer-pricing-workflow-base.md`
+22. `crypto-tax-workflow-base.md`
+23. `india-guided-intake.md`
+24. `india-return-assembly.md`
 
 ## Also known as
 

@@ -17,22 +17,24 @@
 10. `es-social-contributions.md`
 11. `references.md`
 12. `spain-bookkeeping.md`
-13. `spain-einvoice.md`
-14. `spain-financial-statements.md`
-15. `spain-formation.md`
-16. `spain-payroll.md`
-17. `spain-tax-optimization.md`
-18. `spain-transfer-pricing.md`
-19. `spain-vat-return.md`
-20. `eu-vat-directive.md`
-21. `bookkeeping-workflow-base.md`
-22. `einvoice-workflow-base.md`
-23. `payroll-workflow-base.md`
-24. `company-formation-workflow-base.md`
-25. `financial-statements-workflow-base.md`
-26. `transfer-pricing-workflow-base.md`
-27. `spain-guided-intake.md`
-28. `spain-return-assembly.md`
+13. `spain-crypto-tax.md`
+14. `spain-einvoice.md`
+15. `spain-financial-statements.md`
+16. `spain-formation.md`
+17. `spain-payroll.md`
+18. `spain-tax-optimization.md`
+19. `spain-transfer-pricing.md`
+20. `spain-vat-return.md`
+21. `eu-vat-directive.md`
+22. `bookkeeping-workflow-base.md`
+23. `einvoice-workflow-base.md`
+24. `payroll-workflow-base.md`
+25. `company-formation-workflow-base.md`
+26. `financial-statements-workflow-base.md`
+27. `transfer-pricing-workflow-base.md`
+28. `crypto-tax-workflow-base.md`
+29. `spain-guided-intake.md`
+30. `spain-return-assembly.md`
 
 ## Also known as
 
