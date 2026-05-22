@@ -24,13 +24,11 @@ version: 2.0
 | Filing deadline (via ombud) | 16 June |
 | F-skatt instalments | 12th of each month |
 | Kommunalskatt (municipal + regional) | Average 32.41% (range 28.98%--35.30%) |
-| Statlig inkomstskatt (state tax) | 20% on taxable earned income above SEK 643,000 (skiktgräns 2026); brytpunkt SEK 660,400 (incl. grundavdrag floor) |
+| Statlig inkomstskatt (state tax) | 20% on taxable earned income above SEK 625,800 (under 66); SEK 733,200 (66+) |
 | Egenavgifter (self-employment contributions) | 28.97% (full); 10.21% (age 66+) |
-| Grundavdrag (basic deduction) | Floor: SEK 17,400 (0.294 × PBB); max ~SEK 45,600 (0.77 × PBB); PBB 2026 = 59,200 |
+| Grundavdrag (basic deduction) | SEK 17,300--45,300 (under 66); up to SEK 86,500 (66+) |
 | Jobbskatteavdrag | Tax credit reducing kommunalskatt; approximately SEK 44,000--46,000 for average earners |
-| Prisbasbelopp (PBB) 2026 | SEK 59,200 (SCB) |
-| Inkomstbasbelopp (IBB) 2026 | SEK 83,400 (SCB) |
-| Contributor | Open Accountants Community; constants from [Baltsar/kammaren-tax-engine](https://github.com/Baltsar/kammaren-tax-engine) (AGPL-3.0) |
+| Contributor | Open Accountants Community |
 | Validated by | Pending -- requires Swedish auktoriserad or godkänd revisor sign-off |
 | Validation date | Pending |
 
@@ -289,7 +287,7 @@ Egenavgifter = 28.97% of net business profit (10.21% for age 66+). Since egenavg
 
 ### 5.3 Statlig inkomstskatt
 
-20% on taxable earned income above SEK 643,000 (skiktgräns 2026). The brytpunkt (gross income level where state tax kicks in) is SEK 660,400 after accounting for the grundavdrag floor. Below the skiktgräns: 0% state tax. **Legislation:** IL kap. 65. **Source:** Skatteverket / [kammaren-tax-engine](https://github.com/Baltsar/kammaren-tax-engine).
+20% on taxable earned income above SEK 625,800 (under 66) or SEK 733,200 (66+). Below the brytpunkt: 0% state tax. **Legislation:** IL kap. 65.
 
 ### 5.4 Grundavdrag
 
@@ -401,7 +399,7 @@ Minimum retention: 7 years from end of calendar year. Must follow god redovisnin
 | 4 | Grundavdrag | Manual entry (income-dependent) |
 | 5 | Beskattningsbar förvärvsinkomst | =Step3 - Step4 |
 | 6 | Kommunalskatt | =Step5 * [rate] |
-| 7 | Statlig skatt | =MAX(0, (Step5 - 643000) * 0.20) |
+| 7 | Statlig skatt | =MAX(0, (Step5 - 625800) * 0.20) |
 | 8 | Jobbskatteavdrag | Manual entry (complex formula) |
 | 9 | Estimated tax | =Step6 + Step7 - Step8 |
 | 10 | Egenavgifter | =Step3 * 0.2897 |
@@ -472,7 +470,7 @@ Minimum retention: 7 years from end of calendar year. Must follow god redovisnin
 
 **Test 2 -- High income, statlig skatt applies.**
 *Input:* Kommunalskatt 32.41%, born 1980, net business income SEK 900,000.
-*Expected:* After schablonavdrag and grundavdrag, taxable earned income exceeds SEK 643,000. Statlig skatt at 20% on the excess.
+*Expected:* After schablonavdrag and grundavdrag, taxable earned income exceeds SEK 625,800. Statlig skatt at 20% on the excess.
 
 **Test 3 -- Expansionsfond allocation.**
 *Input:* Net business income SEK 500,000, client allocates SEK 200,000 to expansionsfond.
@@ -492,7 +490,7 @@ Minimum retention: 7 years from end of calendar year. Must follow god redovisnin
 
 ### Edge case registry
 
-**EC1 -- Statlig skatt below brytpunkt.** Never apply 20% state tax on income below SEK 643,000.
+**EC1 -- Statlig skatt below brytpunkt.** Never apply 20% state tax on income below SEK 625,800.
 **EC2 -- Egenavgifter not deducted.** Always apply 25% schablonavdrag. Egenavgifter are deductible.
 **EC3 -- Capital expenditure expensed directly.** Assets above half prisbasbelopp with life > 3 years must be depreciated.
 **EC4 -- Moms included in revenue.** For momsregistrerade, R1 = net of moms.
@@ -523,8 +521,6 @@ Minimum retention: 7 years from end of calendar year. Must follow god redovisnin
 3. Socialavgiftslagen (SAL, 2000:980)
 4. Bokföringslagen (BFL, 1999:1078)
 5. Skatteverket guidance -- https://www.skatteverket.se
-6. [Baltsar/kammaren-tax-engine](https://github.com/Baltsar/kammaren-tax-engine) (AGPL-3.0) — 2026 tax constants verified against SKV 433 Table 30, Column 1. Zero deviation across 406 rows.
-7. SCB (Statistiska centralbyrån) — PBB and IBB values
 
 ### Disclaimer
 

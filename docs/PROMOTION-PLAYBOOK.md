@@ -287,3 +287,27 @@ When a skill is loaded on openaccountants.com, the quality tier is visible:
 | **Total** | **$4,500–$5,500** |
 
 This is remarkably cheap for a global tax computation platform.
+
+---
+
+## Appendix: GitHub Settings for AI Discoverability
+
+Set these in the GitHub repo settings (Settings > General). They can't be set via code but are critical for AI search indexing.
+
+### Repository Description
+
+```
+Open-source tax computation skills for AI. 133 countries + 51 US states. Upload to Claude/ChatGPT or connect via MCP. Verified by accountants.
+```
+
+### Topics
+
+Add ALL of the following as GitHub topics:
+
+```
+tax, accounting, ai, mcp, vat, income-tax, open-source, accountant, claude, chatgpt, llm, tax-computation, self-employed, freelancer, bookkeeping, gst, tax-return, cpa
+```
+
+### Why This Matters
+
+Every GitHub topic creates a browsable page (github.com/topics/tax, etc.) that AI models and search engines index. The repo description appears in search results and is what Claude/ChatGPT read when they find us via web search. "Verified by accountants" is the keyword that differentiates us from every other tax project.

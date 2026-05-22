@@ -2,7 +2,7 @@
 
 # OpenAccountants
 
-Open-source tax computation skills for AI. **438 skills across 134 countries + 51 US states.**
+Open-source tax computation skills for AI. **438 skills across 133 countries + 51 US state packages.**
 
 Upload to Claude, ChatGPT, or any LLM with your bank statement — or connect via **[MCP](#mcp-server)** so your AI loads the right country's tax skills automatically. Get a working paper ready for your accountant and **cut your accounting bill by 80%.**
 
@@ -36,40 +36,31 @@ Honesty is the point: if you know where the gaps are, you can use the project sa
 
 ### 1. Find your country
 
-**Most countries (130+):** everything you need is in one place under `packages/`. Upload every file in that folder.
+Everything you need is in one folder under `packages/`. Upload every file in that folder.
 
 ```
 packages/
 ├── malta/           ← 9 files (VAT + income tax + SSC + guided intake)
 ├── uk/              ← 8 files
 ├── germany/         ← 7 files
-├── australia/       ← 9 files
-├── canada/          ← 12 files
-├── india/           ← 7 files
-├── spain/           ← 7 files
-├── ... 126 more countries
+├── ... 130+ more countries
+├── us-ca/           ← Federal + California state skills
+├── us-ny/           ← Federal + New York state skills
+├── us-tx/           ← Federal + Texas state skills
+├── ... 51 US state packages (all 50 states + DC)
 ```
 
-**United States:** there is **no** `packages/us/` folder. US tax work is split across **modular skills** under `skills/` — federal forms, orchestrators that sequence them, and **per-state tax skills for all 50 states + DC**. That matches how US compliance layers (federal vs 50 states) rather than a single “country bundle” like Malta.
+**International users:** pick your country folder (e.g. `packages/malta/`).
 
-| What you need | Where it lives |
-|----------------|----------------|
-| Federal workflow base (how the AI should work) | [`skills/foundation/us-tax-workflow-base.md`](skills/foundation/us-tax-workflow-base.md) |
-| Federal content (Schedule C/SE, QBI, estimated tax, bookkeeping, etc.) | [`skills/federal/`](skills/federal/) — upload **all** `.md` files here |
-| Orchestration (intake, return assembly, cross-form checks) | [`skills/orchestrator/`](skills/orchestrator/) — include the `us-*.md` files that match your situation (e.g. `us-federal-return-assembly.md`; California freelancers also use `us-ca-*.md`) |
-| **State income tax, sales tax, and specialty taxes** | [`skills/us-states/`](skills/us-states/) — find your state by two-letter code (e.g. `ca/`, `ny/`, `tx/`) and upload ALL `.md` files from that folder |
+**US users:** pick `packages/us-[your state code]/` (e.g. `packages/us-ca/` for California). Each state package bundles federal skills (Schedule C, SE, QBI, estimated tax, etc.) **plus** your state's income tax, sales tax, and specialty taxes. See the [US state index](packages/us/README.md) for the full list, or the [source coverage matrix](skills/us-states/README.md) for what each state includes.
 
-Each state folder under `skills/us-states/` contains income tax, sales tax, and any specialty tax skills relevant to that state. See the [US state coverage matrix](skills/us-states/README.md) for what's available.
+For MCP users, US state packages appear as `us-ca`, `us-tx`, `us-ny`, etc. alongside country packages.
 
-For a typical **US freelance federal + state return**, start with `us-tax-workflow-base.md`, everything in `skills/federal/`, the `us-*.md` files in `skills/orchestrator/` your case needs, and all `.md` files from your state's folder in `skills/us-states/`.
-
-Contributors: international packages are generated from `skills/international/` via `scripts/build-packages.py`. US skills are edited directly under `skills/` until a single generated US package exists.
+Contributors: all packages are **generated** from source files under `skills/` by `scripts/build-packages.py`. Edit the source, not the package. See [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ### 2. Upload to your LLM
 
-**International:** open the folder for your country under `packages/`. Upload **all** `.md` files.
-
-**United States:** collect the `.md` files from the paths in the table above (same workflow below).
+Open the folder for your jurisdiction under `packages/`. Upload **all** `.md` files.
 
 Upload to:
 - **Claude.ai** → Create a Project, add files as Project Knowledge
@@ -85,6 +76,24 @@ Help me with my 2025 taxes. Here's my bank statement.
 ```
 
 The AI will ask a few questions, classify every transaction, and produce a working paper for your accountant.
+
+---
+
+## Are you an accountant?
+
+These skills need your eye. Every rate, threshold, and form reference was AI-drafted and needs a qualified professional to verify it.
+
+**You don't need to use GitHub.** Just:
+
+1. Find your country's folder under `packages/`
+2. Check the rates against your tax authority's website
+3. Email your corrections to **info@openaaccountants.com** — Word doc, Excel, PDF, tracked changes, whatever format works for you
+
+We'll update the skill and credit you publicly as the verified reviewer at [openaccountants.com](https://openaccountants.com).
+
+Or if you prefer GitHub: fork, fix, PR. **Your name goes on the skill either way.**
+
+> 133 countries need accountant reviewers. Pick yours at [`packages/`](packages/) and be the first verified professional for your jurisdiction.
 
 ---
 
@@ -123,13 +132,13 @@ Upload all files, say "help me with my taxes," and the AI walks you through ever
 | **Spain** | IVA + IRPF + RETA |
 | **United States (CA)** | 1040 + Schedule C/SE + CA 540 |
 
-### Multi-skill countries (27 countries)
+### Multi-skill countries (28 countries)
 
 VAT + income tax + social contributions. No guided intake, but the AI uses the universal intake flow:
 
-Austria, Belgium, Brazil, Chile, Colombia, Czech Republic, Denmark, France, Greece, Hungary, Ireland, Italy, Japan, Kenya, Mexico, Netherlands, New Zealand, Nigeria, Norway, Poland, Portugal, Romania, Singapore, South Africa, South Korea, Sweden, Switzerland
+Argentina, Austria, Belgium, Brazil, Chile, Colombia, Czech Republic, France, Greece, Hungary, Ireland, Israel, Italy, Japan, Kenya, Mexico, Netherlands, New Zealand, Nigeria, Norway, Poland, Portugal, Romania, Singapore, South Africa, South Korea, Sweden, Switzerland
 
-### VAT/GST only (99 countries)
+### VAT/GST only (98 countries)
 
 Consumption tax classification with country-specific supplier pattern libraries. From Albania to Zimbabwe.
 
@@ -233,12 +242,13 @@ git clone https://github.com/openaccountants/openaccountants.git
 
 ```
 openaccountants/
-├── packages/              ← Ready-to-use jurisdiction packages (START HERE for non-US)
+├── packages/              ← Ready-to-use jurisdiction packages (START HERE)
 │   ├── malta/
 │   ├── uk/
-│   ├── germany/
-│   └── ... 130 more
-├── skills/                ← Source files (for contributors); START HERE for United States
+│   ├── us-ca/
+│   ├── us-ny/
+│   └── ... 130 countries + 51 US states
+├── skills/                ← Source files (for contributors)
 │   ├── foundation/        ← Universal workflow base + us-tax-workflow-base.md
 │   ├── federal/           ← US federal income tax / Schedule C / SE / QBI / etc.
 │   ├── international/     ← Country-specific content (feeds build-packages.py)

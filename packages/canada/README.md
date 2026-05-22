@@ -1,4 +1,7 @@
-# Canada — Tax Skills Package
+# Canada — AI Tax Assistant | OpenAccountants
+
+> Open-source tax computation skills for Canada. Upload to Claude, ChatGPT, or any AI assistant.
+> Verified by accountants. Free and open source.
 
 ## What's in this folder
 
@@ -8,11 +11,22 @@
 4. `ca-fed-gst-hst.md`
 5. `ca-fed-instalments.md`
 6. `ca-fed-t1-return.md`
-7. `ca-fed-t2125.md`
-8. `canada-gst-hst.md`
-9. `canada-guided-intake.md`
-10. `canada-return-assembly.md`
-11. `references.md`
+7. `ca-fed-t1135.md`
+8. `ca-fed-t2125.md`
+9. `canada-gst-hst.md`
+10. `references.md`
+11. `on-individual-return.md`
+12. `bc-individual-return.md`
+13. `qc-individual-return.md`
+14. `qc-qst-return.md`
+15. `canada-guided-intake.md`
+16. `canada-return-assembly.md`
+
+## Also known as
+
+CPA, T1, T2125, GST/HST, CPP, EI, RRSP
+
+Tax authority: **Canada Revenue Agency (CRA)**
 
 ## How to use
 
@@ -34,20 +48,24 @@ The most up-to-date, verified version of these skills is maintained at [openacco
 
 ---
 
-## Found an error? Improve this skill.
+## Are you a CPA?
 
-Tax rules change. Rates get updated. Thresholds move. If something in these files is wrong for your country:
+These Canada tax skills need your eye. Every rate, threshold, and form reference was AI-drafted and needs a human professional to verify it.
 
-1. Use Claude or ChatGPT with deep research to verify: *"Search [country] tax authority website for current VAT rate and compare against this skill"*
-2. Fork the repo: [github.com/openaccountants/openaccountants](https://github.com/openaccountants/openaccountants)
-3. Fix the error in `skills/` (the source files)
-4. Submit a PR — your name goes on the skill as a verified contributor
+**You don't need to use GitHub.** Just:
 
-Know a vendor pattern we're missing? Know how your local bank formats statements? Every pattern you add saves the next user from a misclassification.
+1. Download the files in this folder
+2. Check the rates against Canada Revenue Agency (CRA)'s website
+3. Email your corrections to **info@openaaccountants.com** — Word doc, Excel, PDF, tracked changes, whatever works
 
-**Contributors get credited at [openaccountants.com](https://openaccountants.com)**
+We'll update the skill and credit you publicly as the verified reviewer at [openaccountants.com](https://openaccountants.com).
+
+Or if you're comfortable with GitHub: fork the repo, fix the source file under `skills/`, and submit a PR.
+
+**Your name goes on the skill either way.**
 
 ---
 
-*OpenAccountants — open-source tax computation skills*
+*OpenAccountants — open-source tax computation skills for AI*
+*133 countries + 51 US states — [openaccountants.com](https://openaccountants.com)*
 *info@openaaccountants.com*

@@ -29,7 +29,6 @@ category: international
 | Surtax threshold | NIS 721,560 (frozen 2025–2027) |
 | Credit point value | NIS 2,904/year (NIS 242/month) — frozen 2025–2027 |
 | Contributor | Open Accountants Community |
-| Source credit | [skills-il/tax-and-finance](https://github.com/skills-il/tax-and-finance) (MIT) — brackets, credit points, return types, Mikdamot logic |
 | Validated by | Pending — requires sign-off by Israel-licensed רואה חשבון or יועץ מס |
 
 ### Conservative defaults

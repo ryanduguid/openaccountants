@@ -1,4 +1,9 @@
-# US State Tax Skills — Coverage Matrix
+# US State Tax Skills — Source Coverage Matrix
+
+> **This is the source directory.** End users should use the ready-to-serve packages
+> under `packages/us-[code]/` (e.g. `packages/us-ca/`), which bundle federal + state
+> skills together. Contributors edit files here; `scripts/build-packages.py` generates
+> the packages.
 
 > All state skills are **Q3 (AI-drafted)** unless otherwise noted. Rates and form references have been researched against each state's tax authority website but have NOT been independently verified by a licensed practitioner in that state. If you are a CPA, EA, or tax professional licensed in any of these states, we welcome your review — see CONTRIBUTING.md.
 
@@ -84,11 +89,15 @@ Delaware, Montana, New Hampshire, Oregon — these states have no general sales 
 
 - `references.md` — Related open-source US tax projects
 
-## How to use
+## How to use (end users)
+
+The easiest path: go to `packages/us-[your state code]/` and upload all `.md` files from that folder. The package already includes federal + state skills bundled together. See the [US state index](../../packages/us/README.md).
+
+If you prefer to assemble manually from source:
 
 1. Find your state below
-2. Upload ALL `.md` files from your state's folder
-3. ALSO upload the federal skills from `skills/foundation/` and `skills/federal/`
+2. Upload ALL `.md` files from your state's folder under `skills/us-states/[code]/`
+3. ALSO upload `skills/foundation/us-tax-workflow-base.md` and all files from `skills/federal/`
 4. Attach your bank statement and say "Help me with my 2025 taxes"
 
 ## Contributing

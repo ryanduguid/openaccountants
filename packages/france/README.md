@@ -1,30 +1,30 @@
-# France — Tax Skills Package
+# France — AI Tax Assistant | OpenAccountants
+
+> Open-source tax computation skills for France. Upload to Claude, ChatGPT, or any AI assistant.
+> Verified by accountants. Free and open source.
 
 ## What's in this folder
 
-### Core skills
-1. `foundation.md` — How the system works (shared across all countries)
-2. `intake.md` — Onboarding questions
-3. `fr-income-tax.md` — Self-employed income tax (micro-entrepreneur, BNC/BIC)
-4. `fr-social-contributions.md` — Urssaf / social charges
-5. `fr-cfe.md` — Cotisation Foncière des Entreprises
-6. `france-vat-return.md` — VAT return workflow
-7. `eu-vat-directive.md` — EU VAT directive
+1. `foundation.md`
+2. `intake.md`
+3. `fr-business-accounting.md`
+4. `fr-capital-gains.md`
+5. `fr-cfe.md`
+6. `fr-crypto-tax.md`
+7. `fr-income-tax.md`
+8. `fr-personal-income-tax.md`
+9. `fr-rental-income.md`
+10. `fr-social-contributions.md`
+11. `fr-tax-audit.md`
+12. `france-vat-return.md`
+13. `references.md`
+14. `eu-vat-directive.md`
 
-### Extended skills (adapted from [paperasse](https://github.com/romainsimon/paperasse))
-8. `fr-personal-income-tax.md` — Comprehensive IR guide: brackets, quotient familial, décote, CEHR, CDHR, PAS, deductions/reductions/credits, special cases
-9. `fr-capital-gains.md` — PFU, PEA, assurance-vie, dividends, PV mobilières, RSU, BSPCE, stock-options, PEE/PERCO
-10. `fr-rental-income.md` — Revenus fonciers, LMNP, LMP, SCI à l'IR, déficit foncier
-11. `fr-crypto-tax.md` — Crypto taxation (PAMC method, form 2086, staking/mining)
-12. `fr-business-accounting.md` — TVA declarations, invoicing, e-invoicing 2026 reform, IS, FEC, annual closing
-13. `fr-tax-audit.md` — Tax audit procedures, penalties, 8 verification axes, taxpayer rights
-14. `references.md` — OpenFisca France, DGFiP calculette-impots source code, and other integration sources
+## Also known as
 
-## Credits
+expert-comptable, impôt sur le revenu, TVA, micro-entrepreneur, BNC, URSSAF, CFE
 
-Skills 8–13 are based on work by **[Romain Simon (@romainsimon)](https://github.com/romainsimon/paperasse)**, licensed under MIT. Adapted for the OpenAccountants format with detailed rate tables, computation logic, and structured sections.
-
-Additional sources: **[OpenFisca France](https://github.com/openfisca/openfisca-france)** (AGPL-3.0, 296 stars) — the most widely adopted open-source model of the French tax and benefit system, and the **[DGFiP calculette-impots source code](https://github.com/GouvernementFR/calculette-impots-m-source-code)** (CeCILL 2.1 / GPL-compatible) — the French government's own income tax computation engine.
+Tax authority: **Direction générale des Finances publiques (DGFiP)**
 
 ## How to use
 
@@ -46,20 +46,24 @@ The most up-to-date, verified version of these skills is maintained at [openacco
 
 ---
 
-## Found an error? Improve this skill.
+## Are you a expert-comptable?
 
-Tax rules change. Rates get updated. Thresholds move. If something in these files is wrong for your country:
+These France tax skills need your eye. Every rate, threshold, and form reference was AI-drafted and needs a human professional to verify it.
 
-1. Use Claude or ChatGPT with deep research to verify: *"Search [country] tax authority website for current VAT rate and compare against this skill"*
-2. Fork the repo: [github.com/openaccountants/openaccountants](https://github.com/openaccountants/openaccountants)
-3. Fix the error in `skills/` (the source files)
-4. Submit a PR — your name goes on the skill as a verified contributor
+**You don't need to use GitHub.** Just:
 
-Know a vendor pattern we're missing? Know how your local bank formats statements? Every pattern you add saves the next user from a misclassification.
+1. Download the files in this folder
+2. Check the rates against Direction générale des Finances publiques (DGFiP)'s website
+3. Email your corrections to **info@openaaccountants.com** — Word doc, Excel, PDF, tracked changes, whatever works
 
-**Contributors get credited at [openaccountants.com](https://openaccountants.com)**
+We'll update the skill and credit you publicly as the verified reviewer at [openaccountants.com](https://openaccountants.com).
+
+Or if you're comfortable with GitHub: fork the repo, fix the source file under `skills/`, and submit a PR.
+
+**Your name goes on the skill either way.**
 
 ---
 
-*OpenAccountants — open-source tax computation skills*
+*OpenAccountants — open-source tax computation skills for AI*
+*133 countries + 51 US states — [openaccountants.com](https://openaccountants.com)*
 *info@openaaccountants.com*

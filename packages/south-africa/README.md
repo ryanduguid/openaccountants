@@ -1,4 +1,7 @@
-# South Africa — Tax Skills Package
+# South Africa — AI Tax Assistant | OpenAccountants
+
+> Open-source tax computation skills for South Africa. Upload to Claude, ChatGPT, or any AI assistant.
+> Verified by accountants. Free and open source.
 
 ## What's in this folder
 
@@ -8,6 +11,12 @@
 4. `za-income-tax.md`
 5. `za-provisional-tax.md`
 6. `za-vat-return.md`
+
+## Also known as
+
+SAIPA, SAICA, income tax, VAT, provisional tax, ITR12, sole proprietor
+
+Tax authority: **South African Revenue Service (SARS)**
 
 ## How to use
 
@@ -21,12 +30,6 @@ The AI will:
 - Produce working papers for each tax obligation
 - Flag anything that needs your SAIPA/SAICA member's attention
 
-## Validated by
-
-These skills were validated in May 2026 by **Werner Britz CA(SA)**, founder of [Spurwing CFO](https://spurwingcfo.com) — a fractional CFO practice operating across South Africa, the UK, Switzerland, and the United States. Werner is a Chartered Accountant (SA) with senior finance experience at PricewaterhouseCoopers (across three continents), WesBank Corporate (FirstRand Group), Grandmark International, and The House of Busby. Based in Gauteng, South Africa.
-
-All rates, thresholds, and rules are current for the **2026/2027 year of assessment** (1 March 2026 to 28 February 2027).
-
 ## Important
 
 **This is not tax advice.** Everything produced must be reviewed and signed off by a qualified SAIPA/SAICA member before filing.
@@ -35,10 +38,24 @@ The most up-to-date, verified version of these skills is maintained at [openacco
 
 ---
 
-## Found an error? Improve this skill.
+## Are you a SAIPA/SAICA member?
 
-Tax rules change. Rates get updated. Thresholds move. If something in these files is wrong for your country:
+These South Africa tax skills need your eye. Every rate, threshold, and form reference was AI-drafted and needs a human professional to verify it.
+
+**You don't need to use GitHub.** Just:
+
+1. Download the files in this folder
+2. Check the rates against South African Revenue Service (SARS)'s website
+3. Email your corrections to **info@openaaccountants.com** — Word doc, Excel, PDF, tracked changes, whatever works
+
+We'll update the skill and credit you publicly as the verified reviewer at [openaccountants.com](https://openaccountants.com).
+
+Or if you're comfortable with GitHub: fork the repo, fix the source file under `skills/`, and submit a PR.
+
+**Your name goes on the skill either way.**
+
 ---
 
-*OpenAccountants — open-source tax computation skills*
+*OpenAccountants — open-source tax computation skills for AI*
+*133 countries + 51 US states — [openaccountants.com](https://openaccountants.com)*
 *info@openaaccountants.com*

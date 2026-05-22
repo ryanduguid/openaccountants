@@ -1,20 +1,29 @@
-# Spain — Tax Skills Package
+# Spain — AI Tax Assistant | OpenAccountants
+
+> Open-source tax computation skills for Spain. Upload to Claude, ChatGPT, or any AI assistant.
+> Verified by accountants. Free and open source.
 
 ## What's in this folder
 
 1. `foundation.md`
 2. `intake.md`
-3. `es-estimated-tax.md`
-4. `es-income-tax.md`
-5. `es-social-contributions.md`
-6. `spain-vat-return.md`
-7. `eu-vat-directive.md`
-8. `spain-guided-intake.md`
-9. `spain-return-assembly.md`
-10. `es-irpf-deductions.md` — Comprehensive regional deduction guide covering all 21 Spanish territories (339+ deductions across 13 categories)
-11. `es-corporate-tax.md` — Impuesto sobre Sociedades / Modelo 200 / Modelo 202 with rate tables for 7 regimes
-12. `es-autonomous-worker.md` — Complete autónomo obligations: cuota by income brackets, tarifa plana, fiscal calendar, net take-home computation
-13. `references.md` — Related open-source Spain tax projects with integration notes
+3. `es-autonomous-worker.md`
+4. `es-corporate-tax.md`
+5. `es-estimated-tax.md`
+6. `es-income-tax.md`
+7. `es-irpf-deductions.md`
+8. `es-social-contributions.md`
+9. `references.md`
+10. `spain-vat-return.md`
+11. `eu-vat-directive.md`
+12. `spain-guided-intake.md`
+13. `spain-return-assembly.md`
+
+## Also known as
+
+asesor fiscal, IRPF, IVA, modelo 303, modelo 130, RETA, autónomo
+
+Tax authority: **Agencia Tributaria (AEAT)**
 
 ## How to use
 
@@ -36,31 +45,24 @@ The most up-to-date, verified version of these skills is maintained at [openacco
 
 ---
 
-## Contributors & Attribution
+## Are you a asesor fiscal?
 
-Skills 10-12 are based on work from the following MIT-licensed open-source projects:
+These Spain tax skills need your eye. Every rate, threshold, and form reference was AI-drafted and needs a human professional to verify it.
 
-- **[Nambu89 / Impuestify](https://github.com/Nambu89/Impuestify)** — Spanish multi-agent fiscal assistant with IRPF simulator (8 sub-calculators), ~339 regional deductions database, and Modelo 200 corporate tax simulator covering 7 territorial regimes.
-- **[Pau March / larenta](https://github.com/paumrch/larenta)** — Spanish IRPF guide and data structure reference.
+**You don't need to use GitHub.** Just:
 
-Both projects are licensed under the MIT License. Adapted for the OpenAccountants skills format with permission.
+1. Download the files in this folder
+2. Check the rates against Agencia Tributaria (AEAT)'s website
+3. Email your corrections to **info@openaaccountants.com** — Word doc, Excel, PDF, tracked changes, whatever works
 
----
+We'll update the skill and credit you publicly as the verified reviewer at [openaccountants.com](https://openaccountants.com).
 
-## Found an error? Improve this skill.
+Or if you're comfortable with GitHub: fork the repo, fix the source file under `skills/`, and submit a PR.
 
-Tax rules change. Rates get updated. Thresholds move. If something in these files is wrong for your country:
-
-1. Use Claude or ChatGPT with deep research to verify: *"Search [country] tax authority website for current VAT rate and compare against this skill"*
-2. Fork the repo: [github.com/openaccountants/openaccountants](https://github.com/openaccountants/openaccountants)
-3. Fix the error in `skills/` (the source files)
-4. Submit a PR — your name goes on the skill as a verified contributor
-
-Know a vendor pattern we're missing? Know how your local bank formats statements? Every pattern you add saves the next user from a misclassification.
-
-**Contributors get credited at [openaccountants.com](https://openaccountants.com)**
+**Your name goes on the skill either way.**
 
 ---
 
-*OpenAccountants — open-source tax computation skills*
+*OpenAccountants — open-source tax computation skills for AI*
+*133 countries + 51 US states — [openaccountants.com](https://openaccountants.com)*
 *info@openaaccountants.com*

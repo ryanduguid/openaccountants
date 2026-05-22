@@ -1,6 +1,8 @@
 {
-  "generated": "2026-04-13",
-  "total_packages": 133,
+  "generated": "2026-05-22",
+  "total_packages": 185,
+  "international_packages": 133,
+  "us_state_packages": 51,
   "packages": [
     {
       "jurisdiction": "AL",
@@ -45,7 +47,8 @@
         "ar-monotributo.md",
         "ar-social-contributions.md",
         "ar-vat-return.md",
-        "argentina-iva.md"
+        "argentina-iva.md",
+        "references.md"
       ],
       "has_orchestrator": false,
       "skill_count": 5
@@ -74,6 +77,7 @@
         "au-sole-trader-schedule.md",
         "au-super-guarantee.md",
         "australia-gst.md",
+        "references.md",
         "australia-guided-intake.md",
         "australia-return-assembly.md"
       ],
@@ -133,10 +137,12 @@
       "files": [
         "foundation.md",
         "intake.md",
-        "bangladesh-vat.md"
+        "bangladesh-pit.md",
+        "bangladesh-vat.md",
+        "references.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 1
+      "skill_count": 2
     },
     {
       "jurisdiction": "BB",
@@ -218,7 +224,8 @@
         "br-indirect-tax.md",
         "br-inss.md",
         "br-simples-nacional.md",
-        "brazil-vat.md"
+        "brazil-vat.md",
+        "references.md"
       ],
       "has_orchestrator": false,
       "skill_count": 6
@@ -289,13 +296,19 @@
         "ca-fed-gst-hst.md",
         "ca-fed-instalments.md",
         "ca-fed-t1-return.md",
+        "ca-fed-t1135.md",
         "ca-fed-t2125.md",
         "canada-gst-hst.md",
+        "references.md",
+        "on-individual-return.md",
+        "bc-individual-return.md",
+        "qc-individual-return.md",
+        "qc-qst-return.md",
         "canada-guided-intake.md",
         "canada-return-assembly.md"
       ],
       "has_orchestrator": true,
-      "skill_count": 6
+      "skill_count": 11
     },
     {
       "jurisdiction": "KY",
@@ -317,7 +330,8 @@
         "chile-iva.md",
         "cl-income-tax.md",
         "cl-social-contributions.md",
-        "cl-vat-return.md"
+        "cl-vat-return.md",
+        "references.md"
       ],
       "has_orchestrator": false,
       "skill_count": 4
@@ -328,10 +342,12 @@
       "files": [
         "foundation.md",
         "intake.md",
-        "china-vat.md"
+        "china-pit.md",
+        "china-vat.md",
+        "references.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 1
+      "skill_count": 2
     },
     {
       "jurisdiction": "CO",
@@ -391,6 +407,7 @@
         "cz-income-tax.md",
         "cz-social-health.md",
         "czech-republic-vat-return.md",
+        "references.md",
         "eu-vat-directive.md"
       ],
       "has_orchestrator": false,
@@ -404,6 +421,7 @@
         "intake.md",
         "denmark-vat-return.md",
         "dk-income-tax.md",
+        "references.md",
         "eu-vat-directive.md"
       ],
       "has_orchestrator": false,
@@ -505,14 +523,21 @@
       "files": [
         "foundation.md",
         "intake.md",
+        "fr-business-accounting.md",
+        "fr-capital-gains.md",
         "fr-cfe.md",
+        "fr-crypto-tax.md",
         "fr-income-tax.md",
+        "fr-personal-income-tax.md",
+        "fr-rental-income.md",
         "fr-social-contributions.md",
+        "fr-tax-audit.md",
         "france-vat-return.md",
+        "references.md",
         "eu-vat-directive.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 4
+      "skill_count": 10
     },
     {
       "jurisdiction": "GE",
@@ -533,15 +558,17 @@
         "intake.md",
         "de-estimated-tax.md",
         "de-income-tax.md",
+        "de-payroll.md",
         "de-social-contributions.md",
         "de-trade-tax.md",
         "germany-vat-return.md",
+        "references.md",
         "eu-vat-directive.md",
         "germany-guided-intake.md",
         "germany-return-assembly.md"
       ],
       "has_orchestrator": true,
-      "skill_count": 5
+      "skill_count": 6
     },
     {
       "jurisdiction": "GH",
@@ -549,10 +576,12 @@
       "files": [
         "foundation.md",
         "intake.md",
-        "ghana-vat.md"
+        "ghana-pit.md",
+        "ghana-vat.md",
+        "references.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 1
+      "skill_count": 2
     },
     {
       "jurisdiction": "GR",
@@ -636,6 +665,7 @@
         "in-income-tax.md",
         "in-tds-freelance.md",
         "india-gst.md",
+        "references.md",
         "india-guided-intake.md",
         "india-return-assembly.md"
       ],
@@ -648,10 +678,12 @@
       "files": [
         "foundation.md",
         "intake.md",
-        "indonesia-vat.md"
+        "id-payroll-pph21.md",
+        "indonesia-vat.md",
+        "references.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 1
+      "skill_count": 2
     },
     {
       "jurisdiction": "IR",
@@ -708,10 +740,18 @@
       "files": [
         "foundation.md",
         "intake.md",
-        "israel-vat.md"
+        "il-corporate-tax.md",
+        "il-crypto-tax.md",
+        "il-customs-duty.md",
+        "il-employee-tax-refund.md",
+        "il-freelancer-ops.md",
+        "il-income-tax-returns.md",
+        "il-tax-withholding.md",
+        "israel-vat.md",
+        "references.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 1
+      "skill_count": 8
     },
     {
       "jurisdiction": "IT",
@@ -724,6 +764,7 @@
         "it-inps-contributions.md",
         "it-irap.md",
         "italy-vat-return.md",
+        "references.md",
         "eu-vat-directive.md"
       ],
       "has_orchestrator": false,
@@ -758,13 +799,17 @@
         "foundation.md",
         "intake.md",
         "japan-consumption-tax.md",
+        "jp-bookkeeping.md",
         "jp-consumption-tax.md",
         "jp-estimated-tax.md",
+        "jp-etax-filing.md",
         "jp-income-tax.md",
-        "jp-social-insurance.md"
+        "jp-incorporation.md",
+        "jp-social-insurance.md",
+        "references.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 5
+      "skill_count": 8
     },
     {
       "jurisdiction": "JO",
@@ -874,11 +919,13 @@
       "files": [
         "foundation.md",
         "intake.md",
+        "lithuania-pit.md",
         "lithuania-vat-return.md",
+        "references.md",
         "eu-vat-directive.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 1
+      "skill_count": 2
     },
     {
       "jurisdiction": "LU",
@@ -953,7 +1000,8 @@
         "mx-estimated-tax.md",
         "mx-imss.md",
         "mx-income-tax.md",
-        "mx-vat-return.md"
+        "mx-vat-return.md",
+        "references.md"
       ],
       "has_orchestrator": false,
       "skill_count": 6
@@ -1053,12 +1101,17 @@
         "foundation.md",
         "intake.md",
         "netherlands-vat-return.md",
+        "nl-corporate-tax.md",
+        "nl-deductions.md",
         "nl-income-tax.md",
+        "nl-payroll-tax.md",
+        "nl-tax-objection.md",
         "nl-zzp-deductions.md",
+        "references.md",
         "eu-vat-directive.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 3
+      "skill_count": 7
     },
     {
       "jurisdiction": "NZ",
@@ -1070,7 +1123,8 @@
         "nz-acc-levies.md",
         "nz-gst-return.md",
         "nz-income-tax-ir3.md",
-        "nz-provisional-tax.md"
+        "nz-provisional-tax.md",
+        "references.md"
       ],
       "has_orchestrator": false,
       "skill_count": 5
@@ -1094,7 +1148,8 @@
         "intake.md",
         "ng-income-tax.md",
         "ng-vat-return.md",
-        "nigeria-vat.md"
+        "nigeria-vat.md",
+        "references.md"
       ],
       "has_orchestrator": false,
       "skill_count": 3
@@ -1209,6 +1264,7 @@
         "pl-income-tax.md",
         "pl-zus-contributions.md",
         "poland-vat-return.md",
+        "references.md",
         "eu-vat-directive.md"
       ],
       "has_orchestrator": false,
@@ -1245,6 +1301,7 @@
       "files": [
         "foundation.md",
         "intake.md",
+        "references.md",
         "ro-cas-cass.md",
         "ro-income-tax.md",
         "romania-vat-return.md",
@@ -1281,6 +1338,7 @@
       "files": [
         "foundation.md",
         "intake.md",
+        "references.md",
         "saudi-arabia-vat.md"
       ],
       "has_orchestrator": false,
@@ -1327,11 +1385,13 @@
       "files": [
         "foundation.md",
         "intake.md",
+        "references.md",
+        "slovakia-pit.md",
         "slovakia-vat-return.md",
         "eu-vat-directive.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 1
+      "skill_count": 2
     },
     {
       "jurisdiction": "SI",
@@ -1367,6 +1427,7 @@
         "intake.md",
         "kr-income-tax.md",
         "kr-social-insurance.md",
+        "references.md",
         "south-korea-vat.md"
       ],
       "has_orchestrator": false,
@@ -1378,16 +1439,20 @@
       "files": [
         "foundation.md",
         "intake.md",
+        "es-autonomous-worker.md",
+        "es-corporate-tax.md",
         "es-estimated-tax.md",
         "es-income-tax.md",
+        "es-irpf-deductions.md",
         "es-social-contributions.md",
+        "references.md",
         "spain-vat-return.md",
         "eu-vat-directive.md",
         "spain-guided-intake.md",
         "spain-return-assembly.md"
       ],
       "has_orchestrator": true,
-      "skill_count": 4
+      "skill_count": 7
     },
     {
       "jurisdiction": "LK",
@@ -1406,6 +1471,7 @@
       "files": [
         "foundation.md",
         "intake.md",
+        "references.md",
         "se-income-tax.md",
         "se-social-contributions.md",
         "sweden-vat-return.md",
@@ -1456,10 +1522,12 @@
       "files": [
         "foundation.md",
         "intake.md",
+        "references.md",
+        "thailand-pit.md",
         "thailand-vat.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 1
+      "skill_count": 2
     },
     {
       "jurisdiction": "TT",
@@ -1489,10 +1557,12 @@
       "files": [
         "foundation.md",
         "intake.md",
+        "references.md",
+        "turkey-pit.md",
         "turkey-vat.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 1
+      "skill_count": 2
     },
     {
       "jurisdiction": "AE",
@@ -1523,6 +1593,7 @@
       "files": [
         "foundation.md",
         "intake.md",
+        "references.md",
         "uk-income-tax-sa100.md",
         "uk-national-insurance.md",
         "uk-payments-on-account.md",
@@ -1585,10 +1656,12 @@
       "files": [
         "foundation.md",
         "intake.md",
+        "references.md",
+        "vietnam-pit.md",
         "vietnam-vat.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 1
+      "skill_count": 2
     },
     {
       "jurisdiction": "ZM",
@@ -1611,6 +1684,1301 @@
       ],
       "has_orchestrator": false,
       "skill_count": 1
+    },
+    {
+      "jurisdiction": "CROSS-BORDER",
+      "name": "Cross-Border",
+      "files": [
+        "cross-border-vat-gst.md",
+        "eu-oss-digital.md",
+        "eu-reverse-charge.md",
+        "forex-controls.md",
+        "international-incorporation.md",
+        "non-eu-export-services.md",
+        "permanent-establishment-risk.md",
+        "tax-residency-planning.md",
+        "withholding-tax-matrix.md",
+        "README.md"
+      ],
+      "has_orchestrator": false,
+      "skill_count": 9
+    },
+    {
+      "jurisdiction": "US-AL",
+      "name": "United States \u2014 Alabama",
+      "package_dir": "us-al",
+      "files": [
+        "us-tax-workflow-base.md",
+        "no-sales-tax-states.md",
+        "us-1099-nec-issuance.md",
+        "us-qbi-deduction.md",
+        "us-quarterly-estimated-tax.md",
+        "us-s-corp-election-decision.md",
+        "us-sales-tax.md",
+        "us-schedule-c-and-se-computation.md",
+        "us-self-employed-health-insurance.md",
+        "us-self-employed-retirement.md",
+        "us-sole-prop-bookkeeping.md",
+        "us-federal-return-assembly.md",
+        "global-router.md",
+        "al-income-tax.md",
+        "al-sales-tax.md",
+        "README.md"
+      ],
+      "state_skills": 2,
+      "has_orchestrator": false
+    },
+    {
+      "jurisdiction": "US-AK",
+      "name": "United States \u2014 Alaska",
+      "package_dir": "us-ak",
+      "files": [
+        "us-tax-workflow-base.md",
+        "no-sales-tax-states.md",
+        "us-1099-nec-issuance.md",
+        "us-qbi-deduction.md",
+        "us-quarterly-estimated-tax.md",
+        "us-s-corp-election-decision.md",
+        "us-sales-tax.md",
+        "us-schedule-c-and-se-computation.md",
+        "us-self-employed-health-insurance.md",
+        "us-self-employed-retirement.md",
+        "us-sole-prop-bookkeeping.md",
+        "us-federal-return-assembly.md",
+        "global-router.md",
+        "README.md"
+      ],
+      "state_skills": 0,
+      "has_orchestrator": false
+    },
+    {
+      "jurisdiction": "US-AZ",
+      "name": "United States \u2014 Arizona",
+      "package_dir": "us-az",
+      "files": [
+        "us-tax-workflow-base.md",
+        "no-sales-tax-states.md",
+        "us-1099-nec-issuance.md",
+        "us-qbi-deduction.md",
+        "us-quarterly-estimated-tax.md",
+        "us-s-corp-election-decision.md",
+        "us-sales-tax.md",
+        "us-schedule-c-and-se-computation.md",
+        "us-self-employed-health-insurance.md",
+        "us-self-employed-retirement.md",
+        "us-sole-prop-bookkeeping.md",
+        "us-federal-return-assembly.md",
+        "global-router.md",
+        "az-income-tax.md",
+        "az-sales-tax.md",
+        "README.md"
+      ],
+      "state_skills": 2,
+      "has_orchestrator": false
+    },
+    {
+      "jurisdiction": "US-AR",
+      "name": "United States \u2014 Arkansas",
+      "package_dir": "us-ar",
+      "files": [
+        "us-tax-workflow-base.md",
+        "no-sales-tax-states.md",
+        "us-1099-nec-issuance.md",
+        "us-qbi-deduction.md",
+        "us-quarterly-estimated-tax.md",
+        "us-s-corp-election-decision.md",
+        "us-sales-tax.md",
+        "us-schedule-c-and-se-computation.md",
+        "us-self-employed-health-insurance.md",
+        "us-self-employed-retirement.md",
+        "us-sole-prop-bookkeeping.md",
+        "us-federal-return-assembly.md",
+        "global-router.md",
+        "ar-income-tax.md",
+        "ar-sales-tax.md",
+        "README.md"
+      ],
+      "state_skills": 2,
+      "has_orchestrator": false
+    },
+    {
+      "jurisdiction": "US-CA",
+      "name": "United States \u2014 California",
+      "package_dir": "us-ca",
+      "files": [
+        "us-tax-workflow-base.md",
+        "no-sales-tax-states.md",
+        "us-1099-nec-issuance.md",
+        "us-qbi-deduction.md",
+        "us-quarterly-estimated-tax.md",
+        "us-s-corp-election-decision.md",
+        "us-sales-tax.md",
+        "us-schedule-c-and-se-computation.md",
+        "us-self-employed-health-insurance.md",
+        "us-self-employed-retirement.md",
+        "us-sole-prop-bookkeeping.md",
+        "us-federal-return-assembly.md",
+        "global-router.md",
+        "us-ca-freelance-intake.md",
+        "us-ca-return-assembly.md",
+        "ca-540-es-estimated-tax.md",
+        "ca-form-3853-coverage.md",
+        "ca-income-tax.md",
+        "ca-sales-use-tax.md",
+        "ca-smllc-form-568.md",
+        "README.md"
+      ],
+      "state_skills": 5,
+      "has_orchestrator": true
+    },
+    {
+      "jurisdiction": "US-CO",
+      "name": "United States \u2014 Colorado",
+      "package_dir": "us-co",
+      "files": [
+        "us-tax-workflow-base.md",
+        "no-sales-tax-states.md",
+        "us-1099-nec-issuance.md",
+        "us-qbi-deduction.md",
+        "us-quarterly-estimated-tax.md",
+        "us-s-corp-election-decision.md",
+        "us-sales-tax.md",
+        "us-schedule-c-and-se-computation.md",
+        "us-self-employed-health-insurance.md",
+        "us-self-employed-retirement.md",
+        "us-sole-prop-bookkeeping.md",
+        "us-federal-return-assembly.md",
+        "global-router.md",
+        "co-income-tax.md",
+        "co-sales-tax.md",
+        "README.md"
+      ],
+      "state_skills": 2,
+      "has_orchestrator": false
+    },
+    {
+      "jurisdiction": "US-CT",
+      "name": "United States \u2014 Connecticut",
+      "package_dir": "us-ct",
+      "files": [
+        "us-tax-workflow-base.md",
+        "no-sales-tax-states.md",
+        "us-1099-nec-issuance.md",
+        "us-qbi-deduction.md",
+        "us-quarterly-estimated-tax.md",
+        "us-s-corp-election-decision.md",
+        "us-sales-tax.md",
+        "us-schedule-c-and-se-computation.md",
+        "us-self-employed-health-insurance.md",
+        "us-self-employed-retirement.md",
+        "us-sole-prop-bookkeeping.md",
+        "us-federal-return-assembly.md",
+        "global-router.md",
+        "ct-income-tax.md",
+        "ct-sales-tax.md",
+        "README.md"
+      ],
+      "state_skills": 2,
+      "has_orchestrator": false
+    },
+    {
+      "jurisdiction": "US-DC",
+      "name": "United States \u2014 District of Columbia",
+      "package_dir": "us-dc",
+      "files": [
+        "us-tax-workflow-base.md",
+        "no-sales-tax-states.md",
+        "us-1099-nec-issuance.md",
+        "us-qbi-deduction.md",
+        "us-quarterly-estimated-tax.md",
+        "us-s-corp-election-decision.md",
+        "us-sales-tax.md",
+        "us-schedule-c-and-se-computation.md",
+        "us-self-employed-health-insurance.md",
+        "us-self-employed-retirement.md",
+        "us-sole-prop-bookkeeping.md",
+        "us-federal-return-assembly.md",
+        "global-router.md",
+        "dc-income-tax.md",
+        "dc-sales-tax.md",
+        "README.md"
+      ],
+      "state_skills": 2,
+      "has_orchestrator": false
+    },
+    {
+      "jurisdiction": "US-DE",
+      "name": "United States \u2014 Delaware",
+      "package_dir": "us-de",
+      "files": [
+        "us-tax-workflow-base.md",
+        "no-sales-tax-states.md",
+        "us-1099-nec-issuance.md",
+        "us-qbi-deduction.md",
+        "us-quarterly-estimated-tax.md",
+        "us-s-corp-election-decision.md",
+        "us-sales-tax.md",
+        "us-schedule-c-and-se-computation.md",
+        "us-self-employed-health-insurance.md",
+        "us-self-employed-retirement.md",
+        "us-sole-prop-bookkeeping.md",
+        "us-federal-return-assembly.md",
+        "global-router.md",
+        "de-gross-receipts-tax.md",
+        "de-income-tax.md",
+        "README.md"
+      ],
+      "state_skills": 2,
+      "has_orchestrator": false
+    },
+    {
+      "jurisdiction": "US-FL",
+      "name": "United States \u2014 Florida",
+      "package_dir": "us-fl",
+      "files": [
+        "us-tax-workflow-base.md",
+        "no-sales-tax-states.md",
+        "us-1099-nec-issuance.md",
+        "us-qbi-deduction.md",
+        "us-quarterly-estimated-tax.md",
+        "us-s-corp-election-decision.md",
+        "us-sales-tax.md",
+        "us-schedule-c-and-se-computation.md",
+        "us-self-employed-health-insurance.md",
+        "us-self-employed-retirement.md",
+        "us-sole-prop-bookkeeping.md",
+        "us-federal-return-assembly.md",
+        "global-router.md",
+        "fl-annual-report.md",
+        "fl-sales-tax.md",
+        "README.md"
+      ],
+      "state_skills": 2,
+      "has_orchestrator": false
+    },
+    {
+      "jurisdiction": "US-GA",
+      "name": "United States \u2014 Georgia",
+      "package_dir": "us-ga",
+      "files": [
+        "us-tax-workflow-base.md",
+        "no-sales-tax-states.md",
+        "us-1099-nec-issuance.md",
+        "us-qbi-deduction.md",
+        "us-quarterly-estimated-tax.md",
+        "us-s-corp-election-decision.md",
+        "us-sales-tax.md",
+        "us-schedule-c-and-se-computation.md",
+        "us-self-employed-health-insurance.md",
+        "us-self-employed-retirement.md",
+        "us-sole-prop-bookkeeping.md",
+        "us-federal-return-assembly.md",
+        "global-router.md",
+        "ga-income-tax.md",
+        "ga-sales-tax.md",
+        "README.md"
+      ],
+      "state_skills": 2,
+      "has_orchestrator": false
+    },
+    {
+      "jurisdiction": "US-HI",
+      "name": "United States \u2014 Hawaii",
+      "package_dir": "us-hi",
+      "files": [
+        "us-tax-workflow-base.md",
+        "no-sales-tax-states.md",
+        "us-1099-nec-issuance.md",
+        "us-qbi-deduction.md",
+        "us-quarterly-estimated-tax.md",
+        "us-s-corp-election-decision.md",
+        "us-sales-tax.md",
+        "us-schedule-c-and-se-computation.md",
+        "us-self-employed-health-insurance.md",
+        "us-self-employed-retirement.md",
+        "us-sole-prop-bookkeeping.md",
+        "us-federal-return-assembly.md",
+        "global-router.md",
+        "hi-income-tax.md",
+        "hi-sales-tax.md",
+        "README.md"
+      ],
+      "state_skills": 2,
+      "has_orchestrator": false
+    },
+    {
+      "jurisdiction": "US-IA",
+      "name": "United States \u2014 Iowa",
+      "package_dir": "us-ia",
+      "files": [
+        "us-tax-workflow-base.md",
+        "no-sales-tax-states.md",
+        "us-1099-nec-issuance.md",
+        "us-qbi-deduction.md",
+        "us-quarterly-estimated-tax.md",
+        "us-s-corp-election-decision.md",
+        "us-sales-tax.md",
+        "us-schedule-c-and-se-computation.md",
+        "us-self-employed-health-insurance.md",
+        "us-self-employed-retirement.md",
+        "us-sole-prop-bookkeeping.md",
+        "us-federal-return-assembly.md",
+        "global-router.md",
+        "ia-income-tax.md",
+        "ia-sales-tax.md",
+        "README.md"
+      ],
+      "state_skills": 2,
+      "has_orchestrator": false
+    },
+    {
+      "jurisdiction": "US-ID",
+      "name": "United States \u2014 Idaho",
+      "package_dir": "us-id",
+      "files": [
+        "us-tax-workflow-base.md",
+        "no-sales-tax-states.md",
+        "us-1099-nec-issuance.md",
+        "us-qbi-deduction.md",
+        "us-quarterly-estimated-tax.md",
+        "us-s-corp-election-decision.md",
+        "us-sales-tax.md",
+        "us-schedule-c-and-se-computation.md",
+        "us-self-employed-health-insurance.md",
+        "us-self-employed-retirement.md",
+        "us-sole-prop-bookkeeping.md",
+        "us-federal-return-assembly.md",
+        "global-router.md",
+        "id-income-tax.md",
+        "id-sales-tax.md",
+        "README.md"
+      ],
+      "state_skills": 2,
+      "has_orchestrator": false
+    },
+    {
+      "jurisdiction": "US-IL",
+      "name": "United States \u2014 Illinois",
+      "package_dir": "us-il",
+      "files": [
+        "us-tax-workflow-base.md",
+        "no-sales-tax-states.md",
+        "us-1099-nec-issuance.md",
+        "us-qbi-deduction.md",
+        "us-quarterly-estimated-tax.md",
+        "us-s-corp-election-decision.md",
+        "us-sales-tax.md",
+        "us-schedule-c-and-se-computation.md",
+        "us-self-employed-health-insurance.md",
+        "us-self-employed-retirement.md",
+        "us-sole-prop-bookkeeping.md",
+        "us-federal-return-assembly.md",
+        "global-router.md",
+        "il-estimated-tax.md",
+        "il-income-tax.md",
+        "il-sales-tax.md",
+        "README.md"
+      ],
+      "state_skills": 3,
+      "has_orchestrator": false
+    },
+    {
+      "jurisdiction": "US-IN",
+      "name": "United States \u2014 Indiana",
+      "package_dir": "us-in",
+      "files": [
+        "us-tax-workflow-base.md",
+        "no-sales-tax-states.md",
+        "us-1099-nec-issuance.md",
+        "us-qbi-deduction.md",
+        "us-quarterly-estimated-tax.md",
+        "us-s-corp-election-decision.md",
+        "us-sales-tax.md",
+        "us-schedule-c-and-se-computation.md",
+        "us-self-employed-health-insurance.md",
+        "us-self-employed-retirement.md",
+        "us-sole-prop-bookkeeping.md",
+        "us-federal-return-assembly.md",
+        "global-router.md",
+        "in-income-tax.md",
+        "in-sales-tax.md",
+        "README.md"
+      ],
+      "state_skills": 2,
+      "has_orchestrator": false
+    },
+    {
+      "jurisdiction": "US-KS",
+      "name": "United States \u2014 Kansas",
+      "package_dir": "us-ks",
+      "files": [
+        "us-tax-workflow-base.md",
+        "no-sales-tax-states.md",
+        "us-1099-nec-issuance.md",
+        "us-qbi-deduction.md",
+        "us-quarterly-estimated-tax.md",
+        "us-s-corp-election-decision.md",
+        "us-sales-tax.md",
+        "us-schedule-c-and-se-computation.md",
+        "us-self-employed-health-insurance.md",
+        "us-self-employed-retirement.md",
+        "us-sole-prop-bookkeeping.md",
+        "us-federal-return-assembly.md",
+        "global-router.md",
+        "ks-income-tax.md",
+        "ks-sales-tax.md",
+        "README.md"
+      ],
+      "state_skills": 2,
+      "has_orchestrator": false
+    },
+    {
+      "jurisdiction": "US-KY",
+      "name": "United States \u2014 Kentucky",
+      "package_dir": "us-ky",
+      "files": [
+        "us-tax-workflow-base.md",
+        "no-sales-tax-states.md",
+        "us-1099-nec-issuance.md",
+        "us-qbi-deduction.md",
+        "us-quarterly-estimated-tax.md",
+        "us-s-corp-election-decision.md",
+        "us-sales-tax.md",
+        "us-schedule-c-and-se-computation.md",
+        "us-self-employed-health-insurance.md",
+        "us-self-employed-retirement.md",
+        "us-sole-prop-bookkeeping.md",
+        "us-federal-return-assembly.md",
+        "global-router.md",
+        "ky-income-tax.md",
+        "ky-sales-tax.md",
+        "README.md"
+      ],
+      "state_skills": 2,
+      "has_orchestrator": false
+    },
+    {
+      "jurisdiction": "US-LA",
+      "name": "United States \u2014 Louisiana",
+      "package_dir": "us-la",
+      "files": [
+        "us-tax-workflow-base.md",
+        "no-sales-tax-states.md",
+        "us-1099-nec-issuance.md",
+        "us-qbi-deduction.md",
+        "us-quarterly-estimated-tax.md",
+        "us-s-corp-election-decision.md",
+        "us-sales-tax.md",
+        "us-schedule-c-and-se-computation.md",
+        "us-self-employed-health-insurance.md",
+        "us-self-employed-retirement.md",
+        "us-sole-prop-bookkeeping.md",
+        "us-federal-return-assembly.md",
+        "global-router.md",
+        "la-income-tax.md",
+        "la-sales-tax.md",
+        "README.md"
+      ],
+      "state_skills": 2,
+      "has_orchestrator": false
+    },
+    {
+      "jurisdiction": "US-MA",
+      "name": "United States \u2014 Massachusetts",
+      "package_dir": "us-ma",
+      "files": [
+        "us-tax-workflow-base.md",
+        "no-sales-tax-states.md",
+        "us-1099-nec-issuance.md",
+        "us-qbi-deduction.md",
+        "us-quarterly-estimated-tax.md",
+        "us-s-corp-election-decision.md",
+        "us-sales-tax.md",
+        "us-schedule-c-and-se-computation.md",
+        "us-self-employed-health-insurance.md",
+        "us-self-employed-retirement.md",
+        "us-sole-prop-bookkeeping.md",
+        "us-federal-return-assembly.md",
+        "global-router.md",
+        "ma-income-tax.md",
+        "ma-sales-tax.md",
+        "README.md"
+      ],
+      "state_skills": 2,
+      "has_orchestrator": false
+    },
+    {
+      "jurisdiction": "US-MD",
+      "name": "United States \u2014 Maryland",
+      "package_dir": "us-md",
+      "files": [
+        "us-tax-workflow-base.md",
+        "no-sales-tax-states.md",
+        "us-1099-nec-issuance.md",
+        "us-qbi-deduction.md",
+        "us-quarterly-estimated-tax.md",
+        "us-s-corp-election-decision.md",
+        "us-sales-tax.md",
+        "us-schedule-c-and-se-computation.md",
+        "us-self-employed-health-insurance.md",
+        "us-self-employed-retirement.md",
+        "us-sole-prop-bookkeeping.md",
+        "us-federal-return-assembly.md",
+        "global-router.md",
+        "md-income-tax.md",
+        "md-sales-tax.md",
+        "README.md"
+      ],
+      "state_skills": 2,
+      "has_orchestrator": false
+    },
+    {
+      "jurisdiction": "US-ME",
+      "name": "United States \u2014 Maine",
+      "package_dir": "us-me",
+      "files": [
+        "us-tax-workflow-base.md",
+        "no-sales-tax-states.md",
+        "us-1099-nec-issuance.md",
+        "us-qbi-deduction.md",
+        "us-quarterly-estimated-tax.md",
+        "us-s-corp-election-decision.md",
+        "us-sales-tax.md",
+        "us-schedule-c-and-se-computation.md",
+        "us-self-employed-health-insurance.md",
+        "us-self-employed-retirement.md",
+        "us-sole-prop-bookkeeping.md",
+        "us-federal-return-assembly.md",
+        "global-router.md",
+        "me-income-tax.md",
+        "me-sales-tax.md",
+        "README.md"
+      ],
+      "state_skills": 2,
+      "has_orchestrator": false
+    },
+    {
+      "jurisdiction": "US-MI",
+      "name": "United States \u2014 Michigan",
+      "package_dir": "us-mi",
+      "files": [
+        "us-tax-workflow-base.md",
+        "no-sales-tax-states.md",
+        "us-1099-nec-issuance.md",
+        "us-qbi-deduction.md",
+        "us-quarterly-estimated-tax.md",
+        "us-s-corp-election-decision.md",
+        "us-sales-tax.md",
+        "us-schedule-c-and-se-computation.md",
+        "us-self-employed-health-insurance.md",
+        "us-self-employed-retirement.md",
+        "us-sole-prop-bookkeeping.md",
+        "us-federal-return-assembly.md",
+        "global-router.md",
+        "mi-income-tax.md",
+        "mi-sales-tax.md",
+        "README.md"
+      ],
+      "state_skills": 2,
+      "has_orchestrator": false
+    },
+    {
+      "jurisdiction": "US-MN",
+      "name": "United States \u2014 Minnesota",
+      "package_dir": "us-mn",
+      "files": [
+        "us-tax-workflow-base.md",
+        "no-sales-tax-states.md",
+        "us-1099-nec-issuance.md",
+        "us-qbi-deduction.md",
+        "us-quarterly-estimated-tax.md",
+        "us-s-corp-election-decision.md",
+        "us-sales-tax.md",
+        "us-schedule-c-and-se-computation.md",
+        "us-self-employed-health-insurance.md",
+        "us-self-employed-retirement.md",
+        "us-sole-prop-bookkeeping.md",
+        "us-federal-return-assembly.md",
+        "global-router.md",
+        "mn-income-tax.md",
+        "mn-sales-tax.md",
+        "README.md"
+      ],
+      "state_skills": 2,
+      "has_orchestrator": false
+    },
+    {
+      "jurisdiction": "US-MO",
+      "name": "United States \u2014 Missouri",
+      "package_dir": "us-mo",
+      "files": [
+        "us-tax-workflow-base.md",
+        "no-sales-tax-states.md",
+        "us-1099-nec-issuance.md",
+        "us-qbi-deduction.md",
+        "us-quarterly-estimated-tax.md",
+        "us-s-corp-election-decision.md",
+        "us-sales-tax.md",
+        "us-schedule-c-and-se-computation.md",
+        "us-self-employed-health-insurance.md",
+        "us-self-employed-retirement.md",
+        "us-sole-prop-bookkeeping.md",
+        "us-federal-return-assembly.md",
+        "global-router.md",
+        "mo-income-tax.md",
+        "mo-sales-tax.md",
+        "README.md"
+      ],
+      "state_skills": 2,
+      "has_orchestrator": false
+    },
+    {
+      "jurisdiction": "US-MS",
+      "name": "United States \u2014 Mississippi",
+      "package_dir": "us-ms",
+      "files": [
+        "us-tax-workflow-base.md",
+        "no-sales-tax-states.md",
+        "us-1099-nec-issuance.md",
+        "us-qbi-deduction.md",
+        "us-quarterly-estimated-tax.md",
+        "us-s-corp-election-decision.md",
+        "us-sales-tax.md",
+        "us-schedule-c-and-se-computation.md",
+        "us-self-employed-health-insurance.md",
+        "us-self-employed-retirement.md",
+        "us-sole-prop-bookkeeping.md",
+        "us-federal-return-assembly.md",
+        "global-router.md",
+        "ms-income-tax.md",
+        "ms-sales-tax.md",
+        "README.md"
+      ],
+      "state_skills": 2,
+      "has_orchestrator": false
+    },
+    {
+      "jurisdiction": "US-MT",
+      "name": "United States \u2014 Montana",
+      "package_dir": "us-mt",
+      "files": [
+        "us-tax-workflow-base.md",
+        "no-sales-tax-states.md",
+        "us-1099-nec-issuance.md",
+        "us-qbi-deduction.md",
+        "us-quarterly-estimated-tax.md",
+        "us-s-corp-election-decision.md",
+        "us-sales-tax.md",
+        "us-schedule-c-and-se-computation.md",
+        "us-self-employed-health-insurance.md",
+        "us-self-employed-retirement.md",
+        "us-sole-prop-bookkeeping.md",
+        "us-federal-return-assembly.md",
+        "global-router.md",
+        "mt-income-tax.md",
+        "README.md"
+      ],
+      "state_skills": 1,
+      "has_orchestrator": false
+    },
+    {
+      "jurisdiction": "US-NC",
+      "name": "United States \u2014 North Carolina",
+      "package_dir": "us-nc",
+      "files": [
+        "us-tax-workflow-base.md",
+        "no-sales-tax-states.md",
+        "us-1099-nec-issuance.md",
+        "us-qbi-deduction.md",
+        "us-quarterly-estimated-tax.md",
+        "us-s-corp-election-decision.md",
+        "us-sales-tax.md",
+        "us-schedule-c-and-se-computation.md",
+        "us-self-employed-health-insurance.md",
+        "us-self-employed-retirement.md",
+        "us-sole-prop-bookkeeping.md",
+        "us-federal-return-assembly.md",
+        "global-router.md",
+        "nc-income-tax.md",
+        "nc-sales-tax.md",
+        "README.md"
+      ],
+      "state_skills": 2,
+      "has_orchestrator": false
+    },
+    {
+      "jurisdiction": "US-ND",
+      "name": "United States \u2014 North Dakota",
+      "package_dir": "us-nd",
+      "files": [
+        "us-tax-workflow-base.md",
+        "no-sales-tax-states.md",
+        "us-1099-nec-issuance.md",
+        "us-qbi-deduction.md",
+        "us-quarterly-estimated-tax.md",
+        "us-s-corp-election-decision.md",
+        "us-sales-tax.md",
+        "us-schedule-c-and-se-computation.md",
+        "us-self-employed-health-insurance.md",
+        "us-self-employed-retirement.md",
+        "us-sole-prop-bookkeeping.md",
+        "us-federal-return-assembly.md",
+        "global-router.md",
+        "nd-income-tax.md",
+        "nd-sales-tax.md",
+        "README.md"
+      ],
+      "state_skills": 2,
+      "has_orchestrator": false
+    },
+    {
+      "jurisdiction": "US-NE",
+      "name": "United States \u2014 Nebraska",
+      "package_dir": "us-ne",
+      "files": [
+        "us-tax-workflow-base.md",
+        "no-sales-tax-states.md",
+        "us-1099-nec-issuance.md",
+        "us-qbi-deduction.md",
+        "us-quarterly-estimated-tax.md",
+        "us-s-corp-election-decision.md",
+        "us-sales-tax.md",
+        "us-schedule-c-and-se-computation.md",
+        "us-self-employed-health-insurance.md",
+        "us-self-employed-retirement.md",
+        "us-sole-prop-bookkeeping.md",
+        "us-federal-return-assembly.md",
+        "global-router.md",
+        "ne-income-tax.md",
+        "ne-sales-tax.md",
+        "README.md"
+      ],
+      "state_skills": 2,
+      "has_orchestrator": false
+    },
+    {
+      "jurisdiction": "US-NH",
+      "name": "United States \u2014 New Hampshire",
+      "package_dir": "us-nh",
+      "files": [
+        "us-tax-workflow-base.md",
+        "no-sales-tax-states.md",
+        "us-1099-nec-issuance.md",
+        "us-qbi-deduction.md",
+        "us-quarterly-estimated-tax.md",
+        "us-s-corp-election-decision.md",
+        "us-sales-tax.md",
+        "us-schedule-c-and-se-computation.md",
+        "us-self-employed-health-insurance.md",
+        "us-self-employed-retirement.md",
+        "us-sole-prop-bookkeeping.md",
+        "us-federal-return-assembly.md",
+        "global-router.md",
+        "nh-interest-dividends-note.md",
+        "README.md"
+      ],
+      "state_skills": 1,
+      "has_orchestrator": false
+    },
+    {
+      "jurisdiction": "US-NJ",
+      "name": "United States \u2014 New Jersey",
+      "package_dir": "us-nj",
+      "files": [
+        "us-tax-workflow-base.md",
+        "no-sales-tax-states.md",
+        "us-1099-nec-issuance.md",
+        "us-qbi-deduction.md",
+        "us-quarterly-estimated-tax.md",
+        "us-s-corp-election-decision.md",
+        "us-sales-tax.md",
+        "us-schedule-c-and-se-computation.md",
+        "us-self-employed-health-insurance.md",
+        "us-self-employed-retirement.md",
+        "us-sole-prop-bookkeeping.md",
+        "us-federal-return-assembly.md",
+        "global-router.md",
+        "nj-income-tax.md",
+        "nj-sales-tax.md",
+        "README.md"
+      ],
+      "state_skills": 2,
+      "has_orchestrator": false
+    },
+    {
+      "jurisdiction": "US-NM",
+      "name": "United States \u2014 New Mexico",
+      "package_dir": "us-nm",
+      "files": [
+        "us-tax-workflow-base.md",
+        "no-sales-tax-states.md",
+        "us-1099-nec-issuance.md",
+        "us-qbi-deduction.md",
+        "us-quarterly-estimated-tax.md",
+        "us-s-corp-election-decision.md",
+        "us-sales-tax.md",
+        "us-schedule-c-and-se-computation.md",
+        "us-self-employed-health-insurance.md",
+        "us-self-employed-retirement.md",
+        "us-sole-prop-bookkeeping.md",
+        "us-federal-return-assembly.md",
+        "global-router.md",
+        "nm-income-tax.md",
+        "nm-sales-tax.md",
+        "README.md"
+      ],
+      "state_skills": 2,
+      "has_orchestrator": false
+    },
+    {
+      "jurisdiction": "US-NV",
+      "name": "United States \u2014 Nevada",
+      "package_dir": "us-nv",
+      "files": [
+        "us-tax-workflow-base.md",
+        "no-sales-tax-states.md",
+        "us-1099-nec-issuance.md",
+        "us-qbi-deduction.md",
+        "us-quarterly-estimated-tax.md",
+        "us-s-corp-election-decision.md",
+        "us-sales-tax.md",
+        "us-schedule-c-and-se-computation.md",
+        "us-self-employed-health-insurance.md",
+        "us-self-employed-retirement.md",
+        "us-sole-prop-bookkeeping.md",
+        "us-federal-return-assembly.md",
+        "global-router.md",
+        "nv-commerce-tax.md",
+        "nv-sales-tax.md",
+        "README.md"
+      ],
+      "state_skills": 2,
+      "has_orchestrator": false
+    },
+    {
+      "jurisdiction": "US-NY",
+      "name": "United States \u2014 New York",
+      "package_dir": "us-ny",
+      "files": [
+        "us-tax-workflow-base.md",
+        "no-sales-tax-states.md",
+        "us-1099-nec-issuance.md",
+        "us-qbi-deduction.md",
+        "us-quarterly-estimated-tax.md",
+        "us-s-corp-election-decision.md",
+        "us-sales-tax.md",
+        "us-schedule-c-and-se-computation.md",
+        "us-self-employed-health-insurance.md",
+        "us-self-employed-retirement.md",
+        "us-sole-prop-bookkeeping.md",
+        "us-federal-return-assembly.md",
+        "global-router.md",
+        "ny-estimated-tax.md",
+        "ny-income-tax.md",
+        "ny-llc-filing-fee.md",
+        "ny-sales-tax.md",
+        "nyc-ubt.md",
+        "README.md"
+      ],
+      "state_skills": 5,
+      "has_orchestrator": false
+    },
+    {
+      "jurisdiction": "US-OH",
+      "name": "United States \u2014 Ohio",
+      "package_dir": "us-oh",
+      "files": [
+        "us-tax-workflow-base.md",
+        "no-sales-tax-states.md",
+        "us-1099-nec-issuance.md",
+        "us-qbi-deduction.md",
+        "us-quarterly-estimated-tax.md",
+        "us-s-corp-election-decision.md",
+        "us-sales-tax.md",
+        "us-schedule-c-and-se-computation.md",
+        "us-self-employed-health-insurance.md",
+        "us-self-employed-retirement.md",
+        "us-sole-prop-bookkeeping.md",
+        "us-federal-return-assembly.md",
+        "global-router.md",
+        "oh-cat-tax.md",
+        "oh-income-tax.md",
+        "oh-sales-tax.md",
+        "README.md"
+      ],
+      "state_skills": 3,
+      "has_orchestrator": false
+    },
+    {
+      "jurisdiction": "US-OK",
+      "name": "United States \u2014 Oklahoma",
+      "package_dir": "us-ok",
+      "files": [
+        "us-tax-workflow-base.md",
+        "no-sales-tax-states.md",
+        "us-1099-nec-issuance.md",
+        "us-qbi-deduction.md",
+        "us-quarterly-estimated-tax.md",
+        "us-s-corp-election-decision.md",
+        "us-sales-tax.md",
+        "us-schedule-c-and-se-computation.md",
+        "us-self-employed-health-insurance.md",
+        "us-self-employed-retirement.md",
+        "us-sole-prop-bookkeeping.md",
+        "us-federal-return-assembly.md",
+        "global-router.md",
+        "ok-income-tax.md",
+        "ok-sales-tax.md",
+        "README.md"
+      ],
+      "state_skills": 2,
+      "has_orchestrator": false
+    },
+    {
+      "jurisdiction": "US-OR",
+      "name": "United States \u2014 Oregon",
+      "package_dir": "us-or",
+      "files": [
+        "us-tax-workflow-base.md",
+        "no-sales-tax-states.md",
+        "us-1099-nec-issuance.md",
+        "us-qbi-deduction.md",
+        "us-quarterly-estimated-tax.md",
+        "us-s-corp-election-decision.md",
+        "us-sales-tax.md",
+        "us-schedule-c-and-se-computation.md",
+        "us-self-employed-health-insurance.md",
+        "us-self-employed-retirement.md",
+        "us-sole-prop-bookkeeping.md",
+        "us-federal-return-assembly.md",
+        "global-router.md",
+        "or-income-tax.md",
+        "README.md"
+      ],
+      "state_skills": 1,
+      "has_orchestrator": false
+    },
+    {
+      "jurisdiction": "US-PA",
+      "name": "United States \u2014 Pennsylvania",
+      "package_dir": "us-pa",
+      "files": [
+        "us-tax-workflow-base.md",
+        "no-sales-tax-states.md",
+        "us-1099-nec-issuance.md",
+        "us-qbi-deduction.md",
+        "us-quarterly-estimated-tax.md",
+        "us-s-corp-election-decision.md",
+        "us-sales-tax.md",
+        "us-schedule-c-and-se-computation.md",
+        "us-self-employed-health-insurance.md",
+        "us-self-employed-retirement.md",
+        "us-sole-prop-bookkeeping.md",
+        "us-federal-return-assembly.md",
+        "global-router.md",
+        "pa-income-tax.md",
+        "pa-sales-tax.md",
+        "README.md"
+      ],
+      "state_skills": 2,
+      "has_orchestrator": false
+    },
+    {
+      "jurisdiction": "US-RI",
+      "name": "United States \u2014 Rhode Island",
+      "package_dir": "us-ri",
+      "files": [
+        "us-tax-workflow-base.md",
+        "no-sales-tax-states.md",
+        "us-1099-nec-issuance.md",
+        "us-qbi-deduction.md",
+        "us-quarterly-estimated-tax.md",
+        "us-s-corp-election-decision.md",
+        "us-sales-tax.md",
+        "us-schedule-c-and-se-computation.md",
+        "us-self-employed-health-insurance.md",
+        "us-self-employed-retirement.md",
+        "us-sole-prop-bookkeeping.md",
+        "us-federal-return-assembly.md",
+        "global-router.md",
+        "ri-income-tax.md",
+        "ri-sales-tax.md",
+        "README.md"
+      ],
+      "state_skills": 2,
+      "has_orchestrator": false
+    },
+    {
+      "jurisdiction": "US-SC",
+      "name": "United States \u2014 South Carolina",
+      "package_dir": "us-sc",
+      "files": [
+        "us-tax-workflow-base.md",
+        "no-sales-tax-states.md",
+        "us-1099-nec-issuance.md",
+        "us-qbi-deduction.md",
+        "us-quarterly-estimated-tax.md",
+        "us-s-corp-election-decision.md",
+        "us-sales-tax.md",
+        "us-schedule-c-and-se-computation.md",
+        "us-self-employed-health-insurance.md",
+        "us-self-employed-retirement.md",
+        "us-sole-prop-bookkeeping.md",
+        "us-federal-return-assembly.md",
+        "global-router.md",
+        "sc-income-tax.md",
+        "sc-sales-tax.md",
+        "README.md"
+      ],
+      "state_skills": 2,
+      "has_orchestrator": false
+    },
+    {
+      "jurisdiction": "US-SD",
+      "name": "United States \u2014 South Dakota",
+      "package_dir": "us-sd",
+      "files": [
+        "us-tax-workflow-base.md",
+        "no-sales-tax-states.md",
+        "us-1099-nec-issuance.md",
+        "us-qbi-deduction.md",
+        "us-quarterly-estimated-tax.md",
+        "us-s-corp-election-decision.md",
+        "us-sales-tax.md",
+        "us-schedule-c-and-se-computation.md",
+        "us-self-employed-health-insurance.md",
+        "us-self-employed-retirement.md",
+        "us-sole-prop-bookkeeping.md",
+        "us-federal-return-assembly.md",
+        "global-router.md",
+        "sd-sales-tax.md",
+        "README.md"
+      ],
+      "state_skills": 1,
+      "has_orchestrator": false
+    },
+    {
+      "jurisdiction": "US-TN",
+      "name": "United States \u2014 Tennessee",
+      "package_dir": "us-tn",
+      "files": [
+        "us-tax-workflow-base.md",
+        "no-sales-tax-states.md",
+        "us-1099-nec-issuance.md",
+        "us-qbi-deduction.md",
+        "us-quarterly-estimated-tax.md",
+        "us-s-corp-election-decision.md",
+        "us-sales-tax.md",
+        "us-schedule-c-and-se-computation.md",
+        "us-self-employed-health-insurance.md",
+        "us-self-employed-retirement.md",
+        "us-sole-prop-bookkeeping.md",
+        "us-federal-return-assembly.md",
+        "global-router.md",
+        "tn-sales-tax.md",
+        "README.md"
+      ],
+      "state_skills": 1,
+      "has_orchestrator": false
+    },
+    {
+      "jurisdiction": "US-TX",
+      "name": "United States \u2014 Texas",
+      "package_dir": "us-tx",
+      "files": [
+        "us-tax-workflow-base.md",
+        "no-sales-tax-states.md",
+        "us-1099-nec-issuance.md",
+        "us-qbi-deduction.md",
+        "us-quarterly-estimated-tax.md",
+        "us-s-corp-election-decision.md",
+        "us-sales-tax.md",
+        "us-schedule-c-and-se-computation.md",
+        "us-self-employed-health-insurance.md",
+        "us-self-employed-retirement.md",
+        "us-sole-prop-bookkeeping.md",
+        "us-federal-return-assembly.md",
+        "global-router.md",
+        "tx-franchise-tax.md",
+        "tx-sales-tax.md",
+        "README.md"
+      ],
+      "state_skills": 2,
+      "has_orchestrator": false
+    },
+    {
+      "jurisdiction": "US-UT",
+      "name": "United States \u2014 Utah",
+      "package_dir": "us-ut",
+      "files": [
+        "us-tax-workflow-base.md",
+        "no-sales-tax-states.md",
+        "us-1099-nec-issuance.md",
+        "us-qbi-deduction.md",
+        "us-quarterly-estimated-tax.md",
+        "us-s-corp-election-decision.md",
+        "us-sales-tax.md",
+        "us-schedule-c-and-se-computation.md",
+        "us-self-employed-health-insurance.md",
+        "us-self-employed-retirement.md",
+        "us-sole-prop-bookkeeping.md",
+        "us-federal-return-assembly.md",
+        "global-router.md",
+        "ut-income-tax.md",
+        "ut-sales-tax.md",
+        "README.md"
+      ],
+      "state_skills": 2,
+      "has_orchestrator": false
+    },
+    {
+      "jurisdiction": "US-VA",
+      "name": "United States \u2014 Virginia",
+      "package_dir": "us-va",
+      "files": [
+        "us-tax-workflow-base.md",
+        "no-sales-tax-states.md",
+        "us-1099-nec-issuance.md",
+        "us-qbi-deduction.md",
+        "us-quarterly-estimated-tax.md",
+        "us-s-corp-election-decision.md",
+        "us-sales-tax.md",
+        "us-schedule-c-and-se-computation.md",
+        "us-self-employed-health-insurance.md",
+        "us-self-employed-retirement.md",
+        "us-sole-prop-bookkeeping.md",
+        "us-federal-return-assembly.md",
+        "global-router.md",
+        "va-income-tax.md",
+        "va-sales-tax.md",
+        "README.md"
+      ],
+      "state_skills": 2,
+      "has_orchestrator": false
+    },
+    {
+      "jurisdiction": "US-VT",
+      "name": "United States \u2014 Vermont",
+      "package_dir": "us-vt",
+      "files": [
+        "us-tax-workflow-base.md",
+        "no-sales-tax-states.md",
+        "us-1099-nec-issuance.md",
+        "us-qbi-deduction.md",
+        "us-quarterly-estimated-tax.md",
+        "us-s-corp-election-decision.md",
+        "us-sales-tax.md",
+        "us-schedule-c-and-se-computation.md",
+        "us-self-employed-health-insurance.md",
+        "us-self-employed-retirement.md",
+        "us-sole-prop-bookkeeping.md",
+        "us-federal-return-assembly.md",
+        "global-router.md",
+        "vt-income-tax.md",
+        "vt-sales-tax.md",
+        "README.md"
+      ],
+      "state_skills": 2,
+      "has_orchestrator": false
+    },
+    {
+      "jurisdiction": "US-WA",
+      "name": "United States \u2014 Washington",
+      "package_dir": "us-wa",
+      "files": [
+        "us-tax-workflow-base.md",
+        "no-sales-tax-states.md",
+        "us-1099-nec-issuance.md",
+        "us-qbi-deduction.md",
+        "us-quarterly-estimated-tax.md",
+        "us-s-corp-election-decision.md",
+        "us-sales-tax.md",
+        "us-schedule-c-and-se-computation.md",
+        "us-self-employed-health-insurance.md",
+        "us-self-employed-retirement.md",
+        "us-sole-prop-bookkeeping.md",
+        "us-federal-return-assembly.md",
+        "global-router.md",
+        "wa-b-and-o-tax.md",
+        "wa-sales-tax.md",
+        "README.md"
+      ],
+      "state_skills": 2,
+      "has_orchestrator": false
+    },
+    {
+      "jurisdiction": "US-WI",
+      "name": "United States \u2014 Wisconsin",
+      "package_dir": "us-wi",
+      "files": [
+        "us-tax-workflow-base.md",
+        "no-sales-tax-states.md",
+        "us-1099-nec-issuance.md",
+        "us-qbi-deduction.md",
+        "us-quarterly-estimated-tax.md",
+        "us-s-corp-election-decision.md",
+        "us-sales-tax.md",
+        "us-schedule-c-and-se-computation.md",
+        "us-self-employed-health-insurance.md",
+        "us-self-employed-retirement.md",
+        "us-sole-prop-bookkeeping.md",
+        "us-federal-return-assembly.md",
+        "global-router.md",
+        "wi-income-tax.md",
+        "wi-sales-tax.md",
+        "README.md"
+      ],
+      "state_skills": 2,
+      "has_orchestrator": false
+    },
+    {
+      "jurisdiction": "US-WV",
+      "name": "United States \u2014 West Virginia",
+      "package_dir": "us-wv",
+      "files": [
+        "us-tax-workflow-base.md",
+        "no-sales-tax-states.md",
+        "us-1099-nec-issuance.md",
+        "us-qbi-deduction.md",
+        "us-quarterly-estimated-tax.md",
+        "us-s-corp-election-decision.md",
+        "us-sales-tax.md",
+        "us-schedule-c-and-se-computation.md",
+        "us-self-employed-health-insurance.md",
+        "us-self-employed-retirement.md",
+        "us-sole-prop-bookkeeping.md",
+        "us-federal-return-assembly.md",
+        "global-router.md",
+        "wv-income-tax.md",
+        "wv-sales-tax.md",
+        "README.md"
+      ],
+      "state_skills": 2,
+      "has_orchestrator": false
+    },
+    {
+      "jurisdiction": "US-WY",
+      "name": "United States \u2014 Wyoming",
+      "package_dir": "us-wy",
+      "files": [
+        "us-tax-workflow-base.md",
+        "no-sales-tax-states.md",
+        "us-1099-nec-issuance.md",
+        "us-qbi-deduction.md",
+        "us-quarterly-estimated-tax.md",
+        "us-s-corp-election-decision.md",
+        "us-sales-tax.md",
+        "us-schedule-c-and-se-computation.md",
+        "us-self-employed-health-insurance.md",
+        "us-self-employed-retirement.md",
+        "us-sole-prop-bookkeeping.md",
+        "us-federal-return-assembly.md",
+        "global-router.md",
+        "wy-sales-tax.md",
+        "README.md"
+      ],
+      "state_skills": 1,
+      "has_orchestrator": false
     }
   ]
 }

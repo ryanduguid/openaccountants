@@ -2,7 +2,7 @@
 
 <!-- mcp-name: io.github.openaccountants/openaccountants-mcp -->
 
-A read-only [Model Context Protocol](https://modelcontextprotocol.io/) server that gives Claude, Cursor, and any MCP client **on-demand access** to 134 countries of open-source tax skills — no manual file uploads.
+A read-only [Model Context Protocol](https://modelcontextprotocol.io/) server that gives Claude, Cursor, and any MCP client **on-demand access** to 133 countries + 51 US state packages of open-source tax skills — no manual file uploads.
 
 ## Why this exists
 
@@ -21,11 +21,23 @@ Claude: now processes your bank statement with the right tax rules
 
 Install once, configure once — skills are available in every conversation from that point on.
 
+US states work the same way:
+
+```
+You:    "Help me with my California taxes. Here's my bank statement."
+          ↓
+Claude: calls list_jurisdictions → sees "us-ca"
+Claude: calls list_files("us-ca") → federal + CA state skills
+Claude: calls get_file("us-ca", "ca-income-tax.md") → state rules loaded
+          ↓
+Claude: now processes with federal AND California rules
+```
+
 ## Tools
 
 | Tool | Description |
 |------|-------------|
-| `list_jurisdictions` | Returns every country slug that has at least one `.md` skill file under `packages/`. |
+| `list_jurisdictions` | Returns every jurisdiction slug that has at least one `.md` skill file under `packages/`. Includes country slugs (e.g. `malta`, `uk`) and US state slugs (e.g. `us-ca`, `us-tx`). |
 | `list_files` | Given a jurisdiction slug (e.g. `malta`), returns the `.md` / `.json` filenames in that package. |
 | `get_file` | Given a jurisdiction + filename, returns the full UTF-8 text of that skill file (capped at 2 MB). |
 
@@ -127,7 +139,7 @@ Run from the repo root to verify everything works:
 python mcp/smoke_test.py
 ```
 
-All 14 checks should pass (path safety, tool outputs, jurisdiction count).
+All checks should pass (path safety, tool outputs, jurisdiction count, US state discovery).
 
 ## Disclaimer
 

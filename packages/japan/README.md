@@ -1,30 +1,31 @@
-# Japan — Tax Skills Package
+# Japan — AI Tax Assistant | OpenAccountants
+
+> Open-source tax computation skills for Japan. Upload to Claude, ChatGPT, or any AI assistant.
+> Verified by accountants. Free and open source.
 
 ## What's in this folder
 
-### Core Tax Skills
+1. `foundation.md`
+2. `intake.md`
+3. `japan-consumption-tax.md`
+4. `jp-bookkeeping.md`
+5. `jp-consumption-tax.md`
+6. `jp-estimated-tax.md`
+7. `jp-etax-filing.md`
+8. `jp-income-tax.md`
+9. `jp-incorporation.md`
+10. `jp-social-insurance.md`
+11. `references.md`
 
-1. `foundation.md` — foundational context for Japan tax skills
-2. `intake.md` — client onboarding and data gathering
-3. `jp-income-tax.md` — income tax (所得税) computation for self-employed
-4. `jp-consumption-tax.md` — consumption tax (消費税) computation
-5. `japan-consumption-tax.md` — additional consumption tax reference
-6. `jp-estimated-tax.md` — estimated tax (予定納税) rules
-7. `jp-social-insurance.md` — social insurance obligations
+## Also known as
 
-### Bookkeeping & Filing
+税理士 (zeirishi), 確定申告 (kakutei shinkoku), 消費税 (shōhizei), 所得税, 青色申告
 
-8. `jp-bookkeeping.md` — double-entry bookkeeping, chart of accounts, journal entry patterns, and settlement adjustments for Japanese sole proprietors
-9. `jp-etax-filing.md` — step-by-step e-Tax (電子申告) filing workflow for the 確定申告書等作成コーナー
-10. `references.md` — related open-source Japan tax projects and integration notes
-
-### Planning & Advisory
-
-11. `jp-incorporation.md` — when and how to incorporate (法人成り): tax burden comparison, corporate form selection, officer compensation strategy, and establishment procedures
+Tax authority: **National Tax Agency (国税庁)**
 
 ## How to use
 
-1. Upload ALL files in this folder to your AI assistant (any agent that reads markdown)
+1. Upload ALL files in this folder to your AI assistant (Claude, ChatGPT, Gemini, etc.)
 2. Attach your 2025 bank statement (CSV or PDF)
 3. Say: **"Help me with my 2025 Japan taxes. Here's my bank statement."**
 
@@ -42,27 +43,24 @@ The most up-to-date, verified version of these skills is maintained at [openacco
 
 ---
 
-## Contributors
+## Are you a 税理士 (zeirishi)?
 
-- **Open Accountants Community** — core Japan tax skills
-- **[Kazuki Nagata (@kazukinagata)](https://github.com/kazukinagata/shinkoku)** — detailed e-Tax filing workflows, bookkeeping patterns, chart of accounts, incorporation analysis, tax simulation data, and consumption tax classification rules. Adapted from the [shinkoku](https://github.com/kazukinagata/shinkoku) project (MIT license).
+These Japan tax skills need your eye. Every rate, threshold, and form reference was AI-drafted and needs a human professional to verify it.
 
----
+**You don't need to use GitHub.** Just:
 
-## Found an error? Improve this skill.
+1. Download the files in this folder
+2. Check the rates against National Tax Agency (国税庁)'s website
+3. Email your corrections to **info@openaaccountants.com** — Word doc, Excel, PDF, tracked changes, whatever works
 
-Tax rules change. Rates get updated. Thresholds move. If something in these files is wrong for your country:
+We'll update the skill and credit you publicly as the verified reviewer at [openaccountants.com](https://openaccountants.com).
 
-1. Use your AI agent with deep research to verify: *"Search [country] tax authority website for current VAT rate and compare against this skill"*
-2. Fork the repo: [github.com/openaccountants/openaccountants](https://github.com/openaccountants/openaccountants)
-3. Fix the error in `skills/` (the source files)
-4. Submit a PR — your name goes on the skill as a verified contributor
+Or if you're comfortable with GitHub: fork the repo, fix the source file under `skills/`, and submit a PR.
 
-Know a vendor pattern we're missing? Know how your local bank formats statements? Every pattern you add saves the next user from a misclassification.
-
-**Contributors get credited at [openaccountants.com](https://openaccountants.com)**
+**Your name goes on the skill either way.**
 
 ---
 
-*OpenAccountants — open-source tax computation skills*
+*OpenAccountants — open-source tax computation skills for AI*
+*133 countries + 51 US states — [openaccountants.com](https://openaccountants.com)*
 *info@openaaccountants.com*

@@ -7,8 +7,15 @@ Each package contains:
 2. intake.md — Universal onboarding flow (same for every country)
 3. [country]-[obligation].md — Country-specific content skills
 
+US state packages (packages/us-[code]/) additionally include:
+4. us-tax-workflow-base.md — US-specific workflow foundation
+5. All federal skills from skills/federal/
+6. Core US orchestrator files
+7. State-specific skills from skills/us-states/[code]/
+
 Usage:
-    python3 scripts/build-packages.py
+    python3 scripts/build-packages.py           # rebuild all packages
+    python3 scripts/build-packages.py --us-only # rebuild only US state packages
 
 Output:
     packages/[country]/
@@ -18,11 +25,18 @@ Output:
         ├── [country]-vat.md (or gst, iva, etc.)
         ├── [country]-income-tax.md (if available)
         └── [country]-ssc.md (if available)
+    packages/us-[code]/
+        ├── README.md
+        ├── us-tax-workflow-base.md
+        ├── us-*.md (federal skills)
+        ├── us-federal-return-assembly.md
+        └── [code]-*.md (state-specific skills)
 """
 
 import os
 import json
 import shutil
+import sys
 
 REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SKILLS_DIR = os.path.join(REPO_ROOT, "skills")
@@ -124,6 +138,62 @@ EU_MEMBERS = {
     "AT", "BE", "BG", "HR", "CY", "CZ", "DK", "EE", "FI", "FR",
     "DE", "GR", "HU", "IE", "IT", "LV", "LT", "LU", "MT", "NL",
     "PL", "PT", "RO", "SK", "SI", "ES", "SE"
+}
+
+# Per-country metadata for keyword enrichment and discoverability.
+# Keys are jurisdiction codes (matching COUNTRY_NAMES keys).
+# tax_authority: official tax body name
+# local_terms: local-language tax/accounting terms people search for
+COUNTRY_METADATA = {
+    "MT": {"tax_authority": "Commissioner for Revenue (CFR)", "local_terms": "perit tal-kontijiet, taxxa fuq id-dħul, VAT Malta, CfR"},
+    "GB": {"tax_authority": "HM Revenue & Customs (HMRC)", "local_terms": "chartered accountant, self-assessment, SA100, SA103, NIC, PAYE, Making Tax Digital"},
+    "DE": {"tax_authority": "Finanzamt / Bundeszentralamt für Steuern", "local_terms": "Steuerberater, Einkommensteuer, Umsatzsteuer, UStVA, Gewerbesteuer, EÜR"},
+    "AU": {"tax_authority": "Australian Taxation Office (ATO)", "local_terms": "registered tax agent, BAS, ITR, superannuation, Medicare levy, ABN"},
+    "CA": {"tax_authority": "Canada Revenue Agency (CRA)", "local_terms": "CPA, T1, T2125, GST/HST, CPP, EI, RRSP"},
+    "IN": {"tax_authority": "Income Tax Department / CBDT / GSTN", "local_terms": "Chartered Accountant, ITR-3, ITR-4, GST, TDS, advance tax, PAN"},
+    "ES": {"tax_authority": "Agencia Tributaria (AEAT)", "local_terms": "asesor fiscal, IRPF, IVA, modelo 303, modelo 130, RETA, autónomo"},
+    "FR": {"tax_authority": "Direction générale des Finances publiques (DGFiP)", "local_terms": "expert-comptable, impôt sur le revenu, TVA, micro-entrepreneur, BNC, URSSAF, CFE"},
+    "IT": {"tax_authority": "Agenzia delle Entrate", "local_terms": "commercialista, IRPEF, IVA, regime forfettario, partita IVA, INPS, F24"},
+    "NL": {"tax_authority": "Belastingdienst", "local_terms": "belastingadviseur, inkomstenbelasting, BTW, ZZP, IB-aangifte, KvK"},
+    "PT": {"tax_authority": "Autoridade Tributária e Aduaneira (AT)", "local_terms": "contabilista certificado, IRS, IVA, recibos verdes, trabalhador independente"},
+    "BE": {"tax_authority": "SPF Finances / FOD Financiën", "local_terms": "comptable, impôt des personnes physiques, TVA/BTW, cotisations sociales, IPP"},
+    "AT": {"tax_authority": "Bundesministerium für Finanzen / FinanzOnline", "local_terms": "Steuerberater, Einkommensteuer, Umsatzsteuer, SVS, EPU"},
+    "CH": {"tax_authority": "Eidgenössische Steuerverwaltung (ESTV) / AFC", "local_terms": "Steuerberater, fiduciaire, Mehrwertsteuer, MWST, AHV/IV, direkte Bundessteuer"},
+    "SE": {"tax_authority": "Skatteverket", "local_terms": "auktoriserad revisor, inkomstskatt, moms, F-skatt, egenavgifter, enskild firma"},
+    "DK": {"tax_authority": "Skattestyrelsen", "local_terms": "revisor, indkomstskat, moms, B-skat, AM-bidrag"},
+    "NO": {"tax_authority": "Skatteetaten", "local_terms": "regnskapsfører, inntektsskatt, merverdiavgift (MVA), forskuddsskatt, enkeltpersonforetak"},
+    "PL": {"tax_authority": "Krajowa Administracja Skarbowa (KAS)", "local_terms": "księgowy, PIT, VAT, ZUS, JPK, działalność gospodarcza"},
+    "CZ": {"tax_authority": "Finanční správa České republiky", "local_terms": "daňový poradce, daň z příjmů, DPH, OSVČ, sociální pojištění"},
+    "RO": {"tax_authority": "ANAF (Agenția Națională de Administrare Fiscală)", "local_terms": "contabil, impozit pe venit, TVA, CAS, CASS, PFA"},
+    "HU": {"tax_authority": "Nemzeti Adó- és Vámhivatal (NAV)", "local_terms": "könyvelő, személyi jövedelemadó, ÁFA, KATA, egyéni vállalkozó"},
+    "GR": {"tax_authority": "AADE (Ανεξάρτητη Αρχή Δημοσίων Εσόδων)", "local_terms": "λογιστής, φόρος εισοδήματος, ΦΠΑ, ΕΦΚΑ, ελεύθερος επαγγελματίας"},
+    "IE": {"tax_authority": "Revenue Commissioners", "local_terms": "chartered accountant, income tax, VAT, PRSI, USC, self-employed, Form 11"},
+    "FI": {"tax_authority": "Verohallinto", "local_terms": "tilitoimisto, tulovero, arvonlisävero (ALV), YEL, toiminimi"},
+    "JP": {"tax_authority": "National Tax Agency (国税庁)", "local_terms": "税理士 (zeirishi), 確定申告 (kakutei shinkoku), 消費税 (shōhizei), 所得税, 青色申告"},
+    "SG": {"tax_authority": "Inland Revenue Authority of Singapore (IRAS)", "local_terms": "ISCA member, GST, income tax, CPF, sole proprietorship"},
+    "KR": {"tax_authority": "National Tax Service (국세청)", "local_terms": "세무사 (semusa), 부가가치세, 종합소득세, 사업자등록"},
+    "NZ": {"tax_authority": "Inland Revenue (IRD)", "local_terms": "chartered accountant, GST, income tax, ACC levy, sole trader"},
+    "BR": {"tax_authority": "Receita Federal do Brasil", "local_terms": "contador, imposto de renda, IRPF, Simples Nacional, MEI, INSS, nota fiscal"},
+    "MX": {"tax_authority": "Servicio de Administración Tributaria (SAT)", "local_terms": "contador público, ISR, IVA, CFDI, RIF, persona física con actividad empresarial"},
+    "AR": {"tax_authority": "AFIP (Administración Federal de Ingresos Públicos)", "local_terms": "contador público, impuesto a las ganancias, IVA, monotributo, autónomo"},
+    "CL": {"tax_authority": "Servicio de Impuestos Internos (SII)", "local_terms": "contador auditor, impuesto a la renta, IVA, boleta de honorarios, PPM"},
+    "CO": {"tax_authority": "DIAN (Dirección de Impuestos y Aduanas Nacionales)", "local_terms": "contador público, impuesto de renta, IVA, régimen simple, RUT"},
+    "ZA": {"tax_authority": "South African Revenue Service (SARS)", "local_terms": "SAIPA, SAICA, income tax, VAT, provisional tax, ITR12, sole proprietor"},
+    "KE": {"tax_authority": "Kenya Revenue Authority (KRA)", "local_terms": "CPA, income tax, VAT, iTax, turnover tax, KRA PIN"},
+    "NG": {"tax_authority": "Federal Inland Revenue Service (FIRS)", "local_terms": "chartered accountant, PAYE, VAT, CIT, TIN"},
+    "IL": {"tax_authority": "Israel Tax Authority (רשות המסים)", "local_terms": "רואה חשבון (ro'e cheshbon), מס הכנסה, מע\"מ, עוסק מורשה, ביטוח לאומי"},
+    "AE": {"tax_authority": "Federal Tax Authority (FTA)", "local_terms": "VAT, corporate tax, tax agent, TRN, free zone"},
+    "SA": {"tax_authority": "Zakat, Tax and Customs Authority (ZATCA)", "local_terms": "VAT, zakat, e-invoicing, FATOORAH, محاسب قانوني"},
+    "TH": {"tax_authority": "Revenue Department (กรมสรรพากร)", "local_terms": "ผู้สอบบัญชี, ภาษีเงินได้, VAT, PND.90, PND.91"},
+    "VN": {"tax_authority": "General Department of Taxation", "local_terms": "kế toán, thuế thu nhập cá nhân, thuế GTGT, hóa đơn điện tử"},
+    "ID": {"tax_authority": "Direktorat Jenderal Pajak (DJP)", "local_terms": "konsultan pajak, PPh, PPN, NPWP, SPT, e-Filing"},
+    "PH": {"tax_authority": "Bureau of Internal Revenue (BIR)", "local_terms": "CPA, income tax, VAT, BIR Form 1701, TIN, percentage tax"},
+    "MY": {"tax_authority": "Inland Revenue Board of Malaysia (LHDN)", "local_terms": "tax agent, income tax, SST, PCB, e-Filing, sole proprietor"},
+    "CN": {"tax_authority": "State Taxation Administration (国家税务总局)", "local_terms": "注册会计师, 个人所得税, 增值税, 发票, 税务登记"},
+    "TW": {"tax_authority": "National Taxation Bureau (國稅局)", "local_terms": "會計師, 所得稅, 營業稅, 統一發票, 執行業務所得"},
+    "HK": {"tax_authority": "Inland Revenue Department (IRD)", "local_terms": "CPA, profits tax, salaries tax, MPF, sole proprietor"},
+    "TR": {"tax_authority": "Gelir İdaresi Başkanlığı (GİB)", "local_terms": "mali müşavir, gelir vergisi, KDV, serbest meslek, e-fatura"},
+    "RU": {"tax_authority": "Federal Tax Service (ФНС России)", "local_terms": "бухгалтер, НДФЛ, НДС, ИП, УСН, патент, самозанятый"},
 }
 
 
@@ -291,15 +361,38 @@ Then proceed to classification using the loaded country skills.
 
 
 def build_readme(country_name, files, practitioner_title, jurisdiction_code):
-    """Build per-jurisdiction README."""
+    """Build per-jurisdiction README with keyword enrichment and accountant CTA."""
     file_list = "\n".join([f"{i+1}. `{f}`" for i, f in enumerate(files)])
 
-    return f"""# {country_name} — Tax Skills Package
+    meta = COUNTRY_METADATA.get(jurisdiction_code, {})
+    tax_authority = meta.get("tax_authority", "your national tax authority")
+    local_terms = meta.get("local_terms", "")
+
+    keywords_section = ""
+    if local_terms:
+        keywords_section = f"""
+## Also known as
+
+{local_terms}
+
+Tax authority: **{tax_authority}**
+"""
+    elif tax_authority != "your national tax authority":
+        keywords_section = f"""
+## Tax authority
+
+**{tax_authority}**
+"""
+
+    return f"""# {country_name} — AI Tax Assistant | OpenAccountants
+
+> Open-source tax computation skills for {country_name}. Upload to Claude, ChatGPT, or any AI assistant.
+> Verified by accountants. Free and open source.
 
 ## What's in this folder
 
 {file_list}
-
+{keywords_section}
 ## How to use
 
 1. Upload ALL files in this folder to your AI assistant (Claude, ChatGPT, Gemini, etc.)
@@ -320,43 +413,61 @@ The most up-to-date, verified version of these skills is maintained at [openacco
 
 ---
 
-## Found an error? Improve this skill.
+## Are you a {practitioner_title}?
 
-Tax rules change. Rates get updated. Thresholds move. If something in these files is wrong for your country:
+These {country_name} tax skills need your eye. Every rate, threshold, and form reference was AI-drafted and needs a human professional to verify it.
 
-1. Use Claude or ChatGPT with deep research to verify: *"Search [country] tax authority website for current VAT rate and compare against this skill"*
-2. Fork the repo: [github.com/openaccountants/openaccountants](https://github.com/openaccountants/openaccountants)
-3. Fix the error in `skills/` (the source files)
-4. Submit a PR — your name goes on the skill as a verified contributor
+**You don't need to use GitHub.** Just:
 
-Know a vendor pattern we're missing? Know how your local bank formats statements? Every pattern you add saves the next user from a misclassification.
+1. Download the files in this folder
+2. Check the rates against {tax_authority}'s website
+3. Email your corrections to **info@openaaccountants.com** — Word doc, Excel, PDF, tracked changes, whatever works
 
-**Contributors get credited at [openaccountants.com](https://openaccountants.com)**
+We'll update the skill and credit you publicly as the verified reviewer at [openaccountants.com](https://openaccountants.com).
+
+Or if you're comfortable with GitHub: fork the repo, fix the source file under `skills/`, and submit a PR.
+
+**Your name goes on the skill either way.**
 
 ---
 
-*OpenAccountants — open-source tax computation skills*
+*OpenAccountants — open-source tax computation skills for AI*
+*133 countries + 51 US states — [openaccountants.com](https://openaccountants.com)*
 *info@openaaccountants.com*
 """
 
 
+def _is_redirect(filepath):
+    """Return True if a .md file is a redirect stub (not real content)."""
+    with open(filepath, 'r', errors='ignore') as fh:
+        lines = fh.readlines()
+    if len(lines) <= 50:
+        content = ''.join(lines[:20]).lower()
+        if 'consolidated' in content or 'redirect' in content:
+            return True
+        # Short non-redirect files (like references.md) are kept
+        return False
+    return False
+
+
 def find_country_skills(country_dir):
-    """Find all content skill files for a country."""
+    """Find all content skill files for a country, including subdirectories."""
     skills = []
     if not os.path.isdir(country_dir):
         return skills
 
-    for f in sorted(os.listdir(country_dir)):
-        if f.endswith('.md') and not f.startswith('.'):
-            filepath = os.path.join(country_dir, f)
-            # Skip tiny files (redirects, etc.)
+    for root, _dirs, files in os.walk(country_dir):
+        for f in sorted(files):
+            if not f.endswith('.md') or f.startswith('.'):
+                continue
+            filepath = os.path.join(root, f)
+            if _is_redirect(filepath):
+                continue
             with open(filepath, 'r', errors='ignore') as fh:
-                lines = fh.readlines()
-            if len(lines) > 50:
-                # Skip redirect files
-                content = ''.join(lines[:20])
-                if 'Consolidated' not in content and 'redirect' not in content.lower():
-                    skills.append((f, filepath))
+                line_count = sum(1 for _ in fh)
+            if line_count < 5:
+                continue  # skip near-empty stubs
+            skills.append((f, filepath))
 
     return skills
 
@@ -435,56 +546,293 @@ def build_package(country_dir_name, country_dir):
     with open(os.path.join(pkg_dir, "README.md"), 'w') as f:
         f.write(build_readme(name, copied_files, practitioner, code))
 
+    # Count only actual tax computation skills (not metadata like references.md)
+    tax_skills = [s for s in content_skills if s[0] != "references.md"]
+
     return {
         "jurisdiction": code,
         "name": name,
         "files": copied_files,
         "has_orchestrator": intake_file is not None,
-        "skill_count": len(content_skills),
+        "skill_count": len(tax_skills),
     }
+
+
+# ---------------------------------------------------------------------------
+# US state package generation
+# ---------------------------------------------------------------------------
+
+US_STATE_CODES = [
+    "al", "ak", "az", "ar", "ca", "co", "ct", "dc", "de", "fl",
+    "ga", "hi", "ia", "id", "il", "in", "ks", "ky", "la", "ma",
+    "md", "me", "mi", "mn", "mo", "ms", "mt", "nc", "nd", "ne",
+    "nh", "nj", "nm", "nv", "ny", "oh", "ok", "or", "pa", "ri",
+    "sc", "sd", "tn", "tx", "ut", "va", "vt", "wa", "wi", "wv", "wy",
+]
+
+US_STATE_NAMES = {
+    "al": "Alabama", "ak": "Alaska", "az": "Arizona", "ar": "Arkansas",
+    "ca": "California", "co": "Colorado", "ct": "Connecticut",
+    "dc": "District of Columbia", "de": "Delaware", "fl": "Florida",
+    "ga": "Georgia", "hi": "Hawaii", "ia": "Iowa", "id": "Idaho",
+    "il": "Illinois", "in": "Indiana", "ks": "Kansas", "ky": "Kentucky",
+    "la": "Louisiana", "ma": "Massachusetts", "md": "Maryland",
+    "me": "Maine", "mi": "Michigan", "mn": "Minnesota", "mo": "Missouri",
+    "ms": "Mississippi", "mt": "Montana", "nc": "North Carolina",
+    "nd": "North Dakota", "ne": "Nebraska", "nh": "New Hampshire",
+    "nj": "New Jersey", "nm": "New Mexico", "nv": "Nevada",
+    "ny": "New York", "oh": "Ohio", "ok": "Oklahoma", "or": "Oregon",
+    "pa": "Pennsylvania", "ri": "Rhode Island", "sc": "South Carolina",
+    "sd": "South Dakota", "tn": "Tennessee", "tx": "Texas", "ut": "Utah",
+    "va": "Virginia", "vt": "Vermont", "wa": "Washington",
+    "wi": "Wisconsin", "wv": "West Virginia", "wy": "Wyoming",
+}
+
+
+def build_us_state_readme(state_name, state_code, files):
+    """Build README for a US state package with accountant CTA."""
+    file_list = "\n".join([f"{i+1}. `{f}`" for i, f in enumerate(files)])
+    return f"""# {state_name} ({state_code.upper()}) — AI Tax Assistant | OpenAccountants
+
+> Open-source federal + {state_name} state tax skills for AI.
+> Upload to Claude, ChatGPT, or any AI assistant. Verified by accountants.
+
+## What's in this folder
+
+This package contains **federal** tax skills (which apply to all US states) plus
+**{state_name}-specific** state tax skills. Upload all files together.
+
+{file_list}
+
+## How to use
+
+1. Upload ALL files in this folder to your AI assistant (Claude, ChatGPT, Gemini, etc.)
+2. Attach your 2025 bank statement (CSV or PDF)
+3. Say: **"Help me with my 2025 taxes. I'm based in {state_name}. Here's my bank statement."**
+
+The AI will:
+- Ask onboarding questions to confirm your situation
+- Classify every transaction on your bank statement
+- Produce federal AND {state_name} state working papers
+- Flag anything that needs your CPA or EA's attention
+
+## Important
+
+**This is not tax advice.** Everything produced must be reviewed and signed off by a
+qualified CPA, EA, or tax attorney before filing.
+
+The most up-to-date, verified version of these skills is maintained at
+[openaccountants.com](https://openaccountants.com).
+
+---
+
+## Are you a CPA, EA, or tax professional in {state_name}?
+
+These {state_name} tax skills need your eye. Every rate, threshold, and form reference was AI-drafted and needs a human professional to verify it.
+
+**You don't need to use GitHub.** Just:
+
+1. Download the files in this folder
+2. Check the rates against your state tax authority's website and the IRS
+3. Email your corrections to **info@openaaccountants.com** — Word doc, Excel, PDF, tracked changes, whatever works
+
+We'll update the skill and credit you publicly as the verified reviewer at [openaccountants.com](https://openaccountants.com).
+
+Or if you're comfortable with GitHub: fork the repo, fix the source under `skills/us-states/{state_code}/` or `skills/federal/`, and submit a PR.
+
+**Your name goes on the skill either way.**
+
+---
+
+*OpenAccountants — open-source tax computation skills for AI*
+*133 countries + 51 US states — [openaccountants.com](https://openaccountants.com)*
+*info@openaaccountants.com*
+"""
+
+
+def build_us_state_package(state_code):
+    """Build a complete package for one US state.
+
+    Copies federal foundation + federal skills + orchestrator files + state
+    skills into packages/us-[code]/.
+    """
+    state_name = US_STATE_NAMES.get(state_code, state_code.upper())
+    pkg_dir = os.path.join(PACKAGES_DIR, f"us-{state_code}")
+    os.makedirs(pkg_dir, exist_ok=True)
+
+    copied_files = []
+
+    # 1. US workflow base (foundation equivalent)
+    us_base = os.path.join(SKILLS_DIR, "foundation", "us-tax-workflow-base.md")
+    if os.path.isfile(us_base):
+        shutil.copy2(us_base, os.path.join(pkg_dir, "us-tax-workflow-base.md"))
+        copied_files.append("us-tax-workflow-base.md")
+
+    # 2. All federal skills
+    federal_dir = os.path.join(SKILLS_DIR, "federal")
+    if os.path.isdir(federal_dir):
+        for f in sorted(os.listdir(federal_dir)):
+            if f.endswith(".md"):
+                shutil.copy2(os.path.join(federal_dir, f), os.path.join(pkg_dir, f))
+                copied_files.append(f)
+
+    # 3. Core US orchestrator files
+    orch_dir = os.path.join(SKILLS_DIR, "orchestrator")
+    core_orch = ["us-federal-return-assembly.md", "global-router.md"]
+    for f in core_orch:
+        src = os.path.join(orch_dir, f)
+        if os.path.isfile(src):
+            shutil.copy2(src, os.path.join(pkg_dir, f))
+            copied_files.append(f)
+
+    # 4. CA-specific orchestrator files
+    if state_code == "ca":
+        for f in ["us-ca-freelance-intake.md", "us-ca-return-assembly.md"]:
+            src = os.path.join(orch_dir, f)
+            if os.path.isfile(src):
+                shutil.copy2(src, os.path.join(pkg_dir, f))
+                copied_files.append(f)
+
+    # 5. State-specific skill files (everything except README.md)
+    state_dir = os.path.join(SKILLS_DIR, "us-states", state_code)
+    state_skill_count = 0
+    if os.path.isdir(state_dir):
+        for f in sorted(os.listdir(state_dir)):
+            if f.endswith(".md") and f != "README.md":
+                shutil.copy2(os.path.join(state_dir, f), os.path.join(pkg_dir, f))
+                copied_files.append(f)
+                state_skill_count += 1
+
+    # 6. Generate README
+    with open(os.path.join(pkg_dir, "README.md"), "w") as fh:
+        fh.write(build_us_state_readme(state_name, state_code, copied_files))
+    copied_files.append("README.md")
+
+    return {
+        "jurisdiction": f"US-{state_code.upper()}",
+        "name": f"United States — {state_name}",
+        "package_dir": f"us-{state_code}",
+        "files": copied_files,
+        "state_skills": state_skill_count,
+        "has_orchestrator": state_code == "ca",
+    }
+
+
+def build_all_us_packages():
+    """Build packages for all 51 US states + DC."""
+    results = []
+    for code in US_STATE_CODES:
+        result = build_us_state_package(code)
+        results.append(result)
+    return results
 
 
 def main():
-    # Clean packages directory (except the malta.md experiment)
-    if os.path.exists(PACKAGES_DIR):
-        shutil.rmtree(PACKAGES_DIR)
-    os.makedirs(PACKAGES_DIR)
+    us_only = "--us-only" in sys.argv
 
-    # Find all country directories
-    intl_dir = os.path.join(SKILLS_DIR, "international")
-    results = []
+    if not us_only:
+        # Clean packages directory
+        if os.path.exists(PACKAGES_DIR):
+            shutil.rmtree(PACKAGES_DIR)
+        os.makedirs(PACKAGES_DIR)
+    else:
+        # Only clean US state packages
+        os.makedirs(PACKAGES_DIR, exist_ok=True)
+        for code in US_STATE_CODES:
+            pkg = os.path.join(PACKAGES_DIR, f"us-{code}")
+            if os.path.isdir(pkg):
+                shutil.rmtree(pkg)
 
-    for country_dir_name in sorted(os.listdir(intl_dir)):
-        country_dir = os.path.join(intl_dir, country_dir_name)
-        if not os.path.isdir(country_dir):
-            continue
-        if country_dir_name == "eu":
-            continue  # EU is a regional layer, not a jurisdiction
+    # ---- International packages ----
+    intl_results = []
+    if not us_only:
+        intl_dir = os.path.join(SKILLS_DIR, "international")
+        for country_dir_name in sorted(os.listdir(intl_dir)):
+            country_dir = os.path.join(intl_dir, country_dir_name)
+            if not os.path.isdir(country_dir):
+                continue
+            if country_dir_name == "eu":
+                continue  # EU is a regional layer, not a jurisdiction
 
-        result = build_package(country_dir_name, country_dir)
-        if result:
-            results.append(result)
+            result = build_package(country_dir_name, country_dir)
+            if result:
+                intl_results.append(result)
 
-    # Summary
-    full = [r for r in results if r["has_orchestrator"]]
-    multi = [r for r in results if r["skill_count"] >= 3 and not r["has_orchestrator"]]
-    single = [r for r in results if r["skill_count"] < 3]
+        full = [r for r in intl_results if r["has_orchestrator"]]
+        multi = [r for r in intl_results if r["skill_count"] >= 3 and not r["has_orchestrator"]]
+        single = [r for r in intl_results if r["skill_count"] < 3]
 
-    print(f"\nPackages built: {len(results)}")
-    print(f"  Full (with orchestrator): {len(full)} — {', '.join(r['name'] for r in full)}")
-    print(f"  Multi-skill (3+ skills): {len(multi)}")
-    print(f"  Single-skill (1-2 skills): {len(single)}")
+        print(f"\nInternational packages built: {len(intl_results)}")
+        print(f"  Full (with orchestrator): {len(full)} — {', '.join(r['name'] for r in full)}")
+        print(f"  Multi-skill (3+ skills): {len(multi)}")
+        print(f"  Single-skill (1-2 skills): {len(single)}")
 
-    # Write packages manifest
+    # ---- Cross-border package ----
+    xb_result = None
+    if not us_only:
+        xb_dir = os.path.join(SKILLS_DIR, "cross-border")
+        if os.path.isdir(xb_dir):
+            xb_pkg = os.path.join(PACKAGES_DIR, "_cross-border")
+            os.makedirs(xb_pkg, exist_ok=True)
+            xb_files = []
+            for f in sorted(os.listdir(xb_dir)):
+                if f.endswith(".md"):
+                    shutil.copy2(os.path.join(xb_dir, f), os.path.join(xb_pkg, f))
+                    xb_files.append(f)
+            if xb_files:
+                with open(os.path.join(xb_pkg, "README.md"), "w") as fh:
+                    fh.write("# Cross-Border Tax Skills\n\n"
+                             "Rules for international transactions: reverse charge, "
+                             "withholding tax, PE risk, export services, and more.\n\n"
+                             "These skills supplement country packages when a taxpayer "
+                             "has cross-border activity.\n")
+                xb_files.append("README.md")
+                xb_result = {
+                    "jurisdiction": "CROSS-BORDER",
+                    "name": "Cross-Border",
+                    "files": xb_files,
+                    "has_orchestrator": False,
+                    "skill_count": len(xb_files) - 1,
+                }
+                print(f"\nCross-border package built: {len(xb_files) - 1} skills")
+
+    # ---- US state packages ----
+    us_results = build_all_us_packages()
+
+    no_state_skills = [r for r in us_results if r["state_skills"] == 0]
+    with_income = [r for r in us_results if any("income-tax" in f for f in r["files"])]
+    print(f"\nUS state packages built: {len(us_results)}")
+    print(f"  With state income tax: {len(with_income)}")
+    print(f"  No state-specific skills (federal only): {len(no_state_skills)}")
+    if no_state_skills:
+        print(f"    {', '.join(r['jurisdiction'] for r in no_state_skills)}")
+
+    # Regenerate US index (packages/us/README.md)
+    us_index_dir = os.path.join(PACKAGES_DIR, "us")
+    os.makedirs(us_index_dir, exist_ok=True)
+    us_index_src = os.path.join(PACKAGES_DIR, "us", "README.md")
+    # Preserve the existing index if present; it's maintained in the repo
+    if not os.path.isfile(us_index_src):
+        with open(us_index_src, "w") as fh:
+            fh.write("# United States — Tax Skills Index\n\n"
+                     "Pick your state package under `packages/us-[code]/`.\n"
+                     "See the repo README for details.\n")
+
+    # ---- Manifest ----
+    all_results = intl_results + ([xb_result] if xb_result else []) + us_results
+    from datetime import date
     manifest = {
-        "generated": "2026-04-13",
-        "total_packages": len(results),
-        "packages": results,
+        "generated": date.today().isoformat(),
+        "total_packages": len(all_results),
+        "international_packages": len(intl_results),
+        "us_state_packages": len(us_results),
+        "packages": all_results,
     }
-    with open(os.path.join(PACKAGES_DIR, "manifest.json"), 'w') as f:
+    with open(os.path.join(PACKAGES_DIR, "manifest.json"), "w") as f:
         json.dump(manifest, f, indent=2)
 
-    print(f"\nManifest written to packages/manifest.json")
+    print(f"\nTotal packages: {len(all_results)}")
+    print(f"Manifest written to packages/manifest.json")
 
 
 if __name__ == "__main__":

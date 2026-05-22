@@ -68,9 +68,6 @@ Ask ONLY about things the documents don't answer:
 - Any elections made (simplified expenses, cash basis, etc.)
 - First year in business?
 - Director's remuneration / salary drawn? (if company structure)
-- Do you own/lease/rent any motor vehicles? What type (sedan, SUV, single-cab bakkie, double-cab bakkie, panel van)? (determines s 17(2)(c) VAT input block and income tax logbook requirements)
-- Do you employ staff and grant any fringe benefits (company car, low-interest loans, accommodation, assets at less than market value)? (triggers s 18(3) VAT output obligation)
-- Do you incur entertainment, meals, accommodation, or social function expenses for clients or staff? (triggers s 17(2)(a) VAT input block; income tax tested under s 11(a)/s 23(g))
 
 ## Step 5: Decisions
 

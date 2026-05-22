@@ -1,4 +1,7 @@
-# Italy — Tax Skills Package
+# Italy — AI Tax Assistant | OpenAccountants
+
+> Open-source tax computation skills for Italy. Upload to Claude, ChatGPT, or any AI assistant.
+> Verified by accountants. Free and open source.
 
 ## What's in this folder
 
@@ -9,7 +12,14 @@
 5. `it-inps-contributions.md`
 6. `it-irap.md`
 7. `italy-vat-return.md`
-8. `eu-vat-directive.md`
+8. `references.md`
+9. `eu-vat-directive.md`
+
+## Also known as
+
+commercialista, IRPEF, IVA, regime forfettario, partita IVA, INPS, F24
+
+Tax authority: **Agenzia delle Entrate**
 
 ## How to use
 
@@ -31,20 +41,24 @@ The most up-to-date, verified version of these skills is maintained at [openacco
 
 ---
 
-## Found an error? Improve this skill.
+## Are you a commercialista?
 
-Tax rules change. Rates get updated. Thresholds move. If something in these files is wrong for your country:
+These Italy tax skills need your eye. Every rate, threshold, and form reference was AI-drafted and needs a human professional to verify it.
 
-1. Use Claude or ChatGPT with deep research to verify: *"Search [country] tax authority website for current VAT rate and compare against this skill"*
-2. Fork the repo: [github.com/openaccountants/openaccountants](https://github.com/openaccountants/openaccountants)
-3. Fix the error in `skills/` (the source files)
-4. Submit a PR — your name goes on the skill as a verified contributor
+**You don't need to use GitHub.** Just:
 
-Know a vendor pattern we're missing? Know how your local bank formats statements? Every pattern you add saves the next user from a misclassification.
+1. Download the files in this folder
+2. Check the rates against Agenzia delle Entrate's website
+3. Email your corrections to **info@openaaccountants.com** — Word doc, Excel, PDF, tracked changes, whatever works
 
-**Contributors get credited at [openaccountants.com](https://openaccountants.com)**
+We'll update the skill and credit you publicly as the verified reviewer at [openaccountants.com](https://openaccountants.com).
+
+Or if you're comfortable with GitHub: fork the repo, fix the source file under `skills/`, and submit a PR.
+
+**Your name goes on the skill either way.**
 
 ---
 
-*OpenAccountants — open-source tax computation skills*
+*OpenAccountants — open-source tax computation skills for AI*
+*133 countries + 51 US states — [openaccountants.com](https://openaccountants.com)*
 *info@openaaccountants.com*
