@@ -8,6 +8,7 @@ tax_year: 2025
 category: international
 depends_on:
   - income-tax-workflow-base
+verified_by: info@michaelcutajar.com
 ---
 
 # Malta Provisional Tax (PT) -- Self-Employed Skill v2.0
