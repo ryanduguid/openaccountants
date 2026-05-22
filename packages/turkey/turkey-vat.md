@@ -33,6 +33,7 @@ depends_on:
 | E-invoice | e-Fatura mandatory for businesses exceeding TRY 3M annual turnover; e-Arşiv for others |
 | Contributor | Open Accountants Community |
 | Validated by | Pending — requires sign-off by a Turkey-licensed YMM (Yeminli Mali Müşavir) |
+| Open-source credits | [ozgurg/vergihesaplayici.com](https://github.com/ozgurg/vergihesaplayici.com) (AGPL-3.0, gelir vergisi calculator); [mlevent/fatura](https://github.com/mlevent/fatura) (MIT, GİB e-Arşiv e-invoice); [saidsurucu/borsapy](https://github.com/saidsurucu/borsapy) (Apache-2.0, financial markets/fund tax categories); [berkaygure/gelir-vergisi-kesintisi-hesaplama](https://github.com/berkaygure/gelir-vergisi-kesintisi-hesaplama) (income tax withholding brackets) |
 | Skill version | 2.0 |
 
 ### Key return form boxes

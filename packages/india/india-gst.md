@@ -765,13 +765,48 @@ This skill is v2.0, rewritten in April 2026 to align with the Malta v2.0 three-t
 17. E-Invoice Portal -- https://einvoice1.gst.gov.in
 18. E-Way Bill Portal -- https://ewaybillgst.gov.in
 
+### GST rate templates — ERPNext item tax template structure
+
+**Source:** [`resilient-tech/india-compliance`](https://github.com/resilient-tech/india-compliance) — GPL-3.0, 235 stars. Data from `gst_india/data/tax_defaults.json`.
+
+The india-compliance ERPNext module defines the following GST item tax templates, each with corresponding CGST/SGST/IGST/RCM account entries:
+
+| Template | CGST Rate | SGST Rate | IGST Rate | Typical Items |
+|---|---|---|---|---|
+| **GST 0% (Nil Rated)** | 0% | 0% | 0% | Fresh food, healthcare, education |
+| **GST 0% (Exempt)** | 0% | 0% | 0% | Interest, bank charges, select services |
+| **GST 0% (Non-GST)** | 0% | 0% | 0% | Petroleum, alcohol for human consumption |
+| **GST 1%** | 0.5% | 0.5% | 1% | Rough diamonds, precious stones |
+| **GST 3%** | 1.5% | 1.5% | 3% | Gold, silver, platinum |
+| **GST 5%** | 2.5% | 2.5% | 5% | Packaged food, economy transport, restaurants, medicines, EVs |
+| **GST 6%** | 3% | 3% | 6% | Rough diamonds (certain) |
+| **GST 7.5%** | 3.75% | 3.75% | 7.5% | Specific intermediate goods |
+| **GST 12%** | 6% | 6% | 12% | *Pre-GST 2.0 slab — abolished 22 Sep 2025. Retained for legacy transactions* |
+| **GST 18%** | 9% | 9% | 18% | Most goods and services — IT, telecom, financial, professional, cement, durables |
+| **GST 28%** | 14% | 14% | 28% | *Pre-GST 2.0 slab — abolished 22 Sep 2025. Retained for legacy transactions* |
+
+Each template includes forward-charge and reverse-charge (RCM) account variants, plus refund accounts for export scenarios.
+
+**Tax categories** defined in the ERPNext system:
+- **In-State** — CGST + SGST (intra-state supply)
+- **Out-State** — IGST (inter-state supply)
+- **Reverse Charge In-State** — CGST + SGST via RCM accounts
+- **Reverse Charge Out-State** — IGST via RCM accounts
+- **Registered Composition** — for composition scheme suppliers
+
+### HSN code master
+
+**Source:** `gst_india/data/hsn_codes.json` in `resilient-tech/india-compliance`.
+
+The repo contains a 4-digit HSN code master with ~1,200 entries mapping HSN codes to commodity descriptions (e.g., HSN 0701 = "POTATOES, FRESH OR CHILLED", HSN 8471 = computers). **The HSN master does NOT contain embedded rate mappings** — rate determination requires cross-referencing against Notification 01/2017-CT(Rate) as amended. This confirms the skill's known gap: HSN-to-rate mapping must be done via the official tariff schedule, not from the HSN code alone.
+
 ### Known gaps
 
 1. The supplier pattern library covers common Indian vendors but does not cover every regional vendor or local supplier. Add patterns as they emerge.
 2. Worked examples are drawn from a hypothetical Mumbai-based IT consultant. They do not cover manufacturing, trading, or hospitality specifically. A v2.1 should add sector-specific examples.
-3. HSN/SAC classification requires looking up the master schedule -- this skill does not contain the full HSN/SAC master. Flag unknown classifications as [T2].
+3. HSN/SAC classification requires looking up the master schedule -- this skill does not contain the full HSN/SAC master. The `resilient-tech/india-compliance` repo has HSN code descriptions but not rate mappings. Flag unknown classifications as [T2].
 4. Place of supply for services is frequently disputed (IGST Act Sec 12/13). Complex scenarios involving multiple states or cross-border elements should be flagged [T2].
-5. The GST 2.0 rate rationalization (56th GST Council, 22 Sep 2025) abolished the 12% and 28% slabs. Some transitional edge cases may exist for invoices straddling the effective date.
+5. The GST 2.0 rate rationalization (56th GST Council, 22 Sep 2025) abolished the 12% and 28% slabs. Some transitional edge cases may exist for invoices straddling the effective date. The india-compliance ERPNext module retains 12% and 28% templates for handling legacy transactions.
 6. Health Security and National Security Cess (replacing compensation cess on tobacco/pan masala from 1 Feb 2026) is not detailed in this skill. Flag as [T3] if encountered.
 7. The e-invoicing threshold (INR 5 crore) and 30-day reporting rule (INR 10 crore AATO) are as of April 2026. Verify for future periods.
 8. ITC reversal calculations under Rule 42/43 require annual reconciliation in GSTR-9. This skill covers the monthly computation but not the annual true-up.

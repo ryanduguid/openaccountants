@@ -49,12 +49,34 @@ From the user's message, extract location using these signals (check in order):
 
 | Cities | Jurisdiction |
 |--------|-------------|
-| New York, NYC, Manhattan, Brooklyn | US-NY |
-| Los Angeles, San Francisco, San Diego, Sacramento | US-CA |
-| Houston, Dallas, Austin, San Antonio | US-TX |
-| Miami, Orlando, Tampa, Jacksonville | US-FL |
-| Chicago | US-IL |
-| Seattle, Tacoma | US-WA |
+| New York, NYC, Manhattan, Brooklyn, Queens, Bronx | US-NY |
+| Los Angeles, San Francisco, San Diego, Sacramento, San Jose | US-CA |
+| Houston, Dallas, Austin, San Antonio, Fort Worth | US-TX |
+| Miami, Orlando, Tampa, Jacksonville, Fort Lauderdale | US-FL |
+| Chicago, Springfield IL, Naperville | US-IL |
+| Seattle, Tacoma, Bellevue, Spokane | US-WA |
+| Philadelphia, Pittsburgh, Allentown | US-PA |
+| Phoenix, Tucson, Scottsdale, Mesa | US-AZ |
+| Atlanta, Savannah, Augusta | US-GA |
+| Denver, Colorado Springs, Boulder | US-CO |
+| Boston, Cambridge, Worcester | US-MA |
+| Detroit, Grand Rapids, Ann Arbor | US-MI |
+| Minneapolis, St. Paul, Rochester MN | US-MN |
+| Portland OR, Eugene, Salem OR | US-OR |
+| Las Vegas, Reno, Henderson | US-NV |
+| Nashville, Memphis, Knoxville, Chattanooga | US-TN |
+| Charlotte, Raleigh, Durham, Asheville | US-NC |
+| Columbus OH, Cleveland, Cincinnati | US-OH |
+| Indianapolis, Fort Wayne | US-IN |
+| Baltimore, Annapolis, Bethesda | US-MD |
+| Washington DC, Georgetown, Arlington VA | US-DC |
+| Salt Lake City, Provo, Park City | US-UT |
+| Richmond, Virginia Beach, Norfolk | US-VA |
+| New Orleans, Baton Rouge | US-LA |
+| Kansas City MO, St. Louis | US-MO |
+| Milwaukee, Madison WI | US-WI |
+| Honolulu, Maui | US-HI |
+| Anchorage, Fairbanks, Juneau | US-AK |
 | London, Manchester, Birmingham, Edinburgh, Glasgow, Bristol, Leeds | GB |
 | Berlin, Munich, Hamburg, Frankfurt, Cologne, Stuttgart, Düsseldorf | DE |
 | Paris, Lyon, Marseille, Toulouse, Nice, Bordeaux | FR |
@@ -196,6 +218,24 @@ If the user mentions BOTH employment AND self-employment:
 
 **For these:** Hand off directly to the intake skill. User gets the full experience.
 
+### US states — all 50 states + DC have tax skills
+
+Every US state now has a dedicated folder under `skills/us-states/[two-letter-code]/` containing income tax, sales tax, and any specialty tax skills (e.g., WA B&O tax, TX franchise tax, OH CAT). When a US user is detected:
+
+1. **Always load** the federal skills: `skills/foundation/us-tax-workflow-base.md` + all of `skills/federal/` + `us-federal-return-assembly.md`
+2. **Then load the state folder.** Find the user's state by two-letter code and load ALL `.md` files from `skills/us-states/[code]/`.
+3. If the user is in California, ALSO load `us-ca-freelance-intake` and `us-ca-return-assembly` for the full guided experience.
+
+| State code | State folder | Income tax? | Sales tax? | Specialty |
+|------------|-------------|-------------|------------|-----------|
+| AL–WY | `skills/us-states/[code]/` | 42 states + DC have income tax skills | 45 states have sales tax skills | WA: B&O, TX: franchise, OH: CAT, DE: gross receipts, NV: commerce, NY: NYC UBT |
+
+**No income tax states** (load sales/specialty skills only): AK, FL, NV, NH, SD, TN, TX, WA, WY
+
+**No sales tax states** (load income tax only): DE, MT, NH, OR (Alaska has local-only sales tax)
+
+See `skills/us-states/README.md` for the full coverage matrix.
+
 ### Jurisdictions with content skills but no intake
 
 | Jurisdiction | Available skills | Quality |
@@ -205,7 +245,7 @@ If the user mentions BOTH employment AND self-employment:
 | **South Korea** | VAT, social insurance | Q2 (income tax stub) |
 | **France** | VAT (CA3), social contributions (URSSAF) | Q2 (income tax stub) |
 | **Italy** | VAT (LIPE), INPS | Q2 (income tax stub) |
-| **US — New York** | IT-201, IT-204-LL, NYC UBT, estimated tax, sales tax | Q2 |
+| **US — all 50 states + DC** | Income tax + sales tax + specialty taxes per state | Q2 (CA/NY/IL/TX/WA/FL), Q3 (all others) |
 | **New Zealand** | GST, income tax, ACC, provisional tax | Q2 GST, Q4 rest |
 | **Japan** | Consumption tax | Q3 |
 | **Mexico** | IVA, ISR stubs | Q2 IVA |
@@ -223,7 +263,7 @@ If the user mentions BOTH employment AND self-employment:
 
 ### Countries with nothing
 
-> "I don't have tax skills for [country] yet. We're building them — visit openaccountants.com/contribute if you'd like to help. In the meantime, I'd recommend a local [practitioner type]."
+> "I don't have tax skills for [country] yet. We're building them — visit openaccountants.com if you'd like to help. In the meantime, I'd recommend a local [practitioner type]."
 
 ---
 

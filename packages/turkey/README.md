@@ -5,6 +5,8 @@
 1. `foundation.md`
 2. `intake.md`
 3. `turkey-vat.md`
+4. `turkey-pit.md` — Personal Income Tax (Gelir Vergisi) with 2025 brackets, deductions, and filing guidance
+5. `references.md` — related open-source Turkish tax projects (license-compatible)
 
 ## How to use
 
@@ -42,4 +44,4 @@ Know a vendor pattern we're missing? Know how your local bank formats statements
 ---
 
 *OpenAccountants — open-source tax computation skills*
-*info@openaccountants.com*
+*info@openaaccountants.com*

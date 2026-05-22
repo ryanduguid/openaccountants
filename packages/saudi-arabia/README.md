@@ -5,6 +5,7 @@
 1. `foundation.md`
 2. `intake.md`
 3. `saudi-arabia-vat.md`
+4. `references.md` — related open-source projects (SallaApp/ZATCA, wes4m/zatca-xml-js, axenda/zatca)
 
 ## How to use
 
@@ -42,4 +43,4 @@ Know a vendor pattern we're missing? Know how your local bank formats statements
 ---
 
 *OpenAccountants — open-source tax computation skills*
-*info@openaccountants.com*
+*info@openaaccountants.com*

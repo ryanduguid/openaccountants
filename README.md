@@ -2,7 +2,7 @@
 
 # OpenAccountants
 
-Open-source tax computation skills for AI. **371 skills across 134 countries.**
+Open-source tax computation skills for AI. **438 skills across 134 countries + 51 US states.**
 
 Upload to Claude, ChatGPT, or any LLM with your bank statement — or connect via **[MCP](#mcp-server)** so your AI loads the right country's tax skills automatically. Get a working paper ready for your accountant and **cut your accounting bill by 80%.**
 
@@ -50,17 +50,18 @@ packages/
 ├── ... 126 more countries
 ```
 
-**United States:** there is **no** `packages/us/` folder. US tax work is split across **modular skills** under `skills/` (federal forms, orchestrators that sequence them, and per-state sales tax). That matches how US compliance layers (federal vs 50 states) rather than a single “country bundle” like Malta.
+**United States:** there is **no** `packages/us/` folder. US tax work is split across **modular skills** under `skills/` — federal forms, orchestrators that sequence them, and **per-state tax skills for all 50 states + DC**. That matches how US compliance layers (federal vs 50 states) rather than a single “country bundle” like Malta.
 
 | What you need | Where it lives |
 |----------------|----------------|
 | Federal workflow base (how the AI should work) | [`skills/foundation/us-tax-workflow-base.md`](skills/foundation/us-tax-workflow-base.md) |
 | Federal content (Schedule C/SE, QBI, estimated tax, bookkeeping, etc.) | [`skills/federal/`](skills/federal/) — upload **all** `.md` files here |
 | Orchestration (intake, return assembly, cross-form checks) | [`skills/orchestrator/`](skills/orchestrator/) — include the `us-*.md` files that match your situation (e.g. `us-federal-return-assembly.md`; California freelancers also use `us-ca-*.md`) |
-| State sales / use tax | [`skills/us-states/`](skills/us-states/) — pick your state folder and add those `.md` files if sales tax applies |
-| Selected states with extra local files | [`skills/florida/`](skills/florida/), [`skills/texas/`](skills/texas/), [`skills/newyork/`](skills/newyork/), [`skills/washington/`](skills/washington/) when relevant |
+| **State income tax, sales tax, and specialty taxes** | [`skills/us-states/`](skills/us-states/) — find your state by two-letter code (e.g. `ca/`, `ny/`, `tx/`) and upload ALL `.md` files from that folder |
 
-For a typical **US freelance federal return**, start with `us-tax-workflow-base.md`, everything in `skills/federal/`, and the `us-*.md` files in `skills/orchestrator/` your case needs; add state pieces only if they apply.
+Each state folder under `skills/us-states/` contains income tax, sales tax, and any specialty tax skills relevant to that state. See the [US state coverage matrix](skills/us-states/README.md) for what's available.
+
+For a typical **US freelance federal + state return**, start with `us-tax-workflow-base.md`, everything in `skills/federal/`, the `us-*.md` files in `skills/orchestrator/` your case needs, and all `.md` files from your state's folder in `skills/us-states/`.
 
 Contributors: international packages are generated from `skills/international/` via `scripts/build-packages.py`. US skills are edited directly under `skills/` until a single generated US package exists.
 
@@ -242,7 +243,7 @@ openaccountants/
 │   ├── federal/           ← US federal income tax / Schedule C / SE / QBI / etc.
 │   ├── international/     ← Country-specific content (feeds build-packages.py)
 │   ├── orchestrator/      ← Intake + assembly (incl. us-federal-return-assembly, us-ca-*)
-│   ├── us-states/         ← US state sales & use tax skills
+│   ├── us-states/         ← US state tax skills (all 50 states + DC, by 2-letter code)
 │   ├── cross-border/      ← Reverse charge, WHT, PE risk
 │   ├── intelligence/      ← Deadlines, thresholds, optimisation
 │   └── patterns/          ← Global vendor patterns
@@ -327,7 +328,7 @@ The most up-to-date, verified version is maintained at [openaccountants.com](htt
 
 ## Contact
 
-**info@openaccountants.com**
+**info@openaaccountants.com**
 
 ## License
 

@@ -7,6 +7,7 @@
 3. `denmark-vat-return.md`
 4. `dk-income-tax.md`
 5. `eu-vat-directive.md`
+6. `references.md` — related open-source Danish tax projects (capital gains, SKAT reporting)
 
 ## How to use
 
@@ -44,4 +45,4 @@ Know a vendor pattern we're missing? Know how your local bank formats statements
 ---
 
 *OpenAccountants — open-source tax computation skills*
-*info@openaccountants.com*
+*info@openaaccountants.com*

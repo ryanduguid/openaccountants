@@ -18,10 +18,13 @@
 11. `fr-crypto-tax.md` — Crypto taxation (PAMC method, form 2086, staking/mining)
 12. `fr-business-accounting.md` — TVA declarations, invoicing, e-invoicing 2026 reform, IS, FEC, annual closing
 13. `fr-tax-audit.md` — Tax audit procedures, penalties, 8 verification axes, taxpayer rights
+14. `references.md` — OpenFisca France, DGFiP calculette-impots source code, and other integration sources
 
 ## Credits
 
 Skills 8–13 are based on work by **[Romain Simon (@romainsimon)](https://github.com/romainsimon/paperasse)**, licensed under MIT. Adapted for the OpenAccountants format with detailed rate tables, computation logic, and structured sections.
+
+Additional sources: **[OpenFisca France](https://github.com/openfisca/openfisca-france)** (AGPL-3.0, 296 stars) — the most widely adopted open-source model of the French tax and benefit system, and the **[DGFiP calculette-impots source code](https://github.com/GouvernementFR/calculette-impots-m-source-code)** (CeCILL 2.1 / GPL-compatible) — the French government's own income tax computation engine.
 
 ## How to use
 
@@ -59,4 +62,4 @@ Know a vendor pattern we're missing? Know how your local bank formats statements
 ---
 
 *OpenAccountants — open-source tax computation skills*
-*info@openaccountants.com*
+*info@openaaccountants.com*

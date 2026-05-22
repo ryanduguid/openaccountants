@@ -12,7 +12,7 @@ OpenAccountants is dual-licensed (AGPL-3.0 + commercial). We need a clear **yes*
 
 - [ ] **I have read [CLA.md](https://github.com/openaccountants/openaccountants/blob/main/CLA.md) and agree to the Contributor License Agreement** for everything included in this pull request. *(Checking this box is your explicit opt-in.)*
 
-If you cannot agree, do not open this PR — contact **contributors@openaccountants.com** to discuss alternatives (including a formal signed agreement).
+If you cannot agree, do not open this PR — contact **info@openaaccountants.com** to discuss alternatives (including a formal signed agreement).
 
 ## Checklist
 

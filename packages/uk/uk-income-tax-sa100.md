@@ -4,7 +4,7 @@ description: >
   Use this skill whenever asked about UK income tax for individuals filing SA100 Self Assessment. Trigger on phrases like "income tax UK", "SA100", "personal allowance", "tax bands", "tax computation", "marriage allowance", "savings allowance", "dividend allowance", "Scottish tax rates", "payments on account", "tax reducers", "tax relief", or any question about computing a UK individual's income tax liability. Covers personal allowance (including taper), income tax bands for rUK and Scotland, marriage allowance, savings and dividend allowances, tax reducers, the final tax computation, and payments on account. ALWAYS read this skill before touching any UK income tax return work.
 version: 2.0
 jurisdiction: GB
-tax_year: 2024-25
+tax_year: 2025-26
 category: international
 depends_on:
   - income-tax-workflow-base
@@ -21,17 +21,18 @@ depends_on:
 | Country | United Kingdom |
 | Tax | Income Tax (rUK rates or Scottish rates) |
 | Currency | GBP only |
-| Tax year | 6 April 2024 -- 5 April 2025 |
+| Tax year | 6 April 2025 -- 5 April 2026 |
 | Primary legislation | Income Tax Act 2007 (ITA 2007); ITEPA 2003; ITTOIA 2005 |
 | Supporting legislation | Finance Act 2024; Finance Act 2025; Scotland Act 2016; TMA 1970 |
 | Tax authority | HM Revenue & Customs (HMRC) |
 | Filing portal | HMRC Self Assessment Online |
-| Filing deadline (online) | 31 January 2026 |
+| Filing deadline (online) | 31 January 2027 |
 | Contributor | Open Accountants Community |
+| Rates source | [SavingTool/hmrc-income-tax](https://github.com/sgb-io/hmrc-income-tax) (MIT) — 2025/26 and 2026/27 rates |
 | Validated by | Pending -- UK-qualified accountant (ACA/ACCA/CTA) |
 | Skill version | 2.0 |
 
-### Income Tax Bands -- England, Wales, Northern Ireland (rUK) [T1]
+### Income Tax Bands -- England, Wales, Northern Ireland (rUK) 2025/26 [T1]
 
 | Band | Taxable Income | Rate |
 |---|---|---|
@@ -40,19 +41,42 @@ depends_on:
 | Higher rate | GBP 50,271 -- 125,140 | 40% |
 | Additional rate | Over GBP 125,140 | 45% |
 
-### Scottish Income Tax Bands (2024/25) [T1]
+Personal allowance tapers by GBP 1 for every GBP 2 earned above GBP 100,000. Fully withdrawn at GBP 125,140. Thresholds frozen until 2028/29.
+
+### Scottish Income Tax Bands (2026/27) [T1]
 
 | Band | Taxable Income | Rate |
 |---|---|---|
 | Personal allowance | GBP 0 -- 12,570 | 0% |
-| Starter rate | GBP 12,571 -- 14,876 | 19% |
-| Basic rate | GBP 14,877 -- 26,561 | 20% |
-| Intermediate rate | GBP 26,562 -- 43,662 | 21% |
-| Higher rate | GBP 43,663 -- 75,000 | 42% |
-| Advanced rate | GBP 75,001 -- 125,140 | 45% |
+| Starter rate | GBP 12,571 -- 15,990 | 19% |
+| Basic rate | GBP 15,991 -- 28,380 | 20% |
+| Intermediate rate | GBP 28,381 -- 43,663 | 21% |
+| Higher rate | GBP 43,664 -- 75,001 | 42% |
+| Advanced rate | GBP 75,002 -- 125,140 | 45% |
 | Top rate | Over GBP 125,140 | 48% |
 
-Scottish rates apply ONLY to non-savings, non-dividend income. Savings and dividends always use UK-wide rates.
+Scottish rates apply ONLY to non-savings, non-dividend income. Savings and dividends always use UK-wide rates. Source: [gov.scot 2026-27 rates](https://www.gov.scot/publications/scottish-income-tax-2026-27-rates-and-bands/)
+
+### National Insurance (2025/26) [T1]
+
+| Type | Rate | Threshold |
+|---|---|---|
+| Employee Class 1 (primary) | 8% | GBP 242--967/week |
+| Employee Class 1 (upper) | 2% | Above GBP 967/week |
+| Employer Class 1 | 15% | Above GBP 96/week (£4,992/year) |
+
+Employer NI secondary threshold lowered to £5,000/year and rate increased to 15% from April 2025 (Autumn Budget 2024).
+
+### Dividend Tax (2026/27) [T1]
+
+| Band | Rate |
+|---|---|
+| Dividend allowance | GBP 500 |
+| Basic rate | 10.75% |
+| Higher rate | 35.75% |
+| Additional rate | 39.35% |
+
+Dividend rates increased from April 2026: basic 8.75%→10.75%, higher 33.75%→35.75%.
 
 ### Key Allowances and Thresholds [T1]
 

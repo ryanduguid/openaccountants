@@ -431,11 +431,30 @@ Four quarterly vouchers with the recommended installment amounts, due dates, and
 
 ## Section 8 — Handoff to state skills
 
-If the taxpayer is a California resident, this skill produces a handoff package containing:
+After the federal return is assembled, the taxpayer's state return must be prepared. State skills live in `skills/us-states/[two-letter-code]/`. Every state folder contains a README, income tax skill (if applicable), sales tax skill (if applicable), and any specialty tax skills.
 
-- Federal AGI (Form 1040 Line 11) → CA Schedule CA (540) Part I Line 11
-- Federal QBI deduction → CA Schedule CA (540) add-back
-- Federal §179 deduction and bonus depreciation → CA Schedule CA (540) add-back (California decouples)
+### Handoff data for ALL states
+
+The federal return produces the following values that state income tax skills consume:
+
+- **Federal AGI** (Form 1040 Line 11) → most states start from federal AGI and make state-specific modifications
+- **Federal taxable income** (Form 1040 Line 15) → some states (CO, ID, OR, ND, etc.) start from federal taxable income instead of AGI
+- **QBI deduction amount** (Form 8995/8995-A) → many states decouple from §199A and require add-back
+- **§179 deduction and bonus depreciation** → several states have lower limits or decouple from federal (CA, PA, NJ, etc.)
+- **Schedule C net profit** (Line 31) → flows to state return for apportionment if multi-state
+- **Schedule SE self-employment tax** → some states allow partial deduction
+- **SE health insurance deduction** (Schedule 1 Line 17) → most states conform
+- **Retirement contributions** (Schedule 1 Line 16) → most states conform
+- **Federal estimated tax payments** → needed to compare against state estimated tax obligations
+- **HSA deduction** → some states decouple (CA, NJ, AL)
+
+### California-specific handoff (detailed)
+
+If the taxpayer is a California resident, the handoff includes additional detail:
+
+- Federal AGI → CA Schedule CA (540) Part I Line 11
+- Federal QBI deduction → CA Schedule CA (540) add-back (CA does not allow §199A)
+- Federal §179 deduction and bonus depreciation → CA Schedule CA (540) add-back (CA §179 limit is $25,000)
 - Federal Schedule C net profit → CA Schedule CA Part I
 - Federal Schedule SE → CA does not have SE tax at state level, but AGI reconciliation needs this
 - Federal Schedule 1 Line 17 (SE health insurance) → CA conforms; no adjustment
@@ -443,7 +462,11 @@ If the taxpayer is a California resident, this skill produces a handoff package 
 - Federal Form 8962 (PTC) → CA uses its own state subsidy computation if Covered California
 - Federal estimated tax payments → flag for CA 540-ES comparison
 
-This handoff is consumed by the `ca-540-individual-return` skill.
+This California handoff is consumed by the `ca-540-individual-return` skill (in `skills/us-states/ca/ca-income-tax.md`).
+
+### No-income-tax states
+
+If the taxpayer is in AK, FL, NV, NH, SD, TN, TX, WA, or WY — there is no state income tax handoff. However, load the state's folder anyway for sales tax and specialty tax skills (e.g., TX franchise tax, WA B&O tax).
 
 ---
 

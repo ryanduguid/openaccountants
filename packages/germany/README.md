@@ -5,13 +5,15 @@
 1. `foundation.md`
 2. `intake.md`
 3. `de-estimated-tax.md`
-4. `de-income-tax.md`
-5. `de-social-contributions.md`
-6. `de-trade-tax.md`
-7. `germany-vat-return.md`
-8. `eu-vat-directive.md`
-9. `germany-guided-intake.md`
-10. `germany-return-assembly.md`
+4. `de-income-tax.md` — Self-employed income tax (Einkommensteuer)
+5. `de-payroll.md` — Employee payroll tax (Lohnsteuer), Steuerklassen I-VI, SolZ, KiSt, social security with real BMF PAP formula and 2025 rates
+6. `de-social-contributions.md` — Self-employed social insurance (GKV/PKV, KSK, pension)
+7. `de-trade-tax.md`
+8. `germany-vat-return.md`
+9. `eu-vat-directive.md`
+10. `germany-guided-intake.md`
+11. `germany-return-assembly.md`
+12. `references.md` — Related open-source German tax projects (BMF PAP generators, wage tax engines, ZUGFeRD e-invoicing)
 
 ## How to use
 
@@ -49,4 +51,4 @@ Know a vendor pattern we're missing? Know how your local bank formats statements
 ---
 
 *OpenAccountants — open-source tax computation skills*
-*info@openaccountants.com*
+*info@openaaccountants.com*

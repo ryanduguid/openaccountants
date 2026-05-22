@@ -12,6 +12,11 @@
 8. `uk-vat-return.md`
 9. `uk-guided-intake.md`
 10. `uk-return-assembly.md`
+11. `references.md` — HMRC open-source tax engines and UK community projects
+
+## Credits
+
+UK income tax and National Insurance computation logic cross-referenced against **[HMRC/tax-kalculator](https://github.com/hmrc/tax-kalculator)** (Apache-2.0) and **[SavingTool/hmrc-income-tax](https://github.com/SavingTool/hmrc-income-tax)** (MIT, updated for 2026/27).
 
 ## How to use
 
@@ -49,4 +54,4 @@ Know a vendor pattern we're missing? Know how your local bank formats statements
 ---
 
 *OpenAccountants — open-source tax computation skills*
-*info@openaccountants.com*
+*info@openaaccountants.com*

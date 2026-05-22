@@ -12,6 +12,7 @@
 8. `canada-gst-hst.md`
 9. `canada-guided-intake.md`
 10. `canada-return-assembly.md`
+11. `references.md`
 
 ## How to use
 
@@ -49,4 +50,4 @@ Know a vendor pattern we're missing? Know how your local bank formats statements
 ---
 
 *OpenAccountants — open-source tax computation skills*
-*info@openaccountants.com*
+*info@openaaccountants.com*

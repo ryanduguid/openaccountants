@@ -10,6 +10,7 @@
 6. `india-gst.md`
 7. `india-guided-intake.md`
 8. `india-return-assembly.md`
+9. `references.md` — open-source projects with Indian tax data (income tax calculators, GST/TDS rate tables from ERPNext india-compliance)
 
 ## How to use
 
@@ -47,4 +48,4 @@ Know a vendor pattern we're missing? Know how your local bank formats statements
 ---
 
 *OpenAccountants — open-source tax computation skills*
-*info@openaccountants.com*
+*info@openaaccountants.com*

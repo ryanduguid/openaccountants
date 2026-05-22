@@ -415,4 +415,4 @@ Para rendimentos sem retenção na fonte (aluguéis de PF, serviços a PF, rendi
 
 *Última atualização: abril/2026 — IRPF 2026 (ano-base 2025), conforme IN RFB 2.312/2026.*
 *Conteúdo original: [Daniel Luz (@Danielbluz)](https://github.com/Danielbluz/skill-irpf-brasil) — MIT License.*
-*OpenAccountants — open-source tax computation skills — info@openaccountants.com*
+*OpenAccountants — open-source tax computation skills — info@openaaccountants.com*

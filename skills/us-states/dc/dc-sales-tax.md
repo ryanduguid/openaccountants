@@ -2,6 +2,8 @@
 name: dc-sales-tax
 description: Use this skill whenever asked about District of Columbia sales tax, DC OTR filings. Trigger on phrases like "DC sales tax", "District of Columbia sales tax", "OTR". ALWAYS load us-sales-tax first.
 version: 2.0
+jurisdiction: US-DC
+validation_status: ai-drafted-q3
 ---
 
 # District of Columbia Sales and Use Tax Skill v2.0

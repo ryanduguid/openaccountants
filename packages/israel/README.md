@@ -7,6 +7,9 @@
 2. `intake.md` — Onboarding questions and document collection for Israel
 3. `israel-vat.md` — VAT (Ma'am — מע"מ) return preparation, supplier patterns, filing mechanics
 
+### References
+- `references.md` — Related open-source Israeli tax projects (license compatibility notes, integration approach)
+
 ### Complementary skills
 4. `il-freelancer-ops.md` — Freelancer operations: Osek Murshe/Patur/Esek Za'ir, invoice requirements, deadline calendar, threshold monitoring, Bituach Leumi, accountant packages
 5. `il-tax-withholding.md` — Withholding tax (Nikui Mas BeMakor — ניכוי מס במקור): rates, certificates, Form 102, Form 856, cross-border payments
@@ -59,4 +62,4 @@ Know a vendor pattern we're missing? Know how your local bank formats statements
 ---
 
 *OpenAccountants — open-source tax computation skills*
-*info@openaccountants.com*
+*info@openaaccountants.com*

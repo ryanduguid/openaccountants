@@ -28,6 +28,44 @@ Formula: IGC = (Taxable Income in UTA x Rate) - Amount to Deduct in UTA, then co
 
 WARNING: UTA values change monthly. Always use the December UTA of the tax year at www.sii.cl.
 
+### Impuesto Único de Segunda Categoría (IUSC) — Monthly Withholding
+
+The IUSC applies the same progressive rate structure as the IGC but on a monthly basis using UTM (Unidad Tributaria Mensual) instead of UTA. This is the payroll withholding tax for employed workers.
+
+Source: SII (`sii.cl/valores_y_fechas/impuesto_2da_categoria/`); cross-validated against `grblasquiz/hacecuentas` and `efeoncepro/greenhouse-eo`.
+
+| Taxable Income (UTM) | Rate | Deduction (UTM) |
+|---|---|---|
+| 0 — 13.5 UTM | Exempt (0%) | — |
+| 13.5 — 30 UTM | 4% | 0.54 UTM |
+| 30 — 50 UTM | 8% | 1.74 UTM |
+| 50 — 70 UTM | 13.5% | 4.49 UTM |
+| 70 — 90 UTM | 23% | 11.14 UTM |
+| 90 — 120 UTM | 30.4% | 17.80 UTM |
+| 120 — 310 UTM | 35% | 23.26 UTM |
+| 310+ UTM | 40% | 38.76 UTM |
+
+Formula: IUSC = (Taxable base in UTM x Rate) - Deduction in UTM, then convert to CLP.
+Taxable base = Gross salary - AFP (10% + commission) - Health (7% Fonasa or Isapre %).
+
+The UTM for 2026 is approximately CLP 66,500. Always verify at www.sii.cl.
+
+### AFP Commission Rates (2026)
+
+Source: Superintendencia de Pensiones (`spensiones.cl`); cross-validated against `grblasquiz/hacecuentas`.
+
+| AFP | Commission | Total Worker Deduction (10% + commission) |
+|---|---|---|
+| Uno | 0.49% | 10.49% |
+| Modelo | 0.58% | 10.58% |
+| PlanVital | 1.16% | 11.16% |
+| Habitat | 1.27% | 11.27% |
+| Capital | 1.44% | 11.44% |
+| Cuprum | 1.44% | 11.44% |
+| ProVida | 1.45% | 11.45% |
+
+SIS (Seguro de Invalidez y Sobrevivencia): 1.49% — paid by employer, not deducted from salary.
+
 ### Honorarios Withholding Rate Phase-In
 
 | Year | Withholding Rate |

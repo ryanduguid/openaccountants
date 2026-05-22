@@ -7,6 +7,7 @@
 3. `kr-income-tax.md`
 4. `kr-social-insurance.md`
 5. `south-korea-vat.md`
+6. `references.md`
 
 ## How to use
 
@@ -44,4 +45,4 @@ Know a vendor pattern we're missing? Know how your local bank formats statements
 ---
 
 *OpenAccountants — open-source tax computation skills*
-*info@openaccountants.com*
+*info@openaaccountants.com*

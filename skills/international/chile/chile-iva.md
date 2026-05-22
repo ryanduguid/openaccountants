@@ -72,6 +72,67 @@ depends_on:
 | MEDIUM conservative default count | >4 per return |
 | LOW absolute net IVA position | CLP 100,000,000 |
 
+### SII additional taxes and withholdings (Impuestos Adicionales y Retenciones)
+
+Source: `LibreDTE/libredte-lib-core` (`resources/data/repository/impuestos_adicionales_retenciones.php`), AGPL-3.0.
+
+These are the SII tax classification codes used in DTE documents for additional taxes (A) and withholdings (R) beyond the standard 19% IVA:
+
+| SII Code | Type | Description | Rate |
+|---|---|---|---|
+| 15 | R | IVA retenido (total) | 19% |
+| 17 | A | IVA anticipado faenamiento carne | 5% |
+| 18 | A | IVA anticipado carne | 5% |
+| 19 | A | IVA anticipado harina | 12% |
+| 23 | A | Art 37 letras A, B, C (DL 825) | 15% |
+| 24 | A | Licores, Piscos, Whisky (Art 42 letra B) | 31.5% |
+| 25 | A | Vinos (Art 42 letra C) | 20.5% |
+| 26 | A | Cervezas y Bebidas Alcohólicas (Art 42 letra C) | 20.5% |
+| 27 | A | Bebida Analcohólica y Mineral (Art 42 letra A) | 10% |
+| 271 | A | Bebidas Azucaradas (Art 42 letra A par. 2do) | 18% |
+| 30 | R | IVA retenido legumbres | 10% |
+| 31 | R | IVA retenido silvestres | 19% |
+| 32 | R | IVA retenido ganado | 8% |
+| 33 | R | IVA retenido madera | 8% |
+| 34 | R | IVA retenido trigo | 4% |
+| 36 | R | IVA retenido arroz | 10% |
+| 37 | R | IVA retenido hidrobiológicas | 10% |
+| 38 | R | IVA retenido chatarra | 19% |
+| 39 | R | IVA retenido PPA | 19% |
+| 41 | R | IVA retenido construcción | 19% |
+| 44 | A | Art 37 letras E, H, I, L (DL 825) | 15% |
+| 45 | A | Art 37 letra J (DL 825) | 50% |
+| 47 | R | IVA retenido cartones | 19% |
+| 48 | R | IVA retenido frambuesas y pasas | 14% |
+
+### SII electronic document type codes (Tipos de Documento)
+
+Source: `LibreDTE/libredte-lib-core` (`resources/data/repository/tipos_documento.php`), AGPL-3.0.
+
+| Code | Document | Electronic | Purchase | Sale |
+|---|---|---|---|---|
+| 29 | Factura de inicio | No | — | — |
+| 30 | Factura | No | Yes | Yes |
+| 32 | Factura exenta de IVA | No | Yes | Yes |
+| 33 | Factura electrónica afecta | Yes | Yes | Yes |
+| 34 | Factura electrónica exenta | Yes | Yes | Yes |
+| 35 | Boleta | No | No | Yes |
+| 38 | Boleta exenta | No | No | Yes |
+| 39 | Boleta electrónica afecta | Yes | No | Yes |
+| 41 | Boleta electrónica exenta | Yes | No | Yes |
+| 43 | Liquidación factura electrónica | Yes | Yes | Yes |
+| 45 | Factura de compra | No | Yes | No |
+| 46 | Factura de compra electrónica | Yes | Yes | No |
+| 50 | Guía de despacho | No | No | No |
+| 52 | Guía de despacho electrónica | Yes | No | No |
+| 55 | Nota de débito | No | Yes | Yes |
+| 56 | Nota de débito electrónica | Yes | Yes | Yes |
+| 60 | Nota de crédito | No | Yes | Yes |
+| 61 | Nota de crédito electrónica | Yes | Yes | Yes |
+| 110 | Factura de exportación electrónica | Yes | Yes | Yes |
+| 111 | Nota de débito de exportación electrónica | Yes | Yes | Yes |
+| 112 | Nota de crédito de exportación electrónica | Yes | Yes | Yes |
+
 ---
 
 ## Section 2 — Required inputs and refusal catalogue
@@ -433,6 +494,7 @@ When client cannot provide DTEs for all transactions:
 | SII Resolución 45/2003 — DTE | SII — resoluciones |
 | Non-resident digital services — SII | SII Circular 42/2020 |
 | IVA exportadores — refund guide | SII — guías de usuario |
+| LibreDTE lib-core (SII codes, AGPL-3.0) | https://github.com/LibreDTE/libredte-lib-core |
 
 
 ---

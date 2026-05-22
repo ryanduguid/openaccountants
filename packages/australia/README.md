@@ -13,6 +13,7 @@
 9. `australia-gst.md`
 10. `australia-guided-intake.md`
 11. `australia-return-assembly.md`
+12. `references.md`
 
 ## How to use
 
@@ -50,4 +51,4 @@ Know a vendor pattern we're missing? Know how your local bank formats statements
 ---
 
 *OpenAccountants — open-source tax computation skills*
-*info@openaccountants.com*
+*info@openaaccountants.com*

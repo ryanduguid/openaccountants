@@ -8,6 +8,7 @@
 4. `cl-income-tax.md`
 5. `cl-social-contributions.md`
 6. `cl-vat-return.md`
+7. `references.md` — open-source repos and authoritative sources used to build/validate these skills
 
 ## How to use
 
@@ -45,4 +46,4 @@ Know a vendor pattern we're missing? Know how your local bank formats statements
 ---
 
 *OpenAccountants — open-source tax computation skills*
-*info@openaccountants.com*
+*info@openaaccountants.com*

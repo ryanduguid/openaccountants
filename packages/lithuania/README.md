@@ -6,6 +6,8 @@
 2. `intake.md`
 3. `lithuania-vat-return.md`
 4. `eu-vat-directive.md`
+5. `lithuania-pit.md` — Personal Income Tax (GPM) with 20%/32% rates, Sodra, NPD, and capital gains
+6. `references.md`
 
 ## How to use
 
@@ -43,4 +45,4 @@ Know a vendor pattern we're missing? Know how your local bank formats statements
 ---
 
 *OpenAccountants — open-source tax computation skills*
-*info@openaccountants.com*
+*info@openaaccountants.com*

@@ -6,6 +6,8 @@
 2. `intake.md`
 3. `slovakia-vat-return.md`
 4. `eu-vat-directive.md`
+5. `slovakia-pit.md` — Personal Income Tax (DPFO) with 2025 rates, flat-rate expenses, child bonus, and filing guidance
+6. `references.md`
 
 ## How to use
 
@@ -43,4 +45,4 @@ Know a vendor pattern we're missing? Know how your local bank formats statements
 ---
 
 *OpenAccountants — open-source tax computation skills*
-*info@openaccountants.com*
+*info@openaaccountants.com*

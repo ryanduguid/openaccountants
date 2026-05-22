@@ -436,6 +436,14 @@ Blocked categories override any other recovery rule. Check blocked status before
 
 All invoices must be electronic since 4 December 2021 (Phase 1). Phase 2 integration with FATOORA platform is rolling out in waves based on revenue thresholds. QR code is mandatory on all invoices in Phase 2 (and on simplified B2C invoices since Phase 1). A non-compliant invoice is still a valid invoice for VAT purposes but triggers penalties.
 
+**Invoice type codes (UN/CEFACT 1001):** 388 = Tax Invoice, 383 = Debit Note, 381 = Credit Note.
+
+**Tax category codes (UN/ECE 5305):** S = Standard-rated (15%), Z = Zero-rated, E = Exempt, O = Out of scope (not subject to VAT).
+
+**Payment method codes:** 10 = Cash, 30 = Credit, 42 = Bank Account, 48 = Bank Card.
+
+**QR code TLV fields (Phase 1):** Tag 1 = Seller name, Tag 2 = VAT registration number, Tag 3 = Invoice timestamp, Tag 4 = Invoice total (VAT-inclusive), Tag 5 = VAT total. Phase 2 adds: Tag 6 = Invoice hash, Tag 7 = Digital signature, Tag 8 = Public key, Tag 9 = Certificate signature.
+
 ### 5.11 Credit notes and adjustments
 
 Credit notes issued reduce output tax. Credit notes received reduce input tax. Enter in Field 16 (output adjustments) and Field 17 (input adjustments). For errors in prior returns: if VAT difference exceeds SAR 5,000, mandatory voluntary disclosure via ZATCA portal. If SAR 5,000 or less, correct in next return.
@@ -658,6 +666,11 @@ This skill is v2.0, rewritten in April 2026 to align with the Malta v2.0 structu
 12. FATOORA e-invoicing platform
 13. SAMA exchange rates
 
+**Open-source references (see `references.md` for full details):**
+14. SallaApp/ZATCA (MIT, PHP) — ZATCA e-invoicing QR code and Phase 2 signing implementation. Confirms TLV tag structure, TIN format, and SAR currency.
+15. wes4m/zatca-xml-js (MIT, TypeScript) — Full ZATCA e-invoicing implementation with UBL 2.1 XML generation. Confirms 15% VAT rate, tax category codes (S/O), invoice type codes (388/383/381), payment method codes, and VAT computation formula. Includes ZATCA specification PDFs.
+16. axenda/zatca (MIT, TypeScript) — Lightweight ZATCA QR code generator validated against ZATCA SDK. Confirms QR TLV field structure.
+
 ### Known gaps
 
 1. The supplier pattern library covers the most common Saudi and international counterparties but does not cover every local business.
@@ -693,6 +706,8 @@ This skill is v2.0, rewritten in April 2026 to align with the Malta v2.0 structu
 15. Al Rajhi/SNB bank statement format guide with SADAD/Mada patterns: yes (Section 8).
 16. Arabic language descriptions covered: yes (Section 8).
 17. Penalty amnesty referenced: yes (Section 5.12).
+18. E-invoicing type codes, tax category codes, payment method codes, and QR TLV fields explicit: yes (Section 5.10).
+19. Open-source ZATCA repo references included: yes (Section 10).
 
 ## End of Saudi Arabia VAT Return Skill v2.0
 

@@ -14,6 +14,7 @@
 10. `es-irpf-deductions.md` — Comprehensive regional deduction guide covering all 21 Spanish territories (339+ deductions across 13 categories)
 11. `es-corporate-tax.md` — Impuesto sobre Sociedades / Modelo 200 / Modelo 202 with rate tables for 7 regimes
 12. `es-autonomous-worker.md` — Complete autónomo obligations: cuota by income brackets, tarifa plana, fiscal calendar, net take-home computation
+13. `references.md` — Related open-source Spain tax projects with integration notes
 
 ## How to use
 
@@ -62,4 +63,4 @@ Know a vendor pattern we're missing? Know how your local bank formats statements
 ---
 
 *OpenAccountants — open-source tax computation skills*
-*info@openaccountants.com*
+*info@openaaccountants.com*

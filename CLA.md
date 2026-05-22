@@ -47,7 +47,7 @@ Glimpse Ltd is under no obligation to accept, merge, or use your Contribution.
 
 You may instead include a clear statement in the PR description (for example: “I agree to the CLA at CLA.md”) if you cannot use the checkbox, but the checkbox is the default path maintainers will look for.
 
-If you prefer a formal signed agreement, contact **contributors@openaccountants.com** and we will provide one.
+If you prefer a formal signed agreement, contact **info@openaaccountants.com** and we will provide one.
 
 ---
 
@@ -64,7 +64,7 @@ This CLA is between the contributor and:
 **Glimpse Ltd**
 Malta
 
-Contact: contributors@openaccountants.com
+Contact: info@openaaccountants.com
 
 ---
 

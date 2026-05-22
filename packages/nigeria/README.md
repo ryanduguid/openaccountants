@@ -7,6 +7,7 @@
 3. `ng-income-tax.md`
 4. `ng-vat-return.md`
 5. `nigeria-vat.md`
+6. `references.md` — related open-source Nigerian tax projects
 
 ## How to use
 
@@ -44,4 +45,4 @@ Know a vendor pattern we're missing? Know how your local bank formats statements
 ---
 
 *OpenAccountants — open-source tax computation skills*
-*info@openaccountants.com*
+*info@openaaccountants.com*

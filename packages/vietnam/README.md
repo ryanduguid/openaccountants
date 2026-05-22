@@ -5,12 +5,14 @@
 1. `foundation.md`
 2. `intake.md`
 3. `vietnam-vat.md`
+4. `vietnam-pit.md` — Personal Income Tax (Thuế TNCN) — 2026 five-bracket system
+5. `references.md` — Open-source projects and legislative sources
 
 ## How to use
 
 1. Upload ALL files in this folder to your AI assistant (Claude, ChatGPT, Gemini, etc.)
 2. Attach your 2025 bank statement (CSV or PDF)
-3. Say: **"Help me with my 2025 Vietnam taxes. Here's my bank statement."**
+3. Say: **"Help me with my 2026 Vietnam taxes. Here's my bank statement."**
 
 The AI will:
 - Ask a few onboarding questions to confirm your situation
@@ -42,4 +44,4 @@ Know a vendor pattern we're missing? Know how your local bank formats statements
 ---
 
 *OpenAccountants — open-source tax computation skills*
-*info@openaccountants.com*
+*info@openaaccountants.com*

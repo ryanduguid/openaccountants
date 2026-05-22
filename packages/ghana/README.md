@@ -5,6 +5,8 @@
 1. `foundation.md`
 2. `intake.md`
 3. `ghana-vat.md`
+4. `ghana-pit.md` — Personal Income Tax (PAYE) with 2024 GRA brackets, SSNIT, and reliefs
+5. `references.md` — related open-source Ghanaian tax projects
 
 ## How to use
 
@@ -42,4 +44,4 @@ Know a vendor pattern we're missing? Know how your local bank formats statements
 ---
 
 *OpenAccountants — open-source tax computation skills*
-*info@openaccountants.com*
+*info@openaaccountants.com*

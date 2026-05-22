@@ -55,4 +55,4 @@ Skills 7–10 are based on work by **[John in 't Hout (@johnhout)](https://githu
 ---
 
 *OpenAccountants — open-source tax computation skills*
-*info@openaccountants.com*
+*info@openaaccountants.com*

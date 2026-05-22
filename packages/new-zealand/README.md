@@ -9,6 +9,7 @@
 5. `nz-gst-return.md`
 6. `nz-income-tax-ir3.md`
 7. `nz-provisional-tax.md`
+8. `references.md` — related open-source NZ tax projects (OpenFisca Aotearoa)
 
 ## How to use
 
@@ -46,4 +47,4 @@ Know a vendor pattern we're missing? Know how your local bank formats statements
 ---
 
 *OpenAccountants — open-source tax computation skills*
-*info@openaccountants.com*
+*info@openaaccountants.com*

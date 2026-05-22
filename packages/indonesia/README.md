@@ -5,6 +5,7 @@
 1. `foundation.md`
 2. `intake.md`
 3. `indonesia-vat.md`
+4. `id-payroll-pph21.md` — PPh 21 employment income tax withholding, BPJS Kesehatan & Ketenagakerjaan contribution rates, TER (average effective rate) tables, PTKP thresholds, and monthly payroll worked example
 
 ## How to use
 
@@ -42,4 +43,4 @@ Know a vendor pattern we're missing? Know how your local bank formats statements
 ---
 
 *OpenAccountants — open-source tax computation skills*
-*info@openaccountants.com*
+*info@openaaccountants.com*

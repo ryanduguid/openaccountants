@@ -28,30 +28,33 @@ depends_on:
 | Filing portal | ELSTER (elster.de) |
 | Filing deadline | 31 July of the following year (with Steuerberater: end of February of the year after next) |
 | Contributor | Open Accountants Community |
+| Tax engine source | German Federal Ministry of Finance (BMF) Programmablaufplan via [jenner/LstGen](https://github.com/jenner/LstGen) (MIT) and [taxcalcs/taxjs](https://github.com/taxcalcs/taxjs) (MIT) |
 | Validated by | Pending -- requires sign-off by a German Steuerberater |
 | Validation date | Pending |
 | Skill version | 2.0 |
 
-### Tax Rate Brackets (2025)
+### Tax Rate Brackets (2025, BMF PAP September 2025 revision)
 
 | Taxable Income (EUR) | Rate | Notes |
 |---|---|---|
-| 0 -- 12,084 | 0% | Grundfreibetrag (basic allowance) |
-| 12,085 -- 17,005 | 14% -- 24% | Progressive zone 1 (linear-progressive) |
-| 17,006 -- 66,760 | 24% -- 42% | Progressive zone 2 (linear-progressive) |
-| 66,761 -- 277,825 | 42% | Proportionalzone (flat) |
+| 0 -- 12,096 | 0% | Grundfreibetrag (GFB = 12,096 per final 2025 PAP) |
+| 12,097 -- 17,443 | 14% -- ~24% | Progressive zone 1 (linear-progressive) |
+| 17,444 -- 68,480 | ~24% -- 42% | Progressive zone 2 (linear-progressive) |
+| 68,481 -- 277,825 | 42% | Proportionalzone (flat) |
 | 277,826+ | 45% | Reichensteuer (wealth tax surcharge) |
 
-**Germany uses a FORMULA-BASED progressive rate, not simple bracket multiplication. Each euro is taxed at its own marginal rate within zones 1 and 2. Do not compute manually -- pass to the deterministic engine.**
+**Germany uses a FORMULA-BASED progressive rate, not simple bracket multiplication. Each euro is taxed at its own marginal rate within zones 1 and 2. Do not compute manually -- pass to the deterministic engine. See `de-payroll.md` Section 3 for the exact UPTAB25 formula with all 2025 PAP constants.**
+
+**Note:** For employee payroll (Lohnsteuer, Steuerklassen, payslip deductions), use `de-payroll.md` instead. This skill covers self-employed Einkommensteuer.
 
 ### Solidaritatszuschlag (SolZ)
 
 | Item | Value |
 |---|---|
 | Rate | 5.5% of the Einkommensteuer |
-| Exemption threshold (single) | ESt up to EUR 18,130 -- no SolZ |
-| Exemption threshold (married/joint) | ESt up to EUR 36,260 -- no SolZ |
-| Gleitzone (phase-in) | 11.9% marginal rate on ESt between threshold and full-rate zone |
+| Freigrenze (single) | ESt up to EUR 19,950 -- no SolZ (2025 PAP: SOLZFREI = 19,950) |
+| Freigrenze (married/joint) | ESt up to EUR 39,900 -- no SolZ (SOLZFREI x KZTAB) |
+| Gleitzone (phase-in) | 11.9% marginal rate on ESt between Freigrenze and full-rate zone |
 
 ### Kirchensteuer (KiSt)
 

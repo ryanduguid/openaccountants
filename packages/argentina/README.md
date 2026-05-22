@@ -9,6 +9,7 @@
 5. `ar-social-contributions.md`
 6. `ar-vat-return.md`
 7. `argentina-iva.md`
+8. `references.md` — related open-source Argentine tax projects (license-compatible)
 
 ## How to use
 
@@ -46,4 +47,4 @@ Know a vendor pattern we're missing? Know how your local bank formats statements
 ---
 
 *OpenAccountants — open-source tax computation skills*
-*info@openaccountants.com*
+*info@openaaccountants.com*

@@ -41,4 +41,4 @@ Tax rules change. Rates get updated. Thresholds move. If something in these file
 ---
 
 *OpenAccountants — open-source tax computation skills*
-*info@openaccountants.com*
+*info@openaaccountants.com*

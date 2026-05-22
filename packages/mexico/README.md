@@ -10,6 +10,7 @@
 6. `mx-imss.md`
 7. `mx-income-tax.md`
 8. `mx-vat-return.md`
+9. `references.md` — related open-source Mexican tax projects (license-compatible)
 
 ## How to use
 
@@ -47,4 +48,4 @@ Know a vendor pattern we're missing? Know how your local bank formats statements
 ---
 
 *OpenAccountants — open-source tax computation skills*
-*info@openaccountants.com*
+*info@openaaccountants.com*

@@ -8,6 +8,7 @@
 4. `ro-income-tax.md`
 5. `romania-vat-return.md`
 6. `eu-vat-directive.md`
+7. `references.md`
 
 ## How to use
 
@@ -45,4 +46,4 @@ Know a vendor pattern we're missing? Know how your local bank formats statements
 ---
 
 *OpenAccountants — open-source tax computation skills*
-*info@openaccountants.com*
+*info@openaaccountants.com*

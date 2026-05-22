@@ -5,6 +5,8 @@
 1. `foundation.md`
 2. `intake.md`
 3. `thailand-vat.md`
+4. `thailand-pit.md` — Personal Income Tax (ภาษีเงินได้บุคคลธรรมดา) with progressive brackets, deductions, and filing guidance
+5. `references.md` — related open-source Thai tax projects and credits
 
 ## How to use
 
@@ -42,4 +44,4 @@ Know a vendor pattern we're missing? Know how your local bank formats statements
 ---
 
 *OpenAccountants — open-source tax computation skills*
-*info@openaccountants.com*
+*info@openaaccountants.com*

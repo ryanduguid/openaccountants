@@ -16,10 +16,11 @@
 
 8. `jp-bookkeeping.md` — double-entry bookkeeping, chart of accounts, journal entry patterns, and settlement adjustments for Japanese sole proprietors
 9. `jp-etax-filing.md` — step-by-step e-Tax (電子申告) filing workflow for the 確定申告書等作成コーナー
+10. `references.md` — related open-source Japan tax projects and integration notes
 
 ### Planning & Advisory
 
-10. `jp-incorporation.md` — when and how to incorporate (法人成り): tax burden comparison, corporate form selection, officer compensation strategy, and establishment procedures
+11. `jp-incorporation.md` — when and how to incorporate (法人成り): tax burden comparison, corporate form selection, officer compensation strategy, and establishment procedures
 
 ## How to use
 
@@ -64,4 +65,4 @@ Know a vendor pattern we're missing? Know how your local bank formats statements
 ---
 
 *OpenAccountants — open-source tax computation skills*
-*info@openaccountants.com*
+*info@openaaccountants.com*

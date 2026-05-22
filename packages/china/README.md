@@ -5,6 +5,8 @@
 1. `foundation.md`
 2. `intake.md`
 3. `china-vat.md`
+4. `china-pit.md` — Personal Income Tax (个人所得税) with 7-bracket system (3%–45%), special deductions, and annual settlement
+5. `references.md` — related open-source Chinese tax projects (reference-only)
 
 ## How to use
 
@@ -42,4 +44,4 @@ Know a vendor pattern we're missing? Know how your local bank formats statements
 ---
 
 *OpenAccountants — open-source tax computation skills*
-*info@openaccountants.com*
+*info@openaaccountants.com*

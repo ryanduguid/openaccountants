@@ -10,7 +10,7 @@ Anyone. You don't need to be an accountant to write a skill. You need to know yo
 
 ### Option 1: Via the website
 
-1. Go to [openaccountants.com/contribute](https://openaccountants.com/contribute)
+1. Go to [openaccountants.com](https://openaccountants.com)
 2. Sign up for an account
 3. Use the submission form to upload your skill
 4. It goes live immediately as "unverified"
@@ -18,7 +18,7 @@ Anyone. You don't need to be an accountant to write a skill. You need to know yo
 ### Option 2: Via GitHub PR
 
 1. Fork this repo
-2. Create your skill in the appropriate directory (`skills/federal/`, `skills/california/`, etc.)
+2. Create your skill in the appropriate directory (`skills/federal/`, `skills/us-states/[code]/`, `skills/international/[country]/`, etc.)
 3. Follow the [skill template](skill-template.md)
 4. Open a PR with a description of what tax forms/schedules the skill covers
 
@@ -52,7 +52,7 @@ OpenAccountants is **dual-licensed** (AGPL-3.0 + commercial). The [Contributor L
 
 **GitHub pull requests:** we rely on an **explicit opt-in**. When you open a PR, you must **tick the CLA checkbox** in the [pull request template](.github/PULL_REQUEST_TEMPLATE.md) (and leave it checked on updates to the same PR). That single action is how you record agreement. Maintainers should not merge PRs where the contributor has not confirmed the CLA.
 
-**Website / other channels:** follow whatever acceptance flow that channel provides, or contact **contributors@openaccountants.com** for a formal signed agreement.
+**Website / other channels:** follow whatever acceptance flow that channel provides, or contact **info@openaaccountants.com** for a formal signed agreement.
 
 If anything in [CLA.md](CLA.md) is unclear, ask before contributing.
 

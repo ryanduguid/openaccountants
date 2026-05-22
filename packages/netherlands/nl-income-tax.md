@@ -30,15 +30,17 @@ depends_on:
 | Validated by | Pending -- requires sign-off by a qualified Dutch belastingadviseur or AA/RA accountant |
 | Skill version | 2.0 |
 
-### Box 1 Rates 2025 (Inkomen uit werk en woning) [T1]
+### Box 1 Rates 2026 (Inkomen uit werk en woning) [T1]
 
 | Taxable Income (EUR) | Rate | Notes |
 |---|---|---|
-| 0 -- 38,441 | 35.82% | Includes national insurance (volksverzekeringen) for those below AOW age |
-| 38,442 -- 76,817 | 37.48% | Above AOW threshold component |
-| Over 76,817 | 49.50% | Top rate |
+| 0 -- 38,883 | 35.75% | Includes national insurance (volksverzekeringen) for those below AOW age |
+| 38,884 -- 78,426 | 37.56% | Above AOW threshold component |
+| Over 78,426 | 49.50% | Top rate |
 
-**AOW-gerechtigden (state pension age, born before 1 January 1958):** First bracket rate is lower (~19.17%) because they do not pay AOW premium. Confirm DOB before applying rates.
+Source: [stevermeister/dutch-tax-income-calculator-npm](https://github.com/stevermeister/dutch-tax-income-calculator-npm) (MIT, 2026 data)
+
+**AOW-gerechtigden (state pension age, born before 1 January 1958):** First bracket rate is lower (~9.75%) because they do not pay AOW/ANW/Wlz premium (27.65% removed). Confirm DOB before applying rates.
 
 **Formula:** Tax = cumulative tax for lower bracket + (income - lower bracket threshold) x marginal rate
 
@@ -59,11 +61,13 @@ depends_on:
 
 ### Heffingskortingen (Tax Credits -- Reduce Tax Payable) [T1]
 
-| Credit | Amount 2025 | Notes |
+| Credit | Amount 2026 | Notes |
 |---|---|---|
-| Algemene heffingskorting | Up to EUR 3,068 (phases out above EUR 24,813) | General tax credit; reduces to EUR 0 at ~EUR 76,817 |
-| Arbeidskorting | Up to EUR 5,174 (phases out above EUR 43,071) | Employment/work credit; phases out at higher incomes |
+| Algemene heffingskorting | Up to EUR 3,115 (phases out at -6.398% above EUR 29,737) | General tax credit; reduces to EUR 0 at ~EUR 78,426 |
+| Arbeidskorting | Up to ~EUR 5,599 (complex 5-bracket phase-in/phase-out) | Employment/work credit; starts 8.324% up to EUR 11,965, peaks, then phases out at -6.51% above EUR 45,592 |
 | Inkomensafhankelijke combinatiekorting | Up to EUR 2,950 | For working parents with child < 12; urencriterium must be met |
+
+Source: [stevermeister/dutch-tax-income-calculator-npm](https://github.com/stevermeister/dutch-tax-income-calculator-npm) (MIT, 2026 data)
 
 Credits reduce the tax computed on Box 1 income. They cannot create a refund below EUR 0 (except toeslagen via Belastingdienst system).
 
