@@ -7,6 +7,7 @@ tax_year: 2025
 category: international
 depends_on:
   - vat-workflow-base
+verified_by: werbritz@gmail.com
 ---
 
 # South Africa VAT (VAT201) Skill v2.1

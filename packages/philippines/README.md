@@ -7,7 +7,10 @@
 
 1. `foundation.md`
 2. `intake.md`
-3. `philippines-vat.md`
+3. `ph-income-tax.md`
+4. `ph-sss-philhealth.md`
+5. `ph-withholding.md`
+6. `philippines-vat.md`
 
 ## Also known as
 

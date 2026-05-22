@@ -10,10 +10,12 @@
 3. `malta-income-tax.md`
 4. `malta-ssc.md`
 5. `malta-vat-return.md`
-6. `mt-estimated-tax.md`
-7. `eu-vat-directive.md`
-8. `malta-guided-intake.md`
-9. `malta-return-assembly.md`
+6. `mt-crypto-tax.md`
+7. `mt-estimated-tax.md`
+8. `mt-rental-income.md`
+9. `eu-vat-directive.md`
+10. `malta-guided-intake.md`
+11. `malta-return-assembly.md`
 
 ## Also known as
 

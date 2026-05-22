@@ -7,16 +7,18 @@
 
 1. `foundation.md`
 2. `intake.md`
-3. `de-estimated-tax.md`
-4. `de-income-tax.md`
-5. `de-payroll.md`
-6. `de-social-contributions.md`
-7. `de-trade-tax.md`
-8. `germany-vat-return.md`
-9. `references.md`
-10. `eu-vat-directive.md`
-11. `germany-guided-intake.md`
-12. `germany-return-assembly.md`
+3. `de-crypto-tax.md`
+4. `de-estimated-tax.md`
+5. `de-income-tax.md`
+6. `de-payroll.md`
+7. `de-rental-income.md`
+8. `de-social-contributions.md`
+9. `de-trade-tax.md`
+10. `germany-vat-return.md`
+11. `references.md`
+12. `eu-vat-directive.md`
+13. `germany-guided-intake.md`
+14. `germany-return-assembly.md`
 
 ## Also known as
 

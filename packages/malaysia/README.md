@@ -8,6 +8,9 @@
 1. `foundation.md`
 2. `intake.md`
 3. `malaysia-sst.md`
+4. `my-epf-socso.md`
+5. `my-income-tax.md`
+6. `my-pcb.md`
 
 ## Also known as
 

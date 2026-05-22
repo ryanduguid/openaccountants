@@ -70,10 +70,11 @@
       "files": [
         "foundation.md",
         "intake.md",
-        "au-gst-bas.md",
+        "au-crypto-tax.md",
         "au-individual-return.md",
         "au-medicare-levy.md",
         "au-payg-instalments.md",
+        "au-rental-property.md",
         "au-sole-trader-schedule.md",
         "au-super-guarantee.md",
         "australia-gst.md",
@@ -82,7 +83,7 @@
         "australia-return-assembly.md"
       ],
       "has_orchestrator": true,
-      "skill_count": 7
+      "skill_count": 8
     },
     {
       "jurisdiction": "AT",
@@ -225,9 +226,11 @@
         "br-inss.md",
         "br-simples-nacional.md",
         "brazil-vat.md",
-        "references.md"
+        "references.md",
+        "brazil-guided-intake.md",
+        "brazil-return-assembly.md"
       ],
-      "has_orchestrator": false,
+      "has_orchestrator": true,
       "skill_count": 6
     },
     {
@@ -292,23 +295,30 @@
       "files": [
         "foundation.md",
         "intake.md",
+        "ca-crypto-tax.md",
         "ca-fed-cpp-ei.md",
-        "ca-fed-gst-hst.md",
         "ca-fed-instalments.md",
         "ca-fed-t1-return.md",
         "ca-fed-t1135.md",
         "ca-fed-t2125.md",
         "canada-gst-hst.md",
         "references.md",
+        "nb-individual-return.md",
+        "sk-individual-return.md",
+        "mb-individual-return.md",
+        "nl-individual-return.md",
         "on-individual-return.md",
+        "ns-individual-return.md",
+        "pe-individual-return.md",
         "bc-individual-return.md",
         "qc-individual-return.md",
         "qc-qst-return.md",
+        "ab-individual-return.md",
         "canada-guided-intake.md",
         "canada-return-assembly.md"
       ],
       "has_orchestrator": true,
-      "skill_count": 11
+      "skill_count": 18
     },
     {
       "jurisdiction": "KY",
@@ -511,11 +521,14 @@
       "files": [
         "foundation.md",
         "intake.md",
+        "fi-income-tax.md",
+        "fi-prepayments.md",
+        "fi-yel-social.md",
         "finland-vat-return.md",
         "eu-vat-directive.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 1
+      "skill_count": 4
     },
     {
       "jurisdiction": "FR",
@@ -534,9 +547,11 @@
         "fr-tax-audit.md",
         "france-vat-return.md",
         "references.md",
-        "eu-vat-directive.md"
+        "eu-vat-directive.md",
+        "france-guided-intake.md",
+        "france-return-assembly.md"
       ],
-      "has_orchestrator": false,
+      "has_orchestrator": true,
       "skill_count": 10
     },
     {
@@ -556,9 +571,11 @@
       "files": [
         "foundation.md",
         "intake.md",
+        "de-crypto-tax.md",
         "de-estimated-tax.md",
         "de-income-tax.md",
         "de-payroll.md",
+        "de-rental-income.md",
         "de-social-contributions.md",
         "de-trade-tax.md",
         "germany-vat-return.md",
@@ -568,7 +585,7 @@
         "germany-return-assembly.md"
       ],
       "has_orchestrator": true,
-      "skill_count": 6
+      "skill_count": 8
     },
     {
       "jurisdiction": "GH",
@@ -625,10 +642,12 @@
       "files": [
         "foundation.md",
         "intake.md",
+        "hk-mpf.md",
+        "hk-salaries-tax.md",
         "hong-kong-tax.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 1
+      "skill_count": 3
     },
     {
       "jurisdiction": "HU",
@@ -663,6 +682,8 @@
         "intake.md",
         "in-advance-tax.md",
         "in-income-tax.md",
+        "in-pf-esi-employer.md",
+        "in-professional-tax.md",
         "in-tds-freelance.md",
         "india-gst.md",
         "references.md",
@@ -670,7 +691,7 @@
         "india-return-assembly.md"
       ],
       "has_orchestrator": true,
-      "skill_count": 4
+      "skill_count": 6
     },
     {
       "jurisdiction": "ID",
@@ -806,9 +827,11 @@
         "jp-income-tax.md",
         "jp-incorporation.md",
         "jp-social-insurance.md",
-        "references.md"
+        "references.md",
+        "japan-guided-intake.md",
+        "japan-return-assembly.md"
       ],
-      "has_orchestrator": false,
+      "has_orchestrator": true,
       "skill_count": 8
     },
     {
@@ -945,10 +968,13 @@
       "files": [
         "foundation.md",
         "intake.md",
-        "malaysia-sst.md"
+        "malaysia-sst.md",
+        "my-epf-socso.md",
+        "my-income-tax.md",
+        "my-pcb.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 1
+      "skill_count": 4
     },
     {
       "jurisdiction": "MV",
@@ -970,13 +996,15 @@
         "malta-income-tax.md",
         "malta-ssc.md",
         "malta-vat-return.md",
+        "mt-crypto-tax.md",
         "mt-estimated-tax.md",
+        "mt-rental-income.md",
         "eu-vat-directive.md",
         "malta-guided-intake.md",
         "malta-return-assembly.md"
       ],
       "has_orchestrator": true,
-      "skill_count": 4
+      "skill_count": 6
     },
     {
       "jurisdiction": "MU",
@@ -1001,9 +1029,11 @@
         "mx-imss.md",
         "mx-income-tax.md",
         "mx-vat-return.md",
-        "references.md"
+        "references.md",
+        "mexico-guided-intake.md",
+        "mexico-return-assembly.md"
       ],
-      "has_orchestrator": false,
+      "has_orchestrator": true,
       "skill_count": 6
     },
     {
@@ -1108,9 +1138,11 @@
         "nl-tax-objection.md",
         "nl-zzp-deductions.md",
         "references.md",
-        "eu-vat-directive.md"
+        "eu-vat-directive.md",
+        "netherlands-guided-intake.md",
+        "netherlands-return-assembly.md"
       ],
-      "has_orchestrator": false,
+      "has_orchestrator": true,
       "skill_count": 7
     },
     {
@@ -1250,10 +1282,13 @@
       "files": [
         "foundation.md",
         "intake.md",
+        "ph-income-tax.md",
+        "ph-sss-philhealth.md",
+        "ph-withholding.md",
         "philippines-vat.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 1
+      "skill_count": 4
     },
     {
       "jurisdiction": "PL",
@@ -1444,6 +1479,8 @@
         "es-estimated-tax.md",
         "es-income-tax.md",
         "es-irpf-deductions.md",
+        "es-modelo-111.md",
+        "es-rental-income.md",
         "es-social-contributions.md",
         "references.md",
         "spain-vat-return.md",
@@ -1452,7 +1489,7 @@
         "spain-return-assembly.md"
       ],
       "has_orchestrator": true,
-      "skill_count": 7
+      "skill_count": 9
     },
     {
       "jurisdiction": "LK",
@@ -1500,10 +1537,12 @@
       "files": [
         "foundation.md",
         "intake.md",
-        "taiwan-vat.md"
+        "taiwan-vat.md",
+        "tw-income-tax.md",
+        "tw-nhi.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 1
+      "skill_count": 3
     },
     {
       "jurisdiction": "TZ",
@@ -1594,9 +1633,12 @@
         "foundation.md",
         "intake.md",
         "references.md",
+        "uk-capital-gains-sa108.md",
+        "uk-dividends.md",
         "uk-income-tax-sa100.md",
         "uk-national-insurance.md",
         "uk-payments-on-account.md",
+        "uk-rental-sa105.md",
         "uk-self-employment-sa103.md",
         "uk-student-loan-repayment.md",
         "uk-vat-return.md",
@@ -1604,7 +1646,7 @@
         "uk-return-assembly.md"
       ],
       "has_orchestrator": true,
-      "skill_count": 6
+      "skill_count": 9
     },
     {
       "jurisdiction": "UA",
@@ -1711,6 +1753,7 @@
         "us-tax-workflow-base.md",
         "no-sales-tax-states.md",
         "us-1099-nec-issuance.md",
+        "us-crypto-tax.md",
         "us-qbi-deduction.md",
         "us-quarterly-estimated-tax.md",
         "us-s-corp-election-decision.md",
@@ -1736,6 +1779,7 @@
         "us-tax-workflow-base.md",
         "no-sales-tax-states.md",
         "us-1099-nec-issuance.md",
+        "us-crypto-tax.md",
         "us-qbi-deduction.md",
         "us-quarterly-estimated-tax.md",
         "us-s-corp-election-decision.md",
@@ -1759,6 +1803,7 @@
         "us-tax-workflow-base.md",
         "no-sales-tax-states.md",
         "us-1099-nec-issuance.md",
+        "us-crypto-tax.md",
         "us-qbi-deduction.md",
         "us-quarterly-estimated-tax.md",
         "us-s-corp-election-decision.md",
@@ -1784,6 +1829,7 @@
         "us-tax-workflow-base.md",
         "no-sales-tax-states.md",
         "us-1099-nec-issuance.md",
+        "us-crypto-tax.md",
         "us-qbi-deduction.md",
         "us-quarterly-estimated-tax.md",
         "us-s-corp-election-decision.md",
@@ -1809,6 +1855,7 @@
         "us-tax-workflow-base.md",
         "no-sales-tax-states.md",
         "us-1099-nec-issuance.md",
+        "us-crypto-tax.md",
         "us-qbi-deduction.md",
         "us-quarterly-estimated-tax.md",
         "us-s-corp-election-decision.md",
@@ -1839,6 +1886,7 @@
         "us-tax-workflow-base.md",
         "no-sales-tax-states.md",
         "us-1099-nec-issuance.md",
+        "us-crypto-tax.md",
         "us-qbi-deduction.md",
         "us-quarterly-estimated-tax.md",
         "us-s-corp-election-decision.md",
@@ -1864,6 +1912,7 @@
         "us-tax-workflow-base.md",
         "no-sales-tax-states.md",
         "us-1099-nec-issuance.md",
+        "us-crypto-tax.md",
         "us-qbi-deduction.md",
         "us-quarterly-estimated-tax.md",
         "us-s-corp-election-decision.md",
@@ -1889,6 +1938,7 @@
         "us-tax-workflow-base.md",
         "no-sales-tax-states.md",
         "us-1099-nec-issuance.md",
+        "us-crypto-tax.md",
         "us-qbi-deduction.md",
         "us-quarterly-estimated-tax.md",
         "us-s-corp-election-decision.md",
@@ -1914,6 +1964,7 @@
         "us-tax-workflow-base.md",
         "no-sales-tax-states.md",
         "us-1099-nec-issuance.md",
+        "us-crypto-tax.md",
         "us-qbi-deduction.md",
         "us-quarterly-estimated-tax.md",
         "us-s-corp-election-decision.md",
@@ -1939,6 +1990,7 @@
         "us-tax-workflow-base.md",
         "no-sales-tax-states.md",
         "us-1099-nec-issuance.md",
+        "us-crypto-tax.md",
         "us-qbi-deduction.md",
         "us-quarterly-estimated-tax.md",
         "us-s-corp-election-decision.md",
@@ -1964,6 +2016,7 @@
         "us-tax-workflow-base.md",
         "no-sales-tax-states.md",
         "us-1099-nec-issuance.md",
+        "us-crypto-tax.md",
         "us-qbi-deduction.md",
         "us-quarterly-estimated-tax.md",
         "us-s-corp-election-decision.md",
@@ -1989,6 +2042,7 @@
         "us-tax-workflow-base.md",
         "no-sales-tax-states.md",
         "us-1099-nec-issuance.md",
+        "us-crypto-tax.md",
         "us-qbi-deduction.md",
         "us-quarterly-estimated-tax.md",
         "us-s-corp-election-decision.md",
@@ -2014,6 +2068,7 @@
         "us-tax-workflow-base.md",
         "no-sales-tax-states.md",
         "us-1099-nec-issuance.md",
+        "us-crypto-tax.md",
         "us-qbi-deduction.md",
         "us-quarterly-estimated-tax.md",
         "us-s-corp-election-decision.md",
@@ -2039,6 +2094,7 @@
         "us-tax-workflow-base.md",
         "no-sales-tax-states.md",
         "us-1099-nec-issuance.md",
+        "us-crypto-tax.md",
         "us-qbi-deduction.md",
         "us-quarterly-estimated-tax.md",
         "us-s-corp-election-decision.md",
@@ -2064,6 +2120,7 @@
         "us-tax-workflow-base.md",
         "no-sales-tax-states.md",
         "us-1099-nec-issuance.md",
+        "us-crypto-tax.md",
         "us-qbi-deduction.md",
         "us-quarterly-estimated-tax.md",
         "us-s-corp-election-decision.md",
@@ -2090,6 +2147,7 @@
         "us-tax-workflow-base.md",
         "no-sales-tax-states.md",
         "us-1099-nec-issuance.md",
+        "us-crypto-tax.md",
         "us-qbi-deduction.md",
         "us-quarterly-estimated-tax.md",
         "us-s-corp-election-decision.md",
@@ -2115,6 +2173,7 @@
         "us-tax-workflow-base.md",
         "no-sales-tax-states.md",
         "us-1099-nec-issuance.md",
+        "us-crypto-tax.md",
         "us-qbi-deduction.md",
         "us-quarterly-estimated-tax.md",
         "us-s-corp-election-decision.md",
@@ -2140,6 +2199,7 @@
         "us-tax-workflow-base.md",
         "no-sales-tax-states.md",
         "us-1099-nec-issuance.md",
+        "us-crypto-tax.md",
         "us-qbi-deduction.md",
         "us-quarterly-estimated-tax.md",
         "us-s-corp-election-decision.md",
@@ -2165,6 +2225,7 @@
         "us-tax-workflow-base.md",
         "no-sales-tax-states.md",
         "us-1099-nec-issuance.md",
+        "us-crypto-tax.md",
         "us-qbi-deduction.md",
         "us-quarterly-estimated-tax.md",
         "us-s-corp-election-decision.md",
@@ -2190,6 +2251,7 @@
         "us-tax-workflow-base.md",
         "no-sales-tax-states.md",
         "us-1099-nec-issuance.md",
+        "us-crypto-tax.md",
         "us-qbi-deduction.md",
         "us-quarterly-estimated-tax.md",
         "us-s-corp-election-decision.md",
@@ -2215,6 +2277,7 @@
         "us-tax-workflow-base.md",
         "no-sales-tax-states.md",
         "us-1099-nec-issuance.md",
+        "us-crypto-tax.md",
         "us-qbi-deduction.md",
         "us-quarterly-estimated-tax.md",
         "us-s-corp-election-decision.md",
@@ -2240,6 +2303,7 @@
         "us-tax-workflow-base.md",
         "no-sales-tax-states.md",
         "us-1099-nec-issuance.md",
+        "us-crypto-tax.md",
         "us-qbi-deduction.md",
         "us-quarterly-estimated-tax.md",
         "us-s-corp-election-decision.md",
@@ -2265,6 +2329,7 @@
         "us-tax-workflow-base.md",
         "no-sales-tax-states.md",
         "us-1099-nec-issuance.md",
+        "us-crypto-tax.md",
         "us-qbi-deduction.md",
         "us-quarterly-estimated-tax.md",
         "us-s-corp-election-decision.md",
@@ -2290,6 +2355,7 @@
         "us-tax-workflow-base.md",
         "no-sales-tax-states.md",
         "us-1099-nec-issuance.md",
+        "us-crypto-tax.md",
         "us-qbi-deduction.md",
         "us-quarterly-estimated-tax.md",
         "us-s-corp-election-decision.md",
@@ -2315,6 +2381,7 @@
         "us-tax-workflow-base.md",
         "no-sales-tax-states.md",
         "us-1099-nec-issuance.md",
+        "us-crypto-tax.md",
         "us-qbi-deduction.md",
         "us-quarterly-estimated-tax.md",
         "us-s-corp-election-decision.md",
@@ -2340,6 +2407,7 @@
         "us-tax-workflow-base.md",
         "no-sales-tax-states.md",
         "us-1099-nec-issuance.md",
+        "us-crypto-tax.md",
         "us-qbi-deduction.md",
         "us-quarterly-estimated-tax.md",
         "us-s-corp-election-decision.md",
@@ -2365,6 +2433,7 @@
         "us-tax-workflow-base.md",
         "no-sales-tax-states.md",
         "us-1099-nec-issuance.md",
+        "us-crypto-tax.md",
         "us-qbi-deduction.md",
         "us-quarterly-estimated-tax.md",
         "us-s-corp-election-decision.md",
@@ -2389,6 +2458,7 @@
         "us-tax-workflow-base.md",
         "no-sales-tax-states.md",
         "us-1099-nec-issuance.md",
+        "us-crypto-tax.md",
         "us-qbi-deduction.md",
         "us-quarterly-estimated-tax.md",
         "us-s-corp-election-decision.md",
@@ -2414,6 +2484,7 @@
         "us-tax-workflow-base.md",
         "no-sales-tax-states.md",
         "us-1099-nec-issuance.md",
+        "us-crypto-tax.md",
         "us-qbi-deduction.md",
         "us-quarterly-estimated-tax.md",
         "us-s-corp-election-decision.md",
@@ -2439,6 +2510,7 @@
         "us-tax-workflow-base.md",
         "no-sales-tax-states.md",
         "us-1099-nec-issuance.md",
+        "us-crypto-tax.md",
         "us-qbi-deduction.md",
         "us-quarterly-estimated-tax.md",
         "us-s-corp-election-decision.md",
@@ -2464,6 +2536,7 @@
         "us-tax-workflow-base.md",
         "no-sales-tax-states.md",
         "us-1099-nec-issuance.md",
+        "us-crypto-tax.md",
         "us-qbi-deduction.md",
         "us-quarterly-estimated-tax.md",
         "us-s-corp-election-decision.md",
@@ -2488,6 +2561,7 @@
         "us-tax-workflow-base.md",
         "no-sales-tax-states.md",
         "us-1099-nec-issuance.md",
+        "us-crypto-tax.md",
         "us-qbi-deduction.md",
         "us-quarterly-estimated-tax.md",
         "us-s-corp-election-decision.md",
@@ -2513,6 +2587,7 @@
         "us-tax-workflow-base.md",
         "no-sales-tax-states.md",
         "us-1099-nec-issuance.md",
+        "us-crypto-tax.md",
         "us-qbi-deduction.md",
         "us-quarterly-estimated-tax.md",
         "us-s-corp-election-decision.md",
@@ -2538,6 +2613,7 @@
         "us-tax-workflow-base.md",
         "no-sales-tax-states.md",
         "us-1099-nec-issuance.md",
+        "us-crypto-tax.md",
         "us-qbi-deduction.md",
         "us-quarterly-estimated-tax.md",
         "us-s-corp-election-decision.md",
@@ -2563,6 +2639,7 @@
         "us-tax-workflow-base.md",
         "no-sales-tax-states.md",
         "us-1099-nec-issuance.md",
+        "us-crypto-tax.md",
         "us-qbi-deduction.md",
         "us-quarterly-estimated-tax.md",
         "us-s-corp-election-decision.md",
@@ -2573,6 +2650,8 @@
         "us-sole-prop-bookkeeping.md",
         "us-federal-return-assembly.md",
         "global-router.md",
+        "us-ny-freelance-intake.md",
+        "us-ny-return-assembly.md",
         "ny-estimated-tax.md",
         "ny-income-tax.md",
         "ny-llc-filing-fee.md",
@@ -2591,6 +2670,7 @@
         "us-tax-workflow-base.md",
         "no-sales-tax-states.md",
         "us-1099-nec-issuance.md",
+        "us-crypto-tax.md",
         "us-qbi-deduction.md",
         "us-quarterly-estimated-tax.md",
         "us-s-corp-election-decision.md",
@@ -2617,6 +2697,7 @@
         "us-tax-workflow-base.md",
         "no-sales-tax-states.md",
         "us-1099-nec-issuance.md",
+        "us-crypto-tax.md",
         "us-qbi-deduction.md",
         "us-quarterly-estimated-tax.md",
         "us-s-corp-election-decision.md",
@@ -2642,6 +2723,7 @@
         "us-tax-workflow-base.md",
         "no-sales-tax-states.md",
         "us-1099-nec-issuance.md",
+        "us-crypto-tax.md",
         "us-qbi-deduction.md",
         "us-quarterly-estimated-tax.md",
         "us-s-corp-election-decision.md",
@@ -2666,6 +2748,7 @@
         "us-tax-workflow-base.md",
         "no-sales-tax-states.md",
         "us-1099-nec-issuance.md",
+        "us-crypto-tax.md",
         "us-qbi-deduction.md",
         "us-quarterly-estimated-tax.md",
         "us-s-corp-election-decision.md",
@@ -2691,6 +2774,7 @@
         "us-tax-workflow-base.md",
         "no-sales-tax-states.md",
         "us-1099-nec-issuance.md",
+        "us-crypto-tax.md",
         "us-qbi-deduction.md",
         "us-quarterly-estimated-tax.md",
         "us-s-corp-election-decision.md",
@@ -2716,6 +2800,7 @@
         "us-tax-workflow-base.md",
         "no-sales-tax-states.md",
         "us-1099-nec-issuance.md",
+        "us-crypto-tax.md",
         "us-qbi-deduction.md",
         "us-quarterly-estimated-tax.md",
         "us-s-corp-election-decision.md",
@@ -2741,6 +2826,7 @@
         "us-tax-workflow-base.md",
         "no-sales-tax-states.md",
         "us-1099-nec-issuance.md",
+        "us-crypto-tax.md",
         "us-qbi-deduction.md",
         "us-quarterly-estimated-tax.md",
         "us-s-corp-election-decision.md",
@@ -2765,6 +2851,7 @@
         "us-tax-workflow-base.md",
         "no-sales-tax-states.md",
         "us-1099-nec-issuance.md",
+        "us-crypto-tax.md",
         "us-qbi-deduction.md",
         "us-quarterly-estimated-tax.md",
         "us-s-corp-election-decision.md",
@@ -2789,6 +2876,7 @@
         "us-tax-workflow-base.md",
         "no-sales-tax-states.md",
         "us-1099-nec-issuance.md",
+        "us-crypto-tax.md",
         "us-qbi-deduction.md",
         "us-quarterly-estimated-tax.md",
         "us-s-corp-election-decision.md",
@@ -2799,6 +2887,8 @@
         "us-sole-prop-bookkeeping.md",
         "us-federal-return-assembly.md",
         "global-router.md",
+        "us-tx-freelance-intake.md",
+        "us-tx-return-assembly.md",
         "tx-franchise-tax.md",
         "tx-sales-tax.md",
         "README.md"
@@ -2814,6 +2904,7 @@
         "us-tax-workflow-base.md",
         "no-sales-tax-states.md",
         "us-1099-nec-issuance.md",
+        "us-crypto-tax.md",
         "us-qbi-deduction.md",
         "us-quarterly-estimated-tax.md",
         "us-s-corp-election-decision.md",
@@ -2839,6 +2930,7 @@
         "us-tax-workflow-base.md",
         "no-sales-tax-states.md",
         "us-1099-nec-issuance.md",
+        "us-crypto-tax.md",
         "us-qbi-deduction.md",
         "us-quarterly-estimated-tax.md",
         "us-s-corp-election-decision.md",
@@ -2864,6 +2956,7 @@
         "us-tax-workflow-base.md",
         "no-sales-tax-states.md",
         "us-1099-nec-issuance.md",
+        "us-crypto-tax.md",
         "us-qbi-deduction.md",
         "us-quarterly-estimated-tax.md",
         "us-s-corp-election-decision.md",
@@ -2889,6 +2982,7 @@
         "us-tax-workflow-base.md",
         "no-sales-tax-states.md",
         "us-1099-nec-issuance.md",
+        "us-crypto-tax.md",
         "us-qbi-deduction.md",
         "us-quarterly-estimated-tax.md",
         "us-s-corp-election-decision.md",
@@ -2914,6 +3008,7 @@
         "us-tax-workflow-base.md",
         "no-sales-tax-states.md",
         "us-1099-nec-issuance.md",
+        "us-crypto-tax.md",
         "us-qbi-deduction.md",
         "us-quarterly-estimated-tax.md",
         "us-s-corp-election-decision.md",
@@ -2939,6 +3034,7 @@
         "us-tax-workflow-base.md",
         "no-sales-tax-states.md",
         "us-1099-nec-issuance.md",
+        "us-crypto-tax.md",
         "us-qbi-deduction.md",
         "us-quarterly-estimated-tax.md",
         "us-s-corp-election-decision.md",
@@ -2964,6 +3060,7 @@
         "us-tax-workflow-base.md",
         "no-sales-tax-states.md",
         "us-1099-nec-issuance.md",
+        "us-crypto-tax.md",
         "us-qbi-deduction.md",
         "us-quarterly-estimated-tax.md",
         "us-s-corp-election-decision.md",

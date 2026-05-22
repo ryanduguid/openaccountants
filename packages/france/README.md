@@ -19,6 +19,8 @@
 12. `france-vat-return.md`
 13. `references.md`
 14. `eu-vat-directive.md`
+15. `france-guided-intake.md`
+16. `france-return-assembly.md`
 
 ## Also known as
 

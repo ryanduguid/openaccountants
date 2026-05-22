@@ -478,6 +478,8 @@ def find_orchestrator_files(country_dir_name):
     prefix_map = {
         "malta": "mt-", "uk": "uk-", "germany": "de-", "australia": "au-",
         "canada": "ca-", "india": "in-", "spain": "es-",
+        "france": "fr-", "japan": "jp-", "netherlands": "nl-",
+        "brazil": "br-", "mexico": "mx-",
     }
 
     prefix = prefix_map.get(country_dir_name)
@@ -685,13 +687,17 @@ def build_us_state_package(state_code):
             shutil.copy2(src, os.path.join(pkg_dir, f))
             copied_files.append(f)
 
-    # 4. CA-specific orchestrator files
-    if state_code == "ca":
-        for f in ["us-ca-freelance-intake.md", "us-ca-return-assembly.md"]:
-            src = os.path.join(orch_dir, f)
-            if os.path.isfile(src):
-                shutil.copy2(src, os.path.join(pkg_dir, f))
-                copied_files.append(f)
+    # 4. State-specific orchestrator files (CA, NY, TX)
+    state_orch_map = {
+        "ca": ["us-ca-freelance-intake.md", "us-ca-return-assembly.md"],
+        "ny": ["us-ny-freelance-intake.md", "us-ny-return-assembly.md"],
+        "tx": ["us-tx-freelance-intake.md", "us-tx-return-assembly.md"],
+    }
+    for f in state_orch_map.get(state_code, []):
+        src = os.path.join(orch_dir, f)
+        if os.path.isfile(src):
+            shutil.copy2(src, os.path.join(pkg_dir, f))
+            copied_files.append(f)
 
     # 5. State-specific skill files (everything except README.md)
     state_dir = os.path.join(SKILLS_DIR, "us-states", state_code)

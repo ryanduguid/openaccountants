@@ -7,8 +7,11 @@
 
 1. `foundation.md`
 2. `intake.md`
-3. `finland-vat-return.md`
-4. `eu-vat-directive.md`
+3. `fi-income-tax.md`
+4. `fi-prepayments.md`
+5. `fi-yel-social.md`
+6. `finland-vat-return.md`
+7. `eu-vat-directive.md`
 
 ## Also known as
 

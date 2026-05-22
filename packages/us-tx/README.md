@@ -11,18 +11,21 @@ This package contains **federal** tax skills (which apply to all US states) plus
 1. `us-tax-workflow-base.md`
 2. `no-sales-tax-states.md`
 3. `us-1099-nec-issuance.md`
-4. `us-qbi-deduction.md`
-5. `us-quarterly-estimated-tax.md`
-6. `us-s-corp-election-decision.md`
-7. `us-sales-tax.md`
-8. `us-schedule-c-and-se-computation.md`
-9. `us-self-employed-health-insurance.md`
-10. `us-self-employed-retirement.md`
-11. `us-sole-prop-bookkeeping.md`
-12. `us-federal-return-assembly.md`
-13. `global-router.md`
-14. `tx-franchise-tax.md`
-15. `tx-sales-tax.md`
+4. `us-crypto-tax.md`
+5. `us-qbi-deduction.md`
+6. `us-quarterly-estimated-tax.md`
+7. `us-s-corp-election-decision.md`
+8. `us-sales-tax.md`
+9. `us-schedule-c-and-se-computation.md`
+10. `us-self-employed-health-insurance.md`
+11. `us-self-employed-retirement.md`
+12. `us-sole-prop-bookkeeping.md`
+13. `us-federal-return-assembly.md`
+14. `global-router.md`
+15. `us-tx-freelance-intake.md`
+16. `us-tx-return-assembly.md`
+17. `tx-franchise-tax.md`
+18. `tx-sales-tax.md`
 
 ## How to use
 

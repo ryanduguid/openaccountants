@@ -9,11 +9,13 @@
 2. `intake.md`
 3. `in-advance-tax.md`
 4. `in-income-tax.md`
-5. `in-tds-freelance.md`
-6. `india-gst.md`
-7. `references.md`
-8. `india-guided-intake.md`
-9. `india-return-assembly.md`
+5. `in-pf-esi-employer.md`
+6. `in-professional-tax.md`
+7. `in-tds-freelance.md`
+8. `india-gst.md`
+9. `references.md`
+10. `india-guided-intake.md`
+11. `india-return-assembly.md`
 
 ## Also known as
 

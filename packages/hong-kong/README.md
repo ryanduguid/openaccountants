@@ -7,7 +7,9 @@
 
 1. `foundation.md`
 2. `intake.md`
-3. `hong-kong-tax.md`
+3. `hk-mpf.md`
+4. `hk-salaries-tax.md`
+5. `hong-kong-tax.md`
 
 ## Also known as
 

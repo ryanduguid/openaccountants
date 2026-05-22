@@ -14,6 +14,8 @@
 7. `br-simples-nacional.md`
 8. `brazil-vat.md`
 9. `references.md`
+10. `brazil-guided-intake.md`
+11. `brazil-return-assembly.md`
 
 ## Also known as
 

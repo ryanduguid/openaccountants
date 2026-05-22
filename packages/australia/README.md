@@ -7,16 +7,17 @@
 
 1. `foundation.md`
 2. `intake.md`
-3. `au-gst-bas.md`
+3. `au-crypto-tax.md`
 4. `au-individual-return.md`
 5. `au-medicare-levy.md`
 6. `au-payg-instalments.md`
-7. `au-sole-trader-schedule.md`
-8. `au-super-guarantee.md`
-9. `australia-gst.md`
-10. `references.md`
-11. `australia-guided-intake.md`
-12. `australia-return-assembly.md`
+7. `au-rental-property.md`
+8. `au-sole-trader-schedule.md`
+9. `au-super-guarantee.md`
+10. `australia-gst.md`
+11. `references.md`
+12. `australia-guided-intake.md`
+13. `australia-return-assembly.md`
 
 ## Also known as
 

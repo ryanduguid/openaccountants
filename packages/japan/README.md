@@ -16,6 +16,8 @@
 9. `jp-incorporation.md`
 10. `jp-social-insurance.md`
 11. `references.md`
+12. `japan-guided-intake.md`
+13. `japan-return-assembly.md`
 
 ## Also known as
 

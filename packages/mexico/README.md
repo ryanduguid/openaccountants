@@ -14,6 +14,8 @@
 7. `mx-income-tax.md`
 8. `mx-vat-return.md`
 9. `references.md`
+10. `mexico-guided-intake.md`
+11. `mexico-return-assembly.md`
 
 ## Also known as
 

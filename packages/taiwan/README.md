@@ -8,6 +8,8 @@
 1. `foundation.md`
 2. `intake.md`
 3. `taiwan-vat.md`
+4. `tw-income-tax.md`
+5. `tw-nhi.md`
 
 ## Also known as
 

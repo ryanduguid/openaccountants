@@ -7,20 +7,27 @@
 
 1. `foundation.md`
 2. `intake.md`
-3. `ca-fed-cpp-ei.md`
-4. `ca-fed-gst-hst.md`
+3. `ca-crypto-tax.md`
+4. `ca-fed-cpp-ei.md`
 5. `ca-fed-instalments.md`
 6. `ca-fed-t1-return.md`
 7. `ca-fed-t1135.md`
 8. `ca-fed-t2125.md`
 9. `canada-gst-hst.md`
 10. `references.md`
-11. `on-individual-return.md`
-12. `bc-individual-return.md`
-13. `qc-individual-return.md`
-14. `qc-qst-return.md`
-15. `canada-guided-intake.md`
-16. `canada-return-assembly.md`
+11. `nb-individual-return.md`
+12. `sk-individual-return.md`
+13. `mb-individual-return.md`
+14. `nl-individual-return.md`
+15. `on-individual-return.md`
+16. `ns-individual-return.md`
+17. `pe-individual-return.md`
+18. `bc-individual-return.md`
+19. `qc-individual-return.md`
+20. `qc-qst-return.md`
+21. `ab-individual-return.md`
+22. `canada-guided-intake.md`
+23. `canada-return-assembly.md`
 
 ## Also known as
 

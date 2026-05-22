@@ -16,6 +16,8 @@
 9. `nl-zzp-deductions.md`
 10. `references.md`
 11. `eu-vat-directive.md`
+12. `netherlands-guided-intake.md`
+13. `netherlands-return-assembly.md`
 
 ## Also known as
 

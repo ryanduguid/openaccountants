@@ -2,7 +2,7 @@
 
 # OpenAccountants
 
-Open-source tax computation skills for AI. **482 skills across 133 countries + 51 US state packages.**
+Open-source tax computation skills for AI. **514 skills across 133 countries + 51 US state packages.**
 
 Upload to Claude, ChatGPT, or any LLM with your bank statement — or connect via **[MCP](#mcp-server)** so your AI loads the right country's tax skills automatically. Get a working paper ready for your accountant and **cut your accounting bill by 80%.**
 
@@ -117,28 +117,33 @@ Every country folder contains:
 
 ## Coverage
 
-### Full guided experience (8 countries)
+### Full guided experience (13 countries)
 
 Upload all files, say "help me with my taxes," and the AI walks you through everything:
 
 | Country | What you get |
 |---------|-------------|
-| **Malta** | VAT + TA24 income tax + Class 2 SSC + provisional tax |
-| **United Kingdom** | VAT100 + SA103/SA100 + NIC + student loan |
-| **Germany** | UStVA + Einkommensteuer + Sozialversicherung |
-| **Australia** | BAS + ITR + super + Medicare levy |
-| **Canada** | GST/HST + T1/T2125 + CPP/EI |
-| **India** | GST + ITR-3/4 + advance tax |
-| **Spain** | IVA + IRPF + RETA |
-| **United States (CA)** | 1040 + Schedule C/SE + CA 540 |
+| **Malta** | VAT + TA24 income tax + Class 2 SSC + provisional tax + rental + crypto |
+| **United Kingdom** | VAT100 + SA103/SA100 + NIC + student loan + SA105 rental + SA108 CGT + dividends |
+| **Germany** | UStVA + Einkommensteuer + Sozialversicherung + Gewerbesteuer + rental + crypto |
+| **Australia** | BAS + ITR + super + Medicare levy + rental + crypto |
+| **Canada** | GST/HST + T1/T2125 + CPP/EI + 10 provincial returns + crypto |
+| **India** | GST + ITR-3/4 + advance tax + professional tax + PF/ESI |
+| **Spain** | IVA + IRPF + RETA + rental + Modelo 111 |
+| **France** | TVA + impot sur le revenu + cotisations sociales + CFE + crypto + rental + capital gains |
+| **Japan** | Consumption tax + income tax + social insurance + estimated tax + e-Tax |
+| **Netherlands** | BTW + inkomstenbelasting + ZZP deductions + payroll tax |
+| **Brazil** | IVA + IRPF + INSS + Simples Nacional + estimated tax |
+| **Mexico** | IVA + ISR + IMSS + CFDI + estimated tax |
+| **United States (CA)** | 1040 + Schedule C/SE + CA 540 + crypto |
 
-### Multi-skill countries (28 countries)
+### Multi-skill countries (23 countries)
 
 VAT + income tax + social contributions. No guided intake, but the AI uses the universal intake flow:
 
-Argentina, Austria, Belgium, Brazil, Chile, Colombia, Czech Republic, France, Greece, Hungary, Ireland, Israel, Italy, Japan, Kenya, Mexico, Netherlands, New Zealand, Nigeria, Norway, Poland, Portugal, Romania, Singapore, South Africa, South Korea, Sweden, Switzerland
+Argentina, Austria, Belgium, Chile, Colombia, Czech Republic, Greece, Hungary, Ireland, Israel, Italy, Kenya, New Zealand, Nigeria, Norway, Poland, Portugal, Romania, Singapore, South Africa, South Korea, Sweden, Switzerland
 
-### VAT/GST only (98 countries)
+### VAT/GST only (87 countries)
 
 Consumption tax classification with country-specific supplier pattern libraries. From Albania to Zimbabwe.
 

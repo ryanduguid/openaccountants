@@ -8,14 +8,17 @@
 1. `foundation.md`
 2. `intake.md`
 3. `references.md`
-4. `uk-income-tax-sa100.md`
-5. `uk-national-insurance.md`
-6. `uk-payments-on-account.md`
-7. `uk-self-employment-sa103.md`
-8. `uk-student-loan-repayment.md`
-9. `uk-vat-return.md`
-10. `uk-guided-intake.md`
-11. `uk-return-assembly.md`
+4. `uk-capital-gains-sa108.md`
+5. `uk-dividends.md`
+6. `uk-income-tax-sa100.md`
+7. `uk-national-insurance.md`
+8. `uk-payments-on-account.md`
+9. `uk-rental-sa105.md`
+10. `uk-self-employment-sa103.md`
+11. `uk-student-loan-repayment.md`
+12. `uk-vat-return.md`
+13. `uk-guided-intake.md`
+14. `uk-return-assembly.md`
 
 ## Also known as
 

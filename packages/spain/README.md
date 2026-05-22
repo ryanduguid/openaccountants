@@ -12,12 +12,14 @@
 5. `es-estimated-tax.md`
 6. `es-income-tax.md`
 7. `es-irpf-deductions.md`
-8. `es-social-contributions.md`
-9. `references.md`
-10. `spain-vat-return.md`
-11. `eu-vat-directive.md`
-12. `spain-guided-intake.md`
-13. `spain-return-assembly.md`
+8. `es-modelo-111.md`
+9. `es-rental-income.md`
+10. `es-social-contributions.md`
+11. `references.md`
+12. `spain-vat-return.md`
+13. `eu-vat-directive.md`
+14. `spain-guided-intake.md`
+15. `spain-return-assembly.md`
 
 ## Also known as
 
