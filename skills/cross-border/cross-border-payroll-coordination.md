@@ -382,4 +382,4 @@ Both countries tax their portion. Employee claims Foreign Tax Credit in whicheve
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. Employment tax, social security, and employment law rules vary by jurisdiction and change frequently. All outputs must be reviewed by a qualified professional before acting upon.
 
-*Data reflects 2025–2026 rules. OpenAccountants — open-source tax computation skills — info@openaccountants.com*
+*Data reflects 2025–2026 rules. OpenAccountants — open-source accounting skills for AI — info@openaccountants.com*

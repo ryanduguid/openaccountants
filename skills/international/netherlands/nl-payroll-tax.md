@@ -288,5 +288,5 @@ Escalate to a qualified salarisadviseur or belastingadviseur when:
 
 ---
 
-*OpenAccountants — open-source tax computation skills*
+*OpenAccountants — open-source accounting skills for AI*
 *openaccountants.com*

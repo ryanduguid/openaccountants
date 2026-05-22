@@ -200,6 +200,6 @@ Retain for **minimum 6 years** (statute of limitations):
 
 ---
 
-*OpenAccountants — open-source tax computation skills*
+*OpenAccountants — open-source accounting skills for AI*
 *This output must be reviewed by a qualified professional before filing or acting upon.*
 *Latest verified skills: **openaccountants.com** | Report errors: **github.com/openaccountants/openaccountants***

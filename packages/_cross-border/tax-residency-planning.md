@@ -287,4 +287,4 @@ Five "flags" that do NOT need to be in the same country:
 
 *Data reflects 2024–2026 rules. Tax residency changes are high-stakes decisions — verify all rules with a qualified cross-border tax advisor before acting.*
 *Original content: [Artin (@ar-gen-tin)](https://github.com/ar-gen-tin/panrise) — MIT License.*
-*OpenAccountants — open-source tax computation skills — info@openaaccountants.com*
+*OpenAccountants — open-source accounting skills for AI — info@openaaccountants.com*

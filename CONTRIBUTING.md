@@ -4,7 +4,7 @@ Thanks for your interest in contributing. Here's how it works.
 
 ## Who can contribute
 
-Anyone. You don't need to be an accountant to write a skill. You need to know your country's or state's tax code well enough to cite the statutes. Accountants then verify what you wrote.
+Anyone. You don't need to be an accountant to write a skill. You need to know your country's rules well enough to cite the statutes — whether that's tax rates, payroll obligations, e-invoicing specs, or company formation steps. Accountants then verify what you wrote.
 
 ## How to contribute a skill
 
@@ -51,9 +51,13 @@ The `category` field in YAML frontmatter tells the system what domain a skill co
 | `formation` | Entity types, registration, compliance | `singapore-formation.md` |
 | `financial-statements` | Annual accounts, reporting, audit | `france-financial-statements.md` |
 | `transfer-pricing` | TP documentation, arm's length, CbCR | `india-transfer-pricing.md` |
+| `tax-optimization` | Legal tax reduction strategies, timing, deductions | `malta-tax-optimization.md` |
+| `cross-border` | Multi-jurisdiction coordination, treaties, WHT | `eu-social-security-coordination.md` |
+| `vertical` | Industry-specific accounting patterns | `freelance-developer.md` |
+| `integration` | Platform export formats, column mappings | `stripe-integration.md` |
 | `foundation` | Universal workflow base (domain-agnostic) | `payroll-workflow-base.md` |
 
-Bookkeeping and e-invoicing skills live alongside tax skills in the same country directory (e.g., `skills/international/germany/`). The build script detects them by filename and bundles the appropriate workflow base.
+All domain skills for a country live in the same directory (e.g., `skills/international/germany/` contains tax, bookkeeping, payroll, formation, financial statements, transfer pricing, tax optimization, and e-invoicing). The build script detects them by filename suffix and bundles the appropriate workflow base automatically.
 
 ## Quality standards
 
@@ -68,6 +72,9 @@ Bookkeeping and e-invoicing skills live alongside tax skills in the same country
 - **Formation skills** load on top of `company-formation-workflow-base` (in `skills/foundation/`)
 - **Financial statements skills** load on top of `financial-statements-workflow-base` (in `skills/foundation/`)
 - **Transfer pricing skills** load on top of `transfer-pricing-workflow-base` (in `skills/foundation/`)
+- **Tax optimization skills** are standalone — no separate workflow base; they follow the universal `workflow-base.md`
+- **Cross-border skills** load on top of `cross-border-workflow-base` (in `skills/foundation/`)
+- **Vertical skills** (industry-specific) and **integration skills** (platform-specific) are standalone in `skills/verticals/` and `skills/integrations/`
 - Citation format: for US, cite IRC sections, state statutes, or IRS notices; for international, cite the relevant tax authority and legislation
 
 ## Where to put your files
@@ -76,10 +83,12 @@ Bookkeeping and e-invoicing skills live alongside tax skills in the same country
 |---------------------|-----------------|
 | US federal skills | `skills/federal/` |
 | US state skills | `skills/us-states/[two-letter code]/` |
-| International country skills (tax, bookkeeping, e-invoicing) | `skills/international/[country-slug]/` |
+| International country skills (all domains) | `skills/international/[country-slug]/` |
 | Foundation workflow bases | `skills/foundation/` |
-| Cross-border rules | `skills/cross-border/` |
-| US orchestrator files | `skills/orchestrator/` |
+| Cross-border / treaty corridor rules | `skills/cross-border/` (subdirectory `treaty-corridors/` for WHT rates) |
+| Industry vertical skills | `skills/verticals/` |
+| Platform integration skills | `skills/integrations/` |
+| Orchestrator files (router, intake, assembly) | `skills/orchestrator/` |
 
 After editing, run `python3 scripts/build-packages.py` to regenerate all packages under `packages/`. You can also use `--us-only` to regenerate just US state packages.
 
@@ -104,4 +113,4 @@ If anything in [CLA.md](CLA.md) is unclear, ask before contributing.
 - Your name on the skill, linked to your contributor profile
 - Public contributor profile showing all your contributions
 - Accountant verification — real professionals review your work
-- The knowledge that thousands of freelancers are using your skill to understand their taxes
+- The knowledge that thousands of freelancers and small businesses are using your skill to manage their accounting

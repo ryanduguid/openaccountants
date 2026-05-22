@@ -297,7 +297,7 @@ Set these in the GitHub repo settings (Settings > General). They can't be set vi
 ### Repository Description
 
 ```
-Open-source tax computation skills for AI. 133 countries + 51 US states. Upload to Claude/ChatGPT or connect via MCP. Verified by accountants.
+Open-source accounting skills for AI — tax, bookkeeping, payroll, e-invoicing, formation, and more. 134 countries + 51 US states. Upload to Claude/ChatGPT or connect via MCP.
 ```
 
 ### Topics

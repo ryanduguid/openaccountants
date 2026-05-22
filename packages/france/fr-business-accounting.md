@@ -278,6 +278,6 @@ Check the official calendar: `https://www.impots.gouv.fr/professionnel/calendrie
 
 ---
 
-*OpenAccountants — open-source tax computation skills*
+*OpenAccountants — open-source accounting skills for AI*
 *This output must be reviewed by a qualified professional before filing or acting upon.*
 *Latest verified skills: **openaccountants.com** | Report errors: **github.com/openaccountants/openaccountants***

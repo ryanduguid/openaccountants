@@ -343,6 +343,6 @@ PER gains are "produits de placement" (L. 136-7 CSS).
 
 ---
 
-*OpenAccountants — open-source tax computation skills*
+*OpenAccountants — open-source accounting skills for AI*
 *This output must be reviewed by a qualified professional before filing or acting upon.*
 *Latest verified skills: **openaccountants.com** | Report errors: **github.com/openaccountants/openaccountants***

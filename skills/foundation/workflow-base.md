@@ -1,6 +1,6 @@
 ---
 name: workflow-base
-description: Universal workflow base for all tax and compliance skills worldwide. Contains jurisdiction-agnostic workflow architecture — conservative defaults principle, reviewer assumption, output specification (Excel working paper + reviewer brief + action list), self-check framework, confidence tier definitions, execution pacing, citation discipline, and prohibition framework. No tax content, no rates, no thresholds, no form references, no country-specific rules. MUST be loaded alongside at least one content skill that provides the actual rules for the relevant obligation and jurisdiction. Every output is reviewed by a credentialed professional before filing.
+description: Universal workflow base for all accounting and compliance skills worldwide — tax, bookkeeping, payroll, e-invoicing, company formation, financial statements, transfer pricing, and tax optimization. Contains jurisdiction-agnostic workflow architecture — conservative defaults principle, reviewer assumption, output specification (Excel working paper + reviewer brief + action list), self-check framework, confidence tier definitions, execution pacing, citation discipline, and prohibition framework. No rates, no thresholds, no form references, no country-specific rules. MUST be loaded alongside at least one content skill that provides the actual rules for the relevant obligation and jurisdiction. Domain-specific workflow bases (bookkeeping-workflow-base, payroll-workflow-base, etc.) extend this base with domain-specific steps. Every output is reviewed by a credentialed professional before filing.
 version: 0.1
 ---
 
@@ -8,9 +8,11 @@ version: 0.1
 
 ## What this file is, and what it is not
 
-**This file contains workflow architecture only.** It defines how Claude should approach any tax or compliance obligation in any jurisdiction: the order of operations, how to handle ambiguity, what to produce as output, what to check before delivering, and what situations to refuse. It contains no tax rates, no dollar or euro thresholds, no form references, no deduction rules, no country-specific figures of any kind.
+**This file contains workflow architecture only.** It defines how an AI should approach any accounting or compliance obligation in any jurisdiction: the order of operations, how to handle ambiguity, what to produce as output, what to check before delivering, and what situations to refuse. It applies to all domains — tax, bookkeeping, payroll, e-invoicing, company formation, financial statements, transfer pricing, and tax optimization. It contains no rates, no dollar or euro thresholds, no form references, no deduction rules, no country-specific figures of any kind.
 
-**This file must always be loaded with at least one content skill.** Content skills provide the actual rules for the relevant obligation and jurisdiction. This file alone cannot produce any tax or compliance output. Loading it without at least one content skill is a configuration error and Claude must refuse to proceed.
+**This file must always be loaded with at least one content skill.** Content skills provide the actual rules for the relevant obligation and jurisdiction. This file alone cannot produce any accounting output. Loading it without at least one content skill is a configuration error and the AI must refuse to proceed.
+
+**Domain-specific workflow bases extend this file.** For specialized domains, a domain workflow base (e.g., `bookkeeping-workflow-base.md`, `payroll-workflow-base.md`) adds domain-specific steps, output formats, and self-checks on top of the universal principles defined here. Those bases inherit everything in this file — conservative defaults, reviewer assumption, prohibition framework — and add domain-specific workflow steps.
 
 **This file is the contract.** When a content skill says it conforms to this base, what it means is: it fills the slots specified in the companion skill contract, it produces outputs in the format specified in this base, its computations and classifications can be validated by the self-checks in this base, it respects the prohibition framework, and it participates in the workflow defined here.
 

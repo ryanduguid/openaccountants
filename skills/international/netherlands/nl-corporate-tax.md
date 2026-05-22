@@ -287,5 +287,5 @@ Escalate to a qualified belastingadviseur when:
 
 ---
 
-*OpenAccountants — open-source tax computation skills*
+*OpenAccountants — open-source accounting skills for AI*
 *openaccountants.com*

@@ -1,30 +1,39 @@
 ---
 name: global-router
 description: >
-  Universal entry point for OpenAccountants. Detects the user's jurisdiction, business
-  type, and what they need help with, then routes to the correct country-specific
-  intake or content skill. Handles freelancers, contractors, consultants, sole traders,
-  e-commerce sellers, side hustlers, gig workers, content creators, and any self-employed
-  individual without employees. ALWAYS load this skill as the default entry point.
-  Trigger on any mention of taxes, tax return, filing, bookkeeping, VAT, GST, income tax,
-  self-employment, business tax, or accounting.
-version: 0.2
+  Universal entry point for OpenAccountants — the open-source accounting skill set
+  covering 10 domains: tax, bookkeeping, e-invoicing, payroll, company formation,
+  financial statements, transfer pricing, tax optimization, cross-border, and
+  platform integrations. Detects the user's jurisdiction, business type, and domain,
+  then routes to the correct country-specific skills. Handles freelancers, contractors,
+  consultants, sole traders, e-commerce sellers, side hustlers, gig workers, content
+  creators, landlords, small companies, employers, and any self-employed individual.
+  ALWAYS load this skill as the default entry point.
+  Trigger on any mention of: taxes, tax return, filing, payroll, payslip, salary,
+  company formation, incorporate, register a business, annual accounts, financial
+  statements, transfer pricing, tax optimization, save tax, e-invoicing, CFDI,
+  FatturaPA, KSeF, Peppol, bookkeeping, chart of accounts, P&L, balance sheet,
+  cross-border, two countries, moved abroad, Stripe, Xero, QuickBooks, VAT, GST,
+  income tax, self-employment, business tax, or accounting.
+version: 1.0
 jurisdiction: GLOBAL
-tax_year: 2025
+tax_year: 2025-2026
 category: orchestrator
 depends_on: []
 ---
 
-# Global Router v0.2
+# Global Router v1.0
 
 ## What this file is
 
 This is the **universal entry point** for OpenAccountants. Every user interaction starts here.
 
-The router does three things:
+The router does five things:
 1. Figure out where the user is (jurisdiction)
-2. Figure out what they need (business type + tax obligation)
-3. Send them to the right skill
+2. Figure out what they need (domain + business type)
+3. Check refusal rules (narrow — most things are in scope now)
+4. Route to the right skill(s) for their jurisdiction and domain
+5. Hand off with structured context
 
 **The user never sees this skill.** They just talk naturally. The router works silently.
 
@@ -105,7 +114,7 @@ From the user's message, extract location using these signals (check in order):
 
 Ask ONE question:
 
-> "Where are you based? I need your country (and state/province if US, Canada, or Australia) to load the right tax rules."
+> "Where are you based? I need your country (and state/province if US, Canada, or Australia) to load the right rules."
 
 Do not proceed until jurisdiction is confirmed.
 
@@ -113,7 +122,24 @@ Do not proceed until jurisdiction is confirmed.
 
 ## Step 1: Detect what the user needs
 
-### A. Business type detection
+### A. Domain detection
+
+Identify which of the 10 accounting domains the user needs. A single query may trigger multiple domains (see section C below).
+
+| Signal | Domain | Route to |
+|--------|--------|----------|
+| "tax return", "file taxes", "income tax", "VAT", "GST", "annual return", "estimated tax", "deductions" | **Tax** | Country tax skills |
+| "bookkeeping", "classify transactions", "chart of accounts", "P&L", "balance sheet", "trial balance", "categorize expenses", "reconcile" | **Bookkeeping** | Country bookkeeping skill + `bookkeeping-workflow-base` |
+| "invoice", "e-invoice", "CFDI", "FatturaPA", "KSeF", "Peppol", "invoice compliance", "LIPE", "SII", "MyInvois" | **E-invoicing** | Country einvoice skill + `einvoice-workflow-base` |
+| "payroll", "payslip", "salary", "wages", "PAYE", "withholding", "employer", "hire", "employee", "staff", "NIC employer" | **Payroll** | Country payroll skill + `payroll-workflow-base` |
+| "set up a company", "register a business", "incorporate", "LLC", "Ltd", "GmbH", "formation", "articles of association" | **Company formation** | Country formation skill + `company-formation-workflow-base` |
+| "annual accounts", "financial statements", "year-end", "balance sheet filing", "Companies House", "statutory accounts" | **Financial statements** | Country financial-statements skill + `financial-statements-workflow-base` |
+| "transfer pricing", "intercompany", "arm's length", "CbCR", "related party", "TP documentation" | **Transfer pricing** | Country transfer-pricing skill + `transfer-pricing-workflow-base` |
+| "save tax", "reduce tax", "optimize", "deductions I'm missing", "tax planning", "restructure" | **Tax optimization** | Country tax-optimization skill |
+| "two countries", "cross-border", "moved abroad", "foreign clients", "treaty", "relocated", "digital nomad" | **Cross-border** | `cross-border-workflow-base` + relevant country skills |
+| "Stripe export", "Xero", "QuickBooks", "PayPal download", "bank CSV", "Wise", "Revolut", "Shopify", "FreeAgent", "Sage" | **Platform integration** | Relevant integration skill from `_integrations/` |
+
+### B. Business type detection
 
 | Signal | Business type | In scope? |
 |--------|--------------|-----------|
@@ -130,31 +156,37 @@ Do not proceed until jurisdiction is confirmed.
 | "LLC", "single-member LLC", "SMLLC" | Disregarded entity (US) | **Yes** |
 | "Einzelunternehmen", "Freiberufler", "Gewerbetreibender" | Self-employed (DE) | **Yes** |
 | "autónomo" | Self-employed (ES) | **Yes** |
-| "auto-entrepreneur", "micro-entrepreneur" | Self-employed (FR) | **Yes** — but micro regime may be out of scope |
+| "auto-entrepreneur", "micro-entrepreneur" | Self-employed (FR) | **Yes** |
 | "zzp'er", "zelfstandige" | Self-employed (NL) | **Yes** |
 | "partita IVA" | Self-employed (IT) | **Yes** |
-| "limited company", "Ltd", "GmbH", "SL", "SARL", "Srl" | Corporate | **Refuse** |
-| "partnership", "LLP", "OHG", "SNC" | Partnership | **Refuse** |
-| "S-corp", "C-corp", "AG", "SA" | Corporate | **Refuse** |
-| "employees", "staff", "payroll", "hiring" | Employer | **Refuse** |
+| "landlord", "rental property", "property investor" | Property investor | **Yes** — route to `property-investor` vertical |
+| "employees", "staff", "payroll", "hiring" | Employer | **Yes** — route to payroll skills |
+| "limited company", "Ltd", "GmbH", "SL", "SARL", "Srl" | Small company | **Yes** for formation, bookkeeping, financial statements, payroll, e-invoicing. **Refuse** only for corporate tax returns |
+| "partnership", "LLP", "OHG", "SNC" | Partnership | **Refuse** for partnership tax returns. **Yes** for formation advice, bookkeeping, payroll |
+| "S-corp", "C-corp", "AG", "SA" | Corporate | **Refuse** for corporate tax returns |
+| "I'm a developer", "software engineer" | Industry vertical | **Yes** — load `freelance-developer` vertical |
+| "e-commerce", "online shop" | Industry vertical | **Yes** — load `ecommerce-seller` vertical |
+| "content creator", "YouTuber", "influencer" | Industry vertical | **Yes** — load `content-creator` vertical |
+| "doctor", "medical", "healthcare practice" | Industry vertical | **Yes** — load `medical-professional` vertical |
+| "consultant", "advisory", "professional services" | Industry vertical | **Yes** — load `consultant-professional` vertical |
 
-### B. Tax obligation detection
+### C. Multi-domain detection
 
-| Signal | What they need | Route to |
-|--------|---------------|----------|
-| "tax return", "file taxes", "annual return" | Full return preparation | Country intake (if available) |
-| "VAT return", "VAT3", "UStVA", "Modelo 303", "BAS" | Consumption tax only | Country VAT/GST skill directly |
-| "bookkeeping", "classify transactions", "categorize expenses" | Transaction classification | Country bookkeeping/classification skill |
-| "how much tax", "estimate", "tax calculator" | Tax estimation | Country income tax skill |
-| "invoice", "invoicing", "CFDI", "e-invoice" | Invoicing rules | Country-specific invoicing section |
-| "register for VAT", "GST registration", "tax ID" | Registration guidance | Country consumption tax skill (registration section) |
-| "deadline", "when to file", "due date" | Filing dates | Country-specific filing deadline section |
-| "deductions", "what can I deduct", "expenses" | Deduction guidance | Country income tax skill (expenses section) |
-| "social security", "pension", "NIC", "RETA", "INPS" | Social contributions | Country social contribution skill |
-| "estimated tax", "advance payments", "quarterly tax" | Advance payments | Country estimated tax skill |
-| "should I become an S-corp", "entity structure" | Decision support | Entity election skill (if available) |
+Users often need multiple domains at once. When you detect overlapping needs, load ALL relevant skills simultaneously.
 
-### C. Side hustle / dual income detection
+| User says | Domains to load |
+|-----------|----------------|
+| "I want to start a business" | Formation + bookkeeping + tax overview |
+| "I have employees" / "I'm hiring" | Payroll + bookkeeping |
+| "End of year" / "year-end" | Financial statements + tax + bookkeeping |
+| "I invoice clients in other countries" | E-invoicing + cross-border VAT |
+| "How do I pay less tax?" / "tax planning" | Tax optimization + relevant country tax skill |
+| "I moved abroad" / "I live in X but work for Y" | Cross-border + tax skills for both countries |
+| "I need to set up payroll for my new company" | Formation + payroll |
+| "Annual accounts and tax return" | Financial statements + tax |
+| "I sell on Shopify to customers in the EU" | E-invoicing + cross-border VAT + `ecommerce-seller` vertical + `shopify-integration` |
+
+### D. Side hustle / dual income detection
 
 If the user mentions BOTH employment AND self-employment:
 - "I have a day job but also freelance on the side"
@@ -174,30 +206,42 @@ If the user mentions BOTH employment AND self-employment:
 
 | Trigger | Refusal | Why |
 |---------|---------|-----|
-| Partnership / multi-member LLC / LLP | Refuse | Different forms, allocation rules, K-1 complexity |
-| Corporation (Ltd, GmbH, S-corp, C-corp) | Refuse | Corporate tax is fundamentally different |
-| Employees / payroll | Refuse | PAYE/withholding, employer obligations, workplace pension |
-| Rental property as PRIMARY activity | Refuse | Schedule E / property income is a different skill set |
+| Partnership TAX RETURNS (multi-member LLC, LLP) | Refuse | Different forms, allocation rules, K-1 complexity |
+| Corporate TAX RETURNS (Ltd, GmbH, S-corp, C-corp) | Refuse | Corporate tax is fundamentally different |
+| Large corporate groups with complex structures | Refuse | Consolidation, group relief, multi-entity tax — specialist territory |
 | Day trading / crypto as PRIMARY activity | Refuse | Capital gains, DeFi, staking — specialist territory |
 | Multi-country split-year residency | Refuse | Tax treaties, allocation, dual residency — specialist |
 | Amended returns / audit defense | Refuse | Requires review of original return and correspondence |
 | Trust / estate income | Refuse | Fiduciary rules, different forms |
+| Listed / public company compliance | Refuse | SEC/FCA reporting, IFRS audit, board governance — specialist |
+
+### What is NOT a refusal (previously refused, now in scope)
+
+| Trigger | Action |
+|---------|--------|
+| Employees / staff / payroll / hiring | **IN SCOPE** — route to payroll skills |
+| Limited company (Ltd, GmbH) asking about formation | **IN SCOPE** — route to formation skills |
+| Limited company asking about bookkeeping | **IN SCOPE** — route to bookkeeping skills |
+| Limited company asking about financial statements | **IN SCOPE** — route to financial statements skills |
+| Limited company asking about payroll | **IN SCOPE** — route to payroll skills |
+| Rental property (any level of activity) | **IN SCOPE** — route to `property-investor` vertical |
+| Small company with simple structure | **IN SCOPE** for all domains except corporate tax returns |
 
 ### Soft flags (in scope but needs attention)
 
 | Trigger | Action |
 |---------|--------|
-| Rental income as SECONDARY to self-employment | Flag for reviewer — may need separate schedule |
 | Small crypto holdings (not trading) | Flag for reviewer — capital gains reporting |
-| Foreign income / clients abroad | Flag for reviewer — withholding tax, tax treaty |
+| Foreign income / clients abroad | Load cross-border skills, flag for reviewer |
 | Multiple businesses / trades | Handle each separately, flag for reviewer |
 | First year in business | Flag — may qualify for special reliefs (ACRE, tarifa plana, startersaftrek) |
+| Partnership asking about formation or bookkeeping | In scope for those domains — refuse only tax return preparation |
 
 ### Refusal message template
 
-> "I can help with self-employed and sole trader taxes. However, [specific reason] is outside what I cover — you'd need a [local practitioner type] who specialises in [area]. Visit openaccountants.com to find one.
+> "I can help with [list of available domains] for your situation. However, [specific reason] is outside what I cover — you'd need a [local practitioner type] who specialises in [area]. Visit openaccountants.com to find one.
 >
-> Is there anything else about your self-employment taxes I can help with?"
+> Is there anything else I can help with?"
 
 ---
 
@@ -208,6 +252,8 @@ If the user mentions BOTH employment AND self-employment:
 | Jurisdiction | Intake skill | What it covers |
 |-------------|-------------|----------------|
 | **US — California** | `us-ca-freelance-intake` | Federal 1040 + CA 540 + Form 568 |
+| **US — New York** | `us-ny-freelance-intake` | Federal 1040 + NY IT-201 + NYC UBT |
+| **US — Texas** | `us-tx-freelance-intake` | Federal 1040 + TX franchise tax |
 | **Malta** | `mt-freelance-intake` | TA24 + VAT + SSC + provisional tax |
 | **UK** | `uk-freelance-intake` | SA100 + SA103 + NIC + VAT + student loan |
 | **Germany** | `de-freelance-intake` | ESt + UStVA + SV + GewSt |
@@ -215,20 +261,25 @@ If the user mentions BOTH employment AND self-employment:
 | **Canada** | `ca-freelance-intake` | T1 + T2125 + GST/HST + CPP/EI |
 | **India** | `in-freelance-intake` | ITR-3/4 + GST + advance tax |
 | **Spain** | `es-freelance-intake` | IRPF + IVA + RETA + Modelo 130 |
+| **France** | `fr-freelance-intake` | IR + TVA + URSSAF |
+| **Netherlands** | `nl-freelance-intake` | IB + BTW + ZZP deductions |
+| **Japan** | `jp-freelance-intake` | Shotoku-zei + consumption tax |
+| **Mexico** | `mx-freelance-intake` | ISR + IVA + CFDI |
+| **Brazil** | `br-freelance-intake` | IRPF + INSS + Simples |
 
 **For these:** Hand off directly to the intake skill. User gets the full experience.
 
 ### US states — all 50 states + DC have tax skills
 
-Every US state now has a dedicated folder under `skills/us-states/[two-letter-code]/` containing income tax, sales tax, and any specialty tax skills (e.g., WA B&O tax, TX franchise tax, OH CAT). When a US user is detected:
+Every US state has a dedicated folder under `packages/us-[code]/` containing income tax, sales tax, bookkeeping, and specialty tax skills. When a US user is detected:
 
 1. **Always load** the federal skills: `skills/foundation/us-tax-workflow-base.md` + all of `skills/federal/` + `us-federal-return-assembly.md`
-2. **Then load the state folder.** Find the user's state by two-letter code and load ALL `.md` files from `skills/us-states/[code]/`.
-3. If the user is in California, ALSO load `us-ca-freelance-intake` and `us-ca-return-assembly` for the full guided experience.
+2. **Then load the state folder.** Find the user's state by two-letter code and load ALL `.md` files from `packages/us-[code]/`.
+3. If the user is in California, New York, or Texas, ALSO load the full intake and assembly skills.
 
 | State code | State folder | Income tax? | Sales tax? | Specialty |
 |------------|-------------|-------------|------------|-----------|
-| AL–WY | `skills/us-states/[code]/` | 42 states + DC have income tax skills | 45 states have sales tax skills | WA: B&O, TX: franchise, OH: CAT, DE: gross receipts, NV: commerce, NY: NYC UBT |
+| AL–WY | `packages/us-[code]/` | 42 states + DC have income tax skills | 45 states have sales tax skills | WA: B&O, TX: franchise, OH: CAT, DE: gross receipts, NV: commerce, NY: NYC UBT |
 
 **No income tax states** (load sales/specialty skills only): AK, FL, NV, NH, SD, TN, TX, WA, WY
 
@@ -236,51 +287,56 @@ Every US state now has a dedicated folder under `skills/us-states/[two-letter-co
 
 See `skills/us-states/README.md` for the full coverage matrix.
 
-### Jurisdictions with content skills but no intake
+### Domain-specific routing
 
-| Jurisdiction | Available skills | Quality |
-|-------------|-----------------|---------|
-| **Netherlands** | Income tax (IB), VAT, ZZP deductions | Q2 |
-| **Singapore** | Income tax (Form B), GST, CPF MediSave | Q2 |
-| **South Korea** | VAT, social insurance | Q2 (income tax stub) |
-| **France** | VAT (CA3), social contributions (URSSAF) | Q2 (income tax stub) |
-| **Italy** | VAT (LIPE), INPS | Q2 (income tax stub) |
-| **US — all 50 states + DC** | Income tax + sales tax + specialty taxes per state | Q2 (CA/NY/IL/TX/WA/FL), Q3 (all others) |
-| **New Zealand** | GST, income tax, ACC, provisional tax | Q2 GST, Q4 rest |
-| **Japan** | Consumption tax | Q3 |
-| **Mexico** | IVA, ISR stubs | Q2 IVA |
-| **UAE** | VAT, corporate tax | Q2 VAT |
-| **Saudi Arabia** | VAT | Q2 |
-| **Brazil** | Indirect tax, INSS, Simples | Q2 indirect |
+Not every country has skills for every domain. Here is the current coverage:
 
-**For these:** Tell the user what's available:
+| Domain | Countries with skills | Count |
+|--------|----------------------|-------|
+| **Tax** | 133+ countries (consumption tax); 15 countries with full guided intake | 133+ |
+| **Bookkeeping** | AU, BE, CA, DE, ES, FR, GB, IT, JP, MT, NL, PT, SE + all US states | 13 |
+| **E-invoicing** | BE, BR, DE, ES, FR, GR, HU, IN, IT, MX, MY, PL, PT, RO, SA | 15 |
+| **Payroll** | AU, BE, BR, CA, DE, ES, FR, GB, ID, IN, IT, JP, MT, NL, PT, SE | 16 |
+| **Company formation** | AU, CA, DE, ES, FR, GB, IN, IT, JP, MT, NL, PT, SG | 13 |
+| **Financial statements** | AU, BE, CA, DE, ES, FR, GB, IN, IT, JP, MT, NL, PT | 13 |
+| **Transfer pricing** | AU, BR, CA, DE, ES, FR, GB, IN, IT, JP, MX, MT, NL, SG, ZA | 15 |
+| **Tax optimization** | AU, CA, DE, ES, FR, GB, IN, IT, JP, MT, NL, PT, SG | 13 |
 
-> "I have [specific skills] for [country]. I can help you with [what's available]. For a complete return, you'll also need a local [practitioner type]. Want me to help with what I have?"
+When a domain skill exists for the user's country, load both the country-specific skill AND the foundation workflow base for that domain.
+
+When a domain skill **doesn't exist** for the user's country:
+
+> "I have [available domains] skills for [country] but not [requested domain] yet. Want me to help with what I have, or would you like general guidance based on the universal workflow?"
 
 ### 130+ countries with consumption tax skills only
 
-> "I can help you classify transactions and prepare your [VAT/GST/sales tax] return for [country]. I don't cover income tax or social contributions for [country] yet. Want me to help with the [VAT/GST] side?"
+> "I can help you classify transactions and prepare your [VAT/GST/sales tax] return for [country]. I don't cover [requested domain] for [country] yet. Want me to help with what I have?"
 
 ### Countries with nothing
 
-> "I don't have tax skills for [country] yet. We're building them — visit openaccountants.com if you'd like to help. In the meantime, I'd recommend a local [practitioner type]."
+> "I don't have skills for [country] yet. We're building them — visit openaccountants.com if you'd like to help. In the meantime, I'd recommend a local [practitioner type]."
 
 ---
 
 ## Step 4: Handoff
 
-When routing to a jurisdiction intake, pass:
+When routing to a jurisdiction skill, pass:
 
 ```json
 {
   "jurisdiction": "[detected]",
-  "business_type": "[detected — e.g., sole_trader, contractor, e-commerce, side_hustle]",
+  "domain": "[detected — tax, bookkeeping, payroll, formation, financial_statements, einvoicing, transfer_pricing, tax_optimization, cross_border, integration]",
+  "business_type": "[detected — e.g., sole_trader, contractor, e-commerce, side_hustle, small_company, employer]",
   "tax_obligation": "[detected — e.g., full_return, vat_only, income_tax_only, estimation]",
   "user_message": "[original message]",
   "documents_attached": true/false,
   "language": "[detected]",
   "dual_income": true/false,
-  "first_year": true/false
+  "first_year": true/false,
+  "industry_vertical": "[detected — e.g., freelance_developer, ecommerce_seller, content_creator, medical_professional, property_investor, consultant]",
+  "integration": "[detected — e.g., stripe, xero, quickbooks, shopify, wise, paypal]",
+  "multi_domain": true/false,
+  "domains_detected": ["[list of all detected domains]"]
 }
 ```
 
@@ -290,7 +346,21 @@ When routing directly to a content skill (no intake available), explain:
 
 ---
 
-## Step 5: Language handling
+## Step 5: Special packages routing
+
+Three special package directories contain cross-cutting skills that augment country-specific routing.
+
+| Package | When to load | Contents |
+|---------|-------------|----------|
+| `_cross-border/` | User mentions 2+ countries, foreign clients, relocation, digital nomad, treaty, withholding on foreign income | 22 skills: treaty defaults, PE risk, withholding matrix, EU reverse charge, OSS, VAT place of supply, forex controls, payroll coordination, corridors (EU, US, UK, APAC, Americas, emerging markets) |
+| `_verticals/` | User mentions a specific industry or profession | `freelance-developer`, `ecommerce-seller`, `content-creator`, `medical-professional`, `consultant-professional`, `property-investor` |
+| `_integrations/` | User mentions specific software or platform | `stripe`, `xero`, `quickbooks`, `paypal`, `wise`, `revolut-business`, `shopify`, `amazon-seller`, `freeagent`, `sage` |
+
+Load these **in addition to** the country-specific domain skills, not instead of them.
+
+---
+
+## Step 6: Language handling
 
 Respond in the user's language. If the user writes in:
 - German → respond in German, use German tax terms (Steuererklärung, Einnahmenüberschussrechnung)
@@ -299,6 +369,7 @@ Respond in the user's language. If the user writes in:
 - Italian → respond in Italian (dichiarazione dei redditi, partita IVA)
 - Portuguese → respond in Portuguese (declaração de IRS, trabalhador independente)
 - Dutch → respond in Dutch (belastingaangifte, zzp'er)
+- Japanese → respond in Japanese (確定申告, 個人事業主)
 - English → respond in English
 
 Tax forms and legal terms should always use the local-language name (e.g., "Modelo 303" not "Form 303").
@@ -310,11 +381,16 @@ Tax forms and legal terms should always use the local-language name (e.g., "Mode
 - NEVER guess a jurisdiction — ask if unclear
 - NEVER route to a skill that doesn't exist
 - NEVER claim you can do something you can't — be honest about availability
-- NEVER skip the refusal check for partnerships, corporations, employers
 - NEVER refuse a side hustler — employed + self-employed is in scope
 - NEVER refuse based on profession — doctors, lawyers, architects are in scope if self-employed
 - NEVER refuse e-commerce sellers — they use the same tax forms as any sole trader
 - NEVER respond in English if the user wrote in another language (unless they switch to English)
+- NEVER refuse a small company asking about formation, bookkeeping, or financial statements
+- NEVER load only tax skills when the user clearly needs a different domain
+- NEVER ignore industry context — if they say they're a developer, load the `freelance-developer` vertical
+- NEVER refuse payroll queries — payroll is a fully supported domain
+- NEVER refuse employer queries — route to payroll skills
+- NEVER refuse rental property / landlord queries — route to `property-investor` vertical
 
 ---
 

@@ -494,5 +494,5 @@ When in doubt:
 
 ---
 
-*OpenAccountants — open-source tax computation skills*
+*OpenAccountants — open-source accounting skills for AI*
 *This is not tax advice. All outputs must be reviewed by a qualified professional before filing.*

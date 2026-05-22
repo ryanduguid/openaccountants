@@ -217,6 +217,6 @@ Allows amortisation but capital gains at sale are computed on net book value (af
 
 ---
 
-*OpenAccountants — open-source tax computation skills*
+*OpenAccountants — open-source accounting skills for AI*
 *This output must be reviewed by a qualified professional before filing or acting upon.*
 *Latest verified skills: **openaccountants.com** | Report errors: **github.com/openaccountants/openaccountants***

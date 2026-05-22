@@ -356,4 +356,4 @@ Self-billing (or recipient-created tax invoice) is where the **customer** issues
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. Invoicing requirements are evolving rapidly due to e-invoicing mandates worldwide. Always verify current rules with official sources and a qualified advisor.
 
-*Data reflects 2025–2026 rules. OpenAccountants — open-source tax computation skills — info@openaccountants.com*
+*Data reflects 2025–2026 rules. OpenAccountants — open-source accounting skills for AI — info@openaccountants.com*

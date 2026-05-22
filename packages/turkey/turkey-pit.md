@@ -212,5 +212,5 @@ If 50,000 TRY provisional tax was paid during the year:
 
 ---
 
-*OpenAccountants — open-source tax computation skills*
+*OpenAccountants — open-source accounting skills for AI*
 *This is not tax advice. All outputs must be reviewed by a qualified professional before filing.*

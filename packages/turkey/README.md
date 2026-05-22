@@ -1,7 +1,7 @@
-# Turkey — AI Tax Assistant | OpenAccountants
+# Turkey — AI Accounting Assistant | OpenAccountants
 
-> Open-source tax computation skills for Turkey. Upload to Claude, ChatGPT, or any AI assistant.
-> Verified by accountants. Free and open source.
+> Open-source accounting skills for Turkey. Upload to Claude, ChatGPT, or any AI assistant.
+> Tax, bookkeeping, payroll, formation, financial statements, and more. Free and open source.
 
 ## What's in this folder
 
@@ -20,18 +20,23 @@ Tax authority: **Gelir İdaresi Başkanlığı (GİB)**
 ## How to use
 
 1. Upload ALL files in this folder to your AI assistant (Claude, ChatGPT, Gemini, etc.)
-2. Attach your 2025 bank statement (CSV or PDF)
-3. Say: **"Help me with my 2025 Turkey taxes. Here's my bank statement."**
+2. Attach your bank statement, invoices, or any financial documents (CSV or PDF)
+3. Tell the AI what you need:
+   - **"Help me with my 2025 Turkey taxes. Here's my bank statement."**
+   - **"Classify my transactions and prepare my books."**
+   - **"Run payroll for my employee."**
+   - **"Help me set up a company in Turkey."**
+   - **"Prepare my annual accounts."**
 
 The AI will:
-- Ask a few onboarding questions to confirm your situation
-- Classify every transaction on your bank statement
-- Produce working papers for each tax obligation
+- Ask onboarding questions to confirm your situation
+- Load the right domain skills (tax, bookkeeping, payroll, etc.)
+- Produce working papers for each obligation
 - Flag anything that needs your qualified tax professional's attention
 
 ## Important
 
-**This is not tax advice.** Everything produced must be reviewed and signed off by a qualified qualified tax professional before filing.
+**This is not tax, legal, or financial advice.** Everything produced must be reviewed and signed off by a qualified qualified tax professional before filing or acting upon.
 
 The most up-to-date, verified version of these skills is maintained at [openaccountants.com](https://openaccountants.com).
 
@@ -55,6 +60,6 @@ Or if you're comfortable with GitHub: fork the repo, fix the source file under `
 
 ---
 
-*OpenAccountants — open-source tax computation skills for AI*
-*133 countries + 51 US states — [openaccountants.com](https://openaccountants.com)*
+*OpenAccountants — open-source accounting skills for AI*
+*134 countries + 51 US states — [openaccountants.com](https://openaccountants.com)*
 *info@openaaccountants.com*

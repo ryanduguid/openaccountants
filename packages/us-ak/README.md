@@ -63,6 +63,6 @@ Or if you're comfortable with GitHub: fork the repo, fix the source under `skill
 
 ---
 
-*OpenAccountants — open-source tax computation skills for AI*
-*133 countries + 51 US states — [openaccountants.com](https://openaccountants.com)*
+*OpenAccountants — open-source accounting skills for AI*
+*134 countries + 51 US states — [openaccountants.com](https://openaccountants.com)*
 *info@openaaccountants.com*

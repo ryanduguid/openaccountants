@@ -2,9 +2,11 @@
 
 # OpenAccountants
 
-Open-source tax computation skills for AI. **514 skills across 133 countries + 51 US state packages.**
+Open-source accounting skills for AI. **697 skills across 134 countries + 51 US state packages.**
 
-Upload to Claude, ChatGPT, or any LLM with your bank statement — or connect via **[MCP](#mcp-server)** so your AI loads the right country's tax skills automatically. Get a working paper ready for your accountant and **cut your accounting bill by 80%.**
+**10 accounting domains:** tax, bookkeeping, e-invoicing, payroll, company formation, financial statements, transfer pricing, tax optimization, cross-border, plus industry verticals and platform integrations.
+
+Upload to Claude, ChatGPT, or any LLM with your bank statement — or connect via **[MCP](#mcp-server)** so your AI loads the right skills automatically. Get a working paper ready for your accountant and **cut your accounting bill by 80%.**
 
 Your accountant charges by the hour. Most of that time is classifying transactions and filling forms. These skills do that work before the meeting. Your accountant reviews and signs off in 20 minutes instead of 3 hours.
 
@@ -25,8 +27,9 @@ Read this before you trust any output.
 
 - **LLMs hallucinate and misread.** These files steer the model; they do not guarantee correct numbers, classifications, or filings. Always have a qualified professional review before you act.
 - **Tax law changes.** Rates, thresholds, and forms go out of date. The repo is a snapshot; [openaccountants.com](https://openaccountants.com) may be ahead of what you cloned.
-- **Verification is tiered, not binary.** Most skills are **not** “accountant-verified on real client data.” We publish [Q1–Q4 tiers](docs/QUALITY-TIERS.md): **Q1** is the bar for that; **Q2** is research-verified to authority sites but not yet proven on real statements; **Q3** is AI-drafted with citations but not independently verified. **Many skills are Q3 or below** — check the tier for the file you use.
-- **Coverage is uneven.** Only **eight** countries ship the full guided stack (VAT + income tax + SSC + walkthrough) in this repo; dozens more have multiple skills without that guided path; **many** jurisdictions are **VAT/GST-only** or partial. See **Coverage** below and each country folder’s README.
+- **Verification is tiered, not binary.** Most skills are **not** "accountant-verified on real client data." We publish [Q1–Q4 tiers](docs/QUALITY-TIERS.md): **Q1** is the bar for that; **Q2** is research-verified to authority sites but not yet proven on real statements; **Q3** is AI-drafted with citations but not independently verified. **Many skills are Q3 or below** — check the tier for the file you use.
+- **Coverage is uneven.** Thirteen countries ship the full accounting suite (tax + bookkeeping + payroll + formation + financial statements + transfer pricing + tax optimization) in this repo; dozens more have multiple skills without that full stack; **many** jurisdictions are **VAT/GST-only** or partial. See **Coverage** below and each country folder's README.
+- **New domains are Q3.** The bookkeeping, payroll, formation, financial statements, transfer pricing, and tax optimization skills were AI-drafted in Q3 and need community verification. Tax skills are more mature.
 
 Honesty is the point: if you know where the gaps are, you can use the project safely. Skeptics welcome.
 
@@ -40,15 +43,17 @@ Everything you need is in one folder under `packages/`. Upload every file in tha
 
 ```
 packages/
-├── malta/           ← 9 files (VAT + income tax + SSC + guided intake)
-├── uk/              ← 8 files
-├── germany/         ← 7 files
+├── malta/           ← 23 files (tax + bookkeeping + payroll + formation + financial statements + TP + optimization)
+├── uk/              ← ~20 files
+├── germany/         ← ~25 files (the fullest)
 ├── ... 130+ more countries
 ├── us-ca/           ← Federal + California state skills
 ├── us-ny/           ← Federal + New York state skills
 ├── us-tx/           ← Federal + Texas state skills
 ├── ... 51 US state packages (all 50 states + DC)
 ```
+
+Also available: `_cross-border/` (22 skills), `_verticals/` (6 industry skills), `_integrations/` (10 platform skills)
 
 **International users:** pick your country folder (e.g. `packages/malta/`).
 
@@ -69,13 +74,18 @@ Upload to:
 
 ### 3. Attach your bank statement and go
 
-Say:
+Say any of:
 
 ```
 Help me with my 2025 taxes. Here's my bank statement.
+Help me set up a company in Malta.
+Run my payroll for this month.
+Prepare my annual accounts.
+Optimize my tax — what deductions am I missing?
+Check my invoice compliance for EU e-invoicing.
 ```
 
-The AI will ask a few questions, classify every transaction, and produce a working paper for your accountant.
+The AI will ask a few questions, load the right skills, and produce a working paper for your accountant.
 
 ---
 
@@ -93,7 +103,7 @@ We'll update the skill and credit you publicly as the verified reviewer at [open
 
 Or if you prefer GitHub: fork, fix, PR. **Your name goes on the skill either way.**
 
-> 133 countries need accountant reviewers. Pick yours at [`packages/`](packages/) and be the first verified professional for your jurisdiction.
+> 134 countries need accountant reviewers. Pick yours at [`packages/`](packages/) and be the first verified professional for your jurisdiction.
 
 ---
 
@@ -114,18 +124,27 @@ Every country folder contains:
 | `[country]-formation.md` | Entity types, registration steps, costs, compliance | No — 13 countries |
 | `[country]-financial-statements.md` | Annual accounts, reporting framework, filing, audit | No — 13 countries |
 | `[country]-transfer-pricing.md` | TP documentation, arm's length, CbCR, penalties | No — 15 countries |
+| `[country]-tax-optimization.md` | Legal tax reduction strategies, deductions you're missing, timing | No — 13 countries |
 | `[country]-guided-intake.md` | Full guided experience with detailed inference (if available) | No — 13 countries have this |
 | `[country]-return-assembly.md` | Cross-checks between VAT, IT, and SSC (if available) | No — 13 countries have this |
 
-**Not every country has every file.** Some have only VAT. Some have VAT + income tax + SSC + bookkeeping + e-invoicing. Thirteen countries have the full guided experience. Check the README inside each country folder.
+**Special packages:**
+
+| Package | What it covers |
+|---------|---------------|
+| `_cross-border/` | 22 skills — multi-jurisdiction coordination, EU SS coordination, OECD treaty defaults, 70+ treaty corridor rates |
+| `_verticals/` | 6 industry-specific skills — freelance developer, e-commerce, content creator, consultant, property investor, medical professional |
+| `_integrations/` | 10 platform skills — Xero, QuickBooks, Stripe, Wise, PayPal, Revolut, Amazon Seller, Shopify, FreeAgent, Sage |
+
+**Not every country has every file.** Some have only VAT. Some have VAT + income tax + SSC + bookkeeping + e-invoicing. Thirteen countries have the full accounting suite. Check the README inside each country folder.
 
 ---
 
 ## Coverage
 
-### Full guided experience (13 countries)
+### Full accounting suite (13 countries)
 
-Upload all files, say "help me with my taxes," and the AI walks you through everything:
+Tax + bookkeeping + payroll + formation + financial statements + transfer pricing + tax optimization:
 
 | Country | What you get |
 |---------|-------------|
@@ -139,15 +158,17 @@ Upload all files, say "help me with my taxes," and the AI walks you through ever
 | **France** | TVA + impot sur le revenu + cotisations sociales + CFE + crypto + rental + capital gains |
 | **Japan** | Consumption tax + income tax + social insurance + estimated tax + e-Tax |
 | **Netherlands** | BTW + inkomstenbelasting + ZZP deductions + payroll tax |
-| **Brazil** | IVA + IRPF + INSS + Simples Nacional + estimated tax |
-| **Mexico** | IVA + ISR + IMSS + CFDI + estimated tax |
+| **Portugal** | IVA + IRS + contribuições sociais + rental + crypto |
+| **Belgium** | BTW + personenbelasting + sociale bijdragen + rental |
 | **United States (CA)** | 1040 + Schedule C/SE + CA 540 + crypto |
+
+Coverage varies slightly — some countries have all seven domains, others have most. Check each country's README.
 
 ### Multi-skill countries (23 countries)
 
 VAT + income tax + social contributions. No guided intake, but the AI uses the universal intake flow:
 
-Argentina, Austria, Belgium, Chile, Colombia, Czech Republic, Greece, Hungary, Ireland, Israel, Italy, Kenya, New Zealand, Nigeria, Norway, Poland, Portugal, Romania, Singapore, South Africa, South Korea, Sweden, Switzerland
+Argentina, Austria, Brazil, Chile, Colombia, Czech Republic, Greece, Hungary, Ireland, Israel, Italy, Kenya, Mexico, New Zealand, Nigeria, Norway, Poland, Romania, Singapore, South Africa, South Korea, Sweden, Switzerland
 
 ### Bookkeeping skills (13 countries)
 
@@ -184,6 +205,24 @@ Malta, UK, Germany, France, Italy, Spain, Netherlands, Belgium, Portugal, Austra
 TP documentation, arm's length methods, CbCR thresholds, APA, penalties:
 
 Malta, UK, Germany, France, Italy, Spain, Netherlands, Australia, Canada, Japan, India, Brazil, Singapore, South Africa, Mexico
+
+### Tax optimization (13 countries)
+
+Legal tax reduction strategies, commonly missed deductions, timing optimizations, entity structure advice:
+
+Malta, UK, Germany, France, Italy, Spain, Netherlands, Australia, Canada, Japan, India, Portugal, Singapore
+
+### Cross-border orchestrator
+
+22 skills covering multi-jurisdiction coordination, EU social security coordination, OECD treaty defaults, and 70+ treaty corridor rates.
+
+### Industry verticals (6 skills)
+
+Freelance developer, e-commerce, content creator, consultant, property investor, medical professional.
+
+### Platform integrations (10 skills)
+
+Xero, QuickBooks, Stripe, Wise, PayPal, Revolut, Amazon Seller, Shopify, FreeAgent, Sage.
 
 ### VAT/GST only (87 countries)
 
@@ -225,18 +264,20 @@ Skills are **partially** verified at best unless you confirm the tier. **Q1** me
 
 ## MCP server
 
-Instead of uploading files by hand, connect your AI client to OpenAccountants via the [Model Context Protocol](https://modelcontextprotocol.io/). Install once, configure once — every future conversation can pull the right country's skills automatically.
+Instead of uploading files by hand, connect your AI client to OpenAccountants via the [Model Context Protocol](https://modelcontextprotocol.io/). Install once, configure once — every future conversation can pull the right skills automatically.
 
 ### How it works
 
 ```
-You:    "Help me with my Malta taxes. Here's my bank statement."
+You:    "Help me set up a company in Germany and understand the payroll obligations"
           ↓
-Claude: calls list_jurisdictions → sees "malta"
-Claude: calls list_files("malta") → foundation.md, malta-vat.md, …
-Claude: calls get_file("malta", "foundation.md") → full skill loaded
+Claude: calls list_jurisdictions → sees "germany"
+Claude: calls list_files("germany") → germany-formation.md, germany-payroll.md, …
+Claude: calls get_file("germany", "germany-formation.md") → full skill loaded
+Claude: calls get_file("germany", "germany-payroll.md") → full skill loaded
+Claude: loads company-formation-workflow-base.md
           ↓
-Claude: processes your bank statement with the correct tax rules
+Claude: walks you through entity types, registration, and employer obligations
 ```
 
 ### Install
@@ -296,13 +337,15 @@ openaccountants/
 │   ├── us-ny/
 │   └── ... 130 countries + 51 US states
 ├── skills/                ← Source files (for contributors)
-│   ├── foundation/        ← Workflow bases: VAT, income tax, bookkeeping, e-invoicing, US tax
-│   ├── federal/           ← US federal income tax / Schedule C / SE / QBI / etc.
-│   ├── international/     ← Country-specific content (feeds build-packages.py)
-│   ├── orchestrator/      ← Intake + assembly (incl. us-federal-return-assembly, us-ca-*)
-│   ├── us-states/         ← US state tax skills (all 50 states + DC, by 2-letter code)
-│   ├── cross-border/      ← Reverse charge, WHT, PE risk
-│   ├── intelligence/      ← Deadlines, thresholds, optimisation
+│   ├── foundation/        ← 10 workflow bases (universal, VAT, US tax, bookkeeping, payroll, e-invoicing, formation, financial statements, transfer pricing, cross-border)
+│   ├── federal/           ← US federal skills
+│   ├── international/     ← Country-specific: tax, bookkeeping, payroll, formation, financial statements, TP, optimization
+│   ├── orchestrator/      ← Global router, intake flows, return assembly
+│   ├── us-states/         ← US state skills
+│   ├── cross-border/      ← WHT, PE risk, VAT place of supply, EU rules, treaty corridors
+│   ├── verticals/         ← Industry-specific (developer, e-commerce, content creator, etc.)
+│   ├── integrations/      ← Platform export formats (Xero, Stripe, PayPal, etc.)
+│   ├── intelligence/      ← Deadlines, thresholds
 │   └── patterns/          ← Global vendor patterns
 ├── scripts/               ← Build tools
 │   └── build-packages.py  ← Generates packages/ from skills/
@@ -319,7 +362,7 @@ python3 scripts/build-packages.py
 
 ## Contribute
 
-We maintain 514 skills across 133 countries. Tax law changes constantly — rates update, thresholds move, forms get revised. Contributions keep this accurate.
+We maintain 697 skills across 134 countries. Accounting rules change constantly — rates update, thresholds move, forms get revised. Contributions keep this accurate.
 
 ### Ways to contribute
 
@@ -328,7 +371,16 @@ We maintain 514 skills across 133 countries. Tax law changes constantly — rate
 | **Verify a rate** | Check a number against your tax authority's website, open a PR | Moves a skill from Q3 → Q2 |
 | **Add bank patterns** | Add how transactions appear on your local bank statement | Every user in your country gets fewer misclassifications |
 | **Fix an error** | Find a wrong rate or outdated threshold, submit the correction | Prevents bad working papers |
-| **Add a skill** | Write a new income tax, payroll, or social security skill for your country | Fills a gap for every user in that jurisdiction |
+| **Add a tax skill** | Write a new income tax, VAT, or social security skill for your country | Fills a gap for every user in that jurisdiction |
+| **Add a bookkeeping skill** | Chart of accounts, P&L format, expense classification for your country | Enables full double-entry accounting |
+| **Add a payroll skill** | PAYE tables, social security, payslip format for your country | Employers in your jurisdiction can run payroll |
+| **Add a formation skill** | Entity types, registration steps, costs for your country | Entrepreneurs can set up companies |
+| **Add a financial statements skill** | Annual accounts, reporting framework, audit thresholds | Year-end compliance for your jurisdiction |
+| **Add a transfer pricing skill** | TP documentation, arm's length methods, CbCR for your country | Multinationals get compliant |
+| **Add a tax optimization skill** | Legal deductions, timing strategies, entity structure advice | Users stop leaving money on the table |
+| **Add an e-invoicing skill** | Format, mandatory fields, transmission for your country | Invoices pass validation |
+| **Add an industry vertical** | Vertical-specific guidance for a profession or business type | Targeted help for that industry |
+| **Add a platform integration** | Export format mapping for an accounting/payment platform | Users can push data to their tools |
 
 ### How to verify or fix a skill
 

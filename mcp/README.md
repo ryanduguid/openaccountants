@@ -2,21 +2,21 @@
 
 <!-- mcp-name: io.github.openaccountants/openaccountants-mcp -->
 
-A read-only [Model Context Protocol](https://modelcontextprotocol.io/) server that gives Claude, Cursor, and any MCP client **on-demand access** to 133 countries + 51 US state packages of open-source tax skills — no manual file uploads.
+A read-only [Model Context Protocol](https://modelcontextprotocol.io/) server that gives Claude, Cursor, and any MCP client **on-demand access** to 134 countries + 51 US state packages of open-source accounting skills across 10 domains (tax, bookkeeping, payroll, e-invoicing, formation, financial statements, transfer pricing, tax optimization, cross-border, and more) — no manual file uploads.
 
 ## Why this exists
 
 Without MCP, using OpenAccountants means downloading a country folder and dragging `.md` files into your LLM by hand, every conversation. With MCP, your AI assistant **discovers and fetches** the right skills automatically:
 
 ```
-You:    "Help me with my Malta taxes. Here's my bank statement."
+You:    "Help me set up a company in Malta and understand my tax obligations."
           ↓
 Claude: calls list_jurisdictions → sees "malta"
-Claude: calls list_files("malta") → foundation.md, malta-vat.md, …
-Claude: calls get_file("malta", "foundation.md") → full skill in context
+Claude: calls list_files("malta") → foundation.md, malta-vat.md, malta-formation.md, …
+Claude: calls get_file("malta", "malta-formation.md") → formation rules loaded
 Claude: calls get_file("malta", "malta-vat.md") → VAT rules loaded
           ↓
-Claude: now processes your bank statement with the right tax rules
+Claude: walks you through entity selection, registration, and tax setup
 ```
 
 Install once, configure once — skills are available in every conversation from that point on.
@@ -32,6 +32,14 @@ Claude: calls get_file("us-ca", "ca-income-tax.md") → state rules loaded
           ↓
 Claude: now processes with federal AND California rules
 ```
+
+Special packages are also available:
+
+| Package | What's inside |
+|---------|--------------|
+| `_cross-border` | Multi-jurisdiction orchestrator, EU rules, OECD treaty defaults, 70+ treaty corridor WHT rates |
+| `_verticals` | Industry-specific skills (developer, e-commerce, content creator, consultant, property investor, medical) |
+| `_integrations` | Platform export formats (Xero, QuickBooks, Stripe, Wise, PayPal, Revolut, Amazon, Shopify, FreeAgent, Sage) |
 
 ## Tools
 
@@ -114,7 +122,15 @@ Run `openaccountants-mcp` (or `python -m openaccountants_mcp`) as a **stdio** tr
 
 > Help me with my 2025 taxes. Here's my bank statement.
 
-The AI will call the MCP tools behind the scenes to load the right country skills, then classify transactions and produce a working paper — all without you uploading a single file.
+or:
+
+> I need to run payroll for my German employee. What are the withholding rates?
+
+or:
+
+> Help me set up a company in Singapore. What are my options?
+
+The AI will call the MCP tools behind the scenes to load the right country and domain skills, then produce working papers, payslips, formation guides, or whatever output matches your request — all without you uploading a single file.
 
 ## Environment variables
 
@@ -143,4 +159,4 @@ All checks should pass (path safety, tool outputs, jurisdiction count, US state 
 
 ## Disclaimer
 
-All skills and outputs are for informational and computational purposes only. Not tax advice. Not a replacement for professional judgment. Content quality is [tiered (Q1-Q4)](../docs/QUALITY-TIERS.md) — most skills are **not** accountant-verified. Always have a qualified professional review before filing.
+All skills and outputs are for informational and computational purposes only. Not tax, legal, or financial advice. Not a replacement for professional judgment. Content quality is [tiered (Q1-Q4)](../docs/QUALITY-TIERS.md) — most skills are **not** accountant-verified. Always have a qualified professional review before filing or acting upon.

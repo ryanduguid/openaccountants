@@ -433,6 +433,6 @@ Joint filing from 1 January to date of death. Separate filing for the surviving 
 
 ---
 
-*OpenAccountants — open-source tax computation skills*
+*OpenAccountants — open-source accounting skills for AI*
 *This output must be reviewed by a qualified professional before filing or acting upon.*
 *Latest verified skills: **openaccountants.com** | Report errors: **github.com/openaccountants/openaccountants***
