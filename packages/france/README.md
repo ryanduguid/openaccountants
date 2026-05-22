@@ -16,11 +16,24 @@
 9. `fr-rental-income.md`
 10. `fr-social-contributions.md`
 11. `fr-tax-audit.md`
-12. `france-vat-return.md`
-13. `references.md`
-14. `eu-vat-directive.md`
-15. `france-guided-intake.md`
-16. `france-return-assembly.md`
+12. `france-bookkeeping.md`
+13. `france-einvoice.md`
+14. `france-financial-statements.md`
+15. `france-formation.md`
+16. `france-payroll.md`
+17. `france-tax-optimization.md`
+18. `france-transfer-pricing.md`
+19. `france-vat-return.md`
+20. `references.md`
+21. `eu-vat-directive.md`
+22. `bookkeeping-workflow-base.md`
+23. `einvoice-workflow-base.md`
+24. `payroll-workflow-base.md`
+25. `company-formation-workflow-base.md`
+26. `financial-statements-workflow-base.md`
+27. `transfer-pricing-workflow-base.md`
+28. `france-guided-intake.md`
+29. `france-return-assembly.md`
 
 ## Also known as
 

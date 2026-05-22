@@ -8,17 +8,28 @@
 1. `foundation.md`
 2. `intake.md`
 3. `references.md`
-4. `uk-capital-gains-sa108.md`
-5. `uk-dividends.md`
-6. `uk-income-tax-sa100.md`
-7. `uk-national-insurance.md`
-8. `uk-payments-on-account.md`
-9. `uk-rental-sa105.md`
-10. `uk-self-employment-sa103.md`
-11. `uk-student-loan-repayment.md`
-12. `uk-vat-return.md`
-13. `uk-guided-intake.md`
-14. `uk-return-assembly.md`
+4. `uk-bookkeeping.md`
+5. `uk-capital-gains-sa108.md`
+6. `uk-dividends.md`
+7. `uk-financial-statements.md`
+8. `uk-formation.md`
+9. `uk-income-tax-sa100.md`
+10. `uk-national-insurance.md`
+11. `uk-payments-on-account.md`
+12. `uk-payroll.md`
+13. `uk-rental-sa105.md`
+14. `uk-self-employment-sa103.md`
+15. `uk-student-loan-repayment.md`
+16. `uk-tax-optimization.md`
+17. `uk-transfer-pricing.md`
+18. `uk-vat-return.md`
+19. `bookkeeping-workflow-base.md`
+20. `payroll-workflow-base.md`
+21. `company-formation-workflow-base.md`
+22. `financial-statements-workflow-base.md`
+23. `transfer-pricing-workflow-base.md`
+24. `uk-guided-intake.md`
+25. `uk-return-assembly.md`
 
 ## Also known as
 

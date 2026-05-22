@@ -10,8 +10,10 @@
 3. `references.md`
 4. `ro-cas-cass.md`
 5. `ro-income-tax.md`
-6. `romania-vat-return.md`
-7. `eu-vat-directive.md`
+6. `romania-einvoice.md`
+7. `romania-vat-return.md`
+8. `eu-vat-directive.md`
+9. `einvoice-workflow-base.md`
 
 ## Also known as
 

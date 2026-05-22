@@ -9,8 +9,10 @@
 2. `intake.md`
 3. `gr-efka.md`
 4. `gr-income-tax.md`
-5. `greece-vat-return.md`
-6. `eu-vat-directive.md`
+5. `greece-einvoice.md`
+6. `greece-vat-return.md`
+7. `eu-vat-directive.md`
+8. `einvoice-workflow-base.md`
 
 ## Also known as
 

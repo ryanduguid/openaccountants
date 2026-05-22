@@ -7,10 +7,12 @@
 
 1. `foundation.md`
 2. `intake.md`
-3. `south-africa-vat.md`
-4. `za-income-tax.md`
-5. `za-provisional-tax.md`
-6. `za-vat-return.md`
+3. `south-africa-transfer-pricing.md`
+4. `south-africa-vat.md`
+5. `za-income-tax.md`
+6. `za-provisional-tax.md`
+7. `za-vat-return.md`
+8. `transfer-pricing-workflow-base.md`
 
 ## Also known as
 

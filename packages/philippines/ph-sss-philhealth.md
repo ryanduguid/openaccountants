@@ -1,17 +1,17 @@
 ---
 name: ph-sss-philhealth
 description: >
-  Use this skill whenever asked about Philippines SSS, PhilHealth, or Pag-IBIG contributions. Trigger on phrases like "SSS contribution", "Social Security System", "PhilHealth", "Philippine Health Insurance", "Pag-IBIG", "HDMF", "Home Development Mutual Fund", "self-employed SSS", "voluntary SSS", "monthly salary credit", "social security Philippines", or any question about mandatory government contributions in the Philippines for self-employed individuals. Covers SSS, PhilHealth, and Pag-IBIG rates, thresholds, registration, and payment. ALWAYS read this skill before advising on Philippine social security contributions.
+  Use this skill whenever asked about Philippine social security contributions for self-employed individuals. Trigger on phrases like "SSS contribution", "PhilHealth premium", "Pag-IBIG", "self-employed Philippines contributions", "HDMF", "voluntary SSS", "PhilHealth self-employed", "social contributions Philippines", "mandatory contributions freelancer Philippines", or any question about computing, paying, or filing SSS, PhilHealth, or Pag-IBIG as a self-employed worker in the Philippines. This skill covers the 2025 contribution tables, registration, payment methods, and deadlines. ALWAYS read this skill before advising on Philippine social insurance obligations.
 version: 1.0
 jurisdiction: PH
 tax_year: 2025
 category: international
 depends_on:
-  - ph-income-tax
+  - income-tax-workflow-base
 verified_by: pending
 ---
 
-# Philippines SSS, PhilHealth & Pag-IBIG Contributions Skill v1.0
+# Philippines SSS, PhilHealth & Pag-IBIG -- Self-Employed Skill v1.0
 
 ---
 
@@ -19,275 +19,385 @@ verified_by: pending
 
 | Field | Value |
 |---|---|
-| Country | Philippines |
-| Systems | SSS, PhilHealth, Pag-IBIG (HDMF) |
-| Currency | PHP (₱) only |
-| Contribution year | Calendar month |
-| Primary legislation | RA 11199 (Social Security Act of 2018); RA 11223 (Universal Health Care Act of 2019); RA 9679 (Pag-IBIG Fund Law) |
-| Validated by | Pending |
-| Validation date | Pending |
+| Country | Philippines (Republika ng Pilipinas) |
+| Coverage | SSS, PhilHealth, Pag-IBIG (HDMF) |
+| Currency | PHP (Philippine Peso) only |
+| Contribution period | Monthly |
+| Primary legislation | RA 11199 (Social Security Act of 2018), RA 11223 (Universal Health Care Act), RA 9679 (HDMF Law) |
+| Agencies | Social Security System (SSS), Philippine Health Insurance Corporation (PhilHealth), Home Development Mutual Fund (HDMF/Pag-IBIG) |
+| SSS portal | my.sss.gov.ph |
+| PhilHealth portal | memberinquiry.philhealth.gov.ph |
+| Pag-IBIG portal | virtual.pagibigfund.gov.ph |
+| Validated by | Pending — requires sign-off by a Philippine CPA or labour law practitioner |
 | Skill version | 1.0 |
 
-### Summary Table (2025)
+### 2025 Contribution Summary (Self-Employed)
 
-| Agency | Total Rate | Floor | Ceiling | Employer Share | Employee Share |
+| Agency | Rate | Basis | Min Monthly | Max Monthly | Payment |
 |---|---|---|---|---|---|
-| SSS | 15% | ₱5,000 MSC | ₱35,000 MSC | 10% + EC | 5% |
-| PhilHealth | 5% | ₱10,000 MBS | ₱100,000 MBS | 2.5% | 2.5% |
-| Pag-IBIG | 2% + 2% | -- | ₱10,000 MFS | ₱200 max | ₱200 max |
+| SSS | 15% of MSC | Monthly Salary Credit (₱5,000--₱35,000) | ₱750 | ₱5,250 | Monthly |
+| PhilHealth | 5% of monthly income | Declared monthly income | ₱500 | ₱5,000 | Monthly |
+| Pag-IBIG | ₱200 (voluntary) | Fixed amount or up to ₱5,000 | ₱200 | ₱5,000 | Monthly |
 
-Self-employed pay the full contribution for SSS (15%) and PhilHealth (5%). Pag-IBIG is voluntary for self-employed.
+### Conservative Defaults
+
+| Ambiguity | Default |
+|---|---|
+| Unknown income for MSC | Declare at minimum MSC (₱5,000) until confirmed |
+| Unknown PhilHealth income | Declare at minimum until income verified |
+| Unknown Pag-IBIG membership | Assume not yet registered -- must register |
+| Self-employed vs voluntary | Self-employed if active business; voluntary if no current income |
+| Unknown employment history | Check SSS records for prior employment contributions |
 
 ---
 
 ## Section 2 -- SSS (Social Security System)
 
-### 2.1 Overview
-
-The SSS provides social insurance for private sector workers and self-employed persons, covering sickness, maternity, disability, retirement, death, and funeral benefits.
-
-### 2.2 Contribution Rate (2025)
-
-| Component | Rate |
-|---|---|
-| Total contribution | 15% of Monthly Salary Credit (MSC) |
-| Employer share (employed) | 10% |
-| Employee share (employed) | 5% |
-| Self-employed / voluntary | 15% (full amount) |
-| Employees' Compensation (EC) | ₱10 or ₱30/month (employer only; added on top) |
-
-### 2.3 Monthly Salary Credit (MSC) Range
-
-| Item | Amount |
-|---|---|
-| Minimum MSC | ₱5,000 |
-| Maximum MSC | ₱35,000 |
-| Minimum monthly contribution (self-employed) | ₱750 (15% × ₱5,000) |
-| Maximum monthly contribution (self-employed) | ₱5,250 (15% × ₱35,000) |
-
-### 2.4 MSC Bracket Examples (Self-Employed)
-
-| Monthly Compensation Range | MSC | Total Contribution (15%) |
-|---|---|---|
-| Below ₱5,250 | ₱5,000 | ₱750 |
-| ₱5,250 -- ₱5,749.99 | ₱5,500 | ₱825 |
-| ₱9,750 -- ₱10,249.99 | ₱10,000 | ₱1,500 |
-| ₱14,750 -- ₱15,249.99 | ₱15,000 | ₱2,250 |
-| ₱19,750 -- ₱20,249.99 | ₱20,000 | ₱3,000 |
-| ₱24,750 -- ₱25,249.99 | ₱25,000 | ₱3,750 |
-| ₱29,750 -- ₱30,249.99 | ₱30,000 | ₱4,500 |
-| ₱34,750 and above | ₱35,000 | ₱5,250 |
-
-Note: For MSC above ₱20,000, contributions are split between Regular SS and Mandatory Provident Fund (MPF).
-
-### 2.5 Self-Employed Registration and Payment
+### 2.1 Legal Basis and Coverage
 
 | Item | Detail |
 |---|---|
-| Registration | SSS office, SSS website (sss.gov.ph), or SSS mobile app |
-| Declaration | Self-employed declare their monthly earnings to determine MSC |
-| Payment | Monthly; via SSS portal, banks, GCash, Maya, bayad centres, 7-Eleven |
-| Deadline | Last day of the month for current month's contribution; or per schedule by surname |
-| Can change MSC | Request MSC change via SSS; must be consistent with actual income |
+| Law | Republic Act No. 11199 (Social Security Act of 2018) |
+| Effective date (2025 rates) | January 1, 2025 (SSS Circular No. 2024-006) |
+| Who must register | Self-employed earning ≥₱1,000/month, professionals, sole proprietors, partners |
+| Benefits | Retirement, disability, death, maternity, sickness, unemployment (involuntary separation) |
+| Mandatory | YES for self-employed with income |
+| Voluntary | Available for those without current income (OFWs, non-working spouse) |
 
-### 2.6 SSS Benefits Summary
+### 2.2 Contribution Rates (2025)
 
-| Benefit | Key Detail |
+| Year | Total Rate | Min MSC | Max MSC |
+|---|---|---|---|
+| 2023 | 14% | ₱4,000 | ₱30,000 |
+| 2024 | 14% | ₱4,000 | ₱30,000 |
+| 2025 | 15% | ₱5,000 | ₱35,000 |
+
+Self-employed members pay the FULL 15% (no employer share).
+
+### 2.3 MSC Contribution Table 2025 (Selected Brackets)
+
+| Range of Monthly Earnings (₱) | Monthly Salary Credit (₱) | Total Contribution (₱) |
+|---|---|---|
+| Below 5,250 | 5,000 | 750 |
+| 5,250 -- 5,749.99 | 5,500 | 825 |
+| 5,750 -- 6,249.99 | 6,000 | 900 |
+| 6,250 -- 6,749.99 | 6,500 | 975 |
+| 6,750 -- 7,249.99 | 7,000 | 1,050 |
+| 7,250 -- 7,749.99 | 7,500 | 1,125 |
+| 7,750 -- 8,249.99 | 8,000 | 1,200 |
+| 8,750 -- 9,249.99 | 9,000 | 1,350 |
+| 9,750 -- 10,249.99 | 10,000 | 1,500 |
+| 11,750 -- 12,249.99 | 12,000 | 1,800 |
+| 14,750 -- 15,249.99 | 15,000 | 2,250 |
+| 19,750 -- 20,249.99 | 20,000 | 3,000 |
+| 24,750 -- 25,249.99 | 25,000 | 3,750 |
+| 29,750 -- 30,249.99 | 30,000 | 4,500 |
+| 34,750 and above | 35,000 | 5,250 |
+
+### 2.4 Mandatory Provident Fund (MPF)
+
+For earnings above ₱20,000 MSC, an additional MPF contribution applies:
+- MPF rate: 15% of MSC exceeding ₱20,000
+- Example: MSC ₱35,000 → MPF on ₱15,000 = ₱2,250
+- Total at max: ₱3,000 (Regular SS on ₱20,000) + ₱2,250 (MPF on ₱15,000) = ₱5,250
+
+### 2.5 Payment Deadlines
+
+| Last digit of SSS number | Deadline (day of month following contribution month) |
 |---|---|
-| Sickness | Up to 120 days/year; daily cash allowance based on MSC |
-| Maternity | 105 days (live birth), 60 days (miscarriage); cash allowance |
-| Disability | Monthly pension based on credited years and MSC |
-| Retirement | Monthly pension starting at age 60 (with 120 monthly contributions) |
-| Death | Lump sum or monthly pension to beneficiaries |
-| Funeral | ₱40,000 lump sum |
-| Unemployment (WISP-Plus) | For involuntary separation; requires 36 contributions in last 48 months |
+| 1 and 2 | 10th |
+| 3 and 4 | 15th |
+| 5 and 6 | 20th |
+| 7 and 8 | 25th |
+| 9 and 0 | Last day |
+
+### 2.6 Payment Methods
+
+- SSS online (my.sss.gov.ph) via bank transfer
+- Over-the-counter at accredited banks (BDO, BPI, Landbank, etc.)
+- Payment centres (Bayad Center, SM Bills Payment, 7-Eleven)
+- GCash, Maya (PayMaya)
+- SSS Mobile App
+
+### 2.7 Penalties for Late Payment
+
+| Infraction | Penalty |
+|---|---|
+| Late contribution | 2% per month of unpaid amount |
+| Non-registration | Criminal liability under RA 11199 Sec. 28(e) |
+| Under-declaration of income | Back-payment of differential + 2%/month penalty |
 
 ---
 
 ## Section 3 -- PhilHealth (Philippine Health Insurance Corporation)
 
-### 3.1 Overview
+### 3.1 Legal Basis and Coverage
 
-PhilHealth provides mandatory national health insurance to all Filipino citizens under the Universal Health Care Act (RA 11223).
+| Item | Detail |
+|---|---|
+| Law | Republic Act No. 11223 (Universal Health Care Act of 2019) |
+| Who must register | ALL Filipino citizens (mandatory universal coverage) |
+| Classification | Self-employed: Direct Contributors (individually paying members) |
+| Benefits | Inpatient, outpatient, Z-benefits (catastrophic), primary care |
+| Mandatory | YES for all citizens and permanent residents |
 
 ### 3.2 Contribution Rate (2025)
 
-| Item | Value |
-|---|---|
-| Premium rate | 5% of Monthly Basic Salary (MBS) |
-| Floor salary | ₱10,000 |
-| Ceiling salary | ₱100,000 |
-| Minimum monthly premium | ₱500 (5% × ₱10,000) |
-| Maximum monthly premium | ₱5,000 (5% × ₱100,000) |
-| Employer share (employed) | 2.5% |
-| Employee share (employed) | 2.5% |
-| Self-employed / voluntary / direct contributor | 5% (full amount) |
-
-### 3.3 Self-Employed PhilHealth
-
 | Item | Detail |
 |---|---|
-| Basis | Declared monthly income |
-| Minimum income | ₱10,000 (premium = ₱500/month) |
-| Maximum income | ₱100,000 (premium = ₱5,000/month) |
-| Payment | Monthly, quarterly, semi-annual, or annual |
-| Channels | PhilHealth office, online (member.philhealth.gov.ph), GCash, Maya, bayad centres |
-| Benefits | Inpatient/outpatient coverage, Z benefits for catastrophic conditions |
+| Premium rate | 5% of monthly basic salary/income |
+| Employer/employee split (employed) | 50/50 (2.5% each) |
+| Self-employed | Pays FULL 5% |
+| Income floor | ₱10,000/month |
+| Income ceiling | ₱100,000/month |
+| Minimum monthly premium | ₱500 (5% × ₱10,000) |
+| Maximum monthly premium | ₱5,000 (5% × ₱100,000) |
 
-### 3.4 PhilHealth Benefits Summary
+### 3.3 PhilHealth Premium Table 2025 (Self-Employed)
 
-| Benefit | Detail |
+| Monthly Income (₱) | Monthly Premium (₱) |
 |---|---|
-| Inpatient | Room and board, drugs, lab, professional fees (case rates) |
-| Outpatient | Primary care, outpatient drugs, lab (in accredited facilities) |
-| Z Benefits | Catastrophic conditions (cancer, etc.) |
-| Maternity | Normal delivery and caesarean section packages |
-| Day surgery | Covered under case rates |
+| ₱10,000 and below | 500 |
+| ₱15,000 | 750 |
+| ₱20,000 | 1,000 |
+| ₱25,000 | 1,250 |
+| ₱30,000 | 1,500 |
+| ₱40,000 | 2,000 |
+| ₱50,000 | 2,500 |
+| ₱60,000 | 3,000 |
+| ₱70,000 | 3,500 |
+| ₱80,000 | 4,000 |
+| ₱90,000 | 4,500 |
+| ₱100,000 and above | 5,000 |
+
+### 3.4 Payment Schedule
+
+| Payment Frequency | Due Date |
+|---|---|
+| Monthly | Before the last day of the applicable month |
+| Quarterly | Before the last day of the first month of the applicable quarter |
+| Semi-annual | Before the last day of the first month of the applicable semester |
+| Annual | Before the last day of January |
+
+### 3.5 Payment Methods
+
+- PhilHealth online (memberinquiry.philhealth.gov.ph)
+- Banks (Landbank, BDO, BPI, RCBC, UnionBank)
+- GCash, Maya
+- Bayad Center, SM Bills Payment
+- PhilHealth Local Health Insurance Offices (LHIOs)
+
+### 3.6 Penalties
+
+| Infraction | Penalty |
+|---|---|
+| Late payment | 2% per month of unpaid premium |
+| Non-registration | Loss of benefits; back-payment required for reinstatement |
+| Fraudulent claims | Criminal liability under RA 11223 |
 
 ---
 
-## Section 4 -- Pag-IBIG (HDMF -- Home Development Mutual Fund)
+## Section 4 -- Pag-IBIG / HDMF (Home Development Mutual Fund)
 
-### 4.1 Overview
+### 4.1 Legal Basis and Coverage
 
-Pag-IBIG is a savings programme that provides members access to housing loans, multi-purpose loans, and calamity loans.
+| Item | Detail |
+|---|---|
+| Law | Republic Act No. 9679 (Home Development Mutual Fund Law of 2009) |
+| Agency | HDMF (Home Development Mutual Fund), commonly called Pag-IBIG Fund |
+| Who must register | Employed (mandatory); self-employed (voluntary but strongly encouraged) |
+| Benefits | Housing loan, multi-purpose loan, calamity loan, savings (with dividends) |
+| Mandatory for self-employed | NO -- voluntary for self-employed and informal sector |
 
 ### 4.2 Contribution Rates
 
-| Monthly Salary | Employee Rate | Employer Rate |
-|---|---|---|
-| ≤₱1,500 | 1% | 2% |
-| >₱1,500 | 2% | 2% |
-
-| Item | Amount |
-|---|---|
-| Maximum Monthly Fund Salary (MFS) | ₱10,000 |
-| Maximum employee contribution | ₱200/month (2% × ₱10,000) |
-| Maximum employer contribution | ₱200/month |
-| Maximum total contribution | ₱400/month |
-
-### 4.3 Self-Employed Pag-IBIG
-
-| Item | Detail |
-|---|---|
-| Status | Voluntary for self-employed |
-| Minimum contribution | ₱200/month |
-| Registration | Pag-IBIG Fund office or online (pagibigfund.gov.ph) |
-| Payment | Monthly via Pag-IBIG portal, banks, bayad centres |
-| Benefits | Housing loan (after 24 monthly contributions), multi-purpose loan (after 24 contributions), calamity loan |
-
-### 4.4 Modified Pag-IBIG 2 (MP2)
-
-| Item | Detail |
-|---|---|
-| What | Voluntary savings programme with higher dividends |
-| Minimum | ₱500 per contribution |
-| Term | 5 years |
-| Tax | Dividends are tax-exempt |
-
----
-
-## Section 5 -- Combined Monthly Cost for Self-Employed
-
-### 5.1 Example: Self-Employed Earning ₱25,000/month
-
-| System | Monthly Contribution |
-|---|---|
-| SSS (MSC ₱25,000 × 15%) | ₱3,750 |
-| PhilHealth (₱25,000 × 5%) | ₱1,250 |
-| Pag-IBIG (voluntary, ₱200) | ₱200 |
-| **Total** | **₱5,200** |
-
-### 5.2 Example: Self-Employed Earning ₱50,000/month
-
-| System | Monthly Contribution |
-|---|---|
-| SSS (capped at MSC ₱35,000 × 15%) | ₱5,250 |
-| PhilHealth (₱50,000 × 5%) | ₱2,500 |
-| Pag-IBIG (voluntary, ₱200) | ₱200 |
-| **Total** | **₱7,950** |
-
----
-
-## Section 6 -- Payment Deadlines and Channels
-
-### 6.1 Deadlines
-
-| System | Employed | Self-Employed |
-|---|---|---|
-| SSS | By last day of month following salary month | By last day of applicable month (or per SSS schedule) |
-| PhilHealth | By last day of month following salary month | Monthly/quarterly/semi-annual/annual |
-| Pag-IBIG | By last day of month following salary month | Monthly |
-
-### 6.2 Online Payment Channels
-
-| Channel | SSS | PhilHealth | Pag-IBIG |
+| Monthly Compensation | Employee Share | Employer Share | Total |
 |---|---|---|---|
-| SSS website/app | Yes | No | No |
-| PhilHealth portal | No | Yes | No |
-| Pag-IBIG portal | No | No | Yes |
-| GCash | Yes | Yes | Yes |
-| Maya | Yes | Yes | Yes |
-| Bayad Centre / 7-Eleven | Yes | Yes | Yes |
-| Banks (BDO, BPI, etc.) | Yes | Yes | Yes |
+| ≤₱1,500 | 1% | 2% | 3% |
+| >₱1,500 | 2% | 2% | 4% |
+| Self-employed | 2% of declared income (min ₱200) | N/A | ₱200 minimum |
+
+**Self-employed contribution:**
+- Minimum: ₱200/month
+- May voluntarily contribute up to ₱5,000/month
+- Higher contributions = higher savings + higher loan eligibility
+
+### 4.3 Modified Pag-IBIG 2 (MP2) Savings
+
+| Feature | Detail |
+|---|---|
+| Minimum savings | ₱500/month (or lump sum) |
+| Term | 5 years |
+| Dividends | Tax-free; historically 6%--7% per annum |
+| Withdrawal | After 5-year lock-in or upon qualified events |
+| Additional benefit | Increases housing loan eligibility |
+
+### 4.4 Payment Schedule
+
+- Monthly contribution due by the 15th of the following month
+- Can pay quarterly, semi-annually, or annually in advance
+- Minimum 24 monthly contributions required for loan eligibility
+
+### 4.5 Payment Methods
+
+- Pag-IBIG Virtual (virtual.pagibigfund.gov.ph)
+- Banks (BDO, BPI, Landbank, Metrobank)
+- GCash, Maya
+- Bayad Center, SM Bills Payment, 7-Eleven
+- Pag-IBIG Fund branches
 
 ---
 
-## Section 7 -- Penalties
+## Section 5 -- Registration Requirements
 
-| System | Penalty for Late/Non-Payment |
+### 5.1 SSS Registration (Self-Employed)
+
+| Requirement | Detail |
 |---|---|
-| SSS | 2% monthly penalty on unpaid contributions |
-| PhilHealth | 2% monthly penalty; loss of benefits if contributions not up to date |
-| Pag-IBIG | Membership benefits suspended until arrears are settled |
+| Form | SSS Form RS-1 (Self-Employed Registration) |
+| Documents | Valid ID (2 government-issued), proof of income/business registration |
+| Where | SSS branch or online (my.sss.gov.ph) |
+| SSS Number | Issued upon registration; lifetime number |
+| Income declaration | Must declare estimated monthly earnings |
+| Change of MSC | Submit request at SSS branch or online to increase/decrease |
+
+### 5.2 PhilHealth Registration (Self-Employed)
+
+| Requirement | Detail |
+|---|---|
+| Form | PhilHealth Member Registration Form (PMRF) |
+| Documents | Valid ID, proof of income, birth certificate (first-time) |
+| Where | PhilHealth LHIO or online |
+| PhilHealth Number | Issued upon registration; lifetime number |
+| Income declaration | Self-declare monthly income for premium computation |
+
+### 5.3 Pag-IBIG Registration (Self-Employed/Voluntary)
+
+| Requirement | Detail |
+|---|---|
+| Form | HDMF Member's Data Form (MDF) |
+| Documents | Valid ID, proof of income (if self-employed) |
+| Where | Pag-IBIG branch or virtual.pagibigfund.gov.ph |
+| Pag-IBIG MID Number | 12-digit Member ID issued upon registration |
+| Loyalty Card | Free Pag-IBIG Loyalty Card (UMID equivalent) |
 
 ---
 
-## Section 8 -- Tax Treatment
+## Section 6 -- Computation Examples
 
-| Contribution | Tax Treatment |
-|---|---|
-| SSS (self-employed) | Not deductible as business expense; however, reduces taxable income effectively through the contribution structure |
-| PhilHealth (self-employed) | Not directly deductible; part of personal obligations |
-| Pag-IBIG (self-employed) | Not deductible |
-| SSS (employee share) | Not subject to income tax (exempt from withholding) |
-| Employer SSS/PhilHealth/Pag-IBIG | Deductible business expense for employer |
+### Example 1 -- Freelancer Earning ₱30,000/month
+
+| Agency | Basis | Rate | Monthly Contribution |
+|---|---|---|---|
+| SSS | MSC ₱30,000 | 15% | ₱4,500 |
+| PhilHealth | Income ₱30,000 | 5% | ₱1,500 |
+| Pag-IBIG | Minimum voluntary | Fixed | ₱200 |
+| **Total** | | | **₱6,200** |
+
+Annual total: ₱6,200 × 12 = **₱74,400**
+
+### Example 2 -- Freelancer Earning ₱15,000/month
+
+| Agency | Basis | Rate | Monthly Contribution |
+|---|---|---|---|
+| SSS | MSC ₱15,000 | 15% | ₱2,250 |
+| PhilHealth | Income ₱15,000 | 5% | ₱750 |
+| Pag-IBIG | Minimum voluntary | Fixed | ₱200 |
+| **Total** | | | **₱3,200** |
+
+Annual total: ₱3,200 × 12 = **₱38,400**
+
+### Example 3 -- Maximum Contributions
+
+| Agency | Basis | Rate | Monthly Contribution |
+|---|---|---|---|
+| SSS | MSC ₱35,000 (max) | 15% | ₱5,250 |
+| PhilHealth | Income ₱100,000+ (ceiling) | 5% | ₱5,000 |
+| Pag-IBIG | Maximum voluntary | Fixed | ₱5,000 |
+| **Total** | | | **₱15,250** |
+
+Annual total: ₱15,250 × 12 = **₱183,000**
 
 ---
 
-## Section 9 -- Reference Material
+## Section 7 -- Tax Deductibility
 
-### Key Portals
-
-| System | URL |
-|---|---|
-| SSS | https://www.sss.gov.ph |
-| PhilHealth | https://www.philhealth.gov.ph |
-| Pag-IBIG | https://www.pagibigfund.gov.ph |
-
-### Key Legislation
-
-| System | Act |
-|---|---|
-| SSS | RA 11199 (Social Security Act of 2018) |
-| PhilHealth | RA 11223 (Universal Health Care Act of 2019) |
-| Pag-IBIG | RA 9679 (Home Development Mutual Fund Law of 2009) |
+| Contribution | Tax Deductible? | Basis |
+|---|---|---|
+| SSS (self-employed) | YES | Deductible as business expense or premium payment |
+| PhilHealth (self-employed) | YES | Deductible under NIRC Sec. 34(M) |
+| Pag-IBIG (employee share) | YES | Up to ₱200/month for employed; full amount for self-employed |
+| Pag-IBIG MP2 | NO | Savings program, not a premium |
 
 ---
 
-## Prohibitions
+## Section 8 -- Edge Cases
 
-- NEVER advise self-employed persons to skip SSS or PhilHealth -- both are mandatory
-- NEVER use employer/employee split rates for self-employed -- self-employed pay the full rate
-- NEVER exceed the MSC ceiling (₱35,000 for SSS) or MBS ceiling (₱100,000 for PhilHealth) in calculations
-- NEVER assume Pag-IBIG is mandatory for self-employed -- it is voluntary
-- NEVER present contribution amounts without checking the current year's official tables
-- NEVER present calculations as definitive -- always verify against official SSS/PhilHealth tables
+### 8.1 Multiple Income Sources
+
+If a person is both employed AND self-employed:
+- SSS: employer handles employed portion; self-employed contribution is separate
+- PhilHealth: only one membership -- employer deducts; no double contribution
+- Pag-IBIG: employer handles mandatory; may add voluntary on top
+
+### 8.2 Overseas Filipino Workers (OFWs)
+
+- SSS: Voluntary member; can choose MSC ₱5,000--₱35,000
+- PhilHealth: OFW category; separate premium schedule
+- Pag-IBIG: Voluntary; same ₱200 minimum
+
+### 8.3 Kasambahay (Domestic Workers)
+
+- SSS: Employer pays if salary ≤₱5,000; shared above
+- PhilHealth: Employer pays full premium if salary ≤₱5,000
+- Pag-IBIG: Employer pays if salary ≤₱5,000
+
+### 8.4 Senior Citizens (60+)
+
+- SSS: Can continue voluntary contributions until retirement claim
+- PhilHealth: Lifetime member after 120 monthly contributions; no further payments needed
+- Pag-IBIG: May continue voluntary contributions; eligible for retirement claim after age 65
+
+### 8.5 Gaps in Payment
+
+| Agency | Effect of Gap | Remedy |
+|---|---|---|
+| SSS | No benefit eligibility until minimum contributions met | Pay arrears with 2%/month penalty |
+| PhilHealth | Benefits suspended after 9 months non-payment | Pay 3 months to reactivate (within qualifying period) |
+| Pag-IBIG | Loan eligibility lost until 24 contributions met | Resume payments; no back-payment required |
+
+---
+
+## Section 9 -- Online Portal Reference
+
+| Portal | URL | Key Functions |
+|---|---|---|
+| My.SSS | my.sss.gov.ph | View contributions, generate PRN, file claims |
+| PhilHealth Member | memberinquiry.philhealth.gov.ph | Check status, update info, print MDR |
+| Pag-IBIG Virtual | virtual.pagibigfund.gov.ph | View savings, apply for loans, update info |
+| SSS Mobile | SSS Mobile App (iOS/Android) | Same as My.SSS |
+| BIR (for deductions) | bir.gov.ph | eFPS, annual ITR filing |
+
+---
+
+## Section 10 -- Reference Material
+
+| Topic | Reference |
+|---|---|
+| SSS contribution rates 2025 | SSS Circular No. 2024-006 (December 19, 2024) |
+| SSS law | Republic Act No. 11199 (Social Security Act of 2018) |
+| SSS rate schedule (RA 11199) | Section 18-A (phased increase 2019--2025) |
+| PhilHealth premium rate | RA 11223 Sec. 10; PhilHealth Circular 2024-0009 |
+| PhilHealth UHC | Republic Act No. 11223 (Universal Health Care Act of 2019) |
+| Pag-IBIG law | Republic Act No. 9679 (HDMF Law of 2009) |
+| Pag-IBIG contributions | HDMF Circular No. 274 (amended rates) |
+| Tax deductibility | NIRC Sec. 34(M); RR 11-2018 |
+| BIR self-employed registration | BIR RR 7-2012 |
 
 ---
 
 ## Disclaimer
 
-This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, EA, tax attorney, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
+This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, labour law practitioner, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
 
 The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.

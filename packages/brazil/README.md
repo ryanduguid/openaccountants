@@ -12,10 +12,16 @@
 5. `br-indirect-tax.md`
 6. `br-inss.md`
 7. `br-simples-nacional.md`
-8. `brazil-vat.md`
-9. `references.md`
-10. `brazil-guided-intake.md`
-11. `brazil-return-assembly.md`
+8. `brazil-einvoice.md`
+9. `brazil-payroll.md`
+10. `brazil-transfer-pricing.md`
+11. `brazil-vat.md`
+12. `references.md`
+13. `einvoice-workflow-base.md`
+14. `payroll-workflow-base.md`
+15. `transfer-pricing-workflow-base.md`
+16. `brazil-guided-intake.md`
+17. `brazil-return-assembly.md`
 
 ## Also known as
 

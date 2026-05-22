@@ -7,17 +7,28 @@
 
 1. `foundation.md`
 2. `intake.md`
-3. `netherlands-vat-return.md`
-4. `nl-corporate-tax.md`
-5. `nl-deductions.md`
-6. `nl-income-tax.md`
-7. `nl-payroll-tax.md`
-8. `nl-tax-objection.md`
-9. `nl-zzp-deductions.md`
-10. `references.md`
-11. `eu-vat-directive.md`
-12. `netherlands-guided-intake.md`
-13. `netherlands-return-assembly.md`
+3. `netherlands-bookkeeping.md`
+4. `netherlands-financial-statements.md`
+5. `netherlands-formation.md`
+6. `netherlands-payroll.md`
+7. `netherlands-tax-optimization.md`
+8. `netherlands-transfer-pricing.md`
+9. `netherlands-vat-return.md`
+10. `nl-corporate-tax.md`
+11. `nl-deductions.md`
+12. `nl-income-tax.md`
+13. `nl-payroll-tax.md`
+14. `nl-tax-objection.md`
+15. `nl-zzp-deductions.md`
+16. `references.md`
+17. `eu-vat-directive.md`
+18. `bookkeeping-workflow-base.md`
+19. `payroll-workflow-base.md`
+20. `company-formation-workflow-base.md`
+21. `financial-statements-workflow-base.md`
+22. `transfer-pricing-workflow-base.md`
+23. `netherlands-guided-intake.md`
+24. `netherlands-return-assembly.md`
 
 ## Also known as
 

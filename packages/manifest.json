@@ -1,6 +1,6 @@
 {
   "generated": "2026-05-22",
-  "total_packages": 185,
+  "total_packages": 187,
   "international_packages": 133,
   "us_state_packages": 51,
   "packages": [
@@ -13,7 +13,14 @@
         "albania-vat.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 1
+      "skill_count": 1,
+      "has_bookkeeping": false,
+      "has_einvoice": false,
+      "has_payroll": false,
+      "has_formation": false,
+      "has_financial_statements": false,
+      "has_transfer_pricing": false,
+      "has_tax_optimization": false
     },
     {
       "jurisdiction": "DZ",
@@ -24,7 +31,14 @@
         "algeria-vat.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 1
+      "skill_count": 1,
+      "has_bookkeeping": false,
+      "has_einvoice": false,
+      "has_payroll": false,
+      "has_formation": false,
+      "has_financial_statements": false,
+      "has_transfer_pricing": false,
+      "has_tax_optimization": false
     },
     {
       "jurisdiction": "AD",
@@ -35,7 +49,14 @@
         "andorra-igi.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 1
+      "skill_count": 1,
+      "has_bookkeeping": false,
+      "has_einvoice": false,
+      "has_payroll": false,
+      "has_formation": false,
+      "has_financial_statements": false,
+      "has_transfer_pricing": false,
+      "has_tax_optimization": false
     },
     {
       "jurisdiction": "AR",
@@ -51,7 +72,14 @@
         "references.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 5
+      "skill_count": 5,
+      "has_bookkeeping": false,
+      "has_einvoice": false,
+      "has_payroll": false,
+      "has_formation": false,
+      "has_financial_statements": false,
+      "has_transfer_pricing": false,
+      "has_tax_optimization": false
     },
     {
       "jurisdiction": "AM",
@@ -62,7 +90,14 @@
         "armenia-vat.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 1
+      "skill_count": 1,
+      "has_bookkeeping": false,
+      "has_einvoice": false,
+      "has_payroll": false,
+      "has_formation": false,
+      "has_financial_statements": false,
+      "has_transfer_pricing": false,
+      "has_tax_optimization": false
     },
     {
       "jurisdiction": "AU",
@@ -77,13 +112,31 @@
         "au-rental-property.md",
         "au-sole-trader-schedule.md",
         "au-super-guarantee.md",
+        "australia-bookkeeping.md",
+        "australia-financial-statements.md",
+        "australia-formation.md",
         "australia-gst.md",
+        "australia-payroll.md",
+        "australia-tax-optimization.md",
+        "australia-transfer-pricing.md",
         "references.md",
+        "bookkeeping-workflow-base.md",
+        "payroll-workflow-base.md",
+        "company-formation-workflow-base.md",
+        "financial-statements-workflow-base.md",
+        "transfer-pricing-workflow-base.md",
         "australia-guided-intake.md",
         "australia-return-assembly.md"
       ],
       "has_orchestrator": true,
-      "skill_count": 8
+      "skill_count": 14,
+      "has_bookkeeping": true,
+      "has_einvoice": false,
+      "has_payroll": true,
+      "has_formation": true,
+      "has_financial_statements": true,
+      "has_transfer_pricing": true,
+      "has_tax_optimization": true
     },
     {
       "jurisdiction": "AT",
@@ -97,7 +150,14 @@
         "eu-vat-directive.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 3
+      "skill_count": 3,
+      "has_bookkeeping": false,
+      "has_einvoice": false,
+      "has_payroll": false,
+      "has_formation": false,
+      "has_financial_statements": false,
+      "has_transfer_pricing": false,
+      "has_tax_optimization": false
     },
     {
       "jurisdiction": "AZ",
@@ -108,7 +168,14 @@
         "azerbaijan-vat.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 1
+      "skill_count": 1,
+      "has_bookkeeping": false,
+      "has_einvoice": false,
+      "has_payroll": false,
+      "has_formation": false,
+      "has_financial_statements": false,
+      "has_transfer_pricing": false,
+      "has_tax_optimization": false
     },
     {
       "jurisdiction": "BS",
@@ -119,7 +186,14 @@
         "bahamas-vat.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 1
+      "skill_count": 1,
+      "has_bookkeeping": false,
+      "has_einvoice": false,
+      "has_payroll": false,
+      "has_formation": false,
+      "has_financial_statements": false,
+      "has_transfer_pricing": false,
+      "has_tax_optimization": false
     },
     {
       "jurisdiction": "BH",
@@ -130,7 +204,14 @@
         "bahrain-vat.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 1
+      "skill_count": 1,
+      "has_bookkeeping": false,
+      "has_einvoice": false,
+      "has_payroll": false,
+      "has_formation": false,
+      "has_financial_statements": false,
+      "has_transfer_pricing": false,
+      "has_tax_optimization": false
     },
     {
       "jurisdiction": "BD",
@@ -143,7 +224,14 @@
         "references.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 2
+      "skill_count": 2,
+      "has_bookkeeping": false,
+      "has_einvoice": false,
+      "has_payroll": false,
+      "has_formation": false,
+      "has_financial_statements": false,
+      "has_transfer_pricing": false,
+      "has_tax_optimization": false
     },
     {
       "jurisdiction": "BB",
@@ -154,7 +242,14 @@
         "barbados-vat.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 1
+      "skill_count": 1,
+      "has_bookkeeping": false,
+      "has_einvoice": false,
+      "has_payroll": false,
+      "has_formation": false,
+      "has_financial_statements": false,
+      "has_transfer_pricing": false,
+      "has_tax_optimization": false
     },
     {
       "jurisdiction": "BY",
@@ -165,7 +260,14 @@
         "belarus-vat.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 1
+      "skill_count": 1,
+      "has_bookkeeping": false,
+      "has_einvoice": false,
+      "has_payroll": false,
+      "has_formation": false,
+      "has_financial_statements": false,
+      "has_transfer_pricing": false,
+      "has_tax_optimization": false
     },
     {
       "jurisdiction": "BE",
@@ -175,11 +277,26 @@
         "intake.md",
         "be-income-tax.md",
         "be-social-contributions.md",
+        "belgium-bookkeeping.md",
+        "belgium-einvoice.md",
+        "belgium-financial-statements.md",
+        "belgium-payroll.md",
         "belgium-vat-return.md",
-        "eu-vat-directive.md"
+        "eu-vat-directive.md",
+        "bookkeeping-workflow-base.md",
+        "einvoice-workflow-base.md",
+        "payroll-workflow-base.md",
+        "financial-statements-workflow-base.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 3
+      "skill_count": 7,
+      "has_bookkeeping": true,
+      "has_einvoice": true,
+      "has_payroll": true,
+      "has_formation": false,
+      "has_financial_statements": true,
+      "has_transfer_pricing": false,
+      "has_tax_optimization": false
     },
     {
       "jurisdiction": "BM",
@@ -190,7 +307,14 @@
         "bermuda-tax.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 1
+      "skill_count": 1,
+      "has_bookkeeping": false,
+      "has_einvoice": false,
+      "has_payroll": false,
+      "has_formation": false,
+      "has_financial_statements": false,
+      "has_transfer_pricing": false,
+      "has_tax_optimization": false
     },
     {
       "jurisdiction": "BO",
@@ -201,7 +325,14 @@
         "bolivia-iva.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 1
+      "skill_count": 1,
+      "has_bookkeeping": false,
+      "has_einvoice": false,
+      "has_payroll": false,
+      "has_formation": false,
+      "has_financial_statements": false,
+      "has_transfer_pricing": false,
+      "has_tax_optimization": false
     },
     {
       "jurisdiction": "BA",
@@ -212,7 +343,14 @@
         "bosnia-vat.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 1
+      "skill_count": 1,
+      "has_bookkeeping": false,
+      "has_einvoice": false,
+      "has_payroll": false,
+      "has_formation": false,
+      "has_financial_statements": false,
+      "has_transfer_pricing": false,
+      "has_tax_optimization": false
     },
     {
       "jurisdiction": "BR",
@@ -225,13 +363,26 @@
         "br-indirect-tax.md",
         "br-inss.md",
         "br-simples-nacional.md",
+        "brazil-einvoice.md",
+        "brazil-payroll.md",
+        "brazil-transfer-pricing.md",
         "brazil-vat.md",
         "references.md",
+        "einvoice-workflow-base.md",
+        "payroll-workflow-base.md",
+        "transfer-pricing-workflow-base.md",
         "brazil-guided-intake.md",
         "brazil-return-assembly.md"
       ],
       "has_orchestrator": true,
-      "skill_count": 6
+      "skill_count": 9,
+      "has_bookkeeping": false,
+      "has_einvoice": true,
+      "has_payroll": true,
+      "has_formation": false,
+      "has_financial_statements": false,
+      "has_transfer_pricing": true,
+      "has_tax_optimization": false
     },
     {
       "jurisdiction": "BN",
@@ -242,7 +393,14 @@
         "brunei-tax.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 1
+      "skill_count": 1,
+      "has_bookkeeping": false,
+      "has_einvoice": false,
+      "has_payroll": false,
+      "has_formation": false,
+      "has_financial_statements": false,
+      "has_transfer_pricing": false,
+      "has_tax_optimization": false
     },
     {
       "jurisdiction": "BG",
@@ -254,7 +412,14 @@
         "eu-vat-directive.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 1
+      "skill_count": 1,
+      "has_bookkeeping": false,
+      "has_einvoice": false,
+      "has_payroll": false,
+      "has_formation": false,
+      "has_financial_statements": false,
+      "has_transfer_pricing": false,
+      "has_tax_optimization": false
     },
     {
       "jurisdiction": "VG",
@@ -265,7 +430,14 @@
         "bvi-tax.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 1
+      "skill_count": 1,
+      "has_bookkeeping": false,
+      "has_einvoice": false,
+      "has_payroll": false,
+      "has_formation": false,
+      "has_financial_statements": false,
+      "has_transfer_pricing": false,
+      "has_tax_optimization": false
     },
     {
       "jurisdiction": "KH",
@@ -276,7 +448,14 @@
         "cambodia-vat.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 1
+      "skill_count": 1,
+      "has_bookkeeping": false,
+      "has_einvoice": false,
+      "has_payroll": false,
+      "has_formation": false,
+      "has_financial_statements": false,
+      "has_transfer_pricing": false,
+      "has_tax_optimization": false
     },
     {
       "jurisdiction": "CM",
@@ -287,7 +466,14 @@
         "cameroon-vat.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 1
+      "skill_count": 1,
+      "has_bookkeeping": false,
+      "has_einvoice": false,
+      "has_payroll": false,
+      "has_formation": false,
+      "has_financial_statements": false,
+      "has_transfer_pricing": false,
+      "has_tax_optimization": false
     },
     {
       "jurisdiction": "CA",
@@ -301,7 +487,13 @@
         "ca-fed-t1-return.md",
         "ca-fed-t1135.md",
         "ca-fed-t2125.md",
+        "canada-bookkeeping.md",
+        "canada-financial-statements.md",
+        "canada-formation.md",
         "canada-gst-hst.md",
+        "canada-payroll.md",
+        "canada-tax-optimization.md",
+        "canada-transfer-pricing.md",
         "references.md",
         "nb-individual-return.md",
         "sk-individual-return.md",
@@ -314,11 +506,23 @@
         "qc-individual-return.md",
         "qc-qst-return.md",
         "ab-individual-return.md",
+        "bookkeeping-workflow-base.md",
+        "payroll-workflow-base.md",
+        "company-formation-workflow-base.md",
+        "financial-statements-workflow-base.md",
+        "transfer-pricing-workflow-base.md",
         "canada-guided-intake.md",
         "canada-return-assembly.md"
       ],
       "has_orchestrator": true,
-      "skill_count": 18
+      "skill_count": 24,
+      "has_bookkeeping": true,
+      "has_einvoice": false,
+      "has_payroll": true,
+      "has_formation": true,
+      "has_financial_statements": true,
+      "has_transfer_pricing": true,
+      "has_tax_optimization": true
     },
     {
       "jurisdiction": "KY",
@@ -329,7 +533,14 @@
         "cayman-tax.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 1
+      "skill_count": 1,
+      "has_bookkeeping": false,
+      "has_einvoice": false,
+      "has_payroll": false,
+      "has_formation": false,
+      "has_financial_statements": false,
+      "has_transfer_pricing": false,
+      "has_tax_optimization": false
     },
     {
       "jurisdiction": "CL",
@@ -344,7 +555,14 @@
         "references.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 4
+      "skill_count": 4,
+      "has_bookkeeping": false,
+      "has_einvoice": false,
+      "has_payroll": false,
+      "has_formation": false,
+      "has_financial_statements": false,
+      "has_transfer_pricing": false,
+      "has_tax_optimization": false
     },
     {
       "jurisdiction": "CN",
@@ -357,7 +575,14 @@
         "references.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 2
+      "skill_count": 2,
+      "has_bookkeeping": false,
+      "has_einvoice": false,
+      "has_payroll": false,
+      "has_formation": false,
+      "has_financial_statements": false,
+      "has_transfer_pricing": false,
+      "has_tax_optimization": false
     },
     {
       "jurisdiction": "CO",
@@ -371,7 +596,14 @@
         "colombia-iva.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 4
+      "skill_count": 4,
+      "has_bookkeeping": false,
+      "has_einvoice": false,
+      "has_payroll": false,
+      "has_formation": false,
+      "has_financial_statements": false,
+      "has_transfer_pricing": false,
+      "has_tax_optimization": false
     },
     {
       "jurisdiction": "CR",
@@ -382,7 +614,14 @@
         "costa-rica-iva.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 1
+      "skill_count": 1,
+      "has_bookkeeping": false,
+      "has_einvoice": false,
+      "has_payroll": false,
+      "has_formation": false,
+      "has_financial_statements": false,
+      "has_transfer_pricing": false,
+      "has_tax_optimization": false
     },
     {
       "jurisdiction": "HR",
@@ -394,7 +633,14 @@
         "eu-vat-directive.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 1
+      "skill_count": 1,
+      "has_bookkeeping": false,
+      "has_einvoice": false,
+      "has_payroll": false,
+      "has_formation": false,
+      "has_financial_statements": false,
+      "has_transfer_pricing": false,
+      "has_tax_optimization": false
     },
     {
       "jurisdiction": "CY",
@@ -406,7 +652,14 @@
         "eu-vat-directive.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 1
+      "skill_count": 1,
+      "has_bookkeeping": false,
+      "has_einvoice": false,
+      "has_payroll": false,
+      "has_formation": false,
+      "has_financial_statements": false,
+      "has_transfer_pricing": false,
+      "has_tax_optimization": false
     },
     {
       "jurisdiction": "CZ",
@@ -421,7 +674,14 @@
         "eu-vat-directive.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 3
+      "skill_count": 3,
+      "has_bookkeeping": false,
+      "has_einvoice": false,
+      "has_payroll": false,
+      "has_formation": false,
+      "has_financial_statements": false,
+      "has_transfer_pricing": false,
+      "has_tax_optimization": false
     },
     {
       "jurisdiction": "DK",
@@ -435,7 +695,14 @@
         "eu-vat-directive.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 2
+      "skill_count": 2,
+      "has_bookkeeping": false,
+      "has_einvoice": false,
+      "has_payroll": false,
+      "has_formation": false,
+      "has_financial_statements": false,
+      "has_transfer_pricing": false,
+      "has_tax_optimization": false
     },
     {
       "jurisdiction": "DO",
@@ -446,7 +713,14 @@
         "dominican-republic-itbis.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 1
+      "skill_count": 1,
+      "has_bookkeeping": false,
+      "has_einvoice": false,
+      "has_payroll": false,
+      "has_formation": false,
+      "has_financial_statements": false,
+      "has_transfer_pricing": false,
+      "has_tax_optimization": false
     },
     {
       "jurisdiction": "EC",
@@ -457,7 +731,14 @@
         "ecuador-iva.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 1
+      "skill_count": 1,
+      "has_bookkeeping": false,
+      "has_einvoice": false,
+      "has_payroll": false,
+      "has_formation": false,
+      "has_financial_statements": false,
+      "has_transfer_pricing": false,
+      "has_tax_optimization": false
     },
     {
       "jurisdiction": "EG",
@@ -468,7 +749,14 @@
         "egypt-vat.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 1
+      "skill_count": 1,
+      "has_bookkeeping": false,
+      "has_einvoice": false,
+      "has_payroll": false,
+      "has_formation": false,
+      "has_financial_statements": false,
+      "has_transfer_pricing": false,
+      "has_tax_optimization": false
     },
     {
       "jurisdiction": "SV",
@@ -479,7 +767,14 @@
         "el-salvador-iva.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 1
+      "skill_count": 1,
+      "has_bookkeeping": false,
+      "has_einvoice": false,
+      "has_payroll": false,
+      "has_formation": false,
+      "has_financial_statements": false,
+      "has_transfer_pricing": false,
+      "has_tax_optimization": false
     },
     {
       "jurisdiction": "EE",
@@ -491,7 +786,14 @@
         "eu-vat-directive.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 1
+      "skill_count": 1,
+      "has_bookkeeping": false,
+      "has_einvoice": false,
+      "has_payroll": false,
+      "has_formation": false,
+      "has_financial_statements": false,
+      "has_transfer_pricing": false,
+      "has_tax_optimization": false
     },
     {
       "jurisdiction": "ET",
@@ -502,7 +804,14 @@
         "ethiopia-vat.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 1
+      "skill_count": 1,
+      "has_bookkeeping": false,
+      "has_einvoice": false,
+      "has_payroll": false,
+      "has_formation": false,
+      "has_financial_statements": false,
+      "has_transfer_pricing": false,
+      "has_tax_optimization": false
     },
     {
       "jurisdiction": "FJ",
@@ -513,7 +822,14 @@
         "fiji-vat.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 1
+      "skill_count": 1,
+      "has_bookkeeping": false,
+      "has_einvoice": false,
+      "has_payroll": false,
+      "has_formation": false,
+      "has_financial_statements": false,
+      "has_transfer_pricing": false,
+      "has_tax_optimization": false
     },
     {
       "jurisdiction": "FI",
@@ -528,7 +844,14 @@
         "eu-vat-directive.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 4
+      "skill_count": 4,
+      "has_bookkeeping": false,
+      "has_einvoice": false,
+      "has_payroll": false,
+      "has_formation": false,
+      "has_financial_statements": false,
+      "has_transfer_pricing": false,
+      "has_tax_optimization": false
     },
     {
       "jurisdiction": "FR",
@@ -545,14 +868,34 @@
         "fr-rental-income.md",
         "fr-social-contributions.md",
         "fr-tax-audit.md",
+        "france-bookkeeping.md",
+        "france-einvoice.md",
+        "france-financial-statements.md",
+        "france-formation.md",
+        "france-payroll.md",
+        "france-tax-optimization.md",
+        "france-transfer-pricing.md",
         "france-vat-return.md",
         "references.md",
         "eu-vat-directive.md",
+        "bookkeeping-workflow-base.md",
+        "einvoice-workflow-base.md",
+        "payroll-workflow-base.md",
+        "company-formation-workflow-base.md",
+        "financial-statements-workflow-base.md",
+        "transfer-pricing-workflow-base.md",
         "france-guided-intake.md",
         "france-return-assembly.md"
       ],
       "has_orchestrator": true,
-      "skill_count": 10
+      "skill_count": 17,
+      "has_bookkeeping": true,
+      "has_einvoice": true,
+      "has_payroll": true,
+      "has_formation": true,
+      "has_financial_statements": true,
+      "has_transfer_pricing": true,
+      "has_tax_optimization": true
     },
     {
       "jurisdiction": "GE",
@@ -563,7 +906,14 @@
         "georgia-vat.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 1
+      "skill_count": 1,
+      "has_bookkeeping": false,
+      "has_einvoice": false,
+      "has_payroll": false,
+      "has_formation": false,
+      "has_financial_statements": false,
+      "has_transfer_pricing": false,
+      "has_tax_optimization": false
     },
     {
       "jurisdiction": "DE",
@@ -578,14 +928,34 @@
         "de-rental-income.md",
         "de-social-contributions.md",
         "de-trade-tax.md",
+        "germany-bookkeeping.md",
+        "germany-einvoice.md",
+        "germany-financial-statements.md",
+        "germany-formation.md",
+        "germany-payroll.md",
+        "germany-tax-optimization.md",
+        "germany-transfer-pricing.md",
         "germany-vat-return.md",
         "references.md",
         "eu-vat-directive.md",
+        "bookkeeping-workflow-base.md",
+        "einvoice-workflow-base.md",
+        "payroll-workflow-base.md",
+        "company-formation-workflow-base.md",
+        "financial-statements-workflow-base.md",
+        "transfer-pricing-workflow-base.md",
         "germany-guided-intake.md",
         "germany-return-assembly.md"
       ],
       "has_orchestrator": true,
-      "skill_count": 8
+      "skill_count": 15,
+      "has_bookkeeping": true,
+      "has_einvoice": true,
+      "has_payroll": true,
+      "has_formation": true,
+      "has_financial_statements": true,
+      "has_transfer_pricing": true,
+      "has_tax_optimization": true
     },
     {
       "jurisdiction": "GH",
@@ -598,7 +968,14 @@
         "references.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 2
+      "skill_count": 2,
+      "has_bookkeeping": false,
+      "has_einvoice": false,
+      "has_payroll": false,
+      "has_formation": false,
+      "has_financial_statements": false,
+      "has_transfer_pricing": false,
+      "has_tax_optimization": false
     },
     {
       "jurisdiction": "GR",
@@ -608,11 +985,20 @@
         "intake.md",
         "gr-efka.md",
         "gr-income-tax.md",
+        "greece-einvoice.md",
         "greece-vat-return.md",
-        "eu-vat-directive.md"
+        "eu-vat-directive.md",
+        "einvoice-workflow-base.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 3
+      "skill_count": 4,
+      "has_bookkeeping": false,
+      "has_einvoice": true,
+      "has_payroll": false,
+      "has_formation": false,
+      "has_financial_statements": false,
+      "has_transfer_pricing": false,
+      "has_tax_optimization": false
     },
     {
       "jurisdiction": "GT",
@@ -623,7 +1009,14 @@
         "guatemala-iva.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 1
+      "skill_count": 1,
+      "has_bookkeeping": false,
+      "has_einvoice": false,
+      "has_payroll": false,
+      "has_formation": false,
+      "has_financial_statements": false,
+      "has_transfer_pricing": false,
+      "has_tax_optimization": false
     },
     {
       "jurisdiction": "HN",
@@ -634,7 +1027,14 @@
         "honduras-isv.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 1
+      "skill_count": 1,
+      "has_bookkeeping": false,
+      "has_einvoice": false,
+      "has_payroll": false,
+      "has_formation": false,
+      "has_financial_statements": false,
+      "has_transfer_pricing": false,
+      "has_tax_optimization": false
     },
     {
       "jurisdiction": "HK",
@@ -647,7 +1047,14 @@
         "hong-kong-tax.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 3
+      "skill_count": 3,
+      "has_bookkeeping": false,
+      "has_einvoice": false,
+      "has_payroll": false,
+      "has_formation": false,
+      "has_financial_statements": false,
+      "has_transfer_pricing": false,
+      "has_tax_optimization": false
     },
     {
       "jurisdiction": "HU",
@@ -657,11 +1064,20 @@
         "intake.md",
         "hu-income-tax.md",
         "hu-social-contributions.md",
+        "hungary-einvoice.md",
         "hungary-vat-return.md",
-        "eu-vat-directive.md"
+        "eu-vat-directive.md",
+        "einvoice-workflow-base.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 3
+      "skill_count": 4,
+      "has_bookkeeping": false,
+      "has_einvoice": true,
+      "has_payroll": false,
+      "has_formation": false,
+      "has_financial_statements": false,
+      "has_transfer_pricing": false,
+      "has_tax_optimization": false
     },
     {
       "jurisdiction": "IS",
@@ -672,7 +1088,14 @@
         "iceland-vat.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 1
+      "skill_count": 1,
+      "has_bookkeeping": false,
+      "has_einvoice": false,
+      "has_payroll": false,
+      "has_formation": false,
+      "has_financial_statements": false,
+      "has_transfer_pricing": false,
+      "has_tax_optimization": false
     },
     {
       "jurisdiction": "IN",
@@ -685,13 +1108,31 @@
         "in-pf-esi-employer.md",
         "in-professional-tax.md",
         "in-tds-freelance.md",
+        "india-einvoice.md",
+        "india-financial-statements.md",
+        "india-formation.md",
         "india-gst.md",
+        "india-payroll.md",
+        "india-tax-optimization.md",
+        "india-transfer-pricing.md",
         "references.md",
+        "einvoice-workflow-base.md",
+        "payroll-workflow-base.md",
+        "company-formation-workflow-base.md",
+        "financial-statements-workflow-base.md",
+        "transfer-pricing-workflow-base.md",
         "india-guided-intake.md",
         "india-return-assembly.md"
       ],
       "has_orchestrator": true,
-      "skill_count": 6
+      "skill_count": 12,
+      "has_bookkeeping": false,
+      "has_einvoice": true,
+      "has_payroll": true,
+      "has_formation": true,
+      "has_financial_statements": true,
+      "has_transfer_pricing": true,
+      "has_tax_optimization": true
     },
     {
       "jurisdiction": "ID",
@@ -701,10 +1142,18 @@
         "intake.md",
         "id-payroll-pph21.md",
         "indonesia-vat.md",
-        "references.md"
+        "references.md",
+        "payroll-workflow-base.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 2
+      "skill_count": 2,
+      "has_bookkeeping": false,
+      "has_einvoice": false,
+      "has_payroll": true,
+      "has_formation": false,
+      "has_financial_statements": false,
+      "has_transfer_pricing": false,
+      "has_tax_optimization": false
     },
     {
       "jurisdiction": "IR",
@@ -715,7 +1164,14 @@
         "iran-vat.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 1
+      "skill_count": 1,
+      "has_bookkeeping": false,
+      "has_einvoice": false,
+      "has_payroll": false,
+      "has_formation": false,
+      "has_financial_statements": false,
+      "has_transfer_pricing": false,
+      "has_tax_optimization": false
     },
     {
       "jurisdiction": "IQ",
@@ -726,7 +1182,14 @@
         "iraq-tax.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 1
+      "skill_count": 1,
+      "has_bookkeeping": false,
+      "has_einvoice": false,
+      "has_payroll": false,
+      "has_formation": false,
+      "has_financial_statements": false,
+      "has_transfer_pricing": false,
+      "has_tax_optimization": false
     },
     {
       "jurisdiction": "IE",
@@ -742,7 +1205,14 @@
         "eu-vat-directive.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 5
+      "skill_count": 5,
+      "has_bookkeeping": false,
+      "has_einvoice": false,
+      "has_payroll": false,
+      "has_formation": false,
+      "has_financial_statements": false,
+      "has_transfer_pricing": false,
+      "has_tax_optimization": false
     },
     {
       "jurisdiction": "IM",
@@ -753,7 +1223,14 @@
         "isle-of-man-vat.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 1
+      "skill_count": 1,
+      "has_bookkeeping": false,
+      "has_einvoice": false,
+      "has_payroll": false,
+      "has_formation": false,
+      "has_financial_statements": false,
+      "has_transfer_pricing": false,
+      "has_tax_optimization": false
     },
     {
       "jurisdiction": "IL",
@@ -772,7 +1249,14 @@
         "references.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 8
+      "skill_count": 8,
+      "has_bookkeeping": false,
+      "has_einvoice": false,
+      "has_payroll": false,
+      "has_formation": false,
+      "has_financial_statements": false,
+      "has_transfer_pricing": false,
+      "has_tax_optimization": false
     },
     {
       "jurisdiction": "IT",
@@ -784,12 +1268,32 @@
         "it-income-tax.md",
         "it-inps-contributions.md",
         "it-irap.md",
+        "italy-bookkeeping.md",
+        "italy-einvoice.md",
+        "italy-financial-statements.md",
+        "italy-formation.md",
+        "italy-payroll.md",
+        "italy-tax-optimization.md",
+        "italy-transfer-pricing.md",
         "italy-vat-return.md",
         "references.md",
-        "eu-vat-directive.md"
+        "eu-vat-directive.md",
+        "bookkeeping-workflow-base.md",
+        "einvoice-workflow-base.md",
+        "payroll-workflow-base.md",
+        "company-formation-workflow-base.md",
+        "financial-statements-workflow-base.md",
+        "transfer-pricing-workflow-base.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 5
+      "skill_count": 12,
+      "has_bookkeeping": true,
+      "has_einvoice": true,
+      "has_payroll": true,
+      "has_formation": true,
+      "has_financial_statements": true,
+      "has_transfer_pricing": true,
+      "has_tax_optimization": true
     },
     {
       "jurisdiction": "CI",
@@ -800,7 +1304,14 @@
         "ivory-coast-vat.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 1
+      "skill_count": 1,
+      "has_bookkeeping": false,
+      "has_einvoice": false,
+      "has_payroll": false,
+      "has_formation": false,
+      "has_financial_statements": false,
+      "has_transfer_pricing": false,
+      "has_tax_optimization": false
     },
     {
       "jurisdiction": "JM",
@@ -811,7 +1322,14 @@
         "jamaica-gct.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 1
+      "skill_count": 1,
+      "has_bookkeeping": false,
+      "has_einvoice": false,
+      "has_payroll": false,
+      "has_formation": false,
+      "has_financial_statements": false,
+      "has_transfer_pricing": false,
+      "has_tax_optimization": false
     },
     {
       "jurisdiction": "JP",
@@ -819,8 +1337,13 @@
       "files": [
         "foundation.md",
         "intake.md",
+        "japan-bookkeeping.md",
         "japan-consumption-tax.md",
-        "jp-bookkeeping.md",
+        "japan-financial-statements.md",
+        "japan-formation.md",
+        "japan-payroll.md",
+        "japan-tax-optimization.md",
+        "japan-transfer-pricing.md",
         "jp-consumption-tax.md",
         "jp-estimated-tax.md",
         "jp-etax-filing.md",
@@ -828,11 +1351,23 @@
         "jp-incorporation.md",
         "jp-social-insurance.md",
         "references.md",
+        "bookkeeping-workflow-base.md",
+        "payroll-workflow-base.md",
+        "company-formation-workflow-base.md",
+        "financial-statements-workflow-base.md",
+        "transfer-pricing-workflow-base.md",
         "japan-guided-intake.md",
         "japan-return-assembly.md"
       ],
       "has_orchestrator": true,
-      "skill_count": 8
+      "skill_count": 13,
+      "has_bookkeeping": true,
+      "has_einvoice": false,
+      "has_payroll": true,
+      "has_formation": true,
+      "has_financial_statements": true,
+      "has_transfer_pricing": true,
+      "has_tax_optimization": true
     },
     {
       "jurisdiction": "JO",
@@ -843,7 +1378,14 @@
         "jordan-gst.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 1
+      "skill_count": 1,
+      "has_bookkeeping": false,
+      "has_einvoice": false,
+      "has_payroll": false,
+      "has_formation": false,
+      "has_financial_statements": false,
+      "has_transfer_pricing": false,
+      "has_tax_optimization": false
     },
     {
       "jurisdiction": "KZ",
@@ -854,7 +1396,14 @@
         "kazakhstan-vat.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 1
+      "skill_count": 1,
+      "has_bookkeeping": false,
+      "has_einvoice": false,
+      "has_payroll": false,
+      "has_formation": false,
+      "has_financial_statements": false,
+      "has_transfer_pricing": false,
+      "has_tax_optimization": false
     },
     {
       "jurisdiction": "KE",
@@ -867,7 +1416,14 @@
         "kenya-vat.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 3
+      "skill_count": 3,
+      "has_bookkeeping": false,
+      "has_einvoice": false,
+      "has_payroll": false,
+      "has_formation": false,
+      "has_financial_statements": false,
+      "has_transfer_pricing": false,
+      "has_tax_optimization": false
     },
     {
       "jurisdiction": "XK",
@@ -878,7 +1434,14 @@
         "kosovo-vat.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 1
+      "skill_count": 1,
+      "has_bookkeeping": false,
+      "has_einvoice": false,
+      "has_payroll": false,
+      "has_formation": false,
+      "has_financial_statements": false,
+      "has_transfer_pricing": false,
+      "has_tax_optimization": false
     },
     {
       "jurisdiction": "KW",
@@ -889,7 +1452,14 @@
         "kuwait-tax.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 1
+      "skill_count": 1,
+      "has_bookkeeping": false,
+      "has_einvoice": false,
+      "has_payroll": false,
+      "has_formation": false,
+      "has_financial_statements": false,
+      "has_transfer_pricing": false,
+      "has_tax_optimization": false
     },
     {
       "jurisdiction": "LA",
@@ -900,7 +1470,14 @@
         "laos-vat.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 1
+      "skill_count": 1,
+      "has_bookkeeping": false,
+      "has_einvoice": false,
+      "has_payroll": false,
+      "has_formation": false,
+      "has_financial_statements": false,
+      "has_transfer_pricing": false,
+      "has_tax_optimization": false
     },
     {
       "jurisdiction": "LV",
@@ -912,7 +1489,14 @@
         "eu-vat-directive.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 1
+      "skill_count": 1,
+      "has_bookkeeping": false,
+      "has_einvoice": false,
+      "has_payroll": false,
+      "has_formation": false,
+      "has_financial_statements": false,
+      "has_transfer_pricing": false,
+      "has_tax_optimization": false
     },
     {
       "jurisdiction": "LB",
@@ -923,7 +1507,14 @@
         "lebanon-vat.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 1
+      "skill_count": 1,
+      "has_bookkeeping": false,
+      "has_einvoice": false,
+      "has_payroll": false,
+      "has_formation": false,
+      "has_financial_statements": false,
+      "has_transfer_pricing": false,
+      "has_tax_optimization": false
     },
     {
       "jurisdiction": "LI",
@@ -934,7 +1525,14 @@
         "liechtenstein-vat.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 1
+      "skill_count": 1,
+      "has_bookkeeping": false,
+      "has_einvoice": false,
+      "has_payroll": false,
+      "has_formation": false,
+      "has_financial_statements": false,
+      "has_transfer_pricing": false,
+      "has_tax_optimization": false
     },
     {
       "jurisdiction": "LT",
@@ -948,7 +1546,14 @@
         "eu-vat-directive.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 2
+      "skill_count": 2,
+      "has_bookkeeping": false,
+      "has_einvoice": false,
+      "has_payroll": false,
+      "has_formation": false,
+      "has_financial_statements": false,
+      "has_transfer_pricing": false,
+      "has_tax_optimization": false
     },
     {
       "jurisdiction": "LU",
@@ -960,7 +1565,14 @@
         "eu-vat-directive.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 1
+      "skill_count": 1,
+      "has_bookkeeping": false,
+      "has_einvoice": false,
+      "has_payroll": false,
+      "has_formation": false,
+      "has_financial_statements": false,
+      "has_transfer_pricing": false,
+      "has_tax_optimization": false
     },
     {
       "jurisdiction": "MY",
@@ -968,13 +1580,22 @@
       "files": [
         "foundation.md",
         "intake.md",
+        "malaysia-einvoice.md",
         "malaysia-sst.md",
         "my-epf-socso.md",
         "my-income-tax.md",
-        "my-pcb.md"
+        "my-pcb.md",
+        "einvoice-workflow-base.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 4
+      "skill_count": 5,
+      "has_bookkeeping": false,
+      "has_einvoice": true,
+      "has_payroll": false,
+      "has_formation": false,
+      "has_financial_statements": false,
+      "has_transfer_pricing": false,
+      "has_tax_optimization": false
     },
     {
       "jurisdiction": "MV",
@@ -985,7 +1606,14 @@
         "maldives-gst.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 1
+      "skill_count": 1,
+      "has_bookkeeping": false,
+      "has_einvoice": false,
+      "has_payroll": false,
+      "has_formation": false,
+      "has_financial_statements": false,
+      "has_transfer_pricing": false,
+      "has_tax_optimization": false
     },
     {
       "jurisdiction": "MT",
@@ -993,18 +1621,36 @@
       "files": [
         "foundation.md",
         "intake.md",
+        "malta-bookkeeping.md",
+        "malta-financial-statements.md",
+        "malta-formation.md",
         "malta-income-tax.md",
+        "malta-payroll.md",
         "malta-ssc.md",
+        "malta-tax-optimization.md",
+        "malta-transfer-pricing.md",
         "malta-vat-return.md",
         "mt-crypto-tax.md",
         "mt-estimated-tax.md",
         "mt-rental-income.md",
         "eu-vat-directive.md",
+        "bookkeeping-workflow-base.md",
+        "payroll-workflow-base.md",
+        "company-formation-workflow-base.md",
+        "financial-statements-workflow-base.md",
+        "transfer-pricing-workflow-base.md",
         "malta-guided-intake.md",
         "malta-return-assembly.md"
       ],
       "has_orchestrator": true,
-      "skill_count": 6
+      "skill_count": 12,
+      "has_bookkeeping": true,
+      "has_einvoice": false,
+      "has_payroll": true,
+      "has_formation": true,
+      "has_financial_statements": true,
+      "has_transfer_pricing": true,
+      "has_tax_optimization": true
     },
     {
       "jurisdiction": "MU",
@@ -1015,7 +1661,14 @@
         "mauritius-vat.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 1
+      "skill_count": 1,
+      "has_bookkeeping": false,
+      "has_einvoice": false,
+      "has_payroll": false,
+      "has_formation": false,
+      "has_financial_statements": false,
+      "has_transfer_pricing": false,
+      "has_tax_optimization": false
     },
     {
       "jurisdiction": "MX",
@@ -1023,18 +1676,29 @@
       "files": [
         "foundation.md",
         "intake.md",
+        "mexico-einvoice.md",
         "mexico-iva.md",
+        "mexico-transfer-pricing.md",
         "mx-cfdi.md",
         "mx-estimated-tax.md",
         "mx-imss.md",
         "mx-income-tax.md",
         "mx-vat-return.md",
         "references.md",
+        "einvoice-workflow-base.md",
+        "transfer-pricing-workflow-base.md",
         "mexico-guided-intake.md",
         "mexico-return-assembly.md"
       ],
       "has_orchestrator": true,
-      "skill_count": 6
+      "skill_count": 8,
+      "has_bookkeeping": false,
+      "has_einvoice": true,
+      "has_payroll": false,
+      "has_formation": false,
+      "has_financial_statements": false,
+      "has_transfer_pricing": true,
+      "has_tax_optimization": false
     },
     {
       "jurisdiction": "MD",
@@ -1045,7 +1709,14 @@
         "moldova-vat.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 1
+      "skill_count": 1,
+      "has_bookkeeping": false,
+      "has_einvoice": false,
+      "has_payroll": false,
+      "has_formation": false,
+      "has_financial_statements": false,
+      "has_transfer_pricing": false,
+      "has_tax_optimization": false
     },
     {
       "jurisdiction": "MC",
@@ -1056,7 +1727,14 @@
         "monaco-vat.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 1
+      "skill_count": 1,
+      "has_bookkeeping": false,
+      "has_einvoice": false,
+      "has_payroll": false,
+      "has_formation": false,
+      "has_financial_statements": false,
+      "has_transfer_pricing": false,
+      "has_tax_optimization": false
     },
     {
       "jurisdiction": "MN",
@@ -1067,7 +1745,14 @@
         "mongolia-vat.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 1
+      "skill_count": 1,
+      "has_bookkeeping": false,
+      "has_einvoice": false,
+      "has_payroll": false,
+      "has_formation": false,
+      "has_financial_statements": false,
+      "has_transfer_pricing": false,
+      "has_tax_optimization": false
     },
     {
       "jurisdiction": "ME",
@@ -1078,7 +1763,14 @@
         "montenegro-vat.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 1
+      "skill_count": 1,
+      "has_bookkeeping": false,
+      "has_einvoice": false,
+      "has_payroll": false,
+      "has_formation": false,
+      "has_financial_statements": false,
+      "has_transfer_pricing": false,
+      "has_tax_optimization": false
     },
     {
       "jurisdiction": "MA",
@@ -1089,7 +1781,14 @@
         "morocco-vat.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 1
+      "skill_count": 1,
+      "has_bookkeeping": false,
+      "has_einvoice": false,
+      "has_payroll": false,
+      "has_formation": false,
+      "has_financial_statements": false,
+      "has_transfer_pricing": false,
+      "has_tax_optimization": false
     },
     {
       "jurisdiction": "MZ",
@@ -1100,7 +1799,14 @@
         "mozambique-vat.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 1
+      "skill_count": 1,
+      "has_bookkeeping": false,
+      "has_einvoice": false,
+      "has_payroll": false,
+      "has_formation": false,
+      "has_financial_statements": false,
+      "has_transfer_pricing": false,
+      "has_tax_optimization": false
     },
     {
       "jurisdiction": "MM",
@@ -1111,7 +1817,14 @@
         "myanmar-ct.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 1
+      "skill_count": 1,
+      "has_bookkeeping": false,
+      "has_einvoice": false,
+      "has_payroll": false,
+      "has_formation": false,
+      "has_financial_statements": false,
+      "has_transfer_pricing": false,
+      "has_tax_optimization": false
     },
     {
       "jurisdiction": "NP",
@@ -1122,7 +1835,14 @@
         "nepal-vat.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 1
+      "skill_count": 1,
+      "has_bookkeeping": false,
+      "has_einvoice": false,
+      "has_payroll": false,
+      "has_formation": false,
+      "has_financial_statements": false,
+      "has_transfer_pricing": false,
+      "has_tax_optimization": false
     },
     {
       "jurisdiction": "NL",
@@ -1130,6 +1850,12 @@
       "files": [
         "foundation.md",
         "intake.md",
+        "netherlands-bookkeeping.md",
+        "netherlands-financial-statements.md",
+        "netherlands-formation.md",
+        "netherlands-payroll.md",
+        "netherlands-tax-optimization.md",
+        "netherlands-transfer-pricing.md",
         "netherlands-vat-return.md",
         "nl-corporate-tax.md",
         "nl-deductions.md",
@@ -1139,11 +1865,23 @@
         "nl-zzp-deductions.md",
         "references.md",
         "eu-vat-directive.md",
+        "bookkeeping-workflow-base.md",
+        "payroll-workflow-base.md",
+        "company-formation-workflow-base.md",
+        "financial-statements-workflow-base.md",
+        "transfer-pricing-workflow-base.md",
         "netherlands-guided-intake.md",
         "netherlands-return-assembly.md"
       ],
       "has_orchestrator": true,
-      "skill_count": 7
+      "skill_count": 13,
+      "has_bookkeeping": true,
+      "has_einvoice": false,
+      "has_payroll": true,
+      "has_formation": true,
+      "has_financial_statements": true,
+      "has_transfer_pricing": true,
+      "has_tax_optimization": true
     },
     {
       "jurisdiction": "NZ",
@@ -1159,7 +1897,14 @@
         "references.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 5
+      "skill_count": 5,
+      "has_bookkeeping": false,
+      "has_einvoice": false,
+      "has_payroll": false,
+      "has_formation": false,
+      "has_financial_statements": false,
+      "has_transfer_pricing": false,
+      "has_tax_optimization": false
     },
     {
       "jurisdiction": "NI",
@@ -1170,7 +1915,14 @@
         "nicaragua-iva.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 1
+      "skill_count": 1,
+      "has_bookkeeping": false,
+      "has_einvoice": false,
+      "has_payroll": false,
+      "has_formation": false,
+      "has_financial_statements": false,
+      "has_transfer_pricing": false,
+      "has_tax_optimization": false
     },
     {
       "jurisdiction": "NG",
@@ -1184,7 +1936,14 @@
         "references.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 3
+      "skill_count": 3,
+      "has_bookkeeping": false,
+      "has_einvoice": false,
+      "has_payroll": false,
+      "has_formation": false,
+      "has_financial_statements": false,
+      "has_transfer_pricing": false,
+      "has_tax_optimization": false
     },
     {
       "jurisdiction": "MK",
@@ -1195,7 +1954,14 @@
         "north-macedonia-vat.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 1
+      "skill_count": 1,
+      "has_bookkeeping": false,
+      "has_einvoice": false,
+      "has_payroll": false,
+      "has_formation": false,
+      "has_financial_statements": false,
+      "has_transfer_pricing": false,
+      "has_tax_optimization": false
     },
     {
       "jurisdiction": "NO",
@@ -1208,7 +1974,14 @@
         "norway-mva.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 3
+      "skill_count": 3,
+      "has_bookkeeping": false,
+      "has_einvoice": false,
+      "has_payroll": false,
+      "has_formation": false,
+      "has_financial_statements": false,
+      "has_transfer_pricing": false,
+      "has_tax_optimization": false
     },
     {
       "jurisdiction": "OM",
@@ -1219,7 +1992,14 @@
         "oman-vat.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 1
+      "skill_count": 1,
+      "has_bookkeeping": false,
+      "has_einvoice": false,
+      "has_payroll": false,
+      "has_formation": false,
+      "has_financial_statements": false,
+      "has_transfer_pricing": false,
+      "has_tax_optimization": false
     },
     {
       "jurisdiction": "PK",
@@ -1230,7 +2010,14 @@
         "pakistan-sales-tax.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 1
+      "skill_count": 1,
+      "has_bookkeeping": false,
+      "has_einvoice": false,
+      "has_payroll": false,
+      "has_formation": false,
+      "has_financial_statements": false,
+      "has_transfer_pricing": false,
+      "has_tax_optimization": false
     },
     {
       "jurisdiction": "PA",
@@ -1241,7 +2028,14 @@
         "panama-itbms.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 1
+      "skill_count": 1,
+      "has_bookkeeping": false,
+      "has_einvoice": false,
+      "has_payroll": false,
+      "has_formation": false,
+      "has_financial_statements": false,
+      "has_transfer_pricing": false,
+      "has_tax_optimization": false
     },
     {
       "jurisdiction": "PG",
@@ -1252,7 +2046,14 @@
         "png-gst.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 1
+      "skill_count": 1,
+      "has_bookkeeping": false,
+      "has_einvoice": false,
+      "has_payroll": false,
+      "has_formation": false,
+      "has_financial_statements": false,
+      "has_transfer_pricing": false,
+      "has_tax_optimization": false
     },
     {
       "jurisdiction": "PY",
@@ -1263,7 +2064,14 @@
         "paraguay-iva.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 1
+      "skill_count": 1,
+      "has_bookkeeping": false,
+      "has_einvoice": false,
+      "has_payroll": false,
+      "has_formation": false,
+      "has_financial_statements": false,
+      "has_transfer_pricing": false,
+      "has_tax_optimization": false
     },
     {
       "jurisdiction": "PE",
@@ -1274,7 +2082,14 @@
         "peru-igv.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 1
+      "skill_count": 1,
+      "has_bookkeeping": false,
+      "has_einvoice": false,
+      "has_payroll": false,
+      "has_formation": false,
+      "has_financial_statements": false,
+      "has_transfer_pricing": false,
+      "has_tax_optimization": false
     },
     {
       "jurisdiction": "PH",
@@ -1288,7 +2103,14 @@
         "philippines-vat.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 4
+      "skill_count": 4,
+      "has_bookkeeping": false,
+      "has_einvoice": false,
+      "has_payroll": false,
+      "has_formation": false,
+      "has_financial_statements": false,
+      "has_transfer_pricing": false,
+      "has_tax_optimization": false
     },
     {
       "jurisdiction": "PL",
@@ -1298,12 +2120,21 @@
         "intake.md",
         "pl-income-tax.md",
         "pl-zus-contributions.md",
+        "poland-einvoice.md",
         "poland-vat-return.md",
         "references.md",
-        "eu-vat-directive.md"
+        "eu-vat-directive.md",
+        "einvoice-workflow-base.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 3
+      "skill_count": 4,
+      "has_bookkeeping": false,
+      "has_einvoice": true,
+      "has_payroll": false,
+      "has_formation": false,
+      "has_financial_statements": false,
+      "has_transfer_pricing": false,
+      "has_tax_optimization": false
     },
     {
       "jurisdiction": "PT",
@@ -1311,13 +2142,31 @@
       "files": [
         "foundation.md",
         "intake.md",
+        "portugal-bookkeeping.md",
+        "portugal-einvoice.md",
+        "portugal-financial-statements.md",
+        "portugal-formation.md",
+        "portugal-payroll.md",
+        "portugal-tax-optimization.md",
         "portugal-vat-return.md",
         "pt-income-tax.md",
         "pt-social-contributions.md",
-        "eu-vat-directive.md"
+        "eu-vat-directive.md",
+        "bookkeeping-workflow-base.md",
+        "einvoice-workflow-base.md",
+        "payroll-workflow-base.md",
+        "company-formation-workflow-base.md",
+        "financial-statements-workflow-base.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 3
+      "skill_count": 9,
+      "has_bookkeeping": true,
+      "has_einvoice": true,
+      "has_payroll": true,
+      "has_formation": true,
+      "has_financial_statements": true,
+      "has_transfer_pricing": false,
+      "has_tax_optimization": true
     },
     {
       "jurisdiction": "QA",
@@ -1328,7 +2177,14 @@
         "qatar-tax.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 1
+      "skill_count": 1,
+      "has_bookkeeping": false,
+      "has_einvoice": false,
+      "has_payroll": false,
+      "has_formation": false,
+      "has_financial_statements": false,
+      "has_transfer_pricing": false,
+      "has_tax_optimization": false
     },
     {
       "jurisdiction": "RO",
@@ -1339,11 +2195,20 @@
         "references.md",
         "ro-cas-cass.md",
         "ro-income-tax.md",
+        "romania-einvoice.md",
         "romania-vat-return.md",
-        "eu-vat-directive.md"
+        "eu-vat-directive.md",
+        "einvoice-workflow-base.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 3
+      "skill_count": 4,
+      "has_bookkeeping": false,
+      "has_einvoice": true,
+      "has_payroll": false,
+      "has_formation": false,
+      "has_financial_statements": false,
+      "has_transfer_pricing": false,
+      "has_tax_optimization": false
     },
     {
       "jurisdiction": "RU",
@@ -1354,7 +2219,14 @@
         "russia-vat.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 1
+      "skill_count": 1,
+      "has_bookkeeping": false,
+      "has_einvoice": false,
+      "has_payroll": false,
+      "has_formation": false,
+      "has_financial_statements": false,
+      "has_transfer_pricing": false,
+      "has_tax_optimization": false
     },
     {
       "jurisdiction": "RW",
@@ -1365,7 +2237,14 @@
         "rwanda-vat.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 1
+      "skill_count": 1,
+      "has_bookkeeping": false,
+      "has_einvoice": false,
+      "has_payroll": false,
+      "has_formation": false,
+      "has_financial_statements": false,
+      "has_transfer_pricing": false,
+      "has_tax_optimization": false
     },
     {
       "jurisdiction": "SA",
@@ -1374,10 +2253,19 @@
         "foundation.md",
         "intake.md",
         "references.md",
-        "saudi-arabia-vat.md"
+        "saudi-arabia-vat.md",
+        "saudi-einvoice.md",
+        "einvoice-workflow-base.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 1
+      "skill_count": 2,
+      "has_bookkeeping": false,
+      "has_einvoice": true,
+      "has_payroll": false,
+      "has_formation": false,
+      "has_financial_statements": false,
+      "has_transfer_pricing": false,
+      "has_tax_optimization": false
     },
     {
       "jurisdiction": "SN",
@@ -1388,7 +2276,14 @@
         "senegal-vat.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 1
+      "skill_count": 1,
+      "has_bookkeeping": false,
+      "has_einvoice": false,
+      "has_payroll": false,
+      "has_formation": false,
+      "has_financial_statements": false,
+      "has_transfer_pricing": false,
+      "has_tax_optimization": false
     },
     {
       "jurisdiction": "RS",
@@ -1399,7 +2294,14 @@
         "serbia-vat.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 1
+      "skill_count": 1,
+      "has_bookkeeping": false,
+      "has_einvoice": false,
+      "has_payroll": false,
+      "has_formation": false,
+      "has_financial_statements": false,
+      "has_transfer_pricing": false,
+      "has_tax_optimization": false
     },
     {
       "jurisdiction": "SG",
@@ -1409,10 +2311,22 @@
         "intake.md",
         "sg-cpf-medisave.md",
         "sg-income-tax.md",
-        "singapore-gst.md"
+        "singapore-formation.md",
+        "singapore-gst.md",
+        "singapore-tax-optimization.md",
+        "singapore-transfer-pricing.md",
+        "company-formation-workflow-base.md",
+        "transfer-pricing-workflow-base.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 3
+      "skill_count": 6,
+      "has_bookkeeping": false,
+      "has_einvoice": false,
+      "has_payroll": false,
+      "has_formation": true,
+      "has_financial_statements": false,
+      "has_transfer_pricing": true,
+      "has_tax_optimization": true
     },
     {
       "jurisdiction": "SK",
@@ -1426,7 +2340,14 @@
         "eu-vat-directive.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 2
+      "skill_count": 2,
+      "has_bookkeeping": false,
+      "has_einvoice": false,
+      "has_payroll": false,
+      "has_formation": false,
+      "has_financial_statements": false,
+      "has_transfer_pricing": false,
+      "has_tax_optimization": false
     },
     {
       "jurisdiction": "SI",
@@ -1438,7 +2359,14 @@
         "eu-vat-directive.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 1
+      "skill_count": 1,
+      "has_bookkeeping": false,
+      "has_einvoice": false,
+      "has_payroll": false,
+      "has_formation": false,
+      "has_financial_statements": false,
+      "has_transfer_pricing": false,
+      "has_tax_optimization": false
     },
     {
       "jurisdiction": "ZA",
@@ -1446,13 +2374,22 @@
       "files": [
         "foundation.md",
         "intake.md",
+        "south-africa-transfer-pricing.md",
         "south-africa-vat.md",
         "za-income-tax.md",
         "za-provisional-tax.md",
-        "za-vat-return.md"
+        "za-vat-return.md",
+        "transfer-pricing-workflow-base.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 4
+      "skill_count": 5,
+      "has_bookkeeping": false,
+      "has_einvoice": false,
+      "has_payroll": false,
+      "has_formation": false,
+      "has_financial_statements": false,
+      "has_transfer_pricing": true,
+      "has_tax_optimization": false
     },
     {
       "jurisdiction": "KR",
@@ -1466,7 +2403,14 @@
         "south-korea-vat.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 3
+      "skill_count": 3,
+      "has_bookkeeping": false,
+      "has_einvoice": false,
+      "has_payroll": false,
+      "has_formation": false,
+      "has_financial_statements": false,
+      "has_transfer_pricing": false,
+      "has_tax_optimization": false
     },
     {
       "jurisdiction": "ES",
@@ -1483,13 +2427,33 @@
         "es-rental-income.md",
         "es-social-contributions.md",
         "references.md",
+        "spain-bookkeeping.md",
+        "spain-einvoice.md",
+        "spain-financial-statements.md",
+        "spain-formation.md",
+        "spain-payroll.md",
+        "spain-tax-optimization.md",
+        "spain-transfer-pricing.md",
         "spain-vat-return.md",
         "eu-vat-directive.md",
+        "bookkeeping-workflow-base.md",
+        "einvoice-workflow-base.md",
+        "payroll-workflow-base.md",
+        "company-formation-workflow-base.md",
+        "financial-statements-workflow-base.md",
+        "transfer-pricing-workflow-base.md",
         "spain-guided-intake.md",
         "spain-return-assembly.md"
       ],
       "has_orchestrator": true,
-      "skill_count": 9
+      "skill_count": 16,
+      "has_bookkeeping": true,
+      "has_einvoice": true,
+      "has_payroll": true,
+      "has_formation": true,
+      "has_financial_statements": true,
+      "has_transfer_pricing": true,
+      "has_tax_optimization": true
     },
     {
       "jurisdiction": "LK",
@@ -1500,7 +2464,14 @@
         "sri-lanka-vat.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 1
+      "skill_count": 1,
+      "has_bookkeeping": false,
+      "has_einvoice": false,
+      "has_payroll": false,
+      "has_formation": false,
+      "has_financial_statements": false,
+      "has_transfer_pricing": false,
+      "has_tax_optimization": false
     },
     {
       "jurisdiction": "SE",
@@ -1511,11 +2482,22 @@
         "references.md",
         "se-income-tax.md",
         "se-social-contributions.md",
+        "sweden-bookkeeping.md",
+        "sweden-payroll.md",
         "sweden-vat-return.md",
-        "eu-vat-directive.md"
+        "eu-vat-directive.md",
+        "bookkeeping-workflow-base.md",
+        "payroll-workflow-base.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 3
+      "skill_count": 5,
+      "has_bookkeeping": true,
+      "has_einvoice": false,
+      "has_payroll": true,
+      "has_formation": false,
+      "has_financial_statements": false,
+      "has_transfer_pricing": false,
+      "has_tax_optimization": false
     },
     {
       "jurisdiction": "CH",
@@ -1529,7 +2511,14 @@
         "switzerland-vat.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 4
+      "skill_count": 4,
+      "has_bookkeeping": false,
+      "has_einvoice": false,
+      "has_payroll": false,
+      "has_formation": false,
+      "has_financial_statements": false,
+      "has_transfer_pricing": false,
+      "has_tax_optimization": false
     },
     {
       "jurisdiction": "TW",
@@ -1542,7 +2531,14 @@
         "tw-nhi.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 3
+      "skill_count": 3,
+      "has_bookkeeping": false,
+      "has_einvoice": false,
+      "has_payroll": false,
+      "has_formation": false,
+      "has_financial_statements": false,
+      "has_transfer_pricing": false,
+      "has_tax_optimization": false
     },
     {
       "jurisdiction": "TZ",
@@ -1553,7 +2549,14 @@
         "tanzania-vat.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 1
+      "skill_count": 1,
+      "has_bookkeeping": false,
+      "has_einvoice": false,
+      "has_payroll": false,
+      "has_formation": false,
+      "has_financial_statements": false,
+      "has_transfer_pricing": false,
+      "has_tax_optimization": false
     },
     {
       "jurisdiction": "TH",
@@ -1566,7 +2569,14 @@
         "thailand-vat.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 2
+      "skill_count": 2,
+      "has_bookkeeping": false,
+      "has_einvoice": false,
+      "has_payroll": false,
+      "has_formation": false,
+      "has_financial_statements": false,
+      "has_transfer_pricing": false,
+      "has_tax_optimization": false
     },
     {
       "jurisdiction": "TT",
@@ -1577,7 +2587,14 @@
         "trinidad-vat.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 1
+      "skill_count": 1,
+      "has_bookkeeping": false,
+      "has_einvoice": false,
+      "has_payroll": false,
+      "has_formation": false,
+      "has_financial_statements": false,
+      "has_transfer_pricing": false,
+      "has_tax_optimization": false
     },
     {
       "jurisdiction": "TN",
@@ -1588,7 +2605,14 @@
         "tunisia-vat.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 1
+      "skill_count": 1,
+      "has_bookkeeping": false,
+      "has_einvoice": false,
+      "has_payroll": false,
+      "has_formation": false,
+      "has_financial_statements": false,
+      "has_transfer_pricing": false,
+      "has_tax_optimization": false
     },
     {
       "jurisdiction": "TR",
@@ -1601,7 +2625,14 @@
         "turkey-vat.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 2
+      "skill_count": 2,
+      "has_bookkeeping": false,
+      "has_einvoice": false,
+      "has_payroll": false,
+      "has_formation": false,
+      "has_financial_statements": false,
+      "has_transfer_pricing": false,
+      "has_tax_optimization": false
     },
     {
       "jurisdiction": "AE",
@@ -1613,7 +2644,14 @@
         "uae-vat.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 2
+      "skill_count": 2,
+      "has_bookkeeping": false,
+      "has_einvoice": false,
+      "has_payroll": false,
+      "has_formation": false,
+      "has_financial_statements": false,
+      "has_transfer_pricing": false,
+      "has_tax_optimization": false
     },
     {
       "jurisdiction": "UG",
@@ -1624,7 +2662,14 @@
         "uganda-vat.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 1
+      "skill_count": 1,
+      "has_bookkeeping": false,
+      "has_einvoice": false,
+      "has_payroll": false,
+      "has_formation": false,
+      "has_financial_statements": false,
+      "has_transfer_pricing": false,
+      "has_tax_optimization": false
     },
     {
       "jurisdiction": "GB",
@@ -1633,20 +2678,38 @@
         "foundation.md",
         "intake.md",
         "references.md",
+        "uk-bookkeeping.md",
         "uk-capital-gains-sa108.md",
         "uk-dividends.md",
+        "uk-financial-statements.md",
+        "uk-formation.md",
         "uk-income-tax-sa100.md",
         "uk-national-insurance.md",
         "uk-payments-on-account.md",
+        "uk-payroll.md",
         "uk-rental-sa105.md",
         "uk-self-employment-sa103.md",
         "uk-student-loan-repayment.md",
+        "uk-tax-optimization.md",
+        "uk-transfer-pricing.md",
         "uk-vat-return.md",
+        "bookkeeping-workflow-base.md",
+        "payroll-workflow-base.md",
+        "company-formation-workflow-base.md",
+        "financial-statements-workflow-base.md",
+        "transfer-pricing-workflow-base.md",
         "uk-guided-intake.md",
         "uk-return-assembly.md"
       ],
       "has_orchestrator": true,
-      "skill_count": 9
+      "skill_count": 15,
+      "has_bookkeeping": true,
+      "has_einvoice": false,
+      "has_payroll": true,
+      "has_formation": true,
+      "has_financial_statements": true,
+      "has_transfer_pricing": true,
+      "has_tax_optimization": true
     },
     {
       "jurisdiction": "UA",
@@ -1657,7 +2720,14 @@
         "ukraine-vat.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 1
+      "skill_count": 1,
+      "has_bookkeeping": false,
+      "has_einvoice": false,
+      "has_payroll": false,
+      "has_formation": false,
+      "has_financial_statements": false,
+      "has_transfer_pricing": false,
+      "has_tax_optimization": false
     },
     {
       "jurisdiction": "UY",
@@ -1668,7 +2738,14 @@
         "uruguay-iva.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 1
+      "skill_count": 1,
+      "has_bookkeeping": false,
+      "has_einvoice": false,
+      "has_payroll": false,
+      "has_formation": false,
+      "has_financial_statements": false,
+      "has_transfer_pricing": false,
+      "has_tax_optimization": false
     },
     {
       "jurisdiction": "UZ",
@@ -1679,7 +2756,14 @@
         "uzbekistan-vat.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 1
+      "skill_count": 1,
+      "has_bookkeeping": false,
+      "has_einvoice": false,
+      "has_payroll": false,
+      "has_formation": false,
+      "has_financial_statements": false,
+      "has_transfer_pricing": false,
+      "has_tax_optimization": false
     },
     {
       "jurisdiction": "VE",
@@ -1690,7 +2774,14 @@
         "venezuela-iva.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 1
+      "skill_count": 1,
+      "has_bookkeeping": false,
+      "has_einvoice": false,
+      "has_payroll": false,
+      "has_formation": false,
+      "has_financial_statements": false,
+      "has_transfer_pricing": false,
+      "has_tax_optimization": false
     },
     {
       "jurisdiction": "VN",
@@ -1703,7 +2794,14 @@
         "vietnam-vat.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 2
+      "skill_count": 2,
+      "has_bookkeeping": false,
+      "has_einvoice": false,
+      "has_payroll": false,
+      "has_formation": false,
+      "has_financial_statements": false,
+      "has_transfer_pricing": false,
+      "has_tax_optimization": false
     },
     {
       "jurisdiction": "ZM",
@@ -1714,7 +2812,14 @@
         "zambia-vat.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 1
+      "skill_count": 1,
+      "has_bookkeeping": false,
+      "has_einvoice": false,
+      "has_payroll": false,
+      "has_formation": false,
+      "has_financial_statements": false,
+      "has_transfer_pricing": false,
+      "has_tax_optimization": false
     },
     {
       "jurisdiction": "ZW",
@@ -1725,25 +2830,79 @@
         "zimbabwe-vat.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 1
+      "skill_count": 1,
+      "has_bookkeeping": false,
+      "has_einvoice": false,
+      "has_payroll": false,
+      "has_formation": false,
+      "has_financial_statements": false,
+      "has_transfer_pricing": false,
+      "has_tax_optimization": false
     },
     {
       "jurisdiction": "CROSS-BORDER",
       "name": "Cross-Border",
       "files": [
+        "cross-border-invoicing-compliance.md",
+        "cross-border-payroll-coordination.md",
         "cross-border-vat-gst.md",
+        "eu-directives-cross-border.md",
         "eu-oss-digital.md",
         "eu-reverse-charge.md",
+        "eu-social-security-coordination.md",
         "forex-controls.md",
         "international-incorporation.md",
         "non-eu-export-services.md",
+        "oecd-model-treaty-defaults.md",
         "permanent-establishment-risk.md",
         "tax-residency-planning.md",
+        "vat-place-of-supply-master.md",
         "withholding-tax-matrix.md",
+        "americas-corridors.md",
+        "asia-pacific-corridors.md",
+        "emerging-market-corridors.md",
+        "eu-intra-rates.md",
+        "uk-major-partners.md",
+        "us-major-partners.md",
+        "cross-border-workflow-base.md",
+        "README.md"
+      ],
+      "has_orchestrator": true,
+      "skill_count": 22
+    },
+    {
+      "jurisdiction": "VERTICALS",
+      "name": "Industry Verticals",
+      "files": [
+        "consultant-professional.md",
+        "content-creator.md",
+        "ecommerce-seller.md",
+        "freelance-developer.md",
+        "medical-professional.md",
+        "property-investor.md",
         "README.md"
       ],
       "has_orchestrator": false,
-      "skill_count": 9
+      "skill_count": 6
+    },
+    {
+      "jurisdiction": "INTEGRATIONS",
+      "name": "Software Integrations",
+      "files": [
+        "amazon-seller-integration.md",
+        "freeagent-integration.md",
+        "paypal-integration.md",
+        "quickbooks-integration.md",
+        "revolut-business-integration.md",
+        "sage-integration.md",
+        "shopify-integration.md",
+        "stripe-integration.md",
+        "wise-integration.md",
+        "xero-integration.md",
+        "README.md"
+      ],
+      "has_orchestrator": false,
+      "skill_count": 10
     },
     {
       "jurisdiction": "US-AL",

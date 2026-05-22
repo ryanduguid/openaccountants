@@ -7,17 +7,27 @@
 
 1. `foundation.md`
 2. `intake.md`
-3. `japan-consumption-tax.md`
-4. `jp-bookkeeping.md`
-5. `jp-consumption-tax.md`
-6. `jp-estimated-tax.md`
-7. `jp-etax-filing.md`
-8. `jp-income-tax.md`
-9. `jp-incorporation.md`
-10. `jp-social-insurance.md`
-11. `references.md`
-12. `japan-guided-intake.md`
-13. `japan-return-assembly.md`
+3. `japan-bookkeeping.md`
+4. `japan-consumption-tax.md`
+5. `japan-financial-statements.md`
+6. `japan-formation.md`
+7. `japan-payroll.md`
+8. `japan-tax-optimization.md`
+9. `japan-transfer-pricing.md`
+10. `jp-consumption-tax.md`
+11. `jp-estimated-tax.md`
+12. `jp-etax-filing.md`
+13. `jp-income-tax.md`
+14. `jp-incorporation.md`
+15. `jp-social-insurance.md`
+16. `references.md`
+17. `bookkeeping-workflow-base.md`
+18. `payroll-workflow-base.md`
+19. `company-formation-workflow-base.md`
+20. `financial-statements-workflow-base.md`
+21. `transfer-pricing-workflow-base.md`
+22. `japan-guided-intake.md`
+23. `japan-return-assembly.md`
 
 ## Also known as
 

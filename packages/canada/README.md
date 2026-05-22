@@ -13,21 +13,32 @@
 6. `ca-fed-t1-return.md`
 7. `ca-fed-t1135.md`
 8. `ca-fed-t2125.md`
-9. `canada-gst-hst.md`
-10. `references.md`
-11. `nb-individual-return.md`
-12. `sk-individual-return.md`
-13. `mb-individual-return.md`
-14. `nl-individual-return.md`
-15. `on-individual-return.md`
-16. `ns-individual-return.md`
-17. `pe-individual-return.md`
-18. `bc-individual-return.md`
-19. `qc-individual-return.md`
-20. `qc-qst-return.md`
-21. `ab-individual-return.md`
-22. `canada-guided-intake.md`
-23. `canada-return-assembly.md`
+9. `canada-bookkeeping.md`
+10. `canada-financial-statements.md`
+11. `canada-formation.md`
+12. `canada-gst-hst.md`
+13. `canada-payroll.md`
+14. `canada-tax-optimization.md`
+15. `canada-transfer-pricing.md`
+16. `references.md`
+17. `nb-individual-return.md`
+18. `sk-individual-return.md`
+19. `mb-individual-return.md`
+20. `nl-individual-return.md`
+21. `on-individual-return.md`
+22. `ns-individual-return.md`
+23. `pe-individual-return.md`
+24. `bc-individual-return.md`
+25. `qc-individual-return.md`
+26. `qc-qst-return.md`
+27. `ab-individual-return.md`
+28. `bookkeeping-workflow-base.md`
+29. `payroll-workflow-base.md`
+30. `company-formation-workflow-base.md`
+31. `financial-statements-workflow-base.md`
+32. `transfer-pricing-workflow-base.md`
+33. `canada-guided-intake.md`
+34. `canada-return-assembly.md`
 
 ## Also known as
 

@@ -10,6 +10,7 @@
 3. `id-payroll-pph21.md`
 4. `indonesia-vat.md`
 5. `references.md`
+6. `payroll-workflow-base.md`
 
 ## Also known as
 

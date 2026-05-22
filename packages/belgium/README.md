@@ -9,8 +9,16 @@
 2. `intake.md`
 3. `be-income-tax.md`
 4. `be-social-contributions.md`
-5. `belgium-vat-return.md`
-6. `eu-vat-directive.md`
+5. `belgium-bookkeeping.md`
+6. `belgium-einvoice.md`
+7. `belgium-financial-statements.md`
+8. `belgium-payroll.md`
+9. `belgium-vat-return.md`
+10. `eu-vat-directive.md`
+11. `bookkeeping-workflow-base.md`
+12. `einvoice-workflow-base.md`
+13. `payroll-workflow-base.md`
+14. `financial-statements-workflow-base.md`
 
 ## Also known as
 

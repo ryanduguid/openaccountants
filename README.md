@@ -108,10 +108,16 @@ Every country folder contains:
 | `[country]-vat.md` | VAT/GST/sales tax rules, supplier pattern library, form mappings | No — country-specific |
 | `[country]-income-tax.md` | Income tax brackets, deductions, transaction patterns | No — country-specific |
 | `[country]-ssc.md` | Social security / pension contributions | No — country-specific |
-| `[country]-guided-intake.md` | Full guided experience with detailed inference (if available) | No — 8 countries have this |
-| `[country]-return-assembly.md` | Cross-checks between VAT, IT, and SSC (if available) | No — 8 countries have this |
+| `[country]-bookkeeping.md` | Chart of accounts, P&L/balance sheet format, expense classification | No — 13 countries |
+| `[country]-einvoice.md` | E-invoicing format, mandatory fields, transmission, penalties | No — 15 countries |
+| `[country]-payroll.md` | PAYE withholding, social security, payslips, filing | No — 15 countries |
+| `[country]-formation.md` | Entity types, registration steps, costs, compliance | No — 13 countries |
+| `[country]-financial-statements.md` | Annual accounts, reporting framework, filing, audit | No — 13 countries |
+| `[country]-transfer-pricing.md` | TP documentation, arm's length, CbCR, penalties | No — 15 countries |
+| `[country]-guided-intake.md` | Full guided experience with detailed inference (if available) | No — 13 countries have this |
+| `[country]-return-assembly.md` | Cross-checks between VAT, IT, and SSC (if available) | No — 13 countries have this |
 
-**Not every country has every file.** Some have only VAT. Some have VAT + income tax + SSC. Eight countries have the full guided experience. Check the README inside each country folder.
+**Not every country has every file.** Some have only VAT. Some have VAT + income tax + SSC + bookkeeping + e-invoicing. Thirteen countries have the full guided experience. Check the README inside each country folder.
 
 ---
 
@@ -142,6 +148,42 @@ Upload all files, say "help me with my taxes," and the AI walks you through ever
 VAT + income tax + social contributions. No guided intake, but the AI uses the universal intake flow:
 
 Argentina, Austria, Belgium, Chile, Colombia, Czech Republic, Greece, Hungary, Ireland, Israel, Italy, Kenya, New Zealand, Nigeria, Norway, Poland, Portugal, Romania, Singapore, South Africa, South Korea, Sweden, Switzerland
+
+### Bookkeeping skills (13 countries)
+
+Chart of accounts, double-entry posting, P&L and balance sheet generation with country-specific formats:
+
+Malta, UK, Germany, France, Italy, Spain, Netherlands, Belgium, Portugal, Sweden, Australia, Canada, Japan
+
+### E-invoicing compliance (15 countries)
+
+Format validation, mandatory field checks, transmission methods, and penalty regimes:
+
+Italy, France, Germany, Spain, Poland, Portugal, Romania, Belgium, Greece, Hungary, India, Saudi Arabia, Mexico, Brazil, Malaysia
+
+### Payroll (15 countries)
+
+PAYE/withholding tables, social security computation, payslip generation, employer filing obligations:
+
+Malta, UK, Germany, France, Italy, Spain, Netherlands, Belgium, Portugal, Sweden, Australia, Canada, Japan, India, Brazil
+
+### Company formation (13 countries)
+
+Entity type comparison, registration steps, capital requirements, costs, post-formation compliance:
+
+Malta, UK, Germany, France, Italy, Spain, Netherlands, Portugal, Australia, Canada, Japan, India, Singapore
+
+### Financial statements (13 countries)
+
+Annual accounts preparation, reporting framework by entity size, year-end adjustments, filing and audit:
+
+Malta, UK, Germany, France, Italy, Spain, Netherlands, Belgium, Portugal, Australia, Canada, Japan, India
+
+### Transfer pricing (15 countries)
+
+TP documentation, arm's length methods, CbCR thresholds, APA, penalties:
+
+Malta, UK, Germany, France, Italy, Spain, Netherlands, Australia, Canada, Japan, India, Brazil, Singapore, South Africa, Mexico
 
 ### VAT/GST only (87 countries)
 
@@ -254,7 +296,7 @@ openaccountants/
 │   ├── us-ny/
 │   └── ... 130 countries + 51 US states
 ├── skills/                ← Source files (for contributors)
-│   ├── foundation/        ← Universal workflow base + us-tax-workflow-base.md
+│   ├── foundation/        ← Workflow bases: VAT, income tax, bookkeeping, e-invoicing, US tax
 │   ├── federal/           ← US federal income tax / Schedule C / SE / QBI / etc.
 │   ├── international/     ← Country-specific content (feeds build-packages.py)
 │   ├── orchestrator/      ← Intake + assembly (incl. us-federal-return-assembly, us-ca-*)
@@ -277,57 +319,33 @@ python3 scripts/build-packages.py
 
 ## Contribute
 
-### Your country needs you
+We maintain 514 skills across 133 countries. Tax law changes constantly — rates update, thresholds move, forms get revised. Contributions keep this accurate.
 
-These countries have AI-drafted skills (Q3) waiting for a human to verify the rates. No tax expertise required — if you can check your tax authority's website, you can help. Pick yours:
+### Ways to contribute
 
-| Country | What needs checking | Issue |
-|---------|-------------------|-------|
-| France | VAT, income tax, social contributions | [#4](https://github.com/openaccountants/openaccountants/issues/4) |
-| Italy | VAT, income tax, INPS contributions | [#5](https://github.com/openaccountants/openaccountants/issues/5) |
-| Netherlands | VAT, income tax | [#6](https://github.com/openaccountants/openaccountants/issues/6) |
-| Brazil | VAT, income tax, INSS, Simples Nacional | [#7](https://github.com/openaccountants/openaccountants/issues/7) |
-| Japan | Consumption tax | [#8](https://github.com/openaccountants/openaccountants/issues/8) |
-| Mexico | IVA | [#9](https://github.com/openaccountants/openaccountants/issues/9) |
-| South Korea | VAT | [#10](https://github.com/openaccountants/openaccountants/issues/10) |
-| Ireland | VAT, income tax, PRSI | [#11](https://github.com/openaccountants/openaccountants/issues/11) |
-| Switzerland | VAT | [#12](https://github.com/openaccountants/openaccountants/issues/12) |
-| Singapore | GST | [#13](https://github.com/openaccountants/openaccountants/issues/13) |
-| Nigeria | VAT | [#14](https://github.com/openaccountants/openaccountants/issues/14) |
-| South Africa | VAT | [#15](https://github.com/openaccountants/openaccountants/issues/15) |
-| Poland | VAT, ZUS contributions | [#16](https://github.com/openaccountants/openaccountants/issues/16) |
-| Belgium | VAT | [#17](https://github.com/openaccountants/openaccountants/issues/17) |
-| Sweden | VAT | [#18](https://github.com/openaccountants/openaccountants/issues/18) |
+| What | How | Impact |
+|------|-----|--------|
+| **Verify a rate** | Check a number against your tax authority's website, open a PR | Moves a skill from Q3 → Q2 |
+| **Add bank patterns** | Add how transactions appear on your local bank statement | Every user in your country gets fewer misclassifications |
+| **Fix an error** | Find a wrong rate or outdated threshold, submit the correction | Prevents bad working papers |
+| **Add a skill** | Write a new income tax, payroll, or social security skill for your country | Fills a gap for every user in that jurisdiction |
 
-Don't see your country? [Open an issue](https://github.com/openaccountants/openaccountants/issues/new) and we'll create one.
+### How to verify or fix a skill
 
-### Think your country's skill is wrong? Prove it.
+1. Find your country under `packages/`
+2. Compare rates against your tax authority's website
+3. Fork, fix, PR — or email corrections to **info@openaccountants.com** in any format
 
-Use Claude's deep research to verify rates against your tax authority's website. If you find an error — and you will — submit a PR. We've found errors in every single country we've verified. Yours probably has some too.
+### How to add a new skill
 
-```
-Prompt for deep research:
-"Search [your country] tax authority website for the current VAT/GST rate,
-registration threshold, and filing deadline. Compare against this skill file."
-```
+1. Use any existing skill as a template (e.g., `packages/malta/malta-income-tax.md`)
+2. Follow the same structure: quick reference table, rate tables, worked example, conservative defaults
+3. Cite your sources (tax authority URL, legislation reference, or open-source repo)
+4. Submit a PR
 
-### Build a skill for your country
+### Credits
 
-Most countries have VAT but no income tax skill. Here's how to add one:
-
-1. Open any existing income tax skill (e.g., `skills/international/malta/malta-income-tax.md`)
-2. Follow the same structure — quick reference, transaction pattern library, tier 1/tier 2 rules
-3. Add your country's local bank patterns (how do transactions appear on YOUR bank statement?)
-4. Submit a PR — your name goes on the skill as the author
-5. An accountant verifies it → it goes live on [openaccountants.com](https://openaccountants.com)
-
-### Improve the supplier pattern library
-
-Know how your local bank formats statements? Know what "ENERGA SA" or "COUPANG" looks like on a bank CSV? That one line you add saves every user in your country from a misclassification.
-
-### Get credited
-
-Every skill you write, verify, or improve — your name is on it publicly. Contributors build a profile at [openaccountants.com](https://openaccountants.com).
+Every contributor is credited publicly on the skill file and at [openaccountants.com](https://openaccountants.com).
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for the full guide.
 

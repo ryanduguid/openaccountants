@@ -14,10 +14,21 @@
 7. `au-rental-property.md`
 8. `au-sole-trader-schedule.md`
 9. `au-super-guarantee.md`
-10. `australia-gst.md`
-11. `references.md`
-12. `australia-guided-intake.md`
-13. `australia-return-assembly.md`
+10. `australia-bookkeeping.md`
+11. `australia-financial-statements.md`
+12. `australia-formation.md`
+13. `australia-gst.md`
+14. `australia-payroll.md`
+15. `australia-tax-optimization.md`
+16. `australia-transfer-pricing.md`
+17. `references.md`
+18. `bookkeeping-workflow-base.md`
+19. `payroll-workflow-base.md`
+20. `company-formation-workflow-base.md`
+21. `financial-statements-workflow-base.md`
+22. `transfer-pricing-workflow-base.md`
+23. `australia-guided-intake.md`
+24. `australia-return-assembly.md`
 
 ## Also known as
 

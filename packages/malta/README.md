@@ -7,15 +7,26 @@
 
 1. `foundation.md`
 2. `intake.md`
-3. `malta-income-tax.md`
-4. `malta-ssc.md`
-5. `malta-vat-return.md`
-6. `mt-crypto-tax.md`
-7. `mt-estimated-tax.md`
-8. `mt-rental-income.md`
-9. `eu-vat-directive.md`
-10. `malta-guided-intake.md`
-11. `malta-return-assembly.md`
+3. `malta-bookkeeping.md`
+4. `malta-financial-statements.md`
+5. `malta-formation.md`
+6. `malta-income-tax.md`
+7. `malta-payroll.md`
+8. `malta-ssc.md`
+9. `malta-tax-optimization.md`
+10. `malta-transfer-pricing.md`
+11. `malta-vat-return.md`
+12. `mt-crypto-tax.md`
+13. `mt-estimated-tax.md`
+14. `mt-rental-income.md`
+15. `eu-vat-directive.md`
+16. `bookkeeping-workflow-base.md`
+17. `payroll-workflow-base.md`
+18. `company-formation-workflow-base.md`
+19. `financial-statements-workflow-base.md`
+20. `transfer-pricing-workflow-base.md`
+21. `malta-guided-intake.md`
+22. `malta-return-assembly.md`
 
 ## Also known as
 

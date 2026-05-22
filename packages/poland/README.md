@@ -9,9 +9,11 @@
 2. `intake.md`
 3. `pl-income-tax.md`
 4. `pl-zus-contributions.md`
-5. `poland-vat-return.md`
-6. `references.md`
-7. `eu-vat-directive.md`
+5. `poland-einvoice.md`
+6. `poland-vat-return.md`
+7. `references.md`
+8. `eu-vat-directive.md`
+9. `einvoice-workflow-base.md`
 
 ## Also known as
 

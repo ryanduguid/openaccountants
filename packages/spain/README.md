@@ -16,10 +16,23 @@
 9. `es-rental-income.md`
 10. `es-social-contributions.md`
 11. `references.md`
-12. `spain-vat-return.md`
-13. `eu-vat-directive.md`
-14. `spain-guided-intake.md`
-15. `spain-return-assembly.md`
+12. `spain-bookkeeping.md`
+13. `spain-einvoice.md`
+14. `spain-financial-statements.md`
+15. `spain-formation.md`
+16. `spain-payroll.md`
+17. `spain-tax-optimization.md`
+18. `spain-transfer-pricing.md`
+19. `spain-vat-return.md`
+20. `eu-vat-directive.md`
+21. `bookkeeping-workflow-base.md`
+22. `einvoice-workflow-base.md`
+23. `payroll-workflow-base.md`
+24. `company-formation-workflow-base.md`
+25. `financial-statements-workflow-base.md`
+26. `transfer-pricing-workflow-base.md`
+27. `spain-guided-intake.md`
+28. `spain-return-assembly.md`
 
 ## Also known as
 

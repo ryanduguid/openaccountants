@@ -9,6 +9,8 @@
 2. `intake.md`
 3. `references.md`
 4. `saudi-arabia-vat.md`
+5. `saudi-einvoice.md`
+6. `einvoice-workflow-base.md`
 
 ## Also known as
 

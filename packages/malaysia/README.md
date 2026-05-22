@@ -7,10 +7,12 @@
 
 1. `foundation.md`
 2. `intake.md`
-3. `malaysia-sst.md`
-4. `my-epf-socso.md`
-5. `my-income-tax.md`
-6. `my-pcb.md`
+3. `malaysia-einvoice.md`
+4. `malaysia-sst.md`
+5. `my-epf-socso.md`
+6. `my-income-tax.md`
+7. `my-pcb.md`
+8. `einvoice-workflow-base.md`
 
 ## Also known as
 

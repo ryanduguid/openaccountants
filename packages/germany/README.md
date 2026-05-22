@@ -14,11 +14,24 @@
 7. `de-rental-income.md`
 8. `de-social-contributions.md`
 9. `de-trade-tax.md`
-10. `germany-vat-return.md`
-11. `references.md`
-12. `eu-vat-directive.md`
-13. `germany-guided-intake.md`
-14. `germany-return-assembly.md`
+10. `germany-bookkeeping.md`
+11. `germany-einvoice.md`
+12. `germany-financial-statements.md`
+13. `germany-formation.md`
+14. `germany-payroll.md`
+15. `germany-tax-optimization.md`
+16. `germany-transfer-pricing.md`
+17. `germany-vat-return.md`
+18. `references.md`
+19. `eu-vat-directive.md`
+20. `bookkeeping-workflow-base.md`
+21. `einvoice-workflow-base.md`
+22. `payroll-workflow-base.md`
+23. `company-formation-workflow-base.md`
+24. `financial-statements-workflow-base.md`
+25. `transfer-pricing-workflow-base.md`
+26. `germany-guided-intake.md`
+27. `germany-return-assembly.md`
 
 ## Also known as
 

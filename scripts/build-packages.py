@@ -535,6 +535,23 @@ def build_package(country_dir_name, country_dir):
             shutil.copy2(eu_vat, os.path.join(pkg_dir, "eu-vat-directive.md"))
             copied_files.append("eu-vat-directive.md")
 
+    # Copy domain-specific workflow bases when matching skills exist
+    DOMAIN_BASES = {
+        "bookkeeping": "bookkeeping-workflow-base.md",
+        "einvoice": "einvoice-workflow-base.md",
+        "payroll": "payroll-workflow-base.md",
+        "formation": "company-formation-workflow-base.md",
+        "financial-statements": "financial-statements-workflow-base.md",
+        "transfer-pricing": "transfer-pricing-workflow-base.md",
+        "tax-optimization": None,  # No separate workflow base needed
+    }
+    for keyword, base_file in DOMAIN_BASES.items():
+        if base_file and any(keyword in f for f, _ in content_skills):
+            base_path = os.path.join(SKILLS_DIR, "foundation", base_file)
+            if os.path.exists(base_path):
+                shutil.copy2(base_path, os.path.join(pkg_dir, base_file))
+                copied_files.append(base_file)
+
     # Copy orchestrator files if they exist
     intake_file, assembly_file = find_orchestrator_files(country_dir_name)
     if intake_file and os.path.exists(intake_file):
@@ -548,8 +565,16 @@ def build_package(country_dir_name, country_dir):
     with open(os.path.join(pkg_dir, "README.md"), 'w') as f:
         f.write(build_readme(name, copied_files, practitioner, code))
 
-    # Count only actual tax computation skills (not metadata like references.md)
+    # Count actual computation skills (not metadata like references.md)
     tax_skills = [s for s in content_skills if s[0] != "references.md"]
+    skill_filenames = [s for s, _ in content_skills]
+    has_bookkeeping = any("bookkeeping" in f for f in skill_filenames)
+    has_einvoice = any("einvoice" in f for f in skill_filenames)
+    has_payroll = any("payroll" in f for f in skill_filenames)
+    has_formation = any("formation" in f for f in skill_filenames)
+    has_fin_statements = any("financial-statements" in f for f in skill_filenames)
+    has_tp = any("transfer-pricing" in f for f in skill_filenames)
+    has_tax_opt = any("tax-optimization" in f for f in skill_filenames)
 
     return {
         "jurisdiction": code,
@@ -557,6 +582,13 @@ def build_package(country_dir_name, country_dir):
         "files": copied_files,
         "has_orchestrator": intake_file is not None,
         "skill_count": len(tax_skills),
+        "has_bookkeeping": has_bookkeeping,
+        "has_einvoice": has_einvoice,
+        "has_payroll": has_payroll,
+        "has_formation": has_formation,
+        "has_financial_statements": has_fin_statements,
+        "has_transfer_pricing": has_tp,
+        "has_tax_optimization": has_tax_opt,
     }
 
 
@@ -767,11 +799,25 @@ def main():
         full = [r for r in intl_results if r["has_orchestrator"]]
         multi = [r for r in intl_results if r["skill_count"] >= 3 and not r["has_orchestrator"]]
         single = [r for r in intl_results if r["skill_count"] < 3]
+        with_bookkeeping = [r for r in intl_results if r.get("has_bookkeeping")]
+        with_einvoice = [r for r in intl_results if r.get("has_einvoice")]
+        with_payroll = [r for r in intl_results if r.get("has_payroll")]
+        with_formation = [r for r in intl_results if r.get("has_formation")]
+        with_fin_stmts = [r for r in intl_results if r.get("has_financial_statements")]
+        with_tp = [r for r in intl_results if r.get("has_transfer_pricing")]
+        with_tax_opt = [r for r in intl_results if r.get("has_tax_optimization")]
 
         print(f"\nInternational packages built: {len(intl_results)}")
         print(f"  Full (with orchestrator): {len(full)} — {', '.join(r['name'] for r in full)}")
         print(f"  Multi-skill (3+ skills): {len(multi)}")
         print(f"  Single-skill (1-2 skills): {len(single)}")
+        print(f"  With bookkeeping: {len(with_bookkeeping)}")
+        print(f"  With e-invoicing: {len(with_einvoice)}")
+        print(f"  With payroll: {len(with_payroll)}")
+        print(f"  With company formation: {len(with_formation)}")
+        print(f"  With financial statements: {len(with_fin_stmts)}")
+        print(f"  With transfer pricing: {len(with_tp)}")
+        print(f"  With tax optimization: {len(with_tax_opt)}")
 
     # ---- Cross-border package ----
     xb_result = None
@@ -781,26 +827,99 @@ def main():
             xb_pkg = os.path.join(PACKAGES_DIR, "_cross-border")
             os.makedirs(xb_pkg, exist_ok=True)
             xb_files = []
+            # Copy top-level cross-border skills
             for f in sorted(os.listdir(xb_dir)):
                 if f.endswith(".md"):
                     shutil.copy2(os.path.join(xb_dir, f), os.path.join(xb_pkg, f))
                     xb_files.append(f)
+            # Copy treaty corridor files from subdirectory
+            corridors_dir = os.path.join(xb_dir, "treaty-corridors")
+            if os.path.isdir(corridors_dir):
+                for f in sorted(os.listdir(corridors_dir)):
+                    if f.endswith(".md"):
+                        shutil.copy2(os.path.join(corridors_dir, f), os.path.join(xb_pkg, f))
+                        xb_files.append(f)
+            # Copy cross-border workflow base from foundation
+            xb_base = os.path.join(SKILLS_DIR, "foundation", "cross-border-workflow-base.md")
+            if os.path.isfile(xb_base):
+                shutil.copy2(xb_base, os.path.join(xb_pkg, "cross-border-workflow-base.md"))
+                xb_files.append("cross-border-workflow-base.md")
             if xb_files:
                 with open(os.path.join(xb_pkg, "README.md"), "w") as fh:
-                    fh.write("# Cross-Border Tax Skills\n\n"
-                             "Rules for international transactions: reverse charge, "
-                             "withholding tax, PE risk, export services, and more.\n\n"
+                    fh.write("# Cross-Border Accounting Skills\n\n"
+                             "Multi-jurisdiction orchestrator for international transactions: "
+                             "tax residency, VAT place of supply, withholding tax treaties, "
+                             "social security coordination, PE risk, transfer pricing, "
+                             "cross-border payroll, and e-invoicing compliance.\n\n"
                              "These skills supplement country packages when a taxpayer "
-                             "has cross-border activity.\n")
+                             "has cross-border activity. Load alongside the relevant "
+                             "country packages for each jurisdiction involved.\n")
                 xb_files.append("README.md")
                 xb_result = {
                     "jurisdiction": "CROSS-BORDER",
                     "name": "Cross-Border",
                     "files": xb_files,
-                    "has_orchestrator": False,
+                    "has_orchestrator": True,
                     "skill_count": len(xb_files) - 1,
                 }
                 print(f"\nCross-border package built: {len(xb_files) - 1} skills")
+
+    # ---- Industry verticals package ----
+    vert_result = None
+    if not us_only:
+        vert_dir = os.path.join(SKILLS_DIR, "verticals")
+        if os.path.isdir(vert_dir):
+            vert_pkg = os.path.join(PACKAGES_DIR, "_verticals")
+            os.makedirs(vert_pkg, exist_ok=True)
+            vert_files = []
+            for f in sorted(os.listdir(vert_dir)):
+                if f.endswith(".md"):
+                    shutil.copy2(os.path.join(vert_dir, f), os.path.join(vert_pkg, f))
+                    vert_files.append(f)
+            if vert_files:
+                with open(os.path.join(vert_pkg, "README.md"), "w") as fh:
+                    fh.write("# Industry Vertical Skills\n\n"
+                             "Industry-specific accounting patterns for freelancers and small businesses.\n"
+                             "Load alongside your country package for industry-aware tax classification.\n\n"
+                             "Available verticals: " + ", ".join(f.replace('.md', '').replace('-', ' ').title() for f in vert_files) + "\n")
+                vert_files.append("README.md")
+                vert_result = {
+                    "jurisdiction": "VERTICALS",
+                    "name": "Industry Verticals",
+                    "files": vert_files,
+                    "has_orchestrator": False,
+                    "skill_count": len(vert_files) - 1,
+                }
+                print(f"\nIndustry verticals package built: {len(vert_files) - 1} skills")
+
+    # ---- Integrations package ----
+    integ_result = None
+    if not us_only:
+        integ_dir = os.path.join(SKILLS_DIR, "integrations")
+        if os.path.isdir(integ_dir):
+            integ_pkg = os.path.join(PACKAGES_DIR, "_integrations")
+            os.makedirs(integ_pkg, exist_ok=True)
+            integ_files = []
+            for f in sorted(os.listdir(integ_dir)):
+                if f.endswith(".md"):
+                    shutil.copy2(os.path.join(integ_dir, f), os.path.join(integ_pkg, f))
+                    integ_files.append(f)
+            if integ_files:
+                with open(os.path.join(integ_pkg, "README.md"), "w") as fh:
+                    fh.write("# Software & Platform Integration Skills\n\n"
+                             "Column mappings, export formats, and reconciliation guides for popular\n"
+                             "accounting software and payment platforms.\n\n"
+                             "Load alongside your country package so the AI knows how to read your\n"
+                             "Stripe CSV, Xero export, PayPal download, or bank statement format.\n")
+                integ_files.append("README.md")
+                integ_result = {
+                    "jurisdiction": "INTEGRATIONS",
+                    "name": "Software Integrations",
+                    "files": integ_files,
+                    "has_orchestrator": False,
+                    "skill_count": len(integ_files) - 1,
+                }
+                print(f"\nIntegrations package built: {len(integ_files) - 1} skills")
 
     # ---- US state packages ----
     us_results = build_all_us_packages()
@@ -825,7 +944,8 @@ def main():
                      "See the repo README for details.\n")
 
     # ---- Manifest ----
-    all_results = intl_results + ([xb_result] if xb_result else []) + us_results
+    special_pkgs = [xb_result, vert_result, integ_result]
+    all_results = intl_results + [r for r in special_pkgs if r] + us_results
     from datetime import date
     manifest = {
         "generated": date.today().isoformat(),
