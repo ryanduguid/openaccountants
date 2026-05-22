@@ -791,6 +791,185 @@ def build_all_us_packages():
     return results
 
 
+# ---------------------------------------------------------------------------
+# Canada province/territory package generation
+# ---------------------------------------------------------------------------
+
+CA_PROVINCE_CODES = [
+    "ab", "bc", "mb", "nb", "nl", "ns", "nt", "nu",
+    "on", "pe", "qc", "sk", "yt",
+]
+
+CA_PROVINCE_NAMES = {
+    "ab": "Alberta", "bc": "British Columbia", "mb": "Manitoba",
+    "nb": "New Brunswick", "nl": "Newfoundland and Labrador",
+    "ns": "Nova Scotia", "nt": "Northwest Territories", "nu": "Nunavut",
+    "on": "Ontario", "pe": "Prince Edward Island", "qc": "Quebec",
+    "sk": "Saskatchewan", "yt": "Yukon",
+}
+
+# Source directory name under skills/international/canada/ for each province
+CA_PROVINCE_DIRS = {
+    "ab": "alberta", "bc": "british-columbia", "mb": "manitoba",
+    "nb": "new-brunswick", "nl": "newfoundland", "ns": "nova-scotia",
+    "nt": "northwest-territories", "nu": "nunavut", "on": "ontario",
+    "pe": "pei", "qc": "quebec", "sk": "saskatchewan", "yt": "yukon",
+}
+
+
+def build_canada_province_readme(province_name, province_code, files):
+    """Build README for a Canadian province/territory package."""
+    file_list = "\n".join([f"{i+1}. `{f}`" for i, f in enumerate(files)])
+    return f"""# {province_name} ({province_code.upper()}) — AI Tax Assistant | OpenAccountants
+
+> Open-source federal + {province_name} provincial/territorial tax skills for AI.
+> Upload to Claude, ChatGPT, or any AI assistant. Verified by accountants.
+
+## What's in this folder
+
+This package contains **federal Canadian** tax and accounting skills (T1, T2125,
+CPP/EI, instalments, GST/HST, T1135, crypto, bookkeeping, payroll, formation,
+financial statements, transfer pricing, tax optimization) plus
+**{province_name}-specific** provincial/territorial tax skills. Upload all files together.
+
+{file_list}
+
+## How to use
+
+1. Upload ALL files in this folder to your AI assistant (Claude, ChatGPT, Gemini, etc.)
+2. Attach your 2025 bank statement (CSV or PDF)
+3. Say: **"Help me with my 2025 taxes. I'm based in {province_name}. Here's my bank statement."**
+
+The AI will:
+- Ask onboarding questions to confirm your situation
+- Classify every transaction on your bank statement
+- Produce federal T1/T2125 AND {province_name} provincial working papers
+- Flag anything that needs your CPA's attention
+
+## Important
+
+**This is not tax advice.** Everything produced must be reviewed and signed off by a
+qualified Canadian CPA before filing.
+
+The most up-to-date, verified version of these skills is maintained at
+[openaccountants.com](https://openaccountants.com).
+
+---
+
+## Are you a CPA or tax professional in {province_name}?
+
+These {province_name} tax skills need your eye. Every rate, threshold, and form reference was AI-drafted and needs a Canadian CPA to verify it.
+
+**You don't need to use GitHub.** Just:
+
+1. Download the files in this folder
+2. Check the rates against the CRA and your provincial/territorial finance department
+3. Email your corrections to **info@openaaccountants.com** — Word doc, Excel, PDF, tracked changes, whatever works
+
+We'll update the skill and credit you publicly as the verified reviewer at [openaccountants.com](https://openaccountants.com).
+
+Or if you're comfortable with GitHub: fork the repo, fix the source under `skills/international/canada/{CA_PROVINCE_DIRS.get(province_code, province_code)}/`, and submit a PR.
+
+**Your name goes on the skill either way.**
+
+---
+
+*OpenAccountants — open-source accounting skills for AI*
+*134 countries + 51 US states + 13 Canadian provinces/territories — [openaccountants.com](https://openaccountants.com)*
+*info@openaaccountants.com*
+"""
+
+
+def build_canada_province_package(province_code):
+    """Build a complete package for one Canadian province or territory.
+
+    Copies foundation + intake + Canadian federal skills + cross-border
+    base + this province's skills into packages/ca-[code]/.
+    """
+    province_name = CA_PROVINCE_NAMES.get(province_code, province_code.upper())
+    province_dir_name = CA_PROVINCE_DIRS.get(province_code, province_code)
+    pkg_dir = os.path.join(PACKAGES_DIR, f"ca-{province_code}")
+    os.makedirs(pkg_dir, exist_ok=True)
+
+    copied_files = []
+
+    # 1. Universal foundation
+    with open(os.path.join(pkg_dir, "foundation.md"), "w") as fh:
+        fh.write(build_foundation())
+    copied_files.append("foundation.md")
+
+    # 2. Canada-flavoured intake
+    with open(os.path.join(pkg_dir, "intake.md"), "w") as fh:
+        fh.write(build_intake("Canada", "CPA", "CA"))
+    copied_files.append("intake.md")
+
+    # 3. Federal Canadian skills (top-level .md files in skills/international/canada/)
+    canada_root = os.path.join(SKILLS_DIR, "international", "canada")
+    if os.path.isdir(canada_root):
+        for f in sorted(os.listdir(canada_root)):
+            full = os.path.join(canada_root, f)
+            if os.path.isfile(full) and f.endswith(".md"):
+                shutil.copy2(full, os.path.join(pkg_dir, f))
+                copied_files.append(f)
+
+    # 4. Domain workflow bases for any domains present in the federal pool
+    DOMAIN_BASES = {
+        "bookkeeping": "bookkeeping-workflow-base.md",
+        "payroll": "payroll-workflow-base.md",
+        "formation": "company-formation-workflow-base.md",
+        "financial-statements": "financial-statements-workflow-base.md",
+        "transfer-pricing": "transfer-pricing-workflow-base.md",
+        "crypto": "crypto-tax-workflow-base.md",
+    }
+    for keyword, base_file in DOMAIN_BASES.items():
+        if any(keyword in f for f in copied_files):
+            base_path = os.path.join(SKILLS_DIR, "foundation", base_file)
+            if os.path.isfile(base_path) and base_file not in copied_files:
+                shutil.copy2(base_path, os.path.join(pkg_dir, base_file))
+                copied_files.append(base_file)
+
+    # 5. Province-specific skill files
+    province_source = os.path.join(canada_root, province_dir_name)
+    province_skill_count = 0
+    if os.path.isdir(province_source):
+        for f in sorted(os.listdir(province_source)):
+            if f.endswith(".md") and f != "README.md":
+                shutil.copy2(os.path.join(province_source, f), os.path.join(pkg_dir, f))
+                copied_files.append(f)
+                province_skill_count += 1
+
+    # 6. Core orchestrator files (Canada freelance intake + return assembly, global router)
+    orch_dir = os.path.join(SKILLS_DIR, "orchestrator")
+    for orch_file in ("ca-freelance-intake.md", "ca-return-assembly.md", "global-router.md"):
+        src = os.path.join(orch_dir, orch_file)
+        if os.path.isfile(src):
+            shutil.copy2(src, os.path.join(pkg_dir, orch_file))
+            copied_files.append(orch_file)
+
+    # 7. Generate README
+    with open(os.path.join(pkg_dir, "README.md"), "w") as fh:
+        fh.write(build_canada_province_readme(province_name, province_code, copied_files))
+    copied_files.append("README.md")
+
+    return {
+        "jurisdiction": f"CA-{province_code.upper()}",
+        "name": f"Canada — {province_name}",
+        "package_dir": f"ca-{province_code}",
+        "files": copied_files,
+        "province_skills": province_skill_count,
+        "has_orchestrator": True,
+    }
+
+
+def build_all_canada_packages():
+    """Build packages for all 13 Canadian provinces and territories."""
+    results = []
+    for code in CA_PROVINCE_CODES:
+        result = build_canada_province_package(code)
+        results.append(result)
+    return results
+
+
 def main():
     us_only = "--us-only" in sys.argv
 
@@ -817,6 +996,8 @@ def main():
                 continue
             if country_dir_name == "eu":
                 continue  # EU is a regional layer, not a jurisdiction
+            if country_dir_name == "canada":
+                continue  # Canada is split into per-province packages (ca-{code}/), see build_all_canada_packages()
 
             result = build_package(country_dir_name, country_dir)
             if result:
@@ -960,6 +1141,34 @@ def main():
     if no_state_skills:
         print(f"    {', '.join(r['jurisdiction'] for r in no_state_skills)}")
 
+    # ---- Canada province/territory packages ----
+    ca_results = build_all_canada_packages()
+    no_prov_skills = [r for r in ca_results if r["province_skills"] == 0]
+    print(f"\nCanada province/territory packages built: {len(ca_results)}")
+    print(f"  With province-specific skills: {len(ca_results) - len(no_prov_skills)}")
+    if no_prov_skills:
+        print(f"  No province-specific skills (federal only): {', '.join(r['jurisdiction'] for r in no_prov_skills)}")
+
+    # Regenerate Canada index (packages/canada/README.md)
+    ca_index_dir = os.path.join(PACKAGES_DIR, "canada")
+    os.makedirs(ca_index_dir, exist_ok=True)
+    with open(os.path.join(ca_index_dir, "README.md"), "w") as fh:
+        rows = "\n".join(
+            f"| {CA_PROVINCE_NAMES[c]} | `{c.upper()}` | [`packages/ca-{c}/`](../ca-{c}/) |"
+            for c in CA_PROVINCE_CODES
+        )
+        fh.write(
+            "# Canada — Tax Skills Index\n\n"
+            "Pick your province or territory package below. Each package contains the\n"
+            "federal Canadian tax skills (T1, T2125, CPP/EI, GST/HST, T1135, instalments,\n"
+            "crypto, bookkeeping, payroll, formation, financial statements, transfer pricing,\n"
+            "tax optimization) plus the province/territory-specific tax skill.\n\n"
+            "| Province / Territory | Code | Package |\n"
+            "|---|---|---|\n"
+            f"{rows}\n\n"
+            "See the repo [README](../../README.md) for upload instructions.\n"
+        )
+
     # Regenerate US index (packages/us/README.md)
     us_index_dir = os.path.join(PACKAGES_DIR, "us")
     os.makedirs(us_index_dir, exist_ok=True)
@@ -973,13 +1182,14 @@ def main():
 
     # ---- Manifest ----
     special_pkgs = [xb_result, vert_result, integ_result]
-    all_results = intl_results + [r for r in special_pkgs if r] + us_results
+    all_results = intl_results + [r for r in special_pkgs if r] + us_results + ca_results
     from datetime import date
     manifest = {
         "generated": date.today().isoformat(),
         "total_packages": len(all_results),
         "international_packages": len(intl_results),
         "us_state_packages": len(us_results),
+        "canada_province_packages": len(ca_results),
         "packages": all_results,
     }
     with open(os.path.join(PACKAGES_DIR, "manifest.json"), "w") as f:

@@ -630,19 +630,6 @@ state the exclusion of warranty; and each file should have at least
 the "copyright" line and a pointer to where the full notice is found.
 
 
-
 ---
 
-Copyright (c) 2026 Glimpse Ltd
-
-Additional terms under Section 7 of AGPL-3.0:
-
-  Attribution — You must retain all copyright notices, the "Open Accountants"
-  name, and links to openaccountants.com in any modified versions or derivative
-  works, including in any user-facing output that references these skills.
-
-COMMERCIAL LICENSING
-
-If the terms of the AGPL-3.0 do not work for your use case, a commercial
-license is available from Glimpse Ltd. See COMMERCIAL_LICENSE.md for details
-or contact info@openaaccountants.com.
+Additional terms under Section 7 of AGPL-3.0 apply to this work. See LICENSE-ADDITIONAL.md in the repository root.

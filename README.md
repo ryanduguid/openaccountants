@@ -2,15 +2,30 @@
 
 # OpenAccountants
 
-Open-source accounting skills for AI. **713 skills across 134 countries + 51 US state packages.**
+Open-source accounting skills for AI. **716 skills across 134 countries + 51 US state packages + 13 Canadian province/territory packages.**
 
 **11 accounting domains:** tax, bookkeeping, e-invoicing, payroll, company formation, financial statements, transfer pricing, tax optimization, **crypto tax**, cross-border, plus industry verticals and platform integrations.
 
 Upload to Claude, ChatGPT, or any LLM with your bank statement — or connect via **[MCP](#mcp-server)** so your AI loads the right skills automatically. Get a working paper ready for your accountant and **cut your accounting bill by 80%.**
 
-Your accountant charges by the hour. Most of that time is classifying transactions and filling forms. These skills do that work before the meeting. Your accountant reviews and signs off in 20 minutes instead of 3 hours.
-
 **Website:** [openaccountants.com](https://openaccountants.com)
+
+---
+
+## 👉 Start here
+
+**New to this repo?** Read **[START-HERE.md](START-HERE.md)** — it has a table of scenarios ("I'm a freelance developer in California", "I sell on Etsy", "I'm worried about Pillar Two", etc.) and tells you exactly which files to upload and what to say to the AI.
+
+If you just want to dive in, pick your jurisdiction:
+
+| You are… | Go to |
+|---|---|
+| Freelancer / sole prop in a country | [`packages/<country>/`](packages/) (e.g. `malta`, `germany`, `uk`) |
+| US-based — freelancer or single-member LLC | [`packages/us-<state>/`](packages/) (e.g. `us-ca`, `us-ny`, `us-tx`) |
+| Canada-based — sole prop | [`packages/ca-<province>/`](packages/) (e.g. `ca-on`, `ca-qc`, `ca-bc`) |
+| Cross-border or sector-specific (SaaS, banking, REIT, etc.) | [`skills/cross-border/`](skills/cross-border/) and [`skills/verticals/`](skills/verticals/) |
+
+---
 
 ### Two ways to use OpenAccountants
 
@@ -27,9 +42,9 @@ Read this before you trust any output.
 
 - **LLMs hallucinate and misread.** These files steer the model; they do not guarantee correct numbers, classifications, or filings. Always have a qualified professional review before you act.
 - **Tax law changes.** Rates, thresholds, and forms go out of date. The repo is a snapshot; [openaccountants.com](https://openaccountants.com) may be ahead of what you cloned.
-- **Verification is tiered, not binary.** Most skills are **not** "accountant-verified on real client data." We publish [Q1–Q4 tiers](docs/QUALITY-TIERS.md): **Q1** is the bar for that; **Q2** is research-verified to authority sites but not yet proven on real statements; **Q3** is AI-drafted with citations but not independently verified. **Many skills are Q3 or below** — check the tier for the file you use.
+- **Verification is in two tiers** — see [QUALITY-TIERS.md](docs/QUALITY-TIERS.md). **Accountant-verified** means a licensed practitioner has signed off on the skill (Malta full suite, Germany VAT, US federal bookkeeping + SE). **Research-verified** means every rate, threshold, and form reference has been drafted from authoritative sources but not yet signed off by a credentialed practitioner. Every skill is one or the other — there is no "draft" or "stub" tier.
 - **Coverage is uneven.** Thirteen countries ship the full accounting suite (tax + bookkeeping + payroll + formation + financial statements + transfer pricing + tax optimization) in this repo; dozens more have multiple skills without that full stack; **many** jurisdictions are **VAT/GST-only** or partial. See **Coverage** below and each country folder's README.
-- **New domains are Q3.** The bookkeeping, payroll, formation, financial statements, transfer pricing, and tax optimization skills were AI-drafted in Q3 and need community verification. Tax skills are more mature.
+- **Newer domains need more eyes.** Bookkeeping, payroll, formation, financial statements, transfer pricing, and tax optimization skills are research-verified but have fewer accountant sign-offs than the core tax skills. Help us close that gap.
 
 Honesty is the point: if you know where the gaps are, you can use the project safely. Skeptics welcome.
 
@@ -51,6 +66,10 @@ packages/
 ├── us-ny/           ← Federal + New York state skills
 ├── us-tx/           ← Federal + Texas state skills
 ├── ... 51 US state packages (all 50 states + DC)
+├── ca-on/           ← Federal Canadian + Ontario provincial skills
+├── ca-qc/           ← Federal Canadian + Quebec provincial skills (incl. QST)
+├── ca-bc/           ← Federal Canadian + British Columbia provincial skills
+├── ... 13 Canadian province/territory packages (all 10 provinces + 3 territories)
 ```
 
 Also available: `_cross-border/` (22 skills), `_verticals/` (6 industry skills), `_integrations/` (10 platform skills)
@@ -59,7 +78,9 @@ Also available: `_cross-border/` (22 skills), `_verticals/` (6 industry skills),
 
 **US users:** pick `packages/us-[your state code]/` (e.g. `packages/us-ca/` for California). Each state package bundles federal skills (Schedule C, SE, QBI, estimated tax, etc.) **plus** your state's income tax, sales tax, and specialty taxes. See the [US state index](packages/us/README.md) for the full list, or the [source coverage matrix](skills/us-states/README.md) for what each state includes.
 
-For MCP users, US state packages appear as `us-ca`, `us-tx`, `us-ny`, etc. alongside country packages.
+**Canadian users:** pick `packages/ca-[your province code]/` (e.g. `packages/ca-on/` for Ontario, `packages/ca-qc/` for Quebec). Each province/territory package bundles the federal Canadian skills (T1, T2125, CPP/EI, GST/HST, T1135, instalments, crypto, bookkeeping, payroll, formation, financial statements, transfer pricing, tax optimization) **plus** your province/territory's income tax (and QST for Quebec). See the [Canada index](packages/canada/README.md) for the full list.
+
+For MCP users, US state and Canadian province packages appear as `us-ca`, `us-tx`, `ca-on`, `ca-qc`, etc. alongside country packages.
 
 Contributors: all packages are **generated** from source files under `skills/` by `scripts/build-packages.py`. Edit the source, not the package. See [CONTRIBUTING.md](CONTRIBUTING.md).
 
@@ -91,7 +112,7 @@ The AI will ask a few questions, load the right skills, and produce a working pa
 
 ## Are you an accountant?
 
-These skills need your eye. Every rate, threshold, and form reference was AI-drafted and needs a qualified professional to verify it.
+These skills need your eye. Most are **research-verified** — drafted from authoritative sources (tax authority websites + Big-4 worldwide tax summaries) but awaiting credentialed sign-off. Your review moves them to **accountant-verified**.
 
 **You don't need to use GitHub.** Just:
 
@@ -259,13 +280,14 @@ When uncertain, the system always assumes MORE tax, never less. Your accountant 
 
 ## Quality tiers
 
-Skills are **partially** verified at best unless you confirm the tier. **Q1** means practitioner sign-off on real data; most files are **not** Q1. Full definitions: [docs/QUALITY-TIERS.md](docs/QUALITY-TIERS.md).
+Every skill is in one of two tiers. Check the badge on the file. Full definitions: [docs/QUALITY-TIERS.md](docs/QUALITY-TIERS.md).
 
 | Tier | What it means |
 |------|--------------|
-| **Q1 — Accountant-verified** | Run against real bank statements. Multiple iterations. Licensed practitioner signed off. |
-| **Q2 — Research-verified** | Every rate verified against tax authority websites. Not yet tested on real data. |
-| **Q3 — AI-drafted** | Full structure and citations. Not independently verified. |
+| **Accountant-verified** | A licensed practitioner (CPA, EA, CA, Steuerberater, or equivalent) has reviewed the skill, tested it against representative data, and signed off. Name and license number on the skill page. |
+| **Research-verified** | Every rate, threshold, form, and deadline has been drafted from authoritative sources (tax authority website + Big-4 worldwide tax summaries). Follows the accountant-verified format. Awaiting credentialed sign-off. |
+
+Most skills are research-verified. Output from any skill must still be reviewed by your accountant before filing.
 
 ---
 
@@ -375,7 +397,7 @@ We maintain 713 skills across 134 countries. Accounting rules change constantly 
 
 | What | How | Impact |
 |------|-----|--------|
-| **Verify a rate** | Check a number against your tax authority's website, open a PR | Moves a skill from Q3 → Q2 |
+| **Verify a rate** | Check a number against your tax authority's website, open a PR | Strengthens a research-verified skill; with credentialed sign-off, moves it to accountant-verified |
 | **Add bank patterns** | Add how transactions appear on your local bank statement | Every user in your country gets fewer misclassifications |
 | **Fix an error** | Find a wrong rate or outdated threshold, submit the correction | Prevents bad working papers |
 | **Add a tax skill** | Write a new income tax, VAT, or social security skill for your country | Fills a gap for every user in that jurisdiction |

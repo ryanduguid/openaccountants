@@ -1,5 +1,7 @@
 # OpenAccountants — User Stories & Orchestration Plan
 
+> **Note:** This doc predates the move to two tiers. Wherever it mentions "Q1/Q2/Q3/Q4" or "stub" status, the current model is **accountant-verified** and **research-verified** only — see [QUALITY-TIERS.md](QUALITY-TIERS.md). The user-story content below is preserved as historical user research; quality-tier references are stale.
+
 How real users will interact with the platform, and what we need to build to make it work.
 
 ---

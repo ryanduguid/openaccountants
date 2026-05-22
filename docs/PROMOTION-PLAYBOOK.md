@@ -1,6 +1,8 @@
-# Skill Promotion Playbook — Q3 → Q2 → Q1
+# Skill Promotion Playbook
 
-How to systematically turn 178 AI-drafted skills into accountant-verified production skills.
+> **Note:** This playbook predates the move to two tiers. The current model is **research-verified** and **accountant-verified** only — see [QUALITY-TIERS.md](QUALITY-TIERS.md). Wherever this doc says "Q3 → Q2" read it as "improve research-verified skill". Where it says "Q2 → Q1" read it as "move research-verified → accountant-verified".
+
+How to systematically turn research-verified skills into accountant-verified production skills.
 
 ---
 

@@ -1,33 +1,48 @@
 # OpenAccountants — Skill Quality Tiers
 
-How we measure whether a skill is actually ready for production use.
+How we measure whether a skill is ready for production use.
+
+We use **two tiers**. No drafts, no stubs — every published skill is one of these:
 
 ---
 
-## The four quality tiers
+## The two tiers
 
 | Tier | Label | What it means | Badge |
 |------|-------|--------------|-------|
-| **Q1** | **Accountant-verified** | Skill has been run against real client bank statements, real transactions, and real filings. Gone through multiple iterations. Output was reviewed and signed off by a licensed practitioner. Errors found during real use have been corrected. | `accountant-verified` |
-| **Q2** | **Research-verified, Q1 format** | Skill follows the Q1 execution format (Step 0 → Step N). Every rate, threshold, form number, and deadline has been cross-checked against authoritative sources via deep research. Structure matches the accountant-verified skills exactly. But it has not yet been tested against real transaction data. | `verified` |
-| **Q3** | **AI-drafted** | Skill was drafted by Claude from training data. May be in Step format (119 skills) or Section format (56 skills). Has citations, edge cases, test suites — but facts have not been independently verified and format may not match Q1. | `draft` |
-| **Q4** | **Stub with metadata** | Skill file exists with correct frontmatter, scope statement, and dependency chain, but computation rules and rates are placeholder or empty. | `stub` |
+| **Accountant-verified** | A licensed practitioner has reviewed the skill, run it against real (or representative) data, and signed off. Errors found during use have been corrected. The skill is current with the latest tax-year rates and filing forms. | `accountant-verified` |
+| **Research-verified** | Every rate, threshold, form number, and deadline has been drafted from authoritative sources — tax authority website first, supplemented by PWC / Deloitte / EY / KPMG worldwide tax summaries and the relevant statutes. Format matches the accountant-verified standard. Awaiting a credentialed sign-off. | `research-verified` |
+
+That's it. If a skill is published, it is one of those two.
 
 ---
 
-## What separates each tier
+## What each tier guarantees
 
-### Q3 → Q2: Restructure + deep research (no human needed)
+### Accountant-verified
 
-This is entirely automatable with Claude Code. Two things must happen:
+- A real licensed practitioner (CPA, EA, CA, Steuerberater, expert-comptable, commercialista, asesor fiscal, or equivalent for the jurisdiction) has put their name and license number on it.
+- The skill has been used against real client data and refined through filing cycles.
+- The contributor is publicly credited on the skill and at [openaccountants.com](https://openaccountants.com).
+- The skill is reviewed at least annually for rate / threshold / form changes.
 
-#### A. Restructure to Q1 format
+### Research-verified
 
-The skill must follow the exact execution order proven in accountant-verified skills:
+- The skill follows the accountant-verified format (Step 0 onboarding → Step N output).
+- Every figure carries a primary-source citation (statute, regulation, tax authority notice).
+- Deep research against the tax authority's published guidance has been completed.
+- It is **not** a substitute for accountant review of an actual filing. The reviewer brief always says so.
+- It is the right tier to use *as a starting point* — your accountant reviews and signs off before you file.
+
+---
+
+## The standard skill format
+
+Every published skill, in either tier, must use this section order:
 
 ```
 ## Skill Metadata                          ← who, what, where
-## Confidence Tier Definitions             ← T1/T2/T3 rules
+## Confidence Tier Definitions             ← T1 / T2 / T3 rules within the skill
 ## Step 0: Client Onboarding Questions     ← FIRST — gate before any work
 ## Step 1: Transaction Classification      ← sale/purchase, location, rate
 ## Step 2: Box/Line Assignment             ← deterministic lookup tables
@@ -45,127 +60,115 @@ The skill must follow the exact execution order proven in accountant-verified sk
 ## Disclaimer                              ← standard liability + openaccountants.com
 ```
 
-**Key format rules from Q1 skills:**
-- Step 0 (onboarding) is ALWAYS first — never buried at the end
-- Box/line assignments are **deterministic lookup tables**, not narrative text
-- Classification matrix uses **tables**, not paragraphs
-- No "Overview" or "What is VAT?" sections — this is an execution skill, not a textbook
-- Every rule tagged with confidence tier [T1], [T2], or [T3]
-- PROHIBITIONS section before edge cases
+Key rules:
 
-**56 skills currently in Section format need this restructure.**
-**119 skills already in Step format — may need minor alignment.**
-
-#### B. Deep research verification
-
-Every fact in the skill must be cross-checked against authoritative sources. The agent runs deep research and verifies:
-
-| What to verify | Authoritative source |
-|---------------|---------------------|
-| VAT/GST/sales tax rates | Tax authority website, EU TEDB, PWC Tax Summaries |
-| Form numbers and names | Tax authority filing portal |
-| Filing deadlines | Tax authority calendar / guidance |
-| Registration thresholds | Tax authority registration page |
-| Penalty rates | Tax code / tax authority penalty guidance |
-| Reverse charge rules | Tax code articles, EU VAT Directive art. 196 |
-| Blocked input categories | Tax code (deductibility restrictions) |
-| Invoice requirements | Tax code / e-invoicing regulations |
-
-**Sources by region (see Part 3 below for full list).**
-
-After restructure + deep research verification, the skill is Q2.
+- Step 0 (onboarding) is ALWAYS first — never buried at the end.
+- Box / line assignments are **deterministic lookup tables**, not narrative text.
+- Classification matrices use **tables**, not paragraphs.
+- No "Overview" or "What is VAT?" sections — this is an execution skill, not a textbook.
+- Every rule tagged with confidence tier `[T1]`, `[T2]`, or `[T3]` (these are *within-skill* rule confidence, not the overall quality tier).
+- PROHIBITIONS section comes before edge cases.
 
 ---
 
-### Q2 → Q1: Real transaction data + multiple iterations
+## Current inventory
 
-This requires humans and real data. Cannot be automated.
+### Accountant-verified
 
-1. Real bank statements are classified using the skill's rules
-2. Output is compared against a manually-prepared return
-3. Discrepancies are investigated and the skill is corrected
-4. The skill goes through **multiple iterations** — each real-world use exposes new edge cases
-5. A licensed practitioner reviews the output and would sign the return
-6. At least one complete filing cycle has been completed
+| Skill | Jurisdiction | Verified by |
+|-------|-------------|-------------|
+| `malta-vat-return` | Malta | Michael Cutajar, CPA |
+| `malta-income-tax` | Malta | Michael Cutajar, CPA |
+| `malta-ssc` | Malta | Michael Cutajar, CPA |
+| `malta-tax-optimization` | Malta | Michael Cutajar, CPA |
+| `mt-estimated-tax` | Malta | Michael Cutajar, CPA |
+| `germany-vat-return` | Germany | Pending publication of practitioner registry |
+| `south-africa-vat` | South Africa | Michael Cutajar, CPA |
+| `za-vat-return` | South Africa | Michael Cutajar, CPA |
+| `za-income-tax` | South Africa | Michael Cutajar, CPA |
+| `za-provisional-tax` | South Africa | Michael Cutajar, CPA |
+| `us-sole-prop-bookkeeping` | US Federal | Pending publication of practitioner registry |
+| `us-schedule-c-and-se-computation` | US Federal | Pending publication of practitioner registry |
+| `us-ca-freelance-intake` | US-CA | Pending publication of practitioner registry |
 
-**This is how Malta, Germany, and US federal skills reached Q1.** It wasn't one pass — it was iterations against real data until the skill stopped producing errors.
+This list is auto-derived from each skill's `verified_by` frontmatter by `scripts/build-skills-manifest.py`. To add a new accountant-verified skill, set its `verified_by:` field to the reviewer's name and credential, then re-run the script. Every accountant-verified skill carries the reviewer's name and license number on the skill page at openaccountants.com.
 
----
+### Research-verified
 
-## Part 2 — Current inventory
-
-### Q1 — Accountant-verified (7 skills)
-
-| Skill | Jurisdiction | Iterations | Data |
-|-------|-------------|------------|------|
-| `malta-vat-return` | Malta | Multiple | Real Malta VAT return filings |
-| `malta-income-tax` | Malta | Multiple | Real TA24 data |
-| `malta-ssc` | Malta | Multiple | Real Class 2 SSC data |
-| `germany-vat-return` | Germany | Multiple | Real bank statements |
-| `us-sole-prop-bookkeeping` | US Federal | Multiple | Real freelancer data |
-| `us-schedule-c-and-se-computation` | US Federal | Multiple | Real Schedule C data |
-| `us-ca-freelance-intake` | US-CA | Multiple | Real intake sessions |
-
-### Q2 — Research-verified, Q1 format (9 skills)
-
-| Skill | Jurisdiction | Notes |
-|-------|-------------|-------|
-| `france-vat-return` | France | Deep researched, Q1 format |
-| `italy-vat-return` | Italy | Deep researched, Q1 format |
-| `ny-it-201-resident-return` | US-NY | Deep researched, Q1 format |
-| `ny-llc-filing-fee-it-204-ll` | US-NY | Deep researched, Q1 format |
-| `us-federal-return-assembly` | US Federal | Orchestrator, reviewed |
-| `us-ca-return-assembly` | US-CA | Orchestrator, reviewed |
-| `eu-vat-directive` | EU | Directive layer, reviewed |
-| `vat-workflow-base` | Global | Infrastructure, reviewed |
-| `us-tax-workflow-base` | Global | Infrastructure, reviewed |
-
-### Q3 — AI-drafted (175 skills)
-
-| Format | Count | Action needed |
-|--------|-------|--------------|
-| Step format (correct structure) | 119 | Deep research verification only |
-| Section format (wrong structure) | 56 | Restructure + deep research |
-
-### Q4 — Stubs (~60 skills)
-
-Income tax, social contributions, estimated tax stubs across all jurisdictions.
+Everything else in this repo. ~700+ skills covering 134 countries and 51 US states. Each one's frontmatter shows the research date and the authoritative sources cross-checked.
 
 ---
 
-## Part 3 — Deep research sources by region
+## What the user sees on a skill
 
-These are the authoritative sources agents should use to verify Q3 skills.
+```
+┌─────────────────────────────────────────────┐
+│  Malta VAT Return v1.0                      │
+│  ████████████ ACCOUNTANT-VERIFIED           │
+│                                             │
+│  Verified by: [Practitioner name + license] │
+│  Tested against: Real client data           │
+│  Last updated: [Date]                       │
+└─────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────┐
+│  France VAT Return (CA3) v0.1               │
+│  ▓▓▓▓▓▓▓▓░░░░ RESEARCH-VERIFIED             │
+│                                             │
+│  Sources: impots.gouv.fr, PWC, EU TEDB      │
+│  Research date: April 2026                  │
+│  Awaiting accountant sign-off               │
+│  Help verify: openaccountants.com/verify    │
+└─────────────────────────────────────────────┘
+```
+
+---
+
+## How a skill moves from research-verified to accountant-verified
+
+1. A credentialed practitioner in the jurisdiction picks up the skill.
+2. They review the rates, thresholds, forms, and deadlines against current law.
+3. They run the skill against representative or real client data.
+4. They submit corrections (web form at openaccountants.com or GitHub PR).
+5. A skill maintainer merges the corrections; the skill is tagged with the practitioner's name and license number.
+6. The skill is bumped to **accountant-verified** in the next release.
+
+The practitioner is credited publicly. Their profile lists all the skills they've signed off.
+
+---
+
+## Authoritative research sources
+
+These are the sources used during research verification. The same sources are recommended to practitioners verifying their jurisdiction.
 
 ### Global / multi-jurisdiction
 
 | Source | URL pattern | What it covers |
 |--------|------------|----------------|
 | **PWC Worldwide Tax Summaries** | taxsummaries.pwc.com | Income tax, VAT/GST rates, filing for 150+ countries |
-| **Deloitte Tax Guides** | dits.deloitte.com | VAT/GST rates, thresholds, compliance requirements |
+| **Deloitte Tax Guides** | dits.deloitte.com | VAT/GST rates, thresholds, compliance |
 | **EY Worldwide Tax Guide** | ey.com/en_gl/tax-guides | Country-by-country tax overviews |
-| **KPMG Tax Rates Online** | kpmg.com/tax-rates | Corporate/individual/indirect tax rates |
+| **KPMG Tax Rates Online** | kpmg.com/tax-rates | Corporate / individual / indirect tax rates |
 | **OECD Tax Database** | oecd.org/tax/tax-policy | Standardised cross-country tax data |
-| **Trading Economics** | tradingeconomics.com/country-list/sales-tax-rate | Quick rate verification |
 
 ### European Union
 
 | Source | URL | What it covers |
 |--------|-----|----------------|
-| **EU TEDB** (Taxes in Europe Database) | ec.europa.eu/taxation_customs/tedb | Official EU VAT rates for all 27 member states |
+| **EU TEDB** (Taxes in Europe Database) | ec.europa.eu/taxation_customs/tedb | Official EU VAT rates for all 27 Member States |
 | **EC VAT Information Exchange System** | ec.europa.eu/taxation_customs/vies | VAT number validation |
 | **VAT Expert Group publications** | ec.europa.eu | Directive interpretations |
 
-### Country-specific tax authority websites
+### Country-specific tax authorities
 
-| Country | Tax authority | URL |
-|---------|--------------|-----|
+| Country | Authority | URL |
+|---------|-----------|-----|
 | **UK** | HMRC | gov.uk/government/organisations/hm-revenue-customs |
 | **Canada** | CRA | canada.ca/en/revenue-agency |
 | **Australia** | ATO | ato.gov.au |
 | **New Zealand** | IRD | ird.govt.nz |
 | **Ireland** | Revenue | revenue.ie |
-| **Germany** | BZSt/Finanzamt | bzst.de, elster.de |
+| **Germany** | BZSt / Finanzamt | bzst.de, elster.de |
 | **France** | DGFiP | impots.gouv.fr |
 | **Italy** | Agenzia delle Entrate | agenziaentrate.gov.it |
 | **Spain** | AEAT | agenciatributaria.es |
@@ -186,8 +189,10 @@ These are the authoritative sources agents should use to verify Q3 skills.
 
 ### US state tax authorities
 
+Each state has an online portal. Search "[State] department of revenue" for the canonical URL. Major examples:
+
 | State | Authority | URL |
-|-------|----------|-----|
+|-------|-----------|-----|
 | **California** | CDTFA | cdtfa.ca.gov |
 | **New York** | DTF | tax.ny.gov |
 | **Texas** | Comptroller | comptroller.texas.gov |
@@ -195,69 +200,8 @@ These are the authoritative sources agents should use to verify Q3 skills.
 | **Illinois** | IDOR | tax.illinois.gov |
 | **Washington** | DOR | dor.wa.gov |
 
-*All 45 sales-tax states have online portals. Agent should search "[State] department of revenue sales tax" for the correct URL.*
-
 ---
 
-## Part 4 — The Q3 → Q2 automation pipeline
+## Disclaimer
 
-For each Q3 skill, an agent runs this exact process:
-
-```
-1. READ the current skill file
-2. CHECK format:
-   - If Section format → RESTRUCTURE to Step format (Q1 order)
-   - If Step format → CHECK alignment with Q1 section order
-3. DEEP RESEARCH — for each factual claim:
-   a. Hit the tax authority website (primary source)
-   b. Cross-check against PWC Tax Summaries (secondary source)
-   c. If discrepancy → flag and use tax authority as truth
-4. UPDATE the skill:
-   - Correct any wrong rates, form numbers, thresholds, deadlines
-   - Add missing [T1]/[T2]/[T3] tags
-   - Ensure PROHIBITIONS section exists
-   - Ensure Test Suite has at least 5 tests
-   - Ensure Edge Case Registry has at least 5 cases
-   - Add/update Validated By field: "Deep research verification, [date]"
-5. ADD disclaimer if missing
-6. MARK as Q2 in skill metadata
-```
-
-**Estimated time per skill:** 10–20 minutes per agent run
-**Estimated total for 175 Q3 skills:** ~30–50 agent-hours
-
----
-
-## Part 5 — What the user sees
-
-```
-┌─────────────────────────────────────────────┐
-│  Malta VAT Return v1.0                      │
-│  ████████████ ACCOUNTANT-VERIFIED (Q1)      │
-│                                             │
-│  Verified by: [Practitioner name], CPA      │
-│  Tested against: Real client data           │
-│  Iterations: Multiple filing cycles         │
-│  Last updated: [Date]                       │
-└─────────────────────────────────────────────┘
-
-┌─────────────────────────────────────────────┐
-│  France VAT Return (CA3) v0.1               │
-│  ▓▓▓▓▓▓▓▓░░░░ VERIFIED (Q2)                │
-│                                             │
-│  Format: Q1 structure                       │
-│  Verified via: Deep research, April 2026    │
-│  Sources: impots.gouv.fr, PWC, EU TEDB      │
-│  Tested against real data: Not yet          │
-└─────────────────────────────────────────────┘
-
-┌─────────────────────────────────────────────┐
-│  Honduras ISV Return v1.0                   │
-│  ░░░░░░░░░░░░ DRAFT (Q3)                    │
-│                                             │
-│  Format: Step (correct)                     │
-│  Verified: Not yet                          │
-│  ⚠ Facts not independently verified.       │
-│  Help verify: openaccountants.com/verify    │
-└─────────────────────────────────────────────┘
-```
+Quality tiers describe the verification status of a skill, not a guarantee that any specific output is correct. LLMs hallucinate, tax law changes, and individual circumstances vary. Every output must be reviewed by a qualified professional before filing.

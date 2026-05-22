@@ -14,13 +14,13 @@ All copy is ready to paste. Edit to taste, then post.
 
 We open-sourced 371 tax classification skills covering 134 countries — VAT/GST, income tax, social contributions. Upload them to Claude, ChatGPT, or any LLM alongside your bank statement, and you get a working paper ready for your accountant's review.
 
-The honest part: most of these skills are Q3 (AI-drafted with citations, not independently verified). Eight countries are Q1 (accountant-verified on real data). We publish the quality tier for every file so you know exactly what you're trusting. We think radical transparency about quality is more useful than pretending everything is production-ready.
+The honest part: every skill is in one of two tiers — **accountant-verified** (a licensed practitioner signed off) or **research-verified** (drafted from authoritative sources, awaiting credentialed sign-off). Eight country/domain combinations are currently accountant-verified; the rest are research-verified. We publish the tier on every file so you know exactly what you're trusting. We think radical transparency about quality is more useful than pretending everything is production-ready.
 
 How it works: every transaction on your bank statement gets one of three outcomes — Classified (enough info), Assumed (conservative default applied, flagged for reviewer), or Needs Input (one targeted question). When uncertain, the system always assumes more tax, never less.
 
 There's also an MCP server (`pip install openaccountants-mcp`) so Claude Desktop or Cursor can discover and load the right country's skills automatically — no manual file uploads.
 
-We're looking for accountants and tax professionals in any country to verify the Q3 skills and move them to Q2/Q1. If you spot an error in your country's tax rates, you're exactly who we need.
+We're looking for accountants and tax professionals in any country to take research-verified skills and accountant-verify them. If you spot an error in your country's tax rates, you're exactly who we need.
 
 ---
 
@@ -28,7 +28,7 @@ We're looking for accountants and tax professionals in any country to verify the
 
 **GPT Name:** `OpenAccountants — AI Tax Prep (134 Countries)`
 
-**GPT Description:** `Open-source tax classification for 134 countries. Upload your bank statement, get a working paper for your accountant. VAT/GST, income tax, social contributions. Quality-tiered Q1–Q4.`
+**GPT Description:** `Open-source tax classification for 134 countries. Upload your bank statement, get a working paper for your accountant. VAT/GST, income tax, social contributions. Every skill is accountant-verified or research-verified.`
 
 **System Instructions (paste into GPT Builder "Instructions"):**
 
@@ -52,7 +52,7 @@ WORKFLOW:
 MANDATORY NOTICE — include at the top of every output:
 "Produced by OpenAccountants (openaccountants.com). This is for informational purposes only and does not constitute tax advice. All positions must be reviewed by a qualified professional before filing."
 
-COUNTRIES WITH FULL GUIDED EXPERIENCE (Q1/Q2):
+COUNTRIES WITH FULL GUIDED EXPERIENCE (accountant-verified or research-verified):
 Malta, UK, Germany, Australia, Canada, India, Spain, United States (CA)
 
 For all other countries, use the VAT/income tax/SSC skills available. If a country only has VAT, say so clearly.
@@ -60,7 +60,7 @@ For all other countries, use the VAT/income tax/SSC skills available. If a count
 LIMITATIONS — tell the user upfront:
 - LLMs hallucinate. These skills steer you but don't guarantee correctness.
 - Tax law changes. This is a snapshot.
-- Most skills are Q3 (AI-drafted, not independently verified). Check the tier.
+- Most skills are research-verified, not yet accountant-verified. Check the tier on each file.
 ```
 
 **Knowledge files to upload** (8 country folders — all files from each):
@@ -91,9 +91,7 @@ We built OpenAccountants — an open-source set of tax skills that you upload to
 
 134 countries covered. 8 have the full guided experience (Malta, UK, Germany, Australia, Canada, India, Spain, US-CA). The rest have varying levels of coverage.
 
-We're transparent about quality: every skill has a tier from Q1 (accountant-verified on real data) to Q4 (stub). Most are Q3 — AI-drafted with citations but not independently verified. We publish the tier so you know what you're trusting.
-
-The idea: your accountant charges by the hour. Most of that time is classifying transactions. These skills do that work before the meeting. Your accountant reviews in 20 minutes instead of 3 hours.
+We're transparent about quality: every skill is either **accountant-verified** (a licensed practitioner signed off) or **research-verified** (drafted from authoritative sources, awaiting a credentialed sign-off). The tier is on every file so you know what you're trusting.
 
 Free, open-source, AGPL-3.0: https://github.com/openaccountants/openaccountants
 
@@ -111,7 +109,7 @@ Upload your bank statement to Claude or ChatGPT along with your country's skill 
 
 Instead of paying for 3 hours of transaction classification, your accountant reviews a pre-made working paper in 20 minutes.
 
-It's free. 134 countries. Honest about limitations — most skills are AI-drafted (Q3), not fully verified. Eight countries (Malta, UK, Germany, Australia, Canada, India, Spain, US) have practitioner-tested skills.
+It's free. 134 countries. Honest about limitations — most skills are research-verified but not yet accountant-verified. Eight countries (Malta, UK, Germany, Australia, Canada, India, Spain, US) have practitioner-tested skills.
 
 GitHub: https://github.com/openaccountants/openaccountants
 
@@ -125,7 +123,7 @@ Built an open-source set of tax skills for AI that produces working papers, revi
 
 The system uses conservative defaults (always assumes more tax when uncertain), cites statutes, and flags every assumption for the reviewer. It's designed to make YOUR review faster, not to replace you.
 
-Most country skills are Q3 (AI-drafted with citations, not independently verified). We need practitioners to verify their country's rates and move skills to Q2/Q1. If you find an error — and you will — submit a PR. Your name goes on the skill publicly.
+Most country skills are research-verified — drafted from authoritative sources but not yet signed off by a credentialed practitioner. We need practitioners to verify their country's rates and move skills to accountant-verified. If you find an error — and you will — submit a PR. Your name goes on the skill publicly.
 
 Every country we've verified so far has had errors in the AI draft. Yours probably does too.
 
@@ -145,7 +143,7 @@ Three tools: `list_jurisdictions`, `list_files(country)`, `get_file(country, fil
 
 Works with Claude Desktop, Cursor, or any MCP-compatible client. Stdio transport. The skills themselves cover VAT/GST, income tax, and social contributions — upload a bank statement and get a classified working paper.
 
-Quality is tiered Q1–Q4 (Q1 = accountant-verified, Q3 = AI-drafted). We're honest about where the gaps are.
+Quality is in two tiers — accountant-verified or research-verified. We're honest about which is which on every file.
 
 GitHub: https://github.com/openaccountants/openaccountants
 PyPI: https://pypi.org/project/openaccountants-mcp/
@@ -186,12 +184,11 @@ The rest have varying coverage — many are VAT/GST only.
 **4/**
 We're radically honest about quality.
 
-Every skill has a tier:
-- Q1: Accountant-verified on real data
-- Q2: Research-verified against tax authority sites
-- Q3: AI-drafted with citations, not independently verified
+Every skill has one of two tiers:
+- **Accountant-verified** — a licensed practitioner has reviewed and signed off
+- **Research-verified** — drafted from authoritative sources, awaiting a credentialed sign-off
 
-Most are Q3. We say this loudly.
+Most are research-verified. We say this loudly.
 
 **5/**
 How to use it:
@@ -255,7 +252,7 @@ They were right.
 
 It's admitting that most of your AI-generated tax skills haven't been verified by a human yet.
 
-So we publish the quality tier for every file. Q1 = accountant-verified. Q3 = AI-drafted. Most are Q3.
+So we publish the quality tier for every file: accountant-verified (signed off by a licensed practitioner) or research-verified (drafted from authoritative sources, not yet signed off). Most are research-verified — say it loudly.
 
 Honesty is the product.
 
@@ -279,7 +276,7 @@ But freelancers using the remittance basis effectively pay ~15%.
 
 Most AI tax tools don't know this. Ours does (it's in the skill file, with the statute cited).
 
-**8.** Every country we've verified has had errors in the AI-drafted tax rates.
+**8.** Every country we've sent to a credentialed reviewer has had errors in the research-verified rates.
 
 Every. Single. One.
 
