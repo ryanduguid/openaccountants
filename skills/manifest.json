@@ -6856,14 +6856,14 @@
     },
     {
       "id": "uk-freelance-intake",
-      "jurisdiction": "",
+      "jurisdiction": "GB",
       "obligation": "ORCH",
       "quality": "research-verified",
       "category": "",
       "tax_year": "",
       "path": "orchestrator/uk-freelance-intake.md",
       "size_kb": 25.0,
-      "lines": 592
+      "lines": 593
     },
     {
       "id": "uk-income-tax-sa100",
@@ -6944,14 +6944,14 @@
     },
     {
       "id": "uk-return-assembly",
-      "jurisdiction": "",
+      "jurisdiction": "GB",
       "obligation": "ORCH",
       "quality": "research-verified",
       "category": "",
       "tax_year": "",
       "path": "orchestrator/uk-return-assembly.md",
       "size_kb": 24.4,
-      "lines": 420
+      "lines": 421
     },
     {
       "id": "uk-self-employment-sa103",
