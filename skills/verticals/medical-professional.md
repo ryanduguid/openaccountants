@@ -3,6 +3,7 @@ name: medical-professional
 description: Industry vertical for medical and healthcare professionals in private practice including doctors, dentists, physiotherapists, psychologists, therapists, optometrists, and allied health practitioners. Loaded alongside any country skill to provide industry-specific classification guidance for patient fee income, insurance reimbursements, medical equipment, clinical premises, and healthcare-specific regulatory costs. Trigger phrases — doctor, dentist, private practice, physiotherapist, therapist, GP, medical practice, dental practice, chiropractor, psychologist, optometrist, allied health, private healthcare, clinic.
 version: 1.0
 category: vertical
+jurisdiction: GLOBAL
 ---
 
 # Medical Professional Vertical Skill v1.0

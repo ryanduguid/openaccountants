@@ -1,14 +1,14 @@
 {
   "version": "2.2",
-  "generated": "2026-05-22",
-  "total_skills": 654,
+  "generated": "2026-05-23",
+  "total_skills": 687,
   "quality_breakdown": {
-    "research-verified": 641,
+    "research-verified": 674,
     "accountant-verified": 13
   },
   "obligation_breakdown": {
     "IT": 105,
-    "OTHER": 124,
+    "OTHER": 157,
     "CT": 176,
     "INT": 10,
     "SSC": 15,
@@ -113,14 +113,14 @@
     },
     {
       "id": "amazon-seller-integration",
-      "jurisdiction": "",
+      "jurisdiction": "GLOBAL",
       "obligation": "INT",
       "quality": "research-verified",
       "category": "integration",
       "tax_year": "",
       "path": "integrations/amazon-seller-integration.md",
       "size_kb": 13.3,
-      "lines": 197
+      "lines": 198
     },
     {
       "id": "americas-corridors",
@@ -209,6 +209,17 @@
       "path": "international/argentina/argentina-iva.md",
       "size_kb": 19.5,
       "lines": 454
+    },
+    {
+      "id": "argentina-references",
+      "jurisdiction": "AR",
+      "obligation": "OTHER",
+      "quality": "research-verified",
+      "category": "",
+      "tax_year": "",
+      "path": "international/argentina/references.md",
+      "size_kb": 1.3,
+      "lines": 28
     },
     {
       "id": "armenia-vat",
@@ -409,6 +420,17 @@
       "lines": 341
     },
     {
+      "id": "australia-references",
+      "jurisdiction": "AU",
+      "obligation": "OTHER",
+      "quality": "research-verified",
+      "category": "",
+      "tax_year": "",
+      "path": "international/australia/references.md",
+      "size_kb": 2.2,
+      "lines": 44
+    },
+    {
       "id": "australia-tax-optimization",
       "jurisdiction": "AU",
       "obligation": "OPT",
@@ -506,6 +528,17 @@
       "path": "international/bangladesh/bangladesh-pit.md",
       "size_kb": 6.9,
       "lines": 199
+    },
+    {
+      "id": "bangladesh-references",
+      "jurisdiction": "BD",
+      "obligation": "OTHER",
+      "quality": "research-verified",
+      "category": "",
+      "tax_year": "",
+      "path": "international/bangladesh/references.md",
+      "size_kb": 1.2,
+      "lines": 20
     },
     {
       "id": "bangladesh-vat",
@@ -674,14 +707,14 @@
     },
     {
       "id": "bookkeeping-workflow-base",
-      "jurisdiction": "",
+      "jurisdiction": "GLOBAL",
       "obligation": "FW",
       "quality": "research-verified",
       "category": "foundation",
       "tax_year": "",
       "path": "foundation/bookkeeping-workflow-base.md",
       "size_kb": 33.0,
-      "lines": 531
+      "lines": 532
     },
     {
       "id": "bosnia-vat",
@@ -803,6 +836,17 @@
       "path": "international/brazil/brazil-payroll.md",
       "size_kb": 16.8,
       "lines": 414
+    },
+    {
+      "id": "brazil-references",
+      "jurisdiction": "BR",
+      "obligation": "OTHER",
+      "quality": "research-verified",
+      "category": "",
+      "tax_year": "",
+      "path": "international/brazil/references.md",
+      "size_kb": 1.9,
+      "lines": 45
     },
     {
       "id": "brazil-transfer-pricing",
@@ -1080,6 +1124,17 @@
       "lines": 324
     },
     {
+      "id": "canada-references",
+      "jurisdiction": "CA",
+      "obligation": "OTHER",
+      "quality": "research-verified",
+      "category": "",
+      "tax_year": "",
+      "path": "international/canada/references.md",
+      "size_kb": 0.8,
+      "lines": 19
+    },
+    {
       "id": "canada-tax-optimization",
       "jurisdiction": "CA",
       "obligation": "OPT",
@@ -1179,6 +1234,17 @@
       "lines": 506
     },
     {
+      "id": "chile-references",
+      "jurisdiction": "CL",
+      "obligation": "OTHER",
+      "quality": "research-verified",
+      "category": "",
+      "tax_year": "",
+      "path": "international/chile/references.md",
+      "size_kb": 5.9,
+      "lines": 92
+    },
+    {
       "id": "china-pit",
       "jurisdiction": "CN",
       "obligation": "IT",
@@ -1188,6 +1254,17 @@
       "path": "international/china/china-pit.md",
       "size_kb": 8.3,
       "lines": 223
+    },
+    {
+      "id": "china-references",
+      "jurisdiction": "CN",
+      "obligation": "OTHER",
+      "quality": "research-verified",
+      "category": "",
+      "tax_year": "",
+      "path": "international/china/references.md",
+      "size_kb": 1.5,
+      "lines": 28
     },
     {
       "id": "china-vat",
@@ -1290,14 +1367,14 @@
     },
     {
       "id": "company-formation-workflow-base",
-      "jurisdiction": "",
+      "jurisdiction": "GLOBAL",
       "obligation": "FW",
       "quality": "research-verified",
       "category": "foundation",
       "tax_year": "",
       "path": "foundation/company-formation-workflow-base.md",
       "size_kb": 24.5,
-      "lines": 395
+      "lines": 396
     },
     {
       "id": "construction-sector",
@@ -1312,25 +1389,25 @@
     },
     {
       "id": "consultant-professional",
-      "jurisdiction": "",
+      "jurisdiction": "GLOBAL",
       "obligation": "VERT",
       "quality": "research-verified",
       "category": "vertical",
       "tax_year": "",
       "path": "verticals/consultant-professional.md",
-      "size_kb": 23.0,
-      "lines": 457
+      "size_kb": 23.1,
+      "lines": 458
     },
     {
       "id": "content-creator",
-      "jurisdiction": "",
+      "jurisdiction": "GLOBAL",
       "obligation": "VERT",
       "quality": "research-verified",
       "category": "vertical",
       "tax_year": "",
       "path": "verticals/content-creator.md",
-      "size_kb": 23.2,
-      "lines": 476
+      "size_kb": 23.3,
+      "lines": 477
     },
     {
       "id": "corporate-income-tax-workflow-base",
@@ -1400,25 +1477,25 @@
     },
     {
       "id": "cross-border-workflow-base",
-      "jurisdiction": "",
+      "jurisdiction": "GLOBAL",
       "obligation": "FW",
       "quality": "research-verified",
       "category": "foundation",
       "tax_year": "",
       "path": "foundation/cross-border-workflow-base.md",
       "size_kb": 37.3,
-      "lines": 553
+      "lines": 554
     },
     {
       "id": "crypto-tax-workflow-base",
-      "jurisdiction": "",
+      "jurisdiction": "GLOBAL",
       "obligation": "FW",
       "quality": "research-verified",
       "category": "foundation",
       "tax_year": "",
       "path": "foundation/crypto-tax-workflow-base.md",
       "size_kb": 11.9,
-      "lines": 252
+      "lines": 253
     },
     {
       "id": "ct-income-tax",
@@ -1496,6 +1573,17 @@
       "path": "international/czech-republic/czech-republic-vat-return.md",
       "size_kb": 14.4,
       "lines": 381
+    },
+    {
+      "id": "czech_republic-references",
+      "jurisdiction": "CZ",
+      "obligation": "OTHER",
+      "quality": "research-verified",
+      "category": "",
+      "tax_year": "",
+      "path": "international/czech-republic/references.md",
+      "size_kb": 2.6,
+      "lines": 44
     },
     {
       "id": "dac6-mdr-reportable-arrangements",
@@ -1652,6 +1740,17 @@
       "lines": 338
     },
     {
+      "id": "denmark-references",
+      "jurisdiction": "DK",
+      "obligation": "OTHER",
+      "quality": "research-verified",
+      "category": "",
+      "tax_year": "",
+      "path": "international/denmark/references.md",
+      "size_kb": 1.8,
+      "lines": 38
+    },
+    {
       "id": "denmark-vat-return",
       "jurisdiction": "",
       "obligation": "CT",
@@ -1697,14 +1796,14 @@
     },
     {
       "id": "ecommerce-seller",
-      "jurisdiction": "",
+      "jurisdiction": "GLOBAL",
       "obligation": "VERT",
       "quality": "research-verified",
       "category": "vertical",
       "tax_year": "",
       "path": "verticals/ecommerce-seller.md",
       "size_kb": 19.2,
-      "lines": 409
+      "lines": 410
     },
     {
       "id": "ecuador-iva",
@@ -1730,14 +1829,14 @@
     },
     {
       "id": "einvoice-workflow-base",
-      "jurisdiction": "",
+      "jurisdiction": "GLOBAL",
       "obligation": "FW",
       "quality": "research-verified",
       "category": "foundation",
       "tax_year": "",
       "path": "foundation/einvoice-workflow-base.md",
-      "size_kb": 31.6,
-      "lines": 430
+      "size_kb": 31.7,
+      "lines": 431
     },
     {
       "id": "el-salvador-iva",
@@ -2027,14 +2126,14 @@
     },
     {
       "id": "financial-statements-workflow-base",
-      "jurisdiction": "",
+      "jurisdiction": "GLOBAL",
       "obligation": "FW",
       "quality": "research-verified",
       "category": "foundation",
       "tax_year": "",
       "path": "foundation/financial-statements-workflow-base.md",
       "size_kb": 31.0,
-      "lines": 443
+      "lines": 444
     },
     {
       "id": "finland-vat-return",
@@ -2257,6 +2356,17 @@
       "lines": 350
     },
     {
+      "id": "france-references",
+      "jurisdiction": "FR",
+      "obligation": "OTHER",
+      "quality": "research-verified",
+      "category": "",
+      "tax_year": "",
+      "path": "international/france/references.md",
+      "size_kb": 2.1,
+      "lines": 40
+    },
+    {
       "id": "france-tax-optimization",
       "jurisdiction": "FR",
       "obligation": "OPT",
@@ -2302,25 +2412,25 @@
     },
     {
       "id": "freeagent-integration",
-      "jurisdiction": "",
+      "jurisdiction": "GLOBAL",
       "obligation": "INT",
       "quality": "research-verified",
       "category": "integration",
       "tax_year": "",
       "path": "integrations/freeagent-integration.md",
       "size_kb": 10.9,
-      "lines": 220
+      "lines": 221
     },
     {
       "id": "freelance-developer",
-      "jurisdiction": "",
+      "jurisdiction": "GLOBAL",
       "obligation": "VERT",
       "quality": "research-verified",
       "category": "vertical",
       "tax_year": "",
       "path": "verticals/freelance-developer.md",
       "size_kb": 18.6,
-      "lines": 379
+      "lines": 380
     },
     {
       "id": "ga-income-tax",
@@ -2411,6 +2521,17 @@
       "lines": 335
     },
     {
+      "id": "germany-references",
+      "jurisdiction": "DE",
+      "obligation": "OTHER",
+      "quality": "research-verified",
+      "category": "",
+      "tax_year": "",
+      "path": "international/germany/references.md",
+      "size_kb": 3.7,
+      "lines": 71
+    },
+    {
       "id": "germany-tax-optimization",
       "jurisdiction": "DE",
       "obligation": "OPT",
@@ -2453,6 +2574,17 @@
       "path": "international/ghana/ghana-pit.md",
       "size_kb": 5.7,
       "lines": 194
+    },
+    {
+      "id": "ghana-references",
+      "jurisdiction": "GH",
+      "obligation": "OTHER",
+      "quality": "research-verified",
+      "category": "",
+      "tax_year": "",
+      "path": "international/ghana/references.md",
+      "size_kb": 1.0,
+      "lines": 20
     },
     {
       "id": "ghana-vat",
@@ -3126,6 +3258,17 @@
       "lines": 406
     },
     {
+      "id": "india-references",
+      "jurisdiction": "IN",
+      "obligation": "OTHER",
+      "quality": "research-verified",
+      "category": "",
+      "tax_year": "",
+      "path": "international/india/references.md",
+      "size_kb": 3.2,
+      "lines": 50
+    },
+    {
       "id": "india-tax-optimization",
       "jurisdiction": "IN",
       "obligation": "OPT",
@@ -3146,6 +3289,17 @@
       "path": "international/india/india-transfer-pricing.md",
       "size_kb": 8.8,
       "lines": 208
+    },
+    {
+      "id": "indonesia-references",
+      "jurisdiction": "ID",
+      "obligation": "OTHER",
+      "quality": "research-verified",
+      "category": "",
+      "tax_year": "",
+      "path": "international/indonesia/references.md",
+      "size_kb": 1.9,
+      "lines": 31
     },
     {
       "id": "indonesia-vat",
@@ -3256,6 +3410,17 @@
       "path": "international/isle-of-man/isle-of-man-vat.md",
       "size_kb": 16.1,
       "lines": 383
+    },
+    {
+      "id": "israel-references",
+      "jurisdiction": "IL",
+      "obligation": "OTHER",
+      "quality": "research-verified",
+      "category": "",
+      "tax_year": "",
+      "path": "international/israel/references.md",
+      "size_kb": 3.8,
+      "lines": 58
     },
     {
       "id": "israel-vat",
@@ -3379,6 +3544,17 @@
       "lines": 347
     },
     {
+      "id": "italy-references",
+      "jurisdiction": "IT",
+      "obligation": "OTHER",
+      "quality": "research-verified",
+      "category": "",
+      "tax_year": "",
+      "path": "international/italy/references.md",
+      "size_kb": 1.9,
+      "lines": 42
+    },
+    {
       "id": "italy-tax-optimization",
       "jurisdiction": "IT",
       "obligation": "OPT",
@@ -3498,6 +3674,17 @@
       "path": "international/japan/japan-payroll.md",
       "size_kb": 16.3,
       "lines": 347
+    },
+    {
+      "id": "japan-references",
+      "jurisdiction": "JP",
+      "obligation": "OTHER",
+      "quality": "research-verified",
+      "category": "",
+      "tax_year": "",
+      "path": "international/japan/references.md",
+      "size_kb": 1.6,
+      "lines": 26
     },
     {
       "id": "japan-tax-optimization",
@@ -3830,6 +4017,17 @@
       "lines": 241
     },
     {
+      "id": "lithuania-references",
+      "jurisdiction": "LT",
+      "obligation": "OTHER",
+      "quality": "research-verified",
+      "category": "",
+      "tax_year": "",
+      "path": "international/lithuania/references.md",
+      "size_kb": 0.8,
+      "lines": 19
+    },
+    {
       "id": "lithuania-vat-return",
       "jurisdiction": "",
       "obligation": "CT",
@@ -4073,14 +4271,14 @@
     },
     {
       "id": "medical-professional",
-      "jurisdiction": "",
+      "jurisdiction": "GLOBAL",
       "obligation": "VERT",
       "quality": "research-verified",
       "category": "vertical",
       "tax_year": "",
       "path": "verticals/medical-professional.md",
       "size_kb": 26.4,
-      "lines": 490
+      "lines": 491
     },
     {
       "id": "mexico-crypto-tax",
@@ -4114,6 +4312,17 @@
       "path": "international/mexico/mexico-iva.md",
       "size_kb": 38.6,
       "lines": 615
+    },
+    {
+      "id": "mexico-references",
+      "jurisdiction": "MX",
+      "obligation": "OTHER",
+      "quality": "research-verified",
+      "category": "",
+      "tax_year": "",
+      "path": "international/mexico/references.md",
+      "size_kb": 1.3,
+      "lines": 28
     },
     {
       "id": "mexico-transfer-pricing",
@@ -4611,6 +4820,17 @@
       "lines": 298
     },
     {
+      "id": "netherlands-references",
+      "jurisdiction": "NL",
+      "obligation": "OTHER",
+      "quality": "research-verified",
+      "category": "",
+      "tax_year": "",
+      "path": "international/netherlands/references.md",
+      "size_kb": 2.1,
+      "lines": 44
+    },
+    {
       "id": "netherlands-tax-optimization",
       "jurisdiction": "NL",
       "obligation": "OPT",
@@ -4677,6 +4897,17 @@
       "lines": 693
     },
     {
+      "id": "new_zealand-references",
+      "jurisdiction": "NZ",
+      "obligation": "OTHER",
+      "quality": "research-verified",
+      "category": "",
+      "tax_year": "",
+      "path": "international/new-zealand/references.md",
+      "size_kb": 1.6,
+      "lines": 29
+    },
+    {
       "id": "ng-income-tax",
       "jurisdiction": "",
       "obligation": "IT",
@@ -4719,6 +4950,17 @@
       "path": "international/nicaragua/nicaragua-iva.md",
       "size_kb": 6.1,
       "lines": 174
+    },
+    {
+      "id": "nigeria-references",
+      "jurisdiction": "NG",
+      "obligation": "OTHER",
+      "quality": "research-verified",
+      "category": "",
+      "tax_year": "",
+      "path": "international/nigeria/references.md",
+      "size_kb": 1.3,
+      "lines": 28
     },
     {
       "id": "nigeria-vat",
@@ -5261,25 +5503,25 @@
     },
     {
       "id": "paypal-integration",
-      "jurisdiction": "",
+      "jurisdiction": "GLOBAL",
       "obligation": "INT",
       "quality": "research-verified",
       "category": "integration",
       "tax_year": "",
       "path": "integrations/paypal-integration.md",
       "size_kb": 13.6,
-      "lines": 204
+      "lines": 205
     },
     {
       "id": "payroll-workflow-base",
-      "jurisdiction": "",
+      "jurisdiction": "GLOBAL",
       "obligation": "FW",
       "quality": "research-verified",
       "category": "foundation",
       "tax_year": "",
       "path": "foundation/payroll-workflow-base.md",
       "size_kb": 30.2,
-      "lines": 446
+      "lines": 447
     },
     {
       "id": "pe-individual-return",
@@ -5414,6 +5656,17 @@
       "lines": 397
     },
     {
+      "id": "poland-references",
+      "jurisdiction": "PL",
+      "obligation": "OTHER",
+      "quality": "research-verified",
+      "category": "",
+      "tax_year": "",
+      "path": "international/poland/references.md",
+      "size_kb": 2.3,
+      "lines": 49
+    },
+    {
       "id": "poland-vat-return",
       "jurisdiction": "",
       "obligation": "CT",
@@ -5514,14 +5767,14 @@
     },
     {
       "id": "property-investor",
-      "jurisdiction": "",
+      "jurisdiction": "GLOBAL",
       "obligation": "VERT",
       "quality": "research-verified",
       "category": "vertical",
       "tax_year": "",
       "path": "verticals/property-investor.md",
       "size_kb": 24.3,
-      "lines": 455
+      "lines": 456
     },
     {
       "id": "property-transfer-tax-matrix",
@@ -5591,14 +5844,14 @@
     },
     {
       "id": "quickbooks-integration",
-      "jurisdiction": "",
+      "jurisdiction": "GLOBAL",
       "obligation": "INT",
       "quality": "research-verified",
       "category": "integration",
       "tax_year": "",
       "path": "integrations/quickbooks-integration.md",
-      "size_kb": 8.5,
-      "lines": 186
+      "size_kb": 8.6,
+      "lines": 187
     },
     {
       "id": "rd-tax-credits-matrix",
@@ -5612,26 +5865,15 @@
       "lines": 364
     },
     {
-      "id": "references",
-      "jurisdiction": "",
-      "obligation": "OTHER",
-      "quality": "research-verified",
-      "category": "",
-      "tax_year": "",
-      "path": "international/czech-republic/references.md",
-      "size_kb": 2.4,
-      "lines": 37
-    },
-    {
       "id": "revolut-business-integration",
-      "jurisdiction": "",
+      "jurisdiction": "GLOBAL",
       "obligation": "INT",
       "quality": "research-verified",
       "category": "integration",
       "tax_year": "",
       "path": "integrations/revolut-business-integration.md",
       "size_kb": 11.0,
-      "lines": 171
+      "lines": 172
     },
     {
       "id": "ri-income-tax",
@@ -5687,6 +5929,17 @@
       "path": "international/romania/romania-einvoice.md",
       "size_kb": 14.5,
       "lines": 285
+    },
+    {
+      "id": "romania-references",
+      "jurisdiction": "RO",
+      "obligation": "OTHER",
+      "quality": "research-verified",
+      "category": "",
+      "tax_year": "",
+      "path": "international/romania/references.md",
+      "size_kb": 4.4,
+      "lines": 70
     },
     {
       "id": "romania-vat-return",
@@ -5745,14 +5998,14 @@
     },
     {
       "id": "sage-integration",
-      "jurisdiction": "",
+      "jurisdiction": "GLOBAL",
       "obligation": "INT",
       "quality": "research-verified",
       "category": "integration",
       "tax_year": "",
       "path": "integrations/sage-integration.md",
       "size_kb": 12.0,
-      "lines": 253
+      "lines": 254
     },
     {
       "id": "saudi-arabia-vat",
@@ -5775,6 +6028,17 @@
       "path": "international/saudi-arabia/saudi-einvoice.md",
       "size_kb": 14.0,
       "lines": 355
+    },
+    {
+      "id": "saudi_arabia-references",
+      "jurisdiction": "SA",
+      "obligation": "OTHER",
+      "quality": "research-verified",
+      "category": "",
+      "tax_year": "",
+      "path": "international/saudi-arabia/references.md",
+      "size_kb": 5.6,
+      "lines": 74
     },
     {
       "id": "sc-income-tax",
@@ -5888,14 +6152,14 @@
     },
     {
       "id": "shopify-integration",
-      "jurisdiction": "",
+      "jurisdiction": "GLOBAL",
       "obligation": "INT",
       "quality": "research-verified",
       "category": "integration",
       "tax_year": "",
       "path": "integrations/shopify-integration.md",
       "size_kb": 12.7,
-      "lines": 220
+      "lines": 221
     },
     {
       "id": "singapore-crypto-tax",
@@ -5975,6 +6239,17 @@
       "lines": 214
     },
     {
+      "id": "slovakia-references",
+      "jurisdiction": "SK",
+      "obligation": "OTHER",
+      "quality": "research-verified",
+      "category": "",
+      "tax_year": "",
+      "path": "international/slovakia/references.md",
+      "size_kb": 1.6,
+      "lines": 24
+    },
+    {
       "id": "slovakia-vat-return",
       "jurisdiction": "",
       "obligation": "CT",
@@ -6041,6 +6316,17 @@
       "lines": 636
     },
     {
+      "id": "south_korea-references",
+      "jurisdiction": "KR",
+      "obligation": "OTHER",
+      "quality": "research-verified",
+      "category": "",
+      "tax_year": "",
+      "path": "international/south-korea/references.md",
+      "size_kb": 2.5,
+      "lines": 43
+    },
+    {
       "id": "spain-bookkeeping",
       "jurisdiction": "ES",
       "obligation": "BT",
@@ -6105,6 +6391,17 @@
       "path": "international/spain/spain-payroll.md",
       "size_kb": 15.6,
       "lines": 350
+    },
+    {
+      "id": "spain-references",
+      "jurisdiction": "ES",
+      "obligation": "OTHER",
+      "quality": "research-verified",
+      "category": "",
+      "tax_year": "",
+      "path": "international/spain/references.md",
+      "size_kb": 3.0,
+      "lines": 45
     },
     {
       "id": "spain-tax-optimization",
@@ -6174,14 +6471,14 @@
     },
     {
       "id": "stripe-integration",
-      "jurisdiction": "",
+      "jurisdiction": "GLOBAL",
       "obligation": "INT",
       "quality": "research-verified",
       "category": "integration",
       "tax_year": "",
       "path": "integrations/stripe-integration.md",
       "size_kb": 10.6,
-      "lines": 185
+      "lines": 186
     },
     {
       "id": "sweden-bookkeeping",
@@ -6215,6 +6512,17 @@
       "path": "international/sweden/sweden-payroll.md",
       "size_kb": 15.7,
       "lines": 377
+    },
+    {
+      "id": "sweden-references",
+      "jurisdiction": "SE",
+      "obligation": "OTHER",
+      "quality": "research-verified",
+      "category": "",
+      "tax_year": "",
+      "path": "international/sweden/references.md",
+      "size_kb": 3.4,
+      "lines": 61
     },
     {
       "id": "sweden-vat-return",
@@ -6305,6 +6613,17 @@
       "lines": 245
     },
     {
+      "id": "thailand-references",
+      "jurisdiction": "TH",
+      "obligation": "OTHER",
+      "quality": "research-verified",
+      "category": "",
+      "tax_year": "",
+      "path": "international/thailand/references.md",
+      "size_kb": 1.8,
+      "lines": 42
+    },
+    {
       "id": "thailand-vat",
       "jurisdiction": "TH",
       "obligation": "CT",
@@ -6339,14 +6658,14 @@
     },
     {
       "id": "transfer-pricing-workflow-base",
-      "jurisdiction": "",
+      "jurisdiction": "GLOBAL",
       "obligation": "FW",
       "quality": "research-verified",
       "category": "foundation",
       "tax_year": "",
       "path": "foundation/transfer-pricing-workflow-base.md",
-      "size_kb": 29.0,
-      "lines": 394
+      "size_kb": 29.1,
+      "lines": 395
     },
     {
       "id": "trinidad-vat",
@@ -6380,6 +6699,17 @@
       "path": "international/turkey/turkey-pit.md",
       "size_kb": 7.5,
       "lines": 216
+    },
+    {
+      "id": "turkey-references",
+      "jurisdiction": "TR",
+      "obligation": "OTHER",
+      "quality": "research-verified",
+      "category": "",
+      "tax_year": "",
+      "path": "international/turkey/references.md",
+      "size_kb": 4.0,
+      "lines": 73
     },
     {
       "id": "turkey-vat",
@@ -6589,6 +6919,17 @@
       "path": "international/uk/uk-payroll.md",
       "size_kb": 11.2,
       "lines": 296
+    },
+    {
+      "id": "uk-references",
+      "jurisdiction": "GB",
+      "obligation": "OTHER",
+      "quality": "research-verified",
+      "category": "",
+      "tax_year": "",
+      "path": "international/uk/references.md",
+      "size_kb": 2.2,
+      "lines": 49
     },
     {
       "id": "uk-rental-sa105",
@@ -6866,6 +7207,17 @@
       "lines": 850
     },
     {
+      "id": "us-states-references",
+      "jurisdiction": "US",
+      "obligation": "OTHER",
+      "quality": "research-verified",
+      "category": "",
+      "tax_year": "",
+      "path": "us-states/references.md",
+      "size_kb": 1.6,
+      "lines": 37
+    },
+    {
       "id": "us-tax-workflow-base",
       "jurisdiction": "",
       "obligation": "OTHER",
@@ -6966,14 +7318,14 @@
     },
     {
       "id": "vat-workflow-base",
-      "jurisdiction": "",
+      "jurisdiction": "GLOBAL",
       "obligation": "CT",
       "quality": "research-verified",
       "category": "",
       "tax_year": "",
       "path": "foundation/vat-workflow-base.md",
-      "size_kb": 69.6,
-      "lines": 608
+      "size_kb": 69.7,
+      "lines": 609
     },
     {
       "id": "venezuela-iva",
@@ -6996,6 +7348,17 @@
       "path": "international/vietnam/vietnam-pit.md",
       "size_kb": 13.9,
       "lines": 355
+    },
+    {
+      "id": "vietnam-references",
+      "jurisdiction": "VN",
+      "obligation": "OTHER",
+      "quality": "research-verified",
+      "category": "",
+      "tax_year": "",
+      "path": "international/vietnam/references.md",
+      "size_kb": 1.7,
+      "lines": 36
     },
     {
       "id": "vietnam-vat",
@@ -7098,14 +7461,14 @@
     },
     {
       "id": "wise-integration",
-      "jurisdiction": "",
+      "jurisdiction": "GLOBAL",
       "obligation": "INT",
       "quality": "research-verified",
       "category": "integration",
       "tax_year": "",
       "path": "integrations/wise-integration.md",
-      "size_kb": 10.7,
-      "lines": 186
+      "size_kb": 10.8,
+      "lines": 187
     },
     {
       "id": "withholding-tax-matrix",
@@ -7120,14 +7483,14 @@
     },
     {
       "id": "workflow-base",
-      "jurisdiction": "",
+      "jurisdiction": "GLOBAL",
       "obligation": "OTHER",
       "quality": "research-verified",
       "category": "",
       "tax_year": "",
       "path": "foundation/workflow-base.md",
       "size_kb": 46.4,
-      "lines": 699
+      "lines": 700
     },
     {
       "id": "wv-income-tax",
@@ -7164,14 +7527,14 @@
     },
     {
       "id": "xero-integration",
-      "jurisdiction": "",
+      "jurisdiction": "GLOBAL",
       "obligation": "INT",
       "quality": "research-verified",
       "category": "integration",
       "tax_year": "",
       "path": "integrations/xero-integration.md",
-      "size_kb": 9.5,
-      "lines": 179
+      "size_kb": 9.6,
+      "lines": 180
     },
     {
       "id": "yt-individual-return",

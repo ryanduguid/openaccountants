@@ -1,3 +1,10 @@
+---
+name: new_zealand-references
+jurisdiction: NZ
+version: 1.0
+description: Primary source references and related open-source projects for this jurisdiction.
+---
+
 # New Zealand — Related Open-Source Projects
 
 OpenAccountants is AGPL-3.0. AGPL-3.0 projects below are same-license family — fully compatible.

@@ -1,3 +1,10 @@
+---
+name: us-states-references
+jurisdiction: US
+version: 1.0
+description: Primary source references and related open-source projects for this jurisdiction.
+---
+
 # United States — Related Open-Source Projects
 
 OpenAccountants is AGPL-3.0. All projects below have compatible licenses. Projects below can be incorporated with attribution.

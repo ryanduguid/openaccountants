@@ -1,3 +1,10 @@
+---
+name: ghana-references
+jurisdiction: GH
+version: 1.0
+description: Primary source references and related open-source projects for this jurisdiction.
+---
+
 # Ghana — Related Open-Source Projects
 
 OpenAccountants is AGPL-3.0. Projects below are used as reference for tax rate data.

@@ -1,3 +1,10 @@
+---
+name: australia-references
+jurisdiction: AU
+version: 1.0
+description: Primary source references and related open-source projects for this jurisdiction.
+---
+
 # Australia — Related Open-Source Projects
 
 OpenAccountants is AGPL-3.0. MIT, Apache-2.0, GPL-3.0, and AGPL-3.0 content can all be incorporated with attribution. Projects below are license-compatible unless noted otherwise.

@@ -5,6 +5,7 @@ category: integration
 description: >
   Integration skill for Revolut Business statement CSV exports. Activate when the user uploads a Revolut Business
   CSV, Revolut statement, or mentions Revolut Business transactions.
+jurisdiction: GLOBAL
 ---
 
 # Revolut Business Integration Skill v1.0

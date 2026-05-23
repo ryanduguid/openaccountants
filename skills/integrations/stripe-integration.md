@@ -5,6 +5,7 @@ category: integration
 description: >
   Integration skill for Stripe payment platform CSV exports. Activate when the user uploads a Stripe balance
   transaction report, payout report, or mentions Stripe, Stripe payments, or Stripe CSV.
+jurisdiction: GLOBAL
 ---
 
 # Stripe Integration Skill v1.0

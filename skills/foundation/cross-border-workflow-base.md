@@ -16,6 +16,7 @@ depends_on:
   - eu-social-security-coordination
   - eu-directives-cross-border
   - oecd-model-treaty-defaults
+jurisdiction: GLOBAL
 ---
 
 # Cross-Border Workflow Base — Master Multi-Jurisdiction Orchestrator

@@ -3,6 +3,7 @@ name: consultant-professional
 description: Industry vertical for professional service providers including management consultants, lawyers, architects, accountants, coaches, and advisory professionals. Loaded alongside any country skill to provide industry-specific classification guidance for service-based revenue, WIP accounting, client disbursements, and trust account separation. Trigger phrases — consultant, management consultant, business coach, freelance lawyer, architect, advisory, professional services, coaching, consulting firm, sole practitioner.
 version: 1.0
 category: vertical
+jurisdiction: GLOBAL
 ---
 
 # Consultant & Professional Services Vertical Skill v1.0

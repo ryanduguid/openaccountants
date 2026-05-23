@@ -1,3 +1,10 @@
+---
+name: indonesia-references
+jurisdiction: ID
+version: 1.0
+description: Primary source references and related open-source projects for this jurisdiction.
+---
+
 # Indonesia — References
 
 ## Open-source repositories

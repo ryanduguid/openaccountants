@@ -3,6 +3,7 @@ name: property-investor
 description: Industry vertical for property investors including residential landlords, short-term rental operators (Airbnb/Booking.com), commercial property investors, and property developers. Loaded alongside any country skill to provide industry-specific classification guidance for rental income, mortgage interest treatment, capital vs revenue repairs, and property-specific deductions. Trigger phrases — landlord, rental property, property investor, Airbnb host, short-term rental, buy-to-let, commercial property, real estate investor, rental income, property portfolio.
 version: 1.0
 category: vertical
+jurisdiction: GLOBAL
 ---
 
 # Property Investor Vertical Skill v1.0

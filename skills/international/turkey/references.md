@@ -1,3 +1,10 @@
+---
+name: turkey-references
+jurisdiction: TR
+version: 1.0
+description: Primary source references and related open-source projects for this jurisdiction.
+---
+
 # Turkey — Related Open-Source Projects
 
 OpenAccountants is AGPL-3.0. AGPL-3.0, MIT, and Apache-2.0 are all compatible licenses. Projects below can be incorporated with attribution.

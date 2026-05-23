@@ -3,6 +3,7 @@ name: freelance-developer
 description: Industry vertical for freelance software developers, web developers, app developers, and SaaS builders. Loaded alongside any country skill to provide industry-specific classification guidance, deduction patterns, and revenue recognition rules. Trigger phrases — software developer, web developer, app developer, SaaS, freelance coder, indie hacker, freelance programmer, mobile app developer, full-stack developer.
 version: 1.0
 category: vertical
+jurisdiction: GLOBAL
 ---
 
 # Freelance Developer Vertical Skill v1.0

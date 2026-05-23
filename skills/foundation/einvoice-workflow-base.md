@@ -3,6 +3,7 @@ name: einvoice-workflow-base
 description: Universal e-invoicing compliance workflow base that defines validation, field checking, format verification, and compliance reporting for all jurisdictions. Contains no jurisdiction-specific content — no country mandate thresholds, no local schema requirements, no penalty regimes, no transmission endpoints. This skill MUST be loaded alongside a country-specific e-invoicing skill that provides the mandate rules, format standard, and field requirements. This skill alone cannot produce any output.
 version: 1.0
 category: foundation
+jurisdiction: GLOBAL
 ---
 
 # E-Invoice Workflow Base Skill v1.0

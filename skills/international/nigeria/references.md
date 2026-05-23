@@ -1,3 +1,10 @@
+---
+name: nigeria-references
+jurisdiction: NG
+version: 1.0
+description: Primary source references and related open-source projects for this jurisdiction.
+---
+
 # Nigeria — Related Open-Source Projects
 
 OpenAccountants is AGPL-3.0. AGPL-3.0 is directly compatible. Projects without explicit licenses are reference-only.

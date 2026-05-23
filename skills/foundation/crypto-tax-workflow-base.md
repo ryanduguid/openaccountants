@@ -8,6 +8,7 @@ description: >
   jurisdiction-specific rates or thresholds.
 version: 1.0
 category: foundation
+jurisdiction: GLOBAL
 ---
 
 # Crypto Tax Workflow Base v1.0

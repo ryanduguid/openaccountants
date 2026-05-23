@@ -1,3 +1,10 @@
+---
+name: israel-references
+jurisdiction: IL
+version: 1.0
+description: Primary source references and related open-source projects for this jurisdiction.
+---
+
 # Israel — Related Open-Source Projects
 
 OpenAccountants is AGPL-3.0. MIT and Apache-2.0 content can be incorporated with attribution. Projects below are license-compatible unless noted otherwise.

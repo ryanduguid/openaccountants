@@ -3,6 +3,7 @@ name: company-formation-workflow-base
 description: Universal company formation and entity selection workflow base that defines the entity comparison, registration checklist, and ongoing compliance runbook for all jurisdictions. Contains no jurisdiction-specific content — no entity type names, no registration fees, no filing portals. This skill MUST be loaded alongside a country-specific formation skill that provides the entity types, registration authorities, and local requirements. This skill alone cannot produce any output.
 version: 1.0
 category: foundation
+jurisdiction: GLOBAL
 ---
 
 # Company Formation Workflow Base Skill v1.0

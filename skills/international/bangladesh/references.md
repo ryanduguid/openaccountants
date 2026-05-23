@@ -1,3 +1,10 @@
+---
+name: bangladesh-references
+jurisdiction: BD
+version: 1.0
+description: Primary source references and related open-source projects for this jurisdiction.
+---
+
 # Bangladesh — Related Open-Source Projects
 
 OpenAccountants is AGPL-3.0. MPL-2.0, MIT, and Apache-2.0 are all compatible licenses for reference and integration.

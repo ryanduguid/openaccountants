@@ -5,6 +5,7 @@ category: integration
 description: >
   Integration skill for PayPal activity download CSV exports. Activate when the user uploads a PayPal CSV,
   PayPal activity report, or mentions PayPal transactions. This is one of the messiest exports in common use.
+jurisdiction: GLOBAL
 ---
 
 # PayPal Integration Skill v1.0

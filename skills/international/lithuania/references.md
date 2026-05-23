@@ -1,3 +1,10 @@
+---
+name: lithuania-references
+jurisdiction: LT
+version: 1.0
+description: Primary source references and related open-source projects for this jurisdiction.
+---
+
 # Lithuania — Related Open-Source Projects
 
 OpenAccountants is AGPL-3.0. All projects below have compatible licenses. Projects below can be incorporated with attribution.

@@ -3,6 +3,7 @@ name: bookkeeping-workflow-base
 description: Universal bookkeeping workflow base that defines the classification, posting, and reporting runbook for all jurisdictions. Contains no jurisdiction-specific content — no charts of accounts, no local GAAP rules, no tax rates, no currency conventions. This skill MUST be loaded alongside a country-specific bookkeeping skill that provides the chart of accounts, P&L/balance sheet format, and local conventions. This skill alone cannot produce any output.
 version: 1.0
 category: foundation
+jurisdiction: GLOBAL
 ---
 
 # Bookkeeping Workflow Base Skill v1.0

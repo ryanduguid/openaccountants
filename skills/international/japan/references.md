@@ -1,3 +1,10 @@
+---
+name: japan-references
+jurisdiction: JP
+version: 1.0
+description: Primary source references and related open-source projects for this jurisdiction.
+---
+
 # Japan — Related Open-Source Projects
 
 OpenAccountants is AGPL-3.0. MIT content can be incorporated with attribution. All projects below are license-compatible.

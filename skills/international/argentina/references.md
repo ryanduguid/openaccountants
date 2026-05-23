@@ -1,3 +1,10 @@
+---
+name: argentina-references
+jurisdiction: AR
+version: 1.0
+description: Primary source references and related open-source projects for this jurisdiction.
+---
+
 # Argentina — Related Open-Source Projects
 
 OpenAccountants is AGPL-3.0. AGPL-3.0 and LGPL-3.0 are compatible licenses. Projects below can be incorporated with attribution.

@@ -1,3 +1,10 @@
+---
+name: spain-references
+jurisdiction: ES
+version: 1.0
+description: Primary source references and related open-source projects for this jurisdiction.
+---
+
 # Spain — Related Open-Source Projects
 
 OpenAccountants is AGPL-3.0. All projects listed below have compatible licenses and their content can be incorporated with proper attribution.

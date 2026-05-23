@@ -6,6 +6,7 @@ description: >
   Integration skill for FreeAgent accounting software CSV exports and imports. Activate when the user uploads a
   FreeAgent CSV, FreeAgent bank statement, or mentions FreeAgent. Popular UK accounting software for freelancers
   and micro-businesses.
+jurisdiction: GLOBAL
 ---
 
 # FreeAgent Integration Skill v1.0

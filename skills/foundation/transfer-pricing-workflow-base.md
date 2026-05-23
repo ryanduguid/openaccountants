@@ -3,6 +3,7 @@ name: transfer-pricing-workflow-base
 description: Universal transfer pricing documentation and analysis workflow base that defines the related-party transaction identification, method selection, arm's length analysis, and documentation preparation runbook for all jurisdictions. Contains no jurisdiction-specific content — no local TP thresholds, no penalty regimes, no specific documentation filing portals. This skill MUST be loaded alongside a country-specific transfer pricing skill that provides the local TP rules, documentation requirements, and filing deadlines. This skill alone cannot produce any output.
 version: 1.0
 category: foundation
+jurisdiction: GLOBAL
 ---
 
 # Transfer Pricing Workflow Base Skill v1.0

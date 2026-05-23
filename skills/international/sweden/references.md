@@ -1,3 +1,10 @@
+---
+name: sweden-references
+jurisdiction: SE
+version: 1.0
+description: Primary source references and related open-source projects for this jurisdiction.
+---
+
 # Sweden — Related Open-Source Projects
 
 OpenAccountants is AGPL-3.0. MIT and AGPL-3.0 content can be incorporated with attribution. Projects below are license-compatible unless noted otherwise.

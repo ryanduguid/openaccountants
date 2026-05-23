@@ -1,3 +1,10 @@
+---
+name: denmark-references
+jurisdiction: DK
+version: 1.0
+description: Primary source references and related open-source projects for this jurisdiction.
+---
+
 # Denmark — Related Open-Source Projects
 
 OpenAccountants is AGPL-3.0. MIT-licensed projects below can be incorporated with attribution.

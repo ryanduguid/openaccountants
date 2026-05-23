@@ -1,3 +1,10 @@
+---
+name: china-references
+jurisdiction: CN
+version: 1.0
+description: Primary source references and related open-source projects for this jurisdiction.
+---
+
 # China — Related Open-Source Projects
 
 OpenAccountants is AGPL-3.0. Both projects below lack explicit licenses — treat as reference-only (cannot incorporate code directly).
