@@ -1,15 +1,15 @@
 {
   "version": "2.2",
   "generated": "2026-05-23",
-  "total_skills": 687,
+  "total_skills": 688,
   "quality_breakdown": {
-    "research-verified": 674,
+    "research-verified": 675,
     "accountant-verified": 13
   },
   "obligation_breakdown": {
     "IT": 105,
     "OTHER": 157,
-    "CT": 176,
+    "CT": 177,
     "INT": 10,
     "SSC": 15,
     "CRYPTO": 22,
@@ -66,6 +66,17 @@
       "path": "international/uae/ae-corporate-tax.md",
       "size_kb": 23.8,
       "lines": 504
+    },
+    {
+      "id": "ak-sales-tax",
+      "jurisdiction": "US-AK",
+      "obligation": "CT",
+      "quality": "research-verified",
+      "category": "state",
+      "tax_year": "2025",
+      "path": "us-states/ak/ak-sales-tax.md",
+      "size_kb": 5.4,
+      "lines": 111
     },
     {
       "id": "al-income-tax",
@@ -938,7 +949,7 @@
     },
     {
       "id": "ca-fed-cpp-ei",
-      "jurisdiction": "CA-FED",
+      "jurisdiction": "CA",
       "obligation": "SSC",
       "quality": "research-verified",
       "category": "international",
@@ -949,7 +960,7 @@
     },
     {
       "id": "ca-fed-instalments",
-      "jurisdiction": "CA-FED",
+      "jurisdiction": "CA",
       "obligation": "EST",
       "quality": "research-verified",
       "category": "international",
@@ -960,7 +971,7 @@
     },
     {
       "id": "ca-fed-t1-return",
-      "jurisdiction": "CA-FED",
+      "jurisdiction": "CA",
       "obligation": "OTHER",
       "quality": "research-verified",
       "category": "international",
@@ -971,18 +982,18 @@
     },
     {
       "id": "ca-fed-t1135",
-      "jurisdiction": "CA-FED",
+      "jurisdiction": "CA",
       "obligation": "OTHER",
       "quality": "research-verified",
       "category": "international",
       "tax_year": "2025",
       "path": "international/canada/ca-fed-t1135.md",
-      "size_kb": 32.6,
+      "size_kb": 32.5,
       "lines": 625
     },
     {
       "id": "ca-fed-t2125",
-      "jurisdiction": "CA-FED",
+      "jurisdiction": "CA",
       "obligation": "OTHER",
       "quality": "research-verified",
       "category": "international",

@@ -3,7 +3,7 @@ name: ca-fed-instalments
 description: >
   Use this skill whenever asked about Canadian federal quarterly instalment requirements for self-employed individuals. Trigger on phrases like "CRA instalments", "quarterly tax Canada", "instalment reminder", "INNS1", "INNS2", "net tax owing", "$3,000 threshold", "instalment interest", or any question about quarterly income tax prepayments for Canadian individuals. Covers the $3,000 net-tax-owing threshold, three calculation methods (no-calculation, prior-year, current-year), instalment due dates (Mar 15, Jun 15, Sep 15, Dec 15), instalment interest and penalties, and interaction with provincial instalments. ALWAYS read this skill before touching any Canada estimated tax work.
 version: 2.0
-jurisdiction: CA-FED
+jurisdiction: CA
 tax_year: 2025
 category: international
 depends_on:

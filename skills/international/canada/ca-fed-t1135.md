@@ -13,7 +13,7 @@ description: >
   must disclose foreign property. ALWAYS read this skill before touching any Canada
   T1135-related work.
 version: 2.0
-jurisdiction: CA-FED
+jurisdiction: CA
 tax_year: 2025
 category: international
 depends_on:

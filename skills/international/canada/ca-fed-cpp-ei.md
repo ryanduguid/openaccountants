@@ -3,7 +3,7 @@ name: ca-fed-cpp-ei
 description: >
   Use this skill whenever asked about Canada Pension Plan (CPP) or Employment Insurance (EI) contributions for self-employed individuals. Trigger on phrases like "CPP self-employed", "Schedule 8", "CPP2", "YAMPE", "EI opt-in self-employed", "how much CPP do I pay", "self-employed EI benefits", "CPP contribution calculation", or any question about CPP/EI obligations for a self-employed sole proprietor or single-member entity in Canada. This skill covers CPP1 rates, CPP2 second ceiling, Schedule 8 computation, EI voluntary opt-in, tax treatment (line 22200 deduction and non-refundable credit), age exemptions, overpayment recovery, and edge cases. ALWAYS read this skill before touching any CPP/EI-related work.
 version: 2.0
-jurisdiction: CA-FED
+jurisdiction: CA
 tax_year: 2025
 category: international
 depends_on:

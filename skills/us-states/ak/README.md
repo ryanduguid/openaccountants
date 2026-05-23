@@ -8,7 +8,7 @@
 | Sales tax | No (local only — no statewide sales tax) |
 | Franchise / gross receipts tax | No (for individuals / sole proprietors) |
 | Tax authority | [Alaska Department of Revenue](https://www.tax.alaska.gov) |
-| Quality tier | Q3 — AI-drafted, not independently verified |
+| Quality tier | Research-verified |
 
 ## Key facts
 
@@ -22,14 +22,14 @@
 
 | File | What it covers |
 |---|---|
-| (none) | No state income tax or statewide sales tax skill needed |
+| `ak-sales-tax.md` | No statewide sales/income tax; local borough/city sales tax; ARSSTC remote-seller economic nexus ($100,000 statewide gross sales; 200-transaction prong removed Jan 1 2025) |
 
 ## What's NOT covered
-- Local borough/city sales taxes (these vary widely; contact individual municipalities)
+- Per-municipality rate tables (rates, exemptions, and caps are set locally and vary widely — confirm with the specific borough/city or ARSSTC)
 - Corporate income tax (applies to C-corps only)
 - Oil & gas production taxes (industry-specific)
 - Fishing / mining license taxes
 - Payroll taxes (Alaska has no state withholding requirement for income tax)
 
 ## How to use
-For Alaska-based self-employed individuals, the primary tax obligations are **federal only**. Upload the federal skills from `skills/foundation/` and `skills/federal/` to your LLM. If the taxpayer has local sales tax obligations, contact the relevant borough or city directly.
+For Alaska-based self-employed individuals, the **income** side is **federal only** — upload the skills from `skills/foundation/` and `skills/federal/`. For the **sales** side, load `ak-sales-tax.md`: in-state sellers register with their local municipality, while remote sellers register once with the Alaska Remote Seller Sales Tax Commission (ARSSTC) and file a single consolidated return.

@@ -3,7 +3,7 @@ name: ca-fed-t1-return
 description: >
   Use this skill whenever asked about a Canadian federal T1 General individual income tax return for a self-employed sole proprietor. Trigger on phrases like "T1 return", "personal tax Canada", "federal tax brackets", "basic personal amount", "CPP self-employed", "CPP2", "self-employment tax Canada", "net income", "taxable income", "federal tax calculation", "non-refundable credits", "instalment payments", or any question about computing federal tax for a self-employed individual in Canada. ALWAYS read this skill before touching any T1 return work.
 version: 2.0
-jurisdiction: CA-FED
+jurisdiction: CA
 tax_year: 2025
 category: international
 depends_on:
