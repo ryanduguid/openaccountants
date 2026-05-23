@@ -2038,7 +2038,7 @@
     },
     {
       "id": "eu-social-security-coordination",
-      "jurisdiction": "EU/EEA/CH/UK",
+      "jurisdiction": "INTL",
       "obligation": "SSC",
       "quality": "research-verified",
       "category": "cross-border",
@@ -5272,7 +5272,7 @@
     },
     {
       "id": "nyc-unincorporated-business-tax",
-      "jurisdiction": "US-NY-NYC",
+      "jurisdiction": "US-NY",
       "obligation": "OTHER",
       "quality": "research-verified",
       "category": "state",
@@ -7131,7 +7131,7 @@
     },
     {
       "id": "us-quarterly-estimated-tax",
-      "jurisdiction": "US-FED",
+      "jurisdiction": "US",
       "obligation": "EST",
       "quality": "research-verified",
       "category": "federal",

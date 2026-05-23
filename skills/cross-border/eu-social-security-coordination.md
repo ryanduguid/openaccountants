@@ -11,7 +11,7 @@ description: >
   UK post-Brexit rules under the Trade and Cooperation Agreement.
 version: 1.0
 category: cross-border
-jurisdiction: EU/EEA/CH/UK
+jurisdiction: INTL
 primary_legislation: Regulation (EC) No 883/2004; Regulation (EC) No 987/2009
 ---
 
