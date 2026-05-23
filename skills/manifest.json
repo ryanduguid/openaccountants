@@ -1,21 +1,21 @@
 {
   "version": "2.2",
   "generated": "2026-05-23",
-  "total_skills": 688,
+  "total_skills": 695,
   "quality_breakdown": {
-    "research-verified": 675,
+    "research-verified": 682,
     "accountant-verified": 13
   },
   "obligation_breakdown": {
-    "IT": 105,
-    "OTHER": 157,
+    "IT": 106,
+    "OTHER": 158,
     "CT": 177,
     "INT": 10,
-    "SSC": 15,
-    "CRYPTO": 22,
-    "ORCH": 32,
+    "SSC": 16,
+    "CRYPTO": 23,
+    "ORCH": 34,
     "EST": 15,
-    "BT": 14,
+    "BT": 15,
     "FS": 13,
     "FORM": 13,
     "PAY": 19,
@@ -6776,6 +6776,83 @@
       "path": "us-states/tx/tx-sales-tax.md",
       "size_kb": 10.1,
       "lines": 249
+    },
+    {
+      "id": "ua-bookkeeping",
+      "jurisdiction": "UA",
+      "obligation": "BT",
+      "quality": "research-verified",
+      "category": "international",
+      "tax_year": "2026",
+      "path": "international/ukraine/ua-bookkeeping.md",
+      "size_kb": 22.4,
+      "lines": 358
+    },
+    {
+      "id": "ua-crypto-tax",
+      "jurisdiction": "UA",
+      "obligation": "CRYPTO",
+      "quality": "research-verified",
+      "category": "international",
+      "tax_year": "2026",
+      "path": "international/ukraine/ua-crypto-tax.md",
+      "size_kb": 19.8,
+      "lines": 221
+    },
+    {
+      "id": "ua-freelance-intake",
+      "jurisdiction": "UA",
+      "obligation": "ORCH",
+      "quality": "research-verified",
+      "category": "orchestrator",
+      "tax_year": "2026",
+      "path": "orchestrator/ua-freelance-intake.md",
+      "size_kb": 3.8,
+      "lines": 68
+    },
+    {
+      "id": "ua-income-tax",
+      "jurisdiction": "UA",
+      "obligation": "IT",
+      "quality": "research-verified",
+      "category": "international",
+      "tax_year": "2026",
+      "path": "international/ukraine/ua-income-tax.md",
+      "size_kb": 27.0,
+      "lines": 349
+    },
+    {
+      "id": "ua-return-assembly",
+      "jurisdiction": "UA",
+      "obligation": "ORCH",
+      "quality": "research-verified",
+      "category": "orchestrator",
+      "tax_year": "2026",
+      "path": "orchestrator/ua-return-assembly.md",
+      "size_kb": 13.3,
+      "lines": 175
+    },
+    {
+      "id": "ua-single-tax",
+      "jurisdiction": "UA",
+      "obligation": "OTHER",
+      "quality": "research-verified",
+      "category": "international",
+      "tax_year": "2026",
+      "path": "international/ukraine/ua-single-tax.md",
+      "size_kb": 10.3,
+      "lines": 158
+    },
+    {
+      "id": "ua-social-contributions",
+      "jurisdiction": "UA",
+      "obligation": "SSC",
+      "quality": "research-verified",
+      "category": "international",
+      "tax_year": "2026",
+      "path": "international/ukraine/ua-social-contributions.md",
+      "size_kb": 18.6,
+      "lines": 357
     },
     {
       "id": "uae-vat",
