@@ -101,13 +101,13 @@ Looking for accountants to verify country skills — if you spot an error in you
 
 ### r/smallbusiness
 
-**Title:** `Cut your accounting bill by 80% — open-source AI tax prep for 134 countries`
+**Title:** `Open-source AI tax prep for 134 countries — get a working paper ready for your accountant`
 
 I'm an accountant who built an open-source project that does the grunt work of tax prep before your accountant meeting.
 
 Upload your bank statement to Claude or ChatGPT along with your country's skill files, and it classifies every transaction, applies the right tax treatment, and produces a working paper your accountant can review and sign off on.
 
-Instead of paying for 3 hours of transaction classification, your accountant reviews a pre-made working paper in 20 minutes.
+Your accountant reviews a structured working paper instead of classifying raw transactions from scratch.
 
 It's free. 134 countries. Honest about limitations — most skills are research-verified but not yet accountant-verified. Eight countries (Malta, UK, Germany, Australia, Canada, India, Spain, US) have practitioner-tested skills.
 
@@ -159,7 +159,7 @@ I open-sourced 700+ tax skills for AI across 134 countries.
 
 Upload your bank statement to any LLM → get a classified working paper for your accountant.
 
-Your accountant reviews in 20 min instead of 3 hours.
+Your accountant reviews a structured working paper instead of classifying from scratch.
 
 Free. Here's how it works 🧵
 
@@ -262,13 +262,11 @@ This is the whole point. I can't verify 134 countries alone. The internet can.
 
 ### Tax insights (makes people follow you)
 
-**6.** Your accountant charges $200/hr.
+**6.** A lot of tax-prep time goes to classifying transactions: "Is this VAT-exempt? Business or personal? Which form line?"
 
-80% of that time is classifying transactions: "Is this VAT-exempt? Business or personal? Which form line?"
+An LLM with the right skills can do a first pass on that in minutes.
 
-An LLM does that in 3 minutes.
-
-Your accountant should review in 20 min instead of billing 3 hours. That's the future.
+Your accountant reviews a structured working paper instead of classifying from scratch. That's the future.
 
 **7.** Fun tax fact: Malta has a 35% headline income tax rate.
 
