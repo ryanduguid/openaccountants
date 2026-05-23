@@ -6,7 +6,7 @@ What separates a billion-dollar tax intelligence system from a collection of mar
 
 ## Where we are
 
-We have **345 skills**, **8 end-to-end jurisdictions**, and a **manifest-based routing system**. The skills compute tax correctly for a given set of facts in a single jurisdiction. This is table stakes — it's what any tax software does.
+We have **700+ skills**, **8 end-to-end jurisdictions**, and a **manifest-based routing system**. The skills compute tax correctly for a given set of facts in a single jurisdiction. This is table stakes — it's what any tax software does.
 
 ## Where we need to be
 

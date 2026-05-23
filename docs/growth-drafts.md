@@ -6,13 +6,13 @@ All copy is ready to paste. Edit to taste, then post.
 
 ## 1. Show HN Post
 
-**Title:** `Show HN: Open-source tax skills for AI – 371 skills, 134 countries, quality-tiered`
+**Title:** `Show HN: Open-source tax skills for AI – 700+ skills, 134 countries, quality-tiered`
 
 **URL:** `https://github.com/openaccountants/openaccountants`
 
 **Text (paste into the HN text box):**
 
-We open-sourced 371 tax classification skills covering 134 countries — VAT/GST, income tax, social contributions. Upload them to Claude, ChatGPT, or any LLM alongside your bank statement, and you get a working paper ready for your accountant's review.
+We open-sourced 700+ tax classification skills covering 134 countries — VAT/GST, income tax, social contributions. Upload them to Claude, ChatGPT, or any LLM alongside your bank statement, and you get a working paper ready for your accountant's review.
 
 The honest part: every skill is in one of two tiers — **accountant-verified** (a licensed practitioner signed off) or **research-verified** (drafted from authoritative sources, awaiting credentialed sign-off). Eight country/domain combinations are currently accountant-verified; the rest are research-verified. We publish the tier on every file so you know exactly what you're trusting. We think radical transparency about quality is more useful than pretending everything is production-ready.
 
@@ -85,7 +85,7 @@ LIMITATIONS — tell the user upfront:
 
 ### r/tax
 
-**Title:** `I open-sourced 371 tax classification skills for AI across 134 countries`
+**Title:** `I open-sourced 700+ tax classification skills for AI across 134 countries`
 
 We built OpenAccountants — an open-source set of tax skills that you upload to Claude, ChatGPT, or any LLM. Give it your bank statement and it classifies every transaction (VAT/GST, income tax, social contributions) and produces a working paper ready for your accountant.
 
@@ -135,7 +135,7 @@ https://github.com/openaccountants/openaccountants
 
 **Title:** `MCP server for AI tax prep — 134 countries, works with Claude Desktop and Cursor`
 
-Built an MCP (Model Context Protocol) server that gives your AI client access to 371 tax classification skills across 134 countries.
+Built an MCP (Model Context Protocol) server that gives your AI client access to 700+ tax classification skills across 134 countries.
 
 `pip install openaccountants-mcp`
 
@@ -155,7 +155,7 @@ PyPI: https://pypi.org/project/openaccountants-mcp/
 **Thread (post each as a separate tweet):**
 
 **1/**
-I open-sourced 371 tax skills for AI across 134 countries.
+I open-sourced 700+ tax skills for AI across 134 countries.
 
 Upload your bank statement to any LLM → get a classified working paper for your accountant.
 
@@ -228,7 +228,7 @@ Post 1-2 a day. Mix the categories. Don't post them all at once.
 
 ### Building in public (your journey)
 
-**1.** I'm an accountant. I open-sourced 371 tax skills for AI across 134 countries.
+**1.** I'm an accountant. I open-sourced 700+ tax skills for AI across 134 countries.
 
 People think accountants are boring. We're not — we're just expensive. So I'm trying to make us cheaper.
 
