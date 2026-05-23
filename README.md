@@ -6,7 +6,7 @@ Open-source accounting skills for AI. **716 skills across 134 countries + 51 US 
 
 **11 accounting domains:** tax, bookkeeping, e-invoicing, payroll, company formation, financial statements, transfer pricing, tax optimization, **crypto tax**, cross-border, plus industry verticals and platform integrations.
 
-Upload to Claude, ChatGPT, or any LLM with your bank statement — or connect via **[MCP](#mcp-server)** so your AI loads the right skills automatically. Get a working paper ready for your accountant and **cut your accounting bill by 80%.**
+Upload to Claude, ChatGPT, or any LLM with your bank statement — or connect via **[MCP](#mcp-server)** so your AI loads the right skills automatically.
 
 **Website:** [openaccountants.com](https://openaccountants.com)
 
