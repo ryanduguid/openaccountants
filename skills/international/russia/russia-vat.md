@@ -1,9 +1,38 @@
 ---
 name: russia-vat
-description: Use this skill whenever asked to prepare, review, or advise on a Russian VAT (NDS - Nalog na Dobavlennuyu Stoimost) return or any transaction classification for Russian VAT purposes. Trigger on phrases like "Russian VAT", "NDS", "Russian tax return", "VAT in Russia", "FNS filing", or any request involving Russian VAT obligations. This skill contains the complete Russian VAT classification rules, rate structure, return form mappings, deductibility rules, reverse charge treatment, and filing deadlines required to produce a correct return. NOTE: International sanctions regimes (EU, US, UK, and others) may significantly affect cross-border VAT treatment for Russian entities. Always flag sanctions-related issues as [T2] or [T3]. ALWAYS read this skill before touching any Russian VAT-related work.
+slug: russia-vat
+jurisdiction: RU
+tax_year: 2026
+quality: Research-verified — pending sign-off by a Russian accountant
+description: Use this skill whenever asked to prepare, review, or advise on a Russian VAT (НДС — Nalog na Dobavlennuyu Stoimost) return or any transaction classification for Russian VAT purposes. Trigger on phrases like "Russian VAT", "НДС", "NDS", "Russian tax return", "VAT in Russia", "ФНС filing", or any request involving Russian VAT obligations. This skill contains the complete Russian VAT classification rules, rate structure (standard rate raised to 22% from 1 January 2026), return form mappings, deductibility rules, reverse charge treatment, and filing deadlines required to produce a correct return. NOTE: International sanctions regimes (EU, US, UK, and others) may significantly affect cross-border VAT treatment for Russian entities. Always flag sanctions-related issues as [T2] or [T3]. ALWAYS read this skill before touching any Russian VAT-related work.
 ---
 
-# Russia VAT (NDS) Return Preparation Skill
+# Russia VAT (НДС / NDS) Return Preparation Skill
+
+> **Quality tier:** Research-verified — pending sign-off by a Russian accountant.
+> **Tax year:** 2026. The standard НДС rate was raised from 20% to **22%** effective 1 January 2026 (Federal Law No. 425-FZ of 28 November 2025).
+
+---
+
+## Quick Reference
+
+| Item | 2026 value | Native term |
+|------|-----------|-------------|
+| Standard VAT rate | **22%** (was 20% through 2025) | НДС / ставка 22% |
+| Reduced rate (essentials) | 10% — food, children's goods, medicines, educational publications | пониженная ставка 10% |
+| Zero rate | 0% — exports, international transport | нулевая ставка 0% |
+| Calculated (gross-up) rates | 22/122 and 10/110 | расчётная ставка |
+| Tax authority | Federal Tax Service (ФНС) | ФНС России |
+| Tax invoice | Schyot-faktura | счёт-фактура |
+| Sales / purchase ledgers | Sales ledger / purchase ledger | книга продаж / книга покупок |
+| Return | VAT declaration — quarterly, electronic only | НДС-декларация |
+| Return deadline | 25th of the month after the quarter | — |
+| Payment | 3 equal instalments, 28th of each of the 3 months after quarter, via the unified tax account | ЕНП / ЕНС |
+| Article 145 exemption | Revenue ≤ ₽2,000,000 over prior 3 months | освобождение по ст. 145 |
+| УСН VAT-exemption threshold (2026) | ₽20,000,000 (2025 income) | порог 20 млн ₽ |
+| УСН special rate 5% (no input credit) | income ₽20m–₽272.5m | ставка 5% |
+| УСН special rate 7% (no input credit) | income ₽272.5m–₽490.5m | ставка 7% |
+| УСН standard rates (with input credit) | 22% / 10% / 0% | — |
 
 ---
 
@@ -14,14 +43,16 @@ description: Use this skill whenever asked to prepare, review, or advise on a Ru
 | Jurisdiction | Russian Federation |
 | Jurisdiction Code | RU |
 | Tax Name | NDS (Nalog na Dobavlennuyu Stoimost / VAT) |
+| Tax Year | 2026 |
 | Primary Legislation | Tax Code of the Russian Federation, Part Two, Chapter 21 (Articles 143-178) |
-| Supporting Legislation | Government Decree No. 1137 (invoice rules); Federal Law No. 303-FZ (rate changes); Customs Code of the EAEU |
-| Tax Authority | Federal Tax Service (FNS / Federalnaya Nalogovaya Sluzhba) |
-| Filing Portal | https://lkfl2.nalog.ru (Personal Account); via certified electronic reporting operators |
-| Contributor | Open Accounting Skills Registry |
-| Validated By | Deep research verification, April 2026 |
-| Validation Date | April 2026 |
-| Skill Version | 1.0 |
+| Supporting Legislation | Federal Law No. 425-FZ of 28 November 2025 (standard rate 20% → 22% and УСН VAT changes from 2026); Government Decree No. 1137 (invoice rules); Federal Law No. 303-FZ (2019 rate change 18% → 20%); Customs Code of the EAEU |
+| Tax Authority | Federal Tax Service (ФНС / Federalnaya Nalogovaya Sluzhba) — nalog.gov.ru |
+| Filing Portal | https://nalog.gov.ru (ФНС); Personal Account; via certified electronic reporting operators |
+| Contributor | Open Accountants Skills Registry |
+| Quality Tier | Research-verified — pending sign-off by a Russian accountant |
+| Validated By | Deep research verification against ФНС (nalog.gov.ru) and reputable secondary sources |
+| Validation Date | May 2026 |
+| Skill Version | 2.0 (2026 update) |
 | Confidence Coverage | Tier 1: rate application, standard box assignment, basic reverse charge. Tier 2: sanctions impact, partial exemption, intercompany pricing, EAEU trade. Tier 3: transfer pricing disputes, complex group restructuring, criminal tax liability. |
 
 ---
@@ -377,8 +408,10 @@ Section 1, Line 050 = Line 210 (refundable)
 | Advertising materials (free distribution exempt) | Unit cost <= RUB 300 | Article 149(3)(25) |
 | 5% rule for separate accounting | Exempt expenses <= 5% of total expenses | Article 170(4) |
 | Electronic invoice mandatory | All NDS payers (since 2014) | Article 169(1) |
-| USN revenue threshold (exemption from NDS) | RUB 20,000,000 (2026); RUB 15,000,000 (2027); RUB 10,000,000 (from 2028) -- phased reduction | Article 145 / transitional provisions |
-| USN revenue threshold (no NDS -- general USN eligibility) | RUB 265,800,000 (indexed annually) | Article 346.12 |
+| УСН revenue threshold (exemption from NDS) | RUB 20,000,000 (2026); RUB 15,000,000 (2027); RUB 10,000,000 (from 2028) -- phased reduction | Law 425-FZ / Article 145 / transitional provisions |
+| УСН special rate 5% band (no input credit) | income RUB 20,000,000 -- RUB 272,500,000 (RUB 250m x 1.090 deflator) | Law 425-FZ / Article 164 |
+| УСН special rate 7% band (no input credit) | income RUB 272,500,000 -- RUB 490,500,000 (RUB 450m x 1.090 deflator) | Law 425-FZ / Article 164 |
+| УСН revenue threshold (no NDS -- general УСН eligibility) | ~RUB 265,800,000-class, indexed annually (confirm current year) | Article 346.12 |
 
 ---
 
@@ -397,7 +430,9 @@ Section 1, Line 050 = Line 210 (refundable)
 
 **NDS is paid in three equal installments** over the three months following the reporting quarter. Example: Q1 (Jan-Mar) NDS is paid 1/3 on April 28, 1/3 on May 28, 1/3 on June 28.
 
-**Electronic filing is mandatory** for all NDS payers. Paper returns are not accepted (except for tax agents who are not NDS payers themselves, under specific conditions).
+**Payment mechanics — unified tax account (ЕНП / ЕНС).** Since 2023, NDS (like nearly all federal taxes) is paid through the single tax payment / single tax account system: the taxpayer transfers a single lump sum (Yediny Nalogovy Platyozh / ЕНП) into their unified tax account (Yediny Nalogovy Schyot / ЕНС), and ФНС allocates it across liabilities by due date. The three NDS instalment due dates (28th of each of the three months after the quarter) are the dates by which sufficient positive balance must sit on the ЕНС. Where a notification of computed amounts is required before the declaration, file it by the prescribed date. [T1] Confirm current ЕНП notification timing with ФНС.
+
+**Electronic filing is mandatory** for all NDS payers, including УСН payers newly liable for НДС from 2026. The НДС-декларация is filed electronically via certified operators / the ФНС portal. Paper returns are not accepted (except for tax agents who are not NDS payers themselves, under specific conditions).
 
 ---
 
@@ -455,7 +490,7 @@ A valid schyot-faktura must contain (Article 169(5)):
 ### EC4 -- Import from Belarus (EAEU) [T2]
 
 **Situation:** Russian company imports goods from Belarus.
-**Resolution:** NDS is NOT collected at the customs border (no customs border within EAEU). Buyer self-assesses NDS on the import value. Files a separate statistical declaration by the 20th of the following month. Pays NDS by the same date. Claims input deduction after payment and filing. Rate depends on goods (20% or 10%).
+**Resolution:** NDS is NOT collected at the customs border (no customs border within EAEU). Buyer self-assesses NDS on the import value. Files a separate statistical declaration by the 20th of the following month. Pays NDS by the same date. Claims input deduction after payment and filing. Rate depends on goods (22% or 10%).
 **Legislation:** EAEU Treaty Protocol on Indirect Taxes, Article 72
 
 ### EC5 -- Mixed taxable and exempt operations [T2]
@@ -498,12 +533,25 @@ A valid schyot-faktura must contain (Article 169(5)):
 
 ## Step 10: Special Regimes and Exemptions [T2]
 
-### USN (Simplified Tax System)
-- USN payers are NOT NDS payers (Article 346.11)
-- Exception: NDS on imports (customs and EAEU) must still be paid
-- Exception: NDS as tax agent must still be withheld
-- If a USN payer issues an invoice with NDS, they must remit that NDS to the budget (but cannot claim input deductions)
-- Revenue threshold for USN eligibility: RUB 265,800,000 (indexed; check current year)
+### УСН (Simplified Tax System / Uproshchyonnaya Sistema Nalogooblozheniya) — 2026 rules
+
+**IMPORTANT 2026 CHANGE:** From 1 January 2026, УСН payers are no longer automatically outside the НДС system. Whether a УСН payer charges НДС depends on income against the VAT-exemption threshold.
+
+- **Below threshold — automatically exempt.** A УСН payer whose income for the prior year (2025 for the 2026 obligation) does not exceed **₽20,000,000** is exempt from НДС by operation of law (no notification required). Exceptions still apply: НДС on imports (customs and EAEU) must still be paid, and НДС as tax agent must still be withheld.
+- **Above the ₽20,000,000 threshold — must charge НДС.** Such a УСН payer chooses ONE of:
+
+| Option | Rate(s) | Income band | Input НДС credit |
+|--------|---------|-------------|------------------|
+| Special reduced rate 5% | 5% | ₽20m – ₽272.5m (₽250m × 1.090 deflator) | NOT available |
+| Special reduced rate 7% | 7% | ₽272.5m – ₽490.5m (₽450m × 1.090 deflator) | NOT available |
+| Standard rates | 22% / 10% / 0% | up to ₽490.5m | Available (normal deduction rules) |
+
+  - The special 5%/7% rates carry **no right to deduct input НДС** (Article 170 / transitional provisions of Law 425-FZ). The trade-off (lower output rate vs. loss of input credit) is a [T2] reviewer decision — model both options.
+  - Once a special rate is chosen it generally must be applied for a minimum committed period (verify current period rule with ФНС). [T2]
+  - A newly-liable УСН payer may opt out of the reduced rate in its first year, and ФНС has indicated leniency on a first missed declaration. [T2]
+- If a sub-threshold (exempt) УСН payer nevertheless issues an invoice showing НДС, they must remit that НДС to the budget but cannot claim input deductions (Section 12 reporting).
+- The threshold steps down in later years: **₽20,000,000 (2026)** → ₽15,000,000 (2027) → ₽10,000,000 (from 2028). [T2 — confirm against ФНС before relying on 2027/2028 figures.]
+- General УСН eligibility income cap remains separate and is indexed annually (≈ ₽265,800,000-class figure; confirm current-year value). [T2]
 
 ### Article 145 Exemption
 - Available to taxpayers with revenue <= RUB 2,000,000 for 3 consecutive preceding calendar months
@@ -606,16 +654,21 @@ Action Required: Do not classify. Refer to qualified practitioner. Document gap.
 
 ---
 
-## 2026 Tax Reforms
+## 2026 Tax Reforms (Federal Law No. 425-FZ, 28 November 2025)
 
 | Change | Details | Effective |
 |--------|---------|-----------|
-| Standard NDS rate increase | 20% to 22% | 1 January 2026 |
-| Reduced rate (10%) | Unchanged -- food, children's goods, medicines, educational publications | N/A |
-| USN VAT exemption threshold | Reduced to RUB 20,000,000 (from RUB 60,000,000); further reductions: RUB 15M (2027), RUB 10M (2028) | 1 January 2026 |
-| Banking VAT exemptions | Certain banking services (acquiring, processing, payment services) now subject to 22% NDS | 1 January 2026 |
-| Software exemption | VAT exemption for rights to Russian software retained | Retained |
-| SME transition support | Moratorium on penalties for SMEs newly subject to VAT under simplified regime | 2026 |
+| Standard НДС rate increase | **20% → 22%** | 1 January 2026 |
+| Reduced rate (10%) | Unchanged -- food, children's goods, medicines, educational publications | Retained |
+| Zero rate (0%) | Unchanged -- exports, international transport | Retained |
+| Calculated rates | 20/120 → **22/122** (10/110 unchanged) | 1 January 2026 |
+| УСН VAT exemption threshold | Reduced to RUB 20,000,000 (from RUB 60,000,000); further reductions: RUB 15M (2027), RUB 10M (from 2028) | 1 January 2026 |
+| УСН special rates 5% / 7% | 5% for income RUB 20m-272.5m; 7% for RUB 272.5m-490.5m; both WITHOUT input credit. Or standard 22%/10%/0% WITH credit. | 1 January 2026 |
+| Banking VAT exemptions | Certain banking services (acquiring, processing, some payment services) now subject to 22% НДС | 1 January 2026 |
+| Software exemption | VAT exemption for rights to Russian software (Reestr) retained | Retained |
+| SME transition support | First-year opt-out of reduced rate; leniency on first missed declaration for newly-liable УСН payers | 2026 |
+
+**Historical note:** the standard rate was 18% before 2019, 20% from 1 January 2019 (Law 303-FZ), and 22% from 1 January 2026 (Law 425-FZ).
 
 ---
 
@@ -637,6 +690,8 @@ Key areas requiring local expertise:
 
 ## Disclaimer
 
-This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, EA, tax attorney, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
+**Quality tier: Research-verified — pending sign-off by a Russian accountant.** This 2026 update was verified against the Federal Tax Service (ФНС, nalog.gov.ru) and reputable secondary sources, but has **not yet been signed off by a qualified Russian accountant (nalogovyy konsul'tant / auditor)**. It must not be relied upon for filing until that sign-off is obtained.
+
+This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (a licensed Russian tax practitioner for Russian НДS matters, or an equivalent licensed practitioner in your jurisdiction) before filing or acting upon. Given the rapidly evolving sanctions environment, cross-border transactions require additional sanctions-compliance review.
 
 The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
