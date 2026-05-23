@@ -1,9 +1,9 @@
 {
   "version": "2.2",
   "generated": "2026-05-23",
-  "total_skills": 695,
+  "total_skills": 700,
   "quality_breakdown": {
-    "research-verified": 682,
+    "research-verified": 687,
     "accountant-verified": 13
   },
   "obligation_breakdown": {
@@ -16,13 +16,13 @@
     "ORCH": 34,
     "EST": 15,
     "BT": 15,
-    "FS": 13,
-    "FORM": 13,
-    "PAY": 19,
-    "OPT": 13,
+    "FS": 14,
+    "FORM": 14,
+    "PAY": 20,
+    "OPT": 14,
     "TP": 15,
     "VERT": 14,
-    "EINV": 15,
+    "EINV": 16,
     "FW": 13,
     "CBAM": 1,
     "INTEL": 3,
@@ -6800,6 +6800,39 @@
       "lines": 221
     },
     {
+      "id": "ua-einvoice",
+      "jurisdiction": "UA",
+      "obligation": "EINV",
+      "quality": "research-verified",
+      "category": "international",
+      "tax_year": "2026",
+      "path": "international/ukraine/ua-einvoice.md",
+      "size_kb": 26.0,
+      "lines": 442
+    },
+    {
+      "id": "ua-financial-statements",
+      "jurisdiction": "UA",
+      "obligation": "FS",
+      "quality": "research-verified",
+      "category": "international",
+      "tax_year": "2026",
+      "path": "international/ukraine/ua-financial-statements.md",
+      "size_kb": 24.5,
+      "lines": 383
+    },
+    {
+      "id": "ua-formation",
+      "jurisdiction": "UA",
+      "obligation": "FORM",
+      "quality": "research-verified",
+      "category": "international",
+      "tax_year": "2026",
+      "path": "international/ukraine/ua-formation.md",
+      "size_kb": 25.5,
+      "lines": 390
+    },
+    {
       "id": "ua-freelance-intake",
       "jurisdiction": "UA",
       "obligation": "ORCH",
@@ -6820,6 +6853,17 @@
       "path": "international/ukraine/ua-income-tax.md",
       "size_kb": 27.0,
       "lines": 349
+    },
+    {
+      "id": "ua-payroll",
+      "jurisdiction": "UA",
+      "obligation": "PAY",
+      "quality": "research-verified",
+      "category": "international",
+      "tax_year": "2026",
+      "path": "international/ukraine/ua-payroll.md",
+      "size_kb": 20.7,
+      "lines": 370
     },
     {
       "id": "ua-return-assembly",
@@ -6853,6 +6897,17 @@
       "path": "international/ukraine/ua-social-contributions.md",
       "size_kb": 18.6,
       "lines": 357
+    },
+    {
+      "id": "ua-tax-optimization",
+      "jurisdiction": "UA",
+      "obligation": "OPT",
+      "quality": "research-verified",
+      "category": "international",
+      "tax_year": "2026",
+      "path": "international/ukraine/ua-tax-optimization.md",
+      "size_kb": 22.8,
+      "lines": 370
     },
     {
       "id": "uae-vat",
