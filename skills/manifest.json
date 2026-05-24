@@ -1,9 +1,9 @@
 {
   "version": "2.2",
   "generated": "2026-05-24",
-  "total_skills": 741,
+  "total_skills": 748,
   "quality_breakdown": {
-    "research-verified": 728,
+    "research-verified": 735,
     "accountant-verified": 13
   },
   "obligation_breakdown": {
@@ -12,17 +12,17 @@
     "CT": 177,
     "INT": 10,
     "SSC": 19,
-    "CRYPTO": 26,
-    "ORCH": 41,
+    "CRYPTO": 27,
+    "ORCH": 42,
     "EST": 15,
     "BT": 19,
-    "FS": 17,
-    "FORM": 17,
-    "PAY": 23,
-    "OPT": 17,
+    "FS": 18,
+    "FORM": 18,
+    "PAY": 24,
+    "OPT": 18,
     "TP": 15,
     "VERT": 14,
-    "EINV": 18,
+    "EINV": 19,
     "FW": 13,
     "CBAM": 1,
     "INTEL": 3,
@@ -4083,6 +4083,50 @@
       "lines": 324
     },
     {
+      "id": "kz-crypto-tax",
+      "jurisdiction": "KZ",
+      "obligation": "CRYPTO",
+      "quality": "research-verified",
+      "category": "international",
+      "tax_year": "2026",
+      "path": "international/kazakhstan/kz-crypto-tax.md",
+      "size_kb": 5.0,
+      "lines": 73
+    },
+    {
+      "id": "kz-einvoice",
+      "jurisdiction": "KZ",
+      "obligation": "EINV",
+      "quality": "research-verified",
+      "category": "international",
+      "tax_year": "2026",
+      "path": "international/kazakhstan/kz-einvoice.md",
+      "size_kb": 3.4,
+      "lines": 57
+    },
+    {
+      "id": "kz-financial-statements",
+      "jurisdiction": "KZ",
+      "obligation": "FS",
+      "quality": "research-verified",
+      "category": "international",
+      "tax_year": "2026",
+      "path": "international/kazakhstan/kz-financial-statements.md",
+      "size_kb": 3.4,
+      "lines": 57
+    },
+    {
+      "id": "kz-formation",
+      "jurisdiction": "KZ",
+      "obligation": "FORM",
+      "quality": "research-verified",
+      "category": "international",
+      "tax_year": "2026",
+      "path": "international/kazakhstan/kz-formation.md",
+      "size_kb": 3.8,
+      "lines": 65
+    },
+    {
       "id": "kz-freelance-intake",
       "jurisdiction": "KZ",
       "obligation": "ORCH",
@@ -4105,6 +4149,28 @@
       "lines": 319
     },
     {
+      "id": "kz-payroll",
+      "jurisdiction": "KZ",
+      "obligation": "PAY",
+      "quality": "research-verified",
+      "category": "international",
+      "tax_year": "2026",
+      "path": "international/kazakhstan/kz-payroll.md",
+      "size_kb": 3.6,
+      "lines": 68
+    },
+    {
+      "id": "kz-return-assembly",
+      "jurisdiction": "KZ",
+      "obligation": "ORCH",
+      "quality": "research-verified",
+      "category": "orchestrator",
+      "tax_year": "2026",
+      "path": "orchestrator/kz-return-assembly.md",
+      "size_kb": 2.7,
+      "lines": 53
+    },
+    {
       "id": "kz-simplified-regime",
       "jurisdiction": "KZ",
       "obligation": "OTHER",
@@ -4125,6 +4191,17 @@
       "path": "international/kazakhstan/kz-social-contributions.md",
       "size_kb": 17.6,
       "lines": 307
+    },
+    {
+      "id": "kz-tax-optimization",
+      "jurisdiction": "KZ",
+      "obligation": "OPT",
+      "quality": "research-verified",
+      "category": "international",
+      "tax_year": "2026",
+      "path": "international/kazakhstan/kz-tax-optimization.md",
+      "size_kb": 3.8,
+      "lines": 63
     },
     {
       "id": "la-income-tax",
