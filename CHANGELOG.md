@@ -80,5 +80,5 @@ Malta, United Kingdom, Germany, Australia, Canada, India, Spain, United States (
 
 #### Quality
 - **Accountant-verified**: Malta VAT/IT/SSC, Germany VAT, US federal bookkeeping/SE
-- **Research-verified**: everything else — drafted from authoritative sources (tax authority websites + PWC/Deloitte/EY/KPMG worldwide tax summaries), awaiting credentialed sign-off
+- **Research-verified**: everything else — drafted from authoritative sources (tax-authority publications and primary legislation), awaiting credentialed sign-off
 - Deep research caught 200+ errors across 100+ countries during research verification

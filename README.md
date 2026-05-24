@@ -112,7 +112,7 @@ The AI will ask a few questions, load the right skills, and produce a working pa
 
 ## Are you an accountant?
 
-These skills need your eye. Most are **research-verified** — drafted from authoritative sources (tax authority websites + Big-4 worldwide tax summaries) but awaiting credentialed sign-off. Your review moves them to **accountant-verified**.
+These skills need your eye. Most are **research-verified** — drafted from authoritative sources (tax-authority publications and primary legislation) but awaiting credentialed sign-off. Your review moves them to **accountant-verified**.
 
 **You don't need to use GitHub.** Just:
 
@@ -285,7 +285,7 @@ Every skill is in one of two tiers. Check the badge on the file. Full definition
 | Tier | What it means |
 |------|--------------|
 | **Accountant-verified** | A licensed practitioner (CPA, EA, CA, Steuerberater, or equivalent) has reviewed the skill, tested it against representative data, and signed off. Name and license number on the skill page. |
-| **Research-verified** | Every rate, threshold, form, and deadline has been drafted from authoritative sources (tax authority website + Big-4 worldwide tax summaries). Follows the accountant-verified format. Awaiting credentialed sign-off. |
+| **Research-verified** | Every rate, threshold, form, and deadline has been drafted from authoritative sources (tax-authority publications and primary legislation). Follows the accountant-verified format. Awaiting credentialed sign-off. |
 
 Most skills are research-verified. Output from any skill must still be reviewed by your accountant before filing.
 

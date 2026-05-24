@@ -101,7 +101,7 @@ See the main [README.md](README.md) for MCP installation details.
 Every skill is one of two tiers:
 
 - **Accountant-verified** — a licensed practitioner has signed off. (Currently: Malta full suite, Germany VAT, US federal bookkeeping + SE.)
-- **Research-verified** — drafted from authoritative sources (tax authority website + Big-4 tax summaries), awaiting credentialed sign-off.
+- **Research-verified** — drafted from authoritative sources (tax-authority publications and primary legislation), awaiting credentialed sign-off.
 
 Every output goes to your accountant. We do not file anything on your behalf, and we are not a substitute for a credentialed reviewer.
 

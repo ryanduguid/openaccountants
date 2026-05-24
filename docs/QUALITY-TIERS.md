@@ -11,7 +11,7 @@ We use **two tiers**. No drafts, no stubs — every published skill is one of th
 | Tier | Label | What it means | Badge |
 |------|-------|--------------|-------|
 | **Accountant-verified** | A licensed practitioner has reviewed the skill, run it against real (or representative) data, and signed off. Errors found during use have been corrected. The skill is current with the latest tax-year rates and filing forms. | `accountant-verified` |
-| **Research-verified** | Every rate, threshold, form number, and deadline has been drafted from authoritative sources — tax authority website first, supplemented by PWC / Deloitte / EY / KPMG worldwide tax summaries and the relevant statutes. Format matches the accountant-verified standard. Awaiting a credentialed sign-off. | `research-verified` |
+| **Research-verified** | Every rate, threshold, form number, and deadline has been drafted from authoritative sources — tax-authority publications and the relevant statutes. Format matches the accountant-verified standard. Awaiting a credentialed sign-off. | `research-verified` |
 
 That's it. If a skill is published, it is one of those two.
 
@@ -145,7 +145,6 @@ These are the sources used during research verification. The same sources are re
 
 | Source | URL pattern | What it covers |
 |--------|------------|----------------|
-| **PWC Worldwide Tax Summaries** | taxsummaries.pwc.com | Income tax, VAT/GST rates, filing for 150+ countries |
 | **Deloitte Tax Guides** | dits.deloitte.com | VAT/GST rates, thresholds, compliance |
 | **EY Worldwide Tax Guide** | ey.com/en_gl/tax-guides | Country-by-country tax overviews |
 | **KPMG Tax Rates Online** | kpmg.com/tax-rates | Corporate / individual / indirect tax rates |
