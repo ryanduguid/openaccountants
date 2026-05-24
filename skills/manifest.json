@@ -1,9 +1,9 @@
 {
   "version": "2.2",
   "generated": "2026-05-24",
-  "total_skills": 766,
+  "total_skills": 771,
   "quality_breakdown": {
-    "research-verified": 753,
+    "research-verified": 758,
     "accountant-verified": 13
   },
   "obligation_breakdown": {
@@ -12,17 +12,17 @@
     "CT": 177,
     "INT": 10,
     "SSC": 21,
-    "CRYPTO": 28,
+    "CRYPTO": 29,
     "ORCH": 46,
     "EST": 15,
     "BT": 21,
-    "FS": 19,
-    "FORM": 19,
-    "PAY": 25,
+    "FS": 20,
+    "FORM": 20,
+    "PAY": 26,
     "OPT": 20,
     "TP": 15,
     "VERT": 14,
-    "EINV": 20,
+    "EINV": 21,
     "FW": 13,
     "CBAM": 1,
     "INTEL": 3,
@@ -607,6 +607,50 @@
       "lines": 50
     },
     {
+      "id": "bd-crypto-tax",
+      "jurisdiction": "BD",
+      "obligation": "CRYPTO",
+      "quality": "research-verified",
+      "category": "international",
+      "tax_year": "2026",
+      "path": "international/bangladesh/bd-crypto-tax.md",
+      "size_kb": 2.8,
+      "lines": 46
+    },
+    {
+      "id": "bd-einvoice",
+      "jurisdiction": "BD",
+      "obligation": "EINV",
+      "quality": "research-verified",
+      "category": "international",
+      "tax_year": "2026",
+      "path": "international/bangladesh/bd-einvoice.md",
+      "size_kb": 2.8,
+      "lines": 46
+    },
+    {
+      "id": "bd-financial-statements",
+      "jurisdiction": "BD",
+      "obligation": "FS",
+      "quality": "research-verified",
+      "category": "international",
+      "tax_year": "2026",
+      "path": "international/bangladesh/bd-financial-statements.md",
+      "size_kb": 3.0,
+      "lines": 47
+    },
+    {
+      "id": "bd-formation",
+      "jurisdiction": "BD",
+      "obligation": "FORM",
+      "quality": "research-verified",
+      "category": "international",
+      "tax_year": "2026",
+      "path": "international/bangladesh/bd-formation.md",
+      "size_kb": 3.1,
+      "lines": 61
+    },
+    {
       "id": "bd-freelance-intake",
       "jurisdiction": "BD",
       "obligation": "ORCH",
@@ -627,6 +671,17 @@
       "path": "international/bangladesh/bd-it-freelancer-tax.md",
       "size_kb": 3.8,
       "lines": 58
+    },
+    {
+      "id": "bd-payroll",
+      "jurisdiction": "BD",
+      "obligation": "PAY",
+      "quality": "research-verified",
+      "category": "international",
+      "tax_year": "2026",
+      "path": "international/bangladesh/bd-payroll.md",
+      "size_kb": 2.9,
+      "lines": 45
     },
     {
       "id": "bd-return-assembly",
