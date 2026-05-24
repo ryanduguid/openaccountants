@@ -1,21 +1,21 @@
 {
   "version": "2.2",
   "generated": "2026-05-24",
-  "total_skills": 736,
+  "total_skills": 740,
   "quality_breakdown": {
-    "research-verified": 723,
+    "research-verified": 727,
     "accountant-verified": 13
   },
   "obligation_breakdown": {
-    "IT": 108,
+    "IT": 109,
     "OTHER": 164,
     "CT": 177,
     "INT": 10,
-    "SSC": 18,
+    "SSC": 19,
     "CRYPTO": 26,
-    "ORCH": 40,
+    "ORCH": 41,
     "EST": 15,
-    "BT": 18,
+    "BT": 19,
     "FS": 17,
     "FORM": 17,
     "PAY": 23,
@@ -4070,6 +4070,50 @@
       "path": "us-states/ky/ky-sales-tax.md",
       "size_kb": 2.5,
       "lines": 61
+    },
+    {
+      "id": "kz-bookkeeping",
+      "jurisdiction": "KZ",
+      "obligation": "BT",
+      "quality": "research-verified",
+      "category": "international",
+      "tax_year": "2026",
+      "path": "international/kazakhstan/kz-bookkeeping.md",
+      "size_kb": 22.7,
+      "lines": 324
+    },
+    {
+      "id": "kz-freelance-intake",
+      "jurisdiction": "KZ",
+      "obligation": "ORCH",
+      "quality": "research-verified",
+      "category": "orchestrator",
+      "tax_year": "2026",
+      "path": "orchestrator/kz-freelance-intake.md",
+      "size_kb": 10.4,
+      "lines": 98
+    },
+    {
+      "id": "kz-income-tax",
+      "jurisdiction": "KZ",
+      "obligation": "IT",
+      "quality": "research-verified",
+      "category": "international",
+      "tax_year": "2026",
+      "path": "international/kazakhstan/kz-income-tax.md",
+      "size_kb": 21.0,
+      "lines": 319
+    },
+    {
+      "id": "kz-social-contributions",
+      "jurisdiction": "KZ",
+      "obligation": "SSC",
+      "quality": "research-verified",
+      "category": "international",
+      "tax_year": "2026",
+      "path": "international/kazakhstan/kz-social-contributions.md",
+      "size_kb": 17.6,
+      "lines": 307
     },
     {
       "id": "la-income-tax",
