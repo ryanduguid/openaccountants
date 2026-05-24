@@ -1,14 +1,14 @@
 {
   "version": "2.2",
   "generated": "2026-05-24",
-  "total_skills": 740,
+  "total_skills": 741,
   "quality_breakdown": {
-    "research-verified": 727,
+    "research-verified": 728,
     "accountant-verified": 13
   },
   "obligation_breakdown": {
     "IT": 109,
-    "OTHER": 164,
+    "OTHER": 165,
     "CT": 177,
     "INT": 10,
     "SSC": 19,
@@ -4103,6 +4103,17 @@
       "path": "international/kazakhstan/kz-income-tax.md",
       "size_kb": 21.0,
       "lines": 319
+    },
+    {
+      "id": "kz-simplified-regime",
+      "jurisdiction": "KZ",
+      "obligation": "OTHER",
+      "quality": "research-verified",
+      "category": "international",
+      "tax_year": "2026",
+      "path": "international/kazakhstan/kz-simplified-regime.md",
+      "size_kb": 21.9,
+      "lines": 369
     },
     {
       "id": "kz-social-contributions",
