@@ -1,4 +1,5 @@
 [![MseeP.ai Security Assessment Badge](https://mseep.net/pr/openaccountants-openaccountants-badge.png)](https://mseep.ai/app/openaccountants-openaccountants)
+[![smithery badge](https://smithery.ai/badge/info-ood9/openaccountants)](https://smithery.ai/servers/info-ood9/openaccountants)
 
 # OpenAccountants
 
