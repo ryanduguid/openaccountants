@@ -94,9 +94,20 @@ def _first_h1(body: str) -> str | None:
     return None
 
 
+def _real_verifier(meta: dict[str, Any]) -> str | None:
+    """The named verifier, or None. Treats the 'pending' placeholder (and blanks)
+    as no verifier so a skill awaiting sign-off isn't claimed as verified."""
+    v = meta.get("verified_by")
+    if isinstance(v, str):
+        v = v.strip()
+        if v and v.lower() != "pending":
+            return v
+    return None
+
+
 def _quality_tier(meta: dict[str, Any]) -> str:
     """A named verifier means accountant-verified; otherwise research-verified."""
-    return "accountant-verified" if meta.get("verified_by") else "research-verified"
+    return "accountant-verified" if _real_verifier(meta) else "research-verified"
 
 
 def _split_sections(body: str) -> list[dict[str, Any]]:
@@ -182,7 +193,7 @@ def _index() -> dict[str, dict[str, Any]]:
             "topdir": topdir,
             "category": str(meta.get("category") or ""),
             "quality_tier": _quality_tier(meta),
-            "verified_by": meta.get("verified_by"),
+            "verified_by": _real_verifier(meta),
             "last_updated": mtime.date().isoformat(),
             "relpath": str(path.relative_to(PACKAGES_DIR)),
         })
