@@ -18,9 +18,9 @@ description: Use this skill whenever asked to prepare, review, or create a Slova
 | Tax Authority | Financna sprava Slovenskej republiky (Financial Administration of the Slovak Republic) |
 | Filing Portal | https://www.financnasprava.sk (eDane / eTax portal) |
 | Contributor | Auto-generated draft -- requires validation |
-| Validated By | Deep research verification, April 2026 |
-| Validation Date | 2026-04-10 |
-| Skill Version | 1.0 |
+| Validated By | Deep research verification April 2026; Section 7/7a operating mode added May 2026 after reconciliation against a real Slovak §7a entity's filed April 2026 DPH return |
+| Validation Date | 2026-05-25 |
+| Skill Version | 1.1 |
 | Status | validated |
 | Confidence Coverage | Tier 1: box assignment, reverse charge, deductibility blocks, derived calculations. Tier 2: partial exemption coefficient, vehicle use documentation, import VAT reverse charge. Tier 3: complex group structures, non-standard supplies, triangulation, SOPARFI-like structures. |
 
@@ -55,6 +55,10 @@ Before classifying ANY transaction, you MUST know these facts about the client. 
 ---
 
 ## Step 1: Transaction Classification Rules
+
+### 1.0 Source completeness check [T1]
+
+Before classifying transactions from a PDF folder or document set, cross-reference the bank statement against the source document folder. For every known cross-border subscription supplier (Anthropic, OpenAI, Google, AWS, GitHub, Stripe, etc.), confirm that every charge on the bank statement is matched by an invoice or receipt in the source folder. Small charges (prorated upgrade adjustments, one-time credits, FX rounding lines, mid-cycle plan changes) are often present on the supplier's billing portal but absent from the local folder, and still trigger reverse-charge obligations under §69(2)-(3). A missing sub-EUR 20 line can change the resulting Row 32 liability by exactly its 23% (or applicable rate). If any charge cannot be matched, retrieve the invoice from the supplier's billing console before finalising the return.
 
 ### 1a. Determine Transaction Type [T1]
 - Sale (output DPH / dan na vystupe) or Purchase (input DPH / dan na vstupe / odpocitanie dane)
@@ -319,13 +323,54 @@ If business makes both taxable and exempt supplies:
 
 ---
 
+## Step 5a: Section 7 / 7a Operating Mode [T1]
+
+Entities registered under VAT Act §7 or §7a (typically displayed on invoices as IČ DPH SK + "Neplatiteľ DPH" / "Not registered for VAT") operate under a distinct rule set that is easy to misapply. This step consolidates the rules that are scattered across Steps 1, 5, 6, 9 and EC11.
+
+**Legislation:** VAT Act §7, §7a, §49(1).
+
+### Who they are
+- Have an IČ DPH (SK + 10 digits) **but are not "platitelia DPH"**.
+- Typically registered to receive cross-border B2B services (§7a) or for intra-Community acquisitions of goods (§7).
+- Below the §4 mandatory registration threshold and have not voluntarily upgraded.
+
+### What they do on the DPH return
+
+| Event | DPH return treatment |
+|-------|----------------------|
+| Domestic sale to SK customer | **Not on DPH return** -- issued without DPH; entity is not a platiteľ for domestic supplies |
+| Domestic purchase from SK platiteľ (DPH charged on invoice) | **Not on DPH return** -- full gross is irrecoverable cost (§49(1)) |
+| B2B service received from EU supplier | Row 08 (base) / Row 08a (output DPH at applicable SK rate). **Row 24 = 0** -- NO input recovery |
+| B2B service received from non-EU supplier | Row 09 (base) / Row 09a (output DPH at applicable SK rate). **Row 25 = 0** -- NO input recovery |
+| Intra-Community acquisition of goods | Row 07 (base) / Row 07a (output DPH). **Row 23 = 0** -- NO input recovery |
+| Domestic reverse charge supply received (construction, waste, electronics > EUR 5,000, etc.) | Row 10 / 10a. **Row 26 = 0** -- NO input recovery |
+| Supply of B2B service to EU customer | **Not in DPH return boxes** -- place of supply is customer MS (§15(1)). Goes on Súhrnný výkaz only |
+| Local consumption abroad, international passenger transport (Art. 48 EU Dir.), foreign supplier charging local VAT > 0% | **Not on DPH return** -- foreign VAT at source, not recoverable |
+
+### What they do NOT file
+- **Kontrolný výkaz** -- §78a binds only "platitelia DPH". §7 / §7a entities are exempt. [T1]
+
+### What they DO file
+- **DPH return (DPHv25)** -- for each calendar month in which a reportable reverse-charge event or §15(1) EU-service supply occurs. No return is required for months with no reportable events. Quarterly aggregation is **not** available regardless of turnover.
+- **Súhrnný výkaz (EC Sales List)** -- for each calendar month in which a B2B service is supplied to an EU customer, or an intra-Community acquisition of goods is made.
+
+### Net effect
+Unlike a §4 platiteľ where reverse charge is a wash (output and input rows cancel), **for §7 / §7a entities the self-assessed output DPH is a real cash cost** because the matching input row stays at zero (§49(1)). Treat the resulting Row 32 liability as genuinely payable.
+
+### Cross-references
+- EC11 -- §7 entity receives EU services (concrete example)
+- EC17 -- Foreign supplier applied SK OSS VAT (B2C billing); affects how §7 / §7a entities classify cross-border SaaS
+- PROHIBITION: "NEVER allow non-registered or Section 7/7a entities to claim input DPH"
+
+---
+
 ## Step 6: Control Statement (Kontrolny vykaz) [T1]
 
 **Legislation:** VAT Act Sec. 78a.
 
 | Feature | Detail |
 |---------|--------|
-| Filing obligation | Mandatory for all VAT payers alongside DPH return |
+| Filing obligation | Mandatory for "platitelia DPH" (§4 / §4a / §4b) alongside DPH return. **§7 / §7a entities are NOT required to file Kontrolný výkaz** -- §78a binds only platitelia [T1]. See Step 5a |
 | Filing deadline | Same as VAT return (25th of following month/quarter) |
 | Content | Transaction-level detail for cross-checking with trading partners |
 | Structure | Sections A (supplies made) and B (supplies received) |
@@ -379,6 +424,8 @@ If business makes both taxable and exempt supplies:
 | EC Sales List (Suhrny vykaz) | Monthly | 25th of following month | Sec. 80 |
 | DPH payment | Same as return | 25th of following month/quarter | Sec. 78 |
 | Intrastat | Monthly | 15th of following month | Statistical Office regulation |
+
+**§7 / §7a filing rhythm [T1]:** §7 / §7a entities file a DPH return per calendar month in which a reportable reverse-charge event (services received from EU/non-EU, intra-Community acquisition of goods, domestic reverse charge supply received) or §15(1) EU-service supply occurs. Months with no reportable events require no DPH return. Quarterly aggregation under §78(2) is **not** available to §7 / §7a registrants regardless of turnover. See Step 5a.
 
 ### Penalties [T1]
 
@@ -466,7 +513,7 @@ END
 ### EC11 -- Section 7/7a registered entity receives EU services [T1]
 **Situation:** Entity registered under Section 7 (EU purposes only) receives consulting from German supplier.
 **Resolution:** Must self-assess output DPH (Row 08/08a). But CANNOT claim input DPH (no deduction rights). Must pay the DPH.
-**Legislation:** VAT Act Sec. 7, Sec. 49(1).
+**Legislation:** VAT Act Sec. 7, Sec. 49(1). See Step 5a for the full §7 / §7a operating mode.
 
 ### EC12 -- Intra-EU goods acquisition [T1]
 **Situation:** Slovak company buys goods from Polish supplier at 0% with PL VAT number.
@@ -492,6 +539,12 @@ END
 **Situation:** M1 car purchased in December 2025, EUR 15,000 + DPH EUR 3,450.
 **Resolution:** Full deduction: Row 20 += EUR 3,450. The 50% restriction only applies from 1 January 2026. Pre-2026 purchases have full deduction rights.
 **Legislation:** VAT Act Sec. 49(7)(b) -- effective date 1 January 2026.
+
+### EC17 -- Foreign supplier applied SK OSS VAT because billing details lacked the customer's IČ DPH [T2]
+**Situation:** SaaS / digital-service invoice from a non-EU or EU supplier (Anthropic, Google, AWS, OpenAI, GitHub, etc.) shows a line such as "VAT - Slovakia 23%" charged on top of the net price, because the customer's account at the supplier is configured without their Slovak IČ DPH -- the supplier treated them as a consumer and remitted the VAT via OSS.
+**Resolution:** **NOT reverse charge.** The skill prohibition "NEVER apply reverse charge when supplier charged local VAT > 0%" applies. The OSS VAT has already been remitted to Finančná správa by the supplier; applying RC on top would double-tax the same supply. The full gross amount is an irrecoverable cost (and for a §7 / §7a entity, the standard "no input recovery" rule already prevents any deduction regardless). Flag for cleanup: customer must add their IČ DPH to the supplier's billing profile so future invoices are issued at 0% with reverse-charge notation, restoring the normal §69(2)-(3) RC flow.
+**Detection signal:** Invoice line shows "VAT - Slovakia 23%" (or similar local-VAT line) AND the customer's IČ DPH is missing from the bill-to block. A receipt from the same supplier in the same period showing 0% with a "reverse charge" note confirms which billing path was used.
+**Legislation:** VAT Act §69(2)-(3); PROHIBITIONS list; EU VAT OSS regime (Directive 2017/2455).
 
 ---
 
@@ -698,6 +751,11 @@ This skill does not compute income tax. The following is reference information o
 This skill covers Slovakia's VAT system based on Act No. 222/2004 Coll. as amended by the Consolidation Act 2025. Key distinctive features include: the 2025 rate restructuring (20% to 23%, new 19%/5% tiers), the import VAT reverse charge from July 2025 (DPHv25 form), the vehicle 50% restriction from 2026, the mandatory Control Statement, entertainment fully blocked, and domestic reverse charge for construction/waste/electronics. Validation by a qualified Slovak danovy poradca is required before production use.
 
 **A skill may not be published without sign-off from a qualified practitioner in the relevant jurisdiction.**
+
+### Changelog
+
+- **v1.1 (2026-05-25)** -- Added Step 5a (consolidated §7 / §7a operating mode), EC17 (foreign supplier applied SK OSS VAT because billing details lacked the customer's IČ DPH), source-completeness cross-check in Step 1.0, explicit §7 / §7a filing-rhythm note in Step 9, and Kontrolný výkaz exemption clarification in Step 6. Cross-reference added in EC11. Changes motivated by reconciliation against a real Slovak §7a entity's filed April 2026 DPH return where three independent applications of the v1.0 skill produced three different liability figures, and the v1.0 text did not unambiguously rule out the incorrect ones.
+- **v1.0 (2026-04-10)** -- Initial deep-research draft.
 
 
 ---
