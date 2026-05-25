@@ -11,10 +11,9 @@ Without MCP, using OpenAccountants means downloading a country folder and draggi
 ```
 You:    "Help me set up a company in Malta and understand my tax obligations."
           ↓
-Claude: calls list_jurisdictions → sees "malta"
-Claude: calls list_files("malta") → foundation.md, malta-vat.md, malta-formation.md, …
-Claude: calls get_file("malta", "malta-formation.md") → formation rules loaded
-Claude: calls get_file("malta", "malta-vat.md") → VAT rules loaded
+Claude: calls list_skills(jurisdiction="MT") → sees malta-formation, malta-vat-return, …
+Claude: calls get_skill("malta-formation") → formation rules loaded
+Claude: calls get_skill("malta-vat-return") → VAT rules loaded
           ↓
 Claude: walks you through entity selection, registration, and tax setup
 ```
@@ -26,9 +25,8 @@ US states work the same way:
 ```
 You:    "Help me with my California taxes. Here's my bank statement."
           ↓
-Claude: calls list_jurisdictions → sees "us-ca"
-Claude: calls list_files("us-ca") → federal + CA state skills
-Claude: calls get_file("us-ca", "ca-income-tax.md") → state rules loaded
+Claude: calls list_skills(jurisdiction="US-CA") → federal + CA state skills
+Claude: calls get_skill("ca-income-tax") → state rules loaded
           ↓
 Claude: now processes with federal AND California rules
 ```
@@ -43,13 +41,31 @@ Special packages are also available:
 
 ## Tools
 
+This server mirrors the hosted server at `https://www.openaccountants.com/api/mcp` so both expose the same surface.
+
 | Tool | Description |
 |------|-------------|
-| `list_jurisdictions` | Returns every jurisdiction slug that has at least one `.md` skill file under `packages/`. Includes country slugs (e.g. `malta`, `uk`) and US state slugs (e.g. `us-ca`, `us-tx`). |
-| `list_files` | Given a jurisdiction slug (e.g. `malta`), returns the `.md` / `.json` filenames in that package. |
-| `get_file` | Given a jurisdiction + filename, returns the full UTF-8 text of that skill file (capped at 2 MB). |
+| `list_skills` | List published skills with quality tier and verifier. Optional `jurisdiction` (ISO code, e.g. `MT`, `GB`, `US-CA`) and `category` filters. |
+| `get_skill` | Given a skill `slug`, returns the full markdown plus a provenance/attribution footer. |
+| `get_skill_sections` | Given a `slug`, returns the skill parsed into sections (`heading`, `content`, `level`) for step-by-step application. |
+| `search_skills` | Keyword search across skill markdown (`query`, optional `jurisdiction`). Returns the matched section heading and a snippet. |
 
 All access is **read-only** and **path-sandboxed** to the `packages/` directory.
+
+## Prompts
+
+Guided workflows that turn the skills into a tax engine, not just a library:
+
+| Prompt | Arguments | Purpose |
+|--------|-----------|---------|
+| `tax-return` | `country`, `tax_year`, `entity_type` | Intake → transaction classification → working paper. |
+| `vat-check` | `country`, `period` | Classify transactions for VAT/GST and build a return working paper. |
+| `find-deductions` | `country`, `entity_type` | Review expenses and surface deductions the taxpayer is missing. |
+| `compare-jurisdictions` | `countries`, `income`, `entity_type` | Side-by-side tax comparison for cross-border planning. |
+| `skill-feedback` | `skill_slug`, `country` | Collect structured feedback on a skill after use. |
+| `skill-review` | `skillSlug`, `scenario` | Load a skill's sections and apply them to one scenario. |
+
+> Note: the on-disk server reads the open-source markdown in `packages/`. Most skill files don't carry a `jurisdiction` field, so it's inherited from the package directory (the folder name for `us-XX`/`ca-XX`, otherwise the code its siblings declare). Quality tier is derived from whether a file names a verifier.
 
 ## Quick start
 
@@ -145,7 +161,7 @@ The AI will call the MCP tools behind the scenes to load the right country and d
 | Download folder, upload files by hand | One-time install, always available |
 | Pick the right files yourself | Model discovers what's available |
 | Repeat for every new conversation | Persistent — server always running |
-| Can't easily switch countries mid-chat | Model calls `list_jurisdictions` and pivots |
+| Can't easily switch countries mid-chat | Model calls `list_skills` / `search_skills` and pivots |
 
 ## Smoke test
 

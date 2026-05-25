@@ -1,11 +1,11 @@
 [project]
 name = "openaccountants-mcp"
-version = "0.2.0"
+version = "0.3.0"
 description = "MCP server giving AI assistants on-demand access to open-source accounting skills across 134 countries, 51 US states, and 13 Canadian provinces/territories — tax, bookkeeping, payroll, e-invoicing, formation, cross-border (Pillar Two, CBAM, FATCA/CRS, DST), and sector verticals."
 readme = "README.md"
 requires-python = ">=3.10"
 license = "AGPL-3.0-or-later"
-dependencies = ["mcp>=1.0.0"]
+dependencies = ["mcp>=1.0.0", "pyyaml>=6.0"]
 keywords = [
     "tax", "accounting", "mcp", "ai", "accountant", "vat", "gst",
     "income-tax", "open-source", "self-employed", "freelancer",
