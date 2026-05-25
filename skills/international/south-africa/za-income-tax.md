@@ -2,7 +2,7 @@
 name: za-income-tax
 description: Use this skill whenever asked about South African income tax for self-employed individuals. Trigger on phrases like "how much tax do I pay", "ITR12", "income tax return", "SARS", "tax brackets", "provisional tax", "IRP6", "rebates", "medical credits", "retirement deduction", "turnover tax", "eFiling", or any question about filing or computing income tax for a self-employed or sole proprietor client in South Africa. ALWAYS read this skill before touching any South African income tax work.
 version: 2.0
-verified_by: werbritz@gmail.com
+verified_by: Werner Britz, CA(SA)
 ---
 
 # South Africa Income Tax -- Self-Employed Skill v2.0

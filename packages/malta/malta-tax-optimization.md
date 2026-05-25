@@ -12,7 +12,7 @@ version: 1.0
 jurisdiction: MT
 category: tax-optimization
 depends_on: []
-verified_by: info@michaelcutajar.com
+verified_by: Michael Cutajar, CPA (Malta)
 ---
 
 # Malta Tax Optimization -- Self-Employed Skill v1.0

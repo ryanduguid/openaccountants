@@ -8,7 +8,7 @@ tax_year: 2026
 category: international
 depends_on:
   - social-contributions-workflow-base
-verified_by: info@michaelcutajar.com
+verified_by: Michael Cutajar, CPA (Malta)
 ---
 
 # Malta Social Security Contributions (SSC) -- Self-Employed Skill v2.0
