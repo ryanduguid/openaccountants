@@ -7,6 +7,8 @@ jurisdiction: SA
 category: invoicing
 depends_on:
   - einvoice-workflow-base
+tax_year: 2025
+verified_by: pending
 ---
 
 # Saudi Arabia ZATCA E-Invoice (FATOORA) Skill v1.0
