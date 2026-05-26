@@ -1,17 +1,17 @@
 ---
 name: uk-payments-on-account
 description: >
-  Use this skill whenever asked about UK Payments on Account (POA) for Self Assessment taxpayers. Trigger on phrases like "payments on account", "POA", "January payment", "July payment", "balancing payment", "SA303", "claim to reduce", "reduce payments on account", "do I need to make payments on account", "POA threshold", "tax underpayment", or any question about advance income tax payments under UK Self Assessment. Covers the two-payment schedule (31 January / 31 July), the GBP 1,000 threshold, the 80% PAYE test, balancing payment mechanics, SA303 claim to reduce, excluded items (Class 2 NIC, student loan, CGT), interest on late payments, and interaction with tax codes. ALWAYS read this skill before touching any UK POA work.
-version: 2.0
+  Use this skill whenever asked about UK Payments on Account (POA) for Self Assessment taxpayers. Trigger on phrases like "payments on account", "POA", "POA 2026", "January payment", "July payment", "balancing payment", "SA303", "claim to reduce", "reduce payments on account", "do I need to make payments on account", "POA threshold", "tax underpayment", "MTD ITSA payments on account", or any question about advance income tax payments under UK Self Assessment. Covers the two-payment schedule (31 January / 31 July), the GBP 1,000 threshold, the 80% PAYE test, balancing payment mechanics, SA303 claim to reduce, excluded items (Class 2 NIC, student loan, CGT), interest on late payments, the interaction with MTD ITSA quarterly updates from 6 April 2026, and interaction with tax codes. ALWAYS read this skill before touching any UK POA work.
+version: 3.0
 jurisdiction: GB
-tax_year: 2024-25
+tax_years: [2024-25, 2025-26, 2026-27]
 category: international
 depends_on:
   - income-tax-workflow-base
 verified_by: pending
 ---
 
-# UK Payments on Account (POA) -- Self Assessment Skill v2.0
+# UK Payments on Account (POA) -- Self Assessment Skill v3.0
 
 ## Section 1 -- Quick reference
 
@@ -20,24 +20,43 @@ verified_by: pending
 | Country | United Kingdom |
 | Tax | Income tax advance payments (Payments on Account / POA) |
 | Primary legislation | Taxes Management Act 1970 (TMA 1970), Section 59A |
-| Supporting legislation | Income Tax (Pay As You Earn) Regulations 2003; Finance Act 2024; TMA 1970 s59B, s86 |
+| Supporting legislation | Income Tax (Pay As You Earn) Regulations 2003; Finance Act 2024; Finance (No. 2) Act 2024; TMA 1970 s59B, s86 |
 | Authority | HM Revenue & Customs (HMRC) |
-| Portal | HMRC Self Assessment Online |
+| Portal | HMRC Self Assessment Online; from 6 April 2026 also MTD ITSA-compatible software for quarterly updates |
 | Currency | GBP only |
 | Payment schedule | Two POAs: 31 January (in tax year) + 31 July (after tax year); balancing payment 31 January following |
-| Threshold | SA balance >= GBP 1,000 AND PAYE < 80% of total tax |
+| Threshold | SA balance >= GBP 1,000 AND tax deducted at source < 80% of total tax |
 | Excluded items | Class 2 NIC, student loan, postgraduate loan, CGT, marriage allowance |
 | Contributor | Open Accountants Community |
 | Validated by | Pending -- requires sign-off by UK-qualified accountant (ACA/ACCA/CTA) |
 | Validation date | Pending |
 
-**Payment schedule summary (tax year 2024/25):**
+### 1.1 Three-year comparison: variable elements
+
+The POA structural rules (threshold, 50%-of-prior-year formula, two-instalment schedule, SA303 mechanism, excluded items) are UNCHANGED across all three years. Only the late payment interest rate and the surrounding reporting workflow shift.
+
+| Element | 2024-25 | 2025-26 | 2026-27 |
+|---|---|---|---|
+| Threshold (de minimis) | Prior year SA balance >= GBP 1,000 | Prior year SA balance >= GBP 1,000 | Prior year SA balance >= GBP 1,000 |
+| Threshold (PAYE/deduction test) | < 80% of tax deducted at source | < 80% of tax deducted at source | < 80% of tax deducted at source |
+| POA calculation | 50% of prior year SA balance, each instalment | 50% of prior year SA balance, each instalment | 50% of prior year SA balance, each instalment |
+| 1st POA due | 31 January 2025 | 31 January 2026 | 31 January 2027 |
+| 2nd POA due | 31 July 2025 | 31 July 2026 | 31 July 2027 |
+| Balancing payment due | 31 January 2026 | 31 January 2027 | 31 January 2028 |
+| Late payment interest rate | HMRC Bank Rate + 4 pp (approx. 7.75% late 2024 / 2025) | HMRC Bank Rate + 4 pp (track Bank Rate movements) | HMRC Bank Rate + 4 pp (track Bank Rate movements) |
+| SA303 (claim to reduce) | Available; standard process | Available; standard process | Available; standard process |
+| MTD ITSA quarterly reporting | Not in scope (most clients) | Not in scope (most clients) | MANDATORY from 6 April 2026 for qualifying SE/property income (does NOT replace POA) |
+| Annual reconciliation | SA tax return | SA tax return | SA tax return / Final Declaration under MTD ITSA |
+
+**Note on the 4 pp surcharge.** Finance (No. 2) Act 2024 increased the late payment interest add-on from 2.5 pp to 4 pp from 31 January late onwards (operative for sums overdue from the standard 2024-25 cycle and forward). All worked examples in this version use Bank Rate + 4 pp.
+
+**Payment schedule summary (illustrative for 2025-26 tax year):**
 
 | Payment | Due date | Amount |
 |---|---|---|
-| 1st POA | 31 January 2025 | 50% of prior year SA balance |
-| 2nd POA | 31 July 2025 | 50% of prior year SA balance |
-| Balancing payment | 31 January 2026 | Actual liability minus POAs paid |
+| 1st POA | 31 January 2026 | 50% of 2024-25 SA balance |
+| 2nd POA | 31 July 2026 | 50% of 2024-25 SA balance |
+| Balancing payment | 31 January 2027 | Actual 2025-26 liability minus POAs paid |
 
 **Conservative defaults:**
 
@@ -48,6 +67,7 @@ verified_by: pending
 | CGT included in SA balance | Exclude CGT before computing POA |
 | Student loan included | Exclude before computing POA |
 | HMRC coding out unclear | Verify coded amount removed from SA balance |
+| MTD ITSA from April 2026 | Confirm scope and software; POA cycle still applies in parallel |
 
 ---
 
@@ -59,7 +79,7 @@ verified_by: pending
 
 **Recommended** -- the HMRC statement or tax calculation showing the SA balance, any SA303 filing history, current year income expectations.
 
-**Ideal** -- the full SA302 tax calculation from HMRC, prior year payment history, and any coding adjustment letters.
+**Ideal** -- the full SA302 tax calculation from HMRC, prior year payment history, any coding adjustment letters, and (from April 2026) the MTD ITSA quarterly update submissions to date.
 
 **Refusal policy if minimum is missing -- SOFT WARN.** If the prior year SA balance is unknown, flag that POA computation is unreliable and direct the client to obtain their SA302 from HMRC.
 
@@ -70,6 +90,8 @@ verified_by: pending
 **R-UK-POA-2 -- Non-resident POA obligations.** Trigger: client is non-UK resident. Message: "Non-resident Self Assessment has different POA rules. Please escalate to a qualified accountant."
 
 **R-UK-POA-3 -- Trust POA.** Trigger: client asks about trust payments on account. Message: "Trust estimated tax is outside the scope of this skill."
+
+**R-UK-POA-4 -- MTD ITSA software selection / quarterly update preparation.** Trigger: client asks which MTD ITSA software to use, or how to file a quarterly update. Message: "MTD ITSA software selection and quarterly update mechanics are outside the scope of this POA skill. Please use the dedicated MTD ITSA skill or escalate to a qualified accountant."
 
 ---
 
@@ -134,11 +156,11 @@ If the total debit is substantially larger than one POA instalment, it is likely
 
 **Output:** Below GBP 1,000 threshold. No POAs required. Full GBP 850 due as balancing payment on 31 January following the tax year.
 
-### Example 3 -- 80% PAYE test met
+### Example 3 -- 80% deduction-at-source test met
 
-**Input:** Total tax liability = GBP 20,000. PAYE collected = GBP 17,000. SA balance = GBP 3,000.
+**Input:** Total tax liability = GBP 20,000. PAYE/tax deducted at source = GBP 17,000. SA balance = GBP 3,000.
 
-**Computation:** PAYE% = 17,000 / 20,000 = 85% > 80%. No POA required despite SA balance exceeding GBP 1,000.
+**Computation:** Deducted-at-source % = 17,000 / 20,000 = 85% > 80%. No POA required despite SA balance exceeding GBP 1,000.
 
 ### Example 4 -- Excluded items removed
 
@@ -152,11 +174,87 @@ If the total debit is substantially larger than one POA instalment, it is likely
 
 **Output:** Reduced POA = GBP 1,500 each. If actual liability = GBP 6,000, HMRC charges interest on GBP 3,500 shortfall per instalment from original due dates.
 
-### Example 6 -- Late payment interest
+### Example 6 -- Late payment interest (Bank Rate + 4 pp)
 
-**Input:** 1st POA of GBP 3,000 due 31 January. Paid 15 April (74 days late). Bank of England base rate = 5.25%.
+**Input:** 1st POA of GBP 3,000 due 31 January 2026. Paid 15 April 2026 (74 days late). HMRC Bank Rate = 3.75% (illustrative).
 
-**Computation:** Interest rate = 5.25% + 2.5% = 7.75%. Interest = GBP 3,000 x 7.75% / 365 x 74 = GBP 47.12.
+**Computation:** Interest rate = 3.75% + 4.00% = 7.75%. Interest = GBP 3,000 x 7.75% / 365 x 74 = GBP 47.12.
+
+### Example 7 -- Full 3-year cycle (the headline worked example)
+
+**Client profile:** Self-employed software contractor. No PAYE income. No CGT, no student loan, no Class 2 NIC adjustments in scope. Prior year (2023-24) SA balance fell below GBP 1,000, so 2024-25 had NO opening POAs.
+
+**Step A -- Tax year 2024-25 (filed January 2026).**
+
+The client's 2024-25 SA return shows an SA balance of GBP 12,000 (income tax + Class 4 NIC). No POAs were due in advance (because 2023-24 was below threshold).
+
+Payments due on the 31 January 2026 deadline:
+- Balancing payment for 2024-25: GBP 12,000
+- 1st POA for 2025-26: GBP 6,000 (= 50% of GBP 12,000)
+- Total cash due on 31 January 2026: **GBP 18,000**
+
+| Payment | Due date | Amount |
+|---|---|---|
+| 2024-25 balancing payment | 31 January 2026 | GBP 12,000 |
+| 1st POA for 2025-26 | 31 January 2026 | GBP 6,000 |
+| 2nd POA for 2025-26 | 31 July 2026 | GBP 6,000 |
+
+**Step B -- Tax year 2025-26 (POAs of GBP 6,000 each already in motion).**
+
+By 31 July 2026 the client has paid GBP 12,000 in POAs (GBP 6,000 + GBP 6,000) toward the 2025-26 liability.
+
+Three scenarios on the actual 2025-26 liability:
+
+**Scenario B1 -- Liability exactly matches.** Actual 2025-26 SA balance = GBP 12,000.
+- POAs paid: GBP 12,000.
+- Balancing payment 31 January 2027: GBP 0.
+- 1st POA for 2026-27 due 31 January 2027: GBP 6,000 (= 50% of GBP 12,000).
+- Cash due 31 January 2027: **GBP 6,000**.
+
+**Scenario B2 -- Liability higher.** Actual 2025-26 SA balance = GBP 14,000.
+- POAs paid: GBP 12,000.
+- Balancing payment 31 January 2027: GBP 2,000.
+- 1st POA for 2026-27: GBP 7,000 (= 50% of GBP 14,000).
+- Cash due 31 January 2027: **GBP 9,000**.
+- 2nd POA for 2026-27 due 31 July 2027: GBP 7,000.
+
+**Scenario B3 -- Liability lower (refund position).** Actual 2025-26 SA balance = GBP 8,000.
+- POAs paid: GBP 12,000.
+- Overpayment: GBP 4,000 (HMRC refunds or sets off against 2026-27).
+- 1st POA for 2026-27: GBP 4,000 (= 50% of GBP 8,000).
+- If HMRC sets off the overpayment: cash due 31 January 2027 = GBP 0; the GBP 4,000 overpayment covers the 1st POA for 2026-27 entirely.
+
+**Step C -- Tax year 2026-27 (the first year inside MTD ITSA scope, see Section 4.1).**
+
+Assume Scenario B1 (POAs of GBP 6,000 each for 2026-27). The client is in MTD ITSA from 6 April 2026 and submits quarterly updates through compatible software, but the POA cash flow is unchanged:
+
+| Date | Event | Cash impact |
+|---|---|---|
+| 31 January 2027 | 1st POA 2026-27 + (any) 2025-26 balancing | GBP 6,000 (B1) |
+| 5 August 2026 | Q1 MTD ITSA quarterly update due | No tax payment -- reporting only |
+| 5 November 2026 | Q2 MTD ITSA quarterly update due | No tax payment -- reporting only |
+| 5 February 2027 | Q3 MTD ITSA quarterly update due | No tax payment -- reporting only |
+| 5 May 2027 | Q4 MTD ITSA quarterly update due | No tax payment -- reporting only |
+| 31 July 2027 | 2nd POA 2026-27 | GBP 6,000 |
+| 31 January 2028 | Final Declaration (replaces SA return) + 2026-27 balancing payment + 1st POA 2027-28 | Depends on final 2026-27 liability |
+
+The four quarterly updates are reporting events only -- they do NOT generate new payment dates. POA cash flow continues unchanged.
+
+### 4.1 From April 2026 -- MTD ITSA interaction
+
+**Headline rule.** Making Tax Digital for Income Tax Self Assessment (MTD ITSA) becomes mandatory from 6 April 2026 for sole traders and landlords with qualifying income above the relevant threshold (GBP 50,000 from April 2026; GBP 30,000 from April 2027; further phasing thereafter -- confirm current threshold for the client at the time of advice).
+
+**MTD ITSA does NOT replace or alter the POA regime.** Specifically:
+
+1. **POA dates remain 31 January and 31 July.** MTD quarterly updates (due 5 August, 5 November, 5 February, 5 May for a standard 6 April -- 5 April year) are SEPARATE reporting events. They do not collect tax.
+2. **POA calculation remains 50% of prior year SA balance.** It does not switch to a quarterly profit-to-date basis.
+3. **The annual reconciliation continues -- now called the Final Declaration.** This replaces the SA100 tax return for MTD-scope taxpayers and is due 31 January following the tax year, same as before. Balancing payment is due on the same 31 January date.
+4. **SA303 (claim to reduce POAs) remains available.** The mechanism is unchanged.
+5. **Excluded items continue to be excluded** (Class 2 NIC, student loan, CGT, etc.).
+
+**Workflow change for the practitioner.** The data feeds underpinning the SA balance now flow through MTD-compatible software in quarterly batches. The POA worksheet (the part this skill produces) consumes the same SA balance figure from the prior year's Final Declaration that it previously consumed from the prior year SA return.
+
+**Common client misconception to correct.** Clients in MTD ITSA from April 2026 often assume the quarterly updates settle their tax. They do not. The 31 January / 31 July POA pattern continues, and the Final Declaration is still required.
 
 ---
 
@@ -166,7 +264,7 @@ If the total debit is substantially larger than one POA instalment, it is likely
 
 POAs are NOT required if EITHER condition is met:
 - **Test 1 (de minimis):** Prior year SA balance < GBP 1,000
-- **Test 2 (PAYE dominance):** More than 80% of prior year total tax was collected via PAYE/deduction at source
+- **Test 2 (deduction dominance):** More than 80% of prior year total tax was collected via PAYE/deduction at source
 
 ### 5.2 SA balance definition
 
@@ -206,7 +304,7 @@ reduced_POA_each = estimated_current_year_SA_balance / 2
 
 | Element | Rule |
 |---|---|
-| Rate | Bank of England base rate + 2.5% (approx. 7.0-7.5% for 2024/25) |
+| Rate | HMRC Bank Rate + 4 percentage points (per Finance (No. 2) Act 2024 from 31 January late onwards). Approx. 7.75% as at late 2025 -- confirm current Bank Rate. |
 | Runs from | Due date of the POA (31 Jan or 31 Jul) |
 | Runs until | Date of payment |
 | Compounding | Simple interest (not compound) |
@@ -215,10 +313,14 @@ reduced_POA_each = estimated_current_year_SA_balance / 2
 ### 6.2 Interest computation
 
 ```
-interest = overdue_amount x (base_rate + 2.5%) / 365 x days_overdue
+interest = overdue_amount x (Bank_Rate + 4%) / 365 x days_overdue
 ```
 
-There is no separate penalty for late POA payment -- only interest. A surcharge may apply if the balancing payment is more than 30 days late.
+There is no separate penalty for late POA payment -- only interest. A surcharge may apply if the balancing payment is more than 30 days late under the wider late payment penalty regime.
+
+### 6.3 Time-to-Pay arrangements
+
+A taxpayer who cannot meet a POA on time may apply for a Time-to-Pay (TTP) arrangement with HMRC (online for liabilities under GBP 30,000, by phone above). The arrangement does NOT stop interest accruing, but it does stop further collection action and any late payment surcharge on the balancing payment provided the TTP is agreed before the surcharge trigger date. Process unchanged across 2024-25, 2025-26, 2026-27.
 
 ---
 
@@ -252,13 +354,15 @@ If HMRC is coding out underpayments, verify whether the coded amount has been co
 
 **EC10 -- Marriage allowance transfer.** Reduces transferor's tax, increases recipient's. POAs based on NET SA balance after marriage allowance.
 
+**EC11 -- Client enters MTD ITSA from 6 April 2026 mid-POA-cycle.** Existing 2025-26 POAs (due 31 Jan 2026 and 31 July 2026) are unchanged. From 6 April 2026 the client begins quarterly updates for the 2026-27 tax year. The 31 January 2027 cash event still combines the 2025-26 balancing payment (computed via Final Declaration or SA100 depending on scope) with the 1st POA for 2026-27.
+
 ---
 
 ## Section 9 -- Self-checks
 
 Before delivering output, verify:
 
-- [ ] Both threshold tests checked (GBP 1,000 and 80% PAYE)
+- [ ] Both threshold tests checked (GBP 1,000 and 80% deduction at source)
 - [ ] Class 2 NIC, student loan, CGT, postgraduate loan excluded from SA balance
 - [ ] POA computed as 50% of SA balance (not 50% of total tax)
 - [ ] 31 January double-payment impact noted (balancing + 1st POA)
@@ -267,6 +371,8 @@ Before delivering output, verify:
 - [ ] Coding out adjustments verified if applicable
 - [ ] Weekend/holiday due date adjustments checked
 - [ ] Balancing payment includes all excluded items
+- [ ] Late payment interest computed at Bank Rate + 4 pp (not the old + 2.5 pp)
+- [ ] If the year is 2026-27 or later, MTD ITSA scope confirmed and client reminded that POAs continue alongside quarterly updates
 - [ ] Output labelled as estimated until prior year return is filed and processed
 
 ---
@@ -281,7 +387,7 @@ Before delivering output, verify:
 **Input:** Prior year SA balance = GBP 850.
 **Expected:** No POA. Full GBP 850 due as balancing payment.
 
-### Test 3 -- 80% PAYE test met
+### Test 3 -- 80% deduction test met
 **Input:** Total tax = GBP 20,000. PAYE = GBP 17,000. SA balance = GBP 3,000.
 **Expected:** PAYE% = 85% > 80%. No POA required.
 
@@ -297,22 +403,37 @@ Before delivering output, verify:
 **Input:** POAs paid GBP 4,000 + GBP 4,000. Actual SA balance = GBP 6,500.
 **Expected:** Overpayment = GBP 1,500. HMRC refunds or sets off.
 
-### Test 7 -- Late payment interest
-**Input:** POA GBP 3,000 due 31 Jan. Paid 15 Apr (74 days). Base rate 5.25%.
+### Test 7 -- Late payment interest (Bank Rate + 4 pp)
+**Input:** POA GBP 3,000 due 31 Jan 2026. Paid 15 Apr 2026 (74 days). Bank Rate 3.75%.
 **Expected:** Rate = 7.75%. Interest = GBP 3,000 x 7.75% / 365 x 74 = GBP 47.12.
+
+### Test 8 -- Full 3-year cycle, B1 scenario
+**Input:** 2024-25 SA balance = GBP 12,000; 2025-26 actual = GBP 12,000; 2026-27 actual = GBP 12,000. No prior POAs entering 2024-25.
+**Expected:**
+- 31 Jan 2026 cash: GBP 18,000 (12,000 balancing + 6,000 1st POA).
+- 31 Jul 2026 cash: GBP 6,000 (2nd POA).
+- 31 Jan 2027 cash: GBP 6,000 (1st POA 2026-27; 2025-26 balancing = 0).
+- 31 Jul 2027 cash: GBP 6,000 (2nd POA 2026-27).
+- 31 Jan 2028 cash: GBP 6,000 (1st POA 2027-28; 2026-27 balancing = 0).
+
+### Test 9 -- MTD ITSA does not change POA cash flow
+**Input:** Client in MTD ITSA from 6 April 2026 with prior year SA balance = GBP 10,000.
+**Expected:** 1st POA for 2026-27 = GBP 5,000 due 31 Jan 2027; 2nd POA = GBP 5,000 due 31 Jul 2027; quarterly updates do not generate tax payments.
 
 ---
 
 ## Prohibitions
 
 - NEVER include Class 2 NIC, student loan, postgraduate loan, or CGT in the POA calculation
-- NEVER compute POAs without checking both threshold tests (GBP 1,000 and 80% PAYE)
+- NEVER compute POAs without checking both threshold tests (GBP 1,000 and 80% deduction at source)
 - NEVER advise filing SA303 without flagging the interest risk on shortfalls
 - NEVER use current year income to compute POAs -- always prior year SA balance
 - NEVER ignore the 31 January double-payment impact (balancing + 1st POA)
 - NEVER present POA figures as definitive until the prior year return is filed and processed
 - NEVER assume HMRC has automatically adjusted POAs after a return amendment
-- NEVER conflate POA interest (simple, base+2.5%) with late filing penalties (separate regime)
+- NEVER conflate POA interest (simple, Bank Rate + 4 pp) with late filing penalties (separate regime)
+- NEVER use the legacy +2.5 pp interest add-on for periods of lateness running from 31 January 2025 onwards -- the rate is Bank Rate + 4 pp
+- NEVER tell a client that MTD ITSA quarterly updates replace POAs -- they do not
 - NEVER advise on penalty disputes without escalating to a qualified accountant
 
 ---

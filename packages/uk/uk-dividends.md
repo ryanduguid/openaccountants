@@ -1,8 +1,8 @@
 ---
 name: uk-dividends
 description: >
-  Use this skill whenever asked about UK dividend income taxation. Trigger on phrases like "dividend tax UK", "dividend allowance", "dividend income", "company dividends", "director dividends", "salary vs dividends", "dividend voucher", "SA100 dividends", "foreign dividends UK", "dividend waiver", "dividend tax rates", "8.75%", "33.75%", "39.35%", "Scottish dividend tax", or any question about computing, declaring, or optimising dividend income for UK individual taxpayers. Covers dividend allowance, rates, salary-vs-dividend planning for company directors, foreign dividends and double tax relief, dividend waivers, and interaction with other income. ALWAYS read this skill before touching any UK dividend work.
-version: 1.0
+  Use this skill whenever asked about UK dividend income taxation. Trigger on phrases like "dividend tax UK", "dividend allowance", "dividend income", "company dividends", "director dividends", "salary vs dividends", "dividend voucher", "SA100 dividends", "foreign dividends UK", "dividend waiver", "dividend tax rates", "8.75%", "33.75%", "39.35%", "10.75%", "35.75%", "April 2026 dividend hike", "Autumn Budget 2025 dividend", "Scottish dividend tax", or any question about computing, declaring, or optimising dividend income for UK individual taxpayers. Covers dividend allowance, rates, salary-vs-dividend planning for company directors, foreign dividends and double tax relief, dividend waivers, and interaction with other income. ALWAYS read this skill before touching any UK dividend work.
+version: 1.1
 jurisdiction: GB
 tax_year: 2025
 category: international
@@ -11,7 +11,9 @@ depends_on:
 verified_by: pending
 ---
 
-# UK Dividend Income Skill v1.0
+<!-- Changelog: v1.1 — standardised on 3-year structure (2024-25 prior, 2025-26 current, 2026-27 from 6 April 2026); promoted Autumn Budget 2025 dividend rate hike (10.75% / 35.75%) into full Quick Reference table, added combined comparison table and a 2026-27 worked example. -->
+
+# UK Dividend Income Skill v1.1
 
 ---
 
@@ -30,7 +32,7 @@ verified_by: pending
 | Filing deadline (online) | 31 January following the tax year |
 | SA100 box | Box 4 (UK dividends); Box 5 (foreign dividends) on the main SA100 or SA106 (Foreign) supplementary pages |
 | Validated by | Pending — requires sign-off by a UK chartered accountant or licensed tax adviser |
-| Skill version | 1.0 |
+| Skill version | 1.1 |
 
 ### Dividend Tax Rates (2024-25)
 
@@ -48,7 +50,24 @@ verified_by: pending
 | Higher rate (£50,271--£125,140) | 33.75% |
 | Additional rate (over £125,140) | 39.35% |
 
-**Note:** From 2026-27, rates increase to 10.75% / 35.75% / 39.35%.
+### Dividend Tax Rates (2026-27) — from 6 April 2026
+
+Announced at Autumn Budget 2025 and enacted via Finance (No. 2) Bill 2024-26. Basic and higher rates increase by 2 percentage points; the additional rate is unchanged. The £500 dividend allowance is unchanged for 2026-27, and the income tax bands remain frozen through 2027-28 (Personal Allowance £12,570; basic rate band cap £50,270; additional rate threshold £125,140).
+
+| Tax band | Rate on dividends above allowance |
+|---|---|
+| Basic rate (£12,571--£50,270) | 10.75% |
+| Higher rate (£50,271--£125,140) | 35.75% |
+| Additional rate (over £125,140) | 39.35% |
+
+### Combined Comparison — All Three Years
+
+| Band | 2024-25 | 2025-26 | 2026-27 |
+|---|---|---|---|
+| Basic rate | 8.75% | 8.75% | 10.75% |
+| Higher rate | 33.75% | 33.75% | 35.75% |
+| Additional rate | 39.35% | 39.35% | 39.35% |
+| Dividend allowance | £500 | £500 | £500 |
 
 ### Dividend Allowance History
 
@@ -132,7 +151,9 @@ If adjusted net income exceeds £100,000, the personal allowance is reduced by �
 | Dividends | Remainder of profits | 0% on first £500; 8.75% on remainder within basic rate band |
 | NIC threshold salary alternative | £9,100 (Secondary Threshold) | Zero employer NIC; small sacrifice of personal allowance |
 
-**Optimal for most single directors:** Salary at £12,570, dividends for the rest up to the basic rate band limit. Beyond basic rate, the combined CT + dividend tax rate increases.
+**Optimal for most single directors:** Salary at £12,570, dividends for the rest up to the basic rate band limit. Beyond basic rate, the combined CT + dividend tax rate increases. The strategy above is calibrated to the 2024-25 tax year (rates unchanged for 2025-26).
+
+**2026-27 impact:** The Autumn Budget 2025 dividend hike (basic 8.75% → 10.75%; higher 33.75% → 35.75%) narrows the dividend advantage over salary, particularly for higher-rate director-shareholders. The combined CT + higher-rate dividend cost rises from ~50.28% to ~51.78%, eroding most of the gap against the salary route. Single directors should still favour salary at the Primary Threshold plus dividends, but the savings vs. a pure-salary extraction will be materially smaller from 6 April 2026 — re-run the comparison annually.
 
 ### 3.3 Combined Effective Rates (2024-25)
 
@@ -244,6 +265,26 @@ Dividend tax:
 
 Total dividend tax: £656.25
 ```
+
+### Example 1b -- Same Scenario Under 2026-27 Rates
+
+**Input:** Same as Example 1 — Employment income £30,000, UK dividends £8,000, no other income — but for the 2026-27 tax year (from 6 April 2026).
+
+**Computation:**
+```
+Total income: £38,000
+Personal allowance: £12,570 (unchanged — frozen through 2027-28)
+Taxable non-savings: £17,430 (at 20% = £3,486)
+Remaining basic rate band: £50,270 - £30,000 = £20,270
+
+Dividend tax (2026-27 rates):
+  First £500: 0%                = £0
+  Remaining £7,500: 10.75%      = £806.25
+
+Total dividend tax: £806.25
+```
+
+**Cost of the rate hike:** £806.25 − £656.25 = **£150 extra** on the same £8,000 of dividends, purely from the basic rate moving from 8.75% to 10.75%. A higher-rate taxpayer in the same position would see proportionally larger increases at 35.75% vs 33.75%.
 
 ### Example 2 -- Dividend Straddling Basic/Higher Rate
 

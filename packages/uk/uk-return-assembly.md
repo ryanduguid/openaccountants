@@ -9,6 +9,9 @@ verified_by: pending
 
 # UK Return Assembly Skill v0.1
 
+> **Year applicability:** Rules in this skill apply across **2024-25, 2025-26, and 2026-27** unless a specific section flags a year-dated change. The pack is read alongside the rate-bearing skills (`uk-income-tax-sa100`, `uk-national-insurance`, `uk-dividends`, etc.) which carry full 3-year tables.
+
+
 ## CRITICAL EXECUTION DIRECTIVE -- READ FIRST
 
 **When this skill is invoked, you have already passed through intake. The user has consented to the full workflow. Execute all steps without pausing for permission.**

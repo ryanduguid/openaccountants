@@ -1,8 +1,8 @@
 ---
 name: uk-capital-gains-sa108
 description: >
-  Use this skill whenever asked about UK capital gains tax for individuals. Trigger on phrases like "SA108", "capital gains tax", "CGT UK", "annual exempt amount", "disposal", "chargeable gain", "crypto CGT UK", "share sale UK", "property disposal CGT", "PPR relief", "principal private residence", "BADR", "Business Asset Disposal Relief", "Entrepreneurs' Relief", "bed and breakfasting", "30-day rule", "Section 104 pool", "negligible value claim", "CGT losses", "60-day reporting", "residential property CGT", or any question about computing, filing, or reporting capital gains on the UK Self Assessment return. Covers SA108 form, CGT rates, reliefs, crypto as CGT asset, share matching rules, property CGT reporting, and loss treatment. ALWAYS read this skill before touching any UK CGT work.
-version: 1.0
+  Use this skill whenever asked about UK capital gains tax for individuals. Trigger on phrases like "SA108", "capital gains tax", "CGT UK", "annual exempt amount", "disposal", "chargeable gain", "crypto CGT UK", "share sale UK", "property disposal CGT", "PPR relief", "principal private residence", "BADR", "BADR 18%", "Business Asset Disposal Relief", "Entrepreneurs' Relief", "Investors Relief 18%", "carried interest April 2026", "CGT 18% 24%", "bed and breakfasting", "30-day rule", "Section 104 pool", "negligible value claim", "CGT losses", "60-day reporting", "residential property CGT", or any question about computing, filing, or reporting capital gains on the UK Self Assessment return. Covers SA108 form, CGT rates, reliefs, crypto as CGT asset, share matching rules, property CGT reporting, and loss treatment. ALWAYS read this skill before touching any UK CGT work.
+version: 2.0
 jurisdiction: GB
 tax_year: 2025
 category: international
@@ -11,7 +11,7 @@ depends_on:
 verified_by: pending
 ---
 
-# UK Capital Gains Tax (SA108) Skill v1.0
+# UK Capital Gains Tax (SA108) Skill v2.0
 
 ---
 
@@ -24,49 +24,96 @@ verified_by: pending
 | Currency | GBP only |
 | Tax year | 6 April to 5 April |
 | Primary legislation | Taxation of Chargeable Gains Act 1992 (TCGA 1992) |
-| Supporting legislation | Finance Act 2025 (rate changes); TCGA ss. 1H, 1I (rates); TCGA s. 222-226 (PPR); TCGA s. 169H-169S (BADR); TCGA ss. 104, 106A, 107 (share matching) |
+| Supporting legislation | Finance Act 2024 (rate changes from 30 Oct 2024); Finance Act 2024 BADR/IR two-step uplift; Autumn Budget 2024; TCGA ss. 1H, 1I (rates); TCGA s. 222-226 (PPR); TCGA s. 169H-169S (BADR); TCGA ss. 104, 106A, 107 (share matching) |
 | Tax authority | HMRC |
 | Filing portal | HMRC Self Assessment Online |
 | Filing deadline | 31 January following the tax year (SA return); 60 days for UK residential property (CGT on UK Property return) |
 | SA108 form | Capital Gains Tax Summary supplementary pages to SA100 |
 | HMRC crypto guidance | HMRC CG12100+ (Cryptoassets Manual) |
 | Validated by | Pending — requires sign-off by a UK chartered accountant or licensed tax adviser |
-| Skill version | 1.0 |
+| Skill version | 2.0 |
 
-### CGT Rates (2024-25)
+---
 
-Two rate regimes applied within 2024-25 due to the Autumn Budget 2024 (30 October 2024):
+### 1.1 Three-Year Headline Rate Comparison (2024-25 / 2025-26 / 2026-27)
+
+| Item | 2024-25 | 2025-26 | 2026-27 |
+|---|---|---|---|
+| Annual Exempt Amount (individuals) | £3,000 | £3,000 | £3,000 |
+| AEA (trustees) | £1,500 | £1,500 | £1,500 |
+| Non-residential CGT (basic / higher) | 10% / 20% pre-30 Oct 2024; **18% / 24% from 30 Oct 2024** | **18% / 24%** | **18% / 24%** |
+| Residential property CGT (basic / higher) | 18% / 24% | 18% / 24% | 18% / 24% |
+| BADR rate (up to £1m lifetime) | **10%** | **14%** | **18%** |
+| Investors' Relief rate | **10%** | **14%** | **18%** |
+| Investors' Relief lifetime limit | £10m → £1m (dropped 30 Oct 2024) | £1m | £1m |
+| Carried interest (fund managers) | 28% | **32%** (transitional from Apr 2025) | **Reclassified as trading income (income tax rates; no CGT treatment) from Apr 2026** |
+
+All rates frozen across the three-year window unless explicitly shown changing.
+
+---
+
+### 1.2 CGT Rates — Year by Year
+
+#### 2024-25 (split-year rate regime due to Autumn Budget 2024)
 
 **6 April 2024 to 29 October 2024:**
 
-| Asset type | Basic rate | Higher rate |
+| Asset type | Basic rate | Higher / additional rate |
 |---|---|---|
-| Residential property | 18% | 24% |
-| Other assets (shares, crypto, etc.) | 10% | 20% |
+| Residential property (non-PPR) | 18% | 24% |
+| Other assets (shares, crypto, non-residential) | 10% | 20% |
 | BADR qualifying gains | 10% | 10% |
+| Investors' Relief qualifying gains | 10% | 10% |
 
 **30 October 2024 to 5 April 2025:**
 
-| Asset type | Basic rate | Higher rate |
+| Asset type | Basic rate | Higher / additional rate |
 |---|---|---|
-| All assets (residential and other) | 18% | 24% |
+| All assets (residential and non-residential) | **18%** | **24%** |
 | BADR qualifying gains | 10% | 10% |
+| Investors' Relief qualifying gains | 10% | 10% |
 
-### CGT Rates (2025-26)
+#### 2025-26
 
-| Asset type | Basic rate | Higher rate |
+| Asset type | Basic rate | Higher / additional rate |
 |---|---|---|
 | All assets | 18% | 24% |
-| BADR qualifying gains | 14% | 14% |
+| BADR qualifying gains | **14%** | **14%** |
+| Investors' Relief qualifying gains | **14%** | **14%** |
+| Carried interest | 32% (transitional) | 32% (transitional) |
 
-### Annual Exempt Amount
+#### 2026-27
+
+| Asset type | Basic rate | Higher / additional rate |
+|---|---|---|
+| All assets | 18% | 24% |
+| BADR qualifying gains | **18%** | **18%** |
+| Investors' Relief qualifying gains | **18%** | **18%** |
+| Carried interest | **Reclassified — taxed as trading income at income tax rates + Class 4 NIC. NO CGT treatment.** | — |
+
+---
+
+### 1.3 Annual Exempt Amount — Historic and Frozen Range
 
 | Tax year | Individuals | Trustees |
 |---|---|---|
+| 2022-23 | £12,300 | £6,150 |
+| 2023-24 | £6,000 | £3,000 |
 | 2024-25 | £3,000 | £1,500 |
 | 2025-26 | £3,000 | £1,500 |
-| 2023-24 | £6,000 | £3,000 |
-| 2022-23 | £12,300 | £6,150 |
+| 2026-27 | £3,000 | £1,500 |
+
+The £3,000 AEA is frozen across the full three-year planning window.
+
+---
+
+### 1.4 From April 2026 — Watch List
+
+Two structural changes apply from 6 April 2026 that materially shift planning for business owners and fund managers:
+
+1. **BADR and Investors' Relief rates rise to 18%** (the second step of the Finance Act 2024 two-step uplift: 10% → 14% → 18%). The lifetime limit remains £1m. After this step, BADR/IR effectively offer only a 6-percentage-point discount over the standard 24% higher rate — much narrower than the historic 14-point gap (10% vs 24%). Pre-6 April 2026 disposals at 14% remain valuable; clients with imminent exits should weigh acceleration.
+
+2. **Carried interest reclassified as trading income.** From 6 April 2026, carried interest received by private fund managers is no longer a capital gain. It is taxed as trading income — subject to income tax (up to 45%) and Class 4 NIC. The 32% CGT rate that applied transitionally in 2025-26 is withdrawn. There is no CGT treatment available from this date.
 
 ### Conservative Defaults
 
@@ -77,6 +124,8 @@ Two rate regimes applied within 2024-25 due to the Autumn Budget 2024 (30 Octobe
 | Unknown residency status | STOP — affects CGT liability |
 | Unknown whether basic or higher rate | Compute at higher rate (conservative) |
 | Unknown whether disposal is connected persons | Treat as connected (market value rule applies) |
+| Unknown disposal date around 30 Oct 2024 | Use post-30 Oct rates (conservative) |
+| Unknown disposal date around 6 Apr 2025 / 6 Apr 2026 BADR step | Use the LATER (higher) BADR rate |
 
 ---
 
@@ -96,7 +145,7 @@ Less: Allowable costs
 Less: Annual Exempt Amount (£3,000)
 = Taxable gain
 
-Tax = Taxable gain × applicable rate (based on income band)
+Tax = Taxable gain × applicable rate (based on income band and disposal date)
 ```
 
 ### 2.2 Rate Band Allocation
@@ -106,8 +155,8 @@ CGT rates depend on where the gain falls relative to the basic rate band:
 ```
 Unused basic rate band = £50,270 - taxable income (after personal allowance)
 
-If gain fits within unused basic rate band → basic rate CGT
-If gain exceeds unused basic rate band → split: basic rate on amount within band, higher rate on excess
+If gain fits within unused basic rate band → basic rate CGT (18%)
+If gain exceeds unused basic rate band → split: 18% within band, 24% on excess
 ```
 
 ---
@@ -194,19 +243,43 @@ HMRC may challenge PPR claims where occupation was nominal (e.g. a few weeks). M
 
 ---
 
-## Section 6 -- Business Asset Disposal Relief (BADR)
+## Section 6 -- Business Asset Disposal Relief (BADR) and Investors' Relief
 
-Formerly Entrepreneurs' Relief.
+### 6.1 BADR (formerly Entrepreneurs' Relief)
 
 | Feature | Detail |
 |---|---|
-| Lifetime limit | £1,000,000 |
-| Rate (2024-25) | 10% (on qualifying gains up to £1M) |
-| Rate (2025-26) | 14% |
-| Rate (2026-27) | 18% |
+| Lifetime limit | £1,000,000 (unchanged across 2024-25, 2025-26, 2026-27) |
+| Rate — pre-6 Apr 2025 | **10%** |
+| Rate — 6 Apr 2025 to 5 Apr 2026 | **14%** |
+| Rate — from 6 Apr 2026 | **18%** |
 | Qualifying assets | Shares in a trading company (5% holding, 2-year ownership, officer/employee); sole trader/partnership business |
 | Claim deadline | 1st anniversary of 31 January following tax year of disposal |
 | Interaction with AEA | AEA used first; BADR applies to remaining gain |
+
+The two-step uplift (10% → 14% → 18%) is set by Finance Act 2024 following the Autumn Budget 2024.
+
+### 6.2 Investors' Relief (IR)
+
+Investors' Relief tracks BADR on rates but applies to external investors (non-employees) in qualifying unlisted trading companies.
+
+| Feature | Detail |
+|---|---|
+| Lifetime limit | £10m before 30 Oct 2024; **£1m from 30 Oct 2024 onwards** |
+| Rate — pre-6 Apr 2025 | **10%** |
+| Rate — 6 Apr 2025 to 5 Apr 2026 | **14%** |
+| Rate — from 6 Apr 2026 | **18%** |
+| Qualifying conditions | Newly issued ordinary shares in unlisted trading company; held ≥3 years; subscriber must not be an employee/officer |
+
+### 6.3 Carried Interest (Private Fund Managers)
+
+| Period | Treatment |
+|---|---|
+| Pre-Apr 2025 | 28% CGT rate |
+| 6 Apr 2025 onwards (transitional) | **32% CGT rate** |
+| From 6 Apr 2026 | **Reclassified as trading income — taxed at income tax rates (up to 45%) plus Class 4 NIC. No CGT treatment.** |
+
+Carried interest is out of scope for SA108 from 2026-27 — it migrates to SA103 (self-employment) / employment pages depending on structure.
 
 ---
 
@@ -320,16 +393,41 @@ Less AEA: £3,000
 Taxable: £22,000
 ```
 
-### Example 4 -- BADR Qualifying Disposal (2024-25)
+### Example 4 -- BADR Rate Change Across Three Years (SAME Business Sale)
 
-**Input:** Sole trader sells business for £500,000 gain. Owned >2 years. Claims BADR.
+**Scenario:** Sole trader sells qualifying trading business for a gain of £900,000 (all within £1m BADR lifetime limit; no other gains in year; AEA available).
+
+The same disposal is modelled across three completion dates to show the cost of delay:
+
+```
+Gain:                          £900,000
+Less AEA:                      £3,000
+Taxable BADR gain:             £897,000
+```
+
+| Completion date | Tax year | BADR rate | CGT |
+|---|---|---|---|
+| 5 April 2025 | 2024-25 | **10%** | **£89,700** |
+| 5 April 2026 | 2025-26 | **14%** | **£125,580** |
+| 6 April 2026 | 2026-27 | **18%** | **£161,460** |
+
+**Real cost of delay:**
+- 2024-25 → 2025-26 step: extra **£35,880** CGT (≈40% increase)
+- 2025-26 → 2026-27 step: extra **£35,880** CGT
+- 2024-25 → 2026-27 total: extra **£71,760** CGT (an 80% increase on the original BADR bill)
+
+Planning implication: where a sale is commercially imminent and BADR-qualifying, completing before 6 April of the relevant rate-step year materially reduces tax. Conversely, where the deal is dependent on commercial readiness, the cost of slipping a tax year should be quantified for the client before completion is timed.
+
+### Example 5 -- BADR Disposal in 2024-25 (Original Example)
+
+**Input:** Sole trader sells business for £500,000 gain. Owned >2 years. Claims BADR. Disposes before 6 April 2025.
 
 **Computation:**
 ```
 Gain: £500,000
 Less AEA: £3,000
 Taxable: £497,000
-BADR rate: 10% (2024-25)
+BADR rate: 10% (pre-6 Apr 2025)
 CGT: £49,700
 ```
 Within £1M lifetime limit. Deduct £500,000 from remaining lifetime allowance.
@@ -350,6 +448,12 @@ Transfers between spouses/civil partners are at no gain/no loss. The receiving s
 ### 11.4 Death
 No CGT on death. Assets pass to the estate at market value at date of death (probate value). This effectively wipes out any accrued gain.
 
+### 11.5 BADR/IR Disposals Straddling a Rate Step
+The rate is set by the date of disposal (generally the date of unconditional contract under TCGA s. 28), not the completion date. Conditional contracts crystallise on the date the last condition is satisfied. Where a contract is exchanged shortly before a rate-step date, evidence of the contract date should be retained for HMRC.
+
+### 11.6 Carried Interest Crossing 6 April 2026
+Carry receipts arising on or after 6 April 2026 fall fully within the trading income regime, regardless of when the underlying fund or carry vehicle was set up. Pre-6 April 2026 receipts use the 32% transitional CGT rate.
+
 ---
 
 ## PROHIBITIONS
@@ -358,8 +462,12 @@ No CGT on death. Assets pass to the estate at market value at date of death (pro
 - NEVER apply PPR relief without confirming genuine occupation
 - NEVER ignore the 30-day bed and breakfasting rule for shares and crypto
 - NEVER forget the 60-day reporting requirement for UK residential property disposals
-- NEVER apply pre-30 October 2024 rates (10%/20%) to disposals after 30 October 2024
+- NEVER apply pre-30 October 2024 rates (10%/20%) to non-residential disposals after 30 October 2024
+- NEVER apply the 10% BADR rate to disposals on or after 6 April 2025 (use 14% for 2025-26 and 18% from 6 April 2026)
+- NEVER apply the 14% BADR rate to disposals on or after 6 April 2026 (use 18%)
+- NEVER apply CGT treatment to carried interest received on or after 6 April 2026 — it is trading income
 - NEVER exceed the £1M BADR lifetime limit
+- NEVER apply the £10m Investors' Relief lifetime limit to disposals on or after 30 October 2024 (limit is £1m)
 - NEVER treat transfers between own crypto wallets as disposals
 - NEVER carry back losses (except on death)
 - NEVER waste the AEA by offsetting brought-forward losses below £3,000

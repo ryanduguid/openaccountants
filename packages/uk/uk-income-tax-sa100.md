@@ -1,17 +1,25 @@
 ---
 name: uk-income-tax-sa100
 description: >
-  Use this skill whenever asked about UK income tax for individuals filing SA100 Self Assessment. Trigger on phrases like "income tax UK", "SA100", "personal allowance", "tax bands", "tax computation", "marriage allowance", "savings allowance", "dividend allowance", "Scottish tax rates", "payments on account", "tax reducers", "tax relief", or any question about computing a UK individual's income tax liability. Covers personal allowance (including taper), income tax bands for rUK and Scotland, marriage allowance, savings and dividend allowances, tax reducers, the final tax computation, and payments on account. ALWAYS read this skill before touching any UK income tax return work.
-version: 2.0
+  Use this skill whenever asked about UK income tax for individuals filing SA100 Self Assessment. Trigger on phrases like "income tax UK", "SA100", "personal allowance", "tax bands", "tax computation", "marriage allowance", "savings allowance", "dividend allowance", "Scottish tax rates", "payments on account", "tax reducers", "tax relief", "April 2026", "2026-27", "Autumn Budget 2025", "income tax bands frozen 2027-28", or any question about computing a UK individual's income tax liability. Covers personal allowance (including taper), income tax bands for rUK and Scotland, marriage allowance, savings and dividend allowances, tax reducers, the final tax computation, payments on account, and the Autumn Budget 2025 changes from April 2026. ALWAYS read this skill before touching any UK income tax return work.
+version: 2.1
 jurisdiction: GB
-tax_year: 2024-25
+tax_year: 2025-26
 category: international
 depends_on:
   - income-tax-workflow-base
 verified_by: pending
 ---
 
-# UK Income Tax (SA100) -- Individual Tax Computation Skill v2.0
+# UK Income Tax (SA100) -- Individual Tax Computation Skill v2.1
+
+This skill covers **three tax years in parallel**:
+
+- **Prior year:** 2024-25 (6 April 2024 -- 5 April 2025) -- filed by 31 January 2026
+- **Current year:** 2025-26 (6 April 2025 -- 5 April 2026) -- filed by 31 January 2027
+- **From 6 April 2026:** 2026-27 (6 April 2026 -- 5 April 2027) -- filed by 31 January 2028
+
+All headline income tax rates and thresholds are **frozen through 2027-28**. The Autumn Budget 2025 announced targeted rate increases on investment income (dividends, savings, property) effective 6 April 2026 -- see Section 1.5.
 
 ---
 
@@ -22,17 +30,32 @@ verified_by: pending
 | Country | United Kingdom |
 | Tax | Income Tax (rUK rates or Scottish rates) |
 | Currency | GBP only |
-| Tax year | 6 April 2024 -- 5 April 2025 |
+| Tax years in scope | 2024-25 (prior), 2025-26 (current), 2026-27 (from 6 April 2026) |
 | Primary legislation | Income Tax Act 2007 (ITA 2007); ITEPA 2003; ITTOIA 2005 |
-| Supporting legislation | Finance Act 2024; Finance Act 2025; Scotland Act 2016; TMA 1970 |
+| Supporting legislation | Finance Act 2024; Finance Act 2025; Finance (No. 2) Bill 2024-26 / Finance Bill 2026 (pending Royal Assent); Scotland Act 2016; TMA 1970 |
 | Tax authority | HM Revenue & Customs (HMRC) |
 | Filing portal | HMRC Self Assessment Online |
-| Filing deadline (online) | 31 January 2026 |
+| Filing deadline (online) 2024-25 | 31 January 2026 |
+| Filing deadline (online) 2025-26 | 31 January 2027 |
+| Filing deadline (online) 2026-27 | 31 January 2028 |
 | Contributor | Open Accountants Community |
 | Validated by | Pending -- UK-qualified accountant (ACA/ACCA/CTA) |
-| Skill version | 2.0 |
+| Skill version | 2.1 |
 
-### Income Tax Bands -- England, Wales, Northern Ireland (rUK) [T1]
+### 1.0 Three-Year Comparison -- Headline rUK Bands (FROZEN through 2027-28) [T1]
+
+| Item | 2024-25 | 2025-26 | 2026-27 |
+|---|---|---|---|
+| Personal allowance | GBP 12,570 | GBP 12,570 | GBP 12,570 (frozen) |
+| Basic rate band (20%) | up to GBP 50,270 | up to GBP 50,270 | up to GBP 50,270 (frozen) |
+| Higher rate band (40%) | GBP 50,271 -- 125,140 | GBP 50,271 -- 125,140 | GBP 50,271 -- 125,140 (frozen) |
+| Additional rate (45%) | over GBP 125,140 | over GBP 125,140 | over GBP 125,140 (frozen) |
+| PA taper threshold | GBP 100,000 | GBP 100,000 | GBP 100,000 (frozen) |
+| PA fully withdrawn at | GBP 125,140 | GBP 125,140 | GBP 125,140 (frozen) |
+
+**Source:** Personal allowance and higher rate threshold freeze extended to 5 April 2028 (Finance (No. 2) Act 2023 s.5; Autumn Budget 2025 confirmed no further extension at this stage, but the freeze through 2027-28 remains in force).
+
+### 1.1 Income Tax Bands -- England, Wales, Northern Ireland (rUK) -- 2024-25 [T1]
 
 | Band | Taxable Income | Rate |
 |---|---|---|
@@ -41,7 +64,31 @@ verified_by: pending
 | Higher rate | GBP 50,271 -- 125,140 | 40% |
 | Additional rate | Over GBP 125,140 | 45% |
 
-### Scottish Income Tax Bands (2024/25) [T1]
+### 1.2 Income Tax Bands -- rUK -- 2025-26 [T1]
+
+| Band | Taxable Income | Rate |
+|---|---|---|
+| Personal allowance | GBP 0 -- 12,570 | 0% |
+| Basic rate | GBP 12,571 -- 50,270 | 20% |
+| Higher rate | GBP 50,271 -- 125,140 | 40% |
+| Additional rate | Over GBP 125,140 | 45% |
+
+### 1.3 Income Tax Bands -- rUK -- 2026-27 (from 6 April 2026) [T1]
+
+| Band | Taxable Income | Rate |
+|---|---|---|
+| Personal allowance | GBP 0 -- 12,570 | 0% |
+| Basic rate | GBP 12,571 -- 50,270 | 20% |
+| Higher rate | GBP 50,271 -- 125,140 | 40% |
+| Additional rate | Over GBP 125,140 | 45% |
+
+Headline rates and thresholds are **unchanged** from 2025-26 -- the freeze continues through 2027-28. Autumn Budget 2025 changes are confined to investment income (see Section 1.5).
+
+### 1.4 Scottish Income Tax Bands [T1]
+
+**Scottish bands are set annually by the Scottish Parliament (Scotland Act 2016) and are independent of the rUK schedule.** They apply ONLY to non-savings, non-dividend income. Savings and dividends always use UK-wide rates.
+
+#### Scottish Bands 2024-25
 
 | Band | Taxable Income | Rate |
 |---|---|---|
@@ -53,41 +100,81 @@ verified_by: pending
 | Advanced rate | GBP 75,001 -- 125,140 | 45% |
 | Top rate | Over GBP 125,140 | 48% |
 
-Scottish rates apply ONLY to non-savings, non-dividend income. Savings and dividends always use UK-wide rates.
+#### Scottish Bands 2025-26
+
+| Band | Taxable Income | Rate |
+|---|---|---|
+| Personal allowance | GBP 0 -- 12,570 | 0% |
+| Starter rate | GBP 12,571 -- 15,397 | 19% |
+| Basic rate | GBP 15,398 -- 27,491 | 20% |
+| Intermediate rate | GBP 27,492 -- 43,662 | 21% |
+| Higher rate | GBP 43,663 -- 75,000 | 42% |
+| Advanced rate | GBP 75,001 -- 125,140 | 45% |
+| Top rate | Over GBP 125,140 | 48% |
+
+#### Scottish Bands 2026-27
+
+**TBC -- Scottish Budget 2025-26 not yet enacted at time of writing.** The Scottish Government typically announces rates in December for the following April. Verify against the Scottish Rate Resolution before finalising any 2026-27 computation. Until then, apply 2025-26 bands as a working estimate and flag for reviewer.
+
+### 1.5 Changes from April 2026 -- Autumn Budget 2025 [T1]
+
+Effective **6 April 2026**, the following changes take effect under measures announced in the Autumn Budget 2025 (Finance (No. 2) Bill 2024-26 / Finance Bill 2026, pending Royal Assent):
+
+| Item | 2025-26 | 2026-27 |
+|---|---|---|
+| Dividend ordinary rate | 8.75% | **10.75%** |
+| Dividend upper rate | 33.75% | **35.75%** |
+| Dividend additional rate | 39.35% | 39.35% (unchanged) |
+| Savings income basic / higher / additional | 20% / 40% / 45% | **TBC -- expected 22% / 42% / 45%** (Autumn Budget 2025 announcement; verify against enacted Finance Bill) |
+| Property income basic / higher / additional | 20% / 40% / 45% | **TBC -- expected 22% / 42% / 45%** (Autumn Budget 2025 announcement; verify against enacted Finance Bill) |
+| All other headline bands and PA | frozen | frozen (no change) |
+| HICBC tapered threshold | GBP 60,000 / GBP 80,000 | GBP 60,000 / GBP 80,000 (unchanged from 2024-25 reform) |
+
+**Key points:**
+
+- **Dividend rates** -- confirmed 2pp uplift on ordinary and upper rates from 6 April 2026. See companion skill `uk-dividends` for the detailed dividend computation, the GBP 500 allowance interaction, and worked examples.
+- **Savings income and property income** -- the Autumn Budget 2025 announced changes aligning these income streams more closely with the dividend treatment, expected to be a 2pp uplift on basic and higher rate bands (no change at additional rate). **TBC -- verify against Finance (No. 2) Bill 2024-26 / Finance Bill 2026 once enacted.** Do not finalise a 2026-27 computation involving material savings or property income until the rates are confirmed. Flag for reviewer.
+- **HICBC** -- the GBP 60,000 starting / GBP 80,000 full claw-back tapered threshold introduced from 2024-25 remains in force for 2026-27 (no further reform announced).
+- **All other bands frozen** -- Personal Allowance (GBP 12,570), basic rate threshold (GBP 50,270), additional rate threshold (GBP 125,140), and PA taper threshold (GBP 100,000) are all frozen through 2027-28.
 
 ### Key Allowances and Thresholds [T1]
 
-| Item | Amount |
-|---|---|
-| Personal allowance | GBP 12,570 |
-| PA taper threshold | GBP 100,000 adjusted net income |
-| PA fully withdrawn | GBP 125,140 |
-| Basic rate band | GBP 37,700 |
-| Personal savings allowance (basic rate) | GBP 1,000 |
-| Personal savings allowance (higher rate) | GBP 500 |
-| Personal savings allowance (additional rate) | GBP 0 |
-| Starting rate for savings band | GBP 5,000 (reduced by non-savings income above PA) |
-| Dividend allowance | GBP 500 |
-| Marriage allowance transfer | GBP 1,260 (tax reducer GBP 252) |
-| Annual pension allowance | GBP 60,000 |
+| Item | 2024-25 | 2025-26 | 2026-27 |
+|---|---|---|---|
+| Personal allowance | GBP 12,570 | GBP 12,570 | GBP 12,570 |
+| PA taper threshold | GBP 100,000 | GBP 100,000 | GBP 100,000 |
+| PA fully withdrawn | GBP 125,140 | GBP 125,140 | GBP 125,140 |
+| Basic rate band | GBP 37,700 | GBP 37,700 | GBP 37,700 |
+| Personal savings allowance (basic rate) | GBP 1,000 | GBP 1,000 | GBP 1,000 (TBC -- verify Finance Bill 2026) |
+| Personal savings allowance (higher rate) | GBP 500 | GBP 500 | GBP 500 (TBC -- verify Finance Bill 2026) |
+| Personal savings allowance (additional rate) | GBP 0 | GBP 0 | GBP 0 |
+| Starting rate for savings band | GBP 5,000 | GBP 5,000 | GBP 5,000 (TBC) |
+| Dividend allowance | GBP 500 | GBP 500 | GBP 500 |
+| Marriage allowance transfer | GBP 1,260 (reducer GBP 252) | GBP 1,260 (reducer GBP 252) | GBP 1,260 (reducer GBP 252) |
+| Annual pension allowance | GBP 60,000 | GBP 60,000 | GBP 60,000 |
+| HICBC tapered threshold (start / full claw-back) | GBP 60,000 / 80,000 | GBP 60,000 / 80,000 | GBP 60,000 / 80,000 |
 
 ### Dividend Rates [T1]
 
-| Band | Rate |
-|---|---|
-| Within basic rate band | 8.75% |
-| Within higher rate band | 33.75% |
-| Within additional rate band | 39.35% |
+| Band | 2024-25 | 2025-26 | 2026-27 |
+|---|---|---|---|
+| Within basic rate band | 8.75% | 8.75% | **10.75%** |
+| Within higher rate band | 33.75% | 33.75% | **35.75%** |
+| Within additional rate band | 39.35% | 39.35% | 39.35% |
+
+See companion skill `uk-dividends` for full dividend-specific guidance, including the GBP 500 allowance, scrip dividends, and overseas dividend treatment.
 
 ### Conservative Defaults [T1]
 
 | Ambiguity | Default |
 |---|---|
+| Unknown tax year | Current year (2025-26) |
 | Unknown residency | UK resident (but STOP if genuinely unclear) |
 | Unknown Scottish status | rUK rates |
 | Unknown income category | Non-savings income |
 | Unknown pension contribution method | Relief at source |
 | Unknown marriage allowance eligibility | Do not apply |
+| Unknown 2026-27 savings/property rate | Flag TBC; do not finalise without Finance Bill confirmation |
 
 ---
 
@@ -105,13 +192,15 @@ Scottish rates apply ONLY to non-savings, non-dividend income. Savings and divid
 
 **R-UK-IT-1 -- Non-resident or split-year treatment.** "Non-resident and split-year cases have different rules and may involve the remittance basis. Out of scope. Escalate."
 
-**R-UK-IT-2 -- Non-domiciled individuals.** "The remittance basis for non-doms requires specialist advice. Out of scope."
+**R-UK-IT-2 -- Non-domiciled individuals.** "The remittance basis for non-doms requires specialist advice. Out of scope." (Note: the remittance basis is abolished from 6 April 2025 and replaced by a residence-based regime -- escalate any post-April-2025 non-dom queries.)
 
 **R-UK-IT-3 -- Trust income.** "Income from trusts (SA107) has specific rules. Out of scope."
 
 **R-UK-IT-4 -- Complex pension annual allowance.** "Tapered annual allowance, money purchase annual allowance, and carry-forward calculations beyond basic require specialist review. Escalate."
 
 **R-UK-IT-5 -- Capital gains.** "Capital gains are computed separately on SA108. This skill covers income tax only."
+
+**R-UK-IT-6 -- 2026-27 savings/property rate finalisation.** "The Autumn Budget 2025 announced rate changes to savings and property income from 6 April 2026 but the specific rates are pending Finance Bill enactment. Do not finalise a 2026-27 return involving material savings or property income until the Finance Bill receives Royal Assent. Flag for reviewer."
 
 ---
 
@@ -186,22 +275,27 @@ For SA100, the "transactions" are not bank statement lines but rather income ite
 
 ## Section 4 -- Worked Examples
 
+Each scenario is repeated across all three years so reviewers can see the year-on-year effect of the rate freeze and the April 2026 changes.
+
 ### Example 1 -- Basic Rate Taxpayer (Employment Only)
 
 **Input:** Employment GBP 35,000. PAYE deducted GBP 4,486. No other income.
 
-**Computation:**
+**Computation (identical for 2024-25, 2025-26, and 2026-27 -- bands frozen):**
 - Personal allowance: GBP 12,570
 - Taxable income: 35,000 - 12,570 = GBP 22,430
 - Tax: 22,430 x 20% = GBP 4,486
 - Less PAYE: GBP 4,486
 - Balance: GBP 0
 
+**Note:** Because no investment income is involved and headline bands are frozen, the computation is identical across all three years.
+
 ### Example 2 -- Employment + Self-Employment + Dividends
 
 **Input:** Employment GBP 40,000 (PAYE GBP 5,486). Self-employment profit GBP 20,000. Dividends GBP 5,000.
 
-**Computation:**
+#### 2024-25 computation
+
 - Total income: GBP 65,000
 - Personal allowance: GBP 12,570
 - Taxable: GBP 52,430
@@ -210,13 +304,25 @@ For SA100, the "transactions" are not bank statement lines but rather income ite
 - Total tax: 7,540 + 3,892 + 1,518.75 = GBP 12,950.75
 - Less PAYE: GBP 5,486
 - Balance via SA: GBP 7,464.75
-- Class 4 NIC on self-employment: (20,000 - 12,570 would be wrong -- combined profits) -- Class 4 on GBP 20,000 SE profit: min(20,000, 50,270-already used) x 6% -- see SA103 skill for precise calc.
+
+#### 2025-26 computation
+
+- Identical to 2024-25 (no rate or threshold changes). Total tax GBP 12,950.75.
+
+#### 2026-27 computation
+
+- Non-savings tax unchanged: 7,540 + 3,892 = GBP 11,432
+- Dividends at new rates: 500 at 0% + 4,500 x **35.75%** = GBP 1,608.75
+- Total tax: 11,432 + 1,608.75 = **GBP 13,040.75**
+- Increase vs 2025-26: GBP 90.00 (entirely from the 2pp dividend uplift on the GBP 4,500 chargeable above the allowance)
+
+(Class 4 NIC on self-employment is computed in the SA103 skill -- see `uk-self-employment-sa103`.)
 
 ### Example 3 -- Personal Allowance Taper
 
 **Input:** Total income GBP 115,000. GBP 10,000 gross pension contribution (relief at source).
 
-**Computation:**
+**Computation (identical for 2024-25, 2025-26, and 2026-27 -- PA taper threshold frozen at GBP 100,000):**
 - Adjusted net income: 115,000 - 10,000 = GBP 105,000
 - PA reduction: (105,000 - 100,000) / 2 = GBP 2,500
 - Personal allowance: 12,570 - 2,500 = GBP 10,070
@@ -227,8 +333,9 @@ For SA100, the "transactions" are not bank statement lines but rather income ite
 
 **Input:** Scottish taxpayer. Employment GBP 50,000. Bank interest GBP 3,000.
 
-**Computation:**
-- Non-savings (Scottish rates): 50,000 - 12,570 = GBP 37,430 taxable
+#### 2024-25 computation
+
+- Non-savings (Scottish 2024-25 rates): 50,000 - 12,570 = GBP 37,430 taxable
   - Starter (2,306): 19% = GBP 438.14
   - Basic (11,685): 20% = GBP 2,337.00
   - Intermediate (17,101 -- up to 43,662-12,570=31,092): 21% = GBP 3,591.21
@@ -238,13 +345,44 @@ For SA100, the "transactions" are not bank statement lines but rather income ite
   - Remaining: GBP 2,500 at 40% = GBP 1,000
 - Total: 9,028.31 + 1,000 = GBP 10,028.31
 
+#### 2025-26 computation
+
+- Non-savings (Scottish 2025-26 rates -- starter and basic bands slightly wider): 50,000 - 12,570 = GBP 37,430 taxable
+  - Starter (2,827): 19% = GBP 537.13
+  - Basic (12,094): 20% = GBP 2,418.80
+  - Intermediate (16,171 -- up to 43,662-12,570=31,092): 21% = GBP 3,395.91
+  - Higher (37,430 - 31,092 = 6,338): 42% = GBP 2,661.96
+- Savings (UK rates): GBP 3,000 -- taxpayer is higher rate
+  - PSA: GBP 500 at 0%
+  - Remaining: GBP 2,500 at 40% = GBP 1,000
+- Total: 9,013.80 + 1,000 = GBP 10,013.80
+
+#### 2026-27 computation
+
+- Non-savings (Scottish 2026-27 rates -- **TBC pending Scottish Budget**; using 2025-26 as working estimate): GBP 9,013.80 (same as 2025-26 estimate)
+- Savings (UK rates -- **TBC pending Finance Bill 2026**): GBP 3,000 -- taxpayer is higher rate
+  - PSA: GBP 500 at 0% (assumed unchanged)
+  - Remaining: GBP 2,500 at **expected 42%** = GBP 1,050 (vs GBP 1,000 in 2025-26)
+- Estimated total: 9,013.80 + 1,050 = **GBP 10,063.80** (TBC -- flag for reviewer; do not finalise until Finance Bill enacted)
+
 ### Example 5 -- Marriage Allowance
 
 **Input:** Spouse A income GBP 10,000. Spouse B income GBP 28,000 (basic rate). Election made.
 
-**Computation:**
+**Computation (identical for 2024-25, 2025-26, and 2026-27 -- marriage allowance frozen at GBP 1,260 / reducer GBP 252):**
 - Spouse A: PA reduced to GBP 11,310. Income GBP 10,000 < GBP 11,310. Tax = GBP 0.
 - Spouse B: Tax = (28,000 - 12,570) x 20% = GBP 3,086. Less marriage allowance reducer GBP 252. Tax = GBP 2,834.
+
+### Example 6 -- HICBC (2024-25 reform onwards, applies in 2025-26 and 2026-27)
+
+**Input:** Higher earner adjusted net income GBP 70,000. Child benefit received GBP 2,212.60 (one child, full year).
+
+**Computation (identical for 2024-25, 2025-26, and 2026-27 -- HICBC threshold frozen at GBP 60,000 / GBP 80,000):**
+- ANI in taper zone: GBP 70,000 (between GBP 60,000 and GBP 80,000)
+- Excess over GBP 60,000: GBP 10,000
+- Charge percentage: 10,000 / 200 = 50%
+- HICBC: 2,212.60 x 50% = **GBP 1,106.30**
+- Added to tax due via SA100
 
 ---
 
@@ -254,11 +392,11 @@ For SA100, the "transactions" are not bank statement lines but rather income ite
 
 **Legislation:** ITA 2007, ss 6-22
 
-Mandatory order: (1) Non-savings income fills bands first. (2) Savings income next. (3) Dividends on top. This ordering is required by law and affects which rates apply.
+Mandatory order: (1) Non-savings income fills bands first. (2) Savings income next. (3) Dividends on top. This ordering is required by law and affects which rates apply. **The ordering rule is unchanged in 2026-27** -- only the rates on savings and dividends change.
 
 ### 5.2 Personal Allowance [T1]
 
-GBP 12,570. Tapers at GBP 1 for every GBP 2 above GBP 100,000 adjusted net income. Fully withdrawn at GBP 125,140. Effective 60% marginal rate in taper zone.
+GBP 12,570 across all three years (2024-25, 2025-26, 2026-27 -- frozen through 2027-28). Tapers at GBP 1 for every GBP 2 above GBP 100,000 adjusted net income. Fully withdrawn at GBP 125,140. Effective 60% marginal rate in taper zone.
 
 Adjusted net income = Total income - gross pension contributions - grossed-up Gift Aid.
 
@@ -266,25 +404,42 @@ Adjusted net income = Total income - gross pension contributions - grossed-up Gi
 
 Personal savings allowance: GBP 1,000 (basic rate), GBP 500 (higher rate), GBP 0 (additional rate). Starting rate for savings: GBP 5,000 at 0%, reduced by GBP 1 for each GBP 1 of non-savings income above PA.
 
+**2026-27:** Allowance amounts are expected to remain unchanged, but the rates applied to savings income above the allowance are **TBC** pending Finance Bill 2026 enactment (Autumn Budget 2025 announced an expected 2pp uplift on basic and higher bands).
+
 ### 5.4 Dividend Allowance [T1]
 
-GBP 500 at 0% rate. Uses up the basic rate band -- it is NOT a deduction from income. Dividends above the allowance: 8.75% / 33.75% / 39.35%.
+GBP 500 at 0% rate (unchanged across all three years). Uses up the basic rate band -- it is NOT a deduction from income.
+
+Dividend rates above the allowance:
+- 2024-25 and 2025-26: 8.75% / 33.75% / 39.35%
+- **2026-27: 10.75% / 35.75% / 39.35%**
+
+See `uk-dividends` for the full dividend treatment.
 
 ### 5.5 Marriage Allowance [T1]
 
-Transfer GBP 1,260 from spouse with income below PA to basic-rate spouse. Reducer = GBP 252 (always at 20%, even for Scottish taxpayers). Recipient must NOT be higher/additional rate.
+Transfer GBP 1,260 from spouse with income below PA to basic-rate spouse. Reducer = GBP 252 (always at 20%, even for Scottish taxpayers). Recipient must NOT be higher/additional rate. Unchanged across all three years.
 
 ### 5.6 Basic Rate Band Extension [T1]
 
-Extended by: gross pension contributions (relief at source) + grossed-up Gift Aid donations. Example: GBP 4,000 gross pension = basic rate band becomes GBP 41,700.
+Extended by: gross pension contributions (relief at source) + grossed-up Gift Aid donations. Example: GBP 4,000 gross pension = basic rate band becomes GBP 41,700. Unchanged across all three years.
 
 ### 5.7 Payments on Account [T1]
 
-Required if prior year SA liability > GBP 1,000 AND less than 80% deducted at source. POA1: 31 January (50% of prior year). POA2: 31 July (50%). Balance: 31 January following year.
+Required if prior year SA liability > GBP 1,000 AND less than 80% deducted at source. POA1: 31 January (50% of prior year). POA2: 31 July (50%). Balance: 31 January following year. Mechanism unchanged across all three years.
 
 ### 5.8 Filing and Penalties [T1]
 
-Online deadline: 31 January following tax year. Late filing: GBP 100 immediate, then GBP 10/day after 3 months, then 5% of tax at 6 and 12 months. Late payment: 5% at 30 days, 6 months, 12 months.
+Online deadlines:
+- 2024-25 return: 31 January 2026
+- 2025-26 return: 31 January 2027
+- 2026-27 return: 31 January 2028
+
+Late filing: GBP 100 immediate, then GBP 10/day after 3 months, then 5% of tax at 6 and 12 months. Late payment: 5% at 30 days, 6 months, 12 months.
+
+### 5.9 High Income Child Benefit Charge (HICBC) [T1]
+
+Applies from 2024-25 onwards with a tapered range of GBP 60,000 to GBP 80,000 adjusted net income (reform enacted by Finance Act 2024). Charge = 1% of child benefit for every GBP 200 of income between GBP 60,000 and GBP 80,000. At GBP 80,000+: 100% claw-back. Thresholds unchanged in 2025-26 and 2026-27.
 
 ---
 
@@ -294,13 +449,13 @@ Online deadline: 31 January following tax year. Late filing: GBP 100 immediate, 
 
 Pension contributions and Gift Aid can reduce adjusted net income below GBP 100,000 to restore the PA. Legitimate planning strategy. Flag for reviewer to confirm contribution amounts are within annual allowance.
 
-### 6.2 High Income Child Benefit Charge [T2]
+### 6.2 High Income Child Benefit Charge -- Cross-Year Planning [T2]
 
-Applies where adjusted net income exceeds GBP 60,000 (from 2024/25). Charge = 1% of child benefit for every GBP 200 of income between GBP 60,000 and GBP 80,000. At GBP 80,000+: 100% clawback. Flag for reviewer to confirm benefit amounts.
+For taxpayers in the GBP 60,000-80,000 taper zone, the effective marginal rate including HICBC can exceed 60%. Cross-year planning (timing of bonus income, pension contributions to reduce ANI) is materially valuable. Flag for reviewer.
 
 ### 6.3 Reducing Payments on Account [T2]
 
-Client can apply (SA303) to reduce POAs if they expect lower liability. If estimate is too low, HMRC charges interest from original due date. Flag before reducing.
+Client can apply (SA303) to reduce POAs if they expect lower liability. If estimate is too low, HMRC charges interest from original due date. Flag before reducing. For the 2025-26 -> 2026-27 transition, POAs for 2026-27 will be based on 2025-26 liability -- consider whether the 2026-27 dividend/savings rate increases will materially raise the actual liability above POA estimates.
 
 ### 6.4 Pension Annual Allowance [T2]
 
@@ -308,14 +463,18 @@ GBP 60,000 standard. Tapers to GBP 10,000 for adjusted income over GBP 260,000. 
 
 ### 6.5 Multiple Income Sources Band Allocation [T2]
 
-When savings and dividends push income across rate band boundaries, the interaction of PSA, dividend allowance, and band extensions can be complex. Flag for reviewer to verify computation.
+When savings and dividends push income across rate band boundaries, the interaction of PSA, dividend allowance, and band extensions can be complex. Flag for reviewer to verify computation. **Especially important for 2026-27** given the divergence of dividend, savings, and non-savings rates.
+
+### 6.6 2026-27 Savings and Property Income Rate Confirmation [T2]
+
+The Autumn Budget 2025 announced rate increases on savings and property income from 6 April 2026, expected to mirror the 2pp uplift on basic and higher bands. **The specific rates are TBC pending Finance (No. 2) Bill 2024-26 / Finance Bill 2026 enactment.** Flag any 2026-27 return with material savings or property income for reviewer; do not finalise until rates are confirmed in legislation.
 
 ---
 
 ## Section 7 -- Excel Working Paper Template
 
 ```
-SA100 TAX COMPUTATION -- Tax Year 2024/25
+SA100 TAX COMPUTATION -- Tax Year [SELECT: 2024-25 / 2025-26 / 2026-27]
 
 A. INCOME
   A1. Employment income (P60 gross)                ___________
@@ -348,24 +507,33 @@ D. TAXABLE INCOME
 E. TAX COMPUTATION
   E1. Tax on non-savings (rUK or Scottish)         ___________
   E2. Tax on savings (with PSA + starting rate)    ___________
+       Rates: 2024-25 & 2025-26 = 20/40/45
+              2026-27 = TBC (expected 22/42/45)    [FLAG]
   E3. Tax on dividends (with allowance)            ___________
+       Rates: 2024-25 & 2025-26 = 8.75/33.75/39.35
+              2026-27 = 10.75/35.75/39.35
   E4. Total income tax                             ___________
   E5. Less: tax reducers (MA, EIS, etc.)           ___________
   E6. Income tax charged                           ___________
-  E7. Less: PAYE deducted                          ___________
-  E8. Less: tax on savings at source               ___________
-  E9. Less: payments on account                    ___________
-  E10. TAX DUE / (REFUND)                          ___________
+  E7. Plus: HICBC (if ANI > 60,000)                ___________
+  E8. Less: PAYE deducted                          ___________
+  E9. Less: tax on savings at source               ___________
+  E10. Less: payments on account                   ___________
+  E11. TAX DUE / (REFUND)                          ___________
 
 F. CLASS 4 NIC (from SA103)                        ___________
 
-G. TOTAL DUE (E10 + F)                             ___________
+G. TOTAL DUE (E11 + F)                             ___________
 
 REVIEWER FLAGS:
+  [ ] Tax year selected and applied consistently?
   [ ] Scottish or rUK rates confirmed?
   [ ] PA taper checked?
   [ ] Income ordering correct (non-savings > savings > dividends)?
   [ ] Marriage allowance eligibility verified?
+  [ ] HICBC computed if ANI > 60,000?
+  [ ] For 2026-27: dividend rates updated to 10.75/35.75/39.35?
+  [ ] For 2026-27: savings/property rates confirmed against enacted Finance Bill 2026?
   [ ] All T2 items flagged?
 ```
 
@@ -391,14 +559,16 @@ SA100 is primarily compiled from official documents (P60, P11D, interest certifi
 
 If the client cannot provide all documents immediately:
 
-1. Start with P60 and any SA103 computation
-2. Ask for bank statements to identify savings interest and dividends
-3. Apply conservative defaults
-4. Generate working paper with flags
-5. Present questions:
+1. Confirm which tax year(s) the engagement covers (2024-25, 2025-26, and/or 2026-27)
+2. Start with P60 and any SA103 computation
+3. Ask for bank statements to identify savings interest and dividends
+4. Apply conservative defaults
+5. Generate working paper with flags
+6. Present questions:
 
 ```
 ONBOARDING QUESTIONS -- UK INCOME TAX (SA100)
+0. Which tax year? (2024-25 prior / 2025-26 current / 2026-27 from April 2026)
 1. Are you a Scottish taxpayer? (main residence in Scotland)
 2. Employment income -- do you have your P60 and P11D?
 3. Self-employment -- have you completed your SA103?
@@ -409,8 +579,9 @@ ONBOARDING QUESTIONS -- UK INCOME TAX (SA100)
 8. Pension contributions made (personal, not workplace)?
 9. Gift Aid donations made?
 10. Married/civil partner -- is marriage allowance being claimed?
-11. Payments on account already made for 2024/25?
+11. Payments on account already made for the year?
 12. PAYE tax deducted (from P60)?
+13. Child benefit received? (HICBC if ANI > GBP 60,000)
 ```
 
 ---
@@ -427,10 +598,14 @@ ONBOARDING QUESTIONS -- UK INCOME TAX (SA100)
 | Basic rate band | ITA 2007, s10 |
 | Savings allowance | ITA 2007, ss 12A-12B |
 | Dividend allowance | ITTOIA 2005, s13A |
+| Dividend rates 2026-27 onwards | Finance (No. 2) Bill 2024-26 / Finance Bill 2026 (Autumn Budget 2025) -- pending Royal Assent |
+| Savings & property rate changes 2026-27 | Autumn Budget 2025 announcement -- TBC pending Finance Bill enactment |
+| Threshold freeze through 2027-28 | Finance (No. 2) Act 2023, s.5 |
 | Marriage allowance | ITA 2007, s55B |
 | Scottish rates | Scotland Act 2016 |
 | Pension relief | FA 2004, ss 188-195 |
 | Gift Aid | ITA 2007, s414 |
+| HICBC | ITEPA 2003, ss 681B-681H (as amended by FA 2024) |
 | Payments on account | TMA 1970, ss 59A-59B |
 | Filing/penalties | TMA 1970, ss 8-12, 93, 97 |
 
@@ -438,6 +613,9 @@ ONBOARDING QUESTIONS -- UK INCOME TAX (SA100)
 
 ## PROHIBITIONS
 
+- NEVER compute tax without first confirming the tax year (2024-25, 2025-26, or 2026-27)
+- NEVER apply 2025-26 dividend rates to a 2026-27 computation (the ordinary and upper rates change to 10.75% and 35.75%)
+- NEVER finalise a 2026-27 return with material savings or property income before Finance Bill 2026 receives Royal Assent -- flag TBC
 - NEVER compute tax without categorising income as non-savings, savings, or dividends
 - NEVER apply Scottish rates to savings or dividend income
 - NEVER apply marriage allowance if recipient is higher/additional rate
@@ -454,5 +632,7 @@ ONBOARDING QUESTIONS -- UK INCOME TAX (SA100)
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, EA, tax attorney, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
+
+The 2026-27 figures in this skill reflect the Autumn Budget 2025 announcements as at the version date. Items flagged "TBC" are pending the enactment of Finance (No. 2) Bill 2024-26 / Finance Bill 2026 and must be reconfirmed against the final legislation before filing.
 
 The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.

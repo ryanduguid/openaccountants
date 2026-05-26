@@ -20,6 +20,9 @@ verified_by: pending
 
 # United Kingdom -- Payroll Skill v1.0
 
+> **Year applicability:** Rules in this skill apply across **2024-25, 2025-26, and 2026-27** unless a specific section flags a year-dated change. The pack is read alongside the rate-bearing skills (`uk-income-tax-sa100`, `uk-national-insurance`, `uk-dividends`, etc.) which carry full 3-year tables.
+
+
 ---
 
 ## Section 1 -- Quick Reference

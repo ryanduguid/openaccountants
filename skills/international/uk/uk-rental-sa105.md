@@ -1,17 +1,17 @@
 ---
 name: uk-rental-sa105
 description: >
-  Use this skill whenever asked about UK property income or rental income for individuals. Trigger on phrases like "SA105", "rental income UK", "property income", "buy-to-let", "letting income", "landlord tax UK", "rent-a-room", "mortgage interest relief", "Section 24", "property allowance", "non-resident landlord scheme", "NRLS", "furnished holiday let", "FHL abolished", "repairs deduction", "letting agent fees", "property expenses", "UK property pages", or any question about computing, filing, or reporting UK property income on a Self Assessment tax return. Covers SA105 form structure, allowable expenses, mortgage interest restriction, Rent-a-Room relief, property income allowance, non-resident landlord scheme, and the abolition of FHL rules. ALWAYS read this skill before touching any UK rental income work.
-version: 1.0
+  Use this skill whenever asked about UK property income or rental income for individuals. Trigger on phrases like "SA105", "rental income UK", "property income", "buy-to-let", "letting income", "landlord tax UK", "rent-a-room", "mortgage interest relief", "Section 24", "property allowance", "non-resident landlord scheme", "NRLS", "furnished holiday let", "FHL abolished", "FHL abolition", "repairs deduction", "letting agent fees", "property expenses", "UK property pages", "April 2026 property tax", "property income hike", "MTD ITSA landlord", or any question about computing, filing, or reporting UK property income on a Self Assessment tax return. Covers SA105 form structure, allowable expenses, mortgage interest restriction, Rent-a-Room relief, property income allowance, non-resident landlord scheme, the abolition of FHL rules, and the April 2026 property income rate change announced at Autumn Budget 2025. ALWAYS read this skill before touching any UK rental income work.
+version: 1.1
 jurisdiction: GB
-tax_year: 2025
+tax_year: 2025-26
 category: international
 depends_on:
   - uk-income-tax-sa100
 verified_by: pending
 ---
 
-# UK Property Income (SA105) Skill v1.0
+# UK Property Income (SA105) Skill v1.1
 
 ---
 
@@ -22,18 +22,34 @@ verified_by: pending
 | Country | United Kingdom |
 | Tax | Income Tax on Property Income |
 | Currency | GBP only |
-| Tax year | 6 April to 5 April (2024-25: 6 April 2024 -- 5 April 2025) |
+| Tax year | 6 April to 5 April (2025-26: 6 April 2025 -- 5 April 2026) |
 | Primary legislation | Income Tax (Trading and Other Income) Act 2005 (ITTOIA), Part 3 |
-| Supporting legislation | Income Tax Act 2007, ss. 274A-274D (mortgage interest restriction); ITTOIA ss. 784-802 (Rent-a-Room); Finance Act 2025 (FHL abolition) |
+| Supporting legislation | Income Tax Act 2007, ss. 274A-274D (mortgage interest restriction); ITTOIA ss. 784-802 (Rent-a-Room); Finance Act 2025 (FHL abolition); Finance (No. 2) Bill 2024-26 (April 2026 property income rate change — pending enactment) |
 | Tax authority | HM Revenue and Customs (HMRC) |
 | Filing portal | HMRC Self Assessment Online |
 | Filing deadline (online) | 31 January following the tax year |
 | Filing deadline (paper) | 31 October following the tax year |
 | SA105 form | UK Property supplementary pages to SA100 |
 | Validated by | Pending — requires sign-off by a UK chartered accountant or licensed tax adviser |
-| Skill version | 1.0 |
+| Skill version | 1.1 |
 
-### SA105 Key Boxes (2024-25)
+### Year Comparison — Quick Reference (Prior / Current / Future)
+
+| Item | 2024-25 (Prior year) | 2025-26 (Current year) | 2026-27 (From 6 April 2026) |
+|---|---|---|---|
+| Personal allowance | £12,570 | £12,570 (frozen) | £12,570 (frozen) |
+| Basic rate band | £12,571 -- £50,270 | £12,571 -- £50,270 (frozen) | £12,571 -- £50,270 (frozen) |
+| Basic rate on property income | 20% | 20% | **TBC — Autumn Budget 2025 announced increase to property income tax from April 2026; specific rates to be confirmed when Finance (No. 2) Bill 2024-26 enacted** (expected basic +2pp ≈ 22%) |
+| Higher rate on property income | 40% | 40% | **TBC — see above** (expected higher +2pp ≈ 42%) |
+| Additional rate on property income | 45% | 45% | **TBC — pending Finance (No. 2) Bill 2024-26 enactment** |
+| Property income allowance | £1,000 | £1,000 (frozen since 2017-18) | £1,000 (frozen) |
+| Rent-a-Room threshold | £7,500 | £7,500 (frozen) | £7,500 (frozen) |
+| FHL regime | In force (last year) | **Abolished from 6 April 2025** (transitional rules) | Abolished (transitional rules continue) |
+| Section 24 mortgage interest restriction | Full restriction — 20% basic rate tax reducer | Same | Same (tax reducer rate may follow new basic rate — TBC) |
+| MTD ITSA for landlords | Not in scope | Not in scope | **Phase 1 from 6 April 2026 — gross income > £50,000** |
+| MTD ITSA Phase 2 | n/a | n/a | Phase 2 from April 2027 — gross income > £30,000 |
+
+### SA105 Key Boxes (2024-25 and 2025-26)
 
 | Box | Description | Section |
 |---|---|---|
@@ -55,7 +71,18 @@ verified_by: pending
 | Box 39 | Loss brought forward from earlier years | Losses |
 | Box 40 | Taxable profit (Box 38 minus Box 39) | Final |
 
-### Income Tax Rates (2024-25)
+Note: Box layout for 2026-27 is expected to be substantially similar but TBC — confirm against HMRC's published 2026-27 SA105 when released.
+
+### Income Tax Rates — 2024-25 (Prior Year)
+
+| Band | Taxable income | Rate |
+|---|---|---|
+| Personal allowance | Up to £12,570 | 0% |
+| Basic rate | £12,571 -- £50,270 | 20% |
+| Higher rate | £50,271 -- £125,140 | 40% |
+| Additional rate | Over £125,140 | 45% |
+
+### Income Tax Rates — 2025-26 (Current Year)
 
 | Band | Taxable income | Rate |
 |---|---|---|
@@ -66,6 +93,21 @@ verified_by: pending
 
 Property income is added to all other income and taxed at the marginal rate.
 
+### Income Tax Rates on Property Income — 2026-27 (From 6 April 2026)
+
+**STATUS: TBC — Autumn Budget 2025 announced increase to property income tax from April 2026; specific rates to be confirmed when Finance (No. 2) Bill 2024-26 enacted.**
+
+The Autumn Budget 2025 announced that property income will be taxed at differential (dividend-style) rates from 6 April 2026, with the basic rate expected to rise by 2pp and the higher rate by 2pp relative to current employment-income rates.
+
+| Band | Taxable property income | Rate (expected — TBC) |
+|---|---|---|
+| Personal allowance | Up to £12,570 | 0% |
+| Basic rate (property) | £12,571 -- £50,270 | ~22% (TBC) |
+| Higher rate (property) | £50,271 -- £125,140 | ~42% (TBC) |
+| Additional rate (property) | Over £125,140 | TBC |
+
+DO NOT use the expected rates above for any client computation until Finance (No. 2) Bill 2024-26 receives Royal Assent and HMRC publishes the confirmed rates. Until then, treat all 2026-27 property income tax computations as ESTIMATED and clearly flag them as TBC.
+
 ### Conservative Defaults
 
 | Ambiguity | Default |
@@ -75,6 +117,7 @@ Property income is added to all other income and taxed at the marginal rate.
 | Unknown residency status | STOP — NRLS rules differ |
 | Unknown repair vs improvement | Treat as improvement (not deductible) |
 | Unknown private use percentage | 100% private (no deduction) |
+| Unknown 2026-27 rates | Flag as TBC pending Finance (No. 2) Bill 2024-26 enactment; do not finalise figures |
 
 ---
 
@@ -120,11 +163,11 @@ From April 2016, for residential lets:
 
 From 2020-21, finance costs for residential property are **fully restricted**:
 
-| Component | Treatment |
-|---|---|
-| Mortgage interest | NOT deductible as an expense |
-| Arrangement fees (revenue portion) | NOT deductible as an expense |
-| Tax credit | 20% of the lower of: (a) finance costs, (b) property profits, (c) adjusted total income |
+| Component | Treatment (2024-25, 2025-26) | Treatment (2026-27) |
+|---|---|---|
+| Mortgage interest | NOT deductible as an expense | NOT deductible as an expense (unchanged) |
+| Arrangement fees (revenue portion) | NOT deductible as an expense | NOT deductible as an expense (unchanged) |
+| Tax credit | 20% of the lower of: (a) finance costs, (b) property profits, (c) adjusted total income | Rate may follow new basic rate — TBC pending Finance (No. 2) Bill 2024-26 |
 
 The restriction applies to:
 - Individual landlords (not companies)
@@ -136,7 +179,7 @@ The restriction does NOT apply to:
 - Commercial property lettings
 - Previously: Furnished Holiday Lets — but FHL regime is abolished from April 2025
 
-**Box 26** on SA105 still captures finance costs, but HMRC computes the 20% basic rate reduction separately on the tax computation.
+**Box 26** on SA105 still captures finance costs, but HMRC computes the basic rate reduction separately on the tax computation.
 
 ### 2.5 Property Income Allowance (£1,000)
 
@@ -144,14 +187,15 @@ The restriction does NOT apply to:
 - If gross property income exceeds £1,000: choose between claiming the £1,000 allowance (no expenses deducted) or deducting actual expenses
 - Cannot claim both the allowance and expenses
 - Cannot claim if income is from a connected person (employer, family company)
+- Allowance remains £1,000 across 2024-25, 2025-26 and 2026-27 (frozen since 2017-18)
 
 ---
 
 ## Section 3 -- Rent-a-Room Relief
 
-| Feature | Detail |
+| Feature | Detail (2024-25, 2025-26, 2026-27) |
 |---|---|
-| Threshold | £7,500 per year (£3,750 if letting jointly) |
+| Threshold | £7,500 per year (£3,750 if letting jointly) — frozen across all three years |
 | Requirement | Must let furnished accommodation in your only or main home |
 | If income ≤ threshold | Put 'X' in Box 4; no further property pages needed |
 | If income > threshold | Option 1: Tax on excess (income minus £7,500 in Box 37, no expenses); Option 2: Normal profit calculation (ignore Box 37) |
@@ -160,9 +204,9 @@ The restriction does NOT apply to:
 
 ---
 
-## Section 4 -- Furnished Holiday Lets (FHL) -- Abolished
+## Section 4 -- Furnished Holiday Lets (FHL) -- Abolished from 6 April 2025
 
-### Pre-April 2025 (2024-25 and Earlier)
+### Pre-April 2025 (2024-25 — Prior Year)
 
 FHL status required meeting ALL of:
 - Available for letting ≥210 days per year
@@ -171,7 +215,7 @@ FHL status required meeting ALL of:
 
 FHL benefits included: full mortgage interest deduction, capital allowances on furniture, CGT reliefs (Entrepreneurs'/BADR, rollover), pension-relevant earnings.
 
-### From April 2025 (2025-26 Onwards)
+### From 6 April 2025 (2025-26 — Current Year)
 
 The FHL regime is **abolished** by Finance Act 2025:
 - All former FHLs are treated as standard residential property
@@ -180,7 +224,16 @@ The FHL regime is **abolished** by Finance Act 2025:
 - CGT: no BADR, no rollover relief (standard residential CGT rates apply)
 - Not pension-relevant earnings
 
-**Transitional:** Overlap relief and brought-forward losses from FHL remain available in 2025-26 under transitional provisions.
+**Transitional provisions (2025-26):** Overlap relief and brought-forward FHL losses remain available in 2025-26.
+
+### From 6 April 2026 (2026-27 — Future Year)
+
+FHL transitional rules continue to affect 2026-27 returns where:
+- Brought-forward FHL losses pre-6-April-2025 are still being utilised against UK property business profits
+- Capital allowances pools established under the FHL regime continue to run off
+- CGT computations on disposal of former FHL properties still reference pre-abolition base costs
+
+Confirm any residual FHL transitional position with the taxpayer's prior accountant or prior-year computations before finalising 2026-27 figures.
 
 ---
 
@@ -193,6 +246,7 @@ The FHL regime is **abolished** by Finance Act 2025:
 | HMRC approval | Non-resident can apply to receive rent gross (form NRL1) if tax affairs are up to date |
 | Annual return | Non-resident must still file SA100 + SA105 (or SA700 for companies) |
 | Expenses | Same rules apply — agent may deduct allowable expenses before withholding |
+| 2026-27 note | Withholding rate may change if 2026-27 basic rate on property income is enacted — TBC |
 
 ---
 
@@ -213,7 +267,7 @@ The FHL regime is **abolished** by Finance Act 2025:
 
 | Pattern | SA105 Box | Notes |
 |---|---|---|
-| MORTGAGE, NATIONWIDE, BARCLAYS MORTGAGE | Box 26 (finance costs) | Subject to Section 24 restriction — 20% credit only |
+| MORTGAGE, NATIONWIDE, BARCLAYS MORTGAGE | Box 26 (finance costs) | Subject to Section 24 restriction — 20% credit only (2026-27 rate TBC) |
 | BUILDINGS INSURANCE, LANDLORD INSURANCE | Box 24 | Fully deductible |
 | LETTING AGENT FEE, MANAGEMENT FEE | Box 27 | Fully deductible |
 | PLUMBER, ELECTRICIAN, BUILDER [repair] | Box 25 | Deductible if repair; capital if improvement |
@@ -238,7 +292,7 @@ The FHL regime is **abolished** by Finance Act 2025:
 
 ## Section 7 -- Worked Examples
 
-### Example 1 -- Basic Buy-to-Let (2024-25)
+### Example 1 -- Basic Buy-to-Let (2024-25 — Prior Year)
 
 **Input:** Annual rent £12,000. Mortgage interest £4,000. Agent fees £1,200. Insurance £300. Repairs £800. No other property income. Basic rate taxpayer.
 
@@ -258,13 +312,43 @@ Finance cost tax credit: 20% × £4,000 = £800
 Net tax on property income: £1,940 - £800 = £1,140
 ```
 
-### Example 2 -- Rent-a-Room (Under Threshold)
+### Example 2 -- Same Buy-to-Let (2025-26 — Current Year)
 
-**Input:** Rents out furnished spare bedroom in main home. Annual income £6,000.
+**Input:** As Example 1, unchanged in 2025-26 (rates and allowances frozen). Annual rent £12,000. Mortgage interest £4,000. Agent fees £1,200. Insurance £300. Repairs £800. Basic rate taxpayer.
+
+**Computation:** Identical to Example 1 — basic rate of 20% and 20% finance cost credit unchanged.
+```
+Property profit: £9,700
+Tax at 20%: £1,940
+Finance cost tax credit: 20% × £4,000 = £800
+Net tax on property income: £1,140
+```
+
+If the property was previously an FHL (pre-6-April-2025), confirm any brought-forward FHL loss in Box 39 and that capital allowances pools have been correctly transitioned.
+
+### Example 3 -- Same Buy-to-Let (2026-27 — From 6 April 2026, TBC)
+
+**Input:** As Example 1. Basic rate taxpayer.
+
+**Computation (PRELIMINARY — flagged TBC):**
+```
+Property profit: £9,700
+Tax at expected ~22% (basic rate on property income — TBC pending Finance (No. 2) Bill 2024-26): ~£2,134
+Finance cost tax credit: expected ~22% × £4,000 = ~£880 (rate of credit TBC)
+Net tax on property income: ~£1,254 (TBC)
+
+Estimated additional tax versus 2025-26: ~£114 (≈ 10% increase in tax on this rental profit)
+```
+
+**STATUS: TBC — Autumn Budget 2025 announced increase to property income tax from April 2026; specific rates to be confirmed when Finance (No. 2) Bill 2024-26 enacted.** Do not present these figures as final. Re-run once Royal Assent confirms the exact rates and the credit rate for Section 24.
+
+### Example 4 -- Rent-a-Room (Under Threshold)
+
+**Input:** Rents out furnished spare bedroom in main home. Annual income £6,000. (Same in all three years — threshold frozen at £7,500.)
 
 **Computation:** Income £6,000 < £7,500 threshold. Put 'X' in Box 4. No further SA105 needed. Tax = £0 on this income.
 
-### Example 3 -- Rent-a-Room (Over Threshold)
+### Example 5 -- Rent-a-Room (Over Threshold)
 
 **Input:** Spare room income £10,000.
 
@@ -280,7 +364,9 @@ If actual expenses are £4,000: profit = £10,000 - £4,000 = £6,000
 ```
 Option A (£2,500 taxable) is better than Option B (£6,000 taxable).
 
-### Example 4 -- Higher Rate Taxpayer with Section 24 Restriction
+For 2026-27, the calculation is identical; the only change is the tax rate applied to the taxable amount (TBC).
+
+### Example 6 -- Higher Rate Taxpayer with Section 24 Restriction (2025-26)
 
 **Input:** Total income £80,000 (employment) + £15,000 rent. Mortgage interest £8,000. Other expenses £3,000.
 
@@ -296,6 +382,8 @@ Without Section 24: tax would be (£15,000 - £3,000 - £8,000) × 40% = £1,600
 Section 24 cost to this taxpayer: £1,600 extra
 ```
 
+For 2026-27, the higher rate on property income is expected to rise (~42% TBC), increasing the net tax — flag for taxpayer planning.
+
 ---
 
 ## Section 8 -- Losses
@@ -308,6 +396,7 @@ Section 24 cost to this taxpayer: £1,600 extra
 | Capital allowances creating loss | Can create or increase a property loss |
 | Multiple properties | All UK properties pooled into one property business |
 | Box 39 | Losses brought forward from earlier years |
+| FHL transitional losses | Pre-6-April-2025 FHL losses absorbed into the UK property business loss pool; carry forward indefinitely against UK property profits in 2025-26, 2026-27 and beyond |
 
 ---
 
@@ -327,17 +416,82 @@ If the landlord lives in part of the property and lets another part, apportion e
 ### 9.4 Property Income Allowance vs Expenses
 If gross rental income is low (near £1,000), compare: claiming £1,000 allowance (no expenses) vs deducting actual expenses. Choose whichever gives the lower taxable amount.
 
+### 9.5 Residential Property Developer Tax (RPDT)
+RPDT continues at 4% on profits from UK residential property development. Applies to large corporate developers only (annual allowance £25m). Out of scope for individual landlords filing SA105 — flagged here for awareness only.
+
+---
+
+## Section 10 -- From 6 April 2026 (Forward-Looking Changes)
+
+This section consolidates upcoming changes affecting UK property income that practitioners must flag to landlord clients during 2025-26 planning conversations.
+
+### 10.1 Property Income Rate Change (Autumn Budget 2025)
+
+**STATUS: TBC — Autumn Budget 2025 announced increase to property income tax from April 2026; specific rates to be confirmed when Finance (No. 2) Bill 2024-26 enacted.**
+
+- HM Treasury announced at Autumn Budget 2025 that property income will be taxed at differential (dividend-style) rates from 6 April 2026.
+- Expected direction: basic rate +2pp (≈22%), higher rate +2pp (≈42%). Additional rate TBC.
+- Expected impact: ~10% increase in net tax on a typical basic-rate buy-to-let profit; larger impact at higher rate.
+- Section 24 finance cost tax reducer rate (currently 20%) may follow the new basic rate — TBC.
+- Action: do NOT finalise any 2026-27 client projection until Royal Assent. Caveat all 2026-27 projections as estimated.
+
+### 10.2 Frozen Allowances and Thresholds
+
+The following remain frozen into 2026-27 with no announced uplift:
+
+| Item | Amount | Frozen since |
+|---|---|---|
+| Property income allowance | £1,000 | 2017-18 |
+| Rent-a-Room threshold | £7,500 | 2016-17 |
+| Personal allowance | £12,570 | 2021-22 |
+| Higher rate threshold | £50,270 | 2021-22 |
+| Additional rate threshold | £125,140 | 2023-24 |
+
+Fiscal drag will continue to pull more landlords into higher and additional rate bands in 2026-27.
+
+### 10.3 FHL Abolition — Continuing Transitional Impact
+
+FHL regime was abolished from 6 April 2025 by Finance Act 2025. The abolition continues to affect 2025-26 and 2026-27 returns through:
+- Brought-forward FHL losses absorbed into the UK property business
+- Capital allowances pools running off (writing-down allowances continue on existing pools)
+- CGT consequences on disposal of former FHL properties — no BADR, no rollover from 2025-26 disposals onwards
+- No new claims for FHL pension-relevant earnings
+
+### 10.4 Making Tax Digital for Income Tax Self Assessment (MTD ITSA)
+
+**Phase 1 — from 6 April 2026:**
+- Mandatory for self-employed individuals AND landlords with combined gross income > £50,000
+- Quarterly digital updates of income and expenses to HMRC via MTD-compatible software
+- Annual final declaration replaces aspects of the current SA100/SA105 cycle
+- Property income reported alongside trading income within a single MTD ITSA submission flow
+
+**Phase 2 — from 6 April 2027:**
+- Threshold drops to gross income > £30,000
+- Significantly more landlords brought into scope
+
+**Practitioner action for 2025-26 file work:**
+- Identify landlord clients with gross rental income > £50,000 — flag for MTD onboarding before April 2026
+- Identify landlord clients with gross rental income > £30,000 — flag for April 2027 onboarding
+- Discuss MTD-compatible software selection (HMRC publishes a list of approved providers)
+- Plan quarterly update cadence and record-keeping changes (digital records required)
+
+### 10.5 Section 24 Finance Cost Restriction — Continues
+
+Section 24 mortgage interest restriction remains fully in force. The 20% basic rate tax reducer continues, though the rate at which the reducer applies in 2026-27 may follow any new basic rate on property income (TBC).
+
 ---
 
 ## PROHIBITIONS
 
-- NEVER deduct mortgage interest as an expense for residential property — it is a 20% basic rate tax credit only (Section 24)
+- NEVER deduct mortgage interest as an expense for residential property — it is a basic rate tax credit only (Section 24)
 - NEVER allow the initial purchase cost of domestic items — only replacements qualify under Box 36
 - NEVER combine Rent-a-Room relief with the property income allowance
 - NEVER allow improvement costs as revenue deductions — these are capital
 - NEVER ignore the non-resident landlord scheme for overseas landlords
 - NEVER pool UK and overseas property into one computation — they are separate property businesses
 - NEVER apply FHL rules for 2025-26 onwards — the regime is abolished
+- NEVER present 2026-27 property income tax figures as final until Finance (No. 2) Bill 2024-26 receives Royal Assent — always label as TBC
+- NEVER assume the Section 24 tax reducer rate for 2026-27 is 20% without checking the enacted rate
 - NEVER present property income computations as definitive — always label as estimated
 
 ---

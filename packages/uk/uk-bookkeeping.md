@@ -1,33 +1,54 @@
 ---
 name: uk-bookkeeping
 description: >
-  Use this skill whenever asked about UK bookkeeping for sole traders, micro-entities, or small companies. Trigger on phrases like "chart of accounts", "nominal codes", "bookkeeping", "profit and loss", "balance sheet", "FRS 105", "FRS 102 Section 1A", "Making Tax Digital", "MTD", "bank reconciliation", "double-entry", "expense categories", "revenue recognition", "depreciation", "capital allowances", "micro-entity accounts", "small company accounts", "accrual basis", "cash basis", "general ledger", or any question about day-to-day transaction recording, financial statement preparation, or account coding for a UK business.
-version: 1.0
+  Use this skill whenever asked about UK bookkeeping for sole traders, micro-entities, or small companies. Trigger on phrases like "chart of accounts", "nominal codes", "bookkeeping", "profit and loss", "balance sheet", "FRS 105", "FRS 102 Section 1A", "Making Tax Digital", "MTD", "MTD ITSA bookkeeping", "April 2026 quarterly", "VAT threshold £90,000", "bank reconciliation", "double-entry", "expense categories", "revenue recognition", "depreciation", "capital allowances", "micro-entity accounts", "small company accounts", "accrual basis", "cash basis", "general ledger", or any question about day-to-day transaction recording, financial statement preparation, or account coding for a UK business.
+version: 1.1
 jurisdiction: GB
 category: bookkeeping
 depends_on:
   - bookkeeping-workflow-base
 tax_year: 2025-26
+applicable_years:
+  - 2024-25
+  - 2025-26
+  - 2026-27
 verified_by: pending
 ---
 
-# UK Bookkeeping Skill v1.0
+# UK Bookkeeping Skill v1.1
 
 ---
 
 ## Section 1 -- Quick Reference
 
+**Year applicability:** Rules in this skill apply across 2024-25, 2025-26, and 2026-27 unless specified. The biggest 2026-27 change is mandatory MTD ITSA quarterly bookkeeping for in-scope sole traders and landlords.
+
 | Field | Value |
 |---|---|
 | Country | United Kingdom (England, Wales, Scotland, Northern Ireland) |
 | Currency | GBP (£) only |
-| Financial year | Flexible — companies choose their own year-end; sole traders align to 6 April -- 5 April (tax year basis from 2024/25) |
+| Financial year | Flexible — companies choose their own year-end; sole traders on tax-year basis 6 April -- 5 April (basis period reform complete; clean tax-year basis for 2025-26 and 2026-27, no transitional adjustments) |
 | Accounting standards | FRS 105 (micro-entities), FRS 102 Section 1A (small entities), full FRS 102 |
 | Governing body | Financial Reporting Council (FRC) |
 | Tax authority | HM Revenue & Customs (HMRC) |
 | Key legislation | Companies Act 2006 (Part 15, s.382-384 for size thresholds); The Small Companies and Groups Regulations 2008 (SI 2008/409); Taxes Management Act 1970 |
-| MTD requirement | All VAT-registered from April 2022; ITSA for sole traders £50k+ from April 2026 |
+| MTD VAT | In force for ALL VAT-registered businesses (regardless of turnover) |
+| MTD ITSA | From 6 April 2026 for sole traders + landlords with gross income > £50,000 in 2024-25 |
 | Size thresholds (from 6 Apr 2025) | Micro: turnover ≤£1m, assets ≤£500k, ≤10 employees; Small: turnover ≤£15m, assets ≤£7.5m, ≤50 employees |
+
+### 3-Year Thresholds at a Glance
+
+| Item | 2024-25 | 2025-26 | 2026-27 |
+|---|---|---|---|
+| VAT registration threshold | £90,000 (from 1 Apr 2024) | £90,000 | £90,000 |
+| VAT deregistration threshold | £88,000 (from 1 Apr 2024) | £88,000 | £88,000 |
+| MTD VAT | All VAT-registered | All VAT-registered | All VAT-registered |
+| MTD ITSA — Phase 1 (>£50k) | Not yet in force | Not yet in force | **Mandatory from 6 April 2026** (quarterly updates via compatible software) |
+| MTD ITSA — Phase 2 (>£30k) | n/a | n/a | From 6 April 2027 (out of scope window) |
+| Cash basis for sole traders / partnerships | Default (no income cap; election out by formal election) | Default | Default |
+| Basis period reform | Transitional year already completed; tax-year basis from 2024-25 | Clean tax-year basis — no transitional adjustments | Clean tax-year basis — no transitional adjustments |
+| Small company (Companies Act) | Turnover ≤ £10.2m | **Turnover ≤ £15m** (from 6 Apr 2025), BS ≤ £7.5m, ≤50 employees | Turnover ≤ £15m, BS ≤ £7.5m, ≤50 employees |
+| Micro-entity (FRS 105) | Turnover ≤ £632k | **Turnover ≤ £1m** (from 6 Apr 2025), BS ≤ £500k, ≤10 employees | Turnover ≤ £1m, BS ≤ £500k, ≤10 employees |
 
 ---
 
@@ -167,7 +188,7 @@ UK practice uses 4-digit nominal codes. Ranges below follow the Sage/Xero/QuickB
 
 | Criterion | Cash Basis (Sole Traders) | Accruals Basis |
 |---|---|---|
-| Eligibility | Turnover ≤ £150,000 (from 2024/25 — previously £300k for ITTOIA) | All entities; mandatory for companies |
+| Eligibility | Default for sole traders & partnerships from 2024-25 (no income cap since reform); election out by formal election | All entities; mandatory for companies |
 | Income recognised | When cash received | When earned (invoice date) |
 | Expenses recognised | When cash paid | When incurred |
 | Debtors / Creditors | Not used | Required |
@@ -394,11 +415,21 @@ SHAREHOLDERS' FUNDS                                xxx
 
 ### Cash Basis for Sole Traders
 
-From 2024/25, sole traders with turnover ≤ £150,000 may use the cash basis. Under cash basis:
+From 2024-25 onwards, cash basis is the **default** for sole traders and partnerships, with **no income cap** following the reform. Taxpayers may elect out via a formal election to use the accruals basis. Under cash basis:
 - No debtors/creditors accounting
 - No depreciation (capital items expensed — except cars)
 - Interest expense capped at £500
 - Loss relief restricted to current trade only
+
+### MTD ITSA — From 6 April 2026
+
+Sole traders and landlords with **gross income > £50,000 in 2024-25** are mandated into MTD ITSA from **6 April 2026**. This is the largest bookkeeping change in the 3-year window:
+- Quarterly updates (digital records of income and expenses) submitted via MTD-compatible software
+- End-of-period statement and final declaration replace the traditional SA return for in-scope taxpayers
+- Digital record-keeping requirement — paper ledgers no longer sufficient for in-scope businesses
+- Phase 2 (>£30,000) follows from 6 April 2027
+
+Bookkeeping software choice and chart-of-accounts mapping should be MTD-ITSA-ready for any client expected to cross the £50,000 threshold for 2024-25.
 
 ---
 

@@ -1,17 +1,21 @@
 ---
 name: uk-self-employment-sa103
 description: >
-  Use this skill whenever asked about UK self-employment income for sole traders filing SA103S (short) or SA103F (full) as part of Self Assessment. Trigger on phrases like "self-employment income", "SA103", "trading income", "sole trader tax", "allowable expenses UK", "capital allowances UK", "trading allowance", "basis period", "simplified expenses", "Class 4 NIC", "loss relief self-employed", or any question about computing self-employment profits for a UK sole trader. Covers trading income computation, allowable expenses, capital allowances (AIA, WDA, FYA), simplified expenses, the trading allowance, basis period reform, loss relief, and Class 4 NIC interaction. ALWAYS read this skill before touching any UK self-employment work.
-version: 2.0
+  Use this skill whenever asked about UK self-employment income for sole traders filing SA103S (short) or SA103F (full) as part of Self Assessment. Trigger on phrases like "self-employment income", "SA103", "trading income", "sole trader tax", "allowable expenses UK", "capital allowances UK", "trading allowance", "basis period", "tax year basis", "simplified expenses", "Class 4 NIC", "Class 2 abolished", "MTD ITSA", "Making Tax Digital", "April 2026 sole trader", "loss relief self-employed", or any question about computing self-employment profits for a UK sole trader. Covers trading income computation, allowable expenses, capital allowances (AIA, WDA, FYA), simplified expenses, the trading allowance, the completed basis period reform, the MTD ITSA three-phase rollout from April 2026, loss relief, and Class 4 NIC interaction (including the post-2024 rate cut and Class 2 abolition). ALWAYS read this skill before touching any UK self-employment work.
+version: 3.0
 jurisdiction: GB
-tax_year: 2024-25
+tax_year: 2025-26
+prior_year: 2024-25
+forward_year: 2026-27
 category: international
 depends_on:
   - income-tax-workflow-base
 verified_by: pending
 ---
 
-# UK Self-Employment (SA103) -- Sole Trader Skill v2.0
+# UK Self-Employment (SA103) -- Sole Trader Skill v3.0
+
+**Three-year scope:** Prior 2024-25 | Current 2025-26 | From April 2026 (2026-27)
 
 ---
 
@@ -22,38 +26,74 @@ verified_by: pending
 | Country | United Kingdom (England, Wales, Scotland, Northern Ireland) |
 | Tax | Income Tax on trading profits + Class 4 NIC |
 | Currency | GBP only |
-| Tax year | 6 April 2024 -- 5 April 2025 |
+| Current tax year | 6 April 2025 -- 5 April 2026 (2025-26) |
 | Primary legislation | Income Tax (Trading and Other Income) Act 2005 (ITTOIA 2005); Capital Allowances Act 2001 (CAA 2001) |
-| Supporting legislation | Finance Act 2024 (basis period reform); Social Security Contributions and Benefits Act 1992 |
+| Supporting legislation | Finance Act 2024 (basis period reform completion, Class 2 abolition, Class 4 cut); Finance (No.2) Act 2023 (MTD ITSA powers); Social Security Contributions and Benefits Act 1992 |
 | Tax authority | HM Revenue & Customs (HMRC) |
-| Filing portal | HMRC Self Assessment Online |
-| Filing deadline (online) | 31 January 2026 |
-| Filing deadline (paper) | 31 October 2025 |
+| Filing portal | HMRC Self Assessment Online (MTD ITSA quarterly portal from April 2026 for mandated traders) |
+| Filing deadline (2025-26, online) | 31 January 2027 |
+| Filing deadline (2025-26, paper) | 31 October 2026 |
 | Contributor | Open Accountants Community |
 | Validated by | Pending -- requires sign-off by a UK-qualified accountant (ACA/ACCA/CTA) |
-| Skill version | 2.0 |
+| Skill version | 3.0 |
 
-### Key Thresholds [T1]
+### MTD ITSA Timeline -- The Biggest 2026-27 Change [T1]
 
-| Item | Value |
-|---|---|
-| SA103S (short form) | Turnover below GBP 90,000 |
-| SA103F (full form) | Turnover GBP 90,000+ |
-| Trading allowance | GBP 1,000 (alternative to actual expenses) |
-| AIA (Annual Investment Allowance) | GBP 1,000,000 |
-| Cash basis | Default from 2024/25 (no upper limit) |
-| Class 4 NIC lower profits limit | GBP 12,570 |
-| Class 4 NIC upper profits limit | GBP 50,270 |
+Making Tax Digital for Income Tax Self Assessment (MTD ITSA) phases in mandatory quarterly digital updates for sole traders and landlords. Three thresholds, three start dates -- assessed on gross income (turnover + gross rental income), NOT net profit.
 
-### Class 4 NIC Rates (2024/25) [T1]
+| Phase | Mandation date | Gross income threshold | Test year (look-back) | What changes |
+|---|---|---|---|---|
+| Phase 1 | 6 April 2026 | > GBP 50,000 | Assessed on 2024-25 SA103/SA105 | Mandatory quarterly updates + year-end finalisation; MTD-compatible software required |
+| Phase 2 | 6 April 2027 | > GBP 30,000 | Assessed on 2025-26 SA103/SA105 | Same rules extend to more traders |
+| Phase 3 | 6 April 2028 | > GBP 20,000 | Assessed on 2026-27 SA103/SA105 | Smaller traders brought in |
+
+**Critical points:**
+- Threshold is gross income (turnover), NOT profit. A trader with GBP 60,000 turnover and GBP 5,000 profit IS in Phase 1.
+- Combined gross income across self-employment AND property is aggregated for the threshold test.
+- Phase 1 mandation in April 2026 is based on income reported in the 2024-25 return (filed by 31 Jan 2026). HMRC will notify mandated traders during 2025-26.
+- Quarterly updates: 5 Aug, 5 Nov, 5 Feb, 5 May (standard quarters). End-of-period statement + final declaration replaces the SA103 line items but the overall liability process continues.
+- Penalty regime: points-based late submission penalties under FA 2021 Sch 24/25 apply once mandated.
+- Below threshold or out-of-scope traders continue with annual SA103 as before.
+
+### Key Thresholds -- 3-Year Comparison [T1]
+
+| Item | 2024-25 (Prior) | 2025-26 (Current) | 2026-27 (From April 2026) |
+|---|---|---|---|
+| SA103S vs SA103F cutoff | Turnover GBP 90,000 | Turnover GBP 90,000 | Turnover GBP 90,000 (MTD finalisation for mandated traders) |
+| Trading allowance | GBP 1,000 (frozen) | GBP 1,000 (frozen) | GBP 1,000 (frozen) |
+| AIA (Annual Investment Allowance) | GBP 1,000,000 | GBP 1,000,000 | GBP 1,000,000 |
+| Cash basis | Default (no upper limit; basis period reform complete) | Default | Default (continues under MTD) |
+| Accruals basis | By election | By election | By election |
+| Personal allowance | GBP 12,570 (frozen) | GBP 12,570 (frozen) | GBP 12,570 (frozen) |
+| Basic rate band | To GBP 50,270 | To GBP 50,270 | To GBP 50,270 |
+| Class 4 LPL | GBP 12,570 | GBP 12,570 | GBP 12,570 |
+| Class 4 UPL | GBP 50,270 | GBP 50,270 | GBP 50,270 |
+| Class 4 main rate | 6% (cut from 9% on 6 Apr 2024) | 6% | 6% |
+| Class 4 additional rate | 2% | 2% | 2% |
+| Class 2 NIC | Abolished from 6 Apr 2024 (voluntary only when profit < SPT) | Voluntary only | Voluntary only |
+| Class 2 voluntary weekly rate | GBP 3.45 | GBP 3.50 (illustrative; HMRC sets annually) | TBC |
+| Small Profits Threshold (SPT, for voluntary Class 2 / NI credits) | GBP 6,725 | GBP 6,725 | GBP 6,725 |
+| MTD ITSA mandate | Not yet | Notification year (HMRC writes to GBP 50k+ traders) | Phase 1 LIVE for gross income > GBP 50k |
+
+### Class 4 NIC Rates -- Applies All 3 Years [T1]
+
+Post-6-April-2024 rate cut (Finance Act 2024) is now embedded. No further rate changes announced through 2026-27.
 
 | Band | Rate |
 |---|---|
 | Below GBP 12,570 | 0% |
-| GBP 12,570 -- GBP 50,270 | 6% |
-| Above GBP 50,270 | 2% |
+| GBP 12,570 -- GBP 50,270 | 6% (main rate) |
+| Above GBP 50,270 | 2% (additional rate) |
 
-### Simplified Expenses Rates [T1]
+### Class 2 NIC -- Abolished but Optionally Voluntary [T1]
+
+- **Compulsory Class 2 ABOLISHED from 6 April 2024.** Self-employed with profits at or above the Lower Profits Threshold (GBP 12,570) receive Class 2 NI credit treated as paid without payment (since 2022-23). No Class 2 box on the SA103 from 2024-25 onwards for these traders.
+- **Voluntary Class 2 still available** when profits are below the Small Profits Threshold (SPT) of GBP 6,725 and the trader wishes to protect State Pension and contributory benefit entitlement. Paid through Self Assessment.
+- Applies identically across 2024-25, 2025-26, and 2026-27.
+
+### Simplified Expenses Rates -- Applies All 3 Years [T1]
+
+(Frozen rates; HMRC has not announced changes.)
 
 | Category | Rate |
 |---|---|
@@ -68,12 +108,13 @@ verified_by: pending
 
 | Ambiguity | Default |
 |---|---|
-| Unknown accounting basis | Cash basis (default from 2024/25) |
+| Unknown accounting basis | Cash basis (default from 2024-25 onwards) |
 | Unknown business-use % (vehicle, phone, home) | 0% deduction |
 | Unknown whether expense is capital or revenue | Capital (claim via AIA, not revenue expense) |
 | Unknown expense category | Not deductible |
 | Unknown entertainment purpose | Not deductible (entertainment is always blocked) |
 | Unknown mixed-use proportion | 0% business |
+| Unknown MTD ITSA status (2026-27 prep) | Check 2024-25 gross income > GBP 50k -- if yes, assume Phase 1 mandated |
 
 ---
 
@@ -83,9 +124,9 @@ verified_by: pending
 
 **Minimum viable** -- bank statement for the full tax year (6 April to 5 April) in CSV, PDF, or pasted text, plus confirmation of whether the trade uses cash basis or accruals.
 
-**Recommended** -- all sales invoices, purchase invoices/receipts, mileage log, home office hours log, prior year SA103.
+**Recommended** -- all sales invoices, purchase invoices/receipts, mileage log, home office hours log, prior year SA103. For 2026-27: confirmation of MTD ITSA mandation status and software in use.
 
-**Ideal** -- complete bookkeeping records, asset register, prior year losses memo, VAT return (if registered).
+**Ideal** -- complete bookkeeping records, asset register, prior year losses memo, VAT return (if registered), MTD-compatible software access (Xero, FreeAgent, QuickBooks, etc.) for mandated traders.
 
 ### Refusal Catalogue
 
@@ -97,11 +138,15 @@ verified_by: pending
 
 **R-UK-SE-4 -- Non-resident traders.** "Non-resident sole traders have different UK tax obligations. Escalate."
 
-**R-UK-SE-5 -- Overlap relief pre-reform.** "Complex overlap relief calculations from pre-2024/25 basis period rules require specialist computation. Escalate."
+**R-UK-SE-5 -- Overlap relief pre-reform residue.** "Basis period reform completed 5 April 2024. Any residual overlap relief carried into 2024-25 onwards (where not used in 2023-24 transition) is a specialist computation. Escalate."
+
+**R-UK-SE-6 -- MTD ITSA software configuration.** "This skill explains MTD ITSA rules and timing. Selecting, configuring, or operating MTD-compatible software for quarterly submissions is out of scope."
 
 ---
 
 ## Section 3 -- Transaction Pattern Library
+
+(Unchanged across the three years -- the box structure of SA103 carries through to MTD ITSA quarterly categories.)
 
 ### 3.1 Income Patterns (Credits on Bank Statement)
 
@@ -115,7 +160,7 @@ verified_by: pending
 | HMRC REPAYMENT, TAX REFUND | EXCLUDE | Not trading income | Tax refund -- not taxable as trade income |
 | INTEREST, SAVINGS INTEREST | EXCLUDE from SA103 | Savings income | Goes to SA100 savings section |
 | DIVIDEND | EXCLUDE from SA103 | Dividend income | Goes to SA100 dividend section |
-| GRANT, GOVERNMENT GRANT, BOUNCE BACK LOAN | Check | May be taxable | COVID grants generally taxable. Loan principal not income. |
+| GRANT, GOVERNMENT GRANT, BOUNCE BACK LOAN | Check | May be taxable | Trade-related grants generally taxable. Loan principal not income. |
 | INTERNAL TRANSFER, OWN ACCOUNT | EXCLUDE | Not income | Transfer between own accounts |
 
 ### 3.2 Expense Patterns (Debits on Bank Statement)
@@ -138,7 +183,8 @@ verified_by: pending
 | FUEL, PETROL, DIESEL, BP, SHELL | Box 13 | T2 | If using actual costs: business % only. If simplified: use mileage rate instead. |
 | CAR INSURANCE, MOT, SERVICE | Box 13 | T2 | If using mileage rate: NOT separately deductible. If actual costs: business % only. |
 | PARKING, NCP | Box 13 | T1 | Business parking -- deductible even if using mileage rate |
-| ACCOUNTANT, BOOKKEEPER, ACCOUNTING FEE | Box 20 (Professional fees) | T1 | Fully deductible |
+| ACCOUNTANT, BOOKKEEPER, ACCOUNTING FEE | Box 20 (Professional fees) | T1 | Fully deductible (includes MTD software costs) |
+| MTD SOFTWARE (XERO, FREEAGENT, QUICKBOOKS subscription) | Box 22 | T1 | Fully deductible -- becomes essentially mandatory for 2026-27 Phase 1 traders |
 | SOLICITOR, LEGAL FEE | Box 20 | T1 | Deductible if business-related |
 | BANK CHARGES, CARD FEE | Box 18 (Bank charges) | T1 | Fully deductible for business account |
 | STRIPE FEE, PAYPAL FEE, GOCARDLESS FEE | Box 18 | T1 | Transaction fees -- fully deductible |
@@ -157,7 +203,7 @@ verified_by: pending
 
 | Pattern | Treatment | Notes |
 |---|---|---|
-| XERO, QUICKBOOKS, FREEAGENT, SAGE | Box 22 -- fully deductible | Accounting software |
+| XERO, QUICKBOOKS, FREEAGENT, SAGE | Box 22 -- fully deductible | Accounting software (MTD-compatible from April 2026) |
 | CANVA, FIGMA, MIRO, NOTION | Box 22 -- fully deductible | Business tools |
 | GITHUB, AWS, HEROKU, DIGITAL OCEAN | Box 22 -- fully deductible | Developer tools/hosting |
 | ZOOM, GOOGLE WORKSPACE, MICROSOFT 365 | Box 22 -- fully deductible | Communication/productivity |
@@ -170,7 +216,7 @@ verified_by: pending
 |---|---|---|
 | TRANSFER OWN ACCOUNT, SAVINGS | EXCLUDE | Internal movement |
 | INVESTMENT, SHARES, ISA | EXCLUDE | Investment, not trade |
-| RENT RECEIVED | EXCLUDE from SA103 | Property income -- SA105 |
+| RENT RECEIVED | EXCLUDE from SA103 | Property income -- SA105 (aggregates with SE for MTD threshold) |
 | CHILD BENEFIT, UNIVERSAL CREDIT | EXCLUDE | Not trading income |
 | CASH WITHDRAWAL, ATM | T2 -- ask | Default exclude. Ask what cash was for. |
 
@@ -178,9 +224,11 @@ verified_by: pending
 
 ## Section 4 -- Worked Examples
 
-### Example 1 -- Standard Sole Trader (IT Freelancer)
+### Example 1 -- Standard Sole Trader (IT Freelancer), 2025-26
 
-**Input:** Turnover GBP 52,000. Actual expenses: office rent GBP 6,000, software GBP 1,200, accountant GBP 800, phone (50% business) GBP 600, train travel GBP 1,500, laptop GBP 1,300. Cash basis. 8,000 business miles (mileage rate).
+**Year:** 2025-26 (current). Tax-year basis (basis period reform complete).
+
+**Input:** Turnover GBP 52,000. Actual expenses: office rent GBP 6,000, software (incl. Xero) GBP 1,200, accountant GBP 800, phone (50% business) GBP 600, train travel GBP 1,500, laptop GBP 1,300. Cash basis. 8,000 business miles (mileage rate).
 
 **Computation:**
 - Turnover: GBP 52,000
@@ -190,8 +238,26 @@ verified_by: pending
 - Total deductions: 9,800 + 3,600 + 1,300 = GBP 14,700
 - Taxable profit: 52,000 - 14,700 = GBP 37,300
 - Class 4 NIC: (37,300 - 12,570) x 6% = GBP 1,483.80
+- Class 2: NONE (abolished; profit > GBP 12,570 gives credit-as-paid)
+- **MTD ITSA flag:** 2024-25 turnover was GBP 48,000 (below GBP 50k) -- not in Phase 1 for 2026-27. Re-test annually.
+
+### Example 1B -- Same Trader, 2026-27 (MTD Phase 1 Mandated)
+
+**Year:** 2026-27. Same trader, but 2024-25 turnover was GBP 62,000 (above the GBP 50,000 Phase 1 threshold). HMRC notified trader during 2025-26.
+
+**Mechanics now:**
+- Trader uses MTD-compatible software (e.g., FreeAgent) and submits four quarterly updates:
+  - Q1: 6 Apr - 5 Jul 2026 → due 5 Aug 2026
+  - Q2: 6 Jul - 5 Oct 2026 → due 5 Nov 2026
+  - Q3: 6 Oct 2026 - 5 Jan 2027 → due 5 Feb 2027
+  - Q4: 6 Jan - 5 Apr 2027 → due 5 May 2027
+- End-of-period statement (EOPS) and final declaration replace SA103 line items; tax computation, Class 4, and SA100 finalisation continue on the same timeline (31 Jan 2028 for 2026-27).
+- Rates unchanged: 6% / 2% Class 4 bands; trading allowance GBP 1,000.
+- Late submission point-based penalties under FA 2021 apply per missed quarterly update.
 
 ### Example 2 -- Trading Allowance vs Actual Expenses
+
+(Applies identically in 2024-25, 2025-26, and 2026-27 -- allowance frozen at GBP 1,000.)
 
 **Input:** Side income GBP 4,000 from occasional consulting. Actual expenses GBP 700.
 
@@ -199,14 +265,19 @@ verified_by: pending
 - Option A (actual): 4,000 - 700 = GBP 3,300 profit
 - Option B (trading allowance): 4,000 - 1,000 = GBP 3,000 profit
 - Trading allowance is more beneficial. Use GBP 1,000 deduction.
+- MTD: gross income GBP 4,000 is below all phase thresholds -- not mandated.
 
 ### Example 3 -- Entertainment Blocked
+
+(Unchanged across years.)
 
 **Input:** GBP 500 claimed for client dinner at restaurant.
 
 **Classification:** NOT deductible. Client entertainment is blocked by ITTOIA 2005, s45. Remove from expenses. Staff entertainment (Christmas party, team meals) may be deductible -- but client-facing entertainment never is.
 
 ### Example 4 -- Home Office (Simplified vs Actual)
+
+(Unchanged across years.)
 
 **Input:** Works from home 130 hours/month for 11 months. Alternatively, has a dedicated room (1 of 5 rooms). Annual household costs: rent GBP 12,000, utilities GBP 2,400, broadband GBP 480.
 
@@ -216,6 +287,18 @@ verified_by: pending
 - Actual method is significantly more beneficial in this case.
 - [T2] Flag: confirm dedicated room used exclusively for business during working hours.
 
+### Example 5 -- Voluntary Class 2 (Low Profits, Pension Credit)
+
+**Year:** 2025-26. Applies identically 2024-25 and 2026-27.
+
+**Input:** Part-time sole trader profit GBP 4,200 (below SPT GBP 6,725). Wants to preserve State Pension qualifying year.
+
+**Computation:**
+- Class 4: GBP 0 (profit below GBP 12,570)
+- Compulsory Class 2: GBP 0 (abolished 6 Apr 2024)
+- Voluntary Class 2: ~52 x GBP 3.50 ≈ GBP 182 (illustrative weekly rate; check HMRC published rate for the year)
+- Tick the voluntary Class 2 box on SA103. Paid through Self Assessment.
+
 ---
 
 ## Section 5 -- Tier 1 Rules (When Data Is Clear)
@@ -224,7 +307,7 @@ verified_by: pending
 
 **Legislation:** ITTOIA 2005, Part 2
 
-All income from the trade is taxable. Cash basis (default from 2024/25): income recognised when received. Accruals: when earned.
+All income from the trade is taxable. Cash basis is the default from 2024-25 (basis period reform completed); accruals available by election. Income recognised when received (cash) or when earned (accruals).
 
 ### 5.2 Wholly and Exclusively Test [T1]
 
@@ -238,33 +321,47 @@ An expense is deductible only if incurred wholly and exclusively for the purpose
 
 | Allowance | Rate | Eligible Assets |
 |---|---|---|
-| AIA | 100% | Most plant and machinery (NOT cars) |
+| AIA | 100% (to GBP 1m) | Most plant and machinery (NOT cars) |
 | Main rate WDA | 18% reducing balance | Cars 1-50 g/km CO2, assets exceeding AIA |
 | Special rate WDA | 6% reducing balance | Cars >50 g/km CO2, integral features, long-life assets |
 | Zero-emission car FYA | 100% | New cars with 0 g/km CO2 |
 
-Cars are NEVER eligible for AIA. Always use WDA pools or FYA (if zero-emission).
+Cars are NEVER eligible for AIA. Always use WDA pools or FYA (if zero-emission). Rates unchanged across 2024-25, 2025-26, 2026-27.
 
-### 5.4 Loss Relief [T1]
+### 5.4 Basis Period Reform -- COMPLETED [T1]
+
+**Legislation:** Finance Act 2022 (introduced); Finance Act 2024 (completion).
+
+- Basis period reform completed on 5 April 2024.
+- From 2024-25 onwards, **all sole traders are on the tax-year basis** (6 April to 5 April).
+- No more "current year basis" overlap relief computations for new SE work.
+- Transition profit (computed in 2023-24) is being spread across 5 years (20% per year, 2023-24 through 2027-28). The 2025-26 return includes the third 20% instalment; the 2026-27 return includes the fourth.
+- Any unused overlap relief brought forward into 2023-24 was used or written off in the transition. Residual issues are R-UK-SE-5 (escalate).
+
+### 5.5 Loss Relief [T1]
 
 | Basis | Available Reliefs |
 |---|---|
 | Cash basis | Carry forward only (no sideways, no carry-back) |
 | Accruals | Carry forward, sideways (s64 ITA 2007), carry-back, early years (s72), terminal (s89) |
 
-Sideways relief cap: greater of GBP 50,000 or 25% of adjusted total income.
+Sideways relief cap: greater of GBP 50,000 or 25% of adjusted total income. Unchanged across the three years.
 
-### 5.5 Filing and Payment [T1]
+### 5.6 Filing and Payment -- 3-Year Schedule [T1]
 
-| Item | Date |
-|---|---|
-| Online filing deadline | 31 January 2026 |
-| Paper filing deadline | 31 October 2025 |
-| Payment of tax + Class 4 NIC | 31 January 2026 |
-| POA1 for 2025/26 | 31 January 2026 |
-| POA2 for 2025/26 | 31 July 2026 |
+| Item | 2024-25 (Prior) | 2025-26 (Current) | 2026-27 (From April 2026) |
+|---|---|---|---|
+| Paper SA filing deadline | 31 October 2025 | 31 October 2026 | 31 October 2027 (or MTD final declaration via software if mandated) |
+| Online SA filing deadline | 31 January 2026 | 31 January 2027 | 31 January 2028 |
+| Balancing payment | 31 January 2026 | 31 January 2027 | 31 January 2028 |
+| POA1 (current year) | 31 January 2026 | 31 January 2027 | 31 January 2028 |
+| POA2 (current year) | 31 July 2026 | 31 July 2027 | 31 July 2028 |
+| MTD quarterly updates | N/A | N/A (notification year for Phase 1) | Q1: 5 Aug 2026; Q2: 5 Nov 2026; Q3: 5 Feb 2027; Q4: 5 May 2027 |
+| MTD EOPS + final declaration | N/A | N/A | 31 January 2028 |
 
-### 5.6 Penalties [T1]
+### 5.7 Penalties [T1]
+
+Annual SA penalty regime (unchanged):
 
 | Offence | Penalty |
 |---|---|
@@ -276,13 +373,15 @@ Sideways relief cap: greater of GBP 50,000 or 25% of adjusted total income.
 | Late payment (6 months) | Additional 5% |
 | Late payment (12 months) | Additional 5% |
 
+MTD ITSA points-based penalty regime (from 2026-27 for mandated traders): each missed quarterly update accrues 1 point; threshold (4 points for quarterly filers) triggers GBP 200 penalty per subsequent failure. Late payment under MTD uses the FA 2021 Sch 26 percentage regime.
+
 ---
 
 ## Section 6 -- Tier 2 Catalogue (Reviewer Judgement Required)
 
 ### 6.1 Home Office [T2]
 
-**Two methods:**
+**Two methods (unchanged across years):**
 
 | Method | Deduction | Requirements |
 |---|---|---|
@@ -304,11 +403,13 @@ Parking and tolls are deductible under EITHER method.
 
 **Flag for reviewer:** Confirm method choice and business mileage/percentage.
 
-### 6.3 Basis Period Apportionment [T2]
+### 6.3 Basis Period Transition Profit Instalment [T2]
 
-From 2024/25, all traders are on tax year basis. Non-31 March/5 April year-ends require apportionment from two sets of accounts. Transition profit from 2023/24 is spread over 5 years (20%/year, 2023/24 through 2027/28).
+For 2025-26: third 20% instalment of any transition profit computed in 2023-24.
+For 2026-27: fourth 20% instalment.
+For 2027-28 (out of scope here but flag forward): fifth and final instalment.
 
-**Flag for reviewer:** Confirm apportionment calculation and transition profit instalment.
+**Flag for reviewer:** Confirm transition profit running total and instalment amount, and consider acceleration election where beneficial.
 
 ### 6.4 Loss Relief Election [T2]
 
@@ -316,12 +417,24 @@ Choice of loss relief has significant planning implications. Consider: marginal 
 
 **Flag for reviewer:** Confirm which relief(s) to claim.
 
+### 6.5 MTD ITSA Mandation Status [T2 -- New for 2025-26 / 2026-27]
+
+For any client whose 2024-25 gross income (turnover plus gross rental income) approaches or exceeds GBP 50,000:
+
+- Confirm whether HMRC has issued a mandation notice during 2025-26.
+- Confirm MTD-compatible software selection and digital records compliance from 6 April 2026.
+- Plan the quarterly cadence and assign internal review checkpoints.
+
+For 2026-27 returns: if the client crosses the GBP 30,000 line in 2025-26 reporting, Phase 2 mandation kicks in from 6 April 2027 -- prepare in advance.
+
+**Flag for reviewer:** Confirm mandation status, software choice, and quarterly update calendar.
+
 ---
 
-## Section 7 -- Excel Working Paper Template
+## Section 7 -- Excel Working Paper Template (2025-26)
 
 ```
-SA103 WORKING PAPER -- Tax Year 2024/25
+SA103 WORKING PAPER -- Tax Year 2025-26
 
 A. TURNOVER
   A1. Total sales/revenue                         ___________
@@ -350,16 +463,29 @@ D. CAPITAL ALLOWANCES
 
 E. TAXABLE PROFIT (C - D4)                         ___________
 
-F. CLASS 4 NIC
-  F1. (E - 12,570) x 6% (up to 50,270)            ___________
-  F2. (E - 50,270) x 2% (if applicable)           ___________
-  F3. Total Class 4 NIC                            ___________
+F. TRANSITION PROFIT INSTALMENT (if applicable)
+  F1. 2025-26 third 20% instalment                ___________
+
+G. CLASS 4 NIC (2025-26 rates: 6% / 2%)
+  G1. (E + F1 capped at 50,270 - 12,570) x 6%      ___________
+  G2. (E + F1 - 50,270) x 2% (if applicable)       ___________
+  G3. Total Class 4 NIC                            ___________
+
+H. CLASS 2 NIC (voluntary only)
+  H1. Voluntary Class 2 if profit < SPT GBP 6,725  ___________
+
+I. MTD ITSA STATUS (for 2026-27 planning)
+  I1. 2024-25 gross income (turnover + property)   ___________
+  I2. Above GBP 50,000? Phase 1 mandated 6 Apr 2026  Y / N
 
 REVIEWER FLAGS:
   [ ] Cash basis or accruals confirmed?
   [ ] Mileage rate or actual costs for vehicle?
   [ ] Home office method confirmed?
   [ ] All entertainment removed?
+  [ ] Transition profit instalment correctly stated?
+  [ ] MTD ITSA mandation status confirmed?
+  [ ] Voluntary Class 2 election considered if profit < SPT?
   [ ] All T2 items flagged?
 ```
 
@@ -402,15 +528,18 @@ If the client provides a bank statement but cannot answer all onboarding questio
 
 ```
 ONBOARDING QUESTIONS -- UK SELF-EMPLOYMENT
-1. Cash basis or accruals basis?
+1. Cash basis or accruals basis? (Cash is default from 2024-25)
 2. Is your turnover above or below GBP 90,000? (determines SA103S vs SA103F)
 3. Are you VAT registered? (figures should be net of VAT if so)
 4. Vehicle: mileage rate or actual costs?
 5. Home office: simplified flat rate or actual costs?
 6. Any capital purchases this year? (computers, equipment, vehicles)
 7. Any losses brought forward from prior years?
-8. Do you have any other self-employments?
-9. Accounting date (if not 31 March or 5 April)?
+8. Do you have any other self-employments or rental property? (counts toward MTD threshold)
+9. What was your 2024-25 gross income (turnover + gross rents)? (determines 2026-27 MTD Phase 1)
+10. Have you received an HMRC MTD ITSA mandation notice?
+11. Profits below GBP 6,725 -- do you want to pay voluntary Class 2 for State Pension credit?
+12. Any transition profit instalments still running from basis period reform?
 ```
 
 ---
@@ -428,11 +557,14 @@ ONBOARDING QUESTIONS -- UK SELF-EMPLOYMENT
 | Trading allowance | ITTOIA 2005, s783A |
 | Capital allowances | CAA 2001 |
 | AIA | CAA 2001, ss 38A-38B |
-| Cash basis | ITTOIA 2005, Part 2 Ch 3A |
+| Cash basis (default from 2024-25) | ITTOIA 2005, Part 2 Ch 3A as amended by FA 2024 |
 | Loss relief | ITA 2007, ss 64-90 |
-| Class 4 NIC | SSCBA 1992 |
-| Basis period reform | Finance Act 2024, ss 7-16 |
-| Filing/penalties | TMA 1970 |
+| Class 4 NIC (6%/2% post-Apr-2024) | SSCBA 1992, s15; National Insurance Contributions (Reduction in Rates) Act 2024 |
+| Class 2 abolition (compulsory) | National Insurance Contributions (Reduction in Rates) Act 2024 |
+| Basis period reform | Finance Act 2022 ss 6-7 and Sch 1; Finance Act 2024 |
+| MTD ITSA powers | Finance (No.2) Act 2017, ss 60-62; Finance Act 2021; Income Tax (Digital Requirements) Regulations 2021 (as amended) |
+| MTD ITSA penalty regime | Finance Act 2021, Schs 24-26 |
+| Filing/penalties (annual SA) | TMA 1970 |
 
 ---
 
@@ -449,6 +581,10 @@ ONBOARDING QUESTIONS -- UK SELF-EMPLOYMENT
 - NEVER include VAT-inclusive figures if VAT-registered
 - NEVER separately claim fuel/insurance when using mileage rate
 - NEVER compute profit without confirming cash or accruals basis
+- NEVER apply pre-2024-25 "current year basis" rules -- basis period reform is complete; all SE traders are on tax-year basis
+- NEVER charge compulsory Class 2 NIC for 2024-25 onwards -- it is abolished (voluntary only when profits < SPT)
+- NEVER use the pre-April-2024 Class 4 main rate of 9% for 2024-25 onwards -- the rate is 6%
+- NEVER assume a trader is outside MTD ITSA for 2026-27 without checking 2024-25 gross income against the GBP 50,000 Phase 1 threshold
 - NEVER present tax calculations as definitive -- always label as estimated
 
 ---

@@ -1,10 +1,10 @@
 ---
 name: uk-crypto-tax
 description: >
-  Use this skill whenever asked about UK cryptocurrency or digital asset taxation. Trigger on phrases like "crypto tax UK", "Bitcoin UK tax", "HMRC crypto", "cryptoassets UK", "crypto capital gains UK", "staking tax UK", "mining tax UK", "NFT tax UK", "DeFi tax UK", "SA108 crypto", "crypto CGT", "bed and breakfasting crypto", "S104 pool", "crypto loss UK", "Coinbase UK tax", "Binance UK tax", "Revolut crypto UK", "crypto income UK", "DAC8 UK", "HMRC cryptoassets manual", or any question about the income tax, capital gains tax, or reporting treatment of cryptocurrency, tokens, or digital assets for UK tax residents. Covers HMRC's Cryptoassets Manual (CRYPTO10000+), S104 pooling, same-day and 30-day matching rules, DeFi lending/staking, NFTs, mining, and SA108 reporting. ALWAYS read this skill before touching any UK crypto work.
-version: 1.0
+  Use this skill whenever asked about UK cryptocurrency or digital asset taxation. Trigger on phrases like "crypto tax UK", "Bitcoin UK tax", "HMRC crypto", "cryptoassets UK", "crypto capital gains UK", "staking tax UK", "mining tax UK", "NFT tax UK", "DeFi tax UK", "SA108 crypto", "crypto CGT", "bed and breakfasting crypto", "S104 pool", "crypto loss UK", "Coinbase UK tax", "Binance UK tax", "Revolut crypto UK", "crypto income UK", "DAC8 UK", "CARF crypto", "crypto reporting 2026", "18% 24% crypto", "HMRC cryptoassets manual", or any question about the income tax, capital gains tax, or reporting treatment of cryptocurrency, tokens, or digital assets for UK tax residents. Covers HMRC's Cryptoassets Manual (CRYPTO10000+), S104 pooling, same-day and 30-day matching rules, DeFi lending/staking, NFTs, mining, SA108 reporting, and the Crypto Asset Reporting Framework (CARF) from 2026. ALWAYS read this skill before touching any UK crypto work.
+version: 2.0
 jurisdiction: GB
-tax_year: 2025
+tax_years: [2024-25, 2025-26, 2026-27]
 category: crypto
 depends_on:
   - uk-capital-gains-sa108
@@ -12,7 +12,9 @@ depends_on:
 verified_by: pending
 ---
 
-# UK Crypto / Digital Assets Tax Skill v1.0
+# UK Crypto / Digital Assets Tax Skill v2.0
+
+Covers three UK tax years: **2024-25**, **2025-26**, and **2026-27**, including the mid-year CGT rate change on 30 October 2024 and the introduction of the Crypto Asset Reporting Framework (CARF) from April 2026.
 
 ---
 
@@ -23,21 +25,28 @@ verified_by: pending
 | Country | United Kingdom (England, Wales, Northern Ireland; Scotland has different income tax rates) |
 | Tax | Capital Gains Tax (CGT) and Income Tax on cryptoassets |
 | Currency | GBP (all values must be converted to GBP at the transaction date) |
-| Tax year | 6 April – 5 April (2025/26 = 6 Apr 2025 – 5 Apr 2026) |
-| Primary authority | HMRC Cryptoassets Manual (CRYPTO10000+); Taxation of Chargeable Gains Act 1992 (TCGA 1992); Income Tax Act 2007 (ITA 2007); Income Tax (Trading and Other Income) Act 2005 (ITTOIA 2005) |
+| Tax year | 6 April – 5 April |
+| Primary authority | HMRC Cryptoassets Manual (CRYPTO10000+); Taxation of Chargeable Gains Act 1992 (TCGA 1992); Income Tax Act 2007 (ITA 2007); Income Tax (Trading and Other Income) Act 2005 (ITTOIA 2005); Finance Act 2024 (rate change at 30 Oct 2024) |
 | Tax authority | HM Revenue & Customs (HMRC) |
 | Filing portal | HMRC Self Assessment Online / Government Gateway |
-| CGT annual exempt amount | £3,000 (2025/26) |
-| CGT rates (individuals) | 18% (basic-rate taxpayer) / 24% (higher/additional-rate taxpayer) |
-| Income tax rates (mining/staking) | 20% / 40% / 45% (England, Wales, NI) |
-| Personal allowance | £12,570 (2025/26) |
 | Cost basis method | Section 104 pooling (TCGA 1992 S104), subject to same-day and 30-day matching rules |
 | Anti-avoidance | 30-day bed-and-breakfasting rule (TCGA 1992 S106A) |
-| Reporting form | SA108 (Capital Gains Summary) supplementary to SA100 |
-| Filing deadline | 31 January following end of tax year (31 Jan 2027 for 2025/26) for online filing |
-| Exchange reporting | No mandatory exchange reporting yet; DAC8/CARF from 2026 |
+| Reporting form | SA108 (Capital Gains Summary) supplementary to SA100 — dedicated cryptoasset tick box from 2024-25 |
+| Exchange reporting | CARF first reporting in **2027** covering **2026 calendar year** transactions; DAC8-equivalent UK rules align |
 | Validated by | Pending — requires sign-off by a UK chartered accountant or tax adviser |
-| Skill version | 1.0 |
+| Skill version | 2.0 |
+
+### Three-Year Snapshot
+
+| Item | 2024-25 | 2025-26 | 2026-27 |
+|---|---|---|---|
+| CGT rate (basic-rate) | 10% pre-30 Oct 2024 / **18%** from 30 Oct 2024 | 18% | 18% |
+| CGT rate (higher/additional) | 20% pre-30 Oct 2024 / **24%** from 30 Oct 2024 | 24% | 24% |
+| Annual Exempt Amount (individuals) | £3,000 | £3,000 | £3,000 |
+| Annual Exempt Amount (trustees) | £1,500 | £1,500 | £1,500 |
+| SA108 crypto tick box | Yes (new from 2024-25) | Yes | Yes |
+| CARF reporting | Not yet | Data collection prep | **Data collection begins (calendar 2026); first reports filed 2027** |
+| Personal Allowance | £12,570 | £12,570 | £12,570 (subject to confirmation) |
 
 ### HMRC Cryptoasset Classification (CRYPTO10000+)
 
@@ -59,10 +68,13 @@ verified_by: pending
 | Unknown FMV at receipt | Use CoinGecko/CoinMarketCap daily close in GBP |
 | Unknown whether income or capital DeFi return | Income (higher rate treatment) |
 | Airdrop with no clear service performed | Income at FMV on receipt |
+| Disposal date straddles 30 Oct 2024 | Use **contract date of disposal** to allocate to pre- or post-30 Oct rate |
 
 ---
 
 ## Section 2 — Classification Rules: Capital Gains vs Income
+
+HMRC treats cryptoassets as **CGT assets by default** for individuals. This classification applies across all three tax years covered (2024-25, 2025-26, 2026-27).
 
 ### When CGT applies (most individual crypto users)
 
@@ -80,17 +92,19 @@ HMRC treats cryptoassets as property, not currency. Each disposal triggers a CGT
 
 ### When Income Tax applies
 
+Crypto received as **income** (employment, mining, staking rewards, airdrops with conditions) is taxed as miscellaneous income or trading income — income tax + NIC.
+
 | Activity | Tax Treatment | Authority |
 |---|---|---|
 | Mining (hobbyist) | Miscellaneous income at FMV when received | ITTOIA 2005 S687; CRYPTO21200 |
-| Mining (commercial/business) | Trading income; expenses deductible | ITTOIA 2005 Part 2; CRYPTO21200 |
+| Mining (commercial/business) | Trading income; expenses deductible; Class 2/4 NIC | ITTOIA 2005 Part 2; CRYPTO21200 |
 | Staking rewards | Miscellaneous income at FMV when received | CRYPTO21200 |
 | Airdrops (for service/action) | Miscellaneous income at FMV when received | CRYPTO21250 |
 | Airdrops (unsolicited, no action) | Not income on receipt; CGT on disposal from zero cost | CRYPTO21250 |
 | Employer pays salary in crypto | Employment income at FMV; PAYE/NIC applies | CRYPTO21100 |
 | DeFi yield (income returns) | Miscellaneous income or trading income | CRYPTO61200 |
 
-### Income Tax Rates (2025/26 — England, Wales, NI)
+### Income Tax Rates (England, Wales, NI) — All Three Years
 
 | Band | Taxable Income | Rate |
 |---|---|---|
@@ -99,25 +113,26 @@ HMRC treats cryptoassets as property, not currency. Each disposal triggers a CGT
 | Higher rate | £50,271 – £125,140 | 40% |
 | Additional rate | Over £125,140 | 45% |
 
-Source: Finance Act 2025 s.2; GOV.UK Income Tax rates 2025/26.
+Bands and Personal Allowance are frozen through 2027-28 under the previous Government's policy; 2026-27 figures subject to confirmation in Autumn Budget 2025. Scotland operates separate income tax bands.
 
 ---
 
-## Section 3 — Capital Gains Tax Rate Table
+## Section 3 — Capital Gains Tax Rate Table (3-Year)
 
-### CGT Rates for Cryptoassets (2025/26)
+This is the central rate reference for crypto disposals. Use it to determine which rate applies based on the **date of disposal**.
 
-| Taxpayer Status | Rate |
-|---|---|
-| Basic-rate taxpayer (gains within basic-rate band) | 18% |
-| Higher-rate / additional-rate taxpayer | 24% |
-| Trustees / personal representatives | 24% |
-| Annual exempt amount (individuals) | £3,000 |
-| Annual exempt amount (most trustees) | £1,500 |
+### CGT Rates for Cryptoassets — 3-Year View
 
-Source: TCGA 1992; GOV.UK Capital Gains Tax rates and allowances (updated for 2025/26).
+| Tax Year | Period | Basic-rate (gains in basic band) | Higher / Additional / Trustees | Annual Exempt Amount |
+|---|---|---|---|---|
+| **2024-25** | 6 Apr 2024 – **29 Oct 2024** | **10%** | **20%** | £3,000 |
+| **2024-25** | **30 Oct 2024** – 5 Apr 2025 | **18%** | **24%** | (shared £3,000) |
+| **2025-26** | 6 Apr 2025 – 5 Apr 2026 | **18%** | **24%** | £3,000 |
+| **2026-27** | 6 Apr 2026 – 5 Apr 2027 | **18%** | **24%** | £3,000 |
 
-**Note:** Prior to 30 October 2024, rates were 10%/20%. For 2024/25, the year was split: 10%/20% (6 Apr – 29 Oct 2024) and 18%/24% (30 Oct 2024 – 5 Apr 2025). For 2025/26 onwards, the full year is 18%/24%.
+Authority: Finance Act 2024 (Autumn 2024) increased the main rates from 10%/20% to 18%/24% with effect from **30 October 2024**. The 2024-25 tax year is therefore split: disposals on or before 29 October 2024 use the old rates; disposals on or after 30 October 2024 use the new rates. From 2025-26 onwards the full year uses 18%/24%.
+
+The Annual Exempt Amount of £3,000 is a **single** annual allowance per individual — it is not split across the two halves of 2024-25. Apply it once against total chargeable gains for the year.
 
 ### CGT Computation
 
@@ -133,12 +148,21 @@ Total gains for the year
   LESS: Annual exempt amount (£3,000)
   = Taxable gains
 
-Tax = Taxable gains × 18% or 24%
+For 2024-25 only: allocate taxable gains between pre- and post-30 Oct disposals
+  in proportion to gross gains in each window, then apply the applicable rate.
+
+Tax = Taxable gains × applicable rate(s) per table above
 ```
+
+### SA108 Reporting from 2024-25
+
+HMRC introduced a **dedicated "crypto asset" tick box on SA108 from the 2024-25 tax year**. Where any portion of the year's disposals are cryptoassets, the box must be ticked, and crypto disposals must be separately identified in the supporting computations. This obligation continues in 2025-26 and 2026-27.
 
 ---
 
 ## Section 4 — Cost Basis: Section 104 Pooling and Matching Rules
+
+(Unchanged across all three years.)
 
 HMRC requires a specific matching order for cryptoasset disposals (CRYPTO22200):
 
@@ -162,7 +186,7 @@ Cost of disposal = Tokens disposed × Pool cost per token
 | Permitted Method | Status |
 |---|---|
 | S104 pooling (weighted average) | MANDATORY for most disposals |
-| FIFO | NOT permitted (except for specific share identification — not applicable to crypto) |
+| FIFO | NOT permitted |
 | LIFO | NOT permitted |
 | Specific identification | NOT permitted for crypto |
 
@@ -177,9 +201,9 @@ Cost of disposal = Tokens disposed × Pool cost per token
 
 ## Section 5 — DeFi, Staking, Mining, and Airdrops
 
-### 5.1 DeFi Lending (CRYPTO61000+)
+(Substantively unchanged across the three years. Watch for outcomes of the ongoing DeFi consultation.)
 
-HMRC published DeFi guidance in February 2022 (Cryptoassets Manual CRYPTO61000 onwards) and consulted on reforms in August 2022.
+### 5.1 DeFi Lending (CRYPTO61000+)
 
 | DeFi Activity | Tax Treatment | Key Question |
 |---|---|---|
@@ -189,7 +213,7 @@ HMRC published DeFi guidance in February 2022 (Cryptoassets Manual CRYPTO61000 o
 | Withdrawal from protocol | Disposal of LP tokens, reacquisition of underlying | FMV at withdrawal |
 | Impermanent loss | Crystallised on withdrawal — reflected in gain/loss on LP token disposal | No separate relief |
 
-**Government consultation (2022):** Proposed elective regime to disregard DeFi disposals for CGT until economic disposal. Not yet enacted as of 2025/26 — current rules apply.
+**DeFi consultation status:** A 2022/2023 HMRC consultation proposed an elective regime to disregard DeFi lending/staking disposals for CGT until economic disposal. No legislation enacted by 2025-26; status to be re-checked for 2026-27.
 
 ### 5.2 Staking
 
@@ -197,7 +221,7 @@ HMRC published DeFi guidance in February 2022 (Cryptoassets Manual CRYPTO61000 o
 |---|---|
 | Proof-of-stake validation rewards | Miscellaneous income at FMV when received (CRYPTO21200) |
 | Cost basis of staking reward | FMV at receipt date (becomes acquisition cost for CGT) |
-| Subsequent sale of staking reward | CGT on gain from FMV cost basis |
+| Subsequent sale of staking reward | CGT on gain from FMV cost basis (rate per Section 3 table) |
 | Staking-as-a-service provider | Trading income; business expenses deductible |
 
 ### 5.3 Mining
@@ -229,17 +253,19 @@ HMRC published DeFi guidance in February 2022 (Cryptoassets Manual CRYPTO61000 o
 
 ## Section 6 — NFT Treatment
 
+(Unchanged across the three years; rate changes per Section 3 apply.)
+
 | Event | Tax Treatment |
 |---|---|
 | Purchase of NFT (collector) | Acquisition — record cost basis including gas fees |
-| Sale of NFT (collector) | CGT on disposal (proceeds minus S104 pool cost of NFT) |
+| Sale of NFT (collector) | CGT on disposal (proceeds minus pool cost of NFT) at applicable rate |
 | Creation and primary sale of NFT (artist) | Trading income if business; miscellaneous income if one-off |
 | Royalty income from secondary sales | Miscellaneous income at FMV on receipt |
 | NFT-for-NFT swap | Disposal of both NFTs; each at FMV |
 | NFT becomes worthless | Negligible value claim possible (TCGA 1992 S24(2)) — triggers loss |
 | VAT on NFT | Potentially subject to VAT at 20% if seller is VAT-registered (digitally supplied service) |
 
-HMRC treats NFTs the same as any other cryptoasset for CGT purposes (CRYPTO22100). The same S104 pooling and matching rules apply per individual NFT (each unique NFT is its own asset — no pooling between different NFTs).
+HMRC treats NFTs the same as any other cryptoasset for CGT purposes (CRYPTO22100). Each unique NFT is its own asset — no pooling between different NFTs.
 
 ---
 
@@ -250,34 +276,58 @@ HMRC treats NFTs the same as any other cryptoasset for CGT purposes (CRYPTO22100
 | Form | Purpose |
 |---|---|
 | SA100 | Main Self Assessment tax return |
-| SA108 | Capital Gains Summary supplementary page |
+| SA108 | Capital Gains Summary supplementary page — with cryptoasset tick box from 2024-25 |
 
 ### 7.2 When SA108 is required
 
-You must file SA108 if any of the following apply (2025/26):
+You must file SA108 if any of the following apply (all three years):
 - Total disposal proceeds from all assets exceed £50,000
 - Chargeable gains before losses exceed £3,000 (the annual exempt amount)
 - You wish to claim an allowable capital loss
 - Losses brought forward are being used
+- You are reporting any cryptoasset disposal (tick the dedicated cryptoasset box from 2024-25 onwards)
 
 ### 7.3 Key Deadlines
 
-| Deadline | Date |
+| Tax Year | End of Year | Paper SA100 | Online SA100 / Payment |
+|---|---|---|---|
+| 2024-25 | 5 Apr 2025 | 31 Oct 2025 | 31 Jan 2026 |
+| 2025-26 | 5 Apr 2026 | 31 Oct 2026 | 31 Jan 2027 |
+| 2026-27 | 5 Apr 2027 | 31 Oct 2027 | 31 Jan 2028 |
+
+Payments on account: 31 January and 31 July each year.
+
+### 7.4 From April 2026 — Crypto Asset Reporting Framework (CARF)
+
+**The major change for 2026-27 and beyond.**
+
+The UK is implementing the **OECD Crypto Asset Reporting Framework (CARF)**, the international equivalent of the EU's DAC8 regime. Key timeline and effects:
+
+| Milestone | Date | Effect |
+|---|---|---|
+| Reporting Crypto-Asset Service Providers (RCASPs) data collection begins | **1 January 2026** | UK exchanges, custodians, brokers, and certain DeFi front-ends must collect KYC + transaction data on UK-resident users |
+| First reportable period | **Calendar year 2026** | All in-scope transactions during 2026 are reportable |
+| First report filed with HMRC | **2027** (deadline expected May 2027) | RCASPs send user-level data to HMRC |
+| HMRC information exchange with other CARF jurisdictions | From **2027** onwards | Bilateral exchange under CARF MCAA |
+
+**Practical implications for taxpayers (from April 2026):**
+
+- HMRC will receive transaction-level data on UK residents from both UK and overseas crypto platforms participating in CARF.
+- Non-disclosure risk increases sharply — voluntary disclosure under the Crypto Disclosure Facility is strongly recommended **before** the first CARF reports land in 2027.
+- Taxpayers should ensure their on-record name, address, and National Insurance number with each exchange match Self Assessment records to avoid mismatches that trigger HMRC enquiries.
+- The CARF data point set covers: identity of holder, wallet addresses (where known), fiat on/off-ramp transactions, crypto-to-crypto exchanges, transfers, and retail payments.
+
+**DAC8 (EU-equivalent) status for UK:** The UK is implementing CARF-aligned rules rather than DAC8 directly (post-Brexit). The direction and data set are equivalent; precise UK reporting thresholds and de minimis rules are being finalised in HMRC technical guidance — TBC for full 2026-27 production cycle. Watch for the final HMRC Cryptoasset Service Provider Reporting Regulations.
+
+### 7.5 Exchange Reporting Position by Year
+
+| Tax Year | Mandatory third-party reporting? |
 |---|---|
-| End of tax year 2025/26 | 5 April 2026 |
-| Paper SA100 filing deadline | 31 October 2026 |
-| Online SA100 filing deadline | 31 January 2027 |
-| Payment deadline | 31 January 2027 |
-| Payments on account | 31 January and 31 July |
+| 2024-25 | No mandatory CARF reporting yet; HMRC information powers only |
+| 2025-26 | No mandatory CARF reporting yet; preparation period |
+| 2026-27 | **Yes — CARF data collection from 1 Jan 2026, first reports to HMRC in 2027** |
 
-### 7.4 Exchange Reporting
-
-As of 2025/26, there is **no mandatory exchange reporting** obligation in the UK for crypto platforms. However:
-- **DAC8 (EU)** and **CARF (OECD)** will require crypto-asset service providers to report user transaction data to HMRC from **2026**
-- HMRC can and does issue information notices to UK exchanges under existing powers
-- Voluntary disclosure is strongly recommended
-
-### 7.5 Record-Keeping
+### 7.6 Record-Keeping
 
 | Requirement | Detail |
 |---|---|
@@ -288,6 +338,8 @@ As of 2025/26, there is **no mandatory exchange reporting** obligation in the UK
 ---
 
 ## Section 8 — Loss Offset and Carry-Forward Rules
+
+(Unchanged across the three years.)
 
 ### 8.1 Capital Losses
 
@@ -307,7 +359,13 @@ As of 2025/26, there is **no mandatory exchange reporting** obligation in the UK
 
 ### 8.3 Critical: 4-Year Loss Claim Window
 
-If you do not report a capital loss within 4 years of the end of the tax year in which it arose, the loss is permanently lost. For a loss arising in 2025/26, the deadline is 5 April 2030.
+If you do not report a capital loss within 4 years of the end of the tax year in which it arose, the loss is permanently lost.
+
+| Loss arising in | Must be reported by |
+|---|---|
+| 2024-25 | 5 Apr 2029 |
+| 2025-26 | 5 Apr 2030 |
+| 2026-27 | 5 Apr 2031 |
 
 ---
 
@@ -315,17 +373,7 @@ If you do not report a capital loss within 4 years of the end of the tax year in
 
 ### 9.1 The 30-Day Rule (TCGA 1992 S106A)
 
-If a taxpayer disposes of tokens and reacquires tokens of the **same type** within **30 days** after the disposal, the disposal is matched to the reacquisition (not the S104 pool). This prevents:
-
-- Selling to crystallise a loss and immediately rebuying
-- Selling to use the annual exempt amount and immediately rebuying
-
-| Element | Detail |
-|---|---|
-| Window | 30 calendar days after the disposal |
-| Scope | Same token type only (selling BTC and buying ETH within 30 days is fine) |
-| Effect on loss | Loss is effectively deferred — cost of reacquired tokens takes on the cost of the original disposal |
-| Workaround ("Bed and ISA") | Sell, rebuy inside a spouse's account or ISA wrapper — but HMRC may challenge if artificial |
+Unchanged across all three years. If a taxpayer disposes of tokens and reacquires tokens of the **same type** within **30 days** after the disposal, the disposal is matched to the reacquisition (not the S104 pool).
 
 ### 9.2 Same-Day Rule (TCGA 1992 S105)
 
@@ -335,74 +383,127 @@ If tokens are both acquired and disposed of on the same day, the disposal is mat
 
 The GAAR (Finance Act 2013 Part 5) may apply to artificial crypto tax avoidance arrangements.
 
+### 9.4 Date-of-Disposal Manipulation Around 30 Oct 2024
+
+For 2024-25, HMRC will scrutinise late-October 2024 disposal dates given the rate increase from 30 Oct 2024. The contract date of disposal (not settlement date) governs which rate applies. Backdating risks penalty exposure and potential GAAR application.
+
 ---
 
 ## Section 10 — Worked Examples
 
-### Example 1 — Simple BTC Sale, CGT Computation
+### Example 1 — Same Disposal Under Three Rate Regimes (Key 3-Year Example)
 
-**Input:** UK tax resident. Bought 2 BTC at £20,000 each in January 2024. Sold 1 BTC at £45,000 in August 2025. No other disposals. Exchange fees: £50 on acquisition, £75 on disposal. Basic-rate taxpayer.
+**Facts:** UK higher-rate taxpayer. S104 pool: 1 BTC at £20,000 cost. Disposes of the 1 BTC for £45,000 proceeds, £75 disposal fees. Other gains for the year: nil. We compute the CGT under four scenarios: pre- and post-30 Oct 2024 within 2024-25, then 2025-26, then 2026-27.
+
+**Common computation up to taxable gain:**
+
+```
+Proceeds                : £45,000
+Less disposal fees      : £75
+Net proceeds            : £44,925
+Less S104 pool cost     : £20,000
+Gain                    : £24,925
+Less annual exempt amt  : £3,000
+Taxable gain            : £21,925
+```
+
+**Scenario A — Disposal on 15 October 2024 (2024-25, pre-30 Oct rates):**
+```
+Rate (higher-rate)      : 20%
+CGT                     : £21,925 × 20% = £4,385.00
+```
+
+**Scenario B — Disposal on 1 December 2024 (2024-25, post-30 Oct rates):**
+```
+Rate (higher-rate)      : 24%
+CGT                     : £21,925 × 24% = £5,262.00
+Extra tax vs Scenario A : £877.00 (a ~20% increase in CGT for the same gain)
+```
+
+**Scenario C — Disposal on 1 December 2025 (2025-26):**
+```
+Rate (higher-rate)      : 24%
+CGT                     : £21,925 × 24% = £5,262.00
+(Same as Scenario B — the rate is now 24% for the whole year)
+```
+
+**Scenario D — Disposal on 1 December 2026 (2026-27):**
+```
+Rate (higher-rate)      : 24%
+CGT                     : £21,925 × 24% = £5,262.00
+(Rates unchanged from 2025-26; CARF reporting now applies to the exchange)
+```
+
+**Key takeaway:** Within 2024-25 the **date of disposal matters** — a 6-week shift from pre-30 Oct to post-30 Oct increased the tax bill on the same economic transaction by £877 (4 percentage points on £21,925). From 2025-26 onwards the rate is stable at 18%/24%.
+
+### Example 2 — 2024-25 Year Straddling Both Rate Regimes
+
+**Facts:** UK higher-rate taxpayer with two BTC disposals in 2024-25:
+- 1 BTC sold 15 Oct 2024 (pre-rate-change) — gain £10,000
+- 1 BTC sold 15 Nov 2024 (post-rate-change) — gain £15,000
+- Total gross gain £25,000. AEA £3,000.
 
 **Computation:**
+```
+Gross gains              : £25,000
+Less AEA (£3,000) allocated pro-rata to each window
+  Pre-30 Oct share       : £3,000 × (£10,000 / £25,000) = £1,200
+  Post-30 Oct share      : £3,000 × (£15,000 / £25,000) = £1,800
+
+Pre-30 Oct taxable gain  : £10,000 − £1,200 = £8,800 × 20% = £1,760
+Post-30 Oct taxable gain : £15,000 − £1,800 = £13,200 × 24% = £3,168
+
+Total CGT for 2024-25    : £4,928
+```
+
+Allocate the AEA in proportion to gains in each window (HMRC's approach in the Finance Act 2024 transitional rules — confirm against final HMRC guidance for borderline cases).
+
+### Example 3 — Simple S104 Pool, 2025-26
+
+**Facts:** UK basic-rate taxpayer. Bought 2 BTC at £20,000 each in January 2024. Sold 1 BTC at £45,000 in August 2025. Exchange fees: £50 acquisition, £75 disposal.
+
 ```
 S104 pool:
-  2 BTC acquired at £20,000 each = £40,000 + £50 fees = £40,050
-  Pool cost per BTC = £40,050 ÷ 2 = £20,025
+  2 BTC at £20,000 each = £40,000 + £50 fees = £40,050
+  Pool cost per BTC = £20,025
 
 Disposal of 1 BTC:
-  Proceeds:          £45,000
-  LESS disposal fees: £75
-  Net proceeds:      £44,925
-  LESS S104 cost:    £20,025
-  Gain:              £24,900
-
-  LESS annual exempt amount: £3,000
-  Taxable gain:       £21,900
-
-  CGT at 18% (basic-rate):  £3,942
-
-S104 pool after disposal: 1 BTC, cost £20,025
+  Net proceeds    : £45,000 − £75 = £44,925
+  S104 cost       : £20,025
+  Gain            : £24,900
+  Less AEA        : £3,000
+  Taxable gain    : £21,900
+  CGT @ 18%       : £3,942
 ```
 
-### Example 2 — 30-Day Rule Blocks Loss
+### Example 4 — 30-Day Rule Blocks Loss (2025-26)
 
-**Input:** UK tax resident. S104 pool: 5 ETH, total cost £10,000 (£2,000 per ETH). Sells 5 ETH at £1,500 each (£7,500) on 1 November 2025. Rebuys 5 ETH at £1,600 each (£8,000) on 20 November 2025 (within 30 days).
+**Facts:** UK tax resident. S104 pool: 5 ETH, total cost £10,000 (£2,000 per ETH). Sells 5 ETH at £1,500 each (£7,500) on 1 November 2025. Rebuys 5 ETH at £1,600 each (£8,000) on 20 November 2025.
 
-**Computation:**
 ```
-Without 30-day rule:
-  Proceeds: £7,500, Cost: £10,000, Loss: (£2,500)
-
 With 30-day rule (mandatory):
-  Disposal matched to 30-day reacquisition
-  Proceeds: £7,500
-  Matched cost: £8,000 (the reacquisition cost)
-  Loss: (£500)
-
-  The loss is DEFERRED — the new S104 pool now holds 5 ETH at cost £10,000
-  (£8,000 reacquisition + £2,000 excess from original pool minus matched amount)
-
-  Net effect: loss is deferred, not eliminated
+  Disposal matched to reacquisition
+  Proceeds        : £7,500
+  Matched cost    : £8,000
+  Loss            : (£500)
+  Deferred loss   : £2,000 stays in the (now-replenished) S104 pool
 ```
 
-### Example 3 — Staking Income + Subsequent CGT
+### Example 5 — Staking Income + Subsequent CGT (2026-27)
 
-**Input:** UK tax resident. Received 0.5 ETH staking rewards over 2025/26. Total FMV at each receipt: £1,800. Sold 0.5 ETH in March 2026 at £2,200. Higher-rate taxpayer.
+**Facts:** UK higher-rate taxpayer. Received 0.5 ETH staking rewards during 2026-27; FMV at each receipt totalled £1,800. Sold 0.5 ETH in March 2027 at £2,200. Exchange is a CARF-reporting RCASP — HMRC will receive matching data in 2028.
 
-**Computation:**
 ```
-Income tax on staking (miscellaneous income):
-  £1,800 × 40% (higher rate) = £720
-
-Cost basis of staked ETH: £1,800
+Income tax on staking:
+  £1,800 × 40% = £720
 
 CGT on disposal:
-  Proceeds:    £2,200
-  Cost basis:  £1,800
-  Gain:        £400
+  Proceeds   : £2,200
+  Cost basis : £1,800
+  Gain       : £400 (within £3,000 AEA — no CGT)
 
-  If within annual exempt amount (£3,000): no CGT
-  Total tax: £720 income tax only
+Total tax  : £720
+Disclosure : Tick the cryptoasset box on SA108; expect CARF data match in 2028.
 ```
 
 ---
@@ -410,14 +511,16 @@ CGT on disposal:
 ## Self-Checks
 
 - [ ] Have all disposals been identified (sells, swaps, crypto-to-crypto, payments for goods/services)?
+- [ ] For 2024-25 disposals, is the contract date confirmed and the correct pre- or post-30 Oct rate applied?
 - [ ] Have same-day and 30-day matching rules been applied before the S104 pool?
 - [ ] Is the S104 pool maintained separately for each token type?
 - [ ] Have mining/staking/airdrop receipts been included as income?
-- [ ] Has the £3,000 annual exempt amount been applied correctly?
+- [ ] Has the £3,000 annual exempt amount been applied correctly (pro-rated across windows for 2024-25 if relevant)?
 - [ ] Have losses been reported within the 4-year window?
-- [ ] Is the correct CGT rate applied (18% or 24%) based on the taxpayer's total income?
+- [ ] Is the correct CGT rate applied (10/20 or 18/24) based on disposal date and taxpayer band?
 - [ ] Are all values converted to GBP at the transaction date?
-- [ ] Has SA108 been completed if thresholds are exceeded?
+- [ ] Has SA108 been completed and the cryptoasset tick box selected (2024-25 onwards)?
+- [ ] For 2026-27: has the client been advised about CARF reporting and KYC consistency across exchanges?
 - [ ] Have DeFi transactions been analysed for beneficial ownership transfer?
 
 ---
@@ -433,12 +536,15 @@ CGT on disposal:
 - NEVER allow losses to go unreported beyond the 4-year claim window
 - NEVER treat transfers between own wallets as disposals
 - NEVER classify DeFi returns as "interest" — crypto is not money (CRYPTO61200)
+- NEVER apply the 18/24% rates to disposals before 30 October 2024 — use 10/20% pre-change
+- NEVER apply the 10/20% rates to disposals on or after 30 October 2024
+- NEVER assume CARF reporting is in force before 1 January 2026 — but ALWAYS warn clients about the 2027 first-report data match
 - NEVER present crypto tax positions as definitive — always label as estimated and flag for professional review
 
 ---
 
 ## Disclaimer
 
-This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, EA, tax attorney, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
+This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a UK chartered accountant, chartered tax adviser, or equivalent licensed practitioner) before filing or acting upon.
 
 The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
