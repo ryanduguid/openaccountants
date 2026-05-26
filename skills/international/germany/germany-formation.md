@@ -7,6 +7,8 @@ jurisdiction: DE
 category: formation
 depends_on:
   - company-formation-workflow-base
+tax_year: 2025
+verified_by: pending
 ---
 
 # Germany Company Formation Skill v1.0

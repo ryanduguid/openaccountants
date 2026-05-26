@@ -7,6 +7,8 @@ jurisdiction: GB
 category: financial-statements
 depends_on:
   - financial-statements-workflow-base
+tax_year: 2025-26
+verified_by: pending
 ---
 
 # UK Financial Statements Skill v1.0

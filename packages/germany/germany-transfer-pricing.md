@@ -7,6 +7,8 @@ jurisdiction: DE
 category: transfer-pricing
 depends_on:
   - transfer-pricing-workflow-base
+tax_year: 2025
+verified_by: pending
 ---
 
 # Germany Transfer Pricing Skill v1.0

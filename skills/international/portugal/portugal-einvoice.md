@@ -7,6 +7,8 @@ jurisdiction: PT
 category: invoicing
 depends_on:
   - einvoice-workflow-base
+tax_year: 2025
+verified_by: pending
 ---
 
 # Portugal E-Invoicing Compliance Skill v1.0

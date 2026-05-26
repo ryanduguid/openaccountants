@@ -3,6 +3,9 @@ name: pt-income-tax
 description: >
   Use this skill whenever asked about Portuguese individual income tax (IRS) for self-employed individuals (trabalhadores independentes). Trigger on phrases like "how much tax do I pay in Portugal", "IRS Portugal", "Modelo 3", "Anexo B", "Categoria B", "regime simplificado", "contabilidade organizada", "retenção na fonte", "trabalhador independente", "recibos verdes", "income tax return Portugal", "NIF", "coeficientes regime simplificado", "IRS Jovem", "adicional de solidariedade", or any question about filing or computing income tax for a self-employed or freelance client in Portugal. This skill covers the Modelo 3 + Anexo B annual return, Categoria B income, regime simplificado vs contabilidade organizada, progressive IRS brackets, adicional de solidariedade, allowable deductions, withholding (retenção na fonte), IRS Jovem, and filing deadlines. ALWAYS read this skill before touching any Portuguese income tax work.
 version: 2.0
+jurisdiction: PT
+tax_year: 2025
+verified_by: pending
 ---
 
 # Portuguese Income Tax — Trabalhador Independente (IRS Categoria B) v2.0

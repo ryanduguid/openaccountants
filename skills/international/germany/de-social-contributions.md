@@ -8,6 +8,7 @@ tax_year: 2025
 category: international
 depends_on:
   - social-contributions-workflow-base
+verified_by: pending
 ---
 
 # Germany Social Contributions (Sozialversicherung) -- Self-Employed Skill v2.0

@@ -14,6 +14,8 @@ jurisdiction: GB
 category: payroll
 depends_on:
   - payroll-workflow-base
+tax_year: 2025-26
+verified_by: pending
 ---
 
 # United Kingdom -- Payroll Skill v1.0

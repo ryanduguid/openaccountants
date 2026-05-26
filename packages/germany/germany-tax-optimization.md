@@ -12,6 +12,8 @@ version: 1.0
 jurisdiction: DE
 category: tax-optimization
 depends_on: []
+tax_year: 2025
+verified_by: pending
 ---
 
 # Germany Tax Optimization -- Self-Employed Skill v1.0

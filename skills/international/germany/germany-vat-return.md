@@ -2,6 +2,9 @@
 name: germany-vat-return
 description: Use this skill whenever asked to prepare, review, or classify transactions for a German VAT return (Umsatzsteuer-Voranmeldung / UStVA) for a self-employed individual or very small business operating under the Regelbesteuerung in Germany. Trigger on phrases like "prepare VAT return", "do the German VAT", "fill in UStVA", "create the return", "Umsatzsteuer", "Vorsteuer", or any request involving German VAT filing. Also trigger when classifying transactions for VAT purposes from bank statements, invoices, or other source data. This skill covers Germany only and only Regelbesteuerung (standard taxation). Kleinunternehmer, Organschaft, Differenzbesteuerung, partial exemption, and Ist-Versteuerung edge cases are all in the refusal catalogue. MUST be loaded alongside BOTH vat-workflow-base v0.1 or later (for workflow architecture) AND eu-vat-directive v0.1 or later (for EU directive content). ALWAYS read this skill before touching any German VAT work.
 version: 2.0
+jurisdiction: DE
+tax_year: 2025
+verified_by: pending
 ---
 
 # Germany VAT Return Skill (Umsatzsteuer-Voranmeldung / UStVA) v2.0

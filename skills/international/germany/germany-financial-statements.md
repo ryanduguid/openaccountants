@@ -7,6 +7,8 @@ jurisdiction: DE
 category: financial-statements
 depends_on:
   - financial-statements-workflow-base
+tax_year: 2025
+verified_by: pending
 ---
 
 # Germany Financial Statements Skill v1.0

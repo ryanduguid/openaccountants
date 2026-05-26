@@ -12,6 +12,8 @@ version: 1.0
 jurisdiction: GB
 category: tax-optimization
 depends_on: []
+tax_year: 2025-26
+verified_by: pending
 ---
 
 # UK Tax Optimization -- Self-Employed Skill v1.0

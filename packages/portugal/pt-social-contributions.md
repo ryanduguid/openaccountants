@@ -2,6 +2,9 @@
 name: pt-social-contributions
 description: Use this skill whenever asked about Portuguese self-employed social contributions (contribuições para a Segurança Social). Trigger on phrases like "Segurança Social trabalhador independente", "Portuguese social contributions", "declaração trimestral SS", "contribuições independente Portugal", or any question about social contribution obligations for a self-employed client in Portugal. Covers the 21.4% rate on 70% of relevant income, quarterly declaration, and first-year exemption. ALWAYS read this skill before touching any Portugal social contributions work.
 version: 2.0
+jurisdiction: PT
+tax_year: 2025
+verified_by: pending
 ---
 
 # Portugal Social Contributions -- Self-Employed Skill v2.0

@@ -7,6 +7,8 @@ jurisdiction: PT
 category: bookkeeping
 depends_on:
   - bookkeeping-workflow-base
+tax_year: 2025
+verified_by: pending
 ---
 
 # Portugal Bookkeeping Skill v1.0

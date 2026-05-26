@@ -7,6 +7,8 @@ jurisdiction: GB
 category: transfer-pricing
 depends_on:
   - transfer-pricing-workflow-base
+tax_year: 2025-26
+verified_by: pending
 ---
 
 # UK Transfer Pricing Skill v1.0

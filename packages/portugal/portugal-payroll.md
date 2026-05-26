@@ -14,6 +14,8 @@ jurisdiction: PT
 category: payroll
 depends_on:
   - payroll-workflow-base
+tax_year: 2025
+verified_by: pending
 ---
 
 # Portugal Payroll Skill v1.0

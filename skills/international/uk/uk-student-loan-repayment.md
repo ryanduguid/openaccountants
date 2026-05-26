@@ -8,6 +8,7 @@ tax_year: 2025-26
 category: international
 depends_on:
   - income-tax-workflow-base
+verified_by: pending
 ---
 
 # UK Student Loan Repayment -- Self-Employed Skill v2.0

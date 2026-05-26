@@ -7,6 +7,8 @@ jurisdiction: DE
 category: invoicing
 depends_on:
   - einvoice-workflow-base
+tax_year: 2025
+verified_by: pending
 ---
 
 # Germany E-Invoicing -- XRechnung / ZUGFeRD Skill v1.0

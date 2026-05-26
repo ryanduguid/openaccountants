@@ -4,7 +4,7 @@ description: >
   Use this skill when advising on LEGAL tax minimization strategies for Portuguese taxpayers — individuals, freelancers (recibos verdes), and small business owners. Trigger on phrases like "reduce my tax Portugal", "tax planning", "regime simplificado", "organized accounts", "IRS optimization", "NHR", "IFICI", "social security self-employed", "IVA", "recibos verdes", "Category B", "deductions Portugal", or any question about legally minimizing Portuguese IRS or IRC. Covers entity selection, simplified vs organized regime, deduction strategies, capital allowances, loss utilization, timing, IVA optimization, social security, and red lines. ALWAYS read this skill before giving Portuguese tax optimization advice.
 version: 1.0
 jurisdiction: PT
-tax_year: 2026
+tax_year: 2025
 category: tax-optimization
 depends_on:
   - bookkeeping-workflow-base

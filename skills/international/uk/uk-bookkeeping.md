@@ -7,6 +7,8 @@ jurisdiction: GB
 category: bookkeeping
 depends_on:
   - bookkeeping-workflow-base
+tax_year: 2025-26
+verified_by: pending
 ---
 
 # UK Bookkeeping Skill v1.0

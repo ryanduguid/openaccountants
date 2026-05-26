@@ -8,6 +8,7 @@ tax_year: 2024-25
 category: international
 depends_on:
   - income-tax-workflow-base
+verified_by: pending
 ---
 
 # UK Payments on Account (POA) -- Self Assessment Skill v2.0

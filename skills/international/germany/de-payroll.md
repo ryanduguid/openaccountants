@@ -9,6 +9,7 @@ category: international
 depends_on:
   - income-tax-workflow-base
   - de-social-contributions
+verified_by: pending
 ---
 
 # Germany Payroll Tax (Lohnsteuer) -- Employee Skill v1.0

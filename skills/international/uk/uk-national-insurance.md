@@ -8,6 +8,7 @@ tax_year: 2025-26
 category: international
 depends_on:
   - social-contributions-workflow-base
+verified_by: pending
 ---
 
 # UK National Insurance (Class 2 + Class 4) -- Self-Employed Skill v2.0
