@@ -1,15 +1,18 @@
 ---
 name: id-payroll-pph21
 description: Use this skill whenever asked to calculate, review, or advise on Indonesian payroll — PPh 21 (income tax withholding), BPJS Kesehatan (health insurance), BPJS Ketenagakerjaan (JHT, JP, JKK, JKM employment social security), biaya jabatan, or PTKP thresholds. Trigger on phrases like "PPh 21", "PPh Pasal 21", "pajak penghasilan", "BPJS", "gaji Indonesia", "payroll Indonesia", "potong pajak karyawan", "TER PPh 21", "PTKP", or any Indonesia employment income tax / social security request. ALWAYS read this skill before touching any Indonesia payroll or PPh 21 work.
-version: 1.0
+version: 1.1
 jurisdiction: ID
 tax_year: 2025
 category: international
+verified_by: pending
 depends_on:
   - foundation
 ---
 
-# Indonesia Payroll — PPh 21 & BPJS Contributions Skill v1.0
+# Indonesia Payroll — PPh 21 & BPJS Contributions Skill v1.1
+
+> **2025 changes summary (v1.1 refresh):** PPh 21 monthly withholding continues under the TER system (PP 58/2023, PMK 168/2023 — Categories A/B/C by PTKP, year-end reconciliation under Article 17 brackets). From **1 July 2024**, Indonesian-citizen employees use their **16-digit NIK as NPWP**; foreign-national employees keep the 15-digit NPWP. From **1 January 2025**, all PPh 21 filings — monthly **SPT Masa PPh 21 / e-Bupot Unifikasi** and the **1721-A1 / 1721-A2** annual slips — flow through **Coretax DJP** (the legacy DJP Online e-Bupot 21/26 desktop app is being retired). See `id-einvoice-coretax` for the Coretax workflow.
 
 ---
 
