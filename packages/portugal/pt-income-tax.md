@@ -1,193 +1,198 @@
 ---
 name: pt-income-tax
 description: >
-  Use this skill whenever asked about Portuguese individual income tax (IRS) for self-employed individuals (trabalhadores independentes). Trigger on phrases like "how much tax do I pay in Portugal", "IRS Portugal", "Modelo 3", "Anexo B", "Categoria B", "regime simplificado", "contabilidade organizada", "retenção na fonte", "trabalhador independente", "recibos verdes", "income tax return Portugal", "NIF", "coeficientes regime simplificado", "IRS Jovem", "adicional de solidariedade", or any question about filing or computing income tax for a self-employed or freelance client in Portugal. This skill covers the Modelo 3 + Anexo B annual return, Categoria B income, regime simplificado vs contabilidade organizada, progressive IRS brackets, adicional de solidariedade, allowable deductions, withholding (retenção na fonte), IRS Jovem, and filing deadlines. ALWAYS read this skill before touching any Portuguese income tax work.
-version: 2.0
+  Utilizar esta skill sempre que for solicitada ajuda com o IRS (Imposto sobre o Rendimento das Pessoas Singulares) em Portugal para trabalhadores independentes. Acionar com expressões como "quanto IRS pago", "IRS Portugal", "Modelo 3", "Anexo B", "Categoria B", "regime simplificado", "contabilidade organizada", "retenção na fonte", "trabalhador independente", "recibos verdes", "coeficientes regime simplificado", "IRS Jovem", "adicional de solidariedade", ou qualquer questão sobre apresentação ou cálculo de IRS para um cliente independente em Portugal. Esta skill abrange a declaração anual Modelo 3 + Anexo B, rendimentos da Categoria B, regime simplificado vs contabilidade organizada, escalões progressivos do IRS, adicional de solidariedade, deduções específicas, retenção na fonte, IRS Jovem e prazos de entrega. LER SEMPRE esta skill antes de tocar em qualquer trabalho de IRS português. Para regime RNH/IFICI ver skill pt-nhr-ifici. Trigger also on: "how much tax do I pay in Portugal", "IRS Portugal", "Modelo 3", "income tax return Portugal", "NIF", "freelancer Portugal tax".
+version: 3.0
 jurisdiction: PT
 tax_year: 2025
+category: international
 verified_by: pending
 ---
 
-# Portuguese Income Tax — Trabalhador Independente (IRS Categoria B) v2.0
+# Portugal — IRS (Imposto sobre o Rendimento das Pessoas Singulares) — Skill v3.0
 
-## Section 1 — Quick Reference
+> **Nota de remissão:** Se o contribuinte está sob regime RNH (Residente Não Habitual) ou IFICI (Incentivo Fiscal à Investigação Científica e Inovação), **ver o skill `pt-nhr-ifici`** para o tratamento detalhado. Esta skill cobre apenas o regime geral progressivo.
 
-### IRS Brackets 2025 (Categoria B — Regime Simplificado)
+## Secção 1 — Referência Rápida
 
-| Taxable Income (EUR) | Rate | Cumulative Tax |
+### Escalões de IRS 2025 (Categoria B — Regime Simplificado / regime geral)
+
+| Rendimento Coletável (EUR) | Taxa | Imposto Cumulativo |
 |---|---|---|
-| 0 – 7,703 | 13.25% | 1,020.65 |
-| 7,703 – 11,623 | 18% | 1,726.25 |
-| 11,623 – 16,472 | 23% | 2,841.72 |
-| 16,472 – 21,321 | 26% | 4,102.46 |
-| 21,321 – 27,146 | 32.75% | 6,010.17 |
-| 27,146 – 39,791 | 37% | 10,698.82 |
-| 39,791 – 51,997 | 43.5% | 16,011.53 |
-| 51,997 – 81,199 | 45% | 29,141.53 |
-| Over 81,199 | 48% | — |
+| 0 – 8 059 | 13,00% | 1 047,67 |
+| 8 059 – 12 160 | 16,50% | 1 724,33 |
+| 12 160 – 17 233 | 22,00% | 2 840,39 |
+| 17 233 – 22 306 | 25,00% | 4 108,64 |
+| 22 306 – 28 400 | 32,00% | 6 058,72 |
+| 28 400 – 41 629 | 35,50% | 10 754,01 |
+| 41 629 – 44 987 | 43,50% | 12 215,24 |
+| 44 987 – 83 696 | 45,00% | 29 634,29 |
+| Acima de 83 696 | 48,00% | — |
 
-**Formula:** Tax = cumulative tax for lower bracket + (income − lower bracket threshold) × marginal rate
+**Fórmula:** Imposto = imposto cumulativo do escalão inferior + (rendimento − limite inferior do escalão) × taxa marginal.
 
-### Adicional de Solidariedade (Solidarity Surcharge)
+**Verificação prévia obrigatória:** antes de aplicar as tabelas progressivas, **verificar se o contribuinte está abrangido por RNH ou IFICI** (ver skill `pt-nhr-ifici`). Em caso afirmativo, a taxa fixa de 20% sobre AEVA pode substituir os escalões para certos rendimentos.
 
-| Taxable Income (EUR) | Rate |
+### Adicional de Solidariedade
+
+| Rendimento Coletável (EUR) | Taxa |
 |---|---|
-| 80,000 – 250,000 | 2.5% on excess above EUR 80,000 |
-| Over 250,000 | 2.5% on EUR 170,000 + 5% on excess above EUR 250,000 |
+| 80 000 – 250 000 | 2,5% sobre o excedente acima de EUR 80 000 |
+| Acima de 250 000 | 2,5% sobre EUR 170 000 + 5% sobre o excedente acima de EUR 250 000 |
 
 ### Regime Simplificado — Coeficientes 2025
 
-Under regime simplificado, taxable income = gross receipts × applicable coefficient (not actual expenses):
+Em regime simplificado, rendimento tributável = receitas brutas × coeficiente aplicável (não despesas reais):
 
-| Type of Income | Coefficient | Effective Tax Base |
+| Tipo de Rendimento | Coeficiente | Base Tributável Efetiva |
 |---|---|---|
-| Sales of goods (vendas) | 0.15 | 15% of gross |
-| Provision of services — general (prestação de serviços) | 0.35 | 35% of gross |
-| Professional services (art. 151 CIRS — listed professions: lawyers, doctors, engineers, architects, consultants) | 0.35 | 35% of gross |
-| Hotel/accommodation/tourism | 0.15 | 15% of gross |
-| Other income Categoria B | 0.95 | 95% of gross |
-| Intellectual property (if author is original creator) | 0.50 | 50% of gross |
+| Vendas de mercadorias e produtos | 0,15 | 15% do bruto |
+| Prestação de serviços — geral | 0,35 | 35% do bruto |
+| Atividades profissionais (art.º 151.º CIRS — profissões listadas: advogados, médicos, engenheiros, arquitetos, consultores) | 0,35 | 35% do bruto |
+| Hotelaria, restauração e alojamento local | 0,15 | 15% do bruto |
+| Outros rendimentos da Categoria B | 0,95 | 95% do bruto |
+| Propriedade intelectual (se o autor for o criador originário) | 0,50 | 50% do bruto |
 
-**Note:** Regime simplificado is available only when gross receipts in the prior year (or estimated current year for new entrants) ≤ EUR 200,000.
+**Nota:** Regime simplificado disponível apenas quando as receitas brutas do ano anterior (ou estimadas no ano corrente para novos contribuintes) sejam ≤ EUR 200 000.
 
-### Regime de Contabilidade Organizada (Actual Expenses)
+### Regime de Contabilidade Organizada (Despesas Reais)
 
-When gross receipts > EUR 200,000 (mandatory) or by election: taxable income = gross receipts − actual deductible expenses (requires certified accountant / TOC).
+Quando as receitas brutas > EUR 200 000 (obrigatório) ou por opção: rendimento tributável = receitas brutas − despesas dedutíveis reais (requer Contabilista Certificado / CC).
 
-### Retenção na Fonte (Withholding by Clients)
+### Retenção na Fonte (Retenção pelos Clientes)
 
-| Recipient Type | Rate |
+| Tipo de Beneficiário | Taxa |
 |---|---|
-| General trabalhador independente — Categoria B | 25% |
-| Profissões de elevado valor acrescentado (NHR/IFICI list) | Special rates |
-| Non-resident (Categoria B) | 25% |
+| Trabalhador independente geral — Categoria B | 25% |
+| Profissões de elevado valor acrescentado (lista RNH/IFICI) | Taxas especiais — ver skill `pt-nhr-ifici` |
+| Não residente (Categoria B) | 25% |
 
-Clients paying a trabalhador independente with NIF must withhold 25% and remit to AT. The withheld amount is credited against final IRS liability.
+Clientes que pagam a trabalhador independente com NIF têm de reter 25% e entregar à AT. O montante retido é creditado contra a coleta final de IRS.
 
-**Isenção de retenção na fonte:** Taxpayers whose prior-year gross Categoria B income ≤ EUR 12,500 may submit declaration to clients to waive withholding.
+**Dispensa de retenção na fonte:** Contribuintes cujos rendimentos brutos de Categoria B do ano anterior ≤ EUR 15 000 podem apresentar declaração aos clientes para dispensa de retenção.
 
-### Segurança Social (Social Security Contributions)
+### Segurança Social (Contribuições)
 
-| Scheme | Rate | Base |
+| Esquema | Taxa | Base |
 |---|---|---|
-| Trabalhador independente SS | 21.4% | 70% of quarterly gross receipts / 3 (monthly base) |
-| Minimum monthly base | EUR 501.87 | If income very low |
+| Trabalhador independente SS | 21,4% | 70% das receitas brutas trimestrais ÷ 3 (base mensal) |
+| Base mensal mínima | EUR 522,50 | Se rendimento muito baixo |
 
-SS contributions are deductible from IRS taxable income (reduce gross before applying coefficient, or deducted as expense in contabilidade organizada).
+Contribuições para a SS são dedutíveis ao rendimento tributável de IRS (reduzem o bruto antes de aplicar o coeficiente, ou deduzidas como despesa na contabilidade organizada).
 
-### IRS Jovem (Youth IRS Exemption)
+### IRS Jovem (Isenção para Jovens)
 
-For taxpayers ≤ 35 years old (first 10 years of earning income in Portugal after completing education):
+Para contribuintes ≤ 35 anos (durante os primeiros 10 anos de obtenção de rendimentos em Portugal após conclusão dos estudos):
 
-| Year | Exemption from Tax |
+| Ano | Isenção de Imposto |
 |---|---|
-| Years 1–3 | 100% exempt (capped at EUR 28,737/year) |
-| Years 4–6 | 75% exempt |
-| Years 7–9 | 50% exempt |
-| Year 10 | 25% exempt |
+| Anos 1–3 | 100% isento (limitado a EUR 28 737/ano) |
+| Anos 4–6 | 75% isento |
+| Anos 7–9 | 50% isento |
+| Ano 10 | 25% isento |
 
-Confirm eligibility before applying. IRS Jovem applies on IRS brackets; SS contributions still apply.
+Confirmar elegibilidade antes de aplicar. O IRS Jovem aplica-se aos escalões de IRS; as contribuições para a SS continuam a aplicar-se.
 
-### Conservative Defaults
+### Defaults Conservadores
 
-| Situation | Default Assumption |
+| Situação | Pressuposto por Defeito |
 |---|---|
-| Service type unclear (goods vs services) | Apply coefficient 0.35 (services) — higher tax base; flag for client |
-| Regime simplificado vs. contabilidade organizada | Regime simplificado (default for < EUR 200,000 receipts) |
-| IRS Jovem eligibility unclear | Do NOT apply — flag for client to confirm eligibility years |
-| NHR/IFICI status unclear | Do NOT apply special rates — apply standard brackets |
-| SS contributions not provided | Estimate at 21.4% × 70% of gross; flag as estimated |
-| Retenção na fonte amounts not confirmed | Do NOT assume — require withholding certificates from clients |
-| Expense claimed under contabilidade organizada without receipt | Reject — cannot deduct without evidence |
+| Tipo de serviço ambíguo (bens vs serviços) | Aplicar coeficiente 0,35 (serviços) — base mais elevada; sinalizar ao cliente |
+| Regime simplificado vs. contabilidade organizada | Regime simplificado (default para < EUR 200 000 receitas) |
+| Elegibilidade IRS Jovem ambígua | NÃO aplicar — sinalizar ao cliente para confirmar anos de elegibilidade |
+| Estatuto RNH/IFICI ambíguo | NÃO aplicar taxas especiais — aplicar escalões padrão; remeter para skill `pt-nhr-ifici` |
+| Contribuições SS não fornecidas | Estimar a 21,4% × 70% do bruto; sinalizar como estimativa |
+| Montantes de retenção não confirmados | NÃO presumir — exigir declarações de retenção dos clientes |
+| Despesa em contabilidade organizada sem fatura/recibo | Rejeitar — não dedutível sem documento de suporte |
 
-### Red Flag Thresholds
+### Limiares de Alerta (Red Flags)
 
-| Flag | Threshold |
+| Alerta | Limiar |
 |---|---|
-| Gross receipts > EUR 200,000 | Mandatory contabilidade organizada — stop if still on simplificado |
-| Single client providing > 80% of receipts | Requalification risk as employment (falso recibo verde) |
-| No retenções na fonte received but clients are companies | Verify — companies must withhold 25% |
-| SS contributions appear absent or very low | Verify SS base calculation |
-| IRS Jovem claimed beyond year 10 | Ineligible — flag immediately |
+| Receitas brutas > EUR 200 000 | Contabilidade organizada obrigatória — parar se ainda em simplificado |
+| Cliente único > 80% das receitas | Risco de requalificação como relação laboral (falso recibo verde) |
+| Sem retenções recebidas mas clientes são empresas | Verificar — empresas têm obrigação legal de reter 25% |
+| Contribuições SS aparentemente ausentes ou muito baixas | Verificar cálculo da base SS |
+| IRS Jovem reclamado após o ano 10 | Inelegível — sinalizar imediatamente |
 
 ---
 
-## Section 2 — Required Inputs + Refusal Catalogue
+## Secção 2 — Inputs Obrigatórios + Catálogo de Recusas
 
-### Required Inputs
+### Inputs Obrigatórios
 
-Before computing Portuguese IRS, collect:
+Antes de calcular o IRS português, recolher:
 
-1. **Total gross receipts** (recibos verdes issued and received) — full Categoria B gross
-2. **Client breakdown** — to identify service type and applicable coefficient
-3. **Withholding certificates (declarações de retenção)** — from each client
-4. **SS contribution payments** — quarterly SS payment receipts
-5. **Regime status** — simplificado or contabilidade organizada (if elected)
-6. **IRS Jovem status** — age + year number in Portugal income earnings
-7. **Bank statements** — 12 months of the fiscal year
-8. **NHR or IFICI status** — if non-habitual resident rules apply
-9. **Other income categories** — Categoria A (employment), Categoria F (rental), Categoria G (capital gains)
-10. **Marital status + dependants** — for quociente conjugal and deductions for dependants
+1. **Total das receitas brutas** (recibos verdes emitidos e recebidos) — Categoria B integral
+2. **Discriminação por cliente** — para identificar tipo de serviço e coeficiente aplicável
+3. **Declarações de retenção na fonte** — de cada cliente
+4. **Pagamentos de contribuições para a SS** — recibos trimestrais
+5. **Regime aplicável** — simplificado ou contabilidade organizada (se eleito)
+6. **Estatuto IRS Jovem** — idade + número do ano de obtenção de rendimentos em Portugal
+7. **Extratos bancários** — 12 meses do ano fiscal
+8. **Estatuto RNH ou IFICI** — se aplicável (caso em que se remete para skill `pt-nhr-ifici`)
+9. **Outras categorias de rendimentos** — Categoria A (trabalho dependente), Categoria F (prediais), Categoria G (mais-valias)
+10. **Estado civil e dependentes** — para quociente conjugal e deduções por dependentes
 
-### Refusal Catalogue
+### Catálogo de Recusas
 
-| Code | Situation | Action |
+| Código | Situação | Ação |
 |---|---|---|
-| R-PT-1 | Gross receipts > EUR 200,000 but client insists on regime simplificado | Stop — mandatory contabilidade organizada; TOC (certified accountant) required |
-| R-PT-2 | NHR/IFICI status claimed but no AT registration confirmation | Do not apply NHR rates — request IFICI/NHR registration number |
-| R-PT-3 | No retenção certificates but client paid by Portuguese companies | Flag — companies legally required to withhold 25%; gather certificates before finalising |
-| R-PT-4 | Falso recibo verde risk (single client > 80% of receipts, regular schedule) | Flag — AT may reclassify as employment (Categoria A); advise legal review |
-| R-PT-5 | Contabilidade organizada without a TOC certified accountant | Stop — contabilidade organizada legally requires a TOC signature; cannot proceed without one |
+| R-PT-1 | Receitas brutas > EUR 200 000 mas cliente insiste no regime simplificado | Parar — contabilidade organizada obrigatória; necessário Contabilista Certificado (CC) |
+| R-PT-2 | Estatuto RNH/IFICI alegado | Remeter para skill `pt-nhr-ifici` — não aplicar regras especiais nesta skill |
+| R-PT-3 | Sem declarações de retenção mas pagamentos efetuados por empresas portuguesas | Sinalizar — empresas têm obrigação legal de reter 25%; recolher declarações antes de finalizar |
+| R-PT-4 | Risco de falso recibo verde (cliente único > 80% das receitas, regularidade laboral) | Sinalizar — a AT pode requalificar como Categoria A (trabalho dependente); aconselhar revisão jurídica |
+| R-PT-5 | Contabilidade organizada sem CC (Contabilista Certificado) | Parar — a contabilidade organizada exige legalmente a assinatura de CC; não prosseguir sem este |
 
 ---
 
-## Section 3 — Transaction Pattern Library
+## Secção 3 — Biblioteca de Padrões Transacionais
 
-### Income Patterns
+### Padrões de Rendimentos
 
-| # | Narration Pattern | Tax Line | Notes |
+| # | Padrão de Descritivo | Linha Fiscal | Notas |
 |---|---|---|---|
-| I-01 | `TRANSF DE [client name]` / `TRF DE [client]` | Gross receipts — Categoria B | Standard SEPA transfer from client |
-| I-02 | `MB WAY [client]` / `MBWAY RECEBIDO` | Gross receipts — Categoria B | MBWay (Portuguese digital payment) from client |
-| I-03 | `STRIPE PAYMENTS EUROPE` / `STRIPE PAYOUT` | Gross receipts — gross-up | Stripe net payout; gross-up to pre-fee; fee deductible |
-| I-04 | `PAYPAL TRANSFER` / `PAYPAL RECEBIDO` | Gross receipts — gross-up | PayPal net payout; gross-up; fee deductible |
-| I-05 | `TRANSFERÊNCIA RECEBIDA [client]` | Gross receipts — Categoria B | Generic bank transfer credit |
-| I-06 | `IFTHENPAY PAYOUT` / `EUPAGO SETTLEMENT` | Gross receipts — gross-up | Portuguese payment gateway settlement |
-| I-07 | `RETENÇÃO NA FONTE` (separate line or annotation) | Withholding credit | Gross-up: receipt = net after 25% withholding → gross = receipt / 0.75 |
-| I-08 | `REEMBOLSO IRS AT` / `REEMBOLSO AT` | NOT income — tax refund | AT tax refund; not Categoria B income |
-| I-09 | `DEVOLUÇÃO` / `REEMBOLSO [client]` | Non-taxable if client reimbursement | Must be documented; otherwise taxable |
-| I-10 | `JUROS RECEBIDOS` / `JUROS CONTA` | Categoria E (capital income) | Not Categoria B — separate IRS treatment |
+| I-01 | `TRANSF DE [nome cliente]` / `TRF DE [cliente]` | Receitas brutas — Categoria B | Transferência SEPA padrão de cliente |
+| I-02 | `MB WAY [cliente]` / `MBWAY RECEBIDO` | Receitas brutas — Categoria B | MB Way (pagamento digital português) |
+| I-03 | `STRIPE PAYMENTS EUROPE` / `STRIPE PAYOUT` | Receitas brutas — gross-up | Pagamento líquido Stripe; recompor ao bruto pré-comissão; comissão dedutível |
+| I-04 | `PAYPAL TRANSFER` / `PAYPAL RECEBIDO` | Receitas brutas — gross-up | Pagamento líquido PayPal; recompor; comissão dedutível |
+| I-05 | `TRANSFERÊNCIA RECEBIDA [cliente]` | Receitas brutas — Categoria B | Crédito por transferência genérica |
+| I-06 | `IFTHENPAY PAYOUT` / `EUPAGO SETTLEMENT` | Receitas brutas — gross-up | Liquidação de gateway de pagamento português |
+| I-07 | `RETENÇÃO NA FONTE` (linha separada ou anotação) | Crédito de retenção | Recomposição: recebido = líquido após 25% de retenção → bruto = recebido / 0,75 |
+| I-08 | `REEMBOLSO IRS AT` / `REEMBOLSO AT` | NÃO é rendimento — reembolso fiscal | Reembolso da AT; não é rendimento de Categoria B |
+| I-09 | `DEVOLUÇÃO` / `REEMBOLSO [cliente]` | Não tributável se for reembolso ao cliente | Tem de estar documentado; caso contrário tributável |
+| I-10 | `JUROS RECEBIDOS` / `JUROS CONTA` | Categoria E (rendimentos de capitais) | Não é Categoria B — tratamento separado em sede de IRS |
 
-### Expense Patterns
+### Padrões de Despesa
 
-| # | Narration Pattern | Tax Line | Notes |
+| # | Padrão de Descritivo | Linha Fiscal | Notas |
 |---|---|---|---|
-| E-01 | `RENDA` / `ARRENDAMENTO ESCRITÓRIO` | Rent — deductible (contabilidade organizada only) | Regime simplificado: actual expenses not deductible (coefficient applies) |
-| E-02 | `EDP` / `GALP ENERGIA` / `ENDESA` / `IBERDROLA` | Utilities — deductible (contab. organizada only) | Not deductible under regime simplificado |
-| E-03 | `MEO` / `NOS` / `VODAFONE PT` / `NOWO` | Phone/internet — deductible (contab. organizada) | Regime simplificado: N/A |
-| E-04 | `ADOBE` / `MICROSOFT 365` / `GOOGLE WORKSPACE` | Software — deductible (contab. organizada) | Regime simplificado: N/A |
-| E-05 | `SEGURANÇA SOCIAL` / `TAXA SS` | SS contributions — deductible | Both regimes: SS contributions reduce IRS taxable income |
-| E-06 | `CONTABILISTA` / `TOC` / `ROC` | Accountant fees — deductible (contab. organizada) | Required for contabilidade organizada |
-| E-07 | `CP COMBOIO` / `COMBOIOS DE PORTUGAL` | Train travel — deductible (contab. organizada) | Business travel; require purpose note |
-| E-08 | `TAP AIR PORTUGAL` / `RYANAIR` / `EASYJET` | Air travel — deductible (contab. organizada) | Business travel; require itinerary |
-| E-09 | `SEGURO PROFISSIONAL` / `SEGURO RC` | Professional insurance — deductible | Both regimes (when specifically professional) |
-| E-10 | `AT PAGAMENTO IRS` / `LIQUIDAÇÃO IRS` | IRS payment — NOT deductible | Tax payments are not expenses |
-| E-11 | `AT IVA PAGAMENTO` / `IVA ENTREGUE` | VAT payment — NOT deductible | IVA is separate; not IRS expense |
-| E-12 | `BANCO [name] COMISSÕES` / `COMISSÃO BANCÁRIA` | Bank fees — deductible (contab. organizada) | Business account commissions |
-| E-13 | `FORMAÇÃO` / `CURSO` / `WORKSHOP` | Training — deductible (contab. organizada) | Professional development |
-| E-14 | `COMBUSTÍVEL` / `GALP` / `BP` / `REPSOL` | Fuel — deductible (contab. organizada, partial) | Vehicle expenses: document business use |
-| E-15 | `MBNET` / `TRANSFERÊNCIA MB` / `MULTIBANCO` | Generic payment — classify by purpose | Identify payee from bank detail; classify accordingly |
-| E-16 | `SEGURO SAÚDE` / `MÉDIS` / `MULTICARE` | Health insurance — IRS deduction (Anexo H) | Not a Categoria B expense — separate personal deduction in Anexo H |
-| E-17 | `DESCONTO RECIBO VERDE` / `RETENÇÃO CLIENTE` | Withholding by client (25%) | Not an expense — credit against IRS; verify with certificate |
+| E-01 | `RENDA` / `ARRENDAMENTO ESCRITÓRIO` | Renda — dedutível (apenas contabilidade organizada) | Regime simplificado: despesas reais não dedutíveis (coeficiente aplica-se) |
+| E-02 | `EDP` / `GALP ENERGIA` / `ENDESA` / `IBERDROLA` | Utilidades — dedutíveis (apenas contab. organizada) | Não dedutíveis em regime simplificado |
+| E-03 | `MEO` / `NOS` / `VODAFONE PT` / `NOWO` | Telefone/internet — dedutível (contab. organizada) | Regime simplificado: N/A |
+| E-04 | `ADOBE` / `MICROSOFT 365` / `GOOGLE WORKSPACE` | Software — dedutível (contab. organizada) | Regime simplificado: N/A |
+| E-05 | `SEGURANÇA SOCIAL` / `TAXA SS` | Contribuições SS — dedutíveis | Ambos os regimes: SS reduz a matéria coletável de IRS |
+| E-06 | `CONTABILISTA` / `CC` / `ROC` | Honorários do contabilista — dedutíveis (contab. organizada) | Exigido para contabilidade organizada |
+| E-07 | `CP COMBOIO` / `COMBOIOS DE PORTUGAL` | Deslocações em comboio — dedutível (contab. organizada) | Viagem profissional; documentar finalidade |
+| E-08 | `TAP AIR PORTUGAL` / `RYANAIR` / `EASYJET` | Viagens aéreas — dedutíveis (contab. organizada) | Viagem profissional; documentar itinerário |
+| E-09 | `SEGURO PROFISSIONAL` / `SEGURO RC` | Seguro profissional — dedutível | Ambos os regimes (quando especificamente profissional) |
+| E-10 | `AT PAGAMENTO IRS` / `LIQUIDAÇÃO IRS` | Pagamento de IRS — NÃO dedutível | Pagamentos de imposto não são despesas |
+| E-11 | `AT IVA PAGAMENTO` / `IVA ENTREGUE` | Pagamento de IVA — NÃO dedutível | O IVA é separado; não é despesa de IRS |
+| E-12 | `BANCO [nome] COMISSÕES` / `COMISSÃO BANCÁRIA` | Comissões bancárias — dedutível (contab. organizada) | Comissões da conta profissional |
+| E-13 | `FORMAÇÃO` / `CURSO` / `WORKSHOP` | Formação — dedutível (contab. organizada) | Desenvolvimento profissional |
+| E-14 | `COMBUSTÍVEL` / `GALP` / `BP` / `REPSOL` | Combustível — dedutível (contab. organizada, parcial) | Despesas de viatura: documentar uso profissional |
+| E-15 | `MBNET` / `TRANSFERÊNCIA MB` / `MULTIBANCO` | Pagamento genérico — classificar pela finalidade | Identificar beneficiário pelo descritivo; classificar |
+| E-16 | `SEGURO SAÚDE` / `MÉDIS` / `MULTICARE` | Seguro de saúde — dedução à coleta (Anexo H) | Não é despesa de Categoria B — dedução pessoal separada no Anexo H |
+| E-17 | `DESCONTO RECIBO VERDE` / `RETENÇÃO CLIENTE` | Retenção pelo cliente (25%) | Não é despesa — crédito contra IRS; verificar com declaração |
 
 ---
 
-## Section 4 — Worked Examples
+## Secção 4 — Exemplos Práticos
 
-### Example 1 — Millennium BCP (Lisbon, Consultant — Regime Simplificado)
+### Exemplo 1 — Millennium BCP (Lisboa, Consultor — Regime Simplificado)
 
-**Bank:** Millennium BCP statement (PDF/CSV)
-**Client:** Ana Ferreira, management consultant, Lisbon, NIF registered, regime simplificado
+**Banco:** Extrato Millennium BCP (PDF/CSV)
+**Cliente:** Ana Ferreira, consultora de gestão, Lisboa, com NIF registado, regime simplificado.
 
 ```
 Data;Descrição;Débito;Crédito;Saldo
@@ -203,333 +208,374 @@ Data;Descrição;Débito;Crédito;Saldo
 30/06/2025;SEGURANÇA SOCIAL;350,00;;
 ```
 
-**Note:** Clients withheld 25% retenção. Gross amounts before retenção:
-- EMPRESA ALPHA: EUR 3,750 received = EUR 5,000 gross (÷ 0.75)
-- STARTUP BETA: EUR 2,500 = EUR 3,333.33 gross
-- GAMMA CONSULTING: EUR 4,200 = EUR 5,600 gross
-- DELTA SA: EUR 3,100 = EUR 4,133.33 gross
+**Nota:** Os clientes retiveram 25% à fonte. Montantes brutos antes de retenção:
+- EMPRESA ALPHA: EUR 3.750 recebidos = EUR 5.000 brutos (÷ 0,75)
+- STARTUP BETA: EUR 2.500 = EUR 3.333,33 brutos
+- GAMMA CONSULTING: EUR 4.200 = EUR 5.600 brutos
+- DELTA SA: EUR 3.100 = EUR 4.133,33 brutos
 
-Stripe: EUR 1,920 net (no retenção — foreign payer). Gross-up to ~EUR 1,978 (after fees).
+Stripe: EUR 1.920 líquido (sem retenção — pagador estrangeiro). Recompor para ~EUR 1.978 (após comissões).
 
-**Step 1 — Total Gross Receipts**
-
-```
-Grossed-up from retenção clients:  EUR 18,066.67
-Stripe gross (no retenção):        EUR  1,978.00
-Remaining months (extrapolated):   assume full year = EUR 52,000 gross (example)
-Total gross Categoria B:           EUR 52,000
-```
-
-**Step 2 — Apply Regime Simplificado Coefficient**
+**Passo 1 — Total de Receitas Brutas**
 
 ```
-Service type: management consulting → coefficient 0.35
-Taxable income: EUR 52,000 × 0.35 = EUR 18,200
-Less SS contributions paid (deductible): EUR 350 × 12 = EUR 4,200
-Taxable income for IRS: EUR 18,200 − EUR 4,200 = EUR 14,000
+Recompostas de clientes com retenção:  EUR 18.066,67
+Stripe bruto (sem retenção):           EUR  1.978,00
+Restantes meses (extrapolados):        admitir ano completo = EUR 52.000 bruto (exemplo)
+Total bruto Categoria B:               EUR 52.000
 ```
 
-**Step 3 — IRS Computation**
+**Passo 2 — Aplicar Coeficiente do Regime Simplificado**
 
 ```
-EUR 7,703 × 13.25% = EUR 1,020.65
-(EUR 14,000 − EUR 7,703) × 18% = EUR 6,297 × 18% = EUR 1,133.46
-Total IRS gross: EUR 2,154.11
-Less retenções na fonte: receipts from PT clients × 25% of gross
-  = EUR 18,066.67 × 25% (as withheld) = EUR 4,516.67 already withheld
-IRS balance: EUR 2,154.11 − EUR 4,516.67 = **(EUR 2,362.56 refund)**
+Tipo de serviço: consultoria de gestão → coeficiente 0,35
+Rendimento tributável: EUR 52.000 × 0,35 = EUR 18.200
+Menos contribuições SS pagas (dedutíveis): EUR 350 × 12 = EUR 4.200
+Rendimento tributável para IRS: EUR 18.200 − EUR 4.200 = EUR 14.000
 ```
 
-Refund scenario — confirm all retenção certificates match grossed-up amounts.
+**Passo 3 — Cálculo do IRS**
+
+```
+EUR 8.059 × 13,00% = EUR 1.047,67
+(EUR 12.160 − EUR 8.059) × 16,50% = EUR 4.101 × 16,50% = EUR 676,67
+(EUR 14.000 − EUR 12.160) × 22,00% = EUR 1.840 × 22,00% = EUR 404,80
+IRS bruto: EUR 2.129,14
+Menos retenções na fonte: receitas brutas de clientes PT × 25%
+  = EUR 18.066,67 × 25% (efetivamente retido) = EUR 4.516,67 já retido
+Saldo IRS: EUR 2.129,14 − EUR 4.516,67 = **(EUR 2.387,53 a reembolsar)**
+```
+
+Cenário de reembolso — confirmar que todas as declarações de retenção batem com os montantes recompostos.
 
 ---
 
-### Example 2 — Caixa Geral de Depósitos (Porto, Software Developer)
+### Exemplo 2 — Caixa Geral de Depósitos (Porto, Programador)
 
-**Bank:** CGD (Caixa) online statement
-**Client:** Pedro Costa, software developer, Porto, IRS Jovem year 2 (75% exempt)
+**Banco:** Extrato online CGD
+**Cliente:** Pedro Costa, programador, Porto, IRS Jovem ano 2 (75% isento).
 
-Gross receipts: EUR 45,000 (services coefficient 0.35)
-Taxable base: EUR 45,000 × 0.35 = EUR 15,750
-Less SS: EUR 45,000 × 70% × 21.4% / 12 × 12 = EUR 6,741
-Net taxable: EUR 15,750 − EUR 6,741 = EUR 9,009
+Receitas brutas: EUR 45.000 (coeficiente de serviços 0,35)
+Base tributável: EUR 45.000 × 0,35 = EUR 15.750
+Menos SS: EUR 45.000 × 70% × 21,4% / 12 × 12 = EUR 6.741
+Tributável líquido: EUR 15.750 − EUR 6.741 = EUR 9.009
 
-IRS Jovem — year 2 (75% exempt): EUR 9,009 × 25% subject = EUR 2,252.25
+IRS Jovem — ano 2 (75% isento): EUR 9.009 × 25% sujeito = EUR 2.252,25
 
-IRS: EUR 2,252.25 × 13.25% = **EUR 298.42**
+IRS: EUR 2.252,25 × 13,00% = **EUR 292,79**
 
-Flag: IRS Jovem requires AT confirmation of year number (anos de IRS Jovem). Pedro must submit declaration via Portal das Finanças.
-
----
-
-### Example 3 — BPI (Algarve, Architect — Contabilidade Organizada)
-
-**Bank:** BPI statement
-**Client:** Sofia Pinto, architect, Algarve, gross receipts EUR 220,000 (mandatory contab. organizada)
-
-Note: Mandatory contabilidade organizada — TOC signature required. This example shows structure only.
-
-Gross receipts: EUR 220,000
-Deductible expenses (actual):
-- Office rent: EUR 12,000
-- Utilities: EUR 2,400
-- Phone/internet: EUR 1,200
-- Software: EUR 2,400
-- TOC accountant: EUR 4,800
-- Professional insurance: EUR 1,500
-- Travel: EUR 3,000
-- SS contributions: EUR 32,817 (21.4% × 70% × EUR 220,000)
-Total expenses: EUR 60,117
-
-Net profit: EUR 220,000 − EUR 60,117 = EUR 159,883
-
-IRS on EUR 159,883:
-EUR 81,199 bracket: EUR 29,141.53 + (EUR 159,883 − EUR 81,199) × 48% = EUR 29,141.53 + EUR 42,569.52 = EUR 71,711.05
-
-Adicional solidariedade: (EUR 80,000 limit applies to taxable income) — EUR 159,883 > EUR 80,000:
-(EUR 159,883 − EUR 80,000) × 2.5% = EUR 79,883 × 2.5% = EUR 1,997.08
-
-Total IRS: EUR 71,711.05 + EUR 1,997.08 = **EUR 73,708.13**
-
-Flag: Gross > EUR 200,000 — mandatory TOC; adicional solidariedade applies.
+Alerta: o IRS Jovem requer confirmação da AT do número do ano. O Pedro deve apresentar declaração via Portal das Finanças.
 
 ---
 
-### Example 4 — Santander Portugal (Lisbon, Designer, MB Way Heavy)
+### Exemplo 3 — BPI (Algarve, Arquiteta — Contabilidade Organizada)
 
-**Bank:** Santander Totta statement
-**Client:** Margarida Santos, graphic designer, Lisbon, receives many MB Way payments
+**Banco:** Extrato BPI
+**Cliente:** Sofia Pinto, arquiteta, Algarve, receitas brutas EUR 220.000 (contab. organizada obrigatória).
 
-MB Way narrations in bank: `MBWAY RECEBIDO CLIENTE X` × multiple entries
+Nota: Contabilidade organizada obrigatória — exige assinatura de CC. Este exemplo apresenta apenas a estrutura.
 
-Treatment: MB Way receipts are standard income. The key challenge is identifying the payer. Many micro-clients may not be registered companies and therefore may not withhold retenção.
+Receitas brutas: EUR 220.000
+Despesas dedutíveis (reais):
+- Renda do escritório: EUR 12.000
+- Utilidades: EUR 2.400
+- Telefone/internet: EUR 1.200
+- Software: EUR 2.400
+- Honorários CC: EUR 4.800
+- Seguro profissional: EUR 1.500
+- Deslocações: EUR 3.000
+- Contribuições SS: EUR 32.917 (21,4% × 70% × EUR 220.000)
+Total de despesas: EUR 60.217
 
-Key rule: If payer is a non-company (individual consumer), no retenção obligation. If payer is a company with NIF, 25% withholding is mandatory.
+Resultado líquido: EUR 220.000 − EUR 60.217 = EUR 159.783
 
-For MB Way heavy designers: many small consumer payments = no retenção. Sum all MB Way credits as gross Categoria B receipts at face value (no gross-up needed).
+IRS sobre EUR 159.783:
+Escalão acima de EUR 83.696: EUR 29.634,29 + (EUR 159.783 − EUR 83.696) × 48% = EUR 29.634,29 + EUR 36.521,76 = EUR 66.156,05
 
-Gross MB Way income: EUR 18,000 (all individual consumers)
-Other TRANSF from company clients (with retenção): EUR 24,000 gross
+Adicional de solidariedade (rendimento > EUR 80.000):
+(EUR 159.783 − EUR 80.000) × 2,5% = EUR 79.783 × 2,5% = EUR 1.994,58
 
-Total gross: EUR 42,000
-Coeficiente 0.35: EUR 42,000 × 0.35 = EUR 14,700
-Less SS: ~EUR 6,300
-Taxable: EUR 8,400
+Total IRS: EUR 66.156,05 + EUR 1.994,58 = **EUR 68.150,63**
 
-IRS: EUR 7,703 × 13.25% + EUR 697 × 18% = EUR 1,020.65 + EUR 125.46 = **EUR 1,146.11**
-
----
-
-### Example 5 — Novo Banco (Lisbon, NHR Regime)
-
-**Bank:** Novo Banco statement
-**Client:** John Smith, UK national, registered NHR in Portugal, IT consultant
-
-NHR (Non-Habitual Resident) — now IFICI (Incentivo Fiscal à Criatividade e Investigação):
-- Foreign-source Categoria B income: may be exempt under NHR if taxed in source country
-- Portuguese-source income from "high value-added activities": flat 20% rate
-
-Do NOT apply standard brackets to NHR clients without confirming:
-1. NHR/IFICI registration number and status
-2. Source of each income stream (Portuguese source vs. foreign source)
-3. Whether activity is on the list of qualifying professions
-
-**Action for this client:** STOP — apply R-PT-2 (NHR status must be confirmed via AT). Do not apply standard rates; do not apply 20% flat rate without verification.
+Alerta: bruto > EUR 200.000 — CC obrigatório; adicional de solidariedade aplica-se.
 
 ---
 
-### Example 6 — ActivoBank / Moey (Coimbra, Translator)
+### Exemplo 4 — Santander Portugal (Lisboa, Designer, muitos MB Way)
 
-**Bank:** ActivoBank/Moey statement (digital bank)
-**Client:** Rita Alves, translator, Coimbra, first year trabalhador independente
+**Banco:** Extrato Santander Totta
+**Cliente:** Margarida Santos, designer gráfica, Lisboa, recebe muitos pagamentos via MB Way.
 
-First-year considerations:
-- Regime simplificado applies (new entrant, estimated income < EUR 200,000)
-- If estimated annual income ≤ EUR 12,500: may apply for isenção de retenção na fonte
-- IRS Jovem: if Rita ≤ 35 years old, confirm year 1 eligibility for 100% exemption (capped EUR 28,737)
+Descritivos de MB Way no extrato: `MBWAY RECEBIDO CLIENTE X` × várias entradas.
 
-Gross receipts (full year): EUR 22,000
-Coeficiente (translation = Categoria B services): 0.35
-Taxable: EUR 22,000 × 0.35 = EUR 7,700
-Less SS (first-year relief: 12 months free for new entrants, then normal): assume EUR 0 SS year 1
-Taxable for IRS: EUR 7,700
+Tratamento: receções de MB Way são rendimento padrão. O desafio principal é identificar o pagador. Muitos microclientes podem ser consumidores particulares não registados e portanto sem obrigação de retenção.
 
-IRS Jovem year 1 (100% exempt up to EUR 28,737): EUR 7,700 fully exempt
+Regra-chave: se o pagador for não-empresa (consumidor particular), não há obrigação de retenção. Se for empresa com NIF, a retenção de 25% é obrigatória.
+
+Para designers com muito MB Way: muitos pequenos pagamentos de consumidores = sem retenção. Somar todos os créditos MB Way como receitas brutas de Categoria B pelo valor facial (sem recompor).
+
+Receitas brutas MB Way: EUR 18.000 (todos consumidores particulares)
+Outras TRANSF de empresas (com retenção): EUR 24.000 brutos
+
+Total bruto: EUR 42.000
+Coeficiente 0,35: EUR 42.000 × 0,35 = EUR 14.700
+Menos SS: ~EUR 6.300
+Tributável: EUR 8.400
+
+IRS: EUR 8.059 × 13,00% + EUR 341 × 16,50% = EUR 1.047,67 + EUR 56,27 = **EUR 1.103,94**
+
+---
+
+### Exemplo 5 — Cliente sob RNH / IFICI
+
+**Cliente alegando RNH ou IFICI:** STOP nesta skill.
+
+Aplicar a recusa **R-PT-2** e remeter o trabalho para a skill `pt-nhr-ifici`, que trata em detalhe:
+- Taxa fixa de 20% sobre AEVA (Atividades de Elevado Valor Acrescentado)
+- Isenções de rendimentos de fonte estrangeira
+- Processo de candidatura à AT
+- Lista de profissões qualificadas
+
+Não aplicar taxas progressivas nem 20% flat **sem confirmação documental** do estatuto. A presente skill assume regime geral.
+
+---
+
+### Exemplo 6 — ActivoBank / Moey (Coimbra, Tradutora)
+
+**Banco:** Extrato ActivoBank/Moey (banco digital)
+**Cliente:** Rita Alves, tradutora, Coimbra, primeiro ano como trabalhadora independente.
+
+Considerações para o primeiro ano:
+- Regime simplificado aplica-se (novo contribuinte, rendimento estimado < EUR 200.000)
+- Se rendimento anual estimado ≤ EUR 15.000: pode solicitar dispensa de retenção na fonte
+- IRS Jovem: se a Rita tiver ≤ 35 anos, confirmar elegibilidade ano 1 para isenção a 100% (limite EUR 28.737)
+
+Receitas brutas (ano completo): EUR 22.000
+Coeficiente (tradução = serviços Categoria B): 0,35
+Tributável: EUR 22.000 × 0,35 = EUR 7.700
+Menos SS (isenção primeiro ano: 12 meses sem contribuições para novos contribuintes, depois regime normal): admitir EUR 0 SS no ano 1
+Tributável para IRS: EUR 7.700
+
+IRS Jovem ano 1 (100% isento até EUR 28.737): EUR 7.700 totalmente isentos
 **IRS: EUR 0**
 
-Note: First-year SS relief — new trabalhadores independentes are exempt from SS contributions for the first 12 months. Confirm AT/SS registration date.
+Nota: isenção SS no primeiro ano — novos trabalhadores independentes estão isentos de contribuições para a SS nos primeiros 12 meses. Confirmar data de registo AT/SS.
 
 ---
 
-## Section 5 — Tier 1 Rules (Apply Directly)
+## Secção 5 — Regras de Tier 1 (Aplicar Diretamente)
 
-**T1-PT-1 — Regime simplificado: coefficient, not actual expenses**
-Under regime simplificado, taxable income = gross receipts × coefficient. Individual expenses are NOT deductible (they are implicitly covered by the coefficient). Only SS contributions paid are separately deductible from the gross taxable base. Apply this mechanically — do not add expenses under simplificado.
+**T1-PT-1 — Regime simplificado: coeficiente, não despesas reais**
+Em regime simplificado, rendimento tributável = receitas brutas × coeficiente. Despesas individuais NÃO são dedutíveis (estão implicitamente cobertas pelo coeficiente). Apenas as contribuições para a SS pagas são deduzidas separadamente da base tributável. Aplicar mecanicamente — não somar despesas em regime simplificado.
 
-**T1-PT-2 — Retenção na fonte is a prepayment, not income reduction**
-The 25% withheld by clients is a tax prepayment credited against final IRS liability. It does not reduce gross Categoria B receipts. Always gross-up payments received net of retenção (divide by 0.75) to obtain gross income.
+**T1-PT-2 — Retenção na fonte é um adiantamento, não uma redução de rendimento**
+Os 25% retidos pelos clientes são um adiantamento de imposto creditado contra a coleta final de IRS. Não reduzem as receitas brutas da Categoria B. Recompor sempre os pagamentos recebidos líquidos de retenção (dividir por 0,75) para obter o bruto.
 
-**T1-PT-3 — SS contributions always deductible**
-SS contributions paid are deductible from the IRS taxable base under both regimes. Under regime simplificado: deduct from the coefficient-reduced taxable base. Under contabilidade organizada: deduct as an expense. Apply without escalating.
+**T1-PT-3 — Contribuições SS sempre dedutíveis**
+As contribuições para a SS pagas são dedutíveis à base tributável do IRS em ambos os regimes. Em regime simplificado: deduzir à base tributável reduzida pelo coeficiente. Em contabilidade organizada: deduzir como despesa. Aplicar sem escalar.
 
-**T1-PT-4 — IRS Jovem: confirm year number before applying**
-Never assume IRS Jovem applies. The taxpayer must be ≤ 35 years old AND must be able to confirm the year number (year 1 = first year of Categoria A or B income after completing education). Always request confirmation before applying any exemption.
+**T1-PT-4 — IRS Jovem: confirmar número do ano antes de aplicar**
+Nunca presumir a aplicação do IRS Jovem. O contribuinte tem de ter ≤ 35 anos E confirmar o número do ano (ano 1 = primeiro ano de rendimentos de Categoria A ou B após conclusão dos estudos). Pedir sempre confirmação antes de aplicar qualquer isenção.
 
-**T1-PT-5 — Mandatory contabilidade organizada at EUR 200,000**
-Gross receipts exceeding EUR 200,000 in the prior year trigger mandatory contabilidade organizada from the following year. Apply regime simplificado only when confirmed gross ≤ EUR 200,000 in prior year (or current year for new entrants).
+**T1-PT-5 — Contabilidade organizada obrigatória a partir de EUR 200 000**
+Receitas brutas acima de EUR 200 000 no ano anterior obrigam à contabilidade organizada a partir do ano seguinte. Aplicar regime simplificado apenas quando confirmado bruto ≤ EUR 200 000 no ano anterior (ou ano corrente para novos contribuintes).
 
-**T1-PT-6 — IRS payments and IVA are not IRS expenses**
-Pagamentos AT for IRS (pagamento por conta, saldo IRS) and IVA entregue are tax payments, not Categoria B expenses. Exclude all AT payment narrations from income computation.
+**T1-PT-6 — Pagamentos de IRS e IVA não são despesas de IRS**
+Pagamentos à AT (pagamento por conta, saldo de IRS) e entregas de IVA são pagamentos de imposto, não despesas de Categoria B. Excluir todos os descritivos de pagamentos à AT do cálculo do rendimento.
+
+**T1-PT-7 — RNH / IFICI: encaminhar para skill dedicada**
+Se houver qualquer indício de estatuto RNH ou IFICI (datas de registo, ano de início, indicação do cliente), **parar e remeter para a skill `pt-nhr-ifici`**. Não tentar aplicar a taxa de 20% AEVA, nem isenções de rendimento estrangeiro, nesta skill.
 
 ---
 
-## Section 6 — Tier 2 Catalogue (Reviewer Judgement Required)
+## Secção 6 — Catálogo Tier 2 (Requer Julgamento do Revisor)
 
-| Code | Situation | Escalation Reason | Suggested Treatment |
+| Código | Situação | Motivo de Escalonamento | Tratamento Sugerido |
 |---|---|---|---|
-| T2-PT-1 | NHR / IFICI regime | Complex foreign income exemptions and 20% flat rate — varies by income source and activity | Flag — do not compute without AT registration confirmation |
-| T2-PT-2 | Multiple income categories (A + B, or B + F) | Joint filing rules (englobamento) vs. separate taxation choices | Flag — taxpayer may choose to englobar or not for certain categories |
-| T2-PT-3 | Married couple filing (tributação conjunta) | Joint vs. separate filing produces different results — quociente conjugal | Present both options; do not default to one |
-| T2-PT-4 | Falso recibo verde (single client > 80%) | AT may reclassify income as Categoria A (employment); different tax treatment | Flag for legal review; do not reclassify unilaterally |
-| T2-PT-5 | Deduction for health, education, home expenses (Anexo H) | Personal deductions outside Categoria B — subject to AT e-fatura matching | Confirm e-fatura invoices are attributed to NIF; flag unclaimed deductions |
-| T2-PT-6 | Partial-year residency or non-resident | Different tax rates and treaty rules for non-residents | Flag — do not apply resident rates to non-residents |
+| T2-PT-1 | Regime RNH / IFICI | Isenções de rendimento estrangeiro e taxa de 20% — complexidade | Remeter para skill `pt-nhr-ifici` |
+| T2-PT-2 | Múltiplas categorias (A + B, ou B + F) | Regras de englobamento vs. tributação autónoma para certas categorias | Sinalizar — contribuinte pode optar pelo englobamento ou não |
+| T2-PT-3 | Casais — tributação conjunta | Tributação conjunta vs. separada produz resultados distintos (quociente conjugal) | Apresentar ambas as opções; não escolher por defeito |
+| T2-PT-4 | Falso recibo verde (cliente único > 80%) | A AT pode requalificar como Categoria A; tratamento diferente | Sinalizar para revisão jurídica; não requalificar unilateralmente |
+| T2-PT-5 | Deduções à coleta para saúde, educação, habitação (Anexo H) | Deduções pessoais fora da Categoria B — sujeitas a matching com e-fatura | Confirmar que as faturas na e-fatura estão atribuídas ao NIF; sinalizar deduções não reclamadas |
+| T2-PT-6 | Residência parcial ou não residente | Taxas e regras de convenções diferentes para não residentes | Sinalizar — não aplicar taxas de residente a não residentes |
 
 ---
 
-## Section 7 — Excel Working Paper Template
+## Secção 7 — Modelo 3 e Anexos: Mapeamento
+
+A declaração anual de IRS é a **Modelo 3**, acompanhada dos anexos consoante as categorias de rendimentos:
+
+| Anexo | Categoria / Conteúdo |
+|---|---|
+| Anexo A | Categoria A (trabalho dependente) e Categoria H (pensões) |
+| Anexo B | Categoria B — regime simplificado (trabalhadores independentes) |
+| Anexo C | Categoria B — contabilidade organizada |
+| Anexo D | Imputação de rendimentos (transparência fiscal) |
+| Anexo E | Categoria E (rendimentos de capitais) |
+| Anexo F | Categoria F (rendimentos prediais) |
+| Anexo G | Categoria G (mais-valias e outros incrementos patrimoniais) |
+| Anexo H | Deduções à coleta (saúde, educação, lares, imóveis, donativos) — alimentado por e-fatura |
+| Anexo J | Rendimentos obtidos no estrangeiro (residentes) |
+| Anexo L | Residentes não habituais — ver skill `pt-nhr-ifici` |
+
+**Prazo de entrega:** **último dia útil de junho** do ano seguinte ao do facto tributário (ex.: IRS 2024 a entregar até 30 de junho de 2025).
+
+---
+
+## Secção 8 — Folha de Trabalho (Excel)
 
 ```
-PORTUGUESE IRS WORKING PAPER (CATEGORIA B — REGIME SIMPLIFICADO)
-Taxpayer: _______________  NIF: _______________  FY: 2025
+PAPEL DE TRABALHO IRS PORTUGAL (CATEGORIA B — REGIME SIMPLIFICADO)
+Contribuinte: _______________  NIF: _______________  Ano: 2025
 
-SECTION A — GROSS RECEIPTS (Categoria B)
+SECÇÃO A — RECEITAS BRUTAS (Categoria B)
                                         EUR
-Total invoiced (recibos verdes gross)  ___________
-Gross-up of withheld amounts           ___________
-Online platform payouts (grossed up)   ___________
-Other Categoria B receipts             ___________
-TOTAL GROSS RECEIPTS                   ___________
+Total faturado (recibos verdes bruto)   ___________
+Recomposição de montantes retidos       ___________
+Plataformas online (recompostas)        ___________
+Outras receitas Categoria B             ___________
+TOTAL RECEITAS BRUTAS                   ___________
 
-SECTION B — REGIME SIMPLIFICADO COEFFICIENT
-Service type: _______________
-Coefficient applied: _______________
-Taxable base (gross × coefficient)     ___________
-Less: SS contributions paid            (___________)
-IRS TAXABLE INCOME                     ___________
+SECÇÃO B — COEFICIENTE REGIME SIMPLIFICADO
+Tipo de serviço: _______________
+Coeficiente aplicado: _______________
+Base tributável (bruto × coeficiente)   ___________
+Menos: contribuições SS pagas           (___________)
+RENDIMENTO TRIBUTÁVEL IRS               ___________
 
-SECTION C — IRS COMPUTATION (STANDARD BRACKETS)
-Tax at bracket rates                   ___________
-IRS Jovem exemption (if applicable)    (___________)
-IRS before credits                     ___________
-Less: retenções na fonte               (___________)
-Less: pagamentos por conta IRS         (___________)
-IRS BALANCE DUE / (REFUND)             ___________
+SECÇÃO C — CÁLCULO DO IRS (ESCALÕES PADRÃO)
+Imposto pelos escalões                  ___________
+Isenção IRS Jovem (se aplicável)        (___________)
+IRS antes de créditos                   ___________
+Menos: retenções na fonte               (___________)
+Menos: pagamentos por conta IRS         (___________)
+SALDO IRS A PAGAR / (REEMBOLSAR)        ___________
 
-SECTION D — ADICIONAL DE SOLIDARIEDADE
-(Only if taxable income > EUR 80,000)  ___________
+SECÇÃO D — ADICIONAL DE SOLIDARIEDADE
+(Apenas se rendimento > EUR 80.000)     ___________
 
-SECTION E — SEGURANÇA SOCIAL
-Quarterly SS base: 70% × quarterly gross ÷ 3 ___________
-Annual SS due: monthly base × 21.4% × 12    ___________
-Less: SS already paid                        (___________)
-SS balance due                               ___________
+SECÇÃO E — SEGURANÇA SOCIAL
+Base trimestral SS: 70% × bruto trim. ÷ 3 ___________
+SS anual devida: base mensal × 21,4% × 12  ___________
+Menos: SS já paga                          (___________)
+Saldo SS a pagar                           ___________
 
-SECTION F — REVIEWER FLAGS
-[ ] Regime simplificado confirmed (gross ≤ EUR 200,000 prior year)?
-[ ] Coefficient correct for service type?
-[ ] All retenção certificates collected?
-[ ] SS payments verified against receipts
-[ ] IRS Jovem — year number confirmed?
-[ ] NHR/IFICI status confirmed (if applicable)?
-[ ] Falso recibo verde risk assessed (single client > 80%)?
-[ ] e-fatura personal deductions checked (Anexo H)?
+SECÇÃO F — ALERTAS DO REVISOR
+[ ] Regime simplificado confirmado (bruto ≤ EUR 200.000 ano anterior)?
+[ ] Coeficiente correto para o tipo de serviço?
+[ ] Todas as declarações de retenção recolhidas?
+[ ] Pagamentos SS conferidos contra recibos
+[ ] IRS Jovem — número do ano confirmado?
+[ ] Estatuto RNH/IFICI verificado (se aplicável, ver skill pt-nhr-ifici)?
+[ ] Risco de falso recibo verde avaliado (cliente único > 80%)?
+[ ] Deduções pessoais e-fatura verificadas (Anexo H)?
 ```
 
 ---
 
-## Section 8 — Bank Statement Reading Guide
+## Secção 9 — Guia de Leitura de Extratos Bancários
 
 ### Millennium BCP
-- Export: CSV via "Consultas" → "Movimentos" → "Exportar"
-- Columns: `Data;Descrição;Débito;Crédito;Saldo`
-- Amount format: thousands separator = `.`, decimal = `,` (e.g., `3.750,00`)
-- Date format: DD/MM/YYYY
-- Credit narrations: `TRANSF DE [sender]`, `TRANSFERÊNCIA RECEBIDA`
-- Debit narrations: `TRANSF PARA [recipient]`, `COMISSÃO`, `SEGURANÇA SOCIAL`
+- Exportação: CSV via "Consultas" → "Movimentos" → "Exportar"
+- Colunas: `Data;Descrição;Débito;Crédito;Saldo`
+- Formato do valor: separador de milhares `.`, decimal `,` (ex.: `3.750,00`)
+- Formato da data: DD/MM/AAAA
+- Descritivos de crédito: `TRANSF DE [remetente]`, `TRANSFERÊNCIA RECEBIDA`
+- Descritivos de débito: `TRANSF PARA [beneficiário]`, `COMISSÃO`, `SEGURANÇA SOCIAL`
 
 ### Caixa Geral de Depósitos (CGD)
-- Export: PDF or CSV from e.caixa.pt
-- Format similar to Millennium; columns: `Data;Descrição;Movimento;Saldo`
-- Positive movement = credit; negative = debit
+- Exportação: PDF ou CSV em e.caixa.pt
+- Formato semelhante ao Millennium; colunas: `Data;Descrição;Movimento;Saldo`
+- Movimento positivo = crédito; negativo = débito
 
 ### BPI (Banco BPI)
-- Export: CSV from BPINet
-- Columns: `Data movimento;Descrição;Valor;Saldo`
-- Positive Valor = credit; negative = debit
+- Exportação: CSV via BPINet
+- Colunas: `Data movimento;Descrição;Valor;Saldo`
+- Valor positivo = crédito; negativo = débito
 
 ### Santander Portugal
-- Export: CSV from NetBanco Santander
-- Columns: `Fecha;Concepto;Importe;Saldo` (note: Spanish headers due to parent company)
-- Amount: positive = credit; negative = debit; comma decimal
+- Exportação: CSV via NetBanco Santander
+- Colunas: `Fecha;Concepto;Importe;Saldo` (nota: cabeçalhos em espanhol pela casa-mãe)
+- Valor positivo = crédito; negativo = débito; decimal por vírgula
 
 ### Novo Banco
-- Export: CSV or Excel from Novo Banco Online
-- Columns: `Data;Descrição;Débito;Crédito;Saldo`
-- Standard Portuguese bank format
+- Exportação: CSV ou Excel via Novo Banco Online
+- Colunas: `Data;Descrição;Débito;Crédito;Saldo`
+- Formato bancário português padrão
 
 ### ActivoBank / Moey (digital)
-- Export: CSV/PDF from app
-- Simple format; credit amounts in dedicated column
+- Exportação: CSV/PDF via aplicação
+- Formato simples; valor a crédito em coluna dedicada
 
 ### MB Way / Multibanco
-- Not a bank statement — payments appear as narrations in primary bank statement
-- Look for: `MBWAY RECEBIDO`, `MULTIBANCO RECEBIMENTO`, `TPA [merchant]`
+- Não é um extrato bancário próprio — pagamentos aparecem como descritivos no extrato bancário principal
+- Procurar: `MBWAY RECEBIDO`, `MULTIBANCO RECEBIMENTO`, `TPA [comerciante]`
 
 ---
 
-## Section 9 — Onboarding Fallback
+## Secção 10 — Onboarding e Recolha de Informação em Falta
 
-**Missing retenção certificates:**
-> "To compute your IRS accurately, I need the withholding certificates (declarações de retenção na fonte) from each client who withheld 25% from your payments. You can request these from your clients by January/February — companies are legally required to issue them. Alternatively, check Portal das Finanças → 'Consultar' → 'Retenções na Fonte' where AT may have the data directly."
+**Declarações de retenção em falta:**
+> "Para calcular o IRS com rigor, preciso das declarações de retenção na fonte de cada cliente que reteve 25% dos pagamentos. Pode pedi-las aos clientes em janeiro/fevereiro — as empresas têm obrigação legal de emiti-las. Em alternativa, consulte o Portal das Finanças → 'Consultar' → 'Retenções na Fonte' — a AT poderá já ter os dados."
 
-**Service type unclear:**
-> "To apply the correct regime simplificado coefficient, I need to know the nature of your services. Are you selling goods (coefficient 0.15), providing general services (0.35), or do you work in a listed profession under Artigo 151º CIRS (also 0.35)? Please confirm so I can apply the correct taxable base."
+**Tipo de serviço ambíguo:**
+> "Para aplicar o coeficiente correto do regime simplificado, preciso de saber a natureza dos serviços. Está a vender mercadorias (coeficiente 0,15), a prestar serviços gerais (0,35) ou exerce profissão listada no artigo 151.º do CIRS (também 0,35)? Confirme para aplicar a base tributável correta."
 
 **IRS Jovem:**
-> "Based on your age, you may qualify for IRS Jovem. This exempts 100% of tax in years 1–3, 75% in years 4–6, 50% in years 7–9, and 25% in year 10. To apply it, I need to confirm: (1) that you are 35 years old or younger, and (2) the year number of your Portuguese income-earning career. Can you confirm when you started receiving Categoria A or B income in Portugal after completing your studies?"
+> "Com base na sua idade, poderá ter direito ao IRS Jovem. Este isenta 100% do imposto nos anos 1–3, 75% nos anos 4–6, 50% nos anos 7–9 e 25% no ano 10. Para o aplicar, preciso de confirmar: (1) que tem 35 anos ou menos, e (2) o número do ano da sua carreira de obtenção de rendimentos em Portugal. Pode confirmar quando começou a receber rendimentos de Categoria A ou B em Portugal após concluir os estudos?"
 
-**SS contributions unknown:**
-> "Segurança Social contributions are deductible from your IRS taxable base and can significantly reduce your tax liability. Do you have your quarterly SS payment receipts? If not, I can estimate based on your declared gross receipts: your SS base is 70% of your quarterly gross divided by 3, taxed at 21.4%."
+**RNH / IFICI:**
+> "Se está abrangido pelo regime de Residente Não Habitual (RNH) ou pelo IFICI, o tratamento de IRS é diferente — taxa fixa de 20% sobre Atividades de Elevado Valor Acrescentado, com possíveis isenções de rendimentos de fonte estrangeira. Confirma o seu estatuto e, em caso afirmativo, o trabalho será encaminhado para a skill especializada (`pt-nhr-ifici`)?"
+
+**Contribuições SS desconhecidas:**
+> "As contribuições para a Segurança Social são dedutíveis à matéria coletável de IRS e podem reduzir significativamente o imposto. Tem os recibos trimestrais de pagamento à SS? Caso não, posso estimar com base nas suas receitas brutas declaradas: a base contributiva é 70% das receitas brutas trimestrais ÷ 3, à taxa de 21,4%."
 
 ---
 
-## Section 10 — Reference Material
+## Secção 11 — Remissão para RNH / IFICI
 
-### Key Legislation
-- **CIRS (Código do IRS)** — primary income tax code; Art. 28 (Categoria B), Art. 31 (coeficientes), Art. 101 (retenção na fonte)
-- **Lei n.º 24-D/2022** — introduced IRS Jovem reforms
-- **Portaria 1011/2001** — Artigo 151º CIRS list of high-value professions
+Esta skill **não cobre** o regime de Residente Não Habitual (RNH) nem o IFICI (Incentivo Fiscal à Investigação Científica e Inovação).
 
-### Filing Deadlines 2025 (FY 2024 return)
-| Deadline | Event |
+Se o contribuinte está sob regime RNH ou IFICI, **ver o skill `pt-nhr-ifici`** para o tratamento detalhado da:
+- Taxa fixa de 20% sobre AEVA (Atividades de Elevado Valor Acrescentado);
+- Isenções de rendimentos de fonte estrangeira (categorias B, E, F, G, H), incluindo a regra dos 10 anos;
+- Lista de profissões e atividades qualificáveis;
+- Processo de candidatura e registo junto da AT (Autoridade Tributária e Aduaneira);
+- Interação com convenções de dupla tributação;
+- Transição RNH → IFICI após a reforma de 2024.
+
+**Regra operativa:** verificar sempre se o contribuinte está sob RNH/IFICI **antes de aplicar as tabelas progressivas** desta skill. Em caso afirmativo, remeter integralmente.
+
+---
+
+## Secção 12 — Referências
+
+### Legislação-Chave
+- **CIRS (Código do IRS)** — Decreto-Lei n.º 442-A/88, de 30 de novembro, com as alterações em vigor; art.º 28.º (Categoria B), art.º 31.º (coeficientes), art.º 101.º (retenção na fonte)
+- **Lei n.º 24-D/2022** — alterações ao IRS Jovem
+- **Portaria 1011/2001** — lista do art.º 151.º do CIRS de profissões de elevado valor acrescentado
+- **Decreto Regulamentar n.º 25/2009** — depreciações e amortizações (relevante para contabilidade organizada)
+
+### Prazos 2025 (declaração FY 2024)
+| Prazo | Evento |
 |---|---|
-| April 2025 | Modelo 3 filing window opens |
-| 30 June 2025 | Deadline for submission of Modelo 3 (IRS 2024) |
-| August 2025 | AT issues assessments; payments due within notice |
-| 31 August 2025 | Pagamento por conta — 1st advance payment for 2025 |
-| 30 November 2025 | Pagamento por conta — 2nd advance payment for 2025 |
+| 1 de abril de 2025 | Abertura do prazo de entrega da Modelo 3 |
+| Último dia útil de junho de 2025 | Prazo de entrega da Modelo 3 (IRS 2024) |
+| Agosto de 2025 | A AT emite as liquidações; pagamentos a efetuar no prazo da notificação |
+| 31 de agosto de 2025 | Pagamento por conta — 1.ª prestação para 2025 |
+| 30 de novembro de 2025 | Pagamento por conta — 2.ª prestação para 2025 |
 
-### Useful References
-- AT Portal das Finanças: portaldasfinancas.gov.pt
+### Referências Úteis
+- Portal das Finanças (AT): portaldasfinancas.gov.pt
 - Segurança Social Direta: app.seg-social.pt
-- CIRS: dre.pt (Diário da República)
-- IRS Jovem confirmation: Portal das Finanças → "IRS Jovem"
-
+- CIRS consolidado: dre.pt (Diário da República)
+- IRS Jovem (confirmação): Portal das Finanças → "IRS Jovem"
+- Skill relacionada: `pt-nhr-ifici` (RNH / IFICI)
 
 ---
 
 ## Disclaimer
 
-This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, EA, tax attorney, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
+Esta skill e os seus outputs são fornecidos exclusivamente para fins informativos e de cálculo e não constituem aconselhamento fiscal, jurídico ou financeiro. A Open Accountants e os seus contribuidores não aceitam qualquer responsabilidade por erros, omissões ou consequências decorrentes da utilização desta skill. Todos os outputs devem ser revistos e validados por um profissional qualificado (Contabilista Certificado, advogado fiscalista ou equivalente licenciado na jurisdição aplicável) antes de qualquer entrega ou actuação.
 
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
+A versão mais actualizada e verificada desta skill é mantida em [openaccountants.com](https://openaccountants.com). Faça login para aceder à versão mais recente, solicitar revisão profissional por um contabilista licenciado e acompanhar actualizações à medida que a lei fiscal evolui.

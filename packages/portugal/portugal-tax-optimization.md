@@ -1,8 +1,8 @@
 ---
 name: portugal-tax-optimization
 description: >
-  Use this skill when advising on LEGAL tax minimization strategies for Portuguese taxpayers — individuals, freelancers (recibos verdes), and small business owners. Trigger on phrases like "reduce my tax Portugal", "tax planning", "regime simplificado", "organized accounts", "IRS optimization", "NHR", "IFICI", "social security self-employed", "IVA", "recibos verdes", "Category B", "deductions Portugal", or any question about legally minimizing Portuguese IRS or IRC. Covers entity selection, simplified vs organized regime, deduction strategies, capital allowances, loss utilization, timing, IVA optimization, social security, and red lines. ALWAYS read this skill before giving Portuguese tax optimization advice.
-version: 1.0
+  Utilize esta skill ao aconselhar sobre estratégias LEGAIS de minimização fiscal para contribuintes portugueses — particulares, trabalhadores independentes (recibos verdes) e pequenos empresários. Acione com expressões como "reduzir o meu imposto Portugal", "planeamento fiscal", "regime simplificado", "contabilidade organizada", "optimização do IRS", "segurança social trabalhador independente", "IVA", "recibos verdes", "Categoria B", "deduções Portugal", ou qualquer questão sobre minimização legal do IRS ou IRC português. Cobre selecção de entidade, regime simplificado vs contabilidade organizada, estratégias de dedução, amortizações, utilização de prejuízos, timing, optimização do IVA, segurança social e linhas vermelhas. LEIA SEMPRE esta skill antes de prestar aconselhamento de optimização fiscal portuguesa. Trigger also on: "reduce my tax Portugal", "tax planning", "regime simplificado", "organized accounts", "IRS optimization", "social security self-employed", "IVA", "recibos verdes", "Category B", "deductions Portugal".
+version: 1.1
 jurisdiction: PT
 tax_year: 2025
 category: tax-optimization
@@ -11,311 +11,314 @@ depends_on:
 verified_by: pending
 ---
 
-# Portugal — Tax Optimization Skill v1.0
+# Portugal — Optimização Fiscal — Skill v1.1
 
 ---
 
-## Section 1 — Quick Reference
+## Secção 1 — Referência Rápida
 
-| Field | Value |
+| Campo | Valor |
 |---|---|
-| Country | Portugal (República Portuguesa) |
-| Currency | EUR |
-| Tax year | Calendar year (1 January – 31 December) |
-| Primary legislation | Código do IRS (CIRS); Código do IRC; Código do IVA; Código Contributivo da Segurança Social |
-| Anti-avoidance | GAAR: Cláusula Geral Anti-Abuso (Art 38.º, n.º 2 da Lei Geral Tributária, LGT) |
-| Tax authority | Autoridade Tributária e Aduaneira (AT) |
-| Filing deadline | 1 April – 30 June of the following year (Modelo 3 IRS) |
-| Individual top marginal rate | 48% + 5% solidarity surtax (above €250,000) = up to 53% |
-| IRC rate (companies) | 21% standard; 17% on first €50,000 for SMEs |
-| IVA (VAT) standard rate | 23% (continental); 22% Madeira; 16% Azores |
-| Social security (self-employed) | 21.4% on calculated base |
+| País | Portugal (República Portuguesa) |
+| Moeda | EUR |
+| Ano fiscal | Ano civil (1 de Janeiro – 31 de Dezembro) |
+| Legislação primária | Código do IRS (CIRS); Código do IRC; Código do IVA; Código Contributivo da Segurança Social |
+| Anti-abuso | CGAA: Cláusula Geral Anti-Abuso (Art 38.º, n.º 2 da Lei Geral Tributária, LGT) |
+| Autoridade fiscal | Autoridade Tributária e Aduaneira (AT) |
+| Prazo de entrega | 1 de Abril – 30 de Junho do ano seguinte (Modelo 3 IRS) |
+| Taxa marginal máxima (pessoas singulares) | 48% + taxa adicional de solidariedade de 5% (acima de €250.000) = até 53% |
+| Taxa de IRC (sociedades) | 21% taxa normal; 17% sobre os primeiros €50.000 para PMEs |
+| Taxa normal de IVA | 23% (continente); 22% Madeira; 16% Açores |
+| Segurança social (trabalhador independente) | 21,4% sobre a base calculada |
 
-### IRS Tax Brackets (2026)
+### Escalões de IRS (2026)
 
-| Bracket | Taxable Income (€) | Marginal Rate | Parcela a Abater |
+| Escalão | Rendimento Tributável (€) | Taxa Marginal | Parcela a Abater |
 |---|---|---|---|
-| 1 | 0 – 8,342 | 12.5% | €0 |
-| 2 | 8,342 – 12,587 | 15.7% | €266.94 |
-| 3 | 12,587 – 17,838 | 21.2% | €959.23 |
-| 4 | 17,838 – 23,089 | 24.1% | €1,476.53 |
-| 5 | 23,089 – 29,397 | 31.1% | €3,092.76 |
-| 6 | 29,397 – 43,090 | 34.9% | €4,209.85 |
-| 7 | 43,090 – 46,566 | 43.1% | €7,743.23 |
-| 8 | 46,566 – 86,634 | 44.6% | €8,441.72 |
-| 9 | Above 86,634 | 48.0% | €11,387.28 |
+| 1 | 0 – 8.342 | 12,5% | €0 |
+| 2 | 8.342 – 12.587 | 15,7% | €266,94 |
+| 3 | 12.587 – 17.838 | 21,2% | €959,23 |
+| 4 | 17.838 – 23.089 | 24,1% | €1.476,53 |
+| 5 | 23.089 – 29.397 | 31,1% | €3.092,76 |
+| 6 | 29.397 – 43.090 | 34,9% | €4.209,85 |
+| 7 | 43.090 – 46.566 | 43,1% | €7.743,23 |
+| 8 | 46.566 – 86.634 | 44,6% | €8.441,72 |
+| 9 | Acima de 86.634 | 48,0% | €11.387,28 |
 
-**Solidarity surtax (taxa adicional de solidariedade, Art 68.º-A CIRS):** 2.5% on taxable income €80,000–€250,000; 5% above €250,000.
+**Taxa adicional de solidariedade (Art 68.º-A CIRS):** 2,5% sobre rendimento tributável entre €80.000 e €250.000; 5% acima de €250.000.
 
-**Mínimo de Existência (2026):** €12,880 — ensures no taxpayer's net income after tax falls below this floor.
-
----
-
-## Section 2 — Income Splitting & Structuring
-
-### Sole Trader (Empresário em Nome Individual) vs Company (Sociedade)
-
-**Sole trader / freelancer (trabalhador independente):** income reported as Category B on Modelo 3. Two sub-regimes:
-
-1. **Simplified regime (regime simplificado):** gross receipts ≤€200,000. Taxable income = gross × coefficient (e.g., 0.75 for professional services listed in Art 151.º CIRS; 0.35 for other services; 0.15 for goods sales). You cannot deduct additional expenses on top of the coefficient — it is a package deal. Must justify 15% of gross as business expenses (faturas with NIF).
-
-2. **Organized accounts (contabilidade organizada):** mandatory if gross >€200,000, optional below. Deduct actual business expenses. Requires certified accountant (TOC/CC). More beneficial when actual expenses significantly exceed the implied coefficient deduction.
-
-**Company (Sociedade Unipessoal, Lda or SA):** IRC at 21% (17% on first €50,000 for PMEs). Profits distributed as dividends taxed at 28% autonomous rate or included in IRS at progressive rates (50% exclusion for resident shareholders — tributação englobamento). Administrative burden higher.
-
-**Decision rule:** simplified regime is typically optimal for freelancers with low actual expenses (the coefficient implies 25%+ expenses automatically). Switch to organized accounts when documented expenses exceed the coefficient allowance. Consider incorporation when profit consistently exceeds ~€60,000–€80,000.
-
-### Joint Taxation (Tributação Conjunta)
-
-Married couples or civil partners can opt for joint taxation. Taxable income is halved, tax computed on half, then doubled. Beneficial when incomes are significantly unequal — pulls the higher earner down into a lower bracket.
-
-### IFICI / NHR 2.0
-
-The original NHR program (Residente Não Habitual) closed to new applicants 1 January 2024. Existing NHR holders retain benefits for 10 years. Replacement: IFICI (Incentivo Fiscal à Investigação Científica e Inovação) — 20% flat rate on qualifying Portuguese employment/self-employment income for up to 10 years. Strictly limited to researchers, scientists, qualified professionals in innovation, and specific investment-related roles. Most freelancers do NOT qualify.
+**Mínimo de Existência (2026):** €12.880 — garante que o rendimento líquido após imposto de nenhum contribuinte cai abaixo deste limiar.
 
 ---
 
-## Section 3 — Deductions Most People Miss
+## Secção 2 — Repartição de Rendimentos e Estruturação
 
-### Personal Deductions (Deduções à Coleta) — Art 78.º CIRS
+### Empresário em Nome Individual (ENI) vs Sociedade (Lda)
 
-| Category | Deduction | Limit |
+**Trabalhador independente / freelancer (recibos verdes):** rendimento declarado como Categoria B no Modelo 3. Dois sub-regimes:
+
+1. **Regime simplificado:** rendimentos brutos ≤€200.000. Rendimento tributável = bruto × coeficiente (ex.: 0,75 para serviços profissionais listados no Art 151.º CIRS; 0,35 para outros serviços; 0,15 para venda de bens). Não pode deduzir despesas adicionais para além do coeficiente — é um pacote fechado. Tem de justificar 15% do bruto como despesas profissionais (facturas com NIF).
+
+2. **Contabilidade organizada:** obrigatória se rendimentos brutos >€200.000, opcional abaixo. Deduz despesas profissionais reais. Requer contabilista certificado (CC). Mais vantajosa quando as despesas reais excedem significativamente a dedução implícita no coeficiente.
+
+**Sociedade (Sociedade Unipessoal por Quotas, Lda, ou SA):** IRC a 21% (17% sobre os primeiros €50.000 para PMEs). Lucros distribuídos como dividendos tributados a 28% (taxa liberatória) ou incluídos no IRS por englobamento a taxas progressivas (exclusão de 50% para sócios residentes — tributação por englobamento). Carga administrativa superior.
+
+**Regra de decisão (quadro de comparação de regimes):**
+- **Cat B simplificado:** óptimo para freelancers com baixas despesas reais (o coeficiente já implica 25%+ de despesas automaticamente).
+- **Cat B organizada:** mudar quando as despesas documentadas excedam a margem implícita do coeficiente.
+- **Lda (Sociedade):** ponderar incorporação quando o lucro consistentemente excede ~€60.000–€80.000, pesando os custos adicionais de contabilidade, derrama, tributações autónomas e formalismos societários.
+
+### Tributação Conjunta
+
+Casais casados ou unidos de facto podem optar pela tributação conjunta. O rendimento tributável é dividido por dois, o imposto calculado sobre metade, e depois duplicado. Vantajosa quando os rendimentos são significativamente desiguais — puxa o cônjuge com rendimento mais elevado para um escalão inferior.
+
+### RNH / IFICI
+
+Para optimização sob RNH/IFICI ver skill pt-nhr-ifici.
+
+---
+
+## Secção 3 — Deduções que a Maioria Esquece (Optimização equivalente a PTKP)
+
+### Deduções à Colecta — Art 78.º CIRS
+
+| Categoria | Dedução | Limite |
 |---|---|---|
-| General family (despesas gerais familiares) | 35% of expenses with NIF | €250/taxpayer (€500 couple) |
-| Health (saúde) | 15% of health expenses (IVA 6% or exempt) | €1,000 |
-| Education (educação) | 30% of education expenses | €800 |
-| Housing (habitação) | 15% of rent or mortgage interest | €502 (rent) / €296 (interest) |
-| Care homes (lares) | 25% of expenses | €403.75 |
-| Alimony (pensão de alimentos) | 20% of court-ordered payments | No cap |
-| VAT invoices (IVA/fatura) | 15% of IVA on restaurants, hairdressers, auto repairs, vets, gyms, etc. | €250 (from e-fatura) |
-| Donations | Various | Up to 15% of coleta |
+| Despesas gerais familiares | 35% das despesas com NIF | €250/contribuinte (€500 casal) |
+| Saúde | 15% das despesas de saúde (IVA 6% ou isento) | €1.000 |
+| Educação | 30% das despesas de educação | €800 |
+| Habitação | 15% de rendas ou juros de empréstimo | €502 (renda) / €296 (juros) |
+| Lares | 25% das despesas | €403,75 |
+| Pensão de alimentos | 20% dos pagamentos fixados judicialmente | Sem limite |
+| IVA em facturas (e-fatura) | 15% do IVA em restaurantes, cabeleireiros, oficinas auto, veterinários, ginásios, etc. | €250 (via e-fatura) |
+| Donativos | Vários | Até 15% da colecta |
 
-### Category B Specific Deductions (Organized Accounts)
+### Deduções Específicas da Categoria B (Contabilidade Organizada)
 
-Under organized accounts, deduct actual business expenses: office rent, equipment, professional services, travel, training, telecommunications, insurance, and depreciation. Subject to wholly-and-exclusively test.
+Em contabilidade organizada, deduzem-se despesas profissionais reais: renda de escritório, equipamento, serviços profissionais, deslocações, formação, telecomunicações, seguros e amortizações. Sujeito ao princípio da indispensabilidade.
 
-### Simplified Regime — The 15% Justification Rule
+### Regime Simplificado — Regra de Justificação dos 15%
 
-For coefficients 0.75 and 0.35, you must justify expenses equal to 15% of gross receipts. If not fully justified, the shortfall is added to taxable income. Sources of justification:
-- **Specific deduction:** €4,587.09 automatically applied (or total social security contributions if higher, up to 10% of gross)
-- **Business-related invoices** with your NIF (utilities, telecoms, professional services, travel, etc.)
-- **IMI (property tax)** and mortgage interest on business property
+Para coeficientes 0,75 e 0,35, tem de justificar despesas equivalentes a 15% dos rendimentos brutos. Se não totalmente justificadas, o défice é acrescido ao rendimento tributável. Fontes de justificação:
+- **Dedução específica:** €4.587,09 aplicada automaticamente (ou total das contribuições para segurança social, se superior, até 10% do bruto)
+- **Facturas profissionais** com o seu NIF (utilities, telecomunicações, serviços profissionais, deslocações, etc.)
+- **IMI** e juros de empréstimo sobre imóvel afecto à actividade
 
-**Planning tip:** always request NIF on all business-related purchases. The gap between ¥4,587.09 and 15% of gross is the amount you must evidence via invoices.
+**Dica de planeamento:** peça sempre NIF em todas as compras profissionais. A diferença entre €4.587,09 e 15% do bruto é o valor que deve evidenciar por facturas.
 
 ---
 
-## Section 4 — Capital Allowances Optimization
+## Secção 4 — Optimização de Amortizações
 
-### Depreciation (Amortizações) — Organized Accounts
+### Amortizações — Contabilidade Organizada
 
-Depreciation follows Decreto Regulamentar n.º 25/2009 rates:
+As amortizações seguem as taxas do Decreto Regulamentar n.º 25/2009:
 
-| Asset Category | Rate |
+| Categoria de Activo | Taxa |
 |---|---|
-| Buildings (commercial) | 2%–5% |
-| Office furniture | 12.5% |
-| Computer hardware | 33.33% |
-| Software | 33.33% |
-| Motor vehicles (passenger) | 25% |
-| Plant and machinery | 10%–20% |
+| Edifícios (comerciais) | 2%–5% |
+| Mobiliário de escritório | 12,5% |
+| Equipamento informático | 33,33% |
+| Software | 33,33% |
+| Viaturas ligeiras de passageiros | 25% |
+| Equipamento básico | 10%–20% |
 
-Motor vehicle depreciation limited to vehicles costing ≤€62,500 (electric vehicles) or ≤€37,500 (other). Excess cost non-depreciable.
+A amortização de viaturas está limitada a viaturas com custo ≤€62.500 (eléctricas) ou ≤€37.500 (outras). O excesso de custo é não amortizável.
 
-### Simplified Regime
+### Regime Simplificado
 
-No explicit depreciation claims — the coefficient subsumes all expenses. Asset purchases do not create additional deductions.
+Não há amortizações autónomas — o coeficiente subsume todas as despesas. A aquisição de activos não gera deduções adicionais.
 
-### Reinvestment Relief (IRC — Companies)
+### Reinvestimento de Mais-Valias (IRC — Sociedades)
 
-Reinvestment of capital gains from fixed assets into new qualifying assets within the reinvestment period: 50% of the gain excluded from taxation (Art 48.º CIRC). Planning opportunity when selling business premises or equipment.
-
----
-
-## Section 5 — Loss Utilization
-
-### Category B Losses (Self-Employed)
-
-Under organized accounts, Category B losses can offset other Category B income in the same year and carry forward for 12 years (Art 55.º CIRS). Losses under the simplified regime are NOT generated — the coefficient methodology always produces positive taxable income.
-
-**Key restriction:** Category B losses cannot offset other income categories (Category A employment, Category E capital income, etc.) — only other Category B income.
-
-### IRC (Companies)
-
-Tax losses carry forward for 12 years. Can offset up to 65% of taxable profit in each subsequent year (Art 52.º CIRC). Subject to maintaining >50% ownership continuity.
-
-### Capital Losses (Category G)
-
-Capital losses on securities carry forward 5 years against capital gains only (Art 55.º, n.º 5 CIRS). Property losses can offset property gains.
+Reinvestimento de mais-valias de activos fixos em novos activos elegíveis dentro do prazo de reinvestimento: exclusão de 50% da mais-valia (Art 48.º CIRC). Oportunidade de planeamento na alienação de instalações ou equipamento.
 
 ---
 
-## Section 6 — Timing Strategies
+## Secção 5 — Utilização de Prejuízos
 
-| Strategy | Detail |
+### Prejuízos da Categoria B (Trabalhadores Independentes)
+
+Em contabilidade organizada, os prejuízos da Categoria B podem compensar outros rendimentos da Categoria B no mesmo ano e reportar-se por 12 anos (Art 55.º CIRS). Os prejuízos no regime simplificado NÃO são gerados — a metodologia do coeficiente produz sempre rendimento tributável positivo.
+
+**Restrição-chave:** os prejuízos da Categoria B não podem compensar outras categorias de rendimento (Categoria A trabalho dependente, Categoria E rendimentos de capitais, etc.) — apenas outros rendimentos da Categoria B.
+
+### IRC (Sociedades)
+
+Os prejuízos fiscais reportam-se por 12 anos. Podem compensar até 65% do lucro tributável em cada ano subsequente (Art 52.º CIRC). Sujeito à manutenção de >50% de continuidade na titularidade.
+
+### Menos-Valias (Categoria G)
+
+As menos-valias mobiliárias reportam-se por 5 anos, apenas contra mais-valias (Art 55.º, n.º 5 CIRS). As menos-valias imobiliárias compensam mais-valias imobiliárias.
+
+---
+
+## Secção 6 — Estratégias de Timing
+
+| Estratégia | Detalhe |
 |---|---|
-| Advance IRS payments (pagamentos por conta) | Self-employed with prior-year IRS >€301 must make 3 advance payments (July, September, December). If income drops, request reduction (Art 107.º CIRS) |
-| Defer invoicing to January | If under simplified regime and close to €200,000 threshold, timing matters. Also shifts income to next tax year |
-| Accelerate expenses before year-end | Under organized accounts: purchase equipment, prepay services, pay outstanding invoices before 31 December |
-| E-fatura collection | Ensure all NIF invoices are validated on Portal das Finanças by mid-February (deadline for corrections). Maximise IVA deduction and despesas gerais |
-| Joint vs separate taxation | Model both scenarios annually. Especially beneficial when one spouse has no/low income |
-| Social security base update | Quarterly declaration updates the contribution base. If income drops, declare promptly to reduce quarterly SS payments |
-| Capital gains deferral | Reinvest property sale proceeds into new primary residence within 36 months (Art 10.º, n.º 5 CIRS) to exclude the gain |
+| Pagamentos por conta de IRS | Trabalhadores independentes com IRS do ano anterior >€301 devem efectuar 3 pagamentos por conta (Julho, Setembro, Dezembro). Se o rendimento descer, solicitar redução (Art 107.º CIRS) |
+| Diferir facturação para Janeiro | Em regime simplificado e próximo do limiar de €200.000, o timing é decisivo. Também desloca rendimento para o ano fiscal seguinte |
+| Antecipar despesas antes do fim do ano | Em contabilidade organizada: adquirir equipamento, pré-pagar serviços, regularizar facturas em aberto antes de 31 de Dezembro |
+| Validação e-fatura | Confirmar que todas as facturas com NIF estão validadas no Portal das Finanças até meados de Fevereiro (prazo para correcções). Maximiza a dedução de IVA e despesas gerais |
+| Tributação conjunta vs separada | Simular ambos os cenários anualmente. Especialmente vantajoso quando um dos cônjuges não tem rendimento ou tem rendimento baixo |
+| Actualização da base contributiva | Declaração trimestral actualiza a base contributiva. Se o rendimento descer, declarar prontamente para reduzir os pagamentos trimestrais à SS |
+| Diferimento de mais-valias | Reinvestir o produto da venda em nova habitação própria permanente no prazo de 36 meses (Art 10.º, n.º 5 CIRS) para excluir a mais-valia |
 
 ---
 
-## Section 7 — IVA (VAT) Optimization
+## Secção 7 — Optimização do IVA
 
-| Topic | Detail |
+| Tópico | Detalhe |
 |---|---|
-| Exemption threshold | Turnover ≤€14,500 (2026): exempt from IVA under Art 53.º CIVA. No IVA charged, no input credit. Review annually as threshold may change |
-| Registration above threshold | Mandatory registration and quarterly IVA returns. Can recover IVA on business purchases |
-| Simplified IVA regime | No separate simplified regime beyond Art 53 exemption. Small businesses use regular regime above threshold |
-| Rates | 23% standard (mainland); 13% intermediate; 6% reduced. Azores: 16%/9%/4%. Madeira: 22%/12%/5% |
-| Input credit planning | Under organized accounts, claim full IVA on business expenses. Mixed-use items: pro-rata method (pro rata de dedução) |
-| IVA on cross-border services | B2B intra-EU services: reverse charge applies (Art 6.º, n.º 6a CIVA). No Portuguese IVA charged; client self-assesses in their country. Register for VIES |
-| Recapitulative statement | Quarterly EU sales listing (declaração recapitulativa) if providing intra-EU services |
+| Limiar de isenção | Volume de negócios ≤€14.500 (2026): isento de IVA ao abrigo do Art 53.º CIVA. Não liquida IVA, não tem direito a dedução. Rever anualmente, dado que o limiar pode mudar |
+| Registo acima do limiar | Registo obrigatório e declarações periódicas trimestrais de IVA. Pode recuperar IVA em aquisições profissionais |
+| Regime simplificado de IVA | Não existe regime simplificado autónomo para além da isenção do Art 53.º. Pequenas empresas aplicam o regime normal acima do limiar |
+| Taxas | 23% normal (continente); 13% intermédia; 6% reduzida. Açores: 16%/9%/4%. Madeira: 22%/12%/5% |
+| Planeamento da dedução do IVA | Em contabilidade organizada, deduzir totalmente o IVA em despesas profissionais. Bens de uso misto: método pro rata (pro rata de dedução) |
+| IVA em serviços transfronteiriços | Serviços B2B intra-UE: aplica-se a regra de inversão do sujeito passivo (Art 6.º, n.º 6 a) CIVA). Não liquida IVA português; o cliente autoliquida no seu país. Registar no VIES |
+| Declaração recapitulativa | Declaração trimestral de operações intracomunitárias quando há prestações de serviços intra-UE |
 
 ---
 
-## Section 8 — Social Security Optimization
+## Secção 8 — Optimização da Segurança Social
 
-### Self-Employed Contributions (Trabalhadores Independentes)
+### Contribuições dos Trabalhadores Independentes
 
-- **Rate:** 21.4% on the relevant base (rendimento relevante)
-- **Relevant base calculation:** quarterly, based on gross receipts from the prior quarter × coefficient (typically 70% for services, 20% for goods)
-- **Annual cap:** 12 × IAS (Indexante dos Apoios Sociais). IAS 2026 = €522.50 → cap ~€75,240/year
-- **Quarterly payments:** January, April, July, October
+- **Taxa:** 21,4% sobre o rendimento relevante
+- **Cálculo do rendimento relevante:** trimestral, com base nos rendimentos brutos do trimestre anterior × coeficiente (tipicamente 70% para serviços, 20% para venda de bens)
+- **Limite máximo anual:** 12 × IAS (Indexante dos Apoios Sociais). IAS 2026 = €522,50 → limite ~€75.240/ano
+- **Pagamentos trimestrais:** Janeiro, Abril, Julho, Outubro
 
-### Exemptions and Reductions
+### Isenções e Reduções
 
-| Situation | Treatment |
+| Situação | Tratamento |
 |---|---|
-| First 12 months of activity | Full exemption (first-time self-employed only) |
-| Months 13–24 | 50% reduction |
-| Cumulative employment + self-employment | If employed with SS contributions and self-employment income <4× IAS (~€2,090/month), may be exempt from self-employment SS |
-| Spouse of sole trader | If genuinely employed in the business, can be registered as employee with employer contributions |
+| Primeiros 12 meses de actividade | Isenção total (apenas para primeira inscrição como trabalhador independente) |
+| Meses 13–24 | Redução de 50% |
+| Acumulação trabalho dependente + independente | Se for trabalhador por conta de outrem com descontos para SS e o rendimento do trabalho independente for <4× IAS (~€2.090/mês), pode estar dispensado de contribuições como independente |
+| Cônjuge do empresário | Se genuinamente trabalha no negócio, pode ser registado como trabalhador por conta de outrem com contribuições do empregador |
 
-### Optimization Strategies
+### Estratégias de Optimização
 
-- **Low early income:** benefit from 12-month exemption + 12-month 50% reduction = 2 years of reduced SS
-- **Dual employment + freelance:** maintain employment contract to potentially exempt freelance income from SS contributions
-- **Voluntary higher contributions:** generally not advantageous — benefits (pension) are modest relative to additional cost. Focus on private retirement savings (PPR)
-- **PPR (Plano Poupança Reforma):** investment in approved retirement plan → IRS deduction of 20% of contributions up to €400 (under 35), €350 (35–50), €300 (50+). Per person.
+- **Rendimento inicial baixo:** aproveitar a isenção de 12 meses + redução de 50% nos 12 meses seguintes = 2 anos de SS reduzida
+- **Acumulação trabalho dependente + freelance:** manter contrato de trabalho para potencialmente isentar o rendimento freelance de contribuições à SS
+- **Contribuições voluntárias superiores:** geralmente não vantajosas — os benefícios (pensão) são modestos face ao custo adicional. Focar em poupança privada para reforma (PPR)
+- **PPR (Plano Poupança Reforma):** investimento em plano aprovado → dedução à colecta de 20% das contribuições, com limite de €400 (até 35 anos), €350 (35–50 anos), €300 (50+). Por contribuinte.
 
 ---
 
-## Section 9 — Investment & Retirement
+## Secção 9 — Investimento e Reforma
 
-| Instrument | Tax Treatment |
+| Instrumento | Tratamento Fiscal |
 |---|---|
-| PPR (Plano Poupança Reforma) | 20% IRS deduction on contributions (age-dependent cap). Early withdrawal penalty outside qualifying events. Gains taxed at 8% (after 8+ years) |
-| Savings deposits interest | 28% autonomous rate or optional englobamento (progressive rates). Englobamento beneficial if marginal rate <28% |
-| Dividends (Portuguese companies) | 28% autonomous rate. If englobamento elected, only 50% included in taxable income (effective max 24%) |
-| Capital gains — securities | 28% autonomous rate on net gains. Englobamento optional. Losses offset gains in same year and carry forward 5 years |
-| Capital gains — property | 50% of net gain included in taxable income (progressive rates). Reinvestment exclusion for primary residence within 36 months (Art 10.º, n.º 5 CIRS) |
-| Rental income (Category F) | 28% autonomous rate or englobamento. Deductible expenses: IMI, condo fees, insurance, maintenance, property management. Depreciation at 2% for buildings |
-| Crypto assets | 28% on gains from crypto held <365 days. Exempt if held ≥365 days (Art 10.º, n.º 17 CIRS) |
+| PPR (Plano Poupança Reforma) | Dedução à colecta de IRS de 20% das contribuições (limite dependente da idade). Penalização de levantamento antecipado fora dos eventos qualificantes. Mais-valias tributadas a 8% (após 8+ anos) |
+| Juros de depósitos | Taxa liberatória de 28% ou opção pelo englobamento (taxas progressivas). Englobamento vantajoso se a taxa marginal for <28% |
+| Dividendos (sociedades portuguesas) | Taxa liberatória de 28%. Se optar por englobamento, apenas 50% incluídos no rendimento tributável (efectivo máximo de 24%) |
+| Mais-valias — valores mobiliários | Taxa liberatória de 28% sobre o saldo. Englobamento opcional. Menos-valias compensam mais-valias do mesmo ano e reportam-se por 5 anos |
+| Mais-valias — imóveis | 50% do saldo incluído no rendimento tributável (taxas progressivas). Exclusão por reinvestimento em habitação própria permanente em 36 meses (Art 10.º, n.º 5 CIRS) |
+| Rendimentos prediais (Categoria F) | Taxa liberatória de 28% ou englobamento. Despesas dedutíveis: IMI, condomínio, seguros, manutenção, gestão. Amortização de 2% para edifícios |
+| Criptoactivos | 28% sobre mais-valias de criptoactivos detidos <365 dias. Isentas se detidos ≥365 dias (Art 10.º, n.º 17 CIRS) |
 
-### Englobamento Strategy
+### Estratégia de Englobamento
 
-Electing englobamento (inclusion in progressive IRS bands) can reduce tax on investment income if your marginal rate is below 28%. However, englobamento is all-or-nothing for each income category — you cannot cherry-pick individual items. Model carefully before electing.
+Optar pelo englobamento (inclusão nos escalões progressivos do IRS) pode reduzir o imposto sobre rendimentos de capitais se a sua taxa marginal for inferior a 28%. Contudo, o englobamento é tudo-ou-nada por categoria — não pode escolher rubricas individuais. Modelar cuidadosamente antes de optar.
 
-### Primary Residence Reinvestment
+### Reinvestimento em Habitação Própria Permanente
 
-Net capital gain from selling primary residence is excluded from taxation if proceeds are reinvested in a new primary residence (EU/EEA) within 36 months after sale or 24 months before. Partial reinvestment → partial exclusion.
+A mais-valia líquida da venda da habitação própria permanente é excluída de tributação se o produto for reinvestido em nova habitação própria permanente (UE/EEE) no prazo de 36 meses após a venda ou 24 meses antes. Reinvestimento parcial → exclusão parcial.
 
 ---
 
-## Section 10 — Red Lines (GAAR & Scrutiny Triggers)
+## Secção 10 — Linhas Vermelhas (CGAA e Riscos de Inspecção)
 
-### GAAR (Cláusula Geral Anti-Abuso)
+### CGAA (Cláusula Geral Anti-Abuso)
 
-Art 38.º, n.º 2 da Lei Geral Tributária (LGT). AT can disregard or recharacterise arrangements that are artificial, lack economic substance, and are primarily motivated by tax avoidance. Requires prior approval from the Centro de Estudos Fiscais.
+Art 38.º, n.º 2 da Lei Geral Tributária (LGT). A AT pode desconsiderar ou requalificar operações que sejam artificiais, sem substância económica e essencialmente motivadas por evasão fiscal. Requer parecer prévio do Centro de Estudos Fiscais.
 
-### AT Scrutiny Triggers
+### Gatilhos de Inspecção da AT
 
-| Trigger | Risk |
+| Gatilho | Risco |
 |---|---|
-| Income mismatch with e-fatura data | AT cross-references invoices issued with income declared. Automatic flagging |
-| Simplified regime with income near €200,000 | AT checks for income splitting across multiple NIFs/activities |
-| Failing to justify 15% expenses (simplified regime) | Shortfall added to taxable income automatically |
-| Dual activity — undeclared services | AT monitors bank account deposits vs declared receipts |
-| False recibos verdes (dependent employment disguised as freelance) | Employer fined; worker reclassified. ACT (labour inspectorate) and AT coordinate |
-| Property transactions below VPT (Valor Patrimonial Tributário) | AT applies higher of sale price or VPT for capital gains and IMT |
-| Offshore structures without substance | CFC rules (Art 66.º CIRC) and reporting obligations |
-| Social security contributions avoidance | Segurança Social cross-checks AT data. Penalties + back contributions |
-| Large IVA refund claims | Manual review and audit |
+| Inconsistência entre rendimento declarado e e-fatura | A AT cruza facturas emitidas com rendimento declarado. Sinalização automática |
+| Regime simplificado com rendimento próximo de €200.000 | A AT verifica fragmentação de rendimento por vários NIFs/actividades |
+| Falha na justificação dos 15% de despesas (regime simplificado) | Défice automaticamente acrescido ao rendimento tributável |
+| Dupla actividade — serviços não declarados | A AT monitoriza depósitos bancários vs receitas declaradas |
+| Falsos recibos verdes (relação laboral dependente disfarçada de freelance) | Empregador é multado; trabalhador é reclassificado. ACT e AT articulam |
+| Transmissões imobiliárias abaixo do VPT (Valor Patrimonial Tributário) | A AT aplica o maior entre preço de venda e VPT para mais-valias e IMT |
+| Estruturas offshore sem substância | Regras CFC (Art 66.º CIRC) e obrigações declarativas |
+| Fuga a contribuições à Segurança Social | A Segurança Social cruza dados com a AT. Coimas + contribuições em atraso |
+| Pedidos de reembolso de IVA de montante elevado | Revisão manual e inspecção |
 
-### Absolute Prohibitions
+### Proibições Absolutas
 
-- NEVER advise issuing recibos verdes for work that is genuinely dependent employment
-- NEVER advise underreporting income when invoices are tracked via e-fatura
-- NEVER advise declaring property sales below VPT
-- NEVER advise artificial income splitting to stay below the €200,000 simplified regime threshold
-- NEVER advise failing to register for IVA when above the exemption threshold
-- NEVER advise avoiding social security registration when legally required
+- NUNCA aconselhar emissão de recibos verdes para trabalho que constitua relação laboral dependente
+- NUNCA aconselhar omissão de rendimento quando as facturas são rastreadas via e-fatura
+- NUNCA aconselhar declarar transmissões imobiliárias abaixo do VPT
+- NUNCA aconselhar fragmentação artificial de rendimento para se manter abaixo do limiar de €200.000 do regime simplificado
+- NUNCA aconselhar a não inscrição em IVA quando acima do limiar de isenção
+- NUNCA aconselhar evitar a inscrição na Segurança Social quando legalmente exigida
 
 ---
 
-## Section 11 — Annual Tax Planning Calendar
+## Secção 11 — Calendário Anual de Planeamento Fiscal
 
-| When | Action |
+| Quando | Acção |
 |---|---|
-| January | Quarterly SS contribution due. First advance IRS payment opportunity. Review e-fatura for prior year — begin corrections |
-| February | E-fatura validation deadline (typically mid-February). Ensure all NIF invoices are correctly categorised |
-| March | Deadline to communicate household composition (agregado familiar) to AT. Confirm IRS deductions on Portal das Finanças |
-| April | IRS filing period opens (1 April). Early filing for straightforward returns. Review joint vs separate taxation |
-| May | Continue IRS filing. Quarterly SS contribution due (April). Model tax for the year |
-| June 30 | IRS filing deadline. Ensure Modelo 3 submitted. File Anexo B (Category B), Anexo H (deductions), Anexo J (foreign income) |
-| July | First pagamento por conta (advance IRS) due. Review SS base for next quarter. |
-| September | Second pagamento por conta due. Mid-year tax review |
-| October | Quarterly SS contribution due. Review investment income for englobamento decision |
-| November | Plan year-end PPR contributions. Review property transactions for reinvestment timelines |
-| December | Third pagamento por conta due. **Critical month:** make PPR contributions, charitable donations. Ensure all business invoices with NIF are issued. Final SS contribution of the year. Deadline for IVA regime elections |
+| Janeiro | Contribuição trimestral à SS. Primeira oportunidade de pagamento por conta de IRS. Rever e-fatura do ano anterior — iniciar correcções |
+| Fevereiro | Prazo de validação no e-fatura (tipicamente meados de Fevereiro). Garantir que todas as facturas com NIF estão correctamente categorizadas |
+| Março | Prazo para comunicar a composição do agregado familiar à AT. Confirmar deduções de IRS no Portal das Finanças |
+| Abril | Abertura do período de entrega do IRS (1 de Abril). Entrega antecipada para declarações simples. Reavaliar tributação conjunta vs separada |
+| Maio | Continuação da entrega do IRS. Contribuição trimestral à SS (Abril). Simular imposto do ano |
+| 30 de Junho | Prazo final de entrega do IRS. Garantir submissão do Modelo 3. Entregar Anexo B (Categoria B), Anexo H (deduções), Anexo J (rendimentos do estrangeiro) |
+| Julho | Primeiro pagamento por conta de IRS. Rever base contributiva da SS para o trimestre seguinte |
+| Setembro | Segundo pagamento por conta de IRS. Revisão fiscal de meio do ano |
+| Outubro | Contribuição trimestral à SS. Rever rendimentos de capitais para decisão sobre englobamento |
+| Novembro | Planear contribuições para PPR de fim de ano. Rever transmissões imobiliárias quanto a prazos de reinvestimento |
+| Dezembro | Terceiro pagamento por conta de IRS. **Mês crítico:** efectuar contribuições para PPR, donativos. Garantir que todas as facturas profissionais foram emitidas com NIF. Última contribuição à SS do ano. Prazo para opções relativas ao IVA |
 
 ---
 
-## Section 12 — Cash Impact Examples
+## Secção 12 — Exemplos de Impacto Financeiro
 
-### Example 1 — Simplified vs Organized Accounts (Freelancer)
+### Exemplo 1 — Regime Simplificado vs Contabilidade Organizada (Freelancer)
 
-**Freelancer (Art 151 professional), gross receipts €50,000. Actual expenses: €8,000.**
+**Freelancer (profissional do Art 151.º), rendimentos brutos €50.000. Despesas reais: €8.000.**
 
-**Simplified regime:** Taxable = €50,000 × 0.75 = €37,500 (assuming 15% expenses justified). IRS: €37,500 × 34.9% – €4,209.85 (bracket 6) = €8,877.65. Plus SS: 21.4% × (€50,000 × 0.70 / 3 × 12 months basis) ≈ €7,490. **Total tax + SS: ~€16,368.**
+**Regime simplificado:** Tributável = €50.000 × 0,75 = €37.500 (assumindo 15% de despesas justificadas). IRS: €37.500 × 34,9% – €4.209,85 (escalão 6) = €8.877,65. Acresce SS: 21,4% × (€50.000 × 0,70 / 3 × base 12 meses) ≈ €7.490. **Total imposto + SS: ~€16.368.**
 
-**Organized accounts:** Taxable = €50,000 – €8,000 = €42,000. IRS: €42,000 × 34.9% – €4,209.85 = €10,448.15. SS: same ~€7,490. Plus accountant fees ~€1,500. **Total: ~€19,438.**
+**Contabilidade organizada:** Tributável = €50.000 – €8.000 = €42.000. IRS: €42.000 × 34,9% – €4.209,85 = €10.448,15. SS: igual ~€7.490. Acrescem honorários de contabilista ~€1.500. **Total: ~€19.438.**
 
-**Simplified regime saves ~€3,070.** Organized accounts only win if actual expenses >€12,500 (25% of gross).
+**O regime simplificado poupa ~€3.070.** A contabilidade organizada só compensa se as despesas reais excederem €12.500 (25% do bruto).
 
-### Example 2 — Joint vs Separate Taxation
+### Exemplo 2 — Tributação Conjunta vs Separada
 
-**Couple: Spouse A earns €60,000, Spouse B earns €10,000.**
+**Casal: Cônjuge A aufere €60.000, Cônjuge B aufere €10.000.**
 
-**Separate:** A: IRS ~€14,527. B: IRS ~€460. Total: ~€14,987.
+**Separada:** A: IRS ~€14.527. B: IRS ~€460. Total: ~€14.987.
 
-**Joint:** Combined €70,000 ÷ 2 = €35,000 each. IRS per half: ~€8,012 × 2 = ~€16,024. **Separate filing saves ~€1,037** in this case.
+**Conjunta:** Combinado €70.000 ÷ 2 = €35.000 cada. IRS por metade: ~€8.012 × 2 = ~€16.024. **A tributação separada poupa ~€1.037** neste caso.
 
-**If Spouse B earns €0:** Joint: €60,000 ÷ 2 = €30,000 each. IRS: ~€6,215 × 2 = €12,430. Separate: €14,527. **Joint saves ~€2,097.**
+**Se o Cônjuge B aufere €0:** Conjunta: €60.000 ÷ 2 = €30.000 cada. IRS: ~€6.215 × 2 = €12.430. Separada: €14.527. **A tributação conjunta poupa ~€2.097.**
 
-### Example 3 — Crypto Held Over 365 Days
+### Exemplo 3 — Criptoactivos Detidos Mais de 365 Dias
 
-**Bought BTC for €10,000 in January 2025. Sold for €25,000 in March 2026 (>365 days held).**
+**Comprou BTC por €10.000 em Janeiro de 2025. Vendeu por €25.000 em Março de 2026 (>365 dias).**
 
-Tax: **€0** — capital gains on crypto held ≥365 days are exempt (Art 10.º, n.º 17 CIRS).
+Imposto: **€0** — as mais-valias de criptoactivos detidos ≥365 dias são isentas (Art 10.º, n.º 17 CIRS).
 
-If sold within 365 days: (€25,000 – €10,000) × 28% = €4,200 tax.
+Se vendido em menos de 365 dias: (€25.000 – €10.000) × 28% = €4.200 de imposto.
 
-### Example 4 — Primary Residence Reinvestment
+### Exemplo 4 — Reinvestimento em Habitação Própria Permanente
 
-Sell primary residence for €300,000 (purchased at €200,000). Gain: €100,000. 50% included = €50,000 taxable at marginal rate (~34.9%) = €13,341.
+Venda da habitação própria permanente por €300.000 (aquisição por €200.000). Mais-valia: €100.000. 50% incluído = €50.000 tributados à taxa marginal (~34,9%) = €13.341.
 
-Reinvest full €300,000 in new primary residence within 36 months: **€0 tax.** Partial reinvestment (€200,000 of €300,000 = 66.7%): 66.7% excluded → tax on 33.3% × €50,000 = ~€4,450.
+Reinvestir os €300.000 totais em nova habitação própria permanente em 36 meses: **€0 de imposto.** Reinvestimento parcial (€200.000 de €300.000 = 66,7%): 66,7% excluído → imposto sobre 33,3% × €50.000 = ~€4.450.
 
 ---
 
-## Disclaimer
+## Aviso Legal
 
-This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a Contabilista Certificado, tax advisor, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
+Esta skill e os seus resultados são fornecidos apenas para fins informativos e computacionais e não constituem aconselhamento fiscal, jurídico ou financeiro. A Open Accountants e os seus contribuintes não assumem qualquer responsabilidade por erros, omissões ou consequências decorrentes da utilização desta skill. Todos os resultados devem ser revistos e validados por um profissional qualificado (como um Contabilista Certificado, consultor fiscal ou profissional licenciado equivalente na sua jurisdição) antes da entrega ou actuação.
 
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com).
+A versão mais actualizada e verificada desta skill é mantida em [openaccountants.com](https://openaccountants.com).

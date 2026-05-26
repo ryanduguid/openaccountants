@@ -1,8 +1,8 @@
 ---
 name: portugal-financial-statements
 description: >
-  Use this skill when preparing, reviewing, or advising on annual financial statements (demonstrações financeiras) for a Portuguese company. Trigger on phrases like "demonstrações financeiras", "IES", "Informação Empresarial Simplificada", "SNC", "NCRF", "NCRF-PE", "NC-ME", "balanço", "demonstração de resultados", "Portal das Finanças", "depósito de contas", "ROC", "revisão legal", or any question about preparing and filing statutory accounts under Portuguese law. Covers SNC framework, size thresholds, required statements, formats, notes, IES filing, and audit requirements.
-version: 1.0
+  Utilize esta skill na preparação, revisão ou aconselhamento sobre demonstrações financeiras anuais de uma sociedade portuguesa. Acione com expressões como "demonstrações financeiras", "IES", "Informação Empresarial Simplificada", "SNC", "NCRF", "NC-PE", "NC-ME", "balanço", "demonstração de resultados", "demonstração de fluxos de caixa", "anexo", "Portal das Finanças", "depósito de contas", "ROC", "revisão legal de contas" ou qualquer questão sobre preparação e depósito de contas estatutárias ao abrigo da lei portuguesa. Abrange o referencial SNC, limiares dimensionais, demonstrações obrigatórias, formatos, anexo, submissão da IES e requisitos de auditoria. Trigger also on: "Portuguese financial statements", "SNC accounts", "IES filing Portugal", "NCRF", "NC-ME microentities", "NC-PE small entities", "balanço", "demonstração de resultados", "Portal das Finanças deposit of accounts", "ROC statutory audit Portugal".
+version: 1.1
 jurisdiction: PT
 category: financial-statements
 depends_on:
@@ -11,121 +11,121 @@ tax_year: 2025
 verified_by: pending
 ---
 
-# Portugal Financial Statements Skill v1.0
+# Portugal — Demonstrações Financeiras (SNC) — Skill v1.1
 
 ---
 
-## Section 1 -- Quick Reference
+## Secção 1 — Referência Rápida
 
-| Field | Value |
+| Campo | Valor |
 |---|---|
-| Country | Portugal (República Portuguesa) |
-| Currency | EUR |
-| Filing authority | Portal das Finanças (AT — Autoridade Tributária) + Conservatória do Registo Comercial |
-| Primary legislation | Decreto-Lei n.º 158/2009 (SNC); Decreto-Lei n.º 98/2015 (SNC revision) |
-| Supporting legislation | Código das Sociedades Comerciais (CSC); Código do Registo Comercial |
-| Accounting standards | SNC — Sistema de Normalização Contabilística (NCRF, NCRF-PE, NC-ME) |
-| Financial year | Usually calendar year (January–December) |
-| Filing deadline | 15th day of the 7th month after year-end (i.e., 15 July for calendar year) |
-| Filing fee | EUR 80 (registo da prestação de contas) |
-| Digital filing | Electronic via Portal das Finanças (IES submission) |
+| País | Portugal (República Portuguesa) |
+| Moeda | EUR |
+| Entidade competente | Portal das Finanças (AT — Autoridade Tributária e Aduaneira) + Conservatória do Registo Comercial |
+| Legislação principal | Decreto-Lei n.º 158/2009 (SNC); Decreto-Lei n.º 98/2015 (revisão do SNC) |
+| Legislação complementar | Código das Sociedades Comerciais (CSC); Código do Registo Comercial |
+| Normativo contabilístico | SNC — Sistema de Normalização Contabilística (NCRF, NC-PE, NC-ME) |
+| Exercício económico | Em regra, ano civil (janeiro a dezembro) |
+| Prazo de entrega | 15.º dia do 7.º mês após o fim do exercício (i.e., 15 de julho para exercícios de ano civil) |
+| Taxa de depósito | EUR 80 (registo da prestação de contas) |
+| Submissão eletrónica | Via Portal das Finanças (submissão da IES) |
 
 ---
 
-## Section 2 -- Reporting Framework
+## Secção 2 — Referencial de Relato
 
-| Entity type | Applicable standard |
+| Tipo de entidade | Normativo aplicável |
 |---|---|
-| Large and medium entities | Full NCRF (28 standards, aligned with IFRS for SMEs) |
-| Small entities (Pequenas Entidades) | NCRF-PE (simplified single standard) |
-| Micro entities (Microentidades) | NC-ME (very simplified single standard) |
-| Listed groups (consolidated) | IFRS as adopted by the EU (mandatory) |
-| Non-listed groups (consolidated) | NCRF or IFRS (choice) |
-| Banks and insurance | IFRS (mandatory) |
+| Grandes e médias entidades | NCRF completas (28 normas, alinhadas com IFRS for SMEs) |
+| Pequenas entidades | NC-PE (Norma Contabilística e de Relato Financeiro para Pequenas Entidades) |
+| Microentidades | NC-ME (Norma Contabilística para Microentidades — muito simplificada) |
+| Grupos cotados (contas consolidadas) | IFRS tal como adotadas pela UE (obrigatório, apenas para empresas cotadas na Euronext Lisbon) |
+| Grupos não cotados (contas consolidadas) | NCRF ou IFRS (opção) |
+| Bancos e seguradoras | IFRS (obrigatório) |
 
-Entities may always opt to apply a higher-level standard (e.g., micro can choose NCRF-PE or full NCRF).
+As entidades podem sempre optar por aplicar um normativo de nível superior (e.g., uma microentidade pode optar por aplicar a NC-PE ou as NCRF completas).
 
 ---
 
-## Section 3 -- Size Thresholds
+## Secção 3 — Limiares Dimensionais
 
-Effective for financial years up to 31 December 2025:
+Em vigor para os exercícios económicos até 31 de dezembro de 2025:
 
-| Criterion | Micro (NC-ME) | Pequena/Small (NCRF-PE) | Média/Medium | Grande/Large |
+| Critério | Micro (NC-ME) | Pequena (NC-PE) | Média | Grande |
 |---|---|---|---|---|
-| Total do balanço (Balance sheet) | ≤ EUR 350,000 | ≤ EUR 4,000,000 | ≤ EUR 20,000,000 | > EUR 20,000,000 |
-| Volume de negócios líquido (Turnover) | ≤ EUR 700,000 | ≤ EUR 8,000,000 | ≤ EUR 40,000,000 | > EUR 40,000,000 |
-| Número médio de empregados (Employees) | ≤ 10 | ≤ 50 | ≤ 250 | > 250 |
-
-**From financial years beginning 1 January 2026** (DL 126-B/2025):
-
-| Criterion | Micro | Pequena | Média | Grande |
-|---|---|---|---|---|
-| Total do balanço | ≤ EUR 450,000 | ≤ EUR 5,000,000 | ≤ EUR 25,000,000 | > EUR 25,000,000 |
-| Volume de negócios líquido | ≤ EUR 900,000 | ≤ EUR 10,000,000 | ≤ EUR 50,000,000 | > EUR 50,000,000 |
+| Total do balanço | ≤ EUR 350 000 | ≤ EUR 4 000 000 | ≤ EUR 20 000 000 | > EUR 20 000 000 |
+| Volume de negócios líquido | ≤ EUR 700 000 | ≤ EUR 8 000 000 | ≤ EUR 40 000 000 | > EUR 40 000 000 |
 | Número médio de empregados | ≤ 10 | ≤ 50 | ≤ 250 | > 250 |
 
-Must not exceed **2 out of 3** thresholds. Assessment in the first year, or for **two consecutive** years thereafter.
+**A partir dos exercícios económicos com início em 1 de janeiro de 2026** (DL 126-B/2025):
+
+| Critério | Micro | Pequena | Média | Grande |
+|---|---|---|---|---|
+| Total do balanço | ≤ EUR 450 000 | ≤ EUR 5 000 000 | ≤ EUR 25 000 000 | > EUR 25 000 000 |
+| Volume de negócios líquido | ≤ EUR 900 000 | ≤ EUR 10 000 000 | ≤ EUR 50 000 000 | > EUR 50 000 000 |
+| Número médio de empregados | ≤ 10 | ≤ 50 | ≤ 250 | > 250 |
+
+Não pode ultrapassar **2 dos 3** limiares. Avaliação no primeiro exercício, ou durante **dois exercícios consecutivos** subsequentes.
 
 ---
 
-## Section 4 -- Required Financial Statements
+## Secção 4 — Demonstrações Financeiras Obrigatórias
 
-| Document | Micro (NC-ME) | Small (NCRF-PE) | Medium/Large (NCRF) |
+| Documento | Micro (NC-ME) | Pequena (NC-PE) | Média/Grande (NCRF) |
 |---|---|---|---|
-| Balanço (Balance sheet) | Required (simplified) | Required | Required |
-| Demonstração de resultados por naturezas (P&L by nature) | Required (simplified) | Required | Required |
-| Demonstração de alterações no capital próprio (Changes in equity) | Not required | Not required | Required |
-| Demonstração de fluxos de caixa (Cash flow statement) | Not required | Not required | Required |
-| Anexo (Notes) | Required (minimal) | Required (simplified) | Required (full) |
-| Relatório de gestão (Management report) | Required (all companies) | Required | Required |
-| Certificação legal de contas (Audit report) | If applicable | If applicable | Required (if thresholds met) |
+| Balanço | Obrigatório (simplificado) | Obrigatório | Obrigatório |
+| Demonstração de resultados por naturezas | Obrigatório (simplificado) | Obrigatório | Obrigatório |
+| Demonstração de alterações no capital próprio | Não obrigatório | Não obrigatório | Obrigatório |
+| Demonstração de fluxos de caixa | Não obrigatório | Não obrigatório | Obrigatório |
+| Anexo | Obrigatório (mínimo) | Obrigatório (simplificado) | Obrigatório (completo) |
+| Relatório de gestão | Obrigatório (todas as sociedades) | Obrigatório | Obrigatório |
+| Certificação legal de contas | Se aplicável | Se aplicável | Obrigatória (se reunidos os limiares) |
 
 ---
 
-## Section 5 -- Year-End Adjustments Checklist
+## Secção 5 — Checklist de Ajustamentos de Fim de Exercício
 
-| # | Adjustment | Portugal-specific notes |
+| # | Ajustamento | Notas específicas de Portugal |
 |---|---|---|
-| 1 | Depreciações e amortizações (Depreciation) | NCRF 7; systematic; tax rates (Decreto Regulamentar 25/2009) as maximum |
-| 2 | Provisões (Provisions) | NCRF 21; present obligation, probable outflow, reliable estimate |
-| 3 | Acréscimos e diferimentos (Accruals/deferrals) | Strict periodização matching |
-| 4 | Imparidade de dívidas a receber (Bad debts) | NCRF 27; individual + portfolio assessment |
-| 5 | Inventários (Inventory) | NCRF 18; lower of cost (FIFO/CMP) and NRV |
-| 6 | Impostos diferidos (Deferred tax) | NCRF 25; temporary differences; IRC rate 21% + derrama |
-| 7 | Câmbio (Foreign currency) | NCRF 23; monetary items at closing rate |
-| 8 | Locações (Leases) | NCRF 9; finance/operating classification |
-| 9 | Benefícios dos empregados (Employee benefits) | NCRF 28; holiday pay + Christmas bonus provision |
-| 10 | Subsídios do governo (Government grants) | NCRF 22; deferred income released to P&L |
-| 11 | Ativos intangíveis (Intangibles) | NCRF 6; capitalise development if criteria met |
-| 12 | Estimativa de IRC (Tax provision) | Current tax + autonomous taxation + derrama municipal |
+| 1 | Depreciações e amortizações | NCRF 7; método sistemático; taxas fiscais (Decreto Regulamentar 25/2009) como máximo |
+| 2 | Provisões | NCRF 21; obrigação presente, saída provável de recursos, estimativa fiável |
+| 3 | Acréscimos e diferimentos | Princípio rigoroso da periodização económica (especialização dos exercícios) |
+| 4 | Imparidade de dívidas a receber | NCRF 27; avaliação individual e por carteira |
+| 5 | Inventários | NCRF 18; menor entre custo (FIFO/CMP) e valor realizável líquido (VRL) |
+| 6 | Impostos diferidos | NCRF 25; diferenças temporárias; taxa de IRC de 21% + derrama |
+| 7 | Operações em moeda estrangeira | NCRF 23; itens monetários à taxa de fecho |
+| 8 | Locações | NCRF 9; classificação como locação financeira ou operacional |
+| 9 | Benefícios dos empregados | NCRF 28; provisão para férias, subsídio de férias e subsídio de Natal |
+| 10 | Subsídios do governo | NCRF 22; rendimento diferido reconhecido em resultados |
+| 11 | Ativos intangíveis | NCRF 6; capitalização de despesas de desenvolvimento se cumpridos os critérios |
+| 12 | Estimativa de IRC | Imposto corrente + tributações autónomas + derrama municipal |
 
 ---
 
-## Section 6 -- Demonstração de Resultados por Naturezas (P&L)
+## Secção 6 — Demonstração de Resultados por Naturezas
 
-SNC model — by nature:
+Modelo SNC — por naturezas:
 
 ```
-Vendas e serviços prestados (Revenue)
+Vendas e serviços prestados
 Subsídios à exploração
-Ganhos/perdas imputados de subsidiárias e associadas
+Ganhos/perdas imputados de subsidiárias, associadas e empreendimentos conjuntos
 Variação nos inventários da produção
 Trabalhos para a própria entidade
-Custo das mercadorias vendidas e matérias consumidas
+Custo das mercadorias vendidas e das matérias consumidas
 Fornecimentos e serviços externos
 Gastos com o pessoal
 Imparidade de inventários (perdas/reversões)
 Imparidade de dívidas a receber (perdas/reversões)
 Provisões (aumentos/reduções)
-Imparidade de investimentos não depreciáveis (perdas/reversões)
+Imparidade de investimentos não depreciáveis/amortizáveis (perdas/reversões)
 Aumentos/reduções de justo valor
 Outros rendimentos e ganhos
 Outros gastos e perdas
   ─── Resultado antes de depreciações, gastos de financiamento e impostos (EBITDA) ───
 
 Gastos/reversões de depreciação e de amortização
-Imparidade de investimentos depreciáveis (perdas/reversões)
+Imparidade de investimentos depreciáveis/amortizáveis (perdas/reversões)
   ─── Resultado operacional (antes de gastos de financiamento e impostos) ───
 
 Juros e rendimentos similares obtidos
@@ -138,14 +138,14 @@ Imposto sobre o rendimento do período
 
 ---
 
-## Section 7 -- Balanço Format (Balance Sheet)
+## Secção 7 — Formato do Balanço
 
-SNC model:
+Modelo SNC:
 
 ```
-ATIVO (Assets)
+ATIVO
 
-Ativo não corrente (Non-current assets)
+Ativo não corrente
   Ativos fixos tangíveis
   Propriedades de investimento
   Goodwill
@@ -154,7 +154,7 @@ Ativo não corrente (Non-current assets)
   Outros ativos financeiros
   Ativos por impostos diferidos
 
-Ativo corrente (Current assets)
+Ativo corrente
   Inventários
   Clientes
   Estado e outros entes públicos
@@ -169,7 +169,7 @@ TOTAL DO ATIVO
 
 CAPITAL PRÓPRIO E PASSIVO
 
-Capital próprio (Equity)
+Capital próprio
   Capital realizado
   Ações (quotas) próprias
   Outros instrumentos de capital próprio
@@ -182,13 +182,13 @@ Capital próprio (Equity)
 
 TOTAL DO CAPITAL PRÓPRIO
 
-Passivo não corrente (Non-current liabilities)
+Passivo não corrente
   Provisões
   Financiamentos obtidos
   Outras contas a pagar
   Passivos por impostos diferidos
 
-Passivo corrente (Current liabilities)
+Passivo corrente
   Fornecedores
   Estado e outros entes públicos
   Financiamentos obtidos
@@ -202,72 +202,72 @@ TOTAL DO CAPITAL PRÓPRIO E PASSIVO
 
 ---
 
-## Section 8 -- Anexo (Notes to Accounts)
+## Secção 8 — Anexo às Demonstrações Financeiras
 
-| # | Disclosure | Micro | Small (NCRF-PE) | Medium/Large |
+| # | Divulgação | Micro | Pequena (NC-PE) | Média/Grande |
 |---|---|---|---|---|
-| 1 | Políticas contabilísticas (Accounting policies) | Simplified | Required | Required (full) |
-| 2 | Ativos fixos tangíveis movements | Summary | Required | Required |
-| 3 | Locações (Leases) | Not required | If material | Required |
-| 4 | Partes relacionadas (Related parties) | Not required | Key management | Required (full) |
-| 5 | Instrumentos financeiros | Not required | Simplified | Required |
-| 6 | Pessoal (Employee info) | Average headcount | Headcount + costs | Detailed |
-| 7 | Órgãos sociais (Management remuneration) | Not required | Not required | Required |
-| 8 | Compromissos e contingências | Required (basic) | Required | Required |
-| 9 | Impostos sobre o rendimento | Not required | Simplified | Required (reconciliation) |
-| 10 | Capital próprio (Equity detail) | Required (basic) | Required | Required |
-| 11 | Subsídios do governo | If applicable | Required | Required |
-| 12 | Eventos após data do balanço | Required | Required | Required |
+| 1 | Políticas contabilísticas | Simplificadas | Obrigatório | Obrigatório (completo) |
+| 2 | Movimentos de ativos fixos tangíveis | Resumo | Obrigatório | Obrigatório |
+| 3 | Locações | Não obrigatório | Se material | Obrigatório |
+| 4 | Partes relacionadas | Não obrigatório | Pessoal-chave de gestão | Obrigatório (completo) |
+| 5 | Instrumentos financeiros | Não obrigatório | Simplificado | Obrigatório |
+| 6 | Pessoal (informação sobre empregados) | Número médio de empregados | Número médio + gastos | Detalhado |
+| 7 | Órgãos sociais (remunerações da gestão) | Não obrigatório | Não obrigatório | Obrigatório |
+| 8 | Compromissos e contingências | Obrigatório (básico) | Obrigatório | Obrigatório |
+| 9 | Impostos sobre o rendimento | Não obrigatório | Simplificado | Obrigatório (reconciliação) |
+| 10 | Capital próprio (detalhe) | Obrigatório (básico) | Obrigatório | Obrigatório |
+| 11 | Subsídios do governo | Se aplicável | Obrigatório | Obrigatório |
+| 12 | Acontecimentos após a data do balanço | Obrigatório | Obrigatório | Obrigatório |
 
 ---
 
-## Section 9 -- Filing Requirements
+## Secção 9 — Requisitos de Submissão
 
-| Item | Detail |
+| Item | Detalhe |
 |---|---|
-| Filing method | IES (Informação Empresarial Simplificada) — electronic via Portal das Finanças |
-| Single filing covers | Tax declaration (IRC), commercial registry deposit, statistics (INE), Bank of Portugal data |
-| Filing deadline | 15th day of the 7th month after year-end (15 July for calendar year companies) |
-| Filing fee | EUR 80 (registo da prestação de contas component) |
-| Format | Electronic XML via Portal das Finanças; PDF attachments for consolidated accounts |
-| IES annexes | Annex A (individual accounts), Annex A1 (consolidated), others as applicable |
-| Language | Portuguese |
-| Certified accountant | Must be submitted by a Contabilista Certificado (CC) |
-| Late filing penalty | EUR 150 to EUR 3,750 (coimas — administrative fines) |
-| Non-filing consequences | Impossibility of obtaining commercial certificates; potential dissolution proceedings |
+| Forma de submissão | IES (Informação Empresarial Simplificada) — eletrónica via Portal das Finanças |
+| Cobertura da submissão única | Declaração fiscal (IRC), depósito no registo comercial, estatísticas (INE) e dados para o Banco de Portugal |
+| Prazo de entrega | 15.º dia do 7.º mês após o fim do exercício (15 de julho para sociedades de ano civil) |
+| Taxa de depósito | EUR 80 (componente do registo da prestação de contas) |
+| Formato | XML eletrónico via Portal das Finanças; anexos em PDF para contas consolidadas |
+| Anexos da IES | Anexo A (contas individuais), Anexo A1 (consolidadas), outros conforme aplicável |
+| Idioma | Português |
+| Contabilista Certificado | A submissão tem de ser efetuada por um Contabilista Certificado (CC) |
+| Coima por entrega fora de prazo | EUR 150 a EUR 3 750 (coimas — sanções contraordenacionais) |
+| Consequências da não entrega | Impossibilidade de obtenção de certidões comerciais; eventual processo de dissolução |
 
 ---
 
-## Section 10 -- Audit Requirements
+## Secção 10 — Requisitos de Auditoria
 
-### Mandatory appointment of ROC (Revisor Oficial de Contas)
+### Nomeação obrigatória de ROC (Revisor Oficial de Contas)
 
-Companies must appoint a statutory auditor (certificação legal de contas) if they exceed **2 of 3** thresholds for **two consecutive** years:
+As sociedades têm de nomear um auditor estatutário (certificação legal de contas) se ultrapassarem **2 dos 3** limiares durante **dois exercícios consecutivos**:
 
-| Criterion | Threshold |
+| Critério | Limiar |
 |---|---|
-| Total do balanço (Balance sheet) | EUR 1,500,000 |
-| Volume de negócios líquido (Turnover) | EUR 3,000,000 |
-| Número médio de empregados (Employees) | 50 |
+| Total do balanço | EUR 1 500 000 |
+| Volume de negócios líquido | EUR 3 000 000 |
+| Número médio de empregados | 50 |
 
-### Always subject to audit
+### Sempre sujeitas a revisão legal de contas
 
-- Sociedades Anónimas (SA): always require a ROC (fiscal council or audit board)
-- Entities issuing securities on regulated markets
-- Entities preparing consolidated accounts
-- Public interest entities
+- Sociedades Anónimas (SA): exigem sempre ROC (conselho fiscal ou conselho de auditoria)
+- Entidades emitentes de valores mobiliários admitidos à negociação em mercado regulamentado
+- Entidades que preparam contas consolidadas
+- Entidades de interesse público
 
-### Auditor qualification
+### Qualificação do auditor
 
-Revisor Oficial de Contas (ROC) or Sociedade de Revisores Oficiais de Contas (SROC), registered with the Ordem dos Revisores Oficiais de Contas (OROC).
+Revisor Oficial de Contas (ROC) ou Sociedade de Revisores Oficiais de Contas (SROC), inscritos na Ordem dos Revisores Oficiais de Contas (OROC).
 
-### Audit mandate
+### Mandato do auditor
 
-- Duration: 3 to 4 years (depending on governance model)
-- Maximum tenure: rotation rules apply for public interest entities
+- Duração: 3 a 4 anos (consoante o modelo de governo societário)
+- Mandato máximo: aplicam-se regras de rotação para entidades de interesse público
 
 ---
 
-## Disclaimer
+## Aviso Legal
 
-This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional before filing or acting upon.
+Esta skill e os respetivos resultados são disponibilizados apenas para fins informativos e de cálculo e não constituem aconselhamento fiscal, jurídico ou financeiro. A Open Accountants e os seus contribuidores não assumem qualquer responsabilidade por erros, omissões ou consequências decorrentes da utilização desta skill. Todos os resultados devem ser revistos e validados por um profissional qualificado antes de serem submetidos ou utilizados como base de decisão.

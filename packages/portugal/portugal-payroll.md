@@ -1,15 +1,19 @@
 ---
 name: portugal-payroll
 description: >
-  Use this skill whenever asked about Portuguese payroll processing, employee salary calculations,
-  IRS retenção na fonte (income tax withholding), Segurança Social contributions, employer cost
-  calculations, net-to-gross or gross-to-net conversions, Portuguese payslip structure, Declaração
-  Mensal de Remunerações, or any question about computing wages, deductions, or employer obligations
-  in Portugal. Trigger on phrases like "Portuguese payroll", "IRS withholding", "retenção na fonte",
+  Utilize esta skill sempre que for solicitado sobre processamento de salários em Portugal,
+  cálculo de vencimentos, retenção na fonte de IRS, contribuições para a Segurança Social (TSU),
+  cálculo do custo total para a entidade patronal, conversões de líquido para bruto ou bruto para
+  líquido, estrutura do recibo de vencimento português, Declaração Mensal de Remunerações (DMR),
+  ou qualquer questão relativa ao cálculo de vencimentos, descontos ou obrigações da entidade
+  patronal em Portugal. Acione perante expressões como "processamento de salários", "retenção na
+  fonte IRS", "Segurança Social", "TSU", "salário líquido", "custo entidade patronal", "subsídio
+  de férias", "subsídio de Natal", "salário mínimo", "DMR", "recibo de vencimento", "13.º mês"
+  ou "14.º mês". Trigger also on: "Portuguese payroll", "IRS withholding", "retenção na fonte",
   "Segurança Social", "TSU", "salário líquido", "employer cost Portugal", "subsídio de férias",
   "subsídio de Natal", "13th month Portugal", "14th month Portugal", "minimum wage Portugal",
-  "salário mínimo", "DMR filing", or "recibo de vencimento".
-version: 1.0
+  "salário mínimo", "DMR filing", "recibo de vencimento".
+version: 1.1
 jurisdiction: PT
 category: payroll
 depends_on:
@@ -18,336 +22,340 @@ tax_year: 2025
 verified_by: pending
 ---
 
-# Portugal Payroll Skill v1.0
+# Portugal — Processamento de Salários — Skill v1.1
 
 ---
 
-## Section 1 -- Quick Reference
+## Secção 1 — Referência Rápida
 
-| Field | Value |
+| Campo | Valor |
 |---|---|
-| Country | Portugal (Portuguese Republic) |
-| Currency | EUR |
-| Payroll frequency | Monthly (14 payments/year: 12 + holiday + Christmas subsidy) |
-| Tax year | Calendar year (1 January -- 31 December) |
-| Primary legislation | Código do IRS; Código Contributivo (Lei 110/2009); Código do Trabalho |
-| Tax authority | Autoridade Tributária e Aduaneira (AT) |
-| Social security authority | Instituto da Segurança Social (ISS) |
-| Employee SS rate | 11% of gross salary |
-| Employer SS rate | 23.75% of gross salary |
-| Withholding tax | IRS retenção na fonte (progressive marginal tables) |
-| Minimum wage (RMMG) | EUR 920/month (2026, Continent) |
-| Payroll payments | 14 per year (12 months + holiday subsidy + Christmas subsidy) |
-| DMR filing | Monthly, by 10th of following month |
-| SS/IRS payment | Monthly, by 20th of following month |
-| Skill version | 1.0 |
+| País | Portugal (República Portuguesa) |
+| Moeda | EUR |
+| Periodicidade do processamento | Mensal (14 pagamentos/ano: 12 + subsídio de férias + subsídio de Natal) |
+| Ano fiscal | Ano civil (1 de janeiro — 31 de dezembro) |
+| Legislação principal | Código do IRS (CIRS); Código Contributivo (Lei n.º 110/2009); Código do Trabalho |
+| Autoridade tributária | Autoridade Tributária e Aduaneira (AT) |
+| Autoridade da Segurança Social | Instituto da Segurança Social (ISS) / Direção-Geral da Segurança Social (DGSS) |
+| Taxa Contributiva Social (TSC) — trabalhador | 11% do vencimento bruto |
+| Taxa contributiva — entidade patronal | 23,75% do vencimento bruto |
+| Retenção na fonte | IRS — tabelas mensais publicadas pela AT (CIRS art.º 99.º) |
+| Retribuição Mínima Mensal Garantida (RMMG) | 920 EUR/mês (2026, Continente) |
+| Pagamentos | 14 por ano (12 meses + subsídio de férias + subsídio de Natal) |
+| Entrega da DMR | Mensal, até ao dia 10 do mês seguinte |
+| Pagamento da Segurança Social / IRS | Mensal, até ao dia 20 do mês seguinte |
+| Versão da skill | 1.1 |
 
 ---
 
-## Section 2 -- Income Tax Withholding (IRS Retenção na Fonte)
+## Secção 2 — Retenção na Fonte de IRS
 
-### IRS Tax Brackets (2026 -- Rendimento Coletável Anual)
+### Escalões de IRS (2026 — Rendimento Coletável Anual)
 
-| Bracket | Annual Taxable Income (EUR) | Marginal Rate |
+| Escalão | Rendimento Coletável Anual (EUR) | Taxa Marginal |
 |---|---|---|
-| 1.º | Up to 7,703 | 13.25% |
-| 2.º | 7,703 -- 11,623 | 16.50% |
-| 3.º | 11,623 -- 17,838 | 22.00% |
-| 4.º | 17,838 -- 22,052 | 24.10% |
-| 5.º | 22,052 -- 28,227 | 31.40% |
-| 6.º | 28,227 -- 41,674 | 37.00% |
-| 7.º | 41,674 -- 55,696 | 43.50% |
-| 8.º | 55,696 -- 78,834 | 45.00% |
-| 9.º | Above 78,834 | 48.00% |
+| 1.º | Até 7 703 | 13,25% |
+| 2.º | 7 703 — 11 623 | 16,50% |
+| 3.º | 11 623 — 17 838 | 22,00% |
+| 4.º | 17 838 — 22 052 | 24,10% |
+| 5.º | 22 052 — 28 227 | 31,40% |
+| 6.º | 28 227 — 41 674 | 37,00% |
+| 7.º | 41 674 — 55 696 | 43,50% |
+| 8.º | 55 696 — 78 834 | 45,00% |
+| 9.º | Acima de 78 834 | 48,00% |
 
-### Withholding Tax Mechanism
+### Mecanismo de Retenção na Fonte
 
-Monthly IRS withholding uses specific tables published annually by Despacho (Annex III tables). Since 2023, Portugal uses a progressive marginal formula for withholding (not flat-rate per bracket).
+A retenção mensal de IRS utiliza tabelas específicas publicadas anualmente por Despacho (tabelas do Anexo III), nos termos do art.º 99.º do CIRS. Desde 2023, Portugal aplica uma fórmula progressiva marginal na retenção (e não uma taxa fixa por escalão).
 
-| Table | Applies to |
+| Tabela | Aplicável a |
 |---|---|
-| Table I | Married, single holder (casado, único titular) |
-| Table II | Married, two holders (casado, dois titulares) |
-| Table III | Not married (não casado) |
-| Tables IV-VII | Pensioners |
-| Tables VIII-XI | Disabled workers |
+| Tabela I | Casado, único titular |
+| Tabela II | Casado, dois titulares |
+| Tabela III | Não casado |
+| Tabelas IV-VII | Pensionistas |
+| Tabelas VIII-XI | Trabalhadores com deficiência |
 
-### Key Withholding Rules (2026)
+### Regras-Chave de Retenção (2026)
 
-| Rule | Detail |
+| Regra | Detalhe |
 |---|---|
-| Zero withholding threshold | Up to EUR 920/month (minimum wage) = 0% IRS |
-| Mínimo de existência | EUR 12,880 annual (14 × 920) -- fully exempt |
-| Dependent child deduction | EUR 42.86/month (married single holder); EUR 21.43 (two holders); EUR 34.29 (not married) |
-| Specific deduction (dedução específica) | EUR 4,104/year (or actual SS contributions if higher) |
-| 3+ dependents | 1 percentage point reduction in highest applicable marginal rate |
+| Limiar de não retenção | Até 920 EUR/mês (salário mínimo) = 0% de IRS |
+| Mínimo de existência | 12 880 EUR anuais (14 × 920) — totalmente isento |
+| Dedução por dependente | 42,86 EUR/mês (casado único titular); 21,43 EUR (dois titulares); 34,29 EUR (não casado) |
+| Dedução específica | 4 104 EUR/ano (ou contribuições efetivas para a Segurança Social, se superiores) |
+| 3 ou mais dependentes | Redução de 1 ponto percentual na taxa marginal mais elevada aplicável |
 
-### Subsídio de Férias / Natal Withholding
+### Retenção sobre Subsídio de Férias / Subsídio de Natal
 
-Holiday and Christmas subsidies are subject to IRS withholding at the SAME rate as the normal monthly salary, calculated independently. INSS also applies at the standard 11%.
+Os subsídios de férias e de Natal estão sujeitos a retenção na fonte de IRS à MESMA taxa do vencimento mensal normal, calculada de forma autónoma. A contribuição para a Segurança Social também se aplica à taxa normal de 11%.
+
+> **Nota — Regime IFICI / antigo RNH:** trabalhadores qualificados ao abrigo do regime de Incentivo Fiscal à Investigação Científica e Inovação (IFICI) ou ainda abrangidos por direitos adquiridos do antigo Regime dos Residentes Não Habituais (RNH) estão sujeitos a uma taxa especial de retenção de 20% sobre rendimentos do trabalho dependente elegíveis (Categoria A). Para o mecanismo detalhado de retenção e elegibilidade, consultar a skill **pt-nhr-ifici**.
 
 ---
 
-## Section 3 -- Social Security: Employee Deductions
+## Secção 3 — Segurança Social: Descontos do Trabalhador
 
-| Contribution | Rate | Base | Cap |
+| Contribuição | Taxa | Base | Limite máximo |
 |---|---|---|---|
-| Segurança Social (employee) | 11% | Gross remuneration | No cap (applies to full salary) |
+| Segurança Social (trabalhador) — TSC | 11% | Remuneração bruta | Sem limite (aplica-se ao vencimento total) |
 
-### What Is Subject to SS Contributions
+### O Que Está Sujeito a Contribuições para a Segurança Social
 
-- Base salary
-- Seniority supplements (diuturnidades)
-- Regular allowances (subsídio de alimentação above exempt threshold, shift allowances)
-- Holiday and Christmas subsidies
-- Overtime pay
-- Commissions
+- Vencimento base
+- Diuturnidades
+- Subsídios regulares (subsídio de alimentação acima do limite de isenção, subsídios de turno)
+- Subsídios de férias e de Natal
+- Trabalho suplementar
+- Comissões
 
-### What Is Exempt from SS Contributions
+### O Que Está Isento de Contribuições para a Segurança Social
 
-- Meal allowance up to EUR 6.00/day (cash) or EUR 10.20/day (meal card) -- 2026
-- Travel and subsistence allowances (within legal limits)
-- Profit-sharing distributions (participação nos lucros)
-- Compensation for termination (within legal limits)
+- Subsídio de refeição até 6,00 EUR/dia (numerário) ou 10,20 EUR/dia (cartão refeição) — valores de 2026
+- Ajudas de custo e despesas de deslocação (dentro dos limites legais)
+- Distribuição de participação nos lucros
+- Compensações por cessação do contrato (dentro dos limites legais)
 
-### Key Rules
+### Regras-Chave
 
-- Employee contribution of 11% is deducted at source every month
-- Applies to each of the 14 payments (including holiday/Christmas subsidies)
-- No upper ceiling -- full salary is subject
-- SS contributions are deductible for IRS purposes (counted in the dedução específica)
+- A contribuição do trabalhador de 11% é deduzida na fonte mensalmente
+- Aplica-se a cada um dos 14 pagamentos (incluindo subsídios de férias e de Natal)
+- Não existe limite máximo — aplica-se à totalidade do vencimento
+- As contribuições para a Segurança Social são dedutíveis para efeitos de IRS (consideradas na dedução específica)
 
 ---
 
-## Section 4 -- Social Security: Employer Contributions
+## Secção 4 — Segurança Social: Contribuições da Entidade Patronal
 
-| Contribution | Rate | Base |
+| Contribuição | Taxa | Base |
 |---|---|---|
-| Segurança Social (employer) | 23.75% | Gross remuneration |
-| **Total combined rate** | **34.75%** | Employee 11% + Employer 23.75% |
+| Segurança Social (entidade patronal) | 23,75% | Remuneração bruta |
+| **Taxa total combinada (TSU)** | **34,75%** | Trabalhador 11% + Entidade patronal 23,75% |
 
-### Special Employer Rates
+### Taxas Especiais para a Entidade Patronal
 
-| Situation | Rate |
+| Situação | Taxa |
 |---|---|
-| Members of statutory bodies (gerentes/administradores) with unemployment protection | 23.75% (employee 11%) |
-| Members of statutory bodies without unemployment protection | 20.30% (employee 9.30%) |
-| Domestic workers | 18.90% (employee 9.40%) |
-| First employment incentive (3 years) | 50% reduction on employer rate |
-| Long-term unemployed (3 years) | 50% reduction on employer rate |
+| Membros de órgãos estatutários (gerentes/administradores) com proteção no desemprego | 23,75% (trabalhador 11%) |
+| Membros de órgãos estatutários sem proteção no desemprego | 20,30% (trabalhador 9,30%) |
+| Trabalhadores do serviço doméstico | 18,90% (trabalhador 9,40%) |
+| Incentivo ao primeiro emprego (3 anos) | Redução de 50% na taxa da entidade patronal |
+| Desempregados de longa duração (3 anos) | Redução de 50% na taxa da entidade patronal |
 
 ### Fundo de Compensação do Trabalho (FCT)
 
-| Fund | Rate | Purpose |
+| Fundo | Taxa | Finalidade |
 |---|---|---|
-| FCT (Compensation Fund) | 0.925% | Employee termination compensation guarantee |
-| FGCT (Guarantee Fund) | 0.075% | Mutual guarantee fund |
-| **Total** | **1.00%** | Paid by employer on gross salary |
+| FCT (Fundo de Compensação do Trabalho) | 0,925% | Garantia de compensação por cessação do contrato |
+| FGCT (Fundo de Garantia de Compensação do Trabalho) | 0,075% | Fundo de garantia mútua |
+| **Total** | **1,00%** | Pago pela entidade patronal sobre a remuneração bruta |
 
-- Applies to contracts started after 1 October 2013
-- Paid monthly by the 20th of following month
-- Exempt: domestic workers, public sector
-
----
-
-## Section 5 -- Minimum Wage and Overtime
-
-### Minimum Wage (Retribuição Mínima Mensal Garantida -- RMMG)
-
-| Region | 2026 Monthly (EUR) |
-|---|---|
-| Continent (mainland) | 920.00 |
-| Açores (Azores) | 966.00 |
-| Madeira | 968.00 |
-
-- Set by Decreto-Lei nº 139/2025 (effective 1 January 2026)
-- Previous year (2025): EUR 870.00
-- Annual cost to employer per minimum-wage worker: ~EUR 14,094 (including subsidies + TSU)
-- Workers at minimum wage pay 0% IRS (mínimo de existência protection)
-- Net minimum wage (after 11% SS): EUR 818.80/month
-
-### Working Hours and Overtime
-
-| Parameter | Standard |
-|---|---|
-| Standard working week | 40 hours |
-| Maximum daily hours | 8 hours (extendable to 10 by collective agreement) |
-| Overtime limit | 150 hours/year (200 by collective agreement) |
-| Overtime rate (1st hour, working day) | 25% supplement |
-| Overtime rate (subsequent hours, working day) | 37.5% supplement |
-| Overtime rate (rest days/holidays) | 50% supplement |
-| Night work supplement (22h-7h) | 25% minimum |
+- Aplica-se a contratos iniciados após 1 de outubro de 2013
+- Pago mensalmente, até ao dia 20 do mês seguinte
+- Isentos: trabalhadores do serviço doméstico, setor público
 
 ---
 
-## Section 6 -- Mandatory Benefits
+## Secção 5 — Salário Mínimo e Trabalho Suplementar
 
-| Benefit | Detail |
+### Retribuição Mínima Mensal Garantida (RMMG)
+
+| Região | 2026 — Mensal (EUR) |
 |---|---|
-| Annual leave | 22 working days minimum |
-| Holiday subsidy (subsídio de férias) | Equal to one month's salary (paid before holiday start or in June) |
-| Christmas subsidy (subsídio de Natal) | Equal to one month's salary (paid by 15 December) |
-| Meal allowance (subsídio de alimentação) | Not mandatory but extremely common; exempt up to EUR 6.00/day (cash) or EUR 10.20/day (card) |
-| Sick leave | Paid by Segurança Social from day 4 (55%-75% of salary depending on duration) |
-| Maternity leave | 120 days at 100% or 150 days at 80% (paid by SS) |
-| Paternity leave | 28 consecutive days mandatory (paid by SS) |
-| Bereavement leave | 2-5 days depending on relation |
-| Marriage leave | 15 consecutive days |
-| Work accident insurance | Mandatory (employer must contract with insurer) |
+| Continente | 920,00 |
+| Açores | 966,00 |
+| Madeira | 968,00 |
 
-### 13th and 14th Month (Subsídios)
+- Fixada pelo Decreto-Lei n.º 139/2025 (em vigor a 1 de janeiro de 2026)
+- Ano anterior (2025): 870,00 EUR
+- Custo anual para a entidade patronal por trabalhador ao salário mínimo: ~14 094 EUR (incluindo subsídios + TSU)
+- Trabalhadores ao salário mínimo pagam 0% de IRS (proteção do mínimo de existência)
+- Vencimento líquido mínimo (após 11% Segurança Social): 818,80 EUR/mês
 
-| Subsidy | Amount | Timing | SS/IRS |
+### Período Normal de Trabalho e Trabalho Suplementar
+
+| Parâmetro | Padrão |
+|---|---|
+| Período normal de trabalho semanal | 40 horas |
+| Limite diário | 8 horas (extensível a 10 por instrumento de regulamentação coletiva) |
+| Limite anual de trabalho suplementar | 150 horas/ano (200 por convenção coletiva) |
+| Acréscimo da 1.ª hora (dia útil) | 25% |
+| Acréscimo das horas seguintes (dia útil) | 37,5% |
+| Acréscimo em dia de descanso/feriado | 50% |
+| Subsídio de trabalho noturno (22h-7h) | Mínimo de 25% |
+
+---
+
+## Secção 6 — Benefícios Obrigatórios
+
+| Benefício | Detalhe |
+|---|---|
+| Férias anuais | 22 dias úteis (mínimo) |
+| Subsídio de férias | Equivalente a um mês de vencimento (pago antes do início das férias ou em junho) |
+| Subsídio de Natal | Equivalente a um mês de vencimento (pago até 15 de dezembro) |
+| Subsídio de refeição (subsídio de alimentação) | Não obrigatório por lei mas largamente generalizado; isento até 6,00 EUR/dia (numerário) ou 10,20 EUR/dia (cartão) |
+| Baixa por doença | Paga pela Segurança Social a partir do 4.º dia (55%-75% do vencimento, conforme duração) |
+| Licença de parentalidade (mãe) | 120 dias a 100% ou 150 dias a 80% (pago pela Segurança Social) |
+| Licença de parentalidade (pai) | 28 dias consecutivos obrigatórios (pago pela Segurança Social) |
+| Faltas por falecimento de familiar | 2 a 5 dias, conforme o grau de parentesco |
+| Licença por casamento | 15 dias consecutivos |
+| Seguro de acidentes de trabalho | Obrigatório (a entidade patronal deve contratar seguradora) |
+
+### 13.º e 14.º Meses (Subsídios)
+
+| Subsídio | Valor | Prazo | Segurança Social / IRS |
 |---|---|---|---|
-| Subsídio de Natal (Christmas) | 1 month salary | By 15 December (or proportional in 12 payments) |Subject to 11% SS + IRS |
-| Subsídio de Férias (Holiday) | 1 month salary | Before holiday start or by 30 June | Subject to 11% SS + IRS |
+| Subsídio de Natal | 1 mês de vencimento | Até 15 de dezembro (ou em duodécimos ao longo dos 12 meses) | Sujeito a 11% Segurança Social + IRS |
+| Subsídio de férias | 1 mês de vencimento | Antes do início das férias ou até 30 de junho | Sujeito a 11% Segurança Social + IRS |
 
-Employees may opt (or employers may determine) payment in duodécimos (1/12 per month). Both subsidies are proportional to time worked if employee joins/leaves mid-year.
+O trabalhador pode optar (ou a entidade patronal pode determinar) pelo pagamento em duodécimos (1/12 por mês). Ambos os subsídios são proporcionais ao tempo de trabalho efetivo se o trabalhador iniciar ou cessar funções a meio do ano.
 
 ---
 
-## Section 7 -- Payslip Requirements
+## Secção 7 — Requisitos do Recibo de Vencimento
 
-Portuguese employers MUST issue a recibo de vencimento (payslip) for each salary payment. Required elements:
+A entidade patronal portuguesa DEVE emitir um recibo de vencimento por cada pagamento de salário. Elementos obrigatórios:
 
-| Element | Mandatory |
+| Elemento | Obrigatório |
 |---|---|
-| Employer identification (name, NIPC, SS number) | Yes |
-| Employee identification (name, NIF, NISS) | Yes |
-| Pay period (month/year) | Yes |
-| Job category and seniority | Yes |
-| Base salary (retribuição base) | Yes |
-| Regular supplements and allowances | Yes |
-| Overtime breakdown | Yes |
-| Gross total remuneration | Yes |
-| Employee SS contribution (11%) | Yes |
-| IRS withholding amount | Yes |
-| Other deductions (union dues, advances, etc.) | Yes |
-| Meal allowance (days × rate) | Yes (if applicable) |
-| Net salary payable | Yes |
-| Payment date and method | Yes |
-| Holiday/Christmas subsidy (when paid) | Yes |
+| Identificação da entidade patronal (nome, NIPC, n.º Segurança Social) | Sim |
+| Identificação do trabalhador (nome, NIF, NISS) | Sim |
+| Período a que respeita (mês/ano) | Sim |
+| Categoria profissional e antiguidade | Sim |
+| Retribuição base (vencimento base) | Sim |
+| Subsídios e suplementos regulares | Sim |
+| Discriminação do trabalho suplementar | Sim |
+| Remuneração bruta total | Sim |
+| Contribuição do trabalhador para a Segurança Social (11%) | Sim |
+| Valor da retenção na fonte de IRS | Sim |
+| Outros descontos (quotizações sindicais, adiantamentos, etc.) | Sim |
+| Subsídio de refeição (dias × valor unitário) | Sim (se aplicável) |
+| Vencimento líquido a pagar | Sim |
+| Data e meio de pagamento | Sim |
+| Subsídio de férias / Natal (quando pago) | Sim |
 
-### Record Retention
+### Conservação de Registos
 
-Employers must retain payroll records for a minimum of 5 years (general labour law) and 10 years for tax purposes.
+A entidade patronal deve conservar os registos de processamento de salários por um período mínimo de 5 anos (legislação laboral geral) e 10 anos para efeitos fiscais.
 
 ---
 
-## Section 8 -- Filing Obligations
+## Secção 8 — Obrigações Declarativas
 
-| Filing | Frequency | Deadline | Authority |
+| Obrigação | Periodicidade | Prazo | Entidade |
 |---|---|---|---|
-| Declaração Mensal de Remunerações (DMR) | Monthly | 10th of following month | AT + SS |
-| SS contributions payment | Monthly | Between 10th and 20th of following month | Segurança Social |
-| IRS withholding payment | Monthly | By 20th of following month | AT |
-| FCT/FGCT payment | Monthly | By 20th of following month | Fundos de Compensação |
-| Relatório Único (Annual Social Report) | Annual | By 15 April (via portal) | GEP/MTSSS |
-| IRS annual declaration (Modelo 3) | Annual | 1 April -- 30 June (employee files personally) | AT |
-| Modelo 10 (income paid to non-residents) | Annual | By 28 February | AT |
+| Declaração Mensal de Remunerações (DMR) | Mensal | Até ao dia 10 do mês seguinte | AT + Segurança Social |
+| Pagamento das contribuições para a Segurança Social | Mensal | Entre os dias 10 e 20 do mês seguinte | Segurança Social (DGSS) |
+| Pagamento da retenção na fonte de IRS | Mensal | Até ao dia 20 do mês seguinte | AT |
+| Pagamento FCT/FGCT | Mensal | Até ao dia 20 do mês seguinte | Fundos de Compensação |
+| Relatório Único | Anual | Até 15 de abril (via portal) | GEP / MTSSS |
+| Declaração anual de IRS (Modelo 3) | Anual | 1 de abril — 30 de junho (entregue pelo trabalhador) | AT |
+| Modelo 10 (rendimentos pagos a não residentes) | Anual | Até 28 de fevereiro | AT |
 
-### DMR Details
+### DMR — Detalhes
 
-| Parameter | Detail |
+| Parâmetro | Detalhe |
 |---|---|
-| Content | Per-employee: gross salary, SS contributions, IRS withheld |
-| Submission | Electronic via Portal das Finanças |
-| Validation | Must be validated by SS system to be considered delivered |
-| Penalties | Late filing: fines from EUR 150 to EUR 3,750; late payment: 10% surcharge + interest |
+| Conteúdo | Por trabalhador: vencimento bruto, contribuições para a Segurança Social, retenção na fonte de IRS |
+| Submissão | Eletrónica através do Portal das Finanças |
+| Validação | Tem de ser validada pelo sistema da Segurança Social para se considerar entregue |
+| Penalidades | Atraso na entrega: coimas de 150 EUR a 3 750 EUR; atraso no pagamento: agravamento de 10% + juros |
 
-### Key Annual Calendar
+### Calendário Anual
 
-| Month | Obligation |
+| Mês | Obrigação |
 |---|---|
-| January | DMR December; SS/IRS payment for December |
-| February | Modelo 10 deadline (non-residents) |
-| March | Annual SS reconciliation |
-| April | Relatório Único; DMR March |
-| June | Holiday subsidy payment; IRS filing opens |
-| November | First Christmas subsidy tranche (if in duodécimos) |
-| December | Christmas subsidy by 15th; annual payroll closing |
+| Janeiro | DMR de dezembro; pagamento Segurança Social / IRS de dezembro |
+| Fevereiro | Prazo do Modelo 10 (não residentes) |
+| Março | Acerto anual da Segurança Social |
+| Abril | Relatório Único; DMR de março |
+| Junho | Pagamento do subsídio de férias; abertura da entrega de IRS |
+| Novembro | Primeira tranche do subsídio de Natal (se em duodécimos) |
+| Dezembro | Subsídio de Natal até dia 15; fecho anual do processamento de salários |
 
 ---
 
-## Section 9 -- Common Payroll Patterns
+## Secção 9 — Padrões Comuns de Processamento
 
-### Pattern 1: Standard Monthly Salary (Single, No Dependents, Continent)
-
-```
-Base salary:                         EUR 1,800.00
-Meal allowance (22 days × 7.63):    +EUR   167.86 (card, exempt from SS/IRS)
-Gross for SS/IRS purposes:           EUR 1,800.00
-- Employee SS (11%):                 -EUR   198.00
-= Taxable base for IRS:              EUR 1,602.00
-- IRS withholding (~14.5%):          -EUR   ~232.00
-= Net salary:                        EUR 1,370.00
-+ Meal allowance:                   +EUR   167.86
-= Total received:                    EUR ~1,538.00
-
-Employer cost:
-  Base salary:                       EUR 1,800.00
-+ Employer SS (23.75%):             +EUR   427.50
-+ FCT (1%):                         +EUR    18.00
-+ Meal allowance:                   +EUR   167.86
-= Monthly employer cost:             EUR ~2,413.36
-```
-
-### Pattern 2: Minimum Wage Worker (2026)
+### Padrão 1: Vencimento Mensal Padrão (Não Casado, Sem Dependentes, Continente)
 
 ```
-Base salary (RMMG):                  EUR   920.00
-- Employee SS (11%):                 -EUR   101.20
-- IRS withholding:                   -EUR     0.00 (exempt -- mínimo de existência)
-= Net salary:                        EUR   818.80
+Vencimento base:                      EUR 1 800,00
+Subsídio de refeição (22 dias × 7,63): +EUR   167,86 (cartão, isento de SS / IRS)
+Bruto para efeitos de SS / IRS:        EUR 1 800,00
+- Segurança Social trabalhador (11%):  -EUR   198,00
+= Base tributável para IRS:            EUR 1 602,00
+- Retenção na fonte IRS (~14,5%):      -EUR   ~232,00
+= Vencimento líquido:                  EUR 1 370,00
++ Subsídio de refeição:               +EUR   167,86
+= Total recebido:                      EUR ~1 538,00
 
-Annual cost:
-  14 months × 920 × 1.2375 (with employer SS) = EUR 15,939.00
-  + FCT 1% on 14 months = EUR 128.80
-  Total annual employer cost ≈ EUR 16,068
+Custo para a entidade patronal:
+  Vencimento base:                     EUR 1 800,00
++ Segurança Social patronal (23,75%): +EUR   427,50
++ FCT (1%):                           +EUR    18,00
++ Subsídio de refeição:               +EUR   167,86
+= Custo mensal entidade patronal:      EUR ~2 413,36
 ```
 
-### Pattern 3: Holiday Subsidy Month (June)
+### Padrão 2: Trabalhador ao Salário Mínimo (2026)
 
-In June, employee receives double payment:
-- Normal June salary (subject to SS + IRS at standard rate)
-- Holiday subsidy = 1 month base salary (subject to SS + IRS separately)
+```
+Vencimento base (RMMG):                EUR   920,00
+- Segurança Social trabalhador (11%):  -EUR   101,20
+- Retenção na fonte IRS:               -EUR     0,00 (isento — mínimo de existência)
+= Vencimento líquido:                  EUR   818,80
 
-Each payment has IRS calculated independently using the same withholding rate.
+Custo anual:
+  14 meses × 920 × 1,2375 (com SS patronal) = EUR 15 939,00
+  + FCT 1% sobre 14 meses = EUR 128,80
+  Custo anual total para a entidade patronal ≈ EUR 16 068
+```
 
-### Pattern 4: Termination Settlement
+### Padrão 3: Mês do Subsídio de Férias (junho)
 
-| Component | Calculation |
+Em junho, o trabalhador recebe duplo pagamento:
+- Vencimento normal de junho (sujeito a Segurança Social + IRS à taxa normal)
+- Subsídio de férias = 1 mês de vencimento base (sujeito a Segurança Social + IRS de forma autónoma)
+
+Cada pagamento tem o IRS calculado independentemente utilizando a mesma taxa de retenção.
+
+### Padrão 4: Acerto de Contas na Cessação do Contrato
+
+| Componente | Cálculo |
 |---|---|
-| Outstanding salary | Days worked in final month / 30 × salary |
-| Proportional holiday subsidy | Months worked / 12 × monthly salary |
-| Proportional Christmas subsidy | Months worked / 12 × monthly salary |
-| Untaken holiday (current year) | Proportional to 22 days |
-| Untaken holiday (carried over) | Full days × daily rate |
-| Compensation (if applicable) | Per Código do Trabalho rules |
+| Vencimento em dívida | Dias trabalhados no mês final / 30 × vencimento |
+| Subsídio de férias proporcional | Meses trabalhados / 12 × vencimento mensal |
+| Subsídio de Natal proporcional | Meses trabalhados / 12 × vencimento mensal |
+| Férias não gozadas (ano corrente) | Proporcional aos 22 dias |
+| Férias não gozadas (transitadas) | Dias completos × valor diário |
+| Compensação por cessação (se aplicável) | Nos termos do Código do Trabalho |
 
 ---
 
-## Section 10 -- Interaction with Other Skills
+## Secção 10 — Interação com Outras Skills
 
-| Skill | Interaction |
+| Skill | Interação |
 |---|---|
-| portugal-bookkeeping | Payroll journal entries (account 63x), provisions for holiday/Christmas subsidies |
-| portugal-einvoice | No direct interaction (e-invoicing is B2B; payslips are separate) |
-| payroll-workflow-base | General payroll processing workflow; Portugal-specific overrides in this skill |
+| portugal-bookkeeping | Lançamentos contabilísticos do processamento (conta 63x); provisões para subsídios de férias e de Natal |
+| portugal-einvoice | Sem interação direta (faturação eletrónica é B2B; recibos de vencimento são autónomos) |
+| pt-nhr-ifici | Mecânica de retenção na fonte à taxa especial de 20% para trabalhadores qualificados no regime IFICI / direitos adquiridos do antigo RNH |
+| payroll-workflow-base | Fluxo geral de processamento; especificidades portuguesas definidas nesta skill |
 
-### Portugal-Specific Payroll Considerations
+### Especificidades do Processamento em Portugal
 
-- **14 payments**: Portugal mandates 14 salary payments per year. Budget for this when converting annual salary to monthly cost.
-- **Duodécimos**: Employees may request holiday and Christmas subsidies paid in 12 equal monthly instalments (1/12 each month). Employer may also choose this method.
-- **Autonomous regions**: Açores and Madeira have slightly higher minimum wages and potentially different IRS withholding tables.
-- **IRS withholding tables**: Updated annually by Despacho. Always use current-year tables. The 2026 tables apply retroactively from 1 January 2026.
-- **Meal allowance**: Extremely common benefit. The exempt portion (EUR 6.00 cash / EUR 10.20 card) is NOT subject to SS or IRS. Any excess IS subject.
-- **Trabalho suplementar (overtime)**: Subject to both SS contributions and IRS withholding at the normal rate.
+- **14 pagamentos**: Portugal impõe 14 pagamentos de vencimento por ano. Considerar este facto na conversão de vencimento anual em custo mensal.
+- **Duodécimos**: O trabalhador pode requerer o pagamento dos subsídios de férias e de Natal em 12 prestações mensais iguais (1/12 por mês). A entidade patronal também pode optar por este método.
+- **Regiões autónomas**: Os Açores e a Madeira têm valores de salário mínimo ligeiramente superiores e podem ter tabelas de retenção de IRS diferentes.
+- **Tabelas de retenção de IRS**: Atualizadas anualmente por Despacho da AT (nos termos do art.º 99.º do CIRS). Utilizar sempre as tabelas do ano em curso. As tabelas de 2026 aplicam-se retroativamente a partir de 1 de janeiro de 2026.
+- **Subsídio de refeição**: Benefício amplamente generalizado. A parcela isenta (6,00 EUR em numerário / 10,20 EUR em cartão) NÃO está sujeita a Segurança Social nem a IRS. O excesso ESTÁ sujeito.
+- **Trabalho suplementar**: Sujeito a contribuições para a Segurança Social e a retenção na fonte de IRS à taxa normal.
+- **Regime IFICI / RNH**: Para trabalhadores abrangidos, a retenção na fonte de IRS é efetuada à taxa especial de 20% — consultar a skill **pt-nhr-ifici**.
 
 ---
 
-## Disclaimer
+## Aviso Legal
 
-This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional before filing or acting upon.
+Esta skill e os respetivos resultados são disponibilizados apenas para fins informativos e de cálculo, não constituindo aconselhamento fiscal, jurídico ou financeiro. A Open Accountants e os seus contribuidores não aceitam qualquer responsabilidade por erros, omissões ou consequências decorrentes da utilização desta skill. Todos os resultados devem ser revistos e validados por profissional qualificado antes da entrega ou de qualquer atuação com base nos mesmos.
 
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com).
+A versão mais atualizada e verificada desta skill é mantida em [openaccountants.com](https://openaccountants.com).

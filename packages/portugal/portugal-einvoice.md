@@ -1,8 +1,8 @@
 ---
 name: portugal-einvoice
 description: >
-  Use this skill whenever asked about e-invoicing in Portugal, ATCUD codes, SAF-T PT reporting, QR code requirements on invoices, certified billing software (Modelo 24), e-Fatura portal, Qualified Electronic Signature (QES) for invoices, CIUS-PT, B2G e-invoicing via Peppol, or any question about issuing, transmitting, validating, or archiving electronic invoices under Portuguese law. Trigger on phrases like "ATCUD", "SAF-T Portugal", "e-Fatura", "QR code invoice", "certified software AT", "Peppol Portugal", "B2G e-invoice", "invoice hash chain", "Portaria 363/2010", "Decreto-Lei 28/2019", or "Qualified Electronic Signature Portugal". ALWAYS read this skill before touching any Portugal invoicing compliance work.
-version: 1.0
+  Utilize esta skill sempre que lhe forem colocadas questões sobre facturação electrónica em Portugal, códigos ATCUD, comunicação do SAF-T(PT), requisitos do QR Code nas facturas, software certificado AT (Portaria/Modelo 24), portal e-fatura, Assinatura Electrónica Qualificada (AEQ) para facturas, CIUS-PT, facturação electrónica B2G via Peppol/FE-AP, ou qualquer questão relativa à emissão, transmissão, validação ou arquivo de facturas electrónicas ao abrigo da lei portuguesa. Trigger also on: "ATCUD", "SAF-T Portugal", "e-fatura", "QR code invoice", "certified software AT", "Peppol Portugal", "B2G e-invoice", "invoice hash chain", "Portaria 363/2010", "Decreto-Lei 28/2019", or "Qualified Electronic Signature Portugal". LEIA SEMPRE esta skill antes de tocar em qualquer trabalho de conformidade de facturação em Portugal.
+version: 1.1
 jurisdiction: PT
 category: invoicing
 depends_on:
@@ -11,278 +11,278 @@ tax_year: 2025
 verified_by: pending
 ---
 
-# Portugal E-Invoicing Compliance Skill v1.0
+# Portugal — Facturação Electrónica (ATCUD / SAF-T(PT) / e-Fatura) — Skill v1.1
 
 ---
 
-## Section 1 -- Quick Reference
+## Secção 1 -- Referência Rápida
 
-| Field | Value |
+| Campo | Valor |
 |---|---|
-| Country | Portugal (República Portuguesa) |
-| Currency | EUR |
-| E-invoicing system name | e-Fatura (reporting portal) + ATCUD/QR framework |
-| Governing body | Autoridade Tributária e Aduaneira (AT) |
-| Key legislation | Decreto-Lei 28/2019; Portaria 363/2010 (software certification); Portaria 321-A/2007 (SAF-T); Portaria 195/2020 (QR code specs); RGIT (penalties) |
-| Implementation timeline | QR codes mandatory Jan 2022; ATCUD mandatory Jan 2023; B2G e-invoicing Jan 2024 all entities; QES for PDF invoices Jan 2027; SAF-T Accounting 2028 (FY 2027) |
-| Current status (2026) | ATCUD and QR fully enforced; monthly SAF-T Billing active; B2G via Peppol/CIUS-PT; B2B not yet mandated as structured e-invoice; QES mandatory from Jan 2027 |
-| Skill version | 1.0 |
+| País | Portugal (República Portuguesa) |
+| Moeda | EUR |
+| Nome do sistema de facturação electrónica | e-fatura (portal de comunicação) + enquadramento ATCUD/QR Code |
+| Entidade reguladora | Autoridade Tributária e Aduaneira (AT) |
+| Legislação principal | Decreto-Lei 28/2019; Portaria 363/2010 (certificação de software); Portaria 321-A/2007 (SAF-T); Portaria 195/2020 (especificações do QR Code); RGIT (sanções) |
+| Calendário de implementação | QR Code obrigatório desde Janeiro de 2022; ATCUD obrigatório desde Janeiro de 2023; facturação electrónica B2G desde Janeiro de 2024 para todas as entidades; AEQ para facturas em PDF desde Janeiro de 2027; SAF-T da Contabilidade em 2028 (período de tributação 2027) |
+| Estado actual (2026) | ATCUD e QR Code totalmente em vigor; SAF-T(PT) de Facturação mensal activo; B2G via Peppol/CIUS-PT; B2B ainda não obrigatório como factura electrónica estruturada; AEQ obrigatória a partir de Janeiro de 2027 |
+| Versão da skill | 1.1 |
 
 ---
 
-## Section 2 -- Mandate Scope
+## Secção 2 -- Âmbito da Obrigação
 
-### Who Must Comply
+### Quem Deve Cumprir
 
-**B2G (Business-to-Government):**
-All suppliers to Portuguese public entities must issue structured e-invoices via Peppol (CIUS-PT / Peppol BIS Billing 3.0). Mandatory for large companies since 2021, extended to SMEs and micro-enterprises from 1 January 2024.
+**B2G (Empresa para Estado):**
+Todos os fornecedores de entidades públicas portuguesas devem emitir facturas electrónicas estruturadas via Peppol (CIUS-PT / Peppol BIS Billing 3.0). Obrigatório para grandes empresas desde 2021, alargado a PME e micro-empresas a partir de 1 de Janeiro de 2024.
 
-**B2B (Business-to-Business):**
-Portugal does not currently mandate structured e-invoice exchange between private entities. Instead, compliance is achieved through a layered framework: (1) certified invoicing software, (2) ATCUD unique document codes, (3) QR codes on all invoices, and (4) monthly SAF-T Billing reporting to AT. This gives AT real-time visibility without requiring direct B2B e-invoice exchange.
+**B2B (Empresa para Empresa):**
+Portugal não impõe actualmente a troca de facturas electrónicas estruturadas entre entidades privadas. Em vez disso, a conformidade é assegurada através de um enquadramento por camadas: (1) software certificado AT, (2) códigos únicos de documento ATCUD, (3) QR Code em todas as facturas, e (4) comunicação mensal do SAF-T(PT) de Facturação à AT. Isto confere à AT visibilidade em tempo quase real sem exigir a troca directa de facturas electrónicas B2B.
 
-**B2C (Business-to-Consumer):**
-Same as B2B -- invoices must carry ATCUD and QR code, be issued via certified software, and be reported in SAF-T Billing. Consumers can verify invoices on e-Fatura for personal tax deductions.
+**B2C (Empresa para Consumidor):**
+Idêntico ao B2B -- as facturas (incluindo facturas-recibo) devem incluir ATCUD e QR Code, ser emitidas através de software certificado AT, e ser comunicadas no SAF-T(PT) de Facturação. Os consumidores podem verificar as facturas no portal e-fatura para efeitos de deduções pessoais em sede de IRS.
 
-### Thresholds and Exemptions
+### Limiares e Isenções
 
-- No turnover threshold -- all taxable persons performing VAT-taxable transactions in Portugal must comply.
-- Non-resident companies with a Portuguese VAT registration must also use AT-certified software (since 2021).
-- Simplified invoices (under EUR 100 or EUR 1,000 for certain sectors) still require ATCUD and QR codes.
+- Sem limiar de volume de negócios -- todos os sujeitos passivos que efectuem operações tributáveis em sede de IVA em Portugal devem cumprir.
+- A obrigação de utilização de software certificado AT aplica-se a sujeitos passivos com volume de negócios superior a 50 000 EUR; empresas não residentes com registo de IVA em Portugal também devem utilizar software certificado AT (desde 2021).
+- As facturas simplificadas (até 100 EUR, ou até 1 000 EUR em determinados sectores) continuam a exigir ATCUD e QR Code.
 
-### Timeline Phases
+### Fases do Calendário
 
-| Date | Milestone |
+| Data | Marco |
 |---|---|
-| January 2020 | AT software certification framework under Portaria 363/2010 |
-| January 2022 | QR codes mandatory on all fiscally relevant documents |
-| January 2023 | ATCUD mandatory on all invoices and fiscally relevant documents |
-| January 2024 | B2G e-invoicing mandatory for all entities (SMEs/micro included) |
-| January 2025 | SAF-T Billing monthly 5th-day deadline strictly enforced |
-| January 2027 | QES mandatory on all PDF invoices; PDFs without QES no longer legally valid |
-| 2028 | First mandatory SAF-T Accounting file (FY 2027) |
+| Janeiro de 2020 | Enquadramento de certificação de software AT ao abrigo da Portaria 363/2010 |
+| Janeiro de 2022 | QR Code obrigatório em todos os documentos fiscalmente relevantes |
+| Janeiro de 2023 | ATCUD obrigatório em todas as facturas e documentos fiscalmente relevantes |
+| Janeiro de 2024 | Facturação electrónica B2G obrigatória para todas as entidades (incluindo PME e micro) |
+| Janeiro de 2025 | Prazo do SAF-T(PT) de Facturação mensal (até dia 5) rigorosamente aplicado |
+| Janeiro de 2027 | AEQ obrigatória em todas as facturas em PDF; PDFs sem AEQ deixam de ter validade legal |
+| 2028 | Primeiro SAF-T(PT) da Contabilidade obrigatório (período de tributação 2027) |
 
 ---
 
-## Section 3 -- Technical Format
+## Secção 3 -- Formato Técnico
 
-### Invoice Format Standards
+### Normas de Formato da Factura
 
-**B2G:** UBL 2.1 XML via CIUS-PT (Core Invoice Usage Specification for Portugal), aligned with EN 16931. Transmitted over the Peppol network using Peppol BIS Billing 3.0.
+**B2G:** XML em UBL 2.1 via CIUS-PT (Core Invoice Usage Specification for Portugal), alinhado com a norma EN 16931. Transmitido na rede Peppol utilizando Peppol BIS Billing 3.0, através da FE-AP (Facturação Electrónica na Administração Pública).
 
-**B2B/B2C:** No mandated structured XML exchange format. Invoices may be issued as PDF, paper, or other formats, provided they are generated by AT-certified software and include ATCUD + QR code. The invoice data is reported to AT via SAF-T (PT) in XML.
+**B2B/B2C:** Não existe um formato XML estruturado de troca obrigatório. As facturas podem ser emitidas em PDF, papel ou outros formatos, desde que sejam geradas por software certificado AT e contenham ATCUD + QR Code. Os dados da factura são comunicados à AT via SAF-T(PT) em XML.
 
-### SAF-T (PT) Schema
+### Esquema do SAF-T(PT)
 
-- XML structure defined by Portaria 321-A/2007 (updated periodically).
-- SAF-T Billing contains: Header, Customer, TaxTable, Payments, Supplier, Product, SalesInvoices, MovementOfGoods, WorkingDocuments.
-- SAF-T Accounting contains: Header, Customer, TaxTable, Payments, GeneralLedgerAccounts, Supplier, GeneralLedgerEntries, FixedAssets, Inventory.
+- Estrutura XML definida pela Portaria 321-A/2007 (actualizada periodicamente).
+- O SAF-T(PT) de Facturação contém: Header, Customer, TaxTable, Payments, Supplier, Product, SalesInvoices, MovementOfGoods, WorkingDocuments.
+- O SAF-T(PT) da Contabilidade contém: Header, Customer, TaxTable, Payments, GeneralLedgerAccounts, Supplier, GeneralLedgerEntries, FixedAssets, Inventory.
 
-### ATCUD Structure
+### Estrutura do ATCUD
 
-Format: `ATCUD:ValidationCode-SequentialNumber`
+Formato: `ATCUD:CódigoValidação-NúmeroSequencial`
 
-The validation code is obtained from AT when registering an invoice series. The sequential number is assigned by the certified software. Example: `ATCUD:TES123TE-4561`.
+O código de validação é obtido junto da AT no momento do registo de uma série documental. O número sequencial é atribuído pelo software certificado. Exemplo: `ATCUD:TES123TE-4561`.
 
-In the QR code and SAF-T XML, only `TES123TE-4561` (without the `ATCUD:` prefix) is used.
+No QR Code e no XML do SAF-T(PT) apenas é utilizado `TES123TE-4561` (sem o prefixo `ATCUD:`).
 
-### QR Code Specification
+### Especificação do QR Code
 
-Defined by Portaria 195/2020. The QR code encodes:
-- Issuer NIF (tax ID), buyer NIF, buyer country
-- Document type, document status, document date, document unique ID, ATCUD
-- Tax country region, tax base and tax amounts per VAT rate (fields I1-I8, J1-J8, K1-K8 for PT, PT-AC, PT-MA fiscal spaces)
-- Gross total, withholding tax amount, hash (4-char hash from RSA signature)
+Definida pela Portaria 195/2020. O QR Code codifica:
+- NIF do emitente, NIF do adquirente, país do adquirente
+- Tipo de documento, estado do documento, data do documento, identificador único do documento, ATCUD
+- Espaço fiscal, base tributável e montantes de imposto por taxa de IVA (campos I1-I8, J1-J8, K1-K8 para os espaços fiscais PT, PT-AC, PT-MA)
+- Total bruto, montante de retenção na fonte, hash (hash de 4 caracteres da assinatura RSA)
 
-### Hash Chain (RSA Digital Signature)
+### Cadeia de Hash (Assinatura Digital RSA)
 
-Every invoice issued by certified software includes an RSA digital signature hash. The hash chain links each invoice to its predecessor, ensuring tamper-evidence. The first 4 characters of the hash must appear on the printed/PDF invoice.
+Cada factura emitida por software certificado inclui um hash de assinatura digital RSA. A cadeia de hash liga cada factura à anterior, garantindo a inviolabilidade. Os primeiros 4 caracteres do hash devem aparecer na factura impressa ou em PDF.
 
 ---
 
-## Section 4 -- Mandatory Fields
+## Secção 4 -- Campos Obrigatórios
 
-### Fields Required on Every Portuguese Invoice
+### Campos Exigidos em Todas as Facturas Portuguesas
 
-| Field | Description |
+| Campo | Descrição |
 |---|---|
-| Issuer NIF | Portuguese tax identification number of supplier |
-| Issuer name and address | Full legal name and registered address |
-| Buyer NIF | Required for B2B; "consumidor final" for B2C under EUR 1,000 |
-| Buyer name and address | Required when NIF is provided |
-| Invoice number | Sequential, unique within the series (format: TypeCode SeriesID/SequentialNumber) |
-| Invoice date | Date of issuance |
-| ATCUD | Unique document code (ValidationCode-SequentialNumber) |
-| QR code | 2D barcode encoding invoice data per Portaria 195/2020 |
-| Hash (4 characters) | First 4 characters of the RSA signature hash |
-| Certified software number | AT certification number of the invoicing program |
-| Tax point date | Date of supply of goods/services |
-| Description of goods/services | Line-level detail |
-| Quantity and unit price | Per line item |
-| VAT rate and amount | Per applicable rate, per fiscal space (PT, PT-AC, PT-MA) |
-| Total taxable amount | Sum of all line items before VAT |
-| Total VAT amount | Sum of VAT across all rates |
-| Total gross amount | Including VAT |
-| Currency | EUR for domestic; foreign currency with EUR exchange rate for cross-border |
-| Payment terms/method | If applicable |
+| NIF do emitente | Número de identificação fiscal português do fornecedor |
+| Nome e morada do emitente | Denominação social completa e sede registada |
+| NIF do adquirente | Obrigatório em B2B; "consumidor final" para B2C abaixo de 1 000 EUR |
+| Nome e morada do adquirente | Obrigatórios quando é fornecido o NIF |
+| Número da factura | Sequencial, único dentro da série (formato: CódigoTipo SérieID/NúmeroSequencial) |
+| Data da factura | Data de emissão |
+| ATCUD | Código único do documento (CódigoValidação-NúmeroSequencial) |
+| QR Code | Código de barras 2D que codifica os dados da factura nos termos da Portaria 195/2020 |
+| Hash (4 caracteres) | Primeiros 4 caracteres do hash da assinatura RSA |
+| Número do software certificado | Número de certificação AT do programa de facturação |
+| Data da operação | Data da entrega de bens / prestação de serviços |
+| Descrição dos bens/serviços | Detalhe ao nível da linha |
+| Quantidade e preço unitário | Por linha |
+| Taxa e montante de IVA | Por taxa aplicável, por espaço fiscal (PT, PT-AC, PT-MA) |
+| Total da base tributável | Soma de todas as linhas antes de IVA |
+| Total do IVA | Soma do IVA em todas as taxas |
+| Total bruto | Incluindo IVA |
+| Moeda | EUR no mercado interno; moeda estrangeira com taxa de câmbio para EUR em operações transfronteiriças |
+| Condições/forma de pagamento | Se aplicável |
 
-### Additional B2G Fields (CIUS-PT / Peppol BIS 3.0)
+### Campos Adicionais B2G (CIUS-PT / Peppol BIS 3.0)
 
-| Field | Path (UBL 2.1) |
+| Campo | Caminho (UBL 2.1) |
 |---|---|
-| Buyer reference | `cbc:BuyerReference` |
-| Contract reference | `cac:ContractDocumentReference/cbc:ID` |
-| Order reference | `cac:OrderReference/cbc:ID` |
-| CIUS-PT CustomizationID | `cbc:CustomizationID` = `urn:cen.eu:en16931:2017#compliant#urn:feap.gov.pt:CIUS-PT:2.1.1` |
+| Referência do adquirente | `cbc:BuyerReference` |
+| Referência do contrato | `cac:ContractDocumentReference/cbc:ID` |
+| Referência da encomenda | `cac:OrderReference/cbc:ID` |
+| CustomizationID CIUS-PT | `cbc:CustomizationID` = `urn:cen.eu:en16931:2017#compliant#urn:feap.gov.pt:CIUS-PT:2.1.1` |
 | Profile ID | `cbc:ProfileID` = `urn:fdc:peppol.eu:2017:poacc:billing:01:1.0` |
-| Endpoint ID (Peppol) | `cbc:EndpointID` with scheme identifier |
+| Endpoint ID (Peppol) | `cbc:EndpointID` com identificador de esquema |
 
 ---
 
-## Section 5 -- Transmission Method
+## Secção 5 -- Método de Transmissão
 
-### SAF-T Billing Submission (B2B/B2C)
+### Submissão do SAF-T(PT) de Facturação (B2B/B2C)
 
-| Channel | Detail |
+| Canal | Detalhe |
 |---|---|
-| e-Fatura web service | SOAP/REST API for automated submission |
-| Command-line tool | AT-provided CLI for batch upload |
-| Portal das Finanças | Manual file upload (XML) |
-| Direct entry | Low-volume issuers can enter invoice data manually on the portal |
-| Deadline | By the 5th calendar day of the month following the reporting period |
-| Authentication | Digital certificate (qualified or AT-issued) |
+| Webservice e-fatura | API SOAP/REST para submissão automatizada |
+| Ferramenta de linha de comando | CLI disponibilizada pela AT para envios em lote |
+| Portal das Finanças | Carregamento manual do ficheiro (XML) |
+| Inserção directa | Emitentes de baixo volume podem introduzir manualmente os dados das facturas no portal |
+| Prazo | Até ao dia 5 do mês seguinte ao do período de comunicação |
+| Autenticação | Certificado digital (qualificado ou emitido pela AT) |
 
-### B2G E-Invoice Transmission
+### Transmissão da Factura Electrónica B2G
 
-| Channel | Detail |
+| Canal | Detalhe |
 |---|---|
-| Peppol network | Via certified Peppol Access Point |
-| Format | Peppol BIS Billing 3.0 (UBL 2.1 XML) with CIUS-PT |
-| Endpoint | Buyer's Peppol endpoint registered in SMP |
-| Authentication | Peppol PKI certificates |
+| Rede Peppol | Através de um Access Point Peppol certificado |
+| Formato | Peppol BIS Billing 3.0 (XML UBL 2.1) com CIUS-PT |
+| Endpoint | Endpoint Peppol do adquirente registado no SMP |
+| Autenticação | Certificados PKI Peppol |
 
-### Series Registration
+### Registo de Séries
 
-Before issuing invoices, each document series must be registered with AT via the Portal das Finanças to obtain the validation code used in ATCUD generation.
+Antes da emissão de facturas, cada série documental deve ser registada junto da AT no Portal das Finanças, a fim de obter o código de validação utilizado na geração do ATCUD.
 
 ---
 
-## Section 6 -- Validation Rules
+## Secção 6 -- Regras de Validação
 
-### AT-Side Validation (SAF-T)
+### Validação do Lado da AT (SAF-T)
 
-- Schema validation against the current SAF-T (PT) XSD
-- Cross-checks: ATCUD uniqueness, hash chain integrity, NIF validation against AT registry
-- Tax table consistency: VAT rates must match the rates in force for the fiscal space
-- Sequential numbering: gaps or duplicates within a series trigger warnings
-- Document type alignment: invoice types must match SAF-T table codes (4.1 SalesInvoices, 4.2 MovementOfGoods, etc.)
+- Validação de esquema face ao XSD em vigor do SAF-T(PT)
+- Verificações cruzadas: unicidade do ATCUD, integridade da cadeia de hash, validação dos NIF face ao cadastro da AT
+- Consistência da tabela de impostos: as taxas de IVA devem corresponder às em vigor no respectivo espaço fiscal
+- Numeração sequencial: lacunas ou duplicados dentro de uma série geram avisos
+- Alinhamento dos tipos de documento: os tipos de factura devem corresponder aos códigos de tabela do SAF-T (4.1 SalesInvoices, 4.2 MovementOfGoods, etc.)
 
-### Pre-Submission Checks
+### Verificações Pré-Submissão
 
-- Verify ATCUD is present and correctly formatted (ValidationCode-SequentialNumber)
-- Verify QR code data matches invoice data fields
-- Verify RSA hash chain is unbroken (each invoice references the previous hash)
-- Verify certified software number is valid and matches AT registry
-- Verify all mandatory fields are populated
+- Confirmar que o ATCUD está presente e correctamente formatado (CódigoValidação-NúmeroSequencial)
+- Confirmar que os dados do QR Code correspondem aos campos da factura
+- Confirmar que a cadeia de hash RSA é ininterrupta (cada factura referencia o hash anterior)
+- Confirmar que o número do software certificado AT é válido e corresponde ao cadastro da AT
+- Confirmar que todos os campos obrigatórios estão preenchidos
 
-### Common Rejection Reasons
+### Motivos Comuns de Rejeição
 
-| Reason | Detail |
+| Motivo | Detalhe |
 |---|---|
-| Invalid ATCUD | Validation code not registered with AT for the series |
-| Broken hash chain | Hash does not reference correct predecessor invoice |
-| Invalid NIF | Supplier or buyer NIF fails check-digit validation |
-| Rate mismatch | VAT rate does not match current legal rate for the goods/services category |
-| Missing fields | Omitted mandatory fields in SAF-T XML |
-| Schema non-compliance | XML does not conform to the current SAF-T (PT) XSD version |
-| Duplicate submission | Same invoice already reported in a prior period |
+| ATCUD inválido | Código de validação não registado na AT para a série |
+| Cadeia de hash quebrada | Hash não referencia correctamente a factura anterior |
+| NIF inválido | NIF do fornecedor ou do adquirente falha a validação do dígito de controlo |
+| Discrepância de taxa | A taxa de IVA não corresponde à taxa legal em vigor para a categoria de bens/serviços |
+| Campos em falta | Campos obrigatórios omitidos no XML do SAF-T |
+| Não conformidade com o esquema | XML não conforme com a versão actual do XSD do SAF-T(PT) |
+| Submissão duplicada | Mesma factura já comunicada num período anterior |
 
 ---
 
-## Section 7 -- Tax Computation Rules
+## Secção 7 -- Regras de Apuramento
 
-### VAT Rates (2026)
+### Taxas de IVA (2026)
 
-| Rate | Percentage (Mainland PT) | PT-Açores | PT-Madeira |
+| Taxa | Percentagem (Continente) | PT-Açores | PT-Madeira |
 |---|---|---|---|
-| Standard | 23% | 16% | 22% |
-| Intermediate | 13% | 9% | 12% |
-| Reduced | 6% | 4% | 5% |
-| Exempt | 0% | 0% | 0% |
+| Normal | 23% | 16% | 22% |
+| Intermédia | 13% | 9% | 12% |
+| Reduzida | 6% | 4% | 5% |
+| Isenta | 0% | 0% | 0% |
 
-### Rounding Rules
+### Regras de Arredondamento
 
-- VAT amounts are calculated per line and rounded to 2 decimal places (EUR cent).
-- Totals are the sum of rounded line amounts -- do NOT re-round the total.
-- SAF-T requires separate tax base and tax amount per rate and per fiscal space.
+- Os montantes de IVA são calculados por linha e arredondados a 2 casas decimais (cêntimos de EUR).
+- Os totais correspondem à soma dos montantes de linha arredondados -- NÃO se deve voltar a arredondar o total.
+- O SAF-T(PT) exige base tributável e montante de imposto separados por taxa e por espaço fiscal.
 
-### Multi-Rate Invoice Handling
+### Tratamento de Facturas Multi-Taxa
 
-Each VAT rate and fiscal space must appear as a separate tax subtotal in both the invoice and the SAF-T XML. The QR code fields I1-K8 encode up to 8 rate/space combinations.
+Cada taxa de IVA e espaço fiscal deve constar como subtotal de imposto separado, tanto na factura como no XML do SAF-T(PT). Os campos I1-K8 do QR Code permitem codificar até 8 combinações de taxa/espaço fiscal.
 
-### Withholding Tax
+### Retenção na Fonte
 
-If applicable (e.g., professional services), withholding tax must be shown separately. The QR code includes a dedicated field for withholding tax amount.
+Quando aplicável (por exemplo, prestações de serviços profissionais), a retenção na fonte deve ser indicada separadamente. O QR Code inclui um campo dedicado para o montante da retenção na fonte.
 
 ---
 
-## Section 8 -- Archiving Requirements
+## Secção 8 -- Requisitos de Arquivo
 
-| Requirement | Detail |
+| Requisito | Detalhe |
 |---|---|
-| Retention period | 10 years from the end of the fiscal year |
-| Format | Original format of issuance; electronic records must remain machine-readable |
-| Accessibility | Uninterrupted access throughout the retention period, even through system migrations |
-| SAF-T on demand | SAF-T files (Billing and Accounting) must be producible on demand for tax inspections at any time during the 10-year period |
-| Integrity | Hash chain and digital signatures must remain verifiable |
-| Location | May be stored outside Portugal within the EU, provided AT is notified and real-time access is guaranteed |
-| QES archive | From 2027, PDF invoices with QES must be archived with the signature intact and verifiable |
+| Prazo de conservação | 10 anos a contar do fim do período de tributação |
+| Formato | Formato original de emissão; os registos electrónicos devem permanecer legíveis por máquina |
+| Acessibilidade | Acesso ininterrupto durante todo o prazo de conservação, mesmo em caso de migrações de sistema |
+| SAF-T(PT) a pedido | Os ficheiros SAF-T(PT) (Facturação e Contabilidade) devem poder ser produzidos a pedido em qualquer momento durante o período de 10 anos, para efeitos de inspecção tributária |
+| Integridade | A cadeia de hash e as assinaturas digitais devem permanecer verificáveis |
+| Localização | Pode ser conservado fora de Portugal, dentro da UE, desde que a AT seja notificada e seja garantido o acesso em tempo real |
+| Arquivo de AEQ | A partir de 2027, as facturas em PDF com AEQ devem ser arquivadas com a assinatura intacta e verificável |
 
 ---
 
-## Section 9 -- Penalties for Non-Compliance
+## Secção 9 -- Sanções por Incumprimento
 
-| Violation | Individuals (EUR) | Legal Persons (EUR) |
+| Infracção | Pessoas Singulares (EUR) | Pessoas Colectivas (EUR) |
 |---|---|---|
-| Non-issuance or late issuance of invoices | 150 -- 3,750 | 300 -- 7,500 |
-| Use of non-certified invoicing software | 3,000 -- 18,750 | 3,000 -- 18,750 |
-| Missing QR code or ATCUD on invoices | 200 -- 1,000 per invoice | 200 -- 1,000 per invoice |
-| Improper invoicing (invalid hash, missing certified software number) | 150 -- 3,750 | 150 -- 3,750 |
-| Late or incomplete SAF-T Billing submission | Graduated fines under RGIT | Graduated fines under RGIT |
-| Failure to submit SAF-T | Up to 5,000 | Up to 5,000 |
-| Accounting record delays (over 90 days) | Up to 5,000 | Up to 5,000 |
+| Não emissão ou emissão tardia de facturas | 150 -- 3 750 | 300 -- 7 500 |
+| Utilização de software de facturação não certificado AT | 3 000 -- 18 750 | 3 000 -- 18 750 |
+| QR Code ou ATCUD em falta nas facturas | 200 -- 1 000 por factura | 200 -- 1 000 por factura |
+| Facturação irregular (hash inválido, número de software certificado AT em falta) | 150 -- 3 750 | 150 -- 3 750 |
+| Submissão tardia ou incompleta do SAF-T(PT) de Facturação | Coimas graduadas nos termos do RGIT | Coimas graduadas nos termos do RGIT |
+| Falta de submissão do SAF-T(PT) | Até 5 000 | Até 5 000 |
+| Atrasos nos registos contabilísticos (superiores a 90 dias) | Até 5 000 | Até 5 000 |
 
-Penalties are doubled for intentional or fraudulent infractions under RGIT. Per-invoice penalties (ATCUD/QR) accumulate rapidly for high-volume issuers.
+As sanções são agravadas para o dobro em caso de infracções dolosas ou fraudulentas, nos termos do RGIT. As coimas por factura (ATCUD/QR Code) acumulam-se rapidamente em emitentes de elevado volume.
 
-B2G suppliers face additional risk of procurement disqualification for non-compliance with CIUS-PT requirements.
-
----
-
-## Section 10 -- Interaction with Tax Skills
-
-### SAF-T Billing → VAT Return
-
-Monthly SAF-T Billing data feeds directly into the VAT return (Declaração Periódica de IVA). AT pre-populates VAT return fields from SAF-T submissions. Discrepancies between the SAF-T data and the VAT return trigger automatic flags.
-
-### e-Fatura Consumer Deductions
-
-Invoices reported via SAF-T Billing appear on the consumer's e-Fatura profile. Consumers use this data to claim personal income tax deductions (e.g., health, education, general family expenses). Incorrect or missing data affects consumer tax benefits.
-
-### SAF-T Accounting → IES/DA Annual Filing
-
-From 2028 (FY 2027), the SAF-T Accounting file must be submitted and validated by AT before the IES/DA (Informação Empresarial Simplificada / Declaração Anual) can be filed. AT validation should occur within 10 days of submission.
-
-### Corporate Tax (IRC) and Personal Income Tax (IRS)
-
-Invoice data from SAF-T underpins deduction claims and revenue verification for both corporate (IRC) and personal (IRS) income tax returns. AT cross-references invoice data against declared income.
-
-### Provisional Tax and Withholding
-
-Withholding tax data reported on invoices flows into the annual withholding tax reconciliation. The QR code field for withholding enables AT to cross-check against employer/payer declarations.
+Os fornecedores B2G estão ainda sujeitos ao risco adicional de exclusão de procedimentos de contratação pública por incumprimento dos requisitos CIUS-PT.
 
 ---
 
-## Disclaimer
+## Secção 10 -- Interacção com Outras Skills Fiscais
 
-This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, tax attorney, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
+### SAF-T(PT) de Facturação → Declaração Periódica de IVA
 
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com).
+Os dados mensais do SAF-T(PT) de Facturação alimentam directamente a Declaração Periódica de IVA. A AT pré-preenche os campos da declaração de IVA a partir das submissões do SAF-T(PT). Discrepâncias entre os dados do SAF-T(PT) e a declaração de IVA accionam sinalizações automáticas.
+
+### Deduções dos Consumidores no e-fatura
+
+As facturas comunicadas via SAF-T(PT) de Facturação aparecem no perfil de e-fatura do consumidor. Os consumidores utilizam estes dados para reclamar deduções em sede de IRS (por exemplo, saúde, educação, despesas gerais familiares). Dados incorrectos ou em falta afectam os benefícios fiscais do consumidor.
+
+### SAF-T(PT) da Contabilidade → IES/DA Anual
+
+A partir de 2028 (período de tributação 2027), o ficheiro do SAF-T(PT) da Contabilidade deve ser submetido e validado pela AT antes da entrega da IES/DA (Informação Empresarial Simplificada / Declaração Anual). A validação pela AT deverá ocorrer no prazo de 10 dias após a submissão.
+
+### IRC e IRS
+
+Os dados de facturação do SAF-T(PT) suportam as pretensões de dedução e a verificação de rendimentos em sede de IRC e IRS. A AT cruza os dados das facturas com os rendimentos declarados.
+
+### Pagamentos por Conta e Retenção na Fonte
+
+Os dados de retenção na fonte comunicados nas facturas são integrados na declaração anual de retenções. O campo de retenção na fonte do QR Code permite à AT cruzar com as declarações dos empregadores/pagadores.
+
+---
+
+## Aviso Legal
+
+Esta skill e os respectivos resultados são disponibilizados apenas para fins informativos e de cálculo, não constituindo aconselhamento fiscal, jurídico ou financeiro. A Open Accountants e os seus contribuidores não assumem qualquer responsabilidade por erros, omissões ou consequências decorrentes da utilização desta skill. Todos os resultados devem ser revistos e validados por um profissional qualificado (como um Contabilista Certificado, Revisor Oficial de Contas, advogado fiscalista ou equivalente licenciado na sua jurisdição) antes de serem entregues ou utilizados como base para qualquer actuação.
+
+A versão mais actualizada e verificada desta skill é mantida em [openaccountants.com](https://openaccountants.com).

@@ -1,8 +1,8 @@
 ---
 name: portugal-bookkeeping
 description: >
-  Use this skill whenever asked about Portuguese bookkeeping, chart of accounts, SNC, financial statements, or accounting standards in Portugal. Trigger on phrases like "Portuguese bookkeeping", "contabilidade Portugal", "SNC", "código de contas", "Sistema de Normalização Contabilística", "plano de contas", "microentidade", "pequena entidade", "NCRF", "NCRF-PE", "NC-ME", "balanço", "demonstração de resultados", "IES", "TOC", "contabilista certificado", or any question about recording transactions, financial reporting, or accounting rules for Portuguese entities.
-version: 1.0
+  Utilize esta skill sempre que lhe forem colocadas questões sobre contabilidade portuguesa, plano de contas, SNC, demonstrações financeiras ou normas contabilísticas em Portugal. Active perante expressões como "contabilidade Portugal", "SNC", "código de contas", "Sistema de Normalização Contabilística", "plano de contas", "microentidade", "pequena entidade", "NCRF", "NCRF-PE", "NC-ME", "balanço", "demonstração de resultados", "IES", "contabilista certificado", "regime simplificado", "contabilidade organizada", "SAF-T(PT)", "CAE", "Categoria B", ou qualquer questão sobre o registo de operações, relato financeiro ou regras contabilísticas para entidades portuguesas. Trigger also on: "Portuguese bookkeeping", "Portugal accounting", "SNC chart of accounts", "Portuguese GAAP", "simplified regime Portugal", "organized accounting Portugal", "self-employed Portugal Cat B", "SAF-T Portugal", "CAE coefficients", "Portuguese certified accountant".
+version: 1.1
 jurisdiction: PT
 category: bookkeeping
 depends_on:
@@ -11,336 +11,343 @@ tax_year: 2025
 verified_by: pending
 ---
 
-# Portugal Bookkeeping Skill v1.0
+# Portugal — Contabilidade (Regime Simplificado vs Organizada) — Skill v1.1
 
 ---
 
-## Section 1 -- Quick Reference
+## Secção 1 — Referência Rápida
 
-| Field | Value |
+| Campo | Valor |
 |---|---|
-| Country | Portugal (República Portuguesa) |
-| Currency | EUR |
-| Financial year | Calendar year (1 January -- 31 December) mandatory for most entities |
-| Accounting standards | SNC (Sistema de Normalização Contabilística); NCRF (full), NCRF-PE (small), NC-ME (micro) |
-| Standard chart of accounts | Código de Contas SNC (Portaria n.º 218/2015) -- mandatory |
-| Governing body | CNC (Comissão de Normalização Contabilística) |
-| Key legislation | Decreto-Lei n.º 158/2009 (amended by DL 98/2015); Portaria 218/2015 (chart of accounts); Portaria 220/2015 (financial statement models) |
-| Filing obligation | IES (Informação Empresarial Simplificada) -- annual electronic filing to AT/IRN/INE/BdP |
-| Tax authority | AT (Autoridade Tributária e Aduaneira) |
-| Professional body | OCC (Ordem dos Contabilistas Certificados) |
-| Mandatory certified accountant | Yes -- all entities subject to SNC must have a Contabilista Certificado |
+| País | Portugal (República Portuguesa) |
+| Moeda | EUR |
+| Ano económico | Ano civil (1 de Janeiro a 31 de Dezembro) obrigatório para a generalidade das entidades |
+| Normas contabilísticas | SNC (Sistema de Normalização Contabilística); NCRF (completas), NCRF-PE (pequenas entidades), NC-ME (microentidades) |
+| Plano de contas padrão | Código de Contas SNC (Portaria n.º 218/2015) — obrigatório |
+| Organismo normalizador | CNC (Comissão de Normalização Contabilística) |
+| Principal legislação | Decreto-Lei n.º 158/2009 (alterado pelo DL 98/2015); Portaria 218/2015 (código de contas); Portaria 220/2015 (modelos de demonstrações financeiras) |
+| Classificação de actividade | CAE (Classificação das Actividades Económicas) — Revisão 3 |
+| Ficheiro normalizado | SAF-T(PT) — Standard Audit File for Tax (Portugal) — submissão mensal à AT |
+| Obrigação de relato | IES (Informação Empresarial Simplificada) — submissão electrónica anual à AT/IRN/INE/BdP |
+| Autoridade tributária | AT (Autoridade Tributária e Aduaneira) |
+| Ordem profissional | OCC (Ordem dos Contabilistas Certificados) |
+| Contabilista certificado obrigatório | Sim — todas as entidades sujeitas ao SNC devem ter um Contabilista Certificado (membro da OCC) |
+| Período de conservação de documentos | 10 anos (artigo 123.º do CIRC e artigo 52.º do CIVA) |
 
 ---
 
-## Section 2 -- Standard Chart of Accounts (Código de Contas SNC)
+## Secção 2 — Plano de Contas Padrão (Código de Contas SNC)
 
-The SNC chart of accounts is mandatory and structured into 8 classes. Companies must use the prescribed account structure.
+O plano de contas SNC é obrigatório e está estruturado em 8 classes. As empresas devem utilizar a estrutura de contas prescrita.
 
-### Class 1 -- Meios Financeiros Líquidos (Cash and Cash Equivalents)
+### Classe 1 — Meios Financeiros Líquidos
 
-| Code | Account | Description |
+| Código | Conta | Descrição |
 |---|---|---|
-| 11 | Caixa | Cash in hand |
-| 12 | Depósitos à ordem | Current bank accounts |
-| 13 | Outros depósitos bancários | Other bank deposits (term) |
-| 14 | Outros instrumentos financeiros | Other financial instruments |
+| 11 | Caixa | Caixa (numerário) |
+| 12 | Depósitos à ordem | Contas bancárias à ordem |
+| 13 | Outros depósitos bancários | Outros depósitos bancários (a prazo) |
+| 14 | Outros instrumentos financeiros | Outros instrumentos financeiros |
 
-### Class 2 -- Contas a Receber e a Pagar (Receivables and Payables)
+### Classe 2 — Contas a Receber e a Pagar
 
-| Code | Account | Description |
+| Código | Conta | Descrição |
 |---|---|---|
-| 21 | Clientes | Customers (trade receivables) |
-| 211 | Clientes c/c | Customer current accounts |
-| 2111 | Clientes gerais | General customers |
-| 212 | Clientes -- títulos a receber | Bills of exchange receivable |
-| 219 | Perdas por imparidade acumuladas | Accumulated impairment losses |
-| 22 | Fornecedores | Suppliers (trade payables) |
-| 221 | Fornecedores c/c | Supplier current accounts |
-| 23 | Pessoal | Staff accounts |
-| 231 | Remunerações a pagar | Wages payable |
-| 232 | Adiantamentos a pessoal | Advances to staff |
-| 24 | Estado e outros entes públicos | State and public entities |
-| 241 | Imposto sobre o rendimento | Income tax (IRC) |
-| 2411 | IRC estimado | Estimated IRC |
-| 2412 | IRC retido na fonte | IRC withheld at source |
-| 2413 | Pagamentos por conta | Payments on account |
-| 243 | IVA | VAT |
-| 2431 | IVA suportado | Input VAT |
-| 2432 | IVA dedutível | Deductible VAT |
-| 2433 | IVA liquidado | Output VAT |
-| 2434 | IVA regularizações | VAT adjustments |
-| 2435 | IVA apuramento | VAT clearing |
-| 2436 | IVA a pagar | VAT payable |
-| 2437 | IVA a recuperar | VAT recoverable |
-| 245 | Contrib. para Segurança Social | Social security contributions |
-| 25 | Financiamentos obtidos | Financing obtained (loans) |
-| 251 | Instituições de crédito | Bank loans |
-| 26 | Acionistas/sócios | Shareholders/partners |
-| 27 | Outras contas a receber e a pagar | Other receivables and payables |
-| 271 | Fornecedores de investimentos | Investment suppliers (capex creditors) |
-| 278 | Outros devedores e credores | Other debtors and creditors |
+| 21 | Clientes | Clientes (contas a receber comerciais) |
+| 211 | Clientes c/c | Clientes — conta corrente |
+| 2111 | Clientes gerais | Clientes gerais |
+| 212 | Clientes — títulos a receber | Letras a receber |
+| 219 | Perdas por imparidade acumuladas | Perdas por imparidade acumuladas |
+| 22 | Fornecedores | Fornecedores (contas a pagar comerciais) |
+| 221 | Fornecedores c/c | Fornecedores — conta corrente |
+| 23 | Pessoal | Contas do pessoal |
+| 231 | Remunerações a pagar | Remunerações a pagar |
+| 232 | Adiantamentos a pessoal | Adiantamentos ao pessoal |
+| 24 | Estado e outros entes públicos | Estado e outros entes públicos |
+| 241 | Imposto sobre o rendimento | Imposto sobre o rendimento (IRC) |
+| 2411 | IRC estimado | IRC estimado |
+| 2412 | IRC retido na fonte | IRC retido na fonte |
+| 2413 | Pagamentos por conta | Pagamentos por conta |
+| 243 | IVA | IVA |
+| 2431 | IVA suportado | IVA suportado |
+| 2432 | IVA dedutível | IVA dedutível |
+| 2433 | IVA liquidado | IVA liquidado |
+| 2434 | IVA regularizações | IVA — regularizações |
+| 2435 | IVA apuramento | IVA — apuramento |
+| 2436 | IVA a pagar | IVA a pagar |
+| 2437 | IVA a recuperar | IVA a recuperar |
+| 245 | Contrib. para Segurança Social | Contribuições para a Segurança Social |
+| 25 | Financiamentos obtidos | Financiamentos obtidos (empréstimos) |
+| 251 | Instituições de crédito | Empréstimos bancários |
+| 26 | Acionistas/sócios | Accionistas/sócios |
+| 27 | Outras contas a receber e a pagar | Outras contas a receber e a pagar |
+| 271 | Fornecedores de investimentos | Fornecedores de investimentos (credores de capex) |
+| 278 | Outros devedores e credores | Outros devedores e credores |
 
-### Class 3 -- Inventários e Ativos Biológicos (Inventories)
+### Classe 3 — Inventários e Activos Biológicos
 
-| Code | Account | Description |
+| Código | Conta | Descrição |
 |---|---|---|
-| 31 | Compras | Purchases |
-| 311 | Mercadorias | Goods for resale |
-| 312 | Matérias-primas | Raw materials |
-| 32 | Mercadorias | Goods for resale (inventory) |
-| 33 | Matérias-primas | Raw materials (inventory) |
-| 34 | Produtos acabados | Finished products |
-| 35 | Produtos e trabalhos em curso | Work in progress |
-| 36 | Subprodutos e desperdícios | By-products and waste |
-| 38 | Reclassificação e regularização | Reclassification and adjustments |
-| 39 | Adiantamentos por conta de compras | Advance payments for purchases |
+| 31 | Compras | Compras |
+| 311 | Mercadorias | Mercadorias para revenda |
+| 312 | Matérias-primas | Matérias-primas |
+| 32 | Mercadorias | Mercadorias para revenda (existências) |
+| 33 | Matérias-primas | Matérias-primas (existências) |
+| 34 | Produtos acabados | Produtos acabados |
+| 35 | Produtos e trabalhos em curso | Produção em curso |
+| 36 | Subprodutos e desperdícios | Subprodutos e desperdícios |
+| 38 | Reclassificação e regularização | Reclassificação e regularização |
+| 39 | Adiantamentos por conta de compras | Adiantamentos por conta de compras |
 
-### Class 4 -- Investimentos (Fixed Assets)
+### Classe 4 — Investimentos (Activos Fixos)
 
-| Code | Account | Description |
+| Código | Conta | Descrição |
 |---|---|---|
-| 41 | Investimentos financeiros | Financial investments |
-| 42 | Propriedades de investimento | Investment properties |
-| 43 | Ativos fixos tangíveis | Tangible fixed assets |
-| 431 | Terrenos e recursos naturais | Land and natural resources |
-| 432 | Edifícios e outras construções | Buildings |
-| 433 | Equipamento básico | Basic equipment (machinery) |
-| 434 | Equipamento de transporte | Transport equipment (vehicles) |
-| 435 | Equipamento administrativo | Administrative equipment (office/IT) |
-| 436 | Equipamentos biológicos | Biological assets (equipment) |
-| 437 | Outros ativos fixos tangíveis | Other tangible fixed assets |
-| 438 | Depreciações acumuladas | Accumulated depreciation |
-| 44 | Ativos intangíveis | Intangible assets |
+| 41 | Investimentos financeiros | Investimentos financeiros |
+| 42 | Propriedades de investimento | Propriedades de investimento |
+| 43 | Activos fixos tangíveis | Activos fixos tangíveis |
+| 431 | Terrenos e recursos naturais | Terrenos e recursos naturais |
+| 432 | Edifícios e outras construções | Edifícios e outras construções |
+| 433 | Equipamento básico | Equipamento básico (maquinaria) |
+| 434 | Equipamento de transporte | Equipamento de transporte (viaturas) |
+| 435 | Equipamento administrativo | Equipamento administrativo (escritório/informática) |
+| 436 | Equipamentos biológicos | Activos biológicos (equipamento) |
+| 437 | Outros activos fixos tangíveis | Outros activos fixos tangíveis |
+| 438 | Depreciações acumuladas | Depreciações acumuladas |
+| 44 | Activos intangíveis | Activos intangíveis |
 | 441 | Goodwill | Goodwill |
-| 442 | Projetos de desenvolvimento | Development projects |
-| 443 | Programas de computador | Computer software |
-| 444 | Propriedade industrial | Industrial property (patents, trademarks) |
-| 446 | Outros ativos intangíveis | Other intangibles |
-| 448 | Amortizações acumuladas | Accumulated amortization |
-| 45 | Investimentos em curso | Assets under construction |
-| 46 | Ativos não correntes detidos para venda | Non-current assets held for sale |
+| 442 | Projectos de desenvolvimento | Projectos de desenvolvimento |
+| 443 | Programas de computador | Programas de computador |
+| 444 | Propriedade industrial | Propriedade industrial (patentes, marcas) |
+| 446 | Outros activos intangíveis | Outros activos intangíveis |
+| 448 | Amortizações acumuladas | Amortizações acumuladas |
+| 45 | Investimentos em curso | Investimentos em curso |
+| 46 | Activos não correntes detidos para venda | Activos não correntes detidos para venda |
 
-### Class 5 -- Capital, Reservas e Resultados Transitados (Equity)
+### Classe 5 — Capital, Reservas e Resultados Transitados
 
-| Code | Account | Description |
+| Código | Conta | Descrição |
 |---|---|---|
-| 51 | Capital | Share capital |
-| 52 | Ações (quotas) próprias | Own shares (treasury stock) |
-| 53 | Outros instrumentos de capital próprio | Other equity instruments |
-| 54 | Prémios de emissão | Share premium |
-| 55 | Reservas | Reserves |
-| 551 | Reservas legais | Legal reserves |
-| 552 | Outras reservas | Other reserves |
-| 56 | Resultados transitados | Retained earnings |
-| 57 | Ajustamentos em ativos financeiros | Financial asset adjustments |
-| 58 | Excedentes de revalorização | Revaluation surplus |
-| 59 | Outras variações no capital próprio | Other changes in equity |
+| 51 | Capital | Capital social |
+| 52 | Acções (quotas) próprias | Acções (quotas) próprias |
+| 53 | Outros instrumentos de capital próprio | Outros instrumentos de capital próprio |
+| 54 | Prémios de emissão | Prémios de emissão |
+| 55 | Reservas | Reservas |
+| 551 | Reservas legais | Reservas legais |
+| 552 | Outras reservas | Outras reservas |
+| 56 | Resultados transitados | Resultados transitados |
+| 57 | Ajustamentos em activos financeiros | Ajustamentos em activos financeiros |
+| 58 | Excedentes de revalorização | Excedentes de revalorização |
+| 59 | Outras variações no capital próprio | Outras variações no capital próprio |
 
-### Class 6 -- Gastos (Expenses)
+### Classe 6 — Gastos
 
-| Code | Account | Description |
+| Código | Conta | Descrição |
 |---|---|---|
-| 61 | CMVMC | Cost of goods sold / materials consumed |
-| 62 | Fornecimentos e serviços externos (FSE) | External supplies and services |
-| 6211 | Subcontratos | Subcontracts |
-| 6212 | Trabalhos especializados | Specialized work (accountancy, legal, etc.) |
-| 6213 | Publicidade e propaganda | Advertising |
-| 6214 | Vigilância e segurança | Security |
-| 6215 | Honorários | Professional fees |
-| 6216 | Comissões | Commissions |
-| 622 | Serviços diversos | Miscellaneous services |
-| 6221 | Rendas e alugueres | Rent and leases |
-| 6222 | Comunicação | Telecommunications |
-| 6223 | Seguros | Insurance |
+| 61 | CMVMC | Custo das mercadorias vendidas e das matérias consumidas |
+| 62 | Fornecimentos e serviços externos (FSE) | Fornecimentos e serviços externos |
+| 6211 | Subcontratos | Subcontratos |
+| 6212 | Trabalhos especializados | Trabalhos especializados (contabilidade, jurídicos, etc.) |
+| 6213 | Publicidade e propaganda | Publicidade e propaganda |
+| 6214 | Vigilância e segurança | Vigilância e segurança |
+| 6215 | Honorários | Honorários |
+| 6216 | Comissões | Comissões |
+| 622 | Serviços diversos | Serviços diversos |
+| 6221 | Rendas e alugueres | Rendas e alugueres |
+| 6222 | Comunicação | Comunicações (telecomunicações) |
+| 6223 | Seguros | Seguros |
 | 6224 | Royalties | Royalties |
-| 6225 | Transportes de mercadorias | Freight |
-| 6226 | Deslocações e estadas | Travel and accommodation |
-| 6227 | Material de escritório | Office materials |
-| 6228 | Energia e fluidos | Energy and utilities |
-| 6229 | Manutenção e reparação | Maintenance and repairs |
-| 63 | Gastos com o pessoal | Staff costs |
-| 631 | Remunerações dos órgãos sociais | Directors' remuneration |
-| 632 | Remunerações do pessoal | Employee wages |
-| 635 | Encargos sobre remunerações | Social security charges (employer) |
-| 636 | Seguros de acidentes de trabalho | Work accident insurance |
-| 64 | Gastos de depreciação e amortização | Depreciation and amortization |
-| 641 | Propriedades de investimento | Depreciation -- investment properties |
-| 642 | Ativos fixos tangíveis | Depreciation -- tangible assets |
-| 643 | Ativos intangíveis | Amortization -- intangible assets |
-| 65 | Perdas por imparidade | Impairment losses |
-| 66 | Perdas por reduções de justo valor | Fair value losses |
-| 67 | Provisões do período | Provisions |
-| 68 | Outros gastos e perdas | Other expenses and losses |
-| 681 | Impostos (indiretos) | Indirect taxes |
-| 6811 | IMI e outros impostos | Property tax and other local taxes |
-| 682 | Descontos de pronto pagamento | Early settlement discounts given |
-| 686 | Gastos financeiros | Financial expenses (interest paid) |
-| 688 | Outros | Other miscellaneous expenses |
-| 69 | Gastos e perdas de financiamento | Financing costs |
-| 691 | Juros suportados | Interest expense |
+| 6225 | Transportes de mercadorias | Transportes de mercadorias |
+| 6226 | Deslocações e estadas | Deslocações e estadas |
+| 6227 | Material de escritório | Material de escritório |
+| 6228 | Energia e fluidos | Energia e fluidos |
+| 6229 | Manutenção e reparação | Manutenção e reparação |
+| 63 | Gastos com o pessoal | Gastos com o pessoal |
+| 631 | Remunerações dos órgãos sociais | Remunerações dos órgãos sociais |
+| 632 | Remunerações do pessoal | Remunerações do pessoal |
+| 635 | Encargos sobre remunerações | Encargos sobre remunerações (Segurança Social — entidade patronal) |
+| 636 | Seguros de acidentes de trabalho | Seguros de acidentes de trabalho |
+| 64 | Gastos de depreciação e amortização | Gastos de depreciação e amortização |
+| 641 | Propriedades de investimento | Depreciação — propriedades de investimento |
+| 642 | Activos fixos tangíveis | Depreciação — activos fixos tangíveis |
+| 643 | Activos intangíveis | Amortização — activos intangíveis |
+| 65 | Perdas por imparidade | Perdas por imparidade |
+| 66 | Perdas por reduções de justo valor | Perdas por reduções de justo valor |
+| 67 | Provisões do período | Provisões do período |
+| 68 | Outros gastos e perdas | Outros gastos e perdas |
+| 681 | Impostos (indirectos) | Impostos indirectos |
+| 6811 | IMI e outros impostos | IMI e outros impostos locais |
+| 682 | Descontos de pronto pagamento | Descontos de pronto pagamento concedidos |
+| 686 | Gastos financeiros | Gastos financeiros (juros suportados) |
+| 688 | Outros | Outros gastos diversos |
+| 69 | Gastos e perdas de financiamento | Gastos e perdas de financiamento |
+| 691 | Juros suportados | Juros suportados |
 
-### Class 7 -- Rendimentos (Income)
+### Classe 7 — Rendimentos
 
-| Code | Account | Description |
+| Código | Conta | Descrição |
 |---|---|---|
-| 71 | Vendas | Sales of goods |
-| 72 | Prestações de serviços | Services rendered |
-| 73 | Variações nos inventários da produção | Changes in production inventories |
-| 74 | Trabalhos para a própria entidade | Work for own entity (capitalised) |
-| 75 | Subsídios à exploração | Operating grants |
-| 76 | Reversões | Reversal of impairments/provisions |
-| 78 | Outros rendimentos e ganhos | Other income and gains |
-| 781 | Rendimentos suplementares | Supplementary income |
-| 782 | Descontos obtidos | Early settlement discounts received |
-| 786 | Rendimentos financeiros | Financial income (interest received) |
-| 79 | Juros e rendimentos similares | Interest and similar income |
+| 71 | Vendas | Vendas de mercadorias |
+| 72 | Prestações de serviços | Prestações de serviços |
+| 73 | Variações nos inventários da produção | Variações nos inventários da produção |
+| 74 | Trabalhos para a própria entidade | Trabalhos para a própria entidade (capitalizados) |
+| 75 | Subsídios à exploração | Subsídios à exploração |
+| 76 | Reversões | Reversões de imparidades/provisões |
+| 78 | Outros rendimentos e ganhos | Outros rendimentos e ganhos |
+| 781 | Rendimentos suplementares | Rendimentos suplementares |
+| 782 | Descontos obtidos | Descontos de pronto pagamento obtidos |
+| 786 | Rendimentos financeiros | Rendimentos financeiros (juros obtidos) |
+| 79 | Juros e rendimentos similares | Juros e rendimentos similares |
 
-### Class 8 -- Resultados (Results)
+### Classe 8 — Resultados
 
-| Code | Account | Description |
+| Código | Conta | Descrição |
 |---|---|---|
-| 81 | Resultado líquido do período | Net profit/loss for the period |
-| 811 | Resultado antes de impostos | Profit before tax |
-| 812 | Imposto sobre o rendimento | Income tax expense |
-| 818 | Resultado líquido | Net result |
+| 81 | Resultado líquido do período | Resultado líquido do período |
+| 811 | Resultado antes de impostos | Resultado antes de impostos |
+| 812 | Imposto sobre o rendimento | Imposto sobre o rendimento |
+| 818 | Resultado líquido | Resultado líquido |
 
 ---
 
-## Section 3 -- Revenue Recognition
+## Secção 3 — Reconhecimento do Rédito
 
-### Cash vs Accrual Basis
+### Base de Caixa vs Base de Acréscimo
 
-| Entity Type | Basis | Notes |
+| Tipo de entidade | Base | Notas |
 |---|---|---|
-| All SNC entities | Accrual (mandatory) | SNC/NCRF requires accrual basis (regime do acréscimo) |
-| Microentidades (NC-ME) | Accrual | Simplified recognition rules but still accrual |
-| Self-employed (Cat. B IRS) | Cash or Accrual | Simplified regime uses invoiced amounts; organized accounting uses accrual |
+| Entidades sujeitas ao SNC | Acréscimo (obrigatória) | O SNC/NCRF exige a base de acréscimo (regime do acréscimo) |
+| Microentidades (NC-ME) | Acréscimo | Regras de reconhecimento simplificadas, mas ainda em base de acréscimo |
+| Trabalhadores independentes (Categoria B do IRS) | Caixa ou Acréscimo | Regime simplificado utiliza valores facturados; contabilidade organizada utiliza o regime do acréscimo |
 
-### Key Rules
+### Regras-Chave
 
-- Revenue from sale of goods: recognised when risks/rewards transfer to the buyer (NCRF 20)
-- Revenue from services: percentage-of-completion method if outcome can be estimated reliably; otherwise, only to the extent of costs recoverable
-- NC-ME (micro): revenue recognised at invoicing for goods; over time for services
-- IVA (VAT): obligation arises at invoicing date (factura obrigatória within 5 business days of delivery)
+- Rédito da venda de bens: reconhecido quando os riscos e benefícios são transferidos para o comprador (NCRF 20)
+- Rédito de prestação de serviços: método da percentagem de acabamento se o desfecho puder ser estimado com fiabilidade; caso contrário, apenas até ao limite dos custos recuperáveis
+- NC-ME (microentidades): rédito reconhecido na facturação para bens; ao longo do tempo para serviços
+- IVA: a obrigação nasce na data da factura (factura obrigatória no prazo de 5 dias úteis após a entrega)
 
-### Simplified Regime for Self-Employed (Regime Simplificado)
+### Regime Simplificado para Trabalhadores Independentes (Categoria B do IRS)
 
-- Available for annual income < EUR 200,000
-- Taxable income calculated as a coefficient applied to gross receipts (0.75 for services, 0.15 for goods resale)
-- No formal bookkeeping required under simplified regime -- only record of invoices
-- Organized accounting (contabilidade organizada) is mandatory above EUR 200,000 or upon election
+- Disponível para rendimentos anuais inferiores a 200.000 EUR (limiar de volume de negócios)
+- O rendimento tributável é calculado mediante a aplicação de coeficientes ao rendimento bruto, em função do CAE (artigo 31.º do CIRS) e da tabela do artigo 151.º do CIRS:
+  - **0,75** — serviços previstos na tabela do artigo 151.º do CIRS (actividades profissionais, incluindo desenvolvimento de software, consultoria, design, etc.)
+  - **0,15** — vendas de mercadorias e produtos e prestações de serviços de actividades hoteleiras e de restauração e bebidas
+  - **0,10** — outras prestações de serviços não previstas nas alíneas anteriores
+- No regime simplificado não existe obrigação de contabilidade organizada — apenas o registo dos rendimentos auferidos (modelo de registo de facturas)
+- A **contabilidade organizada** é obrigatória acima de 200.000 EUR de volume de negócios para a Categoria B, ou por opção do sujeito passivo (mantida por um período mínimo de três anos)
+- Para titulares do regime de Residente Não Habitual (RNH) ou do Incentivo Fiscal à Investigação Científica e Inovação (IFICI), consulte a skill **pt-nhr-ifici** para o tratamento específico desses regimes
 
 ---
 
-## Section 4 -- Expense Classification
+## Secção 4 — Classificação de Gastos
 
-### Deductible Expenses (IRC)
+### Gastos Dedutíveis (IRC)
 
-| Category | SNC Code | Deductibility |
+| Categoria | Código SNC | Dedutibilidade |
 |---|---|---|
-| Rent (business premises) | 6221 | 100% deductible |
-| Utilities | 6228 | 100% deductible |
-| Professional fees (accountant, lawyer) | 6212/6215 | 100% deductible |
-| Insurance (business) | 6223 | 100% deductible |
-| Advertising | 6213 | 100% deductible |
-| Office materials | 6227 | 100% deductible |
-| Telecoms | 6222 | 100% deductible (business portion) |
-| Bank charges | 686 | 100% deductible |
-| Staff costs | 63x | 100% deductible |
-| Travel (business) | 6226 | 100% deductible with documentation |
-| Software subscriptions | 6212 | 100% deductible |
-| Maintenance and repairs | 6229 | 100% deductible |
+| Renda (instalações da empresa) | 6221 | 100% dedutível |
+| Energia e utilidades | 6228 | 100% dedutível |
+| Honorários (contabilista, advogado) | 6212/6215 | 100% dedutível |
+| Seguros (de empresa) | 6223 | 100% dedutível |
+| Publicidade | 6213 | 100% dedutível |
+| Material de escritório | 6227 | 100% dedutível |
+| Telecomunicações | 6222 | 100% dedutível (proporção empresarial) |
+| Despesas bancárias | 686 | 100% dedutível |
+| Gastos com o pessoal | 63x | 100% dedutível |
+| Deslocações (empresariais) | 6226 | 100% dedutível mediante documentação |
+| Subscrições de software | 6212 | 100% dedutível |
+| Manutenção e reparação | 6229 | 100% dedutível |
 
-### Partially/Non-Deductible Expenses
+### Gastos Parcial ou Totalmente Não Dedutíveis
 
-| Category | Limitation |
+| Categoria | Limitação |
 |---|---|
-| Vehicle expenses (passenger cars) | Limited by Tributação Autónoma surcharges |
-| Entertainment/representation | Subject to autonomous taxation at 10% |
-| Undocumented expenses | Not deductible + 50% autonomous taxation |
-| Fines and penalties (multas) | 0% -- never deductible |
-| IRC (income tax itself) | 0% -- never deductible |
-| Excessive per diems | Non-deductible above legal limits |
-| Expenses with tax haven entities | Not deductible unless commercial substance proven |
+| Despesas com viaturas (ligeiros de passageiros) | Limitadas por tributação autónoma |
+| Despesas de representação | Sujeitas a tributação autónoma a 10% |
+| Despesas não documentadas | Não dedutíveis + 50% de tributação autónoma |
+| Multas e penalidades | 0% — nunca dedutíveis |
+| IRC (o próprio imposto sobre o rendimento) | 0% — nunca dedutível |
+| Ajudas de custo excessivas | Não dedutíveis acima dos limites legais |
+| Despesas com entidades em paraísos fiscais | Não dedutíveis salvo prova de substância comercial |
 
-### Tributação Autónoma (Autonomous Taxation)
+### Tributação Autónoma
 
-Belgian-style surcharges on certain expenses even if the company is profitable:
+Tributação adicional incidente sobre determinados gastos, ainda que a empresa apresente lucro:
 
-| Expense | Rate |
+| Gasto | Taxa |
 |---|---|
-| Representation expenses | 10% |
-| Vehicle costs (acquisition ≤ EUR 27,500) | 10% |
-| Vehicle costs (EUR 27,500-35,000) | 27.5% |
-| Vehicle costs (> EUR 35,000) | 35% |
-| Undocumented expenses | 50% (70% if tax-exempt entity) |
-| Per diem allowances not invoiced | 5% |
-| Electric vehicle costs (≤ EUR 62,500) | 0% |
+| Despesas de representação | 10% |
+| Encargos com viaturas (aquisição ≤ 27.500 EUR) | 10% |
+| Encargos com viaturas (27.500–35.000 EUR) | 27,5% |
+| Encargos com viaturas (> 35.000 EUR) | 35% |
+| Despesas não documentadas | 50% (70% se entidade isenta) |
+| Ajudas de custo não facturadas | 5% |
+| Encargos com viaturas eléctricas (≤ 62.500 EUR) | 0% |
 
 ---
 
-## Section 5 -- Asset vs Expense Thresholds
+## Secção 5 — Limiares Activo vs Gasto
 
-### Capitalization Rules
+### Regras de Capitalização
 
-| Rule | Detail |
+| Regra | Detalhe |
 |---|---|
-| Mandatory capitalization | All items with useful life > 1 year and reliably measurable cost |
-| Low-value threshold | No legal de minimis; practice allows expensing items < EUR 1,000 in some cases |
-| Subsequent expenditure | Capitalised if extends useful life or increases capacity; otherwise, expensed |
+| Capitalização obrigatória | Todos os elementos com vida útil superior a 1 ano e custo mensurável com fiabilidade |
+| Limiar de baixo valor | Não existe de minimis legal; a prática admite reconhecimento como gasto de bens < 1.000 EUR em alguns casos |
+| Dispêndio subsequente | Capitalizado se prolongar a vida útil ou aumentar a capacidade; caso contrário, reconhecido como gasto |
 
-### Depreciation Rates (Decreto Regulamentar n.º 25/2009 -- Generic Table II)
+### Taxas de Depreciação (Decreto Regulamentar n.º 25/2009 — Tabela Genérica II)
 
-| Asset Type | Method | Maximum Annual Rate | Typical Useful Life |
+| Tipo de activo | Método | Taxa máxima anual | Vida útil típica |
 |---|---|---|---|
-| Industrial buildings | Straight-line | 5% | 20 years |
-| Commercial buildings | Straight-line | 2% | 50 years |
-| Light structures | Straight-line | 10% | 10 years |
-| Basic machinery and equipment | Straight-line | 12.5-20% | 5-8 years |
-| Transport equipment (heavy) | Straight-line | 20% | 5 years |
-| Passenger vehicles | Straight-line | 25% | 4 years |
-| Computer hardware | Straight-line | 33.33% | 3 years |
-| Computer software | Straight-line | 33.33% | 3 years |
-| Office furniture | Straight-line | 12.5% | 8 years |
-| Office equipment | Straight-line | 20% | 5 years |
-| Tools | Straight-line | 25% | 4 years |
-| Goodwill | Straight-line | Max 5% per year (20 years) | Per contract |
+| Edifícios industriais | Quotas constantes | 5% | 20 anos |
+| Edifícios comerciais | Quotas constantes | 2% | 50 anos |
+| Construções ligeiras | Quotas constantes | 10% | 10 anos |
+| Máquinas e equipamento básico | Quotas constantes | 12,5–20% | 5–8 anos |
+| Equipamento de transporte (pesado) | Quotas constantes | 20% | 5 anos |
+| Viaturas ligeiras de passageiros | Quotas constantes | 25% | 4 anos |
+| Hardware informático | Quotas constantes | 33,33% | 3 anos |
+| Software | Quotas constantes | 33,33% | 3 anos |
+| Mobiliário de escritório | Quotas constantes | 12,5% | 8 anos |
+| Equipamento de escritório | Quotas constantes | 20% | 5 anos |
+| Ferramentas | Quotas constantes | 25% | 4 anos |
+| Goodwill | Quotas constantes | Máx. 5% ao ano (20 anos) | Conforme contrato |
 
-### Key Rules
+### Regras-Chave
 
-- Straight-line is the default; declining-balance method is available for new tangible assets (except buildings, vehicles, and office furniture)
-- Minimum annual depreciation = 50% of maximum rate (quotas mínimas)
-- If depreciation below minimum is practiced, requires written communication to AT
-- Depreciation starts from the month of entry into service (pro rata)
-- Land is never depreciated
+- O método das quotas constantes é o regime regra; o método das quotas decrescentes é admitido para activos fixos tangíveis novos (excepto edifícios, viaturas e mobiliário de escritório)
+- Depreciação anual mínima = 50% da taxa máxima (quotas mínimas)
+- Se for praticada depreciação inferior à mínima, é exigida comunicação escrita à AT
+- A depreciação inicia-se a partir do mês de entrada em funcionamento (pro rata)
+- Os terrenos não são depreciáveis
 
 ---
 
-## Section 6 -- P&L Format (Demonstração de Resultados por Naturezas)
+## Secção 6 — Modelo da Demonstração de Resultados (por Naturezas)
 
-Portugal uses the by-nature format as the standard income statement. The by-function format is optional.
+Portugal utiliza o modelo por naturezas como demonstração de resultados padrão. O modelo por funções é facultativo.
 
-### By Nature (Standard for all SNC entities)
+### Por Naturezas (modelo padrão para todas as entidades sujeitas ao SNC)
 
 ```
-Vendas e serviços prestados (Revenue)                          xxx
-Subsídios à exploração (Operating grants)                      xxx
+Vendas e serviços prestados (Rédito)                           xxx
+Subsídios à exploração                                         xxx
 Variação nos inventários da produção                           xxx
 Trabalhos para a própria entidade                              xxx
-CMVMC (Cost of goods sold)                                    (xxx)
+CMVMC (Custo das mercadorias vendidas e matérias consumidas)  (xxx)
 Fornecimentos e serviços externos (FSE)                       (xxx)
-Gastos com o pessoal (Staff costs)                            (xxx)
-Imparidade de inventários (Inventory impairment)              (xxx)
-Imparidade de dívidas a receber (Receivables impairment)      (xxx)
-Provisões (Provisions)                                        (xxx)
-Outras imparidades / variações JV                             (xxx)
-Outros rendimentos e ganhos (Other income)                     xxx
-Outros gastos e perdas (Other expenses)                       (xxx)
+Gastos com o pessoal                                          (xxx)
+Imparidade de inventários                                     (xxx)
+Imparidade de dívidas a receber                               (xxx)
+Provisões                                                     (xxx)
+Outras imparidades / variações no justo valor                 (xxx)
+Outros rendimentos e ganhos                                    xxx
+Outros gastos e perdas                                        (xxx)
                                                             -------
 EBITDA                                                         xxx
 
-Gastos de depreciação e amortização (Depreciation)            (xxx)
+Gastos de depreciação e amortização                           (xxx)
                                                             -------
 EBIT (Resultado operacional)                                   xxx
 
@@ -351,46 +358,46 @@ Resultado antes de impostos (EBT)                              xxx
 
 Imposto sobre o rendimento do período (IRC)                   (xxx)
                                                             -------
-Resultado líquido do período (Net result)                      xxx
+Resultado líquido do período                                   xxx
 ```
 
 ---
 
-## Section 7 -- Balance Sheet Format (Balanço)
+## Secção 7 — Modelo do Balanço
 
-Portugal uses a vertical format with current/non-current classification.
+Portugal utiliza o formato vertical com classificação corrente/não corrente.
 
-### Format
+### Modelo
 
 ```
-ATIVO (Assets)
+ACTIVO
 
-Ativo não corrente (Non-current assets)
-  Ativos fixos tangíveis                                      xxx
+Activo não corrente
+  Activos fixos tangíveis                                     xxx
   Propriedades de investimento                                xxx
   Goodwill                                                    xxx
-  Ativos intangíveis                                          xxx
+  Activos intangíveis                                         xxx
   Investimentos financeiros                                   xxx
-  Ativos por impostos diferidos                               xxx
+  Activos por impostos diferidos                              xxx
                                                            -------
-  Total ativo não corrente                                    xxx
+  Total do activo não corrente                                xxx
 
-Ativo corrente (Current assets)
+Activo corrente
   Inventários                                                 xxx
   Clientes                                                    xxx
   Estado e outros entes públicos                              xxx
   Outras contas a receber                                     xxx
-  Diferimentos (Prepayments)                                  xxx
+  Diferimentos                                                xxx
   Caixa e depósitos bancários                                 xxx
                                                            -------
-  Total ativo corrente                                        xxx
+  Total do activo corrente                                    xxx
 
-TOTAL DO ATIVO                                                xxx
+TOTAL DO ACTIVO                                               xxx
                                                            =======
 
-CAPITAL PRÓPRIO E PASSIVO (Equity and Liabilities)
+CAPITAL PRÓPRIO E PASSIVO
 
-Capital próprio (Equity)
+Capital próprio
   Capital realizado                                           xxx
   Reservas legais                                             xxx
   Outras reservas                                             xxx
@@ -399,21 +406,21 @@ Capital próprio (Equity)
                                                            -------
   Total do capital próprio                                    xxx
 
-Passivo não corrente (Non-current liabilities)
+Passivo não corrente
   Financiamentos obtidos                                      xxx
   Provisões                                                   xxx
   Passivos por impostos diferidos                             xxx
                                                            -------
-  Total passivo não corrente                                  xxx
+  Total do passivo não corrente                               xxx
 
-Passivo corrente (Current liabilities)
+Passivo corrente
   Fornecedores                                                xxx
   Estado e outros entes públicos                              xxx
   Financiamentos obtidos (curto prazo)                        xxx
   Outras contas a pagar                                       xxx
-  Diferimentos (Deferred income)                              xxx
+  Diferimentos                                                xxx
                                                            -------
-  Total passivo corrente                                      xxx
+  Total do passivo corrente                                   xxx
 
 TOTAL DO CAPITAL PRÓPRIO E PASSIVO                            xxx
                                                            =======
@@ -421,101 +428,116 @@ TOTAL DO CAPITAL PRÓPRIO E PASSIVO                            xxx
 
 ---
 
-## Section 8 -- Bank Reconciliation Patterns
+## Secção 8 — Padrões de Reconciliação Bancária
 
-### Portuguese Bank Statement Formats
+### Formatos de Extracto Bancário em Portugal
 
-| Bank | Format | Key Fields |
+| Banco | Formato | Campos-chave |
 |---|---|---|
-| Millennium BCP | CSV, OFX | Date, Description, Amount, Balance, Counterparty |
+| Millennium BCP | CSV, OFX | Data, Descrição, Montante, Saldo, Contraparte |
 | Caixa Geral de Depósitos (CGD) | CSV, OFX | Data, Descrição, Valor, Saldo |
-| Novo Banco | CSV | Date, Description, Debit, Credit, Balance |
-| Santander Totta | CSV, OFX | Date, Description, Amount, Balance |
+| Novo Banco | CSV | Data, Descrição, Débito, Crédito, Saldo |
+| Santander Totta | CSV, OFX | Data, Descrição, Montante, Saldo |
 | BPI | CSV | Data Valor, Descrição, Débito, Crédito, Saldo |
-| ActivoBank | CSV | Date, Type, Description, Amount |
+| ActivoBank | CSV | Data, Tipo, Descrição, Montante |
 
-### Common Transaction Descriptions
+### Descrições Habituais de Movimentos
 
-| Pattern | Classification |
+| Padrão | Classificação |
 |---|---|
-| TRF, TRANSFERENCIA | Transfer (check direction) |
-| DD, DEBITO DIRETO | Direct debit (recurring expense) |
-| MB, MULTIBANCO | ATM/card payment |
-| PAGAMENTO DE SERVICOS | Service payment (utilities, etc.) |
-| AT-AUTORIDADE TRIBUTARIA | Tax payment to AT |
-| SEGURANCA SOCIAL, SS | Social security payment |
-| COMPRA/VENDA MB WAY | Mobile payment |
-| JUROS | Interest (check debit/credit) |
-| COMISSAO, DESPESA | Bank charges |
-| IMPOSTO SELO | Stamp duty (bank tax) |
+| TRF, TRANSFERENCIA | Transferência (verificar sentido) |
+| DD, DEBITO DIRETO | Débito directo (gasto recorrente) |
+| MB, MULTIBANCO | Pagamento ATM/cartão |
+| PAGAMENTO DE SERVICOS | Pagamento de serviços (utilidades, etc.) |
+| AT-AUTORIDADE TRIBUTARIA | Pagamento de imposto à AT |
+| SEGURANCA SOCIAL, SS | Pagamento à Segurança Social |
+| COMPRA/VENDA MB WAY | Pagamento móvel |
+| JUROS | Juros (verificar débito/crédito) |
+| COMISSAO, DESPESA | Despesas bancárias |
+| IMPOSTO SELO | Imposto do selo (sobre operações bancárias) |
 
 ---
 
-## Section 9 -- Micro-Entity / Small Business Simplifications
+## Secção 9 — Simplificações para Microentidades e Pequenos Negócios
 
-### Size Categories (until 2025; increased from 2026)
+### Categorias de Dimensão (até 2025; limiares aumentados a partir de 2026)
 
-| Category | Balance Sheet Total | Net Turnover | Employees |
+| Categoria | Total do balanço | Volume de negócios líquido | Trabalhadores |
 |---|---|---|---|
-| Microentidade | ≤ EUR 350,000 (EUR 450,000 from 2026) | ≤ EUR 700,000 (EUR 900,000 from 2026) | ≤ 10 |
-| Pequena entidade | ≤ EUR 4,000,000 (EUR 5,000,000 from 2026) | ≤ EUR 8,000,000 (EUR 10,000,000 from 2026) | ≤ 50 |
-| Média entidade | ≤ EUR 20,000,000 (EUR 25,000,000 from 2026) | ≤ EUR 40,000,000 (EUR 50,000,000 from 2026) | ≤ 250 |
+| Microentidade | ≤ 350.000 EUR (450.000 EUR a partir de 2026) | ≤ 700.000 EUR (900.000 EUR a partir de 2026) | ≤ 10 |
+| Pequena entidade | ≤ 4.000.000 EUR (5.000.000 EUR a partir de 2026) | ≤ 8.000.000 EUR (10.000.000 EUR a partir de 2026) | ≤ 50 |
+| Média entidade | ≤ 20.000.000 EUR (25.000.000 EUR a partir de 2026) | ≤ 40.000.000 EUR (50.000.000 EUR a partir de 2026) | ≤ 250 |
 
-Must not exceed 2 of 3 criteria in the immediately preceding period.
+A entidade não pode exceder 2 dos 3 critérios no período imediatamente anterior.
 
-### Applicable Standards
+### Normas Aplicáveis
 
-| Category | Standard | Key Simplifications |
+| Categoria | Norma | Principais simplificações |
 |---|---|---|
-| Microentidade | NC-ME | No deferred taxes, no revaluations, no fair value; simplified financial statements (2 pages) |
-| Pequena entidade | NCRF-PE | Reduced disclosures; no cash flow statement required |
-| Média/Grande | Full NCRF (28 standards) | Complete disclosures; cash flow statement; statement of changes in equity |
+| Microentidade | NC-ME | Sem impostos diferidos, sem revalorizações, sem justo valor; demonstrações financeiras simplificadas (2 páginas) |
+| Pequena entidade | NCRF-PE | Divulgações reduzidas; demonstração dos fluxos de caixa não exigida |
+| Média/Grande | NCRF completas (28 normas) | Divulgações completas; demonstração dos fluxos de caixa; demonstração das alterações no capital próprio |
 
-### NC-ME Simplifications (Micro-entities)
+### Simplificações NC-ME (Microentidades)
 
-- Balance sheet + Income statement + limited annex only (no cash flow, no equity changes)
-- All assets measured at cost less depreciation/amortisation (no fair value, no revaluation)
-- No deferred tax computation required
-- Simplified annex with 15 items maximum
-- Leases: no finance/operating distinction; all leases expensed
+- Apenas Balanço + Demonstração de Resultados + Anexo limitado (sem fluxos de caixa, sem demonstração das alterações no capital próprio)
+- Todos os activos mensurados ao custo deduzido de depreciações/amortizações (sem justo valor, sem revalorização)
+- Não exige apuramento de impostos diferidos
+- Anexo simplificado com um máximo de 15 rubricas
+- Locações: sem distinção entre financeira e operacional; todas as locações reconhecidas como gasto
 
-### Sole Trader (Empresário em Nome Individual)
+### Empresário em Nome Individual (Trabalhador Independente)
 
-- Simplified regime (regime simplificado) available if turnover < EUR 200,000
-- No bookkeeping obligation under simplified regime -- taxed on coefficients
-- Organized accounting (contabilidade organizada) voluntary below threshold, mandatory above
-- Mandatory certified accountant (Contabilista Certificado) if organized accounting elected
-
----
-
-## Section 10 -- Interaction with Tax Skills
-
-### Corporate Income Tax (IRC)
-
-- IES filing integrates accounting and tax data into one annual submission
-- Tax result starts from accounting result (conta 81) with fiscal adjustments in Quadro 07 of Modelo 22
-- Key adjustments: autonomous taxation (tributação autónoma), non-deductible expenses, tax incentives (SIFIDE, RFAI, DLRR)
-- IRC rate: 21% (standard); 17% on first EUR 50,000 for SMEs; 21% surcharge (derrama estadual) on profits > EUR 1.5M
-- Use the pt-income-tax skill for detailed computation
-
-### VAT (IVA)
-
-- IVA accounts: class 243x in the SNC chart
-- Monthly filing if turnover > EUR 650,000; otherwise quarterly
-- Standard rate: 23% (mainland); 16% (Açores); 22% (Madeira)
-- Reduced rates: 6% and 13%
-- Use the portugal-vat-return skill for filing details
-
-### Social Security (Segurança Social)
-
-- Employer contributions: 23.75% of gross salary
-- Employee contributions: 11% of gross salary
-- Self-employed (trabalhador independente): 21.4% of relevant income (25.2% for first year)
-- Recorded in account 245 until paid
-- Use the pt-social-contributions skill for details
+- Regime simplificado disponível se o volume de negócios for inferior a 200.000 EUR (Categoria B do IRS)
+- Sem obrigação de contabilidade organizada no regime simplificado — tributação por aplicação de coeficientes em função do CAE
+- A contabilidade organizada é facultativa abaixo do limiar e obrigatória acima
+- Contabilista certificado (membro da OCC) obrigatório se for adoptada a contabilidade organizada
+- Para o tratamento do regime de Residente Não Habitual (RNH) e do Incentivo Fiscal à Investigação Científica e Inovação (IFICI), consulte a skill **pt-nhr-ifici**
 
 ---
 
-## Disclaimer
+## Secção 10 — Articulação com Skills Fiscais
 
-This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional before filing or acting upon.
+### Imposto sobre o Rendimento das Pessoas Colectivas (IRC)
+
+- A submissão da IES integra os dados contabilísticos e fiscais num único relato anual
+- O resultado fiscal parte do resultado contabilístico (conta 81) com correcções fiscais no Quadro 07 da Modelo 22
+- Principais correcções: tributação autónoma, gastos não dedutíveis, benefícios fiscais (SIFIDE, RFAI, DLRR)
+- Taxa de IRC: 21% (taxa geral); 17% sobre os primeiros 50.000 EUR para PME; derrama estadual sobre lucros superiores a 1.500.000 EUR
+- Utilize a skill **pt-income-tax** para o apuramento detalhado
+
+### IVA
+
+- Contas do IVA: classe 243x do plano SNC
+- Periodicidade mensal se o volume de negócios for superior a 650.000 EUR; caso contrário, trimestral
+- Taxa normal: 23% (continente); 16% (Açores); 22% (Madeira)
+- Taxas reduzidas: 6% e 13%
+- Utilize a skill **portugal-vat-return** para detalhes da submissão
+
+### SAF-T(PT)
+
+- O ficheiro SAF-T(PT) (Standard Audit File for Tax — versão portuguesa) é obrigatório
+- Submissão mensal à AT até ao dia 5 do segundo mês seguinte ao da emissão das facturas (SAF-T de facturação)
+- SAF-T de contabilidade submetido anualmente em articulação com a IES
+- Software de facturação certificado pela AT é obrigatório acima de determinados limiares de volume de negócios
+- Todas as facturas devem ser emitidas por programa certificado e comunicadas à AT
+
+### Segurança Social
+
+- Contribuição da entidade patronal: 23,75% da remuneração ilíquida
+- Contribuição do trabalhador: 11% da remuneração ilíquida
+- Trabalhador independente: 21,4% do rendimento relevante (25,2% no primeiro ano)
+- Registado na conta 245 até ao pagamento
+- Utilize a skill **pt-social-contributions** para detalhes
+
+### Conservação de Documentos
+
+- Período de conservação obrigatório: **10 anos** (artigo 123.º do CIRC e artigo 52.º do CIVA)
+- Aplicável a livros, registos contabilísticos, facturas, documentos de suporte e ficheiros SAF-T(PT)
+- A conservação em formato electrónico é admitida desde que seja garantida a autenticidade, integridade e legibilidade
+
+---
+
+## Aviso Legal
+
+Esta skill e os respectivos resultados são disponibilizados apenas para fins informativos e de apoio ao cálculo e não constituem aconselhamento fiscal, jurídico ou financeiro. A Open Accountants e os seus colaboradores não aceitam qualquer responsabilidade por erros, omissões ou consequências decorrentes da utilização desta skill. Todos os resultados devem ser revistos e validados por um profissional qualificado (Contabilista Certificado membro da OCC) antes da submissão ou de qualquer actuação com base nos mesmos.
