@@ -129,6 +129,54 @@ gib = S.start(intent="gibberish")
 check("unmatched intent → needs_clarification",
       gib["status"] == "needs_clarification", gib.get("status"))
 
+# --- submit_feedback ------------------------------------------------------
+print("\nsubmit_feedback (general):")
+fb = S.submit_feedback("Cyprus is missing from the catalogue.")
+check("returns github_url", "github_url" in fb and fb["github_url"].startswith(
+    "https://github.com/openaccountants/openaccountants/issues/new?"), fb.get("github_url"))
+check("title auto-generated", fb["title"] == "Feedback", fb.get("title"))
+check("labels = ['feedback']", fb["labels"] == ["feedback"], str(fb.get("labels")))
+check("body includes the summary", "Cyprus is missing" in fb["body"])
+check("body includes submitted-via footer", "submit_feedback" in fb["body"])
+
+print("submit_feedback (skill-specific, rated):")
+fb_skill = S.submit_feedback(
+    summary="Rates look right but home-office deduction is outdated.",
+    skill_slug="malta-income-tax",
+    jurisdiction="mt",
+    rating=4,
+)
+check("skill title auto", fb_skill["title"] == "Skill feedback: malta-income-tax (MT)",
+      fb_skill.get("title"))
+check("skill-feedback label added", "skill-feedback" in fb_skill["labels"],
+      str(fb_skill["labels"]))
+check("body mentions slug + jurisdiction + rating",
+      "malta-income-tax" in fb_skill["body"]
+      and "MT" in fb_skill["body"]
+      and "4/5" in fb_skill["body"])
+check("url contains url-encoded labels",
+      "labels=feedback%2Cskill-feedback" in fb_skill["github_url"],
+      fb_skill["github_url"])
+
+print("submit_feedback validation:")
+for label, fn in [
+    ("empty summary rejected", lambda: S.submit_feedback("")),
+    ("rating > 5 rejected", lambda: S.submit_feedback("ok", rating=6)),
+    ("rating < 1 rejected", lambda: S.submit_feedback("ok", rating=0)),
+]:
+    try:
+        fn()
+        check(label, False, "did NOT raise")
+    except Exception:
+        check(label, True)
+
+print("submit_feedback (long summary truncated):")
+long_fb = S.submit_feedback("x" * 8000)
+check("long body truncated under 6000 bytes",
+      len(long_fb["body"].encode("utf-8")) <= 6500,  # 6000 + truncation note
+      f"body bytes = {len(long_fb['body'].encode('utf-8'))}")
+check("truncation note present", "truncated" in long_fb["body"].lower())
+
 # --- search_skills --------------------------------------------------------
 print("\nsearch_skills('reverse charge', 'MT'):")
 sr = S.search_skills("reverse charge", "MT")
@@ -156,14 +204,18 @@ check("tax-return interpolates",
       "company taxpayer in Malta" in S.tax_return("Malta", entity_type="company"))
 check("compare-jurisdictions interpolates income",
       "Effective income tax rate at EUR 80000" in S.compare_jurisdictions("MT,UK", income="EUR 80000"))
-check("skill-feedback has slug + date",
-      "malta-income-tax" in S.skill_feedback("malta-income-tax", "MT"))
+sfb = S.skill_feedback("malta-income-tax", "MT")
+check("skill-feedback prompt embeds slug + jurisdiction",
+      "malta-income-tax" in sfb and "MT" in sfb)
+check("skill-feedback prompt points at submit_feedback tool",
+      "submit_feedback" in sfb)
 
 
 async def _registry() -> None:
     tools = {t.name for t in await S.mcp.list_tools()}
-    check("5 tools registered",
-          tools == {"list_skills", "get_skill", "get_skill_sections", "search_skills", "start"},
+    check("6 tools registered",
+          tools == {"list_skills", "get_skill", "get_skill_sections",
+                    "search_skills", "start", "submit_feedback"},
           str(tools))
     prompts = {p.name for p in await S.mcp.list_prompts()}
     check("6 prompts registered",

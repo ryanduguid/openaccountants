@@ -42,6 +42,7 @@ from datetime import datetime, timezone
 from functools import lru_cache
 from pathlib import Path
 from typing import Any
+from urllib.parse import urlencode
 
 import yaml
 from mcp.server.fastmcp import FastMCP
@@ -58,6 +59,14 @@ PACKAGES_DIR = REPO_ROOT / "packages"
 MAX_FILE_BYTES = 2 * 1024 * 1024  # 2 MB safety cap
 SEARCH_LIMIT = 25
 SOURCE_BASE = "https://openaccountants.com/skills"
+
+# Feedback flows construct a GitHub New Issue URL the user opens themselves.
+FEEDBACK_REPO = "openaccountants/openaccountants"
+FEEDBACK_NEW_ISSUE_URL = f"https://github.com/{FEEDBACK_REPO}/issues/new"
+# Practical browser/GitHub URL ceiling is ~8 KB; we cap the body at 6 KB so
+# title + labels + query overhead never push us past it.
+FEEDBACK_MAX_BODY_BYTES = 6000
+FEEDBACK_MAX_TITLE_CHARS = 120
 
 # ---------------------------------------------------------------------------
 # Path safety
@@ -318,7 +327,12 @@ mcp = FastMCP(
         "sources, awaiting credentialed sign-off) or accountant-verified (a "
         "named licensed practitioner has signed off).  Always advise the user "
         "to have output reviewed by a qualified professional before filing, "
-        "and cite the skill (and its verifier where accountant-verified)."
+        "and cite the skill (and its verifier where accountant-verified).\n\n"
+        "**Feedback**: when a user reports a problem with a skill, a missing "
+        "jurisdiction, or anything else worth capturing, call `submit_feedback` "
+        "— it returns a pre-filled GitHub New Issue URL the user opens to "
+        "submit under their own account.  The `skill-feedback` prompt drives "
+        "the structured interview for skill-specific feedback."
     ),
     host=_HTTP_HOST,
     port=_HTTP_PORT,
@@ -797,6 +811,117 @@ def start(intent: str | None = None, jurisdiction: str | None = None) -> dict[st
 
 
 # ---------------------------------------------------------------------------
+# Feedback — build a pre-filled GitHub New Issue URL the user submits themselves
+# ---------------------------------------------------------------------------
+
+
+def _truncate_utf8(text: str, max_bytes: int) -> tuple[str, bool]:
+    """Truncate *text* so its UTF-8 encoding fits in *max_bytes*."""
+    encoded = text.encode("utf-8")
+    if len(encoded) <= max_bytes:
+        return text, False
+    # Step back until we land on a valid character boundary.
+    cut = encoded[:max_bytes]
+    while True:
+        try:
+            return cut.decode("utf-8"), True
+        except UnicodeDecodeError:
+            cut = cut[:-1]
+
+
+def _build_feedback_body(
+    summary: str,
+    skill_slug: str | None,
+    jurisdiction: str | None,
+    rating: int | None,
+) -> tuple[str, bool]:
+    today = datetime.now(tz=timezone.utc).date().isoformat()
+    meta_lines = [f"**Submitted via:** OpenAccountants MCP `submit_feedback`",
+                  f"**Date:** {today}"]
+    if skill_slug:
+        meta_lines.append(f"**Skill:** `{skill_slug}`")
+    if jurisdiction:
+        meta_lines.append(f"**Jurisdiction:** `{jurisdiction.upper()}`")
+    if rating is not None:
+        meta_lines.append(f"**Rating:** {rating}/5")
+
+    body = f"{summary.strip()}\n\n---\n" + "\n".join(meta_lines) + "\n"
+    return _truncate_utf8(body, FEEDBACK_MAX_BODY_BYTES)
+
+
+@mcp.tool(annotations=_READONLY)
+def submit_feedback(
+    summary: str,
+    title: str | None = None,
+    skill_slug: str | None = None,
+    jurisdiction: str | None = None,
+    rating: int | None = None,
+) -> dict[str, Any]:
+    """Build a pre-filled GitHub New Issue URL the user opens to submit feedback.
+
+    The tool does not post to GitHub — it constructs the URL so the user
+    reviews + submits themselves under their own GitHub account (no
+    server-side credentials, no abuse vector, attribution preserved).
+
+    Use this whenever a user shares feedback worth capturing — bug reports,
+    skill inaccuracies, missing jurisdictions, suggested improvements. Pair
+    with the `skill-feedback` prompt for guided skill feedback.
+
+    Args:
+        summary:      The feedback narrative (markdown is fine). Required.
+        title:        Optional explicit issue title. Auto-generated if omitted.
+        skill_slug:   Optional slug when feedback targets a specific skill.
+                      When set, adds the `skill-feedback` label.
+        jurisdiction: Optional jurisdiction code (e.g. "MT", "US-CA").
+        rating:       Optional accuracy/quality rating 1-5.
+
+    Returns:
+        ``{"github_url", "title", "body", "labels", "next_action"}``.
+        Surface the URL to the user; they open it, review, sign in if
+        needed, and click *Submit new issue*.
+    """
+    s = (summary or "").strip()
+    if not s:
+        raise ValueError("summary is required")
+    if rating is not None and not (1 <= rating <= 5):
+        raise ValueError("rating must be between 1 and 5")
+
+    if title:
+        issue_title = title.strip()
+    elif skill_slug:
+        suffix = f" ({jurisdiction.upper()})" if jurisdiction else ""
+        issue_title = f"Skill feedback: {skill_slug}{suffix}"
+    else:
+        issue_title = "Feedback"
+    if len(issue_title) > FEEDBACK_MAX_TITLE_CHARS:
+        issue_title = issue_title[: FEEDBACK_MAX_TITLE_CHARS - 1].rstrip() + "…"
+
+    body, truncated = _build_feedback_body(s, skill_slug, jurisdiction, rating)
+    if truncated:
+        body += ("\n> _Body truncated to fit GitHub's URL length limit. "
+                 "Paste the rest as a follow-up comment after submitting._\n")
+
+    labels = ["feedback"]
+    if skill_slug:
+        labels.append("skill-feedback")
+
+    query = urlencode({"title": issue_title, "body": body, "labels": ",".join(labels)})
+    url = f"{FEEDBACK_NEW_ISSUE_URL}?{query}"
+
+    return {
+        "github_url": url,
+        "title": issue_title,
+        "body": body,
+        "labels": labels,
+        "next_action": (
+            "Share the github_url with the user. Opening it loads GitHub's "
+            "New Issue page with everything pre-filled — they review, sign "
+            "in if needed, and click 'Submit new issue'."
+        ),
+    }
+
+
+# ---------------------------------------------------------------------------
 # Prompts (mirror the hosted server)
 # ---------------------------------------------------------------------------
 
@@ -879,7 +1004,6 @@ Only include deductions explicitly listed in the skill. Never invent deductions 
     description="Collect structured feedback on a skill after the agent has used it.",
 )
 def skill_feedback(skill_slug: str, country: str) -> str:
-    today = datetime.now(tz=timezone.utc).date().isoformat()
     return f"""You just used the {skill_slug} skill for {country} to help a user with their taxes.
 
 Ask the user:
@@ -888,18 +1012,23 @@ Ask the user:
 3. "Were any transactions classified in a way that surprised you?"
 4. "Any other feedback on the skill?"
 
-Compile their responses into a structured feedback summary:
-- Skill: {skill_slug}
-- Country: {country}
-- Date: {today}
-- Accuracy rating: [1-5 based on response to Q1]
-- Missing items: [from Q2]
-- Classification issues: [from Q3]
-- Other: [from Q4]
+Compile their responses into a markdown summary like:
 
-Then call submit_skill_feedback with this summary (if the tool is available).
-If submit_skill_feedback is not available, display the summary and say:
-"Please share this feedback at github.com/openaccountants/openaccountants/issues so we can improve the skill."."""
+```
+**Accuracy:** <answer to Q1>
+**Missing items:** <answer to Q2>
+**Classification issues:** <answer to Q3>
+**Other:** <answer to Q4>
+```
+
+Then call `submit_feedback` with:
+- summary: the markdown above
+- skill_slug: "{skill_slug}"
+- jurisdiction: "{country}"
+- rating: 1-5 derived from the user's answer to Q1 (omit if unclear)
+
+`submit_feedback` returns a `github_url`. Share it with the user verbatim and tell them:
+"Open this link to submit the feedback — GitHub's New Issue page will be pre-filled. Sign in if needed, review, and click *Submit new issue*."."""
 
 
 @mcp.prompt(
