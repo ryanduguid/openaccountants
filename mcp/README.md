@@ -45,12 +45,35 @@ This server mirrors the hosted server at `https://www.openaccountants.com/api/mc
 
 | Tool | Description |
 |------|-------------|
+| `start` | **Front door.** Call first whenever a user asks for tax/accounting help. Takes optional `intent` (free text — e.g. `"taxes"`, `"VAT return"`, `"set up a company"`) and `jurisdiction` (e.g. `"MT"`, `"GB"`, `"US-CA"`). Returns either a clarification question or a ready-to-execute plan (`skills_to_load`, `expectations`, `next_action`, `guardrails`). |
 | `list_skills` | List published skills with quality tier and verifier. Optional `jurisdiction` (ISO code, e.g. `MT`, `GB`, `US-CA`) and `category` filters. |
 | `get_skill` | Given a skill `slug`, returns the full markdown plus a provenance/attribution footer. |
 | `get_skill_sections` | Given a `slug`, returns the skill parsed into sections (`heading`, `content`, `level`) for step-by-step application. |
 | `search_skills` | Keyword search across skill markdown (`query`, optional `jurisdiction`). Returns the matched section heading and a snippet. |
 
 All access is **read-only** and **path-sandboxed** to the `packages/` directory.
+
+### The `start` flow
+
+`start` is what makes the connector self-guiding. A typical session looks like:
+
+```
+User:    "Help me with my Malta taxes."
+          ↓
+Model:   start(intent="taxes", jurisdiction="MT")
+          → { status: "ready",
+              skills_to_load: [mt-freelance-intake, malta-income-tax, …],
+              expectations: "I'll help you build a working paper for your accountant…",
+              next_action: "Run the intake skill first, then classify transactions",
+              guardrails: [...] }
+          ↓
+Model:   get_skill("mt-freelance-intake")  →  scope-check questions
+Model:   get_skill("malta-income-tax")     →  rates, brackets, deductions
+          ↓
+Model:   walks the user through the working paper using the loaded skills
+```
+
+If the user only says "help me with my taxes" (no country), call `start(intent="taxes")` — you get back the list of jurisdictions that have a tax skill so you can ask which one applies. Same if only the country is known: `start(jurisdiction="MT")` returns the available categories for Malta.
 
 ## Prompts
 
@@ -148,11 +171,33 @@ or:
 
 The AI will call the MCP tools behind the scenes to load the right country and domain skills, then produce working papers, payslips, formation guides, or whatever output matches your request — all without you uploading a single file.
 
+## Docker (local development / self-hosting)
+
+For contributors who'd rather iterate inside a container, the repo root ships a `Dockerfile` that builds the MCP server and runs it under FastMCP's Streamable-HTTP transport:
+
+```bash
+docker build -t openaccountants-mcp .
+docker run --rm -p 8000:8000 openaccountants-mcp
+# Point an MCP client at http://localhost:8000/mcp
+```
+
+When fronted by a reverse proxy that strips an upstream path prefix (e.g. Caddy `uri strip_prefix /oamcp`), set `MCP_STREAMABLE_HTTP_PATH=/` so the endpoint mounts at the proxied root:
+
+```bash
+docker run --rm -p 8000:8000 -e MCP_STREAMABLE_HTTP_PATH=/ openaccountants-mcp
+```
+
+The default stdio transport (`pip install ./mcp && openaccountants-mcp`) is unchanged.
+
 ## Environment variables
 
 | Variable | Default | Description |
 |----------|---------|-------------|
 | `OPENACCOUNTANTS_ROOT` | Auto-detected repo root (parent of `mcp/`) | Path to your OpenAccountants checkout. The server reads `$OPENACCOUNTANTS_ROOT/packages/`. |
+| `MCP_TRANSPORT` | `stdio` | `stdio`, `streamable-http`, or `sse`. HTTP transports let remote MCP clients connect via a reverse proxy. |
+| `MCP_HOST` | `127.0.0.1` (stdio) / `0.0.0.0` (HTTP) | Bind host for HTTP transports. |
+| `MCP_PORT` | `8000` | Bind port for HTTP transports. |
+| `MCP_STREAMABLE_HTTP_PATH` | `/mcp` | Path the Streamable-HTTP endpoint is mounted at. Set to `/` when behind a proxy that strips the upstream prefix. |
 
 ## What changes vs manual upload
 
