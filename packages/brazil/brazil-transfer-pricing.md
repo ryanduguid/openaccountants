@@ -1,200 +1,212 @@
 ---
 name: brazil-transfer-pricing
 description: >
-  Use this skill whenever asked about Brazil transfer pricing rules, documentation requirements, or preços de transferência compliance. Trigger on phrases like "transfer pricing Brazil", "Brazilian TP documentation", "preços de transferência", "master file Brazil", "local file Brazil", "CbCR Brazil", "APA Brazil", "Law 14.596/2023", "IN RFB 2161", "arm's length Brazil", "ECF", or any question about intercompany pricing for Brazilian entities.
-version: 1.0
+  EN: Use this skill whenever asked about Brazil transfer pricing rules, documentation requirements, or preços de transferência compliance. Trigger on phrases like "transfer pricing Brazil", "Brazilian TP documentation", "preços de transferência", "master file Brazil", "local file Brazil", "CbCR Brazil", "APA Brazil", "Law 14.596/2023", "IN RFB 2161", "arm's length Brazil", "ECF", or any question about intercompany pricing for Brazilian entities.
+  PT-BR: Use esta skill sempre que for solicitada análise sobre as regras de preços de transferência no Brasil, requisitos de documentação ou conformidade em preços de transferência. Acione com expressões como "preços de transferência Brasil", "documentação de TP brasileira", "preços de transferência", "master file Brasil", "local file Brasil", "CbCR Brasil", "APA Brasil", "Lei 14.596/2023", "IN RFB 2161", "arm's length Brasil", "ECF", ou qualquer questão sobre precificação intercompany para entidades brasileiras.
+version: 1.1
 jurisdiction: BR
+tax_year: 2025
 category: transfer-pricing
+verified_by: pending
 depends_on:
   - transfer-pricing-workflow-base
 ---
 
-# Brazil Transfer Pricing Skill v1.0
+# Brasil — Preços de Transferência (TP) — Skill v1.1
 
 ---
 
-## Section 1 -- Quick Reference
+## Seção 1 — Referência Rápida
 
-| Field | Value |
+| Campo | Valor |
 |---|---|
-| Country | Brazil (Federative Republic of Brazil) |
-| Tax authority | Receita Federal do Brasil (RFB -- Federal Revenue Service) |
-| Key TP legislation | Law 14.596/2023 (new OECD-aligned regime); IN RFB 2.161/2023 (implementing regulation) |
-| Previous regime | Laws 9.430/1996 and 9.959/2000 (prescriptive/fixed-margin system -- fully replaced) |
-| OECD member? | Yes (joined January 2024) |
-| BEPS signatory? | Yes |
-| Effective date (new rules) | Mandatory from 1 January 2024 (early adoption was available for FY2023) |
-| Currency | BRL |
-| Documentation language | Local File: Portuguese; Master File: English or Spanish accepted (translation on request) |
-| Skill version | 1.0 |
+| País | Brasil (República Federativa do Brasil) |
+| Autoridade tributária | Receita Federal do Brasil (RFB) |
+| Legislação principal de TP | Lei 14.596/2023 (novo regime alinhado à OECD); IN RFB 2.161/2023 (regulamentação) |
+| Regime anterior | Leis 9.430/1996 e 9.959/2000 (sistema prescritivo de margens fixas — totalmente substituído) |
+| Membro da OECD? | Sim (ingresso em janeiro de 2024) |
+| Signatário do BEPS? | Sim |
+| Data de vigência (novas regras) | Obrigatório a partir de 1º de janeiro de 2024 (adoção antecipada disponível para o ano-calendário de 2023) |
+| Moeda | BRL |
+| Idioma da documentação | Local File: português; Master File: aceitos em inglês ou espanhol (tradução mediante solicitação) |
+| Versão da skill | 1.1 |
 
 ---
 
-## Section 2 -- Documentation Requirements
+## Seção 1A — Contexto CBS/IBS (Reforma Tributária)
+
+TP no Brasil aplica-se a IRPJ/CSLL sobre lucro. A Reforma Tributária 2026 afeta tributos sobre consumo (CBS/IBS), mas **serviços importados** entram no campo de CBS (sujeitos a recolhimento pelo tomador a partir de 2027). Atenção em operações intercompany de serviços com partes relacionadas no exterior — pode haver dupla incidência: TP (IRPJ) e CBS (consumo).
+
+---
+
+## Seção 2 — Requisitos de Documentação
 
 ### 2.1 Master File (Arquivo Global)
 
-| Item | Detail |
+| Item | Detalhe |
 |---|---|
-| Required? | Yes, for taxpayers in scope (controlled transactions with related parties abroad) |
-| Format | OECD-aligned three-tier structure per IN RFB 2.161/2023 |
-| Language | English or Spanish accepted; Portuguese translation on RFB request |
-| Filing deadline | 3 months after ECF filing deadline (October for standard calendar-year taxpayers) |
+| Obrigatório? | Sim, para contribuintes no escopo (transações controladas com partes relacionadas no exterior) |
+| Formato | Estrutura de três níveis alinhada à OECD, conforme IN RFB 2.161/2023 |
+| Idioma | Inglês ou espanhol aceitos; tradução para o português mediante solicitação da RFB |
+| Prazo de entrega | 3 meses após o prazo de entrega da ECF (outubro para contribuintes com ano-calendário padrão) |
 
 ### 2.2 Local File (Arquivo Local)
 
-| Item | Detail |
+| Item | Detalhe |
 |---|---|
-| Required? | Yes, for taxpayers with controlled transactions |
-| Content tiers | Simplified for smaller taxpayers; complete for larger taxpayers |
-| Complete Local File content | Business description, competitors, controlled transactions, method application, accounting data |
-| Language | Portuguese |
-| Filing deadline | 3 months after ECF filing deadline |
+| Obrigatório? | Sim, para contribuintes com transações controladas |
+| Níveis de conteúdo | Simplificado para contribuintes menores; completo para contribuintes maiores |
+| Conteúdo do Local File completo | Descrição do negócio, concorrentes, transações controladas, aplicação de método, dados contábeis |
+| Idioma | Português |
+| Prazo de entrega | 3 meses após o prazo de entrega da ECF |
 
-### 2.3 Tier Classification
+### 2.3 Classificação por Nível
 
-| Category | Criteria | Documentation Level |
+| Categoria | Critérios | Nível de Documentação |
 |---|---|---|
-| Category 1 | Below thresholds | Simplified Local File |
-| Category 2 | Mid-range intercompany volumes | Standard Local File |
-| Category 3 | Large intercompany volumes | Complete Local File + Master File |
+| Categoria 1 | Abaixo dos limites | Local File simplificado |
+| Categoria 2 | Volumes intercompany intermediários | Local File padrão |
+| Categoria 3 | Grandes volumes intercompany | Local File completo + Master File |
 
-### 2.4 Country-by-Country Report (CbCR)
+### 2.4 Declaração País-a-País (CbCR)
 
-| Item | Detail |
+| Item | Detalhe |
 |---|---|
-| Threshold | Consolidated group revenue ≥ BRL 2.4 billion (approx. EUR 750 million) |
-| Filing deadline | Included in ECF reporting cycle |
-| Content | Per OECD Annex III |
+| Limite | Receita consolidada do grupo ≥ BRL 2,4 bilhões (aprox. EUR 750 milhões) |
+| Prazo de entrega | Incluído no ciclo de entrega da ECF |
+| Conteúdo | Conforme Anexo III da OECD |
 
-### 2.5 Corporate Tax Return (ECF)
+### 2.5 Declaração Corporativa (ECF)
 
-| Item | Detail |
+| Item | Detalhe |
 |---|---|
-| TP disclosure | Transfer pricing information included in ECF (Escrituração Contábil Fiscal) |
-| ECF filing deadline | July of following year (standard calendar-year taxpayers) |
+| Informações de TP | Dados de preços de transferência incluídos na ECF (Escrituração Contábil Fiscal) |
+| Prazo de entrega da ECF | Julho do ano seguinte (contribuintes com ano-calendário padrão) |
 
 ---
 
-## Section 3 -- Arm's Length Standard
+## Seção 3 — Princípio Arm's Length
 
-### 3.1 Definition
+### 3.1 Definição
 
-Article 2, Law 14.596/2023: Controlled transactions must be priced consistently with conditions that would be established between unrelated parties in comparable transactions under comparable circumstances (arm's length principle).
+Artigo 2º, Lei 14.596/2023: As transações controladas devem ser precificadas de forma consistente com as condições que seriam estabelecidas entre partes não relacionadas em transações comparáveis sob circunstâncias comparáveis (princípio arm's length).
 
-### 3.2 Historic Context
+### 3.2 Contexto Histórico
 
-Brazil's previous regime (1996-2023) used prescriptive fixed-margin methods (PIC, PRL, CPL, PVEx, PVA, PVV, CAP) with statutory margins. The new regime (from 2024) fully adopts the OECD arm's length standard.
+O regime anterior do Brasil (1996-2023) utilizava métodos prescritivos de margens fixas (PIC, PRL, CPL, PVEx, PVA, PVV, CAP) com margens estatutárias. O novo regime (a partir de 2024) adota plenamente o padrão arm's length da OECD.
 
-### 3.3 Accepted Methods (New Regime)
+### 3.3 Métodos Aceitos (Novo Regime)
 
-| Method | Accepted |
+| Método | Aceito |
 |---|---|
-| Comparable Uncontrolled Price (PIC) | Yes |
-| Resale Price Method (PRL) | Yes |
-| Cost Plus Method (MCL) | Yes |
-| Transactional Net Margin Method (MLT) | Yes |
-| Profit Split Method (MDL) | Yes |
+| Preço Independente Comparável (PIC / CUP) | Sim |
+| Preço de Revenda menos Lucro (PRL) | Sim |
+| Custo mais Lucro (MCL / Cost Plus) | Sim |
+| Margem Líquida da Transação (MLT / MMT / TNMM) | Sim |
+| Divisão do Lucro (MDL / Profit Split) | Sim |
 
-### 3.4 Most Appropriate Method
+Observação: outros métodos da legislação anterior — PCI, PCEx, MMA, MMR, MTM, CAP, CPL — permanecem como referência histórica e podem aparecer em documentação de períodos transitórios.
 
-Article 12, Law 14.596/2023: The most appropriate method must be selected based on the nature of the transaction, comparability, and data availability. No statutory hierarchy.
+### 3.4 Método Mais Apropriado
 
-### 3.5 OECD Guidelines as Subsidiary Source
+Artigo 12, Lei 14.596/2023: O método mais apropriado deve ser selecionado com base na natureza da transação, na comparabilidade e na disponibilidade de dados. Não há hierarquia estatutária.
 
-IN RFB 2.161/2023, Art. 1, §4: OECD Transfer Pricing Guidelines (2022 edition and approved updates) serve as a subsidiary source for interpretation, unless contrary to Brazilian law or RFB normative acts.
+### 3.5 Diretrizes da OECD como Fonte Subsidiária
+
+IN RFB 2.161/2023, Art. 1º, §4º: As Diretrizes de Preços de Transferência da OECD (edição de 2022 e atualizações aprovadas) servem como fonte subsidiária de interpretação, salvo quando contrárias à legislação brasileira ou a atos normativos da RFB.
 
 ---
 
-## Section 4 -- Filing Obligations
+## Seção 4 — Obrigações Acessórias
 
-| Obligation | Detail |
+| Obrigação | Detalhe |
 |---|---|
-| ECF (TP information) | Annual electronic filing (July) |
-| Master File | Filed 3 months after ECF deadline |
-| Local File | Filed 3 months after ECF deadline |
-| CbCR | Per ECF reporting cycle |
-| Technical responsibility | External expert/consultant who prepared the economic study bears technical responsibility |
+| ECF (informações de TP) | Entrega eletrônica anual (julho) |
+| Master File | Entregue 3 meses após o prazo da ECF |
+| Local File | Entregue 3 meses após o prazo da ECF |
+| CbCR | Conforme ciclo de entrega da ECF |
+| Responsabilidade técnica | Especialista/consultor externo que preparou o estudo econômico assume a responsabilidade técnica |
 
 ---
 
-## Section 5 -- Deadlines
+## Seção 5 — Prazos
 
-| Item | Deadline |
+| Item | Prazo |
 |---|---|
-| ECF filing (including TP data) | July of following year (standard calendar year) |
-| Master File and Local File | 3 months after ECF deadline (October for standard; December 2025 for FY2024 transition) |
-| FY2024 (first year) special deadline | December 31, 2025 |
-| CbCR | Within ECF reporting cycle |
+| Entrega da ECF (incluindo dados de TP) | Julho do ano seguinte (ano-calendário padrão) |
+| Master File e Local File | 3 meses após o prazo da ECF (outubro no padrão; dezembro de 2025 para a transição do ano-calendário de 2024) |
+| Prazo especial para o ano-calendário de 2024 (primeiro ano) | 31 de dezembro de 2025 |
+| CbCR | Dentro do ciclo de entrega da ECF |
 
 ---
 
-## Section 6 -- Penalties
+## Seção 6 — Penalidades
 
-| Offence | Penalty |
+| Infração | Penalidade |
 |---|---|
-| Late filing of Master/Local File | 0.2% per month (or fraction) on taxpayer's gross income |
-| Submission without meeting requirements (inaccurate/incomplete) | 3% of gross income; minimum BRL 20,000; maximum BRL 5,000,000 |
-| Late ECF filing | BRL 1,500/month for legal entities (general) |
-| Inaccurate CbCR information | 0.2% of consolidated revenue of MNE group for prior year |
-| TP adjustment by RFB | Additional tax + SELIC interest + fine of 75% (standard) or 150% (fraud/concealment) |
+| Entrega em atraso do Master/Local File | 0,2% por mês (ou fração) sobre a receita bruta do contribuinte |
+| Entrega sem atender aos requisitos (inexata/incompleta) | 3% da receita bruta; mínimo BRL 20.000; máximo BRL 5.000.000 |
+| Entrega em atraso da ECF | BRL 1.500/mês para pessoas jurídicas (regra geral) |
+| Informações inexatas no CbCR | 0,2% da receita consolidada do grupo multinacional do ano anterior |
+| Ajuste de TP pela RFB | Tributo adicional + juros SELIC + multa de 75% (padrão) ou 150% (fraude/sonegação) |
 
 ---
 
-## Section 7 -- Advance Pricing Agreements (APA)
+## Seção 7 — Acordos Prévios de Preços (APA)
 
-| Item | Detail |
+| Item | Detalhe |
 |---|---|
-| Availability | Yes (introduced by Law 14.596/2023; "Processo de Consulta Específico") |
-| Types | Unilateral (initially); bilateral/multilateral expected |
-| Governing regulation | Under development -- RFB opened public consultation August 2024 |
-| Effective date | Regulations effective from 1 January 2025 |
-| Duration | To be determined (expected 3-5 years) |
-| Fees | To be determined |
-| Status | New mechanism; limited practical experience to date |
+| Disponibilidade | Sim (introduzido pela Lei 14.596/2023; "Processo de Consulta Específico") |
+| Tipos | Unilateral (inicialmente); bilateral/multilateral previstos |
+| Regulamentação | Em desenvolvimento — RFB abriu consulta pública em agosto de 2024 |
+| Vigência | Regulamentação em vigor a partir de 1º de janeiro de 2025 |
+| Duração | A definir (expectativa de 3-5 anos) |
+| Taxas | A definir |
+| Status | Novo mecanismo; experiência prática ainda limitada |
 
 ---
 
-## Section 8 -- Safe Harbours
+## Seção 8 — Safe Harbours
 
-| Area | Detail |
+| Área | Detalhe |
 |---|---|
-| General | No broad statutory safe harbour under the new regime |
-| Low-value intra-group services | Under Art. 23 of Law 14.596/2023; specific rules for intra-group services |
-| Financial transactions | Specific provisions in forthcoming normative instructions |
-| Commodities | Separate rules under development |
-| Historical regime | Old fixed-margin methods (PRL 20%, CPL 20%, etc.) no longer apply |
+| Geral | Não há safe harbour estatutário amplo no novo regime |
+| Serviços intragrupo de baixo valor agregado | Conforme Art. 23 da Lei 14.596/2023; regras específicas para serviços intragrupo |
+| Operações financeiras | Disposições específicas em instruções normativas em elaboração |
+| Commodities | Regras separadas em desenvolvimento |
+| Regime histórico | Métodos antigos de margens fixas (PRL 20%, CPL 20%, etc.) não se aplicam mais |
 
 ---
 
-## Section 9 -- Recent Developments
+## Seção 9 — Desenvolvimentos Recentes
 
-| Date | Development |
+| Data | Desenvolvimento |
 |---|---|
-| January 2024 | New OECD-aligned TP regime mandatory (Law 14.596/2023) |
-| September 2023 | IN RFB 2.161/2023 published (implementing regulation) |
-| August 2024 | Public consultation on intra-group services and APA rules |
-| January 2025 | APA regulations effective |
-| January 2024 | Brazil becomes OECD member |
-| December 2025 | First Master/Local File submissions due (for FY2024) |
-| Ongoing | Additional normative instructions expected for: commodities, intangibles, financial transactions, restructurings |
-| Ongoing | Pillar Two implementation under discussion |
+| Janeiro de 2024 | Novo regime de TP alinhado à OECD passa a ser obrigatório (Lei 14.596/2023) |
+| Setembro de 2023 | Publicação da IN RFB 2.161/2023 (regulamentação) |
+| Agosto de 2024 | Consulta pública sobre regras de serviços intragrupo e APA |
+| Janeiro de 2025 | Regulamentação de APA em vigor |
+| Janeiro de 2024 | Brasil torna-se membro da OECD |
+| Dezembro de 2025 | Primeiras entregas de Master/Local File (referentes ao ano-calendário de 2024) |
+| Contínuo | Instruções normativas adicionais esperadas para: commodities, intangíveis, operações financeiras, reestruturações |
+| Contínuo | Implementação do Pilar Dois em discussão |
 
 ---
 
-## Section 10 -- Interaction with Other Skills
+## Seção 10 — Interação com Outras Skills
 
-| Related skill | Interaction |
+| Skill relacionada | Interação |
 |---|---|
-| brazil-corporate-tax (IRPJ/CSLL) | TP adjustments affect corporate income tax (IRPJ) and social contribution (CSLL) base |
-| brazil-bookkeeping | TP documentation relies on Brazilian accounting records (IFRS-aligned) |
-| ECF reporting | Transfer pricing data integral part of ECF |
-| Thin capitalisation | Separate rules under Art. 24-25 of Law 12.249/2010 interact with TP for intercompany loans |
-| CbCR | Used by RFB for risk assessment |
-| Customs valuation | TP adjustments may affect customs duties on imports |
+| brazil-corporate-tax (IRPJ/CSLL) | Ajustes de TP afetam a base do IRPJ e da CSLL |
+| brazil-bookkeeping | Documentação de TP baseia-se em registros contábeis brasileiros (alinhados ao IFRS) |
+| Entrega da ECF | Dados de preços de transferência são parte integrante da ECF |
+| Subcapitalização | Regras separadas nos Arts. 24-25 da Lei 12.249/2010 interagem com TP em empréstimos intercompany |
+| CbCR | Utilizado pela RFB para avaliação de risco |
+| Valoração aduaneira | Ajustes de TP podem impactar tributos aduaneiros sobre importações |
+| brazil-indirect-tax (CBS/IBS) | Serviços importados intercompany podem gerar dupla incidência: TP (IRPJ/CSLL) e CBS (consumo, a partir de 2027) |
 
 ---
 
-## Disclaimer
+## Aviso Legal
 
-This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional before filing or acting upon.
+Esta skill e seus resultados são fornecidos apenas para fins informativos e computacionais e não constituem aconselhamento tributário, jurídico ou financeiro. A Open Accountants e seus colaboradores não assumem qualquer responsabilidade por erros, omissões ou consequências decorrentes do uso desta skill. Todos os resultados devem ser revisados e validados por profissional qualificado antes da entrega ou utilização.

@@ -1,402 +1,531 @@
 ---
 name: brazil-einvoice
 description: >
-  Use this skill whenever asked about Brazil e-invoicing, NF-e (Nota Fiscal Eletrônica), NFS-e (Nota Fiscal de Serviço Eletrônica), NFC-e (Nota Fiscal de Consumidor Eletrônica), CT-e (Conhecimento de Transporte Eletrônico), SEFAZ (Secretaria da Fazenda), DANFE, chave de acesso, XML schema layout 4.00, certificado digital A1/A3, ICMS, IPI, PIS, COFINS, or any question about generating, transmitting, validating, or troubleshooting Brazilian electronic fiscal documents. Also trigger when advising on SEFAZ integration, contingency modes (EPEC, SVC), event handling (cancelamento, carta de correção), or NFS-e national system (SNNFSe). ALWAYS read this skill before touching any Brazil e-invoice work.
-version: 1.0
+  Use esta skill sempre que for questionado sobre nota fiscal eletrônica no Brasil, NF-e (Nota Fiscal Eletrônica), NFS-e (Nota Fiscal de Serviço Eletrônica), NFC-e (Nota Fiscal de Consumidor Eletrônica), CT-e (Conhecimento de Transporte Eletrônico), MDF-e, SEFAZ (Secretaria da Fazenda), DANFE, chave de acesso, layout XML 4.00, certificado digital A1/A3, ICMS, IPI, PIS, COFINS, CBS, IBS, ou qualquer questão sobre geração, transmissão, validação ou troubleshooting de documentos fiscais eletrônicos brasileiros. Acione também ao orientar sobre integração SEFAZ, modos de contingência (EPEC, SVC), eventos (cancelamento, carta de correção), sistema nacional NFS-e (SNNFSe) e a Reforma Tributária 2026 (CBS/IBS). SEMPRE leia esta skill antes de tocar em qualquer trabalho de nota fiscal eletrônica do Brasil. — Use this skill whenever asked about Brazil e-invoicing (NF-e, NFS-e, NFC-e, CT-e, MDF-e), SEFAZ integration, XML 4.00 layout, ICP-Brasil certificates, ICMS/IPI/PIS/COFINS, or the 2026 CBS/IBS Tax Reform impact on electronic fiscal documents. ALWAYS read this skill before touching any Brazil e-invoice work.
+version: 1.1
 jurisdiction: BR
+tax_year: 2025
 category: invoicing
+verified_by: pending
 depends_on:
   - einvoice-workflow-base
 ---
 
-# Brazil E-Invoice (NF-e / NFS-e) Skill v1.0
+# Brasil — Notas Fiscais Eletrônicas e Coretax (NF-e/NFS-e/CT-e) — Skill v1.1
 
 ---
 
-## Section 1 -- Quick Reference
+## Seção 1 — Referência Rápida
 
-| Field | Value |
+| Campo | Valor |
 |---|---|
-| Country | Federative Republic of Brazil |
-| Currency | BRL (Real) |
-| E-Invoicing System | Multi-document: NF-e, NFS-e, NFC-e, CT-e, MDF-e |
-| Governing Bodies | Federal: Receita Federal, ENCAT; State: SEFAZ (26 states + DF); Municipal: each municipality |
-| Key Legislation | Federal Constitution Art. 150/155; Lei Complementar 87/96 (ICMS); Ajuste SINIEF 07/2005; NT 2025.002 (tax reform) |
-| Schema Standard | Proprietary XML (W3C compliant); layout version 4.00 |
+| País | República Federativa do Brasil |
+| Moeda | BRL (Real) |
+| Sistema de Nota Fiscal Eletrônica | Multi-documento: NF-e, NFS-e, NFC-e, CT-e, MDF-e |
+| Órgãos Reguladores | Federal: Receita Federal, ENCAT, CGNFS-e; Estadual: SEFAZ (26 estados + DF); Municipal: cada município |
+| Principal Legislação | Constituição Federal Art. 150/155; Lei Complementar 87/96 (ICMS); LC 116/2003 (ISS); Ajuste SINIEF 07/2005; EC 132/2023; LC 214/2025; LC 227/2026; NT 2025.002 (Reforma Tributária CBS/IBS) |
+| Padrão de Schema | XML proprietário (compatível com W3C); layout versão 4.00 |
 | Namespace | http://www.portalfiscal.inf.br/nfe |
-| Implementation Start | 2006 (pilot); mandatory for all since 2014 |
-| Current Status | Fully operational; undergoing tax reform adaptation (IBS/CBS from 2026) |
+| Início da Implantação | 2006 (piloto); obrigatório universalmente desde 2014 |
+| Status Atual | Plenamente operacional; em adaptação à Reforma Tributária (IBS/CBS a partir de 2026) |
 | Portal | www.nfe.fazenda.gov.br (NF-e); www.gov.br/nfse (NFS-e Nacional) |
 
-### Document Type Overview
+### Panorama dos Tipos de Documento
 
-| Document | Full Name | Jurisdiction | Use Case |
+| Documento | Nome Completo | Esfera | Caso de Uso |
 |---|---|---|---|
-| NF-e (modelo 55) | Nota Fiscal Eletrônica | State (SEFAZ) | B2B goods sales, interstate transactions |
-| NFC-e (modelo 65) | Nota Fiscal de Consumidor Eletrônica | State (SEFAZ) | B2C point-of-sale retail |
-| NFS-e | Nota Fiscal de Serviço Eletrônica | Municipal → National (SNNFSe) | Services |
-| CT-e | Conhecimento de Transporte Eletrônico | State (SEFAZ) | Freight/transport |
-| MDF-e | Manifesto Eletrônico de Documentos Fiscais | State (SEFAZ) | Transport manifest |
+| NF-e (modelo 55) | Nota Fiscal Eletrônica | Estadual (SEFAZ) | Venda B2B de mercadorias, operações interestaduais |
+| NFC-e (modelo 65) | Nota Fiscal de Consumidor Eletrônica | Estadual (SEFAZ) | Varejo B2C ponto de venda |
+| NFS-e | Nota Fiscal de Serviço Eletrônica | Municipal → Nacional (SNNFSe) | Serviços |
+| CT-e | Conhecimento de Transporte Eletrônico | Estadual (SEFAZ) | Frete/transporte |
+| MDF-e | Manifesto Eletrônico de Documentos Fiscais | Estadual (SEFAZ) | Manifesto de transporte |
+| BP-e | Bilhete de Passagem Eletrônico | Estadual (SEFAZ) | Transporte de passageiros |
+| GTV-e | Guia de Transporte de Valores Eletrônica | Estadual (SEFAZ) | Transporte de valores |
 
 ---
 
-## Section 2 -- Mandate Scope
+## Seção 2 — Reforma Tributária 2026: NF-e/NFS-e com CBS e IBS
 
-### NF-e (Goods) — Universal Mandate
+### Visão Geral da Reforma
 
-- **All taxpayers** engaged in interstate commerce or in ICMS-taxable goods operations
-- No revenue threshold — mandatory for virtually all commercial/industrial establishments
-- Mandatory for: manufacturers, wholesale distributors, importers, exporters
-- Covers: sales, returns, transfers between branches, remittances, complementary/adjustment notes
+A Emenda Constitucional 132/2023, regulamentada pela Lei Complementar 214/2025 e complementada pela LC 227/2026, instituiu o novo modelo de tributação sobre o consumo no Brasil, criando dois tributos no padrão IVA dual:
 
-### NFC-e (B2C Retail)
+- **CBS (Contribuição sobre Bens e Serviços)** — tributo federal que substituirá PIS e Cofins
+- **IBS (Imposto sobre Bens e Serviços)** — tributo estadual/municipal que substituirá ICMS e ISS
+- **IS (Imposto Seletivo)** — tributo federal sobre bens e serviços prejudiciais à saúde ou ao meio ambiente
 
-- Replaces the old paper cupom fiscal (ECF)
-- Mandatory for retail establishments (phased in by state; now universal)
-- Simplified format; buyer identification optional for purchases < BRL 200
+### Marco Legal
 
-### NFS-e (Services)
-
-- Historically issued per municipal rules (each of Brazil's 5,570 municipalities had own system)
-- National NFS-e system (SNNFSe) launched for unified issuance
-- Transitioning to mandatory use of SNNFSe platform with IBS/CBS fields (2026 reform)
-- Service providers in all municipalities must comply
-
-### Document Events
-
-| Event | Code | Description |
-|---|---|---|
-| Cancelamento | 110111 | Cancel within 24 hours (7 days in some states) |
-| Carta de Correção | 110110 | Correction letter for non-financial errors |
-| Confirmação | 210200 | Buyer confirms receipt |
-| Desconhecimento | 210220 | Buyer does not recognize the operation |
-| EPEC | 110140 | Emergency contingency registration |
-
----
-
-## Section 3 -- Technical Format
-
-### NF-e XML Schema (Layout 4.00)
-
-| Aspect | Detail |
+| Norma | Conteúdo |
 |---|---|
-| Format | XML |
-| Layout Version | 4.00 (current since 2019) |
-| Root Element (submission) | `<enviNFe>` |
-| Root Element (single NF-e) | `<NFe>` containing `<infNFe>` |
+| EC 132/2023 | Reforma constitucional que cria CBS, IBS e IS |
+| LC 214/2025 | Lei Geral do IBS, CBS e IS — regras materiais |
+| LC 227/2026 | Lei Complementar do Comitê Gestor do IBS e regras processuais |
+| Ajuste SINIEF (a publicar 2026) | Layout dos novos campos nos documentos fiscais eletrônicos |
+| Notas Técnicas SEFAZ 2026 | NT 2025.002 e suplementares — leiaute XML para CBS/IBS |
+
+### Obrigatoriedade dos Novos Campos (2026)
+
+**A partir de 1º de janeiro de 2026, todos os documentos fiscais eletrônicos devem incluir os novos campos de CBS e IBS:**
+
+- NF-e modelo 55 (mercadorias)
+- NFS-e nacional (serviços, padrão unificado)
+- NFC-e modelo 65 (consumidor final)
+- CT-e (transporte de cargas)
+- MDF-e (manifesto)
+- BP-e e GTV-e (quando aplicável)
+
+### Alíquotas 2026 — Fase de Teste
+
+| Tributo | Alíquota 2026 | Observação |
+|---|---|---|
+| CBS | 0,9% | Alíquota simbólica federal |
+| IBS | 0,1% | Alíquota simbólica estadual/municipal |
+| **Total** | **1,0%** | Carga simbólica destinada apenas a testar layout e apurações |
+
+- Em 2026, os contribuintes calculam, declaram e demonstram CBS e IBS nos documentos fiscais, mas **não há recolhimento adicional efetivo** — os valores podem ser compensados com PIS/Cofins na sistemática vigente.
+- **Multas suspensas por 3 meses** após a publicação dos regulamentos finais, desde que o contribuinte demonstre boa-fé e cumpra com as obrigações acessórias mínimas.
+
+### Layouts Atualizados — NF-e 4.00
+
+A NT 2025.002 e suplementares introduzem novos grupos XML na NF-e versão 4.00:
+
+- Grupo `<CBS>` por item (`det/imposto/CBS`)
+- Grupo `<IBS>` por item (`det/imposto/IBS`), subdividido em `<IBS>` estadual e `<IBS>` municipal
+- Grupo `<IS>` por item (Imposto Seletivo), quando aplicável
+- Totais consolidados em `total/IBSCBSTot`
+- Novos códigos de CST específicos para CBS/IBS (em coexistência transitória com CST de ICMS/IPI/PIS/COFINS)
+
+Exemplo (estrutura simplificada do grupo CBS/IBS por item):
+
+```xml
+<imposto>
+  <ICMS>...</ICMS>
+  <PIS>...</PIS>
+  <COFINS>...</COFINS>
+  <CBS>
+    <CST>000</CST>
+    <vBC>1000.00</vBC>
+    <pCBS>0.9000</pCBS>
+    <vCBS>9.00</vCBS>
+  </CBS>
+  <IBS>
+    <IBSUF>
+      <CST>000</CST>
+      <vBC>1000.00</vBC>
+      <pIBSUF>0.0500</pIBSUF>
+      <vIBSUF>0.50</vIBSUF>
+    </IBSUF>
+    <IBSMun>
+      <CST>000</CST>
+      <vBC>1000.00</vBC>
+      <pIBSMun>0.0500</pIBSMun>
+      <vIBSMun>0.50</vIBSMun>
+    </IBSMun>
+  </IBS>
+</imposto>
+```
+
+### NFS-e Padrão Nacional Unificado
+
+- Padrão nacional consolidado conforme **LC 175/2020** e o **Convênio NFS-e** (assinado entre Receita Federal, estados e municípios via CGNFS-e).
+- A partir de 2026, o padrão nacional torna-se **obrigatório em todos os municípios**, com os campos de CBS e IBS embutidos nativamente.
+- Os municípios que ainda operam sistemas próprios devem migrar para o **Sistema Nacional NFS-e (SNNFSe)** ou adotar layout compatível.
+- A NFS-e nacional passa a ser o documento integrador entre prestador, tomador, município (IBS-Municipal) e União (CBS).
+
+### Cronograma da Transição
+
+| Ano | Fase |
+|---|---|
+| **2026** | Fase de teste — CBS 0,9% + IBS 0,1% simbólicos em todos os DF-e. Multas suspensas 3 meses. |
+| **2027** | CBS plenamente vigente; PIS e Cofins **extintos** dos campos da NF; IPI praticamente extinto (alíquota zero, exceto bens da Zona Franca de Manaus e produtos sujeitos ao Imposto Seletivo). |
+| **2028** | Continuação da CBS plena; ajustes de alíquotas; IBS permanece em alíquota de teste (0,1%). |
+| **2029** | **IBS em cobrança gradual** — alíquotas estaduais/municipais aumentam progressivamente; ICMS e ISS reduzem proporcionalmente. |
+| **2030–2032** | Transição contínua: IBS aumenta 10% ao ano; ICMS/ISS diminuem 10% ao ano. |
+| **2033** | **ICMS e ISS totalmente extintos** dos documentos fiscais eletrônicos. CBS e IBS plenamente vigentes em alíquotas finais. |
+
+### Implicações Operacionais Imediatas (2026)
+
+1. **Atualizar ERPs/emissores de DF-e** para gerar os novos grupos `<CBS>` e `<IBS>` em todos os itens.
+2. **Cadastrar novos CSTs** específicos de CBS/IBS no plano fiscal.
+3. **Validar parametrização de produtos** (NCM) — a Reforma traz nova classificação para regimes diferenciados (alimentos da cesta básica, saúde, educação, transporte coletivo etc.).
+4. **Testar transmissão em homologação** antes de 1º/jan/2026; SEFAZ disponibilizará ambiente de testes a partir do 2º semestre de 2025.
+5. **Treinar equipes** — contabilidade, fiscal e TI — sobre a coexistência transitória dos dois sistemas (ICMS/ISS/PIS/COFINS + CBS/IBS) em 2026.
+
+---
+
+## Seção 3 — Escopo da Obrigatoriedade
+
+### NF-e (Mercadorias) — Obrigatoriedade Universal
+
+- **Todos os contribuintes** que realizam comércio interestadual ou operações com mercadorias sujeitas ao ICMS
+- Sem limite de faturamento — obrigatória para praticamente todos os estabelecimentos comerciais/industriais
+- Obrigatória para: indústrias, atacadistas, importadores, exportadores
+- Cobertura: vendas, devoluções, transferências entre filiais, remessas, notas complementares/de ajuste
+
+### NFC-e (Varejo B2C)
+
+- Substitui o antigo cupom fiscal em papel (ECF)
+- Obrigatória para estabelecimentos varejistas (implantação faseada por estado; hoje universal)
+- Formato simplificado; identificação do comprador é opcional para compras inferiores a BRL 200
+
+### NFS-e (Serviços)
+
+- Historicamente emitida segundo regras municipais (cada um dos 5.570 municípios tinha sistema próprio)
+- Sistema Nacional NFS-e (SNNFSe) lançado para emissão unificada
+- Em transição para uso obrigatório da plataforma SNNFSe com campos de CBS/IBS (Reforma 2026)
+- Prestadores de serviço em todos os municípios devem atender ao padrão nacional
+
+### Eventos do Documento
+
+| Evento | Código | Descrição |
+|---|---|---|
+| Cancelamento | 110111 | Cancelamento em até 24 horas (7 dias em alguns estados) |
+| Carta de Correção | 110110 | Carta de correção para erros não financeiros |
+| Confirmação | 210200 | Destinatário confirma o recebimento |
+| Desconhecimento | 210220 | Destinatário desconhece a operação |
+| EPEC | 110140 | Registro prévio em contingência |
+
+---
+
+## Seção 4 — Formato Técnico
+
+### Schema XML da NF-e (Layout 4.00)
+
+| Aspecto | Detalhe |
+|---|---|
+| Formato | XML |
+| Versão do Layout | 4.00 (vigente desde 2019; mantida na Reforma 2026 com extensões CBS/IBS) |
+| Elemento Raiz (lote) | `<enviNFe>` |
+| Elemento Raiz (NF-e unitária) | `<NFe>` contendo `<infNFe>` |
 | Namespace | http://www.portalfiscal.inf.br/nfe |
-| Digital Signature Namespace | http://www.w3.org/2000/09/xmldsig# |
-| Schema Files | enviNFe_v4.00.xsd, leiauteNFe_v4.00.xsd, etc. |
-| Encoding | UTF-8 |
-| Signature Standard | XMLDSig (enveloped) using ICP-Brasil certificate |
+| Namespace da Assinatura Digital | http://www.w3.org/2000/09/xmldsig# |
+| Arquivos de Schema | enviNFe_v4.00.xsd, leiauteNFe_v4.00.xsd, etc. |
+| Codificação | UTF-8 |
+| Padrão de Assinatura | XMLDSig (enveloped) com certificado ICP-Brasil |
 
-### Access Key (Chave de Acesso) — 44 Digits
+### Chave de Acesso — 44 Dígitos
 
-| Position | Digits | Content |
+| Posição | Dígitos | Conteúdo |
 |---|---|---|
-| 1-2 | 2 | State code (UF IBGE) |
-| 3-6 | 4 | Year/Month (AAMM) |
-| 7-20 | 14 | CNPJ of issuer |
-| 21-22 | 2 | Model (55=NF-e, 65=NFC-e) |
-| 23-25 | 3 | Series |
-| 26-34 | 9 | NF-e number |
-| 35 | 1 | Emission type (tpEmis) |
-| 36-43 | 8 | Numeric code (random) |
-| 44 | 1 | Check digit (mod 11) |
+| 1-2 | 2 | Código da UF (IBGE) |
+| 3-6 | 4 | Ano/Mês (AAMM) |
+| 7-20 | 14 | CNPJ do emitente |
+| 21-22 | 2 | Modelo (55=NF-e, 65=NFC-e) |
+| 23-25 | 3 | Série |
+| 26-34 | 9 | Número da NF-e |
+| 35 | 1 | Tipo de emissão (tpEmis) |
+| 36-43 | 8 | Código numérico (aleatório) |
+| 44 | 1 | Dígito verificador (mod 11) |
 
-### Digital Certificate Requirements
+### Requisitos de Certificado Digital
 
-| Type | Description |
+| Tipo | Descrição |
 |---|---|
-| ICP-Brasil A1 | Software-based certificate (file .pfx); valid 1 year |
-| ICP-Brasil A3 | Hardware-based (smart card/token); valid 3 years |
-| Signing | Enveloped XMLDSig; SHA-256 recommended |
-| Certificate in XML | X509Certificate element in `<Signature>` |
+| ICP-Brasil A1 | Certificado em software (arquivo .pfx); validade de 1 ano |
+| ICP-Brasil A3 | Certificado em hardware (smart card/token); validade de 3 anos |
+| Assinatura | XMLDSig enveloped; SHA-256 recomendado |
+| Certificado no XML | Elemento X509Certificate dentro de `<Signature>` |
 
 ---
 
-## Section 4 -- Mandatory Fields
+## Seção 5 — Campos Obrigatórios
 
-### Identification (ide)
+### Identificação (ide)
 
-| Tag | Description | Example |
+| Tag | Descrição | Exemplo |
 |---|---|---|
-| cUF | State code (IBGE) | 35 (São Paulo) |
-| cNF | Random 8-digit code | 12345678 |
-| natOp | Nature of operation | "Venda de mercadoria" |
-| mod | Model | 55 |
-| serie | Series number | 1 |
-| nNF | NF-e number | 000000001 |
-| dhEmi | Emission date/time | 2026-05-22T14:30:00-03:00 |
-| tpNF | Direction (0=input, 1=output) | 1 |
-| idDest | Destination (1=internal, 2=interstate, 3=export) | 2 |
-| cMunFG | Municipality code (IBGE) of taxable event | 3550308 |
-| tpImp | DANFE print format | 1 (portrait) |
-| tpEmis | Emission type | 1 (normal) |
-| tpAmb | Environment (1=production, 2=homologation) | 1 |
-| finNFe | Purpose (1=normal, 2=complementary, 3=adjustment, 4=return) | 1 |
-| indFinal | Final consumer (0=no, 1=yes) | 0 |
-| indPres | Presence indicator | 1 (in-person) |
+| cUF | Código da UF (IBGE) | 35 (São Paulo) |
+| cNF | Código aleatório de 8 dígitos | 12345678 |
+| natOp | Natureza da operação | "Venda de mercadoria" |
+| mod | Modelo | 55 |
+| serie | Série | 1 |
+| nNF | Número da NF-e | 000000001 |
+| dhEmi | Data/hora de emissão | 2026-05-22T14:30:00-03:00 |
+| tpNF | Tipo (0=entrada, 1=saída) | 1 |
+| idDest | Destino (1=interna, 2=interestadual, 3=exportação) | 2 |
+| cMunFG | Código do município (IBGE) do fato gerador | 3550308 |
+| tpImp | Formato de impressão do DANFE | 1 (retrato) |
+| tpEmis | Tipo de emissão | 1 (normal) |
+| tpAmb | Ambiente (1=produção, 2=homologação) | 1 |
+| finNFe | Finalidade (1=normal, 2=complementar, 3=ajuste, 4=devolução) | 1 |
+| indFinal | Consumidor final (0=não, 1=sim) | 0 |
+| indPres | Indicador de presença | 1 (presencial) |
 
-### Issuer (emit)
+### Emitente (emit)
 
-| Tag | Description |
+| Tag | Descrição |
 |---|---|
-| CNPJ | 14-digit CNPJ |
-| xNome | Legal name |
-| xFant | Trade name |
-| IE | State tax registration (Inscrição Estadual) |
-| CRT | Tax regime (1=Simples Nacional, 2=SN excess, 3=Normal) |
-| enderEmit | Full address (xLgr, nro, xBairro, cMun, UF, CEP) |
+| CNPJ | CNPJ de 14 dígitos |
+| xNome | Razão social |
+| xFant | Nome fantasia |
+| IE | Inscrição Estadual |
+| CRT | Regime tributário (1=Simples Nacional, 2=SN excesso de sublimite, 3=Normal) |
+| enderEmit | Endereço completo (xLgr, nro, xBairro, cMun, UF, CEP) |
 
-### Recipient (dest)
+### Destinatário (dest)
 
-| Tag | Description |
+| Tag | Descrição |
 |---|---|
-| CNPJ or CPF | Recipient tax ID |
-| xNome | Name |
-| indIEDest | IE indicator (1=ICMS contributor, 2=exempt, 9=non-contributor) |
-| IE | State registration (if contributor) |
-| enderDest | Full address |
+| CNPJ ou CPF | Identificação fiscal do destinatário |
+| xNome | Nome |
+| indIEDest | Indicador de IE (1=contribuinte de ICMS, 2=isento, 9=não contribuinte) |
+| IE | Inscrição Estadual (se contribuinte) |
+| enderDest | Endereço completo |
 
-### Products (det/prod)
+### Produtos (det/prod)
 
-| Tag | Description |
+| Tag | Descrição |
 |---|---|
-| cProd | Internal product code |
-| cEAN | GTIN barcode (or "SEM GTIN") |
-| xProd | Product description |
-| NCM | Mercosur nomenclature code (8 digits) |
-| CFOP | Fiscal operation code (4 digits) |
-| uCom | Unit of measure |
-| qCom | Quantity |
-| vUnCom | Unit price |
-| vProd | Total product value (qCom × vUnCom) |
-| cEANTrib | Tax unit barcode |
-| uTrib | Tax unit of measure |
-| qTrib | Tax quantity |
-| vUnTrib | Tax unit price |
+| cProd | Código interno do produto |
+| cEAN | Código de barras GTIN (ou "SEM GTIN") |
+| xProd | Descrição do produto |
+| NCM | Nomenclatura Comum do Mercosul (8 dígitos) |
+| CFOP | Código Fiscal de Operações e Prestações (4 dígitos) |
+| uCom | Unidade comercial |
+| qCom | Quantidade comercial |
+| vUnCom | Valor unitário comercial |
+| vProd | Valor total do produto (qCom × vUnCom) |
+| cEANTrib | GTIN da unidade tributável |
+| uTrib | Unidade tributável |
+| qTrib | Quantidade tributável |
+| vUnTrib | Valor unitário tributável |
 
-### Taxes (det/imposto)
+### Tributos (det/imposto)
 
-| Tax Group | Tags | Description |
+| Grupo de Tributo | Tags | Descrição |
 |---|---|---|
-| ICMS | orig, CST/CSOSN, modBC, vBC, pICMS, vICMS | State goods circulation tax |
-| IPI | CST, vBC, pIPI, vIPI | Federal excise (manufactured goods) |
-| PIS | CST, vBC, pPIS, vPIS | Federal social contribution |
-| COFINS | CST, vBC, pCOFINS, vCOFINS | Federal social contribution |
+| ICMS | orig, CST/CSOSN, modBC, vBC, pICMS, vICMS | Imposto estadual sobre circulação de mercadorias |
+| IPI | CST, vBC, pIPI, vIPI | Imposto federal sobre produtos industrializados |
+| PIS | CST, vBC, pPIS, vPIS | Contribuição federal social |
+| COFINS | CST, vBC, pCOFINS, vCOFINS | Contribuição federal social |
+| **CBS** (2026+) | **CST, vBC, pCBS, vCBS** | **Contribuição sobre Bens e Serviços (Reforma)** |
+| **IBS** (2026+) | **CST, vBC, pIBSUF, vIBSUF, pIBSMun, vIBSMun** | **Imposto sobre Bens e Serviços — UF e Município (Reforma)** |
+| **IS** (2027+) | **CST, vBC, pIS, vIS** | **Imposto Seletivo (quando aplicável)** |
 
-### Totals (total/ICMSTot)
+### Totais (total/ICMSTot e total/IBSCBSTot)
 
-| Tag | Description |
+| Tag | Descrição |
 |---|---|
-| vBC | Total ICMS tax base |
-| vICMS | Total ICMS |
-| vProd | Total products |
-| vFrete | Total freight |
-| vSeg | Total insurance |
-| vDesc | Total discounts |
-| vIPI | Total IPI |
-| vPIS | Total PIS |
-| vCOFINS | Total COFINS |
-| vNF | Total NF-e value |
+| vBC | Base de cálculo total do ICMS |
+| vICMS | Total de ICMS |
+| vProd | Total de produtos |
+| vFrete | Total de frete |
+| vSeg | Total de seguro |
+| vDesc | Total de descontos |
+| vIPI | Total de IPI |
+| vPIS | Total de PIS |
+| vCOFINS | Total de COFINS |
+| **vCBS** (2026+) | **Total de CBS** |
+| **vIBS** (2026+) | **Total de IBS (UF + Município)** |
+| **vIS** (2027+) | **Total de IS** |
+| vNF | Valor total da NF-e |
 
 ---
 
-## Section 5 -- Transmission Method
+## Seção 6 — Método de Transmissão
 
-### SEFAZ Web Services
+### Web Services da SEFAZ
 
-| Service | WSDL Action | Purpose |
+| Serviço | Ação WSDL | Finalidade |
 |---|---|---|
-| NfeAutorizacao | NfeAutorizacaoLote | Submit batch of NF-e for authorization |
-| NfeRetAutorizacao | NfeRetAutorizacaoLote | Query authorization result |
-| NfeConsultaProtocolo | NfeConsulta | Query single NF-e status |
-| NfeInutilizacao | NfeInutilizacao | Number range cancellation |
-| RecepcaoEvento | NfeRecepcaoEvento | Submit events (cancel, correction, etc.) |
-| NfeStatusServico | NfeStatusServico | Check SEFAZ availability |
-| NfeDistribuicaoDFe | NFeDistribuicaoDFe | Download DFe addressed to taxpayer |
+| NfeAutorizacao | NfeAutorizacaoLote | Submeter lote de NF-e para autorização |
+| NfeRetAutorizacao | NfeRetAutorizacaoLote | Consultar resultado da autorização |
+| NfeConsultaProtocolo | NfeConsulta | Consultar status de uma NF-e |
+| NfeInutilizacao | NfeInutilizacao | Inutilizar faixa de numeração |
+| RecepcaoEvento | NfeRecepcaoEvento | Submeter eventos (cancelamento, correção etc.) |
+| NfeStatusServico | NfeStatusServico | Verificar disponibilidade da SEFAZ |
+| NfeDistribuicaoDFe | NFeDistribuicaoDFe | Baixar DF-e endereçados ao contribuinte |
 
-### SEFAZ Environments
+### Ambientes SEFAZ
 
-| Environment | URL Pattern | Purpose |
+| Ambiente | Padrão de URL | Finalidade |
 |---|---|---|
-| Production | https://nfe.sefaz{UF}.{domain}/... | Live transactions |
-| Homologation | https://homologacao.nfe.sefaz{UF}.{domain}/... | Testing |
+| Produção | https://nfe.sefaz{UF}.{domain}/... | Transações reais |
+| Homologação | https://homologacao.nfe.sefaz{UF}.{domain}/... | Testes |
 
-### Virtual SEFAZ (SVRS / SVC)
+### SEFAZ Virtual (SVRS / SVC)
 
-- States that don't host their own SEFAZ use SVRS (Sefaz Virtual RS) or SVAN (Sefaz Virtual AN)
-- Contingency modes: SVC-AN, SVC-RS (when primary SEFAZ is down)
-- EPEC: Evento Prévio de Emissão em Contingência (offline pre-registration)
+- Estados que não hospedam SEFAZ própria utilizam a SVRS (Sefaz Virtual RS) ou a SVAN (Sefaz Virtual AN)
+- Modos de contingência: SVC-AN, SVC-RS (quando a SEFAZ primária está indisponível)
+- EPEC: Evento Prévio de Emissão em Contingência (registro prévio offline)
 
-### Authorization Flow
+### Fluxo de Autorização
 
-1. Generate NF-e XML (all mandatory fields)
-2. Sign XML with ICP-Brasil certificate (XMLDSig enveloped)
-3. Submit to SEFAZ via NfeAutorizacao web service (synchronous or batch)
-4. SEFAZ validates schema, business rules, digital signature
-5. SEFAZ returns protocolo de autorização (authorization protocol) with status code
-6. Embed authorization protocol in NF-e XML (nfeProc) → legally valid document
-7. Generate DANFE (auxiliary printed document) for transport accompaniment
-8. Deliver XML to recipient within 24 hours
+1. Gerar o XML da NF-e (todos os campos obrigatórios, incluindo CBS/IBS a partir de 2026)
+2. Assinar o XML com certificado ICP-Brasil (XMLDSig enveloped)
+3. Submeter à SEFAZ pelo web service NfeAutorizacao (síncrono ou em lote)
+4. SEFAZ valida schema, regras de negócio e assinatura digital
+5. SEFAZ retorna o protocolo de autorização com código de status
+6. Embarcar o protocolo de autorização no XML da NF-e (`nfeProc`) → documento juridicamente válido
+7. Gerar o DANFE (documento auxiliar impresso) para acompanhar o transporte
+8. Entregar o XML ao destinatário em até 24 horas
 
 ---
 
-## Section 6 -- Validation Rules
+## Seção 7 — Regras de Validação
 
-### SEFAZ Validation Layers
+### Camadas de Validação da SEFAZ
 
-1. **Schema validation** — XML conforms to leiauteNFe_v4.00.xsd
-2. **Digital signature** — Valid ICP-Brasil certificate; signature mathematically correct
-3. **Business rules** — ~900+ validation rules defined in Notas Técnicas
-4. **Tax calculation** — ICMS, IPI, PIS, COFINS amounts verified against rates and bases
-5. **Cross-reference** — CNPJ/IE must be active in SEFAZ cadastro
-6. **GTIN validation** — Barcode must exist in CCG (Cadastro Centralizado de GTINs)
-7. **Duplicate check** — Same chave de acesso cannot be authorized twice
+1. **Validação de schema** — XML conforme leiauteNFe_v4.00.xsd
+2. **Assinatura digital** — Certificado ICP-Brasil válido; assinatura matematicamente correta
+3. **Regras de negócio** — Mais de 900 regras definidas nas Notas Técnicas
+4. **Cálculo tributário** — Valores de ICMS, IPI, PIS, COFINS (e a partir de 2026, CBS e IBS) verificados contra alíquotas e bases
+5. **Validação cadastral** — CNPJ/IE devem estar ativos no cadastro da SEFAZ
+6. **Validação de GTIN** — Código de barras deve existir no CCG (Cadastro Centralizado de GTINs)
+7. **Checagem de duplicidade** — A mesma chave de acesso não pode ser autorizada duas vezes
 
-### Common Rejection Codes
+### Códigos Comuns de Rejeição
 
-| Code | Description | Fix |
+| Código | Descrição | Correção |
 |---|---|---|
-| 204 | Duplicate NF-e (same access key) | Use new nNF or cNF |
-| 215 | Schema validation error | Fix XML structure per XSD |
-| 225 | Invalid destination state for CFOP | Align CFOP with idDest |
-| 301 | Irregular use of IE | Verify IE is active in destination state |
-| 539 | Duplicate NF-e (duplicate content) | Review NF-e number sequence |
-| 611 | GTIN not found in CCG | Register product GTIN or use "SEM GTIN" |
-| 778 | NCM incompatible with CFOP | Check NCM-CFOP alignment |
+| 204 | NF-e duplicada (mesma chave de acesso) | Usar novo nNF ou cNF |
+| 215 | Erro de validação de schema | Corrigir a estrutura XML conforme o XSD |
+| 225 | UF de destino inválida para o CFOP | Alinhar CFOP com idDest |
+| 301 | Uso irregular da IE | Verificar se a IE está ativa na UF de destino |
+| 539 | NF-e duplicada (conteúdo duplicado) | Revisar a sequência numérica da NF-e |
+| 611 | GTIN não encontrado no CCG | Cadastrar o GTIN do produto ou usar "SEM GTIN" |
+| 778 | NCM incompatível com o CFOP | Verificar alinhamento NCM-CFOP |
 
-### Authorization Status Codes
+### Códigos de Status de Autorização
 
-| Code | Meaning |
+| Código | Significado |
 |---|---|
-| 100 | Authorized |
-| 101 | Cancellation authorized |
-| 110 | Use denied (registered but not authorized) |
-| 135 | Event registered |
-| 301-999 | Various rejection codes |
+| 100 | Autorizado |
+| 101 | Cancelamento autorizado |
+| 110 | Uso denegado (registrado mas não autorizado) |
+| 135 | Evento registrado |
+| 301-999 | Diversos códigos de rejeição |
 
 ---
 
-## Section 7 -- Tax Computation Rules
+## Seção 8 — Regras de Cálculo Tributário
 
-### ICMS (State Tax)
+### ICMS (Tributo Estadual)
 
-- Rates vary by state and product (7%, 12%, 17%, 18%, 19%, 20%, 25% most common)
-- Interstate rates: 4% (imported goods), 7% (South/Southeast → other), 12% (other combinations)
-- ICMS-ST (substituição tributária): tax collected in advance by manufacturer/importer
-- DIFAL: differential rate for interstate B2C to final consumer
+- Alíquotas variam por estado e produto (7%, 12%, 17%, 18%, 19%, 20%, 25% são as mais comuns)
+- Alíquotas interestaduais: 4% (mercadorias importadas), 7% (origens Sul/Sudeste → demais regiões), 12% (demais combinações)
+- ICMS-ST (substituição tributária): tributo recolhido antecipadamente pelo fabricante/importador
+- DIFAL: diferencial de alíquota para operações interestaduais B2C ao consumidor final
 
-### IPI (Federal Excise)
+### IPI (Imposto Federal sobre Produtos Industrializados)
 
-- Applied on manufactured/imported goods
-- Rates from 0% to 365% depending on product (TIPI table)
-- Simples Nacional companies generally exempt from IPI credit
+- Aplicado sobre bens industrializados/importados
+- Alíquotas de 0% a 365% conforme o produto (tabela TIPI)
+- Empresas do Simples Nacional geralmente não tomam crédito de IPI
 
-### PIS/COFINS (Federal Social Contributions)
+### PIS/COFINS (Contribuições Sociais Federais)
 
-| Regime | PIS Rate | COFINS Rate | Method |
+| Regime | Alíquota PIS | Alíquota COFINS | Método |
 |---|---|---|---|
-| Cumulativo (presumed profit) | 0.65% | 3.00% | On gross revenue, no credits |
-| Não-cumulativo (real profit) | 1.65% | 7.60% | On revenue minus credits |
+| Cumulativo (lucro presumido) | 0,65% | 3,00% | Sobre a receita bruta, sem créditos |
+| Não cumulativo (lucro real) | 1,65% | 7,60% | Sobre a receita menos créditos |
 
-### Tax Reform (IBS/CBS) — From 2026
+### Reforma Tributária (IBS/CBS) — A Partir de 2026
 
-- NT 2025.002 introduces new XML groups for IBS (state/municipal) and CBS (federal)
-- Transitional period: IBS/CBS coexist with ICMS/ISS/PIS/COFINS until full replacement (2033)
-- New fields in NF-e XML for IBS and CBS amounts
+- A NT 2025.002 e Notas Técnicas SEFAZ a serem publicadas em 2026 introduzem novos grupos XML para IBS (estadual/municipal) e CBS (federal)
+- Período de transição: IBS/CBS coexistem com ICMS/ISS/PIS/COFINS até a substituição plena em 2033
+- Novos campos no XML da NF-e para os valores de IBS e CBS (por item e nos totais)
+- Em 2026, alíquotas simbólicas (CBS 0,9% + IBS 0,1%) servem para testar o sistema; multas suspensas por 3 meses
 
-### Rounding Rules
+### Regras de Arredondamento
 
-- Monetary values: 2 decimal places
-- Quantities: up to 4 decimal places
-- Unit prices: up to 10 decimal places
-- Tax rates: up to 4 decimal places
-- Tolerance in tax totals: BRL 0.01 per tax group
-
----
-
-## Section 8 -- Archiving Requirements
-
-| Requirement | Detail |
-|---|---|
-| Retention Period | Minimum 5 years from first day of following fiscal year (decadência tributária) |
-| Format | Original authorized XML (with protocolo de autorização embedded) |
-| Recipient Obligation | Must store received NF-e XML for same period |
-| DANFE | Not a substitute for XML; printed for transport only |
-| Events | All events (cancellation, correction letters) must be archived alongside |
-| Digital Signature | Preserved within the XML; no separate signature file |
-| Access | Must be producible on demand during fiscal audit (SEFAZ or Receita Federal) |
-| Backup | Recommended redundant storage; SEFAZ maintains copy but taxpayer remains responsible |
+- Valores monetários: 2 casas decimais
+- Quantidades: até 4 casas decimais
+- Preços unitários: até 10 casas decimais
+- Alíquotas: até 4 casas decimais
+- Tolerância em totais tributários: BRL 0,01 por grupo de tributo
 
 ---
 
-## Section 9 -- Penalties for Non-Compliance
+## Seção 9 — Requisitos de Guarda
 
-| Violation | Penalty |
+| Requisito | Detalhe |
 |---|---|
-| Operating without NF-e when required | 1% of transaction value (minimum BRL 500) per document; varies by state |
-| Issuing NF-e with incorrect data | Fine varies by state (typically 1% of NF-e value) |
-| Not transmitting NF-e to SEFAZ | Goods seizure during transport + fine |
-| Transporting goods without DANFE | Goods seizure + fine (state regulation) |
-| Not delivering XML to recipient | Administrative fine + recipient cannot claim credits |
-| Late cancellation | Fine; cancellation may be denied after deadline |
-| Operating with revoked/expired certificate | NF-e rejection; inability to operate |
-
-### State-Specific Penalty Ranges (Examples)
-
-| State | Typical Fine for Missing NF-e |
-|---|---|
-| São Paulo (SP) | 50% of transaction value (ICMS-related) |
-| Minas Gerais (MG) | 40% of transaction value |
-| Rio de Janeiro (RJ) | Minimum 5 UFIR-RJ per document |
-| Paraná (PR) | 30% of transaction value |
-
-Penalties compound if multiple violations occur in the same audit period.
+| Período de Guarda | Mínimo de 5 anos a contar do primeiro dia do exercício seguinte (decadência tributária) |
+| Formato | XML autorizado original (com o protocolo de autorização embarcado) |
+| Obrigação do Destinatário | Deve armazenar o XML da NF-e recebida pelo mesmo período |
+| DANFE | Não substitui o XML; impresso apenas para acompanhar o transporte |
+| Eventos | Todos os eventos (cancelamento, cartas de correção) devem ser arquivados em conjunto |
+| Assinatura Digital | Preservada dentro do XML; não há arquivo de assinatura separado |
+| Acesso | Deve ser apresentável sob demanda em fiscalização (SEFAZ ou Receita Federal) |
+| Backup | Recomenda-se armazenamento redundante; a SEFAZ mantém cópia, mas o contribuinte permanece responsável |
 
 ---
 
-## Section 10 -- Interaction with Tax Skills
+## Seção 10 — Penalidades por Não Conformidade
+
+| Infração | Penalidade |
+|---|---|
+| Operar sem NF-e quando obrigatória | 1% do valor da operação (mínimo BRL 500) por documento; varia por estado |
+| Emitir NF-e com dados incorretos | Multa varia por estado (tipicamente 1% do valor da NF-e) |
+| Não transmitir a NF-e à SEFAZ | Apreensão das mercadorias durante o transporte + multa |
+| Transportar mercadorias sem DANFE | Apreensão das mercadorias + multa (regulamento estadual) |
+| Não entregar XML ao destinatário | Multa administrativa + destinatário não pode tomar créditos |
+| Cancelamento extemporâneo | Multa; o cancelamento pode ser negado após o prazo |
+| Operar com certificado revogado/expirado | Rejeição da NF-e; impossibilidade de operar |
+
+### Faixas de Multa por Estado (Exemplos)
+
+| Estado | Multa Típica por NF-e Ausente |
+|---|---|
+| São Paulo (SP) | 50% do valor da operação (vinculada ao ICMS) |
+| Minas Gerais (MG) | 40% do valor da operação |
+| Rio de Janeiro (RJ) | Mínimo de 5 UFIR-RJ por documento |
+| Paraná (PR) | 30% do valor da operação |
+
+As penalidades se acumulam quando múltiplas infrações ocorrem no mesmo período fiscalizado.
+
+### Penalidades Específicas para a Reforma 2026
+
+- **Multas suspensas por 3 meses** após a publicação dos regulamentos finais para erros relativos aos novos campos de CBS/IBS, desde que o contribuinte demonstre boa-fé e cumpra as obrigações acessórias mínimas.
+- A não inclusão dos campos de CBS/IBS após o término do período de tolerância caracteriza descumprimento de obrigação acessória, sujeita à multa prevista na LC 214/2025.
+
+---
+
+## Seção 11 — Interação com Outras Skills Tributárias
 
 ### SPED Fiscal (EFD ICMS/IPI)
 
-- Monthly digital bookkeeping obligation that references all NF-e issued/received
-- Bloco C (goods) populated from NF-e XML data
-- Cross-validation: SPED entries must match SEFAZ-authorized NF-e records exactly
-- Discrepancies trigger automatic SEFAZ audit notices
+- Obrigação acessória mensal de escrituração digital que referencia todas as NF-e emitidas/recebidas
+- Bloco C (mercadorias) alimentado a partir dos dados do XML da NF-e
+- Validação cruzada: lançamentos do SPED devem coincidir exatamente com os registros de NF-e autorizadas pela SEFAZ
+- Divergências disparam notificações automáticas de fiscalização
 
 ### EFD-Contribuições (PIS/COFINS)
 
-- Federal digital bookkeeping for PIS/COFINS
-- Line-item detail from NF-e feeds into credit/debit calculations
-- CST codes in NF-e determine PIS/COFINS treatment in EFD
+- Escrituração digital federal de PIS/COFINS
+- Detalhe linha a linha da NF-e alimenta o cálculo de créditos/débitos
+- Códigos CST na NF-e determinam o tratamento de PIS/COFINS na EFD
+- A partir de 2027, com a extinção de PIS/Cofins, a EFD-Contribuições será adaptada ou substituída pela apuração consolidada da CBS
 
-### SPED ECD / ECF (Accounting / Corporate Tax)
+### SPED ECD / ECF (Contabilidade / Tributo sobre o Lucro)
 
-- Revenue recognized in corporate books must align with NF-e issuance
-- Receita Federal cross-references ECF declarations against NF-e aggregate data
+- A receita reconhecida nos livros contábeis deve estar alinhada à emissão das NF-e
+- A Receita Federal cruza as declarações ECF com os dados agregados das NF-e
 
-### NFS-e → ISS Return
+### NFS-e → Apuração do ISS / IBS
 
-- NFS-e data feeds municipal ISS (Imposto Sobre Serviços) return
-- With SNNFSe national system, ISS data will flow to national IBS calculations (reform)
+- Os dados da NFS-e alimentam a apuração municipal do ISS (Imposto Sobre Serviços)
+- Com o SNNFSe (Sistema Nacional NFS-e), os dados fluirão para o cálculo do IBS-Municipal na Reforma
+- Em 2033, o ISS é extinto; o IBS-Municipal é apurado integralmente a partir da NFS-e nacional
 
 ### DCTF / DARF
 
-- Federal tax payments (IPI, PIS, COFINS) reconciled against NF-e-derived obligations
-- Under tax reform: CBS replaces PIS/COFINS with data sourced from NF-e/NFS-e
+- Pagamentos de tributos federais (IPI, PIS, COFINS) reconciliados com obrigações derivadas das NF-e
+- Na Reforma Tributária: a CBS substitui PIS/COFINS, com dados originários da NF-e/NFS-e
+- A apuração da CBS migrará para a DCTFWeb ou para uma nova declaração específica do Comitê Gestor
 
-### Import/Export (DI/DUE)
+### Importação/Exportação (DI/DUE)
 
-- Export NF-e linked to DU-E (Declaração Única de Exportação)
-- Import NF-e references DI (Declaração de Importação) number
-- CFOP codes 3.xxx (imports) and 7.xxx (exports) tie to customs documentation
+- NF-e de exportação vinculada à DU-E (Declaração Única de Exportação)
+- NF-e de importação referencia o número da DI (Declaração de Importação)
+- CFOPs 3.xxx (importações) e 7.xxx (exportações) se vinculam à documentação aduaneira
 
 ---
 
-## Disclaimer
+## Aviso Legal
 
-This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a Contador, CRC-registered accountant, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
+Esta skill e suas saídas são fornecidas apenas para fins informativos e computacionais e não constituem aconselhamento tributário, jurídico ou financeiro. A Open Accountants e seus colaboradores não se responsabilizam por quaisquer erros, omissões ou resultados decorrentes do uso desta skill. Toda saída deve ser revisada e validada por um profissional qualificado (Contador registrado no CRC ou profissional licenciado equivalente em sua jurisdição) antes da entrega ou ato fiscal.
 
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com).
+A versão mais atualizada e verificada desta skill é mantida em [openaccountants.com](https://openaccountants.com).

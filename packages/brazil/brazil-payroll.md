@@ -1,414 +1,422 @@
 ---
 name: brazil-payroll
 description: >
-  Use this skill whenever asked about Brazilian payroll processing, employee salary calculations,
-  IRRF (Imposto de Renda Retido na Fonte), INSS contributions, FGTS deposits, 13º salário
-  (décimo terceiro), employer cost calculations, net-to-gross or gross-to-net conversions,
-  Brazilian payslip structure (holerite/contracheque), eSocial filings, or any question about
-  computing wages, deductions, or employer obligations in Brazil. Trigger on phrases like
-  "Brazilian payroll", "folha de pagamento", "INSS", "IRRF", "FGTS", "13º salário",
-  "décimo terceiro", "férias", "salário líquido", "holerite", "eSocial", "DCTF Web",
-  "employer cost Brazil", "CLT", "rescisão", "aviso prévio", or "salário mínimo Brasil".
-version: 1.0
+  Use esta skill sempre que perguntarem sobre processamento de folha de pagamento brasileira,
+  cálculo de salários, IRRF (Imposto de Renda Retido na Fonte), contribuições ao INSS, depósitos
+  de FGTS, 13º salário (décimo terceiro), custo do empregador, conversões de líquido para bruto
+  ou de bruto para líquido, estrutura de holerite/contracheque, eventos do eSocial, ou qualquer
+  questão sobre cálculo de remuneração, deduções ou obrigações do empregador no Brasil. Acione
+  com frases como "folha de pagamento brasileira", "folha de pagamento", "INSS", "IRRF", "FGTS",
+  "13º salário", "décimo terceiro", "férias", "salário líquido", "holerite", "eSocial",
+  "DCTF Web", "custo do empregador Brasil", "CLT", "rescisão", "aviso prévio", ou "salário mínimo Brasil".
+  / Use this skill whenever asked about Brazilian payroll processing, employee salary calculations,
+  IRRF, INSS contributions, FGTS deposits, 13th salary, employer cost, gross-to-net or net-to-gross
+  conversions, Brazilian payslip structure, eSocial filings, or any question about computing wages,
+  deductions, or employer obligations in Brazil.
+version: 1.1
 jurisdiction: BR
-category: payroll
+tax_year: 2025
+category: international
+verified_by: pending
 depends_on:
   - payroll-workflow-base
 ---
 
-# Brazil Payroll Skill v1.0
+# Brasil — Folha de Pagamento (INSS, FGTS, IRRF) — Skill v1.1
 
 ---
 
-## Section 1 -- Quick Reference
+## Seção 1 — Referência Rápida
 
-| Field | Value |
+| Campo | Valor |
 |---|---|
-| Country | Brazil (Federative Republic of Brazil) |
-| Currency | BRL (Real Brasileiro) |
-| Payroll frequency | Monthly (payment by 5th business day of following month) |
-| Tax year | Calendar year (1 January -- 31 December) |
-| Primary legislation | CLT (Consolidação das Leis do Trabalho, Decreto-Lei 5.452/1943); Lei 8.212/1991 (INSS); Lei 8.036/1990 (FGTS); Regulamento do IR (Decreto 9.580/2018) |
-| Tax authority | Receita Federal do Brasil (RFB) |
-| Labour authority | Ministério do Trabalho e Emprego (MTE) |
-| FGTS authority | Caixa Econômica Federal (CEF) |
-| Employee INSS | Progressive: 7.5% -- 14% (ceiling BRL 8,475.55/month) |
-| Employer INSS | 20% + RAT (1-3%) + Terceiros (~5.8%) |
-| FGTS | 8% of gross (employer-only deposit) |
-| IRRF | Progressive: 0% -- 27.5% |
-| Minimum wage | BRL 1,621/month (2026) |
-| eSocial events | Monthly, by 15th of following month |
-| FGTS Digital | Monthly deposit by 20th of following month |
-| Skill version | 1.0 |
+| País | Brasil (República Federativa do Brasil) |
+| Moeda | BRL (Real Brasileiro) |
+| Periodicidade da folha | Mensal (pagamento até o 5º dia útil do mês seguinte) |
+| Ano-calendário fiscal | Ano civil (1º de janeiro — 31 de dezembro) |
+| Legislação principal | CLT (Consolidação das Leis do Trabalho, Decreto-Lei 5.452/1943); Lei 8.212/1991 (INSS); Lei 8.036/1990 (FGTS); Regulamento do IR (Decreto 9.580/2018) |
+| Autoridade tributária | Receita Federal do Brasil (RFB) |
+| Autoridade trabalhista | Ministério do Trabalho e Emprego (MTE) |
+| Autoridade do FGTS | Caixa Econômica Federal (CEF) |
+| INSS do empregado | Progressivo: 7,5% — 14% (teto BRL 8.475,55/mês) |
+| INSS patronal | 20% + RAT (1-3%) + Terceiros (~5,8%) |
+| FGTS | 8% do salário bruto (depósito exclusivo do empregador) |
+| IRRF | Progressivo: 0% — 27,5% |
+| Salário mínimo | BRL 1.621/mês (2026) |
+| Eventos do eSocial | Mensais, até o dia 15 do mês seguinte |
+| FGTS Digital | Depósito mensal até o dia 20 do mês seguinte |
+| Versão da skill | 1.1 |
+
+A Reforma Tributária 2026 (EC 132/2023, LC 214/2025) é sobre tributos sobre consumo (CBS/IBS substituindo PIS/Cofins/ICMS/ISS/IPI). **Folha de pagamento — INSS, FGTS, IRRF, salário-família, salário-maternidade — não é afetada.**
 
 ---
 
-## Section 2 -- Income Tax Withholding (IRRF)
+## Seção 2 — Retenção de Imposto de Renda (IRRF)
 
-### IRRF Monthly Table (2026)
+### Tabela Mensal do IRRF (2026)
 
-| Monthly Taxable Income (BRL) | Rate | Deduction (BRL) |
+| Base de Cálculo Mensal (BRL) | Alíquota | Parcela a deduzir (BRL) |
 |---|---|---|
-| Up to 2,259.20 | 0% (exempt) | -- |
-| 2,259.21 -- 2,826.65 | 7.5% | 169.44 |
-| 2,826.66 -- 3,751.05 | 15% | 381.44 |
-| 3,751.06 -- 4,664.68 | 22.5% | 662.77 |
-| Above 4,664.68 | 27.5% | 896.00 |
+| Até 2.259,20 | 0% (isento) | — |
+| 2.259,21 — 2.826,65 | 7,5% | 169,44 |
+| 2.826,66 — 3.751,05 | 15% | 381,44 |
+| 3.751,06 — 4.664,68 | 22,5% | 662,77 |
+| Acima de 4.664,68 | 27,5% | 896,00 |
 
-### IRRF Calculation Method
+### Método de Cálculo do IRRF
 
-| Step | Detail |
+| Etapa | Detalhe |
 |---|---|
-| 1. Start with gross salary | All taxable remuneration for the month |
-| 2. Deduct INSS (employee) | Progressive INSS contribution |
-| 3. Deduct dependents | BRL 189.59 per dependent (2026) |
-| 4. Deduct alimony | Court-ordered payments (pensão alimentícia) |
-| 5. Deduct private pension (PGBL) | Up to 12% of gross annual income |
-| 6. Apply IRRF table | Rate × taxable base - deduction = IRRF |
+| 1. Partir do salário bruto | Toda remuneração tributável do mês |
+| 2. Deduzir INSS (empregado) | Contribuição previdenciária progressiva |
+| 3. Deduzir dependentes | BRL 189,59 por dependente (2026) |
+| 4. Deduzir pensão alimentícia | Pagamentos determinados judicialmente |
+| 5. Deduzir previdência privada (PGBL) | Até 12% da renda bruta anual |
+| 6. Aplicar tabela do IRRF | Alíquota × base tributável − parcela a deduzir = IRRF |
 
-### Special IRRF Rules
+### Regras Especiais do IRRF
 
-| Situation | Treatment |
+| Situação | Tratamento |
 |---|---|
-| 13º salário | IRRF calculated separately (not aggregated with monthly salary) |
-| Vacation pay (férias) | IRRF calculated on férias + 1/3 constitucional separately |
-| Profit sharing (PLR) | Separate progressive table (annual) |
-| Termination indemnities | Generally exempt from IRRF |
-| Overtime, bonuses, commissions | Added to monthly gross for IRRF calculation |
+| 13º salário | IRRF calculado separadamente (não agregado ao salário mensal) |
+| Férias | IRRF calculado sobre férias + 1/3 constitucional separadamente |
+| Participação nos lucros (PLR) | Tabela progressiva específica (anual) |
+| Verbas indenizatórias na rescisão | Geralmente isentas de IRRF |
+| Horas extras, bônus, comissões | Somados ao bruto mensal para cálculo do IRRF |
 
 ---
 
-## Section 3 -- Social Security: Employee Deductions (INSS)
+## Seção 3 — Previdência Social: Deduções do Empregado (INSS)
 
-### Progressive INSS Table (2026)
+### Tabela Progressiva do INSS (2026)
 
-| Monthly Salary (BRL) | Rate |
+| Salário Mensal (BRL) | Alíquota |
 |---|---|
-| Up to 1,621.00 | 7.5% |
-| 1,621.01 -- 2,902.84 | 9% |
-| 2,902.85 -- 4,354.27 | 12% |
-| 4,354.28 -- 8,475.55 (ceiling) | 14% |
+| Até 1.621,00 | 7,5% |
+| 1.621,01 — 2.902,84 | 9% |
+| 2.902,85 — 4.354,27 | 12% |
+| 4.354,28 — 8.475,55 (teto) | 14% |
 
-### Key INSS Rules
+### Regras Principais do INSS
 
-- Progressive (fatiada): each bracket applies only to the portion within that range
-- Maximum monthly contribution: ~BRL 951.64 (at ceiling)
-- Ceiling (teto): BRL 8,475.55/month (2026)
-- 13th salary INSS calculated separately (not added to monthly salary)
-- Multiple employment: salaries are summed for bracket determination; contributions allocated proportionally
-- INSS is deductible for IRRF calculation
+- Progressiva (fatiada): cada faixa aplica-se somente à parcela contida no respectivo intervalo
+- Contribuição mensal máxima: ~BRL 951,64 (no teto)
+- Teto: BRL 8.475,55/mês (2026)
+- INSS sobre 13º salário calculado separadamente (não somado ao salário mensal)
+- Múltiplos vínculos: os salários são somados para determinação da faixa; contribuições alocadas proporcionalmente
+- O INSS é dedutível na base de cálculo do IRRF
 
-### INSS Calculation Example (Salary BRL 5,000)
+### Exemplo de Cálculo do INSS (Salário BRL 5.000)
 
 ```
-Bracket 1: 1,621.00 × 7.5%  =  121.58
-Bracket 2: (2,902.84 - 1,621.00) × 9%  =  115.37
-Bracket 3: (4,354.27 - 2,902.84) × 12% =  174.17
-Bracket 4: (5,000.00 - 4,354.27) × 14% =   90.40
-Total INSS:                              =  501.52
+Faixa 1: 1.621,00 × 7,5%             =  121,58
+Faixa 2: (2.902,84 − 1.621,00) × 9%  =  115,37
+Faixa 3: (4.354,27 − 2.902,84) × 12% =  174,17
+Faixa 4: (5.000,00 − 4.354,27) × 14% =   90,40
+Total INSS:                          =  501,52
 ```
 
 ---
 
-## Section 4 -- Social Security: Employer Contributions
+## Seção 4 — Previdência Social: Contribuições do Empregador
 
-### Employer INSS (Contribuição Patronal)
+### INSS Patronal (Contribuição Patronal)
 
-| Component | Rate | Base |
+| Componente | Alíquota | Base |
 |---|---|---|
-| Basic employer INSS | 20% | Total payroll (no ceiling) |
-| RAT/SAT (workplace accident) | 1%, 2%, or 3% | Based on CNAE risk classification |
-| FAP adjustment | 0.5× to 2.0× | Multiplied by RAT (company-specific) |
-| Terceiros (third-party entities) | ~5.8% | SENAI, SESI, SEBRAE, INCRA, Salário-Educação, FNDE |
-| **Typical total employer INSS** | **~26.8% -- 28.8%** | Of total payroll |
+| INSS patronal básico | 20% | Folha total (sem teto) |
+| RAT/SAT (acidente de trabalho) | 1%, 2% ou 3% | Conforme classificação de risco do CNAE |
+| Ajuste FAP | 0,5× a 2,0× | Multiplicador aplicado ao RAT (específico por empresa) |
+| Terceiros (entidades terceiras) | ~5,8% | SENAI, SESI, SEBRAE, INCRA, Salário-Educação, FNDE |
+| **Total típico do INSS patronal** | **~26,8% — 28,8%** | Sobre o total da folha |
 
 ### FGTS (Fundo de Garantia do Tempo de Serviço)
 
-| Parameter | Detail |
+| Parâmetro | Detalhe |
 |---|---|
-| Rate | 8% of gross monthly remuneration |
-| Paid by | Employer only (NOT deducted from employee) |
-| Base | All remuneration: salary, overtime, bonuses, 13th, vacation pay |
-| Ceiling | None (applies to full salary) |
-| Deposit deadline | By 20th of following month (FGTS Digital) |
-| Platform | FGTS Digital (via eSocial integration) |
-| Termination without cause | Employer pays 40% penalty on total FGTS balance |
+| Alíquota | 8% da remuneração mensal bruta |
+| Pago por | Apenas pelo empregador (NÃO deduzido do empregado) |
+| Base | Toda remuneração: salário, horas extras, bônus, 13º, férias |
+| Teto | Nenhum (aplica-se ao salário integral) |
+| Prazo de depósito | Até o dia 20 do mês seguinte (FGTS Digital) |
+| Plataforma | FGTS Digital (via integração com eSocial) |
+| Rescisão sem justa causa | Empregador paga multa de 40% sobre o saldo total do FGTS |
 
-### Total Employer Burden (Approximate)
+### Encargo Total do Empregador (Aproximado)
 
-| Component | Rate |
+| Componente | Alíquota |
 |---|---|
-| Employer INSS + RAT + Terceiros | ~28.8% |
+| INSS patronal + RAT + Terceiros | ~28,8% |
 | FGTS | 8% |
-| 13º salário provision (1/12) | 8.33% |
-| Férias + 1/3 provision (1/12) | 11.11% |
-| Subtotal provisions | 19.44% |
-| FGTS/INSS on provisions | ~7% |
-| **Approximate total employer cost above gross** | **~60-70%** |
+| Provisão de 13º salário (1/12) | 8,33% |
+| Provisão de férias + 1/3 (1/12) | 11,11% |
+| Subtotal das provisões | 19,44% |
+| FGTS/INSS sobre provisões | ~7% |
+| **Custo total aproximado do empregador acima do bruto** | **~60-70%** |
 
 ---
 
-## Section 5 -- Minimum Wage and Overtime
+## Seção 5 — Salário Mínimo e Horas Extras
 
-### Minimum Wage (Salário Mínimo Nacional)
+### Salário Mínimo Nacional
 
-| Year | Monthly (BRL) | Daily (BRL) | Hourly (BRL) |
+| Ano | Mensal (BRL) | Diário (BRL) | Hora (BRL) |
 |---|---|---|---|
-| 2026 | 1,621.00 | 54.04 | 7.37 |
-| 2025 | 1,518.00 | 50.60 | 6.91 |
+| 2026 | 1.621,00 | 54,04 | 7,37 |
+| 2025 | 1.518,00 | 50,60 | 6,91 |
 
-- Set by Decreto nº 12.797/2025 (effective 1 January 2026)
-- Based on 220 hours/month (44 hours/week × 5 weeks)
-- Regional/state minimums may be higher (e.g., São Paulo, Rio de Janeiro, Paraná)
-- Piso salarial (professional floors) set by category conventions may exceed national minimum
+- Definido pelo Decreto nº 12.797/2025 (vigência a partir de 1º de janeiro de 2026)
+- Baseado em 220 horas/mês (44 horas/semana × 5 semanas)
+- Pisos estaduais/regionais podem ser superiores (ex.: São Paulo, Rio de Janeiro, Paraná)
+- Pisos salariais (categorias profissionais) por convenções podem superar o mínimo nacional
 
-### Working Hours and Overtime
+### Jornada de Trabalho e Horas Extras
 
-| Parameter | Standard |
+| Parâmetro | Padrão |
 |---|---|
-| Standard working week | 44 hours (8h/day Mon-Fri + 4h Saturday) |
-| Common alternative | 40 hours (collective agreement) |
-| Maximum daily hours | 10 hours (8 + 2 overtime) |
-| Overtime rate (regular days) | 50% supplement minimum |
-| Overtime rate (Sundays/holidays) | 100% supplement |
-| Night work supplement (22h-5h) | 20% minimum (noturno) |
-| Night hour duration | 52 minutes 30 seconds (reduced hour) |
-| Overtime bank (banco de horas) | Permitted via collective agreement (offset within 6-12 months) |
+| Jornada semanal padrão | 44 horas (8h/dia seg-sex + 4h sábado) |
+| Alternativa comum | 40 horas (acordo coletivo) |
+| Jornada diária máxima | 10 horas (8 + 2 de hora extra) |
+| Adicional de hora extra (dias úteis) | Mínimo de 50% |
+| Adicional de hora extra (domingos/feriados) | 100% |
+| Adicional noturno (22h-5h) | Mínimo de 20% |
+| Duração da hora noturna | 52 minutos e 30 segundos (hora reduzida) |
+| Banco de horas | Permitido via acordo coletivo (compensação em 6-12 meses) |
 
 ### Insalubridade / Periculosidade
 
-| Type | Additional |
+| Tipo | Adicional |
 |---|---|
-| Insalubridade (unhealthy conditions) | 10%, 20%, or 40% of minimum wage |
-| Periculosidade (dangerous conditions) | 30% of base salary |
-| Cannot cumulate | Employee chooses the more favourable |
+| Insalubridade (condições insalubres) | 10%, 20% ou 40% do salário mínimo |
+| Periculosidade (condições perigosas) | 30% do salário-base |
+| Não acumuláveis | Empregado escolhe a opção mais vantajosa |
 
 ---
 
-## Section 6 -- Mandatory Benefits
+## Seção 6 — Benefícios Obrigatórios
 
-| Benefit | Detail |
+| Benefício | Detalhe |
 |---|---|
-| 13º salário (Christmas bonus) | One full monthly salary, paid in two tranches |
-| Férias (vacation) | 30 calendar days + 1/3 constitutional supplement |
-| Vale-transporte (transport voucher) | Mandatory; employer bears cost exceeding 6% of base salary |
-| FGTS | 8% monthly deposit (employer-funded) |
-| Seguro-desemprego (unemployment) | 3-5 months (paid by government upon termination without cause) |
-| Salário-família (family allowance) | For low-income employees with children under 14 |
-| Licença-maternidade | 120 days (180 for Empresa Cidadã participants) |
-| Licença-paternidade | 5 days (20 for Empresa Cidadã) |
-| Work accident insurance (SAT/RAT) | Covered via employer INSS contribution |
+| 13º salário (gratificação natalina) | Um salário mensal integral, pago em duas parcelas |
+| Férias | 30 dias corridos + 1/3 constitucional |
+| Vale-transporte | Obrigatório; empregador arca com o custo que exceder 6% do salário-base |
+| FGTS | Depósito mensal de 8% (custeado pelo empregador) |
+| Seguro-desemprego | 3 a 5 meses (pago pelo governo na rescisão sem justa causa) |
+| Salário-família | Para empregados de baixa renda com filhos menores de 14 anos |
+| Licença-maternidade | 120 dias (180 dias para participantes do Empresa Cidadã) |
+| Licença-paternidade | 5 dias (20 para Empresa Cidadã) |
+| Seguro de acidentes de trabalho (SAT/RAT) | Coberto via contribuição patronal ao INSS |
 
 ### 13º Salário (Décimo Terceiro)
 
-| Tranche | Amount | Deadline | Deductions |
+| Parcela | Valor | Prazo | Deduções |
 |---|---|---|---|
-| 1st tranche | 50% of prior month's salary | By 30 November | No INSS/IRRF deducted |
-| 2nd tranche | Remaining 50% | By 20 December | INSS + IRRF on full 13º |
-| FGTS | 8% on each tranche | With monthly FGTS deposit | N/A |
-| Proportional | 1/12 per month worked (if < 12 months) | Pro-rated | Same rules |
+| 1ª parcela | 50% do salário do mês anterior | Até 30 de novembro | Sem desconto de INSS/IRRF |
+| 2ª parcela | 50% restantes | Até 20 de dezembro | INSS + IRRF sobre o 13º integral |
+| FGTS | 8% sobre cada parcela | Junto ao depósito mensal de FGTS | N/A |
+| Proporcional | 1/12 por mês trabalhado (se < 12 meses) | Proporcional | Mesmas regras |
 
-### Férias (Vacation)
+### Férias
 
-| Parameter | Detail |
+| Parâmetro | Detalhe |
 |---|---|
-| Entitlement | 30 calendar days after 12 months (período aquisitivo) |
-| Payment | Salary + 1/3 constitucional (terço de férias) |
-| Payment deadline | 2 business days before vacation start |
-| Abono pecuniário | Employee may sell up to 10 days (1/3 of vacation) |
-| INSS | Applies to vacation pay |
-| IRRF | Calculated separately on vacation pay |
-| FGTS | 8% on vacation pay (including 1/3) |
-| Collective vacation | Employer may grant (minimum 10 consecutive days) |
+| Direito | 30 dias corridos após 12 meses (período aquisitivo) |
+| Pagamento | Salário + 1/3 constitucional (terço de férias) |
+| Prazo de pagamento | Até 2 dias úteis antes do início das férias |
+| Abono pecuniário | Empregado pode vender até 10 dias (1/3 das férias) |
+| INSS | Incide sobre o pagamento de férias |
+| IRRF | Calculado separadamente sobre as férias |
+| FGTS | 8% sobre as férias (incluindo 1/3) |
+| Férias coletivas | Empregador pode conceder (mínimo de 10 dias consecutivos) |
 
 ### Vale-Transporte
 
-| Parameter | Detail |
+| Parâmetro | Detalhe |
 |---|---|
-| Mandatory | Yes, for all CLT employees who request it |
-| Employee contribution | Up to 6% of base salary |
-| Employer bears | Full cost minus the 6% employee deduction |
-| Exempt from | INSS, FGTS, IRRF (not considered salary) |
-| Form | Prepaid transport card or equivalent |
+| Obrigatório | Sim, para todos os empregados CLT que solicitarem |
+| Contribuição do empregado | Até 6% do salário-base |
+| Empregador arca com | Custo total menos a dedução de 6% do empregado |
+| Isento de | INSS, FGTS, IRRF (não considerado salário) |
+| Forma | Cartão de transporte pré-pago ou equivalente |
 
 ---
 
-## Section 7 -- Payslip Requirements
+## Seção 7 — Requisitos do Holerite
 
-Brazilian employers MUST issue a holerite/contracheque (payslip) for each salary payment. Required elements under CLT Article 464:
+Os empregadores brasileiros DEVEM emitir holerite/contracheque a cada pagamento de salário. Elementos exigidos pelo art. 464 da CLT:
 
-| Element | Mandatory |
+| Elemento | Obrigatório |
 |---|---|
-| Employer name, CNPJ, address | Yes |
-| Employee name, CPF, CTPS registration | Yes |
-| Position (cargo) and department | Yes |
-| Pay period (competência) | Yes |
-| Base salary (salário base) | Yes |
-| Overtime hours and value | Yes (if applicable) |
-| Night supplement (adicional noturno) | Yes (if applicable) |
-| Insalubridade/periculosidade | Yes (if applicable) |
-| Commissions, bonuses, gratifications | Yes |
-| Gross remuneration (remuneração bruta) | Yes |
-| INSS employee deduction | Yes |
-| IRRF deduction | Yes |
-| Vale-transporte deduction (6%) | Yes (if applicable) |
-| Other deductions (advances, benefits, union) | Yes |
-| Net salary (salário líquido) | Yes |
-| FGTS deposit (employer, informational) | Yes |
-| Base for FGTS and INSS | Recommended |
+| Nome do empregador, CNPJ, endereço | Sim |
+| Nome do empregado, CPF, registro em CTPS | Sim |
+| Cargo e departamento | Sim |
+| Período de competência | Sim |
+| Salário-base | Sim |
+| Horas extras e respectivo valor | Sim (se aplicável) |
+| Adicional noturno | Sim (se aplicável) |
+| Insalubridade/periculosidade | Sim (se aplicável) |
+| Comissões, bônus, gratificações | Sim |
+| Remuneração bruta | Sim |
+| Dedução de INSS do empregado | Sim |
+| Dedução de IRRF | Sim |
+| Dedução de vale-transporte (6%) | Sim (se aplicável) |
+| Outras deduções (adiantamentos, benefícios, sindical) | Sim |
+| Salário líquido | Sim |
+| Depósito de FGTS (empregador, informativo) | Sim |
+| Base de FGTS e INSS | Recomendado |
 
-### Record Retention
+### Guarda de Documentos
 
-- Payroll records: minimum 5 years (CLT)
-- FGTS records: 30 years
-- Tax records (IRRF): 5 years from filing
+- Registros de folha de pagamento: mínimo de 5 anos (CLT)
+- Registros de FGTS: 30 anos
+- Registros fiscais (IRRF): 5 anos a partir da entrega da declaração
 
 ---
 
-## Section 8 -- Filing Obligations
+## Seção 8 — Obrigações Acessórias
 
-| Filing | Frequency | Deadline | Authority |
+| Declaração | Periodicidade | Prazo | Autoridade |
 |---|---|---|---|
-| eSocial periodic events (S-1200 remuneration) | Monthly | 15th of following month | RFB/MTE |
-| eSocial closure (S-1299) | Monthly | 15th of following month | RFB/MTE |
-| DCTFWeb (tax declaration) | Monthly | 15th of following month (after eSocial closure) | Receita Federal |
-| FGTS Digital deposit | Monthly | 20th of following month | Caixa Econômica Federal |
-| IRRF payment (DARF) | Monthly | 20th of following month | Receita Federal |
-| 13º salário -- 1st tranche | Annual | 30 November | To employee |
-| 13º salário -- 2nd tranche | Annual | 20 December | To employee |
-| DIRF (Annual withholding declaration) | Annual | Last business day of February | Receita Federal |
-| RAIS (Annual Social Information Report) | Annual | March (being replaced by eSocial data) | MTE |
+| Eventos periódicos do eSocial (S-1200 remuneração) | Mensal | Dia 15 do mês seguinte | RFB/MTE |
+| Fechamento do eSocial (S-1299) | Mensal | Dia 15 do mês seguinte | RFB/MTE |
+| DCTFWeb (declaração tributária) | Mensal | Dia 15 do mês seguinte (após fechamento do eSocial) | Receita Federal |
+| Depósito do FGTS Digital | Mensal | Dia 20 do mês seguinte | Caixa Econômica Federal |
+| Pagamento de IRRF (DARF) | Mensal | Dia 20 do mês seguinte | Receita Federal |
+| 13º salário — 1ª parcela | Anual | 30 de novembro | Ao empregado |
+| 13º salário — 2ª parcela | Anual | 20 de dezembro | Ao empregado |
+| DIRF (Declaração anual de retenção) | Anual | Último dia útil de fevereiro | Receita Federal |
+| RAIS (Relação Anual de Informações Sociais) | Anual | Março (em substituição pelos dados do eSocial) | MTE |
 
-### eSocial Events (Key Payroll Events)
+### Eventos do eSocial (Principais Eventos de Folha)
 
-| Event | Description | Deadline |
+| Evento | Descrição | Prazo |
 |---|---|---|
-| S-1200 | Worker remuneration (monthly) | 15th of following month |
-| S-1210 | Payments made (dates and values) | 15th of following month |
-| S-1299 | Closure of periodic events | 15th of following month |
-| S-2200 | Employee registration (admission) | Day before start date |
-| S-2206 | Contract alteration (salary changes) | By payroll processing |
-| S-2299 | Termination | 10 days from termination |
-| S-2500 | Labour lawsuit | Per event |
-| S-1200 (13º) | 13th salary annual event | 20 December |
+| S-1200 | Remuneração do trabalhador (mensal) | Dia 15 do mês seguinte |
+| S-1210 | Pagamentos realizados (datas e valores) | Dia 15 do mês seguinte |
+| S-1299 | Fechamento dos eventos periódicos | Dia 15 do mês seguinte |
+| S-2200 | Cadastramento de empregado (admissão) | Véspera da data de início |
+| S-2206 | Alteração contratual (mudança salarial) | Até o processamento da folha |
+| S-2299 | Desligamento | 10 dias a contar da rescisão |
+| S-2500 | Processo trabalhista | Por evento |
+| S-1200 (13º) | Evento anual do 13º salário | 20 de dezembro |
 
 ### FGTS Digital
 
-| Parameter | Detail |
+| Parâmetro | Detalhe |
 |---|---|
-| Replaced | SEFIP/GFIP (legacy system) |
-| Integration | Automatic from eSocial events |
-| Payment | Via FGTS Digital portal (generates guia) |
-| Deadline | 20th of following month |
-| Labour lawsuits | Via FGTS Digital from 1 May 2026 (for new sentences) |
+| Substituiu | SEFIP/GFIP (sistema legado) |
+| Integração | Automática a partir dos eventos do eSocial |
+| Pagamento | Via portal do FGTS Digital (gera guia) |
+| Prazo | Dia 20 do mês seguinte |
+| Processos trabalhistas | Via FGTS Digital a partir de 1º de maio de 2026 (para novas sentenças) |
 
-### Penalties
+### Penalidades
 
-| Violation | Penalty |
+| Infração | Penalidade |
 |---|---|
-| Late FGTS | Interest (TR + 3%/year) + multa (5% first month, 10% thereafter) |
-| Late INSS | 20% fine + SELIC interest |
-| Late IRRF | 0.33%/day fine (max 20%) + SELIC interest |
-| Missing eSocial events | INR varies; can trigger audit/fines |
-| Non-payment of 13º | Fine per employee + possible labour lawsuit |
-| Late vacation payment | Payment in double (TST jurisprudence) |
+| FGTS em atraso | Juros (TR + 3% ao ano) + multa (5% no primeiro mês, 10% a partir do segundo) |
+| INSS em atraso | Multa de 20% + juros SELIC |
+| IRRF em atraso | Multa de 0,33%/dia (máx. 20%) + juros SELIC |
+| Falta de eventos do eSocial | Multa variável; pode gerar fiscalização/autuação |
+| Não pagamento do 13º | Multa por empregado + possível reclamação trabalhista |
+| Pagamento atrasado de férias | Pagamento em dobro (jurisprudência do TST) |
 
 ---
 
-## Section 9 -- Common Payroll Patterns
+## Seção 9 — Padrões Comuns de Folha de Pagamento
 
-### Pattern 1: Standard Monthly Salary (BRL 5,000, Single, No Dependents)
-
-```
-Gross salary:                        BRL 5,000.00
-- INSS (progressive):              -BRL    501.52
-= IRRF taxable base:                BRL 4,498.48
-- IRRF (22.5% - 662.77):          -BRL    349.39
-- Vale-transporte (6% of base):    -BRL    300.00
-= Net salary:                        BRL 3,849.09
-
-Employer cost:
-  Gross salary:                      BRL 5,000.00
-+ Employer INSS (20%):             +BRL 1,000.00
-+ RAT (2%):                        +BRL   100.00
-+ Terceiros (5.8%):                +BRL   290.00
-+ FGTS (8%):                       +BRL   400.00
-= Monthly employer cost (excl provisions): BRL 6,790.00
-
-Annual provisions:
-+ 13º salário + encargos:           ~BRL 6,500/year
-+ Férias + 1/3 + encargos:          ~BRL 8,700/year
-```
-
-### Pattern 2: Minimum Wage Worker (BRL 1,621)
+### Padrão 1: Salário Mensal Padrão (BRL 5.000, Solteiro, Sem Dependentes)
 
 ```
-Gross salary:                        BRL 1,621.00
-- INSS (7.5%):                     -BRL    121.58
-= IRRF taxable base:                BRL 1,499.42
-- IRRF:                             -BRL      0.00 (below exempt threshold)
-= Net salary (before VT):           BRL 1,499.42
-- Vale-transporte (6%):            -BRL     97.26
-= Net received:                      BRL 1,402.16
+Salário bruto:                        BRL 5.000,00
+− INSS (progressivo):              − BRL    501,52
+= Base de cálculo do IRRF:            BRL 4.498,48
+− IRRF (22,5% − 662,77):           − BRL    349,39
+− Vale-transporte (6% da base):    − BRL    300,00
+= Salário líquido:                    BRL 3.849,09
 
-Employer monthly cost:
-  Salary + INSS patronal + RAT + Terceiros + FGTS ≈ BRL 2,200
-  Annual total (with 13º, férias, encargos) ≈ BRL 31,000
+Custo do empregador:
+  Salário bruto:                      BRL 5.000,00
++ INSS patronal (20%):              + BRL 1.000,00
++ RAT (2%):                         + BRL   100,00
++ Terceiros (5,8%):                 + BRL   290,00
++ FGTS (8%):                        + BRL   400,00
+= Custo mensal do empregador (excl. provisões): BRL 6.790,00
+
+Provisões anuais:
++ 13º salário + encargos:           ~BRL 6.500/ano
++ Férias + 1/3 + encargos:          ~BRL 8.700/ano
 ```
 
-### Pattern 3: 13º Salário Calculation (Full Year, Salary BRL 5,000)
+### Padrão 2: Trabalhador com Salário Mínimo (BRL 1.621)
 
 ```
-1st tranche (by 30 November):
-  50% × 5,000 = BRL 2,500.00
-  No INSS or IRRF deducted
-  FGTS: 8% × 2,500 = BRL 200.00 (employer deposits)
+Salário bruto:                        BRL 1.621,00
+− INSS (7,5%):                     − BRL    121,58
+= Base de cálculo do IRRF:            BRL 1.499,42
+− IRRF:                            − BRL      0,00 (abaixo do limite de isenção)
+= Salário líquido (antes do VT):      BRL 1.499,42
+− Vale-transporte (6%):            − BRL     97,26
+= Líquido recebido:                   BRL 1.402,16
 
-2nd tranche (by 20 December):
-  Remaining: BRL 2,500.00
-  INSS on full 13º (5,000): -BRL 501.52
-  IRRF on (5,000 - 501.52) = 4,498.48: -BRL 349.39
-  Net 2nd tranche: BRL 2,500 - 501.52 - 349.39 = BRL 1,649.09
-  FGTS: 8% × 2,500 = BRL 200.00
+Custo mensal do empregador:
+  Salário + INSS patronal + RAT + Terceiros + FGTS ≈ BRL 2.200
+  Total anual (com 13º, férias, encargos) ≈ BRL 31.000
 ```
 
-### Pattern 4: Termination Without Cause (Rescisão Sem Justa Causa)
+### Padrão 3: Cálculo do 13º Salário (Ano Completo, Salário BRL 5.000)
 
-| Component | Calculation |
+```
+1ª parcela (até 30 de novembro):
+  50% × 5.000 = BRL 2.500,00
+  Sem desconto de INSS ou IRRF
+  FGTS: 8% × 2.500 = BRL 200,00 (depósito do empregador)
+
+2ª parcela (até 20 de dezembro):
+  Restante: BRL 2.500,00
+  INSS sobre o 13º integral (5.000): − BRL 501,52
+  IRRF sobre (5.000 − 501,52) = 4.498,48: − BRL 349,39
+  Líquido da 2ª parcela: BRL 2.500 − 501,52 − 349,39 = BRL 1.649,09
+  FGTS: 8% × 2.500 = BRL 200,00
+```
+
+### Padrão 4: Rescisão Sem Justa Causa
+
+| Componente | Cálculo |
 |---|---|
-| Outstanding salary | Days worked / 30 × monthly salary |
-| Proportional 13º | Months worked / 12 × salary |
-| Proportional vacation + 1/3 | Months since last período aquisitivo / 12 × salary × 4/3 |
-| Vested vacation + 1/3 (if any) | Full salary × 4/3 |
-| Aviso prévio (notice period) | 30 days + 3 per year of service (max 90 days) |
-| FGTS 40% penalty | 40% of total FGTS balance (employer pays to employee's FGTS account) |
-| FGTS on termination pay | 8% on all termination amounts |
+| Saldo de salário | Dias trabalhados / 30 × salário mensal |
+| 13º proporcional | Meses trabalhados / 12 × salário |
+| Férias proporcionais + 1/3 | Meses desde o último período aquisitivo / 12 × salário × 4/3 |
+| Férias vencidas + 1/3 (se houver) | Salário integral × 4/3 |
+| Aviso prévio | 30 dias + 3 por ano de serviço (máx. 90 dias) |
+| Multa de 40% do FGTS | 40% do saldo total do FGTS (empregador deposita na conta de FGTS do empregado) |
+| FGTS sobre verbas rescisórias | 8% sobre todos os valores rescisórios |
 
 ---
 
-## Section 10 -- Interaction with Other Skills
+## Seção 10 — Interação com Outras Skills
 
-| Skill | Interaction |
+| Skill | Interação |
 |---|---|
-| brazil-einvoice | No direct interaction (NF-e is for goods/services; payroll uses eSocial) |
-| payroll-workflow-base | General payroll processing workflow; Brazil-specific overrides in this skill |
+| brazil-einvoice | Sem interação direta (NF-e é para mercadorias/serviços; folha utiliza eSocial) |
+| payroll-workflow-base | Fluxo geral de processamento de folha; especificidades do Brasil tratadas nesta skill |
 
-### Brazil-Specific Payroll Considerations
+### Particularidades da Folha no Brasil
 
-- **CLT regime**: All formal employees (celetistas) are governed by CLT. Informal workers (MEI, autônomos, PJ) have entirely different contribution rules.
-- **eSocial is mandatory**: ALL payroll events must flow through eSocial. There is no alternative filing method for CLT employers.
-- **FGTS Digital transition**: As of 2024-2025, FGTS deposits transitioned to FGTS Digital (integrated with eSocial). Legacy SEFIP/GFIP only for historical corrections.
-- **Salary cannot decrease**: Under CLT, nominal salary cannot be reduced (princípio da irredutibilidade salarial), even by mutual agreement, except via collective bargaining.
-- **Union contributions**: Since 2017 Reform, union tax (contribuição sindical) is optional. Employee must explicitly authorize.
-- **Conventions and agreements**: Collective conventions (convenção coletiva) and agreements (acordo coletivo) can set floors, additional benefits, and overtime banks. ALWAYS check applicable convention by CNAE/sindicato.
-- **Proportional vacation**: After Labour Reform 2017, vacation can be split into up to 3 periods (minimum 14 days for one period, 5 days for others).
-- **Simples Nacional**: Micro and small enterprises on Simples Nacional have different INSS patronal rules (included in the unified DAS tax).
-- **RAT/FAP**: The effective workplace accident rate depends on the company's own accident history (FAP multiplier published annually by government). Always verify current FAP before computing employer INSS.
+- **Regime CLT**: Todos os empregados formais (celetistas) são regidos pela CLT. Trabalhadores informais (MEI, autônomos, PJ) têm regras de contribuição inteiramente distintas.
+- **eSocial é obrigatório**: TODOS os eventos da folha devem fluir pelo eSocial. Não há método alternativo de transmissão para empregadores CLT.
+- **Transição para o FGTS Digital**: Entre 2024-2025, os depósitos de FGTS migraram para o FGTS Digital (integrado ao eSocial). SEFIP/GFIP somente para acertos de períodos anteriores.
+- **Irredutibilidade salarial**: Pela CLT, o salário nominal não pode ser reduzido (princípio da irredutibilidade salarial), nem mesmo por acordo individual, salvo via negociação coletiva.
+- **Contribuição sindical**: Desde a Reforma Trabalhista de 2017, a contribuição sindical é facultativa. O empregado deve autorizar expressamente.
+- **Convenções e acordos coletivos**: Convenções coletivas e acordos coletivos podem estabelecer pisos, benefícios adicionais e banco de horas. SEMPRE verifique a convenção aplicável por CNAE/sindicato.
+- **Férias fracionadas**: Após a Reforma Trabalhista de 2017, as férias podem ser fracionadas em até 3 períodos (mínimo de 14 dias para um deles, 5 dias para os demais).
+- **Simples Nacional**: Microempresas e empresas de pequeno porte no Simples Nacional possuem regras distintas de INSS patronal (incluído no DAS unificado).
+- **RAT/FAP**: A alíquota efetiva de acidente de trabalho depende do histórico de acidentes da própria empresa (multiplicador FAP publicado anualmente pelo governo). Sempre verifique o FAP vigente antes de calcular o INSS patronal.
 
 ---
 
-## Disclaimer
+## Aviso Legal
 
-This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional before filing or acting upon.
+Esta skill e seus resultados são fornecidos exclusivamente para fins informativos e de cálculo e não constituem assessoria tributária, jurídica ou financeira. A Open Accountants e seus colaboradores não se responsabilizam por erros, omissões ou consequências decorrentes do uso desta skill. Todos os resultados devem ser revisados e validados por um profissional habilitado antes de qualquer entrega ou tomada de decisão.
 
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com).
+A versão mais atualizada e verificada desta skill é mantida em [openaccountants.com](https://openaccountants.com).
