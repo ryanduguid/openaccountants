@@ -50,8 +50,9 @@ This server mirrors the hosted server at `https://www.openaccountants.com/api/mc
 | `get_skill` | Given a skill `slug`, returns the full markdown plus a provenance/attribution footer. |
 | `get_skill_sections` | Given a `slug`, returns the skill parsed into sections (`heading`, `content`, `level`) for step-by-step application. |
 | `search_skills` | Keyword search across skill markdown (`query`, optional `jurisdiction`). Returns the matched section heading and a snippet. |
+| `submit_feedback` | Build a pre-filled GitHub New Issue URL the user opens to submit feedback (skill problem, missing jurisdiction, bug, etc.). Takes `summary` plus optional `title`, `skill_slug`, `jurisdiction`, `rating`. Returns `github_url`, `title`, `body`, `labels`. No server-side auth — user submits under their own account. |
 
-All access is **read-only** and **path-sandboxed** to the `packages/` directory.
+Skill access is **read-only** and **path-sandboxed** to the `packages/` directory; `submit_feedback` does not call GitHub itself, it only constructs a URL.
 
 ### The `start` flow
 
