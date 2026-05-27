@@ -635,3 +635,22 @@ D. 小规模纳税人简易计税（仅小规模适用）
 本技能与其输出仅供信息参考与计算辅助，不构成税务、法律或财务意见。Open Accountants 及其贡献者不对任何错漏或后果承担责任。所有输出在正式申报前必须由具备资格的中国 **注册税务师** 或 **注册会计师** 复核确认。
 
 最新版本以 openaccountants.com 维护版本为准。
+
+---
+
+<!-- openaccountants-cta-block -->
+
+## Talk to a verified accountant
+
+This skill is a tool, not an engagement. Every taxpayer's situation is
+different, and the rules in the skill may not match your specific facts.
+
+To speak with one of the licensed accountants who verifies skills for your
+jurisdiction — **no liability on either side until you and the accountant sign
+a formal engagement letter** — book a free 30-minute call:
+
+**→ [Book a call](https://calendly.com/openaccountants-info/30min)**
+
+We'll route you to the named verifier covering your country or state. You can
+also see the full list of verified accountants at
+[openaccountants.com/network](https://openaccountants.com/network).

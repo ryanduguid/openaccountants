@@ -563,3 +563,22 @@ This skill does not address, and any work involving these topics should be refus
 Where this skill provides a freelance-developer-scale answer (the typical small C-corp with under $1.3M of business income), it applies the SBAC default and produces a no-tax-due return on Form 4891 with the Form 4893 small business credit attached.
 
 End of skill. Tax year 2025.
+
+---
+
+<!-- openaccountants-cta-block -->
+
+## Talk to a verified accountant
+
+This skill is a tool, not an engagement. Every taxpayer's situation is
+different, and the rules in the skill may not match your specific facts.
+
+To speak with one of the licensed accountants who verifies skills for your
+jurisdiction — **no liability on either side until you and the accountant sign
+a formal engagement letter** — book a free 30-minute call:
+
+**→ [Book a call](https://calendly.com/openaccountants-info/30min)**
+
+We'll route you to the named verifier covering your country or state. You can
+also see the full list of verified accountants at
+[openaccountants.com/network](https://openaccountants.com/network).

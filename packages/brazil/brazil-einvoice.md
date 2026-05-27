@@ -529,3 +529,22 @@ As penalidades se acumulam quando múltiplas infrações ocorrem no mesmo perío
 Esta skill e suas saídas são fornecidas apenas para fins informativos e computacionais e não constituem aconselhamento tributário, jurídico ou financeiro. A Open Accountants e seus colaboradores não se responsabilizam por quaisquer erros, omissões ou resultados decorrentes do uso desta skill. Toda saída deve ser revisada e validada por um profissional qualificado (Contador registrado no CRC ou profissional licenciado equivalente em sua jurisdição) antes da entrega ou ato fiscal.
 
 A versão mais atualizada e verificada desta skill é mantida em [openaccountants.com](https://openaccountants.com).
+
+---
+
+<!-- openaccountants-cta-block -->
+
+## Talk to a verified accountant
+
+This skill is a tool, not an engagement. Every taxpayer's situation is
+different, and the rules in the skill may not match your specific facts.
+
+To speak with one of the licensed accountants who verifies skills for your
+jurisdiction — **no liability on either side until you and the accountant sign
+a formal engagement letter** — book a free 30-minute call:
+
+**→ [Book a call](https://calendly.com/openaccountants-info/30min)**
+
+We'll route you to the named verifier covering your country or state. You can
+also see the full list of verified accountants at
+[openaccountants.com/network](https://openaccountants.com/network).

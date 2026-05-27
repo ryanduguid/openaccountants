@@ -133,3 +133,22 @@ US GAAP ASC 842: substantially same lessor model.
 ## Section 7 — Disclaimer
 
 Maritime and aviation sector taxation is highly specialised. Outputs must be reviewed by credentialed shipping/aviation tax practitioners. The most up-to-date version is at [openaccountants.com](https://openaccountants.com).
+
+---
+
+<!-- openaccountants-cta-block -->
+
+## Talk to a verified accountant
+
+This skill is a tool, not an engagement. Every taxpayer's situation is
+different, and the rules in the skill may not match your specific facts.
+
+To speak with one of the licensed accountants who verifies skills for your
+jurisdiction — **no liability on either side until you and the accountant sign
+a formal engagement letter** — book a free 30-minute call:
+
+**→ [Book a call](https://calendly.com/openaccountants-info/30min)**
+
+We'll route you to the named verifier covering your country or state. You can
+also see the full list of verified accountants at
+[openaccountants.com/network](https://openaccountants.com/network).

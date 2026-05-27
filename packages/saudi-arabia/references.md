@@ -65,3 +65,22 @@ None of the three repos contain withholding tax rate tables or zakat computation
 
 - **Withholding tax (WHT):** 5% on management fees, 15% on royalties, 5% on rent, 20% on payments for services rendered in KSA — rates set by the Income Tax Law (Royal Decree No. M/1). A WHT skill would need to be authored from ZATCA's published WHT rate schedules, not from these e-invoicing repos.
 - **Zakat:** 2.5% on the zakat base (net adjusted assets × Saudi/GCC ownership percentage) — governed by the Zakat Collection Regulations. These e-invoicing repos do not touch zakat computation. A zakat skill would need to be authored from ZATCA's zakat guidelines and the Implementing Regulations.
+
+---
+
+<!-- openaccountants-cta-block -->
+
+## Talk to a verified accountant
+
+This skill is a tool, not an engagement. Every taxpayer's situation is
+different, and the rules in the skill may not match your specific facts.
+
+To speak with one of the licensed accountants who verifies skills for your
+jurisdiction — **no liability on either side until you and the accountant sign
+a formal engagement letter** — book a free 30-minute call:
+
+**→ [Book a call](https://calendly.com/openaccountants-info/30min)**
+
+We'll route you to the named verifier covering your country or state. You can
+also see the full list of verified accountants at
+[openaccountants.com/network](https://openaccountants.com/network).

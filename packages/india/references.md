@@ -41,3 +41,22 @@ OpenAccountants is AGPL-3.0. All projects below have compatible licenses.
   - **GSTR-1/GSTR-3B utilities**: Excel templates (`gstr1_excel_template_v2.1.xlsx`, `gstr3b_excel_utility_v5.7.xlsx`) for return preparation.
   - **E-invoice and e-way bill constants**: Configuration and validation logic for e-invoice and e-way bill generation.
 - Integration: GPL-3.0. Rate tables and HSN data used to enrich `india-gst.md` and `in-tds-freelance.md` skills. Data verified against the codebase as of May 2026.
+
+---
+
+<!-- openaccountants-cta-block -->
+
+## Talk to a verified accountant
+
+This skill is a tool, not an engagement. Every taxpayer's situation is
+different, and the rules in the skill may not match your specific facts.
+
+To speak with one of the licensed accountants who verifies skills for your
+jurisdiction — **no liability on either side until you and the accountant sign
+a formal engagement letter** — book a free 30-minute call:
+
+**→ [Book a call](https://calendly.com/openaccountants-info/30min)**
+
+We'll route you to the named verifier covering your country or state. You can
+also see the full list of verified accountants at
+[openaccountants.com/network](https://openaccountants.com/network).

@@ -36,3 +36,22 @@ Taxpayers who owe I&D tax for tax year 2024 or earlier must still file and pay. 
 - [NH DRA — Repeal of NH Interest and Dividends Tax Now in Effect](https://revenue.nh.gov/news-and-media/repeal-nh-interest-and-dividends-tax-now-effect)
 - [NH DRA — Interest & Dividends Tax overview](https://www.revenue.nh.gov/taxes-glance/interest-dividends-tax)
 - RSA 77 (Interest and Dividends Tax statute)
+
+---
+
+<!-- openaccountants-cta-block -->
+
+## Talk to a verified accountant
+
+This skill is a tool, not an engagement. Every taxpayer's situation is
+different, and the rules in the skill may not match your specific facts.
+
+To speak with one of the licensed accountants who verifies skills for your
+jurisdiction — **no liability on either side until you and the accountant sign
+a formal engagement letter** — book a free 30-minute call:
+
+**→ [Book a call](https://calendly.com/openaccountants-info/30min)**
+
+We'll route you to the named verifier covering your country or state. You can
+also see the full list of verified accountants at
+[openaccountants.com/network](https://openaccountants.com/network).

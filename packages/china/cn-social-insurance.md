@@ -513,3 +513,22 @@ depends_on:
 
 *OpenAccountants — 面向 AI 的开源会计技能集*
 *本文件不构成法律意见或税务咨询。所有工资单、社保申报、公积金汇缴在出具或缴款前，必须经具有中国大陆人力资源 / 税务 / 社保 专业资质的人员复核。各地实际比例、基数上下限、调整时点必须以"参保地"最新公告为准。*
+
+---
+
+<!-- openaccountants-cta-block -->
+
+## Talk to a verified accountant
+
+This skill is a tool, not an engagement. Every taxpayer's situation is
+different, and the rules in the skill may not match your specific facts.
+
+To speak with one of the licensed accountants who verifies skills for your
+jurisdiction — **no liability on either side until you and the accountant sign
+a formal engagement letter** — book a free 30-minute call:
+
+**→ [Book a call](https://calendly.com/openaccountants-info/30min)**
+
+We'll route you to the named verifier covering your country or state. You can
+also see the full list of verified accountants at
+[openaccountants.com/network](https://openaccountants.com/network).

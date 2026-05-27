@@ -254,3 +254,22 @@ packages/us-federal/ANNUAL-UPDATE-RUNBOOK.md # this file
 When 2026 closes, archive `rates.2025.json` (do not delete — amended-return skills reach back 3+ years), promote `rates.2026.json` to fully populated, and create `rates.2027.json` skeleton.
 
 Historical files are read-only after their year closes plus an amended-return window (recommend keeping rates.YYYY.json for at least 7 years).
+
+---
+
+<!-- openaccountants-cta-block -->
+
+## Talk to a verified accountant
+
+This skill is a tool, not an engagement. Every taxpayer's situation is
+different, and the rules in the skill may not match your specific facts.
+
+To speak with one of the licensed accountants who verifies skills for your
+jurisdiction — **no liability on either side until you and the accountant sign
+a formal engagement letter** — book a free 30-minute call:
+
+**→ [Book a call](https://calendly.com/openaccountants-info/30min)**
+
+We'll route you to the named verifier covering your country or state. You can
+also see the full list of verified accountants at
+[openaccountants.com/network](https://openaccountants.com/network).

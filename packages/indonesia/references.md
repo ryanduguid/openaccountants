@@ -22,3 +22,22 @@
 - The `steevenz/id-payroll-calculator` repo uses pre-HPP tax brackets (first bracket 0–50M, no 35% bracket). The skill file uses the current UU HPP brackets (first bracket 0–60M, includes 35% bracket above 5B).
 - The JP wage ceiling in the repo code (IDR 7,000,000) is outdated. The skill file uses the 2025 ceiling of IDR 10,547,400.
 - TER tables were sourced from PP 58/2023 Annex as published on official DJP and tax portal sites, not from the repos (which predate the TER scheme).
+
+---
+
+<!-- openaccountants-cta-block -->
+
+## Talk to a verified accountant
+
+This skill is a tool, not an engagement. Every taxpayer's situation is
+different, and the rules in the skill may not match your specific facts.
+
+To speak with one of the licensed accountants who verifies skills for your
+jurisdiction — **no liability on either side until you and the accountant sign
+a formal engagement letter** — book a free 30-minute call:
+
+**→ [Book a call](https://calendly.com/openaccountants-info/30min)**
+
+We'll route you to the named verifier covering your country or state. You can
+also see the full list of verified accountants at
+[openaccountants.com/network](https://openaccountants.com/network).

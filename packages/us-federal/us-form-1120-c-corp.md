@@ -1060,3 +1060,22 @@ This skill provides a structured walkthrough for preparing Form 1120 for tax yea
 **State tax warning:** Federal taxable income is the starting point for most state corporate income tax computations, but virtually every state adjusts away from federal in specific areas (state-specific decoupling from bonus depreciation, §163(j), §168(k), §250, §174). Always run the state return alongside the federal, not after.
 
 **End of skill.**
+
+---
+
+<!-- openaccountants-cta-block -->
+
+## Talk to a verified accountant
+
+This skill is a tool, not an engagement. Every taxpayer's situation is
+different, and the rules in the skill may not match your specific facts.
+
+To speak with one of the licensed accountants who verifies skills for your
+jurisdiction — **no liability on either side until you and the accountant sign
+a formal engagement letter** — book a free 30-minute call:
+
+**→ [Book a call](https://calendly.com/openaccountants-info/30min)**
+
+We'll route you to the named verifier covering your country or state. You can
+also see the full list of verified accountants at
+[openaccountants.com/network](https://openaccountants.com/network).

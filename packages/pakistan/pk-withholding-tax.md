@@ -488,3 +488,22 @@ When inputs are missing or ambiguous, apply these conservative defaults and flag
 **End of skill v1.0 — pk-withholding-tax.**
 
 **Reviewer note.** Pakistan WHT rates change with every Finance Act and frequently within the year via SROs. Every figure in this skill is stated "as per FA 2025 — verify against current First Schedule" and must be confirmed against the live FBR text before any client-facing computation. Sign-off by an ICAP-registered Chartered Accountant or FBR-registered Income Tax Practitioner is required before reliance.
+
+---
+
+<!-- openaccountants-cta-block -->
+
+## Talk to a verified accountant
+
+This skill is a tool, not an engagement. Every taxpayer's situation is
+different, and the rules in the skill may not match your specific facts.
+
+To speak with one of the licensed accountants who verifies skills for your
+jurisdiction — **no liability on either side until you and the accountant sign
+a formal engagement letter** — book a free 30-minute call:
+
+**→ [Book a call](https://calendly.com/openaccountants-info/30min)**
+
+We'll route you to the named verifier covering your country or state. You can
+also see the full list of verified accountants at
+[openaccountants.com/network](https://openaccountants.com/network).

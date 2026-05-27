@@ -52,3 +52,22 @@ OpenAccountants is AGPL-3.0. MIT and AGPL-3.0 content can be incorporated with a
 - [jonasgroth/swe-income-tax](https://github.com/jonasgroth/swe-income-tax) — MIT JavaScript income tax calculator, useful historically but old.
 - [jonas-johansson/SwedishEconomySDK](https://github.com/jonas-johansson/SwedishEconomySDK) — C# Swedish income tax SDK with examples validated against Skatteverket, useful as an additional reference.
 - [tessin/SKV260](https://github.com/tessin/SKV260) — .NET library for electronic reporting of Swedish control statements to Skatteverket.
+
+---
+
+<!-- openaccountants-cta-block -->
+
+## Talk to a verified accountant
+
+This skill is a tool, not an engagement. Every taxpayer's situation is
+different, and the rules in the skill may not match your specific facts.
+
+To speak with one of the licensed accountants who verifies skills for your
+jurisdiction — **no liability on either side until you and the accountant sign
+a formal engagement letter** — book a free 30-minute call:
+
+**→ [Book a call](https://calendly.com/openaccountants-info/30min)**
+
+We'll route you to the named verifier covering your country or state. You can
+also see the full list of verified accountants at
+[openaccountants.com/network](https://openaccountants.com/network).

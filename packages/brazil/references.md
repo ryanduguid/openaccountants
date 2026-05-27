@@ -36,3 +36,22 @@ OpenAccountants is AGPL-3.0. All projects below have compatible licenses.
 - Language: Portuguese / Kotlin
 - Scope: API to calculate taxes on stock exchange operations and assist with annual IRPF declaration. Supports B3 brokers, day-trade/swing-trade, FIIs, US stocks/REITs.
 - Integration: Reference for Brazilian investment tax computation patterns.
+
+---
+
+<!-- openaccountants-cta-block -->
+
+## Talk to a verified accountant
+
+This skill is a tool, not an engagement. Every taxpayer's situation is
+different, and the rules in the skill may not match your specific facts.
+
+To speak with one of the licensed accountants who verifies skills for your
+jurisdiction — **no liability on either side until you and the accountant sign
+a formal engagement letter** — book a free 30-minute call:
+
+**→ [Book a call](https://calendly.com/openaccountants-info/30min)**
+
+We'll route you to the named verifier covering your country or state. You can
+also see the full list of verified accountants at
+[openaccountants.com/network](https://openaccountants.com/network).

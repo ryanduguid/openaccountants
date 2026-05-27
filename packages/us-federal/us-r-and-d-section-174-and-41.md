@@ -859,3 +859,22 @@ This skill REFUSES to produce a final reviewer brief for:
 **Verification status.** `verified_by: pending` — this skill has not yet been signed off by a credentialed §41/§174 specialist. The lead US Federal verifier should review Sections 5 (four-part test), 7 (§41(h) mechanics), and 11 (worked examples) for accuracy before promotion to `verified_by: <name>`.
 
 **Last updated.** 2025-11-15. Next mandatory re-review: April 1, 2026 (after the 2025 filing season closes and any year-end extender legislation is enacted).
+
+---
+
+<!-- openaccountants-cta-block -->
+
+## Talk to a verified accountant
+
+This skill is a tool, not an engagement. Every taxpayer's situation is
+different, and the rules in the skill may not match your specific facts.
+
+To speak with one of the licensed accountants who verifies skills for your
+jurisdiction — **no liability on either side until you and the accountant sign
+a formal engagement letter** — book a free 30-minute call:
+
+**→ [Book a call](https://calendly.com/openaccountants-info/30min)**
+
+We'll route you to the named verifier covering your country or state. You can
+also see the full list of verified accountants at
+[openaccountants.com/network](https://openaccountants.com/network).

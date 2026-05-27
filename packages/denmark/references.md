@@ -29,3 +29,22 @@ OpenAccountants is AGPL-3.0. MIT-licensed projects below can be incorporated wit
 - Language: TypeScript
 - Scope: Tooling for reporting stock plan sales from E-Trade to Danish SKAT. Handles currency conversion (USD→DKK) using Nationalbanken rates, calculates gains using FIFO, and formats for SKAT reporting.
 - Integration approach: Reference for foreign stock income reporting to SKAT, FIFO methodology, and Nationalbanken FX rate sourcing.
+
+---
+
+<!-- openaccountants-cta-block -->
+
+## Talk to a verified accountant
+
+This skill is a tool, not an engagement. Every taxpayer's situation is
+different, and the rules in the skill may not match your specific facts.
+
+To speak with one of the licensed accountants who verifies skills for your
+jurisdiction — **no liability on either side until you and the accountant sign
+a formal engagement letter** — book a free 30-minute call:
+
+**→ [Book a call](https://calendly.com/openaccountants-info/30min)**
+
+We'll route you to the named verifier covering your country or state. You can
+also see the full list of verified accountants at
+[openaccountants.com/network](https://openaccountants.com/network).

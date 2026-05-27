@@ -27,3 +27,22 @@ OpenAccountants is AGPL-3.0. All projects below have compatible licenses.
 | Thông tư 111/2013/TT-BTC | Implementation circular for PIT |
 | Nghị quyết 954/2020/UBTVQH14 | CPI-triggered deduction adjustment mechanism |
 | Luật Quản lý Thuế No. 38/2019/QH14 | Tax administration law |
+
+---
+
+<!-- openaccountants-cta-block -->
+
+## Talk to a verified accountant
+
+This skill is a tool, not an engagement. Every taxpayer's situation is
+different, and the rules in the skill may not match your specific facts.
+
+To speak with one of the licensed accountants who verifies skills for your
+jurisdiction — **no liability on either side until you and the accountant sign
+a formal engagement letter** — book a free 30-minute call:
+
+**→ [Book a call](https://calendly.com/openaccountants-info/30min)**
+
+We'll route you to the named verifier covering your country or state. You can
+also see the full list of verified accountants at
+[openaccountants.com/network](https://openaccountants.com/network).

@@ -330,3 +330,22 @@ When the treatment is unclear:
 - **Form FIN 490** — Certificate of Exemption — General.
 
 > **Coordinate with:** `canada-gst-hst` (5% federal GST overlay on every BC taxable sale), `ca-bc-individual-return` (BC personal income tax — separate regime), and any sector-specific skill for liquor, cannabis, or fuel tax which fall outside this skill's scope.
+
+---
+
+<!-- openaccountants-cta-block -->
+
+## Talk to a verified accountant
+
+This skill is a tool, not an engagement. Every taxpayer's situation is
+different, and the rules in the skill may not match your specific facts.
+
+To speak with one of the licensed accountants who verifies skills for your
+jurisdiction — **no liability on either side until you and the accountant sign
+a formal engagement letter** — book a free 30-minute call:
+
+**→ [Book a call](https://calendly.com/openaccountants-info/30min)**
+
+We'll route you to the named verifier covering your country or state. You can
+also see the full list of verified accountants at
+[openaccountants.com/network](https://openaccountants.com/network).

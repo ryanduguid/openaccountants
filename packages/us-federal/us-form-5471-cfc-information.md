@@ -483,3 +483,22 @@ Three practitioner disciplines reduce penalty exposure to near-zero:
 3. **High-tax election analysis** — every CFC with effective foreign tax above 18.9% should have a documented analysis of the §954(b)(4) election, with the run-the-math comparison of (a) GILTI + §250 + §960 vs. (b) high-tax exclusion + §245A. The wrong choice — silently defaulting to "no election" because no one ran the analysis — costs real money on high-tax-jurisdiction CFCs.
 
 A reviewer Circular 230 sign-off on a Form 5471 should confirm: filing category correctly identified, all required schedules present, Schedule I reconciles to Schedule J PTEP movements, Schedule E-1 deemed-paid FTC ties to Schedule Q income groups, Schedule M intercompany transactions reconcile to the underlying intercompany agreements, the §954(b)(4) election (or its absence) is documented with the effective rate computation, and any §962 election by an individual shareholder is signed and attached. The skill defers all amount computations to the underlying corporate accounting records and the reviewer's substantive review; this skill provides the structural map.
+
+---
+
+<!-- openaccountants-cta-block -->
+
+## Talk to a verified accountant
+
+This skill is a tool, not an engagement. Every taxpayer's situation is
+different, and the rules in the skill may not match your specific facts.
+
+To speak with one of the licensed accountants who verifies skills for your
+jurisdiction — **no liability on either side until you and the accountant sign
+a formal engagement letter** — book a free 30-minute call:
+
+**→ [Book a call](https://calendly.com/openaccountants-info/30min)**
+
+We'll route you to the named verifier covering your country or state. You can
+also see the full list of verified accountants at
+[openaccountants.com/network](https://openaccountants.com/network).
