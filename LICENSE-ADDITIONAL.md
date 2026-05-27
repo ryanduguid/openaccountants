@@ -12,4 +12,4 @@ You must retain all copyright notices, the "Open Accountants" name, and links to
 
 ## Commercial licensing
 
-If the terms of the AGPL-3.0 do not work for your use case, a commercial license is available from Glimpse Ltd. See [COMMERCIAL_LICENSE.md](COMMERCIAL_LICENSE.md) for details, or contact info@openaaccountants.com.
+If the terms of the AGPL-3.0 do not work for your use case, a commercial license is available from Glimpse Ltd. See [COMMERCIAL_LICENSE.md](COMMERCIAL_LICENSE.md) for details, or contact info@openaccountants.com.
