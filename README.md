@@ -3,13 +3,30 @@
 
 # OpenAccountants
 
-Open-source accounting skills for AI. **716 skills across 134 countries + 51 US state packages + 13 Canadian province/territory packages.**
+Open-source accounting skills for AI. **890+ skills across 134 countries + 51 US state packages + 13 Canadian province/territory packages.**
 
 **11 accounting domains:** tax, bookkeeping, e-invoicing, payroll, company formation, financial statements, transfer pricing, tax optimization, **crypto tax**, cross-border, plus industry verticals and platform integrations.
 
-Upload to Claude, ChatGPT, or any LLM with your bank statement — or connect via **[MCP](#mcp-server)** so your AI loads the right skills automatically.
+---
 
-**Website:** [openaccountants.com](https://openaccountants.com)
+## ⚠️ Important — what's in this repo and what isn't
+
+OpenAccountants runs on a **two-layer model**:
+
+| Layer | Where it lives | Quality tier | How to get it |
+|---|---|---|---|
+| **Research drafts** (rules, rates, thresholds, workflow bases) | This GitHub repo | Tier 2 — research-verified, AI-drafted, not signed by a credentialed accountant | Clone, fork, audit, contribute. Use freely under [the AGPL-3.0 / commercial dual license](#license). |
+| **Accountant-verified skills** (signed off by a named licensed CPA / CA / EA / Steuerberater / equivalent) | **The website + MCP server at [openaccountants.com](https://openaccountants.com)** | Tier 1 — corrections applied, audit flash points reviewed, verifier name on every output | **Install the MCP connector** at [openaccountants.com/connect](https://openaccountants.com/connect). Your AI loads them automatically with the verifier's name on every answer. |
+
+**Why split?** The skill *rules* (rates, thresholds, statutes) are public domain restructured — those live here, open. The **verified version of record** — corrected by a named accountant, with their reputation on it — is served via the MCP so the AI-to-human handoff (`request_accountant_review`) can route users to a real CPA. That handoff is the product. The repo is the research base.
+
+**To USE OpenAccountants:** install the MCP connector at [openaccountants.com/connect](https://openaccountants.com/connect) — works with Claude.ai, ChatGPT, Cursor, Windsurf, and any other MCP-aware AI client.
+
+**To CONTRIBUTE or AUDIT:** you're in the right place. Open issues, submit PRs, verify your jurisdiction.
+
+---
+
+**Website:** [openaccountants.com](https://openaccountants.com) · **Install:** [openaccountants.com/connect](https://openaccountants.com/connect) · **Verifiers:** [openaccountants.com/network](https://openaccountants.com/network)
 
 ---
 
@@ -30,12 +47,12 @@ If you just want to dive in, pick your jurisdiction:
 
 ### Two ways to use OpenAccountants
 
-| Method | How it works | Best for |
+| Method | What you get | Best for |
 |--------|-------------|----------|
-| **Manual upload** | Download your country's folder, drag `.md` files into Claude / ChatGPT / any LLM | Quick one-off use, any LLM |
-| **MCP server** | Install once, add one line of config — your AI discovers and fetches skills automatically, every conversation | Developers, power users, Claude Desktop / Cursor |
+| **MCP connector** *(recommended)* | All **accountant-verified** skills, with named-verifier attribution and the AI-to-human handoff (`request_accountant_review` routes to a real CPA with your worksheet attached). Install at [openaccountants.com/connect](https://openaccountants.com/connect). | Anyone who actually wants to use OpenAccountants. Claude.ai, ChatGPT (paid Business+), Cursor, Windsurf, Claude Desktop, Claude Code, or any MCP-aware client. |
+| **Manual upload** from this repo | Only the **research-verified** drafts in this repo (no verifier name, no handoff). Download a folder, drag `.md` files into your LLM. | Developers / accountants who want to audit, fork, or contribute to the open library before installing. |
 
-Both methods use the same skill files. MCP just removes the manual step. See **[Quick start](#quick-start-60-seconds)** for uploads or **[MCP server](#mcp-server)** for the automated path.
+**The MCP path is the canonical product.** This repo is the open research base that backs it.
 
 ## Known limitations
 
@@ -43,7 +60,7 @@ Read this before you trust any output.
 
 - **LLMs hallucinate and misread.** These files steer the model; they do not guarantee correct numbers, classifications, or filings. Always have a qualified professional review before you act.
 - **Tax law changes.** Rates, thresholds, and forms go out of date. The repo is a snapshot; [openaccountants.com](https://openaccountants.com) may be ahead of what you cloned.
-- **Verification is in two tiers** — see [QUALITY-TIERS.md](docs/QUALITY-TIERS.md). **Accountant-verified** means a licensed practitioner has signed off on the skill (Malta full suite, Germany VAT, US federal bookkeeping + SE). **Research-verified** means every rate, threshold, and form reference has been drafted from authoritative sources but not yet signed off by a credentialed practitioner. Every skill is one or the other — there is no "draft" or "stub" tier.
+- **Verification is in two tiers** — see [QUALITY-TIERS.md](docs/QUALITY-TIERS.md). **Accountant-verified (Tier 1)** means a licensed practitioner has signed off and put their name on the skill. **These are served only via the MCP server at [openaccountants.com](https://openaccountants.com) — not from this repo.** **Research-verified (Tier 2)** means every rate, threshold, and form reference has been drafted from authoritative sources but not yet signed off by a credentialed practitioner. **This repo holds the Tier 2 drafts**; the Tier 1 signed versions live in the database behind the MCP server.
 - **Coverage is uneven.** Thirteen countries ship the full accounting suite (tax + bookkeeping + payroll + formation + financial statements + transfer pricing + tax optimization) in this repo; dozens more have multiple skills without that full stack; **many** jurisdictions are **VAT/GST-only** or partial. See **Coverage** below and each country folder's README.
 - **Newer domains need more eyes.** Bookkeeping, payroll, formation, financial statements, transfer pricing, and tax optimization skills are research-verified but have fewer accountant sign-offs than the core tax skills. Help us close that gap.
 
@@ -443,7 +460,7 @@ The most up-to-date, verified version is maintained at [openaccountants.com](htt
 
 ## Contact
 
-**info@openaaccountants.com**
+**info@openaccountants.com**
 
 ## License
 
