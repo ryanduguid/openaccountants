@@ -6,8 +6,9 @@ description: >
   standard deduction, dependent exemption, and estimated tax. Trigger: taxpayer is a Georgia
   resident or has Georgia-source income.
 jurisdiction: US-GA
-version: "0.1"
-validation_status: ai-drafted-q3
+version: "1.0"
+verified_by: Charlie Barmore, CPA (Georgia)
+tier: 1
 ---
 
 # Georgia Individual Income Tax Skill — Self-Employed / Sole Proprietor
@@ -90,7 +91,7 @@ You must file Georgia Form 500 if:
 
 ### Key subtractions from Georgia income (Schedule 3)
 - Social Security benefits (Georgia fully exempts Social Security from state income tax)
-- Retirement income exclusion: up to $65,000 per taxpayer age 62–64; up to $65,000 per taxpayer age 65+ (includes retirement plan distributions, interest, dividends, capital gains, rental income)
+- Retirement income exclusion under O.C.G.A. §48-7-27(a)(5): up to **$35,000** per taxpayer age 62–64; up to **$65,000** per taxpayer age 65+ (includes retirement plan distributions, interest, dividends, capital gains, rental income). Within the exclusion, earned income (wages, self-employment income) is capped at $4,000.
 - Georgia lottery winnings (first $5,000 exempt)
 - Military retirement income (up to $35,000 for taxpayers under 62)
 

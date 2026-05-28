@@ -1,12 +1,12 @@
 ---
 name: ga-payroll
-description: Tier 2 Georgia content skill for employer payroll compliance covering tax year 2025. Includes the GA PIT 5.39% flat (phasing down toward 4.99% by 2030 contingent on revenue triggers), G-4 state W-4 equivalent, G-7 quarterly withholding return, GA-V payment voucher for monthly/quarterly remittance, G-1003 annual reconciliation, GA UI wage base $9,500 with rates 0.04-8.10%, Administrative Assessment 0.06%, new-hire reporting via GA DOL within 10 days (shorter than federal 20-day deadline), and the absence of state-mandated paid sick leave or paid family leave.
+description: Tier 2 Georgia content skill for employer payroll compliance covering tax year 2025. Includes the GA PIT 5.19% flat (reduced from 5.39% by HB 111 signed April 15, 2025, retroactive to January 1, 2025; phasing down toward 4.99% by 2030 contingent on revenue triggers), G-4 state W-4 equivalent, G-7 quarterly withholding return, GA-V payment voucher for monthly/quarterly remittance, G-1003 annual reconciliation, GA UI wage base $9,500 with rates 0.04-8.10%, Administrative Assessment 0.06%, new-hire reporting via GA DOL within 10 days (shorter than federal 20-day deadline), and the absence of state-mandated paid sick leave or paid family leave.
 jurisdiction: US-GA
 category: state-tax
-tier: 2
-verified_by: pending
-last_updated: 2025-11-15
-version: 0.1
+tier: 1
+verified_by: Charlie Barmore, CPA (Georgia)
+last_updated: 2026-05-27
+version: 1.0
 ---
 
 # Georgia Payroll Compliance Skill (Tax Year 2025)
@@ -23,7 +23,7 @@ version: 0.1
 
 This skill covers Georgia employer payroll compliance for the 2025 tax year, including:
 
-1. **Georgia personal income tax (PIT) withholding** at the 2025 flat rate of **5.39%**, including the statutory phase-down toward **4.99% by 2030** subject to revenue triggers under House Bill 1437 (2022), as amended by House Bill 1015 (2024) and House Bill 111 (2024 Special Session) which accelerated the schedule.
+1. **Georgia personal income tax (PIT) withholding** at the 2025 flat rate of **5.19%**, reduced from 5.39% by **HB 111 (signed April 15, 2025, retroactive to January 1, 2025)**, with continued phase-down toward **4.99% by 2030** subject to revenue triggers under House Bill 1437 (2022) as amended by House Bill 1015 (2024) and HB 111 (2025).
 2. **Form G-4** — Georgia Employee's Withholding Allowance Certificate (the state W-4 equivalent).
 3. **Form G-7** — Quarterly withholding return for employer remittance reconciliation.
 4. **Form GA-V** — Withholding payment voucher used for monthly (or semi-weekly) and quarterly remittance depending on the employer's filing tier.
@@ -59,33 +59,33 @@ The following are explicitly out of scope for this skill:
 
 ### 2.1 The 2025 flat rate
 
-**Tax year 2025 Georgia PIT withholding rate: 5.39% flat.**
+**Tax year 2025 Georgia PIT withholding rate: 5.19% flat.**
 
-Statutory source: O.C.G.A. §48-7-20(b)(3) as amended by HB 1437 (2022), HB 1015 (2024), and HB 111 (2024 Special Session, Act effective April 2024). The 2024 base rate was 5.39%; HB 111 retained 5.39% for 2025 as the statutory floor for that report year while accelerating the longer-term schedule by reducing the floor in subsequent years.
+Statutory source: O.C.G.A. §48-7-20(b)(3) as amended by HB 1437 (2022), HB 1015 (2024), and **HB 111 (signed April 15, 2025)**. The 2024 base rate was 5.39%; HB 111 **reduced the rate to 5.19% retroactive to January 1, 2025**, and accelerated the phase-down schedule toward the long-term 4.99% target. GA DOR updated the TSD-WH Employer's Tax Guide in **June 2025** to reflect the 5.19% rate; employers who used 5.39% for January–May 2025 payrolls were instructed to adjust subsequent withholdings or true up at year end, with employees reconciling any overwithholding on Form 500.
 
-**Supplemental wages** (bonuses, commissions paid separately, stock award cash-outs, retro pay): the GA DOR Employer's Tax Guide (2025 edition) instructs employers to withhold at the same **5.39% flat rate** for supplemental wage payments. Georgia does not maintain a separate supplemental rate distinct from the regular rate the way the federal §3402(g) 22% supplemental rate operates.
+**Supplemental wages** (bonuses, commissions paid separately, stock award cash-outs, retro pay): the GA DOR Employer's Tax Guide (2025 edition, June 2025 revision) instructs employers to withhold at the same **5.19% flat rate** for supplemental wage payments. Georgia does not maintain a separate supplemental rate distinct from the regular rate the way the federal §3402(g) 22% supplemental rate operates.
 
 ### 2.2 Phase-down schedule (statutory, contingent on revenue triggers)
 
 The HB 1437 / HB 1015 / HB 111 phase-down is **not automatic** — it operates as a statutory ceiling with annual triggers tied to revenue collections, debt service coverage, and reserve fund levels under O.C.G.A. §48-7-20(b)(4)(B):
 
-| Report year | Statutory floor rate | Trigger requirement |
-|-------------|---------------------|---------------------|
+| Report year | Statutory rate | Trigger / authority |
+|-------------|---------------|---------------------|
 | 2024 | 5.39% | Effective from HB 1437 base |
-| 2025 | 5.39% | Retained as floor under HB 111 |
-| 2026 | 5.19% | Subject to FY 2025 revenue trigger |
+| 2025 | **5.19%** | **HB 111 (April 2025) reduced from 5.39%, retroactive to 1/1/2025** |
+| 2026 | 5.09% (expected) | Subject to FY 2025 revenue trigger |
 | 2027 | 4.99% | Subject to FY 2026 revenue trigger |
 | 2028 | 4.99% | Statutory floor (no further reductions absent new legislation) |
 | 2029 | 4.99% | Statutory floor |
 | 2030 | 4.99% | Statutory floor (long-term policy target) |
 
-> **AUDIT FLASH POINT — GA PIT phasing rate confusion.** Payroll software vendors, third-party processors, and even some CPAs are not consistently updating Georgia withholding tables when the rate changes mid-year-effective. The 2024 → 2025 transition retained 5.39% for both years, which is unusual. When a future trigger reduces the rate to 5.19% (planned 2026) or 4.99% (planned 2027), expect a wave of misconfigured payroll systems applying the prior-year rate into Q1, generating underwithholding the employer is legally on the hook for under O.C.G.A. §48-7-126. Before the first payroll of any new calendar year, confirm the employer's payroll system has loaded the current-year GA DOR Employer's Tax Guide rate. This is a recurring exam item GA DOR is actively scrutinizing on routine compliance audits.
+> **AUDIT FLASH POINT — GA PIT mid-year rate change for 2025.** Many payroll software vendors, third-party processors, and even some CPAs did not promptly update Georgia withholding tables when HB 111 dropped the 2025 rate to 5.19% in April 2025 (retroactive to January 1). Employers who continued withholding at 5.39% for Q2 and beyond **overwithheld** Georgia income tax; employees reconcile on Form 500 and receive refunds. Employers who switched promptly but did not adjust YTD on the next paycheck created a small mismatch on the G-1003 annual reconciliation. The reverse risk applies to **future** rate drops (5.09% expected 2026, 4.99% expected 2027): payroll systems that fail to load the new TSD-WH guide into Q1 will **underwithhold**, and the employer is legally on the hook under O.C.G.A. §48-7-126. Before the first payroll of any new calendar year, confirm the employer's payroll system has loaded the current-year GA DOR Employer's Tax Guide rate. This is a recurring exam item GA DOR is actively scrutinizing on routine compliance audits.
 
 ### 2.3 Withholding computation methods
 
 GA DOR publishes two methods in the annual Employer's Tax Guide (Publication TSD-WH):
 
-1. **Percentage method** — apply the 5.39% rate to wages after subtracting the per-pay-period equivalent of the employee's Form G-4 allowances and standard deduction. Used by most payroll software.
+1. **Percentage method** — apply the 5.19% rate to wages after subtracting the per-pay-period equivalent of the employee's Form G-4 allowances and standard deduction. Used by most payroll software.
 2. **Tax tables** — pre-computed lookup tables published by GA DOR for weekly, biweekly, semi-monthly, monthly, and daily/miscellaneous payroll frequencies. Used primarily by small employers running payroll manually.
 
 For 2025, the Georgia standard deduction effectively built into the withholding tables is:
@@ -104,16 +104,16 @@ Dependent exemption: **$4,000** per qualifying dependent (this remains in place 
 1. Annualized gross: $2,500 × 26 = $65,000.
 2. Less GA standard deduction (Single): $65,000 − $12,000 = $53,000.
 3. Less dependents (0): $53,000.
-4. Annual GA tax at 5.39%: $53,000 × 0.0539 = **$2,856.70**.
-5. Per-pay-period withholding: $2,856.70 ÷ 26 = **$109.87**.
+4. Annual GA tax at 5.19%: $53,000 × 0.0519 = **$2,750.70**.
+5. Per-pay-period withholding: $2,750.70 ÷ 26 = **$105.80**.
 
 If the same employee claimed 2 dependents on G-4:
 
 1. Annualized gross: $65,000.
 2. Less standard deduction: $65,000 − $12,000 = $53,000.
 3. Less dependents (2 × $4,000): $53,000 − $8,000 = $45,000.
-4. Annual tax: $45,000 × 0.0539 = **$2,425.50**.
-5. Per-pay-period: $2,425.50 ÷ 26 = **$93.29**.
+4. Annual tax: $45,000 × 0.0519 = **$2,335.50**.
+5. Per-pay-period: $2,335.50 ÷ 26 = **$89.83**.
 
 ---
 
@@ -563,7 +563,7 @@ If Atlanta Software Studio's payroll provider defaults to the federal 20-day cad
 **Step 2 — Devon's Georgia individual return.** Devon files Georgia Form 500 as a Georgia resident. He reports all $72,000 of wages on the Georgia return. He claims a **credit for taxes paid to Alabama** under O.C.G.A. §48-7-28 to avoid double taxation, limited to the lesser of (a) Alabama tax actually paid, or (b) the Georgia tax on the same income.
 
 - Alabama tax (at AL flat 5% / actually graduated up to 5% for high incomes — Alabama is graduated, not flat): assume $3,200.
-- Georgia tax on $72,000 at 5.39% after $12,000 standard deduction: ($72,000 − $12,000) × 5.39% = $60,000 × 5.39% = **$3,234**.
+- Georgia tax on $72,000 at 5.19% after $12,000 standard deduction: ($72,000 − $12,000) × 5.19% = $60,000 × 5.19% = **$3,114**.
 - Credit allowed: lesser of $3,200 (AL paid) and $3,234 (GA on same income) = **$3,200**.
 - Net Georgia tax owed: $3,234 − $3,200 = **$34**.
 
@@ -611,7 +611,7 @@ All four prongs fail. Under O.C.G.A. §34-8-35(n) Carlos is **presumptively an e
 - Administrative Assessment: $9,500 × 0.06% = $5.70.
 - Penalty under O.C.G.A. §34-8-165: 10% × $256.50 × 4 quarters = $102.60 (minimum $35/quarter floor binds in any quarter where 10% is lower).
 - Interest at 1.5%/month from each original quarterly due date.
-- Cross-referral to GA DOR: assessment of unwithheld Georgia income tax on Carlos's wages. At 5.39% with no G-4 (single/zero default): roughly $48,000 × 5.39% = $2,587, plus 9% interest under O.C.G.A. §48-2-40 and possibly 100% failure-to-withhold penalty under O.C.G.A. §48-7-126.
+- Cross-referral to GA DOR: assessment of unwithheld Georgia income tax on Carlos's wages. At 5.19% with no G-4 (single/zero default): roughly $48,000 × 5.19% = $2,491, plus 9% interest under O.C.G.A. §48-2-40 and possibly 100% failure-to-withhold penalty under O.C.G.A. §48-7-126.
 - Cross-referral to Workers' Compensation Board: with Carlos counted, Peachtree had 6 employees (5 W-2 + Carlos), so workers' comp was already required. If Carlos was injured during the period and Peachtree's workers' comp policy excluded him as a "1099," uninsured-employer liability under O.C.G.A. §34-9-126 — civil penalty up to $10,000 plus treble damages payable to Carlos for any work injury.
 
 **Reviewer recommendation.** Reclassify Carlos as a W-2 employee prospectively. Discuss with Peachtree's counsel whether to file amended returns voluntarily (potentially mitigating penalties) or wait for audit assessment. Document the 4 P's analysis in the file.
@@ -639,7 +639,7 @@ When this skill is loaded alongside the federal payroll content skills, the foll
 | Final pay | n/a (state matter) | Next regular payday under O.C.G.A. §34-7-2 |
 | Paid sick leave | None federal | **None** in Georgia |
 | Paid family leave | None federal (FMLA is unpaid) | **None** in Georgia |
-| Supplemental wage withholding | Federal 22% / 37% under §3402(g) | GA flat **5.39%** for 2025 |
+| Supplemental wage withholding | Federal 22% / 37% under §3402(g) | GA flat **5.19%** for 2025 |
 
 ---
 
@@ -721,7 +721,8 @@ A reviewer signing off on a 2025 Georgia payroll engagement should confirm:
 **Legislation:**
 - HB 1437 (Ga. 2022 Regular Session) — flat tax conversion and phase-down.
 - HB 1015 (Ga. 2024 Regular Session) — rate acceleration.
-- HB 111 (Ga. 2024 Special Session) — 5.39% floor for 2025, schedule revision.
+- HB 111 (Ga. 2025) — signed April 15, 2025; reduced PIT rate to 5.19% retroactive to January 1, 2025; accelerated phase-down schedule toward 4.99% target.
+- GA DOR Employer's Tax Guide (TSD-WH), June 2025 revision — implementation guidance for HB 111 mid-year rate change.
 
 ---
 
