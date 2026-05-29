@@ -1,14 +1,14 @@
 {
   "version": "2.2",
-  "generated": "2026-05-24",
-  "total_skills": 771,
+  "generated": "2026-05-29",
+  "total_skills": 781,
   "quality_breakdown": {
-    "research-verified": 758,
+    "research-verified": 768,
     "accountant-verified": 13
   },
   "obligation_breakdown": {
     "IT": 112,
-    "OTHER": 165,
+    "OTHER": 175,
     "CT": 177,
     "INT": 10,
     "SSC": 21,
@@ -47,14 +47,14 @@
   "skills": [
     {
       "id": "ab-individual-return",
-      "jurisdiction": "CA-AB",
+      "jurisdiction": "CA",
       "obligation": "IT",
       "quality": "research-verified",
       "category": "international",
       "tax_year": "2025",
       "path": "international/canada/alberta/ab-individual-return.md",
       "size_kb": 9.8,
-      "lines": 247
+      "lines": 248
     },
     {
       "id": "ae-corporate-tax",
@@ -586,14 +586,14 @@
     },
     {
       "id": "bc-individual-return",
-      "jurisdiction": "CA-BC",
+      "jurisdiction": "CA",
       "obligation": "IT",
       "quality": "research-verified",
       "category": "international",
       "tax_year": "2025",
       "path": "international/canada/british-columbia/bc-individual-return.md",
       "size_kb": 8.7,
-      "lines": 265
+      "lines": 266
     },
     {
       "id": "bd-bookkeeping",
@@ -1770,7 +1770,7 @@
       "tax_year": "2025",
       "path": "international/germany/de-estimated-tax.md",
       "size_kb": 14.1,
-      "lines": 342
+      "lines": 343
     },
     {
       "id": "de-freelance-intake",
@@ -1803,7 +1803,7 @@
       "tax_year": "2025",
       "path": "international/germany/de-income-tax.md",
       "size_kb": 26.1,
-      "lines": 571
+      "lines": 572
     },
     {
       "id": "de-payroll",
@@ -1814,7 +1814,7 @@
       "tax_year": "2025",
       "path": "international/germany/de-payroll.md",
       "size_kb": 23.6,
-      "lines": 524
+      "lines": 525
     },
     {
       "id": "de-rental-income",
@@ -1846,8 +1846,8 @@
       "category": "international",
       "tax_year": "2025",
       "path": "international/germany/de-social-contributions.md",
-      "size_kb": 21.5,
-      "lines": 473
+      "size_kb": 21.6,
+      "lines": 474
     },
     {
       "id": "de-trade-tax",
@@ -1858,7 +1858,7 @@
       "tax_year": "2025",
       "path": "international/germany/de-trade-tax.md",
       "size_kb": 19.1,
-      "lines": 412
+      "lines": 413
     },
     {
       "id": "deadline-engine",
@@ -2378,6 +2378,28 @@
       "lines": 221
     },
     {
+      "id": "financial-reporting-router",
+      "jurisdiction": "GLOBAL",
+      "obligation": "OTHER",
+      "quality": "research-verified",
+      "category": "financial-reporting",
+      "tax_year": "",
+      "path": "financial-reporting/financial-reporting-router.md",
+      "size_kb": 10.9,
+      "lines": 201
+    },
+    {
+      "id": "financial-reporting-workflow-base",
+      "jurisdiction": "GLOBAL",
+      "obligation": "OTHER",
+      "quality": "research-verified",
+      "category": "financial-reporting",
+      "tax_year": "",
+      "path": "financial-reporting/financial-reporting-workflow-base.md",
+      "size_kb": 9.5,
+      "lines": 158
+    },
+    {
       "id": "financial-statements-workflow-base",
       "jurisdiction": "GLOBAL",
       "obligation": "FW",
@@ -2724,10 +2746,10 @@
       "obligation": "BT",
       "quality": "research-verified",
       "category": "bookkeeping",
-      "tax_year": "",
+      "tax_year": "2025",
       "path": "international/germany/germany-bookkeeping.md",
       "size_kb": 18.4,
-      "lines": 381
+      "lines": 383
     },
     {
       "id": "germany-einvoice",
@@ -2735,10 +2757,10 @@
       "obligation": "EINV",
       "quality": "research-verified",
       "category": "invoicing",
-      "tax_year": "",
+      "tax_year": "2025",
       "path": "international/germany/germany-einvoice.md",
       "size_kb": 15.5,
-      "lines": 314
+      "lines": 316
     },
     {
       "id": "germany-financial-statements",
@@ -2746,10 +2768,10 @@
       "obligation": "FS",
       "quality": "research-verified",
       "category": "financial-statements",
-      "tax_year": "",
+      "tax_year": "2025",
       "path": "international/germany/germany-financial-statements.md",
       "size_kb": 10.7,
-      "lines": 232
+      "lines": 234
     },
     {
       "id": "germany-formation",
@@ -2757,10 +2779,10 @@
       "obligation": "FORM",
       "quality": "research-verified",
       "category": "formation",
-      "tax_year": "",
+      "tax_year": "2025",
       "path": "international/germany/germany-formation.md",
       "size_kb": 10.4,
-      "lines": 208
+      "lines": 210
     },
     {
       "id": "germany-payroll",
@@ -2768,10 +2790,10 @@
       "obligation": "PAY",
       "quality": "research-verified",
       "category": "payroll",
-      "tax_year": "2026",
+      "tax_year": "2025",
       "path": "international/germany/germany-payroll.md",
       "size_kb": 14.3,
-      "lines": 335
+      "lines": 336
     },
     {
       "id": "germany-references",
@@ -2790,10 +2812,10 @@
       "obligation": "OPT",
       "quality": "research-verified",
       "category": "tax-optimization",
-      "tax_year": "",
+      "tax_year": "2025",
       "path": "international/germany/germany-tax-optimization.md",
       "size_kb": 17.4,
-      "lines": 295
+      "lines": 297
     },
     {
       "id": "germany-transfer-pricing",
@@ -2801,21 +2823,21 @@
       "obligation": "TP",
       "quality": "research-verified",
       "category": "transfer-pricing",
-      "tax_year": "",
+      "tax_year": "2025",
       "path": "international/germany/germany-transfer-pricing.md",
       "size_kb": 8.5,
-      "lines": 206
+      "lines": 208
     },
     {
       "id": "germany-vat-return",
-      "jurisdiction": "",
+      "jurisdiction": "DE",
       "obligation": "CT",
       "quality": "accountant-verified",
       "category": "",
-      "tax_year": "",
+      "tax_year": "2025",
       "path": "international/germany/germany-vat-return.md",
       "size_kb": 56.6,
-      "lines": 824
+      "lines": 827
     },
     {
       "id": "ghana-pit",
@@ -3148,6 +3170,17 @@
       "lines": 59
     },
     {
+      "id": "ias32-debt-vs-equity",
+      "jurisdiction": "GLOBAL",
+      "obligation": "OTHER",
+      "quality": "research-verified",
+      "category": "financial-reporting",
+      "tax_year": "",
+      "path": "financial-reporting/debt-vs-equity/ias32-debt-vs-equity.md",
+      "size_kb": 23.8,
+      "lines": 288
+    },
+    {
       "id": "iceland-vat",
       "jurisdiction": "",
       "obligation": "CT",
@@ -3200,7 +3233,7 @@
       "tax_year": "2025",
       "path": "international/ireland/ie-income-tax-form11.md",
       "size_kb": 23.4,
-      "lines": 573
+      "lines": 574
     },
     {
       "id": "ie-preliminary-tax",
@@ -3211,29 +3244,29 @@
       "tax_year": "2025",
       "path": "international/ireland/ie-preliminary-tax.md",
       "size_kb": 12.8,
-      "lines": 313
+      "lines": 314
     },
     {
       "id": "ie-prsi-class-s",
-      "jurisdiction": "",
+      "jurisdiction": "IE",
       "obligation": "OTHER",
       "quality": "research-verified",
       "category": "",
-      "tax_year": "",
+      "tax_year": "2025",
       "path": "international/ireland/ie-prsi-class-s.md",
       "size_kb": 10.0,
-      "lines": 247
+      "lines": 250
     },
     {
       "id": "ie-usc",
-      "jurisdiction": "",
+      "jurisdiction": "IE",
       "obligation": "OTHER",
       "quality": "research-verified",
       "category": "",
-      "tax_year": "",
+      "tax_year": "2025",
       "path": "international/ireland/ie-usc.md",
-      "size_kb": 9.2,
-      "lines": 248
+      "size_kb": 9.3,
+      "lines": 251
     },
     {
       "id": "ifrs-local-gaap-reconciliation",
@@ -3245,6 +3278,39 @@
       "path": "cross-border/ifrs-local-gaap-reconciliation.md",
       "size_kb": 23.8,
       "lines": 390
+    },
+    {
+      "id": "ifrs15-revenue",
+      "jurisdiction": "GLOBAL",
+      "obligation": "OTHER",
+      "quality": "research-verified",
+      "category": "financial-reporting",
+      "tax_year": "",
+      "path": "financial-reporting/revenue-recognition/ifrs15-revenue.md",
+      "size_kb": 14.2,
+      "lines": 225
+    },
+    {
+      "id": "ifrs16-leases",
+      "jurisdiction": "GLOBAL",
+      "obligation": "OTHER",
+      "quality": "research-verified",
+      "category": "financial-reporting",
+      "tax_year": "",
+      "path": "financial-reporting/leases/ifrs16-leases.md",
+      "size_kb": 21.1,
+      "lines": 257
+    },
+    {
+      "id": "ifrs3-business-combinations",
+      "jurisdiction": "GLOBAL",
+      "obligation": "OTHER",
+      "quality": "research-verified",
+      "category": "financial-reporting",
+      "tax_year": "",
+      "path": "financial-reporting/business-combinations/ifrs3-business-combinations.md",
+      "size_kb": 30.7,
+      "lines": 341
     },
     {
       "id": "il-corporate-tax",
@@ -3644,14 +3710,14 @@
     },
     {
       "id": "ireland-vat-return",
-      "jurisdiction": "",
+      "jurisdiction": "IE",
       "obligation": "CT",
       "quality": "research-verified",
       "category": "",
-      "tax_year": "",
+      "tax_year": "2025",
       "path": "international/ireland/ireland-vat-return.md",
       "size_kb": 30.7,
-      "lines": 624
+      "lines": 627
     },
     {
       "id": "isle-of-man-vat",
@@ -4733,14 +4799,14 @@
     },
     {
       "id": "mb-individual-return",
-      "jurisdiction": "CA-MB",
+      "jurisdiction": "CA",
       "obligation": "IT",
       "quality": "research-verified",
       "category": "international",
       "tax_year": "2025",
       "path": "international/canada/manitoba/mb-individual-return.md",
       "size_kb": 9.1,
-      "lines": 242
+      "lines": 243
     },
     {
       "id": "md-income-tax",
@@ -5195,14 +5261,14 @@
     },
     {
       "id": "nb-individual-return",
-      "jurisdiction": "CA-NB",
+      "jurisdiction": "CA",
       "obligation": "IT",
       "quality": "research-verified",
       "category": "international",
       "tax_year": "2025",
       "path": "international/canada/new-brunswick/nb-individual-return.md",
       "size_kb": 9.2,
-      "lines": 251
+      "lines": 252
     },
     {
       "id": "nc-income-tax",
@@ -5558,14 +5624,14 @@
     },
     {
       "id": "nl-individual-return",
-      "jurisdiction": "CA-NL",
+      "jurisdiction": "CA",
       "obligation": "IT",
       "quality": "research-verified",
       "category": "international",
       "tax_year": "2025",
       "path": "international/canada/newfoundland/nl-individual-return.md",
       "size_kb": 9.2,
-      "lines": 245
+      "lines": 246
     },
     {
       "id": "nl-payroll-tax",
@@ -5701,36 +5767,36 @@
     },
     {
       "id": "ns-individual-return",
-      "jurisdiction": "CA-NS",
+      "jurisdiction": "CA",
       "obligation": "IT",
       "quality": "research-verified",
       "category": "international",
       "tax_year": "2025",
       "path": "international/canada/nova-scotia/ns-individual-return.md",
       "size_kb": 9.2,
-      "lines": 243
+      "lines": 244
     },
     {
       "id": "nt-individual-return",
-      "jurisdiction": "CA-NT",
+      "jurisdiction": "CA",
       "obligation": "IT",
       "quality": "research-verified",
       "category": "international",
       "tax_year": "2025",
       "path": "international/canada/northwest-territories/nt-individual-return.md",
       "size_kb": 6.8,
-      "lines": 174
+      "lines": 175
     },
     {
       "id": "nu-individual-return",
-      "jurisdiction": "CA-NU",
+      "jurisdiction": "CA",
       "obligation": "IT",
       "quality": "research-verified",
       "category": "international",
       "tax_year": "2025",
       "path": "international/canada/nunavut/nu-individual-return.md",
-      "size_kb": 6.7,
-      "lines": 176
+      "size_kb": 6.8,
+      "lines": 177
     },
     {
       "id": "nv-commerce-tax",
@@ -5932,14 +5998,14 @@
     },
     {
       "id": "on-individual-return",
-      "jurisdiction": "CA-ON",
+      "jurisdiction": "CA",
       "obligation": "IT",
       "quality": "research-verified",
       "category": "international",
       "tax_year": "2025",
       "path": "international/canada/ontario/on-individual-return.md",
       "size_kb": 7.3,
-      "lines": 248
+      "lines": 249
     },
     {
       "id": "optimisation-advisor",
@@ -6042,14 +6108,14 @@
     },
     {
       "id": "pe-individual-return",
-      "jurisdiction": "CA-PE",
+      "jurisdiction": "CA",
       "obligation": "IT",
       "quality": "research-verified",
       "category": "international",
       "tax_year": "2025",
       "path": "international/canada/pei/pe-individual-return.md",
       "size_kb": 9.0,
-      "lines": 246
+      "lines": 247
     },
     {
       "id": "permanent-establishment-risk",
@@ -6332,10 +6398,10 @@
       "obligation": "BT",
       "quality": "research-verified",
       "category": "bookkeeping",
-      "tax_year": "",
+      "tax_year": "2025",
       "path": "international/portugal/portugal-bookkeeping.md",
       "size_kb": 23.7,
-      "lines": 519
+      "lines": 521
     },
     {
       "id": "portugal-crypto-tax",
@@ -6354,10 +6420,10 @@
       "obligation": "EINV",
       "quality": "research-verified",
       "category": "invoicing",
-      "tax_year": "",
+      "tax_year": "2025",
       "path": "international/portugal/portugal-einvoice.md",
       "size_kb": 14.2,
-      "lines": 286
+      "lines": 288
     },
     {
       "id": "portugal-financial-statements",
@@ -6365,10 +6431,10 @@
       "obligation": "FS",
       "quality": "research-verified",
       "category": "financial-statements",
-      "tax_year": "",
+      "tax_year": "2025",
       "path": "international/portugal/portugal-financial-statements.md",
       "size_kb": 11.2,
-      "lines": 271
+      "lines": 273
     },
     {
       "id": "portugal-formation",
@@ -6376,10 +6442,10 @@
       "obligation": "FORM",
       "quality": "research-verified",
       "category": "formation",
-      "tax_year": "",
+      "tax_year": "2025",
       "path": "international/portugal/portugal-formation.md",
-      "size_kb": 10.0,
-      "lines": 203
+      "size_kb": 10.1,
+      "lines": 205
     },
     {
       "id": "portugal-payroll",
@@ -6387,10 +6453,10 @@
       "obligation": "PAY",
       "quality": "research-verified",
       "category": "payroll",
-      "tax_year": "",
+      "tax_year": "2025",
       "path": "international/portugal/portugal-payroll.md",
       "size_kb": 14.3,
-      "lines": 351
+      "lines": 353
     },
     {
       "id": "portugal-tax-optimization",
@@ -6398,21 +6464,21 @@
       "obligation": "OPT",
       "quality": "research-verified",
       "category": "tax-optimization",
-      "tax_year": "2026",
+      "tax_year": "2025",
       "path": "international/portugal/portugal-tax-optimization.md",
       "size_kb": 19.6,
       "lines": 321
     },
     {
       "id": "portugal-vat-return",
-      "jurisdiction": "",
+      "jurisdiction": "PT",
       "obligation": "CT",
       "quality": "research-verified",
       "category": "",
-      "tax_year": "",
+      "tax_year": "2025",
       "path": "international/portugal/portugal-vat-return.md",
       "size_kb": 29.3,
-      "lines": 642
+      "lines": 645
     },
     {
       "id": "property-investor",
@@ -6438,25 +6504,25 @@
     },
     {
       "id": "pt-income-tax",
-      "jurisdiction": "",
+      "jurisdiction": "PT",
       "obligation": "IT",
       "quality": "research-verified",
       "category": "",
-      "tax_year": "",
+      "tax_year": "2025",
       "path": "international/portugal/pt-income-tax.md",
-      "size_kb": 27.5,
-      "lines": 532
+      "size_kb": 27.6,
+      "lines": 535
     },
     {
       "id": "pt-social-contributions",
-      "jurisdiction": "",
+      "jurisdiction": "PT",
       "obligation": "SSC",
       "quality": "research-verified",
       "category": "",
-      "tax_year": "",
+      "tax_year": "2025",
       "path": "international/portugal/pt-social-contributions.md",
-      "size_kb": 11.3,
-      "lines": 282
+      "size_kb": 11.4,
+      "lines": 285
     },
     {
       "id": "qatar-tax",
@@ -6471,25 +6537,25 @@
     },
     {
       "id": "qc-individual-return",
-      "jurisdiction": "CA-QC",
+      "jurisdiction": "CA",
       "obligation": "IT",
       "quality": "research-verified",
       "category": "international",
       "tax_year": "2025",
       "path": "international/canada/quebec/qc-individual-return.md",
       "size_kb": 8.3,
-      "lines": 268
+      "lines": 269
     },
     {
       "id": "qc-qst-return",
-      "jurisdiction": "CA-QC",
+      "jurisdiction": "CA",
       "obligation": "OTHER",
       "quality": "research-verified",
       "category": "international",
       "tax_year": "2025",
       "path": "international/canada/quebec/qc-qst-return.md",
       "size_kb": 8.7,
-      "lines": 273
+      "lines": 274
     },
     {
       "id": "quickbooks-integration",
@@ -6801,14 +6867,14 @@
     },
     {
       "id": "saudi-arabia-vat",
-      "jurisdiction": "",
+      "jurisdiction": "SA",
       "obligation": "CT",
       "quality": "research-verified",
       "category": "",
-      "tax_year": "",
+      "tax_year": "2025",
       "path": "international/saudi-arabia/saudi-arabia-vat.md",
-      "size_kb": 45.1,
-      "lines": 723
+      "size_kb": 45.2,
+      "lines": 726
     },
     {
       "id": "saudi-einvoice",
@@ -6816,10 +6882,10 @@
       "obligation": "EINV",
       "quality": "research-verified",
       "category": "invoicing",
-      "tax_year": "",
+      "tax_year": "2025",
       "path": "international/saudi-arabia/saudi-einvoice.md",
       "size_kb": 14.0,
-      "lines": 355
+      "lines": 357
     },
     {
       "id": "saudi_arabia-references",
@@ -7010,14 +7076,14 @@
     },
     {
       "id": "sk-individual-return",
-      "jurisdiction": "CA-SK",
+      "jurisdiction": "CA",
       "obligation": "IT",
       "quality": "research-verified",
       "category": "international",
       "tax_year": "2025",
       "path": "international/canada/saskatchewan/sk-individual-return.md",
       "size_kb": 9.6,
-      "lines": 242
+      "lines": 243
     },
     {
       "id": "slovakia-pit",
@@ -7049,8 +7115,8 @@
       "category": "",
       "tax_year": "",
       "path": "international/slovakia/slovakia-vat-return.md",
-      "size_kb": 35.6,
-      "lines": 709
+      "size_kb": 42.4,
+      "lines": 767
     },
     {
       "id": "slovenia-vat-return",
@@ -7718,10 +7784,10 @@
       "obligation": "BT",
       "quality": "research-verified",
       "category": "bookkeeping",
-      "tax_year": "",
+      "tax_year": "2025-26",
       "path": "international/uk/uk-bookkeeping.md",
-      "size_kb": 17.9,
-      "lines": 443
+      "size_kb": 20.6,
+      "lines": 476
     },
     {
       "id": "uk-capital-gains-sa108",
@@ -7731,8 +7797,8 @@
       "category": "international",
       "tax_year": "2025",
       "path": "international/uk/uk-capital-gains-sa108.md",
-      "size_kb": 14.5,
-      "lines": 374
+      "size_kb": 20.9,
+      "lines": 482
     },
     {
       "id": "uk-crypto-tax",
@@ -7740,10 +7806,10 @@
       "obligation": "CRYPTO",
       "quality": "research-verified",
       "category": "crypto",
-      "tax_year": "2025",
+      "tax_year": "",
       "path": "international/uk/uk-crypto-tax.md",
-      "size_kb": 20.0,
-      "lines": 444
+      "size_kb": 27.2,
+      "lines": 550
     },
     {
       "id": "uk-dividends",
@@ -7753,8 +7819,8 @@
       "category": "international",
       "tax_year": "2025",
       "path": "international/uk/uk-dividends.md",
-      "size_kb": 15.4,
-      "lines": 355
+      "size_kb": 18.0,
+      "lines": 396
     },
     {
       "id": "uk-financial-statements",
@@ -7762,10 +7828,10 @@
       "obligation": "FS",
       "quality": "research-verified",
       "category": "financial-statements",
-      "tax_year": "",
+      "tax_year": "2025-26",
       "path": "international/uk/uk-financial-statements.md",
-      "size_kb": 9.7,
-      "lines": 251
+      "size_kb": 10.1,
+      "lines": 256
     },
     {
       "id": "uk-formation",
@@ -7773,10 +7839,10 @@
       "obligation": "FORM",
       "quality": "research-verified",
       "category": "formation",
-      "tax_year": "",
+      "tax_year": "2025-26",
       "path": "international/uk/uk-formation.md",
-      "size_kb": 9.8,
-      "lines": 203
+      "size_kb": 10.1,
+      "lines": 208
     },
     {
       "id": "uk-freelance-intake",
@@ -7795,10 +7861,10 @@
       "obligation": "IT",
       "quality": "research-verified",
       "category": "international",
-      "tax_year": "2024-25",
+      "tax_year": "2025-26",
       "path": "international/uk/uk-income-tax-sa100.md",
-      "size_kb": 19.8,
-      "lines": 457
+      "size_kb": 32.6,
+      "lines": 638
     },
     {
       "id": "uk-major-partners",
@@ -7819,8 +7885,8 @@
       "category": "international",
       "tax_year": "2025-26",
       "path": "international/uk/uk-national-insurance.md",
-      "size_kb": 17.6,
-      "lines": 396
+      "size_kb": 25.5,
+      "lines": 495
     },
     {
       "id": "uk-payments-on-account",
@@ -7828,10 +7894,10 @@
       "obligation": "OTHER",
       "quality": "research-verified",
       "category": "international",
-      "tax_year": "2024-25",
+      "tax_year": "",
       "path": "international/uk/uk-payments-on-account.md",
-      "size_kb": 14.2,
-      "lines": 323
+      "size_kb": 24.0,
+      "lines": 445
     },
     {
       "id": "uk-payroll",
@@ -7839,10 +7905,10 @@
       "obligation": "PAY",
       "quality": "research-verified",
       "category": "payroll",
-      "tax_year": "",
+      "tax_year": "2025-26",
       "path": "international/uk/uk-payroll.md",
-      "size_kb": 11.2,
-      "lines": 296
+      "size_kb": 11.6,
+      "lines": 301
     },
     {
       "id": "uk-references",
@@ -7861,10 +7927,10 @@
       "obligation": "OTHER",
       "quality": "research-verified",
       "category": "international",
-      "tax_year": "2025",
+      "tax_year": "2025-26",
       "path": "international/uk/uk-rental-sa105.md",
-      "size_kb": 16.0,
-      "lines": 349
+      "size_kb": 26.1,
+      "lines": 503
     },
     {
       "id": "uk-return-assembly",
@@ -7883,10 +7949,10 @@
       "obligation": "OTHER",
       "quality": "research-verified",
       "category": "international",
-      "tax_year": "2024-25",
+      "tax_year": "2025-26",
       "path": "international/uk/uk-self-employment-sa103.md",
-      "size_kb": 20.4,
-      "lines": 459
+      "size_kb": 31.3,
+      "lines": 596
     },
     {
       "id": "uk-student-loan-repayment",
@@ -7894,10 +7960,10 @@
       "obligation": "OTHER",
       "quality": "research-verified",
       "category": "international",
-      "tax_year": "2025-26",
+      "tax_year": "2024-25, 2025-26, 2026-27",
       "path": "international/uk/uk-student-loan-repayment.md",
-      "size_kb": 15.7,
-      "lines": 395
+      "size_kb": 20.6,
+      "lines": 466
     },
     {
       "id": "uk-tax-optimization",
@@ -7905,10 +7971,10 @@
       "obligation": "OPT",
       "quality": "research-verified",
       "category": "tax-optimization",
-      "tax_year": "",
+      "tax_year": "2025-26",
       "path": "international/uk/uk-tax-optimization.md",
-      "size_kb": 17.0,
-      "lines": 313
+      "size_kb": 17.1,
+      "lines": 315
     },
     {
       "id": "uk-transfer-pricing",
@@ -7916,21 +7982,21 @@
       "obligation": "TP",
       "quality": "research-verified",
       "category": "transfer-pricing",
-      "tax_year": "",
+      "tax_year": "2025-26",
       "path": "international/uk/uk-transfer-pricing.md",
-      "size_kb": 8.1,
-      "lines": 205
+      "size_kb": 8.4,
+      "lines": 210
     },
     {
       "id": "uk-vat-return",
-      "jurisdiction": "",
+      "jurisdiction": "GB",
       "obligation": "CT",
       "quality": "research-verified",
       "category": "",
-      "tax_year": "",
+      "tax_year": "2025-26",
       "path": "international/uk/uk-vat-return.md",
-      "size_kb": 51.4,
-      "lines": 727
+      "size_kb": 51.8,
+      "lines": 733
     },
     {
       "id": "ukraine-vat",
@@ -8008,6 +8074,50 @@
       "path": "orchestrator/us-federal-return-assembly.md",
       "size_kb": 25.2,
       "lines": 494
+    },
+    {
+      "id": "us-gaap-asc606-revenue",
+      "jurisdiction": "US",
+      "obligation": "OTHER",
+      "quality": "research-verified",
+      "category": "financial-reporting",
+      "tax_year": "",
+      "path": "financial-reporting/revenue-recognition/us-gaap-asc606-revenue.md",
+      "size_kb": 18.0,
+      "lines": 235
+    },
+    {
+      "id": "us-gaap-asc805-business-combinations",
+      "jurisdiction": "US",
+      "obligation": "OTHER",
+      "quality": "research-verified",
+      "category": "financial-reporting",
+      "tax_year": "",
+      "path": "financial-reporting/business-combinations/us-gaap-asc805-business-combinations.md",
+      "size_kb": 30.1,
+      "lines": 324
+    },
+    {
+      "id": "us-gaap-asc842-leases",
+      "jurisdiction": "US",
+      "obligation": "OTHER",
+      "quality": "research-verified",
+      "category": "financial-reporting",
+      "tax_year": "",
+      "path": "financial-reporting/leases/us-gaap-asc842-leases.md",
+      "size_kb": 22.1,
+      "lines": 280
+    },
+    {
+      "id": "us-gaap-debt-vs-equity",
+      "jurisdiction": "US",
+      "obligation": "OTHER",
+      "quality": "research-verified",
+      "category": "financial-reporting",
+      "tax_year": "",
+      "path": "financial-reporting/debt-vs-equity/us-gaap-debt-vs-equity.md",
+      "size_kb": 23.0,
+      "lines": 226
     },
     {
       "id": "us-major-partners",
@@ -8462,14 +8572,14 @@
     },
     {
       "id": "yt-individual-return",
-      "jurisdiction": "CA-YT",
+      "jurisdiction": "CA",
       "obligation": "IT",
       "quality": "research-verified",
       "category": "international",
       "tax_year": "2025",
       "path": "international/canada/yukon/yt-individual-return.md",
       "size_kb": 7.0,
-      "lines": 178
+      "lines": 179
     },
     {
       "id": "za-income-tax",
