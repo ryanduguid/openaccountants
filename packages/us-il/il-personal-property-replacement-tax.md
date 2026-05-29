@@ -2,6 +2,8 @@
 jurisdiction: US-IL
 tier: 2
 name: il-pprt
+category: state
+tax_year: 2025
 verified_by: pending
 version: 0.1
 last_updated: 2025-11-15
