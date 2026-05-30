@@ -118,7 +118,7 @@ Self-employed individuals must make quarterly estimated payments if they expect 
 
 Voucher due dates: April 15, June 15, September 15, January 15.
 
-Safe harbor: No penalty if payments equal at least 100% of prior year tax OR 90% of current year tax.
+Safe harbor: No penalty if payments equal at least 70% of current year tax OR 100% of prior year tax (110% if prior-year AGI exceeded $150,000), per O.C.G.A. § 48-7-120.
 
 ### Bonus depreciation add-back
 Georgia has NOT adopted federal bonus depreciation under §168(k). Taxpayers who claimed bonus depreciation on the federal return must add back the excess over Georgia's allowed depreciation (typically straight-line MACRS) and then claim the Georgia depreciation as a subtraction in subsequent years.

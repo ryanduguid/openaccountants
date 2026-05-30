@@ -120,7 +120,7 @@ This is one of the most common mistakes made by out-of-state CPAs preparing Geor
 
 The S-corp computes net worth tax on Form 600S Part III using the same graduated schedule as a C-corp. There is no "small S-corp" exception, no "single-shareholder" exception, no "S-corp with QBI passthrough" exception.
 
-[AUDIT FLASH POINT — S-CORP OWNERS SURPRISED BY NET-WORTH TAX] The most frequent client complaint Charlie Barmore flagged is the S-corp owner who:
+[AUDIT FLASH POINT — S-CORP OWNERS SURPRISED BY NET-WORTH TAX] A frequently observed client complaint is the S-corp owner who:
 
 1. Forms a Georgia S-corp expecting to save self-employment tax
 2. Receives an audit-style notice from GA DOR a year later for unpaid net worth tax

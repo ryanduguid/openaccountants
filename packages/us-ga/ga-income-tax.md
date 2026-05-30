@@ -7,8 +7,8 @@ description: >
   resident or has Georgia-source income.
 jurisdiction: US-GA
 version: "1.0"
-verified_by: Charlie Barmore, CPA (Georgia)
-tier: 1
+verified_by: pending
+tier: 2
 ---
 
 # Georgia Individual Income Tax Skill — Self-Employed / Sole Proprietor
@@ -31,15 +31,13 @@ tier: 1
 | Extension | Automatic with federal extension (attach Form 4868 or IRS confirmation); or use GA Form IT-303 |
 | Version | 0.1 |
 | Generated date | May 22, 2026 |
-| Validation status | AI-drafted — Q3 |
+| Validation status | Tier 2 — AI-drafted with citations; pending accountant verification |
 
 ### Sources consulted
 
 - Georgia DOR — 2025 IT-511 Individual Income Tax Booklet: https://dor.georgia.gov/document/document/2025-it-511-individual-income-tax-booklet/download
 - Georgia DOR — Important Tax Updates: https://dor.georgia.gov/taxes/important-tax-updates
 - O.C.G.A. § 48-7-20 (tax rate): as amended by HB 111 (signed April 2025)
-- NerdWallet — Georgia State Income Tax: https://www.nerdwallet.com/taxes/learn/georgia-state-tax
-- BlueWave HR — Georgia Flat Income Tax 2026: https://bluewavehr.com/blog/georgia-flat-income-tax-2026.html
 
 ---
 
@@ -119,7 +117,7 @@ Self-employed individuals must make quarterly estimated payments if they expect 
 
 Voucher due dates: April 15, June 15, September 15, January 15.
 
-Safe harbor: No penalty if payments equal at least 100% of prior year tax OR 90% of current year tax.
+Safe harbor: No penalty if payments equal at least 70% of current year tax OR 100% of prior year tax (110% if prior-year AGI exceeded $150,000), per O.C.G.A. § 48-7-120.
 
 ### Bonus depreciation add-back
 Georgia has NOT adopted federal bonus depreciation under §168(k). Taxpayers who claimed bonus depreciation on the federal return must add back the excess over Georgia's allowed depreciation (typically straight-line MACRS) and then claim the Georgia depreciation as a subtraction in subsequent years.
