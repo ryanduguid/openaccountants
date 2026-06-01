@@ -40,7 +40,7 @@ If you just want to dive in, pick your jurisdiction:
 |---|---|
 | Freelancer / sole prop in a country | [`packages/<country>/`](packages/) (e.g. `malta`, `germany`, `uk`) |
 | US-based — freelancer or single-member LLC | [`packages/us-<state>/`](packages/) (e.g. `us-ca`, `us-ny`, `us-tx`) |
-| Canada-based — sole prop | [`packages/ca-<province>/`](packages/) (e.g. `ca-on`, `ca-qc`, `ca-bc`) |
+| Canada-based — sole prop | [`packages/ca-<province>/`](packages/) (e.g. `ca-on`, `ca-qc`, `ca-bc`) — federal + provincial bundled. If absent, run `python3 scripts/build-packages.py` to (re)generate them. |
 | Cross-border or sector-specific (SaaS, banking, REIT, etc.) | [`skills/cross-border/`](skills/cross-border/) and [`skills/verticals/`](skills/verticals/) |
 
 ---
@@ -88,15 +88,18 @@ packages/
 ├── ca-qc/           ← Federal Canadian + Quebec provincial skills (incl. QST)
 ├── ca-bc/           ← Federal Canadian + British Columbia provincial skills
 ├── ... 13 Canadian province/territory packages (all 10 provinces + 3 territories)
+├── canada/          ← Index README only; per-province packages live in ca-<code>/
 ```
 
-Also available: `_cross-border/` (22 skills), `_verticals/` (6 industry skills), `_integrations/` (10 platform skills)
+> **Canadian packages are generated.** If `packages/ca-on/`, `ca-qc/`, etc. are missing in your checkout, run `python3 scripts/build-packages.py` once to materialise them. The script also regenerates the rest of `packages/` from source files under `skills/`.
+
+Also available: `_cross-border/` (37 skills), `_verticals/` (14 industry skills), `_integrations/` (10 platform skills)
 
 **International users:** pick your country folder (e.g. `packages/malta/`).
 
 **US users:** pick `packages/us-[your state code]/` (e.g. `packages/us-ca/` for California). Each state package bundles federal skills (Schedule C, SE, QBI, estimated tax, etc.) **plus** your state's income tax, sales tax, and specialty taxes. See the [US state index](packages/us/README.md) for the full list, or the [source coverage matrix](skills/us-states/README.md) for what each state includes.
 
-**Canadian users:** pick `packages/ca-[your province code]/` (e.g. `packages/ca-on/` for Ontario, `packages/ca-qc/` for Quebec). Each province/territory package bundles the federal Canadian skills (T1, T2125, CPP/EI, GST/HST, T1135, instalments, crypto, bookkeeping, payroll, formation, financial statements, transfer pricing, tax optimization) **plus** your province/territory's income tax (and QST for Quebec). See the [Canada index](packages/canada/README.md) for the full list.
+**Canadian users:** pick `packages/ca-[your province code]/` (e.g. `packages/ca-on/` for Ontario, `packages/ca-qc/` for Quebec). Each province/territory package bundles the federal Canadian skills (T1, T2125, CPP/EI, GST/HST, T1135, instalments, crypto, bookkeeping, payroll, formation, financial statements, transfer pricing, tax optimization) **plus** your province/territory's income tax (and QST for Quebec). If the `ca-*` folders aren't present in your checkout, run `python3 scripts/build-packages.py` once. See the [Canada index](packages/canada/README.md) for the full list.
 
 For MCP users, US state and Canadian province packages appear as `us-ca`, `us-tx`, `ca-on`, `ca-qc`, etc. alongside country packages.
 
@@ -204,35 +207,35 @@ Tax + bookkeeping + payroll + formation + financial statements + transfer pricin
 
 Coverage varies slightly — some countries have all seven domains, others have most. Check each country's README.
 
-### Multi-skill countries (23 countries)
+### Multi-skill countries (~56 countries)
 
-VAT + income tax + social contributions. No guided intake, but the AI uses the universal intake flow:
+VAT + income tax + social contributions (and sometimes more — formation, payroll, crypto, etc.). No guided intake, but the AI uses the universal intake flow:
 
-Argentina, Austria, Brazil, Chile, Colombia, Czech Republic, Greece, Hungary, Ireland, Israel, Italy, Kenya, Mexico, New Zealand, Nigeria, Norway, Poland, Romania, Singapore, South Africa, South Korea, Sweden, Switzerland
+Andorra, Argentina, Austria, Belgium, Bermuda, Brazil, Brunei, Bulgaria, BVI, Cayman Islands, Chile, China, Colombia, Croatia, Cyprus, Czech Republic, Denmark, Dominican Republic, Estonia, Finland, Greece, Honduras, Hong Kong, Hungary, Indonesia, Iraq, Ireland, Israel, Kenya, Kuwait, Latvia, Lithuania, Luxembourg, Malaysia, Mexico, Myanmar, New Zealand, Nigeria, Norway, Pakistan, Panama, Peru, Philippines, Poland, Qatar, Romania, Saudi Arabia, Singapore, Slovakia, Slovenia, South Africa, South Korea, Sweden, Switzerland, Taiwan, UAE
 
-### Bookkeeping skills (13 countries)
+### Bookkeeping skills (13 countries + all 51 US states + Indonesia)
 
 Chart of accounts, double-entry posting, P&L and balance sheet generation with country-specific formats:
 
-Malta, UK, Germany, France, Italy, Spain, Netherlands, Belgium, Portugal, Sweden, Australia, Canada, Japan
+Malta, UK, Germany, France, Italy, Spain, Netherlands, Belgium, Portugal, Sweden, Australia, Canada, Japan, plus Indonesia and every `us-<state>` package.
 
-### E-invoicing compliance (15 countries)
+### E-invoicing compliance (16 countries)
 
 Format validation, mandatory field checks, transmission methods, and penalty regimes:
 
-Italy, France, Germany, Spain, Poland, Portugal, Romania, Belgium, Greece, Hungary, India, Saudi Arabia, Mexico, Brazil, Malaysia
+Italy, France, Germany, Spain, Poland, Portugal, Romania, Belgium, Greece, Hungary, India, Saudi Arabia, Mexico, Brazil, Malaysia, China
 
-### Payroll (15 countries)
+### Payroll (15 countries + Ireland + Nigeria + ~24 US states)
 
 PAYE/withholding tables, social security computation, payslip generation, employer filing obligations:
 
-Malta, UK, Germany, France, Italy, Spain, Netherlands, Belgium, Portugal, Sweden, Australia, Canada, Japan, India, Brazil
+Malta, UK, Germany, France, Italy, Spain, Netherlands, Belgium, Portugal, Sweden, Australia, Canada, Japan, India, Brazil, plus Ireland, Nigeria, and the larger US state packages (CA, NY, TX, IL, PA, OH, MI, GA, NC, NJ, VA, WI, MN, MA, MD, MO, IN, KY, CT, AZ, CO, OR, ND, IL — see each `us-<state>/` for confirmation).
 
-### Company formation (13 countries)
+### Company formation (13 countries + China, Indonesia, Ireland, Nigeria, Pakistan, Saudi Arabia + 7 US states)
 
 Entity type comparison, registration steps, capital requirements, costs, post-formation compliance:
 
-Malta, UK, Germany, France, Italy, Spain, Netherlands, Portugal, Australia, Canada, Japan, India, Singapore
+Malta, UK, Germany, France, Italy, Spain, Netherlands, Portugal, Australia, Canada, Japan, India, Singapore, plus China, Indonesia, Ireland, Nigeria, Pakistan, Saudi Arabia, and the US incorporation-heavy states (CA, DE, GA, NV, NY, TX, WY).
 
 ### Financial statements (13 countries)
 
@@ -246,31 +249,31 @@ TP documentation, arm's length methods, CbCR thresholds, APA, penalties:
 
 Malta, UK, Germany, France, Italy, Spain, Netherlands, Australia, Canada, Japan, India, Brazil, Singapore, South Africa, Mexico
 
-### Tax optimization (13 countries)
+### Tax optimization (14 countries)
 
 Legal tax reduction strategies, commonly missed deductions, timing optimizations, entity structure advice:
 
-Malta, UK, Germany, France, Italy, Spain, Netherlands, Australia, Canada, Japan, India, Portugal, Singapore
+Malta, UK, Germany, France, Italy, Spain, Netherlands, Australia, Canada, Japan, India, Portugal, Singapore, Indonesia
 
-### Crypto tax (22 countries)
+### Crypto tax (21 countries + all 51 US states)
 
 Cryptocurrency and digital asset taxation — capital gains, cost basis, DeFi, staking, mining, airdrops, NFTs, reporting:
 
-US, Malta, UK, Germany, France, Australia, Canada, Israel, India, Japan, Spain, Netherlands, Portugal, Italy, Singapore, Brazil, Mexico, Sweden, Belgium, Switzerland, South Korea, New Zealand
+Malta, UK, Germany, France, Australia, Canada, Israel, India, Japan, Spain, Netherlands, Portugal, Italy, Singapore, Brazil, Mexico, Sweden, Belgium, Switzerland, South Korea, New Zealand — plus every `us-<state>` package ships its own `<state>-crypto-tax.md`.
 
-### Cross-border orchestrator
+### Cross-border orchestrator (37 skills)
 
-22 skills covering multi-jurisdiction coordination, EU social security coordination, OECD treaty defaults, and 70+ treaty corridor rates.
+Multi-jurisdiction coordination, EU social security coordination, OECD treaty defaults, and 70+ treaty corridor rates. See [`packages/_cross-border/`](packages/_cross-border/) for the full file list.
 
-### Industry verticals (6 skills)
+### Industry verticals (14 skills)
 
-Freelance developer, e-commerce, content creator, consultant, property investor, medical professional.
+Banking, charity / nonprofit, construction, consultant / professional, content creator, e-commerce seller, freelance developer, insurance, investment funds / REITs, medical professional, oil & gas / extractives, property investor, SaaS / digital products, shipping / aviation (tonnage tax).
 
 ### Platform integrations (10 skills)
 
 Xero, QuickBooks, Stripe, Wise, PayPal, Revolut, Amazon Seller, Shopify, FreeAgent, Sage.
 
-### VAT/GST only (87 countries)
+### VAT/GST only (65 countries)
 
 Consumption tax classification with country-specific supplier pattern libraries. From Albania to Zimbabwe.
 
@@ -409,7 +412,7 @@ python3 scripts/build-packages.py
 
 ## Contribute
 
-We maintain 713 skills across 134 countries. Accounting rules change constantly — rates update, thresholds move, forms get revised. Contributions keep this accurate.
+We maintain 1,900+ skills across 134 countries, 51 US state packages, and 13 Canadian province/territory packages. Accounting rules change constantly — rates update, thresholds move, forms get revised. Contributions keep this accurate.
 
 ### Ways to contribute
 

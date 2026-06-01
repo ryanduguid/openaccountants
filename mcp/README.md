@@ -2,7 +2,9 @@
 
 <!-- mcp-name: io.github.openaccountants/openaccountants-mcp -->
 
-A read-only [Model Context Protocol](https://modelcontextprotocol.io/) server that gives Claude, Cursor, and any MCP client **on-demand access** to 134 countries + 51 US state packages of open-source accounting skills across 10 domains (tax, bookkeeping, payroll, e-invoicing, formation, financial statements, transfer pricing, tax optimization, cross-border, and more) — no manual file uploads.
+A read-only [Model Context Protocol](https://modelcontextprotocol.io/) server that gives Claude, Cursor, and any MCP client **on-demand access** to 134 countries + 51 US state packages + 13 Canadian provinces/territories of open-source accounting skills across 10 domains (tax, bookkeeping, payroll, e-invoicing, formation, financial statements, transfer pricing, tax optimization, cross-border, and more) — no manual file uploads.
+
+> **Two MCPs, different surfaces.** This **self-hosted server** reads the open-source markdown in your local checkout. The **hosted server** at `https://www.openaccountants.com/api/mcp` reads the production database and exposes a larger surface that includes the **accountant-verified** tier, the `request_accountant_review` handoff (routes to a named licensed CPA/CA/EA with your working paper attached), `get_rates`, `list_verifiers`, `compare_jurisdictions`, and `plan_cross_border`. The hosted server is the product; this self-hosted one is the open research base.
 
 ## Why this exists
 
@@ -35,13 +37,13 @@ Special packages are also available:
 
 | Package | What's inside |
 |---------|--------------|
-| `_cross-border` | Multi-jurisdiction orchestrator, EU rules, OECD treaty defaults, 70+ treaty corridor WHT rates |
-| `_verticals` | Industry-specific skills (developer, e-commerce, content creator, consultant, property investor, medical) |
-| `_integrations` | Platform export formats (Xero, QuickBooks, Stripe, Wise, PayPal, Revolut, Amazon, Shopify, FreeAgent, Sage) |
+| `_cross-border` | 37 skills — multi-jurisdiction orchestrator, EU rules, OECD treaty defaults, 70+ treaty corridor WHT rates |
+| `_verticals` | 14 industry-specific skills — banking, charity / nonprofit, construction, consultant, content creator, e-commerce, freelance developer, insurance, investment funds / REITs, medical, oil & gas, property investor, SaaS, shipping / aviation |
+| `_integrations` | 10 platform export formats — Xero, QuickBooks, Stripe, Wise, PayPal, Revolut, Amazon, Shopify, FreeAgent, Sage |
 
 ## Tools
 
-This server mirrors the hosted server at `https://www.openaccountants.com/api/mcp` so both expose the same surface.
+The self-hosted server exposes 6 read-only tools below. The hosted server at `https://www.openaccountants.com/api/mcp` is a superset — it adds `get_rates`, `list_jurisdictions`, `list_verifiers`, `compare_jurisdictions`, `plan_cross_border`, and the `request_accountant_review` handoff. Install the hosted MCP if you want the AI-to-human routing; install this one if you want the open research base.
 
 | Tool | Description |
 |------|-------------|
@@ -90,6 +92,8 @@ Guided workflows that turn the skills into a tax engine, not just a library:
 | `skill-review` | `skillSlug`, `scenario` | Load a skill's sections and apply them to one scenario. |
 
 > Note: the on-disk server reads the open-source markdown in `packages/`. Most skill files don't carry a `jurisdiction` field, so it's inherited from the package directory (the folder name for `us-XX`/`ca-XX`, otherwise the code its siblings declare). Quality tier is derived from whether a file names a verifier.
+
+> **Canadian users — important:** the `ca-XX/` provincial packages (`ca-on`, `ca-qc`, `ca-bc`, …) are **generated**, not checked in. After cloning, run `python3 scripts/build-packages.py` once to materialise them. Until you do, the MCP won't return Canadian provincial skills via `list_skills(jurisdiction="CA-ON")` — only the federal Canadian files visible under `packages/canada/`.
 
 ## Quick start
 
