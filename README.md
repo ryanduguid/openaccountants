@@ -366,6 +366,17 @@ pip install ./mcp          # requires Python 3.10+
 
 Full setup details, `uv` instructions, and environment variables: [`mcp/README.md`](mcp/README.md).
 
+### Claude Code plugin
+
+Using Claude Code? Install the plugin in two commands — it wires up the hosted MCP server (the **accountant-verified** skills, with named-verifier attribution) and adds a `/openaccountants` command:
+
+```bash
+/plugin marketplace add openaccountants/openaccountants
+/plugin install openaccountants@openaccountants
+```
+
+Then run `/openaccountants <your tax question>`, or just ask normally — the connected server pulls the right skills automatically.
+
 ---
 
 ## For developers
