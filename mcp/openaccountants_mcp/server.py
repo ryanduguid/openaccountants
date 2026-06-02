@@ -365,7 +365,17 @@ def list_skills(jurisdiction: str | None = None, category: str | None = None) ->
             "quality_tier", "verified_by", "last_updated",
         )})
     skills.sort(key=lambda s: (s["jurisdiction"], s["slug"]))
-    return {"skills": skills, "total": len(skills)}
+    if skills:
+        next_action = (
+            "Pick the relevant skill and load it with get_skill(slug). For a "
+            "guided, scoped plan instead, call start(intent, jurisdiction)."
+        )
+    else:
+        next_action = (
+            "No skills matched that filter. Drop the filter or check the "
+            "jurisdiction code, then call list_skills() again."
+        )
+    return {"skills": skills, "total": len(skills), "next_action": next_action}
 
 
 @mcp.tool(annotations=_READONLY)
@@ -384,6 +394,14 @@ def get_skill(slug: str) -> dict[str, Any]:
         "verified_by": rec["verified_by"],
         "markdown": body + "\n" + _provenance_footer(rec),
         "last_updated": rec["last_updated"],
+        "next_action": (
+            "Apply this skill's rules to the user's scenario. If this is an "
+            "intake/scope-check skill, run it BEFORE classifying anything. "
+            "Compute using ONLY the rates and thresholds in this skill — never "
+            "from general knowledge — and attribute the result per the "
+            "provenance footer above."
+        ),
+        "guardrails": _GUARDRAILS,
     }
 
 
@@ -395,7 +413,16 @@ def get_skill_sections(slug: str) -> dict[str, Any]:
         slug: Skill slug (e.g. "malta-income-tax").
     """
     _, body = _read_skill(slug)
-    return {"slug": slug, "sections": _split_sections(body)}
+    return {
+        "slug": slug,
+        "sections": _split_sections(body),
+        "next_action": (
+            "Apply each section's rules to the user's scenario in order. "
+            "Compute using ONLY the rates and thresholds in these sections, and "
+            "tag every transaction as Classified, Assumed, or Needs Input."
+        ),
+        "guardrails": _GUARDRAILS,
+    }
 
 
 @mcp.tool(annotations=_READONLY)
@@ -435,7 +462,18 @@ def search_skills(query: str, jurisdiction: str | None = None) -> dict[str, Any]
         })
         if len(results) >= SEARCH_LIMIT:
             break
-    return {"results": results, "total": len(results)}
+    if results:
+        next_action = (
+            "Load the most relevant match with get_skill(slug), then apply its "
+            "rules. For a guided, scoped plan, call start(intent, jurisdiction)."
+        )
+    else:
+        next_action = (
+            "No matches. Broaden the query or confirm the jurisdiction with "
+            "list_skills(). If the corpus genuinely lacks this, call "
+            "submit_feedback() to flag the gap."
+        )
+    return {"results": results, "total": len(results), "next_action": next_action}
 
 
 # ---------------------------------------------------------------------------
