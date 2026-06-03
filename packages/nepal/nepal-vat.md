@@ -1,7 +1,13 @@
 ---
 name: nepal-vat
 description: Use this skill whenever asked to prepare, review, or classify transactions for a Nepal VAT return for any client. Trigger on phrases like "Nepal VAT", "IRD filing", "PAN registration", or any request involving Nepal VAT. MUST be loaded alongside vat-workflow-base v0.1 or later. ALWAYS read this skill before touching any Nepal VAT work.
-version: 2.0
+version: 2.1
+jurisdiction: NP
+tax_year: 2082-83
+category: international
+verified_by: pending
+depends_on:
+  - vat-workflow-base
 ---
 
 # Nepal VAT Return Skill v2.0
@@ -20,6 +26,7 @@ version: 2.0
 | Currency | NPR (Nepalese Rupee) |
 | Filing frequency | Monthly (by 25th of following month) |
 | Deadline | 25th of the month following the tax period |
+| Registration threshold | NPR 5,000,000 (goods/carriage) · NPR 3,000,000 (services or mixed) — services/mixed raised from NPR 2M eff. Shrawan 1, 2081 (16 Jul 2024) |
 | Companion skill | vat-workflow-base v0.1 or later — MUST be loaded |
 | Validated by | Pending local practitioner validation |
 
@@ -194,16 +201,8 @@ Nabil and NIC Asia exports CSV. NPR primary. Devanagari script descriptions poss
 1. SEZ entities refused. 2. Hydropower/infrastructure refused.
 
 ### Change log
+- v2.1 (June 2026): Added jurisdiction/verification frontmatter; added VAT registration thresholds (NPR 5M goods / 3M services, FY 2082/83); removed duplicate disclaimer; 13% rate re-confirmed for FY 2082/83.
 - v2.0 (April 2026): Full rewrite to Malta v2.0 ten-section structure.
-
----
-
-## Disclaimer
-
-This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. All outputs must be reviewed by a qualified professional before filing.
-
-The most up-to-date version is maintained at [openaccountants.com](https://openaccountants.com).
-
 
 ---
 
