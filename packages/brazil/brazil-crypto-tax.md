@@ -374,7 +374,7 @@ Antes de finalizar qualquer apuração de tributos sobre criptoativos no Brasil:
 
 Esta skill e seus resultados são fornecidos exclusivamente para fins informativos e de apoio à apuração e não constituem aconselhamento tributário, jurídico ou financeiro. A Open Accountants e seus colaboradores não se responsabilizam por erros, omissões ou consequências decorrentes do uso desta skill. Todos os resultados devem ser revisados e assinados por um profissional habilitado (como contador registrado no CRC, advogado tributarista ou profissional licenciado equivalente no Brasil) antes da entrega ou de qualquer providência.
 
-A versão mais atualizada e verificada desta skill é mantida em [openaccountants.com](https://openaccountants.com). Faça login para acessar a versão mais recente, solicitar revisão por contador habilitado e acompanhar atualizações conforme a legislação for alterada.
+A versão mais atualizada e verificada desta skill é mantida em [openaccountants.com](https://www.openaccountants.com). Faça login para acessar a versão mais recente, solicitar revisão por contador habilitado e acompanhar atualizações conforme a legislação for alterada.
 
 ---
 
@@ -393,7 +393,7 @@ a formal engagement letter** — book a free 30-minute call:
 
 We'll route you to the named verifier covering your country or state. You can
 also see the full list of verified accountants at
-[openaccountants.com/network](https://openaccountants.com/network).
+[openaccountants.com/network](https://www.openaccountants.com/network).
 
 <!-- openaccountants-mcp-cta -->
 

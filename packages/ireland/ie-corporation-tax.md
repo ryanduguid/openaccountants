@@ -15,7 +15,7 @@ verified_by: pending
 
 > **Produced by OpenAccountants (openaccountants.com)**
 >
-> This skill is for informational purposes only and does not constitute tax, legal, or financial advice. All outputs must be reviewed and signed off by a qualified Irish tax adviser (Chartered Tax Adviser CTA, ACA, ACCA, or AITI-qualified practitioner) before filing or acting upon. The latest verified version is maintained at [openaccountants.com](https://openaccountants.com).
+> This skill is for informational purposes only and does not constitute tax, legal, or financial advice. All outputs must be reviewed and signed off by a qualified Irish tax adviser (Chartered Tax Adviser CTA, ACA, ACCA, or AITI-qualified practitioner) before filing or acting upon. The latest verified version is maintained at [openaccountants.com](https://www.openaccountants.com).
 
 ---
 
@@ -691,7 +691,7 @@ Standard: **4 years** from the end of the chargeable period in which the return 
 
 ## Disclaimer
 
-This skill and its outputs are for informational and computational purposes only and do not constitute tax, legal, or financial advice. All outputs must be reviewed and signed off by a qualified Irish tax adviser (CTA, AITI, ACA or ACCA holding tax qualification, or solicitor / barrister authorised in tax) before filing or acting upon. Pillar Two computations specifically require specialist GIR software and credentialed Pillar Two practitioner sign-off. The latest verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com).
+This skill and its outputs are for informational and computational purposes only and do not constitute tax, legal, or financial advice. All outputs must be reviewed and signed off by a qualified Irish tax adviser (CTA, AITI, ACA or ACCA holding tax qualification, or solicitor / barrister authorised in tax) before filing or acting upon. Pillar Two computations specifically require specialist GIR software and credentialed Pillar Two practitioner sign-off. The latest verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com).
 
 ---
 
@@ -714,7 +714,7 @@ a formal engagement letter** — book a free 30-minute call:
 
 We'll route you to the named verifier covering your country or state. You can
 also see the full list of verified accountants at
-[openaccountants.com/network](https://openaccountants.com/network).
+[openaccountants.com/network](https://www.openaccountants.com/network).
 
 <!-- openaccountants-mcp-cta -->
 

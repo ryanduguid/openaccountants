@@ -670,7 +670,7 @@ This skill is authored by the Open Accountants project and is intended for use b
 - IRS Notice 2020-75 (November 9, 2020).
 - IRC §§ 164(b)(6), 461(l), 702, 707(c), 1366, 7704.
 
-The verified, country-signed-off version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Verification model: lead California accountant signs off, with optional contributing reviewers, per the multi-accountant-per-jurisdiction governance model. Pending verification status as of v0.1; awaiting review by a California-licensed CPA or Enrolled Agent with PTE experience.
+The verified, country-signed-off version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com). Verification model: lead California accountant signs off, with optional contributing reviewers, per the multi-accountant-per-jurisdiction governance model. Pending verification status as of v0.1; awaiting review by a California-licensed CPA or Enrolled Agent with PTE experience.
 
 ---
 
@@ -678,7 +678,7 @@ The verified, country-signed-off version of this skill is maintained at [openacc
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, EA, tax attorney, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
 
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
+The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
 
 ---
 
@@ -697,7 +697,7 @@ a formal engagement letter** — book a free 30-minute call:
 
 We'll route you to the named verifier covering your country or state. You can
 also see the full list of verified accountants at
-[openaccountants.com/network](https://openaccountants.com/network).
+[openaccountants.com/network](https://www.openaccountants.com/network).
 
 <!-- openaccountants-mcp-cta -->
 

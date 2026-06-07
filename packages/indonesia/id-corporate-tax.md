@@ -494,7 +494,7 @@ When a topic crosses skills (e.g., a PPh 21 BIK question with PPh Badan deductib
 
 ## Disclaimer
 
-This skill and its outputs are for informational and computational purposes only and do not constitute tax, legal, or financial advice. All outputs must be reviewed and signed off by a qualified Indonesian Konsultan Pajak (holding a USKP certificate) before filing or acting upon. The latest verified version is maintained at [openaccountants.com](https://openaccountants.com).
+This skill and its outputs are for informational and computational purposes only and do not constitute tax, legal, or financial advice. All outputs must be reviewed and signed off by a qualified Indonesian Konsultan Pajak (holding a USKP certificate) before filing or acting upon. The latest verified version is maintained at [openaccountants.com](https://www.openaccountants.com).
 
 ---
 
@@ -517,7 +517,7 @@ a formal engagement letter** — book a free 30-minute call:
 
 We'll route you to the named verifier covering your country or state. You can
 also see the full list of verified accountants at
-[openaccountants.com/network](https://openaccountants.com/network).
+[openaccountants.com/network](https://www.openaccountants.com/network).
 
 <!-- openaccountants-mcp-cta -->
 

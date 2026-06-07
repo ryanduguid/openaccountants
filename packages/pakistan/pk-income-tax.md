@@ -503,7 +503,7 @@ Refunds of excess withholding or §103 credit are claimed in the return and proc
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a registered Pakistan tax practitioner (Income Tax Practitioner, Chartered Accountant, or equivalent licensed professional) before filing or acting upon.
 
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
+The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
 
 ---
 
@@ -522,7 +522,7 @@ a formal engagement letter** — book a free 30-minute call:
 
 We'll route you to the named verifier covering your country or state. You can
 also see the full list of verified accountants at
-[openaccountants.com/network](https://openaccountants.com/network).
+[openaccountants.com/network](https://www.openaccountants.com/network).
 
 <!-- openaccountants-mcp-cta -->
 

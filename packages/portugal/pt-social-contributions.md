@@ -290,7 +290,7 @@ Ação requerida: Não aconselhar. Encaminhar para contabilista certificado qual
 
 Esta skill e os respetivos outputs são fornecidos apenas para fins informativos e de cálculo, não constituindo aconselhamento fiscal, jurídico ou financeiro. A Open Accountants e os seus contribuidores não aceitam qualquer responsabilidade por erros, omissões ou consequências decorrentes da utilização desta skill. Todos os outputs devem ser revistos e validados por um profissional qualificado (contabilista certificado, revisor oficial de contas, advogado fiscalista ou equivalente licenciado na jurisdição aplicável) antes de qualquer entrega ou ato baseado nos mesmos.
 
-A versão mais atualizada e verificada desta skill é mantida em [openaccountants.com](https://openaccountants.com). Inicie sessão para aceder à versão mais recente, solicitar revisão profissional por um contabilista licenciado e acompanhar atualizações à medida que a legislação fiscal evolui.
+A versão mais atualizada e verificada desta skill é mantida em [openaccountants.com](https://www.openaccountants.com). Inicie sessão para aceder à versão mais recente, solicitar revisão profissional por um contabilista licenciado e acompanhar atualizações à medida que a legislação fiscal evolui.
 
 ---
 
@@ -309,7 +309,7 @@ a formal engagement letter** — book a free 30-minute call:
 
 We'll route you to the named verifier covering your country or state. You can
 also see the full list of verified accountants at
-[openaccountants.com/network](https://openaccountants.com/network).
+[openaccountants.com/network](https://www.openaccountants.com/network).
 
 <!-- openaccountants-mcp-cta -->
 

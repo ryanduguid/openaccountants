@@ -199,7 +199,7 @@ This typically generates a significant balance sheet asset for high-growth SaaS 
 
 ## Section 9 — Disclaimer
 
-SaaS sector taxation involves substantial cross-border complexity. Outputs must be reviewed by credentialed practitioners. The most up-to-date version is at [openaccountants.com](https://openaccountants.com).
+SaaS sector taxation involves substantial cross-border complexity. Outputs must be reviewed by credentialed practitioners. The most up-to-date version is at [openaccountants.com](https://www.openaccountants.com).
 
 ---
 
@@ -218,7 +218,7 @@ a formal engagement letter** — book a free 30-minute call:
 
 We'll route you to the named verifier covering your country or state. You can
 also see the full list of verified accountants at
-[openaccountants.com/network](https://openaccountants.com/network).
+[openaccountants.com/network](https://www.openaccountants.com/network).
 
 <!-- openaccountants-mcp-cta -->
 

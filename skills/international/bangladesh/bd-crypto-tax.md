@@ -43,4 +43,4 @@ depends_on:
 - NEVER state a crypto tax treatment as settled — there is none; verify the Bangladesh Bank position.
 
 ## Disclaimer
-Informational only; not advice. Cryptocurrency is effectively prohibited in Bangladesh — verify the current Bangladesh Bank stance. All outputs must be reviewed and signed off by a qualified Bangladeshi practitioner. Maintained at [openaccountants.com](https://openaccountants.com).
+Informational only; not advice. Cryptocurrency is effectively prohibited in Bangladesh — verify the current Bangladesh Bank stance. All outputs must be reviewed and signed off by a qualified Bangladeshi practitioner. Maintained at [openaccountants.com](https://www.openaccountants.com).

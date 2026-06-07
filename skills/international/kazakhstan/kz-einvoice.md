@@ -54,4 +54,4 @@ For goods subject to traceability (imports, excisable, virtual-warehouse items),
 - NEVER state ЭСФ deadlines or scope without verifying current КГД rules.
 
 ## Disclaimer
-Informational only; not advice. Verify ЭСФ scope, deadlines, and ККМ rules with the КГД. All outputs must be reviewed and signed off by a qualified Kazakhstan accountant before relying on them. Maintained at [openaccountants.com](https://openaccountants.com).
+Informational only; not advice. Verify ЭСФ scope, deadlines, and ККМ rules with the КГД. All outputs must be reviewed and signed off by a qualified Kazakhstan accountant before relying on them. Maintained at [openaccountants.com](https://www.openaccountants.com).

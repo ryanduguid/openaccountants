@@ -43,4 +43,4 @@ A solo IT freelancer (sole proprietor): prepares **no** statutory financial stat
 - NEVER state audit/size thresholds without verifying the Companies Act / SECP rules.
 
 ## Disclaimer
-Informational only; not advice. Verify reporting standards, audit, and filing thresholds with SECP and the FBR. All outputs must be reviewed and signed off by a qualified Pakistani practitioner. Maintained at [openaccountants.com](https://openaccountants.com).
+Informational only; not advice. Verify reporting standards, audit, and filing thresholds with SECP and the FBR. All outputs must be reviewed and signed off by a qualified Pakistani practitioner. Maintained at [openaccountants.com](https://www.openaccountants.com).

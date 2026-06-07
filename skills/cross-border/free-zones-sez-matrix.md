@@ -284,4 +284,4 @@ The reviewer brief must include:
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Zone regimes evolve with national budgets and OECD peer review. Pillar Two implementation has materially altered the benefit calculus for in-scope groups. Every output must be reviewed and signed off by a credentialed local tax counsel before any incorporation, restructuring, or election decision.
 
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com).
+The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com).

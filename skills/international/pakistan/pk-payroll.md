@@ -41,4 +41,4 @@ A small studio pays an employee PKR 1,200,000/year: compute tax on the salaried 
 - NEVER state slab/EOBI figures without verifying the current Finance Act.
 
 ## Disclaimer
-Informational only; not advice. Verify withholding slabs and EOBI/ESSI rules with the FBR and the relevant authority. All outputs must be reviewed and signed off by a qualified Pakistani practitioner. Maintained at [openaccountants.com](https://openaccountants.com).
+Informational only; not advice. Verify withholding slabs and EOBI/ESSI rules with the FBR and the relevant authority. All outputs must be reviewed and signed off by a qualified Pakistani practitioner. Maintained at [openaccountants.com](https://www.openaccountants.com).

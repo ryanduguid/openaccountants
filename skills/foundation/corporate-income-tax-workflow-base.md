@@ -367,4 +367,4 @@ Every country-level corporate income tax content skill must populate:
 
 This workflow base produces working papers for review by credentialed practitioners, not direct tax advice. Every output is subject to credentialed reviewer sign-off before filing or acting upon.
 
-The most up-to-date, verified version of this workflow base is maintained at [openaccountants.com](https://openaccountants.com).
+The most up-to-date, verified version of this workflow base is maintained at [openaccountants.com](https://www.openaccountants.com).

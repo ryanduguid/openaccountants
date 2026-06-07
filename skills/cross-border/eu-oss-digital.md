@@ -322,4 +322,4 @@ A non-EU seller (e.g., US, UK, Australian, Indian company) that sells digital se
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. VAT rates and thresholds are subject to change. Always verify current rates before filing. All outputs must be reviewed and signed off by a qualified professional before filing or acting upon.
 
-If you would like a licensed accountant to review your VAT position, visit [openaccountants.com](https://openaccountants.com) and log in to request a professional review.
+If you would like a licensed accountant to review your VAT position, visit [openaccountants.com](https://www.openaccountants.com) and log in to request a professional review.

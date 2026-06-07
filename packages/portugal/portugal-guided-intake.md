@@ -429,7 +429,7 @@ Exemplo (residente IFICI desde 2024, Categoria B, regime simplificado, isenção
 
 Este skill e os respectivos outputs são fornecidos exclusivamente para fins informativos e de apoio à preparação fiscal e não constituem aconselhamento fiscal, jurídico ou financeiro. A OpenAccountants e os seus contribuidores não assumem qualquer responsabilidade por erros, omissões ou consequências decorrentes da utilização deste skill. Todos os outputs devem ser revistos e assinados por um Contabilista Certificado inscrito na Ordem dos Contabilistas Certificados (OCC) — ou, quando aplicável, por Revisor Oficial de Contas (ROC) ou Advogado fiscalista — antes de qualquer submissão no Portal das Finanças, na Segurança Social Directa ou perante qualquer outra entidade pública portuguesa.
 
-A versão verificada e mais actualizada deste skill é mantida em [openaccountants.com](https://openaccountants.com).
+A versão verificada e mais actualizada deste skill é mantida em [openaccountants.com](https://www.openaccountants.com).
 
 ---
 
@@ -454,7 +454,7 @@ a formal engagement letter** — book a free 30-minute call:
 
 We'll route you to the named verifier covering your country or state. You can
 also see the full list of verified accountants at
-[openaccountants.com/network](https://openaccountants.com/network).
+[openaccountants.com/network](https://www.openaccountants.com/network).
 
 <!-- openaccountants-mcp-cta -->
 

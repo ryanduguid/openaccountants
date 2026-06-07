@@ -418,4 +418,4 @@ Car PLN 200,000. Deductible depreciation = PLN 150,000 x 20% = PLN 30,000. Exces
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a doradca podatkowy, biegły rewident, or equivalent licensed practitioner in Poland) before filing or acting upon.
 
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com).
+The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com).

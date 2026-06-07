@@ -259,4 +259,4 @@ originates from the upstream content skills. **All figures, regime determination
 form revisions, and deadlines must be reviewed and signed off by a qualified
 Russian accountant (бухгалтер / налоговый консультант) and verified against
 nalog.gov.ru (ФНС) before anything is filed.** The most up-to-date version is
-maintained at [openaccountants.com](https://openaccountants.com).
+maintained at [openaccountants.com](https://www.openaccountants.com).

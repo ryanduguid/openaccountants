@@ -59,4 +59,4 @@ Freelancer earns USD 30,000 from foreign clients via Upwork, remitted through a 
 - NEVER omit the PSEB-registration recommendation for the lower rate.
 
 ## Disclaimer
-Informational only; not advice. The IT-export tax rate, its final-vs-minimum character, and PSEB rules change with each Finance Act — verify with the FBR and PSEB. All outputs must be reviewed and signed off by a qualified Pakistani tax practitioner before filing. Maintained at [openaccountants.com](https://openaccountants.com).
+Informational only; not advice. The IT-export tax rate, its final-vs-minimum character, and PSEB rules change with each Finance Act — verify with the FBR and PSEB. All outputs must be reviewed and signed off by a qualified Pakistani tax practitioner before filing. Maintained at [openaccountants.com](https://www.openaccountants.com).

@@ -391,7 +391,7 @@ PERGUNTAS DE ONBOARDING -- BRASIL SIMPLES NACIONAL
 
 Esta skill e seus resultados são fornecidos exclusivamente para fins informativos e de cálculo e não constituem aconselhamento tributário, jurídico ou financeiro. A Open Accountants e seus colaboradores não assumem qualquer responsabilidade por erros, omissões ou consequências decorrentes do uso desta skill. Todos os resultados devem ser revisados e assinados por profissional qualificado (como contador registrado no CRC ou profissional licenciado equivalente no Brasil) antes de qualquer entrega ou tomada de decisão.
 
-A versão mais atualizada e verificada desta skill é mantida em [openaccountants.com](https://openaccountants.com). Faça login para acessar a versão mais recente, solicitar revisão profissional por contador licenciado e acompanhar atualizações conforme a legislação evoluir.
+A versão mais atualizada e verificada desta skill é mantida em [openaccountants.com](https://www.openaccountants.com). Faça login para acessar a versão mais recente, solicitar revisão profissional por contador licenciado e acompanhar atualizações conforme a legislação evoluir.
 
 ---
 
@@ -410,7 +410,7 @@ a formal engagement letter** — book a free 30-minute call:
 
 We'll route you to the named verifier covering your country or state. You can
 also see the full list of verified accountants at
-[openaccountants.com/network](https://openaccountants.com/network).
+[openaccountants.com/network](https://www.openaccountants.com/network).
 
 <!-- openaccountants-mcp-cta -->
 

@@ -221,4 +221,4 @@ Wealth / estate / inheritance tax treaties exist sparsely. Most relief is unilat
 
 This workflow base produces working papers for review by credentialed estate planning practitioners. Estate, gift, wealth, and property transfer taxes have material magnitude and are jurisdiction-specific. Every output must be reviewed and signed off by a credentialed practitioner before filing or executing a transfer.
 
-The most up-to-date, verified version of this workflow base is maintained at [openaccountants.com](https://openaccountants.com).
+The most up-to-date, verified version of this workflow base is maintained at [openaccountants.com](https://www.openaccountants.com).

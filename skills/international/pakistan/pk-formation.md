@@ -57,4 +57,4 @@ depends_on:
 - NEVER present registration thresholds/rates without verifying current rules.
 
 ## Disclaimer
-Informational only; not advice. Verify registration steps and thresholds with the FBR, PSEB, SECP and provincial authorities. All outputs must be reviewed and signed off by a qualified Pakistani practitioner. Maintained at [openaccountants.com](https://openaccountants.com).
+Informational only; not advice. Verify registration steps and thresholds with the FBR, PSEB, SECP and provincial authorities. All outputs must be reviewed and signed off by a qualified Pakistani practitioner. Maintained at [openaccountants.com](https://www.openaccountants.com).

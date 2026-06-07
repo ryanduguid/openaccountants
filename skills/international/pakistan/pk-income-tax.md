@@ -60,4 +60,4 @@ Domestic consultant, net business income PKR 4,000,000 (TY2026): apply the non-s
 - NEVER ignore filer/non-filer (ATL) status — it changes withholding materially.
 
 ## Disclaimer
-Informational only; not advice. Pakistan slabs and rules change every Finance Act — verify with the FBR. All outputs must be reviewed and signed off by a qualified Pakistani tax practitioner before filing. Maintained at [openaccountants.com](https://openaccountants.com).
+Informational only; not advice. Pakistan slabs and rules change every Finance Act — verify with the FBR. All outputs must be reviewed and signed off by a qualified Pakistani tax practitioner before filing. Maintained at [openaccountants.com](https://www.openaccountants.com).

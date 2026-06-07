@@ -138,8 +138,8 @@ Every published skill maintains a contributor list at the bottom:
 
 ```markdown
 ## Verified by
-- Maria Schmidt, Steuerberater (StB) — DE corrections, 2026 ([profile](https://openaccountants.com/contributors/maria-schmidt))
-- Nathan Wiebe, CPA — CA-MB skill confirmation, 2026 ([profile](https://openaccountants.com/contributors/nathan-wiebe))
+- Maria Schmidt, Steuerberater (StB) — DE corrections, 2026 ([profile](https://www.openaccountants.com/contributors/maria-schmidt))
+- Nathan Wiebe, CPA — CA-MB skill confirmation, 2026 ([profile](https://www.openaccountants.com/contributors/nathan-wiebe))
 ```
 
 The practitioner profile page shows their contributions across all skills.

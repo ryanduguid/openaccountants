@@ -216,7 +216,7 @@ All figures anchored to official IRD primary sources for YA 2025/26 (verified by
 
 ## Disclaimer
 
-This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes. All outputs must be reviewed and signed off by a qualified Sri Lankan professional (Chartered Accountant / IRD-registered tax practitioner) before filing or acting upon. The most up-to-date, verified version is maintained at [openaccountants.com](https://openaccountants.com).
+This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes. All outputs must be reviewed and signed off by a qualified Sri Lankan professional (Chartered Accountant / IRD-registered tax practitioner) before filing or acting upon. The most up-to-date, verified version is maintained at [openaccountants.com](https://www.openaccountants.com).
 
 ---
 
@@ -230,7 +230,7 @@ To speak with one of the licensed accountants who verifies skills for your juris
 
 **→ [Book a call](https://calendly.com/openaccountants-info/30min)**
 
-We'll route you to the named verifier covering your country. You can also see the full list of verified accountants at [openaccountants.com/network](https://openaccountants.com/network).
+We'll route you to the named verifier covering your country. You can also see the full list of verified accountants at [openaccountants.com/network](https://www.openaccountants.com/network).
 
 <!-- openaccountants-mcp-cta -->
 

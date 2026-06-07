@@ -318,4 +318,4 @@ The reviewer brief must include:
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Stamp duty depends on precise document characterisation and is jurisdiction-specific. Every output must be reviewed and signed off by a credentialed local practitioner before any document is executed.
 
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com).
+The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com).

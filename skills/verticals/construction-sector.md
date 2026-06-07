@@ -190,4 +190,4 @@ End-user / intermediary must notify supplier in writing; failure to notify means
 
 ## Section 9 — Disclaimer
 
-Construction sector taxation is highly fact-specific. Outputs must be reviewed by credentialed construction sector practitioners. The most up-to-date version is at [openaccountants.com](https://openaccountants.com).
+Construction sector taxation is highly fact-specific. Outputs must be reviewed by credentialed construction sector practitioners. The most up-to-date version is at [openaccountants.com](https://www.openaccountants.com).

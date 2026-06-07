@@ -522,4 +522,4 @@ This skill and its outputs are provided for informational and computational purp
 
 The PAP formula and constants are sourced from the [MarcelLehmann/Lohnsteuer](https://github.com/MarcelLehmann/Lohnsteuer) repository (Apache-2.0), which generates code from the official BMF Programmablaufplan XML. The BMF publishes the PAP at [bmf-steuerrechner.de](https://www.bmf-steuerrechner.de).
 
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
+The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.

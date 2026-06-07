@@ -496,4 +496,4 @@ This skill and its outputs are provided for informational and computational purp
 
 The 確定申告書等作成コーナー screen layout and form fields are maintained by the National Tax Agency and may change without notice. Always verify against the live system.
 
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
+The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.

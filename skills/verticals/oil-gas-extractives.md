@@ -154,4 +154,4 @@ US GAAP ASC 932 permits both. IFRS 6 (Exploration and Evaluation Assets) allows 
 
 ## Section 10 — Disclaimer
 
-Extractives taxation is highly specialised. Outputs must be reviewed by credentialed extractives sector practitioners. The most up-to-date version is at [openaccountants.com](https://openaccountants.com).
+Extractives taxation is highly specialised. Outputs must be reviewed by credentialed extractives sector practitioners. The most up-to-date version is at [openaccountants.com](https://www.openaccountants.com).

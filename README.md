@@ -3,7 +3,7 @@
 
 # OpenAccountants
 
-Open-source accounting & tax skills for AI agents. **1,000+ skills across 192 jurisdictions** — 130+ countries plus every US state. Research-verified in this repo; [accountant-verified via the MCP connector](https://openaccountants.com/connect). Full breakdown: [docs/COVERAGE.md](docs/COVERAGE.md).
+Open-source accounting & tax skills for AI agents. **1,000+ skills across 192 jurisdictions** — 130+ countries plus every US state. Research-verified in this repo; [accountant-verified via the MCP connector](https://www.openaccountants.com/connect). Full breakdown: [docs/COVERAGE.md](docs/COVERAGE.md).
 
 **11 accounting domains:** tax, bookkeeping, e-invoicing, payroll, company formation, financial statements, transfer pricing, tax optimization, **crypto tax**, cross-border, plus industry verticals and platform integrations.
 
@@ -16,17 +16,17 @@ OpenAccountants runs on a **two-layer model**:
 | Layer | Where it lives | Quality tier | How to get it |
 |---|---|---|---|
 | **Research drafts** (rules, rates, thresholds, workflow bases) | This GitHub repo | Tier 2 — research-verified, AI-drafted, not signed by a credentialed accountant | Clone, fork, audit, contribute. Use freely under [the AGPL-3.0 / commercial dual license](#license). |
-| **Accountant-verified skills** (signed off by a named licensed CPA / CA / EA / Steuerberater / equivalent) | **The website + MCP server at [openaccountants.com](https://openaccountants.com)** | Tier 1 — corrections applied, audit flash points reviewed, verifier name on every output | **Install the MCP connector** at [openaccountants.com/connect](https://openaccountants.com/connect). Your AI loads them automatically with the verifier's name on every answer. |
+| **Accountant-verified skills** (signed off by a named licensed CPA / CA / EA / Steuerberater / equivalent) | **The website + MCP server at [openaccountants.com](https://www.openaccountants.com)** | Tier 1 — corrections applied, audit flash points reviewed, verifier name on every output | **Install the MCP connector** at [openaccountants.com/connect](https://www.openaccountants.com/connect). Your AI loads them automatically with the verifier's name on every answer. |
 
 **Why split?** The skill *rules* (rates, thresholds, statutes) are public domain restructured — those live here, open. The **verified version of record** — corrected by a named accountant, with their reputation on it — is served via the MCP so the AI-to-human handoff (`request_accountant_review`) can route users to a real CPA. That handoff is the product. The repo is the research base.
 
-**To USE OpenAccountants:** install the MCP connector at [openaccountants.com/connect](https://openaccountants.com/connect) — works with Claude.ai, ChatGPT, Cursor, Windsurf, and any other MCP-aware AI client.
+**To USE OpenAccountants:** install the MCP connector at [openaccountants.com/connect](https://www.openaccountants.com/connect) — works with Claude.ai, ChatGPT, Cursor, Windsurf, and any other MCP-aware AI client.
 
 **To CONTRIBUTE or AUDIT:** you're in the right place. Open issues, submit PRs, verify your jurisdiction.
 
 ---
 
-**Website:** [openaccountants.com](https://openaccountants.com) · **Install:** [openaccountants.com/connect](https://openaccountants.com/connect) · **Verifiers:** [openaccountants.com/network](https://openaccountants.com/network)
+**Website:** [openaccountants.com](https://www.openaccountants.com) · **Install:** [openaccountants.com/connect](https://www.openaccountants.com/connect) · **Verifiers:** [openaccountants.com/network](https://www.openaccountants.com/network)
 
 ---
 
@@ -49,7 +49,7 @@ If you just want to dive in, pick your jurisdiction:
 
 | Method | What you get | Best for |
 |--------|-------------|----------|
-| **MCP connector** *(recommended)* | All **accountant-verified** skills, with named-verifier attribution and the AI-to-human handoff (`request_accountant_review` routes to a real CPA with your worksheet attached). Install at [openaccountants.com/connect](https://openaccountants.com/connect). | Anyone who actually wants to use OpenAccountants. Claude.ai, ChatGPT (paid Business+), Cursor, Windsurf, Claude Desktop, Claude Code, or any MCP-aware client. |
+| **MCP connector** *(recommended)* | All **accountant-verified** skills, with named-verifier attribution and the AI-to-human handoff (`request_accountant_review` routes to a real CPA with your worksheet attached). Install at [openaccountants.com/connect](https://www.openaccountants.com/connect). | Anyone who actually wants to use OpenAccountants. Claude.ai, ChatGPT (paid Business+), Cursor, Windsurf, Claude Desktop, Claude Code, or any MCP-aware client. |
 | **Manual upload** from this repo | Only the **research-verified** drafts in this repo (no verifier name, no handoff). Download a folder, drag `.md` files into your LLM. | Developers / accountants who want to audit, fork, or contribute to the open library before installing. |
 
 **The MCP path is the canonical product.** This repo is the open research base that backs it.
@@ -59,8 +59,8 @@ If you just want to dive in, pick your jurisdiction:
 Read this before you trust any output.
 
 - **LLMs hallucinate and misread.** These files steer the model; they do not guarantee correct numbers, classifications, or filings. Always have a qualified professional review before you act.
-- **Tax law changes.** Rates, thresholds, and forms go out of date. The repo is a snapshot; [openaccountants.com](https://openaccountants.com) may be ahead of what you cloned.
-- **Verification is in two tiers** — see [QUALITY-TIERS.md](docs/QUALITY-TIERS.md). **Accountant-verified (Tier 1)** means a licensed practitioner has signed off and put their name on the skill. **These are served only via the MCP server at [openaccountants.com](https://openaccountants.com) — not from this repo.** **Research-verified (Tier 2)** means every rate, threshold, and form reference has been drafted from authoritative sources but not yet signed off by a credentialed practitioner. **This repo holds the Tier 2 drafts**; the Tier 1 signed versions live in the database behind the MCP server.
+- **Tax law changes.** Rates, thresholds, and forms go out of date. The repo is a snapshot; [openaccountants.com](https://www.openaccountants.com) may be ahead of what you cloned.
+- **Verification is in two tiers** — see [QUALITY-TIERS.md](docs/QUALITY-TIERS.md). **Accountant-verified (Tier 1)** means a licensed practitioner has signed off and put their name on the skill. **These are served only via the MCP server at [openaccountants.com](https://www.openaccountants.com) — not from this repo.** **Research-verified (Tier 2)** means every rate, threshold, and form reference has been drafted from authoritative sources but not yet signed off by a credentialed practitioner. **This repo holds the Tier 2 drafts**; the Tier 1 signed versions live in the database behind the MCP server.
 - **Coverage is uneven.** Thirteen countries ship the full accounting suite (tax + bookkeeping + payroll + formation + financial statements + transfer pricing + tax optimization) in this repo; dozens more have multiple skills without that full stack; **many** jurisdictions are **VAT/GST-only** or partial. See **Coverage** below and each country folder's README.
 - **Newer domains need more eyes.** Bookkeeping, payroll, formation, financial statements, transfer pricing, and tax optimization skills are research-verified but have fewer accountant sign-offs than the core tax skills. Help us close that gap.
 
@@ -151,7 +151,7 @@ These skills need your eye. Most are **research-verified** — drafted from auth
 2. Check the rates against your tax authority's website
 3. Email your corrections to **info@openaccountants.com** — Word doc, Excel, PDF, tracked changes, whatever format works for you
 
-We'll update the skill and credit you publicly as the verified reviewer at [openaccountants.com](https://openaccountants.com).
+We'll update the skill and credit you publicly as the verified reviewer at [openaccountants.com](https://www.openaccountants.com).
 
 Or if you prefer GitHub: fork, fix, PR. **Your name goes on the skill either way.**
 
@@ -468,9 +468,9 @@ We maintain 1,900+ skills across 134 countries, 51 US state packages, and 13 Can
 
 ### Credits
 
-Every contributor is credited publicly on the skill file and at [openaccountants.com](https://openaccountants.com).
+Every contributor is credited publicly on the skill file and at [openaccountants.com](https://www.openaccountants.com).
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for the full guide. Skills published to [openaccountants.com](https://openaccountants.com) require a resolvable jurisdiction — see [docs/WEBSITE-SYNC.md](docs/WEBSITE-SYNC.md).
+See [CONTRIBUTING.md](CONTRIBUTING.md) for the full guide. Skills published to [openaccountants.com](https://www.openaccountants.com) require a resolvable jurisdiction — see [docs/WEBSITE-SYNC.md](docs/WEBSITE-SYNC.md).
 
 **Pull requests:** contributions are accepted under the [Contributor License Agreement (CLA.md)](CLA.md). You explicitly agree by ticking the CLA box in the [pull request template](.github/PULL_REQUEST_TEMPLATE.md) when you open a PR.
 
@@ -480,7 +480,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for the full guide. Skills published to [
 
 All skills and outputs are for informational and computational purposes only. Not tax advice. Not a replacement for professional judgment. All outputs must be reviewed by a qualified professional before filing.
 
-The most up-to-date, verified version is maintained at [openaccountants.com](https://openaccountants.com).
+The most up-to-date, verified version is maintained at [openaccountants.com](https://www.openaccountants.com).
 
 ## Contact
 

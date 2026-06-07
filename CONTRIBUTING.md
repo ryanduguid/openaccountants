@@ -10,7 +10,7 @@ Anyone. You don't need to be an accountant to write a skill. You need to know yo
 
 ### Option 1: Via the website
 
-1. Go to [openaccountants.com](https://openaccountants.com)
+1. Go to [openaccountants.com](https://www.openaccountants.com)
 2. Sign up for an account
 3. Use the submission form to upload your skill
 4. It goes live immediately as "unverified"
@@ -27,7 +27,7 @@ Anyone. You don't need to be an accountant to write a skill. You need to know yo
 
 ## Website sync rule
 
-Every skill in `skills/` that should appear on [openaccountants.com](https://openaccountants.com) must either:
+Every skill in `skills/` that should appear on [openaccountants.com](https://www.openaccountants.com) must either:
 
 1. Live in a **recognized country folder** (`skills/international/<country>/`, `skills/federal/`, `skills/us-states/<code>/`), **or**
 2. Include **`jurisdiction:` in YAML frontmatter** (e.g. `MT`, `GB`, `US`, `US-CA`, `GLOBAL`, `INTL`)
@@ -125,7 +125,7 @@ If you add a `references.md` to a country's source directory, it will be include
 
 ## Verification
 
-After you submit, licensed accountants review each section of your skill on [openaccountants.com](https://openaccountants.com). When every section is approved, the skill gets a green "verified" badge. Your name stays on it as the author.
+After you submit, licensed accountants review each section of your skill on [openaccountants.com](https://www.openaccountants.com). When every section is approved, the skill gets a green "verified" badge. Your name stays on it as the author.
 
 ## Contributor License Agreement (CLA)
 

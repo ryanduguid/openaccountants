@@ -709,7 +709,7 @@ Q9: 2 人及以上创业 + 需要有限责任 + 计划扩张和融资？
 
 本技能及其输出仅供信息与计算参考，不构成中国法律、税务或财务建议。Open Accountants 及其贡献者不对因使用本技能而产生的任何错误、遗漏或后果承担责任。所有输出在依赖之前均须经由具有中国执业资质的律师、注册会计师（CPA）、税务师（CTA）或资产评估师审查并签署确认。外籍创始人尚须另行聘请出入境 / 移民事务律师处理工作许可、居留许可、永久居留等不在本技能范围内的事项。
 
-最新版本维护于 [openaccountants.com](https://openaccountants.com)。
+最新版本维护于 [openaccountants.com](https://www.openaccountants.com)。
 
 ---
 
@@ -728,7 +728,7 @@ a formal engagement letter** — book a free 30-minute call:
 
 We'll route you to the named verifier covering your country or state. You can
 also see the full list of verified accountants at
-[openaccountants.com/network](https://openaccountants.com/network).
+[openaccountants.com/network](https://www.openaccountants.com/network).
 
 <!-- openaccountants-mcp-cta -->
 

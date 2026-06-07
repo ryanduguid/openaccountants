@@ -280,4 +280,4 @@ Apply the General Rules for the Interpretation (GRI 1-6) of the HS:
 
 This workflow base produces working papers for review by licensed customs practitioners. Customs declarations are legally binding; misstatements carry criminal as well as civil penalties. Every output must be reviewed and signed off by a licensed customs broker or in-house customs manager before lodgement.
 
-The most up-to-date, verified version of this workflow base is maintained at [openaccountants.com](https://openaccountants.com).
+The most up-to-date, verified version of this workflow base is maintained at [openaccountants.com](https://www.openaccountants.com).

@@ -1,8 +1,8 @@
 # Verifiers
 
-These are the licensed practitioners who have signed off on **accountant-verified (Tier 1)** skills. Tier 1 skills are served via the [MCP connector](https://openaccountants.com/connect) with the verifier's name and credential on every output.
+These are the licensed practitioners who have signed off on **accountant-verified (Tier 1)** skills. Tier 1 skills are served via the [MCP connector](https://www.openaccountants.com/connect) with the verifier's name and credential on every output.
 
-_Last updated: 2026-06-07. The authoritative, live list is the network directory at [openaccountants.com](https://openaccountants.com)._
+_Last updated: 2026-06-07. The authoritative, live list is the network directory at [openaccountants.com](https://www.openaccountants.com)._
 
 | Jurisdiction | Verifier | Credential |
 |---|---|---|
@@ -26,6 +26,6 @@ If you're a licensed CPA / CA / EA / Steuerberater (or local equivalent) and wan
 
 - See the open [reviewer-wanted issues](https://github.com/openaccountants/openaccountants/issues)
 - Read [CONTRIBUTING.md](../CONTRIBUTING.md) and [QUALITY-TIERS.md](QUALITY-TIERS.md)
-- Apply at [openaccountants.com](https://openaccountants.com)
+- Apply at [openaccountants.com](https://www.openaccountants.com)
 
 Your sign-off moves a jurisdiction's skills from research-verified to accountant-verified, with your name on every answer the AI gives.

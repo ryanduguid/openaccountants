@@ -472,7 +472,7 @@ verified_by: pending
 
 本技能及其输出仅用于信息和计算目的，不构成税务、法律或财务建议。OpenAccountants 及其贡献者对因使用本技能产生的任何错误、遗漏或后果不承担任何责任。所有输出必须由中国注册会计师（CPA）、注册税务师（CTA）或同等资质的执业人员审核并签字后方可申报或据此采取行动。
 
-本技能的最新核验版本维护于 [openaccountants.com](https://openaccountants.com)。登录可获取最新版本、申请持证会计师专业复核，并跟踪税法变更。
+本技能的最新核验版本维护于 [openaccountants.com](https://www.openaccountants.com)。登录可获取最新版本、申请持证会计师专业复核，并跟踪税法变更。
 
 *OpenAccountants — 面向 AI 的开源会计技能库*
 *This is not tax advice. All outputs must be reviewed by a qualified professional before filing.*
@@ -494,7 +494,7 @@ a formal engagement letter** — book a free 30-minute call:
 
 We'll route you to the named verifier covering your country or state. You can
 also see the full list of verified accountants at
-[openaccountants.com/network](https://openaccountants.com/network).
+[openaccountants.com/network](https://www.openaccountants.com/network).
 
 <!-- openaccountants-mcp-cta -->
 

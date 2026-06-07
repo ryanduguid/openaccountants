@@ -106,6 +106,6 @@ relevant borough or city, or with ARSSTC for remote sellers. All outputs must be
 reviewed and signed off by a qualified professional before filing.
 
 The most up-to-date, verified version of this skill is maintained at
-[openaccountants.com](https://openaccountants.com). Log in to access the latest
+[openaccountants.com](https://www.openaccountants.com). Log in to access the latest
 version, request a professional review from a licensed accountant, and track
 updates as tax law changes.

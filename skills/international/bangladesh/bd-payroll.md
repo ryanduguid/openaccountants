@@ -42,4 +42,4 @@ A studio pays an employee ৳600,000/year: compute tax on the slabs (first ~৳3
 - NEVER state slab/rebate figures without verifying the current Finance Act.
 
 ## Disclaimer
-Informational only; not advice. Verify withholding slabs, PF/gratuity, and pension rules with the NBR and relevant authority. All outputs must be reviewed and signed off by a qualified Bangladeshi practitioner. Maintained at [openaccountants.com](https://openaccountants.com).
+Informational only; not advice. Verify withholding slabs, PF/gratuity, and pension rules with the NBR and relevant authority. All outputs must be reviewed and signed off by a qualified Bangladeshi practitioner. Maintained at [openaccountants.com](https://www.openaccountants.com).

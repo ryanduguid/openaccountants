@@ -853,7 +853,7 @@ Azul para valores travados do extrato/NF-e. Preto para fórmulas. Verde para ref
 
 Esta skill e seus produtos são fornecidos exclusivamente para fins informativos e de cálculo e não constituem aconselhamento tributário, jurídico ou financeiro. Open Accountants e seus contribuintes não assumem qualquer responsabilidade por erros, omissões ou consequências decorrentes do uso desta skill. Todos os resultados devem ser revisados e assinados por profissional qualificado (contador registrado no CRC, advogado tributarista ou profissional licenciado equivalente) antes do envio ou da tomada de decisão.
 
-A versão mais atualizada e verificada desta skill é mantida em [openaccountants.com](https://openaccountants.com). Faça login para acessar a versão mais recente, solicitar revisão profissional de contador licenciado e acompanhar atualizações conforme a legislação tributária evolui.
+A versão mais atualizada e verificada desta skill é mantida em [openaccountants.com](https://www.openaccountants.com). Faça login para acessar a versão mais recente, solicitar revisão profissional de contador licenciado e acompanhar atualizações conforme a legislação tributária evolui.
 
 ---
 
@@ -872,7 +872,7 @@ a formal engagement letter** — book a free 30-minute call:
 
 We'll route you to the named verifier covering your country or state. You can
 also see the full list of verified accountants at
-[openaccountants.com/network](https://openaccountants.com/network).
+[openaccountants.com/network](https://www.openaccountants.com/network).
 
 <!-- openaccountants-mcp-cta -->
 

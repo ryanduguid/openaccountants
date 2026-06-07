@@ -485,7 +485,7 @@ Primary statutes, royal decrees, and ZATCA regulations cited (all 2025-effective
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, Sharia, or financial advice. OpenAccountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified Saudi tax professional (SOCPA-licensed Saudi CPA, or a tax adviser registered with ZATCA) before filing with ZATCA or acting upon. Foreign investment, MISA licensing, and corporate-structuring matters additionally require qualified Saudi corporate counsel.
 
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com).
+The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com).
 
 ---
 
@@ -510,7 +510,7 @@ a formal engagement letter** — book a free 30-minute call:
 
 We'll route you to the named verifier covering your country or state. You can
 also see the full list of verified accountants at
-[openaccountants.com/network](https://openaccountants.com/network).
+[openaccountants.com/network](https://www.openaccountants.com/network).
 
 <!-- openaccountants-mcp-cta -->
 

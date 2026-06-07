@@ -36,4 +36,4 @@ Defaults if unanswered: resident sole proprietor, assume IT/ITES income now taxa
 - **Domestic business:** bangladesh-pit + bangladesh-vat (if registered) + bd-social-contributions (voluntary pension) → bd-return-assembly.
 
 ## Disclaimer
-Intake only; computes no tax. All downstream outputs must be reviewed and signed off by a qualified Bangladeshi tax practitioner before filing. Maintained at [openaccountants.com](https://openaccountants.com).
+Intake only; computes no tax. All downstream outputs must be reviewed and signed off by a qualified Bangladeshi tax practitioner before filing. Maintained at [openaccountants.com](https://www.openaccountants.com).

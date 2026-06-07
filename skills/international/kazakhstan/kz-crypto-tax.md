@@ -70,4 +70,4 @@ depends_on:
 - NEVER present a figure as final — direct the client to a Kazakhstan accountant.
 
 ## Disclaimer
-This skill is informational only and not tax, legal, or financial advice. Kazakhstan's digital-asset and mining rules are evolving (new Tax Code 2026, AIFC rules) — verify current rates, the digital-mining fee bands, and licensing status with the КГД and AIFC. All outputs must be reviewed and signed off by a qualified Kazakhstan accountant before filing. The most up-to-date version is maintained at [openaccountants.com](https://openaccountants.com).
+This skill is informational only and not tax, legal, or financial advice. Kazakhstan's digital-asset and mining rules are evolving (new Tax Code 2026, AIFC rules) — verify current rates, the digital-mining fee bands, and licensing status with the КГД and AIFC. All outputs must be reviewed and signed off by a qualified Kazakhstan accountant before filing. The most up-to-date version is maintained at [openaccountants.com](https://www.openaccountants.com).

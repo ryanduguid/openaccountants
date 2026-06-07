@@ -37,4 +37,4 @@ Defaults if unanswered: resident business individual, not PSEB-registered, encou
 - **Domestic business:** pk-income-tax + provincial sales tax + pk-social-contributions → pk-return-assembly.
 
 ## Disclaimer
-Intake only; computes no tax. All downstream outputs must be reviewed and signed off by a qualified Pakistani tax practitioner before filing. Maintained at [openaccountants.com](https://openaccountants.com).
+Intake only; computes no tax. All downstream outputs must be reviewed and signed off by a qualified Pakistani tax practitioner before filing. Maintained at [openaccountants.com](https://www.openaccountants.com).

@@ -43,4 +43,4 @@ A VAT-registered IT services firm: issues Mushak-6.3 invoices, files Mushak-9.1 
 - NEVER state EFD scope/SRO dates without verifying current NBR notifications.
 
 ## Disclaimer
-Informational only; not advice. Verify EFD/Mushak scope and dates with the NBR. All outputs must be reviewed and signed off by a qualified Bangladeshi practitioner. Maintained at [openaccountants.com](https://openaccountants.com).
+Informational only; not advice. Verify EFD/Mushak scope and dates with the NBR. All outputs must be reviewed and signed off by a qualified Bangladeshi practitioner. Maintained at [openaccountants.com](https://www.openaccountants.com).

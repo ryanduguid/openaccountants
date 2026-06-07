@@ -138,4 +138,4 @@ This skill does NOT cover:
 
 ## Section 6 — Disclaimer
 
-Insurance accounting and tax are highly specialised. Outputs must be reviewed by credentialed insurance-sector practitioners. The most up-to-date version is at [openaccountants.com](https://openaccountants.com).
+Insurance accounting and tax are highly specialised. Outputs must be reviewed by credentialed insurance-sector practitioners. The most up-to-date version is at [openaccountants.com](https://www.openaccountants.com).

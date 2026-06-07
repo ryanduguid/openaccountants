@@ -18,7 +18,7 @@ verified_by: pending
 
 > **Produced by OpenAccountants (openaccountants.com)**
 >
-> This skill is for informational purposes only and does not constitute tax, legal, or financial advice. All outputs must be reviewed and signed off by a qualified Quebec tax adviser (CPA auditeur or CPA with Quebec corporate tax expertise, or a tax lawyer admitted to the Barreau du Québec with corporate tax specialisation) before filing or acting upon. Quebec administers its CIT separately from the federal government — the CRA does not collect Quebec corporate tax. The latest verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com).
+> This skill is for informational purposes only and does not constitute tax, legal, or financial advice. All outputs must be reviewed and signed off by a qualified Quebec tax adviser (CPA auditeur or CPA with Quebec corporate tax expertise, or a tax lawyer admitted to the Barreau du Québec with corporate tax specialisation) before filing or acting upon. Quebec administers its CIT separately from the federal government — the CRA does not collect Quebec corporate tax. The latest verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com).
 
 ---
 
@@ -825,7 +825,7 @@ Quebec CIT and federal CIT are **computed on the same accounting starting point*
 
 ## Disclaimer
 
-This skill and its outputs are for informational and computational purposes only and do not constitute tax, legal, or financial advice. All outputs must be reviewed and signed off by a qualified Quebec tax adviser (CPA auditeur with Quebec corporate tax experience, or a tax lawyer admitted to the Barreau du Québec with corporate tax specialisation) before filing or acting upon. Quebec administers its corporate income tax separately from the federal government — a corporation with a permanent establishment in Quebec must file both the federal T2 with the CRA and the CO-17 with Revenu Québec; these returns are not interchangeable, and reliance on one does not satisfy the other. The latest verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com).
+This skill and its outputs are for informational and computational purposes only and do not constitute tax, legal, or financial advice. All outputs must be reviewed and signed off by a qualified Quebec tax adviser (CPA auditeur with Quebec corporate tax experience, or a tax lawyer admitted to the Barreau du Québec with corporate tax specialisation) before filing or acting upon. Quebec administers its corporate income tax separately from the federal government — a corporation with a permanent establishment in Quebec must file both the federal T2 with the CRA and the CO-17 with Revenu Québec; these returns are not interchangeable, and reliance on one does not satisfy the other. The latest verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com).
 
 ---
 
@@ -848,7 +848,7 @@ a formal engagement letter** — book a free 30-minute call:
 
 We'll route you to the named verifier covering your country or state. You can
 also see the full list of verified accountants at
-[openaccountants.com/network](https://openaccountants.com/network).
+[openaccountants.com/network](https://www.openaccountants.com/network).
 
 <!-- openaccountants-mcp-cta -->
 

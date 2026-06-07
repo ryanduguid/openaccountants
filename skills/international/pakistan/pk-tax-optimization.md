@@ -48,4 +48,4 @@ IT freelancer, USD 50,000/yr via Upwork: register with **PSEB**, remit through a
 - NEVER state rates without verifying the current Finance Act.
 
 ## Disclaimer
-Informational only; legal planning needs a qualified Pakistani tax practitioner. Verify all rates/rules with the FBR and PSEB. Maintained at [openaccountants.com](https://openaccountants.com).
+Informational only; legal planning needs a qualified Pakistani tax practitioner. Verify all rates/rules with the FBR and PSEB. Maintained at [openaccountants.com](https://www.openaccountants.com).

@@ -1015,7 +1015,7 @@ equivalent licensed practitioner in your jurisdiction) before filing
 or acting upon.
 
 The most up-to-date, verified version of this skill is maintained at
-[openaccountants.com](https://openaccountants.com). Log in to access
+[openaccountants.com](https://www.openaccountants.com). Log in to access
 the latest version, request a professional review from a licensed
 accountant, and track updates as tax law changes.
 
@@ -1038,7 +1038,7 @@ call:
 
 We'll route you to the named verifier covering your country or state.
 You can also see the full list of verified accountants at
-[openaccountants.com/network](https://openaccountants.com/network).
+[openaccountants.com/network](https://www.openaccountants.com/network).
 
 <!-- openaccountants-mcp-cta -->
 

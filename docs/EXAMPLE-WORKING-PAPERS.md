@@ -42,7 +42,7 @@ Every working paper has the same bones:
 
 **Provenance footer:**
 > Computed with `uk-self-employment-sa103` · 2025/26 rules · research-verified.
-> _For accountant-verified output with a named UK CPA on the result, use the [MCP connector](https://openaccountants.com/connect)._
+> _For accountant-verified output with a named UK CPA on the result, use the [MCP connector](https://www.openaccountants.com/connect)._
 
 **Handoff:** the AI then offers to route the working paper to a licensed accountant via `request_accountant_review`.
 
@@ -50,6 +50,6 @@ Every working paper has the same bones:
 
 Don't copy figures from this page. To produce a real working paper:
 - **Upload** the relevant package from [`packages/`](../packages/) to your LLM and give it your facts, or
-- **Connect via [MCP](https://openaccountants.com/connect)** and ask your question — the AI loads the authoritative skill automatically and attaches a verifier's name where one exists.
+- **Connect via [MCP](https://www.openaccountants.com/connect)** and ask your question — the AI loads the authoritative skill automatically and attaches a verifier's name where one exists.
 
 Always have a credentialed professional review before filing.

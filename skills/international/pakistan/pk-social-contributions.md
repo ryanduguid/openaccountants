@@ -46,4 +46,4 @@ A solo freelancer with no staff: **no** EOBI/ESSI contribution due; obligations 
 - NEVER state contribution rates without verifying current EOBI/provincial figures.
 
 ## Disclaimer
-Informational only; not advice. Verify EOBI and provincial ESSI rules with the relevant authority. All outputs must be reviewed and signed off by a qualified Pakistani practitioner. Maintained at [openaccountants.com](https://openaccountants.com).
+Informational only; not advice. Verify EOBI and provincial ESSI rules with the relevant authority. All outputs must be reviewed and signed off by a qualified Pakistani practitioner. Maintained at [openaccountants.com](https://www.openaccountants.com).

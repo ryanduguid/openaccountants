@@ -44,4 +44,4 @@ A sales-tax-registered IT services firm in Punjab: files services sales tax with
 - NEVER state SRO scope/dates without verifying the current FBR notifications.
 
 ## Disclaimer
-Informational only; not advice. FBR e-invoicing scope and dates change by SRO — verify with the FBR and the relevant provincial authority. All outputs must be reviewed and signed off by a qualified Pakistani practitioner. Maintained at [openaccountants.com](https://openaccountants.com).
+Informational only; not advice. FBR e-invoicing scope and dates change by SRO — verify with the FBR and the relevant provincial authority. All outputs must be reviewed and signed off by a qualified Pakistani practitioner. Maintained at [openaccountants.com](https://www.openaccountants.com).

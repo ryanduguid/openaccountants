@@ -528,7 +528,7 @@ As penalidades se acumulam quando múltiplas infrações ocorrem no mesmo perío
 
 Esta skill e suas saídas são fornecidas apenas para fins informativos e computacionais e não constituem aconselhamento tributário, jurídico ou financeiro. A Open Accountants e seus colaboradores não se responsabilizam por quaisquer erros, omissões ou resultados decorrentes do uso desta skill. Toda saída deve ser revisada e validada por um profissional qualificado (Contador registrado no CRC ou profissional licenciado equivalente em sua jurisdição) antes da entrega ou ato fiscal.
 
-A versão mais atualizada e verificada desta skill é mantida em [openaccountants.com](https://openaccountants.com).
+A versão mais atualizada e verificada desta skill é mantida em [openaccountants.com](https://www.openaccountants.com).
 
 ---
 
@@ -547,7 +547,7 @@ a formal engagement letter** — book a free 30-minute call:
 
 We'll route you to the named verifier covering your country or state. You can
 also see the full list of verified accountants at
-[openaccountants.com/network](https://openaccountants.com/network).
+[openaccountants.com/network](https://www.openaccountants.com/network).
 
 <!-- openaccountants-mcp-cta -->
 

@@ -199,4 +199,4 @@ This typically generates a significant balance sheet asset for high-growth SaaS 
 
 ## Section 9 — Disclaimer
 
-SaaS sector taxation involves substantial cross-border complexity. Outputs must be reviewed by credentialed practitioners. The most up-to-date version is at [openaccountants.com](https://openaccountants.com).
+SaaS sector taxation involves substantial cross-border complexity. Outputs must be reviewed by credentialed practitioners. The most up-to-date version is at [openaccountants.com](https://www.openaccountants.com).

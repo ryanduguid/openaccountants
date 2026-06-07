@@ -47,4 +47,4 @@ A freelancer keeps: monthly platform statements, the bank encashment certificate
 - NEVER state the retention period without verifying the current rule.
 
 ## Disclaimer
-Informational only; not advice. Verify record/retention requirements with the NBR. All outputs must be reviewed and signed off by a qualified Bangladeshi practitioner. Maintained at [openaccountants.com](https://openaccountants.com).
+Informational only; not advice. Verify record/retention requirements with the NBR. All outputs must be reviewed and signed off by a qualified Bangladeshi practitioner. Maintained at [openaccountants.com](https://www.openaccountants.com).

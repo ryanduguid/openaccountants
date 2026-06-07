@@ -544,7 +544,7 @@ verified_by: pending
 
 ## 免责声明
 
-本技能及其输出仅用于信息和计算参考用途，不构成税务、法律或财务建议。所有输出在申报或据此采取行动之前，必须由具备资质的中国注册税务师（CTA）或注册会计师（CPA）审核并签字确认。最新经审核版本维护于 [openaccountants.com](https://openaccountants.com)。
+本技能及其输出仅用于信息和计算参考用途，不构成税务、法律或财务建议。所有输出在申报或据此采取行动之前，必须由具备资质的中国注册税务师（CTA）或注册会计师（CPA）审核并签字确认。最新经审核版本维护于 [openaccountants.com](https://www.openaccountants.com)。
 
 ---
 
@@ -567,7 +567,7 @@ a formal engagement letter** — book a free 30-minute call:
 
 We'll route you to the named verifier covering your country or state. You can
 also see the full list of verified accountants at
-[openaccountants.com/network](https://openaccountants.com/network).
+[openaccountants.com/network](https://www.openaccountants.com/network).
 
 <!-- openaccountants-mcp-cta -->
 
