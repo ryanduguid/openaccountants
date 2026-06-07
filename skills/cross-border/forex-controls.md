@@ -317,4 +317,4 @@ When receiving a CRS inquiry letter from Chinese tax authorities:
 
 *Data reflects 2024–2026 rules. Forex regulations are enforced with increasing rigor worldwide. Verify current limits and procedures with your bank and a qualified advisor before large cross-border transfers.*
 *Original content: [Artin (@ar-gen-tin)](https://github.com/ar-gen-tin/panrise) — MIT License.*
-*OpenAccountants — open-source accounting skills for AI — info@openaaccountants.com*
+*OpenAccountants — open-source accounting skills for AI — info@openaccountants.com*

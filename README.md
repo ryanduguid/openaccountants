@@ -3,7 +3,7 @@
 
 # OpenAccountants
 
-Open-source accounting skills for AI. **890+ skills across 134 countries + 51 US state packages + 13 Canadian province/territory packages.**
+Open-source accounting & tax skills for AI agents. **1,000+ skills across 192 jurisdictions** — 130+ countries plus every US state. Research-verified in this repo; [accountant-verified via the MCP connector](https://openaccountants.com/connect). Full breakdown: [docs/COVERAGE.md](docs/COVERAGE.md).
 
 **11 accounting domains:** tax, bookkeeping, e-invoicing, payroll, company formation, financial statements, transfer pricing, tax optimization, **crypto tax**, cross-border, plus industry verticals and platform integrations.
 
@@ -129,6 +129,16 @@ Check my invoice compliance for EU e-invoicing.
 
 The AI will ask a few questions, load the right skills, and produce a working paper for your accountant.
 
+**Cross-border and scenario questions work too** — describe the situation and the AI loads the right skills across jurisdictions:
+
+```
+US citizen moving to Malta — tax workflow and exit considerations
+Freelancer in Germany — VAT and income tax for the year
+Cross-border SaaS — VAT place-of-supply for EU B2B and B2C
+Crypto tax: Portugal vs Malta for a long-term holder
+Selling a UK company as a non-resident — CGT and treaty relief
+```
+
 ---
 
 ## Are you an accountant?
@@ -139,7 +149,7 @@ These skills need your eye. Most are **research-verified** — drafted from auth
 
 1. Find your country's folder under `packages/`
 2. Check the rates against your tax authority's website
-3. Email your corrections to **info@openaaccountants.com** — Word doc, Excel, PDF, tracked changes, whatever format works for you
+3. Email your corrections to **info@openaccountants.com** — Word doc, Excel, PDF, tracked changes, whatever format works for you
 
 We'll update the skill and credit you publicly as the verified reviewer at [openaccountants.com](https://openaccountants.com).
 

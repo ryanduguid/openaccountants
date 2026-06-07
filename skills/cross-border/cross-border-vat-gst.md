@@ -317,4 +317,4 @@ If earning across multiple platforms (YouTube, Patreon, Substack, Gumroad), **ag
 
 *Data reflects 2024–2026 rules. VAT/GST thresholds, rates, and registration requirements change frequently. Verify all figures with official sources and a qualified indirect tax advisor.*
 *Original content: [Artin (@ar-gen-tin)](https://github.com/ar-gen-tin/panrise) — MIT License.*
-*OpenAccountants — open-source accounting skills for AI — info@openaaccountants.com*
+*OpenAccountants — open-source accounting skills for AI — info@openaccountants.com*

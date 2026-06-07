@@ -303,7 +303,7 @@ Every LLC — even single-member — needs an operating agreement covering:
 
 *Data reflects 2024–2026 rules. For amounts >$100,000 USD or life-changing decisions, verify current rules with a qualified advisor in each relevant jurisdiction.*
 *Original content: [Artin (@ar-gen-tin)](https://github.com/ar-gen-tin/panrise) — MIT License.*
-*OpenAccountants — open-source accounting skills for AI — info@openaaccountants.com*
+*OpenAccountants — open-source accounting skills for AI — info@openaccountants.com*
 
 ---
 
