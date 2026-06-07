@@ -198,4 +198,4 @@ Tax treatment varies — some jurisdictions allow deduction of CVA P&L volatilit
 
 This skill produces working papers for review by credentialed banking-sector practitioners. Bank accounting, regulation, and tax are highly specialised. Every output must be reviewed and signed off by a credentialed practitioner (typically Big 4 banking sector specialist, in-house Head of Tax, or audit partner) before any filing or capital reporting.
 
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com).
+The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com).

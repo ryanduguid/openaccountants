@@ -432,7 +432,7 @@ The AI will:
 
 **This is not tax, legal, or financial advice.** Everything produced must be reviewed and signed off by a qualified {practitioner_title} before filing or acting upon.
 
-The most up-to-date, verified version of these skills is maintained at [openaccountants.com](https://openaccountants.com).
+The most up-to-date, verified version of these skills is maintained at [openaccountants.com](https://www.openaccountants.com).
 
 ---
 
@@ -446,7 +446,7 @@ These {country_name} tax skills need your eye. Every rate, threshold, and form r
 2. Check the rates against {tax_authority}'s website
 3. Email your corrections to **info@openaccountants.com** — Word doc, Excel, PDF, tracked changes, whatever works
 
-We'll update the skill and credit you publicly as the verified reviewer at [openaccountants.com](https://openaccountants.com).
+We'll update the skill and credit you publicly as the verified reviewer at [openaccountants.com](https://www.openaccountants.com).
 
 Or if you're comfortable with GitHub: fork the repo, fix the source file under `skills/`, and submit a PR.
 
@@ -455,7 +455,7 @@ Or if you're comfortable with GitHub: fork the repo, fix the source file under `
 ---
 
 *OpenAccountants — open-source accounting skills for AI*
-*134 countries + 51 US states — [openaccountants.com](https://openaccountants.com)*
+*134 countries + 51 US states — [openaccountants.com](https://www.openaccountants.com)*
 *info@openaccountants.com*
 """
 
@@ -682,7 +682,7 @@ The AI will:
 qualified CPA, EA, or tax attorney before filing.
 
 The most up-to-date, verified version of these skills is maintained at
-[openaccountants.com](https://openaccountants.com).
+[openaccountants.com](https://www.openaccountants.com).
 
 ---
 
@@ -696,7 +696,7 @@ These {state_name} tax skills need your eye. Every rate, threshold, and form ref
 2. Check the rates against your state tax authority's website and the IRS
 3. Email your corrections to **info@openaccountants.com** — Word doc, Excel, PDF, tracked changes, whatever works
 
-We'll update the skill and credit you publicly as the verified reviewer at [openaccountants.com](https://openaccountants.com).
+We'll update the skill and credit you publicly as the verified reviewer at [openaccountants.com](https://www.openaccountants.com).
 
 Or if you're comfortable with GitHub: fork the repo, fix the source under `skills/us-states/{state_code}/` or `skills/federal/`, and submit a PR.
 
@@ -705,7 +705,7 @@ Or if you're comfortable with GitHub: fork the repo, fix the source under `skill
 ---
 
 *OpenAccountants — open-source accounting skills for AI*
-*134 countries + 51 US states — [openaccountants.com](https://openaccountants.com)*
+*134 countries + 51 US states — [openaccountants.com](https://www.openaccountants.com)*
 *info@openaccountants.com*
 """
 
@@ -852,7 +852,7 @@ The AI will:
 qualified Canadian CPA before filing.
 
 The most up-to-date, verified version of these skills is maintained at
-[openaccountants.com](https://openaccountants.com).
+[openaccountants.com](https://www.openaccountants.com).
 
 ---
 
@@ -866,7 +866,7 @@ These {province_name} tax skills need your eye. Every rate, threshold, and form 
 2. Check the rates against the CRA and your provincial/territorial finance department
 3. Email your corrections to **info@openaccountants.com** — Word doc, Excel, PDF, tracked changes, whatever works
 
-We'll update the skill and credit you publicly as the verified reviewer at [openaccountants.com](https://openaccountants.com).
+We'll update the skill and credit you publicly as the verified reviewer at [openaccountants.com](https://www.openaccountants.com).
 
 Or if you're comfortable with GitHub: fork the repo, fix the source under `skills/international/canada/{CA_PROVINCE_DIRS.get(province_code, province_code)}/`, and submit a PR.
 
@@ -875,7 +875,7 @@ Or if you're comfortable with GitHub: fork the repo, fix the source under `skill
 ---
 
 *OpenAccountants — open-source accounting skills for AI*
-*134 countries + 51 US states + 13 Canadian provinces/territories — [openaccountants.com](https://openaccountants.com)*
+*134 countries + 51 US states + 13 Canadian provinces/territories — [openaccountants.com](https://www.openaccountants.com)*
 *info@openaccountants.com*
 """
 

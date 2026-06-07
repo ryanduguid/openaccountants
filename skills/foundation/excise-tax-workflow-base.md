@@ -293,4 +293,4 @@ Directive (EU) 2019/904 — bans certain single-use plastic products and mandate
 
 This workflow base produces working papers for review by licensed excise practitioners. Excise duty involves criminal as well as civil penalties for misstatement. Every output must be reviewed and signed off by a licensed practitioner before lodgement.
 
-The most up-to-date, verified version of this workflow base is maintained at [openaccountants.com](https://openaccountants.com).
+The most up-to-date, verified version of this workflow base is maintained at [openaccountants.com](https://www.openaccountants.com).

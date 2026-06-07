@@ -47,4 +47,4 @@ IT freelancer, ৳3,000,000 export income: post-June-2024 this is taxable (verif
 - NEVER state rebate/incentive rates without verifying the current Finance Act / Bangladesh Bank circular.
 
 ## Disclaimer
-Informational only; legal planning needs a qualified Bangladeshi tax practitioner. Verify all rates with the NBR and Bangladesh Bank. Maintained at [openaccountants.com](https://openaccountants.com).
+Informational only; legal planning needs a qualified Bangladeshi tax practitioner. Verify all rates with the NBR and Bangladesh Bank. Maintained at [openaccountants.com](https://www.openaccountants.com).

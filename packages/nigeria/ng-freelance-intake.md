@@ -516,7 +516,7 @@ Primary statutes and regulations cited (reviewer to verify the exact version in 
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. OpenAccountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified Nigerian professional — a CITN-registered tax practitioner, an ICAN or ANAN Chartered Accountant, or a legal practitioner where applicable, and an external auditor where CAMA 2020 s.402 requires audited financial statements — before filing with FIRS via Tax Pro-Max or with the relevant State Internal Revenue Service, or acting upon.
 
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com).
+The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com).
 
 ---
 
@@ -541,7 +541,7 @@ a formal engagement letter** — book a free 30-minute call:
 
 We'll route you to the named verifier covering your country or state. You can
 also see the full list of verified accountants at
-[openaccountants.com/network](https://openaccountants.com/network).
+[openaccountants.com/network](https://www.openaccountants.com/network).
 
 <!-- openaccountants-mcp-cta -->
 

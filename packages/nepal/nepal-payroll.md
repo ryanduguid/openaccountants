@@ -114,7 +114,7 @@ Research-grade, FY 2082/83. **Secondary publications — re-anchor to primary SS
 
 ## Disclaimer
 
-For informational and computational purposes only; not tax, legal, or financial advice. All outputs must be reviewed and signed off by a qualified Nepali professional (CA / registered tax practitioner / payroll specialist) before any payslip is issued or remittance made. Latest verified version at [openaccountants.com](https://openaccountants.com).
+For informational and computational purposes only; not tax, legal, or financial advice. All outputs must be reviewed and signed off by a qualified Nepali professional (CA / registered tax practitioner / payroll specialist) before any payslip is issued or remittance made. Latest verified version at [openaccountants.com](https://www.openaccountants.com).
 
 ---
 

@@ -44,4 +44,4 @@ A solo IT freelancer (sole proprietorship): prepares **no** statutory financial 
 - NEVER state audit/filing thresholds without verifying the Companies Act / RJSC rules.
 
 ## Disclaimer
-Informational only; not advice. Verify reporting standards, audit, and RJSC filing obligations with RJSC, ICAB, and the NBR. All outputs must be reviewed and signed off by a qualified Bangladeshi practitioner. Maintained at [openaccountants.com](https://openaccountants.com).
+Informational only; not advice. Verify reporting standards, audit, and RJSC filing obligations with RJSC, ICAB, and the NBR. All outputs must be reviewed and signed off by a qualified Bangladeshi practitioner. Maintained at [openaccountants.com](https://www.openaccountants.com).

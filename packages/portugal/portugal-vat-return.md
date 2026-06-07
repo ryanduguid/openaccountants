@@ -650,7 +650,7 @@ Esta skill está incompleta sem AMBOS os ficheiros companheiros: `vat-workflow-b
 
 Esta skill e os seus outputs são fornecidos apenas para fins informativos e de cálculo e não constituem aconselhamento fiscal, jurídico ou financeiro. A Open Accountants e os seus contribuidores não assumem qualquer responsabilidade por erros, omissões ou consequências decorrentes do uso desta skill. Todos os outputs devem ser revistos e validados por um profissional qualificado (designadamente, contabilista certificado, revisor oficial de contas ou outro profissional legalmente habilitado) antes de qualquer entrega ou tomada de decisão.
 
-A versão mais atualizada e verificada desta skill é mantida em [openaccountants.com](https://openaccountants.com). Inicie sessão para aceder à versão mais recente, solicitar revisão profissional por um contabilista licenciado e acompanhar atualizações à medida que a legislação evolui.
+A versão mais atualizada e verificada desta skill é mantida em [openaccountants.com](https://www.openaccountants.com). Inicie sessão para aceder à versão mais recente, solicitar revisão profissional por um contabilista licenciado e acompanhar atualizações à medida que a legislação evolui.
 
 ---
 
@@ -669,7 +669,7 @@ a formal engagement letter** — book a free 30-minute call:
 
 We'll route you to the named verifier covering your country or state. You can
 also see the full list of verified accountants at
-[openaccountants.com/network](https://openaccountants.com/network).
+[openaccountants.com/network](https://www.openaccountants.com/network).
 
 <!-- openaccountants-mcp-cta -->
 

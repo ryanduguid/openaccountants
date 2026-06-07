@@ -58,4 +58,4 @@ depends_on:
 - NEVER state thresholds without verifying current NBR/local rules.
 
 ## Disclaimer
-Informational only; not advice. Verify registration steps and thresholds with the NBR, RJSC, and local authority. All outputs must be reviewed and signed off by a qualified Bangladeshi practitioner. Maintained at [openaccountants.com](https://openaccountants.com).
+Informational only; not advice. Verify registration steps and thresholds with the NBR, RJSC, and local authority. All outputs must be reviewed and signed off by a qualified Bangladeshi practitioner. Maintained at [openaccountants.com](https://www.openaccountants.com).

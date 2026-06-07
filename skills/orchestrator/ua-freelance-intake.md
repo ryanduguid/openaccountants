@@ -65,4 +65,4 @@ Produce a structured intake package and route:
 
 ## Disclaimer
 
-This skill orchestrates intake only and computes no tax. All downstream outputs must be reviewed and signed off by a qualified Ukrainian accountant or auditor before filing. The most up-to-date version is maintained at [openaccountants.com](https://openaccountants.com).
+This skill orchestrates intake only and computes no tax. All downstream outputs must be reviewed and signed off by a qualified Ukrainian accountant or auditor before filing. The most up-to-date version is maintained at [openaccountants.com](https://www.openaccountants.com).

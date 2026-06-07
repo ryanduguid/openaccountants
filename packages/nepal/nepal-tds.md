@@ -114,7 +114,7 @@ Research-grade, FY 2082/83. **Secondary firm publications — re-anchor to prima
 
 ## Disclaimer
 
-For informational and computational purposes only; not tax, legal, or financial advice. All outputs must be reviewed and signed off by a qualified Nepali professional (CA / registered tax practitioner) before filing or acting upon. Latest verified version at [openaccountants.com](https://openaccountants.com).
+For informational and computational purposes only; not tax, legal, or financial advice. All outputs must be reviewed and signed off by a qualified Nepali professional (CA / registered tax practitioner) before filing or acting upon. Latest verified version at [openaccountants.com](https://www.openaccountants.com).
 
 ---
 

@@ -155,4 +155,4 @@ A Group 3 FOP hits ₴10.09 m of income in November. Any income above the 1,167 
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Rates, wage-linked amounts, and martial-law measures change frequently — confirm the current minimum wage, living wage, and military-levy status with the Державна податкова служба before relying on any figure. All outputs must be reviewed and signed off by a qualified professional (a Ukrainian accountant or auditor) before filing.
 
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
+The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.

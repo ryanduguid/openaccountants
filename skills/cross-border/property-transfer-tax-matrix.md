@@ -473,4 +473,4 @@ The reviewer brief must include:
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Property transfer tax rules change frequently with budget cycles and have material magnitude in transactions. Every output must be reviewed and signed off by a credentialed local conveyancing solicitor / notary / tax practitioner before completion.
 
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com).
+The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com).

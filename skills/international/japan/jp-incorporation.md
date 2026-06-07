@@ -489,4 +489,4 @@ Incorporation involves tax, legal, and social insurance considerations that vary
 
 Information is based on the 2025 tax year (令和7年分) tax system. Tax laws, social insurance rates, and registration fees change annually.
 
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
+The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.

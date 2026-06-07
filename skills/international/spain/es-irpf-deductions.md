@@ -411,4 +411,4 @@ This skill and its outputs are provided for informational and computational purp
 
 The deduction catalogue changes annually. CCAA legislatures modify amounts, add new deductions, and remove others each fiscal year. Always verify against the current year's published BOE/BOJA/DOGC/DOGV/etc.
 
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
+The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.

@@ -54,4 +54,4 @@ A solo IT freelancer registered as an ИП on the simplified regime: prepares **
 - NEVER state audit/size thresholds without verifying current law.
 
 ## Disclaimer
-Informational only; not advice. Verify entity-size thresholds, standard choice, and audit/filing obligations with the Ministry of Finance / КГД. All outputs must be reviewed and signed off by a qualified Kazakhstan accountant. Maintained at [openaccountants.com](https://openaccountants.com).
+Informational only; not advice. Verify entity-size thresholds, standard choice, and audit/filing obligations with the Ministry of Finance / КГД. All outputs must be reviewed and signed off by a qualified Kazakhstan accountant. Maintained at [openaccountants.com](https://www.openaccountants.com).

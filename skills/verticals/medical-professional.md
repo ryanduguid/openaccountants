@@ -488,4 +488,4 @@ This skill and its outputs are provided for informational and computational purp
 
 This skill does NOT provide medical, clinical, or healthcare advice. No output from this skill should influence clinical decision-making. Healthcare professionals must exercise independent clinical judgment at all times.
 
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
+The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.

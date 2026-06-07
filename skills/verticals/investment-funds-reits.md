@@ -215,4 +215,4 @@ Common structures:
 
 ## Section 8 — Disclaimer
 
-Fund and REIT taxation is highly specialised and varies dramatically by structure. Outputs must be reviewed by credentialed fund-sector practitioners. The most up-to-date version is at [openaccountants.com](https://openaccountants.com).
+Fund and REIT taxation is highly specialised and varies dramatically by structure. Outputs must be reviewed by credentialed fund-sector practitioners. The most up-to-date version is at [openaccountants.com](https://www.openaccountants.com).

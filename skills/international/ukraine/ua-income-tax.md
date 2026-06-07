@@ -345,5 +345,5 @@ reviewed and signed off by a qualified Ukrainian accountant or auditor** before 
 filed or any tax is paid.
 
 The most up-to-date, verified version of this skill is maintained at
-[openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a
+[openaccountants.com](https://www.openaccountants.com). Log in to access the latest version, request a
 professional review from a licensed accountant, and track updates as Ukrainian tax law changes.

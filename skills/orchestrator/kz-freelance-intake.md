@@ -95,4 +95,4 @@ Always pass forward: form of business, regime, residency status, annual turnover
 
 ## Disclaimer
 
-This skill orchestrates intake only and computes no tax. It establishes facts and routes to downstream skills. All figures, regime determinations, and downstream outputs must be reviewed and signed off by a qualified Kazakhstan accountant (бухгалтер / салық кеңесшісі) before anything is filed with the State Revenue Committee (КГД / МКД). The most up-to-date version is maintained at [openaccountants.com](https://openaccountants.com).
+This skill orchestrates intake only and computes no tax. It establishes facts and routes to downstream skills. All figures, regime determinations, and downstream outputs must be reviewed and signed off by a qualified Kazakhstan accountant (бухгалтер / салық кеңесшісі) before anything is filed with the State Revenue Committee (КГД / МКД). The most up-to-date version is maintained at [openaccountants.com](https://www.openaccountants.com).

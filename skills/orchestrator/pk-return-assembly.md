@@ -50,4 +50,4 @@ The capstone for a Pakistan-resident freelancer/sole proprietor. It sequences th
 - NEVER state deadlines as final without verifying the FBR calendar (extensions are common).
 
 ## Disclaimer
-Informational only; not advice. Verify forms and deadlines with the FBR. All outputs must be reviewed and signed off by a qualified Pakistani tax practitioner before filing. Maintained at [openaccountants.com](https://openaccountants.com).
+Informational only; not advice. Verify forms and deadlines with the FBR. All outputs must be reviewed and signed off by a qualified Pakistani tax practitioner before filing. Maintained at [openaccountants.com](https://www.openaccountants.com).

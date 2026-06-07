@@ -387,4 +387,4 @@ The reviewer brief must include:
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute accounting, audit, or financial advice. GAAP differences carry direct consequences for reported earnings, debt covenants, and tax provisions. Every output must be reviewed and signed off by a credentialed CPA / CA with dual-GAAP experience before any reconciliation is finalised.
 
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com).
+The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com).

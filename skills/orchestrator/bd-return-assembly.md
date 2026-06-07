@@ -49,4 +49,4 @@ The capstone for a Bangladesh-resident freelancer/sole proprietor. It sequences 
 - NEVER state Tax Day / thresholds as final without verifying the current NBR calendar.
 
 ## Disclaimer
-Informational only; not advice. Verify forms and deadlines with the NBR. All outputs must be reviewed and signed off by a qualified Bangladeshi tax practitioner before filing. Maintained at [openaccountants.com](https://openaccountants.com).
+Informational only; not advice. Verify forms and deadlines with the NBR. All outputs must be reviewed and signed off by a qualified Bangladeshi tax practitioner before filing. Maintained at [openaccountants.com](https://www.openaccountants.com).

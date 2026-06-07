@@ -48,4 +48,4 @@ A solo freelancer: **no** mandatory social contribution; income tax only. Option
 - NEVER state pension contribution tiers / government match without verifying current NPA rules.
 
 ## Disclaimer
-Informational only; not advice. Verify Universal Pension Scheme tiers and PF/gratuity rules with the National Pension Authority / employer. All outputs must be reviewed and signed off by a qualified Bangladeshi practitioner. Maintained at [openaccountants.com](https://openaccountants.com).
+Informational only; not advice. Verify Universal Pension Scheme tiers and PF/gratuity rules with the National Pension Authority / employer. All outputs must be reviewed and signed off by a qualified Bangladeshi practitioner. Maintained at [openaccountants.com](https://www.openaccountants.com).

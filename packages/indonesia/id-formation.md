@@ -378,7 +378,7 @@ Where a specific monetary threshold or sectoral capital floor is uncertain at th
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute legal, tax, or financial advice under Indonesian law. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified Indonesian advokat, konsultan pajak, or notaris before acting upon. Foreign founders should additionally engage immigration counsel for KITAS / RPTKA matters, which are out of scope.
 
-The most up-to-date version is maintained at [openaccountants.com](https://openaccountants.com).
+The most up-to-date version is maintained at [openaccountants.com](https://www.openaccountants.com).
 
 ---
 
@@ -397,7 +397,7 @@ a formal engagement letter** — book a free 30-minute call:
 
 We'll route you to the named verifier covering your country or state. You can
 also see the full list of verified accountants at
-[openaccountants.com/network](https://openaccountants.com/network).
+[openaccountants.com/network](https://www.openaccountants.com/network).
 
 <!-- openaccountants-mcp-cta -->
 

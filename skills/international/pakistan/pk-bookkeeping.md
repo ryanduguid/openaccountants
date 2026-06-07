@@ -47,4 +47,4 @@ A freelancer keeps: monthly Upwork statements, the bank's PRC for each USD remit
 - NEVER state the retention period without verifying s.174 of the Income Tax Ordinance.
 
 ## Disclaimer
-Informational only; not advice. Verify record/retention rules with the FBR. All outputs must be reviewed and signed off by a qualified Pakistani tax practitioner. Maintained at [openaccountants.com](https://openaccountants.com).
+Informational only; not advice. Verify record/retention rules with the FBR. All outputs must be reviewed and signed off by a qualified Pakistani tax practitioner. Maintained at [openaccountants.com](https://www.openaccountants.com).

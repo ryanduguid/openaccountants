@@ -202,7 +202,7 @@ A Empresa na Hora é um dos processos de constituição de empresas mais rápido
 
 Esta skill e os seus resultados são fornecidos apenas para fins informativos e de cálculo e não constituem aconselhamento jurídico, fiscal ou financeiro. A Open Accountants e os seus contribuidores não assumem qualquer responsabilidade por erros, omissões ou consequências decorrentes da utilização desta skill. Todos os resultados devem ser revistos e validados por um profissional qualificado antes de qualquer actuação.
 
-A versão mais actualizada e verificada desta skill encontra-se em [openaccountants.com](https://openaccountants.com).
+A versão mais actualizada e verificada desta skill encontra-se em [openaccountants.com](https://www.openaccountants.com).
 
 ---
 
@@ -221,7 +221,7 @@ a formal engagement letter** — book a free 30-minute call:
 
 We'll route you to the named verifier covering your country or state. You can
 also see the full list of verified accountants at
-[openaccountants.com/network](https://openaccountants.com/network).
+[openaccountants.com/network](https://www.openaccountants.com/network).
 
 <!-- openaccountants-mcp-cta -->
 

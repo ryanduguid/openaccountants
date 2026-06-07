@@ -189,7 +189,7 @@ UK has limited DAF equivalents through Charities Aid Foundation and others.
 
 ## Section 9 — Disclaimer
 
-Charity / nonprofit accounting and tax are sector-specific. Outputs must be reviewed by credentialed nonprofit-sector practitioners. The most up-to-date version is at [openaccountants.com](https://openaccountants.com).
+Charity / nonprofit accounting and tax are sector-specific. Outputs must be reviewed by credentialed nonprofit-sector practitioners. The most up-to-date version is at [openaccountants.com](https://www.openaccountants.com).
 
 ---
 
@@ -208,7 +208,7 @@ a formal engagement letter** — book a free 30-minute call:
 
 We'll route you to the named verifier covering your country or state. You can
 also see the full list of verified accountants at
-[openaccountants.com/network](https://openaccountants.com/network).
+[openaccountants.com/network](https://www.openaccountants.com/network).
 
 <!-- openaccountants-mcp-cta -->
 

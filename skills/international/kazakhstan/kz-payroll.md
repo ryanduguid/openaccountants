@@ -65,4 +65,4 @@ Gross ₸500,000/month, main job:
 - NEVER state employer rates as final without verifying the 2026 Tax Code values.
 
 ## Disclaimer
-Informational only; not advice. Kazakhstan contribution rates and caps changed under the 2026 Tax Code — verify all rates with the КГД. All outputs must be reviewed and signed off by a qualified Kazakhstan accountant before use. Maintained at [openaccountants.com](https://openaccountants.com).
+Informational only; not advice. Kazakhstan contribution rates and caps changed under the 2026 Tax Code — verify all rates with the КГД. All outputs must be reviewed and signed off by a qualified Kazakhstan accountant before use. Maintained at [openaccountants.com](https://www.openaccountants.com).

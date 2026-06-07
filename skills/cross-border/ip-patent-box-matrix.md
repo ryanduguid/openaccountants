@@ -273,4 +273,4 @@ The reviewer brief must include:
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Patent box claims face significant audit scrutiny, OECD peer review may move regimes off the approved list, and Pillar Two materially changes the benefit. Every output must be reviewed and signed off by a credentialed international tax practitioner before any claim is filed.
 
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com).
+The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com).

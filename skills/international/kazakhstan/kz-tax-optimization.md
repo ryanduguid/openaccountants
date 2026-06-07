@@ -60,4 +60,4 @@ For software/IT freelancers, **Astana Hub** accreditation can deliver the single
 - NEVER state VAT threshold / rates without verifying the 2026 Tax Code.
 
 ## Disclaimer
-Informational only; legal planning needs a qualified Kazakhstan accountant. Verify all 2026 figures with the КГД. Maintained at [openaccountants.com](https://openaccountants.com).
+Informational only; legal planning needs a qualified Kazakhstan accountant. Verify all 2026 figures with the КГД. Maintained at [openaccountants.com](https://www.openaccountants.com).

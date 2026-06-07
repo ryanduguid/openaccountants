@@ -23,7 +23,7 @@ That's it. If a skill is published, it is one of those two.
 
 - A real licensed practitioner (CPA, EA, CA, Steuerberater, expert-comptable, commercialista, asesor fiscal, or equivalent for the jurisdiction) has put their name and license number on it.
 - The skill has been used against real client data and refined through filing cycles.
-- The contributor is publicly credited on the skill and at [openaccountants.com](https://openaccountants.com).
+- The contributor is publicly credited on the skill and at [openaccountants.com](https://www.openaccountants.com).
 - The skill is reviewed at least annually for rate / threshold / form changes.
 
 ### Research-verified

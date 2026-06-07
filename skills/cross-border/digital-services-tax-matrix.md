@@ -282,4 +282,4 @@ Before delivering output, verify:
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. DST regimes change with each national budget and the Pillar One political process. Every output must be reviewed and signed off by a credentialed practitioner in each source country before any DST return is filed.
 
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com).
+The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com).

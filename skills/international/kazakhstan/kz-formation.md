@@ -62,4 +62,4 @@ IT companies/entrepreneurs accredited by **Astana Hub** receive substantial tax 
 - NEVER state the VAT threshold or Astana Hub benefits without verifying the 2026 figures.
 
 ## Disclaimer
-Informational only; not advice. Verify registration steps, the VAT threshold, and Astana Hub relief with the КГД / Astana Hub. All outputs must be reviewed and signed off by a qualified Kazakhstan accountant before relying on them. Maintained at [openaccountants.com](https://openaccountants.com).
+Informational only; not advice. Verify registration steps, the VAT threshold, and Astana Hub relief with the КГД / Astana Hub. All outputs must be reviewed and signed off by a qualified Kazakhstan accountant before relying on them. Maintained at [openaccountants.com](https://www.openaccountants.com).

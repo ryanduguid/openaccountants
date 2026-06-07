@@ -169,7 +169,7 @@ Employee with total monthly earnings LKR 300,000 (assume all EPF-liable), reside
 
 ## Disclaimer
 
-This skill and its outputs are for informational and computational purposes only and do not constitute tax, legal, or financial advice. All outputs must be reviewed and signed off by a qualified Sri Lankan professional (CA / IRD-registered tax practitioner, or payroll specialist) before any payslip is issued or remittance made. The latest verified version is maintained at [openaccountants.com](https://openaccountants.com).
+This skill and its outputs are for informational and computational purposes only and do not constitute tax, legal, or financial advice. All outputs must be reviewed and signed off by a qualified Sri Lankan professional (CA / IRD-registered tax practitioner, or payroll specialist) before any payslip is issued or remittance made. The latest verified version is maintained at [openaccountants.com](https://www.openaccountants.com).
 
 ---
 

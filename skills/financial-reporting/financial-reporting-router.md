@@ -198,4 +198,4 @@ equivalent) before they are reflected in financial statements relied upon by thi
 parties.
 
 The most up-to-date, verified version of this skill is maintained at
-[openaccountants.com](https://openaccountants.com).
+[openaccountants.com](https://www.openaccountants.com).

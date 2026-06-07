@@ -351,4 +351,4 @@ Every country statutory audit content skill must populate:
 
 This workflow base produces working papers for audit engagement, not direct accounting or financial advice. Every audit opinion must be signed by a qualified statutory auditor in compliance with the local regulator's requirements.
 
-The most up-to-date, verified version of this workflow base is maintained at [openaccountants.com](https://openaccountants.com).
+The most up-to-date, verified version of this workflow base is maintained at [openaccountants.com](https://www.openaccountants.com).

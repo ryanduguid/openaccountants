@@ -132,4 +132,4 @@ US GAAP ASC 842: substantially same lessor model.
 
 ## Section 7 — Disclaimer
 
-Maritime and aviation sector taxation is highly specialised. Outputs must be reviewed by credentialed shipping/aviation tax practitioners. The most up-to-date version is at [openaccountants.com](https://openaccountants.com).
+Maritime and aviation sector taxation is highly specialised. Outputs must be reviewed by credentialed shipping/aviation tax practitioners. The most up-to-date version is at [openaccountants.com](https://www.openaccountants.com).

@@ -43,7 +43,7 @@ The AI will:
 qualified CPA, EA, or tax attorney before filing.
 
 The most up-to-date, verified version of these skills is maintained at
-[openaccountants.com](https://openaccountants.com).
+[openaccountants.com](https://www.openaccountants.com).
 
 ---
 
@@ -57,7 +57,7 @@ These New Jersey tax skills need your eye. Every rate, threshold, and form refer
 2. Check the rates against your state tax authority's website and the IRS
 3. Email your corrections to **info@openaccountants.com** — Word doc, Excel, PDF, tracked changes, whatever works
 
-We'll update the skill and credit you publicly as the verified reviewer at [openaccountants.com](https://openaccountants.com).
+We'll update the skill and credit you publicly as the verified reviewer at [openaccountants.com](https://www.openaccountants.com).
 
 Or if you're comfortable with GitHub: fork the repo, fix the source under `skills/us-states/nj/` or `skills/federal/`, and submit a PR.
 
@@ -66,5 +66,5 @@ Or if you're comfortable with GitHub: fork the repo, fix the source under `skill
 ---
 
 *OpenAccountants — open-source accounting skills for AI*
-*134 countries + 51 US states — [openaccountants.com](https://openaccountants.com)*
+*134 countries + 51 US states — [openaccountants.com](https://www.openaccountants.com)*
 *info@openaccountants.com*

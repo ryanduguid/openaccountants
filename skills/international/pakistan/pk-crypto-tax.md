@@ -47,4 +47,4 @@ depends_on:
 - NEVER state a crypto tax rate without verifying the current law.
 
 ## Disclaimer
-Informational only; not advice. Pakistan's crypto law is in flux — verify with the FBR, PVARA, and SBP. All outputs must be reviewed and signed off by a qualified Pakistani practitioner. Maintained at [openaccountants.com](https://openaccountants.com).
+Informational only; not advice. Pakistan's crypto law is in flux — verify with the FBR, PVARA, and SBP. All outputs must be reviewed and signed off by a qualified Pakistani practitioner. Maintained at [openaccountants.com](https://www.openaccountants.com).

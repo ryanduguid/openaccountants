@@ -217,4 +217,4 @@ accountant in the relevant country reviews and signs them off**, and the workflo
 must end by handing the working paper to that accountant.
 
 The most up-to-date, verified version of this skill is maintained at
-[openaccountants.com](https://openaccountants.com).
+[openaccountants.com](https://www.openaccountants.com).

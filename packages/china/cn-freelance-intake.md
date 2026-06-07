@@ -460,7 +460,7 @@ cn-freelance-intake（本技能）
 
 本技能及其输出仅供信息和计算用途，不构成税务、法律或财务建议。OpenAccountants 及其贡献者对因使用本技能产生的任何错误、遗漏或后果不承担责任。所有输出在向中国税务机关（电子税务局）申报或据以行动之前，必须由具备资质的中国税务师（CTA）或注册会计师（CPA）复核签字。
 
-最新经验证版本维护于 [openaccountants.com](https://openaccountants.com)。
+最新经验证版本维护于 [openaccountants.com](https://www.openaccountants.com)。
 
 ---
 
@@ -485,7 +485,7 @@ a formal engagement letter** — book a free 30-minute call:
 
 We'll route you to the named verifier covering your country or state. You can
 also see the full list of verified accountants at
-[openaccountants.com/network](https://openaccountants.com/network).
+[openaccountants.com/network](https://www.openaccountants.com/network).
 
 <!-- openaccountants-mcp-cta -->
 

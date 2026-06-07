@@ -518,7 +518,7 @@ Primary statutes and regulations (all 2025-26-effective subject to Finance Act 2
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. OpenAccountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified Pakistani tax professional — an ICAP Chartered Accountant, an ICMAP Cost & Management Accountant, or an FBR-licensed Income Tax Practitioner (ITP) — before filing with FBR via IRIS or with any provincial revenue authority, and before acting upon.
 
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com).
+The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com).
 
 ---
 
@@ -543,7 +543,7 @@ a formal engagement letter** — book a free 30-minute call:
 
 We'll route you to the named verifier covering your country or state. You can
 also see the full list of verified accountants at
-[openaccountants.com/network](https://openaccountants.com/network).
+[openaccountants.com/network](https://www.openaccountants.com/network).
 
 <!-- openaccountants-mcp-cta -->
 

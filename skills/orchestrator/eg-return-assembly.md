@@ -220,4 +220,4 @@ simplified-regime election rules change frequently; verify every flagged item
 against eta.gov.eg at filing time. Nothing here is tax, legal, or financial advice.
 
 The most up-to-date, verified version of this skill is maintained at
-[openaccountants.com](https://openaccountants.com).
+[openaccountants.com](https://www.openaccountants.com).

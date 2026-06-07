@@ -50,4 +50,4 @@ The capstone for a Kazakhstan-resident ИП. It sequences the upstream skills, p
 - NEVER present the package as filed-ready without a qualified accountant's review.
 
 ## Disclaimer
-Informational only; not advice. Verify forms and deadlines with the КГД. All outputs must be reviewed and signed off by a qualified Kazakhstan accountant before filing. Maintained at [openaccountants.com](https://openaccountants.com).
+Informational only; not advice. Verify forms and deadlines with the КГД. All outputs must be reviewed and signed off by a qualified Kazakhstan accountant before filing. Maintained at [openaccountants.com](https://www.openaccountants.com).

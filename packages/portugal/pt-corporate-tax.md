@@ -15,7 +15,7 @@ verified_by: pending
 
 > **Produzido pela OpenAccountants (openaccountants.com)**
 >
-> Este skill destina-se exclusivamente a fins informativos e não constitui aconselhamento fiscal, jurídico ou financeiro. Todos os outputs devem ser revistos e validados por um Contabilista Certificado inscrito na Ordem dos Contabilistas Certificados (OCC) ou por um Revisor Oficial de Contas (ROC) inscrito na OROC antes de qualquer submissão à Autoridade Tributária e Aduaneira (AT). A versão verificada mais recente é mantida em [openaccountants.com](https://openaccountants.com).
+> Este skill destina-se exclusivamente a fins informativos e não constitui aconselhamento fiscal, jurídico ou financeiro. Todos os outputs devem ser revistos e validados por um Contabilista Certificado inscrito na Ordem dos Contabilistas Certificados (OCC) ou por um Revisor Oficial de Contas (ROC) inscrito na OROC antes de qualquer submissão à Autoridade Tributária e Aduaneira (AT). A versão verificada mais recente é mantida em [openaccountants.com](https://www.openaccountants.com).
 
 ---
 
@@ -871,7 +871,7 @@ CodePorto deve preencher **Anexo D do Modelo 22** com identificação do crédit
 
 ## Disclaimer
 
-Este skill e os seus outputs destinam-se exclusivamente a fins informativos e computacionais e **não constituem aconselhamento fiscal, jurídico ou financeiro**. Todos os outputs devem ser revistos e validados por um Contabilista Certificado inscrito na Ordem dos Contabilistas Certificados (OCC) ou por um Revisor Oficial de Contas inscrito na Ordem dos Revisores Oficiais de Contas (OROC) antes de qualquer submissão à Autoridade Tributária e Aduaneira (AT) ou ação com base nos números apurados. Especificações da Lei do Orçamento do Estado para 2025 sinalizadas como **TBC** devem ser verificadas contra o texto publicado em Diário da República antes de qualquer aplicação. A versão verificada mais recente é mantida em [openaccountants.com](https://openaccountants.com).
+Este skill e os seus outputs destinam-se exclusivamente a fins informativos e computacionais e **não constituem aconselhamento fiscal, jurídico ou financeiro**. Todos os outputs devem ser revistos e validados por um Contabilista Certificado inscrito na Ordem dos Contabilistas Certificados (OCC) ou por um Revisor Oficial de Contas inscrito na Ordem dos Revisores Oficiais de Contas (OROC) antes de qualquer submissão à Autoridade Tributária e Aduaneira (AT) ou ação com base nos números apurados. Especificações da Lei do Orçamento do Estado para 2025 sinalizadas como **TBC** devem ser verificadas contra o texto publicado em Diário da República antes de qualquer aplicação. A versão verificada mais recente é mantida em [openaccountants.com](https://www.openaccountants.com).
 
 ---
 
@@ -894,7 +894,7 @@ a formal engagement letter** — book a free 30-minute call:
 
 We'll route you to the named verifier covering your country or state. You can
 also see the full list of verified accountants at
-[openaccountants.com/network](https://openaccountants.com/network).
+[openaccountants.com/network](https://www.openaccountants.com/network).
 
 <!-- openaccountants-mcp-cta -->
 

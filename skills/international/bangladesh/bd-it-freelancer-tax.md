@@ -55,4 +55,4 @@ Freelancer earns USD 25,000 from foreign clients (≈ ৳2,950,000), remitted vi
 - NEVER state a rate/incentive without verifying the current Finance Act / Bangladesh Bank circular.
 
 ## Disclaimer
-Informational only; not advice. Bangladesh's IT/ITES tax treatment changed in 2024 and shifts with each Finance Act — verify the current position with the NBR and Bangladesh Bank. All outputs must be reviewed and signed off by a qualified Bangladeshi tax practitioner before filing. Maintained at [openaccountants.com](https://openaccountants.com).
+Informational only; not advice. Bangladesh's IT/ITES tax treatment changed in 2024 and shifts with each Finance Act — verify the current position with the NBR and Bangladesh Bank. All outputs must be reviewed and signed off by a qualified Bangladeshi tax practitioner before filing. Maintained at [openaccountants.com](https://www.openaccountants.com).
