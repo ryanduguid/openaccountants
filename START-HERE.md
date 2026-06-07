@@ -113,7 +113,7 @@ See [QUALITY-TIERS.md](docs/QUALITY-TIERS.md) for the full definitions.
 
 - **Country not listed?** Check [`packages/`](packages/) — we have folders for 134 countries. If yours is missing, file an issue.
 - **Your scenario isn't in the table above?** Open an issue describing it and we'll add a row.
-- **Skill produced something wrong?** That's a contribution. Email info@openaaccountants.com or submit a PR. Your correction gets the skill upgraded and you get public credit.
+- **Skill produced something wrong?** That's a contribution. Email info@openaccountants.com or submit a PR. Your correction gets the skill upgraded and you get public credit.
 
 ---
 

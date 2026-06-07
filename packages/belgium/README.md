@@ -61,7 +61,7 @@ These Belgium tax skills need your eye. Every rate, threshold, and form referenc
 
 1. Download the files in this folder
 2. Check the rates against SPF Finances / FOD Financiën's website
-3. Email your corrections to **info@openaaccountants.com** — Word doc, Excel, PDF, tracked changes, whatever works
+3. Email your corrections to **info@openaccountants.com** — Word doc, Excel, PDF, tracked changes, whatever works
 
 We'll update the skill and credit you publicly as the verified reviewer at [openaccountants.com](https://openaccountants.com).
 
@@ -73,4 +73,4 @@ Or if you're comfortable with GitHub: fork the repo, fix the source file under `
 
 *OpenAccountants — open-source accounting skills for AI*
 *134 countries + 51 US states — [openaccountants.com](https://openaccountants.com)*
-*info@openaaccountants.com*
+*info@openaccountants.com*

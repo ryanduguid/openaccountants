@@ -133,7 +133,7 @@ OpenAccountants is **dual-licensed** (AGPL-3.0 + commercial). The [Contributor L
 
 **GitHub pull requests:** we rely on an **explicit opt-in**. When you open a PR, you must **tick the CLA checkbox** in the [pull request template](.github/PULL_REQUEST_TEMPLATE.md) (and leave it checked on updates to the same PR). That single action is how you record agreement. Maintainers should not merge PRs where the contributor has not confirmed the CLA.
 
-**Website / other channels:** follow whatever acceptance flow that channel provides, or contact **info@openaaccountants.com** for a formal signed agreement.
+**Website / other channels:** follow whatever acceptance flow that channel provides, or contact **info@openaccountants.com** for a formal signed agreement.
 
 If anything in [CLA.md](CLA.md) is unclear, ask before contributing.
 

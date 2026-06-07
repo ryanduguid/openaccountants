@@ -444,7 +444,7 @@ These {country_name} tax skills need your eye. Every rate, threshold, and form r
 
 1. Download the files in this folder
 2. Check the rates against {tax_authority}'s website
-3. Email your corrections to **info@openaaccountants.com** — Word doc, Excel, PDF, tracked changes, whatever works
+3. Email your corrections to **info@openaccountants.com** — Word doc, Excel, PDF, tracked changes, whatever works
 
 We'll update the skill and credit you publicly as the verified reviewer at [openaccountants.com](https://openaccountants.com).
 
@@ -456,7 +456,7 @@ Or if you're comfortable with GitHub: fork the repo, fix the source file under `
 
 *OpenAccountants — open-source accounting skills for AI*
 *134 countries + 51 US states — [openaccountants.com](https://openaccountants.com)*
-*info@openaaccountants.com*
+*info@openaccountants.com*
 """
 
 
@@ -694,7 +694,7 @@ These {state_name} tax skills need your eye. Every rate, threshold, and form ref
 
 1. Download the files in this folder
 2. Check the rates against your state tax authority's website and the IRS
-3. Email your corrections to **info@openaaccountants.com** — Word doc, Excel, PDF, tracked changes, whatever works
+3. Email your corrections to **info@openaccountants.com** — Word doc, Excel, PDF, tracked changes, whatever works
 
 We'll update the skill and credit you publicly as the verified reviewer at [openaccountants.com](https://openaccountants.com).
 
@@ -706,7 +706,7 @@ Or if you're comfortable with GitHub: fork the repo, fix the source under `skill
 
 *OpenAccountants — open-source accounting skills for AI*
 *134 countries + 51 US states — [openaccountants.com](https://openaccountants.com)*
-*info@openaaccountants.com*
+*info@openaccountants.com*
 """
 
 
@@ -864,7 +864,7 @@ These {province_name} tax skills need your eye. Every rate, threshold, and form 
 
 1. Download the files in this folder
 2. Check the rates against the CRA and your provincial/territorial finance department
-3. Email your corrections to **info@openaaccountants.com** — Word doc, Excel, PDF, tracked changes, whatever works
+3. Email your corrections to **info@openaccountants.com** — Word doc, Excel, PDF, tracked changes, whatever works
 
 We'll update the skill and credit you publicly as the verified reviewer at [openaccountants.com](https://openaccountants.com).
 
@@ -876,7 +876,7 @@ Or if you're comfortable with GitHub: fork the repo, fix the source under `skill
 
 *OpenAccountants — open-source accounting skills for AI*
 *134 countries + 51 US states + 13 Canadian provinces/territories — [openaccountants.com](https://openaccountants.com)*
-*info@openaaccountants.com*
+*info@openaccountants.com*
 """
 
 
