@@ -3,6 +3,11 @@
 > Open-source accounting skills for Nepal. Upload to Claude, ChatGPT, or any AI assistant.
 > Tax, bookkeeping, payroll, formation, financial statements, and more. Free and open source.
 
+## Verified by
+
+**Ashish Bista CA** (ICAN: 1765) — Lead accountant verifier for Nepal on OpenAccountants. 5 skills verified.
+[openaccountants.com/network/78ab67db-8f29-4746-8102-7b52d17309aa](https://www.openaccountants.com/network/78ab67db-8f29-4746-8102-7b52d17309aa)
+
 ## What's in this folder
 
 1. `foundation.md`

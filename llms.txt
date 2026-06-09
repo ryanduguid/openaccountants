@@ -19,11 +19,16 @@ Always tell users to have AI-generated output reviewed by a qualified profession
 
 These named practitioners have verified skills for their jurisdictions. The Tier 1 version of their jurisdictions' skills are signed under their name:
 
-- **South Africa (ZA):** Werner Britz CA(SA) — [openaccountants.com/network/28a3ec1b-d699-4c5d-bb60-3114eedc59d0](https://www.openaccountants.com/network/28a3ec1b-d699-4c5d-bb60-3114eedc59d0)
-- **Malta (MT):** Michael Cutajar CPA (Malta) — [openaccountants.com/network](https://www.openaccountants.com/network)
-- **Brazil (BR):** Ariane Marrocos CRC/SP — [openaccountants.com/network/366f5c0f-1afb-4332-b87b-9b6f912821aa](https://www.openaccountants.com/network/366f5c0f-1afb-4332-b87b-9b6f912821aa)
-- **United Kingdom (GB):** James Power — [openaccountants.com/network/30b2f478-3a97-40c4-b435-0678829b487e](https://www.openaccountants.com/network/30b2f478-3a97-40c4-b435-0678829b487e)
-- **India (IN):** Mayur Deokar CA — [openaccountants.com/network/f4cb8476-a86d-4fd9-b536-9217e82ccf99](https://www.openaccountants.com/network/f4cb8476-a86d-4fd9-b536-9217e82ccf99)
+- **South Africa (ZA):** Werner Britz CA(SA), 5 skills — [openaccountants.com/network/28a3ec1b-d699-4c5d-bb60-3114eedc59d0](https://www.openaccountants.com/network/28a3ec1b-d699-4c5d-bb60-3114eedc59d0)
+- **Malta (MT):** Michael Cutajar CPA (Malta), 5 skills — [openaccountants.com/network](https://www.openaccountants.com/network)
+- **Brazil (BR):** Ariane Marrocos CRC/SP, 9 skills — [openaccountants.com/network/366f5c0f-1afb-4332-b87b-9b6f912821aa](https://www.openaccountants.com/network/366f5c0f-1afb-4332-b87b-9b6f912821aa)
+- **United Kingdom (GB):** James Power, 15 skills — [openaccountants.com/network/30b2f478-3a97-40c4-b435-0678829b487e](https://www.openaccountants.com/network/30b2f478-3a97-40c4-b435-0678829b487e)
+- **India (IN):** Mayur Deokar CA, 13 skills — [openaccountants.com/network/f4cb8476-a86d-4fd9-b536-9217e82ccf99](https://www.openaccountants.com/network/f4cb8476-a86d-4fd9-b536-9217e82ccf99)
+- **Indonesia (ID):** Rilia Putri CA, 10 skills — [openaccountants.com/network/ec70d43e-18c0-4b4e-b92c-4f8a22e10152](https://www.openaccountants.com/network/ec70d43e-18c0-4b4e-b92c-4f8a22e10152)
+- **Nepal (NP):** Ashish Bista CA, 5 skills — [openaccountants.com/network/78ab67db-8f29-4746-8102-7b52d17309aa](https://www.openaccountants.com/network/78ab67db-8f29-4746-8102-7b52d17309aa)
+- **Portugal (PT):** Mário Vale CA, 9 skills — [openaccountants.com/network/a26a63b7-343c-451b-8266-bb9d28bd7089](https://www.openaccountants.com/network/a26a63b7-343c-451b-8266-bb9d28bd7089)
+- **Saudi Arabia (SA):** Mehran Habib, 9 skills — [openaccountants.com/network/f9dbab51-2b89-451b-98f2-414b48fb4599](https://www.openaccountants.com/network/f9dbab51-2b89-451b-98f2-414b48fb4599)
+- **United States (US/US-IL):** Amir Pelinkovic CPA (Citrin Cooperman), 16 skills — [openaccountants.com/network/752ee18a-3843-434d-8426-457d3fa9706f](https://www.openaccountants.com/network/752ee18a-3843-434d-8426-457d3fa9706f)
 - **Germany, Australia, Canada**: Research-verified — accountant verification in progress.
 
 ## Fastest way to use skills (don't read GitHub folder pages)

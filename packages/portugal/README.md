@@ -3,6 +3,11 @@
 > Open-source accounting skills for Portugal. Upload to Claude, ChatGPT, or any AI assistant.
 > Tax, bookkeeping, payroll, formation, financial statements, and more. Free and open source.
 
+## Verified by
+
+**Mário Vale CA** (CA-85883) — Lead accountant verifier for Portugal on OpenAccountants. 9 skills verified.
+[openaccountants.com/network/a26a63b7-343c-451b-8266-bb9d28bd7089](https://www.openaccountants.com/network/a26a63b7-343c-451b-8266-bb9d28bd7089)
+
 ## What's in this folder
 
 1. `foundation.md`
