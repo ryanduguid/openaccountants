@@ -3,6 +3,11 @@
 > Open-source accounting skills for India. Upload to Claude, ChatGPT, or any AI assistant.
 > Tax, bookkeeping, payroll, formation, financial statements, and more. Free and open source.
 
+## Verified by
+
+**Mayur Deokar** — Lead accountant verifier for India on OpenAccountants.
+[View profile →](https://www.openaccountants.com/network/f4cb8476-a86d-4fd9-b536-9217e82ccf99)
+
 ## What's in this folder
 
 1. `foundation.md`
@@ -57,7 +62,7 @@ The AI will:
 
 **This is not tax, legal, or financial advice.** Everything produced must be reviewed and signed off by a qualified Chartered Accountant (CA) before filing or acting upon.
 
-The most up-to-date, verified version of these skills is maintained at [openaccountants.com](https://www.openaccountants.com).
+The most up-to-date, verified version of these skills is maintained at [openaccountants.com](https://openaccountants.com).
 
 ---
 
@@ -69,9 +74,9 @@ These India tax skills need your eye. Every rate, threshold, and form reference 
 
 1. Download the files in this folder
 2. Check the rates against Income Tax Department / CBDT / GSTN's website
-3. Email your corrections to **info@openaccountants.com** — Word doc, Excel, PDF, tracked changes, whatever works
+3. Email your corrections to **info@openaaccountants.com** — Word doc, Excel, PDF, tracked changes, whatever works
 
-We'll update the skill and credit you publicly as the verified reviewer at [openaccountants.com](https://www.openaccountants.com).
+We'll update the skill and credit you publicly as the verified reviewer at [openaccountants.com](https://openaccountants.com).
 
 Or if you're comfortable with GitHub: fork the repo, fix the source file under `skills/`, and submit a PR.
 
@@ -80,5 +85,5 @@ Or if you're comfortable with GitHub: fork the repo, fix the source file under `
 ---
 
 *OpenAccountants — open-source accounting skills for AI*
-*134 countries + 51 US states — [openaccountants.com](https://www.openaccountants.com)*
-*info@openaccountants.com*
+*134 countries + 51 US states — [openaccountants.com](https://openaccountants.com)*
+*info@openaaccountants.com*
