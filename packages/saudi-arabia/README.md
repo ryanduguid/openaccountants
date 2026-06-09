@@ -3,6 +3,11 @@
 > Open-source accounting skills for Saudi Arabia. Upload to Claude, ChatGPT, or any AI assistant.
 > Tax, bookkeeping, payroll, formation, financial statements, and more. Free and open source.
 
+## Verified by
+
+**Mehran Habib** (ICAP: 13480) — Lead accountant verifier for Saudi Arabia on OpenAccountants. 9 skills verified.
+[openaccountants.com/network/f9dbab51-2b89-451b-98f2-414b48fb4599](https://www.openaccountants.com/network/f9dbab51-2b89-451b-98f2-414b48fb4599)
+
 ## What's in this folder
 
 1. `foundation.md`

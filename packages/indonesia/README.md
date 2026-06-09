@@ -3,6 +3,11 @@
 > Open-source accounting skills for Indonesia. Upload to Claude, ChatGPT, or any AI assistant.
 > Tax, bookkeeping, payroll, formation, financial statements, and more. Free and open source.
 
+## Verified by
+
+**Rilia Putri CA** (Akuntanpedia) — Lead accountant verifier for Indonesia on OpenAccountants. 10 skills verified.
+[openaccountants.com/network/ec70d43e-18c0-4b4e-b92c-4f8a22e10152](https://www.openaccountants.com/network/ec70d43e-18c0-4b4e-b92c-4f8a22e10152)
+
 ## What's in this folder
 
 1. `foundation.md`

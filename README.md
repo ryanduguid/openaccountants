@@ -51,8 +51,8 @@ AI:     Entity type comparison (Ltd vs partnership vs sole trader)
 
 ---
 
-**Verified accountants on the network:**
-Werner Britz CA(SA) · Michael Cutajar CPA (Malta) · Ariane Marrocos CRC/SP · James Power (UK) · Mayur Deokar CA (India)
+**Verified accountants:**
+Werner Britz CA(SA) · Michael Cutajar CPA (Malta) · Ariane Marrocos CRC/SP · James Power (UK) · Mayur Deokar CA (India) · Rilia Putri CA (Indonesia) · Ashish Bista CA (Nepal) · Mário Vale CA (Portugal) · Mehran Habib (Saudi Arabia) · Amir Pelinkovic CPA (US)
 
 ---
 
@@ -118,14 +118,19 @@ The AI asks a few questions, loads the right skills, and produces a working pape
 
 These licensed practitioners have reviewed and signed off skills for their jurisdictions. Their name appears on every answer the AI gives.
 
-| Jurisdiction | Verifier | Profile |
-|---|---|---|
-| South Africa | Werner Britz CA(SA) | [openaccountants.com/network](https://www.openaccountants.com/network/28a3ec1b-d699-4c5d-bb60-3114eedc59d0) |
-| Malta | Michael Cutajar CPA (Malta) | [openaccountants.com/network](https://www.openaccountants.com/network) |
-| Brazil | Ariane Marrocos CRC/SP | [openaccountants.com/network](https://www.openaccountants.com/network/366f5c0f-1afb-4332-b87b-9b6f912821aa) |
-| United Kingdom | James Power | [openaccountants.com/network](https://www.openaccountants.com/network/30b2f478-3a97-40c4-b435-0678829b487e) |
-| India | Mayur Deokar CA | [openaccountants.com/network](https://www.openaccountants.com/network/f4cb8476-a86d-4fd9-b536-9217e82ccf99) |
-| Germany, Australia, Canada | Verification in progress | [Claim a jurisdiction →](https://www.openaccountants.com/onboarding/accountant) |
+| Jurisdiction | Verifier | Skills | Profile |
+|---|---|---|---|
+| South Africa | Werner Britz CA(SA) | 5 | [profile](https://www.openaccountants.com/network/28a3ec1b-d699-4c5d-bb60-3114eedc59d0) |
+| Malta | Michael Cutajar CPA (Malta) | 5 | [profile](https://www.openaccountants.com/network) |
+| Brazil | Ariane Marrocos CRC/SP | 9 | [profile](https://www.openaccountants.com/network/366f5c0f-1afb-4332-b87b-9b6f912821aa) |
+| United Kingdom | James Power | 15 | [profile](https://www.openaccountants.com/network/30b2f478-3a97-40c4-b435-0678829b487e) |
+| India | Mayur Deokar CA | 13 | [profile](https://www.openaccountants.com/network/f4cb8476-a86d-4fd9-b536-9217e82ccf99) |
+| Indonesia | Rilia Putri CA | 10 | [profile](https://www.openaccountants.com/network/ec70d43e-18c0-4b4e-b92c-4f8a22e10152) |
+| Nepal | Ashish Bista CA | 5 | [profile](https://www.openaccountants.com/network/78ab67db-8f29-4746-8102-7b52d17309aa) |
+| Portugal | Mário Vale CA | 9 | [profile](https://www.openaccountants.com/network/a26a63b7-343c-451b-8266-bb9d28bd7089) |
+| Saudi Arabia | Mehran Habib | 9 | [profile](https://www.openaccountants.com/network/f9dbab51-2b89-451b-98f2-414b48fb4599) |
+| United States | Amir Pelinkovic CPA | 16 | [profile](https://www.openaccountants.com/network/752ee18a-3843-434d-8426-457d3fa9706f) |
+| Germany, Australia, Canada | Verification in progress | — | [Claim a jurisdiction →](https://www.openaccountants.com/onboarding/accountant) |
 
 > Verified skills (Tier 1) are served via the MCP server with the verifier's name on every output. The research drafts in this repo are Tier 2.
 
