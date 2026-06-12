@@ -8,6 +8,8 @@ jurisdiction: GLOBAL
 
 # Freelance Developer Vertical Skill v1.0
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 ## Section 1 — Industry Profile
 
 Freelance developers operate as knowledge workers selling technical services and/or digital products. The financial profile is characterized by high gross margins (typically 70–95%), low physical inventory, significant digital tool costs, and irregular income patterns that vary between retainer-based stability and project-based lumpiness.

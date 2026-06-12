@@ -13,6 +13,8 @@ verified_by: pending
 
 # Luxembourg Payroll Skill v0.1
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 **Tier 2 (research-verified).** The 2025 income tax scale (post "Entlaaschtungs-Pak" +2.5 index-bracket adjustment), the solidarity surcharge and the CIS/CISSM/CIM tax credits are confirmed against PwC Worldwide Tax Summaries. The CCSS contribution rate table (sickness 2.80%+2.80%, pension 8%+8%, dependency 1.40%, accident base 0.700%, Mutualite des Employeurs 0.07-2.64%, sante au travail 0.14%) is taken directly from the official CCSS *Avis aux employeurs - Taux de cotisation au 01.01.2025* (notice of 17.01.2025) and is firm. The min/max contribution base and the May 2025 indexation are corroborated from Orbitax and WAT Fiduciary. The live CCSS HTML "parametres sociaux" page and several Big-4 newsletter pages returned HTTP 403 to automated fetch, so the official CCSS PDF and Orbitax/WAT were used to corroborate the May 2025 figures. Figures carry **[RESEARCH GAP — reviewer to confirm]** markers where the primary authority figure could not be pinned to a single fixed published value (notably class 1a withholding mechanics and the exact statutory penalty for late annual-statement filing).
 
 ---

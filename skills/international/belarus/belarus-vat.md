@@ -6,6 +6,8 @@ version: 2.0
 
 # Belarus VAT (NDS) Return Skill v2.0
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 ## Section 1 — Quick reference
 
 | Field | Value |
@@ -333,7 +335,6 @@ Per `vat-workflow-base` Section 3 with Belarus-specific box codes.
 - **v2.0 (April 2026):** Full rewrite to Malta v2.0 10-section structure.
 
 ## End of Belarus VAT (NDS) Skill v2.0
-
 
 ---
 

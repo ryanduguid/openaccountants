@@ -19,6 +19,8 @@ category: international
 
 # Tax Residency Planning — Personal Tax Rules for International Founders
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 > **Based on work by [Artin (@ar-gen-tin)](https://github.com/ar-gen-tin/panrise)**, licensed under MIT. Adapted for the OpenAccountants format.
 
 > **Disclaimer:** This skill provides general guidance on personal tax residency. It does not constitute tax or legal advice. Tax residency determinations are fact-specific and can have severe financial consequences if handled incorrectly. Consult a qualified cross-border tax advisor before changing your tax residency or structuring around residency rules.

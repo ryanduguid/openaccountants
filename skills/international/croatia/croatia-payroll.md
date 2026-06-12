@@ -13,6 +13,8 @@ verified_by: pending
 
 # Croatia Payroll Skill v0.1
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 **Tier 2 — research-verified. Figures below are sourced from the Croatian Tax Administration (Ministarstvo financija — Porezna uprava), the Croatian Pension Insurance Institute (HZMO), the Croatian Health Insurance Fund (HZZO), PwC Worldwide Tax Summaries, KPMG, CMS, TPA, Lano and FINACRO. NOT yet signed off by a licensed Croatian accountant (ovlašteni računovođa) or tax adviser (porezni savjetnik). Treat every computation as an estimate pending professional review.**
 
 ---

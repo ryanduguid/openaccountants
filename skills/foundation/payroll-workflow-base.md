@@ -8,6 +8,8 @@ jurisdiction: GLOBAL
 
 # Payroll Workflow Base Skill v1.0
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 ## What this file is, and what it is not
 
 **This file contains workflow architecture only.** It defines how Claude should approach a payroll computation task: the order of operations, how to calculate gross-to-net pay, how to handle statutory deductions, how to produce payslips and payroll journals, what to check before delivering. It contains no tax brackets, no social security rates, no employer contribution percentages, no minimum wage figures, no overtime multipliers, no filing deadlines, no return form names.

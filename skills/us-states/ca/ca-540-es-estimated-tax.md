@@ -6,6 +6,8 @@ version: 0.2
 
 # CA Estimated Tax 540-ES Skill v0.2
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 ## What this file is, and what it is not
 
 **This file is a content skill that loads on top of `us-tax-workflow-base` v0.1.** It provides the California estimated tax payment rules for individual taxpayers who are full-year California residents with self-employment income for tax year 2025. California uses a unique 30/40/0/30 installment schedule that differs significantly from the federal equal-quarterly system.
@@ -479,7 +481,6 @@ California estimated tax and federal estimated tax are completely independent:
 - **v0.2 (April 2026):** Full content skill with 30/40/0/30 schedule, safe harbor, underpayment penalty, edge cases, and test suite.
 
 ## End of skill
-
 
 ---
 

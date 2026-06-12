@@ -13,6 +13,8 @@ verified_by: pending
 
 # Serbia Social Security Contributions & Payroll Tax Skill v0.1
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 > **Tier 2 (research-verified) skill.** Figures are drawn from PwC Worldwide Tax Summaries, KPMG Serbia tax alerts, Eurofast, Orbitax, and Serbian law-firm summaries, cross-referenced to the *Law on Personal Income Tax* and the *Law on Mandatory Social Insurance Contributions*. It has NOT yet been signed off by a Serbian licensed tax advisor. Treat every output as an estimate pending professional review. Items marked **[RESEARCH GAP — reviewer to confirm]** require a licensed Serbian advisor to verify against primary sources before production use.
 
 ## Section 1 -- Quick reference

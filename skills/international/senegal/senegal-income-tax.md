@@ -13,6 +13,8 @@ verified_by: pending
 
 # Senegal Personal Income Tax (IRPP) — Skill v0.1
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 > **Tier 2 — research-verified, pending accountant sign-off.** This skill was assembled from secondary sources (PwC Worldwide Tax Summaries — Senegal, the DGID, and Senegalese payroll references) and cross-checked against the Code Général des Impôts (CGI). Several figures could not be reconciled to a single authoritative text and are marked **[RESEARCH GAP — reviewer to confirm]**. Do not file on the basis of this skill without a Senegalese chartered accountant (Expert-Comptable / member of ONECCA) confirming the flagged items.
 
 ---

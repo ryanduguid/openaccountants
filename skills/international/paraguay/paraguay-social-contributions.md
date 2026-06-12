@@ -13,6 +13,8 @@ verified_by: pending
 
 # Paraguay IPS Social Security Contributions (Aportes) -- Skill v0.1
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 > **Tier 2 status.** Every rate, threshold, and deadline below is sourced to a named authority (IPS, SET/DNIT, MTESS, BACN) or a Big-4 summary (PwC Worldwide Tax Summaries) and cited inline. It has **not** yet been section-by-section verified by a licensed Paraguayan accountant (contador público). Items marked **[RESEARCH GAP — reviewer to confirm]** carry residual uncertainty and must be confirmed against primary sources before reliance.
 
 > **READ THIS FIRST — the single most important rate fact.** Since **Law N° 6.338/2019** (modifying Art. 10 of Law N° 5.407/2015 — *Del Trabajo Doméstico*), **domestic workers contribute to IPS at the SAME full general rate as ordinary private-sector employees: 9% employee (obrero) + 16.5% employer (patronal) = 25.5%.** The old pre-2019 reduced rate of 2.5% / 5.5% (8% total) is **superseded — do NOT use it.** There is **no** differentiated "28% bank/financial-entity IPS rate"; historically bank employees were affiliated to a *separate* pension fund (Caja Bancaria), not charged a higher IPS tariff. See Sections 1, 5, and the flags in Section 10.

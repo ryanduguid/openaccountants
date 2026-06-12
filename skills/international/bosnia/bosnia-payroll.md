@@ -13,6 +13,8 @@ verified_by: pending
 
 # Bosnia and Herzegovina Payroll Skill v0.1
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 > Tier 2 (research-verified). Confidence: **medium**. Bosnia and Herzegovina has no single national payroll authority -- payroll, PIT, and social contributions are administered at the **entity** level. This skill MUST branch on the employer's entity (FBiH / Republika Srpska / Brcko District) before any computation. Where a figure could not be pinned to a primary source it is marked **[RESEARCH GAP -- reviewer to confirm]**.
 
 ---

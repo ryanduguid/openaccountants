@@ -8,6 +8,8 @@ category: orchestrator
 
 # Japan Self-Employed Intake Skill v1.0
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 ## What this file is
 
 The intake orchestrator for Japan-resident self-employed individuals. Every downstream Japanese content skill (japan-consumption-tax, japan-income-tax, japan-social-insurance, jp-estimated-tax) and the assembly orchestrator (jp-return-assembly) depend on this skill running first to produce a structured intake package.
@@ -615,7 +617,6 @@ For an unprepared user (has to go fetch documents):
 - **v1.0 (May 2026):** Initial draft. Upload-first, inference-then-confirm pattern modelled on mt-freelance-intake v0.1.
 
 ## End of Intake Skill v1.0
-
 
 ---
 

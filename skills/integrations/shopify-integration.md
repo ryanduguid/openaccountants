@@ -10,6 +10,8 @@ jurisdiction: GLOBAL
 
 # Shopify Integration Skill v1.0
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 ## Section 1 — Platform Overview
 
 Shopify is an e-commerce platform used by merchants in 175+ countries to sell products online, in-store, and across social media channels. Headquartered in Canada, Shopify powers businesses from single-product stores to large enterprises. Shopify Payments is the integrated payment processor (powered by Stripe).

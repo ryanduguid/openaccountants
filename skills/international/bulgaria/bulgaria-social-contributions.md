@@ -13,6 +13,8 @@ verified_by: pending
 
 # Bulgaria Social Security & Health Insurance Contributions -- Skill v0.1
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 > **Tier 2 (research-verified).** Figures below are sourced inline. Several depend on the 2026 State Social Security Budget Act (Закон за бюджета на държавното обществено осигуряване), which was pending/just-adopted as of early 2026; provisional figures are marked **[RESEARCH GAP — reviewer to confirm]**. This skill has NOT been signed off by a Bulgarian-licensed accountant.
 
 ## Section 1 -- Quick reference

@@ -5,6 +5,8 @@ description: Use this skill whenever asked to prepare, review, or create a Slova
 
 # Slovakia VAT Return Preparation Skill
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 ---
 
 ## Skill Metadata
@@ -756,7 +758,6 @@ This skill covers Slovakia's VAT system based on Act No. 222/2004 Coll. as amend
 
 - **v1.1 (2026-05-25)** -- Added Step 5a (consolidated §7 / §7a operating mode), EC17 (foreign supplier applied SK OSS VAT because billing details lacked the customer's IČ DPH), source-completeness cross-check in Step 1.0, explicit §7 / §7a filing-rhythm note in Step 9, and Kontrolný výkaz exemption clarification in Step 6. Cross-reference added in EC11. Changes motivated by reconciliation against a real Slovak §7a entity's filed April 2026 DPH return where three independent applications of the v1.0 skill produced three different liability figures, and the v1.0 text did not unambiguously rule out the incorrect ones.
 - **v1.0 (2026-04-10)** -- Initial deep-research draft.
-
 
 ---
 

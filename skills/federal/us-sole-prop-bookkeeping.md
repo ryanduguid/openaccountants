@@ -6,6 +6,8 @@ version: 2.0
 
 # US Sole Prop Bookkeeping Skill v2.0
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 ## Section 1 — Quick reference
 
 **Read this whole section before classifying anything. The workflow runbook is in `us-tax-workflow-base` Section 1 — follow that runbook with this skill providing the federal Schedule C content.**
@@ -839,7 +841,6 @@ The workflow in `us-tax-workflow-base` mandates inferring the client profile fro
 ## End of US Sole Prop Bookkeeping Skill v2.0
 
 This skill is incomplete without the companion workflow file loaded alongside it: `us-tax-workflow-base` v0.1 or later (Tier 1, workflow architecture). Do not attempt to produce a Schedule C working paper without the base loaded.
-
 
 ---
 

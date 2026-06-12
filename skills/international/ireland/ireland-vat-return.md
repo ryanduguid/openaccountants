@@ -9,6 +9,8 @@ verified_by: pending
 
 # Ireland VAT Return Skill (VAT3) v2.0
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 ## Section 1 — Quick reference
 
 **Read this whole section before classifying anything. The workflow runbook is in `vat-workflow-base` Section 1 — follow that runbook with this skill providing the country-specific content and `eu-vat-directive` providing the EU directive content.**
@@ -616,7 +618,6 @@ v2.0, rewritten April 2026. Awaiting validation by Irish chartered accountant or
 12. Motor vehicle hard block (Section 59): yes (Section 5.10, Example 6).
 13. Zero-rated food documented: yes (Section 5.5).
 14. Passenger transport zero-rated: yes (Section 3.6).
-
 
 ---
 

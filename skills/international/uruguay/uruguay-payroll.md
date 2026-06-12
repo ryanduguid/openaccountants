@@ -13,6 +13,8 @@ verified_by: pending
 
 # Uruguay Payroll Skill v0.1 (Tier 2 — research-verified, reviewer sign-off pending)
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 > **Tier 2 status.** Every rate, threshold, and deadline below is sourced to a named authority (BPS, DGI, IMPO) or a Big-4 summary (PwC Worldwide Tax Summaries) or a named advisory (EY Uruguay) and cited inline. It has **not** yet been section-by-section verified by a licensed Uruguayan accountant (contador público). Items marked **[RESEARCH GAP — reviewer to confirm]** carry residual uncertainty and must be confirmed against primary sources before reliance.
 
 > **READ THIS FIRST — the single most important structural fact.** Uruguay **does** levy a personal income tax on labour income (**IRPF — Impuesto a la Renta de las Personas Físicas, Categoría II / rentas de trabajo**), and — unlike Paraguay or many other LATAM jurisdictions — **the employer IS the withholding agent.** IRPF is **withheld monthly** on a progressive 0%–36% scale and reconciled at year end via the **ajuste anual** performed through BPS. On top of IRPF the employer also withholds and pays **BPS** social-security contributions (retirement/montepío, FONASA, FRL). Almost every IRPF threshold is expressed in units of the **BPC** (Base de Prestaciones y Contribuciones); for 2025 **BPC = UYU 6,576/month**. See Section 2.

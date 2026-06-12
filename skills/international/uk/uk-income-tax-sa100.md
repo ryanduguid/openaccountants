@@ -13,6 +13,8 @@ verified_by: pending
 
 # UK Income Tax (SA100) -- Individual Tax Computation Skill v2.1
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 This skill covers **three tax years in parallel**:
 
 - **Prior year:** 2024-25 (6 April 2024 -- 5 April 2025) -- filed by 31 January 2026

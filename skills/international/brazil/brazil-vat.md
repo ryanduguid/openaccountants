@@ -6,6 +6,8 @@ version: 2.0
 
 # Brazil Indirect Tax / VAT Skill v2.0
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 ## Section 1 -- Quick reference
 
 **Read this whole section before classifying anything. Brazil does NOT have a single unified VAT. It has five indirect taxes at three levels of government, currently undergoing reform into a dual VAT (CBS+IBS).**
@@ -616,7 +618,6 @@ Blue for hardcoded values from bank statement/NF-e. Black for formulas. Green fo
 15. Refusal catalogue present: yes (Section 2, R-BR-1 through R-BR-6).
 
 ## End of Brazil Indirect Tax Skill v2.0
-
 
 ---
 

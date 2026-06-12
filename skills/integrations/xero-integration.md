@@ -10,6 +10,8 @@ jurisdiction: GLOBAL
 
 # Xero Integration Skill v1.0
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 ## Section 1 — Platform Overview
 
 Xero is a cloud-based accounting platform used primarily by small and medium businesses and their accountants. Headquartered in New Zealand, Xero is dominant in AU, NZ, and the UK, with growing adoption in the US, Canada, Singapore, Hong Kong, and South Africa. Xero provides invoicing, bank reconciliation, payroll (in some regions), expense claims, and financial reporting.

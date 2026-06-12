@@ -22,6 +22,8 @@ depends_on:
 
 # Russia — Self-Employed Professional Income Tax (Налог на профессиональный доход / НПД)
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 The НПД (*Налог на профессиональный доход*) is the special tax regime for
 *самозанятые* — self-employed individuals and freelancers in Russia. It is the
 simplest legal way for an individual to earn and declare professional income:

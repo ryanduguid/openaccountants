@@ -6,6 +6,8 @@ version: 0.1
 
 # New York IT-201 Resident Return Skill v0.1
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 ## What this file is, and what it is not
 
 This is a Tier 2 content skill under `us-tax-workflow-base v0.2`. It conforms to the thirteen mandatory slots of the Section 7 content skill slot contract. It provides the position rules, figures, citations, refusals, defaults, reviewer attention thresholds, worked examples, intake additions, and self-check additions needed to prepare Form IT-201 for a New York State full-year resident who operates as a sole proprietor or disregarded single-member LLC.
@@ -2348,7 +2350,6 @@ This turn drafted the final five sections (10-14) of `ny-it-201-resident-return`
    - `us-multi-state-sole-prop-intake` (updates to existing intake)
    - `us-federal-ny-return-assembly` orchestrator (~500 lines)
 3. Cross-skill validation: run a test case through the full NY stack end-to-end to verify the A-201 UBT add-back, IT-219 credit flow, and MCTMT computations all reconcile correctly
-
 
 ---
 

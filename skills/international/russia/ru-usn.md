@@ -21,6 +21,8 @@ depends_on:
 
 # Russia — Упрощённая система налогообложения (УСН) for ИП and Small Business
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 The **УСН** (*Упрощённая система налогообложения*, "simplified taxation system") is the
 default tax regime for most small Russian businesses. It replaces, for a single flat tax,
 the personal income tax on business profit (НДФЛ for ИП / налог на прибыль for organisations)

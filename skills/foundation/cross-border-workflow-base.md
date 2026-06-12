@@ -21,6 +21,8 @@ jurisdiction: GLOBAL
 
 # Cross-Border Workflow Base — Master Multi-Jurisdiction Orchestrator
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 ## What this file is
 
 This is the **master orchestrator** for any case involving more than one jurisdiction. It coordinates all seven accounting domains across multiple countries and produces a unified compliance map. It does not contain country-specific rules — those come from the individual country skills loaded in Step 3. It contains the workflow, the coordination logic, and the output specification.

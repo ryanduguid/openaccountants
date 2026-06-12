@@ -9,6 +9,8 @@ verified_by: pending
 
 # Germany VAT Return Skill (Umsatzsteuer-Voranmeldung / UStVA) v2.0
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 ## Section 1 -- Quick reference
 
 **Read this whole section before classifying anything. The workflow runbook is in `vat-workflow-base` Section 1 -- follow that runbook with this skill providing the country-specific content and `eu-vat-directive` providing the EU directive content.**
@@ -816,7 +818,6 @@ This skill is v2.0, rewritten in April 2026 to align with the three-tier Accora 
 ## End of Germany VAT Return Skill v2.0
 
 This skill is incomplete without BOTH companion files loaded alongside it: `vat-workflow-base` v0.1 or later (Tier 1, workflow architecture) AND `eu-vat-directive` v0.1 or later (Tier 2, EU directive content). Do not attempt to produce a UStVA without all three files loaded.
-
 
 ---
 

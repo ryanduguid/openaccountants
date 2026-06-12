@@ -6,6 +6,8 @@ version: 0.1
 
 # Malta Self-Employed Intake Skill v0.1
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 ## What this file is
 
 The intake orchestrator for Malta-resident self-employed individuals. Every downstream Malta content skill (malta-vat-return, malta-income-tax, malta-ssc, mt-estimated-tax) and the assembly orchestrator (mt-return-assembly) depend on this skill running first to produce a structured intake package.
@@ -529,7 +531,6 @@ For an unprepared user (has to go fetch documents):
 - **v0.1 (April 2026):** Initial draft. Upload-first, inference-then-confirm pattern modelled on us-ca-freelance-intake v0.2.
 
 ## End of Intake Skill v0.1
-
 
 ---
 

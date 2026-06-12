@@ -13,6 +13,8 @@ verified_by: pending
 
 # Rwanda PAYE & RSSB Social Contributions Skill v0.1
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 > Rwanda **does** levy personal income tax. This is a standard PAYE + social-insurance jurisdiction. Payroll obligations are filed jointly to the **Rwanda Revenue Authority (RRA)** and the **Rwanda Social Security Board (RSSB)** via a single monthly declaration on **E-Tax / MyRRA**.
 
 ## Section 1 -- Quick reference

@@ -13,6 +13,8 @@ verified_by: pending
 
 # Nicaragua Income Tax -- Rentas del Trabajo Skill v0.1
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 > **DISAMBIGUATION:** "NI" in this skill means **NICARAGUA**, the Central American republic. It does **NOT** mean Northern Ireland or UK National Insurance. There is no HMRC, no pound sterling, and no UK content anywhere in this skill. Currency is the **córdoba (C$ / NIO)**. The tax authority is the **DGI (Dirección General de Ingresos)**. Social security is administered by **INSS (Instituto Nicaragüense de Seguridad Social)**.
 
 ---

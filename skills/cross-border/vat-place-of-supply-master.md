@@ -18,6 +18,8 @@ category: cross-border
 
 # VAT Place of Supply — Master Reference for Cross-Border Transactions
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 > **Disclaimer:** This skill provides general guidance on VAT/GST place-of-supply rules. These rules are complex, jurisdiction-specific, and subject to change. Consult a qualified indirect tax advisor before taking positions on VAT obligations.
 
 ---

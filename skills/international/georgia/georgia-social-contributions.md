@@ -13,6 +13,8 @@ verified_by: pending
 
 # Georgia (Country) Social Contributions & Funded Pension Skill v0.1
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 > **JURISDICTION WARNING.** This skill is for **Georgia the country** (GE — capital Tbilisi, ISO `GE`, currency GEL). It is **NOT** for the U.S. state of Georgia. Search engines and training data heavily conflate the two. If a client mentions USD, the IRS, Atlanta, or a U.S. SSN, STOP — this is the wrong skill.
 
 ## Section 1 -- Quick reference

@@ -6,6 +6,8 @@ version: 0.2
 
 # US-CA Freelance Developer Intake Skill v0.2
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 ## What changed from v0.1
 
 v0.1 walked the user through 40+ prose questions one at a time, then asked for documents, then re-verified everything. Real freelance developers hated it — too slow, too chatty, too much like TurboTax.
@@ -487,7 +489,6 @@ v0.1 failed the first test. It used "Question 1 of 10" prose pacing with a freel
 - **v0.2 (April 2026):** Rewrite for upload-first flow, ask_user_input_v0 for structured questions, inference-then-confirm pattern, terse pacing for technical audience.
 
 ## End of Intake Skill v0.2
-
 
 ---
 

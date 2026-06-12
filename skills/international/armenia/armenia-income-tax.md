@@ -13,6 +13,8 @@ verified_by: pending
 
 # Armenia Personal Income Tax -- Self-Employed & Individuals Skill v0.1
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 > **Tier 2 -- research-verified.** Figures below were cross-checked mainly via PwC Worldwide Tax Summaries (last reviewed 5 Feb 2026) and Vardanyan & Partners (a local Armenian law firm). Numeric schedules were not directly extracted from the State Revenue Committee (src.am) or the ARLIS Tax Code text in this research session. A reviewer must confirm against src.am and the Tax Code of the Republic of Armenia directly. Items flagged **[RESEARCH GAP -- reviewer to confirm]** are explicitly uncertain.
 
 ---

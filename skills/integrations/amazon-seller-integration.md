@@ -10,6 +10,8 @@ jurisdiction: GLOBAL
 
 # Amazon Seller Central Integration Skill v1.0
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 ## Section 1 — Platform Overview
 
 Amazon Seller Central is the platform used by third-party sellers on Amazon's marketplace. It handles product listings, order management, fulfilment (FBA or FBM), advertising, and financial settlements. Amazon operates marketplaces in 20+ countries including the US, UK, Germany, France, Italy, Spain, Japan, Australia, India, and Canada.

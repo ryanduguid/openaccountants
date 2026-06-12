@@ -13,6 +13,8 @@ verified_by: pending
 
 # Algeria Social Security / Social Insurance Contributions (CNAS / CASNOS) Skill v0.1
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 > **Tier 2 (research-verified) skill.** Branch rates rely on CLEISS (authoritative French bilateral social-security source), corroborated by PwC Worldwide Tax Summaries and a 2025 Algerian payroll source. Primary Algerian authorities (CNAS, CASNOS, DGI/Ministère des Finances) were not directly fetched. Every figure carries an inline source or a `[RESEARCH GAP — reviewer to confirm]` marker. A warranted Algerian accountant must sign off before filing.
 
 ## Section 1 -- Quick reference

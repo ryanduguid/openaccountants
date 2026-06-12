@@ -13,6 +13,8 @@ verified_by: pending
 
 # Dominican Republic Income Tax (ISR) -- Self-Employed and Individuals Skill v0.1
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 > **Tier 2 (research-verified).** Figures below are sourced from PwC Worldwide Tax Summaries, the DGII, the TSS, and Dominican law-firm guidance. Where a figure could not be confirmed against a primary source it is marked **[RESEARCH GAP -- reviewer to confirm]**. A Dominican CPA (Contador Público Autorizado) must sign off before filing.
 
 ---

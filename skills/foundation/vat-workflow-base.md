@@ -7,6 +7,8 @@ jurisdiction: GLOBAL
 
 # VAT Workflow Base Skill v0.1
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 ## What this file is, and what it is not
 
 **This file contains workflow architecture only.** It defines how Claude should approach a VAT return classification task: the order of operations, how to handle ambiguity, what to produce as output, what to check before delivering. It contains no legal content, no tax rates, no return form structures, no refusal triggers tied to any particular jurisdiction, no supplier patterns.
@@ -141,8 +143,6 @@ The user taps once. Their answer becomes part of the answer set that Step 7 uses
 **Wait for answers.** After firing the tool, wait for the user's response. The user's answers come back as their next message — each answer corresponds to a question by index. Capture the answer set and proceed to Step 7.
 
 **Output of Step 6.5.** A complete answer set covering every Tier 2 row that survived filtering. Rows below the cash floor or excluded by the no-effect rule have their conservative defaults locked in without being asked. Rows the user answered "don't know" on also have their conservative defaults locked in. Rows the user answered substantively have the user's answer locked in. The answer set is now the input to Step 7.
-
-
 
 ### Step 7 — Build the outputs
 
@@ -598,7 +598,6 @@ The only deletions from the v0.3 base content are: references to EU-specific con
 ## End of VAT Workflow Base Skill v0.1
 
 This base is incomplete without two companion files: a regional/directive layer (e.g., `eu-vat-directive`) and a country-specific skill (e.g., `germany-vat-return`). If you are reading this without both companions loaded, ask the user which jurisdiction and refuse to proceed until both are loaded.
-
 
 ---
 

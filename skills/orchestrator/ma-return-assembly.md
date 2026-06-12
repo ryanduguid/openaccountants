@@ -12,6 +12,8 @@ depends_on:
 
 # Morocco Return Assembly — Filing Package Orchestrator (assemblage de la déclaration marocaine)
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 ## What this file is
 
 This is the **final orchestrator** for a Morocco-resident self-employed person (travailleur indépendant / auto-entrepreneur). It **assembles and sequences** the filing package — it **computes nothing**. Every figure originates upstream; this file decides *which declaration applies for the confirmed regime*, *what attaches*, *when each filing and payment is due*, and *how to submit through the SIMPL teleservice*.

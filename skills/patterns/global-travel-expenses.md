@@ -12,6 +12,8 @@ depends_on: []
 
 # Global Travel Expense Pattern Library v0.1
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 ## What this file is
 
 **Functional role:** Transaction pattern recognition and deductibility rules for travel expenses
@@ -214,7 +216,6 @@ Many jurisdictions allow a flat daily allowance instead of tracking actual meal/
 ## Disclaimer
 
 This file provides general guidance for classifying travel expenses. Tax rules on travel deductibility, per-diem rates, and meal caps change annually. Always verify rates against the relevant tax authority's current publications. This is not tax advice. A qualified professional should review all classifications before filing.
-
 
 ---
 

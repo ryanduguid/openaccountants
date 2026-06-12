@@ -8,6 +8,8 @@ validation_status: ai-drafted-q3
 
 # Ohio Commercial Activity Tax (CAT) Skill — Self-Employed / Sole Proprietor
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 > **Scope.** Ohio Commercial Activity Tax for sole proprietors and businesses with Ohio taxable gross receipts potentially exceeding the filing threshold. Covers the CAT as reformed by Am. Sub. HB 33 (2023), effective for tax periods beginning January 1, 2024 and after.
 > **Quality tier.** Q3 — AI-drafted, not independently verified. All rates and thresholds have been researched from primary sources but must be confirmed by a qualified professional before use.
 

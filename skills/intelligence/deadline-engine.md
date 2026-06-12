@@ -17,6 +17,8 @@ triggers:
 
 # Deadline Engine v0.1
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 ## What this file is
 
 **Obligation category:** INTEL (Intelligence / Cross-cutting)
@@ -327,7 +329,6 @@ Before delivering output, verify:
 - [ ] No filing advice is given without reviewer qualification
 - [ ] Calendar is sorted chronologically
 - [ ] Output uses the format from Section 5
-
 
 ---
 

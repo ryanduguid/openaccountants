@@ -6,6 +6,8 @@ version: 0.2
 
 # US 1099-NEC Issuance Skill v0.2
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 ## What this file is, and what it is not
 
 **This file is a content skill that loads on top of `us-tax-workflow-base` v0.1.** It provides the rules for determining which payments to non-employees require issuing Form 1099-NEC, and for producing the information returns correctly and on time. It does not classify the underlying business expenses — that comes from `us-sole-prop-bookkeeping`. It does not compute Schedule C deductions — the expense is deductible regardless of whether the 1099-NEC is issued (though failure to issue may increase audit risk and trigger penalties).

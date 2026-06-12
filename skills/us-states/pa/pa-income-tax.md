@@ -8,6 +8,8 @@ validation_status: ai-drafted-q3
 
 # Pennsylvania Individual Income Tax Skill — Self-Employed / Sole Proprietor
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 > **Scope.** Pennsylvania Form PA-40 for tax year 2025 for full-year Pennsylvania resident sole proprietors and disregarded single-member LLCs. Pennsylvania is an unusual state with a flat tax rate, no standard deduction, no personal exemptions, and a unique class-of-income system that differs significantly from most states.
 > **Quality tier.** Q3 — AI-drafted, not independently verified. All rates and thresholds have been researched from primary sources but must be confirmed by a qualified professional before use in return preparation.
 

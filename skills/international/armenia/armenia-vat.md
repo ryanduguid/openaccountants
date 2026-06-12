@@ -6,6 +6,8 @@ version: 2.0
 
 # Armenia VAT Return Skill v2.0
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 ## Section 1 — Quick reference
 
 **Read this whole section before classifying anything. The workflow runbook is in `vat-workflow-base` Section 1.**
@@ -360,7 +362,6 @@ Per `vat-workflow-base` Section 3 with Armenia-specific box codes from Section 1
 - **v1.x:** Initial skill.
 
 ## End of Armenia VAT Skill v2.0
-
 
 ---
 

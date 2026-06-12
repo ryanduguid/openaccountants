@@ -23,6 +23,8 @@ depends_on:
 
 # Russia — Taxation of Cryptocurrency / Digital Currency (цифровая валюта) for Individuals
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 This skill computes and explains how Russia taxes **digital currency** — **цифровая валюта**
 (*tsifrovaya valyuta*) — for individuals: gains on **disposal** (продажа / обмен), income from
 **mining** (майнинг), and the legal status of holding and using crypto. Russia does **not** use a

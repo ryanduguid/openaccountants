@@ -11,6 +11,8 @@ validation_status: ai-drafted-q3
 
 # Kentucky Individual Income Tax Skill — Self-Employed / Sole Proprietor
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 > **Scope.** This skill covers Kentucky Form 740 (Full-Year Resident Individual Income Tax Return) for sole proprietors and single-member LLCs. It addresses the flat state income tax and Kentucky-specific modifications to federal AGI. It does NOT cover part-year or nonresident returns (Form 740-NP), corporate returns (Form 720), or LLET.
 
 > **Quality tier.** Q3 — AI-drafted, not independently verified. All outputs must be reviewed by a qualified tax professional before filing.

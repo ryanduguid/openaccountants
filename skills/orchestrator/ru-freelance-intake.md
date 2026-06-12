@@ -9,6 +9,8 @@ category: orchestrator
 
 # Russia Self-Employed Intake Skill v0.1 (ru-freelance-intake)
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 ## What this file is
 
 The intake orchestrator for a Russia-resident self-employed person (самозанятый, ИП). Every downstream Russia content skill — `ru-self-employed-npd`, `ru-usn`, `ru-income-tax`, `ru-social-contributions`, `russia-vat` — and the assembly orchestrator `ru-return-assembly` depend on this skill running first to produce a structured intake package.

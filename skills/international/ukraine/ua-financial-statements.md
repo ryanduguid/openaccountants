@@ -22,6 +22,8 @@ depends_on:
 
 # Ukraine Financial Statements & Financial Reporting — Self-Employed Skill v1.0
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 This skill explains who in Ukraine must prepare **formal financial statements** (фінансова
 звітність), which accounting standards apply (national П(С)БО / НП(С)БО vs international МСФЗ /
 IFRS), the enterprise size categories that drive the report form, where statements are filed,

@@ -20,6 +20,8 @@ depends_on:
 
 # Egypt Social Insurance (التأمينات الاجتماعية) Skill v1.0
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 Social insurance in Egypt is governed by the **Social Insurance and Pensions Law
 No. 148 of 2019** (قانون التأمينات الاجتماعية والمعاشات رقم ١٤٨ لسنة ٢٠١٩),
 effective 1 January 2020. It is administered by the **National Organization for

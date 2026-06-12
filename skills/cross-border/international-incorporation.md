@@ -19,6 +19,8 @@ category: international
 
 # International Company Formation — Jurisdiction Selection Guide
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 > **Based on work by [Artin (@ar-gen-tin)](https://github.com/ar-gen-tin/panrise)**, licensed under MIT. Adapted for the OpenAccountants format.
 
 > **Disclaimer:** This skill provides general guidance on international company formation. It does not constitute legal or tax advice. All structures and tax treatments must be verified with qualified local advisors (CPAs, tax attorneys, chartered accountants) in the relevant jurisdictions before implementation. Tax rules, costs, and compliance requirements change frequently.

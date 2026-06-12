@@ -12,6 +12,8 @@ validation_status: ai-drafted-q3
 
 # Idaho Individual Income Tax Skill — Self-Employed / Sole Proprietor
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 > **Scope.** This skill covers Idaho individual income tax for self-employed individuals and sole proprietors filing Form 40. Idaho has a flat 5.3% rate applied to taxable income above an initial exempt amount.
 > **Quality tier.** Q3 — AI-drafted with citations. Must be reviewed by a qualified professional before use.
 

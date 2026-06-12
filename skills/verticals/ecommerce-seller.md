@@ -8,6 +8,8 @@ jurisdiction: GLOBAL
 
 # E-commerce Seller Vertical Skill v1.0
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 ## Section 1 — Industry Profile
 
 E-commerce sellers purchase or manufacture physical (or digital) goods and sell them through online marketplaces and/or their own storefronts. The financial profile is characterized by significant cost of goods sold (30–70% of revenue), complex fee structures from marketplaces, inventory management requirements, and multi-channel revenue streams.

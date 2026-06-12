@@ -14,6 +14,8 @@ verified_by: pending
 
 # UK National Insurance -- Comprehensive Skill v3.0
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 ## Section 1 -- Quick reference (3-year comparison)
 
 **Read this whole section before computing or classifying anything.** This skill covers three tax years: the **Prior year (2024-25)**, the **Current year (2025-26)**, and the **Forthcoming year (2026-27)**.

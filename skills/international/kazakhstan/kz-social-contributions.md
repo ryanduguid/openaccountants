@@ -22,6 +22,8 @@ depends_on: [social-contributions-workflow-base]
 
 # Kazakhstan Mandatory Social Payments — Self-Employed (ИП) & Employers (2026)
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 This skill computes the five mandatory social payments that Kazakhstan layers on top of
 income tax: **ОПВ** (employee pension), **ОПВР** (employer pension), **СО** (social
 contributions / социальные отчисления), **ОСМС** (mandatory social health insurance /

@@ -17,6 +17,8 @@ category: cross-border
 
 # Cross-Border Payroll Coordination
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 > **Disclaimer:** This skill provides general guidance on cross-border payroll obligations. Employment law, tax, and social security rules are jurisdiction-specific and change frequently. Consult qualified employment tax and legal advisors before acting on this information.
 
 ---

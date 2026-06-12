@@ -12,6 +12,8 @@ validation_status: ai-drafted-q3
 
 # Massachusetts Individual Income Tax Skill — Self-Employed / Sole Proprietor
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 > **Scope.** This skill covers Massachusetts Form 1 (Resident Income Tax Return) for sole proprietors and single-member LLCs. It addresses the flat 5% income tax, the 4% millionaire's surtax, and Massachusetts-specific income classifications. It does NOT cover nonresident/part-year returns (Form 1-NR/PY), corporate excise (Form 355), or trust/estate returns (Form 2).
 
 > **Quality tier.** Q3 — AI-drafted, not independently verified. All outputs must be reviewed by a qualified tax professional before filing.

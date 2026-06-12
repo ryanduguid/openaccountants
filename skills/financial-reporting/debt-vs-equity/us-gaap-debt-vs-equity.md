@@ -27,6 +27,8 @@ depends_on:
 
 # US GAAP Debt vs. Equity — ASC 480 / 470-20 / 815-40 / 505 v0.1
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 ## What this file is
 
 **This is a content skill that loads on top of `financial-reporting-workflow-base`.** It supplies the classification, measurement, presentation, and disclosure rules for issued financial instruments under US GAAP — distinguishing liabilities from equity, identifying temporary (mezzanine) equity, and accounting for convertible debt. The base supplies the two-layer output contract, the journal-entry format, and the self-checks.

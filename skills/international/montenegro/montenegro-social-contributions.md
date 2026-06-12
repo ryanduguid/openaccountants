@@ -13,6 +13,8 @@ verified_by: pending
 
 # Montenegro Social Security Contributions & Salary Tax Skill v0.1
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 > **Tier 2 — research-verified, NOT accountant-verified.** Figures are drawn from PwC Worldwide Tax Summaries (last reviewed 27 March 2026) and corroborating law-firm commentary (BDK Advokati, CEE Legal Matters), **not** directly from the Montenegrin Official Gazette or a downloadable Poreska uprava rate schedule. A warranted Montenegrin accountant must confirm every figure against the current Law on Mandatory Social Insurance Contributions and the latest minimum-wage decree before this skill is used for filing. See Section 11 for known research gaps.
 
 ## Section 1 — Quick reference

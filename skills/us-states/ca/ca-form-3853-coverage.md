@@ -6,6 +6,8 @@ version: 0.2
 
 # CA Form 3853 Coverage Skill v0.2
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 ## What this file is, and what it is not
 
 **This file is a content skill that loads on top of `us-tax-workflow-base` v0.1.** It provides the California individual mandate rules and Form 3853 preparation for tax year 2025. California reinstated the individual health coverage mandate effective January 1, 2020 under SB 78 (2019), codified in R&TC sections 61000-61130. This skill determines whether the taxpayer had qualifying coverage, whether an exemption applies, and if not, computes the Individual Shared Responsibility Penalty (ISRP).
@@ -429,7 +431,6 @@ For each month without coverage and without exemption:
 - **v0.2 (April 2026):** Full content skill with MEC definitions, exemptions, penalty computation, edge cases, and test suite.
 
 ## End of skill
-
 
 ---
 

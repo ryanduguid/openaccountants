@@ -8,6 +8,8 @@ jurisdiction: GLOBAL
 
 # Company Formation Workflow Base Skill v1.0
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 ## What this file is, and what it is not
 
 **This file contains workflow architecture only.** It defines how Claude should approach a company formation advisory task: the order of operations, how to compare entity types, how to build a registration checklist, how to identify ongoing compliance obligations, what to produce as output, what to check before delivering. It contains no entity type names, no registration fees, no share capital requirements, no filing portals, no notary fee schedules, no specific tax rates.

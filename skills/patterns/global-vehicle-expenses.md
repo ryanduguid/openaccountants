@@ -11,6 +11,8 @@ depends_on: []
 
 # Global Vehicle Expense Pattern Library v0.1
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 ## What this file is
 
 **Functional role:** Vehicle expense deduction rules and calculation methods by jurisdiction
@@ -234,7 +236,6 @@ Vehicle expenses are a high-audit-risk category because the line between busines
 ## Disclaimer
 
 This file provides general guidance for vehicle expense deductions. Rates, caps, and logbook requirements change annually. Always verify against the relevant tax authority's current publications and rate announcements. This is not tax advice. A qualified professional should review all vehicle expense claims before filing.
-
 
 ---
 

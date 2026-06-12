@@ -6,6 +6,8 @@ version: 0.2
 
 # US QBI Deduction Skill v0.2
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 ## What this file is, and what it is not
 
 **This file is a content skill that loads on top of `us-tax-workflow-base` v0.1.** It computes the §199A Qualified Business Income (QBI) deduction for sole proprietors and single-member LLCs (disregarded entities) for tax year 2025. It does not classify transactions (that is `us-sole-prop-bookkeeping`), compute Schedule C net profit or SE tax (that is `us-schedule-c-and-se-computation`), or compute retirement contributions or SE health insurance (those are companion skills whose outputs feed into this one).

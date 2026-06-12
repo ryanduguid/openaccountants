@@ -12,6 +12,8 @@ depends_on: []
 
 # Global Payment Processor Pattern Library v0.1
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 ## What this file is
 
 **Functional role:** Transaction classification rules for payment processor entries
@@ -222,7 +224,6 @@ That is it. No fee expense. No VAT. Paddle handled everything.
 ## Disclaimer
 
 This file provides general guidance for classifying payment processor transactions. Processing fees, payout schedules, and MoR arrangements change frequently. Always verify against the processor's actual reports and invoices. This is not tax advice. A qualified professional should review all classifications before filing.
-
 
 ---
 

@@ -26,6 +26,8 @@ depends_on:
 
 # Morocco — Legitimate Tax Optimization for the Self-Employed (Optimisation Fiscale Légale)
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 This skill helps a self-employed person in Morocco — a freelancer, sole trader,
 or independent professional (**travailleur indépendant**) — pay **the least tax
 the law allows**, by choosing the right regime and using lawful levers. It is

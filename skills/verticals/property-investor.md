@@ -8,6 +8,8 @@ jurisdiction: GLOBAL
 
 # Property Investor Vertical Skill v1.0
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 ## Section 1 — Industry Profile
 
 Property investors generate income from real estate assets through rental income, service charges, and eventual capital gains on disposal. The financial profile is characterized by high asset values, significant leverage (mortgage debt), ongoing maintenance obligations, complex tax treatment (income vs. capital, interest restriction, depreciation/capital allowances), and long holding periods.

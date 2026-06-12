@@ -7,6 +7,8 @@ version: 2.0
 
 # Mexican Income Tax — Persona Física Actividades Profesionales (ISR) v2.0
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 ## Section 1 — Quick Reference
 
 ### ISR Annual Brackets 2025 (Personas Físicas — Régimen General)
@@ -538,7 +540,6 @@ Always cross-reference bank statement credits with CFDI de ingresos in SAT porta
 - CFDI validation: verificacfdi.facturaelectronica.sat.gob.mx
 - Exchange rates (SAT): sat.gob.mx/consultas/18038/consulta-de-tipo-de-cambio
 - RESICO enrollment: sat.gob.mx → "Trámites" → "RFC y obligaciones"
-
 
 ---
 

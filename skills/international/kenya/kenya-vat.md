@@ -11,6 +11,8 @@ depends_on:
 
 # Kenya VAT (VAT-3) Skill v2.0
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 ---
 
 ## Section 1 — Quick reference
@@ -450,7 +452,6 @@ KENYA VAT ONBOARDING — MINIMUM QUESTIONS
 ## Disclaimer
 
 This skill is for informational purposes only. All outputs must be reviewed by a qualified professional. Updated version at openaccountants.com.
-
 
 ---
 

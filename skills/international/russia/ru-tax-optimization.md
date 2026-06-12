@@ -25,6 +25,8 @@ depends_on:
 
 # Russia — Legal Tax Optimization for the Self-Employed (ИП and Самозанятые)
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 This skill helps a self-employed person in Russia **legally** pay the least tax by choosing
 and combining the right regime. It is a *planning* skill: it ranks the regimes, gives the
 break-even points between them, and flags the schemes ФНС treats as abuse. It does **not**

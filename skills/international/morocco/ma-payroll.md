@@ -28,6 +28,8 @@ depends_on:
 
 # Morocco — Payroll for a Self-Employed Person Who Hires Employees (IR salarial / CNSS / AMO / TFP)
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 A self-employed person in Morocco — whether an **auto-entrepreneur**, a registered
 **travailleur non-salarié (TNS)**, or the manager of a small structure — who **hires
 even one employee** becomes an **employer (employeur)** with three monthly payroll

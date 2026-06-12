@@ -12,6 +12,8 @@ validation_status: ai-drafted-q3
 
 # Maine Individual Income Tax Skill — Self-Employed / Sole Proprietor
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 > **Scope.** This skill covers Maine Form 1040ME for full-year Maine residents
 > who are sole proprietors or single-member LLC owners. It addresses the
 > graduated rate structure (5.8%–7.15%, plus a 2% surcharge on high earners),

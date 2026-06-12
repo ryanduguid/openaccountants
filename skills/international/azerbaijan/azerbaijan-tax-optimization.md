@@ -11,6 +11,8 @@ verified_by: pending
 
 # Azerbaijan Tax Optimization Skill v0.1
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 **Tier 2 — research-verified. Sources: State Tax Service, PwC Azerbaijan, Caspian Legal Center, 2025 Tax Code amendments. Figures must agree with `azerbaijan-income-tax.md` / `azerbaijan-social-contributions.md`. NOT yet signed off by an Azerbaijani tax adviser. Aggressive positions are never advised; every suggestion must be reviewed.**
 
 ---

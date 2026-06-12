@@ -21,6 +21,8 @@ depends_on:
 
 # Russia — Payroll for an ИП or Company that Hires Staff (2026)
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 This skill explains Russian PAYROLL: the full set of taxes and contributions that an employer
 (an ИП or a company) must compute, withhold, report, and pay when it has employees on an
 employment contract (трудовой договор) or a civil-law contract (договор ГПХ) in 2026.

@@ -13,6 +13,8 @@ verified_by: pending
 
 # Iceland Income Tax -- Self-Employed and Individuals Skill v0.1
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 > **Tier 2 (research-verified) skill.** Figures are drawn from Skatturinn (Iceland Revenue and Customs) official 2025 pages and PwC Worldwide Tax Summaries. This skill has NOT yet been signed off by an Icelandic licensed accountant/tax adviser. All outputs require professional review before filing. Items marked **[RESEARCH GAP — reviewer to confirm]** were not pinned to an authoritative source in research and must be verified.
 
 ---

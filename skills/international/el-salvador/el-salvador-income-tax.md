@@ -13,6 +13,8 @@ verified_by: pending
 
 # El Salvador Income Tax (Impuesto sobre la Renta) -- Self-Employed & Individuals Skill v0.1
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 > **Tier 2 (research-verified) skill — confidence: medium.** The 2025 reform (Decreto Legislativo 293 / Decreto Ejecutivo 10) published official **monthly** retención tables; the exact **annual** Art. 37 breakpoints and middle-bracket fixed amounts are partly inferred by annualising the monthly table and should be re-verified by a Salvadoran CPA against Decreto Ejecutivo 10 before Q1 verification. Items marked **[RESEARCH GAP — reviewer to confirm]** are not fully sourced.
 
 ---

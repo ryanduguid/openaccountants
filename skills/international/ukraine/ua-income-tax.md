@@ -19,6 +19,8 @@ depends_on:
 
 # Ukraine General-System Personal Income Tax (ПДФО for FOP / Загальна система) — Self-Employed Skill v1.0
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 This skill covers a Ukrainian sole proprietor (ФОП / фізична особа-підприємець) taxed on the
 **general system** — net business **profit** taxed at **18% personal income tax (ПДФО)** plus a
 **5% military levy (військовий збір)**, with **documented business expenses deductible**. This is

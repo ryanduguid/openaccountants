@@ -16,6 +16,8 @@ depends_on:
 
 # Kazakhstan Return Assembly — Orchestrator v0.1
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 ## What this file is
 The capstone for a Kazakhstan-resident ИП. It sequences the upstream skills, picks the right forms by regime, and produces a single pre-filing package. It does not compute tax — it assembles.
 

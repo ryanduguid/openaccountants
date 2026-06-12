@@ -13,6 +13,8 @@ verified_by: pending
 
 # North Macedonia Personal Income Tax -- Individuals & Self-Employed Skill v0.1
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 > **Tier 2 (research-verified) skill.** Figures below are drawn from PwC Worldwide Tax Summaries, the Eurofast North Macedonia Tax Card 2025 / Payroll Guide 2025, and Bloomberg Tax reporting the Public Revenue Office's January 2025 wage-threshold clarification. Several material figures (the 28% contribution split, the MKD 10,270 personal exemption, the MKD 63,154 average salary, and the MKD 31,577 / 1,010,464 / 757,848 contribution bases) could not be re-rendered directly from a machine-readable UJP/Ministry of Finance page during research and should be reconfirmed against the official UJP "contribution bases" table and the State Statistical Office average-salary release before sign-off. Items marked **[RESEARCH GAP — reviewer to confirm]** are unresolved.
 
 ---

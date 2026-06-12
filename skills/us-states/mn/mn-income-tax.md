@@ -12,6 +12,8 @@ validation_status: ai-drafted-q3
 
 # Minnesota Individual Income Tax Skill — Self-Employed / Sole Proprietor
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 > **Scope.** This skill covers Minnesota Form M1 for full-year Minnesota
 > residents who are sole proprietors or single-member LLC owners. Minnesota
 > imposes a four-bracket graduated income tax with rates of 5.35%, 6.80%,

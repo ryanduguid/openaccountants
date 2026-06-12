@@ -25,6 +25,8 @@ depends_on:
 
 # Morocco — Personal Income Tax on Professional Income (Impôt sur le Revenu / IR)
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 Morocco's **Impôt sur le Revenu (IR)** is the personal income tax levied on
 individuals. This skill covers **professional / business income** (revenus
 professionnels) taxed on **net profit** under the two general accounting systems:

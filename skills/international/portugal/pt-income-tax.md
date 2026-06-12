@@ -10,6 +10,8 @@ verified_by: pending
 
 # Portuguese Income Tax — Trabalhador Independente (IRS Categoria B) v2.0
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 ## Section 1 — Quick Reference
 
 ### IRS Brackets 2025 (Categoria B — Regime Simplificado)
@@ -524,7 +526,6 @@ SECTION F — REVIEWER FLAGS
 - Segurança Social Direta: app.seg-social.pt
 - CIRS: dre.pt (Diário da República)
 - IRS Jovem confirmation: Portal das Finanças → "IRS Jovem"
-
 
 ---
 

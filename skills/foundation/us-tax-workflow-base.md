@@ -6,6 +6,8 @@ version: 0.2
 
 # US Tax Workflow Base Skill v0.2
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 ## What this file is, and what it is not
 
 **This file contains workflow architecture only.** It defines how Claude should approach a US federal income tax classification or computation task for a sole proprietor or single-member LLC: the order of operations, how to handle ambiguity, what to produce as output, what to check before delivering, and what situations to refuse. It contains no tax rates, no dollar thresholds, no form line references, no deduction rules, no depreciation schedules, no year-specific figures of any kind.
@@ -838,7 +840,6 @@ Architecturally lifted from `vat-workflow-base` v0.1. Content adapted for US fed
 ## End of US Tax Workflow Base Skill v0.1
 
 This base is incomplete without at least one content skill loaded alongside it. If you are reading this without any content skill loaded, ask the user which task they are working on (bookkeeping classification, Schedule C and SE computation, federal 1040 positions like QBI, or quarterly estimated tax) and refuse to proceed until the appropriate content skill is loaded.
-
 
 ---
 

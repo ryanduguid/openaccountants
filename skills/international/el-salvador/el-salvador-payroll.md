@@ -13,6 +13,8 @@ verified_by: pending
 
 # El Salvador Payroll Skill v0.1
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 **Tier 2 — research-verified. Figures sourced from the Ministerio de Hacienda (Decreto Ejecutivo 10, 2025), ISSS, the Superintendencia del Sistema Financiero (AFP), PwC Worldwide Tax Summaries, and Salvadoran payroll references. NOT yet signed off by a licensed Salvadoran contador. Treat every computation as an estimate pending professional review.**
 
 ---

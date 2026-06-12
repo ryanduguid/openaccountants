@@ -7,6 +7,8 @@ description: Primary source references and related open-source projects for this
 
 # Mexico — Related Open-Source Projects
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 OpenAccountants is AGPL-3.0. AGPL-3.0, MIT, and LGPL-3.0 are all compatible licenses. Projects below can be incorporated with attribution.
 
 ## phpcfdi/cfdi-sat-scraper

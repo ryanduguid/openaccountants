@@ -20,6 +20,8 @@ depends_on:
 
 # Egypt Financial Statements & Financial Reporting (القوائم المالية) Skill v1.0
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 This skill explains who must prepare formal financial statements (القوائم المالية)
 in Egypt, which accounting standards apply (the **Egyptian Accounting Standards —
 EAS / المعايير المحاسبية المصرية**), when an audit by a registered auditor (مراجع

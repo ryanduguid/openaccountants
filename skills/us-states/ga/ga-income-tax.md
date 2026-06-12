@@ -12,6 +12,8 @@ validation_status: ai-drafted-q3
 
 # Georgia Individual Income Tax Skill — Self-Employed / Sole Proprietor
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 > **Scope.** This skill covers Georgia individual income tax for self-employed individuals and sole proprietors filing Form 500. Georgia has a flat income tax rate of 5.19% for tax year 2025.
 > **Quality tier.** Q3 — AI-drafted with citations. Must be reviewed by a qualified professional before use.
 

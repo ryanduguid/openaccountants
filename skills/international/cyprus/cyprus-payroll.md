@@ -13,6 +13,8 @@ verified_by: pending
 
 # Cyprus Payroll Skill v0.1
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 > Tier 2 (research-verified). Figures below are drawn primarily from Big-4 guides (PwC, KPMG, Andersen) and the Government of Cyprus Business-in-Cyprus portal because the Cyprus Tax Department (tax.gov.cy) and Social Insurance Services (sid.mlsi.gov.cy) authority PDFs were not directly retrievable at research time. A Cyprus-warranted accountant must confirm against the official 2025 tax card and the Social Insurance Services contribution table before sign-off.
 
 ---

@@ -5,6 +5,8 @@ description: Use this skill whenever asked to prepare, review, or create a Panam
 
 # Panama ITBMS Return Preparation Skill
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 ---
 
 ## Skill Metadata
@@ -519,7 +521,6 @@ Action Required: Do not classify. Refer to licensed CPA. Document gap.
 ## Contribution Notes
 
 **A skill may not be published without sign-off from a licensed practitioner in the relevant jurisdiction.**
-
 
 ---
 

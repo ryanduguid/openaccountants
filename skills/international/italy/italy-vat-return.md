@@ -6,6 +6,8 @@ version: 2.0
 
 # Italy VAT Return Skill (LIPE / Liquidazione IVA Periodica) v2.0
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 ## Section 1 — Quick reference
 
 **Read this whole section before classifying anything. The workflow runbook is in `vat-workflow-base` Section 1 — follow that runbook with this skill providing the country-specific content and `eu-vat-directive` providing the EU directive content.**
@@ -682,7 +684,6 @@ This skill is v2.0, written in April 2026 to align with the three-tier Accora ar
 ## End of Italy VAT Return Skill v2.0
 
 This skill is incomplete without BOTH companion files loaded alongside it: `vat-workflow-base` v0.1 or later AND `eu-vat-directive` v0.1 or later.
-
 
 ---
 

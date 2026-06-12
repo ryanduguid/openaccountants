@@ -13,6 +13,8 @@ verified_by: pending
 
 # Kosovo Social Contributions & Wage Taxation Skill v0.1
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 > **Tier 2 (research-verified).** Figures are sourced from PwC Worldwide Tax Summaries (last reviewed 13 January 2026), EY/Lexology summaries of Law No. 08/L-142, and the Tax Administration of Kosovo (TAK/ATK) guidance portal. This skill has NOT yet been signed off by a Kosovo-warranted accountant (`verified_by: pending`). Treat every figure as estimated pending professional review.
 
 ## Section 1 -- Quick reference

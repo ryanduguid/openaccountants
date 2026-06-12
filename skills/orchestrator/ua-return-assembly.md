@@ -19,6 +19,8 @@ depends_on:
 
 # Ukraine FOP Return-Assembly Orchestrator v0.1
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 ## 1. What this file is
 
 This is the capstone skill for the Ukraine self-employed (ФОП / FOP) workflow. It runs **last**, after intake and after the content skills have produced their numbers.

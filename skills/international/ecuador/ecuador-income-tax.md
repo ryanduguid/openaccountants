@@ -13,6 +13,8 @@ verified_by: pending
 
 # Ecuador Income Tax -- Personas Naturales / Self-Employed Skill v0.1
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 > **Tier 2 (research-verified). NOT yet accountant-verified.** The 2026 PIT table is read verbatim from the official SRI Resolution NAC-DGERCGC25-00000043 PDF (high confidence). The 2025 table and several social-security / gastos-personales figures rely on Big-4 (PwC) and reputable Ecuadorian sources (JEZL, Russell Bedford, HLB Ecuador) rather than line-by-line re-extraction of the original SRI resolutions; those points carry inline `[RESEARCH GAP — reviewer to confirm]` markers. A licensed Ecuadorian contador/CPA must sign off before filing.
 
 ---

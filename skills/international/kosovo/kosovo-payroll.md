@@ -13,6 +13,8 @@ verified_by: pending
 
 # Kosovo Payroll Skill v0.1
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 **Tier 2 — research-verified. Figures below are sourced from the Tax Administration of Kosovo (Administrata Tatimore e Kosovës — TAK/ATK), Law No. 05/L-028 on Personal Income Tax as amended by Law No. 08/L-142 (effective 23 August 2024), Law No. 04/L-101 on Pension Funds, Law No. 03/L-222 on Tax Administration and Procedures, the Kosovo Pension Savings Trust (Trusti i Kursimeve Pensionale të Kosovës — KPST), PwC Worldwide Tax Summaries (last reviewed 13 Jan 2026), and Bloomberg Tax/Law. NOT yet signed off by a licensed Kosovo accountant or tax adviser. Treat every computation as an estimate pending professional review.**
 
 ---

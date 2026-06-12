@@ -13,6 +13,8 @@ verified_by: pending
 
 # Moldova Payroll Skill v0.1
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 > Tier 2 (research-verified). Figures below are drawn primarily from PwC Worldwide Tax Summaries (reviewed Jan 2026), EY Moldova tax alerts, and Moldovan accounting portals (buhgalter.md, salarii.md) because the State Tax Service (sfs.md), CNAS (cnas.gov.md) and CNAM (cnam.md) authority rate pages were not directly retrievable at research time (homepages did not expose the schedule; some authority pages returned HTTP 403). A Moldova-licensed accountant must confirm against the current annual Social Insurance Budget Law, the Health Insurance Fund Law and the Tax Code before sign-off.
 
 ---

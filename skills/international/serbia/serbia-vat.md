@@ -5,6 +5,8 @@ description: Use this skill whenever asked to prepare, review, or advise on a Se
 
 # Serbia VAT (PDV) Return Preparation Skill
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 ---
 
 ## Skill Metadata
@@ -726,7 +728,6 @@ Serbia adopted a major package of amendments to the VAT Law on 3 December 2025 (
 This skill covers Serbian PDV as of April 2026. Serbian tax law is subject to frequent amendment. All rates and thresholds should be verified against the most recent Official Gazette publications before filing. A qualified Serbian tax adviser (poreski savetnik) must validate all T1 rules before this skill is used in production.
 
 **A skill may not be published without sign-off from a qualified practitioner in the relevant jurisdiction.**
-
 
 ---
 

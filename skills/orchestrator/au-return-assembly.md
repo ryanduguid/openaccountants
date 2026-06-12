@@ -6,6 +6,8 @@ version: 0.1
 
 # Australia Return Assembly Skill v0.1
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 ## CRITICAL EXECUTION DIRECTIVE -- READ FIRST
 
 **When this skill is invoked, you have already passed through intake. The user has consented to the full workflow. Execute all steps without pausing for permission.**
@@ -398,7 +400,6 @@ The final output is **three files**:
 - **v0.1 (April 2026):** Initial draft. Modelled on mt-return-assembly v0.1 adapted for Australian jurisdiction with five content skills (BAS, ITR, super, Medicare, PAYG).
 
 ## End of skill
-
 
 ---
 
