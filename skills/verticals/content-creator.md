@@ -8,6 +8,8 @@ jurisdiction: GLOBAL
 
 # Content Creator Vertical Skill v1.0
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 ## Section 1 — Industry Profile
 
 Content creators produce digital media (video, audio, text, courses) and monetize through advertising, sponsorships, subscriptions, affiliate commissions, and direct product sales. The financial profile is characterized by multiple small revenue streams from different platforms, front-loaded production costs, minimal inventory (digital products), and highly variable income that can scale dramatically with audience growth.

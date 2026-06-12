@@ -21,6 +21,8 @@ depends_on:
 
 # Ukraine Unified Social Contribution (Єдиний соціальний внесок / ЄСВ / USC) — Self-Employed Skill v1.0
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 The Unified Social Contribution (ЄСВ) is Ukraine's single mandatory social-security
 charge. It replaced four separate state social funds (pension, unemployment, temporary
 disability/sickness, and accident-at-work insurance) with one consolidated contribution.

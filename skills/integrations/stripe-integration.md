@@ -10,6 +10,8 @@ jurisdiction: GLOBAL
 
 # Stripe Integration Skill v1.0
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 ## Section 1 — Platform Overview
 
 Stripe is an online payment processing platform used by businesses of all sizes to accept card payments, manage subscriptions, send invoices, and handle payouts. Headquartered in the US (San Francisco/Dublin), Stripe operates in 47+ countries. It is the dominant payment processor for SaaS, e-commerce, and platform/marketplace businesses.

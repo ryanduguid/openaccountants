@@ -13,6 +13,8 @@ verified_by: pending
 
 # Bulgaria Payroll Skill v0.1
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 **Tier 2 — research-verified. Figures below are sourced from the National Revenue Agency (НАП / NRA), the National Social Security Institute (НОИ / NSSI), the Bulgarian Ministry of Economy and Industry, PwC Worldwide Tax Summaries, the European Central Bank, and cross-checked against Big-4-adjacent payroll guides (Leinonen, Lano, Innovires, Eurofast). NOT yet signed off by a licensed Bulgarian accountant (счетоводител) or registered auditor. Treat every computation as an estimate pending professional review. Bulgaria adopts the euro on 1 January 2026 at the irrevocably fixed rate EUR 1 = BGN 1.95583 — this skill carries 2025 BGN figures and shows the EUR equivalents for the changeover.**
 
 ---

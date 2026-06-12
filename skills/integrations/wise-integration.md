@@ -10,6 +10,8 @@ jurisdiction: GLOBAL
 
 # Wise Integration Skill v1.0
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 ## Section 1 — Platform Overview
 
 Wise (formerly TransferWise) is a multi-currency money transfer and business account platform. Headquartered in London, it operates in 170+ countries and holds money in 40+ currencies. Wise is popular with freelancers receiving international payments, businesses paying overseas suppliers, and digital nomads.

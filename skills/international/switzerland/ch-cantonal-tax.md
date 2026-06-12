@@ -7,6 +7,8 @@ version: 2.0
 
 # Switzerland Cantonal and Communal Income Tax — Self-Employed v2.0
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 ## Section 1 — Quick Reference
 
 ### Swiss Three-Level Tax System
@@ -493,7 +495,6 @@ SECTION F — REVIEWER FLAGS
 - Steuererklarung and Beilagen: 10 years
 - Business records (Buchfuhrung): 10 years (OR Art. 958f)
 - Church exit documentation: retain permanently
-
 
 ---
 

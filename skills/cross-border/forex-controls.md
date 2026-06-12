@@ -18,6 +18,8 @@ category: international
 
 # Foreign Exchange Controls — Cross-Border Money Movement by Country
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 > **Based on work by [Artin (@ar-gen-tin)](https://github.com/ar-gen-tin/panrise)**, licensed under MIT. Adapted for the OpenAccountants format.
 
 > **Disclaimer:** This skill provides general information about foreign exchange regulations. Forex rules change frequently and enforcement varies. Violating forex controls can result in severe penalties including account freezes, fines, and criminal charges. Consult a qualified advisor in the relevant jurisdiction before structuring cross-border transactions.

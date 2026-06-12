@@ -6,6 +6,8 @@ version: 2.0
 
 # Dominican Republic ITBIS Return Skill v2.0
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 ## Section 1 — Quick reference
 
 | Field | Value |
@@ -133,7 +135,6 @@ Change log: v2.0 (April 2026): Full rewrite.
 
 ## Disclaimer
 This skill is for informational purposes only. All outputs must be reviewed by a qualified professional before filing. Latest version at [openaccountants.com](https://www.openaccountants.com).
-
 
 ---
 

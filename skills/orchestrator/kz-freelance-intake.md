@@ -9,6 +9,8 @@ category: orchestrator
 
 # Kazakhstan Self-Employed Intake Skill v0.1 (kz-freelance-intake)
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 ## What this file is
 
 The intake orchestrator for a Kazakhstan-resident self-employed person — an individual entrepreneur (ИП / жеке кәсіпкер). Every downstream Kazakhstan content skill — `kz-simplified-regime`, `kz-income-tax`, `kz-social-contributions`, `kazakhstan-vat` — and the assembly orchestrator `kz-return-assembly` depend on this skill running first to produce a structured intake package.

@@ -13,6 +13,8 @@ verified_by: pending
 
 # Honduras Payroll Contributions & Income Tax (ISR) Skill v0.1
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 > **Tier 2 (research-verified) — NOT yet professionally verified.** Figures are drawn from sourced research (Big-4 summaries, Honduran press citing the IHSS/SAR, and statute references) but have NOT been signed off by a Honduran Contador Público Colegiado. Treat all outputs as estimates pending review.
 
 ## Section 1 -- Quick reference

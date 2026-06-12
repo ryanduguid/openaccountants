@@ -11,6 +11,8 @@ verified_by: pending
 
 # Dominican Republic Tax Optimization Skill v0.1
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 **Tier 2 — research-verified. Sources: DGII, PwC Dominican Republic, Chambers Corporate Tax Guide 2025/26. Figures must agree with `dominican-republic-income-tax.md` / `dominican-republic-social-contributions.md`. NOT yet signed off by a Dominican tax adviser. Aggressive positions are never advised; every suggestion must be reviewed.**
 
 ---

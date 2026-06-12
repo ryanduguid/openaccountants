@@ -9,6 +9,8 @@ validation_status: ai-drafted-q3
 
 # Utah Individual Income Tax Skill — Self-Employed / Sole Proprietor
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 > **Scope.** This skill covers the Utah individual income tax return (Form TC-40) for full-year Utah residents who are sole proprietors or single-member LLC owners. It addresses the flat rate computation, the taxpayer tax credit, and Utah-specific adjustments starting from federal taxable income.
 
 > **Quality tier.** Q3 — AI-drafted, not independently verified. All rates and rules are sourced from official Utah State Tax Commission publications and third-party research current as of May 2026. A licensed CPA or EA should verify before relying on this skill for filing.

@@ -13,6 +13,8 @@ verified_by: pending
 
 # Guatemala Payroll Skill v0.1
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 **Tier 2 — research-verified. Figures below are sourced from the Guatemalan Tax Administration (Superintendencia de Administración Tributaria, SAT), the Guatemalan Social Security Institute (Instituto Guatemalteco de Seguridad Social, IGSS), the Ley de Actualización Tributaria (Decreto 10-2012), the Código Tributario (Decreto 6-91), labour decrees (78-89, 76-78, 42-92), PwC Worldwide Tax Summaries, EY, Deloitte, Baker Tilly Guatemala, and the official gazette (Diario de Centro América). NOT yet signed off by a licensed Guatemalan accountant (Contador Público y Auditor) or tax adviser. Treat every computation as an estimate pending professional review.**
 
 ---

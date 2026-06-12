@@ -8,6 +8,8 @@ category: orchestrator
 
 # France Return Assembly Skill v1.0
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 ## CRITICAL EXECUTION DIRECTIVE -- READ FIRST
 
 **When this skill is invoked, you have already passed through intake. The user has consented to the full workflow. Execute all steps without pausing for permission.**
@@ -428,7 +430,6 @@ The final output is **three files**:
 - **v1.0 (May 2026):** Initial draft. Modelled on mt-return-assembly v0.1 adapted for France jurisdiction with four content skills (TVA, income tax, cotisations sociales, PAS/estimated tax).
 
 ## End of skill
-
 
 ---
 

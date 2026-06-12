@@ -7,6 +7,8 @@ version: 2.0
 
 # US Schedule C and SE Computation Skill v2.0
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 ## Section 1 — Quick Reference
 
 ### Pipeline Position
@@ -627,7 +629,6 @@ SECTION H — REVIEWER FLAGS
 | Standard mileage rate | $0.70/mile |
 | 179 expensing limit | $1,250,000 (OBBBA) |
 | Bonus depreciation | 100% (OBBBA restored) |
-
 
 ---
 

@@ -17,6 +17,8 @@ category: cross-border
 
 # Cross-Border Invoicing Compliance
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 > **Disclaimer:** This skill provides general guidance on cross-border invoicing rules. Invoice requirements are jurisdiction-specific and evolving rapidly due to e-invoicing mandates. Consult a qualified advisor before relying on this information for compliance.
 
 ---

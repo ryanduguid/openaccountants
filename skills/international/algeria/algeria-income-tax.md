@@ -13,6 +13,8 @@ verified_by: pending
 
 # Algeria Income Tax (IRG) -- Employee & Self-Employed Skill v0.1
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 > **Tier 2 (research-verified) skill.** Figures are sourced from PwC Worldwide Tax Summaries, the Direction Générale des Impôts (DGI), the IMF, and Algerian Finance Law materials. Several figures (flagged inline as **[RESEARCH GAP -- reviewer to confirm]**) come only from secondary Algerian payroll sources and MUST be confirmed against the 2025 Finance Law (Loi de Finances 2025) and the Code des Impôts Directs et Taxes Assimilées (CIDTA) before filing.
 
 ---

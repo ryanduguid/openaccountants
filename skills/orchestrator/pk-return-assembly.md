@@ -16,6 +16,8 @@ depends_on:
 
 # Pakistan Return Assembly — Orchestrator v0.1
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 ## What this file is
 The capstone for a Pakistan-resident freelancer/sole proprietor. It sequences the upstream skills, selects forms, and produces a single pre-filing package via IRIS. It computes nothing.
 

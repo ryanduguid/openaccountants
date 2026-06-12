@@ -28,6 +28,8 @@ depends_on:
 
 # Morocco — Financial Statements & Financial Reporting (États de Synthèse)
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 This skill tells an AI agent **who has to prepare formal financial statements** in
 Morocco, **what those statements are**, and **how they are filed** — organised by
 tax regime and legal form. It does **not** compute the tax (that is `ma-income-tax`,

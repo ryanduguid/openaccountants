@@ -9,6 +9,8 @@ validation_status: ai-drafted-q3
 
 # Vermont Individual Income Tax Skill — Self-Employed / Sole Proprietor
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 > **Scope.** This skill covers the Vermont individual income tax return (Form IN-111) for full-year Vermont residents who are sole proprietors or single-member LLC owners. It addresses the graduated rate computation, Vermont taxable income derived from federal taxable income, and Vermont-specific credits.
 
 > **Quality tier.** Q3 — AI-drafted, not independently verified. All rates and rules are sourced from the Vermont Department of Taxes publications and third-party research current as of May 2026. A licensed CPA or EA should verify before relying on this skill for filing.

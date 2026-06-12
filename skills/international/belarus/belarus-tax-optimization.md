@@ -11,6 +11,8 @@ verified_by: pending
 
 # Belarus Tax Optimization Skill v0.1
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 **Tier 2 — research-verified. Sources: MNS (Ministry of Taxes and Duties), PwC, Allford/Chandrawat. Figures must agree with `belarus-income-tax.md` / `belarus-social-contributions.md`. NOT yet signed off by a Belarusian tax adviser. Aggressive positions are never advised; every suggestion must be reviewed. NOTE: Belarus is TIGHTENING its small-business regimes — this playbook is as much about compliance as savings.**
 
 ---

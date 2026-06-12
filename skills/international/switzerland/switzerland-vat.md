@@ -6,6 +6,8 @@ version: 2.0
 
 # Switzerland VAT Return Skill (MWST Abrechnung) v2.0
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 ## Section 1 — Quick reference
 
 **Read this whole section before classifying anything. The workflow runbook is in `vat-workflow-base` Section 1 — follow that runbook with this skill providing the country-specific content. Do NOT load eu-vat-directive — Switzerland is not in the EU.**
@@ -638,7 +640,6 @@ v2.0, rewritten April 2026. Awaiting validation by Swiss licensed tax adviser.
 13. Bezugsteuer CHF 10,000 threshold documented: yes (Section 3.8, Section 5.6).
 14. Import MWST via BAZG documented: yes (Section 5.7, Example 6).
 15. No zero rate — exempt with credit instead: yes (Section 1).
-
 
 ---
 

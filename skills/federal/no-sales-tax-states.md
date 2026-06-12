@@ -6,6 +6,8 @@ version: 2.0
 
 # No-Sales-Tax States Skill v2.0 -- AK, DE, MT, NH, OR
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 ## Section 1 -- Quick reference
 
 | State | No general sales tax | But has... |
@@ -248,7 +250,6 @@ Buyers who purchase in no-sales-tax states may owe USE TAX in their home state o
 ## Disclaimer
 
 This skill is provided for informational and computational purposes only and does not constitute tax, legal, or financial advice. All outputs must be reviewed by a qualified professional (CPA, EA, or tax attorney) before filing.
-
 
 ---
 

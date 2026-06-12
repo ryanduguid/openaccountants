@@ -9,6 +9,8 @@ description: Use this skill whenever asked to prepare, review, or advise on a Ru
 
 # Russia VAT (НДС / NDS) Return Preparation Skill
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 > **Quality tier:** Research-verified — pending sign-off by a Russian accountant.
 > **Tax year:** 2026. The standard НДС rate was raised from 20% to **22%** effective 1 January 2026 (Federal Law No. 425-FZ of 28 November 2025).
 
@@ -684,7 +686,6 @@ Key areas requiring local expertise:
 5. Digital services registry (Article 174.2) updates
 
 **A skill may not be published without sign-off from a qualified practitioner in the relevant jurisdiction.**
-
 
 ---
 

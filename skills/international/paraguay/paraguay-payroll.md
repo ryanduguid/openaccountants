@@ -13,6 +13,8 @@ verified_by: pending
 
 # Paraguay Payroll Skill v0.1 (Tier 2 — research-verified, reviewer sign-off pending)
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 > **Tier 2 status.** Every rate, threshold, and deadline below is sourced to a named authority (DNIT, IPS, MTESS) or a Big-4 summary (PwC Worldwide Tax Summaries) and cited inline. It has **not** yet been section-by-section verified by a licensed Paraguayan accountant (contador público). Items marked **[RESEARCH GAP — reviewer to confirm]** carry residual uncertainty and must be confirmed against primary sources before reliance.
 
 > **READ THIS FIRST — the single most important structural fact.** Paraguay levies a personal income tax (**IRP — Impuesto a la Renta Personal**), but for salaried (dependent) employees **IRP is NOT withheld at source by the employer.** It is a **self-assessed annual tax** filed by the individual taxpayer (Form 515 via Marangatú). The employer's mandatory monthly payroll burden is therefore primarily **IPS social security** (employee withholding + employer contribution). Do not "withhold IRP from a salary" — that is wrong for Paraguay. See Section 2.

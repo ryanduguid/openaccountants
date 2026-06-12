@@ -8,6 +8,8 @@ validation_status: ai-drafted-q3
 
 # Ohio Individual Income Tax Skill — Self-Employed / Sole Proprietor
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 > **Scope.** Ohio Form IT 1040 for tax year 2025 for full-year Ohio resident sole proprietors and disregarded single-member LLCs. Covers nonbusiness income tax computation, business income deduction (BID), Ohio Schedule of Adjustments, and personal credits and exemptions.
 > **Quality tier.** Q3 — AI-drafted, not independently verified. All rates and thresholds have been researched from primary sources but must be confirmed by a qualified professional before use in return preparation.
 

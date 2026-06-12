@@ -13,6 +13,8 @@ verified_by: pending
 
 # Albania Payroll Skill v0.1 (Tier 2 — research-verified, reviewer sign-off pending)
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 > **Tier 2 status.** Every rate, threshold, and deadline below is sourced to a named authority or Big-4 summary (PwC Worldwide Tax Summaries, KPMG Albania) and cited inline. It has **not** yet been section-by-section verified by a licensed Albanian accountant. Items marked **[RESEARCH GAP — reviewer to confirm]** carry residual uncertainty and must be confirmed against primary sources before reliance.
 
 ---

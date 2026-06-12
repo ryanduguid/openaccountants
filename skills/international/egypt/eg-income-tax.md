@@ -18,6 +18,8 @@ depends_on:
 
 # Egypt Personal Income Tax (ضريبة الدخل) Skill v1.0
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 This skill covers Egyptian personal income tax (ضريبة الدخل على الأشخاص الطبيعيين)
 for **resident individuals**, **sole proprietors (منشأة فردية)**, and
 **professionals / non-commercial activity (مهن حرة)**. The AI must reply in the

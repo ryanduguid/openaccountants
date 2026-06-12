@@ -13,6 +13,8 @@ verified_by: pending
 
 # Luxembourg Social Security Contributions (Cotisations Sociales) Skill v0.1
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 > **Tier 2 — research-verified.** Figures are corroborated from multiple authoritative sources (CCSS/IGSS social-parameter notices, FEDIL, PwC Worldwide Tax Summaries, CLEISS, Orbitax, Securex, salary.lu) and the Ministry of Health and Social Security pension-reform page. Several primary CCSS/IGSS/MDE/AAA rate-notice pages returned HTTP 403 on direct fetch, so the exact official "avis aux employeurs" rate-notice values should be confirmed on the official PDF before filing. Where a figure is uncertain or period-dependent it is marked **[RESEARCH GAP — reviewer to confirm]**.
 
 ## Section 1 -- Quick reference

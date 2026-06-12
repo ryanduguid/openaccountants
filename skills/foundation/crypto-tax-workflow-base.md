@@ -13,6 +13,8 @@ jurisdiction: GLOBAL
 
 # Crypto Tax Workflow Base v1.0
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 ## What this file is
 
 Universal workflow for cryptocurrency and digital asset tax compliance. Defines the classification framework, cost basis methods, transaction type taxonomy, and output format that every country-specific crypto tax skill builds on. No rates, no thresholds, no country-specific rules — those come from the country skill.

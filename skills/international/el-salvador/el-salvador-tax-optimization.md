@@ -11,6 +11,8 @@ verified_by: pending
 
 # El Salvador Tax Optimization Skill v0.1
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 **Tier 2 — research-verified. Sources: Ministerio de Hacienda, PwC El Salvador, EY (2024 ISR reform alert). Figures must agree with `el-salvador-income-tax.md` / `el-salvador-social-contributions.md` / `el-salvador-payroll.md`. NOT yet signed off by a Salvadoran tax adviser. Aggressive positions are never advised; every suggestion must be reviewed.**
 
 ---

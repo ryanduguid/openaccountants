@@ -23,6 +23,8 @@ depends_on:
 
 # Ukraine Electronic Invoicing & Digital Tax Reporting — Self-Employed Skill v1.0
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 This skill explains how a Ukrainian self-employed person interacts with the State Tax
 Service's digital machinery: issuing and registering the VAT tax invoice (**податкова
 накладна**) in the Unified Register (**ЄРПН**), the risk engine that can freeze that

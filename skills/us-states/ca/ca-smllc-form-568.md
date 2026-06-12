@@ -6,6 +6,8 @@ version: 0.2
 
 # CA SMLLC Form 568 Skill v0.2
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 ## What this file is, and what it is not
 
 **This file is a content skill that loads on top of `us-tax-workflow-base` v0.1.** It provides the California Form 568 filing rules for single-member LLCs (SMLLCs) that are disregarded for federal income tax purposes but are treated as separate entities by California for the annual franchise tax and LLC fee. This skill does NOT compute the owner's personal California income tax (handled by `ca-540-individual-return`) or California estimated personal income tax payments (handled by `ca-estimated-tax-540es`).
@@ -377,7 +379,6 @@ The LLC fee is based on "total income" computed on Schedule IW:
 - **v0.2 (April 2026):** Full content skill with $800 franchise tax, LLC fee schedule, Form 568 preparation, edge cases, and test suite.
 
 ## End of skill
-
 
 ---
 

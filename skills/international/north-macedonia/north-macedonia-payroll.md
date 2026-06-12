@@ -13,6 +13,8 @@ verified_by: pending
 
 # North Macedonia Payroll Skill v0.1
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 **Tier 2 — research-verified. Figures below are sourced from the Public Revenue Office (Управа за јавни приходи / UJP / PRO — ujp.gov.mk), the social funds (Pension & Disability Insurance Fund PIOM, Health Insurance Fund FZOM, Employment Agency AVRSM), the Ministry of Labour and Social Policy (mtsp.gov.mk), the Official Gazette (Службен весник), PwC Worldwide Tax Summaries, and the Eurofast North Macedonia Tax Card 2025 / Payroll Guide 2025. NOT yet signed off by a licensed Macedonian accountant (овластен сметководител) or authorised auditor. Treat every computation as an estimate pending professional review.**
 
 > **The single most distinctive North Macedonia fact:** ALL mandatory social contributions (28% in total) are levied on the employee's gross salary, WITHHELD from gross, and remitted by the employer on the employee's behalf. There is **NO separate employer-side contribution on top of gross salary** unless a special law requires one. The employer's payroll cost is the gross salary; it is not grossed up by an additional social charge. (Eurofast Tax Card / Payroll Guide 2025)

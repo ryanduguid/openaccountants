@@ -12,6 +12,8 @@ validation_status: ai-drafted-q3
 
 # Iowa Individual Income Tax Skill — Self-Employed / Sole Proprietor
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 > **Scope.** This skill covers Iowa individual income tax for self-employed individuals and sole proprietors filing Form IA 1040. Iowa has a flat 3.8% rate — the result of landmark tax reform (SF 2442, 2024) that completed the transition from a multi-bracket system.
 > **Quality tier.** Q3 — AI-drafted with citations. Must be reviewed by a qualified professional before use.
 

@@ -26,6 +26,8 @@ depends_on:
 
 # Morocco — Business Formation & Registration for the Self-Employed
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 This skill walks a self-employed person through **starting and registering** a
 business in Morocco: which legal status to adopt (**auto-entrepreneur**, a sole
 trader under **CPU / RNR / RNS**, or a one-person company **SARL-AU**), and which

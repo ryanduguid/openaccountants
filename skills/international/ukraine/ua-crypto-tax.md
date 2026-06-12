@@ -23,6 +23,8 @@ depends_on:
 
 # Ukraine — Taxation of Virtual Assets / Cryptocurrency for Individuals (2026) v1.0
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 > **CRITICAL — READ FIRST — LEGISLATIVE STATUS (as of May 2026).**
 > The rules in this skill describe **Draft Law No. 10225-d** ("On Amendments to the
 > Tax Code of Ukraine and Certain Other Legislative Acts of Ukraine Regarding the

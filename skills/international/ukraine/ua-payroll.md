@@ -23,6 +23,8 @@ depends_on:
 
 # Ukraine Payroll for Employers (Зарплата та податки на найманих працівників) — Skill v1.0
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 This skill covers what happens when a Ukrainian sole proprietor (**ФОП / fizychna
 osoba-pidpryyemets**) or small employer **hires staff under an employment contract
 (трудовий договір)** and must run payroll. It is distinct from the owner's own taxes:

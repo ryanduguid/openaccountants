@@ -13,6 +13,8 @@ verified_by: pending
 
 # Pillar Two / GloBE 15% Global Minimum Tax v0.1
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 ## What this file is
 
 **This file is a content skill that loads on top of `cross-border-workflow-base`.** It implements the OECD Pillar Two Global Anti-Base Erosion (GloBE) rules and the EU Minimum Tax Directive 2022/2523, in force from fiscal years starting on or after 31 December 2023 (IIR) and 31 December 2024 (UTPR).

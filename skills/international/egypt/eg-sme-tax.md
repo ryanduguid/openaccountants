@@ -21,6 +21,8 @@ depends_on:
 
 # Egypt — Simplified / SME Tax Regime (Law No. 6 of 2025 + Law No. 152 of 2020)
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 This skill covers Egypt's turnover-based **integrated simplified tax system**
 (النظام الضريبي المتكامل المبسط) introduced by **Law No. 6 of 2025**, plus the
 underlying **MSME Development Law No. 152 of 2020** (قانون تنمية المشروعات

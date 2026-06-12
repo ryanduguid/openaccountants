@@ -11,6 +11,8 @@ jurisdiction: GLOBAL
 
 # FreeAgent Integration Skill v1.0
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 ## Section 1 — Platform Overview
 
 FreeAgent is a UK-based cloud accounting software designed for freelancers, sole traders, micro-businesses, and their accountants. Acquired by NatWest Group in 2018, it is offered free to NatWest, Royal Bank of Scotland, and Ulster Bank business account holders. FreeAgent is MTD (Making Tax Digital) compatible and handles self-assessment, corporation tax estimates, VAT returns, and payroll.

@@ -9,6 +9,8 @@ category: orchestrator
 
 # Egypt Self-Employed Intake Orchestrator v0.1
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 ## What this file is
 
 This is the intake orchestrator for an Egypt-resident self-employed person — a sole proprietor (منشأة فردية), an independent professional (مهنة حرة / مهنة غير تجارية), or a small business owner. It establishes the facts and routes the case to the correct tax regime. It computes nothing.

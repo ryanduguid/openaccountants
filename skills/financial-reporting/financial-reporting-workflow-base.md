@@ -20,6 +20,8 @@ depends_on: []
 
 # Financial Reporting Workflow Base v0.1
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 ## What this file is
 
 **This file is the foundation workflow base that every financial-reporting content skill loads on top of.** It is the shared contract. It carries no recognition or measurement rules of its own — those live in the topic content skills (revenue, leases, debt vs. equity, business combinations), each issued in a US GAAP (ASC) edition and an IFRS edition.

@@ -6,6 +6,8 @@ version: 2.0
 
 # South Korea VAT Return Preparation Skill v2.0
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 ## Section 1 -- Quick reference
 
 **Read this whole section before classifying anything.**
@@ -625,7 +627,6 @@ Blue for hardcoded values from bank statement. Black for formulas. Green for cro
 15. Refusal catalogue present: yes (Section 2, R-KR-1 through R-KR-6).
 
 ## End of South Korea VAT Return Skill v2.0
-
 
 ---
 

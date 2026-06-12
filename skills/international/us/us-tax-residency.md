@@ -16,6 +16,8 @@ category: international
 
 # US Tax Residency (Non-Citizens) — v1.0
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 ## Core rule
 
 For non-US-citizens, US tax residency (as a "resident alien") is determined by two tests.

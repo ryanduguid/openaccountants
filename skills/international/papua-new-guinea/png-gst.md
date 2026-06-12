@@ -5,6 +5,8 @@ description: Use this skill whenever asked to prepare, review, or create a Papua
 
 # Papua New Guinea GST Return Preparation Skill
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 ---
 
 ## Skill Metadata
@@ -501,7 +503,6 @@ Action Required: Do not classify. Refer to qualified accountant. Document gap.
 This skill must be validated by a qualified CPA practicing in PNG before use in production.
 
 **A skill may not be published without sign-off from a qualified practitioner in PNG.**
-
 
 ---
 

@@ -25,6 +25,8 @@ depends_on:
 
 # Morocco — Social Contributions for the Self-Employed (CNSS / AMO / Retraite TNS)
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 Morocco is in the middle of a multi-year **généralisation de la protection sociale**
 (social-protection roll-out, Loi-cadre n° 09-21). The headline goal is to bring every
 worker — salaried and **non-salaried (travailleurs non-salariés, TNS)** — into the

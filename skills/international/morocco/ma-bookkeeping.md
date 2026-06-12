@@ -25,6 +25,8 @@ depends_on:
 
 # Morocco — Record-Keeping & Bookkeeping for the Self-Employed (Comptabilité)
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 This skill tells an AI agent **what books, registers, and invoices** a self-employed
 Moroccan taxpayer must keep, and **for how long** — organised by tax regime. It does
 **not** compute the tax (that is `ma-auto-entrepreneur`, `ma-cpu`, and

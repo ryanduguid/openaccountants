@@ -11,6 +11,8 @@ depends_on:
 
 # Nigeria VAT (Value Added Tax) Skill v2.0
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 ---
 
 ## Section 1 — Quick reference
@@ -419,7 +421,6 @@ When client cannot provide VAT invoices for all transactions:
 | Finance Act 2020 — VAT rate increase to 7.5% | Official Gazette |
 | VAT registration threshold guidance | FIRS circular 2020 |
 | FIRS e-Invoice pilot | FIRS announcements — 2024 |
-
 
 ---
 

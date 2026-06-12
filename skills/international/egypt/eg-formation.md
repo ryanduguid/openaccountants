@@ -24,6 +24,8 @@ depends_on:
 
 # Egypt — Business Formation & Registration for the Self-Employed
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 This skill walks a self-employed person in Egypt through **getting legally set up**:
 obtaining a **tax card** (البطاقة الضريبية) and opening a **tax file** (ملف ضريبي)
 with the **Egyptian Tax Authority — ETA** (مصلحة الضرائب المصرية), entering the

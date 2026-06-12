@@ -13,6 +13,8 @@ verified_by: pending
 
 # Montenegro Personal Income Tax -- Self-Employed Skill v0.1
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 > **Tier 2 (research-verified).** Figures below are drawn from PwC Worldwide Tax Summaries (reviewed 27 March 2026), KPMG Montenegro, and Orbitax. They have NOT yet been signed off by a Montenegrin licensed accountant. Treat every computed liability as an estimate pending professional review.
 
 ---

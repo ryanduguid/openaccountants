@@ -13,6 +13,8 @@ verified_by: pending
 
 # Ethiopia Social Security & Payroll Tax Skill v0.1
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 > **Reform note.** Ethiopia overhauled personal income taxation via the **Income Tax (Amendment) Proclamation No. 1395/2025** (approved by Parliament 17 July 2025; effective **7 July 2025**, with local withholding provisions effective 1 August 2025). Every PAYE figure in this skill reflects the post-reform regime. Source: Afriwise, "Update on Ethiopia's New Income Tax Amendment Proclamation"; PwC Worldwide Tax Summaries — Ethiopia (last reviewed 18 Dec 2025), https://taxsummaries.pwc.com/ethiopia/individual/taxes-on-personal-income.
 
 ## Section 1 -- Quick reference

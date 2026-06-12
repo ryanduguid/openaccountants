@@ -9,6 +9,8 @@ validation_status: ai-drafted-q3
 
 # Wisconsin Individual Income Tax Skill — Self-Employed / Sole Proprietor
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 > **Scope.** This skill covers the Wisconsin individual income tax return (Form 1) for full-year Wisconsin residents who are sole proprietors or single-member LLC owners. It addresses the graduated rate computation, Wisconsin income starting from federal AGI, the sliding-scale standard deduction, and Wisconsin-specific credits.
 
 > **Quality tier.** Q3 — AI-drafted, not independently verified. All rates and rules are sourced from the Wisconsin Department of Revenue publications and third-party research current as of May 2026. A licensed CPA or EA should verify before relying on this skill for filing.

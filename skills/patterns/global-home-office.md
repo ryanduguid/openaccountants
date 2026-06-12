@@ -11,6 +11,8 @@ depends_on: []
 
 # Global Home Office Expense Pattern Library v0.1
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 ## What this file is
 
 **Functional role:** Home office deduction rules and calculation methods by jurisdiction
@@ -213,7 +215,6 @@ Home office deductions are available in most jurisdictions but the rules vary si
 ## Disclaimer
 
 This file provides general guidance for home office deductions. Rates, thresholds, and requirements change annually. Always verify against the relevant tax authority's current publications. This is not tax advice. A qualified professional should review all deduction claims before filing.
-
 
 ---
 

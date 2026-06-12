@@ -13,6 +13,8 @@ verified_by: pending
 
 # North Macedonia Compulsory Social Contributions & Payroll Skill v0.1
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 > **Confidence: HIGH.** Rate, base and threshold figures rest on the KPMG Tax Card 2025, Eurofast Tax Card 2025, PwC Worldwide Tax Summaries, and Bloomberg Tax's report of the Public Revenue Office (UJP) announcement of 22 January 2025. The official UJP page (ujp.gov.mk) was confirmed for procedural deadlines but did not itself yield the rate tables. English statute names are working translations.
 
 ## Section 1 -- Quick reference

@@ -13,6 +13,8 @@ verified_by: pending
 
 # Azerbaijan Income Tax -- Individuals & Self-Employed Skill v0.1
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 > **CONFIDENCE: MEDIUM.** Several figures rely on Big-4 (PwC) and reputable local-firm summaries rather than direct extraction from the Azeri-language Tax Code, and the figures span a major regime change at 1 January 2026 (the 7-year private non-oil holiday expired 31 December 2025). Items marked **[RESEARCH GAP — reviewer to confirm]** must be reconfirmed against the official portal at [taxes.gov.az](https://www.taxes.gov.az/en) before any return is filed.
 
 ---

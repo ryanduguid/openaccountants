@@ -26,6 +26,8 @@ depends_on:
 
 # Russia — Business Formation & Registration for Self-Employed People
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 This skill helps an AI agent guide a user through *legally setting up* to earn
 business income in Russia: registering as **самозанятый** (НПД), registering as
 an **ИП** (*индивидуальный предприниматель* — individual entrepreneur / sole

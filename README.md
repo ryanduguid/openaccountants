@@ -8,6 +8,10 @@
 
 ---
 
+> ⚠️ **General reference only — not advice.** OpenAccountants provides general tax and accounting reference material for AI-assisted workflows. It is **not** a law firm, accounting firm, tax preparer, or return-filing service, and its outputs are **not** tax, legal, accounting, or financial advice. Skills may be incomplete, outdated, or wrong, and are not reviewed for any specific person's facts, elections, deadlines, residency, or local procedures. Always have a qualified professional review outputs before filing, payment, or action. *Research-verified* skills have **not** been reviewed by a credentialed accountant.
+
+---
+
 ## What it does
 
 ```
@@ -331,7 +335,7 @@ python3 scripts/build-packages.py
 
 ## Disclaimer
 
-For informational and computational purposes only. Not tax advice. Not a replacement for professional judgment. All outputs must be reviewed by a qualified professional before filing.
+OpenAccountants provides general tax and accounting reference material for AI-assisted workflows. It is **not** a law firm, accounting firm, tax preparer, or return-filing service. Outputs are **not** tax, legal, accounting, or financial advice, are not reviewed for your specific facts, and must be reviewed by a qualified professional before filing, payment, or action. Using a skill does not create a client relationship. *Research-verified* skills have not been reviewed by a credentialed accountant; only the *accountant-verified* tier carries a named practitioner's review, and that review is of reference material, not of any specific taxpayer's situation.
 
 The most up-to-date, verified version is maintained at [openaccountants.com](https://openaccountants.com).
 

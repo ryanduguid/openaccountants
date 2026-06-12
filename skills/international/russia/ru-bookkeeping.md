@@ -20,6 +20,8 @@ depends_on:
 
 # Russia (RU) — Record-Keeping & Bookkeeping for the Self-Employed (2026)
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 This skill covers what records a self-employed person in Russia must keep, by tax
 regime. The reply language follows the user (English prose with native Russian tax
 terms kept verbatim, since these are the legal terms the user will see on the ФНС

@@ -19,6 +19,8 @@ category: international
 
 # Cross-Border VAT/GST Compliance — International Digital Businesses
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 > **Based on work by [Artin (@ar-gen-tin)](https://github.com/ar-gen-tin/panrise)**, licensed under MIT. Adapted for the OpenAccountants format.
 
 > **Disclaimer:** This skill provides general guidance on VAT/GST compliance for digital services. VAT rules are complex, jurisdiction-specific, and change frequently. Consult a qualified indirect tax advisor before registering, filing, or taking positions on VAT/GST obligations. Errors can result in retroactive assessments, penalties, and interest.

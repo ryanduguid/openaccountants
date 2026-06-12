@@ -6,6 +6,8 @@ version: 2.0
 
 # Liechtenstein MWST Return Skill v2.0
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 ## Section 1 — Quick reference
 
 **Liechtenstein applies Swiss MWST law in full via the Customs Union Treaty of 1923. For all substantive rules, refer to the Switzerland VAT skill.**

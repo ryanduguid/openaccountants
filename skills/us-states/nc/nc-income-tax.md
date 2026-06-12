@@ -11,6 +11,8 @@ validation_status: ai-drafted-q3
 
 # North Carolina Individual Income Tax Skill — Self-Employed / Sole Proprietor
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 > **Scope.** This skill covers North Carolina Form D-400 (Individual Income Tax Return)
 > for full-year NC residents who are sole proprietors or single-member LLC owners.
 > Tax year 2025 (returns filed in 2026). North Carolina uses a flat income tax rate.

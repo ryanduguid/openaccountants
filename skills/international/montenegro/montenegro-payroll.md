@@ -13,6 +13,8 @@ verified_by: pending
 
 # Montenegro Payroll Skill v0.1
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 **Tier 2 — research-verified. Figures below are sourced from PwC Worldwide Tax Summaries, KPMG Montenegro (October 2024 Tax Alert), Eurofast (Montenegro Tax Card 2025), Karanovic & Partners and Perfectum, referencing the Revenue and Customs Administration of Montenegro (Uprava prihoda i carina Crne Gore), the Fund for Pension and Disability Insurance (Fond PIO) and the Ministry of Labour. NOT yet signed off by a licensed Montenegrin accountant or tax adviser. The figures incorporate the "Europe Now 2.0" (Evropa sad 2) reform effective 1 October 2024. Treat every computation as an estimate pending professional review.**
 
 ---

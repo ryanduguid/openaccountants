@@ -20,6 +20,8 @@ depends_on:
 
 # Egypt Record-Keeping & Bookkeeping (مسك الدفاتر والسجلات) Skill v1.0
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 This skill explains the books, records, and **mandatory digital systems** an
 Egyptian self-employed person, sole proprietor (منشأة فردية), or professional
 (صاحب مهنة حرة) must maintain. Egypt has moved aggressively to a fully digital

@@ -8,6 +8,8 @@ jurisdiction: GLOBAL
 
 # Transfer Pricing Workflow Base Skill v1.0
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 ## What this file is, and what it is not
 
 **This file contains workflow architecture only.** It defines how Claude should approach a transfer pricing documentation task: the order of operations, how to identify related-party transactions, how to select and apply a transfer pricing method, how to structure documentation per the OECD three-tiered approach, what to check before delivering. It contains no local TP thresholds, no penalty rates, no documentation filing portals, no specific safe harbor rules, no country-specific materiality limits.

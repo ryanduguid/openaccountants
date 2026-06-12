@@ -20,6 +20,8 @@ depends_on:
 
 # Egypt Cryptocurrency — Legal Status & Tax (العملات المشفرة) Skill v1.0
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 This skill covers the **regulatory** and **possible tax** treatment of
 cryptocurrency (العملات المشفرة / العملات الرقمية) in Egypt for individuals and
 small businesses. The AI must reply in the user's language (English or Arabic /

@@ -6,6 +6,8 @@ version: 0.2
 
 # US Federal Return Assembly Skill v0.2
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 ## CRITICAL EXECUTION DIRECTIVE — READ FIRST
 
 **When this skill is invoked, either directly or via `us-ca-return-assembly`, execute the full workflow without pausing for user permission.**
@@ -483,7 +485,6 @@ If the taxpayer is in AK, FL, NV, NH, SD, TN, TX, WA, or WY — there is no stat
 - **v0.1 (April 2026):** Initial draft for freelance software developer product.
 
 ## End of US Federal Return Assembly Skill v0.1
-
 
 ---
 

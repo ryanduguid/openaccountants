@@ -24,6 +24,8 @@ depends_on:
 
 # Russia — Electronic Invoicing & Digital Reporting (ЭДО, ККТ, прослеживаемость)
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 > **Quality tier:** Research-verified — pending sign-off by a Russian accountant.
 > **Tax year:** 2026. Verified against ФНС (nalog.gov.ru) and reputable Russian
 > secondary sources in May 2026. Several rollouts are still phasing in — items

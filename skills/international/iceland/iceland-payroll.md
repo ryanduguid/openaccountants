@@ -13,6 +13,8 @@ verified_by: pending
 
 # Iceland Payroll Skill v0.1
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 > Tier 2 (research-verified). Core 2025 figures (tax brackets, personal tax credit, tryggingagjald) are drawn directly from Skatturinn (Iceland Revenue and Customs) key-rates and tax-bracket pages and corroborated by PwC Worldwide Tax Summaries. The state-vs-municipal split of each bracket is approximate (Skatturinn publishes only the COMBINED withholding rate); the exact late-payment surcharge on staðgreiðsla/tryggingagjald and the minimum-wage figures (which are NOT statutory) are flagged as research gaps below. An Iceland-registered accountant must confirm against the official Skatturinn rate tables and the applicable collective agreement (kjarasamningur) before sign-off.
 
 ---

@@ -13,6 +13,8 @@ verified_by: pending
 
 # Bolivia Social Security Contributions & RC-IVA — Dependent Employment Skill v0.1
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 > **Tier 2 (research-verified) skill.** Figures below are corroborated by PwC Worldwide Tax Summaries and reputable Bolivian law firms/consultancies (Rigoberto Paredes, Planifica) and primary norms (Ley 065, Ley 1582, DS 5383). Where a figure is unconfirmed against the primary statute it is marked **[RESEARCH GAP — reviewer to confirm]**. This skill must be signed off by a Bolivian-qualified professional before any output is filed or acted upon.
 
 ## Section 1 — Quick reference

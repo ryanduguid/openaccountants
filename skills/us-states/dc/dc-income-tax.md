@@ -12,6 +12,8 @@ validation_status: ai-drafted-q3
 
 # District of Columbia Individual Income Tax Skill — Self-Employed / Sole Proprietor
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 > **Scope.** This skill covers DC individual income tax for self-employed individuals and sole proprietors filing Form D-40. It handles the graduated rate structure, DC-specific standard deduction, and modifications to federal AGI.
 > **Quality tier.** Q3 — AI-drafted with citations. Must be reviewed by a qualified professional before use.
 

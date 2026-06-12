@@ -7,6 +7,8 @@ jurisdiction: GLOBAL
 
 # Universal Workflow Base v0.1
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 ## What this file is, and what it is not
 
 **This file contains workflow architecture only.** It defines how an AI should approach any accounting or compliance obligation in any jurisdiction: the order of operations, how to handle ambiguity, what to produce as output, what to check before delivering, and what situations to refuse. It applies to all domains — tax, bookkeeping, payroll, e-invoicing, company formation, financial statements, transfer pricing, and tax optimization. It contains no rates, no dollar or euro thresholds, no form references, no deduction rules, no country-specific figures of any kind.
@@ -689,7 +691,6 @@ The workflow runbook, conservative defaults principle, three-output specificatio
 ## End of Universal Workflow Base v0.1
 
 This base is incomplete without at least one content skill loaded alongside it. If you are reading this without any content skill loaded, ask the user what obligation and jurisdiction they are working on and refuse to proceed until the appropriate content skill is loaded.
-
 
 ---
 

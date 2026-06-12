@@ -13,6 +13,8 @@ verified_by: pending
 
 # Senegal Social Security & Payroll Contributions Skill v0.1
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 > **Currency:** West African CFA franc — **XOF** (written CFA / FCFA). All figures below are in XOF.
 > **Senegal levies personal income tax (IRPP).** The "no income tax" special case does **not** apply.
 > **Primary authority throughout:** PwC Worldwide Tax Summaries — Senegal (last reviewed 31 March 2026, reflecting 2025/2026 law). Secondary HR/payroll sources are flagged inline and used only where PwC is silent.

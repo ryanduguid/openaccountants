@@ -11,6 +11,8 @@ depends_on:
 
 # Peru IGV (Impuesto General a las Ventas) Skill v2.0
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 ---
 
 ## Section 1 — Quick reference
@@ -429,7 +431,6 @@ When client cannot provide CPEs for all transactions:
 | SPOT (Detracciones) guidance | SUNAT — Spot normativa |
 | TUO de la Ley del IGV | Decreto Supremo 055-99-EF (as amended) |
 | CPE technical specifications | SUNAT — comprobantes de pago electrónicos |
-
 
 ---
 

@@ -13,6 +13,8 @@ verified_by: pending
 
 # Belarus Social Insurance Contributions (FSZN) + Payroll PIT -- Skill v0.1
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 **Confidence: MEDIUM.** Belarus is NOT covered by the PwC / Deloitte / EY / KPMG Worldwide Tax Summaries (taxsummaries.pwc.com/belarus returns 404). Figures below rely on the official President of Belarus portal (president.gov.by), the official Social Protection Fund portal (ssf.gov.by), the Lloyds/Standard Bank International Trade Portal, Bloomberg Tax, and specialist Belarusian payroll/EOR providers (eor.by, spex.by, globalization-partners). Several figures carry an explicit **[RESEARCH GAP -- reviewer to confirm]** marker and MUST be verified against the Russian-language Tax Code (Налоговый кодекс) and current FSZN regulations before any filing. Belarus is also under extensive international sanctions affecting banking/payment practicalities (not the statutory rates).
 
 ## Section 1 -- Quick reference

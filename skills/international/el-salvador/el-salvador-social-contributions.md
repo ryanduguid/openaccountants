@@ -13,6 +13,8 @@ verified_by: pending
 
 # El Salvador Statutory Payroll Contributions (ISSS / AFP / INSAFORP) and Payroll Income Tax -- Skill v0.1
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 > **Scope note.** El Salvador **does** have a personal income tax (Impuesto sobre la Renta), so this skill covers BOTH the statutory social contributions (ISSS health, AFP pension, INSAFORP training levy) AND the payroll income-tax withholding/annual return that sit alongside them. Every rate, cap, and deadline below is sourced inline. Where the research confidence is low or a figure is administratively variable, the text carries an explicit **[RESEARCH GAP — reviewer to confirm]** marker rather than a guessed value.
 
 ## Section 1 -- Quick reference

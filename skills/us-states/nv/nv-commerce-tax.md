@@ -12,6 +12,8 @@ validation_status: ai-drafted-q3
 
 # Nevada Commerce Tax Skill
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 > **Scope.** This skill covers the Nevada Commerce Tax (NRS Chapter 363C), a gross
 > receipts tax imposed on business entities with Nevada gross revenue exceeding
 > $4,000,000 in a taxable year. Rates range from 0.051% to 0.331% depending on

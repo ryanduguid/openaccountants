@@ -10,6 +10,8 @@ jurisdiction: GLOBAL
 
 # Revolut Business Integration Skill v1.0
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 ## Section 1 — Platform Overview
 
 Revolut Business is a fintech banking platform offering multi-currency business accounts, corporate cards, expense management, and international payments. Headquartered in London, Revolut operates across the EEA, UK, US, Australia, and Japan. It is popular with startups, freelancers, and SMEs that need multi-currency capabilities without traditional banking overhead.

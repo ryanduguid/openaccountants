@@ -23,6 +23,8 @@ depends_on:
 
 # Egypt — Legitimate Tax Optimization for the Self-Employed
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 This skill helps a self-employed person, freelancer, professional (صاحب مهنة حرة),
 or small business owner in Egypt **legally minimise** their tax burden for tax
 year **2026**. The single biggest lever in Egypt today is the **choice of regime**:

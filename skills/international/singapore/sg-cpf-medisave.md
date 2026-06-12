@@ -10,6 +10,8 @@ category: international
 
 # Singapore CPF MediSave Contributions -- Self-Employed Skill v2.0
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 ## Section 1 -- Quick reference
 
 Read this whole section before computing anything.

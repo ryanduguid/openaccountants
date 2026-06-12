@@ -6,6 +6,8 @@ version: 2.0
 
 # India GST Return Skill (GSTR-3B / GSTR-1) v2.0
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 ## Section 1 -- Quick reference
 
 **Read this whole section before classifying anything.**
@@ -814,7 +816,6 @@ This skill is v2.0, rewritten in April 2026 to align with the Malta v2.0 three-t
 15. Restaurant/food ITC block explicit: yes (Section 5.7 + Example 3).
 
 ## End of India GST Return Skill v2.0
-
 
 ---
 

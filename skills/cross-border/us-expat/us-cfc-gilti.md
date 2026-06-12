@@ -17,6 +17,8 @@ depends_on:
 
 # US Anti-Deferral — CFC, Subpart F & GILTI v0.1
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 ## What this file is
 
 This is a **topic content skill** that loads on top of `cross-border-tax-workflow-base`. It assumes the cross-border router has already run, confirmed the taxpayer is a **US person** (citizen, green-card holder, or resident alien), and established that the taxpayer holds an interest in a **foreign corporation**. If that triage has not happened, stop and run the base workflow first.

@@ -5,6 +5,8 @@ description: Use this skill whenever asked about Hong Kong taxation, whether VAT
 
 # Hong Kong Tax Overview Skill (No VAT / No GST)
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 ---
 
 ## Skill Metadata
@@ -415,7 +417,6 @@ Action Required: Do not classify. Refer to licensed CPA/tax representative. Docu
 This skill covers the Hong Kong tax system as of early 2026. Hong Kong's tax regime is relatively stable, but practitioners should monitor IRD Practice Notes and legislative amendments, particularly regarding the FSIE regime and BEPS-related measures.
 
 **A skill may not be published without sign-off from a licensed practitioner in the relevant jurisdiction.**
-
 
 ---
 

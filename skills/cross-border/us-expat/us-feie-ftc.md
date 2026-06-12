@@ -18,6 +18,8 @@ depends_on:
 
 # US Foreign Earned Income Exclusion vs Foreign Tax Credit v0.1
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 ## What this file is
 
 This is a topic content skill that **loads on top of `cross-border-tax-workflow-base`**

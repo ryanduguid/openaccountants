@@ -13,6 +13,8 @@ verified_by: pending
 
 # Ethiopia Payroll Skill v0.1 (Tier 2 -- Research-Verified)
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 > **Tier 2 status:** Figures below are research-verified against PwC Worldwide Tax Summaries and the Income Tax (Amendment) Proclamation No. 1395/2025 (effective 7 July 2025). Items marked **[RESEARCH GAP -- reviewer to confirm]** could not be confirmed from a primary authoritative source and MUST be checked by a licensed Ethiopian accountant before reliance.
 
 ---

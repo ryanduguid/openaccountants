@@ -7,6 +7,8 @@ version: 2.0
 
 # Colombian Income Tax — Trabajador Independiente / Persona Natural (Renta) v2.0
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 ## Section 1 — Quick Reference
 
 ### UVT (Unidad de Valor Tributario)
@@ -527,7 +529,6 @@ SECTION J — REVIEWER FLAGS
 - UVT values: DIAN resolution annual
 - PILA: www.aportesenlinea.com / www.miplanilla.com
 - SMLMV 2025: verify with Ministerio de Trabajo
-
 
 ---
 

@@ -13,6 +13,8 @@ verified_by: pending
 
 # Armenia Payroll Skill v0.1
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 > **Tier 2 — Research-verified.** Rates and structure are cross-verified across PwC Worldwide Tax Summaries (Armenia, Individual & Corporate, reviewed 5 February 2026), the Tax Code of the Republic of Armenia (Law HO-165-N, in force from 2018, as amended), the Law "On Funded Pensions", the Law "On Stamp Payments" (military/stamp duty), Vardanyan & Partners (armenian-lawyer.com), and Regfollower/Orbitax. Official Armenian-language statute PDFs were not directly text-extracted line-by-line; figures rely on the English consolidations plus Big-4 and specialist summaries. Every figure below carries an inline source or a `[RESEARCH GAP — reviewer to confirm]` marker. A qualified Armenian tax adviser / licensed accountant must validate this skill before production use.
 
 > **CRITICAL DISAMBIGUATION.** Jurisdiction code **AM = the Republic of Armenia (Hayastan, South Caucasus), currency AMD (Armenian dram)**. Do not confuse Armenia (AM) with its neighbour Azerbaijan (AZ) or with the US state of any similar name. If a request concerns another jurisdiction, this is the WRONG skill — escalate.

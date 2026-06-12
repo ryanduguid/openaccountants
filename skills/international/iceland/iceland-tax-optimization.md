@@ -11,6 +11,8 @@ verified_by: pending
 
 # Iceland Tax Optimization Skill v0.1
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 **Tier 2 — research-verified. Sources: Skatturinn (Iceland Revenue), KPMG Iceland Tax Facts 2025, PwC Iceland. Figures must agree with `iceland-income-tax.md` / `iceland-social-contributions.md`. NOT yet signed off by an Icelandic tax adviser. Aggressive positions are never advised; every suggestion must be reviewed.**
 
 ---

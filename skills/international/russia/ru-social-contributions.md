@@ -19,6 +19,8 @@ depends_on:
 
 # Russia — Insurance Contributions (страховые взносы) for the Self-Employed (2026)
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 This skill explains страховые взносы — Russia's mandatory pension (пенсионное) and medical
 (медицинское) insurance contributions — as they apply to self-employed individuals in 2026.
 The two relevant populations are very different:

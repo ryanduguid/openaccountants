@@ -8,6 +8,8 @@ OpenAccountants is a library of tax rules ("skills") written as plain markdown f
 
 **Important:** This repo contains research-verified drafts. The accountant-verified (Tier 1) versions — signed off by named licensed practitioners — are served via the live platform. See quality tiers below.
 
+**Not advice — review required.** These skills are general reference material for AI-assisted workflows, not tax, legal, accounting, or financial advice. They may be incomplete, outdated, or wrong, and are not reviewed for any specific person's facts. Any output you produce from them is a draft for professional review — do not file, pay, amend, or take a tax position based on it without review by a qualified professional in the relevant jurisdiction.
+
 ## Quality tiers
 
 - **Tier 1 — Accountant-verified**: a named, licensed practitioner (CPA, CA, EA, Steuerberater, or local equivalent) has reviewed and signed off the skill. Only available via the MCP/website.

@@ -13,6 +13,8 @@ verified_by: pending
 
 # Costa Rica Social-Security Contributions (Cargas Sociales) & Salary-Tax Withholding — Skill v0.1
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 **Tier 2 (research-verified). Confidence: medium.** Several primary authority PDFs (Hacienda CP-103-2024, live CCSS pages, BDO/BLP, OECD) returned HTTP errors during research, so figures were corroborated from multiple secondary tax/legal sources (PwC, BDO, La Nación, EY, BLP, siemprealdía) rather than read off every authority page. Every figure carries an inline citation or an explicit `[RESEARCH GAP — reviewer to confirm]` marker. A Costa Rican CPA / contador público autorizado must sign off before any output is filed or relied upon.
 
 ## Section 1 — Quick reference

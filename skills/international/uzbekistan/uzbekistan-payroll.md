@@ -13,6 +13,8 @@ verified_by: pending
 
 # Uzbekistan Payroll Skill v0.1
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 > **Tier 2 — Research-verified.** Rates and structure are cross-verified across PwC Worldwide Tax Summaries (Uzbekistan, Individual & Corporate; reviewed 16 Jan 2026), the EY Global Tax Alert "Uzbekistan: tax updates effective from 2026" (Jan 2026), LegalAct.uz (PIT cumulative method and the 0.1% INPS carve-out), WageIndicator (minimum wage from 1 Aug 2025) and EOR practitioner guides (Asanify). The official primary sources — the Tax Code of the Republic of Uzbekistan (Soliq kodeksi) and soliq.uz — were not directly text-extracted line-by-line; figures rely on the Big-4 / specialist English summaries. Every figure below carries an inline source or a `[RESEARCH GAP — reviewer to confirm]` marker. A qualified Uzbek tax adviser / licensed accountant must validate this skill before production use. **Confidence: medium.**
 
 > **CRITICAL DISAMBIGUATION.** Jurisdiction code **UZ = the Republic of Uzbekistan (Oʻzbekiston, Central Asia), currency UZS (Uzbek soʻm)**. Do not confuse with neighbouring CIS payrolls (Kazakhstan KZT, Azerbaijan AZN, Tajikistan TJS, etc.) — their rates and forms differ and must NOT appear in this skill.

@@ -13,6 +13,8 @@ verified_by: pending
 
 # Azerbaijan Payroll Skill v0.1
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 > **Tier 2 — research-verified.** Figures below are sourced from PwC Worldwide Tax Summaries, the State Tax Service of Azerbaijan (taxes.gov.az), Mercans, Caspian Legal Center, APA.az and EY. They have **not** yet been signed off by a licensed Azerbaijani accountant. Any line marked **[RESEARCH GAP — reviewer to confirm]** must be verified against the Tax Code before the output is relied upon.
 
 > **TWO HARD BRANCHES BEFORE YOU COMPUTE ANYTHING.** Azerbaijani payroll depends on (1) the **tax year** and (2) the **employment sector**.

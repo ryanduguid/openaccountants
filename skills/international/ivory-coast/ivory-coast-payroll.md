@@ -13,6 +13,8 @@ verified_by: pending
 
 # Côte d'Ivoire (Ivory Coast) Payroll Skill v0.1
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 > **Tier 2 — research-verified, pending accountant sign-off.** Every figure below carries an inline source or an explicit `[RESEARCH GAP — reviewer to confirm]` marker. Do not treat any output as final until a licensed Ivorian accountant (expert-comptable inscrit à l'Ordre) has reviewed it.
 
 ---

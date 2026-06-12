@@ -19,6 +19,8 @@ depends_on:
 
 # Ukraine FOP Record-Keeping & Bookkeeping — Self-Employed Skill v1.0
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 This skill covers how a Ukrainian sole proprietor (ФОП / FOP — фізична особа-підприємець) keeps
 records: the income ledger and the income-and-expense ledger, software cash registers (ПРРО /
 PRRO), the primary documents that support income and expenses, and how long records must be kept.

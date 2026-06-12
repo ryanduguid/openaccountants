@@ -13,6 +13,8 @@ verified_by: pending
 
 # Costa Rica Income Tax -- Self-Employed Skill v0.1
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 > **Tier 2 (research-verified).** Figures below are drawn from Big-4 / law-firm summaries (PwC, BDO, García & Bodán, EY, ICS), reputable payroll guides, the CCSS contribution scale, and reporting of the 2026 decrees. Several rates trace to secondary reporting of Decreto Ejecutivo 45333-H and the CCSS scale rather than a directly-fetched primary government page. Every figure with weak provenance or a known reconciliation issue carries an explicit **[RESEARCH GAP — reviewer to confirm]** marker. A licensed Costa Rican contador público autorizado (CPA) must sign off before filing.
 
 ---
