@@ -18,6 +18,29 @@ verified_by: pending
 
 ---
 
+## Verified rates & thresholds (accountant-reviewed)
+
+> Reviewed against the cited tax authorities by **James Power** on 2026-06-03.
+> This block is generated from the verified facts database at openaccountants.com —
+> edit the facts there, not this prose. Items under clarification are excluded.
+
+### Transfer Pricing
+
+- **Legislation** — TIOPA 2010 Part 4; SI 2023/818  _(TIOPA 2010)_
+- **Master File** — OECD format; available within 30 days of HMRC request  _(SI 2023/818)_
+- **Local File** — OECD format; available within 30 days  _(SI 2023/818)_
+- **CbCR threshold** — Group revenue ≥ EUR 750m  _(TIOPA 2010 s.286)_
+- **CbCR filing deadline** — 12 months after end of reporting period  _(TIOPA 2010)_
+- **Criteria** — Turnover < £10m AND < 50 employees AND assets < £5m  _(TIOPA s.166)_
+- **Medium exemption** — < 250 employees, turnover < £36m or assets < £18m (unless tax haven)  _(TIOPA)_
+- **Failure to keep TP records** — Up to £3,000 per failure per return period  _(FA 2007 Sch.24)_
+- **Careless inaccuracy** — 0-30% of tax  _(FA 2007 Sch.24)_
+- **Deliberate inaccuracy** — 20-70% of tax  _(FA 2007 Sch.24)_
+- **Deliberate and concealed** — 30-100% of tax  _(FA 2007 Sch.24)_
+- **HMRC fees** — No fees charged  _(TIOPA ss.218-230)_
+- **Duration** — 3-5 years prospective (rollback possible)  _(TIOPA)_
+- **Low-value services safe harbour** — Cost-plus 5% accepted  _(OECD Guidelines)_
+
 ## Section 1 -- Quick Reference
 
 | Field | Value |

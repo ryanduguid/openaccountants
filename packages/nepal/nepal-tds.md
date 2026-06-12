@@ -17,6 +17,28 @@ depends_on:
 
 ---
 
+## Verified rates & thresholds (accountant-reviewed)
+
+> Reviewed against the cited tax authorities by **Ashish Bista** on 2026-06-06.
+> This block is generated from the verified facts database at openaccountants.com —
+> edit the facts there, not this prose. Items under clarification are excluded.
+
+### TDS (Withholding)
+
+- **Rent (paid by a resident person)** — 10%  _(Income Tax Act 2058 s.88 (PKF s.7.1))_
+- **Dividend (resident company/partnership)** — 5% (resident AND non-resident)  _(PKF s.7.1)_
+- **Interest (Nepal source) — natural person not in business** — 6%  _(PKF s.7.1; Union Nepal)_
+- **Interest (Nepal source) — entities** — 15%  _(PKF s.7.1)_
+- **Contract/agreement payment to a non-resident** — 5%  _(PKF s.7.1)_
+- **Resident contract/supply payments exceeding NPR 50,000** — 1.5%  _(PKF s.7.1)_
+- **Flat 15% Section 88 on interest/rent/service** — REFUTED — do not use; the effective rates above govern
+- **10% dividend TDS** — 5%
+- **Non-resident service/royalty/technical fees + DTAA** — 15% standard TDS (subject to lower rates if a DTAA applies)  _(Income Tax Act 2058 s.88)_
+- **TDS deposit / return due dates** — 25th of the following Nepali month  _(Income Tax Act 2058 s.90)_
+- **Consultancy & Service Fees (Resident)** — 1.5% (if VAT registered) / 15% (if not VAT registered)  _(Income Tax Act 2058 s.88)_
+- **Freight & Transportation Services** — 1.5% (if VAT registered) / 2.5% (if not VAT registered)  _(Income Tax Act 2058 s.88)_
+- **Windfall Gains (Prizes, Lottery)** — 25% (Final withholding)  _(Income Tax Act 2058 s.88)_
+
 ## Section 1 — Quick reference (rates, FY 2082/83 — "no change" from FY 2024-25)
 
 | Payment type | Rate | Notes |

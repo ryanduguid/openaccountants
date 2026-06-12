@@ -14,6 +14,31 @@ This skill is the **platform manual** for the Indonesian tax administration syst
 
 ---
 
+## Verified rates & thresholds (accountant-reviewed)
+
+> Reviewed against the cited tax authorities by **RILIA PUTRI** on 2026-06-03.
+> This block is generated from the verified facts database at openaccountants.com —
+> edit the facts there, not this prose. Items under clarification are excluded.
+
+### Coretax and e-Invoicing
+
+- **Go-live date** — Coretax / Sistem Inti Administrasi Perpajakan (SIAP) became effective starting 1 January 2025 under prevailing Indonesian tax administration regulations.  _(PMK 81/2024; PER-1/PJ/2025.)_
+- **URL** — Coretax services are generally accessed through the official DJP/Coretax electronic portal.  _(DJP Portal / Coretax Portal.)_
+- **Replaces** — Coretax integrates and migrates legacy DJP applications including DJP Online, e-Faktur, e-Bupot, e-Registration, tax payment, and tax reporting into a unified tax administration platform.  _(PMK 81/2024; PER-1/PJ/2025.)_
+- **Mobile app** — Certain Coretax/SIAP services may also be accessed through DJP electronic platforms and digital channels under prevailing Indonesian tax administration procedures. Current official guidance emphasizes access through DJP/Coretax electronic systems, although no specific PMK/PER/SE currently appears to formally standardize a dedicated “Coretax DJP” mobile application name.  _(PMK 81/2024; PER-1/PJ/2025; DJP Coretax implementation guidance and taxpayer handbook..)_
+- **Coretax Form (offline)** — PER-3/PJ/2026 regulates updated procedures for submission and processing of tax returns under Coretax implementation.  _(PER-3/PJ/2026.)_
+- **Indonesian individual** — Resident Indonesian individuals generally use NIK as NPWP under prevailing Indonesian tax administration regulations.  _(PMK 112/2022; PMK 81/2024.)_
+- **Foreign individual** — Foreign individuals/non-resident individuals generally use 16-digit NPWP format under prevailing Indonesian tax administration regulations.  _(PMK 112/2022; PMK 81/2024.)_
+- **Indonesian entity** — Corporate taxpayers generally use 16-digit NPWP format under Coretax implementation and prevailing tax administration regulations.  _(PMK 112/2022; PMK 81/2024; PER-1/PJ/2025.)_
+- **NSFP request** — NSFP requests are processed electronically through DJP/Coretax systems using taxpayer electronic certificates and prevailing VAT administration procedures.  _(PMK 81/2024; PER-1/PJ/2025.)_
+- **NSFP return deadline** — Return of unused NSFPs remains subject to prevailing DJP VAT administration and technical procedures under electronic tax invoice regulations.  _(PMK 81/2024; PER-1/PJ/2025; prevailing VAT/e-Faktur regulations.)_
+- **Faktur Pengganti** — Replacement tax invoices (Faktur Pengganti) must follow prevailing DJP VAT invoice correction and replacement procedures under Coretax/e-Faktur administration rules.  _(PMK 81/2024; PER-1/PJ/2025; PER-1/PJ/2026.)_
+- **Faktur Dibatalkan** — Cancelled tax invoices remain administratively traceable and reported in the relevant VAT return period according to prevailing Coretax VAT administration procedures.  _(PMK 81/2024; PER-1/PJ/2025.)_
+- **Covers** — e-Bupot Unifikasi generally covers withholding and/or collection obligations including PPh 23, PPh 26, Final PPh Art. 4(2), and other unified withholding-tax obligations under Coretax administration procedures.  _(PER-11/PJ/2025; PMK 81/2024.)_
+- **Monthly SPT Masa Unifikasi** — Monthly SPT Masa Unifikasi is generally filed electronically through Coretax/SIAP by the 20th of the following month under prevailing Indonesian tax administration regulations. Unified withholding reporting, electronic filing procedures, and tax-object-code administration follow prevailing Coretax and SPT Unifikasi procedures.  _(UU KUP Art. 3 as amended by UU HPP; PMK 81/2024; PER-1/PJ/2025; PER-1/PJ/2026; PER-11/PJ/2025; KEP-143/PJ/2022.)_
+- **Tax period Dec 2024 or earlier** — Tax periods prior to Coretax implementation generally continue to follow legacy DJP Online and transitional filing procedures under prevailing DJP transition/cutover guidance.  _(PMK 81/2024; DJP transition/cutover guidance; PER-1/PJ/2025.)_
+- **Tax period Jan 2025 onward** — Tax periods starting January 2025 generally follow Coretax/SIAP administration and electronic filing procedures under prevailing Indonesian tax administration regulations.  _(PMK 81/2024; PER-1/PJ/2025; PER-1/PJ/2026.)_
+
 ## Section 1 — Quick reference
 
 | Field | Value |

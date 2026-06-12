@@ -18,6 +18,31 @@ verified_by: pending
 
 ---
 
+## Verified rates & thresholds (accountant-reviewed)
+
+> Reviewed against the cited tax authorities by **James Power** on 2026-06-03.
+> This block is generated from the verified facts database at openaccountants.com —
+> edit the facts there, not this prose. Items under clarification are excluded.
+
+### Financial Statements
+
+- **Micro — turnover** — ≤ £1,000,000  _(CA 2006 s.384A)_
+- **Micro — balance sheet** — ≤ £500,000  _(CA 2006)_
+- **Micro — employees** — ≤ 10  _(CA 2006)_
+- **Small — turnover** — ≤ £15,000,000  _(CA 2006 s.382)_
+- **Small — balance sheet** — ≤ £7,500,000  _(CA 2006)_
+- **Small — employees** — ≤ 50  _(CA 2006)_
+- **Medium — turnover** — ≤ £54,000,000  _(CA 2006 s.465)_
+- **Medium — balance sheet** — ≤ £27,000,000  _(CA 2006)_
+- **Medium — employees** — ≤ 250  _(CA 2006)_
+- **Test** — 2 out of 3 criteria in current + preceding year  _(CA 2006)_
+- **Private company deadline** — 9 months after year-end  _(CA 2006 s.442)_
+- **Public company deadline** — 6 months after year-end  _(CA 2006)_
+- **Late filing penalty (private)** — £150 to £1,500  _(CA 2006 s.453)_
+- **Micro/small company** — Exempt from audit  _(CA 2006 s.477)_
+- **Medium/large company** — Required  _(CA 2006)_
+- **10% shareholder request** — Overrides small company exemption  _(CA 2006 s.476)_
+
 ## Section 1 -- Quick Reference
 
 | Field | Value |

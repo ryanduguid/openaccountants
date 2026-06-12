@@ -14,6 +14,40 @@ depends_on:
 
 ---
 
+## Verified rates & thresholds (accountant-reviewed)
+
+> Reviewed against the cited tax authorities by **RILIA PUTRI** on 2026-06-03.
+> This block is generated from the verified facts database at openaccountants.com —
+> edit the facts there, not this prose. Items under clarification are excluded.
+
+### PPN - VAT
+
+- **Standard effective rate (non-luxury)** — 11% — nominal 12% applied to DPP of 11/12 × selling price  _(UU HPP Art. 7; PMK 131/2024)_
+- **Luxury goods (PPnBM-listed) rate** — 12% on full DPP from 1 Feb 2025. Transitional 11/12 DPP in Jan 2025.  _(PMK 131/2024)_
+- **Export rate** — 0% on goods; qualifying exported services  _(UU PPN Art. 7(2))_
+- **PKP mandatory threshold** — IDR 4,800,000,000 annual turnover  _(UU PPN Art. 3A; PMK 197/2013)_
+- **SPT Masa PPN filing deadline** — Generally due within 20 days after the end of the tax period, subject to applicable VAT filing regulations and DJP administrative provisions.  _(UU KUP as amended by UU HPP No. 7/2021.)_
+- **PPN payment deadline** — PPN and PPnBM generally must be paid by the end of the month following the tax period and before the relevant SPT Masa PPN is submitted, subject to applicable VAT regulations.  _(UU KUP, PMK 81/2024 Article 94(3) as amended by PMK 01/2026; UU KUP as amended by UU HPP No. 7/2021.)_
+- **Faktur Pajak issuance** — Faktur Pajak generally must be issued at the time of taxable supply or in accordance with applicable VAT invoicing and electronic tax administration regulations.  _(PMK-151/PMK.03/2013, Indonesian VAT Law Article 13, PER-11/PJ/2025, and PMK 81/2024 as amended by PMK 01/2026.)_
+- **Input credit window** — Within 3 months of the tax period  _(UU PPN)_
+- **Late filing SPT Masa PPN** — IDR 500,000 per month  _(UU KUP Art. 7)_
+- **Late PPN payment** — 2% per month of unpaid tax  _(UU KUP Article 9(2a), Article 13(2))_
+- **Late Faktur Pajak** — 2% of DPP per Faktur  _(Indonesian VAT Law Article 14(4))_
+- **Underpayment on audit** — 100% of underpaid tax  _(UU KUP Article 13(3) , UU KUP as amended by UU HPP No. 7/2021.)_
+- **Basic food staples** — Basic food staples such as rice, corn, sago, soybeans, salt, fresh meat, eggs, milk, fruits, and vegetables  _(Indonesian VAT Law Article 4A as amended by UU HPP No. 7/2021)_
+- **Services exempt** — Medical, education, financial, insurance, employment, water supply  _(Indonesian VAT Law Article 4A as amended by UU HPP No. 7/2021, PMK 70/PMK.03/2022 Articles 3, 5–8)_
+- **PMSE PPN rate** — 11% collected by registered foreign providers  _(Indonesian VAT Law Article 7, PMK 81/2024 Articles 332–339)_
+- **PMSE registration threshold** — >IDR 600m annual turnover from Indonesia OR >12,000 users/year  _(PMK 81/2024 Articles 332–339)_
+- **I.A — Taxable sales 11%** — Taxable supplies subject to VAT (Tax Base/DPP)  _(Indonesian VAT Law Articles 4 & 7; UU HPP No. 7/2021 Article 7)_
+- **I.B — Zero-rated (exports)** — Exports  _(Indonesian VAT Law Articles 3A, 4(1)(f),(g),(h), & 7(2))_
+- **I.C — Exempt/non-taxable** — VAT-exempt supplies  _(Indonesian VAT Law Article 4A as amended by UU HPP No. 7/2021; PMK 70/PMK.03/2022 Articles 3 & 5–8)_
+- **II — Output PPN** — Output VAT  _(Indonesian VAT Law Articles 1A, 4, & 9)_
+- **III.A — Domestic input PPN** — Domestic Input VAT  _(Indonesian VAT Law Article 9)_
+- **IV — PPN payable** — Output VAT less allowable Input VAT  _(Indonesian VAT Law Article 9(2))_
+- **Coretax mandatory from** — January 2025 implementation for VAT administration  _(PMK 81/2024 as amended by PMK 01/2026)_
+- **e-Faktur system** — Mandatory for taxable entrepreneurs (PKPs); integrated with Coretax  _(Indonesian VAT Law Article 13; PER-11/PJ/2025; PMK 81/2024 as amended by PMK 01/2026)_
+- **NPWP format on Faktur Pajak** — 16-digit NIK-based Taxpayer Identification Number  _(PMK-112/PMK.03/2022 Article 2(1)–(3) & PER-6/PJ/2024)_
+
 ## Section 1 — Quick reference
 
 | Field | Value |

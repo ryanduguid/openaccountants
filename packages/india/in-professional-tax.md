@@ -12,6 +12,48 @@ category: international
 
 ---
 
+## Verified rates & thresholds (accountant-reviewed)
+
+> Reviewed against the cited tax authorities by **Mayur Deokar** on 2026-06-06.
+> This block is generated from the verified facts database at openaccountants.com —
+> edit the facts there, not this prose. Items under clarification are excluded.
+
+### Professional Tax
+
+- **Maximum per annum** — ₹2,500 (Article 276(2))  _(Constitution Art. 276)_
+- **Up to ₹7,500/month** — any female employee drawing a monthly gross salary of up to ₹25,000 is completely exempt from paying Profession Tax. If Gross salary exceeds 25000 then Rs 200/month PT Aapplicable(Reference:  Maharashtra State Tax on Professions, Trades, Callings and Employments (Amendment) Act, 2023)  _(Maharashtra PT Act 1975)_
+- **₹7,501 – ₹10,000** — ₹175/month  _(Maharashtra PT Act)_
+- **Above ₹10,000** — ₹200/month (₹300 in Feb) = ₹2,500/year  _(Maharashtra PT Act)_
+- **Up to ₹24,999/month** — Nil  _(Karnataka PT Act 1976)_
+- **₹25,000+** — Rs 200 /month and Rs 300 for feb month. In total Rs 2500 year. (Karnataka PT Act)  _(Karnataka PT Act)_
+- **Up to ₹10,000** — Nil  _(West Bengal PT Act 1979)_
+- **₹10,001 – ₹15,000** — ₹110/month  _(WB PT Act)_
+- **₹15,001 – ₹25,000** — ₹130/month  _(WB PT Act)_
+- **₹25,001 – ₹40,000** — ₹150/month  _(WB PT Act)_
+- **Above ₹40,000** — ₹200/month  _(WB PT Act)_
+- **Up to ₹5,999** — Upto 12000- Nil above 12000 - Rs 200/month (Reference: Gujarat State Tax on Professions, Trades, Callings and Employments Act, 1976)  _(Gujarat PT Act)_
+- **₹6,000 – ₹8,999** — Upto 12000- Nil above 12000 - Rs 200/month (Gujarat State Tax on Professions, Trades, Callings and Employments Act, 1976)  _(Gujarat PT Act)_
+- **₹9,000 – ₹11,999** — Upto 12000- Nil above 12000 - Rs 200/month (Gujarat State Tax on Professions, Trades, Callings and Employments Act, 1976)  _(Gujarat PT Act)_
+- **₹12,000+** — Upto 12000- Nil above 12000 - Rs 200/month (Gujarat State Tax on Professions, Trades, Callings and Employments Act, 1976)  _(Gujarat PT Act)_
+- **No PT** — Delhi, Rajasthan, Uttar Pradesh, Haryana, Punjab  _(N/A)_
+- **Maximum per annum (Constitutional Limit)** — ₹2,500 (Article 276(2))  _(Constitution of India, Art. 276)_
+- **Deductibility** — Fully deductible under s 16(iii) ITA (old regime)  _(Income Tax Act, s 16(iii))_
+- **Maharashtra – Up to ₹7,500/month** — Any female employee drawing monthly gross salary up to ₹25,000 is completely exempt from PT. If gross salary exceeds ₹25,000, ₹200/month PT applicable. The slab structure in the skill needs to reflect the 2023 amendment.  _(Maharashtra State Tax on Professions, Trades, Callings and Employments (Amendment) Act, 2023)_
+- **Maharashtra – ₹7,501 – ₹10,000/month** — ₹175/month  _(Maharashtra State Tax on Professions, Trades, Callings and Employments (Amendment) Act, 2023)_
+- **Maharashtra – Above ₹10,000/month** — ₹200/month (₹300 in Feb) = ₹2,500/year  _(Maharashtra State Tax on Professions, Trades, Callings and Employments (Amendment) Act, 2023)_
+- **Karnataka – Up to ₹24,999/month** — Nil  _(Karnataka PT Act 1976)_
+- **Karnataka – ₹25,000+/month** — ₹200/month and ₹300 for February = ₹2,500/year  _(Karnataka PT Act)_
+- **West Bengal – Up to ₹10,000/month** — Nil  _(West Bengal PT Act 1979)_
+- **West Bengal – ₹10,001 – ₹15,000/month** — ₹110/month  _(WB PT Act)_
+- **West Bengal – ₹15,001 – ₹25,000/month** — ₹130/month  _(WB PT Act)_
+- **West Bengal – ₹25,001 – ₹40,000/month** — ₹150/month  _(WB PT Act)_
+- **West Bengal – Above ₹40,000/month** — ₹200/month  _(WB PT Act)_
+- **Gujarat – Up to ₹5,999/month** — Nil up to ₹12,000/month (slab consolidated: up to ₹12,000 → Nil; above ₹12,000 → ₹200/month)  _(Gujarat State Tax on Professions, Trades, Callings and Employments Act, 1976)_
+- **Gujarat – ₹6,000 – ₹8,999/month** — Nil (falls within revised ₹12,000 Nil threshold)  _(Gujarat State Tax on Professions, Trades, Callings and Employments Act, 1976)_
+- **Gujarat – ₹9,000 – ₹11,999/month** — Nil (falls within revised ₹12,000 Nil threshold)  _(Gujarat State Tax on Professions, Trades, Callings and Employments Act, 1976)_
+- **Gujarat – ₹12,000+/month** — Above ₹12,000 → ₹200/month (slab start corrected; old slab start was ₹12,000+ which is correct rate but old lower slabs need removal)  _(Gujarat State Tax on Professions, Trades, Callings and Employments Act, 1976)_
+- **States that do NOT levy PT** — Delhi, Rajasthan, Uttar Pradesh, Haryana, Punjab, Odisha, Goa, Himachal Pradesh, Uttarakhand, Arunachal Pradesh  _(N/A)_
+
 ## Section 1 -- Quick Reference
 
 | Field | Value |

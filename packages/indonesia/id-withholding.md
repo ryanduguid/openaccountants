@@ -15,6 +15,42 @@ verified_by: pending
 
 ---
 
+## Verified rates & thresholds (accountant-reviewed)
+
+> Reviewed against the cited tax authorities by **RILIA PUTRI** on 2026-06-03.
+> This block is generated from the verified facts database at openaccountants.com —
+> edit the facts there, not this prose. Items under clarification are excluded.
+
+### Withholding PPh 23-26-4(2)
+
+- **Services (PMK 141/2015)** — 2% gross (4% if no NPWP)  _(UU PPh Art. 23  as amended by UU HPP No. 7/2021.; PMK 141/2015 as amended by PMK 81/2024 Art. 48)_
+- **Rental — equipment/movable** — 2% gross (4% if no NPWP)  _(UU PPh Art. 23)_
+- **Dividend (non-exempt resident)** — 15% (30% if no NPWP)  _(UU PPh Art. 23)_
+- **Interest (non-bank)** — 15% (30% if no NPWP)  _(UU PPh Art. 23)_
+- **Royalty** — 15% (30% if no NPWP)  _(UU PPh Art. 23)_
+- **Prize (non-lottery)** — 15% (30% if no NPWP)  _(UU PPh Art. 23)_
+- **Character** — Creditable (not final)  _(UU PPh Art. 23)_
+- **Standard rate** — 20% of gross (or treaty rate if DGT Form held)  _(UU PPh Art. 26(1))_
+- **DGT Form requirement** — Original DGT-1/DGT-2 signed by foreign tax authority, before payment  _(PER-25/PJ/2018)_
+- **Character** — Final  _(UU PPh Art. 26)_
+- **Land/building rental** — 10% — Final  _(UU PPh Art. 4(2); PP 34/2017)_
+- **Construction — small qualified** — 1.75% — Final  _(PP 9/2022)_
+- **Construction — medium/large qualified** — 2.65% — Final  _(PP 9/2022)_
+- **Construction — non-qualified** — 4% — Final  _(PP 9/2022)_
+- **Construction consulting — qualified** — 3.5% — Final  _(PP 9/2022)_
+- **Construction consulting — non-qualified** — 6% — Final  _(PP 9/2022)_
+- **Integrated construction — qualified** — 2.65% — Final  _(PP 9/2022)_
+- **Integrated construction — non-qualified** — 4% — Final  _(PP 9/2022)_
+- **Bank deposit interest** — 20% — Final  _(UU PPh Art. 4(2); PP 131/2000 jo. PP 123/2015 |; note: UU PPh as amended by UU HPP No. 7/2021.)_
+- **Government bond (SUN/SBN) interest** — 10% — Final  _(PP 9/2021)_
+- **Lottery prize** — 25% — Final  _(UU PPh Art. 4(2) as amended by UU HPP No. 7/2021.; PP 132/2000 as amended by UU HPP No. 7/2021.)_
+- **Share sale on IDX — regular** — 0.1% gross — Final  _(UU PPh Art. 4(2)UU PPh as amended by UU HPP No. 7/2021.; PP 41/1994 as amended by PP 14/1997)_
+- **Founders' shares at IPO** — +0.5% on founder shares — Final  _(UU PPh Art. 4(2) as amended by UU HPP No. 7/2021.; PP 41/1994 as amended by PP 14/1997 |)_
+- **Transfer of land/building** — 2.5% gross — Final (mention only)  _(PP 34/2016)_
+- **Monthly payment** — 10th of following month  _(UU KUP Art. 9(1)  as amended by UU HPP No. 7/2021.; PMK 81/2024 as amended by PMK 1/2026 |)_
+- **Monthly SPT Masa Unifikasi** — 20th of following month via Coretax  _(PMK 81/2024 as amended by PMK 1/2026)_
+- **Bukti Potong (Bupot)** — Must be issued to payee for every withholding  _(UU PPh Art. 21 as amended by UU HPP No. 7/2021., Art. 23, Art. 26; PMK 168/2023)_
+
 ## Section 1 — Quick reference
 
 | Field | Value |

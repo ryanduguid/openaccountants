@@ -15,6 +15,27 @@ verified_by: pending
 
 ---
 
+## Verified rates & thresholds (accountant-reviewed)
+
+> Reviewed against the cited tax authorities by **Mehran Habib** on 2026-06-06.
+> This block is generated from the verified facts database at openaccountants.com —
+> edit the facts there, not this prose. Items under clarification are excluded.
+
+### Withholding Tax
+
+- **Management fees** — 0.2  _(ITL Art. 68(a)(3))_
+- **Royalties (incl. software, IP)** — 0.15  _(ITL Art. 68(a)(2))_
+- **Technical/consultancy (related party)** — 0.05  _(ITL Art. 68(a)(3))_
+- **Services (general, unrelated)** — 0.05  _(Income tax regulations)_
+- **Rent (immovable/movable in KSA)** — 0.05  _(Income tax regulations)_
+- **Dividends** — 0.05  _(Income tax regulations)_
+- **Interest / loan charges** — 0.05  _(Income tax regulations)_
+- **Insurance / reinsurance premiums** — 0.05  _(Income tax regulations)_
+- **International telecoms** — 0.05  _(ITL Art. 68)_
+- **Other (catch-all)** — 0.15  _(ITL Art. 68)_
+- **Monthly return** — Within 10 days of month-end  _(ITL Art. 68(b))_
+- **Annual reconciliation** — 120 days after FYE  _(ITL Art. 68)_
+
 ## Section 1 — Quick reference (rate table by transaction type)
 
 | Field | Value |

@@ -17,6 +17,30 @@ depends_on:
 
 ---
 
+## Verified rates & thresholds (accountant-reviewed)
+
+> Reviewed against the cited tax authorities by **Ashish Bista** on 2026-06-06.
+> This block is generated from the verified facts database at openaccountants.com —
+> edit the facts there, not this prose. Items under clarification are excluded.
+
+### Corporate Income Tax
+
+- **Normal rate** — 25% (general companies, firms, industries)  _(Income Tax Act 2058 Sch.1 (PKF/Baker Tilly))_
+- **Banks & financial institutions** — 30%  _(PKF; Baker Tilly)_
+- **General (non-life) insurance** — 30%  _(PKF; Baker Tilly)_
+- **Petroleum** — 30%  _(PKF; Baker Tilly)_
+- **Cigarettes/tobacco/cigars/pan masala/alcohol/beer** — 30%  _(PKF; Baker Tilly)_
+- **Telecom & internet service providers** — 30%  _(PKF; Baker Tilly)_
+- **Money transfer; capital market/securities/merchant banking/broker** — 30%  _(PKF; Baker Tilly)_
+- **Special industries (Section 11)** — Effective 20% (25% less a 20% rebate)  _(Income Tax Act 2058 s.11 (actNepal))_
+- **Listed shares — resident entity (capital gains)** — 10%  _(Income Tax Act 2058 s.95Ka (PKF/Baker Tilly))_
+- **Land/building — non-individual (entity) capital gains** — 1.5%  _(PKF; Baker Tilly)_
+- **Annual return / instalment due dates** — Advance tax due Poush end (40%), Chaitra end (70%), Ashad end (100%); Final return due Ashwin end  _(Income Tax Act 2058 s. 94 & 96)_
+- **Export / SEZ / sector concessions beyond Sec 11** — Startups (up to 100m turnover) exempt for 5 yrs; IT exports get 75% tax exemption  _(Finance Act 2083)_
+- **IT Industry Bonus Shares** — 0% dividend tax on the capitalization of profits (bonus shares) issued by IT industries  _(Finance Act 2083)_
+- **SEZ Rent Exemption** — 100% rent exemption for the first 3 years for new industries established in Special Economic Zones  _(Finance Act 2083)_
+- **Tax Dispute Resolution (Waiver)** — One-time settlement window: principal tax + 1% fee (waives penalties/interest)  _(Finance Act 2083)_
+
 ## Section 1 — Quick reference
 
 | Field | Value |

@@ -8,6 +8,8 @@
 **James Power** — Lead accountant verifier for the United Kingdom on OpenAccountants.
 [View profile →](https://www.openaccountants.com/network/30b2f478-3a97-40c4-b435-0678829b487e)
 
+_Scope: the “Verified rates & thresholds” blocks inside these skill files are generated from the facts this verifier reviewed. Everything else in the files is an open, source-cited draft. The full accountant-verified tier, with the verifier’s name on every answer, is served via the [connector](https://www.openaccountants.com/connect)._
+
 ## What's in this folder
 
 1. `foundation.md`

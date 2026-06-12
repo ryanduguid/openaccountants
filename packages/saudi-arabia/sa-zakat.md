@@ -19,6 +19,22 @@ verified_by: pending
 
 ---
 
+## Verified rates & thresholds (accountant-reviewed)
+
+> Reviewed against the cited tax authorities by **Mehran Habib** on 2026-06-06.
+> This block is generated from the verified facts database at openaccountants.com —
+> edit the facts there, not this prose. Items under clarification are excluded.
+
+### Zakat
+
+- **Zakat rate (Hijri year)** — 2.5%  _(Section 1 Article 15(1) Percentage of Zakat - Zakat Implementing Regulation)_
+- **Gregorian-equivalent rate** — 2.5772% (adjusted for 354/365 days)  _(Section 1 Article 15(2) Percentage of Zakat - Zakat Implementing Regulation)_
+- **Saudi nationals — commercial activity** — Subject to Zakat  _(Royal Decree 8634; Zakat Collection in the Kingdom of Saudi Arabia - A FIQH based Perspective)_
+- **GCC nationals — commercial in KSA** — Subject to Zakat (treated as Saudi)  _(Defined in Saudi Definition - Zakat Implementing Regulations)_
+- **Foreign-owned companies** — NOT Zakat — CIT 20% instead  _(Chapter Three - Article 7(A) Tax Rates - Income Tax Law)_
+- **Mixed ownership** — Saudi/GCC share → Zakat; foreign share → CIT 20%  _(Article 2 & 6 of Zakat Implementing Regulations)_
+- **Deadline** — 120 days after fiscal year-end  _(Chapter Five - Article 102(1) Submission of Zakat Return - Zakat Implementing Regulations)_
+
 ## Section 1 — Quick Reference
 
 | Field | Value |

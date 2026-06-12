@@ -14,6 +14,22 @@ verified_by: pending
 
 # UK National Insurance -- Comprehensive Skill v3.0
 
+## Verified rates & thresholds (accountant-reviewed)
+
+> Reviewed against the cited tax authorities by **James Power** on 2026-06-03.
+> This block is generated from the verified facts database at openaccountants.com —
+> edit the facts there, not this prose. Items under clarification are excluded.
+
+### National Insurance
+
+- **Weekly rate** — £3.50 (voluntary from 6 April 2024)  _(Finance Act 2024)_
+- **Annual cost** — £182.00  _(Calculated)_
+- **Small Profits Threshold** — £6,845  _(SSCBA 1992)_
+- **Main rate** — 6% on £12,570 – £50,270  _(SSCBA 1992)_
+- **Additional rate** — 2% above £50,270  _(SSCBA 1992)_
+- **LPL** — £12,570  _(SSCBA 1992)_
+- **UPL** — £50,270  _(SSCBA 1992)_
+
 ## Section 1 -- Quick reference (3-year comparison)
 
 **Read this whole section before computing or classifying anything.** This skill covers three tax years: the **Prior year (2024-25)**, the **Current year (2025-26)**, and the **Forthcoming year (2026-27)**.
@@ -40,7 +56,7 @@ verified_by: pending
 | Currency | GBP only | | |
 | Contributor | Open Accountants | | |
 | Validated by | Pending -- requires sign-off by a UK-qualified practitioner | | |
-| Validation date | Pending | | |
+| Validation date | Verified by James Power on 2026-06-03 | | |
 
 **Conservative defaults:**
 

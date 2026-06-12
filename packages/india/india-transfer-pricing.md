@@ -13,6 +13,42 @@ depends_on:
 
 ---
 
+## Verified rates & thresholds (accountant-reviewed)
+
+> Reviewed against the cited tax authorities by **Mayur Deokar** on 2026-06-06.
+> This block is generated from the verified facts database at openaccountants.com —
+> edit the facts there, not this prose. Items under clarification are excluded.
+
+### Transfer Pricing
+
+- **Fee — unilateral** — INR 10 lakh  _(Rules 10F-10T)_
+- **Fee — bilateral/multilateral** — INR 20 lakh  _(Rules 10F-10T)_
+- **Duration** — 5 years prospective + 4 years rollback  _(ITA s 92CC)_
+- **6+ comparables** — 35th to 65th percentile  _(Rule 10CA)_
+- **< 6 comparables** — Arithmetic mean  _(Rule 10CA)_
+- **Local File (Rule 10D)** — International transactions > INR 1 crore; or SDT > INR 20 crore  _(IT Rules r 10D)_
+- **Master File (Form 3CEAA)** — Group revenue > INR 500 crore AND intl transactions > INR 50 crore or intangibles > INR 10 crore  _(IT Rules r 10DA)_
+- **CbCR (Form 3CEAD)** — Group revenue > INR 6,400 crore  _(ITA s 286)_
+- **Form 3CEB** — 31 October of AY  _(ITA s 92E)_
+- **ITR (TP cases)** — 30 November of AY  _(ITA s 139)_
+- **Master File** — 30 November of AY  _(IT Rules r 10DA)_
+- **CbCR notification (Form 3CEAC)** — 2 months before CbCR deadline  _(ITA s 286)_
+- **Failure to furnish Form 3CEB** — INR 1,00,000  _(ITA s 271BA)_
+- **Failure to maintain TP docs** — 2% of transaction value  _(ITA s 271G)_
+- **Failure to furnish Master File** — INR 5,00,000  _(ITA s 271AA(2))_
+- **CbCR failure** — ₹5,000/day (1 mo); ₹15,000/day (beyond); ₹50,000/day (after order)  _(ITA s 286(6))_
+- **Under-reporting (TP adjustment)** — 50% of tax; 200% if misreporting  _(ITA s 270A)_
+- **IT/ITeS (≤ ₹200 Cr turnover)** — OP/OC ≥ 17%  _(Rule 10TD)_
+- **IT/ITeS (> ₹200 Cr)** — OP/OC ≥ 18%  _(Rule 10TD)_
+- **Contract R&D** — OP/OC ≥ 24%  _(Rule 10TD)_
+- **Manufacturing (insignificant risk)** — OP/OC ≥ 12%  _(Rule 10TD)_
+- **Corporate guarantee** — 1% p.a. (4% below investment grade)  _(Rule 10TD)_
+- **Fee — unilateral (APA)** — INR 10 lakh  _(Rules 10F-10T)_
+- **Fee — bilateral/multilateral (APA)** — INR 20 lakh  _(Rules 10F-10T)_
+- **Duration (APA)** — 5 years prospective + 4 years rollback  _(ITA s 92CC)_
+- **6+ comparables (Range Concept)** — 35th to 65th percentile  _(Rule 10CA)_
+- **< 6 comparables (Range Concept)** — Arithmetic mean  _(Rule 10CA)_
+
 ## Section 1 -- Quick Reference
 
 | Field | Value |

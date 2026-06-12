@@ -11,6 +11,27 @@ verified_by: pending
 
 # Brasil — Imposto de Renda (IRPF e IRPJ) — Skill v2.1
 
+## Verified rates & thresholds (accountant-reviewed)
+
+> Reviewed against the cited tax authorities by **Ariane Marrocos** on 2026-06-03.
+> This block is generated from the verified facts database at openaccountants.com —
+> edit the facts there, not this prose. Items under clarification are excluded.
+
+### IRPF Autônomo
+
+- **Até R$ 28.467,20** — Isento — dedução R$ 0  _(Lei nº 7.713/1988 Lei nº 14.663/2023 Decreto nº 9.580/2018)_
+- **De R$ 28.467,21 até R$ 33.919,80** — 7,5% - dedução R$ 2.135,04  _(Lei nº 7.713/1988 Lei nº 14.663/2023 Decreto nº 9.580/2018)_
+- **De R$ 33.919,81 até R$ 45.012,60** — 15% - dedução R$ 4.679,03  _(Lei nº 7.713/1988 Lei nº 14.663/2023 Decreto nº 9.580/2018)_
+- **De R$ 45.012,61 até R$ 55.976,16** — 22,5% - dedução R$ 8.054,97  _(Lei nº 7.713/1988 Lei nº 14.663/2023 Decreto nº 9.580/2018)_
+- **Acima de R$ 55.976,16** — 27,5% - dedução R$ 10.853,78  _(Lei nº 7.713/1988 Lei nº 14.663/2023 Decreto nº 9.580/2018)_
+- **Limite MEI anual** — R$ 81.000  _(LC 123/2006)_
+- **DIRPF obrigatória acima de** — R$ 33.888 de rendimentos tributáveis  _(Instrução Normativa RFB nº 2.255/2025.)_
+- **Prazo da DIRPF** — 30 de maio do ano seguinte  _(Instrução Normativa RFB nº 2.255/2025 O prazo de entrega da DIRPF é definido anualmente pela Receita Federal por meio de Instrução Normativa. Para a DIRPF 2025, o prazo final de entrega foi 30 de maio de 2025.)_
+- **IRRF sobre serviços PJ** — 1,5% (padrão para serviços profissionais)  _(Decreto nº 9.580/2018 - art. 647. Os pagamentos efetuados por pessoa jurídica a outra pessoa jurídica pela prestação de serviços profissionais previstos no art. 647 do RIR/2018 estão sujeitos à retenção do IRRF à alíquota de 1,5%, observadas as exceções legais e o regime tributário do prestador.)_
+- **INSS retido por PJ** — INSS retido na  _(11% sobre o valor bruto da nota fiscal/fatura de serviços sujeitos à retenção previdenciária (cessão de mão de obra ou empreitada), conforme art. 31 da Lei nº 8.212/1991.)_
+- **Obrigatoriedade** — A pessoa física residente no Brasil que receber rendimentos de outras pessoas físicas ou de  _(Decreto nº 9.580/2018 Lei nº 7.713/1988; s situadas no exterior deve apurar mensalmente o imposto devido por meio do Carnê-Leão, observadas as regras do RIR/2018 e da Receita Federal.)_
+- **Rendimentos de PJ** — NÃO geram Carnê-Leão (sujeitos a IRRF)  _(Decreto nº 9.580/2018 Lei nº 7.713/1988 Os rendimentos pagos por pessoa jurídica à pessoa física, em regra, não estão sujeitos ao Carnê-Leão, pois são submetidos ao regime de retenção e controle pela; pagadora, conforme as regras do RIR/2018.)_
+
 ## Seção 1 — Referência rápida
 
 ### Reforma tributária 2026 — impacto no IR

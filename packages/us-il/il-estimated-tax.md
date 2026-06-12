@@ -15,6 +15,31 @@ depends_on:
 
 # Illinois Estimated Tax (IL-1040-ES) v1.0
 
+## Verified rates & thresholds (accountant-reviewed)
+
+> Reviewed against the cited tax authorities by **Amir Pelinkovic** on 2026-06-03.
+> This block is generated from the verified facts database at openaccountants.com —
+> edit the facts there, not this prose. Items under clarification are excluded.
+
+### IL Estimated Tax
+
+- **Threshold** — Threshold is $1,000 of expected IL tax after withholding/credits (TY ending on/after 12/31/2019). $500 was the prior threshold and now applies only to the PTE-tax election context.  _(35 ILCS 5/803; IDOR Pub-105; IL-1040-ES instr.)_
+- **Safe harbor — current year** — 90% of current-year liability  _(35 ILCS 5/803; IL-2210.)_
+- **Safe harbor — prior year** — 100% of prior-year liability; IL has no high-income 110% rule  _(35 ILCS 5/803; IL-2210; IL-1040-ES instr.)_
+- **110% rule** — Confirmed - IL uses 100% prior-year regardless of income  _(IL-2210 instr.)_
+- **IL flat rate** — 4.95%  _(35 ILCS 5/201.)_
+- **Personal exemption — Single** — $2,850 for 2025 (the same exemption applies to IL-1040, estimated tax, and withholding)  _(IDOR FY2025-16; IL-1040-ES instr.)_
+- **Personal exemption — MFJ** — $5,700 for 2025  _(IDOR FY2025-16.)_
+- **Q1** — April 15, 2025  _(2025 IL-1040-ES.)_
+- **Q2** — Statutory June 15; June 15, 2025 falls on a Sunday, so the effective due date is June 16, 2025  _(2025 IL-1040-ES; 5 ILCS 70/1.11.)_
+- **Q3** — September 15, 2025  _(2025 IL-1040-ES.)_
+- **Q4** — January 15, 2026  _(2025 IL-1040-ES.)_
+- **Instalment split** — Four equal 25% installments  _(IL-1040-ES; IL-2210.)_
+- **Underpayment rate** — IL interest tracks the IRC 6621 underpayment rate (federal short-term + 3 points for individuals) and is set SEMI-ANNUALLY (Jan 1 and Jul 1), not federal short-term + 2% quarterly.  _(35 ILCS 735/3-2; IDOR Pub-103.)_
+- **Estimated tax exemption** — IL-1040-ES uses $2,850 (S) / $5,700 (MFJ) for 2025 - the same as IL-1040  _(IDOR FY2025-16; IL-1040-ES instr.)_
+- **Income tax exemption** — $2,850 (S) / $5,700 (MFJ)  _(IDOR FY2025-16.)_
+- **VERIFY** — They do NOT differ: both IL-1040 and IL-1040-ES use $2,850 (S) / $5,700 (MFJ) for 2025. The $2,625/$5,250 figures in rows 8-9 and 19 are erroneous (older amounts).  _(IDOR FY2025-16.)_
+
 ## What this file is
 
 **Obligation category:** ET (Estimated Tax)

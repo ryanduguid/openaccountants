@@ -15,6 +15,29 @@ verified_by: pending
 
 ---
 
+## Verified rates & thresholds (accountant-reviewed)
+
+> Reviewed against the cited tax authorities by **Ariane Marrocos** on 2026-06-03.
+> This block is generated from the verified facts database at openaccountants.com —
+> edit the facts there, not this prose. Items under clarification are excluded.
+
+### Cripto
+
+- **Até R$ 5.000.000** — 15%  _(Lei 13.259/2016)_
+- **R$ 5.000.001 – R$ 10.000.000** — 17,5%  _(Lei 13.259/2016)_
+- **R$ 10.000.001 – R$ 30.000.000** — 20%  _(Lei 13.259/2016)_
+- **Acima de R$ 30.000.000** — 22,5%  _(Lei 13.259/2016)_
+- **Limite de alienações** — É isento do imposto de renda o ganho de capital decorrente da alienação de criptoativos quando o valor total das alienações realizadas no mês, consideradas conjuntamente as operações efetuadas em diferentes exchanges e carteiras, não ultrapassar R$ 35.000, observadas as regras do art. 22 da Lei nº 9.250/1995 e os entendimentos da Receita Federal.  _(A IN RFB nº 1.888/2019 não institui a isenção; ela trata da obrigação acessória de reporte de operações com criptoativos.; Lei nº 9.250/1995 – art. 22. Decreto nº 9.580/2018 Soluções de Consulta da Receita Federal sobre criptoativos.)_
+- **Efeito** — É isento do imposto de renda o ganho de capital auferido na alienação de bens e direitos quando o valor total das alienações realizadas no mês não ultrapassar R$ 35.000, observadas as regras do art. 22 da Lei nº 9.250/1995.  _(Lei nº 9.250/1995 – art. 22. Lei nº 11.196/2005.)_
+- **Se ultrapassado** — Se o valor total das alienações realizadas no mês ultrapassar R$ 35.000, a isenção para alienação de bens de pequeno valor deixa de ser aplicável, e o ganho de capital passa a ser tributado pelas regras normais, não apenas sobre a parcela excedente ao limite.  _(Lei nº 11.196/2005 – art. 38. Lei nº 9.250/1995. Entendimentos da Receita Federal sobre alienação de bens de pequeno valor e criptoativos.)_
+- **Quem reporta** — PF em exchange estrangeira: se operações > R$ 30.000/mês  _(IN RFB 1.888/2019)_
+- **Exchanges brasileiras** — Reportam automaticamente à RFB todas as operações  _(IN RFB 1.888/2019)_
+- **Saldo ≥ R$ 5.000 por cripto em 31/12** — Obrigatório declarar em Bens e Direitos  _(Instrução Normativa RFB nº 2.180/2024)_
+- **Código DARF** — O imposto sobre ganho de capital apurado por pessoa física deve ser recolhido por DARF código 4600, até o último dia útil do mês subsequente ao da alienação do bem ou direito.  _(Programa GCAP Decreto nº 9.580/2018)_
+- **Vencimento** — O imposto sobre ganho de capital deve ser recolhido até o último dia útil do mês subsequente ao da alienação do bem ou direito, mediante DARF código 4600.  _(Programa GCAP Decreto nº 9.580/2018)_
+- **Ferramenta** — GCAP – Programa utilizado para apuração de ganho de capital e importação para a DIRPF  _(N SRF nº 84/2001)_
+- **Padrão obrigatório** — Custo médio ponderado por unidade  _(Programa GCAP Decreto nº 9.580/2018)_
+
 ## Seção 1 -- Referência Rápida
 
 | Campo | Valor |
@@ -31,7 +54,7 @@ verified_by: pending
 | Prazo de entrega anual | Último dia útil de maio do ano seguinte (ex.: 29 de maio de 2026 para o ano-base 2025) |
 | Obrigação mensal | DARF (Documento de Arrecadação de Receitas Federais) — código 4600 |
 | Prazo de pagamento mensal | Último dia útil do mês seguinte ao da alienação |
-| Validado por | Pendente — requer assinatura de contador brasileiro registrado no CRC |
+| Validado por | Verificado por Ariane Marrocos (SP 312052/O-1) em 2026-06-03 |
 | Versão da skill | 1.1 |
 
 ### Resumo das Alíquotas (2025)

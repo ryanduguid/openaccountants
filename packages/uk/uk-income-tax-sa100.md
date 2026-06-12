@@ -23,6 +23,39 @@ All headline income tax rates and thresholds are **frozen through 2027-28**. The
 
 ---
 
+## Verified rates & thresholds (accountant-reviewed)
+
+> Reviewed against the cited tax authorities by **James Power** on 2026-06-03.
+> This block is generated from the verified facts database at openaccountants.com —
+> edit the facts there, not this prose. Items under clarification are excluded.
+
+### Income Tax SA100
+
+- **Personal allowance** — £0 – £12,570 at 0%  _(ITA 2007)_
+- **Basic rate** — £12,571 – £50,270 at 20%  _(ITA 2007)_
+- **Higher rate** — £50,271 – £125,140 at 40%  _(ITA 2007)_
+- **Additional rate** — Over £125,140 at 45%  _(ITA 2007)_
+- **Starter rate** — £12,571 – £14,876 at 19%  _(Scotland Act 2016)_
+- **Basic rate** — £14,877 – £26,561 at 20%  _(Scotland Act 2016)_
+- **Intermediate rate** — £26,562 – £43,662 at 21%  _(Scotland Act 2016)_
+- **Higher rate** — £43,663 – £75,000 at 42%  _(Scotland Act 2016)_
+- **Advanced rate** — £75,001 – £125,140 at 45%  _(Scotland Act 2016)_
+- **Top rate** — Over £125,140 at 48%  _(Scotland Act 2016)_
+- **Personal allowance** — £12,570  _(ITA 2007)_
+- **PA taper starts** — £100,000 adjusted net income  _(ITA 2007)_
+- **PA fully withdrawn** — £125,140  _(ITA 2007)_
+- **Basic rate band** — £37,700  _(ITA 2007)_
+- **PSA (basic rate)** — £1,000  _(ITA 2007)_
+- **PSA (higher rate)** — £500  _(ITA 2007)_
+- **Dividend allowance** — £500  _(ITA 2007 s.13A)_
+- **Marriage allowance transfer** — £1,260 (reducer £252)  _(ITA 2007)_
+- **Pension annual allowance** — £60,000  _(Finance Act)_
+- **Basic rate band** — 8.75%  _(ITA 2007)_
+- **Higher rate band** — 33.75%  _(ITA 2007)_
+- **Additional rate band** — 39.35%  _(ITA 2007)_
+- **Online SA return** — 31 January following tax year  _(TMA 1970)_
+- **Paper SA return** — 31 October following tax year  _(TMA 1970)_
+
 ## Section 1 -- Quick Reference
 
 | Field | Value |

@@ -9,6 +9,20 @@ category: federal
 
 # US Crypto Tax Skill v1.0
 
+## Verified rates & thresholds (accountant-reviewed)
+
+> Reviewed against the cited tax authorities by **Amir Pelinkovic** on 2026-06-03.
+> This block is generated from the verified facts database at openaccountants.com —
+> edit the facts there, not this prose. Items under clarification are excluded.
+
+### Crypto Tax (US)
+
+- **Treatment** — Treated as property  _(IRS Notice 2014-21; IRS digital-asset FAQs.)_
+- **Default** — FIFO is the default; specific identification permitted with adequate records  _(Treas. Reg. 1.1012-1(j); Rev. Proc. 2024-28.)_
+- **Avg cost** — Averaging is not allowed for digital assets (only FIFO or specific ID)  _(Rev. Proc. 2024-28; Treas. Reg. 1.1012-1(c)/(j).)_
+- **NIIT** — 3.8% NIIT applies to crypto investment gains above MAGI thresholds  _(IRC 1411.)_
+- **FBAR** — The $10,000 aggregate threshold is correct for foreign financial accounts generally, but a foreign account holding ONLY virtual currency is not currently FBAR-reportable (FinCEN Notice 2020-2 proposed to add virtual currency but the rule is not finalized). As applied to crypto, this is premature/misleading.  _(31 CFR 1010.350; FinCEN Notice 2020-2.)_
+
 ## Section 1 — Foundational framework
 
 ### IRS Notice 2014-21: Crypto as property

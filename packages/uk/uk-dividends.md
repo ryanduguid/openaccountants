@@ -17,6 +17,28 @@ verified_by: pending
 
 ---
 
+## Verified rates & thresholds (accountant-reviewed)
+
+> Reviewed against the cited tax authorities by **James Power** on 2026-06-03.
+> This block is generated from the verified facts database at openaccountants.com —
+> edit the facts there, not this prose. Items under clarification are excluded.
+
+### Dividends
+
+- **2025-26** — £500  _(ITA 2007 s.13A)_
+- **2024-25** — £500  _(ITA 2007 s.13A)_
+- **Basic rate** — 8.75%  _(ITA 2007)_
+- **Higher rate** — 33.75%  _(ITA 2007)_
+- **Additional rate** — 39.35%  _(ITA 2007)_
+- **Optimal salary** — £12,570 (PA level) or £5,000 (ST level)  _(Tax planning)_
+- **Employer NIC secondary threshold** — £5,000/year  _(SSCBA 1992)_
+- **Basic rate (2026-27)** — 10.75% (up from 8.75%)  _(Finance (No.2) Bill 2024-26)_
+- **Higher rate (2026-27)** — 35.75% (up from 33.75%)  _(Finance (No.2) Bill 2024-26)_
+- **Additional rate (2026-27)** — 39.35% (unchanged)  _(Finance (No.2) Bill 2024-26)_
+- **Dividend allowance (2026-27)** — £500 (unchanged)  _(ITA 2007 s.13A)_
+- **Combined CT + higher-rate dividend (2026-27)** — ~51.78% (up from ~50.28%)  _(Calculated)_
+- **Impact on salary-vs-dividend** — Dividend advantage over salary narrows materially from 6 April 2026  _(Tax planning note)_
+
 ## Section 1 -- Quick Reference
 
 | Field | Value |

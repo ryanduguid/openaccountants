@@ -18,6 +18,29 @@ verified_by: pending
 
 ---
 
+## Verified rates & thresholds (accountant-reviewed)
+
+> Reviewed against the cited tax authorities by **James Power** on 2026-06-03.
+> This block is generated from the verified facts database at openaccountants.com —
+> edit the facts there, not this prose. Items under clarification are excluded.
+
+### Company Formation
+
+- **Pvt Ltd — min shareholders** — 1 shareholder + 1 director  _(CA 2006)_
+- **Pvt Ltd — min capital** — £1 (no statutory minimum)  _(CA 2006)_
+- **PLC — min paid-up** — £50,000 (25% = £12,500 paid up)  _(CA 2006)_
+- **LLP — min members** — 2 designated members  _(LLP Act 2008)_
+- **Online incorporation** — £100  _(Companies House)_
+- **Same-day (software)** — £156  _(Companies House)_
+- **Paper** — £124  _(Companies House)_
+- **Annual confirmation statement** — £50 online / £110 paper  _(Companies House)_
+- **Annual accounts filing** — 9 months after year-end (private)  _(CA 2006 s.442)_
+- **CT600 filing** — 12 months after accounting period  _(CTA 2010)_
+- **CT payment** — 9 months + 1 day after period end  _(CTA 2010)_
+- **Confirmation statement** — Every 12 months  _(CA 2006)_
+- **PSC register** — Update within 14 days of changes  _(CA 2006)_
+- **VAT threshold** — £90,000  _(VATA 1994)_
+
 ## Section 1 -- Quick Reference
 
 | Field | Value |

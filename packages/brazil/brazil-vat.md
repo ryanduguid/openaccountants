@@ -15,6 +15,42 @@ depends_on:
 
 # Brasil — Tributos Indiretos (Sistema Antigo PIS/Cofins/ICMS/IPI/ISS + Sistema Novo CBS/IBS) — Skill v3.0
 
+## Verified rates & thresholds (accountant-reviewed)
+
+> Reviewed against the cited tax authorities by **Ariane Marrocos** on 2026-06-03.
+> This block is generated from the verified facts database at openaccountants.com —
+> edit the facts there, not this prose. Items under clarification are excluded.
+
+### Tributos Indiretos (PIS-Cofins-
+
+- **PIS não cumulativo (Lucro Real)** — PIS/Pasep não cumulativo: alíquota básica de 1,65% sobre o total das receitas auferidas pela pessoa jurídica, com possibilidade de desconto de créditos previstos no art. 3º da Lei nº 10.637/2002, aplicável predominantemente às empresas do Lucro Real. Isso porque a Lei nº 10.637/2002 atualmente utiliza o conceito de: "total das receitas auferidas" e não apenas "receita bruta".  _(Lei 10.637/2002)_
+- **Cofins não cumulativo** — A COFINS no regime não cumulativo possui alíquota básica de 7,60% incidente sobre o total das receitas auferidas pela pessoa jurídica, admitindo o desconto de créditos previstos no art. 3º da Lei nº 10.833/2003. A legislação atual utiliza o conceito de: total das receitas auferidas e não apenas "receita bruta".  _(Lei 10.833/2003)_
+- **PIS+Cofins não cumulativo combinado** — 9,25% (com créditos de entrada)  _(Leis 10.637/10.833)_
+- **PIS cumulativo (Lucro Presumido)** — 0,65% sobre receita bruta  _(Lei nº 10.637/2002 instituiu a sistemática não cumulativa do PIS. Principal fundamento: Lei nº 9.718/1998  PIS/Pasep no regime cumulativo: alíquota básica de 0,65%, sem direito a créditos, aplicável em regra às pessoas jurídicas tributadas pelo Lucro Presumido, conforme a Lei nº 9.718/1998.)_
+- **Cofins cumulativo** — 3,00% sobre receita bruta  _(a Lei nº 10.833/2003 é a lei que instituiu a COFINS não cumulativa, especialmente: Art. 1º → base de cálculo; Art. 2º → alíquota de 7,6%; Art. 3º → créditos. Principal fundamento: Lei nº 9.718/1998  COFINS no regime cumulativo: alíquota básica de 3%, sem direito a créditos, aplicável em regra às pessoas jurídicas tributadas pelo Lucro Presumido, conforme a Lei nº 9.718/1998.)_
+- **PIS+Cofins cumulativo combinado** — 3,65% (sem créditos)  _(Essas leis são conhecidas principalmente por instituírem a sistemática não cumulativa: Lei nº 10.637/2002 → PIS não cumulativo; Lei nº 10.833/2003 → COFINS não cumulativa. Para o regime cumulativo, a principal; legal é: Lei nº 9.718/1998 Além de dispositivos complementares da: Lei nº 9.715/1998.)_
+- **São Paulo (SP)** — 18%  _(Legislação estadual SP)_
+- **Rio de Janeiro (RJ)** — A alíquota interna geral do ICMS no Estado do Rio de Janeiro é de 20%, acrescida em regra do adicional de 2% destinado ao FECP, resultando em carga tributária geral de 22%.  _(Principal Lei Estadual nº 2.657/1996 Art. 14 → alíquotas internas. Alteração relevante: Lei Estadual nº 10.253/2023 (alterou a alíquota interna geral antes 18% e depois 20%). FECP: Lei Complementar Estadual nº 210/2023 (mantém, em regra geral: adicional de 2%).)_
+- **Minas Gerais (MG)** — 18%  _(Legislação estadual MG)_
+- **Bahia (BA)** — A alíquota interna geral do ICMS no Estado da Bahia é de 20,5%, conforme a Lei nº 14.629/2023, aplicável quando não houver previsão de alíquota específica para a mercadoria ou serviço.  _(Principal Lei nº 7.014/1996 Alteração relevante Lei nº 14.629/2023 Essa lei alterou a Lei nº 7.014/1996 e elevou a alíquota interna geral do ICMS.)_
+- **Paraná (PR)** — A alíquota interna geral do ICMS no Estado do Paraná é de 19,5%, aplicável quando não houver previsão específica para a mercadoria ou serviço, conforme o art. 17, inciso V, do RICMS/PR.  _(Principal RICMS/PR Fundamento: Art. 17, inciso V, do RICMS/PR. Base legal estadual Lei nº 11.580/1996.)_
+- **Rio Grande do Sul (RS)** — 17%  _(Legislação estadual RS)_
+- **Santa Catarina (SC)** — 17%  _(Legislação estadual SC)_
+- **Sul/Sudeste → Sul/Sudeste (exceto ES)** — 12%  _(CF Art. 155; Resolução SF 22/89)_
+- **Sul/Sudeste → N/NE/CO/ES** — 7%  _(CF Art. 155; Resolução SF 22/89)_
+- **N/NE/CO/ES → qualquer estado** — 12%  _(Constituição Federal de 1988 Resolução do Senado Federal nº 22/1989 Nas operações interestaduais originadas nos estados das regiões Norte, Nordeste, Centro-Oeste e no Espírito Santo, aplica-se, como regra geral, a alíquota interestadual de 12%, conforme a Resolução do Senado Federal nº 22/1989, editada com fundamento no art. 155 da Constituição Federal.)_
+- **Mercadorias importadas (interestadual)** — Aplica-se a alíquota interestadual de 4% às operações com bens e mercadorias importados do exterior ou com conteúdo de importação superior a 40%, observadas as exceções previstas na Resolução do Senado Federal nº 13/2012.  _(Resolução do Senado Federal nº 13/2012 Lei Complementar nº 87/1996.)_
+- **Alíquota ISS** — 2% a 5% (definida por município, mínimo 2%)  _(LC 116/2003; LC 157/2016)_
+- **Alíquota IPI** — 0% a 300%+ (por NCM via tabela TIPI)  _(Decreto nº 7.212/2010 TIPI - Tabela de Incidência do IPI As alíquotas do IPI são definidas por NCM na TIPI (Tabela de Incidência do IPI), variando conforme o produto, podendo ir de 0% a percentuais elevados para produtos específicos, observadas as regras do RIPI (Decreto nº 7.212/2010).)_
+- **CBS alíquota-teste 2026** — 0,9%  _(EC 132/2023; LC 214/2025)_
+- **IBS alíquota-teste 2026** — 0,1%  _(EC 132/2023; LC 214/2025)_
+- **CBS+IBS estimada (plena)** — ~26,5% (sujeita a ajuste)  _(Emenda Constitucional nº 132/2023 Lei Complementar nº 214/2025 A alíquota-padrão de; estimada para CBS + IBS é de aproximadamente 26,5%, podendo sofrer ajustes conforme os mecanismos de revisão previstos na Reforma Tributária e na LC nº 214/2025.)_
+- **CBS plena (extinção PIS/Cofins)** — 2027  _(Emenda Constitucional nº 132/2023 Lei Complementar nº 214/2025 A partir de 2027, a CBS passa a substituir o PIS/Pasep e a COFINS, que serão extintos, conforme as regras de transição estabelecidas pela EC nº 132/2023 e regulamentadas pela LC nº 214/2025.)_
+- **ICMS/ISS totalmente extintos** — 2033  _(Emenda Constitucional nº 132/2023 Lei Complementar nº 214/2025 O ICMS e o ISS serão gradualmente substituídos pelo IBS durante o período de transição da Reforma Tributária, sendo totalmente extintos em 2033, conforme previsto na EC nº 132/2023.)_
+- **MEI** — Até R$ 81.000/ano  _(LC 123/2006)_
+- **Sublimite ICMS/ISS** — R$ 3.600.000  _(Lei Complementar nº 123/2006 Art. 19 Art. 20 O sublimite para recolhimento de ICMS e ISS no âmbito do Simples Nacional é de R$ 3.600.000,00, conforme os arts. 19 e 20 da LC nº 123/2006, observadas as regras aplicáveis aos estados, ao Distrito Federal e aos municípios.)_
+- **Limite EPP** — R$ 4.800.000  _(LC 123/2006 Art. 3)_
+
 ## Seção 1 — Referência rápida
 
 **Leia esta seção inteira antes de classificar qualquer transação. O Brasil NÃO possui um IVA unificado. Possui cinco tributos indiretos em três níveis de governo, atualmente em processo de reforma para um IVA dual (CBS+IBS) com adição de um Imposto Seletivo (IS).**
@@ -45,7 +81,7 @@ depends_on:
 | Identificador | CNPJ (formato XX.XXX.XXX/YYYY-ZZ) |
 | Legislação primária | Constituição Federal Arts. 153-156; LC 87/1996 (ICMS — Lei Kandir); Lei 10.637/2002 (PIS); Lei 10.833/2003 (Cofins); LC 116/2003 (ISS); LC 157/2016 (alíquota mínima ISS); Decreto 7.212/2010 (RIPI); LC 123/2006 (Simples Nacional); EC 132/2023; LC 214/2025; LC 227/2026 |
 | Contribuidor | Open Accounting Skills Registry |
-| Validado por | Pendente — requer assinatura de contador brasileiro registrado no CRC |
+| Validado por | Verificado por Ariane Marrocos (SP 312052/O-1) em 2026-06-03 |
 | Versão da skill | 3.0 |
 
 **Alíquotas-chave do sistema atual em um relance:**

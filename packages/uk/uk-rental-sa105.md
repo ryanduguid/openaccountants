@@ -15,6 +15,19 @@ verified_by: pending
 
 ---
 
+## Verified rates & thresholds (accountant-reviewed)
+
+> Reviewed against the cited tax authorities by **James Power** on 2026-06-03.
+> This block is generated from the verified facts database at openaccountants.com —
+> edit the facts there, not this prose. Items under clarification are excluded.
+
+### Rental SA105
+
+- **Allowance** — £1,000  _(ITTOIA 2005)_
+- **Threshold** — £7,500/year (£3,750 if joint)  _(ITTOIA ss.784-802)_
+- **Deductible as expense?** — NO — tax credit at 20% of finance costs  _(ITA 2007 ss.274A-274D)_
+- **Status from 2025-26** — Abolished — treated as normal property income  _(Finance Act 2025)_
+
 ## Section 1 -- Quick Reference
 
 | Field | Value |

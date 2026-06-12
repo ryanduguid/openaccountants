@@ -13,6 +13,29 @@ depends_on:
 
 # Brasil — Carnê-Leão e Estimativa Mensal — Skill v2.1
 
+## Verified rates & thresholds (accountant-reviewed)
+
+> Reviewed against the cited tax authorities by **Ariane Marrocos** on 2026-06-03.
+> This block is generated from the verified facts database at openaccountants.com —
+> edit the facts there, not this prose. Items under clarification are excluded.
+
+### Carnê-Leão
+
+- **Até R$ 2.259,20** — 0% — parcela R$ 0,00  _(Lei nº 7.713/1988 Medida Provisória nº 1.171/2023 Decreto nº 9.580/2018.)_
+- **R$ 2.259,21 – R$ 2.826,65** — 7,5% — parcela R$ 169,44  _(Lei nº 7.713/1988 Medida Provisória nº 1.171/2023 Decreto nº 9.580/2018.)_
+- **R$ 2.826,66 – R$ 3.751,05** — 15% — parcela R$ 381,44  _(Lei nº 7.713/1988 Medida Provisória nº 1.171/2023 Decreto nº 9.580/2018.)_
+- **R$ 3.751,06 – R$ 4.664,68** — 22,5% — parcela R$ 662,77  _(Lei nº 7.713/1988 Medida Provisória nº 1.171/2023 Decreto nº 9.580/2018.)_
+- **Acima de R$ 4.664,68** — 27,5% — parcela R$ 896,00  _(Lei nº 7.713/1988 Medida Provisória nº 1.171/2023 Decreto nº 9.580/2018.)_
+- **Por dependente** — Na apuração mensal do Carnê-Leão, é permitida a dedução de R$ 189,59 por dependente, conforme previsto na Lei nº 9.250/1995.  _(Complementar com o Decreto nº 9.580/2018.)_
+- **INSS contribuinte individual** — Na apuração do Carnê-Leão, é dedutível da base de cálculo do imposto o valor da contribuição previdenciária oficial efetivamente paga pelo contribuinte individual no período.  _(Complementar com as Lei nº 9.250/1995 e Decreto nº 9.580/2018.)_
+- **Livro caixa** — No Carnê-Leão, podem ser deduzidas as despesas escrituradas em livro-caixa, necessárias à percepção da receita e à manutenção da atividade profissional, desde que devidamente comprovadas, não sendo permitida a apuração de base de cálculo negativa.  _(Foi informado informado: Lei nº 9.250/1995 – Art. 8º. O tema do livro-caixa está mais diretamente disciplinado em: Lei nº 8.134/1990 e Decreto nº 9.580/2018 Complementarmente na Lei nº 9.250/1995 Portanto, a; indicada não é a mais específica para o tema.)_
+- **Pensão alimentícia judicial** — Na apuração do Carnê-Leão, é dedutível o valor da pensão alimentícia efetivamente pago em cumprimento de decisão judicial, acordo homologado judicialmente ou escritura pública, conforme previsto na legislação do Imposto de Renda.  _(Decreto nº 9.580/2018 Lei nº 9.250/1995.)_
+- **Desconto simplificado mensal** — Na apuração mensal do IRPF/Carnê-Leão, o contribuinte pode optar pelo desconto simplificado mensal de R$ 564,80 em substituição às deduções legais, conforme a legislação vigente.  _(Lei nº 14.663/2023.)_
+- **Código DARF** — O imposto apurado no Carnê-Leão deve ser recolhido mediante DARF código 0190, conforme as regras da Receita Federal.  _(Decreto nº 9.580/2018)_
+- **Vencimento** — O imposto apurado no Carnê-Leão deve ser recolhido até o último dia útil do mês subsequente ao do recebimento dos rendimentos sujeitos à tributação.  _(Embora a Lei nº 7.713/1988 seja uma das bases do IRPF, a; mais utilizada para o vencimento do Carnê-Leão é: Decreto nº 9.580/2018.)_
+- **Multa de mora** — O pagamento em atraso do DARF do Carnê-Leão sujeita o contribuinte à multa de mora de 0,33% por dia de atraso, limitada a 20% do imposto devido, além de juros calculados com base na taxa SELIC.  _(Informou a CTN – Art. 161. O art. 161 do CTN trata dos juros de mora. Porém, a multa de mora de: 0,33% por dia limitada a 20%, decorre principalmente da: Lei nº 9.430/1996 - Art. 61. Complementares Código Tributário Nacional – art. 161 (juros de mora) e Decreto nº 9.580/2018.)_
+- **Juros de mora** — O pagamento em atraso do DARF do Carnê-Leão sujeita o contribuinte à multa de mora de 0,33% por dia de atraso, limitada a 20% do imposto devido, além de juros calculados com base na taxa SELIC.  _(Informou CTN Art. 161. O art. 161 do CTN estabelece a incidência de juros de mora, mas a regra específica de utilização da SELIC para tributos federais decorre principalmente de: Lei nº 9.430/1996 Art. 61, §3º. Complementares Código Tributário Nacional – art. 161 e Decreto nº 9.580/2018.)_
+
 ## Seção 1 — Referência rápida
 
 | Campo | Valor |
@@ -29,8 +52,8 @@ depends_on:
 | Cálculo | Tabela progressiva aplicada sobre a renda mensal tributável após deduções |
 | Escopo | Rendimentos de pessoas físicas e de fontes do exterior APENAS |
 | Contribuinte | Open Accountants Community |
-| Validado por | Pendente — requer aprovação de contador brasileiro |
-| Data de validação | Pendente |
+| Validado por | Verificado por Ariane Marrocos (SP 312052/O-1) em 2026-06-03 |
+| Data de validação | Verificado por Ariane Marrocos (SP 312052/O-1) em 2026-06-03 |
 
 **Nota sobre a reforma tributária CBS/IBS (2026):** A reforma do consumo introduzida pela EC 132/2023, LC 214/2025 e LC 227/2026 afeta apenas tributos sobre o consumo (CBS, IBS, Imposto Seletivo e os antigos ICMS/ISS/PIS/COFINS/IPI). Ela **NÃO altera** o Carnê-Leão (IRPF mensal) nem a estimativa mensal de PJ (IRPJ). A estrutura do imposto de renda permanece inalterada.
 

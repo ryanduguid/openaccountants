@@ -16,6 +16,39 @@ verified_by: pending
 
 ---
 
+## Verified rates & thresholds (accountant-reviewed)
+
+> Reviewed against the cited tax authorities by **Mayur Deokar** on 2026-06-06.
+> This block is generated from the verified facts database at openaccountants.com —
+> edit the facts there, not this prose. Items under clarification are excluded.
+
+### Crypto (VDA)
+
+- **Health & Education Cess** — 4% on tax  _(Finance Act)_
+- **Rate** — New section as per new Income Tax Act 2025 applicable from financial year fy 2026-27 is Section 393(1). Rate remains same.  _(ITA s 194S)_
+- **Threshold (general)** — ₹10,000 aggregate per FY  _(ITA s 194S)_
+- **Threshold (specified persons)** — ₹50,000 (individual/HUF with turnover ≤ ₹1 Cr)  _(ITA s 194S)_
+- **Form** — Form 26QE (→ Form 141 under ITA 2025)  _(CBDT)_
+- **Deductible** — Purchase price only  _(ITA s 115BBH(2))_
+- **Mined/staked/airdrop tokens** — Cost = ₹0  _(ITA s 115BBH)_
+- **ITR form** — ITR-2 or ITR-3 with Schedule VDA  _(CBDT notification)_
+- **Deadline** — 31 July (non-audit) / 31 October (audit)  _(ITA s 139)_
+- **Flat rate on VDA gains** — 30% (s 115BBH)  _(ITA s 115BBH)_
+- **Health & Education Cess** — 4% on tax  _(Finance Act)_
+- **Effective rate (before surcharge)** — 31.20%  _(Calculated)_
+- **Loss offset** — NOT permitted — crypto losses cannot offset ANY income  _(ITA s 115BBH(2))_
+- **Loss carry-forward** — NOT permitted  _(ITA s 115BBH)_
+- **TDS on VDA Transfer (s 194S) — Rate** — 1% of consideration (rate unchanged); citation updated to Section 393(1) of the new Income Tax Act 2025, applicable from FY 2026-27  _(ITA s 194S; new Income Tax Act 2025 s 393(1))_
+- **TDS Threshold (general)** — ₹10,000 aggregate per FY  _(ITA s 194S)_
+- **TDS Threshold (specified persons)** — ₹50,000 (individual/HUF with turnover ≤ ₹1 Cr)  _(ITA s 194S)_
+- **TDS Form** — Form 26QE (→ Form 141 under ITA 2025)  _(CBDT)_
+- **Cost of Acquisition — Deductible** — Purchase price only  _(ITA s 115BBH(2))_
+- **Cost of improvement** — NOT deductible  _(ITA s 115BBH(2)(a))_
+- **Transfer expenses (fees, gas)** — NOT deductible  _(ITA s 115BBH)_
+- **Mined/staked/airdrop tokens cost basis** — Cost = ₹0  _(ITA s 115BBH)_
+- **ITR form for VDA** — ITR-2 or ITR-3 with Schedule VDA  _(CBDT notification)_
+- **Filing Deadline** — 31 July (non-audit) / 31 October (audit)  _(ITA s 139)_
+
 ## Section 1 — Quick Reference
 
 | Field | Value |

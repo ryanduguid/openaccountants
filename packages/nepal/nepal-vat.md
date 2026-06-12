@@ -12,6 +12,29 @@ depends_on:
 
 # Nepal VAT Return Skill v2.0
 
+## Verified rates & thresholds (accountant-reviewed)
+
+> Reviewed against the cited tax authorities by **Ashish Bista** on 2026-06-06.
+> This block is generated from the verified facts database at openaccountants.com —
+> edit the facts there, not this prose. Items under clarification are excluded.
+
+### VAT (IRD Return)
+
+- **Standard rate** — 13%  _(VAT Act 2052 s.7)_
+- **Zero rate** — 0% (exports, goods to SEZ)  _(VAT Act 2052 Sch.2)_
+- **Exempt** — Basic agriculture, education, healthcare, financial services, public transport  _(VAT Act 2052 Sch.1)_
+- **Concessional rate** — 5% on electricity (above 50 units) AND ride-sharing / ride-hailing services  _(Finance Act 2083 (amended VAT Act 2052 s.7))_
+- **Registration threshold — goods/carriage** — NPR 5,000,000 (12-month turnover)  _(VAT Act 2052 s.10 (Baker Tilly/PKF))_
+- **Registration threshold — services or mixed** — NPR 3,000,000 (raised from NPR 2M eff. 16 Jul 2024)  _(VAT Act 2052 s.10 (Baker Tilly))_
+- **Filing frequency** — Monthly, within 25 days of the end of each Nepali calendar month  _(VAT Act 2052 (Baker Tilly))_
+- **Imports** — VAT at 13% on CIF plus duty  _(VAT Act 2052)_
+- **Reverse charge — non-resident services** — Self-assess 13%  _(VAT Act 2052)_
+- **Input tax credit** — Valid VAT invoice with PAN; business purpose; IRD-approved billing software  _(VAT Act 2052)_
+- **Blocked input** — Personal consumption, entertainment, passenger vehicles  _(VAT Act 2052)_
+- **Digital Payment VAT Discount** — 10% instant VAT refund directly to consumers for making digital/cashless payments  _(Finance Act 2083 / VAT Act 2052)_
+- **VAT Bill Lottery Scheme** — Every VAT bill automatically acts as a lottery ticket for consumers  _(Budget Speech 2083/84)_
+- **Unpaid VAT / Tax Amnesty Settlement** — Settle pending VAT cases by paying outstanding principal tax + 1% fee (all other penalties waived)  _(Finance Act 2083 (Section 41/44))_
+
 ## Section 1 — Quick reference
 
 | Field | Value |
@@ -28,7 +51,7 @@ depends_on:
 | Deadline | 25th of the month following the tax period |
 | Registration threshold | NPR 5,000,000 (goods/carriage) · NPR 3,000,000 (services or mixed) — services/mixed raised from NPR 2M eff. Shrawan 1, 2081 (16 Jul 2024) |
 | Companion skill | vat-workflow-base v0.1 or later — MUST be loaded |
-| Validated by | Pending local practitioner validation |
+| Validated by | Verified by Ashish Bista (ICAN: 1765) on 2026-06-06 |
 
 **Conservative defaults:**
 

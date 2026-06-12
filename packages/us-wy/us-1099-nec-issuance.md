@@ -6,6 +6,19 @@ version: 0.2
 
 # US 1099-NEC Issuance Skill v0.2
 
+## Verified rates & thresholds (accountant-reviewed)
+
+> Reviewed against the cited tax authorities by **Amir Pelinkovic** on 2026-06-03.
+> This block is generated from the verified facts database at openaccountants.com —
+> edit the facts there, not this prose. Items under clarification are excluded.
+
+### 1099-NEC
+
+- **Threshold** — $600 for 2025 payments (OBBBA raises the threshold to $2,000 for payments after 12/31/2025)  _(IRC 6041A; OBBBA.)_
+- **Backup WH** — 24% backup withholding (made permanent by OBBBA)  _(IRC 3406.)_
+- **Due** — File with IRS and furnish recipient by January 31 (no automatic 30-day extension)  _(IRC 6071(c); 1099-NEC instr.)_
+- **After Aug 1** — 2025 late-filing penalty tiers $60/$130/$330; $330 applies if filed after Aug 1 or not filed  _(IRC 6721; 2025 General Instr. for Certain Information Returns.)_
+
 ## What this file is, and what it is not
 
 **This file is a content skill that loads on top of `us-tax-workflow-base` v0.1.** It provides the rules for determining which payments to non-employees require issuing Form 1099-NEC, and for producing the information returns correctly and on time. It does not classify the underlying business expenses — that comes from `us-sole-prop-bookkeeping`. It does not compute Schedule C deductions — the expense is deductible regardless of whether the 1099-NEC is issued (though failure to issue may increase audit risk and trigger penalties).

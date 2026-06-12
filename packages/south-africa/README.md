@@ -8,6 +8,8 @@
 **Werner Britz CA(SA)** — Lead accountant verifier for South Africa on OpenAccountants.
 [View profile →](https://www.openaccountants.com/network/28a3ec1b-d699-4c5d-bb60-3114eedc59d0)
 
+_Scope: the “Verified rates & thresholds” blocks inside these skill files are generated from the facts this verifier reviewed. Everything else in the files is an open, source-cited draft. The full accountant-verified tier, with the verifier’s name on every answer, is served via the [connector](https://www.openaccountants.com/connect)._
+
 ## What's in this folder
 
 1. `foundation.md`

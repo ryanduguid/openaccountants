@@ -16,6 +16,57 @@ depends_on:
 
 ---
 
+## Verified rates & thresholds (accountant-reviewed)
+
+> Reviewed against the cited tax authorities by **RILIA PUTRI** on 2026-06-03.
+> This block is generated from the verified facts database at openaccountants.com —
+> edit the facts there, not this prose. Items under clarification are excluded.
+
+### Payroll PPh 21 and BPJS
+
+- **0 – IDR 60,000,000** — 5% — max IDR 3,000,000  _(UU HPP Art. 17(1)(a))_
+- **60m – 250m** — 15% — max IDR 28,500,000  _(UU HPP Art. 17(1)(a))_
+- **250m – 500m** — 25% — max IDR 62,500,000  _(UU HPP Art. 17(1)(a))_
+- **500m – 5bn** — 30% — max IDR 1,350,000,000  _(UU HPP Art. 17(1)(a))_
+- **Above 5bn** — 35%  _(UU HPP Art. 17(1)(a))_
+- **No-NPWP surcharge** — 20% additional on calculated PPh 21  _(UU PPh Art. 21(5a); PMK 168/2023)_
+- **Rate** — 5% of gross employment income  _(UU PPh Art. 21)_
+- **Monthly cap** — Maximum IDR 500,000/month  _(PMK-168/2023)_
+- **Annual cap** — Maximum IDR 6,000,000/year  _(PMK-168/2023)_
+- **Applies to** — Permanent employees (Pegawai Tetap)  _(PMK 168/2023 Art. 3 & Art. 10)_
+- **Employer rate** — 4% of gross monthly salary  _(Perpres 64/2020)_
+- **Employee rate** — 1% of gross monthly salary  _(Perpres 64/2020)_
+- **Total** — 5%  _(Perpres 64/2020)_
+- **Max wage basis** — IDR 12,000,000/month  _(Perpres 64/2020)_
+- **Extra dependants (>5 family)** — Additional 1% per extra dependent  _(Perpres 64/2020)_
+- **Employer rate** — 3.7% of wage  _(PP 46/2015)_
+- **Employee rate** — 2.0% of wage  _(PP 46/2015)_
+- **Total** — 5.7% total contribution  _(PP 46/2015)_
+- **Employer rate** — 2.00%  _(PP 45/2015)_
+- **Employee rate** — 1.00%  _(PP 45/2015)_
+- **Total** — 3.00%  _(PP 45/2015)_
+- **JP wage cap (Mar 2025)** — IDR 10,547,400/month  _(BPJS TK 2025 regulation)_
+- **Grade 1 (very low risk)** — 0.10% of monthly wage  _(PP 44/2015 jo. PP 49/2023 Art. 16A(1)(a))_
+- **Grade 2 (low risk)** — 0.40% of monthly wage  _(PP 44/2015 jo. PP 49/2023 Art. 16A(1)(b))_
+- **Grade 3 (medium risk)** — 0.75% of monthly wage  _(PP 44/2015 jo. PP 49/2023 Art. 16A(1)(b))_
+- **Grade 4 (high risk)** — 1.13% of monthly wage  _(PP 44/2015 jo. PP 49/2023 Art. 16A(1)(d))_
+- **Grade 5 (very high risk)** — 1.60% of monthly wage  _(PP 44/2015 jo. PP 49/2023 Art. 16A(1)€)_
+- **Employer rate** — 0.20% of monthly wage  _(PP 44/2015 jo. PP 49/2023 Art. 18A)_
+- **Rate** — 0.46% — funded by govt + JKK/JKM surplus reallocation  _(PP 37/2021; PP 49/2023)_
+- **Impact on payroll** — No additional employer/employee deduction  _(PP 37/2021; PP 49/2023)_
+- **Effective from** — 1 January 2024  _(PP 58/2023; PMK 168/2023)_
+- **TER Category A** — Category A generally applies to taxpayers with PTKP status TK/0, TK/1, K/0 under prevailing TER provisions.  _(PP 58/202, PMK 168/PMK.010/2023. Full TER monthly rate tables for all categories provided in separate attachment: TER_NPPN_Attachment_Indonesia.xlsx — Sheet 'TER Monthly')_
+- **TER Category B** — Category B generally applies to PTKP status TK/2, TK/3, K/1, K/2.  _(PP 58/2023; PMK 168/PMK.010/2023. Full TER monthly rate tables for all categories provided in separate attachment: TER_NPPN_Attachment_Indonesia.xlsx — Sheet 'TER Monthly')_
+- **TER Category C** — Category C generally applies to PTKP status K/3.  _(PP 58/2023 ; PMK 168/PMK.010/2023. Full TER monthly rate tables for all categories provided in separate attachment: TER_NPPN_Attachment_Indonesia.xlsx — Sheet 'TER Monthly')_
+- **Cat A: 0% threshold** — IDR 0 – 5,400,000/month  _(PP 58/2023 ; PMK 168/PMK.010/2023.)_
+- **Cat B: 0% threshold** — IDR 0 – 6,200,000/month  _(PP 58/2023 ; PMK 168/PMK.010/2023.)_
+- **Cat C: 0% threshold** — IDR 0 – 6,600,000/month  _(PP 58/2023 ; PMK 168/PMK.010/2023.)_
+- **Cat A: top rate** — 34% (over IDR 1,400,000,000/month)  _(PP 58/2023 Annex; PMK 168/PMK.010/2023. See full bracket table in attachment TER_NPPN_Attachment_Indonesia.xlsx — Sheet 'TER Monthly'.)_
+- **December reconciliation** — December PPh 21 calculation generally reconciles annual tax under Article 17 rates against cumulative Jan–Nov withholding using TER methodology.  _(PP 58/2023; PMK 168/PMK.010/2023.)_
+- **Monthly e-Bupot PPh 21/26** — Generally due by the 20th of the following month through the applicable DJP electronic tax administration system (Coretax/e-Bupot)  _(UU KUP Art. 3(3); PMK 81/2024 as amended by PMK 1/2026 |; note: UU KUP as amended by UU HPP No. 7/2021.)_
+- **Annual SPT filing** — 31 March (individual)  _(UU KUP Art. 3(3)(b))_
+- **1721-A1 certificate** — Issued annually or on termination  _(PMK 168/2023 Art. 23)_
+
 ## Section 1 — Quick reference
 
 | Field | Value |

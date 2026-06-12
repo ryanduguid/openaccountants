@@ -17,6 +17,58 @@ validation_status: ai-drafted-q3
 
 ---
 
+## Verified rates & thresholds (accountant-reviewed)
+
+> Reviewed against the cited tax authorities by **RILIA PUTRI** on 2026-06-03.
+> This block is generated from the verified facts database at openaccountants.com —
+> edit the facts there, not this prose. Items under clarification are excluded.
+
+### Income Tax (PPh OP)
+
+- **0 – IDR 60,000,000** — 5% — cumulative tax IDR 3,000,000  _(UU HPP Art. 17(1)(a))_
+- **60,000,001 – 250,000,000** — 15% — cumulative IDR 31,500,000  _(UU HPP Art. 17(1)(a))_
+- **250,000,001 – 500,000,000** — 25% — cumulative IDR 94,000,000  _(UU HPP Art. 17(1)(a))_
+- **500,000,001 – 5,000,000,000** — 30% — cumulative IDR 1,444,000,000  _(UU HPP Art. 17(1)(a))_
+- **Above 5,000,000,000** — 35%  _(UU HPP Art. 17(1)(a))_
+- **Non-NPWP surcharge** — Taxpayers without valid NPWP/NIK taxpayer identification may be subject to withholding rates 20% higher than standard rates under Article 21(5a) of the Indonesian Income Tax Law, subject to prevailing NIK-NPWP integration rules.  _(UU PPh Art. 21(5a) as amended by UU HPP No. 7/2021.; PMK-112/PMK.03/2022; PER-6/PJ/2024)_
+- **PKP rounding** — Rounded DOWN to nearest IDR 1,000  _(UU PPh Art. 17(4))_
+- **TK/0 — Single, no dependents** — IDR 54,000,000  _(UU PPh Art. 7(1); PMK 101 Art. 1(1))_
+- **TK/1** — IDR 58,500,000  _(UU PPh Art. 7(1); PMK 101 Art. 1(1))_
+- **TK/2** — IDR 63,000,000  _(UU PPh Art. 7(1) as amended by UU HPP No. 7/2021. ; PMK 101 Art. 1(1))_
+- **TK/3** — IDR 67,500,000  _(UU PPh Art. 7(1) as amended by UU HPP No. 7/2021. ; PMK 101 Art. 1(1))_
+- **K/0 — Married, no dependents** — IDR 58,500,000  _(UU PPh Art. 7(1) as amended by UU HPP No. 7/2021. ; PMK 101 Art. 1(1))_
+- **K/1** — IDR 63,000,000  _(UU PPh Art. 7(1) as amended by UU HPP No. 7/2021. ; PMK 101 Art. 1(1))_
+- **K/2** — IDR 67,500,000  _(UU PPh Art. 7(1) as amended by UU HPP No. 7/2021. ; PMK 101 Art. 1(1))_
+- **K/3** — IDR 72,000,000  _(UU PPh Art. 7(1) as amended by UU HPP No. 7/2021. ; PMK 101 Art. 1(1))_
+- **K/I/0 — Combined income** — IDR 112,500,000  _(UU PPh Art. 8, PMK 101/PMK.010/2016 |; note: UU PPh as amended by UU HPP No. 7/2021.)_
+- **K/I/1** — IDR 117,000,000  _(UU PPh Art. 8; PMK 101/PMK.010/2016; PP 50/2022 Art. 2(4)–(6).)_
+- **K/I/2** — IDR 121,500,000  _(UU PPh Art. 8; PMK 101/PMK.010/2016; PP 50/2022 Art. 2(4)–(6).)_
+- **K/I/3** — IDR 126,000,000  _(UU PPh Art. 8; PMK 101/PMK.010/2016; PP 50/2022 Art. 2(4)–(6).)_
+- **Max dependents** — 3 (regardless of actual number)  _(UU PPh Art. 7(1))_
+- **PTKP determination date** — 1 January of the tax year  _(UU PPh Art. 7(2))_
+- **1770** — Business income / self-employed  _(PER-19/PJ/2014 jo PER-30/PJ/2017 (Annual Individual Tax Return Forms and Instructions))_
+- **1770 S** — Employee, gross > IDR 60m  _(PER-19/PJ/2014 jo PER-30/PJ/2017 (Annual Individual Tax Return Forms and Instructions))_
+- **1770 SS** — Employee, gross ≤ IDR 60m, single employer  _(PER-19/PJ/2014 jo PER-30/PJ/2017 (Annual Individual Tax Return Forms and Instructions))_
+- **NPPN source regulation** — Deemed-profit (NPPN) framework for qualifying individual taxpayers  _(UU PPh Art. 14(2); PER-17/PJ/2015)_
+- **NPPN eligibility** — Individual taxpayers only; prior-year gross turnover below IDR 4.8 billion; notification submitted within statutory deadline  _(UU PPh Art. 14(2))_
+- **Professional services NPPN** — Approximate deemed-profit coefficients may apply for qualifying professional/self-employed service  _(UU PPh Art. 14(2); PER-17/PJ/2015)_
+- **SPT Tahunan PPh OP** — 31 March of following year  _(UU KUP Art. 3(3)(b))_
+- **PPh 29 payment** — Before SPT is filed (by 31 March)  _(UU KUP Art. 9(2)(c))_
+- **PPh 25 monthly instalment** — Generally due by the 15th of the following month  _(PMK 81/2024 Art. 94(2) as amended by PMK 1/2026)_
+- **NPPN election deadline** — Within 3 months of start of tax year (by 31 March)  _(UU PPh Art. 14(2))_
+- **SPT extension** — Extension generally available up to 2 months upon notification/request before filing deadline  _(UU KUP Art. 3(4)  as amended by UU HPP No. 7/2021.; PMK 81/2024)_
+- **Late SPT filing (individual)** — IDR 100,000 fine  _(UU KUP Art. 7)_
+- **Late PPh 29 payment** — Monthly interest at MoF-published rate, max 24 months  _(UU KUP Art. 9(2a-b))_
+- **Failure after warning** — SKPKB jabatan + 50% surcharge  _(UU KUP Art. 13(3) as amended by UU HPP No. 7/2021)_
+- **PPh 21 credit** — Withholding by employers — bukti potong 1721-A1  _(UU PPh Art. 21)_
+- **PPh 22 credit** — Imports, government procurement — bukti pungut  _(UU PPh Art. 22)_
+- **PPh 23 credit** — Services, royalties, dividends — 2%/15%  _(UU PPh Art. 23)_
+- **PPh 24 credit** — Foreign tax — per-country cap, no carry-forward  _(UU PPh Art. 24)_
+- **PPh 25 credit** — Monthly instalments paid during the year  _(UU PPh Art. 25; PMK 81/PMK.03/2024 |; note: UU PPh as amended by UU HPP No. 7/2021.)_
+- **Duration** — 5 years from the year the loss arose  _(UU PPh Art. 6(2))_
+- **Available under NPPN?** — No  _(UU PPh Art. 14)_
+- **Available under UMKM Final?** — Tax loss carry-forward is generally unavailable under the UMKM Final income tax regime because tax is imposed on gross turnover rather than net taxable income. Loss carry-forward facilities apply under the ordinary income-tax regime with bookkeeping and taxable-income computation.  _(UU PPh Art. 4(2); UU PPh Art. 6(2); PP 55/2022 as amended by PP 20/2026.)_
+
 ## Section 1: Metadata
 
 | Field | Value |

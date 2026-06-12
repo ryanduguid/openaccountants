@@ -15,6 +15,23 @@ depends_on:
 
 ---
 
+## Verified rates & thresholds (accountant-reviewed)
+
+> Reviewed against the cited tax authorities by **Mehran Habib** on 2026-06-06.
+> This block is generated from the verified facts database at openaccountants.com —
+> edit the facts there, not this prose. Items under clarification are excluded.
+
+### Company Formation
+
+- **Sole Establishment** — Saudi/GCC only; unlimited liability; Zakat 2.5%  _(Commercial Registration Regulations)_
+- **LLC** — 1-50 members; no statutory min capital (since 2022); Zakat/CIT split  _(Companies Law, Part 6 Article 156)_
+- **Closed JSC** — 2+ shareholders; min SAR 500,000 paid-up  _(Companies Law, Article 59)_
+- **Open/Listed JSC** — Min SAR 10,000,000 paid-up  _(Companies Law + CMA, Article 41(e) of Listing Rules)_
+- **Branch of foreign company** — MISA licence required; CIT 20% on branch profits  _(MISA + Income Tax Law (ITL))_
+- **MISA (Foreign Investment) – Required for** — Any foreign or mixed ownership  _(New Investment Law 2024)_
+- **VAT Registration – Mandatory threshold** — SAR 375,000  _(VAT Implementing Regulations, Chapter 2 Article 3; ZATCA VAT Guidelines 7.1.1)_
+- **VAT Registration – Voluntary threshold** — SAR 187,500  _(VAT Implementing Regulations, Chapter 2 Article 7; ZATCA VAT Guidelines 7.2.1 & 7.2.2)_
+
 ## Section 1 — Quick Reference Entity Comparison
 
 | Field | Value |

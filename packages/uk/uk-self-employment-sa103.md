@@ -19,6 +19,28 @@ verified_by: pending
 
 ---
 
+## Verified rates & thresholds (accountant-reviewed)
+
+> Reviewed against the cited tax authorities by **James Power** on 2026-06-03.
+> This block is generated from the verified facts database at openaccountants.com —
+> edit the facts there, not this prose. Items under clarification are excluded.
+
+### Self-Employment SA103
+
+- **SA103S (short form)** — Turnover below £90,000  _(HMRC guidance)_
+- **Trading allowance** — £1,000  _(ITTOIA 2005)_
+- **AIA (Annual Investment Allowance)** — £1,000,000  _(CAA 2001)_
+- **Cash basis** — Default from 2024/25 (no upper limit)  _(Finance Act 2024)_
+- **Below £12,570** — 0%  _(SSCBA 1992)_
+- **£12,570 – £50,270** — 6%  _(SSCBA 1992)_
+- **Above £50,270** — 2%  _(SSCBA 1992)_
+- **Car/van: first 10,000 miles** — 45p/mile  _(ITTOIA s.94A)_
+- **Car/van: over 10,000 miles** — 25p/mile  _(ITTOIA s.94A)_
+- **Motorcycle** — 24p/mile  _(ITTOIA s.94A)_
+- **Home office: 25-50 hrs/month** — £10/month  _(ITTOIA s.94B)_
+- **Home office: 51-100 hrs/month** — £18/month  _(ITTOIA s.94B)_
+- **Home office: 101+ hrs/month** — £26/month  _(ITTOIA s.94B)_
+
 ## Section 1 -- Quick Reference
 
 | Field | Value |

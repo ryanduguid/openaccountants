@@ -14,6 +14,37 @@ depends_on:
 
 ---
 
+## Verified rates & thresholds (accountant-reviewed)
+
+> Reviewed against the cited tax authorities by **Mayur Deokar** on 2026-06-06.
+> This block is generated from the verified facts database at openaccountants.com —
+> edit the facts there, not this prose. Items under clarification are excluded.
+
+### TDS on Freelancers
+
+- **Threshold** — Threshold increase to Rs 50,000 from financial Year 2025-26 (ITA 194J)  _(ITA s 194J)_
+- **Individual/HUF rate** — 1%  _(ITA s 194C)_
+- **Company/firm/AOP rate** — 2%  _(ITA s 194C)_
+- **Single payment threshold** — INR 30,000  _(ITA s 194C)_
+- **Aggregate annual threshold** — INR 1,00,000  _(ITA s 194C)_
+- **Rate** — Rate is 0.1%.New Section 393 applicable as per Income tax act 2025 from FY 2026-27  _(ITA s 194O)_
+- **Threshold (individual/HUF)** — INR 5,00,000 per annum per participant  _(ITA s 194O)_
+- **Who deducts** — E-commerce operator (platform)  _(ITA s 194O)_
+- **Rate without PAN** — 5% in case of section 194O and 194Q.(Section 206AA as per  ITA 1961 and section 393 as per new ITA 2025)  _(ITA s 206AA)_
+- **Professional services rate** — 10%  _(ITA s 194J; New Income Tax Act 2025 s 393 serial No 6(iii)(a))_
+- **Technical services rate** — 2%  _(ITA s 194J; New Income Tax Act 2025 s 393 serial No 6(iii)(b))_
+- **Threshold (s 194J)** — INR 50,000 per annum per payee  _(ITA s 194J)_
+- **Individual/HUF rate (s 194C)** — 1%  _(ITA s 194C; New Income Tax Act 2025 s 393 serial No 6(i))_
+- **Company/firm/AOP rate (s 194C)** — 2%  _(ITA s 194C; New Income Tax Act 2025 s 393 serial No 6(i))_
+- **Single payment threshold (s 194C)** — INR 30,000  _(ITA s 194C; New Income Tax Act 2025 s 393 serial No 6(i))_
+- **Aggregate annual threshold (s 194C)** — INR 1,00,000  _(ITA s 194C; New Income Tax Act 2025 s 393 serial No 6(i))_
+- **Rate (s 194O — E-commerce)** — 0.1%  _(ITA s 194O; New Income Tax Act 2025 s 393)_
+- **Threshold — individual/HUF (s 194O)** — INR 5,00,000 per annum per participant  _(ITA s 194O)_
+- **Who deducts (s 194O)** — E-commerce operator (platform)  _(ITA s 194O)_
+- **Rate without PAN (s 206AA)** — 5% in case of s 194O and s 194Q; otherwise higher of section rate, rate in force, or 20%  _(ITA s 206AA (ITA 1961); New Income Tax Act 2025 s 393)_
+- **194J professional without PAN** — 20% (vs normal 10%)  _(ITA s 206AA)_
+- **194C individual without PAN** — 20% (vs normal 1%)  _(ITA s 206AA)_
+
 ## Skill Metadata
 
 | Field | Value |
@@ -26,7 +57,7 @@ depends_on:
 | Filing Portal | https://www.incometax.gov.in (TRACES for TDS: https://www.tdscpc.gov.in) |
 | Contributor | Open Accountants Community |
 | Validated By | Pending -- requires sign-off by a Chartered Accountant (India) |
-| Validation Date | Pending |
+| Validation Date | Verified by Mayur Deokar (615638) on 2026-06-06 |
 | Skill Version | 1.0 |
 | Tax Year | FY 2025-26 (AY 2026-27) |
 | Confidence Coverage | Tier 1: TDS rates per section, threshold amounts, Form 26Q due dates, Form 16A timelines, 206AA rates, PAN requirements. Tier 2: classification of payment as 194J vs 194C, mixed contracts, lower deduction certificate process. Tier 3: NRI payments (Section 195), transfer pricing, international services, DTAA treaty benefits. |

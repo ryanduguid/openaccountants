@@ -13,6 +13,23 @@ verified_by: pending
 
 # UK Payments on Account (POA) -- Self Assessment Skill v3.0
 
+## Verified rates & thresholds (accountant-reviewed)
+
+> Reviewed against the cited tax authorities by **James Power** on 2026-06-03.
+> This block is generated from the verified facts database at openaccountants.com —
+> edit the facts there, not this prose. Items under clarification are excluded.
+
+### Payments on Account
+
+- **De minimis** — SA balance < £1,000 → no POA  _(TMA 1970 s.59A)_
+- **PAYE dominance** — >80% of total tax via PAYE → no POA  _(TMA 1970 s.59A)_
+- **1st POA** — 31 January in tax year (50% of prior year SA balance)  _(TMA 1970)_
+- **2nd POA** — 31 July after tax year (50%)  _(TMA 1970)_
+- **Balancing payment** — 31 January following tax year  _(TMA 1970)_
+- **Items** — Class 2 NIC, student loan, postgraduate loan, CGT, marriage allowance  _(TMA 1970)_
+- **Rate** — BoE base rate + 2.5%  _(TMA 1970 s.86)_
+- **Type** — Simple interest (not compound)  _(TMA 1970)_
+
 ## Section 1 -- Quick reference
 
 | Field | Value |
@@ -29,7 +46,7 @@ verified_by: pending
 | Excluded items | Class 2 NIC, student loan, postgraduate loan, CGT, marriage allowance |
 | Contributor | Open Accountants Community |
 | Validated by | Pending -- requires sign-off by UK-qualified accountant (ACA/ACCA/CTA) |
-| Validation date | Pending |
+| Validation date | Verified by James Power on 2026-06-03 |
 
 ### 1.1 Three-year comparison: variable elements
 

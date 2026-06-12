@@ -20,6 +20,35 @@ depends_on:
 
 ---
 
+## Verified rates & thresholds (accountant-reviewed)
+
+> Reviewed against the cited tax authorities by **Mayur Deokar** on 2026-06-06.
+> This block is generated from the verified facts database at openaccountants.com —
+> edit the facts there, not this prose. Items under clarification are excluded.
+
+### Payroll
+
+- **Rate** — 3.25% of gross  _(ESI Act)_
+- **Wage ceiling** — ₹21,000/month  _(ESI Act)_
+- **Up to ₹4,00,000** — 0%  _(s 115BAC)_
+- **₹4L – ₹8L** — 5%  _(s 115BAC)_
+- **₹8L – ₹12L** — 10%  _(s 115BAC)_
+- **₹12L – ₹16L** — 15%  _(s 115BAC)_
+- **₹16L – ₹20L** — 20%  _(s 115BAC)_
+- **₹20L – ₹24L** — 25%  _(s 115BAC)_
+- **Above ₹24L** — 30%  _(s 115BAC)_
+- **EPF** — 3.67% of Basic+DA  _(EPF Act)_
+- **EPS** — 8.33% (capped ₹15,000)  _(EPF Act)_
+- **EDLI** — 0.50% (capped ₹15,000)  _(EPF Act)_
+- **PF Admin** — 0.50%  _(EPFO)_
+- **Total employer PF** — ~13%  _(EPF Act)_
+- **Employer ESI Rate** — 3.25% of gross  _(ESI Act)_
+- **Employer ESI Wage ceiling** — ₹21,000/month  _(ESI Act)_
+- **TDS deposit** — 7th of following month (30th April for March)  _(ITA)_
+- **PF/ESI deposit** — 15th of following month  _(EPF/ESI Acts)_
+- **Form 24Q (TDS return)** — Last day of the month following the end of the quarter  _(ITA)_
+- **Form 16 (annual certificate)** — By 15 June  _(ITA)_
+
 ## Section 1 -- Quick Reference
 
 | Field | Value |

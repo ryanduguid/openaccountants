@@ -7,6 +7,19 @@ version: 2.0
 
 # US Schedule C and SE Computation Skill v2.0
 
+## Verified rates & thresholds (accountant-reviewed)
+
+> Reviewed against the cited tax authorities by **Amir Pelinkovic** on 2026-06-03.
+> This block is generated from the verified facts database at openaccountants.com —
+> edit the facts there, not this prose. Items under clarification are excluded.
+
+### Schedule C & SE
+
+- **SE rate** — 15.3% (12.4% OASDI + 2.9% Medicare) on net SE earnings  _(IRC 1401; Schedule SE.)_
+- **SS base** — 2025 Social Security wage base = $176,100  _(SSA 2025; IRS.)_
+- **Add'l Medicare** — 0.9% Additional Medicare Tax above $200,000 (Single)/$250,000 (MFJ)/$125,000 (MFS)  _(IRC 3101(b)(2); Form 8959.)_
+- **Deductible** — One-half of SE tax is deductible above the line  _(IRC 164(f); Schedule 1.)_
+
 ## Section 1 — Quick Reference
 
 ### Pipeline Position

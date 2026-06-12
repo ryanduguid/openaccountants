@@ -15,6 +15,32 @@ depends_on:
 
 ---
 
+## Verified rates & thresholds (accountant-reviewed)
+
+> Reviewed against the cited tax authorities by **Ariane Marrocos** on 2026-06-03.
+> This block is generated from the verified facts database at openaccountants.com —
+> edit the facts there, not this prose. Items under clarification are excluded.
+
+### Simples Nacional
+
+- **MEI** — R$ 81.000/ano (proposta de aumento pendente)  _(LC 123/2006 Art. 18-A)_
+- **Microempresa (ME)** — Considera-se Microempresa (ME), para fins da LC nº 123/2006, a pessoa jurídica com receita bruta anual igual ou inferior a R$ 360.000,00.  _(Lei Complementar nº 123/2006 – art. 3º, inciso I.)_
+- **EPP** — Considera-se Empresa de Pequeno Porte (EPP) a pessoa jurídica com receita bruta anual superior a R$ 360.000,00 e igual ou inferior a R$ 4.800.000,00, nos termos do art. 3º da LC nº 123/2006.  _(Lei Complementar nº 123/2006 – art. 3º, inciso II.)_
+- **Sublimite ICMS/ISS** — O sublimite de receita bruta de R$ 3.600.000, previsto na LC nº 123/2006, pode determinar o recolhimento do ICMS e/ou ISS fora do Simples Nacional em determinados Estados, sem excluir a empresa do regime simplificado.  _(Principal Lei Complementar nº 123/2006 Art. 19. Informou Art. 13 e ele trata dos tributos abrangidos pelo Simples Nacional. O tema sublimite estadual de ICMS/ISS está principalmente relacionado ao: Art. 19 da LC 123/2006.)_
+- **Comércio/Indústria** — R$ 81,50 (INSS) + R$ 1,00 (ICMS)  _(Lei Complementar nº 123/2006 – art. 18-A. Lei nº 8.212/1991.)_
+- **Serviços** — R$ 86,50 (INSS R$ 81,50 + ISS R$ 5,00).  _(Lei Complementar nº 123/2006 – art. 18-A. Lei nº 8.212/1991.)_
+- **Comércio + Serviços** — R$ 87,50 (INSS R$ 81,50 + ICMS R$ 1,00 + ISS R$ 5,00).  _(Lei Complementar nº 123/2006 – art. 18-A. Lei nº 8.212/1991.)_
+- **Anexo I** — Comércio, varejo  _(Resolução CGSN nº 140/2018.)_
+- **Anexo II** — Indústria, manufatura (inclui IPI)  _(Resolução CGSN nº 140/2018.)_
+- **Anexo III** — Anexo III – Prestação de serviços em geral, incluindo diversas atividades de manutenção, reparação, saúde, educação e serviços administrativos, conforme o CNAE e as regras da LC nº 123/2006.  _(Resolução CGSN nº 140/2018.)_
+- **Anexo IV** — Anexo IV – Serviços de limpeza, vigilância, segurança, construção civil e atividades correlatas, cuja Contribuição Patronal Previdenciária (CPP) não está incluída no DAS e deve ser recolhida separadamente.  _(Lei nº 8.212/1991.)_
+- **Anexo V (ou III via Fator R)** — Anexo V – Atividades intelectuais e profissionais, incluindo consultoria em TI e diversos serviços técnicos especializados, sujeitas à regra do Fator R. Quando o Fator R for igual ou superior a 28%, a tributação poderá ocorrer pelo Anexo III.  _(Resolução CGSN nº 140/2018.)_
+- **Fator R limiar** — Nas atividades sujeitas ao Fator R, quando a razão entre a folha de salários dos últimos 12 meses e a receita bruta dos últimos 12 meses for igual ou superior a 28%, a tributação ocorre pelo Anexo III; caso contrário, permanece no Anexo V.  _(Resolução CGSN nº 140/2018.)_
+- **DAS mensal** — O DAS do Simples Nacional deve ser recolhido até o dia 20 do mês subsequente ao da apuração da receita, prorrogando-se o vencimento para o primeiro dia útil seguinte quando não houver expediente bancário.  _(Lei Complementar nº 123/2006 – art. 21. Resolução CGSN nº 140/2018.)_
+- **DEFIS anual** — A DEFIS deve ser transmitida pelas empresas optantes pelo Simples Nacional até 31 de março do ano subsequente ao ano-calendário a que se refere a declaração.  _(Resolução CGSN nº 140/2018.)_
+- **DASN-SIMEI** — O Microempreendedor Individual (MEI) deve apresentar a DASN-SIMEI até 31 de maio do ano subsequente ao ano-calendário a que se referem as informações.  _(Resolução CGSN nº 140/2018.)_
+- **Regime híbrido art. 21-A** — O optante pelo Simples Nacional poderá optar pelo recolhimento da CBS e do IBS fora do DAS, nos termos do art. 21-A da LC nº 123/2006, permitindo ao adquirente o aproveitamento dos créditos desses tributos conforme o regime geral.  _(Lei Complementar nº 123/2006 – art. 21-A (incluído pela Reforma Tributária). Lei Complementar nº 214/2025. Emenda Constitucional nº 132/2023.)_
+
 ## Seção 1 — Referência rápida
 
 | Campo | Valor |
@@ -29,7 +55,7 @@ depends_on:
 | Portal de entrega | Portal do Simples Nacional (www8.receita.fazenda.gov.br/SimplesNacional) |
 | Prazo de entrega | DAS até o dia 20 do mês seguinte; DEFIS até 31 de março; DASN-SIMEI até 31 de maio |
 | Colaborador | Open Accountants Community |
-| Validação | Pendente — exige assinatura de contador brasileiro (registrado no CRC) |
+| Validação | Verificado por Ariane Marrocos (SP 312052/O-1) em 2026-06-03 |
 | Versão da skill | 2.1 |
 
 ### Limites de faturamento

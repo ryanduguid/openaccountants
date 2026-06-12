@@ -6,6 +6,19 @@ version: 0.2
 
 # US QBI Deduction Skill v0.2
 
+## Verified rates & thresholds (accountant-reviewed)
+
+> Reviewed against the cited tax authorities by **Amir Pelinkovic** on 2026-06-03.
+> This block is generated from the verified facts database at openaccountants.com —
+> edit the facts there, not this prose. Items under clarification are excluded.
+
+### QBI Deduction
+
+- **Rate 2025** — 20%  _(IRC 199A; OBBBA (made 199A permanent at 20%).)_
+- **Rate 2026+** — The QBI rate remains 20% in 2026 and beyond. OBBBA made 199A permanent at 20%; the proposed increase to 23% (House bill) did not become law.  _(IRC 199A; OBBBA (PL 119-21).)_
+- **Single** — 2025 threshold $197,300 (Single/other)  _(Rev. Proc. 2024-40.)_
+- **MFJ** — 2025 threshold $394,600 (MFJ)  _(Rev. Proc. 2024-40.)_
+
 ## What this file is, and what it is not
 
 **This file is a content skill that loads on top of `us-tax-workflow-base` v0.1.** It computes the §199A Qualified Business Income (QBI) deduction for sole proprietors and single-member LLCs (disregarded entities) for tax year 2025. It does not classify transactions (that is `us-sole-prop-bookkeeping`), compute Schedule C net profit or SE tax (that is `us-schedule-c-and-se-computation`), or compute retirement contributions or SE health insurance (those are companion skills whose outputs feed into this one).

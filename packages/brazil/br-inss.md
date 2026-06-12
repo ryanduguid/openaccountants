@@ -10,6 +10,32 @@ verified_by: pending
 
 # Brasil — INSS (Previdência Social) — Skill v2.1
 
+## Verified rates & thresholds (accountant-reviewed)
+
+> Reviewed against the cited tax authorities by **Ariane Marrocos** on 2026-06-03.
+> This block is generated from the verified facts database at openaccountants.com —
+> edit the facts there, not this prose. Items under clarification are excluded.
+
+### INSS Autônomo
+
+- **Salário mínimo** — R$ 1.630,00  _(Legislação federal do salário mínimo 2026)_
+- **Teto INSS** — R$ 8.475,55  _(Portaria Interministerial MPS/MF nº 13/2026.)_
+- **Plano Normal (20%)** — 20% da renda (mín. R$ 326,00 / máx. R$ 1.695,11) — GPS código 1007  _(Lei 8.212/1991 Art. 21)_
+- **Plano Simplificado (11%)** — 11% do salário mínimo = R$ 179,30 (fixo) — GPS código 1163  _(Lei 8.212/1991 Art. 21)_
+- **MEI (5%)** — 5% do salário mínimo = R$ 81,50 (fixo) — recolhido via DAS-MEI  _(Lei Complementar nº 123/2006 – Art. 18-A.)_
+- **Contribuição mínima (20%)** — R$ 326,00  _(Lei 8.212/1991 Art. 21)_
+- **Contribuição máxima (20%)** — R$ 1.695,11  _(Lei 8.212/1991 Art. 21)_
+- **1007** — Contribuinte individual — Normal (20%)  _(Lei 8.212/1991)_
+- **1163** — Contribuinte individual — Simplificado (11%)  _(Lei 8.212/1991)_
+- **1104** — Contribuinte Individual – Prestador de serviços a pessoa jurídica (com retenção previdenciária). Observação: o percentual efetivamente retido pode variar conforme a situação e a legislação previdenciária aplicável.  _(Lei 8.212/1991)_
+- **1295** — Complementação (de 11% para 20% retroativa)  _(Lei 8.212/1991)_
+- **Vencimento GPS** — Dia 15 do mês seguinte  _(Lei 8.212/1991)_
+- **Multa por atraso** — 0,33% ao dia (limitada a 20%) + SELIC acumulada e 1% no mês do pagamento  _(Lei 8.212/1991; Lei 9.430/1996)_
+- **Cobrança retroativa** — Até 5 anos  _(CTN Arts. 173 e 174)_
+- **Duplo vínculo CLT+autônomo** — Total limitado ao teto; se CLT atinge o teto, sem GPS adicional  _(Lei 8.212/1991)_
+- **Mês sem renda** — Sem contribuição obrigatória; pode recolher como facultativo  _(Lei nº 8.212/1991 Lei nº 8.213/1991)_
+- **Plano 11% → aposentadoria por tempo** — Não conta para benefícios que exijam contribuição integral, salvo complementação para 20%  _(Lei 8.212/1991)_
+
 ## Seção 1 — Referência rápida
 
 | Campo | Valor |
@@ -30,8 +56,8 @@ verified_by: pending
 | Vencimento da GPS | Dia 15 do mês seguinte |
 | Moeda | Apenas BRL |
 | Contribuidor | Open Accountants |
-| Validado por | Pendente — requer validação por contador brasileiro |
-| Data de validação | Pendente |
+| Validado por | Verificado por Ariane Marrocos (SP 312052/O-1) em 2026-06-03 |
+| Data de validação | Verificado por Ariane Marrocos (SP 312052/O-1) em 2026-06-03 |
 
 A Reforma Tributária 2026 (EC 132/2023, LC 214/2025) reforma apenas tributos sobre consumo (PIS, Cofins, ICMS, ISS, IPI → CBS+IBS). **O INSS não é afetado** — alíquotas e regras permanecem.
 

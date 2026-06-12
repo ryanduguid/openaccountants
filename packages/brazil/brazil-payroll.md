@@ -26,6 +26,47 @@ depends_on:
 
 ---
 
+## Verified rates & thresholds (accountant-reviewed)
+
+> Reviewed against the cited tax authorities by **Ariane Marrocos** on 2026-06-03.
+> This block is generated from the verified facts database at openaccountants.com —
+> edit the facts there, not this prose. Items under clarification are excluded.
+
+### Folha de Pagamento
+
+- **2025** — R$ 1.518,00/mês  _(Decreto nº 12.342/2024)_
+- **2026** — R$ 1.630,00/mês  _(Decreto Federal do Salário Mínimo 2026)_
+- **R$ 2.428,80** — Isento  _(Lei nº 11.482/2007)_
+- **De R$ 2.428,81 a R$ 2.826,65** — 7,5% - parcela R$ 182,16  _(Lei nº 11.482/2007)_
+- **R$ 2.826,66 – R$ 3.751,05** — 15% - parcela R$ 394,16  _(Lei nº 11.482/2007)_
+- **R$ 3.751,06 – R$ 4.664,68** — 22,5% - parcela R$ 675,49  _(Lei nº 11.482/2007)_
+- **Acima de R$ 4.664,68** — 27,5% - parcela R$ 908,73  _(Lei nº 11.482/2007)_
+- **Dedução por dependente** — R$ 189,59/mês  _(Lei nº 9.250/1995)_
+- **Até R$ 1.621,00** — Até R$ 1.630,00  _(Lei nº 8.212/1991 Portaria Interministerial MPS/MF nº 13/2026)_
+- **R$ 1.621,01 – R$ 2.902,84** — R$ 1.630,01 – R$ 2.902,84  _(Lei nº 8.212/1991 Portaria Interministerial MPS/MF nº 13/2026)_
+- **R$ 2.902,85 – R$ 4.354,27** — 12%  _(Lei nº 8.212/1991 Portaria Interministerial MPS/MF nº 13/2026)_
+- **R$ 4.354,28 – R$ 8.475,55 (teto)** — 14%  _(Lei nº 8.212/1991 Portaria Interministerial MPS/MF nº 13/2026)_
+- **INSS patronal básico** — 20% da folha total (sem teto)  _(Lei 8.212/1991)_
+- **RAT/SAT** — 1%, 2% ou 3% (conforme CNAE)  _(Lei 8.212/1991)_
+- **Ajuste FAP** — 0,5× a 2,0× sobre o RAT  _(Lei 10.666/2003)_
+- **Terceiros** — ~5,8% (SENAI, SESI, SEBRAE, etc.)  _(Leis específicas)_
+- **Total típico INSS patronal** — ~26,8% – 28,8%  _(Lei 8.212/1991)_
+- **Alíquota FGTS** — 8% do bruto mensal (empregador)  _(Lei 8.036/1990)_
+- **Prazo depósito** — Até dia 20 do mês seguinte (FGTS Digital)  _(Lei 8.036/1990)_
+- **Multa rescisória (sem justa causa)** — 40% do saldo total do FGTS  _(Lei 8.036/1990)_
+- **Estimativa acima do bruto** — ~60-70% (INSS+FGTS+13º+férias+encargos)  _(Consolidado)_
+- **Jornada semanal padrão** — 44 horas  _(CLT Art. 58)_
+- **Hora extra (dias úteis)** — Mínimo 50%  _(CF/88 Art. 7º XVI)_
+- **Hora extra (domingos/feriados)** — Geralmente 100%, conforme legislação e convenção coletiva  _(Lei 605/1949)_
+- **Adicional noturno (22h-5h)** — Mínimo 20%  _(CLT Art. 73)_
+- **Insalubridade** — 10%, 20% ou 40% do salário mínimo  _(CLT Art. 192)_
+- **Periculosidade** — 30% do salário-base  _(CLT Art. 193)_
+- **13º salário** — 1 salário integral (duas parcelas)  _(Lei 4.090/1962)_
+- **Férias** — 30 dias + 1/3 constitucional  _(CF Art. 7º XVII; CLT)_
+- **Vale-transporte** — Empregado contribui com até 6% do salário básico; empregador paga o excedente.  _(Lei 7.418/1985)_
+- **Licença-maternidade** — 120 dias (180 dias no Programa Empresa Cidadã)  _(CF Art. 7º XVIII)_
+- **Licença-paternidade** — 5 dias (20 dias no Programa Empresa Cidadã)  _(ADCT Art. 10 §1º)_
+
 ## Seção 1 — Referência Rápida
 
 | Campo | Valor |

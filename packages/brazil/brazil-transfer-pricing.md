@@ -16,6 +16,33 @@ depends_on:
 
 ---
 
+## Verified rates & thresholds (accountant-reviewed)
+
+> Reviewed against the cited tax authorities by **Ariane Marrocos** on 2026-06-03.
+> This block is generated from the verified facts database at openaccountants.com —
+> edit the facts there, not this prose. Items under clarification are excluded.
+
+### Preços de Transferência
+
+- **Legislação principal** — Lei 14.596/2023 + IN RFB 2.161/2023  _(Lei 14.596/2023)_
+- **Vigência** — Obrigatório desde 1º de janeiro de 2024  _(Lei 14.596/2023)_
+- **Regime anterior** — Regras das Leis 9.430/1996 e 9.959/2000 substituídas pela Lei 14.596/2023.  _(Lei 14.596/2023)_
+- **Brasil na OECD** — Brasil em processo de adesão à OCDE; regime de Preços de Transferência alinhado às diretrizes da OCDE desde 2024.  _(Organisation for Economic Co-operation and Development Lei nº 14.596/2023)_
+- **Master File** — Obrigatório para contribuintes no escopo; entrega 3 meses após ECF  _(IN RFB 2.161/2023)_
+- **Local File** — Obrigatório; português; 3 meses após ECF  _(IN RFB 2.161/2023)_
+- **CbCR** — Receita consolidada ≥ R$ 2,4 bilhões  _(IN RFB 2.161/2023)_
+- **ECF (dados de TP)** — Julho do ano seguinte  _(Instrução Normativa RFB nº 2.004/2021)_
+- **Prazo especial 2024** — 31 de dezembro de 2025  _(IN RFB 2.161/2023)_
+- **PIC (CUP)** — Sim  _(Lei 14.596/2023 Art. 12)_
+- **PRL (Resale Price)** — Sim  _(Lei 14.596/2023)_
+- **MCL (Cost Plus)** — Sim  _(Lei 14.596/2023)_
+- **MLT/TNMM** — Sim  _(Lei 14.596/2023)_
+- **MDL (Profit Split)** — Sim  _(Lei 14.596/2023)_
+- **Atraso Master/Local File** — Multas específicas por atraso, omissão ou incorreção; inclui multa de 0,2% por mês-calendário ou fração em determinadas hipóteses  _(Lei 14.596/2023)_
+- **Documentação inexata** — 3% da receita; mín R$ 20.000; máx R$ 5.000.000  _(Lei 14.596/2023)_
+- **Atraso ECF** — Multa de R$ 1.500 por mês-calendário ou fração (PJ).  _(Lei 8.218/1991; IN RFB 2.004/2021)_
+- **Ajuste de TP pela RFB** — Tributo devido + SELIC + multa de 75% (ou 150% em caso de fraude).  _(Lei 14.596/2023; Lei 9.430/1996)_
+
 ## Seção 1 — Referência Rápida
 
 | Campo | Valor |

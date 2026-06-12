@@ -15,6 +15,42 @@ This skill covers employer payroll obligations under Illinois law for tax year 2
 
 The reviewer-oriented output for this skill is a payroll memo identifying every Illinois-specific obligation triggered by the employer's headcount, location, industry, and worker classification, with the dollar amounts and filing deadlines for each obligation in the 2025 plan year.
 
+## Verified rates & thresholds (accountant-reviewed)
+
+> Reviewed against the cited tax authorities by **Amir Pelinkovic** on 2026-06-03.
+> This block is generated from the verified facts database at openaccountants.com —
+> edit the facts there, not this prose. Items under clarification are excluded.
+
+### IL Payroll
+
+- **IL PIT flat rate** — 4.95% on all wages  _(35 ILCS 5/201; Booklet IL-700-T.)_
+- **Personal exemption (payroll)** — $2,850 for 2025 (the 2025 IL-700-T withholding allowance reflects $2,850; $2,775 was 2024)  _(IDOR FY2025-16; 2025 Booklet IL-700-T.)_
+- **Supplemental wage rate** — IL withholds 4.95% on all wages, including supplemental pay (no separate supplemental rate)  _(Booklet IL-700-T; 86 Ill. Admin. Code 100.7110.)_
+- **Annual (≤ $1,000 prior year)** — IL has no 'annual' withholding payment schedule. Illinois has only two payment schedules - monthly and semi-weekly. IL-941 is filed quarterly. ($1,000 is not an IL withholding deposit threshold.)  _(IDOR Pub-131; 2025 IL-941 instr.)_
+- **Quarterly ($1,001–$12,000)** — No 'quarterly' payment schedule exists. Employers whose look-back withholding was <= $12,000 are MONTHLY payers (Form IL-501 by the 15th of the following month) and file IL-941 quarterly.  _(IDOR Pub-131; 2025 IL-941 instr.)_
+- **Monthly (> $12,000)** — Threshold reversed: monthly applies when look-back withholding is <= $12,000 (not > $12,000). Monthly payers remit by the 15th of the following month (that due date is correct).  _(IDOR Pub-131; 2025 IL-941 instr.)_
+- **Semi-weekly (> $12,000 + $50K+/qtr)** — The semi-weekly schedule is triggered solely by look-back withholding > $12,000; there is no '$50,000/quarter' condition (that is a federal rule). The Wed/Fri remittance mechanics shown are correct.  _(IDOR Pub-131; 2025 IL-941 instr.)_
+- **IL-941 due date** — IL-941 is due the LAST DAY of the month following the quarter: April 30, July 31, October 31, January 31.  _(2025 IL-941 instr.)_
+- **W-2 e-file deadline** — W-2/W-2c/W-2G must be e-filed to IL by January 31 (waiver via IL-900-EW)  _(2025 IL-941 instr.; IDOR Pub-110.)_
+- **1099 e-file deadline** — IL requires required 1099 types to be filed electronically; March 31 aligns with the federal e-file date for most 1099s, but Form 1099-NEC is due January 31.  _(IDOR Pub-110.)_
+- **UI taxable wage base** — 2025 IL UI taxable wage base = $13,916 ($13,590 was 2024; 2026 = $14,250)  _(IDES 2025 EA-50 / Historical Rate Chart.)_
+- **UI min rate** — 2025 minimum UI rate = 0.750% (0.85% was 2024)  _(IDES 2025 Historical Rate Chart.)_
+- **UI max rate** — 2025 maximum UI rate = 7.850% (8.65% was 2024)  _(IDES 2025 Historical Rate Chart.)_
+- **New employer — non-construction** — 2025 standard new-employer rate = 3.65% (3.95% was 2024); 3.75% for NAICS sectors 56/99  _(IDES 2025 Historical Rate Chart; Bloomberg Tax 12/2024.)_
+- **New employer — construction** — No 2025 construction-specific new-employer rate of 6.45%; the standard 3.65% applies (2025 chart shows construction at the standard rate).  _(IDES 2025 Historical Rate Chart.)_
+- **Fund Building Rate** — 2025 Fund Building Rate = 0.550%  _(IDES 2025 Historical Rate Chart.)_
+- **State Experience Factor** — 2025 State Experience Factor = 114% (109% is not a recent IL figure; 2024 = 126%, 2023 = 127%)  _(IDES 2025 Historical Rate Chart.)_
+- **Trigger** — Coverage applies to Illinois employers with at least 5 employees, in business 2+ years, with no qualified retirement plan. IDOR measures the count by averaging, across all four quarters of the tax year, the number of employees showing non-zero Illinois tax withheld on Schedule P (filed with Form IL-941), not a literal "5+ in every quarter" test.  _(820 ILCS 80/; IDOR Q&A 924; IDOR Informational Bulletin FY2023-09.)_
+- **Default deferral** — 5% auto-enroll default (auto-escalates 1%/yr to a 10% cap)  _(820 ILCS 80/; program rules.)_
+- **Penalty — Year 1** — $250 per employee, first year of noncompliance  _(820 ILCS 80/85.)_
+- **Penalty — Year 2+** — $500 per employee, each subsequent year  _(820 ILCS 80/85.)_
+- **PLAWA (statewide paid leave)** — Up to 40 hours paid leave per 12-month period (1 hr per 40 worked)  _(820 ILCS 192/; IDOL.)_
+- **Chicago paid leave + sick** — Chicago = 40 hrs paid leave + 40 hrs paid sick = 80 hrs combined (separate banks)  _(Chicago Paid Leave & Paid Sick and Safe Leave Ordinance.)_
+- **Pay frequency** — IWPCA requires at least semi-monthly pay (executive/admin/professional may be monthly)  _(820 ILCS 115/3.)_
+- **Final pay** — Final compensation due no later than the next regularly scheduled payday  _(820 ILCS 115/5.)_
+- **Meal break** — ODRISA: 20-minute meal period for shifts of 7.5+ continuous hours, no later than 5 hours in  _(820 ILCS 140/3.)_
+- **Worker classification test** — IL UI uses the ABC test - all three prongs (A, B, C) must be met for independent-contractor status  _(820 ILCS 405/212.)_
+
 ## 1. Scope
 
 ### 1.1 In scope

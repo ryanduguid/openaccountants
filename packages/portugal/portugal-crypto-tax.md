@@ -15,6 +15,26 @@ verified_by: pending
 
 ---
 
+## Verified rates & thresholds (accountant-reviewed)
+
+> Reviewed against the cited tax authorities by **Mário Jorge da costa Vale** on 2026-06-04.
+> This block is generated from the verified facts database at openaccountants.com —
+> edit the facts there, not this prose. Items under clarification are excluded.
+
+### Cripto
+
+- **Detido < 365 dias** — 28% taxa autónoma (ou englobamento)  _(CIRS Art. 10.º)_
+- **Detido ≥ 365 dias** — ISENTO de IRS  _(CIRS Art. 10.º n.º 17)_
+- **Cripto-para-cripto (swap)** — NÃO é evento tributável  _(CIRS)_
+- **Taxa autónoma padrão** — 28%  _(CIRS Art. 72.º)_
+- **Jurisdição na lista negra** — 35%  _(Portaria 150/2004)_
+- **Englobamento** — 12,5% a 48% (progressivo)  _(CIRS Art. 22.º e 68º)_
+- **Recebidos em fiat** — 28% no ano de recebimento  _(CIRS Cat. E)_
+- **Recebidos em cripto** — Não tributável até conversão em fiat  _(CIRS Cat. E)_
+- **Mineração habitual** — Cat. B — taxas progressivas  _(CIRS Cat. B)_
+- **Método obrigatório** — FIFO  _(CIRS Art. 44.º/48.º)_
+- **Regime simplificado** — Coeficiente 0,95 (campo 422 Anexo B)  _(CIRS Art. 31.º)_
+
 ## Secção 1 — Referência Rápida
 
 | Campo | Valor |
@@ -29,7 +49,7 @@ verified_by: pending
 | Portal de submissão | Portal das Finanças (portaldasfinancas.gov.pt) |
 | Prazo de entrega | 1 de abril – 30 de junho do ano seguinte |
 | Reporte UE | DAC8 — plataformas cripto reportam a partir de 2026; plataformas registadas em Portugal já reportam desde 2024 (até 31 de janeiro anualmente) |
-| Validado por | Pendente — requer validação por contabilista certificado ou advogado tributarista português |
+| Validado por | Verificado por Mário Jorge da costa Vale (CA - 85883) em 2026-06-04 |
 | Versão da skill | 1.1 |
 
 ### A Exclusão dos 365 Dias — A Regra Central de Portugal

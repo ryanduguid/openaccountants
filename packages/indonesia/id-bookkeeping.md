@@ -39,6 +39,34 @@ verified_by: pending
 
 ---
 
+## Verified rates & thresholds (accountant-reviewed)
+
+> Reviewed against the cited tax authorities by **RILIA PUTRI** on 2026-06-03.
+> This block is generated from the verified facts database at openaccountants.com —
+> edit the facts there, not this prose. Items under clarification are excluded.
+
+### Bookkeeping
+
+- **Badan (all corporations)** — Full pembukuan mandatory  _(UU KUP Art. 28(1))_
+- **OP turnover > IDR 4.8B** — Full pembukuan mandatory  _(UU KUP Art. 28(2))_
+- **OP turnover ≤ IDR 4.8B** — Individual taxpayers with annual gross turnover not exceeding IDR 4.8 billion may maintain records (pencatatan) and elect NPPN treatment by submitting notification to DJP within the prescribed period. Taxpayers meeting UMKM Final eligibility requirements may alternatively apply the final income tax regime under prevailing regulations.  _(UU PPh Art. 14(2) as amended by UU HPP No. 7/2021; PER-17/PJ/2015; PP 55/2022 as amended by PP 20/2026.)_
+- **Record retention** — 10 years from end of tax year  _(UU KUP Art. 28(11))_
+- **Language & currency** — Bahasa Indonesia and IDR; bilingual/forex requires DJP approval  _(UU KUP Art. 28(4) as amended by UU HPP No. 7/2021.; PMK 81/2024)_
+- **Cash vs accrual** — Elected at start; must be consistent; change requires DJP approval  _(UU KUP Art. 28(5))_
+- **Inventory valuation** — FIFO or Weighted Average only; LIFO prohibited  _(UU PPh Art. 10(6)  as amended by UU HPP No. 7/2021.)_
+- **Retail trade** — Retail-trading NPPN coefficients generally range around 20%–35% depending on detailed KLU classification and region category  _(UU PPh Art. 14(2); PER-17/PJ/2015 Full NPPN coefficient table (3,477 KLU) provided in separate attachment: TER_NPPN_Attachment_Indonesia.xlsx — Sheet 'NPPN Coefficients'. Source: Lampiran PER-17/PJ/2015. Three rate columns apply: (1) Ibukota Provinsi, (2) Ibukota Daerah Provinsi Lainnya, (3) Daerah Lainnya)_
+- **Restaurants / food service** — Restaurant and food-service NPPN coefficients generally range around 20%–30% depending on activity classification and region  _(UU PPh Art. 14(2); PER-17/PJ/2015 Full NPPN coefficient table (3,477 KLU) provided in separate attachment: TER_NPPN_Attachment_Indonesia.xlsx — Sheet 'NPPN Coefficients'. Source: Lampiran PER-17/PJ/2015. Three rate columns apply: (1) Ibukota Provinsi, (2) Ibukota Daerah Provinsi Lainnya, (3) Daerah Lainnya)_
+- **Professional services** — Professional-service activities generally subject to NPPN coefficients around 45%–50% depending on profession type  _(UU PPh Art. 14(2); PER-17/PJ/2015 Full NPPN coefficient table (3,477 KLU) provided in separate attachment: TER_NPPN_Attachment_Indonesia.xlsx — Sheet 'NPPN Coefficients'. Source: Lampiran PER-17/PJ/2015. Three rate columns apply: (1) Ibukota Provinsi, (2) Ibukota Daerah Provinsi Lainnya, (3) Daerah Lainnya)_
+- **Software / IT freelance** — Certain IT consulting and software freelance activities generally follow professional-service NPPN classifications around 50%  _(UU PPh Art. 14(2); PER-17/PJ/2015 Full NPPN coefficient table (3,477 KLU) provided in separate attachment: TER_NPPN_Attachment_Indonesia.xlsx — Sheet 'NPPN Coefficients'. Source: Lampiran PER-17/PJ/2015. Three rate columns apply: (1) Ibukota Provinsi, (2) Ibukota Daerah Provinsi Lainnya, (3) Daerah Lainnya)_
+- **Doctor / medical practice** — Medical professional services generally subject to NPPN coefficients around 50%  _(UU PPh Art. 14(2); PER-17/PJ/2015 Full NPPN coefficient table (3,477 KLU) provided in separate attachment: TER_NPPN_Attachment_Indonesia.xlsx — Sheet 'NPPN Coefficients'. Source: Lampiran PER-17/PJ/2015. Three rate columns apply: (1) Ibukota Provinsi, (2) Ibukota Daerah Provinsi Lainnya, (3) Daerah Lainnya)_
+- **Lawyer / notary** — Legal and notarial services generally subject to NPPN coefficients around 50%  _(UU PPh Art. 14(2); PER-17/PJ/2015 Full NPPN coefficient table (3,477 KLU) provided in separate attachment: TER_NPPN_Attachment_Indonesia.xlsx — Sheet 'NPPN Coefficients'. Source: Lampiran PER-17/PJ/2015. Three rate columns apply: (1) Ibukota Provinsi, (2) Ibukota Daerah Provinsi Lainnya, (3) Daerah Lainnya)_
+- **Construction** — ~20–25%  _(KEP-536/PJ./2000 — TBC)_
+- **Agriculture / fisheries** — Agriculture and fisheries activities generally subject to NPPN coefficients around 10%–20% depending on commodity and activity classification  _(UU PPh Art. 14(2); PER-17/PJ/2015 Full NPPN coefficient table (3,477 KLU) provided in separate attachment: TER_NPPN_Attachment_Indonesia.xlsx — Sheet 'NPPN Coefficients'. Source: Lampiran PER-17/PJ/2015. Three rate columns apply: (1) Ibukota Provinsi, (2) Ibukota Daerah Provinsi Lainnya, (3) Daerah Lainnya)_
+- **Manufacturing — garments** — Garment manufacturing activities generally subject to NPPN coefficients around 12.5%–15% depending on manufacturing classification and region  _(UU PPh Art. 14(2); PER-17/PJ/2015 Full NPPN coefficient table (3,477 KLU) provided in separate attachment: TER_NPPN_Attachment_Indonesia.xlsx — Sheet 'NPPN Coefficients'. Source: Lampiran PER-17/PJ/2015. Three rate columns apply: (1) Ibukota Provinsi, (2) Ibukota Daerah Provinsi Lainnya, (3) Daerah Lainnya)_
+- **Pembukuan → NPPN** — Changes between bookkeeping and deemed-profit recording methods must follow consistency requirements and generally require DJP approval under prevailing tax regulations.  _(UU KUP Art. 28(5) as amended by UU HPP; PMK 81/2024.)_
+- **NPPN → Pembukuan** — Individual taxpayers previously using NPPN may transition to full bookkeeping starting from the following tax year in accordance with prevailing tax administration rules.  _(UU PPh Art. 14; PER-17/PJ/2015.)_
+- **Either → PP 55 final tax** — Application of the UMKM Final income tax regime (0.5%) is subject to taxpayer eligibility requirements, turnover thresholds, and exclusion criteria under prevailing regulations. Eligibility provisions were significantly amended by PP 20/2026.  _(UU PPh Art. 4(2) as amended by UU HPP; PP 55/2022 Arts. 56–58 as amended by PP 20/2026; PMK 164/PMK.03/2023.)_
+
 ## Section 1 -- Quick Reference
 
 | Field | Value |

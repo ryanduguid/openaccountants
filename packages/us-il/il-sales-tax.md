@@ -15,6 +15,33 @@ depends_on:
 
 # Illinois Sales Tax (Form ST-1) v1.0
 
+## Verified rates & thresholds (accountant-reviewed)
+
+> Reviewed against the cited tax authorities by **Amir Pelinkovic** on 2026-06-03.
+> This block is generated from the verified facts database at openaccountants.com —
+> edit the facts there, not this prose. Items under clarification are excluded.
+
+### IL Sales Tax
+
+- **ROT rate — general merchandise** — 6.25% state (general merchandise)  _(35 ILCS 120/2-10; IDOR PIO-101.)_
+- **ROT rate — qualifying food/drugs/medical** — 1.0% state rate for qualifying food/drugs/medical in 2025; the statewide 1% grocery tax is eliminated effective 1/1/2026 (localities may re-impose).  _(35 ILCS 120/2-10; IDOR PIO-115; PA 103-0781.)_
+- **UT rate — general** — 6.25%  _(35 ILCS 105/3-10.)_
+- **SOT rate — general** — 6.25%  _(35 ILCS 110/3-10.)_
+- **SUT rate — general** — 6.25%  _(35 ILCS 115/3-10.)_
+- **SOT tax base** — General SOT base = selling price of TPP transferred (if separately stated) or 50% of the entire bill if not separately stated; never less than cost. 'Cost price' applies only to de minimis servicepersons (cost-of-TPP < 35%, or < 75% pharmacy/graphic arts).  _(86 Ill. Admin. Code 140.106; IDOR Pub-113.)_
+- **Chicago — general** — 10.25% combined (state 6.25 + county/RTA/city)  _(IDOR MyTax IL Rate Finder.)_
+- **Springfield — general** — Springfield combined rate is ~9.75% (6.25 state + 1.00 county + 2.50 city/home-rule); 8.75% is outdated. Confirm exact rate via MyTax IL Rate Finder.  _(IDOR MyTax IL Tax Rate Finder.)_
+- **Champaign — general** — Component math supports 9.00% (6.25 + 1.25 county + 1.50 city); some third-party sources show 9.25% after recent local changes. Confirm via MyTax IL Rate Finder.  _(IDOR MyTax IL Rate Finder.)_
+- **Monthly tier** — Monthly filers (avg > $200/mo tax) file ST-1 by the 20th of the following month  _(86 Ill. Admin. Code 130.502; ST-1 instr.)_
+- **Quarterly tier** — Quarterly if avg <= $200/mo; due the 20th after quarter end  _(ST-1 instr.)_
+- **Annual tier** — Annual if avg < $50/mo; due January 20  _(ST-1 instr.)_
+- **Vendor discount rate** — 1.75% of tax timely remitted (min $5/yr); capped at $1,000/month effective 1/1/2025  _(35 ILCS 120/3; PA 103-0592; ST-1 instr.)_
+- **Applies to** — The discount is computed on TOTAL ST-1 tax due (Line 9, which includes locally imposed ROT), not the state portion only. ST-1 Step 4 applies 1.75% to Line 9, subject to the $1,000/month cap.  _(ST-1 instr. (R-01/26), Step 4; 35 ILCS 120/3.)_
+- **Late filing** — Discount forfeited if the return is filed or tax paid late  _(35 ILCS 120/3; IDOR guidance.)_
+- **Sourcing** — IL sourcing is hybrid, not purely origin-based. In-state retailers shipping from IL inventory use origin; remote retailers and marketplace facilitators meeting $100,000/200-transaction nexus source to destination; effective 1/1/2026 IL expands destination-based ROT for in-state sellers shipping from out of state.  _(IDOR Pub-113; FY 2026-12; Leveling the Playing Field Act.)_
+- **Qualifying food** — Qualifying food excludes prepared food, candy, soft drinks, and alcohol (general rate)  _(86 Ill. Admin. Code 130.310; IDOR PIO-115.)_
+- **E-filing** — IL generally mandates electronic ST-1 filing for most retailers (waiver via Form IL-900-EW). The $200 figure is the monthly-vs-quarterly filing-frequency threshold, not an e-file trigger.  _(ST-1 instr.; 86 Ill. Admin. Code 130.)_
+
 ## What this file is
 
 **Obligation category:** CT (Consumption Tax)

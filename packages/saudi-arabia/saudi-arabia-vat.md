@@ -9,6 +9,24 @@ verified_by: pending
 
 # Saudi Arabia VAT Return Skill v2.0
 
+## Verified rates & thresholds (accountant-reviewed)
+
+> Reviewed against the cited tax authorities by **Mehran Habib** on 2026-06-06.
+> This block is generated from the verified facts database at openaccountants.com —
+> edit the facts there, not this prose. Items under clarification are excluded.
+
+### VAT
+
+- **Standard rate** — 15% (from 1 Jul 2020; was 5%)  _(VAT Law + Transitional Provisions; Guide to Transitional Provisions for Value Added Tax - 1 July 2020)_
+- **Zero-rated** — 0% — exports, intl transport, qualifying medicines and medical equipments, investment metals 99%  _(VAT Implementing Regs; Chapter six - Article 29 & 30 (ZATCA VAT Implementing Regulations))_
+- **Exempt** — Financial services (margin-based), residential rental, life insurance  _(VAT Implementing Regs; Chapter five - Article 29 & 30 (ZATCA VAT Implementing Regulations))_
+- **Mandatory threshold** — SAR 375,000 annual taxable supplies  _(VAT Implementing Regs; Chapter two - Article 3 (ZATCA VAT Implementing Regulations) + ZATCA VAT Guidelines 7.1.1)_
+- **Voluntary threshold** — SAR 187,500  _(VAT Implementing Regs; Chapter two - Article 7 (ZATCA VAT Implementing Regulations) + ZATCA VAT Guidelines 7.2.1 & 7.2.2)_
+- **TIN format** — 15-digit starting and ending with 3  _(ZATCA E-Invoicing Technical Guideline; E-Invoicing detailed technical guidelines 3.3.3.1)_
+- **Monthly filing** — Turnover > SAR 40,000,000  _(VAT Implementing Regs; Chapter ten - Article 58 (1) - Tax Period (ZATCA VAT Implementing Regulation))_
+- **Quarterly filing** — Turnover ≤ SAR 40,000,000  _(VAT Implementing Regs; Chapter ten - Article 58 (2) - Tax Period (ZATCA VAT Implementing Regulation))_
+- **Deadline** — Last day of month following period end  _(VAT Implementing Regs; Chapter ten - Article 62 (1) - Tax Period (ZATCA VAT Implementing Regulation))_
+
 ## Section 1 — Quick reference
 
 **Read this whole section before classifying anything. The workflow runbook is in `vat-workflow-base` Section 1 — follow that runbook with this skill providing the country-specific content.**

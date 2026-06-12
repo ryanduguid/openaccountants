@@ -17,6 +17,37 @@ depends_on:
 
 ---
 
+## Verified rates & thresholds (accountant-reviewed)
+
+> Reviewed against the cited tax authorities by **Ashish Bista** on 2026-06-06.
+> This block is generated from the verified facts database at openaccountants.com —
+> edit the facts there, not this prose. Items under clarification are excluded.
+
+### Income Tax (Individuals)
+
+- **First 500,000 — 1% (Social Security Tax) slab** — First 1,000,000 at 1%  _(Finance Act 2083)_
+- **Next 200,000 (500,001–700,000) at 10% slab** — Next 500,000 (1,000,001–1,500,000) at 10%  _(Finance Act 2083)_
+- **Next 300,000 (700,001–1,000,000) at 20% slab** — Next 1,000,000 (1,500,001–2,500,000) at 20%  _(Finance Act 2083)_
+- **Next 1,000,000 (1,000,001–2,000,000) at 30% slab** — Next 1,500,000 (2,500,001–4,000,000) at 27%  _(Finance Act 2083)_
+- **Next 3,000,000 (2,000,001–5,000,000) at 36% slab** — Above 4,000,000 at 29%  _(Finance Act 2083)_
+- **Above 5,000,000 at 39% slab** — N/A — Top tier is now above NPR 4,000,000 at 29%; 39% rate eliminated.  _(Finance Act 2083)_
+- **Resident individual — couple: First band at 1% threshold** — NPR 1,000,000 (uniform for all — separate couple slab structure removed)  _(Finance Act 2083)_
+- **Resident individual — couple: Remaining bands** — Same as single: 10 / 20 / 27 / 29% — couple slabs eliminated; uniform rates apply.  _(Finance Act 2083)_
+- **1% first-band SST — deposit account** — Deposited to separate IRD revenue account (code 11211)  _(IRD revenue codes (PKF/khatapana))_
+- **SST exemptions** — Does NOT apply to sole proprietors, pension income, contribution-based pension fund income, or SSF contributors  _(PKF; Baker Tilly)_
+- **Slabs unchanged from fiscal year reference** — FY 2083/84 (2026/27)  _(Finance Act 2083)_
+- **Income year / fiscal year period** — Shrawan 1 – Ashad end (BS); FY 2083/84 ≈ mid-Jul 2026 – mid-Jul 2027  _(Income Tax Act 2058)_
+- **Annual return / instalment due dates** — Advance tax instalments due: Poush end, Chaitra end, Ashad end; final annual return due: Ashwin end  _(Income Tax Act 2058 s. 94 & 96)_
+- **Residency test** — 183 days or more in Nepal in any 365-day period  _(Income Tax Act 2058 s. 2(q))_
+
+### _map
+
+- **Income Tax (Individuals)** — nepal-income-tax | 1.0
+- **Corporate Income Tax** — nepal-corporate-tax | 1.0
+- **TDS (Withholding)** — nepal-tds | 1.0
+- **Payroll (Salary TDS + SSF)** — nepal-payroll | 1.0
+- **VAT (IRD Return)** — nepal-vat | 2.1
+
 ## Section 1 — Quick reference
 
 | Field | Value |

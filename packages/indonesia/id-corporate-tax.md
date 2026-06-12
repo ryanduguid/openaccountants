@@ -19,6 +19,46 @@ verified_by: pending
 
 ---
 
+## Verified rates & thresholds (accountant-reviewed)
+
+> Reviewed against the cited tax authorities by **RILIA PUTRI** on 2026-06-03.
+> This block is generated from the verified facts database at openaccountants.com —
+> edit the facts there, not this prose. Items under clarification are excluded.
+
+### Corporate Tax (PPh Badan)
+
+- **CIT rate** — 22% of Penghasilan Kena Pajak  _(UU PPh Art. 17(1)(b); UU HPP)_
+- **Eligibility** — Annual turnover ≤ IDR 50,000,000,000  _(UU PPh Art. 31E)_
+- **Mechanism** — 50% reduction of the prevailing corporate income tax rate applied proportionally to taxable income attributable to gross turnover up to IDR 4.8 billion  _(UU PPh Art. 31E; SE-02/PJ/2015)_
+- **Turnover ≤ IDR 4.8B** — Reduced effective rate generally equals 11% on qualifying taxable income portion under Article 31E mechanism  _(UU PPh Art. 17(1)(b) ; UU PPh Art. 31E  as amended by UU HPP No. 7/2021.))_
+- **Turnover IDR 4.8B–50B** — Mixed calculation generally applies: reduced effective rate on qualifying portion and standard 22% rate on the remaining taxable income  _(UU PPh Art. 31E as amended by UU HPP No. 7/2021.; SE-02/PJ/2015)_
+- **Turnover > IDR 50B** — Generally subject to the standard 22% corporate income tax rate without Article 31E facility  _(UU PPh Art. 17(1)(b); UU PPh Art. 31E |; note: UU PPh as amended by UU HPP No. 7/2021.)_
+- **Automatic?** — Article 31E facility generally applies automatically where statutory eligibility requirements are satisfied  _(UU PPh Art. 31E; SE-02/PJ/2015)_
+- **Rate** — 19% (3pp reduction)  _(UU PPh Art. 17(2b); PP 30/2020; PP 55/2022)_
+- **Conditions** — ≥40% listed on IDX, ≥300 parties each <5%, ≥183 days, Form X.H.1-6 filed  _(UU PPh Art. 17(2b ) as amended by UU HPP No. 7/2021.; PP 30/2020; PP 55/2022; PMK 40/PMK.03/2023)_
+- **Group I (computers, office)** — 4 years — SL 25% / DB 50%  _(UU PPh Art. 11; PMK 96/PMK.03/2009)_
+- **Group II (vehicles, furniture)** — 8 years — SL 12.5% / DB 25%  _(UU PPh Art. 11; PMK 96/PMK.03/2009)_
+- **Group III (heavy machinery)** — 16 years — SL 6.25% / DB 12.5%  _(UU PPh Art. 11; PMK 96/PMK.03/2009)_
+- **Group IV (construction, ships)** — 20 years — SL 5% / DB 10%  _(UU PPh Art. 11; PMK 96/PMK.03/2009)_
+- **Permanent buildings** — 20 years — SL 5% only  _(UU PPh Art. 11; PMK 96/PMK.03/2009)_
+- **Non-permanent buildings** — 10 years — SL 10% only  _(UU PPh Art. 11; PMK 96/PMK.03/2009)_
+- **Master File & Local File** — Required if turnover > IDR 50B, or RP tangible goods > IDR 20B, or RP services/interest/royalty > IDR 5B per category  _(PMK 172/2023; UU PPh Art. 18(3))_
+- **CbCR** — Consolidated group revenue > IDR 11 trillion  _(PMK 172/2023; OECD CbCR framework)_
+- **SPT 1771 (calendar year)** — Due no later than 4 months after fiscal year-end (generally 30 April for calendar-year taxpayers)  _(UU KUP Art. 3(3)(c) as amended by UU HPP)_
+- **PPh 29 payment** — Before SPT is filed  _(UU KUP Art. 9(2); UU KUP Art. 3(5) as amended by UU HPP)_
+- **Monthly PPh 25** — 15th of following month  _(UU PPh Art. 25; UU KUP as amended by UU HPP; PMK 81/2024 as amended by PMK 1/2026)_
+- **Extension** — Up to 2 months  _(UU KUP Art. 3(4) as amended by UU HPP; PMK 81/2024)_
+- **Late SPT 1771 filing** — IDR 1,000,000 fine  _(UU KUP Art. 7)_
+- **Late PPh 25/29 payment** — Monthly interest per MoF rate (~2%/mo, max 24 months)  _(UU KUP Art. 9(2a) as amended by UU HPP; PMK 81/2024)_
+- **Incorrect SPT (negligence)** — Up to 200% of shortfall  _(UU KUP Art. 13(3))_
+- **Tax evasion** — 6mo–6yr imprisonment + 2×–4× shortfall  _(UU KUP Art. 39)_
+- **Record retention** — 10 years  _(UU KUP Art. 28(11))_
+- **Tax holiday — PMK 130/2020** — Eligible pioneer industries may obtain corporate income tax reduction facilities ranging from 50%–100% for certain investment periods subject to prevailing investment and tax incentive regulations  _(PMK 130/PMK.010/2020 as amended by PMK 69/2024)_
+- **Tax allowance — PP 78/2019** — Eligible taxpayers investing in designated business sectors and/or regions may obtain income tax facilities including 30% investment allowance over 6 years, accelerated depreciation/amortization, reduced dividend withholding tax, and extended loss carry-forward  _(UU PPh Art. 31A; PP 78/2019; PMK 11/PMK.010/2020)_
+- **Super-deduction R&D** — Additional gross income deduction of up to 300% for qualifying domestic R&D activities  _(PP 45/2019; PMK 153/PMK.010/2020)_
+- **Super-deduction vocational** — Additional gross income deduction of up to 200% may be granted for qualifying vocational education, apprenticeship, and competency-based training activities conducted in Indonesia  _(PP 45/2019; PMK 128/PMK.010/2019)_
+- **Bribery/gratuity — deductibility** — NEW provision per PP 20/2026 Article 20A: Expenditures in the form of bribes, gratuities, and other payments related to corruption or bribery offences — including payments to foreign public officials — are NOT deductible as business expenses for corporate taxpayers. Effective 22 April 2026. Introduced pursuant to OECD anti-bribery recommendations as part of Indonesia's OECD accession process.  _(PP 20/2026 Article I items 1 and 2.)_
+
 ## Section 1 — Quick Reference
 
 | Field | Value |

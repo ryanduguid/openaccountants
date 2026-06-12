@@ -12,6 +12,35 @@ depends_on:
 
 # India Advance Tax -- Self-Employed Skill v2.0
 
+## Verified rates & thresholds (accountant-reviewed)
+
+> Reviewed against the cited tax authorities by **Mayur Deokar** on 2026-06-06.
+> This block is generated from the verified facts database at openaccountants.com —
+> edit the facts there, not this prose. Items under clarification are excluded.
+
+### Advance Tax
+
+- **15 September — 2nd** — 45% cumulative  _(ITA s 211)_
+- **15 December — 3rd** — 75% cumulative  _(ITA s 211)_
+- **15 March — 4th** — 100% cumulative  _(ITA s 211)_
+- **Instalment** — Single payment by 15 March (100%)  _(ITA s 211(1)(b))_
+- **Exempt if** — Resident 60+, NO business/professional income  _(ITA s 207)_
+- **NOT exempt if** — Senior WITH business/professional income  _(ITA s 207)_
+- **Tax applicable code** — 0021 (IT — Other than Companies)  _(ITNS 280)_
+- **Type of payment code** — 100 (Advance Tax)  _(ITNS 280)_
+- **15 June — 1st instalment** — 15% cumulative  _(ITA s 211)_
+- **15 September — 2nd instalment** — 45% cumulative  _(ITA s 211)_
+- **15 December — 3rd instalment** — 75% cumulative  _(ITA s 211)_
+- **15 March — 4th instalment** — 100% cumulative  _(ITA s 211)_
+- **Threshold** — Tax liability ≥ Rs. 10,000 (after TDS)  _(ITA s 208)_
+- **Presumptive Taxpayers (44AD/44ADA) — Instalment** — Single payment by 15 March (100%)  _(ITA s 211(1)(b))_
+- **s 234B (total default)** — 1% per month (simple) on shortfall  _(ITA s 234B)_
+- **s 234C (instalment deferment)** — 1% per month (simple) on instalment shortfall  _(ITA s 234C)_
+- **Senior Citizen Exemption — Exempt if** — Resident 60+, NO business/professional income  _(ITA s 207)_
+- **Senior Citizen Exemption — NOT exempt if** — Senior WITH business/professional income  _(ITA s 207)_
+- **Challan 280 — Tax applicable code** — 0021 (IT — Other than Companies)  _(ITNS 280)_
+- **Challan 280 — Type of payment code** — 100 (Advance Tax)  _(ITNS 280)_
+
 ## Section 1 -- Quick reference
 
 Read this whole section before computing anything.
@@ -29,7 +58,7 @@ Read this whole section before computing anything.
 | Advance Tax Threshold | Rs. 10,000 net after TDS/TCS |
 | Contributor | Open Accountants community |
 | Validated By | Pending -- requires sign-off by Indian CA (Chartered Accountant) |
-| Validation Date | Pending |
+| Validation Date | Verified by Mayur Deokar (615638) on 2026-06-06 |
 | Skill Version | 2.0 |
 | Confidence Coverage | Tier 1: instalment schedule, interest calculation, threshold, presumptive single instalment, Challan 280 procedure. Tier 2: TDS credit netting, capital gains timing, revised estimates mid-year. Tier 3: international income interactions, DTAA credit timing, reassessment interest disputes. |
 

@@ -6,6 +6,19 @@ version: 2.0
 
 # United States Sales and Use Tax Framework Skill v2.0
 
+## Verified rates & thresholds (accountant-reviewed)
+
+> Reviewed against the cited tax authorities by **Amir Pelinkovic** on 2026-06-03.
+> This block is generated from the verified facts database at openaccountants.com —
+> edit the facts there, not this prose. Items under clarification are excluded.
+
+### US Sales Tax
+
+- **States w/ tax** — 45 states + DC impose a statewide sales tax; 5 (NOMAD) do not  _(State statutes; Streamlined Sales Tax.)_
+- **IL rate** — 6.25% state  _(35 ILCS 120/2-10.)_
+- **Nexus most** — $100,000 is the common post-Wayfair economic-nexus sales threshold; the '200 transactions' prong has been dropped by many states (and some, e.g., CA/TX, never used it). Verify per state.  _(South Dakota v. Wayfair; state statutes.)_
+- **CA/TX** — CA and TX economic-nexus threshold = $500,000 (no transaction-count test)  _(Cal. RTC 6203; Texas Comptroller Rule 3.286.)_
+
 ## Section 1 -- Quick reference
 
 | Field | Value |

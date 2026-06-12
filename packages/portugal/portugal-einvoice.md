@@ -15,6 +15,24 @@ verified_by: pending
 
 ---
 
+## Verified rates & thresholds (accountant-reviewed)
+
+> Reviewed against the cited tax authorities by **Mário Jorge da costa Vale** on 2026-06-04.
+> This block is generated from the verified facts database at openaccountants.com —
+> edit the facts there, not this prose. Items under clarification are excluded.
+
+### Faturação Eletrónica
+
+- **QR codes obrigatórios** — Janeiro 2022  _(Portaria 195/2020)_
+- **ATCUD obrigatório** — Janeiro 2023  _(DL 28/2019)_
+- **B2G e-fatura (todas as entidades)** — Janeiro 2024  _(DL 111-B/2017)_
+- **QES em faturas PDF** — Janeiro 2027  _(DL 28/2019)_
+- **SAF-T Contabilidade** — Esta portaria entrou em vigor em 2017  _(dispõe sobre a obrigatoriedade de disponibilizar o SAF-T-Contabilidade, se solicitado)_
+- **Prazo de entrega** — Até ao 5.º dia do mês seguinte  _(DL 28/2019)_
+- **Não emissão de faturas** — €150–€3.750 (PF) / €300–€7.500 (PJ)  _(RGIT)_
+- **Software não certificado** — €3.000–€18.750  _(RGIT)_
+- **ATCUD/QR em falta** — €200–€1.000 por fatura  _(RGIT)_
+
 ## Secção 1 -- Referência Rápida
 
 | Campo | Valor |

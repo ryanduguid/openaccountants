@@ -6,6 +6,20 @@ version: 2.0
 
 # US Sole Prop Bookkeeping Skill v2.0
 
+## Verified rates & thresholds (accountant-reviewed)
+
+> Reviewed against the cited tax authorities by **Amir Pelinkovic** on 2026-06-03.
+> This block is generated from the verified facts database at openaccountants.com —
+> edit the facts there, not this prose. Items under clarification are excluded.
+
+### Bookkeeping (Sched C)
+
+- **§179** — $2,500,000 for 2025; phase-out begins at $4,000,000 (fully phased at $6.5M), per OBBBA for TY beginning after 12/31/2024  _(IRC 179; OBBBA (PL 119-21); 2025 Form 2106 instr.)_
+- **§168(k)** — 100% bonus for property acquired AND placed in service after Jan 19, 2025 (property placed in service 1/1-1/19/2025 = 40%), made permanent by OBBBA  _(IRC 168(k); OBBBA; IRS Pub 463.)_
+- **Mileage** — 70 cents/mile business for 2025  _(IRS Notice 2025-5.)_
+- **§280F yr1** — $20,200 first-year limit for autos placed in service in 2025 when bonus applies ($12,200 without bonus)  _(Rev. Proc. 2025-16, Table 1; IRS Pub 463.)_
+- **Home office** — Simplified method: $5/sq ft up to 300 sq ft = $1,500 maximum  _(Rev. Proc. 2013-13; IRS Pub 587.)_
+
 ## Section 1 — Quick reference
 
 **Read this whole section before classifying anything. The workflow runbook is in `us-tax-workflow-base` Section 1 — follow that runbook with this skill providing the federal Schedule C content.**

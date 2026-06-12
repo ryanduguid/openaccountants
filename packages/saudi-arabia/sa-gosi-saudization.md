@@ -18,6 +18,31 @@ depends_on:
 
 ---
 
+## Verified rates & thresholds (accountant-reviewed)
+
+> Reviewed against the cited tax authorities by **Mehran Habib** on 2026-06-06.
+> This block is generated from the verified facts database at openaccountants.com —
+> edit the facts there, not this prose. Items under clarification are excluded.
+
+### GOSI and Saudization
+
+- **Annuity (retirement) — employer** — 9%  _(GOSI Law)_
+- **Annuity (retirement) — employee** — 9%  _(GOSI Law)_
+- **Occupational Hazards — employer (Saudi)** — 2%  _(GOSI Law)_
+- **SANED (unemployment) — employer** — 0.0075  _(GOSI Law)_
+- **SANED (unemployment) — employee** — 0.0075  _(GOSI Law)_
+- **Total — Saudi employer** — 0.1175  _(GOSI Law)_
+- **Total — Saudi employee** — 0.0975  _(GOSI Law)_
+- **Occupational Hazards — employer (Expatriate)** — 2%  _(GOSI Law)_
+- **Employee contribution (Expatriate)** — 0%  _(GOSI Law)_
+- **Contributory wage cap** — SAR 45,000/month  _(GOSI Law, Part 1 Article 8(2))_
+- **GOSI Contribution Base** — Basic salary + housing allowance  _(GOSI Law, Part 1 Article 8(1))_
+- **Nitaqat — Platinum tier** — Exceeds target — maximum benefits  _(MHRSD / Qiwa — Nitaqat Mutawar Program procedural guidelines)_
+- **Nitaqat — High/Mid/Low Green tier** — Meets target — standard to limited  _(MHRSD / Qiwa — Nitaqat Mutawar Program procedural guidelines)_
+- **Nitaqat — Red tier** — Well below — no visas, no iqama renewals  _(MHRSD / Qiwa — Nitaqat Mutawar Program procedural guidelines)_
+- **WPS Platform** — Mudad (mudad.com.sa)  _(MHRSD — Wage Protection System)_
+- **WPS Requirement** — All salaries via Saudi bank IBAN  _(MHRSD — Wage Protection System, ref. 1.8.4 (59 - ACC))_
+
 ## Section 1 — Quick reference: contribution + Saudization table
 
 ### 1.1 GOSI monthly contribution table

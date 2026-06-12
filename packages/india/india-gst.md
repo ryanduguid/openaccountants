@@ -6,6 +6,34 @@ version: 2.0
 
 # India GST Return Skill (GSTR-3B / GSTR-1) v2.0
 
+## Verified rates & thresholds (accountant-reviewed)
+
+> Reviewed against the cited tax authorities by **Mayur Deokar** on 2026-06-06.
+> This block is generated from the verified facts database at openaccountants.com —
+> edit the facts there, not this prose. Items under clarification are excluded.
+
+### GST
+
+- **Standard rate** — 18% (CGST 9% + SGST 9% / IGST 18%)  _(CGST Act 2017)_
+- **Lower rate** — 5% (CGST 2.5% + SGST 2.5% / IGST 5%)  _(Notification 1/2017-CT(Rate))_
+- **12% rate** — 12% (CGST 6% + SGST 6% / IGST 12%)  _(Notification 1/2017-CT(Rate))_
+- **Demerit rate** — 28% (CGST 14% + SGST 14% / IGST 28%)  _(CGST Act)_
+- **Nil/exempt** — 0% — fresh food, healthcare, education  _(Notification 12/2017-CT(Rate))_
+- **Zero-rated** — 0% — exports, SEZ (with ITC refund)  _(IGST Act s 16)_
+- **Key rule** — IGST rate = CGST rate + SGST rate, always  _(IGST Act)_
+- **Goods (general states)** — INR 40 lakh aggregate turnover  _(CGST Act s 22)_
+- **Goods (special category states)** — INR 20 lakh  _(CGST Act s 22)_
+- **Services (all states)** — INR 20 lakh (INR 10 lakh special states)  _(CGST Act s 22)_
+- **E-invoicing threshold** — INR 5 crore AATO (any FY from 2017-18)  _(Notification 10/2023-CT)_
+- **E-way bill threshold** — INR 50,000 applies for interstate; for intrastate transport of goods, the limit is state-wise (varies by state) as per CGST Rules 2017  _(CGST Rules 2017)_
+- **GSTR-3B (monthly)** — 20th of following month  _(CGST Rules)_
+- **GSTR-3B (quarterly QRMP)** — 22nd-24th of month after quarter (by state)  _(CGST Rules)_
+- **GSTR-1 (monthly)** — 11th of following month  _(CGST Rules)_
+- **GSTR-1 (quarterly)** — 13th of month after quarter  _(CGST Rules)_
+- **Monthly vs quarterly** — Monthly if turnover > INR 5 crore; however, taxpayers with turnover ≤ INR 5 crore also have the option to choose monthly filing instead of QRMP  _(CGST Act 2017)_
+- **Structure** — 15-digit: 2 state code + 10 PAN + entity code + Z + checksum  _(CGST Rules)_
+- **GSTIN Format – Structure** — 15-digit: 2 state code + 10 PAN + entity code + Z + checksum  _(CGST Rules)_
+
 ## Section 1 -- Quick reference
 
 **Read this whole section before classifying anything.**

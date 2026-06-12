@@ -15,6 +15,36 @@ verified_by: pending
 
 ---
 
+## Verified rates & thresholds (accountant-reviewed)
+
+> Reviewed against the cited tax authorities by **Mário Jorge da costa Vale** on 2026-06-04.
+> This block is generated from the verified facts database at openaccountants.com —
+> edit the facts there, not this prose. Items under clarification are excluded.
+
+### Demonstrações Financeiras
+
+- **Micro — balanço** — ≤ €350.000  _(DL 158/2009)_
+- **Micro — volume negócios** — ≤ €700.000  _(DL 158/2009)_
+- **Micro — empregados** — ≤ 10  _(DL 158/2009)_
+- **Pequena — balanço** — ≤ €4.000.000  _(DL 98/2015)_
+- **Pequena — volume negócios** — ≤ €8.000.000  _(DL 98/2015)_
+- **Pequena — empregados** — ≤ 50  _(DL 98/2015)_
+- **Micro — balanço** — ≤ €450.000  _(DL 126-B/2025)_
+- **Micro — volume negócios** — ≤ €900.000  _(DL 126-B/2025)_
+- **Pequena — balanço** — ≤ €5.000.000  _(DL 126-B/2025)_
+- **Pequena — volume negócios** — ≤ €10.000.000  _(DL 126-B/2025)_
+- **Média — balanço** — ≤ €25.000.000  _(DL 126-B/2025)_
+- **Média — volume negócios** — ≤ €50.000.000  _(DL 126-B/2025)_
+- **Teste** — 2 de 3 critérios no ano corrente + anterior  _(DL 158/2009)_
+- **IES — prazo** — 15.º dia do 7.º mês após encerramento (15 julho)  _(Código IRC)_
+- **Taxa de registo** — €80  _(IRN)_
+- **Multa atraso** — €150–€3.750  _(RGIT)_
+- **Balanço** — > €1.500.000  _(CSC)_
+- **Volume de negócios** — > €3.000.000  _(CSC)_
+- **Empregados** — > 50  _(CSC)_
+- **Teste** — 2 de 3 por dois anos consecutivos  _(CSC)_
+- **SA (Sociedade Anónima)** — Sempre obrigatória  _(CSC)_
+
 ## Secção 1 — Referência Rápida
 
 | Campo | Valor |

@@ -6,6 +6,20 @@ version: 0.2
 
 # US Self-Employed Health Insurance Skill v0.2
 
+## Verified rates & thresholds (accountant-reviewed)
+
+> Reviewed against the cited tax authorities by **Amir Pelinkovic** on 2026-06-03.
+> This block is generated from the verified facts database at openaccountants.com —
+> edit the facts there, not this prose. Items under clarification are excluded.
+
+### SE Health Insurance
+
+- **≤40** — 2025 limit $480 (age 40 or less)  _(Rev. Proc. 2024-40.)_
+- **41-50** — 2025 limit $900 (41-50)  _(Rev. Proc. 2024-40.)_
+- **51-60** — 2025 limit is $1,800 (51-60), not $1,790  _(Rev. Proc. 2024-40.)_
+- **61-70** — 2025 limit is $4,810 (61-70), not $4,770  _(Rev. Proc. 2024-40.)_
+- **70+** — 2025 limit is $6,020 (age > 70), not $5,960  _(Rev. Proc. 2024-40.)_
+
 ## What this file is, and what it is not
 
 **This file is a content skill that loads on top of `us-tax-workflow-base` v0.1.** It computes the self-employed health insurance deduction under IRC §162(l) for sole proprietors and single-member LLCs for tax year 2025. It does not classify transactions (that is `us-sole-prop-bookkeeping`), compute Schedule C net profit or SE tax (that is `us-schedule-c-and-se-computation`), or compute the QBI deduction (that is `us-qbi-deduction`, which consumes this skill's output).

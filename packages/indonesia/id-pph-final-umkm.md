@@ -18,6 +18,32 @@ verified_by: pending
 
 ---
 
+## Verified rates & thresholds (accountant-reviewed)
+
+> Reviewed against the cited tax authorities by **RILIA PUTRI** on 2026-06-03.
+> This block is generated from the verified facts database at openaccountants.com —
+> edit the facts there, not this prose. Items under clarification are excluded.
+
+### PPh Final UMKM 0.5%
+
+- **Tax rate** — Rate of 0.5% remains applicable for qualifying taxpayers with certain gross turnover. PP 20/2026 does not change the tax rate but revises taxpayer eligibility criteria and exclusions.  _(UU PPh Art. 4(2); PP 55/2022 Art. 56 as amended by PP 20/2026.)_
+- **Character** — Final — not creditable; no expenses deductible  _(UU PPh Art. 4(2);  PP 55/2022 Art. 56 as amended by PP 20/2026.)_
+- **Turnover threshold** — Rate of 0.5% remains applicable for qualifying taxpayers with certain gross turnover. PP 20/2026 does not change the tax rate but revises taxpayer eligibility criteria and exclusions.  _(UU PPh Art. 4(2); PP 55/2022 Art. 56 as amended by PP 20/2026.)_
+- **Monthly deposit deadline** — Final income tax under the UMKM regime is generally payable no later than the 15th day of the following month after the tax period. Administrative procedures follow prevailing tax administration regulations.  _(UU KUP as amended by UU HPP; PP 55/2022 Art. 62; PMK 81/2024.)_
+- **OP SPT deadline** — 31 March 2026 for FY2025  _(UU KUP Art. 3(3)(b) as amended by UU HPP)_
+- **Entity SPT deadline** — 30 April 2026 for FY2025  _(UU KUP Art. 3(3)(c) as amended by UU HPP)_
+- **OP tax-free band** — Individual taxpayers remain entitled to the IDR 500 million annual gross-turnover exemption before the 0.5% final tax applies.  _(UU PPh Art. 7; PP 55/2022 Art. 60; PP 20/2026.)_
+- **Orang Pribadi (sole trader)** — No time limit (revised — originally 7 years)  _(PP 20/2026 Article I items 4 and 6.)_
+- **PT Perorangan** — No time limit (revised)  _(PP 20/2026 Article I items 4 and 6.)_
+- **Koperasi, CV, Firma, BUMDes** — 4 years  _(PP 20/2026 Article I item 4.)_
+- **PT (ordinary)** — 3 years  _(PP 20/2026 Article I item 4.)_
+- **Pekerjaan bebas** — Excluded — doctors, lawyers, notaries, accountants, architects, consultants, actuaries must use progressive  _(PP 20/2026 Article I item 3.)_
+- **BUT / non-residents** — Permanent establishments (BUT) remain excluded from the UMKM final tax regime.  _(PP 55/2022 Art. 57(2)(d) as amended by PP 20/2026.)_
+- **Late monthly payment** — Late tax payment generally subject to monthly interest sanctions calculated using the prevailing Minister of Finance interest rate determined under Indonesian tax administration regulations  _(UU KUP Art. 9(2a) as amended by UU HPP; PMK 81/2024 as amended by PMK 1/2026)_
+- **Late SPT Tahunan OP** — IDR 100,000 fine  _(UU KUP Art. 7)_
+- **Late SPT Tahunan Badan** — IDR 1,000,000 fine  _(UU KUP Art. 7)_
+- **Bribery/gratuity — deductibility** — NEW provision per PP 20/2026 Article 20A: Expenditures in the form of bribes, gratuities, and other payments related to corruption or bribery offences — including payments to foreign public officials — are NOT deductible as business expenses for corporate taxpayers. Effective 22 April 2026. Introduced pursuant to OECD anti-bribery recommendations as part of Indonesia's OECD accession process.  _(PP 20/2026 Article I items 1 and 2.)_
+
 ## Section 1 — Quick reference
 
 | Field | Value |

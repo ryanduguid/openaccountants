@@ -10,6 +10,29 @@ verified_by: pending
 
 # Portugal — IVA (Declaração Periódica) — Skill v3.0
 
+## Verified rates & thresholds (accountant-reviewed)
+
+> Reviewed against the cited tax authorities by **Mário Jorge da costa Vale** on 2026-06-04.
+> This block is generated from the verified facts database at openaccountants.com —
+> edit the facts there, not this prose. Items under clarification are excluded.
+
+### IVA
+
+- **Continente — taxa normal** — 23%  _(CIVA)_
+- **Continente — taxa intermédia** — 13%  _(CIVA)_
+- **Continente — taxa reduzida** — 6%  _(CIVA)_
+- **Açores — normal** — 16%  _(CIVA)_
+- **Açores — intermédia** — 9%  _(CIVA)_
+- **Açores — reduzida** — 4%  _(CIVA)_
+- **Madeira — normal** — 22%  _(CIVA)_
+- **Madeira — intermédia** — 12%  _(CIVA)_
+- **Madeira — reduzida** — 4%  _(Decreto Legislativo Regional n.º 6/2024/M, de 29 de julho, artº 21º)_
+- **Isenção Art. 53.º** — ≤ €15.000 (2026)  _(CIVA Art. 53.º, nº 1)_
+- **Declarações mensais** — Volume de negócios => €650.000  _(CIVA, artº 41º, nº 1, a))_
+- **Declarações trimestrais** — Volume de negócios < €650.000  _(CIVA, artº 41º, nº 1, b))_
+- **Mensal** — 20.º dia do 2.º mês seguinte  _(CIVA, artº 41º, nº 1, a))_
+- **Trimestral** — 20.º dia do 2.º mês seguinte ao trimestre  _(CIVA, artº 41º, nº 1, b))_
+
 ## Secção 1 — Referência rápida
 
 **Leia esta secção na íntegra antes de classificar qualquer transação. O runbook do fluxo de trabalho encontra-se na Secção 1 do `vat-workflow-base` — siga esse runbook, com esta skill a fornecer o conteúdo específico do país e o `eu-vat-directive` a fornecer o conteúdo da diretiva da UE.**

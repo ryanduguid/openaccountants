@@ -18,6 +18,28 @@ Covers three UK tax years: **2024-25**, **2025-26**, and **2026-27**, including 
 
 ---
 
+## Verified rates & thresholds (accountant-reviewed)
+
+> Reviewed against the cited tax authorities by **James Power** on 2026-06-03.
+> This block is generated from the verified facts database at openaccountants.com —
+> edit the facts there, not this prose. Items under clarification are excluded.
+
+### Crypto Tax
+
+- **Basic rate taxpayer** — 18%  _(TCGA 1992)_
+- **Higher/additional rate** — 24%  _(TCGA 1992)_
+- **AEA** — £3,000  _(TCGA 1992)_
+- **Required method** — S104 pooling (weighted average)  _(TCGA 1992 s.104)_
+- **FIFO** — NOT permitted  _(HMRC CRYPTO22200)_
+- **Specific identification** — NOT permitted for crypto  _(HMRC CRYPTO22200)_
+- **1st: Same-day** — Match same-day acquisitions  _(TCGA s.105(1))_
+- **2nd: 30-day rule** — Match acquisitions within 30 days AFTER disposal  _(TCGA s.106A)_
+- **3rd: S104 pool** — Average cost from pool  _(TCGA s.104)_
+- **Mining (hobbyist)** — Miscellaneous income at FMV  _(ITTOIA s.687)_
+- **Staking rewards** — Miscellaneous income at FMV  _(HMRC CRYPTO21200)_
+- **Airdrop (service performed)** — Miscellaneous income at FMV  _(HMRC CRYPTO21250)_
+- **Airdrop (unsolicited)** — Not income; CGT on disposal from zero cost  _(HMRC CRYPTO21250)_
+
 ## Section 1 — Quick Reference
 
 | Field | Value |

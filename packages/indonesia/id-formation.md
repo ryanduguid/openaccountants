@@ -15,6 +15,20 @@ depends_on:
 
 ---
 
+## Verified rates & thresholds (accountant-reviewed)
+
+> Reviewed against the cited tax authorities by **RILIA PUTRI** on 2026-06-03.
+> This block is generated from the verified facts database at openaccountants.com —
+> edit the facts there, not this prose. Items under clarification are excluded.
+
+### Formation
+
+- **UD / OP** — Individual businesses (UD/OP) are generally subject to progressive individual income tax rates ranging from 5%–35% under UU PPh Art. 17. Eligible taxpayers may utilize UMKM final income tax regime at 0.5% of gross turnover under PP 55/2022, including exemption for the first IDR 500 million annual turnover for eligible individual taxpayers.  _(UU PPh Art. 17 as amended by UU HPP; PP 55/2022 Art. 56–60.)_
+- **CV** — CV is generally treated as a corporate taxpayer (subjek pajak badan) under Indonesian income tax law. Standard corporate income tax rate generally 22% under prevailing UU PPh provisions. Eligible CVs may utilize UMKM final tax regime at 0.5% of gross turnover for up to 4 years if qualification requirements are satisfied.  _(UU PPh Art. 2(1)(b) & Art. 17; UU HPP; PP 55/2022 Art. 59.)_
+- **PT** — PT entities are generally subject to corporate income tax rate of 22% under prevailing Indonesian tax regulations. Eligible taxpayers may obtain Article 31E facility (50% reduction of standard CIT rate on qualifying taxable income portion) and/or utilize UMKM final tax regime at 0.5% of gross turnover for up to 3 years if statutory requirements are satisfied.  _(UU PPh Art. 17 & Art. 31E as amended by UU HPP; PP 55/2022 Art. 59.)_
+- **PT Perorangan** — PT Perorangan is generally treated as a corporate taxpayer under Indonesian income tax regulations and generally subject to the prevailing 22% corporate income tax rate. Eligible MSME PT Perorangan may utilize UMKM final income tax regime at 0.5% of gross turnover for up to 4 years if eligibility requirements are satisfied. “No time limit” should not be stated as absolute because prevailing utilization period under PP 55/2022 for corporate taxpayers generally remains subject to statutory time limitations.  _(UU PPh Art. 17 as amended by UU HPP; PP 55/2022 Art. 59.)_
+- **PMA** — PMA companies are generally subject to prevailing Indonesian corporate income tax rules, including the standard corporate income tax rate currently generally 22% under UU PPh as amended by UU HPP. Qualifying investments in pioneer industries may obtain Tax Holiday facilities in the form of 50%–100% corporate income tax reduction for 5–20 tax years depending on investment value under PMK 130/PMK.010/2020. Certain qualifying investments may also obtain Tax Allowance facilities including 30% investment allowance over 6 years, accelerated depreciation/amortization, extended loss carry-forward, and reduced dividend withholding tax under PP 78/2019.  _(UU PPh Art. 17 as amended by UU HPP; PP 78/2019; PMK 130/PMK.010/2020.)_
+
 ## Section 1 -- Quick Reference
 
 | Field | Value |

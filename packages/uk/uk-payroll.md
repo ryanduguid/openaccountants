@@ -25,6 +25,46 @@ verified_by: pending
 
 ---
 
+## Verified rates & thresholds (accountant-reviewed)
+
+> Reviewed against the cited tax authorities by **James Power** on 2026-06-03.
+> This block is generated from the verified facts database at openaccountants.com —
+> edit the facts there, not this prose. Items under clarification are excluded.
+
+### Payroll
+
+- **Below LEL (£125/wk)** — 0% (no qualifying year)  _(SSCBA 1992)_
+- **LEL to PT (£125-£242/wk)** — 0% (qualifying year accrues)  _(SSCBA 1992)_
+- **PT to UEL (£242-£967/wk)** — 8%  _(SSCBA 1992)_
+- **Above UEL (>£967/wk)** — 2%  _(SSCBA 1992)_
+- **Secondary Threshold** — £5,000/year (£96/wk)  _(SSCBA 1992)_
+- **Rate above ST** — 15% (no upper limit)  _(SSCBA 1992)_
+- **Employment Allowance** — £10,500/year  _(NIC Act 2014)_
+- **Class 1A (benefits)** — 15% of taxable BIK value  _(SSCBA 1992)_
+- **Age 21+ (NLW)** — £12.21/hr  _(NMW Regs)_
+- **Age 18-20** — £10.00/hr  _(NMW Regs)_
+- **Under 18 / Apprentice** — £7.55/hr  _(NMW Regs)_
+- **Age 21+ (NLW)** — £12.71/hr  _(NMW Regs)_
+- **Age 18-20** — £10.85/hr  _(NMW Regs)_
+- **Under 18 / Apprentice** — £8.00/hr  _(NMW Regs)_
+- **SSP weekly rate** — £118.75  _(SSCBA 1992)_
+- **SMP — first 6 weeks** — 90% of AWE  _(SSCBA 1992)_
+- **SMP — weeks 7-39** — £187.18/wk or 90% AWE, lower  _(SSCBA 1992)_
+- **SPP** — £187.18/wk (2 weeks)  _(SSCBA 1992)_
+- **SSP weekly rate** — £123.25  _(Finance Act)_
+- **SSP waiting days (from Apr 2026)** — Abolished — day 1  _(Finance Act)_
+- **SMP flat rate (from Apr 2026)** — £194.32/wk  _(Finance Act)_
+- **Total minimum contribution** — 8% of qualifying earnings  _(Pensions Act 2008)_
+- **Employer minimum** — 3%  _(Pensions Act 2008)_
+- **Qualifying earnings band** — £6,240 – £50,270  _(Pensions Act 2008)_
+- **Eligible jobholders** — Age 22 to SPA, earning >£10,000/yr  _(Pensions Act 2008)_
+- **FPS** — On or before each payday  _(PAYE Regs)_
+- **EPS** — By 19th of following month  _(PAYE Regs)_
+- **P60 to employees** — By 31 May  _(PAYE Regs)_
+- **P11D** — By 6 July  _(PAYE Regs)_
+- **HMRC payment (electronic)** — 22nd of following month  _(PAYE Regs)_
+- **Apprenticeship Levy** — 0.5% of pay bill >£3m (£15,000 allowance)  _(Finance Act 2016)_
+
 ## Section 1 -- Quick Reference
 
 | Field | Value |

@@ -6,6 +6,121 @@ version: 2.0
 
 # Cyprus VAT Return Skill (VAT4 Form) v2.0
 
+## Verified rates & thresholds (accountant-reviewed)
+
+> Reviewed against the cited tax authorities by **Christos Thoma** on 2026-06-10.
+> This block is generated from the verified facts database at openaccountants.com —
+> edit the facts there, not this prose. Items under clarification are excluded.
+
+### Tax rates
+
+- **Standard VAT rate** — 19%  _(VAT Law Section 17)_
+- **Reduced rate — accommodation and restaurant/catering** — 9%  _(Fifth Schedule Part II)_
+- **Reduced rate — food, pharmaceuticals, books, newspapers, water supply, medical devices** — 5% applies to specified goods/services including foodstuffs and pharmaceutical products and, subject to conditions, qualifying primary residences; books/newspapers/periodicals and several medical/disability/waste/cultural items moved to the 3% super-reduced rate.  _(Fifth Schedule Part III)_
+- **Reduced rate — specific social housing** — 3% super-reduced VAT rate applies to specified goods/services such as books/newspapers/periodicals, certain disability/orthopaedic products, private waste/sewage services and admission to first performances of qualifying cultural works. Qualifying primary residence relief is generally a 5% reduced-rate regime, not a 3% social housing rate.  _(VAT Law N.95(I)/2000 (as amended))_
+- **Zero rate — exports, intra-EU B2B supplies of goods, international transport** — 0%  _(Sixth Schedule)_
+- **Reverse charge output VAT rate (EU and non-EU services/goods received)** — 19%  _(Sections 11, 11A)_
+- **Utility — water supply VAT rate** — 5%  _(Fifth Schedule Part III)_
+- **Utility — electricity VAT rate** — 19%  _(VAT Law Section 17)_
+- **Utility — telecoms VAT rate** — 19%  _(VAT Law Section 17)_
+- **Commercial rent VAT rate** — 19%  _(VAT Law Section 17)_
+- **Legal, accounting and notary professional services VAT rate** — 19%  _(VAT Law Section 17)_
+- **Domestic courier/parcel VAT rate** — 19%  _(VAT Law Section 17)_
+- **Bus and taxi transport VAT rate** — 9% for certain local passenger transport services, including passenger transport by urban/intercity/rural taxis and buses; otherwise standard-rated supplies remain at 19%.  _(VAT Law Section 17)_
+- **International flights VAT rate** — 0%  _(Sixth Schedule)_
+
+### Exemptions
+
+- **Exempt supplies without input tax credit — financial services, insurance, healthcare, education, postal, gambling, residential rental** — Exempt without credit  _(Seventh Schedule)_
+- **Residential rental VAT treatment** — Exempt  _(Seventh Schedule)_
+- **Bank charges and fees VAT treatment** — Exempt (exclude)  _(Seventh Schedule)_
+- **Insurance premiums VAT treatment** — Exempt (exclude)  _(Seventh Schedule)_
+- **Standard postal service (Cyprus Post) VAT treatment** — Exempt — universal service  _(Seventh Schedule)_
+- **Payment processor transaction fees (Stripe, PayPal) VAT treatment** — Exempt (exclude)  _(Seventh Schedule)_
+
+### Registration thresholds
+
+- **VAT registration threshold — annual turnover below which entity is non-registered** — EUR 15,600  _(VAT Law N.95(I)/2000 (as amended))_
+
+### Filing requirements
+
+- **VAT return form** — VAT4  _(VAT Law N.95(I)/2000 (as amended))_
+- **Filing portal** — https://taxisnet.mof.gov.cy (TAXISnet / TFA portal)
+- **Standard filing frequency** — Quarterly  _(VAT Law N.95(I)/2000 (as amended))_
+- **Optional filing frequency — large exporters** — Monthly  _(VAT Law N.95(I)/2000 (as amended))_
+- **Input VAT claim threshold requiring purchase invoice** — No general EUR 200 threshold for claiming input VAT. Deductible input VAT must be supported by a valid VAT invoice / import document; simplified invoicing under EU rules is generally for invoices not higher than EUR 100 or equivalent, subject to national rules.
+
+### Filing deadlines
+
+- **VAT4 submission deadline** — 10th of the second month after quarter end (e.g. 10 May for Q1)  _(VAT Law N.95(I)/2000 (as amended))_
+- **Q1 (Jan–Mar) filing deadline — example** — 10 May  _(VAT Law N.95(I)/2000 (as amended))_
+
+### Key constants
+
+- **Currency** — EUR only
+- **VAT number format** — CY + 8 digits + letter
+- **Number of VAT4 boxes** — 11 boxes plus sub-boxes
+
+### VAT return boxes
+
+- **Box 1 — VAT due on sales and other outputs (all rates combined)** — VAT due on sales and other outputs (all rates combined)
+- **Box 2 — VAT due on acquisitions from EU + services from abroad (reverse charge output)** — VAT due on acquisitions from EU + services from abroad (reverse charge output)
+- **Box 3 — Total output VAT formula** — Box 1 + Box 2
+- **Box 4 — VAT reclaimed on purchases and inputs** — All deductible input VAT
+- **Box 5 — Net VAT payable or refundable formula** — Box 3 minus Box 4
+- **Box 6 — Total value of sales and outputs (excl. VAT)** — Total value of sales and outputs (excl. VAT)
+- **Box 7 — Total value of purchases and inputs (excl. VAT)** — Total value of purchases and inputs (excl. VAT)
+- **Box 8A — Value of intra-EU supplies of goods** — Value of intra-EU supplies of goods
+- **Box 8B — Value of B2B services supplied to other EU states** — Value of B2B services supplied to other EU states
+- **Box 9 — Value of zero-rated outputs (exports and other zero-rated not in 8A/8B)** — Value of zero-rated outputs (exports, other zero-rated not in 8A/8B)
+- **Box 10 — Sales outside CY VAT scope with right of deduction** — Sales outside CY VAT scope with right of deduction
+- **Box 11A — Value of goods acquired from EU** — Value of goods acquired from EU
+- **Box 11B — Value of services received from EU (reverse charge)** — Value of services received from EU (reverse charge)
+
+### Reverse charge
+
+- **EU services received — legal basis** — Output VAT at 19% in Box 2; input in Box 4; value in Box 11B  _(Section 11A)_
+- **EU goods received — legal basis** — Output in Box 2; input in Box 4; value in Box 11A  _(Section 11)_
+- **Non-EU services received — legal basis** — Output Box 2; input Box 4  _(Section 11A)_
+- **Domestic reverse charge — construction services** — Output and input both reported by recipient  _(Section 11B)_
+
+### Blocked inputs
+
+- **Entertainment — input VAT recovery** — Blocked (0%)  _(VAT Law N.95(I)/2000 — general business-use principle)_
+- **Personal use — input VAT recovery** — Blocked (0%)  _(VAT Law N.95(I)/2000 — general business-use principle)_
+- **Motor vehicle fuel — input VAT recovery** — Proportional deduction based on business use (not hard-blocked); default 0%  _(VAT Law N.95(I)/2000)_
+
+### Conservative defaults
+
+- **Default rate when VAT rate on a sale is unknown** — 19%
+- **Default VAT status of a purchase when unknown** — Not deductible
+- **Default counterparty country when unknown** — Domestic Cyprus
+- **Default B2B vs B2C classification for unknown EU customer** — B2C, charge 19%
+- **Default business-use proportion when unknown** — 0% recovery
+- **Default SaaS billing entity when unknown** — Reverse charge from non-EU
+- **Default blocked-input status when unknown** — Blocked
+- **Default scope treatment when unknown** — In scope
+
+### Red flag thresholds
+
+- **HIGH flag — single transaction size** — EUR 3,000
+- **HIGH flag — tax delta on a single default** — EUR 200
+- **MEDIUM flag — counterparty concentration** — >40%
+- **MEDIUM flag — conservative default count** — >4
+- **LOW flag — absolute net VAT position** — EUR 5,000
+
+### Place of supply
+
+- **B2B service supplied to EU VAT-registered customer — place of supply** — Place of customer (customer's member state); 0% in Box 8B; verify VAT number  _(EU VAT Directive 2006/112/EC — Article 44)_
+- **Intra-EU B2B goods — reporting box** — Box 8A; 0%  _(Sixth Schedule)_
+
+### Legal references
+
+- **Primary VAT legislation** — VAT Law N.95(I)/2000 (as amended)  _(VAT Law N.95(I)/2000)_
+- **Partial exemption pro-rata provision** — Section 26  _(VAT Law N.95(I)/2000 Section 26)_
+- **Reverse charge provisions** — Sections 11, 11A–11E  _(VAT Law N.95(I)/2000)_
+- **Immovable property special VAT rules** — Eighth Schedule  _(VAT Law N.95(I)/2000 Eighth Schedule)_
+
 ## Section 1 — Quick reference
 
 **Read this whole section before classifying anything. The workflow runbook is in `vat-workflow-base` Section 1.**

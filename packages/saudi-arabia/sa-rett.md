@@ -13,6 +13,24 @@ verified_by: pending
 
 ---
 
+## Verified rates & thresholds (accountant-reviewed)
+
+> Reviewed against the cited tax authorities by **Mehran Habib** on 2026-06-06.
+> This block is generated from the verified facts database at openaccountants.com —
+> edit the facts there, not this prose. Items under clarification are excluded.
+
+### RETT
+
+- **RETT rate** — 5% on transaction value or FMV (higher)  _(RETT Bylaws, Article 4.1 & 4.2 Detailed Guidelines for RETT)_
+- **Effective from** — 1 October 2020 (replaced 15% VAT on RE)  _(RETT Bylaws + VAT law)_
+- **First-degree relative gift** — Exempt (parent, child, spouse)  _(RETT Bylaws, Article 5.1.7 Detailed Guidelines for RETT)_
+- **Inheritance** — Exempt  _(RETT Bylaws, Article 5.1.1 Detailed Guidelines for RETT)_
+- **First home (Saudi national)** — Exempt up to SAR 1,000,000  _(RETT Bylaws, Article 6 Detailed Guidelines for RETT)_
+- **Waqf (endowment)** — Exempt  _(RETT Bylaws, Article 5.1.2 Detailed Guidelines for RETT)_
+- **Long lease ≥ 50 years** — Subject to RETT on total lease value  _(RETT Bylaws, Article 1.3 Detailed Guidelines for RETT)_
+- **Declaration** — Via ZATCA portal BEFORE notarisation  _(RETT Bylaws, Article 4.3 Detailed Guidelines for RETT)_
+- **Taxpayer** — Seller (transferor) is the legal taxpayer  _(Royal Decree A/84, Article 4.5 Detailed Guidelines for RETT)_
+
 ## Section 1 — Quick reference
 
 | Field | Value |

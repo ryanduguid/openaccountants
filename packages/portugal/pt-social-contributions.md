@@ -9,6 +9,26 @@ verified_by: pending
 
 # Portugal — Segurança Social do Trabalhador Independente — Skill v2.1
 
+## Verified rates & thresholds (accountant-reviewed)
+
+> Reviewed against the cited tax authorities by **Mário Jorge da costa Vale** on 2026-06-04.
+> This block is generated from the verified facts database at openaccountants.com —
+> edit the facts there, not this prose. Items under clarification are excluded.
+
+### Segurança Social
+
+- **Trabalhador independente** — 21,4%  _(Código Contributivo Art. 163)_
+- **Empresário em nome individual** — 25,2%  _(Código Contributivo)_
+- **Rendimento relevante — serviços** — 70% do bruto  _(Código Contributivo Art. 162)_
+- **Rendimento relevante — bens** — 20% do bruto  _(Código Contributivo Art. 162)_
+- **Base mínima mensal (IAS)** — €522,50  _(Portaria n.º 6-B/2025/1, de 6 de janeiro)_
+- **Base máxima mensal (12×IAS)** — €6.270,00  _(Código Contributivo Art.º 163º, nº 5)_
+- **Primeiros 12 meses** — Isento de contribuições  _(Código Contributivo)_
+- **Emprego concorrente (< 4×IAS)** — Isento se rendimento relevante < 4 x IAS/mês (em 2025 4 x 522,50 = €2.090)  _(Código Contributivo Art.º 157º, nº 1, a))_
+- **Declaração trimestral** — Janeiro (out-dez), abril (jan-mar), julho (abr-jun), outubro (jul-set)  _(Código Contributivo)_
+- **Pagamento mensal** — Entre 10 e 20 do mês  _(Código Contributivo)_
+- **Dedutibilidade fiscal** — SIM — dedutíveis do IRS  _(CIRS)_
+
 ## Secção 1 — Referência rápida
 
 | Campo | Valor |
@@ -29,8 +49,8 @@ verified_by: pending
 | Periodicidade do pagamento | Mensal (entre o dia 10 e o dia 20) |
 | Moeda | EUR apenas |
 | Contribuidor | Open Accountants |
-| Validado por | Pendente — requer validação por contabilista certificado português |
-| Data de validação | Pendente |
+| Validado por | Verificado por Mário Jorge da costa Vale (CA - 85883) em 2026-06-04 |
+| Data de validação | Verificado por Mário Jorge da costa Vale (CA - 85883) em 2026-06-04 |
 
 ---
 

@@ -8,6 +8,8 @@
 **Mehran Habib** (ICAP: 13480) — Lead accountant verifier for Saudi Arabia on OpenAccountants. 9 skills verified.
 [openaccountants.com/network/f9dbab51-2b89-451b-98f2-414b48fb4599](https://www.openaccountants.com/network/f9dbab51-2b89-451b-98f2-414b48fb4599)
 
+_Scope: the “Verified rates & thresholds” blocks inside these skill files are generated from the facts this verifier reviewed. Everything else in the files is an open, source-cited draft. The full accountant-verified tier, with the verifier’s name on every answer, is served via the [connector](https://www.openaccountants.com/connect)._
+
 ## What's in this folder
 
 1. `foundation.md`

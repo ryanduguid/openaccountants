@@ -8,6 +8,8 @@
 **Michael Cutajar CPA (Malta)** — Lead accountant verifier for Malta on OpenAccountants.
 [openaccountants.com/network](https://www.openaccountants.com/network)
 
+_Scope: the “Verified rates & thresholds” blocks inside these skill files are generated from the facts this verifier reviewed. Everything else in the files is an open, source-cited draft. The full accountant-verified tier, with the verifier’s name on every answer, is served via the [connector](https://www.openaccountants.com/connect)._
+
 ## What's in this folder
 
 1. `foundation.md`

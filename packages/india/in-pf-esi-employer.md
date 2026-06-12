@@ -12,6 +12,45 @@ category: international
 
 ---
 
+## Verified rates & thresholds (accountant-reviewed)
+
+> Reviewed against the cited tax authorities by **Mayur Deokar** on 2026-06-06.
+> This block is generated from the verified facts database at openaccountants.com —
+> edit the facts there, not this prose. Items under clarification are excluded.
+
+### EPF and ESI
+
+- **Employer total** — 12% of Basic + DA  _(EPF Act 1952)_
+- **— EPF account** — 3.67%  _(EPF Act)_
+- **— EPS (pension)** — 8.33% (capped at ₹15,000/month = max ₹1,250/mo)  _(EPF Act)_
+- **Employee contribution** — 12% of Basic + DA  _(EPF Act 1952)_
+- **EPF Admin** — 0.50% of total EPF wages (min ₹500/month if >20 employees)  _(EPFO notification)_
+- **EDLI (life insurance)** — 0.50% of Basic+DA (capped at ₹15,000) = max ₹75/mo  _(EPFO notification)_
+- **EDLI Admin** — Nil (removed 01-04-2017)  _(EPFO notification)_
+- **Employer ESI** — 3.25% of gross wages  _(ESI Act 1948)_
+- **Employee ESI** — 0.75% of gross wages  _(ESI Act 1948)_
+- **Total ESI** — 4%  _(ESI Act)_
+- **ECR (EPF monthly)** — 15th of following month  _(EPFO)_
+- **ESI monthly** — 15th of following month  _(ESIC)_
+- **Employer total EPF contribution** — 12% of Basic + DA  _(EPF Act 1952)_
+- **EPF account split (employer)** — 3.67%  _(EPF Act)_
+- **EPS (pension) split** — 8.33% (capped at ₹15,000/month = max ₹1,250/mo)  _(EPF Act; EPFO Head Office Circular No. Pension-I/12/33/EPS Amendment/96/Vol.)_
+- **Employee EPF contribution** — 12% of Basic + DA  _(EPF Act 1952)_
+- **PF wage ceiling** — ₹15,000/month (statutory; many contribute on actual)  _(EPF Act)_
+- **EPF applicability** — Establishments with 20+ persons  _(EPF Act)_
+- **EPF Admin charge** — 0.50% of total EPF wages (min ₹500/month if >20 employees)  _(EPFO notification)_
+- **EDLI (life insurance) contribution** — 0.50% of Basic+DA (capped at ₹15,000) = max ₹75/mo  _(EPFO notification)_
+- **EDLI Admin charge** — Nil (removed 01-04-2017)  _(EPFO notification)_
+- **EDLI death benefit** — Up to ₹7,00,000  _(EPFO)_
+- **Employer ESI contribution** — 3.25% of gross wages  _(ESI Act 1948)_
+- **Employee ESI contribution** — 0.75% of gross wages  _(ESI Act 1948)_
+- **Total ESI contribution** — 4%  _(ESI Act)_
+- **ESI wage ceiling** — ₹21,000/month (₹25,000 for disability)  _(ESI Act)_
+- **ESI applicability** — Establishments with 10+ persons (notified areas)  _(ESI Act)_
+- **ECR (EPF monthly) filing deadline** — 15th of following month  _(EPFO)_
+- **ESI monthly filing deadline** — 15th of following month  _(ESIC)_
+- **Late payment penalty** — 12% per annum (simple interest) + damages 1% per month or part thereof from the date of default  _(EPF Act / ESI Acts)_
+
 ## Section 1 -- Quick Reference
 
 | Field | Value |

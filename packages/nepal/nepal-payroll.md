@@ -18,6 +18,26 @@ depends_on:
 
 ---
 
+## Verified rates & thresholds (accountant-reviewed)
+
+> Reviewed against the cited tax authorities by **Ashish Bista** on 2026-06-06.
+> This block is generated from the verified facts database at openaccountants.com —
+> edit the facts there, not this prose. Items under clarification are excluded.
+
+### Payroll (Salary TDS + SSF)
+
+- **SSF — employee contribution rate** — 11% of basic remuneration (deducted)  _(Contribution Based Social Security Act 2074 (Pioneer Law/HajirHR))_
+- **SSF — employer contribution rate** — 20% of basic remuneration  _(Contribution Based Social Security Act 2074)_
+- **SSF — total contribution rate** — 31%  _(Pioneer Law; HajirHR)_
+- **Employer 20% composition** — PF 10% + Gratuity 8.33% + Additional 1.67%  _(SSF (verify composition))_
+- **Employee 11% internal split** — 10% Provident Fund + 1% Medical Insurance Scheme (Medical & Dependent Health Protection Scheme under SSF)  _(SSF Directive 2075)_
+- **SSF-liable 'basic remuneration' composition** — Basic Salary + Dearness Allowance (Gross salary excluding overtime/allowances)  _(Labour Act 2074 s. 2 / SSF Act 2074)_
+- **Salary income tax withholding** — Withheld monthly per resident-individual slabs (see Income Tax tab)  _(Income Tax Act 2058 Sch.1)_
+- **SSF contributor & the 1% SST exemption** — An SSF contributor is exempt from the 1% income-tax SST first-band levy  _(Income Tax Act 2058 (PKF))_
+- **Remittance / return due dates** — SSF: Within 15 days of month-end; Salary TDS: Within 25 days of month-end  _(SSF Act 2074 / Income Tax Act 2058)_
+- **Maximum Approved Retirement Deduction** — Actual contribution, 1/3rd of assessable income, or NPR 500,000 (whichever is lower)  _(Income Tax Act 2058 s. 63)_
+- **Remote Area Allowance Deduction** — Up to NPR 50,000 depending on the remote category (Class A to E)  _(Income Tax Act 2058 Sch. 1)_
+
 ## Section 1 — Quick reference: monthly payroll components
 
 | Component | Rate | Base | Paid by |

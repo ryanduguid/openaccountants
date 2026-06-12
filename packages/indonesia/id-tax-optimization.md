@@ -24,6 +24,24 @@ verified_by: pending
 
 ---
 
+## Verified rates & thresholds (accountant-reviewed)
+
+> Reviewed against the cited tax authorities by **RILIA PUTRI** on 2026-06-03.
+> This block is generated from the verified facts database at openaccountants.com —
+> edit the facts there, not this prose. Items under clarification are excluded.
+
+### Tax Optimization
+
+- **Revenue < IDR 500M** — Eligible taxpayers under the UMKM final tax regime may utilize the 0.5% final income tax on gross turnover, with the first IDR 500 million of annual turnover generally excluded from taxable base calculation under prevailing regulations. Eligibility is limited to taxpayers covered under Article 57 as amended by PP 20/2026.  _(UU PPh Art. 7; PP 20/2026 Art. 57; PP 55/2022 Art. 60.)_
+- **Revenue 500M–4.8B, low margin** — UMKM Final income tax regime at 0.5% of gross turnover may remain administratively simpler and beneficial for eligible taxpayers. Following PP 20/2026, eligibility is limited to individual taxpayers, Perseroan Perorangan, and cooperatives meeting Article 57 requirements.  _(PP 20/2026 Art. 57; UU PPh Art. 4(2).)_
+- **Revenue 500M–4.8B, high-margin services** — Taxpayers should compare UMKM Final, ordinary bookkeeping, and NPPN approaches based on profitability and deductible expenses. Eligibility for UMKM Final is subject to revised Article 57 criteria under PP 20/2026 and exclusions under Article 56.  _(PP 20/2026 Art. 56–57; UU PPh Art. 14; PER-17/PJ/2015.)_
+- **UMKM 7 years elapsed (OP)** — Mandatory exit; progressive only  _(PP 20/2026 Art. 6 (deletion of Art. 59); PP 20/2026 Art. 57.)_
+- **Revenue > 4.8B sustained** — Taxpayers exceeding the IDR 4.8 billion turnover threshold are no longer eligible for UMKM Final taxation beginning the subsequent tax year and generally transition to ordinary income-tax rules with bookkeeping obligations.  _(PP 20/2026 Art. 57(1), 57(2)(e); UU KUP Art. 28.)_
+- **Operating losses expected** — Tax loss carry-forward facilities generally apply under the ordinary income tax regime with bookkeeping. The UMKM Final regime does not provide ordinary tax-loss carry-forward treatment.  _(UU PPh Art. 6(2) as amanded by UU HPP; PP 78/2019.)_
+- **Dividend extraction from PT** — Domestic dividends received by Indonesian individual taxpayers are generally excluded from income tax provided that the dividends are reinvested in Indonesia in accordance with prevailing regulations. If reinvestment requirements are not satisfied, the dividend may become taxable under ordinary income-tax provisions.  _(UU PPh as amended by UU HPP; PP 55/2022 Art. 9.)_
+- **Owner salary from PT** — Salary or remuneration paid by a PT to its shareholder-owner/director may generally be deductible for corporate income-tax purposes provided that the remuneration relates to business activities and satisfies arm’s-length/commercial reasonableness principles. Such remuneration is generally subject to PPh 21 withholding obligations. Excessive or non-commercial payments may be challenged as non-deductible expenses or deemed dividend distributions under prevailing tax regulations.  _(UU PPh Art. 6; Art. 21 U PPh as amended by UU HPP No. 7/2021. ; PP 55/2022 (general anti-avoidance and arm’s-length principles))_
+- **KK (default joint)** — Married taxpayers generally follow combined family taxation approach unless separate tax-rights/obligations arrangements apply under prevailing Indonesian income-tax regulations. PTKP treatment depends on marital and dependent status under applicable rules.  _(UU PPh Art. 8; PP 58/2023; PMK 168/2023; PMK 101/PMK.010/2016.; note: UU PPh as amended by UU HPP No. 7/2021.)_
+
 ## Section 1 -- Quick Reference: When Each Regime / Entity Wins
 
 | Field | Value |

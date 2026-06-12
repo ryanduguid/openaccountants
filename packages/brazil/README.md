@@ -8,6 +8,8 @@
 **Ariane Marrocos** (CRC/SP) — Lead accountant verifier for Brazil on OpenAccountants.
 [View profile →](https://www.openaccountants.com/network/366f5c0f-1afb-4332-b87b-9b6f912821aa)
 
+_Scope: the “Verified rates & thresholds” blocks inside these skill files are generated from the facts this verifier reviewed. Everything else in the files is an open, source-cited draft. The full accountant-verified tier, with the verifier’s name on every answer, is served via the [connector](https://www.openaccountants.com/connect)._
+
 ## What's in this folder
 
 1. `foundation.md`

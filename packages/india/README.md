@@ -8,6 +8,8 @@
 **Mayur Deokar** — Lead accountant verifier for India on OpenAccountants.
 [View profile →](https://www.openaccountants.com/network/f4cb8476-a86d-4fd9-b536-9217e82ccf99)
 
+_Scope: the “Verified rates & thresholds” blocks inside these skill files are generated from the facts this verifier reviewed. Everything else in the files is an open, source-cited draft. The full accountant-verified tier, with the verifier’s name on every answer, is served via the [connector](https://www.openaccountants.com/connect)._
+
 ## What's in this folder
 
 1. `foundation.md`

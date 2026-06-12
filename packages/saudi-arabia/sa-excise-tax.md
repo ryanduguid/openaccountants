@@ -13,6 +13,23 @@ verified_by: pending
 
 ---
 
+## Verified rates & thresholds (accountant-reviewed)
+
+> Reviewed against the cited tax authorities by **Mehran Habib** on 2026-06-06.
+> This block is generated from the verified facts database at openaccountants.com —
+> edit the facts there, not this prose. Items under clarification are excluded.
+
+### Excise Tax
+
+- **Tobacco and tobacco products** — 100%  _(Chapter two Article 3 Rates - Implementing Regulation of Excise Tax Law)_
+- **Energy drinks** — 100%  _(Chapter two Article 3 Rates - Implementing Regulation of Excise Tax Law)_
+- **Soft drinks (carbonated)** — 50%  _(Chapter two Article 3 Rates - Implementing Regulation of Excise Tax Law)_
+- **Sweetened drinks + Distilled beverages (energy drinks still 100%)** — 0.5  _(Chapter two Article 3 Rates - Implementing Regulation of Excise Tax Law)_
+- **E-cigarettes / vape devices** — 100%  _(Chapter two Article 3 Rates - Implementing Regulation of Excise Tax Law)_
+- **E-liquids** — 100%  _(Chapter two Article 3 Rates - Implementing Regulation of Excise Tax Law)_
+- **Tax base** — Higher of declared RSP or ZATCA standard price  _(Definition - Tax Base - Implementing Regulations of Excise Tax Law)_
+- **Filing** — Monthly; due within 15 days of month-end  _(Article 16(1) Tax Return - Implementing Regulation of Excise Tax Law)_
+
 ## Section 1 — Quick reference
 
 | Field | Value |

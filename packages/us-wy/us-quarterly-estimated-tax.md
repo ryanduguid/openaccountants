@@ -12,6 +12,20 @@ depends_on:
 
 # US Quarterly Estimated Tax (Form 1040-ES) -- Self-Employed Skill v2.0
 
+## Verified rates & thresholds (accountant-reviewed)
+
+> Reviewed against the cited tax authorities by **Amir Pelinkovic** on 2026-06-03.
+> This block is generated from the verified facts database at openaccountants.com —
+> edit the facts there, not this prose. Items under clarification are excluded.
+
+### Estimated Tax (1040-ES)
+
+- **Threshold** — Owe >= $1,000 after withholding/credits  _(IRC 6654; Form 1040-ES.)_
+- **≤$150K** — Prior-year AGI <= $150,000 -> 100% prior-year safe harbor  _(IRC 6654(d).)_
+- **>$150K** — Prior-year AGI > $150,000 -> 110% prior-year safe harbor  _(IRC 6654(d)(1)(C).)_
+- **Current** — 90% of current-year tax  _(IRC 6654(d).)_
+- **Rate** — Federal underpayment rate was 7% for all four quarters of 2025 (set quarterly = federal short-term + 3 points)  _(IRC 6621; IRS Pub 505; quarterly rev. rulings.)_
+
 ## Section 1 -- Quick reference
 
 | Field | Value |

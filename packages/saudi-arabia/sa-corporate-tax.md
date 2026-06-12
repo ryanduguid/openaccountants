@@ -19,6 +19,24 @@ verified_by: pending
 
 ---
 
+## Verified rates & thresholds (accountant-reviewed)
+
+> Reviewed against the cited tax authorities by **Mehran Habib** on 2026-06-06.
+> This block is generated from the verified facts database at openaccountants.com —
+> edit the facts there, not this prose. Items under clarification are excluded.
+
+### Corporate Tax (CIT)
+
+- **Standard CIT** — 20% on foreign-share taxable income  _(Income Tax Law Art. 7 (Chapter Three, Article 7(A)))_
+- **Natural gas investment** — 0.2  _(Income Tax Law (Chapter Three, Article 7(B)))_
+- **Oil and hydrocarbons** — 0.85  _(Income Tax Law (Chapter Three, Article 7(C)))_
+- **Loss carry-forward** — Indefinite, capped at 25% of taxable income per year  _(ITL Art. 21 (Chapter Five, Article 21(A)))_
+- **Interest deduction limit** — The deductible amount of interest is limited to the Lower of Actual Loan Charges (Interest expense) incurred during the tax year if related to income subject to tax OR The resultant of the following formula: Interest Income + 50% of (A - B) where A = income subject to tax other than interest income, B = expenses allowed under the Law other than interest expense.  _(ITL Art. 12)_
+- **TP documentation (CbCR)** — Group revenue > SAR 3.2 billion  _(TP Guidelines ZATCA (Third Edition) 2019 bylaws)_
+- **Record retention** — 10 years  _(Income Tax Law Art. 58)_
+- **Annual return** — 120 days after FYE  _(ITL Chapter Twelve, Article 60(B))_
+- **Late payment penalty** — 5% per month, capped at 25%  _(ITL Chapter Fourteen, Article 76(B))_
+
 ## Section 1 — Quick Reference
 
 | Field | Value |

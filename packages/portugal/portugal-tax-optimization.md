@@ -15,6 +15,33 @@ verified_by: pending
 
 ---
 
+## Verified rates & thresholds (accountant-reviewed)
+
+> Reviewed against the cited tax authorities by **Mário Jorge da costa Vale** on 2026-06-04.
+> This block is generated from the verified facts database at openaccountants.com —
+> edit the facts there, not this prose. Items under clarification are excluded.
+
+### Otimização Fiscal
+
+- **Despesas gerais familiares** — 35% com NIF, máx €250/contribuinte  _(CIRS)_
+- **Saúde** — 15% das despesas, máx €1.000  _(CIRS)_
+- **Educação** — 30% das despesas, máx €800  _(CIRS)_
+- **Habitação (renda)** — 15%, máx €502  _(CIRS)_
+- **Habitação (juros)** — 15%, máx €296  _(CIRS)_
+- **Lares** — 25%, máx €403,75  _(CIRS)_
+- **IVA/fatura** — 15% do IVA (restauração, cabeleireiros, etc.), máx €250  _(CIRS)_
+- **Edifícios comerciais** — Edifícios comerciais - 2% ; Edifícios industriais - 5%  _(DR 25/2009)_
+- **Mobiliário escritório** — 12,5%  _(DR 25/2009)_
+- **Hardware informático** — 33,33%  _(DR 25/2009)_
+- **Software** — 33,33%  _(DR 25/2009)_
+- **Veículos ligeiros** — 25%  _(DR 25/2009)_
+- **PPR — dedução IRS** — 20% das contribuições (limite por idade)  _(CIRS)_
+- **Juros depósitos** — 28% taxa autónoma (ou englobamento)  _(CIRS)_
+- **Dividendos (englobamento)** — 50% incluído no rendimento (efetivo máx 24%)  _(CIRS)_
+- **Mais-valias mobiliárias** — 28% taxa autónoma; perdas compensáveis 5 anos  _(CIRS)_
+- **Mais-valias imobiliárias** — 50% do ganho incluído no rendimento; reinvestimento HPP 36 meses  _(CIRS Art. 10.º n.º 5)_
+- **Rendas (Cat. F)** — taxa autónoma 25% para habitação própria e permanente e 28% outros casos, ou englobamento  _(CIRS artº 72º)_
+
 ## Secção 1 — Referência Rápida
 
 | Campo | Valor |

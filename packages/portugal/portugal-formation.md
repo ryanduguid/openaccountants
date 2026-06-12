@@ -15,6 +15,30 @@ verified_by: pending
 
 ---
 
+## Verified rates & thresholds (accountant-reviewed)
+
+> Reviewed against the cited tax authorities by **Mário Jorge da costa Vale** on 2026-06-04.
+> This block is generated from the verified facts database at openaccountants.com —
+> edit the facts there, not this prose. Items under clarification are excluded.
+
+### Constituição de Empresa
+
+- **Lda — capital mínimo** — €1 por quota (mín. €2 total)  _(CSC)_
+- **Unipessoal Lda — capital** — €1  _(CSC)_
+- **SA — capital mínimo** — €50.000 (30% à constituição)  _(CSC)_
+- **ENI** — Sem personalidade jurídica, responsabilidade ilimitada
+- **Empresa na Hora (padrão)** — €360  _(DL 111/2005)_
+- **Empresa Online (pacto pré-aprovado)** — €220  _(gov.pt)_
+- **Empresa Online (pacto customizado)** — €360  _(gov.pt)_
+- **Certificado de admissibilidade** — €75 (online) / €150 (urgente)  _(RNPC)_
+- **IES** — Até 15 julho do ano seguinte  _(AT)_
+- **IRC (Modelo 22)** — Até 31 maio do ano seguinte  _(AT)_
+- **RCBE (beneficiário efetivo)** — Na constituição + confirmação anual  _(IRN)_
+- **Declaração início atividade** — 15 dias  _(AT)_
+- **Contabilista Certificado** — Obrigatório (responsabilidade legal)  _(DL 158/2009)_
+- **Taxa normal** — 2025: 21% ; 2026: 19%  _(Código IRC)_
+- **PME — primeiros €50.000** — 2025: 16% ; 2026: 15%  _(Código IRC)_
+
 ## Secção 1 -- Referência Rápida
 
 | Campo | Valor |

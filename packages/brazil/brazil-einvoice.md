@@ -15,6 +15,28 @@ depends_on:
 
 ---
 
+## Verified rates & thresholds (accountant-reviewed)
+
+> Reviewed against the cited tax authorities by **Ariane Marrocos** on 2026-06-03.
+> This block is generated from the verified facts database at openaccountants.com —
+> edit the facts there, not this prose. Items under clarification are excluded.
+
+### Nota Fiscal Eletrônica
+
+- **NF-e (modelo 55)** — Venda B2B de mercadorias, interestadual — SEFAZ  _(Ajuste SINIEF 07/2005)_
+- **NFC-e (modelo 65)** — Varejo B2C ponto de venda — SEFAZ  _(Ajuste SINIEF 19/2016)_
+- **NFS-e** — Serviços — municipal → SNNFSe nacional  _(LC 116/2003)_
+- **CT-e** — Frete/transporte — SEFAZ  _(Ajuste SINIEF 09/2007)_
+- **2026 (fase teste)** — CBS 0,9% + IBS 0,1% = 1% simbólico nos documentos  _(Emenda Constitucional nº 132/2023 Lei Complementar nº 214/2025 Nota Técnica 2025.002)_
+- **2027** — CBS plena; PIS/Cofins extintos dos campos da NF  _(LC 214/2025)_
+- **2033** — ICMS/ISS totalmente extintos dos documentos  _(Emenda Constitucional nº 132/2023 Lei Complementar nº 214/2025)_
+- **ICP-Brasil A1** — Arquivo .pfx, validade 1 ano  _(ICP-Brasil)_
+- **ICP-Brasil A3** — Certificado Digital ICP-Brasil A3: certificado armazenado em token criptográfico ou smart card, com validade definida pela Autoridade Certificadora, geralmente entre 1 e 5 anos.  _(ICP-Brasil)_
+- **Assinatura** — XMLDSig enveloped, SHA-256  _(World Wide Web Consortium (W3C) ICP-Brasil Manual de Orientação do Contribuinte da NF-e)_
+- **Composição** — 44 dígitos: UF(2) + AAMM(4) + CNPJ(14) + Modelo(2) + Série(3) + Número(9) + tpEmis(1) + Código(8) + DV(1)  _(Manual de Orientação do Contribuinte da NF-e Ajuste SINIEF 07/2005)_
+- **Cancelamento (110111)** — Prazo definido pela legislação estadual (tradicionalmente 24 horas após autorização).  _(Ajuste SINIEF 07/2005; legislação da UF)_
+- **Carta de Correção (110110)** — Correção de erros não financeiros e sem impacto tributário  _(Ajuste SINIEF 07/2005)_
+
 ## Seção 1 — Referência Rápida
 
 | Campo | Valor |

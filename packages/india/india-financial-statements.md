@@ -13,6 +13,33 @@ depends_on:
 
 ---
 
+## Verified rates & thresholds (accountant-reviewed)
+
+> Reviewed against the cited tax authorities by **Mayur Deokar** on 2026-06-06.
+> This block is generated from the verified facts database at openaccountants.com —
+> edit the facts there, not this prose. Items under clarification are excluded.
+
+### Financial Statements
+
+- **Listed companies** — Ind AS mandatory  _(MCA notification)_
+- **Unlisted — net worth ≥ ₹250 crore** — Ind AS mandatory  _(MCA notification)_
+- **Unlisted — below ₹250 crore** — AS (Indian GAAP) unless voluntary  _(MCA notification)_
+- **Form** — AOC-4 / AOC-4 XBRL / AOC-4 CFS  _(Companies Act s 137)_
+- **AGM deadline** — 6 months from FY-end  _(Companies Act s 96)_
+- **Listed companies — Ind AS Applicability** — Ind AS mandatory  _(MCA notification)_
+- **Unlisted — net worth ≥ ₹250 crore — Ind AS Applicability** — Ind AS mandatory  _(MCA notification)_
+- **Unlisted — below ₹250 crore — Ind AS Applicability** — AS (Indian GAAP) unless voluntary  _(MCA notification)_
+- **Form (Filing)** — AOC-4 / AOC-4 XBRL / AOC-4 CFS  _(Companies Act s 137)_
+- **AGM deadline** — 6 months from FY-end  _(Companies Act s 96)_
+- **AOC-4 deadline** — 30 days from AGM  _(Companies Act s 137)_
+- **XBRL mandatory if** — Capital ≥ ₹5 crore OR turnover ≥ ₹100 crore; all listed; all companies implementing IND AS  _(MCA Rules)_
+- **Late fee** — ₹100/day of delay  _(Companies Act s 403)_
+- **Statutory audit** — ALL companies — mandatory (no size exemption)  _(Companies Act s 139)_
+- **CARO 2020 — small company** — Exempt  _(CARO 2020)_
+- **Auditor rotation — individual** — 1 term of 5 years (listed)  _(Companies Act s 139(2))_
+- **Auditor rotation — firm** — 2 terms of 5 years = 10 years (listed)  _(Companies Act s 139(2))_
+- **Internal audit** — Mandatory for every listed company. For unlisted public company: turnover ≥ ₹200 crore or loans > ₹100 crore or paid-up share capital ≥ ₹50 crore or deposits ≥ ₹25 crore. For unlisted private company: required if turnover ≥ ₹200 crore or loans ≥ ₹100 crore.  _(Companies Act s 138)_
+
 ## Section 1 -- Quick Reference
 
 | Field | Value |

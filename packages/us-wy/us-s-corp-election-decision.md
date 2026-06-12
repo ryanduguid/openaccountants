@@ -6,6 +6,18 @@ version: 0.2
 
 # US S-Corp Election Decision Skill v0.2
 
+## Verified rates & thresholds (accountant-reviewed)
+
+> Reviewed against the cited tax authorities by **Amir Pelinkovic** on 2026-06-03.
+> This block is generated from the verified facts database at openaccountants.com —
+> edit the facts there, not this prose. Items under clarification are excluded.
+
+### S-Corp Election
+
+- **SE rate** — 15.3%  _(IRC 1401.)_
+- **SS base** — 2025 = $176,100  _(SSA 2025.)_
+- **Election TY2025** — Form 2553 due 2 months 15 days after the start of the tax year = March 15, 2025; that date is a Saturday, so the deadline rolls to March 17, 2025  _(IRC 1362(b); Form 2553 instr.)_
+
 ## What this file is, and what it is not
 
 **This file is a content skill that loads on top of `us-tax-workflow-base` v0.1.** It provides a structured decision framework for evaluating whether a sole proprietor or single-member LLC should elect S-corporation status for federal tax purposes. It does not file Form 2553, prepare Form 1120-S, or run payroll — those are execution tasks that follow after the decision is made.

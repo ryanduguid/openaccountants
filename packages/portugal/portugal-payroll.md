@@ -26,6 +26,41 @@ verified_by: pending
 
 ---
 
+## Verified rates & thresholds (accountant-reviewed)
+
+> Reviewed against the cited tax authorities by **Mário Jorge da costa Vale** on 2026-06-04.
+> This block is generated from the verified facts database at openaccountants.com —
+> edit the facts there, not this prose. Items under clarification are excluded.
+
+### Folha de Pagamento
+
+- **Continente 2026** — €920/mês  _(DL 139/2025)_
+- **Continente 2025** — €870/mês  _(DL anterior)_
+- **Açores 2026** — €966/mês  _(DL regional)_
+- **Madeira 2026** — €980,00  _(Decreto Legislativo Regional n.º 1/2026/M, de 3 de fevereiro de 2026)_
+- **Empregado** — 11% do bruto  _(Código Contributivo)_
+- **Empregador** — 23,75% do bruto  _(Código Contributivo)_
+- **Total** — 34,75%
+- **Teto** — Sem teto — aplica-se ao salário total  _(Código Contributivo)_
+- **FCT (Fundo de Compensação)** — Suspenso de Maio de 2023  _(Lei 70/2013)_
+- **FGCT (Fundo de Garantia)** — Suspenso de Maio de 2023  _(Lei 70/2013)_
+- **Total** — Suspenso de Maio de 2023
+- **Empregador** — 20,30%  _(Código Contributivo)_
+- **Empregado (gerente)** — 9,30%  _(Código Contributivo)_
+- **Em dinheiro** — €6,15/dia (2026)  _(Portaria n.º 51-B/2026/1)_
+- **Cartão refeição** — €10,46/dia (2026)  Portaria n.º 51-B/2026/1  _(OE anual)_
+- **1.ª hora (dia útil)** — 25%  _(Código do Trabalho)_
+- **Horas seguintes (dia útil)** — 37,5%  _(Código do Trabalho)_
+- **Descanso/feriados** — 50%  _(Código do Trabalho)_
+- **Trabalho noturno (22h-7h)** — 25% mínimo  _(Código do Trabalho)_
+- **Subsídio de férias** — 1 mês de salário (antes do início das férias)  _(Código do Trabalho)_
+- **Subsídio de Natal** — 1 mês de salário (até 15 de dezembro)  _(Código do Trabalho)_
+- **Férias anuais** — 22 dias úteis mínimo  _(Código do Trabalho)_
+- **Licença paternidade** — 28 dias consecutivos obrigatórios (SS)  _(Código do Trabalho)_
+- **DMR (Declaração Mensal)** — Até dia 10 do mês seguinte  _(AT)_
+- **Pagamento SS/IRS** — Até dia 20 do mês seguinte  _(AT/ISS)_
+- **Relatório Único** — Até 15 de abril  _(GEP/MTSSS)_
+
 ## Secção 1 — Referência Rápida
 
 | Campo | Valor |

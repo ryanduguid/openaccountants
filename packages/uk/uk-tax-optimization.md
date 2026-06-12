@@ -20,6 +20,30 @@ verified_by: pending
 
 ---
 
+## Verified rates & thresholds (accountant-reviewed)
+
+> Reviewed against the cited tax authorities by **James Power** on 2026-06-03.
+> This block is generated from the verified facts database at openaccountants.com —
+> edit the facts there, not this prose. Items under clarification are excluded.
+
+### Tax Optimisation
+
+- **AIA** — £1,000,000 (100% first-year)  _(CAA 2001)_
+- **Main pool WDA (2025-26)** — 18% reducing balance  _(CAA 2001)_
+- **Main pool WDA (from Apr 2026)** — 14%  _(Finance Act 2025)_
+- **Special rate pool** — 6%  _(CAA 2001)_
+- **Electric car (0 g/km)** — 100% FYA  _(CAA 2001)_
+- **Car 1-50 g/km** — Main pool (18%/14%)  _(CAA 2001)_
+- **Car over 50 g/km** — Special rate pool (6%)  _(CAA 2001)_
+- **Sideways (s.64)** — Against total income same/prior year; cap £50,000 or 25%  _(ITA 2007 s.64)_
+- **Carry-forward (s.83)** — Unlimited, no time limit, same trade only  _(ITA 2007 s.83)_
+- **Early trade (s.72)** — First 4 years losses carried back 3 years  _(ITA 2007 s.72)_
+- **Terminal (s.89)** — Final 12 months, back 3 years (no cap)  _(ITA 2007 s.89)_
+- **When to consider** — Profits consistently £40,000-£50,000+  _(Tax planning)_
+- **Corp tax — small profits** — 19% (taxable profits ≤ £50,000)  _(CTA 2010)_
+- **Corp tax — main rate** — 25% (profits > £250,000)  _(CTA 2010)_
+- **Corp tax — marginal** — 26.5% effective (£50,001 – £250,000)  _(CTA 2010)_
+
 ## Section 1 -- Quick Reference
 
 | Field | Value |

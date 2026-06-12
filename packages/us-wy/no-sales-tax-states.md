@@ -6,6 +6,20 @@ version: 2.0
 
 # No-Sales-Tax States Skill v2.0 -- AK, DE, MT, NH, OR
 
+## Verified rates & thresholds (accountant-reviewed)
+
+> Reviewed against the cited tax authorities by **Amir Pelinkovic** on 2026-06-03.
+> This block is generated from the verified facts database at openaccountants.com —
+> edit the facts there, not this prose. Items under clarification are excluded.
+
+### No-Sales-Tax States
+
+- **Alaska** — No state sales tax; 100+ localities levy up to ~7.5% (e.g., Kodiak 7.5%)  _(Alaska Remote Seller Sales Tax Commission; local codes.)_
+- **Delaware** — No sales tax; gross receipts tax ranges ~0.0945%-1.9914% by activity  _(Del. Code tit. 30; DE Division of Revenue.)_
+- **Montana** — Resort tax up to 3% is correct, but Montana's lodging tax is 8% total (4% Lodging Facility Use Tax + 4% sales tax on accommodations); 'lodging 4%' reflects only one component.  _(Mont. Code Ann. 15-65 & 15-68; MT DOR.)_
+- **NH** — NH Meals & Rentals tax = 8.5% (since 10/1/2021)  _(NH DRA; RSA 78-A.)_
+- **Oregon** — Oregon Corporate Activity Tax = $250 + 0.57% of commercial activity over $1,000,000  _(ORS 317A; OR DOR.)_
+
 ## Section 1 -- Quick reference
 
 | State | No general sales tax | But has... |

@@ -6,6 +6,19 @@ version: 0.2
 
 # US Self-Employed Retirement Skill v0.2
 
+## Verified rates & thresholds (accountant-reviewed)
+
+> Reviewed against the cited tax authorities by **Amir Pelinkovic** on 2026-06-03.
+> This block is generated from the verified facts database at openaccountants.com —
+> edit the facts there, not this prose. Items under clarification are excluded.
+
+### SE Retirement
+
+- **Solo 401k** — 2025 402(g) elective deferral limit = $23,500  _(IRS Notice 2024-80.)_
+- **§415(c)** — 2025 total defined-contribution 415(c) limit = $70,000  _(IRS Notice 2024-80.)_
+- **IRA** — 2025 IRA limit = $7,000 (+$1,000 catch-up age 50+)  _(IRS Notice 2024-80.)_
+- **Roth S** — 2025 Roth IRA phase-out, Single/HoH = $150,000-$165,000  _(IRS Notice 2024-80.)_
+
 ## What this file is, and what it is not
 
 **This file is a content skill that loads on top of `us-tax-workflow-base` v0.1.** It computes the deductible retirement contributions available to a sole proprietor or single-member LLC owner for tax year 2025. It does not classify transactions (that is `us-sole-prop-bookkeeping`), compute Schedule C net profit or SE tax (that is `us-schedule-c-and-se-computation`), or compute the QBI deduction (that is `us-qbi-deduction`, which consumes this skill's output).
