@@ -161,7 +161,7 @@ The AI asks a few questions, loads the right Guides, and produces a working pape
 | `[country]-guided-intake.md` | Full guided experience (13 countries) |
 | `[country]-return-assembly.md` | Cross-checks: VAT × IT × SSC (13 countries) |
 
-**Special packages:** `_cross-border/` (37 skills) · `_verticals/` (14 industry skills) · `_integrations/` (10 platform skills: Xero, QuickBooks, Stripe, Wise, Shopify, and more) · `us-federal/` (US federal form guides + machine-readable `rates.2025.json` / `rates.2026.json`)
+**Special packages:** `_cross-border/` (37 skills) · `_verticals/` (14 industry skills) · `_integrations/` (10 platform skills: Xero, QuickBooks, Stripe, Wise, Shopify, and more) · `us-federal/` (US federal form guides + machine-readable `rates.2025.json` / `rates.2026.json`) · `uk/` (structured `rates.2025.json`, 2025/26, every figure statute-cited)
 
 ---
 
