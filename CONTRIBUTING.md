@@ -4,7 +4,7 @@ Thanks for your interest in contributing. Here's how it works.
 
 ## Who can contribute
 
-Anyone. You don't need to be an accountant to write a skill. You need to know your country's rules well enough to cite the statutes — whether that's tax rates, payroll obligations, e-invoicing specs, or company formation steps. Accountants then verify what you wrote.
+Anyone. You don't need to be an accountant to write a skill. You need to know your country's rules well enough to cite the statutes — whether that's tax rates, payroll obligations, e-invoicing specs, or company formation steps. Partners — licensed accountants — then review what you wrote.
 
 ## How to contribute a skill
 
@@ -13,7 +13,7 @@ Anyone. You don't need to be an accountant to write a skill. You need to know yo
 1. Go to [openaccountants.com](https://www.openaccountants.com)
 2. Sign up for an account
 3. Use the submission form to upload your skill
-4. It goes live immediately as "unverified"
+4. It goes live immediately as a **source-cited draft**
 
 ### Option 2: Via GitHub PR
 
@@ -40,38 +40,11 @@ Every skill in `skills/` that should appear on [openaccountants.com](https://www
 
 Full details: [docs/WEBSITE-SYNC.md](docs/WEBSITE-SYNC.md)
 
-## Skill structure
+## Skill structure and frontmatter
 
-Every skill follows the same structure:
+**The canonical spec for skill files — required/optional frontmatter keys, formats, the `category` vocabulary, and the body section order — is [docs/skill-template.md](docs/skill-template.md).** Don't restate it; follow it. CI enforces it via `scripts/validate-guides.py`.
 
-- **Frontmatter** — name, description, version, jurisdiction, category, dependencies
-- **Scope statement** — what it covers, what it doesn't
-- **Filing requirements** — who needs to file, thresholds, deadlines
-- **Rates and thresholds** — every number with a statute citation
-- **Computation rules** — step-by-step logic Claude can execute
-- **Edge cases** — exceptions, elections, safe harbors
-- **Self-checks** — verification items for the reviewer
-- **Disclaimer** — not tax advice
-
-### Skill categories
-
-The `category` field in YAML frontmatter tells the system what domain a skill covers:
-
-| Category | What it means | Example |
-|----------|---------------|---------|
-| `international` | Tax computation (VAT, income tax, SSC) | `malta-income-tax.md` |
-| `bookkeeping` | Chart of accounts, P&L, balance sheet | `germany-bookkeeping.md` |
-| `invoicing` | E-invoicing format, validation, transmission | `italy-einvoice.md` |
-| `payroll` | Withholding, social security, payslips | `uk-payroll.md` |
-| `formation` | Entity types, registration, compliance | `singapore-formation.md` |
-| `financial-statements` | Annual accounts, reporting, audit | `france-financial-statements.md` |
-| `transfer-pricing` | TP documentation, arm's length, CbCR | `india-transfer-pricing.md` |
-| `tax-optimization` | Legal tax reduction strategies, timing, deductions | `malta-tax-optimization.md` |
-| `crypto` | Cryptocurrency and digital asset taxation | `uk-crypto-tax.md` |
-| `cross-border` | Multi-jurisdiction coordination, treaties, WHT | `eu-social-security-coordination.md` |
-| `vertical` | Industry-specific accounting patterns | `freelance-developer.md` |
-| `integration` | Platform export formats, column mappings | `stripe-integration.md` |
-| `foundation` | Universal workflow base (domain-agnostic) | `payroll-workflow-base.md` |
+One-line summary: YAML frontmatter (`name`, `description`, `jurisdiction`, `category`, `tax_year`, `tier`, `last_updated`, plus optional keys), then a body that runs scope → filing requirements → rates with citations → step-by-step computation rules → edge cases → self-checks → disclaimer.
 
 All domain skills for a country live in the same directory (e.g., `skills/international/germany/` contains tax, bookkeeping, payroll, formation, financial statements, transfer pricing, tax optimization, and e-invoicing). The build script detects them by filename suffix and bundles the appropriate workflow base automatically.
 
@@ -127,9 +100,9 @@ After editing, run `python3 scripts/build-packages.py` to regenerate all package
 
 If you add a `references.md` to a country's source directory, it will be included in the generated package automatically.
 
-## Verification
+## Review
 
-After you submit, licensed accountants review each section of your skill on [openaccountants.com](https://www.openaccountants.com). When every section is approved, the skill gets a green "verified" badge. Your name stays on it as the author.
+After you submit, Partners — licensed accountants — review your skill on [openaccountants.com](https://www.openaccountants.com). When the full review is approved, the skill becomes **accountant-reviewed** (Tier 1). Your name stays on it as the author.
 
 ## Contributor License Agreement (CLA)
 
@@ -145,5 +118,5 @@ If anything in [CLA.md](CLA.md) is unclear, ask before contributing.
 
 - Your name on the skill, linked to your contributor profile
 - Public contributor profile showing all your contributions
-- Accountant verification — real professionals review your work
+- Accountant review — real professionals review your work
 - The knowledge that thousands of freelancers and small businesses are using your skill to manage their accounting

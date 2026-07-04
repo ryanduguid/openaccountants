@@ -8,7 +8,7 @@ If you only read one file in this repo, this is the one.
 
 ## What is this?
 
-OpenAccountants is a library of **research-verified or accountant-verified** AI skills that you upload to Claude, ChatGPT, or any LLM. Give the AI your bank statement and the right files, and you get a working paper your accountant can sign off in minutes.
+OpenAccountants is a library of AI skills — **source-cited drafts, with accountant-reviewed versions** — that you upload to Claude, ChatGPT, or any LLM. Give the AI your bank statement and the right files, and you get a working paper your accountant can sign off in minutes.
 
 It is **not** tax advice. It is a pre-meeting working paper.
 
@@ -37,7 +37,7 @@ It is **not** tax advice. It is a pre-meeting working paper.
 | **A startup planning an S-corp election (US)** | [`packages/us-<state>/us-s-corp-election-decision.md`](packages/) | Federal + state files including the S-corp skill | "Should I become an S-corp? My net profit is [$X], state is [Y]." |
 | **A property buyer figuring out stamp duty / SDLT / ABSD** | [`skills/cross-border/property-transfer-tax-matrix.md`](skills/cross-border/property-transfer-tax-matrix.md) | The RETT matrix | "I'm buying property in [country] for [amount], status [resident/non-resident/foreign]. How much is the transfer tax?" |
 | **Handling an estate / inheritance** | [`skills/cross-border/inheritance-estate-gift-matrix.md`](skills/cross-border/inheritance-estate-gift-matrix.md) + relevant country packages | All of the above | "[Decedent] died in [country] holding [assets in countries]. Help with the estate." |
-| **An accountant who wants to verify a jurisdiction** | [`docs/QUALITY-TIERS.md`](docs/QUALITY-TIERS.md) + your jurisdiction's source files in `skills/` | None to upload — you're a reviewer | "I want to verify the skills for [jurisdiction]. What's the process?" |
+| **An accountant who wants to review a jurisdiction** | [`docs/QUALITY-TIERS.md`](docs/QUALITY-TIERS.md) + your jurisdiction's source files in `skills/` | None to upload — you're reviewing | "I want to review the skills for [jurisdiction]. What's the process?" |
 
 ---
 
@@ -100,8 +100,8 @@ See the main [README.md](README.md) for MCP installation details.
 
 Every skill is one of two tiers:
 
-- **Accountant-verified** — a licensed practitioner has signed off. (Currently: Malta full suite, Germany VAT, US federal bookkeeping + SE.)
-- **Research-verified** — drafted from authoritative sources (tax-authority publications and primary legislation), awaiting credentialed sign-off.
+- **Accountant-reviewed** (Tier 1) — a licensed practitioner has reviewed and signed off. (Currently: Malta full suite, Germany VAT, US federal bookkeeping + SE.)
+- **Source-cited draft** (Tier 2) — drafted from authoritative sources (tax-authority publications and primary legislation), awaiting accountant review.
 
 Every output goes to your accountant. We do not file anything on your behalf, and we are not a substitute for a credentialed reviewer.
 

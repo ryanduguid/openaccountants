@@ -8,27 +8,29 @@ We use **two tiers**. No drafts, no stubs — every published skill is one of th
 
 ## The two tiers
 
-| Tier | Label | What it means | Badge |
-|------|-------|--------------|-------|
-| **Accountant-verified** | A licensed practitioner has reviewed the skill, run it against real (or representative) data, and signed off. Errors found during use have been corrected. The skill is current with the latest tax-year rates and filing forms. | `accountant-verified` |
-| **Research-verified** | Every rate, threshold, form number, and deadline has been drafted from authoritative sources — tax-authority publications and the relevant statutes. Format matches the accountant-verified standard. Awaiting a credentialed sign-off. | `research-verified` |
+| Tier | Label | What it means | Legacy identifier |
+|------|-------|--------------|-------------------|
+| **1** | **Accountant-reviewed** | A licensed practitioner has reviewed the skill, run it against real (or representative) data, and signed off. Errors found during use have been corrected. The skill is current with the latest tax-year rates and filing forms. | `accountant-verified` |
+| **2** | **Source-cited draft** | Every rate, threshold, form number, and deadline has been drafted from authoritative sources — tax-authority publications and the relevant statutes. Format matches the accountant-reviewed standard. Awaiting a full review by an accountant. | `research-verified` |
 
 That's it. If a skill is published, it is one of those two.
+
+> **Display label vs. stored identifier.** The machine identifiers do not change: frontmatter still uses `tier: 1|2` and `verified_by:`, and legacy badges/enums still say `accountant-verified` / `research-verified`. What changed is the **display language**: Tier 1 is written as **"accountant-reviewed"** and Tier 2 as **"source-cited draft"** everywhere a human reads it. This doc is the mapping between the two.
 
 ---
 
 ## What each tier guarantees
 
-### Accountant-verified
+### Accountant-reviewed (Tier 1)
 
 - A real licensed practitioner (CPA, EA, CA, Steuerberater, expert-comptable, commercialista, asesor fiscal, or equivalent for the jurisdiction) has put their name and license number on it.
 - The skill has been used against real client data and refined through filing cycles.
 - The contributor is publicly credited on the skill and at [openaccountants.com](https://www.openaccountants.com).
 - The skill is reviewed at least annually for rate / threshold / form changes.
 
-### Research-verified
+### Source-cited draft (Tier 2)
 
-- The skill follows the accountant-verified format (Step 0 onboarding → Step N output).
+- The skill follows the accountant-reviewed format (Step 0 onboarding → Step N output).
 - Every figure carries a primary-source citation (statute, regulation, tax authority notice).
 - Deep research against the tax authority's published guidance has been completed.
 - It is **not** a substitute for accountant review of an actual filing. The reviewer brief always says so.
@@ -73,9 +75,9 @@ Key rules:
 
 ## Current inventory
 
-### Accountant-verified
+### Accountant-reviewed (Tier 1)
 
-| Skill | Jurisdiction | Verified by |
+| Skill | Jurisdiction | Reviewed by |
 |-------|-------------|-------------|
 | `malta-vat-return` | Malta | Michael Cutajar, CPA |
 | `malta-income-tax` | Malta | Michael Cutajar, CPA |
@@ -91,9 +93,9 @@ Key rules:
 | `us-schedule-c-and-se-computation` | US Federal | Pending publication of practitioner registry |
 | `us-ca-freelance-intake` | US-CA | Pending publication of practitioner registry |
 
-This list is auto-derived from each skill's `verified_by` frontmatter by `scripts/build-skills-manifest.py`. To add a new accountant-verified skill, set its `verified_by:` field to the reviewer's name and credential, then re-run the script. Every accountant-verified skill carries the reviewer's name and license number on the skill page at openaccountants.com.
+This list is auto-derived from each skill's `verified_by` frontmatter by `scripts/build-skills-manifest.py` (the field name is a stored identifier and stays `verified_by`). To add a new accountant-reviewed skill, set its `verified_by:` field to the reviewer's name and credential, then re-run the script. Every accountant-reviewed skill carries the reviewer's name and license number on the skill page at openaccountants.com.
 
-### Research-verified
+### Source-cited drafts (Tier 2)
 
 Everything else in this repo. ~700+ skills covering 134 countries and 51 US states. Each one's frontmatter shows the research date and the authoritative sources cross-checked.
 
@@ -104,34 +106,34 @@ Everything else in this repo. ~700+ skills covering 134 countries and 51 US stat
 ```
 ┌─────────────────────────────────────────────┐
 │  Malta VAT Return v1.0                      │
-│  ████████████ ACCOUNTANT-VERIFIED           │
+│  ████████████ ACCOUNTANT-REVIEWED           │
 │                                             │
-│  Verified by: [Practitioner name + license] │
+│  Reviewed by: [Practitioner name + license] │
 │  Tested against: Real client data           │
 │  Last updated: [Date]                       │
 └─────────────────────────────────────────────┘
 
 ┌─────────────────────────────────────────────┐
 │  France VAT Return (CA3) v0.1               │
-│  ▓▓▓▓▓▓▓▓░░░░ RESEARCH-VERIFIED             │
+│  ▓▓▓▓▓▓▓▓░░░░ SOURCE-CITED DRAFT            │
 │                                             │
 │  Sources: impots.gouv.fr, PWC, EU TEDB      │
 │  Research date: April 2026                  │
-│  Awaiting accountant sign-off               │
-│  Help verify: openaccountants.com/verify    │
+│  Awaiting accountant review                 │
+│  Help review: openaccountants.com/verify    │
 └─────────────────────────────────────────────┘
 ```
 
 ---
 
-## How a skill moves from research-verified to accountant-verified
+## How a skill moves from source-cited draft to accountant-reviewed
 
 1. A credentialed practitioner in the jurisdiction picks up the skill.
 2. They review the rates, thresholds, forms, and deadlines against current law.
 3. They run the skill against representative or real client data.
 4. They submit corrections (web form at openaccountants.com or GitHub PR).
 5. A skill maintainer merges the corrections; the skill is tagged with the practitioner's name and license number.
-6. The skill is bumped to **accountant-verified** in the next release.
+6. The skill is bumped to **accountant-reviewed** in the next release.
 
 The practitioner is credited publicly. Their profile lists all the skills they've signed off.
 
@@ -139,7 +141,7 @@ The practitioner is credited publicly. Their profile lists all the skills they'v
 
 ## Authoritative research sources
 
-These are the sources used during research verification. The same sources are recommended to practitioners verifying their jurisdiction.
+These are the sources a source-cited draft must be drafted and cross-checked against. The same sources are recommended to practitioners reviewing their jurisdiction.
 
 ### Global / multi-jurisdiction
 
@@ -203,4 +205,4 @@ Each state has an online portal. Search "[State] department of revenue" for the 
 
 ## Disclaimer
 
-Quality tiers describe the verification status of a skill, not a guarantee that any specific output is correct. LLMs hallucinate, tax law changes, and individual circumstances vary. Every output must be reviewed by a qualified professional before filing.
+Quality tiers describe the review status of a skill, not a guarantee that any specific output is correct. LLMs hallucinate, tax law changes, and individual circumstances vary. Every output must be reviewed by a qualified professional before filing.

@@ -25,20 +25,7 @@ This is the open-source skills repository (AGPL-3.0 + attribution + commercial d
 
 ## Skill file conventions
 
-Every skill is a single Markdown file with YAML frontmatter:
-
-```yaml
----
-name: <slug>
-description: <80-100 word description trigger phrase for AI agents>
-jurisdiction: <ISO 2-letter for countries, US-XX for US states, CA + sub_region for Canadian provinces, GLOBAL/INTL for cross-border>
-category: <state-tax|federal-tax|vat|income-tax|payroll|formation|...>
-tier: 2  # 1 = accountant-verified (named accountant signed off); 2 = research-verified (awaiting sign-off)
-verified_by: pending  # or a real name + credential string like "Michael Cutajar, CPA (Malta)"
-last_updated: YYYY-MM-DD
-version: 0.1
----
-```
+Every skill is a single Markdown file with YAML frontmatter. **The canonical frontmatter spec — required keys (`name`, `description`, `jurisdiction`, `category`, `tax_year`, `tier`, `last_updated`), optional keys (`tax_year_notes`, `verified_by`, `reviewed_by`, `depends_on`, `version`), formats, and the category vocabulary — is [docs/skill-template.md](docs/skill-template.md).** Do not restate or improvise variants; CI enforces the spec via `scripts/validate-guides.py`. Tier labels: `1` = accountant-reviewed, `2` = source-cited draft.
 
 After the frontmatter, the skill body is structured as numbered sections covering Scope, Topic-specific rules, Worked examples, Provenance, and a Circular 230 §10.37 disclosure for US skills.
 

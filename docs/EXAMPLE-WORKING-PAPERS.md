@@ -2,7 +2,7 @@
 
 What an OpenAccountants skill actually produces. The output is a **working paper** — a structured, sourced computation for a human to check — not a filed return and not tax advice.
 
-> ⚠️ The example below is **illustrative**, with round invented numbers, to show the *format*. It is not a real computation and the figures are not authoritative. Real output uses the live rates and thresholds in the skill, dated, with the verifier's name attached.
+> ⚠️ The example below is **illustrative**, with round invented numbers, to show the *format*. It is not a real computation and the figures are not authoritative. Real output uses the live rates and thresholds in the skill, dated, with the reviewing Partner's name attached.
 
 ## Anatomy of a working paper
 
@@ -11,7 +11,7 @@ Every working paper has the same bones:
 1. **Inputs** — the facts the user provided, restated so they can confirm them
 2. **Computation** — each line derived from a specific rule in the skill, not from model recall
 3. **Audit flash points** — the spots a real practitioner must check before filing
-4. **Provenance footer** — skill, jurisdiction, date, and (for Tier 1) the named verifier
+4. **Provenance footer** — skill, jurisdiction, date, and (for Tier 1) the named reviewing Partner
 5. **Handoff** — a route to a licensed accountant for sign-off
 
 ## Illustrative example — UK sole trader (SA103)
@@ -41,8 +41,8 @@ Every working paper has the same bones:
 - Student loan / High Income Child Benefit Charge interactions if other income exists.
 
 **Provenance footer:**
-> Computed with `uk-self-employment-sa103` · 2025/26 rules · research-verified.
-> _For accountant-verified output with a named UK CPA on the result, use the [MCP connector](https://www.openaccountants.com/connect)._
+> Computed with `uk-self-employment-sa103` · 2025/26 rules · source-cited draft.
+> _For accountant-reviewed output with a named UK CPA on the result, use the [MCP connector](https://www.openaccountants.com/connect)._
 
 **Handoff:** the AI then offers to route the working paper to a licensed accountant via `request_accountant_review`.
 
@@ -50,6 +50,6 @@ Every working paper has the same bones:
 
 Don't copy figures from this page. To produce a real working paper:
 - **Upload** the relevant package from [`packages/`](../packages/) to your LLM and give it your facts, or
-- **Connect via [MCP](https://www.openaccountants.com/connect)** and ask your question — the AI loads the authoritative skill automatically and attaches a verifier's name where one exists.
+- **Connect via [MCP](https://www.openaccountants.com/connect)** and ask your question — the AI loads the authoritative skill automatically and attaches the reviewing Partner's name where one exists.
 
 Always have a credentialed professional review before filing.

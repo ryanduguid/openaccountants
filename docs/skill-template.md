@@ -1,16 +1,76 @@
+# Frontmatter spec — the canonical reference
+
+**This section is THE frontmatter spec for every skill/Guide file in this repo.** Other docs (`CLAUDE.md`, `CONTRIBUTING.md`) link here rather than restating it. CI enforces it: `scripts/validate-guides.py` hard-fails on malformed frontmatter, a missing `name`/`description`, a non-integer `tax_year`, a missing or invalid `tier` (must be 1 or 2), a missing or malformed `last_updated` (YYYY-MM-DD), and a missing `jurisdiction` (except in a small allowlist of jurisdiction-agnostic directories, where it warns).
+
+## Required keys
+
+| Key | Format | Notes |
+|-----|--------|-------|
+| `name` | slug, `[country-or-topic]-[domain]` | e.g. `malta-income-tax` |
+| `description` | 80-100 words | What it covers, entity types, jurisdiction, tax year, plus trigger phrases the AI should match |
+| `jurisdiction` | ISO code | `MT`, `GB`, `DE`, `US`, `US-CA`, `GLOBAL`, `INTL`, `EU-27`. Required even when the folder path implies it |
+| `category` | one of the vocabulary below | Domain the skill covers |
+| `tax_year` | **bare integer**, e.g. `2025` | The **coverage start year**. Ranges, fiscal calendars, and qualifiers ("2025-26", "YA 2026", "2567 (2024)") go in `tax_year_notes`, never here. CI errors on anything that is not an integer 2015-2035 |
+| `tier` | `1` or `2` | `1` = **accountant-reviewed** (a named licensed accountant fully reviewed and signed off); `2` = **source-cited draft** (drafted from primary sources, awaiting review). These are the only two quality states |
+| `last_updated` | `YYYY-MM-DD` | Date the content was last checked/edited |
+
+## Optional keys
+
+| Key | Format | Notes |
+|-----|--------|-------|
+| `tax_year_notes` | quoted string | The human-readable tax-year label when a bare year can't express it: `"2025-26"`, `"FY 2026-27 (AY 2027-28)"`, `"2025 (with confirmed 2026 figures noted)"` |
+| `verified_by` | `pending` or `Name, Credential` | e.g. `Michael Cutajar, CPA (Malta)`. Stored identifier — the field name stays `verified_by` even though the display language is "reviewed". A real name here implies `tier: 1` |
+| `reviewed_by` | `Name, Credential` | Used on the hand-authored `packages/us-federal/` guides (e.g. `Christopher Aryee, CPA`) |
+| `depends_on` | YAML list of slugs | Workflow base or country skill this loads on top of |
+| `version` | e.g. `0.1` | Content version, bumped on substantive change |
+
+## Category vocabulary (the real one)
+
+This is the vocabulary actually in use across the repo's guides (by count), not an aspirational list. Use these for new files:
+
+| Category | What it means | Approx. usage |
+|----------|---------------|---------------|
+| `international` | Country-level tax computation (income tax, VAT, SSC) | ~757 |
+| `foundation` | Universal workflow base (domain-agnostic) | ~198 |
+| `orchestrator` | Router / intake / assembly files | ~110 |
+| `federal` | US federal tax | ~104 |
+| `payroll` | Withholding, social security, payslips | ~82 |
+| `tax-optimization` | Legal tax reduction strategies, timing, deductions | ~64 |
+| `cross-border` | Multi-jurisdiction coordination, treaties, WHT | ~54 |
+| `transfer-pricing` | TP documentation, arm's length, CbCR | ~43 |
+| `state-tax` | US state tax | ~40 |
+| `formation` | Entity types, registration, compliance | ~39 |
+| `financial-statements` | Annual accounts, reporting, audit | ~39 |
+| `bookkeeping` | Chart of accounts, P&L, balance sheet | ~39 |
+| `invoicing` | E-invoicing format, validation, transmission | ~30 |
+| `crypto` | Cryptocurrency and digital asset taxation | ~30 |
+| `vertical` | Industry-specific accounting patterns | ~28 |
+| `integration` | Platform export formats, column mappings | ~20 |
+
+Legacy synonyms still present in older files — do **not** use for new files: `federal-tax` (use `federal`), `state` / `us-states` (use `state-tax`), `financial-reporting` (use `financial-statements`), plus stragglers `template`, `pattern(s)`, `intelligence`.
+
+## Template
+
+---
+
+```yaml
 ---
 name: [country-or-topic]-[domain]
 description: >
   [One paragraph: what this skill covers, entity types, jurisdiction, tax year.
   Include trigger phrases the AI should match. Be specific about scope.]
-version: 0.1
 jurisdiction: XX   # REQUIRED — MT, GB, DE, US, US-CA, GLOBAL, INTL, EU-27, etc.
-tax_year: 2025
-category: international   # international | crypto | bookkeeping | payroll | formation | cross-border | vertical | integration | foundation | orchestrator | federal | state
+category: international   # see the category vocabulary above
+tax_year: 2025             # bare integer = coverage start year
+tax_year_notes: "2025-26"  # optional — only when a bare year can't express it
+tier: 2                    # 1 = accountant-reviewed | 2 = source-cited draft
+last_updated: 2026-07-04   # YYYY-MM-DD
+version: 0.1
 depends_on:
   - [workflow-base-or-country-skill]
-verified_by: pending
+verified_by: pending       # or "Name, Credential" — stored field name stays verified_by
 ---
+```
 
 # [Skill Name] v0.1
 
