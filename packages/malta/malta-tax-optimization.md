@@ -17,6 +17,9 @@ verified_by: Michael Cutajar, CPA (Malta)
 
 # Malta Tax Optimization -- Self-Employed Skill v1.0
 
+> ✅ **Accountant-reviewed** · **Michael Cutajar, CPA (Malta)** · credential verified · [public record](https://www.openaccountants.com/network)
+
+
 ---
 
 ## Section 1 -- Quick Reference

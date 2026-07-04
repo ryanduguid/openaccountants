@@ -7,6 +7,9 @@ verified_by: Michael Cutajar, CPA (Malta)
 
 # Malta VAT Return Skill (Article 10 periodic / Article 11) v2.0
 
+> ✅ **Accountant-reviewed** · **Michael Cutajar, CPA (Malta)** · credential verified · [public record](https://www.openaccountants.com/network)
+
+
 ## Section 1 — Quick reference
 
 **Read this whole section before classifying anything. The workflow runbook is in `vat-workflow-base` Section 1 — follow that runbook with this skill providing the country-specific content and `eu-vat-directive` providing the EU directive content.**

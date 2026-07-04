@@ -13,6 +13,9 @@ verified_by: Michael Cutajar, CPA (Malta)
 
 # Malta Provisional Tax (PT) -- Self-Employed Skill v2.0
 
+> ✅ **Accountant-reviewed** · **Michael Cutajar, CPA (Malta)** · credential verified · [public record](https://www.openaccountants.com/network)
+
+
 ## Section 1 -- Quick reference
 
 | Field | Value |
