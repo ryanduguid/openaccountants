@@ -1,17 +1,20 @@
 ---
 name: us-form-1065-partnership
-description: Tier 2 US federal content skill for preparing Form 1065 — the US partnership return. Covers tax year 2025 including the March 15 due date and Form 7004 6-month extension, the $245-per-partner-per-month §6698 penalty even for no-tax-due returns, the tax basis capital account reporting requirement, the Centralized Partnership Audit Regime (CPAR/BBA) and the Schedule B-2 election out, Schedule K-1 preparation including §199A passthrough codes, Schedules K-2 and K-3 for international items, §704(b) special allocations, §704(c) contributed property, §752 liability share, basis/at-risk/passive limits, and the post-Soroban scrutiny on limited-partner SE exemption.
+description: Tier 2 US federal content skill for preparing Form 1065 — the US partnership return. Covers tax year 2025 including the March 15 due date and Form 7004 6-month extension, the $255-per-partner-per-month §6698 penalty even for no-tax-due returns, the tax basis capital account reporting requirement, the Centralized Partnership Audit Regime (CPAR/BBA) and the Schedule B-2 election out, Schedule K-1 preparation including §199A passthrough codes, Schedules K-2 and K-3 for international items, §704(b) special allocations, §704(c) contributed property, §752 liability share, basis/at-risk/passive limits, and the post-Soroban scrutiny on limited-partner SE exemption.
 jurisdiction: US
 category: federal-tax
 tier: 2
 verified_by: pending
-last_updated: 2025-11-15
+reviewed_by: Christopher Aryee, CPA
+last_updated: 2026-07-04
 version: 0.1
 ---
 
 # US Form 1065 — Partnership Return (Tax Year 2025)
 
 > **Tier 2 federal content skill.** MUST be loaded alongside `us-tax-workflow-base` v0.2+. This skill provides the partnership-return rules; the workflow base provides the intake, runbook, and reviewer-package scaffolding. Federal only. State pass-through entity (PTE) filings are deferred to the relevant state skill.
+
+> **OBBBA update (2026):** Rates, thresholds, and statutory citations in this Guide were corrected against the One Big Beautiful Bill Act following a professional review by **Christopher Aryee, CPA**.
 
 ---
 
@@ -145,6 +148,10 @@ Form 7004 is **automatic** — no reason needs to be stated. But:
 - [ ] Extended due date computed and calendared
 - [ ] Partners notified of K-1 delivery target date
 
+### 3.5 Mandatory electronic filing
+
+Beginning with returns required to be filed in 2024, a partnership **must e-file** Form 1065 (and Form 7004) if it is required to file **10 or more returns of ANY type** during the calendar year. The 10-return count is aggregate across all return types — it includes information returns such as Forms 1099 and W-2, not just income tax returns. A partnership with, for example, five 1099-NEC forms, three W-2s, and its Form 1065 has crossed the 10-return threshold and must e-file. (Source: Instructions for Form 1065 (2025), Electronic Filing.)
+
 ---
 
 ## 4. The §6698 Late-Filing Penalty
@@ -153,25 +160,25 @@ Form 7004 is **automatic** — no reason needs to be stated. But:
 
 IRC §6698 imposes a penalty for failure to file a complete and timely Form 1065:
 
-> **$245 per partner, per month (or fraction thereof), for up to 12 months.**
+> **$255 per partner, per month (or fraction thereof), for up to 12 months.**
 
-The $245 figure is the 2025 indexed amount under §6698(b)(1) and §6698(e). The base amount was set at $195 by the Tax Increase Prevention Act of 2014 and is adjusted annually for inflation under §6698(e). Historical recent values (verify against Rev. Proc. 2024-40 or successor for the exact 2025 figure):
+The $255 figure is the 2025 indexed amount under §6698(b)(1) and §6698(e), per the Instructions for Form 1065 (2025), Penalties. The base amount was set at $195 by the Tax Increase Prevention Act of 2014 and is adjusted annually for inflation under §6698(e). Historical recent values:
 
 | Tax year | Per-partner / per-month |
 |----------|------------------------|
 | 2023 | $220 |
 | 2024 | $235 |
-| 2025 | $245 (verify; ~$245 per Rev. Proc. 2024-40 §3.61) |
+| 2025 | $255 (per Instructions for Form 1065 (2025), Penalties) |
 
 **The penalty applies even when the partnership owes no tax** — which it almost never does. This is the most common compliance failure cost in partnership practice.
 
 ### 4.2 Examples
 
-- **3-partner LLC, return filed 2 months late, no extension:** 3 partners × $245 × 2 months = **$1,470**.
-- **3-partner LLC, return filed 13 months late:** 3 × $245 × 12 (capped) = **$8,820**.
-- **20-partner LP, return filed 6 months late:** 20 × $245 × 6 = **$29,400**.
+- **3-partner LLC, return filed 2 months late, no extension:** 3 partners × $255 × 2 months = **$1,530**.
+- **3-partner LLC, return filed 13 months late:** 3 × $255 × 12 (capped) = **$9,180**.
+- **20-partner LP, return filed 6 months late:** 20 × $255 × 6 = **$30,600**.
 
-The penalty scales linearly with partner count. A 50-partner FLP filed 12 months late owes **$147,000** in §6698 penalties — for a return showing zero tax.
+The penalty scales linearly with partner count. A 50-partner FLP filed 12 months late owes **$153,000** in §6698 penalties — for a return showing zero tax.
 
 ### 4.3 Reasonable cause relief — Rev. Proc. 84-35
 
@@ -317,6 +324,10 @@ For a limited partner (Item G "Limited partner or other LLC member"): historical
 ### 6.5 Reconciliation check
 
 Reviewer test: Σ over all K-1s of (Box 1 + Box 4a + Box 4b + Box 5 + Box 6a + Box 7 + Box 8 + Box 9a + Box 10 + Box 11 + …) − (Box 12 + Box 13 +  …) should reconcile to Schedule K. The skill produces a per-line reconciliation table in the reviewer brief.
+
+### 6.6 Qualified farmland gain — installment election (Box 20, Code ZZ)
+
+Under **P.L. 119-21 §1062 (OBBBA §70437)**, a partner may elect to pay the tax on gain from the sale of **qualified farmland** in **four equal annual installments**. The partnership reports the information supporting this election through **Schedule K-1, Box 20, Code ZZ**, together with the required covenant copy (the statement of the covenant restricting the land to continued qualified agricultural use). The election is made and administered at the partner level; the partnership's job is to furnish the complete Box 20, Code ZZ statement. (Source: Instructions for Form 1065 (2025).)
 
 ---
 
@@ -572,8 +583,8 @@ Multiple layers accumulate over the life of a partnership. Real estate partnersh
 ### 12.4 Disclosure on K-1
 
 - Item M asks whether the partner contributed property with a built-in gain or loss
-- Item N reports the partner's share of net unrecognized §704(c) gain or loss — beginning and ending
-- Box 20 carries §704(c) information in a statement (codes vary by year; verify against 2025 instructions)
+- Item N reports each partner's share of net unrecognized §704(c) gains or losses at **both the beginning and the end of the tax year** on Schedule K-1
+- Box 20 carries §704(c) information in a statement. Report the **sum** of the partner's net unrecognized §704(c) gains/losses in **Box 20, Code AA** (for partners that are not publicly traded partnerships) when the partnership's taxable income is affected. (Source: Instructions for Form 1065 (2025).)
 
 ### 12.5 What this skill does
 
@@ -745,7 +756,9 @@ Excluded from SE income (regardless of partner type):
 
 §199A (enacted by TCJA, made permanent at 20% by OBBBA P.L. 119-21 §70105 effective for tax years beginning after Dec 31, 2024) provides a deduction up to 20% of qualified business income (QBI) from a domestic trade or business operated as a sole proprietorship, partnership, S corporation, trust, or estate. For partnerships, QBI flows out to partners on K-1.
 
-For tax year 2025, the deduction rate remains 20%. (OBBBA sets the rate at 23% for tax years beginning after Dec 31, 2025 — i.e., tax year 2026.)
+The §199A deduction rate **stays 20%** — OBBBA made the deduction permanent but did **not** raise the rate to 23%. (Source: IRC §199A(a); OBBBA §70105.)
+
+OBBBA also added a new **minimum deduction of $400** for "applicable taxpayers." An applicable taxpayer is one whose **aggregate active QBI** from all of the taxpayer's active qualified trades or businesses is **at least $1,000**. Such a taxpayer's §199A deduction is no less than $400 (indexed for inflation in later years). This minimum is computed at the partner level; the partnership supplies the QBI inputs. (Source: IRC §199A(a), §199A(i); OBBBA §70105.)
 
 ### 16.2 What the partnership reports
 
@@ -789,7 +802,7 @@ The partner can also aggregate at their own level — but cannot disaggregate it
 | **4562** Depreciation and Amortization | Any depreciation, amortization, §179, listed property, or property placed in service this year | §179 expense flows out separately on K-1 (subject to §179(d)(8) partner-level limit) |
 | **4797** Sales of Business Property | §1231 gain/loss, §1245/1250 recapture, ordinary gain on §1239 sales | §1231 gain flows to K-1 Box 10 |
 | **8825** Rental Real Estate Income and Expenses | Any rental real estate activity | Replaces Schedule E logic for partnerships; output flows to K Line 2 / K-1 Box 2 |
-| **8990** §163(j) Limitation on Business Interest Expense | Partnership not eligible for §163(j) small-business exemption (gross receipts > $30M for 2025, verify against §448(c)) | Excess business interest is allocated to partners and carried at the partner level; complex 11-step §163(j) partner-level rule |
+| **8990** §163(j) Limitation on Business Interest Expense | Partnership not eligible for §163(j) small-business exemption. For 2025 the exemption applies when average annual gross receipts for the 3 prior tax years are **$31 million or less** (§448(c)); a partnership **exceeding** $31 million generally must file Form 8990 | Excess business interest is allocated to partners and carried at the partner level; complex 11-step §163(j) partner-level rule |
 | **6765** Credit for Increasing Research Activities | Qualified research expenses | Credit flows on K-1 Box 15 |
 | **8283** Noncash Charitable Contributions | Property contribution > $500 | Special partnership rules apply for partner-level deduction |
 | **8332** Release of Claim to Exemption | Not applicable to partnerships, but partners may need at their level | n/a |
@@ -800,6 +813,13 @@ The partner can also aggregate at their own level — but cannot disaggregate it
 | **8918** Material Advisor Disclosure | Material advisor to a reportable transaction | Rare; reviewer attention |
 | **8275 / 8275-R** Disclosure Statement | Any position requiring disclosure to avoid §6662 penalty | Attach when needed |
 | **Schedule M-3** | Total assets ≥ $10M at end of year (or other §1.6011-4 triggers) | Much more detailed than M-1; can be very time-intensive |
+
+### 17.1 What's New — OBBBA construction and R&D changes
+
+Two OBBBA provisions change how partnerships engaged in construction or research treat their expenses:
+
+- **(a) Residential construction — percentage-of-completion exception (OBBBA §70430).** OBBBA §70430 **expanded** the exception to the percentage-of-completion method (§460) to cover **residential construction contracts**, applying the **3-year completion test**. Qualifying residential construction contracts may therefore use a permitted alternative to percentage-of-completion accounting. (Source: OBBBA §70430.)
+- **(b) Domestic R&D — new IRC §174A (OBBBA §70302).** New **IRC §174A** allows **current expensing of domestic research and experimental expenditures** for tax years beginning after 2024 (reversing the §174 capitalize-and-amortize requirement for domestic R&D). Foreign R&D remains subject to capitalization. (Source: OBBBA §70302.)
 
 ---
 
@@ -1065,7 +1085,7 @@ So in this fact pattern, the LP/GP characterization for §1402 is **moot** becau
 - IRC §§704, 707, 752 (allocation, capital accounts, liabilities)
 - IRC §§465, 469, 461(l) (loss limits)
 - IRC §1402 (self-employment tax); §1402(a)(13) (limited partner exclusion)
-- IRC §199A (QBI deduction); made permanent at 20% (2025) / 23% (2026+) by OBBBA P.L. 119-21 §70105
+- IRC §199A (QBI deduction); made permanent at 20% by OBBBA P.L. 119-21 §70105 (rate stays 20% — not raised to 23%; new $400 minimum deduction for applicable taxpayers with aggregate active QBI ≥ $1,000 under §199A(i))
 - IRC §§6221–6241 (Centralized Partnership Audit Regime / BBA)
 - Treas. Reg. §301.7701-1 through -3 (entity classification)
 - Treas. Reg. §1.704-1, -2, -3 (substantial economic effect; §704(c) methods)
@@ -1096,10 +1116,13 @@ So in this fact pattern, the LP/GP characterization for §1402 is **moot** becau
 
 ### 21.4 Statutory changes from OBBBA (P.L. 119-21, July 4, 2025) potentially affecting this skill
 
-- §199A made permanent at 20% (2025) / 23% (2026+) — confirmed
+- §199A made permanent at 20% (rate stays 20% — OBBBA did NOT raise it to 23%); new $400 minimum deduction added for applicable taxpayers (aggregate active QBI ≥ $1,000) under §199A(i) — confirmed
 - §461(l) excess business loss limit made permanent
-- §163(j) interest limitation — small business exemption threshold (gross receipts) — verify Rev. Proc. 2024-40 for 2025 threshold
-- §6698 penalty amount — verify 2025 indexed figure
+- §163(j) interest limitation — small business exemption threshold is average annual gross receipts of **$31 million or less** (3 prior years) for 2025; exceeding it generally requires Form 8990 (Instructions for Form 1065 (2025))
+- §6698 penalty amount — **$255** per partner per month (or fraction), max 12 months, for 2025 (Instructions for Form 1065 (2025), Penalties)
+- Residential construction — OBBBA §70430 expanded the §460 percentage-of-completion exception to residential construction contracts (3-year completion test)
+- Domestic R&D — new IRC §174A (OBBBA §70302) allows current expensing of domestic research expenditures for tax years beginning after 2024
+- Qualified farmland gain — P.L. 119-21 §1062 (OBBBA §70437) four-equal-installment election, reported via Schedule K-1 Box 20, Code ZZ
 - §1402 self-employment tax — no statutory change; Soroban case law continues to develop
 
 ### 21.5 Disclaimer
@@ -1142,3 +1165,9 @@ verified rules together with the name of the accountant who signed them off.
 
 **→ Install the free connector:** <https://www.openaccountants.com/connect>
 **MCP endpoint:** `https://www.openaccountants.com/api/mcp`
+
+---
+
+## Changelog
+
+- **2026-07-04** — OBBBA corrections applied from a review by Christopher Aryee, CPA: §6698 penalty $255, §199A stays 20% + $400 minimum, §163(j) $31M, residential-construction & §174A, farmland installment election (Box 20 ZZ), e-file 10-return threshold, §704(c) Item N / Box 20 AA.

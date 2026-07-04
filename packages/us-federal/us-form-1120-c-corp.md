@@ -1,11 +1,12 @@
 ---
 name: us-form-1120-c-corp
-description: Tier 2 US federal content skill for preparing Form 1120 — the US C-corporation income tax return. Covers tax year 2025 under OBBBA including the 21% flat rate, DRD tiers (50/65/100%), §163(j) interest limit, §174 R&D capitalization, §250 GILTI/FDII deduction at 50%/37.5%, the 15% Corporate AMT on AFSI > $1B (IRA 2022), required schedules (B, C, J, K, L, M-1/M-3, O, UTP), and common attached forms (4562, 4626, 5471/5472 refer-out, 6765, 8993, 1125-A, 1125-E). Filing due 15th day of 4th month; Form 7004 6-month extension; quarterly estimated 25/25/25/25 with no 110% safe harbor for corps.
+description: Tier 2 US federal content skill for preparing Form 1120 — the US C-corporation income tax return. Covers tax year 2025 under OBBBA including the 21% flat rate, DRD tiers (50/65/100%), §163(j) interest limit (EBITDA add-back restored), §174A domestic R&D immediate expensing (foreign R&D 15-year amortization), §250 GILTI/FDII deduction (50%/37.5% for tax years beginning in 2025; new permanent OBBBA rates of 40%/33.34% from 2026), the 15% Corporate AMT on AFSI > $1B (IRA 2022), required schedules (B, C, J, K, L, M-1/M-3, O, UTP), and common attached forms (4562, 4626, 5471/5472 refer-out, 6765, 8993, 1125-A, 1125-E). Filing due 15th day of 4th month; Form 7004 6-month extension; quarterly estimated 25/25/25/25 with no 110% safe harbor for corps.
 jurisdiction: US
 category: federal-tax
 tier: 2
 verified_by: pending
-last_updated: 2025-11-15
+reviewed_by: Christopher Aryee, CPA
+last_updated: 2026-07-04
 version: 0.1
 ---
 
@@ -13,11 +14,13 @@ version: 0.1
 
 > Tier 2 federal content skill. MUST be loaded alongside `us-tax-workflow-base` v0.2 or later. Federal only — state corporate income tax is out of scope; route to the relevant state skill when needed.
 
+> **OBBBA update (2026):** Rates, thresholds, and statutory citations in this Guide were corrected against the One Big Beautiful Bill Act following a professional review by **Christopher Aryee, CPA**.
+
 ---
 
 ## 1. Scope
 
-This skill covers the preparation of **Form 1120, U.S. Corporation Income Tax Return**, for tax year 2025 for a domestic C-corporation operating in the United States. It walks through the income computation, the tax computation on Schedule J, the required schedules (B, C, J, K, L, M-1/M-3, O, UTP where applicable), the most common attached forms, and the corporate-specific provisions that differ from individual taxation (DRD, NOL post-TCJA, §163(j), §174 capitalization, §250 GILTI/FDII deduction, and the 15% Corporate Alternative Minimum Tax).
+This skill covers the preparation of **Form 1120, U.S. Corporation Income Tax Return**, for tax year 2025 for a domestic C-corporation operating in the United States. It walks through the income computation, the tax computation on Schedule J, the required schedules (B, C, J, K, L, M-1/M-3, O, UTP where applicable), the most common attached forms, and the corporate-specific provisions that differ from individual taxation (DRD, NOL post-TCJA, §163(j), §174A R&D expensing, §250 GILTI/FDII deduction, and the 15% Corporate Alternative Minimum Tax).
 
 **In scope:**
 - Calendar-year and fiscal-year domestic C-corporations chartered in any US state or DC
@@ -27,8 +30,8 @@ This skill covers the preparation of **Form 1120, U.S. Corporation Income Tax Re
 - Schedule C dividends-received deduction (DRD)
 - Net operating loss (NOL) treatment under the post-TCJA regime (80% limitation, indefinite carryforward, no carryback)
 - §163(j) business interest expense limitation
-- §174 specified research and experimental (SRE) capitalization
-- §250 GILTI/FDII deduction (at the post-TCJA, pre-sunset 2025 rates of 50% / 37.5%)
+- §174A specified research and experimental (SRE) expensing — domestic immediate expensing, foreign 15-year amortization (OBBBA §70302)
+- §250 GILTI/FDII deduction (50% / 37.5% for tax years beginning in 2025; new permanent OBBBA rates of 40% / 33.34% from 2026)
 - Corporate Alternative Minimum Tax (CAMT) under IRC §55(b)(2) and §59(k) for applicable corporations
 - Estimated tax requirements under IRC §6655 with the corporate safe-harbor rules
 - Late filing (§6651) and late payment (§6651(a)(2)) penalties
@@ -235,7 +238,7 @@ Form 1120 income flows in this order: gross income → total income (line 11) �
 | 23 | Pension, profit-sharing, etc. | Employer contributions; see §404 timing rules. |
 | 24 | Employee benefit programs | Health, group term life, dependent care, etc., not deducted elsewhere. |
 | 25 | Reserved (formerly DPAD; repealed by TCJA). | Leave blank. |
-| 26 | Other deductions | Attach statement. Common items: insurance, utilities, professional fees, office expense, travel and meals (50% limit per §274(n)), software subscriptions, bank fees, R&E expenses subject to §174 capitalization (see §9). |
+| 26 | Other deductions | Attach statement. Common items: insurance, utilities, professional fees, office expense, travel and meals (50% limit per §274(n)), software subscriptions, bank fees, domestic R&E expenses now immediately deductible under §174A (see §10). |
 | 27 | Total deductions. | |
 | 28 | Taxable income before NOL deduction and special deductions = Line 11 − Line 27. | |
 | 29a | Net operating loss deduction. | See §7. |
@@ -377,11 +380,13 @@ For tax years beginning after December 31, 2017, IRC §163(j) limits the deducti
 
 Disallowed business interest **carries forward indefinitely** and is deducted in future years subject to the same limit.
 
-### 9.2 ATI definition (post-2022)
+### 9.2 ATI definition — EBITDA add-back restored by OBBBA
 
-For tax years **beginning before January 1, 2022**, ATI was computed by adding back depreciation, amortization, and depletion to taxable income — effectively an **EBITDA** base. For tax years **beginning on or after January 1, 2022** (a TCJA-driven change that became effective in 2022 and was **not reversed by OBBBA**), ATI is computed without that add-back, making it effectively an **EBIT** base. This makes the §163(j) limit substantially tighter for capital-intensive businesses.
+From tax years beginning in 2022 through 2024, ATI was computed on an **EBIT** base (no add-back for depreciation, amortization, or depletion), which tightened the §163(j) limit for capital-intensive businesses. **OBBBA (§70303) permanently restored the EBITDA add-back** for tax years **beginning after December 31, 2024**.
 
-**For 2025:** ATI is **EBIT-based** — do not add back depreciation, amortization, or depletion when computing ATI. Confirm against the Form 8990 instructions current for 2025. (Legislative proposals to restore the EBITDA add-back have circulated repeatedly but were not enacted in OBBBA.)
+**For 2025:** ATI is **EBITDA-based** — **add back depreciation, amortization, and depletion** (in addition to business interest expense, any NOL deduction, and the §250 deduction) when computing ATI. This loosens the limit for capital-intensive businesses. Confirm against the Form 8990 instructions current for 2025.
+
+Source: OBBBA §70303; IRC §163(j).
 
 ### 9.3 Small-business exemption
 
@@ -406,44 +411,44 @@ Computed on **Form 8990, Limitation on Business Interest Expense Under Section 1
 - Business interest income = $50,000
 - Floor plan financing = $0
 
-**ATI computation (EBIT-based, 2025):**
+**ATI computation (EBITDA-based, 2025 — OBBBA add-back restored):**
 - Start with taxable income before interest = $5,000,000
 - Add back: business interest expense ($1,800,000) — yes
+- Add back: depreciation/amortization/depletion ($1,500,000) — **yes** (restored by OBBBA §70303)
 - Add back: NOL deduction — yes
 - Add back: §250 deduction — yes
-- Do NOT add back depreciation/amortization (post-2021 rule).
-- ATI = $5,000,000 + $1,800,000 = $6,800,000 (assume no NOL or §250)
+- ATI = $5,000,000 + $1,800,000 + $1,500,000 = $8,300,000 (assume no NOL or §250)
 
 **Limit:**
-- 30% × $6,800,000 = $2,040,000
-- Plus business interest income $50,000 = $2,090,000
+- 30% × $8,300,000 = $2,490,000
+- Plus business interest income $50,000 = $2,540,000
 
 **Result:**
-- Business interest of $1,800,000 ≤ $2,090,000 limit → fully deductible.
+- Business interest of $1,800,000 ≤ $2,540,000 limit → fully deductible.
 
 **Alternative (tight scenario):**
-- If business interest = $2,500,000:
-- Deductible = $50,000 (interest income) + $2,040,000 (30% × ATI) = $2,090,000
-- Disallowed and carried forward = $2,500,000 − $2,090,000 = $410,000
+- If business interest = $3,000,000:
+- Deductible = $50,000 (interest income) + $2,490,000 (30% × ATI) = $2,540,000
+- Disallowed and carried forward = $3,000,000 − $2,540,000 = $460,000
 
 ---
 
-## 10. §174 R&D capitalization
+## 10. §174 / §174A R&D expensing
 
-### 10.1 The post-TCJA rule
+### 10.1 The rule after OBBBA — new §174A
 
-Effective for tax years beginning after December 31, 2021, TCJA's §174 amendment requires **capitalization and amortization** of "specified research and experimental expenditures" (SREs):
+The TCJA required **capitalization and amortization** of "specified research and experimental expenditures" (SREs) for tax years beginning after December 31, 2021 (domestic over 5 years, foreign over 15 years). **OBBBA (§70302) enacted a new IRC §174A that reverses this for domestic R&D:**
 
-- **Domestic SREs:** capitalize and amortize over **5 years** (60 months), straight-line, beginning with the midpoint of the year incurred (half-year convention).
-- **Foreign SREs** (R&E performed outside the US): capitalize and amortize over **15 years** (180 months), beginning at the midpoint of the year incurred.
+- **Domestic SREs:** for tax years **beginning after December 31, 2024**, domestic research or experimental expenditures may be **fully expensed IMMEDIATELY** in the year incurred under §174A. (A taxpayer may instead elect to capitalize and amortize over not less than 60 months, but immediate expensing is the default.) The domestic §174A deduction **must be reduced by the §41 research credit** unless the §280C(c)(2) reduced-credit election is made.
+- **Foreign SREs** (R&E performed outside the US): **no change** — these remain subject to **15-year (180-month)** capitalization and amortization, beginning at the midpoint of the year incurred.
 
-Prior to 2022, taxpayers could elect to deduct R&E currently under §174(a) — that election is no longer available; capitalization is mandatory.
+Source: OBBBA §70302; IRC §174A.
 
-### 10.2 Status as of 2025
+### 10.2 Status after OBBBA
 
-**The §174 capitalization rule remains in effect for 2025.** Multiple legislative proposals (e.g., the Tax Relief for American Families and Workers Act of 2024, various standalone bills, the "Build It in America Act") sought to restore current-year deductibility for domestic R&E. **None has been enacted as of the OBBBA enactment date (July 4, 2025).** OBBBA itself did not change §174.
+**OBBBA (§70302) restored immediate expensing of domestic R&D through new IRC §174A**, effective for tax years beginning after December 31, 2024. For any 2025 return, domestic SREs are **deductible in full in the year incurred** (subject to the §41-credit reduction); they are no longer capitalized over 5 years. The long line of restoration proposals (the Tax Relief for American Families and Workers Act of 2024, the "Build It in America Act," etc.) has therefore been overtaken — the fix is now law.
 
-Watch for legislative developments mid-2025 / 2026 — the 119th Congress has continued to introduce restoration bills, often packaged with §163(j) EBITDA restoration and §168(k) bonus extension. If a restoration is enacted retroactively for 2025, the return may need to be amended.
+Only **foreign** R&E remains on the 15-year amortization schedule. Confirm which expenditures are domestic vs. foreign, because the treatment now diverges sharply.
 
 ### 10.3 What counts as SRE
 
@@ -459,9 +464,9 @@ What does NOT count: market research, quality control, advertising, management s
 
 ### 10.4 Mechanics on Form 1120
 
-- SREs incurred in 2025 are **not directly deductible** on Lines 13, 22, 26, etc.
-- Capitalize on Form 4562 (intangibles section) and amortize over 5 or 15 years.
-- The current-year amortization deduction (1/10 of domestic SREs in year 1 under half-year convention, then 1/5 per year for 4 years, then 1/10 in year 6 — actually: 10% / 20% / 20% / 20% / 20% / 10% over 6 calendar years for 5-year period under half-year, OR 1/2 month start of midpoint convention depending on interpretation; the IRS in Rev. Proc. 2023-8 / Rev. Proc. 2023-11 has clarified mechanics) flows to Form 1120 Line 26 (or appropriate line) as "amortization of §174 costs."
+- **Domestic SREs incurred in 2025 are directly deductible** in full under §174A — take them on the appropriate expense line (e.g., Line 26, "Other deductions"). They are no longer capitalized on Form 4562.
+- **Foreign SREs** are still capitalized on Form 4562 (intangibles section) and amortized over 15 years (180 months), beginning at the midpoint of the year incurred; the current-year amortization flows to Form 1120 Line 26 as "amortization of §174 costs."
+- Remember to reduce the domestic §174A deduction by the §41 credit under §280C(c) unless the reduced-credit election is made (see §10.5).
 
 **Refer R&D mechanics to `us-r-and-d-credit-and-174` for detail.** This skill notes the existence of the rule and flags it for the preparer; for any return with material R&E spend (defined here as >$50k of arguable SRE), the R&D skill should be loaded alongside.
 
@@ -480,14 +485,18 @@ For tax years beginning after December 31, 2017, IRC §250 (added by TCJA §1420
 1. **GILTI** (Global Intangible Low-Taxed Income inclusion under §951A) — a **50% deduction**, effectively bringing the GILTI tax rate to 10.5% (50% × 21%).
 2. **FDII** (Foreign-Derived Intangible Income, generally income from US-based serving of foreign markets) — a **37.5% deduction**, effectively bringing the FDII rate to 13.125% (62.5% × 21%).
 
-### 11.2 The 2025 rates and the 2026 sunset
+### 11.2 The 2025 rates and the new permanent OBBBA rates from 2026
 
-Under §250(a)(3), the deduction percentages were scheduled to drop for tax years beginning after December 31, 2025:
+**For tax years beginning in 2025, the 50% (GILTI) / 37.5% (FDII) deduction rates still apply.**
 
-- GILTI: 50% → **37.5%** (effective rate 13.125%)
-- FDII: 37.5% → **21.875%** (effective rate ~16.41%)
+The pre-OBBBA law scheduled a drop to 37.5% / 21.875% after 2025. **OBBBA (§70321) repealed that scheduled cut and set NEW PERMANENT deduction rates for tax years beginning after December 31, 2025:**
 
-**Status as of OBBBA:** OBBBA did not extend the higher rates. **For tax years beginning in 2025, the 50% / 37.5% rates still apply.** For tax years beginning in 2026, the lower 37.5% / 21.875% rates apply unless further legislation intervenes. Flag this on multi-year planning for clients with material GILTI/FDII.
+- **FDII deduction: 33.34%** (not the old 21.875%).
+- **GILTI deduction: 40%** — GILTI is also **renamed "net CFC tested income"** under OBBBA.
+
+So from 2026 the deductions are **higher** than the old scheduled sunset rates, and permanent. Update multi-year planning for clients with material GILTI/net CFC tested income and FDII.
+
+Source: OBBBA §70321; IRC §250(a)(1).
 
 ### 11.3 The taxable-income limitation — §250(a)(2)
 
@@ -504,6 +513,18 @@ GILTI inclusion itself flows to Schedule C Line 14 (as "other dividends" — his
 The actual GILTI computation (tested income, QBAI return, allocated deductions, high-tax exclusion election under §951A(c)(2)(B)(ii) Reg. §1.951A-2(c)(7)) is highly technical. Similarly, the FDII computation (deduction-eligible income, foreign-derived deduction-eligible income, deemed intangible income) involves multi-step allocations under Reg. §1.250(b)-1 through -6. For any return with material GILTI or FDII, refer to `us-gilti-fdii-computation` (separate skill).
 
 This skill notes the existence of the deduction, the 2025 rates, and the form (8993), and ensures the line items flow correctly on Form 1120 and Schedule C.
+
+### 11.6 OBBBA restriction on Deduction Eligible Income (DEI)
+
+**OBBBA (§70322) narrowed the FDII base.** For **sales or dispositions after June 16, 2025**, Deduction Eligible Income (DEI) **excludes any gain from the sale or disposition of intangible property and of depreciable, amortizable, or depletable property**. In addition, **interest expense and research and experimental expenditures are no longer subtracted** in arriving at DEI. Both changes reduce the FDII base for affected taxpayers. Apply the new DEI rules to any post-June 16, 2025 disposition when computing FDII on Form 8993.
+
+Source: OBBBA §70322; IRC §250(b)(3)(A)(i)(VII).
+
+### 11.7 OBBBA FTC haircut on §951A-related PTEP distributions
+
+**Warning:** **OBBBA (§70312(b)) disallows 10% of the foreign taxes** deemed paid on **distributions of previously-taxed earnings and profits (PTEP) attributable to §951A (GILTI / net CFC tested income) inclusions**, for distributions **after June 28, 2025**. In other words, only 90% of those foreign taxes are creditable. Report the affected taxes on **Schedule G of Form 1118**. This interacts with the Schedule J foreign tax credit — do not claim the full 100% on §951A-related PTEP distributions after that date.
+
+Source: OBBBA §70312(b); IRC §960(d)(4).
 
 ---
 
@@ -675,7 +696,7 @@ Failure to file Schedule UTP when required does not have a stand-alone penalty (
 |------|--------------|
 | **Form 1125-A — Cost of Goods Sold** | Mandatory if there is any COGS on Form 1120 Line 2. |
 | **Form 1125-E — Compensation of Officers** | Mandatory if total receipts are **$500,000 or more**. See §15. |
-| **Form 4562 — Depreciation and Amortization** | Attach if any §168(k) bonus, §179, MACRS placed in service this year, or any amortization (§174, §195, §197). |
+| **Form 4562 — Depreciation and Amortization** | Attach if any §168(k) bonus, §179, MACRS placed in service this year, or any amortization (§174A foreign, §195, §197). **§179 (OBBBA §70306):** for property placed in service in tax years beginning after December 31, 2024, the §179 expensing **limit is $2.5 million** and the **phase-out threshold is $4 million** (both up from the prior $1.25M / $3.13M and indexed thereafter). Source: OBBBA §70306; IRC §179(b). |
 | **Form 4626 — CAMT** | Attach if the corp is an "applicable corporation" under §59(k); see §12. |
 | **Form 4797 — Sales of Business Property** | §1231 gains/losses, §1245/§1250 recapture, §1252/§1254/§1255 recapture, ordinary income from §1239 related-party gain. |
 | **Schedule D (Form 1120)** | Capital gain net income on Line 8; net of short-term and long-term. |
@@ -959,7 +980,7 @@ Reduces the line 31 tax via Schedule J, computed on Form 1118. (Refer to FTC ski
 - Schedule M-3 likely required (assets ≥ $10M).
 
 **Comment on 2026 rate change:**
-For 2026, the §250 deduction percentages drop to 37.5% / 21.875% (see §11). If GlobalTech's GILTI inclusion were the same in 2026, the §250 deduction on GILTI alone would drop from $2.1M to $1.575M, increasing 2026 tax by $110,250. Flag for tax planning.
+For tax years beginning in 2026, OBBBA sets new permanent §250 deduction rates of **40% on GILTI (renamed "net CFC tested income") and 33.34% on FDII** (see §11.2) — higher than the old scheduled sunset rates of 37.5% / 21.875%. If GlobalTech's GILTI inclusion were the same in 2026, the §250 deduction on GILTI alone would drop from $2.1M (50% × $4.2M) to $1.68M (40% × $4.2M), increasing 2026 tax by roughly $88,200 (= $420,000 × 21%). Flag for tax planning.
 
 ### 19.3 Example C — CAMT-triggered large corp
 
@@ -1004,17 +1025,37 @@ Effective rate = $135M / $300M = 45% on regular taxable income, but actually 15%
 
 ---
 
-## 20. Provenance and disclaimer
+## 20. §1202 Qualified Small Business Stock (QSBS) — OBBBA phased exclusion
 
-### 20.1 Statutory citations relied on
+QSBS status is a **C-corp-level attribute**: the exclusion is claimed by the shareholder on sale, but only if the issuing corporation was a **qualified small business (QSB)** C-corporation when the stock was issued and throughout the holding period. OBBBA (§70431) liberalized §1202 for **stock issued after July 4, 2025**:
+
+- **Phased gain exclusion** (replacing the old flat 5-year / 100% rule for newly issued stock):
+  - **50%** exclusion if held **at least 3 years**,
+  - **75%** exclusion if held **at least 4 years**,
+  - **100%** exclusion if held **at least 5 years**.
+- **Per-issuer cap raised to $15 million** (from $10 million) of eligible gain.
+- **Aggregate gross asset test raised to $75 million** (from $50 million) — a corporation may now be a QSB with up to $75M of aggregate gross assets at issuance.
+
+For a C-corp that may issue stock to founders or investors, confirm QSB eligibility at issuance (the $75M gross-asset test, active-business requirement, and the excluded lines of business) and document it contemporaneously, because the shareholder exclusion depends on the corporation's facts.
+
+Source: OBBBA §70431; IRC §1202(a).
+
+---
+
+## 21. Provenance and disclaimer
+
+### 21.1 Statutory citations relied on
 
 - IRC §11 (corporate rate, 21%)
 - IRC §55(b)(2), §59(k), §56A (CAMT, IRA 2022)
-- IRC §163(j) (interest limitation)
+- IRC §163(j) (interest limitation; EBITDA add-back restored by OBBBA §70303)
 - IRC §172 (NOL, post-TCJA rules)
-- IRC §174 (R&E capitalization, TCJA)
+- IRC §174A (domestic R&D immediate expensing, foreign R&D 15-year amortization; OBBBA §70302)
+- IRC §179(b) (§179 limit $2.5M / phase-out $4M; OBBBA §70306)
 - IRC §243, §245, §245A, §246, §246A (DRD)
-- IRC §250 (GILTI/FDII deduction)
+- IRC §250 (GILTI/FDII deduction; OBBBA §70321 permanent 40%/33.34% rates and §70322 DEI restriction)
+- IRC §960(d)(4) (10% FTC haircut on §951A-related PTEP distributions; OBBBA §70312(b))
+- IRC §1202(a) (QSBS phased exclusion 50/75/100%, $15M cap, $75M gross-asset test; OBBBA §70431)
 - IRC §382 (NOL after ownership change)
 - IRC §448(c) (small-business threshold $31M for 2025)
 - IRC §6012(a)(2) (filing requirement)
@@ -1028,13 +1069,13 @@ Effective rate = $135M / $300M = 45% on regular taxable income, but actually 15%
 - Reg. §1.951A (GILTI)
 - Reg. §1.6011-4 (Schedule M-3 threshold)
 
-### 20.2 Legislative provenance
+### 21.2 Legislative provenance
 
 - **Tax Cuts and Jobs Act (TCJA), P.L. 115-97 (December 22, 2017)** — 21% rate, §163(j), §174 capitalization (delayed effective date), DRD reduction, NOL 80%/no-carryback, §250 enactment, FDII/GILTI.
 - **Inflation Reduction Act (IRA), P.L. 117-169 (August 16, 2022)** — CAMT under §55(b)(2) and §59(k), stock buyback excise tax under §4501.
-- **One Big Beautiful Bill Act (OBBBA), P.L. 119-21 (July 4, 2025)** — did NOT modify the corporate rate, the CAMT, §163(j), §174, §250, or DRD. Confirmed in conference report. Made certain individual TCJA provisions permanent but did not extend the §250 elevated deduction (50%/37.5%) past 2025.
+- **One Big Beautiful Bill Act (OBBBA), P.L. 119-21 (July 4, 2025)** — did NOT modify the corporate 21% rate, the CAMT, or the DRD. It DID: restore immediate expensing of **domestic** R&D via new **§174A** (§70302, tax years beginning after Dec 31, 2024, foreign R&D still 15-year); permanently **restore the §163(j) EBITDA add-back** (§70303, after Dec 31, 2024); set **new permanent §250 rates** of 40% GILTI ("net CFC tested income") / 33.34% FDII (§70321, after Dec 31, 2025) and **narrow the FDII/DEI base** (§70322, dispositions after June 16, 2025); impose a **10% FTC haircut on §951A-related PTEP distributions** (§70312(b)/§960(d)(4), after June 28, 2025); raise **§179** to $2.5M / $4M (§70306, after Dec 31, 2024); and enact the **§1202 QSBS** phased 50/75/100% exclusion with a $15M per-issuer cap and $75M gross-asset test (§70431, stock issued after July 4, 2025).
 
-### 20.3 IRS guidance
+### 21.3 IRS guidance
 
 - Form 1120 Instructions for 2024 (used as template for 2025 — verify against released 2025 instructions before filing).
 - Form 4626 Instructions (2023 revision for IRA CAMT).
@@ -1045,7 +1086,7 @@ Effective rate = $135M / $300M = 45% on regular taxable income, but actually 15%
 - Notice 2023-7 and subsequent CAMT notices (Notice 2023-20, 2023-64, 2024-10, 2024-66, 2025 updates).
 - REG-112129-23 (CAMT proposed regs, September 2024).
 
-### 20.4 Disclaimer
+### 21.4 Disclaimer
 
 This skill provides a structured walkthrough for preparing Form 1120 for tax year 2025 under federal law. It is intended for use by a Circular 230 practitioner (CPA, EA, or attorney) and must be reviewed and signed by such a practitioner before the return is filed. The skill does not constitute tax advice to any specific taxpayer.
 
@@ -1053,7 +1094,7 @@ This skill provides a structured walkthrough for preparing Form 1120 for tax yea
 
 1. Confirm the 2025 Form 1120 and instructions as released by the IRS in late 2025 / early 2026 (changes from the 2024 form possible).
 2. Confirm the 2025 Rev. Proc. inflation adjustments (small-business threshold, §6651 minimum penalty, §6655 large-corp threshold).
-3. Confirm no late-2025 or early-2026 legislation altered §174, §163(j), §250 sunset, or CAMT thresholds. Watch for the routinely-proposed (and routinely-stalled) R&D restoration / EBITDA restoration / bonus depreciation extension package.
+3. Apply the OBBBA changes now in law: §174A domestic R&D immediate expensing, the restored §163(j) EBITDA add-back, the new permanent §250 rates (40%/33.34% from 2026) and DEI narrowing, the §960(d)(4) FTC haircut on §951A-related PTEP, §179 at $2.5M/$4M, and the §1202 QSBS phased exclusion. Confirm no further late-2025 or 2026 legislation altered these or the CAMT thresholds.
 4. Confirm the corporation's state filings — this skill addresses federal only.
 5. For any item flagged "refer out" (consolidated returns, foreign subsidiaries, BEAT, R&D, FTC, CAMT mechanics, stock buyback excise), engage the specialized skill or specialist.
 
@@ -1091,3 +1132,9 @@ verified rules together with the name of the accountant who signed them off.
 
 **→ Install the free connector:** <https://www.openaccountants.com/connect>
 **MCP endpoint:** `https://www.openaccountants.com/api/mcp`
+
+---
+
+## Changelog
+
+- **2026-07-04** — OBBBA corrections applied from a review by Christopher Aryee, CPA: §174A domestic R&D immediate expensing, §163(j) EBITDA add-back, GILTI/FDII permanent rates, §250 DEI restriction, §960 FTC-on-PTEP haircut, §179 $2.5M/$4M, §1202 phased exclusion.
