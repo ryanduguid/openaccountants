@@ -4,7 +4,8 @@ description: >
   Use this skill whenever asked about UK Student Loan repayment for self-employed individuals. Trigger on phrases like "student loan repayment", "Plan 1", "Plan 2", "Plan 4", "Plan 5", "Plan 5 student loan", "Postgraduate loan repayment", "postgraduate loan", "April 2026 student loan threshold", "student loan self-employed", "student loan Self Assessment", "SLC repayment", "student loan deduction", or any question about student loan obligations for a self-employed client. Also trigger when classifying bank statement transactions showing SLC repayments via SA, PAYE student loan deductions, or direct SLC payments. This skill covers Plan 1-5 and Postgraduate Loan thresholds across three tax years (2024-25, 2025-26, 2026-27), self-employed SA calculation, multiple plan interaction, bank statement classification patterns, overseas earnings, write-off periods, and edge cases. ALWAYS read this skill before touching any UK student loan repayment work.
 version: 2.1
 jurisdiction: GB
-tax_year: 2024-25, 2025-26, 2026-27
+tax_year: 2024
+tax_year_notes: "2024-25, 2025-26, 2026-27"
 category: international
 depends_on:
   - income-tax-workflow-base

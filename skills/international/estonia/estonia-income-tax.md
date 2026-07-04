@@ -4,7 +4,8 @@ description: >
   Use this skill whenever asked about Estonia personal income tax for self-employed individuals (FIE) and resident individuals. Trigger on phrases like "how much tax do I pay in Estonia", "Estonian income tax return", "Form A", "Form E", "tuludeklaratsioon", "TSD", "FIE", "ettevõtluskonto", "entrepreneur account", "basic exemption", "maksuvaba tulu", "tax hump", "social tax", "sotsiaalmaks", "funded pension", "II pillar", "unemployment insurance", "töötuskindlustus", "flat 22% tax", "self-employed tax Estonia", or any question about filing or computing personal income tax for a resident or self-employed (FIE) client in Estonia. Also trigger when preparing or reviewing a Form A / Form E return, computing FIE business deductions, running payroll withholding via TSD, advising on FIE social-tax advance payments, or comparing the entrepreneur-account simplified regime. This skill covers the flat 22% income tax rate, the income-dependent basic exemption and its 2026 reform, social tax, unemployment-insurance premiums, funded (II) pension, the entrepreneur-account regime, payroll (TSD) declarations, filing deadlines, penalties, and interaction with VAT. ALWAYS read this skill before touching any Estonian income tax work.
 version: 0.1
 jurisdiction: EE
-tax_year: 2025 (filed by 30 April 2026); 2026 figures noted where officially confirmed
+tax_year: 2025
+tax_year_notes: "2025 (filed by 30 April 2026); 2026 figures noted where officially confirmed"
 category: international
 depends_on:
   - income-tax-workflow-base

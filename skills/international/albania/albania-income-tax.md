@@ -4,7 +4,8 @@ description: >
   Use this skill whenever asked about Albania personal income tax for self-employed individuals and employees. Trigger on phrases like "how much tax do I pay in Albania", "Albanian income tax", "DIVA", "D1 annual return", "tatime.gov.al", "self-employed Albania", "ALL tax brackets", "0% small business tax", "social and health contributions Albania", "PAYE Albania", "13% 23% income tax", "dividend tax Albania", "disguised employment", or any question about filing or computing personal income tax for a resident or non-resident individual in Albania. Also trigger when preparing or reviewing an annual individual return, computing the 0%/15%/23% self-employed regime, applying the monthly PAYE withholding schedule, or advising on social/health contributions. This skill covers progressive employment rates, the self-employed business regime, investment income, social/health contributions, the per-child deduction, filing thresholds, penalties, and interaction with VAT. ALWAYS read this skill before touching any Albanian income tax work.
 version: 0.1
 jurisdiction: AL
-tax_year: 2025 (calendar year; 1 Jan – 31 Dec 2025). Employment progressive regime per Law 29/2023 effective from 1 Jan 2024 and continuing in 2025.
+tax_year: 2025
+tax_year_notes: "2025 (calendar year; 1 Jan – 31 Dec 2025). Employment progressive regime per Law 29/2023 effective from 1 Jan 2024 and continuing in 2025."
 category: international
 depends_on:
   - income-tax-workflow-base

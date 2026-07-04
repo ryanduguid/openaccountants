@@ -4,7 +4,8 @@ description: >
   Use this skill when advising on LEGAL tax minimization strategies for Australian taxpayers — individuals, sole traders, and small business owners. Trigger on phrases like "reduce my tax", "tax planning Australia", "salary vs dividends", "negative gearing", "instant asset write-off", "superannuation strategy", "CGT discount", "trust distribution", "income splitting", "GAAR", "Part IVA", or any question about structuring affairs to legally minimize Australian tax. Covers entity selection, deduction optimization, capital allowances, loss utilization, timing strategies, GST planning, superannuation, and red lines. ALWAYS read this skill before giving Australian tax optimization advice.
 version: 1.0
 jurisdiction: AU
-tax_year: 2025-26
+tax_year: 2025
+tax_year_notes: "2025-26"
 category: tax-optimization
 depends_on:
   - bookkeeping-workflow-base

@@ -8,7 +8,8 @@ description: >
   rule", "India foreign income exempt RNOR", "move to India taxes".
 version: 1.0
 jurisdiction: IN
-tax_year: 2025-26
+tax_year: 2025
+tax_year_notes: "2025-26"
 category: international
 ---
 

@@ -4,7 +4,7 @@ description: >
   Use this skill whenever asked about North Macedonia payroll processing for employed persons. Trigger on phrases like "North Macedonia payroll", "Macedonian salary", "плата", "plata", "MPIN", "МПИН", "flat tax Macedonia", "10% income tax Macedonia", "personal income tax Macedonia", "PIT Macedonia", "данок на личен доход", "social contributions Macedonia", "придонеси", "pridonesi", "PIOM", "ПИОМ", "pension fund Macedonia", "ФЗОМ", "FZOM", "health insurance Macedonia", "unemployment contribution Macedonia", "personal allowance Macedonia", "личен ослободување", "net salary Macedonia", "gross to net Macedonia", "neto plata", "PAYE Macedonia", "tax withholding Macedonia", "employer contributions Macedonia", "minimum wage Macedonia", "минимална плата", "UJP", "УЈП", "Public Revenue Office Macedonia", "M1 registration Macedonia", "contribution ceiling Macedonia", "MKD payroll", or any question about computing employee pay, withholding personal income tax, or mandatory social contributions for North Macedonia-based employees. This skill covers the flat 10% personal income tax, the 28% employee-borne mandatory social contributions (pension & disability, health, unemployment, additional/disability), the monthly personal allowance, the minimum and maximum contribution bases, the minimum wage, the MPIN monthly integrated-collection declaration, the annual PIT draft return, and M1 employment registration. ALWAYS read this skill before processing any North Macedonia payroll.
 version: 0.1
 jurisdiction: MK
-tax_year: "2025"
+tax_year: 2025
 category: payroll
 depends_on:
   - payroll-workflow-base

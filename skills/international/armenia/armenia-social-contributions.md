@@ -4,7 +4,8 @@ description: >
   Use this skill whenever asked about Armenia payroll social contributions and personal income tax for employees, individual entrepreneurs, or expatriates. Trigger on phrases like "Armenia payroll tax", "Armenian pension contribution", "funded pension 5% 10%", "military stamp duty Armenia", "Insurance Foundation for Servicemen", "Armenia social security", "how much PIT do I withhold in Armenia", "Armenian employer social tax", "mandatory health insurance Armenia", "SRC monthly payroll return", "net pay calculation Armenia", or any question about Armenian payroll withholding obligations. Also trigger when classifying bank statement transactions that relate to SRC tax payments, pension contributions, military stamp duty, or salary payments from Armenian banks (Ameriabank, Ardshinbank, Acba Bank, Inecobank, Converse Bank). This skill covers the flat 20% PIT, mandatory funded pension contribution, military stamp duty, the new mandatory health insurance contribution (effective Dec 2025/Jan 2026), the fact that the private sector has NO separate employer social tax, monthly filing deadlines, penalties, bank statement classification patterns, and edge cases. ALWAYS read this skill before touching any Armenian payroll or social-contribution work.
 version: 0.1
 jurisdiction: AM
-tax_year: 2025 (calendar year; with changes effective from December 2025 / January 2026 noted)
+tax_year: 2025
+tax_year_notes: "2025 (calendar year; with changes effective from December 2025 / January 2026 noted)"
 category: international
 depends_on:
   - social-contributions-workflow-base

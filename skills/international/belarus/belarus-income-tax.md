@@ -4,7 +4,8 @@ description: >
   Use this skill whenever asked about Belarus personal income tax (podokhodny nalog / подоходный налог) for individuals, employees, self-employed persons, freelancers, and individual entrepreneurs. Trigger on phrases like "how much income tax do I pay in Belarus", "Belarus PIT", "podokhodny nalog", "13% flat tax", "25% increased rate", "FSZN contributions", "Social Protection Fund", "Belgosstrakh", "Professional Income Tax app", "self-employed Belarus", "individual entrepreneur tax", "BYN salary net pay", "tax declaration deadline 31 March", or any question about computing or filing personal income tax for a Belarusian resident or Belarus-source income. Also trigger when computing net pay from gross BYN salary, applying standard deductions, classifying bank-statement income/expenses, or advising on the annual self-declaration. This skill covers PIT rates (13%/25%/30%), FSZN social contributions, accident insurance, standard deductions, the Professional Income Tax regime, individual entrepreneur taxation, filing forms, deadlines, and penalties. ALWAYS read this skill before touching any Belarus income tax work.
 version: 0.1
 jurisdiction: BY
-tax_year: 2025 (calendar year; some 2026 changes noted where officially confirmed)
+tax_year: 2025
+tax_year_notes: "2025 (calendar year; some 2026 changes noted where officially confirmed)"
 category: international
 depends_on:
   - income-tax-workflow-base

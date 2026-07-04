@@ -4,7 +4,8 @@ description: >
   Use this skill whenever asked about Kosovo payroll social contributions and wage taxation for employees and employers. Trigger on phrases like "how much pension contribution in Kosovo", "Kosovo payroll tax", "mandatory pension Trusti", "KPST contribution", "5% pension Kosovo", "Kosovo social security", "do I pay health insurance in Kosovo", "Kosovo PIT on salary", "withholding tax wages Kosovo", "WM declaration", "CM pension form", "secondary employer 10%", or any question about Kosovo employment-tax obligations. Also trigger when classifying bank statement transactions that relate to TAK/ATK tax payments, Trusti/KPST pension transfers, or salary debits from Kosovan banks (BKT, ProCredit, Raiffeisen Kosovo, TEB, NLB, Banka Ekonomike). Also trigger when preparing a monthly WM (wage withholding) or CM (pension contribution) declaration, or the annual PD personal income tax return. This skill covers the mandatory 10% pension split (5% employee + 5% employer), the 0%/8%/10% progressive personal income tax, the flat 10% secondary-employer withholding, the enacted-but-dormant health insurance regime, minimum wage, benefit-in-kind thresholds, payment schedule, penalties, bank statement classification patterns, and edge cases. ALWAYS read this skill before touching any Kosovo payroll or social-contribution work.
 version: 0.1
 jurisdiction: XK
-tax_year: 2025 (rules effective 23 August 2024 onward; rates unchanged into 2025)
+tax_year: 2025
+tax_year_notes: "2025 (rules effective 23 August 2024 onward; rates unchanged into 2025)"
 category: international
 depends_on:
   - social-contributions-workflow-base

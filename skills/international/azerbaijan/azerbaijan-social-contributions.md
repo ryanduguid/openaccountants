@@ -4,7 +4,8 @@ description: >
   Use this skill whenever asked about Azerbaijan employer/employee social contributions, payroll taxes, or salary withholding. Trigger on phrases like "Azerbaijan social insurance", "SSPF contributions", "DSMF", "how much social security do I pay in Azerbaijan", "Azerbaijan payroll tax", "mandatory health insurance Azerbaijan", "unemployment insurance Azerbaijan", "AZN salary net pay", "Azerbaijan income tax withholding", "non-oil/gas grace period", "PIT exemption AZN 8000", "what changes on 1 January 2026 in Azerbaijan", or any question about Azerbaijan employment-income contributions, the State Social Protection Fund, or the State Tax Service unified monthly declaration. Also trigger when classifying bank-statement transactions that relate to SSPF/DSMF debits, State Tax Service (taxes.gov.az) payments, mandatory health insurance, or salary payments in AZN from Azerbaijani banks (Kapital Bank, PASHA Bank, ABB / International Bank of Azerbaijan). This skill covers the two-track regime (non-oil/gas private sector grace period vs oil/gas & government standard rates), the 2025 social insurance / health / unemployment schedules, the confirmed 1 Jan 2026 changes, personal income tax withholding, filing forms, deadlines, penalties, bank-statement classification patterns, and edge cases. ALWAYS read this skill before touching any Azerbaijan payroll or social-contribution work.
 version: 0.1
 jurisdiction: AZ
-tax_year: 2025 (with confirmed 1 Jan 2026 changes noted)
+tax_year: 2025
+tax_year_notes: "2025 (with confirmed 1 Jan 2026 changes noted)"
 category: international
 depends_on:
   - social-contributions-workflow-base

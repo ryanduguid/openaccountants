@@ -3,7 +3,8 @@ name: thailand-pit
 description: Use this skill whenever asked to prepare, review, or classify transactions for Thailand Personal Income Tax (ภาษีเงินได้บุคคลธรรมดา), PND.90/91 filing, or advise on Thai PIT deductions and credits. Trigger on phrases like "ภาษีเงินได้บุคคลธรรมดา", "Thai income tax", "PND.90", "PND.91", "ภ.ง.ด.90", "ภ.ง.ด.91", or any Thailand personal tax request. ALWAYS read this skill before touching any Thailand PIT work.
 version: 1.0
 jurisdiction: TH
-tax_year: 2567 (2024)
+tax_year: 2024
+tax_year_notes: "2567 (2024)"
 category: international
 depends_on:
   - foundation

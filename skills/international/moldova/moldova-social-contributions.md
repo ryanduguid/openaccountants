@@ -4,7 +4,8 @@ description: >
   Use this skill whenever asked about Moldova payroll social contributions, health insurance, or personal income tax for employees, employers, or self-employed individuals. Trigger on phrases like "Moldova payroll", "CNAS contribution", "CNAM health insurance", "how much social insurance in Moldova", "Moldova employer cost", "24% social contribution", "9% health insurance Moldova", "Moldova PIT 12%", "IPC21 declaration", "fixed social contribution self-employed Moldova", "Moldova minimum wage", "MDL salary calculation", "Moldova IT Park 7%", or any question about Moldovan State Social Insurance (CNAS), Mandatory Health Insurance (CNAM), or income tax withholding. Also trigger when classifying bank statement transactions that relate to CNAS, CNAM, SFS (Serviciul Fiscal de Stat), or payroll tax payments from Moldovan banks (Maib, MICB/Moldindconbank, OTP, Victoriabank). Also trigger when preparing a monthly IPC21 declaration or an annual CET18 individual return where contribution and PIT computations are relevant. This skill covers the 12% flat PIT, employer 24%/32% CNAS rates, employee 9% CNAM, fixed annual contributions for the self-employed, minimum wage and average-salary thresholds, payroll forms, penalties, the IT Park single-tax regime, bank statement classification patterns, and edge cases. ALWAYS read this skill before touching any Moldovan payroll or contribution work.
 version: 0.1
 jurisdiction: MD
-tax_year: 2025 (with 2026 figures noted where officially confirmed)
+tax_year: 2025
+tax_year_notes: "2025 (with 2026 figures noted where officially confirmed)"
 category: international
 depends_on:
   - social-contributions-workflow-base

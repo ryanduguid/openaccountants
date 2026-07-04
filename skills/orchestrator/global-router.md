@@ -17,7 +17,8 @@ description: >
   income tax, self-employment, business tax, or accounting.
 version: 1.0
 jurisdiction: GLOBAL
-tax_year: 2025-2026
+tax_year: 2025
+tax_year_notes: "2025-2026"
 category: orchestrator
 depends_on: []
 ---

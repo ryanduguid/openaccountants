@@ -4,7 +4,8 @@ description: >
   Use this skill whenever asked about Moldova (Republic of Moldova) payroll processing for employed persons. Trigger on phrases like "Moldova payroll", "Moldova PAYE", "impozit pe venit", "income tax withholding Moldova", "CNAS", "BASS", "social insurance Moldova", "CNAM", "FAOAM", "health insurance Moldova", "Form IPC21", "darea de seama IPC21", "scutire personala", "personal exemption Moldova", "net salary Moldova", "salariu net", "gross to net Moldova", "minimum wage Moldova", "salariul minim", "employer social contribution Moldova", "SFS Moldova", "Serviciul Fiscal de Stat", "MDL payroll", or any question about computing employee pay, withholding income tax, or social/health contributions for Moldova-based employees. This skill covers flat 12% income-tax withholding, employee social insurance (CNAS 6%), mandatory health insurance (CNAM 9%), the 24% employer social contribution, personal/dependent exemptions, minimum wage, the unified monthly IPC21 return, and filing obligations. ALWAYS read this skill before processing any Moldova payroll.
 version: 0.1
 jurisdiction: MD
-tax_year: "2025 (calendar year; flat 12% PIT, CNAS/CNAM rates and exemptions confirmed unchanged into 2026)"
+tax_year: 2025
+tax_year_notes: "2025 (calendar year; flat 12% PIT, CNAS/CNAM rates and exemptions confirmed unchanged into 2026)"
 category: payroll
 depends_on:
   - payroll-workflow-base

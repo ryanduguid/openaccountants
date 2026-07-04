@@ -3,7 +3,8 @@ name: uk-vat-return
 description: Use this skill whenever asked to prepare, review, or classify transactions for a UK VAT return (VAT100) for a self-employed individual or very small business in Great Britain. Trigger on phrases like "prepare VAT return", "do my VAT", "classify these for VAT", "VAT100", "9-box return", "MTD", "Making Tax Digital", "flat rate scheme", "FRS", "cash accounting VAT", "input tax", "output tax", "reverse charge construction", "CIS reverse charge", "bad debt relief", "Box 1 to Box 9", "reduced rate UK", "zero-rated UK", "exempt supply UK", "de minimis VAT", "annual accounting scheme", or any question about UK VAT obligations. Covers the VAT100 9-box structure, standard/reduced/zero rates, registration threshold (GBP 90,000), Flat Rate Scheme, cash accounting scheme, annual accounting scheme, MTD requirements, input tax blocked categories, partial exemption, bad debt relief, and reverse charge for construction (CIS). MUST be loaded alongside vat-workflow-base v0.1 or later (for workflow architecture). ALWAYS read this skill before touching any UK VAT work.
 version: 2.0
 jurisdiction: GB
-tax_year: 2025-26
+tax_year: 2025
+tax_year_notes: "2025-26"
 verified_by: pending
 ---
 

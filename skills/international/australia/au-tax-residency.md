@@ -4,7 +4,8 @@ description: >
   Use this skill for any question about Australian tax residency. Trigger on: "am I an Australian tax resident", "Australian residency test", "leaving Australia tax", "ceasing Australian residency", "domicile test Australia", "183-day test Australia", "resides test Australia", "exit CGT Australia", "Australian resident abroad", "dual resident Australia", "moving from Australia", "Australian expat tax status". Covers the four residency tests, how to formally cease Australian residency, exit CGT consequences, and partial-year residency.
 version: 1.0
 jurisdiction: AU
-tax_year: 2024-25
+tax_year: 2024
+tax_year_notes: "2024-25"
 category: international
 ---
 

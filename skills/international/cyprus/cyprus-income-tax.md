@@ -4,7 +4,8 @@ description: >
   Use this skill whenever asked about Cyprus personal income tax for self-employed individuals or employees. Trigger on phrases like "how much tax do I pay in Cyprus", "TD1", "IR1", "income tax return Cyprus", "allowable deductions", "Social Insurance", "GHS", "GESY", "provisional tax", "temporary tax", "chargeable income", "non-dom", "Special Defence Contribution", "SDC", "50% expat exemption", "183-day rule", "60-day rule", "self-employed tax Cyprus", or any question about filing or computing income tax for a self-employed individual or employee in Cyprus. Also trigger when preparing or reviewing a TD1/IR1 return, computing deductible expenses, advising on provisional (temporary) tax instalments, or assessing tax residency under the 183-day or 60-day rule. This skill covers PIT rate bands (2025 and the 2026 reform), Social Insurance and GHS/GESY contributions, employer-only funds, the 1/5 deductions cap, expat exemptions, SDC for domiciled residents, penalties, and interaction with VAT and social insurance. ALWAYS read this skill before touching any Cyprus income tax work.
 version: 0.1
 jurisdiction: CY
-tax_year: 2025 (assessment year 2025; with confirmed 2026 reform figures noted)
+tax_year: 2025
+tax_year_notes: "2025 (assessment year 2025; with confirmed 2026 reform figures noted)"
 category: international
 depends_on:
   - income-tax-workflow-base

@@ -4,7 +4,8 @@ description: >
   Use this skill whenever asked about Hong Kong salaries tax. Trigger on phrases like "Hong Kong tax", "salaries tax", "BIR60", "IRD", "net chargeable income", "standard rate", "progressive rate HK", "personal allowance Hong Kong", "provisional tax HK", "tax return Hong Kong", or any question about computing, filing, or planning salaries tax for an individual in Hong Kong. This skill covers progressive and standard rate calculations, allowances, deductions, provisional tax, and BIR60 filing. ALWAYS read this skill before advising on Hong Kong salaries tax.
 version: 1.0
 jurisdiction: HK
-tax_year: 2024-25
+tax_year: 2024
+tax_year_notes: "2024-25"
 category: international
 depends_on:
   - income-tax-workflow-base

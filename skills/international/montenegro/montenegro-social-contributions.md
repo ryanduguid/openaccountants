@@ -4,7 +4,8 @@ description: >
   Use this skill whenever asked about Montenegro social security contributions and payroll deductions for employees, self-employed individuals (entrepreneurs), or employers. Trigger on phrases like "Montenegro social contributions", "PIO contribution", "pension and disability insurance Montenegro", "how much salary tax in Montenegro", "Montenegrin payroll", "Europe Now reform", "Evropa sad", "IOPPD return", "net to gross Montenegro", "employer cost Montenegro", "Montenegro minimum wage", "prirez surtax", or any question about Montenegrin salary taxes and contributions. Also trigger when classifying bank statement transactions that relate to Poreska uprava / Uprava prihoda i carina debits, salary payments, or social contribution remittances from Montenegrin banks (CKB, NLB, Hipotekarna, Lovćen, Erste, Prva banka). Also trigger when computing personal income tax (porez na dohodak) on salary under the post-October-2024 "Europe Now 2.0" schedule, or when reconciling the IOPPD monthly return. This skill covers the post-reform employee PIO (10%), unemployment (0.5% + 0.5%), abolished health contribution (0%), Labour Fund (0.2%), the 0/9/15% salary PIT bands, the EUR 700 exemption, the municipal surtax, minimum-wage floors, the IOPPD filing cycle, bank statement classification patterns, and edge cases. ALWAYS read this skill before touching any Montenegrin social-contribution or salary-tax work.
 version: 0.1
 jurisdiction: ME
-tax_year: 2025 (rates effective from the "Europe Now 2.0" reform of October 2024; PwC last reviewed 27 March 2026 confirms these continue into 2026)
+tax_year: 2025
+tax_year_notes: "2025 (rates effective from the \"Europe Now 2.0\" reform of October 2024; PwC last reviewed 27 March 2026 confirms these continue into 2026)"
 category: international
 depends_on:
   - social-contributions-workflow-base

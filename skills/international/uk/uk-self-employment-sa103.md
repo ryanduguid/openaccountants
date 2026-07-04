@@ -4,7 +4,8 @@ description: >
   Use this skill whenever asked about UK self-employment income for sole traders filing SA103S (short) or SA103F (full) as part of Self Assessment. Trigger on phrases like "self-employment income", "SA103", "trading income", "sole trader tax", "allowable expenses UK", "capital allowances UK", "trading allowance", "basis period", "tax year basis", "simplified expenses", "Class 4 NIC", "Class 2 abolished", "MTD ITSA", "Making Tax Digital", "April 2026 sole trader", "loss relief self-employed", or any question about computing self-employment profits for a UK sole trader. Covers trading income computation, allowable expenses, capital allowances (AIA, WDA, FYA), simplified expenses, the trading allowance, the completed basis period reform, the MTD ITSA three-phase rollout from April 2026, loss relief, and Class 4 NIC interaction (including the post-2024 rate cut and Class 2 abolition). ALWAYS read this skill before touching any UK self-employment work.
 version: 3.0
 jurisdiction: GB
-tax_year: 2025-26
+tax_year: 2025
+tax_year_notes: "2025-26"
 prior_year: 2024-25
 forward_year: 2026-27
 category: international

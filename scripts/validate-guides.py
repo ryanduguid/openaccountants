@@ -11,6 +11,10 @@ Checks (ERROR = exit 1, WARN = printed summary only):
      list must only ever shrink).
   3. WARN on missing jurisdiction / tier / last_updated (too much legacy
      content to hard-fail today) — printed as summary counts.
+  3b. `tax_year`, when present, must be a bare integer 2015-2035 — ERROR
+     otherwise (no grandfathering; scripts/normalize-tax-year.py did the
+     one-time sweep, and calendar/range/qualifier text belongs in
+     `tax_year_notes`).
   4. ERROR if any file under packages/us-federal/ was deleted relative to
      git history (hand-authored, no builder — a deletion is unrecoverable).
      Skipped when git / origin/main is unavailable.
@@ -51,6 +55,13 @@ def load_build_index():
     return module
 
 
+# `tax_year` must be a bare integer year, e.g. `tax_year: 2025`. Ranges,
+# calendars, and qualifiers go in `tax_year_notes` (see
+# scripts/normalize-tax-year.py, issue #49).
+TAX_YEAR_RE = re.compile(r"^tax_year:[ \t]*(.*?)[ \t]*$", re.MULTILINE)
+TAX_YEAR_MIN, TAX_YEAR_MAX = 2015, 2035
+
+
 def check_guides(bi, errors, warnings):
     warn_counts = {"jurisdiction": 0, "tier": 0, "last_updated": 0}
     guides = skipped = 0
@@ -71,6 +82,15 @@ def check_guides(bi, errors, warnings):
         has_description = re.search(r"^description:", block, re.MULTILINE)
         if not has_description and rel not in LEGACY_MISSING_DESCRIPTION:
             errors.append(f"{rel}: missing required frontmatter key `description`")
+        tax_year = TAX_YEAR_RE.search(block)
+        if tax_year:
+            value = tax_year.group(1)
+            if not re.fullmatch(r"\d{4}", value) or not (TAX_YEAR_MIN <= int(value) <= TAX_YEAR_MAX):
+                errors.append(
+                    f"{rel}: `tax_year` must be a bare integer "
+                    f"{TAX_YEAR_MIN}-{TAX_YEAR_MAX} (got {value!r}) — put "
+                    "ranges/calendars/qualifiers in `tax_year_notes`"
+                )
         for key in warn_counts:
             if not fields[key]:
                 warn_counts[key] += 1

@@ -4,7 +4,8 @@ description: >
   Use this skill for any question about UK non-dom rules. Trigger on: "UK non-dom", "UK non-domiciled", "remittance basis UK", "FIG regime UK", "foreign income gains UK new resident", "UK domicile rules", "UK non-dom reform 2025", "arising basis UK", "4-year exemption UK tax", "UK overseas workday relief", "UK non-dom abolished". Covers the new 4-year FIG regime (from April 2025), transitional provisions for existing non-doms, and remittance basis overview.
 version: 1.0
 jurisdiction: GB
-tax_year: 2025-26
+tax_year: 2025
+tax_year_notes: "2025-26"
 category: international
 depends_on:
   - uk-income-tax-sa100
