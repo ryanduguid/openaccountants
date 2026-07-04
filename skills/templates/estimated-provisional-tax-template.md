@@ -3,6 +3,8 @@ name: estimated-provisional-tax-template
 description: Reusable cross-country template for estimated/provisional tax obligations. Covers who must pay, instalment schedules, basis of computation (prior year vs current year), safe harbor rules, penalties for underpayment, interest charges, first-year rules, overpayment credits, interaction with employment withholding, and annualization methods. Adapt by inserting country-specific deadlines, penalty rates, and safe harbor percentages at [COUNTRY-SPECIFIC] placeholders.
 version: 1.0
 category: template
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # Estimated / Provisional Tax Template v1.0

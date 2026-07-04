@@ -6,6 +6,8 @@ version: 0.1
 jurisdiction: UZ
 tax_year: 2025
 tax_year_notes: "2025 (figures current as of PwC review 16 Jan 2026; BCV/min wage effective 1 Aug 2025)"
+tier: 2
+last_updated: 2026-07-04
 category: payroll
 depends_on:
   - payroll-workflow-base

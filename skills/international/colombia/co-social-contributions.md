@@ -2,6 +2,9 @@
 name: co-social-contributions
 description: Use this skill whenever asked about Colombian self-employed social contributions (aportes a seguridad social para independientes). Trigger on phrases like "seguridad social independientes", "salud y pensión independiente", "IBC independiente", "PILA independiente", "ARL independiente", "40% IBC rule", or any question about Colombian social security obligations for self-employed individuals. Covers salud (12.5%), pensión (16%), ARL, Fondo de Solidaridad Pensional, the 40% IBC rule, PILA filing, and edge cases. ALWAYS read this skill before touching any Colombian social contribution work.
 version: 2.0
+jurisdiction: CO
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # Colombia Social Contributions (Aportes Seguridad Social) -- Self-Employed Skill v2.0

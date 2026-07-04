@@ -6,6 +6,8 @@ version: 0.1
 jurisdiction: CY
 tax_year: 2025
 tax_year_notes: "2025 (PIT brackets and contributions as of 1 Jan 2025; 2026 reform figures noted where officially confirmed)"
+tier: 2
+last_updated: 2026-07-04
 category: payroll
 depends_on:
   - payroll-workflow-base

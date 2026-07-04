@@ -2,6 +2,9 @@
 name: hu-social-contributions
 description: Use this skill whenever asked about Hungarian self-employed social contributions (társadalombiztosítás / TB and szociális hozzájárulási adó / SZOCHO). Trigger on phrases like "SZOCHO", "TB járulék", "Hungarian social contributions", "társadalombiztosítás", "egyéni vállalkozó járulékok", or any question about social contribution obligations for a self-employed client in Hungary. Covers SZOCHO 13%, TB 18.5%, minimum contribution bases. ALWAYS read this skill before touching any Hungary social contributions work.
 version: 2.0
+jurisdiction: HU
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # Hungary Social Contributions (TB / SZOCHO) -- Self-Employed Skill v2.0

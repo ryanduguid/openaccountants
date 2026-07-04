@@ -2,6 +2,9 @@
 name: us-tax-workflow-base
 description: Tier 1 workflow base for US federal income tax skills serving sole proprietors and single-member LLCs disregarded for federal tax. Contains the workflow runbook, conservative defaults principle, structured intake form, reviewer-oriented output spec, self-checks, global refusal catalogue, citation discipline, and content skill slot contract. Workflow architecture only — no tax content, no rates, no thresholds, no form line references, no year-specific figures. MUST be loaded alongside at least one content skill (e.g., us-sole-prop-bookkeeping, us-schedule-c-and-se-computation, us-form-1040-self-employed-positions, us-quarterly-estimated-tax) that provides actual federal tax rules and current-year figures. Assumes a human reviewer credentialed under Circular 230 (Enrolled Agent, CPA, or attorney) reviews and signs off on every output before it reaches the taxpayer or the IRS. Federal-only in scope. State income tax skills may load it for workflow scaffolding but the base does not address state tax.
 version: 0.2
+jurisdiction: US
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # US Tax Workflow Base Skill v0.2

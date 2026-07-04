@@ -6,6 +6,8 @@ description: >
   taxable income, standard deduction, and the initial exemption amount ($4,811 single / $9,622 MFJ).
   Trigger: taxpayer is an Idaho resident or has Idaho-source income exceeding $2,500.
 jurisdiction: US-ID
+tier: 2
+last_updated: 2026-06-12
 version: "0.1"
 validation_status: ai-drafted-q3
 ---

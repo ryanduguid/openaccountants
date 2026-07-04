@@ -6,6 +6,8 @@ version: 0.1
 jurisdiction: GE
 tax_year: 2025
 tax_year_notes: "2025 (calendar year; rates confirmed current as of PwC review 21 Jan 2026)"
+tier: 2
+last_updated: 2026-07-04
 category: payroll
 depends_on:
   - payroll-workflow-base

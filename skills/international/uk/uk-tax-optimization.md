@@ -14,6 +14,8 @@ category: tax-optimization
 depends_on: []
 tax_year: 2025
 tax_year_notes: "2025-26"
+tier: 2
+last_updated: 2026-07-04
 verified_by: pending
 ---
 

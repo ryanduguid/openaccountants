@@ -1,6 +1,9 @@
 ---
 name: serbia-vat
 description: Use this skill whenever asked to prepare, review, or advise on a Serbia VAT (PDV) return or any PDV-related classification. Trigger on phrases like "prepare PDV return", "Serbia VAT", "PPPDV", "Serbian VAT filing", "e-Faktura", "Poreska Uprava", or any request involving Serbian VAT obligations. This skill contains the complete Serbian PDV classification rules, rate tables, e-invoicing requirements, filing deadlines, and deductibility rules required to produce a correct return. ALWAYS read this skill before touching any Serbia VAT-related work.
+jurisdiction: RS
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # Serbia VAT (PDV) Return Preparation Skill

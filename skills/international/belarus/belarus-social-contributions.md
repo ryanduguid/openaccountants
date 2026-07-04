@@ -6,6 +6,8 @@ version: 0.1
 jurisdiction: BY
 tax_year: 2025
 tax_year_notes: "2025 (with 2026 confirmed changes noted)"
+tier: 2
+last_updated: 2026-07-04
 category: international
 depends_on:
   - social-contributions-workflow-base

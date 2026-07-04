@@ -6,6 +6,8 @@ version: 3.0
 jurisdiction: GB
 tax_year: 2025
 tax_year_notes: "2025-26"
+tier: 2
+last_updated: 2026-07-04
 prior_year: 2024-25
 forward_year: 2026-27
 category: international

@@ -1,6 +1,9 @@
 ---
 name: isle-of-man-vat
 description: Use this skill whenever asked about Isle of Man VAT, VAT registration, VAT returns, or VAT compliance on the Isle of Man. Trigger on phrases like "Isle of Man VAT", "IOM VAT", "Manx VAT", "Isle of Man tax return", or any request involving Isle of Man VAT. The Isle of Man is within the UK VAT territory and applies the UK VAT system at 20%. The Isle of Man Customs and Excise Division administers VAT locally but the rules mirror UK VAT law. ALWAYS read this skill before handling any Isle of Man VAT work.
+jurisdiction: IM
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # Isle of Man VAT Skill

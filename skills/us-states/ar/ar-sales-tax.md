@@ -3,6 +3,8 @@ name: ar-sales-tax
 description: Use this skill whenever asked about Arkansas sales and use tax. Trigger on phrases like "Arkansas sales tax", "AR sales tax", "DFA", "A.C.A. §26-52", "Arkansas grocery tax", "Arkansas SST". ALWAYS load us-sales-tax first.
 version: 2.0
 jurisdiction: US-AR
+tier: 2
+last_updated: 2026-06-12
 validation_status: ai-drafted-q3
 ---
 

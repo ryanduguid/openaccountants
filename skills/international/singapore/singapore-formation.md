@@ -4,6 +4,8 @@ description: >
   Use this skill whenever asked about forming, incorporating, or registering a company in Singapore. Trigger on phrases like "set up a company in Singapore", "Pte Ltd", "ACRA registration", "Singapore company formation", "register a business Singapore", "BizFile+", "Singapore incorporation", "company secretary Singapore", "resident director Singapore", "Employment Pass", or any question about starting a business entity in Singapore. Covers entity types (Pte Ltd, LLP, sole proprietorship), registration process, capital requirements, costs, post-formation compliance, and bank account opening. ALWAYS read this skill before advising on Singapore company formation.
 version: 1.0
 jurisdiction: SG
+tier: 2
+last_updated: 2026-06-12
 category: formation
 depends_on:
   - company-formation-workflow-base

@@ -6,6 +6,8 @@ description: >
   "Michigan income tax", "MI income tax", "Form MI-1040", "Michigan Treasury",
   "MCL 206.51".
 jurisdiction: US-MI
+tier: 2
+last_updated: 2026-06-12
 version: "0.1"
 validation_status: ai-drafted-q3
 ---

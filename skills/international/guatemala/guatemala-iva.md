@@ -2,6 +2,9 @@
 name: guatemala-iva
 description: Use this skill whenever asked to prepare, review, or classify transactions for a Guatemala IVA return (SAT-2237) for any client. Trigger on phrases like "prepare IVA return", "Guatemala VAT", "SAT return", "IVA Guatemala", or any request involving Guatemala value added tax filing. This skill covers Regimen General IVA filers only. Small taxpayer (Pequeno Contribuyente) regime and ZOLIC free-zone entities are in the refusal catalogue. ALWAYS read this skill before touching any Guatemala IVA work.
 version: 2.0
+jurisdiction: GT
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # Guatemala IVA Return Skill (SAT-2237) v2.0

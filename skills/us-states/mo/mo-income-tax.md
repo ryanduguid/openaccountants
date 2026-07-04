@@ -6,6 +6,8 @@ description: >
   "Missouri income tax", "MO income tax", "Form MO-1040", "Missouri DOR",
   "RSMo § 143".
 jurisdiction: US-MO
+tier: 2
+last_updated: 2026-06-12
 version: "0.1"
 validation_status: ai-drafted-q3
 ---

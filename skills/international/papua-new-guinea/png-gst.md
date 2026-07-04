@@ -1,6 +1,9 @@
 ---
 name: png-gst
 description: Use this skill whenever asked to prepare, review, or create a Papua New Guinea GST return or any GST filing for a PNG business. Trigger on phrases like "prepare GST return", "PNG GST", "IRC filing", "Papua New Guinea tax", or any request involving PNG GST. Also trigger when classifying transactions for GST purposes from bank statements, invoices, or other source data. This skill contains the complete PNG GST classification rules, return form mappings, input credit rules, and filing deadlines. ALWAYS read this skill before touching any PNG GST-related work.
+jurisdiction: PG
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # Papua New Guinea GST Return Preparation Skill

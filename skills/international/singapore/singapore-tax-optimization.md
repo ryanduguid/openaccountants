@@ -6,6 +6,8 @@ version: 1.0
 jurisdiction: SG
 tax_year: 2025
 tax_year_notes: "YA 2026 (income year 2025)"
+tier: 2
+last_updated: 2026-07-04
 category: tax-optimization
 depends_on:
   - bookkeeping-workflow-base

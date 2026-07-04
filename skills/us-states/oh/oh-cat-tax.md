@@ -2,6 +2,8 @@
 name: oh-cat-tax
 description: Triggers when the taxpayer operates a business in Ohio with gross receipts potentially exceeding the Commercial Activity Tax (CAT) threshold. Covers CAT registration, filing, computation at 0.26% on taxable gross receipts above the exclusion amount ($6 million for 2025+), quarterly filing requirements, and the 2024 reform changes under HB 33.
 jurisdiction: US-OH
+tier: 2
+last_updated: 2026-06-12
 version: "0.1"
 validation_status: ai-drafted-q3
 ---

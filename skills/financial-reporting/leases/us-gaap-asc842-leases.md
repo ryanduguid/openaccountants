@@ -15,6 +15,8 @@ description: >
   IFRS edition. MUST load alongside financial-reporting-workflow-base.
 version: 0.1
 jurisdiction: US
+tier: 2
+last_updated: 2026-06-12
 category: financial-reporting
 standard_family: us-gaap
 standard_refs:

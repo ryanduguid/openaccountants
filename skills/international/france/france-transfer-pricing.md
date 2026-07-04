@@ -4,6 +4,8 @@ description: >
   Use this skill whenever asked about France transfer pricing rules, documentation requirements, or prix de transfert compliance. Trigger on phrases like "transfer pricing France", "French TP documentation", "prix de transfert", "master file France", "local file France", "CbCR France", "APA France", "Article L.13 AA", "Form 2257-SD", or any question about intercompany pricing for French entities.
 version: 1.0
 jurisdiction: FR
+tier: 2
+last_updated: 2026-06-12
 category: transfer-pricing
 depends_on:
   - transfer-pricing-workflow-base

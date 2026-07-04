@@ -12,6 +12,8 @@ description: >
   for Italy.
 version: 1.0
 jurisdiction: IT
+tier: 2
+last_updated: 2026-06-12
 category: bookkeeping
 depends_on:
   - bookkeeping-workflow-base

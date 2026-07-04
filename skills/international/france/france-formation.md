@@ -4,6 +4,8 @@ description: >
   Use this skill whenever asked about forming, incorporating, or registering a company in France. Trigger on phrases like "set up a company in France", "SAS formation", "SARL création", "Guichet unique INPI", "French company formation", "register a business France", "société par actions simplifiée", "société à responsabilité limitée", "Kbis", "RCS registration", "annonce légale", or any question about starting a business entity in France. Covers entity types (SAS, SARL, EURL, SASU, SA, auto-entrepreneur), registration process, capital requirements, costs, post-formation compliance, and bank account opening. ALWAYS read this skill before advising on French company formation.
 version: 1.0
 jurisdiction: FR
+tier: 2
+last_updated: 2026-06-12
 category: formation
 depends_on:
   - company-formation-workflow-base

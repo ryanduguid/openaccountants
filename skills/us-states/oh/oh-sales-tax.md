@@ -5,6 +5,8 @@ description: >
 version: 2.0
 jurisdiction: US-OH
 tax_year: 2025
+tier: 2
+last_updated: 2026-06-12
 category: us-states
 depends_on:
   - us-sales-tax

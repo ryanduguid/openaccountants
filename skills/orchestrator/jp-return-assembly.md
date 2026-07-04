@@ -3,6 +3,8 @@ name: jp-return-assembly
 description: Final orchestrator skill that assembles the complete Japanese filing package for Japan-resident self-employed individuals and sole proprietors (個人事業主). Consumes outputs from all Japanese content skills (japan-consumption-tax for 消費税, japan-income-tax for 所得税確定申告, japan-social-insurance for 社会保険料, jp-estimated-tax for 予定納税) to produce a single unified reviewer package containing every worksheet, every form, every brief section, all cross-skill reconciliations, and the final action list with payment instructions, filing instructions, and next-year planning. This is the capstone skill that runs last and produces the final deliverable. MUST be loaded alongside all Japanese content skills listed above. Japan full-year residents only. Self-employed individuals and sole proprietors (個人事業主) only.
 version: 1.0
 jurisdiction: JP
+tier: 2
+last_updated: 2026-06-12
 category: orchestrator
 ---
 

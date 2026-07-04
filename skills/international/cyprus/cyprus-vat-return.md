@@ -2,6 +2,9 @@
 name: cyprus-vat-return
 description: Use this skill whenever asked to prepare, review, or classify transactions for a Cyprus VAT return (VAT4 form) for any client. Trigger on phrases like "prepare Cyprus VAT return", "do the Cyprus VAT", "fill in VAT4", "create the return", "Cyprus VAT filing", or any request involving Cyprus VAT filing. This skill covers Cyprus only and standard VAT registration. MUST be loaded alongside BOTH vat-workflow-base v0.1 or later AND eu-vat-directive v0.1 or later. ALWAYS read this skill before touching any Cyprus VAT work.
 version: 2.0
+jurisdiction: CY
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # Cyprus VAT Return Skill (VAT4 Form) v2.0

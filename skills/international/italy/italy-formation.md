@@ -4,6 +4,8 @@ description: >
   Use this skill whenever asked about forming, incorporating, or registering a company in Italy. Trigger on phrases like "set up a company in Italy", "SRL formation", "SRLS", "Camera di Commercio", "Italian company formation", "register a business Italy", "società a responsabilità limitata", "Registro delle Imprese", "partita IVA", "Italian notary", or any question about starting a business entity in Italy. Covers entity types (SRL, SRLS, SPA, SNC, SAS), registration process, capital requirements, costs, post-formation compliance, and bank account opening. ALWAYS read this skill before advising on Italian company formation.
 version: 1.0
 jurisdiction: IT
+tier: 2
+last_updated: 2026-06-12
 category: formation
 depends_on:
   - company-formation-workflow-base

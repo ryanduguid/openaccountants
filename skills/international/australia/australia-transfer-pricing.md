@@ -4,6 +4,8 @@ description: >
   Use this skill whenever asked about Australia transfer pricing rules, documentation requirements, or ATO transfer pricing compliance. Trigger on phrases like "transfer pricing Australia", "Australian TP documentation", "ATO transfer pricing", "master file Australia", "local file Australia", "CbCR Australia", "APA Australia", "Subdivision 815", "International Dealings Schedule", "IDS", "significant global entity", or any question about intercompany pricing for Australian entities.
 version: 1.0
 jurisdiction: AU
+tier: 2
+last_updated: 2026-06-12
 category: transfer-pricing
 depends_on:
   - transfer-pricing-workflow-base

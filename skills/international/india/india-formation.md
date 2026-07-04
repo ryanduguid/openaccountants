@@ -4,6 +4,8 @@ description: >
   Use this skill whenever asked about forming, incorporating, or registering a company in India. Trigger on phrases like "set up a company in India", "Pvt Ltd India", "private limited company India", "MCA registration", "SPICe+", "Indian company formation", "register a business India", "OPC India", "LLP India", "ROC filing", "DIN", "DSC", or any question about starting a business entity in India. Covers entity types (Pvt Ltd, OPC, LLP, public), registration process via SPICe+, capital requirements, costs, post-formation compliance, and bank account opening. ALWAYS read this skill before advising on Indian company formation.
 version: 1.0
 jurisdiction: IN
+tier: 2
+last_updated: 2026-06-12
 category: formation
 depends_on:
   - company-formation-workflow-base

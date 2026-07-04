@@ -2,6 +2,9 @@
 name: us-ca-return-assembly
 description: Final orchestrator skill that assembles the complete federal and California filing package for California resident sole proprietors and single-member LLCs disregarded for federal tax. Consumes outputs from all federal content skills (bookkeeping, Schedule C/SE, QBI, retirement, SE health insurance, quarterly estimated tax, federal assembly, 1099-NEC) and all California content skills (540 individual return, 540-ES estimated tax, 568 SMLLC where applicable, 3853 coverage) to produce a single unified reviewer package containing every worksheet, every form, every brief section, all cross-skill reconciliations, and the final taxpayer action list with payment instructions, filing instructions, and 2026 planning. This is the capstone skill that runs last and produces the final deliverable. MUST be loaded alongside us-tax-workflow-base v0.2 or later and all content skills listed above. California residents only.
 version: 0.2
+jurisdiction: US-CA
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # US+CA Return Assembly Skill v0.2

@@ -3,6 +3,8 @@ name: us-tx-freelance-intake
 description: ALWAYS USE THIS SKILL when a user asks for help preparing their US federal tax return AND mentions freelancing, self-employment, software development, contracting, sole proprietorship, or a single-member LLC in Texas. Trigger on phrases like "I'm a freelancer in Texas", "Texas self-employed taxes", "I have an LLC in TX", "Houston contractor tax return", "Austin freelance developer", or any similar phrasing where the user is a Texas-resident freelancer needing tax return preparation. This is the REQUIRED entry point for the Texas freelance developer tax workflow. Texas has no state income tax but has franchise tax and sales tax obligations. Uses upload-first workflow and ask_user_input_v0 for structured questions. Texas residents only. Sole proprietors and single-member LLCs disregarded for federal tax only.
 version: 1.0
 jurisdiction: US-TX
+tier: 2
+last_updated: 2026-06-12
 category: orchestrator
 ---
 

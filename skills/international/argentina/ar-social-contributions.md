@@ -2,6 +2,9 @@
 name: ar-social-contributions
 description: Use this skill whenever asked about Argentine self-employed social contributions (aportes autónomos). Trigger on phrases like "aportes autónomos", "categoría autónomos", "jubilación autónomos", "PAMI autónomos", "cuánto pago de autónomo", "contribuciones SIPA", or any question about Argentine social security obligations for self-employed individuals. Covers Categories I-V, retirement (SIPA), PAMI (INSSJP), and obra social contributions, monthly fixed amounts, VEP payment, and edge cases. ALWAYS read this skill before touching any Argentine social contribution work.
 version: 2.0
+jurisdiction: AR
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # Argentina Social Contributions (Aportes Autónomos) -- Self-Employed Skill v2.0

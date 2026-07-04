@@ -6,6 +6,8 @@ description: >
   "Maine income tax", "ME income tax", "Form 1040ME", "Maine Revenue Services",
   "36 M.R.S. § 5111".
 jurisdiction: US-ME
+tier: 2
+last_updated: 2026-06-12
 version: "0.1"
 validation_status: ai-drafted-q3
 ---

@@ -3,6 +3,8 @@ name: ct-sales-tax
 description: Use this skill whenever asked about Connecticut sales and use tax, luxury tax, DRS filings. Trigger on phrases like "Connecticut sales tax", "CT sales tax", "DRS", "luxury tax Connecticut". ALWAYS load us-sales-tax first.
 version: 2.0
 jurisdiction: US-CT
+tier: 2
+last_updated: 2026-06-12
 validation_status: ai-drafted-q3
 ---
 

@@ -13,6 +13,8 @@ triggers:
   - upcoming deadlines
   - filing deadlines
   - what do I need to file
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # Deadline Engine v0.1

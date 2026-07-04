@@ -2,6 +2,9 @@
 name: brazil-vat
 description: Use this skill whenever asked about Brazilian indirect taxes, VAT, consumption taxes, PIS, COFINS, ICMS, ISS, IPI, CBS, IBS, Imposto Seletivo, NF-e (Nota Fiscal Eletronica), Simples Nacional, CNPJ registration, tax reform (EC 132/2023), or any request involving Brazilian goods and services taxation, filing, compliance, or classification. Trigger on phrases like "Brazil tax", "Brazilian VAT", "PIS/COFINS", "ICMS", "ISS", "IPI", "CBS", "IBS", "NF-e", "nota fiscal", "Simples Nacional", "CNPJ", "tax reform Brazil", or any request involving Brazilian indirect tax compliance. This skill contains the complete Brazilian indirect tax framework covering both the current multi-tax system (PIS/COFINS/ICMS/ISS/IPI) and the new unified system (CBS/IBS/IS) under Constitutional Amendment 132/2023. ALWAYS read this skill before touching any Brazilian indirect tax work.
 version: 2.0
+jurisdiction: BR
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # Brazil Indirect Tax / VAT Skill v2.0

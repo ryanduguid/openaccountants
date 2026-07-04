@@ -2,6 +2,9 @@
 name: iraq-tax
 description: Use this skill whenever asked about Iraq taxation, sales tax, or the absence of VAT in Iraq. Iraq does NOT have a broad-based VAT or GST. It imposes specific sales taxes on enumerated products (up to 300% on alcohol/tobacco) and has an income tax system. ALWAYS read this skill before handling any Iraq tax work.
 version: 2.0
+jurisdiction: IQ
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # Iraq Tax Compliance Skill v2.0

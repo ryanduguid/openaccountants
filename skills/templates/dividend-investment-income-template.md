@@ -3,6 +3,8 @@ name: dividend-investment-income-template
 description: Reusable cross-country template for dividend and investment income taxation. Covers dividend classification (qualified vs ordinary), withholding tax rates (domestic and treaty), franking/imputation credits, interest income, capital gains on securities, dividend allowances, reporting requirements, foreign dividend treatment, and double tax relief. Adapt by inserting country-specific WHT rates, treaty rates, and allowances at [COUNTRY-SPECIFIC] placeholders.
 version: 1.0
 category: template
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # Dividend & Investment Income Tax Template v1.0

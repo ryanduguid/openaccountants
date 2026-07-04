@@ -2,6 +2,9 @@
 name: morocco-vat
 description: Use this skill whenever asked to prepare, review, or classify transactions for a Morocco VAT (TVA) return. Two rates from 2026 -- 20%/10% (7% and 14% phased out). Critical distinction between exempt-with-deduction (Art. 92) and exempt-without-deduction (Art. 91). ALWAYS read before handling Morocco TVA work.
 version: 2.0
+jurisdiction: MA
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # Morocco VAT (TVA) Return Skill v2.0

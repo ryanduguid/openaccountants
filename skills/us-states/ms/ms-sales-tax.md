@@ -3,6 +3,8 @@ name: ms-sales-tax
 description: Use this skill whenever asked about Mississippi sales and use tax. Trigger on phrases like "Mississippi sales tax", "MS sales tax", "Miss. Code §27-65". ALWAYS load us-sales-tax first.
 version: 2.0
 jurisdiction: US-MS
+tier: 2
+last_updated: 2026-06-12
 validation_status: ai-drafted-q3
 ---
 

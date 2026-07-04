@@ -5,6 +5,8 @@ description: >
   self-employed / sole proprietors. Trigger on phrases like "New Jersey income tax",
   "NJ income tax", "Form NJ-1040", "NJ Division of Taxation", "NJ self-employment tax".
 jurisdiction: US-NJ
+tier: 2
+last_updated: 2026-06-12
 version: "0.1"
 validation_status: ai-drafted-q3
 ---

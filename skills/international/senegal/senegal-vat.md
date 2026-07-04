@@ -2,6 +2,9 @@
 name: senegal-vat
 description: Use this skill whenever asked to prepare, review, or classify transactions for a Senegal VAT (TVA) return. Standard rate 18%, reduced 10% (tourism). WAEMU member. Precompte TVA mechanism. ALWAYS read before handling Senegal VAT work.
 version: 2.0
+jurisdiction: SN
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # Senegal VAT (TVA) Return Skill v2.0

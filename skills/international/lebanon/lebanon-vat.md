@@ -2,6 +2,9 @@
 name: lebanon-vat
 description: Use this skill whenever asked to prepare, review, or classify transactions for a Lebanon VAT return. Trigger on phrases like "Lebanon VAT", "TVA Lebanon", "MOF Lebanon". Lebanon imposes VAT at 11% under Law 379/2001 (12% Cabinet-approved Feb 2026, pending Parliament). WARNING -- ongoing economic crisis affects enforcement and exchange rates. ALWAYS read this skill before handling any Lebanon VAT work.
 version: 2.0
+jurisdiction: LB
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # Lebanon VAT Return Skill v2.0

@@ -11,6 +11,8 @@ description: >
   "double holiday pay", "meal vouchers Belgium", or "eco-cheques".
 version: 1.0
 jurisdiction: BE
+tier: 2
+last_updated: 2026-06-12
 category: payroll
 depends_on:
   - payroll-workflow-base

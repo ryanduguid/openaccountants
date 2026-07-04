@@ -12,6 +12,8 @@ description: >
 version: 1.0
 category: cross-border
 jurisdiction: INTL
+tier: 2
+last_updated: 2026-06-12
 primary_legislation: Regulation (EC) No 883/2004; Regulation (EC) No 987/2009
 ---
 

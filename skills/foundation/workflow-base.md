@@ -3,6 +3,8 @@ name: workflow-base
 description: Universal workflow base for all accounting and compliance skills worldwide — tax, bookkeeping, payroll, e-invoicing, company formation, financial statements, transfer pricing, and tax optimization. Contains jurisdiction-agnostic workflow architecture — conservative defaults principle, reviewer assumption, output specification (Excel working paper + reviewer brief + action list), self-check framework, confidence tier definitions, execution pacing, citation discipline, and prohibition framework. No rates, no thresholds, no form references, no country-specific rules. MUST be loaded alongside at least one content skill that provides the actual rules for the relevant obligation and jurisdiction. Domain-specific workflow bases (bookkeeping-workflow-base, payroll-workflow-base, etc.) extend this base with domain-specific steps. Every output is reviewed by a credentialed professional before filing.
 version: 0.1
 jurisdiction: GLOBAL
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # Universal Workflow Base v0.1

@@ -2,6 +2,9 @@
 name: tunisia-vat
 description: Use this skill whenever asked to prepare, review, or classify transactions for a Tunisia VAT (TVA) return. Three rates -- 19%/13%/7%. Unique suspension regime (not zero-rating). Droit de consommation interaction. Withholding TVA 25%. ALWAYS read before handling Tunisia TVA work.
 version: 2.0
+jurisdiction: TN
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # Tunisia VAT (TVA) Return Skill v2.0

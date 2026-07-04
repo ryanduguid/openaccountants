@@ -6,6 +6,8 @@ version: 0.1
 jurisdiction: BG
 tax_year: 2025
 tax_year_notes: "2025 (BGN figures; Bulgaria adopts the euro 1 Jan 2026 at the fixed rate 1.95583 BGN = EUR 1, so 2026 thresholds are the EUR equivalents shown)"
+tier: 2
+last_updated: 2026-07-04
 category: payroll
 depends_on:
   - payroll-workflow-base

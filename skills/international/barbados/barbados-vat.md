@@ -2,6 +2,9 @@
 name: barbados-vat
 description: Use this skill whenever asked to prepare, review, or classify transactions for a Barbados VAT return for any client. Trigger on phrases like "Barbados VAT", "BRA filing", "Barbados Revenue Authority", or any request involving Barbados VAT. MUST be loaded alongside vat-workflow-base v0.1 or later. ALWAYS read this skill before touching any Barbados VAT work.
 version: 2.0
+jurisdiction: BB
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # Barbados VAT Return Skill v2.0

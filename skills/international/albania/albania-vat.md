@@ -2,6 +2,9 @@
 name: albania-vat
 description: Use this skill whenever asked to prepare, review, or classify transactions for an Albanian VAT (TVSH) return for any client. Trigger on phrases like "Albania VAT", "Albanian TVSH", "TVSH return", "DPT filing", "Albanian tax", or any request involving Albanian VAT filing. Also trigger when classifying transactions for VAT purposes from bank statements, invoices, or other source data. This skill covers Albania only — standard TVSH payers filing monthly returns. Small business exemptions, free economic zones, agricultural compensation schemes, and margin schemes are in the refusal catalogue. MUST be loaded alongside vat-workflow-base v0.1 or later (for workflow architecture). ALWAYS read this skill before touching any Albanian VAT work.
 version: 2.0
+jurisdiction: AL
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # Albania VAT (TVSH) Return Skill v2.0

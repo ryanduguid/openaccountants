@@ -2,6 +2,9 @@
 name: armenia-vat
 description: Use this skill whenever asked to prepare, review, or classify transactions for an Armenian VAT (AVH) return for any client. Trigger on phrases like "Armenia VAT", "Armenian VAT", "AVH return", "SRC filing", or any request involving Armenian VAT filing. This skill covers standard VAT payers filing monthly returns. Turnover tax, micro-enterprise, and IT sector special regimes are in the refusal catalogue. MUST be loaded alongside vat-workflow-base v0.1 or later. ALWAYS read this skill before touching any Armenian VAT work.
 version: 2.0
+jurisdiction: AM
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # Armenia VAT Return Skill v2.0

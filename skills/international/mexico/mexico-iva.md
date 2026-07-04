@@ -2,6 +2,9 @@
 name: mexico-iva
 description: Use this skill whenever asked to prepare, review, or classify transactions for a Mexico IVA (Impuesto al Valor Agregado) return or classify transactions for Mexican VAT purposes. Trigger on phrases like "prepare IVA return", "Mexican VAT", "declaracion de IVA", "CFDI classification", "SAT filing", or any request involving Mexico value-added tax. Also trigger when classifying transactions from CFDI XML files, bank statements, or invoices for Mexican IVA purposes. This skill contains the complete Mexico IVA classification rules, CFDI 4.0 requirements, rate determination (16%/0%/exempt), border zone treatment, withholding rules, deductibility rules, and filing deadlines required to produce a correct return. ALWAYS read this skill before touching any Mexico IVA-related work.
 version: 2.0
+jurisdiction: MX
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # Mexico IVA Return Preparation Skill v2.0

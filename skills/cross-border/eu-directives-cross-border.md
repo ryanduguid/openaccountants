@@ -14,6 +14,8 @@ description: >
 version: 1.0
 category: cross-border
 jurisdiction: EU-27
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # EU Directives for Cross-Border Corporate Taxation

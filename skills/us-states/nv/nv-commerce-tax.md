@@ -6,6 +6,8 @@ description: >
   "NV business tax", "Nevada $4 million threshold". This tax applies to business entities
   with Nevada gross revenue exceeding $4 million per taxable year.
 jurisdiction: US-NV
+tier: 2
+last_updated: 2026-06-12
 version: "0.1"
 validation_status: ai-drafted-q3
 ---

@@ -3,6 +3,8 @@ name: ks-sales-tax
 description: Use this skill whenever asked about Kansas sales and use tax. Trigger on phrases like "Kansas sales tax", "KS sales tax", "KDOR", "K.S.A. §79-3603", "Kansas grocery tax". ALWAYS load us-sales-tax first.
 version: 2.0
 jurisdiction: US-KS
+tier: 2
+last_updated: 2026-06-12
 validation_status: ai-drafted-q3
 ---
 

@@ -4,6 +4,8 @@ description: >
   Use this skill when assembling or reviewing a Mexican persona física annual tax return (declaración anual). Trigger on phrases like "declaración anual México", "ISR anual", "return assembly Mexico", "cross-check CFDI", "IVA reconciliation", "provisional vs annual", "RESICO annual", "AEP annual return", or any task involving the compilation, verification, or filing of a Mexican individual's annual income tax return. This skill orchestrates cross-checks between ISR, IVA, IMSS, and CFDI data. ALWAYS read this skill before assembling any Mexican annual return.
 version: 1.0
 jurisdiction: MX
+tier: 2
+last_updated: 2026-06-12
 category: orchestrator
 depends_on:
   - mx-freelance-intake

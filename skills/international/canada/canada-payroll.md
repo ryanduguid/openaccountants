@@ -12,6 +12,8 @@ description: >
   not fully detailed. ALWAYS read this skill before processing any Canadian payroll work.
 version: 1.0
 jurisdiction: CA
+tier: 2
+last_updated: 2026-06-12
 category: payroll
 depends_on:
   - payroll-workflow-base

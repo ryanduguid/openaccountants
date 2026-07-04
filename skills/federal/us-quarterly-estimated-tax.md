@@ -5,6 +5,8 @@ description: >
 version: 2.0
 jurisdiction: US
 tax_year: 2025
+tier: 2
+last_updated: 2026-06-12
 category: federal
 depends_on:
   - us-tax-workflow-base

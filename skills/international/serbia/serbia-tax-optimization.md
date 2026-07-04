@@ -4,6 +4,8 @@ description: >
   Use this skill whenever asked about reducing tax in Serbia, tax planning, or legal strategies to minimise tax for an entrepreneur or small company in Serbia. Trigger on phrases like "reduce tax Serbia", "paušalno", "flat-rate entrepreneur", "lump-sum tax Serbia", "preduzetnik", "self-employed vs DOO", "Serbia freelancer tax", "save tax Serbia", "tax planning Serbia". This skill covers the flat-rate (paušalno) entrepreneur regime, the income-expenses (bookkeeping) regime, the DOO company route, the 10% tax-base-growth cap, and the disguised-employment red line. ALWAYS read this skill before advising on any Serbian tax optimisation.
 version: 0.1
 jurisdiction: RS
+tier: 2
+last_updated: 2026-06-12
 category: tax-optimization
 depends_on: []
 verified_by: pending

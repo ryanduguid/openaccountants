@@ -3,6 +3,8 @@ name: employer-payroll-template
 description: Reusable cross-country template for employer payroll obligations. Covers PAYE/withholding computation, employer social security contributions, pension auto-enrollment, payslip requirements, filing frequencies, year-end reconciliation, new employee onboarding, termination payments, benefits in kind, statutory payments, and reporting deadlines. Adapt by inserting country-specific tax bands, SSC rates, and pension thresholds at [COUNTRY-SPECIFIC] placeholders.
 version: 1.0
 category: template
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # Employer Payroll Obligations Template v1.0

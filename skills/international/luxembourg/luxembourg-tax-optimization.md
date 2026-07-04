@@ -4,6 +4,8 @@ description: >
   Use this skill whenever asked about reducing tax in Luxembourg, tax planning, or legal strategies to minimise tax for a self-employed person or small company in Luxembourg. Trigger on phrases like "reduce tax Luxembourg", "self-employed vs SARL", "SARL-S", "Luxembourg deductions", "third-pillar pension deduction", "interest deduction Luxembourg", "save tax Luxembourg", "tax planning Luxembourg". This skill covers the self-employed-vs-company choice, the SARL EUR 17,500 allowance, business and interest deductions, private-pension (third pillar) relief, the CNAP contribution, personal abatements, and the substance/reasonable-salary red lines. ALWAYS read this skill before advising on any Luxembourg tax optimisation.
 version: 0.1
 jurisdiction: LU
+tier: 2
+last_updated: 2026-06-12
 category: tax-optimization
 depends_on: []
 verified_by: pending

@@ -3,6 +3,8 @@ name: uk-return-assembly
 description: Final orchestrator skill that assembles the complete UK filing package for UK-resident sole traders. Consumes outputs from all UK content skills (uk-vat-return for VAT100, uk-self-employment-sa103 for trading income, uk-income-tax-sa100 for personal tax, uk-national-insurance for Class 2+4 NIC, uk-student-loan-repayment for student loan, uk-payments-on-account for payments on account) to produce a single unified reviewer package containing every worksheet, every form, every brief section, all cross-skill reconciliations, and the final action list with payment instructions, filing instructions, and next-year planning. This is the capstone skill that runs last and produces the final deliverable. MUST be loaded alongside all UK content skills listed above. UK full-year residents only. Sole traders only.
 version: 0.1
 jurisdiction: GB
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # UK Return Assembly Skill v0.1

@@ -2,6 +2,9 @@
 name: us-1099-nec-issuance
 description: Tier 2 content skill for determining which contractor payments made by a US sole proprietor or single-member LLC require issuing Form 1099-NEC and producing the information returns for tax year 2025. Covers the §6041A $600 reporting threshold (rising to $600 for electronic payments after repeated deferrals of the §6050W $600 threshold), the corporate exception under Treas. Reg. §1.6041-3(p), the attorney exception under §6045(f), the medical/health care exception under §6041A(a)(2), the Form W-9 collection requirement, backup withholding at 24% under §3406, the January 31 filing deadline under §6071(c), e-filing requirements under §6011(e) and the 2025 threshold of 10 forms, penalties for failure to file under §6721 and failure to furnish under §6722, TIN matching and B-notice procedures, and state filing requirements. MUST be loaded alongside us-tax-workflow-base v0.1+. Federal only.
 version: 0.2
+jurisdiction: US
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # US 1099-NEC Issuance Skill v0.2

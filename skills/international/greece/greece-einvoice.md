@@ -4,6 +4,8 @@ description: >
   Use this skill whenever asked about e-invoicing in Greece, myDATA platform, AADE electronic books, MARK unique registration number, real-time tax book reporting, e-invoicing providers in Greece, myDATA API, income/expense classification, QR code on Greek invoices, or any question about issuing, transmitting, validating, or archiving electronic invoices under Greek law. Trigger on phrases like "myDATA", "AADE", "MARK number", "Greek e-invoice", "electronic books Greece", "myDATA API", "SendInvoices", "e-timologio", "AFM tax number", "income classification", "expense classification", or "Greek VAT invoice". ALWAYS read this skill before touching any Greece invoicing compliance work.
 version: 1.0
 jurisdiction: GR
+tier: 2
+last_updated: 2026-06-12
 category: invoicing
 depends_on:
   - einvoice-workflow-base

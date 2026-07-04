@@ -3,6 +3,8 @@ name: crypto-digital-assets-template
 description: Reusable cross-country template for cryptocurrency and digital asset taxation. Covers capital gains vs income classification, cost basis methods (FIFO/LIFO/specific ID), DeFi protocols, NFTs, mining, staking, airdrops, hard forks, and reporting obligations. Adapt by inserting country-specific rates, holding periods, and de minimis thresholds at [COUNTRY-SPECIFIC] placeholders.
 version: 1.0
 category: template
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # Crypto & Digital Assets Tax Template v1.0

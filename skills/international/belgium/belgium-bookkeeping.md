@@ -4,6 +4,8 @@ description: >
   Use this skill whenever asked about Belgian bookkeeping, chart of accounts, PCMN/MAR, annual accounts filing, balance sheet or P&L format in Belgium. Trigger on phrases like "Belgian bookkeeping", "PCMN", "MAR", "Plan Comptable Minimum Normalisé", "minimumindeling", "jaarrekening Belgium", "comptes annuels", "NBB filing", "Nationale Bank", "micro-entity Belgium", "Belgian GAAP", "small company Belgium", "chart of accounts Belgium", "boekhoudwetgeving", "WVV", or any question about recording transactions, financial reporting, or accounting standards for Belgian entities.
 version: 1.0
 jurisdiction: BE
+tier: 2
+last_updated: 2026-06-12
 category: bookkeeping
 depends_on:
   - bookkeeping-workflow-base

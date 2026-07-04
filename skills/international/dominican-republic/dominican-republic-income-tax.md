@@ -6,6 +6,8 @@ version: 0.1
 jurisdiction: DO
 tax_year: 2025
 tax_year_notes: "2025 (filed by 31 March 2026); social-security ceilings current to Feb 2026"
+tier: 2
+last_updated: 2026-07-04
 category: international
 depends_on:
   - income-tax-workflow-base

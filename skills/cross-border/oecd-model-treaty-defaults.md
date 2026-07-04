@@ -15,6 +15,8 @@ description: >
 version: 1.0
 category: cross-border
 jurisdiction: INTL
+tier: 2
+last_updated: 2026-06-12
 primary_legislation: OECD Model Tax Convention on Income and on Capital (2025 Update)
 ---
 

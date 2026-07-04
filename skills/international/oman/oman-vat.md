@@ -2,6 +2,9 @@
 name: oman-vat
 description: Use this skill whenever asked to prepare, review, or classify transactions for an Oman VAT return for any client. Trigger on phrases like "prepare VAT return", "Oman VAT", "OTA return", or any request involving Oman VAT filing. Oman applies VAT at 5% under Royal Decree No. 121/2020, administered by the Oman Tax Authority (OTA). ALWAYS read this skill before touching any Oman VAT-related work.
 version: 2.0
+jurisdiction: OM
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # Oman VAT Return Skill v2.0

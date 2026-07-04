@@ -6,6 +6,8 @@ version: 0.1
 jurisdiction: LU
 tax_year: 2025
 tax_year_notes: "2025 (income year 2025; rates effective 1 Jan 2025; social parameters updated 1 May 2025)"
+tier: 2
+last_updated: 2026-07-04
 category: international
 depends_on:
   - income-tax-workflow-base

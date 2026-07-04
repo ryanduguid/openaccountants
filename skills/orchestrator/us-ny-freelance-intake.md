@@ -3,6 +3,8 @@ name: us-ny-freelance-intake
 description: ALWAYS USE THIS SKILL when a user asks for help preparing their US federal or New York state tax return AND mentions freelancing, self-employment, software development, contracting, sole proprietorship, or a single-member LLC in New York. Trigger on phrases like "I'm a freelancer in New York", "NYC self-employed taxes", "I have an LLC in NY", "New York freelance tax return", "I live in Manhattan and do contracting", or any similar phrasing where the user is a New York-resident freelancer needing tax return preparation. This is the REQUIRED entry point for the New York freelance developer tax workflow. Uses upload-first workflow and ask_user_input_v0 for structured questions. New York full-year residents only; handles both NYC residents (subject to NYC UBT and city income tax) and rest-of-state residents. Sole proprietors and single-member LLCs disregarded for federal tax only.
 version: 1.0
 jurisdiction: US-NY
+tier: 2
+last_updated: 2026-06-12
 category: orchestrator
 ---
 

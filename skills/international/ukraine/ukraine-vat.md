@@ -1,6 +1,9 @@
 ---
 name: ukraine-vat
 description: Use this skill whenever asked to prepare, review, or advise on a Ukraine VAT (PDV) return or any PDV-related classification. Trigger on phrases like "prepare PDV return", "Ukraine VAT", "podatok na dodanu vartist", "Ukrainian VAT filing", "DPS", "SEA PDV", "tax invoice registration", or any request involving Ukrainian VAT obligations. This skill contains the complete Ukrainian PDV classification rules, rate tables, electronic administration system (SEA PDV) rules, mandatory tax invoice registration, filing deadlines, and deductibility rules required to produce a correct return. ALWAYS read this skill before touching any Ukraine VAT-related work.
+jurisdiction: UA
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # Ukraine VAT (PDV) Return Preparation Skill

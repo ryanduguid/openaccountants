@@ -4,6 +4,8 @@ description: >
   Pattern library for productivity, collaboration, and creative SaaS tools appearing on bank statements worldwide. Covers Microsoft 365, Google Workspace, Slack, Notion, Linear, Asana, Trello, Jira / Confluence, Figma, Adobe Creative Cloud, Canva, Dropbox, Box, Zoom, Calendly, HubSpot, Salesforce, Intercom, Zendesk, Loom, Miro, ClickUp, Monday.com, Airtable, Webflow, Squarespace, Wix, ChatGPT / OpenAI, Anthropic Claude, Cursor, 1Password, Bitwarden, LastPass, NordVPN, Surfshark, ExpressVPN, Apple One / iCloud+, Spotify (business), Audible (business), and accounting / payroll software (Xero, QuickBooks, FreeAgent, Sage, Gusto, Rippling, Deel, Remote, Wise Business). Provides bank-statement variations, default classification, and VAT/GST notes. Does NOT cover: cloud infrastructure (see global-cloud-infrastructure), ad platforms (see global-ad-platforms), or payment processors (see global-payment-processors).
 version: 0.1
 jurisdiction: GLOBAL
+tier: 2
+last_updated: 2026-06-12
 category: pattern
 verified_by: pending
 ---

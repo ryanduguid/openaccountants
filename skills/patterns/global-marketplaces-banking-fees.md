@@ -4,6 +4,8 @@ description: >
   Pattern library for online marketplaces (Etsy, eBay, Amazon Seller, AliExpress, Mercari, Depop, Vinted, Fiverr, Upwork, Toptal, Catalant, Andela, Patreon, Substack, Gumroad, Lemonsqueezy, Beehiiv, Whop) and recurring bank / payment-platform fees (wire fees, currency conversion, FX spreads, ATM fees, monthly account fees, overdraft, returned cheque). Provides bank-statement variations, classification, VAT/GST treatment, marketplace facilitator collection rules (post-Wayfair US states; EU marketplace deemed-supplier; UK platform reporting under DAC7-equivalent), and the 1099-K threshold reduction for US sellers (USD 5,000 for 2024, USD 600 for 2026 per OBBBA confirmation). Does NOT cover: cloud (see global-cloud-infrastructure), productivity SaaS (see global-productivity-tools), ad platforms (see global-ad-platforms), payment processors (see global-payment-processors).
 version: 0.1
 jurisdiction: GLOBAL
+tier: 2
+last_updated: 2026-06-12
 category: pattern
 verified_by: pending
 ---

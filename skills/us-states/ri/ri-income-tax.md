@@ -2,6 +2,8 @@
 name: ri-income-tax
 description: Triggers when the taxpayer is a Rhode Island resident sole proprietor or single-member LLC needing to file Rhode Island Form RI-1040. Covers Rhode Island's three-bracket graduated income tax (3.75%–5.99% for tax year 2025), standard deduction, personal exemptions, RI modifications to federal AGI, and the new RI Schedule HR1 for OBBBA add-backs. Must be loaded alongside us-tax-workflow-base and us-federal-return-assembly.
 jurisdiction: US-RI
+tier: 2
+last_updated: 2026-06-12
 version: "0.1"
 validation_status: ai-drafted-q3
 ---

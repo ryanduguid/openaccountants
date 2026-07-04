@@ -2,6 +2,9 @@
 name: maldives-gst
 description: Use this skill whenever asked to prepare, review, or classify transactions for a Maldives GST return for any client. Trigger on phrases like "Maldives GST", "MIRA filing", "tourism GST", or any request involving Maldives GST. MUST be loaded alongside vat-workflow-base v0.1 or later. ALWAYS read this skill before touching any Maldives GST work.
 version: 2.0
+jurisdiction: MV
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # Maldives GST Return Skill v2.0

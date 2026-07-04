@@ -3,6 +3,9 @@ name: za-provisional-tax
 description: Use this skill whenever asked about South African provisional tax (IRP6) for self-employed individuals. Trigger on phrases like "IRP6", "provisional tax", "SARS provisional", "estimated tax South Africa", "first provisional period", "second provisional period", "third provisional", "underestimation penalty", or any question about South African provisional tax obligations for self-employed persons. Covers first period (Aug 31), second period (Feb 28), voluntary third period (Sep 30), underestimation penalties, basic amount rules, and edge cases. ALWAYS read this skill before touching any South African provisional tax work.
 version: 2.0
 verified_by: Werner Britz, CA(SA)
+jurisdiction: ZA
+tier: 1
+last_updated: 2026-06-12
 ---
 
 # South Africa Provisional Tax (IRP6) -- Self-Employed Skill v2.0

@@ -1,6 +1,9 @@
 ---
 name: eu-reverse-charge
 description: Use this skill whenever a cross-border B2B service transaction occurs between EU member states and the question is whether the reverse charge mechanism under Article 196 of the VAT Directive applies. Trigger on phrases like "reverse charge", "B2B services EU", "intra-community services", "Article 196", "EC Sales List", "self-assess VAT", "cross-border VAT EU", or any request involving the VAT treatment of services supplied between businesses in different EU countries. This skill contains the complete decision logic for determining when reverse charge applies, how the supplier and customer each report it, the EC Sales List obligations, and the country-specific box mappings that link back to each country's VAT return skill. ALWAYS read this skill before classifying any intra-EU B2B service transaction.
+jurisdiction: EU-27
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # EU Reverse Charge for B2B Services (Article 196, VAT Directive)

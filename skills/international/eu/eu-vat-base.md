@@ -1,6 +1,8 @@
 ---
 name: eu-vat-base
 description: Load this skill as a shared reference whenever working on VAT for any EU member state. Contains the common rules from Council Directive 2006/112/EC that apply across all 27 EU member states -- intra-community acquisitions, reverse charge mechanics, place of supply rules, OSS, distance selling thresholds, and EU country list. Always load the country-specific VAT skill alongside this one. Do NOT use this skill alone -- it must be combined with the relevant country skill (e.g. ireland-vat-return, germany-vat-return) which overrides anything country-specific.
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # EU VAT Base -- Common Rules (Directive 2006/112/EC)

@@ -3,6 +3,8 @@ name: mi-sales-tax
 description: Use this skill whenever asked about Michigan sales and use tax. Trigger on phrases like "Michigan sales tax", "MI sales tax", "MCL 205.51", "Michigan Treasury". ALWAYS load us-sales-tax first.
 version: 2.0
 jurisdiction: US-MI
+tier: 2
+last_updated: 2026-06-12
 validation_status: ai-drafted-q3
 ---
 

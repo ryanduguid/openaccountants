@@ -4,6 +4,8 @@ description: >
   Use this skill whenever asked about India transfer pricing rules, documentation requirements, or CBDT transfer pricing compliance. Trigger on phrases like "transfer pricing India", "Indian TP documentation", "Form 3CEB", "master file India", "local file India", "CbCR India", "APA India", "Section 92", "safe harbour India", "specified domestic transactions", or any question about intercompany pricing for Indian entities.
 version: 1.0
 jurisdiction: IN
+tier: 2
+last_updated: 2026-06-12
 category: transfer-pricing
 depends_on:
   - transfer-pricing-workflow-base

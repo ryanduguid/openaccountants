@@ -5,6 +5,8 @@ description: >
   self-employed / sole proprietors. Trigger on phrases like "New Mexico income tax",
   "NM income tax", "Form PIT-1", "NM Taxation and Revenue", "NM self-employment tax".
 jurisdiction: US-NM
+tier: 2
+last_updated: 2026-06-12
 version: "0.1"
 validation_status: ai-drafted-q3
 ---

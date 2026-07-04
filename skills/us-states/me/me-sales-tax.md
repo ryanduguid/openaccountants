@@ -3,6 +3,8 @@ name: me-sales-tax
 description: Use this skill whenever asked about Maine sales and use tax. Trigger on phrases like "Maine sales tax", "ME sales tax", "MRS", "36 M.R.S. §1811". ALWAYS load us-sales-tax first.
 version: 2.0
 jurisdiction: US-ME
+tier: 2
+last_updated: 2026-06-12
 validation_status: ai-drafted-q3
 ---
 

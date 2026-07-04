@@ -4,6 +4,8 @@ description: >
   Use this skill whenever asked about reducing tax in Azerbaijan, tax planning, or legal strategies to minimise tax for a small business or entrepreneur in Azerbaijan. Trigger on phrases like "reduce tax Azerbaijan", "simplified tax 2%", "micro business Azerbaijan", "startup exemption", "Azerbaijan dividends 5%", "tech park Azerbaijan", "save tax Azerbaijan", "tax planning Azerbaijan". This skill covers the 2% simplified turnover tax, micro-business and startup exemptions, regional/technology-park incentives, dividend taxation, and the eligibility/anti-avoidance red lines. ALWAYS read this skill before advising on any Azerbaijani tax optimisation.
 version: 0.1
 jurisdiction: AZ
+tier: 2
+last_updated: 2026-06-12
 category: tax-optimization
 depends_on: []
 verified_by: pending

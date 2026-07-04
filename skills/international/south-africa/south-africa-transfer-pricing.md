@@ -4,6 +4,8 @@ description: >
   Use this skill whenever asked about South Africa transfer pricing rules, documentation requirements, or SARS transfer pricing compliance. Trigger on phrases like "transfer pricing South Africa", "SA TP documentation", "SARS transfer pricing", "master file South Africa", "local file South Africa", "CbCR South Africa", "Section 31 ITA", "arm's length South Africa", or any question about intercompany pricing for South African entities.
 version: 1.0
 jurisdiction: ZA
+tier: 2
+last_updated: 2026-06-12
 category: transfer-pricing
 depends_on:
   - transfer-pricing-workflow-base

@@ -5,6 +5,8 @@ description: >
 version: 2.1
 jurisdiction: ZA
 tax_year: 2026
+tier: 1
+last_updated: 2026-06-12
 category: international
 depends_on:
   - vat-workflow-base

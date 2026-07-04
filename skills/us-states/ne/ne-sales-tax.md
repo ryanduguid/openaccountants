@@ -3,6 +3,8 @@ name: ne-sales-tax
 description: Use this skill whenever asked about Nebraska sales and use tax. Trigger on phrases like "Nebraska sales tax", "NE sales tax", "R.R.S. Neb. §77-2701", "Nebraska SST". ALWAYS load us-sales-tax first.
 version: 2.0
 jurisdiction: US-NE
+tier: 2
+last_updated: 2026-06-12
 validation_status: ai-drafted-q3
 ---
 

@@ -4,6 +4,8 @@ description: >
   Use this skill whenever asked about e-invoicing in Belgium, Peppol B2B mandate, Mercurius platform for B2G, Hermes platform, EN 16931 Belgium, Peppol BIS Billing 3.0 Belgium, structured electronic invoices, Belgian VAT e-invoicing, Peppol Access Points, or any question about issuing, transmitting, validating, or archiving electronic invoices under Belgian law. Trigger on phrases like "Peppol Belgium", "e-invoicing Belgium 2026", "Mercurius", "Hermes platform", "B2B e-invoice Belgium", "structured invoice Belgium", "Belgian VAT Code invoicing", "Peppol BIS", "UBL Belgium", or "e-facturatie". ALWAYS read this skill before touching any Belgium invoicing compliance work.
 version: 1.0
 jurisdiction: BE
+tier: 2
+last_updated: 2026-06-12
 category: invoicing
 depends_on:
   - einvoice-workflow-base

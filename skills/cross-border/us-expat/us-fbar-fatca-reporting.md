@@ -10,6 +10,8 @@ description: >
   cross-border-tax-workflow-base.
 version: 0.1
 jurisdiction: US
+tier: 2
+last_updated: 2026-06-12
 category: international
 standard_family: us-gaap
 depends_on:

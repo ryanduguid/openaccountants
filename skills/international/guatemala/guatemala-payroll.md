@@ -6,6 +6,8 @@ version: 0.1
 jurisdiction: GT
 tax_year: 2026
 tax_year_notes: "2026 (with 2025 figures retained where confirmed)"
+tier: 2
+last_updated: 2026-07-04
 category: payroll
 depends_on:
   - payroll-workflow-base

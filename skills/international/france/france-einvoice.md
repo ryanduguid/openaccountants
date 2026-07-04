@@ -4,6 +4,8 @@ description: >
   Use this skill whenever asked about French e-invoicing, facturation électronique, Chorus Pro, Factur-X, Plateforme Agréée (PA), Plateforme de Dématérialisation Partenaire (PDP), Portail Public de Facturation (PPF), e-reporting France, B2B e-invoicing mandate France 2026, lifecycle statuses, or any question about issuing, receiving, validating, or archiving electronic invoices in France. Also trigger when preparing invoices for submission via a certified platform, configuring PA/PDP connectivity, handling e-reporting obligations for B2C or cross-border transactions, or advising on Factur-X profile selection. This skill covers accepted formats (Factur-X, UBL 2.1, CII), the PPF/PA architecture, mandatory fields, validation rules, archiving, penalties, and interaction with French VAT returns. ALWAYS read this skill before touching any French e-invoicing work.
 version: 1.0
 jurisdiction: FR
+tier: 2
+last_updated: 2026-06-12
 category: invoicing
 depends_on:
   - einvoice-workflow-base

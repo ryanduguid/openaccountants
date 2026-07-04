@@ -2,6 +2,9 @@
 name: cz-social-health
 description: Use this skill whenever asked about Czech self-employed social and health insurance contributions. Trigger on phrases like "OSSZ", "Czech social insurance", "zdravotní pojištění OSVČ", "sociální pojištění", "paušální daň", "Czech self-employed contributions", "přehled OSSZ", or any question about social/health insurance obligations for a self-employed client in the Czech Republic. Covers social insurance (29.2% of 50% base), health insurance (13.5% of 50% base), minimum advances, and paušální daň. ALWAYS read this skill before touching any Czech social contributions work.
 version: 2.0
+jurisdiction: CZ
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # Czech Social + Health Insurance -- Self-Employed (OSVČ) Skill v2.0

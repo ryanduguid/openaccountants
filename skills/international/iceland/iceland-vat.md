@@ -2,6 +2,9 @@
 name: iceland-vat
 description: Use this skill whenever asked to prepare, review, or classify transactions for an Iceland VAT (VSK) return for any client. Trigger on phrases like "prepare VSK return", "Iceland VAT", "virðisaukaskattur", "Icelandic VAT filing", or any request involving Icelandic VAT. Iceland is NOT an EU member but IS in the EEA. This skill covers Iceland only. MUST be loaded alongside vat-workflow-base v0.1 or later. Does NOT require eu-vat-directive (Iceland is not EU). ALWAYS read this skill before touching any Iceland VSK work.
 version: 2.0
+jurisdiction: IS
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # Iceland VAT Return Skill (VSK) v2.0

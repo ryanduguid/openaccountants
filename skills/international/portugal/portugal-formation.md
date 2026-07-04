@@ -8,6 +8,8 @@ category: formation
 depends_on:
   - company-formation-workflow-base
 tax_year: 2025
+tier: 2
+last_updated: 2026-06-12
 verified_by: pending
 ---
 

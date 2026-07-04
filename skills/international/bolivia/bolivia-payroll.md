@@ -6,6 +6,8 @@ version: 0.1
 jurisdiction: BO
 tax_year: 2025
 tax_year_notes: "2025 (RC-IVA, social contributions, SMN); 2026 figures noted where officially confirmed (SMN Bs 3,300, DS 5516)"
+tier: 2
+last_updated: 2026-07-04
 category: payroll
 depends_on:
   - payroll-workflow-base

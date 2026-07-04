@@ -6,6 +6,8 @@ version: 0.1
 jurisdiction: AM
 tax_year: 2025
 tax_year_notes: "2025 (calendar year; with changes effective from December 2025 / January 2026 noted)"
+tier: 2
+last_updated: 2026-07-04
 category: international
 depends_on:
   - social-contributions-workflow-base

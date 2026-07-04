@@ -6,6 +6,8 @@ version: 0.1
 jurisdiction: XK
 tax_year: 2025
 tax_year_notes: "2025 (rules effective 23 August 2024 onward; rates unchanged into 2025)"
+tier: 2
+last_updated: 2026-07-04
 category: international
 depends_on:
   - social-contributions-workflow-base

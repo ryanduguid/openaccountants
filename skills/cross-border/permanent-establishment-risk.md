@@ -1,6 +1,9 @@
 ---
 name: permanent-establishment-risk
 description: Use this skill whenever a freelancer or small business has cross-border activity that might create a tax presence (Permanent Establishment / PE) in the client's country. Trigger on phrases like "permanent establishment", "PE risk", "tax presence", "183-day rule", "fixed place of business", "dependent agent", "service PE", "effectively connected income", "do I need to file taxes in my client's country", "working abroad for client", "remote work PE", or any request about whether a freelancer's cross-border activity triggers a filing obligation in another country. This skill contains the OECD model treaty PE definition, country-specific PE thresholds, the 183-day rule, remote work analysis, avoidance strategies, and consequences of PE creation. This is primarily T2/T3 material -- flag for professional review in all but the most straightforward cases. ALWAYS read this skill before advising on any PE-related question.
+jurisdiction: INTL
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # Permanent Establishment Risk for Cross-Border Freelancers

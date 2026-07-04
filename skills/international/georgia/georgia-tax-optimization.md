@@ -4,6 +4,8 @@ description: >
   Use this skill whenever asked about reducing tax in Georgia (country), tax planning, or legal strategies to minimise tax for an individual entrepreneur or small business in Georgia. Trigger on phrases like "reduce tax Georgia", "1% tax Georgia", "small business status", "individual entrepreneur Georgia", "micro business status", "Georgia turnover tax", "save tax Georgia", "tax planning Georgia". This skill covers the Small Business Status (1% turnover tax), the Micro Business Status (0%), the standard 20%/15% system, the VAT threshold, and the eligibility/anti-avoidance red lines. ALWAYS read this skill before advising on any Georgian tax optimisation.
 version: 0.1
 jurisdiction: GE
+tier: 2
+last_updated: 2026-06-12
 category: tax-optimization
 depends_on: []
 verified_by: pending

@@ -3,6 +3,8 @@ name: vat-workflow-base
 description: Tier 1 workflow base for VAT return preparation skills. Contains the universal workflow runbook, two-tier classification rule, conservative defaults principle, structured question form, output specification, and 14 self-checks. This skill provides workflow architecture only — it contains no legal content, no jurisdiction-specific facts, no rates, no return form details. It MUST be loaded alongside (a) a regional/directive layer that provides the legal framework for the relevant tax system (e.g., eu-vat-directive for EU member states) and (b) a country-specific skill that provides rates, return form structure, supplier patterns, and refusals (e.g., germany-vat-return). This skill is the foundation that every country VAT skill loads on top of.
 version: 0.2.0
 jurisdiction: GLOBAL
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # VAT Workflow Base Skill v0.1

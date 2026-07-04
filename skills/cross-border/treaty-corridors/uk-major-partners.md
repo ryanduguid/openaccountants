@@ -2,6 +2,8 @@
 name: uk-major-partners
 version: 1.0
 category: cross-border
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # UK Major Treaty Partners — Withholding Tax Rates

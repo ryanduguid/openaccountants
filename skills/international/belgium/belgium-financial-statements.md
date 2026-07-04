@@ -4,6 +4,8 @@ description: >
   Use this skill when preparing, reviewing, or advising on annual financial statements (jaarrekening / comptes annuels) for a Belgian company. Trigger on phrases like "jaarrekening", "comptes annuels Belgique", "NBB deposit", "Nationale Bank", "Banque Nationale de Belgique", "BNB", "Belgian GAAP", "Code des sociétés et associations", "WVV", "audit Belgium", "commissaris", "verkort schema", "volledig schema", or any question about preparing and filing statutory accounts under Belgian company law. Covers Belgian GAAP frameworks, size thresholds, required statements, formats, notes, filing deadlines, and audit requirements.
 version: 1.0
 jurisdiction: BE
+tier: 2
+last_updated: 2026-06-12
 category: financial-statements
 depends_on:
   - financial-statements-workflow-base

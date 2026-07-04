@@ -6,6 +6,8 @@ version: 0.1
 jurisdiction: AZ
 tax_year: 2025
 tax_year_notes: "2025 (with confirmed 2026 changes documented)"
+tier: 2
+last_updated: 2026-07-04
 category: payroll
 depends_on:
   - payroll-workflow-base

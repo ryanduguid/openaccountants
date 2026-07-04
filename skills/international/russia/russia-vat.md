@@ -3,6 +3,8 @@ name: russia-vat
 slug: russia-vat
 jurisdiction: RU
 tax_year: 2026
+tier: 2
+last_updated: 2026-06-12
 quality: Research-verified — pending sign-off by a Russian accountant
 description: Use this skill whenever asked to prepare, review, or advise on a Russian VAT (НДС — Nalog na Dobavlennuyu Stoimost) return or any transaction classification for Russian VAT purposes. Trigger on phrases like "Russian VAT", "НДС", "NDS", "Russian tax return", "VAT in Russia", "ФНС filing", or any request involving Russian VAT obligations. This skill contains the complete Russian VAT classification rules, rate structure (standard rate raised to 22% from 1 January 2026), return form mappings, deductibility rules, reverse charge treatment, and filing deadlines required to produce a correct return. NOTE: International sanctions regimes (EU, US, UK, and others) may significantly affect cross-border VAT treatment for Russian entities. Always flag sanctions-related issues as [T2] or [T3]. ALWAYS read this skill before touching any Russian VAT-related work.
 ---
