@@ -1,6 +1,6 @@
 # OpenAccountants — Test Plan
 
-> **Note:** Predates the two-tier quality model. References to "Q4 stub" should be read as "skill not yet research-verified" — current quality model in [QUALITY-TIERS.md](QUALITY-TIERS.md).
+> **Note:** Predates the two-tier quality model. References to "Q4 stub" should be read as "skill not yet at source-cited-draft standard" — current quality model in [QUALITY-TIERS.md](QUALITY-TIERS.md).
 
 15 real-world test cases across different countries, business types, and complexity levels. Each simulates a real user who cloned the repo into Claude Code and starts a conversation.
 

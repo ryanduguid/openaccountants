@@ -4,7 +4,7 @@
 
 A read-only [Model Context Protocol](https://modelcontextprotocol.io/) server that gives Claude, Cursor, and any MCP client **on-demand access** to 134 countries + 51 US state packages + 13 Canadian provinces/territories of open-source accounting skills across 10 domains (tax, bookkeeping, payroll, e-invoicing, formation, financial statements, transfer pricing, tax optimization, cross-border, and more) — no manual file uploads.
 
-> **Two MCPs, different surfaces.** This **self-hosted server** reads the open-source markdown in your local checkout. The **hosted server** at `https://www.openaccountants.com/api/mcp` reads the production database and exposes a larger surface that includes the **accountant-verified** tier, the `request_accountant_review` handoff (routes to a named licensed CPA/CA/EA with your working paper attached), `get_rates`, `list_verifiers`, `compare_jurisdictions`, and `plan_cross_border`. The hosted server is the product; this self-hosted one is the open research base.
+> **Two MCPs, different surfaces.** This **self-hosted server** reads the open-source markdown bundled with the package (or in your local checkout). The **hosted server** at `https://www.openaccountants.com/api/mcp` reads the production database and exposes a larger surface that includes the **accountant-reviewed** tier, the `request_accountant_review` handoff (routes to a named licensed CPA/CA/EA with your working paper attached), `get_rates`, `list_verifiers`, `compare_jurisdictions`, and `plan_cross_border`. The hosted server is the product; this self-hosted one is the open research base.
 
 ## Why this exists
 
@@ -48,7 +48,7 @@ The self-hosted server exposes 6 read-only tools below. The hosted server at `ht
 | Tool | Description |
 |------|-------------|
 | `start` | **Front door.** Call first whenever a user asks for tax/accounting help. Takes optional `intent` (free text — e.g. `"taxes"`, `"VAT return"`, `"set up a company"`) and `jurisdiction` (e.g. `"MT"`, `"GB"`, `"US-CA"`). Returns either a clarification question or a ready-to-execute plan (`skills_to_load`, `expectations`, `next_action`, `guardrails`). |
-| `list_skills` | List published skills with quality tier and verifier. Optional `jurisdiction` (ISO code, e.g. `MT`, `GB`, `US-CA`) and `category` filters. |
+| `list_skills` | List published skills with quality tier and reviewing accountant. Optional `jurisdiction` (ISO code, e.g. `MT`, `GB`, `US-CA`) and `category` filters. |
 | `get_skill` | Given a skill `slug`, returns the full markdown plus a provenance/attribution footer. |
 | `get_skill_sections` | Given a `slug`, returns the skill parsed into sections (`heading`, `content`, `level`) for step-by-step application. |
 | `search_skills` | Keyword search across skill markdown (`query`, optional `jurisdiction`). Returns the matched section heading and a snippet. |
@@ -91,15 +91,43 @@ Guided workflows that turn the skills into a tax engine, not just a library:
 | `skill-feedback` | `skill_slug`, `country` | Collect structured feedback on a skill after use. |
 | `skill-review` | `skillSlug`, `scenario` | Load a skill's sections and apply them to one scenario. |
 
-> Note: the on-disk server reads the open-source markdown in `packages/`. Most skill files don't carry a `jurisdiction` field, so it's inherited from the package directory (the folder name for `us-XX`/`ca-XX`, otherwise the code its siblings declare). Quality tier is derived from whether a file names a verifier.
+> Note: the on-disk server reads the open-source markdown in `packages/`. Most skill files don't carry a `jurisdiction` field, so it's inherited from the package directory (the folder name for `us-XX`/`ca-XX`, otherwise the code its siblings declare). Quality tier is derived from whether a file's `verified_by` frontmatter names a reviewing accountant.
 
-> **Canadian users — important:** the `ca-XX/` provincial packages (`ca-on`, `ca-qc`, `ca-bc`, …) are **generated**, not checked in. After cloning, run `python3 scripts/build-packages.py` once to materialise them. Until you do, the MCP won't return Canadian provincial skills via `list_skills(jurisdiction="CA-ON")` — only the federal Canadian files visible under `packages/canada/`.
+> **Canadian users on a development (clone) install — important:** the `ca-XX/` provincial packages (`ca-on`, `ca-qc`, `ca-bc`, …) are **generated**, not checked in. After cloning, run `python3 scripts/build-packages.py` once to materialise them. Until you do, the MCP won't return Canadian provincial skills via `list_skills(jurisdiction="CA-ON")` — only the federal Canadian files visible under `packages/canada/`. (The PyPI wheel ships with the packages already built.)
 
 ## Quick start
 
-### 1. Clone and install
+Three ways to install, easiest first.
 
-Requires **Python 3.10+**.
+### Option 1 — Hosted endpoint (1 step, nothing to install)
+
+Point any remote-capable MCP client at:
+
+```
+https://www.openaccountants.com/api/mcp
+```
+
+That's it. The hosted server is the full product surface (live database, accountant-reviewed tier, `request_accountant_review`, `get_rates`, and more — see the note at the top).
+
+### Option 2 — Install from PyPI (no clone needed)
+
+Requires **Python 3.10+**. The wheel bundles all skill packages — you do not need a checkout of this repo:
+
+```bash
+pip install openaccountants-mcp
+```
+
+Or run it directly with `uvx`:
+
+```bash
+uvx openaccountants-mcp
+```
+
+Then connect your AI client (next section) using the `openaccountants-mcp` command.
+
+### Development install (clone the repo)
+
+For contributors, or if you want the server to read your local, editable checkout:
 
 ```bash
 git clone https://github.com/openaccountants/openaccountants.git
@@ -107,13 +135,15 @@ cd openaccountants
 pip install ./mcp
 ```
 
-Or with `uv` (recommended):
+Or with `uv`:
 
 ```bash
 uv pip install ./mcp
 ```
 
-### 2. Connect to your AI client
+The server reads `packages/` from the repo root (override with `OPENACCOUNTANTS_ROOT`, see environment variables below).
+
+### Connect to your AI client
 
 Pick **one** of the following.
 
@@ -162,7 +192,7 @@ Add to `.cursor/mcp.json` in the project (or via Cursor Settings > MCP):
 
 Run `openaccountants-mcp` (or `python -m openaccountants_mcp`) as a **stdio** transport server.
 
-### 3. Start chatting
+### Start chatting
 
 > Help me with my 2025 taxes. Here's my bank statement.
 
@@ -225,4 +255,4 @@ All checks should pass (path safety, tool outputs, jurisdiction count, US state 
 
 ## Disclaimer
 
-All skills and outputs are for informational and computational purposes only. Not tax, legal, or financial advice. Not a replacement for professional judgment. Every skill is in one of [two tiers](../docs/QUALITY-TIERS.md) — **accountant-verified** (a licensed practitioner signed off) or **research-verified** (drafted from authoritative sources, awaiting sign-off). Most skills are research-verified. Always have a qualified professional review before filing or acting upon.
+All skills and outputs are for informational and computational purposes only. Not tax, legal, or financial advice. Not a replacement for professional judgment. Every skill is in one of [two tiers](../docs/QUALITY-TIERS.md) — **accountant-reviewed** (a licensed practitioner reviewed and signed off) or a **source-cited draft** (drafted from authoritative sources, awaiting review). Most skills are source-cited drafts. Always have a qualified professional review before filing or acting upon.

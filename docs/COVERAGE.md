@@ -14,16 +14,16 @@ _Last updated: 2026-06-07 · source: production database (skills served via the 
 
 > When a headline needs round numbers, use **"1,000+ skills"** and **"192 jurisdictions"** (or **"130+ countries plus every US state"**). Do not invent other figures.
 
-## Verification split
+## Quality-state split
 
-OpenAccountants has two verification tiers (see [QUALITY-TIERS.md](QUALITY-TIERS.md)). The distinction matters and should never be collapsed into a blanket "accountant-verified":
+OpenAccountants has two quality tiers (see [QUALITY-TIERS.md](QUALITY-TIERS.md)). The distinction matters and should never be collapsed into a blanket "accountant-reviewed":
 
 | Tier | What it means | Count | Where it lives |
 |---|---|---|---|
-| **Accountant-verified** (Tier 1) | A licensed practitioner has signed off; name + credential on every output | **85** | **MCP server only** (not in this repo) |
-| **Research-verified** (Tier 2) | Every rate/threshold/form drafted from authoritative sources, awaiting credentialed sign-off | **1,013** | **This repo** |
+| **Accountant-reviewed** (Tier 1) | A licensed practitioner has reviewed and signed off; name + credential on every output | **85** | **MCP server only** (not in this repo) |
+| **Source-cited draft** (Tier 2) | Every rate/threshold/form drafted from authoritative sources, awaiting a full accountant review | **1,013** | **This repo** |
 
-**Correct headline phrasing:** _"Research-verified in this repo. Accountant-verified via the MCP connector."_
+**Correct headline phrasing:** _"Source-cited drafts in this repo. Accountant-reviewed via the MCP connector."_
 
 ## Jurisdiction breakdown
 
