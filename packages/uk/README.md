@@ -39,6 +39,7 @@ _Scope: the “Verified rates & thresholds” blocks inside these skill files ar
 25. `crypto-tax-workflow-base.md`
 26. `uk-guided-intake.md`
 27. `uk-return-assembly.md`
+28. `rates.2025.json` — machine-readable 2025/26 rates & thresholds extracted from the guides above, with per-figure authority citations
 
 ## Also known as
 
