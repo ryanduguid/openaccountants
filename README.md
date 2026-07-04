@@ -1,15 +1,27 @@
 # OpenAccountants
 
-**The open-source tax layer for AI agents.** Tax Guides your AI can cite, reviewed by named accounting professionals.
+**The only open tax knowledge layer for AI agents where named, licensed accountants stand behind the answers.**
+
+Agents can already do the math. None of them can stand behind an answer. Every other tax dataset ships with "not tax advice" and stops there. Here, a **named professional with a verified credential** reviews the complete Guide for their jurisdiction, publicly, on the record.
+
+### The scoreboard
+
+> ## 10 of 193 jurisdictions
+> have a named, licensed Partner on record. **The other 183 are open.** [Claim yours →](https://github.com/openaccountants/openaccountants/issues/46)
+
+Every reviewed Guide carries its reviewer badge — name, credential, review date, public proof:
+
+> ✅ **Accountant-reviewed** · **Christopher Aryee, CPA (US)** · credential verified · 2026-07-04 · [33 corrections, full public diff](https://github.com/openaccountants/openaccountants/pull/45/files)
 
 [![License: AGPL-3.0](https://img.shields.io/badge/license-AGPL--3.0-047857)](LICENSE)
 [![PyPI](https://img.shields.io/pypi/v/openaccountants-mcp?label=openaccountants-mcp&color=047857)](https://pypi.org/project/openaccountants-mcp/)
 [![smithery badge](https://smithery.ai/badge/info-ood9/openaccountants)](https://smithery.ai/servers/info-ood9/openaccountants)
 [![GitHub stars](https://img.shields.io/github/stars/openaccountants/openaccountants?style=social)](https://github.com/openaccountants/openaccountants/stargazers)
 
-1,000+ Guides across 190+ jurisdictions. Works with **Claude, ChatGPT, Cursor, Windsurf, and any MCP-compatible agent**. Every Guide is either a **source-cited draft** (written from primary legislation, every figure cited) or **accountant-reviewed** (a licensed Partner checked the complete Guide, and their name is on it).
+1,000+ Guides across 190+ jurisdictions, working with **Claude, ChatGPT, Cursor, Windsurf, and any MCP-compatible agent**. Every Guide is in exactly one of two states, and the repo greps honestly:
 
-> 🔍 **Real professional review, in public.** In July 2026, Christopher Aryee, CPA reviewed our four core US federal form Guides against the One Big Beautiful Bill Act and returned **33 sourced corrections** (rates, thresholds, statutory citations). The full red-line is public: [see the diff →](https://github.com/openaccountants/openaccountants/pull/45/files) That loop (a named professional publicly correcting the tax data your AI relies on) is the whole point of this project.
+- **Source-cited draft** — written from primary legislation, every figure cited, not yet professionally reviewed
+- **Accountant-reviewed** — a named, licensed Partner checked the complete Guide; their badge is on it ([full roster](PARTNERS.md))
 
 ⚠️ **General reference only, not advice.** Have a qualified professional review outputs before filing, payment, or action. <details><summary>Read the full disclaimer</summary>
 
@@ -64,7 +76,7 @@ Works in Claude Desktop (`claude_desktop_config.json`), Cursor (`.cursor/mcp.jso
 
 ## Partners: the named professionals behind the Guides
 
-These licensed practitioners have reviewed Guides for their jurisdictions. Their name appears on every answer the AI gives from a Guide they reviewed, and their reviews are public.
+The canonical roster lives in [PARTNERS.md](PARTNERS.md) (and adding yourself to it is step two of Partner onboarding). These licensed practitioners have reviewed Guides for their jurisdictions. Their name appears on every answer the AI gives from a Guide they reviewed, and their reviews are public.
 
 | Jurisdiction | Partner | Guides | Proof |
 |---|---|---|---|
