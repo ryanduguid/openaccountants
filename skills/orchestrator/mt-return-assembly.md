@@ -2,6 +2,9 @@
 name: mt-return-assembly
 description: Final orchestrator skill that assembles the complete Malta filing package for Malta-resident self-employed individuals and sole proprietors. Consumes outputs from all Malta content skills (malta-vat-return for Malta VAT, malta-income-tax for TA24, malta-ssc for Class 2 contributions, mt-estimated-tax for provisional tax) to produce a single unified reviewer package containing every worksheet, every form, every brief section, all cross-skill reconciliations, and the final action list with payment instructions, filing instructions, and next-year planning. This is the capstone skill that runs last and produces the final deliverable. MUST be loaded alongside all Malta content skills listed above. Malta full-year residents only. Self-employed individuals and sole proprietors only.
 version: 0.1
+jurisdiction: MT
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # Malta Return Assembly Skill v0.1

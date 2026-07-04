@@ -2,6 +2,9 @@
 name: bulgaria-vat-return
 description: Use this skill whenever asked to prepare, review, or classify transactions for a Bulgarian VAT return (Spravka-deklaratsiya po DDS) for any client. Trigger on phrases like "prepare VAT return", "do the DDS", "fill in DDS return", "create the return", "Bulgarian VAT", or any request involving Bulgaria VAT filing. Also trigger when classifying transactions for VAT purposes from bank statements, invoices, or other source data. This skill covers Bulgaria only and standard DDS registration. MUST be loaded alongside BOTH vat-workflow-base v0.1 or later (for workflow architecture) AND eu-vat-directive v0.1 or later (for EU directive content). ALWAYS read this skill before touching any Bulgarian VAT work.
 version: 2.0
+jurisdiction: BG
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # Bulgaria VAT Return Skill (Spravka-deklaratsiya po DDS) v2.0

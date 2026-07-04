@@ -3,6 +3,8 @@ name: nl-return-assembly
 description: Final orchestrator skill that assembles the complete Netherlands filing package for Netherlands-resident self-employed individuals and sole proprietors (ZZP/eenmanszaak). Consumes outputs from all Netherlands content skills (nl-btw-return for BTW-aangifte, nl-income-tax for aangifte inkomstenbelasting Box 1/2/3, nl-zvw for zorgverzekeringswet bijdrage) to produce a single unified reviewer package containing every worksheet, every form, every brief section, all cross-skill reconciliations, and the final action list with payment instructions, filing instructions, and next-year planning. This is the capstone skill that runs last and produces the final deliverable. MUST be loaded alongside all Netherlands content skills listed above. Netherlands full-year residents only. Self-employed individuals and sole proprietors only.
 version: 1.0
 jurisdiction: NL
+tier: 2
+last_updated: 2026-06-12
 category: orchestrator
 ---
 

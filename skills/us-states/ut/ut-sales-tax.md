@@ -2,6 +2,8 @@
 name: ut-sales-tax
 description: Use this skill whenever asked about Utah sales tax, Utah use tax, USTC sales tax filing, Utah grocery tax reduced rate, Utah SaaS tax, or Utah sales tax compliance. Trigger on phrases like "Utah sales tax", "UT sales tax", "Utah Code §59-12", "USTC", "Utah grocery tax", "Utah SaaS", "Utah SST", or any request involving Utah state and local sales and use tax compliance. ALWAYS load us-sales-tax first for federal context.
 jurisdiction: US-UT
+tier: 2
+last_updated: 2026-06-12
 validation_status: ai-drafted-q3
 ---
 

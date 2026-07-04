@@ -10,6 +10,8 @@ description: >
   before advising on any Italian tax optimization strategy.
 version: 1.0
 jurisdiction: IT
+tier: 2
+last_updated: 2026-06-12
 category: tax-optimization
 depends_on: []
 ---

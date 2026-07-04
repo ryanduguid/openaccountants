@@ -4,6 +4,8 @@ description: Use this skill whenever asked about Alaska sales and use tax. Trigg
 version: 1.0
 jurisdiction: US-AK
 tax_year: 2025
+tier: 2
+last_updated: 2026-06-12
 category: state
 depends_on:
   - us-sales-tax

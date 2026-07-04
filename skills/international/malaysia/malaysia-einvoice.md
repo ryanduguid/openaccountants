@@ -4,6 +4,8 @@ description: >
   Use this skill whenever asked about Malaysia e-invoicing, MyInvois system, LHDN/LHDNM/IRBM e-invoice, Inland Revenue Board Malaysia, UBL 2.1 for Malaysia, e-invoice mandatory timeline, RM threshold phases, MyInvois portal, MyInvois API, e-invoice validation, digital signature for Malaysian e-invoice, self-billed invoice, consolidated invoice, B2B/B2C/B2G e-invoice Malaysia, or any question about generating, submitting, validating, or troubleshooting Malaysian e-invoices. Also trigger when advising on compliance phases, relaxation periods, exemptions, or technical integration with IRBM. ALWAYS read this skill before touching any Malaysia e-invoice work.
 version: 1.0
 jurisdiction: MY
+tier: 2
+last_updated: 2026-06-12
 category: invoicing
 depends_on:
   - einvoice-workflow-base

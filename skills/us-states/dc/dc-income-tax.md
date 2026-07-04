@@ -6,6 +6,8 @@ description: >
   Schedule S additions and subtractions, estimated tax (D-40ES), and the Earned Income Tax Credit.
   Trigger: taxpayer is domiciled in DC or maintains an abode for 183+ days during the tax year.
 jurisdiction: US-DC
+tier: 2
+last_updated: 2026-06-12
 version: "0.1"
 validation_status: ai-drafted-q3
 ---

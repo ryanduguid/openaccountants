@@ -4,6 +4,8 @@ description: ALWAYS USE THIS SKILL when a user asks for help with their Moroccan
 version: 0.1
 jurisdiction: MA
 tax_year: 2026
+tier: 2
+last_updated: 2026-06-12
 category: orchestrator
 ---
 

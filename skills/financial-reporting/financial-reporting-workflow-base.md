@@ -13,6 +13,8 @@ description: >
   foundation every financial-reporting content skill loads on top of.
 version: 0.1
 jurisdiction: GLOBAL
+tier: 2
+last_updated: 2026-06-12
 category: financial-reporting
 standard_family: workflow-base
 depends_on: []

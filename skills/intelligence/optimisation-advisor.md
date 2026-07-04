@@ -15,6 +15,8 @@ triggers:
   - tax planning
   - deductions I missed
   - am I missing anything
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # Optimisation Advisor v0.1

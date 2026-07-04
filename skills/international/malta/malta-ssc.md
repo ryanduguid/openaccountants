@@ -5,6 +5,8 @@ description: >
 version: 2.0
 jurisdiction: MT
 tax_year: 2026
+tier: 1
+last_updated: 2026-06-12
 category: international
 depends_on:
   - social-contributions-workflow-base

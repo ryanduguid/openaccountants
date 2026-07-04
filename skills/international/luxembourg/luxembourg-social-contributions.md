@@ -6,6 +6,8 @@ version: 0.1
 jurisdiction: LU
 tax_year: 2026
 tax_year_notes: "2026 (with 2025 comparatives); rates effective 1 Jan 2026 (pension reform law of 18 Dec 2025); wage/ceiling values carry the index 968.04 set in force at 1 Jan 2026 (indexation took effect 1 May 2025)"
+tier: 2
+last_updated: 2026-07-04
 category: international
 depends_on:
   - social-contributions-workflow-base

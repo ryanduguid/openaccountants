@@ -4,6 +4,8 @@ description: >
   Use this skill whenever asked about Netherlands transfer pricing rules, documentation requirements, or verrekenprijzen compliance. Trigger on phrases like "transfer pricing Netherlands", "Dutch TP documentation", "verrekenprijzen", "master file Netherlands", "local file Netherlands", "CbCR Netherlands", "APA Netherlands", "Article 8b DCITA", "DTA transfer pricing", or any question about intercompany pricing for Dutch entities.
 version: 1.0
 jurisdiction: NL
+tier: 2
+last_updated: 2026-06-12
 category: transfer-pricing
 depends_on:
   - transfer-pricing-workflow-base

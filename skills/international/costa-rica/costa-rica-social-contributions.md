@@ -6,6 +6,8 @@ version: 0.1
 jurisdiction: CR
 tax_year: 2025
 tax_year_notes: "2025 (with confirmed 2026 CCSS IVM changes)"
+tier: 2
+last_updated: 2026-07-04
 category: international
 depends_on:
   - social-contributions-workflow-base

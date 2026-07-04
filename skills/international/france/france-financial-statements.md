@@ -4,6 +4,8 @@ description: >
   Use this skill when preparing, reviewing, or advising on annual financial statements (comptes annuels) for a French company. Trigger on phrases like "comptes annuels", "dépôt des comptes", "greffe", "Plan Comptable Général", "PCG", "bilan", "compte de résultat", "annexe", "commissaire aux comptes", "audit France", "petite entreprise", "micro-entreprise comptable", "liasse fiscale", or any question about preparing and filing statutory accounts under French commercial law. Covers PCG framework, size thresholds, required statements, formats, notes, filing deadlines, and audit requirements.
 version: 1.0
 jurisdiction: FR
+tier: 2
+last_updated: 2026-06-12
 category: financial-statements
 depends_on:
   - financial-statements-workflow-base

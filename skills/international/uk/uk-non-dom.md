@@ -6,6 +6,8 @@ version: 1.0
 jurisdiction: GB
 tax_year: 2025
 tax_year_notes: "2025-26"
+tier: 2
+last_updated: 2026-07-04
 category: international
 depends_on:
   - uk-income-tax-sa100

@@ -2,6 +2,8 @@
 name: wv-sales-tax
 description: Use this skill whenever asked about West Virginia sales tax, WV use tax, West Virginia Tax Division filing, West Virginia SaaS tax, West Virginia service taxation, or West Virginia sales tax compliance. Trigger on phrases like "West Virginia sales tax", "WV sales tax", "W.Va. Code §11-15", "WV Tax Division", "West Virginia SaaS", "West Virginia SST", or any request involving West Virginia state and local sales and use tax compliance. ALWAYS load us-sales-tax first for federal context.
 jurisdiction: US-WV
+tier: 2
+last_updated: 2026-06-12
 validation_status: ai-drafted-q3
 ---
 

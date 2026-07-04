@@ -2,6 +2,9 @@
 name: czech-republic-vat-return
 description: Use this skill whenever asked to prepare, review, or classify transactions for a Czech Republic VAT return (Priznani k DPH) or Control Statement (Kontrolni hlaseni) for any client. Trigger on phrases like "prepare VAT return", "do the DPH", "fill in DPH", "Czech VAT", "kontrolni hlaseni", or any request involving Czech VAT filing. This skill covers Czech Republic only and standard DPH registration. MUST be loaded alongside BOTH vat-workflow-base v0.1 or later AND eu-vat-directive v0.1 or later. ALWAYS read this skill before touching any Czech VAT work.
 version: 2.0
+jurisdiction: CZ
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # Czech Republic VAT Return Skill (Priznani k DPH) v2.0

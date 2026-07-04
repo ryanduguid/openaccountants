@@ -5,6 +5,8 @@ version: 1.0
 jurisdiction: TH
 tax_year: 2024
 tax_year_notes: "2567 (2024)"
+tier: 2
+last_updated: 2026-07-04
 category: international
 depends_on:
   - foundation

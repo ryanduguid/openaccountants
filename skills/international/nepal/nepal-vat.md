@@ -2,6 +2,9 @@
 name: nepal-vat
 description: Use this skill whenever asked to prepare, review, or classify transactions for a Nepal VAT return for any client. Trigger on phrases like "Nepal VAT", "IRD filing", "PAN registration", or any request involving Nepal VAT. MUST be loaded alongside vat-workflow-base v0.1 or later. ALWAYS read this skill before touching any Nepal VAT work.
 version: 2.0
+jurisdiction: NP
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # Nepal VAT Return Skill v2.0

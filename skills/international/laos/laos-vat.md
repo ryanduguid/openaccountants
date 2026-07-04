@@ -2,6 +2,9 @@
 name: laos-vat
 description: Use this skill whenever asked to prepare, review, or classify transactions for a Laos VAT return for any client. Trigger on phrases like "Laos VAT", "Lao PDR tax", "Tax Department filing", or any request involving Laos VAT. MUST be loaded alongside vat-workflow-base v0.1 or later. ALWAYS read this skill before touching any Laos VAT work.
 version: 2.0
+jurisdiction: LA
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # Laos VAT Return Skill v2.0

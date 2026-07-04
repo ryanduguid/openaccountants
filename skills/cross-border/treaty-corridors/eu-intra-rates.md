@@ -2,6 +2,8 @@
 name: eu-intra-rates
 version: 1.0
 category: cross-border
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # EU Intra-Community Treaty Rates

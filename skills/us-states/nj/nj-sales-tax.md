@@ -3,6 +3,8 @@ name: nj-sales-tax
 description: Use this skill whenever asked about New Jersey sales and use tax. Trigger on phrases like "New Jersey sales tax", "NJ sales tax", "NJ Division of Taxation", "UEZ", "NJ clothing exemption". ALWAYS load us-sales-tax first.
 version: 2.0
 jurisdiction: US-NJ
+tier: 2
+last_updated: 2026-06-12
 validation_status: ai-drafted-q3
 ---
 

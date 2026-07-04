@@ -2,6 +2,9 @@
 name: kosovo-vat
 description: Use this skill whenever asked to prepare, review, or classify transactions for a Kosovo VAT (TVSH) return for any client. Trigger on phrases like "Kosovo VAT", "Kosovo TVSH", "TAK filing", or any request involving Kosovo VAT. This skill covers standard TVSH payers filing monthly returns. Kosovo has 18% standard and 8% reduced rate. MUST be loaded alongside vat-workflow-base v0.1 or later. ALWAYS read this skill before touching any Kosovo VAT work.
 version: 2.0
+jurisdiction: XK
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # Kosovo VAT (TVSH) Return Skill v2.0

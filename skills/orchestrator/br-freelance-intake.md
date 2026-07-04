@@ -3,6 +3,8 @@ name: br-freelance-intake
 description: ALWAYS USE THIS SKILL when a user asks for help preparing their Brazil tax returns AND mentions freelancing, self-employment, autônomo, MEI, microempreendedor individual, or Simples Nacional. Trigger on phrases like "help me do my taxes", "prepare my IRPF", "I'm a freelancer in Brazil", "I'm MEI", "I'm autônomo", "do my taxes as a contractor", "prepare my declaração de ajuste anual", or any similar phrasing where the user is a Brazil-resident self-employed individual needing tax return preparation. This is the REQUIRED entry point for the Brazil self-employed tax workflow -- every other skill in the stack (br-irpf, br-simples, br-inss, br-return-assembly) depends on this skill running first to produce a structured intake package. Uses upload-first workflow -- the user dumps all their documents and the skill infers as much as possible before asking questions. Uses ask_user_input_v0 for structured questions instead of one-at-a-time prose. Built for speed. Brazil full-year residents only; self-employed individuals, MEI, and Simples Nacional sole proprietors.
 version: 1.0
 jurisdiction: BR
+tier: 2
+last_updated: 2026-06-12
 category: orchestrator
 ---
 

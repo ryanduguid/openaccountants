@@ -5,6 +5,8 @@ description: >
   self-employed / sole proprietors. Trigger on phrases like "North Carolina income tax",
   "NC income tax", "Form D-400", "NCDOR income tax", "NC self-employment tax".
 jurisdiction: US-NC
+tier: 2
+last_updated: 2026-06-12
 version: "0.1"
 validation_status: ai-drafted-q3
 ---

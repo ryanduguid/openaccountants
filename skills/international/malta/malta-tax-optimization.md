@@ -10,6 +10,8 @@ description: >
   on any Malta tax optimization strategy.
 version: 1.0
 jurisdiction: MT
+tier: 1
+last_updated: 2026-06-12
 category: tax-optimization
 depends_on: []
 verified_by: Michael Cutajar, CPA (Malta)

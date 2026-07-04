@@ -2,6 +2,9 @@
 name: algeria-vat
 description: Use this skill whenever asked to prepare, review, or classify transactions for an Algeria TVA (Taxe sur la Valeur Ajoutee) return (G50 declaration) for any client. Trigger on phrases like "prepare TVA return", "Algeria VAT", "G50 declaration", "declaration TVA", "DGI return", or any request involving Algeria VAT filing. Also trigger when classifying transactions for TVA purposes from bank statements, invoices, or other source data. This skill covers Algeria only and standard TVA-registered businesses under the regime reel. IFU (forfaitaire) taxpayers, hydrocarbon-sector entities, military procurement, and special conventions are in the refusal catalogue. ALWAYS read this skill before touching any Algeria TVA work.
 version: 2.0
+jurisdiction: DZ
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # Algeria TVA Return Skill (G50 Declaration) v2.0

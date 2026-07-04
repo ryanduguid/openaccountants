@@ -3,6 +3,8 @@ name: rental-property-income-template
 description: Reusable cross-country template for rental property income taxation. Covers gross rental computation, allowable deductions, capital allowances and depreciation, mortgage interest treatment, furnished vs unfurnished, CGT on disposal, non-resident landlord rules, and rent-a-room relief. Adapt by inserting country-specific rates, depreciation schedules, and interest restriction rules at [COUNTRY-SPECIFIC] placeholders.
 version: 1.0
 category: template
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # Rental Property Income Tax Template v1.0

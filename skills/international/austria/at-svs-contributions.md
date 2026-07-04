@@ -2,6 +2,9 @@
 name: at-svs-contributions
 description: Use this skill whenever asked about Austrian SVS (Sozialversicherungsanstalt der Selbständigen) social insurance contributions for self-employed individuals. Trigger on phrases like "SVS contributions", "Austrian social insurance", "GSVG", "self-employed Austria contributions", "Pensionsversicherung self-employed", "SVS Vorschreibung", or any question about social insurance obligations for a self-employed client in Austria. Covers pension (18.5%), health (6.8%), accident (flat monthly), and Selbständigenvorsorge. ALWAYS read this skill before touching any Austria social contributions work.
 version: 2.0
+jurisdiction: AT
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # Austria SVS Social Insurance Contributions -- Self-Employed Skill v2.0

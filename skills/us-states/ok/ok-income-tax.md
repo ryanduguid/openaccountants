@@ -2,6 +2,8 @@
 name: ok-income-tax
 description: Triggers when the taxpayer is an Oklahoma resident sole proprietor or single-member LLC needing to file Oklahoma Form 511. Covers Oklahoma's six-bracket graduated income tax (0.25%–4.75% for tax year 2025), standard and itemized deductions, personal exemptions, and interaction with federal AGI. Must be loaded alongside us-tax-workflow-base and us-federal-return-assembly.
 jurisdiction: US-OK
+tier: 2
+last_updated: 2026-06-12
 version: "0.1"
 validation_status: ai-drafted-q3
 ---

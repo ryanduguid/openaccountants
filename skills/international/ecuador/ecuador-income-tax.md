@@ -6,6 +6,8 @@ version: 0.1
 jurisdiction: EC
 tax_year: 2025
 tax_year_notes: "2025 (filed in 2026); 2026 table officially confirmed by SRI Resolution NAC-DGERCGC25-00000043"
+tier: 2
+last_updated: 2026-07-04
 category: international
 depends_on:
   - income-tax-workflow-base

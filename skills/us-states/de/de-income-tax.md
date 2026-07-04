@@ -6,6 +6,8 @@ description: >
   federal AGI, and personal credits. Trigger: taxpayer is a Delaware resident with gross income
   exceeding filing thresholds.
 jurisdiction: US-DE
+tier: 2
+last_updated: 2026-06-12
 version: "0.1"
 validation_status: ai-drafted-q3
 ---

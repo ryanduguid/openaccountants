@@ -7,6 +7,8 @@ description: >
   imposes this tax on gross business revenues. Trigger: any person or entity
   conducting business in Delaware.
 jurisdiction: US-DE
+tier: 2
+last_updated: 2026-06-12
 version: "0.1"
 validation_status: ai-drafted-q3
 ---

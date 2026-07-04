@@ -2,6 +2,9 @@
 name: us-sales-tax
 description: Use this skill whenever asked about United States sales tax, use tax, sales tax nexus, multi-state tax compliance, sales tax returns, exemption certificates, taxability of goods or services, economic nexus, or any request involving US state-level consumption taxes. Trigger on phrases like "sales tax", "use tax", "nexus", "Wayfair", "sales tax return", "exemption certificate", "resale certificate", "taxability", "sales tax rate", "marketplace facilitator", "Streamlined Sales Tax", "SST", or any request involving US state sales and use tax filing, classification, or compliance. This skill contains the complete US sales and use tax framework. ALWAYS read this skill before touching any US sales tax work.
 version: 2.0
+jurisdiction: US
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # United States Sales and Use Tax Framework Skill v2.0

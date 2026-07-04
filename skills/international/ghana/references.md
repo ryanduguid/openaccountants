@@ -1,6 +1,8 @@
 ---
 name: ghana-references
 jurisdiction: GH
+tier: 2
+last_updated: 2026-06-12
 version: 1.0
 description: Primary source references and related open-source projects for this jurisdiction.
 ---

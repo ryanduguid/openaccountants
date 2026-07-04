@@ -14,6 +14,8 @@ description: >
   processing any Japanese payroll work.
 version: 1.0
 jurisdiction: JP
+tier: 2
+last_updated: 2026-06-12
 category: payroll
 depends_on:
   - payroll-workflow-base

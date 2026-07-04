@@ -2,6 +2,9 @@
 name: mauritius-vat
 description: Use this skill whenever asked to prepare, review, or classify transactions for a Mauritius VAT return. Standard rate 15%. Tourist refund scheme. Freeport treatment. GBL interactions. ALWAYS read before handling Mauritius VAT work.
 version: 2.0
+jurisdiction: MU
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # Mauritius VAT Return Skill v2.0

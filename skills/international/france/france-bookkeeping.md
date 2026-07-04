@@ -11,6 +11,8 @@ description: >
   before touching any bookkeeping work for France.
 version: 1.0
 jurisdiction: FR
+tier: 2
+last_updated: 2026-06-12
 category: bookkeeping
 depends_on:
   - bookkeeping-workflow-base

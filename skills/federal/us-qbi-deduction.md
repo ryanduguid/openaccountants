@@ -2,6 +2,9 @@
 name: us-qbi-deduction
 description: Tier 2 content skill for computing the §199A Qualified Business Income deduction for US sole proprietors and single-member LLCs disregarded for federal tax purposes. Covers tax year 2025 under the One Big Beautiful Bill Act (P.L. 119-21, July 4 2025) which made §199A permanent at 20% for 2025 (rising to 23% for 2026+). Handles the QBI calculation from Schedule C net profit, the deductible SE tax and SE health insurance adjustments, the taxable income thresholds ($197,300 single / $394,600 MFJ), phase-in ranges for SSTB and W-2/UBIA limitations, the specified service trade or business (SSTB) classification, W-2 wage and UBIA of qualified property limitations, the interaction with retirement contributions, and Forms 8995 (simplified) and 8995-A (detailed). Consumes net profit from us-schedule-c-and-se-computation and SE health insurance / retirement from companion skills. MUST be loaded alongside us-tax-workflow-base v0.1 or later. Federal only. No state tax.
 version: 0.2
+jurisdiction: US
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # US QBI Deduction Skill v0.2

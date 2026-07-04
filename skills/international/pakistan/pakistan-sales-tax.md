@@ -2,6 +2,9 @@
 name: pakistan-sales-tax
 description: Use this skill whenever asked to prepare, review, or classify transactions for a Pakistan Sales Tax return (federal or provincial) for any client. Trigger on phrases like "Pakistan sales tax", "FBR return", "IRIS portal", "Sindh sales tax", "Punjab sales tax", or any request involving Pakistan sales tax. MUST be loaded alongside vat-workflow-base v0.1 or later. ALWAYS read this skill before touching any Pakistan sales tax work.
 version: 2.0
+jurisdiction: PK
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # Pakistan Sales Tax Return Skill v2.0

@@ -4,6 +4,8 @@ description: Use this skill whenever asked to calculate, review, or advise on In
 version: 1.0
 jurisdiction: ID
 tax_year: 2025
+tier: 2
+last_updated: 2026-06-12
 category: international
 depends_on:
   - foundation

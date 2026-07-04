@@ -2,6 +2,9 @@
 name: mongolia-vat
 description: Use this skill whenever asked to prepare, review, or classify transactions for a Mongolia VAT return for any client. Trigger on phrases like "Mongolia VAT", "MTA filing", "NUAT", or any request involving Mongolia VAT. MUST be loaded alongside vat-workflow-base v0.1 or later. ALWAYS read this skill before touching any Mongolia VAT work.
 version: 2.0
+jurisdiction: MN
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # Mongolia VAT Return Skill v2.0

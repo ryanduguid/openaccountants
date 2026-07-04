@@ -2,6 +2,9 @@
 name: br-inss
 description: Use this skill whenever asked about Brazilian INSS social contributions for self-employed individuals (contribuinte individual). Trigger on phrases like "INSS autônomo", "contribuinte individual", "GPS pagamento", "INSS 20%", "INSS simplificado 11%", "teto INSS", "previdência autônomo", or any question about Brazilian social security obligations for self-employed persons. Covers the 20% normal plan, 11% simplified plan, 5% MEI plan, contribution ceiling (teto), GPS payment mechanics, and edge cases. ALWAYS read this skill before touching any Brazilian INSS work.
 version: 2.0
+jurisdiction: BR
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # Brazil INSS Contributions (Contribuinte Individual) -- Self-Employed Skill v2.0

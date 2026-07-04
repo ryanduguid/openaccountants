@@ -5,6 +5,8 @@ description: >
 version: 0.1
 jurisdiction: GT
 tax_year: 2026
+tier: 2
+last_updated: 2026-06-12
 category: international
 depends_on:
   - social-contributions-workflow-base

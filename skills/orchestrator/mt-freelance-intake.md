@@ -2,6 +2,9 @@
 name: mt-freelance-intake
 description: ALWAYS USE THIS SKILL when a user asks for help preparing their Malta tax returns AND mentions freelancing, self-employment, contracting, sole proprietorship, or self-occupied status. Trigger on phrases like "help me do my taxes", "prepare my TA24", "I'm self-employed in Malta", "I'm a freelancer in Malta", "do my taxes as a contractor", "prepare my VAT return and income tax", or any similar phrasing where the user is a Malta-resident self-employed individual needing tax return preparation. This is the REQUIRED entry point for the Malta self-employed tax workflow -- every other skill in the stack (malta-vat-return, malta-income-tax, malta-ssc, mt-estimated-tax, mt-return-assembly) depends on this skill running first to produce a structured intake package. Uses upload-first workflow -- the user dumps all their documents and the skill infers as much as possible before asking questions. Uses ask_user_input_v0 for structured questions instead of one-at-a-time prose. Built for speed. Malta full-year residents only; self-employed individuals and sole proprietors.
 version: 0.1
+jurisdiction: MT
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # Malta Self-Employed Intake Skill v0.1

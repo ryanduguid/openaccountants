@@ -2,6 +2,9 @@
 name: jordan-gst
 description: Use this skill whenever asked to prepare, review, or classify transactions for a Jordan General Sales Tax (GST) return for any client. Trigger on phrases like "Jordan GST", "Jordan VAT", "ISTD return", or any request involving Jordanian indirect tax. Jordan imposes GST at 16% under Law No. 6 of 1994, administered by ISTD. Multiple special rates exist (4%, 5%, 8%, 10%). ALWAYS read this skill before handling any Jordan GST work.
 version: 2.0
+jurisdiction: JO
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # Jordan GST Return Skill v2.0

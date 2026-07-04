@@ -6,6 +6,8 @@ version: 0.1
 jurisdiction: RS
 tax_year: 2025
 tax_year_notes: "2025 (income year); annual return filed by 15 May 2026. Non-taxable salary cap RSD 28,423/month applies through 2025; RSD 34,221/month effective 1 Jan 2026."
+tier: 2
+last_updated: 2026-07-04
 category: international
 depends_on:
   - income-tax-workflow-base

@@ -3,6 +3,8 @@ name: br-return-assembly
 description: Final orchestrator skill that assembles the complete Brazil filing package for Brazil-resident self-employed individuals (MEI, Simples Nacional, autônomo/pessoa física). Consumes outputs from all Brazil content skills (br-irpf for Declaração de Ajuste Anual, br-simples for DAS/DASN reconciliation, br-inss for INSS contributions, br-iss for ISS municipal) to produce a single unified reviewer package containing every worksheet, every form, every brief section, all cross-skill reconciliations, and the final action list with payment instructions, filing instructions, and next-year planning. This is the capstone skill that runs last and produces the final deliverable. MUST be loaded alongside all Brazil content skills listed above. Brazil full-year residents only. Self-employed individuals only.
 version: 1.0
 jurisdiction: BR
+tier: 2
+last_updated: 2026-06-12
 category: orchestrator
 ---
 

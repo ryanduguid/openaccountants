@@ -9,8 +9,13 @@ Checks (ERROR = exit 1, WARN = printed summary only):
   2. `name` and `description` are present — ERROR if missing, except for the
      frozen LEGACY_MISSING_DESCRIPTION baseline below (grandfathered; the
      list must only ever shrink).
-  3. WARN on missing jurisdiction / tier / last_updated (too much legacy
-     content to hard-fail today) — printed as summary counts.
+  3. `tier` and `last_updated` are required — ERROR if missing (the one-time
+     sweep was scripts/backfill-metadata.py). `tier` must be 1 or 2;
+     `last_updated` must be YYYY-MM-DD — ERROR otherwise.
+  3a. `jurisdiction` is required — ERROR if missing, except inside the
+     JURISDICTION_OPTIONAL_DIRS below (dirs whose deliberate convention is
+     "no jurisdiction key": jurisdiction-agnostic templates/engines and the
+     EU-wide shared base). There it stays a WARN summary count.
   3b. `tax_year`, when present, must be a bare integer 2015-2035 — ERROR
      otherwise (no grandfathering; scripts/normalize-tax-year.py did the
      one-time sweep, and calendar/range/qualifier text belongs in
@@ -47,6 +52,18 @@ LEGACY_MISSING_DESCRIPTION = {
     "skills/cross-border/treaty-corridors/us-major-partners.md",
 }
 
+# Dirs whose deliberate convention is "no jurisdiction key" — the content is
+# jurisdiction-agnostic (templates, intelligence engines, treaty corridor
+# reference tables) or spans the whole EU (the shared eu-vat-base). Missing
+# `jurisdiction` here is a WARN, not an ERROR. Everywhere else it is required
+# (scripts/backfill-metadata.py did the one-time sweep).
+JURISDICTION_OPTIONAL_DIRS = {
+    "skills/cross-border/treaty-corridors",
+    "skills/intelligence",
+    "skills/templates",
+    "skills/international/eu",
+}
+
 
 def load_build_index():
     spec = importlib.util.spec_from_file_location("build_index", BUILD_INDEX)
@@ -62,8 +79,11 @@ TAX_YEAR_RE = re.compile(r"^tax_year:[ \t]*(.*?)[ \t]*$", re.MULTILINE)
 TAX_YEAR_MIN, TAX_YEAR_MAX = 2015, 2035
 
 
+LAST_UPDATED_FMT = re.compile(r"\d{4}-\d{2}-\d{2}")
+
+
 def check_guides(bi, errors, warnings):
-    warn_counts = {"jurisdiction": 0, "tier": 0, "last_updated": 0}
+    warn_counts = {"jurisdiction (jurisdiction-agnostic dirs)": 0}
     guides = skipped = 0
     for rel in bi.guide_files():
         with open(os.path.join(REPO_ROOT, rel), encoding="utf-8", errors="replace") as fh:
@@ -91,9 +111,23 @@ def check_guides(bi, errors, warnings):
                     f"{TAX_YEAR_MIN}-{TAX_YEAR_MAX} (got {value!r}) — put "
                     "ranges/calendars/qualifiers in `tax_year_notes`"
                 )
-        for key in warn_counts:
-            if not fields[key]:
-                warn_counts[key] += 1
+        tier = fields["tier"]
+        if not tier:
+            errors.append(f"{rel}: missing required frontmatter key `tier`")
+        elif tier not in ("1", "2"):
+            errors.append(f"{rel}: `tier` must be 1 or 2 (got {tier!r})")
+        last_updated = fields["last_updated"]
+        if not last_updated:
+            errors.append(f"{rel}: missing required frontmatter key `last_updated`")
+        elif not LAST_UPDATED_FMT.fullmatch(last_updated):
+            errors.append(
+                f"{rel}: `last_updated` must be YYYY-MM-DD (got {last_updated!r})"
+            )
+        if not fields["jurisdiction"]:
+            if os.path.dirname(rel) in JURISDICTION_OPTIONAL_DIRS:
+                warn_counts["jurisdiction (jurisdiction-agnostic dirs)"] += 1
+            else:
+                errors.append(f"{rel}: missing required frontmatter key `jurisdiction`")
     for key, count in sorted(warn_counts.items()):
         if count:
             warnings.append(f"{count} guides missing `{key}`")

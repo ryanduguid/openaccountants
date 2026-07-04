@@ -8,6 +8,9 @@ description: >
 version: 0.1
 category: patterns
 depends_on: []
+jurisdiction: GLOBAL
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # Global Travel Expense Pattern Library v0.1

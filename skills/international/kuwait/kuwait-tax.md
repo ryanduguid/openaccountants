@@ -2,6 +2,9 @@
 name: kuwait-tax
 description: Use this skill whenever asked about Kuwait taxation, corporate income tax, ZAKAT, or VAT status. Kuwait does NOT have VAT. CIT at 15% applies to foreign entities only. Kuwaiti entities pay ZAKAT. DMTT at 15% for qualifying MNEs from 1 Jan 2025. ALWAYS read before handling Kuwait tax work.
 version: 2.0
+jurisdiction: KW
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # Kuwait Tax Compliance Skill v2.0

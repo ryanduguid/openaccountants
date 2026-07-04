@@ -2,6 +2,9 @@
 name: zambia-vat
 description: Use this skill whenever asked to prepare, review, or classify transactions for a Zambia VAT return. Standard rate 16%. Unique 100% withholding VAT mechanism. ALWAYS read before handling Zambia VAT work.
 version: 2.0
+jurisdiction: ZM
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # Zambia VAT Return Skill v2.0

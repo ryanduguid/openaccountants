@@ -5,6 +5,8 @@ description: >
   "Kentucky income tax", "KY income tax", "Form 740", "KRS 141", "Kentucky flat tax".
   Kentucky has a flat 3.5% rate for TY2026 (was 4% for TY2025). ALWAYS load us-tax-workflow-base first.
 jurisdiction: US-KY
+tier: 2
+last_updated: 2026-06-12
 version: "0.1"
 validation_status: ai-drafted-q3
 ---

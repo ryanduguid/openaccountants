@@ -4,6 +4,8 @@ description: >
   Use this skill whenever asked about reducing tax in the Dominican Republic, tax planning, or legal strategies to minimise tax for a small business or self-employed person. Trigger on phrases like "reduce tax Dominican Republic", "RST", "régimen simplificado de tributación", "territorial taxation DR", "DR dividends 10%", "RST ingresos compras", "save tax Dominican Republic", "tax planning Dominican Republic". This skill covers the RST (income- and purchases-based simplified regimes with a 40% deemed-expense deduction), the territorial system (foreign income taxed only after 3 years of residency), the CIT + 10% dividend extraction, and the anti-avoidance red lines. ALWAYS read this skill before advising on any Dominican Republic tax optimisation.
 version: 0.1
 jurisdiction: DO
+tier: 2
+last_updated: 2026-06-12
 category: tax-optimization
 depends_on: []
 verified_by: pending

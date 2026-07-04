@@ -6,6 +6,8 @@ version: 0.1
 jurisdiction: ME
 tax_year: 2025
 tax_year_notes: "2025 (rates effective from the \"Europe Now 2.0\" reform of October 2024; PwC last reviewed 27 March 2026 confirms these continue into 2026)"
+tier: 2
+last_updated: 2026-07-04
 category: international
 depends_on:
   - social-contributions-workflow-base

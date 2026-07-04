@@ -2,6 +2,9 @@
 name: cameroon-vat
 description: Use this skill whenever asked to prepare, review, or classify transactions for a Cameroon VAT (TVA) return. Trigger on phrases like "TVA Cameroun", "DGI return", "declaration TVA". Cameroon applies TVA at 17.5% plus CAC municipal surcharge (10% of TVA = effective 19.25%). ALWAYS read this skill before touching any Cameroon VAT work.
 version: 2.0
+jurisdiction: CM
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # Cameroon VAT (TVA) Return Skill v2.0

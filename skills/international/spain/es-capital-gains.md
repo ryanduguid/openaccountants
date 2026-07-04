@@ -8,6 +8,8 @@ description: >
 version: 1.0
 jurisdiction: ES
 tax_year: 2025
+tier: 2
+last_updated: 2026-06-12
 category: international
 ---
 

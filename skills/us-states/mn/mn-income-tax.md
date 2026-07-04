@@ -6,6 +6,8 @@ description: >
   "Minnesota income tax", "MN income tax", "Form M1", "Minnesota DOR",
   "Minn. Stat. § 290.06".
 jurisdiction: US-MN
+tier: 2
+last_updated: 2026-06-12
 version: "0.1"
 validation_status: ai-drafted-q3
 ---

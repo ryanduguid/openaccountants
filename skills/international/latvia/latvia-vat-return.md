@@ -2,6 +2,9 @@
 name: latvia-vat-return
 description: Use this skill whenever asked to prepare, review, or classify transactions for a Latvian VAT return (PVN deklaracija / PVN 1 form) for any client. Trigger on phrases like "prepare VAT return", "Latvian VAT", "PVN return", "PVN1", "pievienotas vertibas nodoklis", or any request involving Latvia VAT filing. This skill covers standard PVN-registered businesses only. MUST be loaded alongside BOTH vat-workflow-base and eu-vat-directive companion skills. ALWAYS read this skill before touching any Latvia VAT work.
 version: 2.0
+jurisdiction: LV
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # Latvia PVN Return Skill (PVN 1) v2.0

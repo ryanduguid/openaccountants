@@ -4,6 +4,8 @@ description: >
   Use this skill whenever asked about reducing tax in Kosovo, tax planning, or legal strategies to minimise tax for a self-employed person or small business in Kosovo. Trigger on phrases like "reduce tax Kosovo", "small business 3% Kosovo", "turnover tax Kosovo", "9% services tax", "sole proprietor vs company Kosovo", "0% dividend Kosovo", "save tax Kosovo", "tax planning Kosovo". This skill covers the small-business simplified turnover tax (3% trade / 9% services, under €30k), the 10% CIT option, the 0% dividend extraction, and the disguised-employment red line. ALWAYS read this skill before advising on any Kosovo tax optimisation.
 version: 0.1
 jurisdiction: XK
+tier: 2
+last_updated: 2026-06-12
 category: tax-optimization
 depends_on: []
 verified_by: pending

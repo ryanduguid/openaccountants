@@ -5,6 +5,8 @@ description: >
   self-employed / sole proprietors. Trigger on phrases like "North Dakota income tax",
   "ND income tax", "Form ND-1", "ND Tax Commissioner", "ND self-employment tax".
 jurisdiction: US-ND
+tier: 2
+last_updated: 2026-06-12
 version: "0.1"
 validation_status: ai-drafted-q3
 ---

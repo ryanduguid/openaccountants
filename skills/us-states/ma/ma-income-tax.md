@@ -6,6 +6,8 @@ description: >
   "millionaire's tax", "MA surtax". Massachusetts has a flat 5% rate plus a 4% surtax on
   income over ~$1M (inflation-adjusted). ALWAYS load us-tax-workflow-base first.
 jurisdiction: US-MA
+tier: 2
+last_updated: 2026-06-12
 version: "0.1"
 validation_status: ai-drafted-q3
 ---

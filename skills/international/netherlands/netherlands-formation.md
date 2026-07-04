@@ -4,6 +4,8 @@ description: >
   Use this skill whenever asked about forming, incorporating, or registering a company in the Netherlands. Trigger on phrases like "set up a company in the Netherlands", "Dutch BV", "BV formation", "KvK registration", "Kamer van Koophandel", "Dutch company formation", "register a business Netherlands", "besloten vennootschap", "eenmanszaak", "VOF", "NV formation", "DGA salary", or any question about starting a business entity in the Netherlands. Covers entity types (BV, NV, eenmanszaak, VOF, CV), registration process, capital requirements, costs, post-formation compliance, and bank account opening. ALWAYS read this skill before advising on Dutch company formation.
 version: 1.0
 jurisdiction: NL
+tier: 2
+last_updated: 2026-06-12
 category: formation
 depends_on:
   - company-formation-workflow-base

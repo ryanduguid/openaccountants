@@ -8,6 +8,9 @@ description: >
 version: 0.1
 category: patterns
 depends_on: []
+jurisdiction: GLOBAL
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # Global Payment Processor Pattern Library v0.1

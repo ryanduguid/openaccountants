@@ -6,6 +6,8 @@ description: >
   Louisiana reformed to a flat 3% rate effective 2025 (Act 11 of 2024 3rd Extraordinary Session).
   ALWAYS load us-tax-workflow-base first.
 jurisdiction: US-LA
+tier: 2
+last_updated: 2026-06-12
 version: "0.1"
 validation_status: ai-drafted-q3
 ---

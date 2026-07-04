@@ -2,6 +2,9 @@
 name: montenegro-vat
 description: Use this skill whenever asked to prepare, review, or classify transactions for a Montenegro VAT (PDV) return for any client. Trigger on phrases like "Montenegro VAT", "Montenegrin PDV", "Montenegro tax return", or any request involving Montenegrin VAT. Montenegro has 21% standard, 15% intermediate, and 7% reduced rates. MUST be loaded alongside vat-workflow-base v0.1 or later. ALWAYS read this skill before touching any Montenegrin VAT work.
 version: 2.0
+jurisdiction: ME
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # Montenegro VAT (PDV) Return Skill v2.0

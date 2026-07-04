@@ -11,6 +11,8 @@ description: >
   accounts under Spanish law. ALWAYS read this skill before touching any bookkeeping work for Spain.
 version: 1.0
 jurisdiction: ES
+tier: 2
+last_updated: 2026-06-12
 category: bookkeeping
 depends_on:
   - bookkeeping-workflow-base

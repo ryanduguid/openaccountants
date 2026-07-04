@@ -6,6 +6,8 @@ version: 0.1
 jurisdiction: BG
 tax_year: 2025
 tax_year_notes: "2025 (calendar year; with confirmed 2026 changes flagged, incl. euro adoption from 1 Jan 2026)"
+tier: 2
+last_updated: 2026-07-04
 category: international
 depends_on:
   - income-tax-workflow-base

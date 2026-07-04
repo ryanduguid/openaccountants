@@ -2,6 +2,9 @@
 name: cl-social-contributions
 description: Use this skill whenever asked about Chilean self-employed social contributions (cotizaciones previsionales para independientes). Trigger on phrases like "cotizaciones independientes", "AFP independiente", "Fonasa boletas", "SIS seguro invalidez", "retención previsional", "boleta de honorarios cotización", or any question about Chilean social security obligations for independent workers. Covers AFP pension (mandatory since Ley 21.133 phase-in), Fonasa/Isapre health 7%, SIS, withholding from boletas, and Operación Renta annual settlement. ALWAYS read this skill before touching any Chilean social contribution work.
 version: 2.0
+jurisdiction: CL
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # Chile Social Contributions (Cotizaciones Previsionales) -- Self-Employed Skill v2.0

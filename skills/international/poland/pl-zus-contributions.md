@@ -2,6 +2,9 @@
 name: pl-zus-contributions
 description: Use this skill whenever asked about Polish ZUS (Zakład Ubezpieczeń Społecznych) social contributions for self-employed individuals. Trigger on phrases like "ZUS contributions", "składki ZUS", "Polish social insurance", "Mały ZUS Plus", "self-employed Poland contributions", "działalność gospodarcza ZUS", or any question about social/health insurance obligations for a self-employed client in Poland. Covers retirement 19.52%, disability 8%, sickness 2.45%, health 9%, and Mały ZUS Plus. ALWAYS read this skill before touching any Poland social contributions work.
 version: 2.0
+jurisdiction: PL
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # Poland ZUS Contributions -- Self-Employed Skill v2.0

@@ -4,6 +4,8 @@ description: Universal payroll computation workflow base that defines the gross-
 version: 1.0
 category: foundation
 jurisdiction: GLOBAL
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # Payroll Workflow Base Skill v1.0

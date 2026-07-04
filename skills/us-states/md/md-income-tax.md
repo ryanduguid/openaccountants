@@ -6,6 +6,8 @@ description: >
   county tax", "piggyback tax". Maryland has 10 graduated state brackets (2%–6.50%) PLUS
   mandatory county/city income taxes (2.25%–3.20%). ALWAYS load us-tax-workflow-base first.
 jurisdiction: US-MD
+tier: 2
+last_updated: 2026-06-12
 version: "0.1"
 validation_status: ai-drafted-q3
 ---

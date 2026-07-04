@@ -11,6 +11,8 @@ description: >
   "professional tax", "gratuity", "bonus India", or "minimum wages India".
 version: 1.0
 jurisdiction: IN
+tier: 2
+last_updated: 2026-06-12
 category: payroll
 depends_on:
   - payroll-workflow-base

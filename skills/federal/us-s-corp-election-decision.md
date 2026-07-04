@@ -2,6 +2,9 @@
 name: us-s-corp-election-decision
 description: Tier 2 content skill for evaluating whether a US sole proprietor or single-member LLC should elect S-corporation status under IRC §1362 via Form 2553. Covers the SE tax savings analysis (salary subject to FICA, distributions not), the reasonable salary requirement under IRC §3121 and IRS audit scrutiny, the break-even analysis where SE tax savings exceed incremental costs, the QBI deduction interaction under §199A (W-2 wages increase QBI limitation room), state-specific disadvantages (California $800 franchise tax + 1.5% S-corp tax, New York City UBT elimination, etc.), the Form 2553 election deadline (March 15 or within 75 days of formation), late election relief under Rev. Proc. 2013-30, payroll processing and Form 1120-S filing costs, and the decision framework for when NOT to elect. Tax year 2025. MUST be loaded alongside us-tax-workflow-base v0.1+. Federal only; state issues flagged but not computed.
 version: 0.2
+jurisdiction: US
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # US S-Corp Election Decision Skill v0.2

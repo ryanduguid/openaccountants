@@ -4,6 +4,8 @@ description: >
   Tier 1 workflow base for corporate income tax skills serving small, medium, and large companies across jurisdictions. Contains the workflow runbook, conservative defaults principle, structured intake form, reviewer-oriented output spec, self-checks, global refusal catalogue, citation discipline, and content skill slot contract. Workflow architecture only — no tax content, no rates, no thresholds, no form line references, no year-specific figures. MUST be loaded alongside at least one content skill that provides actual corporate income tax rules and current-year figures for a specific jurisdiction. Assumes a human reviewer credentialed under the local equivalent of Circular 230 (CPA, CA, CTA, EA, Chartered Tax Advisor, Steuerberater, expert-comptable, commercialista, etc.) reviews and signs off on every output before it reaches the taxpayer or the tax authority.
 version: 0.1
 jurisdiction: GLOBAL
+tier: 2
+last_updated: 2026-06-12
 category: foundation
 verified_by: pending
 ---

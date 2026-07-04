@@ -2,6 +2,9 @@
 name: malaysia-sst
 description: Use this skill whenever asked to prepare, review, or classify transactions for a Malaysia Sales and Service Tax (SST) return (SST-02) for any client. Trigger on phrases like "Malaysia SST", "Sales Tax Malaysia", "Service Tax Malaysia", "SST-02", "MySST", "RMCD", or any request involving Malaysia SST. This is NOT a VAT — there is NO input tax credit. MUST be loaded alongside vat-workflow-base v0.1 or later. ALWAYS read this skill before touching any Malaysia SST work.
 version: 2.0
+jurisdiction: MY
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # Malaysia SST Return Skill (SST-02) v2.0

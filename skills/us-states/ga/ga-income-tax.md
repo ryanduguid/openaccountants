@@ -6,6 +6,8 @@ description: >
   standard deduction, dependent exemption, and estimated tax. Trigger: taxpayer is a Georgia
   resident or has Georgia-source income.
 jurisdiction: US-GA
+tier: 2
+last_updated: 2026-06-12
 version: "0.1"
 validation_status: ai-drafted-q3
 ---

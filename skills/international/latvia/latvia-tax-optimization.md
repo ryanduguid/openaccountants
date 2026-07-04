@@ -4,6 +4,8 @@ description: >
   Use this skill whenever asked about reducing tax in Latvia, tax planning, or legal strategies to minimise tax for a self-employed person or small company in Latvia. Trigger on phrases like "reduce tax Latvia", "Latvia 0% retained profit", "distributed profits tax", "reinvested profit Latvia", "micro-enterprise tax", "mikrouzņēmuma nodoklis", "FIK vs SIA", "Latvia dividends", "save tax Latvia", "tax planning Latvia". This skill covers the distributed-profits CIT (0% on reinvested profit, 20% only on distribution), the micro-enterprise tax regime, the self-employed vs company choice, the 2026 alternative dividend regime, and the substance/anti-avoidance red lines. ALWAYS read this skill before advising on any Latvian tax optimisation.
 version: 0.1
 jurisdiction: LV
+tier: 2
+last_updated: 2026-06-12
 category: tax-optimization
 depends_on: []
 verified_by: pending

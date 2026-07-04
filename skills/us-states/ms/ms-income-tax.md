@@ -6,6 +6,8 @@ description: >
   "Mississippi income tax", "MS income tax", "Form 80-105", "Mississippi DOR",
   "Miss. Code Ann. § 27-7".
 jurisdiction: US-MS
+tier: 2
+last_updated: 2026-06-12
 version: "0.1"
 validation_status: ai-drafted-q3
 ---

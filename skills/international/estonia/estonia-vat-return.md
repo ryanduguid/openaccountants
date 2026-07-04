@@ -2,6 +2,9 @@
 name: estonia-vat-return
 description: Use this skill whenever asked to prepare, review, or classify transactions for an Estonian VAT return (KMD form) for any client. Trigger on phrases like "prepare VAT return", "do the KMD", "fill in KMD", "Estonian VAT", "kaibemaks", or any request involving Estonia VAT filing. This skill covers Estonia only and standard KM registration. MUST be loaded alongside BOTH vat-workflow-base v0.1 or later AND eu-vat-directive v0.1 or later. ALWAYS read this skill before touching any Estonian VAT work.
 version: 2.0
+jurisdiction: EE
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # Estonia VAT Return Skill (KMD) v2.0

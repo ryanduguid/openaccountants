@@ -2,6 +2,9 @@
 name: georgia-vat
 description: Use this skill whenever asked to prepare, review, or classify transactions for a Georgia VAT return for any client. Trigger on phrases like "Georgia VAT", "RS filing", "Revenue Service Georgia", or any request involving Georgian VAT. This skill covers standard VAT payers filing monthly returns. Small Business Status, Micro Business, Fixed Tax, and Virtual Zone IT regimes are in the refusal catalogue. MUST be loaded alongside vat-workflow-base v0.1 or later. ALWAYS read this skill before touching any Georgian VAT work.
 version: 2.0
+jurisdiction: GE
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # Georgia VAT Return Skill v2.0

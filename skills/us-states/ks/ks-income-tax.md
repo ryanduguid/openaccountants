@@ -6,6 +6,8 @@ description: >
   Kansas has a two-bracket progressive system (5.20%–5.58%) effective 2024+.
   ALWAYS load us-tax-workflow-base first.
 jurisdiction: US-KS
+tier: 2
+last_updated: 2026-06-12
 version: "0.1"
 validation_status: ai-drafted-q3
 ---

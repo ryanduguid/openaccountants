@@ -6,6 +6,8 @@ description: >
   Indiana has a flat 2.95% state rate plus mandatory county income taxes (0.5%–3.38%).
   ALWAYS load us-tax-workflow-base first.
 jurisdiction: US-IN
+tier: 2
+last_updated: 2026-06-12
 version: "0.1"
 validation_status: ai-drafted-q3
 ---

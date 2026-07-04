@@ -2,6 +2,9 @@
 name: el-salvador-iva
 description: Use this skill whenever asked to prepare, review, or classify transactions for an El Salvador IVA return (F-07) for any client. Trigger on phrases like "prepare IVA return", "El Salvador VAT", "F-07", "DGII return", or any request involving El Salvador value added tax filing. This skill covers standard IVA filers only. Free-zone (Zona Franca) and maquila entities are in the refusal catalogue. ALWAYS read this skill before touching any El Salvador IVA work.
 version: 2.0
+jurisdiction: SV
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # El Salvador IVA Return Skill (F-07) v2.0

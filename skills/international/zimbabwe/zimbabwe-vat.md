@@ -2,6 +2,9 @@
 name: zimbabwe-vat
 description: Use this skill whenever asked to prepare, review, or classify transactions for a Zimbabwe VAT return. Standard rate 15%. Mandatory fiscalised electronic devices. Multi-currency regime (ZiG/USD). ALWAYS read before handling Zimbabwe VAT work.
 version: 2.0
+jurisdiction: ZW
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # Zimbabwe VAT Return Skill v2.0

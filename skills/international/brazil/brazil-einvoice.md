@@ -4,6 +4,8 @@ description: >
   Use this skill whenever asked about Brazil e-invoicing, NF-e (Nota Fiscal Eletrônica), NFS-e (Nota Fiscal de Serviço Eletrônica), NFC-e (Nota Fiscal de Consumidor Eletrônica), CT-e (Conhecimento de Transporte Eletrônico), SEFAZ (Secretaria da Fazenda), DANFE, chave de acesso, XML schema layout 4.00, certificado digital A1/A3, ICMS, IPI, PIS, COFINS, or any question about generating, transmitting, validating, or troubleshooting Brazilian electronic fiscal documents. Also trigger when advising on SEFAZ integration, contingency modes (EPEC, SVC), event handling (cancelamento, carta de correção), or NFS-e national system (SNNFSe). ALWAYS read this skill before touching any Brazil e-invoice work.
 version: 1.0
 jurisdiction: BR
+tier: 2
+last_updated: 2026-06-12
 category: invoicing
 depends_on:
   - einvoice-workflow-base

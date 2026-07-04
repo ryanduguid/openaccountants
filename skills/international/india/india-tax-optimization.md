@@ -6,6 +6,8 @@ version: 1.0
 jurisdiction: IN
 tax_year: 2026
 tax_year_notes: "FY 2026-27 (AY 2027-28)"
+tier: 2
+last_updated: 2026-07-04
 category: tax-optimization
 depends_on:
   - bookkeeping-workflow-base

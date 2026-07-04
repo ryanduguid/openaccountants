@@ -6,6 +6,8 @@ description: >
   exemptions, modifications to federal AGI, and estimated tax (Form N-1). Trigger: taxpayer
   is a Hawaii resident or has Hawaii-source income.
 jurisdiction: US-HI
+tier: 2
+last_updated: 2026-06-12
 version: "0.1"
 validation_status: ai-drafted-q3
 ---

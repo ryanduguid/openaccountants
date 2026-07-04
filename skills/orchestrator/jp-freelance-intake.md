@@ -3,6 +3,8 @@ name: jp-freelance-intake
 description: ALWAYS USE THIS SKILL when a user asks for help preparing their Japanese tax returns AND mentions freelancing, self-employment, 個人事業主, フリーランス, sole proprietorship, or kojin jigyounushi. Trigger on phrases like "確定申告を手伝って", "help me file my kakutei shinkoku", "I'm a freelancer in Japan", "prepare my blue return", "I'm self-employed in Japan", or any similar phrasing where the user is a Japan-resident self-employed individual needing tax return preparation. This is the REQUIRED entry point for the Japanese self-employed tax workflow -- every other skill in the stack (japan-consumption-tax, japan-income-tax, japan-social-insurance, jp-return-assembly) depends on this skill running first to produce a structured intake package. Uses upload-first workflow -- the user dumps all their documents and the skill infers as much as possible before asking questions. Uses ask_user_input_v0 for structured questions instead of one-at-a-time prose. Built for speed. Japan full-year residents only; self-employed individuals and sole proprietors (個人事業主).
 version: 1.0
 jurisdiction: JP
+tier: 2
+last_updated: 2026-06-12
 category: orchestrator
 ---
 

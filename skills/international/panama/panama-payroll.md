@@ -6,6 +6,8 @@ version: 0.1
 jurisdiction: PA
 tax_year: 2025
 tax_year_notes: "2025 (calendar/fiscal year; 2026 minimum-wage + Law 462 CSS phase-in noted where officially confirmed)"
+tier: 2
+last_updated: 2026-07-04
 category: payroll
 depends_on:
   - payroll-workflow-base

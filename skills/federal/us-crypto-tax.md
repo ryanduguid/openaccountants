@@ -4,6 +4,8 @@ description: ALWAYS USE THIS SKILL when a user asks about cryptocurrency taxatio
 version: 1.0
 jurisdiction: US
 tax_year: 2025
+tier: 2
+last_updated: 2026-06-12
 category: federal
 ---
 

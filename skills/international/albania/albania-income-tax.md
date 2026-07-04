@@ -6,6 +6,8 @@ version: 0.1
 jurisdiction: AL
 tax_year: 2025
 tax_year_notes: "2025 (calendar year; 1 Jan – 31 Dec 2025). Employment progressive regime per Law 29/2023 effective from 1 Jan 2024 and continuing in 2025."
+tier: 2
+last_updated: 2026-07-04
 category: international
 depends_on:
   - income-tax-workflow-base

@@ -3,6 +3,8 @@ name: ga-sales-tax
 description: Use this skill whenever asked about Georgia sales and use tax. Trigger on phrases like "Georgia sales tax", "GA sales tax", "O.C.G.A. 48-8", "Georgia DOR". ALWAYS load us-sales-tax first.
 version: 2.0
 jurisdiction: US-GA
+tier: 2
+last_updated: 2026-06-12
 validation_status: ai-drafted-q3
 ---
 

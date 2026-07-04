@@ -3,6 +3,8 @@ name: in-sales-tax
 description: Use this skill whenever asked about Indiana sales and use tax. Trigger on phrases like "Indiana sales tax", "IN sales tax", "IC 6-2.5", "Indiana DOR". Indiana has one of the SIMPLEST structures -- 7% flat with no local sales taxes. ALWAYS load us-sales-tax first.
 version: 2.0
 jurisdiction: US-IN
+tier: 2
+last_updated: 2026-06-12
 validation_status: ai-drafted-q3
 ---
 

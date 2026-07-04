@@ -6,6 +6,8 @@ description: >
   Iowa standard deduction, and estimated tax. Iowa completed its historic flat-tax reform in 2025.
   Trigger: taxpayer is an Iowa resident or has Iowa-source income.
 jurisdiction: US-IA
+tier: 2
+last_updated: 2026-06-12
 version: "0.1"
 validation_status: ai-drafted-q3
 ---

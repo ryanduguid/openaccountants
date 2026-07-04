@@ -2,6 +2,9 @@
 name: moldova-vat
 description: Use this skill whenever asked to prepare, review, or classify transactions for a Moldova VAT (TVA) return for any client. Trigger on phrases like "Moldova VAT", "TVA Moldova", "SFS filing", or any request involving Moldovan VAT. This skill covers standard TVA payers filing monthly returns. MUST be loaded alongside vat-workflow-base v0.1 or later. ALWAYS read this skill before touching any Moldovan VAT work.
 version: 2.0
+jurisdiction: MD
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # Moldova VAT (TVA) Return Skill v2.0

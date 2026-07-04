@@ -5,6 +5,8 @@ description: >
 version: 1.0
 jurisdiction: JP
 tax_year: 2025
+tier: 2
+last_updated: 2026-06-12
 category: crypto
 depends_on:
   - jp-income-tax

@@ -14,6 +14,8 @@ triggers:
   - tax cliff
   - am I close to
   - threshold check
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # Threshold Alerts v0.1

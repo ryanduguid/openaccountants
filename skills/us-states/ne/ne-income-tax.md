@@ -5,6 +5,8 @@ description: >
   self-employed / sole proprietors. Trigger on phrases like "Nebraska income tax",
   "NE income tax", "Form 1040N", "Nebraska Department of Revenue", "NE self-employment tax".
 jurisdiction: US-NE
+tier: 2
+last_updated: 2026-06-12
 version: "0.1"
 validation_status: ai-drafted-q3
 ---

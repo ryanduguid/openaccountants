@@ -9,6 +9,8 @@ depends_on:
   - bookkeeping-workflow-base
 tax_year: 2025
 tax_year_notes: "2025-26"
+tier: 2
+last_updated: 2026-07-04
 applicable_years:
   - 2024-25
   - 2025-26

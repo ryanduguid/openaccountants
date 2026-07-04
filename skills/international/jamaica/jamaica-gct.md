@@ -2,6 +2,9 @@
 name: jamaica-gct
 description: Use this skill whenever asked to prepare, review, or classify transactions for a Jamaica GCT (General Consumption Tax) return (Form GCT-R) for any client. Trigger on phrases like "prepare GCT return", "Jamaica VAT", "GCT return", "TAJ filing", or any request involving Jamaica consumption tax filing. This skill covers standard GCT-registered businesses only. Free-zone entities and approved farmer/manufacturer schemes are in the refusal catalogue. ALWAYS read this skill before touching any Jamaica GCT work.
 version: 2.0
+jurisdiction: JM
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # Jamaica GCT Return Skill (Form GCT-R) v2.0

@@ -2,6 +2,9 @@
 name: fiji-vat
 description: Use this skill whenever asked to prepare, review, or classify transactions for a Fiji VAT return for any client. Trigger on phrases like "Fiji VAT", "FRCS filing", "Fiji Revenue", or any request involving Fiji VAT. MUST be loaded alongside vat-workflow-base v0.1 or later. ALWAYS read this skill before touching any Fiji VAT work.
 version: 2.0
+jurisdiction: FJ
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # Fiji VAT Return Skill v2.0

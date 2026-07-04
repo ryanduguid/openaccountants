@@ -3,6 +3,9 @@ name: br-income-tax
 description: >
   Use this skill whenever asked about Brazilian individual income tax for self-employed individuals (autônomos / profissionais liberais). Trigger on phrases like "how much tax do I pay in Brazil", "DIRPF", "IRPF", "Carnê-Leão", "livro caixa", "imposto de renda", "CPF", "income tax return Brazil", "deductible expenses Brazil", "self-employed tax Brazil", "desconto simplificado", "INSS autônomo", "pró-labore", "DAS MEI", or any question about filing or computing income tax for a self-employed or freelance client in Brazil. This skill covers the DIRPF annual return, Carnê-Leão monthly estimated payments, progressive IRPF brackets, livro caixa, allowable deductions, simplified deduction (20% discount), mandatory filing thresholds, INSS contributions, and penalties. ALWAYS read this skill before touching any Brazilian income tax work.
 version: 2.0
+jurisdiction: BR
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # Brazilian Income Tax — Autônomo / Profissional Liberal (IRPF) v2.0

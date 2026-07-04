@@ -4,6 +4,8 @@ description: >
   Use this skill whenever asked about Brazil transfer pricing rules, documentation requirements, or preços de transferência compliance. Trigger on phrases like "transfer pricing Brazil", "Brazilian TP documentation", "preços de transferência", "master file Brazil", "local file Brazil", "CbCR Brazil", "APA Brazil", "Law 14.596/2023", "IN RFB 2161", "arm's length Brazil", "ECF", or any question about intercompany pricing for Brazilian entities.
 version: 1.0
 jurisdiction: BR
+tier: 2
+last_updated: 2026-06-12
 category: transfer-pricing
 depends_on:
   - transfer-pricing-workflow-base

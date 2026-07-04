@@ -2,6 +2,9 @@
 name: croatia-vat-return
 description: Use this skill whenever asked to prepare, review, or classify transactions for a Croatian VAT return (Obrazac PDV) for any client. Trigger on phrases like "prepare VAT return", "do the PDV", "fill in PDV", "create the return", "Croatian VAT", or any request involving Croatia VAT filing. Also trigger when classifying transactions for VAT purposes from bank statements, invoices, or other source data. This skill covers Croatia only and standard PDV registration. MUST be loaded alongside BOTH vat-workflow-base v0.1 or later AND eu-vat-directive v0.1 or later. ALWAYS read this skill before touching any Croatian VAT work.
 version: 2.0
+jurisdiction: HR
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # Croatia VAT Return Skill (Obrazac PDV) v2.0

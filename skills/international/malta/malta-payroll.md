@@ -5,6 +5,8 @@ description: >
 version: 1.0
 jurisdiction: MT
 tax_year: 2026
+tier: 2
+last_updated: 2026-06-12
 category: payroll
 depends_on:
   - payroll-workflow-base

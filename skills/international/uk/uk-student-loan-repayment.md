@@ -6,6 +6,8 @@ version: 2.1
 jurisdiction: GB
 tax_year: 2024
 tax_year_notes: "2024-25, 2025-26, 2026-27"
+tier: 2
+last_updated: 2026-07-04
 category: international
 depends_on:
   - income-tax-workflow-base

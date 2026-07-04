@@ -3,6 +3,8 @@ name: ky-sales-tax
 description: Use this skill whenever asked about Kentucky sales and use tax. Trigger on phrases like "Kentucky sales tax", "KY sales tax", "KRS §139". ALWAYS load us-sales-tax first.
 version: 2.0
 jurisdiction: US-KY
+tier: 2
+last_updated: 2026-06-12
 validation_status: ai-drafted-q3
 ---
 

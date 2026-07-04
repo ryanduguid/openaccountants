@@ -11,6 +11,8 @@ description: >
   "employer cost Brazil", "CLT", "rescisão", "aviso prévio", or "salário mínimo Brasil".
 version: 1.0
 jurisdiction: BR
+tier: 2
+last_updated: 2026-06-12
 category: payroll
 depends_on:
   - payroll-workflow-base

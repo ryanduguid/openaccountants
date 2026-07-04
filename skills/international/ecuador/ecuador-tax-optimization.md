@@ -4,6 +4,8 @@ description: >
   Use this skill whenever asked about reducing tax in Ecuador, tax planning, or legal strategies to minimise tax for a microenterprise, entrepreneur, or self-employed person in Ecuador. Trigger on phrases like "reduce tax Ecuador", "RIMPE", "negocio popular", "régimen emprendedores", "Ecuador 2% tax", "gastos personales", "self-employed Ecuador", "save tax Ecuador", "tax planning Ecuador". This skill covers the RIMPE regime (Negocio Popular and Emprendedor), the 2025 transition of Emprendedor to the general regime, the personal-expense rebate, and the eligibility/anti-avoidance red lines. ALWAYS read this skill before advising on any Ecuadorian tax optimisation.
 version: 0.1
 jurisdiction: EC
+tier: 2
+last_updated: 2026-06-12
 category: tax-optimization
 depends_on: []
 verified_by: pending
