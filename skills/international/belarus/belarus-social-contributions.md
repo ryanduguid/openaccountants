@@ -4,7 +4,8 @@ description: >
   Use this skill whenever asked about Belarus social insurance contributions (FSZN / ФСЗН), Belgosstrakh occupational-accident insurance, or personal income tax (PIT / подоходный налог) withholding on Belarusian payroll. Trigger on phrases like "how much social contributions do I pay in Belarus", "FSZN rate", "ФСЗН", "Social Protection Fund", "Belarus payroll tax", "28% pension 6% social", "1% employee contribution", "Belgosstrakh accident insurance", "Belarus PIT 13%", "увеличенная ставка подоходного налога", "High Technology Park payroll", "HTP FSZN base", "self-employed FSZN Belarus", "individual entrepreneur contributions", or any question about Belarusian payroll on-costs, contribution ceilings, or PIT thresholds. Also trigger when classifying bank statement transactions that relate to FSZN debits, Belgosstrakh premiums, PIT (подоходный налог) remittances, or salary (зарплата) payments from Belarusbank, Belarusbank, Belinvestbank, Priorbank, BPS-Sberbank, Alfa-Bank or other Belarusian banks. This skill covers FSZN employer/employee rates, the Belgosstrakh accident-insurance premium, self-employed/IP contributions, contribution floors and ceilings, the HTP base benefit, the 13%/25%/30% PIT scale, payment and reporting deadlines (4-fund / ПУ forms), bank statement classification patterns, and edge cases. ALWAYS read this skill before touching any Belarus social-contribution or payroll-PIT work.
 version: 0.1
 jurisdiction: BY
-tax_year: 2025 (with 2026 confirmed changes noted)
+tax_year: 2025
+tax_year_notes: "2025 (with 2026 confirmed changes noted)"
 category: international
 depends_on:
   - social-contributions-workflow-base

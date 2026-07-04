@@ -4,7 +4,8 @@ description: >
   Use this skill whenever asked about Costa Rica payroll processing for employed persons (planilla). Trigger on phrases like "Costa Rica payroll", "planilla CCSS", "cuotas obrero-patronales", "impuesto al salario", "retención salario Costa Rica", "cargas sociales", "CCSS contribution", "IVM", "SEM", "FODESAF", "aguinaldo", "cesantía", "salario mínimo Costa Rica", "TRIBU-CR retenciones", "form 137", "D-103 replacement", "net salary Costa Rica", "gross to net colones", "SICERE", "INS riesgos del trabajo", "base mínima contributiva", or any question about computing employee pay, salary withholding tax, or social-security contributions for Costa Rica-based employees. This skill covers impuesto al salario (monthly income-tax withholding), CCSS cuotas obrero-patronales (employee and employer), the separate INS work-risk policy, family tax credits, statutory aguinaldo, cesantía, minimum wage, and filing obligations via TRIBU-CR and SICERE. ALWAYS read this skill before processing any Costa Rica payroll.
 version: 0.1
 jurisdiction: CR
-tax_year: 2025 (calendar/fiscal year; 2026 changes noted where officially confirmed)
+tax_year: 2025
+tax_year_notes: "2025 (calendar/fiscal year; 2026 changes noted where officially confirmed)"
 category: payroll
 depends_on:
   - payroll-workflow-base

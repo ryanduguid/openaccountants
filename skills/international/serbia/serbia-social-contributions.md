@@ -4,7 +4,8 @@ description: >
   Use this skill whenever asked about Serbian payroll taxes and mandatory social security contributions (doprinosi za obavezno socijalno osiguranje) for employees and employers in the Republic of Serbia. Trigger on phrases like "Serbia payroll tax", "how much social contributions in Serbia", "PIO contribution", "RFZO health contribution", "Serbia salary tax 10%", "non-taxable salary amount", "neoporezivi iznos", "minimum contribution base", "maximum contribution base", "PPP-PD return", "Serbia net to gross", "gross to net Serbia", "annual personal income tax Serbia", "PP GPDG", or any question about Serbian payroll, salary tax, or social insurance obligations. Also trigger when classifying bank statement transactions that relate to Poreska uprava (Tax Administration), PIO Fund, RFZO, or NSZ payments from Serbian banks (Banca Intesa, Komercijalna banka, OTP, Raiffeisen, UniCredit). This skill covers the flat 10% salary tax, the monthly non-taxable amount, employee (19.90%) and employer (15.15%) contribution rates split across PIO / RFZO / NSZ, floor/ceiling contribution bases, the consolidated PPP-PD monthly return, the annual supplementary PIT (PP GPDG), minimum wage, penalties, and bank statement classification patterns. ALWAYS read this skill before touching any Serbian payroll or social contribution work.
 version: 0.1
 jurisdiction: RS
-tax_year: 2025 (with confirmed 2026 figures noted)
+tax_year: 2025
+tax_year_notes: "2025 (with confirmed 2026 figures noted)"
 category: international
 depends_on:
   - social-contributions-workflow-base

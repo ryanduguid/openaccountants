@@ -4,7 +4,8 @@ description: >
   Use this skill whenever asked about Georgia (the country / Republic of Georgia — Sakartvelo, Caucasus) payroll processing for employed persons. Trigger on phrases like "Georgia payroll", "Georgian payroll", "khelfasi", "salary tax Georgia", "PIT withholding Georgia", "20% income tax Georgia", "PAYE Georgia", "funded pension Georgia", "pension contribution Georgia", "Pension Agency", "pensions.ge", "Revenue Service Georgia", "rs.ge payroll", "monthly withholding declaration Georgia", "net salary Georgia", "gross to net Georgia", "employer cost Georgia", "minimum wage Georgia", or any question about computing employee pay, salary withholding tax, or mandatory funded pension contributions for Georgia-based employees. This skill covers the flat 20% personal income tax withheld at source (PAYE), the mandatory funded pension (employer 2% + employee 2% + state co-contribution), participation rules, the monthly withholding declaration on rs.ge, and penalties. CRITICAL: jurisdiction code GE here is the COUNTRY of Georgia (currency GEL, lari) — NOT the US state of Georgia (USD). ALWAYS read this skill before processing any Georgia (country) payroll.
 version: 0.1
 jurisdiction: GE
-tax_year: 2025 (calendar year; rates confirmed current as of PwC review 21 Jan 2026)
+tax_year: 2025
+tax_year_notes: "2025 (calendar year; rates confirmed current as of PwC review 21 Jan 2026)"
 category: payroll
 depends_on:
   - payroll-workflow-base

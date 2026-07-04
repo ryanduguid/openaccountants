@@ -4,7 +4,8 @@ description: >
   Use this skill whenever asked about Dominican Republic personal income tax (Impuesto Sobre la Renta / ISR) for self-employed individuals, independent professionals, and salaried persons. Trigger on phrases like "how much ISR do I pay", "declaración jurada", "IR-1", "IR-3", "retención de ISR", "deducible expenses Dominican Republic", "TSS contributions", "AFP", "SFS", "seguridad social", "regalía pascual", "honorarios", "RNC registration", "ITBIS interaction", "personas físicas", "self-employed tax Dominican Republic", or any question about filing or computing income tax for an individual or sole proprietor in the Dominican Republic. Also trigger when preparing or reviewing an IR-1 return, computing deductible expenses, advising on withholding on professional/technical services, or reconciling social-security (SDSS) contributions. This skill covers the progressive ISR scale, the annual exempt threshold, the IR-1/IR-3/IR-17 form structure, SDSS contributions (AFP, SFS, SRL, INFOTEP), withholding on payments to individuals, penalties, and interaction with ITBIS (VAT). ALWAYS read this skill before touching any Dominican Republic income tax work.
 version: 0.1
 jurisdiction: DO
-tax_year: "2025 (filed by 31 March 2026); social-security ceilings current to Feb 2026"
+tax_year: 2025
+tax_year_notes: "2025 (filed by 31 March 2026); social-security ceilings current to Feb 2026"
 category: international
 depends_on:
   - income-tax-workflow-base

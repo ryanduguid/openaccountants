@@ -4,7 +4,8 @@ description: >
   Use this skill whenever asked about Serbia (Republic of Serbia) personal income tax for self-employed individuals, entrepreneurs, freelancers, and employees. Trigger on phrases like "how much tax do I pay in Serbia", "porez na dohodak", "PP GPDG", "annual income tax", "paušalac", "flat-rate entrepreneur", "freelancer self-taxation", "Model A Model B", "non-taxable salary cap", "PIO contributions", "PPP-PD", "self-employed tax Serbia", "frilenseri", "dinar tax", or any question about filing or computing Serbian personal income tax. Also trigger when preparing or reviewing a PP GPDG annual return, a PPDG-1S/PPDG-1R entrepreneur return, a freelancer quarterly self-taxation return, or payroll withholding (PPP-PD), and when computing social security contributions (PIO, health, unemployment). This skill covers the 10% flat employment/entrepreneur tax, freelancer Models A and B, scheduler income taxes (capital gains, dividends, interest, rental, royalties, other), the annual supplementary progressive tax, social contribution rates and base limits, and penalties. ALWAYS read this skill before touching any Serbian income tax work.
 version: 0.1
 jurisdiction: RS
-tax_year: "2025 (income year); annual return filed by 15 May 2026. Non-taxable salary cap RSD 28,423/month applies through 2025; RSD 34,221/month effective 1 Jan 2026."
+tax_year: 2025
+tax_year_notes: "2025 (income year); annual return filed by 15 May 2026. Non-taxable salary cap RSD 28,423/month applies through 2025; RSD 34,221/month effective 1 Jan 2026."
 category: international
 depends_on:
   - income-tax-workflow-base

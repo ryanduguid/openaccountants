@@ -4,7 +4,8 @@ description: >
   Use this skill whenever asked about Ethiopia payroll processing for employed persons. Trigger on phrases like "Ethiopia payroll", "Ethiopian PAYE", "employment income tax Ethiopia", "Schedule A tax Ethiopia", "pension contribution Ethiopia", "POESSA", "social security Ethiopia", "Form 17 Ethiopia", "net salary Ethiopia", "ETB payroll", "gross to net Ethiopia", "withholding tax Ethiopia", "salary calculation Ethiopia", "Proclamation 1395/2025", "employer pension Ethiopia 11%", or any question about computing employee pay, employment income tax withholding, or pension/social-security contributions for Ethiopia-based employees. This skill covers Schedule A PAYE withholding (post-7-July-2025 brackets), private-organisation pension contributions (employee 7% / employer 11%), filing obligations, and remittance deadlines. ALWAYS read this skill before processing any Ethiopia payroll.
 version: 0.1
 jurisdiction: ET
-tax_year: 2025/26
+tax_year: 2025
+tax_year_notes: "2025/26"
 category: payroll
 depends_on:
   - payroll-workflow-base

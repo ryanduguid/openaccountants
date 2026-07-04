@@ -4,7 +4,8 @@ description: >
   Use this skill whenever asked about Luxembourg personal income tax for self-employed individuals (indépendants) and individuals. Trigger on phrases like "how much tax do I pay in Luxembourg", "déclaration d'impôt", "Form 100", "modèle 100", "tax class", "classe d'impôt", "barème", "revenu imposable", "solidarity surcharge", "employment fund", "fonds pour l'emploi", "CCSS contributions", "cotisations sociales", "self-employed tax Luxembourg", "indépendant", "advance tax payments", "avances trimestrielles", "salaire social minimum", or any question about filing or computing Luxembourg income tax for a self-employed or individual client. Also trigger when preparing or reviewing a Form 100 / Form 163 return, computing deductible business expenses, estimating social contributions, or advising on quarterly advance payments. This skill covers the 23-band progressive PIT scale (0%–42%), the employment-fund (solidarity) surcharge, tax classes 1/1a/2, CCSS social contributions (employee, employer, self-employed), Form 100 structure, advance payments, penalties, and interaction with VAT and the social-security ceiling. ALWAYS read this skill before touching any Luxembourg income tax work.
 version: 0.1
 jurisdiction: LU
-tax_year: 2025 (income year 2025; rates effective 1 Jan 2025; social parameters updated 1 May 2025)
+tax_year: 2025
+tax_year_notes: "2025 (income year 2025; rates effective 1 Jan 2025; social parameters updated 1 May 2025)"
 category: international
 depends_on:
   - income-tax-workflow-base

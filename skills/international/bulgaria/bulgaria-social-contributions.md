@@ -4,7 +4,8 @@ description: >
   Use this skill whenever asked about Bulgaria social security and health insurance contributions for employees, employers, or self-insured persons (self-employed / freelancers / sole traders). Trigger on phrases like "Bulgaria social security", "osigurovki", "how much social contribution in Bulgaria", "Category III employee", "Universal Pension Fund", "2nd pillar Bulgaria", "Declaration 1", "Declaration 6", "Декларация Образец 1", "self-insured person Bulgaria", "freelancer social contributions Bulgaria", "EOOD payroll", "minimum insurable income", "maximum insurable income ceiling", "health insurance NHIF Bulgaria", "10% flat tax Bulgaria", or any question about Bulgarian payroll, social-security withholding, or contribution caps. Also trigger when classifying bank statement transactions that relate to NRA (НАП) contribution payments, NSSI (НОИ) debits, or social/health insurance remittances from Bulgarian banks (UniCredit Bulbank, DSK Bank, Postbank, etc.). Also trigger when computing the 10% flat personal income tax base, since the PIT base is gross remuneration MINUS the employee's mandatory social and health contributions. This skill covers per-fund contribution rates by birth cohort, the 2nd pillar carve-out, floors/ceilings, the 2025 two-sub-period BGN thresholds, the 2026 euro figures, self-insured-person rates, monthly NRA compliance (Declaration 1 / Declaration 6), the annual return, bank-statement classification patterns, and edge cases. ALWAYS read this skill before touching any Bulgarian social-contribution or payroll work.
 version: 0.1
 jurisdiction: BG
-tax_year: 2025 (Jan-Mar and Apr-Dec sub-periods) and 2026 (post-euro adoption)
+tax_year: 2025
+tax_year_notes: "2025 (Jan-Mar and Apr-Dec sub-periods) and 2026 (post-euro adoption)"
 category: international
 depends_on:
   - social-contributions-workflow-base

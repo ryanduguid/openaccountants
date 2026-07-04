@@ -4,7 +4,8 @@ description: >
   Use this skill when advising on LEGAL tax minimization strategies for Indian taxpayers — salaried individuals, self-employed professionals, and business owners. Trigger on phrases like "reduce my tax India", "tax planning", "80C", "80D", "old vs new regime", "HRA", "NPS", "Section 24", "presumptive taxation", "capital gains", "GST input credit", or any question about legally minimizing Indian income tax. Covers regime selection, deduction optimization, capital allowances, loss set-off, timing, GST planning, social security, and red lines. ALWAYS read this skill before giving Indian tax optimization advice.
 version: 1.0
 jurisdiction: IN
-tax_year: FY 2026-27 (AY 2027-28)
+tax_year: 2026
+tax_year_notes: "FY 2026-27 (AY 2027-28)"
 category: tax-optimization
 depends_on:
   - bookkeeping-workflow-base

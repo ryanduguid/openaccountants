@@ -4,7 +4,8 @@ description: >
   Use this skill whenever asked about UK income tax for individuals filing SA100 Self Assessment. Trigger on phrases like "income tax UK", "SA100", "personal allowance", "tax bands", "tax computation", "marriage allowance", "savings allowance", "dividend allowance", "Scottish tax rates", "payments on account", "tax reducers", "tax relief", "April 2026", "2026-27", "Autumn Budget 2025", "income tax bands frozen 2027-28", or any question about computing a UK individual's income tax liability. Covers personal allowance (including taper), income tax bands for rUK and Scotland, marriage allowance, savings and dividend allowances, tax reducers, the final tax computation, payments on account, and the Autumn Budget 2025 changes from April 2026. ALWAYS read this skill before touching any UK income tax return work.
 version: 2.1
 jurisdiction: GB
-tax_year: 2025-26
+tax_year: 2025
+tax_year_notes: "2025-26"
 category: international
 depends_on:
   - income-tax-workflow-base

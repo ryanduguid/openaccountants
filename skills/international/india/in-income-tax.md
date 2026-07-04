@@ -4,7 +4,8 @@ description: >
   Use this skill whenever asked about Indian income tax for self-employed professionals, freelancers, or sole proprietors. Trigger on phrases like "how much tax do I pay in India", "ITR-4", "ITR-3", "Sugam", "Section 44ADA", "Section 44AD", "presumptive taxation", "new tax regime", "old tax regime", "advance tax India", "TDS credit", "PAN", "80C", "80D", "income tax return India", "surcharge", "health and education cess", "UPI income", "Razorpay payout", "Paytm business", or any question about filing or computing income tax for a self-employed individual in India. This skill covers new regime vs old regime rate tables, presumptive taxation (44ADA for professionals, 44AD for business), regular computation (ITR-3), surcharge, cess, standard deduction, Section 80C/80D deductions, advance tax schedule, TDS credits, PAN requirements, and ITR-4 (Sugam) structure. ALWAYS read this skill before touching any Indian income tax work.
 version: 2.0
 jurisdiction: IN
-tax_year: 2025-26
+tax_year: 2025
+tax_year_notes: "2025-26"
 category: international
 depends_on:
   - income-tax-workflow-base

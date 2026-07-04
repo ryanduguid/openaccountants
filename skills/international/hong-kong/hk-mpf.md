@@ -4,7 +4,8 @@ description: >
   Use this skill whenever asked about Hong Kong Mandatory Provident Fund (MPF) contributions. Trigger on phrases like "MPF", "Mandatory Provident Fund", "強積金", "employer contribution Hong Kong", "employee contribution HK", "MPF self-employed", "TVC", "voluntary contributions", "MPF cap", "relevant income MPF", "MPFA", or any question about MPF contribution rates, caps, voluntary contributions, tax deductions, and self-employed obligations. ALWAYS read this skill before advising on MPF matters.
 version: 1.0
 jurisdiction: HK
-tax_year: 2024-25
+tax_year: 2024
+tax_year_notes: "2024-25"
 category: international
 depends_on:
   - hk-salaries-tax

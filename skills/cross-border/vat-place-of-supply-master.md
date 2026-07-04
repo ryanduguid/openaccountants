@@ -12,7 +12,8 @@ description: >
   the correct country for VAT/GST on a cross-border transaction.
 version: 1.0
 jurisdiction: INTL
-tax_year: 2025-2026
+tax_year: 2025
+tax_year_notes: "2025-2026"
 category: cross-border
 ---
 

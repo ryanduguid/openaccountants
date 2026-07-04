@@ -4,7 +4,8 @@ description: >
   Use this skill whenever asked about Bulgaria personal income tax (данък върху доходите на физическите лица) for self-employed individuals, freelancers, sole traders (ET), and individuals. Trigger on phrases like "how much income tax do I pay in Bulgaria", "flat tax Bulgaria", "10% tax", "GDD", "godishna danachna deklaratsiya", "Art. 50 return", "form 2001", "ZDDFL", "freelancer tax Bulgaria", "self-employed tax Bulgaria", "normative expense deduction", "25% deduction", "40% deduction liberal profession", "ET sole trader 15%", "self-insured contributions", "osiguritelen dohod", "insurable income", "NRA / NAP", "NSSI / NOI", "dividend withholding tax Bulgaria", or any question about filing or computing personal income tax for a self-employed, freelance, sole-trader, or individual client in Bulgaria. Also trigger when preparing or reviewing an annual return (Art. 50 ZDDFL / form 2001) or quarterly advance PIT, computing the 25%/40%/60%/10% normative expense deduction, classifying freelancer/sole-trader bank-statement lines, or advising on social-security and health contributions for self-insured persons. This skill covers the FLAT 10% PIT (15% for sole traders / ET), the 5% final dividend withholding tax, normative expense deductions, child tax relief, social-security and health contributions for employees and self-insured persons, the annual return and quarterly advance forms, penalties, the BGN-to-EUR euro changeover (effective 1 Jan 2026), and interaction with VAT and contributions. ALWAYS read this skill before touching any Bulgarian income tax work.
 version: 0.1
 jurisdiction: BG
-tax_year: 2025 (calendar year; with confirmed 2026 changes flagged, incl. euro adoption from 1 Jan 2026)
+tax_year: 2025
+tax_year_notes: "2025 (calendar year; with confirmed 2026 changes flagged, incl. euro adoption from 1 Jan 2026)"
 category: international
 depends_on:
   - income-tax-workflow-base

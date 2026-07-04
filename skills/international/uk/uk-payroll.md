@@ -14,7 +14,8 @@ jurisdiction: GB
 category: payroll
 depends_on:
   - payroll-workflow-base
-tax_year: 2025-26
+tax_year: 2025
+tax_year_notes: "2025-26"
 verified_by: pending
 ---
 

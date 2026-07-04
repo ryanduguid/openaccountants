@@ -7,7 +7,8 @@ jurisdiction: GB
 category: bookkeeping
 depends_on:
   - bookkeeping-workflow-base
-tax_year: 2025-26
+tax_year: 2025
+tax_year_notes: "2025-26"
 applicable_years:
   - 2024-25
   - 2025-26

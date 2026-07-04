@@ -4,7 +4,8 @@ description: >
   Use this skill whenever asked about Azerbaijan payroll processing for employed persons. Trigger on phrases like "Azerbaijan payroll", "Azerbaijani salary", "emek haqqi", "PIT withholding Azerbaijan", "income tax of physical persons", "SSPF", "DSMF", "social insurance Azerbaijan", "unemployment insurance contribution", "mandatory medical insurance Azerbaijan", "unified payroll declaration", "net salary Azerbaijan", "gross to net AZN", "salary calculation Azerbaijan", "minimum wage Azerbaijan", "oil/gas sector payroll", "non-oil private sector PIT holiday", or any question about computing employee pay, withholding tax, or social/health/unemployment contributions for Azerbaijan-based employees. This skill covers PIT withheld at source (PAYE-style), State Social Protection Fund (SSPF) contributions, the Unemployment Insurance Contribution (UIC), mandatory medical insurance, the 2025 non-oil private-sector PIT holiday and its 2026 replacement, and the unified monthly payroll declaration. ALWAYS read this skill before processing any Azerbaijan payroll. MUST be loaded alongside payroll-workflow-base.
 version: 0.1
 jurisdiction: AZ
-tax_year: 2025 (with confirmed 2026 changes documented)
+tax_year: 2025
+tax_year_notes: "2025 (with confirmed 2026 changes documented)"
 category: payroll
 depends_on:
   - payroll-workflow-base

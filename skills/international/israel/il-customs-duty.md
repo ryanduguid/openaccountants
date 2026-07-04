@@ -3,7 +3,8 @@ name: il-customs-duty
 description: Use this skill when calculating Israeli customs duty, VAT, and purchase tax on imports, or advising on free trade agreement preferences. Trigger on phrases like "import tax Israel", "customs duty Israel", "מכס", "mas kniya", "מס קנייה", "personal import Israel", "Amazon import Israel", "AliExpress import Israel", "Shaar Olami", "שער עולמי", "HS code Israel", "EUR.1 Israel", "FTA Israel", "landed cost Israel", or any Israeli customs and import duty query. ALWAYS read this skill before advising on Israeli import duties.
 version: 1.0
 jurisdiction: IL
-tax_year: 2025-2026
+tax_year: 2025
+tax_year_notes: "2025-2026"
 category: international
 ---
 

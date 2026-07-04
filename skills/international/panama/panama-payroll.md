@@ -4,7 +4,8 @@ description: >
   Use this skill whenever asked about Panama payroll processing for employed persons (planilla). Trigger on phrases like "Panama payroll", "planilla CSS", "Caja de Seguro Social", "cuota obrero-patronal", "seguro educativo", "riesgos profesionales", "ISR Panama", "retención de salario Panama", "impuesto sobre la renta salario", "décimo tercer mes", "décimo Panama", "13th month Panama", "SIPE", "salario mínimo Panama", "Form 03 Panama", "planilla 03", "net salary Panama", "gross to net balboa", "MITRADEL", "DGI retención", or any question about computing employee pay, salary withholding tax, or social-security contributions for Panama-based employees. This skill covers ISR (monthly income-tax withholding on salaries), CSS social-security contributions (employee and employer), educational insurance, professional-risk insurance, the mandatory décimo tercer mes, minimum wage, and filing obligations via SIPE/DGI. ALWAYS read this skill before processing any Panama payroll.
 version: 0.1
 jurisdiction: PA
-tax_year: 2025 (calendar/fiscal year; 2026 minimum-wage + Law 462 CSS phase-in noted where officially confirmed)
+tax_year: 2025
+tax_year_notes: "2025 (calendar/fiscal year; 2026 minimum-wage + Law 462 CSS phase-in noted where officially confirmed)"
 category: payroll
 depends_on:
   - payroll-workflow-base

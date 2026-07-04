@@ -3,7 +3,8 @@ name: il-freelancer-ops
 description: Use this skill when advising Israeli freelancers (עצמאים) on business operations, tax deadlines, threshold monitoring, invoice requirements, and accountant package preparation. Trigger on phrases like "osek patur threshold", "freelancer Israel taxes", "עוסק פטור", "עוסק מורשה", "עסק זעיר", "esek za'ir", "mkdamot", "מקדמות", "havila l'roe cheshbon", "bituach leumi self-employed", "ביטוח לאומי עצמאי", "freelancer deadlines Israel", or any Israel freelancer operations query. ALWAYS read this skill before advising on Israeli freelancer tax operations.
 version: 1.0
 jurisdiction: IL
-tax_year: 2025-2026
+tax_year: 2025
+tax_year_notes: "2025-2026"
 category: international
 ---
 

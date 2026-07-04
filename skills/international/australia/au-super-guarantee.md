@@ -4,7 +4,8 @@ description: >
   Use this skill whenever asked about Australian Superannuation Guarantee (SG) obligations, voluntary super contributions, concessional and non-concessional caps, Division 293 tax, government co-contribution, spouse contribution tax offset, carry-forward rules, or any question about super for sole traders or employers. Trigger on phrases like "how much super do I pay", "SG rate", "super guarantee", "concessional cap", "Division 293", "salary sacrifice super", "personal super contribution deduction", "co-contribution", "BPAY super", "ATO super clearing house", "super fund contribution", or any question about Australian superannuation. Also trigger when classifying bank statement transactions showing super fund payments, BPAY super debits, or ATO Small Business Super Clearing House (SBSCH) payments. ALWAYS read this skill before touching any SG-related work.
 version: 2.0
 jurisdiction: AU
-tax_year: 2024-25
+tax_year: 2024
+tax_year_notes: "2024-25"
 category: international
 depends_on:
   - social-contributions-workflow-base

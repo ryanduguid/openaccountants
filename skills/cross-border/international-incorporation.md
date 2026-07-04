@@ -13,7 +13,8 @@ description: >
   or any question about choosing where to incorporate an international business.
 version: 1.0
 jurisdiction: INTL
-tax_year: 2025-2026
+tax_year: 2025
+tax_year_notes: "2025-2026"
 category: international
 ---
 

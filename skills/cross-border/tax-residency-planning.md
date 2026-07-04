@@ -13,7 +13,8 @@ description: >
   about personal tax residency and where to pay personal income tax as an international founder.
 version: 1.0
 jurisdiction: INTL
-tax_year: 2025-2026
+tax_year: 2025
+tax_year_notes: "2025-2026"
 category: international
 ---
 

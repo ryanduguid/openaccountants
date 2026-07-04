@@ -4,7 +4,8 @@ description: >
   Use this skill whenever asked about UK National Insurance Contributions (NIC) for self-employed individuals or employers. Trigger on phrases like "how much NIC do I pay", "Class 2 contributions", "Class 4 NIC", "Class 1 employer NIC", "Employer NIC 15%", "Secondary Threshold £5,000", "Employment Allowance £10,500", "April 2026 NIC", "Class 2 abolished", "national insurance self-employed", "NIC calculation", "state pension qualifying years", "NIC deferment", "voluntary Class 2", "HMRC NIC payment", or any question about UK NIC obligations. Also trigger when classifying bank statement transactions showing HMRC NIC debits, Self Assessment NIC payments, or Class 2 direct debits. This skill covers Class 1 (employee and employer), Class 2 (voluntary post-April 2024), Class 4 (profit-based), thresholds, payment schedule, bank statement pattern classification, Employment Allowance, interaction with employment Class 1, deferment, state pension entitlement, and edge cases across three tax years (2024-25, 2025-26, 2026-27). ALWAYS read this skill before touching any UK NIC-related work.
 version: 3.0
 jurisdiction: GB
-tax_year: 2025-26
+tax_year: 2025
+tax_year_notes: "2025-26"
 tax_years_covered: [2024-25, 2025-26, 2026-27]
 category: international
 depends_on:

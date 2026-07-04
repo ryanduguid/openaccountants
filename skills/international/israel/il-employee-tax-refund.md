@@ -3,7 +3,8 @@ name: il-employee-tax-refund
 description: Use this skill when advising salaried Israeli employees on voluntary tax refund claims. Trigger on phrases like "tax refund Israel employee", "החזר מס לשכירים", "Form 135", "טופס 135", "Form 106", "טופס 106", "miluim refund", "מילואים החזר מס", "nekudot zikui missed", "yishuv mezakeh", "ישוב מזכה", "Section 46 donations", "תרומות", "oleh chadash credit points", "maternity tax refund Israel", or any Israeli employee tax refund query. ALWAYS read this skill before advising on Israeli employee tax refunds.
 version: 1.0
 jurisdiction: IL
-tax_year: 2025-2026
+tax_year: 2025
+tax_year_notes: "2025-2026"
 category: international
 ---
 

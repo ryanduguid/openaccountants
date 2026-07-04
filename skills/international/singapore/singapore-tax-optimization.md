@@ -4,7 +4,8 @@ description: >
   Use this skill when advising on LEGAL tax minimization strategies for Singapore taxpayers — individuals, sole proprietors, and small companies. Trigger on phrases like "reduce my tax Singapore", "tax planning", "personal reliefs", "SRS", "CPF", "sole proprietor vs company", "IRAS", "GST optimization", "capital allowances Singapore", "no capital gains tax", "tax residency", or any question about legally minimizing Singapore income tax. Covers entity selection, relief optimization, capital allowances, loss utilization, timing, GST planning, CPF/SRS strategies, and red lines. ALWAYS read this skill before giving Singapore tax optimization advice.
 version: 1.0
 jurisdiction: SG
-tax_year: YA 2026 (income year 2025)
+tax_year: 2025
+tax_year_notes: "YA 2026 (income year 2025)"
 category: tax-optimization
 depends_on:
   - bookkeeping-workflow-base
