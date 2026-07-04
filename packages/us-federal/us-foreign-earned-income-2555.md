@@ -5,7 +5,7 @@ jurisdiction: US
 category: federal-tax
 tier: 2
 verified_by: pending
-last_updated: 2025-11-15
+last_updated: 2026-07-04
 version: 0.1
 ---
 
@@ -522,20 +522,20 @@ US citizens abroad still owe quarterly estimated taxes (Form 1040-ES) under §66
 
 **Total exclusion**: $130,000 + $37,600 = $167,600.
 
-**Taxable income**: $264,000 − $167,600 = $96,400 − $14,600 standard deduction (2025 single) = $81,800.
+**Taxable income**: $264,000 − $167,600 = $96,400 − $15,750 standard deduction (2025 single, OBBBA §70102) = $80,650.
 
-**§911(f) stacked tax** (on $81,800 + $167,600 = $249,400 reported "as if"):
-- Tax on $249,400 ≈ $56,872.
-- Tax on $167,600 ≈ $32,460.
-- Net US tax = $56,872 − $32,460 = $24,412.
+**§911(f) stacked tax** (on $80,650 + $167,600 = $248,250 reported "as if"):
+- Tax on $248,250 ≈ $56,503.
+- Tax on $167,600 ≈ $33,071.
+- Net US tax = $56,503 − $33,071 = $23,432.
 
 **Foreign tax credit**: $0 (UAE collected no tax).
 
 **SE tax**: $0 (W-2 employee, not self-employed).
 
-**Net US federal tax owed**: $24,412.
+**Net US federal tax owed**: $23,432.
 
-**Compare without FEIE**: Tax on $204,000 + $60,000 − $14,600 = $249,400 = $56,872. Far worse. §911 saves $32,460.
+**Compare without FEIE**: Tax on $204,000 + $60,000 − $15,750 = $248,250 = $56,503. Far worse. §911 saves $33,071.
 
 ### 15.2 Example B — Freelance US Citizen in Lisbon Using FTC + NHR
 
@@ -548,19 +548,19 @@ US citizens abroad still owe quarterly estimated taxes (Form 1040-ES) under §66
 **§911 path**:
 - FEIE: $130,000.
 - Schedule C taxable in US after FEIE: $50,000.
-- §911(f) stacked tax on $50,000 — $14,600 SD = $35,400: roughly $4,000.
-- FTC on the $50,000 (Portuguese tax allocated: $36,000 × 50/180 = $10,000): FTC = MIN($10,000, $4,000) = $4,000. Net US income tax = $0.
+- §911(f) stacked tax on $50,000 — $15,750 SD = $34,250: roughly $3,900.
+- FTC on the $50,000 (Portuguese tax allocated: $36,000 × 50/180 = $10,000): FTC = MIN($10,000, $3,900) = $3,900. Net US income tax = $0.
 - SE tax: Portugal IS on totalization list. If David has a Certificate of Coverage from Portuguese Segurança Social, SE tax = $0. Otherwise SE tax = $180,000 × 0.9235 × 0.153 = ~$25,447.
 
 **FTC-only path**:
 - Full $180,000 in US gross income.
-- Taxable: $180,000 − $14,600 = $165,400.
-- Tax ≈ $33,000.
-- FTC = MIN($36,000, $33,000) = $33,000. Net US income tax = $0.
-- Excess FTC carryforward: $3,000 (10 years).
+- Taxable: $180,000 − $15,750 = $164,250.
+- Tax ≈ $32,300.
+- FTC = MIN($36,000, $32,300) = $32,300. Net US income tax = $0.
+- Excess FTC carryforward: $3,700 (10 years).
 - SE tax: same as above; not affected by FTC vs §911.
 
-**Recommendation**: For David, FTC-only is slightly better because (a) generates $3,000 of carryforward, (b) preserves Roth IRA / IRA contribution eligibility (compensation is not reduced by §911 exclusion), (c) keeps QBI deduction available on full $180,000 Schedule C net profit (§911 would exclude $130,000 from QBI base), (d) avoids the §911 election lockout if David ever wants to relocate to a high-cost city in the future.
+**Recommendation**: For David, FTC-only is slightly better because (a) generates $3,700 of carryforward, (b) preserves Roth IRA / IRA contribution eligibility (compensation is not reduced by §911 exclusion), (c) keeps QBI deduction available on full $180,000 Schedule C net profit (§911 would exclude $130,000 from QBI base), (d) avoids the §911 election lockout if David ever wants to relocate to a high-cost city in the future.
 
 **Caveat**: David should still file Form 2555 to preserve the §911 election history if he has filed it in prior years. Statement: "FEIE election under §911(e) remains in effect; FEIE not claimed for tax year 2025 due to election to use FTC."
 
@@ -582,20 +582,20 @@ US citizens abroad still owe quarterly estimated taxes (Form 1040-ES) under §66
 
 **Total exclusion**: $130,000 + $69,200 = $199,200.
 
-**Taxable**: $368,000 − $199,200 = $168,800; minus $14,600 SD = $154,200.
+**Taxable**: $368,000 − $199,200 = $168,800; minus $15,750 SD (OBBBA §70102) = $153,050.
 
-**§911(f) stacked tax** (computed on $154,200 + $199,200 = $353,400):
-- Tax on $353,400 (single 2025) — well into the 35% bracket: approximately $89,000.
-- Tax on $199,200: $1,193 + $4,386 + $12,073 + $22,548 + $640 (small piece in 32%) ≈ $40,840.
-- Net US income tax = $89,000 − $40,840 = $48,160.
+**§911(f) stacked tax** (computed on $153,050 + $199,200 = $352,250):
+- Tax on $352,250 (single 2025) — well into the 35% bracket: approximately $92,800.
+- Tax on $199,200: $1,193 + $4,386 + $12,073 + $22,548 + $608 (small piece in 32%) ≈ $40,808.
+- Net US income tax = $92,800 − $40,808 = $51,992.
 
-**FTC on remaining**: Singapore tax of $31,000 allocated to the $130,000 in non-FEIE foreign earned income (it's tricky — the allocation rules under §904 are complex; assume an allocation of $11,000 to the unexcluded portion as a rough approximation, reviewer to verify). FTC = MIN($11,000, $48,160) = $11,000.
+**FTC on remaining**: Singapore tax of $31,000 allocated to the $130,000 in non-FEIE foreign earned income (it's tricky — the allocation rules under §904 are complex; assume an allocation of $11,000 to the unexcluded portion as a rough approximation, reviewer to verify). FTC = MIN($11,000, $51,992) = $11,000.
 
-**Net US tax owed**: $48,160 − $11,000 = $37,160.
+**Net US tax owed**: $51,992 − $11,000 = $40,992.
 
 **SE tax**: $0 (W-2 employee).
 
-**Decision**: §911 + high-cost housing exclusion + partial FTC is the right combination. Pure FTC would not absorb US tax fully because Singapore's effective rate is low; FTC = $31,000 vs full US tax on $368,000 of approximately $95,000. Net US tax under FTC-only ≈ $64,000 — worse than §911 + FTC carve-out by $26,000.
+**Decision**: §911 + high-cost housing exclusion + partial FTC is the right combination. Pure FTC would not absorb US tax fully because Singapore's effective rate is low; FTC = $31,000 vs full US tax on $368,000 of approximately $92,800. Net US tax under FTC-only ≈ $61,800 — worse than §911 + FTC carve-out by $20,800.
 
 ## 16. Self-Checks (Run Before Reviewer Brief)
 
@@ -707,3 +707,9 @@ verified rules together with the name of the accountant who signed them off.
 
 **→ Install the free connector:** <https://www.openaccountants.com/connect>
 **MCP endpoint:** `https://www.openaccountants.com/api/mcp`
+
+---
+
+## Changelog
+
+- **2026-07-04** — Stale figures corrected via cross-guide contradiction check: 2025 standard deduction $14,600 (the 2024 amount) → $15,750 (OBBBA §70102) in Examples A–C; all downstream stacked-tax, FTC, and carryforward figures recomputed against the 2025 single/MFS brackets (Example A net tax $24,412 → $23,432; Example B carryforward $3,000 → $3,700; Example C net tax $37,160 → $40,992 — the prior figure also understated the stacked tax on $353,400).

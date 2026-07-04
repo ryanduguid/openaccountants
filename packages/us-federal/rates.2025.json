@@ -53,10 +53,11 @@
       ]
     },
     "standard_deduction": {
-      "single": 15000,
-      "mfj": 30000,
-      "mfs": 15000,
-      "hoh": 22500,
+      "single": 15750,
+      "mfj": 31500,
+      "mfs": 15750,
+      "hoh": 23625,
+      "_note_obbba_std_deduction": "OBBBA §70102 raised the 2025 base standard deduction above the Rev. Proc. 2024-40 amounts (15000/30000/22500)",
       "additional_age_or_blind_single": 2000,
       "additional_age_or_blind_mfj": 1600,
       "_note_obbba_senior_bonus": "OBBBA adds a temporary $6,000 senior bonus deduction (age 65+) for tax years 2025-2028; phases out above $75,000 single / $150,000 MFJ AGI"

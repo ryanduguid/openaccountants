@@ -5,7 +5,7 @@ version: 1.0
 jurisdiction: US
 tax_year: 2025
 tier: 2
-last_updated: 2026-06-12
+last_updated: 2026-07-04
 category: federal
 ---
 
@@ -521,7 +521,7 @@ Coinbase, Kraken, Gemini, Binance.US are US-based. Accounts on these exchanges a
 
 - Donor: No taxable event upon gifting
 - Recipient basis: Carryover basis from donor (for gains); FMV at time of gift (for losses, if FMV < donor's basis)
-- Gift tax: Form 709 required if gift exceeds $18,000 annual exclusion (2025) per recipient
+- Gift tax: Form 709 required if gift exceeds $19,000 annual exclusion (2025, Rev. Proc. 2024-40) per recipient
 - Holding period: Tacks (recipient includes donor's holding period) if using carryover basis
 
 ### Charitable donations of crypto
@@ -669,6 +669,10 @@ Received 1,000 ARB tokens via airdrop on March 23, 2025. FMV at receipt: $1.15/t
 ## End of Skill
 
 ---
+
+## Changelog
+
+- **2026-07-04** — Stale figures corrected via cross-guide contradiction check: 2025 gift tax annual exclusion $18,000 → $19,000 ($18,000 was the 2024 figure) (Rev. Proc. 2024-40).
 
 ## Disclaimer
 

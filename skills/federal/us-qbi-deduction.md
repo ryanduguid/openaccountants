@@ -4,7 +4,7 @@ description: Tier 2 content skill for computing the §199A Qualified Business In
 version: 0.2
 jurisdiction: US
 tier: 2
-last_updated: 2026-06-12
+last_updated: 2026-07-04
 ---
 
 # US QBI Deduction Skill v0.2
@@ -459,9 +459,9 @@ QBI:                                  $19,053
 
 **QBI deduction:** 20% × $19,053 = **$3,811**
 
-**Taxable income check:** $62,644 AGI − $4,427 SE tax − $8,400 SE health − $30,764 retirement − $15,000 standard deduction (2025) = ~$4,053 taxable income. Well below $197,300 threshold. QBI deduction limited to lesser of $3,811 or 20% × $4,053 = $811.
+**Taxable income check:** $62,644 AGI − $4,427 SE tax − $8,400 SE health − $30,764 retirement − $15,750 standard deduction (2025, OBBBA §70102) = ~$3,303 taxable income. Well below $197,300 threshold. QBI deduction limited to lesser of $3,811 or 20% × $3,303 = $661.
 
-**Result: QBI deduction = $811** (limited by taxable income cap).
+**Result: QBI deduction = $661** (limited by taxable income cap).
 
 **Form:** 8995 (simplified).
 
@@ -474,7 +474,7 @@ QBI:                                  $19,053
 - Deductible half of SE tax: $10,597
 - SE health insurance: $9,600
 - SEP-IRA contribution: $26,081
-- Standard deduction: $15,000
+- Standard deduction: $15,750
 
 **QBI computation:**
 ```
@@ -488,11 +488,11 @@ QBI:                                  $103,722
 
 **QBI deduction (tentative):** 20% × $103,722 = $20,744
 
-**Taxable income:** $150,000 − $10,597 − $9,600 − $26,081 − $15,000 = $88,722. Below $197,300.
+**Taxable income:** $150,000 − $10,597 − $9,600 − $26,081 − $15,750 = $87,972. Below $197,300.
 
-**Taxable income cap:** 20% × $88,722 = $17,744
+**Taxable income cap:** 20% × $87,972 = $17,594
 
-**Result: QBI deduction = $17,744** (limited by taxable income cap).
+**Result: QBI deduction = $17,594** (limited by taxable income cap).
 
 ### Example 3 — Above threshold, SSTB, within phase-in
 
@@ -553,8 +553,8 @@ Reduction amount phases in the W-2/UBIA limit. Because the W-2/UBIA limit is $0,
 ## Section 14 — Test suite
 
 ### Test 1 — Basic below-threshold computation
-**Input:** Schedule C net profit $80,000; deductible half of SE tax $5,652; SE health insurance $6,000; SEP-IRA $13,470; single; standard deduction $15,000; no capital gains.
-**Expected:** QBI = $80,000 − $5,652 − $6,000 − $13,470 = $54,878. Tentative QBI deduction = 20% × $54,878 = $10,976. Taxable income = $80,000 − $5,652 − $6,000 − $13,470 − $15,000 = $39,878. TI cap = 20% × $39,878 = $7,976. **QBI deduction = $7,976** (TI-limited). Form 8995.
+**Input:** Schedule C net profit $80,000; deductible half of SE tax $5,652; SE health insurance $6,000; SEP-IRA $13,470; single; standard deduction $15,750; no capital gains.
+**Expected:** QBI = $80,000 − $5,652 − $6,000 − $13,470 = $54,878. Tentative QBI deduction = 20% × $54,878 = $10,976. Taxable income = $80,000 − $5,652 − $6,000 − $13,470 − $15,750 = $39,128. TI cap = 20% × $39,128 = $7,826. **QBI deduction = $7,826** (TI-limited). Form 8995.
 
 ### Test 2 — Loss year
 **Input:** Schedule C net loss ($15,000); deductible half of SE tax $0 (no profit); single.
@@ -619,6 +619,10 @@ Reduction amount phases in the W-2/UBIA limit. Because the W-2/UBIA limit is $0,
 | `us-ca-return-assembly` | QBI deduction for CA-resident federal return |
 
 ---
+
+## Changelog
+
+- **2026-07-04** — Stale figures corrected via cross-guide contradiction check: 2025 standard deduction (single) $15,000 → $15,750 in Examples 1–2 and Test 1; taxable income, TI caps, and QBI deduction results recomputed ($811 → $661; $17,744 → $17,594; $7,976 → $7,826) (OBBBA §70102).
 
 ## Disclaimer
 

@@ -5,7 +5,7 @@ jurisdiction: US
 category: federal-tax
 tier: 2
 verified_by: pending
-last_updated: 2025-11-15
+last_updated: 2026-07-04
 version: 0.1
 ---
 
@@ -230,8 +230,8 @@ A scholarship designated by the donor (or by the institution) for **tuition only
 
 This works when:
 - The scholarship terms permit application to non-tuition expenses (verify in the award letter — if restricted, the planning is unavailable).
-- The student's other income plus the recharacterized scholarship is below the standard deduction ($15,000 single in 2025), so the student pays no actual tax on the "taxable" scholarship.
-- The kiddie tax rules do not push the scholarship into the parent's bracket. Scholarships included in income under §117(c) are treated as **earned income** for purposes of the kiddie-tax standard-deduction calculation under §63(c)(5), per Rev. Rul. 2005-46 and Notice 87-31 — so the student's standard deduction is the full $15,000 (2025), not the $1,300 unearned-income floor.
+- The student's other income plus the recharacterized scholarship is below the standard deduction ($15,750 single in 2025, OBBBA §70102), so the student pays no actual tax on the "taxable" scholarship.
+- The kiddie tax rules do not push the scholarship into the parent's bracket. Scholarships included in income under §117(c) are treated as **earned income** for purposes of the kiddie-tax standard-deduction calculation under §63(c)(5), per Rev. Rul. 2005-46 and Notice 87-31 — so the student's standard deduction is the full $15,750 (2025, OBBBA §70102), not the $1,300 unearned-income floor.
 
 The credit pickup can be substantial: $2,500 of AOTC vs $0 of student-level tax. Document the analysis carefully — this is a planning position the IRS scrutinizes but has explicitly endorsed in Pub. 970 ("Coordination with Pell grants and other scholarships").
 
@@ -474,7 +474,7 @@ Attach the reconciliation worksheet to the return file and retain bursar's state
 *Daniel.* AOTC eligibility: degree-seeking ✓, half-time+ ✓, first 4 years ✓, < 4 prior AOTC ✓, no drug conviction ✓. Qualified expenses = $14,000 + $1,200 + $900 = $16,100. AOTC base capped at $4,000. AOTC = 100% × $2,000 + 25% × $2,000 = $2,500. Phaseout: MFJ $160k-$180k; MAGI $145k is below the floor — no phaseout. Full $2,500.
 
 *Elena.* AOTC eligibility: degree-seeking ✓, half-time+ ✓, first 4 years ✓ (she has not **completed** 4 years yet — this is her 4th year), < 4 prior AOTC ✓ (3 prior claims), no drug conviction ✓. Qualified expenses before scholarship reduction = $32,000 + $2,100 + $1,400 = $35,500. Scholarship is unrestricted — consider recharacterization. If we apply the $8,000 scholarship to room and board (recharacterize as taxable to Elena):
-- Elena reports $8,000 of taxable scholarship income on her own return (Line 8r). Her other 2025 income: $3,200 from summer internship. Total $11,200. Standard deduction $15,000 (single, treated as earned income per §63(c)(5)). Tax = $0.
+- Elena reports $8,000 of taxable scholarship income on her own return (Line 8r). Her other 2025 income: $3,200 from summer internship. Total $11,200. Standard deduction $15,750 (single, treated as earned income per §63(c)(5); OBBBA §70102). Tax = $0.
 - AOTC qualified expenses remain $4,000 capped. AOTC = $2,500.
 - If scholarship had been left applied to tuition, QEE for AOTC would still be $35,500 - $8,000 = $27,500, well above $4,000 cap — so AOTC would still be $2,500. **The recharacterization does not change Elena's AOTC in this case because QEE is so far above the $4,000 cap.** Keep the scholarship applied to tuition; no benefit to recharacterization here. (The recharacterization trick matters only when scholarships push QEE **below** $4,000.)
 
@@ -613,3 +613,9 @@ verified rules together with the name of the accountant who signed them off.
 
 **→ Install the free connector:** <https://www.openaccountants.com/connect>
 **MCP endpoint:** `https://www.openaccountants.com/api/mcp`
+
+---
+
+## Changelog
+
+- **2026-07-04** — Stale figures corrected via cross-guide contradiction check: 2025 standard deduction (single) $15,000 → $15,750 in §6.2 and Example A (OBBBA §70102). Conclusions unchanged — student income stays below the standard deduction, tax = $0.
