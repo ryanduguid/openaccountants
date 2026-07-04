@@ -93,7 +93,7 @@ Key rules:
 | `us-schedule-c-and-se-computation` | US Federal | Pending publication of practitioner registry |
 | `us-ca-freelance-intake` | US-CA | Pending publication of practitioner registry |
 
-This list is auto-derived from each skill's `verified_by` frontmatter by `scripts/build-skills-manifest.py` (the field name is a stored identifier and stays `verified_by`). To add a new accountant-reviewed skill, set its `verified_by:` field to the reviewer's name and credential, then re-run the script. Every accountant-reviewed skill carries the reviewer's name and license number on the skill page at openaccountants.com.
+This list is derived from each skill's `verified_by` frontmatter (the field name is a stored identifier and stays `verified_by`). To add a new accountant-reviewed skill, set its `verified_by:` field to the reviewer's name and credential, then regenerate the canonical inventory with `python3 scripts/build-index.py` — the tier and verifier land in `index.json`. Every accountant-reviewed skill carries the reviewer's name and license number on the skill page at openaccountants.com.
 
 ### Source-cited drafts (Tier 2)
 

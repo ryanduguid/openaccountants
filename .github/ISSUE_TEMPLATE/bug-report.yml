@@ -1,0 +1,56 @@
+name: Bug report
+description: Something doesn't work as expected when using a skill with an AI agent
+title: "[BUG] "
+labels: ["bug"]
+body:
+  - type: dropdown
+    id: ai-agent
+    attributes:
+      label: Which AI are you using?
+      options:
+        - Claude
+        - ChatGPT
+        - Gemini
+        - Cursor
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: country-package
+    attributes:
+      label: Which country package?
+      placeholder: "e.g., packages/malta/"
+    validations:
+      required: true
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened
+      description: Describe what the AI did wrong.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What should have happened
+      description: What the correct classification or computation should be.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Which files you uploaded, what you said, and how the AI responded.
+      placeholder: |
+        1. Uploaded files: ...
+        2. Said: ...
+        3. AI responded: ...
+    validations:
+      required: true
+  - type: input
+    id: bank-line
+    attributes:
+      label: Bank statement line (if relevant)
+      placeholder: "e.g., \"GOOGLE IRELAND LTD — EUR 150\""
+    validations:
+      required: false

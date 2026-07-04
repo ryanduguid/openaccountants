@@ -1,0 +1,67 @@
+name: Rate or threshold correction
+description: A tax rate, threshold, or deadline is wrong or outdated
+title: "[COUNTRY] Rate correction: "
+labels: ["rate-correction"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping keep the Guides accurate. Corrections with an authoritative source are applied fastest.
+  - type: input
+    id: guide-path
+    attributes:
+      label: Guide file path or slug
+      description: The Guide containing the wrong value.
+      placeholder: "e.g., skills/international/malta/malta-vat-return.md or malta-vat-return"
+    validations:
+      required: true
+  - type: input
+    id: jurisdiction
+    attributes:
+      label: Jurisdiction
+      description: Country, US state, or Canadian province the Guide covers.
+      placeholder: "e.g., Malta, Germany, US-CA"
+    validations:
+      required: true
+  - type: textarea
+    id: current-value
+    attributes:
+      label: Current (wrong) value
+      description: What the Guide says today. Quote the exact line or figure.
+      placeholder: "e.g., \"VAT rate listed as 17%\""
+    validations:
+      required: true
+  - type: textarea
+    id: correct-value
+    attributes:
+      label: Correct value
+      description: What it should say, and since when if the change took effect on a specific date.
+      placeholder: "e.g., \"18% since 1 January 2024\""
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Authoritative source (URL or citation)
+      description: Link to the tax authority website or legislation confirming the correct value. Required, corrections without a source cannot be applied.
+      placeholder: "e.g., https://cfr.gov.mt/... or \"S.L. 406.12, item 3\""
+    validations:
+      required: true
+  - type: dropdown
+    id: licensed-accountant
+    attributes:
+      label: Are you a licensed accountant?
+      description: Optional. Corrections from licensed professionals (CPA/EA or local equivalent) can be fast-tracked for review.
+      options:
+        - "No"
+        - "Yes"
+    validations:
+      required: false
+  - type: input
+    id: credential
+    attributes:
+      label: Credential (optional)
+      description: If yes above, your designation and jurisdiction, e.g., "CPA (California)" or "ACCA (Malta)". Do not post license numbers publicly.
+      placeholder: "e.g., CPA (California)"
+    validations:
+      required: false

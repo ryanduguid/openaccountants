@@ -1,0 +1,42 @@
+name: Add vendor pattern
+description: Add a bank statement pattern for a common vendor in your country
+title: "[COUNTRY] Vendor: "
+labels: ["enhancement", "patterns"]
+body:
+  - type: input
+    id: country
+    attributes:
+      label: Country
+      placeholder: "e.g., Malta, Germany, Australia"
+    validations:
+      required: true
+  - type: input
+    id: bank-statement-text
+    attributes:
+      label: Bank statement text
+      description: Exactly how it appears on your bank statement.
+      placeholder: "e.g., \"DEUTSCHE TELEKOM AG\""
+    validations:
+      required: true
+  - type: input
+    id: vendor
+    attributes:
+      label: Vendor
+      description: The actual company.
+      placeholder: "e.g., Deutsche Telekom"
+    validations:
+      required: true
+  - type: input
+    id: classification
+    attributes:
+      label: Correct classification
+      placeholder: "e.g., \"Domestic 19% VAT, overhead/utilities\" or \"Exempt, exclude\""
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes
+      description: Any special treatment, e.g., "Bills from Irish entity for mobile — reverse charge".
+    validations:
+      required: false

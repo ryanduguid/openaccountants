@@ -8,9 +8,6 @@ __pycache__
 .DS_Store
 **/.DS_Store
 docs
-cookbook-contribution
-skills/.claude
-contrib
 CHANGELOG.md
 CLA.md
 COMMERCIAL_LICENSE.md
@@ -18,7 +15,6 @@ CONTRIBUTING.md
 LICENSE
 LICENSE-ADDITIONAL.md
 README.md
-REDDIT-WARMUP-PLAN.md
 START-HERE.md
 glama.json
 Dockerfile

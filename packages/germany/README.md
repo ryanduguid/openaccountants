@@ -38,6 +38,7 @@ Research-verified — accountant verification in progress.
 26. `crypto-tax-workflow-base.md`
 27. `germany-guided-intake.md`
 28. `germany-return-assembly.md`
+29. `rates.2025.json` — machine-readable 2025 rates & thresholds extracted from the guides above, with per-figure authority citations
 
 ## Also known as
 

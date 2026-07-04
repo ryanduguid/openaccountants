@@ -34,7 +34,6 @@ Output:
 """
 
 import os
-import json
 import shutil
 import sys
 
@@ -1201,23 +1200,17 @@ def main():
                      "Pick your state package under `packages/us-[code]/`.\n"
                      "See the repo README for details.\n")
 
-    # ---- Manifest ----
+    # ---- Summary ----
+    # NOTE: packages/manifest.json is DEPRECATED and no longer written. The
+    # canonical machine-readable inventory is index.json at the repo root
+    # (scripts/build-index.py; freshness enforced in CI by
+    # scripts/validate-guides.py). Nothing consumed packages/manifest.json —
+    # the MCP server indexes packages/**/*.md frontmatter directly.
     special_pkgs = [xb_result, vert_result, integ_result]
     all_results = intl_results + [r for r in special_pkgs if r] + us_results + ca_results
-    from datetime import date
-    manifest = {
-        "generated": date.today().isoformat(),
-        "total_packages": len(all_results),
-        "international_packages": len(intl_results),
-        "us_state_packages": len(us_results),
-        "canada_province_packages": len(ca_results),
-        "packages": all_results,
-    }
-    with open(os.path.join(PACKAGES_DIR, "manifest.json"), "w") as f:
-        json.dump(manifest, f, indent=2)
 
     print(f"\nTotal packages: {len(all_results)}")
-    print(f"Manifest written to packages/manifest.json")
+    print("packages/manifest.json is deprecated and not written — index.json is the canonical inventory.")
 
 
 if __name__ == "__main__":
