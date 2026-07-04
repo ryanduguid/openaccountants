@@ -5,13 +5,16 @@ jurisdiction: US
 category: federal-tax
 tier: 2
 verified_by: pending
-last_updated: 2025-11-15
+reviewed_by: Christopher Aryee, CPA
+last_updated: 2026-07-04
 version: 0.1
 ---
 
 # US Form 1040 — Individual Income Tax Return (Non-Freelance)
 
 > Tier 2 federal content skill. Covers tax year **2025** under the One Big Beautiful Bill Act (OBBBA, P.L. 119-21, July 4 2025). MUST be loaded alongside `us-tax-workflow-base` v0.2 or later. Federal only — no state tax. Assumes a Circular 230 practitioner reviews and signs off on every output before delivery.
+
+> **OBBBA update (2026):** Rates, thresholds, and statutory citations in this Guide were corrected against the One Big Beautiful Bill Act following an in-progress professional review by **Christopher Aryee, CPA**.
 
 ## 1. Scope
 
@@ -70,6 +73,8 @@ Refuse and refer to a human credentialed preparer when:
 Additional standard deduction (age 65+ or blind):
 - **MFJ / QSS:** $1,600 per qualifying condition per spouse
 - **Single / HoH:** $2,000 per qualifying condition
+
+**2026 figures (OBBBA §70102):** the additional standard deduction rises to **$1,650 (married)** / **$2,050 (unmarried)** per qualifying condition. An MFJ couple with both spouses over 65 gets a total standard deduction of **$35,500 for 2026**.
 
 A taxpayer who can be **claimed as a dependent** on another return is limited to the greater of (a) $1,350 or (b) earned income + $450, capped at the regular standard deduction.
 
@@ -168,9 +173,9 @@ Reported on **Form 8959**, flows to Schedule 2 Line 11. Employer withholds the 0
 
 Pre-OBBBA: $10,000 cap (TCJA 2017).
 
-**OBBBA P.L. 119-21 §70401 raised the SALT cap to $40,000** for tax years 2025-2029 (MFS: $20,000), then reverts to $10,000 in 2030 unless further extended. **MFS taxpayers get half** ($20,000).
+**OBBBA P.L. 119-21 §70120 raised the SALT cap to $40,000** for 2025 (MFS: $20,000). The applicable amount is indexed: the **2026 applicable amount is $40,400**. The elevated cap **reverts to $10,000 after December 31, 2029** unless further extended. **MFS taxpayers get half** ($20,000). Source: OBBBA §70120; IRC §164(b)(7).
 
-> **PHASEOUT (OBBBA §70401(b)):** The elevated SALT cap phases down for taxpayers with MAGI over $500,000 ($250,000 MFS). The cap is reduced by 30% of excess MAGI, but **not below $10,000**. Practical effect: fully elevated $40k cap is available up to $500k MAGI; phases to $10k floor by approximately $600k MAGI.
+> **PHASEOUT (OBBBA §70120):** The elevated SALT cap phases down for taxpayers with MAGI over $500,000 ($250,000 MFS). The cap is reduced by 30% of excess MAGI, but **never below $10,000**. Practical effect: fully elevated $40k cap is available up to $500k MAGI; phases to $10k floor by approximately $600k MAGI.
 
 ### 2.8 Kiddie tax — §1(g)
 
@@ -185,16 +190,16 @@ Computed on **Form 8615**. Parents may elect to report the child's unearned inco
 
 ### 2.9 Other OBBBA changes
 
-- **§199A QBI**: made permanent at 20% for 2025, rises to 23% in 2026 (P.L. 119-21 §70201). Not applicable to pure W-2 / investment returns (Line 13 = 0) but flag if Schedule K-1 PTP income or REIT dividends are present — these qualify for QBI even without a trade or business.
+- **§199A QBI**: made permanent at **20%** — the rate **stayed 20%** (it was **not** raised to 23%). OBBBA P.L. 119-21 §70105 raised the phase-in threshold to **$75,000 ($150,000 joint)** and added a **$400 minimum deduction**. Not applicable to pure W-2 / investment returns (Line 13 = 0) but flag if Schedule K-1 PTP income or REIT dividends are present — these qualify for QBI even without a trade or business.
 - **§1(j) brackets**: permanent (see §2.2).
 - **Standard deduction**: TCJA levels permanent (see §2.1).
-- **Child Tax Credit**: $2,000 per qualifying child under 17 (§24(h)), refundable portion $1,700 in 2025 (Rev. Proc. 2024-40), made permanent by OBBBA §70301. Phaseout begins $400k MFJ / $200k other.
-- **§25D Residential Clean Energy Credit** (30% solar, geothermal, battery, etc.): **AUDIT FLASH POINT — OBBBA accelerated termination.** Pre-OBBBA the credit phased to 26% in 2033 and 22% in 2034. OBBBA P.L. 119-21 §70501 **terminated the credit for property placed in service after December 31 2025** for most categories (solar, geothermal heat pump, small wind, biomass) — verify against IRS guidance Notice 2025-XX before claiming for late-2025 installations. Battery storage and fuel cells may have different effective dates. **Flag to reviewer.**
+- **Child Tax Credit**: made permanent at **$2,200 per qualifying child** under 17 (§24(h)) by OBBBA §70104, refundable portion $1,700 in 2025 (Rev. Proc. 2024-40). Phaseout begins $400k MFJ / $200k other.
+- **§25D Residential Clean Energy Credit** (30% solar, geothermal, battery, etc.): **AUDIT FLASH POINT — OBBBA accelerated termination.** Pre-OBBBA the credit phased to 26% in 2033 and 22% in 2034. OBBBA P.L. 119-21 §70506 **terminated the credit for property placed in service after December 31 2025** for most categories (solar, geothermal heat pump, small wind, biomass) — verify against IRS guidance Notice 2025-XX before claiming for late-2025 installations. Battery storage and fuel cells may have different effective dates. **Flag to reviewer.**
 - **§30D Clean Vehicle Credit** (up to $7,500 new EV): **OBBBA P.L. 119-21 §70502 terminated §30D for vehicles acquired after September 30 2025.** Vehicles placed in service through 9/30/2025 still qualify under the existing point-of-sale transferable election rules. **Flag to reviewer for any 2025 EV purchase — confirm date of acquisition vs date of placement in service.**
 - **§25E Used Clean Vehicle Credit** (up to $4,000): also terminated 9/30/2025 under OBBBA §70502.
-- **Tip income deduction**: NEW under OBBBA §70601 — up to $25,000 of qualified tip income deductible above-the-line for occupations on the IRS-published tip-receiving occupations list (Treasury list issued under OBBBA §70601(d)). Phases out above $150k single / $300k MFJ. Reported on Schedule 1.
-- **Overtime pay deduction**: NEW under OBBBA §70602 — up to $12,500 single / $25,000 MFJ of FLSA-mandated overtime premium pay deductible above-the-line. Same phaseout. Reported on Schedule 1.
-- **Auto loan interest deduction**: NEW under OBBBA §70603 — up to $10,000 of interest on a loan for a US-assembled passenger vehicle deductible above-the-line. Phases out $100k single / $200k MFJ. Reported on Schedule 1.
+- **Tip income deduction**: NEW under OBBBA §70201 — up to $25,000 of qualified tip income deductible above-the-line for occupations on the IRS-published tip-receiving occupations list (Treasury list issued under OBBBA §70201(d)). Phases out above $150k single / $300k MFJ. Reported on Schedule 1.
+- **Overtime pay deduction**: NEW under OBBBA §70202 — up to $12,500 single / $25,000 MFJ of FLSA-mandated overtime premium pay deductible above-the-line. Same phaseout. Reported on Schedule 1.
+- **Auto loan interest deduction**: NEW under OBBBA §70203 — up to $10,000 of interest on a loan for a US-assembled passenger vehicle deductible above-the-line. Phases out $100k single / $200k MFJ. Reported on Schedule 1.
 
 ## 3. Filing status and dependents
 
@@ -352,7 +357,7 @@ Line 9 minus Line 10.
 | 7 | Unemployment compensation | 1099-G Box 1 |
 | 8a | Net operating loss | §172 |
 | 8b | Gambling winnings | W-2G; losses deductible only as itemized misc up to winnings under §165(d) |
-| 8c | Cancellation of debt | 1099-C — but check §108 exclusions (insolvency, qualified principal residence indebtedness extended under OBBBA §70405 through 2026, bankruptcy, qualified farm/real property business) |
+| 8c | Cancellation of debt | 1099-C — but check §108 exclusions (insolvency, qualified principal residence indebtedness — **NOT extended by OBBBA** (§70405 enhances the dependent-care credit, not QPRI), bankruptcy, qualified farm/real property business). The student-loan discharge exclusion under §108(f)(5) is **permanent under OBBBA §70119**. |
 | 8d | Foreign earned income exclusion | Form 2555 (NEGATIVE amount) — refer to `us-foreign-earned-income-2555` |
 | 8e | Income from Form 8853 (Archer MSA) | |
 | 8f | Income from Form 8889 (HSA distributions for non-medical) | |
@@ -380,7 +385,7 @@ Line 9 minus Line 10.
 
 | Line | Item | Notes |
 |---|---|---|
-| 11 | Educator expenses | Up to $300 for K-12 teachers, instructors, counselors who worked 900+ hours |
+| 11 | Educator expenses | OBBBA §70110 **removes the dollar limitation** (previously $300) — adds IRC §67(b)(13)/§67(g). Eligible educators now also include **interscholastic sports administrators and coaches**; deductible items now include **nonathletic supplies**. K-12 instructors/counselors who worked 900+ hours qualify. |
 | 12 | Business expenses for reservists, performing artists, fee-basis gov officials | Form 2106 |
 | 13 | HSA deduction | Form 8889 — 2025 limits: $4,300 self-only / $8,550 family, +$1,000 catch-up age 55+ |
 | 14 | Moving expenses | Active-duty military PCS only (TCJA §11049) |
@@ -446,10 +451,10 @@ Compare standard deduction (§2.1) against the sum of Schedule A items. The taxp
 - Line 7: Sum 5e + 6
 
 **Interest paid — Lines 8-10**:
-- Line 8a: Home mortgage interest from 1098 (acquisition debt up to **$750,000** post-12/15/2017 origination; **$1,000,000** grandfathered for older debt — §163(h)(3) as amended by TCJA, made permanent by OBBBA §70110)
+- Line 8a: Home mortgage interest from 1098 (acquisition debt up to **$750,000** post-12/15/2017 origination; **$1,000,000** grandfathered for older debt — §163(h)(3) as amended by TCJA, made permanent by OBBBA §70108)
 - Line 8b: Mortgage interest not on 1098 (seller-financed; report payee name, address, SSN/EIN)
 - Line 8c: Points not on 1098
-- Line 8d: Reserved (mortgage insurance premium deduction expired after 2021 and not reinstated by OBBBA)
+- Line 8d: Mortgage insurance premiums — **deductible as interest**. OBBBA §70108 amended IRC §163(h)(3)(F) so qualified mortgage insurance premiums are again treated as deductible mortgage interest; Line 8d is **no longer "Reserved."**
 - Line 8e: Sum
 - Line 9: Investment interest (Form 4952) — limited to net investment income
 - Line 10: Sum 8e + 9
@@ -457,14 +462,16 @@ Compare standard deduction (§2.1) against the sum of Schedule A items. The taxp
 > Home equity interest is deductible **only if proceeds used to buy, build, or substantially improve** the residence securing the loan (§163(h)(3)(F) post-TCJA). Cash-out for personal use is nondeductible.
 
 **Gifts to charity — Lines 11-14**:
-- Line 11: Cash contributions (limit: 60% of AGI for public charities under §170(b)(1)(G), made permanent by OBBBA §70203; 30% for non-cash to public; 20% for capital gain property to private foundations)
+- Line 11: Cash contributions (limit: 60% of AGI for public charities under §170(b)(1)(G); 30% for non-cash to public; 20% for capital gain property to private foundations)
 - Line 12: Other than cash (Form 8283 required if > $500; qualified appraisal if > $5,000)
 - Line 13: Carryover from prior year (5-year carryforward under §170(d))
 - Line 14: Total
 
+> **NEW 0.5%-of-AGI floor (OBBBA §70425; IRC §170(b)(1)(I)):** Only aggregate charitable contributions **exceeding 0.5% of AGI** are deductible. Example: a taxpayer with $100,000 AGI subtracts a $500 floor from total contributions before deducting. Apply this floor to the Line 14 total.
+
 > **AUDIT FLASH POINT — Charitable contributions outsized vs AGI:** A red flag is non-cash contributions over $5,000 without a qualified appraisal attached (Form 8283 Section B). The IRS DIF score weights charitable deductions relative to AGI heavily. For non-cash gifts of vehicles, refer to Pub 4303 and the contemporaneous written acknowledgment requirement under §170(f)(8). Conservation easements (§170(h)) and syndicated conservation easements are an enforcement priority — refer to a tax controversy specialist if encountered.
 
-**Casualty and theft losses — Line 15**: deductible only if loss is in a **federally declared disaster area** (§165(h)(5) post-TCJA, permanent under OBBBA §70112). Subject to $100 floor per event and 10% AGI floor. Form 4684.
+**Casualty and theft losses — Line 15**: OBBBA §70109 **expanded the deduction to include losses in a STATE-declared disaster area** (in addition to federally declared disasters) under §165(h)(5). Subject to $100 floor per event and 10% AGI floor. Form 4684.
 
 **Other itemized — Line 16**: gambling losses up to gambling winnings (§165(d)), federal estate tax on income in respect of a decedent (§691(c)), impairment-related work expenses, deduction for unrecovered investment in pension at death, amortizable bond premium on pre-10/23/86 taxable bonds.
 
@@ -472,7 +479,7 @@ Compare standard deduction (§2.1) against the sum of Schedule A items. The taxp
 
 ### 6.3 Pease limitation
 
-Pease (§68 overall limitation on itemized deductions) was suspended by TCJA and made **permanent** by OBBBA §70114. **No Pease limitation for 2025.**
+Pease (§68 overall limitation on itemized deductions) was suspended by TCJA; the §68 modification was made **permanent** by OBBBA §70111. **No Pease limitation for 2025.**
 
 ## 7. Line 12-15 — Standard/itemized deduction, QBI, taxable income
 
@@ -546,7 +553,7 @@ Acquired-date day excluded; sale-date day counted. To get long-term, sale must b
 
 ### 10.5 §1202 QSBS
 
-Up to 100% gain exclusion (post-9/27/2010 acquisitions held > 5 years) on $10M / 10× basis cap. Disqualified for FIRE (Finance Insurance Real Estate, etc.) businesses.
+For QSBS **acquired after July 4, 2025**, OBBBA §70431 (IRC §1202(a)) replaces the flat 5-year rule with a **phased exclusion**: **50%** if held **≥ 3 years**, **75%** if held **≥ 4 years**, **100%** if held **≥ 5 years**. The per-issuer cap rises to **$15 million** and the aggregate gross asset test rises to **$75 million**. Disqualified for FIRE (Finance Insurance Real Estate, etc.) businesses. (QSBS acquired on or before July 4, 2025 remains under prior law — flat 100% exclusion after 5 years, $10M / 10× basis cap.)
 
 ### 10.6 §121 home sale exclusion
 
@@ -590,7 +597,7 @@ For MAGI: add back foreign earned income exclusion. Otherwise MAGI ≈ AGI for m
 | 5b | Energy efficient home improvement credit (§25C) | Form 5695 — **OBBBA accelerated termination flag** | — |
 | 6 | Other nonrefundable credits | various | — |
 | 6a | General business credit | Form 3800 | — |
-| 6b | Adoption credit | Form 8839 ($17,280 in 2025, Rev. Proc. 2024-40) | — |
+| 6b | Adoption credit | Form 8839 ($17,280 in 2025, Rev. Proc. 2024-40; up to $5,000 now refundable under OBBBA §70402) | — |
 | 6c | DC first-time homebuyer (legacy) | — | — |
 | 6d | Mortgage interest credit | Form 8396 | — |
 | 6e | Plug-in electric vehicle credit (§30D personal use) | Form 8936 — **OBBBA termination 9/30/2025, see §2.9** | — |
@@ -620,14 +627,14 @@ For MAGI: add back foreign earned income exclusion. Otherwise MAGI ≈ AGI for m
 
 | Credit | Refundable? | Cap 2025 | Phaseout begins (MFJ) |
 |---|---|---|---|
-| Child Tax Credit (CTC) | Partially ($1,700 ACTC) | $2,000/child <17 | $400,000 |
+| Child Tax Credit (CTC) | Partially ($1,700 ACTC) | $2,200/child <17 (OBBBA §70104) | $400,000 |
 | Credit for Other Dependents (ODC) | No | $500/dependent | $400,000 |
 | Earned Income Credit (EITC) | Yes | $649 – $8,046 by # kids | varies by household |
 | Child & Dependent Care | No | $3,000 / $6,000 expenses × 20-35% | $43,000 (rate drops to 20%) |
 | AOTC | 40% refundable | $2,500 (100% first $2k + 25% next $2k) | $160k MFJ ($80k other) |
 | LLC | No | $2,000 (20% of $10k) | $160k MFJ ($80k other) |
 | Saver's Credit | No | $1,000 ($2,000 MFJ) | $79,000 MFJ |
-| Adoption Credit | No (refundable portion under OBBBA §70302 if §36C(a)(2) election) | $17,280 | $259,190 |
+| Adoption Credit | Partially — up to **$5,000 refundable** under OBBBA §70402 (IRC §23(a)(4)); no "36C" election required | $17,280 | $259,190 |
 | Residential Clean Energy (§25D) | No | 30% of qualified spend | none — but OBBBA terminated for property placed in service after 12/31/2025; flag |
 | EV Credit (§30D) | No (transferable at point of sale) | $7,500 new / $4,000 used | $300k MFJ income / $80k MSRP — OBBBA terminated 9/30/2025 |
 
@@ -723,7 +730,7 @@ Rental real estate losses are generally passive. Up to **$25,000** of rental los
 
 ### 17.7 §461(l) excess business loss
 
-For 2025: excess business loss disallowed when business losses exceed business income by more than **$313,000** ($626,000 MFJ) — these thresholds indexed per Rev. Proc. 2024-40. Disallowed amount becomes part of NOL carryforward to next year. OBBBA §70205 made §461(l) permanent.
+For 2025: excess business loss disallowed when business losses exceed business income by more than **$313,000** ($626,000 MFJ) — these thresholds indexed per Rev. Proc. 2024-40. Disallowed amount becomes part of NOL carryforward to next year. OBBBA §70601 made the §461(l) limitation permanent; note the threshold figures now index to the **new 2024 base year** under §70601(b).
 
 ## 18. Common errors checklist
 
@@ -967,8 +974,8 @@ NIIT check: AGI $72,300 < $200k — none. RMD check: Walter is 73, RMD age (73 u
 
 ### 20.1 Primary authority
 
-- **Internal Revenue Code** (Title 26 USC): §§1, 1(g), 1(h), 1(j), 2, 24, 25A, 25D, 30D, 32, 55, 56, 57, 63, 68, 86, 121, 151, 152, 162, 163, 164, 165, 170, 172, 183, 199A, 213, 408, 411, 469, 691, 877A, 1091, 1202, 1211, 1250, 1402, 1411
-- **OBBBA (One Big Beautiful Bill Act, P.L. 119-21)**: §70101 (rate permanence), §70110 (mortgage cap permanence), §70112 (casualty loss), §70113 (misc itemized suspension permanent), §70114 (Pease permanent), §70201 (QBI 23% in 2026), §70203 (60% charity limit permanent), §70205 (§461(l) permanent), §70301 (CTC permanence), §70302 (adoption credit), §70401 ($40k SALT cap 2025-2029), §70405 (§108 QPRI extension), §70501 (§25D termination), §70502 (§30D / §25E termination), §70601 (tip deduction), §70602 (overtime deduction), §70603 (auto loan interest)
+- **Internal Revenue Code** (Title 26 USC): §§1, 1(g), 1(h), 1(j), 2, 23, 24, 25A, 25D, 25E, 30D, 32, 55, 56, 57, 63, 67, 68, 86, 121, 151, 152, 162, 163, 164, 165, 170, 172, 183, 199A, 213, 408, 411, 469, 691, 877A, 1091, 1202, 1211, 1250, 1402, 1411
+- **OBBBA (One Big Beautiful Bill Act, P.L. 119-21)**: §70101 (rate permanence), §70102 (standard deduction / additional standard deduction), §70104 (CTC $2,200 permanence), §70105 (§199A QBI — stays 20%, phase-in threshold + $400 minimum), §70108 (mortgage cap permanence; §163(h)(3)(F) mortgage insurance deductible), §70109 (casualty loss — state-declared disasters), §70110 (educator expenses — dollar limitation removed), §70111 (Pease / §68 permanent), §70113 (misc itemized suspension permanent), §70119 (student-loan discharge exclusion permanent), §70120 ($40k SALT cap + phase-down), §70201 (tip deduction), §70202 (overtime deduction), §70203 (auto loan interest), §70402 (adoption credit — up to $5,000 refundable), §70405 (dependent-care credit enhancement; NOT QPRI), §70425 (0.5%-of-AGI charitable floor), §70431 (§1202 QSBS phased exclusion), §70502 (§30D / §25E termination), §70506 (§25D termination), §70601 (§461(l) permanent)
 - **TCJA (Tax Cuts and Jobs Act, P.L. 115-97)**: §11045 (misc itemized suspension), §11049 (moving expense), §11051 (alimony)
 - **SECURE 2.0 Act (Division T of Consolidated Appropriations Act, 2023)**: §107 (RMD age), §302 (RMD penalty reduction)
 - **Inflation Reduction Act (P.L. 117-169)**: §13301 (§25C/§25D pre-OBBBA), §13401 (§30D pre-OBBBA)
@@ -1012,7 +1019,7 @@ The reviewer must confirm:
 6. Additional Medicare Tax (Form 8959) reconciled to W-2 Box 6 + 1099 withholding.
 7. AMT (Form 6251) at least run mentally for ISO exercises, large PAB interest, or high LTCG with ordinary AMTI in phaseout.
 8. Schedule B questions Part III answered correctly (foreign account, foreign trust).
-9. SALT phaseout (OBBBA §70401(b)) applied if MAGI > $500k.
+9. SALT phaseout (OBBBA §70120) applied if MAGI > $500k.
 10. §25D / §30D OBBBA termination dates verified for any 2025 credit claim.
 11. Kiddie tax Form 8615 for dependents with unearned income > $2,700.
 12. RMD satisfied for taxpayers age 73+ (§401(a)(9), §4974); 25% / 10% penalty on Form 5329 if not.
@@ -1054,3 +1061,9 @@ verified rules together with the name of the accountant who signed them off.
 
 **→ Install the free connector:** <https://www.openaccountants.com/connect>
 **MCP endpoint:** `https://www.openaccountants.com/api/mcp`
+
+---
+
+## Changelog
+
+- **2026-07-04** — OBBBA corrections applied from an in-progress review by Christopher Aryee, CPA: SALT §70120 + phase-down, §199A stays 20%, CTC §70104, §25D §70506, tips/overtime/auto §70201–203, 2026 standard deduction, educator expenses uncapped, mortgage insurance deductible, 0.5% charitable floor, state-disaster casualty losses, Pease §70111, §1202 phased exclusion, adoption credit refundable, §461(l) §70601.

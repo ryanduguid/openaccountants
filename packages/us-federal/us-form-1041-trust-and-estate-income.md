@@ -5,7 +5,8 @@ jurisdiction: US
 category: federal-tax
 tier: 2
 verified_by: pending
-last_updated: 2025-11-15
+reviewed_by: Christopher Aryee, CPA
+last_updated: 2026-07-04
 version: 0.1
 ---
 
@@ -15,6 +16,8 @@ version: 0.1
 > (Enrolled Agent, CPA, attorney) reviews and signs every 1041 before it reaches the
 > fiduciary or the IRS. Where computations interact with state fiduciary income tax,
 > defer to a state-level skill — the federal mechanics here are the input layer.
+
+> **OBBBA update (2026):** Rates, thresholds, and statutory citations in this Guide were corrected against the One Big Beautiful Bill Act following a professional review by **Christopher Aryee, CPA**.
 
 ---
 
@@ -317,6 +320,11 @@ Compare to single individual 2025: 37% top rate starts at $626,350 of taxable in
 
 An estate or trust hits the 37% bracket at $15,650 — 1/40th of the threshold for a
 single individual.
+
+> **Comparison figure — standard deduction (2025).** The 2025 single standard deduction
+> is **$15,750** (OBBBA §70102; IRC §63(c)). Note that trusts and estates get **no**
+> standard deduction — a fiduciary's only equivalent is the §642(b) exemption ($600
+> estate / $300 simple trust / $100 complex trust; see §12).
 
 ### 6.2 The 2025 Long-Term Capital Gain / Qualified Dividend Schedule (§1(h))
 
@@ -750,12 +758,32 @@ Note that §67(e) was held in Knight v. Commissioner (552 U.S. 181 (2008)) and t
 TCJA-era regulations to permit deduction of fiduciary fees and other "uniquely
 fiduciary" expenses on the 1041 above-the-line, NOT subject to the §67(g) suspension
 of miscellaneous itemized deductions. Investment advisory fees, however, are NOT
-uniquely fiduciary and remain suspended under §67(g) for 2018–2025.
+uniquely fiduciary and remain suspended under §67(g).
+
+> **OBBBA update — §67(g) suspension is now PERMANENT.** The suspension of miscellaneous
+> itemized deductions (originally the TCJA 2018–2025 window) was made **permanent** by
+> OBBBA for tax years after Dec 31, 2025 (OBBBA §70110; IRC §67(g)). These deductions do
+> **NOT** return in 2026 as previously scheduled under the TCJA sunset. Investment
+> advisory fees and other non-"uniquely-fiduciary" expenses stay non-deductible on the
+> 1041 going forward; the §67(e) uniquely-fiduciary above-the-line treatment (Knight)
+> is unaffected.
 
 ### 15.2 Partial Allocation Allowed
 
 The election can be made item-by-item — e.g. deduct attorney fees on 1041 and executor
 commissions on 706 — provided each item is wholly assigned to one or the other.
+
+### 15.3 OBBBA SALT Deduction Cap Increase — Effect on Fiduciary Taxable Income and DNI
+
+For tax years beginning after **Dec 31, 2024**, OBBBA raised the cap on individual state
+and local tax (SALT) deductions from **$10,000 to $40,000** (**$20,000 for married filing
+separately**), scheduled to run **through 2029** (OBBBA §70120; IRC §164(b)(6)–(7)). For a
+fiduciary that itemizes deductible state and local taxes on Form 1041, the higher cap can
+increase the estate's or trust's allowable SALT deduction, which reduces **taxable income**
+and, through it, **Distributable Net Income (DNI)** — flowing a smaller amount of taxable
+income out to beneficiaries on their K-1s. Model the cap when a fiduciary carries material
+state and local tax; the interaction with DNI (§7) changes both the entity's tax and the
+beneficiaries' K-1 amounts.
 
 ---
 
@@ -878,6 +906,13 @@ phaseout — for 2025, the trust/estate AMT exemption is approximately $30,700 w
 phaseout beginning at approximately $102,500 (figures indexed annually; verify against
 Rev. Proc. 2024-40 or the 2025 instructions to Form 1041 Schedule I).
 
+> **OBBBA / verification note.** These 2025 figures ($30,700 exemption; $102,500
+> phase-out) are estimates and should be **verified against the final 2025 Form 1041
+> Schedule I instructions**. OBBBA (§70107; IRC §55(d)(4)) **permanently extended** the
+> increased AMT exemption and phase-out, with new inflation-adjustment and phase-out-rate
+> modifications taking effect from Jan 1, 2026 — so 2026-onward figures follow the
+> revised OBBBA mechanics, not a TCJA sunset.
+
 ### 19.3 Intangible Drilling Costs, Depletion
 
 Trusts and estates pass through depreciation, depletion, and amortization directly
@@ -891,9 +926,12 @@ A non-grantor trust is treated as a separate taxpayer for §199A QBI purposes. T
 gets its own QBI deduction (up to 20% of QBI) on its own retained QBI income. To the
 extent QBI flows out via K-1, the beneficiary takes the QBI deduction on her own 1040.
 The §199A thresholds for trusts are the single-individual amounts — i.e. trust hits the
-phaseout at the single threshold (~$241,950 for 2025 indexed). This is one of the few
-places trusts do NOT face compressed brackets; the §199A thresholds are at individual
-levels.
+phaseout at the single (non-joint) threshold. For **2025** that threshold is **$197,300**,
+with a **$50,000 phase-out range** for non-joint filers (fully out at **$247,300**) —
+NOT ~$241,950, which is the 2024 figure (Rev. Proc. 2024-40; IRC §199A). Starting **2026**,
+OBBBA (§70105) **raises the phase-in threshold to $75,000 ($150,000 joint)**. This is one
+of the few places trusts do NOT face compressed brackets; the §199A thresholds are at
+individual levels.
 
 Caveat — anti-abuse rules under Reg. §1.643(f)-1 disregard trusts created principally
 to avoid federal income tax, including for §199A purposes.
@@ -1308,6 +1346,9 @@ beneficiaries' marginal brackets can be precisely estimated.
       filed if needed.
 - [ ] §642(g) election filed on 1041 (in writing) if administrative expenses claimed
       on 1041 — 706 deduction waived for those items.
+- [ ] SALT deduction cap applied at the OBBBA amount — $40,000 ($20,000 MFS) for tax
+      years after Dec 31, 2024 through 2029 (was $10,000), if the fiduciary itemizes
+      state/local taxes on 1041; remember it reduces taxable income and DNI (§15.3).
 - [ ] §691 IRD items identified, included on 1041 income, basis NOT stepped up.
 - [ ] §691(c) deduction computed if 706 was filed and IRD was in gross estate.
 - [ ] K-1s issued to each beneficiary with character allocated pro rata to DNI
@@ -1426,3 +1467,9 @@ verified rules together with the name of the accountant who signed them off.
 
 **→ Install the free connector:** <https://www.openaccountants.com/connect>
 **MCP endpoint:** `https://www.openaccountants.com/api/mcp`
+
+---
+
+## Changelog
+
+- **2026-07-04** — OBBBA corrections applied from a review by Christopher Aryee, CPA: SALT $40k cap + DNI impact, QBI 2025 threshold $197,300, permanent §67(g) suspension, standard deduction $15,750, fiduciary AMT verification note.
