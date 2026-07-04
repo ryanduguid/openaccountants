@@ -2,3 +2,5 @@ skills/.claude/
 contrib/
 .DS_Store
 **/.DS_Store
+tools/workbooks/out/
+__pycache__/

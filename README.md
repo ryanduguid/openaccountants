@@ -1,62 +1,89 @@
-[![smithery badge](https://smithery.ai/badge/info-ood9/openaccountants)](https://smithery.ai/servers/info-ood9/openaccountants)
-
 # OpenAccountants
 
-**The open-source tax layer for AI agents.**
+**The open-source tax layer for AI agents.** Tax Guides your AI can cite, reviewed by named accounting professionals.
 
-1,000+ skills across 190+ jurisdictions — research-verified, with an accountant-verified tier signed off by named CPAs/CAs/EAs. Works with Claude, ChatGPT, Cursor, Windsurf, and any MCP-compatible agent.
+[![License: AGPL-3.0](https://img.shields.io/badge/license-AGPL--3.0-047857)](LICENSE)
+[![PyPI](https://img.shields.io/pypi/v/openaccountants-mcp?label=openaccountants-mcp&color=047857)](https://pypi.org/project/openaccountants-mcp/)
+[![smithery badge](https://smithery.ai/badge/info-ood9/openaccountants)](https://smithery.ai/servers/info-ood9/openaccountants)
+[![GitHub stars](https://img.shields.io/github/stars/openaccountants/openaccountants?style=social)](https://github.com/openaccountants/openaccountants/stargazers)
 
----
+1,000+ Guides across 190+ jurisdictions. Works with **Claude, ChatGPT, Cursor, Windsurf, and any MCP-compatible agent**. Every Guide is either a **source-cited draft** (written from primary legislation, every figure cited) or **accountant-reviewed** (a licensed Partner checked the complete Guide, and their name is on it).
 
-> ⚠️ **General reference only — not advice.** OpenAccountants provides general tax and accounting reference material for AI-assisted workflows. It is **not** a law firm, accounting firm, tax preparer, or return-filing service, and its outputs are **not** tax, legal, accounting, or financial advice. Skills may be incomplete, outdated, or wrong, and are not reviewed for any specific person's facts, elections, deadlines, residency, or local procedures. Always have a qualified professional review outputs before filing, payment, or action. *Research-verified* skills have **not** been reviewed by a credentialed accountant.
+> 🔍 **Real professional review, in public.** In July 2026, Christopher Aryee, CPA reviewed our four core US federal form Guides against the One Big Beautiful Bill Act and returned **33 sourced corrections** (rates, thresholds, statutory citations). The full red-line is public: [see the diff →](https://github.com/openaccountants/openaccountants/pull/45/files) That loop (a named professional publicly correcting the tax data your AI relies on) is the whole point of this project.
+
+⚠️ **General reference only, not advice.** Have a qualified professional review outputs before filing, payment, or action. <details><summary>Read the full disclaimer</summary>
+
+> OpenAccountants provides general tax and accounting reference material for AI-assisted workflows. It is **not** a law firm, accounting firm, tax preparer, or return-filing service, and its outputs are **not** tax, legal, accounting, or financial advice. Guides may be incomplete, outdated, or wrong, and are not reviewed for any specific person's facts, elections, deadlines, residency, or local procedures. Always have a qualified professional review outputs before filing, payment, or action. A *source-cited draft* has **not** been reviewed by a credentialed accountant.
+</details>
 
 ---
 
 ## What it does
 
-```
-You:    "I want to file my VAT return in Brazil."
-          ↓  OA loads br-indirect-tax, brazil-vat, brazil-einvoice
-AI:     Brazil indirect tax rules (PIS/COFINS/ICMS)
-        Filing workflow, step-by-step
-        Required documents checklist
-        E-invoice compliance check
-        ─────────────────────────────────────────
-        Verified by Ariane Marrocos CRC/SP
-        [Request accountant review →]
-```
+![Your AI answering a Brazilian VAT question with a named reviewing accountant](assets/demo.svg)
 
 ```
 You:    "I'm a freelancer in South Africa. What do I owe?"
           ↓  OA loads za-income-tax, za-provisional-tax
 AI:     ITR12 working paper
-        Provisional tax schedule (IRP6 — Aug + Feb)
+        Provisional tax schedule (IRP6, Aug + Feb)
         Medical tax credits
         Retirement annuity deduction
         ─────────────────────────────────────────
-        Verified by Werner Britz CA(SA)
+        Reviewed by Werner Britz CA(SA)
         [Request accountant review →]
 ```
 
-```
-You:    "Help me set up a company in Malta."
-          ↓  OA loads malta-formation, malta-income-tax, malta-vat-return
-AI:     Entity type comparison (Ltd vs partnership vs sole trader)
-        Registration steps + costs
-        Post-formation compliance checklist
-        ─────────────────────────────────────────
-        Verified by Michael Cutajar CPA (Malta)
-        [Request accountant review →]
-```
+**[Add to your AI →](https://www.openaccountants.com/connect)**   |   **[Browse Guides →](https://www.openaccountants.com/skills)**   |   **[Become a Partner →](https://www.openaccountants.com/for-accountants)**
 
 ---
 
-**[Install via MCP →](https://www.openaccountants.com/connect)**   |   **[Browse skills →](https://www.openaccountants.com/skills)**   |   **[For accountants →](https://www.openaccountants.com/for-accountants)**
+## Install in 60 seconds
+
+**Hosted (1 step, always current):** add the OpenAccountants connector to your AI at [openaccountants.com/connect](https://www.openaccountants.com/connect), or point any MCP client at:
+
+```
+https://www.openaccountants.com/api/mcp
+```
+
+**Local (2 steps, no clone needed):** the PyPI package ships with all Guides bundled.
+
+```bash
+pip install openaccountants-mcp     # or: uvx openaccountants-mcp
+```
+
+```json
+{ "mcpServers": { "openaccountants": { "command": "openaccountants-mcp" } } }
+```
+
+Works in Claude Desktop (`claude_desktop_config.json`), Cursor (`.cursor/mcp.json`), Claude Code, Windsurf, and any MCP-aware client. Full setup and env vars: [mcp/README.md](mcp/README.md).
+
+**Manual (no MCP):** download a folder from [`packages/`](packages/) and drag the `.md` files into your AI. Read [START-HERE.md](START-HERE.md) for scenarios and what to say.
 
 ---
 
-**Verified accountants:**
-Werner Britz CA(SA) · Michael Cutajar CPA (Malta) · Ariane Marrocos CRC/SP · James Power (UK) · Mayur Deokar CA (India) · Rilia Putri CA (Indonesia) · Ashish Bista CA (Nepal) · Mário Vale CA (Portugal) · Mehran Habib (Saudi Arabia) · Amir Pelinkovic CPA (US)
+## Partners: the named professionals behind the Guides
+
+These licensed practitioners have reviewed Guides for their jurisdictions. Their name appears on every answer the AI gives from a Guide they reviewed, and their reviews are public.
+
+| Jurisdiction | Partner | Guides | Proof |
+|---|---|---|---|
+| United States (federal forms) | **Christopher Aryee, CPA** | 4 | [33 OBBBA corrections, full diff](https://github.com/openaccountants/openaccountants/pull/45/files) |
+| United States | Amir Pelinkovic CPA | 16 | [profile](https://www.openaccountants.com/network/752ee18a-3843-434d-8426-457d3fa9706f) |
+| United Kingdom | James Power | 15 | [profile](https://www.openaccountants.com/network/30b2f478-3a97-40c4-b435-0678829b487e) |
+| India | Mayur Deokar CA | 13 | [profile](https://www.openaccountants.com/network/f4cb8476-a86d-4fd9-b536-9217e82ccf99) |
+| Indonesia | Rilia Putri CA | 10 | [profile](https://www.openaccountants.com/network/ec70d43e-18c0-4b4e-b92c-4f8a22e10152) |
+| Brazil | Ariane Marrocos CRC/SP | 9 | [profile](https://www.openaccountants.com/network/366f5c0f-1afb-4332-b87b-9b6f912821aa) |
+| Portugal | Mário Vale CA | 9 | [profile](https://www.openaccountants.com/network/a26a63b7-343c-451b-8266-bb9d28bd7089) |
+| Saudi Arabia | Mehran Habib | 9 | [profile](https://www.openaccountants.com/network/f9dbab51-2b89-451b-98f2-414b48fb4599) |
+| South Africa | Werner Britz CA(SA) | 5 | [profile](https://www.openaccountants.com/network/28a3ec1b-d699-4c5d-bb60-3114eedc59d0) |
+| Malta | Michael Cutajar CPA (Malta) | 5 | [profile](https://www.openaccountants.com/network) |
+| Nepal | Ashish Bista CA | 5 | [profile](https://www.openaccountants.com/network/78ab67db-8f29-4746-8102-7b52d17309aa) |
+| **Your jurisdiction** | Open (130+ still unclaimed) | — | [Become a Partner →](https://www.openaccountants.com/for-accountants) |
+
+> Accountant-reviewed Guides (Tier 1) are served via the MCP server with the Partner's name on every output. Guides in this repo that no Partner has reviewed yet are source-cited drafts (Tier 2).
+
+Licensed accountant? Review a complete Guide for your jurisdiction and your name goes on it, publicly and permanently. [Start here.](https://www.openaccountants.com/for-accountants)
 
 ---
 
@@ -64,16 +91,16 @@ Werner Britz CA(SA) · Michael Cutajar CPA (Malta) · Ariane Marrocos CRC/SP · 
 
 | | MCP connector *(recommended)* | Manual upload from this repo |
 |---|---|---|
-| **What you get** | Accountant-verified skills, named-verifier attribution on every answer, AI-to-human handoff (`request_accountant_review` routes to a real CPA with your worksheet attached) | Research-verified drafts only — no verifier name, no handoff |
-| **How** | Install once at [openaccountants.com/connect](https://www.openaccountants.com/connect) | Download a folder, drag `.md` files into your LLM |
+| **What you get** | Accountant-reviewed Guides, the reviewing Partner's name on every answer, AI-to-human handoff (`request_accountant_review` routes to a real accountant with your worksheet attached) | Source-cited drafts, no reviewer attribution, no handoff |
+| **How** | [openaccountants.com/connect](https://www.openaccountants.com/connect), or the install above | Download a folder, drag `.md` files into your AI |
 | **Best for** | Anyone who wants to actually use OpenAccountants | Developers and accountants who want to audit, fork, or contribute |
-| **Clients** | Claude.ai, ChatGPT (Business+), Cursor, Windsurf, Claude Desktop, Claude Code, any MCP-aware client | Any LLM that reads files |
+| **Clients** | Claude.ai, ChatGPT (Business+), Cursor, Windsurf, Claude Desktop, Claude Code, any MCP-aware client | Any AI that reads files |
 
-**The MCP path is the canonical product.** This repo is the open research base that backs it.
+**This repo is the public record.** Every rate, every review, every correction is auditable here, in the open, with git history. The hosted MCP serves the same content plus the live review layer.
 
 ---
 
-## Quick start (60 seconds)
+## Quick start (manual path)
 
 ### 1. Find your jurisdiction
 
@@ -84,24 +111,21 @@ packages/
 ├── germany/         ← Einkommensteuer + UStVA + payroll (fullest package)
 ├── brazil/          ← IRPF + PIS/COFINS + e-invoice + payroll
 ├── south-africa/    ← ITR12 + VAT + provisional tax
+├── us-federal/      ← 1040 / 1120 / 1065 / 1041 form guides (CPA-reviewed, OBBBA-current)
 ├── ... 130+ more countries
 ├── us-ca/           ← Federal Schedule C/SE + California state
-├── us-ny/           ← Federal + New York state
 ├── ... 51 US state packages
 ├── ca-on/           ← Federal T1/T2125 + Ontario
-├── ca-qc/           ← Federal + Quebec (incl. QST)
 ├── ... 13 Canadian province/territory packages
 ```
 
-**New here?** Read [START-HERE.md](START-HERE.md) — scenarios, file lists, what to say to the AI.
-
-**Canadian packages:** if `ca-on/`, `ca-qc/` etc. are missing, run `python3 scripts/build-packages.py` once.
+**New here?** Read [START-HERE.md](START-HERE.md): scenarios, file lists, what to say to the AI. The full machine-readable inventory of every Guide is [`index.json`](index.json).
 
 ### 2. Upload to your AI
 
 - **Claude.ai** → Create a Project, add files as Project Knowledge
 - **ChatGPT** → Attach files or create a Custom GPT
-- **Any other LLM** → Attach or paste the files
+- **Any other AI** → Attach or paste the files
 
 ### 3. Go
 
@@ -110,33 +134,11 @@ Help me with my 2025 taxes. Here's my bank statement.
 Help me set up a company in Malta.
 Run my payroll for this month.
 Prepare my annual accounts.
-Optimize my tax — what deductions am I missing?
+Optimize my tax. What deductions am I missing?
 Check my invoice compliance for EU e-invoicing.
 ```
 
-The AI asks a few questions, loads the right skills, and produces a working paper for your accountant.
-
----
-
-## Verified accountants
-
-These licensed practitioners have reviewed and signed off skills for their jurisdictions. Their name appears on every answer the AI gives.
-
-| Jurisdiction | Verifier | Skills | Profile |
-|---|---|---|---|
-| South Africa | Werner Britz CA(SA) | 5 | [profile](https://www.openaccountants.com/network/28a3ec1b-d699-4c5d-bb60-3114eedc59d0) |
-| Malta | Michael Cutajar CPA (Malta) | 5 | [profile](https://www.openaccountants.com/network) |
-| Brazil | Ariane Marrocos CRC/SP | 9 | [profile](https://www.openaccountants.com/network/366f5c0f-1afb-4332-b87b-9b6f912821aa) |
-| United Kingdom | James Power | 15 | [profile](https://www.openaccountants.com/network/30b2f478-3a97-40c4-b435-0678829b487e) |
-| India | Mayur Deokar CA | 13 | [profile](https://www.openaccountants.com/network/f4cb8476-a86d-4fd9-b536-9217e82ccf99) |
-| Indonesia | Rilia Putri CA | 10 | [profile](https://www.openaccountants.com/network/ec70d43e-18c0-4b4e-b92c-4f8a22e10152) |
-| Nepal | Ashish Bista CA | 5 | [profile](https://www.openaccountants.com/network/78ab67db-8f29-4746-8102-7b52d17309aa) |
-| Portugal | Mário Vale CA | 9 | [profile](https://www.openaccountants.com/network/a26a63b7-343c-451b-8266-bb9d28bd7089) |
-| Saudi Arabia | Mehran Habib | 9 | [profile](https://www.openaccountants.com/network/f9dbab51-2b89-451b-98f2-414b48fb4599) |
-| United States | Amir Pelinkovic CPA | 16 | [profile](https://www.openaccountants.com/network/752ee18a-3843-434d-8426-457d3fa9706f) |
-| Germany, Australia, Canada | Verification in progress | — | [Claim a jurisdiction →](https://www.openaccountants.com/onboarding/accountant) |
-
-> Verified skills (Tier 1) are served via the MCP server with the verifier's name on every output. The research drafts in this repo are Tier 2.
+The AI asks a few questions, loads the right Guides, and produces a working paper for your accountant.
 
 ---
 
@@ -144,7 +146,7 @@ These licensed practitioners have reviewed and signed off skills for their juris
 
 | File | What it does |
 |------|-------------|
-| `foundation.md` | Tells the AI how to work — conservative defaults, output format, classification rules |
+| `foundation.md` | Tells the AI how to work: conservative defaults, output format, classification rules |
 | `intake.md` | Onboarding questions, refusal checks, document inference |
 | `[country]-income-tax.md` | Income tax brackets, deductions, transaction patterns |
 | `[country]-vat.md` | VAT/GST/sales tax rules, supplier patterns, form mappings |
@@ -159,7 +161,7 @@ These licensed practitioners have reviewed and signed off skills for their juris
 | `[country]-guided-intake.md` | Full guided experience (13 countries) |
 | `[country]-return-assembly.md` | Cross-checks: VAT × IT × SSC (13 countries) |
 
-**Special packages:** `_cross-border/` (37 skills) · `_verticals/` (14 industry skills) · `_integrations/` (10 platform skills: Xero, QuickBooks, Stripe, Wise, Shopify, and more)
+**Special packages:** `_cross-border/` (37 skills) · `_verticals/` (14 industry skills) · `_integrations/` (10 platform skills: Xero, QuickBooks, Stripe, Wise, Shopify, and more) · `us-federal/` (US federal form guides + machine-readable `rates.2025.json` / `rates.2026.json`)
 
 ---
 
@@ -185,15 +187,15 @@ Malta, UK, Germany, France, Australia, Canada, Israel, India, Japan, Spain, Neth
 
 Consumption tax classification with local supplier pattern libraries. From Albania to Zimbabwe.
 
-Full coverage breakdown: [docs/QUALITY-TIERS.md](docs/QUALITY-TIERS.md)
+Full coverage breakdown: [docs/QUALITY-TIERS.md](docs/QUALITY-TIERS.md) · Machine-readable: [`index.json`](index.json)
 
 ---
 
-## How the skills work
+## How the Guides work
 
 ### The supplier pattern library
 
-Every skill contains a lookup table of local vendors. When the AI sees "BANK OF VALLETTA" or "DEUTSCHE TELEKOM" or "STRIPE PAYMENTS UK LTD" on your bank statement, it already knows the classification — no guessing.
+Every Guide contains a lookup table of local vendors. When the AI sees "BANK OF VALLETTA" or "DEUTSCHE TELEKOM" or "STRIPE PAYMENTS UK LTD" on your bank statement, it already knows the classification. No guessing.
 
 ### Three outcomes per transaction
 
@@ -209,69 +211,19 @@ When uncertain, the system always assumes MORE tax, never less. Your accountant 
 
 ---
 
-## MCP server
-
-Install once, configure once — every future conversation pulls the right skills automatically.
-
-```
-You:    "Help me set up a company in Germany and understand payroll"
-          ↓
-Claude: list_jurisdictions → sees "germany"
-        get_skill("germany-formation") → entity types, registration, costs
-        get_skill("germany-payroll") → PAYE, social security, employer obligations
-          ↓
-Claude: walks you through entity choice, registration steps, payroll setup
-```
-
-### Install
-
-```bash
-git clone https://github.com/openaccountants/openaccountants.git
-cd openaccountants
-pip install ./mcp          # requires Python 3.10+
-```
-
-### Connect
-
-**Claude Desktop** — add to `claude_desktop_config.json`:
-```json
-{
-  "mcpServers": {
-    "openaccountants": {
-      "command": "openaccountants-mcp"
-    }
-  }
-}
-```
-
-**Cursor** — add to `.cursor/mcp.json` or via Settings > MCP:
-```json
-{
-  "mcpServers": {
-    "openaccountants": {
-      "command": "openaccountants-mcp"
-    }
-  }
-}
-```
-
-Full setup, `uv` instructions, environment variables: [mcp/README.md](mcp/README.md)
-
----
-
 ## Are you an accountant?
 
-Most skills are research-verified — drafted from primary legislation but awaiting a credentialed sign-off. Your review moves them to accountant-verified, and your name goes on every answer the AI gives.
+Most Guides are source-cited drafts: written from primary legislation but awaiting a credentialed review. Become a **Partner** for your jurisdiction, review a complete Guide, and it becomes accountant-reviewed with your name on every answer the AI gives from it. Christopher Aryee's [33-correction OBBBA review](https://github.com/openaccountants/openaccountants/pull/45/files) is what that looks like in practice.
 
 **You don't need GitHub.** Just:
 
-1. Find your country's folder under `packages/`
-2. Check rates against your tax authority's website
-3. Email corrections to **info@openaccountants.com** — any format works
+1. Apply at [openaccountants.com/for-accountants](https://www.openaccountants.com/for-accountants) (credentials reviewed in 1–2 business days)
+2. Open a Guide in your review queue, check every figure against the sources
+3. Approve it or return sourced corrections. Either way your review is on the record
 
-Or: fork, fix, PR. **Your name on the skill either way.**
+Or: fork, fix a rate against your tax authority's guidance, PR. **Your name on the Guide either way.**
 
-> 130+ countries need accountant reviewers. Pick yours at [openaccountants.com/for-accountants](https://www.openaccountants.com/for-accountants).
+> 130+ jurisdictions are still open for a Partner. [Claim yours →](https://www.openaccountants.com/for-accountants)
 
 ---
 
@@ -279,16 +231,18 @@ Or: fork, fix, PR. **Your name on the skill either way.**
 
 | What | How | Impact |
 |------|-----|--------|
-| **Verify a rate** | Check a number against your tax authority, open a PR | Strengthens a research-verified skill |
+| **Check a rate** | Check a number against your tax authority, open a PR | Strengthens a source-cited draft |
 | **Fix an error** | Find a wrong rate or outdated threshold, submit the correction | Prevents bad working papers |
 | **Add bank patterns** | Add how transactions appear on your local bank statement | Fewer misclassifications for every user in your country |
-| **Add a tax skill** | Write an income tax, VAT, or SSC skill for your country | Fills a gap for every user in that jurisdiction |
-| **Add a domain skill** | Bookkeeping, payroll, formation, financial statements, TP, or crypto | Expands the full accounting suite for your jurisdiction |
-| **Add an industry vertical** | Vertical-specific guidance for a profession or business type | Targeted help for that industry |
+| **Add a tax Guide** | Write an income tax, VAT, or SSC Guide for your country | Fills a gap for every user in that jurisdiction |
+| **Add a domain Guide** | Bookkeeping, payroll, formation, financial statements, TP, or crypto | Expands the full accounting suite for your jurisdiction |
+| **Add structured rates** | Extend `rates.YYYY.json` to your jurisdiction | Unlocks programmatic/computational use |
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for the full guide. Every contributor is credited publicly on the skill and at [openaccountants.com](https://openaccountants.com).
+See [CONTRIBUTING.md](CONTRIBUTING.md) for the full guide and [docs/REPO-LAYOUT.md](docs/REPO-LAYOUT.md) for which file to edit. Every contributor is credited publicly on the Guide and at [openaccountants.com](https://openaccountants.com).
 
 **Pull requests:** contributions are accepted under the [Contributor License Agreement (CLA.md)](CLA.md).
+
+If this repo saves you one email to your accountant, star it. Stars get jurisdictions reviewed faster.
 
 ---
 
@@ -298,28 +252,34 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for the full guide. Every contributor is 
 
 ```
 openaccountants/
-├── packages/              ← Ready-to-use jurisdiction packages (start here)
-│   ├── malta/
-│   ├── uk/
-│   ├── us-ca/
+├── index.json             ← Machine-readable inventory of every Guide (start here, agents)
+├── packages/              ← Ready-to-use jurisdiction packages
+│   ├── malta/ uk/ ...     ← generated from skills/ (don't edit directly)
+│   ├── us-federal/        ← HAND-AUTHORED US federal form guides + rates JSONs (edit directly)
 │   └── ... 130 countries + 51 US states + 13 Canadian provinces
-├── skills/                ← Source files (edit these, not packages/)
+├── skills/                ← Source files for everything except us-federal
 │   ├── foundation/        ← Workflow bases (universal, VAT, payroll, etc.)
-│   ├── federal/           ← US federal skills
+│   ├── federal/           ← US federal topical skills
 │   ├── international/     ← Country-specific skills
 │   ├── cross-border/      ← WHT, PE risk, treaty corridors
 │   ├── verticals/         ← Industry-specific
 │   └── integrations/      ← Platform export formats
-├── workflows/             ← 7 structured advisor workflow definitions
+├── workflows/             ← Structured advisor workflow definitions
+├── mcp/                   ← The MCP server (also on PyPI as openaccountants-mcp)
 ├── scripts/
-│   └── build-packages.py  ← Generates packages/ from skills/
-└── docs/
+│   ├── build-packages.py  ← Generates packages/ from skills/ (us-federal is protected)
+│   ├── build-index.py     ← Generates index.json
+│   └── validate-guides.py ← CI validation (runs on every PR)
+└── docs/                  ← Layout, quality tiers, coverage, templates
 ```
+
+Full layout and "which file do I edit": [docs/REPO-LAYOUT.md](docs/REPO-LAYOUT.md)
 
 ### Rebuild packages after editing skills
 
 ```bash
-python3 scripts/build-packages.py
+python3 scripts/build-packages.py   # us-federal is never touched
+python3 scripts/build-index.py      # refresh index.json
 ```
 
 ---
@@ -327,17 +287,17 @@ python3 scripts/build-packages.py
 ## Known limitations
 
 - **LLMs hallucinate.** These files steer the model; they don't guarantee correct numbers. Always have a qualified professional review before filing.
-- **Tax law changes.** Rates and thresholds go out of date. The repo is a snapshot; [openaccountants.com](https://openaccountants.com) may be ahead of what you cloned.
-- **Coverage is uneven.** 13 countries have the full accounting suite; many jurisdictions have VAT only or partial coverage. Check each country folder's README.
-- **Newer domains need more eyes.** Bookkeeping, payroll, formation, and financial statements skills are research-verified but have fewer accountant sign-offs than the core tax skills.
+- **Tax law changes.** Rates and thresholds go out of date. The repo is a snapshot; [openaccountants.com](https://openaccountants.com) may be ahead of what you cloned. (When a professional catches drift, it lands here as a public correction, like [PR #45](https://github.com/openaccountants/openaccountants/pull/45).)
+- **Coverage is uneven.** 13 countries have the full accounting suite; many jurisdictions have VAT only or partial coverage. Check each country folder's README or [`index.json`](index.json).
+- **Newer domains need more eyes.** Bookkeeping, payroll, formation, and financial statements Guides are source-cited drafts with fewer Partner reviews than the core tax Guides.
 
 ---
 
 ## Disclaimer
 
-OpenAccountants provides general tax and accounting reference material for AI-assisted workflows. It is **not** a law firm, accounting firm, tax preparer, or return-filing service. Outputs are **not** tax, legal, accounting, or financial advice, are not reviewed for your specific facts, and must be reviewed by a qualified professional before filing, payment, or action. Using a skill does not create a client relationship. *Research-verified* skills have not been reviewed by a credentialed accountant; only the *accountant-verified* tier carries a named practitioner's review, and that review is of reference material, not of any specific taxpayer's situation.
+OpenAccountants provides general tax and accounting reference material for AI-assisted workflows. It is **not** a law firm, accounting firm, tax preparer, or return-filing service. Outputs are **not** tax, legal, accounting, or financial advice, are not reviewed for your specific facts, and must be reviewed by a qualified professional before filing, payment, or action. Using a Guide does not create a client relationship. A *source-cited draft* has not been reviewed by a credentialed accountant; only an *accountant-reviewed* Guide carries a Partner's review, and that review is of reference material, not of any specific taxpayer's situation.
 
-The most up-to-date, verified version is maintained at [openaccountants.com](https://openaccountants.com).
+The most up-to-date, reviewed version is maintained at [openaccountants.com](https://openaccountants.com).
 
 ## Contact
 
@@ -347,4 +307,4 @@ The most up-to-date, verified version is maintained at [openaccountants.com](htt
 
 Dual-licensed: [AGPL-3.0](LICENSE) for open-source use, [commercial license](COMMERCIAL_LICENSE.md) for proprietary products.
 
-Contributions are licensed to the project under the [Contributor License Agreement](CLA.md) — see [CONTRIBUTING.md](CONTRIBUTING.md).
+Contributions are licensed to the project under the [Contributor License Agreement](CLA.md). See [CONTRIBUTING.md](CONTRIBUTING.md).
