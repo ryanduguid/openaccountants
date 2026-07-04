@@ -48,17 +48,24 @@ def guide_inventory():
     return "\n".join(lines)
 
 
-def main():
+def build_text():
     parts = [
         read_text("llms.txt").rstrip("\n"),
         guide_inventory(),
         read_text("START-HERE.md").rstrip("\n"),
         read_text(os.path.join("docs", "QUALITY-TIERS.md")).rstrip("\n"),
     ]
-    with open(OUT_PATH, "w", encoding="utf-8") as fh:
-        fh.write(DIVIDER.join(parts))
-        fh.write("\n")
-    print(f"llms-full.txt written ({os.path.getsize(OUT_PATH):,} bytes)")
+    return DIVIDER.join(parts) + "\n"
+
+
+def main():
+    # --out <path> lets CI regenerate to a temp file for staleness comparison.
+    out_path = OUT_PATH
+    if "--out" in sys.argv:
+        out_path = sys.argv[sys.argv.index("--out") + 1]
+    with open(out_path, "w", encoding="utf-8") as fh:
+        fh.write(build_text())
+    print(f"{os.path.basename(out_path)} written ({os.path.getsize(out_path):,} bytes)")
 
 
 if __name__ == "__main__":

@@ -53,10 +53,9 @@ jurisdiction: EU-27  # EU-wide cross-border rules
 ## What sync does NOT use
 
 - **`packages/`** — generated output for MCP/manual upload; not the website source
-- **`packages/manifest.json`** — build artifact only
-- **`skills/manifest.json`** — optional metadata; sync works from files + frontmatter
+- **`index.json`** — the repo's canonical machine-readable inventory (see `docs/REPO-LAYOUT.md`); sync works from files + frontmatter, not from it
 
-Optional: add an entry to `skills/manifest.json` for discoverability, but folder + frontmatter are enough.
+(The old `skills/manifest.json` and `packages/manifest.json` inventories have been removed — nothing consumed them. Folder + frontmatter are all a skill needs to sync.)
 
 ## Checklist before you expect a skill to go live
 

@@ -2,6 +2,15 @@
 
 All notable changes to OpenAccountants will be documented in this file.
 
+## [2.2.0] — 2026-07-04
+
+### Metadata everywhere, docs that agree with each other
+
+- **Complete frontmatter metadata on all 1,007 Guides**, with strict CI enforcement so a Guide can no longer merge with missing or malformed frontmatter ([PR #54](https://github.com/openaccountants/openaccountants/pull/54)).
+- **Docs coherence pass**: one canonical frontmatter spec that all contributor docs point at, plus community health files ([PR #53](https://github.com/openaccountants/openaccountants/pull/53)).
+- **UK Guides gained structured rate tables**, and the README got an animated demo ([PR #51](https://github.com/openaccountants/openaccountants/pull/51)).
+- **`tax_year` normalized** to one consistent format across every Guide ([PR #52](https://github.com/openaccountants/openaccountants/pull/52)).
+
 ## [2.1.0] — 2026-07-04
 
 ### First professional OBBBA review: 33 corrections by Christopher Aryee, CPA

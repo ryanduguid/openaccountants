@@ -1,0 +1,168 @@
+{
+  "jurisdiction": "DE",
+  "tax_year": 2025,
+  "tax_year_label": "2025",
+  "tax_year_period": "2025-01-01 to 2025-12-31",
+  "currency": "EUR",
+  "valid_as_of": "2026-07-04",
+  "legislative_basis": "EStG (§4 Abs.5, §6 Abs.2, §7, §10, §32a, §35, §37, §§38-42f, §39b); SolZG; KiStG (Länder); UStG (§12, §18, §19); GewStG (§2, §7, §8, §9, §11, §14a, §16, §19); AO (§149, §233a, §240); SGB IV (general), SGB V (health), SGB VI (pension), SGB XI (care); KSVG; BMF Programmablaufplan (PAP) 2025, September 2025 revision; BMF letter of 26.02.2021 (one-year useful life for computer hardware and software)",
+  "last_updated_by": "openaccountants",
+  "reviewed_by": null,
+  "quality_state": "source-cited draft",
+  "source_guides": [
+    "packages/germany/de-income-tax.md",
+    "packages/germany/de-payroll.md",
+    "packages/germany/de-social-contributions.md",
+    "packages/germany/germany-vat-return.md",
+    "packages/germany/de-trade-tax.md",
+    "packages/germany/de-estimated-tax.md"
+  ],
+  "_conventions": "Every figure is extracted from the source_guides above with the authority citation the guide states. Rates are decimals (0.19 = 19%). The German tax year is the calendar year. Income tax uses the formula-based §32a EStG tariff (linear-progressive zones), NOT simple bracket multiplication: zone boundaries are given with the exact BMF PAP formula per zone. Amounts are EUR; monthly/annual is stated per entry.",
+  "_source_conflicts": "Where two source guides state different 2025 values, this file follows the figures de-payroll.md attributes to the BMF Programmablaufplan 2025 (September 2025 revision, §32a EStG constants): Grundfreibetrag 12,096 and SolZ Freigrenze 19,950/39,900. The conflicting figures in de-income-tax.md (Grundfreibetrag 12,084; zone edges 17,005/66,760; SolZ exemption 18,130/36,260) and de-estimated-tax.md (SolZ 18,130 with Milderungszone to 33,761) are omitted from this file. germany-payroll.md contains 2026 PAP values (Grundfreibetrag 12,348; KV/PV-BBG 5,812.50; Minijob 603) and is not used for this 2025 file.",
+  "income_tax": {
+    "tariff_zones": {
+      "source": "§32a EStG, 2025 PAP constants, BMF Programmablaufplan September 2025 revision (de-payroll §3, UPTAB25)",
+      "zones": [
+        { "rate": 0.00, "from": 0, "to": 12096, "label": "Grundfreibetrag (zone 0)", "formula": "ST = 0" },
+        { "rate_entry": 0.14, "from": 12096, "to": 17443, "label": "Progressive zone 1 (linear-progressive)", "formula": "Y = (X - 12096) / 10000; ST = floor((932.30 * Y + 1400) * Y)" },
+        { "rate_exit": 0.42, "from": 17443, "to": 68480, "label": "Progressive zone 2 (linear-progressive)", "formula": "Y = (X - 17443) / 10000; ST = floor((176.64 * Y + 2397) * Y + 1015.13)" },
+        { "rate": 0.42, "from": 68480, "to": 277825, "label": "Proportionalzone (flat 42%)", "formula": "ST = floor(X * 0.42 - 10911.92)" },
+        { "rate": 0.45, "from": 277825, "to": null, "label": "Reichensteuer (45%)", "formula": "ST = floor(X * 0.45 - 19246.67)" }
+      ],
+      "_note": "Formula-based tariff: within zones 1 and 2 each euro is taxed at its own marginal rate; do not compute with simple bracket multiplication. X = taxable income in whole EUR. Splitting (Steuerklasse III / Zusammenveranlagung) applies the tariff via KZTAB = 2."
+    },
+    "grundfreibetrag": { "value": 12096, "source": "§32a EStG, 2025 PAP constant GFB (de-payroll §3; BMF PAP September 2025 revision)" },
+    "solidaritaetszuschlag": {
+      "rate": { "value": 0.055, "source": "SolZG (de-income-tax §1, de-payroll §1; 5.5% of the income tax / Lohnsteuer)" },
+      "freigrenze_grundtarif": { "value": 19950, "source": "SolZG; 2025 PAP constant SOLZFREI (de-payroll §3 MSOLZ; annual tax up to this amount attracts no SolZ; Steuerklassen I, II, IV, V, VI)" },
+      "freigrenze_splitting": { "value": 39900, "source": "SolZG; 2025 PAP, SOLZFREI x KZTAB 2 (de-payroll §3 MSOLZ; married / Steuerklasse III)" },
+      "phase_in_marginal_rate": { "value": 0.119, "source": "SolZG; 2025 PAP MSOLZ formula (de-payroll §3; 11.9% marginal rate on the tax between the Freigrenze and the full-rate zone: SolZ = min(5.5% of tax, 11.9% of tax above Freigrenze))" }
+    },
+    "kirchensteuer": {
+      "rate_most_laender": { "value": 0.09, "source": "KiStG (Länder) (de-income-tax §1/§10, de-payroll §1; 9% of ESt/Lohnsteuer, only if a registered church member)" },
+      "rate_bavaria_baden_wuerttemberg": { "value": 0.08, "source": "KiStG (Länder) (de-income-tax §1/§10, de-payroll §1; 8% of ESt/Lohnsteuer in Bayern and Baden-Württemberg)" }
+    },
+    "gewerbesteuer_credit_factor": { "value": 4.0, "source": "EStG §35 Abs.1 (de-trade-tax Step 8, de-income-tax §1; credit = 4.0 x Steuermessbetrag, capped at the actual ESt on gewerbliche Einkünfte; no carryforward; does not reduce SolZ)" },
+    "vorsorgeaufwendungen": {
+      "altersvorsorge_cap_single": { "value": 29344, "source": "EStG §10 (de-social-contributions Rule 9 / Example 5; Rentenversicherung contributions 100% deductible since 2023 within this cap)" },
+      "altersvorsorge_cap_married": { "value": 58688, "source": "EStG §10 (de-social-contributions Example 5; doubled cap for married couples)" },
+      "sonstige_vorsorge_cap_self_employed": { "value": 2800, "source": "EStG §10 (de-social-contributions Rule 9; other insurance such as accident/supplementary, cap for the self-employed; Basiskranken- and Pflegeversicherung are fully deductible with no cap)" }
+    }
+  },
+  "self_employment_deductions": {
+    "bewirtung_deductible_share": { "value": 0.70, "source": "EStG §4 Abs.5 Nr.2 (de-income-tax §5.5/Example 2; 70% of business entertainment deductible for ESt, 30% disallowed; USt Vorsteuer is 100% recoverable with a proper Bewirtungsbeleg per §15(1) Nr.1 UStG, germany-vat-return Example 3)" },
+    "geschenke_limit_per_person_year": { "value": 50, "source": "EStG §4 Abs.5 Nr.1 (de-income-tax §6.4; EUR 50 net per recipient per year since 2024; if exceeded, the entire amount is non-deductible)" },
+    "home_office_tagespauschale_per_day": { "value": 6, "source": "EStG §4 Abs.5 Nr.6c (de-income-tax §6.1/§10; EUR 6 per day worked from home)" },
+    "home_office_tagespauschale_annual_cap": { "value": 1260, "source": "EStG §4 Abs.5 Nr.6c (de-income-tax §6.1; max 210 days x EUR 6 = EUR 1,260/year; full actual costs only for a dedicated room that is the Mittelpunkt of all professional activity, §4 Abs.5 Nr.6b)" },
+    "gwg_immediate_deduction_no_register": { "value": 250, "source": "EStG §6 Abs.2 (de-income-tax §5.3; net cost up to EUR 250: immediate full deduction, no asset register)" },
+    "gwg_immediate_deduction_limit": { "value": 800, "source": "EStG §6 Abs.2 (de-income-tax §5.3; net cost EUR 250.01-800: immediate full deduction or Sammelposten, asset register required)" },
+    "sammelposten_upper_limit": { "value": 1000, "source": "EStG §6 Abs.2/2a (de-income-tax §5.3; EUR 800.01-1,000: Sammelposten option, pooled and depreciated over 5 years at 20%/year; above EUR 1,000: normal AfA)" }
+  },
+  "depreciation_afa": {
+    "computer_hardware_software_useful_life_years": { "value": 1, "source": "EStG §7; BMF letter of 26.02.2021 (de-income-tax §5.4; digital assets fully written off in the year of acquisition regardless of cost, 100% rate)" },
+    "motor_vehicles_useful_life_years": { "value": 6, "source": "EStG §7 / amtliche AfA-Tabelle (de-income-tax §5.4; ~16.7%/year)" },
+    "office_furniture_useful_life_years": { "value": 13, "source": "EStG §7 / amtliche AfA-Tabelle (de-income-tax §5.4; ~7.7%/year)" },
+    "buildings_commercial_rate": { "value": 0.03, "source": "EStG §7 (de-income-tax §5.4; commercial buildings 3% over 33 years, or 2% over 50 years depending on class)" }
+  },
+  "vat": {
+    "standard_rate": { "value": 0.19, "source": "UStG §12(1) (germany-vat-return §1 and §5.1)" },
+    "reduced_rate": { "value": 0.07, "source": "UStG §12(2) (germany-vat-return §1 and §5.2; food, books incl. e-books, newspapers, water, accommodation, local transport <= 50 km, cultural admissions, passenger rail)" },
+    "photovoltaic_zero_rate": { "value": 0.00, "source": "UStG §12(3) (germany-vat-return §1; photovoltaic installations under 30 kWp)" },
+    "kleinunternehmer": {
+      "prior_year_turnover_threshold": { "value": 25000, "source": "UStG §19 (germany-vat-return R-DE-1; Kleinunternehmer if prior-year turnover <= EUR 25,000 and current-year turnover will not exceed EUR 100,000; no VAT charged, no Vorsteuer recovery, annual Umsatzsteuererklärung only)" },
+      "current_year_turnover_threshold": { "value": 100000, "source": "UStG §19 (germany-vat-return R-DE-1)" }
+    },
+    "filing_frequency": {
+      "monthly_if_prior_year_vat_above": { "value": 9000, "source": "UStG §18 (germany-vat-return §1; monthly UStVA if prior-year VAT liability > EUR 9,000; first 2 years of a new business: monthly mandatory)" },
+      "quarterly_range": { "value": "EUR 2,000 - 9,000 prior-year VAT liability", "source": "UStG §18 (germany-vat-return §1)" },
+      "annual_only_if_below": { "value": 2000, "source": "UStG §18 (germany-vat-return §1; annual declaration only if prior-year VAT liability < EUR 2,000)" }
+    },
+    "ustva_deadline": { "value": "10th of the month following the return period; +1 month with Dauerfristverlängerung", "source": "UStG §18 (germany-vat-return §1)" },
+    "annual_declaration_deadline": { "value": "31 July of the following year; with Steuerberater: end of February of the second following year", "source": "UStG §18 / AO (germany-vat-return §1, Umsatzsteuererklärung)" }
+  },
+  "social_insurance": {
+    "rentenversicherung": {
+      "total_rate": { "value": 0.186, "source": "SGB VI (de-social-contributions Rule 4, de-payroll §1; 18.6%)" },
+      "employee_rate": { "value": 0.093, "source": "SGB VI (de-payroll §1/§4.1; 9.3% employee + 9.3% employer split)" },
+      "bbg_monthly": { "value": 8050.00, "source": "SGB VI; BMAS Sozialversicherungsrechengrößen 2025 (de-social-contributions §10, de-payroll §1; East and West unified since 2025)" },
+      "bbg_annual": { "value": 96600.00, "source": "SGB VI; BMAS Sozialversicherungsrechengrößen 2025 (de-social-contributions §10, de-payroll §3 MPARA constant BBGRV)" },
+      "voluntary_minimum_monthly": { "value": 100.07, "source": "SGB VI (de-social-contributions Rule 4/§8; voluntary contribution floor for the self-employed)" },
+      "voluntary_maximum_monthly": { "value": 1497.30, "source": "SGB VI (de-social-contributions §8, de-payroll §4.2; equals 18.6% of the EUR 8,050 ceiling)" }
+    },
+    "krankenversicherung": {
+      "general_rate_with_sick_pay": { "value": 0.146, "source": "SGB V (de-social-contributions §1/Rule 2, de-payroll §1; 14.6% general rate, split 7.3% employee / 7.3% employer, plus Zusatzbeitrag)" },
+      "self_employed_rate_without_sick_pay": { "value": 0.140, "source": "SGB V (de-social-contributions Rule 2; 14.0% + Zusatzbeitrag, default for the self-employed; self-employed pay the full rate with no employer share)" },
+      "average_zusatzbeitrag_2025": { "value": 0.025, "source": "SGB V; GKV-Spitzenverband average (de-social-contributions Rule 2, de-payroll §1; 2.5% average for 2025, varies by Krankenkasse, split half/half for employees)" },
+      "bbg_monthly": { "value": 5512.50, "source": "SGB V; BMAS Sozialversicherungsrechengrößen 2025 (de-social-contributions §10, de-payroll §1; KV/PV ceiling)" },
+      "bbg_annual": { "value": 66150.00, "source": "SGB V; BMAS Sozialversicherungsrechengrößen 2025 (de-social-contributions §10, de-payroll §3 MPARA constant BBGKVPV)" },
+      "self_employed_minimum_base_monthly": { "value": 1248.33, "source": "SGB V (de-social-contributions §1/Rule 1; minimum assessment base for voluntarily insured self-employed GKV members)" },
+      "jaeg_annual": { "value": 73800.00, "source": "SGB V; BMAS Sozialversicherungsrechengrößen 2025 (de-social-contributions §10, de-payroll §1; Versicherungspflichtgrenze, employees only, above which PKV is an option; EUR 6,150/month)" }
+    },
+    "pflegeversicherung": {
+      "base_rate": { "value": 0.036, "source": "SGB XI (de-social-contributions §1/Rule 3, de-payroll §1; 3.6% with one child)" },
+      "childless_rate_age_23_plus": { "value": 0.042, "source": "SGB XI (de-social-contributions Rule 3, de-payroll §1; childless surcharge, age 23+)" },
+      "rates_by_children": {
+        "value": { "0_children": 0.042, "1_child": 0.036, "2_children": 0.0335, "3_children": 0.031, "4_children": 0.0285, "5_plus_children": 0.026 },
+        "source": "SGB XI (de-social-contributions Rule 3, de-payroll §1; children under 25 reduce the rate; employer share fixed at 1.8% for employees; self-employed pay the full rate)"
+      },
+      "employer_share_employees": { "value": 0.018, "source": "SGB XI (de-payroll §1; Sachsen exception: employee +0.5%, employer -0.5%, same total)" }
+    },
+    "arbeitslosenversicherung": {
+      "total_rate": { "value": 0.026, "source": "SGB IV (general social insurance; de-payroll §1/§4.1; 2.6%, split 1.3% employee / 1.3% employer; voluntary for the self-employed)" },
+      "bbg_monthly": { "value": 8050.00, "source": "SGB IV; BMAS Sozialversicherungsrechengrößen 2025 (de-payroll §1; AV uses the RV ceiling)" }
+    },
+    "kuenstlersozialabgabe": {
+      "levy_rate": { "value": 0.05, "source": "KSVG (de-social-contributions §1/Rule 6; 5.0% levy on fees paid by businesses commissioning artistic/literary/journalistic work)" },
+      "bagatellgrenze_annual": { "value": 700, "source": "KSVG (de-social-contributions Rule 6; de minimis EUR 700/year)" },
+      "reporting_deadline": { "value": "31 March of the following year", "source": "KSVG (de-social-contributions Rule 6)" }
+    }
+  },
+  "minijob_midijob": {
+    "minijob_monthly_ceiling": { "value": 556, "source": "SGB IV (de-payroll §9 and R-DE-P-2; geringfügige Beschäftigung ceiling for 2025)" },
+    "minijob_employer_flat_pension": { "value": 0.15, "source": "SGB IV (de-payroll §9; employer flat-rate RV 15%)" },
+    "minijob_employer_flat_health": { "value": 0.13, "source": "SGB IV (de-payroll §9; employer flat-rate KV 13%)" },
+    "minijob_pauschalsteuer": { "value": 0.02, "source": "SGB IV / EStG (de-payroll §9 and R-DE-P-2; 2% flat-rate wage tax covers Lohnsteuer)" },
+    "minijob_employee_rv_opt_in_top_up": { "value": 0.036, "source": "SGB IV (de-payroll §9; employee pays 3.6% RV top-up if opting into pension insurance)" },
+    "midijob_range_monthly": { "value": "EUR 556.01 - 2,000.00", "source": "SGB IV (de-payroll §9; Übergangsbereich/Gleitzone: reduced employee contributions on a gliding scale, employer pays full rates, normal Lohnsteuer withholding)" }
+  },
+  "payroll_lohnsteuer": {
+    "_note": "Lohnsteuer is computed with the BMF Programmablaufplan (PAP) 2025 constants below (EStG §§38-42f), not ad hoc. Validate against bmf-steuerrechner.de.",
+    "arbeitnehmer_pauschbetrag": { "value": 1230, "source": "EStG §§38-42f; 2025 PAP constant ANP (de-payroll §1; employee lump-sum allowance, Steuerklassen I-V)" },
+    "sonderausgaben_pauschbetrag": { "value": 36, "source": "EStG §§38-42f; 2025 PAP constant SAP (de-payroll §1)" },
+    "kinderfreibetrag_full_per_child": { "value": 9600, "source": "EStG; 2025 PAP, KFB = ZKF x 9,600 (de-payroll §1; half allowance EUR 4,800 for Steuerklasse IV)" },
+    "entlastungsbetrag_alleinerziehende": { "value": 4260, "source": "EStG; 2025 PAP constant EFA (de-payroll §1; single-parent relief, Steuerklasse II)" },
+    "vorsorgepauschale_vhb_stkl_iii": { "value": 3000, "source": "2025 PAP MPARA constant VHB (de-payroll §3; EUR 1,900 for other Steuerklassen)" },
+    "stkl5_6_thresholds": {
+      "value": { "W1STKL5": 13785, "W2STKL5": 34240, "W3STKL5": 222260 },
+      "source": "EStG §39b Abs.2 Satz 7; 2025 PAP constants (de-payroll §3 MST5_6; Steuerklassen V/VI special method with 14% minimum tax)"
+    }
+  },
+  "trade_tax": {
+    "freibetrag_natural_persons_partnerships": { "value": 24500, "source": "GewStG §11 Abs.1 (de-trade-tax Step 5; EUR 24,500 for Einzelunternehmen and Personengesellschaften; EUR 0 for Kapitalgesellschaften; Freiberufler are exempt from GewSt entirely per GewStG §2 / EStG §18)" },
+    "steuermesszahl": { "value": 0.035, "source": "GewStG §11 Abs.2 (de-trade-tax Step 6; federal constant 3.5%)" },
+    "minimum_hebesatz": { "value": 2.00, "source": "GewStG §16 (de-trade-tax Step 7; municipal multiplier, statutory minimum 200%; actual Hebesatz set by each Gemeinde)" },
+    "hinzurechnungen": {
+      "interest_on_debt_share": { "value": 1.00, "source": "GewStG §8 (de-trade-tax Step 3; 100% of interest, subject to the Freibetrag below)" },
+      "movable_asset_rent_share": { "value": 0.20, "source": "GewStG §8 (de-trade-tax Step 3)" },
+      "immovable_asset_rent_share": { "value": 0.50, "source": "GewStG §8 (de-trade-tax Step 3)" },
+      "royalties_share": { "value": 0.25, "source": "GewStG §8 (de-trade-tax Step 3)" },
+      "freibetrag": { "value": 200000, "source": "GewStG §8 (de-trade-tax Step 3; no add-back up to EUR 200,000 total; 25% of the excess above that is added back)" }
+    },
+    "grundbesitzkuerzung_rate": { "value": 0.012, "source": "GewStG §9 (de-trade-tax Step 4; 1.2% of the Einheitswert of owned business property)" },
+    "vorauszahlungen": {
+      "due_dates": { "value": "15 February, 15 May, 15 August, 15 November (25% each)", "source": "GewStG §19 (de-trade-tax Step 9)" },
+      "minimum_annual": { "value": 50, "source": "GewStG §19 (de-trade-tax Step 9; no Vorauszahlung if annual GewSt < EUR 50)" }
+    },
+    "filing_deadline": { "value": "31 July of the following year; with Steuerberater: end of February of the year after", "source": "GewStG §14a; AO §149 (de-trade-tax Step 10; GewSt 1 A via ELSTER, electronic mandatory)" }
+  },
+  "filing_and_payment": {
+    "income_tax_return_deadline": { "value": "31 July of the following year; with Steuerberater: end of February of the year after next", "source": "AO §149 (de-income-tax §1/§5.7; filed via ELSTER)" },
+    "est_vorauszahlungen_due_dates": { "value": "10 March, 10 June, 10 September, 10 December (25% each)", "source": "EStG §37 (de-income-tax §5.6, de-estimated-tax §1)" },
+    "est_vorauszahlungen_minimum_annual": { "value": 400, "source": "EStG §37 (de-estimated-tax §5.2; below EUR 400/year no prepayments are set)" },
+    "est_vorauszahlungen_minimum_per_instalment": { "value": 100, "source": "EStG §37 (de-estimated-tax §5.2)" },
+    "schonfrist_days": { "value": 3, "source": "AO §240 (de-estimated-tax §1; grace period after the due date before Säumniszuschlag)" },
+    "verspaetungszuschlag": { "value": "0.25% of assessed tax per month, minimum EUR 25/month", "source": "AO (de-income-tax §5.8; late-filing surcharge)" },
+    "saeumniszuschlag_monthly": { "value": 0.01, "source": "AO §240 (de-income-tax §5.8, de-estimated-tax §1/§5; 1% per commenced month on unpaid tax, base rounded down to the nearest EUR 50)" },
+    "interest_on_arrears_monthly": { "value": 0.0015, "source": "AO §233a (de-income-tax §5.8, de-estimated-tax §1; 0.15% per month, from 15 months after the year end)" }
+  }
+}

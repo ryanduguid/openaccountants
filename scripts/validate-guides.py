@@ -25,6 +25,9 @@ Checks (ERROR = exit 1, WARN = printed summary only):
      Skipped when git / origin/main is unavailable.
   5. ERROR if index.json is stale: regenerated index (ignoring generated_at)
      must match the committed one. Fix with: python3 scripts/build-index.py
+  6. ERROR if a deprecated inventory file reappears (skills/manifest.json,
+     packages/manifest.json). index.json is the single canonical inventory;
+     the old manifests had no consumers and were removed so they can't drift.
 
 Stdlib only. Run: python3 scripts/validate-guides.py
 """
@@ -181,12 +184,68 @@ def check_index_fresh(errors):
             return
 
 
+# Deprecated inventories, removed 2026-07 (they had drifted and nothing read
+# them — the MCP server indexes packages/**/*.md frontmatter directly, and the
+# website sync works from files + frontmatter). index.json is canonical.
+DEPRECATED_INVENTORY_FILES = (
+    "skills/manifest.json",
+    "packages/manifest.json",
+)
+
+
+def check_no_deprecated_manifests(errors):
+    for rel in DEPRECATED_INVENTORY_FILES:
+        if os.path.isfile(os.path.join(REPO_ROOT, rel)):
+            errors.append(
+                f"{rel} is deprecated and must not be committed — index.json is "
+                "the canonical inventory (python3 scripts/build-index.py). "
+                "Delete the file; see docs/REPO-LAYOUT.md."
+            )
+
+
+def check_llms_full_fresh(errors):
+    """llms-full.txt embeds llms.txt, the index inventory, START-HERE, and
+    QUALITY-TIERS — it drifts silently when any of those change. Regenerate to
+    a temp file and compare, mirroring the index.json staleness check."""
+    import subprocess
+    import tempfile
+
+    committed = os.path.join(REPO_ROOT, "llms-full.txt")
+    if not os.path.isfile(committed):
+        errors.append("llms-full.txt is missing — run: python3 scripts/build-llms-full.py")
+        return
+    with tempfile.NamedTemporaryFile(mode="w", suffix=".txt", delete=False) as tf:
+        tmp = tf.name
+    try:
+        result = subprocess.run(
+            [sys.executable, os.path.join(REPO_ROOT, "scripts", "build-llms-full.py"),
+             "--out", tmp],
+            capture_output=True, text=True,
+        )
+        if result.returncode != 0:
+            errors.append(f"build-llms-full.py failed during freshness check: {result.stderr.strip()}")
+            return
+        with open(committed, encoding="utf-8") as fh:
+            a = fh.read()
+        with open(tmp, encoding="utf-8") as fh:
+            b = fh.read()
+        if a != b:
+            errors.append(
+                "llms-full.txt is stale (its embedded docs or the guide inventory "
+                "changed) — regenerate: python3 scripts/build-llms-full.py"
+            )
+    finally:
+        os.unlink(tmp)
+
+
 def main():
     errors, warnings = [], []
     bi = load_build_index()
     check_guides(bi, errors, warnings)
     check_us_federal_deletions(errors)
     check_index_fresh(errors)
+    check_no_deprecated_manifests(errors)
+    check_llms_full_fresh(errors)
 
     for warning in warnings:
         print(f"WARN: {warning}")
