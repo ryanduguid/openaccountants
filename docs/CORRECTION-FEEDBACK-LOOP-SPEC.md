@@ -4,7 +4,7 @@ Status: **DRAFT**
 Author: OpenAccountants core
 Last revised: 2026-05-22
 
-This is the spec for the **Level 6** feature from [INTELLIGENCE-ROADMAP.md](INTELLIGENCE-ROADMAP.md) — the system that turns every practitioner review into a learning event for the skill set. This is the moat.
+This is the spec for the correction feedback loop — the system that turns every practitioner review into a learning event for the skill set. This is the moat.
 
 ---
 

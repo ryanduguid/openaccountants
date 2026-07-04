@@ -1,9 +1,11 @@
 # Sync packages/ into openaccountants/openaccountants-mcp on every push to main.
 #
-# packages/ is the canonical skill catalogue and lives in this repo.  The MCP
-# server ships a vendored copy so `pip install openaccountants-mcp` works
-# without cloning anything else.  Humans do not edit packages/ in the MCP repo
-# directly — this workflow is the one and only writer there.
+# packages/ holds the built per-jurisdiction bundles: generated from skills/
+# by scripts/build-packages.py, except packages/us-federal/ which is
+# hand-authored (see docs/REPO-LAYOUT.md).  The MCP server ships a vendored
+# copy so `pip install openaccountants-mcp` works without cloning anything
+# else.  Humans do not edit packages/ in the MCP repo directly — this
+# workflow is the one and only writer there.
 #
 # Auth: the MCP_SYNC_DEPLOY_KEY secret holds an ed25519 deploy key with
 # write access on openaccountants/openaccountants-mcp (and nothing else).

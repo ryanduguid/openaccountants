@@ -42,6 +42,17 @@ REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SKILLS_DIR = os.path.join(REPO_ROOT, "skills")
 PACKAGES_DIR = os.path.join(REPO_ROOT, "packages")
 
+# ============================================================================
+# HAND-AUTHORED PACKAGES — DO NOT WIPE, DO NOT REGENERATE.
+#
+# These directories under packages/ are maintained BY HAND (CPA-reviewed form
+# guides, rates.*.json reference data, runbooks). They have NO builder in this
+# script: if the packages/ wipe deletes them, the content is PERMANENTLY LOST.
+# The rebuild in main() must always skip these directories, and no builder may
+# ever write into them.
+# ============================================================================
+HAND_AUTHORED_PACKAGES = {"us-federal"}
+
 # Country code → display name mapping
 COUNTRY_NAMES = {
     "MT": "Malta", "GB": "United Kingdom", "DE": "Germany", "AU": "Australia",
@@ -974,14 +985,24 @@ def main():
     us_only = "--us-only" in sys.argv
 
     if not us_only:
-        # Clean packages directory
-        if os.path.exists(PACKAGES_DIR):
-            shutil.rmtree(PACKAGES_DIR)
-        os.makedirs(PACKAGES_DIR)
+        # Clean packages directory — but NEVER remove hand-authored packages
+        # (see HAND_AUTHORED_PACKAGES at the top of this file). A whole-dir
+        # rmtree here previously deleted packages/us-federal, which has no
+        # builder and cannot be regenerated.
+        os.makedirs(PACKAGES_DIR, exist_ok=True)
+        for entry in sorted(os.listdir(PACKAGES_DIR)):
+            if entry in HAND_AUTHORED_PACKAGES:
+                continue
+            path = os.path.join(PACKAGES_DIR, entry)
+            if os.path.isdir(path):
+                shutil.rmtree(path)
+            else:
+                os.remove(path)
     else:
         # Only clean US state packages
         os.makedirs(PACKAGES_DIR, exist_ok=True)
         for code in US_STATE_CODES:
+            assert f"us-{code}" not in HAND_AUTHORED_PACKAGES, f"us-{code} is hand-authored"
             pkg = os.path.join(PACKAGES_DIR, f"us-{code}")
             if os.path.isdir(pkg):
                 shutil.rmtree(pkg)

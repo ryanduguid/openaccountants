@@ -4,7 +4,7 @@ Status: **DRAFT**
 Author: OpenAccountants core
 Last revised: 2026-05-22
 
-This is the spec for the temporal versioning system referenced as **Level 3** in [INTELLIGENCE-ROADMAP.md](INTELLIGENCE-ROADMAP.md). It turns the repo from a snapshot of rates into a living dataset where every figure has a validity window and rate transitions are handled mechanically.
+This is the spec for the temporal versioning system. It turns the repo from a snapshot of rates into a living dataset where every figure has a validity window and rate transitions are handled mechanically.
 
 ---
 

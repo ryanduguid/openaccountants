@@ -23,7 +23,11 @@ Anyone. You don't need to be an accountant to write a skill. You need to know yo
 4. Run `python3 scripts/build-packages.py` to regenerate packages
 5. Open a PR with a description of what tax forms/schedules the skill covers
 
-> **Important:** never edit files under `packages/` directly. Packages are generated from `skills/` by `scripts/build-packages.py` and will be overwritten on the next build.
+> **Important:** never edit files under `packages/` directly — with one exception. Packages are generated from `skills/` by `scripts/build-packages.py` and will be overwritten on the next build. The exception is **`packages/us-federal/`**: it is hand-authored (US federal form guides + rates JSONs) and protected from the build wipe, so edit those files directly in place.
+
+## Repo layout
+
+`skills/` is the editable source; `packages/` is generated from it by `scripts/build-packages.py` (except the hand-authored `packages/us-federal/`); `index.json` at the repo root is the machine-readable inventory of every Guide. The one-page canonical answer to "which file do I edit?" is [docs/REPO-LAYOUT.md](docs/REPO-LAYOUT.md).
 
 ## Website sync rule
 
@@ -119,7 +123,7 @@ All domain skills for a country live in the same directory (e.g., `skills/intern
 | Platform integration skills | `skills/integrations/` |
 | Orchestrator files (router, intake, assembly) | `skills/orchestrator/` |
 
-After editing, run `python3 scripts/build-packages.py` to regenerate all packages under `packages/`. You can also use `--us-only` to regenerate just US state packages.
+After editing, run `python3 scripts/build-packages.py` to regenerate all packages under `packages/`. You can also use `--us-only` to regenerate just US state packages. The build is safe for `packages/us-federal/` — it skips hand-authored packages and will never wipe or regenerate that directory.
 
 If you add a `references.md` to a country's source directory, it will be included in the generated package automatically.
 
