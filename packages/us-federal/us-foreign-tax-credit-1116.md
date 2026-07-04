@@ -5,7 +5,7 @@ jurisdiction: US
 category: federal-tax
 tier: 2
 verified_by: pending
-last_updated: 2025-11-15
+last_updated: 2026-07-04
 version: 0.1
 ---
 
@@ -56,7 +56,7 @@ A taxpayer may **either** credit the foreign income tax under §901 (Form 1116, 
 |---|---|---|
 | Effect on tax | Dollar-for-dollar reduction of US tax | Reduction of taxable income at the marginal rate |
 | US tax liability | Any positive US tax | Only useful if itemizing — and even then worth ~22-37 cents per dollar of foreign tax |
-| Standard vs. itemized | Works alongside standard deduction | Requires itemizing (lose standard deduction worth $15,000 single / $30,000 MFJ for 2025) |
+| Standard vs. itemized | Works alongside standard deduction | Requires itemizing (lose standard deduction worth $15,750 single / $31,500 MFJ for 2025, OBBBA §70102) |
 | Excess foreign tax | Carries 1 back / 10 forward | No carry — use it or lose it |
 | Form 1116 complexity | Required (unless de minimis election applies) | No Form 1116 needed |
 
@@ -377,21 +377,21 @@ A §911 election, once revoked, **cannot be re-elected for 5 tax years** without
 - Foreign wages (Germany): €120,000 ≈ **$130,000** at the 2025 average rate.
 - German income tax + solidarity surcharge withheld: **€42,000 ≈ $45,500** (effective rate ~35%).
 - No US-source income.
-- Takes the standard deduction ($15,000 for single).
+- Takes the standard deduction ($15,750 for single, OBBBA §70102).
 - Eligible for §911 (physical presence: 340 days outside US).
 
 **Decision: skip §911, use FTC.**
 
-Reason: German effective rate (35%) > US marginal rate on $130k of taxable income (~22-24% net of standard deduction). §911 excludes only $130,000 (the entire wage, so US tax would be zero under §911 alone — but no carryforward generated). FTC: US tax ≈ $20,000 on $115k taxable, eliminated by ~$45,500 of foreign tax → ~$25,000 of **excess credit carryforward**.
+Reason: German effective rate (35%) > US marginal rate on $130k of taxable income (~22-24% net of standard deduction). §911 excludes only $130,000 (the entire wage, so US tax would be zero under §911 alone — but no carryforward generated). FTC: US tax ≈ $20,000 on ~$114k taxable, eliminated by ~$45,500 of foreign tax → ~$25,000 of **excess credit carryforward**.
 
 **Form 1116 (General basket, box d):**
 - Part I line 1a: $130,000
-- Part I line 3a: standard deduction apportionment: $15,000 × ($130,000 / $130,000) = $15,000
-- Part I line 7: $115,000 (foreign-source taxable income, general basket)
+- Part I line 3a: standard deduction apportionment: $15,750 × ($130,000 / $130,000) = $15,750
+- Part I line 7: $114,250 (foreign-source taxable income, general basket)
 - Part II line 8: $45,500 (foreign tax paid)
-- Part III line 18: $115,000 (total taxable income — entirely foreign)
-- Part III line 19: $115,000 / $115,000 = 1.0000
-- Part III line 20: US tax before FTC ≈ **$20,000** (2025 single brackets on $115k)
+- Part III line 18: $114,250 (total taxable income — entirely foreign)
+- Part III line 19: $114,250 / $114,250 = 1.0000
+- Part III line 20: US tax before FTC ≈ **$20,000** (2025 single brackets on $114,250)
 - Part III line 21: Maximum FTC = 1.0000 × $20,000 = $20,000
 - Part III line 22: lesser of $45,500 or $20,000 = **$20,000 credit**
 - Excess: $45,500 − $20,000 = **$25,500 carryforward** in the General basket
@@ -446,24 +446,24 @@ Reason: no UAE tax to credit on the wages → §911 is the only way to reduce US
 **Form 1116 — General basket (one form with two columns, Germany and Brazil):**
 - Part I line 1a column A (Germany): $60,000; column B (Brazil): $30,000; total $90,000
 - Part I line 2: Schedule C expenses definitely related to the foreign work — assume $9,000 (the foreign-work share of total $27,000 of Schedule C expenses, allocated by gross income ratio: $90k/$180k × $27k = $13,500; refine if any expense is definitely US or definitely foreign). Use $13,500.
-- Part I line 3a: standard deduction apportioned: $15,000 × ($90,000 / $180,000) = $7,500
-- Part I line 6: $90,000 − $13,500 − $7,500 = $69,000 foreign-source taxable income
+- Part I line 3a: standard deduction apportioned: $15,750 × ($90,000 / $180,000) = $7,875
+- Part I line 6: $90,000 − $13,500 − $7,875 = $68,625 foreign-source taxable income
 - Part II line 8: $18,000 (Germany) + $7,500 (Brazil) = $25,500 foreign tax paid
-- Part III line 18: total taxable income from Form 1040 line 15: $180,000 − $13,500 SE-deduction half − $13,500 Schedule C expenses already in line 1a − adjust for the half-SE tax deduction (~$12,700) and QBI deduction (~$33,000 if non-SSTB, see `us-qbi-deduction`) and standard deduction ($15,000) → call it **$105,000** for illustration (worked out by `us-schedule-c-and-se-computation` + `us-qbi-deduction`).
-- Part III line 19: $69,000 / $105,000 = 0.6571
+- Part III line 18: total taxable income from Form 1040 line 15: $180,000 − $13,500 SE-deduction half − $13,500 Schedule C expenses already in line 1a − adjust for the half-SE tax deduction (~$12,700) and QBI deduction (~$33,000 if non-SSTB, see `us-qbi-deduction`) and standard deduction ($15,750, OBBBA §70102) → call it **$105,000** for illustration (worked out by `us-schedule-c-and-se-computation` + `us-qbi-deduction`).
+- Part III line 19: $68,625 / $105,000 = 0.6536
 - Part III line 20: US tax before FTC on $105,000 single ≈ $17,500
-- Part III line 21: max FTC = 0.6571 × $17,500 = **$11,500**
-- Part III line 22: lesser of $25,500 or $11,500 = **$11,500 General-basket credit**
-- Excess: $25,500 − $11,500 = **$14,000 General-basket carryforward**
+- Part III line 21: max FTC = 0.6536 × $17,500 = **$11,438**
+- Part III line 22: lesser of $25,500 or $11,438 = **$11,438 General-basket credit**
+- Excess: $25,500 − $11,438 = **$14,062 General-basket carryforward**
 
 **Form 1116 — Passive basket:**
 - $850 foreign tax, $4,200 foreign dividend income.
 - **De minimis election unavailable** because the taxpayer also has general-basket foreign tax. (The $300 cap is total across all baskets.)
 - Compute the passive-basket Form 1116 in full. With $4,200 of foreign-source qualified dividends (Part I line 1a after qualified-dividend rate adjustment — multiplied by the rate ratio 15%/37% = 0.4054 for QD-rate adjustment if not in de minimis, → ~$1,703 adjusted), the limitation is small (probably absorbs all $850). Confirm with the worksheet.
 
-**Schedule 3 line 1:** ~$12,350 total FTC (General $11,500 + Passive $850).
+**Schedule 3 line 1:** ~$12,288 total FTC (General $11,438 + Passive $850).
 
-**Sanity check.** Brazil and Germany combined effective tax (28.3% on $90k of foreign wages) exceeded the US average rate, generating a $14,000 carryforward. With future foreign work the carryforward will absorb. Document on Schedule B.
+**Sanity check.** Brazil and Germany combined effective tax (28.3% on $90k of foreign wages) exceeded the US average rate, generating a $14,062 carryforward. With future foreign work the carryforward will absorb. Document on Schedule B.
 
 ---
 
@@ -613,3 +613,9 @@ verified rules together with the name of the accountant who signed them off.
 
 **→ Install the free connector:** <https://www.openaccountants.com/connect>
 **MCP endpoint:** `https://www.openaccountants.com/api/mcp`
+
+---
+
+## Changelog
+
+- **2026-07-04** — Stale figures corrected via cross-guide contradiction check: 2025 standard deduction $15,000 single / $30,000 MFJ → $15,750 / $31,500 (OBBBA §70102). Example A recomputed (foreign-source taxable income $115,000 → $114,250; credit unchanged at ~$20,000). Example C recomputed (apportioned deduction $7,500 → $7,875; limitation ratio 0.6571 → 0.6536; General-basket credit $11,500 → $11,438; carryforward $14,000 → $14,062).

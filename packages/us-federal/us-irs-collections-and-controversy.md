@@ -5,7 +5,7 @@ jurisdiction: US
 category: federal-tax
 tier: 2
 verified_by: pending
-last_updated: 2025-11-15
+last_updated: 2026-07-04
 version: 0.1
 ---
 
@@ -315,7 +315,7 @@ The timeline is approximate. Cases assigned to a Revenue Officer (RO) can move f
 
 Once 30 days have passed since LT11/CP90 with no CDP request and no payment arrangement, the IRS may levy. Common levy targets:
 
-- **Wage levy** (Form 668-W). Continuous on each paycheck. The exempt amount under §6334(d) is computed from the standard deduction and personal exemptions (for 2025, the IRS publishes Publication 1494 tables; the exempt amount for a single filer with no dependents is roughly $14,600 / year divided by pay periods — verify against the most current Publication 1494). Everything above the exempt amount goes to the IRS until released.
+- **Wage levy** (Form 668-W). Continuous on each paycheck. The exempt amount under §6334(d) is computed from the standard deduction and personal exemptions (for 2025, the IRS publishes Publication 1494 tables; the exempt amount for a single filer with no dependents is roughly $15,750 / year — tracking the OBBBA §70102 standard deduction — divided by pay periods; Publication 1494 controls the actual levy tables, so verify against the most current edition). Everything above the exempt amount goes to the IRS until released.
 - **Bank levy** (Form 668-A). One-shot levy on the account balance at the moment the bank receives the levy. The bank holds the funds for **21 days** (§6332(c)) before remitting to the IRS, giving the taxpayer and practitioner a narrow window to negotiate a release.
 - **Accounts receivable levy.** Levies on the taxpayer's customers. Catastrophic for businesses.
 - **Social Security levy** under the Federal Payment Levy Program (FPLP): up to 15% of SS benefits.
@@ -1205,3 +1205,9 @@ verified rules together with the name of the accountant who signed them off.
 
 **→ Install the free connector:** <https://www.openaccountants.com/connect>
 **MCP endpoint:** `https://www.openaccountants.com/api/mcp`
+
+---
+
+## Changelog
+
+- **2026-07-04** — Stale figures corrected via cross-guide contradiction check: §6334(d) wage-levy exempt-amount illustration updated from the 2024 standard deduction ($14,600) to the 2025 amount $15,750 (OBBBA §70102); Publication 1494 controls the actual levy tables.

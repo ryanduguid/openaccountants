@@ -1,6 +1,6 @@
 ---
 name: us-form-1040-individual-return
-description: Tier 2 US federal content skill for preparing Form 1040 — the standard individual income tax return for non-freelance taxpayers (W-2 employees, retirees, investors, families). Covers tax year 2025 under OBBBA including the $40k SALT cap, the $15k/$30k/$22,500 standard deduction, capital gains brackets (0/15/20%), the §1411 3.8% NIIT, AMT post-TCJA, Schedule 1/2/3 walkthrough, dependents and filing status, kiddie tax §1(g), and itemized deduction Schedule A. Distinct from us-federal-return-assembly which orchestrates Schedule C freelance returns. Federal only.
+description: Tier 2 US federal content skill for preparing Form 1040 — the standard individual income tax return for non-freelance taxpayers (W-2 employees, retirees, investors, families). Covers tax year 2025 under OBBBA including the $40k SALT cap, the $15,750/$31,500/$23,625 standard deduction, capital gains brackets (0/15/20%), the §1411 3.8% NIIT, AMT post-TCJA, Schedule 1/2/3 walkthrough, dependents and filing status, kiddie tax §1(g), and itemized deduction Schedule A. Distinct from us-federal-return-assembly which orchestrates Schedule C freelance returns. Federal only.
 jurisdiction: US
 category: federal-tax
 tier: 2
@@ -64,11 +64,13 @@ Refuse and refer to a human credentialed preparer when:
 
 | Filing status | 2025 amount |
 |---|---|
-| Single | **$15,000** |
-| Married filing jointly (MFJ) | **$30,000** |
-| Married filing separately (MFS) | $15,000 |
-| Head of household (HoH) | **$22,500** |
-| Qualifying surviving spouse (QSS) | $30,000 |
+| Single | **$15,750** |
+| Married filing jointly (MFJ) | **$31,500** |
+| Married filing separately (MFS) | $15,750 |
+| Head of household (HoH) | **$23,625** |
+| Qualifying surviving spouse (QSS) | $31,500 |
+
+OBBBA §70102 raised the 2025 base amounts above the original Rev. Proc. 2024-40 figures ($15,000 / $30,000 / $22,500).
 
 Additional standard deduction (age 65+ or blind):
 - **MFJ / QSS:** $1,600 per qualifying condition per spouse
@@ -744,7 +746,7 @@ For 2025: excess business loss disallowed when business losses exceed business i
 8. **NIIT** not computed when AGI > $200k/$250k and investment income present.
 9. **Kiddie tax** Form 8615 missed for college student dependents with brokerage 1099-DIV.
 10. **AMT** not run for ISO exercises.
-11. **Standard deduction limitation** when claimed as a dependent — taxpayer used the regular $15k instead of the §63(c)(5) limit ($1,350 or earned income + $450, capped at $15k).
+11. **Standard deduction limitation** when claimed as a dependent — taxpayer used the regular $15,750 instead of the §63(c)(5) limit ($1,350 or earned income + $450, capped at $15,750).
 12. **Wrong filing status** — HoH claimed without a qualifying person; QSS claimed in year 3+ after spouse's death.
 13. **Box 12 W-2 code DD** (employer-sponsored health coverage) mistakenly added to income — informational only.
 14. **Form 1098-T scholarship amount** not added back when in excess of qualified tuition for AOTC.
@@ -779,31 +781,31 @@ For 2025: excess business loss disallowed when business losses exceed business i
 | 9 | Total income | $105,250 |
 | 10 | Adjustments (Sch 1 Line 13 HSA $4,300 + Line 21 SLI $1,800) | $6,100 |
 | 11 | AGI | $99,150 |
-| 12 | Standard deduction | $15,000 |
+| 12 | Standard deduction | $15,750 |
 | 13 | QBI | 0 |
-| 14 | Sum | $15,000 |
-| 15 | Taxable income | $84,150 |
+| 14 | Sum | $15,750 |
+| 15 | Taxable income | $83,400 |
 
 **Tax computation** (Qualified Dividends and Capital Gain Tax Worksheet because LTCG and QDIV present):
-- Ordinary taxable income portion: $84,150 - $5,000 LTCG - $2,800 QDIV = $76,350
+- Ordinary taxable income portion: $83,400 - $5,000 LTCG - $2,800 QDIV = $75,600
 - STCG of $1,200 is in ordinary portion
-- Tax on $76,350 (single, §1(j)): $11,983
+- Tax on $75,600 (single, §1(j)): $11,546
   - 10% × $11,925 = $1,192.50
   - 12% × ($48,475 - $11,925) = $4,386.00
-  - 22% × ($76,350 - $48,475) = $6,132.50
-  - Total = $11,711 (rounded per tax table)
+  - 22% × ($75,600 - $48,475) = $5,967.50
+  - Total = $11,546 (rounded per tax table)
 - Tax on $5,000 + $2,800 = $7,800 LTCG/QDIV at 15% (since ordinary income > $48,350 threshold): $1,170
-- Line 16 tax: ~**$12,881**
+- Line 16 tax: ~**$12,716**
 
 | Line | Item | Amount |
 |---|---|---|
-| 16 | Tax | $12,881 |
-| 22 | Total tax before other | $12,881 |
+| 16 | Tax | $12,716 |
+| 22 | Total tax before other | $12,716 |
 | 23 | Other taxes (Schedule 2) | 0 |
-| 24 | Total tax | $12,881 |
+| 24 | Total tax | $12,716 |
 | 25a | Withholding W-2 | $12,400 |
 | 33 | Total payments | $12,400 |
-| 37 | Amount owed | **$481** |
+| 37 | Amount owed | **$316** |
 
 NIIT check: AGI $99,150 < $200k threshold — **no NIIT**.
 
@@ -850,7 +852,7 @@ NIIT check: AGI $99,150 < $200k threshold — **no NIIT**.
 | 14 | Total charitable | $9,500 |
 | 17 | Total itemized | **$67,300** |
 
-Itemized ($67,300) > standard ($30,000) → itemize.
+Itemized ($67,300) > standard ($31,500) → itemize.
 
 | Line | Item | Amount |
 |---|---|---|
@@ -939,34 +941,34 @@ Itemized ($67,300) > standard ($30,000) → itemize.
 | 11 | AGI | $72,300 |
 
 **Standard deduction** (single, age 65+):
-- Base $15,000 + age 65+ addition $2,000 = **$17,000**
+- Base $15,750 + age 65+ addition $2,000 = **$17,750**
 
 Compare itemized: property tax $4,800 + charitable $1,200 = $6,000 — well below standard. Use standard.
 
 | Line | Item | Amount |
 |---|---|---|
-| 12 | Standard | $17,000 |
-| 15 | Taxable income | $55,300 |
+| 12 | Standard | $17,750 |
+| 15 | Taxable income | $54,550 |
 
 **Tax** (Qualified Dividends and Capital Gain Worksheet):
-- Ordinary portion: $55,300 - $9,000 LTCG - $3,200 QDIV = $43,100
-- Tax on $43,100 single:
+- Ordinary portion: $54,550 - $9,000 LTCG - $3,200 QDIV = $42,350
+- Tax on $42,350 single:
   - 10% × $11,925 = $1,192.50
-  - 12% × ($43,100 - $11,925) = $3,741
-  - Total = $4,934
+  - 12% × ($42,350 - $11,925) = $3,651
+  - Total = $4,844
 - Tax on $9,000 + $3,200 = $12,200 LTCG/QDIV:
-  - $43,100 ordinary + $12,200 = $55,300 total
-  - $48,350 - $43,100 = $5,250 at 0%
-  - $12,200 - $5,250 = $6,950 at 15% = $1,043
-- **Line 16 tax: ~$5,977**
+  - $42,350 ordinary + $12,200 = $54,550 total
+  - $48,350 - $42,350 = $6,000 at 0%
+  - $12,200 - $6,000 = $6,200 at 15% = $930
+- **Line 16 tax: ~$5,774**
 
 | Line | Item | Amount |
 |---|---|---|
-| 16 | Tax | $5,977 |
-| 24 | Total tax | $5,977 |
+| 16 | Tax | $5,774 |
+| 24 | Total tax | $5,774 |
 | 25b | 1099 withholding | $7,000 |
 | 33 | Total payments | $7,000 |
-| 34 | Overpayment | **$1,023 refund** |
+| 34 | Overpayment | **$1,226 refund** |
 
 NIIT check: AGI $72,300 < $200k — none. RMD check: Walter is 73, RMD age (73 under SECURE 2.0 §107 for those born 1951-1959) — confirm full RMD was satisfied. The $10,000 QCD counts toward RMD (§408(d)(8)(B)).
 
@@ -1067,3 +1069,4 @@ verified rules together with the name of the accountant who signed them off.
 ## Changelog
 
 - **2026-07-04** — OBBBA corrections applied from an in-progress review by Christopher Aryee, CPA: SALT §70120 + phase-down, §199A stays 20%, CTC §70104, §25D §70506, tips/overtime/auto §70201–203, 2026 standard deduction, educator expenses uncapped, mortgage insurance deductible, 0.5% charitable floor, state-disaster casualty losses, Pease §70111, §1202 phased exclusion, adoption credit refundable, §461(l) §70601.
+- **2026-07-04** — Stale figures corrected via cross-guide contradiction check: 2025 base standard deduction $15,000/$30,000/$22,500 → $15,750/$31,500/$23,625 (OBBBA §70102); worked examples recomputed — Example A tax $12,881 → $12,716, owed $481 → $316; Example C standard deduction $17,000 → $17,750, tax $5,977 → $5,774, refund $1,023 → $1,226 (Rev. Proc. 2024-40 / OBBBA §70102).

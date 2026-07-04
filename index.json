@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-04T12:40:34+00:00",
+ "generated_at": "2026-07-04T17:22:59+00:00",
  "counts": {
   "guides": 1007,
   "jurisdictions": 187,
@@ -28,7 +28,7 @@
    "verified_by": "pending",
    "reviewed_by": null,
    "tax_year": null,
-   "last_updated": "2025-11-15"
+   "last_updated": "2026-07-04"
   },
   {
    "slug": "us-estate-gift-706-709",
@@ -64,7 +64,7 @@
    "verified_by": "pending",
    "reviewed_by": null,
    "tax_year": null,
-   "last_updated": "2025-11-15"
+   "last_updated": "2026-07-04"
   },
   {
    "slug": "us-foreign-tax-credit-1116",
@@ -76,7 +76,7 @@
    "verified_by": "pending",
    "reviewed_by": null,
    "tax_year": null,
-   "last_updated": "2025-11-15"
+   "last_updated": "2026-07-04"
   },
   {
    "slug": "us-form-1040-individual-return",
@@ -184,7 +184,7 @@
    "verified_by": "pending",
    "reviewed_by": null,
    "tax_year": null,
-   "last_updated": "2025-11-15"
+   "last_updated": "2026-07-04"
   },
   {
    "slug": "us-multi-state-residency-and-allocation",
@@ -892,7 +892,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-06-12"
+   "last_updated": "2026-07-04"
   },
   {
    "slug": "us-qbi-deduction",
@@ -904,7 +904,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": null,
-   "last_updated": "2026-06-12"
+   "last_updated": "2026-07-04"
   },
   {
    "slug": "us-quarterly-estimated-tax",
