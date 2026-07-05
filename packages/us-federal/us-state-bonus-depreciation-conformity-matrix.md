@@ -1,11 +1,11 @@
 ---
 name: us-state-bonus-depreciation-conformity-matrix
-description: Tier 2 US federal-level reference skill providing the 50-state matrix of conformity to federal §168(k) bonus depreciation and §179 expensing. Covers tax year 2025 including state-by-state add-back requirements (CA never conforms with $25k §179 cap, NY decoupled since 2003, NJ partial, PA decoupled bonus with §179 conformity, etc.), recovery mechanisms for state add-backs (typically over 5 years or via decoupled MACRS lifetime), §163(j) interest limit conformity, NOL post-TCJA conformity, and the OBBBA-era bonus depreciation status with the TCJA phase-down (60% 2024 → 0% 2027 absent extension).
+description: Tier 2 US federal-level reference skill providing the 50-state matrix of conformity to federal §168(k) bonus depreciation and §179 expensing. Covers tax year 2025 including state-by-state add-back requirements (CA never conforms with $25k §179 cap, NY decoupled since 2003, NJ partial, PA decoupled bonus with §179 conformity, etc.), recovery mechanisms for state add-backs (typically over 5 years or via decoupled MACRS lifetime), §163(j) interest limit conformity, NOL post-TCJA conformity, and the OBBBA bonus depreciation status (§168(k) restored to 100% for property acquired after Jan 19, 2025 under OBBBA (IRC §168(k) as amended); property acquired on/before Jan 19, 2025 stays on the TCJA phase-down at 40% for 2025).
 jurisdiction: US
 category: federal-tax
 tier: 2
 verified_by: pending
-last_updated: 2025-11-15
+last_updated: 2026-07-05
 version: 0.1
 ---
 
@@ -76,11 +76,11 @@ Taxpayers may elect out of bonus depreciation on a class-by-class basis under §
 
 Per Rev. Proc. 2024-40 and the §179 inflation adjustments:
 
-- **§179 deduction limit (cap):** $1,220,000
-- **§179 phase-out (investment) threshold:** $3,050,000 (dollar-for-dollar reduction begins at this level; deduction fully phased out at $4,270,000)
+- **§179 deduction limit (cap):** $2,500,000 (OBBBA §70306, effective for tax years beginning after Dec 31, 2024; the pre-OBBBA / Rev. Proc. 2024-40 figure was $1,250,000)
+- **§179 phase-out (investment) threshold:** $4,000,000 (OBBBA §70306; dollar-for-dollar reduction begins at this level; deduction fully phased out at $6,500,000)
 - **§179 SUV deduction limit:** $30,500 (qualifying sport utility vehicles over 6,000 lbs GVWR but under 14,000 lbs)
 - **Taxable income limitation:** §179 deduction limited to taxable income from active trade or business
-- **OBBBA modification:** The 2025 OBBBA increased the §179 cap and phase-out for years after 2025. Verify 2026 figures separately.
+- **OBBBA:** OBBBA §70306 raised the federal §179 cap to $2,500,000 and the phase-out threshold to $4,000,000, effective for property placed in service in tax years beginning after Dec 31, 2024 (i.e. 2025 onward), indexed thereafter.
 
 ### §179 qualifying property
 
@@ -91,8 +91,8 @@ Tangible personal property used in a trade or business, off-the-shelf computer s
 | Feature | §179 | §168(k) bonus |
 |---|---|---|
 | Election required | Yes (per asset class) | No (automatic; opt-out election available) |
-| Annual cap | Yes ($1.22M for 2025) | No |
-| Phase-out at investment level | Yes ($3.05M for 2025) | No |
+| Annual cap | Yes ($2.5M for 2025, OBBBA §70306) | No |
+| Phase-out at investment level | Yes ($4M for 2025, OBBBA §70306) | No |
 | Income limitation | Yes (active trade/business income) | No |
 | Used property eligible | Yes | Yes (post-TCJA, with restrictions) |
 | Real property | Limited (qualified improvement property + §179(f)) | 15-year QIP only |
@@ -594,3 +594,7 @@ verified rules together with the name of the accountant who signed them off.
 
 **→ Install the free connector:** <https://www.openaccountants.com/connect>
 **MCP endpoint:** `https://www.openaccountants.com/api/mcp`
+
+
+## Changelog
+- **2026-07-05** — Federal reference figures corrected to OBBBA (adjudicated): §179 cap $2.5M / phase-out $4M (§70306); bonus depreciation 100% for property acquired after Jan 19, 2025 (IRC §168(k) as amended by OBBBA). State-specific caps unchanged.
