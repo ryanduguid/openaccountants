@@ -75,7 +75,7 @@ The skill enforces the following execution order:
 
 4. **`uk-national-insurance`** -- Class 2 + Class 4 NIC
    - Depends on SA103: net self-employment profit feeds Class 4 NIC computation
-   - Class 2: flat rate GBP 3.45/week (GBP 179.40/year) if profits above Small Profits Threshold (GBP 6,725) -- voluntary below threshold
+   - Class 2: flat rate GBP 3.50/week (GBP 182.00/year) if profits above Small Profits Threshold (GBP 6,845) -- voluntary below threshold
    - Class 4: 6% on profits between GBP 12,570 and GBP 50,270; 2% above GBP 50,270
    - Output: Class 2 amount, Class 4 amount, total NIC due via Self Assessment
 
@@ -224,7 +224,7 @@ If any upstream content skill fails to produce validated output, the assembly sk
 
 ## National Insurance
 [Content from uk-national-insurance output]
-- Class 2: GBP 3.45/week, GBP 179.40/year (if profits > GBP 6,725)
+- Class 2: GBP 3.50/week, GBP 182.00/year (if profits > GBP 6,845)
 - Class 4: 6% on GBP 12,570-50,270 = GBP X
 - Class 4: 2% above GBP 50,270 = GBP X
 - Total NIC via Self Assessment: GBP X
@@ -273,7 +273,7 @@ If any upstream content skill fails to produce validated output, the assembly sk
 - e.g., "Motor vehicle simplified expenses 45p/mile x 8,000 miles = GBP 3,600 -- ITTOIA 2005 s94D"
 - e.g., "MacBook Pro GBP 1,800 claimed under AIA -- CAA 2001 s51A"
 - e.g., "Cash basis elected -- ITTOIA 2005 s25A, turnover under GBP 150,000"
-- e.g., "Class 2 NIC GBP 179.40 -- SSCBA 1992 s11(2)"
+- e.g., "Class 2 NIC GBP 182.00 -- SSCBA 1992 s11(2)"
 - e.g., "Class 4 NIC 6%/2% -- SSCBA 1992 s15"
 - e.g., "Student loan Plan 2 repayment 9% above GBP 27,295 -- Education (Student Loans) (Repayment) Regulations 2009"
 
@@ -354,7 +354,7 @@ If any upstream content skill fails to produce validated output, the assembly sk
 
 **Check UK10 -- Filing calendar is complete.** All deadlines for VAT, SA, NIC, and POA are listed with specific dates and amounts.
 
-**Check UK11 -- Class 2 NIC correctly determined.** Due if profits > Small Profits Threshold (GBP 6,725). Voluntary if below.
+**Check UK11 -- Class 2 NIC correctly determined.** Due if profits > Small Profits Threshold (GBP 6,845). Voluntary if below.
 
 **Check UK12 -- Reviewer brief contains legislation citations.** Every position taken references the specific Act and section.
 
@@ -455,3 +455,6 @@ verified rules together with the name of the accountant who signed them off.
 
 **→ Install the free connector:** <https://www.openaccountants.com/connect>
 **MCP endpoint:** `https://www.openaccountants.com/api/mcp`
+
+## Changelog
+- **2026-07-05** — UK Class 2 NIC 2025/26 corrected (per packages/uk/rates.2025.json, SSCBA 1992): Small Profits Threshold GBP 6,845 (was 6,725), voluntary weekly rate GBP 3.50 / GBP 182.00 annual. 2024-25 comparison figures retained.

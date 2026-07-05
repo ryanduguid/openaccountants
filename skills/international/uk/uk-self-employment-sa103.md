@@ -7,7 +7,7 @@ jurisdiction: GB
 tax_year: 2025
 tax_year_notes: "2025-26"
 tier: 2
-last_updated: 2026-07-04
+last_updated: 2026-07-05
 prior_year: 2024-25
 forward_year: 2026-27
 category: international
@@ -77,7 +77,7 @@ Making Tax Digital for Income Tax Self Assessment (MTD ITSA) phases in mandatory
 | Class 4 additional rate | 2% | 2% | 2% |
 | Class 2 NIC | Abolished from 6 Apr 2024 (voluntary only when profit < SPT) | Voluntary only | Voluntary only |
 | Class 2 voluntary weekly rate | GBP 3.45 | GBP 3.50 (illustrative; HMRC sets annually) | TBC |
-| Small Profits Threshold (SPT, for voluntary Class 2 / NI credits) | GBP 6,725 | GBP 6,725 | GBP 6,725 |
+| Small Profits Threshold (SPT, for voluntary Class 2 / NI credits) | GBP 6,725 | GBP 6,845 | TBC |
 | MTD ITSA mandate | Not yet | Notification year (HMRC writes to GBP 50k+ traders) | Phase 1 LIVE for gross income > GBP 50k |
 
 ### Class 4 NIC Rates -- Applies All 3 Years [T1]
@@ -93,7 +93,7 @@ Post-6-April-2024 rate cut (Finance Act 2024) is now embedded. No further rate c
 ### Class 2 NIC -- Abolished but Optionally Voluntary [T1]
 
 - **Compulsory Class 2 ABOLISHED from 6 April 2024.** Self-employed with profits at or above the Lower Profits Threshold (GBP 12,570) receive Class 2 NI credit treated as paid without payment (since 2022-23). No Class 2 box on the SA103 from 2024-25 onwards for these traders.
-- **Voluntary Class 2 still available** when profits are below the Small Profits Threshold (SPT) of GBP 6,725 and the trader wishes to protect State Pension and contributory benefit entitlement. Paid through Self Assessment.
+- **Voluntary Class 2 still available** when profits are below the Small Profits Threshold (SPT) of GBP 6,845 and the trader wishes to protect State Pension and contributory benefit entitlement. Paid through Self Assessment.
 - Applies identically across 2024-25, 2025-26, and 2026-27.
 
 ### Simplified Expenses Rates -- Applies All 3 Years [T1]
@@ -296,7 +296,7 @@ Post-6-April-2024 rate cut (Finance Act 2024) is now embedded. No further rate c
 
 **Year:** 2025-26. Applies identically 2024-25 and 2026-27.
 
-**Input:** Part-time sole trader profit GBP 4,200 (below SPT GBP 6,725). Wants to preserve State Pension qualifying year.
+**Input:** Part-time sole trader profit GBP 4,200 (below SPT GBP 6,845). Wants to preserve State Pension qualifying year.
 
 **Computation:**
 - Class 4: GBP 0 (profit below GBP 12,570)
@@ -477,7 +477,7 @@ G. CLASS 4 NIC (2025-26 rates: 6% / 2%)
   G3. Total Class 4 NIC                            ___________
 
 H. CLASS 2 NIC (voluntary only)
-  H1. Voluntary Class 2 if profit < SPT GBP 6,725  ___________
+  H1. Voluntary Class 2 if profit < SPT GBP 6,845  ___________
 
 I. MTD ITSA STATUS (for 2026-27 planning)
   I1. 2024-25 gross income (turnover + property)   ___________
@@ -543,7 +543,7 @@ ONBOARDING QUESTIONS -- UK SELF-EMPLOYMENT
 8. Do you have any other self-employments or rental property? (counts toward MTD threshold)
 9. What was your 2024-25 gross income (turnover + gross rents)? (determines 2026-27 MTD Phase 1)
 10. Have you received an HMRC MTD ITSA mandation notice?
-11. Profits below GBP 6,725 -- do you want to pay voluntary Class 2 for State Pension credit?
+11. Profits below GBP 6,845 -- do you want to pay voluntary Class 2 for State Pension credit?
 12. Any transition profit instalments still running from basis period reform?
 ```
 
@@ -599,3 +599,6 @@ ONBOARDING QUESTIONS -- UK SELF-EMPLOYMENT
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, EA, tax attorney, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
 
 The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
+
+## Changelog
+- **2026-07-05** — UK Class 2 NIC 2025/26 corrected (per packages/uk/rates.2025.json, SSCBA 1992): Small Profits Threshold GBP 6,845 (was 6,725), voluntary weekly rate GBP 3.50 / GBP 182.00 annual. 2024-25 comparison figures retained.

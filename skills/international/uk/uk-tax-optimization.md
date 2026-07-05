@@ -15,7 +15,7 @@ depends_on: []
 tax_year: 2025
 tax_year_notes: "2025-26"
 tier: 2
-last_updated: 2026-07-04
+last_updated: 2026-07-05
 verified_by: pending
 ---
 
@@ -196,7 +196,7 @@ In a loss-making year, accelerate expenditure (training, equipment, marketing) t
 
 | Strategy | Detail |
 |---|---|
-| Voluntary Class 2 | If profits below £6,845, pay voluntary Class 2 (£3.45/week) to protect State Pension entitlement. |
+| Voluntary Class 2 | If profits below £6,845, pay voluntary Class 2 (£3.50/week) to protect State Pension entitlement. |
 | NIC holiday (incorporation) | Directors of Ltd companies can set salary below the Primary Threshold (£12,570) to avoid employee NIC while still building NIC credits. |
 | Maximize pension contributions | Pension contributions reduce income for the Personal Allowance taper calculation but do not reduce NIC-liable profits. |
 
@@ -318,3 +318,6 @@ In a loss-making year, accelerate expenditure (training, equipment, marketing) t
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, EA, tax attorney, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
 
 The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com).
+
+## Changelog
+- **2026-07-05** — UK Class 2 NIC 2025/26 corrected (per packages/uk/rates.2025.json, SSCBA 1992): Small Profits Threshold GBP 6,845 (was 6,725), voluntary weekly rate GBP 3.50 / GBP 182.00 annual. 2024-25 comparison figures retained.
