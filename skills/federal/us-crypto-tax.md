@@ -114,7 +114,7 @@ The taxpayer identifies exactly which lots are being sold. Requires contemporane
 
 Specific identification allows tax-loss harvesting and holding period optimization.
 
-Per Rev. Rul. 2024-14, specific identification requires adequate records designating the specific unit sold at the time of the transaction. If the taxpayer cannot adequately identify the units sold, FIFO applies by default.
+Per the final digital asset broker regulations, Treas. Reg. §1.1012-1(j) (TD 10000, July 2024), specific identification requires adequate records designating the specific unit sold no later than the time of the transaction. If the taxpayer cannot adequately identify the units sold, FIFO applies by default. Taxpayers transitioning from multi-wallet ("universal") basis tracking may allocate unused basis to wallets under the safe harbor in Rev. Proc. 2024-28.
 
 ### FIFO (First In, First Out)
 
@@ -128,9 +128,11 @@ A subset of specific identification where the taxpayer deliberately selects the 
 
 **NOT permitted for cryptocurrency.** Average cost is only available for mutual fund shares and dividend reinvestment plan shares under Reg. §1.1012-1(e). Crypto does not qualify. Taxpayers who used average cost on prior returns may need to file amended returns.
 
-### Universal basis tracking requirement (new for 2025+)
+### Wallet-by-wallet basis tracking requirement (new for 2025+)
 
-Under the broker reporting regulations (TD 9877), beginning January 1, 2025, brokers must track and report cost basis. Taxpayers using exchanges that are now classified as brokers will receive Form 1099-DA with basis information. For transactions on non-broker platforms (DeFi protocols, peer-to-peer), the taxpayer must maintain their own basis records.
+Effective January 1, 2025, basis must be tracked wallet-by-wallet / account-by-account under Treas. Reg. §1.1012-1(j); the old multi-wallet "universal" pooling method is no longer permitted. Taxpayers who previously used universal tracking had to allocate their remaining basis to specific wallets under the Rev. Proc. 2024-28 safe harbor (allocation generally required as of January 1, 2025). Specific identification must now be made per wallet no later than the sale; otherwise FIFO applies within that wallet. This directly changes 2025 Form 8949 lot selection.
+
+Broker reporting is phased under the final digital asset broker regulations (TD 10000, 89 FR 56480, July 9, 2024; Treas. Reg. §1.6045-1): brokers report GROSS PROCEEDS on Form 1099-DA for sales on or after January 1, 2025; BASIS reporting on Form 1099-DA begins only for covered digital assets acquired on or after January 1, 2026 (with transitional penalty relief under Notice 2024-56 and Notice 2024-57). For 2025 sales, Form 1099-DA will generally show proceeds without IRS-reported basis. For transactions on non-broker platforms (DeFi protocols, peer-to-peer), the taxpayer must maintain their own basis records.
 
 ---
 
@@ -155,7 +157,7 @@ If the taxpayer operates a validator node with:
 - Primary purpose of income or profit
 - Significant personal effort (maintaining uptime, software updates, hardware)
 
-Then staking income is reported on Schedule C and subject to self-employment tax (15.3% on first $176,100 of net earnings for 2025, 2.9% thereafter).
+Then staking income is reported on Schedule C and subject to self-employment tax (15.3% on the first $176,100 of net earnings for 2025; 2.9% Medicare thereafter, rising to 3.8% (2.9% + 0.9% Additional Medicare Tax under IRC §§1401(b)(2), 3101(b)(2)) on self-employment earnings above $200,000 single / $250,000 MFJ).
 
 ### When staking is passive (Schedule 1)
 
@@ -200,8 +202,8 @@ When mining through a pool:
 ### Mining equipment depreciation
 
 - MACRS 5-year property (computers and peripherals)
-- §179 expensing available up to $1,250,000 for 2025
-- Bonus depreciation: 40% for property placed in service in 2025 (phasing down from 100% in 2022)
+- §179 expensing available up to $2,500,000 for 2025, with a $4,000,000 phase-out threshold, for taxable years beginning after December 31, 2024 (IRC §179(b) as amended by OBBBA, P.L. 119-21 §70306)
+- Bonus depreciation: 100% for property acquired and placed in service after January 19, 2025 (permanently restored by OBBBA, P.L. 119-21 §70301, amending IRC §168(k)); the 40% rate applies in 2025 only to property acquired on or before January 19, 2025
 - If equipment becomes worthless or is scrapped, remaining basis is deductible as a loss in that year
 
 ---
@@ -380,7 +382,7 @@ Multiple proposals have been introduced to extend wash sale rules to digital ass
 
 ### Background
 
-The Infrastructure Investment and Jobs Act (2021) expanded the definition of "broker" to include digital asset exchanges and certain DeFi platforms, effective January 1, 2025.
+The Infrastructure Investment and Jobs Act (2021) expanded the definition of "broker" to include digital asset exchanges; custodial broker reporting begins with sales on or after January 1, 2025 (TD 10000). The separate DeFi (non-custodial front-end) broker regulations (TD 10021, Dec. 2024) were nullified by Congress under the Congressional Review Act (H.J.Res. 25, P.L. 119-5, signed April 10, 2025), and substantially similar rules cannot be reissued without new legislation (5 U.S.C. §801). As of tax year 2025, only custodial brokers report on Form 1099-DA.
 
 ### What Form 1099-DA reports
 
@@ -402,7 +404,7 @@ Taxpayers who used:
 
 - Self-custodied wallet transactions (hardware wallets, MetaMask)
 - Peer-to-peer transactions
-- Certain DeFi protocols (IRS implementation of DeFi broker rules delayed to 2026+)
+- DeFi protocols and non-custodial front-ends (the DeFi broker regulations, TD 10021, were nullified under the Congressional Review Act by P.L. 119-5; DeFi front-ends are not 1099-DA brokers)
 
 ### Reconciliation
 
@@ -438,11 +440,11 @@ Multiple legislative proposals have included a de minimis exclusion ($200 or $60
 
 **Requirement:** US persons with financial interest in or signature authority over foreign financial accounts must file FBAR if the aggregate value exceeds $10,000 at any time during the calendar year.
 
-**Application to crypto:** If the taxpayer holds crypto on a foreign exchange (Binance international, KuCoin, Bybit, OKX, etc.), the account is reportable on FBAR.
+**Application to crypto:** Under FinCEN Notice 2020-2 (Dec. 31, 2020), a foreign account holding ONLY virtual currency is not currently a reportable account under 31 CFR 1010.350. FinCEN announced an intent to amend the regulations to cover virtual currency but has not finalized that amendment. A foreign exchange account (Binance international, KuCoin, Bybit, OKX, etc.) IS reportable if it also holds reportable assets (e.g., fiat balances), and many practitioners file protectively for crypto-only accounts — but flat reportability is not current law. Verify FinCEN's regulatory status for the applicable filing season.
 
 - Filing deadline: April 15 (automatic extension to October 15)
 - Filed electronically through FinCEN BSA E-Filing
-- Penalties for non-filing: up to $12,886 per account per year (non-willful), or greater of $129,210 or 50% of account balance (willful)
+- Penalties for non-filing: non-willful — statutory maximum $10,000 per violation, as adjusted annually for inflation, applied per FBAR report (per year), NOT per account (Bittner v. United States, 598 U.S. 85 (2023)); willful — greater of the inflation-adjusted $100,000 statutory amount or 50% of the account balance (31 U.S.C. §5321(a)(5)). Check FinCEN's current inflation-adjustment rule (31 CFR 1010.821) for the year's exact maximums.
 
 ### Form 8938 (FATCA)
 
@@ -512,7 +514,7 @@ Coinbase, Kraken, Gemini, Binance.US are US-based. Accounts on these exchanges a
 
 ### Lost or stolen crypto
 
-- Theft loss: Under TCJA (2018-2025), personal theft losses are only deductible if attributable to a federally declared disaster. Crypto theft generally does NOT qualify.
+- Theft loss: Personal theft losses are only deductible if attributable to a federally declared disaster (or certain state-declared disasters). This limitation, originally enacted by TCJA for 2018-2025, was made permanent by OBBBA (P.L. 119-21 §70109, amending IRC §165(h)(5)) — it does not lapse after 2025. Crypto theft generally does NOT qualify.
 - Exception: If the crypto was held in a trade or business, the loss may be deductible under §165(c)(1)
 - Worthless tokens: Capital loss in the year the token becomes worthless (must demonstrate complete worthlessness)
 - Lost keys/inaccessible wallet: No deduction until the taxpayer can demonstrate the crypto is permanently inaccessible (abandonment loss requires affirmative act)
@@ -673,6 +675,7 @@ Received 1,000 ARB tokens via airdrop on March 23, 2025. FMV at receipt: $1.15/t
 ## Changelog
 
 - **2026-07-04** — Stale figures corrected via cross-guide contradiction check: 2025 gift tax annual exclusion $18,000 → $19,000 ($18,000 was the 2024 figure) (Rev. Proc. 2024-40).
+- **2026-07-04** — Corrections from a Fable deep-accuracy review (adversarially verified): fixed lot-ID citation (Rev. Rul. 2024-14 → Treas. Reg. §1.1012-1(j)/Rev. Proc. 2024-28) and broker-reg citation (TD 9877 → TD 10000) with phased 1099-DA proceeds/basis dates; added the 2025 wallet-by-wallet basis rule; §179 limit $1.25M → $2.5M and 100% bonus depreciation post-Jan 19, 2025 (OBBBA); DeFi broker rules nullified by CRA (P.L. 119-5), not delayed; FBAR crypto-only accounts not currently reportable (FinCEN Notice 2020-2) and non-willful penalty per report per Bittner; theft-loss limitation made permanent by OBBBA; SE-tax Medicare rate 3.8% above $200k/$250k (TD 10000; Rev. Proc. 2024-28; P.L. 119-21 §§70301/70306/70109; P.L. 119-5; Notice 2024-56/57; FinCEN Notice 2020-2; Bittner v. United States, 598 U.S. 85; IRC §§1401(b)(2)/3101(b)(2)).
 
 ## Disclaimer
 

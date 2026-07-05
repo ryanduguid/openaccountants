@@ -6,7 +6,7 @@ version: 2.0
 jurisdiction: US
 tax_year: 2025
 tier: 2
-last_updated: 2026-06-12
+last_updated: 2026-07-04
 category: federal
 depends_on:
   - us-tax-workflow-base
@@ -80,7 +80,7 @@ depends_on:
 
 ### Refusal catalogue
 
-**R-US-ET-1 -- Corporate estimated tax (1120-W).** Trigger: corporation. Message: "Corporate estimated tax is outside this skill."
+**R-US-ET-1 -- Corporate estimated tax (IRC 6655).** Trigger: corporation. Message: "Corporate estimated tax is outside this skill." Note: Form 1120-W was retired after tax year 2022 and is designated historical by the IRS; corporations compute estimated tax under IRC 6655 (per the historical Form 1120-W instructions) and pay via EFTPS.
 
 **R-US-ET-2 -- Trust/estate estimated tax (1041-ES).** Trigger: trust or estate. Message: "Trust/estate estimated tax is outside this skill."
 
@@ -194,7 +194,8 @@ Required = lesser of:
 
 - Prior year must be 12-month tax year
 - Prior year return must be filed
-- If prior year tax was zero: required annual payment under Method B = $0
+- If either condition fails, Method B is UNAVAILABLE (not $0) -- only the 90% current-year method applies (IRC 6654(d)(1)(B), flush language)
+- Separately, no penalty applies at all if the individual had zero tax liability for the preceding 12-month tax year AND was a US citizen or resident throughout that year (IRC 6654(e)(2)) -- a statutory exception, not a $0 required payment
 
 ### 5.4 Quarterly instalments
 
@@ -209,7 +210,7 @@ Each instalment = required annual payment / 4 (25% each).
 | Period 3 | Jan-Aug | 1.5 |
 | Period 4 | Jan-Dec | 1 |
 
-Required instalment = 25% of annualized tax, minus prior payments. Must be elected for all four quarters.
+Required instalment = the applicable percentage of annualized tax, minus prior required instalments. The cumulative applicable percentages are 22.5% (period 1), 45% (period 2), 67.5% (period 3), and 90% (period 4) per IRC 6654(d)(2)(B)(i) and (C)(i) and Form 2210 Schedule AI, line 20. (A flat 25% per period is wrong: it overstates early-quarter required payments, and the year-end cumulative target is 90%, not 100%.) Must be elected for all four quarters.
 
 ### 5.6 Withholding strategy (MFJ)
 
@@ -217,7 +218,7 @@ Increase W-2 spouse's withholding via Form W-4 Step 4(c). Withholding is treated
 
 ### 5.7 January 31 filing exception
 
-If return filed and all tax paid by January 31, 2026: 4th instalment not required.
+If the return is filed and all tax paid by February 2, 2026, the 4th instalment is not required (IRC 6654(h)). January 31, 2026 falls on a Saturday, so for TY2025 the file-and-pay deadline rolls to Monday, February 2, 2026 under IRC 7503 (2025 Form 1040-ES instructions).
 
 ---
 
@@ -225,7 +226,7 @@ If return filed and all tax paid by January 31, 2026: 4th instalment not require
 
 ### 6.1 Underpayment penalty (Form 2210)
 
-The "penalty" is interest on the underpayment. Rate = federal short-term rate + 3 percentage points, compounded daily.
+The "penalty" is interest on the underpayment. Rate = federal short-term rate + 3 percentage points (IRC 6621(a)(2)), applied as simple interest. IRC 6622(b) expressly excludes the section 6654 estimated-tax addition from daily compounding, which is why the Section 6.3 pseudocode computes underpayment x daily_rate x days with no compounding.
 
 ### 6.2 Published rates (TY2025)
 
@@ -264,7 +265,7 @@ Self-employed spouse + W-2 spouse: increase W-4 extra withholding to cover both.
 
 ### 7.2 First year of self-employment
 
-If prior year tax was zero: required annual payment under prior-year method = $0. No estimated payments required under that method.
+If no return was filed for the prior year, or the prior year was not a 12-month tax year, the prior-year safe harbour (Method B) is unavailable -- only the 90% current-year method applies (IRC 6654(d)(1)(B), flush language). The actual first-year relief is the IRC 6654(e)(2) exception: no penalty is imposed if the individual had zero tax liability for the preceding 12-month tax year AND was a US citizen or resident throughout that year.
 
 ### 7.3 Mid-year income changes
 
@@ -272,7 +273,7 @@ Annualized method (Section 5.5) adjusts for uneven income. Alternatively, adjust
 
 ### 7.4 Farmer/fisherman exception
 
-2/3 of income from farming/fishing: single instalment by January 15, or file by March 1 and pay in full.
+If at least 2/3 of gross income is from farming or fishing, the required annual payment is the LESSER of 66 2/3% of current-year tax (instead of 90%) or 100% of prior-year tax -- the 110% high-AGI bump does not apply (IRC 6654(i); Form 2210-F and its instructions). A single instalment is due January 15, 2026 for TY2025. Alternatively, file the return and pay in full by March 2, 2026 (March 1, 2026 is a Sunday, so the deadline rolls to Monday under IRC 7503).
 
 ---
 
@@ -280,7 +281,7 @@ Annualized method (Section 5.5) adjusts for uneven income. Alternatively, adjust
 
 **EC1 -- Prior year short tax year.** Prior year < 12 months: prior-year safe harbour unavailable. Only 90% current year.
 
-**EC2 -- Prior year zero tax but high AGI.** Zero tax = $0 required annual payment under Method B. The zero-tax rule dominates.
+**EC2 -- Prior year zero tax but high AGI.** If the preceding 12-month tax year showed zero tax liability and the taxpayer was a US citizen or resident throughout that year, no penalty applies under IRC 6654(e)(2), regardless of AGI. This is a statutory exception, not a $0 Method B safe harbour, and it requires a 12-month preceding year plus the citizenship/residency condition.
 
 **EC3 -- Taxpayer dies mid-year.** Estimated payments required only through quarter of death.
 
@@ -290,11 +291,11 @@ Annualized method (Section 5.5) adjusts for uneven income. Alternatively, adjust
 
 **EC6 -- Overpayment.** Applied to next year or refunded (Form 1040 line 36).
 
-**EC7 -- Unequal payments.** Penalties computed per-quarter. Q1 shortfall not cured by Q2 overpayment.
+**EC7 -- Unequal payments.** Payments are credited against required instalments in the order the instalments are due (IRC 6654(b)(2)-(3); Form 2210 instructions), so an excess Q2 payment IS applied against an outstanding Q1 underpayment and stops penalty accrual on it from the Q2 payment date forward. What a later payment cannot do is erase the penalty already accrued from the Q1 due date to the payment date.
 
 **EC8 -- Disaster area relief.** IRS may postpone due dates. Verify announcements.
 
-**EC9 -- Farmer/fisherman.** Single January 15 payment or file by March 1.
+**EC9 -- Farmer/fisherman.** Required annual payment = lesser of 66 2/3% of current-year tax or 100% of prior-year tax, with no 110% high-AGI bump (IRC 6654(i)). Single January 15, 2026 payment, or file and pay in full by March 2, 2026 (March 1 is a Sunday; IRC 7503).
 
 **EC10 -- NIIT creates unexpected requirement.** Investment income above NIIT threshold ($200K single / $250K MFJ) adds 3.8% to total tax.
 
@@ -311,7 +312,7 @@ Before delivering output, verify:
 - [ ] Withholding from all sources included
 - [ ] SE tax + income tax + NIIT + Additional Medicare included in total tax
 - [ ] Annualized method flagged if income is uneven
-- [ ] First-year zero-prior-tax rule checked
+- [ ] IRC 6654(e)(2) zero-prior-year-liability exception checked (12-month preceding year; US citizen or resident throughout)
 - [ ] State estimated tax deferred to state skill
 - [ ] Output labelled as estimated until reviewer confirms
 
@@ -339,13 +340,13 @@ Before delivering output, verify:
 **Input:** Required $5,000/quarter. Q1 paid $3,000. Q2-Q4 paid $5,000. Rate 7%.
 **Expected:** Q1 underpayment $2,000. Penalty approx. $140 (full year).
 
-### Test 6 -- First year, zero prior tax
-**Input:** First year. No prior return.
-**Expected:** Prior year method = $0. No payments required under that method.
+### Test 6 -- First year, zero prior-year liability
+**Input:** TY2024 was a full 12-month year with zero tax liability; a TY2024 return was filed; taxpayer was a US citizen throughout TY2024.
+**Expected:** No section 6654 penalty for TY2025 under the IRC 6654(e)(2) exception. Variant: if NO prior-year return was filed, the prior-year safe harbour (Method B) is unavailable (not $0) and only the 90% current-year method applies (IRC 6654(d)(1)(B), flush language).
 
 ### Test 7 -- Farmer exception
-**Input:** 2/3+ farming income. Expected tax $25,000.
-**Expected:** Single payment Jan 15 or file by Mar 1.
+**Input:** 2/3+ farming income. Expected TY2025 tax $25,000. Prior-year tax unknown.
+**Expected:** Required annual payment = 66 2/3% x $25,000 = $16,667 (or 100% of prior-year tax if lower). Single payment due Jan 15, 2026, or file and pay in full by Mar 2, 2026.
 
 ---
 
@@ -367,3 +368,9 @@ Before delivering output, verify:
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, EA, tax attorney, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
 
 The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
+
+---
+
+## Changelog
+
+- **2026-07-04** — Corrections from a Fable deep-accuracy review (adversarially verified): Schedule AI cumulative percentages 22.5/45/67.5/90 replace flat 25%; section 6654 penalty is simple interest not daily-compounded; later payments credit against the earliest underpaid instalment; zero-prior-year rule restated as the 6654(e)(2) exception with Method B unavailability when no prior return; Jan 31 and Mar 1 deadlines rolled to Feb 2 and Mar 2, 2026 for weekends; farmer/fisherman 66 2/3%/100% required-payment relief added; retired Form 1120-W reference replaced with IRC 6655 (IRC 6654(d)(2), 6654(b)(2)-(3), 6654(e)(2), 6654(d)(1)(B), 6654(h), 6654(i), 6621(a)(2), 6622(b), 6655, 7503; Form 2210/2210-F and Schedule AI instructions; 2025 Form 1040-ES instructions).
