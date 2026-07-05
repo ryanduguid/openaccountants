@@ -5,7 +5,7 @@ jurisdiction: US
 category: federal-tax
 tier: 2
 verified_by: pending
-last_updated: 2025-11-15
+last_updated: 2026-07-05
 version: 0.1
 ---
 
@@ -26,7 +26,7 @@ In scope:
 - Form 944 (annual return for very small employers), Form 943 (agricultural employers), Form 945 (nonpayroll income tax withholding) — referenced for scope routing
 - Form 8027 (tip reporting for large food and beverage establishments) — referenced
 - IRC §6656 deposit penalty tiers (2%, 5%, 10%, 15%)
-- The 2024 IRS final regulations under T.D. 9972 reducing the electronic-filing threshold from 250 to 10 information returns
+- The IRS final regulations under T.D. 9972 (published Feb. 23, 2023; applicable to returns required to be filed on or after Jan. 1, 2024) reducing the electronic-filing threshold from 250 to 10 information returns
 - Worker classification at a high level (refers to `us-1099-nec-issuance` for the §3121(d) common-law control test and the DOL economic-realities test under the 2024 Worker Classification rule at 29 C.F.R. Part 795)
 
 Out of scope (refusal-eligible):
@@ -115,7 +115,7 @@ If the due date falls on a Saturday, Sunday, or legal holiday, the return is tim
 
 Used to correct errors on a previously filed Form 941. Two paths:
 
-1. **Adjusted return process** (interest-free under §6205) — used to correct administrative errors (wrong wages, wrong tax) that resulted in either an underpayment or overpayment, when the period of limitation on assessment has not expired and the employer is correcting a §3402 income tax withholding or §3121 FICA error. Generally filed by April 15 of the calendar year following the year the error was discovered.
+1. **Adjusted return process** (interest-free under §6205) — used to correct administrative errors (wrong wages, wrong tax) that resulted in either an underpayment or overpayment, when the period of limitation on assessment has not expired and the employer is correcting a §3402 income tax withholding or §3121 FICA error. The interest-free adjustment must be reported on Form 941-X by the due date of the return for the return period in which the error is ASCERTAINED (Treas. Reg. §31.6205-1(b)(2)), not a flat April 15 deadline.
 2. **Claim for refund process** under §6402 — used when the employer is claiming a refund of overcollected employee tax. Requires written consent from each affected employee (or evidence the employer reimbursed the employee) per Treas. Reg. §31.6402(a)-2.
 
 Common 941-X scenarios:
@@ -153,7 +153,7 @@ Form 945 reports federal income tax withheld from **nonpayroll** payments. Commo
 - Military retirement
 - Gambling winnings (W-2G)
 - Indian gaming profits paid to tribal members
-- Backup withholding under §3406 (28% — confirm 24% per TCJA — actually 24% as of 2018 through 2025 under TCJA §11041 sunset rules; backup withholding rate is 24% for 2025 under the TCJA extended provisions of the OBBBA)
+- Backup withholding under §3406 at 24% for 2025 (the fourth-lowest §1(c) rate; the TCJA rate structure was made permanent by OBBBA §70101)
 - Voluntary withholding on unemployment compensation, Social Security benefits, and certain federal payments
 
 Form 945 is annual, due January 31 (February 10 extension). Federal income tax withheld from W-2 wages is NOT reported on Form 945 — that goes on Form 941.
@@ -259,7 +259,7 @@ The $100,000 amount is the accumulated employment tax — federal income tax wit
 
 ### 4.4 The de minimis $2,500 quarter rule
 
-If total Form 941 liability for the quarter (Line 12) is less than $2,500 and was less than $2,500 in the prior quarter, no deposit schedule applies — the tax may be paid with the return. This is a quarter-by-quarter test, not the annual lookback test.
+The tax may be paid with the return (no deposit required) if Line 12 for the CURRENT quarter is less than $2,500, OR Line 12 for the PRIOR quarter was less than $2,500 (a disjunctive test, not conjunctive). This is a quarter-by-quarter rule, not the annual lookback test.
 
 ### 4.5 EFTPS — Electronic Federal Tax Payment System
 
@@ -333,7 +333,7 @@ FUTA is deposited quarterly when accumulated liability exceeds $500:
 ### 5.7 Special situations
 
 - **Multi-state employer** — files one Form 940 with Schedule A reporting each state's wages and applicable credit reductions
-- **Successor employer** — may credit predecessor's wage payments toward the $7,000 per-employee base under §3306(c)(8) and §3306(b)(1) for both FUTA and FICA
+- **Successor employer** — may credit predecessor's wage payments toward the $7,000 per-employee FUTA base under §3306(b)(1) (and the corresponding FICA successor rule under §3121(a)(1)); note §3306(c)(8) is the exclusion for §501(c)(3) service, unrelated to the wage-base credit
 - **Employee in two states for same employer** — wages are aggregated per employee per employer; the $7,000 base is one annual cap. The state of payment for credit reduction purposes is generally the state where the employee primarily performs services.
 - **Group-term life insurance imputed income** — FUTA-taxable in most cases (see §3306(b))
 - **§125 cafeteria plan elections, qualified retirement plan elective deferrals, HSA** — generally not FUTA-taxable (parallel to FICA treatment with some nuances; see Pub 15 Section 15 for the wage classification chart)
@@ -570,7 +570,7 @@ Additional consequences:
 - **§6651 failure-to-pay penalty** — 0.5% per month, max 25%, if the tax shown on the return is not paid by the due date
 - **§6672 Trust Fund Recovery Penalty (TFRP)** — 100% of the employee-portion of withheld tax (federal income tax withheld + employee FICA) assessed personally against any "responsible person" who willfully failed to collect, account for, or pay over. This is a personal liability that survives bankruptcy. Common targets: corporate officers, payroll service signatories, anyone with check-signing authority.
 
-**Reasonable cause exception** under §6656(a) and §6724 — penalty may be abated if the employer can show the failure was due to reasonable cause and not willful neglect. Documentation matters: documented banking error, EFTPS outage with same-day re-attempt, payroll service failure with employer due diligence.
+**Reasonable cause exception** — the failure-to-deposit penalty carries its own reasonable-cause standard in §6656(a) ('unless it is shown that such failure is due to reasonable cause and not willful neglect'); §6724(a) is the parallel standard for information-return penalties. The penalty may be abated if the employer shows reasonable cause and not willful neglect. Documentation matters: documented banking error, EFTPS outage with same-day re-attempt, payroll service failure with employer due diligence.
 
 **First-Time Abatement (FTA)** — administrative relief under IRM 20.1.1.3.6.1 for employers with a clean compliance history (no penalties in the prior three tax years). One-time relief per taxpayer.
 
@@ -921,3 +921,6 @@ verified rules together with the name of the accountant who signed them off.
 
 **→ Install the free connector:** <https://www.openaccountants.com/connect>
 **MCP endpoint:** `https://www.openaccountants.com/api/mcp`
+
+## Changelog
+- **2026-07-05** — Payroll corrections (Fable review, verified against IRS i940/i941 + 2025 SS/FUTA figures): T.D. 9972 dated Feb 2023 (not "2024 IRS final regs"); the $2,500 de-minimis deposit test is disjunctive (current OR prior quarter); backup-withholding drafting residue cleaned to a flat 24% for 2025 (§3406; TCJA rates made permanent by OBBBA §70101); FUTA successor wage-base credit cited to §3306(b)(1) not §3306(c)(8); Form 941-X interest-free-adjustment timing tied to when the error is ascertained; reasonable-cause standard split between §6656(a) (deposits) and §6724(a) (info returns). FLAGGED: §12.4 Example 4 reconciliation arithmetic and the HSA/§125 FICA-exclusion table need a follow-up pass.
