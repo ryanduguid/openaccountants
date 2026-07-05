@@ -4,7 +4,7 @@ description: Tier 2 content skill for classifying business transactions into US 
 version: 2.0
 jurisdiction: US
 tier: 2
-last_updated: 2026-06-12
+last_updated: 2026-07-05
 ---
 
 # US Sole Prop Bookkeeping Skill v2.0
@@ -298,7 +298,7 @@ This is the deterministic pre-classifier. When a transaction's counterparty matc
 | Pattern | Treatment | Line | Notes |
 |---|---|---|---|
 | IRS, UNITED STATES TREASURY, EFTPS, US TREASURY | EXCLUDE | — | Federal tax payments (income tax, SE tax, estimated tax) are NOT deductible on Schedule C. They are personal tax obligations. |
-| FTB, FRANCHISE TAX BOARD (CA) | EXCLUDE | — | State income tax payments — personal, not Schedule C. May be deductible on Schedule A (SALT, subject to $10K cap). |
+| FTB, FRANCHISE TAX BOARD (CA) | EXCLUDE | — | State income tax payments — personal, not Schedule C. May be deductible on Schedule A (SALT cap $40,000 for 2025 under OBBBA §70120, with a 30% phase-down above $500K MAGI, never below $10,000; reverts to $10,000 after 2029). |
 | EDD, EMPLOYMENT DEVELOPMENT (CA) | EXCLUDE from Schedule C OR Line 23 | — or 23 | State unemployment tax (employer portion) → Line 23. Personal income tax withholding → EXCLUDE. |
 | STATE TAX PAYMENT, STATE ESTIMATED TAX | EXCLUDE | — | Personal state income tax, not Schedule C |
 | BUSINESS LICENSE, CITY LICENSE, COUNTY LICENSE | Line 23 Taxes and licenses | 23 | Business license fees and permits |
@@ -852,3 +852,7 @@ This skill is incomplete without the companion workflow file loaded alongside it
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, EA, tax attorney, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
 
 The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
+
+
+## Changelog
+- **2026-07-05** — SALT deduction cap updated to $40,000 for 2025 (OBBBA §70120) from the stale $10,000.

@@ -5,7 +5,7 @@ jurisdiction: US
 category: federal-tax
 tier: 2
 verified_by: pending
-last_updated: 2025-11-15
+last_updated: 2026-07-05
 version: 0.1
 ---
 
@@ -94,7 +94,7 @@ For stock acquired prior to OBBBA enactment, three exclusion percentages apply b
 | 2/18/2009–9/27/2010 | 75% | 7% of excluded gain |
 | Post-9/27/2010 to 7/3/2025 | 100% | None (zero AMT preference) |
 
-Source: §1202(a)(3) (50% baseline), §1202(a)(3)(A) and §1202(a)(4) (75% and 100% as enacted by the American Recovery and Reinvestment Act of 2009 and the Small Business Jobs Act of 2010 respectively; made permanent by the PATH Act of 2015).
+Source: §1202(a)(1) (50% baseline), §1202(a)(3) (75%, 2/18/2009–9/27/2010 stock), §1202(a)(4) (100%, post-9/27/2010 as enacted by the American Recovery and Reinvestment Act of 2009 and the Small Business Jobs Act of 2010 respectively; made permanent by the PATH Act of 2015).
 
 ### 3.2 Holding period
 
@@ -119,13 +119,13 @@ Pre-OBBBA, the corporation's aggregate gross assets could not exceed $50M at any
 
 ---
 
-## 4. OBBBA 2025 Expansion (Stock Acquired On or After July 4, 2025)
+## 4. OBBBA 2025 Expansion (Stock Acquired After July 4, 2025)
 
 The One Big Beautiful Bill Act (P.L. 119-21), enacted July 4, 2025, dramatically expanded §1202 for stock acquired on or after the date of enactment. The expansion has four moving parts:
 
 ### 4.1 Tiered exclusion by holding period — NEW
 
-OBBBA §70423(a) introduces a tiered exclusion that rewards shorter holds. For QSBS acquired on or after July 4, 2025:
+OBBBA §70431(a) introduces a tiered exclusion that rewards shorter holds. For QSBS acquired after July 4, 2025:
 
 | Holding period | §1202(a) exclusion | Taxable LTCG portion |
 | --- | --- | --- |
@@ -140,15 +140,15 @@ The pre-OBBBA "5-year cliff" is replaced by a graduated ramp. A founder who exit
 
 ### 4.2 Per-issuer cap raised to $15M — NEW
 
-OBBBA §70423(b) raises the §1202(b)(1) per-issuer cap from $10M to **$15M** (with conforming amendment to retain the 10× basis alternative). The cap is indexed for inflation beginning in 2027 (OBBBA §70423(b)(2)) — the first inflation adjustment will appear in the 2027 Rev. Proc. annual update.
+OBBBA §70431(b) raises the §1202(b)(1) per-issuer cap from $10M to **$15M** (with conforming amendment to retain the 10× basis alternative). The cap is indexed for inflation beginning in 2027 (OBBBA §70431(b)(2)) — the first inflation adjustment will appear in the 2027 Rev. Proc. annual update.
 
 ### 4.3 Gross-asset cap raised to $75M — NEW
 
-OBBBA §70423(c) raises the §1202(d)(1) gross-asset cap from $50M to **$75M**, also indexed for inflation beginning in 2027. This expands the universe of "qualified small business" issuers — a Series B or even Series C company that would have blown the $50M cap can now issue QSBS up to the $75M threshold.
+OBBBA §70431(c) raises the §1202(d)(1) gross-asset cap from $50M to **$75M**, also indexed for inflation beginning in 2027. This expands the universe of "qualified small business" issuers — a Series B or even Series C company that would have blown the $50M cap can now issue QSBS up to the $75M threshold.
 
 ### 4.4 Effective date
 
-OBBBA §70423(d): the amendments apply to stock **acquired on or after the date of enactment** (July 4, 2025). Stock issued before that date continues under the pre-OBBBA caps and pre-OBBBA holding period requirement.
+OBBBA §70431(d): the amendments apply to stock **acquired on or after the date of enactment** (July 4, 2025). Stock issued before that date continues under the pre-OBBBA caps and pre-OBBBA holding period requirement.
 
 **Practical consequence — the "dual track" period.** From July 4, 2025 forward, taxpayers and reviewers must track QSBS by issuance date:
 
@@ -673,7 +673,7 @@ Reviewer must obtain and retain in the engagement file:
 
 ### 16.1 Statutory authority
 
-- IRC §1202 (current; as amended by OBBBA P.L. 119-21 §70423, July 4, 2025).
+- IRC §1202 (current; as amended by OBBBA P.L. 119-21 §70431, July 4, 2025).
 - IRC §1045 (rollover of gain on QSBS).
 - IRC §57(a)(7) (AMT preference for §1202 gain).
 - IRC §1411 (NIIT — applies to taxable portion of QSBS gain).
@@ -712,7 +712,7 @@ Reviewer must obtain and retain in the engagement file:
 - Tax Relief Act of 2010 (P.L. 111-312) — extended 100% through 12/31/2011.
 - American Taxpayer Relief Act of 2012 (P.L. 112-240) — extended 100% through 12/31/2013.
 - PATH Act of 2015 (P.L. 114-113) — made 100% exclusion and §57(a)(7) suspension PERMANENT.
-- OBBBA P.L. 119-21 (July 4, 2025) §70423 — tiered 50/75/100% exclusion; $15M cap; $75M gross-asset cap; inflation indexing from 2027.
+- OBBBA P.L. 119-21 (July 4, 2025) §70431 — tiered 50/75/100% exclusion; $15M cap; $75M gross-asset cap; inflation indexing from 2027.
 
 ### 16.6 Practitioner commentary
 
@@ -769,3 +769,6 @@ verified rules together with the name of the accountant who signed them off.
 
 **→ Install the free connector:** <https://www.openaccountants.com/connect>
 **MCP endpoint:** `https://www.openaccountants.com/api/mcp`
+
+## Changelog
+- **2026-07-05** — QSBS/OBBBA corrections (Fable review, adversarially verified): the governing OBBBA section is §70431 (was wrongly cited as §70423 in six places); the tiered exclusion / $15M cap / $75M asset test apply to stock acquired AFTER July 4, 2025 (stock acquired ON that date is pre-OBBBA); exclusion-tier citations corrected to §1202(a)(1)/(a)(3)/(a)(4). Further flagged for a later pass: §1045 tacking under §1223(13), §1202(j) short-position label, the §1202(e)(6) 50%% working-capital limit, WA ESSB 5813 surcharge, and two worked-example recomputations.

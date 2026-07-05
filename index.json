@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-04T17:22:59+00:00",
+ "generated_at": "2026-07-05T17:41:06+00:00",
  "counts": {
   "guides": 1007,
   "jurisdictions": 187,
@@ -16,7 +16,7 @@
    "verified_by": "pending",
    "reviewed_by": null,
    "tax_year": null,
-   "last_updated": "2025-11-15"
+   "last_updated": "2026-07-05"
   },
   {
    "slug": "us-education-credits-8863",
@@ -160,7 +160,7 @@
    "verified_by": "pending",
    "reviewed_by": null,
    "tax_year": null,
-   "last_updated": "2025-11-15"
+   "last_updated": "2026-07-05"
   },
   {
    "slug": "us-gilti-fdii-beat",
@@ -256,7 +256,7 @@
    "verified_by": "pending",
    "reviewed_by": null,
    "tax_year": null,
-   "last_updated": "2025-11-15"
+   "last_updated": "2026-07-05"
   },
   {
    "slug": "us-section-1202-qsbs",
@@ -268,7 +268,7 @@
    "verified_by": "pending",
    "reviewed_by": null,
    "tax_year": null,
-   "last_updated": "2025-11-15"
+   "last_updated": "2026-07-05"
   },
   {
    "slug": "us-secure-2-and-retirement-updates",
@@ -292,7 +292,7 @@
    "verified_by": "pending",
    "reviewed_by": null,
    "tax_year": null,
-   "last_updated": "2025-11-15"
+   "last_updated": "2026-07-05"
   },
   {
    "slug": "us-state-estimated-tax-safe-harbors-matrix",
@@ -916,7 +916,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-06-12"
+   "last_updated": "2026-07-04"
   },
   {
    "slug": "us-s-corp-election-decision",
@@ -952,7 +952,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": null,
-   "last_updated": "2026-06-12"
+   "last_updated": "2026-07-04"
   },
   {
    "slug": "us-self-employed-health-insurance",
@@ -976,7 +976,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": null,
-   "last_updated": "2026-06-12"
+   "last_updated": "2026-07-05"
   },
   {
    "slug": "us-sole-prop-bookkeeping",
@@ -988,7 +988,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": null,
-   "last_updated": "2026-06-12"
+   "last_updated": "2026-07-05"
   },
   {
    "slug": "ifrs3-business-combinations",
@@ -9520,7 +9520,7 @@
    "verified_by": "pending",
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-04"
+   "last_updated": "2026-07-05"
   },
   {
    "slug": "uk-statutory-residence-test",
@@ -9556,7 +9556,7 @@
    "verified_by": "pending",
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-04"
+   "last_updated": "2026-07-05"
   },
   {
    "slug": "uk-transfer-pricing",

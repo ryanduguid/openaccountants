@@ -1,11 +1,11 @@
 ---
 name: us-1099-k-and-payment-processors
-description: Tier 2 US federal content skill for Form 1099-K reporting under IRC §6050W for tax year 2025. Covers the $5,000 (2024) → $2,500 (2025) → $600 (2026) threshold phase-in under Notice 2024-85, reconciliation between gross 1099-K amounts and Schedule C / Schedule 1 / Schedule D reporting, IRS-recommended treatment of personal items sold at loss (Schedule 1 Lines 8z + 24z offset), hobby vs business §183 determination, PayPal/Venmo Friends-and-Family vs Goods-and-Services categorization, marketplace facilitator sales-tax exclusion under Wayfair, ride-share and content-creator double-form scenarios (1099-K + 1099-NEC), the 2025 1099-DA digital asset transition, and IRS CP2000 matching defense.
+description: Tier 2 US federal content skill for Form 1099-K reporting under IRC §6050W for tax year 2025. Covers the $20,000-and-200-transactions TPSO reporting threshold restored by OBBBA §70432 (which repealed the ARPA $600 phase-in) for tax year 2025, reconciliation between gross 1099-K amounts and Schedule C / Schedule 1 / Schedule D reporting, IRS-recommended treatment of personal items sold at loss (Schedule 1 Lines 8z + 24z offset), hobby vs business §183 determination, PayPal/Venmo Friends-and-Family vs Goods-and-Services categorization, marketplace facilitator sales-tax exclusion under Wayfair, ride-share and content-creator double-form scenarios (1099-K + 1099-NEC), the 2025 1099-DA digital asset transition, and IRS CP2000 matching defense.
 jurisdiction: US
 category: federal-tax
 tier: 2
 verified_by: pending
-last_updated: 2025-11-15
+last_updated: 2026-07-05
 version: 0.1
 ---
 
@@ -16,7 +16,7 @@ version: 0.1
 This skill covers the preparation, reconciliation, and defense of US federal tax returns that include one or more Form 1099-K information returns received by a taxpayer for the 2025 tax year (filing season 2026). It addresses:
 
 - The legal architecture of §6050W and the role of Third-Party Settlement Organizations (TPSOs) versus Payment Card Companies
-- The transitional reporting thresholds under IRS Notice 2024-85 (the "phase-in") and the matching CP2000 risk created by the staircase
+- The $20,000-and-200-transactions TPSO threshold restored by OBBBA §70432 (repealing the ARPA phase-in) and the CP2000 matching risk
 - How to reconcile a gross 1099-K box-1a amount to the correct line of the taxpayer's return — Schedule C, Schedule 1 Line 8j or 8z, Schedule D, or nothing at all
 - The IRS-recommended "two-line wash" for personal items sold at a loss (Schedule 1 Line 8z plus Schedule 1 Line 24z negative offset)
 - Platform-specific reporting patterns and traps: PayPal Friends-and-Family vs Goods-and-Services, Venmo, Cash App for Business, Airbnb/VRBO, Uber/Lyft, DoorDash, Etsy, eBay, Mercari, Poshmark, Patreon, OnlyFans, StubHub, Vinted
@@ -64,28 +64,27 @@ Section 9674(a) of the American Rescue Plan Act of 2021 (P.L. 117-2, March 11, 2
 
 The IRS realized in late 2022 that this would generate hundreds of millions of new 1099-K forms — most of them sent to taxpayers who had no business income at all (people selling used couches on Facebook Marketplace, splitting dinner with friends via Venmo G&S by mistake, etc.). It would also generate hundreds of millions of CP2000 mismatches. So the IRS, citing its administrative authority, has repeatedly delayed enforcement.
 
-### 2.4 The delay-and-phase-in history (Notices 2023-10, 2023-74, 2024-85)
+### 2.4 The delay-and-phase-in history, and the OBBBA repeal that ended it
 
-- **Notice 2023-10** (issued December 23, 2022): delayed the ARPA $600 threshold by treating calendar year 2022 as a "transition year." For 2022, the old $20,000-and-200 threshold continued to apply for TPSO reporting. No phase-in figure for 2023 was set.
-- **Notice 2023-74** (issued November 21, 2023): again delayed the $600 threshold and treated 2023 as another transition year. Old $20K-and-200 floor remained for 2023. Importantly, Notice 2023-74 also addressed the **1099-K + 1099-NEC duplication problem** by stating that where a payment is reported on both forms, the payee should report the income once and document the duplication; this is the IRS's only public acknowledgment of the problem.
-- **Notice 2024-85** (issued November 26, 2024): announced the **threshold phase-in staircase** rather than another flat-delay. The notice established:
-  - **Calendar year 2024**: TPSO reporting required if gross payments exceed **$5,000** (any number of transactions). Penalties for failure to report between the statutory $600 floor and $5,000 are waived for 2024.
-  - **Calendar year 2025**: threshold becomes **$2,500**.
-  - **Calendar year 2026**: threshold becomes **$600**, which is the statutory ARPA figure. The notice describes 2026 as the "final phase-in" year, but does not foreclose a further delay if administrative considerations warrant.
+The IRS repeatedly delayed the ARPA $600 threshold, then Congress repealed it outright:
 
-### 2.5 Threshold phase-in table
+- **Notice 2023-10** (issued December 23, 2022): delayed the ARPA $600 threshold by treating calendar year 2022 as a "transition year." For 2022, the old $20,000-and-200 threshold continued to apply for TPSO reporting.
+- **Notice 2023-74** (issued November 21, 2023): again delayed the $600 threshold and treated 2023 as another transition year. Old $20K-and-200 floor remained for 2023. Notice 2023-74 also addressed the **1099-K + 1099-NEC duplication problem** by stating that where a payment is reported on both forms, the payee should report the income once and document the duplication.
+- **Notice 2024-85** (issued November 26, 2024): announced a **threshold phase-in staircase** ($5,000 for 2024, $2,500 for 2025, $600 for 2026). This phase-in is now **superseded** by the OBBBA repeal below and does not govern 2025.
+- **OBBBA §70432** (One Big Beautiful Bill Act, P.L. 119-21, enacted July 4, 2025) **repealed ARPA §9674**, restoring §6050W(e) to its original text: TPSO reporting is required only if a payee receives **more than $20,000 in gross payments AND more than 200 transactions**. The repeal is retroactive as if ARPA had never taken effect, so the $20K-and-200 floor governs 2025 (and every prior open year). The IRS's current public guidance confirms this: *"A payment app or online marketplace is required to send you a Form 1099-K if the payments you received for goods or services total over $20,000 and there were more than 200 transactions"* (irs.gov, *Understanding your Form 1099-K*, reviewed 2026).
 
-| Calendar year | TPSO 1099-K threshold | Authority | Status |
-|---|---|---|---|
-| 2021 and prior | $20,000 AND 200 transactions | §6050W(e) as originally enacted | Statute superseded by ARPA |
-| 2022 | $20,000 AND 200 transactions | Notice 2023-10 (transition year) | Closed |
-| 2023 | $20,000 AND 200 transactions | Notice 2023-74 (transition year) | Closed |
-| 2024 | $5,000 (no transaction count) | Notice 2024-85 §IV.A | Closed; 1099-Ks issued Jan 2025 |
-| **2025** | **$2,500 (no transaction count)** | **Notice 2024-85 §IV.B** | **CURRENT YEAR — 1099-Ks issued Jan 2026** |
-| 2026 | $600 (no transaction count) | Notice 2024-85 §IV.C; ARPA §9674 | Scheduled; subject to further notice |
-| 2027+ | $600 (no transaction count) | §6050W(e) as amended | Permanent unless legislatively repealed |
+### 2.5 Threshold table
 
-> **AUDIT FLASH POINT — the threshold cliff is asymmetric.** Issuers are not penalized for issuing 1099-K voluntarily below the threshold. Many TPSOs — particularly PayPal, eBay, and Etsy — issue 1099-Ks at $600 or even $0 in states with lower state thresholds (Maryland $600, Massachusetts $600, Vermont $600, Virginia $600, Illinois $1,000 OR 4+ transactions, New Jersey $1,000, DC $600). A 2025 client may show up with a 1099-K below the federal $2,500 floor because they live in Massachusetts. Do not assume "below threshold = no form." Always ask for ALL 1099-Ks the client received regardless of amount.
+| Calendar year | TPSO 1099-K threshold | Authority |
+|---|---|---|
+| 2021 and prior | $20,000 AND more than 200 transactions | §6050W(e) as originally enacted |
+| 2022–2024 | $20,000 AND more than 200 transactions | IRS transition-year notices (2023-10, 2023-74); OBBBA §70432 confirms retroactively |
+| **2025** | **$20,000 AND more than 200 transactions** | **§6050W(e) as restored by OBBBA §70432 — CURRENT YEAR, 1099-Ks issued Jan 2026** |
+| 2026+ | $20,000 AND more than 200 transactions | §6050W(e), permanent unless amended again |
+
+> The $5,000 (2024) / $2,500 (2025) / $600 (2026) phase-in from Notice 2024-85 was **repealed before it fully took effect**. The 2024 transition year operated under the IRS's $5,000 relief figure; from 2025 forward the original $20,000-and-200 statutory floor applies.
+
+> **AUDIT FLASH POINT — you still cannot assume "below threshold = no form."** Two reasons survive the repeal: (1) issuers face no penalty for issuing a 1099-K voluntarily below the threshold, and many TPSOs do; (2) many states set their own lower thresholds independent of the federal one (Maryland $600, Massachusetts $600, Vermont $600, Virginia $600, Illinois $1,000 OR 4+ transactions, New Jersey $1,000, DC $600). A 2025 client in Massachusetts may show up with a 1099-K well below the federal $20,000/200 floor. Always ask for ALL 1099-Ks the client received regardless of amount.
 
 ### 2.6 What goes in Box 1a — gross payments before adjustments
 
@@ -127,7 +126,7 @@ Any merchant-card processor issues 1099-K for the entire calendar-year card volu
 
 | TPSO | What triggers reporting | Notes |
 |---|---|---|
-| PayPal (Goods & Services balance) | Aggregate G&S receipts above 2025 threshold ($2,500) | F&F transactions excluded (see §7.1) |
+| PayPal (Goods & Services balance) | Aggregate G&S receipts above 2025 threshold ($20,000 and 200 transactions) | F&F transactions excluded (see §7.1) |
 | Venmo (Business profile or G&S tag) | Aggregate G&S receipts above threshold | F&F excluded; Venmo "Business Profile" introduced 2021 is per-se G&S |
 | Cash App for Business | Aggregate business receipts above threshold | Personal Cash App accounts not reportable; Business is separate |
 | eBay | Aggregate sales above threshold | eBay handles payment processing in-house since 2021 (Managed Payments) |
@@ -653,7 +652,7 @@ Before signing off on a return that includes any 1099-K, verify:
 - Housing Assistance Tax Act of 2008, P.L. 110-289 §3091 — Enactment of §6050W
 - Notice 2023-10 — 2022 transition year for ARPA threshold
 - Notice 2023-74 — 2023 transition year, plus 1099-K/1099-NEC duplication acknowledgment
-- Notice 2024-85 — Phase-in schedule: $5,000 (2024) / $2,500 (2025) / $600 (2026)
+- Notice 2024-85 — Phase-in schedule ($5,000/$2,500/$600), SUPERSEDED by OBBBA §70432 which restored the $20,000-and-200 threshold
 - T.D. 10000 (June 28, 2024) — Final regulations under §6045 finalizing 1099-DA for custodial digital-asset brokers
 - Rev. Proc. 2024-28 — Wallet-by-wallet basis tracking safe harbor for digital assets
 - P.L. 119-3 (April 10, 2025) — Joint resolution repealing DeFi-broker portion of T.D. 10000
@@ -695,3 +694,6 @@ verified rules together with the name of the accountant who signed them off.
 
 **→ Install the free connector:** <https://www.openaccountants.com/connect>
 **MCP endpoint:** `https://www.openaccountants.com/api/mcp`
+
+## Changelog
+- **2026-07-05** — Corrected the reporting threshold: OBBBA §70432 (P.L. 119-21) repealed the ARPA $600 phase-in and restored §6050W(e) to $20,000 AND more than 200 transactions, effective for 2025. Confirmed against irs.gov "Understanding your Form 1099-K" (reviewed 2026). Replaced the superseded $5,000/$2,500/$600 phase-in narrative and table; state lower-threshold guidance retained.

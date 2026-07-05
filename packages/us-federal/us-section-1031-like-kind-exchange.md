@@ -5,7 +5,7 @@ jurisdiction: US
 category: federal-tax
 tier: 2
 verified_by: pending
-last_updated: 2025-11-15
+last_updated: 2026-07-05
 version: 0.1
 ---
 
@@ -36,7 +36,7 @@ This skill governs the federal income tax treatment of like-kind exchanges of **
 - Foreign-for-foreign real property exchanges (still permitted but only foreign-for-foreign; US-for-foreign fails under §1031(h))
 - §1400Z-2 Opportunity Zone deferrals (mutually exclusive — see §17)
 - Section 1033 involuntary conversions (separate regime, different timing)
-- Partnership interest exchanges (categorically barred by §1031(a)(2) even post-TCJA for entity interests)
+- Partnership interest exchanges (a partnership interest is not real property, so it cannot qualify; note TCJA rewrote §1031(a)(2) to bar only "real property held primarily for sale" — the pre-TCJA list of excluded intangibles was deleted)
 - Inventory / dealer property (§1221(a)(1) ordinary income property)
 
 This skill MUST be loaded alongside `us-tax-workflow-base` v0.2+. For depreciation recapture mechanics, also load `us-sole-prop-bookkeeping` and `us-schedule-c-and-se-computation`. For California-resident taxpayers, also load `ca-540-individual-return`.
@@ -64,7 +64,7 @@ The Tax Cuts and Jobs Act of 2017 (P.L. 115-97), effective for exchanges complet
 - Tangible personal property (machinery, equipment, vehicles, aircraft, boats)
 - Livestock (was previously allowed if same sex)
 - Intangible property (franchises, trademarks, patents, goodwill, licenses)
-- Cryptocurrency (the IRS confirmed in Rev. Rul. 2019-24 and CCA 202124008 that pre-TCJA crypto-for-crypto was also not §1031-eligible because different tokens were not of like kind)
+- Cryptocurrency (post-TCJA, §1031 is real-property-only, so crypto never qualifies; the pre-TCJA rejection of crypto-for-crypto rests on CCA 202124008 — Rev. Rul. 2019-24 addresses hard forks and airdrops as gross income under §61, not like-kind exchanges)
 - Collectibles, art, gold bullion, coins, gems
 - Securities (always excluded under §1031(a)(2)(B))
 
@@ -74,7 +74,7 @@ The Tax Cuts and Jobs Act of 2017 (P.L. 115-97), effective for exchanges complet
 2. **Permanently affixed structures and inherently permanent improvements** — buildings, walls, parking structures, paved roads, pipelines, transmission lines, sewer systems
 3. **Structural components of buildings** — walls, partitions, doors, wiring, plumbing, central HVAC, elevators, sprinklers (note: components separately classified as personal property under cost segregation studies for depreciation purposes may FAIL §1031 — see §11)
 4. **Real property under state and local law** — facts and circumstances test plus the regulatory list
-5. **Leaseholds with remaining term ≥ 30 years** (including renewal options) — Treas. Reg. §1.1031(a)-3(a)(5); shorter leaseholds fail
+5. **Leaseholds with remaining term ≥ 30 years** (including renewal options) are like-kind to a fee interest — Treas. Reg. §1.1031(a)-1(c)(2); shorter leaseholds fail
 6. **Mineral, oil, and gas interests** — perpetual royalty interests qualify; production payments do not
 7. **Easements** (permanent) and **conservation easements**
 8. **Air rights** and **transferable development rights (TDRs)**
@@ -137,7 +137,7 @@ For real property, "like kind" refers to the **nature or character** of the prop
 | Foreign real property | US real property | §1031(h)(1) |
 | Real property | Personal property | TCJA — different §1031 category |
 | Real property | Partnership interest | §1031(a)(2) excludes interests |
-| Leasehold < 30 years | Fee simple | Treas. Reg. §1.1031(a)-3(a)(5) |
+| Leasehold < 30 years | Fee simple | Treas. Reg. §1.1031(a)-1(c)(2) |
 | Real property (held for sale) | Real property | Inventory disqualified |
 
 **State-to-state, US territories:** US real property includes the 50 states, DC, and (by statutory definition) US possessions for §1031 purposes. Puerto Rico, USVI, Guam, American Samoa, and Northern Mariana Islands are technically foreign for §1031(h) — practitioners should confirm with current IRS guidance before treating a possession exchange as domestic.
@@ -401,7 +401,7 @@ Partnerships that hold real property cannot exchange partnership interests under
 
 **IRS challenges to drop-and-swap:**
 - Step transaction: the IRS argues the drop and the sale are a single transaction; the property was held by the partnership (not the partner) immediately before sale; the partner's "holding for investment" element fails.
-- Form 8824 Question 11 (partner intent): asks whether the property was held by the taxpayer in the year of exchange.
+- Form 8824 Line 11 is the related-party exception checkboxes (11a death, 11b involuntary conversion, 11c no-tax-avoidance-purpose) — completed only when Line 7 (related-party exchange) is "Yes"; there is no separate "partner intent" question.
 - The longer the gap between drop and swap, the safer (>1 year is the practitioner safe harbor; some accept 6 months; <30 days is dangerous).
 
 **Swap-and-Drop:**
@@ -414,7 +414,7 @@ Partnerships that hold real property cannot exchange partnership interests under
 > - TIC agreements signed and recorded with the county
 > - New financing in each partner's individual name
 > - Each partner separately filing Schedule E for the property between drop and swap (file at least one tax year between drop and exchange ideally)
-> - Form 8824 Question 11 answered truthfully — lying triggers §6663 fraud penalty
+> - Form 8824 Line 11 (related-party exception) completed truthfully where applicable — a false no-tax-avoidance claim invites §6663 fraud penalty
 > A short interval (under 6 months) plus a pre-arranged buyer is the worst possible combination.
 
 ## 16. §121 Primary Residence + §1031 Combination — §121(d)(10)
@@ -494,7 +494,7 @@ Every §1031 exchange must be reported on Form 8824, attached to the return for 
 - Line 21 (recapture ordinary income) → Form 4797 Part III (then Form 1040)
 - Basis (line 25) → carries to depreciation schedule for the replacement
 
-**Failure to file Form 8824:** the IRS will treat the transaction as a fully taxable sale; the §1031 deferral is procedurally voided. Always file even if there is zero boot and zero recognized gain.
+**Failure to file Form 8824:** §1031 nonrecognition is MANDATORY, not elective, and is not conditioned on filing Form 8824 — so deferral is not "voided" by non-filing. However, failure to file invites accuracy-related penalties, leaves the limitations period arguably unstarted for the exchange, and forfeits documentation of basis and the deferral. Always file even with zero boot and zero recognized gain.
 
 ## 19. State Conformity
 
@@ -504,7 +504,7 @@ Most states with an income tax conform to federal §1031 automatically because t
 Most states — IL, NY, FL (no state income tax), TX (no state income tax), GA, MA, NC, OH, PA (for individual state tax — note PA has its own rule for sole proprietors below), VA, WA (no state income tax), and many others.
 
 **Notable non-conformity / quirks:**
-- **Pennsylvania (individual income tax):** PA does NOT conform to §1031 for personal income tax on individuals (sole proprietors / Schedule E investors). Gain is recognized for PA personal income tax even though deferred federally. PA corporate net income tax does conform.
+- **Pennsylvania (individual income tax):** PA now CONFORMS. Act 53 of 2022 (H.B. 1342) added §1031 like-kind-exchange deferral to the PA Personal Income Tax for exchanges completed in tax years beginning after Dec 31, 2022 (previously PA taxed the gain currently). PA corporate net income tax already conformed.
 - **California (FTB) — partial conformity + claw-back:** California conforms to §1031 generally, BUT requires Form 3840 annual reporting (see §20).
 - **Massachusetts:** conforms but has special depreciation conformity issues.
 - **Wisconsin:** conforms.
@@ -818,3 +818,6 @@ verified rules together with the name of the accountant who signed them off.
 
 **→ Install the free connector:** <https://www.openaccountants.com/connect>
 **MCP endpoint:** `https://www.openaccountants.com/api/mcp`
+
+## Changelog
+- **2026-07-05** — §1031 corrections (Fable review, verified): Pennsylvania now CONFORMS (Act 53 of 2022, effective 2023) — the guide still said it did not; TCJA rewrote §1031(a)(2) (only bar is real property held for sale); Rev. Rul. 2019-24 miscite removed (it is hard-forks/airdrops, not §1031); 30-year leasehold reg is §1.1031(a)-1(c)(2) not §1.1031(a)-3; Form 8824 Line 11 is the related-party exception, not a partner-intent question; §1031 nonrecognition is mandatory (not voided by failure to file 8824); §1031(i) is mutual-ditch stock, not co-op housing. FLAGGED for an arithmetic pass: §21 Examples 1-2 depreciation/basis computations (double-counted QI proceeds; $654,545 vs $981,818 depreciation) and the QI 10%%-relatedness threshold detail.
