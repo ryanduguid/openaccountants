@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-05T14:00:58+00:00",
+ "generated_at": "2026-07-05T14:06:14+00:00",
  "counts": {
   "guides": 1007,
   "jurisdictions": 187,
@@ -976,7 +976,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": null,
-   "last_updated": "2026-06-12"
+   "last_updated": "2026-07-05"
   },
   {
    "slug": "us-sole-prop-bookkeeping",

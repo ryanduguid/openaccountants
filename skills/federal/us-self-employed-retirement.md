@@ -4,7 +4,7 @@ description: Tier 2 content skill for computing the self-employed retirement con
 version: 0.2
 jurisdiction: US
 tier: 2
-last_updated: 2026-06-12
+last_updated: 2026-07-05
 ---
 
 # US Self-Employed Retirement Skill v0.2
@@ -45,7 +45,7 @@ This skill covers, for tax year 2025:
 - **Solo 401(k)** — employee deferrals, employer (profit-sharing) contributions, catch-up and super catch-up contributions, Roth elective deferral option, establishment and contribution deadlines
 - **SEP-IRA** — employer contribution formula (25% of compensation / 20% effective rate for sole props), maximum contribution, establishment and contribution deadlines
 - **SIMPLE IRA** — employee deferrals, employer matching or non-elective contributions, catch-up and super catch-up, establishment deadlines
-- **Traditional IRA** — $7,000 contribution limit, $8,000 catch-up (age 50+), deductibility rules when covered by an employer plan
+- **Traditional IRA** — $7,000 contribution limit ($8,000 total with the $1,000 age-50+ catch-up), deductibility rules when covered by an employer plan
 - **Roth IRA** — income limits and phase-outs, contribution limits, backdoor Roth mechanics (flagged, not computed)
 - **Net self-employment earnings calculation** — the base for employer contributions
 - **Interaction with QBI** — deductible retirement contributions reduce QBI
@@ -72,14 +72,14 @@ This skill does NOT cover:
 
 **Legislation reflected:**
 - Internal Revenue Code §§401, 402, 404, 408, 408A, 408(p), 414, 415, 219 as in force for tax year 2025
-- SECURE 2.0 Act of 2022 (Division T of the Consolidated Appropriations Act, 2023; P.L. 117-328) — provisions effective 2025: super catch-up for ages 60-63 under §414(v)(2)(E), mandatory Roth catch-up for high earners (delayed to 2026 per IRS Notice 2024-02), enhanced SIMPLE IRA limits
+- SECURE 2.0 Act of 2022 (Division T of the Consolidated Appropriations Act, 2023; P.L. 117-328) — provisions effective 2025: super catch-up for ages 60-63 under §414(v)(2)(E), mandatory Roth catch-up for high earners (2-year administrative transition through Dec 31, 2025 per IRS Notice 2023-62; applies to plan years beginning after Dec 31, 2025), enhanced SIMPLE IRA limits
 - One Big Beautiful Bill Act (OBBBA, P.L. 119-21) — OBBBA did NOT change retirement contribution limits for 2025. The limits were set by Notice 2024-80 before OBBBA's enactment.
 - IRS Notice 2024-80 — 2025 retirement plan limits (issued November 2024)
 - IRS Publication 560 (2025) — Retirement Plans for Small Business
 - IRS Publication 590-A (2025) — Contributions to Individual Retirement Arrangements
 
 **Currency limitations:**
-- SECURE 2.0 §603 mandatory Roth catch-up for employees earning > $145,000 was delayed by IRS Notice 2024-02 to plan years beginning after December 31, 2025. This does NOT affect sole props for 2025 (no W-2 earnings threshold for sole props).
+- SECURE 2.0 §603 mandatory Roth catch-up for employees earning > $145,000 was granted a 2-year administrative transition (through December 31, 2025) by IRS Notice 2023-62, so it applies to plan years beginning after December 31, 2025. This does NOT affect sole props for 2025 (no W-2 earnings threshold for sole props).
 - The super catch-up for ages 60-63 under SECURE 2.0 §109 is effective for 2025 and is reflected in this skill.
 
 ---
@@ -265,7 +265,7 @@ Solo 401(k) plans can be designed to accept Roth (after-tax) elective deferrals.
 - Do NOT reduce QBI (since there is no deduction)
 - Grow tax-free and are distributed tax-free in retirement (if qualified)
 
-The skill computes Roth deferrals at $0 deduction but notes the total contributed for informational purposes. The employer profit-sharing portion is always pre-tax (traditional).
+The skill computes Roth deferrals at $0 deduction but notes the total contributed for informational purposes. The employer profit-sharing portion is pre-tax by default; SECURE 2.0 §604 permits a plan to allow employer contributions to be designated Roth, though custodian support is limited.
 
 ### Establishment and contribution deadlines
 
@@ -275,7 +275,7 @@ The skill computes Roth deferrals at $0 deduction but notes the total contribute
 | Make employee elective deferrals (2025) | December 31, 2025 (must be made by end of tax year) |
 | Make employer profit-sharing contributions (2025) | Tax filing deadline including extensions (April 15, 2026, or October 15, 2026 with extension) |
 
-**Critical:** A Solo 401(k) must be established (plan adoption agreement executed) by December 31 of the tax year. If the plan was not established by December 31, 2025, the sole prop CANNOT make 2025 Solo 401(k) contributions — even if they file an extension. This is different from a SEP-IRA.
+**Critical (updated by the SECURE Act):** Under SECURE Act §201 (IRC §401(b)(2)), a Solo 401(k) adopted by the return due date **including extensions** (October 15, 2026 for a 2025 calendar-year sole prop) is treated as effective for 2025 — so the EMPLOYER profit-sharing contribution can be enabled retroactively. IMPORTANT LIMIT: employee elective DEFERRALS still require a written deferral election in place by December 31 of the tax year (a sole prop with no prior plan cannot create 2025 deferrals after year-end), though the deferrals themselves may be DEPOSITED by the return due date with extensions. Net effect: after year-end you can still open a plan and make the employer contribution, but not new employee deferrals.
 
 ### Form 5500-EZ filing requirement
 
@@ -308,7 +308,7 @@ Maximum SEP contribution = lesser of:
 - No employee deferral component — total contribution limited to 20% of net SE earnings
 - For sole props with net SE earnings under ~$117,500, the SEP-IRA allows LESS total contribution than a Solo 401(k) with employee deferrals
 - No catch-up contributions (the catch-up rules apply only to elective deferrals, not employer contributions)
-- No Roth option (all SEP contributions are pre-tax)
+- Roth SEP option is technically available (SECURE 2.0 §601, for years after 2022) but custodian support is still limited, so in practice most SEP contributions are pre-tax
 
 ### Establishment and contribution deadlines
 
@@ -701,3 +701,6 @@ Roth IRA: $7,000 (MAGI well below $150,000)
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, EA, tax attorney, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
 
 The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
+
+## Changelog
+- **2026-07-05** — Corrections (Fable review, verified): Solo 401(k) establishment deadline updated for SECURE Act §201 (adopt by extended return due date; deferral elections still by Dec 31); Roth SEP (SECURE 2.0 §601) and Roth employer contributions (§604) now noted instead of a flat no-Roth statement; IRA catch-up wording ($1,000 catch-up / $8,000 total, age 50+); mandatory-Roth-catch-up transition re-cited to Notice 2023-62. FLAGGED for an arithmetic pass: Section 15/17 examples compute SE tax at 15.3%% of full net earnings, ignoring the $176,100 OASDI wage base, and the SEP-vs-Solo-401(k) crossover figures (Sections 7, 11) need recomputation.
