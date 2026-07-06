@@ -5,7 +5,7 @@ jurisdiction: US
 category: federal-tax
 tier: 2
 verified_by: pending
-last_updated: 2026-07-05
+last_updated: 2026-07-06
 version: 0.1
 ---
 
@@ -788,12 +788,12 @@ Assuming relatively even payroll across the year and the wage base concentration
 |---|---|---|
 | Total wages (Line 2) | $1,800,000 (illustrative) | Box 1 = $1,800,000 |
 | Federal income tax withheld (Line 3) | $360,000 | Box 2 = $360,000 |
-| SS wages (Line 5a Col 1) | $1,408,800 (Carol capped at $176,100 + 7 others at full wages) | Box 3 = $1,408,800 |
-| SS tax (Line 5a Col 2) | $174,691.20 | Box 4 = $87,345.60 (employee half only) |
+| SS wages (Line 5a Col 1) | $1,408,800 (Carol capped at $176,100; her actual wages are $567,300, so the 7 others total $1,232,700, each ≤ the $176,100 wage base) | Box 3 = $1,408,800 |
+| SS tax (Line 5a Col 2) | $174,691.20 (12.4% × $1,408,800) | Box 4 = $87,345.60 (employee half only) |
 | Medicare wages (Line 5c Col 1) | $1,800,000 (uncapped) | Box 5 = $1,800,000 |
-| Medicare tax (Line 5c Col 2 + 5d Col 2) | $53,100 (Medicare) + $900 (Add'l Med) = $54,000 (employer + employee combined for Medicare; Add'l is employee only) | Box 6 = $27,000 (employee Medicare half) + $900 (employee Add'l Medicare) = $27,900 |
+| Medicare tax (Line 5c Col 2 + 5d Col 2) | Regular Medicare 2.9% × $1,800,000 = **$52,200**; Additional Medicare 0.9% × $367,300 (only Carol's wages over $200,000) = **$3,305.70**; total $55,505.70 | Box 6 = employee regular half $26,100 (1.45% × $1,800,000) + Additional Medicare $3,305.70 = **$29,405.70** |
 
-**Note on Box 4 / Box 6 vs 941**: Box 4 and Box 6 on W-2/W-3 are the EMPLOYEE half only. Form 941 Lines 5a Col 2 and 5c Col 2 report the COMBINED employer + employee. Divide the 941 amount by 2 (for SS) and by 2 (for regular Medicare, then add the Additional Medicare which is 100% employee).
+**Note on Box 4 / Box 6 vs 941**: Box 4 and Box 6 on W-2/W-3 are the EMPLOYEE half only. Form 941 Line 5a Col 2 (SS) and Line 5c Col 2 (regular Medicare) report the COMBINED employer + employee, so halve them for the W-2 boxes; Line 5d Col 2 (Additional Medicare) is 100% employee, so it is added to Box 6 in full, not halved. Additional Medicare applies only to the portion of an individual employee's wages above $200,000 — here only Carol crosses that threshold.
 
 If W-3 totals don't match the four 941s, the SSA sends a CAWR discrepancy notice. The employer typically has 45 days to respond with reconciliation.
 
@@ -923,4 +923,5 @@ verified rules together with the name of the accountant who signed them off.
 **MCP endpoint:** `https://www.openaccountants.com/api/mcp`
 
 ## Changelog
+- **2026-07-06** — Worked-example arithmetic pass (completes the §12.4 item flagged 2026-07-05). Example 4 reconciliation: corrected the Medicare figures — regular Medicare is 2.9% × $1,800,000 = $52,200 (was $53,100), and Additional Medicare is 0.9% only on the portion of an individual's wages above $200,000 (here only Carol, whose $567,300 gives 0.9% × $367,300 = $3,305.70, not a flat $900); Box 6 employee Medicare is $26,100 + $3,305.70 = $29,405.70 (was $27,900). Made Carol's $567,300 wages explicit so the reconciliation is followable. The HSA/§125 FICA-exclusion table remains flagged for a separate pass.
 - **2026-07-05** — Payroll corrections (Fable review, verified against IRS i940/i941 + 2025 SS/FUTA figures): T.D. 9972 dated Feb 2023 (not "2024 IRS final regs"); the $2,500 de-minimis deposit test is disjunctive (current OR prior quarter); backup-withholding drafting residue cleaned to a flat 24% for 2025 (§3406; TCJA rates made permanent by OBBBA §70101); FUTA successor wage-base credit cited to §3306(b)(1) not §3306(c)(8); Form 941-X interest-free-adjustment timing tied to when the error is ascertained; reasonable-cause standard split between §6656(a) (deposits) and §6724(a) (info returns). FLAGGED: §12.4 Example 4 reconciliation arithmetic and the HSA/§125 FICA-exclusion table need a follow-up pass.
