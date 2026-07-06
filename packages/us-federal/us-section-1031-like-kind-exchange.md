@@ -78,7 +78,7 @@ The Tax Cuts and Jobs Act of 2017 (P.L. 115-97), effective for exchanges complet
 6. **Mineral, oil, and gas interests** — perpetual royalty interests qualify; production payments do not
 7. **Easements** (permanent) and **conservation easements**
 8. **Air rights** and **transferable development rights (TDRs)**
-9. **Stock in cooperative housing corporations** (§1031(i)) — limited carve-out for co-op shares
+9. **Stock in a mutual ditch, reservoir, or irrigation company** (§1031(i)) — treated as real property for §1031 where, at the time of the exchange, the shares are recognized as real property by the highest court or a statute of the State of organization (this is the §1031(i) carve-out; it is NOT a cooperative-housing provision)
 
 **Not real property even though physically attached:**
 - Machinery installed for an industrial process, not the building itself
@@ -737,7 +737,7 @@ Before the relinquished property closes, confirm:
 - IRC §1031(d) — basis carryover
 - IRC §1031(f) — related-party 2-year rule
 - IRC §1031(h) — US-for-foreign disallowance
-- IRC §1031(i) — cooperative housing carve-out
+- IRC §1031(i) — mutual ditch, reservoir, or irrigation company stock carve-out
 - IRC §121(d)(10) — §1031 + §121 sequential rules
 - IRC §168(i)(7) — depreciation treatment of exchanged-basis property
 - IRC §1223(1) — holding-period tacking
