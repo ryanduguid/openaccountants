@@ -5,7 +5,7 @@ description: >
 version: 2.0
 jurisdiction: US
 tier: 2
-last_updated: 2026-07-04
+last_updated: 2026-07-06
 ---
 
 # US Schedule C and SE Computation Skill v2.0
@@ -111,7 +111,7 @@ Both subject to the 280A(c)(5) gross income limitation — but the limit applies
 | Home depreciation basis undocumented | $0 depreciation; flag 1250 recapture risk |
 | Actual vs simplified home office method unclear | Ask; do not assume |
 | At-risk status | Yes (Line 32a) unless evidence to contrary |
-| Net loss large enough for NOL | Refuse (R-COMP-NOL) |
+| Net loss large enough for NOL | Screen §461(l) (R-COMP-461L) first, then refuse (R-COMP-NOL) |
 | Gross receipts < 1099 totals | Flag — IRS computer match risk |
 
 ### Red Flag Thresholds
@@ -120,6 +120,7 @@ Both subject to the 280A(c)(5) gross income limitation — but the limit applies
 |---|---|
 | Schedule C Line 31 >= $200,000 | Approaches Additional Medicare Tax threshold (single) |
 | Schedule C Line 31 <= -$5,000 | Loss territory; check at-risk and hobby loss |
+| Aggregate business loss > $313,000 single / $626,000 MFJ (2025) | §461(l) excess business loss limitation (permanent under OBBBA §70601) — screen before §172 |
 | Form 8829 deduction >= $5,000 | Material; substantiation review |
 | Home depreciation taken (actual method) | 1250 recapture risk on future home sale |
 | Home office limited by 280A(c)(5) | Carryover treatment verification |
@@ -150,7 +151,8 @@ Both subject to the 280A(c)(5) gross income limitation — but the limit applies
 
 | Code | Situation | Action |
 |---|---|---|
-| R-COMP-NOL | Net operating loss generated | Stop — 172 analysis required; outside scope |
+| R-COMP-461L | Aggregate business loss above the §461(l) excess-business-loss threshold ($313,000 single / $626,000 MFJ for TY2025; permanent under OBBBA §70601) | Stop — the §461(l) EBL limitation applies BEFORE any §172 NOL analysis. The disallowed excess is added back and carried forward (as an NOL carryforward under current mechanics). Escalate. |
+| R-COMP-NOL | Net operating loss generated | Stop — 172 analysis required; outside scope. Screen §461(l) (R-COMP-461L) FIRST — an excess business loss is disallowed before it can become an NOL. |
 | R-COMP-ATRISK | At-risk limitation may apply (Form 6198) | Stop — 465 analysis required |
 | R-COMP-FORM8959-COMPLEX | Additional Medicare Tax with complex W-2 coordination | Flag — compute basic liability; reviewer verifies withholding |
 | R-COMP-FARM | Farm income present | Stop — Schedule F, not Schedule C |
@@ -338,7 +340,7 @@ Schedule C net profit: ($12,000) — net loss.
 SE tax: $0 (no SE tax on a loss).
 Loss flows to Schedule 1 line 3 as ($12,000). Reduces AGI.
 
-Flag: Check hobby loss (3+ year loss streak). Check at-risk (Line 32a confirmed). If loss creates NOL: R-COMP-NOL fires.
+Flag: Check hobby loss (3+ year loss streak). Check at-risk (Line 32a confirmed). If the aggregate business loss exceeds $313,000 single / $626,000 MFJ (2025), the §461(l) excess business loss limitation (R-COMP-461L) fires FIRST and disallows the excess; only what survives §461(l) can become an NOL (R-COMP-NOL).
 
 ### Example 5 — Chase (NYC, High Earner — Additional Medicare Tax)
 
@@ -642,6 +644,7 @@ SECTION H — REVIEWER FLAGS
 
 ## Changelog
 
+- **2026-07-06** — Added the missing §461(l) excess-business-loss screen (completes the loss-side item flagged in the Fable review). Large business losses now hit a §461(l) check ($313,000 single / $626,000 MFJ for TY2025; the limitation is permanent under OBBBA §70601) BEFORE any §172 NOL analysis, since the excess is disallowed before it can become an NOL — added as refusal code R-COMP-461L, a red-flag threshold, and cross-references from the NOL screen and Example 4's loss flag.
 - **2026-07-04** — Corrections from a Fable deep-accuracy review (adversarially verified): fixed §179 limit to $2,500,000/$4,000,000 phase-out and added the January 19, 2025 acquisition-date qualifier to 100% bonus depreciation (OBBBA §§70306/70301); restored the TY2025 1099-K threshold to >$20,000 AND >200 transactions (OBBBA §70432, IRC 6050W(e)); corrected T1-US-SE-6 — the deductible half of SE tax DOES reduce QBI (Treas. Reg. 1.199A-3(b)(1)(vi)); scoped the 280A(c)(5) limit to operating expenses/depreciation with the tier-1 (mortgage interest/taxes/casualty) carve-out; fixed the nonfarm optional method figures ($7,240 lower limit = 4 x $1,810 QC; removed the erroneous $10,380 minimum-gross row); split W-2 inputs into Box 3 (Schedule SE line 8a) and Box 5 (Form 8959) throughout.
 
 ---
