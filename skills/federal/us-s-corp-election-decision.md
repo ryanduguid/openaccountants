@@ -1,10 +1,10 @@
 ---
 name: us-s-corp-election-decision
-description: Tier 2 content skill for evaluating whether a US sole proprietor or single-member LLC should elect S-corporation status under IRC §1362 via Form 2553. Covers the SE tax savings analysis (salary subject to FICA, distributions not), the reasonable salary requirement under IRC §3121 and IRS audit scrutiny, the break-even analysis where SE tax savings exceed incremental costs, the QBI deduction interaction under §199A (W-2 wages increase QBI limitation room), state-specific disadvantages (California $800 franchise tax + 1.5% S-corp tax, New York City UBT elimination, etc.), the Form 2553 election deadline (March 15 or within 75 days of formation), late election relief under Rev. Proc. 2013-30, payroll processing and Form 1120-S filing costs, and the decision framework for when NOT to elect. Tax year 2025. MUST be loaded alongside us-tax-workflow-base v0.1+. Federal only; state issues flagged but not computed.
+description: Tier 2 content skill for evaluating whether a US sole proprietor or single-member LLC should elect S-corporation status under IRC §1362 via Form 2553. Covers the SE tax savings analysis (salary subject to FICA, distributions not), the reasonable salary requirement under IRC §3121 and IRS audit scrutiny, the break-even analysis where SE tax savings exceed incremental costs, the QBI deduction interaction under §199A (W-2 wages increase QBI limitation room), state-specific disadvantages (California $800 franchise tax + 1.5% S-corp tax, New York City UBT elimination, etc.), the Form 2553 election deadline (March 15, or 2 months and 15 days after the first day of the first tax year for a new entity), late election relief under Rev. Proc. 2013-30, payroll processing and Form 1120-S filing costs, and the decision framework for when NOT to elect. Tax year 2025. MUST be loaded alongside us-tax-workflow-base v0.1+. Federal only; state issues flagged but not computed.
 version: 0.2
 jurisdiction: US
 tier: 2
-last_updated: 2026-06-12
+last_updated: 2026-07-06
 ---
 
 # US S-Corp Election Decision Skill v0.2
@@ -17,7 +17,7 @@ last_updated: 2026-06-12
 
 **This is a decision skill, not a computation skill.** Unlike the bookkeeping and computation skills in the pipeline, this skill produces a decision brief for the reviewer, not a tax return position. The decision brief presents the SE tax savings estimate, the incremental costs, the QBI interaction, state-specific issues, and a recommendation with confidence level.
 
-**Tax year coverage.** This skill is current for **tax year 2025** as of its currency date (April 2026). It reflects the One Big Beautiful Bill Act (Public Law 119-21, signed July 4, 2025), including the permanent QBI deduction and the rate increase to 23% for 2026+.
+**Tax year coverage.** This skill is current for **tax year 2025** as of its currency date (April 2026). It reflects the One Big Beautiful Bill Act (Public Law 119-21, signed July 4, 2025), including the QBI deduction made permanent at 20% (the 23% rate was in the House bill only and was dropped from the enacted OBBBA).
 
 **The reviewer is the customer of this output.** The skill produces a decision analysis, not a filing. The reviewing Enrolled Agent, CPA, or attorney makes the final recommendation to the client.
 
@@ -60,14 +60,14 @@ This skill does NOT cover:
 
 ## Section 2 — Year coverage and currency
 
-**Tax year covered:** 2025 (election effective for TY2025 if Form 2553 filed by March 17, 2025 — March 15 falls on Saturday — or within 75 days of formation if formed after January 1, 2025).
+**Tax year covered:** 2025 (election effective for TY2025 if Form 2553 filed by March 17, 2025 — March 15 falls on Saturday — or within 2 months and 15 days of the first day of its first tax year if formed after January 1, 2025).
 
 **Currency date:** April 2026.
 
 **Legislation reflected:**
 - Internal Revenue Code as in force for tax year 2025
 - One Big Beautiful Bill Act (OBBBA), Public Law 119-21, signed July 4, 2025
-- IRC §199A as made permanent by OBBBA (20% for 2025, rising to 23% for 2026+)
+- IRC §199A as made permanent by OBBBA (20%; the 23% rate was dropped in the Senate and is NOT law)
 - Rev. Proc. 2013-30 (late S-corp election relief)
 - Rev. Proc. 2024-40 (2025 inflation adjustments)
 
@@ -102,8 +102,7 @@ This skill does NOT cover:
 
 | Figure | Value for TY2025 | Primary source |
 |---|---|---|
-| QBI deduction rate (2025) | 20% | IRC §199A(a); OBBBA made permanent |
-| QBI deduction rate (2026 onward) | 23% | OBBBA P.L. 119-21; IRC §199A as amended |
+| QBI deduction rate (2025 and permanent) | 20% | IRC §199A(a); OBBBA P.L. 119-21 made the 20% rate permanent |
 | QBI threshold (single) | $197,300 | Rev. Proc. 2024-40 |
 | QBI threshold (MFJ) | $394,600 | Rev. Proc. 2024-40 |
 | QBI phase-in range top (single) | $247,300 | $197,300 + $50,000 |
@@ -115,7 +114,7 @@ This skill does NOT cover:
 | Figure | Value for TY2025 | Primary source |
 |---|---|---|
 | Election deadline for existing entity (calendar year) | March 17, 2025 (March 15 is Saturday) | IRC §1362(b)(1)(B); §7503 |
-| Election deadline for newly formed entity | Within 75 days of formation | IRC §1362(b)(1)(C); Rev. Proc. 2013-30 |
+| Election deadline for newly formed entity | 2 months and 15 days after the first day of the first tax year (the date it first has shareholders, acquires assets, or begins business) | IRC §1362(b)(1)(C); Rev. Proc. 2013-30 |
 | Late election relief | Available if requirements of Rev. Proc. 2013-30 are met | Rev. Proc. 2013-30 |
 
 ---
@@ -158,7 +157,7 @@ This skill does NOT cover:
 
 - **Watson v. United States, 668 F.3d 1008 (8th Cir. 2012)** — $24K salary on $488K net income was unreasonably low; reasonable compensation required
 - **Radtke v. United States, 712 F. Supp. 143 (E.D. Wis. 1989)** — Zero salary to S-corp shareholder-employee who performed services was unreasonable; all distributions recharacterized as wages
-- **Joseph M. Grey Public Accountant, P.C. v. Commissioner, T.C. Memo 2002-34** — IRS successfully recharacterized distributions as wages when salary was unreasonably low
+- **Joseph M. Grey Public Accountant, P.C. v. Commissioner, 119 T.C. 121 (2002)** — IRS successfully recharacterized distributions as wages when salary was unreasonably low
 - **David E. Watson, P.C. v. United States, 757 F. Supp. 2d 877 (S.D. Iowa 2010)** — Detailed reasonable compensation analysis
 - **IRS Fact Sheet FS-2008-25** — Reasonable compensation guidance for S-corp shareholders
 
@@ -329,7 +328,7 @@ Net annual savings: approximately $3,469
 
 ### The basic QBI framework (2025)
 
-Under IRC §199A, sole proprietors and S-corp shareholders can deduct 20% of qualified business income (rising to 23% for 2026+ under OBBBA). For taxpayers below the income threshold ($197,300 single / $394,600 MFJ for 2025), the deduction is simply 20% of QBI with no limitations.
+Under IRC §199A, sole proprietors and S-corp shareholders can deduct 20% of qualified business income (OBBBA made the 20% rate permanent; the 23% rate was dropped and is not law). For taxpayers below the income threshold ($197,300 single / $394,600 MFJ for 2025), the deduction is simply 20% of QBI with no limitations.
 
 ### When QBI interacts with the S-corp decision
 
@@ -366,7 +365,7 @@ For specified service trades or businesses (legal, health, consulting, financial
 | Scenario | Deadline | Primary source |
 |---|---|---|
 | Existing entity, calendar year, electing for TY2025 | March 17, 2025 (March 15 is Saturday) | IRC §1362(b)(1)(B); §7503 |
-| Entity formed on or after Jan 1, 2025 | Within 75 days of formation | IRC §1362(b)(1)(C) |
+| Entity formed on or after Jan 1, 2025 | 2 months and 15 days after the first day of its first tax year | IRC §1362(b)(1)(C) |
 | Fiscal year entity | By the 15th day of the 3rd month of the fiscal year | IRC §1362(b)(1)(B) |
 
 ### Late election relief under Rev. Proc. 2013-30
@@ -385,7 +384,7 @@ If the Form 2553 deadline was missed, relief is available under Rev. Proc. 2013-
 ### Other late election methods
 
 - **PLR (Private Letter Ruling):** If Rev. Proc. 2013-30 does not apply (e.g., more than 3 years and 75 days have passed, or inconsistent returns were filed), the entity can request a PLR from the IRS. Cost: $3,000 - $35,000+ user fee plus professional fees. Generally not cost-effective for sole props.
-- **Rev. Proc. 2022-19:** Provides additional simplified relief for certain late elections when filed within 3 years and 75 days.
+- **Rev. Proc. 2022-19:** Provides taxpayer-assistance procedures to resolve certain S-corporation issues (e.g., non-identical governing provisions, missing shareholder consents) WITHOUT a PLR. It is not a late-election relief procedure and has no "3 years and 75 days" window — late-election relief is Rev. Proc. 2013-30.
 
 ### Eligibility requirements for S-corp status
 
@@ -410,7 +409,7 @@ For a single-member LLC, the LLC must first elect to be treated as a corporation
 | **California** | $800 annual franchise tax (LLC or S-corp) + 1.5% S-corp tax on net income | S-corp pays 1.5% income tax at entity level (franchise tax); sole prop does not. At $100K net income, this is $1,500 additional state tax. Break-even analysis must account for this. |
 | **New York City** | S-corps are subject to NYC General Corporation Tax (GCT) or UBT | Sole props pay NYC UBT; S-corps may pay GCT. The rates and structures differ. Detailed NYC analysis needed. |
 | **New Hampshire** | Business Profits Tax (BPT) at 7.5% applies to S-corp income | NH has no personal income tax but taxes business income at entity level. S-corps pay BPT. |
-| **Tennessee** | No state income tax on earned income | S-corp provides no state tax savings; sole prop is equally advantaged. |
+| **Tennessee** | No personal income tax on earned income, BUT Tennessee does NOT recognize the federal S election; an S-corp is subject to the franchise & excise tax (6.5% excise on net earnings plus the franchise tax). | S-corp gives no personal-tax savings AND adds F&E tax exposure a sole prop does not have; the sole prop is the tax-advantaged form here. |
 | **Texas** | Franchise (margin) tax applies to S-corps with revenue > $2.47M | Small S-corps below the no-tax-due threshold are unaffected. Above threshold, 0.375% to 0.75% on margin. |
 
 ### States with S-corp advantages
@@ -629,3 +628,7 @@ This file is v0.2 of `us-s-corp-election-decision`, drafted in April 2026. SE ta
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, EA, tax attorney, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
 
 The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
+
+## Changelog
+
+- **2026-07-06** - OBBBA and citation corrections (Fable review): QBI rate is permanently 20 percent (removed the erroneous "rising to 23% for 2026+"; the 23% rate was House-only and was dropped from the enacted OBBBA); new-entity Form 2553 deadline restated as 2 months and 15 days after the first day of the first tax year (not "75 days of formation"); Tennessee does NOT recognize the federal S election and taxes S-corps under the 6.5% excise plus franchise tax; Rev. Proc. 2022-19 corrected (it is a taxpayer-assistance procedure, not late-election relief, and has no "3 years and 75 days" window); Grey case citation fixed to 119 T.C. 121 (2002). Worked-example arithmetic (California greater-of tax, Watson and late-election figures) flagged for a follow-up pass.
