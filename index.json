@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-06T08:59:26+00:00",
+ "generated_at": "2026-07-06T09:04:39+00:00",
  "counts": {
   "guides": 1007,
   "jurisdictions": 187,
@@ -256,7 +256,7 @@
    "verified_by": "pending",
    "reviewed_by": null,
    "tax_year": null,
-   "last_updated": "2026-07-05"
+   "last_updated": "2026-07-06"
   },
   {
    "slug": "us-section-1202-qsbs",
