@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-06T08:44:55+00:00",
+ "generated_at": "2026-07-06T09:15:19+00:00",
  "counts": {
   "guides": 1007,
   "jurisdictions": 187,
@@ -40,7 +40,7 @@
    "verified_by": "pending",
    "reviewed_by": null,
    "tax_year": null,
-   "last_updated": "2025-11-15"
+   "last_updated": "2026-07-06"
   },
   {
    "slug": "us-fbar-and-fatca-8938",
@@ -160,7 +160,7 @@
    "verified_by": "pending",
    "reviewed_by": null,
    "tax_year": null,
-   "last_updated": "2026-07-05"
+   "last_updated": "2026-07-06"
   },
   {
    "slug": "us-gilti-fdii-beat",
@@ -256,7 +256,7 @@
    "verified_by": "pending",
    "reviewed_by": null,
    "tax_year": null,
-   "last_updated": "2026-07-05"
+   "last_updated": "2026-07-06"
   },
   {
    "slug": "us-section-1202-qsbs",
@@ -268,7 +268,7 @@
    "verified_by": "pending",
    "reviewed_by": null,
    "tax_year": null,
-   "last_updated": "2026-07-05"
+   "last_updated": "2026-07-06"
   },
   {
    "slug": "us-secure-2-and-retirement-updates",
@@ -952,7 +952,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": null,
-   "last_updated": "2026-07-04"
+   "last_updated": "2026-07-06"
   },
   {
    "slug": "us-self-employed-health-insurance",
@@ -976,7 +976,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": null,
-   "last_updated": "2026-07-05"
+   "last_updated": "2026-07-06"
   },
   {
    "slug": "us-sole-prop-bookkeeping",

@@ -5,7 +5,7 @@ jurisdiction: US
 category: federal-tax
 tier: 2
 verified_by: pending
-last_updated: 2026-07-05
+last_updated: 2026-07-06
 version: 0.1
 ---
 
@@ -567,11 +567,12 @@ For partial-exclusion years (50% or 75% post-OBBBA), the cumulative cap is reduc
 - **Total federal: $3,510,500**.
 
 **State tax.**
-- Washington 7% capital gains tax: Washington does not conform to §1202. Gain over the $250k WA standard exemption (2025 inflation-adjusted figure ~$270k) is taxed at 7%.
-- WA tax: ($24,750,000 − $270,000) × 7% = $1,714,100.
+- Washington's 7% capital gains tax is measured from **federal net long-term capital gain** (RCW 82.87). Because the $10M excluded under §1202 never enters federal net LTCG, it is **not** in the Washington base either — the base is the $14,750,000 federally taxable portion, not the full $24.75M gain. (This matches the Section 9 Washington row: the tax applies to QSBS gain only to the extent not excluded federally.)
+- WA tax: ($14,750,000 − $270,000) × 7% = $14,480,000 × 7% = **$1,013,600**. (The $270k is the 2025 inflation-adjusted standard deduction.)
+- **Flag — 2025 WA surcharge:** Washington SB 5813 (2025) adds a further 2.9% on Washington capital gains above $1,000,000 for sales on or after Jan 1, 2025, so a 2027 sale like Ben's would also owe ~2.9% × ($14,480,000 − $1,000,000) ≈ $390,920 on top, for ~$1,404,520 total WA. Confirm SB 5813's final figures at filing; the $1,013,600 line above is the flat-7% floor.
 - (Note: WA's "long-term capital gains" tax is technically an excise tax, not income tax, and was upheld by the WA Supreme Court in *Quinn v. State*, 2023.)
 
-**Total combined: $5,224,600** on $24.75M gain (~21.1%).
+**Total combined (flat-7% WA): $4,524,100** on $24.75M gain (~18.3%); ~$4,915,020 (~19.9%) if the SB 5813 surcharge applies.
 
 ### 13.3 Example 3 — Family stacking, $200M exit (post-OBBBA)
 
@@ -580,7 +581,9 @@ For partial-exclusion years (50% or 75% post-OBBBA), the cumulative cap is reduc
 - Receives 1,000,000 shares for $1,000 at incorporation.
 - Files §83(b).
 - In 2026 (pre-liquidity, FMV $5/share), Carla gifts 250,000 shares each to: spouse Dan (separate property in a community-property-state pre-nup), and to two non-grantor dynasty trusts for the benefit of their two minor children (one trust per child, with distinct trustees, distinct beneficiary classes, and documented non-tax purposes — asset protection and GST planning).
-- Gift tax: 4 gifts of $1,250,000 each ($5/share × 250k shares); using annual exclusions ($19k × 2 spouses × 4 donees = $152k) and lifetime exemption ($13.99M × 2 = $27.98M); Form 709 filed; remaining exemption: ~$23M.
+- Gift tax: the facts describe **3 gifts** of $1,250,000 each ($5/share × 250k shares) — to spouse Dan and to the two trusts — totaling **$3,750,000**, not four gifts.
+  - **Gift to spouse Dan:** qualifies for the unlimited §2523 marital deduction (assuming Dan is a U.S. citizen), so it consumes **no** lifetime exemption. Gift-splitting under §2513 does **not** apply to a gift made *to* the consenting spouse, so "$19k × 2 spouses × 4 donees" is wrong on both the donee count and the split.
+  - **Gifts to the two dynasty trusts ($2.5M):** an annual exclusion applies **only if** each trust gives the beneficiary a present interest (a Crummey withdrawal right); a straight gift to a dynasty trust with no Crummey power is a future interest with **zero** annual exclusion. If Crummey rights exist and the spouses split, exclusions = $19,000 × 2 spouses × 2 trusts = $76,000, leaving $2,424,000 of taxable gift ($1,212,000 per spouse) applied against the $13,990,000 (2025) exemption — roughly $12.78M remaining per spouse (~$25.56M combined). **Flag:** the exact exclusion and remaining-exemption figures depend on the trust drafting (Crummey powers) and Dan's citizenship; confirm before relying. Form 709 filed by each spouse.
 - Holding period tacks under §1202(h)(1)(A).
 - In 2030 (5+ years from 2025 issuance), company is acquired for $200/share = $200M total.
 - All five holders sell their respective shares simultaneously.
@@ -771,4 +774,7 @@ verified rules together with the name of the accountant who signed them off.
 **MCP endpoint:** `https://www.openaccountants.com/api/mcp`
 
 ## Changelog
+
+- **2026-07-06** - Worked-example arithmetic fixes. Example 2 (WA, $25M exit): the Washington 7% capital gains tax is measured from federal net long-term capital gain, so the $10M excluded under §1202 is NOT in the WA base either; corrected the base from the full $24.75M gain to the $14.75M federally taxable portion (WA tax $1,714,100 -> $1,013,600; total combined $5,224,600 -> $4,524,100), and flagged the 2025 SB 5813 +2.9%-above-$1M surcharge. Example 3 (family stacking): corrected "4 gifts" to 3 (spouse + 2 trusts, $3.75M total), applied the §2523 unlimited marital deduction to the spouse gift (no exemption used; §2513 split cannot apply to a gift to the consenting spouse), and conditioned the trust annual exclusions on Crummey present-interest rights; flagged the remaining-exemption figure as drafting-dependent.
+
 - **2026-07-05** — QSBS/OBBBA corrections (Fable review, adversarially verified): the governing OBBBA section is §70431 (was wrongly cited as §70423 in six places); the tiered exclusion / $15M cap / $75M asset test apply to stock acquired AFTER July 4, 2025 (stock acquired ON that date is pre-OBBBA); exclusion-tier citations corrected to §1202(a)(1)/(a)(3)/(a)(4). Further flagged for a later pass: §1045 tacking under §1223(13), §1202(j) short-position label, the §1202(e)(6) 50%% working-capital limit, WA ESSB 5813 surcharge, and two worked-example recomputations.

@@ -5,7 +5,7 @@ jurisdiction: US
 category: federal-tax
 tier: 2
 verified_by: pending
-last_updated: 2026-07-05
+last_updated: 2026-07-06
 version: 0.1
 ---
 
@@ -78,7 +78,7 @@ The Tax Cuts and Jobs Act of 2017 (P.L. 115-97), effective for exchanges complet
 6. **Mineral, oil, and gas interests** — perpetual royalty interests qualify; production payments do not
 7. **Easements** (permanent) and **conservation easements**
 8. **Air rights** and **transferable development rights (TDRs)**
-9. **Stock in cooperative housing corporations** (§1031(i)) — limited carve-out for co-op shares
+9. **Stock in a mutual ditch, reservoir, or irrigation company** (§1031(i)) — treated as real property for §1031 where, at the time of the exchange, the shares are recognized as real property by the highest court or a statute of the State of organization (this is the §1031(i) carve-out; it is NOT a cooperative-housing provision)
 
 **Not real property even though physically attached:**
 - Machinery installed for an industrial process, not the building itself
@@ -546,9 +546,9 @@ California's most distinctive §1031 rule: California Revenue & Taxation Code §
 **Facts:**
 - Taxpayer: California resident, individual, calendar year
 - Relinquished: 12-unit apartment building in San Diego, CA
-  - Original cost (2010): $1,800,000
-  - Cumulative depreciation through 2025: $654,545 (over 15 years on 27.5-year schedule)
-  - Adjusted basis: $1,145,455
+  - Original cost (2010): $1,800,000 ($600,000 land + $1,200,000 building)
+  - Cumulative depreciation through 2025: $654,545 (building $1,200,000 ÷ 27.5-year residential schedule = $43,636/yr × 15 years; land is not depreciable)
+  - Adjusted basis: $1,145,455 ($1,800,000 − $654,545)
   - Mortgage: $900,000 (paid off at closing)
   - Sale price: $3,200,000 (closed June 1, 2025)
   - Selling costs (commission, title, escrow): $192,000
@@ -585,43 +585,40 @@ Deferred gain: $1,862,545
 ```
 
 **Step 4 — Basis in replacement:**
+
+The authoritative identity for a fully deferred exchange is **basis of replacement = its cost (FMV) − deferred gain**:
 ```
-Basis = Adjusted basis relinquished + cash paid + new mortgage + recognized gain − cash received − mortgage relieved
-     = $1,145,455 + $2,100,000 + $1,400,000 + $0 − $0 − $900,000
-     = $3,745,455
-Cross-check: FMV $3,500,000 − deferred gain $1,862,545 = $1,637,455? — discrepancy
+Basis = FMV replacement $3,500,000 − deferred gain $1,862,545 = $1,637,455
 ```
 
-The discrepancy is the boot-paid offset against selling costs. Reconciliation:
+The "carryover + adjustments" formula must reach the **same** $1,637,455. The common error is to add the $2,100,000 of QI cash as "cash paid" — but that cash is the taxpayer's OWN relinquished-sale proceeds (already embedded in the carryover basis and the deferred gain), so counting it again overstates basis. Correct:
 ```
-FMV replacement received: $3,500,000
-Less: deferred gain: $1,862,545
-Basis: $1,637,455
-
-Alternative Treas. Reg. computation:
-Adjusted basis $1,145,455 (carryover)
-+ $1,400,000 debt assumed (treated as cash paid)
-− $900,000 debt relieved (treated as cash received)
-+ $200,000 net additional cash paid out of pocket (the $192,000 selling costs absorb most of the gross sale; net analysis)
-= $1,845,455
+Basis = Adjusted basis relinquished ($1,145,455)
+        + net new consideration paid (net debt assumed $500,000, net of
+          the exchange-expense mechanics)          =  +$492,000
+        + recognized gain ($0)  −  boot received ($0)
+      = $1,637,455
 ```
+(The earlier "$3,745,455" double-counted the $2,100,000 QI proceeds.)
 
-In practice, the reviewer should walk through Form 8824 lines methodically. The depreciation schedule for the replacement post-exchange uses the $1,145,455 carryover basis on the relinquished's residual 12.5-year remaining schedule, plus the $500,000 net debt addition + cash paid out of pocket as new-acquisition basis on a fresh 39-year industrial schedule.
+The post-exchange depreciation schedule splits: the $1,145,455 carryover basis continues on the relinquished's residual residential schedule, and the excess basis ($1,637,455 − $1,145,455 = $492,000, plus any out-of-pocket closing costs) starts a fresh 39-year nonresidential schedule.
 
 **Form 8824 reporting (key lines):**
 - Line 7: Related party? No
-- Line 15: Cash and other property received: $0
+- Line 15: Cash and other (non-like-kind) property received: $0
 - Line 16: FMV of like-kind property received: $3,500,000
-- Line 18: Adjusted basis of relinquished + costs: $1,145,455 + $192,000 + net debt $500,000 = $1,837,455
-- Line 19: Realized gain: $1,862,545
-- Line 20: Recognized gain: $0
-- Line 25: Basis in replacement: $1,637,455
+- Line 17: Line 15 + line 16: $3,500,000
+- Line 18: Adjusted basis of relinquished + net amounts paid + unused exchange expenses: **$1,637,455** (the balancing figure; equals line 25)
+- Line 19: Realized gain = line 17 − line 18 = $3,500,000 − $1,637,455 = **$1,862,545** (ties to Step 1)
+- Line 23: Recognized gain: $0
+- Line 24: Deferred gain = line 19 − line 23: $1,862,545
+- Line 25: Basis in replacement = line 18 + line 23 − line 15 = **$1,637,455** (ties to Step 4)
 
 **California reporting:**
 - Form 3840 filed with 2025 CA return because replacement is in Arizona (out-of-state).
 - Form 3840 continues every year until the Phoenix warehouse is sold or further-exchanged into CA property.
 
-**Outcome:** $1,862,545 of gain (including ~$163,636 of §1250 unrecaptured gain from the $654,545 cumulative depreciation, ultimately taxed at 25% on the eventual sale) fully deferred at federal level. California gain tracked on Form 3840 indefinitely.
+**Outcome:** $1,862,545 of gain fully deferred at the federal level. Of that, ~$654,545 is unrecaptured §1250 gain (the straight-line depreciation taken), which on an eventual taxable sale is taxed at the 25% §1250 ceiling — up to ~$163,636 of tax ($654,545 × 25%). California gain tracked on Form 3840 indefinitely.
 
 ---
 
@@ -649,7 +646,9 @@ All steps complete within 180 days of EAT acquisition (deadline: February 11, 20
 - Realized gain: $5,150,000 − $309,000 − $2,800,000 = $2,041,000
 - Boot received: $0 (all proceeds applied to replacement; net debt is roughly equal, $1,800,000 relieved vs $1,400,000 assumed = $400,000 debt relief, but taxpayer paid $1,759,000 additional cash, so cash paid offsets debt relief; net boot = $0)
 - Recognized gain: $0
-- Basis in Austin office: $2,800,000 + cash paid − debt relief net = approximately $2,400,000
+- Basis in Austin office: FMV $4,800,000 − deferred gain $2,041,000 = **$2,759,000**. Equivalently: $2,800,000 carryover + $1,759,000 net new cash + $1,400,000 debt assumed − $1,800,000 debt relieved = $4,159,000... which does NOT tie — see the funding flag below. The authoritative $2,759,000 (FMV − deferred gain) governs. (The earlier "$2,400,000" matched no computation.)
+
+> **Flag — funding narrative:** as written, the $3,041,000 QI proceeds + $1,759,000 taxpayer cash (step 7) already equal the full $4,800,000 price, leaving no room for the separately-stated assumption of Austin's $1,400,000 mortgage. Either the Austin purchase carried a $1,400,000 mortgage (so only ~$3,400,000 cash was needed) or it closed all-cash; the fact pattern should pick one. The realized gain ($2,041,000) and replacement basis ($2,759,000) are unaffected because they derive from the relinquished side and FMV.
 
 **Form 8824 reporting:** identical line-by-line format. Note Line 6 "date you actually received the replacement" is December 9, 2025 (the date EAT transferred to taxpayer), NOT August 15 (the date EAT acquired).
 
@@ -686,7 +685,7 @@ All steps complete within 180 days of EAT acquisition (deadline: February 11, 20
 
 **Form 8824 (Partners A and B only):**
 - Each files own Form 8824 reflecting 25% TIC ownership.
-- Question 11 (was property held more than 2 years): yes — TIC held from July 2024 to August 2025 plus prior partnership holding period under §1223 tacking ambiguity (conservative position: only TIC holding period counts; some practitioners argue tacking applies). At 13 months as TIC, the safer answer is to disclose the drop and rely on the documented business purpose.
+- Form 8824 has no "held-more-than-2-years" question — that miscite is corrected. The drop-and-swap *holding/intent* disclosures live on **Form 1065 Schedule B** (the partnership's like-kind-exchange questions) and, for California, on FTB Form 565/568, not on Form 8824. Each partner's Form 8824 simply reports the 25% TIC exchange. Holding period: TIC held July 2024 to August 2025 (~13 months); whether the prior partnership holding period tacks under §1223 is ambiguous — the conservative position counts only the TIC period, so disclose the drop and rely on the documented business purpose.
 
 **Risk flags / AUDIT FLASH POINTS:**
 - The 12-month gap between drop and sale supports an "investment intent" position. <6 months would be aggressive; <30 days would be a near-certain audit loss.
@@ -738,7 +737,7 @@ Before the relinquished property closes, confirm:
 - IRC §1031(d) — basis carryover
 - IRC §1031(f) — related-party 2-year rule
 - IRC §1031(h) — US-for-foreign disallowance
-- IRC §1031(i) — cooperative housing carve-out
+- IRC §1031(i) — mutual ditch, reservoir, or irrigation company stock carve-out
 - IRC §121(d)(10) — §1031 + §121 sequential rules
 - IRC §168(i)(7) — depreciation treatment of exchanged-basis property
 - IRC §1223(1) — holding-period tacking
@@ -820,4 +819,5 @@ verified rules together with the name of the accountant who signed them off.
 **MCP endpoint:** `https://www.openaccountants.com/api/mcp`
 
 ## Changelog
+- **2026-07-06** — Worked-example arithmetic pass (completes the item flagged on 2026-07-05). Example 1: added a land allocation ($600k land / $1.2M building) so the $654,545 depreciation and $1,145,455 adjusted basis are internally consistent; corrected the replacement basis from $3,745,455 (which double-counted the $2,100,000 of QI sale proceeds as new cash) to the authoritative $1,637,455 (FMV $3,500,000 − deferred gain $1,862,545), and reconciled the Form 8824 lines so line 19 ties to the $1,862,545 realized gain and line 25 to the $1,637,455 basis; fixed the outcome paragraph (~$654,545 of unrecaptured §1250 gain, up to ~$163,636 of tax at the 25% ceiling — the $163,636 was the tax, not the gain). Example 2: basis $2,400,000 → $2,759,000 (FMV − deferred gain) and flagged the inconsistent funding narrative. Example 3: removed the non-existent Form 8824 "Question 11 / held-more-than-2-years" reference (drop-and-swap intent lives on Form 1065 Schedule B and state forms).
 - **2026-07-05** — §1031 corrections (Fable review, verified): Pennsylvania now CONFORMS (Act 53 of 2022, effective 2023) — the guide still said it did not; TCJA rewrote §1031(a)(2) (only bar is real property held for sale); Rev. Rul. 2019-24 miscite removed (it is hard-forks/airdrops, not §1031); 30-year leasehold reg is §1.1031(a)-1(c)(2) not §1.1031(a)-3; Form 8824 Line 11 is the related-party exception, not a partner-intent question; §1031 nonrecognition is mandatory (not voided by failure to file 8824); §1031(i) is mutual-ditch stock, not co-op housing. FLAGGED for an arithmetic pass: §21 Examples 1-2 depreciation/basis computations (double-counted QI proceeds; $654,545 vs $981,818 depreciation) and the QI 10%%-relatedness threshold detail.

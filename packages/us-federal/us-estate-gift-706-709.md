@@ -5,7 +5,7 @@ jurisdiction: US
 category: federal-tax
 tier: 2
 verified_by: pending
-last_updated: 2025-11-15
+last_updated: 2026-07-06
 version: 0.1
 ---
 
@@ -95,7 +95,7 @@ The **applicable credit amount** under §2010(c)(2) for 2025 is the tentative ta
 AEA  =  BEA  +  DSUE  +  Restored exclusion amount (rarely applicable)
 ```
 
-For a single decedent or unmarried donor in 2025, AEA = BEA = **$13,990,000**, producing an applicable credit amount of **$5,389,800** (the tentative tax on $13,990,000 under §2001(c)).
+For a single decedent or unmarried donor in 2025, AEA = BEA = **$13,990,000**, producing an applicable credit amount of **$5,541,800** (the tentative tax on $13,990,000 under §2001(c): $345,800 on the first $1,000,000 plus 40% of the remaining $12,990,000 = $5,196,000). Note: $5,389,800 is the *2024* credit (on the 2024 BEA of $13,610,000) — do not carry it into 2025.
 
 ### 2.4 The "Form 706 Method" — interaction of lifetime gifts and the estate
 
@@ -781,13 +781,13 @@ S's AEA after the election: $13,990,000 (S's own BEA in 2025) + $13,990,000 (DSU
 
 | Asset | Value |
 |---|---|
-| Primary residence (jointly held with S) | $3,000,000 |
+| Primary residence (spousal JTWROS, FMV $3,000,000) — only ½ includible under §2040(b) | $1,500,000 |
 | Brokerage account (D's separate) | $9,000,000 |
 | IRA (S is sole beneficiary) | $4,000,000 |
 | Life insurance (proceeds payable to D's estate) | $2,000,000 |
 | Personal effects, autos | $500,000 |
 | 50% interest in family LLC (closely held real estate) | $1,500,000 |
-| **Total gross estate** | **$20,000,000** |
+| **Total gross estate** | **$18,500,000** |
 
 D's will: $13,990,000 to a credit shelter (bypass) trust for the benefit of S during life with remainder to the children; residue outright to S.
 
@@ -797,23 +797,25 @@ Prior gifts: D used $500,000 of BEA in 2018 on a gift to children.
 
 | Line | Amount |
 |---|---|
-| Gross estate | $20,000,000 |
+| Gross estate (residence at the §2040(b) ½ = $1.5M) | $18,500,000 |
 | Schedule J — funeral & admin | ($200,000) |
 | Schedule K — debts (residential mortgage $400k) | ($400,000) |
-| Schedule M — marital deduction (residue + 1/2 JTWROS + IRA = $1.5M + $4M + remaining residue) | ($5,910,000) |
+| Schedule M — marital deduction (½ JTWROS residence $1.5M + IRA $4M + probate residue to S) | ($5,910,000) |
 | Schedule M — bypass trust is NOT marital because it terminates at S's death without QTIP | $0 |
-| Taxable estate | $13,490,000 |
+| Taxable estate | $11,990,000 |
 | Adjusted taxable gifts (post-1976 gifts not in gross estate) | $500,000 |
-| Tentative tax base | $13,990,000 |
-| Tentative tax (§2001(c) at 40% top rate) | $5,389,800 |
+| Tentative tax base | $12,490,000 |
+| Tentative tax (§2001(c): $345,800 + 40% × $11,490,000) | $4,941,800 |
 | Less gift tax payable on adjusted taxable gifts at DOD rates | $0 (within BEA) |
-| Net tentative tax | $5,389,800 |
-| Less applicable credit amount (AEA = BEA only, no DSUE) | ($5,389,800) |
+| Net tentative tax | $4,941,800 |
+| Less applicable credit amount (2025, AEA = BEA only, no DSUE) | ($5,541,800) |
 | **Net federal estate tax** | **$0** |
 
 **Notes:**
 
-- D's BEA is fully consumed: $13,490,000 to the bypass trust at death + $500,000 prior gifts = $13,990,000. Exactly matches 2025 BEA.
+- Under **§2040(b)**, a qualified joint interest held with a U.S.-citizen spouse is included at exactly one-half regardless of who contributed, so only $1,500,000 of the $3,000,000 residence is in D's gross estate; the survivor's half was never D's to tax. That includible $1.5M half passes to S by survivorship and is the Schedule M item (net effect on the taxable estate: $0). (The earlier version double-counted by including the full $3M and then deducting only half.)
+- The applicable exclusion is **not** fully consumed: the $12,490,000 base is $1,500,000 below the 2025 BEA, so ~$1,500,000 of exclusion (plus any DSUE) remains — a further reason to file Form 706 for portability.
+- **Reviewer note:** the bypass-trust "$13,990,000 to the credit-shelter trust" clause is an illustrative formula; the probate assets available to fund it (brokerage, life insurance, personal effects, LLC = ~$13M, less debts/expenses) are less than $13,990,000, and the mortgage may need proportioning to the ½ residence interest under §2040(b). Confirm the funding formula and debt apportionment against the actual instrument before relying.
 - IRA passing to S qualifies for marital deduction even though it is IRD — S will pay income tax on distributions; estate tax avoidance is preserved.
 - Life insurance payable to the estate is fully included under §2042 — note the planning miss; an ILIT would have kept the $2M outside the estate.
 - The 50% LLC interest may qualify for valuation discounts (minority interest + lack of marketability) — typically 25-40% combined. Requires appraisal. Not reflected in this example.
@@ -825,8 +827,8 @@ Prior gifts: D used $500,000 of BEA in 2018 on a gift to children.
 
 **Portability:**
 
-- D used the full BEA — DSUE = $0. No portability benefit to S.
-- However, S now holds substantial assets ($5.91M from D's estate + S's own pre-existing assets). S should engage in pre-sunset planning of his/her own — see Example 14.3.
+- With the §2040(b) correction, D's tentative tax base is $12,490,000 — **below** the $13,990,000 BEA — so **DSUE = $13,990,000 − $12,490,000 = $1,500,000** is portable to S if the executor files Form 706 and makes the portability election. (Under the pre-correction $20M/full-BEA version this showed DSUE = $0; the corrected figures leave $1.5M of exclusion to port.)
+- S now holds substantial assets ($5.91M from D's estate + S's own pre-existing assets) plus the $1.5M DSUE. S should still engage in pre-sunset planning of his/her own — see Example 14.3.
 
 ---
 
@@ -860,8 +862,8 @@ W establishes an irrevocable trust (SLAT-2) for the benefit of H and descendants
 | Net taxable gift | $13,000,000 |
 | Cumulative prior gifts | $0 |
 | Cumulative gifts | $13,000,000 |
-| Applicable credit on $13,000,000 | $4,989,800 (tax on $13M at the §2001(c) rates) |
-| Applicable credit available (2025 = $5,389,800) | $5,389,800 |
+| Tentative tax on $13,000,000 (§2001(c)) | $5,145,800 ($345,800 + 40% × $12,000,000) |
+| Applicable credit available (2025) | $5,541,800 |
 | Net gift tax due | $0 |
 
 Each spouse uses $13,000,000 of the $13,990,000 BEA. Remaining BEA per spouse for end-of-2025 = $990,000.
@@ -1096,3 +1098,7 @@ verified rules together with the name of the accountant who signed them off.
 
 **→ Install the free connector:** <https://www.openaccountants.com/connect>
 **MCP endpoint:** `https://www.openaccountants.com/api/mcp`
+
+## Changelog
+
+- **2026-07-06** - Worked-example arithmetic fixes (Fable review). Corrected the 2025 applicable credit amount to **$5,541,800** ($345,800 + 40% × $12,990,000) throughout — the guide had carried the 2024 figure ($5,389,800, on the 2024 BEA of $13,610,000). Example 14.2: applied **§2040(b)** so only one-half ($1,500,000) of the spousal-JTWROS residence is in the gross estate (total $20,000,000 -> $18,500,000); the includible half is the Schedule M item, net $0 to the taxable estate; recomputed the base ($12,490,000), tentative tax ($4,941,800) and DSUE ($0 -> $1,500,000), and flagged the illustrative bypass-trust funding + mortgage apportionment. Example 14.3: §2001(c) tentative tax on $13,000,000 corrected to **$5,145,800** (was $4,989,800, which was the tax on $12,610,000) and the available 2025 credit to $5,541,800. Net tax/gift-tax conclusions ($0) unchanged.
