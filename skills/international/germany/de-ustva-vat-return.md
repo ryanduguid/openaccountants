@@ -1,0 +1,38 @@
+---
+name: German UStVA (VAT Return)
+description: Prepares the Umsatzsteuervoranmeldung including Vorsteuer deductions, reverse charge for EU services, and Kleinunternehmerregelung threshold.
+jurisdiction: DE
+---
+
+# German UStVA (VAT Return)
+
+## Overview
+
+This skill covers germany tax rules for the DE jurisdiction.
+
+## Applicable Law
+
+References to relevant tax code sections and regulations.
+
+## Computation Steps
+
+1. Gather required inputs
+2. Apply the relevant tax rates and thresholds
+3. Compute deductions and credits
+4. Validate against known limits
+
+## Edge Cases
+
+- Phase-out thresholds
+- Filing status variations
+- Mid-year changes
+
+## Output Format
+
+Structured JSON output with line-item breakdown.
+
+## Self-Check
+
+- [ ] All inputs validated
+- [ ] Computations cross-checked
+- [ ] Edge cases handled
