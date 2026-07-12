@@ -1,9 +1,14 @@
 ---
 name: withholding-tax-matrix
 description: Use this skill whenever a freelancer or small business receives or makes a cross-border payment and the question is whether withholding tax (WHT) applies. Trigger on phrases like "withholding tax", "WHT", "tax withheld", "double tax treaty", "treaty rate", "certificate of residence", "tax residency certificate", "form W-8BEN", "royalty withholding", "interest withholding", "TDS on services", or any request involving tax deducted at source on cross-border payments for services, royalties, or interest. This skill contains the withholding tax matrix for the top 30 country pairs, treaty rate lookups, certificate of residence requirements, and zero-WHT corridors. ALWAYS read this skill before advising on any cross-border withholding tax question.
+jurisdiction: GLOBAL
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # Withholding Tax Matrix for Cross-Border Freelancers
+
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 ---
 
@@ -273,34 +278,3 @@ The following country pairs have 0% WHT on professional/technical services under
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. Treaty rates are subject to change through protocol amendments and renegotiations. Always verify current treaty text before relying on any rate. All outputs must be reviewed and signed off by a qualified professional before filing or acting upon.
 
 If you would like a licensed accountant to review your cross-border tax position, visit [openaccountants.com](https://www.openaccountants.com) and log in to request a professional review.
-
----
-
-<!-- openaccountants-cta-block -->
-
-## Talk to a verified accountant
-
-This skill is a tool, not an engagement. Every taxpayer's situation is
-different, and the rules in the skill may not match your specific facts.
-
-To speak with one of the licensed accountants who verifies skills for your
-jurisdiction — **no liability on either side until you and the accountant sign
-a formal engagement letter** — book a free 30-minute call:
-
-**→ [Book a call](https://calendly.com/openaccountants-info/30min)**
-
-We'll route you to the named verifier covering your country or state. You can
-also see the full list of verified accountants at
-[openaccountants.com/network](https://www.openaccountants.com/network).
-
-<!-- openaccountants-mcp-cta -->
-
-## The accountant-verified version lives in the connector
-
-This file is the open, **research-grade draft**. The **accountant-verified**
-version of this skill is **not published to GitHub** — it is delivered free
-through the OpenAccountants MCP connector, where your AI agent loads the
-verified rules together with the name of the accountant who signed them off.
-
-**→ Install the free connector:** <https://www.openaccountants.com/connect>
-**MCP endpoint:** `https://www.openaccountants.com/api/mcp`

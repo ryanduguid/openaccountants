@@ -1,9 +1,14 @@
 ---
 name: permanent-establishment-risk
 description: Use this skill whenever a freelancer or small business has cross-border activity that might create a tax presence (Permanent Establishment / PE) in the client's country. Trigger on phrases like "permanent establishment", "PE risk", "tax presence", "183-day rule", "fixed place of business", "dependent agent", "service PE", "effectively connected income", "do I need to file taxes in my client's country", "working abroad for client", "remote work PE", or any request about whether a freelancer's cross-border activity triggers a filing obligation in another country. This skill contains the OECD model treaty PE definition, country-specific PE thresholds, the 183-day rule, remote work analysis, avoidance strategies, and consequences of PE creation. This is primarily T2/T3 material -- flag for professional review in all but the most straightforward cases. ALWAYS read this skill before advising on any PE-related question.
+jurisdiction: INTL
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # Permanent Establishment Risk for Cross-Border Freelancers
+
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 ---
 
@@ -337,34 +342,3 @@ Under OECD Art 7, the profits attributable to a PE are those that the PE would h
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. Permanent establishment analysis is inherently fact-specific and depends on the precise terms of the applicable bilateral tax treaty. All PE assessments must be reviewed by a qualified international tax professional before acting upon.
 
 If you would like a licensed accountant to review your PE risk, visit [openaccountants.com](https://www.openaccountants.com) and log in to request a professional review.
-
----
-
-<!-- openaccountants-cta-block -->
-
-## Talk to a verified accountant
-
-This skill is a tool, not an engagement. Every taxpayer's situation is
-different, and the rules in the skill may not match your specific facts.
-
-To speak with one of the licensed accountants who verifies skills for your
-jurisdiction — **no liability on either side until you and the accountant sign
-a formal engagement letter** — book a free 30-minute call:
-
-**→ [Book a call](https://calendly.com/openaccountants-info/30min)**
-
-We'll route you to the named verifier covering your country or state. You can
-also see the full list of verified accountants at
-[openaccountants.com/network](https://www.openaccountants.com/network).
-
-<!-- openaccountants-mcp-cta -->
-
-## The accountant-verified version lives in the connector
-
-This file is the open, **research-grade draft**. The **accountant-verified**
-version of this skill is **not published to GitHub** — it is delivered free
-through the OpenAccountants MCP connector, where your AI agent loads the
-verified rules together with the name of the accountant who signed them off.
-
-**→ Install the free connector:** <https://www.openaccountants.com/connect>
-**MCP endpoint:** `https://www.openaccountants.com/api/mcp`
