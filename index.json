@@ -1,7 +1,7 @@
 {
- "generated_at": "2026-07-07T16:15:33+00:00",
+ "generated_at": "2026-07-12T08:21:58+00:00",
  "counts": {
-  "guides": 1891,
+  "guides": 1893,
   "jurisdictions": 241,
   "accountant_reviewed": 45
  },
@@ -6859,6 +6859,18 @@
    "last_updated": "2026-06-12"
   },
   {
+   "slug": "eg-corporate-tax",
+   "path": "skills/international/egypt/eg-corporate-tax.md",
+   "name": "eg-corporate-tax",
+   "jurisdiction": "EG",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "tax_year": "2025",
+   "last_updated": "2026-07-12"
+  },
+  {
    "slug": "eg-crypto-tax",
    "path": "skills/international/egypt/eg-crypto-tax.md",
    "name": "eg-crypto-tax",
@@ -6953,6 +6965,18 @@
    "reviewed_by": null,
    "tax_year": "2026",
    "last_updated": "2026-06-12"
+  },
+  {
+   "slug": "eg-withholding-tax",
+   "path": "skills/international/egypt/eg-withholding-tax.md",
+   "name": "eg-withholding-tax",
+   "jurisdiction": "EG",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "tax_year": "2025",
+   "last_updated": "2026-07-12"
   },
   {
    "slug": "egypt-vat",

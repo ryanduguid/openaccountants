@@ -130,7 +130,7 @@ https://www.openaccountants.com
 
 ========================================================================
 
-## Guide inventory (1891 guides, 241 jurisdictions, 45 accountant-reviewed)
+## Guide inventory (1893 guides, 241 jurisdictions, 45 accountant-reviewed)
 
 - us-1099-k-and-payment-processors | US | tier 2 | reviewed_by -
 - us-education-credits-8863 | US | tier 2 | reviewed_by -
@@ -703,6 +703,7 @@ https://www.openaccountants.com
 - ecuador-social-contributions | EC | tier 2 | reviewed_by -
 - ecuador-tax-optimization | EC | tier 2 | reviewed_by -
 - eg-bookkeeping | EG | tier 2 | reviewed_by -
+- eg-corporate-tax | EG | tier 2 | reviewed_by -
 - eg-crypto-tax | EG | tier 2 | reviewed_by -
 - eg-financial-statements | EG | tier 2 | reviewed_by -
 - eg-formation | EG | tier 2 | reviewed_by -
@@ -711,6 +712,7 @@ https://www.openaccountants.com
 - eg-sme-tax | EG | tier 2 | reviewed_by -
 - eg-social-insurance | EG | tier 2 | reviewed_by -
 - eg-tax-optimization | EG | tier 2 | reviewed_by -
+- eg-withholding-tax | EG | tier 2 | reviewed_by -
 - egypt-vat | EG | tier 2 | reviewed_by -
 - el-salvador-income-tax | SV | tier 2 | reviewed_by -
 - el-salvador-iva | SV | tier 2 | reviewed_by -
