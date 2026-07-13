@@ -130,7 +130,7 @@ https://www.openaccountants.com
 
 ========================================================================
 
-## Guide inventory (1893 guides, 241 jurisdictions, 45 accountant-reviewed)
+## Guide inventory (1898 guides, 243 jurisdictions, 45 accountant-reviewed)
 
 - us-1099-k-and-payment-processors | US | tier 2 | reviewed_by -
 - us-education-credits-8863 | US | tier 2 | reviewed_by -
@@ -189,8 +189,11 @@ https://www.openaccountants.com
 - stamp-duty-matrix | GLOBAL | tier 2 | reviewed_by -
 - tax-controversy-map-apa | GLOBAL | tier 2 | reviewed_by -
 - tax-residency-planning | INTL | tier 2 | reviewed_by -
+- dtt-template | GLOBAL | tier 2 | reviewed_by -
 - americas-corridors | - | tier 2 | reviewed_by -
 - asia-pacific-corridors | - | tier 2 | reviewed_by -
+- dtt-summary | EG-AE | tier 2 | reviewed_by -
+- dtt-summary | EG-SA | tier 2 | reviewed_by -
 - emerging-market-corridors | - | tier 2 | reviewed_by -
 - eu-intra-rates | - | tier 2 | reviewed_by -
 - uk-major-partners | - | tier 2 | reviewed_by -
@@ -709,8 +712,10 @@ https://www.openaccountants.com
 - eg-formation | EG | tier 2 | reviewed_by -
 - eg-income-tax | EG | tier 2 | reviewed_by -
 - eg-payroll | EG | tier 2 | reviewed_by -
+- eg-real-estate-tax | EG | tier 2 | reviewed_by -
 - eg-sme-tax | EG | tier 2 | reviewed_by -
 - eg-social-insurance | EG | tier 2 | reviewed_by -
+- eg-stamp-duty | EG | tier 2 | reviewed_by -
 - eg-tax-optimization | EG | tier 2 | reviewed_by -
 - eg-withholding-tax | EG | tier 2 | reviewed_by -
 - egypt-vat | EG | tier 2 | reviewed_by -

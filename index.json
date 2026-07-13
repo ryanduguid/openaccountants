@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-07-12T08:21:58+00:00",
+ "generated_at": "2026-07-13T10:16:46+00:00",
  "counts": {
-  "guides": 1893,
-  "jurisdictions": 241,
+  "guides": 1898,
+  "jurisdictions": 243,
   "accountant_reviewed": 45
  },
  "guides": [
@@ -691,6 +691,18 @@
    "last_updated": "2026-07-04"
   },
   {
+   "slug": "dtt-template",
+   "path": "skills/cross-border/treaty-corridors/_templates/dtt-template.md",
+   "name": "dtt-template",
+   "jurisdiction": "GLOBAL",
+   "category": null,
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "tax_year": "2025",
+   "last_updated": "2026-07-12"
+  },
+  {
    "slug": "americas-corridors",
    "path": "skills/cross-border/treaty-corridors/americas-corridors.md",
    "name": "americas-corridors",
@@ -713,6 +725,30 @@
    "reviewed_by": null,
    "tax_year": null,
    "last_updated": "2026-06-12"
+  },
+  {
+   "slug": "dtt-summary",
+   "path": "skills/cross-border/treaty-corridors/eg-ae/dtt-summary.md",
+   "name": "eg-ae-dtt",
+   "jurisdiction": "EG-AE",
+   "category": null,
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "tax_year": "2025",
+   "last_updated": "2026-07-12"
+  },
+  {
+   "slug": "dtt-summary",
+   "path": "skills/cross-border/treaty-corridors/eg-sa/dtt-summary.md",
+   "name": "eg-sa-dtt",
+   "jurisdiction": "EG-SA",
+   "category": null,
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "tax_year": "2025",
+   "last_updated": "2026-07-12"
   },
   {
    "slug": "emerging-market-corridors",
@@ -6931,6 +6967,18 @@
    "last_updated": "2026-06-12"
   },
   {
+   "slug": "eg-real-estate-tax",
+   "path": "skills/international/egypt/eg-real-estate-tax.md",
+   "name": "eg-real-estate-tax",
+   "jurisdiction": "EG",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "tax_year": "2025",
+   "last_updated": "2026-07-12"
+  },
+  {
    "slug": "eg-sme-tax",
    "path": "skills/international/egypt/eg-sme-tax.md",
    "name": "eg-sme-tax",
@@ -6953,6 +7001,18 @@
    "reviewed_by": null,
    "tax_year": "2026",
    "last_updated": "2026-06-12"
+  },
+  {
+   "slug": "eg-stamp-duty",
+   "path": "skills/international/egypt/eg-stamp-duty.md",
+   "name": "eg-stamp-duty",
+   "jurisdiction": "EG",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "tax_year": "2025",
+   "last_updated": "2026-07-12"
   },
   {
    "slug": "eg-tax-optimization",
@@ -17061,74 +17121,74 @@
   {
    "slug": "sd-company-formation",
    "path": "skills/international/sudan/sd-company-formation.md",
-   "name": "Sudan Company Formation & Entity Choice",
+   "name": "sd-company-formation",
    "jurisdiction": "SD",
-   "category": null,
+   "category": "international",
    "tier": 2,
-   "verified_by": null,
+   "verified_by": "pending",
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-06"
+   "last_updated": "2026-07-12"
   },
   {
    "slug": "sd-corporate-income-tax",
    "path": "skills/international/sudan/sd-corporate-income-tax.md",
-   "name": "Sudan Corporate Income Tax",
+   "name": "sd-corporate-income-tax",
    "jurisdiction": "SD",
-   "category": null,
+   "category": "international",
    "tier": 2,
-   "verified_by": null,
+   "verified_by": "pending",
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-06"
+   "last_updated": "2026-07-12"
   },
   {
    "slug": "sd-income-tax",
    "path": "skills/international/sudan/sd-income-tax.md",
-   "name": "Sudan Personal Income Tax",
+   "name": "sd-income-tax",
    "jurisdiction": "SD",
-   "category": null,
+   "category": "international",
    "tier": 2,
-   "verified_by": null,
+   "verified_by": "pending",
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-06"
+   "last_updated": "2026-07-12"
   },
   {
    "slug": "sd-payroll-social",
    "path": "skills/international/sudan/sd-payroll-social.md",
-   "name": "Sudan Payroll & Social Contributions",
+   "name": "sd-payroll-social",
    "jurisdiction": "SD",
-   "category": null,
+   "category": "payroll",
    "tier": 2,
-   "verified_by": null,
+   "verified_by": "pending",
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-06"
+   "last_updated": "2026-07-12"
   },
   {
    "slug": "sd-tax-overview",
    "path": "skills/international/sudan/sd-tax-overview.md",
-   "name": "Sudan Tax Overview",
+   "name": "sd-tax-overview",
    "jurisdiction": "SD",
-   "category": null,
+   "category": "international",
    "tier": 2,
-   "verified_by": null,
+   "verified_by": "pending",
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-06"
+   "last_updated": "2026-07-12"
   },
   {
    "slug": "sd-vat-gst",
    "path": "skills/international/sudan/sd-vat-gst.md",
-   "name": "Sudan VAT / GST",
+   "name": "sd-vat-gst",
    "jurisdiction": "SD",
-   "category": null,
+   "category": "international",
    "tier": 2,
-   "verified_by": null,
+   "verified_by": "pending",
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-06"
+   "last_updated": "2026-07-12"
   },
   {
    "slug": "sr-company-formation",
