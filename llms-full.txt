@@ -715,6 +715,7 @@ https://www.openaccountants.com
 - eg-real-estate-tax | EG | tier 2 | reviewed_by -
 - eg-sme-tax | EG | tier 2 | reviewed_by -
 - eg-social-insurance | EG | tier 2 | reviewed_by -
+- eg-stamp-duty | EG | tier 2 | reviewed_by -
 - eg-tax-optimization | EG | tier 2 | reviewed_by -
 - eg-transfer-pricing | EG | tier 2 | reviewed_by -
 - eg-withholding-tax | EG | tier 2 | reviewed_by -

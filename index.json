@@ -7003,6 +7003,18 @@
    "last_updated": "2026-06-12"
   },
   {
+   "slug": "eg-stamp-duty",
+   "path": "skills/international/egypt/eg-stamp-duty.md",
+   "name": "eg-stamp-duty",
+   "jurisdiction": "EG",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "tax_year": "2025",
+   "last_updated": "2026-07-12"
+  },
+  {
    "slug": "eg-tax-optimization",
    "path": "skills/international/egypt/eg-tax-optimization.md",
    "name": "eg-tax-optimization",
