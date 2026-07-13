@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-13T10:16:46+00:00",
+ "generated_at": "2026-07-13T10:53:04+00:00",
  "counts": {
   "guides": 1898,
   "jurisdictions": 243,
@@ -7025,6 +7025,18 @@
    "reviewed_by": null,
    "tax_year": "2026",
    "last_updated": "2026-06-12"
+  },
+  {
+   "slug": "eg-transfer-pricing",
+   "path": "skills/international/egypt/eg-transfer-pricing.md",
+   "name": "eg-transfer-pricing",
+   "jurisdiction": "EG",
+   "category": "transfer-pricing",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "tax_year": "2025",
+   "last_updated": "2026-07-12"
   },
   {
    "slug": "eg-withholding-tax",
