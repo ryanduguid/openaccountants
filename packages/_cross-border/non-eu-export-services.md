@@ -1,9 +1,14 @@
 ---
 name: non-eu-export-services
 description: Use this skill whenever a freelancer or small business sells services to a client located outside their own VAT/GST jurisdiction and needs to determine the correct indirect tax treatment. Trigger on phrases like "export of services", "services to overseas client", "zero-rated services", "out of scope", "no VAT on export", "GST-free export", "outside the scope of VAT", "services to US client", "services to non-EU client", "Division 38", "Fifth Schedule", or any request about the VAT/GST treatment of services supplied to foreign clients. This skill covers the rules for EU sellers exporting services outside the EU, UK sellers to non-UK clients, Australian sellers (GST-free exports under Division 38), Indian sellers (zero-rated export of services), and Singaporean sellers (zero-rated under the Fifth Schedule). ALWAYS read this skill before advising on the indirect tax treatment of service exports.
+jurisdiction: INTL
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # Export of Services -- VAT/GST Treatment for Services Sold Outside the Seller's Jurisdiction
+
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 ---
 
@@ -339,34 +344,3 @@ The following exceptions apply across most jurisdictions. Even if the client is 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, EA, tax attorney, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
 
 If you would like a licensed accountant to review your export VAT position, visit [openaccountants.com](https://www.openaccountants.com) and log in to request a professional review.
-
----
-
-<!-- openaccountants-cta-block -->
-
-## Talk to a verified accountant
-
-This skill is a tool, not an engagement. Every taxpayer's situation is
-different, and the rules in the skill may not match your specific facts.
-
-To speak with one of the licensed accountants who verifies skills for your
-jurisdiction — **no liability on either side until you and the accountant sign
-a formal engagement letter** — book a free 30-minute call:
-
-**→ [Book a call](https://calendly.com/openaccountants-info/30min)**
-
-We'll route you to the named verifier covering your country or state. You can
-also see the full list of verified accountants at
-[openaccountants.com/network](https://www.openaccountants.com/network).
-
-<!-- openaccountants-mcp-cta -->
-
-## The accountant-verified version lives in the connector
-
-This file is the open, **research-grade draft**. The **accountant-verified**
-version of this skill is **not published to GitHub** — it is delivered free
-through the OpenAccountants MCP connector, where your AI agent loads the
-verified rules together with the name of the accountant who signed them off.
-
-**→ Install the free connector:** <https://www.openaccountants.com/connect>
-**MCP endpoint:** `https://www.openaccountants.com/api/mcp`

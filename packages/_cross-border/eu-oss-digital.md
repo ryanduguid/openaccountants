@@ -1,9 +1,14 @@
 ---
 name: eu-oss-digital
 description: Use this skill whenever a business sells digital services (electronically supplied services) B2C to consumers in other EU member states and needs to determine the correct VAT treatment. Trigger on phrases like "OSS", "One-Stop-Shop", "MOSS", "Mini One-Stop-Shop", "digital services VAT", "electronically supplied services", "B2C cross-border EU", "EU VAT on digital", "EUR 10,000 threshold", "destination country VAT rate", "non-Union OSS", or any request involving the VAT treatment of digital services sold to EU consumers. This skill contains the complete OSS rules, the EUR 10,000 threshold, destination VAT rate table, filing requirements, consumer location evidence rules, and the Union vs non-Union OSS distinction. ALWAYS read this skill before advising on any B2C digital services VAT question.
+jurisdiction: EU-27
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # EU One-Stop-Shop (OSS) for Digital Services Sold B2C Cross-Border
+
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 ---
 
@@ -323,34 +328,3 @@ A non-EU seller (e.g., US, UK, Australian, Indian company) that sells digital se
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. VAT rates and thresholds are subject to change. Always verify current rates before filing. All outputs must be reviewed and signed off by a qualified professional before filing or acting upon.
 
 If you would like a licensed accountant to review your VAT position, visit [openaccountants.com](https://www.openaccountants.com) and log in to request a professional review.
-
----
-
-<!-- openaccountants-cta-block -->
-
-## Talk to a verified accountant
-
-This skill is a tool, not an engagement. Every taxpayer's situation is
-different, and the rules in the skill may not match your specific facts.
-
-To speak with one of the licensed accountants who verifies skills for your
-jurisdiction — **no liability on either side until you and the accountant sign
-a formal engagement letter** — book a free 30-minute call:
-
-**→ [Book a call](https://calendly.com/openaccountants-info/30min)**
-
-We'll route you to the named verifier covering your country or state. You can
-also see the full list of verified accountants at
-[openaccountants.com/network](https://www.openaccountants.com/network).
-
-<!-- openaccountants-mcp-cta -->
-
-## The accountant-verified version lives in the connector
-
-This file is the open, **research-grade draft**. The **accountant-verified**
-version of this skill is **not published to GitHub** — it is delivered free
-through the OpenAccountants MCP connector, where your AI agent loads the
-verified rules together with the name of the accountant who signed them off.
-
-**→ Install the free connector:** <https://www.openaccountants.com/connect>
-**MCP endpoint:** `https://www.openaccountants.com/api/mcp`
