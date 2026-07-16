@@ -6,7 +6,7 @@ authors:
   - name: "OpenAccountants contributors"
 repository-code: "https://github.com/openaccountants/openaccountants"
 url: "https://www.openaccountants.com"
-license: AGPL-3.0
+license: AGPL-3.0-only
 keywords:
   - tax
   - mcp

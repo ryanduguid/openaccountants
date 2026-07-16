@@ -2,6 +2,19 @@
 
 All notable changes to OpenAccountants will be documented in this file.
 
+## [Unreleased] — 2026-07-16
+
+### Mixed-licence restructure (Guides move to a source-available licence)
+
+- **Split code from content.** Software (`mcp/`, `scripts/`, `tools/`, `plugins/`) is now **AGPL-3.0-only**; the Guides (`skills/`, `packages/`, `workflows/`, `index.json`, `llms*.txt`) move to the new source-available **OA Guide License** (`LICENSES/LicenseRef-OA-Guide-License-1.0.txt`). Commercial embedding / RAG / model-training / bulk redistribution of the Guides now requires a commercial licence. See [`LICENSING.md`](LICENSING.md).
+- **Removed `LICENSE-ADDITIONAL.md`** (the Section 7 output-attribution additional term), which was causing GitHub to report "unknown licenses" and reached beyond what GPL §7 reliably permits.
+- **Standardised on `AGPL-3.0-only`** (was a mix of `AGPL-3.0` / `AGPL-3.0-or-later`) across `glama.json`, `mcp/pyproject.toml`, `CITATION.cff`, and the plugin manifest.
+- **Renamed** `COMMERCIAL_LICENSE.md` → `COMMERCIAL-LICENSING.md` and rewrote it for the two-track model.
+- **Added `REUSE.toml`** for machine-readable per-path licence mapping.
+- **Added a CLA status check** (`.github/workflows/cla.yml`).
+
+> **Note:** the OA Guide License is a **draft pending legal review**, and Guides that incorporate third-party AGPL/GPL material must be audited before the source-available licence validly applies to them (see [`LICENSING.md`](LICENSING.md) § "Known compatibility caveat").
+
 ## [2.2.0] — 2026-07-04
 
 ### Metadata everywhere, docs that agree with each other

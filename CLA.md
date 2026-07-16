@@ -6,9 +6,9 @@ Version 1.0 — Effective April 2026
 
 ## Why we need a CLA
 
-Open Accountants is dual-licensed under AGPL-3.0 (open source) and a commercial license issued by Glimpse Ltd. To maintain the ability to offer both licenses, we need to ensure that all contributions can be distributed under both.
+Open Accountants is a mixed-licence project: software is AGPL-3.0-only, the Guides are under the source-available OA Guide License, and Glimpse Ltd also offers a commercial licence (see [LICENSING.md](LICENSING.md)). To maintain the ability to offer all of these, we need to ensure that every contribution can be distributed under each of them.
 
-This CLA does **not** take away your rights to your contribution. You retain full copyright. You are granting Glimpse Ltd a license to use your contribution under both the open-source and commercial license tracks.
+This CLA does **not** take away your rights to your contribution. You retain full copyright. You are granting Glimpse Ltd a license to use your contribution under the open-source, source-available, and commercial license tracks.
 
 ---
 

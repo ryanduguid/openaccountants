@@ -8,7 +8,7 @@
   },
   "homepage": "https://www.openaccountants.com/connect",
   "repository": "https://github.com/openaccountants/openaccountants",
-  "license": "AGPL-3.0",
+  "license": "AGPL-3.0-only",
   "keywords": ["tax", "accounting", "vat", "gst", "mcp", "openaccountants"],
   "mcpServers": {
     "openaccountants": {

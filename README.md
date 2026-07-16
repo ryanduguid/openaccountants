@@ -317,6 +317,9 @@ The most up-to-date, reviewed version is maintained at [openaccountants.com](htt
 
 ## License
 
-Dual-licensed: [AGPL-3.0](LICENSE) for open-source use, [commercial license](COMMERCIAL_LICENSE.md) for proprietary products.
+Mixed-licence repository — see **[LICENSING.md](LICENSING.md)**:
+
+- **Software** (`mcp/`, `scripts/`, `tools/`, …) — [AGPL-3.0-only](LICENSE).
+- **Guides** (`skills/`, `packages/`, `workflows/`, `index.json`, `llms*.txt`) — the source-available [OA Guide License](LICENSES/LicenseRef-OA-Guide-License-1.0.txt) *(draft, pending legal review)*. Free for personal, professional-reference, educational, and non-commercial use; commercial embedding/RAG/model-training/redistribution requires a [commercial licence](COMMERCIAL-LICENSING.md).
 
 Contributions are licensed to the project under the [Contributor License Agreement](CLA.md). See [CONTRIBUTING.md](CONTRIBUTING.md).

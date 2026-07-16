@@ -1,0 +1,170 @@
+===============================================================================
+  ██  DRAFT — NOT YET LEGALLY EFFECTIVE — REQUIRES REVIEW BY QUALIFIED COUNSEL
+===============================================================================
+
+This document is a WORKING DRAFT of the Open Accountants Guide License. It has
+been prepared as a structural starting point and has NOT been reviewed or
+approved by a lawyer. Do not rely on it, cite it as binding, or represent it as
+Glimpse Ltd's final licensing position until it has been finalised by qualified
+legal counsel and this banner has been removed.
+
+Known items counsel must resolve before this license is relied upon:
+  1. Third-party copyleft material. Some Guides incorporate third-party
+     AGPL-3.0 / GPL-3.0 material "with attribution" (see the provenance and
+     references.md files under packages/, e.g. Turkey, France, Poland, Brazil,
+     several Canadian provinces). AGPL/GPL are copyleft: any Guide that
+     contains, or is a derivative work of, such material CANNOT lawfully be
+     relicensed under this source-available license and remains under its
+     original copyleft terms. These Guides must be identified and either
+     carved out, cleanly rewritten, or left under AGPL-3.0.
+  2. Contributor coverage. This license may only be applied to material for
+     which Glimpse Ltd holds sufficient rights (own work, work-for-hire, or a
+     signed/accepted CLA granting sublicensing rights). See CLA.md.
+  3. Definitions of "commercial", "AI product", "RAG indexing", "model
+     training", and "competing service" below are drafting placeholders and
+     must be tightened by counsel.
+
+===============================================================================
+
+
+Open Accountants Guide License
+Version 1.0 (DRAFT)
+SPDX-License-Identifier: LicenseRef-OA-Guide-License-1.0
+
+Copyright (c) 2026 Glimpse Ltd and the Open Accountants contributors.
+
+This license governs the tax Guides and their machine-readable exports (the
+"Guides") — specifically the files under skills/, packages/, and workflows/,
+together with index.json, llms.txt, and llms-full.txt. It does NOT govern the
+software in this repository, which is licensed separately under AGPL-3.0-only
+(see LICENSE and LICENSES/AGPL-3.0-only.txt). Where a single file combines Guide
+content and software, the more restrictive terms apply to that file.
+
+
+1. DEFINITIONS
+
+  "Guides" means the tax reference content described above, in whole or in part,
+  in original or modified form, including any dataset, embedding, index, or other
+  representation that reproduces the substance of that content.
+
+  "You" means the individual or entity exercising rights under this license.
+
+  "Commercial Use" means use that is primarily intended for or directed toward
+  commercial advantage or monetary compensation, including offering a paid or
+  ad-supported product, service, or API to third parties.
+
+  "Permitted Use" means the uses expressly allowed in Section 2.
+
+
+2. PERMITTED USE (no separate license required)
+
+  Subject to Section 4, You may read, use, copy, and modify the Guides, and
+  share verbatim or modified copies, for any of the following:
+
+  (a) Personal use — preparing your own tax return or affairs, including by
+      supplying a Guide to an AI assistant you personally use.
+
+  (b) Professional reference — a licensed accountant, tax professional, or
+      adviser using the Guides as a reference to assist client work. Your
+      professional software and workpapers are not, by that use alone, a
+      derivative of the Guides.
+
+  (c) Education and research — teaching, study, journalism, commentary, review,
+      or academic research, including quoting and excerpting the Guides.
+
+  (d) Contribution — submitting improvements back to the Open Accountants
+      project under the Contributor License Agreement (CLA.md).
+
+  (e) Non-commercial redistribution — sharing copies or modified versions,
+      provided the use is not a Commercial Use and Section 3 is satisfied.
+
+
+3. CONDITIONS
+
+  For any use under Section 2, You must:
+
+  (a) Retain all copyright notices, this license, and the SPDX identifier
+      "LicenseRef-OA-Guide-License-1.0" with any copy or modified version; and
+
+  (b) Not misrepresent a Guide as reviewed by, endorsed by, or attributed to
+      any named accountant unless that review actually occurred and is
+      accurately represented; and
+
+  (c) Not remove or alter reviewer names, credentials, or provenance in a way
+      that misstates who stands behind a Guide.
+
+
+4. USES THAT REQUIRE A SEPARATE COMMERCIAL LICENSE
+
+  The following require a separate written commercial license from Glimpse Ltd
+  (contact info@openaccountants.com). They are NOT granted by this license:
+
+  (a) Incorporating the Guides into a commercial product, service, application,
+      chatbot, or AI agent offered to third parties;
+
+  (b) Indexing the Guides for retrieval-augmented generation (RAG) or similar
+      retrieval in a Commercial Use;
+
+  (c) Using the Guides to train, fine-tune, distil, or evaluate a machine-
+      learning model for a Commercial Use;
+
+  (d) Bulk extraction of the Guides, or redistribution of the Guide collection
+      (or a substantial part of it) as a dataset or corpus;
+
+  (e) Operating a hosted service or API that redistributes or competes with the
+      Open Accountants Guide service;
+
+  (f) Selling the Guides or modified versions of them.
+
+  Nothing in this Section 4 restricts uses that applicable law reserves to You
+  (for example, quotation, fair use / fair dealing, or rights that cannot be
+  waived by contract).
+
+
+5. CONTRIBUTIONS
+
+  Contributions to the Guides are governed by the Contributor License Agreement
+  (CLA.md). By contributing, You grant Glimpse Ltd the rights described there,
+  including the right to distribute Your contribution under this license and
+  under a commercial license.
+
+
+6. NO WARRANTY; NOT ADVICE
+
+  THE GUIDES ARE PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE, ACCURACY, AND NON-INFRINGEMENT. The Guides
+  are general reference material, are NOT tax, legal, accounting, or financial
+  advice, and must be reviewed by a qualified professional before any filing,
+  payment, or action. Use of a Guide does not create a client relationship.
+
+
+7. LIMITATION OF LIABILITY
+
+  TO THE MAXIMUM EXTENT PERMITTED BY LAW, IN NO EVENT SHALL GLIMPSE LTD OR ANY
+  CONTRIBUTOR BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY ARISING FROM
+  OR IN CONNECTION WITH THE GUIDES OR THEIR USE.
+
+
+8. TERMINATION
+
+  Your rights under this license terminate automatically if You breach it. They
+  may be reinstated by Glimpse Ltd in writing.
+
+
+9. VERSIONING AND PRIOR RELEASES
+
+  Glimpse Ltd may publish revised versions of this license. This license applies
+  to Guide versions released under it. Any Guide version previously distributed
+  under AGPL-3.0 remains available under AGPL-3.0 for the copies so distributed;
+  this license does not purport to revoke rights already lawfully granted.
+
+
+10. GOVERNING LAW
+
+  [PLACEHOLDER — counsel to specify governing law and jurisdiction, consistent
+  with Glimpse Ltd's other agreements.]
+
+===============================================================================
+  END OF DRAFT — REQUIRES LEGAL REVIEW BEFORE IT IS RELIED UPON
+===============================================================================

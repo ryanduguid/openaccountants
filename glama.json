@@ -3,7 +3,7 @@
   "maintainers": [
     "michaelcutajar1995"
   ],
-  "license": "AGPL-3.0-or-later",
+  "license": "AGPL-3.0-only",
   "related_servers": [
     "norman-finance/norman-mcp-server",
     "jeremycharlesgillespie/excel-mcp",

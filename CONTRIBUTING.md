@@ -106,7 +106,7 @@ After you submit, Partners — licensed accountants — review your skill on [op
 
 ## Contributor License Agreement (CLA)
 
-OpenAccountants is **dual-licensed** (AGPL-3.0 + commercial). The [Contributor License Agreement](CLA.md) lets Glimpse Ltd distribute your contribution under **both** tracks. You **retain copyright**; you are granting a license, not handing over ownership.
+OpenAccountants is a **mixed-licence** project: software is **AGPL-3.0-only** and the Guides are under the source-available **OA Guide License**, with a commercial track for both (see [LICENSING.md](LICENSING.md)). The [Contributor License Agreement](CLA.md) lets Glimpse Ltd distribute your contribution under **all** of these tracks. You **retain copyright**; you are granting a license, not handing over ownership.
 
 **GitHub pull requests:** we rely on an **explicit opt-in**. When you open a PR, you must **tick the CLA checkbox** in the [pull request template](.github/PULL_REQUEST_TEMPLATE.md) (and leave it checked on updates to the same PR). That single action is how you record agreement. Maintainers should not merge PRs where the contributor has not confirmed the CLA.
 
