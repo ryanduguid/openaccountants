@@ -2,7 +2,7 @@
 
 All notable changes to OpenAccountants will be documented in this file.
 
-## [Unreleased] — 2026-07-16
+## [2.3.0] — 2026-07-16
 
 ### Mixed-licence restructure (Guides move to a source-available licence)
 
@@ -13,7 +13,7 @@ All notable changes to OpenAccountants will be documented in this file.
 - **Added `REUSE.toml`** for machine-readable per-path licence mapping.
 - **Added a CLA status check** (`.github/workflows/cla.yml`).
 
-> **Note:** the OA Guide License is a **draft pending legal review**, and Guides that incorporate third-party AGPL/GPL material must be audited before the source-available licence validly applies to them (see [`LICENSING.md`](LICENSING.md) § "Known compatibility caveat").
+> **Note:** Guides that incorporate third-party AGPL/GPL material remain under those copyleft terms; the Guide License applies to the rest (see [`LICENSING.md`](LICENSING.md) § "Third-party copyleft material").
 
 ## [2.2.0] — 2026-07-04
 

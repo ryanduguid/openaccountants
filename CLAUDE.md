@@ -21,7 +21,7 @@ This is a mixed-licence repository: **software** is AGPL-3.0-only, and the **Gui
 - `scripts/` — Maintenance scripts (frontmatter cleanup, index regeneration via `build-index.py`, package builds, validation).
 - `LICENSING.md` — which licence applies to which files (start here).
 - `LICENSE` / `LICENSES/AGPL-3.0-only.txt` — AGPL-3.0-only, for the software.
-- `LICENSES/LicenseRef-OA-Guide-License-1.0.txt` — OA Guide License (source-available) for the Guides. **Draft, pending legal review.**
+- `LICENSES/LicenseRef-OA-Guide-License-1.0.txt` — OA Guide License (source-available) for the Guides.
 - `REUSE.toml` — machine-readable per-path licence mapping.
 - `COMMERCIAL-LICENSING.md` — commercial alternative for both tracks.
 

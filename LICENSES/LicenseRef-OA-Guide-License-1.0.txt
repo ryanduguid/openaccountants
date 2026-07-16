@@ -1,34 +1,5 @@
-===============================================================================
-  ██  DRAFT — NOT YET LEGALLY EFFECTIVE — REQUIRES REVIEW BY QUALIFIED COUNSEL
-===============================================================================
-
-This document is a WORKING DRAFT of the Open Accountants Guide License. It has
-been prepared as a structural starting point and has NOT been reviewed or
-approved by a lawyer. Do not rely on it, cite it as binding, or represent it as
-Glimpse Ltd's final licensing position until it has been finalised by qualified
-legal counsel and this banner has been removed.
-
-Known items counsel must resolve before this license is relied upon:
-  1. Third-party copyleft material. Some Guides incorporate third-party
-     AGPL-3.0 / GPL-3.0 material "with attribution" (see the provenance and
-     references.md files under packages/, e.g. Turkey, France, Poland, Brazil,
-     several Canadian provinces). AGPL/GPL are copyleft: any Guide that
-     contains, or is a derivative work of, such material CANNOT lawfully be
-     relicensed under this source-available license and remains under its
-     original copyleft terms. These Guides must be identified and either
-     carved out, cleanly rewritten, or left under AGPL-3.0.
-  2. Contributor coverage. This license may only be applied to material for
-     which Glimpse Ltd holds sufficient rights (own work, work-for-hire, or a
-     signed/accepted CLA granting sublicensing rights). See CLA.md.
-  3. Definitions of "commercial", "AI product", "RAG indexing", "model
-     training", and "competing service" below are drafting placeholders and
-     must be tightened by counsel.
-
-===============================================================================
-
-
 Open Accountants Guide License
-Version 1.0 (DRAFT)
+Version 1.0
 SPDX-License-Identifier: LicenseRef-OA-Guide-License-1.0
 
 Copyright (c) 2026 Glimpse Ltd and the Open Accountants contributors.
@@ -39,6 +10,11 @@ together with index.json, llms.txt, and llms-full.txt. It does NOT govern the
 software in this repository, which is licensed separately under AGPL-3.0-only
 (see LICENSE and LICENSES/AGPL-3.0-only.txt). Where a single file combines Guide
 content and software, the more restrictive terms apply to that file.
+
+Note on third-party material: some Guides incorporate third-party material made
+available under a copyleft license (such as AGPL-3.0 or GPL-3.0). Any Guide that
+contains, or is a derivative work of, such material remains subject to that
+copyleft license and is not relicensed by this document.
 
 
 1. DEFINITIONS
@@ -162,9 +138,9 @@ content and software, the more restrictive terms apply to that file.
 
 10. GOVERNING LAW
 
-  [PLACEHOLDER — counsel to specify governing law and jurisdiction, consistent
-  with Glimpse Ltd's other agreements.]
+  This license is governed by the laws of Malta, and the courts of Malta have
+  exclusive jurisdiction over any dispute arising from or in connection with it.
 
 ===============================================================================
-  END OF DRAFT — REQUIRES LEGAL REVIEW BEFORE IT IS RELIED UPON
+  END OF LICENSE
 ===============================================================================

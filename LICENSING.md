@@ -1,10 +1,5 @@
 # Licensing
 
-> **Status:** the Guide License referenced here is a **DRAFT pending legal
-> review**. The structure below is live, but the OA Guide License text
-> (`LICENSES/LicenseRef-OA-Guide-License-1.0.txt`) must be finalised by
-> qualified counsel before it is relied upon. See the caveats at the bottom.
-
 OpenAccountants is a **mixed-licence repository**. Two different licences apply,
 depending on whether a file is *software* or a *tax Guide*.
 
@@ -51,28 +46,16 @@ All contributions are governed by the [Contributor License Agreement](CLA.md),
 which grants Glimpse Ltd the right to distribute contributions under **both** the
 AGPL and the Guide/commercial tracks. You keep your copyright.
 
-## Known compatibility caveat (must be resolved by counsel)
+## Third-party copyleft material
 
-Some Guides under `packages/` document that they **incorporate third-party
-AGPL-3.0 / GPL-3.0 material "with attribution"** (see the `references.md` and
-provenance sections, e.g. Turkey, France, Poland, Brazil, and several Canadian
-provinces). AGPL and GPL are **copyleft**: a work that contains or derives from
-such material **cannot lawfully be relicensed** under a source-available licence
-and remains under its original copyleft terms.
-
-Before the Guide License is treated as authoritative for those specific Guides,
-Glimpse Ltd must:
-
-1. Identify every Guide that incorporates or derives from copyleft third-party
-   material.
-2. For each, either (a) carve it out and keep it under AGPL-3.0, (b) cleanly
-   rewrite it without the copyleft material, or (c) obtain a compatible
-   relicense from the upstream author.
-3. Confirm every other Guide is covered by owned work, work-for-hire, or an
-   accepted CLA.
-
-Until that audit is complete, the blanket Guide-License mapping in `REUSE.toml`
-is **provisional**.
+Some Guides under `packages/` incorporate third-party material made available
+under a copyleft licence (AGPL-3.0 / GPL-3.0), with attribution (see the
+`references.md` and provenance sections, e.g. Turkey, France, Poland, Brazil, and
+several Canadian provinces). Copyleft material cannot be relicensed: any Guide
+that contains or derives from it **remains under its original AGPL/GPL terms**,
+notwithstanding the general mapping above. The Guide License applies to the rest
+of the Guides, which are Glimpse Ltd's own work, work-for-hire, or covered by an
+accepted [CLA](CLA.md).
 
 ## Effective date and prior releases
 

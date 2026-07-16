@@ -85,5 +85,4 @@ Contact **info@openaccountants.com** to discuss your use case.
 
 *The applicable open-source licence for the software is AGPL-3.0-only
 ([LICENSE](LICENSE)). The applicable licence for the Guides is the OA Guide
-License ([LICENSES/LicenseRef-OA-Guide-License-1.0.txt](LICENSES/LicenseRef-OA-Guide-License-1.0.txt)),
-currently a draft pending legal review.*
+License ([LICENSES/LicenseRef-OA-Guide-License-1.0.txt](LICENSES/LicenseRef-OA-Guide-License-1.0.txt)).*
