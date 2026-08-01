@@ -65,7 +65,7 @@ verified_by: pending
 
 **R-AU-D7A-1 -- Section 100A analysis.** *Trigger:* UPE or trust distribution pattern suggests a reimbursement agreement (benefit flowing to someone other than the presently entitled beneficiary). *Message:* "Section 100A carries trustee-level top-marginal-rate assessment and no amendment period limit. Escalate -- TR 2022/4 / PCG 2022/2 analysis is specialist work."
 
-**R-AU-D7A-2 -- Interposed entities and Subdivision EA/EB.** *Trigger:* payments or loans routed through other entities, or a trust with a UPE making payments/loans to the company's shareholders. *Message:* "Identify and map the chain, then escalate -- the Commissioner determines the deemed amount under ss 109V/109W."
+**R-AU-D7A-2 -- Interposed entities and Subdivision EA/EB.** *Trigger:* payments or loans routed through other entities, or a trust with a UPE making payments/loans to the company's shareholders. *Message:* "Identify and map the chain, then escalate -- Subdiv E interposed-entity amounts (s 109T) are Commissioner-determined under ss 109V/109W; Subdiv EA amounts arise automatically under ss 109XA/109XB; Subdiv EB deemed entitlements are Commissioner-determined under s 109XI."
 
 **R-AU-D7A-3 -- s 109RB discretion applications.** *Trigger:* client wants an honest-mistake ruling on a breached loan. *Message:* "Corrective-action strategy and the discretion application are practitioner work. Assemble the facts; escalate."
 
