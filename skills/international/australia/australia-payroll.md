@@ -14,7 +14,7 @@ description: >
 version: 1.0
 jurisdiction: AU
 tier: 2
-last_updated: 2026-06-12
+last_updated: 2026-08-01
 category: payroll
 depends_on:
   - payroll-workflow-base
@@ -91,7 +91,7 @@ Australia does not have a separate employee social security contribution. The Me
 |---|---|---|---|
 | PAYG income tax | Progressive (see above) | No ceiling | Includes Medicare levy in tax tables |
 | STSL repayment | 1%--10% (income-based) | No ceiling | Only if employee has HELP/STSL debt |
-| Salary sacrifice (super) | Voluntary | Concessional cap $30,000/year | Pre-tax; reduces PAYG withholding base |
+| Salary sacrifice (super) | Voluntary | Concessional cap $32,500/year (2026-27) | Pre-tax; reduces PAYG withholding base |
 
 There is no employee-paid social insurance premium equivalent to NIC (UK) or social security tax (US).
 
@@ -99,28 +99,31 @@ There is no employee-paid social insurance premium equivalent to NIC (UK) or soc
 
 ## Section 4 -- Social Security: Employer Contributions
 
-### Superannuation Guarantee (SG)
+### Superannuation Guarantee (SG) -- Payday Super from 1 July 2026
 
-| Parameter | 2025--26 Value |
+| Parameter | 2026--27 Value |
 |---|---|
-| SG rate | 12% of ordinary time earnings (OTE) |
-| Maximum contribution base | $65,070 per quarter ($260,280/year) |
+| SG rate | 12% of qualifying earnings |
+| Maximum contribution base | $270,830 per year (ANNUAL, year-to-date basis; quarterly base abolished for earnings paid from 1 Jul 2026) |
 | Minimum earnings threshold | Abolished (no $450/month threshold from 1 Jul 2022) |
-| Payment frequency | Quarterly (28 days after quarter end) |
+| Payment deadline | Received by the employee's fund within **7 business days of each payday** (clearing house receipt does not count) |
 | Eligible employees | All employees 18+; under-18s working 30+ hours/week |
 
-**SG quarterly due dates:** 28 October, 28 January, 28 April, 28 July.
+**Deadline exceptions:** new employee / new fund -- 20 business days for the first contribution; out-of-cycle payments (bonuses) ride with the next regular payday's deadline; ATO exceptional-circumstances determinations -- 20 business days.
+
+**Legacy:** quarterly due dates (28 Oct/28 Jan/28 Apr/28 Jul) apply only to earnings paid up to 30 June 2026; the final quarterly deadline was 28 July 2026. The ATO Small Business Super Clearing House closed permanently on 1 July 2026 -- small employers now use payroll-software super payments or commercial clearing houses.
 
 12% is the final scheduled SG rate (reached 1 July 2025). No further increases are planned.
 
-### Superannuation Guarantee Charge (SGC)
+### Superannuation Guarantee Charge (SGC) -- redesigned from 1 July 2026
 
-If SG is not paid in full by the quarterly deadline, the employer must lodge an SGC statement and pay:
-- The shortfall amount (calculated on total salary/wages, not just OTE)
-- Nominal interest (10% per annum)
-- An administration fee ($20 per employee per quarter)
+For earnings paid from 1 July 2026, SGC is **ATO-assessed per payday** (no SGC statement is lodged; the ATO matches STP data against fund reporting). Components:
+- The final SG shortfall (12% of qualifying earnings unpaid)
+- Notional earnings (GIC-rate interest, compounding daily from the day after the deadline)
+- An administrative uplift (starts at 60% of shortfall + notional earnings; reduced for clean history and voluntary disclosure, to 0% if disclosed within 30 days with a clean 2-year record)
+- Choice loading (25%, capped at $1,200 per notice period) where choice-of-fund rules were breached
 
-SGC amounts are **not tax-deductible**.
+The redesigned SGC **is tax-deductible** (GIC on late SGC and the late payment penalty are not). Old-regime SGC for quarters before 1 July 2026 remains non-deductible. Unpaid SGC 28 days after assessment triggers a Notice to Pay, then a 25% or 50% late payment penalty. First-year ATO approach: PCG 2026/1.
 
 ### Workers' Compensation Insurance
 
@@ -300,7 +303,7 @@ Annual salary $85,000. Paid monthly. No STSL debt.
 
 1. Monthly gross: $85,000 ÷ 12 = $7,083.33
 2. PAYG withholding: per Schedule 1 tax table coefficients (~$1,420/month incl. Medicare)
-3. Super guarantee: $7,083.33 × 12% = $850.00 (employer cost, paid quarterly)
+3. Super guarantee: $7,083.33 × 12% = $850.00 (employer cost, received by the fund within 7 business days of the payday)
 4. Net pay: $7,083.33 - $1,420.00 - deductions
 
 ### Pattern 2 -- Casual Employee with Loading
