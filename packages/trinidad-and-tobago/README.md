@@ -8,6 +8,13 @@
 1. `foundation.md`
 2. `intake.md`
 3. `trinidad-vat.md`
+4. `tt-company-formation.md`
+5. `tt-corporate-income-tax.md`
+6. `tt-income-tax.md`
+7. `tt-payroll-social.md`
+8. `tt-tax-overview.md`
+9. `payroll-workflow-base.md`
+10. `company-formation-workflow-base.md`
 
 ## How to use
 

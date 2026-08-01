@@ -7,7 +7,26 @@
 
 1. `foundation.md`
 2. `intake.md`
-3. `morocco-vat.md`
+3. `ma-auto-entrepreneur.md`
+4. `ma-bookkeeping.md`
+5. `ma-cpu.md`
+6. `ma-crypto-tax.md`
+7. `ma-einvoice.md`
+8. `ma-financial-statements.md`
+9. `ma-formation.md`
+10. `ma-income-tax.md`
+11. `ma-payroll.md`
+12. `ma-social-contributions.md`
+13. `ma-tax-optimization.md`
+14. `morocco-income-tax.md`
+15. `morocco-payroll.md`
+16. `morocco-vat.md`
+17. `bookkeeping-workflow-base.md`
+18. `einvoice-workflow-base.md`
+19. `payroll-workflow-base.md`
+20. `company-formation-workflow-base.md`
+21. `financial-statements-workflow-base.md`
+22. `crypto-tax-workflow-base.md`
 
 ## How to use
 

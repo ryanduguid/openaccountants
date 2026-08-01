@@ -7,7 +7,16 @@
 
 1. `foundation.md`
 2. `intake.md`
-3. `north-macedonia-vat.md`
+3. `mk-company-formation.md`
+4. `mk-corporate-income-tax.md`
+5. `mk-tax-overview.md`
+6. `north-macedonia-income-tax.md`
+7. `north-macedonia-payroll.md`
+8. `north-macedonia-social-contributions.md`
+9. `north-macedonia-tax-optimization.md`
+10. `north-macedonia-vat.md`
+11. `payroll-workflow-base.md`
+12. `company-formation-workflow-base.md`
 
 ## How to use
 

@@ -7,9 +7,15 @@
 
 1. `foundation.md`
 2. `intake.md`
-3. `ghana-pit.md`
-4. `ghana-vat.md`
-5. `references.md`
+3. `gh-company-formation.md`
+4. `gh-corporate-income-tax.md`
+5. `gh-payroll-social.md`
+6. `gh-tax-overview.md`
+7. `ghana-pit.md`
+8. `ghana-vat.md`
+9. `references.md`
+10. `payroll-workflow-base.md`
+11. `company-formation-workflow-base.md`
 
 ## How to use
 

@@ -2,13 +2,14 @@
 name: mi-return-assembly
 description: "Final capstone orchestrator that assembles the complete federal + Michigan filing package for a full-year Michigan-resident sole proprietor or single-member LLC disregarded for federal tax. Consumes outputs from every upstream federal and Michigan content skill (bookkeeping, Schedule C/SE, QBI, retirement, SE health insurance, quarterly estimated tax, federal assembly, 1099-NEC, MI-1040 income tax, MI-1040ES estimates, Form 4884 pension subtraction, MI-1040CR / CR-7 credits, and Detroit Form 5118 where applicable) to produce a single unified reviewer package: every worksheet, every form, every cross-skill reconciliation, the final taxpayer action list with payment and filing instructions, the next-year MI-1040ES voucher schedule, and the reviewer brief. This skill does NOT recompute tax — it ORCHESTRATES. Trigger on phrases like \"assemble the Michigan return\", \"final MI package\", \"MI-1040 reviewer package\", \"Detroit return package\", or \"Michigan return assembly\". MUST be loaded alongside us-tax-workflow-base v0.2 or later and every content skill listed in Section 5. Michigan full-year residents only."
 jurisdiction: US-MI
-domain: tax
 tax_year: 2025
+last_updated: 2026-05-28
+verified_by: pending
 tier: 2
-last_updated: 2026-07-06
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# mi-return-assembly
+# MI Return Assembly
 
 ## Michigan Return Assembly Skill — Capstone Orchestrator
 
@@ -716,3 +717,21 @@ We'll route you to the named verifier covering your country or state. You can al
 ## Section 5 — Skill-loading order (canonical execution sequence)
 
 0. **Step 1** — Load workflow scaffold
+
+<!-- openaccountants-cta-block -->
+
+---
+
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

@@ -9,8 +9,14 @@
 2. `intake.md`
 3. `lithuania-pit.md`
 4. `lithuania-vat-return.md`
-5. `references.md`
-6. `eu-vat-directive.md`
+5. `lt-company-formation.md`
+6. `lt-corporate-income-tax.md`
+7. `lt-payroll-social.md`
+8. `lt-tax-overview.md`
+9. `references.md`
+10. `eu-vat-directive.md`
+11. `payroll-workflow-base.md`
+12. `company-formation-workflow-base.md`
 
 ## How to use
 

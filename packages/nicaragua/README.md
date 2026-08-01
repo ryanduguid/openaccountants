@@ -7,7 +7,15 @@
 
 1. `foundation.md`
 2. `intake.md`
-3. `nicaragua-iva.md`
+3. `ni-company-formation.md`
+4. `ni-corporate-income-tax.md`
+5. `ni-tax-overview.md`
+6. `nicaragua-income-tax.md`
+7. `nicaragua-iva.md`
+8. `nicaragua-payroll.md`
+9. `nicaragua-social-contributions.md`
+10. `payroll-workflow-base.md`
+11. `company-formation-workflow-base.md`
 
 ## How to use
 

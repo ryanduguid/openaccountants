@@ -1,21 +1,25 @@
 ---
 name: es-estimated-tax
 description: >
-  Use this skill whenever asked about Spanish estimated income tax payments (pagos fraccionados) for self-employed individuals (autonomos). Trigger on phrases like "Modelo 130", "pagos fraccionados", "estimated tax Spain", "IRPF quarterly", "Spanish advance tax", "autonomo tax payments", "estimacion directa", "Modelo 131", or any question about quarterly income tax prepayment obligations under the IRPF. Covers the quarterly filing schedule (Apr 20, Jul 20, Oct 20, Jan 30), the 20% cumulative computation method, the 70% withholding exemption, penalties for late filing, and payment procedures. ALWAYS read this skill before touching any estimated tax work for Spain.
 version: 2.0
 jurisdiction: ES
 tax_year: 2025
+last_updated: 2026-04-13
+verified_by: pending
+depends_on: - income-tax-workflow-base
 category: international
-depends_on:
-  - income-tax-workflow-base
+tier: 2
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Spain Estimated Tax (Pagos Fraccionados -- Modelo 130) -- Self-Employed Skill v2.0
+# ES Estimated Tax
 
 ## Section 1 -- Quick reference
 
+**Quick reference table**
+
 | Field | Value |
-|---|---|
+| --- | --- |
 | Country | Spain |
 | Tax | Quarterly IRPF advance payments (pagos fraccionados) |
 | Primary legislation | Ley 35/2006 del IRPF, Art. 99.7-99.8; Real Decreto 439/2007 (RIRPF), Arts. 109-112 |
@@ -31,26 +35,24 @@ depends_on:
 | Validated by | Pending -- requires sign-off by Spanish asesor fiscal |
 | Validation date | Pending |
 
-**Filing schedule summary:**
+**Filing schedule summary**
 
 | Quarter | Period | Deadline |
-|---|---|---|
+| --- | --- | --- |
 | Q1 (1T) | Jan -- Mar | 1-20 April |
 | Q2 (2T) | Apr -- Jun | 1-20 July |
 | Q3 (3T) | Jul -- Sep | 1-20 October |
 | Q4 (4T) | Oct -- Dec | 1-30 January (next year) |
 
-**Conservative defaults:**
+**Conservative defaults**
 
 | Ambiguity | Default |
-|---|---|
+| --- | --- |
 | Modelo 130 vs 131 uncertain | Confirm estimation method -- do not assume |
 | 70% exemption status unclear | File Modelo 130 (safer -- exemption must be proven) |
 | Cumulative vs quarterly confusion | ALWAYS cumulative YTD -- never quarterly in isolation |
 | Low-income deduction eligibility | Check prior year net income against EUR 12,000 threshold |
 | New autonomo rate reduction | Flag for reviewer -- confirm eligibility with asesor fiscal |
-
----
 
 ## Section 2 -- Required inputs and refusal catalogue
 
@@ -66,13 +68,9 @@ depends_on:
 
 ### Refusal catalogue
 
-**R-ES-ET-1 -- Estimacion objetiva (modulos).** Trigger: client uses modulos. Message: "Clients under estimacion objetiva file Modelo 131, not Modelo 130. The computation uses fixed percentages of modulo amounts. This skill covers Modelo 130 (estimacion directa) only."
-
-**R-ES-ET-2 -- Cross-border income.** Trigger: client has EU/EFTA treaty interactions or is non-resident autonomo. Message: "Cross-border IRPF obligations are outside this skill."
-
-**R-ES-ET-3 -- Empresarial claiming 70% exemption.** Trigger: an empresario (not profesional) claims the withholding exemption. Message: "The 70% exemption applies only to profesionales, not empresarios."
-
----
+- **R-ES-ET-1 -- Estimacion objetiva (modulos)** — Trigger: client uses modulos. Message: "Clients under estimacion objetiva file Modelo 131, not Modelo 130. The computation uses fixed percentages of modulo amounts. This skill covers Modelo 130 (estimacion directa) only."
+- **R-ES-ET-2 -- Cross-border income** — Trigger: client has EU/EFTA treaty interactions or is non-resident autonomo. Message: "Cross-border IRPF obligations are outside this skill."
+- **R-ES-ET-3 -- Empresarial claiming 70% exemption** — Trigger: an empresario (not profesional) claims the withholding exemption. Message: "The 70% exemption applies only to profesionales, not empresarios."
 
 ## Section 3 -- Payment pattern library
 
@@ -80,8 +78,10 @@ This is the deterministic pre-classifier for bank statement transactions. When a
 
 ### 3.1 AEAT quarterly payment debits
 
+**AEAT quarterly payment debits**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | AEAT, AGENCIA TRIBUTARIA | Modelo 130 payment | Match with Apr/Jul/Oct/Jan timing |
 | HACIENDA, MINISTERIO DE HACIENDA | Modelo 130 payment | Government payee |
 | MODELO 130 | Modelo 130 payment | Explicit form reference |
@@ -90,8 +90,10 @@ This is the deterministic pre-classifier for bank statement transactions. When a
 
 ### 3.2 Timing-based identification
 
+**Timing-based identification**
+
 | Debit date range | Likely quarter | Confidence |
-|---|---|---|
+| --- | --- | --- |
 | 1 April -- 25 April | Q1 (1T) filing | High if payee is AEAT |
 | 1 July -- 25 July | Q2 (2T) filing | High |
 | 1 October -- 25 October | Q3 (3T) filing | High |
@@ -99,8 +101,10 @@ This is the deterministic pre-classifier for bank statement transactions. When a
 
 ### 3.3 Related but NOT Modelo 130 payments
 
+**Related but NOT Modelo 130 payments**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | IVA, MODELO 303 | EXCLUDE | VAT quarterly payment |
 | MODELO 111 | EXCLUDE | Retenciones payment (employer obligation) |
 | MODELO 131 | EXCLUDE | Modulos payment (different form) |
@@ -110,28 +114,27 @@ This is the deterministic pre-classifier for bank statement transactions. When a
 
 ### 3.4 NRC and payment references
 
+**NRC and payment references**
+
 | Reference pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | NRC followed by digits | AEAT payment confirmed | Numero de Referencia Completo from bank |
 | CSV followed by alphanumeric | Filing receipt reference | Codigo Seguro de Verificacion |
 | 130-1T, 130-2T, 130-3T, 130-4T | Modelo 130, specific quarter | Self-identified |
-
----
 
 ## Section 4 -- Worked examples
 
 ### Example 1 -- Q2 filing (cumulative Jan-Jun)
 
-**Input:**
+**Input table**
 
 | Item | Amount |
-|---|---|
+| --- | --- |
 | Cumulative income (Jan-Jun) | EUR 30,000 |
 | Cumulative expenses (Jan-Jun) | EUR 10,000 |
 | Retenciones received YTD | EUR 500 |
 | Q1 Modelo 130 payment | EUR 1,500 |
 
-**Computation:**
 - Cumulative net income = EUR 30,000 - EUR 10,000 = EUR 20,000
 - 20% of net income = EUR 4,000
 - Minus retenciones = EUR 4,000 - EUR 500 = EUR 3,500
@@ -162,25 +165,18 @@ This is the deterministic pre-classifier for bank statement transactions. When a
 
 **Classification:** Modelo 130 payment, Q1 (1T) 2025. Income tax advance -- not a deductible business expense.
 
----
-
 ## Section 5 -- Computation rules
 
 ### 5.1 The 20% cumulative method
 
-```
-cumulative_net_income = total_income_YTD - total_expenses_YTD
-gross_payment = cumulative_net_income x 20%
-minus_retenciones = withholdings_received_YTD
-minus_prior_payments = sum of Modelo 130 payments already made this year
-payment_this_quarter = gross_payment - retenciones - prior_payments
-if payment_this_quarter < 0: payment = 0 (carries forward)
-```
+- **The 20% cumulative method** — cumulative_net_income = total_income_YTD - total_expenses_YTD gross_payment = cumulative_net_income x 20% minus_retenciones = withholdings_received_YTD minus_prior_payments = sum of Modelo 130 payments already made this year payment_this_quarter = gross_payment - retenciones - prior_payments if payment_this_quarter < 0: payment = 0 (carries forward)  _(Ley 35/2006 del IRPF, Art. 99.7-99.8; Real Decreto 439/2007 (RIRPF), Arts. 109-112)_
 
 ### 5.2 Low-income deduction
 
+**Low-income deduction**
+
 | Prior year net income | Quarterly deduction |
-|---|---|
+| --- | --- |
 | <= EUR 9,000 | EUR 100 |
 | EUR 9,000.01 -- EUR 10,000 | EUR 75 |
 | EUR 10,000.01 -- EUR 11,000 | EUR 50 |
@@ -189,8 +185,10 @@ if payment_this_quarter < 0: payment = 0 (carries forward)
 
 ### 5.3 Modelo 130 form key lines
 
+**Modelo 130 form key lines**
+
 | Line | Description |
-|---|---|
+| --- | --- |
 | 01 | Cumulative net income (ingresos - gastos) |
 | 02 | 20% of line 01 |
 | 03 | Cumulative retenciones e ingresos a cuenta |
@@ -200,20 +198,20 @@ if payment_this_quarter < 0: payment = 0 (carries forward)
 
 ### 5.4 The 70% withholding exemption
 
-A profesional (not empresario) is exempt from Modelo 130 if at least 70% of their prior year income was subject to retenciones at source.
+- **70% withholding exemption** — A profesional (not empresario) is exempt from Modelo 130 if at least 70% of their prior year income was subject to retenciones at source.  _(Ley 35/2006 del IRPF, Art. 99.7-99.8)_
 
 ### 5.5 New autonomo reduction
 
-In the first year and the following year, new autonomos under estimacion directa may be eligible for a reduced rate. Flag for asesor fiscal to confirm eligibility.
-
----
+- **New autonomo reduction** — In the first year and the following year, new autonomos under estimacion directa may be eligible for a reduced rate. Flag for asesor fiscal to confirm eligibility.
 
 ## Section 6 -- Penalties and interest
 
 ### 6.1 Voluntary late filing surcharges
 
+**Voluntary late filing surcharges**
+
 | Delay | Surcharge (recargo) | Interest |
-|---|---|---|
+| --- | --- | --- |
 | Within 1 month | 1% | None |
 | 1-2 months | 2% | None |
 | 2-3 months | 3% | None |
@@ -223,39 +221,41 @@ In the first year and the following year, new autonomos under estimacion directa
 
 ### 6.2 Late filing after AEAT request
 
+**Late filing after AEAT request**
+
 | Severity | Penalty |
-|---|---|
+| --- | --- |
 | Minor | 50% of unpaid amount |
 | Serious | 50-100% |
 | Very serious (fraud) | 100-150% |
 
 ### 6.3 Late payment interest (interes de demora)
 
-Set annually by the Ley de Presupuestos. 2025 rate: approximately 4.0625% (confirm in annual budget law).
-
----
+- **Late payment interest (interes de demora)** — Set annually by the Ley de Presupuestos. 2025 rate: approximately 4.0625% (confirm in annual budget law).  _(Ley de Presupuestos)_
 
 ## Section 7 -- Filing and payment procedure
 
 ### 7.1 Filing methods
 
+**Filing methods**
+
 | Method | Details |
-|---|---|
+| --- | --- |
 | Sede Electronica AEAT | Online with certificado digital or Cl@ve |
 | PDF Modelo 130 | Download, complete, submit via bank |
 | Tax advisor (asesor fiscal) | Files on behalf via AEAT platform |
 
 ### 7.2 Payment methods
 
+**Payment methods**
+
 | Method | Details |
-|---|---|
+| --- | --- |
 | Domiciliacion bancaria | Direct debit -- set up 5 days before deadline |
 | NRC | Pay at bank first, file with NRC code |
 | Adeudo en cuenta | Charge to bank account at filing |
 
 Retain the justificante de presentacion with CSV.
-
----
 
 ## Section 8 -- Edge cases
 
@@ -270,8 +270,6 @@ Retain the justificante de presentacion with CSV.
 **EC5 -- Q4 has longer filing window.** 30 days (1-30 January) vs 20 days for other quarters.
 
 **EC6 -- New autonomo rate reduction.** First year of activity: possible reduced rate between 5% and 20%. Flag for asesor fiscal confirmation.
-
----
 
 ## Section 9 -- Self-checks
 
@@ -288,35 +286,37 @@ Before delivering output, verify:
 - [ ] Form line references accurate
 - [ ] Output labelled as estimated until asesor fiscal confirms
 
----
-
 ## Section 10 -- Test suite
 
 ### Test 1 -- Q2 standard computation
+
 **Input:** Cumulative income EUR 30,000. Expenses EUR 10,000. Retenciones EUR 500. Q1 payment EUR 1,500.
 **Expected:** Net income EUR 20,000. 20% = EUR 4,000. Minus EUR 500 = EUR 3,500. Minus EUR 1,500 = EUR 2,000.
 
 ### Test 2 -- 70% exemption
+
 **Input:** Profesional, 80% of prior year income had retenciones.
 **Expected:** Exempt from Modelo 130.
 
 ### Test 3 -- Negative result
+
 **Input:** Cumulative net income = negative EUR 3,000.
 **Expected:** Payment = EUR 0. Loss carries forward.
 
 ### Test 4 -- Low-income deduction
+
 **Input:** Prior year net income EUR 8,500. Q1 net income EUR 5,000.
 **Expected:** Deduction EUR 100. Payment = (EUR 5,000 x 20%) - EUR 100 = EUR 900.
 
 ### Test 5 -- Activity started mid-year
+
 **Input:** Registered May 2025. Q2 cumulative income (May-Jun) EUR 6,000. Expenses EUR 2,000.
 **Expected:** Net EUR 4,000. Payment = EUR 4,000 x 20% = EUR 800. Due by 20 July.
 
 ### Test 6 -- Q4 longer deadline
+
 **Input:** Q4 filing for 2025.
 **Expected:** Deadline is 30 January 2026 (not 20 January).
-
----
 
 ## Prohibitions
 
@@ -328,17 +328,11 @@ Before delivering output, verify:
 - NEVER present payment amounts as definitive -- advise confirmation with asesor fiscal
 - NEVER confuse Q4 deadline (30 Jan) with other quarters (20th)
 
----
-
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as an asesor fiscal or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
 
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
-
----
-
-<!-- openaccountants-cta-block -->
+The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
 
 ## Talk to a verified accountant
 
@@ -353,16 +347,22 @@ a formal engagement letter** — book a free 30-minute call:
 
 We'll route you to the named verifier covering your country or state. You can
 also see the full list of verified accountants at
-[openaccountants.com/network](https://www.openaccountants.com/network).
+[openaccountants.com/network](https://openaccountants.com/network).
 
-<!-- openaccountants-mcp-cta -->
+<!-- openaccountants-cta-block -->
 
-## The accountant-verified version lives in the connector
+---
 
-This file is the open, **research-grade draft**. The **accountant-verified**
-version of this skill is **not published to GitHub** — it is delivered free
-through the OpenAccountants MCP connector, where your AI agent loads the
-verified rules together with the name of the accountant who signed them off.
+## Talk to a verified accountant
 
-**→ Install the free connector:** <https://www.openaccountants.com/connect>
-**MCP endpoint:** `https://www.openaccountants.com/api/mcp`
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

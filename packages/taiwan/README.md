@@ -8,8 +8,12 @@
 1. `foundation.md`
 2. `intake.md`
 3. `taiwan-vat.md`
-4. `tw-income-tax.md`
-5. `tw-nhi.md`
+4. `tw-company-formation.md`
+5. `tw-corporate-income-tax.md`
+6. `tw-income-tax.md`
+7. `tw-nhi.md`
+8. `tw-tax-overview.md`
+9. `company-formation-workflow-base.md`
 
 ## Also known as
 

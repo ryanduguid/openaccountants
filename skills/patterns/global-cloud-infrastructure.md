@@ -1,29 +1,30 @@
 ---
 name: global-cloud-infrastructure
 description: >
-  Pattern library for cloud, infrastructure, and developer tool vendors that appear on bank statements and ledger detail worldwide. Use when classifying an unknown transaction line. Provides the canonical vendor name, common bank statement variations, default Schedule C / category mapping, VAT treatment (B2B reverse charge for most cross-border digital services), and notes on currency, billing cycle, and any sector-specific gotchas. Covers AWS, Azure, GCP, Cloudflare, DigitalOcean, Linode/Akamai, Hetzner, OVHcloud, Vultr, Render, Vercel, Netlify, Fly.io, Railway, Heroku, Backblaze, Wasabi, Datadog, New Relic, PagerDuty, GitHub, GitLab, Sentry, LaunchDarkly, Twilio, SendGrid, Mailgun, Resend, Postmark. Does NOT cover: SaaS productivity tools (see global-productivity-tools), ad platforms (see global-ad-platforms), or payment processors (see global-payment-processors).
 version: 0.1
 jurisdiction: GLOBAL
-tier: 2
-last_updated: 2026-06-12
-category: pattern
+tax_year: 2025
+last_updated: 2026-05-23
 verified_by: pending
+category: pattern
+tier: 2
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Global Cloud & Infrastructure Vendor Patterns v0.1
+# Global Cloud Infrastructure
 
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+## Global Cloud & Infrastructure Vendor Patterns v0.1
 
 ## How to use
 
 When a bank statement / ledger line contains one of the variations below, apply the default classification. Override only with documentary evidence.
 
----
-
 ## Pattern table
 
+**Pattern table**
+
 | Vendor | Bank statement variations | Default category | VAT/GST notes | Notes |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | **Amazon Web Services** | `AWS EMEA SARL`, `AMAZON WEB SERVICES`, `AWS BILLING`, `AWS EMEA SARL LUX`, `AMAZON DATA SERVICES IRELAND` | Cloud hosting / IT services | EU B2B: reverse charge (supplier in IE/LU). US: no VAT. UK B2B: reverse charge. Most non-EU: zero-rated export from supplier. | Monthly USD billing; consolidated invoice. Some accounts use AWS EMEA SARL (Luxembourg) for EU customers; AWS Inc for US. |
 | **Microsoft Azure** | `MICROSOFT IRELAND OPS`, `MICROSOFT*AZURE`, `MSFT*AZURE`, `MICROSOFT AZURE` | Cloud hosting / IT services | EU B2B: reverse charge (supplier in IE — Microsoft Ireland Operations Ltd). | Monthly USD/EUR billing. |
 | **Google Cloud Platform** | `GOOGLE *CLOUD`, `GOOGLE CLOUD`, `GOOGLE PAYMENT`, `GOOGLE CLOUD EMEA`, `GOOGLE IRELAND LTD` | Cloud hosting / IT services | EU B2B: reverse charge. | Monthly USD/EUR. |
@@ -59,24 +60,19 @@ When a bank statement / ledger line contains one of the variations below, apply 
 | **Pulumi** | `PULUMI CORP` | IaC | US supplier. | Monthly USD. |
 | **HashiCorp / Terraform Cloud** | `HASHICORP INC` | IaC | US supplier; acquired by IBM 2024. | Monthly/annual USD. |
 
----
-
 ## Default classification rules
 
-- **Schedule C (US sole prop)**: Line 25 — Utilities (cloud hosting); Line 22 — Supplies (small one-off); Line 17 — Legal/professional (consulting); Line 27a — Other expenses (with description)
-- **UK self-employment**: Box 22 (Other allowable expenses) or Box 21 (Phone/computer/internet)
-- **EU bookkeeping**: "Sonstige Aufwendungen — IT" / "Frais informatiques" / etc.
+- **Schedule C (US sole prop)** — Line 25 — Utilities (cloud hosting); Line 22 — Supplies (small one-off); Line 17 — Legal/professional (consulting); Line 27a — Other expenses (with description)  _(Default classification rules)_
+- **UK self-employment** — Box 22 (Other allowable expenses) or Box 21 (Phone/computer/internet)  _(Default classification rules)_
+- **EU bookkeeping** — "Sonstige Aufwendungen — IT" / "Frais informatiques" / etc.  _(Default classification rules)_
 
 ## Cross-border VAT mechanics (B2B customer)
 
-For all cross-border B2B SaaS / cloud purchases by VAT-registered businesses:
-- **EU customer ← non-EU supplier** → Article 196 reverse charge; VAT self-assessed on local return
-- **EU customer ← EU supplier in different MS** → Article 196 reverse charge; VIES check on supplier VAT number
-- **UK customer ← non-UK supplier** → reverse charge per Section 8 VATA 1994
-- **US customer**: no federal VAT; some states (NY, TX) impose sales/use tax on cloud services
-- **Australia customer ← non-AU supplier** → GST self-assessed if customer not GST-registered for these services
-
----
+- **EU customer ← non-EU supplier** — Article 196 reverse charge; VAT self-assessed on local return  _(Cross-border VAT mechanics (B2B customer))_
+- **EU customer ← EU supplier in different MS** — Article 196 reverse charge; VIES check on supplier VAT number  _(Cross-border VAT mechanics (B2B customer))_
+- **UK customer ← non-UK supplier** — reverse charge per Section 8 VATA 1994  _(Section 8 VATA 1994)_
+- **US customer** — no federal VAT; some states (NY, TX) impose sales/use tax on cloud services  _(Cross-border VAT mechanics (B2B customer))_
+- **Australia customer ← non-AU supplier** — GST self-assessed if customer not GST-registered for these services  _(Cross-border VAT mechanics (B2B customer))_
 
 ## Self-checks
 
@@ -85,3 +81,21 @@ For all cross-border B2B SaaS / cloud purchases by VAT-registered businesses:
 - [ ] Sales tax US state nexus checked where supplier has nexus
 - [ ] Currency conversion applied to local books at appropriate rate
 - [ ] Recurring billing cycle reflected in accrual / cash basis
+
+<!-- openaccountants-cta-block -->
+
+---
+
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

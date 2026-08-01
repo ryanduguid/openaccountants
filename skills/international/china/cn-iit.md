@@ -2,13 +2,14 @@
 name: cn-iit
 description: 在处理任何中国个人所得税（IIT）事项之前，必须先阅读本技能。本技能适用于中国税务居民个人和非居民个人的个人所得税申报、计算与审核工作，包括综合所得（工资薪金、劳务报酬、稿酬、特许权使用费）的累计预扣预缴与年度汇算清缴，经营所得的五级累进计税，专项附加扣除（子女教育、继续教育、大病医疗、住房贷款利息、住房租金、赡养老人、3岁以下婴幼儿照护），居民判定（183天规则），境外所得抵免，股权激励与全年一次性奖金单独计税过渡政策，以及通过个税APP、自然人电子税务局、单位代扣代缴等方式完成 3月1日至6月30日 综合所得年度汇算清缴的全过程。
 jurisdiction: CN
-domain: international
 tax_year: 2025
+last_updated: 2026-05-27
+verified_by: pending
 tier: 2
-last_updated: 2026-07-06
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# cn-iit
+# CN Iit
 
 ## 一、快速参考
 
@@ -353,3 +354,21 @@ To speak with one of the licensed accountants who verifies skills for your juris
 → [Book a call](https://calendly.com/openaccountants-info/30min)
 
 We'll route you to the named verifier covering your country or state. You can also see the full list of verified accountants at openaccountants.com/network.
+
+<!-- openaccountants-cta-block -->
+
+---
+
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

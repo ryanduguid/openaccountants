@@ -1,11 +1,12 @@
 ---
-name: china-vat
+name: cn-vat
 description: Use this skill whenever asked to prepare, review, or classify transactions for a China VAT (增值税 / VAT) return, handle Golden Tax System (金税系统) compliance, classify transactions for Chinese VAT purposes, or advise on VAT registration and filing in China. Trigger on phrases like "增值税", "VAT return China", "增值税申报", "增值税专用发票", "金税系统", "一般纳税人", "小规模纳税人", or any China VAT request. ALWAYS read this skill before touching any China VAT work.
 jurisdiction: CN
-domain: international
 tax_year: 2025
+last_updated: 2026-05-27
+verified_by: pending
 tier: 2
-last_updated: 2026-07-06
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
 # china-vat
@@ -520,3 +521,21 @@ CHINA VAT ONBOARDING — MINIMUM QUESTIONS
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes. All outputs must be reviewed by a qualified professional (注册税务师 or 注册会计师) before filing.
 
 The most up-to-date version is maintained at openaccountants.com.
+
+<!-- openaccountants-cta-block -->
+
+---
+
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

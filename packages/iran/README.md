@@ -7,7 +7,14 @@
 
 1. `foundation.md`
 2. `intake.md`
-3. `iran-vat.md`
+3. `ir-company-formation.md`
+4. `ir-corporate-income-tax.md`
+5. `ir-income-tax.md`
+6. `ir-payroll-social.md`
+7. `ir-tax-overview.md`
+8. `iran-vat.md`
+9. `payroll-workflow-base.md`
+10. `company-formation-workflow-base.md`
 
 ## How to use
 

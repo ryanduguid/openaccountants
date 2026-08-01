@@ -8,8 +8,14 @@
 1. `foundation.md`
 2. `intake.md`
 3. `references.md`
-4. `thailand-pit.md`
-5. `thailand-vat.md`
+4. `th-company-formation.md`
+5. `th-corporate-income-tax.md`
+6. `th-payroll-social.md`
+7. `th-tax-overview.md`
+8. `thailand-pit.md`
+9. `thailand-vat.md`
+10. `payroll-workflow-base.md`
+11. `company-formation-workflow-base.md`
 
 ## Also known as
 

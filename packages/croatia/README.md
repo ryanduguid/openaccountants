@@ -7,8 +7,17 @@
 
 1. `foundation.md`
 2. `intake.md`
-3. `croatia-vat-return.md`
-4. `eu-vat-directive.md`
+3. `croatia-income-tax.md`
+4. `croatia-payroll.md`
+5. `croatia-social-contributions.md`
+6. `croatia-tax-optimization.md`
+7. `croatia-vat-return.md`
+8. `hr-company-formation.md`
+9. `hr-corporate-income-tax.md`
+10. `hr-tax-overview.md`
+11. `eu-vat-directive.md`
+12. `payroll-workflow-base.md`
+13. `company-formation-workflow-base.md`
 
 ## How to use
 

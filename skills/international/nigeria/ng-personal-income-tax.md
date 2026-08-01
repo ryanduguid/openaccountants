@@ -2,13 +2,14 @@
 name: ng-personal-income-tax
 description: Use this skill whenever asked about Nigerian Personal Income Tax (PIT) for individuals and sole traders / self-employed professionals filing an annual self-assessment return. Trigger on phrases like "Nigeria PIT", "Personal Income Tax Nigeria", "annual return Nigeria", "self-employed Nigeria tax", "self-assessment Nigeria", "PITA self-employed", "NTA 2025 individuals", "Nigeria Tax Act 2025 individuals", "consolidated relief allowance Nigeria", "CRA Nigeria", "minimum tax Nigeria", "state IRS filing", "SIRS annual return", "FIRS individual return FCT", "income tax Lagos", "income tax Abuja", or "Nigerian sole trader tax return". Covers tax year 2025 under PITA (Cap P8 LFN 2004 as amended through Finance Act 2023) plus the transitional treatment of the Nigeria Tax Act 2025 (effective 1 January 2026) for forward planning, including progressive brackets (7-24%), Consolidated Relief Allowance, minimum tax floor, capital allowances under the Fifth Schedule, WHT credits, life-insurance / pension / NHF / NHIS reliefs, and annual self-assessment filing to the State Internal Revenue Service (SIRS) — with FIRS jurisdiction reserved for FCT residents, members of the armed forces and police, foreign-service officers, and non-residents earning Nigeria-source income. Out of scope — employer-side payroll PAYE mechanics, PAYE return preparation, monthly PAYE remittance and statutory deductions (see ng-paye); corporate income tax / companies (CIT) and dividend WHT (see ng-cit); petroleum profits tax; partial-year residency and treaty tie-breaker analysis. ALWAYS read this skill before touching any Nigerian PIT work for individuals.
 jurisdiction: NG
-domain: international
 tax_year: 2025
+last_updated: 2026-05-27
+verified_by: Omolola Fasasi 
 tier: 2
-last_updated: 2026-07-06
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# ng-personal-income-tax
+# NG Personal Income Tax
 
 ## Nigeria — Personal Income Tax (PIT) — Skill v1.0
 
@@ -501,3 +502,21 @@ a formal engagement letter** — book a free 30-minute call:
 We'll route you to the named verifier covering your country or state. You can
 also see the full list of verified accountants at
 [openaccountants.com/network](https://openaccountants.com/network).
+
+<!-- openaccountants-cta-block -->
+
+---
+
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

@@ -1,25 +1,25 @@
 ---
 name: mx-estimated-tax
 description: >
-  Use this skill whenever asked about Mexican provisional income tax payments (pagos provisionales de ISR) for self-employed individuals and sole proprietors. Trigger on phrases like "pagos provisionales", "ISR provisional", "estimated tax Mexico", "coeficiente de utilidad", "SAT monthly payment", "declaracion provisional", "Mexican advance tax", "RESICO", or any question about monthly provisional income tax obligations under the Ley del ISR. Covers the monthly payment schedule, cumulative computation method, RESICO simplified rates, penalties for late payment, and SAT filing procedures. ALWAYS read this skill before touching any estimated tax work for Mexico.
 version: 2.0
 jurisdiction: MX
 tax_year: 2025
-tier: 2
-last_updated: 2026-06-12
+last_updated: 2026-04-13
+verified_by: pending
+depends_on: - income-tax-workflow-base
 category: international
-depends_on:
-  - income-tax-workflow-base
+tier: 2
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Mexico Estimated Tax (Pagos Provisionales de ISR) -- Self-Employed Skill v2.0
-
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+# MX Estimated Tax
 
 ## Section 1 -- Quick reference
 
+**Quick reference fields**
+
 | Field | Value |
-|---|---|
+| --- | --- |
 | Country | Mexico |
 | Tax | Monthly provisional income tax payments (pagos provisionales de ISR) |
 | Primary legislation | Ley del ISR (LISR), Arts. 106-108 (personas fisicas); Art. 14 (personas morales); Arts. 113-E to 113-J (RESICO) |
@@ -34,49 +34,40 @@ depends_on:
 | Validated by | Pending -- requires sign-off by Mexican contador publico |
 | Validation date | Pending |
 
-**RESICO monthly rate table:**
+**RESICO monthly rate table**
 
 | Monthly income (MXN) | Rate |
-|---|---|
+| --- | --- |
 | Up to 25,000 | 1.00% |
 | 25,000.01 -- 50,000 | 1.10% |
 | 50,000.01 -- 83,333.33 | 1.50% |
 | 83,333.34 -- 208,333.33 | 2.00% |
 | 208,333.34 -- 3,500,000 | 2.50% |
 
-**Conservative defaults:**
+**Conservative defaults**
 
 | Ambiguity | Default |
-|---|---|
+| --- | --- |
 | Regime unclear | Confirm: general, RESICO, or persona moral before computing |
 | Cumulative vs monthly isolated | ALWAYS cumulative YTD for general regime |
 | Coefficient of utility uncertain | Verify against most recent annual return |
 | RESICO threshold exceeded | Switch to general regime immediately |
 | CFDI status of expenses | Only deduct with valid CFDI |
 
----
-
 ## Section 2 -- Required inputs and refusal catalogue
 
 ### Required inputs
 
-**Minimum viable** -- tax regime, monthly/cumulative income and deductible expenses (with CFDI), prior payments made, retenciones received.
-
-**Recommended** -- prior year annual return (for coefficient of utility for personas morales), loss carryforwards, PTU paid.
-
-**Ideal** -- complete monthly accounting with CFDI, prior year Declaracion Anual, SAT portal access for pre-filled data.
-
-**Refusal policy if minimum is missing -- SOFT WARN.** Without income and expense figures, the cumulative computation cannot proceed.
+- **Minimum viable inputs** — tax regime, monthly/cumulative income and deductible expenses (with CFDI), prior payments made, retenciones received. (Minimum viable)
+- **Recommended inputs** — prior year annual return (for coefficient of utility for personas morales), loss carryforwards, PTU paid. (Recommended)
+- **Ideal inputs** — complete monthly accounting with CFDI, prior year Declaracion Anual, SAT portal access for pre-filled data. (Ideal)
+- **Refusal policy if minimum is missing** — SOFT WARN. Without income and expense figures, the cumulative computation cannot proceed.
 
 ### Refusal catalogue
 
-**R-MX-ET-1 -- Corporate estimated tax (personas morales general).** Trigger: client is a persona moral using coefficient of utility. Message: "Persona moral provisional payments use the coefficient of utility method, which is a Tier 2 computation requiring the prior year annual return. Flag for contador publico."
-
-**R-MX-ET-2 -- Cross-border PE issues.** Trigger: client has establecimiento permanente questions. Message: "Permanent establishment issues are outside this skill."
-
-**R-MX-ET-3 -- Treaty credit timing.** Trigger: cross-border income with treaty interactions. Message: "Treaty credit allocation in provisional payments is outside this skill."
-
----
+- **R-MX-ET-1 -- Corporate estimated tax (personas morales general)** — Trigger: client is a persona moral using coefficient of utility. Message: "Persona moral provisional payments use the coefficient of utility method, which is a Tier 2 computation requiring the prior year annual return. Flag for contador publico."
+- **R-MX-ET-2 -- Cross-border PE issues** — Trigger: client has establecimiento permanente questions. Message: "Permanent establishment issues are outside this skill."
+- **R-MX-ET-3 -- Treaty credit timing** — Trigger: cross-border income with treaty interactions. Message: "Treaty credit allocation in provisional payments is outside this skill."
 
 ## Section 3 -- Payment pattern library
 
@@ -84,8 +75,10 @@ This is the deterministic pre-classifier for bank statement transactions. When a
 
 ### 3.1 SAT provisional payment debits
 
+**SAT provisional payment debits**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | SAT, SERVICIO DE ADMINISTRACION TRIBUTARIA | ISR provisional payment | Match with monthly timing |
 | ISR PROVISIONAL, PAGO PROVISIONAL | ISR provisional payment | Explicit description |
 | LINEA DE CAPTURA followed by digits | ISR provisional payment | SAT payment reference |
@@ -94,15 +87,19 @@ This is the deterministic pre-classifier for bank statement transactions. When a
 
 ### 3.2 Timing-based identification
 
+**Timing-based identification**
+
 | Debit date range | Income month covered | Confidence |
-|---|---|---|
+| --- | --- | --- |
 | 1st -- 20th of month | Prior month income | High if SAT/ISR reference |
 | After 17th with surcharge | Late payment | Flag for reviewer |
 
 ### 3.3 Related but NOT ISR provisional payments
 
+**Related but NOT ISR provisional payments**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | IVA, IVA PROVISIONAL | EXCLUDE | VAT provisional payment |
 | IMSS, CUOTA OBRERO PATRONAL | EXCLUDE | Social security |
 | ISN, IMPUESTO SOBRE NOMINAS | EXCLUDE | Payroll tax |
@@ -114,12 +111,12 @@ This is the deterministic pre-classifier for bank statement transactions. When a
 
 ### 3.4 Payment references
 
+**Payment references**
+
 | Reference pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | Linea de captura + period reference | ISR provisional for that period | Standard SAT format |
 | RFC + ISR + month/year | ISR provisional | Self-identified |
-
----
 
 ## Section 4 -- Worked examples
 
@@ -152,73 +149,52 @@ This is the deterministic pre-classifier for bank statement transactions. When a
 
 **Classification:** ISR provisional payment for January 2025. Tax payment -- not a deductible business expense.
 
----
-
 ## Section 5 -- Computation rules
 
 ### 5.1 General regime -- cumulative method
 
-```
-cumulative_income = total_income_YTD (with valid CFDI)
-cumulative_deductions = total_deductible_expenses_YTD
-cumulative_PTU = profit sharing paid
-cumulative_losses = loss carryforwards applied
-taxable_base = income - deductions - PTU - losses
-provisional_ISR = apply_progressive_table(taxable_base)
-payment = provisional_ISR - retenciones_YTD - prior_payments_YTD
-if payment < 0: payment = 0
-```
+- **Cumulative method formula** — cumulative_income = total_income_YTD (with valid CFDI) cumulative_deductions = total_deductible_expenses_YTD cumulative_PTU = profit sharing paid cumulative_losses = loss carryforwards applied taxable_base = income - deductions - PTU - losses provisional_ISR = apply_progressive_table(taxable_base) payment = provisional_ISR - retenciones_YTD - prior_payments_YTD if payment < 0: payment = 0
 
 ### 5.2 Progressive rate table (Art. 96 LISR, cumulative)
 
-Ranges from 1.92% to 35%. Confirm against Annex 8 of the 2025 Resolucion Miscelanea Fiscal.
+- **Progressive rate table range** — Ranges from 1.92% to 35%. Confirm against Annex 8 of the 2025 Resolucion Miscelanea Fiscal.  _(Art. 96 LISR; Annex 8 of the 2025 Resolucion Miscelanea Fiscal)_
 
 ### 5.3 RESICO -- simplified
 
-Applied to gross monthly income. No deductions. Fixed rates 1%-2.5%. Income limit MXN 3,500,000/year.
+- **RESICO simplified rule** — Applied to gross monthly income. No deductions. Fixed rates 1%-2.5%. Income limit MXN 3,500,000/year.
 
 ### 5.4 Persona moral -- coefficient of utility
 
-```
-coefficient = prior_year_fiscal_profit / prior_year_nominal_income
-taxable_base = cumulative_income x coefficient
-provisional_ISR = taxable_base x 30%
-payment = provisional_ISR - retenciones - prior_payments
-```
-
-Flag for contador publico.
+- **Coefficient of utility formula** — coefficient = prior_year_fiscal_profit / prior_year_nominal_income taxable_base = cumulative_income x coefficient provisional_ISR = taxable_base x 30% payment = provisional_ISR - retenciones - prior_payments
+- **Flag requirement** — Flag for contador publico.
 
 ### 5.5 Filing deadline
 
-The 17th of the month following the income month. Weekend/holiday: next business day.
-
----
+- **Filing deadline** — The 17th of the month following the income month. Weekend/holiday: next business day.
 
 ## Section 6 -- Penalties and interest
 
 ### 6.1 Recargos and actualizacion
 
+**Recargos and actualizacion**
+
 | Element | Rule |
-|---|---|
+| --- | --- |
 | Actualizacion | Tax adjusted by INPC ratio (due month to payment month) |
 | Recargos | Approx. 1.47%/month on updated amount |
 
 ### 6.2 Computation
 
-```
-updated_tax = unpaid_tax x (INPC_payment_month / INPC_due_month)
-recargos = updated_tax x recargo_rate x months_late
-total = updated_tax + recargos
-```
+- **Penalty computation formula** — updated_tax = unpaid_tax x (INPC_payment_month / INPC_due_month) recargos = updated_tax x recargo_rate x months_late total = updated_tax + recargos
 
 ### 6.3 Multas (fines)
 
+**Multas (fines)**
+
 | Violation | Fine range |
-|---|---|
+| --- | --- |
 | Failure to file | MXN 1,810 -- MXN 22,400 per return |
 | Filing errors | MXN 460 -- MXN 6,730 |
-
----
 
 ## Section 7 -- SAT filing procedure
 
@@ -231,21 +207,25 @@ total = updated_tax + recargos
 7. Pay via bank portal using linea de captura
 8. Download and retain acuse de recibo
 
----
+## Section 8 -- Edge cases
+
+No prior year return for coefficient. SAT may estimate or zero provisionals in first year. Flag for contador publico.
 
 ## Section 8 -- Edge cases
 
-**EC1 -- First year, no coefficient (persona moral).** No prior year return for coefficient. SAT may estimate or zero provisionals in first year. Flag for contador publico.
+Exceeded MXN 3.5M threshold. Switch to cumulative progressive method from the month threshold was exceeded.
 
-**EC2 -- RESICO to general regime switch.** Exceeded MXN 3.5M threshold. Switch to cumulative progressive method from the month threshold was exceeded.
+## Section 8 -- Edge cases
 
-**EC3 -- Negative cumulative result.** No payment due. Loss carries forward in YTD computation.
+No payment due. Loss carries forward in YTD computation.
 
-**EC4 -- Retenciones exceed provisional ISR.** No payment due. Excess carries forward.
+## Section 8 -- Edge cases
 
-**EC5 -- Coefficient reduction request (Jul-Dec).** Personas morales may request lower coefficient for second half of year. Must file at least 1 month before first reduced payment.
+No payment due. Excess carries forward.
 
----
+## Section 8 -- Edge cases
+
+Personas morales may request lower coefficient for second half of year. Must file at least 1 month before first reduced payment.
 
 ## Section 9 -- Self-checks
 
@@ -262,35 +242,37 @@ Before delivering output, verify:
 - [ ] Loss carryforwards and PTU accounted for
 - [ ] Output labelled as estimated until contador publico confirms
 
----
-
 ## Section 10 -- Test suite
 
 ### Test 1 -- RESICO monthly
+
 **Input:** Monthly income MXN 40,000.
 **Expected:** Rate 1.10%. Payment = MXN 440.
 
 ### Test 2 -- RESICO threshold exceeded
+
 **Input:** Cumulative income hits MXN 3.6M.
 **Expected:** Switch to general regime. Apply cumulative progressive method.
 
 ### Test 3 -- Negative cumulative result
+
 **Input:** Cumulative deductions > income.
 **Expected:** No payment due. Loss carries forward.
 
 ### Test 4 -- Retenciones exceed ISR
+
 **Input:** Provisional ISR = MXN 5,000. Retenciones YTD = MXN 6,000.
 **Expected:** No payment. Excess MXN 1,000 carries forward.
 
 ### Test 5 -- Late payment
+
 **Input:** MXN 3,500 due 17 Feb. Paid 17 Apr. INPC ratio = 1.008. Recargo rate = 1.47%.
 **Expected:** Updated tax = MXN 3,528. Recargos = MXN 3,528 x 1.47% x 2 = MXN 103.72.
 
 ### Test 6 -- First year persona moral
+
 **Input:** New company, no prior annual return.
 **Expected:** No coefficient available. Flag for contador publico.
-
----
 
 ## Prohibitions
 
@@ -302,10 +284,41 @@ Before delivering output, verify:
 - NEVER deduct expenses without valid CFDI
 - NEVER present amounts as definitive -- advise confirmation with contador publico
 
----
-
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a contador publico or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
 
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
+The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
+
+## Talk to a verified accountant
+
+This skill is a tool, not an engagement. Every taxpayer's situation is
+different, and the rules in the skill may not match your specific facts.
+
+To speak with one of the licensed accountants who verifies skills for your
+jurisdiction — **no liability on either side until you and the accountant sign
+a formal engagement letter** — book a free 30-minute call:
+
+**→ [Book a call](https://calendly.com/openaccountants-info/30min)**
+
+We'll route you to the named verifier covering your country or state. You can
+also see the full list of verified accountants at
+[openaccountants.com/network](https://openaccountants.com/network).
+
+<!-- openaccountants-cta-block -->
+
+---
+
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

@@ -4,19 +4,22 @@ description: Use this skill whenever asked to prepare, review, or classify trans
 version: 2.0
 jurisdiction: CR
 tax_year: 2025
+last_updated: 2026-04-13
+verified_by: pending
+depends_on: - vat-workflow-base
 category: international
-depends_on:
-  - vat-workflow-base
+tier: 2
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Costa Rica IVA (Impuesto al Valor Agregado) Skill v2.0
-
----
+# Costa Rica IVA
 
 ## Section 1 — Quick reference
 
+**Quick reference**
+
 | Field | Value |
-|---|---|
+| --- | --- |
 | Country | Costa Rica (República de Costa Rica) |
 | Tax | IVA — Impuesto al Valor Agregado (effective July 2019, replacing historic sales tax) |
 | Currency | CRC (Costa Rican Colón — ₡) |
@@ -38,8 +41,10 @@ depends_on:
 
 ### Key D-104 fields
 
+**Key D-104 fields**
+
 | Field | Meaning |
-|---|---|
+| --- | --- |
 | Línea 1 | Taxable sales at 13% (net) |
 | Línea 2 | Taxable sales at 4% (net) |
 | Línea 3 | Taxable sales at 2% (net) |
@@ -54,8 +59,10 @@ depends_on:
 
 ### Conservative defaults
 
+**Conservative defaults**
+
 | Ambiguity | Default |
-|---|---|
+| --- | --- |
 | Unknown rate on a sale | 13% standard |
 | Unknown whether 4% medical rate applies | 13% until confirmed |
 | Unknown whether canasta básica 1% applies | 1% only if item is on official DGT list |
@@ -66,48 +73,34 @@ depends_on:
 
 ### Red flag thresholds
 
+**Red flag thresholds**
+
 | Threshold | Value |
-|---|---|
+| --- | --- |
 | HIGH single transaction | CRC 50,000,000 |
 | HIGH tax delta on single conservative default | CRC 6,500,000 |
 | MEDIUM counterparty concentration | >40% of output or input |
 | MEDIUM conservative default count | >4 per return |
 | LOW absolute net IVA position | CRC 100,000,000 |
 
----
-
 ## Section 2 — Required inputs and refusal catalogue
 
 ### Required inputs
 
-Before starting any Costa Rica IVA work, obtain:
-
-1. Cédula jurídica (company) or cédula física (individual) and Hacienda registration
-2. Monthly bank statements in CRC and USD (many businesses operate in both)
-3. Facturas Electrónicas issued (XML from Hacienda system — key: clave numérica 50 digits)
-4. Facturas Electrónicas received (XML or PDF with clave numérica)
-5. Prior month D-104 (for remanente crédito fiscal)
-6. Import declarations for imported goods
-7. Details of exempt activities (residential rent, financial services)
+- **Required inputs before starting Costa Rica IVA work** — 1. Cédula jurídica (company) or cédula física (individual) and Hacienda registration 2. Monthly bank statements in CRC and USD (many businesses operate in both) 3. Facturas Electrónicas issued (XML from Hacienda system — key: clave numérica 50 digits) 4. Facturas Electrónicas received (XML or PDF with clave numérica) 5. Prior month D-104 (for remanente crédito fiscal) 6. Import declarations for imported goods 7. Details of exempt activities (residential rent, financial services)
 
 ### Refusal catalogue
 
-Refuse and escalate to a CPA for:
-- Prorrata (partial exemption for mixed taxable/exempt businesses)
-- IVA on real estate sales (complex — only taxable if developer)
-- Régimen de Tributación Simplificada — separate simplified regime
-- IVA on financial instruments and leasing
-- Free trade zone (Zonas Francas) — exempt from IVA
-- Non-resident digital service provider registration
-
----
+- **Refuse and escalate to a CPA** — Prorrata (partial exemption for mixed taxable/exempt businesses); IVA on real estate sales (complex — only taxable if developer); Régimen de Tributación Simplificada — separate simplified regime; IVA on financial instruments and leasing; Free trade zone (Zonas Francas) — exempt from IVA; Non-resident digital service provider registration
 
 ## Section 3 — Supplier pattern library
 
 ### 3.1 Banking and financial services
 
+**Banking and financial services suppliers**
+
 | Supplier | Typical description | IVA rate | Input credit |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Banco Nacional de Costa Rica (BNCR) | Bank fees, transfers | Exempt | No |
 | Banco de Costa Rica (BCR) | Account fees, corporate banking | Exempt | No |
 | BAC Credomatic | Commercial banking | Exempt | No |
@@ -120,8 +113,10 @@ Refuse and escalate to a CPA for:
 
 ### 3.2 Electricity, water, and utilities
 
+**Electricity, water, and utilities suppliers**
+
 | Supplier | Typical description | IVA rate | Input credit |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | ICE (Instituto Costarricense de Electricidad) | Electricity + telecom | 13% | Yes (business) |
 | CNFL (Compañía Nacional de Fuerza y Luz) | Electricity — San José metro | 13% | Yes (business) |
 | ESPH (Empresa de Servicios Públicos de Heredia) | Electricity/water — Heredia | 13% | Yes |
@@ -130,8 +125,10 @@ Refuse and escalate to a CPA for:
 
 ### 3.3 Telecommunications
 
+**Telecommunications suppliers**
+
 | Supplier | Typical description | IVA rate | Input credit |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | ICE / Kölbi | Mobile, broadband (state operator) | 13% | Yes (business use) |
 | Claro Costa Rica | Mobile, internet | 13% | Yes (business use) |
 | Movistar Costa Rica | Mobile, ADSL | 13% | Yes (business use) |
@@ -140,8 +137,10 @@ Refuse and escalate to a CPA for:
 
 ### 3.4 Transport and travel
 
+**Transport and travel suppliers**
+
 | Supplier | Typical description | IVA rate | Input credit |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | LACSA / Avianca Costa Rica | Domestic / international flights | 0% (international) | No |
 | Nature Air / Skyway CR | Domestic feeder flights | 13% | Yes |
 | SANSA (domestic) | Domestic air | 13% | Yes |
@@ -152,16 +151,20 @@ Refuse and escalate to a CPA for:
 
 ### 3.5 Fuel
 
+**Fuel suppliers**
+
 | Supplier | Typical description | IVA rate | Input credit |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | RECOPE (Refinadora Costarricense de Petróleo) | Fuel at stations — DELTA, PUMA, etc. | 13% | Yes (business vehicles) |
 | PUMA Energy CR | Fuel | 13% | Yes |
 | Delta (RECOPE distributor) | Fuel stations | 13% | Yes |
 
 ### 3.6 Logistics and courier
 
+**Logistics and courier suppliers**
+
 | Supplier | Typical description | IVA rate | Input credit |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Correos de Costa Rica | State postal | 13% | Yes |
 | DHL Costa Rica | International courier | 0% (export) / 13% (domestic) | Yes |
 | FedEx Costa Rica | International courier | 0% / 13% | Yes |
@@ -170,8 +173,10 @@ Refuse and escalate to a CPA for:
 
 ### 3.7 Retail and office supplies
 
+**Retail and office supplies suppliers**
+
 | Supplier | Typical description | IVA rate | Input credit |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Walmart / Maxi Palí | Supermarket — mixed | 13%/1% mixed | Partial |
 | AutoMercado | Premium grocery | 13%/1% mixed | Partial |
 | Supermercados BM | Grocery | Mixed | Partial |
@@ -181,8 +186,10 @@ Refuse and escalate to a CPA for:
 
 ### 3.8 Software and digital services
 
+**Software and digital services suppliers**
+
 | Supplier | Typical description | IVA rate | Input credit |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Soft Expert (Sistemas) | ERP for SMEs | 13% | Yes |
 | CONTPAQi CR | Accounting software | 13% | Yes |
 | Alegra CR | Cloud invoicing | 13% | Yes |
@@ -194,8 +201,10 @@ Refuse and escalate to a CPA for:
 
 ### 3.9 Professional services
 
+**Professional services suppliers**
+
 | Supplier | Typical description | IVA rate | Input credit |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | CPA (Contador Público Autorizado) | Accounting, audit, tax | 13% | Yes |
 | Firma de abogados | Legal services | 13% | Yes |
 | Agencia de publicidad | Advertising | 13% | Yes |
@@ -204,15 +213,15 @@ Refuse and escalate to a CPA for:
 
 ### 3.10 Medical and insurance
 
+**Medical and insurance suppliers**
+
 | Supplier | Typical description | IVA rate | Input credit |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | CCSS (Caja Costarricense de Seguro Social) | Public healthcare | Exempt | No |
 | Private clinic / hospital | Private medical | 4% | Yes |
 | Pharmacy (medicines) | Prescription and OTC | 4% | Yes |
 | INS (Instituto Nacional de Seguros) | Insurance | Exempt | No |
 | ASSA CR | Private insurance | Exempt | No |
-
----
 
 ## Section 4 — Worked examples
 
@@ -234,8 +243,6 @@ Monto       : ₡14.700.000,00
 
 *Note: CRC amounts use comma for decimal: ₡14.700.000,00 = CRC 14,700,000.00*
 
----
-
 ### Example 2 — Canasta básica (1% rate)
 
 **Scenario:** Office buys basic food for staff cafetería at Walmart.
@@ -252,8 +259,6 @@ Monto       : -₡850.000,00
 - Walmart receipt: rice, beans, eggs, oil = ₡600,000 × 1% = ₡5,941 IVA; other items ₡250,000 × 13% = ₡28,761 IVA
 - Total IVA: ₡34,702 — partial input credit on business items
 - Canasta básica items: only those on DGT official list qualify for 1%
-
----
 
 ### Example 3 — ICE electricity + telecom
 
@@ -272,8 +277,6 @@ Monto       : -₡1.130.000,00
 - 100% business use — full input credit ₡130,000
 - Return entry: Línea 8 — ₡1,000,000 net; crédito fiscal: ₡130,000
 
----
-
 ### Example 4 — Export of services (0%)
 
 **Scenario:** Costa Rican IT company exports software services to US client — USD wire.
@@ -290,8 +293,6 @@ Monto       : ₡25.350.000,00 (USD 50.000)
 - Export of service consumed outside Costa Rica — 0% IVA
 - Issue Factura Electrónica de Exportación (tipo 09)
 - Return entry: Línea 5 — ₡25,350,000 | IVA: ₡0
-
----
 
 ### Example 5 — Private medical service (4%)
 
@@ -310,14 +311,12 @@ Monto       : -₡2.080.000,00
 - Input credit: ₡80,000 (business health programme — documented)
 - Return entry: Línea 9 (crédito fiscal 4%): ₡80,000
 
----
-
 ### Example 6 — Monthly return summary
 
-**Scenario:** Services company — April 2025.
+**Monthly return summary**
 
 | Item | Net (CRC) | IVA (CRC) |
-|---|---|---|
+| --- | --- | --- |
 | Domestic sales 13% | 100,000,000 | 13,000,000 |
 | Export sales (0%) | 25,000,000 | 0 |
 | Exempt sales | 5,000,000 | 0 |
@@ -325,45 +324,34 @@ Monto       : -₡2.080.000,00
 | Input purchases 13% | 50,000,000 | 6,500,000 |
 | Input medical 4% | 2,000,000 | 80,000 |
 | Total Input | 52,000,000 | 6,580,000 |
-| **Net IVA payable** | | **6,420,000** |
-
----
+| **Net IVA payable** |  | **6,420,000** |
 
 ## Section 5 — Tier 1 rules (compressed)
 
-**Rate assignment:**
-- 13%: standard for most goods and services
-- 4%: private medical and dental services, medicines (prescription and OTC)
-- 2%: private educational services (tuition), agricultural inputs
-- 1%: canasta básica — specific list of basic food items (DGT Resolución MH-DGT-RES-0024-2019)
-- 0%: exports of goods and services
-- Exempt: public education, public health (CCSS), financial services, insurance, residential rent ≤ ₡750,000/month, public transport, international transport
+## Rate assignment
 
-**Input credit:**
-- Credit at the rate paid on each purchase, for purchases used in taxable activities
-- Must have Factura Electrónica with clave numérica (50 digits)
-- Prorrata if mixed taxable/exempt business — escalate to CPA
-- Residential rent: provider must monitor rent threshold; above ₡750,000/month = taxable at 13%
+- **Rate assignment** — 13%: standard for most goods and services; 4%: private medical and dental services, medicines (prescription and OTC); 2%: private educational services (tuition), agricultural inputs; 1%: canasta básica — specific list of basic food items (DGT Resolución MH-DGT-RES-0024-2019); 0%: exports of goods and services; Exempt: public education, public health (CCSS), financial services, insurance, residential rent ≤ ₡750,000/month, public transport, international transport  _(DGT Resolución MH-DGT-RES-0024-2019)_
 
-**Filing mechanics:**
-- File Form D-104 monthly via ATV portal by 15th of following month
-- All B2B sales require Factura Electrónica (XML v4.3, transmitted to Hacienda in real time)
-- Remanente crédito fiscal carries forward indefinitely; refund rare in practice
+## Input credit
 
----
+- **Input credit rules** — Credit at the rate paid on each purchase, for purchases used in taxable activities; Must have Factura Electrónica with clave numérica (50 digits); Prorrata if mixed taxable/exempt business — escalate to CPA; Residential rent: provider must monitor rent threshold; above ₡750,000/month = taxable at 13%
+
+## Filing mechanics
+
+- **Filing mechanics** — File Form D-104 monthly via ATV portal by 15th of following month; All B2B sales require Factura Electrónica (XML v4.3, transmitted to Hacienda in real time); Remanente crédito fiscal carries forward indefinitely; refund rare in practice
 
 ## Section 6 — Tier 2 catalogue (genuinely data-unknowable items)
 
+**Tier 2 catalogue**
+
 | Item | Why unknowable | What to ask |
-|---|---|---|
+| --- | --- | --- |
 | Canasta básica (1%) | Only specific items on DGT list qualify — must check item-by-item | "What is the exact food product? Check against DGT Resolución 0024-2019 list." |
 | Residential rent rate | Exempt if ≤ ₡750,000/month; 13% if above | "What is the monthly rent amount? Provide lease agreement." |
 | Medical rate (4%) | Only licensed medical services qualify | "Is this a licensed health professional service? Or wellness/cosmetic?" |
 | Agriculture rate (2%) | Only agricultural inputs on approved list | "What is the input? Is it for direct agricultural production?" |
 | Vehicle — business vs personal | Input credit only for business use | "Is vehicle in company name? % business use?" |
 | Foreign digital service | Provider may be Hacienda-registered (charges 13%) or not (buyer must self-assess) | "Has the foreign provider registered with Hacienda? Do they issue a CR Factura?" |
-
----
 
 ## Section 7 — Excel working paper
 
@@ -375,11 +363,10 @@ Monto       : -₡2.080.000,00
 3. `D104_Summary` — monthly return totals
 4. `Tier2_Items` — awaiting client response
 
----
-
 ## Section 8 — Bank statement reading guide
 
 ### Banco Nacional (BNCR) format
+
 ```
 Fecha       : 15/04/2025
 Tipo        : Crédito — SINPE / Transferencia
@@ -389,18 +376,18 @@ Saldo       : ₡64.700.000,00
 ```
 
 ### BAC Credomatic format
+
 ```
 15/04/2025  |  Crédito  |  COMPANY NAME  |  +14.700.000,00  |  Saldo: 64.700.000,00
 ```
 
 ### Key patterns:
+
 - **CRC number format:** Period = thousands; comma = decimal: ₡14.700.000,00 = CRC 14,700,000.00
 - **SINPE / Transferencia:** Domestic wire — match to Factura Electrónica
 - **Débito Automático:** Direct debit — utilities; request Factura Electrónica from supplier
 - **Crédito ME:** Foreign currency credit — export or foreign service
 - **Clave numérica 50 digits:** Unique Factura Electrónica identifier — required for input credit
-
----
 
 ## Section 9 — Onboarding fallback
 
@@ -414,12 +401,12 @@ When client cannot provide Facturas Electrónicas:
 4. Issue data request for missing clave numérica references
 5. Warn client: Hacienda can disallow input without valid Factura Electrónica
 
----
-
 ## Section 10 — Reference material
 
+**Reference material**
+
 | Resource | Reference |
-|---|---|
+| --- | --- |
 | ATV — Administración Tributaria Virtual | https://www.hacienda.go.cr |
 | DGT — Dirección General de Tributación | hacienda.go.cr — legislación |
 | Ley del IVA (Ley 9635, Ley de Fortalecimiento) | Asamblea Legislativa — SINALEVI |
@@ -427,18 +414,11 @@ When client cannot provide Facturas Electrónicas:
 | Factura Electrónica technical spec | Hacienda XML v4.3 |
 | Reduced rate decree | Decreto Ejecutivo 41820-H |
 
-
----
-
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, EA, tax attorney, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
 
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
-
----
-
-<!-- openaccountants-cta-block -->
+The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
 
 ## Talk to a verified accountant
 
@@ -453,16 +433,22 @@ a formal engagement letter** — book a free 30-minute call:
 
 We'll route you to the named verifier covering your country or state. You can
 also see the full list of verified accountants at
-[openaccountants.com/network](https://www.openaccountants.com/network).
+[openaccountants.com/network](https://openaccountants.com/network).
 
-<!-- openaccountants-mcp-cta -->
+<!-- openaccountants-cta-block -->
 
-## The accountant-verified version lives in the connector
+---
 
-This file is the open, **research-grade draft**. The **accountant-verified**
-version of this skill is **not published to GitHub** — it is delivered free
-through the OpenAccountants MCP connector, where your AI agent loads the
-verified rules together with the name of the accountant who signed them off.
+## Talk to a verified accountant
 
-**→ Install the free connector:** <https://www.openaccountants.com/connect>
-**MCP endpoint:** `https://www.openaccountants.com/api/mcp`
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

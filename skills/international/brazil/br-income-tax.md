@@ -1,170 +1,200 @@
 ---
 name: br-income-tax
 description: >
-  Use this skill whenever asked about Brazilian individual income tax for self-employed individuals (autônomos / profissionais liberais). Trigger on phrases like "how much tax do I pay in Brazil", "DIRPF", "IRPF", "Carnê-Leão", "livro caixa", "imposto de renda", "CPF", "income tax return Brazil", "deductible expenses Brazil", "self-employed tax Brazil", "desconto simplificado", "INSS autônomo", "pró-labore", "DAS MEI", or any question about filing or computing income tax for a self-employed or freelance client in Brazil. This skill covers the DIRPF annual return, Carnê-Leão monthly estimated payments, progressive IRPF brackets, livro caixa, allowable deductions, simplified deduction (20% discount), mandatory filing thresholds, INSS contributions, and penalties. ALWAYS read this skill before touching any Brazilian income tax work.
 version: 2.0
 jurisdiction: BR
+tax_year: 2025
+last_updated: 2026-04-13
+verified_by: Ariane Marrocos
 tier: 2
-last_updated: 2026-06-12
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Brazilian Income Tax — Autônomo / Profissional Liberal (IRPF) v2.0
+# BR Income Tax
 
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+## Brasil — Imposto de Renda (IRPF e IRPJ) — Skill v2.1
 
-## Section 1 — Quick Reference
+## Verified rates & thresholds (accountant-reviewed)
 
-### IRPF Brackets 2025 (Calendar Year January–December 2025)
+> Reviewed against the cited tax authorities by **Ariane Marrocos** on 2026-06-03.
+> Items flagged for further clarification are tracked separately and excluded here.
+> This block is generated from verified `skill_facts` — edit the facts, not the prose.
 
-| Annual Taxable Income (BRL) | Rate | Dedução (Annual) |
-|---|---|---|
-| Up to 26,963.60 | Exempt | 0 |
-| 26,963.61 – 33,919.80 | 7.5% | 2,022.17 |
-| 33,919.81 – 45,012.60 | 15% | 4,566.23 |
-| 45,012.61 – 55,976.16 | 22.5% | 7,942.19 |
-| Over 55,976.16 | 27.5% | 10,740.98 |
+### IRPF Autônomo
 
-**Formula (annual):** Tax = (taxable income × rate) − dedução
+- **Até R$ 28.467,20** — Isento (dedução R$ 0)  _(Lei nº 7.713/1988 Lei nº 14.663/2023 Decreto nº 9.580/2018)_
+- **De R$ 28.467,21 até R$ 33.919,80** — 7,5% (dedução R$ 2.135,04)  _(Lei nº 7.713/1988 Lei nº 14.663/2023 Decreto nº 9.580/2018)_
+- **De R$ 33.919,81 até R$ 45.012,60** — 15% (dedução R$ 4.679,03)  _(Lei nº 7.713/1988 Lei nº 14.663/2023 Decreto nº 9.580/2018)_
+- **De R$ 45.012,61 até R$ 55.976,16** — 22,5% (dedução R$ 8.054,97)  _(Lei nº 7.713/1988 Lei nº 14.663/2023 Decreto nº 9.580/2018)_
+- **Acima de R$ 55.976,16** — 27,5% (dedução R$ 10.853,78)  _(Lei nº 7.713/1988 Lei nº 14.663/2023 Decreto nº 9.580/2018)_
+- **Limite MEI anual** — R$ 81.000  _(LC 123/2006)_
+- **DIRPF obrigatória acima de** — R$ 33.888 de rendimentos tributáveis  _(Instrução Normativa RFB nº 2.255/2025.)_
+- **Prazo da DIRPF** — 30 de maio do ano seguinte  _(Instrução Normativa RFB nº 2.255/2025 O prazo de entrega da DIRPF é definido anualmente pela Receita Federal por meio de Instrução Normativa. Para a DIRPF 2025, o prazo final de entrega foi 30 de maio de 2025.)_
+- **IRRF sobre serviços PJ** — 1,5% (padrão para serviços profissionais)  _(Decreto nº 9.580/2018 - art. 647. Os pagamentos efetuados por pessoa jurídica a outra pessoa jurídica pela prestação de serviços profissionais previstos no art. 647 do RIR/2018 estão sujeitos à retenção do IRRF à alíquota de 1,5%, observadas as exceções legais e o regime tributário do prestador.)_
+- **INSS retido por PJ** — INSS retido na (11% sobre o valor bruto da nota fiscal/fatura de serviços sujeitos à retenção previdenciária (cessão de mão de obra ou empreitada))  _(art. 31 da Lei nº 8.212/1991)_
+- **Obrigatoriedade** — A pessoa física residente no Brasil que receber rendimentos de outras pessoas físicas ou de (s situadas no exterior deve apurar mensalmente o imposto devido por meio do Carnê-Leão, observadas as regras do RIR/2018 e da Receita Federal.)  _(Decreto nº 9.580/2018 Lei nº 7.713/1988)_
+- **Rendimentos de PJ** — NÃO geram Carnê-Leão (sujeitos a IRRF)  _(Decreto nº 9.580/2018 Lei nº 7.713/1988 Os rendimentos pagos por pessoa jurídica à pessoa física, em regra, não estão sujeitos ao Carnê-Leão, pois são submetidos ao regime de retenção e controle pela; pagadora, conforme as regras do RIR/2018.)_
 
-**Monthly Carnê-Leão brackets** (divide annual thresholds by 12, different monthly table published by Receita Federal each year — always confirm current Carnê-Leão monthly table).
+## Seção 1 — Referência rápida
 
-### Desconto Simplificado (Simplified Deduction)
+### Reforma tributária 2026 — impacto no IR
 
-Taxpayers may elect the **desconto simplificado** instead of livro caixa deductions:
-- Deduction: **20% of gross income**, capped at **BRL 16,754.34 per year**
-- No receipts required
-- Cannot be combined with livro caixa deductions
-- Beneficial when actual expenses < 20% of gross
+A Reforma Tributária de 2026 (EC 132/2023, LC 214/2025, LC 227/2026) substitui apenas os tributos sobre o consumo (PIS, Cofins, ICMS, ISS, IPI) por CBS+IBS. **O IRPF e o IRPJ permanecem inalterados** estruturalmente — alíquotas, faixas, deduções, prazos, regimes (Lucro Real/Presumido/Arbitrado) seguem como hoje. Cuidado apenas com a interação contábil: créditos de CBS/IBS aparecem no resultado e podem alterar lucro contábil → lucro tributável.
 
-### Livro Caixa (Actual Expense Deduction)
+### Faixas do IRPF 2025 (ano-calendário janeiro–dezembro 2025)
 
-Under livro caixa, actual documented professional expenses are deducted from gross Carnê-Leão income. Requires contemporaneous records. Replaces the 20% desconto simplificado (must choose one).
+**Faixas do IRPF 2025**
 
-### INSS Contributions for Autônomos
+| Faixa de renda anual tributável (BRL) | Alíquota | Dedução (Anual) |
+| --- | --- | --- |
+| Até 26.963,60 | Isento | 0 |
+| 26.963,61 – 33.919,80 | 7,5% | 2.022,17 |
+| 33.919,81 – 45.012,60 | 15% | 4.566,23 |
+| 45.012,61 – 55.976,16 | 22,5% | 7.942,19 |
+| Acima de 55.976,16 | 27,5% | 10.740,98 |
 
-| Contributor Type | Rate | Cap (2025) |
-|---|---|---|
-| Autônomo (contribuinte individual) | 20% | BRL 908.46/month (teto INSS: BRL 7,786.02 × 11.67%) |
-| Empregador retaining autônomo | 20% (employer) | On each payment |
-| Microempreendedor Individual (MEI) | Fixed DAS ~BRL 75/month | Separate regime |
+- **Fórmula (anual)** — Imposto = (renda tributável × alíquota) − dedução
 
-INSS contributions paid are **fully deductible** from IRPF taxable income (livro caixa or as separate deduction in DIRPF).
+**Faixas mensais do Carnê-Leão** (dividir os limites anuais por 12; tabela mensal específica é publicada pela Receita Federal a cada ano — sempre confirmar a tabela mensal vigente do Carnê-Leão).
 
-### Carnê-Leão (Monthly Estimated Payments)
+### IRPJ — alíquotas e regimes
 
-Autônomos who receive income from Brazilian individuals (pessoas físicas) or foreign sources must pay Carnê-Leão monthly by the last business day of the following month.
+- **IRPJ** — 15% sobre o lucro tributável, mais adicional de 10% sobre a parcela do lucro que ultrapassar R$ 240.000 anuais (R$ 20.000/mês)  _(Lei 9.249/1995, Lei 9.430/1996, IN RFB 1.700/2017)_
+- **Lucro Real** — apuração pelo lucro contábil ajustado por adições/exclusões; obrigatório para receita > R$ 78 milhões/ano e para determinadas atividades  _(Lei 9.249/1995, Lei 9.430/1996, IN RFB 1.700/2017)_
+- **Lucro Presumido** — base presumida sobre receita bruta (percentuais de 1,6% a 32% conforme atividade); opcional para receita ≤ R$ 78 milhões/ano  _(Lei 9.249/1995, Lei 9.430/1996, IN RFB 1.700/2017)_
+- **Lucro Arbitrado** — aplicado quando a escrituração é imprestável ou ausente; bases majoradas  _(Lei 9.249/1995, Lei 9.430/1996, IN RFB 1.700/2017)_
 
-Income from legal entities (pessoas jurídicas) → PJ withholds 1.5% or 11% IRRF (depending on service type) — credit against annual DIRPF.
+Referência: Lei 9.249/1995, Lei 9.430/1996, IN RFB 1.700/2017.
 
-| Source | Monthly Obligation |
-|---|---|
-| Income from PF (individuals) or abroad | Carnê-Leão required |
-| Income from PJ (companies) | IRRF withheld at source (1.5% + INSS 11%) |
+### Desconto Simplificado
 
-### Conservative Defaults
+- **Desconto simplificado** — O contribuinte pode optar pelo desconto simplificado em vez das deduções via livro caixa: Dedução: 20% da renda bruta, limitada a BRL 16.754,34 por ano; Não exige comprovantes; Não pode ser combinado com as deduções do livro caixa; Vantajoso quando as despesas reais < 20% do bruto
 
-| Situation | Default Assumption |
-|---|---|
-| Desconto simplificado vs. livro caixa — unclear | Compare both: if actual expenses < 20% of gross, simplificado is better; present both |
-| INSS withheld by PJ vs. paid by autônomo unclear | Flag — depends on whether client is PJ or PF |
-| Payment from PJ: IRRF rate unclear | Apply 1.5% (professional services) as default; flag |
-| Foreign income | Treat as Carnê-Leão obligatory; flag for treaty analysis |
-| MEI vs. autônomo status unclear | Do NOT proceed — status determines entire regime |
-| Cash income without Recibo / NF | Taxable — flag; Receita Federal audits cash-heavy returns |
+### Livro Caixa (dedução das despesas reais)
 
-### Red Flag Thresholds
+- **Livro caixa** — No livro caixa, as despesas profissionais reais e documentadas são deduzidas da renda bruta do Carnê-Leão. Exige registros contemporâneos. Substitui o desconto simplificado de 20% (é necessário escolher um).
 
-| Flag | Threshold |
-|---|---|
-| Gross receipts > BRL 81,000/year | Was MEI? — MEI threshold BRL 81,000; exceeding triggers deregistration |
-| No Carnê-Leão payments made | Check if all income was from PJs (withheld at source) |
-| Total receipts > BRL 33,888 | DIRPF filing mandatory |
-| INSS contributions appear zero | Verify — autônomos have INSS obligations |
-| Single PJ source > 90% of income | May indicate employment relationship |
+### Contribuições ao INSS para autônomos
 
----
+**Contribuições ao INSS para autônomos**
 
-## Section 2 — Required Inputs + Refusal Catalogue
+| Tipo de contribuinte | Alíquota | Teto (2025) |
+| --- | --- | --- |
+| Autônomo (contribuinte individual) | 20% | BRL 908,46/mês (teto INSS: BRL 7.786,02 × 11,67%) |
+| Empregador retendo do autônomo | 20% (empregador) | Sobre cada pagamento |
+| Microempreendedor Individual (MEI) | DAS fixo ~BRL 75/mês | Regime separado |
 
-### Required Inputs
+- **Dedutibilidade INSS** — As contribuições pagas ao INSS são integralmente dedutíveis da base tributável do IRPF (via livro caixa ou como dedução separada na DIRPF).
 
-Before computing Brazilian IRPF, collect:
+### Carnê-Leão (pagamentos mensais estimados)
 
-1. **Total gross receipts** — from PF and PJ sources separately (monthly breakdown)
-2. **IRRF withholding certificates (Comprovantes de Rendimentos)** — from each PJ client
-3. **Carnê-Leão payments made** — monthly receipts (DARF codes 0190/5936)
-4. **INSS contributions paid** — annual summary from INSS or GPS receipts
-5. **Livro caixa or expense records** — if claiming actual expenses
-6. **Bank statements** — 12 months (January–December)
-7. **Deductions for dependants** — BRL 2,275.08 per dependant per year
-8. **Health/education expenses** — for personal deductions (deduções de saúde/educação)
-9. **Mortgage interest / financing** — if deducting (only on primary residence)
-10. **Other income** — Categoria I (work), salary (se houver vínculo), rendimentos isentos
+- **Obrigação Carnê-Leão** — Os autônomos que recebem rendimentos de pessoas físicas (PF) brasileiras ou de fontes no exterior devem recolher o Carnê-Leão mensalmente, até o último dia útil do mês seguinte.
+- **Rendimentos de PJ - IRRF** — Rendimentos de pessoas jurídicas (PJ) → a PJ retém 1,5% ou 11% de IRRF (conforme o tipo de serviço) — crédito a compensar na DIRPF anual.
 
-### Refusal Catalogue
+**Carnê-Leão (pagamentos mensais estimados)**
 
-| Code | Situation | Action |
-|---|---|---|
-| R-BR-1 | Client is MEI (Microempreendedor Individual) — not autônomo | Stop — MEI pays DAS (INSS + ICMS/ISS) not IRPF on business income; IRPF only on salary drawn; refer to MEI-specific skill |
-| R-BR-2 | No Comprovantes de Rendimentos from PJ clients | Stop — cannot compute IRRF credit without withholding certificates |
-| R-BR-3 | Income from abroad with no FX conversion | Stop — all amounts must be in BRL at date of receipt (Banco Central PTAX rate) |
-| R-BR-4 | Mixed Simples Nacional / autônomo income | Flag — Simples Nacional company income flows differently; do not mix |
-| R-BR-5 | Client claims no Carnê-Leão needed despite PF or foreign income | Flag — if any PF or foreign source, Carnê-Leão is mandatory; non-payment triggers multa |
+| Fonte | Obrigação mensal |
+| --- | --- |
+| Renda de PF (pessoas físicas) ou exterior | Carnê-Leão obrigatório |
+| Renda de PJ (empresas) | IRRF retido na fonte (1,5% + INSS 11%) |
 
----
+### Padrões conservadores
 
-## Section 3 — Transaction Pattern Library
+**Padrões conservadores**
 
-### Income Patterns
+| Situação | Premissa padrão |
+| --- | --- |
+| Desconto simplificado vs. livro caixa — indefinido | Comparar ambos: se despesas reais < 20% do bruto, simplificado é melhor; apresentar os dois |
+| INSS retido pela PJ vs. pago pelo autônomo indefinido | Sinalizar — depende de o cliente ser PJ ou PF |
+| Pagamento de PJ: alíquota de IRRF indefinida | Aplicar 1,5% (serviços profissionais) como padrão; sinalizar |
+| Renda do exterior | Tratar como Carnê-Leão obrigatório; sinalizar para análise de tratado |
+| Status MEI vs. autônomo indefinido | NÃO prosseguir — o status determina todo o regime |
+| Receita em espécie sem Recibo / NF | Tributável — sinalizar; a Receita Federal fiscaliza declarações com muito caixa |
 
-| # | Narration Pattern | Tax Line | Notes |
-|---|---|---|---|
-| I-01 | `TED DE [client name]` / `PIX DE [client]` | Gross receipts — IRPF income | Standard TED/PIX credit from client |
-| I-02 | `PIX RECEBIDO [client]` | Gross receipts — IRPF income | PIX (instant payment) from client |
-| I-03 | `DOC DE [client]` | Gross receipts — IRPF income | DOC (legacy inter-bank transfer) |
-| I-04 | `STRIPE PAYOUT` / `STRIPE PAGAMENTOS` | Gross receipts — foreign-source | Stripe Brazil or foreign payout; Carnê-Leão if from foreign entity; BRL conversion at PTAX |
-| I-05 | `PAYPAL SAQUE` / `PAYPAL TRANSFERÊNCIA` | Gross receipts — foreign-source | PayPal; Carnê-Leão applies; BRL conversion at PTAX |
-| I-06 | `PAGAMENTO MERCADO PAGO` / `MERCADOPAGO` | Gross receipts — IRPF income | Mercado Pago settlement; net payout — gross-up if fees deducted |
-| I-07 | `PAGAMENTO HOTMART` / `HOTMART SAQUE` | Gross receipts — IRPF income | Hotmart (digital products platform) payout; gross-up |
-| I-08 | `KIWIFY SAQUE` / `EDUZZ PAGAMENTO` | Gross receipts — IRPF income | Brazilian digital product platforms; gross-up |
-| I-09 | `NOTA FISCAL [number]` / `NF SERVIÇOS` | Gross receipts — PJ withholding | If from PJ, IRRF and INSS may have been withheld; cross-check with Comprovante |
-| I-10 | `RESTITUIÇÃO IRPF RECEITA` | NOT income — IRPF refund | Restituição is not taxable income |
-| I-11 | `RENDIMENTO POUPANÇA` / `JUROS CDB` | Rendimentos isentos (up to certain limits) or tributados | Bank interest: LCA/LCI may be exempt; CDB subject to IOF/IR — flag |
-| I-12 | `DIVIDENDOS` (from company) | Isentos (if PJ distributing dividends under current rules) | Dividends currently exempt from IRPF in Brazil (under reform discussion — verify) |
+### Limites de alerta (red flags)
 
-### Expense Patterns
+**Limites de alerta (red flags)**
 
-| # | Narration Pattern | Tax Line | Notes |
-|---|---|---|---|
-| E-01 | `ALUGUEL ESCRITÓRIO` / `ALUGUEL SALA COMERCIAL` | Rent — livro caixa deductible | Home office: proportional — requires documented calculation |
-| E-02 | `ENERGIA ELÉTRICA` / `CONTA DE LUZ` / `CPFL` / `CEMIG` | Utilities — proportional deductible | Office proportion only; home = mixed |
-| E-03 | `TELEFONE` / `INTERNET` / `VIVO` / `CLARO` / `TIM` / `OI` | Phone/internet — deductible (business portion) | Document business percentage |
-| E-04 | `ADOBE` / `MICROSOFT 365` / `GOOGLE WORKSPACE` | Software — livro caixa deductible | Professional software |
-| E-05 | `CONTADOR` / `ESCRITÓRIO CONTÁBIL` | Accounting fees — livro caixa deductible | Mandatory for many autônomos |
-| E-06 | `PASSAGEM AÉREA` / `LATAM` / `GOL` / `AZUL` | Air travel — deductible (business purpose) | Require destination and purpose |
-| E-07 | `HOTEL` / `BOOKING.COM` / `AIRBNB` | Accommodation — deductible (business travel) | Business purpose required |
-| E-08 | `GUIA GPS` / `INSS GPS` / `CONTRIBUIÇÃO INSS` | INSS contributions — fully deductible | GPS payment code; or payroll withholding |
-| E-09 | `DARF CARNÊ-LEÃO` / `DARF 0190` | Carnê-Leão payments — NOT deductible | Tax prepayments; credit against annual IRPF |
-| E-10 | `DARF IRPF` / `SALDO DIRPF` | Annual tax payment — NOT deductible | Tax payment |
-| E-11 | `SEGURO PROFISSIONAL` / `SEGURO RC PROFISSIONAL` | Professional insurance — livro caixa deductible | |
-| E-12 | `PLANO DE SAÚDE` | Health insurance — personal deduction (DIRPF) | Not livro caixa — separate deduction in DIRPF Ficha de Deduções |
-| E-13 | `ESCOLA` / `MENSALIDADE ENSINO` | Education — personal deduction (cap BRL 3,561.50/year) | Not livro caixa; DIRPF personal deduction |
-| E-14 | `COMBUSTÍVEL` / `GASOLINA` / `POSTO` | Fuel — deductible (vehicle used professionally) | Document business km; mixed use = proportion |
-| E-15 | `MATERIAL DE ESCRITÓRIO` / `PAPELARIA` | Office supplies — livro caixa deductible | |
-| E-16 | `TARIFA BANCÁRIA` / `TED ENVIADO` / `IOF` | Bank fees — livro caixa deductible | Service charges on professional account |
-| E-17 | `ASSINATURA [platform]` / `MENSALIDADE` | Platform/tool subscriptions — deductible | Professional tools |
-| E-18 | `CURSOS` / `TREINAMENTO` / `CAPACITAÇÃO` | Training — livro caixa deductible | Professional development |
-| E-19 | `REEMBOLSO [client]` | Non-deductible (offset against non-taxable reimbursement) | If client reimbursement, also reduce income accordingly |
-| E-20 | `NOTA DE DÉBITO [supplier]` / `NF COMPRAS` | Purchases for professional activity — livro caixa deductible | Require NF-e |
+| Alerta | Limite |
+| --- | --- |
+| Receita bruta > BRL 81.000/ano | Era MEI? — limite MEI BRL 81.000; ultrapassar gera desenquadramento |
+| Nenhum pagamento de Carnê-Leão feito | Verificar se toda a renda veio de PJs (retido na fonte) |
+| Receita total > BRL 33.888 | DIRPF obrigatória |
+| Contribuições ao INSS aparecem zeradas | Verificar — autônomos têm obrigação de INSS |
+| Uma única fonte PJ > 90% da renda | Pode indicar vínculo empregatício |
 
----
+## Seção 2 — Inputs obrigatórios + catálogo de recusas
 
-## Section 4 — Worked Examples
+### Inputs obrigatórios
 
-### Example 1 — Itaú Unibanco (São Paulo, IT Consultant)
+- **Lista de inputs obrigatórios** — Antes de calcular o IRPF brasileiro, colete: 1. Receita bruta total — separadamente por fontes PF e PJ (detalhamento mensal); 2. Comprovantes de Rendimentos (IRRF) — de cada cliente PJ; 3. Pagamentos de Carnê-Leão realizados — recibos mensais (DARF códigos 0190/5936); 4. Contribuições ao INSS pagas — resumo anual do INSS ou recibos GPS; 5. Livro caixa ou registros de despesas — se for utilizar despesas reais; 6. Extratos bancários — 12 meses (janeiro–dezembro); 7. Deduções por dependentes — BRL 2.275,08 por dependente por ano; 8. Despesas com saúde/educação — para deduções pessoais (deduções de saúde/educação); 9. Juros de financiamento imobiliário — se for deduzir (apenas residência principal); 10. Outras rendas — Categoria I (trabalho), salário (se houver vínculo), rendimentos isentos
 
-**Bank:** Itaú Unibanco PDF/CSV statement
-**Client:** Carlos Mendes, IT consultant, São Paulo, mixed PJ and PF clients
+### Catálogo de recusas
+
+**Catálogo de recusas**
+
+| Código | Situação | Ação |
+| --- | --- | --- |
+| R-BR-1 | Cliente é MEI (Microempreendedor Individual) — não autônomo | Parar — MEI paga DAS (INSS + ICMS/ISS), não IRPF sobre receita do negócio; IRPF apenas sobre o pró-labore retirado; redirecionar para a skill específica de MEI |
+| R-BR-2 | Sem Comprovantes de Rendimentos de clientes PJ | Parar — não é possível calcular o crédito de IRRF sem os comprovantes de retenção |
+| R-BR-3 | Renda do exterior sem conversão cambial | Parar — todos os valores devem estar em BRL na data do recebimento (taxa PTAX do Banco Central) |
+| R-BR-4 | Renda mista Simples Nacional / autônomo | Sinalizar — a renda da empresa do Simples Nacional flui de forma diferente; não misturar |
+| R-BR-5 | Cliente alega que não precisa de Carnê-Leão apesar de ter renda PF ou do exterior | Sinalizar — se houver qualquer fonte PF ou estrangeira, o Carnê-Leão é obrigatório; o não pagamento gera multa |
+
+## Seção 3 — Biblioteca de padrões de transações
+
+### Padrões de receita
+
+**Padrões de receita**
+
+| # | Padrão de histórico | Linha tributária | Observações |
+| --- | --- | --- | --- |
+| I-01 | `TED DE [nome do cliente]` / `PIX DE [cliente]` | Receita bruta — IRPF | Crédito padrão TED/PIX do cliente |
+| I-02 | `PIX RECEBIDO [cliente]` | Receita bruta — IRPF | PIX (pagamento instantâneo) do cliente |
+| I-03 | `DOC DE [cliente]` | Receita bruta — IRPF | DOC (transferência interbancária legada) |
+| I-04 | `STRIPE PAYOUT` / `STRIPE PAGAMENTOS` | Receita bruta — fonte estrangeira | Stripe Brasil ou repasse externo; Carnê-Leão se vier de entidade estrangeira; conversão para BRL via PTAX |
+| I-05 | `PAYPAL SAQUE` / `PAYPAL TRANSFERÊNCIA` | Receita bruta — fonte estrangeira | PayPal; Carnê-Leão aplicável; conversão para BRL via PTAX |
+| I-06 | `PAGAMENTO MERCADO PAGO` / `MERCADOPAGO` | Receita bruta — IRPF | Liquidação Mercado Pago; valor líquido — efetuar gross-up se houve dedução de taxas |
+| I-07 | `PAGAMENTO HOTMART` / `HOTMART SAQUE` | Receita bruta — IRPF | Repasse Hotmart (plataforma de produtos digitais); gross-up |
+| I-08 | `KIWIFY SAQUE` / `EDUZZ PAGAMENTO` | Receita bruta — IRPF | Plataformas brasileiras de produtos digitais; gross-up |
+| I-09 | `NOTA FISCAL [número]` / `NF SERVIÇOS` | Receita bruta — retenção de PJ | Se de PJ, IRRF e INSS podem ter sido retidos; conferir com o Comprovante |
+| I-10 | `RESTITUIÇÃO IRPF RECEITA` | NÃO é receita — restituição de IRPF | Restituição não é renda tributável |
+| I-11 | `RENDIMENTO POUPANÇA` / `JUROS CDB` | Rendimentos isentos (até certos limites) ou tributados | Juros bancários: LCA/LCI podem ser isentos; CDB sujeito a IOF/IR — sinalizar |
+| I-12 | `DIVIDENDOS` (de empresa) | Isentos (se PJ distribuindo dividendos pelas regras atuais) | Dividendos atualmente isentos de IRPF no Brasil (em discussão na reforma — verificar) |
+
+### Padrões de despesa
+
+**Padrões de despesa**
+
+| # | Padrão de histórico | Linha tributária | Observações |
+| --- | --- | --- | --- |
+| E-01 | `ALUGUEL ESCRITÓRIO` / `ALUGUEL SALA COMERCIAL` | Aluguel — dedutível via livro caixa | Home office: proporcional — exige cálculo documentado |
+| E-02 | `ENERGIA ELÉTRICA` / `CONTA DE LUZ` / `CPFL` / `CEMIG` | Utilidades — dedutíveis proporcionalmente | Apenas a parte do escritório; em casa = uso misto |
+| E-03 | `TELEFONE` / `INTERNET` / `VIVO` / `CLARO` / `TIM` / `OI` | Telefone/internet — dedutível (parte profissional) | Documentar o percentual de uso profissional |
+| E-04 | `ADOBE` / `MICROSOFT 365` / `GOOGLE WORKSPACE` | Software — dedutível via livro caixa | Software profissional |
+| E-05 | `CONTADOR` / `ESCRITÓRIO CONTÁBIL` | Honorários contábeis — dedutíveis via livro caixa | Obrigatório para muitos autônomos |
+| E-06 | `PASSAGEM AÉREA` / `LATAM` / `GOL` / `AZUL` | Viagem aérea — dedutível (finalidade profissional) | Exigir destino e finalidade |
+| E-07 | `HOTEL` / `BOOKING.COM` / `AIRBNB` | Hospedagem — dedutível (viagem profissional) | Finalidade profissional obrigatória |
+| E-08 | `GUIA GPS` / `INSS GPS` / `CONTRIBUIÇÃO INSS` | Contribuições ao INSS — integralmente dedutíveis | Pagamento via GPS; ou retido em folha |
+| E-09 | `DARF CARNÊ-LEÃO` / `DARF 0190` | Pagamentos de Carnê-Leão — NÃO dedutíveis | Antecipações de imposto; crédito contra o IRPF anual |
+| E-10 | `DARF IRPF` / `SALDO DIRPF` | Pagamento anual de imposto — NÃO dedutível | Pagamento de tributo |
+| E-11 | `SEGURO PROFISSIONAL` / `SEGURO RC PROFISSIONAL` | Seguro profissional — dedutível via livro caixa |  |
+| E-12 | `PLANO DE SAÚDE` | Plano de saúde — dedução pessoal (DIRPF) | Não vai no livro caixa — dedução separada na Ficha de Deduções da DIRPF |
+| E-13 | `ESCOLA` / `MENSALIDADE ENSINO` | Educação — dedução pessoal (limite BRL 3.561,50/ano) | Não vai no livro caixa; dedução pessoal na DIRPF |
+| E-14 | `COMBUSTÍVEL` / `GASOLINA` / `POSTO` | Combustível — dedutível (veículo usado profissionalmente) | Documentar km de uso profissional; uso misto = proporção |
+| E-15 | `MATERIAL DE ESCRITÓRIO` / `PAPELARIA` | Material de escritório — dedutível via livro caixa |  |
+| E-16 | `TARIFA BANCÁRIA` / `TED ENVIADO` / `IOF` | Tarifas bancárias — dedutíveis via livro caixa | Encargos sobre conta profissional |
+| E-17 | `ASSINATURA [plataforma]` / `MENSALIDADE` | Assinaturas de plataformas/ferramentas — dedutíveis | Ferramentas profissionais |
+| E-18 | `CURSOS` / `TREINAMENTO` / `CAPACITAÇÃO` | Treinamento — dedutível via livro caixa | Desenvolvimento profissional |
+| E-19 | `REEMBOLSO [cliente]` | Não dedutível (compensar com o reembolso não tributável) | Se for reembolso do cliente, reduzir a receita correspondente também |
+| E-20 | `NOTA DE DÉBITO [fornecedor]` / `NF COMPRAS` | Compras para a atividade profissional — dedutíveis via livro caixa | Exigir NF-e |
+
+## Seção 4 — Exemplos resolvidos
+
+### Exemplo 1 — Itaú Unibanco (São Paulo, Consultor de TI)
+
+**Banco:** Extrato Itaú Unibanco PDF/CSV
+**Cliente:** Carlos Mendes, consultor de TI, São Paulo, clientes PJ e PF mistos
 
 ```
 Data;Histórico;Valor;Tipo
@@ -180,323 +210,324 @@ Data;Histórico;Valor;Tipo
 10/10/2025;LATAM VIAGEM NEGÓCIOS;650,00;D
 ```
 
-**Step 1 — Income Classification**
+**Passo 1 — Classificação da receita**
 
-| Narration | Type | Gross Amount | Notes |
-|---|---|---|---|
-| PIX DE EMPRESA ALPHA (PJ) | PJ income | BRL 7,500 | IRRF and INSS likely withheld — check Comprovante |
-| PIX DE STARTUP BETA (PJ) | PJ income | BRL 5,500 | Same — check Comprovante |
-| STRIPE PAYOUT | Foreign/PJ | BRL 4,200 | Carnê-Leão unless Stripe Brazil PJ withheld |
-| TED DE FREELANCER PF | PF income | BRL 1,800 | Carnê-Leão mandatory |
-| PIX DE GAMMA TECH (PJ) | PJ income | BRL 8,200 | Check Comprovante |
+| Histórico | Tipo | Valor bruto | Observações |
+| --- | --- | --- | --- |
+| PIX DE EMPRESA ALPHA (PJ) | Receita PJ | BRL 7.500 | IRRF e INSS provavelmente retidos — verificar Comprovante |
+| PIX DE STARTUP BETA (PJ) | Receita PJ | BRL 5.500 | Idem — verificar Comprovante |
+| STRIPE PAYOUT | Estrangeira/PJ | BRL 4.200 | Carnê-Leão a menos que Stripe Brasil PJ tenha retido |
+| TED DE FREELANCER PF | Receita PF | BRL 1.800 | Carnê-Leão obrigatório |
+| PIX DE GAMMA TECH (PJ) | Receita PJ | BRL 8.200 | Verificar Comprovante |
 
-Assume Comprovantes show IRRF withheld from PJ clients at 1.5% each. Total PJ gross receipts (annualised): BRL 65,000; PF + foreign: BRL 24,000. Total: BRL 89,000.
+Supondo que os Comprovantes mostrem IRRF retido pelos clientes PJ a 1,5% cada. Receita bruta total PJ (anualizada): BRL 65.000; PF + exterior: BRL 24.000. Total: BRL 89.000.
 
-**Step 2 — Livro Caixa vs. Desconto Simplificado**
+Desconto simplificado: 20% × BRL 89.000 = BRL 17.800 → limitado a BRL 16.754,34
+Livro caixa (real): INSS BRL 18.691,20, contabilidade BRL 9.600, software BRL 3.600, tarifas bancárias BRL 144, viagem BRL 650 = BRL 32.685,20
 
-Desconto simplificado: 20% × BRL 89,000 = BRL 17,800 → capped at BRL 16,754.34
-Livro caixa (actual): INSS BRL 18,691.20, accounting BRL 9,600, software BRL 3,600, bank fees BRL 144, travel BRL 650 = BRL 32,685.20
-
-Livro caixa > simplificado → **livro caixa preferred** for Carlos.
-
-**Step 3 — Taxable Income**
+Livro caixa > simplificado → **livro caixa é o preferido** para o Carlos.
 
 ```
-Gross income:           BRL 89,000.00
-Less livro caixa:       BRL 32,685.20
-Taxable income:         BRL 56,314.80
+Renda bruta:            BRL 89.000,00
+(−) livro caixa:        BRL 32.685,20
+Renda tributável:       BRL 56.314,80
 ```
 
-**Step 4 — IRPF**
-
 ```
-BRL 56,314.80 × 27.5% − BRL 10,740.98 = BRL 15,486.57 − BRL 10,740.98 = BRL 4,745.59
+BRL 56.314,80 × 27,5% − BRL 10.740,98 = BRL 15.486,57 − BRL 10.740,98 = BRL 4.745,59
 ```
 
-**Step 5 — Credits**
-
 ```
-IRRF withheld by PJs (1.5% × BRL 65,000):     BRL 975.00
-Carnê-Leão paid:                               BRL 850.00 × months paid
-IRPF balance due:                              BRL 4,745.59 − BRL 975 − BRL [carnê total]
+IRRF retido pelas PJs (1,5% × BRL 65.000):     BRL 975,00
+Carnê-Leão pago:                                BRL 850,00 × meses pagos
+Saldo de IRPF a pagar:                          BRL 4.745,59 − BRL 975 − BRL [total carnê]
 ```
 
----
+### Exemplo 2 — Bradesco (Rio de Janeiro, Arquiteta — desconto simplificado)
 
-### Example 2 — Bradesco (Rio de Janeiro, Architect — Desconto Simplificado)
+**Banco:** Extrato Bradesco
+**Cliente:** Ana Lima, arquiteta, Rio de Janeiro
 
-**Bank:** Bradesco statement
-**Client:** Ana Lima, architect, Rio de Janeiro
+Renda bruta: BRL 48.000 (toda de clientes PJ)
+IRRF retido pelas PJs: 1,5% × BRL 48.000 = BRL 720
 
-Gross income: BRL 48,000 (all from PJ clients)
-IRRF withheld by PJs: 1.5% × BRL 48,000 = BRL 720
+Desconto simplificado: 20% × BRL 48.000 = BRL 9.600 (< limite) — aplicar
+Renda tributável: BRL 48.000 − BRL 9.600 = BRL 38.400
 
-Desconto simplificado: 20% × BRL 48,000 = BRL 9,600 (< cap) — apply
-Taxable income: BRL 48,000 − BRL 9,600 = BRL 38,400
+IRPF: BRL 38.400 × 22,5% − BRL 7.942,19 = BRL 8.640 − BRL 7.942,19 = **BRL 697,81**
+(−) crédito de IRRF: BRL 720
 
-IRPF: BRL 38,400 × 22.5% − BRL 7,942.19 = BRL 8,640 − BRL 7,942.19 = **BRL 697.81**
-Less IRRF credit: BRL 720
+Resultado: **restituição de BRL 22,19** (IRRF > IRPF)
 
-Result: **BRL 22.19 refund** (IRRF > IRPF)
+Observação: deduzir também o INSS separadamente na DIRPF (Ficha de Deduções). Se INSS pago BRL 6.000:
+Tributável: BRL 38.400 − BRL 6.000 = BRL 32.400
+IRPF: BRL 32.400 × 15% − BRL 4.566,23 = BRL 4.860 − BRL 4.566,23 = BRL 293,77
+Com crédito de IRRF: **restituição de BRL 426,23**
 
-Note: Also deduct INSS separately in DIRPF (Ficha de Deduções). If INSS BRL 6,000 paid:
-Taxable: BRL 38,400 − BRL 6,000 = BRL 32,400
-IRPF: BRL 32,400 × 15% − BRL 4,566.23 = BRL 4,860 − BRL 4,566.23 = BRL 293.77
-With IRRF credit: **refund BRL 426.23**
+### Exemplo 3 — Banco do Brasil (Brasília, Médico)
 
----
+**Banco:** Extrato BB
+**Cliente:** Dr. Paulo Saraiva, médico, Brasília, recebe de hospital PJ e pacientes PF
 
-### Example 3 — Banco do Brasil (Brasília, Doctor)
+Renda do hospital PJ (Comprovante mostra): BRL 120.000 brutos; IRRF retido 1,5% = BRL 1.800; INSS retido 11% = BRL 13.200
+Pacientes PF (dinheiro/PIX): BRL 36.000 — obrigação de Carnê-Leão
 
-**Bank:** BB statement
-**Client:** Dr. Paulo Saraiva, physician, Brasília, receives from PJ hospital and PF patients
+Livro caixa: INSS BRL 13.200 (retido pelo empregador) + INSS próprio BRL 5.400 (contribuição complementar) + aluguel de clínica BRL 18.000 + equipamentos BRL 8.000 = BRL 44.600
 
-PJ hospital income (Comprovante shows): BRL 120,000 gross; IRRF withheld 1.5% = BRL 1,800; INSS withheld 11% = BRL 13,200
-PF patients (cash/PIX): BRL 36,000 — Carnê-Leão obligation
+Receita bruta total: BRL 156.000
+(−) livro caixa: BRL 44.600
+Tributável: BRL 111.400
 
-Livro caixa: INSS BRL 13,200 (employer-withheld) + own INSS BRL 5,400 (contribuição complementar) + clinic rent BRL 18,000 + equipment BRL 8,000 = BRL 44,600
+IRPF: BRL 111.400 × 27,5% − BRL 10.740,98 = BRL 30.635 − BRL 10.740,98 = **BRL 19.894,02**
+(−) IRRF: BRL 1.800 e pagamentos de Carnê-Leão
 
-Total gross: BRL 156,000
-Less livro caixa: BRL 44,600
-Taxable: BRL 111,400
+Alerta de alta renda: BRL 156.000 brutos → verificar se todos os Carnê-Leão mensais sobre renda PF foram pagos; penalidade se em atraso.
 
-IRPF: BRL 111,400 × 27.5% − BRL 10,740.98 = BRL 30,635 − BRL 10,740.98 = **BRL 19,894.02**
-Less IRRF: BRL 1,800 and Carnê-Leão payments
+### Exemplo 4 — Nubank (São Paulo, Criadora Digital / Hotmart)
 
-High-income flag: BRL 156,000 gross → verify all Carnê-Leão monthly payments made on PF income; penalised if late.
+**Banco:** Extrato Nubank (PDF)
+**Cliente:** Julia Torres, criadora de cursos digitais, São Paulo
 
----
+Repasses da Hotmart: BRL 85.000 (líquidos das taxas Hotmart)
+Gross-up: a Hotmart cobra ~9,9% + BRL 1; bruto efetivo ~BRL 95.000
 
-### Example 4 — Nubank (São Paulo, Digital Creator / Hotmart)
+Kiwify: BRL 22.000 líquidos → bruto ~BRL 24.500
 
-**Bank:** Nubank statement (PDF)
-**Client:** Julia Torres, digital course creator, São Paulo
+Receita bruta total: BRL 119.500 — todas de plataformas (PJ)
 
-Hotmart payouts: BRL 85,000 (after Hotmart fees)
-Gross-up: Hotmart charges ~9.9% + BRL 1; effective gross ~BRL 95,000
+Observação: Hotmart e Kiwify são PJs brasileiras. Retêm IRRF nos repasses. Coletar Comprovante de Rendimentos da plataforma.
 
-Kiwify: BRL 22,000 net → gross ~BRL 24,500
+Desconto simplificado: 20% × BRL 119.500 = BRL 23.900 (> limite BRL 16.754,34 → aplicar o teto BRL 16.754,34)
+Livro caixa (despesas reais ~BRL 8.000): simplificado é melhor (teto BRL 16.754 > real)
 
-Total gross: BRL 119,500 — all from platforms (PJ)
+Tributável: BRL 119.500 − BRL 16.754,34 = BRL 102.745,66
 
-Note: Hotmart and Kiwify are Brazilian PJs. They withhold IRRF on payouts. Collect platform Comprovante de Rendimentos.
+IRPF: BRL 102.745,66 × 27,5% − BRL 10.740,98 = BRL 28.254,56 − BRL 10.740,98 = **BRL 17.513,58**
 
-Desconto simplificado: 20% × BRL 119,500 = BRL 23,900 (< BRL 16,754.34 cap → apply cap BRL 16,754.34)
-Livro caixa (actual expenses ~BRL 8,000): simplificado better (cap BRL 16,754 > actual)
+(−) IRRF das plataformas. Alerta: DIRPF obrigatória (bruto > BRL 33.888).
 
-Taxable: BRL 119,500 − BRL 16,754.34 = BRL 102,745.66
+### Exemplo 5 — Santander Brasil (Porto Alegre, Engenheiro)
 
-IRPF: BRL 102,745.66 × 27.5% − BRL 10,740.98 = BRL 28,254.56 − BRL 10,740.98 = **BRL 17,513.58**
+**Banco:** Extrato Santander
+**Cliente:** Ricardo Gomes, engenheiro civil, Porto Alegre
 
-Less IRRF from platforms. Flag: mandatory DIRPF filing (gross > BRL 33,888).
+Questão: Ricardo tem renda como autônomo (BRL 60.000) e salário CLT (BRL 48.000). A DIRPF deve consolidar ambos.
 
----
+Consolidação na DIRPF:
+- Salário (DIRF do empregador): BRL 48.000 brutos; IRRF BRL 4.800 retido
+- Autônomo (livro caixa): BRL 60.000 − BRL 22.000 (despesas) = BRL 38.000
 
-### Example 5 — Santander Brasil (Porto Alegre, Engineer)
+Tributável total: BRL 48.000 + BRL 38.000 = BRL 86.000
+IRPF: BRL 86.000 × 27,5% − BRL 10.740,98 = BRL 23.650 − BRL 10.740,98 = **BRL 12.909,02**
+(−) IRRF salário: BRL 4.800 + Carnê-Leão pago + INSS empregador
 
-**Bank:** Santander statement
-**Client:** Ricardo Gomes, civil engineer, Porto Alegre
+Renda dupla — sinalizar: DIRPF complexa com Ficha de Rendimentos das duas fontes.
 
-Issue: Ricardo has both autônomo income (BRL 60,000) and salary from CLT employer (BRL 48,000). The IRPF return must consolidate both.
+### Exemplo 6 — Inter Bank (Belo Horizonte, Designer Freelancer, Verificação de MEI)
 
-DIRPF consolidation:
-- Salary (DIRF from employer): BRL 48,000 gross; IRRF BRL 4,800 withheld
-- Autônomo (livro caixa): BRL 60,000 − BRL 22,000 (expenses) = BRL 38,000
+**Banco:** Extrato Inter
+**Cliente:** Fernanda Rocha, designer, Belo Horizonte
 
-Total taxable: BRL 48,000 + BRL 38,000 = BRL 86,000
-IRPF: BRL 86,000 × 27.5% − BRL 10,740.98 = BRL 23,650 − BRL 10,740.98 = **BRL 12,909.02**
-Less IRRF salary: BRL 4,800 + Carnê-Leão paid + employer INSS
+Primeira pergunta: **Fernanda é MEI?** Em caso afirmativo, R-BR-1 se aplica — parar.
 
-Dual income — flag: complex DIRPF with Ficha de Rendimentos from both sources.
+Supondo que NÃO seja MEI (desenquadrada ou nunca registrada como MEI):
+Bruto: BRL 72.000 — observação: BRL 72.000 < limite MEI BRL 81.000. Se Fernanda ainda for MEI, deve ser tributada via DAS e não IRPF sobre essa renda. PARAR — confirmar status.
 
----
+Se confirmada como autônoma: prosseguir. INSS: BRL 14.400 (20% × BRL 72.000 — estimativa simplificada; o valor real depende do teto mensal). Desconto simplificado: BRL 14.400 vs. 20% (teto BRL 14.400 — igual). Despesas reais ~BRL 6.000. Usar simplificado (BRL 14.400 > BRL 6.000).
 
-### Example 6 — Inter Bank (Belo Horizonte, Freelance Designer, MEI Check)
+Tributável: BRL 72.000 − BRL 14.400 = BRL 57.600
+IRPF: BRL 57.600 × 27,5% − BRL 10.740,98 = BRL 15.840 − BRL 10.740,98 = **BRL 5.099,02**
 
-**Bank:** Inter statement
-**Client:** Fernanda Rocha, designer, Belo Horizonte
+## Seção 5 — Regras Tier 1 (aplicar diretamente)
 
-First question: **Is Fernanda a MEI?** If so, R-BR-1 applies — stop.
+- **T1-BR-1 — INSS é sempre dedutível** — As contribuições ao INSS pagas (GPS, DARF ou retidas por PJ) são 100% dedutíveis da base tributável do IRPF. Deduzir na Ficha de Deduções da DIRPF independentemente da fonte de renda (livro caixa ou simplificado). Aplicar sem escalonar.
+- **T1-BR-2 — IRRF retido por PJ é crédito tributário, não redução de receita** — O IRRF retido pelos clientes PJ (tipicamente 1,5% para serviços profissionais, 11% INSS) reduz o saldo de IRPF anual a pagar. A receita bruta (antes da retenção) é o valor tributável. Sempre fazer gross-up para o valor pré-retenção.
+- **T1-BR-3 — Carnê-Leão é obrigatório para renda PF e do exterior** — Qualquer recebimento mensal de uma pessoa física brasileira (PF) ou do exterior — independentemente do valor — gera obrigação de Carnê-Leão (vencimento no último dia útil do mês seguinte). O não pagamento gera multa de mora (0,33%/dia até 20%). Aplicar imediatamente ao classificar fontes de renda.
+- **T1-BR-4 — Pagamentos via DARF (Carnê-Leão, IRPF) não são dedutíveis** — Antecipações de imposto pagas via DARF (código 0190 para Carnê-Leão, código 1854 para saldo final de IRPF) são créditos contra a obrigação anual de IRPF, não despesas dedutíveis. Nunca incluir DARFs nas deduções do livro caixa.
+- **T1-BR-5 — Renda do exterior: conversão PTAX obrigatória** — Toda renda recebida em moeda estrangeira deve ser convertida para BRL utilizando a taxa PTAX de venda do Banco Central na data do recebimento. Não utilizar qualquer outra taxa de conversão.
+- **T1-BR-6 — Teto do desconto simplificado** — BRL 16.754,34 (A dedução simplificada de 20% é limitada a BRL 16.754,34 independentemente do tamanho da renda bruta. Sempre verificar o teto antes de aplicar o percentual.)
 
-Assuming NOT MEI (deregistered or never registered as MEI):
-Gross: BRL 72,000 — note: BRL 72,000 < MEI limit BRL 81,000. If Fernanda is still MEI, she should be taxed under DAS not IRPF on this income. STOP — confirm status.
+## Seção 6 — Catálogo Tier 2 (exige julgamento do revisor)
 
-If confirmed autônomo: proceed. INSS: BRL 14,400 (20% × BRL 72,000 — simplified estimate; actual depends on monthly ceiling). Desconto simplificado: BRL 14,400 vs. 20% cap BRL 14,400 (same). Actual expenses ~BRL 6,000. Use simplificado (BRL 14,400 > BRL 6,000).
+**Catálogo Tier 2**
 
-Taxable: BRL 72,000 − BRL 14,400 = BRL 57,600
-IRPF: BRL 57,600 × 27.5% − BRL 10,740.98 = BRL 15,840 − BRL 10,740.98 = **BRL 5,099.02**
+| Código | Situação | Motivo de escalonamento | Tratamento sugerido |
+| --- | --- | --- | --- |
+| T2-BR-1 | Classificação MEI vs. autônomo | Regime tributário totalmente distinto — MEI paga DAS; autônomo paga IRPF + INSS separadamente | Confirmar registro no Portal do Empreendedor antes de prosseguir |
+| T2-BR-2 | Renda do exterior (cripto, clientes estrangeiros) | Renda do exterior exige Carnê-Leão em BRL via PTAX; pode acionar IOF | Sinalizar — conversão PTAX + Carnê-Leão sobre todo recebimento estrangeiro |
+| T2-BR-3 | Renda de aluguel | Tratamento tributário separado; Carnê-Leão com deduções diferentes | Sinalizar — renda de aluguel em Ficha separada; deduções específicas (IPTU, manutenção) |
+| T2-BR-4 | Ganho de capital | Programa GCAP separado; alíquotas 15%/17,5%/20%/22,5% | Sinalizar — não incluir na Ficha de Rendimentos Tributáveis |
+| T2-BR-5 | Renda em cripto / ativos digitais | IN RFB 1888/2019 e normativos posteriores; reporte complexo | Sinalizar — ganhos em cripto tributados como ganho de capital; apuração mensal se ganhos > BRL 35.000/mês |
+| T2-BR-6 | Dividendos da própria empresa | Atualmente isentos (em revisão na reforma) | Sinalizar — verificar status atual de isenção de dividendos antes de declarar |
 
----
-
-## Section 5 — Tier 1 Rules (Apply Directly)
-
-**T1-BR-1 — INSS is always deductible**
-INSS contributions paid (GPS, DARF, or withheld by PJ) are 100% deductible from IRPF taxable income. Deduct in the DIRPF Ficha de Deduções regardless of which income source (livro caixa or simplificado) is used. Apply without escalating.
-
-**T1-BR-2 — IRRF withheld by PJ is a tax credit, not income reduction**
-The IRRF withheld by client PJs (typically 1.5% for professional services, 11% INSS) reduces the annual IRPF balance payable. The gross income (before withholding) is the taxable figure. Always gross up to pre-withholding amount.
-
-**T1-BR-3 — Carnê-Leão is mandatory for PF and foreign income**
-Any monthly receipt from a Brazilian individual (PF) or from abroad — regardless of amount — triggers the Carnê-Leão obligation (due last business day of following month). Not paying creates multa de mora (0.33%/day up to 20%). Apply this rule immediately when classifying income sources.
-
-**T1-BR-4 — DARF payments (Carnê-Leão, IRPF) are not deductible**
-Tax prepayments made via DARF (code 0190 for Carnê-Leão, code 1854 for IRPF final balance) are credits against the annual IRPF liability, not deductible expenses. Never include DARF payments in livro caixa deductions.
-
-**T1-BR-5 — Foreign income: PTAX conversion mandatory**
-All income received in foreign currency must be converted to BRL using the Banco Central PTAX selling rate for the date of receipt. Do not use any other conversion rate.
-
-**T1-BR-6 — Desconto simplificado cap: BRL 16,754.34**
-The 20% simplificado deduction is capped at BRL 16,754.34 regardless of how large the gross income is. Always check the cap before applying the percentage.
-
----
-
-## Section 6 — Tier 2 Catalogue (Reviewer Judgement Required)
-
-| Code | Situation | Escalation Reason | Suggested Treatment |
-|---|---|---|---|
-| T2-BR-1 | MEI vs. autônomo classification | Entire tax regime differs — MEI pays DAS; autônomo pays IRPF + INSS separately | Confirm registration at Portal do Empreendedor before proceeding |
-| T2-BR-2 | Income from abroad (crypto, foreign clients) | Foreign income requires Carnê-Leão in BRL at PTAX; may trigger Imposto sobre Operações Financeiras (IOF) | Flag — PTAX conversion + Carnê-Leão on all foreign receipts |
-| T2-BR-3 | Rental income (Renda de Aluguel) | Separate tax treatment; CARNÊ-Leão with different deductions | Flag — rental income separate Ficha; different deductions (IPTU, maintenance) |
-| T2-BR-4 | Capital gains (Ganho de Capital) | Separate Programa GCAP; 15%/17.5%/20%/22.5% rates | Flag — do not include in Ficha de Rendimentos Tributáveis |
-| T2-BR-5 | Crypto income / digital assets | RFB IN 1888/2019 and subsequent normatives; complex reporting | Flag — crypto gains taxed as capital gains; monthly apuração if gains > BRL 35,000/month |
-| T2-BR-6 | Dividend income from own company | Currently exempt (under reform review) | Flag — verify current dividend exemption status before filing |
-
----
-
-## Section 7 — Excel Working Paper Template
+## Seção 7 — Modelo de papel de trabalho em Excel
 
 ```
-BRAZILIAN IRPF WORKING PAPER (AUTÔNOMO / PROFISSIONAL LIBERAL)
-Taxpayer: _______________  CPF: _______________  FY: 2025 (Calendar Year)
+PAPEL DE TRABALHO IRPF BRASILEIRO (AUTÔNOMO / PROFISSIONAL LIBERAL)
+Contribuinte: _______________  CPF: _______________  Ano-calendário: 2025
 
-SECTION A — INCOME (Rendimentos Tributáveis)
+SEÇÃO A — RENDIMENTOS (Rendimentos Tributáveis)
                                         BRL
-PJ clients — gross (pre-IRRF):        ___________
-PF clients / Carnê-Leão income:       ___________
-Foreign income (converted PTAX):       ___________
-Platform payouts (grossed up):         ___________
-TOTAL GROSS INCOME                     ___________
+Clientes PJ — bruto (pré-IRRF):       ___________
+Clientes PF / renda Carnê-Leão:       ___________
+Renda do exterior (convertida PTAX):   ___________
+Repasses de plataformas (gross-up):    ___________
+TOTAL DA RENDA BRUTA                   ___________
 
-SECTION B — DEDUCTION METHOD
-[ ] Desconto Simplificado: 20% × gross = ___________  (cap: BRL 16,754.34)
-[ ] Livro Caixa (actual expenses):
+SEÇÃO B — MÉTODO DE DEDUÇÃO
+[ ] Desconto Simplificado: 20% × bruto = ___________  (teto: BRL 16.754,34)
+[ ] Livro Caixa (despesas reais):
 
-  Rent (professional share):           ___________
-  Utilities (professional):            ___________
-  Phone/internet (business %):         ___________
+  Aluguel (parte profissional):        ___________
+  Utilidades (profissional):           ___________
+  Telefone/internet (% profissional):  ___________
   Software:                            ___________
-  Accounting fees:                     ___________
-  Travel (professional):               ___________
-  Equipment/supplies:                  ___________
-  Other documented expenses:           ___________
+  Honorários contábeis:                ___________
+  Viagens (profissional):              ___________
+  Equipamentos/materiais:              ___________
+  Outras despesas documentadas:        ___________
   TOTAL LIVRO CAIXA:                   ___________
 
-SECTION C — INSS DEDUCTION (separate from above)
-INSS paid (GPS / withheld by PJ):      ___________
+SEÇÃO C — DEDUÇÃO DE INSS (separada das anteriores)
+INSS pago (GPS / retido por PJ):       ___________
 
-SECTION D — TAXABLE INCOME
-Gross − [B] − [C] (+ other DIRPF deductions):  ___________
+SEÇÃO D — RENDA TRIBUTÁVEL
+Bruto − [B] − [C] (+ outras deduções DIRPF):   ___________
 
-SECTION E — IRPF CALCULATION
-Tax at bracket rates:                  ___________
-Less: IRRF withheld by PJs:            (___________)
-Less: Carnê-Leão payments (DARF 0190): (___________)
-IRPF BALANCE DUE / (REFUND)            ___________
+SEÇÃO E — CÁLCULO DO IRPF
+Imposto pelas faixas:                  ___________
+(−) IRRF retido pelas PJs:             (___________)
+(−) Pagamentos Carnê-Leão (DARF 0190): (___________)
+SALDO DE IRPF A PAGAR / (RESTITUIÇÃO)  ___________
 
-SECTION F — REVIEWER FLAGS
-[ ] All Comprovantes de Rendimentos collected from PJ clients?
-[ ] Carnê-Leão payments reconciled (PF and foreign income months)?
-[ ] Foreign income converted at PTAX selling rate on receipt date?
-[ ] MEI status confirmed as NOT applicable?
-[ ] Desconto simplificado vs. livro caixa comparison done?
-[ ] INSS deduction entered in Ficha de Deduções (not livro caixa)?
-[ ] Gross-up applied for platform payouts (Hotmart, Kiwify, etc.)?
+SEÇÃO F — ALERTAS PARA O REVISOR
+[ ] Todos os Comprovantes de Rendimentos coletados dos clientes PJ?
+[ ] Pagamentos de Carnê-Leão conciliados (meses com renda PF e do exterior)?
+[ ] Renda do exterior convertida pela PTAX de venda na data de recebimento?
+[ ] Status MEI confirmado como NÃO aplicável?
+[ ] Comparação desconto simplificado vs. livro caixa realizada?
+[ ] Dedução de INSS lançada na Ficha de Deduções (não no livro caixa)?
+[ ] Gross-up aplicado nos repasses de plataformas (Hotmart, Kiwify, etc.)?
 ```
 
----
-
-## Section 8 — Bank Statement Reading Guide
+## Seção 8 — Guia de leitura de extratos bancários
 
 ### Itaú Unibanco
-- Export: PDF or CSV via "Extrato" in app/portal
-- CSV columns: `Data;Histórico;Valor;Tipo` (Tipo: C = crédito, D = débito)
-- Amount format: comma decimal, period thousands (e.g., `7.500,00`)
-- Date: DD/MM/YYYY
-- PIX receipts: `PIX RECEBIDO [sender name]`; TED receipts: `TED DE [sender]`
+
+- Exportação: PDF ou CSV via "Extrato" no app/portal
+- Colunas CSV: `Data;Histórico;Valor;Tipo` (Tipo: C = crédito, D = débito)
+- Formato do valor: vírgula como decimal, ponto como separador de milhar (ex.: `7.500,00`)
+- Data: DD/MM/AAAA
+- Recebimentos PIX: `PIX RECEBIDO [nome do remetente]`; recebimentos TED: `TED DE [remetente]`
 
 ### Bradesco
-- Export: CSV or PDF from Internet Banking Bradesco
-- Columns: `Data;Documento;Histórico;Valor;Saldo`
-- Positive Valor = credit; negative = debit (parentheses or negative sign)
+
+- Exportação: CSV ou PDF pelo Internet Banking Bradesco
+- Colunas: `Data;Documento;Histórico;Valor;Saldo`
+- Valor positivo = crédito; negativo = débito (entre parênteses ou com sinal negativo)
 
 ### Banco do Brasil
-- Export: CSV from BB Internet Banking ("Extrato")
-- Columns vary; typically `Data;Lançamento;Débito;Crédito;Saldo`
-- PIX narrations: `PIX TRANSF DE [CPF/name]` or `PIX CRED DE [name]`
+
+- Exportação: CSV pelo Internet Banking do BB ("Extrato")
+- Colunas variam; tipicamente `Data;Lançamento;Débito;Crédito;Saldo`
+- Históricos PIX: `PIX TRANSF DE [CPF/nome]` ou `PIX CRED DE [nome]`
 
 ### Santander Brasil
-- Export: PDF/CSV from Santander Online (portal/app)
-- Standard format; PIX: `TRANSF PIX DE [name]`, TED: `TED/DOC RECEBIDA`
+
+- Exportação: PDF/CSV pelo Santander Online (portal/app)
+- Formato padrão; PIX: `TRANSF PIX DE [nome]`, TED: `TED/DOC RECEBIDA`
 
 ### Nubank
-- Export: PDF statement from app ("Ver extrato completo" → PDF)
-- No native CSV; third-party tools exist; narrations include: `Pix recebido de [name]`, `Transferência recebida de [name]`
+
+- Exportação: extrato em PDF pelo app ("Ver extrato completo" → PDF)
+- Sem CSV nativo; ferramentas de terceiros existem; históricos incluem: `Pix recebido de [nome]`, `Transferência recebida de [nome]`
 
 ### Inter Bank (Banco Inter)
-- Export: CSV/PDF from Inter app → "Extrato" → "Baixar"
-- Columns: `Data;Tipo de Transação;Valor`
-- PIX: `Pix Recebido` with sender detail in description
 
-### PIX Identification
-- PIX is the Brazilian instant payment system; identifies transactions by CPF/CNPJ/phone/email key
-- Bank statement PIX narrations: `PIX RECEBIDO`, `PIX CREDIT`, `TRANSF PIX ENTRADA`
-- Sender's name/CPF usually included — critical for classifying PF (→ Carnê-Leão) vs. PJ (→ IRRF withheld)
+- Exportação: CSV/PDF pelo app Inter → "Extrato" → "Baixar"
+- Colunas: `Data;Tipo de Transação;Valor`
+- PIX: `Pix Recebido` com detalhe do remetente na descrição
 
----
+### Identificação de PIX
 
-## Section 9 — Onboarding Fallback
+- O PIX é o sistema de pagamentos instantâneos brasileiro; identifica transações por chave CPF/CNPJ/telefone/e-mail
+- Históricos PIX no extrato: `PIX RECEBIDO`, `PIX CREDIT`, `TRANSF PIX ENTRADA`
+- Nome/CPF do remetente costuma vir incluído — essencial para classificar PF (→ Carnê-Leão) vs. PJ (→ IRRF retido)
 
-**Missing Comprovantes de Rendimentos:**
-> "To accurately compute your IRPF, I need the Comprovante de Rendimentos from every PJ client who paid you in 2025. These documents show the gross amount and the IRRF withheld at source. You can request them directly from your clients, or check your Receita Federal account at gov.br/receitafederal → 'Consultar Informações Prestadas por Terceiros' — your clients' DIMEs/DIRFs may already be on file."
+## Seção 9 — Fallback de onboarding
 
-**MEI status verification:**
-> "Before I can proceed, I need to confirm whether you are registered as a Microempreendedor Individual (MEI). If yes, your business income is taxed under the DAS regime, not standard IRPF, and a different skill applies. Please check your status at portaldoempreendedor.gov.br or inform me of your CNPJ if you have one."
+**Comprovantes de Rendimentos faltando:**
+> "Para calcular o seu IRPF com precisão, preciso do Comprovante de Rendimentos de cada cliente PJ que pagou você em 2025. Esses documentos mostram o valor bruto e o IRRF retido na fonte. Você pode solicitá-los diretamente aos seus clientes, ou consultar sua conta da Receita Federal em gov.br/receitafederal → 'Consultar Informações Prestadas por Terceiros' — as DIMEs/DIRFs dos seus clientes podem já estar no sistema."
 
-**Carnê-Leão gap:**
-> "I see you received income from individual clients (PF) or from abroad, which triggers the Carnê-Leão obligation. Do you have records of your monthly DARF payments (code 0190)? If Carnê-Leão was not paid in any month where PF/foreign income was received, a multa de mora applies. Let's identify which months had gaps."
+**Verificação de status MEI:**
+> "Antes de prosseguir, preciso confirmar se você está registrado como Microempreendedor Individual (MEI). Em caso afirmativo, a renda do seu negócio é tributada pelo regime do DAS, não pelo IRPF padrão, e uma skill diferente se aplica. Confira seu status em portaldoempreendedor.gov.br ou me informe seu CNPJ caso tenha um."
 
-**Foreign income FX:**
-> "For income received from foreign clients in USD or other currencies, I need to convert each receipt to BRL using the Banco Central PTAX selling rate for the exact date of receipt. Could you provide the dates and foreign currency amounts? Alternatively, if you received income regularly, the annual average PTAX rate can be used — confirm if this is acceptable."
+**Lacuna no Carnê-Leão:**
+> "Vejo que você recebeu renda de clientes pessoa física (PF) ou do exterior, o que gera a obrigação do Carnê-Leão. Você tem registros dos pagamentos mensais de DARF (código 0190)? Se o Carnê-Leão não foi pago em algum mês em que houve renda PF/estrangeira, há incidência de multa de mora. Vamos identificar quais meses ficaram em aberto."
 
----
+**Câmbio de renda do exterior:**
+> "Para a renda recebida de clientes estrangeiros em USD ou outras moedas, preciso converter cada recebimento para BRL usando a taxa PTAX de venda do Banco Central na data exata do recebimento. Você poderia fornecer as datas e os valores em moeda estrangeira? Alternativamente, se você recebeu renda de forma regular, pode-se usar a PTAX média anual — confirme se isso é aceitável."
 
-## Section 10 — Reference Material
+## Seção 10 — Material de referência
 
-### Key Legislation
-- **RIR/2018 (Regulamento do Imposto de Renda)** — Decreto 9.580/2018
-- **Lei 7.713/1988** — income exempt from IRPF
-- **IN RFB 2.178/2024** — Carnê-Leão and DIRPF rules for 2024 calendar year
-- **Instrução Normativa RFB 1.888/2019** — crypto assets reporting
+### Legislação principal
 
-### Filing and Payment Calendar 2025 (FY 2024)
-| Deadline | Event |
-|---|---|
-| Last business day each month | Carnê-Leão DARF due for prior month receipts |
-| 28 February 2025 | PJ clients must issue Comprovantes de Rendimentos |
-| 31 March 2025 | DIRPF 2025 (base year 2024) filing opens |
-| 30 May 2025 | DIRPF 2025 filing deadline |
-| 30 May 2025 | 1st instalment of IRPF balance (or single payment for discount) |
+- **Lista de legislação** — RIR/2018 (Regulamento do Imposto de Renda) — Decreto 9.580/2018; Lei 7.713/1988 — rendimentos isentos de IRPF; Lei 9.250/1995 — alterações da legislação do IRPF; Lei 9.249/1995 — alíquotas de IRPJ e CSLL; Lei 9.430/1996 — apuração trimestral de IRPJ e demais ajustes; IN RFB 1.700/2017 — determinação e apuração do IRPJ e CSLL; IN RFB 2.178/2024 — regras do Carnê-Leão e DIRPF para o ano-calendário 2024; Instrução Normativa RFB 1.888/2019 — reporte de criptoativos; EC 132/2023, LC 214/2025, LC 227/2026 — reforma tributária (consumo); IR não é afetado estruturalmente
 
-### Useful References
+### Calendário de entrega e pagamento 2025 (ano-base 2024)
+
+**Calendário de entrega e pagamento 2025 (ano-base 2024)**
+
+| Prazo | Evento |
+| --- | --- |
+| Último dia útil de cada mês | DARF de Carnê-Leão referente aos recebimentos do mês anterior |
+| 28 de fevereiro de 2025 | Clientes PJ devem emitir Comprovantes de Rendimentos |
+| 31 de março de 2025 | Abertura da entrega da DIRPF 2025 (ano-base 2024) |
+| 30 de maio de 2025 | Prazo final da entrega da DIRPF 2025 |
+| 30 de maio de 2025 | 1ª parcela do saldo de IRPF (ou pagamento único com desconto) |
+
+### Referências úteis
+
 - Receita Federal: gov.br/receitafederal
-- PGFN (voluntary disclosure): gov.br/pgfn
-- PIX chave lookup: bacen.gov.br
-- PTAX rates: bcb.gov.br/estabilidadefinanceira/fechamentodolar
-
----
+- PGFN (denúncia espontânea): gov.br/pgfn
+- Consulta de chave PIX: bacen.gov.br
+- Taxas PTAX: bcb.gov.br/estabilidadefinanceira/fechamentodolar
 
 ## Disclaimer
 
-This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, EA, tax attorney, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
+Esta skill e seus resultados são fornecidos apenas para fins informativos e de cálculo e não constituem aconselhamento tributário, jurídico ou financeiro. A Open Accountants e seus contribuidores não se responsabilizam por quaisquer erros, omissões ou consequências decorrentes do uso desta skill. Todos os resultados devem ser revisados e assinados por um profissional qualificado (como contador, advogado tributarista ou profissional licenciado equivalente na sua jurisdição) antes de qualquer entrega ou atuação.
 
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
+A versão mais atualizada e verificada desta skill é mantida em [openaccountants.com](https://openaccountants.com). Faça login para acessar a versão mais recente, solicitar uma revisão profissional de um contador licenciado e acompanhar atualizações conforme a legislação tributária mudar.
+
+## Talk to a verified accountant
+
+This skill is a tool, not an engagement. Every taxpayer's situation is
+different, and the rules in the skill may not match your specific facts.
+
+To speak with one of the licensed accountants who verifies skills for your
+jurisdiction — **no liability on either side until you and the accountant sign
+a formal engagement letter** — book a free 30-minute call:
+
+**→ [Book a call](https://calendly.com/openaccountants-info/30min)**
+
+We'll route you to the named verifier covering your country or state. You can
+also see the full list of verified accountants at
+[openaccountants.com/network](https://openaccountants.com/network).
+
+<!-- openaccountants-cta-block -->
+
+---
+
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

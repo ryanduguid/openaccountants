@@ -2,13 +2,14 @@
 name: ng-formation
 description: "Use this skill whenever asked about forming, incorporating, or registering a business in Nigeria. Trigger on phrases like \"form company Nigeria\", \"incorporate Nigeria\", \"CAC registration\", \"BN vs LTD Nigeria\", \"PVT LTD Nigeria\", \"register business Nigeria\", \"Business Name Nigeria\", \"Private Limited Nigeria\", \"Plc Nigeria\", \"LLP Nigeria\", \"Incorporated Trustee\", \"NGO Nigeria\", \"FIRS TIN\", \"CAMA 2020\", or any question about choosing or registering a Nigerian entity. Covers entity comparison (BN, Ltd / RC, LLP, Plc, Incorporated Trustee), CAC online portal registration steps, FIRS TIN and state IRS registration, sector-specific licensing (NDPR, SEC, CBN, NCC, NAFDAC), minimum capital and shareholder/director requirements, the SME-friendly thresholds introduced by the Nigeria Tax Act 2025 (NTA 2025), and tax treatment by entity type. Out of scope: immigration / expatriate quota / CERPAC sponsorship, bank account opening procedures (high-level only), full corporate governance and shareholders' agreement drafting, deep sector-specific regulatory licensing beyond signposting, and listing on the NGX. ALWAYS read this skill before advising on Nigerian entity formation."
 jurisdiction: NG
-domain: international
 tax_year: 2025
+last_updated: 2026-05-27
+verified_by: pending
 tier: 2
-last_updated: 2026-07-06
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# ng-formation
+# NG Formation
 
 ## Section 1 — Quick Reference
 
@@ -415,3 +416,21 @@ a formal engagement letter — book a free 30-minute call:
 We'll route you to the named verifier covering your country or state. You can
 also see the full list of verified accountants at
 [openaccountants.com/network](https://openaccountants.com/network).
+
+<!-- openaccountants-cta-block -->
+
+---
+
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

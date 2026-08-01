@@ -3,21 +3,20 @@ name: es-freelance-intake
 description: ALWAYS USE THIS SKILL when a user asks for help preparing their Spain tax returns AND mentions freelancing, self-employment, autónomo, working por cuenta propia, or independent professional activity. Trigger on phrases like "help me do my taxes", "prepare my Modelo 100", "I'm autónomo in Spain", "I'm a freelancer in Spain", "do my taxes as an autónomo", "prepare my IRPF return", or any similar phrasing where the user is a Spain-resident self-employed individual needing tax return preparation. This is the REQUIRED entry point for the Spain self-employed tax workflow -- every other skill in the stack (spain-vat-return, es-income-tax, es-social-contributions, es-estimated-tax, es-return-assembly) depends on this skill running first to produce a structured intake package. Uses upload-first workflow -- the user dumps all their documents and the skill infers as much as possible before asking questions. Uses ask_user_input_v0 for structured questions instead of one-at-a-time prose. Built for speed. Spain full-year residents only; autónomos (self-employed individuals) only.
 version: 0.1
 jurisdiction: ES
+tax_year: 2025
+last_updated: 2026-04-13
+verified_by: pending
 tier: 2
-last_updated: 2026-06-12
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Spain Self-Employed Intake Skill v0.1
-
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+# ES Freelance Intake
 
 ## What this file is
 
 The intake orchestrator for Spain-resident self-employed individuals (autónomos). Every downstream Spain content skill (spain-vat-return, es-income-tax, es-social-contributions, es-estimated-tax) and the assembly orchestrator (es-return-assembly) depend on this skill running first to produce a structured intake package.
 
 This skill does not compute any tax figures. Its job is to collect all the facts, parse all the documents, confirm everything with the user, and hand off a clean intake package to `es-return-assembly`.
-
----
 
 ## Design principles
 
@@ -47,8 +46,6 @@ Target: intake completes in 5 minutes for a prepared user, 15 minutes for a user
 
 **Exception for blocking decisions.** If a single question determines whether the user is in-scope or out-of-scope, ask it standalone.
 
----
-
 ## Section 1 -- The opening
 
 When triggered, respond with ONE message that:
@@ -75,8 +72,6 @@ Then immediately call `ask_user_input_v0` with the refusal questions.
 - List what documents you will eventually need
 - Give a disclaimer beyond the one reviewer line
 
----
-
 ## Section 2 -- Refusal sweep (compact)
 
 Present the refusal sweep as a single `ask_user_input_v0` call with 3 questions, all single-select.
@@ -94,22 +89,18 @@ Q3: "Alta en RETA (registered with Social Security as self-employed)?"
     Options: ["Yes, alta en RETA for all of 2025", "Yes, but only part of 2025", "No, not registered in RETA", "Not sure"]
 ```
 
-**After the response, evaluate:**
-
-- **Q1 = Full year** -> continue
-- **Q1 = Part year** -> stop. "I'm set up for full-year Spanish residents only. Part-year residents have different rules around imputación temporal and may need to file in two jurisdictions. You need an asesor fiscal who handles non-resident or part-year returns."
-- **Q1 = Did not live in Spain** -> stop. "I'm set up for Spanish tax residents only. Non-residents file Modelo 210 with different rules. You need an asesor fiscal who handles non-resident returns."
-
-- **Q2 = Autónomo** -> continue
-- **Q2 = SL** -> stop. "I don't cover corporate returns. Sociedades Limitadas file Impuesto sobre Sociedades (Modelo 200) with separate rules. You need an asesor fiscal familiar with corporate tax."
-- **Q2 = SA** -> stop. "I don't cover corporate returns. Sociedades Anónimas file Impuesto sobre Sociedades with separate rules. You need an asesor fiscal."
-- **Q2 = Comunidad de bienes** -> stop. "Comunidades de bienes and sociedades civiles have specific attribution-of-income rules (Modelo 184). You need an asesor fiscal familiar with this structure."
-- **Q2 = Not sure** -> ask one follow-up: "Do you invoice clients in your own name using your NIF (DNI/NIE)? Or do you have a registered company (SL/SA) with a CIF? If you invoice in your own name, you're an autónomo."
-
-- **Q3 = Yes, full year** -> continue
-- **Q3 = Part year** -> continue with flag: RETA cuotas only deductible for months of alta. Prorate.
-- **Q3 = Not registered** -> stop. "If you are performing economic activity without alta en RETA, that is a compliance issue that needs to be resolved first. Consult a gestor or laboralista."
-- **Q3 = Not sure** -> ask one follow-up: "Do you pay a monthly cuota to the Seguridad Social (typically debited from your bank)? If yes, you're alta en RETA."
+- **Q1 = Full year residency** — continue
+- **Q1 = Part year residency** — stop. "I'm set up for full-year Spanish residents only. Part-year residents have different rules around imputación temporal and may need to file in two jurisdictions. You need an asesor fiscal who handles non-resident or part-year returns."
+- **Q1 = Did not live in Spain** — stop. "I'm set up for Spanish tax residents only. Non-residents file Modelo 210 with different rules. You need an asesor fiscal who handles non-resident returns."
+- **Q2 = Autónomo** — continue
+- **Q2 = SL** — stop. "I don't cover corporate returns. Sociedades Limitadas file Impuesto sobre Sociedades (Modelo 200) with separate rules for administrator remuneration, dividends, and corporate tax. You need an asesor fiscal familiar with corporate tax."
+- **Q2 = SA** — stop. "I don't cover corporate returns. Sociedades Anónimas file Impuesto sobre Sociedades with separate rules. You need an asesor fiscal."
+- **Q2 = Comunidad de bienes** — stop. "Comunidades de bienes and sociedades civiles have specific attribution-of-income rules (Modelo 184). You need an asesor fiscal familiar with this structure."
+- **Q2 = Not sure** — ask one follow-up: "Do you invoice clients in your own name using your NIF (DNI/NIE)? Or do you have a registered company (SL/SA) with a CIF? If you invoice in your own name, you're an autónomo."
+- **Q3 = Yes, full year RETA** — continue
+- **Q3 = Part year RETA** — continue with flag: RETA cuotas only deductible for months of alta. Prorate.
+- **Q3 = Not registered** — stop. "If you are performing economic activity without alta en RETA, that is a compliance issue that needs to be resolved first. Consult a gestor or laboralista."
+- **Q3 = Not sure** — ask one follow-up: "Do you pay a monthly cuota to the Seguridad Social (typically debited from your bank)? If yes, you're alta en RETA."
 
 **After Q1-Q3 pass, ask the second batch of scope questions (also batched):**
 
@@ -124,23 +115,16 @@ Q6: "How long have you been autónomo?"
     Options: ["First year (2025)", "Second year", "Third year", "More than 3 years"]
 ```
 
-**Evaluate Q4:**
-- **Simplificada** -> continue. Standard method for most autónomos. 5% gastos de difícil justificación (max EUR 2,000).
-- **Normal** -> continue. Full accounting required, no simplified expense allowance.
-- **Objetiva (módulos)** -> stop. "I'm set up for estimación directa only. Módulos uses a different calculation method based on physical parameters (surface, employees, kW). You need a gestor familiar with estimación objetiva."
-- **Not sure** -> "If your turnover is under EUR 600,000 and you haven't specifically elected estimación directa normal, you're on simplificada by default."
-
-**Evaluate Q5:**
-- **Madrid through Other** -> note for IRPF autonómica tramo. Continue.
-- **País Vasco / Navarra** -> stop. "The foral territories (Bizkaia, Gipuzkoa, Araba, Navarra) have their own tax agencies and different income tax rules (IRPF foral). I'm set up for territorio común (AEAT) only. You need an asesor fiscal in your foral territory."
-
-**Evaluate Q6:**
-- **First year / Second year / Third year** -> flag: retención reducida del 7% on professional invoices (instead of 15%) applies for the year of alta and the two following calendar years.
-- **More than 3 years** -> standard 15% retención on professional invoices.
+- **Q4 = Simplificada** — continue. Standard method for most autónomos. 5% gastos de difícil justificación (max EUR 2,000).
+- **Q4 = Normal** — continue. Full accounting required, no simplified expense allowance.
+- **Q4 = Objetiva (módulos)** — stop. "I'm set up for estimación directa only. Módulos uses a different calculation method based on physical parameters (surface, employees, kW). You need a gestor familiar with estimación objetiva."
+- **Q4 = Not sure** — "If your turnover is under EUR 600,000 and you haven't specifically elected estimación directa normal, you're on simplificada by default."
+- **Q5 = Madrid through Other** — note for IRPF autonómica tramo. Continue.
+- **Q5 = País Vasco / Navarra** — stop. "The foral territories (Bizkaia, Gipuzkoa, Araba, Navarra) have their own tax agencies and different income tax rules (IRPF foral). I'm set up for territorio común (AEAT) only. You need an asesor fiscal in your foral territory."
+- **Q6 = First/Second/Third year** — flag: retención reducida del 7% on professional invoices (instead of 15%) applies for the year of alta and the two following calendar years.
+- **Q6 = More than 3 years** — standard 15% retención on professional invoices.
 
 **Total time:** ~45 seconds if the user taps through.
-
----
 
 ## Section 3 -- The dump
 
@@ -179,8 +163,6 @@ Then wait. Do not ask any other questions while waiting.
 > - Cloud storage for saved invoices
 >
 > Come back when you have something to upload. I'll work with whatever you bring.
-
----
 
 ## Section 4 -- The inference pass
 
@@ -234,15 +216,17 @@ When documents arrive, parse each one. For each document, extract:
 - Retenciones acumuladas deducted
 - Amount paid per quarter
 
+- **Modelo 130 pago fraccionado rate** — 20 percent (of rendimiento neto acumulado)
+
 **RETA recibos:**
 - Monthly RETA cuota paid (amount and month)
 - Base de cotización (contribution base)
 - Whether tarifa plana was applied (EUR 80/month for new autónomos in first year)
 - Total annual RETA paid
 
-**After parsing everything, build an internal inference object.** Do not show the raw inference yet -- transform it into a compact summary for the user in Section 5.
+- **Tarifa plana RETA** — 80 EUR/month (for new autónomos in first year)
 
----
+**After parsing everything, build an internal inference object.** Do not show the raw inference yet -- transform it into a compact summary for the user in Section 5.
 
 ## Section 5 -- The confirmation
 
@@ -311,8 +295,6 @@ After inference, present a single compact summary message. Use a structured form
 >
 > **Is any of this wrong? Reply "looks good" or tell me what to fix.**
 
----
-
 ## Section 6 -- Gap filling
 
 After the user confirms the summary (or corrects it), ask about things that cannot be inferred from documents. Use `ask_user_input_v0` where possible.
@@ -325,8 +307,6 @@ After the user confirms the summary (or corrects it), ask about things that cann
 4. **Exempt activities** -- Whether any income is IVA-exempt (medical, educational, financial).
 5. **Personal deductions** -- Aportaciones a planes de pensiones, deducción por vivienda habitual (if pre-2013 mortgage), deducción por maternidad, etc.
 6. **Other income** -- Employment income, rental income, capital gains, savings income.
-
-**Home office gap-filling example:**
 
 Call `ask_user_input_v0` with:
 
@@ -341,13 +321,12 @@ Q: "Home office (despacho en casa)?"
    ]
 ```
 
-If option 1 -> ask for proportion of home used (m2 of office / m2 total). Deductible: proportional share of rent/mortgage interest, IBI, comunidad, utilities (30% of proportional share for suministros under simplificada).
-If option 2 -> flag for reviewer: partial home office without Modelo 036 declaration is weak.
-If option 3 -> "A shared space is very difficult to defend as despacho en casa with the AEAT. I'll skip this deduction."
-If option 4 -> rent is already captured in expenses. No home office calculation needed.
-If option 5 -> skip home office entirely.
-
-**Private use percentage example:**
+- **Home office option 1** — ask for proportion of home used (m2 of office / m2 total). Deductible: proportional share of rent/mortgage interest, IBI, comunidad, utilities (30% of proportional share for suministros under simplificada).
+- **Suministros deductible share under simplificada home office** — 30 percent (of proportional share of utilities)
+- **Home office option 2** — flag for reviewer: partial home office without Modelo 036 declaration is weak.
+- **Home office option 3** — "A shared space is very difficult to defend as despacho en casa with the AEAT. I'll skip this deduction."
+- **Home office option 4** — rent is already captured in expenses. No home office calculation needed.
+- **Home office option 5** — skip home office entirely.
 
 Call `ask_user_input_v0` with:
 
@@ -364,7 +343,7 @@ Q: "Phone / internet -- business use?"
 For phone: if exclusive business line, 100% deductible. Otherwise apply percentage.
 For vehicle: autónomos in estimación directa can deduct 50% IVA by default on vehicle (unless exclusively business use proven). Flag as standard treatment.
 
-**Personal deductions example:**
+- **Vehicle IVA default deductible percentage** — 50 percent (default IVA deduction on vehicle in estimación directa unless exclusive business use proven)
 
 Call `ask_user_input_v0` with:
 
@@ -379,7 +358,8 @@ Q: "Aportaciones a planes de pensiones in 2025?"
 
 If yes -> ask for amount (max EUR 1,500 individual, or EUR 8,500 if empresa plan).
 
----
+- **Aportaciones a planes de pensiones max individual** — 1500 EUR (individual plan)
+- **Aportaciones a planes de pensiones max empresa plan** — 8500 EUR (if empresa plan)
 
 ## Section 7 -- The final handoff
 
@@ -405,8 +385,6 @@ Once gap-filling is done, produce a final handoff message and hand off to `es-re
 > Starting now.
 
 Then internally invoke `es-return-assembly` with the structured intake package.
-
----
 
 ## Section 8 -- Structured intake package (internal format)
 
@@ -496,8 +474,6 @@ The downstream skill (`es-return-assembly`) consumes a JSON structure. It is int
 }
 ```
 
----
-
 ## Section 9 -- Refusal handling
 
 Refusals fire from either the refusal sweep (Section 2) or during inference (e.g., company structure discovered in documents).
@@ -519,8 +495,6 @@ When a refusal fires:
 > Stop -- you operate through a Sociedad Limitada. I'm set up for autónomos (personas físicas) only. SLs file Impuesto sobre Sociedades (Modelo 200) with separate rules for administrator remuneration, dividends, and corporate tax. You need an asesor fiscal familiar with corporate returns.
 >
 > I can't help with this one.
-
----
 
 ## Section 10 -- Self-checks
 
@@ -548,8 +522,6 @@ When a refusal fires:
 
 **Check IN12 -- Estimación directa type and retención rate established.** Simplificada vs normal confirmed, and 7% vs 15% retención determined, before handoff.
 
----
-
 ## Section 11 -- Performance targets
 
 For a prepared user (documents in a folder, ready to upload):
@@ -566,8 +538,6 @@ For an unprepared user (has to go fetch documents):
 - Rest: same
 - **Total**: 15-25 minutes
 
----
-
 ## Section 12 -- Cross-skill references
 
 **Inputs:** User-provided documents and answers.
@@ -580,7 +550,10 @@ For an unprepared user (has to go fetch documents):
 - `es-social-contributions` -- RETA cotizaciones sociales
 - `es-estimated-tax` -- Modelo 130 pagos fraccionados
 
----
+0. **Invoke spain-vat-return** — Modelo 303 quarterly IVA return
+0. **Invoke es-income-tax** — IRPF Modelo 100 annual return
+0. **Invoke es-social-contributions** — RETA cotizaciones sociales
+0. **Invoke es-estimated-tax** — Modelo 130 pagos fraccionados
 
 ### Change log
 
@@ -588,10 +561,26 @@ For an unprepared user (has to go fetch documents):
 
 ## End of Intake Skill v0.1
 
----
-
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as an asesor fiscal, gestor administrativo, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
 
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
+The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
+
+<!-- openaccountants-cta-block -->
+
+---
+
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

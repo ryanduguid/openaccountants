@@ -2,13 +2,14 @@
 name: id-withholding
 description: "Use this skill whenever asked to compute, classify, or review Indonesian withholding tax obligations payable by a business on its outgoing payments to suppliers, landlords, contractors, lenders, shareholders, or non-resident recipients. Trigger on phrases like \"Indonesia withholding tax\", \"PPh 23\", \"PPh 26\", \"PPh 4(2) Final\", \"PPh Final\", \"Bukti Potong\", \"Bupot\", \"e-Bupot Unifikasi\", \"SPT Masa Unifikasi\", \"potong pajak supplier Indonesia\", \"withhold tax on supplier Indonesia\", \"rental withholding Indonesia\", \"construction services withholding\", \"royalty withholding Indonesia\", \"interest withholding Indonesia\", \"DGT Form\", \"P3B\", \"tax treaty Indonesia\", \"Coretax withholding\". This skill covers the three main withholding regimes that businesses operate when paying their counterparties — PPh 23 (services and passive income to Indonesian residents), PPh 26 (payments to non-residents), and PPh 4(2) Final (rental of land/building, construction services, bank interest, lottery prizes, IDX share sales, government bonds, etc.). Out of scope: PPh 21 employee/personnel withholding (covered separately in id-payroll-pph21), PPh 22 import/luxury goods withholding, PPh 15 special sectors (shipping/airlines), and the transfer of land/building (PPh 4(2) on disposal — mention only). ALWAYS read this skill before withholding tax on any Indonesian supplier payment."
 jurisdiction: ID
-domain: international
 tax_year: 2025
+last_updated: 2026-05-27
+verified_by: RILIA PUTRI
 tier: 2
-last_updated: 2026-07-06
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# id-withholding
+# ID Withholding
 
 ## Indonesia Withholding Tax — PPh 23, PPh 26, PPh 4(2) Final — Skill v1.0
 
@@ -401,3 +402,21 @@ a formal engagement letter** — book a free 30-minute call:
 We'll route you to the named verifier covering your country or state. You can
 also see the full list of verified accountants at
 [openaccountants.com/network](https://openaccountants.com/network).
+
+<!-- openaccountants-cta-block -->
+
+---
+
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

@@ -1,23 +1,26 @@
 ---
 name: global-productivity-tools
 description: >
-  Pattern library for productivity, collaboration, and creative SaaS tools appearing on bank statements worldwide. Covers Microsoft 365, Google Workspace, Slack, Notion, Linear, Asana, Trello, Jira / Confluence, Figma, Adobe Creative Cloud, Canva, Dropbox, Box, Zoom, Calendly, HubSpot, Salesforce, Intercom, Zendesk, Loom, Miro, ClickUp, Monday.com, Airtable, Webflow, Squarespace, Wix, ChatGPT / OpenAI, Anthropic Claude, Cursor, 1Password, Bitwarden, LastPass, NordVPN, Surfshark, ExpressVPN, Apple One / iCloud+, Spotify (business), Audible (business), and accounting / payroll software (Xero, QuickBooks, FreeAgent, Sage, Gusto, Rippling, Deel, Remote, Wise Business). Provides bank-statement variations, default classification, and VAT/GST notes. Does NOT cover: cloud infrastructure (see global-cloud-infrastructure), ad platforms (see global-ad-platforms), or payment processors (see global-payment-processors).
 version: 0.1
 jurisdiction: GLOBAL
-tier: 2
-last_updated: 2026-06-12
-category: pattern
+tax_year: 2025
+last_updated: 2026-05-23
 verified_by: pending
+category: pattern
+tier: 2
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Global Productivity & SaaS Vendor Patterns v0.1
+# Global Productivity Tools
 
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+## Global Productivity & SaaS Vendor Patterns v0.1
 
 ## Pattern table
 
+**Global Productivity & SaaS Vendor Patterns**  _(Pattern table)_
+
 | Vendor | Bank statement variations | Default category | VAT/GST notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | **Microsoft 365 / Office 365** | `MICROSOFT*M365`, `MICROSOFT*365`, `MSFT*M365`, `MICROSOFT IRELAND OPS` | Software subscription / productivity | EU B2B reverse charge (Microsoft Ireland Operations) |
 | **Google Workspace** | `GOOGLE *G SUITE`, `GOOGLE *WORKSPACE`, `GOOGLE IRELAND LTD` | Software subscription / productivity | EU B2B reverse charge |
 | **Slack** | `SLACK TECHNOLOGIES`, `SLACK*` | Communications / SaaS | Salesforce subsidiary; EU B2B reverse charge |
@@ -70,12 +73,10 @@ verified_by: pending
 | **Brex** | `BREX INC` | Business banking + cards (US) | US supplier |
 | **Ramp** | `RAMP BUSINESS CORP` | Business cards + spend mgmt | US supplier |
 
----
-
 ## Default classification rules
 
-- **Software subscription**: Schedule C Line 22 (Supplies) for small annual; Line 25 (Utilities) commonly used; Line 27a (Other expenses) with description
-- **Personal vs business**: confirm with the user; if mixed, allocate by usage percentage
+- **Software subscription classification** — Schedule C Line 22 (Supplies) for small annual; Line 25 (Utilities) commonly used; Line 27a (Other expenses) with description  _(Default classification rules)_
+- **Personal vs business allocation** — confirm with the user; if mixed, allocate by usage percentage  _(Default classification rules)_
 
 ## VAT mechanics
 
@@ -90,11 +91,27 @@ Many of these vendors have both personal and business tiers. Flag the following 
 - Audible (often personal)
 - Wix, Squarespace personal portfolio sites
 
----
-
 ## Self-checks
 
 - [ ] Vendor identified
 - [ ] Business vs personal use confirmed
 - [ ] EU/UK B2B reverse charge applied where supplier non-resident
 - [ ] Recurring billing reflected in monthly accruals
+
+<!-- openaccountants-cta-block -->
+
+---
+
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

@@ -3,11 +3,13 @@ name: cn-social-insurance
 description: 处理中国大陆员工社会保险与住房公积金（五险一金）相关工作时必读本技能。涉及"中国社保"、"五险一金"、"养老保险"、"医疗保险"、"失业保险"、"生育保险"、"工伤保险"、"住房公积金"、"社保基数"、"缴费比例"、"社保申报"、"公积金缴存"、"社保税务征收"、"金税四期"、"外籍员工社保"、"延迟退休"等中文表述时触发；同时在英文场景下出现 "China social insurance"、"five insurances and one fund"、"Chinese pension"、"housing fund"、"China shebao gongjijin"、"China payroll statutory deductions"、"PRC social security"、"China provident fund" 等表述时也应触发。本技能为编排器（orchestrator），按月编制中国员工五险一金的缴费基数、单位与个人缴费金额、申报与缴纳节奏，并给出与个人所得税专项扣除的衔接口径。涵盖《社会保险法》《住房公积金管理条例》及各省/直辖市/计划单列市实施细则的通用框架；具体比例与基数上下限以"参保地"最新文件为准。
 jurisdiction: CN
 tax_year: 2025
+last_updated: 2026-05-27
+verified_by: pending
 tier: 2
-last_updated: 2026-07-06
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# cn-social-insurance
+# CN Social Insurance
 
 ## 中国 — 社会保险与住房公积金（五险一金）— 技能 v1.0
 
@@ -459,3 +461,21 @@ a formal engagement letter** — book a free 30-minute call:
 We'll route you to the named verifier covering your country or state. You can
 also see the full list of verified accountants at
 [openaccountants.com/network](https://openaccountants.com/network).
+
+<!-- openaccountants-cta-block -->
+
+---
+
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

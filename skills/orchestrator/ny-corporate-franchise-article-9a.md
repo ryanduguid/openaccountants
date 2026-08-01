@@ -3,11 +3,13 @@ name: ny-corporate-franchise-article-9a
 description: Tier 2 content skill for New York State Corporate Franchise Tax under Tax Law Article 9-A. Covers C-corporations and S-corporations electing federal status (NY GBC), the three alternative tax bases (business income, capital, fixed dollar minimum), the 6.5% standard rate and the 7.25% rate on business income over $5M, single-sales-factor apportionment with market-based sourcing, MTA surcharge for MCTD activity, mandatory first installment (MFI) rules, and CT-3 / CT-3-A combined filing. Tax year 2025.
 jurisdiction: US-NY
 tax_year: 2025
+last_updated: 2026-05-27
+verified_by: pending
 tier: 2
-last_updated: 2026-07-06
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# ny-corporate-franchise-article-9a
+# NY Corporate Franchise Article 9a
 
 ## New York Corporate Franchise Tax — Article 9-A (General Business Corporations)
 
@@ -638,3 +640,21 @@ Specific limits and reviewer-required scenarios:
 End of skill.
 
 - **REIT / RIC / captive REIT scenarios** — Refused; out of scope.  _(Section 16 Disclaimer)_
+
+<!-- openaccountants-cta-block -->
+
+---
+
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

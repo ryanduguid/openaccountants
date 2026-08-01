@@ -2,15 +2,14 @@
 name: pk-withholding-tax
 description: "ALWAYS read this skill before touching any Pakistan Withholding Tax (WHT) work. Use this skill whenever asked to compute, classify, withhold, deposit, or reconcile Pakistan Withholding Tax obligations under the Income Tax Ordinance 2001 (ITO 2001) as amended by Finance Acts 2024 and 2025. Trigger on phrases like \"Pakistan WHT\", \"Pakistan withholding\", \"FBR WHT rates\", \"Section 153 Pakistan\", \"filer vs non-filer rates\", \"ATL rates\", \"advance tax Pakistan\", \"WHT services Pakistan\", \"Section 149 salary withholding\", \"Section 150 dividend WHT\", \"Section 151 profit on debt\", \"Section 152 non-resident WHT\", \"Section 153 services goods contracts\", \"Section 155 rent WHT\", \"Section 156 prizes winnings\", \"Section 165 statement\", \"PSID payment slip\", \"CPR Pakistan\", \"IRIS withholding\", \"WHT credit Pakistan\", \"exemption certificate Section 159\", \"reduced rate certificate Pakistan\", \"treaty WHT Pakistan\", \"DTA Pakistan withholding\". Pakistan WHT is the largest single source of federal tax revenue in Pakistan and operates across dozens of sections of the ITO 2001 covering imports, salary, dividends, profit on debt, payments to non-residents, payments for goods/services/contracts, rent, prizes, brokerage and commission, sale by auction, motor vehicles, electricity, telephone, banking transactions, and many sector-specific levies. Rates are published in the First Schedule and Division provisions of the ITO 2001 and are amended every year by the Finance Act — always verify against the current year text on the FBR website before relying on a figure. The Active Taxpayers List (ATL) regime under Tenth Schedule applies penal rates (typically 2x to 3x) to recipients not appearing on the weekly ATL published by FBR. ALWAYS read this skill before quoting a Pakistan WHT rate, drafting a withholding letter, computing a deposit, or advising on WHT credit claims. Out of scope: provincial sales tax on services WHT (separate from federal income WHT — covered by pakistan-sales-tax skill), Workers Welfare Fund and Workers Profit Participation Fund, Federal Excise Duty mechanics, customs duty on imports beyond Section 148, bespoke SRO-based exemptions (request the actual SRO before applying), and individual income tax return assembly (refer to a Pakistan tax practitioner)."
 jurisdiction: PK
-domain: international
 tax_year: 2025
-reviewed_by: Ibrar Ali
-review_status: accountant-reviewed
+last_updated: 2026-05-27
+verified_by: Ibrar Ali
 tier: 1
-last_updated: 2026-07-06
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# pk-withholding-tax
+# PK Withholding Tax
 
 ## Pakistan — Withholding Tax — Skill v1.0
 
@@ -489,3 +488,21 @@ a formal engagement letter** — book a free 30-minute call:
 We'll route you to the named verifier covering your country or state. You can
 also see the full list of verified accountants at
 [openaccountants.com/network](https://openaccountants.com/network).
+
+<!-- openaccountants-cta-block -->
+
+---
+
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

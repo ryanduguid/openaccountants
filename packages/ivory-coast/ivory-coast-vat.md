@@ -2,14 +2,22 @@
 name: ivory-coast-vat
 description: Use this skill whenever asked to prepare, review, or classify transactions for a Cote d'Ivoire VAT (TVA) return. Trigger on phrases like "TVA Cote d'Ivoire", "DGI return". Standard rate 18%, reduced 9%. WAEMU member. ALWAYS read before handling Ivory Coast VAT work.
 version: 2.0
+jurisdiction: CI
+tax_year: 2025
+last_updated: 2026-04-13
+verified_by: pending
+tier: 2
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Cote d'Ivoire VAT (TVA) Return Skill v2.0
+# Ivory Coast VAT
 
 ## Section 1 -- Quick reference
 
+**Quick reference**
+
 | Field | Value |
-|---|---|
+| --- | --- |
 | Country | Cote d'Ivoire |
 | Standard rate | 18% |
 | Reduced rate | 9% (milk, pasta, specified goods) |
@@ -25,22 +33,19 @@ version: 2.0
 | Validated by | Pending |
 | Last research update | April 2026 |
 
----
-
 ## Section 2 -- Required inputs and refusal catalogue
 
-**Minimum viable** -- bank statement. Acceptable from SGCI (Societe Generale CI), BICICI, Ecobank CI, NSIA Banque, BOA CI, or any Ivorian bank.
-
-**R-CI-1 -- Investment Code.** Trigger: company under Code des Investissements. Message: "Escalate. Specific decree required."
-
----
+- **Minimum viable input** — Minimum viable -- bank statement. Acceptable from SGCI (Societe Generale CI), BICICI, Ecobank CI, NSIA Banque, BOA CI, or any Ivorian bank.
+- **R-CI-1 -- Investment Code** — Escalate. Specific decree required. (Trigger: company under Code des Investissements.)
 
 ## Section 3 -- Supplier pattern library
 
 ### 3.1 Ivorian banks (exempt -- exclude)
 
+**Ivorian banks (exempt -- exclude)**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | SGCI, SOCIETE GENERALE CI | EXCLUDE | Exempt financial service |
 | BICICI | EXCLUDE | Same |
 | ECOBANK CI, NSIA BANQUE | EXCLUDE | Same |
@@ -48,27 +53,31 @@ version: 2.0
 
 ### 3.2 Government
 
+**Government**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | DGI | EXCLUDE | Tax payment |
 | DOUANE | Check for import TVA | TVA recoverable |
 | CNPS | EXCLUDE | Social security |
 
 ### 3.3 Utilities
 
+**Utilities**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | CIE, ELECTRICITE | Domestic 18% | Electricity |
 | SODECI | Domestic 18% | Water |
 | MTN CI, ORANGE CI, MOOV | Domestic 18% | Telecoms |
 
 ### 3.4 SaaS
 
-| Pattern | Treatment | Notes |
-|---|---|---|
-| GOOGLE, MICROSOFT, AWS | Autoliquidation 18% | Non-resident |
+**SaaS**
 
----
+| Pattern | Treatment | Notes |
+| --- | --- | --- |
+| GOOGLE, MICROSOFT, AWS | Autoliquidation 18% | Non-resident |
 
 ## Section 4 -- Worked examples
 
@@ -80,57 +89,53 @@ FCFA 20M net. TVA = FCFA 3.6M. Line 1 = FCFA 20M. Line 6 = FCFA 3.6M.
 
 FCFA 5M processed milk. TVA = FCFA 450K. Line 2 = FCFA 5M. Line 7 = FCFA 450K.
 
----
-
 ## Section 5 -- Classification rules
 
-18% standard, 9% reduced (milk, pasta), 0% exports, exempt (basic foodstuffs, financial, medical, education, residential rental, solar equipment, agricultural inputs).
-
----
+- **Classification rules** — 18% standard, 9% reduced (milk, pasta), 0% exports, exempt (basic foodstuffs, financial, medical, education, residential rental, solar equipment, agricultural inputs).
 
 ## Section 6 -- VAT return form structure
 
-Output: Lines 1-10 (18% sales, 9% sales, exempt, exports, total, TVA 18%, TVA 9%, autoliquidation, adjustments, total brute).
-
-Input: Lines 11-17 (local goods, local services, imports, capital goods, autoliquidation input, exclusions, total deductible).
-
-Net: Lines 18-21 (net, credit reporte, precompte, payable/credit).
-
----
+- **Output lines 1-10** — Lines 1-10 (18% sales, 9% sales, exempt, exports, total, TVA 18%, TVA 9%, autoliquidation, adjustments, total brute).
+- **Input lines 11-17** — Lines 11-17 (local goods, local services, imports, capital goods, autoliquidation input, exclusions, total deductible).
+- **Net lines 18-21** — Lines 18-21 (net, credit reporte, precompte, payable/credit).
 
 ## Section 7 -- Reverse charge
 
-Non-resident services: self-assess 18%. Claim input if taxable. Net zero. CGI Art. 344.
-
----
+- **Non-resident services reverse charge** — Non-resident services: self-assess 18%. Claim input if taxable. Net zero.  _(CGI Art. 344)_
 
 ## Section 8 -- Deductibility and blocked input
 
-Blocked (CGI Art. 360-363): vehicles < 9 seats, staff accommodation, entertainment/gifts > FCFA 500K/year/recipient, fuel for blocked vehicles, personal use, invoices without NCC.
-
-Prorata: CGI Art. 359. Annual recalculation.
-
----
+- **Blocked input items** — Blocked: vehicles < 9 seats, staff accommodation, entertainment/gifts > FCFA 500K/year/recipient, fuel for blocked vehicles, personal use, invoices without NCC.  _(CGI Art. 360-363)_
+- **Prorata rule** — Prorata. Annual recalculation.  _(CGI Art. 359)_
 
 ## Section 9 -- Filing, deadlines, and penalties
 
-Monthly 10th (large) or 15th (others). Quarterly for simplifie. Late filing: 25% surcharge (min FCFA 100K). Late payment: 1%/month. Failure to register: 100%.
-
----
+- **Filing deadlines** — Monthly 10th (large) or 15th (others). Quarterly for simplifie.
+- **Late filing penalty** — 25% surcharge (min FCFA 100K).
+- **Late payment penalty** — 1%/month.
+- **Failure to register penalty** — 100%.
 
 ## Section 10 -- Edge cases, test suite, and escalation
 
-**EC1 -- SaaS.** Autoliquidation 18%. Net zero.
-**EC2 -- Cocoa export.** Zero-rated. Input recoverable.
-**EC3 -- Motor vehicle blocked.**
-**EC4 -- WAEMU import (Senegal).** VAT 18% at Ivorian customs. No intra-community.
-**EC5 -- Capital goods adjustment.** 10yr immovable, 5yr movable. Reviewer flag.
+EC1 -- SaaS. Autoliquidation 18%. Net zero.
 
-**Test 1** -- FCFA 20M sale. TVA FCFA 3.6M.
-**Test 2** -- FCFA 5M milk at 9%. TVA FCFA 450K.
-**Test 3** -- French services FCFA 15M. Output 2.7M, input 2.7M. Net zero.
-**Test 4** -- Rubber export FCFA 100M. Zero-rated.
-**Test 5** -- Car purchase. Input blocked. Cost = gross.
+EC2 -- Cocoa export. Zero-rated. Input recoverable.
+
+EC3 -- Motor vehicle blocked.
+
+EC4 -- WAEMU import (Senegal). VAT 18% at Ivorian customs. No intra-community.
+
+EC5 -- Capital goods adjustment. 10yr immovable, 5yr movable. Reviewer flag.
+
+Test 1 -- FCFA 20M sale. TVA FCFA 3.6M.
+
+Test 2 -- FCFA 5M milk at 9%. TVA FCFA 450K.
+
+Test 3 -- French services FCFA 15M. Output 2.7M, input 2.7M. Net zero.
+
+Test 4 -- Rubber export FCFA 100M. Zero-rated.
+
+Test 5 -- Car purchase. Input blocked. Cost = gross.
 
 Out of scope: BIC 25%, PAYE progressive, CNPS contributions.
 
@@ -141,41 +146,26 @@ Out of scope: BIC 25%, PAYE progressive, CNPS contributions.
 - NEVER accept invoices without NCC
 - NEVER compute numbers -- engine handles arithmetic
 
----
-
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional before filing or acting upon.
 
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com).
-
----
+The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com).
 
 <!-- openaccountants-cta-block -->
 
+---
+
 ## Talk to a verified accountant
 
-This skill is a tool, not an engagement. Every taxpayer's situation is
-different, and the rules in the skill may not match your specific facts.
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
 
-To speak with one of the licensed accountants who verifies skills for your
-jurisdiction — **no liability on either side until you and the accountant sign
-a formal engagement letter** — book a free 30-minute call:
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
 
-**→ [Book a call](https://calendly.com/openaccountants-info/30min)**
-
-We'll route you to the named verifier covering your country or state. You can
-also see the full list of verified accountants at
-[openaccountants.com/network](https://www.openaccountants.com/network).
-
-<!-- openaccountants-mcp-cta -->
-
-## The accountant-verified version lives in the connector
-
-This file is the open, **research-grade draft**. The **accountant-verified**
-version of this skill is **not published to GitHub** — it is delivered free
-through the OpenAccountants MCP connector, where your AI agent loads the
-verified rules together with the name of the accountant who signed them off.
-
-**→ Install the free connector:** <https://www.openaccountants.com/connect>
-**MCP endpoint:** `https://www.openaccountants.com/api/mcp`
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

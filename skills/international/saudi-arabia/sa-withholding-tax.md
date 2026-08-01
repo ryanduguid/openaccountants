@@ -2,15 +2,14 @@
 name: sa-withholding-tax
 description: "Use this skill whenever asked to compute, classify, or review Saudi Arabian Withholding Tax (WHT) obligations payable by a resident payer on payments to non-resident recipients for services, rent, royalties, dividends, interest, management fees, insurance premiums, freight, telecommunications, or other in-scope categories under Article 68 of the Saudi Income Tax Law and Articles 63–67 of the Implementing Regulations. Trigger on phrases like \"Saudi WHT\", \"ZATCA withholding\", \"5% WHT KSA\", \"15% WHT KSA\", \"20% management fee WHT\", \"Article 68 Saudi\", \"treaty rates Saudi\", \"WHT Saudi Arabia\", \"Saudi royalty WHT\", \"Saudi dividend withholding\", \"non-resident WHT Saudi\", \"ZATCA monthly WHT return\", \"TRC Saudi treaty\", \"Saudi PE risk WHT\", or any request involving the classification, deduction, or remittance of Saudi withholding tax. This skill covers WHT under the Income Tax Law (Royal Decree No. M/1 dated 15/1/1425H, as amended) and the Implementing Regulations issued by the Zakat, Tax and Customs Authority (ZATCA, formerly GAZT), including the Tier 1 standard rates (services 5%, rent 5%, royalties 15%, dividends 5%, interest 5%, management fees 20%, insurance/reinsurance premiums 5%, international telecommunications 5%, air/sea freight 5%), Tier 2 treaty-rate reductions across Saudi Arabia's growing treaty network (UK, France, China, India, Pakistan, etc.), mixed-source transactions, capital gains by non-residents on Saudi-source assets, and the interaction with the Pillar Two top-up regime. Out of scope: Zakat (Saudi/GCC-owned entity charge — see sa-zakat); Corporate Income Tax on resident non-GCC-owned entities (see sa-corporate-tax); VAT (see saudi-arabia-vat); E-invoicing (see saudi-einvoice); upstream petroleum special regime; expatriate employee levy; the GCC selective tax. ALWAYS read this skill before touching any Saudi WHT work."
 jurisdiction: SA
-domain: international
 tax_year: 2025
-reviewed_by: Mehran Habib
-review_status: accountant-reviewed
+last_updated: 2026-05-27
+verified_by: Mehran Habib
 tier: 1
-last_updated: 2026-07-06
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# sa-withholding-tax
+# SA Withholding Tax
 
 ## Saudi Arabia — Withholding Tax — Skill v1.0
 
@@ -372,3 +371,21 @@ To speak with one of the licensed accountants who verifies skills for your juris
 → [Book a call](https://calendly.com/openaccountants-info/30min)
 
 We'll route you to the named verifier covering your country or state. You can also see the full list of verified accountants at [openaccountants.com/network](https://openaccountants.com/network).
+
+<!-- openaccountants-cta-block -->
+
+---
+
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

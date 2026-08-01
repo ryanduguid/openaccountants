@@ -7,7 +7,17 @@
 
 1. `foundation.md`
 2. `intake.md`
-3. `sri-lanka-vat.md`
+3. `sri-lanka-betting-gaming-excise.md`
+4. `sri-lanka-capital-gains-tax.md`
+5. `sri-lanka-corporate-tax.md`
+6. `sri-lanka-income-tax.md`
+7. `sri-lanka-payroll.md`
+8. `sri-lanka-provisional-tax-ait.md`
+9. `sri-lanka-sscl.md`
+10. `sri-lanka-stamp-duty.md`
+11. `sri-lanka-vat.md`
+12. `sri-lanka-withholding-tax.md`
+13. `payroll-workflow-base.md`
 
 ## How to use
 

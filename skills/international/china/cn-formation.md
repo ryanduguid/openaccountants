@@ -3,11 +3,13 @@ name: cn-formation
 description: 当用户询问关于在中国设立、登记或注册企业的任何事项时，请使用此技能。触发短语包括"中国公司设立"、"有限责任公司"、"股份有限公司"、"个体工商户"、"个人独资企业"、"外商投资企业"、"WFOE"、"营业执照"、"市场监督管理局"、"China company formation"、"China LLC"、"WFOE China"、"individual industrial commercial household"、"China entity selection"、"中外合资"、"中外合作"、"负面清单"、"认缴出资"、"实缴出资"、"国家企业信用信息公示系统"、"增值电信业务许可证 ICP"、"VIE 架构"、"开曼 BVI 香港 WFOE 架构"等任何关于在中华人民共和国境内选择或登记主体的提问。涵盖主体类型比较（个体工商户、个人独资企业、合伙企业、有限责任公司 LLC、股份有限公司 JSC、非公司企业法人、外商投资企业 WFOE / 中外合资 EJV / 中外合作 CJV）、市场监督管理局（市监局）注册流程、国家税务总局（国税）税务登记与税种核定、社保公积金账户开立、银行基本户开立、行业许可（互联网 ICP、金融 / 央行 / 银保监 / 证监、教育、医疗、出版、餐饮）、以及 2024 年 7 月 1 日施行的《中华人民共和国公司法》修订重点（认缴出资 5 年内实缴、法人代表范围、董事会监督机制、股东减资程序等）和 2020 年 1 月 1 日施行的《外商投资法》对外资主体的统一适用。不在范围：工作签证 / 居留许可 / 外国人来华工作许可、详细的银行账户开户操作、详细的公司治理与股东协议起草、超出指引层面的行业牌照、A 股 IPO 流程、详细的 VIE / 红筹架构搭建、跨境税务架构筹划。在就任何中国主体设立提供建议之前，请务必先阅读本技能。
 jurisdiction: CN
 tax_year: 2025
+last_updated: 2026-05-27
+verified_by: pending
 tier: 2
-last_updated: 2026-07-06
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# cn-formation
+# CN Formation
 
 ## 中国 — 公司设立与主体选择 — 技能 v1.0
 
@@ -649,3 +651,21 @@ a formal engagement letter** — book a free 30-minute call:
 We'll route you to the named verifier covering your country or state. You can
 also see the full list of verified accountants at
 [openaccountants.com/network](https://openaccountants.com/network).
+
+<!-- openaccountants-cta-block -->
+
+---
+
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

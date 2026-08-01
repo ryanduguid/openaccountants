@@ -2,15 +2,14 @@
 name: nepal-corporate-tax
 description: "ALWAYS read this skill before touching any Nepal corporate income tax work. Use whenever asked about Nepal company tax for a resident entity. Trigger on phrases like \"Nepal corporate tax\", \"Nepal CIT\", \"company tax Nepal\", \"25% corporate Nepal\", \"30% bank tax Nepal\", \"special industry rebate Nepal\", \"Section 11 Nepal\", \"Income Tax Act 2058 company\", or \"FY 2082/83 company\". Covers the Income Tax Act 2058 (2002) as amended by the Finance Act 2082: the 25% normal rate, the 30% sector rate (banks/insurance/telecom/liquor-tobacco/etc.), and the effective 20% for special industries. Out of scope — personal income tax (separate skill), TDS (separate skill), payroll/SSF, VAT, and sector special computational regimes."
 jurisdiction: NP
-domain: international
 tax_year: 2025
-reviewed_by: Ashish Bista
-review_status: accountant-reviewed
+last_updated: 2026-06-03
+verified_by: Ashish Bista
 tier: 1
-last_updated: 2026-07-06
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# nepal-corporate-tax
+# Nepal Corporate Tax
 
 ## Nepal — Corporate Income Tax — Skill v1.0
 
@@ -127,3 +126,21 @@ For informational and computational purposes only; not tax, legal, or financial 
 ## Talk to a verified accountant
 
 This skill is a tool, not an engagement. **No liability until both parties sign an engagement letter** — book a free 30-minute call: **→ [Book a call](https://calendly.com/openaccountants-info/30min)**
+
+<!-- openaccountants-cta-block -->
+
+---
+
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

@@ -1,24 +1,28 @@
 ---
 name: ct-income-tax
 description: Use this skill whenever asked about Connecticut individual income tax for self-employed individuals or sole proprietors — filing Form CT-1040, CT estimated tax (Form CT-1040ES), Connecticut tax brackets, Connecticut personal exemption, or any query involving Connecticut state income tax compliance. Trigger on phrases like "Connecticut income tax", "CT income tax", "Form CT-1040", "Connecticut estimated tax", "Connecticut self-employed tax", "DRS income tax", "CT AGI", or "Conn. Gen. Stat. §12-700".
-jurisdiction: US-CT
-tier: 2
-last_updated: 2026-06-12
 version: "0.1"
-validation_status: ai-drafted-q3
+jurisdiction: US-CT
+tax_year: 2025
+last_updated: 2026-05-22
+verified_by: pending
+tier: 2
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Connecticut Individual Income Tax Skill — Self-Employed / Sole Proprietor
+# CT Income Tax
 
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+## Connecticut Individual Income Tax Skill — Self-Employed / Sole Proprietor
 
 > **Scope.** This skill covers Connecticut individual income tax for self-employed individuals and sole proprietors filing Form CT-1040. It addresses tax computation, personal exemptions, estimated payments, and form mapping.
 > **Quality tier.** Q3 — AI-drafted with citations; not independently verified by a licensed professional.
 
 ## Section 1: Metadata
 
+**Metadata table**
+
 | Field | Value |
-|---|---|
+| --- | --- |
 | Jurisdiction | Connecticut, United States |
 | Jurisdiction code | US-CT |
 | Tax authority | Connecticut Department of Revenue Services (DRS) |
@@ -37,18 +41,16 @@ validation_status: ai-drafted-q3
 3. Connecticut DRS — Tax Information: https://portal.ct.gov/drs/individuals/resident-income-tax/tax-information
 4. TurboTax — CT State Income Tax Guide: https://blog.turbotax.intuit.com/income-tax-by-state/connecticut-106627/
 
----
-
 ## Section 2: Quick reference — rates and thresholds
 
 ### Tax rates (TY 2025)
 
 Connecticut uses a complex progressive system with 7 brackets, plus a personal exemption phase-out (Table C) and tax recapture (Table D) for higher incomes.
 
-**Single and Married Filing Separately (Table B — Initial Tax Calculation):**
+**Single and Married Filing Separately (Table B — Initial Tax Calculation)**
 
 | CT taxable income | Tax |
-|---|---|
+| --- | --- |
 | $0 – $10,000 | 2.00% of amount |
 | $10,001 – $50,000 | $200 + 4.50% of excess over $10,000 |
 | $50,001 – $100,000 | $2,000 + 5.50% of excess over $50,000 |
@@ -57,10 +59,10 @@ Connecticut uses a complex progressive system with 7 brackets, plus a personal e
 | $250,001 – $500,000 | $14,000 + 6.90% of excess over $250,000 |
 | Over $500,000 | $31,250 + 6.99% of excess over $500,000 |
 
-**Married Filing Jointly / Qualifying Surviving Spouse:**
+**Married Filing Jointly / Qualifying Surviving Spouse**
 
 | CT taxable income | Tax |
-|---|---|
+| --- | --- |
 | $0 – $20,000 | 2.00% of amount |
 | $20,001 – $100,000 | $400 + 4.50% of excess over $20,000 |
 | $100,001 – $200,000 | $4,000 + 5.50% of excess over $100,000 |
@@ -69,10 +71,10 @@ Connecticut uses a complex progressive system with 7 brackets, plus a personal e
 | $500,001 – $1,000,000 | $28,000 + 6.90% of excess over $500,000 |
 | Over $1,000,000 | $62,500 + 6.99% of excess over $1,000,000 |
 
-**Head of Household:**
+**Head of Household**
 
 | CT taxable income | Tax |
-|---|---|
+| --- | --- |
 | $0 – $16,000 | 2.00% of amount |
 | $16,001 – $80,000 | $320 + 4.50% of excess over $16,000 |
 | $80,001 – $160,000 | $3,200 + 5.50% of excess over $80,000 |
@@ -85,66 +87,69 @@ Connecticut uses a complex progressive system with 7 brackets, plus a personal e
 
 Connecticut does **not** have a standard deduction. Instead, it uses a personal exemption that phases out at higher income levels:
 
+**Personal exemption by filing status**
+
 | Filing status | Maximum personal exemption | Phase-out begins (CT AGI) |
-|---|---|---|
+| --- | --- | --- |
 | Single | $15,000 | $30,000 |
 | Married Filing Jointly | $24,000 | $48,000 |
 | Head of Household | $19,000 | $38,000 |
 | Married Filing Separately | $12,000 | $24,000 |
 
-The exemption is reduced by $1,000 for each $1,000 (or fraction) of CT AGI above the phase-out threshold, until fully phased out.
+- **Exemption reduction mechanics** — The exemption is reduced by $1,000 for each $1,000 (or fraction) of CT AGI above the phase-out threshold, until fully phased out.
 
 ### Additional tax adjustments
+
 - **Table C:** 2% phase-out add-back applied at higher income levels.
 - **Table D:** Tax recapture for highest earners (effectively increases marginal rate).
 
----
-
 ## Section 3: How this skill works with the federal return
 
-1. **Starting point:** Connecticut begins with **federal adjusted gross income** (federal Form 1040, Line 11).
-2. **Connecticut additions (Schedule 1):** Add back amounts deducted federally but not recognized by CT (e.g., interest on non-Connecticut state/local obligations, certain lump-sum distributions).
-3. **Connecticut subtractions (Schedule 1):** Subtract CT-exempt income (e.g., social security benefits, military retirement pay, interest on U.S. obligations, exempt pension income).
-4. **Connecticut AGI:** Federal AGI ± additions – subtractions = CT AGI (Line 5).
-5. **Income tax calculation:** Apply Table B rates to CT AGI (no deductions subtracted first — CT does not have a standard deduction).
-6. **Personal exemption:** Applied as a tax credit reduction (Table A), not a subtraction from income.
-7. **Phase-out and recapture:** Apply Table C (2% add-back) and Table D (recapture) if applicable.
-8. **Result:** CT income tax after adjustments.
-
----
+- **Starting point** — Connecticut begins with federal adjusted gross income (federal Form 1040, Line 11).
+- **Connecticut additions (Schedule 1)** — Add back amounts deducted federally but not recognized by CT (e.g., interest on non-Connecticut state/local obligations, certain lump-sum distributions).
+- **Connecticut subtractions (Schedule 1)** — Subtract CT-exempt income (e.g., social security benefits, military retirement pay, interest on U.S. obligations, exempt pension income).
+- **Connecticut AGI** — Federal AGI ± additions – subtractions = CT AGI (Line 5).
+- **Income tax calculation** — Apply Table B rates to CT AGI (no deductions subtracted first — CT does not have a standard deduction).
+- **Personal exemption application** — Applied as a tax credit reduction (Table A), not a subtraction from income.
+- **Phase-out and recapture** — Apply Table C (2% add-back) and Table D (recapture) if applicable.
+- **Result** — CT income tax after adjustments.
 
 ## Section 4: Self-employed specific rules
 
 ### Federal conformity
-- Connecticut generally conforms to the IRC for computing federal AGI.
-- Schedule C business deductions flow through federal AGI into Connecticut's computation.
+
+- **Federal conformity rules** — - Connecticut generally conforms to the IRC for computing federal AGI. - Schedule C business deductions flow through federal AGI into Connecticut's computation.
 
 ### QBI deduction (§199A)
-- The federal QBI deduction is taken below the line on the federal return and does **not** affect federal AGI. Therefore, it does not reduce Connecticut's starting point (CT begins from federal AGI). Connecticut does not have its own QBI equivalent.
+
+- **QBI deduction treatment** — The federal QBI deduction is taken below the line on the federal return and does not affect federal AGI. Therefore, it does not reduce Connecticut's starting point (CT begins from federal AGI). Connecticut does not have its own QBI equivalent.
 
 ### SE health insurance deduction
-- Flows through federal AGI (above-the-line deduction) and is automatically reflected in CT's starting point.
+
+- **SE health insurance deduction treatment** — Flows through federal AGI (above-the-line deduction) and is automatically reflected in CT's starting point.
 
 ### Retirement contributions
-- SEP-IRA and Solo 401(k) contributions reduce federal AGI and therefore reduce CT starting income.
+
+- **Retirement contributions treatment** — SEP-IRA and Solo 401(k) contributions reduce federal AGI and therefore reduce CT starting income.
 
 ### Home office deduction
-- Federal home office deduction flows through Schedule C → federal AGI → CT.
+
+- **Home office deduction treatment** — Federal home office deduction flows through Schedule C → federal AGI → CT.
 
 ### Estimated tax payments (Form CT-1040ES)
 
-- **Threshold:** Must pay estimated tax if you expect CT income tax (after withholding and PE Tax Credit) ≥ $1,000 AND withholding < required annual payment.
-- **Required annual payment:** Lesser of 90% of current year tax or 100% of prior year tax.
-- **Due dates:** April 15, June 15, September 15, January 15.
-- **Payment methods:** myconneCT portal (portal.ct.gov/DRS-myconneCT), credit card, or mail Form CT-1040ES to DRS.
-- **Underpayment penalty:** Interest charged on underpayment (Form CT-2210).
-
----
+- **Estimated tax threshold** — Must pay estimated tax if you expect CT income tax (after withholding and PE Tax Credit) ≥ $1,000 AND withholding < required annual payment.
+- **Required annual payment** — Lesser of 90% of current year tax or 100% of prior year tax.
+- **Due dates** — April 15, June 15, September 15, January 15.
+- **Payment methods** — myconneCT portal (portal.ct.gov/DRS-myconneCT), credit card, or mail Form CT-1040ES to DRS.
+- **Underpayment penalty** — Interest charged on underpayment (Form CT-2210).
 
 ## Section 5: Tier 1 rules — deterministic
 
+**Tier 1 rules table**
+
 | # | Rule | Logic |
-|---|---|---|
+| --- | --- | --- |
 | T1-01 | Apply Table B rates to CT AGI | Graduated rates by filing status (7 brackets: 2%–6.99%) |
 | T1-02 | Personal exemption (Table A) | Based on filing status and CT AGI; phases out |
 | T1-03 | No standard deduction | CT does not allow a standard deduction — only personal exemption |
@@ -153,12 +158,12 @@ The exemption is reduced by $1,000 for each $1,000 (or fraction) of CT AGI above
 | T1-06 | Filing threshold | Single: CT AGI > $15,000; MFJ: > $24,000; HOH: > $19,000; MFS: > $12,000 |
 | T1-07 | Use tax reporting | Schedule 4 on CT-1040 for online purchases without sales tax |
 
----
-
 ## Section 6: Tier 2 rules — requires judgment
 
+**Tier 2 rules table**
+
 | # | Rule | Why judgment needed |
-|---|---|---|
+| --- | --- | --- |
 | T2-01 | Table C 2% phase-out add-back | Complex calculation based on CT AGI relative to thresholds |
 | T2-02 | Table D tax recapture | Additional tax for highest earners; requires careful computation |
 | T2-03 | Pass-Through Entity Tax Credit | If business operates as PTE making CT PE tax payments, taxpayer claims credit |
@@ -167,24 +172,24 @@ The exemption is reduced by $1,000 for each $1,000 (or fraction) of CT AGI above
 | T2-06 | Pension/annuity income exemption | Complex eligibility based on age, income type, and CT AGI thresholds |
 | T2-07 | CT earned income tax credit (CT EITC) | 40% of federal EITC; phased out at higher income |
 
----
-
 ## Section 7: Supplier pattern library
 
+**Supplier pattern library table**
+
 | Pattern on bank/CC statement | Likely meaning |
-|---|---|
+| --- | --- |
 | `CT DRS` / `CONN DEPT REV` | Connecticut income tax payment |
 | `MYCONNECT CT` / `MYCONNECT TAX` | Payment via myconneCT portal |
 | `STATE OF CT TAX` | State tax payment |
 | `CT REVENUE SERVICES` | DRS payment |
 | `CT-1040ES` | Estimated tax payment |
 
----
-
 ## Section 8: Form mapping
 
+**Form mapping table**
+
 | Computed value | Form CT-1040 line |
-|---|---|
+| --- | --- |
 | Federal AGI | Line 1 |
 | Connecticut additions | Line 2 (from Schedule 1, Line 38) |
 | Connecticut subtractions | Line 4 (from Schedule 1, Line 50) |
@@ -198,14 +203,14 @@ The exemption is reduced by $1,000 for each $1,000 (or fraction) of CT AGI above
 | Estimated tax payments | Line 19 |
 | Balance due / refund | Lines 22–24 |
 
----
-
 ## Section 9: Refusal catalogue
 
 This skill must refuse and recommend professional review when:
 
+**Refusal catalogue table**
+
 | # | Condition |
-|---|---|
+| --- | --- |
 | R-01 | Taxpayer has multistate business activity requiring allocation |
 | R-02 | Taxpayer is a part-year/nonresident with complex CT-source income |
 | R-03 | Complex PE Tax Credit calculations for pass-through entity owners |
@@ -216,9 +221,41 @@ This skill must refuse and recommend professional review when:
 | R-08 | Audit representation or controversy matters |
 | R-09 | Any question about tax fraud, evasion, or aggressive positions |
 
----
-
 ## Disclaimer
+
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, EA, tax attorney, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
 
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
+The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
+
+## Talk to a verified accountant
+
+This skill is a tool, not an engagement. Every taxpayer's situation is
+different, and the rules in the skill may not match your specific facts.
+
+To speak with one of the licensed accountants who verifies skills for your
+jurisdiction — **no liability on either side until you and the accountant sign
+a formal engagement letter** — book a free 30-minute call:
+
+**→ [Book a call](https://calendly.com/openaccountants-info/30min)**
+
+We'll route you to the named verifier covering your country or state. You can
+also see the full list of verified accountants at
+[openaccountants.com/network](https://openaccountants.com/network).
+
+<!-- openaccountants-cta-block -->
+
+---
+
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

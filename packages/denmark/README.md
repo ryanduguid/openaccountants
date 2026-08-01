@@ -8,9 +8,11 @@
 1. `foundation.md`
 2. `intake.md`
 3. `denmark-vat-return.md`
-4. `dk-income-tax.md`
-5. `references.md`
-6. `eu-vat-directive.md`
+4. `dk-capital-gains.md`
+5. `dk-income-tax.md`
+6. `dk-vat-return.md`
+7. `references.md`
+8. `eu-vat-directive.md`
 
 ## Also known as
 

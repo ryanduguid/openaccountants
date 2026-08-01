@@ -1,49 +1,30 @@
 ---
 name: nc-bailey-settlement-retirement
-description: >
-  Use this skill whenever asked about North Carolina state taxation of retirement
-  income for an individual on Form D-400 — specifically the Bailey settlement
-  exclusion for vested NC state/local government, federal, and military retirees,
-  plus the broader NC retirement income treatment (Social Security exemption,
-  military retirement exemption under S.L. 2021-180, private-pension and
-  IRA/401(k) treatment). Trigger on phrases like "Bailey settlement",
-  "Bailey-protected", "TSERS retiree", "LGERS retiree", "CSRS retiree",
-  "FERS retiree", "NC military retirement", "vested by August 12 1989",
-  "NC pension exclusion", or any D-400 Schedule S Part B Line 20 or Line 21
-  question.
+description: Use this skill whenever asked about North Carolina state taxation of retirement income for an individual on Form D-400 — specifically the Bailey settlement exclusion for vested NC state/local government, federal, and military retirees, plus the broader NC retirement income treatment (Social Security exemption, military retirement exemption under S.L. 2021-180, private-pension and IRA/401(k) treatment). Trigger on phrases like "Bailey settlement", "Bailey-protected", "TSERS retiree", "LGERS retiree", "CSRS retiree", "FERS retiree", "NC military retirement", "vested by August 12 1989", "NC pension exclusion", or any D-400 Schedule S Part B Line 20 or Line 21 question.
 jurisdiction: US-NC
-tier: 2
-verified_by: pending
-version: "0.1"
+tax_year: 2025
 last_updated: 2026-05-28
+verified_by: pending
+tier: 2
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# North Carolina Bailey Settlement & Retirement Income — Tier 2 Skill
+# NC Bailey Settlement Retirement
 
-> **Scope.** This skill covers North Carolina individual income tax treatment of
-> retirement benefits on Form D-400 and Form D-400 Schedule S for full-year NC
-> residents. It focuses on the *Bailey* settlement exclusion (Schedule S Line 20),
-> the post-S.L. 2021-180 military retirement deduction (Schedule S Line 21), the
-> Social Security / Railroad Retirement deduction (Schedule S Line 19), and the
-> NC treatment of private pensions, traditional and Roth IRAs, 401(k)s, 403(b)s,
-> and 457 plans not covered by *Bailey*. Tax year 2025 (returns filed in 2026).
->
-> **Quality tier.** Q3 — AI-drafted, not independently verified. Every output
-> must be reviewed and signed off by a qualified NC tax professional before
-> filing. Items marked `[VERIFY:]` require explicit confirmation against
-> current NCDOR guidance or the latest D-401 instructions.
->
-> **MUST be loaded alongside** `us-tax-workflow-base v0.2+` and
-> `nc-income-tax v0.1+`. This skill does not itself produce a full D-400 —
-> it produces the Schedule S Part B retirement-deduction lines that flow into
-> the parent NC return.
+## North Carolina Bailey Settlement & Retirement Income — Tier 2 Skill
 
----
+> **Scope.** This skill covers North Carolina individual income tax treatment of retirement benefits on Form D-400 and Form D-400 Schedule S for full-year NC residents. It focuses on the *Bailey* settlement exclusion (Schedule S Line 20), the post-S.L. 2021-180 military retirement deduction (Schedule S Line 21), the Social Security / Railroad Retirement deduction (Schedule S Line 19), and the NC treatment of private pensions, traditional and Roth IRAs, 401(k)s, 403(b)s, and 457 plans not covered by *Bailey*. Tax year 2025 (returns filed in 2026).
+>
+> **Quality tier.** Q3 — AI-drafted, not independently verified. Every output must be reviewed and signed off by a qualified NC tax professional before filing. Items marked `[VERIFY:]` require explicit confirmation against current NCDOR guidance or the latest D-401 instructions.
+>
+> **MUST be loaded alongside** `us-tax-workflow-base v0.2+` and `nc-income-tax v0.1+`. This skill does not itself produce a full D-400 — it produces the Schedule S Part B retirement-deduction lines that flow into the parent NC return.
 
 ## Section 1: Metadata
 
+**Section 1: Metadata table**
+
 | Field | Value |
-|---|---|
+| --- | --- |
 | Tax type | Individual income tax — retirement benefits subtraction |
 | Jurisdiction | North Carolina (US-NC) |
 | Tax year | 2025 (filed 2026) |
@@ -69,8 +50,6 @@ last_updated: 2026-05-28
 - *Bailey v. State*, 348 N.C. 130 (1998), Justia: https://law.justia.com/cases/north-carolina/supreme-court/1998/53pa96-9.html
 - N.C. Department of Justice, "Qualification for Class Membership in Bailey/Emory/Patton Lawsuits": https://ncdoj.gov/opinions/qualification-for-class-membership-in-bailey-emory-patton-lawsuits/
 
----
-
 ## Section 2: Quick reference — the Bailey test at a glance
 
 **The five-question screen.** For any retirement benefit being considered for the Line 20 *Bailey* exclusion, the preparer must answer **yes** to all five:
@@ -85,8 +64,10 @@ If yes to all five → fully excluded from NC taxable income on **D-400 Schedule
 
 ### Bailey-qualifying retirement systems (TY 2025)
 
+**Bailey-qualifying retirement systems (TY 2025)**  _(NCDOR Directive PD-99-1)_
+
 | Plan | Type | Vesting test |
-|---|---|---|
+| --- | --- | --- |
 | NC Teachers' and State Employees' Retirement System (TSERS) | NC defined benefit | 5 yrs creditable service by 8/12/1989 |
 | NC Local Governmental Employees' Retirement System (LGERS) | NC defined benefit | 5 yrs creditable service by 8/12/1989 |
 | NC Consolidated Judicial Retirement System | NC defined benefit | 5 yrs creditable service by 8/12/1989 |
@@ -101,11 +82,9 @@ If yes to all five → fully excluded from NC taxable income on **D-400 Schedule
 | NC Firemen's and Rescue Squad Workers' Pension Fund | NC | 5 yrs service + 5 yrs contributions by 8/12/1989 |
 | NC Registers of Deeds' Supplemental Pension Fund | NC | 5 yrs register service + 5 yrs LGERS by 8/12/1989 |
 
+## Section 2: Quick reference — the Bailey test at a glance
+
 > **Audit flash point — 8/12/1989 is a hard cliff.** A retiree who attained 5 years of creditable service on August 13, 1989 receives **zero** Bailey protection. NCDOR has consistently refused equitable extensions in audit. The date traces to the *Davis v. Michigan* (1989) federal pre-emption ripple that pushed NC to repeal the prior reciprocal exemption — *Bailey* preserved the protection only for those whose contractual rights had vested before the repeal.
-
----
-
-## Section 3: The Bailey settlement — what it is and why the date matters
 
 ### 3.1 Background
 
@@ -125,13 +104,7 @@ The Consent Order provides that qualifying retirees and their surviving benefici
 
 ### 3.4 The statutory codification
 
-> N.C. Gen. Stat. § 105-153.5(b)(5) (current language, paraphrased — verify against most recent codification): "The amount received during the taxable year from one or more State, local, or federal government retirement plans to the extent the amount is exempt from tax under this Part pursuant to a court order in settlement of the following cases: *Bailey v. State of North Carolina*, *Emory v. State of North Carolina*, and *Patton v. State of North Carolina*."
-
-`[VERIFY: § 105-153.5(b) subdivision numbering may have shifted with subsequent legislative renumbering. Confirm against the most recent codification before citing in a return position.]`
-
----
-
-## Section 4: The five qualifying retirement systems — practitioner detail
+- **§ 105-153.5(b)(5) paraphrase** — The amount received during the taxable year from one or more State, local, or federal government retirement plans to the extent the amount is exempt from tax under this Part pursuant to a court order in settlement of the following cases: *Bailey v. State of North Carolina*, *Emory v. State of North Carolina*, and *Patton v. State of North Carolina*. `[VERIFY: § 105-153.5(b) subdivision numbering may have shifted with subsequent legislative renumbering. Confirm against the most recent codification before citing in a return position.]`  _(N.C. Gen. Stat. § 105-153.5(b)(5) (current language, paraphrased — verify against most recent codification))_
 
 ### 4.1 NC TSERS (Teachers' and State Employees' Retirement System)
 
@@ -183,61 +156,46 @@ The Consent Order provides that qualifying retirees and their surviving benefici
 - **Different vesting test:** the participant must have "**contributed or contracted to contribute to the plan prior to August 12, 1989**." There is no 5-year service requirement because these are contribution-based, not service-based.
 - The protection extends to subsequent investment earnings and post-1989 contributions to the **same plan**.
 
----
-
 ## Section 5: NC's broader retirement income landscape (TY 2025)
 
 This is the full picture of how NC treats each type of retirement income — Bailey is only one piece.
 
 ### 5.1 Social Security & Railroad Retirement — fully exempt for ALL
 
+**Social Security & Railroad Retirement table**
+
 | Source | NC treatment | Schedule S line |
-|---|---|---|
+| --- | --- | --- |
 | Social Security retirement benefits (Title II) | **Fully exempt** regardless of Bailey status | Line 19 (deduct the federally taxable portion) |
 | Social Security disability (SSDI) | **Fully exempt** | Line 19 |
 | Tier 1 Railroad Retirement | **Fully exempt** | Line 19 |
 | Tier 2 Railroad Retirement | **Fully exempt** (treated as RR retirement under federal law and excluded by NC) | Line 19 |
 | SSI | Not in federal AGI; no NC adjustment | n/a |
 
-The mechanism: federal Form 1040 includes the taxable portion of Social Security in AGI per IRC § 86 (up to 85%). NC backs that taxable portion out on D-400 Schedule S, Part B, **Line 19**, effective per N.C. Gen. Stat. § 105-153.5(b)(5)/(b)(6) `[VERIFY: subdivision letter for the Social Security subtraction — historical guidance refers to (b)(5), (b)(6), or (b)(8) depending on year]`.
+- **Mechanism for SS/RR subtraction** — The mechanism: federal Form 1040 includes the taxable portion of Social Security in AGI per IRC § 86 (up to 85%). NC backs that taxable portion out on D-400 Schedule S, Part B, **Line 19**, effective per N.C. Gen. Stat. § 105-153.5(b)(5)/(b)(6) `[VERIFY: subdivision letter for the Social Security subtraction — historical guidance refers to (b)(5), (b)(6), or (b)(8) depending on year]`.  _(N.C. Gen. Stat. § 105-153.5(b)(5)/(b)(6))_
 
 ### 5.2 Military retirement — fully exempt for qualifying retirees
 
-Per Section 4.5 — fully exempt under § 105-153.5(b)(5a) for 20-year and medically retired members regardless of 1989 vesting. Schedule S **Line 21**.
-
-For military retirees who do **not** meet the (b)(5a) test but **do** satisfy Bailey, the deduction goes on **Line 20** (Bailey).
-
-For military retirees who satisfy **neither** test (e.g., a retiree who took early reserve retirement with less than 20 years and was not medically retired, and was not vested by 8/12/1989), the military pension is **fully taxable** to NC.
+- **Military retirement treatment summary** — Per Section 4.5 — fully exempt under § 105-153.5(b)(5a) for 20-year and medically retired members regardless of 1989 vesting. Schedule S **Line 21**. For military retirees who do **not** meet the (b)(5a) test but **do** satisfy Bailey, the deduction goes on **Line 20** (Bailey). For military retirees who satisfy **neither** test (e.g., a retiree who took early reserve retirement with less than 20 years and was not medically retired, and was not vested by 8/12/1989), the military pension is **fully taxable** to NC.  _(N.C. Gen. Stat. § 105-153.5(b)(5a))_
 
 ### 5.3 Bailey-protected government retirement — fully exempt
 
-Per Sections 3-4. Schedule S **Line 20**.
+- **Bailey-protected treatment cross-reference** — Per Sections 3-4. Schedule S **Line 20**.
 
 ### 5.4 Private pensions, 401(k)s, 403(b)s, traditional IRAs, SEP-IRAs, SIMPLE IRAs — **fully taxable to NC**
 
-NC has **no general retirement-income deduction**. Unlike Georgia, South Carolina, Pennsylvania, and several other Southeastern states, North Carolina does not offer an age-based retirement income deduction. The full federally taxable amount of:
-
-- Private employer pensions (corporate DB plans)
-- Distributions from private 401(k) plans
-- Distributions from 403(b) plans (unless from a Bailey-qualifying NC plan)
-- Traditional IRA distributions (including SEP-IRA and SIMPLE IRA)
-- Annuity distributions (commercial fixed and variable annuities)
-- Cash-balance plans
-- Profit-sharing distributions
-
-…is **fully included** in NC taxable income via federal AGI. No NC subtraction is available unless the distribution is from a Bailey-qualifying plan.
+- **No general retirement income deduction in NC** — NC has **no general retirement-income deduction**. Unlike Georgia, South Carolina, Pennsylvania, and several other Southeastern states, North Carolina does not offer an age-based retirement income deduction. The full federally taxable amount of: - Private employer pensions (corporate DB plans) - Distributions from private 401(k) plans - Distributions from 403(b) plans (unless from a Bailey-qualifying NC plan) - Traditional IRA distributions (including SEP-IRA and SIMPLE IRA) - Annuity distributions (commercial fixed and variable annuities) - Cash-balance plans - Profit-sharing distributions …is **fully included** in NC taxable income via federal AGI. No NC subtraction is available unless the distribution is from a Bailey-qualifying plan.
 
 ### 5.5 Roth IRA distributions
 
-- Qualified Roth distributions are not in federal AGI → not in NC AGI → no NC tax. No Schedule S entry needed.
-- Non-qualified Roth distributions follow federal taxation; the federally taxable portion is taxable to NC.
+- **Roth IRA distribution treatment** — - Qualified Roth distributions are not in federal AGI → not in NC AGI → no NC tax. No Schedule S entry needed. - Non-qualified Roth distributions follow federal taxation; the federally taxable portion is taxable to NC.
 
 ### 5.6 Rollover treatment — critical Bailey nuance
 
-Per NCDOR's "Bailey Decision" page and Directive PD-00-1:
+**Rollover treatment table**  _(NCDOR's "Bailey Decision" page and Directive PD-00-1)_
 
 | Rollover type | Bailey character preserved? |
-|---|---|
+| --- | --- |
 | Direct trustee-to-trustee rollover from a Bailey-qualifying plan to **another Bailey-qualifying plan in which the participant was also vested by 8/12/1989** | **Yes** — Bailey character is preserved on subsequent distributions |
 | Direct rollover from a Bailey-qualifying plan to an **IRA** | **No** — character is lost; subsequent IRA distributions are fully taxable to NC |
 | Direct rollover from a Bailey-qualifying plan to a **non-Bailey 401(k)** (e.g., a private-sector employer plan) | **No** — character is lost |
@@ -247,16 +205,14 @@ Per NCDOR's "Bailey Decision" page and Directive PD-00-1:
 
 ### 5.7 Survivor / beneficiary treatment
 
-Per the *Bailey* Consent Order and NCDOR's settlement implementation: the exemption applies to **surviving beneficiaries** of a qualifying retiree, including a surviving spouse receiving a joint-and-survivor annuity, contingent annuitants, and estate beneficiaries receiving a death benefit traceable to the qualifying account. Documentary proof of the **deceased member's** Bailey-vested status is the operative requirement; the beneficiary's own employment history is irrelevant.
-
----
+- **Survivor/beneficiary treatment** — Per the *Bailey* Consent Order and NCDOR's settlement implementation: the exemption applies to **surviving beneficiaries** of a qualifying retiree, including a surviving spouse receiving a joint-and-survivor annuity, contingent annuitants, and estate beneficiaries receiving a death benefit traceable to the qualifying account. Documentary proof of the **deceased member's** Bailey-vested status is the operative requirement; the beneficiary's own employment history is irrelevant.  _(*Bailey* Consent Order; NCDOR settlement implementation)_
 
 ## Section 6: Documentation requirements
 
-For the preparer's reviewer file and to defend the deduction in an NCDOR audit:
+**Documentation requirements table**
 
 | Document | Source | Purpose |
-|---|---|---|
+| --- | --- | --- |
 | Form 1099-R for the year | Plan administrator (TSERS, OPM, DFAS, etc.) | Identifies payer and gross/taxable amounts |
 | Bailey vesting certification letter | NC Retirement Systems Division (TSERS/LGERS), OPM (CSRS/FERS), or DFAS (military) | Certifies 5 yrs creditable service by 8/12/1989 |
 | Service computation date (SCD) | Federal Form SF-50 or OPM annuity statement | Documents start of federal service |
@@ -264,16 +220,14 @@ For the preparer's reviewer file and to defend the deduction in an NCDOR audit:
 | Rollover statements (if any) | Receiving custodian | Documents preservation or loss of Bailey character |
 | Survivor's documentation (if applicable) | Death certificate + plan administrator survivor designation | For beneficiary returns |
 
-**Form 1099-R alone is not sufficient** to support the Line 20 deduction. NCDOR has audited returns where the only support was a 1099-R from TSERS, and disallowed the deduction for lack of documentary vesting evidence. The Bailey letter (or equivalent OPM/DFAS service-history confirmation) is the operative document.
-
-The 2025 D-401 instructions require attaching a copy of the Form 1099-R or Form W-2 to the return supporting any Line 20 / Line 21 deduction. `[VERIFY: instruction wording — confirm the attachment requirement language in the most current D-401 issued by NCDOR.]`
-
----
+- **1099-R insufficiency and attachment requirement** — **Form 1099-R alone is not sufficient** to support the Line 20 deduction. NCDOR has audited returns where the only support was a 1099-R from TSERS, and disallowed the deduction for lack of documentary vesting evidence. The Bailey letter (or equivalent OPM/DFAS service-history confirmation) is the operative document. The 2025 D-401 instructions require attaching a copy of the Form 1099-R or Form W-2 to the return supporting any Line 20 / Line 21 deduction. `[VERIFY: instruction wording — confirm the attachment requirement language in the most current D-401 issued by NCDOR.]`  _(2025 D-401 instructions [VERIFY])_
 
 ## Section 7: Tier 1 — deterministic rules
 
+**Tier 1 deterministic rules table**
+
 | Rule ID | Rule | Source |
-|---|---|---|
+| --- | --- | --- |
 | NC-BAILEY-T1-01 | Bailey-protected retirement income is **fully excluded** from NC taxable income with no dollar cap | N.C. Gen. Stat. § 105-153.5(b)(5); *Bailey* Consent Order (1998) |
 | NC-BAILEY-T1-02 | The Bailey vesting test is **5+ years of creditable service in a qualifying plan as of August 12, 1989** | NCDOR Directive PD-99-1; *Bailey* Consent Order |
 | NC-BAILEY-T1-03 | For NC § 401(k) and § 457 plans, the test is **contribution or contracted contribution by August 12, 1989** (not 5-year service) | NCDOR Bailey page; Directive PD-99-1 |
@@ -288,12 +242,12 @@ The 2025 D-401 instructions require attaching a copy of the Form 1099-R or Form 
 | NC-BAILEY-T1-12 | NC standard deduction TY 2025: $12,750 single / $25,500 MFJ / $12,750 MFS / $19,125 HoH `[VERIFY: confirm against TY 2025 D-401]` | N.C. Gen. Stat. § 105-153.5(a)(1) |
 | NC-BAILEY-T1-13 | NC flat rate TY 2025 = 4.25%; TY 2026 = 3.99% `[VERIFY against most recent rate schedule]` | Session Law 2023-134 |
 
----
-
 ## Section 8: Tier 2 — judgment rules
 
+**Tier 2 judgment rules table**
+
 | Rule ID | Situation | Guidance |
-|---|---|---|
+| --- | --- | --- |
 | NC-BAILEY-T2-01 | **Mixed CSRS / FERS service** (e.g., CSRS-Offset retiree) | The CSRS Component of the annuity is potentially Bailey-protected if the member had 5 yrs of CSRS service by 8/12/1989; the FERS Component generally is not. Request OPM to identify the split. Many OPM annuities are NOT cleanly split — escalate to a credentialed reviewer for allocation. |
 | NC-BAILEY-T2-02 | **Reservist with active-duty service crossing 8/12/1989** | Count creditable service per the relevant uniformed service's rules (Army/Navy/AF retirement points). If the member had 5+ years (computed under the service's own counting rules) by 8/12/89, Bailey may apply — but the 20-year (b)(5a) deduction is usually the cleaner route. |
 | NC-BAILEY-T2-03 | **Retiree who rolled TSERS into an IRA in 2010 and now takes IRA RMDs** | Bailey character was lost on rollover. Subsequent IRA RMDs are fully taxable to NC. Do NOT claim Line 20. Educate the client; consider whether any reversal is possible (usually not). |
@@ -304,8 +258,6 @@ The 2025 D-401 instructions require attaching a copy of the Form 1099-R or Form 
 | NC-BAILEY-T2-08 | **Lump-sum withdrawal vs. periodic distributions from Bailey plan** | Both are Bailey-protected if the member is vested. The form of distribution does not affect character. However, a lump-sum that is then rolled into a non-qualifying IRA destroys character for the post-rollover account (Rule NC-BAILEY-T1-07). |
 | NC-BAILEY-T2-09 | **NC resident receiving federal CSRS pension but unsure of 1989 service** | Request OPM SF-50 (Notification of Personnel Action) showing service computation date. CSRS service started before 1/1/1984 with 5+ continuous years almost certainly qualifies; ambiguous cases require OPM service-history printout and credentialed-reviewer judgment. |
 | NC-BAILEY-T2-10 | **Conversion of Bailey-protected traditional account to Roth IRA** | The conversion is treated as a Bailey distribution at the moment of conversion (exempt from NC tax). Subsequent Roth qualified distributions are not in federal AGI, so no NC tax. Non-qualified Roth distributions follow Roth rules (federally taxable portion is taxable to NC). |
-
----
 
 ## Section 9: Worked examples (TY 2025)
 
@@ -324,8 +276,6 @@ The 2025 D-401 instructions require attaching a copy of the Form 1099-R or Form 
 
 > **Flash point.** Purchased service credit counts toward the 5-year test if and only if it was attributable to a period before 8/12/1989. NCDOR has accepted back-credited service in this fact pattern, but the TSERS Bailey letter is the operative document — do not infer from the purchase paperwork alone.
 
----
-
 ### Example 2 — NC State employee hired 1991 — NOT Bailey-protected
 
 **Facts.** James, a NC resident filing single, started his state job on March 1, 1991 and retired in 2025 with 34 years of TSERS service. He receives $55,000/yr in TSERS benefits.
@@ -338,8 +288,6 @@ The 2025 D-401 instructions require attaching a copy of the Form 1099-R or Form 
 **Result.** **No Bailey deduction.** The full $55,000 is taxable to NC. James pays 4.25% × $55,000 = $2,337.50 NC tax on his TSERS pension before considering his standard deduction and other items.
 
 > **Flash point.** This is the most common audit reversal in NC retiree returns — preparers see "TSERS retiree" on a 1099-R and reflexively claim Line 20 without checking the vesting date. The penalty/interest on a multi-year disallowance can be substantial.
-
----
 
 ### Example 3 — Federal CSRS retiree with 5 yrs by 8/12/89
 
@@ -358,8 +306,6 @@ Elaine also receives $32,000 in Social Security; the federally taxable portion (
 
 Her NC taxable income from these two sources = $0.
 
----
-
 ### Example 4 — Mixed-source retiree
 
 **Facts.** Robert, a NC resident filing MFJ, receives:
@@ -371,15 +317,6 @@ Her NC taxable income from these two sources = $0.
 
 Total federal AGI line items (assuming all included): TSERS $36k + 401(k) $24k + taxable SS $15.3k + IRA $8k + Military $14k = **$97,300**.
 
-**NC Schedule S Part B deductions:**
-
-| Item | Amount | Line |
-|---|---|---|
-| Social Security taxable portion | $15,300 | Line 19 |
-| TSERS (Bailey) | $36,000 | Line 20 |
-| Military retirement (§ 105-153.5(b)(5a)) | $14,000 | Line 21 |
-| **Total deductions** | **$65,300** | **Line 41** |
-
 **Items NOT deductible (taxable to NC):**
 - Private 401(k): $24,000 — fully taxable to NC, no NC retirement-income deduction available
 - Traditional IRA: $8,000 — fully taxable to NC
@@ -390,12 +327,21 @@ After the MFJ standard deduction of $25,500, NC taxable income = $6,500. NC tax 
 
 > **Flash point.** Robert should be advised that if he ever rolls the TSERS account into an IRA for investment-management convenience, he will permanently lose the Bailey protection on the $36,000 income stream. Annual NC tax cost of that decision: $36,000 × 4.25% = $1,530/yr.
 
----
+**NC Schedule S Part B deductions table**
+
+| Item | Amount | Line |
+| --- | --- | --- |
+| Social Security taxable portion | $15,300 | Line 19 |
+| TSERS (Bailey) | $36,000 | Line 20 |
+| Military retirement (§ 105-153.5(b)(5a)) | $14,000 | Line 21 |
+| **Total deductions** | **$65,300** | **Line 41** |
 
 ## Section 10: Refusal catalogue
 
+**Refusal catalogue table**
+
 | Refusal ID | Trigger | Response |
-|---|---|---|
+| --- | --- | --- |
 | R-NCB-01 | **Out-of-state government pension** (Virginia VRS, Florida FRS, etc.) | "Bailey protection applies only to NC state/local and federal government plans. Pensions from other states' government retirement systems are fully taxable to NC. No deduction available." |
 | R-NCB-02 | **Foreign government pension** | "Foreign pensions are outside this skill's scope. Treaty analysis required. Refer to credentialed reviewer." |
 | R-NCB-03 | **Bailey vesting status uncertain — no documentation** | "Cannot claim Line 20 without documentary evidence (TSERS/OPM/DFAS Bailey or service-verification letter). Decline the deduction or pause to obtain documentation before filing." |
@@ -407,14 +353,12 @@ After the MFJ standard deduction of $25,500, NC taxable income = $6,500. NC tax 
 | R-NCB-09 | **Rollover documentation incomplete** | "Cannot determine whether Bailey character was preserved without trustee-to-trustee documentation. Decline Line 20 until documentation obtained." |
 | R-NCB-10 | **Roth IRA conversions from Bailey accounts in prior years** | "Multi-year Roth conversion sequencing from Bailey accounts requires reviewer judgment. Out of scope for automated determination." |
 
----
-
 ## Section 11: Form mapping — D-400 Schedule S Part B (TY 2025)
 
-Confirmed against the NCDOR 2025 D-400 Schedule S Web-Fill version (form revision **Web-Fill 9-25**):
+**Schedule S Part B line mapping table**  _(NCDOR 2025 D-400 Schedule S Web-Fill version (form revision Web-Fill 9-25))_
 
 | Schedule S Part B Line | Label | Use for |
-|---|---|---|
+| --- | --- | --- |
 | Line 17 | State or Local Income Tax Refund | State tax refund included in federal AGI |
 | Line 18 | Interest Income From Obligations of the United States or United States' Possessions | U.S. Treasury / agency interest |
 | **Line 19** | **Taxable Portion of Social Security and Railroad Retirement Benefits** | Federally taxable SS / Tier 1+2 RR portion |
@@ -424,10 +368,12 @@ Confirmed against the NCDOR 2025 D-400 Schedule S Web-Fill version (form revisio
 | Lines 23a-f / 24a-f | Bonus depreciation / §179 add-back recovery | Multi-year 20% recovery |
 | Line 41 | **Total Deductions — flows to Form D-400 Line 9** | Sum of 17 through 40 |
 
-**On Form D-400 itself:**
+## Section 11: Form mapping — D-400 Schedule S Part B (TY 2025)
+
+**Form D-400 line mapping table**
 
 | Form D-400 Line | Description |
-|---|---|
+| --- | --- |
 | Line 6 | Federal AGI (from federal 1040, Line 11) |
 | Line 7 | Additions from Schedule S Part A (Line 16) |
 | Line 9 | Deductions from Schedule S Part B (**Line 41**) — this is where Bailey/military/SS flow in |
@@ -436,17 +382,21 @@ Confirmed against the NCDOR 2025 D-400 Schedule S Web-Fill version (form revisio
 | Line 14 | NC taxable income |
 | Line 15 | NC income tax (Line 14 × 4.25% for TY 2025) |
 
+## Section 11: Form mapping — D-400 Schedule S Part B (TY 2025)
+
 > **Filing reminder.** A Form 1099-R supporting any Line 20 or Line 21 deduction must be attached to the D-400 when filed. The 2025 D-401 instructions state this attachment is required to substantiate the deduction. `[VERIFY exact wording in current D-401.]`
 
 > **Filing-threshold reminder.** Even if 100% of a taxpayer's retirement income is excluded under Bailey (so NC taxable income from pensions is $0), the taxpayer may still be required to file a NC return if gross income meets the filing threshold. The Bailey exclusion is a *taxable-income* exclusion, not a *filing requirement* exclusion. See parent skill `nc-income-tax` for filing-threshold detail.
 
----
-
 ## Section 12: Provenance & version history
 
+**Version history table**
+
 | Version | Date | Author | Changes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | 0.1 | 2026-05-28 | AI-drafted (Q3, pending verification) | Initial draft. All TY 2025 figures verified against NCDOR 2025 D-400 Schedule S (Web-Fill 9-25). Statutory subdivision letters for § 105-153.5(b) marked `[VERIFY:]` where current codification numbering not directly confirmed against ncleg.net (403 on automated fetch). Recent military-retirement expansion confirmed against S.L. 2021-180 and NCDOR Important Notice. |
+
+## Section 12: Provenance & version history
 
 **Pending verification items (must be resolved before this skill exits Q3 status):**
 
@@ -455,41 +405,36 @@ Confirmed against the NCDOR 2025 D-400 Schedule S Web-Fill version (form revisio
 - Confirmation that the 2026 flat rate is 3.99% (Session Law 2023-134 set the schedule; subsequent sessions may have adjusted).
 - Confirmation of the D-401 instruction wording on the 1099-R attachment requirement.
 
----
-
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional before filing or acting upon.
 
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com).
-
----
-
-<!-- openaccountants-cta-block -->
+The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com).
 
 ## Talk to a verified accountant
 
-This skill is a tool, not an engagement. Every taxpayer's situation is
-different, and the rules in the skill may not match your specific facts.
+This skill is a tool, not an engagement. Every taxpayer's situation is different, and the rules in the skill may not match your specific facts.
 
-To speak with one of the licensed accountants who verifies skills for your
-jurisdiction — **no liability on either side until you and the accountant sign
-a formal engagement letter** — book a free 30-minute call:
+To speak with one of the licensed accountants who verifies skills for your jurisdiction — **no liability on either side until you and the accountant sign a formal engagement letter** — book a free 30-minute call:
 
 **→ [Book a call](https://calendly.com/openaccountants-info/30min)**
 
-We'll route you to the named verifier covering your country or state. You can
-also see the full list of verified accountants at
-[openaccountants.com/network](https://www.openaccountants.com/network).
+We'll route you to the named verifier covering your country or state. You can also see the full list of verified accountants at [openaccountants.com/network](https://openaccountants.com/network).
 
-<!-- openaccountants-mcp-cta -->
+<!-- openaccountants-cta-block -->
 
-## The accountant-verified version lives in the connector
+---
 
-This file is the open, **research-grade draft**. The **accountant-verified**
-version of this skill is **not published to GitHub** — it is delivered free
-through the OpenAccountants MCP connector, where your AI agent loads the
-verified rules together with the name of the accountant who signed them off.
+## Talk to a verified accountant
 
-**→ Install the free connector:** <https://www.openaccountants.com/connect>
-**MCP endpoint:** `https://www.openaccountants.com/api/mcp`
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

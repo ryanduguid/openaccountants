@@ -2,14 +2,14 @@
 name: az-payroll
 description: Tier 2 Arizona content skill for employer payroll compliance covering tax year 2025. Includes the 2.5% flat PIT (phased down from 4.5% over 2022-2023), A-4 state W-4 expressed as percentage of federal withholding (0.5-3.5% options), A1-QRT quarterly withholding, A1-R annual reconciliation, AZ UI wage base $8,000 with rates 0.07-15.6%, Earned Paid Sick Time Proposition 206 mandate (1 hour per 30 hours worked statewide), and a 7-factor worker classification test.
 jurisdiction: US-AZ
-category: state-tax
-tier: 2
+tax_year: 2025
+last_updated: 2026-05-27
 verified_by: pending
-last_updated: 2025-11-15
-version: 0.1
+tier: 2
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Arizona Payroll Compliance (Tax Year 2025)
+# AZ Payroll
 
 ## 1. Scope
 
@@ -50,12 +50,12 @@ This skill MUST be loaded alongside `us-tax-workflow-base` v0.2 or later. Federa
 
 ### 2.1 Statutory authority and rate history
 
-A.R.S. § 43-1011 establishes Arizona personal income tax rates. For tax year 2023 and forward, Arizona moved to a single flat rate of 2.5% on Arizona taxable income for all filing statuses. Senate Bill 1828 (55th Legislature, 2nd Regular Session, 2021) enacted the phase-down originally scheduled over four years, but revenue triggers were met early and the flat 2.5% rate took full effect in tax year 2023.
+- **Flat rate effective date** — For tax year 2023 and forward, Arizona moved to a single flat rate of 2.5% on Arizona taxable income for all filing statuses. Senate Bill 1828 (55th Legislature, 2nd Regular Session, 2021) enacted the phase-down originally scheduled over four years, but revenue triggers were met early and the flat 2.5% rate took full effect in tax year 2023.  _(A.R.S. § 43-1011)_
 
-Phase-down timeline:
+**Phase-down timeline**  _(A.R.S. § 43-1011)_
 
 | Tax year | Top marginal rate | Structure |
-|----------|------------------|-----------|
+| --- | --- | --- |
 | 2021 and earlier | 4.50% | Four-bracket progressive |
 | 2022 | 2.98% (top) / 2.55% (low) | Two-bracket transitional |
 | 2023 | 2.50% | Flat rate |
@@ -66,7 +66,7 @@ There is no separate withholding rate table to look up wages against. The flat s
 
 ### 2.2 Supplemental wage withholding
 
-Arizona does not publish a separate supplemental wage withholding rate. For bonuses, commissions, severance, retroactive pay increases, accumulated vacation payouts, prizes, and other supplemental compensation paid to Arizona-source employees, the employer applies the employee's elected A-4 percentage to the supplemental payment, the same as for regular wages.
+- **Supplemental wage rate** — Arizona does not publish a separate supplemental wage withholding rate. For bonuses, commissions, severance, retroactive pay increases, accumulated vacation payouts, prizes, and other supplemental compensation paid to Arizona-source employees, the employer applies the employee's elected A-4 percentage to the supplemental payment, the same as for regular wages.
 
 In practice many payroll systems will default the supplemental wage rate to 2.5% (the flat PIT rate) when the employee's A-4 election is silent or when an aggregate method would distort withholding. Where the employee's A-4 election is 0% (zero withholding), the employer withholds 0% on supplemental wages absent an alternative directive from the employee.
 
@@ -74,34 +74,13 @@ Reviewer note: confirm the payroll provider's configuration for supplemental wag
 
 ### 2.3 Wages subject to Arizona withholding
 
-A.R.S. § 43-401(A) requires Arizona income tax withholding from compensation paid to employees for services performed in Arizona. Compensation includes:
-
-- Salary, wages, commissions, bonuses
-- Tips reported to the employer under IRC § 6053
-- Taxable fringe benefits (personal use of employer vehicle, group-term life insurance over $50,000)
-- Sick pay paid by the employer
-- Third-party sick pay where the employer has accepted withholding responsibility
-- Severance pay
-- Deferred compensation when constructively received (and when not previously taxed as Arizona-source)
-
-Compensation excluded from Arizona withholding:
-
-- Section 125 cafeteria plan elections (medical, dental, vision, dependent care FSA, HSA via cafeteria plan) — see §2.8 below
-- 401(k), 403(b), 457(b) traditional elective deferrals (not Roth) — Arizona conforms to federal treatment
-- Qualified transportation fringe (transit pass, qualified parking, vanpool) up to the federal monthly limit
-- Employer contributions to a qualified retirement plan
-- Workers' compensation benefits
-- Domestic-service wages paid in a private home (not subject to mandatory withholding but voluntary withholding permitted)
-- Wages paid to a non-resident employee performing services entirely outside Arizona
+- **Compensation subject to withholding** — A.R.S. § 43-401(A) requires Arizona income tax withholding from compensation paid to employees for services performed in Arizona. Compensation includes: Salary, wages, commissions, bonuses; Tips reported to the employer under IRC § 6053; Taxable fringe benefits (personal use of employer vehicle, group-term life insurance over $50,000); Sick pay paid by the employer; Third-party sick pay where the employer has accepted withholding responsibility; Severance pay; Deferred compensation when constructively received (and when not previously taxed as Arizona-source)  _(A.R.S. § 43-401(A))_
+- **Compensation excluded from withholding** — Compensation excluded from Arizona withholding: Section 125 cafeteria plan elections (medical, dental, vision, dependent care FSA, HSA via cafeteria plan) — see §2.8 below; 401(k), 403(b), 457(b) traditional elective deferrals (not Roth) — Arizona conforms to federal treatment; Qualified transportation fringe (transit pass, qualified parking, vanpool) up to the federal monthly limit; Employer contributions to a qualified retirement plan; Workers' compensation benefits; Domestic-service wages paid in a private home (not subject to mandatory withholding but voluntary withholding permitted); Wages paid to a non-resident employee performing services entirely outside Arizona  _(A.R.S. § 43-401(A))_
 
 ### 2.4 Arizona-source wages — multistate employees
 
-For an employee who performs services partly inside and partly outside Arizona, A.R.S. § 43-401 and Arizona Department of Revenue (ADOR) guidance require withholding on the Arizona-source portion. Arizona-source wages are generally determined by:
-
-1. **Workdays method (preferred):** Arizona-source wages = total wages × (Arizona workdays / total workdays). A workday is any day on which the employee performs services for the employer, regardless of hours.
-2. **Time-tracking method:** for highly mobile employees, an hours-based allocation is acceptable if tracked contemporaneously.
-
-For an Arizona resident performing services entirely in another state (e.g., resident commuter to California or remote worker temporarily in Nevada), Arizona does NOT mandate Arizona withholding, but the employee remains liable for Arizona PIT on worldwide income. The employer may offer voluntary Arizona withholding by employee request via Form A-4V (Voluntary Withholding Election for Arizona Resident Working Outside Arizona).
+- **Allocation methods** — For an employee who performs services partly inside and partly outside Arizona, A.R.S. § 43-401 and Arizona Department of Revenue (ADOR) guidance require withholding on the Arizona-source portion. Arizona-source wages are generally determined by: 1. Workdays method (preferred): Arizona-source wages = total wages × (Arizona workdays / total workdays). A workday is any day on which the employee performs services for the employer, regardless of hours. 2. Time-tracking method: for highly mobile employees, an hours-based allocation is acceptable if tracked contemporaneously.  _(A.R.S. § 43-401)_
+- **Arizona resident working entirely outside AZ** — For an Arizona resident performing services entirely in another state (e.g., resident commuter to California or remote worker temporarily in Nevada), Arizona does NOT mandate Arizona withholding, but the employee remains liable for Arizona PIT on worldwide income. The employer may offer voluntary Arizona withholding by employee request via Form A-4V (Voluntary Withholding Election for Arizona Resident Working Outside Arizona).
 
 Arizona has no current reciprocal withholding agreements with neighboring states (California, Nevada, Utah, New Mexico, Colorado) for tax year 2025. Each multistate employee situation must be analyzed under both the work-state and resident-state rules.
 
@@ -109,30 +88,20 @@ Arizona has no current reciprocal withholding agreements with neighboring states
 
 ### 3.1 The percentage method (Arizona's distinguishing feature)
 
-> **AUDIT FLASH POINT — A-4 percentage method confusion**
->
-> Arizona's A-4 is fundamentally different from the federal Form W-4 and from most other states' withholding certificates. Arizona does NOT use a wage-bracket method, does NOT use a percentage method based on Arizona-only taxable wages, and does NOT use allowances. Instead, the employee elects a percentage of their federal taxable wages (after federal pre-tax deductions but before federal income tax) to be withheld for Arizona PIT.
->
-> This is a frequent source of error. Out-of-state payroll administrators routinely:
->   - Apply the A-4 percentage to Arizona gross wages instead of federal taxable wages
->   - Treat the A-4 percentage as an allowance number rather than a rate
->   - Default new hires to 2.7% (the pre-2023 default) instead of the current 2.0% default
->   - Apply the percentage to wages after Arizona-specific subtractions
->
-> The mechanically correct approach: take the employee's federal taxable wages for the pay period (Box 1 W-2 wages equivalent for the period, i.e., gross wages minus §125 cafeteria plan deductions minus traditional 401(k)/403(b)/457 elective deferrals minus other federal pre-tax items, but BEFORE federal income tax withholding is computed) and multiply by the A-4 elected percentage. The result is Arizona PIT withholding for that pay period.
+- **AUDIT FLASH POINT — A-4 percentage method confusion** — Arizona's A-4 is fundamentally different from the federal Form W-4 and from most other states' withholding certificates. Arizona does NOT use a wage-bracket method, does NOT use a percentage method based on Arizona-only taxable wages, and does NOT use allowances. Instead, the employee elects a percentage of their federal taxable wages (after federal pre-tax deductions but before federal income tax) to be withheld for Arizona PIT. This is a frequent source of error. Out-of-state payroll administrators routinely: - Apply the A-4 percentage to Arizona gross wages instead of federal taxable wages - Treat the A-4 percentage as an allowance number rather than a rate - Default new hires to 2.7% (the pre-2023 default) instead of the current 2.0% default - Apply the percentage to wages after Arizona-specific subtractions The mechanically correct approach: take the employee's federal taxable wages for the pay period (Box 1 W-2 wages equivalent for the period, i.e., gross wages minus §125 cafeteria plan deductions minus traditional 401(k)/403(b)/457 elective deferrals minus other federal pre-tax items, but BEFORE federal income tax withholding is computed) and multiply by the A-4 elected percentage. The result is Arizona PIT withholding for that pay period.
 
 ### 3.2 Available A-4 percentage elections (2025)
 
-For tax year 2025, the A-4 election options are:
+**A-4 election options 2025**
 
 | Election | Percentage of federal taxable wages |
-|----------|-------------------------------------|
+| --- | --- |
 | 0.5% | Minimum statutory election |
-| 1.0% | |
-| 1.5% | |
+| 1.0% |  |
+| 1.5% |  |
 | 2.0% | **Default for employees who do not submit an A-4** |
 | 2.5% | Matches the flat PIT rate |
-| 3.0% | |
+| 3.0% |  |
 | 3.5% | Maximum statutory election |
 | Zero | Available only if the employee qualifies (see §3.4) |
 
@@ -140,7 +109,7 @@ The form was updated by ADOR in late 2022 to reflect the 2.5% flat tax. The 2022
 
 ### 3.3 Default rate for missing A-4
 
-A.R.S. § 43-401(G) and ADOR Form A-4 instructions provide that if a newly hired employee fails to submit an A-4 within their first pay period, the employer must withhold at the default percentage of 2.0% of the employee's federal taxable wages.
+- **Default 2.0% withholding** — A.R.S. § 43-401(G) and ADOR Form A-4 instructions provide that if a newly hired employee fails to submit an A-4 within their first pay period, the employer must withhold at the default percentage of 2.0% of the employee's federal taxable wages.  _(A.R.S. § 43-401(G))_
 
 The employer does NOT use 2.5% as a default. The 2.0% default rate is a deliberate ADOR choice intended to give the employee room to adjust upward via Form A-4 if their actual liability exceeds the default.
 
@@ -148,22 +117,18 @@ The employee can submit an A-4 at any time; the new election is effective for th
 
 ### 3.4 Zero withholding election
 
-An employee may elect zero Arizona PIT withholding on Form A-4 only if the employee:
-
-1. Had no Arizona income tax liability in the prior tax year, AND
-2. Expects to have no Arizona income tax liability in the current tax year
-
-The employee certifies these conditions by checking the Zero Withholding box on the A-4 and signing under penalty of perjury. If the employee's circumstances change such that they will owe Arizona tax, the employee must submit a revised A-4 within ten days.
+- **Zero withholding qualification** — An employee may elect zero Arizona PIT withholding on Form A-4 only if the employee: 1. Had no Arizona income tax liability in the prior tax year, AND 2. Expects to have no Arizona income tax liability in the current tax year
+- **Certification and revision requirement** — The employee certifies these conditions by checking the Zero Withholding box on the A-4 and signing under penalty of perjury. If the employee's circumstances change such that they will owe Arizona tax, the employee must submit a revised A-4 within ten days.
 
 The employer accepts a Zero Withholding A-4 at face value and is not required to verify the employee's claim. The employer is, however, required to forward to ADOR any A-4 claiming Zero Withholding when requested by ADOR.
 
 ### 3.5 Voluntary Arizona withholding for AZ residents working out of state — Form A-4V
 
-A.R.S. § 43-403 allows an Arizona resident performing services in another state to request voluntary Arizona withholding from the employer using Form A-4V. The employer is not required to honor the request, but if accepted, the employer remits the withheld amounts on Form A1-QRT the same as for mandatory withholding. This is increasingly common in 2025 for remote workers who have moved out of Arizona temporarily but remain Arizona residents.
+- **Voluntary withholding for AZ residents working out-of-state** — A.R.S. § 43-403 allows an Arizona resident performing services in another state to request voluntary Arizona withholding from the employer using Form A-4V. The employer is not required to honor the request, but if accepted, the employer remits the withheld amounts on Form A1-QRT the same as for mandatory withholding. This is increasingly common in 2025 for remote workers who have moved out of Arizona temporarily but remain Arizona residents.  _(A.R.S. § 43-403)_
 
 ### 3.6 A-4 retention
 
-Employers must retain each employee's A-4 for at least four years after the last date the form is in effect, per ADOR Publication 701. ADOR may request submission of any A-4 at any time during the retention period.
+- **Retention period** — Employers must retain each employee's A-4 for at least four years after the last date the form is in effect, per ADOR Publication 701. ADOR may request submission of any A-4 at any time during the retention period.  _(ADOR Publication 701)_
 
 ### 3.7 Worked walkthrough — A-4 mechanics
 
@@ -185,33 +150,33 @@ If Sarah's federal taxable wages had instead been computed wrong (e.g., the payr
 
 ### 4.1 Who files A1-QRT
 
-A.R.S. § 43-411 requires every employer with Arizona withholding obligations to file Form A1-QRT for each calendar quarter, even if no tax was withheld during the quarter (a zero return).
-
-Exception: employers qualifying as Annual filers (see §5.2) file Form A1-APR instead of quarterly A1-QRTs.
+- **Filing requirement** — A.R.S. § 43-411 requires every employer with Arizona withholding obligations to file Form A1-QRT for each calendar quarter, even if no tax was withheld during the quarter (a zero return). Exception: employers qualifying as Annual filers (see §5.2) file Form A1-APR instead of quarterly A1-QRTs.  _(A.R.S. § 43-411)_
 
 ### 4.2 Quarterly due dates
 
-A1-QRT is due on the last day of the month following the end of the quarter:
+**A1-QRT due dates**
 
 | Quarter | Period covered | Due date |
-|---------|----------------|----------|
+| --- | --- | --- |
 | Q1 | January 1 – March 31 | April 30 |
 | Q2 | April 1 – June 30 | July 31 |
 | Q3 | July 1 – September 30 | October 31 |
 | Q4 | October 1 – December 31 | January 31 (next year) |
 
-If the due date falls on a Saturday, Sunday, or Arizona legal holiday, the return is due the next business day.
+- **Weekend/holiday rule** — If the due date falls on a Saturday, Sunday, or Arizona legal holiday, the return is due the next business day.
 
 ### 4.3 Deposit frequencies — quarterly, monthly, or next-day
 
-ADOR assigns each employer a deposit frequency based on the employer's average quarterly Arizona withholding liability. The frequency for the current calendar year is determined by the prior calendar year's lookback period (July 1 of two years prior through June 30 of the prior year).
+**Deposit frequency schedule**
 
 | Average Q withholding | Deposit frequency |
-|-----------------------|-------------------|
+| --- | --- |
 | Less than $1,500 per quarter | Quarterly (pay with A1-QRT) |
 | $1,500 – $50,000 per quarter | Monthly (15th of following month) |
 | More than $50,000 per quarter | Semi-weekly under federal rules — Arizona generally aligns to federal Form 941 deposit schedule |
 | Single tax liability of $500+ in a quarter | One-banking-day deposit (next business day) for any payday triggering $500+ in undeposited liability |
+
+ADOR assigns each employer a deposit frequency based on the employer's average quarterly Arizona withholding liability. The frequency for the current calendar year is determined by the prior calendar year's lookback period (July 1 of two years prior through June 30 of the prior year).
 
 Newly registered employers default to quarterly deposit frequency unless their first-quarter liability triggers a faster schedule.
 
@@ -219,56 +184,47 @@ ADOR sends a notice each November communicating the deposit frequency for the up
 
 ### 4.4 Method of payment
 
-All deposits must be made electronically via AZTaxes.gov when annual Arizona withholding tax liability is $500 or more, per A.R.S. § 42-1129. Employers below that threshold may still file and pay electronically (and most do). Paper Form A1-QRT is technically permitted only for the very smallest employers.
+- **Electronic payment threshold** — All deposits must be made electronically via AZTaxes.gov when annual Arizona withholding tax liability is $500 or more, per A.R.S. § 42-1129. Employers below that threshold may still file and pay electronically (and most do). Paper Form A1-QRT is technically permitted only for the very smallest employers.  _(A.R.S. § 42-1129)_
 
 ### 4.5 A1-QRT line structure
 
-The A1-QRT collects:
-
-1. Total Arizona wages paid this quarter
-2. Total Arizona PIT withheld this quarter
-3. Less: payments made during the quarter (monthly or weekly deposits)
-4. Net tax due (or refund)
-5. Penalty (if applicable)
-6. Interest (if applicable)
-7. Total balance due
+- **A1-QRT lines** — The A1-QRT collects: 1. Total Arizona wages paid this quarter; 2. Total Arizona PIT withheld this quarter; 3. Less: payments made during the quarter (monthly or weekly deposits); 4. Net tax due (or refund); 5. Penalty (if applicable); 6. Interest (if applicable); 7. Total balance due
 
 Total Arizona wages on line 1 means wages subject to Arizona withholding, NOT gross wages. For an employee with $4,000 gross wages and $750 of §125 plus 401(k) pre-tax deductions, the Arizona-wages figure is $3,250 — the federal taxable wages base.
 
 ### 4.6 Penalty exposure
 
-A.R.S. § 42-1125 imposes:
-
-- Late filing penalty: 4.5% of the tax required to be shown on the return per month or fraction (max 25%)
-- Late payment penalty: 0.5% per month or fraction (max 10%)
-- Failure to electronically file when required: 5% of the tax shown, minimum $25
-- Interest: at the federal short-term rate plus 3%, compounded annually under A.R.S. § 42-1123
+- **Late filing penalty** — 4.5% of the tax required to be shown on the return per month or fraction (max 25%)  _(A.R.S. § 42-1125)_
+- **Late payment penalty** — 0.5% per month or fraction (max 10%)  _(A.R.S. § 42-1125)_
+- **Failure to e-file penalty** — 5% of the tax shown, minimum $25  _(A.R.S. § 42-1125)_
+- **Interest** — At the federal short-term rate plus 3%, compounded annually  _(A.R.S. § 42-1123)_
 
 ADOR generally abates first-time penalties on reasonable-cause request, but the employer must affirmatively request abatement and provide documentation.
 
 ### 4.7 Amended A1-QRT
 
-To correct a previously filed A1-QRT, the employer files an amended A1-QRT for the same quarter, marking the Amended Return box at the top. The amended return reports CORRECTED totals (not net change). Any additional tax due is paid with the amended return; any overpayment can be applied to the next quarter's A1-QRT or requested as a refund.
+- **Amendment process** — To correct a previously filed A1-QRT, the employer files an amended A1-QRT for the same quarter, marking the Amended Return box at the top. The amended return reports CORRECTED totals (not net change). Any additional tax due is paid with the amended return; any overpayment can be applied to the next quarter's A1-QRT or requested as a refund.
 
 ## 5. Form A1-R — Annual Withholding Reconciliation
 
 ### 5.1 Purpose and due date
 
-Form A1-R is the annual reconciliation between Arizona PIT withholding reported quarterly on A1-QRT and the Arizona PIT shown on the W-2 forms issued to employees. A1-R is due on or before January 31 following the close of the calendar year (no extension available; this matches the federal W-2 due date).
-
-Arizona requires W-2 Copy 1 (or electronic equivalent) to be submitted with the A1-R when Arizona PIT was withheld. The W-2 file must conform to SSA's EFW2 format with Arizona-specific RS records for state wages and tax.
+- **A1-R purpose and due date** — Form A1-R is the annual reconciliation between Arizona PIT withholding reported quarterly on A1-QRT and the Arizona PIT shown on the W-2 forms issued to employees. A1-R is due on or before January 31 following the close of the calendar year (no extension available; this matches the federal W-2 due date).
+- **W-2 filing requirement** — Arizona requires W-2 Copy 1 (or electronic equivalent) to be submitted with the A1-R when Arizona PIT was withheld. The W-2 file must conform to SSA's EFW2 format with Arizona-specific RS records for state wages and tax.
 
 ### 5.2 A1-APR — Annual Payment Reconciliation (small employer election)
 
-Employers with average quarterly Arizona PIT withholding of less than $1,500 AND who do not anticipate exceeding $1,500 in any quarter of the year may file Form A1-APR instead of quarterly A1-QRTs. A1-APR is due January 31, combines the four quarters into one annual return, and is filed with the employer's W-2s. The employer is still subject to Arizona deposit-frequency rules; A1-APR is a filing simplification, not a payment-timing change.
+- **A1-APR eligibility and rules** — Employers with average quarterly Arizona PIT withholding of less than $1,500 AND who do not anticipate exceeding $1,500 in any quarter of the year may file Form A1-APR instead of quarterly A1-QRTs. A1-APR is due January 31, combines the four quarters into one annual return, and is filed with the employer's W-2s. The employer is still subject to Arizona deposit-frequency rules; A1-APR is a filing simplification, not a payment-timing change.
 
 ### 5.3 A1-WP — Payment Voucher
 
-When a monthly or semi-weekly depositor makes a deposit between A1-QRT filings, the deposit is accompanied by Form A1-WP (Payment Voucher) — though electronic depositors do not use a paper voucher. The A1-WP designates the quarter to which the deposit relates.
+- **A1-WP** — When a monthly or semi-weekly depositor makes a deposit between A1-QRT filings, the deposit is accompanied by Form A1-WP (Payment Voucher) — though electronic depositors do not use a paper voucher. The A1-WP designates the quarter to which the deposit relates.
 
 ### 5.4 Mismatch resolution
 
-If A1-R reveals a mismatch between cumulative A1-QRT remittances and W-2 totals, ADOR will assess additional tax (if W-2 totals exceed remittances) or issue a refund (if remittances exceed W-2 totals). Common mismatch sources:
+- **Mismatch outcome** — If A1-R reveals a mismatch between cumulative A1-QRT remittances and W-2 totals, ADOR will assess additional tax (if W-2 totals exceed remittances) or issue a refund (if remittances exceed W-2 totals).
+
+Common mismatch sources:
 
 - Late-quarter bonus W-2s issued through year-end payroll runs without a corresponding A1-QRT update
 - W-2c (corrected) wage corrections issued after January 31
@@ -281,59 +237,47 @@ Reviewer note: reconcile A1-QRT cumulative totals to projected W-2 totals BEFORE
 
 ### 6.1 Administration and authority
 
-AZ UI is administered by the Arizona Department of Economic Security (DES) under A.R.S. Title 23, Chapter 4. The Unemployment Insurance Tax program registers employers, assigns tax rates, collects contributions on Form UC-018 (Unemployment Tax and Wage Report), and pays benefits to eligible separated workers.
+- **UI administration** — AZ UI is administered by the Arizona Department of Economic Security (DES) under A.R.S. Title 23, Chapter 4. The Unemployment Insurance Tax program registers employers, assigns tax rates, collects contributions on Form UC-018 (Unemployment Tax and Wage Report), and pays benefits to eligible separated workers.  _(A.R.S. Title 23, Chapter 4)_
 
 ### 6.2 Wage base — $8,000 (one of the lowest in the nation)
 
-For calendar year 2025, the Arizona UI taxable wage base is $8,000 per employee per year. This is among the lowest taxable wage bases in the United States — many states have wage bases of $14,000 to $50,000+. The $8,000 base means most Arizona employees become wage-base-exhausted (no further UI tax owed) within the first three to four months of the year.
+- **AZ UI taxable wage base 2025** — $8,000 per employee per year  _(A.R.S. § 23-622.01)_
 
-This low base is statutory under A.R.S. § 23-622.01. There has been periodic legislative interest in raising the base (a 2023 bill proposed $12,000 by 2026 but did not pass) but for 2025 the base remains $8,000.
+This is among the lowest taxable wage bases in the United States — many states have wage bases of $14,000 to $50,000+. The $8,000 base means most Arizona employees become wage-base-exhausted (no further UI tax owed) within the first three to four months of the year.
+
+There has been periodic legislative interest in raising the base (a 2023 bill proposed $12,000 by 2026 but did not pass) but for 2025 the base remains $8,000.
 
 Wage base is per-employee, per-year, per-employer. If an employee changes employers mid-year, the new employer restarts the $8,000 base (subject to predecessor-successor rules for asset transfers under A.R.S. § 23-733).
 
 ### 6.3 Contribution rates for 2025
 
-For calendar year 2025, AZ UI contribution rates range from a minimum of 0.07% to a maximum of 15.6% of the taxable wage base. The employer's rate is assigned annually based on the employer's experience rating and the trust fund's solvency status under A.R.S. § 23-732.
+- **AZ UI rate range 2025** — minimum of 0.07% to a maximum of 15.6% of the taxable wage base  _(A.R.S. § 23-732)_
+
+**Contribution rates by employer type 2025**  _(A.R.S. § 23-732)_
 
 | Employer type | 2025 rate |
-|---------------|-----------|
+| --- | --- |
 | Newly registered (no experience) | 2.00% for the first 2 calendar years (then experience rate) |
 | Construction industry, newly registered | 5.40% for the first 2 calendar years |
 | Minimum-rated experienced employer | 0.07% |
 | Maximum-rated experienced employer | 15.60% |
 | Average experienced rate | approximately 1.7% (2025) |
 
-Experience rating: the employer's rate is based on the ratio of UI benefit charges to the employer's experience-rating account to the employer's total taxable payroll, computed over the prior three completed fiscal years (July 1 – June 30 each).
-
-DES sends a Determination of Unemployment Insurance Tax Rate (Form UB-006) each December for the upcoming calendar year. The employer has 15 days to protest the rate in writing under A.R.S. § 23-732(K).
+- **Experience rating computation** — Experience rating: the employer's rate is based on the ratio of UI benefit charges to the employer's experience-rating account to the employer's total taxable payroll, computed over the prior three completed fiscal years (July 1 – June 30 each).
+- **Rate determination notice and protest** — DES sends a Determination of Unemployment Insurance Tax Rate (Form UB-006) each December for the upcoming calendar year. The employer has 15 days to protest the rate in writing under A.R.S. § 23-732(K).  _(A.R.S. § 23-732(K))_
 
 ### 6.4 UC-018 Quarterly Filing
 
-Form UC-018 is due on the same schedule as A1-QRT — last day of the month following the quarter end. The UC-018 reports:
-
-- Total wages paid this quarter (gross wages, before any deductions)
-- Excess wages (amounts above the $8,000-per-employee cap)
-- Taxable wages (total minus excess)
-- Contributions owed (taxable wages × employer's UI rate)
-- Job training tax (see §6.5)
-- Total due
-
-Filing and payment are mandatory online via DES's Tax and Wage System (TWS) for all employers with 5 or more employees, and de facto required for everyone given the lack of paper-form support.
+- **UC-018 due date and contents** — Form UC-018 is due on the same schedule as A1-QRT — last day of the month following the quarter end. The UC-018 reports: Total wages paid this quarter (gross wages, before any deductions); Excess wages (amounts above the $8,000-per-employee cap); Taxable wages (total minus excess); Contributions owed (taxable wages × employer's UI rate); Job training tax (see §6.5); Total due
+- **Electronic filing requirement** — Filing and payment are mandatory online via DES's Tax and Wage System (TWS) for all employers with 5 or more employees, and de facto required for everyone given the lack of paper-form support.
 
 ### 6.5 Job Training Tax
 
-Under A.R.S. § 23-769, Arizona imposes a 0.10% Job Training Tax on the same taxable wage base ($8,000) as the UI contribution, for employers with a positive experience-rating reserve account. New employers and employers with negative reserves do NOT pay the Job Training Tax. The tax appears on the UC-018 as a separate line and is remitted with the UI contribution.
+- **Job Training Tax rate and applicability** — Under A.R.S. § 23-769, Arizona imposes a 0.10% Job Training Tax on the same taxable wage base ($8,000) as the UI contribution, for employers with a positive experience-rating reserve account. New employers and employers with negative reserves do NOT pay the Job Training Tax. The tax appears on the UC-018 as a separate line and is remitted with the UI contribution.  _(A.R.S. § 23-769)_
 
 ### 6.6 Wages subject to AZ UI
 
-AZ UI taxable wages have a broader definition than Arizona PIT withholding wages. Notably:
-
-- §125 cafeteria plan elections — EXCLUDED from AZ UI taxable wages (same as PIT)
-- Traditional 401(k) elective deferrals — INCLUDED in AZ UI taxable wages (different from PIT — see §2.8 below). AZ UI follows FUTA (Form 940) treatment, not federal income tax treatment.
-- §132 qualified transportation fringe — EXCLUDED from AZ UI to the federal monthly limit
-- HSA employer contributions — EXCLUDED from AZ UI
-- HSA employee pre-tax contributions via cafeteria plan — EXCLUDED from AZ UI
-- Group-term life insurance over $50,000 — INCLUDED in AZ UI (matches FUTA)
+- **UI wage treatment differences** — AZ UI taxable wages have a broader definition than Arizona PIT withholding wages. Notably: §125 cafeteria plan elections — EXCLUDED from AZ UI taxable wages (same as PIT); Traditional 401(k) elective deferrals — INCLUDED in AZ UI taxable wages (different from PIT — see §2.8 below). AZ UI follows FUTA (Form 940) treatment, not federal income tax treatment; §132 qualified transportation fringe — EXCLUDED from AZ UI to the federal monthly limit; HSA employer contributions — EXCLUDED from AZ UI; HSA employee pre-tax contributions via cafeteria plan — EXCLUDED from AZ UI; Group-term life insurance over $50,000 — INCLUDED in AZ UI (matches FUTA)
 
 This divergence between PIT-withholding wages and UI wages is a common error source. A typical mid-career employee with $90,000 in gross wages, $5,000 of §125 cafeteria plan elections, and $10,000 of traditional 401(k) deferral has:
 
@@ -343,90 +287,71 @@ This divergence between PIT-withholding wages and UI wages is a common error sou
 
 ### 6.7 New-employer registration
 
-A new Arizona employer must register with DES within 20 days of the first payroll under A.R.S. § 23-722(B). Registration is online at the AZ Job Connection portal. DES issues an Arizona Employer Account Number (UI account number) within 7-10 business days. The same registration covers PIT withholding registration with ADOR if completed through the joint AZTaxes.gov portal.
+- **Registration timeline** — A new Arizona employer must register with DES within 20 days of the first payroll under A.R.S. § 23-722(B). Registration is online at the AZ Job Connection portal. DES issues an Arizona Employer Account Number (UI account number) within 7-10 business days. The same registration covers PIT withholding registration with ADOR if completed through the joint AZTaxes.gov portal.  _(A.R.S. § 23-722(B))_
 
 ### 6.8 Voluntary contributions
 
-A.R.S. § 23-731 permits an employer to make a voluntary contribution to its experience-rating reserve account on or before January 31 to lower its assigned UI tax rate for the year. This is sometimes economically rational for employers near a tier break — confirm that the voluntary contribution's cost is less than the contribution-rate savings on projected payroll.
+- **Voluntary contribution to lower UI rate** — A.R.S. § 23-731 permits an employer to make a voluntary contribution to its experience-rating reserve account on or before January 31 to lower its assigned UI tax rate for the year. This is sometimes economically rational for employers near a tier break — confirm that the voluntary contribution's cost is less than the contribution-rate savings on projected payroll.  _(A.R.S. § 23-731)_
 
 ## 7. Earned Paid Sick Time (Proposition 206)
 
 ### 7.1 Statutory framework
 
-> **AUDIT FLASH POINT — Proposition 206 sick time tracking**
->
-> The Fair Wages and Healthy Families Act (Proposition 206), approved by Arizona voters in November 2016 and effective July 1, 2017, mandates earned paid sick time for nearly every employee in Arizona, regardless of employer size, industry, or full-time/part-time status. Compliance is enforced by the Industrial Commission of Arizona Labor Department.
->
-> Common compliance failures:
->   - Employers exclude part-time, seasonal, or temporary workers (Proposition 206 covers them)
->   - Employers fail to display the required workplace notice
->   - Employers fail to provide the legally required information on each paystub (accrual rate, balance, used)
->   - Employers attempt to substitute existing PTO without confirming the existing PTO meets ALL Proposition 206 requirements (accrual rate, carryover, usage rules, retaliation protections)
->   - Employers retaliate against employees who use earned paid sick time
->
-> Proposition 206 penalties (A.R.S. § 23-364) include treble damages on unpaid sick time, $250 per violation per worker per day, attorney fees, and rescission of business licenses for willful repeat violations. The look-back period is 3 years.
+The Fair Wages and Healthy Families Act (Proposition 206), approved by Arizona voters in November 2016 and effective July 1, 2017, mandates earned paid sick time for nearly every employee in Arizona, regardless of employer size, industry, or full-time/part-time status. Compliance is enforced by the Industrial Commission of Arizona Labor Department.
+
+Common compliance failures:
+  - Employers exclude part-time, seasonal, or temporary workers (Proposition 206 covers them)
+  - Employers fail to display the required workplace notice
+  - Employers fail to provide the legally required information on each paystub (accrual rate, balance, used)
+  - Employers attempt to substitute existing PTO without confirming the existing PTO meets ALL Proposition 206 requirements (accrual rate, carryover, usage rules, retaliation protections)
+  - Employers retaliate against employees who use earned paid sick time
+
+Proposition 206 penalties (A.R.S. § 23-364) include treble damages on unpaid sick time, $250 per violation per worker per day, attorney fees, and rescission of business licenses for willful repeat violations. The look-back period is 3 years.
 
 ### 7.2 Accrual rate
 
-A.R.S. § 23-372(A) requires employers to provide earned paid sick time at a rate of at least 1 hour of paid sick time per 30 hours worked.
+- **Accrual rate** — A.R.S. § 23-372(A) requires employers to provide earned paid sick time at a rate of at least 1 hour of paid sick time per 30 hours worked.  _(A.R.S. § 23-372(A))_
 
 ### 7.3 Annual usage cap
 
-The annual usage cap differs by employer size:
+**Annual usage cap by employer size**
 
 | Employer size (employees nationwide) | Annual usage / accrual cap |
-|--------------------------------------|----------------------------|
+| --- | --- |
 | 15 or more employees | 40 hours per year |
 | Fewer than 15 employees | 24 hours per year |
 
-The cap is on USAGE per year, not on lifetime accrual. The annual cap also doubles as the annual accrual cap — i.e., an employee is not required to accrue beyond the cap during the year (though employers may permit it).
+- **Cap applies to usage, doubles as accrual cap** — The cap is on USAGE per year, not on lifetime accrual. The annual cap also doubles as the annual accrual cap — i.e., an employee is not required to accrue beyond the cap during the year (though employers may permit it).
 
 ### 7.4 Carryover
 
-Unused earned paid sick time carries over from one year to the next, subject to the annual usage cap remaining in effect. The employer may, in lieu of carryover, pay out unused balance at year-end at the employee's regular hourly rate (this is permissive, not required).
+- **Carryover and payout option** — Unused earned paid sick time carries over from one year to the next, subject to the annual usage cap remaining in effect. The employer may, in lieu of carryover, pay out unused balance at year-end at the employee's regular hourly rate (this is permissive, not required).
 
 ### 7.5 Front-loading
 
-An employer may front-load the full annual entitlement (40 hours or 24 hours depending on size) at the start of the benefit year and avoid accrual tracking. Front-loaded sick time still must comply with all usage and carryover rules unless paid out.
+- **Front-loading option** — An employer may front-load the full annual entitlement (40 hours or 24 hours depending on size) at the start of the benefit year and avoid accrual tracking. Front-loaded sick time still must comply with all usage and carryover rules unless paid out.
 
 ### 7.6 Permitted uses
 
-Earned paid sick time may be used for:
-
-- Employee's own physical or mental illness, injury, health condition, diagnostic visit, or preventive care
-- Care for a family member with the same
-- Closure of the employee's place of business or child's school by public-official order due to public-health emergency
-- Absence necessary due to domestic violence, sexual violence, abuse, or stalking against the employee or family member
-
-"Family member" is defined broadly under A.R.S. § 23-371(8) to include child (regardless of age), parent, spouse or registered domestic partner, grandparent, grandchild, sibling, and any other individual whose close association with the employee is the equivalent of a family relationship.
+- **Permitted uses of sick time** — Earned paid sick time may be used for: Employee's own physical or mental illness, injury, health condition, diagnostic visit, or preventive care; Care for a family member with the same; Closure of the employee's place of business or child's school by public-official order due to public-health emergency; Absence necessary due to domestic violence, sexual violence, abuse, or stalking against the employee or family member
+- **Family member** — "Family member" is defined broadly under A.R.S. § 23-371(8) to include child (regardless of age), parent, spouse or registered domestic partner, grandparent, grandchild, sibling, and any other individual whose close association with the employee is the equivalent of a family relationship.  _(A.R.S. § 23-371(8))_
 
 ### 7.7 Notice and recordkeeping
 
-Employers must:
-
-- Provide written notice to employees of their Proposition 206 rights, on hire and via paystub/wage statement each pay period
-- Display the Industrial Commission's workplace poster (English and Spanish) in a conspicuous location
-- Track each employee's accrual, usage, and carryover for at least 4 years
-- On each wage statement: show the employee's available earned-paid-sick-time balance, the amount used in the pay period, and the pay paid for it
+- **Employer notice/recordkeeping obligations** — Employers must: Provide written notice to employees of their Proposition 206 rights, on hire and via paystub/wage statement each pay period; Display the Industrial Commission's workplace poster (English and Spanish) in a conspicuous location; Track each employee's accrual, usage, and carryover for at least 4 years; On each wage statement: show the employee's available earned-paid-sick-time balance, the amount used in the pay period, and the pay paid for it
 
 ### 7.8 Existing PTO substitution
 
-An employer with an existing paid time off (PTO) policy may use that PTO to satisfy Proposition 206 IF the PTO policy:
-
-- Provides accrual at a rate at least as generous as 1 per 30 hours
-- Allows use for all the same purposes (including domestic violence and public-health closure)
-- Permits use in the same minimum increments
-- Allows the same carryover or annual payout
-- Includes the same retaliation and confidentiality protections
+- **PTO substitution requirements** — An employer with an existing paid time off (PTO) policy may use that PTO to satisfy Proposition 206 IF the PTO policy: Provides accrual at a rate at least as generous as 1 per 30 hours; Allows use for all the same purposes (including domestic violence and public-health closure); Permits use in the same minimum increments; Allows the same carryover or annual payout; Includes the same retaliation and confidentiality protections
 
 A single-bucket PTO that allows "any reason" generally satisfies Proposition 206 if accrual meets the threshold. A PTO that requires advance notice or doctor's notes more stringent than Proposition 206 allows does NOT satisfy.
 
 ## 8. Pre-Tax Cafeteria Plans and 401(k) Treatment
 
-Arizona conforms to federal Internal Revenue Code treatment for pre-tax employee benefits, but with the divergence between PIT and UI noted above. The following table summarizes the treatment of common employer-sponsored benefits:
+**Benefit treatment table**
 
 | Benefit | Federal income tax | AZ PIT withholding | Federal FICA | AZ UI |
-|---------|-------------------|--------------------|-----|-------|
+| --- | --- | --- | --- | --- |
 | §125 cafeteria plan medical/dental/vision premium | Exempt | Exempt | Exempt | Exempt |
 | §125 dependent care FSA | Exempt | Exempt | Exempt | Exempt |
 | §125 health FSA | Exempt | Exempt | Exempt | Exempt |
@@ -443,37 +368,19 @@ Arizona conforms to federal Internal Revenue Code treatment for pre-tax employee
 | Educational assistance (≤ §127 $5,250) | Exempt | Exempt | Exempt | Exempt |
 | Personal use of employer vehicle | Taxable | Taxable | Taxable | Taxable |
 
-The key divergence between PIT withholding and UI wages is the treatment of traditional 401(k): exempt from PIT withholding but included in UI wages (subject to the $8,000 cap).
+- **Key divergence note** — Arizona conforms to federal Internal Revenue Code treatment for pre-tax employee benefits, but with the divergence between PIT and UI noted above. The key divergence between PIT withholding and UI wages is the treatment of traditional 401(k): exempt from PIT withholding but included in UI wages (subject to the $8,000 cap).
 
 ## 9. Worker Classification — Arizona's 7-Factor Test
 
 ### 9.1 Why classification matters
 
-Misclassification of employees as independent contractors exposes the employer to:
-
-- Back AZ PIT withholding plus penalties under A.R.S. § 42-1125
-- Back AZ UI contributions plus penalties under A.R.S. § 23-738
-- Federal liability under IRC §§ 3101, 3111, 3402, 3403, 3509
-- Workers' compensation back-premiums and Industrial Commission penalties
-- Unpaid minimum wage and overtime exposure under the Arizona Minimum Wage Act and the FLSA
-- Unpaid earned paid sick time under Proposition 206
-- ERISA exposure if benefits should have been offered
-
-Arizona uses a 7-factor test under A.R.S. § 23-902(D) and § 23-1601 for state-employment-tax purposes, distinct from (but overlapping with) the federal common-law test used by the IRS.
+- **Misclassification exposure** — Misclassification of employees as independent contractors exposes the employer to: Back AZ PIT withholding plus penalties under A.R.S. § 42-1125; Back AZ UI contributions plus penalties under A.R.S. § 23-738; Federal liability under IRC §§ 3101, 3111, 3402, 3403, 3509; Workers' compensation back-premiums and Industrial Commission penalties; Unpaid minimum wage and overtime exposure under the Arizona Minimum Wage Act and the FLSA; Unpaid earned paid sick time under Proposition 206; ERISA exposure if benefits should have been offered  _(A.R.S. § 42-1125; A.R.S. § 23-738)_
+- **Arizona 7-factor test distinct from federal** — Arizona uses a 7-factor test under A.R.S. § 23-902(D) and § 23-1601 for state-employment-tax purposes, distinct from (but overlapping with) the federal common-law test used by the IRS.  _(A.R.S. § 23-902(D), § 23-1601)_
 
 ### 9.2 The 7 factors
 
-A worker is presumed to be an INDEPENDENT CONTRACTOR (not an employee) under Arizona law if the worker and the engaging business have signed a Declaration of Independent Business Status (DIBS) under A.R.S. § 23-1601, and the 7 factors are met:
-
-1. **No requirement to be at any specific business location** — the worker is not restricted to operating from the engager's location and may work from the worker's own location or anywhere chosen
-2. **Worker is free to provide same/similar services to others** — including direct competitors of the engaging business
-3. **Worker is free to accept or decline projects** — without consequence to ongoing engagements
-4. **Worker provides own tools and equipment** — or, when tools must be standardized to industry practice, the worker is not required to use those specifically supplied by the engager
-5. **Worker has authority to hire and fire assistants** — and is responsible for compensating them
-6. **Worker bears risk of profit and loss** — the worker is not paid hourly without consideration of project outcome
-7. **Worker is not provided with employee-style benefits or training** — such as paid time off, health insurance, retirement contributions, or company-paid training programs
-
-A signed DIBS plus genuine satisfaction of the 7 factors creates a rebuttable presumption of contractor status for Arizona purposes. The DIBS does NOT bind the IRS or other federal agencies.
+- **7-factor test and DIBS presumption** — A worker is presumed to be an INDEPENDENT CONTRACTOR (not an employee) under Arizona law if the worker and the engaging business have signed a Declaration of Independent Business Status (DIBS) under A.R.S. § 23-1601, and the 7 factors are met: 1. No requirement to be at any specific business location — the worker is not restricted to operating from the engager's location and may work from the worker's own location or anywhere chosen; 2. Worker is free to provide same/similar services to others — including direct competitors of the engaging business; 3. Worker is free to accept or decline projects — without consequence to ongoing engagements; 4. Worker provides own tools and equipment — or, when tools must be standardized to industry practice, the worker is not required to use those specifically supplied by the engager; 5. Worker has authority to hire and fire assistants — and is responsible for compensating them; 6. Worker bears risk of profit and loss — the worker is not paid hourly without consideration of project outcome; 7. Worker is not provided with employee-style benefits or training — such as paid time off, health insurance, retirement contributions, or company-paid training programs  _(A.R.S. § 23-1601)_
+- **DIBS presumption scope** — A signed DIBS plus genuine satisfaction of the 7 factors creates a rebuttable presumption of contractor status for Arizona purposes. The DIBS does NOT bind the IRS or other federal agencies.
 
 ### 9.3 Common misclassification patterns
 
@@ -506,32 +413,26 @@ Beyond the 7 factors, Arizona courts and DES auditors examine behavioral control
 
 ### 10.1 Statutory rule
 
-A.R.S. § 23-353 governs final wages on termination:
+**Final wage deadlines**  _(A.R.S. § 23-353)_
 
 | Situation | Final-pay deadline |
-|-----------|---------------------|
+| --- | --- |
 | Employer discharges employee | Within 7 working days OR by end of next regular pay period, whichever is sooner |
 | Employee resigns voluntarily | Next regular payday |
 
-"Working days" excludes Saturdays, Sundays, and holidays observed by the employer.
+- **Working days** — "Working days" excludes Saturdays, Sundays, and holidays observed by the employer.  _(A.R.S. § 23-353)_
 
 ### 10.2 What must be paid
 
-Final pay must include:
-
-- All earned wages through the last day worked
-- All accrued, unused vacation IF the employer's written policy provides for payout at separation (Arizona does NOT mandate vacation payout in the absence of a policy)
-- All accrued, unused earned paid sick time — Arizona does NOT mandate payout of unused sick time under Proposition 206
-- Any earned bonuses or commissions that are payable per the employer's compensation plan
-- Reimbursement of all approved business expenses outstanding
+- **Final pay components** — Final pay must include: All earned wages through the last day worked; All accrued, unused vacation IF the employer's written policy provides for payout at separation (Arizona does NOT mandate vacation payout in the absence of a policy); All accrued, unused earned paid sick time — Arizona does NOT mandate payout of unused sick time under Proposition 206; Any earned bonuses or commissions that are payable per the employer's compensation plan; Reimbursement of all approved business expenses outstanding
 
 ### 10.3 Penalties for late final pay
 
-A.R.S. § 23-355 imposes treble damages on unpaid final wages. The employer can be liable for 3× the unpaid amount, plus the employee's attorney fees. This is among the most severe wage-payment penalty regimes in the United States.
+- **Treble damages** — A.R.S. § 23-355 imposes treble damages on unpaid final wages. The employer can be liable for 3× the unpaid amount, plus the employee's attorney fees. This is among the most severe wage-payment penalty regimes in the United States.  _(A.R.S. § 23-355)_
 
 ### 10.4 Form of payment
 
-Final pay may be paid by direct deposit IF the employee had previously authorized direct deposit and the employer can credit the account by the deadline. Otherwise, payment by paper check at the employee's last known address (or in-person pickup) is required.
+- **Final pay payment method** — Final pay may be paid by direct deposit IF the employee had previously authorized direct deposit and the employer can credit the account by the deadline. Otherwise, payment by paper check at the employee's last known address (or in-person pickup) is required.
 
 ## 11. Worked Examples
 
@@ -643,10 +544,10 @@ Cascadia has 30 employees nationwide, but Proposition 206's 15-employee cap test
 - Jordan filed an Arizona unemployment claim in 2025 after the engagement ended
 - DES audit triggered
 
-**7-factor analysis:**
+**7-factor analysis**
 
 | Factor | Mesa/Jordan facts | Pass/Fail |
-|--------|-------------------|-----------|
+| --- | --- | --- |
 | 1. No required location | Required to work at Mesa office | FAIL |
 | 2. Free to serve others | Mesa expected 40hr/wk; effectively exclusive | FAIL |
 | 3. Free to accept/decline projects | All projects assigned, no decline | FAIL |
@@ -726,10 +627,6 @@ This skill produces a draft Arizona payroll compliance analysis. A human reviewe
 
 End of skill.
 
----
-
-<!-- openaccountants-cta-block -->
-
 ## Talk to a verified accountant
 
 This skill is a tool, not an engagement. Every taxpayer's situation is
@@ -743,16 +640,22 @@ a formal engagement letter** — book a free 30-minute call:
 
 We'll route you to the named verifier covering your country or state. You can
 also see the full list of verified accountants at
-[openaccountants.com/network](https://www.openaccountants.com/network).
+[openaccountants.com/network](https://openaccountants.com/network).
 
-<!-- openaccountants-mcp-cta -->
+<!-- openaccountants-cta-block -->
 
-## The accountant-verified version lives in the connector
+---
 
-This file is the open, **research-grade draft**. The **accountant-verified**
-version of this skill is **not published to GitHub** — it is delivered free
-through the OpenAccountants MCP connector, where your AI agent loads the
-verified rules together with the name of the accountant who signed them off.
+## Talk to a verified accountant
 
-**→ Install the free connector:** <https://www.openaccountants.com/connect>
-**MCP endpoint:** `https://www.openaccountants.com/api/mcp`
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

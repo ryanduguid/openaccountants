@@ -7,7 +7,13 @@
 
 1. `foundation.md`
 2. `intake.md`
-3. `mongolia-vat.md`
+3. `mn-company-formation.md`
+4. `mn-corporate-income-tax.md`
+5. `mn-payroll-social.md`
+6. `mn-tax-overview.md`
+7. `mongolia-vat.md`
+8. `payroll-workflow-base.md`
+9. `company-formation-workflow-base.md`
 
 ## How to use
 

@@ -1,23 +1,27 @@
 ---
 name: vietnam-pit
 description: >
-  Use this skill whenever asked about Vietnam personal income tax (thuế thu nhập cá nhân / TNCN) for resident individuals, self-employed persons, or sole proprietors. Trigger on phrases like "thuế TNCN", "Vietnam income tax", "thuế thu nhập cá nhân", "giảm trừ gia cảnh", "biểu thuế lũy tiến", "progressive tax Vietnam", "personal deduction Vietnam", "dependent deduction Vietnam", "PIT Vietnam", or any question about computing or filing personal income tax in Vietnam. Covers the 2026 five-bracket progressive rate schedule (Luật số 109/2025/QH15), personal and dependent deductions, and filing obligations. ALWAYS read this skill before touching any Vietnam PIT work.
 version: 1.0
 jurisdiction: VN
 tax_year: 2026
+last_updated: 2026-05-22
+verified_by: pending
+depends_on: - income-tax-workflow-base
 category: international
-depends_on:
-  - income-tax-workflow-base
+tier: 2
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Vietnam Personal Income Tax (Thuế Thu Nhập Cá Nhân / TNCN) v1.0
+# Vietnam Pit
 
----
+## Vietnam Personal Income Tax (Thuế Thu Nhập Cá Nhân / TNCN) v1.0
 
 ## Section 1 — Quick Reference
 
+**Section 1 Quick Reference table**
+
 | Field | Value |
-|---|---|
+| --- | --- |
 | Country | Vietnam (Cộng hòa Xã hội chủ nghĩa Việt Nam) |
 | Tax | Thuế Thu Nhập Cá Nhân (TNCN — Personal Income Tax / PIT) |
 | Currency | VND (Vietnamese Dong / đồng) |
@@ -30,16 +34,16 @@ depends_on:
 | Validated by | Pending — requires sign-off by a Vietnam-licensed tax agent (đại lý thuế) or CPA |
 | Skill version | 1.0 |
 
----
-
 ## Section 2 — Progressive Tax Brackets (Biểu Thuế Lũy Tiến Từng Phần) — 2026
 
 Effective 01/01/2026, Vietnam moved from a 7-bracket to a **5-bracket** progressive tax system under Luật số 109/2025/QH15.
 
 ### Monthly rates (applied to taxable income per month)
 
+**Monthly rates table**  _(Luật số 109/2025/QH15; googlesky/thue-2026 (MIT); thangtd-0050/pit)_
+
 | Bracket | Monthly Taxable Income (VND) | Rate |
-|---|---|---|
+| --- | --- | --- |
 | 1 | ≤ 10,000,000 | 5% |
 | 2 | 10,000,001 – 30,000,000 | 15% |
 | 3 | 30,000,001 – 60,000,000 | 25% |
@@ -48,45 +52,47 @@ Effective 01/01/2026, Vietnam moved from a 7-bracket to a **5-bracket** progress
 
 ### Annual rates (applied to taxable income per year)
 
+**Annual rates table**  _(Luật số 109/2025/QH15; googlesky/thue-2026 (MIT); thangtd-0050/pit)_
+
 | Bracket | Annual Taxable Income (VND) | Rate |
-|---|---|---|
+| --- | --- | --- |
 | 1 | ≤ 120,000,000 | 5% |
 | 2 | 120,000,001 – 360,000,000 | 15% |
 | 3 | 360,000,001 – 720,000,000 | 25% |
 | 4 | 720,000,001 – 1,200,000,000 | 30% |
 | 5 | > 1,200,000,000 | 35% |
 
-Source: Luật số 109/2025/QH15; [googlesky/thue-2026](https://github.com/googlesky/thue-2026) (MIT); [thangtd-0050/pit](https://github.com/thangtd-0050/pit)
-
 ### Quick tax computation table (monthly)
 
+**Quick tax computation table**
+
 | If taxable income/month (VND) | Tax = |
-|---|---|
+| --- | --- |
 | ≤ 10,000,000 | Income × 5% |
 | 10,000,001 – 30,000,000 | 500,000 + (Income − 10,000,000) × 15% |
 | 30,000,001 – 60,000,000 | 3,500,000 + (Income − 30,000,000) × 25% |
 | 60,000,001 – 100,000,000 | 11,000,000 + (Income − 60,000,000) × 30% |
 | > 100,000,000 | 23,000,000 + (Income − 100,000,000) × 35% |
 
----
-
 ## Section 3 — Deductions (Giảm Trừ Gia Cảnh) — 2026
 
 ### Personal and dependent deductions
 
+**Personal and dependent deductions table**  _(Luật số 109/2025/QH15; googlesky/thue-2026 (MIT))_
+
 | Deduction | Monthly (VND) | Annual (VND) | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Personal deduction (giảm trừ bản thân) | 15,500,000 | 186,000,000 | Per taxpayer; automatic |
 | Dependent deduction (giảm trừ người phụ thuộc) | 6,200,000 per dependent | 74,400,000 per dependent | Must register dependents with tax authority |
 
-Source: Luật số 109/2025/QH15; [googlesky/thue-2026](https://github.com/googlesky/thue-2026) (MIT)
-
-**Previous values (pre-2026):** Personal deduction was 11,000,000/month; dependent deduction was 4,400,000/month. The 2026 increase reflects Resolution 954/2020/UBTVQH14's CPI-triggered adjustment mechanism enacted via Luật số 109/2025/QH15.
+- **Previous values (pre-2026)** — Personal deduction was 11,000,000/month; dependent deduction was 4,400,000/month. The 2026 increase reflects Resolution 954/2020/UBTVQH14's CPI-triggered adjustment mechanism enacted via Luật số 109/2025/QH15.  _(Nghị quyết 954/2020/UBTVQH14; Luật số 109/2025/QH15)_
 
 ### Other deductions
 
+**Other deductions table**
+
 | Deduction | Amount | Notes |
-|---|---|---|
+| --- | --- | --- |
 | Compulsory social insurance (BHXH) | 8% of salary | Employee's share — deducted before PIT |
 | Compulsory health insurance (BHYT) | 1.5% of salary | Employee's share — deducted before PIT |
 | Unemployment insurance (BHTN) | 1% of salary | Employee's share — deducted before PIT |
@@ -95,61 +101,57 @@ Source: Luật số 109/2025/QH15; [googlesky/thue-2026](https://github.com/goog
 
 ### Taxable income formula
 
-```
-Taxable Income = Gross Income
-                 − Compulsory insurance (BHXH + BHYT + BHTN)
-                 − Personal deduction (15,500,000/month)
-                 − Dependent deductions (6,200,000 × number of registered dependents/month)
-                 − Other allowable deductions
-```
-
----
+- **Taxable Income formula** — Taxable Income = Gross Income − Compulsory insurance (BHXH + BHYT + BHTN) − Personal deduction (15,500,000/month) − Dependent deductions (6,200,000 × number of registered dependents/month) − Other allowable deductions
 
 ## Section 4 — Resident vs Non-Resident
 
+**Resident vs Non-Resident table**
+
 | Status | Definition | Tax treatment |
-|---|---|---|
+| --- | --- | --- |
 | Tax resident | Present in Vietnam ≥ 183 days in a calendar year OR 12 consecutive months; OR has a regular abode in Vietnam | Worldwide income; progressive rates (Section 2) |
 | Non-resident | Does not meet resident criteria | Vietnam-sourced income only; flat 20% on employment income |
 
----
-
 ## Section 5 — Income Categories (Các Khoản Thu Nhập Chịu Thuế)
 
+**Income Categories table**
+
 | Category | Rate | Notes |
-|---|---|---|
+| --- | --- | --- |
 | Employment income (tiền lương, tiền công) | Progressive 5-bracket (Section 2) | Main category for salaried individuals |
 | Business income (kinh doanh) | Progressive 5-bracket OR deemed rates | Self-employed / sole proprietors |
 | Capital gains (chuyển nhượng vốn) | 20% on gains | Or 0.1% of transfer value for listed securities |
 | Securities transfer | 0.1% of sale proceeds | Regardless of gain/loss |
 | Real estate transfer (chuyển nhượng bất động sản) | 2% of transfer price | No deduction of cost basis |
-| Royalties, franchises | 5% above VND 10,000,000 per contract | |
-| Lottery / prizes (trúng thưởng) | 10% above VND 10,000,000 | |
-| Inheritance / gifts | 10% above VND 10,000,000 | |
+| Royalties, franchises | 5% above VND 10,000,000 per contract |  |
+| Lottery / prizes (trúng thưởng) | 10% above VND 10,000,000 |  |
+| Inheritance / gifts | 10% above VND 10,000,000 |  |
 
 ### Deemed tax rates for business income (self-employed individuals)
 
+**Deemed tax rates table**
+
 | Business activity | Revenue tax rate |
-|---|---|
+| --- | --- |
 | Distribution / supply of goods | 0.5% |
 | Services, construction (excl. materials) | 2% |
 | Manufacturing, transport, services with goods | 1.5% |
 | Other business activities | 1% |
 
-Self-employed individuals with revenue < VND 100,000,000/year are exempt from PIT on business income.
-
----
+- **Small business PIT exemption** — Self-employed individuals with revenue < VND 100,000,000/year are exempt from PIT on business income.
 
 ## Section 6 — Filing and Payment
 
 ### Withholding (Khấu Trừ Tại Nguồn)
 
-Employers withhold PIT monthly from employee salaries and remit to GDT by the 20th of the following month (monthly filers) or 30th of the month following the quarter (quarterly filers).
+- **Employer withholding deadlines** — Employers withhold PIT monthly from employee salaries and remit to GDT by the 20th of the following month (monthly filers) or 30th of the month following the quarter (quarterly filers).
 
 ### Annual finalisation (Quyết Toán Thuế)
 
+**Annual finalisation table**
+
 | Who | Deadline | Notes |
-|---|---|---|
+| --- | --- | --- |
 | Employers (on behalf of employees) | 31 March of following year | File form 05/QTT-TNCN |
 | Individuals self-filing | 31 March of following year | File form 02/QTT-TNCN |
 | Individuals with single employer, no additional income | May authorise employer to finalise | No separate filing needed |
@@ -160,8 +162,6 @@ Employers withhold PIT monthly from employee salaries and remit to GDT by the 20
 - Receives income not subject to withholding
 - Foreign-sourced income (residents only)
 - Wishes to claim dependent deductions not registered with employer
-
----
 
 ## Section 7 — Worked Examples
 
@@ -233,12 +233,12 @@ Tax:
 Total PIT/month:                    31,534,225
 ```
 
----
-
 ## Section 8 — Conservative Defaults
 
+**Conservative Defaults table**
+
 | Situation | Default Assumption |
-|---|---|
+| --- | --- |
 | Unknown residency status | Treat as resident (progressive rates — higher tax) |
 | Unknown number of dependents | Zero dependents (no deduction) |
 | Dependent registration unclear | Do not claim deduction |
@@ -247,36 +247,36 @@ Total PIT/month:                    31,534,225
 | Allowance taxability unclear | Taxable (include in gross income) |
 | Business vs employment income unclear | Employment income |
 
----
-
 ## Section 9 — Red Flag Thresholds
 
+**Red Flag Thresholds table**
+
 | Threshold | Value |
-|---|---|
+| --- | --- |
 | HIGH single month tax discrepancy | VND 10,000,000 |
 | HIGH annual under-withholding | VND 50,000,000 |
 | MEDIUM unreported income source | Any additional source > VND 2,000,000/month |
 | MEDIUM dependent claim without registration | Any amount |
 | LOW rounding difference | VND 100,000 |
 
----
-
 ## Section 10 — Penalties
 
+**Penalties table**
+
 | Offence | Penalty |
-|---|---|
+| --- | --- |
 | Late filing (quyết toán) | VND 2,000,000 – 25,000,000 |
 | Late payment | 0.03% per day of unpaid tax |
 | Under-declaration (underpayment) | 20% of underpaid amount |
 | Tax evasion | 1× – 3× evaded tax + criminal liability |
 | Failure to register dependents | Deduction denied + back-tax + interest |
 
----
-
 ## Section 11 — Exempt Income (Thu Nhập Miễn Thuế)
 
+**Exempt Income table**
+
 | Item | Notes |
-|---|---|
+| --- | --- |
 | Real estate transfer between spouses, parents/children, siblings | Exempt |
 | Inheritance/gift between immediate family | Exempt |
 | Salary from night shift / dangerous work allowances | Per statutory schedule |
@@ -286,14 +286,14 @@ Total PIT/month:                    31,534,225
 | Interest on bank deposits | Exempt (5% withholding applies separately) |
 | Scholarships | Exempt |
 
----
-
 ## Section 12 — Reference Material
 
 ### Key legislation
 
+**Key legislation table**
+
 | Topic | Reference |
-|---|---|
+| --- | --- |
 | PIT Law | Luật Thuế TNCN No. 04/2007/QH12 (amended 2012, 2014) |
 | 2026 bracket reform | Luật số 109/2025/QH15 (effective 01/01/2026) |
 | Implementation decree | Nghị định 65/2013/NĐ-CP (as amended) |
@@ -304,8 +304,10 @@ Total PIT/month:                    31,534,225
 
 ### Open-source references
 
+**Open-source references table**
+
 | Repository | License | Scope |
-|---|---|---|
+| --- | --- | --- |
 | [googlesky/thue-2026](https://github.com/googlesky/thue-2026) | MIT | 2026 PIT brackets and deduction amounts |
 | [thangtd-0050/pit](https://github.com/thangtd-0050/pit) | Open source | Vietnam PIT calculator implementation |
 
@@ -328,25 +330,17 @@ Total PIT/month:                    31,534,225
 - [ ] Withholding reconciled against annual liability?
 - [ ] Filing deadline (31 March) noted?
 
----
-
 ## Section 13 — Changelog
 
-| Version | Date | Change |
-|---|---|---|
-| 1.0 | May 2026 | Initial release with 2026 five-bracket system per Luật số 109/2025/QH15 |
+**Changelog table**
 
----
+| Version | Date | Change |
+| --- | --- | --- |
+| 1.0 | May 2026 | Initial release with 2026 five-bracket system per Luật số 109/2025/QH15 |
 
 ## Prohibitions
 
-- NEVER apply the old 7-bracket schedule for tax year 2026 onwards
-- NEVER claim dependent deduction without confirmed registration
-- NEVER ignore compulsory insurance deductions when computing taxable income
-- NEVER apply resident rates to a confirmed non-resident
-- NEVER present calculations as definitive — direct to a licensed Vietnamese tax agent (đại lý thuế)
-
----
+- **Prohibitions list** — NEVER apply the old 7-bracket schedule for tax year 2026 onwards; NEVER claim dependent deduction without confirmed registration; NEVER ignore compulsory insurance deductions when computing taxable income; NEVER apply resident rates to a confirmed non-resident; NEVER present calculations as definitive — direct to a licensed Vietnamese tax agent (đại lý thuế)
 
 ## Disclaimer
 
@@ -354,33 +348,20 @@ This skill and its outputs are provided for informational and computational purp
 
 The most up-to-date version is maintained at openaccountants.com.
 
----
-
 <!-- openaccountants-cta-block -->
+
+---
 
 ## Talk to a verified accountant
 
-This skill is a tool, not an engagement. Every taxpayer's situation is
-different, and the rules in the skill may not match your specific facts.
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
 
-To speak with one of the licensed accountants who verifies skills for your
-jurisdiction — **no liability on either side until you and the accountant sign
-a formal engagement letter** — book a free 30-minute call:
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
 
-**→ [Book a call](https://calendly.com/openaccountants-info/30min)**
-
-We'll route you to the named verifier covering your country or state. You can
-also see the full list of verified accountants at
-[openaccountants.com/network](https://www.openaccountants.com/network).
-
-<!-- openaccountants-mcp-cta -->
-
-## The accountant-verified version lives in the connector
-
-This file is the open, **research-grade draft**. The **accountant-verified**
-version of this skill is **not published to GitHub** — it is delivered free
-through the OpenAccountants MCP connector, where your AI agent loads the
-verified rules together with the name of the accountant who signed them off.
-
-**→ Install the free connector:** <https://www.openaccountants.com/connect>
-**MCP endpoint:** `https://www.openaccountants.com/api/mcp`
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

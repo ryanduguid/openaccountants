@@ -3,22 +3,21 @@ name: fr-freelance-intake
 description: ALWAYS USE THIS SKILL when a user asks for help preparing their French tax returns AND mentions freelancing, auto-entrepreneur, micro-entrepreneur, entreprise individuelle, profession libérale, or self-employment. Trigger on phrases like "aide-moi avec mes impôts", "préparer ma déclaration", "I'm a freelancer in France", "I'm an auto-entrepreneur", "prepare my 2042-C-PRO", or any similar phrasing where the user is a France-resident self-employed individual needing tax return preparation. This is the REQUIRED entry point for the French self-employed tax workflow -- every other skill in the stack (france-tva, france-income-tax, france-cotisations, fr-return-assembly) depends on this skill running first to produce a structured intake package. Uses upload-first workflow -- the user dumps all their documents and the skill infers as much as possible before asking questions. Uses ask_user_input_v0 for structured questions instead of one-at-a-time prose. Built for speed. France full-year residents only; self-employed individuals, micro-entrepreneurs, and sole proprietors.
 version: 1.0
 jurisdiction: FR
-tier: 2
-last_updated: 2026-06-12
+tax_year: 2025
+last_updated: 2026-05-23
+verified_by: pending
 category: orchestrator
+tier: 2
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# France Self-Employed Intake Skill v1.0
-
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+# FR Freelance Intake
 
 ## What this file is
 
 The intake orchestrator for France-resident self-employed individuals. Every downstream French content skill (france-tva, france-income-tax, france-cotisations, fr-estimated-tax) and the assembly orchestrator (fr-return-assembly) depend on this skill running first to produce a structured intake package.
 
 This skill does not compute any tax figures. Its job is to collect all the facts, parse all the documents, confirm everything with the user, and hand off a clean intake package to `fr-return-assembly`.
-
----
 
 ## Design principles
 
@@ -48,8 +47,6 @@ Target: intake completes in 5 minutes for a prepared user, 15 minutes for a user
 
 **Exception for blocking decisions.** If a single question determines whether the user is in-scope or out-of-scope, ask it standalone.
 
----
-
 ## Section 1 -- The opening
 
 When triggered, respond with ONE message that:
@@ -76,8 +73,6 @@ Then immediately call `ask_user_input_v0` with the refusal questions.
 - List what documents you will eventually need
 - Give a disclaimer beyond the one reviewer line
 
----
-
 ## Section 2 -- Refusal sweep (compact)
 
 Present the refusal sweep as a single `ask_user_input_v0` call with 3 questions, all single-select.
@@ -95,23 +90,19 @@ Q3: "TVA regime?"
     Options: ["Franchise en base (no TVA charged)", "Réel simplifié (CA12 annual + 2 acomptes)", "Réel normal (CA3 monthly/quarterly)", "Not sure"]
 ```
 
-**After the response, evaluate:**
-
-- **Q1 = Micro-entrepreneur** -> continue. Micro-fiscal and micro-social regime. Forms: 2042, 2042-C-PRO (cases 5KO/5KP for BIC or 5HQ/5HB for BNC).
-- **Q1 = EI au réel** -> continue. Full accounting regime. Forms: 2042, 2042-C-PRO, plus liasse fiscale (2035 for BNC, 2031 for BIC).
-- **Q1 = EURL (gérant associé unique)** -> continue ONLY if gérant associé unique with IR option (impôt sur le revenu). If EURL at IS (impôt sur les sociétés), stop: "EURL at IS files a corporate return (liasse 2065). I'm set up for personal income tax filings. You need an expert-comptable who handles IS returns."
-- **Q1 = SASU** -> stop. "SASU is always subject to impôt sur les sociétés (IS). The président is an assimilé salarié with bulletins de paie. I'm set up for self-employed individuals filing personal income tax. You need an expert-comptable who handles corporate and payroll."
-- **Q1 = Profession libérale** -> continue. BNC regime. Forms: 2042, 2042-C-PRO, 2035 (déclaration contrôlée).
-- **Q1 = Not sure** -> ask one follow-up: "Did you register with the guichet unique (formalités.entreprises.gouv.fr) as auto-entrepreneur, or do you have a SIRET with a full accounting obligation? Check your avis de situation SIRENE or your URSSAF online account for your status."
-
-- **Q2 = Under thresholds** -> continue. Micro-entrepreneur regime is available.
-- **Q2 = Above thresholds** -> continue with a flag: if currently micro-entrepreneur, mandatory switch to réel for the second consecutive year above thresholds (Article 293 B and Article 50-0 CGI). Will verify after inference.
-- **Q2 = Not sure** -> continue, infer from documents.
-
-- **Q3 = Franchise en base** -> continue. No TVA charged or recovered. Threshold: €36,800 services / €91,900 goods (basic franchise), with tolerance up to €39,100 / €101,000 (Article 293 B CGI).
-- **Q3 = Réel simplifié** -> continue. Annual CA12 with two acomptes semestriels (July and December). Input TVA recovery available.
-- **Q3 = Réel normal** -> continue. Monthly CA3 (or quarterly if TVA < €4,000/year).
-- **Q3 = Not sure** -> ask one follow-up: "Do your invoices include TVA (5.5%, 10%, or 20%)? If they say 'TVA non applicable, article 293 B du CGI', you're in franchise en base. If you charge TVA and file monthly/quarterly, you're réel normal. If you file one annual TVA return with two advance payments, you're réel simplifié."
+- **Q1 = Micro-entrepreneur** — continue. Micro-fiscal and micro-social regime. Forms: 2042, 2042-C-PRO (cases 5KO/5KP for BIC or 5HQ/5HB for BNC).
+- **Q1 = EI au réel** — continue. Full accounting regime. Forms: 2042, 2042-C-PRO, plus liasse fiscale (2035 for BNC, 2031 for BIC).
+- **Q1 = EURL (gérant associé unique)** — continue ONLY if gérant associé unique with IR option (impôt sur le revenu). If EURL at IS (impôt sur les sociétés), stop: "EURL at IS files a corporate return (liasse 2065). I'm set up for personal income tax filings. You need an expert-comptable who handles IS returns."
+- **Q1 = SASU** — stop. "SASU is always subject to impôt sur les sociétés (IS). The président is an assimilé salarié with bulletins de paie. I'm set up for self-employed individuals filing personal income tax. You need an expert-comptable who handles corporate and payroll."
+- **Q1 = Profession libérale** — continue. BNC regime. Forms: 2042, 2042-C-PRO, 2035 (déclaration contrôlée).
+- **Q1 = Not sure** — ask one follow-up: "Did you register with the guichet unique (formalités.entreprises.gouv.fr) as auto-entrepreneur, or do you have a SIRET with a full accounting obligation? Check your avis de situation SIRENE or your URSSAF online account for your status."
+- **Q2 = Under thresholds** — continue. Micro-entrepreneur regime is available.
+- **Q2 = Above thresholds** — continue with a flag: if currently micro-entrepreneur, mandatory switch to réel for the second consecutive year above thresholds (Article 293 B and Article 50-0 CGI). Will verify after inference.  _(Article 293 B and Article 50-0 CGI)_
+- **Q2 = Not sure** — continue, infer from documents.
+- **Q3 = Franchise en base threshold** — €36,800 services / €91,900 goods (basic franchise), with tolerance up to €39,100 / €101,000 EUR (No TVA charged or recovered)  _(Article 293 B CGI)_
+- **Q3 = Réel simplifié** — continue. Annual CA12 with two acomptes semestriels (July and December). Input TVA recovery available.
+- **Q3 = Réel normal** — continue. Monthly CA3 (or quarterly if TVA < €4,000/year).
+- **Q3 = Not sure** — ask one follow-up: "Do your invoices include TVA (5.5%, 10%, or 20%)? If they say 'TVA non applicable, article 293 B du CGI', you're in franchise en base. If you charge TVA and file monthly/quarterly, you're réel normal. If you file one annual TVA return with two advance payments, you're réel simplifié."
 
 **After Q1-Q3 pass, ask the second batch of scope questions (also batched):**
 
@@ -132,27 +123,16 @@ Q8: "Régime matrimonial (if married/PACSé)?"
     Options: ["Communauté réduite aux acquêts (default)", "Communauté universelle", "Séparation de biens", "Not married / Not applicable"]
 ```
 
-**Evaluate Q4:**
-- **Registered and paying** -> continue. Standard micro-social or cotisations au réel.
-- **Recently registered** -> continue with flag: ACRE (Aide à la Création ou à la Reprise d'Entreprise) may apply for first 3 years. Reduced cotisations rates: ~50% reduction year 1 for micro-entrepreneurs.
-- **Not registered / pending** -> continue with flag: registration required. Will note in action items.
-- **CIPAV-affiliated** -> continue with flag: CIPAV handles retirement for certain professions libérales réglementées (architectes, ingénieurs-conseils, etc.). Different cotisation structure.
-
-**Evaluate Q5:**
-- All options -> note for quotient familial calculation. Parts fiscales: 1 (single), 2 (married/PACSé joint), special allocation for children and parent isolé.
-
-**Evaluate Q6:**
-- All options -> note for multi-schedule return. Employment income goes to 2042 traitements et salaires. Rental to 2044 or micro-foncier. Investment to 2042 revenus de capitaux mobiliers or prélèvement forfaitaire unique (PFU 30%).
-
-**Evaluate Q7:**
-- All options -> note for penalty/interest risk and prior year reference amounts.
-
-**Evaluate Q8:**
-- Affects whether business assets are common property. Communauté regimes may expose the non-business spouse's share to business debts.
+- **Evaluate Q4 - Registered and paying** — continue. Standard micro-social or cotisations au réel.
+- **Evaluate Q4 - Recently registered** — continue with flag: ACRE (Aide à la Création ou à la Reprise d'Entreprise) may apply for first 3 years. Reduced cotisations rates: ~50% reduction year 1 for micro-entrepreneurs.
+- **Evaluate Q4 - Not registered / pending** — continue with flag: registration required. Will note in action items.
+- **Evaluate Q4 - CIPAV-affiliated** — continue with flag: CIPAV handles retirement for certain professions libérales réglementées (architectes, ingénieurs-conseils, etc.). Different cotisation structure.
+- **Evaluate Q5** — All options -> note for quotient familial calculation. Parts fiscales: 1 (single), 2 (married/PACSé joint), special allocation for children and parent isolé.
+- **Evaluate Q6** — All options -> note for multi-schedule return. Employment income goes to 2042 traitements et salaires. Rental to 2044 or micro-foncier. Investment to 2042 revenus de capitaux mobiliers or prélèvement forfaitaire unique (PFU 30%).
+- **Evaluate Q7** — All options -> note for penalty/interest risk and prior year reference amounts.
+- **Evaluate Q8** — Affects whether business assets are common property. Communauté regimes may expose the non-business spouse's share to business debts.
 
 **Total time:** ~60 seconds if the user taps through.
-
----
 
 ## Section 3 -- The dump
 
@@ -191,8 +171,6 @@ Then wait. Do not ask any other questions while waiting.
 > - Accounting software (Pennylane, Indy, Tiime, FreeBe, etc.): export grand livre or FEC
 >
 > Come back when you have something to upload. I'll work with whatever you bring.
-
----
 
 ## Section 4 -- The inference pass
 
@@ -257,8 +235,6 @@ When documents arrive, parse each one. For each document, extract:
 
 **After parsing everything, build an internal inference object.** Do not show the raw inference yet -- transform it into a compact summary for the user in Section 5.
 
----
-
 ## Section 5 -- The confirmation
 
 After inference, present a single compact summary message. Use a structured format that is fast to scan. Invite the user to correct anything wrong.
@@ -309,8 +285,6 @@ After inference, present a single compact summary message. Use a structured form
 >
 > **Is any of this wrong? Reply "looks good" or tell me what to fix.**
 
----
-
 ## Section 6 -- Gap filling
 
 After the user confirms the summary (or corrects it), ask about things that cannot be inferred from documents. Use `ask_user_input_v0` where possible.
@@ -324,8 +298,6 @@ After the user confirms the summary (or corrects it), ask about things that cann
 5. **Réductions and crédits d'impôt** -- Dons aux associations (66% or 75%), emploi à domicile, frais de garde d'enfants, investissement locatif (Pinel, Denormandie), transition énergétique.
 6. **Madelin / loi Madelin contracts** -- Prévoyance, mutuelle, retraite complémentaire for TNS (travailleurs non salariés). Deductible from BNC/BIC but within ceilings.
 7. **Déficits antérieurs** -- Carryforward losses from prior years (not always on avis d'imposition).
-
-**Home office gap-filling example:**
 
 Call `ask_user_input_v0` with:
 
@@ -344,7 +316,7 @@ If option 2 -> flag as reviewer item: shared use reduces the deductible percenta
 If option 3 -> rent is already captured in expenses. No home office calculation needed.
 If option 4 -> skip home office entirely.
 
-**Children / dependents example:**
+- **Children / dependents parts calculation** — Each child: +0.5 part for 1st and 2nd, +1 part from 3rd child onwards. Garde alternée: half the parts (0.25 / 0.25 / 0.5).
 
 Call `ask_user_input_v0` with:
 
@@ -358,10 +330,6 @@ Q: "Dependents for quotient familial?"
      "Children in garde alternée (shared custody)"
    ]
 ```
-
-Each child: +0.5 part for 1st and 2nd, +1 part from 3rd child onwards. Garde alternée: half the parts (0.25 / 0.25 / 0.5).
-
-**Tax credits example:**
 
 Call `ask_user_input_v0` with:
 
@@ -377,8 +345,6 @@ Q: "Any of these apply?"
 ```
 
 Flag all crédits/réductions with limits for reviewer confirmation.
-
----
 
 ## Section 7 -- The final handoff
 
@@ -405,8 +371,6 @@ Once gap-filling is done, produce a final handoff message and hand off to `fr-re
 > Starting now.
 
 Then internally invoke `fr-return-assembly` with the structured intake package.
-
----
 
 ## Section 8 -- Structured intake package (internal format)
 
@@ -507,21 +471,17 @@ The downstream skill (`fr-return-assembly`) consumes a JSON structure. It is int
 }
 ```
 
----
-
 ## Section 9 -- Refusal handling
 
 Refusals fire from either the refusal sweep (Section 2) or during inference (e.g., corporate structure discovered in documents).
 
-**Refusal catalogue:**
-
-- **R-FR-1 -- SASU / SAS.** "SASU and SAS are subject to impôt sur les sociétés. The dirigeant is an assimilé salarié. I'm set up for self-employed individuals filing personal income tax. You need an expert-comptable who handles IS returns and paie."
-- **R-FR-2 -- EURL at IS.** "EURL at IS files corporate returns (liasse 2065). I handle personal income tax filings only."
-- **R-FR-3 -- SCI.** "SCI (Société Civile Immobilière) has its own filing requirements (2072). This is outside my scope."
-- **R-FR-4 -- SAS/SARL with >10 employees.** "Companies with more than 10 employees have complex payroll, DSN, and social obligations I don't cover. You need an expert-comptable with a cabinet social."
-- **R-FR-5 -- Agricultural activity.** "Agricultural income (bénéfices agricoles) is filed on 2342/2143 and subject to MSA, not URSSAF. Different regime entirely. You need a CGA or expert-comptable specialising in agriculture."
-- **R-FR-6 -- Non-resident.** "Non-residents file with the SIP des non-résidents and have different rules. I'm set up for full-year France residents only."
-- **R-FR-7 -- Association.** "Associations (loi 1901) have separate filing obligations. Not in scope."
+- **R-FR-1 -- SASU / SAS** — "SASU and SAS are subject to impôt sur les sociétés. The dirigeant is an assimilé salarié. I'm set up for self-employed individuals filing personal income tax. You need an expert-comptable who handles IS returns and paie."
+- **R-FR-2 -- EURL at IS** — "EURL at IS files corporate returns (liasse 2065). I handle personal income tax filings only."
+- **R-FR-3 -- SCI** — "SCI (Société Civile Immobilière) has its own filing requirements (2072). This is outside my scope."
+- **R-FR-4 -- SAS/SARL with >10 employees** — "Companies with more than 10 employees have complex payroll, DSN, and social obligations I don't cover. You need an expert-comptable with a cabinet social."
+- **R-FR-5 -- Agricultural activity** — "Agricultural income (bénéfices agricoles) is filed on 2342/2143 and subject to MSA, not URSSAF. Different regime entirely. You need a CGA or expert-comptable specialising in agriculture."
+- **R-FR-6 -- Non-resident** — "Non-residents file with the SIP des non-résidents and have different rules. I'm set up for full-year France residents only."
+- **R-FR-7 -- Association** — "Associations (loi 1901) have separate filing obligations. Not in scope."
 
 When a refusal fires:
 1. Stop the workflow
@@ -534,8 +494,6 @@ When a refusal fires:
 - Try to work around the refusal
 - Suggest the user "might be able to" fit into scope if they answer differently
 - Continue silently
-
----
 
 ## Section 10 -- Self-checks
 
@@ -561,11 +519,8 @@ When a refusal fires:
 
 **Check IN11 -- Total user-facing turn count is low.** Target: 8 turns or fewer from start to handoff for a prepared user (1 refusal batch + 1 upload + 1 confirmation + 1-3 gap fills + 1 handoff). More than 12 turns for a normal intake is a check failure.
 
-**Check IN12 -- TVA regime was established.** Franchise en base vs réel simplifié vs réel normal was confirmed before inference, as it changes how every transaction is classified.
-
-**Check IN13 -- Franchise en base threshold was verified.** If micro-entrepreneur CA exceeds €36,800 (services) or €91,900 (goods), the franchise en base is lost and TVA registration is mandatory. This must be flagged.
-
----
+- **Check IN12 -- TVA regime established** — Franchise en base vs réel simplifié vs réel normal was confirmed before inference, as it changes how every transaction is classified.
+- **Check IN13 -- Franchise en base threshold verified** — €36,800 (services) or €91,900 (goods) EUR (If micro-entrepreneur CA exceeds these amounts, the franchise en base is lost and TVA registration is mandatory. This must be flagged.)
 
 ## Section 11 -- Performance targets
 
@@ -583,8 +538,6 @@ For an unprepared user (has to go fetch documents):
 - Rest: same
 - **Total**: 15-25 minutes
 
----
-
 ## Section 12 -- Cross-skill references
 
 **Inputs:** User-provided documents and answers.
@@ -597,18 +550,47 @@ For an unprepared user (has to go fetch documents):
 - `france-cotisations` -- Cotisations sociales (URSSAF micro-social or TNS réel)
 - `fr-estimated-tax` -- Prélèvement à la source rate update and acomptes contemporains
 
----
-
 ### Change log
 
 - **v1.0 (May 2026):** Initial draft. Upload-first, inference-then-confirm pattern modelled on mt-freelance-intake v0.1.
 
 ## End of Intake Skill v1.0
 
----
-
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, EA, tax attorney, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
 
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
+The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
+
+## Talk to a verified accountant
+
+This skill is a tool, not an engagement. Every taxpayer's situation is
+different, and the rules in the skill may not match your specific facts.
+
+To speak with one of the licensed accountants who verifies skills for your
+jurisdiction — **no liability on either side until you and the accountant sign
+a formal engagement letter** — book a free 30-minute call:
+
+**→ [Book a call](https://calendly.com/openaccountants-info/30min)**
+
+We'll route you to the named verifier covering your country or state. You can
+also see the full list of verified accountants at
+[openaccountants.com/network](https://openaccountants.com/network).
+
+<!-- openaccountants-cta-block -->
+
+---
+
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

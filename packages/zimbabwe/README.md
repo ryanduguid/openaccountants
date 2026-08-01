@@ -8,6 +8,13 @@
 1. `foundation.md`
 2. `intake.md`
 3. `zimbabwe-vat.md`
+4. `zw-company-formation.md`
+5. `zw-corporate-income-tax.md`
+6. `zw-income-tax.md`
+7. `zw-payroll-social.md`
+8. `zw-tax-overview.md`
+9. `payroll-workflow-base.md`
+10. `company-formation-workflow-base.md`
 
 ## How to use
 

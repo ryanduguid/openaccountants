@@ -3,15 +3,21 @@ name: al-sales-tax
 description: Use this skill whenever asked about Alabama sales tax, Alabama use tax, Alabama sales tax nexus, ADOR sales tax filing, self-administered city taxes in Alabama, or Alabama grocery food taxation. Trigger on phrases like "Alabama sales tax", "AL sales tax", "ADOR", "Code of Ala. §40-23", "Alabama local tax", "Alabama grocery tax", "self-administered cities Alabama", or any request involving Alabama state and local sales and use tax compliance. ALWAYS load us-sales-tax first for federal context.
 version: 2.0
 jurisdiction: US-AL
-validation_status: ai-drafted-q3
+tax_year: 2025
+last_updated: 2026-05-22
+verified_by: pending
+tier: 2
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Alabama Sales and Use Tax Skill v2.0
+# AL Sales Tax
 
 ## Section 1 -- Quick reference
 
+**Quick reference table**
+
 | Field | Value |
-|---|---|
+| --- | --- |
 | Jurisdiction | Alabama, United States |
 | Jurisdiction code | US-AL |
 | Tax type | Sales and Use Tax (state + local) |
@@ -31,14 +37,12 @@ validation_status: ai-drafted-q3
 
 **CRITICAL: Alabama has ~200+ self-administered cities. Sellers must register SEPARATELY with each self-administered city where they have nexus.**
 
----
-
-## Section 2 -- Required inputs and refusal catalogue
-
 ### Required inputs
 
+**Required inputs table**
+
 | # | Question | Why it matters |
-|---|----------|----------------|
+| --- | --- | --- |
 | 1 | Alabama sales tax registration / tax ID? | Required for state filing |
 | 2 | Filing frequency? | Monthly, quarterly, annual |
 | 3 | Nexus type? | $250K threshold |
@@ -50,63 +54,69 @@ validation_status: ai-drafted-q3
 
 ### Refusal catalogue
 
-**R-AL-1 -- Self-administered city detailed compliance.** Each city has separate registration, returns, and rates. Specific city compliance requires individual research.
-
----
-
-## Section 3 -- Transaction pattern library
+- **R-AL-1** — Self-administered city detailed compliance. Each city has separate registration, returns, and rates. Specific city compliance requires individual research.
 
 ### 3.1 Tangible personal property
 
+**Tangible personal property table**  _(Code of Ala. §40-23-2)_
+
 | Pattern | Taxable? | Notes |
-|---|---|---|
+| --- | --- | --- |
 | General TPP | TAXABLE | Code of Ala. §40-23-2 |
 | Clothing and footwear | TAXABLE | No general exemption; holiday exemption only |
 
 ### 3.2 Food and beverages
 
+**Food and beverages table**
+
 | Pattern | Taxable? | Notes |
-|---|---|---|
+| --- | --- | --- |
 | Grocery food (unprepared) | TAXABLE at reduced state rate 2% | State rate reduced from 4% to 2% (effective Sep 2023); local rates still apply at full rate |
-| Prepared food | TAXABLE at full 4% | |
-| Candy, soft drinks | TAXABLE | |
+| Prepared food | TAXABLE at full 4% |  |
+| Candy, soft drinks | TAXABLE |  |
 
 ### 3.3 SaaS and digital goods
 
+**SaaS and digital goods table**
+
 | Pattern | Taxable? | Notes |
-|---|---|---|
+| --- | --- | --- |
 | Canned software (physical) | TAXABLE | TPP |
-| Canned software (download) | TAXABLE | |
+| Canned software (download) | TAXABLE |  |
 | Custom software | Varies | Escalate to reviewer |
 | SaaS (cloud-hosted) | TAXABLE | Alabama taxes SaaS |
-| Digital goods (downloads) | TAXABLE | |
+| Digital goods (downloads) | TAXABLE |  |
 
 ### 3.4 Services
 
+**Services table**
+
 | Pattern | Taxable? | Notes |
-|---|---|---|
+| --- | --- | --- |
 | Most services | NOT TAXABLE | Alabama taxes only enumerated services |
-| Rental of TPP | TAXABLE | |
-| Amusement/recreation | TAXABLE | |
-| Professional services | NOT TAXABLE | |
+| Rental of TPP | TAXABLE |  |
+| Amusement/recreation | TAXABLE |  |
+| Professional services | NOT TAXABLE |  |
 
 ### 3.5 Exemptions
 
+**Exemptions table**
+
 | Pattern | Status | Notes |
-|---|---|---|
-| Prescription drugs | EXEMPT | |
+| --- | --- | --- |
+| Prescription drugs | EXEMPT |  |
 | Manufacturing machinery (directly in manufacturing) | REDUCED RATE | State rate 1.5%; local applies |
-| Farm equipment | EXEMPT | |
+| Farm equipment | EXEMPT |  |
 | Resale | EXEMPT | Valid certificate required |
 | Interstate commerce | EXEMPT | Shipped out of state |
-| Government purchases | EXEMPT | |
-
----
+| Government purchases | EXEMPT |  |
 
 ## Section 4 -- Rate lookup
 
+**Rate lookup table**
+
 | Jurisdiction | Approximate combined rate |
-|---|---|
+| --- | --- |
 | Birmingham | ~10% |
 | Montgomery | ~10% |
 | Huntsville | ~9% |
@@ -115,50 +125,42 @@ validation_status: ai-drafted-q3
 
 **Use ADOR rate lookup for exact rate by address.**
 
----
-
-## Section 5 -- Classification rules
-
 ### 5.1 Self-administered cities
 
-~200+ Alabama cities self-administer their local sales tax. Sellers must register separately with each. Birmingham, Montgomery, Huntsville, Mobile, Tuscaloosa are all self-administered.
+- **Self-administered cities rule** — ~200+ Alabama cities self-administer their local sales tax. Sellers must register separately with each. Birmingham, Montgomery, Huntsville, Mobile, Tuscaloosa are all self-administered.
 
 ### 5.2 Grocery food reduced rate
 
-State rate on grocery food reduced from 4% to 2% effective September 1, 2023. Local rates apply at full local rate on top.
-
----
+- **Grocery food reduced rate rule** — State rate on grocery food reduced from 4% to 2% effective September 1, 2023. Local rates apply at full local rate on top.
 
 ## Section 6 -- Return form and filing
 
+**Return form and filing table**
+
 | Level | Return | Portal |
-|---|---|---|
+| --- | --- | --- |
 | State | Filed via ADOR | https://myalabamataxes.alabama.gov |
 | Self-administered cities | Filed separately with each city | Individual city portals |
 | ADOR-administered locals | Filed with state return | Same as state |
 
----
-
-## Section 7 -- Thresholds, penalties, and deadlines
-
 ### 7.1 Economic nexus
 
+**Economic nexus table**
+
 | Parameter | Value |
-|---|---|
+| --- | --- |
 | Revenue threshold | $250,000 in sales into Alabama |
 | Transaction threshold | None |
 | Effective date | October 1, 2018 |
 
 ### 7.2 Penalties
 
+**Penalties table**
+
 | Penalty | Rate |
-|---|---|
+| --- | --- |
 | Late filing | 10% of tax due |
 | Fraud | 50% of deficiency |
-
----
-
-## Section 8 -- Edge cases
 
 ### EC1 -- Self-administered city registration
 
@@ -169,10 +171,6 @@ State rate on grocery food reduced from 4% to 2% effective September 1, 2023. Lo
 
 **Situation:** Customer buys groceries in Birmingham.
 **Resolution:** State rate 2% on food + full local Birmingham rate. Combined rate on food may be ~8%.
-
----
-
-## Section 9 -- Test suite
 
 ### Test 1 -- Basic sale
 
@@ -189,8 +187,6 @@ State rate on grocery food reduced from 4% to 2% effective September 1, 2023. Lo
 **Input:** $300K Alabama sales, no physical presence.
 **Expected:** Exceeds $250K. Must register.
 
----
-
 ## Section 10 -- Prohibitions
 
 - NEVER assume Alabama exempts grocery food -- it taxes it (reduced state rate 2% + full local).
@@ -199,24 +195,15 @@ State rate on grocery food reduced from 4% to 2% effective September 1, 2023. Lo
 - NEVER apply one city's local rate to another jurisdiction.
 - NEVER compute any number -- all arithmetic is handled by the deterministic engine, not Claude.
 
----
-
 ## Disclaimer
 
 This skill is provided for informational and computational purposes only and does not constitute tax, legal, or financial advice. All outputs must be reviewed by a qualified professional before filing.
-
-
----
 
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, EA, tax attorney, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
 
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
-
----
-
-<!-- openaccountants-cta-block -->
+The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
 
 ## Talk to a verified accountant
 
@@ -231,16 +218,22 @@ a formal engagement letter** — book a free 30-minute call:
 
 We'll route you to the named verifier covering your country or state. You can
 also see the full list of verified accountants at
-[openaccountants.com/network](https://www.openaccountants.com/network).
+[openaccountants.com/network](https://openaccountants.com/network).
 
-<!-- openaccountants-mcp-cta -->
+<!-- openaccountants-cta-block -->
 
-## The accountant-verified version lives in the connector
+---
 
-This file is the open, **research-grade draft**. The **accountant-verified**
-version of this skill is **not published to GitHub** — it is delivered free
-through the OpenAccountants MCP connector, where your AI agent loads the
-verified rules together with the name of the accountant who signed them off.
+## Talk to a verified accountant
 
-**→ Install the free connector:** <https://www.openaccountants.com/connect>
-**MCP endpoint:** `https://www.openaccountants.com/api/mcp`
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

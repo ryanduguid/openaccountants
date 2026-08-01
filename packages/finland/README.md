@@ -7,11 +7,15 @@
 
 1. `foundation.md`
 2. `intake.md`
-3. `fi-income-tax.md`
-4. `fi-prepayments.md`
-5. `fi-yel-social.md`
-6. `finland-vat-return.md`
-7. `eu-vat-directive.md`
+3. `fi-company-formation.md`
+4. `fi-corporate-income-tax.md`
+5. `fi-income-tax.md`
+6. `fi-prepayments.md`
+7. `fi-tax-overview.md`
+8. `fi-yel-social.md`
+9. `finland-vat-return.md`
+10. `eu-vat-directive.md`
+11. `company-formation-workflow-base.md`
 
 ## Also known as
 

@@ -2,13 +2,14 @@
 name: pa-payroll
 description: Tier 2 Pennsylvania content skill for employer payroll compliance covering tax year 2025. Includes the 3.07% flat PIT, Local Earned Income Tax under Act 32 with employer withholding by employee-residence PSD code (rates 0.5-3.9%), Local Services Tax (typically $52/year), reciprocal agreements with NJ/OH/IN/MD/VA/WV that exempt non-resident employees from state withholding, Philadelphia and Pittsburgh wage taxes (separate from state PIT under Sterling Act), SUC wage base $10,000 with rates 1.4-9.1%, REV-419 state withholding form, the Construction Workplace Misclassification Act, and quarterly PA-501/UC-2 combined filings.
 jurisdiction: US-PA
-domain: state-tax
 tax_year: 2025
+last_updated: 2026-05-27
+verified_by: pending
 tier: 2
-last_updated: 2026-07-06
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# pa-payroll
+# PA Payroll
 
 ## Scope note (blockquote)
 
@@ -403,3 +404,21 @@ To speak with one of the licensed accountants who verifies skills for your juris
 **→ [Book a call](https://calendly.com/openaccountants-info/30min)**
 
 We'll route you to the named verifier covering your country or state. You can also see the full list of verified accountants at [openaccountants.com/network](https://openaccountants.com/network).
+
+<!-- openaccountants-cta-block -->
+
+---
+
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

@@ -3,13 +3,13 @@ name: id-einvoice-coretax
 description: Use this skill whenever asked about filing, invoicing, or submitting any Indonesian tax obligation through the Coretax DJP system that went live 1 January 2025. Trigger on phrases like "Coretax DJP", "Coretax pajak", "Coretax login", "e-Faktur Indonesia", "e-Bupot Unifikasi", "NSFP", "Nomor Seri Faktur Pajak", "SPT Masa Unifikasi", "Indonesia tax filing system", "DJP Online vs Coretax", "Coretax Form", "Coretax Mobile", "NIK as NPWP", "16-digit NPWP", "pajak.go.id new system", "Coretax onboarding", or any operational query about how to file, issue invoices, or pay tax to the Indonesian DJP from 2025 onward. This skill covers the Coretax platform mechanics, account activation, NIK/NPWP integration, e-Faktur issuance and NSFP management within Coretax, e-Bupot Unifikasi withholding slip workflow, SPT filing channels, and the DJP Online to Coretax cutover. It does NOT compute the underlying tax — VAT (PPN) sits in indonesia-vat, withholding PPh 21 sits in id-payroll-pph21, and corporate / individual income tax sits in their respective skills. ALWAYS read this skill when filing or invoicing through Coretax DJP.
 jurisdiction: ID
 tax_year: 2025
-reviewed_by: RILIA PUTRI
-review_status: accountant-reviewed
+last_updated: 2026-05-27
+verified_by: RILIA PUTRI
 tier: 1
-last_updated: 2026-07-06
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# id-einvoice-coretax
+# ID Einvoice Coretax
 
 ## Indonesia — Coretax DJP, e-Faktur, e-Bupot Unifikasi Skill v1.0
 
@@ -410,3 +410,21 @@ a formal engagement letter** — book a free 30-minute call:
 We'll route you to the named verifier covering your country or state. You can
 also see the full list of verified accountants at
 [openaccountants.com/network](https://openaccountants.com/network).
+
+<!-- openaccountants-cta-block -->
+
+---
+
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

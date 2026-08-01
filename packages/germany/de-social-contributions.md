@@ -1,24 +1,25 @@
 ---
 name: de-social-contributions
 description: >
-  Use this skill whenever asked about German social insurance contributions (Sozialversicherungsbeitraege) for self-employed individuals, freelancers (Freiberufler), or sole proprietors (Einzelunternehmer). Trigger on phrases like "German health insurance", "Krankenversicherung", "GKV", "PKV", "Pflegeversicherung", "Rentenversicherung", "KSK", "Kuenstlersozialkasse", "Berufsgenossenschaft", "Unfallversicherung", "social contributions Germany", "Krankenkasse debit", or any question about German social insurance obligations. Also trigger when classifying bank statement transactions showing Krankenkasse debits, KSK direct debits, Berufsgenossenschaft invoices, or Deutsche Rentenversicherung payments. ALWAYS read this skill before touching any German social contribution work.
 version: 2.0
 jurisdiction: DE
 tax_year: 2025
-category: international
-depends_on:
-  - social-contributions-workflow-base
+last_updated: 2026-04-13
 verified_by: pending
+depends_on: - social-contributions-workflow-base
+category: international
+tier: 2
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Germany Social Contributions (Sozialversicherung) -- Self-Employed Skill v2.0
+# DE Social Contributions
 
 ## Section 1 -- Quick reference
 
-**Read this whole section before computing or classifying anything.**
+**Quick reference table**
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | Country | Germany (Bundesrepublik Deutschland) |
 | Primary Legislation | SGB IV (general), SGB V (health), SGB VI (pension), SGB XI (care), SGB VII (accident), KSVG (artists) |
 | Supporting Legislation | EStG Section 10 (Vorsorgeaufwendungen / tax deductibility) |
@@ -38,18 +39,18 @@ verified_by: pending
 | Validated by | Pending -- requires sign-off by a licensed Steuerberater |
 | Validation date | Pending |
 
-**Conservative defaults:**
+Read this whole section before computing or classifying anything.
+
+**Conservative defaults**
 
 | Ambiguity | Default |
-|---|---|
+| --- | --- |
 | Unknown GKV or PKV | STOP -- do not compute without this |
 | Unknown Zusatzbeitrag | Use average 2.5% |
 | Unknown number of children | Apply childless surcharge (4.2% PV) |
 | Unknown profession (pension obligation) | Assume voluntary; flag for reviewer |
 | Unknown Hauptberuflich vs Nebenberuflich | Flag for reviewer |
 | Unknown income for GKV | Apply minimum base (EUR 1,248.33/month) |
-
----
 
 ## Section 2 -- Required inputs and refusal catalogue
 
@@ -63,17 +64,11 @@ verified_by: pending
 
 ### Refusal catalogue
 
-**R-DE-SC-1 -- GKV vs PKV unknown.** *Trigger:* client has not confirmed insurance type. *Message:* "The distinction between GKV and PKV fundamentally changes the calculation. Cannot proceed without this information."
-
-**R-DE-SC-2 -- PKV premium computation.** *Trigger:* client asks for PKV premium calculation. *Message:* "PKV premiums are individual and risk-based. This skill does not compute PKV premiums. Advise client to obtain PKV quotes."
-
-**R-DE-SC-3 -- Cross-border social security (A1).** *Trigger:* client works across EU borders. *Message:* "EU social security coordination (Regulation EC 883/2004) and A1 certificates require specialist advice. Escalate to Steuerberater."
-
-**R-DE-SC-4 -- Versorgungswerk pension schemes.** *Trigger:* client is in a professional pension fund (Versorgungswerk). *Message:* "Versorgungswerk schemes have their own rate schedules. Out of scope -- escalate to Steuerberater."
-
-**R-DE-SC-5 -- Scheinselbstaendigkeit determination.** *Trigger:* possible false self-employment. *Message:* "Statusfeststellungsverfahren and Scheinselbstaendigkeit determinations involve severe financial exposure. Escalate immediately."
-
----
+- **R-DE-SC-1 -- GKV vs PKV unknown** — Trigger: client has not confirmed insurance type. Message: "The distinction between GKV and PKV fundamentally changes the calculation. Cannot proceed without this information."
+- **R-DE-SC-2 -- PKV premium computation** — Trigger: client asks for PKV premium calculation. Message: "PKV premiums are individual and risk-based. This skill does not compute PKV premiums. Advise client to obtain PKV quotes."
+- **R-DE-SC-3 -- Cross-border social security (A1)** — Trigger: client works across EU borders. Message: "EU social security coordination (Regulation EC 883/2004) and A1 certificates require specialist advice. Escalate to Steuerberater."
+- **R-DE-SC-4 -- Versorgungswerk pension schemes** — Trigger: client is in a professional pension fund (Versorgungswerk). Message: "Versorgungswerk schemes have their own rate schedules. Out of scope -- escalate to Steuerberater."
+- **R-DE-SC-5 -- Scheinselbstaendigkeit determination** — Trigger: possible false self-employment. Message: "Statusfeststellungsverfahren and Scheinselbstaendigkeit determinations involve severe financial exposure. Escalate immediately."
 
 ## Section 3 -- Payment pattern library
 
@@ -81,50 +76,60 @@ This is the deterministic pre-classifier for bank statement transactions related
 
 ### 3.1 Krankenkasse (GKV health insurance) debits
 
+**Krankenkasse (GKV) debit patterns**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | TK, TECHNIKER KRANKENKASSE | EXCLUDE -- GKV contribution | Health + care combined debit |
 | AOK, AOK PLUS, AOK BAYERN, AOK NORDWEST | EXCLUDE -- GKV contribution | Regional AOK variants |
-| BARMER, BARMER GEK | EXCLUDE -- GKV contribution | |
-| DAK, DAK-GESUNDHEIT | EXCLUDE -- GKV contribution | |
-| IKK, IKK CLASSIC, IKK SUEDWEST | EXCLUDE -- GKV contribution | |
-| HEK, HANSEATISCHE KRANKENKASSE | EXCLUDE -- GKV contribution | |
-| KKH, KAUFMAENNISCHE KRANKENKASSE | EXCLUDE -- GKV contribution | |
-| KNAPPSCHAFT | EXCLUDE -- GKV contribution | |
+| BARMER, BARMER GEK | EXCLUDE -- GKV contribution |  |
+| DAK, DAK-GESUNDHEIT | EXCLUDE -- GKV contribution |  |
+| IKK, IKK CLASSIC, IKK SUEDWEST | EXCLUDE -- GKV contribution |  |
+| HEK, HANSEATISCHE KRANKENKASSE | EXCLUDE -- GKV contribution |  |
+| KKH, KAUFMAENNISCHE KRANKENKASSE | EXCLUDE -- GKV contribution |  |
+| KNAPPSCHAFT | EXCLUDE -- GKV contribution |  |
 | BKK (various: BKK MOBIL OIL, BKK FIRMUS, VIACTIV) | EXCLUDE -- GKV contribution | Betriebskrankenkassen |
 | KRANKENKASSE, KRANKENVERSICHERUNG | EXCLUDE -- GKV contribution | Generic pattern |
 | GKV, GESETZLICHE KV | EXCLUDE -- GKV contribution | Generic abbreviation |
 
 ### 3.2 Private Krankenversicherung (PKV) debits
 
+**Private Krankenversicherung (PKV) debit patterns**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | ALLIANZ PKV, ALLIANZ PRIVATE | EXCLUDE -- PKV premium | Private health insurance |
-| DEBEKA, DEBEKA KRANKENVERSICHERUNG | EXCLUDE -- PKV premium | |
-| DKV, DEUTSCHE KRANKENVERSICHERUNG | EXCLUDE -- PKV premium | |
-| SIGNAL IDUNA PKV | EXCLUDE -- PKV premium | |
-| HALLESCHE | EXCLUDE -- PKV premium | |
+| DEBEKA, DEBEKA KRANKENVERSICHERUNG | EXCLUDE -- PKV premium |  |
+| DKV, DEUTSCHE KRANKENVERSICHERUNG | EXCLUDE -- PKV premium |  |
+| SIGNAL IDUNA PKV | EXCLUDE -- PKV premium |  |
+| HALLESCHE | EXCLUDE -- PKV premium |  |
 | BARMENIA | EXCLUDE -- PKV premium | Could be supplementary |
 | PRIVATE KRANKENVERSICHERUNG, PKV | EXCLUDE -- PKV premium | Generic |
 
 ### 3.3 KSK (Kuenstlersozialkasse) debits
 
+**KSK debit patterns**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | KSK, KUENSTLERSOZIALKASSE | EXCLUDE -- KSK contribution | Combined health + pension contribution |
-| KUENSTLERSOZIALVERSICHERUNG | EXCLUDE -- KSK contribution | |
+| KUENSTLERSOZIALVERSICHERUNG | EXCLUDE -- KSK contribution |  |
 
 ### 3.4 Deutsche Rentenversicherung (pension)
 
+**Deutsche Rentenversicherung debit patterns**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | DRV, DEUTSCHE RENTENVERSICHERUNG | EXCLUDE -- pension contribution | Voluntary or mandatory pension |
-| RENTENVERSICHERUNG, RV BEITRAG | EXCLUDE -- pension contribution | |
+| RENTENVERSICHERUNG, RV BEITRAG | EXCLUDE -- pension contribution |  |
 
 ### 3.5 Berufsgenossenschaft (accident insurance)
 
+**Berufsgenossenschaft debit patterns**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | BG, BERUFSGENOSSENSCHAFT | EXCLUDE -- accident insurance | Annual or quarterly BG invoice |
 | BG BAU, BG ETEM, BGW, BGHM, BG VERKEHR | EXCLUDE -- BG contribution | Named BGs by sector |
 | VBG, VERWALTUNGS-BG | EXCLUDE -- BG contribution | Office-based industries |
@@ -132,21 +137,23 @@ This is the deterministic pre-classifier for bank statement transactions related
 
 ### 3.6 Arbeitslosenversicherung (unemployment -- voluntary)
 
+**Arbeitslosenversicherung debit patterns**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | AGENTUR FUER ARBEIT, BUNDESAGENTUR | EXCLUDE -- voluntary unemployment | If self-employed opted in |
 | ARBEITSLOSENVERSICHERUNG | EXCLUDE -- voluntary unemployment | Rare for self-employed |
 
 ### 3.7 Tax authority (NOT social contributions)
 
+**Tax authority patterns**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | FINANZAMT, FA (+ city name) | EXCLUDE -- income tax | Not a social contribution |
 | UMSATZSTEUER, UST | EXCLUDE -- VAT | Not a social contribution |
 | EINKOMMENSTEUER, EST | EXCLUDE -- income tax | Not a social contribution |
 | GEWERBESTEUER | EXCLUDE -- trade tax | Not a social contribution |
-
----
 
 ## Section 4 -- Worked examples
 
@@ -212,30 +219,29 @@ Matches "FINANZAMT" (pattern 3.7). This is an income tax prepayment, NOT a socia
 
 **Classification:** EXCLUDE -- income tax. NOT a social contribution.
 
----
-
 ## Section 5 -- Tier 1 rules
 
 ### Rule 1 -- GKV contribution formula
 
-```
-Monthly_GKV = clamp(monthly_income, EUR 1,248.33, EUR 5,512.50) x (base_rate + Zusatzbeitrag)
-```
-
-Self-employed pay the FULL rate (no employer share).
+- **Monthly GKV formula** — Monthly_GKV = clamp(monthly_income, EUR 1,248.33, EUR 5,512.50) x (base_rate + Zusatzbeitrag)
+- **Self-employed GKV rate share** — Self-employed pay the FULL rate (no employer share).
 
 ### Rule 2 -- GKV rates (2025)
 
+**GKV rates 2025**
+
 | Component | Rate |
-|---|---|
+| --- | --- |
 | Without sick pay (default for self-employed) | 14.0% + Zusatzbeitrag |
 | With sick pay | 14.6% + Zusatzbeitrag |
 | Average Zusatzbeitrag (2025) | 2.5% |
 
 ### Rule 3 -- Pflegeversicherung rates (2025)
 
+**Pflegeversicherung rates by children**
+
 | Children (under 25) | Rate |
-|---|---|
+| --- | --- |
 | 0 (childless, age 23+) | 4.2% |
 | 1 | 3.6% |
 | 2 | 3.35% |
@@ -243,32 +249,34 @@ Self-employed pay the FULL rate (no employer share).
 | 4 | 2.85% |
 | 5+ | 2.6% |
 
-Same assessment base as GKV (EUR 1,248.33 to EUR 5,512.50 monthly). Full rate for self-employed (no employer share).
+- **PV assessment base and employer share** — Same assessment base as GKV (EUR 1,248.33 to EUR 5,512.50 monthly). Full rate for self-employed (no employer share).
 
 ### Rule 4 -- Pension (Rentenversicherung)
 
-Rate: 18.6%. Ceiling: EUR 8,050/month. Voluntary minimum: EUR 100.07/month. Mandatory for: Handwerker (first 18 years), KSK members, teachers (selbstaendige Lehrer), midwives, arbeitnehmeraehnliche Selbstaendige. Voluntary for most Freiberufler and Gewerbetreibende.
+- **Pension rules** — Rate: 18.6%. Ceiling: EUR 8,050/month. Voluntary minimum: EUR 100.07/month. Mandatory for: Handwerker (first 18 years), KSK members, teachers (selbstaendige Lehrer), midwives, arbeitnehmeraehnliche Selbstaendige. Voluntary for most Freiberufler and Gewerbetreibende.
 
 ### Rule 5 -- KSK members pay approximately half
 
-KSK covers ~50% of health and pension. Member pays ~7.3% + 50% Zusatzbeitrag for health, 9.3% for pension, and FULL Pflegeversicherung (no 50% split on care).
+- **KSK member share rule** — KSK covers ~50% of health and pension. Member pays ~7.3% + 50% Zusatzbeitrag for health, 9.3% for pension, and FULL Pflegeversicherung (no 50% split on care).
 
 ### Rule 6 -- Kuenstlersozialabgabe (client/Verwerter)
 
-Businesses commissioning artistic/literary/journalistic work pay 5.0% levy on fees paid. Bagatellgrenze: EUR 700/year. Reporting deadline: 31 March following year.
+- **Kuenstlersozialabgabe rule** — Businesses commissioning artistic/literary/journalistic work pay 5.0% levy on fees paid. Bagatellgrenze: EUR 700/year. Reporting deadline: 31 March following year.
 
 ### Rule 7 -- GKV provisional and final assessment
 
-Provisional contributions based on estimated income. Recalculated retroactively after Einkommensteuerbescheid. Overpayments refunded; underpayments demanded. Bescheid must be submitted to Krankenkasse within 3 years.
+- **GKV provisional/final assessment rule** — Provisional contributions based on estimated income. Recalculated retroactively after Einkommensteuerbescheid. Overpayments refunded; underpayments demanded. Bescheid must be submitted to Krankenkasse within 3 years.
 
 ### Rule 8 -- Every person must have health insurance
 
-There is no opt-out. Self-employed can freely choose GKV or PKV (the JAEG threshold applies only to employees).
+- **Mandatory health insurance rule** — There is no opt-out. Self-employed can freely choose GKV or PKV (the JAEG threshold applies only to employees).
 
 ### Rule 9 -- Tax deductibility (Vorsorgeaufwendungen)
 
+**Tax deductibility table**
+
 | Contribution | Deductibility |
-|---|---|
+| --- | --- |
 | Basiskrankenversicherung (GKV or PKV base) | Fully deductible, no cap |
 | Pflegeversicherung | Fully deductible, no cap |
 | Rentenversicherung (statutory or Ruerup) | 100% deductible (since 2023), within EUR 29,344 cap |
@@ -276,58 +284,43 @@ There is no opt-out. Self-employed can freely choose GKV or PKV (the JAEG thresh
 
 ### Rule 10 -- Payment schedule
 
+**Payment schedule table**
+
 | Branch | Due | Method |
-|---|---|---|
+| --- | --- | --- |
 | GKV + PV | 15th of each month (for current month) | Lastschrift or bank transfer |
 | Pension (voluntary) | End of each month | Bank transfer |
 | KSK | Mid-month | KSK direct debit |
 | BG | Annual (some quarterly) | BG invoice |
 
----
-
 ## Section 6 -- Tier 2 catalogue
 
 ### T2-1 -- Hauptberuflich vs Nebenberuflich (side business alongside employment)
 
-**Trigger:** Client is employed full-time with a side freelance business.
-**Issue:** If employment is hauptberuflich, GKV comes from employment; side income not separately assessed for GKV. If side business becomes main activity, full self-employed GKV contributions apply.
-**Action:** Flag for reviewer. Case-specific assessment required.
+- **T2-1** — Trigger: Client is employed full-time with a side freelance business. Issue: If employment is hauptberuflich, GKV comes from employment; side income not separately assessed for GKV. If side business becomes main activity, full self-employed GKV contributions apply. Action: Flag for reviewer. Case-specific assessment required.
 
 ### T2-2 -- PKV to GKV switching
 
-**Trigger:** PKV client wants to switch to GKV.
-**Issue:** Very restricted. Generally impossible after age 55. Must demonstrate becoming employed with income below JAEG.
-**Action:** Escalate to Steuerberater. Do not advise switching is possible.
+- **T2-2** — Trigger: PKV client wants to switch to GKV. Issue: Very restricted. Generally impossible after age 55. Must demonstrate becoming employed with income below JAEG. Action: Escalate to Steuerberater. Do not advise switching is possible.
 
 ### T2-3 -- KSK eligibility determination
 
-**Trigger:** Client's profession may or may not qualify for KSK.
-**Issue:** KSK membership requires creative/artistic/literary/journalistic self-employment, EUR 3,900+ annual income (after 3-year Berufsanfaenger period), and no more than one employee.
-**Action:** Flag for reviewer. Do not assume eligibility.
+- **T2-3** — Trigger: Client's profession may or may not qualify for KSK. Issue: KSK membership requires creative/artistic/literary/journalistic self-employment, EUR 3,900+ annual income (after 3-year Berufsanfaenger period), and no more than one employee. Action: Flag for reviewer. Do not assume eligibility.
 
 ### T2-4 -- Scheinselbstaendigkeit (false self-employment)
 
-**Trigger:** Client earns >5/6 of income from one client and has no employees.
-**Issue:** Triggers arbeitnehmeraehnliche Selbstaendigkeit under SGB VI Section 2 (mandatory pension) and potential reclassification.
-**Action:** Escalate immediately. Severe financial exposure.
+- **T2-4** — Trigger: Client earns >5/6 of income from one client and has no employees. Issue: Triggers arbeitnehmeraehnliche Selbstaendigkeit under SGB VI Section 2 (mandatory pension) and potential reclassification. Action: Escalate immediately. Severe financial exposure.
 
 ### T2-5 -- Handwerker pension after 18 years
 
-**Trigger:** Skilled craftsperson with 216+ months of mandatory pension.
-**Issue:** May apply for exemption (Befreiungsantrag).
-**Action:** Flag for reviewer to confirm eligibility.
+- **T2-5** — Trigger: Skilled craftsperson with 216+ months of mandatory pension. Issue: May apply for exemption (Befreiungsantrag). Action: Flag for reviewer to confirm eligibility.
 
 ### T2-6 -- GKV retroactive adjustment
 
-**Trigger:** Einkommensteuerbescheid shows significant income deviation from provisional estimate.
-**Issue:** Krankenkasse recalculates retroactively. Underpayments demanded.
-**Action:** Advise client to submit Bescheid promptly and reserve funds.
-
----
+- **T2-6** — Trigger: Einkommensteuerbescheid shows significant income deviation from provisional estimate. Issue: Krankenkasse recalculates retroactively. Underpayments demanded. Action: Advise client to submit Bescheid promptly and reserve funds.
 
 ## Section 7 -- Excel working paper template
 
-```
 GERMANY SOCIAL CONTRIBUTIONS -- WORKING PAPER
 Client: [name]
 Tax Year: [year]
@@ -372,9 +365,6 @@ TAX DEDUCTIBILITY (ANLAGE VORSORGEAUFWAND)
 
 REVIEWER FLAGS
   [List any Tier 2 flags]
-```
-
----
 
 ## Section 8 -- Bank statement reading guide
 
@@ -408,8 +398,6 @@ REVIEWER FLAGS
 4. Finanzamt debits are TAX, not social contributions -- do not confuse
 5. Provisional GKV amounts may be retroactively adjusted
 
----
-
 ## Section 9 -- Onboarding fallback
 
 If the client provides only a bank statement:
@@ -420,14 +408,14 @@ If the client provides only a bank statement:
 4. **Sum annual contributions** -- total GKV + PV + pension + BG
 5. **Flag:** "Social contribution classification derived from bank statement patterns. Actual Zusatzbeitrag, income assessment base, and pension obligation type have not been independently verified. Reviewer must confirm before Anlage Vorsorgeaufwand is completed."
 
----
-
 ## Section 10 -- Reference material
 
 ### Contribution ceilings and minimums (2025)
 
+**Contribution ceilings and minimums table**
+
 | Parameter | KV/PV | Pension |
-|---|---|---|
+| --- | --- | --- |
 | BBG monthly | EUR 5,512.50 | EUR 8,050.00 |
 | BBG annual | EUR 66,150.00 | EUR 96,600.00 |
 | Minimum (monthly, GKV self-employed) | EUR 1,248.33 | EUR 100.07 (voluntary) |
@@ -465,17 +453,11 @@ If the client provides only a bank statement:
 - NEVER conflate KV/PV BBG (EUR 5,512.50) with RV BBG (EUR 8,050)
 - NEVER advise on Scheinselbstaendigkeit without escalating
 
----
-
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a Steuerberater, Wirtschaftspruefer, or equivalent licensed practitioner in Germany) before filing or acting upon.
 
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
-
----
-
-<!-- openaccountants-cta-block -->
+The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
 
 ## Talk to a verified accountant
 
@@ -490,16 +472,22 @@ a formal engagement letter** — book a free 30-minute call:
 
 We'll route you to the named verifier covering your country or state. You can
 also see the full list of verified accountants at
-[openaccountants.com/network](https://www.openaccountants.com/network).
+[openaccountants.com/network](https://openaccountants.com/network).
 
-<!-- openaccountants-mcp-cta -->
+<!-- openaccountants-cta-block -->
 
-## The accountant-verified version lives in the connector
+---
 
-This file is the open, **research-grade draft**. The **accountant-verified**
-version of this skill is **not published to GitHub** — it is delivered free
-through the OpenAccountants MCP connector, where your AI agent loads the
-verified rules together with the name of the accountant who signed them off.
+## Talk to a verified accountant
 
-**→ Install the free connector:** <https://www.openaccountants.com/connect>
-**MCP endpoint:** `https://www.openaccountants.com/api/mcp`
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

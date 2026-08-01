@@ -1,23 +1,25 @@
 ---
 name: es-social-contributions
 description: >
-  Use this skill whenever asked about Spanish self-employed social contributions (cuota de autonomos / RETA). Trigger on phrases like "cuota autonomos", "RETA", "social contributions Spain", "autónomo contributions", "how much do I pay as autonomo", "tarifa plana", "cese de actividad", "regularizacion cuotas", "base de cotización", "TGSS direct debit", "cuota mensual", or any question about Spanish self-employed social security. Also trigger when classifying bank statement transactions showing TGSS direct debits, cuota autonomos debits, or Seguridad Social payments. ALWAYS read this skill before touching any Spanish social contributions work.
 version: 2.0
 jurisdiction: ES
 tax_year: 2025
+last_updated: 2026-04-13
+verified_by: pending
+depends_on: - social-contributions-workflow-base
 category: international
-depends_on:
-  - social-contributions-workflow-base
+tier: 2
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Spain Social Contributions (RETA) -- Self-Employed Skill v2.0
+# ES Social Contributions
 
 ## Section 1 -- Quick reference
 
-**Read this whole section before computing or classifying anything.**
+**Quick reference table**
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | Country | Spain |
 | Primary Legislation | LGSS; Real Decreto-ley 13/2022 (income-based system) |
 | Supporting Legislation | Orden PJC/178/2025 (2025 rates); Ley 20/2007 (Estatuto Trabajo Autonomo); Ley 35/2006 IRPF |
@@ -36,18 +38,16 @@ depends_on:
 | Validated by | Pending -- requires sign-off by qualified asesor fiscal |
 | Validation date | Pending |
 
-**Conservative defaults:**
+**Read this whole section before computing or classifying anything.**
+
+**Conservative defaults**
 
 | Ambiguity | Default |
-|---|---|
+| --- | --- |
 | Unknown persona fisica vs societario | Ask -- minimum base rules differ |
 | Unknown net income estimate | STOP -- income estimate required for tranche |
 | Unknown whether first-time autonomo | Ask -- tarifa plana eligibility |
 | Unknown 7% vs 3% deduction | Apply 7% (persona fisica default); 3% for societarios |
-
----
-
-## Section 2 -- Required inputs and refusal catalogue
 
 ### Required inputs
 
@@ -59,13 +59,9 @@ depends_on:
 
 ### Refusal catalogue
 
-**R-ES-SC-1 -- Disability regimes.** *Trigger:* client has disability affecting contribution rates. *Message:* "Disability contribution regimes require case-specific TGSS assessment. Escalate."
-
-**R-ES-SC-2 -- Cross-border posted workers.** *Trigger:* client posted from another EU country. *Message:* "EU social security coordination applies. Escalate."
-
-**R-ES-SC-3 -- Mutuas MATEPSS specifics.** *Trigger:* client asks about specific Mutua benefits or coverage details. *Message:* "Mutua-specific benefit calculations are out of scope. Contact the relevant Mutua."
-
----
+- **R-ES-SC-1 -- Disability regimes** — Trigger: client has disability affecting contribution rates. Message: "Disability contribution regimes require case-specific TGSS assessment. Escalate."
+- **R-ES-SC-2 -- Cross-border posted workers** — Trigger: client posted from another EU country. Message: "EU social security coordination applies. Escalate."
+- **R-ES-SC-3 -- Mutuas MATEPSS specifics** — Trigger: client asks about specific Mutua benefits or coverage details. Message: "Mutua-specific benefit calculations are out of scope. Contact the relevant Mutua."
 
 ## Section 3 -- Payment pattern library
 
@@ -73,8 +69,10 @@ This is the deterministic pre-classifier for bank statement transactions related
 
 ### 3.1 TGSS direct debits (monthly cuota)
 
+**TGSS direct debits (monthly cuota)**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | TGSS, TESORERIA GENERAL | EXCLUDE -- RETA cuota | Monthly autonomo contribution |
 | SEGURIDAD SOCIAL, SS | EXCLUDE -- RETA cuota | Alternative description |
 | CUOTA AUTONOMOS | EXCLUDE -- RETA cuota | Explicit cuota reference |
@@ -83,40 +81,48 @@ This is the deterministic pre-classifier for bank statement transactions related
 
 ### 3.2 Regularisation payments (TGSS demands additional cuotas)
 
+**Regularisation payments**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | TGSS REGULARIZACION | EXCLUDE -- RETA regularisation | Additional cuotas demanded after IRPF filing |
 | TGSS COMPLEMENTO | EXCLUDE -- RETA adjustment | Adjustment to provisional base |
 
 ### 3.3 TGSS refunds (overpayment)
 
+**TGSS refunds**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | TGSS DEVOLUCION | EXCLUDE -- RETA refund | Refund of excess cuotas |
 | TGSS REINTEGRO | EXCLUDE -- RETA refund | Same |
 
 ### 3.4 Tarifa plana payments
 
+**Tarifa plana payments**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | TGSS (amount ~EUR 80) | EXCLUDE -- tarifa plana cuota | Consistent EUR 80/month = tarifa plana |
 
 ### 3.5 Tax authority (NOT RETA)
 
+**Tax authority patterns**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | AEAT, AGENCIA TRIBUTARIA | EXCLUDE -- income tax/VAT | Not social contributions |
 | HACIENDA | EXCLUDE -- tax | Not RETA |
 | IVA, IRPF (tax reference) | EXCLUDE -- tax | Not RETA |
 
 ### 3.6 Employee social security (employer obligations)
 
+**Employee social security patterns**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | TGSS REGIMEN GENERAL | EXCLUDE -- employee SS | Employer's obligation for employees, not the autonomo's own RETA |
 | TC1, TC2 (payroll references) | EXCLUDE -- payroll SS | Employer obligations |
-
----
 
 ## Section 4 -- Worked examples
 
@@ -182,32 +188,26 @@ Matches "TGSS REGIMEN GENERAL" (pattern 3.6). This is the employer's social secu
 
 **Classification:** EXCLUDE -- employer SS for employees. Not the autonomo's personal RETA contribution.
 
----
-
-## Section 5 -- Tier 1 rules
-
 ### Rule 1 -- Net income formula for tranche determination
 
-```
-Rendimientos netos = Ingresos computables - Gastos deducibles
-Rendimientos netos RETA = Rendimientos netos - 7% deduccion generica (3% for societarios)
-Monthly net = Rendimientos netos RETA / 12
-```
+- **Net income formula** — Rendimientos netos = Ingresos computables - Gastos deducibles Rendimientos netos RETA = Rendimientos netos - 7% deduccion generica (3% for societarios) Monthly net = Rendimientos netos RETA / 12
 
 ### Rule 2 -- 2025 tranche table (15 tranches)
 
-**Tabla Reducida (Tranches 1-3):**
+**Tabla Reducida (Tranches 1-3)** and **Tabla General (Tranches 4-15)**.
+
+**Tabla Reducida (Tranches 1-3)**
 
 | Tranche | Monthly Net (EUR) | Min. Base (EUR) | Approx. Min. Cuota (EUR/month) |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | 1 | <= 670 | 653.59 | ~200 |
 | 2 | 670.01-900.00 | 718.95 | ~220 |
 | 3 | 900.01-1,125.90 | 849.67 | ~260 |
 
-**Tabla General (Tranches 4-15):**
+**Tabla General (Tranches 4-15)**
 
 | Tranche | Monthly Net (EUR) | Min. Base (EUR) | Approx. Min. Cuota (EUR/month) |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | 4 | 1,125.91-1,300.00 | 950.98 | ~291 |
 | 5 | 1,300.01-1,500.00 | 960.78 | ~294 |
 | 6 | 1,500.01-1,700.00 | 960.78 | ~294 |
@@ -221,12 +221,14 @@ Monthly net = Rendimientos netos RETA / 12
 | 14 | 4,050.01-6,000.00 | 1,732.03 | ~530 |
 | 15 | > 6,000.00 | 1,928.10 | ~590 |
 
-Maximum base for all tranches: EUR 4,909.50/month.
+- **Maximum base for all tranches** — EUR 4,909.50/month
 
 ### Rule 3 -- Contribution rate breakdown (2025)
 
+**Contribution rate breakdown (2025)**
+
 | Concept | Rate |
-|---|---|
+| --- | --- |
 | Contingencias comunes | 28.30% |
 | Contingencias profesionales | 1.30% |
 | Cese de actividad | 0.90% |
@@ -236,37 +238,31 @@ Maximum base for all tranches: EUR 4,909.50/month.
 
 ### Rule 4 -- Cuota formula
 
-```
-Cuota mensual = Base de cotizacion elegida x 31.40%
-```
+- **Cuota mensual formula** — Cuota mensual = Base de cotizacion elegida x 31.40%
 
 ### Rule 5 -- Tarifa plana
 
-EUR 80/month for first 12 months. Extendable 12 more months if first-year income < SMI. Eligibility: no RETA registration in prior 2 years (3 years if previously received tarifa plana). Must apply at time of alta.
+- **Tarifa plana rule** — EUR 80/month for first 12 months. Extendable 12 more months if first-year income < SMI. Eligibility: no RETA registration in prior 2 years (3 years if previously received tarifa plana). Must apply at time of alta.
 
 ### Rule 6 -- Autonomo societario minimum
 
-EUR 1,000/month regardless of tranche. Min cuota: ~EUR 314/month.
+- **Autonomo societario minimum** — EUR 1,000/month regardless of tranche. Min cuota: ~EUR 314/month.
 
 ### Rule 7 -- Payment schedule
 
-Monthly. Due: last business day of current month. Mandatory domiciliacion bancaria. Late surcharge: 10% first month, 20% thereafter.
+- **Payment schedule** — Monthly. Due: last business day of current month. Mandatory domiciliacion bancaria. Late surcharge: 10% first month, 20% thereafter.
 
 ### Rule 8 -- Base change windows (6 per year)
 
-Submit by: end Feb (effective 1 Mar), end Apr (1 May), end Jun (1 Jul), end Aug (1 Sep), end Oct (1 Nov), end Dec (1 Jan).
+- **Base change windows** — Submit by: end Feb (effective 1 Mar), end Apr (1 May), end Jun (1 Jul), end Aug (1 Sep), end Oct (1 Nov), end Dec (1 Jan).
 
 ### Rule 9 -- Annual regularisation (automatic)
 
-After IRPF filed, TGSS compares actual vs provisional. Underpayment: TGSS demands additional cuotas. Overpayment: TGSS refunds automatically. Additional cuotas deductible in year paid. Refunds taxable in year received.
+- **Annual regularisation** — After IRPF filed, TGSS compares actual vs provisional. Underpayment: TGSS demands additional cuotas. Overpayment: TGSS refunds automatically. Additional cuotas deductible in year paid. Refunds taxable in year received.
 
 ### Rule 10 -- Tax deductibility
 
-RETA cuotas: 100% deductible as gasto deducible in IRPF. Tarifa plana cuotas: also deductible. Late surcharges and penalties: NOT deductible.
-
----
-
-## Section 6 -- Tier 2 catalogue
+- **Tax deductibility** — RETA cuotas: 100% deductible as gasto deducible in IRPF. Tarifa plana cuotas: also deductible. Late surcharges and penalties: NOT deductible.
 
 ### T2-1 -- Pluriactividad (simultaneous employment + RETA)
 
@@ -298,11 +294,8 @@ RETA cuotas: 100% deductible as gasto deducible in IRPF. Tarifa plana cuotas: al
 **Issue:** Extension denied. From month 13, full tranche-based cuota applies.
 **Action:** Confirm income level and transition to full cuota.
 
----
-
 ## Section 7 -- Excel working paper template
 
-```
 SPAIN RETA CONTRIBUTIONS -- WORKING PAPER
 Client: [name]
 Tax Year: [year]
@@ -343,9 +336,6 @@ IRPF DEDUCTIBILITY
 
 REVIEWER FLAGS
   [List any Tier 2 flags]
-```
-
----
 
 ## Section 8 -- Bank statement reading guide
 
@@ -374,8 +364,6 @@ REVIEWER FLAGS
 4. AEAT debits are tax, not social security
 5. "REGIMEN GENERAL" debits are employer SS for employees, not the autonomo's RETA
 
----
-
 ## Section 9 -- Onboarding fallback
 
 If the client provides only a bank statement:
@@ -391,14 +379,14 @@ If the client provides only a bank statement:
 4. **Look for regularisation** -- large TGSS debit or credit mid-year
 5. **Flag:** "RETA tranche estimated from cuota amount on bank statement. Actual income and chosen base have not been independently verified. Reviewer must confirm before IRPF filing."
 
----
-
 ## Section 10 -- Reference material
 
 ### Net income example
 
+**Net income example**
+
 | Item | EUR |
-|---|---|
+| --- | --- |
 | Gross annual revenue | 48,000 |
 | Deductible expenses | 12,000 |
 | Net before deduction | 36,000 |
@@ -411,29 +399,29 @@ If the client provides only a bank statement:
 
 ### Cese de actividad (cessation benefit)
 
-70% of average contribution base of last 12 months. 4-24 months duration. Must have 12 months continuous contribution in prior 24. Voluntary cessation does NOT qualify.
+- **Cese de actividad benefit** — 70% of average contribution base of last 12 months. 4-24 months duration. Must have 12 months continuous contribution in prior 24. Voluntary cessation does NOT qualify.
 
 ### IT (sick leave) coverage
 
-Days 4-20: 60% of regulatory base. Day 21+: 75%. Days 1-3 not covered. Higher chosen base = higher daily benefit.
+- **IT coverage** — Days 4-20: 60% of regulatory base. Day 21+: 75%. Days 1-3 not covered. Higher chosen base = higher daily benefit.
 
 ### Test suite
 
-**Test 1:** Persona fisica, monthly net EUR 2,100. -> Tranche 9. Min base EUR 1,274.51. Cuota: EUR 400.20/month.
+Persona fisica, monthly net EUR 2,100. -> Tranche 9. Min base EUR 1,274.51. Cuota: EUR 400.20/month.
 
-**Test 2:** New autonomo, tarifa plana. -> EUR 80/month for 12 months.
+New autonomo, tarifa plana. -> EUR 80/month for 12 months.
 
-**Test 3:** Societario, monthly net EUR 800. -> Societario minimum EUR 1,000. Cuota: EUR 314/month.
+Societario, monthly net EUR 800. -> Societario minimum EUR 1,000. Cuota: EUR 314/month.
 
-**Test 4:** High earner, monthly net EUR 8,000. -> Tranche 15. Min base EUR 1,928.10. Cuota: EUR 605.42/month.
+High earner, monthly net EUR 8,000. -> Tranche 15. Min base EUR 1,928.10. Cuota: EUR 605.42/month.
 
-**Test 5:** Regularisation underpaid: chose Tranche 5 (EUR 960.78), actual Tranche 13 (EUR 1,601.31). -> Additional EUR 201.13/month = EUR 2,413.54/year.
+Regularisation underpaid: chose Tranche 5 (EUR 960.78), actual Tranche 13 (EUR 1,601.31). -> Additional EUR 201.13/month = EUR 2,413.54/year.
 
-**Test 6:** Regularisation overpaid: chose Tranche 10 (EUR 1,356.21), actual Tranche 3 (EUR 849.67). -> Refund EUR 158.95/month = EUR 1,907.45/year.
+Regularisation overpaid: chose Tranche 10 (EUR 1,356.21), actual Tranche 3 (EUR 849.67). -> Refund EUR 158.95/month = EUR 1,907.45/year.
 
-**Test 7:** Net income calc: EUR 60,000 gross, EUR 15,000 expenses. -> EUR 41,850 after 7%. Monthly EUR 3,487.50. Tranche 12. Min cuota EUR 477.16.
+Net income calc: EUR 60,000 gross, EUR 15,000 expenses. -> EUR 41,850 after 7%. Monthly EUR 3,487.50. Tranche 12. Min cuota EUR 477.16.
 
-**Test 8:** Deductibility: paid EUR 4,800 cuotas. -> 100% deductible in IRPF.
+Deductibility: paid EUR 4,800 cuotas. -> 100% deductible in IRPF.
 
 ### Prohibitions
 
@@ -448,17 +436,11 @@ Days 4-20: 60% of regulatory base. Day 21+: 75%. Days 1-3 not covered. Higher ch
 - NEVER advise late surcharges are deductible
 - NEVER compute IT benefits without knowing actual base of month prior to baja
 
----
-
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as an asesor fiscal, gestor administrativo, or equivalent licensed practitioner in Spain) before filing or acting upon.
 
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
-
----
-
-<!-- openaccountants-cta-block -->
+The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
 
 ## Talk to a verified accountant
 
@@ -473,16 +455,22 @@ a formal engagement letter** — book a free 30-minute call:
 
 We'll route you to the named verifier covering your country or state. You can
 also see the full list of verified accountants at
-[openaccountants.com/network](https://www.openaccountants.com/network).
+[openaccountants.com/network](https://openaccountants.com/network).
 
-<!-- openaccountants-mcp-cta -->
+<!-- openaccountants-cta-block -->
 
-## The accountant-verified version lives in the connector
+---
 
-This file is the open, **research-grade draft**. The **accountant-verified**
-version of this skill is **not published to GitHub** — it is delivered free
-through the OpenAccountants MCP connector, where your AI agent loads the
-verified rules together with the name of the accountant who signed them off.
+## Talk to a verified accountant
 
-**→ Install the free connector:** <https://www.openaccountants.com/connect>
-**MCP endpoint:** `https://www.openaccountants.com/api/mcp`
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

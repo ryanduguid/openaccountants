@@ -1,27 +1,25 @@
 ---
 name: at-income-tax
 description: >
-  Use this skill whenever asked about Austrian income tax (Einkommensteuer) for self-employed individuals filing form E1. Trigger on phrases like "Einkommensteuer", "ESt", "E1 Erklarung", "Gewinnfreibetrag", "Betriebsausgabenpauschale", "Absetzbetrge", "Sonderausgaben", "selbstandig Steuer Osterreich", "Austrian income tax", "self-employed tax Austria", or any question about computing or filing income tax for a self-employed person in Austria. This skill covers progressive tax brackets (0--55%), Gewinnfreibetrag, Betriebsausgabenpauschale, Sonderausgaben, aussergewohnliche Belastungen, Absetzbetrge, SV deductibility, and E1/E1a structure. ALWAYS read this skill before touching any Austrian income tax work.
 version: 2.0
 jurisdiction: AT
 tax_year: 2025
-tier: 2
-last_updated: 2026-06-12
+last_updated: 2026-04-13
+verified_by: pending
+depends_on: - income-tax-workflow-base
 category: international
-depends_on:
-  - income-tax-workflow-base
+tier: 2
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Austria Income Tax (ESt E1) -- Self-Employed Skill v2.0
-
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
-
----
+# AT Income Tax
 
 ## Section 1 -- Quick Reference
 
+**Quick Reference**
+
 | Field | Value |
-|---|---|
+| --- | --- |
 | Country | Austria (Republik Osterreich) |
 | Tax | Einkommensteuer (ESt) |
 | Currency | EUR only |
@@ -38,8 +36,10 @@ depends_on:
 
 ### Progressive Tax Brackets (2025, adjusted for cold progression)
 
+**Progressive Tax Brackets (2025, adjusted for cold progression)**
+
 | Taxable Income (EUR) | Marginal Rate |
-|---|---|
+| --- | --- |
 | 0 -- 13,308 | 0% |
 | 13,309 -- 21,617 | 20% |
 | 21,618 -- 35,836 | 30% |
@@ -52,26 +52,33 @@ depends_on:
 
 ### Gewinnfreibetrag (Profit Allowance)
 
+**Gewinnfreibetrag (Profit Allowance)**
+
 | Profit Range (EUR) | Rate | Investment Required? |
-|---|---|---|
+| --- | --- | --- |
 | 0 -- 33,000 | 15% | No (Grundfreibetrag, automatic) |
 | 33,001 -- 178,000 | 13% | Yes (qualifying assets/securities) |
 | 178,001 -- 353,000 | 7% | Yes |
 | 353,001 -- 583,000 | 4.5% | Yes |
 
-Maximum GFB: EUR 46,400. Grundfreibetrag (15% of first EUR 33,000 = max EUR 4,950) is automatic.
+- **Maximum GFB** — EUR 46,400 EUR
+- **Grundfreibetrag** — 15% of first EUR 33,000 = max EUR 4,950, automatic EUR
 
 ### Betriebsausgabenpauschale (Flat-Rate Expenses)
 
+**Betriebsausgabenpauschale (Flat-Rate Expenses)**
+
 | Category | Rate | Cap |
-|---|---|---|
+| --- | --- | --- |
 | Gewerbebetrieb | 12% of turnover | EUR 26,400 |
 | Certain professions (writers, scientists, consultants) | 6% of turnover | EUR 13,200 |
 
 ### Key E1/E1a Lines
 
+**Key E1/E1a Lines**
+
 | Line | Description |
-|---|---|
+| --- | --- |
 | Betriebseinnahmen | Gross business revenue |
 | Betriebsausgaben | Business expenses (actual or Pauschale) |
 | Gewinn | Net profit |
@@ -82,15 +89,15 @@ Maximum GFB: EUR 46,400. Grundfreibetrag (15% of first EUR 33,000 = max EUR 4,95
 
 ### Conservative Defaults
 
+**Conservative Defaults**
+
 | Ambiguity | Default |
-|---|---|
+| --- | --- |
 | Unknown income type | Gewerbebetrieb (12% Pauschale) |
 | Unknown expense method | Betriebsausgabenpauschale |
 | Unknown business-use % | 0% deduction |
 | Unknown investment for GFB | Grundfreibetrag only (EUR 4,950 max) |
 | Unknown motor vehicle cost | Cap at EUR 40,000 (Luxustangente) |
-
----
 
 ## Section 2 -- Required Inputs and Refusal Catalogue
 
@@ -106,17 +113,11 @@ Maximum GFB: EUR 46,400. Grundfreibetrag (15% of first EUR 33,000 = max EUR 4,95
 
 ### Refusal Catalogue
 
-**R-AT-1 -- Corporations (GmbH, AG).** "This skill covers natural persons only. Kapitalgesellschaften file Korperschaftsteuer. Out of scope."
-
-**R-AT-2 -- Partnerships (OG, KG).** "Partnership income requires separate determination. Out of scope."
-
-**R-AT-3 -- Non-resident.** "Non-resident taxation has different rules. Escalate."
-
-**R-AT-4 -- Group taxation.** "Group structures are out of scope."
-
-**R-AT-5 -- Finanzamt audit / appeal.** "Escalate to Steuerberater."
-
----
+- **R-AT-1** — Corporations (GmbH, AG). "This skill covers natural persons only. Kapitalgesellschaften file Korperschaftsteuer. Out of scope."
+- **R-AT-2** — Partnerships (OG, KG). "Partnership income requires separate determination. Out of scope."
+- **R-AT-3** — Non-resident. "Non-resident taxation has different rules. Escalate."
+- **R-AT-4** — Group taxation. "Group structures are out of scope."
+- **R-AT-5** — Finanzamt audit / appeal. "Escalate to Steuerberater."
 
 ## Section 3 -- Transaction Pattern Library
 
@@ -124,8 +125,10 @@ This is the deterministic pre-classifier. When a bank statement transaction matc
 
 ### 3.1 Income Patterns (Credits)
 
+**3.1 Income Patterns (Credits)**
+
 | Pattern | Tax Line | Treatment | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | UBERWEISUNG [client], ZAHLUNG, HONORAR | Betriebseinnahmen | Business income | Extract net if USt-registered |
 | GEHALT, LOHN, DIENSTGEBER | Einkünfte nichtselbstandige Arbeit | NOT self-employment | Employment -- separate |
 | MIETEINNAHME | Einkünfte Vermietung | NOT self-employment | Rental income |
@@ -135,24 +138,28 @@ This is the deterministic pre-classifier. When a bank statement transaction matc
 
 ### 3.2 Expense Patterns (Debits) -- Fully Deductible
 
+**3.2 Expense Patterns (Debits) -- Fully Deductible**
+
 | Pattern | Category | Treatment | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | BÜROMIETE, GESCHÄFTSLOKAL, OFFICE RENT | Raumkosten | Fully deductible | Dedicated premises |
 | BERUFSHAFTPFLICHT, VERSICHERUNG (business) | Versicherung | Fully deductible | Professional insurance |
-| STEUERBERATER, WIRTSCHAFTSPRÜFER, BUCHHALTER | Beratungskosten | Fully deductible | |
-| RECHTSANWALT, NOTAR (business) | Rechtskosten | Fully deductible | |
-| BÜROMATERIAL, SCHREIBWAREN | Bürobedarf | Fully deductible | |
-| WERBUNG, MARKETING, GOOGLE ADS | Werbekosten | Fully deductible | |
+| STEUERBERATER, WIRTSCHAFTSPRÜFER, BUCHHALTER | Beratungskosten | Fully deductible |  |
+| RECHTSANWALT, NOTAR (business) | Rechtskosten | Fully deductible |  |
+| BÜROMATERIAL, SCHREIBWAREN | Bürobedarf | Fully deductible |  |
+| WERBUNG, MARKETING, GOOGLE ADS | Werbekosten | Fully deductible |  |
 | FORTBILDUNG, SEMINAR, KURS | Fortbildungskosten | Fully deductible | Current profession |
 | KAMMERBEITRAG, WKO | Pflichtbeiträge | Fully deductible | Compulsory chamber |
 | KONTOFÜHRUNG, BANKSPESEN | Bankspesen | Fully deductible | Business account |
-| STRIPE FEE, PAYPAL FEE | Transaktionskosten | Fully deductible | |
+| STRIPE FEE, PAYPAL FEE | Transaktionskosten | Fully deductible |  |
 | SOFTWARE, LIZENZ, SUBSCRIPTION (under EUR 1,000) | IT-Kosten | Fully deductible | GWG if under EUR 1,000 |
 
 ### 3.3 Expense Patterns -- SVS (Sozialversicherung)
 
+**3.3 Expense Patterns -- SVS (Sozialversicherung)**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | SVS, SVA, SOZIALVERSICHERUNG | Fully deductible as Betriebsausgabe | Deducted BEFORE Gewinnfreibetrag |
 | KRANKENVERSICHERUNG (SVS) | Fully deductible | Part of SVS |
 | PENSIONSVERSICHERUNG (SVS) | Fully deductible | Part of SVS |
@@ -160,19 +167,23 @@ This is the deterministic pre-classifier. When a bank statement transaction matc
 
 ### 3.4 Expense Patterns -- Travel
 
+**3.4 Expense Patterns -- Travel**
+
 | Pattern | Category | Treatment | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | FLUG, AUA, RYANAIR, EASYJET | Reisekosten | Fully deductible | Business purpose |
 | HOTEL, BOOKING.COM | Reisekosten | Fully deductible | Business travel |
 | ÖBB, WESTBAHN | Reisekosten | Fully deductible | Business travel |
 | TAXI, UBER, BOLT | Reisekosten | Fully deductible | Business purpose |
 | TAGESGELD, DIÄTEN | Reisekosten | EUR 26.40/day domestic | Per diem rates |
-| TANKSTELLE, OMV, BP, SHELL | Kfz-Kosten | T2 -- business % only | |
+| TANKSTELLE, OMV, BP, SHELL | Kfz-Kosten | T2 -- business % only |  |
 
 ### 3.5 Expense Patterns -- NOT Deductible
 
+**3.5 Expense Patterns -- NOT Deductible**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | RESTAURANT (purely social) | NOT deductible | Entertainment without Werbezweck |
 | BEWIRTUNG (with Werbezweck) | 50% deductible | Must document business purpose |
 | PRIVAT, LEBENSMITTEL, SUPERMARKT | NOT deductible | Personal living costs |
@@ -182,19 +193,23 @@ This is the deterministic pre-classifier. When a bank statement transaction matc
 
 ### 3.6 Capital Items
 
+**3.6 Capital Items**
+
 | Pattern | Useful Life | Annual Rate | Notes |
-|---|---|---|---|
-| COMPUTER, LAPTOP, PC | 3 years | 33.3% | |
-| DRUCKER, SCANNER | 5 years | 20% | |
-| BÜROMÖBEL, SCHREIBTISCH | 10 years | 10% | |
+| --- | --- | --- | --- |
+| COMPUTER, LAPTOP, PC | 3 years | 33.3% |  |
+| DRUCKER, SCANNER | 5 years | 20% |  |
+| BÜROMÖBEL, SCHREIBTISCH | 10 years | 10% |  |
 | KFZ, AUTO (business) | 8 years | 12.5% | Luxustangente: cap EUR 40,000 |
-| GEBÄUDE (commercial) | 33 years | 3% | |
+| GEBÄUDE (commercial) | 33 years | 3% |  |
 | GWG (under EUR 1,000 net) | Immediate | 100% | Geringwertiges Wirtschaftsgut |
 
 ### 3.7 Exclusions
 
+**3.7 Exclusions**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | EIGENÜBERWEISUNG, INTERNAL | EXCLUDE | Own-account transfer |
 | DARLEHEN, KREDIT, TILGUNG | EXCLUDE | Loan principal |
 | KREDITZINSEN (business) | Deductible | Business loan interest |
@@ -203,15 +218,15 @@ This is the deterministic pre-classifier. When a bank statement transaction matc
 
 ### 3.8 Austrian Banks -- Statement Format Reference
 
+**3.8 Austrian Banks -- Statement Format Reference**
+
 | Bank | Format | Key Fields | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Erste Bank, Sparkasse | CSV, PDF | Buchungsdatum, Text, Betrag, Saldo | George online banking export |
 | Raiffeisen | CSV, PDF | Datum, Buchungstext, Betrag | Raiffeisen ELBA export |
-| Bank Austria (UniCredit) | CSV, PDF | Datum, Verwendungszweck, Betrag | |
-| BAWAG, easybank | CSV, PDF | Datum, Text, Betrag | |
+| Bank Austria (UniCredit) | CSV, PDF | Datum, Verwendungszweck, Betrag |  |
+| BAWAG, easybank | CSV, PDF | Datum, Text, Betrag |  |
 | N26, Revolut | CSV | Date, Counterparty, Amount | Clean data |
-
----
 
 ## Section 4 -- Worked Examples
 
@@ -275,24 +290,22 @@ Church tax. Sonderausgabe, capped at EUR 600/year. NOT a Betriebsausgabe.
 
 **Classification:** Sonderausgabe (EUR 400, within EUR 600 cap). NOT in Betriebsausgaben.
 
----
-
 ## Section 5 -- Tier 1 Rules (When Data Is Clear)
 
 ### 5.1 Profit Computation
 
-Revenue minus Betriebsausgaben (actual or Pauschale, not both) minus SVS = Gewinn. Then apply Gewinnfreibetrag.
+- **Profit Computation** — Revenue minus Betriebsausgaben (actual or Pauschale, not both) minus SVS = Gewinn. Then apply Gewinnfreibetrag.
 
 ### 5.2 Betriebsausgabenpauschale Rules
 
-- Alternative to actual expenses. Choose one, not both.
-- Still deduct SVS and GFB on top of Pauschale.
-- 12% for Gewerbebetrieb (max EUR 26,400); 6% for certain professions (max EUR 13,200).
+- **Betriebsausgabenpauschale Rules** — Alternative to actual expenses. Choose one, not both. Still deduct SVS and GFB on top of Pauschale. 12% for Gewerbebetrieb (max EUR 26,400); 6% for certain professions (max EUR 13,200).
 
 ### 5.3 AfA Rates
 
+**5.3 AfA Rates**
+
 | Asset | Life | Rate |
-|---|---|---|
+| --- | --- | --- |
 | Computer hardware/software | 3 years | 33.3% |
 | Office furniture | 10 years | 10% |
 | Motor vehicles | 8 years | 12.5% |
@@ -300,16 +313,18 @@ Revenue minus Betriebsausgaben (actual or Pauschale, not both) minus SVS = Gewin
 | Commercial buildings | 33 years | 3% |
 | GWG (under EUR 1,000 net) | Immediate | 100% |
 
-Halbjahresregel: if acquired in second half of year, only half-year AfA.
+- **Halbjahresregel** — If acquired in second half of year, only half-year AfA.
 
 ### 5.4 Luxustangente
 
-Motor vehicle AfA capped at EUR 40,000. If car costs EUR 55,000, AfA on EUR 40,000 only.
+- **Luxustangente** — Motor vehicle AfA capped at EUR 40,000. If car costs EUR 55,000, AfA on EUR 40,000 only.
 
 ### 5.5 Sonderausgaben
 
+**5.5 Sonderausgaben**
+
 | Item | Limit |
-|---|---|
+| --- | --- |
 | Kirchenbeitrag | EUR 600/year |
 | Spenden (listed organisations) | 10% of prior year income |
 | Steuerberatungskosten | Unlimited (also qualifies as Betriebsausgabe) |
@@ -317,8 +332,10 @@ Motor vehicle AfA capped at EUR 40,000. If car costs EUR 55,000, AfA on EUR 40,0
 
 ### 5.6 Absetzbetrge (Tax Credits)
 
+**5.6 Absetzbetrge (Tax Credits)**
+
 | Credit | EUR | Conditions |
-|---|---|---|
+| --- | --- | --- |
 | Alleinverdienerabsetzbetrag | 572 (no child) to 746+ | Partner income max EUR 6,937 |
 | Alleinerzieherabsetzbetrag | 572+ | Single parent |
 | Verkehrsabsetzbetrag | 463 | Commuters (if also employed) |
@@ -326,45 +343,43 @@ Motor vehicle AfA capped at EUR 40,000. If car costs EUR 55,000, AfA on EUR 40,0
 
 ### 5.7 Vorauszahlungen (Quarterly)
 
-Deadlines: 15 Feb, 15 May, 15 Aug, 15 Nov. Based on most recent Bescheid.
+- **Vorauszahlungen (Quarterly)** — Deadlines: 15 Feb, 15 May, 15 Aug, 15 Nov. Based on most recent Bescheid.
 
 ### 5.8 Penalties
 
+**5.8 Penalties**
+
 | Offence | Penalty |
-|---|---|
+| --- | --- |
 | Late filing (Verspatungszuschlag) | Up to 10% of assessed tax |
 | Late payment (Sumniszuschlag) | 2% first instance |
 | Repeated late payment | +1% each (2nd, 3rd) |
-
----
 
 ## Section 6 -- Tier 2 Catalogue (Reviewer Judgement Required)
 
 ### 6.1 Investitionsbedingter Gewinnfreibetrag
 
-Requires purchase of qualifying physical assets (4+ year life) or qualifying Wertpapiere. Flag for reviewer to confirm investments.
+- **Investitionsbedingter Gewinnfreibetrag** — Requires purchase of qualifying physical assets (4+ year life) or qualifying Wertpapiere. Flag for reviewer to confirm investments.
 
 ### 6.2 Home Office (Arbeitszimmer)
 
-Must be dedicated room, centre of professional activity. Dual-use does not qualify. Proportional by floor area.
+- **Home Office (Arbeitszimmer)** — Must be dedicated room, centre of professional activity. Dual-use does not qualify. Proportional by floor area.
 
 ### 6.3 Vehicle Business Use
 
-Luxustangente EUR 40,000. Business % requires documentation. Running costs apportioned.
+- **Vehicle Business Use** — Luxustangente EUR 40,000. Business % requires documentation. Running costs apportioned.
 
 ### 6.4 Bewirtung
 
-50% deductible if Werbezweck documented. 0% if purely social. Flag for reviewer.
+- **Bewirtung** — 50% deductible if Werbezweck documented. 0% if purely social. Flag for reviewer.
 
 ### 6.5 Pauschale vs Actual Comparison
 
-Flag for reviewer if actual expenses may produce better result than Pauschale.
+- **Pauschale vs Actual Comparison** — Flag for reviewer if actual expenses may produce better result than Pauschale.
 
 ### 6.6 Aussergewohnliche Belastungen
 
-Deductible above Selbstbehalt (6-12% of income). Medical, disability, catastrophe. Documentation required.
-
----
+- **Aussergewohnliche Belastungen** — Deductible above Selbstbehalt (6-12% of income). Medical, disability, catastrophe. Documentation required.
 
 ## Section 7 -- Excel Working Paper Template
 
@@ -415,32 +430,32 @@ REVIEWER FLAGS:
   [ ] Bewirtung documented with Werbezweck?
 ```
 
----
-
 ## Section 8 -- Bank Statement Reading Guide
 
 ### Austrian Bank Statement Formats
 
+**Austrian Bank Statement Formats**
+
 | Bank | Format | Key Fields | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Erste Bank / Sparkasse | CSV, PDF (George) | Buchungsdatum, Text, Betrag | George export is clean CSV |
 | Raiffeisen | CSV, PDF (ELBA) | Datum, Buchungstext, Betrag | Regional Raiffeisen banks vary |
-| Bank Austria (UniCredit) | CSV, PDF | Datum, Verwendungszweck, Betrag | |
-| BAWAG / easybank | CSV, PDF | Datum, Text, Betrag | |
+| Bank Austria (UniCredit) | CSV, PDF | Datum, Verwendungszweck, Betrag |  |
+| BAWAG / easybank | CSV, PDF | Datum, Text, Betrag |  |
 | N26 / Revolut | CSV | Date, Counterparty, Amount | Neobank format |
 
 ### Key Austrian Banking Terms
 
+**Key Austrian Banking Terms**
+
 | Term | English | Hint |
-|---|---|---|
+| --- | --- | --- |
 | Gutschrift | Credit | Potential income |
 | Lastschrift | Direct debit | Expense |
 | Überweisung | Transfer | Check direction |
 | Dauerauftrag | Standing order | Regular expense |
 | Bankomat | ATM withdrawal | Ask purpose |
 | Kontoführung | Account maintenance | Bank charge |
-
----
 
 ## Section 9 -- Onboarding Fallback
 
@@ -458,14 +473,14 @@ ONBOARDING QUESTIONS -- AUSTRIA INCOME TAX
 10. Prior year Steuerbescheid available?
 ```
 
----
-
 ## Section 10 -- Reference Material
 
 ### Key Legislation
 
+**Key Legislation**
+
 | Topic | Reference |
-|---|---|
+| --- | --- |
 | Tax brackets | EStG 1988, s.33 (cold progression adjusted) |
 | Gewinnfreibetrag | EStG 1988, s.10 |
 | Betriebsausgabenpauschale | EStG 1988, s.17 |
@@ -504,8 +519,6 @@ Expected: Sonderausgabe capped at EUR 600.
 Input: Profit EUR 80,000, qualifying investments EUR 10,000.
 Expected: Grundfreibetrag EUR 4,950 + investment GFB EUR 6,110 = EUR 11,060.
 
----
-
 ## PROHIBITIONS
 
 - NEVER apply brackets without confirming income type
@@ -517,10 +530,41 @@ Expected: Grundfreibetrag EUR 4,950 + investment GFB EUR 6,110 = EUR 11,060.
 - NEVER allow GWG over EUR 1,000 to be expensed immediately (unless elected)
 - NEVER present calculations as definitive
 
----
-
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a Steuerberater or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
 
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
+The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
+
+## Talk to a verified accountant
+
+This skill is a tool, not an engagement. Every taxpayer's situation is
+different, and the rules in the skill may not match your specific facts.
+
+To speak with one of the licensed accountants who verifies skills for your
+jurisdiction — **no liability on either side until you and the accountant sign
+a formal engagement letter** — book a free 30-minute call:
+
+**→ [Book a call](https://calendly.com/openaccountants-info/30min)**
+
+We'll route you to the named verifier covering your country or state. You can
+also see the full list of verified accountants at
+[openaccountants.com/network](https://openaccountants.com/network).
+
+<!-- openaccountants-cta-block -->
+
+---
+
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

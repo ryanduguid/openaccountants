@@ -2,13 +2,14 @@
 name: ca-llc-fee-and-tax
 description: Tier 2 California content skill for Form 568 — the $800 annual minimum tax (R&TC § 17941) plus the tiered LLC fee on gross receipts (§ 17942). Covers every LLC classified as a partnership or disregarded entity that is organized, registered, or doing business in California, the four fee brackets at $250k / $500k / $1M / $5M of total income from all sources reportable to California, the Form 3522 ($800 minimum tax voucher) due April 15 and the Form 3536 (estimated LLC fee voucher) due June 15, disregarded SMLLC treatment, multi-member partnership filings, the corporation election carve-out, and economic / doing-business nexus under the § 23101 factor presence test. Tax year 2025.
 jurisdiction: US-CA
-domain: state-tax
 tax_year: 2025
+last_updated: 2026-07-09
+verified_by: pending
 tier: 2
-last_updated: 2026-07-06
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# ca-llc-fee-and-tax
+# CA LLC Fee And Tax
 
 ## California LLC Annual Tax & Fee — Form 568, 3522, 3536
 
@@ -53,10 +54,10 @@ If the engagement touches any of R-CA-LLC-1 through R-CA-LLC-10, the reviewer dr
 
 - **Gate A — Organized in California** — The LLC was formed by filing Form LLC-1 (Articles of Organization) with the California Secretary of State. Once organized, the LLC owes $800 every year until it dissolves via Form LLC-3 or LLC-4/7, regardless of activity.
 - **Gate B — Registered as a foreign LLC** — The LLC was organized in another state but has registered with the California SOS as a foreign LLC (Form LLC-5). Registration alone is enough to trigger annual $800 liability.
-- **Gate C — Doing business under R&TC § 23101** — Even without SOS organization or registration, an LLC is "doing business" if any of the following is true (the factor presence test, § 23101(b)): the LLC is organized or commercially domiciled in California; or California sales exceed the lesser of $735,019 (2025 indexed threshold — confirm current-year figure on FTB.ca.gov; see § 4.4 below) or 25% of total sales; or California real property and tangible personal property exceed the lesser of $73,502 (2025) or 25% of total real and tangible property; or California compensation paid exceeds the lesser of $73,502 (2025) or 25% of total compensation; or the LLC actively engages in any transaction in California "for the purpose of financial or pecuniary gain or profit" (§ 23101(a)) — a low bar.  _(R&TC § 23101(a); R&TC § 23101(b))_
-- **2025 thresholds (FTB-indexed under § 23101(b)(4))** — $735,019 (sales), $73,502 (property), $73,502 (payroll)  _(R&TC § 23101(b)(4))_
+- **Gate C — Doing business under R&TC § 23101** — Even without SOS organization or registration, an LLC is "doing business" if any of the following is true (the factor presence test, § 23101(b)): the LLC is organized or commercially domiciled in California; or California sales exceed the lesser of $757,070 (2025 indexed threshold) or 25% of total sales; or California real property and tangible personal property exceed the lesser of $75,707 (2025) or 25% of total real and tangible property; or California compensation paid exceeds the lesser of $75,707 (2025) or 25% of total compensation; or the LLC actively engages in any transaction in California "for the purpose of financial or pecuniary gain or profit" (§ 23101(a)) — a low bar.  _([R&TC § 23101(a); R&TC § 23101(b)](https://www.ftb.ca.gov/file/business/doing-business-in-california.html))_
+- **2025 thresholds (FTB-indexed under § 23101(b)(4))** — $757,070 (sales), $75,707 (property), $75,707 (payroll)  _([R&TC § 23101(b)(4)](https://www.ftb.ca.gov/file/business/doing-business-in-california.html))_
 
-> **2025 thresholds (FTB-indexed under § 23101(b)(4)).** The published 2025 amounts are $735,019 (sales), $73,502 (property), and $73,502 (payroll). The reviewer must verify against the FTB's current "Doing Business in California" indexing notice before relying on these figures — the prompt-issuer's draft used the 2024 figure of $711,538, which is now stale.
+> **2025 thresholds (FTB-indexed under § 23101(b)(4)).** The published 2025 amounts are $757,070 (sales), $75,707 (property), and $75,707 (payroll). The reviewer must verify against the FTB's current "Doing Business in California" indexing notice before relying on these figures — the prior draft used 2024 figures ($735,019 / $73,502 / $73,502), which are now stale for 2025.
 
 Once Gate C is met, the LLC is liable for the $800 and the LLC fee even if it never registered with the SOS. The FTB issues a "Notice of Tax Due" via its non-filer enforcement program, and the LLC is also exposed to the SOS-registration penalty under Corporations Code § 17708.07 ($2,000 + back franchise taxes + interest).
 
@@ -66,7 +67,7 @@ Once Gate C is met, the LLC is liable for the $800 and the LLC fee even if it ne
 
 ### 2.3 Filing deadline
 
-- **Form 568 due date and extension** — Form 568 is due the 15th day of the 3rd month after the close of the LLC's tax year. For a calendar-year LLC, that is March 15, 2026 for the 2025 return. The automatic 7-month extension (Form 3537 paper, or automatic e-file extension) moves the filing deadline to October 15, 2026, but does not extend the payment deadline for any of the $800 or the LLC fee — those remain due on their original dates (see § 6).
+- **Form 568 due date and extension** — Form 568 due date depends on the LLC classification and owner. Partnership-classified LLCs, and disregarded SMLLCs owned by pass-through entities, generally file by the 15th day of the 3rd month after year-end (March 15, 2026 for a 2025 calendar-year return) and receive an automatic 7-month extension if in good standing. Other disregarded SMLLCs generally file by the 15th day of the 4th month after the owner's taxable year-end (April 15, 2026 for a calendar-year individual owner) and receive an automatic 6-month extension. Extensions do not extend payment deadlines for the $800 annual tax, LLC fee, or NCNR member taxes.  _(https://www.ftb.ca.gov/forms/2025/2025-568-booklet.html)_
 
 ## 3. The $800 annual minimum franchise tax — mechanics
 
@@ -154,11 +155,11 @@ The $800 minimum and the LLC fee each have their own prepayment regime. Missing 
 
 ### 5.2 Form 3536 — Estimated Fee for LLCs
 
-- **Form 3536 mechanics** — Form name: FTB 3536, Estimated Fee for LLCs. Liability covered: The § 17942 tiered LLC fee for the current tax year, prepaid based on the LLC's expected total income. Due date: 15th day of the 6th month of the LLC's tax year. For a calendar-year LLC, June 15 of the tax year. How much to pay: The LLC must pay the estimated fee for the bracket it expects to land in. There is no safe-harbor based on prior year; the safe-harbor is the lower of prior-year fee or current-year fee.  _(Form 3536)_
+- **Form 3536 mechanics** — Form name: FTB 3536, Estimated Fee for LLCs. Liability covered: The § 17942 tiered LLC fee for the current tax year, prepaid based on the LLC's expected total income. Due date: 15th day of the 6th month of the LLC's tax year. For a calendar-year LLC, June 15 of the tax year. How much to pay: The LLC must pay the estimated fee for the bracket it expects to land in. The LLC should estimate and pay the current-year fee; the 10% estimated-fee penalty is avoided if the timely estimated payment is at least the current-year fee, or at least the total LLC fee owed for the preceding taxable year.  _([Form 3536](https://www.ftb.ca.gov/forms/2025/2025-568-booklet.html))_
 - **10% underpayment penalty — § 17942(d)(2)** — If the estimated fee paid by June 15 is less than the amount of the fee owed for the year, the FTB imposes a 10% penalty on the underpaid portion. There is no penalty if the amount paid is at least equal to the prior year's § 17942 fee (the standard safe-harbor).  _(R&TC § 17942(d)(2))_
 - **First-year LLCs** — A first-year LLC owes the § 17942 fee for its first year (if its first-year income hits the bracket) and must pay Form 3536 by the 15th day of the 6th month of that first year. There is no prior-year safe-harbor because there is no prior year — the LLC must estimate carefully or accept the 10% penalty.
 
-> **Worked safe-harbor example.** A calendar-year LLC's 2024 § 17942 fee was $2,500 (bracket $500k–$999,999). In 2025, the LLC expects total income of $1,300,000 (bracket $1M–$4,999,999, fee $6,000). To avoid the 10% penalty, the LLC must pay at least $2,500 by June 15, 2025 (the prior-year safe-harbor). It will then owe the remaining $3,500 with the Form 568 filed by March 15, 2026. If the LLC instead pays $0 on June 15 and $6,000 in March, the penalty is 10% × $6,000 = $600.
+> **Worked safe-harbor example.** A calendar-year LLC's 2024 § 17942 fee was $2,500 (bracket $500k–$999,999). In 2025, the LLC expects total income of $1,300,000 (bracket $1M–$4,999,999, fee $6,000). To avoid the 10% penalty, the LLC must pay at least $2,500 by June 15, 2025 (the prior-year safe-harbor). It will then owe the remaining $3,500 with Form 568 by the original return due date (March 15, 2026 for a partnership-classified calendar-year LLC; April 15, 2026 for most individual-owned disregarded SMLLCs). If the LLC instead pays $0 on June 15 and $6,000 in March, the penalty is 10% × $6,000 = $600.
 
 ### 5.3 No estimated payments for the personal income tax of the members
 
@@ -230,15 +231,15 @@ S-corp election in California is rarely break-even for a freelancer because the 
 
 - **Factor presence test triggers doing business** — An out-of-state LLC is doing business in California — and therefore liable for $800 + LLC fee + Form 568 — if any one of the three factors (sales, property, compensation) exceeds its threshold.  _(R&TC § 23101(b))_
 
-**2025 California thresholds by factor**
+**2025 California thresholds by factor**  _(https://www.ftb.ca.gov/file/business/doing-business-in-california.html)_
 
 | Factor | 2025 California threshold |
 | --- | --- |
-| California sales | Greater of **$735,019** or **25%** of total sales |
-| California real or tangible property | Greater of **$73,502** or **25%** of total property |
-| California compensation paid | Greater of **$73,502** or **25%** of total compensation |
+| California sales | Exceeds the lesser of **$757,070** or **25%** of total sales |
+| California real or tangible property | Exceeds the lesser of **$75,707** or **25%** of total property |
+| California compensation paid | Exceeds the lesser of **$75,707** or **25%** of total compensation |
 
-The thresholds are indexed annually. The reviewer must confirm the current-year published thresholds from FTB Notice or FTB.ca.gov before issuing any nexus opinion. (For tax year 2024, the thresholds were $711,538 / $71,154 / $71,154.)
+The thresholds are indexed annually. The reviewer must confirm the current-year published thresholds from FTB Notice or FTB.ca.gov before issuing any nexus opinion. (For tax year 2024, the thresholds were $735,019 / $73,502 / $73,502.)
 
 ### 9.3 Pass-through nexus — *Swart Enterprises*
 
@@ -294,8 +295,8 @@ All clients are California-based; no out-of-state revenue.
 - **$800 minimum tax due date and payment** — $800 minimum tax (§ 17941). Due April 15, 2025 on Form 3522. Paid: $800.  _(§ 17941)_
 - **§ 17942 total income for Example A** — "Total income from all sources reportable to California" = gross receipts of $310,000 (no COGS; consulting). All California-sourced (California-resident clients receive the benefit in California).  _(§ 17942)_
 - **§ 17942 fee bracket for Example A** — $250,000 ≤ $310,000 < $500,000 → $900 fee.  _(§ 17942)_
-- **Form 3536 estimated fee for Example A** — Due June 15, 2025. Prior-year (2024) fee: assume Maria's 2024 revenue was $230k, so 2024 fee = $0. Safe-harbor: lower of (prior-year $0) or (current-year $900) = $0 — Maria pays $0 on Form 3536 without penalty. Maria pays the $900 with Form 568 in March 2026.
-- **Form 568 for Example A** — Filed March 15, 2026, for tax year 2025. Side 2 reconciles the $800 (paid April 2025 via 3522) and the $900 fee (paid March 2026 with return). Side 3 Schedule IW reports the $310,000 of total income. No K-1 issued (SMLLC).
+- **Form 3536 estimated fee for Example A** — Due June 15, 2025. Prior-year (2024) fee: assume Maria's 2024 revenue was $230k, so 2024 fee = $0. Prior-year safe harbor: Maria's 2024 LLC fee was $0, so a timely $0 estimated-fee payment avoids the 10% estimated-fee penalty. Maria pays the $900 balance by the Form 568 original due date in April 2026.  _(https://www.ftb.ca.gov/forms/2025/2025-568-booklet.html)_
+- **Form 568 for Example A** — Filed April 15, 2026, for tax year 2025, assuming Maria is an individual owner of a disregarded SMLLC. Side 2 reconciles the $800 (paid April 2025 via 3522) and the $900 fee (paid by the original return due date). Side 3 Schedule IW reports the $310,000 of total income. No K-1 issued (SMLLC).  _(https://www.ftb.ca.gov/forms/2025/2025-568-booklet.html)_
 - **Federal Schedule C / Maria's Form 540 for Example A** — Federal Schedule C: $270,000 net profit (after $40k expenses; the $800 and the $900 are deductible state taxes on Schedule C subject to SALT cap of $40,000 under OBBBA — see § 6.3). California Schedule CA: starts with federal Schedule C profit; adds back the $800 and the $900 (state-income-tax-equivalent under § 17072).  _(§ 17072)_
 
 Total California cash outlay at the entity level: $1,700. Plus Maria's personal income tax on the $270k Schedule C income at the 2025 California rates, covered in `ca-income-tax.md`.
@@ -307,7 +308,7 @@ Registered as a foreign LLC in California with SOS.
 2025 gross receipts: $1,400,000 ($800,000 California, $400,000 Oregon, $200,000 Washington). COGS: $300,000.
 All sales are services (robotics consulting); market-based sourcing applies.
 
-- **Filing trigger for Example B** — Registered foreign LLC (Gate B) — California-resident member is sufficient. § 23101(b) sales test: California sales $800,000 > $735,019 threshold → doing business confirmed.  _(§ 23101(b))_
+- **Filing trigger for Example B** — Registered foreign LLC (Gate B) — California-resident member is sufficient. § 23101(b) sales test: California sales $800,000 > $757,070 threshold → doing business confirmed.  _([§ 23101(b)](https://www.ftb.ca.gov/file/business/doing-business-in-california.html))_
 - **$800 minimum tax for Example B** — Due April 15, 2025. Paid: $800.
 - **§ 17942 total income for Example B** — Gross receipts plus COGS (because § 17942(b)(1)(A) is computed without netting COGS) = $1,400,000 + $0 (consulting, no inventory COGS in the technical sense — but if the $300k were classified as COGS in inventory accounting, it would be added back; for a services LLC, $300k of direct labor is not COGS for § 17942 purposes and the total income is just $1,400,000 of gross receipts).  _(§ 17942(b)(1)(A))_
 - **California apportionment for Example B** — Single sales factor: $800,000 / $1,400,000 = 57.143%. California-apportioned total income: $1,400,000 × 57.143% = $800,000.
@@ -324,7 +325,7 @@ Aspen Analytics LLC is organized in Colorado, never registered with California S
 2025 sales: $4,200,000 total worldwide, of which $1,100,000 is to California-based customers (SaaS subscription benefit received in California).
 All members are Colorado residents.
 
-- **§ 23101(b) trigger for Example C** — California sales $1,100,000 > $735,019 (2025 threshold) → doing business in California even without SOS registration.  _(§ 23101(b))_
+- **§ 23101(b) trigger for Example C** — California sales $1,100,000 > $757,070 (2025 threshold) → doing business in California even without SOS registration.  _([§ 23101(b)](https://www.ftb.ca.gov/file/business/doing-business-in-california.html))_
 - **Penalty exposure for Example C** — Aspen owes (a) $800 minimum, (b) § 17942 fee, (c) Form 568, (d) potentially the $2,000 Corporations Code § 17708.07 penalty for unregistered foreign LLC, plus (e) back-year liabilities if it has been over-threshold in prior years.  _(Corporations Code § 17708.07)_
 - **§ 17942 total income for Example C** — $4,200,000 worldwide.  _(§ 17942)_
 - **California apportionment for Example C** — $1,100,000 / $4,200,000 = 26.19%. California total income: $4,200,000 × 26.19% = $1,100,000.
@@ -340,7 +341,7 @@ It opens a business bank account on January 4, 2026 and earns no revenue and inc
 
 - **15-day rule application for Example D** — 15-day rule (§ 17946 / § 17941(f)) — formation date Dec 22 is within the last 15 days of the calendar tax year (Dec 17 — Dec 31) AND no business was conducted → $0 for 2025.  _(§ 17946 / § 17941(f))_
 - **2026 first-year treatment for Example D** — 2026 is the LLC's "first year" for AB 85 purposes — but AB 85's first-year waiver expired for tax years beginning on or after January 1, 2024. So the LLC owes the full $800 for 2026, due April 15, 2026 on Form 3522.  _(AB 85)_
-- **Form 568 filing requirement for Example D** — No Form 568 filing is required for 2025 (because the 15-day rule effectively means no 2025 tax year). Filing begins with the 2026 return due March 15, 2027.
+- **Form 568 filing requirement for Example D** — No Form 568 filing is required for 2025 (because the 15-day rule effectively means no 2025 tax year). Filing begins with the 2026 return; the original due date depends on classification (April 15, 2027 for most individual-owned disregarded SMLLCs; March 15, 2027 for partnership-classified LLCs).  _(https://www.ftb.ca.gov/forms/2025/2025-568-booklet.html)_
 
 ### 11.5 Example E — LLC that elected S-corp treatment
 
@@ -423,7 +424,7 @@ Before the skill releases any number, the reviewer (and the skill, where automat
 - [ ] The voucher year on Form 3522 matches the tax year. Most common error.
 - [ ] The Form 3536 amount equals at least prior-year fee to avoid the 10% penalty.
 - [ ] The first-year waiver is NOT applied for 2024+ formations. AB 85 expired.
-- [ ] The 2025 § 23101(b) thresholds are confirmed against current FTB indexing notice ($735,019 / $73,502 / $73,502 used here; verify before issuing).
+- [ ] The 2025 § 23101(b) thresholds are confirmed against current FTB indexing notice ($757,070 / $75,707 / $75,707 used here; verify before issuing).
 - [ ] For SMLLCs, the federal Schedule C tie-out matches the SMLLC Side 3 IW total income.
 - [ ] For partnerships, the K-1 California-source amounts tie to Schedule T withholding.
 - [ ] PTET interaction documented. $800 + LLC fee are unaffected by PTET; PTET is a separate liability if elected.
@@ -525,3 +526,21 @@ a formal engagement letter — book a free 30-minute call:
 We'll route you to the named verifier covering your country or state. You can
 also see the full list of verified accountants at
 [openaccountants.com/network](https://openaccountants.com/network).
+
+<!-- openaccountants-cta-block -->
+
+---
+
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

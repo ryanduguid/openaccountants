@@ -2,13 +2,14 @@
 name: ie-cgt
 description: ALWAYS read this skill before touching any Irish Capital Gains Tax work. Trigger on phrases like "Ireland CGT", "33% capital gains Ireland", "PPR exemption Ireland", "Entrepreneur Relief Ireland", "CG50 clearance", "Irish Capital Gains Tax", "Form CG1", "preliminary CGT Ireland", "Retirement Relief Ireland", "Section 597AA", "Section 598", "Section 599", "Revenue Online Service CGT", "ROS CGT", "Irish share disposal tax", "Euronext Dublin share sale CGT", "Irish property gain", "non-resident CGT Ireland", "Irish-situs CGT", "crypto CGT Ireland", or any question about computing, filing, or reporting capital gains on Irish chargeable assets. Scope covers CGT computation for chargeable assets (real property, shares, business assets, crypto, intangibles), the Principal Private Residence relief, Entrepreneur Relief (Section 597AA), Retirement Relief (Sections 598/599), the annual exemption, the CG50 clearance regime for high-value land disposals, loss relief, and the preliminary-CGT / final-return mechanics under Form CG1 via ROS. ALWAYS read this skill before producing any Irish CGT figure.
 jurisdiction: IE
-domain: international
 tax_year: 2025
+last_updated: 2026-05-27
+verified_by: pending
 tier: 2
-last_updated: 2026-07-06
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# ie-cgt
+# IE Cgt
 
 ## Section 1 — Quick reference
 
@@ -240,3 +241,21 @@ Facts. Ms de Paor, aged 47, founded an Irish trading company in 2018 and held 10
 ## Talk to a verified accountant
 
 This skill is a tool, not an engagement. Every taxpayer's situation is different, and the rules in the skill may not match your specific facts. To speak with one of the licensed accountants who verifies skills for your jurisdiction — no liability on either side until you and the accountant sign a formal engagement letter — book a free 30-minute call: → [Book a call](https://calendly.com/openaccountants-info/30min). We'll route you to the named verifier covering your country or state. You can also see the full list of verified accountants at [openaccountants.com/network](https://openaccountants.com/network).
+
+<!-- openaccountants-cta-block -->
+
+---
+
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

@@ -2,15 +2,14 @@
 name: sri-lanka-withholding-tax
 description: ALWAYS read this skill before touching any Sri Lanka withholding tax / Advance Income Tax (AIT) work. Use whenever asked to compute, deduct, or reconcile Sri Lanka WHT/AIT on interest, dividends, rent, service fees, royalties, or payments to non-residents under the Inland Revenue Act No. 24 of 2017 as amended by Act No. 02 of 2025. Trigger on phrases like "Sri Lanka WHT", "Sri Lanka AIT", "advance income tax Sri Lanka", "interest WHT Sri Lanka 10%", "dividend WHT Sri Lanka", "rent WHT Sri Lanka", "non-resident WHT Sri Lanka", "SEC/2025/E circular", or "withholding certificate Sri Lanka". Out of scope — personal income tax computation (separate skill), corporate income tax (separate skill), SSCL, VAT, and APIT/PAYE on employment (covered by the income-tax / payroll skills).
 jurisdiction: LK
-domain: international
 tax_year: 2025
-reviewed_by: Lal kumarasiri
-review_status: accountant-reviewed
+last_updated: 2026-06-03
+verified_by: Lal kumarasiri
 tier: 1
-last_updated: 2026-07-06
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# sri-lanka-withholding-tax
+# Sri Lanka Withholding Tax
 
 ## Sri Lanka — Withholding Tax / Advance Income Tax (AIT) — Skill v1.0
 
@@ -185,3 +184,21 @@ This skill and its outputs are for informational and computational purposes only
 This skill is a tool, not an engagement. To speak with a licensed accountant who verifies skills for your jurisdiction — **no liability until both parties sign an engagement letter** — book a free 30-minute call:
 
 **→ [Book a call](https://calendly.com/openaccountants-info/30min)**
+
+<!-- openaccountants-cta-block -->
+
+---
+
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

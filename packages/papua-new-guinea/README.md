@@ -7,7 +7,14 @@
 
 1. `foundation.md`
 2. `intake.md`
-3. `png-gst.md`
+3. `pg-company-formation.md`
+4. `pg-corporate-income-tax.md`
+5. `pg-income-tax.md`
+6. `pg-payroll-social.md`
+7. `pg-tax-overview.md`
+8. `png-gst.md`
+9. `payroll-workflow-base.md`
+10. `company-formation-workflow-base.md`
 
 ## How to use
 

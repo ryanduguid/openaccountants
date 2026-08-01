@@ -2,9 +2,15 @@
 name: us-federal-return-assembly
 description: Tier 2 orchestrator skill that assembles the complete federal income tax return package for US freelance software developers filing as sole proprietors or single-member LLCs disregarded for federal tax. Sequences the upstream content skills (bookkeeping, SE computation, retirement, SE health insurance, QBI, estimated tax) in dependency order, resolves circular computations between SE health insurance and retirement contributions, produces Form 1040 with all required schedules (Schedule 1, Schedule 2, Schedule 3, Schedule C, Schedule SE, Schedule D if needed, Form 8829, Form 4562, Form 8995 or 8995-A, Form 8962 if marketplace coverage, Form 2210 if penalty, Form 7206), performs cross-form reconciliation checks, and produces the final reviewer package. Does not itself compute tax amounts — delegates to upstream content skills. MUST be loaded alongside us-tax-workflow-base v0.2 or later and all content skills it orchestrates. Federal only.
 version: 0.2
+jurisdiction: US
+tax_year: 2025
+last_updated: 2026-04-09
+verified_by: James Wallach
+tier: 2
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# US Federal Return Assembly Skill v0.2
+# US Federal Return Assembly
 
 ## CRITICAL EXECUTION DIRECTIVE — READ FIRST
 
@@ -18,8 +24,6 @@ version: 0.2
 - **Primary source citations belong in the final reviewer brief,** not in intermediate computation steps. Compute first, cite once at the end.
 
 **Failure mode to avoid:** halting mid-execution to ask the user a meta-question about workflow pacing. If you feel the urge to ask "how should I proceed," pick the most defensible path and proceed, flagging the decision in the reviewer brief.
-
----
 
 ## What this file is
 
@@ -35,15 +39,11 @@ This is an **orchestrator** skill, not a content skill. It does not contain tax 
 
 **The reviewer is still the customer.** The orchestrator produces a package ready for a credentialed reviewer to review and sign. It does not file the return.
 
----
-
 ## Section 1 — Scope
 
 Taxpayers covered: same as the upstream content skills. US sole proprietors and SMLLC disregarded for federal tax, filing Form 1040 for tax year 2025.
 
 Out of scope: anything refused by the base or any content skill.
-
----
 
 ## Section 2 — The dependency graph
 
@@ -93,203 +93,134 @@ Estimated Tax (us-quarterly-estimated-tax)
 
 **The SE health insurance + PTC iterative problem:** Already handled inside the SE health insurance skill via Rev. Proc. 2014-41. The orchestrator does not re-solve it.
 
----
-
-## Section 3 — Workflow steps
-
 ### Step 1: Trigger intake and profile the taxpayer
 
-Run the base intake (Tier 1 refusal sweep plus Tier 2 structured questions). Confirm the taxpayer is in scope. Confirm the reviewer is identified.
+0. **Step 1: Trigger intake and profile the taxpayer** — Run the base intake (Tier 1 refusal sweep plus Tier 2 structured questions). Confirm the taxpayer is in scope. Confirm the reviewer is identified.
+0. **Step 1: Trigger intake and profile the taxpayer** — Run the base intake (Tier 1 refusal sweep plus Tier 2 structured questions). Confirm the taxpayer is in scope. Confirm the reviewer is identified.
 
 ### Step 2: Run bookkeeping skill
 
-Produce classified Schedule C transactions and line totals. Verify the 10 bookkeeping self-checks pass.
+0. **Step 2: Run bookkeeping skill** — Produce classified Schedule C transactions and line totals. Verify the 10 bookkeeping self-checks pass.
 
 ### Step 3: Run SE computation skill
 
-Produce Schedule C Line 31, Schedule SE, and Schedule 1 Line 15. Verify the 17 computation self-checks pass.
+0. **Step 3: Run SE computation skill** — Produce Schedule C Line 31, Schedule SE, and Schedule 1 Line 15. Verify the 17 computation self-checks pass.
 
 ### Step 4: Run retirement skill
 
-Produce Schedule 1 Line 16. Verify retirement self-checks pass.
+0. **Step 4: Run retirement skill** — Produce Schedule 1 Line 16. Verify retirement self-checks pass.
 
 ### Step 5: Run SE health insurance skill (with PTC iteration if applicable)
 
-Produce Schedule 1 Line 17. Verify self-checks pass. If PTC iteration did not converge, halt and escalate to reviewer.
+0. **Step 5: Run SE health insurance skill (with PTC iteration if applicable)** — Produce Schedule 1 Line 17. Verify self-checks pass. If PTC iteration did not converge, halt and escalate to reviewer.
 
 ### Step 6: Compute other Schedule 1 items
 
-Other Schedule 1 lines that may be relevant:
-- Line 11: Educator expenses (not usually applicable for freelance developers)
-- Line 12: Certain business expenses of reservists, performing artists, fee-basis government officials (not applicable)
-- Line 13: HSA deduction (if the taxpayer has an HSA-qualified HDHP)
-- Line 14: Moving expenses for members of the Armed Forces (not applicable)
-- Line 18: Penalty on early withdrawal of savings
-- Line 19a: Alimony paid (divorce agreements before 1/1/2019 only)
-- Line 20: IRA deduction (from retirement skill if taxpayer made a traditional IRA contribution)
-- Line 21: Student loan interest deduction (subject to income phase-out)
-- Line 22: Reserved
-- Line 23: Archer MSA deduction
-- Line 24a-24z: Various other adjustments
-- Line 25: Total other adjustments
-
-The orchestrator handles HSA, student loan interest, and other adjustments either itself (simple cases) or by refusing and flagging for the reviewer (complex cases). For v0.1, the orchestrator handles only the items flagged in the intake.
+0. **Step 6: Compute other Schedule 1 items** — Other Schedule 1 lines that may be relevant: - Line 11: Educator expenses (not usually applicable for freelance developers) - Line 12: Certain business expenses of reservists, performing artists, fee-basis government officials (not applicable) - Line 13: HSA deduction (if the taxpayer has an HSA-qualified HDHP) - Line 14: Moving expenses for members of the Armed Forces (not applicable) - Line 18: Penalty on early withdrawal of savings - Line 19a: Alimony paid (divorce agreements before 1/1/2019 only) - Line 20: IRA deduction (from retirement skill if taxpayer made a traditional IRA contribution) - Line 21: Student loan interest deduction (subject to income phase-out) - Line 22: Reserved - Line 23: Archer MSA deduction - Line 24a-24z: Various other adjustments - Line 25: Total other adjustments The orchestrator handles HSA, student loan interest, and other adjustments either itself (simple cases) or by refusing and flagging for the reviewer (complex cases). For v0.1, the orchestrator handles only the items flagged in the intake.
 
 ### Step 7: Compute AGI
 
-AGI (Form 1040 Line 11) = Total income (Line 9) − Adjustments from Schedule 1 Line 26.
+0. **Step 7: Compute AGI** — AGI (Form 1040 Line 11) = Total income (Line 9) − Adjustments from Schedule 1 Line 26.
+
+- **AGI formula** — AGI (Form 1040 Line 11) = Total income (Line 9) − Adjustments from Schedule 1 Line 26.
 
 ### Step 8: Compute taxable income before QBI
 
-- Standard deduction for 2025:
-  - Single: $15,000
-  - MFJ / QSS: $30,000
-  - HoH: $22,500
-  - MFS: $15,000
-- OR itemized deductions from Schedule A
-- Taxable income before QBI = AGI − greater of standard or itemized
+0. **Step 8: Compute taxable income before QBI** — Compute standard or itemized deduction, then taxable income before QBI = AGI − greater of standard or itemized.
+
+- **Standard deduction 2025 — Single** — $15,750 USD (Single)
+- **Standard deduction 2025 — MFJ / QSS** — $31,500 USD (MFJ / QSS)
+- **Standard deduction 2025 — HoH** — $23,625 USD (HoH)
+- **Standard deduction 2025 — MFS** — $15,750 USD (MFS)
+- **Taxable income before QBI formula** — Taxable income before QBI = AGI − greater of standard or itemized
 
 ### Step 9: Run QBI skill
 
-Using the taxable income before QBI as the threshold test input. Produces QBI deduction for Form 1040 Line 13. Verify QBI self-checks pass.
+0. **Step 9: Run QBI skill** — Using the taxable income before QBI as the threshold test input. Produces QBI deduction for Form 1040 Line 13. Verify QBI self-checks pass.
 
 ### Step 10: Compute final taxable income
 
-Form 1040 Line 15 = Line 11 − Line 12 (standard/itemized) − Line 13 (QBI).
+0. **Step 10: Compute final taxable income** — Form 1040 Line 15 = Line 11 − Line 12 (standard/itemized) − Line 13 (QBI).
+
+- **Final taxable income formula** — Form 1040 Line 15 = Line 11 − Line 12 (standard/itemized) − Line 13 (QBI).
 
 ### Step 11: Compute tax
 
-Apply the 2025 tax brackets from Rev. Proc. 2024-40 to the final taxable income. Include:
-- Regular income tax (using tax tables for income under $100K or tax rate schedules above)
-- Capital gains tax (if applicable, from Schedule D)
-- Other taxes (Schedule 2 Line 3)
+0. **Step 11: Compute tax** — Apply the 2025 tax brackets from Rev. Proc. 2024-40 to the final taxable income. Include: - Regular income tax (using tax tables for income under $100K or tax rate schedules above) - Capital gains tax (if applicable, from Schedule D) - Other taxes (Schedule 2 Line 3)
 
-**2025 tax brackets (ordinary income):**
+**2025 tax brackets (ordinary income) — Single**  _(Rev. Proc. 2024-40 §3.01.)_
 
-Single:
-- 10% on income up to $11,925
-- 12% on $11,925 to $48,475
-- 22% on $48,475 to $103,350
-- 24% on $103,350 to $197,300
-- 32% on $197,300 to $250,525
-- 35% on $250,525 to $626,350
-- 37% over $626,350
+| Rate | Income range |
+| --- | --- |
+| 10% | up to $11,925 |
+| 12% | $11,925 to $48,475 |
+| 22% | $48,475 to $103,350 |
+| 24% | $103,350 to $197,300 |
+| 32% | $197,300 to $250,525 |
+| 35% | $250,525 to $626,350 |
+| 37% | over $626,350 |
 
-MFJ:
-- 10% on income up to $23,850
-- 12% on $23,850 to $96,950
-- 22% on $96,950 to $206,700
-- 24% on $206,700 to $394,600
-- 32% on $394,600 to $501,050
-- 35% on $501,050 to $751,600
-- 37% over $751,600
+**2025 tax brackets (ordinary income) — MFJ**  _(Rev. Proc. 2024-40 §3.01.)_
 
-HoH:
-- 10% on income up to $17,000
-- 12% on $17,000 to $64,850
-- 22% on $64,850 to $103,350
-- 24% on $103,350 to $197,300
-- 32% on $197,300 to $250,500
-- 35% on $250,500 to $626,350
-- 37% over $626,350
+| Rate | Income range |
+| --- | --- |
+| 10% | up to $23,850 |
+| 12% | $23,850 to $96,950 |
+| 22% | $96,950 to $206,700 |
+| 24% | $206,700 to $394,600 |
+| 32% | $394,600 to $501,050 |
+| 35% | $501,050 to $751,600 |
+| 37% | over $751,600 |
 
-**Source:** Rev. Proc. 2024-40 §3.01.
+**2025 tax brackets (ordinary income) — HoH**  _(Rev. Proc. 2024-40 §3.01.)_
+
+| Rate | Income range |
+| --- | --- |
+| 10% | up to $17,000 |
+| 12% | $17,000 to $64,850 |
+| 22% | $64,850 to $103,350 |
+| 24% | $103,350 to $197,300 |
+| 32% | $197,300 to $250,500 |
+| 35% | $250,500 to $626,350 |
+| 37% | over $626,350 |
 
 ### Step 12: Compute Schedule 2 (additional taxes)
 
-Schedule 2 Line 4: SE tax from Schedule SE
-Schedule 2 Line 2: Excess advance PTC repayment (from SE health insurance skill)
-Schedule 2 Line 11: Additional Medicare Tax (Form 8959) if applicable
-Schedule 2 Line 12: Net Investment Income Tax (Form 8960) if applicable
-Schedule 2 Line 21: Total other taxes
+0. **Step 12: Compute Schedule 2 (additional taxes)** — Schedule 2 Line 4: SE tax from Schedule SE Schedule 2 Line 2: Excess advance PTC repayment (from SE health insurance skill) Schedule 2 Line 11: Additional Medicare Tax (Form 8959) if applicable Schedule 2 Line 12: Net Investment Income Tax (Form 8960) if applicable Schedule 2 Line 21: Total other taxes
 
-**Additional Medicare Tax thresholds (2025):**
-- Single / HoH: $200,000
-- MFJ: $250,000
-- MFS: $125,000
-
-Tax = 0.9% × (wages + SE earnings − threshold)
-
-**NIIT thresholds (2025):** Same as Additional Medicare Tax. Tax = 3.8% × (net investment income, capped at MAGI − threshold). Generally doesn't apply to pure freelance Schedule C income because Schedule C earnings are not "net investment income" — they're earned income. But if the taxpayer has meaningful investment income, NIIT may apply.
+- **Additional Medicare Tax threshold 2025 — Single / HoH** — $200,000 USD (Single / HoH)
+- **Additional Medicare Tax threshold 2025 — MFJ** — $250,000 USD (MFJ)
+- **Additional Medicare Tax threshold 2025 — MFS** — $125,000 USD (MFS)
+- **Additional Medicare Tax formula** — Tax = 0.9% × (wages + SE earnings − threshold)
+- **NIIT thresholds 2025** — Same as Additional Medicare Tax. Tax = 3.8% × (net investment income, capped at MAGI − threshold). Generally doesn't apply to pure freelance Schedule C income because Schedule C earnings are not "net investment income" — they're earned income. But if the taxpayer has meaningful investment income, NIIT may apply.
 
 ### Step 13: Compute Schedule 3 (credits and payments)
 
-Schedule 3 Line 1: Foreign tax credit (refusal if material — refer to base)
-Schedule 3 Line 2: Child and dependent care expenses credit
-Schedule 3 Line 3: Education credits (Form 8863)
-Schedule 3 Line 4: Retirement savings contributions credit (Saver's credit, subject to income limits)
-Schedule 3 Line 6: Other nonrefundable credits
-Schedule 3 Line 9: Net premium tax credit (from Form 8962 if net PTC is refundable)
-Schedule 3 Line 10: Amount paid with extension request (Form 4868)
-Schedule 3 Line 11: Excess social security and tier 1 RRTA tax withheld
+0. **Step 13: Compute Schedule 3 (credits and payments)** — Schedule 3 Line 1: Foreign tax credit (refusal if material — refer to base) Schedule 3 Line 2: Child and dependent care expenses credit Schedule 3 Line 3: Education credits (Form 8863) Schedule 3 Line 4: Retirement savings contributions credit (Saver's credit, subject to income limits) Schedule 3 Line 6: Other nonrefundable credits Schedule 3 Line 9: Net premium tax credit (from Form 8962 if net PTC is refundable) Schedule 3 Line 10: Amount paid with extension request (Form 4868) Schedule 3 Line 11: Excess social security and tier 1 RRTA tax withheld
 
 ### Step 14: Compute total tax and payments
 
-- Form 1040 Line 22: Subtract Schedule 3 nonrefundable credits
-- Form 1040 Line 23: Other taxes (from Schedule 2)
-- Form 1040 Line 24: Total tax
-- Form 1040 Line 25: Federal income tax withheld (from W-2s, 1099s)
-- Form 1040 Line 26: 2024 estimated tax payments and amount applied from prior year
-- Form 1040 Line 27: Earned income credit (generally not applicable for freelance developers above poverty line)
-- Form 1040 Line 28: Additional child tax credit
-- Form 1040 Line 29: Refundable American opportunity credit
-- Form 1040 Line 31: Amount from Schedule 3 Line 15 (refundable credits)
-- Form 1040 Line 33: Total payments
+0. **Step 14: Compute total tax and payments** — - Form 1040 Line 22: Subtract Schedule 3 nonrefundable credits - Form 1040 Line 23: Other taxes (from Schedule 2) - Form 1040 Line 24: Total tax - Form 1040 Line 25: Federal income tax withheld (from W-2s, 1099s) - Form 1040 Line 26: 2024 estimated tax payments and amount applied from prior year - Form 1040 Line 27: Earned income credit (generally not applicable for freelance developers above poverty line) - Form 1040 Line 28: Additional child tax credit - Form 1040 Line 29: Refundable American opportunity credit - Form 1040 Line 31: Amount from Schedule 3 Line 15 (refundable credits) - Form 1040 Line 33: Total payments
 
 ### Step 15: Compute refund or balance due
 
-- If Line 33 > Line 24: Refund (Line 34)
-- If Line 33 < Line 24: Balance due (Line 37)
+0. **Step 15: Compute refund or balance due** — - If Line 33 > Line 24: Refund (Line 34) - If Line 33 < Line 24: Balance due (Line 37)
 
 ### Step 16: Run estimated tax skill for Form 2210 and 2026 planning
 
-Using the final total tax (Line 24), compute Form 2210 penalty if any installments were underpaid. Also compute 2026 quarterly installments for prospective planning.
+0. **Step 16: Run estimated tax skill for Form 2210 and 2026 planning** — Using the final total tax (Line 24), compute Form 2210 penalty if any installments were underpaid. Also compute 2026 quarterly installments for prospective planning.
 
 ### Step 17: Cross-form reconciliation checks
 
-See Section 4.
+0. **Step 17: Cross-form reconciliation checks** — See Section 4.
 
 ### Step 18: Produce the reviewer package
 
-See Section 5.
-
----
+0. **Step 18: Produce the reviewer package** — See Section 5.
 
 ## Section 4 — Cross-form reconciliation checks
 
-The orchestrator verifies that amounts match between forms before producing output. Any mismatch is a hard error that stops assembly.
-
-**Check A: Schedule C Line 31 matches Schedule SE Line 2.** If they don't match, one of the skills has a bug.
-
-**Check B: Schedule SE Line 13 (deductible half of SE tax) matches Schedule 1 Line 15.** Same as above.
-
-**Check C: Form 8995/8995-A QBI deduction matches Form 1040 Line 13.** Same.
-
-**Check D: Schedule 1 total (Line 26) equals sum of Lines 11-25.** Arithmetic check.
-
-**Check E: Form 1040 Line 9 equals sum of Line 1a + Line 2b + Line 3b + Line 4b + Line 5b + Line 6b + Line 7 + Line 8 (from Schedule 1 Line 10).** Arithmetic.
-
-**Check F: Form 1040 Line 11 (AGI) = Line 9 − Line 10.** Arithmetic.
-
-**Check G: Form 1040 Line 15 (taxable income) = Line 11 − Line 12 − Line 13, but not less than zero.** Arithmetic.
-
-**Check H: Form 1040 Line 24 (total tax) = Line 22 + Line 23.** Arithmetic.
-
-**Check I: QBI used correct "taxable income before QBI."** The amount on Form 8995 Line 11 / Form 8995-A Line 34 should equal Form 1040 Line 11 minus Line 12 (standard or itemized deduction), before subtracting Line 13 (QBI).
-
-**Check J: Form 8962 reconciliation matches Schedule 2 Line 2 (repayment) or Schedule 3 Line 9 (net PTC).** Marketplace coverage.
-
-**Check K: If Form 2210 is filed, the penalty matches Form 1040 Line 38.**
-
-**Check L: Schedule 2 Line 4 (SE tax) equals Schedule SE Line 12.**
-
-**Check M: Total payments on Form 1040 Line 33 equals sum of Lines 25a-25c + 26 + 27 + 28 + 29 + 31.**
-
-**Check N: Form 1040 Line 34 (refund) or Line 37 (amount you owe) = Line 33 − Line 24. Exactly one of these is positive.**
-
-If any check fails, the orchestrator halts and escalates. The reviewer must be informed that assembly could not complete.
-
----
+- **Cross-form reconciliation checks overview** — The orchestrator verifies that amounts match between forms before producing output. Any mismatch is a hard error that stops assembly. **Check A: Schedule C Line 31 matches Schedule SE Line 2.** If they don't match, one of the skills has a bug. **Check B: Schedule SE Line 13 (deductible half of SE tax) matches Schedule 1 Line 15.** Same as above. **Check C: Form 8995/8995-A QBI deduction matches Form 1040 Line 13.** Same. **Check D: Schedule 1 total (Line 26) equals sum of Lines 11-25.** Arithmetic check. **Check E: Form 1040 Line 9 equals sum of Line 1a + Line 2b + Line 3b + Line 4b + Line 5b + Line 6b + Line 7 + Line 8 (from Schedule 1 Line 10).** Arithmetic. **Check F: Form 1040 Line 11 (AGI) = Line 9 − Line 10.** Arithmetic. **Check G: Form 1040 Line 15 (taxable income) = Line 11 − Line 12 − Line 13, but not less than zero.** Arithmetic. **Check H: Form 1040 Line 24 (total tax) = Line 22 + Line 23.** Arithmetic. **Check I: QBI used correct "taxable income before QBI."** The amount on Form 8995 Line 11 / Form 8995-A Line 34 should equal Form 1040 Line 11 minus Line 12 (standard or itemized deduction), before subtracting Line 13 (QBI). **Check J: Form 8962 reconciliation matches Schedule 2 Line 2 (repayment) or Schedule 3 Line 9 (net PTC).** Marketplace coverage. **Check K: If Form 2210 is filed, the penalty matches Form 1040 Line 38.** **Check L: Schedule 2 Line 4 (SE tax) equals Schedule SE Line 12.** **Check M: Total payments on Form 1040 Line 33 equals sum of Lines 25a-25c + 26 + 27 + 28 + 29 + 31.** **Check N: Form 1040 Line 34 (refund) or Line 37 (amount you owe) = Line 33 − Line 24. Exactly one of these is positive.** If any check fails, the orchestrator halts and escalates. The reviewer must be informed that assembly could not complete.
 
 ## Section 5 — Reviewer package output
 
@@ -389,45 +320,26 @@ For v0.1, the orchestrator produces a structured JSON representation of every fo
 
 Four quarterly vouchers with the recommended installment amounts, due dates, and payment instructions.
 
----
-
 ## Section 6 — Refusals specific to orchestration
 
-**R-ASSY-1 — Cross-form reconciliation failure.** If any reconciliation check in Section 4 fails, halt assembly and produce a diagnostic report. "Assembly failed: Schedule C Line 31 does not match Schedule SE Line 2. Upstream skill output is inconsistent. Reviewer must investigate before proceeding."
-
-**R-ASSY-2 — Upstream skill did not produce expected output.** If any content skill failed its self-checks, the orchestrator does not proceed. "Upstream skill [name] failed self-check [N]. Assembly cannot proceed until the upstream issue is resolved."
-
-**R-ASSY-3 — Taxpayer has income or deduction types not handled by any content skill.** Examples: royalties, schedule E income, rental income, K-1 from a partnership, capital gains from crypto. Halt assembly and refuse.
-
-**R-ASSY-4 — Total tax calculation produces negative or nonsensical result.** "Total tax computed as [value], which is not plausible. Assembly halted for reviewer investigation."
-
-**R-ASSY-5 — Required information still missing after intake.** "The following information is still missing: [list]. Assembly halted."
-
----
+- **R-ASSY-1 — Cross-form reconciliation failure** — If any reconciliation check in Section 4 fails, halt assembly and produce a diagnostic report. "Assembly failed: Schedule C Line 31 does not match Schedule SE Line 2. Upstream skill output is inconsistent. Reviewer must investigate before proceeding."
+- **R-ASSY-2 — Upstream skill did not produce expected output** — If any content skill failed its self-checks, the orchestrator does not proceed. "Upstream skill [name] failed self-check [N]. Assembly cannot proceed until the upstream issue is resolved."
+- **R-ASSY-3 — Taxpayer has income or deduction types not handled by any content skill** — Examples: royalties, schedule E income, rental income, K-1 from a partnership, capital gains from crypto. Halt assembly and refuse.
+- **R-ASSY-4 — Total tax calculation produces negative or nonsensical result** — "Total tax computed as [value], which is not plausible. Assembly halted for reviewer investigation."
+- **R-ASSY-5 — Required information still missing after intake** — "The following information is still missing: [list]. Assembly halted."
 
 ## Section 7 — Self-checks
 
-**Check 79 — All upstream content skills completed successfully.** Each content skill's self-checks passed and produced its expected output.
-
-**Check 80 — All reconciliation checks (A through N) passed.**
-
-**Check 81 — No refusals fired during assembly.**
-
-**Check 82 — Working paper has all expected sheets.**
-
-**Check 83 — Reviewer brief covers all required sections.**
-
-**Check 84 — All tax amounts are rounded consistently (to whole dollars, per IRS convention).**
-
-**Check 85 — Primary source citations present for every significant position.**
-
-**Check 86 — Reviewer identified and reviewer attention flags are listed.**
-
-**Check 87 — 2026 estimated tax vouchers produced if taxpayer has a 2026 obligation.**
-
-**Check 88 — CA state skill handoff data prepared (if taxpayer is CA resident).** The federal return produces certain numbers that the CA return needs (federal AGI, QBI deduction amount for add-back, etc.). This skill prepares those as a handoff package.
-
----
+- **Check 79 — All upstream content skills completed successfully** — Each content skill's self-checks passed and produced its expected output.
+- **Check 80 — All reconciliation checks (A through N) passed** — All reconciliation checks (A through N) passed.
+- **Check 81 — No refusals fired during assembly** — No refusals fired during assembly.
+- **Check 82 — Working paper has all expected sheets** — Working paper has all expected sheets.
+- **Check 83 — Reviewer brief covers all required sections** — Reviewer brief covers all required sections.
+- **Check 84 — All tax amounts are rounded consistently (to whole dollars, per IRS convention)** — All tax amounts are rounded consistently (to whole dollars, per IRS convention).
+- **Check 85 — Primary source citations present for every significant position** — Primary source citations present for every significant position.
+- **Check 86 — Reviewer identified and reviewer attention flags are listed** — Reviewer identified and reviewer attention flags are listed.
+- **Check 87 — 2026 estimated tax vouchers produced if taxpayer has a 2026 obligation** — 2026 estimated tax vouchers produced if taxpayer has a 2026 obligation.
+- **Check 88 — CA state skill handoff data prepared (if taxpayer is CA resident)** — The federal return produces certain numbers that the CA return needs (federal AGI, QBI deduction amount for add-back, etc.). This skill prepares those as a handoff package.
 
 ## Section 8 — Handoff to state skills
 
@@ -435,44 +347,20 @@ After the federal return is assembled, the taxpayer's state return must be prepa
 
 ### Handoff data for ALL states
 
-The federal return produces the following values that state income tax skills consume:
-
-- **Federal AGI** (Form 1040 Line 11) → most states start from federal AGI and make state-specific modifications
-- **Federal taxable income** (Form 1040 Line 15) → some states (CO, ID, OR, ND, etc.) start from federal taxable income instead of AGI
-- **QBI deduction amount** (Form 8995/8995-A) → many states decouple from §199A and require add-back
-- **§179 deduction and bonus depreciation** → several states have lower limits or decouple from federal (CA, PA, NJ, etc.)
-- **Schedule C net profit** (Line 31) → flows to state return for apportionment if multi-state
-- **Schedule SE self-employment tax** → some states allow partial deduction
-- **SE health insurance deduction** (Schedule 1 Line 17) → most states conform
-- **Retirement contributions** (Schedule 1 Line 16) → most states conform
-- **Federal estimated tax payments** → needed to compare against state estimated tax obligations
-- **HSA deduction** → some states decouple (CA, NJ, AL)
+- **Handoff data for ALL states** — The federal return produces the following values that state income tax skills consume: - **Federal AGI** (Form 1040 Line 11) → most states start from federal AGI and make state-specific modifications - **Federal taxable income** (Form 1040 Line 15) → some states (CO, ID, OR, ND, etc.) start from federal taxable income instead of AGI - **QBI deduction amount** (Form 8995/8995-A) → many states decouple from §199A and require add-back - **§179 deduction and bonus depreciation** → several states have lower limits or decouple from federal (CA, PA, NJ, etc.) - **Schedule C net profit** (Line 31) → flows to state return for apportionment if multi-state - **Schedule SE self-employment tax** → some states allow partial deduction - **SE health insurance deduction** (Schedule 1 Line 17) → most states conform - **Retirement contributions** (Schedule 1 Line 16) → most states conform - **Federal estimated tax payments** → needed to compare against state estimated tax obligations - **HSA deduction** → some states decouple (CA, NJ, AL)
 
 ### California-specific handoff (detailed)
 
-If the taxpayer is a California resident, the handoff includes additional detail:
-
-- Federal AGI → CA Schedule CA (540) Part I Line 11
-- Federal QBI deduction → CA Schedule CA (540) add-back (CA does not allow §199A)
-- Federal §179 deduction and bonus depreciation → CA Schedule CA (540) add-back (CA §179 limit is $25,000)
-- Federal Schedule C net profit → CA Schedule CA Part I
-- Federal Schedule SE → CA does not have SE tax at state level, but AGI reconciliation needs this
-- Federal Schedule 1 Line 17 (SE health insurance) → CA conforms; no adjustment
-- Federal Schedule 1 Line 16 (retirement) → CA conforms; no adjustment
-- Federal Form 8962 (PTC) → CA uses its own state subsidy computation if Covered California
-- Federal estimated tax payments → flag for CA 540-ES comparison
-
-This California handoff is consumed by the `ca-540-individual-return` skill (in `skills/us-states/ca/ca-income-tax.md`).
+- **California-specific handoff (detailed)** — If the taxpayer is a California resident, the handoff includes additional detail: - Federal AGI → CA Schedule CA (540) Part I Line 11 - Federal QBI deduction → CA Schedule CA (540) add-back (CA does not allow §199A) - Federal §179 deduction and bonus depreciation → CA Schedule CA (540) add-back (CA §179 limit is $25,000) - Federal Schedule C net profit → CA Schedule CA Part I - Federal Schedule SE → CA does not have SE tax at state level, but AGI reconciliation needs this - Federal Schedule 1 Line 17 (SE health insurance) → CA conforms; no adjustment - Federal Schedule 1 Line 16 (retirement) → CA conforms; no adjustment - Federal Form 8962 (PTC) → CA uses its own state subsidy computation if Covered California - Federal estimated tax payments → flag for CA 540-ES comparison This California handoff is consumed by the `ca-540-individual-return` skill (in `skills/us-states/ca/ca-income-tax.md`).
 
 ### No-income-tax states
 
-If the taxpayer is in AK, FL, NV, NH, SD, TN, TX, WA, or WY — there is no state income tax handoff. However, load the state's folder anyway for sales tax and specialty tax skills (e.g., TX franchise tax, WA B&O tax).
-
----
+- **No-income-tax states** — If the taxpayer is in AK, FL, NV, NH, SD, TN, TX, WA, or WY — there is no state income tax handoff. However, load the state's folder anyway for sales tax and specialty tax skills (e.g., TX franchise tax, WA B&O tax).
 
 ## Section 9 — Reference material
 
 ### Known gaps
+
 1. **PDF rendering is not implemented.** The orchestrator produces JSON and Excel; PDF generation requires a separate rendering module.
 2. **E-file submission is not handled.** The reviewer uses a separate e-file provider after review.
 3. **Amended returns (Form 1040-X) are out of scope.** Only original returns.
@@ -480,22 +368,16 @@ If the taxpayer is in AK, FL, NV, NH, SD, TN, TX, WA, or WY — there is no stat
 5. **The orchestrator assumes all upstream skills produce output in a consistent JSON-like schema.** Schema versioning is a v0.2 concern.
 
 ### Change log
+
 - **v0.1 (April 2026):** Initial draft for freelance software developer product.
 
 ## End of US Federal Return Assembly Skill v0.1
-
-
----
 
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, EA, tax attorney, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
 
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
-
----
-
-<!-- openaccountants-cta-block -->
+The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
 
 ## Talk to a verified accountant
 
@@ -510,16 +392,22 @@ a formal engagement letter** — book a free 30-minute call:
 
 We'll route you to the named verifier covering your country or state. You can
 also see the full list of verified accountants at
-[openaccountants.com/network](https://www.openaccountants.com/network).
+[openaccountants.com/network](https://openaccountants.com/network).
 
-<!-- openaccountants-mcp-cta -->
+<!-- openaccountants-cta-block -->
 
-## The accountant-verified version lives in the connector
+---
 
-This file is the open, **research-grade draft**. The **accountant-verified**
-version of this skill is **not published to GitHub** — it is delivered free
-through the OpenAccountants MCP connector, where your AI agent loads the
-verified rules together with the name of the accountant who signed them off.
+## Talk to a verified accountant
 
-**→ Install the free connector:** <https://www.openaccountants.com/connect>
-**MCP endpoint:** `https://www.openaccountants.com/api/mcp`
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

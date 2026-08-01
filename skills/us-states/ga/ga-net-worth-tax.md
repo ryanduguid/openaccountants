@@ -2,13 +2,14 @@
 name: ga-net-worth-tax
 description: Tier 2 Georgia content skill for the Net Worth Tax under Form 600 Part II — a separate capital/equity tax distinct from corporate income tax. Covers tax year 2025 including the application to C-corporations, S-corporations, and LLCs taxed as corporations (NOT to sole props, partnerships, or multi-member LLCs taxed as partnerships), the tax base as the greater of issued+outstanding capital stock+paid-in-capital or net worth (assets minus liabilities), the graduated rate structure with cap at $5,000, apportionment for multistate corporations, and filing combined with the corporate income tax Form 600.
 jurisdiction: US-GA
-domain: state-tax
 tax_year: 2025
+last_updated: 2026-05-27
+verified_by: pending
 tier: 2
-last_updated: 2026-07-06
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# ga-net-worth-tax
+# GA Net Worth Tax
 
 ## Georgia Net Worth Tax — Form 600 Part II
 
@@ -581,3 +582,21 @@ To speak with one of the licensed accountants who verifies skills for your juris
 → [Book a call](https://calendly.com/openaccountants-info/30min)
 
 We'll route you to the named verifier covering your country or state. You can also see the full list of verified accountants at [openaccountants.com/network](https://openaccountants.com/network).
+
+<!-- openaccountants-cta-block -->
+
+---
+
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

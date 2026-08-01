@@ -9,10 +9,11 @@
 2. `intake.md`
 3. `hu-income-tax.md`
 4. `hu-social-contributions.md`
-5. `hungary-einvoice.md`
-6. `hungary-vat-return.md`
-7. `eu-vat-directive.md`
-8. `einvoice-workflow-base.md`
+5. `hu-vat-return.md`
+6. `hungary-einvoice.md`
+7. `hungary-vat-return.md`
+8. `eu-vat-directive.md`
+9. `einvoice-workflow-base.md`
 
 ## Also known as
 

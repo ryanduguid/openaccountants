@@ -3,11 +3,13 @@ name: id-freelance-intake
 description: ALWAYS USE THIS SKILL when a user asks for help preparing a 2025 Indonesian tax return AND mentions freelancing, self-employment, online seller, kontraktor, pekerjaan bebas, sole proprietor (Usaha Dagang), or a PT Perorangan in Indonesia. Trigger on phrases like "siapkan SPT Tahunan", "lapor pajak freelance Indonesia", "PPh Final UMKM 0,5%", "PP 55/2022", "PT Perorangan tax return", "online seller Indonesia tax", "kontraktor pajak", "pekerjaan bebas", "Usaha Dagang", "Coretax SPT", "NPWP 16 digit", or any similar phrasing where the user is an Indonesia-resident self-employed individual, sole proprietor, or micro-PT founder. This is the REQUIRED entry point for the Indonesian freelance/SME workflow — every downstream skill in the stack (id-pph-final-umkm, id-income-tax, id-corporate-tax, id-withholding, id-payroll-pph21, indonesia-vat, id-bookkeeping, id-einvoice-coretax, id-formation, id-tax-optimization, id-return-assembly) depends on this skill running first. Uses ask_user_input_v0-style structured questions. Indonesian residents only (full-year tax residents and foreigners with > 183 days permanent presence). ALWAYS read this skill first when starting an Indonesian freelance/SME tax workflow.
 jurisdiction: ID
 tax_year: 2025
+last_updated: 2026-05-27
+verified_by: pending
 tier: 2
-last_updated: 2026-07-06
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# id-freelance-intake
+# ID Freelance Intake
 
 ## What this file is
 
@@ -376,3 +378,21 @@ a formal engagement letter** — book a free 30-minute call:
 We'll route you to the named verifier covering your country or state. You can
 also see the full list of verified accountants at
 [openaccountants.com/network](https://openaccountants.com/network).
+
+<!-- openaccountants-cta-block -->
+
+---
+
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

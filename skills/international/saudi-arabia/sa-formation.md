@@ -2,13 +2,14 @@
 name: sa-formation
 description: "ALWAYS read this skill whenever asked about forming, incorporating, registering, or licensing a business in the Kingdom of Saudi Arabia. Trigger on phrases like \"Saudi company formation\", \"MISA license Saudi\", \"Saudi LLC\", \"Saudi JSC\", \"Commercial Registration Saudi\", \"MoC Saudi\", \"100% foreign ownership Saudi\", \"MEEM license\", \"Saudization Nitaqat\", \"ZATCA registration\", \"Saudi branch office\", \"Regional Headquarters Saudi\", \"RHQ program\", \"open Saudi office\", \"incorporate Saudi Arabia\", \"Sole Establishment Saudi\", \"Mu'assasah Fardiyyah\", \"Sharikah dhāt mas'uliyyah\", \"GOSI registration\", \"Mudad payroll Saudi\", or any question about choosing or registering a Saudi entity. Covers entity comparison (Sole Establishment, LLC, Closed JSC, Open JSC, Branch of foreign company), MISA (Ministry of Investment) foreign investment licensing and the negative list, Commercial Registration from the Ministry of Commerce, sector-specific licensing (SAMA fintech and banking, CMA capital markets, CITC telecoms, MEEM Saudi Standards retail/import license), ZATCA Zakat and corporate income tax registration, GOSI social insurance registration and Mudad payroll setup, the 2022 Companies Law modernisation under Royal Decree No. M/132, and the Vision 2030 Regional Headquarters (RHQ) Program offering 30-year corporate tax and withholding tax incentives. Out of scope: immigration / iqama / work-visa sponsorship beyond signposting, deep Saudization (Nitaqat) tier mapping (covered in sa-gosi-saudization), bank account opening procedures, listing on Tadawul, sector-deep regulatory licensing beyond signposting, and full RHQ Program application drafting. ALWAYS read this skill before advising on Saudi entity formation."
 jurisdiction: SA
-domain: international
 tax_year: 2025
+last_updated: 2026-05-27
+verified_by: Mehran Habib
 tier: 2
-last_updated: 2026-07-06
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# sa-formation
+# SA Formation
 
 ## Saudi Arabia — Business Formation & Entity Selection — Skill v1.0
 
@@ -748,3 +749,21 @@ To speak with one of the licensed accountants who verifies skills for your juris
 → Book a call (https://calendly.com/openaccountants-info/30min)
 
 We'll route you to the named verifier covering your country or state. You can also see the full list of verified accountants at openaccountants.com/network.
+
+<!-- openaccountants-cta-block -->
+
+---
+
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

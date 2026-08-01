@@ -3,13 +3,6 @@
 > Open-source accounting skills for United Kingdom. Upload to Claude, ChatGPT, or any AI assistant.
 > Tax, bookkeeping, payroll, formation, financial statements, and more. Free and open source.
 
-## Verified by
-
-**James Power** — Lead accountant verifier for the United Kingdom on OpenAccountants.
-[View profile →](https://www.openaccountants.com/network/30b2f478-3a97-40c4-b435-0678829b487e)
-
-_Scope: the “Verified rates & thresholds” blocks inside these skill files are generated from the facts this verifier reviewed. Everything else in the files is an open, source-cited draft. The full accountant-verified tier, with the verifier’s name on every answer, is served via the [connector](https://www.openaccountants.com/connect)._
-
 ## What's in this folder
 
 1. `foundation.md`
@@ -23,23 +16,25 @@ _Scope: the “Verified rates & thresholds” blocks inside these skill files ar
 9. `uk-formation.md`
 10. `uk-income-tax-sa100.md`
 11. `uk-national-insurance.md`
-12. `uk-payments-on-account.md`
-13. `uk-payroll.md`
-14. `uk-rental-sa105.md`
-15. `uk-self-employment-sa103.md`
-16. `uk-student-loan-repayment.md`
-17. `uk-tax-optimization.md`
-18. `uk-transfer-pricing.md`
-19. `uk-vat-return.md`
-20. `bookkeeping-workflow-base.md`
-21. `payroll-workflow-base.md`
-22. `company-formation-workflow-base.md`
-23. `financial-statements-workflow-base.md`
-24. `transfer-pricing-workflow-base.md`
-25. `crypto-tax-workflow-base.md`
-26. `uk-guided-intake.md`
-27. `uk-return-assembly.md`
-28. `rates.2025.json` — machine-readable 2025/26 rates & thresholds extracted from the guides above, with per-figure authority citations
+12. `uk-non-dom.md`
+13. `uk-payments-on-account.md`
+14. `uk-payroll.md`
+15. `uk-rental-sa105.md`
+16. `uk-self-employment-sa103.md`
+17. `uk-statutory-residence-test.md`
+18. `uk-student-loan-repayment.md`
+19. `uk-tax-optimization.md`
+20. `uk-transfer-pricing.md`
+21. `uk-vat-return.md`
+22. `xero-uk-vat-close.md`
+23. `bookkeeping-workflow-base.md`
+24. `payroll-workflow-base.md`
+25. `company-formation-workflow-base.md`
+26. `financial-statements-workflow-base.md`
+27. `transfer-pricing-workflow-base.md`
+28. `crypto-tax-workflow-base.md`
+29. `uk-guided-intake.md`
+30. `uk-return-assembly.md`
 
 ## Also known as
 
@@ -68,7 +63,7 @@ The AI will:
 
 **This is not tax, legal, or financial advice.** Everything produced must be reviewed and signed off by a qualified chartered accountant before filing or acting upon.
 
-The most up-to-date, verified version of these skills is maintained at [openaccountants.com](https://openaccountants.com).
+The most up-to-date, verified version of these skills is maintained at [openaccountants.com](https://www.openaccountants.com).
 
 ---
 
@@ -80,9 +75,9 @@ These United Kingdom tax skills need your eye. Every rate, threshold, and form r
 
 1. Download the files in this folder
 2. Check the rates against HM Revenue & Customs (HMRC)'s website
-3. Email your corrections to **info@openaaccountants.com** — Word doc, Excel, PDF, tracked changes, whatever works
+3. Email your corrections to **info@openaccountants.com** — Word doc, Excel, PDF, tracked changes, whatever works
 
-We'll update the skill and credit you publicly as the verified reviewer at [openaccountants.com](https://openaccountants.com).
+We'll update the skill and credit you publicly as the verified reviewer at [openaccountants.com](https://www.openaccountants.com).
 
 Or if you're comfortable with GitHub: fork the repo, fix the source file under `skills/`, and submit a PR.
 
@@ -91,5 +86,5 @@ Or if you're comfortable with GitHub: fork the repo, fix the source file under `
 ---
 
 *OpenAccountants — open-source accounting skills for AI*
-*134 countries + 51 US states — [openaccountants.com](https://openaccountants.com)*
-*info@openaaccountants.com*
+*134 countries + 51 US states — [openaccountants.com](https://www.openaccountants.com)*
+*info@openaccountants.com*

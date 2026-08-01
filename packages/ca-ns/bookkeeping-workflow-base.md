@@ -4,6 +4,8 @@ description: Universal bookkeeping workflow base that defines the classification
 version: 1.0
 category: foundation
 jurisdiction: GLOBAL
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # Bookkeeping Workflow Base Skill v1.0

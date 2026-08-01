@@ -1,25 +1,27 @@
 ---
 name: mt-estimated-tax
 description: >
-  Use this skill whenever asked about Malta provisional tax (estimated tax) for self-employed or self-occupied individuals. Trigger on phrases like "provisional tax Malta", "estimated tax", "PT instalments", "how much provisional tax do I pay", "20% 30% 50%", "April instalment", "August instalment", "December instalment", "TA24 overpayment", "refund of provisional tax", "Chapter 372", "ITA provisional tax", or any question about Malta's advance income tax payment obligations. Covers the three-instalment schedule (20/30/50), basis of computation (prior year assessment), first-year rules, minimum provisional tax, penalties for late payment, and interaction with the TA24 final assessment. ALWAYS read this skill before touching any Malta provisional tax work.
 version: 2.0
 jurisdiction: MT
 tax_year: 2025
-category: international
-depends_on:
-  - income-tax-workflow-base
+last_updated: 2026-04-13
 verified_by: Michael Cutajar, CPA (Malta)
+depends_on: - income-tax-workflow-base
+category: international
+tier: 1
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Malta Provisional Tax (PT) -- Self-Employed Skill v2.0
+# MT Estimated Tax
 
-> ✅ **Accountant-reviewed** · **Michael Cutajar, CPA (Malta)** · credential verified · [public record](https://www.openaccountants.com/network)
-
+## Malta Provisional Tax (PT) -- Self-Employed Skill v2.0
 
 ## Section 1 -- Quick reference
 
+**Quick reference**
+
 | Field | Value |
-|---|---|
+| --- | --- |
 | Country | Malta (Republic of Malta) |
 | Tax | Income tax provisional payments (Provisional Tax / PT) |
 | Primary legislation | Income Tax Management Act, Chapter 372, Art. 44 et seq.; Provisional Tax Rules (S.L. 372.04) |
@@ -34,25 +36,23 @@ verified_by: Michael Cutajar, CPA (Malta)
 | Validated by | Pending -- requires sign-off by a Malta-warranted CPA |
 | Validation date | Pending |
 
-**Instalment schedule summary:**
+**Instalment schedule summary**
 
 | Instalment | Percentage | Due date |
-|---|---|---|
+| --- | --- | --- |
 | 1st | 20% | 30 April |
 | 2nd | 30% | 31 August |
 | 3rd | 50% | 21 December |
 
-**Conservative defaults:**
+**Conservative defaults**
 
 | Ambiguity | Default |
-|---|---|
+| --- | --- |
 | No prior year TA24 available | STOP -- request latest TA24 assessment or CFR PT notice |
 | First year, no penultimate year | Flag for reviewer -- minimum PT per CFR applies |
 | Income expected to drop | Pay per notice -- do NOT reduce without CFR approval |
 | Rental income in prior year tax | Exclude rental income taxed at 15% final WHT from PT basis |
 | Overpayment treatment | Credit against next year (not automatic refund) |
-
----
 
 ## Section 2 -- Required inputs and refusal catalogue
 
@@ -68,13 +68,9 @@ verified_by: Michael Cutajar, CPA (Malta)
 
 ### Refusal catalogue
 
-**R-MT-PT-1 -- Group companies or partnership PT.** Trigger: client asks about PT for a company or partnership. Message: "This skill covers provisional tax for self-employed individuals only. Company and partnership PT obligations have different rules. Please consult a warranted accountant."
-
-**R-MT-PT-2 -- Non-resident PT obligations.** Trigger: client is non-resident or asks about PT for non-residents. Message: "Non-resident provisional tax obligations are outside the scope of this skill. Please consult a warranted accountant."
-
-**R-MT-PT-3 -- PT penalty disputes.** Trigger: client asks about disputing PT penalties or CFR enforcement. Message: "Penalty disputes require legal analysis. Please escalate to a warranted accountant or tax advocate."
-
----
+- **R-MT-PT-1 -- Group companies or partnership PT** — Trigger: client asks about PT for a company or partnership. Message: "This skill covers provisional tax for self-employed individuals only. Company and partnership PT obligations have different rules. Please consult a warranted accountant."  _(Section 2 -- Refusal catalogue)_
+- **R-MT-PT-2 -- Non-resident PT obligations** — Trigger: client is non-resident or asks about PT for non-residents. Message: "Non-resident provisional tax obligations are outside the scope of this skill. Please consult a warranted accountant."  _(Section 2 -- Refusal catalogue)_
+- **R-MT-PT-3 -- PT penalty disputes** — Trigger: client asks about disputing PT penalties or CFR enforcement. Message: "Penalty disputes require legal analysis. Please escalate to a warranted accountant or tax advocate."  _(Section 2 -- Refusal catalogue)_
 
 ## Section 3 -- Payment pattern library
 
@@ -82,8 +78,10 @@ This is the deterministic pre-classifier for bank statement transactions. When a
 
 ### 3.1 CFR provisional tax debits
 
+**CFR provisional tax debits**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | CFR, COMMISSIONER FOR REVENUE | PT payment | Match with April/August/December timing to identify which instalment |
 | INLAND REVENUE MALTA | PT payment | Legacy name, same authority |
 | PROVISIONAL TAX, PROV TAX, PT PAYMENT | PT payment | Explicit description |
@@ -91,8 +89,10 @@ This is the deterministic pre-classifier for bank statement transactions. When a
 
 ### 3.2 Timing-based identification
 
+**Timing-based identification**
+
 | Debit date range | Likely instalment | Confidence |
-|---|---|---|
+| --- | --- | --- |
 | 15 April -- 10 May | 1st instalment (20%) | High if payee is CFR |
 | 15 August -- 15 September | 2nd instalment (30%) | High if payee is CFR |
 | 1 December -- 31 December | 3rd instalment (50%) | High if payee is CFR |
@@ -100,8 +100,10 @@ This is the deterministic pre-classifier for bank statement transactions. When a
 
 ### 3.3 Related but NOT provisional tax
 
+**Related but NOT provisional tax**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | VAT DEPARTMENT, VAT PAYMENT | EXCLUDE from PT | VAT payment, separate obligation |
 | SSC, SOCIAL SECURITY, CESOP | EXCLUDE from PT | Social security contribution |
 | FSS, FINAL SETTLEMENT | EXCLUDE from PT | PAYE final settlement system |
@@ -109,28 +111,26 @@ This is the deterministic pre-classifier for bank statement transactions. When a
 
 ### 3.4 Bank transfer references
 
+**Bank transfer references**
+
 | Reference pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | PT followed by year (e.g., PT2025) | PT payment for that year | Common bank transfer reference format |
 | YA followed by year | PT payment for that year of assessment | Alternative reference format |
 | INSTALMENT 1, INSTALMENT 2, INSTALMENT 3 | PT payment, specific instalment | Self-identified |
-
----
 
 ## Section 4 -- Worked examples
 
 ### Example 1 -- Standard three-instalment computation
 
-**Input:** Prior year TA24 tax liability = EUR 9,000.
-
-**Computation:**
+**Standard three-instalment computation**
 
 | Instalment | Percentage | Amount | Due date |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | 1st | 20% | EUR 1,800 | 30 April 2025 |
 | 2nd | 30% | EUR 2,700 | 31 August 2025 |
 | 3rd | 50% | EUR 4,500 | 21 December 2025 |
-| **Total** | **100%** | **EUR 9,000** | |
+| **Total** | **100%** | **EUR 9,000** |  |
 
 ### Example 2 -- Reconciliation with final assessment (underpayment)
 
@@ -146,12 +146,10 @@ This is the deterministic pre-classifier for bank statement transactions. When a
 
 ### Example 4 -- Rental income excluded from PT basis
 
-**Input:** Prior year TA24: EUR 3,000 tax on self-employment income + EUR 1,500 tax on rental income (15% final WHT). Total tax = EUR 4,500.
-
-**Computation:** PT based on EUR 3,000 only (rental income at 15% final WHT excluded).
+**Rental income excluded from PT basis**
 
 | Instalment | Amount |
-|---|---|
+| --- | --- |
 | 1st (20%) | EUR 600 |
 | 2nd (30%) | EUR 900 |
 | 3rd (50%) | EUR 1,500 |
@@ -168,48 +166,32 @@ This is the deterministic pre-classifier for bank statement transactions. When a
 
 **Classification:** Provisional tax payment, 1st instalment for YA 2025. Not a deductible expense for VAT or income tax purposes -- this is a tax payment, not a business cost.
 
----
-
 ## Section 5 -- Computation rules
 
 ### 5.1 Standard computation (prior-year basis)
 
-The computation basis is always the prior year assessed tax liability from the most recent TA24, after credits, minus any tax deducted at source.
-
-```
-prior_year_tax = TA24_assessed_tax - tax_credits - WHT_at_source
-PT_instalment_1 = prior_year_tax x 20%
-PT_instalment_2 = prior_year_tax x 30%
-PT_instalment_3 = prior_year_tax x 50%
-total_PT = prior_year_tax x 100%
-```
-
-Do NOT divide by three equally. The split is always 20/30/50.
+- **Standard computation (prior-year basis)** — The computation basis is always the prior year assessed tax liability from the most recent TA24, after credits, minus any tax deducted at source. ``` prior_year_tax = TA24_assessed_tax - tax_credits - WHT_at_source PT_instalment_1 = prior_year_tax x 20% PT_instalment_2 = prior_year_tax x 30% PT_instalment_3 = prior_year_tax x 50% total_PT = prior_year_tax x 100% ``` Do NOT divide by three equally. The split is always 20/30/50.  _(Section 5.1)_
 
 ### 5.2 Year-end reconciliation
 
-```
-balance_due = final_tax_liability - total_PT_paid - WHT_at_source
-if balance_due > 0: additional payment required with TA24 (by 30 June)
-if balance_due < 0: overpayment -- refund or credit
-```
+- **Year-end reconciliation** — ``` balance_due = final_tax_liability - total_PT_paid - WHT_at_source if balance_due > 0: additional payment required with TA24 (by 30 June) if balance_due < 0: overpayment -- refund or credit ```  _(Section 5.2)_
 
 ### 5.3 Special rules for first year and new businesses
 
-For the first year of self-employment with no prior TA24: PT is based on the penultimate year's tax. If no penultimate year assessment exists, the CFR sets a minimum PT amount administratively. Flag for reviewer.
+- **Special rules for first year and new businesses** — For the first year of self-employment with no prior TA24: PT is based on the penultimate year's tax. If no penultimate year assessment exists, the CFR sets a minimum PT amount administratively. Flag for reviewer.  _(Section 5.3)_
 
 ### 5.4 Excluded income
 
-Income subject to final withholding tax (e.g., 15% on rental income, 15% on certain interest) is NOT included in the PT computation base. PT applies only to income subject to progressive rates.
-
----
+- **Excluded income** — Income subject to final withholding tax (e.g., 15% on rental income, 15% on certain interest) is NOT included in the PT computation base. PT applies only to income subject to progressive rates.  _(Section 5.4)_
 
 ## Section 6 -- Penalties and interest
 
 ### 6.1 Late payment interest
 
+**Late payment interest**
+
 | Element | Rate |
-|---|---|
+| --- | --- |
 | Interest rate | 0.75% per month (9% per annum) |
 | Runs from | Due date of each instalment |
 | Maximum | No statutory cap -- accrues until paid |
@@ -217,23 +199,11 @@ Income subject to final withholding tax (e.g., 15% on rental income, 15% on cert
 
 ### 6.2 Interest computation
 
-```
-interest = unpaid_amount x 0.75% x months_overdue
-```
-
-Interest accrues per instalment independently. A missed April instalment accrues 8+ months of interest by December.
-
----
+- **Interest computation** — ``` interest = unpaid_amount x 0.75% x months_overdue ``` Interest accrues per instalment independently. A missed April instalment accrues 8+ months of interest by December.  _(Section 6.2)_
 
 ## Section 7 -- Adjustments and reductions
 
-If the taxpayer expects current year income to be significantly lower than the prior year, they may apply in writing to CFR to reduce PT instalments. The application must include evidence (reduced contracts, cessation of activity) and should be submitted before the relevant instalment due date.
-
-Risk: if actual tax exceeds the reduced PT, interest and penalties apply on the shortfall.
-
-Flag for reviewer before advising any PT reduction.
-
----
+- **Adjustments and reductions** — If the taxpayer expects current year income to be significantly lower than the prior year, they may apply in writing to CFR to reduce PT instalments. The application must include evidence (reduced contracts, cessation of activity) and should be submitted before the relevant instalment due date. Risk: if actual tax exceeds the reduced PT, interest and penalties apply on the shortfall. Flag for reviewer before advising any PT reduction.  _(Section 7)_
 
 ## Section 8 -- Edge cases
 
@@ -255,8 +225,6 @@ Flag for reviewer before advising any PT reduction.
 
 **EC9 -- Late filing of prior year TA24.** Use the latest available assessed year as the basis. File the overdue TA24 urgently. CFR may issue revised PT notices once processed.
 
----
-
 ## Section 9 -- Self-checks
 
 Before delivering output, verify:
@@ -272,39 +240,42 @@ Before delivering output, verify:
 - [ ] Penalty rates stated if relevant
 - [ ] Output labelled as estimated until CFR notice confirmed
 
----
-
 ## Section 10 -- Test suite
 
 ### Test 1 -- Standard three-instalment computation
+
 **Input:** Prior year TA24 tax liability = EUR 9,000.
 **Expected:** 1st = EUR 1,800 (30 Apr). 2nd = EUR 2,700 (31 Aug). 3rd = EUR 4,500 (21 Dec). Total = EUR 9,000.
 
 ### Test 2 -- Zero prior year tax
+
 **Input:** Prior year TA24 tax liability = EUR 0.
 **Expected:** PT = EUR 0. No instalments due. Flag: advise voluntary payments if current year income expected to exceed threshold.
 
 ### Test 3 -- Underpayment reconciliation
+
 **Input:** Total PT paid = EUR 8,000. Final TA24 = EUR 11,500.
 **Expected:** Balance due = EUR 3,500. Due with TA24 filing by 30 June.
 
 ### Test 4 -- Overpayment reconciliation
+
 **Input:** Total PT paid = EUR 10,000. Final TA24 = EUR 7,200.
 **Expected:** Overpayment = EUR 2,800. Client may request refund or credit.
 
 ### Test 5 -- Late payment penalty
+
 **Input:** 1st instalment EUR 1,800 due 30 April. Paid 15 July (approx. 3 months late).
 **Expected:** Interest = EUR 1,800 x 0.75% x 3 = EUR 40.50. Additional 10% penalty may apply.
 
 ### Test 6 -- First year, no prior assessment
+
 **Input:** First year of self-employment. No prior TA24.
 **Expected:** Flag for reviewer. Minimum PT per CFR administrative determination. Request CFR notice.
 
 ### Test 7 -- Rental income excluded
+
 **Input:** Prior year: EUR 3,000 tax on SE income + EUR 1,500 on rental (15% WHT). Total = EUR 4,500.
 **Expected:** PT on EUR 3,000 only. 1st = EUR 600, 2nd = EUR 900, 3rd = EUR 1,500.
-
----
 
 ## Prohibitions
 
@@ -317,17 +288,11 @@ Before delivering output, verify:
 - NEVER advise on PT penalty disputes without escalating to a warranted accountant
 - NEVER assume overpayment is automatically refunded -- client must apply or accept credit
 
----
-
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, EA, tax attorney, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
 
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
-
----
-
-<!-- openaccountants-cta-block -->
+The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
 
 ## Talk to a verified accountant
 
@@ -342,16 +307,22 @@ a formal engagement letter** — book a free 30-minute call:
 
 We'll route you to the named verifier covering your country or state. You can
 also see the full list of verified accountants at
-[openaccountants.com/network](https://www.openaccountants.com/network).
+[openaccountants.com/network](https://openaccountants.com/network).
 
-<!-- openaccountants-mcp-cta -->
+<!-- openaccountants-cta-block -->
 
-## The accountant-verified version lives in the connector
+---
 
-This file is the open, **research-grade draft**. The **accountant-verified**
-version of this skill is **not published to GitHub** — it is delivered free
-through the OpenAccountants MCP connector, where your AI agent loads the
-verified rules together with the name of the accountant who signed them off.
+## Talk to a verified accountant
 
-**→ Install the free connector:** <https://www.openaccountants.com/connect>
-**MCP endpoint:** `https://www.openaccountants.com/api/mcp`
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

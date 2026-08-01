@@ -1,24 +1,25 @@
 ---
 name: ie-income-tax-form11
 description: >
-  Use this skill whenever asked about Irish income tax for self-employed individuals filing Form 11. Trigger on phrases like "Form 11", "self-assessment Ireland", "Case I profits", "Case II profits", "USC", "PRSI Class S", "preliminary tax Ireland", "earned income credit", "trading profits", "self-employed tax Ireland", "ROS filing", or any question about computing or filing income tax for a self-employed person in Ireland. This skill covers income tax rates (20%/40%), USC bands, PRSI Class S, personal tax credits, allowable deductions, capital allowances, preliminary tax, and Form 11 structure. ALWAYS read this skill before touching any Irish income tax work.
 version: 2.0
 jurisdiction: IE
 tax_year: 2025
-category: international
-depends_on:
-  - income-tax-workflow-base
+last_updated: 2026-04-13
 verified_by: pending
+depends_on: - income-tax-workflow-base
+category: international
+tier: 2
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Ireland Income Tax (Form 11) -- Self-Employed Skill v2.0
-
----
+# IE Income Tax Form11
 
 ## Section 1 -- Quick Reference
 
+**Section 1 Quick Reference table**
+
 | Field | Value |
-|---|---|
+| --- | --- |
 | Country | Ireland |
 | Tax | Income Tax (20%/40%) + USC + PRSI Class S |
 | Currency | EUR only |
@@ -35,8 +36,10 @@ verified_by: pending
 
 ### Income Tax Rates and Standard Rate Band (2025)
 
+**Income Tax Rates and Standard Rate Band (2025)**
+
 | Filing Status | Standard Rate Band (20%) | Balance at 40% |
-|---|---|---|
+| --- | --- | --- |
 | Single | EUR 44,000 | Above EUR 44,000 |
 | Married (one earner) | EUR 53,000 | Above EUR 53,000 |
 | Married (two earners) | EUR 53,000 + EUR 35,000 (max EUR 88,000) | Above combined band |
@@ -44,28 +47,34 @@ verified_by: pending
 
 ### USC Rates (2025)
 
+**USC Rates (2025)**
+
 | Band | Rate |
-|---|---|
+| --- | --- |
 | First EUR 12,012 | 0.5% |
 | EUR 12,012.01 -- EUR 27,382 | 2% |
 | EUR 27,382.01 -- EUR 70,044 | 3% |
 | Above EUR 70,044 | 8% |
 | USC surcharge (non-PAYE income > EUR 100,000) | +3% |
 
-USC exemption: total income not exceeding EUR 13,000 = no USC.
+- **USC exemption** — USC exemption: total income not exceeding EUR 13,000 = no USC.
 
 ### PRSI Class S (2025)
 
+**PRSI Class S (2025)**
+
 | Item | Value |
-|---|---|
+| --- | --- |
 | Rate (blended 2025) | 4.125% (4.1% Jan-Sep, 4.2% Oct-Dec) |
 | Minimum contribution | EUR 650/year |
 | Income threshold | EUR 5,000 (below = no PRSI) |
 
 ### Key Personal Tax Credits (2025)
 
+**Key Personal Tax Credits (2025)**
+
 | Credit | EUR |
-|---|---|
+| --- | --- |
 | Single Person's Credit | 2,000 |
 | Married Person's Credit | 4,000 |
 | Earned Income Credit (self-employed) | 2,000 |
@@ -74,8 +83,10 @@ USC exemption: total income not exceeding EUR 13,000 = no USC.
 
 ### Form 11 Key Panels
 
+**Form 11 Key Panels**
+
 | Panel | Description |
-|---|---|
+| --- | --- |
 | Panel A | Personal details |
 | Panel B | Self-employment (Case I/II) -- turnover, profit, capital allowances |
 | Panel C | Other Irish income (PAYE, rental, investment) |
@@ -87,41 +98,32 @@ USC exemption: total income not exceeding EUR 13,000 = no USC.
 
 ### Conservative Defaults
 
+**Conservative Defaults**
+
 | Ambiguity | Default |
-|---|---|
+| --- | --- |
 | Unknown filing status | Single |
 | Unknown business-use % (vehicle, phone, home) | 0% deduction |
 | Unknown expense category | Not deductible |
 | Unknown whether capital or revenue | Capital (depreciate) |
 | Unknown motor vehicle cost | Cap at EUR 24,000 |
 
----
-
 ## Section 2 -- Required Inputs and Refusal Catalogue
 
 ### Required Inputs
 
-**Minimum viable** -- bank statement for the full tax year in CSV, PDF, or pasted text, plus confirmation of filing status (single/married/single parent).
-
-**Recommended** -- all sales invoices, purchase invoices, prior year Form 11 or Notice of Assessment, PPS number, capital asset records.
-
-**Ideal** -- complete trading account, asset register with capital allowances schedule, preliminary tax payment records, employment P60/payslip (if dual income).
-
-**Refusal if minimum is missing -- SOFT WARN.** No bank statement = hard stop. Bank statement without invoices = proceed with reviewer warning.
+- **Minimum viable** — Minimum viable -- bank statement for the full tax year in CSV, PDF, or pasted text, plus confirmation of filing status (single/married/single parent).
+- **Recommended** — Recommended -- all sales invoices, purchase invoices, prior year Form 11 or Notice of Assessment, PPS number, capital asset records.
+- **Ideal** — Ideal -- complete trading account, asset register with capital allowances schedule, preliminary tax payment records, employment P60/payslip (if dual income).
+- **Refusal if minimum is missing** — Refusal if minimum is missing -- SOFT WARN. No bank statement = hard stop. Bank statement without invoices = proceed with reviewer warning.
 
 ### Refusal Catalogue
 
-**R-IE-1 -- Companies (Ltd, DAC, PLC).** "This skill covers self-employed individuals filing Form 11 only. Companies file Form CT1 (Corporation Tax). Out of scope."
-
-**R-IE-2 -- Partnerships.** "Partnership profits are computed at partnership level (Form 1 Firms) and allocated to partners. Out of scope."
-
-**R-IE-3 -- Non-resident / dual resident.** "Non-resident and dual-resident taxation has different rules. Escalate."
-
-**R-IE-4 -- Capital gains tax (CGT).** "CGT computations require detailed disposal analysis. Escalate."
-
-**R-IE-5 -- Revenue audit / appeal.** "Revenue audit or appeal situations require specialist advice. Escalate."
-
----
+- **R-IE-1** — Companies (Ltd, DAC, PLC). "This skill covers self-employed individuals filing Form 11 only. Companies file Form CT1 (Corporation Tax). Out of scope."
+- **R-IE-2** — Partnerships. "Partnership profits are computed at partnership level (Form 1 Firms) and allocated to partners. Out of scope."
+- **R-IE-3** — Non-resident / dual resident. "Non-resident and dual-resident taxation has different rules. Escalate."
+- **R-IE-4** — Capital gains tax (CGT). "CGT computations require detailed disposal analysis. Escalate."
+- **R-IE-5** — Revenue audit / appeal. "Revenue audit or appeal situations require specialist advice. Escalate."
 
 ## Section 3 -- Transaction Pattern Library
 
@@ -129,8 +131,10 @@ This is the deterministic pre-classifier. When a bank statement transaction matc
 
 ### 3.1 Income Patterns (Credits on Bank Statement)
 
+**Income Patterns (Credits on Bank Statement)**
+
 | Pattern | Form 11 Line | Treatment | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Client name + TRANSFER, LODGEMENT, EFT | Panel B -- Turnover | Business income | If VAT-registered, extract net (excl. 23% VAT) |
 | PROFESSIONAL FEES, CONSULTANCY, INVOICE | Panel B -- Turnover | Business income | Case II profession typical |
 | STRIPE PAYOUT, STRIPE TRANSFER | Panel B -- Turnover | Business income | Platform payout -- match to invoices |
@@ -140,32 +144,36 @@ This is the deterministic pre-classifier. When a bank statement transaction matc
 | SALARY, WAGES, EMPLOYER [name] | Panel C -- Employment | NOT self-employment | PAYE income -- separate |
 | RENT RECEIVED, TENANT [name] | Panel C -- Rental | NOT self-employment | Rental income -- Case V |
 | DEPOSIT INTEREST, DIRT | Panel C -- Investment | NOT self-employment | DIRT already withheld at 33% |
-| DIVIDEND | Panel C -- Investment | NOT self-employment | |
+| DIVIDEND | Panel C -- Investment | NOT self-employment |  |
 | REVENUE REFUND, TAX REFUND | EXCLUDE | Not income | Prior year refund |
 | SOCIAL WELFARE, DEASP | Check nature | May be taxable | Some SW payments are taxable income |
 
 ### 3.2 Expense Patterns (Debits) -- Fully Deductible
 
+**Expense Patterns (Debits) -- Fully Deductible**
+
 | Pattern | Category | Treatment | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | OFFICE RENT, COMMERCIAL RENT, LEASE [premises] | Rent | Fully deductible | Dedicated business premises |
-| PROFESSIONAL INDEMNITY, PI INSURANCE | Insurance | Fully deductible | |
-| ACCOUNTANT, AUDITOR, TAX ADVISER | Professional fees | Fully deductible | |
+| PROFESSIONAL INDEMNITY, PI INSURANCE | Insurance | Fully deductible |  |
+| ACCOUNTANT, AUDITOR, TAX ADVISER | Professional fees | Fully deductible |  |
 | SOLICITOR, BARRISTER (business) | Legal fees | Fully deductible | Business-related only |
-| OFFICE SUPPLIES, STATIONERY, VIKING | Supplies | Fully deductible | |
-| MARKETING, GOOGLE ADS, META ADS, FACEBOOK ADS | Advertising | Fully deductible | |
+| OFFICE SUPPLIES, STATIONERY, VIKING | Supplies | Fully deductible |  |
+| MARKETING, GOOGLE ADS, META ADS, FACEBOOK ADS | Advertising | Fully deductible |  |
 | TRAINING, CPD, COURSE, CONFERENCE | Training | Fully deductible | Current business related |
-| CPA IRELAND, ACCA, LAW SOCIETY, CHARTERED | Professional subs | Fully deductible | |
+| CPA IRELAND, ACCA, LAW SOCIETY, CHARTERED | Professional subs | Fully deductible |  |
 | BANK CHARGE, MAINTENANCE FEE, TRANSACTION FEE | Bank charges | Fully deductible | Business account |
-| STRIPE FEE, PAYPAL FEE, SQUARE FEE | Payment processing | Fully deductible | |
-| POSTAGE, AN POST (business) | Postage | Fully deductible | |
-| DOMAIN, HOSTING, AWS, CLOUDFLARE | IT infrastructure | Fully deductible | |
+| STRIPE FEE, PAYPAL FEE, SQUARE FEE | Payment processing | Fully deductible |  |
+| POSTAGE, AN POST (business) | Postage | Fully deductible |  |
+| DOMAIN, HOSTING, AWS, CLOUDFLARE | IT infrastructure | Fully deductible |  |
 | SOFTWARE, SUBSCRIPTION, SAAS | Software | Fully deductible | Recurring subscription = revenue |
 
 ### 3.3 Expense Patterns (Debits) -- Travel and Subsistence
 
+**Expense Patterns (Debits) -- Travel and Subsistence**
+
 | Pattern | Category | Treatment | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | RYANAIR, AER LINGUS, EASYJET | Flights | Fully deductible | Business purpose required |
 | HOTEL, BOOKING.COM, AIRBNB | Accommodation | Fully deductible | Business travel |
 | IRISH RAIL, IARNROD EIREANN, BUS EIREANN | Transport | Fully deductible | Business travel |
@@ -174,8 +182,10 @@ This is the deterministic pre-classifier. When a bank statement transaction matc
 
 ### 3.4 Expense Patterns (Debits) -- NOT Deductible
 
+**Expense Patterns (Debits) -- NOT Deductible**
+
 | Pattern | Category | Treatment | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | RESTAURANT, DINNER, LUNCH, ENTERTAINMENT | Entertainment | NOT deductible | Blocked under s.840 TCA 1997 |
 | PERSONAL, GROCERIES, SUPERMARKET, TESCO, DUNNES | Personal | NOT deductible | Private living costs |
 | FINE, PENALTY, PARKING FINE | Fines | NOT deductible | Public policy |
@@ -184,18 +194,22 @@ This is the deterministic pre-classifier. When a bank statement transaction matc
 
 ### 3.5 Expense Patterns (Debits) -- Capital Items
 
+**Expense Patterns (Debits) -- Capital Items**
+
 | Pattern | Category | Annual Rate | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | LAPTOP, COMPUTER, MACBOOK, IMAC | Computer equipment | 12.5% (8 years) | Capital allowance |
-| PRINTER, SCANNER, COPIER | Plant/machinery | 12.5% (8 years) | |
-| FURNITURE, DESK, CHAIR, FILING | Furniture/fittings | 12.5% (8 years) | |
+| PRINTER, SCANNER, COPIER | Plant/machinery | 12.5% (8 years) |  |
+| FURNITURE, DESK, CHAIR, FILING | Furniture/fittings | 12.5% (8 years) |  |
 | VEHICLE, CAR (business) | Motor vehicle | 12.5% (8 years, capped EUR 24,000) | Business % only |
 | ENERGY EFFICIENT (SEAI listed) | ACA equipment | 100% year 1 | Accelerated Capital Allowance |
 
 ### 3.6 Expense Patterns -- Mixed Use (Tier 2)
 
+**Expense Patterns -- Mixed Use (Tier 2)**
+
 | Pattern | Category | Treatment | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | ESB, ELECTRIC IRELAND, BORD GAIS | Utilities | T2 -- home office % only | If home office |
 | EIRCELL, THREE, VODAFONE, 48 | Phone | T2 -- business % only | Default 0% |
 | BROADBAND, EIRE, SKY, VIRGIN MEDIA | Internet | T2 -- business % only | Default 0% |
@@ -204,8 +218,10 @@ This is the deterministic pre-classifier. When a bank statement transaction matc
 
 ### 3.7 Exclusions
 
+**Exclusions**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | INTERNAL TRANSFER, OWN ACCOUNT, SAVINGS | EXCLUDE | Own-account transfer |
 | LOAN REPAYMENT, MORTGAGE PRINCIPAL | EXCLUDE | Loan principal |
 | LOAN INTEREST (business) | Deductible | Interest on business borrowings |
@@ -214,16 +230,16 @@ This is the deterministic pre-classifier. When a bank statement transaction matc
 
 ### 3.8 Irish Banks -- Statement Format Reference
 
+**Irish Banks -- Statement Format Reference**
+
 | Bank | Format | Key Fields | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | AIB (Allied Irish Banks) | PDF, CSV | Date, Description, Debit, Credit, Balance | Most common; description = counterparty + ref |
 | BOI (Bank of Ireland) | PDF, CSV | Date, Details, Debit, Credit, Balance | Similar format to AIB |
 | PTSB (Permanent TSB) | PDF, CSV | Date, Description, Amount, Balance | Less granular descriptions |
 | Ulster Bank / NatWest | PDF, CSV | Date, Description, Paid Out, Paid In, Balance | UK-style format |
 | Revolut Business | CSV | Date, Counterparty, Amount, Currency, Reference | Clean data |
 | N26, Wise | CSV | Date, Counterparty, Amount, Reference | International neobanks |
-
----
 
 ## Section 4 -- Worked Examples
 
@@ -287,20 +303,18 @@ Transfer between own accounts. Neither income nor expense.
 
 **Classification:** EXCLUDE.
 
----
-
 ## Section 5 -- Tier 1 Rules (When Data Is Clear)
 
 ### 5.1 Case I / Case II Trading Profits
 
-**Legislation:** TCA 1997, Schedule D, Cases I and II
-
-Gross turnover minus allowable revenue deductions minus capital allowances = adjusted profit. The "wholly and exclusively" test applies (TCA 1997, s.81).
+- **Case I / Case II adjusted profit** — Gross turnover minus allowable revenue deductions minus capital allowances = adjusted profit. The "wholly and exclusively" test applies (TCA 1997, s.81).  _(TCA 1997, Schedule D, Cases I and II)_
 
 ### 5.2 Capital Allowances
 
+**Capital Allowances**
+
 | Asset Type | Annual Rate | Recovery Period |
-|---|---|---|
+| --- | --- | --- |
 | Plant and machinery | 12.5% | 8 years |
 | Motor vehicles (capped EUR 24,000) | 12.5% | 8 years |
 | Computer equipment | 12.5% | 8 years |
@@ -308,12 +322,14 @@ Gross turnover minus allowable revenue deductions minus capital allowances = adj
 | Industrial buildings | 4% | 25 years |
 | Energy-efficient (ACA) | 100% | Year 1 |
 
-Motor vehicle cap: if car costs EUR 35,000, allowances calculated on EUR 24,000 only.
+- **Motor vehicle cap example** — Motor vehicle cap: if car costs EUR 35,000, allowances calculated on EUR 24,000 only.
 
 ### 5.3 Non-Deductible Expenses
 
+**Non-Deductible Expenses**
+
 | Expense | Reason |
-|---|---|
+| --- | --- |
 | Entertainment | Blocked under s.840 TCA 1997 |
 | Personal living expenses | Not business-related |
 | Fines, penalties, surcharges | Public policy |
@@ -323,32 +339,19 @@ Motor vehicle cap: if car costs EUR 35,000, allowances calculated on EUR 24,000 
 
 ### 5.4 Preliminary Tax
 
-Must equal or exceed the lower of:
-- 100% of prior year's final tax liability
-- 90% of current year's actual liability
-
-First year: no preliminary tax due. Direct debit option: 105% of pre-preceding year spread monthly.
+- **Preliminary tax minimum** — Must equal or exceed the lower of: 100% of prior year's final tax liability; 90% of current year's actual liability.
+- **First year / direct debit** — First year: no preliminary tax due. Direct debit option: 105% of pre-preceding year spread monthly.
 
 ### 5.5 Tax Computation Steps
 
-1. Compute Case I/II adjusted profit
-2. Add other income
-3. Total income
-4. Less deductions (pension, losses forward)
-5. Taxable income
-6. Apply income tax at 20%/40%
-7. Less personal tax credits
-8. Income tax payable
-9. Compute USC on gross income
-10. Compute PRSI Class S on gross income
-11. Total liability = IT + USC + PRSI
-12. Less preliminary tax and PAYE withholding
-13. Balance due / refund
+- **Tax Computation Steps** — 1. Compute Case I/II adjusted profit 2. Add other income 3. Total income 4. Less deductions (pension, losses forward) 5. Taxable income 6. Apply income tax at 20%/40% 7. Less personal tax credits 8. Income tax payable 9. Compute USC on gross income 10. Compute PRSI Class S on gross income 11. Total liability = IT + USC + PRSI 12. Less preliminary tax and PAYE withholding 13. Balance due / refund
 
 ### 5.6 Filing Deadlines and Penalties
 
+**Filing Deadlines and Penalties**
+
 | Item | Deadline |
-|---|---|
+| --- | --- |
 | Form 11 (paper) | 31 October |
 | Form 11 (ROS) | Mid-November |
 | Preliminary tax | Same as Form 11 |
@@ -356,50 +359,31 @@ First year: no preliminary tax due. Direct debit option: 105% of pre-preceding y
 | Late surcharge (over 2 months) | 10% of tax (max EUR 63,485) |
 | Late payment interest | 0.0219% per day (~8% p.a.) |
 
----
-
 ## Section 6 -- Tier 2 Catalogue (Reviewer Judgement Required)
 
 ### 6.1 Home Office Expenses
 
-- Proportional deduction based on dedicated room as % of total floor area
-- Must be exclusively for business -- dual-use room does not qualify
-- Utility costs (electricity, heat, broadband) apportioned
-
-**Conservative default:** 0% until reviewer confirms arrangement.
+- **Home Office Expenses** — Proportional deduction based on dedicated room as % of total floor area. Must be exclusively for business -- dual-use room does not qualify. Utility costs (electricity, heat, broadband) apportioned. Conservative default: 0% until reviewer confirms arrangement.
 
 ### 6.2 Motor Vehicle Business Use
 
-- Business-use % of running costs deductible
-- Capital allowances on cost capped at EUR 24,000, multiplied by business %
-- Civil service mileage rates may apply as alternative
-
-**Conservative default:** 0% business use until mileage log provided.
+- **Motor Vehicle Business Use** — Business-use % of running costs deductible. Capital allowances on cost capped at EUR 24,000, multiplied by business %. Civil service mileage rates may apply as alternative. Conservative default: 0% business use until mileage log provided.
 
 ### 6.3 Phone / Broadband Mixed Use
 
-Default: 0%. Client must provide reasonable business-use estimate.
+- **Phone / Broadband Mixed Use** — Default: 0%. Client must provide reasonable business-use estimate.
 
 ### 6.4 Bad Debt Write-Off
 
-- Must be specific (not general provision)
-- Previously included in income
-- All reasonable recovery steps taken
-- Flag for reviewer
+- **Bad Debt Write-Off** — Must be specific (not general provision). Previously included in income. All reasonable recovery steps taken. Flag for reviewer.
 
 ### 6.5 Pension Contributions
 
-- Age-related % limits (15% under 30 to 40% for 60+)
-- Annual earnings cap EUR 115,000
-- Flag for reviewer to confirm age bracket
+- **Pension Contributions** — Age-related % limits (15% under 30 to 40% for 60+). Annual earnings cap EUR 115,000. Flag for reviewer to confirm age bracket.
 
 ### 6.6 Loss Relief
 
-- Current year: set off against other income (s.381 TCA 1997)
-- Carry forward: against future profits of same trade (s.382)
-- Flag for reviewer for optimal utilisation
-
----
+- **Loss Relief** — Current year: set off against other income (s.381 TCA 1997). Carry forward: against future profits of same trade (s.382). Flag for reviewer for optimal utilisation.  _(s.381 TCA 1997; s.382)_
 
 ## Section 7 -- Excel Working Paper Template
 
@@ -454,14 +438,14 @@ REVIEWER FLAGS:
   [ ] All T2 items flagged?
 ```
 
----
-
 ## Section 8 -- Bank Statement Reading Guide
 
 ### Irish Bank Statement Formats
 
+**Irish Bank Statement Formats**
+
 | Bank | Format | Key Fields | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | AIB | PDF, CSV | Date, Description, Debit, Credit, Balance | Most common; good counterparty detail |
 | BOI (Bank of Ireland) | PDF, CSV | Date, Details, Debit, Credit, Balance | Similar to AIB |
 | PTSB | PDF, CSV | Date, Description, Amount, Balance | Less detail in descriptions |
@@ -471,8 +455,10 @@ REVIEWER FLAGS:
 
 ### Key Irish Banking Terms
 
+**Key Irish Banking Terms**
+
 | Term | Meaning | Classification Hint |
-|---|---|---|
+| --- | --- | --- |
 | LODGEMENT / LDG | Deposit/credit | Potential income |
 | DD / DIRECT DEBIT | Direct debit | Regular expense |
 | SO / STANDING ORDER | Standing order | Regular expense |
@@ -480,8 +466,6 @@ REVIEWER FLAGS:
 | POS / CARD | Point of sale / card payment | Expense |
 | ATM | Cash withdrawal | Ask purpose |
 | CHG / FEE | Bank charge | Deductible |
-
----
 
 ## Section 9 -- Onboarding Fallback
 
@@ -507,14 +491,14 @@ ONBOARDING QUESTIONS -- IRELAND INCOME TAX
 10. Prior year Notice of Assessment available?
 ```
 
----
-
 ## Section 10 -- Reference Material
 
 ### Key Legislation
 
+**Key Legislation**
+
 | Topic | Reference |
-|---|---|
+| --- | --- |
 | Income tax rates / bands | TCA 1997, as amended by Finance Act 2024 |
 | USC | TCA 1997, Part 18D |
 | PRSI Class S | Social Welfare Consolidation Act 2005 |
@@ -528,31 +512,23 @@ ONBOARDING QUESTIONS -- IRELAND INCOME TAX
 
 ### Test Suite
 
-**Test 1 -- Single, mid-range income.**
 Input: Single, gross EUR 60,000, expenses EUR 15,000, capital allowances EUR 1,250, first year.
 Expected: Adjusted profit EUR 43,750. IT: EUR 43,750 x 20% = EUR 8,750 - EUR 4,000 credits = EUR 4,750. Plus USC + PRSI.
 
-**Test 2 -- Married one earner, higher income.**
 Input: Married (one earner), gross EUR 100,000, expenses EUR 25,000, capital allowances EUR 3,000.
 Expected: Adjusted profit EUR 72,000. IT: EUR 53,000 x 20% + EUR 19,000 x 40% - EUR 6,000 credits.
 
-**Test 3 -- Entertainment blocked.**
 Input: EUR 3,000 client entertainment.
 Expected: Remove entirely. Not deductible.
 
-**Test 4 -- Motor vehicle cap.**
 Input: Car EUR 40,000, 100% business.
 Expected: Capped at EUR 24,000. Annual = EUR 3,000.
 
-**Test 5 -- USC surcharge.**
 Input: Non-PAYE income EUR 150,000.
 Expected: Standard USC + 3% surcharge on EUR 50,000 above EUR 100,000.
 
-**Test 6 -- PRSI below threshold.**
 Input: Total income EUR 4,000.
 Expected: No PRSI Class S. Below EUR 5,000.
-
----
 
 ## PROHIBITIONS
 
@@ -565,17 +541,11 @@ Expected: No PRSI Class S. Below EUR 5,000.
 - NEVER ignore the USC surcharge for non-PAYE income over EUR 100,000
 - NEVER present tax calculations as definitive
 
----
-
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, EA, tax attorney, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
 
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
-
----
-
-<!-- openaccountants-cta-block -->
+The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
 
 ## Talk to a verified accountant
 
@@ -583,23 +553,29 @@ This skill is a tool, not an engagement. Every taxpayer's situation is
 different, and the rules in the skill may not match your specific facts.
 
 To speak with one of the licensed accountants who verifies skills for your
-jurisdiction — **no liability on either side until you and the accountant sign
-a formal engagement letter** — book a free 30-minute call:
+jurisdiction — no liability on either side until you and the accountant sign
+a formal engagement letter — book a free 30-minute call:
 
-**→ [Book a call](https://calendly.com/openaccountants-info/30min)**
+→ [Book a call](https://calendly.com/openaccountants-info/30min)
 
 We'll route you to the named verifier covering your country or state. You can
 also see the full list of verified accountants at
-[openaccountants.com/network](https://www.openaccountants.com/network).
+[openaccountants.com/network](https://openaccountants.com/network).
 
-<!-- openaccountants-mcp-cta -->
+<!-- openaccountants-cta-block -->
 
-## The accountant-verified version lives in the connector
+---
 
-This file is the open, **research-grade draft**. The **accountant-verified**
-version of this skill is **not published to GitHub** — it is delivered free
-through the OpenAccountants MCP connector, where your AI agent loads the
-verified rules together with the name of the accountant who signed them off.
+## Talk to a verified accountant
 
-**→ Install the free connector:** <https://www.openaccountants.com/connect>
-**MCP endpoint:** `https://www.openaccountants.com/api/mcp`
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

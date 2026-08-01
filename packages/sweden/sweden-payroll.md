@@ -1,29 +1,27 @@
 ---
 name: sweden-payroll
 description: >
-  Use this skill whenever asked about Swedish payroll processing, employee salary calculations,
-  preliminärskatt (preliminary income tax / PAYE), arbetsgivaravgifter (employer social contributions),
-  employer cost calculations, net-to-gross or gross-to-net conversions, Swedish payslip structure,
-  arbetsgivardeklaration filings, or any question about computing wages, deductions, or employer
-  obligations in Sweden. Trigger on phrases like "Swedish payroll", "preliminärskatt",
-  "arbetsgivaravgifter", "employer contributions Sweden", "PAYE Sweden", "net salary Sweden",
-  "lönespecifikation", "kommunalskatt", "municipal tax Sweden", "statlig inkomstskatt",
-  "Skatteverket filing", "kollektivavtal", "ITP pension", or "semesterersättning".
 version: 1.0
 jurisdiction: SE
+tax_year: 2025
+last_updated: 2026-05-23
+verified_by: pending
+depends_on: - payroll-workflow-base
 category: payroll
-depends_on:
-  - payroll-workflow-base
+tier: 2
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Sweden Payroll Skill v1.0
+# Sweden Payroll
 
----
+## Sweden Payroll Skill v1.0
 
 ## Section 1 -- Quick Reference
 
+**Quick Reference**
+
 | Field | Value |
-|---|---|
+| --- | --- |
 | Country | Sweden (Kingdom of Sweden) |
 | Currency | SEK (Swedish Krona) |
 | Payroll frequency | Monthly (typically paid 25th of month) |
@@ -37,14 +35,14 @@ depends_on:
 | Filing | Monthly arbetsgivardeklaration by 12th of following month |
 | Skill version | 1.0 |
 
----
-
 ## Section 2 -- Income Tax Withholding (Preliminärskatt)
 
 ### Tax Components
 
+**Tax Components**
+
 | Component | Rate (2026) | Applies to |
-|---|---|---|
+| --- | --- | --- |
 | Municipal tax (kommunalskatt) | ~28.93% -- 35.65% (average 32.38%) | All taxable income |
 | State income tax (statlig inkomstskatt) | 20% | Annual income above SEK 643,100 |
 | Church tax (kyrkoavgift) | ~1% -- 1.5% | Members of Swedish Church only |
@@ -54,8 +52,10 @@ depends_on:
 
 Swedish employers withhold preliminary income tax (preliminärskatt/PAYE) based on tax tables issued annually by Skatteverket. Each employee has a tax table determined by:
 
+**Withholding factors**
+
 | Factor | Detail |
-|---|---|
+| --- | --- |
 | Municipality of residence | Determines kommunalskatt rate |
 | Table type (kolumn) | Column in table based on deductions (standard: column 1) |
 | Special income tax for non-residents (SINK) | Flat 22.5% (from 1 January 2026, reduced from 25%) |
@@ -63,8 +63,10 @@ Swedish employers withhold preliminary income tax (preliminärskatt/PAYE) based 
 
 ### Key Tax Deductions (Reducing Taxable Income)
 
+**Key Tax Deductions**
+
 | Deduction | Amount (2026) |
-|---|---|
+| --- | --- |
 | Basic deduction (grundavdrag) | SEK 15,400 -- 40,000 (income-dependent) |
 | Job tax credit (jobbskatteavdrag) | Automatic, income-dependent (max ~SEK 36,000/year) |
 | Pension contributions (employee voluntary) | Deductible up to limits |
@@ -80,40 +82,44 @@ Swedish employers withhold preliminary income tax (preliminärskatt/PAYE) based 
 
 ### Effective Tax Rates (Approximate, 2026)
 
+**Effective Tax Rates**
+
 | Monthly Gross (SEK) | Effective Tax Rate (incl. jobbskatteavdrag) |
-|---|---|
+| --- | --- |
 | 25,000 | ~22% |
 | 35,000 | ~26% |
 | 50,000 | ~31% |
 | 75,000 | ~37% |
 | 100,000 | ~42% |
 
----
-
 ## Section 3 -- Social Security: Employee Deductions
 
+**Employee social security contributions**
+
 | Contribution | Rate |
-|---|---|
+| --- | --- |
 | Employee social security contributions | **0%** |
 
 Sweden is unique: employees pay NO separate social security contributions. All social insurance funding comes from employer contributions (arbetsgivaravgifter) and general taxation. The income tax employees pay covers both income tax and indirectly funds the welfare system.
 
 ### Employee Pension Contributions (Voluntary)
 
+**Employee Pension Contributions**
+
 | Type | Detail |
-|---|---|
+| --- | --- |
 | Tjänstepension (occupational pension) | Employer-paid via collective agreement (ITP/SAF-LO) |
 | Private pension savings | Employee's own choice; tax-deductible within limits |
 | Mandatory public pension (allmän pension) | Funded through employer's ålderspensionsavgift (10.21%) |
-
----
 
 ## Section 4 -- Social Security: Employer Contributions (Arbetsgivaravgifter)
 
 ### Full Rate Breakdown (2026)
 
+**Full Rate Breakdown**
+
 | Component | Rate |
-|---|---|
+| --- | --- |
 | Ålderspensionsavgift (old-age pension) | 10.21% |
 | Sjukförsäkringsavgift (sickness insurance) | 3.55% |
 | Föräldraförsäkringsavgift (parental insurance) | 2.60% |
@@ -125,8 +131,10 @@ Sweden is unique: employees pay NO separate social security contributions. All s
 
 ### Reduced Rates
 
+**Reduced Rates**
+
 | Category | Rate | Condition |
-|---|---|---|
+| --- | --- | --- |
 | Employees aged 67+ at year start | 10.21% | Only ålderspensionsavgift |
 | Born 1937 or earlier | 0% | No contributions at all |
 | Youth (19-23) from 1 April 2026 | 20.81% | On salary up to SEK 25,000/month; full 31.42% above |
@@ -134,8 +142,10 @@ Sweden is unique: employees pay NO separate social security contributions. All s
 
 ### Youth Discount (Temporary: 1 April 2026 -- 30 September 2027)
 
+**Youth Discount**
+
 | Parameter | Detail |
-|---|---|
+| --- | --- |
 | Eligible employees | Born 2003-2007 (aged 19-23 during 2026) |
 | Reduced rate | 20.81% (ålderspensionsavgift + 50% of remaining) |
 | Cap | SEK 25,000/month gross; full 31.42% on excess |
@@ -143,8 +153,10 @@ Sweden is unique: employees pay NO separate social security contributions. All s
 
 ### Special Payroll Tax on Pension Costs (SLP)
 
+**SLP Parameters**
+
 | Parameter | Detail |
-|---|---|
+| --- | --- |
 | Rate | 24.26% |
 | Applies to | Employer pension contributions (ITP, SAF-LO, other occupational pension) |
 | Paid by | Employer |
@@ -154,24 +166,26 @@ Sweden is unique: employees pay NO separate social security contributions. All s
 
 Unlike many countries, Swedish arbetsgivaravgifter apply to the FULL gross salary with NO upper ceiling. There is no equivalent of a social security wage base.
 
----
-
 ## Section 5 -- Minimum Wage and Overtime
 
 ### Minimum Wage
 
 Sweden has NO statutory minimum wage. Pay floors are set entirely by:
 
+**Minimum Wage Sources**
+
 | Source | Coverage |
-|---|---|
+| --- | --- |
 | Collective agreements (kollektivavtal) | ~90% of workforce |
 | Sector-specific negotiations | Between trade unions and employer associations |
 | ~700 different agreements | Different rates by sector, role, age, experience |
 
 ### Indicative Sector Minimums (2026)
 
+**Indicative Sector Minimums**
+
 | Sector | Approximate Monthly Minimum (SEK) |
-|---|---|
+| --- | --- |
 | Hotel and restaurant (HRF) | 25,000 -- 26,000 |
 | Retail (Handels) | 25,000 -- 26,000 |
 | Warehousing/logistics | 28,000 -- 29,000 |
@@ -181,24 +195,26 @@ Sweden has NO statutory minimum wage. Pay floors are set entirely by:
 
 ### Work Permit Salary Threshold (2026)
 
-From June 2026: SEK 33,390/month minimum for work permit holders (increased from prior threshold).
+- **Work permit salary threshold** — From June 2026: SEK 33,390/month minimum for work permit holders (increased from prior threshold). SEK/month
 
 ### Working Hours and Overtime
 
+**Working Hours and Overtime**
+
 | Parameter | Standard |
-|---|---|
+| --- | --- |
 | Standard working week | 40 hours |
 | Maximum including overtime | 48 hours average per 4-week period |
 | Overtime limit | 200 hours/year (extendable to 300 via collective agreement) |
 | Overtime compensation | Typically 50-100% supplement (set by kollektivavtal) |
 | Unsocial hours (OB-tillägg) | Supplements for evening/night/weekend (kollektivavtal-dependent) |
 
----
-
 ## Section 6 -- Mandatory Benefits
 
+**Mandatory Benefits**
+
 | Benefit | Detail |
-|---|---|
+| --- | --- |
 | Annual leave (semester) | 25 days minimum per year (Semesterlagen) |
 | Holiday pay (semesterlön) | 12% of annual earnings for non-salaried; regular pay + supplement for salaried |
 | Sick pay (sjuklön) | Day 1: waiting day (karensdag, no pay); Days 2-14: 80% from employer; Day 15+: Försäkringskassan |
@@ -209,28 +225,32 @@ From June 2026: SEK 33,390/month minimum for work permit holders (increased from
 
 ### Occupational Pension (Tjänstepension)
 
+**Occupational Pension Plans**
+
 | Plan | Applies to | Contribution |
-|---|---|---|
+| --- | --- | --- |
 | ITP 1 (defined contribution) | White-collar (Unionen, Ledarna, etc.) born 1979+ | 4.5% on salary up to ~SEK 52,000/month; 30% above |
 | ITP 2 (defined benefit) | White-collar born before 1979 | ~10-30% of salary depending on age |
 | SAF-LO (Avtalspension) | Blue-collar (IF Metall, Handels, etc.) | 4.5% up to ceiling + 30% above |
 
 ### Holiday Pay (Semesterersättning)
 
+**Holiday Pay Methods**
+
 | Method | Calculation |
-|---|---|
+| --- | --- |
 | Salaried employee (sammanfallande) | Regular monthly salary during vacation + semestertillägg (0.8% per day × annual salary / 12) |
 | Hourly/non-salaried | 12% of total earnings during qualifying year |
 | Unused vacation payout | 12% calculation or equivalent daily rate |
-
----
 
 ## Section 7 -- Payslip Requirements
 
 Swedish employers should provide a lönespecifikation (payslip) for each salary payment. While not as strictly mandated by statute as in some countries, it is standard practice and often required by collective agreement.
 
+**Payslip Requirements**
+
 | Element | Standard Practice |
-|---|---|
+| --- | --- |
 | Employer identification | Yes |
 | Employee name and personnummer | Yes |
 | Pay period | Yes |
@@ -248,17 +268,19 @@ Swedish employers should provide a lönespecifikation (payslip) for each salary 
 
 ### Annual Tax Statement
 
+**Annual Tax Statement**
+
 | Document | Deadline |
-|---|---|
+| --- | --- |
 | Kontrolluppgift (KU10/KU13/KU14) | 31 January of following year (submitted to Skatteverket) |
 | Employee receives copy | February (for personal tax declaration) |
 
----
-
 ## Section 8 -- Filing Obligations
 
+**Filing Obligations**
+
 | Filing | Frequency | Deadline | Authority |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Arbetsgivardeklaration (employer PAYE return) | Monthly | 12th of following month (17th for January and August) | Skatteverket |
 | Arbetsgivardeklaration -- individuppgift | Monthly | Same as above (per-employee details) | Skatteverket |
 | Payment of tax + contributions | Monthly | Same day as declaration deadline (12th/17th) | Skatteverket |
@@ -267,8 +289,10 @@ Swedish employers should provide a lönespecifikation (payslip) for each salary 
 
 ### Arbetsgivardeklaration Details
 
+**Arbetsgivardeklaration Details**
+
 | Parameter | Detail |
-|---|---|
+| --- | --- |
 | Content | Per-employee: gross salary, benefits, preliminary tax withheld; aggregated: total arbetsgivaravgifter |
 | Submission | Electronic via Skatteverket portal, file upload, or API (AGI) |
 | Individuppgift | Mandatory per-employee reporting since 2019 |
@@ -277,16 +301,16 @@ Swedish employers should provide a lönespecifikation (payslip) for each salary 
 
 ### Key Annual Calendar
 
+**Key Annual Calendar**
+
 | Month | Obligation |
-|---|---|
+| --- | --- |
 | January | Arbetsgivardeklaration for December (deadline 17th); Kontrolluppgift deadline 31st |
 | February | Employees receive income statements for personal tax filing |
 | March-May | Employee personal tax declarations (1 March -- 2 May) |
 | June | Holiday pay processing (semesterlön for summer holidays) |
 | August | Arbetsgivardeklaration deadline 17th (extended) |
 | December | Year-end adjustments; final December payroll |
-
----
 
 ## Section 9 -- Common Payroll Patterns
 
@@ -349,12 +373,12 @@ Employer cost:
 = Total employer cost:               SEK ~49,595
 ```
 
----
-
 ## Section 10 -- Interaction with Other Skills
 
+**Interaction with Other Skills**
+
 | Skill | Interaction |
-|---|---|
+| --- | --- |
 | sweden-bookkeeping | Payroll journal entries (7xxx accounts), employer contribution accruals, holiday pay liability |
 | payroll-workflow-base | General payroll processing workflow; Sweden-specific overrides in this skill |
 
@@ -368,17 +392,11 @@ Employer cost:
 - **Karensdag (qualifying day)**: First sick day is unpaid (since 2019, previously first day only had deduction of 20% of average weekly salary).
 - **Semesterlagen**: 25 vacation days minimum. Employees CANNOT waive this right. Carried-over days above 25 may be saved for up to 5 years.
 
----
-
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional before filing or acting upon.
 
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com).
-
----
-
-<!-- openaccountants-cta-block -->
+The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com).
 
 ## Talk to a verified accountant
 
@@ -393,16 +411,22 @@ a formal engagement letter** — book a free 30-minute call:
 
 We'll route you to the named verifier covering your country or state. You can
 also see the full list of verified accountants at
-[openaccountants.com/network](https://www.openaccountants.com/network).
+[openaccountants.com/network](https://openaccountants.com/network).
 
-<!-- openaccountants-mcp-cta -->
+<!-- openaccountants-cta-block -->
 
-## The accountant-verified version lives in the connector
+---
 
-This file is the open, **research-grade draft**. The **accountant-verified**
-version of this skill is **not published to GitHub** — it is delivered free
-through the OpenAccountants MCP connector, where your AI agent loads the
-verified rules together with the name of the accountant who signed them off.
+## Talk to a verified accountant
 
-**→ Install the free connector:** <https://www.openaccountants.com/connect>
-**MCP endpoint:** `https://www.openaccountants.com/api/mcp`
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

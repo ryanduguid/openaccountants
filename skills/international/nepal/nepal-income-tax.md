@@ -2,15 +2,14 @@
 name: nepal-income-tax
 description: Use this skill whenever asked about Nepal income tax for natural persons (individuals and the self-employed). Trigger on phrases like "how much tax do I pay in Nepal", "Nepal income tax slabs", "D-01 return", "PAN income tax", "SSF contribution", "Social Security Fund", "presumptive tax Nepal", "turnover tax", "tax rate FY 2082/83", "natural person tax", "income tax return Nepal", "TDS Nepal", or any question about filing or computing income tax for a resident natural person, sole proprietor, or small business in Nepal. Also trigger when preparing or reviewing a D-01 return, computing the 1% Social Security Tax slab, applying the female-taxpayer rebate, or advising on advance/installment tax. This skill covers natural-person slabs (single/couple), the SST mechanism, SSF contributions, presumptive and turnover-based small-business regimes, deductions/rebates, filing deadlines, and penalties under the Income Tax Act, 2058. ALWAYS read this skill before touching any Nepal income tax work.
 jurisdiction: NP
-domain: income-tax
 tax_year: 2025
-reviewed_by: Ashish Bista
-review_status: accountant-reviewed
+last_updated: 2026-06-03
+verified_by: Ashish Bista
 tier: 1
-last_updated: 2026-07-06
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# nepal-income-tax
+# Nepal Income Tax
 
 ## Nepal Income Tax -- Natural Persons Skill v0.1
 
@@ -718,3 +717,21 @@ Expected: REJECT presumptive/turnover scheme → file normal return at slab rate
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, EA, tax attorney, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
 
 The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
+
+<!-- openaccountants-cta-block -->
+
+---
+
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

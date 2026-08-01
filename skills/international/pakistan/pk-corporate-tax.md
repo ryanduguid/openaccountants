@@ -2,15 +2,14 @@
 name: pk-corporate-tax
 description: "ALWAYS read this skill before touching any Pakistan corporate income tax (CIT) work. Use this skill whenever asked about Pakistan corporate tax for a resident Pakistani company. Trigger on phrases like \"Pakistan CIT\", \"Pakistan company tax\", \"Pvt Ltd Pakistan\", \"super tax Pakistan\", \"small company Pakistan tax\", \"PSEB IT export\", \"Finance Act 2025 corporate\", \"Section 4C super tax\", \"Section 113 minimum tax\", \"Section 113C ACT\", \"Section 147 advance tax\", \"IRIS return Pakistan\", \"group taxation Pakistan\", \"Section 59AA\", \"Section 59B\". Covers the 29% standard CIT rate under the Income Tax Ordinance 2001 (ITO 2001) as amended by Finance Act 2024 and Finance Act 2025, the 39% banking-company rate, the 20% small-company rate (turnover ≤ Rs 250M plus the other Section 2(59A) conditions), Section 4C super tax progressive bands (1%–10%) on income above Rs 150M, Section 113 minimum tax on turnover at 1.25%, Section 113C Alternative Corporate Tax (higher of normal tax or 17% of accounting income), the PSEB-registered IT/ITeS exports concessional regime (1% final tax — flag any FA 2025 changes as TBC), Section 59AA group relief and Section 59B group taxation, Section 147 quarterly advance tax computation and payment, and annual return filing via IRIS by 31 December. Out of scope: AOPs and individuals (separate regime), permanent establishments / branches of non-residents, oil and gas exploration and production, insurance company life/non-life special regimes, modarabas, NPOs and trusts, the special economic zone (SEZ) regimes, mutual funds, REITs, and any sales tax / FED matter (see pakistan-sales-tax)."
 jurisdiction: PK
-domain: international
 tax_year: 2025
-reviewed_by: Ibrar Ali
-review_status: accountant-reviewed
+last_updated: 2026-05-27
+verified_by: Ibrar Ali
 tier: 1
-last_updated: 2026-07-06
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# pk-corporate-tax
+# PK Corporate Tax
 
 ## Pakistan — Corporate Income Tax — Skill v1.0
 
@@ -519,3 +518,21 @@ a formal engagement letter** — book a free 30-minute call:
 We'll route you to the named verifier covering your country or state. You can
 also see the full list of verified accountants at
 [openaccountants.com/network](https://openaccountants.com/network).
+
+<!-- openaccountants-cta-block -->
+
+---
+
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

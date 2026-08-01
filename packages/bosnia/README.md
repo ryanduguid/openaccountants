@@ -7,7 +7,16 @@
 
 1. `foundation.md`
 2. `intake.md`
-3. `bosnia-vat.md`
+3. `ba-company-formation.md`
+4. `ba-corporate-income-tax.md`
+5. `ba-tax-overview.md`
+6. `bosnia-income-tax.md`
+7. `bosnia-payroll.md`
+8. `bosnia-social-contributions.md`
+9. `bosnia-tax-optimization.md`
+10. `bosnia-vat.md`
+11. `payroll-workflow-base.md`
+12. `company-formation-workflow-base.md`
 
 ## How to use
 

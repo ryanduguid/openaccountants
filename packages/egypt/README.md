@@ -7,7 +7,27 @@
 
 1. `foundation.md`
 2. `intake.md`
-3. `egypt-vat.md`
+3. `eg-bookkeeping.md`
+4. `eg-corporate-tax.md`
+5. `eg-crypto-tax.md`
+6. `eg-financial-statements.md`
+7. `eg-formation.md`
+8. `eg-income-tax.md`
+9. `eg-payroll.md`
+10. `eg-real-estate-tax.md`
+11. `eg-sme-tax.md`
+12. `eg-social-insurance.md`
+13. `eg-stamp-duty.md`
+14. `eg-tax-optimization.md`
+15. `eg-transfer-pricing.md`
+16. `eg-withholding-tax.md`
+17. `egypt-vat.md`
+18. `bookkeeping-workflow-base.md`
+19. `payroll-workflow-base.md`
+20. `company-formation-workflow-base.md`
+21. `financial-statements-workflow-base.md`
+22. `transfer-pricing-workflow-base.md`
+23. `crypto-tax-workflow-base.md`
 
 ## How to use
 

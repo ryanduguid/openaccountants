@@ -7,7 +7,24 @@
 
 1. `foundation.md`
 2. `intake.md`
-3. `russia-vat.md`
+3. `ru-bookkeeping.md`
+4. `ru-crypto-tax.md`
+5. `ru-einvoice.md`
+6. `ru-financial-statements.md`
+7. `ru-formation.md`
+8. `ru-income-tax.md`
+9. `ru-payroll.md`
+10. `ru-self-employed-npd.md`
+11. `ru-social-contributions.md`
+12. `ru-tax-optimization.md`
+13. `ru-usn.md`
+14. `russia-vat.md`
+15. `bookkeeping-workflow-base.md`
+16. `einvoice-workflow-base.md`
+17. `payroll-workflow-base.md`
+18. `company-formation-workflow-base.md`
+19. `financial-statements-workflow-base.md`
+20. `crypto-tax-workflow-base.md`
 
 ## Also known as
 

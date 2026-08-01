@@ -2,19 +2,21 @@
 name: ca-freelance-intake
 description: ALWAYS USE THIS SKILL when a user asks for help preparing their Canadian tax returns AND mentions freelancing, self-employment, contracting, sole proprietorship, or unincorporated business. Trigger on phrases like "help me do my taxes", "prepare my T1", "I'm self-employed in Canada", "I'm a freelancer in Canada", "do my taxes as a contractor", "prepare my GST/HST return and income tax", or any similar phrasing where the user is a Canadian-resident self-employed individual needing tax return preparation. This is the REQUIRED entry point for the Canadian self-employed tax workflow -- every other skill in the stack (canada-gst-hst, ca-fed-t2125, ca-fed-t1-return, ca-fed-cpp-ei, ca-fed-instalments, ca-return-assembly) depends on this skill running first to produce a structured intake package. Uses upload-first workflow -- the user dumps all their documents and the skill infers as much as possible before asking questions. Uses ask_user_input_v0 for structured questions instead of one-at-a-time prose. Built for speed. Canadian full-year residents only; sole proprietors only (not incorporated).
 version: 0.1
+jurisdiction: CA
+tax_year: 2025
+last_updated: 2026-04-13
+verified_by: pending
+tier: 2
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Canada Sole Proprietor Intake Skill v0.1
-
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+# CA Freelance Intake
 
 ## What this file is
 
 The intake orchestrator for Canadian-resident sole proprietors. Every downstream Canadian content skill (canada-gst-hst, ca-fed-t2125, ca-fed-t1-return, ca-fed-cpp-ei, ca-fed-instalments) and the assembly orchestrator (ca-return-assembly) depend on this skill running first to produce a structured intake package.
 
 This skill does not compute any tax figures. Its job is to collect all the facts, parse all the documents, confirm everything with the user, and hand off a clean intake package to `ca-return-assembly`.
-
----
 
 ## Design principles
 
@@ -44,8 +46,6 @@ Target: intake completes in 5 minutes for a prepared user, 15 minutes for a user
 
 **Exception for blocking decisions.** If a single question determines whether the user is in-scope or out-of-scope, ask it standalone.
 
----
-
 ## Section 1 -- The opening
 
 When triggered, respond with ONE message that:
@@ -72,13 +72,9 @@ Then immediately call `ask_user_input_v0` with the refusal questions.
 - List what documents you will eventually need
 - Give a disclaimer beyond the one reviewer line
 
----
-
 ## Section 2 -- Refusal sweep (compact)
 
-Present the refusal sweep as a single `ask_user_input_v0` call with 4 questions, all single-select.
-
-**The 4 questions to ask first:**
+0. **Refusal sweep call** — Present the refusal sweep as a single ask_user_input_v0 call with 4 questions, all single-select, then a second batch of 2 questions.
 
 ```
 Q1: "Canadian residency in 2025?"
@@ -94,23 +90,10 @@ Q4: "GST/HST registered?"
     Options: ["Yes (revenue above $30K or voluntarily registered)", "No (small supplier, revenue under $30K)", "Not sure"]
 ```
 
-**After the response, evaluate:**
-
-- **Q1 = Full year** -> continue
-- **Q1 = Part year or did not live in Canada** -> stop. "I'm set up for full-year Canadian residents only. Part-year or non-residents have different rules around world income and treaty exemptions. You need a CPA who handles non-resident returns."
-
-- **Q2 = Sole proprietor** -> continue
-- **Q2 = Corporation** -> stop. "I don't cover corporate returns. Corporations file T2 returns with different rules. You need a CPA familiar with corporate tax."
-- **Q2 = Partnership** -> stop. "Partnerships file a T5013 information return and allocate income to partners. You need a CPA familiar with partnership returns."
-- **Q2 = Not sure** -> ask one follow-up: "Do you operate under your own name (or a trade name) without incorporating? Or do you have a corporation registered with your provincial registry (Inc., Ltd., Corp.)? If you invoice under your own name with no incorporation, you're a sole proprietor."
-
-- **Q3** -> note province for provincial tax calculation. Quebec has a separate provincial return (TP-1); all other provinces are calculated on the federal return.
-
-- **Q4 = Yes** -> continue. GST34 returns required.
-- **Q4 = No** -> continue. No GST/HST return required unless revenue crosses $30K in four consecutive quarters. Will check after inference.
-- **Q4 = Not sure** -> ask one follow-up: "Do you charge GST or HST on your invoices? If yes, you're registered. If you've never collected GST/HST and your total revenue has been under $30,000 in four consecutive calendar quarters, you're likely a small supplier and not required to register."
-
-**After Q1-Q4 pass, ask the second batch of scope questions (also batched):**
+- **Q1 residency refusal** — Q1 = Full year -> continue. Q1 = Part year or did not live in Canada -> stop: "I'm set up for full-year Canadian residents only. Part-year or non-residents have different rules around world income and treaty exemptions. You need a CPA who handles non-resident returns."
+- **Q2 business structure refusal** — Q2 = Sole proprietor -> continue. Q2 = Corporation -> stop: "I don't cover corporate returns. Corporations file T2 returns with different rules. You need a CPA familiar with corporate tax." Q2 = Partnership -> stop: "Partnerships file a T5013 information return and allocate income to partners. You need a CPA familiar with partnership returns." Q2 = Not sure -> ask follow-up: "Do you operate under your own name (or a trade name) without incorporating? Or do you have a corporation registered with your provincial registry (Inc., Ltd., Corp.)? If you invoice under your own name with no incorporation, you're a sole proprietor."
+- **Q3 province handling** — Note province for provincial tax calculation. Quebec has a separate provincial return (TP-1); all other provinces are calculated on the federal return.
+- **Q4 GST/HST registration handling** — Q4 = Yes -> continue. GST34 returns required. Q4 = No -> continue. No GST/HST return required unless revenue crosses $30K in four consecutive quarters. Will check after inference. Q4 = Not sure -> ask follow-up: "Do you charge GST or HST on your invoices? If yes, you're registered. If you've never collected GST/HST and your total revenue has been under $30,000 in four consecutive calendar quarters, you're likely a small supplier and not required to register."
 
 ```
 Q5: "Also employed (T4 income) in 2025?"
@@ -129,11 +112,9 @@ Q6: "Industry?"
 
 **Total time:** ~45 seconds if the user taps through.
 
----
-
 ## Section 3 -- The dump
 
-Once the refusal sweep passes, immediately ask for the document dump. Single message. No preamble.
+0. **Document dump request** — Once the refusal sweep passes, immediately ask for the document dump. Single message. No preamble.
 
 **Example:**
 
@@ -170,13 +151,10 @@ Then wait. Do not ask any other questions while waiting.
 >
 > Come back when you have something to upload. I'll work with whatever you bring.
 
----
-
 ## Section 4 -- The inference pass
 
-When documents arrive, parse each one. For each document, extract:
+0. **Parse documents** — When documents arrive, parse each one and extract fields per document type.
 
-**Bank statement:**
 - Total deposits (candidate gross receipts)
 - Recurring inflows (client payments with names)
 - Outflows to CRA (instalment payments with dates)
@@ -190,7 +168,6 @@ When documents arrive, parse each one. For each document, extract:
 - Professional memberships
 - Insurance payments (business, motor, E&O)
 
-**Sales invoices:**
 - Client names and amounts
 - Whether GST/HST was charged (registered indicator)
 - GST vs HST rate used (indicates province of supply)
@@ -198,13 +175,11 @@ When documents arrive, parse each one. For each document, extract:
 - Total revenue reconciliation against bank deposits
 - Any foreign clients (zero-rated export implications)
 
-**Purchase invoices / receipts:**
 - Expense category (current expense vs capital)
 - GST/HST paid on each (input tax credit for registered filers)
 - CCA class for capital items (Class 10, 10.1, 50, 12, etc.)
 - Any blocked categories (personal, club dues, 50% meals/entertainment)
 
-**Prior year T1 / NOA:**
 - Prior year net income (line 23600) and taxable income (line 26000)
 - Prior year tax payable and balance owing/refund
 - Prior year T2125 net business income
@@ -212,7 +187,6 @@ When documents arrive, parse each one. For each document, extract:
 - Any loss carryforwards
 - RRSP deduction limit from NOA
 
-**T4 slips (if also employed):**
 - Gross employment income (Box 14)
 - CPP contributions (Box 16)
 - EI premiums (Box 18)
@@ -220,27 +194,21 @@ When documents arrive, parse each one. For each document, extract:
 - RPP contributions (Box 20)
 - Union dues (Box 44)
 
-**GST/HST returns:**
 - Revenue reported (line 101)
 - GST/HST collected (line 105)
 - Input tax credits claimed (line 108)
 - Net tax owing/refund (line 109)
 - Instalment payments
 
-**RRSP receipts:**
 - Contribution amounts and dates
 - First 60 days of 2026 contributions (applicable to 2025)
 - RRSP deduction limit from prior NOA
 
-**After parsing everything, build an internal inference object.** Do not show the raw inference yet -- transform it into a compact summary for the user in Section 5.
-
----
+After parsing everything, build an internal inference object. Do not show the raw inference yet -- transform it into a compact summary for the user in Section 5.
 
 ## Section 5 -- The confirmation
 
-After inference, present a single compact summary message. Use a structured format that is fast to scan. Invite the user to correct anything wrong.
-
-**Example summary message:**
+0. **Present confirmation summary** — After inference, present a single compact summary message. Use a structured format that is fast to scan. Invite the user to correct anything wrong.
 
 > Here's what I pulled from your documents. Skim and tell me what's wrong.
 >
@@ -296,13 +264,9 @@ After inference, present a single compact summary message. Use a structured form
 >
 > **Is any of this wrong? Reply "looks good" or tell me what to fix.**
 
----
-
 ## Section 6 -- Gap filling
 
-After the user confirms the summary (or corrects it), ask about things that cannot be inferred from documents. Use `ask_user_input_v0` where possible.
-
-**Things that usually cannot be inferred:**
+0. **Gap filling questions** — After the user confirms the summary (or corrects it), ask about things that cannot be inferred from documents. Use ask_user_input_v0 where possible.
 
 1. **Home office** -- Cannot tell from documents whether a workspace exists and which method.
 2. **Private use percentage** -- Phone, internet, motor vehicle business-use split.
@@ -312,9 +276,7 @@ After the user confirms the summary (or corrects it), ask about things that cann
 6. **Other income** -- Interest, dividends, rental, capital gains.
 7. **Dependants** -- For credits (Canada Child Benefit is separate, but eligible dependant amount matters).
 
-**Home office gap-filling example:**
-
-Call `ask_user_input_v0` with:
+Call ask_user_input_v0 with:
 
 ```
 Q: "Home office?"
@@ -333,9 +295,9 @@ If option 3 -> rent is already captured in expenses. No home office calculation 
 If option 4 -> skip home office entirely.
 If option 5 -> explain the two conditions under s18(12): (a) principal place of business, or (b) used exclusively and on a regular and continuous basis for meeting clients. If neither applies, no claim.
 
-**Motor vehicle gap-filling example:**
+- **Home office s18(12) conditions** — Two conditions under s18(12): (a) principal place of business, or (b) used exclusively and on a regular and continuous basis for meeting clients. If neither applies, no claim.  _(s18(12) ITA)_
 
-Call `ask_user_input_v0` with:
+Call ask_user_input_v0 with:
 
 ```
 Q: "Motor vehicle -- do you have a kilometre log?"
@@ -354,9 +316,9 @@ If option 4 -> skip vehicle entirely.
 
 Flag all private-use percentages as T2 -- CPA must confirm the percentage is reasonable and supported.
 
-**CCA / immediate expensing example:**
+- **Vehicle business percentage** — Business % = business km / total km
 
-Call `ask_user_input_v0` with:
+Call ask_user_input_v0 with:
 
 ```
 Q: "Capital equipment -- claim method?"
@@ -371,13 +333,11 @@ If option 1 -> apply immediate expensing under the Accelerated Investment Incent
 If option 2 -> apply standard CCA rates (half-year rule if not AIIP eligible).
 If option 3 -> recommend immediate expensing if total capital purchases are well under the $1.5M limit (they will be for a freelancer). Flag for reviewer.
 
----
+- **AIIP immediate expensing limit** — $1.5M CAD (per year, for CCPCs and unincorporated businesses)
 
 ## Section 7 -- The final handoff
 
-Once gap-filling is done, produce a final handoff message and hand off to `ca-return-assembly`.
-
-**Example handoff message:**
+0. **Handoff to ca-return-assembly** — Once gap-filling is done, produce a final handoff message and hand off to ca-return-assembly.
 
 > Intake complete. Here's what's going to the return assembly:
 >
@@ -398,9 +358,7 @@ Once gap-filling is done, produce a final handoff message and hand off to `ca-re
 >
 > Starting now.
 
-Then internally invoke `ca-return-assembly` with the structured intake package.
-
----
+Then internally invoke ca-return-assembly with the structured intake package.
 
 ## Section 8 -- Structured intake package (internal format)
 
@@ -500,8 +458,6 @@ The downstream skill (`ca-return-assembly`) consumes a JSON structure. It is int
 }
 ```
 
----
-
 ## Section 9 -- Refusal handling
 
 Refusals fire from either the refusal sweep (Section 2) or during inference (e.g., incorporated structure discovered in documents).
@@ -524,37 +480,33 @@ When a refusal fires:
 >
 > I can't help with this one.
 
----
-
 ## Section 10 -- Self-checks
 
-**Check IN1 -- No one-question-at-a-time prose in the refusal sweep.** If the skill asked "Question 1 of 10" or walked through questions as separate messages, check fails.
+Check IN1 -- No one-question-at-a-time prose in the refusal sweep. If the skill asked "Question 1 of 10" or walked through questions as separate messages, check fails.
 
-**Check IN2 -- Refusal sweep used ask_user_input_v0.** The first substantive interaction used the interactive tool, not prose questions.
+Check IN2 -- Refusal sweep used ask_user_input_v0. The first substantive interaction used the interactive tool, not prose questions.
 
-**Check IN3 -- Upload-first flow honoured.** After refusal sweep, the skill asked for a document dump before asking any content questions.
+Check IN3 -- Upload-first flow honoured. After refusal sweep, the skill asked for a document dump before asking any content questions.
 
-**Check IN4 -- Documents were parsed and inferred before asking questions.** The inference summary (Section 5) was shown before gap-filling questions (Section 6).
+Check IN4 -- Documents were parsed and inferred before asking questions. The inference summary (Section 5) was shown before gap-filling questions (Section 6).
 
-**Check IN5 -- Gap-filling only asked about things NOT visible in documents.** If the skill asked "did you contribute to RRSP" after the bank statement showed RRSP payments, check fails.
+Check IN5 -- Gap-filling only asked about things NOT visible in documents. If the skill asked "did you contribute to RRSP" after the bank statement showed RRSP payments, check fails.
 
-**Check IN6 -- Open flags captured.** Anything ambiguous, risky, or attention-worthy during inference is in the `open_flags` list in the handoff package.
+Check IN6 -- Open flags captured. Anything ambiguous, risky, or attention-worthy during inference is in the open_flags list in the handoff package.
 
-**Check IN7 -- Handoff to `ca-return-assembly` is explicit.** The user was told "I'm now going to run the return preparation," and the downstream orchestrator was explicitly invoked with the intake package.
+Check IN7 -- Handoff to ca-return-assembly is explicit. The user was told "I'm now going to run the return preparation," and the downstream orchestrator was explicitly invoked with the intake package.
 
-**Check IN8 -- Reviewer step was stated upfront and reiterated before handoff.** The opening message mentioned CPA/professional signoff.
+Check IN8 -- Reviewer step was stated upfront and reiterated before handoff. The opening message mentioned CPA/professional signoff.
 
-**Check IN9 -- Refusals were clean.** No hedging. Stop means stop.
+Check IN9 -- Refusals were clean. No hedging. Stop means stop.
 
-**Check IN10 -- No meta-commentary about workflow phases.** The skill did not say "Phase 1," "Phase 2," etc.
+Check IN10 -- No meta-commentary about workflow phases. The skill did not say "Phase 1," "Phase 2," etc.
 
-**Check IN11 -- Total user-facing turn count is low.** Target: 8 turns or fewer from start to handoff for a prepared user (1 refusal batch + 1 upload + 1 confirmation + 1-3 gap fills + 1 handoff). More than 12 turns for a normal intake is a check failure.
+Check IN11 -- Total user-facing turn count is low. Target: 8 turns or fewer from start to handoff for a prepared user (1 refusal batch + 1 upload + 1 confirmation + 1-3 gap fills + 1 handoff). More than 12 turns for a normal intake is a check failure.
 
-**Check IN12 -- GST/HST registration status was established.** Registered vs small supplier was confirmed before inference, as it changes how every transaction is classified.
+Check IN12 -- GST/HST registration status was established. Registered vs small supplier was confirmed before inference, as it changes how every transaction is classified.
 
-**Check IN13 -- Province was established.** Province determines GST vs HST rate, provincial tax calculation method, and whether a separate provincial return is needed (Quebec).
-
----
+Check IN13 -- Province was established. Province determines GST vs HST rate, provincial tax calculation method, and whether a separate provincial return is needed (Quebec).
 
 ## Section 11 -- Performance targets
 
@@ -572,15 +524,12 @@ For an unprepared user (has to go fetch documents):
 - Rest: same
 - **Total**: 15-25 minutes
 
----
-
 ## Section 12 -- Cross-skill references
 
-**Inputs:** User-provided documents and answers.
+User-provided documents and answers.
 
-**Outputs:** Structured intake package consumed by `ca-return-assembly`.
+Structured intake package consumed by `ca-return-assembly`.
 
-**Downstream skills triggered (via ca-return-assembly):**
 - `canada-gst-hst` -- GST34 return
 - `ca-fed-t2125` -- Statement of Business or Professional Activities
 - `ca-fed-t1-return` -- Federal T1 individual return
@@ -588,18 +537,32 @@ For an unprepared user (has to go fetch documents):
 - `ca-fed-instalments` -- Instalment schedule for next year
 - Provincial return (Quebec TP-1 if applicable; other provinces calculated on T1)
 
----
-
 ### Change log
 
 - **v0.1 (April 2026):** Initial draft. Upload-first, inference-then-confirm pattern modelled on mt-freelance-intake v0.1.
 
 ## End of Intake Skill v0.1
 
----
-
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, EA, tax attorney, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
 
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
+The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
+
+<!-- openaccountants-cta-block -->
+
+---
+
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

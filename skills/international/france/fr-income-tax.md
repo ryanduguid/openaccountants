@@ -1,27 +1,25 @@
 ---
 name: fr-income-tax
 description: >
-  Use this skill whenever asked about French income tax for self-employed individuals (auto-entrepreneurs, micro-entrepreneurs, or professions libérales). Trigger on phrases like "impôt sur le revenu France", "déclaration 2042", "micro-entrepreneur", "auto-entrepreneur", "BNC", "BIC", "professions libérales France", "abattement forfaitaire", "Urssaf", "cotisations sociales", "régime micro", "régime réel", "IR France", "acomptes provisionnels", "Revenu fiscal de référence", "Crédit d'impôt", "BNP Paribas statement", "Qonto expense", "Shine business", "Stripe France", or any question about filing or computing French income tax for a self-employed individual. This skill covers progressive brackets (0--45%), micro-entrepreneur abattements, BNC/BIC regimes, social charges, tax credits, filing deadlines, and withholding (prélèvement à la source). ALWAYS read this skill before touching any French income tax work.
 version: 2.0
 jurisdiction: FR
 tax_year: 2025
-tier: 2
-last_updated: 2026-06-12
+last_updated: 2026-04-13
+verified_by: pending
+depends_on: - income-tax-workflow-base
 category: international
-depends_on:
-  - income-tax-workflow-base
+tier: 2
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# France Income Tax (Impôt sur le Revenu) -- Self-Employed Skill v2.0
-
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
-
----
+# FR Income Tax
 
 ## Section 1 -- Quick Reference
 
+**Section 1 -- Quick Reference**
+
 | Field | Value |
-|---|---|
+| --- | --- |
 | Country | France (République française) |
 | Tax | Impôt sur le Revenu (IR) + Prélèvements sociaux (social charges) |
 | Currency | EUR only |
@@ -36,70 +34,67 @@ depends_on:
 
 ### Progressive Rate Table (2025 -- Tranches) [T1]
 
+**Progressive Rate Table (2025 -- Tranches) [T1]**
+
 | Revenu net imposable (EUR/part) | Rate |
-|---|---|
+| --- | --- |
 | 0 -- 11,497 | 0% |
-| 11,498 -- 26,231 | 11% |
-| 26,232 -- 74,545 | 30% |
-| 74,546 -- 160,336 | 41% |
-| Above 160,336 | 45% |
+| 11,498 -- 29,315 | 11% |
+| 26,232 -- 83,823 | 30% |
+| 74,546 -- 180,294 | 41% |
+| Above 180,294 | 45% |
 
-**France uses a family quotient system (quotient familial). Rates apply per "part" (share). A single person = 1 part; a married couple = 2 parts; each child = 0.5 additional part. Taxable income is divided by number of parts, rates applied, then multiplied back.**
-
-**Contribution Exceptionnelle sur les Hauts Revenus (CEHR):** 3% on income between EUR 250,001--500,000 (single); 4% above EUR 500,000.
+- **Quotient familial system** — France uses a family quotient system (quotient familial). Rates apply per "part" (share). A single person = 1 part; a married couple = 2 parts; each child = 0.5 additional part. Taxable income is divided by number of parts, rates applied, then multiplied back.
+- **Contribution Exceptionnelle sur les Hauts Revenus (CEHR)** — 3% on income between EUR 250,001--500,000 (single); 4% above EUR 500,000
 
 ### Micro-Entrepreneur / Auto-Entrepreneur Abattements [T1]
 
+**Micro-Entrepreneur / Auto-Entrepreneur Abattements [T1]**
+
 | Activity Type | Abattement (flat deduction) | Minimum Abattement |
-|---|---|---|
+| --- | --- | --- |
 | Sale of goods (BIC ventes) | 71% | EUR 305 |
 | Services commerciaux (BIC services) | 50% | EUR 305 |
 | Professions libérales (BNC) | 34% | EUR 305 |
 
-**Taxable income = Gross receipts x (100% - Abattement %).** No actual expense deduction for micro-entrepreneurs.
+- **Taxable income formula for micro-entrepreneurs** — Taxable income = Gross receipts x (100% - Abattement %). No actual expense deduction for micro-entrepreneurs.
 
 ### Micro-Entrepreneur Revenue Thresholds (2025) [T1]
 
+**Micro-Entrepreneur Revenue Thresholds (2025) [T1]**
+
 | Activity | Threshold for Micro Regime |
-|---|---|
+| --- | --- |
 | Sales of goods | EUR 188,700 |
 | Services / professions libérales | EUR 77,700 |
 
 ### Conservative Defaults [T1]
 
+**Conservative Defaults [T1]**
+
 | Ambiguity | Default |
-|---|---|
+| --- | --- |
 | Regime unknown | Micro-entrepreneur (simplest; check threshold) |
 | Activity type unknown | Professions libérales (34% abattement -- most conservative) |
 | Parts familiales unknown | 1 part (single) |
 | Crédit d'impôt eligibility unknown | No credit applied |
 | Prélèvement à la source rate unknown | Apply standard monthly withholding |
 
----
-
 ## Section 2 -- Required Inputs and Refusal Catalogue
 
 ### Required Inputs
 
-**Minimum viable:** Bank statement for the full calendar year (January--December) in CSV, PDF, or pasted text. Confirmation of regime (micro-entrepreneur or régime réel) and activity type (BIC ventes, BIC services, or BNC).
-
-**Recommended:** Déclaration CA12 or CA3 (Urssaf monthly/quarterly turnover declarations), all client invoices, Urssaf social charge payment receipts, prior year avis d'imposition.
-
-**Ideal:** Complete comptabilité (for régime réel), all Certificats de retenue à la source, pièces justificatives for expense deductions, family situation certificate.
+- **Minimum viable** — Bank statement for the full calendar year (January--December) in CSV, PDF, or pasted text. Confirmation of regime (micro-entrepreneur or régime réel) and activity type (BIC ventes, BIC services, or BNC).
+- **Recommended** — Déclaration CA12 or CA3 (Urssaf monthly/quarterly turnover declarations), all client invoices, Urssaf social charge payment receipts, prior year avis d'imposition.
+- **Ideal** — Complete comptabilité (for régime réel), all Certificats de retenue à la source, pièces justificatives for expense deductions, family situation certificate.
 
 ### Refusal Catalogue
 
-**R-FR-1 -- Sociétés (SARL, SAS, SA, etc.).** "Corporate entities file Impôt sur les Sociétés (IS). Out of scope."
-
-**R-FR-2 -- Non-residents with French income.** "Non-resident taxation involves different rate schedules, withholding rates, and treaty analysis. Out of scope -- escalate."
-
-**R-FR-3 -- Régime réel simplifié / normal (complex).** "The régime réel with complex depreciation, asset registers, and detailed accounting requires an Expert-Comptable. This skill handles micro-entrepreneur abattement method and basic BNC réel simplifié."
-
-**R-FR-4 -- Plus-values (capital gains).** "Capital gains on securities, real estate, or business assets require specialist computation. Escalate."
-
-**R-FR-5 -- Foreign income and DTAA.** "Double taxation treaty analysis with non-French income sources is outside scope. Escalate."
-
----
+- **R-FR-1** — Corporate entities file Impôt sur les Sociétés (IS). Out of scope. (Sociétés (SARL, SAS, SA, etc.))  _(R-FR-1)_
+- **R-FR-2** — Non-resident taxation involves different rate schedules, withholding rates, and treaty analysis. Out of scope -- escalate. (Non-residents with French income)  _(R-FR-2)_
+- **R-FR-3** — The régime réel with complex depreciation, asset registers, and detailed accounting requires an Expert-Comptable. This skill handles micro-entrepreneur abattement method and basic BNC réel simplifié. (Régime réel simplifié / normal (complex))  _(R-FR-3)_
+- **R-FR-4** — Capital gains on securities, real estate, or business assets require specialist computation. Escalate. (Plus-values (capital gains))  _(R-FR-4)_
+- **R-FR-5** — Double taxation treaty analysis with non-French income sources is outside scope. Escalate. (Foreign income and DTAA)  _(R-FR-5)_
 
 ## Section 3 -- Transaction Pattern Library
 
@@ -107,8 +102,10 @@ This is the deterministic pre-classifier. When a bank statement line matches a p
 
 ### 3.1 Income Patterns (Crédits)
 
+**3.1 Income Patterns (Crédits)**
+
 | Pattern | Tax Line | Treatment | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | VIREMENT [client name] / VIR [client] | Chiffre d'affaires (CA) / Recettes | Gross receipts | Professional fee or service income |
 | VIREMENT SEPA [client] | Recettes BNC/BIC | Revenue | Standard SEPA transfer from client |
 | STRIPE PAYOUT / STRIPE TRANSFER | Recettes | Revenue | Stripe France payout -- match to invoices |
@@ -126,16 +123,16 @@ This is the deterministic pre-classifier. When a bank statement line matches a p
 
 ### 3.2 Expense Patterns (Débits) -- Régime Réel Filers Only
 
-*(Micro-entrepreneurs do NOT deduct actual expenses -- abattement covers all expenses)*
+**3.2 Expense Patterns (Débits) -- Régime Réel Filers Only**
 
 | Pattern | Tax Category | Treatment | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | LOYER BUREAU / BAIL PROFESSIONNEL [landlord] | Loyers et charges locatives | Fully deductible | Dedicated business premises |
 | EDF / ENGIE / ÉLECTRICITÉ | Charges de bureau | Business portion deductible | Home office: apportion by floor area |
 | FREE / SFR / ORANGE / BOUYGUES (internet) | Frais de télécommunications | Business portion only | Mixed use: apportion |
 | FREE MOBILE / SFR / ORANGE (mobile) | Frais de télécommunications | Business portion only | Mixed use: apportion |
 | SNCF / TGV / OUI.SNCF | Frais de déplacement | Deductible if business travel | Keep billets as evidence |
-| AIR FRANCE / TRANSAVIA / EASY JET | Frais de déplacement | Deductible if business | |
+| AIR FRANCE / TRANSAVIA / EASY JET | Frais de déplacement | Deductible if business |  |
 | RESTAURANT [name] / REPAS AFFAIRES | Frais de repas / réception | Business portion deductible | Must document business purpose, attendees |
 | FNAC / AMAZON (books/tech) | Fournitures / matériel | Deductible if professional | Separate business from personal orders |
 | ADOBE / MICROSOFT / GOOGLE WORKSPACE | Abonnements logiciels | Fully deductible | Business SaaS |
@@ -149,16 +146,18 @@ This is the deterministic pre-classifier. When a bank statement line matches a p
 | BANQUE FRAIS / FRAIS TENUE DE COMPTE [BNP/SG/CA/LCL] | Frais bancaires | Deductible | Business account charges |
 | STRIPE FEE / PAYPAL FEE | Commissions bancaires | Deductible | Payment gateway fees |
 
+(Micro-entrepreneurs do NOT deduct actual expenses -- abattement covers all expenses)
+
 ### 3.3 Urssaf / Social Charges Patterns
 
+**3.3 Urssaf / Social Charges Patterns**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | URSSAF PRÉLÈVEMENT / URSSAF AUTO ENTREPRENEUR | Social contributions (not IR) | Urssaf collects social charges on gross turnover; not an expense deduction for micro-entrepreneurs |
 | CIPAV COTISATIONS | Social contributions | Mandatory pension for professions libérales (not regulated) |
 | CARPIMKO / CARMF / CARCDSF | Social contributions | Mandatory pension for specific professions |
 | PRÉLÈVEMENT À LA SOURCE / PAS | Income tax prepayment | Monthly/quarterly IR withholding -- credit against annual IR |
-
----
 
 ## Section 4 -- Worked Examples
 
@@ -222,68 +221,36 @@ Monthly "prélèvement à la source" (PAS) -- the monthly income tax prepayment 
 
 **Classification:** EXCLUDE from income/expenses. Record: PAS paid EUR 420/month = EUR 5,040/year (credit against annual IR).
 
----
-
 ## Section 5 -- Tier 1 Rules (When Data Is Clear)
 
 ### 5.1 Micro-Entrepreneur / Micro-BNC / Micro-BIC Regime
 
-**Legislation:** CGI Art. 50-0 (BIC); CGI Art. 102 ter (BNC)
-
-Taxable income = Gross receipts x (1 - abattement %).
-
-- No actual expense deduction
-- Minimum abattement EUR 305 (even if receipts are lower)
-- Urssaf computed on GROSS receipts (not post-abattement)
-- Income tax computed on POST-abattement income via standard IR brackets
+- **Legislation** — CGI Art. 50-0 (BIC); CGI Art. 102 ter (BNC)  _(CGI Art. 50-0; CGI Art. 102 ter)_
+- **Taxable income formula** — Taxable income = Gross receipts x (1 - abattement %).  _(CGI Art. 50-0; CGI Art. 102 ter)_
+- **Micro regime characteristics** — No actual expense deduction; minimum abattement EUR 305 (even if receipts are lower); Urssaf computed on GROSS receipts (not post-abattement); Income tax computed on POST-abattement income via standard IR brackets.  _(CGI Art. 50-0; CGI Art. 102 ter)_
 
 ### 5.2 BNC Régime Réel Simplifié (Déclaration 2035)
 
-For professions libérales above EUR 77,700 or who opt out of micro:
-
-- Declare actual receipts and actual expenses on Form 2035
-- Deductible expenses: rent, telecommunications (business %), travel, professional insurance, accounting fees, equipment depreciation, software
-- NOT deductible: personal expenses, income tax itself
-- Partial deductibility of social charges: Madelin health/provident contributions ARE deductible from BNC income
+- **Applicability and rules** — For professions libérales above EUR 77,700 or who opt out of micro: Declare actual receipts and actual expenses on Form 2035. Deductible expenses: rent, telecommunications (business %), travel, professional insurance, accounting fees, equipment depreciation, software. NOT deductible: personal expenses, income tax itself. Partial deductibility of social charges: Madelin health/provident contributions ARE deductible from BNC income.
 
 ### 5.3 Tax Computation Flow
 
-```
-Gross professional receipts (chiffre d'affaires)
-x (1 - abattement %) for micro, OR
-- Actual expenses (régime réel)
-= Net professional income (BNC or BIC)
-+ Other income (salaires, pensions, revenus fonciers)
-= Revenu brut global
-- Charges déductibles (alimony, certain pension contributions)
-= Revenu net global
-Divide by number of parts (quotient familial)
-Apply progressive rate table
-x Number of parts
-= IR tentative
-Cap benefit of quotient familial (plafonnement)
-+ CEHR if applicable
-- Crédits et réductions d'impôt
-= IR net
-```
+- **Tax computation flow** — Gross professional receipts (chiffre d'affaires) x (1 - abattement %) for micro, OR - Actual expenses (régime réel) = Net professional income (BNC or BIC) + Other income (salaires, pensions, revenus fonciers) = Revenu brut global - Charges déductibles (alimony, certain pension contributions) = Revenu net global Divide by number of parts (quotient familial) Apply progressive rate table x Number of parts = IR tentative Cap benefit of quotient familial (plafonnement) + CEHR if applicable - Crédits et réductions d'impôt = IR net
 
 ### 5.4 Prélèvement à la Source (PAS) -- Monthly Withholding
 
-Since 2019, French taxpayers pay income tax monthly via PAS (automatic bank debit). For self-employed:
-- Rate based on prior year income (taux personnalisé) or neutral rate for first year
-- Monthly debit from bank account
-- At annual declaration time, actual tax is computed; if PAS exceeded, refund issued
-
-PAS payments are NOT expenses -- they are advance payments of the annual IR.
+- **PAS rules** — Since 2019, French taxpayers pay income tax monthly via PAS (automatic bank debit). For self-employed: Rate based on prior year income (taux personnalisé) or neutral rate for first year; Monthly debit from bank account; At annual declaration time, actual tax is computed; if PAS exceeded, refund issued. PAS payments are NOT expenses -- they are advance payments of the annual IR.
 
 ### 5.5 Cotisation Foncière des Entreprises (CFE)
 
-Local business property tax. Mandatory for all self-employed including micro-entrepreneurs. Deductible expense for régime réel filers. NOT deductible for micro-entrepreneurs.
+- **CFE treatment** — Local business property tax. Mandatory for all self-employed including micro-entrepreneurs. Deductible expense for régime réel filers. NOT deductible for micro-entrepreneurs.
 
 ### 5.6 Filing Deadlines
 
+**5.6 Filing Deadlines**
+
 | Item | Deadline |
-|---|---|
+| --- | --- |
 | Déclaration 2042 (online, most areas) | Late May / early June (varies by département) |
 | Déclaration 2042 (paper) | Mid-May |
 | Déclaration 2035 (BNC réel) | Same window as 2042 |
@@ -292,51 +259,39 @@ Local business property tax. Mandatory for all self-employed including micro-ent
 
 ### 5.7 Penalties
 
+**5.7 Penalties**
+
 | Offence | Penalty |
-|---|---|
+| --- | --- |
 | Late filing | 10% of tax due (without notice); 40% if filed after formal notice |
 | Under-declaration (omission) | 40% if deliberate; 80% if fraudulent |
 | Late payment | 0.20% per month (2.4% per year) |
 | Non-declaration | 100% penalty on tax assessed by DGFiP |
 
----
-
 ## Section 6 -- Tier 2 Catalogue (Reviewer Judgement Required)
 
 ### 6.1 Regime Optimisation (Micro vs Réel)
 
-Micro is simpler but not always optimal. Réel is better when actual expenses exceed the abattement percentage. For BNC professions libérales: if actual costs > 34% of receipts, réel simplifié yields lower tax. For BIC services: if costs > 50% of receipts, réel is better.
-
-Flag for reviewer to compute both and advise.
+- **Optimisation guidance** — Micro is simpler but not always optimal. Réel is better when actual expenses exceed the abattement percentage. For BNC professions libérales: if actual costs > 34% of receipts, réel simplifié yields lower tax. For BIC services: if costs > 50% of receipts, réel is better. Flag for reviewer to compute both and advise.
 
 ### 6.2 Quotient Familial (Family Quotient)
 
-The number of fiscal parts significantly impacts tax. Changes to family situation (marriage, children, divorce) must be declared. The benefit of each additional 0.5 part is capped at EUR 1,751 reduction in tax per half-part (2025 figure).
-
-Flag for reviewer to confirm family situation and number of parts.
+- **Quotient familial cap** — The number of fiscal parts significantly impacts tax. Changes to family situation (marriage, children, divorce) must be declared. The benefit of each additional 0.5 part is capped at EUR 1,751 reduction in tax per half-part (2025 figure). Flag for reviewer to confirm family situation and number of parts.
 
 ### 6.3 Crédits d'Impôt (Tax Credits)
 
-Several credits reduce IR directly:
-- Crédit d'impôt garde d'enfants (children under 6): 50% of costs, max EUR 3,500 per child
-- Crédit d'impôt emploi à domicile (home help): 50% of wages paid, max EUR 12,000
-- Crédit d'impôt formation du dirigeant: EUR 40/hour of training
-
-Flag for reviewer to identify applicable credits.
+- **Tax credits list** — Several credits reduce IR directly: Crédit d'impôt garde d'enfants (children under 6): 50% of costs, max EUR 3,500 per child; Crédit d'impôt emploi à domicile (home help): 50% of wages paid, max EUR 12,000; Crédit d'impôt formation du dirigeant: EUR 40/hour of training. Flag for reviewer to identify applicable credits.
 
 ### 6.4 Madelin Deductions (Régime Réel BNC Only)
 
-Contributions to Madelin-qualified health, disability, provident, and pension insurance contracts are fully deductible from BNC income (for régime réel filers). Not available to micro-entrepreneurs.
+- **Madelin deductions** — Contributions to Madelin-qualified health, disability, provident, and pension insurance contracts are fully deductible from BNC income (for régime réel filers). Not available to micro-entrepreneurs.
 
 ### 6.5 Home Office Deduction (Régime Réel)
 
-For régime réel BNC filers working from home: proportionate rent, electricity, internet, and heating may be deducted based on floor area ratio of the office to total home area. Must be documented and consistent.
-
----
+- **Home office deduction** — For régime réel BNC filers working from home: proportionate rent, electricity, internet, and heating may be deducted based on floor area ratio of the office to total home area. Must be documented and consistent.
 
 ## Section 7 -- Excel Working Paper Template
 
-```
 IMPÔT SUR LE REVENU -- WORKING PAPER 2025
 Contribuable: _______________  Numéro fiscal: ___________
 Régime: Micro-entrepreneur (BNC/BIC) / Régime réel (BNC) [circle one]
@@ -393,16 +348,15 @@ REVIEWER FLAGS:
   [ ] PAS monthly payments summed from bank statement?
   [ ] Crédits d'impôt identified?
   [ ] Madelin deductions applicable (réel BNC only)?
-```
-
----
 
 ## Section 8 -- Bank Statement Reading Guide
 
 ### French Bank Statement Formats
 
+**French Bank Statement Formats**
+
 | Bank | Format | Key Fields |
-|---|---|---|
+| --- | --- | --- |
 | BNP Paribas | CSV / PDF | Date opération, Libellé, Débit EUR, Crédit EUR, Solde EUR |
 | Société Générale | CSV | Date, Libellé, Montant, Devise |
 | Crédit Agricole | CSV | Date, Libellé, Débit, Crédit, Solde |
@@ -416,8 +370,10 @@ REVIEWER FLAGS:
 
 ### Key French Banking Narrations
 
+**Key French Banking Narrations**
+
 | Narration | Meaning | Classification Hint |
-|---|---|---|
+| --- | --- | --- |
 | VIR SEPA / VIREMENT | Bank transfer credit | Potential professional income |
 | PRÉLÈVEMENT / PRÉLÈV | Direct debit | Expense or tax payment |
 | PRÉLÈVEMENT FISCAL DGFIP PAS | Prélèvement à la source | Tax prepayment -- exclude |
@@ -427,8 +383,6 @@ REVIEWER FLAGS:
 | REMBOURSEMENT / REMB | Refund | May reduce expense |
 | INTÉRÊTS | Interest | Other income |
 | AIDES CAF / ALLOCATION | Social benefits | Generally not taxable |
-
----
 
 ## Section 9 -- Onboarding Fallback
 
@@ -457,14 +411,14 @@ ONBOARDING QUESTIONS -- FRANCE IMPÔT SUR LE REVENU
 10. Crédits d'impôt potentiels (garde d'enfants, emploi à domicile)?
 ```
 
----
-
 ## Section 10 -- Reference Material
 
 ### Key Legislation / Forms
 
+**Key Legislation / Forms**
+
 | Topic | Reference |
-|---|---|
+| --- | --- |
 | Micro-BNC | CGI Art. 102 ter; Form 2042 C PRO |
 | Micro-BIC | CGI Art. 50-0; Form 2042 C PRO |
 | BNC régime réel simplifié | CGI Art. 93; Form 2035 |
@@ -487,8 +441,10 @@ ONBOARDING QUESTIONS -- FRANCE IMPÔT SUR LE REVENU
 
 ### Changelog
 
+**Changelog**
+
 | Version | Date | Change |
-|---|---|---|
+| --- | --- | --- |
 | 2.0 | April 2026 | Full rewrite to v2.0 structure; French bank formats; Qonto/Shine business bank patterns; worked examples; micro vs réel regime table |
 | 1.0 | 2025 | Initial version |
 
@@ -501,8 +457,6 @@ ONBOARDING QUESTIONS -- FRANCE IMPÔT SUR LE REVENU
 - [ ] CEHR checked for income > EUR 250,000?
 - [ ] Crédits d'impôt applied after computing IR (not as deductions from income)?
 
----
-
 ## PROHIBITIONS
 
 - NEVER deduct Urssaf social contributions as a business expense for micro-entrepreneurs (abattement covers all costs)
@@ -513,10 +467,41 @@ ONBOARDING QUESTIONS -- FRANCE IMPÔT SUR LE REVENU
 - NEVER advise on non-resident French income -- escalate
 - NEVER present tax calculations as definitive -- always label as estimated and direct client to their Expert-Comptable for confirmation
 
----
-
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as an Expert-Comptable, Avocat Fiscaliste, or equivalent licensed practitioner in France) before filing or acting upon.
 
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
+The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
+
+## Talk to a verified accountant
+
+This skill is a tool, not an engagement. Every taxpayer's situation is
+different, and the rules in the skill may not match your specific facts.
+
+To speak with one of the licensed accountants who verifies skills for your
+jurisdiction — **no liability on either side until you and the accountant sign
+a formal engagement letter** — book a free 30-minute call:
+
+**→ [Book a call](https://calendly.com/openaccountants-info/30min)**
+
+We'll route you to the named verifier covering your country or state. You can
+also see the full list of verified accountants at
+[openaccountants.com/network](https://openaccountants.com/network).
+
+<!-- openaccountants-cta-block -->
+
+---
+
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

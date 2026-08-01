@@ -3,42 +3,39 @@
 > Open-source accounting skills for Germany. Upload to Claude, ChatGPT, or any AI assistant.
 > Tax, bookkeeping, payroll, formation, financial statements, and more. Free and open source.
 
-## Verification status
-
-Research-verified — accountant verification in progress.
-[Claim Germany →](https://www.openaccountants.com/onboarding/accountant)
-
 ## What's in this folder
 
 1. `foundation.md`
 2. `intake.md`
-3. `de-crypto-tax.md`
-4. `de-estimated-tax.md`
-5. `de-income-tax.md`
-6. `de-payroll.md`
-7. `de-rental-income.md`
-8. `de-social-contributions.md`
-9. `de-trade-tax.md`
-10. `germany-bookkeeping.md`
-11. `germany-einvoice.md`
-12. `germany-financial-statements.md`
-13. `germany-formation.md`
-14. `germany-payroll.md`
-15. `germany-tax-optimization.md`
-16. `germany-transfer-pricing.md`
-17. `germany-vat-return.md`
-18. `references.md`
-19. `eu-vat-directive.md`
-20. `bookkeeping-workflow-base.md`
-21. `einvoice-workflow-base.md`
-22. `payroll-workflow-base.md`
-23. `company-formation-workflow-base.md`
-24. `financial-statements-workflow-base.md`
-25. `transfer-pricing-workflow-base.md`
-26. `crypto-tax-workflow-base.md`
-27. `germany-guided-intake.md`
-28. `germany-return-assembly.md`
-29. `rates.2025.json` — machine-readable 2025 rates & thresholds extracted from the guides above, with per-figure authority citations
+3. `de-capital-gains.md`
+4. `de-crypto-tax.md`
+5. `de-einkommensteuer-freelancer.md`
+6. `de-estimated-tax.md`
+7. `de-income-tax.md`
+8. `de-payroll.md`
+9. `de-rental-income.md`
+10. `de-social-contributions.md`
+11. `de-trade-tax.md`
+12. `de-ustva-vat-return.md`
+13. `germany-bookkeeping.md`
+14. `germany-einvoice.md`
+15. `germany-financial-statements.md`
+16. `germany-formation.md`
+17. `germany-payroll.md`
+18. `germany-tax-optimization.md`
+19. `germany-transfer-pricing.md`
+20. `germany-vat-return.md`
+21. `references.md`
+22. `eu-vat-directive.md`
+23. `bookkeeping-workflow-base.md`
+24. `einvoice-workflow-base.md`
+25. `payroll-workflow-base.md`
+26. `company-formation-workflow-base.md`
+27. `financial-statements-workflow-base.md`
+28. `transfer-pricing-workflow-base.md`
+29. `crypto-tax-workflow-base.md`
+30. `germany-guided-intake.md`
+31. `germany-return-assembly.md`
 
 ## Also known as
 
@@ -67,7 +64,7 @@ The AI will:
 
 **This is not tax, legal, or financial advice.** Everything produced must be reviewed and signed off by a qualified Steuerberater before filing or acting upon.
 
-The most up-to-date, verified version of these skills is maintained at [openaccountants.com](https://openaccountants.com).
+The most up-to-date, verified version of these skills is maintained at [openaccountants.com](https://www.openaccountants.com).
 
 ---
 
@@ -79,9 +76,9 @@ These Germany tax skills need your eye. Every rate, threshold, and form referenc
 
 1. Download the files in this folder
 2. Check the rates against Finanzamt / Bundeszentralamt für Steuern's website
-3. Email your corrections to **info@openaaccountants.com** — Word doc, Excel, PDF, tracked changes, whatever works
+3. Email your corrections to **info@openaccountants.com** — Word doc, Excel, PDF, tracked changes, whatever works
 
-We'll update the skill and credit you publicly as the verified reviewer at [openaccountants.com](https://openaccountants.com).
+We'll update the skill and credit you publicly as the verified reviewer at [openaccountants.com](https://www.openaccountants.com).
 
 Or if you're comfortable with GitHub: fork the repo, fix the source file under `skills/`, and submit a PR.
 
@@ -90,5 +87,5 @@ Or if you're comfortable with GitHub: fork the repo, fix the source file under `
 ---
 
 *OpenAccountants — open-source accounting skills for AI*
-*134 countries + 51 US states — [openaccountants.com](https://openaccountants.com)*
-*info@openaaccountants.com*
+*134 countries + 51 US states — [openaccountants.com](https://www.openaccountants.com)*
+*info@openaccountants.com*

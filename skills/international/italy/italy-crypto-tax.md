@@ -1,28 +1,27 @@
 ---
 name: italy-crypto-tax
 description: >
-  Use this skill whenever asked about Italy cryptocurrency or digital asset taxation. Trigger on phrases like "crypto tax Italy", "tasse crypto Italia", "Bitcoin Italy", "cripto-attività", "cryptocurrency gains Italy", "imposta sostitutiva crypto", "staking Italy", "mining income Italy", "NFT tax Italy", "Quadro RT crypto", "Quadro RW crypto", "IVCA crypto", "Modello Redditi PF crypto", "Coinbase Italy tax", "Binance Italy", "Revolut crypto Italy", "DAC8 Italy", "Legge di Bilancio crypto", or any question about the income tax, capital gains, wealth tax, or reporting obligations for cryptocurrency, tokens, or digital assets for Italian tax residents. Covers Legge di Bilancio 2023 (L. 197/2022) classification, Legge di Bilancio 2025 (L. 207/2024) rate changes, IVCA wealth tax, Quadro RW monitoring, and Quadro RT Section V reporting. ALWAYS read this skill before touching any Italy crypto work.
 version: 1.0
 jurisdiction: IT
 tax_year: 2025
-tier: 2
-last_updated: 2026-06-12
-category: crypto
-depends_on:
-  - italy-income-tax
+last_updated: 2026-05-23
 verified_by: pending
+depends_on: - italy-income-tax
+category: crypto
+tier: 2
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Italy Crypto / Digital Assets Tax Skill v1.0
+# Italy Crypto Tax
 
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
-
----
+## Italy Crypto / Digital Assets Tax Skill v1.0
 
 ## Section 1 -- Quick Reference
 
+**Quick Reference**
+
 | Field | Value |
-|---|---|
+| --- | --- |
 | Country | Italy (Repubblica Italiana) |
 | Tax | Imposta Sostitutiva on Crypto-Asset Gains + IVCA Wealth Tax |
 | Currency | EUR (all values must be in EUR at transaction date) |
@@ -39,8 +38,10 @@ verified_by: pending
 
 ### Tax Rate Summary (2025)
 
+**Tax Rate Summary (2025)**
+
 | Item | Rate / Threshold |
-|---|---|
+| --- | --- |
 | Capital gains flat tax (imposta sostitutiva) | **26%** on all net crypto gains |
 | De minimis exemption | **None** — abolished from 1 January 2025 (was €2,000 until 31 December 2024) |
 | IVCA (crypto wealth tax) | **0.2%** per annum on value at 31 December (pro-rata if held part-year) |
@@ -49,24 +50,26 @@ verified_by: pending
 
 ### Conservative Defaults
 
+**Conservative Defaults**
+
 | Ambiguity | Default |
-|---|---|
+| --- | --- |
 | Unknown cost basis | STOP — cannot compute gain without acquisition cost |
 | Unknown residency | STOP — Italy taxes worldwide income only for tax residents |
 | Token classification unclear | Treat as cripto-attività under Art. 67(1)(c-sexies) TUIR (taxable) |
 | Unsure whether gains exceed thresholds | Compute precisely — no de minimis exemption from 2025 |
 | Unsure about IVCA | Assume IVCA due unless held via Italian intermediary that withholds |
 
----
-
 ## Section 2 -- Classification Rules
 
 ### 2.1 Cripto-Attività Under Italian Law
 
-The Legge di Bilancio 2023 (L. 197/2022) introduced a dedicated tax regime for "cripto-attività" (crypto-assets), defined by reference to EU MiCA Regulation (EU) 2023/1114, Art. 3(1)(5): a digital representation of value or rights that can be transferred and stored electronically using distributed ledger technology.
+- **cripto-attività** — A digital representation of value or rights that can be transferred and stored electronically using distributed ledger technology, per EU MiCA Regulation (EU) 2023/1114, Art. 3(1)(5).  _(Legge di Bilancio 2023 (L. 197/2022); EU MiCA Regulation (EU) 2023/1114, Art. 3(1)(5))_
+
+**Asset Classification Table**
 
 | Asset Type | Classification | Tax Treatment |
-|---|---|---|
+| --- | --- | --- |
 | Cryptocurrencies (BTC, ETH, SOL, etc.) | Cripto-attività | 26% imposta sostitutiva on gains |
 | Utility tokens | Cripto-attività | 26% imposta sostitutiva on gains |
 | Security / financial tokens | Cripto-attività (unless qualifying as traditional securities) | 26% imposta sostitutiva; if traditional security, standard financial income rules |
@@ -76,8 +79,10 @@ The Legge di Bilancio 2023 (L. 197/2022) introduced a dedicated tax regime for "
 
 ### 2.2 Taxable Events
 
+**Taxable Events Table**
+
 | Event | Taxable? | Notes |
-|---|---|---|
+| --- | --- | --- |
 | Crypto → fiat (sell) | Yes | Gain = proceeds − cost basis |
 | Crypto → crypto (swap) | Yes | Each swap is a disposal at FMV |
 | Crypto → goods/services | Yes | Disposal at FMV of goods/services received |
@@ -86,34 +91,31 @@ The Legge di Bilancio 2023 (L. 197/2022) introduced a dedicated tax regime for "
 | Wrapping/unwrapping (ETH → WETH) | Depends | Generally not taxable if no economic change; conservative: taxable |
 | Hard fork (receiving new coin) | Not a taxable event on receipt | Cost basis = €0; taxable on disposal |
 
----
-
 ## Section 3 -- Rate Tables and Computation
 
 ### 3.1 Capital Gains (Plusvalenze) — Imposta Sostitutiva
 
-**Legal basis:** D.Lgs. 461/1997, Arts. 5--7, applied to Art. 67(1)(c-sexies) TUIR.
+- **Legal basis** — D.Lgs. 461/1997, Arts. 5--7, applied to Art. 67(1)(c-sexies) TUIR.  _(D.Lgs. 461/1997, Arts. 5--7)_
+
+**Rate Table**
 
 | Tax Year | Rate | De Minimis Exemption | Citation |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | 2023--2024 | 26% | First €2,000 of gains exempt | L. 197/2022, Art. 1 c. 126 |
 | **2025** | **26%** | **None (abolished)** | L. 207/2024, Art. 1 c. 23 |
 | 2026 onwards | 33% (general); 26% (euro e-money tokens) | None | L. 207/2024, Art. 1 c. 24; L. 199/2025 |
 
-**Computation formula:**
-```
-Net gain = Σ(disposal proceeds − cost basis) for all crypto disposals in the year
-Tax due = Net gain × 26%
-```
-
-If net result is a **loss**, no tax is due and the loss can be carried forward (see Section 8).
+- **Computation formula** — Net gain = Σ(disposal proceeds − cost basis) for all crypto disposals in the year Tax due = Net gain × 26%  _(L. 207/2024, Art. 1 c. 23)_
+- **Net loss result** — If net result is a loss, no tax is due and the loss can be carried forward (see Section 8).
 
 ### 3.2 IVCA — Crypto Wealth Tax
 
-**Legal basis:** D.L. 201/2011, Art. 19 c. 18, as amended by L. 197/2022, Art. 1 c. 146.
+- **Legal basis** — D.L. 201/2011, Art. 19 c. 18, as amended by L. 197/2022, Art. 1 c. 146.  _(D.L. 201/2011, Art. 19 c. 18; L. 197/2022, Art. 1 c. 146)_
+
+**IVCA Parameters Table**
 
 | Parameter | Value |
-|---|---|
+| --- | --- |
 | Rate | 0.2% per annum (2 per mille) |
 | Taxable base | Market value of all crypto holdings as at 31 December |
 | Pro-rata | If held for part of year, proportional to days held / 365 |
@@ -124,41 +126,37 @@ If net result is a **loss**, no tax is due and the loss can be carried forward (
 
 ### 3.3 Cost Basis Revaluation (Rivalutazione)
 
-**Legal basis:** L. 207/2024, Art. 1 cc. 26--29.
+- **Legal basis and revaluation rule** — L. 207/2024, Art. 1 cc. 26--29. Taxpayers may elect to revalue the cost basis of crypto held as at 1 January 2025 to fair market value on that date, by paying an 18% substitute tax on the revalued amount. This replaces the previous 14% revaluation option for holdings at 1 January 2023 (L. 197/2022).  _(L. 207/2024, Art. 1 cc. 26--29)_
 
-Taxpayers may elect to revalue the cost basis of crypto held as at **1 January 2025** to fair market value on that date, by paying an 18% substitute tax on the revalued amount. This replaces the previous 14% revaluation option for holdings at 1 January 2023 (L. 197/2022).
+**Revaluation Parameters Table**
 
 | Parameter | Value |
-|---|---|
+| --- | --- |
 | Reference date | 1 January 2025 |
 | Substitute tax rate | 18% of FMV at reference date |
 | Payment deadline | 30 November 2025 (or in up to 3 equal annual instalments from 30 November 2025) |
 | Interest on instalments | 3% per annum on 2nd and 3rd instalments |
 | Effect | New cost basis = FMV at 1 January 2025 for future disposals |
 
----
-
 ## Section 4 -- Cost Basis Methods
 
+**Cost Basis Methods Table**
+
 | Method | Status | Notes |
-|---|---|---|
+| --- | --- | --- |
 | LIFO (Last In, First Out) | **Default** under Art. 67(1-bis) TUIR for financial assets | Standard method for Italian tax purposes |
 | Specific identification | Acceptable if clearly documented | Must be consistently applied |
 | Average cost | Not standard for Italian tax purposes | Not recommended |
 | FIFO | Not the default | May be used if declared and consistently applied |
 
-**Cost basis includes:**
-- Purchase price in EUR (converted at ECB rate on transaction date)
-- Exchange/trading fees and commissions
-- Network/gas fees directly attributable to the acquisition
-- Any substitute tax paid for revaluation (added to revalued basis)
-
----
+- **Cost basis includes** — Purchase price in EUR (converted at ECB rate on transaction date); Exchange/trading fees and commissions; Network/gas fees directly attributable to the acquisition; Any substitute tax paid for revaluation (added to revalued basis)
 
 ## Section 5 -- DeFi, Staking, Mining, and Airdrops
 
+**DeFi/Staking/Mining/Airdrops Table**
+
 | Activity | Tax Treatment | Timing | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Mining (private, occasional) | Income at FMV when received (redditi diversi) | At receipt | If habitual → business income (reddito d'impresa) |
 | Mining (business/commercial) | Business income (partita IVA required) | At receipt | Subject to IRPEF + IRAP + social contributions |
 | Staking rewards | Income at FMV when received | At receipt | Cost basis of received tokens = FMV at receipt |
@@ -168,12 +166,12 @@ Taxpayers may elect to revalue the cost basis of crypto held as at **1 January 2
 | Airdrops (service-related) | Income at FMV when received | At receipt | E.g. rewards for testing, referrals |
 | Yield farming | Income at FMV when received | At receipt | Each token receipt is a taxable moment |
 
----
-
 ## Section 6 -- NFT Treatment
 
+**NFT Treatment Table**
+
 | Scenario | Treatment |
-|---|---|
+| --- | --- |
 | Purchase of NFT | Acquisition at cost — cost basis for future disposal |
 | Sale of NFT for profit | Capital gain taxed at 26% (2025); same regime as other cripto-attività |
 | Creation and sale (artist/creator) | Business income if habitual (reddito d'impresa or reddito di lavoro autonomo); occasional = redditi diversi |
@@ -181,14 +179,14 @@ Taxpayers may elect to revalue the cost basis of crypto held as at **1 January 2
 | NFT royalties (smart contract) | Income at FMV when received |
 | VAT on NFT sales | Electronically supplied service — standard VAT rate (22%) may apply on B2C within EU |
 
----
-
 ## Section 7 -- Reporting Requirements
 
 ### 7.1 Modello Redditi PF — Annual Tax Return
 
+**Modello Redditi PF Reporting Table**
+
 | Form Section | Purpose | Who Must File |
-|---|---|---|
+| --- | --- | --- |
 | **Quadro RT, Sezione V** | Report capital gains and losses from cripto-attività | Anyone who disposed of crypto during the year |
 | **Quadro RW** | Monitor all crypto holdings (foreign and domestic, including self-custody wallets) | All Italian residents holding crypto at any point during the year |
 | **Quadro RW — IVCA section** | Calculate and declare IVCA (0.2% wealth tax) | All Italian residents with crypto holdings as at 31 December |
@@ -196,8 +194,10 @@ Taxpayers may elect to revalue the cost basis of crypto held as at **1 January 2
 
 ### 7.2 Filing Deadlines
 
+**Filing Deadlines Table**
+
 | Filing Method | Deadline |
-|---|---|
+| --- | --- |
 | Electronic (via Agenzia delle Entrate) | **31 October** of the following year |
 | Paper (via Poste Italiane, limited eligibility) | **30 June** of the following year |
 | Late filing (within 90 days) | Valid but subject to penalties |
@@ -205,24 +205,26 @@ Taxpayers may elect to revalue the cost basis of crypto held as at **1 January 2
 
 ### 7.3 IVCA Payment
 
+**IVCA Payment Table**
+
 | Method | Detail |
-|---|---|
+| --- | --- |
 | Payment vehicle | Modello F24 |
 | Code | 1727 (IVCA tax), 1728 (interest), 1729 (penalties) |
 | Deadline | Same as balance due for Modello Redditi PF (30 June, or 31 July with 0.4% surcharge) |
 
 ### 7.4 DAC8 / CARF (from 2026)
 
-From 1 January 2026, crypto-asset service providers (CASPs) licensed under MiCA operating in the EU are required to automatically report Italian clients' transaction data to the Agenzia delle Entrate under the DAC8 Directive (EU) 2023/2226 and the OECD CARF framework. This means the Italian tax authority will receive independent data to cross-reference against taxpayer declarations.
-
----
+- **DAC8/CARF reporting** — From 1 January 2026, crypto-asset service providers (CASPs) licensed under MiCA operating in the EU are required to automatically report Italian clients' transaction data to the Agenzia delle Entrate under the DAC8 Directive (EU) 2023/2226 and the OECD CARF framework. This means the Italian tax authority will receive independent data to cross-reference against taxpayer declarations.  _(DAC8 Directive (EU) 2023/2226; OECD CARF framework)_
 
 ## Section 8 -- Loss Offset and Carry-Forward
 
-**Legal basis:** D.Lgs. 461/1997, Art. 68(5), applied to cripto-attività.
+- **Legal basis** — D.Lgs. 461/1997, Art. 68(5), applied to cripto-attività.  _(D.Lgs. 461/1997, Art. 68(5))_
+
+**Loss Offset and Carry-Forward Table**
 
 | Rule | Detail |
-|---|---|
+| --- | --- |
 | Netting within year | Crypto losses offset crypto gains within the same tax year |
 | Cross-asset netting | From 2025 (Redditi PF 2025), crypto losses can offset gains from other financial assets in the same imposta sostitutiva regime (Art. 67 TUIR) |
 | Carry-forward | Net crypto losses can be carried forward for **4 years** |
@@ -230,20 +232,18 @@ From 1 January 2026, crypto-asset service providers (CASPs) licensed under MiCA 
 | Documentation | Losses must be properly declared in Quadro RT to be carried forward |
 | Losses from revaluation | If revaluation substitute tax was paid and asset is subsequently sold at a loss, the revalued amount is the cost basis |
 
----
-
 ## Section 9 -- Anti-Avoidance Rules
 
+**Anti-Avoidance Rules Table**
+
 | Rule | Description |
-|---|---|
+| --- | --- |
 | Abuse of law (Art. 10-bis L. 212/2000) | General anti-avoidance principle applies to crypto transactions lacking economic substance |
 | Controlled Foreign Company (CFC) | If crypto is held through a CFC in a low-tax jurisdiction, CFC rules may attribute income to the Italian resident |
 | Transfer pricing | Applicable if crypto transactions occur between related parties or entities |
 | Exit tax | Italian residents moving abroad may trigger exit taxation on unrealised crypto gains (Art. 166 TUIR) |
 | Beneficial ownership | Agenzia delle Entrate may look through nominee arrangements |
 | Wash sale | No specific anti-wash-sale rule, but abuse of law principle could apply to artificial loss generation |
-
----
 
 ## Section 10 -- Worked Examples
 
@@ -299,8 +299,6 @@ IVCA due:        EUR 100,000 × 0.002 = EUR 200
 
 **Reporting:** Quadro RW (monitoring + IVCA). Paid via Modello F24.
 
----
-
 ## Self-Checks
 
 Before finalising any Italy crypto tax computation:
@@ -316,10 +314,41 @@ Before finalising any Italy crypto tax computation:
 - [ ] Any carried-forward losses from prior years applied correctly
 - [ ] Revaluation election evaluated if pre-2025 holdings exist
 
----
-
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a commercialista, consulente del lavoro, or equivalent licensed practitioner in Italy) before filing or acting upon.
 
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
+The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
+
+## Talk to a verified accountant
+
+This skill is a tool, not an engagement. Every taxpayer's situation is
+different, and the rules in the skill may not match your specific facts.
+
+To speak with one of the licensed accountants who verifies skills for your
+jurisdiction — **no liability on either side until you and the accountant sign
+a formal engagement letter** — book a free 30-minute call:
+
+**→ [Book a call](https://calendly.com/openaccountants-info/30min)**
+
+We'll route you to the named verifier covering your country or state. You can
+also see the full list of verified accountants at
+[openaccountants.com/network](https://openaccountants.com/network).
+
+<!-- openaccountants-cta-block -->
+
+---
+
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

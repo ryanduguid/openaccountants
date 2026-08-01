@@ -1,22 +1,24 @@
 ---
 name: pt-foreign-source-treaties
-description: >
-  Utilizar esta skill sempre que estejam em causa rendimentos estrangeiros declarados em Portugal ou a aplicação de uma Convenção de Dupla Tributação celebrada por Portugal. Acionar com frases como "CDT Portugal", "Convenção de Dupla Tributação", "rendimentos estrangeiros Portugal", "isenção dividendos estrangeiros Portugal", "pensão estrangeira Portugal", "tax credit Portugal", "crédito de imposto por dupla tributação internacional", "MLI Portugal", "Instrumento Multilateral", "Anexo J IRS", "Modelo 3 Anexo J", "imputação ordinária Portugal", "método de isenção CDT", "RNH rendimento estrangeiro", "IFICI rendimento estrangeiro". Também ativar para: "Portugal double tax treaty", "Portugal DTA matrix", "foreign income Portugal taxation", "Portugal MLI", "Portugal tax treaty network", "Portugal withholding tax relief". LER SEMPRE esta skill antes de tratar de qualquer rendimento estrangeiro declarado em Portugal por residente fiscal português, ou antes de aplicar uma CDT a um caso concreto. Cobre a rede de ~80 CDTs em vigor, o método de imputação ordinária do art.º 81.º CIRS, as especificidades do RNH legado e do IFICI quanto ao método de isenção, o MLI e a cláusula PPT, o preenchimento do Anexo J do Modelo 3 e a documentação probatória exigida pela AT.
-version: 1.0
+description: "Utilizar esta skill sempre que estejam em causa rendimentos estrangeiros declarados em Portugal ou a aplicação de uma Convenção de Dupla Tributação celebrada por Portugal. Acionar com frases como \"CDT Portugal\", \"Convenção de Dupla Tributação\", \"rendimentos estrangeiros Portugal\", \"isenção dividendos estrangeiros Portugal\", \"pensão estrangeira Portugal\", \"tax credit Portugal\", \"crédito de imposto por dupla tributação internacional\", \"MLI Portugal\", \"Instrumento Multilateral\", \"Anexo J IRS\", \"Modelo 3 Anexo J\", \"imputação ordinária Portugal\", \"método de isenção CDT\", \"RNH rendimento estrangeiro\", \"IFICI rendimento estrangeiro\". Também ativar para: \"Portugal double tax treaty\", \"Portugal DTA matrix\", \"foreign income Portugal taxation\", \"Portugal MLI\", \"Portugal tax treaty network\", \"Portugal withholding tax relief\". LER SEMPRE esta skill antes de tratar de qualquer rendimento estrangeiro declarado em Portugal por residente fiscal português, ou antes de aplicar uma CDT a um caso concreto. Cobre a rede de ~80 CDTs em vigor, o método de imputação ordinária do art.º 81.º CIRS, as especificidades do RNH legado e do IFICI quanto ao método de isenção, o MLI e a cláusula PPT, o preenchimento do Anexo J do Modelo 3 e a documentação probatória exigida pela AT."
 jurisdiction: PT
 tax_year: 2025
-category: international
+last_updated: 2026-05-27
 verified_by: pending
+tier: 2
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Portugal — Convenções de Dupla Tributação e Rendimentos Estrangeiros — Skill v1.0
+# PT Foreign Source Treaties
 
----
+## Portugal — Convenções de Dupla Tributação e Rendimentos Estrangeiros — Skill v1.0
 
 ## Secção 1 — Referência Rápida
 
+**Referência Rápida**
+
 | Campo | Valor |
-|---|---|
+| --- | --- |
 | País | Portugal (República Portuguesa) |
 | Imposto base | IRS — Imposto sobre o Rendimento das Pessoas Singulares |
 | Moeda | EUR (rendimentos estrangeiros convertidos ao câmbio do dia do recebimento ou câmbio médio do período, conforme art.º 23.º CIRS) |
@@ -34,8 +36,10 @@ verified_by: pending
 
 ### Lista das 20 CDTs mais relevantes em vigor
 
+**Lista das 20 CDTs mais relevantes em vigor**
+
 | País contraparte | Em vigor desde | Observações |
-|---|---|---|
+| --- | --- | --- |
 | Espanha | 1995 | Vizinho — trabalhadores transfronteiriços |
 | França | 1972 (revista) | Protocolo de revisão em discussão |
 | Reino Unido | 1969 | Mais antiga em vigor; CDT pós-Brexit mantém-se |
@@ -61,8 +65,10 @@ verified_by: pending
 
 ### Defaults conservadores
 
+**Defaults conservadores**
+
 | Ambiguidade | Default |
-|---|---|
+| --- | --- |
 | País sem CDT identificada | Aplicar apenas eliminação unilateral (art.º 81.º, n.º 1 CIRS) — imputação ordinária limitada à fração do IRS português |
 | Dúvida sobre residência fiscal | PARAR — afeta tributação mundial vs por fonte |
 | Documento estrangeiro não traduzido | Solicitar tradução certificada antes de aplicar CDT |
@@ -72,53 +78,39 @@ verified_by: pending
 | MLI: dúvida sobre PPT | Tratamento conservador — assumir que PPT pode ser invocado pela AT |
 | Câmbio em falta | Usar câmbio médio anual do BCE para o ano em causa |
 
----
-
 ## Secção 2 — Mecânica de Isenção vs Crédito de Imposto
 
 ### Os dois métodos de eliminação da dupla tributação internacional
 
+**Os dois métodos de eliminação da dupla tributação internacional**
+
 | Método | Descrição | Quem aplica |
-|---|---|---|
+| --- | --- | --- |
 | **Método de isenção** | O Estado de residência isenta o rendimento já tributado no Estado da fonte (com ou sem progressividade) | Portugal aplica apenas em casos restritos (RNH legado; certas CDTs em categorias específicas) |
 | **Método de imputação (crédito)** | O Estado de residência tributa o rendimento mundial mas concede crédito pelo imposto pago no estrangeiro | Regra geral em Portugal — art.º 81.º, n.º 1 CIRS |
 
 ### Imputação ordinária — art.º 81.º, n.º 1 CIRS
 
-Portugal aplica **imputação ordinária** (não integral). O crédito de imposto está limitado ao **menor** dos seguintes valores:
-
-1. **Imposto efetivamente pago no estrangeiro**, no limite do imposto previsto na CDT (se existir); e
-2. **Fração do IRS português** correspondente aos rendimentos estrangeiros, calculada na proporção do rendimento líquido estrangeiro sobre o rendimento global.
-
-**Fórmula:**
-
-```
-Crédito máximo = (Rendimento líquido estrangeiro / Rendimento global líquido) × IRS apurado em Portugal
-```
-
-O crédito efetivo = mínimo (imposto pago no estrangeiro até ao tecto da CDT; fração de IRS português).
+- **Imputação ordinária** — Portugal aplica imputação ordinária (não integral). O crédito de imposto está limitado ao menor dos seguintes valores: 1. Imposto efetivamente pago no estrangeiro, no limite do imposto previsto na CDT (se existir); e 2. Fração do IRS português correspondente aos rendimentos estrangeiros, calculada na proporção do rendimento líquido estrangeiro sobre o rendimento global.  _(art.º 81.º, n.º 1 CIRS)_
+- **Crédito máximo** — Crédito máximo = (Rendimento líquido estrangeiro / Rendimento global líquido) × IRS apurado em Portugal  _(art.º 81.º, n.º 1 CIRS)_
+- **Crédito efetivo** — O crédito efetivo = mínimo (imposto pago no estrangeiro até ao tecto da CDT; fração de IRS português).  _(art.º 81.º, n.º 1 CIRS)_
 
 ### Excesso de imposto estrangeiro
 
-Se o imposto estrangeiro exceder o limite calculado, o excesso **não é reembolsado** nem reportado a anos futuros — perde-se. Por isso é crítico invocar a CDT junto do Estado da fonte para reduzir a retenção na fonte ao limite convencional antes de aplicar o crédito em Portugal.
+- **Excesso não reembolsado** — Se o imposto estrangeiro exceder o limite calculado, o excesso não é reembolsado nem reportado a anos futuros — perde-se. Por isso é crítico invocar a CDT junto do Estado da fonte para reduzir a retenção na fonte ao limite convencional antes de aplicar o crédito em Portugal.
 
 ### Hierarquia de aplicação
 
-1. Verificar se existe CDT em vigor para 2025.
-2. Determinar o **artigo aplicável** da CDT consoante a categoria do rendimento.
-3. Determinar o **direito de tributação** (exclusivo do Estado de residência, exclusivo da fonte, ou partilhado com cap).
-4. Se partilhado: verificar a **taxa máxima** retida na fonte permitida pela CDT.
-5. Solicitar a redução/reembolso da retenção em excesso ao Estado da fonte (formulário próprio: M-1, M-2, RFI, etc.).
-6. Em Portugal: declarar no Anexo J e aplicar o art.º 81.º para crédito de imposto.
-
----
+- **Passos de aplicação** — 1. Verificar se existe CDT em vigor para 2025. 2. Determinar o artigo aplicável da CDT consoante a categoria do rendimento. 3. Determinar o direito de tributação (exclusivo do Estado de residência, exclusivo da fonte, ou partilhado com cap). 4. Se partilhado: verificar a taxa máxima retida na fonte permitida pela CDT. 5. Solicitar a redução/reembolso da retenção em excesso ao Estado da fonte (formulário próprio: M-1, M-2, RFI, etc.). 6. Em Portugal: declarar no Anexo J e aplicar o art.º 81.º para crédito de imposto.
 
 ## Secção 3 — Matriz CDT por Tipo de Rendimento
 
 > A matriz seguinte é genérica (alinhada com o Modelo OCDE). **Cada CDT específica deve ser consultada para taxas exatas e variações.**
 
+**Matriz CDT por Tipo de Rendimento**
+
 | Categoria | Artigo Modelo OCDE | Regra geral | Tecto típico de retenção na fonte | Categoria IRS |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | **Rendimentos imobiliários** | Art. 6.º | Tributação no Estado da fonte (onde se situa o imóvel) | Sem cap — tributação plena na fonte | Categoria F |
 | **Lucros das empresas** | Art. 7.º | Estado de residência, salvo estabelecimento estável | — | Categoria B (se EE) |
 | **Dividendos** | Art. 10.º | Tributação partilhada | 5% / 10% / 15% (varia por CDT) | Categoria E |
@@ -138,8 +130,6 @@ Se o imposto estrangeiro exceder o limite calculado, o excesso **não é reembol
 - **Juros:** EUA 10%; Brasil 15%; Reino Unido 10%; Alemanha 15% (com isenção parcial em alguns instrumentos).
 - **Royalties:** Brasil 15%; EUA 10%; Reino Unido 5%; Alemanha 10%.
 - **Pensões privadas:** quase todas as CDTs dão tributação exclusiva ao Estado de residência (Portugal, neste caso) — é por aqui que historicamente entrou o "carrossel" do RNH legado para pensionistas estrangeiros.
-
----
 
 ## Secção 4 — CDTs Críticas para RNH e IFICI
 
@@ -211,55 +201,45 @@ Se o imposto estrangeiro exceder o limite calculado, o excesso **não é reembol
 
 ### RNH legado vs IFICI — implicações por CDT
 
+**RNH legado vs IFICI — implicações por CDT**
+
 | Regime | Mecânica para rendimentos estrangeiros |
-|---|---|
+| --- | --- |
 | **RNH legado** (inscritos até 31 dez 2023 / certos transitórios 2024) | Aplica método de **isenção** amplo: dividendos, juros, royalties, mais-valias mobiliárias, rendimentos imobiliários, pensões — desde que **possam ser tributados** no Estado da fonte ao abrigo da CDT (não exige que sejam efetivamente tributados, salvo regra anti-paraíso). Pensões: tributação efetiva a 10% em Portugal desde a alteração de 2020 (Lei 2/2020). |
 | **IFICI** (Investment Tax Incentive — sucessor do RNH; inscrições a partir de 2024) | Isenção **restrita**: aplica-se a dividendos, juros, royalties, mais-valias e rendimentos de profissões qualificadas, com requisitos mais apertados. **Pensões estrangeiras: passam a estar sujeitas a 10% (art.º 72.º-A CIRS) — perdem isenção total.** Rendimentos do trabalho em profissões altamente qualificadas: tributados a 20% em Portugal (taxa especial). |
 
 > Ver skill **pt-nhr-ifici** para as regras detalhadas de inscrição, requisitos e profissões qualificadas.
 
----
-
 ## Secção 5 — MLI (Instrumento Multilateral)
 
 ### Estado em Portugal
 
-- Portugal assinou a Convenção Multilateral OCDE (MLI) em **7 de junho de 2017**.
-- Depositou o instrumento de ratificação em **28 de fevereiro de 2020**.
-- Entrada em vigor para Portugal: **1 de junho de 2020**.
-- Aplica-se às CDTs notificadas como Covered Tax Agreements (CTAs) com contrapartes que também ratificaram o MLI.
+- **Estado do MLI em Portugal** — Portugal assinou a Convenção Multilateral OCDE (MLI) em 7 de junho de 2017. Depositou o instrumento de ratificação em 28 de fevereiro de 2020. Entrada em vigor para Portugal: 1 de junho de 2020. Aplica-se às CDTs notificadas como Covered Tax Agreements (CTAs) com contrapartes que também ratificaram o MLI.
 
 ### Cláusula PPT — Principal Purpose Test (art. 7.º MLI)
 
-Portugal optou pela aplicação do PPT como standard mínimo BEPS Acção 6.
-
-> Sob o PPT, um benefício previsto na CDT pode ser **negado** se for razoável concluir, considerando todos os factos e circunstâncias, que a obtenção desse benefício foi um dos **principais objetivos** de qualquer estrutura ou transação que tenha resultado, direta ou indiretamente, nesse benefício.
+- **PPT — Principal Purpose Test** — Sob o PPT, um benefício previsto na CDT pode ser negado se for razoável concluir, considerando todos os factos e circunstâncias, que a obtenção desse benefício foi um dos principais objetivos de qualquer estrutura ou transação que tenha resultado, direta ou indiretamente, nesse benefício. Portugal optou pela aplicação do PPT como standard mínimo BEPS Acção 6.  _(art. 7.º MLI)_
 
 **Implicação prática:** estruturas com finalidade essencialmente fiscal (treaty shopping, holdings sem substância, etc.) podem ver-se privadas dos benefícios da CDT pela AT mesmo que formalmente cumpram os requisitos.
 
 ### Outras opções MLI relevantes feitas por Portugal
 
-- **Arbitragem obrigatória vinculativa (Parte VI):** aceite por Portugal — disputas MAP não resolvidas em 2 anos vão a arbitragem.
-- **Definição alargada de estabelecimento estável (art. 12.º MLI):** aceite — endereça artificial avoidance via comissionistas.
-- **Métodos de eliminação (art. 5.º MLI):** Portugal manteve o método de imputação (opção C) — não converteu CDTs de isenção em imputação por via do MLI.
+- **Opções MLI de Portugal** — - Arbitragem obrigatória vinculativa (Parte VI): aceite por Portugal — disputas MAP não resolvidas em 2 anos vão a arbitragem. - Definição alargada de estabelecimento estável (art. 12.º MLI): aceite — endereça artificial avoidance via comissionistas. - Métodos de eliminação (art. 5.º MLI): Portugal manteve o método de imputação (opção C) — não converteu CDTs de isenção em imputação por via do MLI.
 
 ### Como verificar se uma CDT está "modificada" pelo MLI
 
-1. Verificar a lista de CTAs notificados por Portugal (publicada pelo Ministério das Finanças e pela OCDE).
-2. Verificar a lista do outro Estado contratante.
-3. As cláusulas MLI aplicam-se apenas quando **ambos** os Estados notificaram a mesma CDT e fizeram opções compatíveis.
-4. Consultar as **versões sintetizadas** publicadas pela OCDE para o texto integrado.
-
----
+- **Passos de verificação** — 1. Verificar a lista de CTAs notificados por Portugal (publicada pelo Ministério das Finanças e pela OCDE). 2. Verificar a lista do outro Estado contratante. 3. As cláusulas MLI aplicam-se apenas quando ambos os Estados notificaram a mesma CDT e fizeram opções compatíveis. 4. Consultar as versões sintetizadas publicadas pela OCDE para o texto integrado.
 
 ## Secção 6 — Anexo J do Modelo 3
 
 ### Estrutura do Anexo J (IRS)
 
-O Anexo J declara **rendimentos obtidos no estrangeiro** por residentes fiscais em Portugal.
+- **Definição Anexo J** — O Anexo J declara rendimentos obtidos no estrangeiro por residentes fiscais em Portugal.
+
+**Estrutura do Anexo J**
 
 | Quadro | Conteúdo |
-|---|---|
+| --- | --- |
 | Quadro 3 | Identificação do sujeito passivo |
 | Quadro 4 | Rendimentos da Categoria A (trabalho dependente) — país, código de rendimento, valor bruto, imposto pago no estrangeiro, contribuições sociais |
 | Quadro 5 | Rendimentos da Categoria B (empresariais e profissionais) — país, atividade, valor bruto, retenção |
@@ -271,8 +251,10 @@ O Anexo J declara **rendimentos obtidos no estrangeiro** por residentes fiscais 
 
 ### Códigos de rendimento (exemplos frequentes)
 
+**Códigos de rendimento**
+
 | Código | Rendimento |
-|---|---|
+| --- | --- |
 | E01 | Dividendos |
 | E02 | Juros |
 | E03 | Royalties |
@@ -282,22 +264,20 @@ O Anexo J declara **rendimentos obtidos no estrangeiro** por residentes fiscais 
 
 ### Country codes
 
-Usar códigos ISO 3166 alpha-2 (ex.: BR para Brasil, US para EUA, GB para Reino Unido, DE para Alemanha, FR para França).
+- **Códigos de país** — Usar códigos ISO 3166 alpha-2 (ex.: BR para Brasil, US para EUA, GB para Reino Unido, DE para Alemanha, FR para França).
 
 ### Articulação com outros anexos
 
-- Os rendimentos do Anexo J **englobam-se** com os rendimentos do Anexo A, B, E, F, G, H portugueses para apuramento do rendimento global e da taxa marginal.
-- Algumas categorias podem optar por **tributação autónoma** (ex.: dividendos a 28%) — opção de não englobamento é exercida no Quadro 8 do rosto do Modelo 3.
-- Para RNH/IFICI: rendimentos isentos são declarados no Anexo L (Quadro 6).
-
----
+- **Articulação com outros anexos** — - Os rendimentos do Anexo J englobam-se com os rendimentos do Anexo A, B, E, F, G, H portugueses para apuramento do rendimento global e da taxa marginal. - Algumas categorias podem optar por tributação autónoma (ex.: dividendos a 28%) — opção de não englobamento é exercida no Quadro 8 do rosto do Modelo 3. - Para RNH/IFICI: rendimentos isentos são declarados no Anexo L (Quadro 6).
 
 ## Secção 7 — Documentação Requerida
 
 ### Comprovativos obrigatórios
 
+**Comprovativos obrigatórios**
+
 | Documento | Finalidade | Quem emite |
-|---|---|---|
+| --- | --- | --- |
 | Certificado de residência fiscal portuguesa | Solicitar redução de retenção na fonte estrangeira ao abrigo da CDT | AT (Portal das Finanças, "Pedir certidão de residência fiscal") |
 | Certificado de imposto pago no estrangeiro | Suportar o crédito do art.º 81.º CIRS | Autoridade fiscal estrangeira ou entidade pagadora |
 | Formulário CDT do país da fonte | Pedido prévio de redução de retenção | Varia: EUA usa Form 8233/W-8BEN; Alemanha usa Antrag auf Erstattung; UK usa Form DT-Individual; etc. |
@@ -307,17 +287,11 @@ Usar códigos ISO 3166 alpha-2 (ex.: BR para Brasil, US para EUA, GB para Reino 
 
 ### Prazos de conservação
 
-Conservar todos os documentos de suporte por **4 anos** após a entrega da declaração (regra geral CIRS) — a AT pode inspecionar e exigir prova do imposto pago no estrangeiro.
+- **Prazo de conservação de documentos** — Conservar todos os documentos de suporte por 4 anos após a entrega da declaração (regra geral CIRS) — a AT pode inspecionar e exigir prova do imposto pago no estrangeiro.  _(regra geral CIRS)_
 
 ### Erros frequentes detetados pela AT
 
-1. Declaração do imposto bruto retido na fonte em vez do imposto líquido devido após CDT.
-2. Pedido de crédito sem comprovativo emitido pela autoridade fiscal estrangeira (recibos do banco não chegam em muitos casos).
-3. Não declaração de contas/rendimentos estrangeiros (Modelo 3 — risco de coima até €22.500 + crime fiscal em casos graves).
-4. Erro na conversão cambial — uso de câmbios não oficiais.
-5. Aplicação de método de isenção sem ter inscrição RNH/IFICI válida e ativa.
-
----
+- **Erros frequentes** — 1. Declaração do imposto bruto retido na fonte em vez do imposto líquido devido após CDT. 2. Pedido de crédito sem comprovativo emitido pela autoridade fiscal estrangeira (recibos do banco não chegam em muitos casos). 3. Não declaração de contas/rendimentos estrangeiros (Modelo 3 — risco de coima até €22.500 + crime fiscal em casos graves). 4. Erro na conversão cambial — uso de câmbios não oficiais. 5. Aplicação de método de isenção sem ter inscrição RNH/IFICI válida e ativa.
 
 ## Secção 8 — Exemplos Práticos
 
@@ -372,14 +346,14 @@ Conservar todos os documentos de suporte por **4 anos** após a entrega da decla
    - Crédito efetivo: menor de €2.000 e €7.000 = **€2.000**.
 5. **Se reembolso americano não for solicitado:** os €4.000 em excesso de retenção **NÃO podem ser creditados em Portugal** — a CDT limita o crédito ao imposto previsto na convenção, não ao efetivamente retido em violação dela.
 
-> Lição: invocar a CDT junto do Estado da fonte **antes** do pagamento ou pedir o reembolso atempadamente é essencial. Excesso retido em violação da CDT não é compensável em Portugal.
-
----
+> Lição: invocar a CDT junto do Estado da fonte antes do pagamento ou pedir o reembolso atempadamente é essencial. Excesso retido em violação da CDT não é compensável em Portugal.
 
 ## Secção 9 — Defaults Conservadores (consolidados)
 
+**Defaults Conservadores (consolidados)**
+
 | Cenário | Default conservador |
-|---|---|
+| --- | --- |
 | Sem CDT identificada | Eliminação unilateral art.º 81.º apenas — sem cap convencional |
 | CDT existe mas categoria duvidosa | Aplicar artigo de "outros rendimentos" (art. 21.º) e flagrar para revisão |
 | MLI: dúvida sobre aplicação do PPT | Documentar a substância económica da estrutura |
@@ -390,8 +364,6 @@ Conservar todos os documentos de suporte por **4 anos** após a entrega da decla
 | Cidadão norte-americano residente em PT | Sinalizar dupla obrigação declarativa (Portugal + IRS federal EUA via FBAR/FATCA) |
 | Mais-valias imobiliárias estrangeiras | Tributação plena na fonte + crédito em PT — verificar se imóvel está no património declarado |
 | Royalty de software | Verificar se é royalty (art. 12.º) ou serviço (art. 7.º/14.º) — distinção crítica |
-
----
 
 ## Secção 10 — Fontes
 
@@ -442,13 +414,9 @@ Conservar todos os documentos de suporte por **4 anos** após a entrega da decla
 - **pt-income-tax** — regras gerais de IRS, englobamento, taxas e deduções.
 - **portugal-crypto-tax** — tratamento de criptoativos estrangeiros (NFTs, exchanges não residentes).
 
----
+## Skill v1.0 — pendente de validação
 
 *Skill v1.0 — pendente de validação por contabilista certificado ou advogado tributarista português.*
-
----
-
-<!-- openaccountants-cta-block -->
 
 ## Talk to a verified accountant
 
@@ -463,16 +431,22 @@ a formal engagement letter** — book a free 30-minute call:
 
 We'll route you to the named verifier covering your country or state. You can
 also see the full list of verified accountants at
-[openaccountants.com/network](https://www.openaccountants.com/network).
+[openaccountants.com/network](https://openaccountants.com/network).
 
-<!-- openaccountants-mcp-cta -->
+<!-- openaccountants-cta-block -->
 
-## The accountant-verified version lives in the connector
+---
 
-This file is the open, **research-grade draft**. The **accountant-verified**
-version of this skill is **not published to GitHub** — it is delivered free
-through the OpenAccountants MCP connector, where your AI agent loads the
-verified rules together with the name of the accountant who signed them off.
+## Talk to a verified accountant
 
-**→ Install the free connector:** <https://www.openaccountants.com/connect>
-**MCP endpoint:** `https://www.openaccountants.com/api/mcp`
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

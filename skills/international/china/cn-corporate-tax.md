@@ -2,13 +2,14 @@
 name: cn-corporate-tax
 description: "当被问及中国企业所得税（CIT）相关事宜时使用本技能。触发关键词包括：\"中国企业所得税\"、\"CIT 25%\"、\"小型微利企业\"、\"高新技术企业 15%\"、\"研发费用加计扣除 200%\"、\"年度汇算清缴企业所得税\"、\"季度预缴企业所得税\"、\"海南自贸港 15%\"、\"横琴粤澳 15%\"、\"非居民企业预提所得税\"、\"支柱二 全球最低税\"。覆盖《中华人民共和国企业所得税法》25%标准税率、小型微利企业优惠（应纳税所得额≤300万元部分实际税负5%）、高新技术企业15%税率、技术先进型服务企业15%、研发费用加计扣除（一般及制造业100%加计、集成电路与工业母机120%加计）、区域性税率优惠（海南、横琴、前海、上海临港、西部大开发）、非居民企业预提所得税、反避税与转让定价、季度预缴与5月31日前年度汇算清缴。Trigger also on: \"China CIT\", \"China corporate income tax\", \"small low-profit enterprise China\", \"HNTE 15%\", \"R&D super deduction\", \"advanced technology service enterprise\", \"Hainan Free Trade Port 15%\", \"Hengqin 15%\", \"China withholding tax\", \"China Pillar Two GloBE\". 不在范围：个人所得税（见 china-pit）、增值税（见 china-vat）、消费税、关税、契税、印花税、土地增值税、银行/保险/石油/采矿特殊行业、合并纳税、信托与合伙企业穿透、税收居民身份认定争议。在处理任何中国企业所得税事项前，必须先阅读本技能。"
 jurisdiction: CN
-domain: corporate-tax
 tax_year: 2025
+last_updated: 2026-05-27
+verified_by: pending
 tier: 2
-last_updated: 2026-07-06
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# cn-corporate-tax
+# CN Corporate Tax
 
 ## 中国 — 企业所得税（CIT）— 技能 v1.0
 
@@ -443,3 +444,21 @@ a formal engagement letter** — book a free 30-minute call:
 We'll route you to the named verifier covering your country or state. You can
 also see the full list of verified accountants at
 [openaccountants.com/network](https://openaccountants.com/network).
+
+<!-- openaccountants-cta-block -->
+
+---
+
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

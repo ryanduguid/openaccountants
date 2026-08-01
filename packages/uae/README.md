@@ -8,7 +8,12 @@
 1. `foundation.md`
 2. `intake.md`
 3. `ae-corporate-tax.md`
-4. `uae-vat.md`
+4. `ae-income-tax.md`
+5. `ae-payroll-social.md`
+6. `ae-tax-overview.md`
+7. `ae-tax-residency.md`
+8. `uae-vat.md`
+9. `payroll-workflow-base.md`
 
 ## Also known as
 

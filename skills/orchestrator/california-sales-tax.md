@@ -2,16 +2,18 @@
 name: california-sales-tax
 description: Use this skill whenever asked about California sales and use tax, CDTFA filings, California district taxes, California exemptions, California nexus, or any request involving California state sales and use tax compliance. Trigger on phrases like "California sales tax", "CA sales tax", "CDTFA", "CDTFA-401", "district tax", "California use tax", "California resale certificate", or any request involving California sales and use tax classification, filing, or compliance. ALWAYS read this skill before touching any California sales tax work.
 jurisdiction: US-CA
-tax_year: 2024
+tax_year: 2025
+last_updated: 2026-07-09
+verified_by: pending
 tier: 2
-last_updated: 2026-07-06
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# california-sales-tax
+# California Sales Tax
 
 ## Section 1 -- Quick reference
 
-**Quick reference**
+**Quick reference**  _(https://cdtfa.ca.gov/industry/local-and-district-retailer-taxes/district-tax.htm)_
 
 | Field | Value |
 | --- | --- |
@@ -19,9 +21,9 @@ last_updated: 2026-07-06
 | Jurisdiction code | US-CA |
 | Tax type | Sales and Use Tax + District Taxes |
 | State base rate | 7.25% (minimum statewide) |
-| Local add-on range | 0.10% -- 3.25% district taxes |
-| Maximum combined rate | ~10.25% -- 10.75% (parts of Los Angeles, Alameda) |
-| Sourcing | Destination-based (district taxes by ship-to address) |
+| District tax range | District taxes generally add 0.10% to 2.00% per district; multiple districts may stack and some areas exceed the general county cap by statute |
+| Maximum combined rate | Do not hardcode; use CDTFA address lookup. Some 2025 locations exceeded 10.75% (for example Lancaster/Palmdale at 11.250%) |
+| Sourcing | Statewide rate applies generally; district tax usually follows delivery/use location for shipped goods and seller location for counter sales |
 | Economic nexus | $500,000 in total sales (revenue only, no transaction count) |
 | Nexus test type | Revenue only -- highest threshold tied with Texas |
 | Primary legislation | California Revenue and Taxation Code (R&TC), Division 2, Part 1 |
@@ -175,29 +177,29 @@ This is the deterministic taxability lookup. When a transaction matches a patter
 
 ### 4.2 Key combined rates
 
-**Key combined rates**
+**Key combined rates**  _(https://cdtfa.ca.gov/taxes-and-fees/ArchivesRates-07-01-2025-09-30-2025.pdf)_
 
 | Jurisdiction | Combined rate | Breakdown |
 | --- | --- | --- |
-| Los Angeles (City) | ~10.25% | 7.25% + 2.25% + 0.75% district |
-| San Francisco | ~8.625% | 7.25% + 1.375% district |
-| San Jose | ~9.375% | 7.25% + 2.125% district |
-| San Diego (City) | ~7.75% | 7.25% + 0.50% district |
-| Sacramento (City) | ~8.75% | 7.25% + 1.50% district |
-| Oakland | ~10.25% | 7.25% + 3.00% district |
-| Fresno | ~8.975% | 7.25% + 1.725% district |
+| Los Angeles (City) | 9.750% (July-Sept. 2025 CDTFA city table) | Address lookup controls; rate changed from stale 10.25% example |
+| San Francisco | 8.625% (July-Sept. 2025 CDTFA city table) | Address lookup controls |
+| San Jose | 9.375% (July-Sept. 2025 CDTFA city table; later current tables may differ) | Address lookup controls |
+| San Diego (City) | 7.750% (July-Sept. 2025 CDTFA city table) | Address lookup controls |
+| Sacramento (City) | 8.750% (July-Sept. 2025 CDTFA city table) | Address lookup controls |
+| Oakland | 10.250% July-Sept. 2025 / 10.750% Oct-Dec. 2025 | Rate changed during 2025; use address lookup for transaction date |
+| Fresno | 8.350% (July-Sept. 2025 CDTFA city table) | Address lookup controls; nearby Fresno County cities differ |
 
 ### 4.3 District tax sourcing
 
-**District tax sourcing**
+**District tax sourcing**  _(https://cdtfa.ca.gov/taxes-and-fees/ArchivesRates-07-01-2025-09-30-2025.pdf)_
 
 | Scenario | Rate applied |
 | --- | --- |
-| Shipped goods | District tax at delivery address (destination-based) |
+| Shipped goods | District tax at delivery/use address when the retailer is engaged in that district |
 | Counter sales / customer pickup | Rate at seller's location |
 | Out-of-state seller shipping to CA | District tax at delivery address |
 
-**Always use CDTFA rate lookup tool for exact rate: https://www.cdtfa.ca.gov/taxes-and-fees/rates.aspx**
+**Always use the CDTFA address-based rate lookup for the exact transaction date and address: https://www.cdtfa.ca.gov/taxes-and-fees/rates.aspx. City/county examples are snapshots and can change mid-year.**
 
 ## Section 5 -- Classification rules
 
@@ -286,7 +288,7 @@ This is the deterministic taxability lookup. When a transaction matches a patter
 
 ### 7.1 Economic nexus
 
-**Economic nexus**  _(R&TC Section 6203(c)(4))_
+**Economic nexus**  _([R&TC Section 6203(c)(4)](https://cdtfa.ca.gov/industry/MPFAct.htm))_
 
 | Parameter | Value |
 | --- | --- |
@@ -294,20 +296,20 @@ This is the deterministic taxability lookup. When a transaction matches a patter
 | Transaction threshold | None -- revenue only |
 | Measurement period | Preceding or current calendar year |
 | Effective date | April 1, 2019 |
-| Sales included | Total sales, including exempt sales |
-| Marketplace exclusion | Marketplace sales facilitated by a marketplace provider may count toward threshold |
-| Authority | R&TC Section 6203(c)(4) |
+| Sales included | Total California-delivery tangible merchandise sales, including exempt sales and related-person sales |
+| Marketplace sales | Include marketplace-facilitated sales when testing the $500,000 economic nexus threshold; registered sellers may deduct facilitated sales reported/remitted by a registered marketplace facilitator |
+| Authority | R&TC Section 6203(c)(4); CDTFA Marketplace Facilitator Act guide |
 
 ### 7.2 Marketplace facilitator rules
 
-**Marketplace facilitator rules**  _(R&TC Section 6042)_
+**Marketplace facilitator rules**  _([R&TC Section 6042](https://cdtfa.ca.gov/industry/MPFAct.htm))_
 
 | Rule | Detail |
 | --- | --- |
 | Effective date | October 1, 2019 |
-| Obligation | Marketplace facilitators with $500K in CA sales must collect |
-| Seller relief | Sellers relieved for facilitated sales |
-| Authority | R&TC Section 6042 |
+| Obligation | Registered or required-to-register marketplace facilitators generally collect, report, and pay tax on facilitated California retail sales |
+| Seller relief | Marketplace sellers are generally relieved from collection on facilitated sales handled by a registered facilitator, but must include facilitated sales in the $500,000 threshold and may need to register for direct sales |
+| Authority | R&TC Sections 6042-6045; CDTFA Marketplace Facilitator Act guide |
 
 ### 7.3 Penalties and interest
 
@@ -377,8 +379,8 @@ This is the deterministic taxability lookup. When a transaction matches a patter
 
 ### Test 1 -- Basic taxable sale in Los Angeles
 
-**Input:** Retailer sells a $1,000 TV in Los Angeles. Combined rate: 10.25%.
-**Expected:** Tax = $102.50. Total = $1,102.50.
+**Input:** Retailer sells a $1,000 TV in Los Angeles using a July-Sept. 2025 CDTFA city-table example rate of 9.750% (confirm exact address/date).
+**Expected:** Tax = $97.50. Total = $1,097.50.
 
 ### Test 2 -- Grocery food exempt
 
@@ -392,8 +394,8 @@ This is the deterministic taxability lookup. When a transaction matches a patter
 
 ### Test 4 -- Economic nexus
 
-**Input:** Oregon-based online seller has $600,000 in California sales. No physical presence. 50 transactions.
-**Expected:** Exceeds $500,000 threshold. Must register with CDTFA and collect California sales tax.
+**Input:** Oregon-based online seller has $600,000 in California-delivery tangible merchandise sales in the current calendar year. No physical presence. 50 transactions.
+**Expected:** Exceeds the $500,000 revenue threshold. Must register with CDTFA and collect California use tax/statewide rate plus applicable district taxes for California deliveries.
 
 ### Test 5 -- Clothing fully taxable
 
@@ -407,8 +409,8 @@ This is the deterministic taxability lookup. When a transaction matches a patter
 
 ### Test 7 -- Use tax on out-of-state purchase
 
-**Input:** Los Angeles business purchases $5,000 of office furniture from an Oregon retailer. No tax collected.
-**Expected:** Use tax = $512.50 ($5,000 x 10.25%).
+**Input:** Los Angeles business purchases $5,000 of office furniture from an Oregon retailer. No tax collected. Use the July-Sept. 2025 Los Angeles city-table example rate of 9.750% unless the exact address/date lookup says otherwise.
+**Expected:** Use tax = $487.50 ($5,000 x 9.750%).
 
 ### Test 8 -- Hot prepared food
 
@@ -430,7 +432,7 @@ This is the deterministic taxability lookup. When a transaction matches a patter
 - NEVER apply a clothing exemption in California -- clothing is fully taxable at all times.
 - NEVER treat pure SaaS (cloud-only, no download) as taxable -- California has not extended sales tax to pure SaaS.
 - NEVER confuse fabrication labor (taxable) with repair labor (not taxable if separately stated).
-- NEVER forget district taxes -- the 7.25% state rate is only the minimum; most locations have additional district taxes.
+- NEVER forget district taxes -- the 7.25% statewide rate is only the minimum; use the CDTFA address lookup because local rates can change during the year.
 - NEVER use origin-based sourcing for district taxes -- California is destination-based for district taxes.
 - NEVER assume the manufacturing partial exemption fully eliminates tax -- it reduces the state portion but district taxes still apply.
 - NEVER accept SST certificates in California -- CA is not an SST member.
@@ -447,3 +449,21 @@ This skill is provided for informational and computational purposes only and doe
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, EA, tax attorney, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
 
 The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
+
+<!-- openaccountants-cta-block -->
+
+---
+
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

@@ -1,31 +1,36 @@
 ---
 name: us-major-partners
+description: 
 version: 1.0
+jurisdiction: GLOBAL
+tax_year: 2025
+last_updated: 2026-05-23
+verified_by: pending
 category: cross-border
 tier: 2
-last_updated: 2026-06-12
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# US Major Treaty Partners — Withholding Tax Rates
-
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+# US Major Partners
 
 ## Quick Reference
 
+**Quick Reference**
+
 | Field | Value |
-|-------|-------|
+| --- | --- |
 | Jurisdiction | United States (source/residence) |
 | Countries Covered | UK, Germany, France, Canada, Australia, Japan, India, Netherlands, Ireland, Switzerland, Singapore, Mexico, South Korea, Israel |
 | Number of Treaties | 14 (note: no US treaty with Singapore or Hong Kong) |
 | Last Verified | May 2026 |
 | Key Note | US domestic WHT on FDAP income is 30%. Treaty benefits claimed via W-8BEN / W-8BEN-E. US LOB clauses are the most stringent globally. |
 
----
-
 ## US → UK
 
+**US → UK income types and treaty rates**  _(IRS Table 1)_
+
 | Income Type | Treaty Rate | Treaty Article | Notes |
-|-------------|------------|----------------|-------|
+| --- | --- | --- | --- |
 | Dividends — portfolio | 15% | Art 10(2)(b) | W-8BEN required |
 | Dividends — substantial (≥10% voting) | 5% | Art 10(2)(a) | Direct corporate investment |
 | Dividends — parent (≥80% direct, 12+ months) | 0% | Art 10(3) | First US treaty with 0% dividend |
@@ -37,12 +42,12 @@ last_updated: 2026-06-12
 **Special provisions:** Comprehensive LOB (Art 23) — one of the strictest in US treaty network. Saving clause (Art 1(4)) preserves US taxing rights over citizens/residents. Branch profits tax reduced to 5%.
 **Last verified:** May 2026
 
----
-
 ## US → Germany
 
+**US → Germany income types and treaty rates**  _(IRS Table 1)_
+
 | Income Type | Treaty Rate | Treaty Article | Notes |
-|-------------|------------|----------------|-------|
+| --- | --- | --- | --- |
 | Dividends — portfolio | 15% | Art 10(2) | W-8BEN required |
 | Dividends — substantial (≥10% voting) | 5% | Art 10(2) | Direct corporate investment |
 | Dividends — pension funds | 0% | Art 10 | Qualifying pension fund exemption |
@@ -54,12 +59,12 @@ last_updated: 2026-06-12
 **Special provisions:** 30% WHT on contingent interest not qualifying as portfolio interest. LOB clause. US has not signed MLI — treaty remains unmodified by MLI provisions.
 **Last verified:** May 2026
 
----
-
 ## US → France
 
+**US → France income types and treaty rates**  _(IRS Table 1)_
+
 | Income Type | Treaty Rate | Treaty Article | Notes |
-|-------------|------------|----------------|-------|
+| --- | --- | --- | --- |
 | Dividends — portfolio | 15% | Art 10(2) | W-8BEN required |
 | Dividends — substantial (≥10% voting) | 5% | Art 10(2) | Direct corporate investment |
 | Interest | 0% | Art 11(2) | Complete exemption |
@@ -70,12 +75,12 @@ last_updated: 2026-06-12
 **Special provisions:** MFN clause on royalties. US has not signed MLI. Branch profits tax provisions apply.
 **Last verified:** May 2026
 
----
-
 ## US → Canada
 
+**US → Canada income types and treaty rates**  _(IRS Table 1)_
+
 | Income Type | Treaty Rate | Treaty Article | Notes |
-|-------------|------------|----------------|-------|
+| --- | --- | --- | --- |
 | Dividends — portfolio | 15% | Art X(2) | W-8BEN required |
 | Dividends — substantial (≥10% voting) | 5% | Art X(2) | Direct corporate investment |
 | Interest — arm's length | 0% | Art XI(1) | Eliminated by 2007 Fifth Protocol |
@@ -88,12 +93,12 @@ last_updated: 2026-06-12
 **Special provisions:** Split royalty rates mirror Canadian treaty practice. Fifth Protocol (2007) eliminated interest WHT on arm's length loans. LOB article. Canada domestic WHT is 25%.
 **Last verified:** May 2026
 
----
-
 ## US → Australia
 
+**US → Australia income types and treaty rates**  _(IRS Table 1)_
+
 | Income Type | Treaty Rate | Treaty Article | Notes |
-|-------------|------------|----------------|-------|
+| --- | --- | --- | --- |
 | Dividends — portfolio | 15% | Art 10(2) | W-8BEN required |
 | Dividends — substantial (≥10% voting) | 5% | Art 10(2) | Direct corporate investment |
 | Interest | 10% | Art 11(2) | NOT zero — financial institution interest may qualify lower |
@@ -104,12 +109,12 @@ last_updated: 2026-06-12
 **Special provisions:** Australia franking credit system affects effective tax on dividends. Royalty definition is broader than OECD model. US domestic WHT 30% reduced significantly.
 **Last verified:** May 2026
 
----
-
 ## US → Japan
 
+**US → Japan income types and treaty rates**  _(IRS Table 1)_
+
 | Income Type | Treaty Rate | Treaty Article | Notes |
-|-------------|------------|----------------|-------|
+| --- | --- | --- | --- |
 | Dividends — portfolio | 10% | Art 10(2) | Lower than typical 15% |
 | Dividends — substantial (≥10% voting, 6 months) | 5% | Art 10(2) | Direct corporate investment |
 | Dividends — parent (≥50% voting, 6 months) | 0% | Art 10(3) | 2013 Protocol addition |
@@ -121,12 +126,12 @@ last_updated: 2026-06-12
 **Special provisions:** 2013 Protocol was transformative — reduced interest to 0% and added 0% parent-subsidiary dividends. Anti-conduit provisions. LOB article. Portfolio dividend rate of 10% is lower than most US treaties.
 **Last verified:** May 2026
 
----
-
 ## US → India
 
+**US → India income types and treaty rates**  _(US-India Convention signed 12 September 1989)_
+
 | Income Type | Treaty Rate | Treaty Article | Notes |
-|-------------|------------|----------------|-------|
+| --- | --- | --- | --- |
 | Dividends — substantial (≥10% voting) | 15% | Art 10(2) | Still relatively high |
 | Dividends — portfolio | 25% | Art 10(2) | Higher than most US treaties |
 | Interest — general | 15% | Art 11(2) | NOT zero |
@@ -141,12 +146,12 @@ last_updated: 2026-06-12
 **Special provisions:** Unique "fees for included services" concept (not FTS) — applies only where services make available technical knowledge. No US-India treaty amendment since original signing. India domestic WHT: 20% general. Treaty rates remain relatively high compared to newer US treaties.
 **Last verified:** May 2026
 
----
-
 ## US → Netherlands
 
+**US → Netherlands income types and treaty rates**  _(IRS Table 1)_
+
 | Income Type | Treaty Rate | Treaty Article | Notes |
-|-------------|------------|----------------|-------|
+| --- | --- | --- | --- |
 | Dividends — portfolio | 15% | Art 10(2) | W-8BEN required |
 | Dividends — substantial (≥10% voting) | 5% | Art 10(2) | Direct corporate investment |
 | Interest | 0% | Art 12(1) | Complete exemption |
@@ -157,12 +162,12 @@ last_updated: 2026-06-12
 **Special provisions:** Netherlands conditional WHT (25.8%) applies only to low-tax jurisdictions — US is not affected. LOB article. One of the key holding company corridors.
 **Last verified:** May 2026
 
----
-
 ## US → Ireland
 
+**US → Ireland income types and treaty rates**  _(IRS Table 1)_
+
 | Income Type | Treaty Rate | Treaty Article | Notes |
-|-------------|------------|----------------|-------|
+| --- | --- | --- | --- |
 | Dividends — portfolio | 15% | Art 10(2) | W-8BEN required |
 | Dividends — substantial (≥10% voting) | 5% | Art 10(2) | Direct corporate investment |
 | Interest | 0% | Art 11(1) | Complete exemption |
@@ -173,12 +178,12 @@ last_updated: 2026-06-12
 **Special provisions:** Critical corridor for US tech/pharma companies with Irish operations. LOB article. Ireland does not impose WHT on outbound dividends to treaty partners generally. Zero royalty rate is key for IP-heavy structures.
 **Last verified:** May 2026
 
----
-
 ## US → Switzerland
 
+**US → Switzerland income types and treaty rates**  _(IRS Table 1)_
+
 | Income Type | Treaty Rate | Treaty Article | Notes |
-|-------------|------------|----------------|-------|
+| --- | --- | --- | --- |
 | Dividends — portfolio | 15% | Art 10(2) | Swiss domestic WHT 35% |
 | Dividends — substantial (≥10% voting) | 5% | Art 10(2) | Direct corporate investment |
 | Interest | 0% | Art 11(1) | Complete exemption |
@@ -189,14 +194,14 @@ last_updated: 2026-06-12
 **Special provisions:** Swiss domestic WHT on dividends is 35% — treaty relief essential. Swiss refund procedure required (Form 82 / 83). LOB article. Contingent interest taxed at 30%.
 **Last verified:** May 2026
 
----
-
 ## US → Singapore
 
 **No comprehensive income tax treaty exists between the US and Singapore.**
 
+**US → Singapore income types and domestic rates**
+
 | Income Type | Rate | Notes |
-|-------------|------|-------|
+| --- | --- | --- |
 | Dividends | 30% (domestic) | No treaty reduction |
 | Interest | 30% (domestic) | No treaty reduction |
 | Royalties | 30% (domestic) | No treaty reduction |
@@ -205,12 +210,12 @@ last_updated: 2026-06-12
 **Practical note:** Most pure services performed entirely in Singapore are not US-source income and thus not subject to US withholding.
 **Last verified:** May 2026
 
----
-
 ## US → Mexico
 
+**US → Mexico income types and treaty rates**  _(IRS Table 1)_
+
 | Income Type | Treaty Rate | Treaty Article | Notes |
-|-------------|------------|----------------|-------|
+| --- | --- | --- | --- |
 | Dividends — portfolio | 10% | Art 10(2) | Lower than typical 15% |
 | Dividends — substantial (≥10% voting) | 5% | Art 10(2) | Direct corporate investment |
 | Interest — general | 15% | Art 11(2) | Standard rate |
@@ -223,12 +228,12 @@ last_updated: 2026-06-12
 **Special provisions:** Three-tier interest rate structure (4.9%/10%/15%). Mexico domestic WHT varies by income type. LOB article. Independent personal services exempt if no fixed base in US.
 **Last verified:** May 2026
 
----
-
 ## US → South Korea
 
+**US → South Korea income types and treaty rates**  _(IRS Table 1)_
+
 | Income Type | Treaty Rate | Treaty Article | Notes |
-|-------------|------------|----------------|-------|
+| --- | --- | --- | --- |
 | Dividends — portfolio | 15% | Art 10(2) | Standard rate |
 | Dividends — substantial (≥10% voting) | 10% | Art 10(2) | Higher than typical 5% |
 | Interest | 12% | Art 11(2) | Government interest exempt |
@@ -240,12 +245,12 @@ last_updated: 2026-06-12
 **Special provisions:** Older treaty with relatively high rates compared to modern US treaties. 10% substantial holding rate (vs typical 5%). Interest at 12% is unusually high. Social security totalization agreement also exists separately.
 **Last verified:** May 2026
 
----
-
 ## US → Israel
 
+**US → Israel income types and treaty rates**  _(IRS Table 1)_
+
 | Income Type | Treaty Rate | Treaty Article | Notes |
-|-------------|------------|----------------|-------|
+| --- | --- | --- | --- |
 | Dividends — portfolio | 25% | Art 12(2) | Unusually high |
 | Dividends — substantial (≥10% voting) | 12.5% | Art 12(2) | Higher than most US treaties |
 | Interest | 17.5% | Art 13(2) | Unusually high |
@@ -257,14 +262,14 @@ last_updated: 2026-06-12
 **Special provisions:** One of the oldest and least generous US treaties. Rates are well above modern standards. A new treaty has been under discussion for years. Israel domestic WHT: dividends 25-30%, interest 15-25%. The 25% portfolio dividend rate is the highest in the US treaty network.
 **Last verified:** May 2026
 
----
-
 ## PE Threshold Notes
 
 US treaty PE provisions generally follow the OECD model with some notable deviations:
 
+**PE Threshold Notes table**
+
 | Treaty Partner | Construction PE Threshold | Service PE | Notes |
-|---------------|--------------------------|------------|-------|
+| --- | --- | --- | --- |
 | UK | 12 months | None specified | Standard OECD |
 | Germany | 12 months | None specified | Standard OECD |
 | France | 12 months | None specified | Standard OECD |
@@ -277,8 +282,6 @@ US treaty PE provisions generally follow the OECD model with some notable deviat
 
 **Mexico's 6-month construction PE** is shorter than the standard 12 months — maquiladora/near-shoring operations require careful PE monitoring.
 
----
-
 ## LOB (Limitation on Benefits) Overview
 
 US treaties contain the most stringent LOB provisions globally. The standard US LOB test requires the treaty claimant to satisfy at least one of the following:
@@ -290,12 +293,12 @@ US treaties contain the most stringent LOB provisions globally. The standard US 
 
 All US treaties listed above (except the 1975 Israel treaty) contain LOB provisions. The UK and Canada treaties have the most developed LOB clauses.
 
----
-
 ## Summary: Zero-WHT Corridors (All Three Categories)
 
+**Summary: Zero-WHT Corridors table**
+
 | Corridor | Dividends (substantial) | Interest | Royalties |
-|----------|------------------------|----------|-----------|
+| --- | --- | --- | --- |
 | US ↔ UK | 5% (0% at 80%) | 0% | 0% |
 | US ↔ Germany | 5% (0% pension) | 0% | 0% |
 | US ↔ France | 5% | 0% | 0% |
@@ -304,8 +307,39 @@ All US treaties listed above (except the 1975 Israel treaty) contain LOB provisi
 | US ↔ Ireland | 5% | 0% | 0% |
 | US ↔ Switzerland | 5% | 0% | 0% |
 
----
-
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Treaty rates are subject to change through protocol amendments and renegotiations. Always verify current treaty text before relying on any rate. All outputs must be reviewed by a qualified professional before filing or acting upon.
+
+## Talk to a verified accountant
+
+This skill is a tool, not an engagement. Every taxpayer's situation is
+different, and the rules in the skill may not match your specific facts.
+
+To speak with one of the licensed accountants who verifies skills for your
+jurisdiction — **no liability on either side until you and the accountant sign
+a formal engagement letter** — book a free 30-minute call:
+
+**→ [Book a call](https://calendly.com/openaccountants-info/30min)**
+
+We'll route you to the named verifier covering your country or state. You can
+also see the full list of verified accountants at
+[openaccountants.com/network](https://openaccountants.com/network).
+
+<!-- openaccountants-cta-block -->
+
+---
+
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

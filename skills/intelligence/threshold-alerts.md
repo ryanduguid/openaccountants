@@ -1,26 +1,18 @@
 ---
 name: threshold-alerts
 description: >
-  Intelligence skill that detects when the user is near important tax thresholds. Covers 14 threshold checks across 10 jurisdictions (EU, US, UK, DE, AU, IN, ES, NL, SG, MT, CA). For each threshold: calculates proximity, determines direction of travel, and recommends specific action. Flags the crossing point where obligations change materially.
 version: 0.1
+jurisdiction: GLOBAL
+tax_year: 2025
+last_updated: 2026-04-13
+verified_by: pending
+depends_on: - workflow-base
 category: intelligence
-depends_on:
-  - workflow-base
-triggers:
-  - threshold alert
-  - am I near the VAT threshold
-  - do I need to register for VAT
-  - income threshold
-  - tax cliff
-  - am I close to
-  - threshold check
 tier: 2
-last_updated: 2026-06-12
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Threshold Alerts v0.1
-
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+# Threshold Alerts
 
 ## What this file is
 
@@ -33,8 +25,6 @@ This is an intelligence skill that loads on top of `workflow-base`. It monitors 
 **The reviewer is the customer of this output.** Threshold alerts are addressed to the credentialed reviewer, who decides whether action is needed.
 
 > **Disclaimer.** Threshold amounts are based on publicly available statutory rules and may change with legislation. Currency conversions, timing of income recognition, and specific definitions of "turnover" or "income" vary by jurisdiction and may affect whether a threshold applies. All threshold assessments must be verified by a credentialed professional in the relevant jurisdiction. This is not legal or tax advice.
-
----
 
 ## Section 1 -- Scope statement
 
@@ -51,38 +41,22 @@ This skill does NOT cover:
 - Real-time monitoring (this runs on demand or when triggered by a computation skill)
 - Thresholds below a materiality floor (see Section 4)
 
----
-
 ## Section 2 -- Workflow
 
 ### Step 0 -- Gather inputs
 
-From the user's data (intake, computation output, or explicit statement), extract:
-
-1. **Jurisdiction(s)** -- where the user files
-2. **Gross revenue / turnover** -- rolling 12-month and year-to-date
-3. **Net income / adjusted gross income** -- current period
-4. **Specific data points** -- as required by individual thresholds (e.g., cross-border B2C sales, private health insurance status)
-
-If a required data point is missing, flag the threshold check as "incomplete -- data needed" and state what is required.
+- **Gather inputs** — From the user's data (intake, computation output, or explicit statement), extract: 1. **Jurisdiction(s)** -- where the user files 2. **Gross revenue / turnover** -- rolling 12-month and year-to-date 3. **Net income / adjusted gross income** -- current period 4. **Specific data points** -- as required by individual thresholds (e.g., cross-border B2C sales, private health insurance status) If a required data point is missing, flag the threshold check as "incomplete -- data needed" and state what is required.
 
 ### Step 1 -- Run threshold checks
 
-For each applicable threshold (matched to user's jurisdiction), compute:
-
-1. **Current value** -- the user's figure that is compared against the threshold
-2. **Threshold amount** -- the statutory limit
-3. **Distance** -- absolute difference (threshold minus current value)
-4. **Distance as percentage** -- (distance / threshold) x 100
-5. **Direction of travel** -- is the user approaching or moving away from the threshold? Based on:
-   - Year-over-year trend (if prior-year data available)
-   - YTD annualised projection (current YTD / months elapsed x 12)
-   - If no trend data, state "direction unknown"
+- **Run threshold checks** — For each applicable threshold (matched to user's jurisdiction), compute: 1. **Current value** -- the user's figure that is compared against the threshold 2. **Threshold amount** -- the statutory limit 3. **Distance** -- absolute difference (threshold minus current value) 4. **Distance as percentage** -- (distance / threshold) x 100 5. **Direction of travel** -- is the user approaching or moving away from the threshold? Based on: - Year-over-year trend (if prior-year data available) - YTD annualised projection (current YTD / months elapsed x 12) - If no trend data, state "direction unknown"
 
 ### Step 2 -- Classify proximity
 
+**Proximity classification bands**
+
 | Proximity band | Condition | Flag |
-|---|---|---|
+| --- | --- | --- |
 | Safe | > 20% below threshold | GREEN |
 | Watch | 10--20% below threshold | AMBER |
 | Danger zone | < 10% below threshold | RED |
@@ -91,25 +65,20 @@ For each applicable threshold (matched to user's jurisdiction), compute:
 
 ### Step 3 -- Generate action recommendations
 
-For each threshold in AMBER or RED, produce:
-
-1. **What is happening** -- one-sentence plain-language explanation
-2. **What changes if exceeded** -- concrete obligation that activates or benefit that is lost
-3. **Recommended action** -- what the reviewer should consider
-4. **Timing** -- when action must be taken (e.g., "register within 30 days of exceeding")
+- **Generate action recommendations** — For each threshold in AMBER or RED, produce: 1. **What is happening** -- one-sentence plain-language explanation 2. **What changes if exceeded** -- concrete obligation that activates or benefit that is lost 3. **Recommended action** -- what the reviewer should consider 4. **Timing** -- when action must be taken (e.g., "register within 30 days of exceeding")
 
 ### Step 4 -- Produce output
 
-Format per Section 5.
-
----
+- **Produce output** — Format per Section 5.
 
 ## Section 3 -- Master Threshold Table
 
 ### 3.1 EU -- VAT One Stop Shop (OSS)
 
+**EU -- VAT One Stop Shop (OSS)**  _(Council Directive 2006/112/EC, Art. 59c (as amended by Directive 2017/2455))_
+
 | Field | Value |
-|---|---|
+| --- | --- |
 | **Jurisdiction** | EU (all member states) |
 | **Threshold name** | VAT OSS / distance-selling threshold |
 | **Amount** | EUR 10,000 in B2C cross-border sales to other EU member states (aggregate, all states combined) |
@@ -121,8 +90,10 @@ Format per Section 5.
 
 ### 3.2 US -- QBI Deduction Phase-out
 
+**US -- QBI Deduction Phase-out**  _(IRC section 199A(d)(3); Rev. Proc. 2024-40 (inflation adjustment))_
+
 | Field | Value |
-|---|---|
+| --- | --- |
 | **Jurisdiction** | US (federal) |
 | **Threshold name** | Qualified Business Income deduction income cliff |
 | **Amount** | $197,300 (single) / $394,600 (MFJ) taxable income before QBI deduction (2025, indexed) |
@@ -134,8 +105,10 @@ Format per Section 5.
 
 ### 3.3 US -- Social Security Tax Cap (OASDI)
 
+**US -- Social Security Tax Cap (OASDI)**  _(IRC section 1401; SSA wage base announcement)_
+
 | Field | Value |
-|---|---|
+| --- | --- |
 | **Jurisdiction** | US (federal) |
 | **Threshold name** | OASDI wage base / SE tax cap |
 | **Amount** | $176,100 (2025) |
@@ -147,8 +120,10 @@ Format per Section 5.
 
 ### 3.4 UK -- VAT Registration Threshold
 
+**UK -- VAT Registration Threshold**  _(VAT Act 1994, Schedule 1, para. 1; SI 2024/309)_
+
 | Field | Value |
-|---|---|
+| --- | --- |
 | **Jurisdiction** | GB |
 | **Threshold name** | Compulsory VAT registration |
 | **Amount** | GBP 90,000 taxable turnover (from 1 April 2024) |
@@ -160,8 +135,10 @@ Format per Section 5.
 
 ### 3.5 UK -- Personal Allowance Taper
 
+**UK -- Personal Allowance Taper**  _(ITA 2007, s. 35; Income Tax (Earnings and Pensions) Act 2003)_
+
 | Field | Value |
-|---|---|
+| --- | --- |
 | **Jurisdiction** | GB |
 | **Threshold name** | Personal allowance income taper |
 | **Amount** | GBP 100,000 adjusted net income |
@@ -173,8 +150,10 @@ Format per Section 5.
 
 ### 3.6 DE -- Kleinunternehmer (Small Business VAT Exemption)
 
+**DE -- Kleinunternehmer (Small Business VAT Exemption)**  _(UStG section 19(1); Jahressteuergesetz 2024)_
+
 | Field | Value |
-|---|---|
+| --- | --- |
 | **Jurisdiction** | DE |
 | **Threshold name** | Kleinunternehmerregelung (small entrepreneur scheme) |
 | **Amount** | EUR 25,000 gross revenue in current calendar year (revised from EUR 22,000 effective 2025 under JStG 2024) |
@@ -186,8 +165,10 @@ Format per Section 5.
 
 ### 3.7 AU -- GST Registration Threshold
 
+**AU -- GST Registration Threshold**  _(A New Tax System (Goods and Services Tax) Act 1999, s. 23-15)_
+
 | Field | Value |
-|---|---|
+| --- | --- |
 | **Jurisdiction** | AU |
 | **Threshold name** | Compulsory GST registration |
 | **Amount** | AUD 75,000 annual turnover (GST turnover) |
@@ -199,8 +180,10 @@ Format per Section 5.
 
 ### 3.8 AU -- Medicare Levy Surcharge (MLS)
 
+**AU -- Medicare Levy Surcharge (MLS)**  _(A New Tax System (Medicare Levy Surcharge--Fringe Benefits) Act 1999)_
+
 | Field | Value |
-|---|---|
+| --- | --- |
 | **Jurisdiction** | AU |
 | **Threshold name** | Medicare Levy Surcharge (no private health insurance) |
 | **Amount** | AUD 97,000 income for MLS purposes (single, 2024-25) |
@@ -212,8 +195,10 @@ Format per Section 5.
 
 ### 3.9 IN -- Presumptive Taxation Threshold (44ADA)
 
+**IN -- Presumptive Taxation Threshold (44ADA)**  _(Income Tax Act 1961, s. 44ADA; Finance Act 2023 (raised threshold))_
+
 | Field | Value |
-|---|---|
+| --- | --- |
 | **Jurisdiction** | IN |
 | **Threshold name** | Presumptive taxation for professionals (section 44ADA) |
 | **Amount** | INR 75 lakh gross receipts (if >95% digital receipts); INR 50 lakh (otherwise) |
@@ -225,8 +210,10 @@ Format per Section 5.
 
 ### 3.10 ES -- Estimacion Directa Simplificada Limit
 
+**ES -- Estimacion Directa Simplificada Limit**  _(LIRPF art. 28, 30; RIRPF art. 28--30)_
+
 | Field | Value |
-|---|---|
+| --- | --- |
 | **Jurisdiction** | ES |
 | **Threshold name** | Simplified direct estimation method (estimacion directa simplificada) |
 | **Amount** | EUR 600,000 net revenue in prior year |
@@ -238,8 +225,10 @@ Format per Section 5.
 
 ### 3.11 NL -- Kleineondernemersregeling (KOR)
 
+**NL -- Kleineondernemersregeling (KOR)**  _(Wet op de omzetbelasting 1968, art. 25 (as amended 1 Jan 2020))_
+
 | Field | Value |
-|---|---|
+| --- | --- |
 | **Jurisdiction** | NL |
 | **Threshold name** | Small entrepreneurs scheme (KOR) |
 | **Amount** | EUR 20,000 annual turnover |
@@ -251,8 +240,10 @@ Format per Section 5.
 
 ### 3.12 SG -- GST Registration Threshold
 
+**SG -- GST Registration Threshold**  _(Goods and Services Tax Act 1993, s. 8, Third Schedule)_
+
 | Field | Value |
-|---|---|
+| --- | --- |
 | **Jurisdiction** | SG |
 | **Threshold name** | Compulsory GST registration |
 | **Amount** | SGD 1,000,000 annual taxable turnover |
@@ -264,8 +255,10 @@ Format per Section 5.
 
 ### 3.13 MT -- Article 11 VAT Exemption Threshold
 
+**MT -- Article 11 VAT Exemption Threshold**  _(VAT Act (Cap. 406), Article 11; Legal Notice 272/2024)_
+
 | Field | Value |
-|---|---|
+| --- | --- |
 | **Jurisdiction** | MT |
 | **Threshold name** | Article 11 VAT exemption (small undertaking) |
 | **Amount** | EUR 35,000 annual turnover from economic activity (+ EUR 14,000 rental income if applicable) |
@@ -277,8 +270,10 @@ Format per Section 5.
 
 ### 3.14 CA -- Small Supplier Threshold (GST/HST)
 
+**CA -- Small Supplier Threshold (GST/HST)**  _(Excise Tax Act, s. 148(1); CRA IT-400)_
+
 | Field | Value |
-|---|---|
+| --- | --- |
 | **Jurisdiction** | CA |
 | **Threshold name** | Small supplier exemption from GST/HST |
 | **Amount** | CAD 30,000 in total taxable supplies over the last 4 consecutive calendar quarters or in a single calendar quarter |
@@ -288,16 +283,14 @@ Format per Section 5.
 | **Action if approaching** | Consider voluntary registration for ITC recovery. Review pricing. Registration effective date is the day the CAD 30,000 is exceeded in a single quarter, or the first day of the next quarter if exceeded over 4 quarters. |
 | **Primary source** | Excise Tax Act, s. 148(1); CRA IT-400 |
 
----
-
 ## Section 4 -- Materiality and filtering
 
 ### Materiality threshold
 
-Do not surface a threshold alert if the potential tax impact of crossing the threshold is below the following materiality floors:
+**Materiality threshold floors**
 
 | Currency | Floor |
-|---|---|
+| --- | --- |
 | EUR | 100 |
 | USD | 100 |
 | GBP | 100 |
@@ -306,27 +299,25 @@ Do not surface a threshold alert if the potential tax impact of crossing the thr
 | INR | 10,000 |
 | SGD | 150 |
 
-If the annualised impact of crossing a threshold is below the materiality floor, suppress the alert unless the user explicitly asks about it.
+### Materiality threshold
+
+- **Suppress sub-materiality alerts** — Do not surface a threshold alert if the potential tax impact of crossing the threshold is below the materiality floors. If the annualised impact of crossing a threshold is below the materiality floor, suppress the alert unless the user explicitly asks about it.
 
 ### Filtering logic
 
-1. Only run checks for jurisdictions the user operates in.
-2. If the user has no revenue data, skip revenue-based thresholds and note "insufficient data."
-3. If the user is already registered (e.g., already VAT registered), skip the registration threshold and note "already registered -- threshold not applicable."
-
----
+- **Filtering logic** — 1. Only run checks for jurisdictions the user operates in. 2. If the user has no revenue data, skip revenue-based thresholds and note "insufficient data." 3. If the user is already registered (e.g., already VAT registered), skip the registration threshold and note "already registered -- threshold not applicable."
 
 ## Section 5 -- Output format
 
 ### Part A -- Threshold proximity dashboard
 
-```
+**Threshold proximity dashboard example**
+
 | # | Jurisdiction | Threshold | Your figure | Limit | Distance | % to limit | Direction | Flag |
-|---|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 1 | UK | VAT registration | GBP 82,000 | GBP 90,000 | GBP 8,000 | 8.9% | Approaching (+15% YoY) | RED |
 | 2 | UK | PA taper | GBP 94,000 | GBP 100,000 | GBP 6,000 | 6.0% | Approaching | RED |
 | 3 | US | QBI cliff | $145,000 | $197,300 | $52,300 | 26.5% | Stable | GREEN |
-```
 
 ### Part B -- Action items (AMBER and RED only)
 
@@ -349,8 +340,6 @@ For each flagged threshold:
 - Thresholds suppressed due to materiality
 - Assumptions made (e.g., exchange rates, annualisation method)
 
----
-
 ## Section 6 -- Self-checks
 
 Before delivering output, verify:
@@ -366,10 +355,26 @@ Before delivering output, verify:
 - [ ] All threshold amounts cite a primary source
 - [ ] Output uses the format from Section 5
 
----
-
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, EA, tax attorney, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
 
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
+The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
+
+<!-- openaccountants-cta-block -->
+
+---
+
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

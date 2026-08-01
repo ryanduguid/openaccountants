@@ -3,13 +3,52 @@ name: in-return-assembly
 description: Final orchestrator skill that assembles the complete India filing package for India-resident self-employed individuals and professionals. Consumes outputs from all India content skills (india-gst for GSTR-3B/GSTR-1, in-income-tax for ITR-3/ITR-4, in-advance-tax for quarterly instalments, in-tds-freelance for TDS reporting) to produce a single unified reviewer package containing every worksheet, every form, every brief section, all cross-skill reconciliations, and the final action list with payment instructions, filing instructions, and next-year planning. This is the capstone skill that runs last and produces the final deliverable. MUST be loaded alongside all India content skills listed above. India full-year residents only. Self-employed individuals and professionals only.
 version: 0.1
 jurisdiction: IN
+tax_year: 2025
+last_updated: 2026-04-13
+verified_by: Mayur Deokar
 tier: 2
-last_updated: 2026-06-12
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# India Return Assembly Skill v0.1
+# IN Return Assembly
 
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+## India Return Assembly Skill v0.1
+
+## Verified rates & thresholds (accountant-reviewed)
+
+Reviewed against the cited tax authorities by **Mayur Deokar** on 2026-06-06.
+Items flagged for further clarification are tracked separately and excluded here.
+This block is generated from verified `skill_facts` — edit the facts, not the prose.
+
+### Income Tax (IT)
+
+- **New Tax Regime s 115BAC — 0 – ₹4,00,000** — 0%  _(Finance Act 2025; s 115BAC)_
+- **New Tax Regime s 115BAC — ₹4,00,001 – ₹8,00,000** — 5%  _(s 115BAC)_
+- **New Tax Regime s 115BAC — ₹8,00,001 – ₹12,00,000** — 10%  _(s 115BAC)_
+- **New Tax Regime s 115BAC — ₹12,00,001 – ₹16,00,000** — 15%  _(s 115BAC)_
+- **New Tax Regime s 115BAC — ₹16,00,001 – ₹20,00,000** — 20%  _(s 115BAC)_
+- **New Tax Regime s 115BAC — ₹20,00,001 – ₹24,00,000** — 25%  _(s 115BAC)_
+- **New Tax Regime s 115BAC — Above ₹24,00,000** — 30%  _(s 115BAC)_
+- **Old Tax Regime — 0 – ₹2,50,000** — 0%  _(ITA 1961 s 2)_
+- **Old Tax Regime — ₹2,50,001 – ₹5,00,000** — 5%  _(ITA 1961)_
+- **Old Tax Regime — ₹5,00,001 – ₹10,00,000** — 20%  _(ITA 1961)_
+- **Old Tax Regime — Above ₹10,00,000** — 30%  _(ITA 1961)_
+- **Surcharge — ₹50L – ₹1 Cr** — 10% of income tax  _(ITA 1961)_
+- **Surcharge — ₹1 Cr – ₹2 Cr** — 15%  _(ITA 1961)_
+- **Surcharge — ₹2 Cr – ₹5 Cr** — 25%  _(ITA 1961)_
+- **Surcharge — Above ₹5 Cr** — 37% (old) / 25% (new regime cap)  _(ITA 1961)_
+- **Health & Education Cess** — 4% on tax + surcharge  _(Finance Act)_
+- **Standard deduction (new regime)** — ₹75,000  _(Finance Act 2024; Section 16(ia) of Income Tax Act 1961)_
+- **Standard deduction (old regime)** — ₹50,000  _(ITA 1961; Section 16(ia) of Income Tax Act 1961)_
+- **Rebate u/s 87A (new regime)** — If income ≤ ₹12 lakh  _(Finance Act 2025)_
+- **s 44ADA (professionals)** — 75 Lakh limit is appliable when the Cash Receipts does not Exceed 5% of the Total Turnover of the Financial Year. Otherwise limit is 50 Lakh.(Reference:ITA 1961 S 44ADA)  _(ITA 1961 s 44ADA)_
+- **s 44AD (business)** — 3 Crore limit is appliable when the Cash Receipts does not Exceed 5% of the Total Turnover of the Financial Year. Otherwise limit is 2 crore.(Reference:ITA 1961 S 44ADA)  _(ITA 1961 s 44AD)_
+- **s 44ADA (professionals) — Presumptive Taxation** — 50% deemed profit; gross receipts ≤ ₹75 lakh only when cash receipts do not exceed 5% of total turnover; otherwise limit is ₹50 lakh  _(ITA 1961 s 44ADA)_
+- **s 44AD (business) — Presumptive Taxation** — 8% of turnover (6% digital); turnover ≤ ₹3 crore only when cash receipts do not exceed 5% of total turnover; otherwise limit is ₹2 crore  _(ITA 1961 s 44AD)_
+- **ITR deadline (non-audit)** — 31 July  _(ITA 1961 s 139)_
+- **ITR deadline (audit)** — 31 October  _(ITA 1961 s 139)_
+- **Form 1770 for self-employed** — ITR-3 (regular) or ITR-4 (presumptive)  _(CBDT notification)_
+- **Form 1770 for self-employed** — ITR-3 (regular) or ITR-4 (presumptive)  _(CBDT notification)_
 
 ## CRITICAL EXECUTION DIRECTIVE -- READ FIRST
 
@@ -29,15 +68,11 @@ Specifically:
 
 **Failure mode to avoid:** The skill halts mid-execution and asks the user a meta-question about workflow pacing. If you feel the urge to ask "how should I proceed," the correct action is to pick the most defensible path and proceed, flagging the decision in the reviewer brief so the reviewer can challenge it.
 
----
-
 ## What this file is
 
 The final capstone skill for India self-employed returns. Every India content skill feeds into this one. The output is the complete reviewer package that a Chartered Accountant can review, sign off on, and deliver to the client along with filing instructions.
 
 This skill coordinates execution of the content skills, verifies cross-skill consistency, and assembles the final deliverable.
-
----
 
 ## Section 1 -- Scope
 
@@ -47,49 +82,25 @@ Produces the complete India filing package for:
 - Financial year 2025-26 (Assessment year 2026-27)
 - Filing GST returns (GSTR-3B + GSTR-1 if registered), ITR-3 or ITR-4, advance tax reconciliation, TDS credit reconciliation
 
----
-
 ## Section 2 -- Execution order and dependency chain
 
 The skill enforces the following execution order:
 
-1. **`india-gst`** -- GSTR-3B + GSTR-1 reconciliation (Q2 skill)
-   - Runs first because GST turnover figures feed into the ITR
-   - Reconcile GSTR-3B monthly/quarterly summaries with books
-   - Verify GSTR-1 outward supply details match invoices
-   - Reconcile ITC claimed with GSTR-2B auto-populated data
-   - Output: GST turnover, output tax, ITC utilised, cash GST paid, reverse charge
+0. **india-gst step** — GSTR-3B + GSTR-1 reconciliation (Q2 skill) - Runs first because GST turnover figures feed into the ITR - Reconcile GSTR-3B monthly/quarterly summaries with books - Verify GSTR-1 outward supply details match invoices - Reconcile ITC claimed with GSTR-2B auto-populated data - Output: GST turnover, output tax, ITC utilised, cash GST paid, reverse charge
+0. **in-income-tax step** — ITR-3 or ITR-4 return (Q2 skill) - Depends on GST output: gross receipts must match GST turnover (ex-GST for regular taxpayer) - For ITR-4 (presumptive 44ADA): 50% deemed profit on gross receipts, no expense schedule - For ITR-3 (actual profit): full P&L with expense deductions, depreciation schedule, balance sheet - Output: total income, tax liability at applicable slab rates, regime comparison if requested
+0. **in-advance-tax step** — Quarterly advance tax reconciliation (Q2 skill) - Depends on ITR: final tax liability determines whether advance tax was sufficient - Reconcile advance tax paid (from Form 26AS) against liability - Compute s.234B interest (default on advance tax shortfall -- if paid < 90% of assessed tax) - Compute s.234C interest (deferment -- quarterly shortfall in instalments: 15%/45%/75%/100%) - Output: advance tax schedule, shortfall computation, interest liability
+0. **in-tds-freelance step** — TDS credit reconciliation (Q4 stub, flag) - Depends on ITR: TDS credits offset final tax liability - Reconcile Form 26AS TDS entries with income declared in ITR - Flag mismatches (TDS claimed but income not shown, or income shown but TDS not reflected) - **Status check:** in-tds-freelance is currently a Q4 stub. If the stub has substantive content, use it. If it is still a placeholder, compute TDS reconciliation using Form 26AS data from intake and flag in the reviewer brief that the dedicated skill was not available. - Output: TDS credit summary, mismatches, Form 26AS vs ITR reconciliation
 
-2. **`in-income-tax`** -- ITR-3 or ITR-4 return (Q2 skill)
-   - Depends on GST output: gross receipts must match GST turnover (ex-GST for regular taxpayer)
-   - For ITR-4 (presumptive 44ADA): 50% deemed profit on gross receipts, no expense schedule
-   - For ITR-3 (actual profit): full P&L with expense deductions, depreciation schedule, balance sheet
-   - Output: total income, tax liability at applicable slab rates, regime comparison if requested
-
-3. **`in-advance-tax`** -- Quarterly advance tax reconciliation (Q2 skill)
-   - Depends on ITR: final tax liability determines whether advance tax was sufficient
-   - Reconcile advance tax paid (from Form 26AS) against liability
-   - Compute s.234B interest (default on advance tax shortfall -- if paid < 90% of assessed tax)
-   - Compute s.234C interest (deferment -- quarterly shortfall in instalments: 15%/45%/75%/100%)
-   - Output: advance tax schedule, shortfall computation, interest liability
-
-4. **`in-tds-freelance`** -- TDS credit reconciliation (Q4 stub, flag)
-   - Depends on ITR: TDS credits offset final tax liability
-   - Reconcile Form 26AS TDS entries with income declared in ITR
-   - Flag mismatches (TDS claimed but income not shown, or income shown but TDS not reflected)
-   - **Status check:** in-tds-freelance is currently a Q4 stub. If the stub has substantive content, use it. If it is still a placeholder, compute TDS reconciliation using Form 26AS data from intake and flag in the reviewer brief that the dedicated skill was not available.
-   - Output: TDS credit summary, mismatches, Form 26AS vs ITR reconciliation
-
-If any upstream content skill fails to produce validated output, the assembly skill notes the failure in the reviewer brief and continues with available data rather than halting entirely.
-
----
+- **Upstream failure handling** — If any upstream content skill fails to produce validated output, the assembly skill notes the failure in the reviewer brief and continues with available data rather than halting entirely.
 
 ## Section 3 -- Cross-skill reconciliation
 
 ### Cross-check 1: GST turnover matches ITR gross receipts
 
+**Cross-check 1: GST turnover matches ITR gross receipts**
+
 | GST Output | ITR Input | Rule |
-|-----------|-----------|------|
+| --- | --- | --- |
 | GSTR-3B aggregate turnover (ex-GST) | ITR gross receipts from profession/business | Must match within INR 100 |
 | GSTR-1 outward supplies | ITR Schedule BP / presumptive turnover | Turnover is ex-GST for regular registrants |
 | Export of services (zero-rated) | ITR foreign income | Included in gross receipts, zero-rated for GST |
@@ -98,8 +109,10 @@ If any upstream content skill fails to produce validated output, the assembly sk
 
 ### Cross-check 2: If 44ADA presumptive -- 50% deemed profit, no further expense deduction allowed
 
+**Cross-check 2: If 44ADA presumptive -- 50% deemed profit, no further expense deduction allowed**
+
 | Rule | Application |
-|------|------------|
+| --- | --- |
 | Deemed profit = 50% of gross receipts | No deduction for actual expenses against professional income |
 | Depreciation | NOT claimable under presumptive scheme |
 | Partner remuneration / interest | Not applicable (sole proprietor) |
@@ -109,39 +122,42 @@ If any upstream content skill fails to produce validated output, the assembly sk
 
 ### Cross-check 3: Advance tax paid + TDS credits against final tax liability
 
+**Cross-check 3: Advance tax paid + TDS credits against final tax liability**
+
 | Component | Source | Rule |
-|-----------|--------|------|
+| --- | --- | --- |
 | Advance tax paid | Form 26AS Part C / challans | Sum of all advance tax payments during FY |
 | TDS credits | Form 26AS Part A / TDS certificates | Sum of all TDS deducted and deposited |
 | Self-assessment tax (if any) | Challan 280 | Paid before filing ITR |
 | Total tax liability | ITR computation | Tax on total income + surcharge + cess |
 | Tax payable / refund | Liability minus (advance tax + TDS + self-assessment) | Positive = payable; negative = refund |
 
-**If advance tax + TDS < 90% of assessed tax:** s.234B interest applies at 1% per month (simple) from April of AY to date of filing or date of assessment.
+- **s.234B interest condition** — If advance tax + TDS < 90% of assessed tax: s.234B interest applies at 1% per month (simple) from April of AY to date of filing or date of assessment.
+- **s.234C interest condition** — If quarterly advance tax instalments fell short: s.234C interest applies at 1% per month for 3 months per shortfall quarter.
 
-**If quarterly advance tax instalments fell short:** s.234C interest applies at 1% per month for 3 months per shortfall quarter.
+**Quarterly cumulative advance tax percentages**
 
 | Quarter | Due date | Cumulative % required |
-|---------|----------|-----------------------|
+| --- | --- | --- |
 | Q1 | 15 June | 15% |
 | Q2 | 15 September | 45% |
 | Q3 | 15 December | 75% |
 | Q4 | 15 March | 100% |
 
-For 44ADA presumptive: entire advance tax can be paid by 15 March (single instalment). s.234C does not apply if 100% paid by 15 March.
+- **44ADA single instalment exception** — For 44ADA presumptive: entire advance tax can be paid by 15 March (single instalment). s.234C does not apply if 100% paid by 15 March.
 
 ### Cross-check 4: Form 26AS TDS vs ITR income declaration
 
+**Cross-check 4: Form 26AS TDS vs ITR income declaration**
+
 | Check | Rule |
-|-------|------|
+| --- | --- |
 | Every TDS entry in 26AS Part A | Corresponding income must appear in ITR |
 | TDS credit claimed in ITR | Must match 26AS (or AIS) within INR 1 |
 | Mismatch entries | Flag: either TDS not deposited by deductor, or income not declared |
 | TCS entries (26AS Part C) | If applicable, credit against tax liability |
 
 **If mismatch:** Common causes: deductor filed TDS return late, wrong PAN quoted, income accounted in different FY. Flag for reviewer with specific entries.
-
----
 
 ## Section 4 -- Final reviewer package contents
 
@@ -290,49 +306,28 @@ For 44ADA presumptive: entire advance tax can be paid by 15 March (single instal
 7. Retain all invoices and financial records for 6 years (IT Act) / 6 years (GST Act)
 ```
 
----
-
 ## Section 5 -- Refusals
 
-**R-IN-1 -- Upstream skill did not run.** Name the specific skill. Note: this is a warning, not a hard stop. Continue with available data and flag the gap.
-
-**R-IN-2 -- Upstream self-check failed.** Name the specific check and note it in the reviewer brief. Continue.
-
-**R-IN-3 -- Cross-skill reconciliation failed.** Name the specific reconciliation and describe the discrepancy. Flag for reviewer but continue.
-
-**R-IN-4 -- Intake incomplete.** Specific missing intake items prevent computation. List what is missing and ask the user for the specific data point.
-
-**R-IN-5 -- Out-of-scope item discovered during assembly.** E.g., capital gains requiring Schedule CG, rental income requiring Schedule HP, foreign assets requiring Schedule FA, or partnership income. Flag and exclude from computation.
-
----
+- **R-IN-1** — Upstream skill did not run. Name the specific skill. Note: this is a warning, not a hard stop. Continue with available data and flag the gap.
+- **R-IN-2** — Upstream self-check failed. Name the specific check and note it in the reviewer brief. Continue.
+- **R-IN-3** — Cross-skill reconciliation failed. Name the specific reconciliation and describe the discrepancy. Flag for reviewer but continue.
+- **R-IN-4** — Intake incomplete. Specific missing intake items prevent computation. List what is missing and ask the user for the specific data point.
+- **R-IN-5** — Out-of-scope item discovered during assembly. E.g., capital gains requiring Schedule CG, rental income requiring Schedule HP, foreign assets requiring Schedule FA, or partnership income. Flag and exclude from computation.
 
 ## Section 6 -- Self-checks
 
-**Check IN-A1 -- All upstream skills executed.** india-gst, in-income-tax, in-advance-tax all produced output. in-tds-freelance produced output or was computed from Form 26AS data.
-
-**Check IN-A2 -- GST turnover matches ITR gross receipts.** Within INR 100 tolerance.
-
-**Check IN-A3 -- If 44ADA: 50% deemed profit, no expense deductions claimed.** Deemed profit = exactly 50% of gross receipts (or higher if voluntarily declared higher).
-
-**Check IN-A4 -- Advance tax + TDS reconciled against final liability.** Total credits (advance tax + TDS + self-assessment tax) match the payment/refund position.
-
-**Check IN-A5 -- s.234B interest computed correctly.** If advance tax paid < 90% of assessed tax, 1% simple interest per month from April AY to date of payment/assessment.
-
-**Check IN-A6 -- s.234C interest computed correctly.** Quarterly shortfall interest at 1% for 3 months per deficient quarter.
-
-**Check IN-A7 -- Form 26AS TDS matches ITR.** Every TDS entry in 26AS has corresponding income in ITR. Credits claimed match 26AS amounts.
-
-**Check IN-A8 -- Tax regime correctly applied.** New regime: s.115BAC rates, no Ch VI-A deductions (except NPS 80CCD(2)). Old regime: regular slab rates, all deductions claimed.
-
-**Check IN-A9 -- s.87A rebate applied if eligible.** New regime: if total income <= INR 12,00,000 (after standard deduction), rebate up to INR 25,000.
-
-**Check IN-A10 -- Surcharge and cess correctly computed.** Surcharge applicable if total income > INR 50 lakh (10%/15%/25% tiers). Cess = 4% on tax + surcharge.
-
-**Check IN-A11 -- Filing calendar is complete.** All deadlines for ITR, GST, advance tax, and TDS are listed with specific dates and amounts.
-
-**Check IN-A12 -- Reviewer brief contains legislation citations.** Every position taken references the specific section of the Income-tax Act 1961, CGST Act 2017, or relevant rule.
-
----
+- **Check IN-A1** — All upstream skills executed. india-gst, in-income-tax, in-advance-tax all produced output. in-tds-freelance produced output or was computed from Form 26AS data.
+- **Check IN-A2** — GST turnover matches ITR gross receipts. Within INR 100 tolerance.
+- **Check IN-A3** — If 44ADA: 50% deemed profit, no expense deductions claimed. Deemed profit = exactly 50% of gross receipts (or higher if voluntarily declared higher).
+- **Check IN-A4** — Advance tax + TDS reconciled against final liability. Total credits (advance tax + TDS + self-assessment tax) match the payment/refund position.
+- **Check IN-A5** — s.234B interest computed correctly. If advance tax paid < 90% of assessed tax, 1% simple interest per month from April AY to date of payment/assessment.
+- **Check IN-A6** — s.234C interest computed correctly. Quarterly shortfall interest at 1% for 3 months per deficient quarter.
+- **Check IN-A7** — Form 26AS TDS matches ITR. Every TDS entry in 26AS has corresponding income in ITR. Credits claimed match 26AS amounts.
+- **Check IN-A8** — Tax regime correctly applied. New regime: s.115BAC rates, no Ch VI-A deductions (except NPS 80CCD(2)). Old regime: regular slab rates, all deductions claimed.
+- **Check IN-A9** — s.87A rebate applied if eligible. New regime: if total income <= INR 12,00,000 (after standard deduction), rebate up to INR 25,000.
+- **Check IN-A10** — Surcharge and cess correctly computed. Surcharge applicable if total income > INR 50 lakh (10%/15%/25% tiers). Cess = 4% on tax + surcharge.
+- **Check IN-A11** — Filing calendar is complete. All deadlines for ITR, GST, advance tax, and TDS are listed with specific dates and amounts.
+- **Check IN-A12** — Reviewer brief contains legislation citations. Every position taken references the specific section of the Income-tax Act 1961, CGST Act 2017, or relevant rule.
 
 ## Section 7 -- Output files
 
@@ -348,8 +343,6 @@ The final output is **three files**:
 
 **All files are placed in `/mnt/user-data/outputs/` and presented to the user via the `present_files` tool at the end.**
 
----
-
 ## Section 8 -- Cross-skill references
 
 **Inputs:**
@@ -360,8 +353,6 @@ The final output is **three files**:
 - `in-tds-freelance` -- TDS credit reconciliation output (or fallback computation from Form 26AS)
 
 **Outputs:** The final reviewer package. No downstream skill.
-
----
 
 ## Section 9 -- Known gaps
 
@@ -378,14 +369,31 @@ The final output is **three files**:
 11. State-level professional tax varies by state and is treated as a known deduction from intake, not independently computed.
 
 ### Change log
+
 - **v0.1 (April 2026):** Initial draft. Modelled on mt-return-assembly v0.1 adapted for India jurisdiction with four content skills (GST, ITR, advance tax, TDS).
 
 ## End of skill
-
----
 
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a Chartered Accountant, tax practitioner, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
 
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
+The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
+
+<!-- openaccountants-cta-block -->
+
+---
+
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

@@ -8,6 +8,26 @@
 1. `foundation.md`
 2. `intake.md`
 3. `kazakhstan-vat.md`
+4. `kz-bookkeeping.md`
+5. `kz-company-formation.md`
+6. `kz-corporate-income-tax.md`
+7. `kz-crypto-tax.md`
+8. `kz-einvoice.md`
+9. `kz-financial-statements.md`
+10. `kz-formation.md`
+11. `kz-income-tax.md`
+12. `kz-payroll-social.md`
+13. `kz-payroll.md`
+14. `kz-simplified-regime.md`
+15. `kz-social-contributions.md`
+16. `kz-tax-optimization.md`
+17. `kz-tax-overview.md`
+18. `bookkeeping-workflow-base.md`
+19. `einvoice-workflow-base.md`
+20. `payroll-workflow-base.md`
+21. `company-formation-workflow-base.md`
+22. `financial-statements-workflow-base.md`
+23. `crypto-tax-workflow-base.md`
 
 ## How to use
 

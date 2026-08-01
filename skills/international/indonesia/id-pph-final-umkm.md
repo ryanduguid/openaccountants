@@ -3,11 +3,13 @@ name: id-pph-final-umkm
 description: "Use this skill whenever asked to compute, review, or advise on Indonesia PPh Final UMKM — the 0.5% final income tax on gross turnover available to micro, small, and medium enterprises (UMKM) under PP 23/2018 and PP 55/2022 (as revised). Trigger on phrases like \"PPh Final UMKM\", \"0.5 percent tax Indonesia\", \"PP 23/2018\", \"PP 55/2022\", \"MSME tax Indonesia\", \"pajak final UMKM\", \"tarif 0,5%\", \"peredaran bruto\", \"Pengusaha Kecil PPh\", or any question about whether a sole trader, PT Perorangan, CV, Firma, or Koperasi can use the 0.5% regime. Covers eligibility, the IDR 4.8 billion turnover threshold, time limits, the pekerjaan bebas (professional services) exclusion, opt-out mechanics, monthly self-deposit through Coretax DJP, annual SPT reporting, and the interaction with PPN/VAT and NIK-as-NPWP. Out of scope: corporate income tax under PPh Badan progressive rates (see PPh 25/29 workflows), partial-year regime changes, PPh 21 employment withholding (see id-payroll-pph21), PPN/VAT (see indonesia-vat), and any taxpayer above the IDR 4.8 billion threshold. ALWAYS read this skill before touching any PPh Final UMKM work."
 jurisdiction: ID
 tax_year: 2025
+last_updated: 2026-05-27
+verified_by: RILIA PUTRI
 tier: 2
-last_updated: 2026-07-06
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# id-pph-final-umkm
+# ID Pph Final Umkm
 
 ## Indonesia PPh Final UMKM — 0.5% MSME Final Tax Skill v1.0
 
@@ -352,3 +354,21 @@ a formal engagement letter** — book a free 30-minute call:
 We'll route you to the named verifier covering your country or state. You can
 also see the full list of verified accountants at
 [openaccountants.com/network](https://openaccountants.com/network).
+
+<!-- openaccountants-cta-block -->
+
+---
+
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

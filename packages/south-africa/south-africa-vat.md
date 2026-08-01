@@ -4,24 +4,23 @@ description: Use this skill whenever asked to prepare, review, or classify trans
 version: 2.1
 jurisdiction: ZA
 tax_year: 2025
+last_updated: 2026-04-13
+verified_by: Werner Britz
+depends_on: - vat-workflow-base
 category: international
-depends_on:
-  - vat-workflow-base
-verified_by: Werner Britz, CA(SA)
+tier: 1
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# South Africa VAT (VAT201) Skill v2.1
+# South Africa VAT
 
-> ✅ **Accountant-reviewed** · **Werner Britz, CA(SA)** · credential verified · [public record](https://www.openaccountants.com/network/28a3ec1b-d699-4c5d-bb60-3114eedc59d0)
-
-
----
+## South Africa VAT (VAT201) Skill v2.1
 
 ## Verified rates & thresholds (accountant-reviewed)
 
-> Reviewed against the cited tax authorities by **Werner Britz** on 2026-06-12.
-> This block is generated from the verified facts database at openaccountants.com —
-> edit the facts there, not this prose. Items under clarification are excluded.
+Reviewed against the cited tax authorities by **Werner Britz** on 2026-06-12.
+Items flagged for further clarification are tracked separately and excluded here.
+This block is generated from verified `skill_facts` — edit the facts, not the prose.
 
 ### VAT (south-africa-vat)
 
@@ -40,7 +39,9 @@ verified_by: Werner Britz, CA(SA)
 - **Filing deadline** — Last business day of month following tax period (eFiling); 25th for paper (not recommended)  _(VAT Act s 28)_
 - **Tax invoice** — Add the required content (see Section 5.4 below): full invoice over R5,000 incl VAT, abridged R50-R5,000, no invoice required for R50 or less but a till slip is needed.  _(VAT Act s 16(2) and s 20)_
 - **VAT number** — Format: 4xxxxxxxx (10 digits starting with 4)  _(SARS Register for VAT page)_
-- **Contributor / Validated by** — After validation, update "Validated by" status with reviewer name and date.
+
+After validation, update "Validated by" status with reviewer name and date.
+
 - **Field 1** — Add: "excluding capital goods" - capital goods go to Field 1A.  _(SARS VAT201 completion guide)_
 - **Field 1A** — Field 1A is the VAT-INCLUSIVE VALUE of standard-rated CAPITAL goods supplied. Output VAT on Field 1 is Field 4. Output VAT on Field 1A is Field 4A.  _(SARS VAT201 completion guide)_
 - **Field 2** — Split: Field 2 (zero-rated excl exports), Field 2A (exported goods).  _(SARS VAT201 completion guide)_
@@ -61,11 +62,17 @@ verified_by: Werner Britz, CA(SA)
 - **Unknown whether tax invoice compliant** — No input tax  _(VAT Act s 16(2))_
 - **Unknown whether zero-rated or exempt** — Treat as taxable 15%
 - **Unknown B2B vs B2C for cross-border** — 15% if consumed in South Africa
-- **HIGH single transaction** — Reasonable threshold for a high-value review flag.
-- **HIGH tax delta on single default** — Reasonable.
-- **MEDIUM counterparty concentration** — Reasonable.
-- **MEDIUM conservative default count** — Reasonable.
-- **LOW absolute net VAT position** — Reasonable.
+
+Reasonable threshold for a high-value review flag.
+
+Reasonable.
+
+Reasonable.
+
+Reasonable.
+
+Reasonable.
+
 - **Minimum viable** — Bank statement for the tax period in CSV, PDF, or pasted text. VAT registration number (starting with 4)
 - **Recommended** — Tax invoices are required for input claims above R50, not just above R5,000. Above R5,000 a FULL tax invoice is required; between R50 and R5,000 an abridged invoice is acceptable. Reference to "Field 14" for prior period excess credit is wrong - prior period credit is not a VAT201 field; it carries forward via SARS's vendor statement.  _(VAT Act s 16(2) and s 20)_
 - **Ideal** — Complete creditors/debtors ledger, import VAT certificates (SAD500), asset register, prior VAT201 return
@@ -100,29 +107,29 @@ verified_by: Werner Britz, CA(SA)
 - **AFRIHOST** — Input 15%
 - **SOUTH AFRICAN AIRWAYS, SAA** — Route distinction (international 0% / domestic 15%) is correct as a high-level summary, but ticket components are NOT uniformly 15% (domestic) or 0% (international). Split required: Airline ticket must be SPLIT - not all components are VATable. Typical breakdown on a domestic SA ticket: (a) Base air fare: 15% VAT (claimable). (b) Fuel surcharge: 15% VAT (claimable, airline cost). (c) ACSA Passenger Service Charge (PSC): 15% VAT INCLUSIVE (per ACSA published tariffs from 1 April 2019; claimable). (d) SACAA Passenger Safety Charge: NOT VATable (statutory levy, pass-through). (e) ATNS Air Traffic and Navigation Services charge: NOT VATable to the passenger (regulated pass-through). (f) Insurance surcharge (if charged by airline): 15% VAT (claimable). (g) Air Passenger Tax (only on flights to international destinations - R100 SACU / R190 other): NOT VATable (tax under s 47B Customs and Excise Act, imposed on the passenger, recovered by the airline). For INTERNATIONAL flights ex-SA: the airfare itself is ZERO-RATED under s 11(2)(a). Airport taxes and APT remain not-VATable. Practical: the airline e-ticket usually shows these as separate lines. Claim input only on the VAT-inclusive components (lines (a), (b), (c), and (f) for domestic; line (c) only for international, since (a) is zero-rated). The full "15% of ticket total" approach overclaims input by approximately the value of items (d), (e), and (g). Note: SAA emerged from business rescue in 2021. Mango (subsidiary) ceased operating in 2021.  _(VAT Act s 11(2)(a) and s 12; Customs and Excise Act s 47B (Air Passenger Tax); ACSA Airport Tariffs schedule (effective 1 April 2019 and as amended); SACAA passenger safety charge regulations; Tax Faculty FAQ on travel agent VAT; Accounting Weekly "International Airfare and VAT Claims")_
 - **FLYSAFAIR** — Cannot apply "15% on ticket total" - need to split by component. Airline ticket must be SPLIT - not all components are VATable. Typical breakdown on a domestic SA ticket: (a) Base air fare: 15% VAT (claimable). (b) Fuel surcharge: 15% VAT (claimable, airline cost). (c) ACSA Passenger Service Charge (PSC): 15% VAT INCLUSIVE (per ACSA published tariffs from 1 April 2019; claimable). (d) SACAA Passenger Safety Charge: NOT VATable (statutory levy, pass-through). (e) ATNS Air Traffic and Navigation Services charge: NOT VATable to the passenger (regulated pass-through). (f) Insurance surcharge (if charged by airline): 15% VAT (claimable). (g) Air Passenger Tax (only on flights to international destinations - R100 SACU / R190 other): NOT VATable (tax under s 47B Customs and Excise Act, imposed on the passenger, recovered by the airline). For INTERNATIONAL flights ex-SA: the airfare itself is ZERO-RATED under s 11(2)(a). Airport taxes and APT remain not-VATable. Practical: the airline e-ticket usually shows these as separate lines. Claim input only on the VAT-inclusive components (lines (a), (b), (c), and (f) for domestic; line (c) only for international, since (a) is zero-rated). The full "15% of ticket total" approach overclaims input by approximately the value of items (d), (e), and (g).  _(VAT Act s 11(2)(a) and s 12; Customs and Excise Act s 47B (Air Passenger Tax); ACSA Airport Tariffs schedule (effective 1 April 2019 and as amended); SACAA passenger safety charge regulations; Tax Faculty FAQ on travel agent VAT; Accounting Weekly "International Airfare and VAT Claims")_
-- **AIRLINK** — Route framing correct but not all components on a domestic ticket are 15%. Split required: Airline ticket must be SPLIT - not all components are VATable. Typical breakdown on a domestic SA ticket: (a) Base air fare: 15% VAT (claimable). (b) Fuel surcharge: 15% VAT (claimable, airline cost). (c) ACSA Passenger Service Charge (PSC): 15% VAT INCLUSIVE (per ACSA published tariffs from 1 April 2019; claimable). (d) SACAA Passenger Safety Charge: NOT VATable (statutory levy, pass-through). (e) ATNS Air Traffic and Navigation Services charge: NOT VATable to the passenger (regulated pass-through). (f) Insurance surcharge (if charged by airline): 15% VAT (claimable). (g) Air Passenger Tax (only on flights to international destinations - R100 SACU / R190 other): NOT VATable (tax under s 47B Customs and Excise Act, imposed on the passenger, recovered by the airline). For INTERNATIONAL flights ex-SA: the airfare itself is ZERO-RATED under s 11(2)(a). Airport taxes and APT remain not-VATable. Practical: the airline e-ticket usually shows these as separate lines. Claim input only on the VAT-inclusive components (lines (a), (b), (c), and (f) for domestic; line (c) only for international, since (a) is zero-rated). The full "15% of ticket total" approach overclaims input by approximately the value of items (d), (e), and (g).  _(VAT Act s 11(2)(a) and s 12; Customs and Excise Act s 47B (Air Passenger Tax); ACSA Airport Tariffs schedule (effective 1 April 2019 and as amended); SACAA passenger safety charge regulations; Tax Faculty FAQ on travel agent VAT; Accounting Weekly "International Airfare and VAT Claims")_
-- **KULULA.COM** — Kulula ceased operations on 5 July 2022 along with its parent Comair under business rescue. Remove from supplier list. Where the row is being used as a template for similar low-cost domestic carriers (Lift, FlySafair, Cemair): same split-by-component issue applies. Airline ticket must be SPLIT - not all components are VATable. Typical breakdown on a domestic SA ticket: (a) Base air fare: 15% VAT (claimable). (b) Fuel surcharge: 15% VAT (claimable, airline cost). (c) ACSA Passenger Service Charge (PSC): 15% VAT INCLUSIVE (per ACSA published tariffs from 1 April 2019; claimable). (d) SACAA Passenger Safety Charge: NOT VATable (statutory levy, pass-through). (e) ATNS Air Traffic and Navigation Services charge: NOT VATable to the passenger (regulated pass-through). (f) Insurance surcharge (if charged by airline): 15% VAT (claimable). (g) Air Passenger Tax (only on flights to international destinations - R100 SACU / R190 other): NOT VATable (tax under s 47B Customs and Excise Act, imposed on the passenger, recovered by the airline). For INTERNATIONAL flights ex-SA: the airfare itself is ZERO-RATED under s 11(2)(a). Airport taxes and APT remain not-VATable. Practical: the airline e-ticket usually shows these as separate lines. Claim input only on the VAT-inclusive components (lines (a), (b), (c), and (f) for domestic; line (c) only for international, since (a) is zero-rated). The full "15% of ticket total" approach overclaims input by approximately the value of items (d), (e), and (g).  _(VAT Act s 11(2)(a) and s 12; Customs and Excise Act s 47B (Air Passenger Tax); ACSA Airport Tariffs schedule (effective 1 April 2019 and as amended); SACAA passenger safety charge regulations; Tax Faculty FAQ on travel agent VAT; Accounting Weekly "International Airfare and VAT Claims")_
-- **UBER SOUTH AFRICA** — Uber/Bolt operate on an AGENCY model: the platform invoices the rider in the name of the driver as the driver's agent for the fare. The driver is the actual supplier of the road transport service. Under s 12(g) of the VAT Act, "the supply by any person of a service comprising the transport in a vehicle operated by him of fare-paying passengers and their personal effects by road" is EXEMPT. So even a VAT-registered Uber driver could not charge VAT on the fare. Uber's own SA tax page for drivers confirms: "the transportation services provided by you to riders is exempt from VAT in South Africa". Three separate supplies in the chain: (1) Driver -> Rider for the fare: EXEMPT (s 12(g)). No VAT, no input claim for a business rider. (2) Uber/Bolt -> Driver for service fee and commission: STANDARD-RATED at 15%. Driver may claim input if registered (most are not). (3) Uber -> Rider for booking fee (small separate line): STANDARD-RATED at 15%. A VAT-registered business rider can claim input on this fragment with a valid Uber tax invoice. Note: Uber registered as a SA VAT vendor from May 2019; Bolt similarly. TAXI (metered cab): generally not VAT-registered, and the same s 12(g) exemption applies to the fare itself. Practical: for a business client using Uber/Bolt, the FARE is not claimable as input VAT. Only the booking fee fragment (if separately shown on the Uber tax invoice) may be claimed. Most invoices do not separate this cleanly, so the practical answer is "no input on Uber/Bolt in most cases".  _(VAT Act s 12(g) and s 54 (agent and principal); Uber South Africa "Tax Information for Driver-Partners" page; SARS BGR 16 (Issue 4) on apportionment; SARS VAT Quick Reference Guide. The agency point is anchored in s 54 of the VAT Act: where a person acts as agent, the supply is deemed made by the principal.)_
-- **BOLT SOUTH AFRICA** — Uber/Bolt operate on an AGENCY model: the platform invoices the rider in the name of the driver as the driver's agent for the fare. The driver is the actual supplier of the road transport service. Under s 12(g) of the VAT Act, "the supply by any person of a service comprising the transport in a vehicle operated by him of fare-paying passengers and their personal effects by road" is EXEMPT. So even a VAT-registered Uber driver could not charge VAT on the fare. Uber's own SA tax page for drivers confirms: "the transportation services provided by you to riders is exempt from VAT in South Africa". Three separate supplies in the chain: (1) Driver -> Rider for the fare: EXEMPT (s 12(g)). No VAT, no input claim for a business rider. (2) Uber/Bolt -> Driver for service fee and commission: STANDARD-RATED at 15%. Driver may claim input if registered (most are not). (3) Uber -> Rider for booking fee (small separate line): STANDARD-RATED at 15%. A VAT-registered business rider can claim input on this fragment with a valid Uber tax invoice. Note: Uber registered as a SA VAT vendor from May 2019; Bolt similarly. TAXI (metered cab): generally not VAT-registered, and the same s 12(g) exemption applies to the fare itself. Practical: for a business client using Uber/Bolt, the FARE is not claimable as input VAT. Only the booking fee fragment (if separately shown on the Uber tax invoice) may be claimed. Most invoices do not separate this cleanly, so the practical answer is "no input on Uber/Bolt in most cases".  _(VAT Act s 12(g) and s 54 (agent and principal); Uber South Africa "Tax Information for Driver-Partners" page; SARS BGR 16 (Issue 4) on apportionment; SARS VAT Quick Reference Guide. The agency point is anchored in s 54 of the VAT Act: where a person acts as agent, the supply is deemed made by the principal.)_
+- **AIRLINK** — Route framing correct but not all components on a domestic ticket are 15%. Split required: same breakdown as SAA/FlySafair entries above.  _(VAT Act s 11(2)(a) and s 12; Customs and Excise Act s 47B (Air Passenger Tax); ACSA Airport Tariffs schedule (effective 1 April 2019 and as amended); SACAA passenger safety charge regulations; Tax Faculty FAQ on travel agent VAT; Accounting Weekly "International Airfare and VAT Claims")_
+- **KULULA.COM** — Kulula ceased operations on 5 July 2022 along with its parent Comair under business rescue. Remove from supplier list. Where the row is being used as a template for similar low-cost domestic carriers (Lift, FlySafair, Cemair): same split-by-component issue applies (same breakdown as SAA/FlySafair entries above).  _(VAT Act s 11(2)(a) and s 12; Customs and Excise Act s 47B (Air Passenger Tax); ACSA Airport Tariffs schedule (effective 1 April 2019 and as amended); SACAA passenger safety charge regulations; Tax Faculty FAQ on travel agent VAT; Accounting Weekly "International Airfare and VAT Claims")_
+- **UBER SOUTH AFRICA** — Uber/Bolt operate on an AGENCY model: the platform invoices the rider in the name of the driver as the driver's agent for the fare. The driver is the actual supplier of the road transport service. Under s 12(g), the fare is EXEMPT. Three separate supplies: (1) Driver->Rider fare: EXEMPT (s 12(g)); (2) Uber/Bolt->Driver service fee: STANDARD-RATED 15%, driver may claim input if registered; (3) Uber->Rider booking fee: STANDARD-RATED 15%, business rider may claim input with valid tax invoice. Uber registered as SA VAT vendor from May 2019; Bolt similarly. TAXI: generally not VAT-registered, same s 12(g) exemption applies. Practical: fare not claimable, only booking fee fragment (if separately shown) may be claimed.  _(VAT Act s 12(g) and s 54 (agent and principal); Uber South Africa "Tax Information for Driver-Partners" page; SARS BGR 16 (Issue 4) on apportionment; SARS VAT Quick Reference Guide)_
+- **BOLT SOUTH AFRICA** — Same agency model as Uber: platform invoices rider as driver's agent for the fare; fare EXEMPT under s 12(g); service fee/commission STANDARD-RATED 15%; booking fee STANDARD-RATED 15% and claimable with valid tax invoice.  _(VAT Act s 12(g) and s 54; Uber South Africa "Tax Information for Driver-Partners" page; SARS BGR 16 (Issue 4); SARS VAT Quick Reference Guide)_
 - **DHL SOUTH AFRICA** — Input 15%  _(VAT Act s 11(2)(a))_
 - **FEDEX SOUTH AFRICA** — Input 15%
 - **DAWN WING** — Input 15%
 - **THE COURIER GUY, TCG** — Input 15%
 - **ARAMEX SOUTH AFRICA** — Input 15%
-- **CHECKERS, SHOPRITE** — CRITICAL ENTERTAINMENT BLOCK: input tax on food and beverages purchased from a supermarket is usually BLOCKED under s 17(2)(a) regardless of underlying rate, because the "supply" by the vendor to its employees, clients, or in the office is "entertainment" as defined in s 1 of the VAT Act. The skill's "split by line item" framing is misleading: it implies the standard-rated non-food portion is claimable when it is not, where the purchase is for office consumption. Default treatment for office groceries (tea, coffee, milk, sugar, biscuits, refreshments, staff fridge, year-end party food): NO INPUT TAX regardless of whether items are zero-rated or standard-rated. Entertainment block applies. Exceptions where input CAN be claimed: (1) vendor is in the business of providing entertainment (restaurant, hotel, conference venue, caterer, B&B - the food is resale stock); (2) employee subsistence while away from usual place of work on business; (3) employee canteen where the employee is charged at or above cost (s 17(2)(a)(ii)); (4) bona fide promotional gifts subject to BGR conditions; (5) long-distance road transport operators meals for drivers. For the LINE-ITEM split that the skill describes (basic 0% vs non-food 15%): only relevant where the items are genuinely for resale (a café buying milk and Coke from Makro for the shop). For office consumption, both columns end up at zero claimable.  _(VAT Act s 1 ("entertainment" definition); s 17(2)(a) (input tax block); SARS BGR 16 (Issue 4); SARS IN 70 (supplies for no consideration); SARS VAT 411 Guide for Entertainment, Accommodation and Catering)_
-- **PICK N PAY, PNP** — CRITICAL ENTERTAINMENT BLOCK: input tax on food and beverages purchased from a supermarket is usually BLOCKED under s 17(2)(a) regardless of underlying rate, because the "supply" by the vendor to its employees, clients, or in the office is "entertainment" as defined in s 1 of the VAT Act. The skill's "split by line item" framing is misleading: it implies the standard-rated non-food portion is claimable when it is not, where the purchase is for office consumption. Default treatment for office groceries (tea, coffee, milk, sugar, biscuits, refreshments, staff fridge, year-end party food): NO INPUT TAX regardless of whether items are zero-rated or standard-rated. Entertainment block applies. Exceptions where input CAN be claimed: (1) vendor is in the business of providing entertainment (restaurant, hotel, conference venue, caterer, B&B - the food is resale stock); (2) employee subsistence while away from usual place of work on business; (3) employee canteen where the employee is charged at or above cost (s 17(2)(a)(ii)); (4) bona fide promotional gifts subject to BGR conditions; (5) long-distance road transport operators meals for drivers. For the LINE-ITEM split that the skill describes (basic 0% vs non-food 15%): only relevant where the items are genuinely for resale (a café buying milk and Coke from Makro for the shop). For office consumption, both columns end up at zero claimable.  _(VAT Act s 1 ("entertainment" definition); s 17(2)(a) (input tax block); SARS BGR 16 (Issue 4); SARS IN 70 (supplies for no consideration); SARS VAT 411 Guide for Entertainment, Accommodation and Catering)_
-- **WOOLWORTHS FOOD** — CRITICAL ENTERTAINMENT BLOCK: input tax on food and beverages purchased from a supermarket is usually BLOCKED under s 17(2)(a) regardless of underlying rate, because the "supply" by the vendor to its employees, clients, or in the office is "entertainment" as defined in s 1 of the VAT Act. The skill's "split by line item" framing is misleading: it implies the standard-rated non-food portion is claimable when it is not, where the purchase is for office consumption. Default treatment for office groceries (tea, coffee, milk, sugar, biscuits, refreshments, staff fridge, year-end party food): NO INPUT TAX regardless of whether items are zero-rated or standard-rated. Entertainment block applies. Exceptions where input CAN be claimed: (1) vendor is in the business of providing entertainment (restaurant, hotel, conference venue, caterer, B&B - the food is resale stock); (2) employee subsistence while away from usual place of work on business; (3) employee canteen where the employee is charged at or above cost (s 17(2)(a)(ii)); (4) bona fide promotional gifts subject to BGR conditions; (5) long-distance road transport operators meals for drivers. For the LINE-ITEM split that the skill describes (basic 0% vs non-food 15%): only relevant where the items are genuinely for resale (a café buying milk and Coke from Makro for the shop). For office consumption, both columns end up at zero claimable.  _(VAT Act s 1 ("entertainment" definition); s 17(2)(a) (input tax block); SARS BGR 16 (Issue 4); SARS IN 70 (supplies for no consideration); SARS VAT 411 Guide for Entertainment, Accommodation and Catering)_
-- **SPAR** — CRITICAL ENTERTAINMENT BLOCK: input tax on food and beverages purchased from a supermarket is usually BLOCKED under s 17(2)(a) regardless of underlying rate, because the "supply" by the vendor to its employees, clients, or in the office is "entertainment" as defined in s 1 of the VAT Act. The skill's "split by line item" framing is misleading: it implies the standard-rated non-food portion is claimable when it is not, where the purchase is for office consumption. Default treatment for office groceries (tea, coffee, milk, sugar, biscuits, refreshments, staff fridge, year-end party food): NO INPUT TAX regardless of whether items are zero-rated or standard-rated. Entertainment block applies. Exceptions where input CAN be claimed: (1) vendor is in the business of providing entertainment (restaurant, hotel, conference venue, caterer, B&B - the food is resale stock); (2) employee subsistence while away from usual place of work on business; (3) employee canteen where the employee is charged at or above cost (s 17(2)(a)(ii)); (4) bona fide promotional gifts subject to BGR conditions; (5) long-distance road transport operators meals for drivers. For the LINE-ITEM split that the skill describes (basic 0% vs non-food 15%): only relevant where the items are genuinely for resale (a café buying milk and Coke from Makro for the shop). For office consumption, both columns end up at zero claimable.  _(VAT Act s 1 ("entertainment" definition); s 17(2)(a) (input tax block); SARS BGR 16 (Issue 4); SARS IN 70 (supplies for no consideration); SARS VAT 411 Guide for Entertainment, Accommodation and Catering)_
-- **FOOD LOVERS MARKET** — CRITICAL ENTERTAINMENT BLOCK: input tax on food and beverages purchased from a supermarket is usually BLOCKED under s 17(2)(a) regardless of underlying rate, because the "supply" by the vendor to its employees, clients, or in the office is "entertainment" as defined in s 1 of the VAT Act. The skill's "split by line item" framing is misleading: it implies the standard-rated non-food portion is claimable when it is not, where the purchase is for office consumption. Default treatment for office groceries (tea, coffee, milk, sugar, biscuits, refreshments, staff fridge, year-end party food): NO INPUT TAX regardless of whether items are zero-rated or standard-rated. Entertainment block applies. Exceptions where input CAN be claimed: (1) vendor is in the business of providing entertainment (restaurant, hotel, conference venue, caterer, B&B - the food is resale stock); (2) employee subsistence while away from usual place of work on business; (3) employee canteen where the employee is charged at or above cost (s 17(2)(a)(ii)); (4) bona fide promotional gifts subject to BGR conditions; (5) long-distance road transport operators meals for drivers. For the LINE-ITEM split that the skill describes (basic 0% vs non-food 15%): only relevant where the items are genuinely for resale (a café buying milk and Coke from Makro for the shop). For office consumption, both columns end up at zero claimable.  _(VAT Act s 1 ("entertainment" definition); s 17(2)(a) (input tax block); SARS BGR 16 (Issue 4); SARS IN 70 (supplies for no consideration); SARS VAT 411 Guide for Entertainment, Accommodation and Catering)_
-- **CLICKS** — CLAIMABLE at 15% (input claimable for business use): office cleaning supplies (multi-purpose cleaner, disinfectant, bleach, dishwashing liquid, bin liners), toiletries for the office (toilet paper, hand soap, hand wash, hand sanitiser, paper towels, tissues for offices and meeting rooms), stationery items, first aid supplies (plasters, antiseptic, basic first aid kit items - mandatory under the Occupational Health and Safety Act), batteries, and other general office consumables sold by Clicks. BLOCKED under s 17(2)(a) entertainment: food and beverages bought for office consumption (coffee, tea, sugar, milk, biscuits, snacks, soft drinks, party platters), catering for client meetings, alcohol for staff functions. NOT FOR BUSINESS at all (no input claim, also not income tax deductible): personal cosmetics and beauty products for staff personal use, vitamins for staff personal consumption, hair care for personal use. If provided to staff as a benefit, it may also be a fringe benefit under s 18(3). STANDARD-RATED at 15% but check business purpose: prescription medicines (NOT exempt as sometimes assumed - see notes on prescription medicines elsewhere); OTC medicines. Business-related purchases of medicines are uncommon (typically only for first aid kit stock).  _(VAT Act s 1 ("entertainment" definition - "food, beverages, accommodation, entertainment, amusement, recreation or hospitality"); s 17(2)(a) (entertainment input tax block); SARS BGR 16; Occupational Health and Safety Act 85 of 1993 (first aid kit requirement))_
-- **DIS-CHEM** — Skill's line is wrong on two counts. (1) Prescription medicines are STANDARD-RATED at 15%, not exempt or zero-rated. Schedule 2 (zero-rated list) does not include prescriptions. (2) The single-rate "Input 15% (OTC)" is too narrow - Dis-Chem also sells a wide range of non-medicine items relevant to a business: CLAIMABLE at 15% (input claimable for business use): office cleaning supplies, toiletries for the office, hand sanitiser and tissues, first aid supplies, stationery items, batteries. BLOCKED under s 17(2)(a) entertainment: food and beverages bought for office consumption (Dis-Chem also has a food/snacks aisle); catering items for client meetings. NOT FOR BUSINESS: personal cosmetics, vitamins for staff personal use, baby products for staff personal use, fragrance and beauty products. STANDARD-RATED at 15% input: prescription medicines (corrected from skill's "0% prescription exemption"). All medicines (prescription and OTC) are standard-rated. Business purpose is narrow - typically only first aid kit stock under OHS Act requirements. Correct entry replacing the skill line: "Input 15% on medicines (prescription and OTC); input 15% on office consumables, cleaning, hygiene, and first aid; entertainment block applies to food and beverage lines; personal cosmetics not business expense."  _(VAT Act s 1 ("entertainment" definition - "food, beverages, accommodation, entertainment, amusement, recreation or hospitality"); s 17(2)(a) (entertainment input tax block); SARS BGR 16; Occupational Health and Safety Act 85 of 1993 (first aid kit requirement); Schedule 2 of VAT Act (excludes prescription medicines))_
-- **MCDONALD'S SA, STEERS, NANDO'S** — These are standard-rated AS SUPPLIES from the restaurant's side. From the buying business's side, the input tax is BLOCKED under s 17(2)(a) as entertainment, UNLESS the buying vendor is in the business of providing entertainment (very rare for fast food bought by a client business), or it qualifies as employee subsistence away from usual place of work, or canteen-with-charge, or promotional. Default for a client business buying from McDonald's/Steers/Nando's: no input claim. CRITICAL ENTERTAINMENT BLOCK: input tax on food and beverages purchased from a supermarket is usually BLOCKED under s 17(2)(a) regardless of underlying rate, because the "supply" by the vendor to its employees, clients, or in the office is "entertainment" as defined in s 1 of the VAT Act. The skill's "split by line item" framing is misleading: it implies the standard-rated non-food portion is claimable when it is not, where the purchase is for office consumption. Default treatment for office groceries (tea, coffee, milk, sugar, biscuits, refreshments, staff fridge, year-end party food): NO INPUT TAX regardless of whether items are zero-rated or standard-rated. Entertainment block applies. Exceptions where input CAN be claimed: (1) vendor is in the business of providing entertainment (restaurant, hotel, conference venue, caterer, B&B - the food is resale stock); (2) employee subsistence while away from usual place of work on business; (3) employee canteen where the employee is charged at or above cost (s 17(2)(a)(ii)); (4) bona fide promotional gifts subject to BGR conditions; (5) long-distance road transport operators meals for drivers. For the LINE-ITEM split that the skill describes (basic 0% vs non-food 15%): only relevant where the items are genuinely for resale (a café buying milk and Coke from Makro for the shop). For office consumption, both columns end up at zero claimable.  _(VAT Act s 1 ("entertainment" definition); s 17(2)(a) (input tax block); SARS BGR 16 (Issue 4); SARS IN 70 (supplies for no consideration); SARS VAT 411 Guide for Entertainment, Accommodation and Catering)_
+- **CHECKERS, SHOPRITE** — CRITICAL ENTERTAINMENT BLOCK: input tax on food and beverages purchased from a supermarket is usually BLOCKED under s 17(2)(a) regardless of underlying rate, because the supply to employees, clients, or in the office is "entertainment" as defined in s 1. Default for office groceries (tea, coffee, milk, sugar, biscuits, refreshments, staff fridge, year-end party food): NO INPUT TAX regardless of rate. Exceptions where input CAN be claimed: (1) vendor is in the business of providing entertainment (restaurant, hotel, conference venue, caterer, B&B - resale stock); (2) employee subsistence away from usual place of work; (3) employee canteen charged at/above cost (s 17(2)(a)(ii)); (4) bona fide promotional gifts subject to BGR conditions; (5) long-distance road transport operators meals for drivers. Line-item split relevant only where items are genuinely for resale.  _(VAT Act s 1 ("entertainment" definition); s 17(2)(a) (input tax block); SARS BGR 16 (Issue 4); SARS IN 70 (supplies for no consideration); SARS VAT 411 Guide for Entertainment, Accommodation and Catering)_
+- **PICK N PAY, PNP** — CRITICAL ENTERTAINMENT BLOCK (same as Checkers/Shoprite entry): input on office groceries blocked under s 17(2)(a); exceptions for hospitality trade, subsistence, canteen-with-charge, promotional gifts, transport operator driver meals.  _(VAT Act s 1 ("entertainment" definition); s 17(2)(a) (input tax block); SARS BGR 16 (Issue 4); SARS IN 70 (supplies for no consideration); SARS VAT 411 Guide for Entertainment, Accommodation and Catering)_
+- **WOOLWORTHS FOOD** — CRITICAL ENTERTAINMENT BLOCK (same as above entries): input on office groceries blocked under s 17(2)(a); same exceptions apply.  _(VAT Act s 1 ("entertainment" definition); s 17(2)(a) (input tax block); SARS BGR 16 (Issue 4); SARS IN 70 (supplies for no consideration); SARS VAT 411 Guide for Entertainment, Accommodation and Catering)_
+- **SPAR** — CRITICAL ENTERTAINMENT BLOCK (same as above entries): input on office groceries blocked under s 17(2)(a); same exceptions apply.  _(VAT Act s 1 ("entertainment" definition); s 17(2)(a) (input tax block); SARS BGR 16 (Issue 4); SARS IN 70 (supplies for no consideration); SARS VAT 411 Guide for Entertainment, Accommodation and Catering)_
+- **FOOD LOVERS MARKET** — CRITICAL ENTERTAINMENT BLOCK (same as above entries): input on office groceries blocked under s 17(2)(a); same exceptions apply.  _(VAT Act s 1 ("entertainment" definition); s 17(2)(a) (input tax block); SARS BGR 16 (Issue 4); SARS IN 70 (supplies for no consideration); SARS VAT 411 Guide for Entertainment, Accommodation and Catering)_
+- **CLICKS** — CLAIMABLE at 15% (business use): office cleaning supplies, toiletries, stationery, first aid supplies (mandatory under OHS Act), batteries, other general office consumables. BLOCKED under s 17(2)(a) entertainment: food/beverages for office consumption, catering for client meetings, alcohol for staff functions. NOT FOR BUSINESS (no input claim, not income tax deductible either): personal cosmetics, vitamins for personal use, hair care for personal use; if provided to staff as benefit may be fringe benefit under s 18(3). STANDARD-RATED at 15% but check business purpose: prescription medicines (NOT exempt); OTC medicines - business purchases uncommon (typically only first aid kit stock).  _(VAT Act s 1 ("entertainment" definition - "food, beverages, accommodation, entertainment, amusement, recreation or hospitality"); s 17(2)(a) (entertainment input tax block); SARS BGR 16; Occupational Health and Safety Act 85 of 1993 (first aid kit requirement))_
+- **DIS-CHEM** — Skill's line is wrong on two counts. (1) Prescription medicines are STANDARD-RATED at 15%, not exempt or zero-rated. (2) Single-rate "Input 15% (OTC)" too narrow. CLAIMABLE at 15%: office cleaning supplies, toiletries for office, hand sanitiser and tissues, first aid supplies, stationery, batteries. BLOCKED under s 17(2)(a): food/beverages for office consumption, catering items for client meetings. NOT FOR BUSINESS: personal cosmetics, vitamins, baby products, fragrance and beauty products. STANDARD-RATED at 15% input: prescription medicines (corrected from skill's "0% prescription exemption"). All medicines standard-rated. Correct entry: "Input 15% on medicines (prescription and OTC); input 15% on office consumables, cleaning, hygiene, and first aid; entertainment block applies to food and beverage lines; personal cosmetics not business expense."  _(VAT Act s 1 ("entertainment" definition - "food, beverages, accommodation, entertainment, amusement, recreation or hospitality"); s 17(2)(a) (entertainment input tax block); SARS BGR 16; Occupational Health and Safety Act 85 of 1993 (first aid kit requirement); Schedule 2 of VAT Act (excludes prescription medicines))_
+- **MCDONALD'S SA, STEERS, NANDO'S** — Standard-rated AS SUPPLIES from the restaurant's side. From the buying business's side, input tax BLOCKED under s 17(2)(a) as entertainment, UNLESS the buying vendor is in the business of providing entertainment (rare), or qualifies as employee subsistence away from usual place of work, or canteen-with-charge, or promotional. Default for a client business: no input claim. CRITICAL ENTERTAINMENT BLOCK applies as with supermarket entries above (office groceries etc.); same five exceptions apply.  _(VAT Act s 1 ("entertainment" definition); s 17(2)(a) (input tax block); SARS BGR 16 (Issue 4); SARS IN 70 (supplies for no consideration); SARS VAT 411 Guide for Entertainment, Accommodation and Catering)_
 - **Skill text** — Tighten the trigger: imported service is a service supplied by a non-resident OR by a resident from outside SA, to a recipient who is a resident, for utilisation otherwise than in making taxable supplies. The "net zero" works for fully taxable; partially exempt have a real cost (input apportioned). Critical detail: SA-registered electronic services suppliers (Google SA, Microsoft SA, Meta SA, Amazon SA, etc.) issue SA VAT tax invoices DIRECTLY and this is not an imported service - input is claimed normally. The s 7(1)(c) self-assessment only arises where the foreign entity bills you directly without SA VAT.  _(VAT Act s 7(1)(c) and s 14; Foreign Suppliers of Electronic Services Regulations (2014, expanded 2019))_
 - **GOOGLE (Workspace, Ads, Cloud)** — Google Cloud SA, Workspace, and Ads are typically billed by Google SA or Google Ireland with SA VAT charged (Google is a registered foreign electronic services supplier). If billed with SA VAT, treat as standard input. Only self-assess if invoice shows no SA VAT.  _(Foreign Suppliers of Electronic Services Regulations)_
 - **MICROSOFT (365, Azure)** — Microsoft is a registered foreign electronic services supplier - bills SA VAT directly. Treat as standard input on a SA VAT tax invoice. Self-assessment only for invoices without SA VAT.
 - **META, FACEBOOK ADS** — Meta SA Pty Ltd or Meta Platforms Ireland bills SA VAT. Standard input.
 - **ZOOM, SLACK** — Zoom and Slack registered for SA VAT - bill SA VAT directly.
-- **NOTION, OPENAI, ANTHROPIC** — Notion, OpenAI, Anthropic - check the actual invoice. Some are now SA VAT-registered (Notion, OpenAI); some bill from US/foreign entity without SA VAT (Anthropic API direct billing as at review date). For those without SA VAT, the self-assessment under s 7(1)(c) applies.
+- **NOTION, OPENAI, ANTHROPIC** — Check the actual invoice. Some are now SA VAT-registered (Notion, OpenAI); some bill from US/foreign entity without SA VAT (Anthropic API direct billing as at review date). For those without SA VAT, self-assessment under s 7(1)(c) applies.
 - **AWS** — AWS South Africa region bills SA VAT for SA-resident accounts. Treat as standard input.
 - **XERO (if billed from NZ)** — Xero now bills SA customers with SA VAT (Xero South Africa). Treat as standard input.
 - **XERO (South Africa entity)** — Input 15%
@@ -159,7 +166,9 @@ verified_by: Werner Britz, CA(SA)
 - **MISSING: Bad debts and bad debts recovered** — Section 22(1) bad debt relief: vendor on invoice basis may claim input deduction equal to 15/115 of the bad debt amount, where (a) the original supply was taxable, (b) the debt is outstanding more than 12 months from due date, (c) it has been written off in the books. s 22(2) recoupment if subsequently recovered. Common practitioner trap.  _(VAT Act s 22)_
 - **A. Output tax structure** — Logic sound. Map to actual VAT201 fields: A1->Field 1, A2->Field 4, A3->Field 2/2A, A4->Field 3, A5->Field 12 (other and imported services), A6->Field 13. Also add capital goods (Field 1A/4A) and commercial accommodation if applicable.  _(SARS VAT201 completion guide)_
 - **B. Input tax structure** — Logic sound. Map to actual VAT201: B1/B2 -> Field 15 (or Field 14 for capital), B3 -> Field 15A or 14A, B4 -> Field 15 (imported services input), B5 (blocked) -> not a Field; just excluded from claim, B6 -> Field 19.  _(SARS VAT201 completion guide)_
-- **Bank formats table** — FNB, Standard Bank, ABSA, Nedbank, Capitec column structures
+
+FNB, Standard Bank, ABSA, Nedbank, Capitec column structures
+
 - **CREDIT** — Incoming funds / Potential revenue
 - **DEBIT** — Outgoing payment / Potential expense
 - **ATM WITHDRAWAL** — Cash withdrawal / Tier 2 - ask
@@ -189,12 +198,15 @@ verified_by: Werner Britz, CA(SA)
 - **NEVER present calculations as definitive** — NEVER present calculations as definitive
 - **MISSING prohibition: bank fees** — Add: "Never exclude bank service fees as exempt - they are standard-rated and input claimable."  _(VAT Act s 2(1) proviso)_
 - **MISSING prohibition: fringe benefits** — Add: "Never omit s 18(3) output VAT on employee fringe benefits."  _(VAT Act s 18(3))_
-- **Disclaimer** — Note: skill has the disclaimer duplicated at end of file (sections 514-516 and 521-525). One copy is enough.
+
+Note: skill has the disclaimer duplicated at end of file (sections 514-516 and 521-525). One copy is enough.
 
 ## Section 1 — Quick reference
 
+**Section 1 — Quick reference**
+
 | Field | Value |
-|---|---|
+| --- | --- |
 | Country | South Africa (Republic of South Africa) |
 | Tax | VAT (Value-Added Tax) |
 | Currency | ZAR (South African Rand / R) |
@@ -217,8 +229,10 @@ verified_by: Werner Britz, CA(SA)
 
 ### Key VAT201 fields
 
+**Key VAT201 fields**
+
 | Field | Meaning |
-|---|---|
+| --- | --- |
 | 1 | Standard-rated supplies (VAT-inclusive, excluding capital goods) |
 | 1A | Standard-rated capital goods supplied (VAT-inclusive) |
 | 2 | Zero-rated supplies (excluding exports) |
@@ -244,8 +258,10 @@ verified_by: Werner Britz, CA(SA)
 
 ### Conservative defaults
 
+**Conservative defaults**
+
 | Ambiguity | Default |
-|---|---|
+| --- | --- |
 | Unknown rate on a sale | 15% standard |
 | Unknown counterparty country | Domestic South Africa |
 | Unknown export qualification | 15% until export evidence confirmed |
@@ -256,48 +272,40 @@ verified_by: Werner Britz, CA(SA)
 
 ### Red flag thresholds
 
+**Red flag thresholds**
+
 | Threshold | Value |
-|---|---|
+| --- | --- |
 | HIGH single transaction | ZAR 50,000 |
 | HIGH tax delta on single default | ZAR 7,500 |
 | MEDIUM counterparty concentration | >40% of output or input |
 | MEDIUM conservative default count | >4 per period |
 | LOW absolute net VAT position | ZAR 30,000 |
 
----
-
-## Section 2 — Required inputs and refusal catalogue
-
 ### Required inputs
 
-**Minimum viable** — bank statement for the tax period in CSV, PDF, or pasted text. VAT registration number (starting with 4).
+Minimum viable — bank statement for the tax period in CSV, PDF, or pasted text. VAT registration number (starting with 4).
 
-**Recommended** — tax invoices for all input tax claims above ZAR 5,000, sales invoices for all output, prior period excess credit (Field 14).
+Recommended — tax invoices for all input tax claims above ZAR 5,000, sales invoices for all output, prior period excess credit (Field 14).
 
-**Ideal** — complete creditors/debtors ledger, import VAT certificates (SAD500), asset register, prior VAT201 return.
+Ideal — complete creditors/debtors ledger, import VAT certificates (SAD500), asset register, prior VAT201 return.
 
-**Refusal if minimum missing — SOFT WARN.** No bank statement = hard stop. "Input tax credits require a valid VAT tax invoice per Section 20 of the VAT Act. All credits are provisional pending invoice verification."
+Refusal if minimum missing — SOFT WARN. No bank statement = hard stop. "Input tax credits require a valid VAT tax invoice per Section 20 of the VAT Act. All credits are provisional pending invoice verification."
 
 ### Refusal catalogue
 
-**R-ZA-1 — Non-VAT-registered vendor.** "Only registered vendors can charge VAT and claim input tax. Confirm VAT registration before proceeding."
-
-**R-ZA-2 — Partial exemption / apportionment.** "If the vendor makes both taxable and exempt supplies, input tax must be apportioned under Section 17(1) of the VAT Act. The apportionment ratio changes annually — out of scope without full-year data. Escalate to a CA(SA)."
-
-**R-ZA-3 — Capital goods scheme (Section 18A).** "Adjustments to input tax on capital goods where use changes between taxable and non-taxable purposes require specialist computation. Out of scope."
-
-**R-ZA-4 — Financial services (Section 2).** "Financial services have complex VAT treatment. Banks, insurers, and financial institutions require specialist handling. Out of scope."
-
-**R-ZA-5 — Property transactions.** "Property development, sale of commercial property, and going-concern zero-rating elections are highly fact-sensitive. Escalate to specialist."
-
----
-
-## Section 3 — Supplier pattern library
+- **R-ZA-1 — Non-VAT-registered vendor** — "Only registered vendors can charge VAT and claim input tax. Confirm VAT registration before proceeding."  _(R-ZA-1)_
+- **R-ZA-2 — Partial exemption / apportionment** — "If the vendor makes both taxable and exempt supplies, input tax must be apportioned under Section 17(1) of the VAT Act. The apportionment ratio changes annually — out of scope without full-year data. Escalate to a CA(SA)."  _(R-ZA-2, Section 17(1) VAT Act)_
+- **R-ZA-3 — Capital goods scheme (Section 18A)** — "Adjustments to input tax on capital goods where use changes between taxable and non-taxable purposes require specialist computation. Out of scope."  _(R-ZA-3, Section 18A)_
+- **R-ZA-4 — Financial services (Section 2)** — "Financial services have complex VAT treatment. Banks, insurers, and financial institutions require specialist handling. Out of scope."  _(R-ZA-4, Section 2)_
+- **R-ZA-5 — Property transactions** — "Property development, sale of commercial property, and going-concern zero-rating elections are highly fact-sensitive. Escalate to specialist."  _(R-ZA-5)_
 
 ### 3.1 South African banks — fees (standard-rated per s 2(1) proviso)
 
+**South African banks — fees (standard-rated per s 2(1) proviso)**  _(s 2(1) proviso; s 12(a); s 2(1)(f))_
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | ABSA BANK, ABSA GROUP | Input 15% | Bank service fees are standard-rated per s 2(1) proviso; banks issue monthly VAT tax invoices. Interest remains exempt. |
 | STANDARD BANK, STANBIC | Input 15% | Standard-rated per s 2(1) proviso |
 | FIRSTRAND, FNB, FIRST NATIONAL BANK | Input 15% | Standard-rated per s 2(1) proviso |
@@ -310,8 +318,10 @@ verified_by: Werner Britz, CA(SA)
 
 ### 3.2 South African government and statutory (exclude)
 
+**South African government and statutory (exclude)**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | SARS, SOUTH AFRICAN REVENUE SERVICE | EXCLUDE | Tax payment |
 | UIF, UNEMPLOYMENT INSURANCE FUND | EXCLUDE | Statutory contribution |
 | WORKMEN'S COMP, COIDA | EXCLUDE | Compensation fund |
@@ -320,8 +330,10 @@ verified_by: Werner Britz, CA(SA)
 
 ### 3.3 South African utilities (taxable at 15%)
 
+**South African utilities (taxable at 15%)**
+
 | Pattern | Treatment | Rate | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | ESKOM | Input 15% | 15% | National electricity — taxable |
 | CITY POWER (Johannesburg) | Input 15% | 15% | Municipal electricity — taxable |
 | CAPE TOWN ELECTRICITY | Input 15% | 15% | Municipal electricity — taxable |
@@ -336,8 +348,10 @@ verified_by: Werner Britz, CA(SA)
 
 ### 3.4 Transport and logistics
 
+**Transport and logistics**  _(s 12(g))_
+
 | Pattern | Treatment | Rate | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | SOUTH AFRICAN AIRWAYS, SAA | Check route | 0%/15% | International 0%; domestic 15% |
 | FLYSAFAIR | Input 15% | 15% | Domestic airline — 15% |
 | AIRLINK | Check route | 0%/15% | International 0%; domestic 15% |
@@ -351,8 +365,10 @@ verified_by: Werner Britz, CA(SA)
 
 ### 3.5 Food and retail
 
+**Food and retail**  _(s 17(2)(a))_
+
 | Pattern | Treatment | Rate | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | CHECKERS, SHOPRITE | Input 15%/0% | Mixed | Basic zero-rated food items; non-food 15%. For office consumption (tea, coffee, staff fridge, year-end function), input tax is BLOCKED under s 17(2)(a) entertainment regardless of zero-rate/standard-rate split. Only claimable where items are for resale by a vendor in the entertainment trade. |
 | PICK N PAY, PNP | Input 15%/0% | Mixed | Same — zero-rate basic foodstuffs. For office consumption (tea, coffee, staff fridge, year-end function), input tax is BLOCKED under s 17(2)(a) entertainment regardless of zero-rate/standard-rate split. Only claimable where items are for resale by a vendor in the entertainment trade. |
 | WOOLWORTHS FOOD | Input 15%/0% | Mixed | Food hall: basic items 0%; prepared/luxury food 15%. For office consumption (tea, coffee, staff fridge, year-end function), input tax is BLOCKED under s 17(2)(a) entertainment regardless of zero-rate/standard-rate split. Only claimable where items are for resale by a vendor in the entertainment trade. |
@@ -362,14 +378,16 @@ verified_by: Werner Britz, CA(SA)
 | DIS-CHEM | Input 15% | 15% | Prescription medicines are standard-rated at 15%; all pharmacy items 15% |
 | MCDONALD'S SA, STEERS, NANDO'S | BLOCKED under s 17(2)(a) | 15% | BLOCKED under s 17(2)(a) for the buying business. Only the restaurant itself (being in the entertainment trade) can claim its own inputs. |
 
-**Note on zero-rated basic foodstuffs:** Brown bread, maize meal, mielie rice, dried mealies, dried beans, lentils, pilchards/sardines in tins, milk, eggs, fruits and vegetables, vegetable oil, edible legumes. These are zero-rated under Schedule 2 of the VAT Act.
+- **Zero-rated basic foodstuffs** — Brown bread, maize meal, mielie rice, dried mealies, dried beans, lentils, pilchards/sardines in tins, milk, eggs, fruits and vegetables, vegetable oil, edible legumes. These are zero-rated under Schedule 2 of the VAT Act.  _(Schedule 2 of the VAT Act)_
 
 ### 3.6 SaaS — international suppliers (reverse charge / imported services)
 
-Under VAT Act Section 7(1)(c), imported services from abroad are subject to VAT if the recipient is a non-vendor or partially exempt vendor. For fully taxable vendors, VAT on imported services can be claimed back as input tax in the same period — net effect zero.
+- **Imported services rule** — Under VAT Act Section 7(1)(c), imported services from abroad are subject to VAT if the recipient is a non-vendor or partially exempt vendor. For fully taxable vendors, VAT on imported services can be claimed back as input tax in the same period — net effect zero.  _(VAT Act Section 7(1)(c))_
+
+**SaaS — international suppliers (reverse charge / imported services)**  _(VAT Act Section 7(1)(c))_
 
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | GOOGLE (Workspace, Ads, Cloud) | Imported services — self-assess 15% | Output and input in same period (net zero for fully taxable) |
 | MICROSOFT (365, Azure) | Imported services — self-assess 15% | Same |
 | META, FACEBOOK ADS | Imported services — self-assess 15% | Same |
@@ -381,8 +399,10 @@ Under VAT Act Section 7(1)(c), imported services from abroad are subject to VAT 
 
 ### 3.7 Local SaaS and professional tools (15%)
 
+**Local SaaS and professional tools (15%)**
+
 | Pattern | Treatment | Rate | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | XERO (South Africa entity) | Input 15% | 15% | Accounting software |
 | SAGE SOUTH AFRICA | Input 15% | 15% | Accounting/payroll |
 | PASTEL, SAGE PASTEL | Input 15% | 15% | South African accounting |
@@ -390,8 +410,10 @@ Under VAT Act Section 7(1)(c), imported services from abroad are subject to VAT 
 
 ### 3.8 Payment processors (standard-rated per s 2(1) proviso)
 
+**Payment processors (standard-rated per s 2(1) proviso)**  _(s 2(1) proviso)_
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | PAYFAST (transaction fees) | Input 15% | Standard-rated -- fee-based payment processing is not a financial service per s 2(1) proviso |
 | YOCO (transaction fees) | Input 15% | Standard-rated -- fee-based payment processing is not a financial service per s 2(1) proviso |
 | PEACH PAYMENTS (fees) | Input 15% | Standard-rated -- fee-based payment processing is not a financial service per s 2(1) proviso |
@@ -399,16 +421,16 @@ Under VAT Act Section 7(1)(c), imported services from abroad are subject to VAT 
 
 ### 3.9 Internal transfers and exclusions
 
+**Internal transfers and exclusions**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | OWN ACCOUNT TRANSFER, INTER-ACCOUNT | EXCLUDE | Internal movement |
 | LOAN, BOND REPAYMENT | EXCLUDE | Loan principal |
 | SALARY, WAGES, PAYROLL | EXCLUDE | Outside VAT scope |
 | DIVIDEND | EXCLUDE | Out of scope |
 | MUNICIPAL RATES, PROPERTY RATES | EXCLUDE | Local government levy — not a supply |
 | ATM, CASH WITHDRAWAL | Tier 2 — ask | Default exclude |
-
----
 
 ## Section 4 — Worked examples
 
@@ -474,46 +496,43 @@ Monthly rent. If this is for a commercial office space where the landlord has op
 
 **Classification:** Tier 2 — ask. If VAT invoice received from landlord: Input 15% — R 3,000. If no VAT invoice: EXEMPT — no input tax.
 
----
-
-## Section 5 — Tier 1 rules (compressed)
-
 ### 5.1 Standard rate 15%
 
-Default rate for all taxable supplies. Legislation: VAT Act No. 89 of 1991, Section 7(1)(a).
+- **Standard rate** — 15% (Default rate for all taxable supplies)  _(VAT Act No. 89 of 1991, Section 7(1)(a))_
 
 ### 5.2 Zero rate 0%
 
-Exports of goods and qualifying services; basic foodstuffs (Schedule 2); illuminating paraffin; petrol and diesel (specific provisions); certain agricultural inputs; supply of enterprise as going concern (s 11(1)(e)); gold to SARB/bank. Evidence required for export zero-rating. Prescription medicines are STANDARD-RATED at 15%. Legislation: VAT Act Section 11; Schedule 2.
+- **Zero rate 0% supplies** — Exports of goods and qualifying services; basic foodstuffs (Schedule 2); illuminating paraffin; petrol and diesel (specific provisions); certain agricultural inputs; supply of enterprise as going concern (s 11(1)(e)); gold to SARB/bank. Evidence required for export zero-rating. Prescription medicines are STANDARD-RATED at 15%.  _(VAT Act Section 11; Schedule 2)_
 
 ### 5.3 Exempt supplies
 
-Financial services (Section 2); residential rental; public road and rail transport. No output tax charged; no input tax claimable on costs. Legislation: VAT Act Section 12.
+- **Exempt supplies** — Financial services (Section 2); residential rental; public road and rail transport. No output tax charged; no input tax claimable on costs.  _(VAT Act Section 12)_
 
 ### 5.4 Tax invoice requirements (Section 20)
 
-- Supplies R50 or less: NO invoice required (till slip sufficient)
-- Supplies R50 to R5,000: ABRIDGED tax invoice (omits recipient details)
-- Supplies above R5,000: FULL tax invoice required with supplier name/address/VAT number, invoice number, date, buyer name/address/VAT number (if VAT-registered), description, net amount, VAT rate, VAT amount, total.
-
-Must be issued within 21 days.
+- **Supplies R50 or less** — NO invoice required (till slip sufficient)  _(Section 20)_
+- **Supplies R50 to R5,000** — ABRIDGED tax invoice (omits recipient details)  _(Section 20)_
+- **Supplies above R5,000** — FULL tax invoice required with supplier name/address/VAT number, invoice number, date, buyer name/address/VAT number (if VAT-registered), description, net amount, VAT rate, VAT amount, total  _(Section 20)_
+- **Tax invoice issuance timeframe** — Must be issued within 21 days.  _(Section 20)_
 
 ### 5.5 Imported services
 
-Services supplied by a non-resident to a South African recipient are subject to VAT under Section 7(1)(c). Fully taxable vendors self-assess (output = input; net zero). Partially exempt or non-vendor recipients cannot recover and face a cost. Legislation: VAT Act Section 7(1)(c).
+- **Imported services treatment** — Services supplied by a non-resident to a South African recipient are subject to VAT under Section 7(1)(c). Fully taxable vendors self-assess (output = input; net zero). Partially exempt or non-vendor recipients cannot recover and face a cost.  _(VAT Act Section 7(1)(c))_
 
 ### 5.6 Anti-avoidance — entertainment
 
-Input tax on entertainment, accommodation, and food/beverages is BLOCKED under Section 17(2)(a) UNLESS the vendor is in the business of providing entertainment (hotels, restaurants, conference venues). "Entertainment" includes meals, beverages, social functions.
+- **Entertainment input tax block** — Input tax on entertainment, accommodation, and food/beverages is BLOCKED under Section 17(2)(a) UNLESS the vendor is in the business of providing entertainment (hotels, restaurants, conference venues). "Entertainment" includes meals, beverages, social functions.  _(Section 17(2)(a))_
 
 ### 5.7 Motor vehicles
 
-Input tax on motor cars (as defined — passenger vehicles) is BLOCKED under Section 17(2)(c). Exception: if the vendor trades in motor cars or provides transport services as their primary business. Bakkies (utes/pickups) used exclusively for business: may qualify.
+- **Motor vehicle input tax block** — Input tax on motor cars (as defined — passenger vehicles) is BLOCKED under Section 17(2)(c). Exception: if the vendor trades in motor cars or provides transport services as their primary business. Bakkies (utes/pickups) used exclusively for business: may qualify.  _(Section 17(2)(c))_
 
 ### 5.8 Filing deadlines
 
+**Filing deadlines**
+
 | Category | Period | Due date |
-|---|---|---|
+| --- | --- | --- |
 | Category B (>R30m) | Monthly | Last business day of following month |
 | Category A (default) | Bimonthly | Last business day of following month |
 | Category C (farming <R1.5m) | Six-monthly | Last business day of following month |
@@ -523,16 +542,14 @@ Input tax on motor cars (as defined — passenger vehicles) is BLOCKED under Sec
 
 ### 5.9 Penalties
 
+**Penalties**
+
 | Offence | Penalty |
-|---|---|
+| --- | --- |
 | Late return | ZAR 100–ZAR 16,000 per month late |
 | Late payment | 10% of tax due + interest at prescribed rate |
 | Understatement | 10%–200% of shortfall depending on intent |
 | Fraud | Criminal prosecution |
-
----
-
-## Section 6 — Tier 2 catalogue
 
 ### 6.1 Entertainment — is vendor in the hospitality trade?
 
@@ -571,9 +588,7 @@ Input tax on motor cars (as defined — passenger vehicles) is BLOCKED under Sec
 
 ### 6.6 Motor vehicle — is it a "motor car" as defined?
 
-Input tax on the supply of a "motor car" is BLOCKED under s 17(2)(c). "Motor car" definition includes sedans, SUVs, double-cab bakkies, minibuses up to 16 seats. Objective test per IN 82 (passenger area vs loading area). Single-cab bakkies are NOT motor cars. Running costs (fuel, repairs, insurance) ARE claimable even on blocked motor cars. Exception: vendor who continuously supplies motor cars in ordinary course (dealers, rental companies).
-
----
+- **Motor car definition and blocked input** — Input tax on the supply of a "motor car" is BLOCKED under s 17(2)(c). "Motor car" definition includes sedans, SUVs, double-cab bakkies, minibuses up to 16 seats. Objective test per IN 82 (passenger area vs loading area). Single-cab bakkies are NOT motor cars. Running costs (fuel, repairs, insurance) ARE claimable even on blocked motor cars. Exception: vendor who continuously supplies motor cars in ordinary course (dealers, rental companies).  _(s 17(2)(c); IN 82)_
 
 ## Section 7 — Excel working paper template
 
@@ -611,14 +626,12 @@ REVIEWER FLAGS:
   [ ] Rent — landlord VAT invoice confirmed?
 ```
 
----
-
-## Section 8 — Bank statement reading guide
-
 ### Common South African bank statement formats
 
+**Common South African bank statement formats**
+
 | Bank | Key columns | Date format | Amount |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | FNB | Date, Description, Debit, Credit, Balance | DD Mon YYYY | ZAR with 2 decimals |
 | Standard Bank | Date, Narrative, Debit, Credit, Balance | DD MMM YYYY | ZAR |
 | ABSA | Date, Description, Amount, Balance | DD/MM/YYYY | ZAR |
@@ -627,8 +640,10 @@ REVIEWER FLAGS:
 
 ### Key South African banking terms
 
+**Key South African banking terms**
+
 | Term | Meaning | Classification hint |
-|---|---|---|
+| --- | --- | --- |
 | CREDIT | Incoming funds | Potential revenue |
 | DEBIT | Outgoing payment | Potential expense |
 | ATM WITHDRAWAL | Cash withdrawal | Tier 2 — ask |
@@ -637,8 +652,6 @@ REVIEWER FLAGS:
 | BALANCE | Running balance | Ignore |
 | SALARY / WAGES | Payroll | Out of VAT scope |
 | EFT / EFT DEBIT | Electronic fund transfer | Check direction |
-
----
 
 ## Section 9 — Onboarding fallback
 
@@ -656,14 +669,12 @@ SOUTH AFRICA VAT ONBOARDING — MINIMUM QUESTIONS
 9. Prior period credit/refund amount to carry forward?
 ```
 
----
-
-## Section 10 — Reference material
-
 ### Key legislation
 
+**Key legislation**
+
 | Topic | Reference |
-|---|---|
+| --- | --- |
 | VAT Act | Value-Added Tax Act No. 89 of 1991 |
 | Standard rate | Section 7(1)(a) |
 | Zero rate | Section 11; Schedule 2 |
@@ -693,13 +704,13 @@ SOUTH AFRICA VAT ONBOARDING — MINIMUM QUESTIONS
 
 ### Changelog
 
+**Changelog**
+
 | Version | Date | Change |
-|---|---|---|
+| --- | --- | --- |
 | 1.0 | 2024 | Initial |
 | 2.0 | April 2026 | v2.0 rewrite: pattern library, worked examples, no inline tier tags |
 | 2.1 | May 2026 | Validated by Werner Britz CA(SA); corrected registration threshold to R2.3m; corrected bank fees and payment processors to standard-rated; corrected VAT201 field structure; corrected Uber/Bolt to exempt; added motor car and entertainment blocks; fixed tax invoice thresholds; removed prescription medicines from zero-rated; fixed filing categories |
-
----
 
 ## Prohibitions
 
@@ -714,17 +725,11 @@ SOUTH AFRICA VAT ONBOARDING — MINIMUM QUESTIONS
 - NEVER exclude bank service fees as exempt -- they are standard-rated (s 2(1) proviso)
 - NEVER omit output VAT on Seventh Schedule fringe benefits under s 18(3)
 
----
-
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, EA, tax attorney, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
 
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
-
----
-
-<!-- openaccountants-cta-block -->
+The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
 
 ## Talk to a verified accountant
 
@@ -739,16 +744,22 @@ a formal engagement letter** — book a free 30-minute call:
 
 We'll route you to the named verifier covering your country or state. You can
 also see the full list of verified accountants at
-[openaccountants.com/network](https://www.openaccountants.com/network).
+[openaccountants.com/network](https://openaccountants.com/network).
 
-<!-- openaccountants-mcp-cta -->
+<!-- openaccountants-cta-block -->
 
-## The accountant-verified version lives in the connector
+---
 
-This file is the open, **research-grade draft**. The **accountant-verified**
-version of this skill is **not published to GitHub** — it is delivered free
-through the OpenAccountants MCP connector, where your AI agent loads the
-verified rules together with the name of the accountant who signed them off.
+## Talk to a verified accountant
 
-**→ Install the free connector:** <https://www.openaccountants.com/connect>
-**MCP endpoint:** `https://www.openaccountants.com/api/mcp`
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

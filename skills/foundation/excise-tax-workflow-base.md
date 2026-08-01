@@ -1,24 +1,21 @@
 ---
 name: excise-tax-workflow-base
 description: >
-  Tier 1 workflow base for excise duty skills covering harmonised excise on energy products, alcohol, and tobacco (EU Directives 2003/96/EC, 92/83/EEC, 2011/64/EU) and non-harmonised excise (sugar, plastics, single-use plastic, gambling, environmental). Workflow architecture only — no country rate tables or product-specific guidance. MUST be loaded alongside a country excise content skill. Assumes a licensed excise warehouse keeper or authorised consignor / consignee operates under bond and EMCS (Excise Movement and Control System). Does NOT cover: customs duty (see customs-duties-workflow-base), VAT on excise products (see country VAT skills), excise on cannabis where legalised (specialist), or licensing process for excise warehouse.
 version: 0.1
 jurisdiction: GLOBAL
-tier: 2
-last_updated: 2026-06-12
-category: foundation
+tax_year: 2025
+last_updated: 2026-05-23
 verified_by: pending
+category: foundation
+tier: 2
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Excise Tax Workflow Base v0.1
-
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+# Excise Tax Workflow Base
 
 ## What this file is
 
 Tier 1 workflow base for excise duty skills. Country content skills load on top.
-
----
 
 ## Section 1 — Scope and assumptions
 
@@ -36,108 +33,73 @@ This workflow base assumes:
 - Excisable goods are stored under bond in authorised warehouses until release for consumption
 - The country has implemented EMCS (Excise Movement and Control System) or equivalent (EU) — or the US bonded warehouse / Form 5000 series equivalent
 
----
-
 ## Section 2 — Lifecycle runbook
 
 ### Step 1 — Determine excisable status
 
-**[T1]** For each product:
-- Is it listed in the country's excise legislation?
-- What is the applicable rate / tariff classification?
-- Are there reduced rates (e.g., red diesel, agricultural fuel)?
-- Are there exemptions (e.g., scientific use, denatured alcohol)?
+- **Determine excisable status** — For each product: Is it listed in the country's excise legislation? What is the applicable rate / tariff classification? Are there reduced rates (e.g., red diesel, agricultural fuel)? Are there exemptions (e.g., scientific use, denatured alcohol)? ([T1])  _([T1])_
 
 ### Step 2 — Determine the chargeable event
 
-**[T1]** Excise becomes due on the **release for consumption** — typically:
-- Departure from a tax warehouse (other than under duty-suspension arrangement)
-- Manufacture outside a tax warehouse
-- Importation outside a duty-suspension arrangement
-- Holding outside a duty-suspension arrangement
-- Irregularity during a duty-suspended movement (deemed release)
+- **Chargeable event = release for consumption** — Excise becomes due on the release for consumption — typically: Departure from a tax warehouse (other than under duty-suspension arrangement); Manufacture outside a tax warehouse; Importation outside a duty-suspension arrangement; Holding outside a duty-suspension arrangement; Irregularity during a duty-suspended movement (deemed release) ([T1])  _([T1])_
 
 ### Step 3 — Compute the duty
 
-**[T1]** Depending on product type:
-- **Specific duty** — per litre, per kg, per pack, per stick
-- **Ad valorem** — % of retail price (typical for tobacco)
-- **Combined** — both (e.g., EU tobacco minimum specific + ad valorem)
-
-For alcohol: typically per hectolitre of pure alcohol (ethanol) for spirits; per hectolitre and degree of strength for beer/wine/intermediate products. Reduced rates for small breweries, small wine producers, low-alcohol products.
+- **Duty computation methods** — Depending on product type: Specific duty — per litre, per kg, per pack, per stick; Ad valorem — % of retail price (typical for tobacco); Combined — both (e.g., EU tobacco minimum specific + ad valorem). For alcohol: typically per hectolitre of pure alcohol (ethanol) for spirits; per hectolitre and degree of strength for beer/wine/intermediate products. Reduced rates for small breweries, small wine producers, low-alcohol products. ([T1])  _([T1])_
 
 ### Step 4 — Apply duty-suspension and movements
 
-**[T1] EU EMCS (Excise Movement and Control System):**
-- Electronic Administrative Document (eAD) accompanies suspended movements
-- Authorised Warehouse Keeper / Registered Consignor / Registered Consignee status required
-- Closure of movement upon arrival at destination triggers chargeable event in destination MS (if released) or duty suspension continues
-- Movement guarantee covers the duty during transit
+- **EU EMCS duty-suspension movement rules** — EU EMCS (Excise Movement and Control System): Electronic Administrative Document (eAD) accompanies suspended movements; Authorised Warehouse Keeper / Registered Consignor / Registered Consignee status required; Closure of movement upon arrival at destination triggers chargeable event in destination MS (if released) or duty suspension continues; Movement guarantee covers the duty during transit ([T1])  _([T1])_
 
 ### Step 5 — Pay the duty
 
-**[T1]** Periodic excise return — typically monthly. Payment generally within 1 month of the chargeable event. Bond / guarantee covers deferred payment.
+- **Periodic excise return and payment** — Periodic excise return — typically monthly. Payment generally within 1 month of the chargeable event. Bond / guarantee covers deferred payment. ([T1])  _([T1])_
 
 ### Step 6 — Track exemptions and reliefs
 
-**[T1] Common exemptions:**
-- Diplomatic / consular use
-- Visiting forces (NATO SOFA)
-- Research / scientific use
-- Denatured alcohol
-- Domestic production for personal use (limited)
-- Renewable energy / biofuels (variable)
-- Industrial use (e.g., energy products for non-fuel use)
-
----
+- **Common exemptions** — Common exemptions: Diplomatic / consular use; Visiting forces (NATO SOFA); Research / scientific use; Denatured alcohol; Domestic production for personal use (limited); Renewable energy / biofuels (variable); Industrial use (e.g., energy products for non-fuel use) ([T1])  _([T1])_
 
 ## Section 3 — EU harmonised excise framework
 
 ### 3.1 Energy products (Directive 2003/96/EC)
 
-**[T1] Minimum rates:**
-- Unleaded petrol: EUR 359 per 1,000L
-- Diesel (commercial use): EUR 330 per 1,000L
-- Heating gas oil: EUR 21 per 1,000L
-- Heavy fuel oil: EUR 15 per 1,000kg
-- LPG (heating): EUR 0 per 1,000kg
-- Natural gas (heating): EUR 0.15/0.30 per GJ (commercial / non-commercial)
-- Coal and coke: EUR 0.15/0.30 per GJ
-- Electricity: EUR 0.50/1.00 per MWh
-
-Member States set rates above these minima; some derogations / reduced rates approved by Council.
+- **Unleaded petrol minimum rate** — EUR 359 per 1,000L EUR per 1,000L  _(Directive 2003/96/EC)_
+- **Diesel (commercial use) minimum rate** — EUR 330 per 1,000L EUR per 1,000L  _(Directive 2003/96/EC)_
+- **Heating gas oil minimum rate** — EUR 21 per 1,000L EUR per 1,000L  _(Directive 2003/96/EC)_
+- **Heavy fuel oil minimum rate** — EUR 15 per 1,000kg EUR per 1,000kg  _(Directive 2003/96/EC)_
+- **LPG (heating) minimum rate** — EUR 0 per 1,000kg EUR per 1,000kg  _(Directive 2003/96/EC)_
+- **Natural gas (heating) minimum rate** — EUR 0.15/0.30 per GJ (commercial / non-commercial) EUR per GJ  _(Directive 2003/96/EC)_
+- **Coal and coke minimum rate** — EUR 0.15/0.30 per GJ EUR per GJ  _(Directive 2003/96/EC)_
+- **Electricity minimum rate** — EUR 0.50/1.00 per MWh EUR per MWh  _(Directive 2003/96/EC)_
+- **Member state discretion above minima** — Member States set rates above these minima; some derogations / reduced rates approved by Council.  _(Directive 2003/96/EC)_
 
 ### 3.2 Alcohol (Directives 92/83/EEC and 92/84/EEC)
 
-**[T1] Minimum rates:**
-- Beer: EUR 1.87 per hectolitre / degree Plato OR EUR 0.748 per hectolitre / degree of alcohol (chosen MS basis)
-- Wine (still and sparkling): EUR 0 (minimum) — many MS set zero
-- Intermediate products (sherry, port, fortified): EUR 45 per hectolitre
-- Spirits: EUR 550 per hectolitre of pure alcohol
-
-Reduced rates available for small independent breweries (typically up to 50% reduction).
+- **Beer minimum rate** — EUR 1.87 per hectolitre / degree Plato OR EUR 0.748 per hectolitre / degree of alcohol (chosen MS basis) EUR per hectolitre/degree  _(Directives 92/83/EEC and 92/84/EEC)_
+- **Wine (still and sparkling) minimum rate** — EUR 0 (minimum) — many MS set zero EUR  _(Directives 92/83/EEC and 92/84/EEC)_
+- **Intermediate products (sherry, port, fortified) minimum rate** — EUR 45 per hectolitre EUR per hectolitre  _(Directives 92/83/EEC and 92/84/EEC)_
+- **Spirits minimum rate** — EUR 550 per hectolitre of pure alcohol EUR per hectolitre pure alcohol  _(Directives 92/83/EEC and 92/84/EEC)_
+- **Small independent brewery reduced rates** — Reduced rates available for small independent breweries (typically up to 50% reduction).  _(Directives 92/83/EEC and 92/84/EEC)_
 
 ### 3.3 Tobacco (Directive 2011/64/EU)
 
-**[T1] Minimum excise duty:**
-- **Cigarettes**: at least 60% of weighted average retail selling price (WARSP); minimum EUR 90 per 1,000 cigarettes (or 115% of weighted average retail selling price)
-- **Fine-cut tobacco**: 48% of weighted average retail selling price; minimum EUR 60 per kg
-- **Cigars / cigarillos**: 5% of weighted average retail selling price OR EUR 12 per 1,000 / EUR 12 per kg
-- **Other smoking tobacco**: 20% of weighted average retail selling price OR EUR 22 per kg
-
-Combination of specific and ad valorem; minimum total varies.
+- **Cigarettes minimum excise duty** — at least 60% of weighted average retail selling price (WARSP); minimum EUR 90 per 1,000 cigarettes (or 115% of weighted average retail selling price) % WARSP / EUR per 1,000 cigarettes  _(Directive 2011/64/EU)_
+- **Fine-cut tobacco minimum excise duty** — 48% of weighted average retail selling price; minimum EUR 60 per kg % WARSP / EUR per kg  _(Directive 2011/64/EU)_
+- **Cigars / cigarillos minimum excise duty** — 5% of weighted average retail selling price OR EUR 12 per 1,000 / EUR 12 per kg % WARSP / EUR  _(Directive 2011/64/EU)_
+- **Other smoking tobacco minimum excise duty** — 20% of weighted average retail selling price OR EUR 22 per kg % WARSP / EUR per kg  _(Directive 2011/64/EU)_
+- **Combination of specific and ad valorem** — Combination of specific and ad valorem; minimum total varies.  _(Directive 2011/64/EU)_
 
 ### 3.4 EMCS data flow
 
+**EMCS data flow**
+
 | Stage | Document |
-|---|---|
+| --- | --- |
 | Dispatch | e-AD (electronic Administrative Document) with Administrative Reference Code (ARC) |
 | In transit | ARC referenced on transport documents |
 | Receipt at destination | Report of Receipt (RoR) by consignee |
 | Closure | EMCS auto-closes upon successful RoR |
 | Discrepancy / shortage | Excise becomes chargeable in destination MS |
-
----
 
 ## Section 4 — Non-EU regimes (selected)
 
@@ -159,28 +121,30 @@ Combination of specific and ad valorem; minimum total varies.
 
 ### 4.3 Other
 
-- **Australia** — excise on petroleum, alcohol, tobacco under Excise Act 1901
-- **Canada** — federal + provincial excise; cannabis excise under Cannabis Act
-- **Japan** — alcohol, tobacco, oil under Alcohol Tax Law et al
-- **India** — central excise replaced largely by GST 2017 except petroleum and tobacco
-- **Brazil** — IPI (Federal Industrialised Products Tax) applies functions analogous to excise
-
----
+- Australia — excise on petroleum, alcohol, tobacco under Excise Act 1901
+- Canada — federal + provincial excise; cannabis excise under Cannabis Act
+- Japan — alcohol, tobacco, oil under Alcohol Tax Law et al
+- India — central excise replaced largely by GST 2017 except petroleum and tobacco
+- Brazil — IPI (Federal Industrialised Products Tax) applies functions analogous to excise
 
 ## Section 5 — Non-traditional excise
 
 ### 5.1 Sugar-sweetened beverages
 
+**Sugar-sweetened beverages**
+
 | Country | Status |
-|---|---|
+| --- | --- |
 | UK | Soft Drinks Industry Levy from April 2018 — 18p/L (5g-8g sugar/100mL) or 24p/L (>8g sugar/100mL) |
 | Norway | Sukkeravgift; abolished but discussed for reintroduction |
 | Hungary, France, Spain (Catalonia), Mexico, Philippines, Ireland | Various rates / structures |
 
 ### 5.2 Plastic packaging tax
 
+**Plastic packaging tax**
+
 | Country | Status |
-|---|---|
+| --- | --- |
 | UK | Plastic Packaging Tax from April 2022 — GBP 217.85 per tonne (2024 rate) of plastic packaging with < 30% recycled plastic |
 | Spain | Impuesto Especial sobre los Envases de Plástico no Reutilizables from January 2023 — EUR 0.45 per kg non-reusable plastic |
 | Italy | Plastic tax deferred multiple times; expected 2026 |
@@ -188,13 +152,10 @@ Combination of specific and ad valorem; minimum total varies.
 
 ### 5.3 EU Single-Use Plastic Directive
 
-Directive (EU) 2019/904 — bans certain single-use plastic products and mandates extended producer responsibility for others. National implementations vary.
-
----
+- **EU Single-Use Plastic Directive** — Directive (EU) 2019/904 — bans certain single-use plastic products and mandates extended producer responsibility for others. National implementations vary.  _(Directive (EU) 2019/904)_
 
 ## Section 6 — Reviewer brief
 
-```
 1. Product register
    - Tariff classification per product line
    - Duty rates (specific + ad valorem)
@@ -222,9 +183,6 @@ Directive (EU) 2019/904 — bans certain single-use plastic products and mandate
    - Deferment account
 
 6. Reviewer questions — [T2]/[T3] items
-```
-
----
 
 ## Section 7 — Self-checks (12)
 
@@ -241,12 +199,12 @@ Directive (EU) 2019/904 — bans certain single-use plastic products and mandate
 11. [ ] Bond / guarantee value adequate for risk
 12. [ ] Output flags every [T2]/[T3] item for reviewer judgement
 
----
-
 ## Section 8 — Refusal catalogue
 
+**Refusal catalogue**
+
 | Refusal | Trigger |
-|---|---|
+| --- | --- |
 | R-EXC-1 | Production / movement of excisable goods without authorised warehouse keeper status |
 | R-EXC-2 | EMCS unavailability for required movement |
 | R-EXC-3 | Suspected fraud / illicit movement |
@@ -254,11 +212,15 @@ Directive (EU) 2019/904 — bans certain single-use plastic products and mandate
 | R-EXC-5 | Tobacco / alcohol traceability requirements not met (Tobacco Products Directive 2014/40/EU traceability since 2019) |
 | R-EXC-6 | Cross-border movement to country with restrictive measures |
 
----
+- **R-EXC-1** — Production / movement of excisable goods without authorised warehouse keeper status
+- **R-EXC-2** — EMCS unavailability for required movement
+- **R-EXC-3** — Suspected fraud / illicit movement
+- **R-EXC-4** — Loss exceeding allowable tolerance
+- **R-EXC-5** — Tobacco / alcohol traceability requirements not met (Tobacco Products Directive 2014/40/EU traceability since 2019)  _(Tobacco Products Directive 2014/40/EU)_
+- **R-EXC-6** — Cross-border movement to country with restrictive measures
 
 ## Section 9 — Slot contract for country excise skills
 
-```
 [FRAMEWORK]
 - Excise legislation citations
 - Regulator name
@@ -289,12 +251,27 @@ Directive (EU) 2019/904 — bans certain single-use plastic products and mandate
 - Customs duty workflow (this skill)
 - VAT on excise products (country VAT skill)
 - CBAM (EU energy product imports — this skill)
-```
-
----
 
 ## Section 10 — Disclaimer
 
 This workflow base produces working papers for review by licensed excise practitioners. Excise duty involves criminal as well as civil penalties for misstatement. Every output must be reviewed and signed off by a licensed practitioner before lodgement.
 
-The most up-to-date, verified version of this workflow base is maintained at [openaccountants.com](https://www.openaccountants.com).
+The most up-to-date, verified version of this workflow base is maintained at [openaccountants.com](https://openaccountants.com).
+
+<!-- openaccountants-cta-block -->
+
+---
+
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

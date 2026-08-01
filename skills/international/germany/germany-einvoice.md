@@ -1,28 +1,25 @@
 ---
 name: germany-einvoice
 description: >
-  Use this skill whenever asked about German e-invoicing, XRechnung, ZUGFeRD, ERechV, E-Rechnungsverordnung, Peppol BIS Billing Germany, Leitweg-ID, OZG-RE invoice portal, B2B e-invoicing mandate Germany, Wachstumschancengesetz, EN 16931 Germany, GoBD e-invoice archiving, or any question about issuing, receiving, validating, or archiving electronic invoices in Germany. Also trigger when preparing XRechnung XML invoices, configuring Peppol endpoints for German public-sector invoicing, handling B2B e-invoice reception requirements, or advising on ZUGFeRD profile selection. This skill covers XRechnung CIUS, ZUGFeRD hybrid format, Peppol transmission, mandatory fields, validation rules, GoBD archiving, penalties, and interaction with German VAT returns. ALWAYS read this skill before touching any German e-invoicing work.
 version: 1.0
 jurisdiction: DE
-category: invoicing
-depends_on:
-  - einvoice-workflow-base
 tax_year: 2025
-tier: 2
-last_updated: 2026-06-12
+last_updated: 2026-05-23
 verified_by: pending
+depends_on: - einvoice-workflow-base
+category: invoicing
+tier: 2
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Germany E-Invoicing -- XRechnung / ZUGFeRD Skill v1.0
-
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
-
----
+# Germany Einvoice
 
 ## Section 1 -- Quick Reference
 
+**Section 1 Quick Reference table**
+
 | Field | Value |
-|---|---|
+| --- | --- |
 | Country | Germany (Bundesrepublik Deutschland) |
 | Currency | EUR |
 | National CIUS | XRechnung (EN 16931 compliant) |
@@ -40,14 +37,14 @@ verified_by: pending
 | Current status | B2G fully operational; B2B reception mandatory; B2B issuance transitioning |
 | Skill version | 1.0 |
 
----
-
 ## Section 2 -- Mandate Scope
 
 ### Who Must Comply
 
+**Who Must Comply table**
+
 | Scope | Requirement |
-|---|---|
+| --- | --- |
 | B2G (federal) | All suppliers to federal public authorities must submit XRechnung or EN 16931-compliant invoices via OZG-RE since November 2020 |
 | B2G (Länder) | Most German states have enacted their own e-invoicing regulations; timelines vary by state (all effective by 2024) |
 | B2B (reception) | All domestic businesses must be able to receive EN 16931-compliant e-invoices from 1 January 2025 |
@@ -58,16 +55,20 @@ verified_by: pending
 
 ### Transitional Rules (2025--2027)
 
+**Transitional Rules table**
+
 | Period | Rule |
-|---|---|
+| --- | --- |
 | 2025--2026 | Businesses may still issue paper invoices or non-EN 16931 EDI invoices with buyer consent |
 | 2027 | Issuance mandatory for larger businesses; smaller businesses may still use paper with buyer consent if their turnover ≤ EUR 800,000 |
 | 2028 onward | All domestic B2B invoices must be EN 16931-compliant structured electronic invoices |
 
 ### Timeline Summary
 
+**Timeline Summary table**
+
 | Date | Milestone |
-|---|---|
+| --- | --- |
 | November 2020 | Federal B2G mandate effective |
 | January 2025 | B2B reception mandatory for all businesses |
 | September 2025 | OZG-RE replaces ZRE as sole federal submission portal |
@@ -75,22 +76,24 @@ verified_by: pending
 | January 2027 | B2B issuance mandatory (turnover > EUR 800,000) |
 | January 2028 | B2B issuance mandatory for all |
 
----
-
 ## Section 3 -- Technical Format
 
 ### Accepted Formats
 
+**Accepted Formats table**
+
 | Format | Type | Standard | Status |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | XRechnung | Pure XML (UBL 2.1 or CII) | EN 16931 CIUS | Primary national standard |
 | ZUGFeRD 2.1+ | Hybrid (PDF/A-3 + CII XML) | EN 16931 conformant | Accepted for B2B and B2G |
 | Peppol BIS Billing 3.0 | Pure XML (UBL 2.1) | EN 16931 CIUS | Accepted -- nearly equivalent to XRechnung since v3.0.1 harmonisation |
 
 ### XRechnung Technical Details
 
+**XRechnung Technical Details table**
+
 | Parameter | Value |
-|---|---|
+| --- | --- |
 | Version | 3.0.1 |
 | UBL namespace | `urn:oasis:names:specification:ubl:schema:xsd:Invoice-2` |
 | CII namespace | `urn:un:unece:uncefact:data:standard:CrossIndustryInvoice:100` |
@@ -102,8 +105,10 @@ verified_by: pending
 
 ### ZUGFeRD Profiles
 
+**ZUGFeRD Profiles table**
+
 | Profile | EN 16931 Compliant | Use Case |
-|---|---|---|
+| --- | --- | --- |
 | Minimum | No | Basic PDF with minimal XML (not sufficient for B2G) |
 | Basic WL | No | Without line detail |
 | Basic | Yes (if fully populated) | Standard use |
@@ -111,16 +116,16 @@ verified_by: pending
 | Extended | Yes (superset) | Additional business information |
 | XRechnung | Yes | XRechnung rules embedded in ZUGFeRD container |
 
-For B2G compliance, use the **XRechnung** or **Comfort** profile. For B2B mandate compliance, any EN 16931-conformant profile is accepted.
-
----
+- **Profile selection guidance** — For B2G compliance, use the XRechnung or Comfort profile. For B2B mandate compliance, any EN 16931-conformant profile is accepted.
 
 ## Section 4 -- Mandatory Fields
 
 ### EN 16931 Core Fields (Required by XRechnung)
 
+**EN 16931 Core Fields table**
+
 | BT Code | Field | Required |
-|---|---|---|
+| --- | --- | --- |
 | BT-1 | Invoice number | Yes |
 | BT-2 | Invoice issue date | Yes |
 | BT-3 | Invoice type code (380 = commercial invoice, 381 = credit note) | Yes |
@@ -140,8 +145,10 @@ For B2G compliance, use the **XRechnung** or **Comfort** profile. For B2B mandat
 
 ### XRechnung-Specific Additional Requirements
 
+**XRechnung-Specific Additional Requirements table**
+
 | Field | Description | Required |
-|---|---|---|
+| --- | --- | --- |
 | BT-10 (Leitweg-ID) | Hierarchical routing identifier for B2G (format: coarse-fine-check digit) | Yes (B2G) |
 | BT-23 (ProfileID) | Must be set to the Peppol process identifier | Yes |
 | BT-34 / BT-49 | Electronic addresses with scheme identifier (e.g., 0204 for Leitweg-ID, 9930 for DE VAT number) | Yes |
@@ -149,14 +156,14 @@ For B2G compliance, use the **XRechnung** or **Comfort** profile. For B2B mandat
 | BT-20 | Payment terms (text description) | Recommended |
 | BT-81 | Payment means type code (e.g., 58 = SEPA credit transfer) | Yes |
 
----
-
 ## Section 5 -- Transmission Method
 
 ### B2G Transmission
 
+**B2G Transmission table**
+
 | Channel | Description |
-|---|---|
+| --- | --- |
 | OZG-RE Web Portal | Upload via browser at https://xrechnung.bund.de |
 | OZG-RE Email | Submit XRechnung XML as email attachment to designated address |
 | Peppol | Machine-to-machine via Peppol Access Point using participant ID (format: 0204:{Leitweg-ID}) |
@@ -167,8 +174,10 @@ The ZRE (Zentrale Rechnungseingangsplattform) was decommissioned in September 20
 
 Germany does not prescribe a specific transmission channel for B2B e-invoices. Accepted methods include:
 
+**B2B Transmission table**
+
 | Channel | Description |
-|---|---|
+| --- | --- |
 | Email | XRechnung or ZUGFeRD sent as email attachment |
 | Peppol | Via Peppol network using Peppol participant IDs |
 | EDI | Existing EDI channels, provided the invoice content conforms to EN 16931 |
@@ -182,16 +191,16 @@ Germany does not prescribe a specific transmission channel for B2B e-invoices. A
 - Peppol participant IDs for federal authorities use scheme 0204 (Leitweg-ID based)
 - For B2B, scheme 9930 (DE VAT number) is commonly used
 
----
-
 ## Section 6 -- Validation Rules
 
 ### KoSIT Validator
 
 The official open-source validation tool provided by KoSIT performs multi-layer validation:
 
+**KoSIT Validator layers table**
+
 | Layer | Description |
-|---|---|
+| --- | --- |
 | Schema validation | XML against UBL 2.1 or CII XSD |
 | Schematron (EN 16931) | European standard business rules |
 | Schematron (XRechnung) | National CIUS rules (German-specific) |
@@ -199,8 +208,10 @@ The official open-source validation tool provided by KoSIT performs multi-layer 
 
 ### Common Rejection Reasons
 
+**Common Rejection Reasons table**
+
 | Issue | Resolution |
-|---|---|
+| --- | --- |
 | Missing BT-23 (ProfileID) | Mandatory since XRechnung 3.0.1 -- always populate |
 | Missing BT-34 / BT-49 (electronic addresses) | Mandatory since 3.0.1 -- include with correct scheme ID |
 | Invalid Leitweg-ID format | Must follow pattern: numeric segments separated by hyphens with check digit |
@@ -215,51 +226,45 @@ The official open-source validation tool provided by KoSIT performs multi-layer 
 - Verifies that the recipient authority is connected and active
 - Returns structured error messages for rejected invoices
 
----
-
 ## Section 7 -- Tax Computation Rules
 
 ### VAT Rates (2025/2026)
 
+**VAT Rates table**
+
 | Rate | Application |
-|---|---|
+| --- | --- |
 | 19% | Standard rate (Regelsteuersatz) |
 | 7% | Reduced rate (ermäßigter Steuersatz) -- food, books, public transport, cultural events |
 | 0% | Intra-EU supplies, exports (with §4 UStG exemption code) |
 
 ### Rounding
 
-- Line-level: net amount = quantity × unit price, rounded to 2 decimal places
-- Tax amount per line: net amount × rate, rounded to 2 decimal places
-- Document-level totals must equal sum of line-level amounts within each tax category
-- XRechnung validation allows EUR 0.01 tolerance per tax subtotal group
-- Banker's rounding (round half to even) is accepted but not required
+- **Line-level rounding** — Line-level: net amount = quantity × unit price, rounded to 2 decimal places
+- **Tax amount per line rounding** — Tax amount per line: net amount × rate, rounded to 2 decimal places
+- **Document-level totals** — Document-level totals must equal sum of line-level amounts within each tax category
+- **Validation tolerance per tax subtotal group** — EUR 0.01 EUR (XRechnung validation tolerance per tax subtotal group)
+- **Banker's rounding** — Banker's rounding (round half to even) is accepted but not required
 
 ### Multi-Rate Invoice Handling
 
-- Each VAT rate requires a separate tax subtotal group (BG-23)
-- Tax category codes: S (standard), AA (reduced), Z (zero-rated), E (exempt), AE (reverse charge), K (intra-EU), G (export), O (outside scope)
-- For reverse charge (§13b UStG), use category code AE with rate = 0%
-- Tax exemption reason (BT-120/BT-121) must be populated for zero-rate and exempt categories
+- **Separate tax subtotal group per rate** — Each VAT rate requires a separate tax subtotal group (BG-23)
+- **Tax category codes** — S (standard), AA (reduced), Z (zero-rated), E (exempt), AE (reverse charge), K (intra-EU), G (export), O (outside scope)
+- **Reverse charge category code** — For reverse charge (§13b UStG), use category code AE with rate = 0%  _(§13b UStG)_
+- **Tax exemption reason population** — Tax exemption reason (BT-120/BT-121) must be populated for zero-rate and exempt categories
 
 ### §14 UStG Invoice Requirements
 
 German VAT law (§14 UStG) mandates specific content that must appear in the structured data:
 
-- Full name and address of seller and buyer
-- Tax number (Steuernummer) or VAT ID (USt-IdNr.)
-- Invoice date and sequential invoice number
-- Quantity and description of goods/services
-- Delivery/service date or period
-- Net amount per rate, applicable tax rate, and tax amount
-- Total gross amount
-
----
+- **§14 UStG required content list** — - Full name and address of seller and buyer - Tax number (Steuernummer) or VAT ID (USt-IdNr.) - Invoice date and sequential invoice number - Quantity and description of goods/services - Delivery/service date or period - Net amount per rate, applicable tax rate, and tax amount - Total gross amount  _(§14 UStG)_
 
 ## Section 8 -- Archiving Requirements
 
+**Section 8 Archiving Requirements table**  _(§14b UStG)_
+
 | Requirement | Detail |
-|---|---|
+| --- | --- |
 | Retention period | 8 years (§14b UStG; reduced from 10 years by Bürokratieentlastungsgesetz IV, effective 2025) |
 | Format | Original structured format (XML) as received or sent |
 | GoBD compliance | Must satisfy Grundsätze zur ordnungsmäßigen Führung und Aufbewahrung (GoBD, updated 14 July 2025) |
@@ -270,20 +275,18 @@ German VAT law (§14 UStG) mandates specific content that must appear in the str
 | Audit access | Three levels: Z1 (direct access to DV system), Z2 (indirect access via data export), Z3 (data carrier handover) |
 | Conversion | Format conversion allowed only if original is also retained and the conversion process is documented |
 
----
-
 ## Section 9 -- Penalties for Non-Compliance
 
+**Section 9 Penalties table**  _(§14 UStG; §26a UStG; §26a Abs. 1 UStG; §370 AO)_
+
 | Violation | Penalty |
-|---|---|
+| --- | --- |
 | Failure to issue proper invoice (§14 UStG breach) | Administrative fine up to EUR 5,000 per occurrence (§26a UStG) |
 | Retention violation | Fine up to EUR 1,000 for specific breaches; up to EUR 30,000 for serious cases (§26a Abs. 1 UStG) |
 | Non-compliant invoice → input VAT deduction denied | Buyer may lose right to deduct input VAT until a corrected compliant invoice is received |
 | Estimated tax assessment | Tax authority may estimate turnover and VAT liability if records are insufficient |
 | GoBD non-compliance | May lead to rejection of bookkeeping in tax audit (Betriebsprüfung) and estimated assessment with safety margins |
 | Repeated/wilful violations | Potential referral for criminal investigation (Steuerhinterziehung under §370 AO for deliberate cases) |
-
----
 
 ## Section 10 -- Interaction with Tax Skills
 
@@ -311,10 +314,41 @@ German VAT law (§14 UStG) mandates specific content that must appear in the str
 - Verfahrensdokumentation must describe the e-invoice workflow from receipt to archiving
 - Failure to produce compliant archives during Betriebsprüfung can trigger estimated assessments with penalty surcharges (Zuschläge)
 
----
-
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a Steuerberater, Wirtschaftsprüfer, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
 
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
+The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
+
+## Talk to a verified accountant
+
+This skill is a tool, not an engagement. Every taxpayer's situation is
+different, and the rules in the skill may not match your specific facts.
+
+To speak with one of the licensed accountants who verifies skills for your
+jurisdiction — no liability on either side until you and the accountant sign
+a formal engagement letter — book a free 30-minute call:
+
+→ [Book a call](https://calendly.com/openaccountants-info/30min)
+
+We'll route you to the named verifier covering your country or state. You can
+also see the full list of verified accountants at
+[openaccountants.com/network](https://openaccountants.com/network).
+
+<!-- openaccountants-cta-block -->
+
+---
+
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

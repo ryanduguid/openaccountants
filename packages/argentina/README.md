@@ -7,12 +7,16 @@
 
 1. `foundation.md`
 2. `intake.md`
-3. `ar-income-tax.md`
-4. `ar-monotributo.md`
-5. `ar-social-contributions.md`
-6. `ar-vat-return.md`
-7. `argentina-iva.md`
-8. `references.md`
+3. `ar-company-formation.md`
+4. `ar-corporate-income-tax.md`
+5. `ar-income-tax.md`
+6. `ar-monotributo.md`
+7. `ar-social-contributions.md`
+8. `ar-tax-overview.md`
+9. `ar-vat-return.md`
+10. `argentina-iva.md`
+11. `references.md`
+12. `company-formation-workflow-base.md`
 
 ## Also known as
 

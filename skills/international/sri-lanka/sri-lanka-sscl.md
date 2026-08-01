@@ -2,15 +2,14 @@
 name: sri-lanka-sscl
 description: ALWAYS read this skill before touching any Sri Lanka Social Security Contribution Levy (SSCL) work. Use whenever asked about SSCL on turnover for importers, manufacturers, service providers, wholesalers/retailers, or financial-service businesses in Sri Lanka. Trigger on phrases like "Sri Lanka SSCL", "Social Security Contribution Levy", "2.5% turnover levy Sri Lanka", "liable turnover Sri Lanka", or "SSCL registration Sri Lanka". Covers the SSCL at 2.5% on liable turnover, the activity-dependent liable-turnover fraction, and its in-force status (most recently amended by the SSCL Amendment Act No. 24 of 2025). Out of scope — income tax, corporate tax, VAT, and withholding tax (separate skills).
 jurisdiction: LK
-domain: international
 tax_year: 2025
-reviewed_by: Lal kumarasiri
-review_status: accountant-reviewed
+last_updated: 2026-06-03
+verified_by: Lal kumarasiri
 tier: 1
-last_updated: 2026-07-06
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# sri-lanka-sscl
+# Sri Lanka Sscl
 
 ## Sri Lanka — Social Security Contribution Levy (SSCL) — Skill v1.0
 
@@ -107,3 +106,21 @@ This skill and its outputs are for informational and computational purposes only
 This skill is a tool, not an engagement. To speak with a licensed accountant who verifies skills for your jurisdiction — **no liability until both parties sign an engagement letter** — book a free 30-minute call:
 
 **→ [Book a call](https://calendly.com/openaccountants-info/30min)**
+
+<!-- openaccountants-cta-block -->
+
+---
+
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

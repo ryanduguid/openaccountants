@@ -7,10 +7,21 @@
 
 1. `foundation.md`
 2. `intake.md`
-3. `ng-income-tax.md`
-4. `ng-vat-return.md`
-5. `nigeria-vat.md`
-6. `references.md`
+3. `ng-cgt.md`
+4. `ng-cit.md`
+5. `ng-formation.md`
+6. `ng-freelance-intake.md`
+7. `ng-income-tax.md`
+8. `ng-payroll.md`
+9. `ng-personal-income-tax.md`
+10. `ng-return-assembly.md`
+11. `ng-vat-return.md`
+12. `ng-vat.md`
+13. `ng-wht.md`
+14. `nigeria-vat.md`
+15. `references.md`
+16. `payroll-workflow-base.md`
+17. `company-formation-workflow-base.md`
 
 ## Also known as
 

@@ -9,10 +9,14 @@
 2. `intake.md`
 3. `malaysia-einvoice.md`
 4. `malaysia-sst.md`
-5. `my-epf-socso.md`
-6. `my-income-tax.md`
-7. `my-pcb.md`
-8. `einvoice-workflow-base.md`
+5. `my-company-formation.md`
+6. `my-corporate-income-tax.md`
+7. `my-epf-socso.md`
+8. `my-income-tax.md`
+9. `my-pcb.md`
+10. `my-tax-overview.md`
+11. `einvoice-workflow-base.md`
+12. `company-formation-workflow-base.md`
 
 ## Also known as
 

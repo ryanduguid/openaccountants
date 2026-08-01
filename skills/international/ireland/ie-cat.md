@@ -2,13 +2,14 @@
 name: ie-cat
 description: Use this skill whenever asked about Irish Capital Acquisitions Tax (CAT) on gifts and inheritances. Trigger on phrases like "Ireland CAT", "Irish inheritance tax", "Irish gift tax", "Group A Ireland", "Group B threshold Ireland", "Group C threshold Ireland", "Dwelling House Exemption", "Section 86 CATCA", "Business Relief Ireland", "Agricultural Relief Ireland", "active farmer test", "Form IT38", "valuation date Ireland", "small gift exemption €3,000", "CAT 33%", "aggregation rule CAT", "foreign gift Ireland", or any question about computing, filing, or reporting Irish CAT for a donee or beneficiary. Scope covers CAT computation under the Capital Acquisitions Tax Consolidation Act 2003 (CATCA 2003) as amended by successive Finance Acts, the three group thresholds (A/B/C), the cumulative aggregation rule back to 5 December 1991, the principal reliefs (Dwelling House, Business, Agricultural), foreign-element situs and residence rules, valuation date mechanics, and the Form IT38 pay-and-file obligation via ROS. ALWAYS read this skill before touching Irish CAT work.
 jurisdiction: IE
-domain: international
 tax_year: 2025
+last_updated: 2026-05-27
+verified_by: pending
 tier: 2
-last_updated: 2026-07-06
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# ie-cat
+# IE Cat
 
 ## Section 1 — Quick reference
 
@@ -385,3 +386,21 @@ a formal engagement letter** — book a free 30-minute call:
 We'll route you to the named verifier covering your country or state. You can
 also see the full list of verified accountants at
 [openaccountants.com/network](https://openaccountants.com/network).
+
+<!-- openaccountants-cta-block -->
+
+---
+
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

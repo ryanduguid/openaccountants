@@ -2,13 +2,14 @@
 name: or-payroll
 description: Tier 2 Oregon content skill for employer payroll compliance covering tax year 2025. Includes the OR PIT brackets up to 9.9%, supplemental wage rate 8.0%, OR-W-4 state withholding form, Form OQ quarterly combined withholding/UI return, OR UI wage base $54,300 (highest in US) with rates 0-5.4%, the Statewide Transit Tax 0.1% on all wages (no cap), TriMet 0.8237% employer payroll tax for Portland area, Lane Transit 0.79% for Eugene, the OR Paid Leave program 0.6% total split between employer (0.4%) and employee (0.2%), and WBF Workers' Benefit Fund assessment.
 jurisdiction: US-OR
-domain: state-tax
 tax_year: 2025
+last_updated: 2026-05-27
+verified_by: pending
 tier: 2
-last_updated: 2026-07-06
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# or-payroll
+# OR Payroll
 
 ## Oregon Payroll Compliance — Tier 2 Content Skill
 
@@ -392,3 +393,21 @@ To speak with one of the licensed accountants who verifies skills for your juris
 → [Book a call](https://calendly.com/openaccountants-info/30min)
 
 We'll route you to the named verifier covering your country or state. You can also see the full list of verified accountants at [openaccountants.com/network](https://openaccountants.com/network).
+
+<!-- openaccountants-cta-block -->
+
+---
+
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

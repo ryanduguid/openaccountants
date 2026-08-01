@@ -1,29 +1,29 @@
 ---
 name: nl-corporate-tax
 description: >
-  Use this skill whenever asked about Dutch corporate income tax (vennootschapsbelasting / VPB) for BV entities. Trigger on phrases like "vennootschapsbelasting", "VPB aangifte", "corporate tax Netherlands", "BV belasting", "fiscal unity", "fiscale eenheid", "innovatiebox", "verliesverrekening", "carry forward losses", "DGA salary", "gebruikelijk loon", "deelnemingsvrijstelling", "participation exemption", "fiscal profit bridge", "commercial to fiscal result", "liquidatieverliesregeling", or any question about computing or filing corporate income tax for a Dutch BV or NV. Also trigger when preparing annual accounts-to-tax reconciliation, computing VPB liability, or advising on fiscal adjustments. This skill covers VPB rates, fiscal profit computation, loss relief, fiscal unity, the innovation box, participation exemption, DGA salary rules, filing deadlines, and penalties. ALWAYS read this skill before touching any Dutch corporate tax work.
 version: 1.0
 jurisdiction: NL
 tax_year: 2025
-tier: 2
-last_updated: 2026-06-12
+last_updated: 2026-05-20
+verified_by: pending
+depends_on: - income-tax-workflow-base
 category: international
-depends_on:
-  - income-tax-workflow-base
+tier: 2
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Netherlands Corporate Income Tax — Vennootschapsbelasting (VPB) v1.0
+# NL Corporate Tax
 
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+## Netherlands Corporate Income Tax — Vennootschapsbelasting (VPB) v1.0
 
 > **Based on work by [John in 't Hout (@johnhout)](https://github.com/johnhout/knowledge-work-belastingzaken)**, licensed under MIT. Adapted for the OpenAccountants format.
 
----
-
 ## Section 1 — Quick Reference
 
+**Quick Reference**
+
 | Field | Value |
-|---|---|
+| --- | --- |
 | Country | Netherlands (Koninkrijk der Nederlanden) |
 | Tax | Vennootschapsbelasting (VPB) — corporate income tax |
 | Currency | EUR only |
@@ -38,27 +38,29 @@ depends_on:
 
 ### VPB Rates 2025 [T1]
 
+**VPB Rates 2025**
+
 | Taxable Profit (EUR) | Rate | Notes |
-|---|---|---|
+| --- | --- | --- |
 | 0 — 200,000 | 19.0% | Lower bracket (schijf 1) |
 | Over 200,000 | 25.8% | Upper bracket (schijf 2) |
 
-**Formula:** VPB = EUR 200,000 × 19% + (taxable profit − EUR 200,000) × 25.8%
+- **VPB formula** — VPB = EUR 200,000 × 19% + (taxable profit − EUR 200,000) × 25.8%
 
-**Rate history (for comparison/audit):**
+**Rate history (for comparison/audit)**
 
 | Year | Lower bracket | Lower rate | Upper rate |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | 2023 | EUR 200,000 | 19.0% | 25.8% |
 | 2024 | EUR 200,000 | 19.0% | 25.8% |
 | 2025 | EUR 200,000 | 19.0% | 25.8% |
 
 ### Fiscal Profit Bridge (Commercial → Fiscal) [T1]
 
-The fiscal profit starts from the commercial accounting result and applies mandatory adjustments:
+**Fiscal Profit Bridge**
 
 | Step | Adjustment | Direction |
-|---|---|---|
+| --- | --- | --- |
 | 1 | Commercial net result (jaarrekening) | Starting point |
 | 2 | Add back: non-deductible expenses (entertaining 73.5% non-deductible portion, fines, bribes) | + |
 | 3 | Add back: excessive interest (earnings stripping — see below) | + |
@@ -70,18 +72,22 @@ The fiscal profit starts from the commercial accounting result and applies manda
 
 ### Earnings Stripping (Renteaftrekbeperking) [T1]
 
+**Earnings Stripping**  _(Article 15b Wet Vpb 1969)_
+
 | Rule | Value |
-|---|---|
+| --- | --- |
 | Threshold | Higher of: EUR 1,000,000 or 20% of fiscal EBITDA |
 | Scope | Net interest expense (interest paid − interest received) |
 | Legislation | Article 15b Wet Vpb 1969 |
 
-Net interest exceeding the threshold is non-deductible and carried forward indefinitely.
+- **Non-deductible net interest carry-forward** — Net interest exceeding the threshold is non-deductible and carried forward indefinitely.  _(Article 15b Wet Vpb 1969)_
 
 ### Loss Relief (Verliesverrekening) [T1]
 
+**Loss Relief**
+
 | Direction | Rule |
-|---|---|
+| --- | --- |
 | Carry-back | 1 year |
 | Carry-forward | Indefinite, but limited per year |
 | Annual cap | EUR 1,000,000 + 50% of taxable profit exceeding EUR 1,000,000 |
@@ -91,8 +97,10 @@ Net interest exceeding the threshold is non-deductible and carried forward indef
 
 ### Participation Exemption (Deelnemingsvrijstelling) [T1]
 
+**Participation Exemption**  _(Articles 13–13l Wet Vpb 1969)_
+
 | Requirement | Detail |
-|---|---|
+| --- | --- |
 | Minimum holding | ≥ 5% of nominal share capital |
 | Effect | Dividends and capital gains from qualifying participation are fully exempt |
 | Legislation | Articles 13–13l Wet Vpb 1969 |
@@ -100,8 +108,10 @@ Net interest exceeding the threshold is non-deductible and carried forward indef
 
 ### Fiscal Unity (Fiscale Eenheid) [T1]
 
+**Fiscal Unity**  _(Articles 15–15aj Wet Vpb 1969)_
+
 | Requirement | Detail |
-|---|---|
+| --- | --- |
 | Ownership | Parent holds ≥ 95% of shares in subsidiary |
 | Jurisdiction | Both entities must be NL-resident (or deemed resident with NL PE) |
 | Effect | Consolidated VPB return; intercompany results eliminated |
@@ -110,8 +120,10 @@ Net interest exceeding the threshold is non-deductible and carried forward indef
 
 ### Innovation Box (Innovatiebox) [T1]
 
+**Innovation Box**  _(Article 12b Wet Vpb 1969)_
+
 | Parameter | Value |
-|---|---|
+| --- | --- |
 | Effective rate | 9.0% on qualifying innovation profits |
 | Qualification | Profits from self-developed intangible assets (with WBSO declaration or patent) |
 | Threshold | First EUR 25,000 qualifying profit exempt from regular VPB (drempel) |
@@ -119,8 +131,10 @@ Net interest exceeding the threshold is non-deductible and carried forward indef
 
 ### DGA Salary — Gebruikelijk Loon [T1]
 
+**DGA Salary — Gebruikelijk Loon**  _(Article 12a Wet op de loonbelasting 1964)_
+
 | Parameter | Value 2025 |
-|---|---|
+| --- | --- |
 | Minimum salary | EUR 56,000 (2025) |
 | Rule | DGA must receive at least the higher of: minimum threshold, 100% of comparable employees, or highest employee salary |
 | Deviation | Allowed only if taxpayer demonstrates that a lower salary is "gebruikelijk" given circumstances |
@@ -128,8 +142,10 @@ Net interest exceeding the threshold is non-deductible and carried forward indef
 
 ### Key Deadlines [T1]
 
+**Key Deadlines**
+
 | Obligation | Deadline |
-|---|---|
+| --- | --- |
 | Filing VPB return | 1 June (calendar year entities); extension up to 1 November |
 | Provisional assessment request | Before end of financial year (to manage cash flow) |
 | Objection (bezwaar) | 6 weeks after date on assessment |
@@ -137,8 +153,10 @@ Net interest exceeding the threshold is non-deductible and carried forward indef
 
 ### Conservative Defaults [T1]
 
+**Conservative Defaults**
+
 | Situation | Default Assumption |
-|---|---|
+| --- | --- |
 | Uncertain deductibility of expense | Non-deductible — flag for advisor |
 | Participation exemption qualification unclear | Do NOT apply — include income; flag |
 | Innovation box eligibility unclear | Do NOT apply — use standard rates; flag |
@@ -148,16 +166,16 @@ Net interest exceeding the threshold is non-deductible and carried forward indef
 
 ### Red Flag Thresholds [T1]
 
+**Red Flag Thresholds**
+
 | Flag | Threshold |
-|---|---|
+| --- | --- |
 | DGA salary below minimum | EUR 56,000 (2025) — compliance risk |
 | Intercompany loan without documentation | Transfer pricing risk — flag |
 | Net interest > EUR 1,000,000 | Earnings stripping analysis required |
 | Holding with < 5% participation | Participation exemption denied — gains taxable |
 | Fiscal unity entity becoming non-resident | Unity break risk — recapture |
 | Profit > EUR 200,000 in lower bracket | Verify no profit splitting arrangements |
-
----
 
 ## Section 2 — Required Inputs and Refusal Catalogue
 
@@ -171,17 +189,11 @@ Net interest exceeding the threshold is non-deductible and carried forward indef
 
 ### Refusal Catalogue
 
-**R-VPB-1 — No annual accounts available.** "Cannot compute VPB without financial statements. Provide at minimum a trial balance and P&L statement."
-
-**R-VPB-2 — Entity structure unclear.** "Cannot determine standalone vs. fiscal unity treatment without confirmed shareholding structure. Escalate."
-
-**R-VPB-3 — Intercompany transactions without documentation.** "Transfer pricing risk. Cannot determine arm's length pricing without documentation. Flag for belastingadviseur."
-
-**R-VPB-4 — Innovation box claimed without WBSO.** "Cannot apply 9% rate without confirmed WBSO declaration or patent. Apply standard rates."
-
-**R-VPB-5 — Cross-border element present.** "International tax treaty analysis required. Stop and escalate to international tax specialist."
-
----
+- **R-VPB-1 — No annual accounts available.** — Cannot compute VPB without financial statements. Provide at minimum a trial balance and P&L statement.  _(R-VPB-1)_
+- **R-VPB-2 — Entity structure unclear.** — Cannot determine standalone vs. fiscal unity treatment without confirmed shareholding structure. Escalate.  _(R-VPB-2)_
+- **R-VPB-3 — Intercompany transactions without documentation.** — Transfer pricing risk. Cannot determine arm's length pricing without documentation. Flag for belastingadviseur.  _(R-VPB-3)_
+- **R-VPB-4 — Innovation box claimed without WBSO.** — Cannot apply 9% rate without confirmed WBSO declaration or patent. Apply standard rates.  _(R-VPB-4)_
+- **R-VPB-5 — Cross-border element present.** — International tax treaty analysis required. Stop and escalate to international tax specialist.  _(R-VPB-5)_
 
 ## Section 3 — Computation Workflow
 
@@ -213,8 +225,10 @@ Net interest exceeding the threshold is non-deductible and carried forward indef
 
 ### Non-Deductible Expenses Detail
 
+**Non-Deductible Expenses Detail**
+
 | Category | Non-deductible portion | Alternative |
-|---|---|---|
+| --- | --- | --- |
 | Food, drink, entertainment | 73.5% | OR fixed EUR 5,100/year non-deductible |
 | Gifts > EUR 227 per recipient | Only portion above EUR 227 deductible per occasion | — |
 | Fines (bestuurlijke boetes) | 100% | — |
@@ -224,22 +238,24 @@ Net interest exceeding the threshold is non-deductible and carried forward indef
 
 ### Fiscal Depreciation Limits
 
+**Fiscal Depreciation Limits**
+
 | Asset | Fiscal Rule |
-|---|---|
+| --- | --- |
 | Buildings (own use) | Depreciate to max 100% of WOZ value (bodemwaarde) |
 | Buildings (investment) | Depreciate to max 50% of WOZ value |
 | Goodwill | Max 10% per year (minimum 10-year life) |
 | Other intangibles | Based on useful economic life |
 | Tangible fixed assets | Based on economic life; no minimum |
 
----
-
 ## Section 4 — Filing Process
 
 ### VPB Return Sections (Aangifte Vpb)
 
+**VPB Return Sections**
+
 | Section | Content |
-|---|---|
+| --- | --- |
 | General information | Entity, financial year, contact details |
 | Fiscal balance sheet | Assets and liabilities at fiscal values |
 | Fiscal P&L | Revenue, costs, and adjustments at fiscal treatment |
@@ -251,16 +267,16 @@ Net interest exceeding the threshold is non-deductible and carried forward indef
 
 ### Common Errors to Check
 
+**Common Errors to Check**
+
 | Error | Consequence |
-|---|---|
+| --- | --- |
 | Forgot to add back entertainment costs | Understated taxable profit |
 | Applied participation exemption to < 5% holding | Incorrectly excluded gains |
 | Used commercial depreciation instead of fiscal | Incorrect taxable profit |
 | Carried forward loss without applying cap | Excess deduction |
 | DGA salary below EUR 56,000 without justification | Penalty risk on loonbelasting |
 | Filed after deadline without extension | Estimated assessment (ambtshalve aanslag) and potential fine |
-
----
 
 ## Section 5 — Official Source Verification Requirements
 
@@ -270,8 +286,6 @@ Before any rate, threshold, or deadline is used in output:
 2. Verify statutory text on `wetten.overheid.nl` (Wet Vpb 1969)
 3. Record exact URL and retrieval date (YYYY-MM-DD)
 4. If source unavailable or conflicting: mark as **UNVERIFIED** and require professional confirmation
-
----
 
 ## Section 6 — Escalation Points
 
@@ -285,11 +299,42 @@ Escalate to a qualified belastingadviseur when:
 - International dividend/royalty flows (withholding tax implications)
 - Entity is part of a multinational group (Country-by-Country Reporting obligations)
 
----
+## Disclaimer
 
 **⚠️ DISCLAIMER: This skill provides workflow support only and does not constitute tax advice. All positions must be reviewed and signed off by a qualified Dutch belastingadviseur before filing. Tax rules change annually — verify all rates and thresholds against belastingdienst.nl before use.**
 
----
-
 *OpenAccountants — open-source accounting skills for AI*
 *openaccountants.com*
+
+## Talk to a verified accountant
+
+This skill is a tool, not an engagement. Every taxpayer's situation is
+different, and the rules in the skill may not match your specific facts.
+
+To speak with one of the licensed accountants who verifies skills for your
+jurisdiction — **no liability on either side until you and the accountant sign
+a formal engagement letter** — book a free 30-minute call:
+
+**→ [Book a call](https://calendly.com/openaccountants-info/30min)**
+
+We'll route you to the named verifier covering your country or state. You can
+also see the full list of verified accountants at
+[openaccountants.com/network](https://openaccountants.com/network).
+
+<!-- openaccountants-cta-block -->
+
+---
+
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

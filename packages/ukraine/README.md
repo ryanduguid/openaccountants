@@ -7,7 +7,25 @@
 
 1. `foundation.md`
 2. `intake.md`
-3. `ukraine-vat.md`
+3. `ua-bookkeeping.md`
+4. `ua-corporate-income-tax.md`
+5. `ua-crypto-tax.md`
+6. `ua-einvoice.md`
+7. `ua-financial-statements.md`
+8. `ua-formation.md`
+9. `ua-income-tax.md`
+10. `ua-payroll.md`
+11. `ua-single-tax.md`
+12. `ua-social-contributions.md`
+13. `ua-tax-optimization.md`
+14. `ua-tax-overview.md`
+15. `ukraine-vat.md`
+16. `bookkeeping-workflow-base.md`
+17. `einvoice-workflow-base.md`
+18. `payroll-workflow-base.md`
+19. `company-formation-workflow-base.md`
+20. `financial-statements-workflow-base.md`
+21. `crypto-tax-workflow-base.md`
 
 ## How to use
 

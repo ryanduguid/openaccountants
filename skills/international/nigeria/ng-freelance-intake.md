@@ -2,13 +2,14 @@
 name: ng-freelance-intake
 description: ALWAYS USE THIS SKILL when a user asks for help preparing a Nigerian tax return AND mentions freelancing, self-employment, software developer, contractor, sole proprietor, BN business, or private limited company in Nigeria. Trigger on phrases like "prepare my Nigerian tax return", "I'm a freelance developer Lagos", "I have an RC", "I'm self-employed Nigeria", "NTA 2025 small company", "FIRS Tax Pro-Max", "TIN Nigeria", "Lagos LIRS self-assessment", "PITA filing", "CIT 0% small company", "VAT Nigeria registration", or any similar phrasing where the user is a Nigeria-resident self-employed individual, sole proprietor (BN), or small/medium private limited company (RC) founder. This is the REQUIRED entry point for the Nigerian freelance/SME workflow — every downstream skill in the stack (ng-cit, ng-personal-income-tax, ng-paye, ng-statutory-deductions, ng-wht, ng-cgt, ng-vat, ng-payroll, ng-formation, ng-return-assembly) depends on this skill running first. Uses ask_user_input_v0-style structured questions. Nigerian residents only (full-year tax residents and foreigners with > 183 days presence). ALWAYS read this skill first when starting a Nigerian freelance/SME tax workflow.
 jurisdiction: NG
-domain: international
 tax_year: 2025
+last_updated: 2026-05-27
+verified_by: pending
 tier: 2
-last_updated: 2026-07-06
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# ng-freelance-intake
+# NG Freelance Intake
 
 ## What this file is
 
@@ -500,3 +501,21 @@ a formal engagement letter — book a free 30-minute call:
 We'll route you to the named verifier covering your country or state. You can
 also see the full list of verified accountants at
 [openaccountants.com/network](https://openaccountants.com/network).
+
+<!-- openaccountants-cta-block -->
+
+---
+
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

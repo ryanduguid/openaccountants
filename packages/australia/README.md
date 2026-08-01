@@ -3,38 +3,37 @@
 > Open-source accounting skills for Australia. Upload to Claude, ChatGPT, or any AI assistant.
 > Tax, bookkeeping, payroll, formation, financial statements, and more. Free and open source.
 
-## Verification status
-
-Research-verified — accountant verification in progress.
-[Claim Australia →](https://www.openaccountants.com/onboarding/accountant)
-
 ## What's in this folder
 
 1. `foundation.md`
 2. `intake.md`
-3. `au-crypto-tax.md`
-4. `au-individual-return.md`
-5. `au-medicare-levy.md`
-6. `au-payg-instalments.md`
-7. `au-rental-property.md`
-8. `au-sole-trader-schedule.md`
-9. `au-super-guarantee.md`
-10. `australia-bookkeeping.md`
-11. `australia-financial-statements.md`
-12. `australia-formation.md`
-13. `australia-gst.md`
-14. `australia-payroll.md`
-15. `australia-tax-optimization.md`
-16. `australia-transfer-pricing.md`
-17. `references.md`
-18. `bookkeeping-workflow-base.md`
-19. `payroll-workflow-base.md`
-20. `company-formation-workflow-base.md`
-21. `financial-statements-workflow-base.md`
-22. `transfer-pricing-workflow-base.md`
-23. `crypto-tax-workflow-base.md`
-24. `australia-guided-intake.md`
-25. `australia-return-assembly.md`
+3. `au-capital-gains.md`
+4. `au-crypto-tax.md`
+5. `au-gst-bas.md`
+6. `au-individual-return.md`
+7. `au-medicare-levy.md`
+8. `au-nonresident-cgt.md`
+9. `au-payg-instalments.md`
+10. `au-rental-property.md`
+11. `au-sole-trader-schedule.md`
+12. `au-super-guarantee.md`
+13. `au-tax-residency.md`
+14. `australia-bookkeeping.md`
+15. `australia-financial-statements.md`
+16. `australia-formation.md`
+17. `australia-gst.md`
+18. `australia-payroll.md`
+19. `australia-tax-optimization.md`
+20. `australia-transfer-pricing.md`
+21. `references.md`
+22. `bookkeeping-workflow-base.md`
+23. `payroll-workflow-base.md`
+24. `company-formation-workflow-base.md`
+25. `financial-statements-workflow-base.md`
+26. `transfer-pricing-workflow-base.md`
+27. `crypto-tax-workflow-base.md`
+28. `australia-guided-intake.md`
+29. `australia-return-assembly.md`
 
 ## Also known as
 
@@ -63,7 +62,7 @@ The AI will:
 
 **This is not tax, legal, or financial advice.** Everything produced must be reviewed and signed off by a qualified registered tax agent before filing or acting upon.
 
-The most up-to-date, verified version of these skills is maintained at [openaccountants.com](https://openaccountants.com).
+The most up-to-date, verified version of these skills is maintained at [openaccountants.com](https://www.openaccountants.com).
 
 ---
 
@@ -75,9 +74,9 @@ These Australia tax skills need your eye. Every rate, threshold, and form refere
 
 1. Download the files in this folder
 2. Check the rates against Australian Taxation Office (ATO)'s website
-3. Email your corrections to **info@openaaccountants.com** — Word doc, Excel, PDF, tracked changes, whatever works
+3. Email your corrections to **info@openaccountants.com** — Word doc, Excel, PDF, tracked changes, whatever works
 
-We'll update the skill and credit you publicly as the verified reviewer at [openaccountants.com](https://openaccountants.com).
+We'll update the skill and credit you publicly as the verified reviewer at [openaccountants.com](https://www.openaccountants.com).
 
 Or if you're comfortable with GitHub: fork the repo, fix the source file under `skills/`, and submit a PR.
 
@@ -86,5 +85,5 @@ Or if you're comfortable with GitHub: fork the repo, fix the source file under `
 ---
 
 *OpenAccountants — open-source accounting skills for AI*
-*134 countries + 51 US states — [openaccountants.com](https://openaccountants.com)*
-*info@openaaccountants.com*
+*134 countries + 51 US states — [openaccountants.com](https://www.openaccountants.com)*
+*info@openaccountants.com*

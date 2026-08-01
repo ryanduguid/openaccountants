@@ -7,7 +7,13 @@
 
 1. `foundation.md`
 2. `intake.md`
-3. `laos-vat.md`
+3. `la-company-formation.md`
+4. `la-corporate-income-tax.md`
+5. `la-payroll-social.md`
+6. `la-tax-overview.md`
+7. `laos-vat.md`
+8. `payroll-workflow-base.md`
+9. `company-formation-workflow-base.md`
 
 ## How to use
 

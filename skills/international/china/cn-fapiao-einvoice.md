@@ -2,13 +2,14 @@
 name: cn-fapiao-einvoice
 description: 当被问及任何中国发票管理、增值税专用发票、增值税普通发票、数电发票（全面数字化的电子发票）、数字化电子发票、金税四期、电子税务局开票、发票真伪查验、红字发票、进项抵扣认证、税收分类编码、虚开发票风险或发票合规等相关问题时，必须使用本技能。触发短语包括："中国发票管理"、"增值税专用发票"、"增值税普通发票"、"专票"、"普票"、"数电发票"、"数字化电子发票"、"数电票"、"金税四期"、"金四"、"以数治税"、"电子税务局开票"、"发票真伪查验"、"红字发票"、"进项抵扣"、"勾选认证"、"税收分类编码"、"开票总额度"、"取消税控Ukey"、"异常凭证"、"走逃失联企业发票"、"虚开发票"、"China fapiao"、"special VAT invoice China"、"digital e-fapiao"、"Golden Tax Phase IV"、"e-invoice China"、"fully digitalized e-fapiao"。本技能涵盖 2025 税年中国境内发票开具、取得、抵扣、查验、红冲、异常处理及金税四期监管要点。本技能**不**计算增值税应纳税额（见 china-vat 技能），亦**不**处理企业所得税、个人所得税或社保（分别见对应技能）。涉及发票或金税四期的工作开始之前必须先阅读本技能。
 jurisdiction: CN
-domain: international
 tax_year: 2025
+last_updated: 2026-05-27
+verified_by: pending
 tier: 2
-last_updated: 2026-07-06
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# cn-fapiao-einvoice
+# CN Fapiao Einvoice
 
 ## 中国 — 发票管理与数电发票（金税四期）— 技能 v1.0
 
@@ -256,3 +257,21 @@ a formal engagement letter** — book a free 30-minute call:
 We'll route you to the named verifier covering your country or state. You can
 also see the full list of verified accountants at
 [openaccountants.com/network](https://openaccountants.com/network).
+
+<!-- openaccountants-cta-block -->
+
+---
+
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

@@ -4,19 +4,22 @@ description: Use this skill whenever asked to prepare, review, or classify trans
 version: 2.0
 jurisdiction: IL
 tax_year: 2025
+last_updated: 2026-04-13
+verified_by: pending
+depends_on: - vat-workflow-base
 category: international
-depends_on:
-  - vat-workflow-base
+tier: 2
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Israel VAT (Ma'am — מע"מ) Skill v2.0
-
----
+# Israel VAT
 
 ## Section 1 — Quick reference
 
+**Quick reference**
+
 | Field | Value |
-|---|---|
+| --- | --- |
 | Country | Israel (מדינת ישראל) |
 | Tax | Ma'am (מס ערך מוסף — Value Added Tax) |
 | Currency | ILS (Israeli New Shekel — ₪) |
@@ -37,8 +40,10 @@ depends_on:
 
 ### Key return form fields
 
+**Key return form fields**
+
 | Field | Meaning |
-|---|---|
+| --- | --- |
 | Iska (עסקה) | Output tax base — taxable supplies at 17% |
 | Yetsia (יציאה) | Exports / zero-rated supplies |
 | Pator (פטור) | Exempt supplies |
@@ -49,8 +54,10 @@ depends_on:
 
 ### Conservative defaults
 
+**Conservative defaults**
+
 | Ambiguity | Default |
-|---|---|
+| --- | --- |
 | Unknown rate on a sale | 17% standard |
 | Unknown whether export documentation complete | Treat as domestic 17% |
 | Unknown business-use % (vehicle, phone, home) | 0% input credit |
@@ -61,49 +68,34 @@ depends_on:
 
 ### Red flag thresholds
 
+**Red flag thresholds**
+
 | Threshold | Value |
-|---|---|
+| --- | --- |
 | HIGH single transaction | ILS 100,000 |
 | HIGH tax delta on single conservative default | ILS 17,000 |
 | MEDIUM counterparty concentration | >40% of output or input |
 | MEDIUM conservative default count | >4 per return |
 | LOW absolute net Ma'am position | ILS 250,000 |
 
----
-
 ## Section 2 — Required inputs and refusal catalogue
 
 ### Required inputs
 
-Before starting any Israel Ma'am work, obtain:
-
-1. Osek number (מספר עוסק — 9-digit taxpayer ID) and registration certificate
-2. Bimonthly bank statements in ILS (all business accounts)
-3. Heshbonit Mase (tax invoices) from all suppliers — must include supplier's Osek number
-4. Sales invoices issued (Heshbonit Mase or Heshbonit Kala for amounts below ILS 305)
-5. Prior period Doch Ma'am (for carried-forward excess input credit)
-6. Import documents from Customs (ASYCUDA / import declarations) for imported goods
-7. Details of zero-rated tourism transactions (passports, foreign payment evidence)
+- **Required inputs before starting Israel Ma'am work** — 1. Osek number (מספר עוסק — 9-digit taxpayer ID) and registration certificate 2. Bimonthly bank statements in ILS (all business accounts) 3. Heshbonit Mase (tax invoices) from all suppliers — must include supplier's Osek number 4. Sales invoices issued (Heshbonit Mase or Heshbonit Kala for amounts below ILS 305) 5. Prior period Doch Ma'am (for carried-forward excess input credit) 6. Import documents from Customs (ASYCUDA / import declarations) for imported goods 7. Details of zero-rated tourism transactions (passports, foreign payment evidence)
 
 ### Refusal catalogue
 
-Refuse and escalate to a licensed CPA (רואה חשבון) for:
-- Partial exemption (Alut Yechusit — עלות יחסית) — businesses with mixed exempt/taxable
-- Real estate Ma'am transactions (Mas Rechisha — complex exemptions on property)
-- Ma'am group registration (Kvutzat Osek — עוסק קבוצה)
-- Designated area supplies (Eilat free zone — zero-rated)
-- Diamond and precious metal special scheme
-- Ma'am on long-term contracts and construction
-- Retroactive registration for Osek Patur transitioning to Osek Murshe
-
----
+- **Items requiring escalation to licensed CPA** — Refuse and escalate to a licensed CPA (רואה חשבון) for: - Partial exemption (Alut Yechusit — עלות יחסית) — businesses with mixed exempt/taxable - Real estate Ma'am transactions (Mas Rechisha — complex exemptions on property) - Ma'am group registration (Kvutzat Osek — עוסק קבוצה) - Designated area supplies (Eilat free zone — zero-rated) - Diamond and precious metal special scheme - Ma'am on long-term contracts and construction - Retroactive registration for Osek Patur transitioning to Osek Murshe
 
 ## Section 3 — Supplier pattern library
 
 ### 3.1 Banking and financial services
 
+**Banking and financial services suppliers**
+
 | Supplier | Typical description | Ma'am rate | Input credit |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Bank Hapoalim (בנק הפועלים) | Bank fees, wire charges | Exempt | No |
 | Bank Leumi (בנק לאומי) | Account maintenance, loans | Exempt | No |
 | Mizrahi Tefahot (מזרחי טפחות) | Mortgage, business banking | Exempt | No |
@@ -116,8 +108,10 @@ Refuse and escalate to a licensed CPA (רואה חשבון) for:
 
 ### 3.2 Electricity and utilities
 
+**Electricity and utilities suppliers**
+
 | Supplier | Typical description | Ma'am rate | Input credit |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Israel Electric Corporation (חברת החשמל — IEC) | Electricity | 17% | Yes (business) |
 | Mekorot (מקורות) | Water supply wholesale | 17% | Yes |
 | Local municipality water (ועדה מקומית) | Water — municipal | 17% | Yes |
@@ -126,8 +120,10 @@ Refuse and escalate to a licensed CPA (רואה חשבון) for:
 
 ### 3.3 Telecommunications
 
+**Telecommunications suppliers**
+
 | Supplier | Typical description | Ma'am rate | Input credit |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Cellcom (סלקום) | Mobile, broadband | 17% | Yes (business use) |
 | Partner Communications (פרטנר) | Mobile, fiber, TV | 17% | Yes (business use) |
 | Bezeq (בזק) | Fixed line, DSL internet | 17% | Yes (business use) |
@@ -137,8 +133,10 @@ Refuse and escalate to a licensed CPA (רואה חשבון) for:
 
 ### 3.4 Transport and travel
 
+**Transport and travel suppliers**
+
 | Supplier | Typical description | Ma'am rate | Input credit |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | El Al (אל על) | Domestic flights (Eilat) | 17% | Yes |
 | El Al | International flights | 0% | No input credit applicable |
 | Arkia | Domestic flights | 17% | Yes |
@@ -151,8 +149,10 @@ Refuse and escalate to a licensed CPA (רואה חשבון) for:
 
 ### 3.5 Logistics and postal
 
+**Logistics and postal suppliers**
+
 | Supplier | Typical description | Ma'am rate | Input credit |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Israel Post (דואר ישראל) | Domestic mail, parcels | 17% | Yes |
 | DHL Israel | International courier | 0% (export) / 17% (domestic) | Yes |
 | UPS Israel | International courier | 0% / 17% | Yes |
@@ -161,8 +161,10 @@ Refuse and escalate to a licensed CPA (רואה חשבון) for:
 
 ### 3.6 Retail and office supplies
 
+**Retail and office supplies suppliers**
+
 | Supplier | Typical description | Ma'am rate | Input credit |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Shufersal (שופרסל) | Supermarket — food/non-food | 17% (food not zero-rated in IL) | Yes (business) |
 | Rami Levy (רמי לוי) | Discount supermarket | 17% | Yes |
 | Office Depot Israel | Office supplies | 17% | Yes |
@@ -172,8 +174,10 @@ Refuse and escalate to a licensed CPA (רואה חשבון) for:
 
 ### 3.7 Software and digital services
 
+**Software and digital services suppliers**
+
 | Supplier | Typical description | Ma'am rate | Input credit |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Priority Software (פריוריטי) | Israeli ERP | 17% | Yes |
 | Greeninvoice (חשבונית ירוקה) | Cloud invoicing platform | 17% | Yes |
 | Hashavshevet (חשבשבת) | Accounting software | 17% | Yes |
@@ -185,8 +189,10 @@ Refuse and escalate to a licensed CPA (רואה חשבון) for:
 
 ### 3.8 Professional services
 
+**Professional services suppliers**
+
 | Supplier | Typical description | Ma'am rate | Input credit |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Roeh Heshbon (רואה חשבון — CPA) | Accounting, audit | 17% | Yes |
 | Orech Din (עורך דין — lawyer) | Legal services | 17% | Yes |
 | Munahel Ishur (מנהל אישור — notary equivalent) | Document certification | 17% | Yes |
@@ -195,8 +201,10 @@ Refuse and escalate to a licensed CPA (רואה חשבון) for:
 
 ### 3.9 Insurance
 
+**Insurance suppliers**
+
 | Supplier | Typical description | Ma'am rate | Input credit |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Harel Insurance (הראל) | Business insurance | Exempt | No |
 | Menora Mivtachim (מנורה מבטחים) | Property, liability | Exempt | No |
 | Clal Insurance (כלל ביטוח) | Vehicle, business | Exempt | No |
@@ -204,14 +212,14 @@ Refuse and escalate to a licensed CPA (רואה חשבון) for:
 
 ### 3.10 Healthcare
 
+**Healthcare suppliers**
+
 | Supplier | Typical description | Ma'am rate | Input credit |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Clalit (כללית) | Health fund / Kupat Holim | Exempt | No |
 | Maccabi (מכבי) | Health fund | Exempt | No |
 | Meuhedet (מאוחדת) | Health fund | Exempt | No |
 | Private clinic / specialist | Private medical | Exempt | No |
-
----
 
 ## Section 4 — Worked examples
 
@@ -231,8 +239,6 @@ Refuse and escalate to a licensed CPA (רואה חשבון) for:
 - Heshbonit Mase: net ILS 200,000 + Ma'am 17% ILS 34,000 = ILS 234,000
 - Return entry: Output Iska — ILS 200,000 | Output Ma'am: ILS 34,000
 
----
-
 ### Example 2 — Import of goods (reverse-charge customs)
 
 **Scenario:** Company imports electronics from Germany — customs clears at Ben Gurion.
@@ -250,8 +256,6 @@ Refuse and escalate to a licensed CPA (רואה חשבון) for:
 - Pay at port of entry — then claim as input tax in Doch Ma'am filing
 - Return entry: Input Totchaot — ILS 512,000; Input Ma'am: ILS 87,040
 
----
-
 ### Example 3 — Zero-rated tourism service
 
 **Scenario:** Hotel provides accommodation to foreign tourist paying in USD.
@@ -268,8 +272,6 @@ Refuse and escalate to a licensed CPA (רואה חשבון) for:
 - Foreign tourist — payment in foreign currency — qualifies as zero-rated tourist service
 - Requires: passport copy, foreign payment evidence, ITA Form 1345
 - Return entry: Mechira LeZar — ILS 7,650 | Ma'am: ILS 0
-
----
 
 ### Example 4 — Reverse-charge on foreign digital service
 
@@ -289,8 +291,6 @@ Refuse and escalate to a licensed CPA (רואה חשבון) for:
 - Declare as output AND claim as input — net zero for fully taxable business
 - Return entry: Reverse-charge output ILS 5,013 | and Input Totchaot ILS 5,013
 
----
-
 ### Example 5 — Business vehicle purchase (blocked credit)
 
 **Scenario:** Company purchases a passenger car (רכב פרטי) for a salesperson.
@@ -309,14 +309,12 @@ Refuse and escalate to a licensed CPA (רואה חשבון) for:
 - Input credit: ILS 0 — full block on private passenger vehicles
 - Record as Tier 2 — confirm whether vehicle classified as commercial (רכב מסחרי) or private
 
----
-
 ### Example 6 — Bimonthly return summary
 
-**Scenario:** Tech startup — March–April 2025 bimonthly period.
+**Bimonthly return summary**
 
 | Item | Net (ILS) | Ma'am (ILS) |
-|---|---|---|
+| --- | --- | --- |
 | Software sales (domestic) | 800,000 | 136,000 |
 | Export (zero-rated) | 300,000 | 0 |
 | Total Output | 1,100,000 | 136,000 |
@@ -324,37 +322,20 @@ Refuse and escalate to a licensed CPA (רואה חשבון) for:
 | Office rent | 50,000 | 8,500 |
 | Cloud subscriptions (reverse-charge) | 30,000 | 5,100 |
 | Total Input | 280,000 | 47,600 |
-| **Net Ma'am payable** | | **88,400** |
-
----
+| **Net Ma'am payable** |  | **88,400** |
 
 ## Section 5 — Tier 1 rules (compressed)
 
-**Rate assignment:**
-- 17% standard: almost all goods and services (food, clothing, electronics, professional services — all at standard rate unlike EU VAT)
-- 0%: exports of goods with customs declaration, services exported to foreign residents used outside Israel, tourism services to non-residents with foreign currency payment
-- Exempt: financial services, insurance, residential rent (non-commercial), medical services by licensed practitioners, educational services
-
-**Input credit:**
-- Credit allowed on all 17% purchases for taxable business activities
-- Blocked: passenger vehicles (רכב פרטי) — Section 41 Ma'am Law
-- Blocked: personal expenses — entertainment with non-business purpose
-- Partially blocked: vehicles used partly for business — 2/3 credit allowed if mixed use claimed; needs documentation
-- Reverse-charge (foreign services): output and input net to zero for fully taxable Osek Murshe
-
-**Filing mechanics:**
-- File bimonthly via Shaam Online by 15th of following month
-- Monthly if turnover > ILS 1.5M (file by 15th of following month)
-- All B2B invoices above ILS 305 must be Heshbonit Mase with supplier's Osek number
-- Excess input credit carried forward — refund available for exporters after 3 months
-- New businesses: first 6 months allowed monthly filing to facilitate refunds
-
----
+- **Rate assignment** — - 17% standard: almost all goods and services (food, clothing, electronics, professional services — all at standard rate unlike EU VAT) - 0%: exports of goods with customs declaration, services exported to foreign residents used outside Israel, tourism services to non-residents with foreign currency payment - Exempt: financial services, insurance, residential rent (non-commercial), medical services by licensed practitioners, educational services
+- **Input credit** — - Credit allowed on all 17% purchases for taxable business activities - Blocked: passenger vehicles (רכב פרטי) — Section 41 Ma'am Law - Blocked: personal expenses — entertainment with non-business purpose - Partially blocked: vehicles used partly for business — 2/3 credit allowed if mixed use claimed; needs documentation - Reverse-charge (foreign services): output and input net to zero for fully taxable Osek Murshe  _(Section 41 Ma'am Law)_
+- **Filing mechanics** — - File bimonthly via Shaam Online by 15th of following month - Monthly if turnover > ILS 1.5M (file by 15th of following month) - All B2B invoices above ILS 305 must be Heshbonit Mase with supplier's Osek number - Excess input credit carried forward — refund available for exporters after 3 months - New businesses: first 6 months allowed monthly filing to facilitate refunds
 
 ## Section 6 — Tier 2 catalogue (genuinely data-unknowable items)
 
+**Tier 2 catalogue**
+
 | Item | Why unknowable | What to ask |
-|---|---|---|
+| --- | --- | --- |
 | Vehicle purchase | Private (blocked credit) vs commercial (allowed) depends on registration | "Provide vehicle licence — is it רכב פרטי or רכב מסחרי?" |
 | Home office | Business % of home use unknown | "What % of your home is used exclusively for business?" |
 | Mobile phone | Business vs personal split | "Is this a dedicated business phone? Estimate business use %." |
@@ -362,8 +343,6 @@ Refuse and escalate to a licensed CPA (רואה חשבון) for:
 | Mixed residential/commercial property | Residential rent exempt, commercial 17% | "Is the lease for residential or commercial use? Provide lease agreement." |
 | Export documentation incomplete | Zero-rate only with valid export evidence | "Provide customs export declaration or foreign payment evidence." |
 | Osek Patur supplier | Unregistered supplier — no Heshbonit Mase available, no input credit | "Confirm supplier registration status — Osek Murshe or Osek Patur?" |
-
----
 
 ## Section 7 — Excel working paper
 
@@ -376,16 +355,12 @@ Refuse and escalate to a licensed CPA (רואה חשבון) for:
 4. `MaamSummary` — bimonthly return totals
 5. `Tier2_Items` — awaiting client response
 
-**Key formula:**
-```
-Net_Maam_Payable = Total_Output_Maam - Total_Input_Maam - Excess_BF
-```
-
----
+- **Key formula** — Net_Maam_Payable = Total_Output_Maam - Total_Input_Maam - Excess_BF
 
 ## Section 8 — Bank statement reading guide
 
 ### Bank Hapoalim format
+
 ```
 תאריך    : 15/04/2025
 סוג פעולה: זיכוי - העברה בנקאית
@@ -396,36 +371,29 @@ Net_Maam_Payable = Total_Output_Maam - Total_Input_Maam - Excess_BF
 Fields: תאריך (date) | סוג פעולה (transaction type) | תיאור (description) | סכום (amount, ILS)
 
 ### Bank Leumi format
+
 ```
 15.04.2025  |  זיכוי  |  TECH SOLUTIONS  |  +234,000.00  |  יתרה: 1,234,000.00
 ```
 
 ### Key patterns:
+
 - **ILS number format:** Comma = thousands separator; period = decimal (ILS 234,000.00)
 - **זיכוי (credit):** Money in — match to issued Heshbonit Mase
 - **חיוב (debit):** Money out — match to received Heshbonit Mase for input credit
 - **מטבע חוץ (foreign currency):** Foreign payment — check for zero-rated export or reverse-charge
 - **מכס ומע"מ:** Customs and Ma'am — import duty + import Ma'am payment
 
----
-
 ## Section 9 — Onboarding fallback
 
-When client cannot provide Heshbonit Mase for all transactions:
-
-1. Use bank statement amounts as Ma'am-inclusive totals and back-calculate:
-   - Net = Total ÷ 1.17 | Ma'am = Total − Net
-2. Apply conservative defaults: 17% output on all unverified sales; 0% input credit without valid Heshbonit Mase
-3. Flag all items without Heshbonit Mase in Tier2_Items tab
-4. Issue data request listing missing invoice references
-5. Warn client: ITA can disallow input credit claims without valid Heshbonit Mase from Osek Murshe supplier — risk of penalty
-
----
+- **Fallback when Heshbonit Mase unavailable** — When client cannot provide Heshbonit Mase for all transactions: 1. Use bank statement amounts as Ma'am-inclusive totals and back-calculate: - Net = Total ÷ 1.17 | Ma'am = Total − Net 2. Apply conservative defaults: 17% output on all unverified sales; 0% input credit without valid Heshbonit Mase 3. Flag all items without Heshbonit Mase in Tier2_Items tab 4. Issue data request listing missing invoice references 5. Warn client: ITA can disallow input credit claims without valid Heshbonit Mase from Osek Murshe supplier — risk of penalty
 
 ## Section 10 — Reference material
 
+**Reference material**
+
 | Resource | Reference |
-|---|---|
+| --- | --- |
 | ITA filing portal (Shaam Online) | https://www.misim.gov.il |
 | Ma'am Law (מס ערך מוסף, 1975) | ITA website — tax law library |
 | ITA official guidance (חוזרים) | taxes.gov.il/maam |
@@ -433,18 +401,11 @@ When client cannot provide Heshbonit Mase for all transactions:
 | Heshbonit Mase requirements | Section 9 Ma'am Law |
 | Tourist refund scheme | ITA Form 1345 guidance |
 
-
----
-
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, EA, tax attorney, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
 
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
-
----
-
-<!-- openaccountants-cta-block -->
+The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
 
 ## Talk to a verified accountant
 
@@ -459,16 +420,22 @@ a formal engagement letter** — book a free 30-minute call:
 
 We'll route you to the named verifier covering your country or state. You can
 also see the full list of verified accountants at
-[openaccountants.com/network](https://www.openaccountants.com/network).
+[openaccountants.com/network](https://openaccountants.com/network).
 
-<!-- openaccountants-mcp-cta -->
+<!-- openaccountants-cta-block -->
 
-## The accountant-verified version lives in the connector
+---
 
-This file is the open, **research-grade draft**. The **accountant-verified**
-version of this skill is **not published to GitHub** — it is delivered free
-through the OpenAccountants MCP connector, where your AI agent loads the
-verified rules together with the name of the accountant who signed them off.
+## Talk to a verified accountant
 
-**→ Install the free connector:** <https://www.openaccountants.com/connect>
-**MCP endpoint:** `https://www.openaccountants.com/api/mcp`
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

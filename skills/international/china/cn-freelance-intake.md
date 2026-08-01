@@ -2,13 +2,14 @@
 name: cn-freelance-intake
 description: ALWAYS USE THIS SKILL when a user asks for help with Chinese tax compliance AND mentions freelancing, self-employment, software developer, contractor, individual industrial commercial household (个体工商户), limited liability company (有限公司), or WFOE in China. Trigger phrases (mixed Chinese + English) "中国个税年度汇算", "中国 SME 税务", "上海公司报税", "深圳 freelancer 税务", "WFOE 报税", "金税四期 合规", "个体工商户经营所得", "China tax filing", "China freelance tax", "China comprehensive income annual reconciliation", "WFOE annual return". REQUIRED entry point — downstream cn-iit, cn-corporate-tax, cn-vat, cn-fapiao-einvoice, cn-social-insurance, cn-withholding, cn-stamp-tax, cn-formation, cn-return-assembly. ALWAYS-read closer in Chinese 在开始任何中国税务工作流前必须先阅读本技能.
 jurisdiction: CN
-domain: international
 tax_year: 2025
+last_updated: 2026-05-27
+verified_by: pending
 tier: 2
-last_updated: 2026-07-06
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# cn-freelance-intake
+# CN Freelance Intake
 
 ## 中国 — 自由职业者与中小企业税务承接 — 技能 v1.0
 
@@ -430,3 +431,21 @@ also see the full list of verified accountants at
 
 0. **居民判定** — 若非税务居民则拒绝；否则继续判定主体类型
 0. **路由 cn-iit** — 个体工商户 / 个人独资 → cn-iit（经营所得）
+
+<!-- openaccountants-cta-block -->
+
+---
+
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

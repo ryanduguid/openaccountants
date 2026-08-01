@@ -1,14 +1,19 @@
 ---
 name: br-return-assembly
-description: Skill orquestrador final que monta o pacote completo de declarações do Brasil para autônomos e pequenos empresários residentes no Brasil (MEI, Simples Nacional, autônomo/pessoa física). Consome os outputs de todos os content skills do Brasil (br-irpf para Declaração de Ajuste Anual, br-simples para reconciliação de DAS/DASN, br-inss para contribuições do INSS, br-iss para ISS municipal) para produzir um único pacote unificado de revisão contendo cada planilha, cada formulário, cada seção do brief, todas as reconciliações cross-skill, e a lista final de ações com instruções de pagamento, instruções de envio e planejamento para o ano seguinte. Este é o skill capstone que roda por último e produz o entregável final. DEVE ser carregado em conjunto com todos os content skills do Brasil listados acima. Somente residentes no Brasil ano-inteiro. Somente autônomos e pequenos empresários. | Final orchestrator skill that assembles the complete Brazil filing package for Brazil-resident self-employed individuals (MEI, Simples Nacional, autônomo/pessoa física). Consumes outputs from all Brazil content skills (br-irpf, br-simples, br-inss, br-iss) to produce a single unified reviewer package containing every worksheet, every form, every brief section, all cross-skill reconciliations, and the final action list with payment instructions, filing instructions, and next-year planning. This is the capstone skill that runs last and produces the final deliverable. MUST be loaded alongside all Brazil content skills listed above. Brazil full-year residents only. Self-employed individuals only.
-version: 1.1
+description: Final orchestrator skill that assembles the complete Brazil filing package for Brazil-resident self-employed individuals (MEI, Simples Nacional, autônomo/pessoa física). Consumes outputs from all Brazil content skills (br-irpf for Declaração de Ajuste Anual, br-simples for DAS/DASN reconciliation, br-inss for INSS contributions, br-iss for ISS municipal) to produce a single unified reviewer package containing every worksheet, every form, every brief section, all cross-skill reconciliations, and the final action list with payment instructions, filing instructions, and next-year planning. This is the capstone skill that runs last and produces the final deliverable. MUST be loaded alongside all Brazil content skills listed above. Brazil full-year residents only. Self-employed individuals only.
+version: 1.0
 jurisdiction: BR
 tax_year: 2025
-category: orchestrator
+last_updated: 2026-05-23
 verified_by: pending
+category: orchestrator
+tier: 2
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Brasil — Montagem do Working Paper Tributário — Skill v1.1
+# BR Return Assembly
+
+## Brasil — Montagem do Working Paper Tributário — Skill v1.1
 
 ## DIRETRIZ CRÍTICA DE EXECUÇÃO -- LEIA PRIMEIRO
 
@@ -28,25 +33,15 @@ Especificamente:
 
 **Modo de falha a evitar:** o skill para no meio da execução e faz uma meta-pergunta sobre ritmo de workflow. Se sentir vontade de perguntar "como devo proceder", a ação correta é escolher o caminho mais defensável e prosseguir, sinalizando a decisão no reviewer brief para que o revisor possa contestá-la.
 
----
-
 ## O que é este arquivo
 
 O skill capstone final para declarações de autônomos no Brasil. Cada content skill do Brasil alimenta este. O output é o pacote completo de revisão que um contador pode revisar, assinar e entregar ao cliente junto com as instruções de envio.
 
 Este skill coordena a execução dos content skills, verifica a consistência cross-skill e monta o entregável final.
 
----
-
 ## Seção 1 -- Escopo
 
-Produz o pacote completo de declarações do Brasil para:
-- Residentes no Brasil ano-inteiro
-- Autônomos e pequenos empresários: MEI (microempreendedor individual), Simples Nacional (ME/EPP), autônomo/pessoa física
-- Ano-calendário 2025 (exercício 2026)
-- Envio da IRPF Declaração de Ajuste Anual, DASN-SIMEI (MEI), reconciliação de DAS (Simples), reconciliação de carnê-leão (autônomo), reconciliação de INSS, reconciliação de ISS (se aplicável)
-
----
+- **Escopo do pacote** — Residentes no Brasil ano-inteiro; Autônomos e pequenos empresários: MEI, Simples Nacional (ME/EPP), autônomo/pessoa física; Ano-calendário 2025 (exercício 2026); Envio da IRPF Declaração de Ajuste Anual, DASN-SIMEI (MEI), reconciliação de DAS (Simples), reconciliação de carnê-leão (autônomo), reconciliação de INSS, reconciliação de ISS (se aplicável)  _(Seção 1)_
 
 ## Seção 2 -- Ordem de execução e cadeia de dependências
 
@@ -54,85 +49,34 @@ O skill faz o roteamento com base no tipo de atividade estabelecido no intake e 
 
 ### Rota A: MEI
 
-1. **`br-simples` (modo MEI)** -- declaração anual DASN-SIMEI + reconciliação de pagamentos DAS
-   - Verificar faturamento bruto contra o limite de R$81.000
-   - Reconciliar 12 pagamentos mensais de DAS (R$75,90 base para serviços 2025, ajustado pelo componente ICMS/ISS)
-   - Calcular a parcela isenta (32% serviços, 8% comércio, 8% indústria, 16% transporte)
-   - Output: valores da DASN-SIMEI, parcela isenta, parcela tributável para o IRPF
-
-2. **`br-irpf`** -- Declaração de Ajuste Anual (se obrigado)
-   - Parcela tributável MEI entra como rendimentos tributáveis
-   - Parcela isenta MEI entra como rendimentos isentos e não tributáveis
-   - Outras fontes de renda consolidadas
-   - Output: IRPF completo com todas as fichas
-
-3. **`br-inss`** -- reconciliação do INSS
-   - O INSS do MEI está incluído no DAS (5% do salário mínimo para aposentadoria por idade)
-   - Se houver complementação (15% adicional para aposentadoria por tempo de contribuição), reconciliar
-   - Output: resumo das contribuições do INSS, meses contribuídos
+0. **br-simples (modo MEI)** — declaração anual DASN-SIMEI + reconciliação de pagamentos DAS. Verificar faturamento bruto contra o limite de R$81.000. Reconciliar 12 pagamentos mensais de DAS (R$75,90 base para serviços 2025, ajustado pelo componente ICMS/ISS). Calcular a parcela isenta (32% serviços, 8% comércio, 8% indústria, 16% transporte). Output: valores da DASN-SIMEI, parcela isenta, parcela tributável para o IRPF.
+0. **br-irpf** — Declaração de Ajuste Anual (se obrigado). Parcela tributável MEI entra como rendimentos tributáveis. Parcela isenta MEI entra como rendimentos isentos e não tributáveis. Outras fontes de renda consolidadas. Output: IRPF completo com todas as fichas.
+0. **br-inss** — reconciliação do INSS. O INSS do MEI está incluído no DAS (5% do salário mínimo para aposentadoria por idade). Se houver complementação (15% adicional para aposentadoria por tempo de contribuição), reconciliar. Output: resumo das contribuições do INSS, meses contribuídos.
 
 ### Rota B: Simples Nacional
 
-1. **`br-simples` (modo Simples)** -- reconciliação do DAS
-   - Determinar o Anexo correto (I-V) com base no CNAE
-   - Calcular o fator R (folha de pagamento / receita bruta 12 meses) para a migração Anexo V -> III
-   - Reconciliar pagamentos mensais de DAS contra o faturamento
-   - Verificar sublimite estadual para ICMS/ISS, se aplicável
-   - Output: reconciliação do DAS, alíquota efetiva, total pago vs devido
-
-2. **`br-irpf`** -- Declaração de Ajuste Anual
-   - Pró-labore como rendimentos tributáveis (com INSS 11% deduzido)
-   - Distribuição de lucros isentos (lucro - impostos Simples, limitado à presunção ou contabilidade)
-   - Outras fontes de renda consolidadas
-   - Output: IRPF completo com todas as fichas
-
-3. **`br-inss`** -- reconciliação do INSS
-   - INSS sobre pró-labore: 11% retido (empresa) + CPP dentro do DAS
-   - Verificar o teto previdenciário (R$7.786,02 em 2025)
-   - Output: resumo das contribuições do INSS
-
-4. **`br-iss`** -- reconciliação do ISS (se atividade de serviços)
-   - ISS incluído no DAS para o Simples Nacional (exceto atividades do Anexo IV)
-   - Para Anexo IV (advocacia, vigilância, limpeza): ISS pago separadamente ao município
-   - Output: reconciliação do ISS
+0. **br-simples (modo Simples)** — reconciliação do DAS. Determinar o Anexo correto (I-V) com base no CNAE. Calcular o fator R (folha de pagamento / receita bruta 12 meses) para a migração Anexo V -> III. Reconciliar pagamentos mensais de DAS contra o faturamento. Verificar sublimite estadual para ICMS/ISS, se aplicável. Output: reconciliação do DAS, alíquota efetiva, total pago vs devido.
+0. **br-irpf** — Declaração de Ajuste Anual. Pró-labore como rendimentos tributáveis (com INSS 11% deduzido). Distribuição de lucros isentos (lucro - impostos Simples, limitado à presunção ou contabilidade). Outras fontes de renda consolidadas. Output: IRPF completo com todas as fichas.
+0. **br-inss** — reconciliação do INSS. INSS sobre pró-labore: 11% retido (empresa) + CPP dentro do DAS. Verificar o teto previdenciário (R$7.786,02 em 2025). Output: resumo das contribuições do INSS.
+0. **br-iss** — reconciliação do ISS (se atividade de serviços). ISS incluído no DAS para o Simples Nacional (exceto atividades do Anexo IV). Para Anexo IV (advocacia, vigilância, limpeza): ISS pago separadamente ao município. Output: reconciliação do ISS.
 
 ### Rota C: Autônomo / Pessoa Física
 
-1. **`br-iss`** -- reconciliação do ISS (se atividade de serviços em município que exija)
-   - Alíquota de ISS por município (tipicamente 2-5%)
-   - Reconciliar ISS pago ou retido
-   - Output: valores de ISS, montante dedutível
+0. **br-iss** — reconciliação do ISS (se atividade de serviços em município que exija). Alíquota de ISS por município (tipicamente 2-5%). Reconciliar ISS pago ou retido. Output: valores de ISS, montante dedutível.
+0. **Reconciliação do carnê-leão (embutido no br-irpf)** — Cálculo mensal dos rendimentos PF, deduções do livro-caixa, INSS, dependentes. Aplicação mensal da tabela progressiva do IRPF. Reconciliar DARFs pagos (código 0190) contra o imposto devido mensal. Output: cronograma mensal do carnê-leão, total pago, qualquer diferença com exposição a multa/juros.
+0. **br-irpf** — Declaração de Ajuste Anual. Todos os rendimentos tributáveis (PF via carnê-leão + PJ com IRRF). Deduções do livro-caixa. INSS pago como dedução. Deduções legais (médicas, educação, PGBL, dependentes, pensão). Bens e direitos / dívidas e ônus atualizados. Output: IRPF completo com todas as fichas.
+0. **br-inss** — reconciliação do INSS. Contribuinte individual: 20% sobre remuneração (até o teto de R$7.786,02). Ou plano simplificado: 11% sobre o salário mínimo. Reconciliar pagamentos de GPS. Output: resumo das contribuições do INSS, meses contribuídos.
 
-2. **Reconciliação do carnê-leão** (embutido no br-irpf)
-   - Cálculo mensal dos rendimentos PF, deduções do livro-caixa, INSS, dependentes
-   - Aplicação mensal da tabela progressiva do IRPF
-   - Reconciliar DARFs pagos (código 0190) contra o imposto devido mensal
-   - Output: cronograma mensal do carnê-leão, total pago, qualquer diferença com exposição a multa/juros
-
-3. **`br-irpf`** -- Declaração de Ajuste Anual
-   - Todos os rendimentos tributáveis (PF via carnê-leão + PJ com IRRF)
-   - Deduções do livro-caixa
-   - INSS pago como dedução
-   - Deduções legais (médicas, educação, PGBL, dependentes, pensão)
-   - Bens e direitos / dívidas e ônus atualizados
-   - Output: IRPF completo com todas as fichas
-
-4. **`br-inss`** -- reconciliação do INSS
-   - Contribuinte individual: 20% sobre remuneração (até o teto de R$7.786,02)
-   - Ou plano simplificado: 11% sobre o salário mínimo
-   - Reconciliar pagamentos de GPS
-   - Output: resumo das contribuições do INSS, meses contribuídos
-
-Se algum content skill upstream não produzir output validado, o skill de montagem anota a falha no reviewer brief e continua com os dados disponíveis, em vez de interromper totalmente.
-
----
+- **Falha de skill upstream** — Se algum content skill upstream não produzir output validado, o skill de montagem anota a falha no reviewer brief e continua com os dados disponíveis, em vez de interromper totalmente.  _(Seção 2)_
 
 ## Seção 3 -- Reconciliação cross-skill
 
 ### Verificação 1: reconciliação de receita entre obrigações
 
+**Verificação 1: reconciliação de receita entre obrigações**  _(Seção 3)_
+
 | Fonte | IRPF | Simples/MEI | Carnê-leão | Regra |
-|--------|------|-------------|------------|------|
+| --- | --- | --- | --- | --- |
 | Notas fiscais emitidas | Rendimentos tributáveis (ficha Rendimentos Recebidos de PJ) | Faturamento bruto (PGDAS-D / DASN-SIMEI) | Rendimentos recebidos de PF (mensal) | Tudo deve reconciliar com depósitos bancários dentro de R$100 |
 | Depósitos bancários | Soma de todas as fontes de renda | Faturamento total | Recebimentos PF mensais | Diferenças de timing (competência vs caixa) são comuns |
 
@@ -140,8 +84,10 @@ Se algum content skill upstream não produzir output validado, o skill de montag
 
 ### Verificação 2: contribuições do INSS vs dedução no IRPF
 
+**Verificação 2: contribuições do INSS vs dedução no IRPF**  _(Seção 3)_
+
 | Fonte do INSS | Tratamento no IRPF | Regra |
-|-------------|---------------|------|
+| --- | --- | --- |
 | Autônomo GPS (20% ou 11%) | Dedução na ficha Pagamentos Efetuados (código 36) | Valor efetivamente pago, não valor devido |
 | MEI DAS (componente INSS) | Não dedutível separadamente (incluído no cálculo da parcela isenta) | Não contar em duplicidade |
 | INSS sobre pró-labore Simples (11%) | Dedução do rendimento tributável na ficha Rendimentos Recebidos de PJ | Retido pela empresa, reduz o rendimento tributável |
@@ -150,8 +96,10 @@ Se algum content skill upstream não produzir output validado, o skill de montag
 
 ### Verificação 3: alinhamento carnê-leão vs ajuste anual (somente autônomo)
 
+**Verificação 3: alinhamento carnê-leão vs ajuste anual (somente autônomo)**  _(Seção 3)_
+
 | Carnê-leão (mensal) | Ajuste Anual | Regra |
-|----------------------|-------------|------|
+| --- | --- | --- |
 | Rendimentos de PF mensais | Mesmos valores na ficha Rendimentos Recebidos de PF | Totais mensais devem somar o anual |
 | Deduções de livro-caixa mensais | Total do livro-caixa no ajuste anual | Mensal não pode exceder a receita mensal |
 | Imposto pago (DARFs 0190) | Imposto pago / retido (ficha Imposto Pago/Retido código 1) | Creditado contra a obrigação anual |
@@ -160,8 +108,10 @@ Se algum content skill upstream não produzir output validado, o skill de montag
 
 ### Verificação 4: emissão de notas fiscais
 
+**Verificação 4: emissão de notas fiscais**  _(Seção 3)_
+
 | Item | Verificação | Regra |
-|------|-------|------|
+| --- | --- | --- |
 | Total de notas fiscais emitidas | Deve igualar ou exceder os rendimentos declarados | Art. 1 LC 116/2003 (serviços), legislação do ICMS (comércio) |
 | ISS retido nas notas | Deve igualar o valor de ISS pago/retido | Alíquotas municipais conforme LC 116/2003 |
 | IRRF retido nas notas (serviços PJ) | Deve coincidir com o informe de rendimentos de cada PJ | 1,5% padrão para serviços (Art. 647 RIR/2018) |
@@ -170,14 +120,14 @@ Se algum content skill upstream não produzir output validado, o skill de montag
 
 ### Verificação 5: consistência de bens e direitos
 
+**Verificação 5: consistência de bens e direitos**  _(Seção 3)_
+
 | Ano anterior | Ano corrente | Regra |
-|-----------|-------------|------|
+| --- | --- | --- |
 | Bens e direitos 31/12/2024 | Bens e direitos 31/12/2025 | Alterações devem ser explicadas (aquisições, vendas, depreciação) |
 | Dívidas e ônus 31/12/2024 | Dívidas e ônus 31/12/2025 | Alterações devem ser explicadas (nova dívida, pagamentos) |
 
 **Se houver inconsistência:** aumentos inexplicados em bens sem renda correspondente é um red flag para malha fina. Sinalizar.
-
----
 
 ## Seção 4 -- Reconciliação CBS/IBS 2026
 
@@ -185,20 +135,14 @@ A partir de 2026, contribuintes fora do Simples Nacional precisam reconciliar CB
 
 ### Cronograma da transição
 
-- **2026 (fase de teste):** valores de CBS 0,9% + IBS 0,1% destacados nas notas, com **pagamento simbólico** — a obrigação pode ser **suspensa por 3 meses sem multa** após a regulamentação, desde que o contribuinte cumpra as obrigações acessórias (emissão correta da nota com os campos de CBS/IBS preenchidos).
-- **2027:** CBS pleno entra em vigor; o working paper deve **substituir a reconciliação PIS/Cofins pela reconciliação CBS**. PIS e Cofins são extintos para a maioria das atividades.
-- **2029:** IBS passa a ser cobrado de forma gradual, com alíquota crescente a cada ano-calendário até 2032.
-- **2033:** ICMS e ISS são extintos do working paper. A reconciliação cross-skill da Seção 3 deve ser ajustada para remover a Verificação 4 (ISS retido em notas) na sua forma atual.
+- **2026 (fase de teste)** — valores de CBS 0,9% + IBS 0,1% destacados nas notas, com pagamento simbólico — a obrigação pode ser suspensa por 3 meses sem multa após a regulamentação, desde que o contribuinte cumpra as obrigações acessórias (emissão correta da nota com os campos de CBS/IBS preenchidos).  _(EC 132/2023 e LC 214/2025, Seção 4)_
+- **2027** — CBS pleno entra em vigor; o working paper deve substituir a reconciliação PIS/Cofins pela reconciliação CBS. PIS e Cofins são extintos para a maioria das atividades.  _(EC 132/2023 e LC 214/2025, Seção 4)_
+- **2029** — IBS passa a ser cobrado de forma gradual, com alíquota crescente a cada ano-calendário até 2032.  _(EC 132/2023 e LC 214/2025, Seção 4)_
+- **2033** — ICMS e ISS são extintos do working paper. A reconciliação cross-skill da Seção 3 deve ser ajustada para remover a Verificação 4 (ISS retido em notas) na sua forma atual.  _(EC 132/2023 e LC 214/2025, Seção 4)_
 
 ### Estrutura obrigatória do working paper (a partir de 2026)
 
-O working paper deve listar **separadamente**, em sheets ou seções dedicadas:
-
-1. **Créditos de CBS** — CBS destacado em notas fiscais de entrada (aquisições de bens e serviços com direito a crédito), por fornecedor e por período de apuração.
-2. **Créditos de IBS** — IBS destacado em notas fiscais de entrada, por fornecedor e por período de apuração.
-3. **Débitos de CBS** — CBS destacado em notas fiscais de saída emitidas pelo contribuinte, por cliente e por período.
-4. **Débitos de IBS** — IBS destacado em notas fiscais de saída, por cliente e por período.
-5. **Saldo** — diferença entre débitos e créditos, por tributo, com indicação de saldo a recolher ou saldo credor a transportar para o período seguinte.
+- **Estrutura obrigatória do working paper** — O working paper deve listar separadamente, em sheets ou seções dedicadas: 1. Créditos de CBS — CBS destacado em notas fiscais de entrada (aquisições de bens e serviços com direito a crédito), por fornecedor e por período de apuração. 2. Créditos de IBS — IBS destacado em notas fiscais de entrada, por fornecedor e por período de apuração. 3. Débitos de CBS — CBS destacado em notas fiscais de saída emitidas pelo contribuinte, por cliente e por período. 4. Débitos de IBS — IBS destacado em notas fiscais de saída, por cliente e por período. 5. Saldo — diferença entre débitos e créditos, por tributo, com indicação de saldo a recolher ou saldo credor a transportar para o período seguinte.  _(Seção 4)_
 
 ### Observações para 2026 (fase de teste)
 
@@ -212,27 +156,24 @@ O working paper deve listar **separadamente**, em sheets ou seções dedicadas:
 - Para impacto sobre o IRPF e distribuição de lucros, consultar **br-income-tax** (br-irpf).
 - Para tratamento no Simples Nacional, consultar **br-simples-nacional**.
 
----
-
 ## Seção 5 -- Conteúdo do pacote final de revisão
 
 ### Documentos
 
-1. **Sumário executivo** -- visão geral de uma página: tipo de atividade, rendimentos, imposto devido, imposto pago, restituição/saldo a pagar
-2. **Working paper do IRPF** -- ficha a ficha com fórmulas (todas as fichas relevantes para o autônomo)
-3. **Cronograma do carnê-leão** (autônomo) OU **reconciliação do DAS** (MEI/Simples) -- detalhamento mensal
-4. **Resumo do livro-caixa** (autônomo) -- receita mensal e despesas dedutíveis
-5. **Reconciliação do INSS** -- tipo de contribuição, pagamentos mensais, total, verificação do teto
-6. **Reconciliação do ISS** (se aplicável) -- alíquotas municipais, valores pagos, alinhamento com notas
-7. **Reconciliação CBS/IBS** (a partir de 2026) -- créditos e débitos de CBS e IBS, saldo apurado
-8. **Cronograma de bens e direitos / dívidas e ônus** -- declaração completa de ativos e passivos
-9. **Resumo das reconciliações cross-skill** -- todas as cinco verificações com pass/fail e notas
-10. **Reviewer brief** -- narrativa abrangente com posições, citações, flags e resultados dos self-checks
-11. **Lista de ações para o cliente** -- o que o cliente precisa fazer, com datas e valores
+1. Sumário executivo -- visão geral de uma página: tipo de atividade, rendimentos, imposto devido, imposto pago, restituição/saldo a pagar
+2. Working paper do IRPF -- ficha a ficha com fórmulas (todas as fichas relevantes para o autônomo)
+3. Cronograma do carnê-leão (autônomo) OU reconciliação do DAS (MEI/Simples) -- detalhamento mensal
+4. Resumo do livro-caixa (autônomo) -- receita mensal e despesas dedutíveis
+5. Reconciliação do INSS -- tipo de contribuição, pagamentos mensais, total, verificação do teto
+6. Reconciliação do ISS (se aplicável) -- alíquotas municipais, valores pagos, alinhamento com notas
+7. Reconciliação CBS/IBS (a partir de 2026) -- créditos e débitos de CBS e IBS, saldo apurado
+8. Cronograma de bens e direitos / dívidas e ônus -- declaração completa de ativos e passivos
+9. Resumo das reconciliações cross-skill -- todas as cinco verificações com pass/fail e notas
+10. Reviewer brief -- narrativa abrangente com posições, citações, flags e resultados dos self-checks
+11. Lista de ações para o cliente -- o que o cliente precisa fazer, com datas e valores
 
 ### Conteúdo do reviewer brief
 
-```markdown
 # Pacote Completo de Declaração: [Nome do Cliente] -- Ano-calendário 2025 / Exercício 2026
 
 ## Sumário Executivo
@@ -285,9 +226,9 @@ O working paper deve listar **separadamente**, em sheets ou seções dedicadas:
 
 ### Cálculo do Imposto
 - Base de cálculo: R$ X
-- Tabela progressiva 2025:
-  - Até R$2.259,20/mês (R$27.110,40/ano): isento
-  - R$2.259,21 - R$2.826,65: 7,5%
+- Tabela progressiva 2025 (ano-calendário 2025 / exercício 2026):
+  - Até R$2.428,80/mês desde maio de 2025 (R$28.467,20/ano): isento
+  - R$2.428,81 - R$2.826,65: 7,5%
   - R$2.826,66 - R$3.751,05: 15%
   - R$3.751,06 - R$4.664,68: 22,5%
   - Acima de R$4.664,68: 27,5%
@@ -440,69 +381,44 @@ O working paper deve listar **separadamente**, em sheets ou seções dedicadas:
 6. Atualizar o registro de bens e direitos para quaisquer aquisições/alienações
 7. Pagar o INSS mensalmente para manter a contagem de contribuições para aposentadoria
 8. Manter reconciliação CBS/IBS a partir de 2026 (créditos, débitos e saldo)
-```
-
----
 
 ## Seção 6 -- Recusas
 
-**R-BR-1 -- Skill upstream não rodou.** Nomear o skill específico. Observação: este é um aviso, não um hard stop. Continuar com os dados disponíveis e sinalizar a lacuna.
-
-**R-BR-2 -- Self-check upstream falhou.** Nomear o check específico e anotá-lo no reviewer brief. Continuar.
-
-**R-BR-3 -- Reconciliação cross-skill falhou.** Nomear a reconciliação específica e descrever a discrepância. Sinalizar para o revisor mas continuar.
-
-**R-BR-4 -- Intake incompleto.** Itens específicos faltantes do intake impedem o cálculo. Listar o que está faltando e pedir ao usuário o dado específico.
-
-**R-BR-5 -- Item fora do escopo descoberto durante a montagem.** Ex.: ganhos de capital (GCAP), rendimentos do exterior exigindo carnê-leão sobre fonte estrangeira, ou rendimentos de aluguel exigindo DARF separado. Sinalizar e excluir do cálculo.
-
----
+- **R-BR-1** — Skill upstream não rodou. Nomear o skill específico. Observação: este é um aviso, não um hard stop. Continuar com os dados disponíveis e sinalizar a lacuna.  _(Seção 6)_
+- **R-BR-2** — Self-check upstream falhou. Nomear o check específico e anotá-lo no reviewer brief. Continuar.  _(Seção 6)_
+- **R-BR-3** — Reconciliação cross-skill falhou. Nomear a reconciliação específica e descrever a discrepância. Sinalizar para o revisor mas continuar.  _(Seção 6)_
+- **R-BR-4** — Intake incompleto. Itens específicos faltantes do intake impedem o cálculo. Listar o que está faltando e pedir ao usuário o dado específico.  _(Seção 6)_
+- **R-BR-5** — Item fora do escopo descoberto durante a montagem. Ex.: ganhos de capital (GCAP), rendimentos do exterior exigindo carnê-leão sobre fonte estrangeira, ou rendimentos de aluguel exigindo DARF separado. Sinalizar e excluir do cálculo.  _(Seção 6)_
 
 ## Seção 7 -- Self-checks
 
-**Check BR1 -- Todos os skills upstream foram executados.** br-irpf, br-inss e o caminho aplicável de br-simples ou carnê-leão produziram output.
-
-**Check BR2 -- Reconciliação de receita passou.** Total de rendimentos entre IRPF, DAS/carnê-leão e notas fiscais alinhados dentro de R$100.
-
-**Check BR3 -- INSS corretamente classificado e deduzido.** O caminho do INSS corresponde ao tipo de atividade. Sem dupla contagem entre componente do DAS e GPS separado.
-
-**Check BR4 -- Carnê-leão alinha com ajuste anual (autônomo).** Totais mensais somam o anual. DARFs pagos creditados corretamente.
-
-**Check BR5 -- Parcela isenta MEI calculada corretamente.** Percentual correto (32% serviços, 8% comércio, 8% indústria, 16% transporte) aplicado ao faturamento.
-
-**Check BR6 -- Anexo do Simples determinado corretamente.** CNAE mapeia para o Anexo correto. Fator R calculado se atividade do Anexo V.
-
-**Check BR7 -- Modelo de IRPF (completa vs simplificada) otimizado.** Os dois modelos calculados, escolhido o mais vantajoso.
-
-**Check BR8 -- Bens e direitos completos e consistentes.** Todos os ativos > R$5.000 declarados. Variações ano a ano explicadas.
-
-**Check BR9 -- Deduções legais dentro dos limites.** Limite de educação por pessoa R$3.561,50. Limite de PGBL 12%. Dependentes R$2.275,08 cada.
-
-**Check BR10 -- Calendário de envios está completo.** Prazo do IRPF, prazo da DASN-SIMEI, DAS mensal, carnê-leão mensal, INSS mensal, todos listados; obrigações acessórias (DCTFWeb, ECF, ECD, EFD-ICMS/IPI, EFD-Reinf, EFD-Contribuições) listadas.
-
-**Check BR11 -- Sem números de formulário em mensagens voltadas ao usuário.** Notas internas podem referenciar fichas e artigos; mensagens ao usuário usam português comum sempre que possível.
-
-**Check BR12 -- Reviewer brief contém citações de legislação.** Toda posição cita artigos específicos do RIR/2018, LC 123/2006, Lei 9.249/1995, CTN, EC 132/2023, LC 214/2025 ou outra legislação aplicável.
-
-**Check BR13 -- Reconciliação CBS/IBS executada (a partir de 2026).** Créditos e débitos de CBS e IBS listados separadamente, com saldo apurado e flag para fase do cronograma de transição.
-
----
+- **Check BR1** — Todos os skills upstream foram executados. br-irpf, br-inss e o caminho aplicável de br-simples ou carnê-leão produziram output.  _(Seção 7)_
+- **Check BR2** — Reconciliação de receita passou. Total de rendimentos entre IRPF, DAS/carnê-leão e notas fiscais alinhados dentro de R$100.  _(Seção 7)_
+- **Check BR3** — INSS corretamente classificado e deduzido. O caminho do INSS corresponde ao tipo de atividade. Sem dupla contagem entre componente do DAS e GPS separado.  _(Seção 7)_
+- **Check BR4** — Carnê-leão alinha com ajuste anual (autônomo). Totais mensais somam o anual. DARFs pagos creditados corretamente.  _(Seção 7)_
+- **Check BR5** — Parcela isenta MEI calculada corretamente. Percentual correto (32% serviços, 8% comércio, 8% indústria, 16% transporte) aplicado ao faturamento.  _(Seção 7)_
+- **Check BR6** — Anexo do Simples determinado corretamente. CNAE mapeia para o Anexo correto. Fator R calculado se atividade do Anexo V.  _(Seção 7)_
+- **Check BR7** — Modelo de IRPF (completa vs simplificada) otimizado. Os dois modelos calculados, escolhido o mais vantajoso.  _(Seção 7)_
+- **Check BR8** — Bens e direitos completos e consistentes. Todos os ativos > R$5.000 declarados. Variações ano a ano explicadas.  _(Seção 7)_
+- **Check BR9** — Deduções legais dentro dos limites. Limite de educação por pessoa R$3.561,50. Limite de PGBL 12%. Dependentes R$2.275,08 cada.  _(Seção 7)_
+- **Check BR10** — Calendário de envios está completo. Prazo do IRPF, prazo da DASN-SIMEI, DAS mensal, carnê-leão mensal, INSS mensal, todos listados; obrigações acessórias (DCTFWeb, ECF, ECD, EFD-ICMS/IPI, EFD-Reinf, EFD-Contribuições) listadas.  _(Seção 7)_
+- **Check BR11** — Sem números de formulário em mensagens voltadas ao usuário. Notas internas podem referenciar fichas e artigos; mensagens ao usuário usam português comum sempre que possível.  _(Seção 7)_
+- **Check BR12** — Reviewer brief contém citações de legislação. Toda posição cita artigos específicos do RIR/2018, LC 123/2006, Lei 9.249/1995, CTN, EC 132/2023, LC 214/2025 ou outra legislação aplicável.  _(Seção 7)_
+- **Check BR13** — Reconciliação CBS/IBS executada (a partir de 2026). Créditos e débitos de CBS e IBS listados separadamente, com saldo apurado e flag para fase do cronograma de transição.  _(Seção 7)_
 
 ## Seção 8 -- Arquivos de saída
 
-O output final consiste em **três arquivos**:
+O output final consiste em três arquivos:
 
-1. **`[client_slug]_2025_br_master.xlsx`** -- workbook master único contendo todas as planilhas. Abas incluem: Capa, Resumo do IRPF (todas as fichas), Cronograma Mensal do Carnê-Leão (autônomo) ou Reconciliação do DAS (MEI/Simples), Livro-Caixa (autônomo), Reconciliação do INSS, Reconciliação do ISS, Reconciliação CBS/IBS (a partir de 2026), Bens e Direitos, Dívidas e Ônus, Resumo Cross-Check. Usar fórmulas vivas sempre que possível -- ex.: rendimentos do IRPF referenciam as abas de carnê-leão/DAS; dedução do INSS referencia a aba do INSS; tabela progressiva é fórmula. Verificar que não há erros `#REF!`. Verificar que os valores calculados batem dentro de R$1 antes de entregar.
+1. `[client_slug]_2025_br_master.xlsx` -- workbook master único contendo todas as planilhas. Abas incluem: Capa, Resumo do IRPF (todas as fichas), Cronograma Mensal do Carnê-Leão (autônomo) ou Reconciliação do DAS (MEI/Simples), Livro-Caixa (autônomo), Reconciliação do INSS, Reconciliação do ISS, Reconciliação CBS/IBS (a partir de 2026), Bens e Direitos, Dívidas e Ônus, Resumo Cross-Check. Usar fórmulas vivas sempre que possível -- ex.: rendimentos do IRPF referenciam as abas de carnê-leão/DAS; dedução do INSS referencia a aba do INSS; tabela progressiva é fórmula. Verificar que não há erros `#REF!`. Verificar que os valores calculados batem dentro de R$1 antes de entregar.
 
-2. **`reviewer_brief.md`** -- arquivo único em markdown cobrindo todas as seções da Seção 5 acima: sumário executivo, IRPF, carnê-leão/DAS, INSS, ISS, CBS/IBS, bens e direitos, reconciliação cross-skill, flags, posições, notas de planejamento.
+2. `reviewer_brief.md` -- arquivo único em markdown cobrindo todas as seções da Seção 5 acima: sumário executivo, IRPF, carnê-leão/DAS, INSS, ISS, CBS/IBS, bens e direitos, reconciliação cross-skill, flags, posições, notas de planejamento.
 
-3. **`client_action_list.md`** -- arquivo único em markdown com ações passo a passo: envios e pagamentos imediatos, calendário mensal de DAS/carnê-leão/INSS/CBS-IBS para 2026, lembretes de conformidade contínuos.
+3. `client_action_list.md` -- arquivo único em markdown com ações passo a passo: envios e pagamentos imediatos, calendário mensal de DAS/carnê-leão/INSS/CBS-IBS para 2026, lembretes de conformidade contínuos.
 
 **Se a execução ficar sem contexto no meio da construção:** produzir o que estiver completo, e ao final declarar quais dos três arquivos não foram produzidos ou estão parciais.
 
 **Todos os arquivos são colocados em `/mnt/user-data/outputs/` e apresentados ao usuário via a ferramenta `present_files` ao final.**
-
----
 
 ## Seção 9 -- Referências cruzadas entre skills
 
@@ -515,8 +431,6 @@ O output final consiste em **três arquivos**:
 - `brazil-einvoice` -- emissão de nota fiscal eletrônica com campos de CBS/IBS (a partir de 2026)
 
 **Outputs:** o pacote final de revisão. Sem skill downstream.
-
----
 
 ## Seção 10 -- Lacunas conhecidas
 
@@ -533,23 +447,17 @@ O output final consiste em **três arquivos**:
 11. A reconciliação CBS/IBS (Seção 4) cobre apenas a fase de teste 2026 e o cronograma de transição. A apuração detalhada por NCM, regimes específicos (zona franca, ZPE) e split payment estão fora do escopo desta versão.
 
 ### Change log
+
 - **v1.0 (maio de 2026):** rascunho inicial. Modelado a partir do mt-return-assembly v0.1 adaptado para a jurisdição do Brasil com quatro content skills (IRPF, Simples/DAS, INSS, ISS).
 - **v1.1 (maio de 2026):** tradução completa para português brasileiro; adicionada Seção 4 -- Reconciliação CBS/IBS 2026 cobrindo o cronograma da reforma tributária (EC 132/2023, LC 214/2025); estrutura obrigatória do working paper para créditos/débitos de CBS e IBS; novo Check BR13; integração com obrigações acessórias (DCTFWeb, ECF, ECD, EFD-ICMS/IPI, EFD-Reinf, EFD-Contribuições) na lista de ações e nos self-checks; referência cruzada para brazil-einvoice.
 
 ## Fim do skill
 
-
----
-
 ## Aviso legal
 
 Este skill e seus outputs são fornecidos apenas para fins informativos e de cálculo e não constituem aconselhamento tributário, jurídico ou financeiro. A Open Accountants e seus colaboradores não aceitam responsabilidade por quaisquer erros, omissões ou resultados decorrentes do uso deste skill. Todos os outputs devem ser revisados e assinados por um profissional qualificado (como contador registrado no CRC, advogado tributarista ou prático licenciado equivalente em sua jurisdição) antes do envio ou da tomada de ação.
 
-A versão mais atualizada e verificada deste skill é mantida em [openaccountants.com](https://www.openaccountants.com). Faça login para acessar a versão mais recente, solicitar revisão profissional por um contador licenciado e acompanhar atualizações conforme a legislação tributária mudar.
-
----
-
-<!-- openaccountants-cta-block -->
+A versão mais atualizada e verificada deste skill é mantida em [openaccountants.com](https://openaccountants.com). Faça login para acessar a versão mais recente, solicitar revisão profissional por um contador licenciado e acompanhar atualizações conforme a legislação tributária mudar.
 
 ## Talk to a verified accountant
 
@@ -557,23 +465,29 @@ This skill is a tool, not an engagement. Every taxpayer's situation is
 different, and the rules in the skill may not match your specific facts.
 
 To speak with one of the licensed accountants who verifies skills for your
-jurisdiction — **no liability on either side until you and the accountant sign
-a formal engagement letter** — book a free 30-minute call:
+jurisdiction — no liability on either side until you and the accountant sign
+a formal engagement letter — book a free 30-minute call:
 
-**→ [Book a call](https://calendly.com/openaccountants-info/30min)**
+→ [Book a call](https://calendly.com/openaccountants-info/30min)
 
 We'll route you to the named verifier covering your country or state. You can
 also see the full list of verified accountants at
-[openaccountants.com/network](https://www.openaccountants.com/network).
+[openaccountants.com/network](https://openaccountants.com/network).
 
-<!-- openaccountants-mcp-cta -->
+<!-- openaccountants-cta-block -->
 
-## The accountant-verified version lives in the connector
+---
 
-This file is the open, **research-grade draft**. The **accountant-verified**
-version of this skill is **not published to GitHub** — it is delivered free
-through the OpenAccountants MCP connector, where your AI agent loads the
-verified rules together with the name of the accountant who signed them off.
+## Talk to a verified accountant
 
-**→ Install the free connector:** <https://www.openaccountants.com/connect>
-**MCP endpoint:** `https://www.openaccountants.com/api/mcp`
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

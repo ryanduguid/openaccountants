@@ -3,18 +3,21 @@ name: iraq-tax
 description: Use this skill whenever asked about Iraq taxation, sales tax, or the absence of VAT in Iraq. Iraq does NOT have a broad-based VAT or GST. It imposes specific sales taxes on enumerated products (up to 300% on alcohol/tobacco) and has an income tax system. ALWAYS read this skill before handling any Iraq tax work.
 version: 2.0
 jurisdiction: IQ
+tax_year: 2025
+last_updated: 2026-04-13
+verified_by: pending
 tier: 2
-last_updated: 2026-06-12
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Iraq Tax Compliance Skill v2.0
-
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+# Iraq Tax
 
 ## Section 1 -- Quick reference
 
+**Quick reference**
+
 | Field | Value |
-|---|---|
+| --- | --- |
 | Country | Iraq |
 | VAT/GST status | NOT IMPLEMENTED |
 | Specific sales taxes | Alcohol 300%, tobacco 300%, mobile/internet 20%, travel 15%, cars 15%, hotels 10%, telecom 5% |
@@ -28,26 +31,21 @@ last_updated: 2026-06-12
 | Validated by | Pending |
 | Last research update | April 2026 |
 
----
-
 ## Section 2 -- Required inputs and refusal catalogue
 
 **Minimum viable** -- bank statement or transaction list. Acceptable from Rasheed Bank, Rafidain Bank, Trade Bank of Iraq, or any Iraqi bank.
 
 **Refusal catalogue:**
 
-**R-IQ-1 -- Oil sector.** Message: "Oil sector taxation is T3. Escalate."
-
-**R-IQ-2 -- Kurdistan Region.** Message: "KRI has separate tax administration. Escalate for dual-filing obligations."
-
----
-
-## Section 3 -- Supplier pattern library
+- **R-IQ-1 -- Oil sector** — Oil sector taxation is T3. Escalate.  _(R-IQ-1 -- Oil sector.)_
+- **R-IQ-2 -- Kurdistan Region** — KRI has separate tax administration. Escalate for dual-filing obligations.  _(R-IQ-2 -- Kurdistan Region.)_
 
 ### 3.1 Iraqi banks
 
+**Iraqi banks pattern library**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | RASHEED BANK | EXCLUDE | Financial transaction |
 | RAFIDAIN BANK | EXCLUDE | Same |
 | TRADE BANK OF IRAQ, TBI | EXCLUDE | Same |
@@ -55,15 +53,13 @@ last_updated: 2026-06-12
 
 ### 3.2 Government
 
+**Government pattern library**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | GCT, GENERAL COMMISSION FOR TAXES | EXCLUDE | Tax payment |
 | CUSTOMS | EXCLUDE | Customs duty |
 | SOCIAL SECURITY | EXCLUDE | Social insurance |
-
----
-
-## Section 4 -- Worked examples
 
 ### Example 1 -- Client asks about Iraq VAT
 
@@ -75,20 +71,16 @@ last_updated: 2026-06-12
 
 Importer brings alcohol into Iraq. 300% sales tax at customs plus customs duties. No input credit mechanism. Tax is a direct cost.
 
----
-
-## Section 5 -- Classification rules
-
 ### 5.1 No VAT system
 
-Iraq has no VAT registration, filing, collection, or invoicing requirements.
+- **No VAT system** — Iraq has no VAT registration, filing, collection, or invoicing requirements.  _(Section 5.1 No VAT system)_
 
 ### 5.2 Specific sales taxes
 
-These are excise-type levies on enumerated goods only. No input credit. No staged collection. No registration system.
+**Specific sales taxes by product**
 
 | Product | Rate |
-|---|---|
+| --- | --- |
 | Alcohol | 300% |
 | Tobacco | 300% |
 | Mobile/internet | 20% |
@@ -97,42 +89,38 @@ These are excise-type levies on enumerated goods only. No input credit. No stage
 | Hotels/restaurants (deluxe) | 10% |
 | Telecom services | 5% |
 
+- **Nature of specific sales taxes** — These are excise-type levies on enumerated goods only. No input credit. No staged collection. No registration system.  _(Section 5.2 Specific sales taxes)_
+
 ### 5.3 Corporate income tax
 
-15% flat on net profits from Iraqi-source income. Oil/gas: 35%. Agricultural income: exempt.
-
----
+- **Corporate income tax - standard** — 15% percent (flat on net profits from Iraqi-source income)  _(Section 5.3 Corporate income tax)_
+- **Oil & gas sector corporate tax rate** — 35% percent (income from contracts with foreign oil companies, branches, offices and subcontractors in oil/gas production and related industries)  _(Income Tax Law No. 113 of 1982 — https://taxsummaries.pwc.com/iraq/corporate/taxes-on-corporate-income)_
+- **Agricultural income** — Agricultural income: exempt.  _(Section 5.3 Corporate income tax)_
 
 ## Section 6 -- Return form structure
 
-No VAT return exists. CIT return filed annually by 31 May, paper-based at GCT offices. Financial statements in Arabic must accompany.
-
----
+- **Return form structure** — No VAT return exists. CIT return filed annually by 31 May, paper-based at GCT offices. Financial statements in Arabic must accompany.  _(Section 6 -- Return form structure)_
 
 ## Section 7 -- No reverse charge
 
-No VAT system means no reverse charge mechanism exists.
-
----
+- **No reverse charge** — No VAT system means no reverse charge mechanism exists.  _(Section 7 -- No reverse charge)_
 
 ## Section 8 -- No input deductibility
 
-No input credit system for sales taxes. Tax on alcohol/tobacco is embedded cost.
-
----
+- **No input deductibility** — No input credit system for sales taxes. Tax on alcohol/tobacco is embedded cost.  _(Section 8 -- No input deductibility)_
 
 ## Section 9 -- Filing, deadlines, and penalties
 
+**Filing, deadlines, and penalties**
+
 | Obligation | Deadline |
-|---|---|
+| --- | --- |
 | CIT return | 31 May following year-end |
 | Books/records | Arabic language required |
 
-Social security: employer 12% + employee 5% = 17%.
-
----
-
-## Section 10 -- Edge cases, test suite, and escalation
+- **Social security - employer** — 12% percent  _(Section 9 -- Filing, deadlines, and penalties)_
+- **Social security - employee** — 5% percent  _(Section 9 -- Filing, deadlines, and penalties)_
+- **Social security - total** — 17% percent (employer 12% + employee 5%)  _(Section 9 -- Filing, deadlines, and penalties)_
 
 ### Edge cases
 
@@ -174,10 +162,26 @@ REVIEWER FLAG / ESCALATION REQUIRED
 - NEVER file without Arabic documentation
 - NEVER compute numbers -- engine handles arithmetic
 
----
-
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional before filing or acting upon.
 
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com).
+The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com).
+
+<!-- openaccountants-cta-block -->
+
+---
+
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

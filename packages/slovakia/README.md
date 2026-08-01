@@ -8,9 +8,15 @@
 1. `foundation.md`
 2. `intake.md`
 3. `references.md`
-4. `slovakia-pit.md`
-5. `slovakia-vat-return.md`
-6. `eu-vat-directive.md`
+4. `sk-company-formation.md`
+5. `sk-corporate-income-tax.md`
+6. `sk-payroll-social.md`
+7. `sk-tax-overview.md`
+8. `slovakia-pit.md`
+9. `slovakia-vat-return.md`
+10. `eu-vat-directive.md`
+11. `payroll-workflow-base.md`
+12. `company-formation-workflow-base.md`
 
 ## How to use
 

@@ -1,28 +1,69 @@
 ---
 name: pk-corporate-tax
-description: >
-  ALWAYS read this skill before touching any Pakistan corporate income tax (CIT) work. Use this skill whenever asked about Pakistan corporate tax for a resident Pakistani company. Trigger on phrases like "Pakistan CIT", "Pakistan company tax", "Pvt Ltd Pakistan", "super tax Pakistan", "small company Pakistan tax", "PSEB IT export", "Finance Act 2025 corporate", "Section 4C super tax", "Section 113 minimum tax", "Section 113C ACT", "Section 147 advance tax", "IRIS return Pakistan", "group taxation Pakistan", "Section 59AA", "Section 59B". Covers the 29% standard CIT rate under the Income Tax Ordinance 2001 (ITO 2001) as amended by Finance Act 2024 and Finance Act 2025, the 39% banking-company rate, the 20% small-company rate (turnover ≤ Rs 250M plus the other Section 2(59A) conditions), Section 4C super tax progressive bands (1%–10%) on income above Rs 150M, Section 113 minimum tax on turnover at 1.25%, Section 113C Alternative Corporate Tax (higher of normal tax or 17% of accounting income), the PSEB-registered IT/ITeS exports concessional regime (1% final tax — flag any FA 2025 changes as TBC), Section 59AA group relief and Section 59B group taxation, Section 147 quarterly advance tax computation and payment, and annual return filing via IRIS by 31 December. Out of scope: AOPs and individuals (separate regime), permanent establishments / branches of non-residents, oil and gas exploration and production, insurance company life/non-life special regimes, modarabas, NPOs and trusts, the special economic zone (SEZ) regimes, mutual funds, REITs, and any sales tax / FED matter (see pakistan-sales-tax).
-version: 1.0
+description: "ALWAYS read this skill before touching any Pakistan corporate income tax (CIT) work. Use this skill whenever asked about Pakistan corporate tax for a resident Pakistani company. Trigger on phrases like \"Pakistan CIT\", \"Pakistan company tax\", \"Pvt Ltd Pakistan\", \"super tax Pakistan\", \"small company Pakistan tax\", \"PSEB IT export\", \"Finance Act 2025 corporate\", \"Section 4C super tax\", \"Section 113 minimum tax\", \"Section 113C ACT\", \"Section 147 advance tax\", \"IRIS return Pakistan\", \"group taxation Pakistan\", \"Section 59AA\", \"Section 59B\". Covers the 29% standard CIT rate under the Income Tax Ordinance 2001 (ITO 2001) as amended by Finance Act 2024 and Finance Act 2025, the 39% banking-company rate, the 20% small-company rate (turnover ≤ Rs 250M plus the other Section 2(59A) conditions), Section 4C super tax progressive bands (1%–10%) on income above Rs 150M, Section 113 minimum tax on turnover at 1.25%, Section 113C Alternative Corporate Tax (higher of normal tax or 17% of accounting income), the PSEB-registered IT/ITeS exports concessional regime (1% final tax — flag any FA 2025 changes as TBC), Section 59AA group relief and Section 59B group taxation, Section 147 quarterly advance tax computation and payment, and annual return filing via IRIS by 31 December. Out of scope: AOPs and individuals (separate regime), permanent establishments / branches of non-residents, oil and gas exploration and production, insurance company life/non-life special regimes, modarabas, NPOs and trusts, the special economic zone (SEZ) regimes, mutual funds, REITs, and any sales tax / FED matter (see pakistan-sales-tax)."
 jurisdiction: PK
-tax_year: 2025-26
-category: international
-depends_on:
-  - foundation
-verified_by: pending
+tax_year: 2025
+last_updated: 2026-05-27
+verified_by: Ibrar Ali
+tier: 1
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Pakistan — Corporate Income Tax — Skill v1.0
+# PK Corporate Tax
+
+## Pakistan — Corporate Income Tax — Skill v1.0
 
 > **Produced by OpenAccountants (openaccountants.com)**
 >
-> This skill is for informational purposes only and does not constitute tax, legal, or financial advice. All outputs must be reviewed and signed off by a Pakistani tax professional (ICAP CA, ICMA Pakistan, or FBR-recognised tax adviser) before filing or acting upon. The latest verified version is maintained at [openaccountants.com](https://www.openaccountants.com).
+> This skill is for informational purposes only and does not constitute tax, legal, or financial advice. All outputs must be reviewed and signed off by a Pakistani tax professional (ICAP CA, ICMA Pakistan, or FBR-recognised tax adviser) before filing or acting upon. The latest verified version is maintained at [openaccountants.com](https://openaccountants.com).
 
----
+## Verified rates & thresholds (accountant-reviewed)
+
+> Reviewed against the cited tax authorities by **Ibrar Ali** on 2026-06-12.
+> Items flagged for further clarification are tracked separately and excluded here.
+> This block is generated from verified `skill_facts` — edit the facts, not the prose.
+
+### pk-corporate-tax
+
+- **Standard CIT rate** — 29% of taxable income  _(First Schedule, Pt I, Div II)_
+- **Banking companies** — 0.44  _(First Schedule; Seventh Schedule)_
+- **Small company rate** — 20%  _(§2(59A); First Schedule, Pt I, Div II)_
+- **PSEB IT/ITeS export final tax** — 0.25% final tax if you are registered in PSEB  _(Second Schedule / §154A)_
+- **Paid-up capital + undistributed reserves** — ≤ PKR 50,000,000  _(ITO 2001 §2(59A))_
+- **Annual turnover** — ≤ PKR 250,000,000  _(ITO 2001 §2(59A))_
+- **Employees** — ≤ 250  _(ITO 2001 §2(59A))_
+- **Not formed by splitting an existing business** — Condition  _(ITO 2001 §2(59A)(d))_
+- **Not a subsidiary/associate of a non-small company** — Not a small and medium enterprise (SME)  _(ITO 2001 §2(59A)(e))_
+
+- **Up to 150,000,000** — 0%  _(§4C; First Schedule Div IIB)_
+- **150,000,001 – 200,000,000** — 1%  _(§4C; First Schedule Div IIB)_
+- **200,000,001 – 250,000,000** — 0.015  _(§4C; First Schedule Div IIB)_
+- **250,000,001 – 300,000,000** — 0.025  _(§4C; First Schedule Div IIB)_
+- **300,000,001 – 350,000,000** — 3.5  _(§4C; First Schedule Div IIB)_
+- **350,000,001 – 400,000,000** — 5.5  _(§4C; First Schedule Div IIB)_
+- **400,000,001 – 500,000,000** — 7.5  _(§4C; First Schedule Div IIB)_
+- **Above 500,000,000** — 10%  _(§4C; First Schedule Div IIB)_
+- **Minimum tax on turnover §113** — 1.25% of turnover where normal tax is lower (incl. loss years)  _(ITO 2001 §113)_
+- **Minimum tax excess carry-forward** — 2 tax years  _(ITO 2001 §113(2)(c))_
+- **Alternative Corporate Tax §113C** — 17% of accounting income (pay higher of normal tax or ACT)  _(ITO 2001 §113C)_
+- **ACT excess carry-forward** — 10 tax years  _(ITO 2001 §113C)_
+- **Tax loss carry-forward** — 6 years; no carry-back  _(ITO 2001 §57)_
+- **Unabsorbed depreciation** — Carried forward indefinitely  _(ITO 2001 §57)_
+- **Annual return (companies)** — Due 31 December for normal tax year; 30 September if special tax year ends between 1 July and 31 Dec.  _(ITO 2001 §118)_
+- **Advance tax §147 instalments** — Quarterly: 25 Sep, 25 Dec, 25 Mar, 15 Jun (Q4 earlier)  _(ITO 2001 §147)_
+- **Record retention** — 6 years from end of tax year  _(ITO 2001 §174)_
+- **Late filing penalty §182** — 0.1% of tax/day; min PKR 40,000; max 200% of tax payable  _(ITO 2001 §182)_
+- **Group relief (loss surrender)** — Requires 55% ownership (listed) or 75% (unlisted)  _(ITO 2001 §59AA)_
+- **Group taxation (consolidated return)** — Requires 100% ownership and SECP designation  _(ITO 2001 §59B)_
 
 ## Section 1 — Quick Reference
 
+**Section 1 — Quick Reference**
+
+**Quick Reference Table**
+
 | Field | Value |
-|---|---|
+| --- | --- |
 | Country | Pakistan (Islamic Republic of Pakistan) |
 | Tax | Corporate Income Tax (CIT) — under the Income Tax Ordinance 2001 |
 | Currency | PKR (Rupees, Rs) |
@@ -30,14 +71,14 @@ verified_by: pending
 | Primary legislation | Income Tax Ordinance, 2001 (ITO 2001) as amended by Finance Act 2024 and **Finance Act 2025** |
 | Supporting rules | Income Tax Rules, 2002 (ITR 2002); SROs and Circulars issued by FBR |
 | **Standard CIT rate** | **29%** of taxable income (companies other than banking) — First Schedule, Part I, Division II |
-| **Banking companies** | **39%** (under FA 2024; check FA 2025 confirmation — TBC) |
+| **Banking companies** | **0.44 (44%)** |
 | **Small company rate** | **20%** for companies meeting all Section 2(59A) criteria (turnover ≤ Rs 250M, paid-up capital + reserves ≤ Rs 50M, employees ≤ 250, not formed by splitting an existing company, not a subsidiary of a non-small company) |
 | **Super tax (Section 4C)** | **1%–10%** progressive bands on income above Rs 150M (see §4.1) |
 | **Minimum tax (Section 113)** | **1.25%** of turnover where normal tax payable is below this floor or the company is in a tax-loss position |
 | **Alternative Corporate Tax (Section 113C)** | Higher of normal tax or **17% of accounting income** |
-| PSEB-registered IT/ITeS exports | Concessional **1% final tax** on export proceeds under historical regime — **flag FA 2025 changes as TBC** |
+| PSEB-registered IT/ITeS exports | **0.25% final tax** if registered in PSEB on export proceeds |
 | Advance tax (Section 147) | Quarterly instalments — 25 Sep, 25 Dec, 25 Mar, 15 Jun |
-| Annual return | Filed via **IRIS** by **31 December** following tax year-end (i.e., 31 Dec 2026 for TY 2025-26) |
+| Annual return | Filed via **IRIS** by **31 December** for normal tax year; **30 September** if special tax year ends between 1 July and 31 December (i.e., 31 Dec 2026 for TY 2025-26) |
 | Filing portal | IRIS (FBR's online tax administration system at iris.fbr.gov.pk) |
 | Tax authority | Federal Board of Revenue (FBR), Government of Pakistan |
 | Record retention | 6 years from end of tax year (Section 174 ITO 2001) |
@@ -46,8 +87,10 @@ verified_by: pending
 
 ### 1.1 Conservative Defaults
 
+**1.1 Conservative Defaults**
+
 | Ambiguity | Default |
-|---|---|
+| --- | --- |
 | Company size unknown | Treat as non-small (29% rate) |
 | Banking vs non-banking unclear | Default to non-banking (29%) but flag |
 | Super tax band unknown | Apply highest applicable band based on best-available income estimate |
@@ -57,8 +100,6 @@ verified_by: pending
 | Group relief / group taxation election | Treat as standalone unless Section 59AA / 59B election is formally on record |
 | Advance tax basis unknown | Use latest assessed taxable income (Section 147(4)) |
 | FA 2025 change uncertain | Mark **TBC** and flag for reviewer to verify against current Finance Act text |
-
----
 
 ## Section 2 — Required Inputs and Refusal Catalogue
 
@@ -74,195 +115,120 @@ verified_by: pending
 
 ### 2.2 Refusal Catalogue
 
-**R-PK-CT-1 — Non-resident companies / branches / PE.** Branches and PEs of non-resident companies are subject to attribution rules under Sections 105–107 and treaty interactions. Out of scope — escalate to a Pakistani tax adviser.
-
-**R-PK-CT-2 — Sector-specific regimes.** Banking and insurance carry separate computational rules (Seventh Schedule for banking, Fourth Schedule for insurance). Oil & gas exploration and production (Fifth Schedule), mineral extraction, modarabas, mutual funds, REITs — all out of scope.
-
-**R-PK-CT-3 — Group consolidated returns / group taxation under Section 59B.** Election under Section 59B (designated income group) requires SECP and FBR pre-approval; out of scope for this skill. Section 59AA (group relief — surrender of losses within a 100%-owned group) is discussed at Tier 2 but requires reviewer sign-off.
-
-**R-PK-CT-4 — AOPs, individuals, NPOs, trusts.** Different rate schedules and computation rules. Out of scope — the company-specific First Schedule Part I Division II rules do not apply.
-
-**R-PK-CT-5 — Special Economic Zones (SEZ) / Export Processing Zones (EPZ).** Sector and zone-specific exemptions under the SEZ Act 2012 and EPZ Ordinance. Out of scope.
-
-**R-PK-CT-6 — Active assessment / audit / appellate proceedings.** If the company is in a Section 122 amendment, Section 177 audit, ATIR appeal, or High Court reference — escalate. Do not produce numbers that pre-empt the dispute.
-
-**R-PK-CT-7 — Transfer pricing controversy.** Active MAP or APA proceedings, or Section 108 / Rule 20–27D disputes. Out of scope.
-
-**R-PK-CT-8 — Cross-skill scope.** Sales tax and FED → `pakistan-sales-tax`. Withholding on payments (Section 149–158) is touched only insofar as it affects CIT credits — for compliance refer to a withholding-specific skill (TBD).
-
-**R-PK-CT-9 — FA 2025 ambiguity.** Where the Finance Act 2025 text is uncertain on a specific point (rates, thresholds, schedule amendments), flag as **TBC** and decline to commit to a number without reviewer verification of the gazetted Act.
-
----
+- **R-PK-CT-1** — Non-resident companies / branches / PE. Branches and PEs of non-resident companies are subject to attribution rules under Sections 105–107 and treaty interactions. Out of scope — escalate to a Pakistani tax adviser.  _(Sections 105–107 ITO 2001)_
+- **R-PK-CT-2** — Sector-specific regimes. Banking and insurance carry separate computational rules (Seventh Schedule for banking, Fourth Schedule for insurance). Oil & gas exploration and production (Fifth Schedule), mineral extraction, modarabas, mutual funds, REITs — all out of scope.  _(Seventh Schedule; Fourth Schedule; Fifth Schedule)_
+- **R-PK-CT-3** — Group consolidated returns / group taxation under Section 59B. Election under Section 59B (designated income group) requires 100% ownership and SECP designation; out of scope for this skill. Section 59AA (group relief — surrender of losses within a 100%-owned group) is discussed at Tier 2 but requires reviewer sign-off.  _(Section 59B ITO 2001)_
+- **R-PK-CT-4** — AOPs, individuals, NPOs, trusts. Different rate schedules and computation rules. Out of scope — the company-specific First Schedule Part I Division II rules do not apply.  _(First Schedule Part I Division II)_
+- **R-PK-CT-5** — Special Economic Zones (SEZ) / Export Processing Zones (EPZ). Sector and zone-specific exemptions under the SEZ Act 2012 and EPZ Ordinance. Out of scope.  _(SEZ Act 2012; EPZ Ordinance)_
+- **R-PK-CT-6** — Active assessment / audit / appellate proceedings. If the company is in a Section 122 amendment, Section 177 audit, ATIR appeal, or High Court reference — escalate. Do not produce numbers that pre-empt the dispute.  _(Section 122; Section 177 ITO 2001)_
+- **R-PK-CT-7** — Transfer pricing controversy. Active MAP or APA proceedings, or Section 108 / Rule 20–27D disputes. Out of scope.  _(Section 108 ITO 2001; Rules 20–27D)_
+- **R-PK-CT-8** — Cross-skill scope. Sales tax and FED → pakistan-sales-tax. Withholding on payments (Section 149–158) is touched only insofar as it affects CIT credits — for compliance refer to a withholding-specific skill (TBD).  _(Sections 149–158 ITO 2001)_
+- **R-PK-CT-9** — FA 2025 ambiguity. Where the Finance Act 2025 text is uncertain on a specific point (rates, thresholds, schedule amendments), flag as TBC and decline to commit to a number without reviewer verification of the gazetted Act.  _(Finance Act 2025)_
 
 ## Section 3 — Tier 1 — Rates by Company Size and Sector
 
 ### 3.1 Standard CIT Rate — 29%
 
-**Legislation:** First Schedule, Part I, Division II, ITO 2001 as amended by Finance Act 2024 and Finance Act 2025.
-
-The standard corporate income tax rate for **companies other than banking companies and small companies** is **29% of taxable income**.
-
-```
-CIT = 29% × Taxable Income
-```
+- **Standard CIT rate** — 29% of taxable income for companies other than banking companies and small companies  _(First Schedule, Part I, Division II, ITO 2001 as amended by Finance Act 2024 and Finance Act 2025)_
+- **CIT formula** — CIT = 29% × Taxable Income  _(First Schedule, Part I, Division II, ITO 2001)_
 
 This is the default rate that applies unless the company qualifies for the small-company rate, falls within the banking rate, or is subject to a sector-specific schedule (insurance, oil & gas, etc.) — those are out of scope.
 
 ### 3.2 Banking Companies — 39%
 
-**Legislation:** First Schedule, Part I, Division II, ITO 2001; Seventh Schedule (computation rules for banking).
-
-Banking companies are taxed at **39%** on taxable income computed under the Seventh Schedule (Finance Act 2024). FA 2025 confirmation — **TBC**; reviewer should verify the gazetted FA 2025 text before applying.
+- **Banking company rate** — 0.44 (44%) on taxable income computed under the Seventh Schedule. Reviewer should verify the gazetted FA 2025 text before applying.  _(First Schedule, Part I, Division II, ITO 2001; Seventh Schedule)_
 
 The Seventh Schedule overrides much of the general computational framework — different rules for provisioning, bad debts, and certain receipts. The banking sector is largely out of scope for this skill (R-PK-CT-2); the 39% rate is referenced here only for completeness.
 
 ### 3.3 Small Companies — 20%
 
-**Legislation:** Section 2(59A) ITO 2001 (definition); First Schedule, Part I, Division II (rate).
+- **Small company** — A company that satisfies all of the small-company conditions per Section 2(59A) ITO 2001  _(Section 2(59A) ITO 2001 (definition); First Schedule, Part I, Division II (rate))_
 
-A **"small company"** means a company that satisfies **all** of the following conditions:
+**Small company conditions table**
 
 | Condition | Threshold |
-|---|---|
+| --- | --- |
 | Paid-up capital plus undistributed reserves | ≤ Rs 50,000,000 |
 | Annual turnover | ≤ Rs 250,000,000 |
 | Number of employees | ≤ 250 (any time during the year) |
 | Not formed by splitting up or reconstitution of an existing business | Section 2(59A)(d) |
-| Not a subsidiary, holding, or associate of a company that is not itself a small company | Section 2(59A)(e) |
+| Not a small and medium enterprise (SME) | Section 2(59A)(e) |
 | Not engaged in certain excluded businesses | Per Section 2(59A) provisos (e.g., professional services with specific carve-outs) |
 
-If **all** conditions are met, the rate is **20%**. If **any** condition fails — even by one rupee of turnover — the standard 29% applies for the entire tax year.
+- **All-or-nothing test** — If all conditions are met, the rate is 20%. If any condition fails — even by one rupee of turnover — the standard 29% applies for the entire tax year.  _(Section 2(59A) ITO 2001)_
+- **Small company CIT formula** — Small company CIT = 20% × Taxable Income  _(First Schedule, Part I, Division II)_
+- **Fresh annual test** — The small-company test is applied each tax year on a fresh basis. A company exiting the band loses the rate for that entire year. The test is all-or-nothing — there is no sliding scale.  _(Section 2(59A) ITO 2001)_
 
-```
-Small company CIT = 20% × Taxable Income
-```
+### 3.4 PSEB-Registered IT / ITeS Exports — 0.25% Final Tax
 
-**Important:** The small-company test is applied each tax year on a fresh basis. A company exiting the band loses the rate for that entire year. The test is **all-or-nothing** — there is no sliding scale.
+- **PSEB IT/ITeS export final tax** — 0.25% final tax on export proceeds  _(Historically Clause (133) of Part I of the Second Schedule and SROs concerning IT/ITeS export receipts)_
+- **Conditions for concession** — Active PSEB registration covering the tax year; Export proceeds remitted to Pakistan through normal banking channels and supported by Bank Credit Advices; Activities falling within the FBR/PSEB-defined IT/ITeS scope.  _(FA 2024)_
 
-### 3.4 PSEB-Registered IT / ITeS Exports — 1% Final Tax (TBC under FA 2025)
+**TBC** — verify whether FA 2025 has amended the rate, scope, or the final-vs-minimum tax characterisation. Flag for reviewer.
 
-**Legislation:** Historically Clause (133) of Part I of the Second Schedule and SROs concerning IT/ITeS export receipts; concessional 1% final tax on remittance of export proceeds through normal banking channels, conditional on PSEB (Pakistan Software Export Board) registration and IT/ITeS classification.
-
-The IT/ITeS exports regime has changed multiple times. As of the most recent settled position (FA 2024), PSEB-registered IT and IT-enabled service exporters receive a **concessional 1% final tax** on export proceeds, contingent on:
-
-- Active PSEB registration covering the tax year;
-- Export proceeds remitted to Pakistan through normal banking channels and supported by Bank Credit Advices;
-- Activities falling within the FBR/PSEB-defined IT/ITeS scope.
-
-**FA 2025 status:** **TBC** — verify whether FA 2025 has amended the rate, scope, or the final-vs-minimum tax characterisation. Flag for reviewer.
-
-**Conservative default:** Apply 29% on the gross profit attributable to IT exports until PSEB registration and applicable SRO/Clause text for the relevant tax year are verified. The 1% concession should be applied only after reviewer confirms (a) current-year PSEB certificate, (b) banking-channel inward remittance, and (c) the relevant Clause/SRO is still in force for TY 2025-26.
+- **Conservative default** — Apply 29% on the gross profit attributable to IT exports until PSEB registration and applicable SRO/Clause text for the relevant tax year are verified. The 0.25% concession should be applied only after reviewer confirms (a) current-year PSEB certificate, (b) banking-channel inward remittance, and (c) the relevant Clause/SRO is still in force for TY 2025-26.
 
 ### 3.5 Taxable Income
 
-```
-Taxable Income = Total Income (Section 10) − Deductions (Sections 20–31) − Tax losses b/f (Sections 56–59)
-```
-
-**Heads of income** for companies — primarily *Income from Business* (Section 18). Other heads (capital gains, income from property, other sources) apply where relevant.
-
-**Tax losses** may be carried forward for **6 tax years** from the year the loss arose (Section 57); **unabsorbed depreciation** can be carried forward indefinitely. Carry-back is not available.
-
-**Depreciation** is governed by the Third Schedule — straight-line and reducing-balance rates per asset class; initial allowance under Section 23 applies in the first year for qualifying plant and machinery.
-
----
+- **Taxable income formula** — Taxable Income = Total Income (Section 10) − Deductions (Sections 20–31) − Tax losses b/f (Sections 56–59)  _(Sections 10, 20–31, 56–59 ITO 2001)_
+- **Heads of income** — Heads of income for companies — primarily Income from Business (Section 18). Other heads (capital gains, income from property, other sources) apply where relevant.  _(Section 18 ITO 2001)_
+- **Tax losses and unabsorbed depreciation** — Tax losses may be carried forward for 6 tax years from the year the loss arose (Section 57); unabsorbed depreciation can be carried forward indefinitely. Carry-back is not available.  _(Section 57 ITO 2001)_
+- **Depreciation** — Depreciation is governed by the Third Schedule — straight-line and reducing-balance rates per asset class; initial allowance under Section 23 applies in the first year for qualifying plant and machinery.  _(Third Schedule; Section 23 ITO 2001)_
 
 ## Section 4 — Tier 2 — Super Tax, Minimum Tax, ACT, Group Taxation
 
 ### 4.1 Super Tax — Section 4C ITO 2001
 
-**Legislation:** Section 4C ITO 2001 as inserted/amended; rates set in Division IIB of Part I of the First Schedule; current schedule per FA 2024 (and FA 2025 — **TBC**).
+- **Super tax basis** — Super tax under Section 4C is an additional tax on "income" as defined for Section 4C purposes (broadly, income chargeable to tax under heads excluding certain exempt items — refer to the precise statutory definition). It is computed in progressive bands above Rs 150M.  _(Section 4C ITO 2001 as inserted/amended; rates set in Division IIB of Part I of the First Schedule; current schedule per FA 2024 (and FA 2025 — TBC))_
 
-Super tax under Section 4C is an additional tax on **"income"** as defined for Section 4C purposes (broadly, income chargeable to tax under heads excluding certain exempt items — refer to the precise statutory definition). It is computed in **progressive bands** above Rs 150M:
+**Super Tax Bands (post-FA 2024)**  _(Section 4C ITO 2001; Division IIB, Part I, First Schedule)_
 
 | Income Band | Super Tax Rate (post-FA 2024) |
-|---|---|
+| --- | --- |
 | Up to Rs 150,000,000 | **0%** |
 | Rs 150,000,001 — Rs 200,000,000 | 1% |
-| Rs 200,000,001 — Rs 250,000,000 | 2% |
-| Rs 250,000,001 — Rs 300,000,000 | 3% |
-| Rs 300,000,001 — Rs 350,000,000 | 4% |
-| Rs 350,000,001 — Rs 400,000,000 | 6% |
-| Rs 400,000,001 — Rs 500,000,000 | 8% |
+| Rs 200,000,001 — Rs 250,000,000 | 1.5% |
+| Rs 250,000,001 — Rs 300,000,000 | 2.5% |
+| Rs 300,000,001 — Rs 350,000,000 | 3.5% |
+| Rs 350,000,001 — Rs 400,000,000 | 5.5% |
+| Rs 400,000,001 — Rs 500,000,000 | 7.5% |
 | Above Rs 500,000,000 | **10%** |
 
 *(Reviewer: confirm the band schedule against the current Finance Act for TY 2025-26 — slight band recalibrations occur each year. Flag as **TBC** if FA 2025 has shifted any threshold.)*
 
-Super tax is **in addition to** the normal corporate tax and any minimum tax or ACT. It is **not creditable** against normal CIT and does not generate a carry-forward.
-
-```
-Super Tax = Σ (band rate × income within that band)
-```
-
-**Conservative default:** Apply the highest applicable band based on best-available income estimate. Do not net super tax against tax credits or losses unless the statutory language expressly permits it (it generally does not).
+- **Super tax interaction** — Super tax is in addition to the normal corporate tax and any minimum tax or ACT. It is not creditable against normal CIT and does not generate a carry-forward.  _(Section 4C ITO 2001)_
+- **Super tax formula** — Super Tax = Σ (band rate × income within that band)  _(Section 4C ITO 2001)_
+- **Conservative default** — Apply the highest applicable band based on best-available income estimate. Do not net super tax against tax credits or losses unless the statutory language expressly permits it (it generally does not).
 
 ### 4.2 Minimum Tax on Turnover — Section 113
 
-**Legislation:** Section 113 ITO 2001; rate currently **1.25%** of turnover for companies (post-FA 2024); certain sectors carry reduced rates per Division IX of Part I of the First Schedule.
-
-Where a company's normal tax liability for a tax year is **less than 1.25% of turnover** — including where the company is in a tax-loss position — the company must pay **minimum tax at 1.25% of turnover** (Section 113(1)).
-
-```
-Minimum Tax = 1.25% × Turnover (where normal CIT < this floor)
-```
-
-**"Turnover"** for Section 113 means gross receipts (Section 113(3) definition) — generally gross sales and gross receipts from services and other business activities, **excluding** sales tax, FED, and refunds/discounts. Verify the precise inclusions per the current Section 113(3) text.
-
-**Carry-forward:** Excess of minimum tax over normal tax is **carried forward up to 5 tax years** and adjustable against normal tax liability in those years (Section 113(2)(c)).
-
-**Sector variations:** Some sectors (e.g., distributors of certain goods, refineries, oil marketing companies) have reduced rates under Division IX — flag to reviewer if the company is in a Division IX listed sector.
-
-**Conservative default:** Compute both normal tax and minimum tax; pay the higher. Track minimum tax excess as a 5-year carry-forward.
+- **Minimum tax rate** — 1.25% of turnover for companies (post-FA 2024); certain sectors carry reduced rates per Division IX of Part I of the First Schedule.  _(Section 113 ITO 2001)_
+- **When minimum tax applies** — Where a company's normal tax liability for a tax year is less than 1.25% of turnover — including where the company is in a tax-loss position — the company must pay minimum tax at 1.25% of turnover.  _(Section 113(1) ITO 2001)_
+- **Minimum tax formula** — Minimum Tax = 1.25% × Turnover (where normal CIT < this floor)  _(Section 113 ITO 2001)_
+- **Turnover definition** — "Turnover" for Section 113 means gross receipts (Section 113(3) definition) — generally gross sales and gross receipts from services and other business activities, excluding sales tax, FED, and refunds/discounts. Verify the precise inclusions per the current Section 113(3) text.  _(Section 113(3) ITO 2001)_
+- **Carry-forward** — Excess of minimum tax over normal tax is carried forward up to 2 tax years and adjustable against normal tax liability in those years.  _(Section 113(2)(c) ITO 2001)_
+- **Sector variations** — Some sectors (e.g., distributors of certain goods, refineries, oil marketing companies) have reduced rates under Division IX — flag to reviewer if the company is in a Division IX listed sector.  _(Division IX, Part I, First Schedule)_
+- **Conservative default** — Compute both normal tax and minimum tax; pay the higher. Track minimum tax excess as a 2-year carry-forward.
 
 ### 4.3 Alternative Corporate Tax (ACT) — Section 113C
 
-**Legislation:** Section 113C ITO 2001; ACT rate **17% of accounting income** (post-FA 2024 — confirm FA 2025 as **TBC**).
-
-A company's tax liability for a tax year is the **higher of**:
-
-1. **Corporate Tax** — normal CIT at the applicable rate (29% / 20% / 39%); or
-2. **Alternative Corporate Tax (ACT)** — **17% of accounting income** (accounting income as defined in Section 113C, broadly profit before tax as per the financial statements with prescribed adjustments).
-
-```
-Liability = max ( Corporate Tax, 17% × Accounting Income )
-```
-
-**Definition nuance:** "Accounting income" for Section 113C is defined with carve-outs (e.g., exempt income, income subject to final tax regimes, share of profit from AOPs already taxed). The precise adjustment list is in Section 113C — apply it carefully, do not equate "accounting income" with raw PBT.
-
-**Carry-forward:** Excess of ACT over normal corporate tax is **carried forward up to 10 tax years** and adjustable against normal CIT in those years.
-
-**Interaction:** ACT does not displace Section 113 minimum tax — both regimes can apply. The company pays the highest of (normal CIT, Section 113 minimum tax, Section 113C ACT). Super tax under Section 4C is then added on top.
-
-**Conservative default:** Compute all three (normal CIT, Section 113 minimum, Section 113C ACT) for every corporate engagement and pay the highest, then add Section 4C super tax.
+- **ACT rate** — 17% of accounting income (post-FA 2024 — confirm FA 2025 as TBC)  _(Section 113C ITO 2001)_
+- **Higher of test** — A company's tax liability for a tax year is the higher of: 1. Corporate Tax — normal CIT at the applicable rate (29% / 20% / 39%); or 2. Alternative Corporate Tax (ACT) — 17% of accounting income (accounting income as defined in Section 113C, broadly profit before tax as per the financial statements with prescribed adjustments).  _(Section 113C ITO 2001)_
+- **ACT liability formula** — Liability = max ( Corporate Tax, 17% × Accounting Income )  _(Section 113C ITO 2001)_
+- **Accounting income nuance** — "Accounting income" for Section 113C is defined with carve-outs (e.g., exempt income, income subject to final tax regimes, share of profit from AOPs already taxed). The precise adjustment list is in Section 113C — apply it carefully, do not equate "accounting income" with raw PBT.  _(Section 113C ITO 2001)_
+- **ACT carry-forward** — Excess of ACT over normal corporate tax is carried forward up to 10 tax years and adjustable against normal CIT in those years.  _(Section 113C ITO 2001)_
+- **Interaction with minimum tax and super tax** — ACT does not displace Section 113 minimum tax — both regimes can apply. The company pays the highest of (normal CIT, Section 113 minimum tax, Section 113C ACT). Super tax under Section 4C is then added on top.
+- **Conservative default** — Compute all three (normal CIT, Section 113 minimum, Section 113C ACT) for every corporate engagement and pay the highest, then add Section 4C super tax.
 
 ### 4.4 Group Relief — Section 59AA
 
-**Legislation:** Section 59AA ITO 2001.
-
-A company that is a **wholly-owned subsidiary** (100% holding) within a designated group may **surrender its tax losses** to a parent or another 100%-owned company in the group for set-off against the recipient's taxable income, subject to:
-
-- Both companies are resident in Pakistan;
-- The holding is direct and 100% for the relevant tax year;
-- The group is designated and the election is made within the statutory window;
-- Continuity-of-business and continuity-of-ownership tests are met (per Section 59AA conditions and the related Rules);
-- The surrendering company has no minimum-tax carry-forward issues that conflict with the surrender.
-
-**Conservative default:** Treat companies as standalone (no group relief) unless the election and 100% ownership are documented and reviewer confirms compliance with Section 59AA.
+- **Group relief conditions** — Both companies are resident in Pakistan; The holding meets the ownership threshold: 55% (listed companies) or 75% (unlisted companies); The group is designated and the election is made within the statutory window; Continuity-of-business and continuity-of-ownership tests are met (per Section 59AA conditions and the related Rules); The surrendering company has no minimum-tax carry-forward issues that conflict with the surrender.  _(Section 59AA ITO 2001)_
+- **Conservative default** — Treat companies as standalone (no group relief) unless the election and applicable ownership threshold (55% listed / 75% unlisted) are documented and reviewer confirms compliance with Section 59AA.
 
 ### 4.5 Group Taxation — Section 59B
 
-**Legislation:** Section 59B ITO 2001 and Group Taxation Rules.
-
-A "designated income group" of 100%-owned companies may file a **single consolidated return** with intra-group transactions disregarded, subject to:
-
-- Pre-approval by FBR;
-- SECP and tax-authority designation as a group;
-- All members are 100% owned (directly or through wholly-owned chain);
-- Audited accounts in compliance with prescribed standards.
-
-**Out of scope (R-PK-CT-3):** Section 59B election is complex and requires specialist advice; this skill does not produce group-taxation computations.
-
----
+- **Group taxation conditions** — 100% ownership (directly or through wholly-owned chain); SECP designation as a group; Audited accounts in compliance with prescribed standards.  _(Section 59B ITO 2001 and Group Taxation Rules)_
+- **Out of scope (R-PK-CT-3)** — Section 59B election is complex and requires specialist advice; this skill does not produce group-taxation computations.  _(R-PK-CT-3)_
 
 ## Section 5 — Worked Examples
 
@@ -277,7 +243,7 @@ A "designated income group" of 100%-owned companies may file a **single consolid
 - Withholding tax credits (Bank profit, contract receipts WHT): Rs 12,000,000.
 - Advance tax paid under Section 147 across four quarters: Rs 55,000,000.
 
-**5.1.1 Normal CIT.** Brightline is **not a small company** (turnover Rs 1.2B exceeds Rs 250M). Standard 29% applies.
+**5.1.1 Normal CIT.** Brightline is not a small company (turnover Rs 1.2B exceeds Rs 250M). Standard 29% applies.
 ```
 Normal CIT = 29% × 230,000,000 = Rs 66,700,000
 ```
@@ -298,7 +264,7 @@ Normal CIT (Rs 66.7M) > ACT (Rs 37.4M). Pay normal CIT. No ACT excess to carry f
 ```
 Super tax on Rs 150,000,000             = 0%  × 150,000,000  = Rs 0
 Super tax on Rs 50,000,000 (150M–200M)  = 1%  ×  50,000,000  = Rs 500,000
-Super tax on Rs 30,000,000 (200M–230M)  = 2%  ×  30,000,000  = Rs 600,000
+Super tax on Rs 30,000,000 (200M–230M)  = 1.5%  ×  30,000,000  = Rs 450,000
                                                                 ─────────────
 Total Section 4C Super Tax                                    = Rs 1,100,000
 ```
@@ -341,7 +307,7 @@ ACT = 17% × 25,000,000 = Rs 4,250,000
 ```
 Normal CIT (Rs 4.4M) > ACT (Rs 4.25M). Pay normal CIT.
 
-**5.2.4 Super Tax.** Income Rs 22M is below Rs 150M threshold — **no Section 4C liability**.
+**5.2.4 Super Tax.** Income Rs 22M is below Rs 150M threshold — no Section 4C liability.
 
 **Total liability: Rs 4,400,000** before WHT credits / advance tax.
 
@@ -357,11 +323,11 @@ Normal CIT (Rs 4.4M) > ACT (Rs 4.25M). Pay normal CIT.
 **If reviewer confirms the 1% concession applies** (final-tax basis on export remittances under the relevant Clause/SRO for TY 2025-26):
 
 ```
-Tax on export receipts (final tax)  = 1% × 500,000,000 = Rs 5,000,000
+Tax on export receipts (final tax)  = 0.25% × 500,000,000 = Rs 1,250,000
 Domestic income — taxed at normal CIT (29%) on attributable taxable income
 ```
 
-Reviewer must confirm (a) the export receipts qualify as "IT/ITeS exports" per the PSEB/FBR list, (b) banking-channel remittance evidenced, (c) the Clause/SRO is in force for TY 2025-26, and (d) whether the 1% is **final** (no further tax on those proceeds) or **minimum** (top-up if normal tax is higher). The historical position is final tax — **TBC under FA 2025**.
+Reviewer must confirm (a) the export receipts qualify as "IT/ITeS exports" per the PSEB/FBR list, (b) banking-channel remittance evidenced, (c) the Clause/SRO is in force for TY 2025-26, and (d) whether the 0.25% is final (no further tax on those proceeds) or minimum (top-up if normal tax is higher). The historical position is final tax — TBC under FA 2025.
 
 ### 5.4 Banking Company (Reference Only — Out of Scope)
 
@@ -371,9 +337,7 @@ Reviewer must confirm (a) the export receipts qualify as "IT/ITeS exports" per t
 Banking CIT = 39% × 8,000,000,000 = Rs 3,120,000,000
 ```
 
-Plus applicable super tax under Section 4C (banking-sector specific bands may apply — **verify**). Beyond this rate reference, banking is **out of scope (R-PK-CT-2)**.
-
----
+Plus applicable super tax under Section 4C (banking-sector specific bands may apply — verify). Beyond this rate reference, banking is out of scope (R-PK-CT-2).
 
 ## Section 6 — Filing and Payment Mechanics
 
@@ -383,8 +347,10 @@ Plus applicable super tax under Section 4C (banking-sector specific bands may ap
 
 **Required schedules** (typical, non-exhaustive):
 
+**Required schedules table**
+
 | Schedule | Content |
-|---|---|
+| --- | --- |
 | Main return | Computation of taxable income; tax payable |
 | Wealth statement | N/A for companies (applies to individuals) |
 | Schedule of business income | Section 18 computation |
@@ -397,8 +363,10 @@ Plus applicable super tax under Section 4C (banking-sector specific bands may ap
 
 ### 6.2 Filing Deadlines
 
+**Filing deadlines table**
+
 | Item | Deadline |
-|---|---|
+| --- | --- |
 | Annual return (companies with normal tax year) | **31 December** following tax year-end (e.g., 31 Dec 2026 for TY 2025-26) |
 | Special tax year return | 30 September following the special tax year-end, **unless** the Commissioner specifies otherwise — verify |
 | Extension request | Application under Section 119 to the Commissioner; not automatic |
@@ -411,23 +379,14 @@ Plus applicable super tax under Section 4C (banking-sector specific bands may ap
 
 ### 6.3 Section 147 Advance Tax
 
-**Legislation:** Section 147 ITO 2001.
-
-Companies pay **quarterly advance tax** computed on the basis of the **latest assessed taxable income** (Section 147(4)) divided by four, less applicable credits:
-
-```
-Quarterly advance tax = (Latest assessed taxable income × applicable CIT rate) / 4 − WHT credits attributable to that quarter
-```
-
-If the company estimates that current-year liability will be **materially lower** than the prior assessed basis, it may file an **estimate under Section 147(6)** and pay on that lower figure — but Section 147 contains **default-surcharge mechanics** if the year-end liability exceeds the estimate. Conservative default: pay on the latest-assessed basis.
-
-**Late or short advance payment** triggers default surcharge under Section 205 (current rate per the Act / FBR — typically KIBOR-plus or a flat 12%/year-equivalent — verify against current Section 205 text).
+- **Quarterly advance tax formula** — Quarterly advance tax = (Latest assessed taxable income × applicable CIT rate) / 4 − WHT credits attributable to that quarter  _(Section 147 ITO 2001)_
+- **Section 147(6) estimate** — If the company estimates that current-year liability will be materially lower than the prior assessed basis, it may file an estimate under Section 147(6) and pay on that lower figure — but Section 147 contains default-surcharge mechanics if the year-end liability exceeds the estimate. Conservative default: pay on the latest-assessed basis.  _(Section 147(6) ITO 2001)_
+- **Late or short advance payment** — Late or short advance payment triggers default surcharge under Section 205 (current rate per the Act / FBR — typically KIBOR-plus or a flat 12%/year-equivalent — verify against current Section 205 text).  _(Section 205 ITO 2001)_
 
 ### 6.4 Withholding Tax Credits
 
-WHT collected against the company under Sections 149–158 (e.g., contract payments, services, bank profit, rent) is **creditable against the annual CIT liability**, subject to the CPR (Computerised Payment Receipt) evidence and matching in IRIS.
-
-**Some WHT regimes are "final tax"** (e.g., certain export receipts under Section 154, dividend tax under Section 150) — those receipts are **excluded** from the normal CIT computation entirely, and the WHT is **not creditable** against other income. Verify the head and the relevant clause / Division for each receipt before crediting.
+- **WHT creditable** — WHT collected against the company under Sections 149–158 (e.g., contract payments, services, bank profit, rent) is creditable against the annual CIT liability, subject to the CPR (Computerised Payment Receipt) evidence and matching in IRIS.  _(Sections 149–158 ITO 2001)_
+- **Final tax WHT regimes** — Some WHT regimes are "final tax" (e.g., certain export receipts under Section 154, dividend tax under Section 150) — those receipts are excluded from the normal CIT computation entirely, and the WHT is not creditable against other income. Verify the head and the relevant clause / Division for each receipt before crediting.  _(Section 154; Section 150 ITO 2001)_
 
 ### 6.5 Audit, Assessment, and Statute of Limitations
 
@@ -438,9 +397,11 @@ WHT collected against the company under Sections 149–158 (e.g., contract payme
 
 ### 6.6 Common Penalty Headings (Section 182 and others)
 
+**Penalty headings table**
+
 | Infraction | Sanction |
-|---|---|
-| Failure to file return on time | 0.1% of tax payable per day, min Rs 40,000, max 50% of tax payable (Section 182, item 1) |
+| --- | --- |
+| Failure to file return on time | 0.1% of tax payable per day, min Rs 40,000, max 200% of tax payable (Section 182, item 1) |
 | Failure to maintain records | Rs 25,000 / 10% of tax — verify current schedule |
 | Failure to file Section 108 statement | Per Section 182 schedule |
 | Concealment of income | Up to 100% of tax sought to be evaded |
@@ -449,17 +410,17 @@ WHT collected against the company under Sections 149–158 (e.g., contract payme
 
 **Conservative default:** File and pay on time. Penalty figures above are illustrative — confirm against the current Section 182 table and any FA 2025 amendments before quoting to a client.
 
----
-
 ## Section 7 — Conservative Defaults Summary
 
+**Conservative defaults summary table**
+
 | Item | Default |
-|---|---|
+| --- | --- |
 | Company size unknown | Treat as non-small (29%) |
 | Sector unknown | Non-banking (29%, not 39%) |
 | PSEB IT-exports concession | Apply 29% until PSEB certificate + FA 2025 text verified |
 | Super tax band | Apply highest band consistent with best-available income estimate |
-| Minimum tax vs normal tax | Pay the higher; track minimum-tax excess as 5-year carry-forward |
+| Minimum tax vs normal tax | Pay the higher; track minimum-tax excess as 2-year carry-forward |
 | ACT (Section 113C) | Compute alongside normal tax; pay the higher; track excess as 10-year carry-forward |
 | Group relief / group taxation | Standalone unless Section 59AA / 59B election is formally documented |
 | Advance tax (Section 147) | Use latest assessed basis; do not file Section 147(6) downward estimates without strong evidence |
@@ -468,8 +429,6 @@ WHT collected against the company under Sections 149–158 (e.g., contract payme
 | Record retention | 6 years from end of tax year |
 | Filing channel | IRIS only — e-filing is mandatory for companies |
 | Tax loss carry-forward | 6 years (Section 57); unabsorbed depreciation indefinite |
-
----
 
 ## Section 8 — Sources
 
@@ -520,12 +479,10 @@ WHT collected against the company under Sections 149–158 (e.g., contract payme
 - **FBR website** (fbr.gov.pk) — Acts, Rules, SROs, Circulars, and the consolidated ITO 2001 reading copy.
 - **PSEB** (pseb.org.pk) — registration body for IT/ITeS exporters claiming the historical Clause 133 concession.
 
----
-
 ## PROHIBITIONS
 
 - NEVER apply the small-company rate (20%) without confirming **all** Section 2(59A) conditions are met for the relevant tax year.
-- NEVER apply the 1% PSEB IT-exports concession without (a) current PSEB registration for the tax year, (b) banking-channel remittance evidence, and (c) reviewer verification that the Clause/SRO is in force for TY 2025-26.
+- NEVER apply the 0.25% PSEB IT-exports concession without (a) current PSEB registration for the tax year, (b) banking-channel remittance evidence, and (c) reviewer verification that the Clause/SRO is in force for TY 2025-26.
 - NEVER skip the Section 113 minimum-tax computation — it applies even in tax-loss years.
 - NEVER skip the Section 113C ACT computation — accounting income can exceed taxable income materially.
 - NEVER omit Section 4C super tax where income exceeds Rs 150M.
@@ -539,19 +496,13 @@ WHT collected against the company under Sections 149–158 (e.g., contract payme
 - NEVER treat WHT, super tax, minimum tax, and ACT as alternatives without computing each — the liability is normal CIT vs (max of minimum tax, ACT), **plus** Section 4C, **less** creditable WHT and advance tax.
 - NEVER present figures as definitive — always label as estimates pending reviewer sign-off by an ICAP CA / ICMA Pakistan member.
 
----
-
 ## Disclaimer
 
-This skill and its outputs are for informational and computational purposes only and do not constitute tax, legal, or financial advice. All outputs must be reviewed and signed off by a qualified Pakistani tax professional (ICAP CA, ICMA Pakistan member, or FBR-recognised tax adviser) before filing or acting upon. Finance Act 2025 specifics flagged as **TBC** must be verified against the gazetted Act text before reliance. The latest verified version is maintained at [openaccountants.com](https://www.openaccountants.com).
+This skill and its outputs are for informational and computational purposes only and do not constitute tax, legal, or financial advice. All outputs must be reviewed and signed off by a qualified Pakistani tax professional (ICAP CA, ICMA Pakistan member, or FBR-recognised tax adviser) before filing or acting upon. Finance Act 2025 specifics flagged as **TBC** must be verified against the gazetted Act text before reliance. The latest verified version is maintained at [openaccountants.com](https://openaccountants.com).
 
----
+## OpenAccountants footer
 
 *OpenAccountants — open-source accounting skills for AI*
-
----
-
-<!-- openaccountants-cta-block -->
 
 ## Talk to a verified accountant
 
@@ -566,16 +517,22 @@ a formal engagement letter** — book a free 30-minute call:
 
 We'll route you to the named verifier covering your country or state. You can
 also see the full list of verified accountants at
-[openaccountants.com/network](https://www.openaccountants.com/network).
+[openaccountants.com/network](https://openaccountants.com/network).
 
-<!-- openaccountants-mcp-cta -->
+<!-- openaccountants-cta-block -->
 
-## The accountant-verified version lives in the connector
+---
 
-This file is the open, **research-grade draft**. The **accountant-verified**
-version of this skill is **not published to GitHub** — it is delivered free
-through the OpenAccountants MCP connector, where your AI agent loads the
-verified rules together with the name of the accountant who signed them off.
+## Talk to a verified accountant
 
-**→ Install the free connector:** <https://www.openaccountants.com/connect>
-**MCP endpoint:** `https://www.openaccountants.com/api/mcp`
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

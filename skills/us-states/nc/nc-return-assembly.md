@@ -2,13 +2,14 @@
 name: nc-return-assembly
 description: "Final capstone orchestrator that assembles the complete federal + North Carolina filing package for a full-year North Carolina-resident sole proprietor or single-member LLC disregarded for federal tax. Consumes outputs from every upstream federal and North Carolina content skill (bookkeeping, Schedule C/SE, QBI, retirement, SE health insurance, quarterly estimated tax, federal assembly, 1099-NEC, nc-income-tax, nc-estimated-tax, nc-bailey-settlement-retirement where applicable, and nc-sales-tax for closing out the indirect-tax year) to produce a single unified reviewer package: every worksheet, every form, every cross-skill reconciliation, the final taxpayer action list with payment and filing instructions, the next-year NC-40 voucher schedule, and the reviewer brief. This skill does NOT recompute tax — it ORCHESTRATES. Trigger on phrases like \"assemble the North Carolina return\", \"final NC package\", \"D-400 reviewer package\", \"NC return assembly\", or \"package up the Carolina return\". MUST be loaded alongside us-tax-workflow-base v0.2 or later and every content skill listed in Section 5. North Carolina full-year residents only. Sole proprietors and single-member LLCs disregarded for federal tax only."
 jurisdiction: US-NC
-domain: individual income tax return assembly
 tax_year: 2025
+last_updated: 2026-05-28
+verified_by: pending
 tier: 2
-last_updated: 2026-07-06
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# nc-return-assembly
+# NC Return Assembly
 
 ## North Carolina Return Assembly Skill — Capstone Orchestrator
 
@@ -848,3 +849,21 @@ We'll route you to the named verifier covering your country or state. You can al
 0. **Step 11** — nc-bailey-settlement-retirement (Sch S Part B — if applicable)
 0. **Step 12** — nc-estimated-tax / NC-40 (2026) (next-year vouchers)
 0. **Step 13** — nc-return-assembly ← THIS SKILL
+
+<!-- openaccountants-cta-block -->
+
+---
+
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

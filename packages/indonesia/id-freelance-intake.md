@@ -1,22 +1,21 @@
 ---
 name: id-freelance-intake
 description: ALWAYS USE THIS SKILL when a user asks for help preparing a 2025 Indonesian tax return AND mentions freelancing, self-employment, online seller, kontraktor, pekerjaan bebas, sole proprietor (Usaha Dagang), or a PT Perorangan in Indonesia. Trigger on phrases like "siapkan SPT Tahunan", "lapor pajak freelance Indonesia", "PPh Final UMKM 0,5%", "PP 55/2022", "PT Perorangan tax return", "online seller Indonesia tax", "kontraktor pajak", "pekerjaan bebas", "Usaha Dagang", "Coretax SPT", "NPWP 16 digit", or any similar phrasing where the user is an Indonesia-resident self-employed individual, sole proprietor, or micro-PT founder. This is the REQUIRED entry point for the Indonesian freelance/SME workflow — every downstream skill in the stack (id-pph-final-umkm, id-income-tax, id-corporate-tax, id-withholding, id-payroll-pph21, indonesia-vat, id-bookkeeping, id-einvoice-coretax, id-formation, id-tax-optimization, id-return-assembly) depends on this skill running first. Uses ask_user_input_v0-style structured questions. Indonesian residents only (full-year tax residents and foreigners with > 183 days permanent presence). ALWAYS read this skill first when starting an Indonesian freelance/SME tax workflow.
-version: 1.0
 jurisdiction: ID
 tax_year: 2025
-category: international
+last_updated: 2026-05-27
 verified_by: pending
+tier: 2
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Indonesia Freelance / SME Intake Skill v1.0
+# ID Freelance Intake
 
 ## What this file is
 
 The intake orchestrator for Indonesian-resident self-employed individuals, sole proprietors (Usaha Dagang / UD), and micro-PT founders (PT Perorangan). Every downstream Indonesian content skill depends on this skill producing a structured intake package first.
 
 Job: (1) confirm taxpayer is in scope, (2) classify the regime (UMKM Final 0.5% vs progressive PPh OP vs PPh Badan), (3) identify downstream skills to run, (4) hand off to `id-return-assembly`. Outputs addressed to a credentialed Indonesian reviewer (Konsultan Pajak with Brevet A/B/C, or an Akuntan Publik). The reviewer signs off — this skill is not the preparer of record.
-
----
 
 ## Section 1 — Quick reference: regime decision tree at a glance
 
@@ -44,24 +43,20 @@ Parallel routing (independent of regime):
 - Optimisation requested or borderline → route `id-tax-optimization`.
 - Always final → `id-return-assembly`.
 
----
-
 ## Section 2 — Workflow runbook (order of operations)
 
 Strict order. Do not narrate steps.
 
-1. **Opening** — one-line greeting + flow summary + reviewer reminder, then launch the refusal sweep.
-2. **Refusal sweep** — single `ask_user_input_v0` call with the 4 questions in Section 5.1.
-3. **Document dump** — ask user to upload everything at once (rekening koran, faktur, bukti potong, prior SPT). Do not insist on bank statements alone.
-4. **Inference pass** — parse every document; extract turnover, expenses, withholding, prior payments.
-5. **Regime classification** — apply Section 4 decision tree using inferred turnover + sweep answers.
-6. **Confirmation** — show inferred summary + proposed regime + downstream-skill list; invite corrections.
-7. **Gap filling** — `ask_user_input_v0` only for items documents cannot answer (PTKP, UMKM history, Coretax access).
-8. **Handoff** — produce Section 6 summary and invoke `id-return-assembly`.
+0. **Opening** — one-line greeting + flow summary + reviewer reminder, then launch the refusal sweep.
+0. **Refusal sweep** — single `ask_user_input_v0` call with the 4 questions in Section 5.1.
+0. **Document dump** — ask user to upload everything at once (rekening koran, faktur, bukti potong, prior SPT). Do not insist on bank statements alone.
+0. **Inference pass** — parse every document; extract turnover, expenses, withholding, prior payments.
+0. **Regime classification** — apply Section 4 decision tree using inferred turnover + sweep answers.
+0. **Confirmation** — show inferred summary + proposed regime + downstream-skill list; invite corrections.
+0. **Gap filling** — `ask_user_input_v0` only for items documents cannot answer (PTKP, UMKM history, Coretax access).
+0. **Handoff** — produce Section 6 summary and invoke `id-return-assembly`.
 
 Operating principles: use `ask_user_input_v0` for multi-choice; free text only for names / NPWP / KLU. Batch up to 3 related independent questions. Never re-ask documents-visible facts. Indonesian terms in parentheses on first mention (e.g., "annual turnover (peredaran bruto)"). All amounts in IDR.
-
----
 
 ## Section 3 — Required inputs
 
@@ -74,62 +69,48 @@ Some inferred from documents, the rest gap-filled. All mandatory before handoff.
 - **Operational:** employee count (PPh 21 / BPJS), PKP status (PMK 197/2013), Coretax DJP account active (PER-24/PJ/2024; KMK 360/KMK.03/2024), e-Faktur usage if PKP.
 - **Documents:** rekening koran 2025, faktur penjualan / kuitansi, faktur pembelian / faktur pajak masukan, bukti potong PPh 21 / 23 / 4(2) / 26, prior-year SPT, SSP / e-Billing receipts.
 
----
-
 ## Section 4 — Regime decision tree with thresholds and citations
 
 All thresholds 2025-effective.
 
 ### 4.1 Residency gate — UU 36/2008 art. 2(3) as amended by UU 7/2021
 
-Indonesian tax resident = individual residing in Indonesia, or present > 183 days in any 12-month window, or present with intent to reside. Foreigners > 183 days are in scope here. The PMK 18/2021 qualified-expat 4-year regime is **out of scope** → refuse. Not full-year resident → **REFUSE.**
+- **Residency definition and refusal** — Indonesian tax resident = individual residing in Indonesia, or present > 183 days in any 12-month window, or present with intent to reside. Foreigners > 183 days are in scope here. The PMK 18/2021 qualified-expat 4-year regime is out of scope → refuse. Not full-year resident → REFUSE.  _(UU 36/2008 art. 2(3) as amended by UU 7/2021)_
 
 ### 4.2 Pekerjaan bebas gate — UU 36/2008 art. 4(1)(c)
 
-Pekerjaan bebas = individual professional service requiring special skill performed independently. Examples (PER-17/PJ/2015 + DJP guidance): doctors, dentists, notaries, PPAT, advokat, arsitek, akuntan, konsultan pajak, aktuaris, penilai, insinyur konsultan; artists, athletes, presenters, MCs, models, musicians; authors, researchers, translators.
-
-If pekerjaan bebas → UMKM Final 0.5% **not available** (PP 55/2022 art. 56(2)). Use progressive PPh OP (UU 36/2008 art. 17 as amended by UU 7/2021). Route `id-income-tax` only.
+- **Pekerjaan bebas definition and effect** — Pekerjaan bebas = individual professional service requiring special skill performed independently. Examples (PER-17/PJ/2015 + DJP guidance): doctors, dentists, notaries, PPAT, advokat, arsitek, akuntan, konsultan pajak, aktuaris, penilai, insinyur konsultan; artists, athletes, presenters, MCs, models, musicians; authors, researchers, translators. If pekerjaan bebas → UMKM Final 0.5% not available (PP 55/2022 art. 56(2)). Use progressive PPh OP (UU 36/2008 art. 17 as amended by UU 7/2021). Route `id-income-tax` only.  _(UU 36/2008 art. 4(1)(c); PP 55/2022 art. 56(2); UU 36/2008 art. 17 as amended by UU 7/2021)_
 
 ### 4.3 Turnover threshold gate — PP 55/2022 art. 56, 60; PMK 164/2023
 
-- Peredaran bruto ≤ Rp4.8B + not pekerjaan bebas → UMKM Final 0.5% **available** (optional; taxpayer may elect progressive instead).
-- > Rp4.8B → UMKM Final **not available**; progressive PPh OP + mandatory pembukuan under UU 28/2007 art. 28.
-
-**UMKM clock — PP 55/2022 art. 59:** OP / UD = 7 years; PT = 4 years; CV / Firma / Koperasi / BUMDes = 3 years. Counted from first applied year (or PP 23/2018 effectivity if on regime in 2018).
-
-**Rp500m OP band — UU 7/2021 art. 7(2a):** OP on UMKM Final 0.5% has first Rp500m of annual turnover exempt from 0.5% final tax. OP only — not badan.
-
-→ Route `id-pph-final-umkm` with monthly calc + Rp500m logic.
+- **UMKM Final availability threshold** — Peredaran bruto ≤ Rp4.8B + not pekerjaan bebas → UMKM Final 0.5% available (optional; taxpayer may elect progressive instead). > Rp4.8B → UMKM Final not available; progressive PPh OP + mandatory pembukuan under UU 28/2007 art. 28. IDR  _(PP 55/2022 art. 56, 60; PMK 164/2023; UU 28/2007 art. 28)_
+- **UMKM clock** — OP / UD = 7 years; PT = 4 years; CV / Firma / Koperasi / BUMDes = 3 years. Counted from first applied year (or PP 23/2018 effectivity if on regime in 2018).  _(PP 55/2022 art. 59)_
+- **Rp500m OP band** — OP on UMKM Final 0.5% has first Rp500m of annual turnover exempt from 0.5% final tax. OP only — not badan. IDR  _(UU 7/2021 art. 7(2a))_
+- **Routing** — → Route `id-pph-final-umkm` with monthly calc + Rp500m logic.  _(PP 55/2022)_
 
 ### 4.4 Entity gate — UU 40/2007, UU 11/2020, PP 8/2021
 
-- OP / UD → SPT 1770 / 1770 S / 1770 SS. Route `id-income-tax` and/or `id-pph-final-umkm`.
-- PT Perorangan (UU 11/2020 art. 109(2), PP 8/2021) → separate entity → SPT 1771. Owner reports dividend/salary on SPT 1770. Limited to single Indonesian-citizen founder meeting micro/small criteria (PP 7/2021 art. 35). Route `id-corporate-tax`.
-- PT / CV / Firma → SPT 1771 (CV/Firma treated as badan since UU 7/2021). Route `id-corporate-tax`.
-
-Entity unclear → route `id-formation`. PT Perorangan and small PT/CV in scope; full PT with > 50 employees, multiple subsidiaries, or audited financials → refuse.
+- **Entity type routing** — OP / UD → SPT 1770 / 1770 S / 1770 SS. Route `id-income-tax` and/or `id-pph-final-umkm`. PT Perorangan (UU 11/2020 art. 109(2), PP 8/2021) → separate entity → SPT 1771. Owner reports dividend/salary on SPT 1770. Limited to single Indonesian-citizen founder meeting micro/small criteria (PP 7/2021 art. 35). Route `id-corporate-tax`. PT / CV / Firma → SPT 1771 (CV/Firma treated as badan since UU 7/2021). Route `id-corporate-tax`. Entity unclear → route `id-formation`. PT Perorangan and small PT/CV in scope; full PT with > 50 employees, multiple subsidiaries, or audited financials → refuse.  _(UU 40/2007; UU 11/2020 art. 109(2); PP 8/2021; PP 7/2021 art. 35)_
 
 ### 4.5 PKP / VAT gate — UU 42/2009 as amended by UU 7/2021; PMK 197/2013
 
-PKP **mandatory** if taxable turnover > Rp4.8B in any trailing-12 window. Voluntary below. VAT rate 11% from 1 April 2022. 12% luxury-goods rate from 1 January 2025 — verify (TBC — Perpres 201/2024, PMK 131/2024). PKP → route `indonesia-vat` + `id-einvoice-coretax`.
+- **PKP mandatory threshold and VAT rates** — PKP mandatory if taxable turnover > Rp4.8B in any trailing-12 window. Voluntary below. VAT rate 11% from 1 April 2022. 12% luxury-goods rate from 1 January 2025 — verify (TBC — Perpres 201/2024, PMK 131/2024). PKP → route `indonesia-vat` + `id-einvoice-coretax`.  _(UU 42/2009 as amended by UU 7/2021; PMK 197/2013; Perpres 201/2024; PMK 131/2024)_
 
 ### 4.6 Employer gate — UU 36/2008 art. 21; PP 58/2023; PMK 168/2023
 
-Employees / wages → withhold PPh 21 monthly via Coretax + BPJS Kesehatan (UU 24/2011) + BPJS Ketenagakerjaan (UU 40/2004, UU 24/2011). TER schedule from 1 January 2024. Route `id-payroll-pph21`.
+- **Employer withholding obligations** — Employees / wages → withhold PPh 21 monthly via Coretax + BPJS Kesehatan (UU 24/2011) + BPJS Ketenagakerjaan (UU 40/2004, UU 24/2011). TER schedule from 1 January 2024. Route `id-payroll-pph21`.  _(UU 36/2008 art. 21; PP 58/2023; PMK 168/2023; UU 24/2011; UU 40/2004)_
 
 ### 4.7 Withholding-agent gate — UU 36/2008 art. 23, 4(2), 26
 
-Obligation arises if taxpayer is badan, or OP appointed as agent (PER-70/PJ/2007 list — e.g., notary, doctor with own practice), AND pays: resident suppliers for services (PPh 23, 2% on jasa); rent of immovable property (PPh 4(2) Final 10%, PP 34/2017); construction (PPh 4(2) Final, PP 9/2022); non-resident suppliers (PPh 26 20% subject to P3B treaty). Route `id-withholding`.
+- **Withholding agent obligations and rates** — Obligation arises if taxpayer is badan, or OP appointed as agent (PER-70/PJ/2007 list — e.g., notary, doctor with own practice), AND pays: resident suppliers for services (PPh 23, 2% on jasa); rent of immovable property (PPh 4(2) Final 10%, PP 34/2017); construction (PPh 4(2) Final, PP 9/2022); non-resident suppliers (PPh 26 20% subject to P3B treaty). Route `id-withholding`.  _(UU 36/2008 art. 23, 4(2), 26; PER-70/PJ/2007; PP 34/2017; PP 9/2022)_
 
 ### 4.8 Bookkeeping gate — UU 28/2007 art. 28
 
-≤ Rp4.8B + UMKM Final → **pencatatan** sufficient. Otherwise → **pembukuan** (full double-entry) mandatory. Route `id-bookkeeping` if pembukuan needed and not in place.
+- **Bookkeeping requirement** — ≤ Rp4.8B + UMKM Final → pencatatan sufficient. Otherwise → pembukuan (full double-entry) mandatory. Route `id-bookkeeping` if pembukuan needed and not in place.  _(UU 28/2007 art. 28)_
 
 ### 4.9 Coretax DJP channel
 
-From tax year 2025 all SPT, e-Billing, e-Bupot, e-Faktur, and registration changes go through Coretax DJP (PER-24/PJ/2024; KMK 360/KMK.03/2024). Confirm access; if not active, flag for reviewer onboarding.
-
----
+- **Coretax filing channel requirement** — From tax year 2025 all SPT, e-Billing, e-Bupot, e-Faktur, and registration changes go through Coretax DJP (PER-24/PJ/2024; KMK 360/KMK.03/2024). Confirm access; if not active, flag for reviewer onboarding.  _(PER-24/PJ/2024; KMK 360/KMK.03/2024)_
 
 ## Section 5 — Questions to ask the user
 
@@ -142,10 +123,10 @@ Use `ask_user_input_v0`. Batch where independent.
 - **Q3 Pekerjaan bebas?** Yes (doctor / notary / lawyer / architect / accountant / consultant / artist / …) | No (usaha / online seller / kontraktor) | Mixed.
 - **Q4 2025 peredaran bruto (IDR):** ≤ Rp500m | Rp500m–Rp4.8B | Rp4.8B–Rp50B | > Rp50B | Not sure (infer from docs).
 
-Routing:
+**Refusal sweep routing table**
 
 | Answer | Action |
-|---|---|
+| --- | --- |
 | Q1 full-year | continue |
 | Q1 foreigner > 183d | continue; flag reviewer to rule out PMK 18/2021 expat regime |
 | Q1 part-year / non-resident | **REFUSE** — full-year residents only; refer to Konsultan Pajak |
@@ -168,10 +149,10 @@ Routing:
 - **Q7 UMKM Final history (PP 23/2018 or PP 55/2022) — since which year?** Never | Since 2018 | 2019–2024 | Started 2025 | Not sure.
 - **Q8 PTKP:** TK/0 | TK/1–3 | K/0 | K/1–3 | K/I/0–3.
 
-Routing:
+**Secondary questions routing table**
 
 | Answer | Action |
-|---|---|
+| --- | --- |
 | Q5 yes / unsure with turnover > Rp4.8B | route `indonesia-vat` + `id-einvoice-coretax` |
 | Q5 no but turnover > Rp4.8B | flag **PKP overdue**; route `indonesia-vat`; reviewer to register |
 | Q6 ≥ 1 employee | route `id-payroll-pph21` |
@@ -190,8 +171,6 @@ Any "Yes" → route `id-withholding`. Reviewer confirms whether OP is an appoint
 - **Q10 Coretax DJP access?** Yes (active, NPWP-as-NIK linked) | No (never logged in) | Started but hit issues.
 
 "No" or "issues" → flag in `open_flags`. Coretax is the only filing channel for 2025 SPT.
-
----
 
 ## Section 6 — Intake output template
 
@@ -271,14 +250,14 @@ Confirm or correct anything above.
 }
 ```
 
----
-
 ## Section 7 — Conservative defaults
 
 When uncertain, prefer the safer (higher-tax / stricter-compliance) outcome and flag. All defaults visible to reviewer in `conservative_defaults_applied`.
 
+**Conservative defaults table**  _(multiple as listed in table)_
+
 | Ambiguity | Conservative default |
-|---|---|
+| --- | --- |
 | Pekerjaan bebas vs usaha unclear | Treat as pekerjaan bebas → progressive PPh; no UMKM (PP 55/2022 art. 56(2)) |
 | Turnover near Rp4.8B (Rp4.5B–Rp5.2B) | Assume above threshold → progressive + PKP registration (UU 42/2009 art. 14) |
 | UMKM clock unclear | Assume started in earliest documented year incl. PP 23/2018 |
@@ -289,8 +268,6 @@ When uncertain, prefer the safer (higher-tax / stricter-compliance) outcome and 
 | Coretax access unknown | Assume not active; flag for onboarding |
 | Capital vs expense unclear | Capitalise + flag |
 
----
-
 ## Section 8 — Refusal handling
 
 Refusals fire from the refusal sweep or during inference. Protocol: stop the workflow, state the reason in one sentence, recommend a Konsultan Pajak (Brevet C) or Akuntan Publik if audited financials needed, do not work around.
@@ -298,8 +275,6 @@ Refusals fire from the refusal sweep or during inference. Protocol: stop the wor
 In-scope refusals: part-year / non-resident; turnover > Rp50B; PT with > 50 employees; PMK 18/2021 qualified-expat 4-year regime; corporate groups with consolidated reporting or transfer-pricing complexity.
 
 Sample: "Stop — you are a part-year tax resident in 2025. I cover full-year Indonesian tax residents only. Part-year residents have split-year sourcing under UU 36/2008 art. 2A and may have treaty issues. You need a Konsultan Pajak."
-
----
 
 ## Section 9 — Self-checks before handoff
 
@@ -320,8 +295,6 @@ Run all 14 before invoking `id-return-assembly`. Any failure → fix, do not han
 13. All conservative defaults recorded with citation.
 14. Reviewer disclaimer present in opening + handoff.
 
----
-
 ## Section 10 — Final handoff to id-return-assembly
 
 Once gap-filling and self-checks pass, output a short handoff message naming (a) taxpayer + entity + KLU + PTKP + Coretax status, (b) regime selected with the headline computation citation, (c) downstream skills in run-order, (d) skills explicitly not running and why, (e) reviewer reminder (Konsultan Pajak Brevet A/B sign-off via Coretax). Then invoke `id-return-assembly` with the Section 6.2 package.
@@ -329,8 +302,6 @@ Once gap-filling and self-checks pass, output a short handoff message naming (a)
 Example (OP, UMKM Final 0.5%, no employees, not PKP):
 
 > Intake complete. Wira Pratama, OP, KLU 47749, KPP Jakarta Selatan, PTKP K/1, Coretax active. 2025 turnover Rp1.2B, not pekerjaan bebas, UMKM Year 3 of 7 (started 2023). Regime: UMKM Final 0.5% (PP 55/2022); first Rp500m exempt under UU 7/2021 art. 7(2a) → base Rp700m × 0.5% = Rp3.5m before prior monthly remittances. Running: id-bookkeeping (pencatatan), id-pph-final-umkm, id-return-assembly. Not running: id-corporate-tax, indonesia-vat, id-payroll-pph21, id-withholding, id-einvoice-coretax. Needs Konsultan Pajak (Brevet A/B) sign-off before Coretax submission. Handing off now.
-
----
 
 ## Section 11 — Cross-skill references
 
@@ -349,8 +320,6 @@ Downstream skills (via id-return-assembly):
 - `id-formation` — entity choice + PT Perorangan registration.
 - `id-tax-optimization` — regime comparison.
 - `id-return-assembly` — final orchestrator (SPT, working paper, reviewer brief, action list).
-
----
 
 ## Section 12 — Sources
 
@@ -379,29 +348,21 @@ Primary statutes and regulations cited (all 2025-effective; reviewer to verify 2
 - **KMK 360/KMK.03/2024** Coretax effective date.
 - **UU 40/2007** Perseroan Terbatas; **UU 24/2011** BPJS; **UU 40/2004** SJSN.
 
----
-
 ## Change log
 
-- **v1.0 (May 2026):** Initial intake skill for the Indonesian freelance / SME workflow. Routes to id-pph-final-umkm, id-income-tax, id-corporate-tax, id-withholding, id-payroll-pph21, indonesia-vat, id-bookkeeping, id-einvoice-coretax, id-formation, id-tax-optimization, id-return-assembly. Reflects UU 7/2021 (HPP), PP 55/2022 (UMKM), UU 11/2020 (PT Perorangan), and Coretax DJP go-live for tax year 2025.
-
----
+**v1.0 (May 2026):** Initial intake skill for the Indonesian freelance / SME workflow. Routes to id-pph-final-umkm, id-income-tax, id-corporate-tax, id-withholding, id-payroll-pph21, indonesia-vat, id-bookkeeping, id-einvoice-coretax, id-formation, id-tax-optimization, id-return-assembly. Reflects UU 7/2021 (HPP), PP 55/2022 (UMKM), UU 11/2020 (PT Perorangan), and Coretax DJP go-live for tax year 2025.
 
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. OpenAccountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified Indonesian tax professional (Konsultan Pajak with Brevet A/B/C, or an Akuntan Publik where audited financials are required) before filing with the DJP via Coretax or acting upon.
 
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com).
+The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com).
 
 ---
 
 *OpenAccountants — open-source accounting skills for AI*
 *This output must be reviewed by a qualified professional before filing or acting upon.*
 *Latest verified skills: openaccountants.com | Report errors: github.com/openaccountants/openaccountants*
-
----
-
-<!-- openaccountants-cta-block -->
 
 ## Talk to a verified accountant
 
@@ -416,16 +377,22 @@ a formal engagement letter** — book a free 30-minute call:
 
 We'll route you to the named verifier covering your country or state. You can
 also see the full list of verified accountants at
-[openaccountants.com/network](https://www.openaccountants.com/network).
+[openaccountants.com/network](https://openaccountants.com/network).
 
-<!-- openaccountants-mcp-cta -->
+<!-- openaccountants-cta-block -->
 
-## The accountant-verified version lives in the connector
+---
 
-This file is the open, **research-grade draft**. The **accountant-verified**
-version of this skill is **not published to GitHub** — it is delivered free
-through the OpenAccountants MCP connector, where your AI agent loads the
-verified rules together with the name of the accountant who signed them off.
+## Talk to a verified accountant
 
-**→ Install the free connector:** <https://www.openaccountants.com/connect>
-**MCP endpoint:** `https://www.openaccountants.com/api/mcp`
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

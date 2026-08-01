@@ -7,7 +7,14 @@
 
 1. `foundation.md`
 2. `intake.md`
-3. `monaco-vat.md`
+3. `mc-company-formation.md`
+4. `mc-corporate-income-tax.md`
+5. `mc-income-tax.md`
+6. `mc-payroll-social.md`
+7. `mc-tax-overview.md`
+8. `monaco-vat.md`
+9. `payroll-workflow-base.md`
+10. `company-formation-workflow-base.md`
 
 ## How to use
 

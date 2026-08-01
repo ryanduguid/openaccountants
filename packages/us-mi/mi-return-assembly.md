@@ -1,110 +1,56 @@
 ---
 name: mi-return-assembly
-description: >
-  Final capstone orchestrator that assembles the complete federal + Michigan
-  filing package for a full-year Michigan-resident sole proprietor or
-  single-member LLC disregarded for federal tax. Consumes outputs from every
-  upstream federal and Michigan content skill (bookkeeping, Schedule C/SE,
-  QBI, retirement, SE health insurance, quarterly estimated tax, federal
-  assembly, 1099-NEC, MI-1040 income tax, MI-1040ES estimates, Form 4884
-  pension subtraction, MI-1040CR / CR-7 credits, and Detroit Form 5118 where
-  applicable) to produce a single unified reviewer package: every worksheet,
-  every form, every cross-skill reconciliation, the final taxpayer action
-  list with payment and filing instructions, the next-year MI-1040ES voucher
-  schedule, and the reviewer brief. This skill does NOT recompute tax — it
-  ORCHESTRATES. Trigger on phrases like "assemble the Michigan return",
-  "final MI package", "MI-1040 reviewer package", "Detroit return package",
-  or "Michigan return assembly". MUST be loaded alongside us-tax-workflow-base
-  v0.2 or later and every content skill listed in Section 5. Michigan
-  full-year residents only.
+description: "Final capstone orchestrator that assembles the complete federal + Michigan filing package for a full-year Michigan-resident sole proprietor or single-member LLC disregarded for federal tax. Consumes outputs from every upstream federal and Michigan content skill (bookkeeping, Schedule C/SE, QBI, retirement, SE health insurance, quarterly estimated tax, federal assembly, 1099-NEC, MI-1040 income tax, MI-1040ES estimates, Form 4884 pension subtraction, MI-1040CR / CR-7 credits, and Detroit Form 5118 where applicable) to produce a single unified reviewer package: every worksheet, every form, every cross-skill reconciliation, the final taxpayer action list with payment and filing instructions, the next-year MI-1040ES voucher schedule, and the reviewer brief. This skill does NOT recompute tax — it ORCHESTRATES. Trigger on phrases like \"assemble the Michigan return\", \"final MI package\", \"MI-1040 reviewer package\", \"Detroit return package\", or \"Michigan return assembly\". MUST be loaded alongside us-tax-workflow-base v0.2 or later and every content skill listed in Section 5. Michigan full-year residents only."
 jurisdiction: US-MI
-tier: 2
+tax_year: 2025
+last_updated: 2026-05-28
 verified_by: pending
-version: "0.1"
-depends_on:
-  - us-tax-workflow-base
-  - us-sole-prop-bookkeeping
-  - us-schedule-c-and-se-computation
-  - us-qbi-deduction
-  - us-self-employed-health-insurance
-  - us-self-employed-retirement
-  - us-quarterly-estimated-tax
-  - us-federal-return-assembly
-  - us-1099-nec-issuance
-  - mi-income-tax
-  - mi-pension-retirement-subtraction
-validation_status: ai-drafted-q3
+tier: 2
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Michigan Return Assembly Skill — Capstone Orchestrator
+# MI Return Assembly
 
-> **Scope.** This is THE skill that runs LAST. Every other skill in the
-> Michigan stack feeds into this one. The output is the complete reviewer
-> package that a credentialed reviewer (Enrolled Agent, CPA, or attorney
-> under Circular 230) signs off on before the return goes to the taxpayer
-> or to Michigan Treasury.
->
-> This skill does **not** compute anything new. Its job is to verify that
-> every upstream skill ran, every upstream self-check passed, every
-> cross-skill reconciliation holds, and the package is internally consistent.
->
-> **Quality tier.** Q3 — AI-drafted, not independently verified. Researched
-> 2026-05-28 against Michigan Department of Treasury, City of Detroit
-> Income Tax Division, and IRS publications. A qualified professional must
-> review before filing.
+## Michigan Return Assembly Skill — Capstone Orchestrator
 
----
+> **Scope.** This is THE skill that runs LAST. Every other skill in the Michigan stack feeds into this one. The output is the complete reviewer package that a credentialed reviewer (Enrolled Agent, CPA, or attorney under Circular 230) signs off on before the return goes to the taxpayer or to Michigan Treasury.
+>
+> This skill does **not** compute anything new. Its job is to verify that every upstream skill ran, every upstream self-check passed, every cross-skill reconciliation holds, and the package is internally consistent.
+>
+> **Quality tier.** Q3 — AI-drafted, not independently verified. Researched 2026-05-28 against Michigan Department of Treasury, City of Detroit Income Tax Division, and IRS publications. A qualified professional must review before filing.
 
 ## CRITICAL EXECUTION DIRECTIVE — READ FIRST
 
-**When this skill is invoked, intake has already happened. The taxpayer has
-consented to the full workflow. Execute every step without pausing for
-permission.**
+**When this skill is invoked, intake has already happened. The taxpayer has consented to the full workflow. Execute every step without pausing for permission.**
 
-- **Do NOT ask the user "how deep do you want me to go".** The taxpayer asked
-  for a Michigan return. Produce it.
+- **Do NOT ask the user "how deep do you want me to go".** The taxpayer asked for a Michigan return. Produce it.
 - **Do NOT announce tool budgets or token counts.** Execute.
-- **Do NOT ask which deliverables to prioritize.** Produce every deliverable
-  listed in Section 7. If you run out of context, finish the numbers first,
-  then produce whatever formatted outputs you can, and state honestly at the
-  end which deliverables are partial.
-- **Do NOT re-validate scope intake already validated.** Residency, business
-  structure, filing status, Detroit nexus, age, dependents — all of that
-  came from intake. Cross-check specific numbers during reconciliation but
-  do not re-interrogate the taxpayer.
-- **Do NOT pause between content skills to check in.** Run them in order
-  (Section 5) without prose updates between each one. One status message
-  at the end is enough.
-- **Self-checks are targets, not blockers.** A failed self-check is a flag
-  in the reviewer brief, not a workflow halt. The reviewer handles edges.
-- **Primary citations live in the final reviewer brief, not in intermediate
-  computation.** Don't stop to cite MCL 206.51 mid-rate-multiplication.
+- **Do NOT ask which deliverables to prioritize.** Produce every deliverable listed in Section 7. If you run out of context, finish the numbers first, then produce whatever formatted outputs you can, and state honestly at the end which deliverables are partial.
+- **Do NOT re-validate scope intake already validated.** Residency, business structure, filing status, Detroit nexus, age, dependents — all of that came from intake. Cross-check specific numbers during reconciliation but do not re-interrogate the taxpayer.
+- **Do NOT pause between content skills to check in.** Run them in order (Section 5) without prose updates between each one. One status message at the end is enough.
+- **Self-checks are targets, not blockers.** A failed self-check is a flag in the reviewer brief, not a workflow halt. The reviewer handles edges.
+- **Primary citations live in the final reviewer brief, not in intermediate computation.** Don't stop to cite MCL 206.51 mid-rate-multiplication.
 
-**Failure mode to avoid:** halting mid-execution to ask a meta-question
-about workflow pacing. That is disqualifying. If you feel the urge to ask
-"how should I proceed," pick the most defensible path, proceed, and flag
-the decision for the reviewer.
-
----
+**Failure mode to avoid:** halting mid-execution to ask a meta-question about workflow pacing. That is disqualifying. If you feel the urge to ask "how should I proceed," pick the most defensible path, proceed, and flag the decision for the reviewer.
 
 ## Section 1 — Metadata
 
-| Field | Value |
-|---|---|
-| Jurisdiction | Michigan (US-MI) — full-year residents only |
-| Skill type | Tier 2 orchestrator (capstone) |
-| Tax year | 2025 (filed in 2026) |
-| Primary forms produced | MI-1040, Schedule 1, Schedule W, Schedule AMD (if amended — refused here), MI-1040CR, MI-1040CR-7, Form 4884, MI-1040ES (2026), Form 5118 (Detroit), Form 5121 (Detroit Schedule W), Form 5119 (Detroit non-resident — refused here) |
-| Authority | Michigan Department of Treasury; City of Detroit Income Tax Division |
-| Statutes | MCL 206.1 et seq. (Income Tax Act of 1967); City Income Tax Act, MCL 141.501 et seq. |
-| Version | 0.1 |
-| Last updated | 2026-05-28 |
-| Validation | AI-drafted — Q3 |
+- **Jurisdiction** — Michigan (US-MI) — full-year residents only
+- **Skill type** — Tier 2 orchestrator (capstone)
+- **Tax year** — 2025 (filed in 2026)
+- **Primary forms produced** — MI-1040, Schedule 1, Schedule W, Schedule AMD (if amended — refused here), MI-1040CR, MI-1040CR-7, Form 4884, MI-1040ES (2026), Form 5118 (Detroit), Form 5121 (Detroit Schedule W), Form 5119 (Detroit non-resident — refused here)
+- **Authority** — Michigan Department of Treasury; City of Detroit Income Tax Division
+- **Statutes** — MCL 206.1 et seq. (Income Tax Act of 1967); City Income Tax Act, MCL 141.501 et seq.
+- **Version** — 0.1
+- **Last updated** — 2026-05-28
+- **Validation** — AI-drafted — Q3
 
 ### Sources consulted
 
+**Sources consulted**
+
 | # | Source | URL |
-|---|---|---|
+| --- | --- | --- |
 | 1 | MI-1040 Book (TY 2025 instructions) | https://www.michigan.gov/taxes/-/media/Project/Websites/taxes/Forms/IIT/TY2025/MI-1040-Book.pdf |
 | 2 | Michigan Treasury Online (MTO) — e-file portal | https://mto.treasury.michigan.gov/ |
 | 3 | Michigan Treasury — payment options | https://www.michigan.gov/taxes/iit/pay-tax |
@@ -114,139 +60,58 @@ the decision for the reviewer.
 | 7 | MCL 141.501 et seq. — City Income Tax Act | https://legislature.mi.gov/Laws/MCL?objectName=mcl-141-501 |
 | 8 | IRS Modernized e-File (MeF) — Federal/State joint filing | https://www.irs.gov/e-file-providers/modernized-e-file-overview |
 
----
-
 ## Section 2 — What this skill is
 
-The final capstone skill. Every other Michigan skill and every relevant
-federal skill feeds into this one. The deliverable is the complete reviewer
-package that a credentialed reviewer signs off on before filing.
+The final capstone skill. Every other Michigan skill and every relevant federal skill feeds into this one. The deliverable is the complete reviewer package that a credentialed reviewer signs off on before filing.
 
 The skill enforces three things:
 
-1. **Order of operations.** Federal first, Michigan second, Detroit (if
-   applicable) third. The order is non-negotiable because federal AGI flows
-   into MI-1040 Line 10, and Michigan AGI flows into Detroit Form 5118.
-2. **Cross-skill reconciliation.** Every figure that appears on the MI-1040
-   must match the corresponding figure produced by the source skill. A
-   mismatch halts assembly with a specific, named refusal.
-3. **Reviewer-grade output.** The final package is structured for a CPA or
-   EA to review in under 30 minutes: cover summary, brief, exhibits in
-   order, action list, citations.
-
----
+1. **Order of operations.** Federal first, Michigan second, Detroit (if applicable) third. The order is non-negotiable because federal AGI flows into MI-1040 Line 10, and Michigan AGI flows into Detroit Form 5118.
+2. **Cross-skill reconciliation.** Every figure that appears on the MI-1040 must match the corresponding figure produced by the source skill. A mismatch halts assembly with a specific, named refusal.
+3. **Reviewer-grade output.** The final package is structured for a CPA or EA to review in under 30 minutes: cover summary, brief, exhibits in order, action list, citations.
 
 ## Section 3 — Orchestration runbook
 
-When invoked, the agent executes the following steps in order. No step is
-optional. No step is skipped without an explicit refusal.
+When invoked, the agent executes the following steps in order. No step is optional. No step is skipped without an explicit refusal.
 
 ### Step 1 — Confirm intake artifact exists
 
-Verify the intake skill (the Michigan equivalent of `us-ca-freelance-intake`,
-or generic intake if no MI-specific intake exists) has produced:
-
-- Taxpayer name, SSN/ITIN (last 4 only in working files)
-- Filing status (Single / MFJ / MFS / HoH / QSS)
-- Residency confirmation (full-year Michigan)
-- Date of birth for taxpayer and spouse (drives Form 4884 tier)
-- Dependents list with SSNs
-- Business structure (sole prop or SMLLC disregarded)
-- City of residence (drives Detroit / Grand Rapids / other city nexus)
-- City of work, if different from residence
-- Coverage of dependents (for federal Schedule 8812 etc.)
-
-If any item is missing, refuse with **R-MI-FINAL-5**.
+- **Intake artifact requirements** — Verify the intake skill (the Michigan equivalent of `us-ca-freelance-intake`, or generic intake if no MI-specific intake exists) has produced: - Taxpayer name, SSN/ITIN (last 4 only in working files) - Filing status (Single / MFJ / MFS / HoH / QSS) - Residency confirmation (full-year Michigan) - Date of birth for taxpayer and spouse (drives Form 4884 tier) - Dependents list with SSNs - Business structure (sole prop or SMLLC disregarded) - City of residence (drives Detroit / Grand Rapids / other city nexus) - City of work, if different from residence - Coverage of dependents (for federal Schedule 8812 etc.) If any item is missing, refuse with **R-MI-FINAL-5**.  _(R-MI-FINAL-5)_
 
 ### Step 2 — Confirm federal skills ran and produced outputs
 
-Verify in order:
-
-1. `us-sole-prop-bookkeeping` — Schedule C classification with reconciled
-   bank ledger.
-2. `us-schedule-c-and-se-computation` — Schedule C bottom line, Form 8829,
-   Schedule SE.
-3. `us-self-employed-retirement` — SEP / Solo 401(k) contribution and
-   Schedule 1 Line 16 amount.
-4. `us-self-employed-health-insurance` — §162(l) deduction and Schedule 1
-   Line 17 amount (with iterative PTC convergence if marketplace coverage).
-5. `us-qbi-deduction` — Form 8995 or 8995-A, deduction to Form 1040 Line 13.
-6. `us-federal-return-assembly` — Form 1040, Schedules 1, 2, 3, all
-   supporting forms, federal total tax, federal balance due / refund.
-7. `us-quarterly-estimated-tax` — Form 2210 (if penalty) + 2026 Form 1040-ES
-   schedule.
-8. `us-1099-nec-issuance` — Parallel; only needs bookkeeping. Contractor list
-   plus W-9 gaps.
-
-If any is missing or its self-checks did not pass, refuse with
-**R-MI-FINAL-1** or **R-MI-FINAL-2** naming the specific skill.
+- **Federal skill verification sequence** — Verify in order: 1. `us-sole-prop-bookkeeping` — Schedule C classification with reconciled bank ledger. 2. `us-schedule-c-and-se-computation` — Schedule C bottom line, Form 8829, Schedule SE. 3. `us-self-employed-retirement` — SEP / Solo 401(k) contribution and Schedule 1 Line 16 amount. 4. `us-self-employed-health-insurance` — §162(l) deduction and Schedule 1 Line 17 amount (with iterative PTC convergence if marketplace coverage). 5. `us-qbi-deduction` — Form 8995 or 8995-A, deduction to Form 1040 Line 13. 6. `us-federal-return-assembly` — Form 1040, Schedules 1, 2, 3, all supporting forms, federal total tax, federal balance due / refund. 7. `us-quarterly-estimated-tax` — Form 2210 (if penalty) + 2026 Form 1040-ES schedule. 8. `us-1099-nec-issuance` — Parallel; only needs bookkeeping. Contractor list plus W-9 gaps. If any is missing or its self-checks did not pass, refuse with **R-MI-FINAL-1** or **R-MI-FINAL-2** naming the specific skill.  _(R-MI-FINAL-1 / R-MI-FINAL-2)_
 
 ### Step 3 — Confirm Michigan skills ran
 
-Execute in order:
-
-1. `mi-income-tax` — MI-1040, Schedule 1 (MI), Schedule W. Produces Michigan
-   AGI, Michigan taxable income, Michigan tax at 4.25%, credits, refund or
-   balance due.
-2. `mi-pension-retirement-subtraction` — Form 4884, if any taxpayer or
-   spouse is born before 1953 or has pension / IRA / 401(k) distributions
-   reported on federal Form 1099-R. Skip if N/A but record the skip.
-3. `mi-estimated-tax` (if a separate skill exists) OR derive next-year
-   MI-1040ES vouchers from `mi-income-tax` Section 4. Produces a 4-payment
-   schedule for 2026 if expected liability exceeds $500.
-4. `mi-homestead-credit` (MI-1040CR) — If taxpayer is homeowner or renter
-   and household resources are within the credit threshold. Skip if N/A.
-5. `mi-home-heating-credit` (MI-1040CR-7) — If household resources qualify
-   and home heating costs are documented. Skip if N/A.
-
-If any required skill failed or its self-check failed, refuse with
-**R-MI-FINAL-1** or **R-MI-FINAL-2**.
+- **Michigan skill verification sequence** — Execute in order: 1. `mi-income-tax` — MI-1040, Schedule 1 (MI), Schedule W. Produces Michigan AGI, Michigan taxable income, Michigan tax at 4.25%, credits, refund or balance due. 2. `mi-pension-retirement-subtraction` — Form 4884, if any taxpayer or spouse is born before 1953 or has pension / IRA / 401(k) distributions reported on federal Form 1099-R. Skip if N/A but record the skip. 3. `mi-estimated-tax` (if a separate skill exists) OR derive next-year MI-1040ES vouchers from `mi-income-tax` Section 4. Produces a 4-payment schedule for 2026 if expected liability exceeds $500. 4. `mi-homestead-credit` (MI-1040CR) — If taxpayer is homeowner or renter and household resources are within the credit threshold. Skip if N/A. 5. `mi-home-heating-credit` (MI-1040CR-7) — If household resources qualify and home heating costs are documented. Skip if N/A. If any required skill failed or its self-check failed, refuse with **R-MI-FINAL-1** or **R-MI-FINAL-2**.  _(R-MI-FINAL-1 / R-MI-FINAL-2)_
 
 ### Step 4 — Confirm city-level skill ran if Detroit nexus exists
 
-If intake flagged Detroit residence OR Detroit work nexus:
-
-- Detroit resident → `mi-detroit-individual-return` produces Form 5118 +
-  Form 5121 (City Schedule W). Resident rate 2.4%.
-- Detroit non-resident worker → refuse with **R-MI-FINAL-7**; non-resident
-  city returns are out of scope for this orchestrator.
-- Grand Rapids resident → currently refused (no `mi-grand-rapids-return`
-  skill in the stack). Refuse with **R-MI-FINAL-8**.
-- Other 22 taxing cities → refused with **R-MI-FINAL-9**.
+- **City nexus handling** — If intake flagged Detroit residence OR Detroit work nexus: - Detroit resident → `mi-detroit-individual-return` produces Form 5118 + Form 5121 (City Schedule W). Resident rate 2.4%. - Detroit non-resident worker → refuse with **R-MI-FINAL-7**; non-resident city returns are out of scope for this orchestrator. - Grand Rapids resident → currently refused (no `mi-grand-rapids-return` skill in the stack). Refuse with **R-MI-FINAL-8**. - Other 22 taxing cities → refused with **R-MI-FINAL-9**.  _(R-MI-FINAL-7 / R-MI-FINAL-8 / R-MI-FINAL-9)_
 
 ### Step 5 — Run the verification matrix
 
-Run every check in Section 6. Each check is a specific equality between a
-number on a final form and the source-of-truth output from the producing
-skill. A failure halts assembly with **R-MI-FINAL-3**.
+- **Verification matrix execution** — Run every check in Section 6. Each check is a specific equality between a number on a final form and the source-of-truth output from the producing skill. A failure halts assembly with **R-MI-FINAL-3**.  _(R-MI-FINAL-3)_
 
 ### Step 6 — Aggregate artifacts
 
-Pull:
-- Every "Assumed" entry from every upstream skill into the **assumption log**.
-- Every "Taxpayer input needed" item into the **taxpayer input log**.
-- Every "Reviewer judgment needed" item into the **reviewer flag log**.
-- Every refusal that fired anywhere in the chain into the **refusal log**.
+- **Aggregate logs** — Pull: - Every "Assumed" entry from every upstream skill into the **assumption log**. - Every "Taxpayer input needed" item into the **taxpayer input log**. - Every "Reviewer judgment needed" item into the **reviewer flag log**. - Every refusal that fired anywhere in the chain into the **refusal log**.
 
 ### Step 7 — Compose the deliverables
 
-Produce the three output files specified in Section 7. Place them in
-`/mnt/user-data/outputs/`. Present them at the end with `present_files`.
+- **Deliverable composition** — Produce the three output files specified in Section 7. Place them in `/mnt/user-data/outputs/`. Present them at the end with `present_files`.
 
 ### Step 8 — Final status message
 
-A single message stating: which skills ran, which self-checks passed, which
-deliverables were produced, any partial deliverables and why. Done.
-
----
+- **Final status message** — A single message stating: which skills ran, which self-checks passed, which deliverables were produced, any partial deliverables and why. Done.
 
 ## Section 4 — Pre-flight checks
 
-Before any of Section 3 runs, the orchestrator confirms these gating
-conditions. If any fail, refuse — do not partially execute.
+**Pre-flight checks table**
 
 | Check | Question | Refusal if fails |
-|---|---|---|
+| --- | --- | --- |
 | PF-1 | Has federal Form 1040 been computed by `us-federal-return-assembly`? | R-MI-FINAL-1 |
 | PF-2 | Is federal AGI (Form 1040 Line 11) a finite, signed number? | R-MI-FINAL-1 |
 | PF-3 | Has the taxpayer's full-year Michigan residency been confirmed? | R-MI-FINAL-6 |
@@ -256,13 +121,9 @@ conditions. If any fail, refuse — do not partially execute.
 | PF-7 | If MFJ: are both spouses Michigan full-year residents? Mixed-residency couples → refuse. | R-MI-FINAL-13 |
 | PF-8 | Is this a current-year original return (not amended)? | R-MI-FINAL-14 |
 
----
-
 ## Section 5 — Skill-loading order (canonical execution sequence)
 
-This is the immutable order. Do not parallelize; downstream skills consume
-upstream outputs. The single exception is `us-1099-nec-issuance`, which can
-run in parallel with anything after `us-sole-prop-bookkeeping`.
+This is the immutable order. Do not parallelize; downstream skills consume upstream outputs. The single exception is `us-1099-nec-issuance`, which can run in parallel with anything after `us-sole-prop-bookkeeping`.
 
 ```
 1.  us-tax-workflow-base                         (workflow scaffold)
@@ -283,22 +144,18 @@ run in parallel with anything after `us-sole-prop-bookkeeping`.
 16. mi-return-assembly                           ← THIS SKILL
 ```
 
-Each upstream skill is expected to expose, at minimum: (a) the line-item
-output(s) it produces, (b) the self-check log, (c) any refusals fired, and
-(d) any reviewer / taxpayer flags. The orchestrator consumes those four
-artifacts per skill.
-
----
+Each upstream skill is expected to expose, at minimum: (a) the line-item output(s) it produces, (b) the self-check log, (c) any refusals fired, and (d) any reviewer / taxpayer flags. The orchestrator consumes those four artifacts per skill.
 
 ## Section 6 — Verification matrix (reconciliations)
 
-Every line below is a hard equality. Tolerance is $1 unless noted otherwise.
-A failure halts assembly with **R-MI-FINAL-3** naming the specific check.
+Every line below is a hard equality. Tolerance is $1 unless noted otherwise. A failure halts assembly with **R-MI-FINAL-3** naming the specific check.
 
 ### 6A — Federal internal consistency (re-verified)
 
+**6A table**
+
 | Check | Equation | Source-of-truth skill |
-|---|---|---|
+| --- | --- | --- |
 | F-1 | Schedule C Line 31 = Schedule 1 Line 3 = Form 1040 Line 8 (via Sch 1 to L10) | us-schedule-c-and-se-computation |
 | F-2 | Schedule SE Line 12 = Schedule 2 Line 4 | us-schedule-c-and-se-computation |
 | F-3 | Schedule SE Line 13 = Schedule 1 Line 15 | us-schedule-c-and-se-computation |
@@ -312,8 +169,10 @@ A failure halts assembly with **R-MI-FINAL-3** naming the specific check.
 
 ### 6B — Michigan internal consistency
 
+**6B table**
+
 | Check | Equation | Source-of-truth skill |
-|---|---|---|
+| --- | --- | --- |
 | M-1 | Federal AGI (Form 1040 Line 11) = MI-1040 Line 10 | mi-income-tax |
 | M-2 | MI Schedule 1 additions total = MI-1040 Line 11 | mi-income-tax |
 | M-3 | MI Schedule 1 subtractions total = MI-1040 Line 13 | mi-income-tax |
@@ -329,8 +188,10 @@ A failure halts assembly with **R-MI-FINAL-3** naming the specific check.
 
 ### 6C — Federal-Michigan coordination
 
+**6C table**
+
 | Check | Equation |
-|---|---|
+| --- | --- |
 | C-1 | Filing status on MI-1040 = filing status on Form 1040 |
 | C-2 | Number of exemptions on MI-1040 = federal dependents + 1 (self) or +2 (MFJ self+spouse) + dependents |
 | C-3 | Schedule C net profit federally = Schedule C net profit feeding MI AGI |
@@ -345,8 +206,10 @@ A failure halts assembly with **R-MI-FINAL-3** naming the specific check.
 
 ### 6D — Michigan-Detroit coordination (if applicable)
 
+**6D table**
+
 | Check | Equation | Source |
-|---|---|---|
+| --- | --- | --- |
 | D-1 | Detroit resident filing status matches MI-1040 filing status | Form 5118 |
 | D-2 | Detroit gross income source schedule reconciles to federal Schedule C + W-2 + other federal income lines | Form 5118 + Form 5121 |
 | D-3 | Detroit exemptions = $600 × number of exemptions claimed on MI-1040 | Form 5118 |
@@ -356,22 +219,24 @@ A failure halts assembly with **R-MI-FINAL-3** naming the specific check.
 
 ### 6E — 1099-NEC reconciliation
 
+**6E table**
+
 | Check | Equation |
-|---|---|
+| --- | --- |
 | N-1 | Sum of NEC payments flagged = Schedule C Line 11 (Contract labor) + any direct labor lines |
 | N-2 | Each contractor with $600+ has W-9 on file; gaps surfaced in flag log |
 | N-3 | Filing deadline noted (January 31, 2026; if past, late-filing penalty surfaced) |
 
 ### 6F — Estimated-tax coordination
 
+**6F table**
+
 | Check | Equation |
-|---|---|
+| --- | --- |
 | E-1 | 2026 federal Q1 voucher = `us-quarterly-estimated-tax` Q1 output |
 | E-2 | 2026 MI-1040ES Q1 voucher = (mi-estimated-tax or mi-income-tax) Q1 output |
 | E-3 | Q1 federal + Q1 MI together do not exceed taxpayer's stated cash availability flag (if intake captured one) |
 | E-4 | 2026 MI safe harbor (110% of 2025 MI tax if 2025 AGI > $150K, else 100%) is met by the prescribed voucher schedule |
-
----
 
 ## Section 7 — Deliverable package (what the reviewer sees)
 
@@ -381,23 +246,17 @@ The package is **three files**, not fifteen. Do not fragment the output.
 
 A single master workbook. Required sheets, in this order:
 
-1. **Cover** — Taxpayer name, filing status, residency, business structure,
-   summary table (federal tax, MI tax, Detroit tax, total liability, total
-   payments, net refund/balance due, key 2026 dates).
-2. **Assumption Log** — Every "Assumed" item from every upstream skill,
-   tagged with the skill that produced it.
-3. **Taxpayer Input Log** — Every item that needs taxpayer confirmation
-   before filing.
+1. **Cover** — Taxpayer name, filing status, residency, business structure, summary table (federal tax, MI tax, Detroit tax, total liability, total payments, net refund/balance due, key 2026 dates).
+2. **Assumption Log** — Every "Assumed" item from every upstream skill, tagged with the skill that produced it.
+3. **Taxpayer Input Log** — Every item that needs taxpayer confirmation before filing.
 4. **Reviewer Flag Log** — Every item that needs reviewer judgment.
-5. **Income** — Aggregate income summary (W-2, 1099-NEC, Schedule C, interest,
-   dividends, capital gains, other).
+5. **Income** — Aggregate income summary (W-2, 1099-NEC, Schedule C, interest, dividends, capital gains, other).
 6. **Schedule C** — Parts I–V.
 7. **Form 4562** — Depreciation (if applicable).
 8. **Form 8829** — Home office (if applicable).
 9. **Schedule SE** — SE tax.
 10. **Retirement** — SEP / Solo 401(k) worksheet.
-11. **SE Health Insurance** — §162(l) worksheet, with PTC iteration log if
-    marketplace coverage.
+11. **SE Health Insurance** — §162(l) worksheet, with PTC iteration log if marketplace coverage.
 12. **Form 8962** — PTC reconciliation (if marketplace coverage).
 13. **QBI** — Form 8995 or 8995-A.
 14. **Schedule 1 (federal)** — Adjustments to income.
@@ -418,40 +277,28 @@ A single master workbook. Required sheets, in this order:
 29. **1099-NEC Batch** — Contractor batch (if applicable).
 30. **Verification Matrix** — Every check in Section 6 with pass/fail/N/A.
 
-Use the same Excel-builder discipline as `us-federal-return-assembly`:
-collect anchors as a Python dict before writing cross-sheet formulas;
-verify no `#REF!` errors; verify computed cells match the Python model
-within $1 before shipping.
+Use the same Excel-builder discipline as `us-federal-return-assembly`: collect anchors as a Python dict before writing cross-sheet formulas; verify no `#REF!` errors; verify computed cells match the Python model within $1 before shipping.
 
 ### 7B — File 2: `reviewer_brief.md`
 
 Structured markdown. Required sections in this order:
 
-1. **Executive Summary** (≤ 1 page) — Taxpayer, filing status, residency,
-   federal tax, MI tax, Detroit tax (if any), total liability, total
-   payments, net result, action required by April 15, 2026.
-2. **Federal Return Brief** — Summary of `us-federal-return-assembly`
-   brief, condensed.
-3. **Michigan Return Brief** — Summary of `mi-income-tax` brief plus
-   anything from Form 4884 / MI-1040CR / MI-1040CR-7.
+1. **Executive Summary** (≤ 1 page) — Taxpayer, filing status, residency, federal tax, MI tax, Detroit tax (if any), total liability, total payments, net result, action required by April 15, 2026.
+2. **Federal Return Brief** — Summary of `us-federal-return-assembly` brief, condensed.
+3. **Michigan Return Brief** — Summary of `mi-income-tax` brief plus anything from Form 4884 / MI-1040CR / MI-1040CR-7.
 4. **Detroit Return Brief** — If applicable.
 5. **Estimated Tax for 2026** — Federal + MI voucher schedule.
 6. **1099-NEC Issuance** — Status of contractor filings.
 7. **Cross-skill Verification** — Pass/fail summary from Section 6.
 8. **Reviewer Attention Flags** — Aggregated from all upstream skills.
 9. **Refusals Triggered** — Aggregated from all upstream skills.
-10. **Positions Taken** — Tax positions requiring judgment, with citations
-    (MCL §, IRC §, MI-1040 Book page references).
-11. **Planning Notes for 2026** — MI rate stability watch (4.25% is the
-    statutory rate but is subject to MCL 206.51 "trigger" mechanism), QBI
-    20% → 23% under OBBBA, federal 1099 threshold change, Form 4884 tier
-    progression as birth years roll forward, Detroit move-in/move-out risk.
+10. **Positions Taken** — Tax positions requiring judgment, with citations (MCL §, IRC §, MI-1040 Book page references).
+11. **Planning Notes for 2026** — MI rate stability watch (4.25% is the statutory rate but is subject to MCL 206.51 "trigger" mechanism), QBI 20% → 23% under OBBBA, federal 1099 threshold change, Form 4884 tier progression as birth years roll forward, Detroit move-in/move-out risk.
 12. **Taxpayer Action List** — Embedded copy of File 3.
 
 ### 7C — File 3: `taxpayer_action_list.md`
 
-Step-by-step action list, structured by date. The taxpayer reads this file
-and nothing else.
+Step-by-step action list, structured by date. The taxpayer reads this file and nothing else.
 
 ```markdown
 # Your 2025 Michigan Tax Filing — Action List
@@ -525,20 +372,13 @@ and nothing else.
 - For Detroit-specific questions: City of Detroit Income Tax Division 313-224-3315
 ```
 
-If execution runs out of context mid-build: produce whatever is complete,
-then state at the end which files were partial. Three files honest beats
-fifteen files fragmented.
+If execution runs out of context mid-build: produce whatever is complete, then state at the end which files were partial. Three files honest beats fifteen files fragmented.
 
-All files go to `/mnt/user-data/outputs/` and are presented at the end via
-the `present_files` tool.
-
----
+All files go to `/mnt/user-data/outputs/` and are presented at the end via the `present_files` tool.
 
 ## Section 8 — The reviewer brief (narrative format)
 
-This is the document the CPA reads first. It should be readable in under
-30 minutes and give the reviewer enough context to either sign off or
-identify exactly what needs more work.
+This is the document the CPA reads first. It should be readable in under 30 minutes and give the reviewer enough context to either sign off or identify exactly what needs more work.
 
 The brief follows this fixed structure:
 
@@ -600,12 +440,12 @@ The brief follows this fixed structure:
 [embedded copy of File 3]
 ```
 
----
-
 ## Section 9 — Tier 1 deterministic rules
 
+**Tier 1 rules table**
+
 | Rule ID | Rule |
-|---|---|
+| --- | --- |
 | MI-ASM-T1-01 | Federal Form 1040 must be computed before MI-1040. No exceptions. |
 | MI-ASM-T1-02 | MI-1040 Line 10 (AGI starting point) must exactly equal Form 1040 Line 11. |
 | MI-ASM-T1-03 | Michigan tax = (MI-1040 Line 16) × 0.0425. Always. |
@@ -621,12 +461,12 @@ The brief follows this fixed structure:
 | MI-ASM-T1-13 | Michigan EITC is 30% of the federal EITC (refundable). |
 | MI-ASM-T1-14 | Three-file deliverable structure (xlsx + brief.md + actions.md) is mandatory. |
 
----
-
 ## Section 10 — Tier 2 judgment rules
 
+**Tier 2 rules table**
+
 | Rule ID | Rule | Guidance |
-|---|---|---|
+| --- | --- | --- |
 | MI-ASM-T2-01 | **Materiality threshold for reconciliation failures.** A $1 rounding gap is not a failure; a $50 gap is. | Reviewer judgment on the threshold; default $5 for federal-MI tie-outs, $1 for intra-form. |
 | MI-ASM-T2-02 | **Order of city-tax filing if multiple cities.** If a Detroit resident also worked in Grand Rapids, both city returns may be needed. | Refuse this scenario at the orchestrator level (R-MI-FINAL-9) and route to professional. |
 | MI-ASM-T2-03 | **Form 4884 tier election under PA 4 of 2023 / "Lowering MI Costs Plan".** The phase-in lets taxpayers elect the most favorable tier in a given year. | Defer to `mi-pension-retirement-subtraction` for the election logic; orchestrator only verifies the chosen tier flowed correctly. |
@@ -636,21 +476,16 @@ The brief follows this fixed structure:
 | MI-ASM-T2-07 | **Late-1099 penalty exposure.** January 31 may already be past at the time of orchestrator run. | Surface the penalty exposure in the action list; the reviewer decides whether to file late or wait. |
 | MI-ASM-T2-08 | **PTC iteration convergence.** The marketplace-coverage iteration between SE health and PTC may not converge cleanly within 3 cycles. | If `us-self-employed-health-insurance` flagged non-convergence, escalate the flag to the reviewer brief and document the chosen position. |
 
----
-
 ## Section 11 — Worked example
 
-**Facts.** Maria Reyes, single, age 38, full-year Detroit (Michigan) resident,
-sole proprietor (freelance software developer). 2025 facts:
+**Facts.** Maria Reyes, single, age 38, full-year Detroit (Michigan) resident, sole proprietor (freelance software developer). 2025 facts:
 
 - Schedule C gross receipts: $210,000
 - Schedule C deductible expenses: $30,000 (no home office)
 - Schedule C net profit: $180,000
 - Other income: $1,200 interest from chase checking; $0 dividends
-- Marketplace health coverage all 12 months; APTC received $5,400;
-  unsubsidized premium $9,600
-- Solo 401(k) contributions: $33,500 (employee deferral $23,500 + employer
-  ~$10,000 capped by 25% of net SE earnings)
+- Marketplace health coverage all 12 months; APTC received $5,400; unsubsidized premium $9,600
+- Solo 401(k) contributions: $33,500 (employee deferral $23,500 + employer ~$10,000 capped by 25% of net SE earnings)
 - Federal withholding: $0 (no W-2)
 - Federal estimated payments: $26,000 across 4 quarters
 - Michigan withholding: $0
@@ -800,16 +635,14 @@ sole proprietor (freelance software developer). 2025 facts:
 [full action list embedded — see File 3]
 ```
 
-This is one Detroit-resident sole prop's full reviewer package, abbreviated
-to ~3 pages. The actual file is longer and includes the full xlsx workbook,
-the full brief, and the full action list.
-
----
+This is one Detroit-resident sole prop's full reviewer package, abbreviated to ~3 pages. The actual file is longer and includes the full xlsx workbook, the full brief, and the full action list.
 
 ## Section 12 — Refusal catalogue
 
+**Refusal catalogue table**
+
 | ID | Situation | Action |
-|---|---|---|
+| --- | --- | --- |
 | R-MI-FINAL-1 | An upstream skill did not run. | Refuse; name the missing skill. |
 | R-MI-FINAL-2 | An upstream skill's self-check failed and was not resolved. | Refuse; name the check. |
 | R-MI-FINAL-3 | A Section 6 reconciliation failed beyond the $1 (or T2-01) tolerance. | Refuse; name the equation and the discrepancy. |
@@ -828,12 +661,12 @@ the full brief, and the full action list.
 | R-MI-FINAL-16 | Foreign income / FEIE / FTC at the state level. | Refuse; out of scope. |
 | R-MI-FINAL-17 | Michigan Business Tax (MBT) or Corporate Income Tax (CIT) — wrong tax type. | Refuse; route to `mi-corporate-income-tax`. |
 
----
-
 ## Section 13 — Self-checks
 
+**Self-checks table**
+
 | # | Check |
-|---|---|
+| --- | --- |
 | 200 | All upstream content skills executed. |
 | 201 | All upstream self-checks passed (or were explicitly waived with reviewer flag). |
 | 202 | Section 6A (federal internal) reconciliations PASS. |
@@ -850,75 +683,55 @@ the full brief, and the full action list.
 | 213 | Three-file deliverable produced in `/mnt/user-data/outputs/`. |
 | 214 | `present_files` called with the three files. |
 
----
-
 ## Section 14 — Known gaps
 
-1. PDF form filling is not automated. The reviewer transcribes the worksheets
-   into Michigan Treasury Online or the e-file partner's software.
-2. E-filing is the reviewer's responsibility. This skill produces the
-   computation; MTO submission happens outside the agent.
-3. Payment execution is the taxpayer's responsibility; the skill provides
-   instructions only.
+1. PDF form filling is not automated. The reviewer transcribes the worksheets into Michigan Treasury Online or the e-file partner's software.
+2. E-filing is the reviewer's responsibility. This skill produces the computation; MTO submission happens outside the agent.
+3. Payment execution is the taxpayer's responsibility; the skill provides instructions only.
 4. Multi-state returns are not supported (Michigan-only).
 5. Foreign income is not supported.
-6. Reciprocal-state W-2 wages are surfaced for review but the orchestrator
-   does not itself file the reciprocal exemption certificate.
-7. The package is complete only for tax year 2025; 2026 appears only as
-   prospective planning.
-8. Detroit is the only city return currently in the stack. Grand Rapids,
-   Lansing, Flint, Saginaw, and the other 19 taxing cities are refused.
+6. Reciprocal-state W-2 wages are surfaced for review but the orchestrator does not itself file the reciprocal exemption certificate.
+7. The package is complete only for tax year 2025; 2026 appears only as prospective planning.
+8. Detroit is the only city return currently in the stack. Grand Rapids, Lansing, Flint, Saginaw, and the other 19 taxing cities are refused.
 
 ### Change log
-- **v0.1 (May 2026):** Initial draft. Orchestrates federal + MI + Detroit
-  stack. Three-file deliverable. Section 6 verification matrix with 40+
-  reconciliations. Worked example: Detroit resident sole prop with $180K
-  Schedule C, Solo 401(k), marketplace PTC iteration, MI-1040CR denial.
 
----
+- **v0.1 (May 2026):** Initial draft. Orchestrates federal + MI + Detroit stack. Three-file deliverable. Section 6 verification matrix with 40+ reconciliations. Worked example: Detroit resident sole prop with $180K Schedule C, Solo 401(k), marketplace PTC iteration, MI-1040CR denial.
 
 ## Disclaimer
 
-This skill and its outputs are provided for informational and computational
-purposes only and do not constitute tax, legal, or financial advice. Open
-Accountants and its contributors accept no liability for any errors,
-omissions, or outcomes arising from the use of this skill. All outputs must
-be reviewed and signed off by a qualified professional (such as a CPA, EA,
-tax attorney, or equivalent licensed practitioner in your jurisdiction)
-before filing or acting upon.
+This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, EA, tax attorney, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
 
-The most up-to-date, verified version of this skill is maintained at
-[openaccountants.com](https://www.openaccountants.com). Log in to access the
-latest version, request a professional review from a licensed accountant,
-and track updates as tax law changes.
-
----
-
-<!-- openaccountants-cta-block -->
+The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
 
 ## Talk to a verified accountant
 
-This skill is a tool, not an engagement. Every taxpayer's situation is
-different, and the rules in the skill may not match your specific facts.
+This skill is a tool, not an engagement. Every taxpayer's situation is different, and the rules in the skill may not match your specific facts.
 
-To speak with one of the licensed accountants who verifies skills for your
-jurisdiction — **no liability on either side until you and the accountant
-sign a formal engagement letter** — book a free 30-minute call:
+To speak with one of the licensed accountants who verifies skills for your jurisdiction — **no liability on either side until you and the accountant sign a formal engagement letter** — book a free 30-minute call:
 
 **→ [Book a call](https://calendly.com/openaccountants-info/30min)**
 
-We'll route you to the named verifier covering your country or state. You
-can also see the full list of verified accountants at
-[openaccountants.com/network](https://www.openaccountants.com/network).
+We'll route you to the named verifier covering your country or state. You can also see the full list of verified accountants at [openaccountants.com/network](https://openaccountants.com/network).
 
-<!-- openaccountants-mcp-cta -->
+## Section 5 — Skill-loading order (canonical execution sequence)
 
-## The accountant-verified version lives in the connector
+0. **Step 1** — Load workflow scaffold
 
-This file is the open, **research-grade draft**. The **accountant-verified**
-version of this skill is **not published to GitHub** — it is delivered free
-through the OpenAccountants MCP connector, where your AI agent loads the
-verified rules together with the name of the accountant who signed them off.
+<!-- openaccountants-cta-block -->
 
-**→ Install the free connector:** <https://www.openaccountants.com/connect>
-**MCP endpoint:** `https://www.openaccountants.com/api/mcp`
+---
+
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

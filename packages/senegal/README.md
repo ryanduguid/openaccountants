@@ -7,7 +7,15 @@
 
 1. `foundation.md`
 2. `intake.md`
-3. `senegal-vat.md`
+3. `senegal-income-tax.md`
+4. `senegal-payroll.md`
+5. `senegal-social-contributions.md`
+6. `senegal-vat.md`
+7. `sn-company-formation.md`
+8. `sn-corporate-income-tax.md`
+9. `sn-tax-overview.md`
+10. `payroll-workflow-base.md`
+11. `company-formation-workflow-base.md`
 
 ## How to use
 

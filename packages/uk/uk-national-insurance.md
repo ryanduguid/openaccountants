@@ -1,24 +1,26 @@
 ---
 name: uk-national-insurance
 description: >
-  Use this skill whenever asked about UK National Insurance Contributions (NIC) for self-employed individuals or employers. Trigger on phrases like "how much NIC do I pay", "Class 2 contributions", "Class 4 NIC", "Class 1 employer NIC", "Employer NIC 15%", "Secondary Threshold £5,000", "Employment Allowance £10,500", "April 2026 NIC", "Class 2 abolished", "national insurance self-employed", "NIC calculation", "state pension qualifying years", "NIC deferment", "voluntary Class 2", "HMRC NIC payment", or any question about UK NIC obligations. Also trigger when classifying bank statement transactions showing HMRC NIC debits, Self Assessment NIC payments, or Class 2 direct debits. This skill covers Class 1 (employee and employer), Class 2 (voluntary post-April 2024), Class 4 (profit-based), thresholds, payment schedule, bank statement pattern classification, Employment Allowance, interaction with employment Class 1, deferment, state pension entitlement, and edge cases across three tax years (2024-25, 2025-26, 2026-27). ALWAYS read this skill before touching any UK NIC-related work.
 version: 3.0
 jurisdiction: GB
-tax_year: 2025-26
-tax_years_covered: [2024-25, 2025-26, 2026-27]
+tax_year: 2025
+last_updated: 2026-04-13
+verified_by: James Power
+depends_on: - social-contributions-workflow-base
 category: international
-depends_on:
-  - social-contributions-workflow-base
-verified_by: pending
+tier: 2
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# UK National Insurance -- Comprehensive Skill v3.0
+# UK National Insurance
+
+## UK National Insurance -- Comprehensive Skill v3.0
 
 ## Verified rates & thresholds (accountant-reviewed)
 
-> Reviewed against the cited tax authorities by **James Power** on 2026-06-03.
-> This block is generated from the verified facts database at openaccountants.com —
-> edit the facts there, not this prose. Items under clarification are excluded.
+Reviewed against the cited tax authorities by **James Power** on 2026-06-03.
+Items flagged for further clarification are tracked separately and excluded here.
+This block is generated from verified `skill_facts` — edit the facts, not the prose.
 
 ### National Insurance
 
@@ -34,8 +36,10 @@ verified_by: pending
 
 **Read this whole section before computing or classifying anything.** This skill covers three tax years: the **Prior year (2024-25)**, the **Current year (2025-26)**, and the **Forthcoming year (2026-27)**.
 
+**3-year comparison table**
+
 | Field | 2024-25 (Prior) | 2025-26 (Current) | 2026-27 (Forthcoming) |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | **Class 1 employee main rate** | 8% (from 6 Apr 2024; was 10%) | 8% | 8% |
 | **Class 1 employee additional rate** | 2% above UEL | 2% | 2% |
 | **Class 1 employer rate** | 13.8% | **15%** | 15% |
@@ -50,18 +54,18 @@ verified_by: pending
 | **Class 4 additional rate** | 2% above UPL | 2% | 2% |
 | **Class 4 Lower Profits Limit (LPL)** | £12,570 | £12,570 | £12,570 |
 | **Class 4 Upper Profits Limit (UPL)** | £50,270 | £50,270 | £50,270 |
-| Country | United Kingdom | | |
-| Primary Legislation | Social Security Contributions and Benefits Act 1992 (SSCBA 1992); National Insurance Contributions (Reduction in Rates) Act 2024; Autumn Budget 2024 (Class 1 employer changes); Autumn Budget 2025 (no change) | | |
-| Tax Authority | HM Revenue & Customs (HMRC) | | |
-| Currency | GBP only | | |
-| Contributor | Open Accountants | | |
-| Validated by | Pending -- requires sign-off by a UK-qualified practitioner | | |
-| Validation date | Verified by James Power on 2026-06-03 | | |
+| Country | United Kingdom |  |  |
+| Primary Legislation | Social Security Contributions and Benefits Act 1992 (SSCBA 1992); National Insurance Contributions (Reduction in Rates) Act 2024; Autumn Budget 2024 (Class 1 employer changes); Autumn Budget 2025 (no change) |  |  |
+| Tax Authority | HM Revenue & Customs (HMRC) |  |  |
+| Currency | GBP only |  |  |
+| Contributor | Open Accountants |  |  |
+| Validated by | Verified by James Power on 2026-06-03 |  |  |
+| Validation date | Verified by James Power on 2026-06-03 |  |  |
 
-**Conservative defaults:**
+**Conservative defaults**
 
 | Ambiguity | Default |
-|---|---|
+| --- | --- |
 | Unknown tax year | Ask -- rates differ materially between 2024-25, 2025-26, and 2026-27 (especially employer NIC) |
 | Unknown employment status | Ask -- dual status affects annual maximum cap |
 | Unknown profit level | Do not compute -- profits are required |
@@ -70,29 +74,20 @@ verified_by: pending
 | Unknown age (state pension age) | Ask -- over state pension age = no Class 4 |
 | Unknown payroll size for Employer NIC | Ask -- Employment Allowance depends on prior-year secondary Class 1 < £100k and connected-company rules |
 
----
-
 ## Section 2 -- Required inputs and refusal catalogue
 
 ### Required inputs
 
-**Minimum viable** -- tax year, employment status (sole self-employed, employed, employer, or dual), and net self-employment profits (for Class 4) or gross payroll (for Class 1).
-
-**Recommended** -- bank statements showing HMRC Self Assessment / PAYE payments, prior year SA302 tax calculation, P60/P11D from employment, state pension record printout.
-
-**Ideal** -- complete SA100/SA103 return data, FPS submissions for PAYE clients, NI record from gov.uk.
+- **Minimum viable** — tax year, employment status (sole self-employed, employed, employer, or dual), and net self-employment profits (for Class 4) or gross payroll (for Class 1).
+- **Recommended** — bank statements showing HMRC Self Assessment / PAYE payments, prior year SA302 tax calculation, P60/P11D from employment, state pension record printout.
+- **Ideal** — complete SA100/SA103 return data, FPS submissions for PAYE clients, NI record from gov.uk.
 
 ### Refusal catalogue
 
-**R-UK-NIC-1 -- Non-resident or overseas client.** *Trigger:* client is non-UK resident or has complex international arrangements. *Message:* "NIC for non-resident or overseas clients involves complex rules under EU/bilateral social security agreements. Escalate to a qualified UK practitioner."
-
-**R-UK-NIC-2 -- Special categories.** *Trigger:* client is a mariner, share fisherman, volunteer development worker, or religious minister. *Message:* "Special NIC provisions apply to this category. Escalate to a qualified practitioner."
-
-**R-UK-NIC-3 -- Deferment computation.** *Trigger:* client requests Class 1 deferment across multiple employments. *Message:* "Class 1 deferment requires HMRC application (form CA72A) and case-specific earnings analysis. Flag for reviewer."
-
-**R-UK-NIC-4 -- Connected-company Employment Allowance.** *Trigger:* employer is part of a group of connected companies. *Message:* "Only one company in a connected group can claim the Employment Allowance. Escalate."
-
----
+- **R-UK-NIC-1 -- Non-resident or overseas client** — Trigger: client is non-UK resident or has complex international arrangements. Message: "NIC for non-resident or overseas clients involves complex rules under EU/bilateral social security agreements. Escalate to a qualified UK practitioner."  _(R-UK-NIC-1)_
+- **R-UK-NIC-2 -- Special categories** — Trigger: client is a mariner, share fisherman, volunteer development worker, or religious minister. Message: "Special NIC provisions apply to this category. Escalate to a qualified practitioner."  _(R-UK-NIC-2)_
+- **R-UK-NIC-3 -- Deferment computation** — Trigger: client requests Class 1 deferment across multiple employments. Message: "Class 1 deferment requires HMRC application (form CA72A) and case-specific earnings analysis. Flag for reviewer."  _(R-UK-NIC-3)_
+- **R-UK-NIC-4 -- Connected-company Employment Allowance** — Trigger: employer is part of a group of connected companies. Message: "Only one company in a connected group can claim the Employment Allowance. Escalate."  _(R-UK-NIC-4)_
 
 ## Section 3 -- Payment pattern library
 
@@ -102,8 +97,10 @@ This is the deterministic pre-classifier for bank statement transactions related
 
 ### 3.1 HMRC Self Assessment payments (include Class 4 + optional Class 2)
 
+**HMRC Self Assessment payments patterns**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | HMRC, HM REVENUE, HM REVENUE & CUSTOMS | EXCLUDE -- tax/NIC payment | Self Assessment payments include income tax + Class 4 NIC + voluntary Class 2 |
 | HMRC SELF ASSESSMENT | EXCLUDE -- SA payment | Combined tax and NIC |
 | HMRC NDDS, HMRC SHIPLEY | EXCLUDE -- SA payment | HMRC processing centres |
@@ -111,34 +108,40 @@ This is the deterministic pre-classifier for bank statement transactions related
 
 ### 3.2 Class 2 direct debits (voluntary -- separate from SA)
 
+**Class 2 direct debits patterns**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | HMRC NIC, HMRC CLASS 2 | EXCLUDE -- voluntary Class 2 | Monthly or quarterly direct debit for Class 2 |
 | NATIONAL INSURANCE, NAT INS | EXCLUDE -- NIC payment | Generic NI reference |
 | NIC DIRECT DEBIT, NIC D/D | EXCLUDE -- Class 2 DD | Voluntary Class 2 via direct debit |
 
 ### 3.3 HMRC PAYE payments (includes Class 1 employee + employer)
 
+**HMRC PAYE payments patterns**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | HMRC PAYE, PAYE NIC, HMRC CUMBERNAULD | EXCLUDE -- PAYE payment | Combined PAYE income tax + Class 1 employee + Class 1 employer + Apprenticeship Levy |
 | 1025 (followed by UTR) | EXCLUDE -- SA payment | HMRC Self Assessment payment reference format (1025 + 10-digit UTR) |
 
 ### 3.4 Student loan and other SA components (NOT NIC)
 
+**Student loan and other SA components patterns**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | STUDENT LOAN, SLC | EXCLUDE -- student loan repayment | Not NIC -- see uk-student-loan-repayment skill |
 | HMRC (large combined payment) | EXCLUDE -- combined SA | May include income tax + Class 4 + Class 2 + student loan; cannot split from bank statement alone |
 
 ### 3.5 Employer Class 1 (payroll context)
 
+**Employer Class 1 payroll context patterns**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | SALARY, WAGES (incoming credit) | Not self-employed NIC | Employment income -- Class 1 deducted at source by employer |
 | EMPLOYER NIC | Employer's Class 1 obligation | 13.8% (2024-25) or 15% (2025-26 / 2026-27) on earnings above ST |
-
----
 
 ## Section 4 -- Worked examples
 
@@ -200,8 +203,10 @@ This is the deterministic pre-classifier for bank statement transactions related
 
 **Scenario:** A small employer pays one employee a gross salary of **£35,000** per year. Show the employer Class 1 NIC cost in 2024-25 (13.8% / ST £9,100) versus 2025-26 (15% / ST £5,000), and net of Employment Allowance.
 
+**Employer NIC comparison table**
+
 | Component | 2024-25 (Prior) | 2025-26 (Current) |
-|---|---|---|
+| --- | --- | --- |
 | Gross salary | £35,000.00 | £35,000.00 |
 | Secondary Threshold (ST) | £9,100 | £5,000 |
 | Earnings above ST | £25,900 | £30,000 |
@@ -221,130 +226,106 @@ This is the deterministic pre-classifier for bank statement transactions related
 
 ### Example 8 -- Self-employed Class 4 across 3 years (same £30,000 profit)
 
+**Class 4 across 3 years table**
+
 | Year | Profits | Class 4 calc | Class 4 NIC |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | 2024-25 | £30,000 | (£30,000 - £12,570) x 6% | £1,045.80 |
 | 2025-26 | £30,000 | (£30,000 - £12,570) x 6% | £1,045.80 |
 | 2026-27 | £30,000 | (£30,000 - £12,570) x 6% | £1,045.80 |
 
 Class 4 rates and thresholds are unchanged across all three years. Class 2 treated as paid (profits > SPT) in all years -- no voluntary payment needed.
 
----
-
 ## Section 5 -- Tier 1 rules (per year)
 
 ### Rule 1 -- Class 1 employee formula (all three years -- unchanged)
 
-```
-Class 1 (employee) = max(0, min(earnings, UEL) - PT) x 8% + max(earnings - UEL, 0) x 2%
-PT = £12,570/yr, UEL = £50,270/yr (frozen through 2027-28)
-```
+- **Class 1 employee formula** — Class 1 (employee) = max(0, min(earnings, UEL) - PT) x 8% + max(earnings - UEL, 0) x 2% PT = £12,570/yr, UEL = £50,270/yr (frozen through 2027-28)  _(Rule 1)_
 
 ### Rule 2 -- Class 1 employer formula (rate and threshold CHANGE in 2025-26)
 
-```
-2024-25: Employer NIC = max(0, earnings - £9,100) x 13.8%
-2025-26: Employer NIC = max(0, earnings - £5,000) x 15%
-2026-27: Employer NIC = max(0, earnings - £5,000) x 15%    (unchanged from 2025-26)
-```
-
-Reduce by Employment Allowance (capped at the lesser of secondary Class 1 due in year and the allowance):
-- 2024-25: up to £5,000
-- 2025-26: up to £10,500
-- 2026-27: up to £10,500
+- **Class 1 employer formula by year** — 2024-25: Employer NIC = max(0, earnings - £9,100) x 13.8% 2025-26: Employer NIC = max(0, earnings - £5,000) x 15% 2026-27: Employer NIC = max(0, earnings - £5,000) x 15%    (unchanged from 2025-26)  _(Rule 2)_
+- **Employment Allowance cap by year** — Reduce by Employment Allowance (capped at the lesser of secondary Class 1 due in year and the allowance): 2024-25: up to £5,000; 2025-26: up to £10,500; 2026-27: up to £10,500  _(Rule 2)_
 
 ### Rule 3 -- Class 2 abolished from 6 April 2024
 
-For all three years (2024-25, 2025-26, 2026-27): self-employed with profits >= SPT are treated as paid automatically (zero-rate credit). No action needed. Profits < SPT: may pay voluntarily (£3.45/wk in 2024-25; £3.50/wk in 2025-26; TBC for 2026-27) to get a qualifying year.
+- **Class 2 treatment for all three years** — For all three years (2024-25, 2025-26, 2026-27): self-employed with profits >= SPT are treated as paid automatically (zero-rate credit). No action needed. Profits < SPT: may pay voluntarily (£3.45/wk in 2024-25; £3.50/wk in 2025-26; TBC for 2026-27) to get a qualifying year.  _(Rule 3)_
 
 ### Rule 4 -- Class 4 formula (unchanged across all three years)
 
-```
-Class 4 NIC = (min(profits, £50,270) - £12,570) x 6% + max(profits - £50,270, 0) x 2%
-```
-
-If profits <= £12,570, Class 4 = £0. Rates were reduced from 9% to 6% from 6 April 2024 and have not changed since.
+- **Class 4 NIC formula** — Class 4 NIC = (min(profits, £50,270) - £12,570) x 6% + max(profits - £50,270, 0) x 2%  _(Rule 4)_
+- **Class 4 zero threshold and rate change history** — If profits <= £12,570, Class 4 = £0. Rates were reduced from 9% to 6% from 6 April 2024 and have not changed since.  _(Rule 4)_
 
 ### Rule 5 -- Class 4 is based on CURRENT year profits
 
-Unlike Malta SSC, UK Class 4 NIC is calculated on the same year's profits as reported on the SA return.
+- **Basis of Class 4 calc** — Unlike Malta SSC, UK Class 4 NIC is calculated on the same year's profits as reported on the SA return.  _(Rule 5)_
 
 ### Rule 6 -- Payment schedule (via Self Assessment)
 
+**Payment schedule table**  _(Rule 6)_
+
 | Payment | Due Date | What |
-|---|---|---|
+| --- | --- | --- |
 | First payment on account | 31 January during tax year | 50% of prior year Class 4 liability |
 | Second payment on account | 31 July after tax year end | 50% of prior year Class 4 liability |
 | Balancing payment | 31 January following tax year end | Remaining Class 4 (and Class 2 if voluntary) |
 
 ### Rule 7 -- Employed AND self-employed
 
-Class 1 continues on employment income. Class 4 due on self-employment profits above LPL. Both apply simultaneously. Annual maximum cap checked by HMRC automatically.
+- **Dual status rule** — Class 1 continues on employment income. Class 4 due on self-employment profits above LPL. Both apply simultaneously. Annual maximum cap checked by HMRC automatically.  _(Rule 7)_
 
 ### Rule 8 -- Over state pension age
 
-No Class 4 liability. No Class 2 needed. Must still file SA return for income tax. Employees over state pension age also stop paying Class 1 employee (but employer Class 1 continues).
+- **Over state pension age rule** — No Class 4 liability. No Class 2 needed. Must still file SA return for income tax. Employees over state pension age also stop paying Class 1 employee (but employer Class 1 continues).  _(Rule 8)_
 
 ### Rule 9 -- Multiple self-employments
 
-Profits from all self-employments are aggregated for Class 4.
+- **Aggregation rule** — Profits from all self-employments are aggregated for Class 4.  _(Rule 9)_
 
 ### Rule 10 -- Losses
 
-Zero or negative profits: no Class 4. Voluntary Class 2 may still be paid for state pension.
+- **Losses rule** — Zero or negative profits: no Class 4. Voluntary Class 2 may still be paid for state pension.  _(Rule 10)_
 
 ### Rule 11 -- State pension qualifying years
 
-35 qualifying years for full new state pension (£230.25/week in 2025-26). 10 years minimum. Class 2 is the cheapest way to build years (~£182/year vs Class 3 at £923/year).
+- **State pension qualifying years rule** — 35 qualifying years for full new state pension (£230.25/week in 2025-26). 10 years minimum. Class 2 is the cheapest way to build years (~£182/year vs Class 3 at £923/year).  _(Rule 11)_
 
 ### Rule 12 -- NIC is NOT tax-deductible (personal)
 
-Class 2 and Class 4 NIC are NOT deductible business expenses for the individual. They are personal statutory obligations. Employer Class 1 NIC, by contrast, IS a deductible business expense in the company's accounts.
-
----
+- **Deductibility rule** — Class 2 and Class 4 NIC are NOT deductible business expenses for the individual. They are personal statutory obligations. Employer Class 1 NIC, by contrast, IS a deductible business expense in the company's accounts.  _(Rule 12)_
 
 ## Section 6 -- Tier 2 catalogue
 
 ### T2-1 -- Deferment (multiple employments)
 
-**Trigger:** Client has two employments and expects combined Class 1 to exceed annual maximum.
-**Action:** Flag for reviewer. Client may apply on form CA72A to defer Class 1 in secondary employment.
+- **T2-1** — Trigger: Client has two employments and expects combined Class 1 to exceed annual maximum. Action: Flag for reviewer. Client may apply on form CA72A to defer Class 1 in secondary employment.  _(T2-1)_
 
 ### T2-2 -- First year with overlap relief / basis period
 
-**Trigger:** Client started trading mid-year; basis period allocation unclear under 2024-25 reform.
-**Action:** Flag for reviewer to confirm basis period allocation for Class 4.
+- **T2-2** — Trigger: Client started trading mid-year; basis period allocation unclear under 2024-25 reform. Action: Flag for reviewer to confirm basis period allocation for Class 4.  _(T2-2)_
 
 ### T2-3 -- Backfilling NI gaps for state pension
 
-**Trigger:** Client wants to pay voluntary contributions for prior years.
-**Action:** Can go back up to 6 years. Class 2 if eligible as self-employed in those years; otherwise Class 3. Flag for reviewer to check NI record.
+- **T2-3** — Trigger: Client wants to pay voluntary contributions for prior years. Action: Can go back up to 6 years. Class 2 if eligible as self-employed in those years; otherwise Class 3. Flag for reviewer to check NI record.  _(T2-3)_
 
 ### T2-4 -- Examiners, moderators, foster carers
 
-**Trigger:** Employment status is ambiguous.
-**Action:** Flag for reviewer. Check contract terms for employment vs self-employment.
+- **T2-4** — Trigger: Employment status is ambiguous. Action: Flag for reviewer. Check contract terms for employment vs self-employment.  _(T2-4)_
 
 ### T2-5 -- Non-resident with UK self-employment
 
-**Trigger:** Client is non-UK resident but has UK self-employment profits.
-**Action:** Escalate -- complex NIC rules for non-residents.
+- **T2-5** — Trigger: Client is non-UK resident but has UK self-employment profits. Action: Escalate -- complex NIC rules for non-residents.  _(T2-5)_
 
 ### T2-6 -- Employment Allowance eligibility
 
-**Trigger:** Employer payroll client; need to confirm EA can be claimed.
-**Action:** Confirm (a) prior-year secondary Class 1 < £100,000, (b) not a single-director-only company (sole director with no other employees), (c) for a connected-company group, only one company claims. Flag for reviewer if any criterion is uncertain.
+- **T2-6** — Trigger: Employer payroll client; need to confirm EA can be claimed. Action: Confirm (a) prior-year secondary Class 1 < £100,000, (b) not a single-director-only company (sole director with no other employees), (c) for a connected-company group, only one company claims. Flag for reviewer if any criterion is uncertain.  _(T2-6)_
 
 ### T2-7 -- Director on annual earnings basis
 
-**Trigger:** Director's earnings calculated on cumulative annual basis rather than per pay period.
-**Action:** Flag for reviewer -- different rules apply for directors' NIC computation.
-
----
+- **T2-7** — Trigger: Director's earnings calculated on cumulative annual basis rather than per pay period. Action: Flag for reviewer -- different rules apply for directors' NIC computation.  _(T2-7)_
 
 ## Section 7 -- Excel working paper template
 
-```
 UK NATIONAL INSURANCE COMPUTATION -- WORKING PAPER
 Client: [name]
 Tax Year: [2024-25 / 2025-26 / 2026-27]
@@ -391,9 +372,6 @@ PAYMENT SCHEDULE
 
 REVIEWER FLAGS
   [List any Tier 2 flags here]
-```
-
----
 
 ## Section 8 -- Bank statement reading guide
 
@@ -426,8 +404,6 @@ REVIEWER FLAGS
 3. The SA302 tax calculation is the authoritative source for the NIC breakdown
 4. Employer NIC is embedded inside the combined monthly PAYE remittance
 
----
-
 ## Section 9 -- Onboarding fallback
 
 If the client provides only a bank statement:
@@ -438,14 +414,14 @@ If the client provides only a bank statement:
 4. **Flag combined nature:** "HMRC Self Assessment payments include income tax, Class 4 NIC, optional Class 2, and student loan repayments combined. The bank statement alone cannot isolate the NIC component. Please provide the SA302 tax calculation or the SA100 return for breakdown."
 5. **Identify separate Class 2 DD** -- small monthly debits (~£15) labelled "HMRC NIC" are voluntary Class 2
 
----
-
 ## Section 10 -- Reference material
 
 ### Full 3-year rate table
 
+**Full 3-year rate table**
+
 | Item | 2024-25 | 2025-26 | 2026-27 |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | **Class 1 employee main** | 8% | 8% | 8% |
 | **Class 1 employee additional** | 2% | 2% | 2% |
 | **Class 1 employer rate** | 13.8% | **15%** | 15% |
@@ -502,17 +478,11 @@ If the client provides only a bank statement:
 - NEVER apply the £5,000 Employment Allowance to 2025-26 or 2026-27 (it doubled to £10,500)
 - NEVER allow Employment Allowance for a single-director-only company or for more than one company in a connected group
 
----
-
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, EA, tax attorney, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
 
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
-
----
-
-<!-- openaccountants-cta-block -->
+The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
 
 ## Talk to a verified accountant
 
@@ -527,16 +497,22 @@ a formal engagement letter** — book a free 30-minute call:
 
 We'll route you to the named verifier covering your country or state. You can
 also see the full list of verified accountants at
-[openaccountants.com/network](https://www.openaccountants.com/network).
+[openaccountants.com/network](https://openaccountants.com/network).
 
-<!-- openaccountants-mcp-cta -->
+<!-- openaccountants-cta-block -->
 
-## The accountant-verified version lives in the connector
+---
 
-This file is the open, **research-grade draft**. The **accountant-verified**
-version of this skill is **not published to GitHub** — it is delivered free
-through the OpenAccountants MCP connector, where your AI agent loads the
-verified rules together with the name of the accountant who signed them off.
+## Talk to a verified accountant
 
-**→ Install the free connector:** <https://www.openaccountants.com/connect>
-**MCP endpoint:** `https://www.openaccountants.com/api/mcp`
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

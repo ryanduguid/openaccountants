@@ -2,14 +2,22 @@
 name: norway-mva
 description: Use this skill whenever asked to prepare, review, or classify transactions for a Norway MVA return (MVA-melding) for any client. Trigger on phrases like "prepare MVA return", "Norwegian VAT", "MVA-melding", "merverdiavgift", or any request involving Norway VAT filing. Norway is NOT an EU member but IS in the EEA. There are NO intra-community supplies. All goods from EU are imports. ALWAYS read this skill before touching any Norway MVA work.
 version: 2.0
+jurisdiction: NO
+tax_year: 2025
+last_updated: 2026-04-13
+verified_by: pending
+tier: 2
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Norway MVA Return Skill (MVA-melding) v2.0
+# Norway Mva
 
 ## Section 1 — Quick reference
 
+**Quick reference fields**
+
 | Field | Value |
-|---|---|
+| --- | --- |
 | Country | Norway (Norge) |
 | Tax name | MVA (Merverdiavgift) |
 | Standard rate | 25% |
@@ -28,10 +36,10 @@ version: 2.0
 
 **Key jurisdictional note:** Norway is NOT in the EU. No intra-community supplies. No VIES. All goods from EU/non-EU are imports. Services from abroad are reverse-charged.
 
-**MVA-melding post codes:**
+**MVA-melding post codes**
 
 | Post | Meaning |
-|---|---|
+| --- | --- |
 | 1 | Domestic sales and withdrawals at 25% |
 | 2 | Domestic sales and withdrawals at 15% |
 | 3 | Domestic sales and withdrawals at 12% |
@@ -47,201 +55,239 @@ version: 2.0
 | 13 | Domestic purchases at 12% — deductible input MVA |
 | 14 | Input MVA on imports (post 10 deductible amount) |
 
-**Conservative defaults:**
+**Conservative defaults**
 
 | Ambiguity | Default |
-|---|---|
+| --- | --- |
 | Unknown rate | 25% |
 | Unknown purchase status | Not deductible |
 | Unknown counterparty | Domestic Norway |
 | Unknown business-use | 0% |
 | Unknown blocked status | Blocked |
 
-**Red flag thresholds:**
+**Red flag thresholds**
 
 | Threshold | Value |
-|---|---|
+| --- | --- |
 | HIGH single-transaction | NOK 50,000 |
 | HIGH tax-delta | NOK 5,000 |
 | MEDIUM concentration | >40% |
 | MEDIUM defaults | >4 |
 | LOW net position | NOK 100,000 |
 
----
-
 ## Section 2 — Required inputs and refusal catalogue
 
 ### Required inputs
+
 **Minimum viable** — bank statement. Banks: DNB, Nordea, SpareBank 1, Handelsbanken, Danske Bank.
 
 ### Refusal catalogue
 
-**R-NO-1 — Below threshold.** *Trigger:* turnover < NOK 50,000. *Message:* "Below registration threshold."
-
-**R-NO-2 — Partial deduction.** *Trigger:* mixed taxable/exempt. *Message:* "Apportionment required per mval. § 8-2. Flag."
-
-**R-NO-3 — Fellesregistrering (group registration).** *Trigger:* VAT group. *Message:* "Group registration requires specialist. Escalate."
-
-**R-NO-4 — Svalbard supplies.** *Trigger:* supplies to/from Svalbard. *Message:* "Svalbard is outside MVA territory. Specialist rules."
-
----
+- **R-NO-1 — Below threshold** — Trigger: turnover < NOK 50,000. Message: "Below registration threshold."  _(R-NO-1)_
+- **R-NO-2 — Partial deduction** — Trigger: mixed taxable/exempt. Message: "Apportionment required per mval. § 8-2. Flag."  _(mval. § 8-2)_
+- **R-NO-3 — Fellesregistrering (group registration)** — Trigger: VAT group. Message: "Group registration requires specialist. Escalate."  _(R-NO-3)_
+- **R-NO-4 — Svalbard supplies** — Trigger: supplies to/from Svalbard. Message: "Svalbard is outside MVA territory. Specialist rules."  _(R-NO-4)_
 
 ## Section 3 — Supplier pattern library
 
 ### 3.1 Banks
+
+**Banks pattern table**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | DNB, NORDEA, SPAREBANK 1, HANDELSBANKEN | EXCLUDE | Financial service exempt |
 | RENTER, GEBYRER | EXCLUDE | Interest/fees exempt |
 
 ### 3.2 Government
+
+**Government pattern table**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | SKATTEETATEN | EXCLUDE | Tax payment |
 | NAV | EXCLUDE | Social security |
 | BRØNNØYSUNDREGISTRENE | EXCLUDE | Company registry |
 
 ### 3.3 Utilities
+
+**Utilities pattern table**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | HAFSLUND, STATKRAFT, FJORDKRAFT | Domestic 25% | Electricity |
 | TELENOR, TELIA, ICE | Domestic 25% | Telecoms |
 
 ### 3.4 SaaS from abroad (reverse charge — all foreign suppliers, EU and non-EU alike)
+
+**SaaS from abroad pattern table**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | GOOGLE, MICROSOFT, ADOBE, META | Reverse charge 25% (post 7/8) | Norway treats EU same as non-EU |
 | ZOOM, SLACK, NOTION, ANTHROPIC, OPENAI | Reverse charge 25% (post 7/8) | Same |
 | AWS, STRIPE, ATLASSIAN | Reverse charge 25% (post 7/8) | Even if billed from EU |
 
 ### 3.5 Food
+
+**Food pattern table**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | REMA 1000, KIWI, MENY, COOP, BUNNPRIS | Domestic 15% for food | Default BLOCK as personal provisioning |
 | RESTAURANT | Domestic 25% (restaurant service) | Entertainment: limited deductibility |
 
 ### 3.6 Internal transfers
-| Pattern | Treatment | Notes |
-|---|---|---|
-| OVERFØRING EGEN KONTO | EXCLUDE | |
-| LØNN, SALARY | EXCLUDE | |
 
----
+**Internal transfers pattern table**
+
+| Pattern | Treatment | Notes |
+| --- | --- | --- |
+| OVERFØRING EGEN KONTO | EXCLUDE |  |
+| LØNN, SALARY | EXCLUDE |  |
 
 ## Section 4 — Worked examples
 
 ### Example 1 — Foreign SaaS reverse charge (treats EU and non-EU same)
+
 **Input:** `GOOGLE IRELAND ; DEBIT ; NOK 8,500`
 **Treatment:** Reverse charge at 25%. Post 7 = NOK 8,500. Post 8 = NOK 2,125. Input deductible. Net zero.
 
 ### Example 2 — Food purchase at 15%
+
 **Input:** `REMA 1000 ; DEBIT ; NOK 1,150`
 **Treatment:** Food at 15%. Default BLOCK as personal unless business (hospitality).
 
 ### Example 3 — Export
+
 **Input:** `UK BUYER LTD ; CREDIT ; NOK 100,000`
 **Treatment:** Post 6. Zero-rated. Full input recovery.
 
 ### Example 4 — Accommodation at 12%
+
 **Input:** `HOTEL BRISTOL ; DEBIT ; NOK 2,240`
 **Treatment:** Accommodation 12%. Net = 2,000. MVA = 240. Post 13 for input.
 
 ### Example 5 — Entertainment
+
 **Input:** `RESTAURANT MAAEMO ; DEBIT ; NOK 5,000`
 **Treatment:** Entertainment. Limited deductibility. Conservative default: 0%.
 
 ### Example 6 — Import of goods
+
 **Input:** `CUSTOMS — import machinery ; DEBIT ; NOK 500,000 + MVA NOK 125,000`
 **Treatment:** Post 9 = 500,000. Post 10 = 125,000. Post 14 = 125,000 (deductible).
-
----
 
 ## Section 5 — Tier 1 classification rules (compressed)
 
 ### 5.1 Standard rate 25% (mval. § 5-1)
+
+- **Standard rate 25%** — Standard rate 25% (mval. § 5-1)  _(mval. § 5-1)_
+
 ### 5.2 Reduced rate 15% — food and non-alcoholic beverages (§ 5-2)
+
+- **Reduced rate 15% — food and non-alcoholic beverages** — Reduced rate 15% — food and non-alcoholic beverages (§ 5-2)  _(§ 5-2)_
+
 ### 5.3 Reduced rate 12% — transport, accommodation, cinema, broadcasting, sports (§ 5-3)
+
+- **Reduced rate 12% — transport, accommodation, cinema, broadcasting, sports** — Reduced rate 12% — transport, accommodation, cinema, broadcasting, sports (§ 5-3)  _(§ 5-3)_
+
 ### 5.4 Zero rate — exports, international transport, newspapers, electric vehicles
+
+- **Zero rate categories** — Zero rate — exports, international transport, newspapers, electric vehicles
+
 ### 5.5 Exempt — financial, insurance, medical, education, residential rental, cultural (selected)
+
+- **Exempt categories** — Exempt — financial, insurance, medical, education, residential rental, cultural (selected)
+
 ### 5.6 Reverse charge — ALL services from abroad (EU and non-EU alike, mval. § 3-30, § 11-3)
+
+- **Reverse charge — all services from abroad** — Reverse charge — ALL services from abroad (EU and non-EU alike, mval. § 3-30, § 11-3)  _(mval. § 3-30, § 11-3)_
+
 ### 5.7 Import of goods — MVA at customs or via postponed accounting
+
+- **Import of goods treatment** — Import of goods — MVA at customs or via postponed accounting
+
 ### 5.8 Blocked — entertainment, personal use, vehicle (limited)
+
+- **Blocked categories** — Blocked — entertainment, personal use, vehicle (limited)
+
 ### 5.9 Norway-EU: no intra-community. EU goods = imports.
 
----
+- **Norway-EU treatment** — Norway-EU: no intra-community. EU goods = imports.
 
 ## Section 6 — Tier 2 catalogue (compressed)
+
 ### 6.1 Vehicle costs — limited recovery, flag
+
+- **Vehicle costs** — Vehicle costs — limited recovery, flag
+
 ### 6.2 Voluntary registration — for otherwise exempt activities (property), flag
+
+- **Voluntary registration** — Voluntary registration — for otherwise exempt activities (property), flag
+
 ### 6.3 Mixed-use — apportionment, flag
+
+- **Mixed-use** — Mixed-use — apportionment, flag
+
 ### 6.4 Primary industries — weekly filing, flag
 
----
+- **Primary industries** — Primary industries — weekly filing, flag
 
 ## Section 7 — Excel working paper template
+
 Standard layout. Column H accepts MVA-melding post codes.
 
----
-
 ## Section 8 — Bank statement reading guide
+
 **Format:** DNB/Nordea CSV, DD.MM.YYYY, NOK. **Language:** Norwegian (Bokmal/Nynorsk).
 **All foreign suppliers:** Reverse charge regardless of EU/non-EU origin.
 
----
-
 ## Section 9 — Onboarding fallback
+
 ### 9.1 MVA number — "Norwegian org.nr. + MVA suffix?"
+
+MVA number — "Norwegian org.nr. + MVA suffix?"
+
 ### 9.2 Filing frequency — bi-monthly (standard)
+
+Filing frequency — bi-monthly (standard)
+
 ### 9.3 Prior credit — always ask
 
----
+Prior credit — always ask
 
 ## Section 10 — Reference material
 
 ### Sources
-1. Merverdiavgiftsloven (mval.) LOV-2009-06-19-58
-2. Merverdiavgiftsforskriften (fmva.)
-3. Altinn — https://www.altinn.no
+
+- **Sources list** — 1. Merverdiavgiftsloven (mval.) LOV-2009-06-19-58 2. Merverdiavgiftsforskriften (fmva.) 3. Altinn — https://www.altinn.no  _(LOV-2009-06-19-58)_
 
 ### Change log
+
 - **v2.0 (April 2026):** Full rewrite to 10-section architecture.
 - **v1.0:** Initial skill.
-
----
 
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, EA, tax attorney, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
 
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
-
----
+The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
 
 <!-- openaccountants-cta-block -->
 
+---
+
 ## Talk to a verified accountant
 
-This skill is a tool, not an engagement. Every taxpayer's situation is
-different, and the rules in the skill may not match your specific facts.
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
 
-To speak with one of the licensed accountants who verifies skills for your
-jurisdiction — **no liability on either side until you and the accountant sign
-a formal engagement letter** — book a free 30-minute call:
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
 
-**→ [Book a call](https://calendly.com/openaccountants-info/30min)**
-
-We'll route you to the named verifier covering your country or state. You can
-also see the full list of verified accountants at
-[openaccountants.com/network](https://www.openaccountants.com/network).
-
-<!-- openaccountants-mcp-cta -->
-
-## The accountant-verified version lives in the connector
-
-This file is the open, **research-grade draft**. The **accountant-verified**
-version of this skill is **not published to GitHub** — it is delivered free
-through the OpenAccountants MCP connector, where your AI agent loads the
-verified rules together with the name of the accountant who signed them off.
-
-**→ Install the free connector:** <https://www.openaccountants.com/connect>
-**MCP endpoint:** `https://www.openaccountants.com/api/mcp`
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

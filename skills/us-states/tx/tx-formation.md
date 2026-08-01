@@ -2,13 +2,14 @@
 name: tx-formation
 description: Tier 2 Texas content skill for entity formation covering tax year 2025. Includes the TX LLC Certificate of Formation $300, no state PIT, no franchise/margin tax under $2.47M revenue threshold, mandatory annual Public Information Report (Form 05-102), Series LLC permitted (2009 legislation), foreign qualification Certificate of Authority $750, doing-business thresholds for out-of-state entities (post-Wayfair $500k sales/$50k payroll/$50k property), and the BOI/CTA stay status.
 jurisdiction: US-TX
-domain: state-tax
 tax_year: 2025
+last_updated: 2026-05-27
+verified_by: pending
 tier: 2
-last_updated: 2026-07-06
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# tx-formation
+# TX Formation
 
 ## Texas Entity Formation — Tax Year 2025
 
@@ -538,3 +539,21 @@ a formal engagement letter** — book a free 30-minute call:
 We'll route you to the named verifier covering your country or state. You can
 also see the full list of verified accountants at
 [openaccountants.com/network](https://openaccountants.com/network).
+
+<!-- openaccountants-cta-block -->
+
+---
+
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

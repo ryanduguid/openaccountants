@@ -7,8 +7,17 @@
 
 1. `foundation.md`
 2. `intake.md`
-3. `estonia-vat-return.md`
-4. `eu-vat-directive.md`
+3. `ee-company-formation.md`
+4. `ee-corporate-income-tax.md`
+5. `ee-tax-overview.md`
+6. `estonia-income-tax.md`
+7. `estonia-payroll.md`
+8. `estonia-social-contributions.md`
+9. `estonia-tax-optimization.md`
+10. `estonia-vat-return.md`
+11. `eu-vat-directive.md`
+12. `payroll-workflow-base.md`
+13. `company-formation-workflow-base.md`
 
 ## How to use
 

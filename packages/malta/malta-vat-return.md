@@ -2,20 +2,26 @@
 name: malta-vat-return
 description: Use this skill whenever asked to prepare, review, or classify transactions for a Malta VAT return (Article 10 periodic return via CFR) or Article 11 annual declaration for any client. Trigger on phrases like "prepare VAT return", "do the VAT", "periodic VAT return", "CFR VAT", "create the return", "Article 11 declaration", or any request involving Malta VAT filing. Also trigger when classifying transactions for VAT purposes from bank statements, invoices, or other source data. This skill covers Malta only and only Article 10 (standard) and Article 11 (small enterprise) registrations. Article 12, partial exemption, capital goods scheme adjustments, margin schemes, and VAT groups are all in the refusal catalogue. MUST be loaded alongside BOTH vat-workflow-base v0.1 or later (for workflow architecture) AND eu-vat-directive v0.1 or later (for EU directive content). ALWAYS read this skill before touching any Malta VAT work.
 version: 2.0
+jurisdiction: MT
+tax_year: 2025
+last_updated: 2026-05-23
 verified_by: Michael Cutajar, CPA (Malta)
+tier: 1
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Malta VAT Return Skill (Article 10 periodic / Article 11) v2.0
+# Malta VAT Return
 
-> ✅ **Accountant-reviewed** · **Michael Cutajar, CPA (Malta)** · credential verified · [public record](https://www.openaccountants.com/network)
-
+## Malta VAT Return Skill (Article 10 periodic / Article 11) v2.0
 
 ## Section 1 — Quick reference
 
 **Read this whole section before classifying anything. The workflow runbook is in `vat-workflow-base` Section 1 — follow that runbook with this skill providing the country-specific content and `eu-vat-directive` providing the EU directive content.**
 
+**Quick reference fields**
+
 | Field | Value |
-|---|---|
+| --- | --- |
 | Country | Malta (Republic of Malta) |
 | Standard rate | 18% |
 | Reduced rates | 7% (accommodation, minor repairs), 5% (food, pharmaceuticals, printed matter, medical devices), 12% (certain financial instruments, confectionery) |
@@ -32,10 +38,10 @@ verified_by: Michael Cutajar, CPA (Malta)
 | Validated by | Pending — requires sign-off by a Maltese warranted accountant |
 | Validation date | Pending |
 
-**Key VAT return boxes (the boxes you will use most):**
+**Key VAT return boxes (the boxes you will use most)**
 
 | Box | Meaning |
-|---|---|
+| --- | --- |
 | 1 | Intra-EU B2B supplies of services (net, 0% VAT) |
 | 2 | Exports and supplies outside EU (net, 0% VAT) |
 | 3 | Output base for reverse-charge acquisitions from EU |
@@ -80,10 +86,10 @@ verified_by: Michael Cutajar, CPA (Malta)
 | 44 | Credit brought forward from prior period |
 | 45 | Net payable after B/F credit (43 − 44) |
 
-**Conservative defaults — Malta-specific values for the universal categories in `vat-workflow-base` Section 2:**
+**Conservative defaults — Malta-specific values for the universal categories in vat-workflow-base Section 2**
 
 | Ambiguity | Default |
-|---|---|
+| --- | --- |
 | Unknown rate on a sale | 18% |
 | Unknown VAT status of a purchase | Not deductible |
 | Unknown counterparty country | Domestic Malta |
@@ -93,17 +99,15 @@ verified_by: Michael Cutajar, CPA (Malta)
 | Unknown blocked-input status (entertainment, personal use) | Blocked |
 | Unknown whether transaction is in scope | In scope |
 
-**Red flag thresholds — country slot values for the reviewer brief in `vat-workflow-base` Section 3:**
+**Red flag thresholds — country slot values for the reviewer brief in vat-workflow-base Section 3**
 
 | Threshold | Value |
-|---|---|
+| --- | --- |
 | HIGH single-transaction size | €3,000 |
 | HIGH tax-delta on a single conservative default | €200 |
 | MEDIUM counterparty concentration | >40% of output OR input |
 | MEDIUM conservative-default count | >4 across the return |
 | LOW absolute net VAT position | €5,000 |
-
----
 
 ## Section 2 — Required inputs and refusal catalogue
 
@@ -121,23 +125,14 @@ verified_by: Michael Cutajar, CPA (Malta)
 
 These refusals apply on top of the EU-wide refusals in `eu-vat-directive` Section 13 (R-EU-1 through R-EU-12). If any trigger fires, stop, output the refusal message verbatim, end the conversation. Refusal is a safety mechanism.
 
-**R-MT-1 — Article 11 client attempting to claim input VAT.** *Trigger:* client is Article 11 registered, or turnover is below €35,000 and client has not opted into Article 10. *Message:* "Article 11 clients are exempt from charging VAT and cannot recover input VAT. They file a simplified annual declaration only, not the Article 10 periodic VAT return. This skill can help you with the Article 11 annual declaration but cannot prepare an Article 10 periodic VAT return or calculate input VAT recovery for an Article 11 client."
-
-**R-MT-2 — Article 12 registration (distance selling / EU goods acquisition threshold).** *Trigger:* client is Article 12 registered (goods acquirer from EU exceeding €10,000/year threshold, monthly filer). *Message:* "Article 12 registrations have different filing frequencies and obligations. This skill covers Article 10 and Article 11 only. Please escalate to a warranted accountant familiar with Article 12 obligations."
-
-**R-MT-3 — Partial exemption (Article 22(4)).** *Trigger:* client makes both taxable supplies and exempt-without-credit supplies (financial services, residential rent, medical, education) and the exempt proportion is not de minimis. *Message:* "You make both taxable and exempt supplies. Your input VAT must be apportioned under Article 22(4), which requires a year-end pro-rata calculation that cannot be completed on a single-period basis without the annual ratio. Please use a warranted accountant to determine and confirm the pro-rata rate before input VAT is claimed."
-
-**R-MT-4 — Capital goods scheme adjustment (Article 24).** *Trigger:* the period contains an adjustment to previously deducted input VAT on a capital good under Article 24 (5-year adjustment period for goods, 10-year for immovable property). *Message:* "Capital goods scheme adjustments under Article 24 are too fact-sensitive for this skill. They require tracking the original deduction, current and intended use, and computing the annual fraction. Please use a warranted accountant."
-
-**R-MT-5 — Margin scheme.** *Trigger:* client deals in second-hand goods, art, antiques, or collectables under the margin scheme. *Message:* "Margin scheme transactions require transaction-level margin computation. Out of scope for this skill."
-
-**R-MT-6 — VAT group (Article 5(2)).** *Trigger:* client is part of a VAT group or asks about group registration. *Message:* "VAT groups under Article 5(2) require consolidation across the group. Out of scope."
-
-**R-MT-7 — Fiscal representative.** *Trigger:* non-resident supplier or client with a fiscal representative in Malta. *Message:* "Non-resident registrations with fiscal representatives have specific obligations beyond this skill. Please use a warranted accountant."
-
-**R-MT-8 — Annual return (TA24 income tax) instead of Malta VAT.** *Trigger:* user asks about annual income tax return, not the VAT return. *Message:* "This skill only handles Malta VAT returns (Article 10 periodic and Article 11). For Malta income tax (TA24), use the malta-income-tax skill."
-
----
+- **R-MT-1 — Article 11 client attempting to claim input VAT** — *Trigger:* client is Article 11 registered, or turnover is below €35,000 and client has not opted into Article 10. *Message:* "Article 11 clients are exempt from charging VAT and cannot recover input VAT. They file a simplified annual declaration only, not the Article 10 periodic VAT return. This skill can help you with the Article 11 annual declaration but cannot prepare an Article 10 periodic VAT return or calculate input VAT recovery for an Article 11 client."
+- **R-MT-2 — Article 12 registration (distance selling / EU goods acquisition threshold)** — *Trigger:* client is Article 12 registered (goods acquirer from EU exceeding €10,000/year threshold, monthly filer). *Message:* "Article 12 registrations have different filing frequencies and obligations. This skill covers Article 10 and Article 11 only. Please escalate to a warranted accountant familiar with Article 12 obligations."  _(Article 12)_
+- **R-MT-3 — Partial exemption (Article 22(4))** — *Trigger:* client makes both taxable supplies and exempt-without-credit supplies (financial services, residential rent, medical, education) and the exempt proportion is not de minimis. *Message:* "You make both taxable and exempt supplies. Your input VAT must be apportioned under Article 22(4), which requires a year-end pro-rata calculation that cannot be completed on a single-period basis without the annual ratio. Please use a warranted accountant to determine and confirm the pro-rata rate before input VAT is claimed."  _(Article 22(4))_
+- **R-MT-4 — Capital goods scheme adjustment (Article 24)** — *Trigger:* the period contains an adjustment to previously deducted input VAT on a capital good under Article 24 (5-year adjustment period for goods, 10-year for immovable property). *Message:* "Capital goods scheme adjustments under Article 24 are too fact-sensitive for this skill. They require tracking the original deduction, current and intended use, and computing the annual fraction. Please use a warranted accountant."  _(Article 24)_
+- **R-MT-5 — Margin scheme** — *Trigger:* client deals in second-hand goods, art, antiques, or collectables under the margin scheme. *Message:* "Margin scheme transactions require transaction-level margin computation. Out of scope for this skill."
+- **R-MT-6 — VAT group (Article 5(2))** — *Trigger:* client is part of a VAT group or asks about group registration. *Message:* "VAT groups under Article 5(2) require consolidation across the group. Out of scope."  _(Article 5(2))_
+- **R-MT-7 — Fiscal representative** — *Trigger:* non-resident supplier or client with a fiscal representative in Malta. *Message:* "Non-resident registrations with fiscal representatives have specific obligations beyond this skill. Please use a warranted accountant."
+- **R-MT-8 — Annual return (TA24 income tax) instead of Malta VAT** — *Trigger:* user asks about annual income tax return, not the VAT return. *Message:* "This skill only handles Malta VAT returns (Article 10 periodic and Article 11). For Malta income tax (TA24), use the malta-income-tax skill."
 
 ## Section 3 — Supplier pattern library (the lookup table)
 
@@ -147,8 +142,10 @@ This is the deterministic pre-classifier. When a transaction's counterparty matc
 
 ### 3.1 Maltese banks (fees exempt — exclude)
 
+**Maltese banks**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | BOV, BANK OF VALLETTA | EXCLUDE for bank charges/fees | §4 Nr 8 equivalent: financial service, exempt |
 | HSBC MALTA | EXCLUDE for bank charges/fees | Same |
 | APS BANK, LOMBARD BANK, BANIF | EXCLUDE for bank charges/fees | Same |
@@ -158,8 +155,10 @@ This is the deterministic pre-classifier. When a transaction's counterparty matc
 
 ### 3.2 Maltese government, regulators, and statutory bodies (exclude entirely)
 
+**Maltese government, regulators, and statutory bodies**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | CFR, COMMISSIONER FOR REVENUE, INLAND REVENUE | EXCLUDE | Tax payment, not a supply |
 | VAT DEPARTMENT | EXCLUDE | VAT payment |
 | CUSTOMS, DIPARTIMENT TAD-DWANA | EXCLUDE | Customs duty (but see EC8 for import VAT C88) |
@@ -171,52 +170,62 @@ This is the deterministic pre-classifier. When a transaction's counterparty matc
 
 ### 3.3 Maltese utilities
 
+**Maltese utilities**
+
 | Pattern | Treatment | Box | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | ARMS LTD, ARMS LIMITED, ENEMY | Domestic 18% | 31/37 | Electricity, water, gas — overhead |
 | ENEMALTA | Domestic 18% | 31/37 | Same |
 | MELITA, GO PLC, EPIC | Domestic 18% | 31/37 | Telecoms/broadband — overhead |
 
 ### 3.4 Insurance (exempt — exclude)
 
+**Insurance**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | MIDDLESEA, MSV, LAFERLA, GasanMamo | EXCLUDE | §4 Nr 10 equivalent, exempt |
 | MAPFRE, AXA MALTA, GLOBALCAP | EXCLUDE | Same |
 | INSURANCE, ASSIGURAZZJONI, INSURANCE PREMIUM | EXCLUDE | All exempt |
 
 ### 3.5 Post and logistics
 
+**Post and logistics**
+
 | Pattern | Treatment | Box | Notes |
-|---|---|---|---|
-| MALTA POST, MALTAPOST | EXCLUDE for standard postage stamps | | Universal service, exempt |
+| --- | --- | --- | --- |
+| MALTA POST, MALTAPOST | EXCLUDE for standard postage stamps |  | Universal service, exempt |
 | MALTA POST | Domestic 18% for parcel services, tracked, courier | 31/37 | Non-universal services are taxable |
 | DHL EXPRESS MALTA, TNT MALTA, FedEx Malta | Domestic 18% | 31/37 | Express courier, taxable |
 | DHL INTERNATIONAL | EU reverse charge (IE entity) | 9a/13a | Check invoice — European billing entity |
 
 ### 3.6 Transport (Malta domestic)
 
+**Transport (Malta domestic)**
+
 | Pattern | Treatment | Box | Notes |
-|---|---|---|---|
-| TALLINJA, MALTA PUBLIC TRANSPORT | EXCLUDE or 0% | | Public bus — zero rated passenger transport |
+| --- | --- | --- | --- |
+| TALLINJA, MALTA PUBLIC TRANSPORT | EXCLUDE or 0% |  | Public bus — zero rated passenger transport |
 | BOLT MALTA, UBER MALTA | Domestic 18% (platform fee reverse charge EU) | 31/37 or 9a/13a | Underlying ride 18%; platform fee via IE — check |
 | TRANSFER, TAXI | Domestic 18% | 31/37 | Local taxi |
-| AIR MALTA, RYANAIR, WIZZ AIR (international) | EXCLUDE / 0% | | International flights zero rated |
+| AIR MALTA, RYANAIR, WIZZ AIR (international) | EXCLUDE / 0% |  | International flights zero rated |
 
 ### 3.7 Food retail (blocked unless hospitality business)
 
+**Food retail**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | LIDL MALTA, PAVI, ARKADIA, PARK TOWERS, SCOTTS | Default BLOCK input VAT | Personal provisioning. Deductible only if hospitality/catering business. |
 | SUPERMARKET, ĦANUT | Default BLOCK | Same |
 | RESTAURANTS, CAFES, BARS (any named restaurant) | Default BLOCK | Entertainment blocked under 10th Schedule Item 3(1)(b) — see EC4 |
 
 ### 3.8 SaaS — EU suppliers (reverse charge, Box 9a / 13a)
 
-These are billed from EU entities (typically Ireland or Luxembourg) and trigger §13b equivalent reverse charge.
+**SaaS — EU suppliers**
 
 | Pattern | Billing entity | Box | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | GOOGLE (Ads, Workspace, Cloud) | Google Ireland Ltd (IE) | 9a/13a | Reverse charge services |
 | MICROSOFT (365, Azure) | Microsoft Ireland Operations Ltd (IE) | 9a/13a | Reverse charge |
 | ADOBE | Adobe Systems Software Ireland Ltd (IE) | 9a/13a | Reverse charge |
@@ -231,8 +240,10 @@ These are billed from EU entities (typically Ireland or Luxembourg) and trigger 
 
 ### 3.9 SaaS — non-EU suppliers (reverse charge, Box 11 / 15)
 
+**SaaS — non-EU suppliers**
+
 | Pattern | Billing entity | Box | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | AWS (standard) | AWS EMEA SARL (LU) — BUT check | 9a/13a | LU entity → EU reverse charge. Unlike Germany, no domestic branch exception in Malta |
 | NOTION | Notion Labs Inc (US) | 11/15 | Non-EU reverse charge |
 | ANTHROPIC, CLAUDE | Anthropic PBC (US) | 11/15 | Non-EU reverse charge |
@@ -245,14 +256,18 @@ These are billed from EU entities (typically Ireland or Luxembourg) and trigger 
 
 ### 3.10 SaaS — the exception (NOT reverse charge)
 
+**SaaS — the exception**
+
 | Pattern | Treatment | Why |
-|---|---|---|
+| --- | --- | --- |
 | AWS EMEA SARL | EU reverse charge Box 9a/13a (Luxembourg entity) | Malta has no AWS domestic branch equivalent to the German exception. Standard EU reverse charge applies. If invoice shows MT VAT charged, treat as local 18%. |
 
 ### 3.11 Payment processors
 
+**Payment processors**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | STRIPE (transaction fees) | EXCLUDE (exempt) | Payment processing fees are exempt financial services |
 | PAYPAL (transaction fees) | EXCLUDE (exempt) | Same |
 | STRIPE (monthly subscription) | EU reverse charge Box 9a/13a | Stripe IE entity — separate line item from transaction fees |
@@ -260,18 +275,22 @@ These are billed from EU entities (typically Ireland or Luxembourg) and trigger 
 
 ### 3.12 Professional services (Malta)
 
+**Professional services (Malta)**
+
 | Pattern | Treatment | Box | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Notary names (NUTAR, DR [name] NOTARY) | Domestic 18% | 31/37 | Deductible if business purpose |
 | Accountant / auditor names (CPA, ACCA, AUDIT) | Domestic 18% | 31/37 | Always deductible |
 | Solicitor / advocate (ADV, AVV, LAWYER) | Domestic 18% | 31/37 | Deductible if business legal matter |
-| Malta Business Registry, MBR | EXCLUDE | Government fee, not a supply |
-| MFSA fees | EXCLUDE | Regulatory fee, not a supply |
+| Malta Business Registry, MBR | EXCLUDE | Government fee, not a supply |  |
+| MFSA fees | EXCLUDE | Regulatory fee, not a supply |  |
 
 ### 3.13 Payroll and social security (exclude entirely)
 
+**Payroll and social security**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | ĊESOP, SSC, SOCIAL SECURITY | EXCLUDE | Statutory SSC payment |
 | FSS, INCOME TAX, PAYER TAX | EXCLUDE | PAYE/FSS tax remittance |
 | SALARY, PAGA, WAGES (outgoing) | EXCLUDE | Wages — outside VAT scope |
@@ -279,8 +298,10 @@ These are billed from EU entities (typically Ireland or Luxembourg) and trigger 
 
 ### 3.14 Property and rent
 
+**Property and rent**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | KIRJA, RENT (commercial, invoiced with VAT) | Domestic 18% | Commercial lease where landlord opted to charge VAT |
 | KIRJA, RENT (residential, no VAT) | EXCLUDE | Residential lease exempt without credit |
 | GROUND RENT, ĊENS | EXCLUDE | Ground rent, sovereign/feudal in nature, out of scope |
@@ -288,15 +309,15 @@ These are billed from EU entities (typically Ireland or Luxembourg) and trigger 
 
 ### 3.15 Internal transfers and exclusions
 
+**Internal transfers and exclusions**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | OWN TRANSFER, INTERNAL, ACCOUNT TRANSFER | EXCLUDE | Internal movement |
 | DIVIDEND, DIVIDENT | EXCLUDE | Dividend payment, out of scope |
 | LOAN REPAYMENT, REPAYMENT | EXCLUDE | Loan principal, out of scope |
 | CASH WITHDRAWAL, ATM | TIER 2 — ask | Default exclude; ask what cash was spent on |
 | DIRECTOR FEE (received) | EXCLUDE | Director fees are outside VAT scope in Malta — see EC10 |
-
----
 
 ## Section 4 — Worked examples
 
@@ -310,10 +331,10 @@ These are six fully worked classifications drawn from a hypothetical bank statem
 **Reasoning:**
 Notion Labs Inc is a US entity (Section 3.9). No VAT on the invoice. This is a service received from a non-EU supplier. Article 10 client applies reverse charge under the equivalent of Article 19/20 of the Malta VAT Act. Both sides of the reverse charge must be reported: output VAT in Box 4/7, input VAT in Box 11/15. Net effect zero for a fully taxable client.
 
-**Output:**
+**Output**
 
 | Date | Counterparty | Gross | Net | VAT | Rate | Box (input) | Box (output) | Default? | Question? | Excluded? |
-|---|---|---|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 03.04.2026 | NOTION LABS INC | -14.68 | -14.68 | 2.64 | 18% | 11 / 15 | 4 / 7 | N | — | — |
 
 ### Example 2 — EU service, reverse charge (Google Ads)
@@ -324,10 +345,10 @@ Notion Labs Inc is a US entity (Section 3.9). No VAT on the invoice. This is a s
 **Reasoning:**
 Google Ireland Limited is an IE entity — standard EU reverse charge. Google Ads is a service (not physical goods). Box 9a for the net, Box 13a for input VAT, Box 3 for output base, Box 6 for output VAT. The gross amount is treated as the net (Google invoices net of VAT to VAT-registered EU clients). Both sides must appear on the return.
 
-**Output:**
+**Output**
 
 | Date | Counterparty | Gross | Net | VAT | Rate | Box (input) | Box (output) | Default? | Question? | Excluded? |
-|---|---|---|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 10.04.2026 | GOOGLE IRELAND LIMITED | -850.00 | -850.00 | 153.00 | 18% | 9a / 13a | 3 / 6 | N | — | — |
 
 ### Example 3 — Entertainment, fully blocked
@@ -338,10 +359,10 @@ Google Ireland Limited is an IE entity — standard EU reverse charge. Google Ad
 **Reasoning:**
 Restaurant transaction. Entertainment is fully blocked under the Malta VAT Act 10th Schedule Item 3(1)(b). Unlike Germany (where Bewirtung can be recovered with the right documentation), Malta has a hard block on entertainment — no exceptions for business purpose, no partial recovery, no receipt exception. The input VAT is irrecoverable regardless of whether the dinner was a genuine client meeting. Default: full block. No input VAT entry.
 
-**Output:**
+**Output**
 
 | Date | Counterparty | Gross | Net | VAT | Rate | Box | Default? | Question? | Excluded? |
-|---|---|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 15.04.2026 | SCIORTINO'S RESTAURANT | -220.00 | -220.00 | 0 | — | — | Y | Q1 | "Entertainment: blocked" |
 
 ### Example 4 — Capital goods threshold
@@ -352,10 +373,10 @@ Restaurant transaction. Entertainment is fully blocked under the Malta VAT Act 1
 **Reasoning:**
 The gross amount is €1,595. The Article 24 capital goods threshold is €1,160 gross. €1,595 ≥ €1,160, so this is a capital goods purchase. It goes to Box 30 (net) and Box 36 (input VAT), not Box 31/37. If the gross had been €980, it would go to Box 31/37 as an overhead. The gross test applies — do not net out the VAT first before testing against the threshold.
 
-**Output:**
+**Output**
 
 | Date | Counterparty | Gross | Net | VAT | Rate | Box | Default? | Question? | Excluded? |
-|---|---|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 18.04.2026 | DELL TECHNOLOGIES MALTA | -1,595.00 | -1,351.69 | -243.31 | 18% | 30 / 36 | N | — | — |
 
 ### Example 5 — EU B2B service sale (inbound receipt)
@@ -366,10 +387,10 @@ The gross amount is €1,595. The Article 24 capital goods threshold is €1,160
 **Reasoning:**
 Incoming €3,500 from a German company (DE IBAN). The client is providing IT consulting services. B2B place of supply for services is the customer's country (Germany) under the general rule. The client invoices at 0%, the German customer accounts for reverse charge in Germany. Report net amount in Box 1 (EU B2B services). No output VAT. Confirm: (a) customer is a VAT-registered business — ask for the German USt-IdNr; (b) the invoice shows no Maltese VAT with a note that the customer accounts for VAT. If the customer cannot provide a valid USt-IdNr, reclassify as B2C and charge Maltese 18%.
 
-**Output:**
+**Output**
 
 | Date | Counterparty | Gross | Net | VAT | Rate | Box | Default? | Question? | Excluded? |
-|---|---|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 22.04.2026 | STUDIO KREBS GMBH | +3,500.00 | +3,500.00 | 0 | 0% | 1 | Y | Q2 (HIGH) | "Verify German USt-IdNr" |
 
 ### Example 6 — Motor vehicle, hard block
@@ -380,13 +401,11 @@ Incoming €3,500 from a German company (DE IBAN). The client is providing IT co
 **Reasoning:**
 Car lease payment. Input VAT on motor vehicles (and therefore leased vehicles) is hard-blocked under the Malta VAT Act 10th Schedule Item 3(1)(a)(iv-v). This block applies regardless of whether the vehicle is used exclusively for business. The only exceptions are: taxi services, driving instruction, car rental as the primary business activity, or hearse services. An IT consultant does not fall within any exception. Default: full block, no input VAT recovery. If client later claims this is a qualifying business vehicle, [T2] flag for reviewer — do not unblock without warranted accountant sign-off.
 
-**Output:**
+**Output**
 
 | Date | Counterparty | Gross | Net | VAT | Rate | Box | Default? | Question? | Excluded? |
-|---|---|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 28.04.2026 | AUTOSALES MALTA LTD | -650.00 | -650.00 | 0 | — | — | Y | Q3 | "Motor vehicle: blocked" |
-
----
 
 ## Section 5 — Tier 1 classification rules (compressed)
 
@@ -394,80 +413,63 @@ Each rule states the legal source and the box mapping. Apply silently if the dat
 
 ### 5.1 Standard rate 18% (VAT Act Cap. 406, 5th Schedule Part 1)
 
-Default rate for any taxable supply unless a reduced rate, zero rate, or exemption applies. Sales → Box 18 / Box 23. Purchases → Box 31 / Box 37.
+- **Standard rate** — 18% — Default rate for any taxable supply unless a reduced rate, zero rate, or exemption applies. Sales → Box 18 / Box 23. Purchases → Box 31 / Box 37. %  _(VAT Act Cap. 406, 5th Schedule Part 1)_
 
 ### 5.2 Reduced rate 7% (5th Schedule Part 2)
 
-Applies to: short-term accommodation (hotels, guesthouses under 3 months), minor repairs to bicycles, shoes, leather goods, clothing, domestic appliances. Sales → Box 18a / Box 23a. Purchases → Box 31a / Box 37a.
+- **Reduced rate** — 7% — Applies to: short-term accommodation (hotels, guesthouses under 3 months), minor repairs to bicycles, shoes, leather goods, clothing, domestic appliances. Sales → Box 18a / Box 23a. Purchases → Box 31a / Box 37a. %  _(5th Schedule Part 2)_
 
 ### 5.3 Reduced rate 12% (5th Schedule Part 3)
 
-Applies to: certain financial instruments and related services, confectionery in specific circumstances. Sales → Box 18b / Box 23b. Purchases → Box 31b / Box 37b.
+- **Reduced rate** — 12% — Applies to: certain financial instruments and related services, confectionery in specific circumstances. Sales → Box 18b / Box 23b. Purchases → Box 31b / Box 37b. %  _(5th Schedule Part 3)_
 
 ### 5.4 Reduced rate 5% (5th Schedule Part 4)
 
-Applies to: food (with exceptions for confectionery, ice cream, alcohol), non-prescription medicines and pharmaceutical products, medical devices for disabled persons, printed books and newspapers, children's car seats, certain seeds and plants. Sales → Box 19 / Box 24. Purchases → Box 28 / Box 35 (resale) or Box 32 / Box 38 (overhead).
+- **Reduced rate** — 5% — Applies to: food (with exceptions for confectionery, ice cream, alcohol), non-prescription medicines and pharmaceutical products, medical devices for disabled persons, printed books and newspapers, children's car seats, certain seeds and plants. Sales → Box 19 / Box 24. Purchases → Box 28 / Box 35 (resale) or Box 32 / Box 38 (overhead). %  _(5th Schedule Part 4)_
 
 ### 5.5 Zero rate and exempt with credit
 
-Exports outside EU → Box 2 (zero-rated, requires export evidence). Intra-EU B2B supplies of goods → Box 2 (zero-rated, requires customer VAT number verified on VIES, transport proof, compliant invoice). Intra-EU B2B services → Box 1 (place of supply is customer's country, no Maltese VAT, requires customer VAT number). International passenger transport (sea/air) → Box 20.
+- **Zero rate and exempt with credit** — Exports outside EU → Box 2 (zero-rated, requires export evidence). Intra-EU B2B supplies of goods → Box 2 (zero-rated, requires customer VAT number verified on VIES, transport proof, compliant invoice). Intra-EU B2B services → Box 1 (place of supply is customer's country, no Maltese VAT, requires customer VAT number). International passenger transport (sea/air) → Box 20.
 
 ### 5.6 Exempt without credit
 
-Residential rent, certain medical services, insurance, financial services, postal universal service, education. These supplies are excluded from the VAT return — no output VAT, no input VAT deduction on related costs. If these are significant, partial exemption rules apply — **R-MT-3 refuses** if non-de-minimis.
+- **Exempt without credit** — Residential rent, certain medical services, insurance, financial services, postal universal service, education. These supplies are excluded from the VAT return — no output VAT, no input VAT deduction on related costs. If these are significant, partial exemption rules apply — **R-MT-3 refuses** if non-de-minimis.
 
 ### 5.7 Local standard purchases
 
-Input VAT on a compliant tax invoice from a Malta supplier is deductible for purchases used in taxable business activity. Subject to blocked-input rules (5.12) and the capital goods threshold (5.9). Map overhead to Box 31/37. Map resale goods to Box 27/34.
+- **Local standard purchases** — Input VAT on a compliant tax invoice from a Malta supplier is deductible for purchases used in taxable business activity. Subject to blocked-input rules (5.12) and the capital goods threshold (5.9). Map overhead to Box 31/37. Map resale goods to Box 27/34.
 
 ### 5.8 Reverse charge — EU services received (VAT Act Art. 19 equivalent)
 
-When the client receives a service from an EU supplier and the supplier invoices at 0% with a reverse-charge note: net → Box 9a, input VAT → Box 13a, output base → Box 3, output VAT → Box 6. Net cash effect zero for a fully taxable Article 10 client. If the EU supplier charged their local VAT (e.g. Irish 23%), that is NOT reverse charge — treat as an overhead expense with irrecoverable foreign VAT.
+- **Reverse charge — EU services received** — When the client receives a service from an EU supplier and the supplier invoices at 0% with a reverse-charge note: net → Box 9a, input VAT → Box 13a, output base → Box 3, output VAT → Box 6. Net cash effect zero for a fully taxable Article 10 client. If the EU supplier charged their local VAT (e.g. Irish 23%), that is NOT reverse charge — treat as an overhead expense with irrecoverable foreign VAT.  _(VAT Act Art. 19 equivalent)_
 
 ### 5.9 Reverse charge — EU goods received
 
-Physical goods from an EU supplier: net → Box 9, input VAT → Box 13, output base → Box 3, output VAT → Box 6.
+- **Reverse charge — EU goods received** — Physical goods from an EU supplier: net → Box 9, input VAT → Box 13, output base → Box 3, output VAT → Box 6.
 
 ### 5.10 Reverse charge — non-EU services and goods received
 
-For all services and goods received from outside the EU where no VAT was charged: net → Box 11, input VAT → Box 15, output base → Box 4, output VAT → Box 7. Net cash effect zero for a fully taxable client.
+- **Reverse charge — non-EU services and goods received** — For all services and goods received from outside the EU where no VAT was charged: net → Box 11, input VAT → Box 15, output base → Box 4, output VAT → Box 7. Net cash effect zero for a fully taxable client.
 
 ### 5.11 Capital goods (Article 24)
 
-If gross invoice amount ≥ €1,160: Box 30 (net) / Box 36 (input VAT). If gross < €1,160: Box 31/37 (overhead). The gross test applies — test the invoice total before subtracting VAT. Capital goods are subject to a 5-year (or 10-year for immovable property) adjustment period. Note for §15a-equivalent tracking: if client later disposes of or changes use of the asset, an adjustment may be required — document the original classification.
+- **Capital goods** — If gross invoice amount ≥ €1,160: Box 30 (net) / Box 36 (input VAT). If gross < €1,160: Box 31/37 (overhead). The gross test applies — test the invoice total before subtracting VAT. Capital goods are subject to a 5-year (or 10-year for immovable property) adjustment period. Note for §15a-equivalent tracking: if client later disposes of or changes use of the asset, an adjustment may be required — document the original classification.  _(Article 24)_
 
 ### 5.12 Blocked input VAT (10th Schedule)
 
-The following categories have zero VAT recovery with no exceptions unless specifically noted:
-- Entertainment of any kind (Item 3(1)(b)) — hard block, no Bewirtungsbeleg equivalent in Malta
-- Motor vehicles: purchase, lease, or fuel for cars not used exclusively for taxi/driving school/car rental/hearse (Item 3(1)(a)(iv-v))
-- Tobacco products (Item 3(1)(a)(i))
-- Alcohol (Item 3(1)(a)(ii)) — note: deductible for hospitality businesses where alcohol is stock in trade
-- Art, antiques, and collectables (Item 3(1)(a)(iii))
-- Pleasure craft (Item 3(1)(a)(iv))
-- Personal use items (Item 3(1)(c))
-
-Blocked categories override partial exemption. Check blocked status before applying any recovery.
+- **Blocked input VAT** — The following categories have zero VAT recovery with no exceptions unless specifically noted: - Entertainment of any kind (Item 3(1)(b)) — hard block, no Bewirtungsbeleg equivalent in Malta - Motor vehicles: purchase, lease, or fuel for cars not used exclusively for taxi/driving school/car rental/hearse (Item 3(1)(a)(iv-v)) - Tobacco products (Item 3(1)(a)(i)) - Alcohol (Item 3(1)(a)(ii)) — note: deductible for hospitality businesses where alcohol is stock in trade - Art, antiques, and collectables (Item 3(1)(a)(iii)) - Pleasure craft (Item 3(1)(a)(iv)) - Personal use items (Item 3(1)(c)) Blocked categories override partial exemption. Check blocked status before applying any recovery.  _(10th Schedule)_
 
 ### 5.13 Article 11 annual declaration (4-box simplified form)
 
-Article 11 clients do not file the Article 10 periodic VAT return. They file a 4-box annual declaration:
-- Box 1: Sales of goods
-- Box 2: Provision of services
-- Box 3: Purchases of stock for resale
-- Box 4: Purchases of capital assets
-
-General overhead expenses do not appear on the declaration. No input VAT recovery. No reverse-charge boxes. This skill processes Article 11 declarations in simplified mode — Steps 5.7 through 5.12 do not apply.
+- **Article 11 annual declaration** — Article 11 clients do not file the Article 10 periodic VAT return. They file a 4-box annual declaration: - Box 1: Sales of goods - Box 2: Provision of services - Box 3: Purchases of stock for resale - Box 4: Purchases of capital assets General overhead expenses do not appear on the declaration. No input VAT recovery. No reverse-charge boxes. This skill processes Article 11 declarations in simplified mode — Steps 5.7 through 5.12 do not apply.
 
 ### 5.14 Sales — local domestic (any rate)
 
-Charge 18%, 7%, 12%, or 5% as applicable. No B2B/B2C distinction for domestic Malta supplies. Map to Box 18/18a/18b/19 as appropriate.
+- **Sales — local domestic (any rate)** — Charge 18%, 7%, 12%, or 5% as applicable. No B2B/B2C distinction for domestic Malta supplies. Map to Box 18/18a/18b/19 as appropriate.
 
 ### 5.15 Sales — cross-border B2C
 
-Goods to EU consumers above €10,000 EU-wide threshold → **R-EU-5 (OSS refusal) from eu-vat-directive fires**. Digital services to EU consumers above €10,000 → same. Below threshold → Maltese VAT at applicable rate, Box 18.
-
----
+- **Sales — cross-border B2C** — Goods to EU consumers above €10,000 EU-wide threshold → **R-EU-5 (OSS refusal) from eu-vat-directive fires**. Digital services to EU consumers above €10,000 → same. Below threshold → Maltese VAT at applicable rate, Box 18.
 
 ## Section 6 — Tier 2 catalogue (compressed)
 
@@ -532,8 +534,6 @@ For each ambiguity type: pattern, why the bank statement is insufficient, conser
 ### 6.15 Platform sales (Amazon, eBay, Etsy)
 
 *Pattern:* incoming from Amazon Payments EU, Etsy Payments, PayPal, Stripe. *Why insufficient:* aggregated settlement may include multi-country buyer mix. *Default:* if client sells to EU consumers across multiple countries above €10,000, R-EU-5 OSS refusal fires. For Malta-only or below-threshold: treat gross as Box 18/23 base at 18%; platform fees as separate reverse charge Box 9a/13a (IE entity). *Question:* "Do you sell to buyers outside Malta? Total EU cross-border sales for the year?"
-
----
 
 ## Section 7 — Excel working paper template (Malta-specific)
 
@@ -631,7 +631,54 @@ python /mnt/skills/public/xlsx/scripts/recalc.py /mnt/user-data/outputs/malta-va
 
 Check the JSON output. If `status` is `errors_found`, fix the formulas and re-run. If `status` is `success`, present via `present_files`.
 
----
+### Machine-readable worksheet (JSON) — emit alongside the Excel
+
+In **addition** to the Excel working paper (never instead of it), emit the return as a single fenced ```` ```json ```` block so a reviewer's tooling — and the automated checks — can re-foot the figures without parsing prose. Emit exactly one worksheet object per period, using the values already computed in the "Return Form" sheet above.
+
+Shape (omit boxes that are zero/not applicable, but always include 26, 39, and either 43 or 42, plus 44 and 45). Give each **aggregated** box a `sources` breakdown listing the transactions that compose it, and emit the **derived subtotal** boxes so the worksheet is a complete return, not just the bottom line:
+
+```json
+{
+  "jurisdiction": "MT",
+  "tax_type": "vat",
+  "regime": "article_10_periodic",
+  "period": { "start": "2025-01-01", "end": "2025-03-31", "frequency": "quarterly" },
+  "currency": "EUR",
+  "lines": [
+    { "net_box": "18", "vat_box": "23", "net": 10000.00, "rate": 0.18, "vat": 1800.00 },
+    { "net_box": "31", "vat_box": "37", "net": 2000.00,  "rate": 0.18, "vat": 360.00 }
+  ],
+  "boxes": [
+    { "box": "18", "label": "Local sales 18% (net)",             "amount": 10000.00 },
+    { "box": "23", "label": "Output VAT on local sales 18%",     "amount": 1800.00 },
+    { "box": "26", "label": "Total output VAT",                  "amount": 1800.00 },
+    { "box": "31", "label": "Local overhead purchases 18% (net)","amount": 2000.00,
+      "sources": [
+        { "label": "Office rent (commercial, VAT)", "amount": 1500.00 },
+        { "label": "Enemalta electricity",          "amount": 500.00 }
+      ] },
+    { "box": "37", "label": "Input VAT on local overhead 18%",   "amount": 360.00 },
+    { "box": "39", "label": "Total input VAT on local purchases","amount": 360.00 },
+    { "box": "43", "label": "VAT payable",                       "amount": 1440.00 },
+    { "box": "44", "label": "Credit brought forward",            "amount": 0.00 },
+    { "box": "45", "label": "Net payable after B/F credit",      "amount": 1440.00 }
+  ],
+  "result": { "type": "payable", "amount": 1440.00 }
+}
+```
+
+Rules (these mirror the Return Form logic above):
+
+- `result` MUST be exactly `{ "type": …, "amount": <number> }` — `type` is **exactly one** of `"payable"` or `"credit"` (never both), and `amount` is a plain number equal to Box 45 (payable) or Box 42 (credit). Do **not** rename `amount` or add extra keys to `result`.
+- If Box 26 > Box 39: `result.type = "payable"`, Box 43 = Box 26 − Box 39, Box 42 = 0.
+- If Box 39 > Box 26: `result.type = "credit"`, Box 42 = Box 39 − Box 26, Box 43 = 0.
+- Always: **Box 45 = Box 43 − Box 44**.
+- For every `lines[]` entry: `vat = round(net × rate, 2)`, and `vat` must equal the named `vat_box` amount.
+- **Aggregated boxes carry `sources`** — each `{ label, amount }` — listing the transactions that compose the box; `sum(sources) = box amount`. This makes the return auditable (a reviewer sees Box 31 = rent 1,500 + electricity 500 without re-reading prose).
+- **Emit the derived subtotal boxes** when their components exist: 5 (3+4), 8 (6+7), 12 (9+9a+10+11), 16 (13+13a+14+15), 17 (8−16), 22 (local sales), 25 (local output VAT), 26 (17+25), 33 (local purchases), 39 (local input VAT).
+- Numbers are plain JSON numbers — no `€`, no thousands separators.
+- The worksheet is a working paper, not a filed return. The prose must still carry the disclaimer and the provenance footer; the JSON does not replace them.
+- **When you hand off for review, pass this worksheet object as the `worksheet` argument to `request_accountant_review`** (in addition to the prose `working_paper`) — OpenAccountants turns it into the reviewer's spreadsheet (a downloadable .xlsx) and foot-checks it. Don't hand off a computed return without it.
 
 ## Section 8 — Malta bank statement reading guide
 
@@ -655,8 +702,6 @@ Follow the universal exclusion rules in `vat-workflow-base` Step 6, plus these M
 
 **Cryptic descriptions.** Card purchases with only a merchant terminal code; SEPA direct debits with only a mandate reference. If the counterparty cannot be identified from the description, ask the client. Do not classify unidentified transactions.
 
----
-
 ## Section 9 — Onboarding fallback (only when inference fails)
 
 The workflow in `vat-workflow-base` Section 1 mandates inferring the client profile from the data first (Step 3) and only confirming with the client in Step 4. The questionnaire below is a fallback — ask only the questions the data could not answer.
@@ -664,42 +709,50 @@ The workflow in `vat-workflow-base` Section 1 mandates inferring the client prof
 For each question, the inference rule comes first. Only ask if inference fails.
 
 ### 9.1 Entity type and trading name
+
 *Inference rule:* sole trader names often match the account holder name; company names end in "Ltd", "Limited", "Co. Ltd". *Fallback question:* "Are you a self-employed sole trader, a limited company, or a partnership?"
 
 ### 9.2 VAT registration type
+
 *Inference rule:* if the client is asking for a periodic VAT return (Article 10), they are Article 10. If they mention no VAT on sales and annual filing, they are Article 11. *Fallback question:* "Are you Article 10 (standard VAT, charging 18%) or Article 11 (small enterprise exemption, turnover below €35,000)?"
 
 ### 9.3 VAT number
+
 *Inference rule:* MT-format VAT numbers sometimes appear in payment descriptions from EU customers. Search statement descriptions first. *Fallback question:* "What is your Maltese VAT number? (MT + 8 digits)"
 
 ### 9.4 Filing period
+
 *Inference rule:* first and last transaction dates on the bank statement. Article 10 is quarterly. *Fallback question:* "Which quarter does this cover? Q1 (Jan–Mar), Q2 (Apr–Jun), Q3 (Jul–Sep), or Q4 (Oct–Dec)?"
 
 ### 9.5 Industry and sector
+
 *Inference rule:* counterparty mix, sales description patterns, invoice descriptions. IT, consultancy, hospitality, retail, construction are recognisable. *Fallback question:* "In one sentence, what does the business do?"
 
 ### 9.6 Employees
+
 *Inference rule:* SSC, FS3, PAYE outgoing transfers to non-owner names. *Fallback question:* "Do you have employees? If so, how many?"
 
 ### 9.7 Exempt supplies
+
 *Inference rule:* presence of medical/financial/educational/residential rental income. *Fallback question:* "Do you make any VAT-exempt sales (medical, education, insurance, financial services, residential lettings)?" *If yes and non-de-minimis → R-MT-3 refuses.*
 
 ### 9.8 Rental income
+
 *Inference rule:* Airbnb payouts, "kirja" credits, property management names. *Conditional fallback — only if rental income is suspected:* "Is this short-term rental (under 3 months) or long-term? Is the property used for Airbnb?"
 
 ### 9.9 Credit brought forward
+
 *Inference rule:* not inferable from a single period statement. Always ask. *Question:* "Do you have any excess credit from the previous quarter carried forward? (Box 44)"
 
 ### 9.10 Cross-border customers
-*Inference rule:* foreign IBANs on incoming, foreign currency, foreign-name customers. *Fallback question:* "Do you have customers outside Malta? In EU countries or outside the EU? Are they businesses (B2B with VAT numbers) or consumers?"
 
----
+*Inference rule:* foreign IBANs on incoming, foreign currency, foreign-name customers. *Fallback question:* "Do you have customers outside Malta? In EU countries or outside the EU? Are they businesses (B2B with VAT numbers) or consumers?"
 
 ## Section 10 — Reference material
 
 ### Validation status
 
-This skill is v2.0, rewritten in April 2026 to align with the three-tier Accora architecture (vat-workflow-base + eu-vat-directive + country skill). It supersedes v1.0 (March 2026, standalone monolithic skill). The Malta-specific content (box mappings, rates, thresholds, blocked categories) is drawn from the VAT Act Chapter 406 and CFR guidance. Independent sign-off by a Maltese warranted accountant is pending and is a prerequisite to any reliance.
+This skill is v2.0, rewritten in April 2026 to align with the three-tier OpenAccountants architecture (vat-workflow-base + eu-vat-directive + country skill). It supersedes v1.0 (March 2026, standalone monolithic skill). The Malta-specific content (box mappings, rates, thresholds, blocked categories) is drawn from the VAT Act Chapter 406 and CFR guidance. Independent sign-off by a Maltese warranted accountant is pending and is a prerequisite to any reliance.
 
 ### Sources
 
@@ -733,7 +786,7 @@ This skill is v2.0, rewritten in April 2026 to align with the three-tier Accora 
 
 ### Change log
 
-- **v2.0 (April 2026):** Full rewrite to align with three-tier Accora architecture. Quick reference moved to top (Section 1). Supplier pattern library restructured as literal lookup tables (Section 3). Six worked examples added (Section 4). Tier 1 rules compressed (Section 5). Tier 2 catalogue restructured to compressed format (Section 6). Excel working paper specification added (Section 7). Bank statement reading guide added (Section 8). Onboarding moved to fallback role with inference rules (Section 9). Reference material moved to bottom (Section 10). Companion skill references updated to vat-workflow-base v0.1 and eu-vat-directive v0.1.
+- **v2.0 (April 2026):** Full rewrite to align with three-tier OpenAccountants architecture. Quick reference moved to top (Section 1). Supplier pattern library restructured as literal lookup tables (Section 3). Six worked examples added (Section 4). Tier 1 rules compressed (Section 5). Tier 2 catalogue restructured to compressed format (Section 6). Excel working paper specification added (Section 7). Bank statement reading guide added (Section 8). Onboarding moved to fallback role with inference rules (Section 9). Reference material moved to bottom (Section 10). Companion skill references updated to vat-workflow-base v0.1 and eu-vat-directive v0.1.
 - **v1.0 (March 2026):** Initial skill. Standalone monolithic document covering Malta VAT Act Chapter 406, box mappings, reverse charge mechanics, blocked categories, edge case registry, and test suite.
 
 ### Self-check (v2.0 of this document)
@@ -758,42 +811,26 @@ This skill is v2.0, rewritten in April 2026 to align with the three-tier Accora 
 
 This skill is incomplete without BOTH companion files loaded alongside it: `vat-workflow-base` v0.1 or later (Tier 1, workflow architecture) AND `eu-vat-directive` v0.1 or later (Tier 2, EU directive content). Do not attempt to produce a complete Malta VAT return without all three files loaded.
 
-
----
-
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, EA, tax attorney, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
 
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
-
----
+The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
 
 <!-- openaccountants-cta-block -->
 
+---
+
 ## Talk to a verified accountant
 
-This skill is a tool, not an engagement. Every taxpayer's situation is
-different, and the rules in the skill may not match your specific facts.
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
 
-To speak with one of the licensed accountants who verifies skills for your
-jurisdiction — **no liability on either side until you and the accountant sign
-a formal engagement letter** — book a free 30-minute call:
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
 
-**→ [Book a call](https://calendly.com/openaccountants-info/30min)**
-
-We'll route you to the named verifier covering your country or state. You can
-also see the full list of verified accountants at
-[openaccountants.com/network](https://www.openaccountants.com/network).
-
-<!-- openaccountants-mcp-cta -->
-
-## The accountant-verified version lives in the connector
-
-This file is the open, **research-grade draft**. The **accountant-verified**
-version of this skill is **not published to GitHub** — it is delivered free
-through the OpenAccountants MCP connector, where your AI agent loads the
-verified rules together with the name of the accountant who signed them off.
-
-**→ Install the free connector:** <https://www.openaccountants.com/connect>
-**MCP endpoint:** `https://www.openaccountants.com/api/mcp`
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

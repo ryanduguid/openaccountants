@@ -1,24 +1,25 @@
 ---
 name: fi-prepayments
 description: >
-  Use this skill whenever asked about Finland prepayment tax (ennakkovero) for self-employed individuals. Trigger on phrases like "ennakkovero", "ennakkoverot", "prepayment tax Finland", "Finnish tax prepayments", "residual tax Finland", "jäännösvero", "tax instalments Finland", "OmaVero prepayment", "prepayment certificate", "ennakkoperintä", or any question about paying tax during the year as a Finnish self-employed person. Covers prepayment calculation, payment schedules, adjustment requests, residual tax, and penalties. ALWAYS read this skill before advising on Finnish tax prepayments.
 version: 1.0
 jurisdiction: FI
 tax_year: 2025
-category: international
-depends_on:
-  - fi-income-tax
+last_updated: 2026-05-23
 verified_by: pending
+depends_on: - fi-income-tax
+category: international
+tier: 2
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Finland Prepayment Tax (Ennakkovero) Skill v1.0
-
----
+# FI Prepayments
 
 ## Section 1 -- Quick Reference
 
+**Section 1 -- Quick Reference**
+
 | Field | Value |
-|---|---|
+| --- | --- |
 | Country | Finland (Republic of Finland / Suomen tasavalta) |
 | Tax | Prepayment Tax (ennakkovero / förskottsskatt) |
 | Currency | EUR only |
@@ -33,8 +34,10 @@ verified_by: pending
 
 ### Key Terms
 
+**Key Terms**
+
 | Finnish Term | English | Meaning |
-|---|---|---|
+| --- | --- | --- |
 | Ennakkovero | Prepayment tax | Tax paid in advance during the tax year |
 | Ennakkoperintä | Tax prepayment / withholding | The system of collecting tax before final assessment |
 | Jäännösvero | Residual tax | Tax still owed after prepayments are applied to the final assessment |
@@ -42,14 +45,14 @@ verified_by: pending
 | Ennakkoverolippu | Prepayment tax slip | The notice showing prepayment amounts and due dates |
 | Huojennus | Reduction / relief | Applying for reduced prepayments |
 
----
-
 ## Section 2 -- Who Must Pay Ennakkovero
 
 ### 2.1 Mandatory
 
+**2.1 Mandatory**
+
 | Category | Obligation |
-|---|---|
+| --- | --- |
 | Self-employed sole traders (toiminimiyrittäjä) | Must pay ennakkovero on estimated business income |
 | Freelancers (ammatinharjoittaja) | Must pay ennakkovero on estimated professional income |
 | Rental income recipients | Must pay if rental income not covered by employer withholding adjustment |
@@ -58,29 +61,27 @@ verified_by: pending
 
 ### 2.2 Not Required
 
+**2.2 Not Required**
+
 | Category | Reason |
-|---|---|
+| --- | --- |
 | Employees (only wage income) | Employer withholding (ennakonpidätys) covers tax |
 | First-year entrepreneurs with no prior estimate | Verohallinto cannot assess; must request prepayment registration |
-
----
 
 ## Section 3 -- How Ennakkovero Is Calculated
 
 ### 3.1 Basis of Calculation
 
-Verohallinto calculates ennakkovero based on:
-
-1. **Prior year final assessment** -- If you filed a tax return for the prior year, Verohallinto uses that as the baseline and adjusts for inflation and any known changes.
-2. **Estimated income** -- For new entrepreneurs, you provide an estimate of expected annual income and expenses to Verohallinto via OmaVero.
-3. **Taxpayer request** -- You can request a change at any time during the year if your income projection changes.
+- **Prior year final assessment** — If you filed a tax return for the prior year, Verohallinto uses that as the baseline and adjusts for inflation and any known changes.  _(Section 3.1)_
+- **Estimated income** — For new entrepreneurs, you provide an estimate of expected annual income and expenses to Verohallinto via OmaVero.  _(Section 3.1)_
+- **Taxpayer request** — You can request a change at any time during the year if your income projection changes.  _(Section 3.1)_
 
 ### 3.2 Components Included
 
-The prepayment covers all taxes on business and other non-withheld income:
+**3.2 Components Included**
 
 | Component | Included |
-|---|---|
+| --- | --- |
 | State income tax (progressive rates) | Yes |
 | Municipal tax (kunnallisvero) | Yes |
 | Church tax (if applicable) | Yes |
@@ -96,32 +97,32 @@ The prepayment covers all taxes on business and other non-withheld income:
 - Verohallinto issues a prepayment decision (ennakkoveropäätös) with amounts and due dates
 - If no estimate provided, Verohallinto may set prepayments based on industry averages
 
----
-
 ## Section 4 -- Payment Schedule
 
 ### 4.1 Standard Schedule
 
-Prepayments are divided into instalments across the tax year. The number of instalments depends on the total amount:
+**4.1 Standard Schedule**
 
 | Total Annual Ennakkovero | Number of Instalments | Typical Due Dates |
-|---|---|---|
+| --- | --- | --- |
 | Under €170 | 1 instalment | March |
 | €170 -- €500 | 2 instalments | March and September |
 | Over €500 | Up to 12 monthly instalments | 23rd of each month (or next business day) |
+
+Prepayments are divided into instalments across the tax year. The number of instalments depends on the total amount:
 
 Most self-employed with meaningful income pay monthly instalments, typically due on the 23rd of each month.
 
 ### 4.2 Payment Methods
 
+**4.2 Payment Methods**
+
 | Method | Detail |
-|---|---|
+| --- | --- |
 | OmaVero | View amounts, due dates, and pay directly |
 | Bank transfer | Using the reference number from OmaVero / prepayment decision |
 | Direct debit (suoramaksu) | Can be set up via OmaVero for automatic monthly payments |
 | e-Invoice | Available through some banks |
-
----
 
 ## Section 5 -- Adjusting Prepayments During the Year
 
@@ -149,24 +150,26 @@ Most self-employed with meaningful income pay monthly instalments, typically due
 - Increasing prepayments voluntarily is always possible
 - Changes typically take effect within a few business days
 
----
-
 ## Section 6 -- Residual Tax and Refunds
 
 ### 6.1 After Filing
 
 After the annual tax return is filed and assessed (typically by October-November):
 
+**6.1 After Filing**
+
 | Scenario | Outcome |
-|---|---|
+| --- | --- |
 | Prepayments < final tax liability | Residual tax (jäännösvero) is due |
 | Prepayments > final tax liability | Tax refund (veronpalautus) is issued |
 | Prepayments = final tax liability | No further action |
 
 ### 6.2 Residual Tax (Jäännösvero)
 
+**6.2 Residual Tax (Jäännösvero)**
+
 | Item | Detail |
-|---|---|
+| --- | --- |
 | Notification | Via OmaVero and/or mail |
 | Payment deadline | Typically December of the assessment year or February of the following year (in two instalments if >€170) |
 | Interest | Late payment interest at base rate + 7 percentage points (Verohallinto publishes the annual rate) |
@@ -174,24 +177,24 @@ After the annual tax return is filed and assessed (typically by October-November
 
 ### 6.3 Tax Refund (Veronpalautus)
 
+**6.3 Tax Refund (Veronpalautus)**
+
 | Item | Detail |
-|---|---|
+| --- | --- |
 | Timing | Typically paid in August-December of the year following the tax year |
 | Method | Direct deposit to bank account registered in OmaVero |
 | Interest on refund | Verohallinto pays a small credit interest on overpaid amounts |
 
----
-
 ## Section 7 -- Penalties for Underpayment
 
+**Section 7 -- Penalties for Underpayment**
+
 | Situation | Consequence |
-|---|---|
+| --- | --- |
 | Insufficient prepayments (honest estimate) | Residual tax + interest at prescribed rate |
 | No prepayment registration at all | Verohallinto may impose prepayments retrospectively; penalty interest applies |
 | Deliberate underestimation | Tax increase (veronkorotus) of 2-10% on additional tax may apply |
 | Late payment of instalment | Interest accrues from due date; persistent non-payment may lead to enforcement (ulosotto) |
-
----
 
 ## Section 8 -- Worked Examples
 
@@ -213,25 +216,25 @@ After the annual tax return is filed and assessed (typically by October-November
 2. **March:** Verohallinto issues prepayment decision: approximately €10,000-€12,000 total for the year, payable in 10 monthly instalments (March-December).
 3. **Filing 2026:** Actual net income was €45,000. Small residual tax due.
 
----
-
 ## Section 9 -- Interaction with Other Taxes
 
+**Section 9 -- Interaction with Other Taxes**
+
 | System | Interaction |
-|---|---|
+| --- | --- |
 | Employer withholding (ennakonpidätys) | If self-employed person also has employment income, employer withholding reduces the amount of ennakkovero needed |
 | YEL pension insurance | Paid separately; not included in ennakkovero but is tax-deductible |
 | VAT (ALV) | Completely separate system; VAT payments and refunds do not affect ennakkovero |
 | Municipal tax | Included in ennakkovero calculation |
 
----
-
 ## Section 10 -- OmaVero Quick Guide
 
 ### Key Actions in OmaVero for Prepayments
 
+**Key Actions in OmaVero for Prepayments**
+
 | Action | Path |
-|---|---|
+| --- | --- |
 | View prepayment decision | OmaVero → Ennakkovero → Current year |
 | Request adjustment | OmaVero → Ennakkovero → Muuta ennakkoveroa (Change prepayment) |
 | View payment schedule | OmaVero → Ennakkovero → Maksuerät (Instalments) |
@@ -239,8 +242,6 @@ After the annual tax return is filed and assessed (typically by October-November
 | Set up direct debit | OmaVero → Maksaminen → Suoramaksu |
 | View residual tax | OmaVero → Verotuspäätös (Tax assessment decision) |
 | Check refund status | OmaVero → Veronpalautus (Tax refund) |
-
----
 
 ## Prohibitions
 
@@ -251,17 +252,11 @@ After the annual tax return is filed and assessed (typically by October-November
 - NEVER present calculations as definitive -- always label as estimated
 - NEVER advise on corporate (Oy) or partnership (Ky/Ay) prepayment tax -- different rules apply
 
----
-
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, EA, tax attorney, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
 
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
-
----
-
-<!-- openaccountants-cta-block -->
+The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
 
 ## Talk to a verified accountant
 
@@ -276,16 +271,22 @@ a formal engagement letter** — book a free 30-minute call:
 
 We'll route you to the named verifier covering your country or state. You can
 also see the full list of verified accountants at
-[openaccountants.com/network](https://www.openaccountants.com/network).
+[openaccountants.com/network](https://openaccountants.com/network).
 
-<!-- openaccountants-mcp-cta -->
+<!-- openaccountants-cta-block -->
 
-## The accountant-verified version lives in the connector
+---
 
-This file is the open, **research-grade draft**. The **accountant-verified**
-version of this skill is **not published to GitHub** — it is delivered free
-through the OpenAccountants MCP connector, where your AI agent loads the
-verified rules together with the name of the accountant who signed them off.
+## Talk to a verified accountant
 
-**→ Install the free connector:** <https://www.openaccountants.com/connect>
-**MCP endpoint:** `https://www.openaccountants.com/api/mcp`
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

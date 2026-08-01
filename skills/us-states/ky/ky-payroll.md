@@ -2,13 +2,14 @@
 name: ky-payroll
 description: Tier 2 Kentucky content skill for employer payroll compliance covering tax year 2025. Includes the 4.0% flat PIT phasing down to 3.5% in 2026, K-1 quarterly withholding, K-3 annual reconciliation, KY SUI wage base $11,400 with rates 0.225-9.0%, the 200+ city and county occupational license tax system collected by work-location (Louisville 2.2%, Lexington 2.25%), school district wage tax (0.5-0.75% in some districts), reciprocal agreements with OH/IN/IL/MI/VA/WV exempting non-resident employees from KY withholding, and Form OL-3 occupational license return.
 jurisdiction: US-KY
-domain: state-tax
 tax_year: 2025
+last_updated: 2026-05-27
+verified_by: pending
 tier: 2
-last_updated: 2026-07-06
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# ky-payroll
+# KY Payroll
 
 ## Kentucky Payroll Compliance — Tier 2 Content Skill
 
@@ -411,3 +412,21 @@ To speak with one of the licensed accountants who verifies skills for your juris
 → [Book a call](https://calendly.com/openaccountants-info/30min)
 
 We'll route you to the named verifier covering your country or state. You can also see the full list of verified accountants at [openaccountants.com/network](https://openaccountants.com/network).
+
+<!-- openaccountants-cta-block -->
+
+---
+
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

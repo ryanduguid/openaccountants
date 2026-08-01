@@ -1,25 +1,23 @@
 ---
 name: sa-withholding-tax
-description: >
-  Use this skill whenever asked to compute, classify, or review Saudi Arabian Withholding Tax (WHT) obligations payable by a resident payer on payments to non-resident recipients for services, rent, royalties, dividends, interest, management fees, insurance premiums, freight, telecommunications, or other in-scope categories under Article 68 of the Saudi Income Tax Law and Articles 63–67 of the Implementing Regulations. Trigger on phrases like "Saudi WHT", "ZATCA withholding", "5% WHT KSA", "15% WHT KSA", "20% management fee WHT", "Article 68 Saudi", "treaty rates Saudi", "WHT Saudi Arabia", "Saudi royalty WHT", "Saudi dividend withholding", "non-resident WHT Saudi", "ZATCA monthly WHT return", "TRC Saudi treaty", "Saudi PE risk WHT", or any request involving the classification, deduction, or remittance of Saudi withholding tax. This skill covers WHT under the Income Tax Law (Royal Decree No. M/1 dated 15/1/1425H, as amended) and the Implementing Regulations issued by the Zakat, Tax and Customs Authority (ZATCA, formerly GAZT), including the Tier 1 standard rates (services 5%, rent 5%, royalties 15%, dividends 5%, interest 5%, management fees 20%, insurance/reinsurance premiums 5%, international telecommunications 5%, air/sea freight 5%), Tier 2 treaty-rate reductions across Saudi Arabia's growing treaty network (UK, France, China, India, Pakistan, etc.), mixed-source transactions, capital gains by non-residents on Saudi-source assets, and the interaction with the Pillar Two top-up regime. Out of scope: Zakat (Saudi/GCC-owned entity charge — see sa-zakat); Corporate Income Tax on resident non-GCC-owned entities (see sa-corporate-tax); VAT (see saudi-arabia-vat); E-invoicing (see saudi-einvoice); upstream petroleum special regime; expatriate employee levy; the GCC selective tax. ALWAYS read this skill before touching any Saudi WHT work.
-version: 1.0
+description: "Use this skill whenever asked to compute, classify, or review Saudi Arabian Withholding Tax (WHT) obligations payable by a resident payer on payments to non-resident recipients for services, rent, royalties, dividends, interest, management fees, insurance premiums, freight, telecommunications, or other in-scope categories under Article 68 of the Saudi Income Tax Law and Articles 63–67 of the Implementing Regulations. Trigger on phrases like \"Saudi WHT\", \"ZATCA withholding\", \"5% WHT KSA\", \"15% WHT KSA\", \"20% management fee WHT\", \"Article 68 Saudi\", \"treaty rates Saudi\", \"WHT Saudi Arabia\", \"Saudi royalty WHT\", \"Saudi dividend withholding\", \"non-resident WHT Saudi\", \"ZATCA monthly WHT return\", \"TRC Saudi treaty\", \"Saudi PE risk WHT\", or any request involving the classification, deduction, or remittance of Saudi withholding tax. This skill covers WHT under the Income Tax Law (Royal Decree No. M/1 dated 15/1/1425H, as amended) and the Implementing Regulations issued by the Zakat, Tax and Customs Authority (ZATCA, formerly GAZT), including the Tier 1 standard rates (services 5%, rent 5%, royalties 15%, dividends 5%, interest 5%, management fees 20%, insurance/reinsurance premiums 5%, international telecommunications 5%, air/sea freight 5%), Tier 2 treaty-rate reductions across Saudi Arabia's growing treaty network (UK, France, China, India, Pakistan, etc.), mixed-source transactions, capital gains by non-residents on Saudi-source assets, and the interaction with the Pillar Two top-up regime. Out of scope: Zakat (Saudi/GCC-owned entity charge — see sa-zakat); Corporate Income Tax on resident non-GCC-owned entities (see sa-corporate-tax); VAT (see saudi-arabia-vat); E-invoicing (see saudi-einvoice); upstream petroleum special regime; expatriate employee levy; the GCC selective tax. ALWAYS read this skill before touching any Saudi WHT work."
 jurisdiction: SA
 tax_year: 2025
-category: international
-depends_on:
-  - foundation
-verified_by: pending
+last_updated: 2026-05-27
+verified_by: Mehran Habib
+tier: 1
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Saudi Arabia — Withholding Tax — Skill v1.0
+# SA Withholding Tax
 
----
+## Saudi Arabia — Withholding Tax — Skill v1.0
 
 ## Verified rates & thresholds (accountant-reviewed)
 
-> Reviewed against the cited tax authorities by **Mehran Habib** on 2026-06-06.
-> This block is generated from the verified facts database at openaccountants.com —
-> edit the facts there, not this prose. Items under clarification are excluded.
+Reviewed against the cited tax authorities by **Mehran Habib** on 2026-06-06.
+Items flagged for further clarification are tracked separately and excluded here.
+This block is generated from verified `skill_facts` — edit the facts, not the prose.
 
 ### Withholding Tax
 
@@ -38,8 +36,10 @@ verified_by: pending
 
 ## Section 1 — Quick reference (rate table by transaction type)
 
+**Quick reference table**
+
 | Field | Value |
-|---|---|
+| --- | --- |
 | Country | Kingdom of Saudi Arabia (KSA) |
 | Tax covered | Withholding Tax (WHT) on payments from a Saudi-resident payer to a non-resident recipient on Saudi-source income |
 | Currency | Saudi Riyal (SAR, ﷼) — foreign-currency payments converted at the SAMA reference rate on the date of payment / accrual (whichever is earlier) |
@@ -55,8 +55,10 @@ verified_by: pending
 
 ### Quick-look: payment type → standard WHT rate (resident payer → non-resident recipient)
 
+**Quick-look rate table**
+
 | Payment type | Standard rate | Common treaty cap (where applicable) | Final / creditable in KSA |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | **Management fees** | **20%** | Rarely reduced — treaties typically do not cap management fees | **Final** for the non-resident |
 | **Royalties** (including software licences, technical know-how, trademarks, franchises) | **15%** | 5%–10% under most treaties (e.g. UK 5%/8%, France 5%/10%) | Final |
 | **Technical / consultancy services from a related party** | **15%** | Per treaty (services article may not exist) | Final |
@@ -69,22 +71,20 @@ verified_by: pending
 | Air freight / sea freight | 5% | Per treaty (transport article usually exempts) | Final |
 | Other payments to non-residents not otherwise listed | 15% (catch-all under Article 68) | Per treaty | Final |
 
-> **Critical rule (Article 68(a) Income Tax Law).** WHT is imposed on the **gross amount paid** to the non-resident — there is no deduction for costs, expenses, or input VAT. The Saudi-resident payer is **personally and primarily liable** to deduct and remit the tax — failure to deduct does NOT shift the burden to the recipient.
->
-> **Critical rule (Article 68(b) Income Tax Law).** The payer must deduct WHT **at the time of payment** and remit it to ZATCA **within 10 days of the end of the month** in which the payment was made. There is no de minimis threshold — even small payments to non-residents are in scope.
->
-> **Critical rule (no WHT between Saudi residents).** Saudi WHT under Article 68 applies **only** to payments from a Saudi-resident payer to a **non-resident** recipient. Payments between two Saudi-resident entities are NOT subject to Article 68 WHT (they may be subject to Zakat or CIT in the recipient's hands directly).
-
----
+- **Critical rule (Article 68(a))** — WHT is imposed on the gross amount paid to the non-resident — there is no deduction for costs, expenses, or input VAT. The Saudi-resident payer is personally and primarily liable to deduct and remit the tax — failure to deduct does NOT shift the burden to the recipient.  _(Article 68(a) Income Tax Law)_
+- **Critical rule (Article 68(b))** — The payer must deduct WHT at the time of payment and remit it to ZATCA within 10 days of the end of the month in which the payment was made. There is no de minimis threshold — even small payments to non-residents are in scope.  _(Article 68(b) Income Tax Law)_
+- **Critical rule (no WHT between Saudi residents)** — Saudi WHT under Article 68 applies only to payments from a Saudi-resident payer to a non-resident recipient. Payments between two Saudi-resident entities are NOT subject to Article 68 WHT (they may be subject to Zakat or CIT in the recipient's hands directly).  _(Article 68 Income Tax Law)_
 
 ## Section 2 — Required inputs and refusal catalogue
 
 ### 2.1 Mandatory inputs before any WHT computation
 
-Refuse to compute WHT without ALL of the following:
+- **Refusal instruction** — Refuse to compute WHT without ALL of the following inputs.
+
+**Mandatory inputs table**
 
 | Input | Why it matters |
-|---|---|
+| --- | --- |
 | Payer identity, ZATCA Tax/Zakat Number, and entity type (LLC, JSC, branch, individual) | Determines registration status, filing portal access, and remittance obligation |
 | Confirmation that the payer is **Saudi-resident** (per Article 3 Income Tax Law — incorporated in KSA, central management in KSA, or branch of foreign entity registered in KSA) | Article 68 applies only to payments **by** Saudi residents |
 | Recipient legal name, country of tax residence, and tax ID in home jurisdiction | Determines non-resident status and treaty eligibility |
@@ -100,10 +100,10 @@ Refuse to compute WHT without ALL of the following:
 
 ### 2.2 Refusal catalogue
 
-Refuse the engagement (explicit refusal, do not guess) in any of the following cases:
+**Refusal catalogue table**
 
 | # | Situation | Reason |
-|---|---|---|
+| --- | --- | --- |
 | R-SA-WHT-1 | Zakat computation for Saudi/GCC-owned entities | Out of scope — route to `sa-zakat`. |
 | R-SA-WHT-2 | Corporate Income Tax (CIT) on resident non-GCC-owned entities or PEs of non-residents | Out of scope — route to `sa-corporate-tax`. |
 | R-SA-WHT-3 | VAT, e-invoicing (FATOORA), or selective tax | Out of scope — see `saudi-arabia-vat` and `saudi-einvoice`. |
@@ -117,18 +117,18 @@ Refuse the engagement (explicit refusal, do not guess) in any of the following c
 | R-SA-WHT-11 | Pillar Two top-up tax computation requiring WHT credit modelling | Specialist — refer to a Pillar Two practitioner; this skill flags the interaction only. |
 | R-SA-WHT-12 | Expatriate employee levy or work-permit fees | Not WHT — separate Ministry of Human Resources regime. |
 
----
-
 ## Section 3 — Tier 1 — common categories and rates
 
 ### 3.1 Statutory basis
 
-WHT is imposed by **Article 68 of the Saudi Income Tax Law** (Royal Decree No. M/1 dated 15/1/1425H, 15 March 2004) and elaborated in **Articles 63–67 of the Implementing Regulations** (Ministerial Resolution No. 1535 dated 11/6/1425H). The tax applies to amounts paid by a Saudi-resident payer or by a Saudi PE of a non-resident to a non-resident recipient on Saudi-source income.
+- **Statutory basis** — WHT is imposed by Article 68 of the Saudi Income Tax Law (Royal Decree No. M/1 dated 15/1/1425H, 15 March 2004) and elaborated in Articles 63–67 of the Implementing Regulations (Ministerial Resolution No. 1535 dated 11/6/1425H). The tax applies to amounts paid by a Saudi-resident payer or by a Saudi PE of a non-resident to a non-resident recipient on Saudi-source income.  _(Article 68 of the Saudi Income Tax Law; Articles 63–67 of the Implementing Regulations)_
 
 ### 3.2 The standard rate table (Article 68(a))
 
+**Standard rate table**  _(Article 68(a))_
+
 | Category | Article 68(a) sub-paragraph | Rate |
-|---|---|---|
+| --- | --- | --- |
 | Management fees | (1) | **20%** |
 | Royalties (including software, technical know-how, franchises, trademarks, etc.) | (2) | **15%** |
 | Payments for technical and consulting services from a **related party** | (3) | **15%** |
@@ -141,45 +141,29 @@ WHT is imposed by **Article 68 of the Saudi Income Tax Law** (Royal Decree No. M
 | Air freight and sea freight | (9) | 5% |
 | **Other payments** to non-residents not otherwise listed (catch-all) | (10) | **15%** |
 
-> **The 20% management fee rate is unique in the region** — it is one of the highest WHT rates on management fees globally and rarely reduced by treaty (most treaties do not have a specific "management fees" article, so the domestic 20% applies). Identify and isolate management fee components in mixed contracts to avoid over- or under-withholding.
+- **20% management fee rate note** — The 20% management fee rate is unique in the region — it is one of the highest WHT rates on management fees globally and rarely reduced by treaty (most treaties do not have a specific "management fees" article, so the domestic 20% applies). Identify and isolate management fee components in mixed contracts to avoid over- or under-withholding.
 
 ### 3.3 Saudi-source income definition (Article 5 Income Tax Law)
 
-WHT under Article 68 applies only to **Saudi-source** income. Article 5 deems income to be Saudi-source where it arises from:
-
-- An activity carried out in KSA, or
-- A property situated in KSA, or
-- Services rendered to a Saudi resident, OR services utilised in KSA (the "use" test — even if performed offshore),
-- The use of a right or intangible in KSA (for royalties),
-- A loan secured against KSA assets or used in KSA.
-
-**The "use" test for services is broad.** Even services performed entirely offshore by a non-resident can be deemed Saudi-source if the benefit is consumed in KSA. ZATCA applies this broadly to consulting, technical, and management services.
+- **Saudi-source income** — WHT under Article 68 applies only to Saudi-source income. Article 5 deems income to be Saudi-source where it arises from: An activity carried out in KSA, or a property situated in KSA, or services rendered to a Saudi resident, OR services utilised in KSA (the "use" test — even if performed offshore), the use of a right or intangible in KSA (for royalties), a loan secured against KSA assets or used in KSA.  _(Article 5 Income Tax Law)_
+- **The 'use' test for services** — The "use" test for services is broad. Even services performed entirely offshore by a non-resident can be deemed Saudi-source if the benefit is consumed in KSA. ZATCA applies this broadly to consulting, technical, and management services.  _(Article 5 Income Tax Law)_
 
 ### 3.4 Tax base — gross, no deductions
 
-WHT under Article 68 is computed on the **gross amount paid**, with no deduction for costs, expenses, agent fees, or any other amounts. There is no input-VAT stripping (VAT is a separate tax and does not interact with WHT base).
-
-If the contract is **net of WHT** ("gross-up" clause — the non-resident receives 100 and the Saudi payer bears the WHT), the payer must gross up the contract before applying the rate, as follows:
-
-- Gross-up base = net amount / (1 − rate)
-- Example: SAR 100,000 net to non-resident at 15% royalty rate → gross-up base = 100,000 / 0.85 = **SAR 117,647.06** → WHT = SAR 17,647.06.
+- **Gross tax base rule** — WHT under Article 68 is computed on the gross amount paid, with no deduction for costs, expenses, agent fees, or any other amounts. There is no input-VAT stripping (VAT is a separate tax and does not interact with WHT base).  _(Article 68)_
+- **Gross-up base formula** — If the contract is net of WHT ("gross-up" clause — the non-resident receives 100 and the Saudi payer bears the WHT), the payer must gross up the contract before applying the rate, as follows: Gross-up base = net amount / (1 − rate). Example: SAR 100,000 net to non-resident at 15% royalty rate → gross-up base = 100,000 / 0.85 = SAR 117,647.06 → WHT = SAR 17,647.06.  _(Article 68)_
 
 ### 3.5 No de minimis
 
-There is no de minimis exemption under Article 68. Every payment to a non-resident on Saudi-source income is in scope, regardless of value.
+- **No de minimis exemption** — There is no de minimis exemption under Article 68. Every payment to a non-resident on Saudi-source income is in scope, regardless of value.  _(Article 68)_
 
 ### 3.6 WHT is final for the non-resident
 
-WHT under Article 68 is the **final and only** Saudi tax liability for the non-resident on the income concerned (Article 68(c)). The non-resident is not required to file a Saudi tax return for that income and cannot claim a credit or refund in KSA. However:
-
-- The non-resident may claim a credit in its **home jurisdiction** for the Saudi WHT, subject to that jurisdiction's domestic credit rules and the relevant DTT.
-- Where the non-resident in fact has a Saudi PE, the payment is attributable to the PE and falls under CIT — Article 68 then does not apply (Article 68(d)).
+- **WHT is final** — WHT under Article 68 is the final and only Saudi tax liability for the non-resident on the income concerned (Article 68(c)). The non-resident is not required to file a Saudi tax return for that income and cannot claim a credit or refund in KSA. However: The non-resident may claim a credit in its home jurisdiction for the Saudi WHT, subject to that jurisdiction's domestic credit rules and the relevant DTT. Where the non-resident in fact has a Saudi PE, the payment is attributable to the PE and falls under CIT — Article 68 then does not apply (Article 68(d)).  _(Article 68(c); Article 68(d))_
 
 ### 3.7 Payer liability
 
-The Saudi-resident payer is **primarily and personally liable** for the WHT (Article 68(b)). If the payer fails to deduct, ZATCA pursues the **payer**, not the non-resident. The payer cannot generally recover the under-withheld amount from the non-resident retrospectively unless contractually entitled.
-
----
+- **Payer liability** — The Saudi-resident payer is primarily and personally liable for the WHT (Article 68(b)). If the payer fails to deduct, ZATCA pursues the payer, not the non-resident. The payer cannot generally recover the under-withheld amount from the non-resident retrospectively unless contractually entitled.  _(Article 68(b))_
 
 ## Section 4 — Tier 2 — treaty rates, mixed-source transactions, capital gains
 
@@ -189,8 +173,10 @@ Saudi Arabia has built a wide DTT network — at the time of writing the princip
 
 ### 4.2 Common treaty caps — illustrative matrix
 
+**Common treaty caps — illustrative matrix**
+
 | Country | Dividends | Interest | Royalties | Notes |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | United Kingdom | 5% / 15% | 0% (govt) / 7.5% | 5% (equipment) / 8% (other) | DTT 2007 |
 | France | 5% (substantial holding) / 15% | 0% (govt) / 5% (banks) / 10% | 5% (industrial/scientific) / 10% (other) | DTT 1981 (in force long-standing) |
 | China | 5% | 10% | 10% | DTT 2006 |
@@ -205,72 +191,28 @@ Saudi Arabia has built a wide DTT network — at the time of writing the princip
 | Russia | 5% | 5% | 10% | DTT 2010 (verify current standing) |
 | Turkey | 5% / 10% | 10% | 10% | DTT 2007 |
 
-> **GCC residents.** Although the GCC has long-standing economic-integration agreements, Saudi domestic WHT under Article 68 still applies to payments to non-Saudi GCC residents in principle, **unless** the recipient is GCC-owned and qualifies for Zakat treatment, or a specific GCC-internal exemption applies. **Verify in each case** — do not assume a blanket GCC exemption.
-
-> **Treaty relief mechanics.** ZATCA grants treaty relief on a **withhold-then-refund** basis in most cases:
-> - The Saudi payer withholds at the **statutory rate** (e.g. 15% on royalties).
-> - The non-resident submits a refund claim to ZATCA with:
->   - A valid **Tax Residence Certificate (TRC)** from the home tax authority for the relevant year;
->   - Evidence of beneficial ownership;
->   - The original Saudi WHT certificate issued by the payer;
->   - The relevant treaty article and computation showing the reduced rate.
-> - **Direct application of the treaty rate at source** is permitted in limited cases and only with ZATCA pre-approval — do NOT apply the treaty rate at source without confirmed approval.
+- **GCC residents note** — Although the GCC has long-standing economic-integration agreements, Saudi domestic WHT under Article 68 still applies to payments to non-Saudi GCC residents in principle, unless the recipient is GCC-owned and qualifies for Zakat treatment, or a specific GCC-internal exemption applies. Verify in each case — do not assume a blanket GCC exemption.
+- **Treaty relief mechanics** — ZATCA grants treaty relief on a withhold-then-refund basis in most cases: The Saudi payer withholds at the statutory rate (e.g. 15% on royalties). The non-resident submits a refund claim to ZATCA with: A valid Tax Residence Certificate (TRC) from the home tax authority for the relevant year; Evidence of beneficial ownership; The original Saudi WHT certificate issued by the payer; The relevant treaty article and computation showing the reduced rate. Direct application of the treaty rate at source is permitted in limited cases and only with ZATCA pre-approval — do NOT apply the treaty rate at source without confirmed approval.
 
 ### 4.3 Beneficial ownership and anti-abuse
 
-Most Saudi DTTs include a **beneficial ownership** requirement and many include limitation-of-benefits (LOB) or principal-purpose-test (PPT) clauses (especially post-BEPS MLI ratification). ZATCA will deny treaty relief where:
-
-- The recipient is a conduit, agent, or nominee for the true beneficial owner;
-- The arrangement's principal purpose was to obtain the treaty benefit;
-- The recipient has no substance in the treaty country.
-
-Saudi Arabia is a signatory to the OECD **Multilateral Instrument (MLI)** and applies the PPT to most of its treaties post-ratification.
+- **Beneficial ownership and anti-abuse rule** — Most Saudi DTTs include a beneficial ownership requirement and many include limitation-of-benefits (LOB) or principal-purpose-test (PPT) clauses (especially post-BEPS MLI ratification). ZATCA will deny treaty relief where: The recipient is a conduit, agent, or nominee for the true beneficial owner; The arrangement's principal purpose was to obtain the treaty benefit; The recipient has no substance in the treaty country. Saudi Arabia is a signatory to the OECD Multilateral Instrument (MLI) and applies the PPT to most of its treaties post-ratification.
 
 ### 4.4 Mixed-source transactions
 
-Where a contract has both KSA-source and non-KSA-source components (e.g. consulting partly performed in KSA, partly offshore; a software licence covering both KSA and non-KSA users), only the **KSA-source portion** is subject to WHT.
-
-Apportionment must be:
-
-- Reasonable, objective, and supported by underlying records (timesheets, user counts, asset locations, etc.);
-- Documented in the contract or a separate apportionment schedule;
-- Applied consistently across the engagement.
-
-ZATCA will challenge weak apportionments and default to a **full KSA-source treatment** if the apportionment cannot be substantiated. **Conservative default: treat the full amount as KSA-source unless apportionment is documented and defensible.**
+- **Mixed-source transactions rule** — Where a contract has both KSA-source and non-KSA-source components (e.g. consulting partly performed in KSA, partly offshore; a software licence covering both KSA and non-KSA users), only the KSA-source portion is subject to WHT. Apportionment must be: Reasonable, objective, and supported by underlying records (timesheets, user counts, asset locations, etc.); Documented in the contract or a separate apportionment schedule; Applied consistently across the engagement. ZATCA will challenge weak apportionments and default to a full KSA-source treatment if the apportionment cannot be substantiated. Conservative default: treat the full amount as KSA-source unless apportionment is documented and defensible.
 
 ### 4.5 Capital gains by non-residents
 
-Capital gains realised by a non-resident on the disposal of Saudi-source assets (e.g. shares in a Saudi company, real estate situated in KSA, intangibles registered in KSA) are subject to Saudi tax under Article 68(a)(catch-all) at **20%** on the gain (cost basis vs disposal proceeds). Exceptions:
-
-- **Disposals of shares listed on Tadawul (the Saudi Exchange)** are generally **exempt** under Article 6 Income Tax Law and the implementing regulations, provided the disposal is on the exchange itself.
-- Disposals of unlisted Saudi shares between non-residents may still attract Saudi tax — verify substance and treaty position.
-- Most Saudi DTTs allocate taxing rights on capital gains to the source state for **real estate** and for **shares deriving more than 50% of value from real estate** (Article 13 OECD MC); other share gains are typically taxed only in the state of residence.
-
-Capital gains computation is complex — refuse without a full valuation, cost basis, and treaty analysis (see Section 2.2 R-SA-WHT-7).
+- **Capital gains by non-residents** — Capital gains realised by a non-resident on the disposal of Saudi-source assets (e.g. shares in a Saudi company, real estate situated in KSA, intangibles registered in KSA) are subject to Saudi tax under Article 68(a)(catch-all) at 20% on the gain (cost basis vs disposal proceeds). Exceptions: Disposals of shares listed on Tadawul (the Saudi Exchange) are generally exempt under Article 6 Income Tax Law and the implementing regulations, provided the disposal is on the exchange itself. Disposals of unlisted Saudi shares between non-residents may still attract Saudi tax — verify substance and treaty position. Most Saudi DTTs allocate taxing rights on capital gains to the source state for real estate and for shares deriving more than 50% of value from real estate (Article 13 OECD MC); other share gains are typically taxed only in the state of residence. Capital gains computation is complex — refuse without a full valuation, cost basis, and treaty analysis (see Section 2.2 R-SA-WHT-7).  _(Article 68(a); Article 6 Income Tax Law; Article 13 OECD MC)_
 
 ### 4.6 Pillar Two interaction
 
-Saudi Arabia has indicated its intention to implement the **OECD Pillar Two** Global Minimum Tax (GloBE rules — Qualified Domestic Minimum Top-up Tax or QDMTT) in line with the international framework. Where Pillar Two applies:
-
-- Saudi WHT paid by a Saudi entity on payments to a non-resident group affiliate is **included** in the GloBE effective tax rate (ETR) computation of the recipient jurisdiction (creditable under Pillar Two rules), reducing the top-up.
-- Conversely, WHT borne by a Saudi recipient (the inverse case — Saudi entity earning income from abroad subject to foreign WHT) is creditable in the Saudi GloBE computation.
-
-**This skill does NOT compute Pillar Two top-up.** Flag the interaction and refer to a Pillar Two specialist (Section 2.2 R-SA-WHT-11).
+- **Pillar Two interaction** — Saudi Arabia has indicated its intention to implement the OECD Pillar Two Global Minimum Tax (GloBE rules — Qualified Domestic Minimum Top-up Tax or QDMTT) in line with the international framework. Where Pillar Two applies: Saudi WHT paid by a Saudi entity on payments to a non-resident group affiliate is included in the GloBE effective tax rate (ETR) computation of the recipient jurisdiction (creditable under Pillar Two rules), reducing the top-up. Conversely, WHT borne by a Saudi recipient (the inverse case — Saudi entity earning income from abroad subject to foreign WHT) is creditable in the Saudi GloBE computation. This skill does NOT compute Pillar Two top-up. Flag the interaction and refer to a Pillar Two specialist (Section 2.2 R-SA-WHT-11).
 
 ### 4.7 Permanent Establishment (PE) risk
 
-A non-resident receiving payments from a Saudi resident may inadvertently create a **Permanent Establishment** in KSA under Article 4 Income Tax Law or the relevant DTT PE article. Indicators include:
-
-- A fixed place of business in KSA (office, branch, warehouse);
-- An agent in KSA habitually concluding contracts on the non-resident's behalf;
-- Provision of services in KSA exceeding the treaty-specified threshold (typically 183 days in a 12-month period under most Saudi DTTs);
-- A construction or installation site lasting longer than the treaty threshold (typically 6 months).
-
-If a PE exists, the payment is attributable to the PE and falls under **CIT at 20%** (or the applicable hydrocarbon rate), with normal deduction rules — NOT under Article 68 WHT. Article 68 then does not apply (Article 68(d)).
-
-**The PE risk is greater than the WHT risk in many engagements** — a 5%/15% WHT exposure can transform into a 20% CIT liability on net profits plus registration obligations, late-filing penalties, and director-level personal exposure. Flag any engagement with extended on-the-ground presence.
-
----
+- **PE risk indicators and treatment** — A non-resident receiving payments from a Saudi resident may inadvertently create a Permanent Establishment in KSA under Article 4 Income Tax Law or the relevant DTT PE article. Indicators include: A fixed place of business in KSA (office, branch, warehouse); An agent in KSA habitually concluding contracts on the non-resident's behalf; Provision of services in KSA exceeding the treaty-specified threshold (typically 183 days in a 12-month period under most Saudi DTTs); A construction or installation site lasting longer than the treaty threshold (typically 6 months). If a PE exists, the payment is attributable to the PE and falls under CIT at 20% (or the applicable hydrocarbon rate), with normal deduction rules — NOT under Article 68 WHT. Article 68 then does not apply (Article 68(d)). The PE risk is greater than the WHT risk in many engagements — a 5%/15% WHT exposure can transform into a 20% CIT liability on net profits plus registration obligations, late-filing penalties, and director-level personal exposure. Flag any engagement with extended on-the-ground presence.  _(Article 4 Income Tax Law; Article 68(d))_
 
 ## Section 5 — Worked examples
 
@@ -284,7 +226,7 @@ Saudi LLC pays a UK-resident software company SAR 500,000 for an annual SaaS lic
 - Rate: 15% (royalty, statutory non-resident rate)
 - WHT: **SAR 75,000**
 - Net paid to UK: SAR 425,000
-- Saudi LLC remits SAR 75,000 to ZATCA via the portal **within 10 days of the end of the month of payment**.
+- Saudi LLC remits SAR 75,000 to ZATCA via the portal within 10 days of the end of the month of payment.
 - UK company may claim refund of the differential (15% − 8% treaty cap = 7% = SAR 35,000) by submitting a TRC and refund claim to ZATCA post-payment.
 
 **Scenario B — valid HMRC TRC pre-approved by ZATCA for treaty-rate-at-source.**
@@ -317,74 +259,54 @@ Saudi LLC pays its German parent SAR 600,000 for technical engineering services 
 - WHT: **SAR 90,000**
 - Net paid to Germany: SAR 510,000
 - Saudi LLC remits SAR 90,000 to ZATCA within 10 days.
-- If a valid TRC were on file, the Saudi–Germany DTT services article would need to be checked; many older Saudi treaties (including the Germany 2007 treaty) have **limited service article coverage** — the 15% domestic rate may stand. **Verify the specific treaty text.**
+- If a valid TRC were on file, the Saudi–Germany DTT services article would need to be checked; many older Saudi treaties (including the Germany 2007 treaty) have limited service article coverage — the 15% domestic rate may stand. Verify the specific treaty text.
 
 ### 5.4 Mixed contract — supply + installation
 
 Saudi LLC contracts a French supplier for: (a) supply of equipment (CIF Jeddah) — EUR 2,000,000, and (b) on-site installation and training in KSA — EUR 500,000. Total EUR 2,500,000. Contract clearly separates the two components.
 
-- Component (a) — supply of goods: **NOT a service** — outside Article 68. (Customs duty and VAT on import apply separately.)
+- Component (a) — supply of goods: NOT a service — outside Article 68. (Customs duty and VAT on import apply separately.)
 - Component (b) — installation/training in KSA: services with KSA performance → in scope under Article 68(a)(3). If unrelated party: 5%. If related party: 15%.
 - Assume unrelated, no TRC pre-approval for treaty rate at source:
   - WHT base: EUR 500,000 × SAMA rate (assume SAR 4.10 / EUR) = SAR 2,050,000
   - WHT at 5%: **SAR 102,500**
 - The supply component (a) is not withheld.
-- **If the contract had NOT separated the two components**, ZATCA would default to treating the **entire SAR 10,250,000** as services in scope → WHT 5% = SAR 512,500. Apportionment must be documented in the contract.
-
----
+- If the contract had NOT separated the two components, ZATCA would default to treating the entire SAR 10,250,000 as services in scope → WHT 5% = SAR 512,500. Apportionment must be documented in the contract.
 
 ## Section 6 — Filing and payment
 
 ### 6.1 Tax point
 
-The WHT obligation arises at the **earlier** of (Article 68(b) Income Tax Law and Article 63 Implementing Regulations):
-
-- The date of actual payment to the non-resident, or
-- The date the cost is accrued / liability credited in the payer's books / invoice booked in payables.
-
-For accrual-basis companies, the tax point is typically the invoice booking date.
+- **Tax point definition** — The WHT obligation arises at the earlier of: The date of actual payment to the non-resident, or the date the cost is accrued / liability credited in the payer's books / invoice booked in payables. For accrual-basis companies, the tax point is typically the invoice booking date.  _(Article 68(b) Income Tax Law and Article 63 Implementing Regulations)_
 
 ### 6.2 Monthly WHT return — 10 days after month-end
 
-The Saudi-resident payer files a **monthly WHT return** on the ZATCA portal listing all WHT-attracting payments made (or accrued) during the month, with for each payment:
-
-- Recipient name, country of tax residence, and tax ID;
-- Nature of the payment (per Article 68(a) category);
-- Gross amount paid (in SAR, converted at the SAMA reference rate on the tax-point date);
-- WHT rate applied;
-- WHT amount;
-- Whether treaty relief is claimed (with TRC reference, if so);
-- Contract reference and invoice number.
-
-The monthly return is filed and the WHT is remitted via the **ZATCA portal** (https://zatca.gov.sa) **within 10 days of the end of the month** of payment. Payment is by SADAD bill or bank transfer to the ZATCA designated account.
+- **Monthly WHT return requirements** — The Saudi-resident payer files a monthly WHT return on the ZATCA portal listing all WHT-attracting payments made (or accrued) during the month, with for each payment: Recipient name, country of tax residence, and tax ID; Nature of the payment (per Article 68(a) category); Gross amount paid (in SAR, converted at the SAMA reference rate on the tax-point date); WHT rate applied; WHT amount; Whether treaty relief is claimed (with TRC reference, if so); Contract reference and invoice number. The monthly return is filed and the WHT is remitted via the ZATCA portal (https://zatca.gov.sa) within 10 days of the end of the month of payment. Payment is by SADAD bill or bank transfer to the ZATCA designated account.
 
 ### 6.3 WHT certificate for the recipient
 
-For each WHT-attracting payment, the Saudi payer issues a **WHT certificate** to the non-resident recipient on the ZATCA-prescribed format, showing the gross amount, rate, WHT deducted, period, and the unique ZATCA reference number. The non-resident uses the certificate to claim a credit in its home jurisdiction.
+- **WHT certificate requirement** — For each WHT-attracting payment, the Saudi payer issues a WHT certificate to the non-resident recipient on the ZATCA-prescribed format, showing the gross amount, rate, WHT deducted, period, and the unique ZATCA reference number. The non-resident uses the certificate to claim a credit in its home jurisdiction.
 
 ### 6.4 Annual reconciliation
 
-Within **120 days of the payer's financial year-end**, the payer files an **annual WHT reconciliation** on the ZATCA portal, reconciling the monthly returns to the annual financial statements and identifying any discrepancies. ZATCA may issue queries based on mismatches.
+- **Annual reconciliation deadline** — Within 120 days of the payer's financial year-end, the payer files an annual WHT reconciliation on the ZATCA portal, reconciling the monthly returns to the annual financial statements and identifying any discrepancies. ZATCA may issue queries based on mismatches.
 
 ### 6.5 Penalties for non-compliance
 
-- **Late remittance**: penalty of **1% of the unpaid tax for each 30 days of delay** (Article 76 Income Tax Law) — calculated from the original 10-day-post-month-end deadline.
-- **Failure to file the monthly return**: administrative penalty (typically SAR 1,000 – SAR 10,000 per return, depending on payer size).
-- **Failure to deduct or under-deduction**: the payer is personally liable for the unpaid tax plus the 1%-per-30-days delay penalty. ZATCA assesses on the payer directly and does not pursue the non-resident.
-- **Wilful evasion** (gross under-reporting, fraudulent treaty claims): additional penalty up to **25% of the tax due** and potential criminal referral.
+- **Penalties for non-compliance** — Late remittance: penalty of 1% of the unpaid tax for each 30 days of delay (Article 76 Income Tax Law) — calculated from the original 10-day-post-month-end deadline. Failure to file the monthly return: administrative penalty (typically SAR 1,000 – SAR 10,000 per return, depending on payer size). Failure to deduct or under-deduction: the payer is personally liable for the unpaid tax plus the 1%-per-30-days delay penalty. ZATCA assesses on the payer directly and does not pursue the non-resident. Wilful evasion (gross under-reporting, fraudulent treaty claims): additional penalty up to 25% of the tax due and potential criminal referral.  _(Article 76 Income Tax Law)_
 
 ### 6.6 Limitation period
 
-ZATCA may assess WHT for **5 years** from the end of the year in which the payment was made (Article 65 Income Tax Law). The 5-year period is extended to **10 years** in cases of fraud or wilful evasion.
-
----
+- **Limitation period** — ZATCA may assess WHT for 5 years from the end of the year in which the payment was made. The 5-year period is extended to 10 years in cases of fraud or wilful evasion.  _(Article 65 Income Tax Law)_
 
 ## Section 7 — Conservative defaults
 
-When any input is ambiguous, missing, or contested, default to the position that **minimises the risk of under-withholding** — under-withholding makes the Saudi payer personally liable, whereas over-withholding allows the non-resident to claim a refund (administratively burdensome but available).
+When any input is ambiguous, missing, or contested, default to the position that minimises the risk of under-withholding — under-withholding makes the Saudi payer personally liable, whereas over-withholding allows the non-resident to claim a refund (administratively burdensome but available).
+
+**Conservative defaults table**
 
 | Ambiguity | Conservative default |
-|---|---|
+| --- | --- |
 | Recipient residence unclear (KSA vs offshore) | Treat as non-resident → apply Article 68 WHT |
 | Recipient may have a Saudi PE | Refuse — PE risk is greater than WHT risk; refer for PE analysis under CIT |
 | Resident payer vs Saudi PE of foreign entity | Both attract Article 68 obligation — apply WHT |
@@ -402,9 +324,9 @@ When any input is ambiguous, missing, or contested, default to the position that
 | Article 68(a)(10) "other payments" catch-all unclear | Apply 15% (Article 68(a)(10) rate); do NOT default to a lower category without documentary support |
 | Pillar Two interaction | Flag and refer; do not compute Pillar Two top-up in this skill |
 
-The general principle: **withhold the higher rate and let the recipient claim a refund**. A refund claim from ZATCA, while administratively heavy, is preferable to under-withholding and assessment of the Saudi payer 5 years later with 1%-per-30-days delay penalty (which can exceed the underlying tax in 8 years).
+## Section 7 — Conservative defaults
 
----
+The general principle: withhold the higher rate and let the recipient claim a refund. A refund claim from ZATCA, while administratively heavy, is preferable to under-withholding and assessment of the Saudi payer 5 years later with 1%-per-30-days delay penalty (which can exceed the underlying tax in 8 years).
 
 ## Section 8 — Sources
 
@@ -427,8 +349,6 @@ The general principle: **withhold the higher rate and let the recipient claim a 
 **Portals.**
 - **ZATCA portal** — https://zatca.gov.sa — monthly WHT return, annual reconciliation, treaty refund claims, TRC pre-approvals.
 
----
-
 ## Section 9 — Cross-references
 
 - For Saudi Zakat (the Saudi/GCC-owned entity charge) → see `sa-zakat.md`.
@@ -438,37 +358,34 @@ The general principle: **withhold the higher rate and let the recipient claim a 
 - For Saudi client intake and identity verification → see `intake.md`.
 - For Saudi foundation (currency, calendar, authority, general principles) → see `foundation.md`.
 
----
+## Skill version 1.0. Tax year 2025. Pending sign-off by a SOCPA-licensed Saudi tax practitioner. Pillar Two GloBE rules and KSA QDMTT implementation are evolving — do not rely on this skill for top-up tax computation. Treaty relief at source requires ZATCA pre-approval — do not apply treaty rates without confirmed approval.
 
-*Skill version 1.0. Tax year 2025. Pending sign-off by a SOCPA-licensed Saudi tax practitioner. Pillar Two GloBE rules and KSA QDMTT implementation are evolving — do not rely on this skill for top-up tax computation. Treaty relief at source requires ZATCA pre-approval — do not apply treaty rates without confirmed approval.*
-
----
-
-<!-- openaccountants-cta-block -->
+Skill version 1.0. Tax year 2025. Pending sign-off by a SOCPA-licensed Saudi tax practitioner. Pillar Two GloBE rules and KSA QDMTT implementation are evolving — do not rely on this skill for top-up tax computation. Treaty relief at source requires ZATCA pre-approval — do not apply treaty rates without confirmed approval.
 
 ## Talk to a verified accountant
 
-This skill is a tool, not an engagement. Every taxpayer's situation is
-different, and the rules in the skill may not match your specific facts.
+This skill is a tool, not an engagement. Every taxpayer's situation is different, and the rules in the skill may not match your specific facts.
 
-To speak with one of the licensed accountants who verifies skills for your
-jurisdiction — **no liability on either side until you and the accountant sign
-a formal engagement letter** — book a free 30-minute call:
+To speak with one of the licensed accountants who verifies skills for your jurisdiction — no liability on either side until you and the accountant sign a formal engagement letter — book a free 30-minute call:
 
-**→ [Book a call](https://calendly.com/openaccountants-info/30min)**
+→ [Book a call](https://calendly.com/openaccountants-info/30min)
 
-We'll route you to the named verifier covering your country or state. You can
-also see the full list of verified accountants at
-[openaccountants.com/network](https://www.openaccountants.com/network).
+We'll route you to the named verifier covering your country or state. You can also see the full list of verified accountants at [openaccountants.com/network](https://openaccountants.com/network).
 
-<!-- openaccountants-mcp-cta -->
+<!-- openaccountants-cta-block -->
 
-## The accountant-verified version lives in the connector
+---
 
-This file is the open, **research-grade draft**. The **accountant-verified**
-version of this skill is **not published to GitHub** — it is delivered free
-through the OpenAccountants MCP connector, where your AI agent loads the
-verified rules together with the name of the accountant who signed them off.
+## Talk to a verified accountant
 
-**→ Install the free connector:** <https://www.openaccountants.com/connect>
-**MCP endpoint:** `https://www.openaccountants.com/api/mcp`
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

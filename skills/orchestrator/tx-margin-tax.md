@@ -2,17 +2,18 @@
 name: tx-margin-tax
 description: Deep content skill for the Texas Franchise (Margin) Tax imposed under Texas Tax Code Chapter 171.
 jurisdiction: US-TX
-domain: tax
 tax_year: 2025
+last_updated: 2026-07-10
+verified_by: pending
 tier: 2
-last_updated: 2026-07-06
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# tx-margin-tax
+# TX Margin Tax
 
 ## tx-margin-tax — Texas Franchise (Margin) Tax
 
-Deep content skill for the Texas Franchise Tax ("margin tax") imposed under Texas Tax Code Chapter 171. Covers taxable entities doing business in Texas — corporations, LLCs, limited partnerships, LLPs, business trusts, and professional associations. Sole proprietors and general partnerships of natural persons are exempt. No-tax-due threshold is $2.47M total revenue (2024–2025 rate years). Retail/wholesale rate is 0.375%; standard rate is 0.75%. Margin equals the LOWEST of: total revenue × 70%; revenue minus COGS; revenue minus compensation; revenue minus $1M. Report due May 15; PIR/OIR mandatory. Tax year 2025 (report year 2026).
+Deep content skill for the Texas Franchise Tax ("margin tax") imposed under Texas Tax Code Chapter 171. Covers taxable entities doing business in Texas — corporations, LLCs, limited partnerships, LLPs, business trusts, and professional associations. Sole proprietors and general partnerships of natural persons are exempt. No-tax-due threshold is $2.65M total revenue for report years 2026–2027 ($2.65M for report years 2024–2025). Retail/wholesale rate is 0.375%; standard rate is 0.75%. Margin equals the LOWEST of: total revenue × 70%; revenue minus COGS; revenue minus compensation; revenue minus $1M. Report due May 15; PIR/OIR mandatory. Tax year 2025 (report year 2026).
 
 ## 1. Scope
 
@@ -23,7 +24,7 @@ This skill produces a complete Texas Franchise Tax computation and filing packag
 The skill handles:
 
 1. Determining whether an entity is a **taxable entity** under Tex. Tax Code §171.0002 or is exempt (sole prop, general partnership of natural persons, passive entity, exempt nonprofit).
-2. Determining whether the entity is below the **no-tax-due threshold** of $2.47M of total revenue and whether it must still file the Public Information Report (PIR) or Ownership Information Report (OIR).
+2. Determining whether the entity is below the **no-tax-due threshold** of $2.65M for the 2026 report year of total revenue and whether it must still file the Public Information Report (PIR) or Ownership Information Report (OIR).
 3. Computing **total revenue** from federal Form 1120, 1120-S, 1065, or Schedule C reconciliations, with the statutory exclusions of §171.1011.
 4. Computing the **margin base** under §171.101 by selecting the lowest of the four statutory bases: 70% of total revenue; revenue minus COGS (§171.1012); revenue minus compensation (§171.1013); revenue minus $1,000,000.
 5. Applying **single gross-receipts apportionment** under §171.106 (Texas gross receipts ÷ everywhere gross receipts), including the market-based sourcing rule for services adopted by 34 Tex. Admin. Code §3.591 effective for reports due on or after January 1, 2021.
@@ -65,7 +66,7 @@ Texas uses **report year** terminology that is offset from the federal **tax yea
 
 - **Sole proprietorships** — Not a separate legal entity; not taxable.  _(§171.0002(b)–(d))_
 - **General partnerships (all-natural-person owners)** — General partnerships the *direct* owners of which are **all natural persons** — exempt. Note the natural-persons requirement: if even one partner is an LLC or corporation, the GP becomes a taxable entity.  _(§171.0002(b)–(d))_
-- **Passive entities** — Passive entities under §171.0003 — at least 90% of federal gross income is from passive sources (dividends, interest, royalties, capital gains from sale of real property, net gains from sale of commodities/securities, distributive shares from passive partnerships) AND not more than 10% from active conduct of a trade or business. Passive entities are exempt from franchise tax, but the old No Tax Due Report was discontinued for report years 2024 and later; verify the entity-specific PIR/OIR or exemption filing path with the Comptroller.  _(§171.0003)_
+- **Passive entities** — Passive entities under §171.0003 — at least 90% of federal gross income is from passive sources (dividends, interest, royalties, capital gains from sale of real property, net gains from sale of commodities/securities, distributive shares from passive partnerships) AND not more than 10% from active conduct of a trade or business. Passive entities are exempt from franchise tax, but the old No Tax Due Report was discontinued for report years 2024 and later; follow the Comptroller passive-entity filing path: E-Z Computation or Long Form with the passive-entity circle, generally no PIR/OIR.  _(§171.0003)_
 - **REITs** — Real Estate Investment Trusts (REITs) meeting §856 of the IRC and the Texas qualification rules.  _(§171.0002(b)–(d))_
 - **Nonprofits exempt under §171.063** — Nonprofits exempt under §171.063 (federal §501(c)(3), (4), (8), (10), (19) and similar) — must apply for the exemption with the Comptroller (Form AP-204).  _(§171.063)_
 - **Insurance companies subject to premium tax** — Insurance companies subject to premium tax under Ch. 221.  _(Ch. 221)_
@@ -74,7 +75,7 @@ Texas uses **report year** terminology that is offset from the federal **tax yea
 ### 2.3 The "doing business in Texas" nexus standard
 
 - **Nexus standard** — Nexus is established under §171.001 if the entity: Is organized in Texas, OR Has a Texas physical presence (office, employee, property, inventory), OR Has **economic nexus**: $500,000 or more of Texas gross receipts in a federal accounting period, under 34 Tex. Admin. Code §3.586 effective for reports due on or after January 1, 2020.  _(§171.001; 34 Tex. Admin. Code §3.586)_
-- **Economic nexus threshold** — $500,000 USD (Texas gross receipts in a federal accounting period; independent of the $2.47M no-tax-due threshold — an out-of-state entity with $600K of Texas sales has nexus and must file, but owes no tax because it is below the $2.47M threshold.)  _(34 Tex. Admin. Code §3.586)_
+- **Economic nexus threshold** — $500,000 USD (Texas gross receipts in a federal accounting period; independent of the $2.65M no-tax-due threshold for the 2026 report year — an out-of-state entity with $600K of Texas sales has nexus and must file, but owes no tax because it is below the $2.65M threshold.)  _(34 Tex. Admin. Code §3.586)_
 
 ### 2.4 Foreign entities — qualification with the Secretary of State
 
@@ -82,25 +83,25 @@ Texas uses **report year** terminology that is offset from the federal **tax yea
 
 ## 3. The no-tax-due threshold and the post-2024 filing simplification
 
-### 3.1 The $2.47M threshold
+### 3.1 The $2.65M threshold
 
-- **No-tax-due threshold, report years 2024 and 2025** — $2,470,000 USD (Total revenue; federal accounting periods ending in 2023 and 2024 respectively)  _(§171.006)_
-- **No-tax-due threshold, report years 2026 and 2027** — $2,650,000 USD (Published by the Texas Comptroller; biennially indexed for inflation. If the Comptroller publishes a later biennial indexation effective January 1, 2026, use that. The 2024–2025 figure of $2.47M is the safe default until indexation is reconfirmed.)  _(§171.006)_
-- **Effect of being at or below threshold** — If total revenue (apportioned and combined-group-aware) is **at or below** $2,470,000, the entity owes **$0** in franchise tax. The historical practice was to file **Form 05-163 No-Tax-Due Information Report** to claim the threshold. This has changed materially.  _(§171.006)_
+- **No-tax-due threshold, report years 2024 and 2025** — $2,470,000 USD (Total revenue; federal accounting periods ending in 2023 and 2024 respectively)  _([Texas Comptroller franchise tax no-tax-due threshold for report years 2024 and 2025](https://comptroller.texas.gov/taxes/franchise/forms/2026-franchise.php))_
+- **No-tax-due threshold, report years 2026 and 2027** — $2,650,000 USD (For the 2026 report, use the Comptroller-published $2.65M threshold; the 2024-2025 figure was $2.47M.)  _([Texas Comptroller 2026 Franchise Tax Report Forms](https://comptroller.texas.gov/taxes/franchise/forms/2026-franchise.php))_
+- **Effect of being at or below threshold** — For the 2026 report year, if annualized total revenue is at or below $2,650,000, the entity owes $0 franchise tax. The historical Form 05-163 No Tax Due Report is discontinued for report years 2024 and later; ordinary below-threshold entities file only the required PIR (Form 05-102) or OIR (Form 05-167), unless a specific exception applies.  _([Texas Comptroller No Tax Due Reporting for Report Year 2024 and Later; 2026 Franchise Tax Report Forms](https://comptroller.texas.gov/taxes/franchise/forms/2026-franchise.php))_
 
 ### 3.2 HB 1361 (88th Legislature, 2023) — elimination of the No-Tax-Due Report
 
 - **Elimination of No-Tax-Due Report requirement** — Effective for **reports originally due on or after January 1, 2024**, House Bill 1361 amended §171.204 to **eliminate the requirement** that taxable entities file a No-Tax-Due Report (Form 05-163) when total revenue is at or below the no-tax-due threshold. The Comptroller implemented this by retiring Form 05-163 for the 2024 and later report years.  _(§171.204 (HB 1361, 88th Legislature, 2023))_
-- **Practical effect for the 2026 report year** — 1. If total revenue ≤ $2,470,000: **no franchise tax return** (Forms 05-158 / 05-169 / 05-163) is required. 2. BUT the entity **must still file** the appropriate information report: - **Form 05-102 Public Information Report (PIR)** — for corporations, LLCs, banks, professional associations, financial institutions. - **Form 05-167 Ownership Information Report (OIR)** — for partnerships (LP/LLP) and other entities not required to file a PIR. 3. The PIR/OIR is still due **May 15, 2026**. 4. Failure to file the PIR/OIR results in forfeiture of corporate privileges under §171.251 even though no tax is owed. This simplification removes paperwork for the ~95% of Texas entities that fall below the threshold but does **not** eliminate the PIR/OIR — that remains a hard requirement.  _(§171.251; HB 1361)_
+- **Practical effect for the 2026 report year** — 1. If annualized total revenue <= $2,650,000: no No Tax Due Report and no franchise tax computation report is required for the ordinary below-threshold path; Form 05-163 is discontinued. 2. The entity generally must still file the appropriate information report: Form 05-102 Public Information Report (PIR) for corporations/LLCs and similar entities, or Form 05-167 Ownership Information Report (OIR) for partnerships and other OIR filers. 3. PIR/OIR remains due May 15, 2026. 4. Qualifying new veteran-owned businesses have a special five-year exception from both No Tax Due Report and PIR/OIR while they qualify. 5. Passive entities, REITs, and zero-Texas-gross-receipts entities follow the special E-Z/Long Form paths described by the Comptroller rather than the ordinary below-threshold PIR/OIR-only path.  _([Texas Comptroller 2026 Franchise Tax Report Forms; No Tax Due Reporting for Report Year 2024 and Later](https://comptroller.texas.gov/taxes/franchise/forms/2026-franchise.php))_
 
 ### 3.3 Passive entity certification
 
-- **Annual passive entity certification** — Passive entities under §171.0003 still must file an **annual certification** that the entity meets the 90% passive income test. For report years 2024+, this certification is incorporated into the PIR (an attestation block on Form 05-102). The standalone "Form 05-163 Passive" is retired.  _(§171.0003)_
+- **Annual passive entity certification** — For report years 2024 and later, a qualifying passive entity under §171.0003 must file either the E-Z Computation Report or the Long Form, blacken the passive-entity circle, complete the accounting-year fields, and sign the report. Passive entities need not file a PIR or OIR. The standalone Form 05-163 No Tax Due Report is retired.  _([Texas Comptroller No Tax Due Reporting for Report Year 2024 and Later; 2026 Franchise Tax Report Forms](https://comptroller.texas.gov/taxes/franchise/ntd-rpt-updates-2024.php))_
 
 ### 3.4 Decision tree
 
 ```
-Total revenue (apportioned) ≤ $2,470,000?
+Annualized total revenue ≤ $2,650,000?
 │
 ├── YES → No franchise tax return required.
 │        File PIR (05-102) or OIR (05-167) by May 15.
@@ -199,7 +200,7 @@ The simplest base. No documentation burden. Always available as a **floor / safe
 
 ### 5.6 Base 4: Total revenue minus $1,000,000
 
-- **Base 4 description and applicability** — A flat $1M deduction. No qualification required. Available to every taxable entity. Best for entities with revenue between $2.47M and ~$3.5M where neither COGS nor compensation produces a lower margin than 70% × revenue but $1M reduces it further.
+- **Base 4 description and applicability** — A flat $1M deduction. No qualification required. Available to every taxable entity. Best for entities with revenue between $2.65M and ~$3.5M where neither COGS nor compensation produces a lower margin than 70% × revenue but $1M reduces it further.
 
 Example: Revenue $3M, no COGS, $200K compensation.
 
@@ -305,7 +306,7 @@ EZ wins by $1,428.
 
 ### 8.2 Mechanics
 
-- **Combined reporting mechanics** — - A **single combined report** is filed by the **reporting entity** (typically the largest member or the parent). - **One $2.47M no-tax-due threshold** applies to the entire group, not per member. This is a significant anti-fragmentation rule — splitting a $10M business into four $2.5M LLCs does **not** avoid franchise tax if they are unitary. - **Combined total revenue** = sum of each member's total revenue, then **eliminate** intercompany transactions per §171.1014(c)(1). - **Combined margin** = computed at the group level by the 4-way test (the group elects one base — apply the test to combined revenue, combined COGS, combined compensation). - **Apportionment factor** = combined Texas receipts ÷ combined everywhere receipts. Joyce vs Finnigan: Texas follows **Finnigan** for combined groups — receipts of any member into Texas count even if that specific member lacks nexus. - **PIR** must be filed by each member that is a corporation or LLC; the group does not file a single PIR.  _(§171.1014(c)(1))_
+- **Combined reporting mechanics** — - A **single combined report** is filed by the **reporting entity** (typically the largest member or the parent). - **One $2.65M no-tax-due threshold for the 2026 report year** applies to the entire group, not per member. This is a significant anti-fragmentation rule — splitting a $10M business into four $2.5M LLCs does **not** avoid franchise tax if they are unitary. - **Combined total revenue** = sum of each member's total revenue, then **eliminate** intercompany transactions per §171.1014(c)(1). - **Combined margin** = computed at the group level by the 4-way test (the group elects one base — apply the test to combined revenue, combined COGS, combined compensation). - **Apportionment factor** = combined Texas receipts ÷ combined everywhere receipts. Joyce vs Finnigan: Texas follows **Finnigan** for combined groups — receipts of any member into Texas count even if that specific member lacks nexus. - **PIR** must be filed by each member that is a corporation or LLC; the group does not file a single PIR.  _(§171.1014(c)(1))_
 
 ### 8.3 The "passive entity" trap in combined groups
 
@@ -389,7 +390,7 @@ EZ wins by $1,428.
 
 1. **Taxable entity?** Yes — the LLC is a separate taxable entity for Texas franchise tax even though federally disregarded.
 2. **Apportioned total revenue:** $480,000 × 0.60 = $288,000.
-3. **No-tax-due threshold:** $288,000 < $2,470,000. **Below threshold. Tax due = $0.**
+3. **No-tax-due threshold:** $288,000 < $2,650,000. **Below threshold. Tax due = $0.**
 4. **Filing requirement:** Under HB 1361 post-2024 simplification, **no franchise tax return** (Forms 05-158 / 05-169) is required. PIR (Form 05-102) is still required.
 5. **PIR deadline:** May 15, 2026.
 
@@ -486,16 +487,16 @@ Before finalizing any Texas franchise tax output, the skill must run:
 
 1. **Entity classification check:** Confirm the entity is on the §171.0002(a) taxable-entity list. If sole prop / general partnership of natural persons → refuse with "exempt entity" and do not file.
 2. **Disregarded entity trap:** If the user's federal classification is "disregarded SMLLC," explicitly confirm the LLC is still a Texas taxable entity. Flag if the user assumed otherwise.
-3. **Threshold check:** Compare apportioned total revenue to $2,470,000. If below, route to PIR-only path under HB 1361. If above, route to long form / EZ analysis.
+3. **Threshold check:** Compare annualized total revenue to $2,650,000 for the 2026 report year. If below, route to PIR-only path under HB 1361. If above, route to long form / EZ analysis.
 4. **Both methods computed:** For any entity with revenue ≤ $20M and above threshold, the workpaper must show both long-form margin (with 4-way) and EZ computations. Choose lower.
 5. **Retail/wholesale qualification:** If user claims 0.375%, verify all four §171.002(c) criteria are documented.
-6. **Compensation cap:** Confirm no person's compensation exceeds the per-person cap ($450K for 2024–2025; verify 2026 figure). If any person is above the cap, haircut the deduction.
+6. **Compensation cap:** Confirm no person's compensation exceeds the per-person cap ($480K for report years 2026–2027; $450K for 2024–2025). If any person is above the cap, haircut the deduction.
 7. **Apportionment sourcing:** For service revenue, confirm market-based (customer principal office) sourcing, not cost-of-performance. Cite 34 TAC §3.591(e)(26).
 8. **Combined group check:** If any affiliated entity has > 50% common ownership and unitary operations, combined return is mandatory. The threshold applies once per group.
 9. **PIR/OIR filed:** Confirm PIR (corp/LLC) or OIR (LP/partnership) is included regardless of tax owed.
 10. **Due date and extension:** May 15. Extension via Form 05-164 only with proper payment of the safe-harbor amount.
 11. **Federal deduction recorded:** Franchise tax paid is deductible on the federal return — flag for federal workpapers.
-12. **Indexation refresh:** The $2.47M threshold, $20M EZ ceiling, and $450K compensation cap are biennially indexed. Refuse to proceed without confirming current-year figures.
+12. **Indexation refresh:** The $2.65M threshold, $20M EZ ceiling, and $450K compensation cap are biennially indexed. Refuse to proceed without confirming current-year figures.
 
 ## 14. Refusals — escalate to reviewer
 
@@ -561,11 +562,12 @@ This skill refuses to produce a final return without reviewer signoff in the fol
 
 ### 15.6 Version notes
 
-**Version notes table**  _(15.6 Version notes)_
+**Version notes table**  _([Texas Comptroller 2026 Franchise Tax Report Forms](https://comptroller.texas.gov/taxes/franchise/forms/2026-franchise.php))_
 
 | Version | Date | Notes |
 | --- | --- | --- |
-| 0.1 | 2025-11-15 | Initial drafting. Pending reviewer verification. 2026 indexation figures TBD — using 2024–2025 defaults ($2.47M threshold, $20M EZ ceiling, $450K compensation cap). Re-verify in January 2026 when biennial publication is released. |
+| 0.2 | 2026-07-10 | Updated 2026 Comptroller no-tax-due threshold ($2.65M), passive-entity filing path, and Form 05-163 retirement guidance. Pending accountant review. |
+| 0.1 | 2025-11-15 | Initial drafting. Pending reviewer verification. |
 
 ### 15.7 Ambiguity catalogue
 
@@ -608,3 +610,21 @@ a formal engagement letter** — book a free 30-minute call:
 We'll route you to the named verifier covering your country or state. You can
 also see the full list of verified accountants at
 [openaccountants.com/network](https://openaccountants.com/network).
+
+<!-- openaccountants-cta-block -->
+
+---
+
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

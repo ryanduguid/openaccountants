@@ -2,13 +2,14 @@
 name: ie-corporation-tax
 description: "Use this skill whenever asked about Irish Corporation Tax for a resident Irish company or branch of a non-resident company carrying on a trade in Ireland. Trigger on phrases like \"Ireland CT\", \"Ireland corporation tax\", \"12.5% Ireland\", \"Irish trading rate\", \"Pillar Two Ireland\", \"Irish CT1 return\", \"Revenue Online Service CT\", \"ROS CT1\", \"Section 21 TCA\", \"Section 21A passive income\", \"Knowledge Development Box\", \"KDB\", \"R&D tax credit Ireland\", \"Section 766\", \"Section 110 SPV\", \"group relief Ireland\", \"preliminary CT\", \"iXBRL accounts\", \"QDMTT Ireland\", \"IIR Ireland\", or \"UTPR Ireland\". Covers the 12.5% trading rate (Section 21 TCA 1997), the 25% non-trading rate (Section 21A) on passive income, the Pillar Two 15% effective minimum tax for in-scope MNEs implemented via Finance (No. 2) Act 2023 (IIR, QDMTT, UTPR), the R&D tax credit at 30% under Section 766 TCA (as raised by FA 2024) refundable in three instalments, the Knowledge Development Box at 6.25% effective rate, Section 110 securitisation SPV rules, group relief at the 75% threshold, trading loss relief (one-year carry-back, indefinite carry-forward), preliminary tax (90% current year or 100% prior year), and final CT1 filing within 9 months of year-end (by the 23rd of that month for ROS users) with iXBRL-tagged financial statements via Revenue Online Service. Out of scope: personal income tax (use ie-income-tax-form11), USC (use ie-usc), PRSI Class S (use ie-prsi-class-s), VAT (use ireland-vat-return), preliminary income tax (use ie-preliminary-tax), partnerships and unincorporated businesses, foreign branch trading profits taxed under Section 25 attribution rules, banking and insurance sector specific regimes, life assurance Case I/IV computations, REIT (Section 705A) and IREF (Section 739K) specific returns, petroleum and mineral extraction profits, and Irish Collective Asset-management Vehicles (ICAVs). ALWAYS read this skill before touching any Irish Corporation Tax work."
 jurisdiction: IE
-domain: international
 tax_year: 2025
+last_updated: 2026-05-27
+verified_by: pending
 tier: 2
-last_updated: 2026-07-06
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# ie-corporation-tax
+# IE Corporation Tax
 
 ## Ireland — Corporation Tax — Skill v1.0
 
@@ -610,3 +611,21 @@ a formal engagement letter** — book a free 30-minute call:
 We'll route you to the named verifier covering your country or state. You can
 also see the full list of verified accountants at
 [openaccountants.com/network](https://openaccountants.com/network).
+
+<!-- openaccountants-cta-block -->
+
+---
+
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

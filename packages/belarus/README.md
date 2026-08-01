@@ -7,7 +7,16 @@
 
 1. `foundation.md`
 2. `intake.md`
-3. `belarus-vat.md`
+3. `belarus-income-tax.md`
+4. `belarus-payroll.md`
+5. `belarus-social-contributions.md`
+6. `belarus-tax-optimization.md`
+7. `belarus-vat.md`
+8. `by-company-formation.md`
+9. `by-corporate-income-tax.md`
+10. `by-tax-overview.md`
+11. `payroll-workflow-base.md`
+12. `company-formation-workflow-base.md`
 
 ## How to use
 

@@ -2,13 +2,14 @@
 name: id-formation
 description: "Use this skill whenever asked about forming, incorporating, or registering a business in Indonesia. Trigger on phrases like \"Indonesia company formation\", \"set up PT Indonesia\", \"PT Perorangan\", \"register UD Indonesia\", \"OSS Indonesia\", \"PMA registration\", \"NIB\", \"Indonesia business setup\", \"CV Indonesia\", \"PT PMA\", \"BKPM\", \"Kementerian Investasi\", \"KBLI\", \"Positive Investment List\", or any question about choosing or registering an Indonesian entity. Covers entity comparison (UD, CV, PT, PT Perorangan, PMA), OSS RBA registration steps, NIB and NPWP issuance, KBLI classification, sectoral licensing, capital and ownership requirements, and tax treatment by entity type. Out of scope: immigration/visa/KITAS sponsorship, bank account opening procedures (mentioned only at a high level), full corporate governance and shareholder agreement drafting, sector-specific regulatory licensing beyond signposting. ALWAYS read this skill before advising on Indonesian entity choice or formation."
 jurisdiction: ID
-domain: international
 tax_year: 2025
+last_updated: 2026-05-27
+verified_by: RILIA PUTRI
 tier: 2
-last_updated: 2026-07-06
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# id-formation
+# ID Formation
 
 ## Indonesia Company Formation Skill v1.0
 
@@ -332,3 +333,21 @@ a formal engagement letter** — book a free 30-minute call:
 We'll route you to the named verifier covering your country or state. You can
 also see the full list of verified accountants at
 [openaccountants.com/network](https://openaccountants.com/network).
+
+<!-- openaccountants-cta-block -->
+
+---
+
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

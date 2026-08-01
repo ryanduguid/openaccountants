@@ -3,11 +3,13 @@ name: ng-payroll
 description: Use this skill whenever asked to compute, review, or advise on end-to-end Nigerian monthly payroll for employees — gross-to-net calculation, payslip generation, statutory deduction sequencing (Pension, NHF, NHIS, CRA, PAYE), employer remittance scheduling (PAYE to SIRS, Pension to PFC/PFA, NHF to FMBN, NSITF to NSITF), and year-end Form H1 reconciliation. Trigger on phrases like "Nigeria payroll", "compute Nigerian payroll", "Nigerian pay slip", "payslip Nigeria", "monthly payroll Nigeria", "payroll computation Nigeria", "PAYE and pension together", "deductions Nigeria", "gross to net Nigeria", "Lagos payroll", "LIRS payroll", "FIRS payroll", "Form H1 Nigeria", "annual payroll reconciliation Nigeria", or any request involving running monthly payroll for one or more employees in Nigeria. This skill is the ORCHESTRATOR — it pulls PAYE rules from `ng-paye` and statutory employer/employee contributions (Pension, NHF, NSITF, ITF, NHIS, EDT) from `ng-statutory-deductions` and sequences them into the correct computation order. ALWAYS read this skill before touching Nigerian payroll computation.
 jurisdiction: NG
 tax_year: 2025
+last_updated: 2026-05-27
+verified_by: Omolola Fasasi 
 tier: 2
-last_updated: 2026-07-06
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# ng-payroll
+# NG Payroll
 
 ## Nigeria — Payroll Computation (End-to-End) — Skill v1.0
 
@@ -436,3 +438,21 @@ a formal engagement letter** — book a free 30-minute call:
 We'll route you to the named verifier covering your country or state. You can
 also see the full list of verified accountants at
 [openaccountants.com/network](https://openaccountants.com/network).
+
+<!-- openaccountants-cta-block -->
+
+---
+
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

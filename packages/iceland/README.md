@@ -7,7 +7,16 @@
 
 1. `foundation.md`
 2. `intake.md`
-3. `iceland-vat.md`
+3. `iceland-income-tax.md`
+4. `iceland-payroll.md`
+5. `iceland-social-contributions.md`
+6. `iceland-tax-optimization.md`
+7. `iceland-vat.md`
+8. `is-company-formation.md`
+9. `is-corporate-income-tax.md`
+10. `is-tax-overview.md`
+11. `payroll-workflow-base.md`
+12. `company-formation-workflow-base.md`
 
 ## How to use
 

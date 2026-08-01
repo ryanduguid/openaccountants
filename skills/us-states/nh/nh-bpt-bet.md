@@ -1,14 +1,15 @@
 ---
-description: Source-cited tax guide for US-NH: nh bpt bet. Unverified draft, pending local-accountant review.
 name: nh-bpt-bet
+description: Source-cited tax guide for US-NH: nh bpt bet. Unverified draft, pending local-accountant review.
 jurisdiction: US-NH
-domain: Business Profits Tax (BPT) and Business Enterprise Tax (BET)
 tax_year: 2025
+last_updated: 2026-05-27
+verified_by: pending
 tier: 2
-last_updated: 2026-07-06
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# nh-bpt-bet
+# NH Bpt Bet
 
 ## New Hampshire Business Profits Tax (BPT) and Business Enterprise Tax (BET)
 
@@ -116,7 +117,7 @@ If the proprietor instead substantiates $150,000 of reasonable compensation (ind
 ### 2.9 §179 and depreciation timing differences
 
 - **Bonus depreciation non-conformity** — NH does not conform to federal bonus depreciation (§168(k)) at all. For an asset placed in service in 2025 that took 60% federal bonus, NH requires the asset to be depreciated using MACRS without bonus — creating a permanent year-of-acquisition timing difference that reverses over the asset's recovery period. Maintain a separate NH depreciation schedule from year one.
-- **§179 conformity** — For §179, NH currently conforms to the federal §179 limit as of the IRC reference date in RSA 77-A:1, XX. The 2025 IRC reference date should be confirmed against the NH DRA's published IRC update bulletin; if NH is still tied to a pre-OBBBA IRC, the federal §179 limit of $1,250,000 (2025) may differ from the NH limit.  _(RSA 77-A:1, XX)_
+- **§179 conformity** — For §179, NH currently conforms to the federal §179 limit as of the IRC reference date in RSA 77-A:1, XX. The 2025 IRC reference date should be confirmed against the NH DRA's published IRC update bulletin; if NH is still tied to a pre-OBBBA IRC, the federal §179 limit of $2,500,000 (2025, OBBBA) may differ from the NH limit.  _(RSA 77-A:1, XX)_
 
 ## 3. BPT filing threshold
 
@@ -522,3 +523,21 @@ a formal engagement letter** — book a free 30-minute call:
 We'll route you to the named verifier covering your country or state. You can
 also see the full list of verified accountants at
 [openaccountants.com/network](https://openaccountants.com/network).
+
+<!-- openaccountants-cta-block -->
+
+---
+
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

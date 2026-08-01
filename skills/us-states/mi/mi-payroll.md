@@ -2,13 +2,14 @@
 name: mi-payroll
 description: Tier 2 Michigan content skill for employer payroll compliance covering tax year 2025. Includes the 4.25% flat PIT, MI 165 quarterly withholding, MI SUTA wage base $9,500 with rates 0.06-10.30%, the 24 Michigan cities imposing local income tax (Detroit 2.4% resident/1.2% non-resident, Grand Rapids 1.5%/0.75%, plus Lansing/Saginaw/Highland Park/Hamtramck/Battle Creek/Flint/etc.), Detroit Form D-1040 employer withholding, and the Paid Medical Leave Act covering employers with 50+ employees.
 jurisdiction: US-MI
-domain: state-tax
 tax_year: 2025
+last_updated: 2026-05-27
+verified_by: pending
 tier: 2
-last_updated: 2026-07-06
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# mi-payroll
+# MI Payroll
 
 ## Michigan Payroll — Tier 2 Content Skill (Tax Year 2025)
 
@@ -598,3 +599,21 @@ To speak with one of the licensed accountants who verifies skills for your juris
 → [Book a call](https://calendly.com/openaccountants-info/30min)
 
 We'll route you to the named verifier covering your country or state. You can also see the full list of verified accountants at [openaccountants.com/network](https://openaccountants.com/network).
+
+<!-- openaccountants-cta-block -->
+
+---
+
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

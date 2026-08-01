@@ -8,6 +8,13 @@
 1. `foundation.md`
 2. `intake.md`
 3. `jamaica-gct.md`
+4. `jm-company-formation.md`
+5. `jm-corporate-income-tax.md`
+6. `jm-income-tax.md`
+7. `jm-payroll-social.md`
+8. `jm-tax-overview.md`
+9. `payroll-workflow-base.md`
+10. `company-formation-workflow-base.md`
 
 ## How to use
 

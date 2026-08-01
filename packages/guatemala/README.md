@@ -7,7 +7,15 @@
 
 1. `foundation.md`
 2. `intake.md`
-3. `guatemala-iva.md`
+3. `gt-company-formation.md`
+4. `gt-corporate-income-tax.md`
+5. `gt-tax-overview.md`
+6. `guatemala-income-tax.md`
+7. `guatemala-iva.md`
+8. `guatemala-payroll.md`
+9. `guatemala-social-contributions.md`
+10. `payroll-workflow-base.md`
+11. `company-formation-workflow-base.md`
 
 ## How to use
 

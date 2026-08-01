@@ -7,7 +7,12 @@
 
 1. `foundation.md`
 2. `intake.md`
-3. `venezuela-iva.md`
+3. `venezuela-income-tax.md`
+4. `venezuela-iva.md`
+5. `venezuela-payroll.md`
+6. `venezuela-social-contributions.md`
+7. `venezuela-tax-optimization.md`
+8. `payroll-workflow-base.md`
 
 ## How to use
 

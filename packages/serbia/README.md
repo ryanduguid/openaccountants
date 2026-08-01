@@ -7,7 +7,12 @@
 
 1. `foundation.md`
 2. `intake.md`
-3. `serbia-vat.md`
+3. `serbia-income-tax.md`
+4. `serbia-payroll.md`
+5. `serbia-social-contributions.md`
+6. `serbia-tax-optimization.md`
+7. `serbia-vat.md`
+8. `payroll-workflow-base.md`
 
 ## How to use
 

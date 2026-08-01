@@ -7,7 +7,16 @@
 
 1. `foundation.md`
 2. `intake.md`
-3. `azerbaijan-vat.md`
+3. `az-company-formation.md`
+4. `az-corporate-income-tax.md`
+5. `az-tax-overview.md`
+6. `azerbaijan-income-tax.md`
+7. `azerbaijan-payroll.md`
+8. `azerbaijan-social-contributions.md`
+9. `azerbaijan-tax-optimization.md`
+10. `azerbaijan-vat.md`
+11. `payroll-workflow-base.md`
+12. `company-formation-workflow-base.md`
 
 ## How to use
 

@@ -2,17 +2,23 @@
 name: au-freelance-intake
 description: ALWAYS USE THIS SKILL when a user asks for help preparing their Australian tax returns AND mentions freelancing, self-employment, contracting, sole trading, or ABN-based work. Trigger on phrases like "help me do my taxes", "prepare my ITR", "I'm a sole trader in Australia", "I'm a freelancer in Australia", "do my taxes as a contractor", "prepare my BAS and income tax", or any similar phrasing where the user is an Australian-resident self-employed individual needing tax return preparation. This is the REQUIRED entry point for the Australian self-employed tax workflow -- every other skill in the stack (australia-gst, au-individual-return, au-super-guarantee, au-medicare-levy, au-payg-instalments, au-return-assembly) depends on this skill running first to produce a structured intake package. Uses upload-first workflow -- the user dumps all their documents and the skill infers as much as possible before asking questions. Uses ask_user_input_v0 for structured questions instead of one-at-a-time prose. Built for speed. Australian full-year residents only; sole traders only.
 version: 0.1
+jurisdiction: AU
+tax_year: 2025
+last_updated: 2026-04-13
+verified_by: pending
+tier: 2
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Australia Sole Trader Intake Skill v0.1
+# AU Freelance Intake
+
+## Australia Sole Trader Intake Skill v0.1
 
 ## What this file is
 
 The intake orchestrator for Australian-resident sole traders. Every downstream Australian content skill (australia-gst, au-individual-return, au-super-guarantee, au-medicare-levy, au-payg-instalments) and the assembly orchestrator (au-return-assembly) depend on this skill running first to produce a structured intake package.
 
 This skill does not compute any tax figures. Its job is to collect all the facts, parse all the documents, confirm everything with the user, and hand off a clean intake package to `au-return-assembly`.
-
----
 
 ## Design principles
 
@@ -42,18 +48,9 @@ Target: intake completes in 5 minutes for a prepared user, 15 minutes for a user
 
 **Exception for blocking decisions.** If a single question determines whether the user is in-scope or out-of-scope, ask it standalone.
 
----
-
 ## Section 1 -- The opening
 
-When triggered, respond with ONE message that:
-
-1. One-line greeting (no paragraph of expectation-setting)
-2. One-line summary of the flow (scope check -> upload -> gaps -> handoff to return assembly)
-3. One-line reviewer reminder (must be reviewed by registered tax agent before filing)
-4. Launch the refusal sweep immediately using `ask_user_input_v0`
-
-**Example first message:**
+- **Opening message structure** — When triggered, respond with ONE message that: 1. One-line greeting (no paragraph of expectation-setting) 2. One-line summary of the flow (scope check -> upload -> gaps -> handoff to return assembly) 3. One-line reviewer reminder (must be reviewed by registered tax agent before filing) 4. Launch the refusal sweep immediately using `ask_user_input_v0`
 
 > Let's get your 2025 Australian returns ready. Quick scope check, then you upload your documents, then I fill in the gaps. Target time: 10 minutes.
 >
@@ -70,13 +67,11 @@ Then immediately call `ask_user_input_v0` with the refusal questions.
 - List what documents you will eventually need
 - Give a disclaimer beyond the one reviewer line
 
----
-
 ## Section 2 -- Refusal sweep (compact)
 
 Present the refusal sweep as a single `ask_user_input_v0` call with 3 questions, all single-select.
 
-**The 3 questions to ask first:**
+**The 3 questions to ask first**
 
 ```
 Q1: "Australian residency in 2024-25?"
@@ -89,22 +84,11 @@ Q3: "Do you have an ABN?"
     Options: ["Yes", "No", "Applied but not yet received"]
 ```
 
-**After the response, evaluate:**
+- **Q1 evaluation** — Q1 = Full year -> continue. Q1 = Part year or did not live in Australia -> stop. "I'm set up for full-year Australian residents only. Part-year or non-residents have different rules around foreign income and dual residency. You need a registered tax agent who handles non-resident returns."
+- **Q2 evaluation** — Q2 = Sole trader -> continue. Q2 = Partnership -> stop. "Partnerships lodge a separate partnership return and distribute income to partners. You need a registered tax agent familiar with partnership returns." Q2 = Company (Pty Ltd) -> stop. "I don't cover company returns. Companies lodge a separate company tax return with different rules. You need a registered tax agent." Q2 = Trust -> stop. "Trust returns have separate distribution and reporting requirements. You need a registered tax agent familiar with trust returns." Q2 = Not sure -> ask one follow-up: "Do you operate under your own name (or a registered business name) with an individual ABN? Or do you have a registered company with ASIC? If you invoice under your own ABN, you're a sole trader. If you have an ACN and Pty Ltd, you're a company."
+- **Q3 evaluation** — Q3 = Yes -> continue. Q3 = No -> stop. "You need an ABN to operate as a sole trader. Apply at abr.gov.au. Once you have your ABN, come back and we can prepare your returns." Q3 = Applied but not yet received -> continue with a flag: ABN pending, will need to confirm before lodging.
 
-- **Q1 = Full year** -> continue
-- **Q1 = Part year or did not live in Australia** -> stop. "I'm set up for full-year Australian residents only. Part-year or non-residents have different rules around foreign income and dual residency. You need a registered tax agent who handles non-resident returns."
-
-- **Q2 = Sole trader** -> continue
-- **Q2 = Partnership** -> stop. "Partnerships lodge a separate partnership return and distribute income to partners. You need a registered tax agent familiar with partnership returns."
-- **Q2 = Company (Pty Ltd)** -> stop. "I don't cover company returns. Companies lodge a separate company tax return with different rules. You need a registered tax agent."
-- **Q2 = Trust** -> stop. "Trust returns have separate distribution and reporting requirements. You need a registered tax agent familiar with trust returns."
-- **Q2 = Not sure** -> ask one follow-up: "Do you operate under your own name (or a registered business name) with an individual ABN? Or do you have a registered company with ASIC? If you invoice under your own ABN, you're a sole trader. If you have an ACN and Pty Ltd, you're a company."
-
-- **Q3 = Yes** -> continue
-- **Q3 = No** -> stop. "You need an ABN to operate as a sole trader. Apply at abr.gov.au. Once you have your ABN, come back and we can prepare your returns."
-- **Q3 = Applied but not yet received** -> continue with a flag: ABN pending, will need to confirm before lodging.
-
-**After Q1-Q3 pass, ask the second batch of scope questions (also batched):**
+**Second batch of scope questions**
 
 ```
 Q4: "GST registered?"
@@ -117,20 +101,12 @@ Q6: "Industry?"
     Options: ["Software / tech / IT services", "Professional services (accounting, legal, consulting)", "Trades (construction, electrical, plumbing)", "Creative (design, media, photography)", "Other"]
 ```
 
-**Evaluate Q4:**
-- **Yes** -> continue. Standard quarterly BAS lodgement.
-- **No** -> continue. No BAS required unless turnover crosses $75K threshold. Will check after inference.
-- **Not sure** -> ask one follow-up: "Do you charge GST on your invoices (i.e., your prices include a 10% GST component)? If yes, you're registered. If your invoices say 'no GST' or you've never dealt with BAS, you're likely not registered. Check your ABN registration at abr.gov.au."
+- **GST registration turnover threshold** — 75000 AUD (turnover above which GST registration required or voluntary registration applies)
+- **Q4 evaluation** — Yes -> continue. Standard quarterly BAS lodgement. No -> continue. No BAS required unless turnover crosses $75K threshold. Will check after inference. Not sure -> ask one follow-up: "Do you charge GST on your invoices (i.e., your prices include a 10% GST component)? If yes, you're registered. If your invoices say 'no GST' or you've never dealt with BAS, you're likely not registered. Check your ABN registration at abr.gov.au."
+- **Q5 evaluation** — All options -> note for Medicare levy surcharge and tax offset calculations. Continue.
+- **Q6 evaluation** — All options -> note for expense classification context. Continue.
 
-**Evaluate Q5:**
-- All options -> note for Medicare levy surcharge and tax offset calculations. Continue.
-
-**Evaluate Q6:**
-- All options -> note for expense classification context. Continue.
-
-**Total time:** ~45 seconds if the user taps through.
-
----
+Total time: ~45 seconds if the user taps through.
 
 ## Section 3 -- The dump
 
@@ -171,11 +147,7 @@ Then wait. Do not ask any other questions while waiting.
 >
 > Come back when you have something to upload. I'll work with whatever you bring.
 
----
-
 ## Section 4 -- The inference pass
-
-When documents arrive, parse each one. For each document, extract:
 
 **Bank statement:**
 - Total deposits (candidate gross receipts)
@@ -197,6 +169,8 @@ When documents arrive, parse each one. For each document, extract:
 - Whether invoices say "no GST" (unregistered indicator)
 - Total turnover reconciliation against bank deposits
 - Any foreign clients (withholding tax implications)
+
+- **Instant asset write-off threshold for 2024-25** — 20000 AUD (threshold under which items eligible for instant asset write-off)
 
 **Purchase invoices / receipts:**
 - Expense category (revenue, capital)
@@ -240,9 +214,9 @@ When documents arrive, parse each one. For each document, extract:
 - Non-concessional contributions
 - Total super balance (for Division 293 check if income + super > $250K)
 
-**After parsing everything, build an internal inference object.** Do not show the raw inference yet -- transform it into a compact summary for the user in Section 5.
+- **Division 293 income + super threshold** — 250000 AUD (Division 293 check if income + super > $250K)
 
----
+After parsing everything, build an internal inference object. Do not show the raw inference yet -- transform it into a compact summary for the user in Section 5.
 
 ## Section 5 -- The confirmation
 
@@ -307,13 +281,9 @@ After inference, present a single compact summary message. Use a structured form
 >
 > **Is any of this wrong? Reply "looks good" or tell me what to fix.**
 
----
-
 ## Section 6 -- Gap filling
 
 After the user confirms the summary (or corrects it), ask about things that cannot be inferred from documents. Use `ask_user_input_v0` where possible.
-
-**Things that usually cannot be inferred:**
 
 1. **Home office** -- Cannot tell from documents whether a dedicated workspace exists and which method is used.
 2. **Private use percentage** -- Phone, internet, motor vehicle business-use split.
@@ -323,9 +293,7 @@ After the user confirms the summary (or corrects it), ask about things that cann
 6. **HELP repayment plan** -- Confirm outstanding balance.
 7. **Other income** -- Interest, dividends, rental, capital gains.
 
-**Home office gap-filling example:**
-
-Call `ask_user_input_v0` with:
+**Home office gap-filling question**
 
 ```
 Q: "Home office claim method?"
@@ -338,17 +306,10 @@ Q: "Home office claim method?"
    ]
 ```
 
-If option 1 -> ask for total hours worked from home during 2024-25 (text input).
-If option 2 -> flag as complex: actual cost method requires detailed records of electricity, gas, internet, phone, depreciation of furniture. Ask for floor area percentage of dedicated workspace.
-If option 3 -> rent is already captured in expenses. No home office calculation needed.
-If option 4 -> skip home office entirely.
-If option 5 -> recommend fixed rate method (67c/hr) as simpler. Ask for hours.
+- **Home office option handling** — If option 1 -> ask for total hours worked from home during 2024-25 (text input). If option 2 -> flag as complex: actual cost method requires detailed records of electricity, gas, internet, phone, depreciation of furniture. Ask for floor area percentage of dedicated workspace. If option 3 -> rent is already captured in expenses. No home office calculation needed. If option 4 -> skip home office entirely. If option 5 -> recommend fixed rate method (67c/hr) as simpler. Ask for hours.
+- **Fixed rate home office method rate** — 67 cents/hour (2024-25 rate, revised rate effective 1 July 2022, replaces old 52c/hr method)
 
-Note: The 2024-25 rate is 67 cents per hour (revised rate effective 1 July 2022). This replaces the old 52c/hr method.
-
-**Motor vehicle gap-filling example:**
-
-Call `ask_user_input_v0` with:
+**Motor vehicle gap-filling question**
 
 ```
 Q: "Motor vehicle method?"
@@ -359,15 +320,10 @@ Q: "Motor vehicle method?"
    ]
 ```
 
-If option 1 -> ask for estimated business kilometres driven in 2024-25 (max 5,000). Rate is 85 cents/km for 2024-25.
-If option 2 -> ask for logbook business-use percentage and total car expenses.
-If option 3 -> skip vehicle entirely.
+- **Cents-per-km motor vehicle rate 2024-25** — 85 cents/km (maximum 5,000 business km)
+- **Motor vehicle option handling** — If option 1 -> ask for estimated business kilometres driven in 2024-25 (max 5,000). Rate is 85 cents/km for 2024-25. If option 2 -> ask for logbook business-use percentage and total car expenses. If option 3 -> skip vehicle entirely. Flag all private-use percentages as T2 -- registered tax agent must confirm the percentage is reasonable and documented.
 
-Flag all private-use percentages as T2 -- registered tax agent must confirm the percentage is reasonable and documented.
-
-**Other income:**
-
-Call `ask_user_input_v0` with:
+**Other income question**
 
 ```
 Q: "Any other income in 2024-25?"
@@ -381,9 +337,7 @@ Q: "Any other income in 2024-25?"
    ]
 ```
 
-If any selected -> ask for amounts as text input. Flag rental income and capital gains as potentially out of scope for this workflow (complex supplementary schedules).
-
----
+- **Other income handling** — If any selected -> ask for amounts as text input. Flag rental income and capital gains as potentially out of scope for this workflow (complex supplementary schedules).
 
 ## Section 7 -- The final handoff
 
@@ -410,8 +364,6 @@ Once gap-filling is done, produce a final handoff message and hand off to `au-re
 > Starting now.
 
 Then internally invoke `au-return-assembly` with the structured intake package.
-
----
 
 ## Section 8 -- Structured intake package (internal format)
 
@@ -516,7 +468,7 @@ The downstream skill (`au-return-assembly`) consumes a JSON structure. It is int
 }
 ```
 
----
+- **Concessional contributions cap default value** — 30000 AUD (default concessional_cap field value in intake package)
 
 ## Section 9 -- Refusal handling
 
@@ -539,8 +491,6 @@ When a refusal fires:
 > Stop -- you have a registered Pty Ltd company. I'm set up for sole traders only. Companies lodge company tax returns with different rules for franking, dividends, and corporate tax rates. You need a registered tax agent familiar with company returns.
 >
 > I can't help with this one.
-
----
 
 ## Section 10 -- Self-checks
 
@@ -568,8 +518,6 @@ When a refusal fires:
 
 **Check IN12 -- GST registration status was established.** GST registered vs unregistered was confirmed before inference, as it changes how every transaction is classified.
 
----
-
 ## Section 11 -- Performance targets
 
 For a prepared user (documents in a folder, ready to upload):
@@ -586,8 +534,6 @@ For an unprepared user (has to go fetch documents):
 - Rest: same
 - **Total**: 15-25 minutes
 
----
-
 ## Section 12 -- Cross-skill references
 
 **Inputs:** User-provided documents and answers.
@@ -601,7 +547,7 @@ For an unprepared user (has to go fetch documents):
 - `au-medicare-levy` -- Medicare levy and surcharge
 - `au-payg-instalments` -- PAYG instalment schedule
 
----
+0. **Downstream invocation - GST** — BAS quarterly GST return
 
 ### Change log
 
@@ -609,42 +555,26 @@ For an unprepared user (has to go fetch documents):
 
 ## End of Intake Skill v0.1
 
-
----
-
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, EA, tax attorney, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
 
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
-
----
+The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
 
 <!-- openaccountants-cta-block -->
 
+---
+
 ## Talk to a verified accountant
 
-This skill is a tool, not an engagement. Every taxpayer's situation is
-different, and the rules in the skill may not match your specific facts.
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
 
-To speak with one of the licensed accountants who verifies skills for your
-jurisdiction — **no liability on either side until you and the accountant sign
-a formal engagement letter** — book a free 30-minute call:
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
 
-**→ [Book a call](https://calendly.com/openaccountants-info/30min)**
-
-We'll route you to the named verifier covering your country or state. You can
-also see the full list of verified accountants at
-[openaccountants.com/network](https://www.openaccountants.com/network).
-
-<!-- openaccountants-mcp-cta -->
-
-## The accountant-verified version lives in the connector
-
-This file is the open, **research-grade draft**. The **accountant-verified**
-version of this skill is **not published to GitHub** — it is delivered free
-through the OpenAccountants MCP connector, where your AI agent loads the
-verified rules together with the name of the accountant who signed them off.
-
-**→ Install the free connector:** <https://www.openaccountants.com/connect>
-**MCP endpoint:** `https://www.openaccountants.com/api/mcp`
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

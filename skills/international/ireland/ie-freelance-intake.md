@@ -3,11 +3,13 @@ name: ie-freelance-intake
 description: ALWAYS USE THIS SKILL when a user asks for help preparing an Irish tax return AND mentions freelancing, self-employment, sole trader, LTD, contractor, or PSC in Ireland. Trigger on phrases like "Ireland tax return", "Form 11 Ireland", "Form 12 Ireland", "Irish sole trader", "Irish LTD CT1", "ROS Revenue Online Service", "self-assessment Ireland", "preliminary tax Ireland", "PRSI Class S", "USC Ireland", "Irish VAT registration", "Pillar Two QDMTT Ireland", or any similar phrasing where the user is an Irish tax resident self-employed individual, sole trader, partner, or small LTD director-shareholder. This is the REQUIRED entry point for the Irish freelance / SME workflow — every downstream skill in the stack (ie-income-tax-form11, ie-preliminary-tax, ie-prsi-class-s, ie-usc, ireland-vat-return, ie-corporation-tax, ie-paye, ie-payroll, ie-cgt, ie-cat, ie-formation, ie-return-assembly) depends on this skill running first. Uses ask_user_input_v0-style structured questions. Irish tax residents only (full-year residents under Section 819 TCA 1997, plus the 280-day combined test). ALWAYS read this skill first when starting an Irish freelance / SME tax workflow.
 jurisdiction: IE
 tax_year: 2025
+last_updated: 2026-05-27
+verified_by: pending
 tier: 2
-last_updated: 2026-07-06
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# ie-freelance-intake
+# IE Freelance Intake
 
 ## What this file is
 
@@ -537,3 +539,21 @@ also see the full list of verified accountants at
 ## Section 10 — Final handoff to ie-return-assembly
 
 0. **Invoke ie-return-assembly** — Once gap-filling and self-checks pass, output handoff message and invoke ie-return-assembly with the Section 6.2 package.
+
+<!-- openaccountants-cta-block -->
+
+---
+
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

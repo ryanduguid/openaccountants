@@ -3,11 +3,13 @@ name: ie-payroll
 description: Use this skill whenever asked to compute, review, or advise on end-to-end Irish monthly or weekly payroll for employees — gross-to-net calculation, payslip generation, statutory deduction sequencing (pension, BIK, PAYE, USC, PRSI, LPT-at-source), real-time submission to Revenue (PSR / "payroll submission request"), and year-end Employee Detail Summary reconciliation under Revenue myAccount. Trigger on phrases like "Ireland payroll", "Irish payroll", "Irish payslip", "compute Irish payroll", "monthly payroll Ireland", "weekly payroll Ireland", "gross to net Ireland", "RPN", "Revenue Payroll Notification", "PSR submission", "Employee Detail Summary", "BrightPay", "Sage payroll Ireland", "Surf Accounts payroll", "Thesaurus payroll", "BIK Ireland", "company car BIK Ireland", or any request involving running monthly or weekly payroll for one or more employees in Ireland. This skill is the ORCHESTRATOR — it pulls PAYE bracket rules from `ie-paye`, USC bands from `ie-usc`, and PRSI Class A rates from `ie-prsi-class-s` (which also covers Class A for completeness), and sequences them into the correct computation order. ALWAYS read this skill before touching Irish payroll computation.
 jurisdiction: IE
 tax_year: 2025
+last_updated: 2026-05-27
+verified_by: pending
 tier: 2
-last_updated: 2026-07-06
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# ie-payroll
+# IE Payroll
 
 ## Ireland — Payroll Computation (End-to-End) — Skill v1.0
 
@@ -491,3 +493,21 @@ a formal engagement letter** — book a free 30-minute call:
 We'll route you to the named verifier covering your country or state. You can
 also see the full list of verified accountants at
 [openaccountants.com/network](https://openaccountants.com/network).
+
+<!-- openaccountants-cta-block -->
+
+---
+
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

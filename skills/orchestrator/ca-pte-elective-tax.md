@@ -2,13 +2,14 @@
 name: ca-pte-elective-tax
 description: Tier 2 California content skill for the Pass-Through Entity Elective Tax (R&TC §§ 17052.10, 19900-19906; AB 150). Applies to S-corps, partnerships, and LLCs taxed as partnerships with at least one consenting individual, fiduciary, estate, or trust owner. Computes the 9.3% tax on qualified net income (each consenting owner's distributive share of CA-sourced income), produces Form 3804 entity election and Form 3804-CR owner-level nonrefundable credit, schedules the mandatory June 15 prepayment (greater of $1,000 or 50% of prior-year PTE tax) and the balance due by the original return due date, and flags the post-2025 sunset and the federal Notice 2020-75 SALT-cap workaround treatment. Tax year 2025.
 jurisdiction: US-CA
-domain: state-tax
 tax_year: 2025
+last_updated: 2026-07-09
+verified_by: pending
 tier: 2
-last_updated: 2026-07-06
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# ca-pte-elective-tax
+# CA PTE Elective Tax
 
 ## California Pass-Through Entity Elective Tax (PTE Elective Tax / "AB 150 tax")
 
@@ -22,7 +23,7 @@ last_updated: 2026-07-06
 
 - **R&TC § 17052.10** — Owner-level nonrefundable PTE tax credit; ordering, carryforward, and refundability rules.  _(R&TC § 17052.10)_
 - **R&TC §§ 19900–19906** — Entity-level election, qualified net income definition, tax rate, payment schedule, election procedure, and irrevocability.  _(R&TC §§ 19900–19906)_
-- **AB 150 (2021 Cal. Stat. ch. 82)** — Enacted the regime for tax years beginning on or after January 1, 2021, and before January 1, 2026.  _(AB 150 (2021 Cal. Stat. ch. 82))_
+- **AB 150 (2021 Cal. Stat. ch. 82)** — Enacted the original regime for tax years beginning on or after January 1, 2021, and before January 1, 2026; SB 132 later extended the regime for taxable years beginning on or after January 1, 2026, and before January 1, 2031.  _([AB 150 (2021 Cal. Stat. ch. 82)](https://www.ftb.ca.gov/file/business/credits/pass-through-entity-elective-tax/help.html))_
 - **SB 113 (2022 Cal. Stat. ch. 3)** — Expanded eligibility (allowed disregarded SMLLC owners and SMLLCs owned by individuals to consent), removed tentative-minimum-tax limitation on the credit, allowed credit to reduce tax below tentative minimum tax, and reordered the credit ahead of the OSTC.  _(SB 113 (2022 Cal. Stat. ch. 3))_
 - **SB 851 (2022 Cal. Stat. ch. 705)** — Clarified the interaction of the PTE credit with the Other State Tax Credit (OSTC) by directing taxpayers to add back the PTE credit when computing the OSTC's "net tax" denominator.  _(SB 851 (2022 Cal. Stat. ch. 705))_
 - **IRS Notice 2020-75** — Federal blessing of entity-level deduction.  _(IRS Notice 2020-75)_
@@ -34,7 +35,7 @@ last_updated: 2026-07-06
 3. Tiered partnerships where an upper-tier pass-through is itself an owner of the electing entity (these owners are ineligible to consent; the lower tier may still elect for its individual owners).
 4. Publicly traded partnerships (statutorily excluded).
 5. Disregarded entities other than SMLLCs owned by individuals (the 2022 SB 113 fix narrowly admitted SMLLCs owned by individuals only).
-6. Post-2025 elections — the regime sunsets for taxable years beginning on or after January 1, 2026 unless re-extended (see Section 9).
+6. Detailed 2026-2030 credit-reduction computations under SB 132 / R&TC § 17052.11 — this 2025 skill notes the extension and future-year rule change, but does not compute post-2025 reduced-credit schedules.
 
 ### 1.4 Assumed companion skills
 
@@ -111,11 +112,11 @@ The election covers only the qualified net income attributable to consenting qua
 
 ### 3.2 Irrevocability and deadlines
 
-- **Irrevocability** — Once made, the election is irrevocable for that taxable year (R&TC § 19902(c)). The entity cannot amend out of the election after the original due date of the return. This is functionally important because: - If the entity later realizes the election was disadvantageous (e.g., owners would have benefited more from the OSTC ordering, or qualified net income was overstated), the entity cannot withdraw. - Conversely, if the entity missed the June 15 prepayment, the election is void for that year and cannot be cured by paying late (see Section 5.2). The entity may still elect for the following year.  _(R&TC § 19902(c))_
+- **Irrevocability** — Once made, the election is irrevocable for that taxable year (R&TC § 19902(c)). The entity cannot amend out of the election after the original due date of the return. This is functionally important because: - If the entity later realizes the election was disadvantageous (e.g., owners would have benefited more from the OSTC ordering, or qualified net income was overstated), the entity cannot withdraw. - Conversely, for 2022-2025 elections, if the entity missed or short-paid the June 15 prepayment, the election is void for that year and cannot be cured by paying late (see Section 5.2). For 2026-2030 elections, SB 132 allows a valid election despite a missed or short June 15 payment, but the qualified taxpayers' credits are reduced under R&TC § 17052.11.  _([R&TC § 19902(c)](https://www.ftb.ca.gov/file/business/credits/pass-through-entity-elective-tax/index.html))_
 
 ### 3.3 Timing of the election decision
 
-- **Timing flexibility and constraint** — Because the election is made on the return (including extensions), an entity has until the extended due date of the entity return to make a final election decision — typically: - S corporations / partnerships: September 15 of the year following the taxable year (calendar-year filers). - LLCs taxed as partnerships (Form 568): September 15 of the year following. However, this flexibility is constrained by the June 15 prepayment rule. The entity must make the June 15 prepayment during the taxable year to preserve the option of electing. Failure to pre-pay by June 15 voids the election even if the entity tries to elect on a September-filed return.
+- **Timing flexibility and constraint** — Because the election is made on the return (including extensions), an entity has until the extended due date of the entity return to make a final election decision — typically: - S corporations / partnerships: September 15 of the year following the taxable year (calendar-year filers). - LLCs taxed as partnerships (Form 568): September 15 of the year following. However, this flexibility is constrained by the June 15 prepayment rule. The entity must make the June 15 prepayment during the taxable year to preserve the option of electing. For 2025, failure to pre-pay by June 15 voids the election even if the entity tries to elect on a September-filed return. For 2026-2030, FTB guidance says the election can still be made, but qualified taxpayers must reduce their credits if the June 15 payment was missed or short.  _(https://www.ftb.ca.gov/file/business/credits/pass-through-entity-elective-tax/index.html)_
 
 **Practical workflow for tax year 2025**
 
@@ -154,7 +155,7 @@ This rate was chosen because it matches the marginal CA personal income tax rate
 
 ## Section 5 -- Payment schedule
 
-The PTE elective tax has a two-installment payment schedule. Compliance with the first installment is a hard prerequisite for the election; missing it voids the election.
+The PTE elective tax has a two-installment payment schedule. For 2025, compliance with the first installment is a hard prerequisite for the election; missing it voids the election. For 2026-2030, SB 132 changes the consequence: a missed or short June 15 payment can leave the election valid, but causes a 12.5% credit reduction for qualified taxpayers.
 
 ### 5.1 June 15 prepayment (R&TC § 19904)
 
@@ -163,8 +164,8 @@ The PTE elective tax has a two-installment payment schedule. Compliance with the
 
 ### 5.2 Consequences of missing the June 15 prepayment
 
-- **Voided election if prepayment missed** — Under R&TC § 19904(c), if the entity fails to make the required June 15 prepayment in full, the entity cannot make the PTE election for that taxable year. The election is void. The entity may not cure by paying late. The election is also void if the prepayment is short (e.g., the entity paid $800 thinking the floor was $500). FTB has issued guidance treating any underpayment as voiding the election; do not rely on a "substantial compliance" argument. This is one of the most consequential operational rules in the PTE regime. Reviewer checks at Section 11 emphasize this hard deadline.  _(R&TC § 19904(c))_
-- **Mitigation if the deadline is missed** — The entity files its 100S / 565 / 568 without electing PTE. Owners pay tax through their individual returns (Forms 540 / 540NR) and through nonresident withholding (Form 592-PTE) as applicable. The entity may elect for the following taxable year (and must make the June 15 prepayment of the following year — typically a smaller floor of $1,000 since prior-year PTE was $0).  _(R&TC § 19904(c))_
+- **Voided election if prepayment missed** — For 2022-2025 taxable years, if the entity fails to make the required June 15 prepayment in full, FTB guidance treats the PTE election as unavailable for that taxable year. The entity may not cure the 2025 election by paying late, and a short payment can void the 2025 election. For 2026-2030 taxable years, SB 132 / R&TC § 19914(b) allows the entity to make a valid PTE election even when the June 15 payment was missed or short, but qualified taxpayers must reduce their PTE elective tax credit by 12.5% of their pro rata share of the unpaid amount that was due on June 15 under R&TC § 17052.11.  _([R&TC § 19904(c)](https://www.ftb.ca.gov/file/business/credits/pass-through-entity-elective-tax/index.html))_
+- **Mitigation if the deadline is missed** — For a missed or short 2025 June 15 payment, the entity files its 100S / 565 / 568 without electing PTE. Owners pay tax through their individual returns (Forms 540 / 540NR) and through nonresident withholding (Form 592-PTE) as applicable. For 2026-2030 elections, do not default to "no election" solely because of a missed or short June 15 payment; instead compute the SB 132 credit reduction or route to reviewer.  _([R&TC § 19904(c)](https://www.ftb.ca.gov/file/business/credits/pass-through-entity-elective-tax/index.html))_
 
 ### 5.3 Balance due at original return due date (R&TC § 19904(b))
 
@@ -255,19 +256,19 @@ Many CA-PTE-electing entities accelerate the balance payment into December of th
 
 ### 9.1 Statutory sunset
 
-- **Sunset date** — AB 150 enacted the PTE elective tax for taxable years beginning on or after January 1, 2021, and before January 1, 2026. R&TC § 19906 provides an explicit operative-period limitation. This means: Tax year 2025 is the LAST scheduled year of the regime under current statute (for calendar-year entities, the year ending December 31, 2025). Tax year 2026 and forward: Absent legislative extension, the regime expires. Entities will not be able to elect for tax year 2026.  _(R&TC § 19906)_
+- **Sunset date** — AB 150 enacted the original PTE elective tax for taxable years beginning on or after January 1, 2021, and before January 1, 2026. Current FTB guidance reflects SB 132, which extended the PTE elective tax and credit for taxable years beginning on or after January 1, 2026, and before January 1, 2031. The regime is therefore available for 2025 and, under the extension, for 2026-2030 taxable years, subject to the changed June 15 underpayment/credit-reduction rules for 2026-2030.  _([R&TC § 19906](https://www.ftb.ca.gov/file/business/credits/pass-through-entity-elective-tax/index.html))_
 
 ### 9.2 Linkage to federal SALT cap
 
-- **Federal SALT cap linkage** — The PTE regime is economically motivated by the federal $10,000 SALT cap under IRC § 164(b)(6), which itself was originally enacted by the Tax Cuts and Jobs Act (TCJA) for tax years 2018–2025. The TCJA SALT cap was set to expire after 2025. Federal legislation in mid-2025 modified the SALT cap going forward (the One Big Beautiful Bill Act, P.L. 119-21, July 4, 2025 — verify exact post-2025 SALT cap mechanics from the federal `us-tax-workflow-base` skill). Whether California extends AB 150 depends partly on whether the federal SALT cap continues. If the federal cap survives at $10,000 (or some higher level), state pressure to maintain the PTE workaround continues. If the federal cap is repealed entirely, the workaround loses its purpose.  _(IRC § 164(b)(6); P.L. 119-21)_
+- **Federal SALT cap linkage** — The PTE regime is economically motivated by the federal $10,000 SALT cap under IRC § 164(b)(6), which itself was originally enacted by the Tax Cuts and Jobs Act (TCJA) for tax years 2018–2025. The TCJA SALT cap was set to expire after 2025. Federal legislation in mid-2025 modified the SALT cap going forward (the One Big Beautiful Bill Act, P.L. 119-21, July 4, 2025 — verify exact post-2025 SALT cap mechanics from the federal `us-tax-workflow-base` skill). California has extended the PTE elective tax through taxable years beginning before January 1, 2031. The federal SALT cap mechanics still matter for the economic benefit of electing, so the reviewer must verify current federal SALT-cap rules and entity-level deduction treatment at filing time.  _([IRC § 164(b)(6); P.L. 119-21](https://www.ftb.ca.gov/file/business/credits/pass-through-entity-elective-tax/help.html))_
 
 ### 9.3 Legislative status (as of the last_updated date of this skill)
 
-As of November 15, 2025: No California legislation has been enacted to extend AB 150 beyond December 31, 2025. Trailer-bill negotiations in mid-2025 considered extension but did not enact it. Tax practitioners and major firms anticipate either (a) a clean extension in early 2026 with retroactive effect to January 1, 2026, or (b) a re-architected regime if the federal SALT cap materially changes.
+Current FTB guidance states that SB 132 extended the PTE elective tax and credit for taxable years beginning on or after January 1, 2026, and before January 1, 2031.
 
-**Reviewer guidance for tax year 2025 returns:** Proceed with PTE election as normal — the regime is fully operative for 2025. For 2026 estimated tax planning, do not assume PTE will be available in 2026. Build the owner's 2026 estimated tax baseline assuming no PTE workaround (full individual-level CA tax). If a 2026 extension passes, adjust mid-year.
+**Reviewer guidance for tax year 2025 returns:** Proceed with PTE election as normal — the regime is fully operative for 2025. The 2025 June 15 payment remains a hard election prerequisite under the 2022-2025 rules.
 
-**Reviewer flag for any 2026-forward planning advice:** This skill explicitly does NOT opine on post-2025 availability. Any taxpayer plan that depends on 2026 PTE availability must include an "if-extended" alternative scenario and a written caveat about legislative uncertainty.
+**Reviewer flag for 2026-forward planning advice:** The election is available under the SB 132 extension, but the consequence of a missed or short June 15 payment changes. For 2026-2030, FTB guidance says the entity may still make a valid election, but qualified taxpayers must reduce their PTE elective tax credit by 12.5% of their pro rata share of the unpaid amount that was due on June 15.
 
 ## Section 10 -- Worked examples
 
@@ -368,7 +369,7 @@ Suppose JKL's CA apportionment factor were 70% (not 100%), and the entity earned
 
 The following checks should be completed for every PTE election engagement. They reflect FTB enforcement patterns and the most common practitioner errors observed in the first four years of the regime.
 
-- **Check 301** — June 15 prepayment timely and full. Verify the prepayment was made by June 15 of the taxable year (not the year after) in the correct amount (greater of $1,000 or 50% of prior-year PTE tax). A short payment voids the election. Confirm Form 3893 voucher reference matches the FTB cashed check / EFT confirmation.  _(R&TC § 19904)_
+- **Check 301** — June 15 prepayment timely and full. Verify the prepayment was made by June 15 of the taxable year (not the year after) in the correct amount (greater of $1,000 or 50% of prior-year PTE tax). For 2025, a short payment voids the election. For 2026-2030, a short or missed payment can preserve the election but triggers the SB 132 credit-reduction computation. Confirm Form 3893 voucher reference matches the FTB cashed check / EFT confirmation.  _([R&TC § 19904](https://www.ftb.ca.gov/file/business/credits/pass-through-entity-elective-tax/help.html))_
 - **Check 302** — Prior-year PTE tax correctly computed for the 50% floor. If the entity elected in the prior year, the floor is the higher of $1,000 or 50% of that prior-year tax. Verify by pulling the prior-year Form 3804.  _(Form 3804)_
 - **Check 303** — All consenting owners are eligible qualified taxpayers. Each consenting owner must be an individual, fiduciary, estate, trust, or disregarded SMLLC owned by an individual. Verify by reviewing each owner's federal classification (Form W-9 or K-1 detail). A C-corporation or partnership owner inadvertently listed on Form 3804 invalidates that line item (not necessarily the whole election, but creates an FTB inquiry).  _(Form 3804)_
 - **Check 304** — Form 3804 ties to entity return. The total PTE tax on Form 3804 should match the entity's "PTE tax paid" line on Form 100S, Form 565, or Form 568. The sum of per-owner credits on Form 3804 should equal entity-level PTE tax.  _(Form 3804)_
@@ -388,7 +389,7 @@ The following checks should be completed for every PTE election engagement. They
 - **Check 318** — Consenting owners affirmatively consented. Review the consent log / Form 3804 signature mechanics. FTB has, in audit, requested evidence of owner consent (operating agreement amendments, signed consent forms, or written attestations).  _(Form 3804)_
 - **Check 319** — Composite return mutual exclusion. Verify that no consenting PTE owner is also included in a Form 540NR Group Return for the same year.
 - **Check 320** — Nonresident withholding (Form 592-PTE) reconciled. Verify the entity's nonresident withholding for any consenting nonresident owner is appropriately reduced or waived per current FTB guidance, and that any withholding paid is properly credited on the nonresident's Form 540NR (in addition to the PTE credit).  _(Form 592-PTE)_
-- **Check 321** — Sunset disclosure to client. Verify the client has been advised in writing that PTE may not be available for tax year 2026 absent legislative action, and that 2026 estimated tax planning should assume non-availability as the conservative baseline.
+- **Check 321** — Extension / credit-reduction disclosure to client. Verify the client has been advised in writing that California extended PTE through 2030, and that 2026-2030 missed or short June 15 payments can reduce owner credits rather than automatically voiding the election.  _(https://www.ftb.ca.gov/file/business/credits/pass-through-entity-elective-tax/index.html)_
 - **Check 322** — Trust / estate credit not pushed to beneficiaries. If the consenting owner is a trust or estate, verify the credit is claimed at the trust/estate level on Form 541 and is not separately stated to beneficiaries on Schedule K-1 (541) unless specifically supported.  _(Form 541)_
 - **Check 323** — Net loss year handled. If the entity has a net loss, verify that no PTE election was made (or, if made, that QNI is reported as zero for each owner). Confirm no credit is generated from a loss year.
 - **Check 324** — SMLLC-owned-by-individual disclosure on Form 3804. When a consenting owner is an SMLLC, verify Form 3804 lists the underlying individual (not the SMLLC) as the consenting party, with the SMLLC noted as the conduit.  _(Form 3804)_
@@ -408,7 +409,7 @@ For each PTE elective tax engagement, this skill produces:
    - To `ca-540-individual-return` / `ca-540-es-estimated-tax`: PTE credit amount for each owner, OSTC interaction (if applicable), 2025 estimated tax adjustment.
    - To `us-federal-return-assembly`: Entity-level PTE deduction, reduced K-1 flow-throughs.
    - To `us-s-corp-election-decision`: PTE benefit as an input to the S-corp break-even analysis (when applicable).
-8. Reviewer brief: Sections 11 checks completed, sunset disclosure included, signed off by reviewer.
+8. Reviewer brief: Sections 11 checks completed, extension / credit-reduction disclosure included, signed off by reviewer.
 
 ## Section 13 -- Cross-skill references
 
@@ -427,7 +428,7 @@ Outputs to:
 
 ## Section 14 -- Known gaps and uncertainty flags
 
-1. Post-2025 availability is uncertain. As of the last_updated date, no legislative extension has been enacted. Practitioners must NOT assume PTE will be available in tax year 2026 or later. Conservative 2026 planning baseline = no PTE.
+1. California PTE is extended for taxable years beginning before January 1, 2031 under SB 132. The 2026-2030 credit-reduction mechanics for missed or short June 15 payments are summarized here but should be recomputed from current FTB forms and R&TC § 17052.11 before filing.
 2. Federal SALT cap post-2025 mechanics. The interaction with the post-2025 federal SALT cap (as modified by P.L. 119-21, the One Big Beautiful Bill Act of July 4, 2025) requires verification at filing time. The economic motivation for the PTE election depends on the surviving federal cap level.
 3. FTB underpayment interest rate for 2025 quarters must be verified at filing time for any late-PTE-balance interest computation.
 4. Form 592-PTE nonresident withholding waiver mechanics for consenting nonresident owners are based on FTB administrative guidance; verify the most current FTB Notice or Form 592-PTE instructions at filing time.
@@ -438,6 +439,7 @@ Outputs to:
 ### Change log
 
 v0.1 (November 2025): Initial content skill covering eligibility, election mechanics, 9.3% rate, June 15 prepayment, owner credit on Form 3804-CR, OSTC ordering, federal Notice 2020-75 treatment, sunset uncertainty, and five worked examples.
+- 2026-07-09: Updated for FTB guidance reflecting SB 132 extension through taxable years beginning before January 1, 2031; distinguished 2025 missed-payment void rule from 2026-2030 credit-reduction rules.
 
 ## End of skill
 
@@ -473,3 +475,21 @@ a formal engagement letter** — book a free 30-minute call:
 We'll route you to the named verifier covering your country or state. You can
 also see the full list of verified accountants at
 [openaccountants.com/network](https://openaccountants.com/network).
+
+<!-- openaccountants-cta-block -->
+
+---
+
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

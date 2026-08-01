@@ -2,13 +2,14 @@
 name: ca-formation
 description: Tier 2 California content skill for entity formation covering tax year 2025. Includes the CA LLC Form LLC-1 $70 filing fee, $800 annual minimum franchise tax under R&TC §17941 (first-year exemption AB 85/SB 818 expired 2024), tiered LLC fee on gross receipts under §17942 (Form 3536), 15-day rule for short first year, Statement of Information LLC-12, the "doing business in CA" threshold of $711,538 receipts / $71,154 payroll / $71,154 property triggering registration obligations for out-of-state entities, foreign qualification mechanics, and the C-corp formation overlay with $800 + 8.84% income tax.
 jurisdiction: US-CA
-domain: state-tax
 tax_year: 2025
+last_updated: 2026-07-09
+verified_by: pending
 tier: 2
-last_updated: 2026-07-06
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# ca-formation
+# CA Formation
 
 ## Scope (frontmatter blockquote)
 
@@ -18,7 +19,7 @@ last_updated: 2026-07-06
 
 California is the most aggressive state in the United States with respect to (a) defining what constitutes "doing business" within its borders, (b) imposing an $800 minimum annual franchise tax that applies regardless of profit or activity level, and (c) imposing a separate gross-receipts-based LLC fee that is independent of net income. The combination of these three rules creates a structural fee floor that is unique among US states and is the single largest source of compliance failure for out-of-state founders who do business with California customers.
 
-The practical reality is this: if you have any meaningful nexus to California — a customer base, an employee, a physical presence, an organizing partner, or a domicile — you almost certainly need to register an entity in California or qualify your out-of-state entity to do business in California. The "doing business" threshold under R&TC §23101 is so low ($711,538 in California-sourced receipts for 2025, or just $71,154 in California payroll or property) that any startup with a handful of California customers or a single California-based employee is over the line.
+The practical reality is this: if you have any meaningful nexus to California — a customer base, an employee, a physical presence, an organizing partner, or a domicile — you almost certainly need to register an entity in California or qualify your out-of-state entity to do business in California. The "doing business" threshold under R&TC §23101 is so low ($757,070 in California-sourced receipts for 2025, or just $75,707 in California payroll or property) that any startup with a handful of California customers or a single California-based employee is over the line.
 
 - **Unregistered foreign entity doing business in CA - consequences** — Under Corp. Code §17708.07 (LLCs) and §2203 (corporations), an unregistered foreign entity (1) cannot maintain or defend a civil action in California courts until it has registered and paid all back taxes, fees, and penalties; (2) is subject to a $250-per-year penalty under Corp. Code §17708.07(d); (3) is subject to a $20-per-day penalty under R&TC §19141 capped at $10,000 for failure to file FTB returns; and (4) the FTB will retroactively assess the $800 annual minimum franchise tax for every year the entity was doing business in California, plus interest, plus the LLC fee on gross receipts if applicable.  _(Corp. Code §17708.07; Corp. Code §2203; R&TC §19141)_
 
@@ -148,20 +149,20 @@ The break-even for a California freelance developer between SMLLC and S-corp is 
 
 - **Bright-line economic-nexus test overview** — Effective for tax years beginning on or after January 1, 2011, R&TC §23101(b) provides a bright-line economic-nexus test that operates in addition to the §23101(a) active-conduct test. An entity is doing business in California if it meets any one of the following four conditions in the taxable year.  _(R&TC §23101(b))_
 - **Condition 1 - organized or commercially domiciled** — The entity is organized or commercially domiciled in California.  _(R&TC §23101(b)(1))_
-- **California-sourced sales threshold (2025)** — $711,538 USD (lesser of $711,538 or 25% of the entity's total sales worldwide, under sourcing rules of R&TC §25135 and §25136)  _(R&TC §23101(b)(2))_
-- **California real property and tangible personal property threshold (2025)** — $71,154 USD (lesser of $71,154 or 25% of the entity's total property worldwide)  _(R&TC §23101(b)(3))_
-- **California-paid compensation threshold (2025)** — $71,154 USD (lesser of $71,154 or 25% of the entity's total compensation worldwide; paid to employees, members, or partners attributable to California services)  _(R&TC §23101(b)(4))_
+- **California-sourced sales threshold (2025)** — $757,070 USD (lesser of $757,070 or 25% of the entity's total sales worldwide, under sourcing rules of R&TC §25135 and §25136)  _([R&TC §23101(b)(2)](https://www.ftb.ca.gov/file/business/doing-business-in-california.html))_
+- **California real property and tangible personal property threshold (2025)** — $75,707 USD (lesser of $75,707 or 25% of the entity's total property worldwide)  _([R&TC §23101(b)(3)](https://www.ftb.ca.gov/file/business/doing-business-in-california.html))_
+- **California-paid compensation threshold (2025)** — $75,707 USD (lesser of $75,707 or 25% of the entity's total compensation worldwide; paid to employees, members, or partners attributable to California services)  _([R&TC §23101(b)(4)](https://www.ftb.ca.gov/file/business/doing-business-in-california.html))_
 - **Annual inflation indexing** — The dollar thresholds are indexed annually for inflation under R&TC §23101(c) using the California Consumer Price Index. The figures above are the 2025 thresholds; the FTB publishes updated thresholds each year in early winter for the following tax year.  _(R&TC §23101(c))_
 
-**AUDIT FLASH POINT — The "doing business in California" threshold is extremely low.** A Delaware LLC with a single California-based employee earning $72,000 per year is doing business in California and must register as a foreign LLC, pay the $800, file Form 568, and pay the gross-receipts LLC fee on its California-sourced revenue. A Wyoming corporation with $750,000 in sales to California customers (out of $3,000,000 total) is doing business in California — the $750,000 exceeds both the $711,538 absolute threshold and the 25% relative threshold is irrelevant because the absolute threshold is met. **Treat any out-of-state entity with California operations or California-resident employees as a presumptive "doing business" candidate and confirm explicitly in intake.**
+**AUDIT FLASH POINT — The "doing business in California" threshold is extremely low.** A Delaware LLC with a single California-based employee earning $80,000 per year is doing business in California and must register as a foreign LLC, pay the $800, file Form 568, and pay the gross-receipts LLC fee on its California-sourced revenue. A Wyoming corporation with $760,000 in sales to California customers (out of $3,000,000 total) is doing business in California — the $760,000 exceeds the lesser of the $757,070 absolute threshold and 25% of total sales ($750,000). **Treat any out-of-state entity with California operations or California-resident employees as a presumptive "doing business" candidate and confirm explicitly in intake.**
 
 ### 5.3 California-Sourced Sales: Single-Sales-Factor and Market-Based Sourcing
 
 - **Sourcing rules for sales** — Under R&TC §25128.7 (mandatory single-sales-factor apportionment) and §25136 (market-based sourcing), sales of tangible personal property are sourced to California if the property is delivered or shipped to a California purchaser, and sales of services and intangibles are sourced to California based on where the customer received the benefit of the service or intangible. This is a market-based rule, not a cost-of-performance rule.  _(R&TC §25128.7; R&TC §25136)_
 
-The practical consequence: a Texas freelance developer with no California presence who provides software development services to a California-headquartered client is generating California-sourced sales for purposes of §23101(b). If the developer's California-sourced sales exceed $711,538 in 2025, the developer is doing business in California and must register a foreign entity (or, if operating as a sole proprietor without an entity, must at minimum file a California nonresident return — but this skill is concerned with the entity registration question).
+The practical consequence: a Texas freelance developer with no California presence who provides software development services to a California-headquartered client is generating California-sourced sales for purposes of §23101(b). If the developer's California-sourced sales exceed the lesser of $757,070 or 25% of total sales in 2025, the developer is doing business in California and must register a foreign entity (or, if operating as a sole proprietor without an entity, must at minimum file a California nonresident return — but this skill is concerned with the entity registration question).
 
-For most California-services freelancers and small agencies, the §23101(b) bright-line is the binding constraint, not the §23101(a) active-conduct test. A California customer that generates $50,000 of revenue does not trigger the bright-line by itself, but a portfolio of California customers that totals $750,000 does.
+For most California-services freelancers and small agencies, the §23101(b) bright-line is the binding constraint, not the §23101(a) active-conduct test. A California customer that generates $50,000 of revenue does not trigger the bright-line by itself, but a portfolio of California customers that totals $760,000 does; a lower California total can also trigger if it exceeds 25% of worldwide sales.
 
 ## 6. Statement of Information — Filing Cadence
 
@@ -300,7 +301,7 @@ If the investor wants to defer the $800 to the next year, she can use the 15-day
 
 **California analysis.**
 
-Under §23101(b)(2), the developer's California-sourced sales are $190,000, which is below both the absolute $711,538 threshold AND below 25% of total sales ($156,250 = 25% × $625,000 — so the 25% test is met because $190,000 > $156,250). Wait — re-read the statute: §23101(b)(2) is met if California sales exceed the lesser of $711,538 or 25% of total sales. The lesser of $711,538 and $156,250 is $156,250. $190,000 > $156,250, so the threshold is met.
+Under §23101(b)(2), the developer's California-sourced sales are $190,000. That is below the absolute $757,070 threshold, but the test uses the lesser of $757,070 or 25% of total sales. 25% of $625,000 is $156,250, and $190,000 exceeds that lesser threshold. The bright-line sales test is therefore met.
 
 The developer is doing business in California. He must register his Texas LLC as a foreign LLC with the California SOS by filing Form LLC-5 ($70) plus current Texas Certificate of Good Standing, file Form LLC-12 within 90 days ($20), pay the $800 minimum franchise tax for 2025, and file Form 568 for 2025 to true up the gross-receipts LLC fee. The California-sourced gross receipts of $190,000 are below the $250,000 fee threshold, so the LLC fee on Form 3536 is $0.
 
@@ -308,7 +309,7 @@ The developer is doing business in California. He must register his Texas LLC as
 
 The developer should also file a California nonresident individual income tax return (Form 540NR) reporting the California-sourced pass-through income from the Texas LLC. The California-sourced share of his self-employment income is taxable on the 540NR even though he is a Texas resident with no California physical presence. This skill addresses only the entity-formation overlay; the 540NR mechanics are covered by `ca-540-individual-return` (resident variant) and any nonresident return skill.
 
-**AUDIT FLASH POINT — The 25% relative threshold catches more taxpayers than the $711,538 absolute threshold.** Many out-of-state freelancers and consultants believe they are safe from California "doing business" status because their California sales are well under $711,538. They overlook the 25%-of-total-sales prong. Always compute both: California sales as a dollar amount AND California sales as a percentage of worldwide sales. If either prong is met, the entity is doing business in California.
+**AUDIT FLASH POINT — The 25% relative threshold catches more taxpayers than the $757,070 absolute threshold.** Many out-of-state freelancers and consultants believe they are safe from California "doing business" status because their California sales are well under $757,070. They overlook the 25%-of-total-sales prong. Always compute both: California sales as a dollar amount AND California sales as a percentage of worldwide sales. If either prong is met, the entity is doing business in California.
 
 ### Example 10.4 — California Retailer SMLLC Selling Physical Goods
 
@@ -337,11 +338,11 @@ For 2025:
 
 **California analysis.**
 
-California-sourced sales: $40,000. Below both the $711,538 absolute threshold and 25% of $1,400,000 = $350,000. §23101(b)(2) is not met.
+California-sourced sales: $40,000. Below both the $757,070 absolute threshold and 25% of $1,400,000 = $350,000. §23101(b)(2) is not met.
 
 California property: assume $0 (no California-owned tangible property).
 
-California compensation: $95,000 paid to the San Diego employee, attributable to California services. Compare against the lesser of $71,154 (the 2025 threshold) and 25% of total compensation. Assume total entity compensation is $400,000; 25% of that is $100,000. The lesser of $71,154 and $100,000 is $71,154. $95,000 > $71,154 — §23101(b)(4) IS met. The Wyoming LLC is doing business in California.
+California compensation: $95,000 paid to the San Diego employee, attributable to California services. Compare against the lesser of $75,707 (the 2025 threshold) and 25% of total compensation. Assume total entity compensation is $400,000; 25% of that is $100,000. The lesser of $75,707 and $100,000 is $75,707. $95,000 > $75,707 — §23101(b)(4) IS met. The Wyoming LLC is doing business in California.
 
 The Wyoming LLC must:
 1. Register as a foreign LLC in California (Form LLC-5, $70).
@@ -397,7 +398,7 @@ All outputs include the standard reviewer disclaimer: this is a draft for review
 ## 13. Self-Checks (must pass before output is released)
 
 1. ☐ Is the entity type (LLC vs. C-corp vs. S-corp election) explicitly identified and matched to the founder's stated objectives?
-2. ☐ Has the §23101 "doing business in California" analysis been performed, with explicit comparison against the 2025 thresholds ($711,538 sales / $71,154 payroll / $71,154 property, plus the 25%-of-total prongs)?
+2. ☐ Has the §23101 "doing business in California" analysis been performed, with explicit comparison against the 2025 thresholds ($757,070 sales / $75,707 payroll / $75,707 property, plus the 25%-of-total prongs)?
 3. ☐ For out-of-state entities, has the foreign-qualification cost (LLC-5 $70 + LLC-12 $20, or S&DC-S/N $100 + SI-550 $25) been added to the budget?
 4. ☐ Has the AB 85 / SB 818 expiration been flagged to any client who formed in 2021–2023 OR who is considering formation in 2024+?
 5. ☐ Has the 15-day rule been considered if the formation date is in November or December?
@@ -407,7 +408,7 @@ All outputs include the standard reviewer disclaimer: this is a draft for review
 9. ☐ Has the CTA / BOI status been noted with a "monitor FinCEN" reminder?
 10. ☐ Has the output been flagged as requiring credentialed reviewer signoff before being acted upon?
 
-- **§23101 doing-business-in-California 2025 thresholds** — $711,538 sales / $71,154 payroll / $71,154 property, plus the 25%-of-total prongs  _(R&TC §23101)_
+- **§23101 doing-business-in-California 2025 thresholds** — $757,070 sales / $75,707 payroll / $75,707 property, plus the 25%-of-total prongs  _([R&TC §23101](https://www.ftb.ca.gov/file/business/doing-business-in-california.html))_
 
 ## 14. Refusals and Out-of-Scope
 
@@ -459,3 +460,21 @@ a formal engagement letter** — book a free 30-minute call:
 We'll route you to the named verifier covering your country or state. You can
 also see the full list of verified accountants at
 [openaccountants.com/network](https://openaccountants.com/network).
+
+<!-- openaccountants-cta-block -->
+
+---
+
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

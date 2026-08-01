@@ -7,7 +7,16 @@
 
 1. `foundation.md`
 2. `intake.md`
-3. `armenia-vat.md`
+3. `am-company-formation.md`
+4. `am-corporate-income-tax.md`
+5. `am-tax-overview.md`
+6. `armenia-income-tax.md`
+7. `armenia-payroll.md`
+8. `armenia-social-contributions.md`
+9. `armenia-tax-optimization.md`
+10. `armenia-vat.md`
+11. `payroll-workflow-base.md`
+12. `company-formation-workflow-base.md`
 
 ## How to use
 

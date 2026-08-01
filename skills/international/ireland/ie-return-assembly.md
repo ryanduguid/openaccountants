@@ -2,13 +2,14 @@
 name: ie-return-assembly
 description: Use this skill whenever asked to assemble, finalize, or package an Irish annual tax return. Trigger on phrases like "Ireland tax return assembly", "Form 11 final", "CT1 final filing", "ROS submission Ireland", "preliminary tax Ireland", "31 October Ireland", "assemble Irish return", "prepare Form 11", "prepare Form 12", "finalize Irish self-assessment", or "Revenue Online Service pay and file". This is the capstone orchestrator that pulls together outputs from ie-income-tax-form11, ie-preliminary-tax, ie-prsi-class-s, ie-usc, ireland-vat-return, ie-corporation-tax, ie-paye, ie-payroll, ie-cgt, ie-cat, and ie-formation into a single Form 11 / Form 12 / CT1 working paper plus payment and filing instructions for the Revenue Online Service (ROS). It does not recompute anything itself — it reconciles upstream outputs, builds the line-by-line working paper, generates ROS payment instructions, and produces a reviewer brief and taxpayer action list. ALWAYS read this skill last when finalizing an Irish tax return.
 jurisdiction: IE
-domain: international
 tax_year: 2025
+last_updated: 2026-05-27
+verified_by: pending
 tier: 2
-last_updated: 2026-07-06
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# ie-return-assembly
+# IE Return Assembly
 
 ## Ireland — Return Assembly (Capstone) — Skill v1.0
 
@@ -752,3 +753,21 @@ also see the full list of verified accountants at
 ## Section 2 — Required inputs from upstream skills
 
 0. **Invoke ie-income-tax-form11** — Consume Schedule D Case I/II/III/IV/V income, standard rate cut-off, tax credits
+
+<!-- openaccountants-cta-block -->
+
+---
+
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

@@ -3,13 +3,13 @@ name: pk-sales-tax-federal
 description: ALWAYS read this skill before touching any Pakistan FEDERAL sales tax on goods work. Use whenever asked to prepare, review, classify transactions for, or advise on the federal Sales Tax Return (STR) administered by the Federal Board of Revenue (FBR) under the Sales Tax Act 1990 as amended by the Finance Acts 2024 and 2025. Trigger on phrases like "Pakistan sales tax", "FBR ST", "GST Pakistan", "sales tax return Pakistan", "STR Pakistan", "input tax credit Pakistan", "POS Tier-1 Pakistan", "Finance Act 2025 sales tax", "IRIS sales tax", "Annex-C", "STRN", "Fifth Schedule", "Sixth Schedule", "Eighth Schedule", "Ninth Schedule", "Tenth Schedule", or any request involving federal sales tax on goods in Pakistan. Federal scope only — provincial sales tax on services (SRB, PRA, KPRA, BRA) is handled by a separate skill (pk-sales-tax-services).
 jurisdiction: PK
 tax_year: 2025
-reviewed_by: Ibrar Ali
-review_status: accountant-reviewed
+last_updated: 2026-05-27
+verified_by: Ibrar Ali
 tier: 1
-last_updated: 2026-07-06
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# pk-sales-tax-federal
+# PK Sales Tax Federal
 
 ## Pakistan — Federal Sales Tax on Goods (FBR) — Skill v2.0
 
@@ -508,3 +508,21 @@ a formal engagement letter** — book a free 30-minute call:
 We'll route you to the named verifier covering your country or state. You can
 also see the full list of verified accountants at
 [openaccountants.com/network](https://openaccountants.com/network).
+
+<!-- openaccountants-cta-block -->
+
+---
+
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

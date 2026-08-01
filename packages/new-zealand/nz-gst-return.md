@@ -1,23 +1,25 @@
 ---
 name: nz-gst-return
 description: >
-  Use this skill whenever asked about New Zealand GST returns for self-employed individuals. Trigger on phrases like "GST return", "GST101A", "GST rate NZ", "input tax", "output tax", "zero-rated", "GST registration", "taxable supply", "IRD GST", "myIR GST", or any question about GST filing for sole traders in New Zealand. Covers the 15% standard rate, zero-rated and exempt supplies, $60K registration threshold, invoice and payments basis, and GST101A return preparation. ALWAYS read this skill before touching any NZ GST work.
 version: 2.0
 jurisdiction: NZ
 tax_year: 2025
+last_updated: 2026-04-13
+verified_by: pending
+depends_on: - vat-workflow-base
 category: international
-depends_on:
-  - vat-workflow-base
+tier: 2
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# NZ GST Return -- Self-Employed Skill v2.0
-
----
+# NZ GST Return
 
 ## Section 1 -- Quick Reference
 
+**Quick Reference**
+
 | Field | Value |
-|---|---|
+| --- | --- |
 | Country | New Zealand |
 | Tax | Goods and Services Tax (GST) at 15% |
 | Currency | NZD only |
@@ -32,20 +34,24 @@ depends_on:
 
 ### Rate Table
 
+**Rate Table**
+
 | Rate | Application |
-|---|---|
+| --- | --- |
 | 15% | Standard rate on all taxable supplies |
 | 0% | Zero-rated supplies (exports, going concerns, certain foodstuffs, fine metals) |
 | Exempt | Financial services, residential rent, donated goods (certain conditions) |
 
 ### Tax Fraction
 
-For GST-inclusive amounts at 15%: **3/23** (i.e. 15/115 = 3/23).
+- **Tax fraction for GST-inclusive amounts at 15%** — 3/23 (i.e. 15/115 = 3/23)
 
 ### Key Thresholds
 
+**Key Thresholds**
+
 | Item | Amount (NZD) |
-|---|---|
+| --- | --- |
 | Mandatory GST registration | $60,000 taxable supplies in any 12-month period |
 | Voluntary registration | Any person making taxable supplies |
 | Payments basis eligibility | Taxable supplies < $2,000,000 |
@@ -55,15 +61,15 @@ For GST-inclusive amounts at 15%: **3/23** (i.e. 15/115 = 3/23).
 
 ### Conservative Defaults
 
+**Conservative Defaults**
+
 | Ambiguity | Default |
-|---|---|
+| --- | --- |
 | GST registration status unknown | STOP -- do not compute |
 | Accounting basis unknown | Invoice basis (default) |
 | Supply classification unknown | Standard-rated at 15% |
 | Private use proportion unknown | 0% GST recovery |
 | Going concern status unknown | Not a going concern (charge GST) |
-
----
 
 ## Section 2 -- Required Inputs and Refusal Catalogue
 
@@ -77,22 +83,19 @@ For GST-inclusive amounts at 15%: **3/23** (i.e. 15/115 = 3/23).
 
 ### Refusal Catalogue
 
-**R-NZ-1 -- Not GST-registered.** "If turnover is below $60,000 and the client is not voluntarily registered, no GST filing is required. Stop."
-
-**R-NZ-2 -- Companies and partnerships.** "This skill covers individual self-employed persons only. Company and partnership GST returns may have additional requirements."
-
-**R-NZ-3 -- Financial services (complex).** "Complex financial services GST treatment requires specialist review. Escalate."
-
-**R-NZ-4 -- Cross-border digital services (complex).** "Non-resident digital services GST has specific registration and collection rules. Escalate if amounts are material."
-
----
+- **R-NZ-1 -- Not GST-registered** — If turnover is below $60,000 and the client is not voluntarily registered, no GST filing is required. Stop.
+- **R-NZ-2 -- Companies and partnerships** — This skill covers individual self-employed persons only. Company and partnership GST returns may have additional requirements.
+- **R-NZ-3 -- Financial services (complex)** — Complex financial services GST treatment requires specialist review. Escalate.
+- **R-NZ-4 -- Cross-border digital services (complex)** — Non-resident digital services GST has specific registration and collection rules. Escalate if amounts are material.
 
 ## Section 3 -- Transaction Pattern Library
 
 ### 3.1 Income Patterns (Credits)
 
+**Income Patterns (Credits)**
+
 | Pattern | Tax Line | Treatment | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | DIRECT CREDIT [client] / DC [client] | Taxable supply | GST-inclusive revenue | Standard client payment |
 | EFTPOS SETTLEMENT / EFTPOS CREDIT | Taxable supply | Revenue | Card terminal settlement |
 | INTERNET BANKING CREDIT [client] | Taxable supply | Revenue | Online bank transfer |
@@ -106,13 +109,15 @@ For GST-inclusive amounts at 15%: **3/23** (i.e. 15/115 = 3/23).
 
 ### 3.2 Expense Patterns (Debits)
 
+**Expense Patterns (Debits)**
+
 | Pattern | Expense Category | Treatment | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | SPARK / VODAFONE / 2DEGREES | Communications | Business portion deductible | Mixed use: apportion |
 | VECTOR / MERCURY / GENESIS / CONTACT ENERGY | Utilities | Business portion deductible | Home office: apportion |
 | COUNTDOWN / PAK'N SAVE / NEW WORLD | NOT business | Private | Unless entertainment or business meeting |
 | BUNNINGS / MITRE 10 | Office supplies | Deductible if business | Keep receipts |
-| GOOGLE ADS / META / LINKEDIN | Advertising | Fully deductible | |
+| GOOGLE ADS / META / LINKEDIN | Advertising | Fully deductible |  |
 | ADOBE / MICROSOFT / XERO / SLACK | Software | Fully deductible | Business subscription |
 | AIR NEW ZEALAND / JETSTAR | Travel | Deductible if business | Keep itinerary |
 | UBER NZ / TAXI | Travel | Deductible if business | Not commuting |
@@ -123,13 +128,13 @@ For GST-inclusive amounts at 15%: **3/23** (i.e. 15/115 = 3/23).
 
 ### 3.3 Zero-Rated Supply Indicators
 
+**Zero-Rated Supply Indicators**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | EXPORT / INTERNATIONAL FREIGHT | Zero-rated output | Goods exported from NZ |
 | GOING CONCERN SALE | Zero-rated output | Both parties must be GST-registered |
 | FINE METALS / GOLD BULLION | Zero-rated | Gold, silver, platinum of certain fineness |
-
----
 
 ## Section 4 -- Worked Examples
 
@@ -169,14 +174,14 @@ GST content: $2,300 x 3/23 = $300. Claim 70%: $300 x 70% = $210.
 
 **Classification:** Input tax $210. Flag for reviewer on apportionment basis.
 
----
-
 ## Section 5 -- Tier 1 Rules (When Data Is Clear)
 
 ### 5.1 GST101A Return Line-by-Line
 
+**GST101A Return Line-by-Line**
+
 | Box | Description | How to Populate |
-|---|---|---|
+| --- | --- | --- |
 | 5 | Total sales and income for the period | All income including GST-inclusive, zero-rated, and exempt |
 | 6 | Zero-rated supplies | Exports and other 0% supplies (included in Box 5) |
 | 7 | Total purchases and expenses | All purchases including GST-inclusive, zero-rated, and exempt |
@@ -188,55 +193,56 @@ GST content: $2,300 x 3/23 = $300. Claim 70%: $300 x 70% = $210.
 
 ### 5.2 Accounting Basis (s 19, 19A)
 
+**Accounting Basis**
+
 | Basis | Rule | Eligibility |
-|---|---|---|
+| --- | --- | --- |
 | Invoice basis | Account for GST when invoice is issued or received | Default for all |
 | Payments basis | Account for GST when payment is made or received | Taxable supplies < $2M |
 | Hybrid basis | Invoice for sales, payments for purchases (or vice versa) | By application to IR |
 
 ### 5.3 Filing Frequency and Deadlines (s 15, 16)
 
+**Filing Frequency and Deadlines**
+
 | Frequency | Eligibility | Deadline |
-|---|---|---|
+| --- | --- | --- |
 | Six-monthly | Taxable supplies < $500,000 | 28th of month after period end |
 | Two-monthly | Default for most businesses | 28th of month after period end |
 | Monthly | Taxable supplies > $24M or by election | 28th of month after period end |
 
 ### 5.4 Input Tax Rules (s 20, 21)
 
-Claimable if: supply made by GST-registered person, valid tax invoice held (for supplies over $50), goods/services used in the taxable activity.
-
-Not claimable: private or exempt use, entertainment (50% restriction), motor vehicles (private use portion must be apportioned).
+- **Input tax claimable conditions** — Claimable if: supply made by GST-registered person, valid tax invoice held (for supplies over $50), goods/services used in the taxable activity.  _(GSTA 1985, s 20, 21)_
+- **Input tax not claimable conditions** — Not claimable: private or exempt use, entertainment (50% restriction), motor vehicles (private use portion must be apportioned).  _(GSTA 1985, s 20, 21)_
 
 ### 5.5 Penalties
 
+**Penalties**
+
 | Offence | Penalty |
-|---|---|
+| --- | --- |
 | Late filing | $250 per return |
 | Repeated late filing | Escalating penalties |
 | Interest on unpaid GST | From original due date |
-
----
 
 ## Section 6 -- Tier 2 Catalogue (Reviewer Judgement Required)
 
 ### 6.1 Mixed-Use Assets
 
-If the proportion of taxable use changes, adjustments may be required. Flag for reviewer if mixed-use assets exceed $5,000.
+- **Mixed-use assets adjustment flag** — If the proportion of taxable use changes, adjustments may be required. Flag for reviewer if mixed-use assets exceed $5,000.
 
 ### 6.2 Bad Debts (s 26)
 
-On invoice basis, if a debt is written off after 6 months, claim a bad debt adjustment (Box 11) for the GST component.
+- **Bad debt adjustment** — On invoice basis, if a debt is written off after 6 months, claim a bad debt adjustment (Box 11) for the GST component.  _(GSTA 1985, s 26)_
 
 ### 6.3 Second-Hand Goods Input Tax
 
-A registered person can claim input tax on second-hand goods purchased from a non-registered person, subject to conditions.
+- **Second-hand goods input tax claim** — A registered person can claim input tax on second-hand goods purchased from a non-registered person, subject to conditions.
 
 ### 6.4 Change of Use Adjustments
 
-When the business/private use proportion of an asset changes, adjustments may be required in the GST return.
-
----
+- **Change of use adjustment** — When the business/private use proportion of an asset changes, adjustments may be required in the GST return.
 
 ## Section 7 -- Working Paper Template
 
@@ -282,14 +288,14 @@ REVIEWER FLAGS:
   [ ] Tax invoices held for all input claims?
 ```
 
----
-
 ## Section 8 -- Bank Statement Reading Guide
 
 ### NZ Bank Statement Formats
 
+**NZ Bank Statement Formats**
+
 | Bank | Format | Key Fields |
-|---|---|---|
+| --- | --- | --- |
 | ANZ NZ | CSV / PDF | Date, Description, Amount, Balance |
 | ASB | CSV | Date, Unique Id, Tran Type, Cheque Number, Payee, Memo, Amount |
 | BNZ | CSV | Date, Description, Debit, Credit, Balance |
@@ -299,8 +305,10 @@ REVIEWER FLAGS:
 
 ### Key NZ Banking Narrations
 
+**Key NZ Banking Narrations**
+
 | Narration | Meaning | Classification Hint |
-|---|---|---|
+| --- | --- | --- |
 | D/C or DIRECT CREDIT | Bank transfer in | Potential income |
 | AP or AUTOPAY | Automatic payment out | Regular expense |
 | EFTPOS | Card terminal payment | Expense or income |
@@ -308,8 +316,6 @@ REVIEWER FLAGS:
 | DD / DIRECT DEBIT | Direct debit | Regular expense |
 | IRD / INLAND REVENUE | Tax payment or refund | Exclude |
 | ACC | ACC levy | Exclude from GST |
-
----
 
 ## Section 9 -- Onboarding Fallback
 
@@ -335,14 +341,14 @@ ONBOARDING QUESTIONS -- NZ GST RETURN
 8. Do you work from home? What percentage is business use?
 ```
 
----
-
 ## Section 10 -- Reference Material
 
 ### Key Legislation
 
+**Key Legislation**
+
 | Topic | Section |
-|---|---|
+| --- | --- |
 | Imposition of GST | GSTA 1985, s 8 |
 | Zero-rated supplies | GSTA 1985, s 11 |
 | Exempt supplies | GSTA 1985, s 14 |
@@ -362,8 +368,10 @@ ONBOARDING QUESTIONS -- NZ GST RETURN
 
 ### Changelog
 
+**Changelog**
+
 | Version | Date | Change |
-|---|---|---|
+| --- | --- | --- |
 | 2.0 | April 2026 | Full rewrite to v2.0 structure; NZ bank formats; local platform patterns; worked examples |
 | 1.0 | 2025 | Initial version |
 
@@ -376,8 +384,6 @@ ONBOARDING QUESTIONS -- NZ GST RETURN
 - [ ] Exempt supplies included in Box 5 but excluded from GST calculation?
 - [ ] Zero-rated supplies correctly reported in Box 6?
 
----
-
 ## PROHIBITIONS
 
 - NEVER charge GST if the person is not GST-registered
@@ -389,17 +395,11 @@ ONBOARDING QUESTIONS -- NZ GST RETURN
 - NEVER omit exempt supplies from Box 5 (total sales) -- they are included in total but excluded from GST calculation
 - NEVER present calculations as definitive -- always label as estimated and direct client to IR or a qualified NZ chartered accountant
 
----
-
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a New Zealand Chartered Accountant or equivalent licensed practitioner) before filing or acting upon.
 
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
-
----
-
-<!-- openaccountants-cta-block -->
+The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
 
 ## Talk to a verified accountant
 
@@ -414,16 +414,22 @@ a formal engagement letter** — book a free 30-minute call:
 
 We'll route you to the named verifier covering your country or state. You can
 also see the full list of verified accountants at
-[openaccountants.com/network](https://www.openaccountants.com/network).
+[openaccountants.com/network](https://openaccountants.com/network).
 
-<!-- openaccountants-mcp-cta -->
+<!-- openaccountants-cta-block -->
 
-## The accountant-verified version lives in the connector
+---
 
-This file is the open, **research-grade draft**. The **accountant-verified**
-version of this skill is **not published to GitHub** — it is delivered free
-through the OpenAccountants MCP connector, where your AI agent loads the
-verified rules together with the name of the accountant who signed them off.
+## Talk to a verified accountant
 
-**→ Install the free connector:** <https://www.openaccountants.com/connect>
-**MCP endpoint:** `https://www.openaccountants.com/api/mcp`
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

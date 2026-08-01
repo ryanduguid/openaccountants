@@ -2,15 +2,14 @@
 name: sa-rett
 description: Use this skill whenever asked about the Saudi Arabian Real Estate Transaction Tax (RETT). Trigger on phrases like "Saudi RETT", "Real Estate Transaction Tax KSA", "5% RETT Saudi", "Saudi property transfer tax", "ZATCA RETT", "Royal Decree A/84 RETT", "Saudi first-home exemption", "KSA notarisation tax", "ZATCA real estate", "disposal of Saudi real estate", or any question about computing, declaring, or paying RETT on a Saudi real-estate disposal. Scope covers the 5% RETT rate, taxable transactions and persons, taxable value rules, the Saudi-national first-home exemption (up to SAR 1,000,000 — verify current cap), inheritance and first-degree-relative gift exemptions, Waqf endowments, sale-leaseback and sukuk arrangements, declaration on the ZATCA portal before notarisation, and the interaction with the pre-October-2020 15% VAT-on-real-estate regime that RETT replaced. ALWAYS read this skill before touching any Saudi RETT work.
 jurisdiction: SA
-domain: international
 tax_year: 2025
-reviewed_by: Mehran Habib
-review_status: accountant-reviewed
+last_updated: 2026-05-27
+verified_by: Mehran Habib
 tier: 1
-last_updated: 2026-07-06
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# sa-rett
+# SA RETT
 
 ## Verified rates & thresholds (accountant-reviewed)
 
@@ -278,3 +277,21 @@ To speak with one of the licensed accountants who verifies skills for your juris
 → [Book a call](https://calendly.com/openaccountants-info/30min)
 
 We'll route you to the named verifier covering your country or state. You can also see the full list of verified accountants at [openaccountants.com/network](https://openaccountants.com/network).
+
+<!-- openaccountants-cta-block -->
+
+---
+
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

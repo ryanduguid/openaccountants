@@ -1,28 +1,46 @@
 ---
 name: ng-cit
-description: >
-  Use this skill whenever asked about Nigerian Companies Income Tax (CIT) for a resident Nigerian company. Trigger on phrases like "Nigeria CIT", "Companies Income Tax Nigeria", "FIRS CIT", "Nigeria Tax Act 2025 corporate", "NTA 2025", "CITA", "small company CIT Nigeria", "medium company tax Nigeria", "large company tax Nigeria", "Nigeria minimum tax", "development levy Nigeria", "TET Nigeria", "Pillar Two Nigeria", "Tax Pro-Max", "Nigeria capital allowances", or "Nigeria CIT return". Covers the transitional 2025 regime under the legacy Companies Income Tax Act (CITA, Cap. C21 LFN 2004 as amended) AND the new Nigeria Tax Act 2025 (NTA 2025) regime taking effect 1 January 2026, including the small-company 0% rate (turnover ≤ ₦100M and asset base ≤ ₦250M), medium-company 20% rate (₦100M < turnover ≤ ₦1B), large-company 30% rate phased to ~25% by 2029, the unified 2% Development Levy replacing TET/NITDA/NASENI/Police Trust Fund, the 15% Minimum Effective Tax Rate for multinationals with consolidated revenue > €750M (Pillar Two), capital allowances under the Sixth Schedule, indefinite loss carry-forward, monthly minimum tax interaction, the 6-month annual filing deadline via FIRS Tax Pro-Max, and TIN registration. Out of scope: personal income tax (use ng-income-tax), VAT (use ng-vat-return / nigeria-vat), petroleum profits tax / hydrocarbon tax, upstream oil & gas under PIA 2021, banking and insurance sector returns, capital gains on share disposals beyond ordinary CIT scope, free trade zone enterprises, NEPZA / OGFZA regimes, transfer pricing controversy, and pioneer status / industrial development income tax relief processing. ALWAYS read this skill before touching any Nigerian corporate income tax work.
-version: 1.0
+description: "Use this skill whenever asked about Nigerian Companies Income Tax (CIT) for a resident Nigerian company. Trigger on phrases like \"Nigeria CIT\", \"Companies Income Tax Nigeria\", \"FIRS CIT\", \"Nigeria Tax Act 2025 corporate\", \"NTA 2025\", \"CITA\", \"small company CIT Nigeria\", \"medium company tax Nigeria\", \"large company tax Nigeria\", \"Nigeria minimum tax\", \"development levy Nigeria\", \"TET Nigeria\", \"Pillar Two Nigeria\", \"Tax Pro-Max\", \"Nigeria capital allowances\", or \"Nigeria CIT return\". Covers the transitional 2025 regime under the legacy Companies Income Tax Act (CITA, Cap. C21 LFN 2004 as amended) AND the new Nigeria Tax Act 2025 (NTA 2025) regime taking effect 1 January 2026, including the small-company 0% rate (turnover ≤ ₦100M and asset base ≤ ₦250M), medium-company 20% rate (₦100M < turnover ≤ ₦1B), large-company 30% rate phased to ~25% by 2029, the unified 2% Development Levy replacing TET/NITDA/NASENI/Police Trust Fund, the 15% Minimum Effective Tax Rate for multinationals with consolidated revenue > €750M (Pillar Two), capital allowances under the Sixth Schedule, indefinite loss carry-forward, monthly minimum tax interaction, the 6-month annual filing deadline via FIRS Tax Pro-Max, and TIN registration. Out of scope: personal income tax (use ng-income-tax), VAT (use ng-vat-return / nigeria-vat), petroleum profits tax / hydrocarbon tax, upstream oil & gas under PIA 2021, banking and insurance sector returns, capital gains on share disposals beyond ordinary CIT scope, free trade zone enterprises, NEPZA / OGFZA regimes, transfer pricing controversy, and pioneer status / industrial development income tax relief processing. ALWAYS read this skill before touching any Nigerian corporate income tax work."
 jurisdiction: NG
 tax_year: 2025
-category: international
-depends_on:
-  - foundation
-verified_by: pending
+last_updated: 2026-05-27
+verified_by: Omolola Fasasi 
+tier: 1
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Nigeria — Companies Income Tax (CIT) — Skill v1.0
+# NG Cit
+
+## Nigeria — Companies Income Tax (CIT) — Skill v1.0
 
 > **Produced by OpenAccountants (openaccountants.com)**
 >
 > This skill is for informational purposes only and does not constitute tax, legal, or financial advice. All outputs must be reviewed and signed off by a Nigerian chartered tax practitioner (ICAN / ANAN / CITN) before filing or acting upon.
 
----
+## Verified rates & thresholds (accountant-reviewed)
+
+> Reviewed against the cited tax authorities by **Omolola Fasasi** on 2026-06-21.
+> Items flagged for further clarification are tracked separately and excluded here.
+> This block is generated from verified `skill_facts` — edit the facts, not the prose.
+
+### ng-cit
+
+- **Small company (turnover ≤ ₦50M and fixed assets ≤#250M) — CIT rate** — Exempted from CIT, CGT and 4% development fee  _(NIGERIAN TAX ACT 2025)_
+- **Medium company (₦100M–₦500M) — CIT rate** — 20% plus 4% development levy  _(NIGERIAN TAX ACT 2025)_
+- **Large company (> ₦500M turnover) — CIT rate** — 30% plus 4% development levy  _(NIGERIAN TAX ACT 2025)_
+- **Tertiary Education Tax (TET) rate** — A new 4% levy on assessable profit replaces multiple levies (TET, NASENI, PTF, IT LEVY) from 1st january 2026  _(NIGERIAN TAX ACT 2025)_
+- **Minimum tax (where CIT < minimum)** — 15% minimum effective tax rate (ETR) targeted at large corporations and multinationals enterprises (MNEs)  _(NIGERIAN TAX ACT 2025)_
+- **CIT return filing deadline** — 6 months after accounting year end or 18 months from incorporation for new companies  _(NIGERIAN TAX ACT 2025)_
+- **Initial allowance — plant & machinery** — 10% Category: Assets in this bracket generally include buildings, infrastructure, and long-term structures.20% Category: Assets in this bracket typically cover industrial equipment, furniture, and heavy machinery (e.g., qualifying petroleum rights are also set at 20%).25% Category: Assets in this bracket apply to fast-depreciating property like motor vehicles, computers, and office technology  _(NIGERIAN TAX ACT 2025)_
+- **Annual allowance — plant & machinery** —   _(NIGERIAN TAX ACT 2025)_
+- **Annual allowance — industrial buildings** —   _(NIGERIAN TAX ACT 2025)_
 
 ## Section 1 — Quick Reference
 
+**Quick reference field table**
+
 | Field | Value |
-|---|---|
+| --- | --- |
 | Country | Federal Republic of Nigeria |
 | Tax | Companies Income Tax (CIT) |
 | Currency | NGN (Naira) — ₦ |
@@ -35,14 +53,14 @@ verified_by: pending
 | Payment | With return, or in instalments up to filing deadline (FIRS approval) |
 | Bookkeeping retention | 6 years (Section 63 CITA); align with NTA 2025 implementing regulations |
 | Skill version | 1.0 |
-| Validated by | Pending — sign-off by a CITN-licensed chartered tax practitioner |
+| Validated by | Verified by Omolola Fasasi (MB058950) on 2026-06-21 |
 
 ### 1.1 Rate Table
 
-**For assessment year 2025 (legacy CITA, accounting periods ending in 2025):**
+**Legacy CITA 2025 rate table**
 
 | Company size | Definition | CIT rate |
-|---|---|---|
+| --- | --- | --- |
 | Small | Turnover ≤ ₦25M (CITA s.40 as amended Finance Act 2019) | **0%** |
 | Medium | ₦25M < Turnover ≤ ₦100M | **20%** |
 | Large | Turnover > ₦100M | **30%** |
@@ -51,10 +69,10 @@ verified_by: pending
 | NASENI levy | Companies with turnover ≥ ₦100M in specified sectors | 0.25% of profit before tax |
 | Police Trust Fund levy | All companies | 0.005% of net profit |
 
-**For assessment year 2026 onward (Nigeria Tax Act 2025):**
+**NTA 2025 rate table (from 1 January 2026)**
 
 | Company size | Definition (NTA 2025) | CIT rate |
-|---|---|---|
+| --- | --- | --- |
 | **Small** | Turnover ≤ **₦100M** AND fixed asset base ≤ **₦250M** | **0%** |
 | **Medium** | ₦100M < Turnover ≤ ₦1B | **20%** |
 | **Large** | Turnover > ₦1B | **30%** in 2026, transitioning to ~**25%** by 2029 via tax-credit mechanism per NTA 2025 transitional schedule |
@@ -65,8 +83,10 @@ verified_by: pending
 
 ### 1.2 Conservative Defaults
 
+**Conservative defaults table**
+
 | Ambiguity | Default |
-|---|---|
+| --- | --- |
 | Accounting period spans 1 Jan 2026 (CITA-to-NTA transition) | Apportion on a daily basis; apply legacy rules to pre-2026 portion, NTA 2025 to post-2026 portion |
 | Company size band unknown | Large (30% + 2% Development Levy) |
 | Asset base unknown for NTA 2025 small-company test | Assume > ₦250M (small-company status denied) |
@@ -75,8 +95,6 @@ verified_by: pending
 | Loss carry-forward year unknown | Verify per-year schedule; treat oldest losses as expired under legacy 4-year limit if pre-Finance Act 2019 |
 | Pioneer status / IDITR relief uncertified | Apply standard rate; flag pending Industrial Inspectorate certificate |
 | TIN status unknown | Halt — TIN is mandatory before filing |
-
----
 
 ## Section 2 — Required Inputs and Refusal Catalogue
 
@@ -92,145 +110,78 @@ verified_by: pending
 
 ### 2.2 Refusal Catalogue
 
-**R-NG-CIT-1 — Upstream oil & gas.** Petroleum operations under the Petroleum Industry Act 2021 (PIA) — Hydrocarbon Tax (HT) and Companies Income Tax on midstream/downstream operations — require specialist handling. Escalate.
-
-**R-NG-CIT-2 — Banks, insurance, and pension funds.** Sector-specific rules (CBN prudential disallowances, NAICOM rules, PenCom rules). Out of scope.
-
-**R-NG-CIT-3 — Free trade zones (NEPZA, OGFZA, Lekki FTZ, Calabar FTZ).** Approved Enterprise status may carry CIT exemption with conditions. Out of scope; escalate to a zone-licensed advisor.
-
-**R-NG-CIT-4 — Pioneer status / Industrial Development Income Tax Relief (IDITR).** Applications and ongoing eligibility are handled by NIPC, not by this skill. Apply standard CIT until pioneer certificate is in hand.
-
-**R-NG-CIT-5 — Transfer pricing controversy or APA.** Disputes, MAP, or active TP audits are out of scope. Standard TP documentation under the Income Tax (Transfer Pricing) Regulations 2018 is mentioned but full computation is escalated.
-
-**R-NG-CIT-6 — Non-resident companies and digital services tax / Significant Economic Presence.** Non-residents with SEP under Companies Income Tax (Significant Economic Presence) Order 2020 are out of scope.
-
-**R-NG-CIT-7 — Group / consolidated returns.** Nigeria does not permit consolidated CIT returns; each company files separately. Group transfer-pricing implications are out of scope.
-
-**R-NG-CIT-8 — Active FIRS audit / assessment dispute.** Companies with active FIRS Notice of Refusal to Amend (NORA), Tax Appeal Tribunal proceedings, or unpaid assessment notices must be escalated. Penalty and interest computations under Section 32 FIRS Establishment Act 2007 should be done by a chartered tax practitioner.
-
-**R-NG-CIT-9 — Cross-skill scope.** Personal income tax → `ng-income-tax`. VAT → `ng-vat-return` / `nigeria-vat`. This skill is corporate income tax only.
-
----
+- **R-NG-CIT-1** — Upstream oil & gas. Petroleum operations under the Petroleum Industry Act 2021 (PIA) — Hydrocarbon Tax (HT) and Companies Income Tax on midstream/downstream operations — require specialist handling. Escalate.  _(Petroleum Industry Act 2021)_
+- **R-NG-CIT-2** — Banks, insurance, and pension funds. Sector-specific rules (CBN prudential disallowances, NAICOM rules, PenCom rules). Out of scope.
+- **R-NG-CIT-3** — Free trade zones (NEPZA, OGFZA, Lekki FTZ, Calabar FTZ). Approved Enterprise status may carry CIT exemption with conditions. Out of scope; escalate to a zone-licensed advisor.
+- **R-NG-CIT-4** — Pioneer status / Industrial Development Income Tax Relief (IDITR). Applications and ongoing eligibility are handled by NIPC, not by this skill. Apply standard CIT until pioneer certificate is in hand.
+- **R-NG-CIT-5** — Transfer pricing controversy or APA. Disputes, MAP, or active TP audits are out of scope. Standard TP documentation under the Income Tax (Transfer Pricing) Regulations 2018 is mentioned but full computation is escalated.  _(Income Tax (Transfer Pricing) Regulations 2018)_
+- **R-NG-CIT-6** — Non-resident companies and digital services tax / Significant Economic Presence. Non-residents with SEP under Companies Income Tax (Significant Economic Presence) Order 2020 are out of scope.  _(Companies Income Tax (Significant Economic Presence) Order 2020)_
+- **R-NG-CIT-7** — Group / consolidated returns. Nigeria does not permit consolidated CIT returns; each company files separately. Group transfer-pricing implications are out of scope.
+- **R-NG-CIT-8** — Active FIRS audit / assessment dispute. Companies with active FIRS Notice of Refusal to Amend (NORA), Tax Appeal Tribunal proceedings, or unpaid assessment notices must be escalated. Penalty and interest computations under Section 32 FIRS Establishment Act 2007 should be done by a chartered tax practitioner.  _(Section 32 FIRS Establishment Act 2007)_
+- **R-NG-CIT-9** — Cross-skill scope. Personal income tax → `ng-income-tax`. VAT → `ng-vat-return` / `nigeria-vat`. This skill is corporate income tax only.
 
 ## Section 3 — Tier 1 Rules
 
 ### 3.1 Charge to Tax — CITA s.9 (legacy) / NTA 2025
 
-CIT is charged on the **profits of any company accruing in, derived from, brought into, or received in Nigeria** in respect of:
-
-- Trade or business
-- Rent or premiums from land or property
-- Dividends, interest, royalties, discounts, charges, annuities
-- Fees, dues, allowances for services rendered
-- Any other annual profits or gains
-
-NTA 2025 retains the same broad charging language with modernised drafting and explicit inclusion of digital and cross-border services.
+- **Charge to CIT** — CIT is charged on the profits of any company accruing in, derived from, brought into, or received in Nigeria in respect of: Trade or business; Rent or premiums from land or property; Dividends, interest, royalties, discounts, charges, annuities; Fees, dues, allowances for services rendered; Any other annual profits or gains. NTA 2025 retains the same broad charging language with modernised drafting and explicit inclusion of digital and cross-border services.  _(CITA s.9 / NTA 2025)_
 
 ### 3.2 Determining Company Size
 
-**Legacy 2025 thresholds (Finance Act 2019 / 2020 amendments to CITA):**
-
-```
-Small  : Turnover ≤ ₦25,000,000           → 0% CIT, exempt from TET
-Medium : ₦25M < Turnover ≤ ₦100,000,000   → 20% CIT
-Large  : Turnover > ₦100,000,000          → 30% CIT
-```
-
-**NTA 2025 thresholds (from 1 January 2026):**
-
-```
-Small  : Turnover ≤ ₦100,000,000 AND fixed assets ≤ ₦250,000,000
-         → 0% CIT, exempt from Development Levy
-
-Medium : ₦100,000,000 < Turnover ≤ ₦1,000,000,000
-         → 20% CIT + 2% Development Levy
-
-Large  : Turnover > ₦1,000,000,000
-         → 30% CIT phasing to ~25% by 2029 + 2% Development Levy
-```
-
-**Important:** under NTA 2025 the small-company test is **dual** (turnover AND asset base). Failing either limb forfeits 0% status. The threshold leap from ₦25M to ₦100M (turnover) and the new ₦250M asset cap is one of the headline reforms.
+- **Legacy 2025 thresholds** — Small: Turnover ≤ ₦25,000,000 → 0% CIT, exempt from TET. Medium: ₦25M < Turnover ≤ ₦100,000,000 → 20% CIT. Large: Turnover > ₦100,000,000 → 30% CIT.  _(Finance Act 2019 / 2020 amendments to CITA)_
+- **NTA 2025 thresholds (from 1 January 2026)** — Small: Turnover ≤ ₦100,000,000 AND fixed assets ≤ ₦250,000,000 → 0% CIT, exempt from Development Levy. Medium: ₦100,000,000 < Turnover ≤ ₦1,000,000,000 → 20% CIT + 2% Development Levy. Large: Turnover > ₦1,000,000,000 → 30% CIT phasing to ~25% by 2029 + 2% Development Levy.  _(NTA 2025)_
+- **Dual small-company test** — Important: under NTA 2025 the small-company test is dual (turnover AND asset base). Failing either limb forfeits 0% status. The threshold leap from ₦25M to ₦100M (turnover) and the new ₦250M asset cap is one of the headline reforms.  _(NTA 2025)_
 
 ### 3.3 Large-Company Rate Phasing (NTA 2025)
 
-Per NTA 2025 transitional provisions, the effective large-company CIT rate is reduced from 30% to approximately 25% through a phased tax credit between accounting years 2026 and 2029.
+- **Phasing description** — Per NTA 2025 transitional provisions, the effective large-company CIT rate is reduced from 30% to approximately 25% through a phased tax credit between accounting years 2026 and 2029.  _(NTA 2025 transitional provisions)_
 
 > **TBC — verify under NTA 2025 final implementing regulations.** Indicative trajectory pending FIRS schedule:
 
+**Large-company rate phasing table**
+
 | Accounting year | Headline rate | Tax-credit reduction | Effective rate (approx.) |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | 2026 | 30% | TBC | ~28-30% |
 | 2027 | 30% | TBC | ~27% |
 | 2028 | 30% | TBC | ~26% |
 | 2029 onward | 30% | TBC | ~25% |
 
-**Conservative default:** until FIRS publishes the phasing schedule, compute at the headline rate stated for the year and label any reduction as "subject to NTA 2025 implementing regulations".
+- **Conservative default** — Conservative default: until FIRS publishes the phasing schedule, compute at the headline rate stated for the year and label any reduction as "subject to NTA 2025 implementing regulations".
 
 ### 3.4 The Development Levy — NTA 2025
 
-NTA 2025 consolidates four legacy levies — **Tertiary Education Tax (TET, 3%), NITDA levy (1%), NASENI levy (0.25%), and Police Trust Fund levy (0.005%)** — into a single **2% Development Levy** on assessable profits of all non-small companies. The Levy is administered by FIRS and reported on the CIT return.
+- **Development Levy consolidation** — NTA 2025 consolidates four legacy levies — Tertiary Education Tax (TET, 3%), NITDA levy (1%), NASENI levy (0.25%), and Police Trust Fund levy (0.005%) — into a single 2% Development Levy on assessable profits of all non-small companies. The Levy is administered by FIRS and reported on the CIT return.  _(NTA 2025)_
 
 > **TBC — verify under NTA 2025 final implementing regulations:** the precise allocation formula between TETFund, NITDA, NASENI, Defence Security Trust Fund, Police Trust Fund, and other beneficiaries; and the transition treatment for accounting years straddling 1 January 2026.
 
 ### 3.5 Pillar Two — Minimum Effective Tax Rate (MET)
 
-Multinational enterprise groups with **consolidated annual revenue exceeding €750 million** in at least two of the preceding four years are subject to the **15% Minimum Effective Tax Rate (MET)** introduced by NTA 2025 in alignment with the OECD/G20 Inclusive Framework Pillar Two GloBE Rules.
-
-**Mechanism:** if the effective tax rate of the group's Nigerian operations falls below 15% after all credits, deductions, and incentives, a top-up tax brings the ETR to 15%. Pioneer status, free-trade-zone exemptions, and other tax holidays may be effectively neutralised within the MET scope.
+- **MET applicability** — Multinational enterprise groups with consolidated annual revenue exceeding €750 million in at least two of the preceding four years are subject to the 15% Minimum Effective Tax Rate (MET) introduced by NTA 2025 in alignment with the OECD/G20 Inclusive Framework Pillar Two GloBE Rules.  _(NTA 2025 / OECD Pillar Two GloBE Rules)_
+- **Mechanism** — Mechanism: if the effective tax rate of the group's Nigerian operations falls below 15% after all credits, deductions, and incentives, a top-up tax brings the ETR to 15%. Pioneer status, free-trade-zone exemptions, and other tax holidays may be effectively neutralised within the MET scope.
 
 > **TBC — verify under NTA 2025 final implementing regulations:** the precise top-up mechanism (Domestic Top-up Tax / Qualified Domestic Minimum Top-up Tax — QDMTT), the Income Inclusion Rule (IIR), Undertaxed Payments Rule (UTPR) sequencing, and the carve-out / safe-harbour rules expected to mirror OECD model rules.
 
-**Conservative default:** if any group entity has consolidated revenue > €750M, flag MET as in scope and request the group's Pillar Two computation.
+- **Conservative default** — Conservative default: if any group entity has consolidated revenue > €750M, flag MET as in scope and request the group's Pillar Two computation.
 
 ### 3.6 Assessable Profit, Total Profit, and Chargeable Profit
 
-The CIT computation proceeds in layers (CITA s.13 / NTA 2025 equivalents):
-
-```
-Adjusted Profit       = Accounting profit ± non-allowable / non-taxable items
-Assessable Profit     = Adjusted Profit on preceding-year basis (current accounting period)
-Total Profit          = Assessable Profit − Capital Allowances − Loss Relief
-Tax Payable           = Applicable CIT rate × Total Profit
-                        + Development Levy (2% × Assessable Profit, if not small)
-                        + MET top-up (if applicable)
-                        − WHT credits − Other allowable credits
-```
+- **CIT computation layers** — Adjusted Profit = Accounting profit ± non-allowable / non-taxable items Assessable Profit = Adjusted Profit on preceding-year basis (current accounting period) Total Profit = Assessable Profit − Capital Allowances − Loss Relief Tax Payable = Applicable CIT rate × Total Profit + Development Levy (2% × Assessable Profit, if not small) + MET top-up (if applicable) − WHT credits − Other allowable credits  _(CITA s.13 / NTA 2025 equivalents)_
 
 ### 3.7 Allowable Deductions — CITA s.24 / NTA 2025
 
-Wholly, reasonably, exclusively, and necessarily (WREN) incurred in producing the profits. Examples:
-
-- Interest on money borrowed and employed as capital (subject to thin-capitalisation: 30% EBITDA limit under Finance Act 2019, retained under NTA 2025)
-- Rent of premises occupied for business
-- Repairs of premises, plant, machinery (not improvements)
-- Bad and doubtful debts (subject to specific provisioning rules)
-- Pension and gratuity contributions to approved schemes
-- Salaries, wages, allowances (subject to PAYE compliance)
-- Donations to approved bodies (Fifth Schedule CITA; mirrored in NTA 2025)
-- Research and development (with possible enhanced deduction under NTA 2025 — TBC)
-- Bank charges, audit fees, professional fees
+- **WREN test and examples** — Wholly, reasonably, exclusively, and necessarily (WREN) incurred in producing the profits. Examples: Interest on money borrowed and employed as capital (subject to thin-capitalisation: 30% EBITDA limit under Finance Act 2019, retained under NTA 2025); Rent of premises occupied for business; Repairs of premises, plant, machinery (not improvements); Bad and doubtful debts (subject to specific provisioning rules); Pension and gratuity contributions to approved schemes; Salaries, wages, allowances (subject to PAYE compliance); Donations to approved bodies (Fifth Schedule CITA; mirrored in NTA 2025); Research and development (with possible enhanced deduction under NTA 2025 — TBC); Bank charges, audit fees, professional fees.  _(CITA s.24 / NTA 2025)_
 
 ### 3.8 Non-Allowable Deductions — CITA s.27 / NTA 2025
 
-The following are expressly disallowed:
-
-- Capital expenditure (deduct via capital allowances, not as expenses)
-- Domestic or private expenses
-- Sum recoverable under any insurance or contract of indemnity
-- Income tax itself, or any tax measured on profits
-- Penalties or fines for breach of law
-- Depreciation per accounts (replaced by capital allowances)
-- Provisions for general reserves
-- Donations not on the Fifth Schedule
-- Expenses related to exempt income
-- Excess interest beyond the 30% EBITDA thin-cap limit (Section 13A of the Finance Act 2019 amendments / NTA 2025 equivalent)
+- **Disallowed items** — Capital expenditure (deduct via capital allowances, not as expenses); Domestic or private expenses; Sum recoverable under any insurance or contract of indemnity; Income tax itself, or any tax measured on profits; Penalties or fines for breach of law; Depreciation per accounts (replaced by capital allowances); Provisions for general reserves; Donations not on the Fifth Schedule; Expenses related to exempt income; Excess interest beyond the 30% EBITDA thin-cap limit (Section 13A of the Finance Act 2019 amendments / NTA 2025 equivalent).  _(CITA s.27 / NTA 2025)_
 
 ### 3.9 Capital Allowances — Second Schedule CITA / Sixth Schedule NTA 2025
 
-Capital allowances replace book depreciation for tax. Rates per asset class:
+**Capital allowance rates per asset class**  _(Second Schedule CITA / Sixth Schedule NTA 2025)_
 
 | Asset class | Initial allowance | Annual allowance |
-|---|---|---|
+| --- | --- | --- |
 | Building (industrial) | 15% | 10% |
 | Building (non-industrial) | 15% | 10% |
 | Furniture and fittings | 25% | 20% |
@@ -251,70 +202,53 @@ Capital allowances replace book depreciation for tax. Rates per asset class:
 
 ### 3.10 Loss Relief
 
-**Legacy CITA:** trade losses carried forward up to **4 years** (extended to **indefinite** for non-insurance companies by Finance Act 2019). Insurance companies: 4-year cap (legacy).
-
-**NTA 2025:** **indefinite carry-forward** for all companies, subject to anti-abuse rules (no carry-forward where ≥ 50% ownership change combined with major change in trade — TBC under final regulations).
-
-**No carry-back available.**
+- **Loss carry-forward rules** — Legacy CITA: trade losses carried forward up to 4 years (extended to indefinite for non-insurance companies by Finance Act 2019). Insurance companies: 4-year cap (legacy). NTA 2025: indefinite carry-forward for all companies, subject to anti-abuse rules (no carry-forward where ≥ 50% ownership change combined with major change in trade — TBC under final regulations). No carry-back available.  _(CITA / Finance Act 2019 / NTA 2025)_
 
 ### 3.11 Minimum Tax — CITA s.33 (legacy)
 
-When a company has no total profit or total profit below the minimum-tax threshold, CITA s.33 (as amended by Finance Act 2019/2020) imposes a minimum tax of **0.5% of gross turnover** less franked investment income.
+- **Minimum tax rule** — When a company has no total profit or total profit below the minimum-tax threshold, CITA s.33 (as amended by Finance Act 2019/2020) imposes a minimum tax of 0.5% of gross turnover less franked investment income. Exemptions: small companies, companies in the first 4 calendar years of business, and companies engaged in agricultural trade. NTA 2025: the minimum-tax regime is restructured.  _(CITA s.33 as amended by Finance Act 2019/2020)_
 
-**Exemptions:** small companies, companies in the first 4 calendar years of business, and companies engaged in agricultural trade.
-
-**NTA 2025:** the minimum-tax regime is restructured. > **TBC — verify under NTA 2025 final implementing regulations** whether 0.5% of turnover is retained, replaced, or subsumed into the MET framework.
+> **TBC — verify under NTA 2025 final implementing regulations** whether 0.5% of turnover is retained, replaced, or subsumed into the MET framework.
 
 ### 3.12 Withholding Tax (WHT) Credit
 
-WHT suffered on income (interest, dividends, rent, royalties, fees) is creditable against CIT liability, subject to WHT credit notes from the deducting party. Excess WHT can be refunded or carried forward.
-
-WHT on dividends paid out of profits already taxed at CIT — **franked investment income** — is not subject to further CIT (avoiding double taxation).
-
----
+- **WHT credit and franked investment income** — WHT suffered on income (interest, dividends, rent, royalties, fees) is creditable against CIT liability, subject to WHT credit notes from the deducting party. Excess WHT can be refunded or carried forward. WHT on dividends paid out of profits already taxed at CIT — franked investment income — is not subject to further CIT (avoiding double taxation).
 
 ## Section 4 — Tier 2 Catalogue (Reviewer Judgement Required)
 
 ### 4.1 Pioneer Status / Industrial Development Income Tax Relief
 
-Granted by the Nigerian Investment Promotion Commission (NIPC) under the Industrial Development (Income Tax Relief) Act. **5 years of tax holiday** (3 + possible 2-year extension) for approved pioneer products and services.
-
-**Conservative default:** apply standard CIT until the Pioneer Certificate is in hand. Note that under NTA 2025 Pillar Two MET, pioneer-status relief may be neutralised for large multinationals.
+- **Pioneer status relief** — Granted by the Nigerian Investment Promotion Commission (NIPC) under the Industrial Development (Income Tax Relief) Act. 5 years of tax holiday (3 + possible 2-year extension) for approved pioneer products and services. Conservative default: apply standard CIT until the Pioneer Certificate is in hand. Note that under NTA 2025 Pillar Two MET, pioneer-status relief may be neutralised for large multinationals.  _(Industrial Development (Income Tax Relief) Act)_
 
 ### 4.2 Export Expansion / Export Free Zones
 
-Companies engaged in 100% export of manufactured goods may qualify for CIT exemption under the Nigerian Export Promotion Council (NEPC) regime. Free Zone Enterprises under NEPZA are out of scope (see refusal R-NG-CIT-3).
+- **Export CIT exemption** — Companies engaged in 100% export of manufactured goods may qualify for CIT exemption under the Nigerian Export Promotion Council (NEPC) regime. Free Zone Enterprises under NEPZA are out of scope (see refusal R-NG-CIT-3).
 
 ### 4.3 Real Estate Investment Companies (REICs)
 
-REICs registered with SEC enjoy CIT exemption on rental income distributed to unit holders, subject to NTA 2025 conditions. Refer to specialist for full REIC computation.
+- **REIC exemption** — REICs registered with SEC enjoy CIT exemption on rental income distributed to unit holders, subject to NTA 2025 conditions. Refer to specialist for full REIC computation.  _(NTA 2025)_
 
 ### 4.4 Investment Allowance
 
-An additional **10% one-off investment allowance** on plant and equipment in addition to normal capital allowances under Section 32 CITA (legacy). > **TBC — verify under NTA 2025** whether retained.
+- **One-off investment allowance** — An additional 10% one-off investment allowance on plant and equipment in addition to normal capital allowances under Section 32 CITA (legacy).  _(Section 32 CITA)_
+
+> **TBC — verify under NTA 2025** whether retained.
 
 ### 4.5 Thin Capitalisation — 30% EBITDA
 
-Finance Act 2019 introduced an interest-deductibility limit of **30% of EBITDA** on related-party interest. Excess interest carries forward up to 5 years. NTA 2025 retains the rule with confirmation expected in implementing regulations.
+- **Interest deductibility limit** — Finance Act 2019 introduced an interest-deductibility limit of 30% of EBITDA on related-party interest. Excess interest carries forward up to 5 years. NTA 2025 retains the rule with confirmation expected in implementing regulations.  _(Finance Act 2019)_
 
 ### 4.6 Transfer Pricing — Income Tax (Transfer Pricing) Regulations 2018
 
-Companies with related-party transactions must apply the arm's-length principle and file:
-- TP declaration (annual, with CIT return)
-- Master File / Local File (where thresholds met)
-- CbCR (consolidated revenue > €750M)
-
-Full TP computation and controversy is out of scope (R-NG-CIT-5).
+- **TP obligations** — Companies with related-party transactions must apply the arm's-length principle and file: TP declaration (annual, with CIT return); Master File / Local File (where thresholds met); CbCR (consolidated revenue > €750M). Full TP computation and controversy is out of scope (R-NG-CIT-5).  _(Income Tax (Transfer Pricing) Regulations 2018)_
 
 ### 4.7 Donations
 
-Only donations to organisations listed in the Fifth Schedule CITA / NTA 2025 equivalent are deductible. Cap: **10% of Total Profit before donation**.
+- **Donation deduction cap** — Only donations to organisations listed in the Fifth Schedule CITA / NTA 2025 equivalent are deductible. Cap: 10% of Total Profit before donation.  _(Fifth Schedule CITA / NTA 2025)_
 
 ### 4.8 Foreign Tax Credit
 
-Companies taxed on foreign-source income may claim relief by Tax Treaty (where Nigeria has one — currently with UK, France, Belgium, Netherlands, Canada, Pakistan, Romania, China, South Africa, etc.) or unilateral relief under CITA s.45. Credit limited to the Nigerian CIT attributable to that income.
-
----
+- **Foreign tax credit relief** — Companies taxed on foreign-source income may claim relief by Tax Treaty (where Nigeria has one — currently with UK, France, Belgium, Netherlands, Canada, Pakistan, Romania, China, South Africa, etc.) or unilateral relief under CITA s.45. Credit limited to the Nigerian CIT attributable to that income.  _(CITA s.45)_
 
 ## Section 5 — Worked Examples
 
@@ -402,14 +336,14 @@ Net CIT + Levy payable                      : ₦170,400,000 (before transitiona
 - The Development Levy at 2% is **lower** than the combined legacy levies (~3.255% TET + NITDA + NASENI + PTF) for non-NITDA/NASENI sectors but **higher** than TET-only for companies that were not in the specified levy sectors.
 - Verify final figures against FIRS implementing regulations.
 
----
-
 ## Section 6 — Filing and Payment Mechanics
 
 ### 6.1 Annual CIT Return — Form CIT
 
+**Form CIT components table**
+
 | Component | Content |
-|---|---|
+| --- | --- |
 | CIT computation | Adjusted profit → Assessable profit → Total profit → Tax payable |
 | Capital allowance schedule | Per asset class, qualifying capital expenditure, allowances, TWDV |
 | Loss memo | Year of loss, amount, utilisation, balance c/f |
@@ -421,8 +355,10 @@ Net CIT + Levy payable                      : ₦170,400,000 (before transitiona
 
 ### 6.2 Filing Deadlines
 
+**Filing deadlines table**
+
 | Item | Deadline |
-|---|---|
+| --- | --- |
 | **Annual CIT return** | Within **6 months** after end of accounting year (Section 55(2) CITA / NTA 2025) |
 | **Self-assessment payment** | With return; or by instalments approved by FIRS, last instalment by filing deadline |
 | **Provisional / advance returns** | Companies on PAYE-style advance payments: see FIRS taxpayer category rules |
@@ -430,7 +366,7 @@ Net CIT + Levy payable                      : ₦170,400,000 (before transitiona
 | **TP returns** (declaration, disclosure) | With CIT return |
 | **CbCR** | 12 months after end of reporting accounting year |
 
-**Important distinction from personal income tax.** Monthly PAYE handling for employees is a **separate** monthly obligation under the Personal Income Tax Act (PITA) and is covered in `ng-income-tax`. Companies are PAYE agents — they withhold and remit monthly by the **10th of the following month**. This is administrative withholding, not CIT.
+- **CIT vs PAYE distinction** — **Important distinction from personal income tax.** Monthly PAYE handling for employees is a separate monthly obligation under the Personal Income Tax Act (PITA) and is covered in `ng-income-tax`. Companies are PAYE agents — they withhold and remit monthly by the 10th of the following month. This is administrative withholding, not CIT.  _(Personal Income Tax Act (PITA))_
 
 ### 6.3 Filing Portal — FIRS Tax Pro-Max
 
@@ -446,8 +382,10 @@ A valid **Taxpayer Identification Number (TIN)** issued by the Joint Tax Board /
 
 ### 6.4 Penalties and Interest
 
+**Penalties and interest table**
+
 | Infraction | Sanction |
-|---|---|
+| --- | --- |
 | Late filing of CIT return | ₦25,000 in first month + ₦5,000 each subsequent month (CITA / Finance Act updates) |
 | Late payment | **10% penalty** + interest at CBN MPR + 5% per annum (Section 32 FIRS Establishment Act 2007) |
 | Failure to deduct / remit WHT | 10% of WHT due + interest |
@@ -458,18 +396,18 @@ A valid **Taxpayer Identification Number (TIN)** issued by the Joint Tax Board /
 
 ### 6.5 Tax Clearance Certificate (TCC)
 
-A TCC is required for many official transactions (government contracts, loan applications, immigration matters). FIRS issues TCC after CIT compliance verification. Companies in the first 4 years may be issued a "new business" TCC.
+- **TCC requirement** — A TCC is required for many official transactions (government contracts, loan applications, immigration matters). FIRS issues TCC after CIT compliance verification. Companies in the first 4 years may be issued a "new business" TCC.
 
 ### 6.6 Statute of Limitations
 
-Standard period: **6 years** from end of accounting year for FIRS to raise assessments (CITA s.66); no limit for fraud or wilful default.
-
----
+- **Statute of limitations** — Standard period: 6 years from end of accounting year for FIRS to raise assessments (CITA s.66); no limit for fraud or wilful default.  _(CITA s.66)_
 
 ## Section 7 — Conservative Defaults Summary
 
+**Conservative defaults summary table**
+
 | Item | Default |
-|---|---|
+| --- | --- |
 | Company size band unknown | Large (30% + 2% Development Levy or legacy levies) |
 | Asset base unknown (NTA 2025) | > ₦250M (small status denied) |
 | Accounting period straddles 1 Jan 2026 | Daily-apportion between CITA and NTA 2025 |
@@ -483,12 +421,12 @@ Standard period: **6 years** from end of accounting year for FIRS to raise asses
 | Filing portal access uncertain | Confirm Tax Pro-Max enrolment before promising file dates |
 | NTA 2025 figure not yet published | Label "TBC — verify under NTA 2025 final implementing regulations" |
 
----
-
 ## Section 8 — Cross-References
 
+**Cross-references table**
+
 | Topic | Skill |
-|---|---|
+| --- | --- |
 | Personal income tax / PAYE | `ng-income-tax` |
 | VAT / value-added tax | `ng-vat-return` and `nigeria-vat` |
 | Foundation principles | `foundation` |
@@ -497,11 +435,7 @@ Standard period: **6 years** from end of accounting year for FIRS to raise asses
 
 When a topic spans skills (e.g., employee BIK with CIT deductibility and PAYE consequences), address both — load the cross-skill before responding.
 
----
-
 ## Section 9 — Sources
-
-**Primary Legislation**
 
 - **Nigeria Tax Act 2025 (NTA 2025)** — signed by President Bola Ahmed Tinubu on **26 June 2025**; effective **1 January 2026**. Consolidates and replaces CITA, parts of PITA, VAT Act, Capital Gains Tax Act, and other tax statutes. Headline reforms: small-company threshold ₦100M turnover + ₦250M assets at 0%; medium 20%; large 30% phasing to ~25% by 2029; unified 2% Development Levy; 15% Minimum Effective Tax Rate for multinationals > €750M; indefinite loss carry-forward.
 - **Companies Income Tax Act (CITA), Cap. C21 LFN 2004**, as amended — primary corporate tax statute for accounting years up to and including 31 December 2025.
@@ -533,8 +467,6 @@ When a topic spans skills (e.g., employee BIK with CIT deductibility and PAYE co
 - **FIRS Tax Pro-Max portal documentation** — taxpromax.firs.gov.ng.
 - **OECD/G20 Inclusive Framework Pillar Two GloBE Model Rules** — basis for the 15% MET aligned by NTA 2025.
 
----
-
 ## PROHIBITIONS
 
 - NEVER apply NTA 2025 rules to accounting periods ending before 1 January 2026 — they begin 1 January 2026.
@@ -547,25 +479,19 @@ When a topic spans skills (e.g., employee BIK with CIT deductibility and PAYE co
 - NEVER claim pioneer status without an NIPC Pioneer Certificate in hand.
 - NEVER apply the large-company transitional tax credit before FIRS publishes the schedule — label as "TBC".
 - NEVER ignore the Pillar Two MET when group consolidated revenue > €750M.
-- NEVER stack legacy TET + NITDA + NASENI + Police Trust Fund with the new 2% Development Levy — under NTA 2025 the Development Levy **replaces** them.
+- NEVER stack legacy TET + NITDA + NASENI + Police Trust Fund with the new 2% Development Levy — under NTA 2025 the Development Levy replaces them.
 - NEVER skip TIN verification before filing.
 - NEVER advise late filing or late payment as a strategy — 10% penalty + interest applies.
 - NEVER present any NTA 2025 figure as definitive until cross-checked against published implementing regulations — label uncertain figures "TBC — verify under NTA 2025 final implementing regulations".
 - NEVER conflate CIT with PAYE — PAYE is monthly under PITA and is a separate skill (`ng-income-tax`).
 
----
-
 ## Disclaimer
 
-This skill and its outputs are for informational and computational purposes only and do not constitute tax, legal, or financial advice. All outputs must be reviewed and signed off by a Nigerian chartered tax practitioner (ICAN / ANAN / CITN) before filing or acting upon. NTA 2025 figures and mechanics labelled "TBC" must be verified against FIRS implementing regulations once published. The latest verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com).
+This skill and its outputs are for informational and computational purposes only and do not constitute tax, legal, or financial advice. All outputs must be reviewed and signed off by a Nigerian chartered tax practitioner (ICAN / ANAN / CITN) before filing or acting upon. NTA 2025 figures and mechanics labelled "TBC" must be verified against FIRS implementing regulations once published. The latest verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com).
 
----
+## OpenAccountants footer
 
 *OpenAccountants — open-source accounting skills for AI*
-
----
-
-<!-- openaccountants-cta-block -->
 
 ## Talk to a verified accountant
 
@@ -580,16 +506,22 @@ a formal engagement letter** — book a free 30-minute call:
 
 We'll route you to the named verifier covering your country or state. You can
 also see the full list of verified accountants at
-[openaccountants.com/network](https://www.openaccountants.com/network).
+[openaccountants.com/network](https://openaccountants.com/network).
 
-<!-- openaccountants-mcp-cta -->
+<!-- openaccountants-cta-block -->
 
-## The accountant-verified version lives in the connector
+---
 
-This file is the open, **research-grade draft**. The **accountant-verified**
-version of this skill is **not published to GitHub** — it is delivered free
-through the OpenAccountants MCP connector, where your AI agent loads the
-verified rules together with the name of the accountant who signed them off.
+## Talk to a verified accountant
 
-**→ Install the free connector:** <https://www.openaccountants.com/connect>
-**MCP endpoint:** `https://www.openaccountants.com/api/mcp`
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

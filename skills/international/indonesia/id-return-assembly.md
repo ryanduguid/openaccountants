@@ -2,13 +2,14 @@
 name: id-return-assembly
 description: Use this skill whenever asked to assemble, finalize, or package an Indonesian annual tax return. Trigger on phrases like "assemble Indonesian return", "prepare SPT 1770", "prepare SPT 1771", "Indonesia annual tax return", "Indonesian working paper", "Indonesian tax filing package", "finalize SPT Tahunan", or "Coretax filing package". This is the capstone orchestrator that pulls together outputs from id-pph-final-umkm, id-income-tax, id-corporate-tax, id-payroll-pph21, indonesia-vat, id-withholding, and id-bookkeeping into a single SPT working paper plus payment and filing instructions. It does not recompute anything itself — it reconciles upstream outputs, builds the line-by-line SPT working paper, generates kode billing payment instructions for Coretax, and produces a reviewer brief and taxpayer action list. ALWAYS read this skill last when finalizing an Indonesian tax return.
 jurisdiction: ID
-domain: international
 tax_year: 2025
+last_updated: 2026-05-27
+verified_by: pending
 tier: 2
-last_updated: 2026-07-06
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# id-return-assembly
+# ID Return Assembly
 
 ## CRITICAL EXECUTION DIRECTIVE — READ FIRST
 
@@ -703,3 +704,21 @@ We'll route you to the named verifier covering your country or state. You can al
 ## Section 14 — Output files
 
 0. **Produce final output files** — Generate master workbook, reviewer_brief.md, and taxpayer_action_list.md and place them in /mnt/user-data/outputs/
+
+<!-- openaccountants-cta-block -->
+
+---
+
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

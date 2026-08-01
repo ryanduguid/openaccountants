@@ -7,7 +7,11 @@
 
 1. `foundation.md`
 2. `intake.md`
-3. `ivory-coast-vat.md`
+3. `ivory-coast-income-tax.md`
+4. `ivory-coast-payroll.md`
+5. `ivory-coast-social-contributions.md`
+6. `ivory-coast-vat.md`
+7. `payroll-workflow-base.md`
 
 ## How to use
 

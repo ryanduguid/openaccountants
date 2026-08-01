@@ -4,24 +4,52 @@ description: Use this skill whenever asked to prepare, review, or classify trans
 version: 2.0
 jurisdiction: GB
 tax_year: 2025
-tax_year_notes: "2025-26"
+last_updated: 2026-04-13
+verified_by: James Power
 tier: 2
-last_updated: 2026-07-04
-verified_by: pending
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# UK VAT Return Skill (VAT100) v2.0
+# UK VAT Return
 
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+## UK VAT Return Skill (VAT100) v2.0
 
 > **Year applicability:** Rules in this skill apply across **2024-25, 2025-26, and 2026-27** unless a specific section flags a year-dated change. The pack is read alongside the rate-bearing skills (`uk-income-tax-sa100`, `uk-national-insurance`, `uk-dividends`, etc.) which carry full 3-year tables.
+
+## Verified rates & thresholds (accountant-reviewed)
+
+> Reviewed against the cited tax authorities by **James Power** on 2026-06-03.
+> Items flagged for further clarification are tracked separately and excluded here.
+> This block is generated from verified `skill_facts` — edit the facts, not the prose.
+
+### VAT Return
+
+- **Standard rate** — 20%
+- **Reduced rate** — 5%  _(VATA 1994)_
+- **Zero rate** — 0%  _(VATA 1994)_
+- **Registration threshold** — £90,000 (rolling 12-month)  _(VATA 1994 Sch.1)_
+- **Deregistration threshold** — £88,000  _(VATA 1994)_
+- **FRS entry threshold** — £150,000 (est. taxable excl. VAT)  _(FRS Order 2004)_
+- **FRS exit threshold** — £230,000 (total incl. VAT)  _(FRS Order 2004)_
+- **Cash accounting entry** — £1,350,000  _(VAT Regs 1995)_
+- **Cash accounting exit** — £1,600,000  _(VAT Regs 1995)_
+- **Computer and IT consultancy** — 14.5%  _(FRS Order 2004)_
+- **Management consultancy** — 14.0%  _(https://www.gov.uk/vat-flat-rate-scheme/how-much-you-pay)_
+- **Accountancy or bookkeeping** — 14.5%  _(FRS Order 2004)_
+- **Limited Cost Trader** — 16.5%  _(FRS Order 2004)_
+- **Quarterly deadline** — 1 month + 7 days after period end  _(VATA 1994)_
+- **MTD requirement** — All VAT-registered: MTD-compatible software  _(MTD (VAT) Regs 2018)_
 
 ## Section 1 — Quick reference
 
 **Read this whole section before classifying anything. The workflow runbook is in `vat-workflow-base` Section 1 — follow that runbook with this skill providing the country-specific content.**
 
+**Quick reference field table**
+
+**Quick reference field table**
+
 | Field | Value |
-|---|---|
+| --- | --- |
 | Country | United Kingdom of Great Britain and Northern Ireland |
 | Standard rate | 20% |
 | Reduced rate | 5% (domestic fuel and power, children's car seats, energy-saving materials installed in residential property, smoking cessation products, women's sanitary products) |
@@ -41,13 +69,15 @@ verified_by: pending
 | Supporting legislation | VAT Regulations 1995 (SI 1995/2518); Finance Act 2024; Finance Act 2025; The Value Added Tax (Flat Rate Scheme) Order 2004; The VAT (Input Tax) Order 1992 (SI 1992/3222); Making Tax Digital (VAT) Regulations 2018 |
 | Companion skill (Tier 1, workflow) | **vat-workflow-base v0.1 or later — MUST be loaded** |
 | Contributor | Open Accountants Community |
-| Validated by | Pending — requires sign-off by a UK-qualified accountant (ACA/ACCA/CTA) |
-| Validation date | Pending |
+| Validated by | Verified by James Power on 2026-06-03 |
+| Validation date | Verified by James Power on 2026-06-03 |
 
 **Key VAT100 boxes (the boxes you will use most):**
 
+**VAT100 Box table**
+
 | Box | Meaning |
-|---|---|
+| --- | --- |
 | 1 | VAT due on sales and other outputs (output VAT charged to customers; reverse charge VAT due; postponed import VAT) |
 | 2 | VAT due on acquisitions from EU (legacy — post-Brexit generally use postponed import VAT in Box 1) |
 | 3 | Total VAT due (Box 1 + Box 2) — automatic sum |
@@ -60,8 +90,10 @@ verified_by: pending
 
 **Conservative defaults — UK-specific values for the universal categories in `vat-workflow-base` Section 2:**
 
+**Conservative defaults table**
+
 | Ambiguity | Default |
-|---|---|
+| --- | --- |
 | Unknown rate on a sale | 20% |
 | Unknown VAT status of a purchase | Not deductible |
 | Unknown counterparty country | Domestic UK |
@@ -74,8 +106,10 @@ verified_by: pending
 
 **Red flag thresholds — country slot values for the reviewer brief in `vat-workflow-base` Section 3:**
 
+**Red flag thresholds table**
+
 | Threshold | Value |
-|---|---|
+| --- | --- |
 | HIGH single-transaction size | GBP 5,000 |
 | HIGH tax-delta on a single conservative default | GBP 400 |
 | MEDIUM counterparty concentration | >40% of output OR input |
@@ -84,8 +118,10 @@ verified_by: pending
 
 **Flat Rate Scheme — selected sector percentages (2025):**
 
+**FRS sector percentages table**
+
 | Sector | FRS % |
-|---|---|
+| --- | --- |
 | Accountancy or bookkeeping | 14.5% |
 | Advertising | 11.0% |
 | Computer and IT consultancy | 14.5% |
@@ -101,37 +137,26 @@ verified_by: pending
 | Any other activity not listed | 12.0% |
 | **Limited Cost Trader (any sector)** | **16.5%** |
 
-First-year discount: new VAT registrations get a 1% reduction in the FRS percentage for the first year.
-
----
+- **First-year discount** — New VAT registrations get a 1% reduction in the FRS percentage for the first year.
 
 ## Section 2 — Required inputs and refusal catalogue
 
 ### Required inputs
 
-**Minimum viable** — bank statement for the period in CSV, PDF, or pasted text. Must cover the full VAT period. Acceptable from any UK business bank: Barclays, HSBC UK, Lloyds, NatWest, Santander UK, Metro Bank, Starling, Monzo Business, Tide, Revolut Business, Wise Business, or any other.
-
-**Recommended** — sales invoices for the period (especially for zero-rated exports and reverse charge services), purchase invoices for any input VAT claim above GBP 250, the client's VAT registration number (9-digit GB number), the prior period's VAT return (for Box 5 reconciliation and FRS comparison).
-
-**Ideal** — complete invoice register, MTD-compatible digital records with digital links, reconciliation of prior period Box 5 position, confirmation of VAT scheme (standard, FRS, cash accounting, annual accounting).
-
-**Refusal policy if minimum is missing — SOFT WARN.** If no bank statement is available at all, hard stop. If bank statement only without invoices, proceed but record in the reviewer brief: "This VAT100 was produced from bank statement alone. The reviewer must verify, before approval, that input VAT claims above GBP 250 are supported by compliant tax invoices and that all reverse-charge classifications match the supplier's invoice."
+- **Minimum viable** — Bank statement for the period in CSV, PDF, or pasted text. Must cover the full VAT period. Acceptable from any UK business bank: Barclays, HSBC UK, Lloyds, NatWest, Santander UK, Metro Bank, Starling, Monzo Business, Tide, Revolut Business, Wise Business, or any other.
+- **Recommended** — Sales invoices for the period (especially for zero-rated exports and reverse charge services), purchase invoices for any input VAT claim above GBP 250, the client's VAT registration number (9-digit GB number), the prior period's VAT return (for Box 5 reconciliation and FRS comparison).
+- **Ideal** — Complete invoice register, MTD-compatible digital records with digital links, reconciliation of prior period Box 5 position, confirmation of VAT scheme (standard, FRS, cash accounting, annual accounting).
+- **Refusal policy if minimum is missing** — SOFT WARN. If no bank statement is available at all, hard stop. If bank statement only without invoices, proceed but record in the reviewer brief: "This VAT100 was produced from bank statement alone. The reviewer must verify, before approval, that input VAT claims above GBP 250 are supported by compliant tax invoices and that all reverse-charge classifications match the supplier's invoice."
 
 ### UK-specific refusal catalogue
 
 These refusals apply on top of any universal refusals in `vat-workflow-base`. If any trigger fires, stop, output the refusal message verbatim, end the conversation. Refusal is a safety mechanism.
 
-**R-UK-1 — Partial exemption beyond de minimis.** *Trigger:* client makes both taxable and exempt supplies and the exempt input VAT exceeds GBP 625 per month on average OR exceeds 50% of total input VAT. *Message:* "Your exempt input VAT exceeds the de minimis threshold. Partial exemption requires a formal calculation under the standard method (or a special method agreed with HMRC) including an annual adjustment. This is too fact-sensitive for this skill. Please use a qualified accountant (ACA/ACCA/CTA) to determine and confirm the recoverable proportion before input VAT is claimed."
-
-**R-UK-2 — Transfer of a going concern (TOGC).** *Trigger:* the period contains a business transfer that may qualify as a TOGC under VATA 1994 s49. *Message:* "TOGCs are outside the scope of VAT but have strict conditions. Incorrect treatment can result in a significant VAT liability. Please use a qualified accountant to confirm TOGC status."
-
-**R-UK-3 — Margin scheme (second-hand goods, tour operators).** *Trigger:* client deals in second-hand goods under the margin scheme or is a tour operator using TOMS. *Message:* "Margin scheme transactions require transaction-level margin computation. Tour Operators' Margin Scheme (TOMS) requires a year-end calculation. Out of scope for this skill."
-
-**R-UK-4 — CIS reverse charge complex.** *Trigger:* the client receives or makes supplies of construction services within the Construction Industry Scheme where the end-user exemption, intermediary supplier status, or mixed supply classification is unclear. *Message:* "The CIS domestic reverse charge is fact-specific. End-user exemptions, intermediary supplier status, and mixed supply classification require professional judgement. Please confirm with a qualified accountant before applying or disapplying the reverse charge."
-
-**R-UK-5 — VAT group.** *Trigger:* client is part of a VAT group or asks about group registration under VATA 1994 s43. *Message:* "VAT groups require consolidation across all group members. Intra-group supplies are disregarded. Out of scope for this skill."
-
----
+- **R-UK-1 — Partial exemption beyond de minimis** — Trigger: client makes both taxable and exempt supplies and the exempt input VAT exceeds GBP 625 per month on average OR exceeds 50% of total input VAT. Message: "Your exempt input VAT exceeds the de minimis threshold. Partial exemption requires a formal calculation under the standard method (or a special method agreed with HMRC) including an annual adjustment. This is too fact-sensitive for this skill. Please use a qualified accountant (ACA/ACCA/CTA) to determine and confirm the recoverable proportion before input VAT is claimed."
+- **R-UK-2 — Transfer of a going concern (TOGC)** — Trigger: the period contains a business transfer that may qualify as a TOGC under VATA 1994 s49. Message: "TOGCs are outside the scope of VAT but have strict conditions. Incorrect treatment can result in a significant VAT liability. Please use a qualified accountant to confirm TOGC status."  _(VATA 1994 s49)_
+- **R-UK-3 — Margin scheme (second-hand goods, tour operators)** — Trigger: client deals in second-hand goods under the margin scheme or is a tour operator using TOMS. Message: "Margin scheme transactions require transaction-level margin computation. Tour Operators' Margin Scheme (TOMS) requires a year-end calculation. Out of scope for this skill."
+- **R-UK-4 — CIS reverse charge complex** — Trigger: the client receives or makes supplies of construction services within the Construction Industry Scheme where the end-user exemption, intermediary supplier status, or mixed supply classification is unclear. Message: "The CIS domestic reverse charge is fact-specific. End-user exemptions, intermediary supplier status, and mixed supply classification require professional judgement. Please confirm with a qualified accountant before applying or disapplying the reverse charge."
+- **R-UK-5 — VAT group** — Trigger: client is part of a VAT group or asks about group registration under VATA 1994 s43. Message: "VAT groups require consolidation across all group members. Intra-group supplies are disregarded. Out of scope for this skill."  _(VATA 1994 s43)_
 
 ## Section 3 — Supplier pattern library (the lookup table)
 
@@ -143,8 +168,10 @@ This is the deterministic pre-classifier. When a transaction's counterparty matc
 
 ### 3.1 UK banks (fees exempt — exclude)
 
+**UK banks pattern table**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | BARCLAYS, BARCLAYS BANK | EXCLUDE for bank charges/fees | Financial service, exempt |
 | HSBC UK, HSBC BANK | EXCLUDE for bank charges/fees | Same |
 | LLOYDS, LLOYDS BANK, LLOYDS TSB | EXCLUDE for bank charges/fees | Same |
@@ -161,8 +188,10 @@ This is the deterministic pre-classifier. When a transaction's counterparty matc
 
 ### 3.2 HMRC and government (exclude entirely)
 
+**HMRC and government pattern table**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | HMRC, HM REVENUE, HMRC VAT | EXCLUDE | Tax payment, not a supply |
 | HMRC PAYE, HMRC NIC, HMRC CT | EXCLUDE | Tax payment |
 | COMPANIES HOUSE, COMPANIES HSE | EXCLUDE | Statutory fee, not a supply |
@@ -174,8 +203,10 @@ This is the deterministic pre-classifier. When a transaction's counterparty matc
 
 ### 3.3 UK utilities
 
+**UK utilities pattern table**
+
 | Pattern | Treatment | Box | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | BRITISH GAS, CENTRICA | 5% domestic fuel / 20% commercial | Box 7 / Box 4 | Domestic fuel and power = 5% reduced rate; commercial premises = 20%. Default: 5% unless confirmed commercial |
 | EDF ENERGY, EDF | 5% domestic fuel / 20% commercial | Box 7 / Box 4 | Same |
 | OCTOPUS ENERGY, BULB, OVO, SSE, SCOTTISH POWER, E.ON, NPOWER | 5% domestic fuel / 20% commercial | Box 7 / Box 4 | Same |
@@ -188,8 +219,10 @@ This is the deterministic pre-classifier. When a transaction's counterparty matc
 
 ### 3.4 UK insurance (exempt — exclude)
 
+**UK insurance pattern table**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | AVIVA, AVIVA INSURANCE | EXCLUDE | Insurance premium, exempt |
 | DIRECT LINE, DIRECT LINE GROUP | EXCLUDE | Same |
 | LEGAL & GENERAL, L&G | EXCLUDE | Same |
@@ -201,8 +234,10 @@ This is the deterministic pre-classifier. When a transaction's counterparty matc
 
 ### 3.5 UK transport
 
+**UK transport pattern table**
+
 | Pattern | Treatment | Box | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | TFL, TRANSPORT FOR LONDON, OYSTER | 0% | Box 7 | Public transport, zero-rated |
 | NATIONAL RAIL, TRAINLINE, GWR, LNER, AVANTI, SOUTHEASTERN, THAMESLINK | 0% | Box 7 | Rail fares, zero-rated |
 | UBER UK, UBER BV | Domestic 20% | Box 7 / Box 4 | Ride-hailing, standard rated. Uber invoices from NL entity — check if reverse charge applies |
@@ -212,8 +247,10 @@ This is the deterministic pre-classifier. When a transaction's counterparty matc
 
 ### 3.6 UK food and entertainment
 
+**UK food and entertainment pattern table**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | TESCO, SAINSBURYS, SAINSBURY'S, ASDA, MORRISONS, WAITROSE, ALDI, LIDL UK, CO-OP, M&S FOOD, MARKS AND SPENCER | Default BLOCK input VAT | Supermarket — personal provisioning. Deductible only if hospitality/catering business purchasing stock for resale |
 | PRET, PRET A MANGER, COSTA, STARBUCKS, GREGGS, MCDONALDS, KFC, NANDOS, WAGAMAMA | Default BLOCK | Entertainment/personal. Client entertaining is blocked in UK (no exceptions). Staff entertainment may be recoverable — see Tier 2 |
 | DELIVEROO, JUST EAT, UBER EATS | Default BLOCK | Entertainment/personal consumption |
@@ -223,8 +260,10 @@ This is the deterministic pre-classifier. When a transaction's counterparty matc
 
 Post-Brexit, EU suppliers are treated as overseas suppliers. Services received from EU-established businesses trigger the reverse charge. The UK recipient self-accounts: output VAT in Box 1 (and Box 6 for the net value), input VAT in Box 4 (and Box 7 for the net value). Net cash effect zero for a fully taxable business.
 
+**SaaS EU suppliers pattern table**
+
 | Pattern | Billing entity | Box | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | GOOGLE (Ads, Workspace, Cloud) | Google Ireland Ltd (IE) | Box 1+6 / Box 4+7 | Reverse charge — post-Brexit, IE is overseas |
 | MICROSOFT (365, Azure) | Microsoft Ireland Operations Ltd (IE) | Box 1+6 / Box 4+7 | Reverse charge |
 | ADOBE | Adobe Systems Software Ireland Ltd (IE) | Box 1+6 / Box 4+7 | Reverse charge |
@@ -242,8 +281,10 @@ Post-Brexit, EU suppliers are treated as overseas suppliers. Services received f
 
 Post-Brexit, both EU and non-EU suppliers trigger the same reverse charge mechanism. The distinction is academic for UK VAT purposes but listed separately for clarity of billing entity.
 
+**SaaS non-EU suppliers pattern table**
+
 | Pattern | Billing entity | Box | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | AWS, AMAZON WEB SERVICES | Amazon Web Services Inc (US) or AWS EMEA SARL (LU) | Box 1+6 / Box 4+7 | Reverse charge. Check invoice — LU entity is also overseas post-Brexit |
 | NOTION | Notion Labs Inc (US) | Box 1+6 / Box 4+7 | Reverse charge |
 | ANTHROPIC, CLAUDE | Anthropic PBC (US) | Box 1+6 / Box 4+7 | Reverse charge |
@@ -258,8 +299,10 @@ Post-Brexit, both EU and non-EU suppliers trigger the same reverse charge mechan
 
 ### 3.9 Payment processors (fees exempt — exclude)
 
+**Payment processors pattern table**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | STRIPE (transaction fees) | EXCLUDE (exempt) | Payment processing fees are exempt financial services |
 | STRIPE (monthly subscription) | Reverse charge Box 1+6 / Box 4+7 | Stripe IE entity — separate from exempt transaction fees |
 | PAYPAL (transaction fees) | EXCLUDE (exempt) | Same — exempt financial services |
@@ -269,16 +312,20 @@ Post-Brexit, both EU and non-EU suppliers trigger the same reverse charge mechan
 
 ### 3.10 Professional services (UK domestic 20%)
 
+**Professional services pattern table**
+
 | Pattern | Treatment | Box | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Accountant names, ACCOUNTANT, CPA, ACCA, ACA, ICAEW, BOOKKEEPER | Domestic 20% | Box 7 / Box 4 | Always deductible |
 | Solicitor names, SOLICITOR, LAWYER, LAW FIRM, LLP | Domestic 20% | Box 7 / Box 4 | Deductible if business legal matter. Disbursements may be zero-rated or exempt |
 | BARRISTER, COUNSEL, QC, KC | Domestic 20% | Box 7 / Box 4 | Standard rated professional services |
 
 ### 3.11 Property and rent
 
+**Property and rent pattern table**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | RENT (commercial, with VAT on invoice) | Domestic 20% | Commercial lease where landlord has opted to tax — Box 7 / Box 4 |
 | RENT (residential, no VAT) | EXCLUDE | Residential lease is exempt — no input VAT recovery |
 | GROUND RENT, SERVICE CHARGE (residential) | EXCLUDE | Exempt |
@@ -286,15 +333,15 @@ Post-Brexit, both EU and non-EU suppliers trigger the same reverse charge mechan
 
 ### 3.12 Payroll and statutory payments (exclude entirely)
 
+**Payroll and statutory payments pattern table**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | PAYE, PAY AS YOU EARN | EXCLUDE | Income tax remittance to HMRC |
 | NIC, NATIONAL INSURANCE, EMPLOYERS NI | EXCLUDE | Statutory contribution, outside scope |
 | SALARY, WAGES, NET PAY | EXCLUDE | Staff costs, outside VAT scope |
 | PENSION, NEST, WORKPLACE PENSION, AUTO ENROLMENT | EXCLUDE | Pension contributions, outside scope |
 | SSP, SMP, STATUTORY PAY | EXCLUDE | Statutory payments, outside scope |
-
----
 
 ## Section 4 — Worked examples
 
@@ -308,10 +355,10 @@ These are six fully worked classifications drawn from a hypothetical bank statem
 **Reasoning:**
 Notion Labs Inc is a US entity (Section 3.8). No VAT on the invoice. This is a service received from an overseas supplier. The UK recipient self-accounts for VAT under the reverse charge. Output VAT goes to Box 1 (GBP 2.56 = 12.80 x 20%) and Box 6 (GBP 12.80 net). Input VAT goes to Box 4 (GBP 2.56) and Box 7 (GBP 12.80 net). Net cash effect zero for a fully taxable business.
 
-**Output:**
+**Output table**
 
 | Date | Counterparty | Gross | Net | VAT | Rate | Box (output) | Box (input) | Default? | Question? | Excluded? |
-|---|---|---|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 03.04.2025 | NOTION LABS INC | -12.80 | -12.80 | 2.56 | 20% | Box 1+6 | Box 4+7 | N | — | — |
 
 ### Example 2 — EU service, reverse charge post-Brexit (Google Ads)
@@ -322,10 +369,10 @@ Notion Labs Inc is a US entity (Section 3.8). No VAT on the invoice. This is a s
 **Reasoning:**
 Google Ireland Limited is an IE entity. Post-Brexit, Ireland is overseas for UK VAT purposes — same treatment as any non-UK supplier. Reverse charge applies. Output VAT = GBP 170.00 (850 x 20%) to Box 1. Net GBP 850 to Box 6. Input VAT GBP 170.00 to Box 4. Net GBP 850 to Box 7. Net cash effect zero.
 
-**Output:**
+**Output table**
 
 | Date | Counterparty | Gross | Net | VAT | Rate | Box (output) | Box (input) | Default? | Question? | Excluded? |
-|---|---|---|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 10.04.2025 | GOOGLE IRELAND LIMITED | -850.00 | -850.00 | 170.00 | 20% | Box 1+6 | Box 4+7 | N | — | — |
 
 ### Example 3 — Client entertainment, fully blocked
@@ -336,10 +383,10 @@ Google Ireland Limited is an IE entity. Post-Brexit, Ireland is overseas for UK 
 **Reasoning:**
 Restaurant transaction. Client entertainment input VAT is fully blocked under VATA 1994 s25 and the VAT (Input Tax) Order 1992. Unlike some jurisdictions, the UK has no partial recovery for business meals with clients. The one exception: entertaining overseas customers IS recoverable. Default: full block unless confirmed overseas customer entertainment. The net value still goes to Box 7, but no VAT to Box 4.
 
-**Output:**
+**Output table**
 
 | Date | Counterparty | Gross | Net | VAT | Rate | Box (output) | Box (input) | Default? | Question? | Excluded? |
-|---|---|---|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 15.04.2025 | THE IVY RESTAURANT | -220.00 | -183.33 | 0 | — | — | Box 7 only | Y | Q1 | "Entertainment: blocked. Was this entertaining overseas customers?" |
 
 ### Example 4 — Domestic fuel (5% reduced rate)
@@ -350,10 +397,10 @@ Restaurant transaction. Client entertainment input VAT is fully blocked under VA
 **Reasoning:**
 Domestic fuel and power attracts the 5% reduced rate. If this is the client's home and they work from home, only the business-use proportion is recoverable. Default: 0% business use unless the client specifies a proportion. The gross amount includes 5% VAT: net = 95.00 / 1.05 = GBP 90.48, VAT = GBP 4.52.
 
-**Output:**
+**Output table**
 
 | Date | Counterparty | Gross | Net | VAT | Rate | Box (output) | Box (input) | Default? | Question? | Excluded? |
-|---|---|---|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 18.04.2025 | BRITISH GAS | -95.00 | -90.48 | 0 | 5% | — | Box 7 | Y | Q2 | "Home office: what % of this property is used for business?" |
 
 ### Example 5 — Zero-rated export sale
@@ -364,10 +411,10 @@ Domestic fuel and power attracts the 5% reduced rate. If this is the client's ho
 **Reasoning:**
 Incoming payment from a US company. B2B services to an overseas customer — place of supply is the customer's country (US) under the general rule. The client invoices at 0% (outside the scope of UK VAT). Report net amount in Box 6 (total outputs). No output VAT in Box 1. Confirm: (a) customer is a business, not a consumer; (b) the invoice shows no UK VAT with a note that the supply is outside the scope of UK VAT.
 
-**Output:**
+**Output table**
 
 | Date | Counterparty | Gross | Net | VAT | Rate | Box (output) | Box (input) | Default? | Question? | Excluded? |
-|---|---|---|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 22.04.2025 | ACME CORP INC | +5,000.00 | +5,000.00 | 0 | 0% | Box 6 | — | Y | Q3 (HIGH) | "Verify: is this a B2B supply? Confirm customer is a business." |
 
 ### Example 6 — Flat Rate Scheme computation
@@ -378,10 +425,10 @@ Incoming payment from a US company. B2B services to an overseas customer — pla
 **Reasoning:**
 First check the Limited Cost Trader test. Goods spend = GBP 200. 2% of GBP 30,000 = GBP 600. GBP 200 < GBP 600, and GBP 200 < GBP 1,000 annualised. Client IS a Limited Cost Trader. Rate = 16.5%, not 14.5%. VAT payable = 30,000 x 16.5% = GBP 4,950. Under standard accounting: output VAT = GBP 5,000 (30,000 / 1.2 x 0.2), input VAT recovery would need to exceed GBP 50 to beat FRS. At 16.5% LCT, FRS is almost certainly worse than standard accounting. Flag for reviewer.
 
-**Output:**
+**Output table**
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | FRS sector rate | 14.5% |
 | LCT test | FAIL — goods spend GBP 200 < 2% of GBP 30,000 (GBP 600) |
 | Applied rate | 16.5% (LCT) |
@@ -389,28 +436,28 @@ First check the Limited Cost Trader test. Goods spend = GBP 200. 2% of GBP 30,00
 | Box 6 | GBP 25,000 (net of VAT) |
 | Reviewer flag | "LCT rate 16.5% applied. Client may be better off on standard accounting." |
 
----
-
 ## Section 5 — Tier 1 classification rules (compressed)
 
 Each rule states the legal source and the box mapping. Apply silently if the data is unambiguous. For full doctrinal context, see the source citations in Section 10.
 
 ### 5.1 Standard rate 20% (VATA 1994 s2(1), Schedule 7A)
 
-Default rate for any taxable supply unless a reduced rate, zero rate, or exemption applies. Most goods and services, professional fees, software, electronics, commercial property (where opted to tax). Sales output VAT to Box 1. Net sales to Box 6. Purchase input VAT to Box 4. Net purchases to Box 7.
+- **Standard rate default** — Default rate for any taxable supply unless a reduced rate, zero rate, or exemption applies. Most goods and services, professional fees, software, electronics, commercial property (where opted to tax). Sales output VAT to Box 1. Net sales to Box 6. Purchase input VAT to Box 4. Net purchases to Box 7.  _(VATA 1994 s2(1), Schedule 7A)_
 
 ### 5.2 Reduced rate 5% (VATA 1994 Schedule 7A)
 
-Applies to: domestic fuel and power (gas, electricity for domestic use), children's car seats, energy-saving materials installed in residential property, smoking cessation products, contraceptive products, women's sanitary products (from January 2021). Purchases at 5%: extract VAT at 5/105 of the gross. Box 7 for net, Box 4 for input VAT (subject to business-use proportion for home office).
+- **Reduced rate scope** — Applies to: domestic fuel and power (gas, electricity for domestic use), children's car seats, energy-saving materials installed in residential property, smoking cessation products, contraceptive products, women's sanitary products (from January 2021). Purchases at 5%: extract VAT at 5/105 of the gross. Box 7 for net, Box 4 for input VAT (subject to business-use proportion for home office).  _(VATA 1994 Schedule 7A)_
 
 ### 5.3 Zero rate 0% (VATA 1994 Schedule 8)
 
-Applies to: most food (not catering, not hot takeaway, not confectionery, not alcohol, not soft drinks), children's clothing and footwear, books and newspapers (print and digital since May 2020), public transport fares, new residential construction (first grant of a major interest), exports of goods, prescribed medicines, water supply. Sales: no output VAT, but net value goes to Box 6. Purchases: no input VAT to claim, but net value goes to Box 7. Input VAT on costs attributable to zero-rated supplies IS recoverable.
+- **Zero rate scope** — Applies to: most food (not catering, not hot takeaway, not confectionery, not alcohol, not soft drinks), children's clothing and footwear, books and newspapers (print and digital since May 2020), public transport fares, new residential construction (first grant of a major interest), exports of goods, prescribed medicines, water supply. Sales: no output VAT, but net value goes to Box 6. Purchases: no input VAT to claim, but net value goes to Box 7. Input VAT on costs attributable to zero-rated supplies IS recoverable.  _(VATA 1994 Schedule 8)_
 
 **Key rate traps:**
 
+**Key rate traps table**  _(VATA 1994 Schedule 8)_
+
 | Item | Rate | Trap |
-|---|---|---|
+| --- | --- | --- |
 | Hot takeaway food | 20% | NOT zero-rated like cold food |
 | Chocolate biscuits | 20% | Standard-rated confectionery |
 | Plain biscuits | 0% | Zero-rated |
@@ -426,57 +473,43 @@ Applies to: most food (not catering, not hot takeaway, not confectionery, not al
 
 ### 5.4 Exempt supplies (VATA 1994 Schedule 9)
 
-No VAT charged, no input VAT recovery on attributable costs. Exempt supplies: insurance, financial services (interest, foreign exchange, securities dealing), education (by eligible bodies), health services (by registered practitioners), burial and cremation, postal services (Royal Mail universal service), land and property (unless opted to tax), membership subscriptions (certain professional bodies), betting and gaming.
-
-If exempt supplies are significant, partial exemption rules apply — R-UK-1 refuses if beyond de minimis.
+- **Exempt supplies scope** — No VAT charged, no input VAT recovery on attributable costs. Exempt supplies: insurance, financial services (interest, foreign exchange, securities dealing), education (by eligible bodies), health services (by registered practitioners), burial and cremation, postal services (Royal Mail universal service), land and property (unless opted to tax), membership subscriptions (certain professional bodies), betting and gaming. If exempt supplies are significant, partial exemption rules apply — R-UK-1 refuses if beyond de minimis.  _(VATA 1994 Schedule 9)_
 
 ### 5.5 Outside scope (exclude from all boxes)
 
-Wages, salaries, dividends, donations, non-business activities, statutory fees (road tax, council tax, business rates), HMRC tax payments, loan principal, drawings, internal transfers. Do NOT include in Box 6 or Box 7.
+- **Outside scope items** — Wages, salaries, dividends, donations, non-business activities, statutory fees (road tax, council tax, business rates), HMRC tax payments, loan principal, drawings, internal transfers. Do NOT include in Box 6 or Box 7.
 
 ### 5.6 Reverse charge — services received from overseas suppliers
 
-Post-Brexit, all non-UK suppliers (whether EU or non-EU) trigger the same reverse charge mechanism for services. The UK recipient self-accounts at 20%: output VAT to Box 1, net value to Box 6; input VAT to Box 4, net value to Box 7. Net cash effect zero for a fully taxable business. If the overseas supplier incorrectly charged their local VAT (e.g. Irish 23%), that foreign VAT is NOT recoverable as UK input tax — treat as a cost.
+- **Reverse charge overseas services** — Post-Brexit, all non-UK suppliers (whether EU or non-EU) trigger the same reverse charge mechanism for services. The UK recipient self-accounts at 20%: output VAT to Box 1, net value to Box 6; input VAT to Box 4, net value to Box 7. Net cash effect zero for a fully taxable business. If the overseas supplier incorrectly charged their local VAT (e.g. Irish 23%), that foreign VAT is NOT recoverable as UK input tax — treat as a cost.
 
 ### 5.7 Reverse charge — CIS construction (VATA 1994 s55A)
 
-For specified construction services between VAT-registered, CIS-registered businesses where the customer makes onward supplies of construction services: the customer (not the supplier) accounts for VAT. Supplier invoices net with annotation "Reverse charge: Customer to account to HMRC for VAT on this supply." Customer: output VAT to Box 1, input VAT to Box 4, net value to Box 7 only (not Box 6 — this is the customer's input, not output). End-user exemption: does NOT apply if the customer is an end user or intermediary supplier.
+- **CIS reverse charge rules** — For specified construction services between VAT-registered, CIS-registered businesses where the customer makes onward supplies of construction services: the customer (not the supplier) accounts for VAT. Supplier invoices net with annotation "Reverse charge: Customer to account to HMRC for VAT on this supply." Customer: output VAT to Box 1, input VAT to Box 4, net value to Box 7 only (not Box 6 — this is the customer's input, not output). End-user exemption: does NOT apply if the customer is an end user or intermediary supplier.  _(VATA 1994 s55A)_
 
 ### 5.8 Input VAT — blocked categories (VATA 1994 s25; VAT (Input Tax) Order 1992)
 
-The following input VAT CANNOT be reclaimed:
-
-- Business entertainment: entertaining UK customers, suppliers, or other business contacts. **Exception:** entertaining overseas customers IS recoverable
-- Motor cars: VAT on purchase or lease of cars NOT exclusively for business use. **Exception:** 100% business use (pool car, driving instructor car, taxi) = fully recoverable
-- Car fuel (private element): if car has any private use, full input VAT on fuel is blocked UNLESS the fuel scale charge is applied
-- Non-business expenditure: expenditure not wholly for business purposes
-
-Partially recoverable items:
-- Mobile phones: fully recoverable if business contract (even if some private use)
-- Home office costs: apportion business vs private — recover business element only
-- Mixed-use equipment: apportion on reasonable basis
+- **Blocked categories** — The following input VAT CANNOT be reclaimed: - Business entertainment: entertaining UK customers, suppliers, or other business contacts. **Exception:** entertaining overseas customers IS recoverable - Motor cars: VAT on purchase or lease of cars NOT exclusively for business use. **Exception:** 100% business use (pool car, driving instructor car, taxi) = fully recoverable - Car fuel (private element): if car has any private use, full input VAT on fuel is blocked UNLESS the fuel scale charge is applied - Non-business expenditure: expenditure not wholly for business purposes Partially recoverable items: - Mobile phones: fully recoverable if business contract (even if some private use) - Home office costs: apportion business vs private — recover business element only - Mixed-use equipment: apportion on reasonable basis  _(VATA 1994 s25; VAT (Input Tax) Order 1992)_
 
 ### 5.9 Bad debt relief (VATA 1994 s36; VAT Regulations 1995 reg 168-172)
 
-If a customer does not pay, the supplier can reclaim the output VAT already paid to HMRC. Conditions: debt at least 6 months old (from later of due date or supply date), debt written off in accounts, claim on VAT return for the period conditions are met, claim within 4 years 6 months of supply date. Relief amount added to Box 4. If customer later pays, relief must be reversed.
+- **Bad debt relief rules** — If a customer does not pay, the supplier can reclaim the output VAT already paid to HMRC. Conditions: debt at least 6 months old (from later of due date or supply date), debt written off in accounts, claim on VAT return for the period conditions are met, claim within 4 years 6 months of supply date. Relief amount added to Box 4. If customer later pays, relief must be reversed.  _(VATA 1994 s36; VAT Regulations 1995 reg 168-172)_
 
 ### 5.10 Flat Rate Scheme (VATA 1994 s26B)
 
-Business charges 20% on invoices, pays HMRC a flat percentage of gross (VAT-inclusive) turnover. Key rule: ALWAYS run the Limited Cost Trader test first. If goods spend < 2% of gross turnover (or < GBP 1,000/year if greater), rate is 16.5% regardless of sector. "Relevant goods" excludes: capital goods over GBP 2,000, food/drink for staff, vehicles/fuel/vehicle parts. Under FRS, input VAT on capital goods costing GBP 2,000 or more (incl. VAT) CAN be reclaimed separately in Box 4.
+- **Flat Rate Scheme rules** — Business charges 20% on invoices, pays HMRC a flat percentage of gross (VAT-inclusive) turnover. Key rule: ALWAYS run the Limited Cost Trader test first. If goods spend < 2% of gross turnover (or < GBP 1,000/year if greater), rate is 16.5% regardless of sector. "Relevant goods" excludes: capital goods over GBP 2,000, food/drink for staff, vehicles/fuel/vehicle parts. Under FRS, input VAT on capital goods costing GBP 2,000 or more (incl. VAT) CAN be reclaimed separately in Box 4.  _(VATA 1994 s26B)_
 
 ### 5.11 Cash accounting scheme (VAT Regulations 1995 reg 56-65)
 
-Account for VAT based on date of payment, not invoice date. Entry: estimated taxable turnover <= GBP 1,350,000. Exit: GBP 1,600,000. Built-in bad debt relief — no output VAT due on unpaid invoices.
+- **Cash accounting rules** — Account for VAT based on date of payment, not invoice date. Entry: estimated taxable turnover <= GBP 1,350,000. Exit: GBP 1,600,000. Built-in bad debt relief — no output VAT due on unpaid invoices.  _(VAT Regulations 1995 reg 56-65)_
 
 ### 5.12 Filing deadlines and penalties (Finance Act 2021, from Jan 2023)
 
-Late submission: points-based. Quarterly filers: penalty threshold at 4 points (GBP 200 per late return once threshold reached). Points expire after 12 months of compliance. Late payment: no penalty for 1-15 days late; 2% of outstanding VAT at day 16-30; additional 2% at day 31+ plus daily rate of 4% per annum. Late payment interest: Bank of England base rate + 2.5%.
+- **Filing deadlines and penalties** — Late submission: points-based. Quarterly filers: penalty threshold at 4 points (GBP 200 per late return once threshold reached). Points expire after 12 months of compliance. Late payment: no penalty for 1-15 days late; 2% of outstanding VAT at day 16-30; additional 2% at day 31+ plus daily rate of 4% per annum. Late payment interest: Bank of England base rate + 2.5%.  _(Finance Act 2021)_
 
 ### 5.13 MTD requirements (all VAT-registered businesses since April 2022)
 
-Must keep digital records, maintain digital links between software systems (no manual re-keying), and file via MTD-compatible software. HMRC's basic online portal is NOT compliant with MTD.
-
----
+- **MTD requirements** — Must keep digital records, maintain digital links between software systems (no manual re-keying), and file via MTD-compatible software. HMRC's basic online portal is NOT compliant with MTD.
 
 ## Section 6 — Tier 2 catalogue (compressed)
 
@@ -484,57 +517,55 @@ For each ambiguity type: pattern, why the bank statement is insufficient, conser
 
 ### 6.1 Vehicle costs (fuel — business or private?)
 
-*Pattern:* BP, SHELL, ESSO, TEXACO, TESCO FUEL, ASDA FUEL, fuel receipts. *Why insufficient:* vehicle type and business-use proportion unknown. If car with any private use → fuel input VAT blocked unless fuel scale charge applied. If van or commercial vehicle used exclusively for business → fully deductible. *Default:* 0% recovery. *Question:* "Is this fuel for a car (with private use — blocked) or a commercial vehicle used exclusively for business? Do you apply the fuel scale charge?"
+- **Vehicle costs ambiguity** — Pattern: BP, SHELL, ESSO, TEXACO, TESCO FUEL, ASDA FUEL, fuel receipts. Why insufficient: vehicle type and business-use proportion unknown. If car with any private use → fuel input VAT blocked unless fuel scale charge applied. If van or commercial vehicle used exclusively for business → fully deductible. Default: 0% recovery. Question: "Is this fuel for a car (with private use — blocked) or a commercial vehicle used exclusively for business? Do you apply the fuel scale charge?"
 
 ### 6.2 Entertainment (client entertaining — blocked in UK)
 
-*Pattern:* any named restaurant, cafe, bar, catering, hospitality. *Why insufficient:* client entertainment is blocked. Staff entertainment may be recoverable. Overseas customer entertainment IS recoverable. *Default:* block. *Question:* "Was this (a) entertaining a UK client/supplier (blocked), (b) entertaining an overseas customer (recoverable), or (c) a staff event (recoverable if not excessive)?"
+- **Entertainment ambiguity** — Pattern: any named restaurant, cafe, bar, catering, hospitality. Why insufficient: client entertainment is blocked. Staff entertainment may be recoverable. Overseas customer entertainment IS recoverable. Default: block. Question: "Was this (a) entertaining a UK client/supplier (blocked), (b) entertaining an overseas customer (recoverable), or (c) a staff event (recoverable if not excessive)?"
 
 ### 6.3 Home office (electricity/gas — 5% domestic rate, but what % is office?)
 
-*Pattern:* energy supplier names, BRITISH GAS, EDF, OCTOPUS, etc. *Why insufficient:* business proportion unknown. Domestic fuel is 5% VAT, but only the business-use percentage is recoverable. *Default:* 0% if mixed use without declared proportion, 100% if confirmed dedicated business premises. *Question:* "Is this a home office or a dedicated business premises? If home office, what percentage of the property is used exclusively for business? (Typical range: 10-25%)"
+- **Home office ambiguity** — Pattern: energy supplier names, BRITISH GAS, EDF, OCTOPUS, etc. Why insufficient: business proportion unknown. Domestic fuel is 5% VAT, but only the business-use percentage is recoverable. Default: 0% if mixed use without declared proportion, 100% if confirmed dedicated business premises. Question: "Is this a home office or a dedicated business premises? If home office, what percentage of the property is used exclusively for business? (Typical range: 10-25%)"
 
 ### 6.4 Cash withdrawals
 
-*Pattern:* ATM, CASH WITHDRAWAL, CASHPOINT. *Why insufficient:* unknown what cash was spent on. *Default:* exclude as owner drawing. *Question:* "What was the cash used for?"
+- **Cash withdrawals ambiguity** — Pattern: ATM, CASH WITHDRAWAL, CASHPOINT. Why insufficient: unknown what cash was spent on. Default: exclude as owner drawing. Question: "What was the cash used for?"
 
 ### 6.5 Amazon/eBay (business or personal?)
 
-*Pattern:* AMAZON, AMAZON.CO.UK, AMAZON MARKETPLACE, AMZN, EBAY. *Why insufficient:* could be business stock/supplies or personal purchases. Amazon UK charges 20% VAT on most items. *Default:* block (personal). *Question:* "Was this a business purchase? If so, what was bought and do you have a VAT invoice?"
+- **Amazon/eBay ambiguity** — Pattern: AMAZON, AMAZON.CO.UK, AMAZON MARKETPLACE, AMZN, EBAY. Why insufficient: could be business stock/supplies or personal purchases. Amazon UK charges 20% VAT on most items. Default: block (personal). Question: "Was this a business purchase? If so, what was bought and do you have a VAT invoice?"
 
 ### 6.6 Mobile phone (business % unknown)
 
-*Pattern:* VODAFONE, EE, THREE, O2, GiffGaff, MOBILE. *Why insufficient:* if the contract is in the business name, full input VAT is recoverable even with some private use. If personal contract used partly for business, only business proportion is recoverable. *Default:* 0% recovery (personal contract assumed). *Question:* "Is this a business contract in the business name, or a personal phone used for business?"
+- **Mobile phone ambiguity** — Pattern: VODAFONE, EE, THREE, O2, GiffGaff, MOBILE. Why insufficient: if the contract is in the business name, full input VAT is recoverable even with some private use. If personal contract used partly for business, only business proportion is recoverable. Default: 0% recovery (personal contract assumed). Question: "Is this a business contract in the business name, or a personal phone used for business?"
 
 ### 6.7 FRS Limited Cost Trader test (did goods spend exceed 2%?)
 
-*Pattern:* any FRS client. *Why insufficient:* bank statement shows total spend but not whether individual purchases are "relevant goods" vs services/excluded items. *Default:* LCT at 16.5% (most conservative). *Question:* "For the FRS Limited Cost Trader test: how much did you spend on goods (physical items used exclusively for business, excluding capital goods over GBP 2,000, food/drink for staff, vehicles/fuel/vehicle parts) this quarter?"
+- **FRS LCT test ambiguity** — Pattern: any FRS client. Why insufficient: bank statement shows total spend but not whether individual purchases are "relevant goods" vs services/excluded items. Default: LCT at 16.5% (most conservative). Question: "For the FRS Limited Cost Trader test: how much did you spend on goods (physical items used exclusively for business, excluding capital goods over GBP 2,000, food/drink for staff, vehicles/fuel/vehicle parts) this quarter?"
 
 ### 6.8 Round-number incoming transfers from owner-named counterparties
 
-*Pattern:* large round credit from a name matching the client's name. *Why insufficient:* could be a customer sale, owner injection, or family loan. *Default:* exclude as owner injection. *Question:* "The GBP X transfer from [name] — is this a customer payment, your own money going in, or a loan?"
+- **Owner transfers ambiguity** — Pattern: large round credit from a name matching the client's name. Why insufficient: could be a customer sale, owner injection, or family loan. Default: exclude as owner injection. Question: "The GBP X transfer from [name] — is this a customer payment, your own money going in, or a loan?"
 
 ### 6.9 Incoming transfers from individual names (not owner)
 
-*Pattern:* incoming from private-looking counterparties. *Why insufficient:* could be B2C sale, B2B sale paid from personal account, refund. *Default:* domestic B2C sale at 20%, Box 6/1. *Question:* "For each: was it a sale? Business or consumer customer?"
+- **Individual incoming transfers ambiguity** — Pattern: incoming from private-looking counterparties. Why insufficient: could be B2C sale, B2B sale paid from personal account, refund. Default: domestic B2C sale at 20%, Box 6/1. Question: "For each: was it a sale? Business or consumer customer?"
 
 ### 6.10 Outgoing transfers to individuals
 
-*Pattern:* outgoing to private-looking names. *Why insufficient:* could be contractor with invoice, wages, refund, drawings. *Default:* exclude as drawings. *Question:* "Was this a contractor you paid with an invoice, wages, a refund to a customer, or a personal transfer?"
+- **Outgoing transfers ambiguity** — Pattern: outgoing to private-looking names. Why insufficient: could be contractor with invoice, wages, refund, drawings. Default: exclude as drawings. Question: "Was this a contractor you paid with an invoice, wages, a refund to a customer, or a personal transfer?"
 
 ### 6.11 Rent payments
 
-*Pattern:* monthly RENT, LEASE to a landlord-sounding counterparty. *Why insufficient:* commercial vs residential, whether landlord has opted to tax. *Default:* no VAT, no deduction (residential default). *Question:* "Is this a commercial property? Does the landlord charge VAT on the rent (they will only charge VAT if they have opted to tax the property)?"
+- **Rent payments ambiguity** — Pattern: monthly RENT, LEASE to a landlord-sounding counterparty. Why insufficient: commercial vs residential, whether landlord has opted to tax. Default: no VAT, no deduction (residential default). Question: "Is this a commercial property? Does the landlord charge VAT on the rent (they will only charge VAT if they have opted to tax the property)?"
 
 ### 6.12 Foreign hotel and accommodation (non-UK)
 
-*Pattern:* hotel or accommodation charged abroad. *Why insufficient:* place of supply is the location of the property — non-UK VAT paid at source, not recoverable as UK input tax. *Default:* exclude from input VAT. *Question:* "Was this a business trip?" (For income tax records, the expense may still be deductible.)
+- **Foreign hotel ambiguity** — Pattern: hotel or accommodation charged abroad. Why insufficient: place of supply is the location of the property — non-UK VAT paid at source, not recoverable as UK input tax. Default: exclude from input VAT. Question: "Was this a business trip?" (For income tax records, the expense may still be deductible.)
 
 ### 6.13 Platform sales (Amazon Seller, eBay, Etsy)
 
-*Pattern:* incoming from Amazon Payments, Etsy Payments, PayPal, Stripe — settlement payouts. *Why insufficient:* aggregated settlement may include multi-country buyer mix. *Default:* treat gross as Box 6/1 at 20%. Platform fees as separate reverse charge (IE/US entity). *Question:* "Do you sell to buyers outside the UK? Total overseas sales for the year? Do you sell on Amazon EU marketplaces?"
-
----
+- **Platform sales ambiguity** — Pattern: incoming from Amazon Payments, Etsy Payments, PayPal, Stripe — settlement payouts. Why insufficient: aggregated settlement may include multi-country buyer mix. Default: treat gross as Box 6/1 at 20%. Platform fees as separate reverse charge (IE/US entity). Question: "Do you sell to buyers outside the UK? Total overseas sales for the year? Do you sell on Amazon EU marketplaces?"
 
 ## Section 7 — Excel working paper template (UK-specific)
 
@@ -599,8 +630,6 @@ python /mnt/skills/public/xlsx/scripts/recalc.py /mnt/user-data/outputs/uk-vat-<
 
 Check the JSON output. If `status` is `errors_found`, fix the formulas and re-run. If `status` is `success`, present via `present_files`.
 
----
-
 ## Section 8 — UK bank statement reading guide
 
 Follow the universal exclusion rules in `vat-workflow-base` Step 6, plus these UK-specific patterns.
@@ -619,43 +648,49 @@ Follow the universal exclusion rules in `vat-workflow-base` Step 6, plus these U
 
 **Direct debit references.** Many UK bank statements show direct debits with only a mandate reference number. Cross-reference with the client's known suppliers. Common: energy suppliers, telecoms, HMRC, insurance.
 
----
-
 ## Section 9 — Onboarding fallback (only when inference fails)
 
 The workflow in `vat-workflow-base` Section 1 mandates inferring the client profile from the data first and only confirming with the client as a fallback. The questionnaire below is a fallback — ask only the questions the data could not answer.
 
 ### 9.1 Entity type and trading name
-*Inference rule:* sole trader names match the account holder name; company names end in "Ltd", "Limited", "LLP", "PLC". *Fallback question:* "Are you a self-employed sole trader, a limited company, or a partnership?"
+
+- **Entity type inference** — Inference rule: sole trader names match the account holder name; company names end in "Ltd", "Limited", "LLP", "PLC". Fallback question: "Are you a self-employed sole trader, a limited company, or a partnership?"
 
 ### 9.2 VAT scheme
-*Inference rule:* if the client mentions FRS, flat rate, or a percentage of turnover, they are FRS. If they mention cash basis or payment dates, they are cash accounting. Otherwise assume standard accrual. *Fallback question:* "Which VAT scheme are you on: standard accounting, Flat Rate Scheme, cash accounting, or annual accounting?"
+
+- **VAT scheme inference** — Inference rule: if the client mentions FRS, flat rate, or a percentage of turnover, they are FRS. If they mention cash basis or payment dates, they are cash accounting. Otherwise assume standard accrual. Fallback question: "Which VAT scheme are you on: standard accounting, Flat Rate Scheme, cash accounting, or annual accounting?"
 
 ### 9.3 VAT number
-*Inference rule:* GB VAT numbers sometimes appear in invoice descriptions or payment references. *Fallback question:* "What is your VAT registration number? (9-digit GB number)"
+
+- **VAT number inference** — Inference rule: GB VAT numbers sometimes appear in invoice descriptions or payment references. Fallback question: "What is your VAT registration number? (9-digit GB number)"
 
 ### 9.4 Filing period
-*Inference rule:* first and last transaction dates on the bank statement. Standard is quarterly. *Fallback question:* "Which VAT quarter does this cover? (e.g. April-June 2025)"
+
+- **Filing period inference** — Inference rule: first and last transaction dates on the bank statement. Standard is quarterly. Fallback question: "Which VAT quarter does this cover? (e.g. April-June 2025)"
 
 ### 9.5 Industry and sector
-*Inference rule:* counterparty mix, sales description patterns, invoice descriptions. IT, consultancy, construction, retail, hospitality are recognisable. Important for FRS sector rate. *Fallback question:* "In one sentence, what does the business do?"
+
+- **Industry inference** — Inference rule: counterparty mix, sales description patterns, invoice descriptions. IT, consultancy, construction, retail, hospitality are recognisable. Important for FRS sector rate. Fallback question: "In one sentence, what does the business do?"
 
 ### 9.6 FRS sector (if applicable)
-*Inference rule:* infer from 9.5. *Fallback question:* "If you are on the Flat Rate Scheme, which HMRC sector category applies to your business?"
+
+- **FRS sector inference** — Inference rule: infer from 9.5. Fallback question: "If you are on the Flat Rate Scheme, which HMRC sector category applies to your business?"
 
 ### 9.7 Exempt supplies
-*Inference rule:* presence of financial/insurance/educational/residential rental income. *Fallback question:* "Do you make any VAT-exempt sales (financial services, insurance, education, health, residential lettings)?" If yes and non-de-minimis, R-UK-1 fires.
+
+- **Exempt supplies inference** — Inference rule: presence of financial/insurance/educational/residential rental income. Fallback question: "Do you make any VAT-exempt sales (financial services, insurance, education, health, residential lettings)?" If yes and non-de-minimis, R-UK-1 fires.
 
 ### 9.8 Construction / CIS
-*Inference rule:* CIS references in payment descriptions, construction-related counterparties. *Fallback question:* "Are you registered under the Construction Industry Scheme (CIS)? Do you make or receive supplies of construction services?" If complex, R-UK-4 fires.
+
+- **CIS inference** — Inference rule: CIS references in payment descriptions, construction-related counterparties. Fallback question: "Are you registered under the Construction Industry Scheme (CIS)? Do you make or receive supplies of construction services?" If complex, R-UK-4 fires.
 
 ### 9.9 Prior period position
-*Inference rule:* not inferable from a single period statement. Always ask. *Question:* "Do you have any underpayment or overpayment carried forward from the previous VAT period?"
+
+- **Prior period inference** — Inference rule: not inferable from a single period statement. Always ask. Question: "Do you have any underpayment or overpayment carried forward from the previous VAT period?"
 
 ### 9.10 Overseas customers
-*Inference rule:* foreign IBANs or foreign currency on incoming, foreign-name customers. *Fallback question:* "Do you have customers outside the UK? Are they businesses (B2B) or consumers (B2C)?"
 
----
+- **Overseas customers inference** — Inference rule: foreign IBANs or foreign currency on incoming, foreign-name customers. Fallback question: "Do you have customers outside the UK? Are they businesses (B2B) or consumers (B2C)?"
 
 ## Section 10 — Reference material
 
@@ -728,10 +763,41 @@ This skill is v2.0, rewritten in April 2026 to align with the Malta v2.0 archite
 
 This skill is incomplete without the companion file loaded alongside it: `vat-workflow-base` v0.1 or later (Tier 1, workflow architecture). Do not attempt to produce a VAT100 without both files loaded.
 
----
-
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, EA, tax attorney, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
 
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
+The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
+
+## Talk to a verified accountant
+
+This skill is a tool, not an engagement. Every taxpayer's situation is
+different, and the rules in the skill may not match your specific facts.
+
+To speak with one of the licensed accountants who verifies skills for your
+jurisdiction — **no liability on either side until you and the accountant sign
+a formal engagement letter** — book a free 30-minute call:
+
+**→ [Book a call](https://calendly.com/openaccountants-info/30min)**
+
+We'll route you to the named verifier covering your country or state. You can
+also see the full list of verified accountants at
+[openaccountants.com/network](https://openaccountants.com/network).
+
+<!-- openaccountants-cta-block -->
+
+---
+
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

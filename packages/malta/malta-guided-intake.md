@@ -2,17 +2,23 @@
 name: mt-freelance-intake
 description: ALWAYS USE THIS SKILL when a user asks for help preparing their Malta tax returns AND mentions freelancing, self-employment, contracting, sole proprietorship, or self-occupied status. Trigger on phrases like "help me do my taxes", "prepare my TA24", "I'm self-employed in Malta", "I'm a freelancer in Malta", "do my taxes as a contractor", "prepare my VAT return and income tax", or any similar phrasing where the user is a Malta-resident self-employed individual needing tax return preparation. This is the REQUIRED entry point for the Malta self-employed tax workflow -- every other skill in the stack (malta-vat-return, malta-income-tax, malta-ssc, mt-estimated-tax, mt-return-assembly) depends on this skill running first to produce a structured intake package. Uses upload-first workflow -- the user dumps all their documents and the skill infers as much as possible before asking questions. Uses ask_user_input_v0 for structured questions instead of one-at-a-time prose. Built for speed. Malta full-year residents only; self-employed individuals and sole proprietors.
 version: 0.1
+jurisdiction: MT
+tax_year: 2025
+last_updated: 2026-04-13
+verified_by: pending
+tier: 2
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Malta Self-Employed Intake Skill v0.1
+# MT Freelance Intake
+
+## Malta Self-Employed Intake Skill v0.1
 
 ## What this file is
 
 The intake orchestrator for Malta-resident self-employed individuals. Every downstream Malta content skill (malta-vat-return, malta-income-tax, malta-ssc, mt-estimated-tax) and the assembly orchestrator (mt-return-assembly) depend on this skill running first to produce a structured intake package.
 
 This skill does not compute any tax figures. Its job is to collect all the facts, parse all the documents, confirm everything with the user, and hand off a clean intake package to `mt-return-assembly`.
-
----
 
 ## Design principles
 
@@ -42,8 +48,6 @@ Target: intake completes in 5 minutes for a prepared user, 15 minutes for a user
 
 **Exception for blocking decisions.** If a single question determines whether the user is in-scope or out-of-scope, ask it standalone.
 
----
-
 ## Section 1 -- The opening
 
 When triggered, respond with ONE message that:
@@ -69,8 +73,6 @@ Then immediately call `ask_user_input_v0` with the refusal questions.
 - Ask "are you ready to start"
 - List what documents you will eventually need
 - Give a disclaimer beyond the one reviewer line
-
----
 
 ## Section 2 -- Refusal sweep (compact)
 
@@ -130,8 +132,6 @@ Q6: "Industry?"
 
 **Total time:** ~45 seconds if the user taps through.
 
----
-
 ## Section 3 -- The dump
 
 Once the refusal sweep passes, immediately ask for the document dump. Single message. No preamble.
@@ -165,8 +165,6 @@ Then wait. Do not ask any other questions while waiting.
 > - Dropbox / Google Drive for saved invoices
 >
 > Come back when you have something to upload. I'll work with whatever you bring.
-
----
 
 ## Section 4 -- The inference pass
 
@@ -218,8 +216,6 @@ When documents arrive, parse each one. For each document, extract:
 - Any arrears
 
 **After parsing everything, build an internal inference object.** Do not show the raw inference yet -- transform it into a compact summary for the user in Section 5.
-
----
 
 ## Section 5 -- The confirmation
 
@@ -280,8 +276,6 @@ After inference, present a single compact summary message. Use a structured form
 >
 > **Is any of this wrong? Reply "looks good" or tell me what to fix.**
 
----
-
 ## Section 6 -- Gap filling
 
 After the user confirms the summary (or corrects it), ask about things that cannot be inferred from documents. Use `ask_user_input_v0` where possible.
@@ -339,8 +333,6 @@ Flag all private-use percentages as T2 -- warranted accountant must confirm the 
 
 If not determinable from documents, ask as a text input: "What year were you born? (Needed for SSC maximum cap calculation.)"
 
----
-
 ## Section 7 -- The final handoff
 
 Once gap-filling is done, produce a final handoff message and hand off to `mt-return-assembly`.
@@ -365,8 +357,6 @@ Once gap-filling is done, produce a final handoff message and hand off to `mt-re
 > Starting now.
 
 Then internally invoke `mt-return-assembly` with the structured intake package.
-
----
 
 ## Section 8 -- Structured intake package (internal format)
 
@@ -438,8 +428,6 @@ The downstream skill (`mt-return-assembly`) consumes a JSON structure. It is int
 }
 ```
 
----
-
 ## Section 9 -- Refusal handling
 
 Refusals fire from either the refusal sweep (Section 2) or during inference (e.g., partnership structure discovered in documents).
@@ -461,8 +449,6 @@ When a refusal fires:
 > Stop -- you have a registered limited company. I'm set up for sole proprietors and self-occupied individuals only. Limited companies file CT returns with different rules for directors' remuneration, dividends, and corporate tax. You need a warranted accountant familiar with Ltd company returns.
 >
 > I can't help with this one.
-
----
 
 ## Section 10 -- Self-checks
 
@@ -490,8 +476,6 @@ When a refusal fires:
 
 **Check IN12 -- VAT registration type was established.** Article 10 vs Article 11 was confirmed before inference, as it changes how every transaction is classified.
 
----
-
 ## Section 11 -- Performance targets
 
 For a prepared user (documents in a folder, ready to upload):
@@ -508,8 +492,6 @@ For an unprepared user (has to go fetch documents):
 - Rest: same
 - **Total**: 15-25 minutes
 
----
-
 ## Section 12 -- Cross-skill references
 
 **Inputs:** User-provided documents and answers.
@@ -522,7 +504,11 @@ For an unprepared user (has to go fetch documents):
 - `malta-ssc` -- Class 2 social security contributions
 - `mt-estimated-tax` -- Provisional tax schedule
 
----
+0. **Hand off structured intake package to return assembly** — Then internally invoke `mt-return-assembly` with the structured intake package.
+0. **Quarterly VAT return (Article 10) or Article 11 annual declaration** — malta-vat-return -- Quarterly VAT return (Article 10) or Article 11 annual declaration
+0. **TA24 self-employed return** — malta-income-tax -- TA24 self-employed return
+0. **Class 2 social security contributions** — malta-ssc -- Class 2 social security contributions
+0. **Provisional tax schedule** — mt-estimated-tax -- Provisional tax schedule
 
 ### Change log
 
@@ -530,42 +516,26 @@ For an unprepared user (has to go fetch documents):
 
 ## End of Intake Skill v0.1
 
-
----
-
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, EA, tax attorney, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
 
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
-
----
+The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
 
 <!-- openaccountants-cta-block -->
 
+---
+
 ## Talk to a verified accountant
 
-This skill is a tool, not an engagement. Every taxpayer's situation is
-different, and the rules in the skill may not match your specific facts.
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
 
-To speak with one of the licensed accountants who verifies skills for your
-jurisdiction — **no liability on either side until you and the accountant sign
-a formal engagement letter** — book a free 30-minute call:
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
 
-**→ [Book a call](https://calendly.com/openaccountants-info/30min)**
-
-We'll route you to the named verifier covering your country or state. You can
-also see the full list of verified accountants at
-[openaccountants.com/network](https://www.openaccountants.com/network).
-
-<!-- openaccountants-mcp-cta -->
-
-## The accountant-verified version lives in the connector
-
-This file is the open, **research-grade draft**. The **accountant-verified**
-version of this skill is **not published to GitHub** — it is delivered free
-through the OpenAccountants MCP connector, where your AI agent loads the
-verified rules together with the name of the accountant who signed them off.
-
-**→ Install the free connector:** <https://www.openaccountants.com/connect>
-**MCP endpoint:** `https://www.openaccountants.com/api/mcp`
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

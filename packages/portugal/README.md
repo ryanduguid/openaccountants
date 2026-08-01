@@ -3,13 +3,6 @@
 > Open-source accounting skills for Portugal. Upload to Claude, ChatGPT, or any AI assistant.
 > Tax, bookkeeping, payroll, formation, financial statements, and more. Free and open source.
 
-## Verified by
-
-**Mário Vale CA** (CA-85883) — Lead accountant verifier for Portugal on OpenAccountants. 9 skills verified.
-[openaccountants.com/network/a26a63b7-343c-451b-8266-bb9d28bd7089](https://www.openaccountants.com/network/a26a63b7-343c-451b-8266-bb9d28bd7089)
-
-_Scope: the “Verified rates & thresholds” blocks inside these skill files are generated from the facts this verifier reviewed. Everything else in the files is an open, source-cited draft. The full accountant-verified tier, with the verifier’s name on every answer, is served via the [connector](https://www.openaccountants.com/connect)._
-
 ## What's in this folder
 
 1. `foundation.md`
@@ -22,15 +15,20 @@ _Scope: the “Verified rates & thresholds” blocks inside these skill files ar
 8. `portugal-payroll.md`
 9. `portugal-tax-optimization.md`
 10. `portugal-vat-return.md`
-11. `pt-income-tax.md`
-12. `pt-social-contributions.md`
-13. `eu-vat-directive.md`
-14. `bookkeeping-workflow-base.md`
-15. `einvoice-workflow-base.md`
-16. `payroll-workflow-base.md`
-17. `company-formation-workflow-base.md`
-18. `financial-statements-workflow-base.md`
-19. `crypto-tax-workflow-base.md`
+11. `pt-corporate-tax.md`
+12. `pt-foreign-source-treaties.md`
+13. `pt-income-tax.md`
+14. `pt-nhr-ifici.md`
+15. `pt-return-assembly.md`
+16. `pt-social-contributions.md`
+17. `pt-vat-return.md`
+18. `eu-vat-directive.md`
+19. `bookkeeping-workflow-base.md`
+20. `einvoice-workflow-base.md`
+21. `payroll-workflow-base.md`
+22. `company-formation-workflow-base.md`
+23. `financial-statements-workflow-base.md`
+24. `crypto-tax-workflow-base.md`
 
 ## Also known as
 

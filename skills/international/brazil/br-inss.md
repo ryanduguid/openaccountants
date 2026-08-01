@@ -3,204 +3,210 @@ name: br-inss
 description: Use this skill whenever asked about Brazilian INSS social contributions for self-employed individuals (contribuinte individual). Trigger on phrases like "INSS autônomo", "contribuinte individual", "GPS pagamento", "INSS 20%", "INSS simplificado 11%", "teto INSS", "previdência autônomo", or any question about Brazilian social security obligations for self-employed persons. Covers the 20% normal plan, 11% simplified plan, 5% MEI plan, contribution ceiling (teto), GPS payment mechanics, and edge cases. ALWAYS read this skill before touching any Brazilian INSS work.
 version: 2.0
 jurisdiction: BR
+tax_year: 2025
+last_updated: 2026-05-26
+verified_by: Ariane Marrocos
 tier: 2
-last_updated: 2026-06-12
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Brazil INSS Contributions (Contribuinte Individual) -- Self-Employed Skill v2.0
+# BR Inss
 
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+## Verified rates & thresholds (accountant-reviewed)
 
-## Section 1 -- Quick reference
+Reviewed against the cited tax authorities by Ariane Marrocos on 2026-06-03.
+Items flagged for further clarification are tracked separately and excluded here.
+This block is generated from verified `skill_facts` — edit the facts, not the prose.
 
-| Field | Value |
-|---|---|
-| Country | Brazil (Federative Republic of Brazil) |
-| Authority | Receita Federal (collection); INSS (benefits) |
-| Primary legislation | Lei 8.212/1991 (Custeio); Lei 8.213/1991 (Benefícios) |
-| Supporting legislation | Decreto 3.048/1999; LC 123/2006 (MEI) |
-| Plano Normal rate | 20% of income (between salário mínimo and teto) |
-| Plano Simplificado rate | 11% of salário mínimo (fixed) |
-| MEI rate | 5% of salário mínimo (fixed) |
-| Salário mínimo (2025) | R$ 1,518.00 |
-| Teto INSS (2025) | R$ 8,157.41 |
-| Min contribution (20%) | R$ 303.60 |
-| Max contribution (20%) | R$ 1,631.48 |
-| Simplified (11%) | R$ 166.98 |
-| MEI (5%) | R$ 75.90 |
-| GPS due date | 15th of following month |
-| Currency | BRL only |
-| Contributor | Open Accountants |
-| Validated by | Pending -- requires validation by Brazilian contador |
-| Validation date | Pending |
+### INSS Autônomo
 
----
+- **Salário mínimo** — R$ 1.630,00  _(Legislação federal do salário mínimo 2026)_
+- **Teto INSS** — R$ 8.475,55  _(Portaria Interministerial MPS/MF nº 13/2026.)_
+- **Plano Normal (20%)** — 20% da renda (mín. R$ 326,00 / máx. R$ 1.695,11) — GPS código 1007  _(Lei 8.212/1991 Art. 21)_
+- **Plano Simplificado (11%)** — 11% do salário mínimo = R$ 179,30 (fixo) — GPS código 1163  _(Lei 8.212/1991 Art. 21)_
+- **MEI (5%)** — 5% do salário mínimo = R$ 81,50 (fixo) — recolhido via DAS-MEI  _(Lei Complementar nº 123/2006 – Art. 18-A.)_
+- **Contribuição mínima (20%)** — R$ 326,00  _(Lei 8.212/1991 Art. 21)_
+- **Contribuição máxima (20%)** — R$ 1.695,11  _(Lei 8.212/1991 Art. 21)_
+- **1007** — Contribuinte individual — Normal (20%)  _(Lei 8.212/1991)_
+- **1163** — Contribuinte individual — Simplificado (11%)  _(Lei 8.212/1991)_
+- **1104** — Contribuinte Individual – Prestador de serviços a pessoa jurídica (com retenção previdenciária). Observação: o percentual efetivamente retido pode variar conforme a situação e a legislação previdenciária aplicável.  _(Lei 8.212/1991)_
+- **1295** — Complementação (de 11% para 20% retroativa)  _(Lei 8.212/1991)_
+- **Vencimento GPS** — Dia 15 do mês seguinte  _(Lei 8.212/1991)_
+- **Multa por atraso** — 0,33% ao dia (limitada a 20%) + SELIC acumulada e 1% no mês do pagamento  _(Lei 8.212/1991; Lei 9.430/1996)_
+- **Cobrança retroativa** — Até 5 anos  _(CTN Arts. 173 e 174)_
+- **Duplo vínculo CLT+autônomo** — Total limitado ao teto; se CLT atinge o teto, sem GPS adicional  _(Lei 8.212/1991)_
+- **Mês sem renda** — Sem contribuição obrigatória; pode recolher como facultativo  _(Lei nº 8.212/1991 Lei nº 8.213/1991)_
+- **Plano 11% → aposentadoria por tempo** — Não conta para benefícios que exijam contribuição integral, salvo complementação para 20%  _(Lei 8.212/1991)_
 
-## Section 2 -- Required inputs and refusal catalogue
+## Seção 1 — Referência rápida
 
-### Required inputs
+**Referência rápida**
 
-Before computing, you MUST obtain:
+| Campo | Valor |
+| --- | --- |
+| País | Brasil (República Federativa do Brasil) |
+| Autoridade | Receita Federal (arrecadação); INSS (benefícios) |
+| Legislação principal | Lei 8.212/1991 (Custeio); Lei 8.213/1991 (Benefícios) |
+| Legislação complementar | Decreto 3.048/1999; LC 123/2006 (MEI) |
+| Alíquota do Plano Normal | 20% da renda (entre salário mínimo e teto) |
+| Alíquota do Plano Simplificado | 11% do salário mínimo (fixo) |
+| Alíquota MEI | 5% do salário mínimo (fixo) |
+| Salário mínimo (2025) | R$ 1.518,00 |
+| Teto INSS (2025) | R$ 8.157,41 |
+| Contribuição mínima (20%) | R$ 303,60 |
+| Contribuição máxima (20%) | R$ 1.631,48 |
+| Simplificado (11%) | R$ 166,98 |
+| MEI (5%) | R$ 75,90 |
+| Vencimento da GPS | Dia 15 do mês seguinte |
+| Moeda | Apenas BRL |
+| Contribuidor | Open Accountants |
+| Validado por | Verificado por Ariane Marrocos (SP 312052/O-1) em 2026-06-03 |
+| Data de validação | Verificado por Ariane Marrocos (SP 312052/O-1) em 2026-06-03 |
 
-1. **Worker classification** -- contribuinte individual, MEI, or facultativo?
-2. **Monthly gross income from self-employment**
-3. **Concurrent employment (CLT)?** -- dual status rules
-4. **Desired plan** -- Plano Normal (20%) or Simplificado (11%)
-5. **Does client want aposentadoria por tempo de contribuição?** -- only with 20% plan
-6. **Is client a MEI?** -- separate 5% regime
+A Reforma Tributária 2026 (EC 132/2023, LC 214/2025) reforma apenas tributos sobre consumo (PIS, Cofins, ICMS, ISS, IPI → CBS+IBS). O INSS não é afetado — alíquotas e regras permanecem.
 
-**If classification is unknown, STOP.**
+## Seção 2 — Insumos obrigatórios e catálogo de recusas
 
-### Refusal catalogue
+### Insumos obrigatórios
 
-**R-BR-INSS-1 -- Bilateral agreement.** Trigger: foreign worker with bilateral social security agreement. Message: "Bilateral agreements may exempt from INSS. Escalate for legal review."
+- **Insumos obrigatórios antes de calcular** — 1. Classificação do trabalhador — contribuinte individual, MEI ou facultativo? 2. Renda bruta mensal do trabalho autônomo 3. Emprego concorrente (CLT)? — regras de duplo vínculo 4. Plano desejado — Plano Normal (20%) ou Simplificado (11%) 5. O cliente deseja aposentadoria por tempo de contribuição? — somente com o plano de 20% 6. O cliente é MEI? — regime separado de 5% Se a classificação for desconhecida, PARE.
 
-**R-BR-INSS-2 -- Complementação interest calculation.** Trigger: computing retroactive complementação (code 1295) with interest. Message: "Interest calculation at SELIC requires current rate data. Escalate to contador."
+### Catálogo de recusas
 
-### Prohibitions
+- **R-BR-INSS-1 — Acordo bilateral** — Gatilho: trabalhador estrangeiro com acordo bilateral de previdência social. Mensagem: "Acordos bilaterais podem isentar do INSS. Escalar para revisão jurídica."
+- **R-BR-INSS-2 — Cálculo de juros da complementação** — Gatilho: cálculo retroativo de complementação (código 1295) com juros. Mensagem: "O cálculo de juros pela SELIC exige dados de taxa atualizados. Escalar para contador."
 
-- NEVER allow 11% plan client to believe they qualify for aposentadoria por tempo -- they do not
-- NEVER compute below salário mínimo floor
-- NEVER compute above teto ceiling (20% plan)
-- NEVER ignore PJ withholdings when computing GPS difference
-- NEVER tell zero-income client they must pay -- voluntary for zero-income months
-- NEVER confuse contribuinte individual codes (1007/1163) with facultativo codes (1406/1473)
-- NEVER present 5% MEI rate as available to non-MEI
-- NEVER compute complementação interest without current SELIC
+### Proibições
 
----
+- **Proibições** — NUNCA permitir que cliente do plano de 11% acredite que tem direito à aposentadoria por tempo — não tem NUNCA calcular abaixo do piso do salário mínimo NUNCA calcular acima do teto (plano de 20%) NUNCA ignorar retenções de PJ ao apurar a diferença da GPS NUNCA dizer a cliente com renda zero que ele deve pagar — é facultativo nos meses sem renda NUNCA confundir códigos de contribuinte individual (1007/1163) com códigos de facultativo (1406/1473) NUNCA apresentar a alíquota de 5% do MEI como disponível para não-MEI NUNCA calcular juros de complementação sem a SELIC vigente
 
-## Section 3 -- Contribution plans
+## Seção 3 — Planos de contribuição
 
-**Legislation:** Lei 8.212/1991 Art. 21
+**Planos de contribuição**  _(Lei 8.212/1991 Art. 21)_
 
-| Plan | Rate | Base | GPS code | Benefits |
-|---|---|---|---|---|
-| Plano Normal | 20% | Income (min-teto) | 1007 | Full: idade, tempo, invalidez, pensão, auxílio |
-| Plano Simplificado | 11% | Salário mínimo (fixed) | 1163 | Limited: idade only |
-| MEI | 5% | Salário mínimo (fixed) | DAS-MEI | Limited: idade only |
+| Plano | Alíquota | Base | Código GPS | Benefícios |
+| --- | --- | --- | --- | --- |
+| Plano Normal | 20% | Renda (mínimo–teto) | 1007 | Completos: idade, tempo, invalidez, pensão, auxílio |
+| Plano Simplificado | 11% | Salário mínimo (fixo) | 1163 | Limitados: apenas idade |
+| MEI | 5% | Salário mínimo (fixo) | DAS-MEI | Limitados: apenas idade |
 
----
-
-## Section 4 -- Calculation rules
+## Seção 4 — Regras de cálculo
 
 ### Plano Normal (20%)
 
-```
-contribution = min(monthly_income, teto_INSS) x 20%
-contribution = clamp(R$ 303.60, contribution, R$ 1,631.48)
-```
+- **Fórmula Plano Normal** — contribution = min(monthly_income, teto_INSS) x 20% contribution = clamp(R$ 303.60, contribution, R$ 1,631.48)
 
 ### Plano Simplificado (11%)
 
-```
-contribution = R$ 1,518.00 x 11% = R$ 166.98 (fixed)
-```
+- **Fórmula Plano Simplificado** — contribution = R$ 1,518.00 x 11% = R$ 166.98 (fixed)
+- **Base fixa** — Sempre baseado no salário mínimo, independentemente da renda efetiva.
 
-Always based on salário mínimo regardless of actual income.
+### Retenção de PJ (serviços prestados a empresas)
 
-### PJ withholding (services to companies)
+- **Regra de retenção de PJ** — A empresa retém 11% do pagamento (até o teto). Se o cliente estiver no plano de 20%, pagar a diferença de 9% via GPS código 1007. Se o total de retenções de várias PJs atingir o teto, não há pagamento adicional necessário.
 
-Company withholds 11% of payment (up to teto). If client on 20% plan, pay 9% difference via GPS code 1007. If total withholdings from multiple PJs reach teto, no additional payment needed.
-
----
-
-## Section 5 -- GPS payment and registration
+## Seção 5 — Pagamento da GPS e cadastro
 
 ### GPS (Guia da Previdência Social)
 
-| Item | Detail |
-|---|---|
-| Generated via | Gov.br, Meu INSS, or manual Carnê |
-| Due date | 15th of following month |
-| Payment channels | Bank, internet banking, lotéricas |
+**GPS (Guia da Previdência Social)**
 
-### GPS codes
+| Item | Detalhe |
+| --- | --- |
+| Gerada via | Gov.br, Meu INSS ou Carnê manual |
+| Vencimento | Dia 15 do mês seguinte |
+| Canais de pagamento | Banco, internet banking, lotéricas |
 
-| Code | Description |
-|---|---|
-| 1007 | Contribuinte individual -- Normal (20%) |
-| 1163 | Contribuinte individual -- Simplificado (11%) |
-| 1104 | Contribuinte individual -- PJ service (empresa retains 11%) |
-| 1295 | Complementação (11% to 20% retroactive) |
+### Códigos da GPS
 
-### Registration
+**Códigos da GPS**
 
-CPF required. Must have NIT/PIS/PASEP.
+| Código | Descrição |
+| --- | --- |
+| 1007 | Contribuinte individual — Normal (20%) |
+| 1163 | Contribuinte individual — Simplificado (11%) |
+| 1104 | Contribuinte individual — serviço para PJ (empresa retém 11%) |
+| 1295 | Complementação (de 11% para 20% retroativa) |
 
----
+### Cadastro
 
-## Section 6 -- Tax deductibility and penalties
+- **Cadastro** — CPF obrigatório. Deve possuir NIT/PIS/PASEP.
 
-### Tax deductibility
+## Seção 6 — Dedutibilidade fiscal e penalidades
 
-| Question | Answer |
-|---|---|
-| Deductible? | YES -- from gross income for IRPF |
-| Where? | Annual IRPF declaration |
-| Carnê-leão | INSS deducted before computing monthly estimate |
+### Dedutibilidade fiscal
 
-### Penalties
+**Dedutibilidade fiscal**
 
-| Penalty | Detail |
-|---|---|
-| Late payment | SELIC daily + 0.33%/day (capped 20%) |
-| Non-payment | Periods do not count for retirement |
-| Retroactive collection | Up to 5 years |
+| Pergunta | Resposta |
+| --- | --- |
+| Dedutível? | SIM — da renda bruta para fins de IRPF |
+| Onde? | Declaração anual do IRPF |
+| Carnê-leão | INSS deduzido antes de apurar a estimativa mensal |
 
----
+### Penalidades
 
-## Section 7 -- Dual status and plan changes
+**Penalidades**
 
-### CLT employee + autônomo
+| Penalidade | Detalhe |
+| --- | --- |
+| Pagamento em atraso | SELIC diária + 0,33%/dia (limitada a 20%) |
+| Não pagamento | Períodos não contam para aposentadoria |
+| Cobrança retroativa | Até 5 anos |
 
-Total INSS capped at teto. If employment contributions reach teto, no additional autonomous INSS needed.
+## Seção 7 — Duplo vínculo e mudança de plano
 
-### Zero income month
+### Empregado CLT + autônomo
 
-No mandatory contribution. Month does not count. May pay as facultativo optionally.
+- **Regra de duplo vínculo** — Total do INSS limitado ao teto. Se as contribuições do emprego atingirem o teto, não há INSS adicional como autônomo.
 
-### Switching from simplified to normal
+### Mês sem renda
 
-Client on 11% can switch to 20% going forward. For prior periods, pay complementação (9% difference) via GPS code 1295 with SELIC interest.
+- **Mês sem renda** — Sem contribuição obrigatória. O mês não conta. Pode-se pagar como facultativo opcionalmente.
 
-### MEI exceeding revenue limit
+### Mudança de Simplificado para Normal
 
-Must be desenquadrado. Transitions to contribuinte individual. Prior MEI periods (5%) valid for idade only. Flag for reviewer.
+- **Mudança de plano** — Cliente no plano de 11% pode mudar para 20% a partir daquela data. Para períodos anteriores, pagar complementação (diferença de 9%) via GPS código 1295 com juros pela SELIC.
 
----
+### MEI que ultrapassa o limite de receita
 
-## Section 8 -- Edge case registry
+- **MEI ultrapassa limite** — Deve ser desenquadrado. Passa a contribuinte individual. Períodos anteriores como MEI (5%) valem apenas para aposentadoria por idade. Sinalizar para revisor.
 
-### EC1 -- Simplified plan wants tempo
-**Situation:** 11% plan client needs aposentadoria por tempo.
-**Resolution:** Switch to 20% or pay complementação (code 1295) for prior periods.
+## Seção 8 — Registro de casos excepcionais
 
-### EC2 -- Dual status, employment at teto
-**Situation:** CLT salary R$ 8,157.41, additional autônomo income.
-**Resolution:** Employment already at teto. Zero additional GPS.
+### EC1 — Plano Simplificado deseja aposentadoria por tempo
 
-### EC3 -- PJ withholding + 20% plan
-**Situation:** R$ 6,000 from PJ, 11% withheld = R$ 660. Client on 20%.
-**Resolution:** Owed R$ 1,200. Withheld R$ 660. GPS R$ 540.
+Situação: Cliente no plano de 11% precisa de aposentadoria por tempo de contribuição.
+Resolução: Mudar para 20% ou pagar complementação (código 1295) referente aos períodos anteriores.
 
-### EC4 -- Income below mínimo
-**Situation:** Income R$ 800.
-**Resolution:** Minimum base R$ 1,518. Contribution R$ 303.60 (20%) or R$ 166.98 (11%).
+### EC2 — Duplo vínculo, emprego no teto
 
-### EC5 -- Multiple PJs, over-withholding
-**Situation:** R$ 5,000 from PJ-A + R$ 5,000 from PJ-B. Both withhold 11%.
-**Resolution:** Total R$ 10,000 but teto R$ 8,157.41. Max withholding = R$ 897.32. May have overpaid. Request refund.
+Situação: Salário CLT de R$ 8.157,41, com renda adicional como autônomo.
+Resolução: O vínculo empregatício já atinge o teto. Nenhuma GPS adicional.
 
-### EC6 -- Zero income month
-**Situation:** No income March 2025.
-**Resolution:** No mandatory contribution. May pay facultativo.
+### EC3 — Retenção de PJ + plano de 20%
 
----
+Situação: R$ 6.000 de PJ, retidos 11% = R$ 660. Cliente no plano de 20%.
+Resolução: Devido R$ 1.200. Retido R$ 660. GPS de R$ 540.
 
-## Section 9 -- Reviewer escalation protocol
+### EC4 — Renda abaixo do mínimo
 
-When a situation requires reviewer judgement:
+Situação: Renda de R$ 800.
+Resolução: Base mínima de R$ 1.518. Contribuição de R$ 303,60 (20%) ou R$ 166,98 (11%).
+
+### EC5 — Várias PJs, retenção excedente
+
+Situação: R$ 5.000 da PJ-A + R$ 5.000 da PJ-B. Ambas retêm 11%.
+Resolução: Total de R$ 10.000, mas teto de R$ 8.157,41. Retenção máxima = R$ 897,32. Pode ter havido pagamento a maior. Solicitar restituição.
+
+### EC6 — Mês sem renda
+
+Situação: Sem renda em março/2025.
+Resolução: Sem contribuição obrigatória. Pode-se pagar como facultativo.
+
+## Seção 9 — Protocolo de escalonamento ao revisor
+
+Quando uma situação exigir julgamento do revisor:
 
 ```
 REVIEWER FLAG
@@ -213,7 +219,7 @@ Recommended: [most likely correct treatment and why]
 Action Required: Qualified contador must confirm before advising client.
 ```
 
-When a situation is outside skill scope:
+Quando a situação estiver fora do escopo da skill:
 
 ```
 ESCALATION REQUIRED
@@ -224,42 +230,63 @@ Issue: [outside skill scope]
 Action Required: Do not advise. Refer to qualified contador. Document gap.
 ```
 
+## Seção 10 — Bateria de testes
+
+### Teste 1 — 20% padrão, faixa intermediária
+
+Entrada: Renda de R$ 4.000. Normal (20%). Sem retenção de PJ.
+Saída esperada: R$ 800,00. GPS 1007.
+
+### Teste 2 — Excede o teto
+
+Entrada: Renda de R$ 12.000. Normal (20%).
+Saída esperada: Base limitada a R$ 8.157,41. Contribuição de R$ 1.631,48.
+
+### Teste 3 — Simplificado
+
+Entrada: Renda de R$ 5.000. Simplificado (11%).
+Saída esperada: R$ 166,98 (fixo sobre o mínimo). GPS 1163.
+
+### Teste 4 — Retenção de PJ + diferença de 20%
+
+Entrada: R$ 6.000 de PJ. Retido R$ 660. Plano de 20%.
+Saída esperada: Devido R$ 1.200. GPS de R$ 540.
+
+### Teste 5 — Duplo vínculo, no teto
+
+Entrada: CLT R$ 8.157,41 + autônomo R$ 3.000.
+Saída esperada: Nenhuma GPS adicional.
+
+### Teste 6 — Sem renda
+
+Entrada: Sem renda em março/2025.
+Saída esperada: Sem contribuição obrigatória.
+
+### Teste 7 — Renda mínima
+
+Entrada: Renda de R$ 800. Normal (20%).
+Saída esperada: Base de R$ 1.518. Contribuição de R$ 303,60.
+
+## Aviso legal
+
+Esta skill e seus resultados são fornecidos apenas para fins informativos e de cálculo e não constituem aconselhamento tributário, jurídico ou financeiro. A Open Accountants e seus contribuidores não se responsabilizam por quaisquer erros, omissões ou consequências decorrentes do uso desta skill. Todos os resultados devem ser revisados e aprovados por um profissional qualificado (como contador, EA, advogado tributarista ou profissional licenciado equivalente em sua jurisdição) antes do envio ou de qualquer ação.
+
+A versão mais atualizada e verificada desta skill é mantida em [openaccountants.com](https://openaccountants.com). Faça login para acessar a versão mais recente, solicitar revisão profissional por um contador licenciado e acompanhar atualizações conforme a legislação tributária mudar.
+
+<!-- openaccountants-cta-block -->
+
 ---
 
-## Section 10 -- Test suite
+## Talk to a verified accountant
 
-### Test 1 -- Standard 20%, mid-range
-**Input:** Income R$ 4,000. Normal (20%). No PJ withholding.
-**Expected output:** R$ 800.00. GPS 1007.
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
 
-### Test 2 -- Exceeds teto
-**Input:** Income R$ 12,000. Normal (20%).
-**Expected output:** Base capped R$ 8,157.41. Contribution R$ 1,631.48.
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
 
-### Test 3 -- Simplified
-**Input:** Income R$ 5,000. Simplificado (11%).
-**Expected output:** R$ 166.98 (fixed on mínimo). GPS 1163.
-
-### Test 4 -- PJ withholding + 20% difference
-**Input:** R$ 6,000 from PJ. Withheld R$ 660. 20% plan.
-**Expected output:** Owed R$ 1,200. GPS R$ 540.
-
-### Test 5 -- Dual status, at teto
-**Input:** CLT R$ 8,157.41 + autônomo R$ 3,000.
-**Expected output:** Zero additional GPS.
-
-### Test 6 -- Zero income
-**Input:** No income March 2025.
-**Expected output:** No mandatory contribution.
-
-### Test 7 -- Minimum income
-**Input:** Income R$ 800. Normal (20%).
-**Expected output:** Base R$ 1,518. Contribution R$ 303.60.
-
----
-
-## Disclaimer
-
-This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, EA, tax attorney, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
-
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

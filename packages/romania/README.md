@@ -9,11 +9,18 @@
 2. `intake.md`
 3. `references.md`
 4. `ro-cas-cass.md`
-5. `ro-income-tax.md`
-6. `romania-einvoice.md`
-7. `romania-vat-return.md`
-8. `eu-vat-directive.md`
-9. `einvoice-workflow-base.md`
+5. `ro-company-formation.md`
+6. `ro-corporate-income-tax.md`
+7. `ro-income-tax.md`
+8. `ro-payroll-social.md`
+9. `ro-tax-overview.md`
+10. `ro-vat-return.md`
+11. `romania-einvoice.md`
+12. `romania-vat-return.md`
+13. `eu-vat-directive.md`
+14. `einvoice-workflow-base.md`
+15. `payroll-workflow-base.md`
+16. `company-formation-workflow-base.md`
 
 ## Also known as
 

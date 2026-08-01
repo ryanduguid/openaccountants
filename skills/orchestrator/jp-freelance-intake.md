@@ -3,22 +3,21 @@ name: jp-freelance-intake
 description: ALWAYS USE THIS SKILL when a user asks for help preparing their Japanese tax returns AND mentions freelancing, self-employment, 個人事業主, フリーランス, sole proprietorship, or kojin jigyounushi. Trigger on phrases like "確定申告を手伝って", "help me file my kakutei shinkoku", "I'm a freelancer in Japan", "prepare my blue return", "I'm self-employed in Japan", or any similar phrasing where the user is a Japan-resident self-employed individual needing tax return preparation. This is the REQUIRED entry point for the Japanese self-employed tax workflow -- every other skill in the stack (japan-consumption-tax, japan-income-tax, japan-social-insurance, jp-return-assembly) depends on this skill running first to produce a structured intake package. Uses upload-first workflow -- the user dumps all their documents and the skill infers as much as possible before asking questions. Uses ask_user_input_v0 for structured questions instead of one-at-a-time prose. Built for speed. Japan full-year residents only; self-employed individuals and sole proprietors (個人事業主).
 version: 1.0
 jurisdiction: JP
-tier: 2
-last_updated: 2026-06-12
+tax_year: 2025
+last_updated: 2026-05-23
+verified_by: pending
 category: orchestrator
+tier: 2
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Japan Self-Employed Intake Skill v1.0
-
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+# JP Freelance Intake
 
 ## What this file is
 
 The intake orchestrator for Japan-resident self-employed individuals. Every downstream Japanese content skill (japan-consumption-tax, japan-income-tax, japan-social-insurance, jp-estimated-tax) and the assembly orchestrator (jp-return-assembly) depend on this skill running first to produce a structured intake package.
 
 This skill does not compute any tax figures. Its job is to collect all the facts, parse all the documents, confirm everything with the user, and hand off a clean intake package to `jp-return-assembly`.
-
----
 
 ## Design principles
 
@@ -48,8 +47,6 @@ Target: intake completes in 5 minutes for a prepared user, 15 minutes for a user
 
 **Exception for blocking decisions.** If a single question determines whether the user is in-scope or out-of-scope, ask it standalone.
 
----
-
 ## Section 1 -- The opening
 
 When triggered, respond with ONE message that:
@@ -76,90 +73,22 @@ Then immediately call `ask_user_input_v0` with the refusal questions.
 - List what documents you will eventually need
 - Give a disclaimer beyond the one reviewer line
 
----
-
 ## Section 2 -- Refusal sweep (compact)
 
 Present the refusal sweep as a single `ask_user_input_v0` call with 3 questions, all single-select.
 
-**The 3 questions to ask first:**
-
-```
-Q1: "Business type?"
-    Options: ["個人事業主 (kojin jigyounushi / sole proprietor)", "フリーランス (freelance, no opening notification filed)", "法人 (houjin / corporation)", "Not sure"]
-
-Q2: "Revenue range for 2025?"
-    Options: ["Under ¥10,000,000", "¥10,000,000 -- ¥50,000,000", "Over ¥50,000,000", "Not sure"]
-
-Q3: "Blue return (青色申告) or white return (白色申告)?"
-    Options: ["Blue return (青色申告承認申請書 filed)", "White return (白色申告)", "Not sure"]
-```
-
-**After the response, evaluate:**
-
-- **Q1 = 個人事業主** -> continue. Standard sole proprietor. 開業届 (kaigyo todoke) filed with tax office.
-- **Q1 = フリーランス (no opening notification)** -> continue with a flag: technically should have filed 開業届 within 1 month of starting business (所得税法第229条). If income qualifies as 事業所得 (business income) vs 雑所得 (miscellaneous income), classification matters. Will evaluate after inference.
-- **Q1 = 法人 (corporation)** -> stop. "法人 (corporations) file a separate corporate tax return (法人税申告書). I'm set up for 個人事業主 (sole proprietors) filing 確定申告 (individual income tax). You need a 税理士 who handles 法人税."
-- **Q1 = Not sure** -> ask one follow-up: "Did you file an 開業届 (opening notification) with the tax office? Or do you have a 法人番号 (corporate number)? If you filed 開業届, you're a 個人事業主. If you have a corporate number or 登記簿謄本, you're a 法人."
-
-- **Q2 = Under ¥10M** -> continue. Below consumption tax threshold for base period (基準期間 kijun kikan).
-- **Q2 = ¥10M-¥50M** -> continue with flag: consumption tax (消費税) filing likely required if base period revenue (2023 for tax year 2025) exceeded ¥10M (消費税法第9条). Also flag: simplified tax calculation (簡易課税 kan'i kazei) available if base period revenue ≤ ¥50M (消費税法第37条).
-- **Q2 = Over ¥50M** -> continue with flag: consumption tax required, simplified calculation NOT available, must use standard (本則課税 honsoku kazei) method.
-- **Q2 = Not sure** -> continue, infer from documents.
-
-- **Q3 = Blue return** -> continue. 青色申告特別控除 (blue return special deduction) available: ¥650,000 (e-Tax + double-entry bookkeeping or 電子帳簿保存), ¥550,000 (double-entry paper filing), or ¥100,000 (simplified bookkeeping).
-- **Q3 = White return** -> continue. No special deduction. Simpler 収支内訳書 (income/expense statement) instead of full 青色申告決算書 (blue return financial statements).
-- **Q3 = Not sure** -> ask one follow-up: "Did you file a 青色申告承認申請書 (blue return approval application) with the tax office? If you did (usually at the same time as 開業届), you're blue. If not, you're white by default. Check your records or ask your tax office."
-
-**After Q1-Q3 pass, ask the second batch of scope questions (also batched):**
-
-```
-Q4: "Consumption tax and invoice registration?"
-    Options: ["適格請求書発行事業者 (qualified invoice issuer) registered", "Not registered for invoices (免税事業者 tax-exempt business)", "Registered but considering opting out", "Not sure"]
-
-Q5: "Marital status and dependents?"
-    Options: ["Single, no dependents", "Married (配偶者控除 / 配偶者特別控除 eligible spouse)", "Married (spouse earns > ¥2,010,000)", "Have dependent family members (扶養親族)"]
-
-Q6: "Other income sources in 2025?"
-    Options: ["None -- self-employment only", "Employment income (給与所得 kyuuyo shotoku)", "Rental income (不動産所得 fudousan shotoku)", "Stock/dividend income (配当所得 haitou shotoku / 譲渡所得 joutsuu shotoku)", "Multiple of the above"]
-
-Q7: "e-Tax filing preference?"
-    Options: ["e-Tax (マイナンバーカード + スマホ or ICカードリーダー)", "e-Tax (ID・パスワード方式)", "Paper filing at tax office", "Not sure"]
-
-Q8: "Prior year's tax payment (2024 確定申告)?"
-    Options: ["Paid final tax ≥ ¥150,000 (予定納税 yotei nouzei applies)", "Paid final tax < ¥150,000", "First year filing", "Not sure"]
-```
-
-**Evaluate Q4:**
-- **Registered (適格請求書発行事業者)** -> continue. Issues qualified invoices (適格請求書 / インボイス). Must file consumption tax return even if revenue < ¥10M (irrevocable for registration period). 2割特例 (20% special provision) may apply if was previously 免税事業者 and registered solely for invoice system (available through tax year 2026 returns per 令和5年改正法附則).
-- **Not registered (免税事業者)** -> continue. No consumption tax filing obligation (if base period < ¥10M). Cannot issue qualified invoices -- clients cannot claim input tax credit on payments.
-- **Registered but considering opting out** -> continue with flag: opting out requires 適格請求書発行事業者の登録の取消しを求める届出書, effective from the start of the following fiscal year if filed ≥ 30 days before end of current year.
-- **Not sure** -> ask: "Check the 国税庁 (NTA) invoice registration site (適格請求書発行事業者公表サイト) for your name or registration number (T + 13 digits). If found, you're registered."
-
-**Evaluate Q5:**
-- **Single, no dependents** -> continue. 基礎控除 (basic deduction) ¥480,000 only (if income ≤ ¥24M).
-- **Married (spouse eligible)** -> continue. 配偶者控除 (spouse deduction) up to ¥380,000 if spouse income ≤ ¥480,000 (合計所得金額). 配偶者特別控除 (special spouse deduction) if spouse income ¥480,001-¥1,330,000. Taxpayer's own income must be ≤ ¥10M for either deduction.
-- **Married (high-earning spouse)** -> continue. No spouse deduction available.
-- **Dependent family members** -> continue. 扶養控除: ¥380,000 per dependent (general), ¥630,000 (specific: age 19-22), ¥480,000 (elderly: age 70+), ¥580,000 (elderly living together).
-
-**Evaluate Q6:**
-- All options -> note for multi-schedule return. 給与所得 has its own calculation (給与所得控除). 不動産所得 requires separate schedule. 配当所得 may use 申告分離課税 (separate taxation at 20.315%) or 総合課税 (aggregate taxation with 配当控除).
-
-**Evaluate Q7:**
-- **e-Tax with マイナンバーカード** -> continue. Qualifies for ¥650,000 blue return special deduction (if double-entry bookkeeping maintained).
-- **e-Tax ID/password** -> continue. Same e-Tax benefit for blue return deduction.
-- **Paper filing** -> continue with flag: blue return special deduction capped at ¥550,000 (double-entry) or ¥100,000 (simplified). Consider switching to e-Tax.
-- **Not sure** -> note, will recommend e-Tax in action items.
-
-**Evaluate Q8:**
-- **≥ ¥150,000** -> continue. 予定納税 (estimated tax) applied: two equal instalments (1st period: July, 2nd period: November), each = 1/3 of prior year's 申告納税額. Already paid amounts reduce final balance.
-- **< ¥150,000** -> continue. No 予定納税 obligation.
-- **First year** -> continue. No 予定納税.
-- **Not sure** -> infer from prior year return or bank statements.
+- **Refusal sweep questions Q1-Q3** — Q1: "Business type?" Options: ["個人事業主 (kojin jigyounushi / sole proprietor)", "フリーランス (freelance, no opening notification filed)", "法人 (houjin / corporation)", "Not sure"] Q2: "Revenue range for 2025?" Options: ["Under ¥10,000,000", "¥10,000,000 -- ¥50,000,000", "Over ¥50,000,000", "Not sure"] Q3: "Blue return (青色申告) or white return (白色申告)?" Options: ["Blue return (青色申告承認申請書 filed)", "White return (白色申告)", "Not sure"]
+- **Q1 evaluation** — Q1 = 個人事業主 -> continue. Standard sole proprietor. 開業届 (kaigyo todoke) filed with tax office. Q1 = フリーランス (no opening notification) -> continue with a flag: technically should have filed 開業届 within 1 month of starting business (所得税法第229条). If income qualifies as 事業所得 (business income) vs 雑所得 (miscellaneous income), classification matters. Will evaluate after inference. Q1 = 法人 (corporation) -> stop. "法人 (corporations) file a separate corporate tax return (法人税申告書). I'm set up for 個人事業主 (sole proprietors) filing 確定申告 (individual income tax). You need a 税理士 who handles 法人税." Q1 = Not sure -> ask one follow-up: "Did you file an 開業届 (opening notification) with the tax office? Or do you have a 法人番号 (corporate number)? If you filed 開業届, you're a 個人事業主. If you have a corporate number or 登記簿謄本, you're a 法人."  _(所得税法第229条)_
+- **Q2 evaluation** — Q2 = Under ¥10M -> continue. Below consumption tax threshold for base period (基準期間 kijun kikan). Q2 = ¥10M-¥50M -> continue with flag: consumption tax (消費税) filing likely required if base period revenue (2023 for tax year 2025) exceeded ¥10M (消費税法第9条). Also flag: simplified tax calculation (簡易課税 kan'i kazei) available if base period revenue ≤ ¥50M (消費税法第37条). Q2 = Over ¥50M -> continue with flag: consumption tax required, simplified calculation NOT available, must use standard (本則課税 honsoku kazei) method. Q2 = Not sure -> continue, infer from documents.  _(消費税法第9条; 消費税法第37条)_
+- **Q3 evaluation** — Q3 = Blue return -> continue. 青色申告特別控除 (blue return special deduction) available: ¥650,000 (e-Tax + double-entry bookkeeping or 電子帳簿保存), ¥550,000 (double-entry paper filing), or ¥100,000 (simplified bookkeeping). Q3 = White return -> continue. No special deduction. Simpler 収支内訳書 (income/expense statement) instead of full 青色申告決算書 (blue return financial statements). Q3 = Not sure -> ask one follow-up: "Did you file a 青色申告承認申請書 (blue return approval application) with the tax office? If you did (usually at the same time as 開業届), you're blue. If not, you're white by default. Check your records or ask your tax office."
+- **Second batch of scope questions Q4-Q8** — Q4: "Consumption tax and invoice registration?" Options: ["適格請求書発行事業者 (qualified invoice issuer) registered", "Not registered for invoices (免税事業者 tax-exempt business)", "Registered but considering opting out", "Not sure"] Q5: "Marital status and dependents?" Options: ["Single, no dependents", "Married (配偶者控除 / 配偶者特別控除 eligible spouse)", "Married (spouse earns > ¥2,010,000)", "Have dependent family members (扶養親族)"] Q6: "Other income sources in 2025?" Options: ["None -- self-employment only", "Employment income (給与所得 kyuuyo shotoku)", "Rental income (不動産所得 fudousan shotoku)", "Stock/dividend income (配当所得 haitou shotoku / 譲渡所得 joutsuu shotoku)", "Multiple of the above"] Q7: "e-Tax filing preference?" Options: ["e-Tax (マイナンバーカード + スマホ or ICカードリーダー)", "e-Tax (ID・パスワード方式)", "Paper filing at tax office", "Not sure"] Q8: "Prior year's tax payment (2024 確定申告)?" Options: ["Paid final tax ≥ ¥150,000 (予定納税 yotei nouzei applies)", "Paid final tax < ¥150,000", "First year filing", "Not sure"]
+- **Q4 evaluation** — Registered (適格請求書発行事業者) -> continue. Issues qualified invoices (適格請求書 / インボイス). Must file consumption tax return even if revenue < ¥10M (irrevocable for registration period). 2割特例 (20% special provision) may apply if was previously 免税事業者 and registered solely for invoice system (available through tax year 2026 returns per 令和5年改正法附則). Not registered (免税事業者) -> continue. No consumption tax filing obligation (if base period < ¥10M). Cannot issue qualified invoices -- clients cannot claim input tax credit on payments. Registered but considering opting out -> continue with flag: opting out requires 適格請求書発行事業者の登録の取消しを求める届出書, effective from the start of the following fiscal year if filed ≥ 30 days before end of current year. Not sure -> ask: "Check the 国税庁 (NTA) invoice registration site (適格請求書発行事業者公表サイト) for your name or registration number (T + 13 digits). If found, you're registered."  _(令和5年改正法附則)_
+- **Q5 evaluation** — Single, no dependents -> continue. 基礎控除 (basic deduction) ¥480,000 only (if income ≤ ¥24M). Married (spouse eligible) -> continue. 配偶者控除 (spouse deduction) up to ¥380,000 if spouse income ≤ ¥480,000 (合計所得金額). 配偶者特別控除 (special spouse deduction) if spouse income ¥480,001-¥1,330,000. Taxpayer's own income must be ≤ ¥10M for either deduction. Married (high-earning spouse) -> continue. No spouse deduction available. Dependent family members -> continue. 扶養控除: ¥380,000 per dependent (general), ¥630,000 (specific: age 19-22), ¥480,000 (elderly: age 70+), ¥580,000 (elderly living together).
+- **Q6 evaluation** — All options -> note for multi-schedule return. 給与所得 has its own calculation (給与所得控除). 不動産所得 requires separate schedule. 配当所得 may use 申告分離課税 (separate taxation at 20.315%) or 総合課税 (aggregate taxation with 配当控除).
+- **Q7 evaluation** — e-Tax with マイナンバーカード -> continue. Qualifies for ¥650,000 blue return special deduction (if double-entry bookkeeping maintained). e-Tax ID/password -> continue. Same e-Tax benefit for blue return deduction. Paper filing -> continue with flag: blue return special deduction capped at ¥550,000 (double-entry) or ¥100,000 (simplified). Consider switching to e-Tax. Not sure -> note, will recommend e-Tax in action items.
+- **Q8 evaluation** — ≥ ¥150,000 -> continue. 予定納税 (estimated tax) applied: two equal instalments (1st period: July, 2nd period: November), each = 1/3 of prior year's 申告納税額. Already paid amounts reduce final balance. < ¥150,000 -> continue. No 予定納税 obligation. First year -> continue. No 予定納税. Not sure -> infer from prior year return or bank statements.
 
 **Total time:** ~60 seconds if the user taps through.
-
----
 
 ## Section 3 -- The dump
 
@@ -201,11 +130,7 @@ Then wait. Do not ask any other questions while waiting.
 >
 > Come back when you have something to upload. I'll work with whatever you bring.
 
----
-
 ## Section 4 -- The inference pass
-
-When documents arrive, parse each one. For each document, extract:
 
 **Bank statement:**
 - Total deposits (candidate 売上 uriage / revenue)
@@ -223,20 +148,8 @@ When documents arrive, parse each one. For each document, extract:
 - 生命保険 (life insurance) premiums
 - 地震保険 (earthquake insurance) premiums
 
-**Sales invoices (請求書):**
-- Client names and amounts (税込 tax-included and 税抜 tax-excluded)
-- Whether consumption tax was charged (and at what rate: 10% standard, 8% reduced)
-- Whether invoices are 適格請求書 (qualified invoices) with registration number
-- Total 売上 reconciliation against bank deposits
-- Any clients applying 源泉徴収 (withholding): 10.21% on payments up to ¥1M, 20.42% above ¥1M (per specific income types listed in 所得税法第204条)
-- Foreign clients (no Japanese consumption tax on exported services per 消費税法第7条)
-
-**Purchase invoices / receipts (領収書):**
-- Expense category (経費科目: 旅費交通費, 通信費, 接待交際費, 消耗品費, etc.)
-- Consumption tax paid (仕入税額控除 input tax credit, if consumption tax filer)
-- Any items qualifying as 減価償却資産 (depreciable assets): generally ≥ ¥100,000
-- Items ¥100,000-¥299,999: eligible for 一括償却 (3-year straight-line) or 少額減価償却資産の特例 (immediate expensing for blue return filers, up to ¥3M total per year per 租税特別措置法第28条の2)
-- Any blocked categories (家事関連費 mixed personal/business without clear business proportion)
+- **Sales invoices inference items** — **Sales invoices (請求書):** - Client names and amounts (税込 tax-included and 税抜 tax-excluded) - Whether consumption tax was charged (and at what rate: 10% standard, 8% reduced) - Whether invoices are 適格請求書 (qualified invoices) with registration number - Total 売上 reconciliation against bank deposits - Any clients applying 源泉徴収 (withholding): 10.21% on payments up to ¥1M, 20.42% above ¥1M (per specific income types listed in 所得税法第204条) - Foreign clients (no Japanese consumption tax on exported services per 消費税法第7条)  _(所得税法第204条; 消費税法第7条)_
+- **Purchase invoices / receipts inference items** — **Purchase invoices / receipts (領収書):** - Expense category (経費科目: 旅費交通費, 通信費, 接待交際費, 消耗品費, etc.) - Consumption tax paid (仕入税額控除 input tax credit, if consumption tax filer) - Any items qualifying as 減価償却資産 (depreciable assets): generally ≥ ¥100,000 - Items ¥100,000-¥299,999: eligible for 一括償却 (3-year straight-line) or 少額減価償却資産の特例 (immediate expensing for blue return filers, up to ¥3M total per year per 租税特別措置法第28条の2) - Any blocked categories (家事関連費 mixed personal/business without clear business proportion)  _(租税特別措置法第28条の2)_
 
 **Prior year 確定申告書 / 青色申告決算書:**
 - Prior year 所得金額 (income amount) by category
@@ -252,15 +165,9 @@ When documents arrive, parse each one. For each document, extract:
 - Client name and address
 - Will be credited against final tax liability on 確定申告書
 
-**控除証明書 (deduction certificates):**
-- 社会保険料控除: 国民健康保険, 国民年金 amounts paid
-- 生命保険料控除: 一般, 介護医療, 個人年金 categories and amounts (new system post-2012: max ¥40,000 each, total max ¥120,000)
-- 地震保険料控除: amount paid (max ¥50,000)
-- 小規模企業共済等掛金控除: 小規模企業共済 and iDeCo amounts (fully deductible)
+- **Deduction certificate inference items** — **控除証明書 (deduction certificates):** - 社会保険料控除: 国民健康保険, 国民年金 amounts paid - 生命保険料控除: 一般, 介護医療, 個人年金 categories and amounts (new system post-2012: max ¥40,000 each, total max ¥120,000) - 地震保険料控除: amount paid (max ¥50,000) - 小規模企業共済等掛金控除: 小規模企業共済 and iDeCo amounts (fully deductible)
 
 **After parsing everything, build an internal inference object.** Do not show the raw inference yet -- transform it into a compact summary for the user in Section 5.
-
----
 
 ## Section 5 -- The confirmation
 
@@ -327,8 +234,6 @@ After inference, present a single compact summary message. Use a structured form
 >
 > **Is any of this wrong? Reply "looks good" or tell me what to fix.**
 
----
-
 ## Section 6 -- Gap filling
 
 After the user confirms the summary (or corrects it), ask about things that cannot be inferred from documents. Use `ask_user_input_v0` where possible.
@@ -344,60 +249,9 @@ After the user confirms the summary (or corrects it), ask about things that cann
 7. **ふるさと納税 (hometown tax donations)** -- 寄附金控除 (donation deduction) certificates.
 8. **生命保険 / 地震保険** -- if certificates not in upload, ask whether applicable.
 
-**Home office gap-filling example:**
-
-Call `ask_user_input_v0` with:
-
-```
-Q: "Home office (自宅兼事務所) setup?"
-   Options: [
-     "Dedicated room, used ONLY for work",
-     "Dedicated desk/area in a room",
-     "Shared space (living room, kitchen)",
-     "Separate office or coworking space (not at home)",
-     "No fixed workspace"
-   ]
-```
-
-If option 1 -> ask for room area and total home area for 家事按分 percentage. Commonly accepted: room area / total area.
-If option 2 -> flag for reviewer: partial room use. Often 30-50% of room, then room/total for overall percentage. Conservative approach recommended.
-If option 3 -> flag: shared space makes 家事按分 harder to defend. Conservative percentage (10-20%) with documentation.
-If option 4 -> rent already captured in business expenses. No 家事按分 needed.
-If option 5 -> skip home office entirely.
-
-**Consumption tax method example:**
-
-Call `ask_user_input_v0` with:
-
-```
-Q: "Consumption tax (消費税) calculation method?"
-   Options: [
-     "簡易課税 (simplified) -- filed 届出書 with tax office",
-     "本則課税 (standard) -- actual input tax credits",
-     "2割特例 (20% special provision) -- was 免税事業者 before invoice registration",
-     "Not sure -- help me choose"
-   ]
-```
-
-If "Not sure" -> compute under all eligible methods and recommend the one producing the lowest tax. Note in reviewer brief.
-
-**Medical expenses example:**
-
-Call `ask_user_input_v0` with:
-
-```
-Q: "Medical expenses (医療費) in 2025?"
-   Options: [
-     "Over ¥100,000 for the household",
-     "Under ¥100,000",
-     "Used セルフメディケーション税制 (OTC medicine deduction)",
-     "Not sure"
-   ]
-```
-
-If over ¥100,000 -> request 医療費の明細書 or individual receipts. Deduction = total - ¥100,000 (or total - 10% of income if income < ¥2M).
-
----
+- **Home office gap-filling example** — Call `ask_user_input_v0` with: Q: "Home office (自宅兼事務所) setup?" Options: ["Dedicated room, used ONLY for work", "Dedicated desk/area in a room", "Shared space (living room, kitchen)", "Separate office or coworking space (not at home)", "No fixed workspace"] If option 1 -> ask for room area and total home area for 家事按分 percentage. Commonly accepted: room area / total area. If option 2 -> flag for reviewer: partial room use. Often 30-50% of room, then room/total for overall percentage. Conservative approach recommended. If option 3 -> flag: shared space makes 家事按分 harder to defend. Conservative percentage (10-20%) with documentation. If option 4 -> rent already captured in business expenses. No 家事按分 needed. If option 5 -> skip home office entirely.
+- **Consumption tax method example** — Call `ask_user_input_v0` with: Q: "Consumption tax (消費税) calculation method?" Options: ["簡易課税 (simplified) -- filed 届出書 with tax office", "本則課税 (standard) -- actual input tax credits", "2割特例 (20% special provision) -- was 免税事業者 before invoice registration", "Not sure -- help me choose"] If "Not sure" -> compute under all eligible methods and recommend the one producing the lowest tax. Note in reviewer brief.
+- **Medical expenses example** — Call `ask_user_input_v0` with: Q: "Medical expenses (医療費) in 2025?" Options: ["Over ¥100,000 for the household", "Under ¥100,000", "Used セルフメディケーション税制 (OTC medicine deduction)", "Not sure"] If over ¥100,000 -> request 医療費の明細書 or individual receipts. Deduction = total - ¥100,000 (or total - 10% of income if income < ¥2M).
 
 ## Section 7 -- The final handoff
 
@@ -423,8 +277,6 @@ Once gap-filling is done, produce a final handoff message and hand off to `jp-re
 > Starting now.
 
 Then internally invoke `jp-return-assembly` with the structured intake package.
-
----
 
 ## Section 8 -- Structured intake package (internal format)
 
@@ -523,34 +375,17 @@ The downstream skill (`jp-return-assembly`) consumes a JSON structure. It is int
 }
 ```
 
----
-
 ## Section 9 -- Refusal handling
 
 Refusals fire from either the refusal sweep (Section 2) or during inference (e.g., corporate structure discovered in documents).
 
-**Refusal catalogue:**
-
-- **R-JP-1 -- 法人 (corporation).** "法人 (corporations) file 法人税申告書 (corporate tax return) with different forms, deadlines, and rates. I'm set up for 個人事業主 filing 確定申告. You need a 税理士 who handles 法人税."
-- **R-JP-2 -- Agriculture (農業所得).** "農業所得 has its own computation method and may involve 農業所得用 収支内訳書 with specific rules. Outside my current scope."
-- **R-JP-3 -- Non-resident.** "Non-residents (非居住者) are taxed only on Japan-source income with different rates and withholding rules (所得税法第164条). I'm set up for full-year Japan residents only."
-- **R-JP-4 -- Estate / inheritance.** "相続税 (inheritance tax) and 贈与税 (gift tax) are separate tax systems with their own returns. Not in scope."
-- **R-JP-5 -- Real estate capital gains.** "不動産の譲渡所得 (capital gains from property sale) requires 分離課税 (separate taxation) with complex holding-period rules. Flag for 税理士."
-- **R-JP-6 -- Foreign tax credits (外国税額控除) involving complex treaty application.** "Simple foreign tax credits can be handled, but complex multi-country treaty situations need a 税理士 specializing in international tax."
-
-When a refusal fires:
-1. Stop the workflow
-2. State the specific reason in one sentence
-3. Recommend the path forward (specific practitioner type)
-4. Offer to continue with partial help ONLY if the out-of-scope item is cleanly separable (rare)
-
-**Do not:**
-- Apologize profusely
-- Try to work around the refusal
-- Suggest the user "might be able to" fit into scope if they answer differently
-- Continue silently
-
----
+- **R-JP-1 -- 法人 (corporation)** — 法人 (corporations) file 法人税申告書 (corporate tax return) with different forms, deadlines, and rates. I'm set up for 個人事業主 filing 確定申告. You need a 税理士 who handles 法人税.
+- **R-JP-2 -- Agriculture (農業所得)** — 農業所得 has its own computation method and may involve 農業所得用 収支内訳書 with specific rules. Outside my current scope.
+- **R-JP-3 -- Non-resident** — Non-residents (非居住者) are taxed only on Japan-source income with different rates and withholding rules (所得税法第164条). I'm set up for full-year Japan residents only.  _(所得税法第164条)_
+- **R-JP-4 -- Estate / inheritance** — 相続税 (inheritance tax) and 贈与税 (gift tax) are separate tax systems with their own returns. Not in scope.
+- **R-JP-5 -- Real estate capital gains** — 不動産の譲渡所得 (capital gains from property sale) requires 分離課税 (separate taxation) with complex holding-period rules. Flag for 税理士.
+- **R-JP-6 -- Foreign tax credits (外国税額控除) involving complex treaty application** — Simple foreign tax credits can be handled, but complex multi-country treaty situations need a 税理士 specializing in international tax.
+- **Refusal firing procedure and prohibitions** — When a refusal fires: 1. Stop the workflow 2. State the specific reason in one sentence 3. Recommend the path forward (specific practitioner type) 4. Offer to continue with partial help ONLY if the out-of-scope item is cleanly separable (rare) **Do not:** - Apologize profusely - Try to work around the refusal - Suggest the user "might be able to" fit into scope if they answer differently - Continue silently
 
 ## Section 10 -- Self-checks
 
@@ -580,8 +415,6 @@ When a refusal fires:
 
 **Check IN13 -- Consumption tax method was determined.** 本則課税 vs 簡易課税 vs 2割特例 vs exempt was confirmed or flagged for computation comparison.
 
----
-
 ## Section 11 -- Performance targets
 
 For a prepared user (documents in a folder, ready to upload):
@@ -598,8 +431,6 @@ For an unprepared user (has to go fetch documents):
 - Rest: same
 - **Total**: 15-25 minutes
 
----
-
 ## Section 12 -- Cross-skill references
 
 **Inputs:** User-provided documents and answers.
@@ -612,18 +443,47 @@ For an unprepared user (has to go fetch documents):
 - `japan-social-insurance` -- 社会保険料 reconciliation (国民健康保険, 国民年金, 小規模企業共済)
 - `jp-estimated-tax` -- 予定納税 and estimated payments schedule
 
----
-
 ### Change log
 
 - **v1.0 (May 2026):** Initial draft. Upload-first, inference-then-confirm pattern modelled on mt-freelance-intake v0.1.
 
 ## End of Intake Skill v1.0
 
----
-
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, EA, tax attorney, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
 
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
+The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
+
+## Talk to a verified accountant
+
+This skill is a tool, not an engagement. Every taxpayer's situation is
+different, and the rules in the skill may not match your specific facts.
+
+To speak with one of the licensed accountants who verifies skills for your
+jurisdiction — **no liability on either side until you and the accountant sign
+a formal engagement letter** — book a free 30-minute call:
+
+**→ [Book a call](https://calendly.com/openaccountants-info/30min)**
+
+We'll route you to the named verifier covering your country or state. You can
+also see the full list of verified accountants at
+[openaccountants.com/network](https://openaccountants.com/network).
+
+<!-- openaccountants-cta-block -->
+
+---
+
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

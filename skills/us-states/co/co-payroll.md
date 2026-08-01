@@ -2,13 +2,14 @@
 name: co-payroll
 description: Tier 2 Colorado content skill for employer payroll compliance covering tax year 2025. Includes the 4.4% flat PIT phasing from 4.55%, DR 1098 state withholding form, DR 1094 annual reconciliation, CO SUTA wage base $24,800 with rates 0.50-10.39%, the FAMLI Paid Family and Medical Leave program effective January 2024 (0.9% total payroll tax split between employer and employee for 10+ employees), Healthy Families and Workplaces Act 48-hour paid sick leave, Equal Pay for Equal Work Act salary range disclosure requirements, and ABC contractor classification.
 jurisdiction: US-CO
-domain: state-tax
 tax_year: 2025
+last_updated: 2026-05-27
+verified_by: pending
 tier: 2
-last_updated: 2026-07-06
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# co-payroll
+# CO Payroll
 
 ## Colorado Payroll Compliance Skill (Tax Year 2025)
 
@@ -457,3 +458,21 @@ To speak with one of the licensed accountants who verifies skills for your juris
 → [Book a call](https://calendly.com/openaccountants-info/30min)
 
 We'll route you to the named verifier covering your country or state. You can also see the full list of verified accountants at [openaccountants.com/network](https://openaccountants.com/network).
+
+<!-- openaccountants-cta-block -->
+
+---
+
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

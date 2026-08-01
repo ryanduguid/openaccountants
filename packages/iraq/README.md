@@ -7,7 +7,15 @@
 
 1. `foundation.md`
 2. `intake.md`
-3. `iraq-tax.md`
+3. `iq-company-formation.md`
+4. `iq-corporate-income-tax.md`
+5. `iq-income-tax.md`
+6. `iq-payroll-social.md`
+7. `iq-tax-overview.md`
+8. `iq-vat-gst.md`
+9. `iraq-tax.md`
+10. `payroll-workflow-base.md`
+11. `company-formation-workflow-base.md`
 
 ## How to use
 

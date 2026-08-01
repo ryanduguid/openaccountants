@@ -2,17 +2,18 @@
 name: texas-sales-tax
 description: Use this skill whenever asked about Texas sales and use tax, Comptroller filings, Texas tax permits, Texas exemptions, Texas nexus, or any request involving Texas state sales and use tax compliance. Trigger on phrases like "Texas sales tax", "TX sales tax", "Comptroller", "Texas use tax", "Texas sales tax return", "Texas exemption certificate", or any request involving Texas sales and use tax classification, filing, or compliance. ALWAYS read this skill before touching any Texas sales tax work.
 jurisdiction: US-TX
-domain: Sales and Use Tax
-tax_year: 2024
+tax_year: 2025
+last_updated: 2026-07-09
+verified_by: pending
 tier: 2
-last_updated: 2026-07-06
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# texas-sales-tax
+# Texas Sales Tax
 
 ## Section 1 -- Quick reference
 
-**Quick reference table**
+**Quick reference table**  _(https://comptroller.texas.gov/taxes/sales/remote-sellers-marketplace-faq.php)_
 
 | Field | Value |
 | --- | --- |
@@ -23,7 +24,7 @@ last_updated: 2026-07-06
 | Local rate cap | 2.00% (city + county + transit + special district) |
 | Maximum combined rate | 8.25% |
 | Sourcing | Origin-based for intrastate; destination-based for remote sellers |
-| Economic nexus | $500,000 in taxable sales (revenue only, no transaction count) |
+| Economic nexus | $500,000 total Texas revenue for remote sellers; includes taxable and nontaxable sales into Texas |
 | Primary legislation | Texas Tax Code, Chapter 151 |
 | Tax authority | Texas Comptroller of Public Accounts |
 | Filing portal | https://comptroller.texas.gov/taxes/sales/ |
@@ -201,15 +202,15 @@ last_updated: 2026-07-06
 
 ### 7.1 Economic nexus
 
-**Economic nexus table**
+**Economic nexus table**  _([https://comptroller.texas.gov/taxes/sales/remote-sellers-marketplace-faq.php](https://comptroller.texas.gov/taxes/sales/remote-sellers-marketplace-faq.php))_
 
 | Parameter | Value |
 | --- | --- |
-| Revenue threshold | $500,000 in taxable items in TX |
+| Revenue threshold | $500,000 total Texas revenue for remote-seller safe harbor |
 | Transaction threshold | None |
 | Measurement period | Preceding 12 calendar months |
-| Sales included | Only taxable items; exempt sales do NOT count |
-| Authority | Sec. 151.107; Comptroller Rule 3.286 |
+| Sales included | Taxable and nontaxable sales of tangible personal property and services into Texas, including resale sales and sales to exempt entities |
+| Authority | Comptroller remote-seller guidance; Texas Tax Code Section 151.107; Rule 3.286 |
 
 ### 7.2 Penalties
 
@@ -328,7 +329,7 @@ Expected: Tax = $0.
 - NEVER confuse motor vehicle sales tax (TxDMV) with general sales tax (Comptroller).
 - NEVER apply destination-based sourcing for intrastate Texas sales -- Texas is origin-based for intrastate.
 - NEVER assume nonprofits are automatically exempt -- must have Comptroller-issued exemption number.
-- NEVER include exempt sales in the economic nexus threshold -- Texas counts only taxable sales.
+- NEVER exclude exempt or resale sales from the Texas remote-seller $500,000 safe-harbor calculation; Comptroller guidance counts total Texas revenue, including taxable and nontaxable sales into Texas.
 - NEVER file without claiming the timely filing discount if eligible.
 - NEVER treat residential and nonresidential real property services the same.
 - NEVER compute any number -- all arithmetic is handled by the deterministic engine, not Claude.
@@ -342,3 +343,44 @@ This skill is provided for informational and computational purposes only and doe
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, EA, tax attorney, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
 
 The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
+
+## 
+
+**Exempt customer documentation and return treatment**  _([https://comptroller.texas.gov/taxes/publications/96-122.php](https://comptroller.texas.gov/taxes/publications/96-122.php))_
+
+| Buyer / sale type | Tax treatment | Documentation to retain | Return treatment |
+| --- | --- | --- | --- |
+| Federal government | Exempt on qualifying purchases | Properly completed Form 01-339 or purchase voucher in the government entity name | Include tax-free sale in Total Texas Sales; exclude from Taxable Sales |
+| Texas state/local government and public schools | Exempt on qualifying purchases | Form 01-339 or government purchase voucher; public school/government identity should be clear | Include in Total Texas Sales; exclude from Taxable Sales |
+| Private school, college, university, church, religious/charitable nonprofit | Not automatically exempt; must have Comptroller exempt status | Properly completed Form 01-339 in the exempt organization name; authorized-agent purchases must identify the exempt organization | Include in Total Texas Sales; exclude from Taxable Sales only with support |
+| Federally recognized tribal council or tribal-council-owned business | Treat as exempt federal instrumentality; individual tribe members are not exempt merely by status | Form 01-339 or comparable exemption documentation identifying the tribal entity, not an individual member | Include in Total Texas Sales; exclude from Taxable Sales only for entity purchases |
+| Farm/ranch/agricultural production | Exempt only for qualifying items used directly in commercial agricultural/timber production | Form 01-924 with Ag/Timber Number for ag/timber exemption; do not use Form 01-339 for that exemption | Include in Total Texas Sales; exclude from Taxable Sales only for qualifying documented items |
+| Resale | Exempt when purchased for resale | Properly completed resale certificate (Form 01-339 resale side) and purchaser sales tax permit / resale details | Include in Total Texas Sales; exclude from Taxable Sales |
+| Shipped or delivered out of Texas | Not subject to Texas sales tax when destination is outside Texas; check destination-state nexus separately | Shipping records, bill of lading, delivery address, customer order, and invoice showing out-of-state destination | If included in Texas outlet gross receipts, include in Total Texas Sales and exclude from Taxable Sales as a destination deduction |
+
+**Form 01-114 exempt sales reporting**  _([https://comptroller.texas.gov/taxes/audit/manuals/fundamentals/ch5.php](https://comptroller.texas.gov/taxes/audit/manuals/fundamentals/ch5.php))_
+
+| Return concept | Treatment |
+| --- | --- |
+| Form 01-114 Item 1 / Total Texas Sales | Report gross taxable and nontaxable sales for the outlet/reporting period, excluding separately collected sales tax. Tax-free sales are not omitted from total sales. |
+| Form 01-114 Item 2 / Taxable Sales | Report only sales subject to Texas tax after supported deductions and exemptions. Exempt, resale, and supported out-of-state destination sales are excluded here. |
+| Deductions / exempt-sales reconciliation | There is no separate universal deduction line in the basic return; Comptroller audit reconciles deductions as Total Sales minus Taxable Sales. Keep certificates and shipping records by transaction. |
+| Tax-free sales holidays or statutory exempt items | Include only in Total Texas Sales, not Taxable Sales, unless Comptroller instructions for a special schedule say otherwise. |
+
+<!-- openaccountants-cta-block -->
+
+---
+
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

@@ -3,14 +3,15 @@ name: us-ny-freelance-intake
 description: ALWAYS USE THIS SKILL when a user asks for help preparing their US federal or New York state tax return AND mentions freelancing, self-employment, software development, contracting, sole proprietorship, or a single-member LLC in New York. Trigger on phrases like "I'm a freelancer in New York", "NYC self-employed taxes", "I have an LLC in NY", "New York freelance tax return", "I live in Manhattan and do contracting", or any similar phrasing where the user is a New York-resident freelancer needing tax return preparation. This is the REQUIRED entry point for the New York freelance developer tax workflow. Uses upload-first workflow and ask_user_input_v0 for structured questions. New York full-year residents only; handles both NYC residents (subject to NYC UBT and city income tax) and rest-of-state residents. Sole proprietors and single-member LLCs disregarded for federal tax only.
 version: 1.0
 jurisdiction: US-NY
-tier: 2
-last_updated: 2026-06-12
+tax_year: 2025
+last_updated: 2026-05-23
+verified_by: pending
 category: orchestrator
+tier: 2
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# US-NY Freelance Developer Intake Skill v1.0
-
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+# US Ny Freelance Intake
 
 ## Section 1 — The opening
 
@@ -30,8 +31,6 @@ When triggered, respond with ONE message that:
 > Scope check:
 
 Then immediately call `ask_user_input_v0` with the refusal questions.
-
----
 
 ## Section 2 — Refusal sweep
 
@@ -104,7 +103,11 @@ Q8: "Do you also have income sourced outside NY?"
 - All NY-sourced → continue
 - Some or significant out-of-state → stop. "Multi-state income allocation requires IT-203 schedules and credit-for-taxes-paid-to-other-states analysis. You need a CPA who handles multi-state returns."
 
----
+- **Q1 = Multi-member LLC** — Multi-member LLCs file Form 1065 as partnerships. You need a CPA familiar with partnership returns and NY PTET elections.  _(Section 2 — Refusal sweep)_
+- **Q1 = S-corp or C-corp** — I don't cover corporate returns. S-corp (1120-S) and C-corp (1120) plus NY CT-3/CT-4 require a CPA.  _(Section 2 — Refusal sweep)_
+- **Q3 = I don't live in NY** — I'm set up for full-year New York residents only. Non-residents need Form IT-203 and multi-state allocation. You need a CPA who handles non-resident returns.  _(Section 2 — Refusal sweep)_
+- **Q5 = No (skipped year) or amended/under audit** — Skipped years or returns under audit need a CPA who can assess penalty exposure and represent you.  _(Section 2 — Refusal sweep)_
+- **Q8 = Some or significant out-of-state income** — Multi-state income allocation requires IT-203 schedules and credit-for-taxes-paid-to-other-states analysis. You need a CPA who handles multi-state returns.  _(Section 2 — Refusal sweep)_
 
 ## Section 3 — The dump
 
@@ -122,8 +125,6 @@ Once the refusal sweep passes, request the document dump:
 > - Anything else tax-related
 >
 > Drop it all in — I'll sort it out.
-
----
 
 ## Section 4 — The inference pass
 
@@ -159,7 +160,9 @@ Parse all documents and extract:
 - Plan type, contributions, dates
 - Solo 401(k) limits: $23,500 employee + employer up to §415(c) $70,000 total
 
----
+- **NY LLC filing fee (biennial)** — $25 USD (biennial)  _(Section 4 — The inference pass)_
+- **Solo 401(k) employee contribution limit** — $23,500 USD  _(Section 4 — The inference pass)_
+- **Solo 401(k) total limit (employee + employer, §415(c))** — $70,000 USD  _(Section 4 — The inference pass)_
 
 ## Section 5 — The confirmation
 
@@ -188,8 +191,6 @@ Present compact summary showing extracted data. Structure:
 >
 > **Is any of this wrong?**
 
----
-
 ## Section 6 — Gap filling
 
 Things that usually need asking:
@@ -200,59 +201,63 @@ Things that usually need asking:
 4. **Commuter benefits** — transit pre-tax (if also W-2 employment)
 5. **MCTMT** — Metropolitan Commuter Transportation Mobility Tax: applies to self-employment income > $50,000 for NYC-area taxpayers (rate: 0.34% of net SE earnings allocated to MCTD)
 
----
+- **MCTMT rate on net SE earnings allocated to MCTD** — 0.34% (applies to self-employment income > $50,000 for NYC-area taxpayers)  _(Section 6 — Gap filling)_
 
 ## Section 7 — NY-specific tax framework
 
 ### New York State income tax (Form IT-201)
 
-2025 rates (full-year resident):
-- 4.00%: $0–$8,500
-- 4.50%: $8,501–$11,700
-- 5.25%: $11,701–$13,900
-- 5.50%: $13,901–$80,650
-- 6.00%: $80,651–$215,400
-- 6.85%: $215,401–$1,077,550
-- 9.65%: $1,077,551–$5,000,000
-- 10.30%: $5,000,001–$25,000,000
-- 10.90%: Over $25,000,000
+**2025 NY State income tax rates (full-year resident)**  _(Section 7 — NY-specific tax framework > New York State income tax (Form IT-201))_
 
-NY standard deduction (2025): $8,000 (single), $16,050 (MFJ)
-NY itemized deduction: Based on federal Schedule A with NY modifications (no SALT deduction add-back at state level, but NY limits itemized deductions for high earners)
+| Rate | Bracket |
+| --- | --- |
+| 4.00% | $0–$8,500 |
+| 4.50% | $8,501–$11,700 |
+| 5.25% | $11,701–$13,900 |
+| 5.50% | $13,901–$80,650 |
+| 6.00% | $80,651–$215,400 |
+| 6.85% | $215,401–$1,077,550 |
+| 9.65% | $1,077,551–$5,000,000 |
+| 10.30% | $5,000,001–$25,000,000 |
+| 10.90% | Over $25,000,000 |
+
+- **NY standard deduction (single, 2025)** — $8,000 USD  _(Section 7 — NY-specific tax framework > New York State income tax (Form IT-201))_
+- **NY standard deduction (MFJ, 2025)** — $16,050 USD  _(Section 7 — NY-specific tax framework > New York State income tax (Form IT-201))_
+- **NY itemized deduction basis** — Based on federal Schedule A with NY modifications (no SALT deduction add-back at state level, but NY limits itemized deductions for high earners)  _(Section 7 — NY-specific tax framework > New York State income tax (Form IT-201))_
 
 ### NYC personal income tax (NYC resident surcharge)
 
-2025 rates:
-- 3.078%: $0–$12,000
-- 3.762%: $12,001–$25,000
-- 3.819%: $25,001–$50,000
-- 3.876%: $50,001 and over
+**2025 NYC resident surcharge rates**  _(Section 7 — NY-specific tax framework > NYC personal income tax (NYC resident surcharge))_
 
-Additional NYC surcharge for taxable income > $500,000 effectively brings top combined NYC rate to approximately 3.876% + additional tiers.
+| Rate | Bracket |
+| --- | --- |
+| 3.078% | $0–$12,000 |
+| 3.762% | $12,001–$25,000 |
+| 3.819% | $25,001–$50,000 |
+| 3.876% | $50,001 and over |
+
+- **Additional NYC surcharge for high earners** — Additional NYC surcharge for taxable income > $500,000 effectively brings top combined NYC rate to approximately 3.876% + additional tiers.  _(Section 7 — NY-specific tax framework > NYC personal income tax (NYC resident surcharge))_
 
 ### NYC Unincorporated Business Tax (UBT) — Form NYC-202
 
-- Applies to any unincorporated business (sole prop, SMLLC) carried on in NYC
-- Tax rate: 4% of taxable income after exemption
-- Exemption: $95,000 (but phases out between $95,000 and $150,000 of NYC UBT taxable income)
-- Partial credit against NYC personal income tax (Form NYC-1127 or IT-201 Line 51)
-- UBT estimated tax: quarterly payments required if UBT liability expected to exceed $3,400
+- **UBT applicability** — Applies to any unincorporated business (sole prop, SMLLC) carried on in NYC  _(Section 7 — NY-specific tax framework > NYC Unincorporated Business Tax (UBT) — Form NYC-202)_
+- **UBT tax rate** — 4% (of taxable income after exemption)  _(Section 7 — NY-specific tax framework > NYC Unincorporated Business Tax (UBT) — Form NYC-202)_
+- **UBT exemption** — $95,000 USD (phases out between $95,000 and $150,000 of NYC UBT taxable income)  _(Section 7 — NY-specific tax framework > NYC Unincorporated Business Tax (UBT) — Form NYC-202)_
+- **Partial credit against NYC personal income tax** — Partial credit against NYC personal income tax (Form NYC-1127 or IT-201 Line 51)  _(Section 7 — NY-specific tax framework > NYC Unincorporated Business Tax (UBT) — Form NYC-202)_
+- **UBT estimated tax quarterly payment threshold** — $3,400 USD (quarterly payments required if UBT liability expected to exceed this amount)  _(Section 7 — NY-specific tax framework > NYC Unincorporated Business Tax (UBT) — Form NYC-202)_
 
 ### Metropolitan Commuter Transportation Mobility Tax (MCTMT)
 
-- Applies to self-employed individuals with net earnings from self-employment allocated to the Metropolitan Commuter Transportation District (NYC + Dutchess, Nassau, Orange, Putnam, Rockland, Suffolk, Westchester)
-- Rate: 0.34% on net SE earnings > $50,000 allocated to MCTD
-- Reported on Form MTA-6 (annual) or quarterly
-- Due dates align with estimated tax quarters
+- **MCTMT applicability** — Applies to self-employed individuals with net earnings from self-employment allocated to the Metropolitan Commuter Transportation District (NYC + Dutchess, Nassau, Orange, Putnam, Rockland, Suffolk, Westchester)  _(Section 7 — NY-specific tax framework > Metropolitan Commuter Transportation Mobility Tax (MCTMT))_
+- **MCTMT rate** — 0.34% (on net SE earnings > $50,000 allocated to MCTD)  _(Section 7 — NY-specific tax framework > Metropolitan Commuter Transportation Mobility Tax (MCTMT))_
+- **MCTMT reporting and due dates** — Reported on Form MTA-6 (annual) or quarterly. Due dates align with estimated tax quarters  _(Section 7 — NY-specific tax framework > Metropolitan Commuter Transportation Mobility Tax (MCTMT))_
 
 ### NY estimated tax (Form IT-2105)
 
-- Required if NY tax liability expected to exceed $300 after credits and withholding
-- Quarterly due dates: April 15, June 15, September 15, January 15
-- Safe harbor: 100% of prior year NY tax OR 90% of current year NY tax
-- Underpayment penalty: computed on Form IT-2105.9
-
----
+- **NY estimated tax requirement threshold** — $300 USD (required if NY tax liability expected to exceed this amount after credits and withholding)  _(Section 7 — NY-specific tax framework > NY estimated tax (Form IT-2105))_
+- **Quarterly due dates** — April 15, June 15, September 15, January 15  _(Section 7 — NY-specific tax framework > NY estimated tax (Form IT-2105))_
+- **Safe harbor** — 100% of prior year NY tax OR 90% of current year NY tax  _(Section 7 — NY-specific tax framework > NY estimated tax (Form IT-2105))_
+- **Underpayment penalty computation** — Underpayment penalty: computed on Form IT-2105.9  _(Section 7 — NY-specific tax framework > NY estimated tax (Form IT-2105))_
 
 ## Section 8 — Handoff
 
@@ -269,7 +274,7 @@ Once gap-filling is complete, produce handoff message and invoke `us-ny-return-a
 >
 > Starting now.
 
----
+0. **Handoff to return assembly** — Once gap-filling is complete, invoke us-ny-return-assembly
 
 ## Section 9 — Refusal handling
 
@@ -285,8 +290,6 @@ When a refusal fires:
 
 > Stop — you moved out of NYC mid-year. Part-year NYC allocation on the UBT and city income tax requires Form NYC-1127 and careful day-counting. You need a CPA familiar with NYC part-year filings.
 
----
-
 ## Section 10 — Self-checks
 
 **Check NY-IN1 — Refusal sweep used ask_user_input_v0.**
@@ -298,14 +301,56 @@ When a refusal fires:
 **Check NY-IN7 — Filing status recorded for IT-201 rate determination.**
 **Check NY-IN8 — Handoff to us-ny-return-assembly is explicit.**
 
----
-
 ## End of Skill
-
----
 
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, EA, tax attorney, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
 
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
+The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
+
+## Talk to a verified accountant
+
+This skill is a tool, not an engagement. Every taxpayer's situation is
+different, and the rules in the skill may not match your specific facts.
+
+To speak with one of the licensed accountants who verifies skills for your
+jurisdiction — **no liability on either side until you and the accountant sign
+a formal engagement letter** — book a free 30-minute call:
+
+**→ [Book a call](https://calendly.com/openaccountants-info/30min)**
+
+We'll route you to the named verifier covering your country or state. You can
+also see the full list of verified accountants at
+[openaccountants.com/network](https://openaccountants.com/network).
+
+## 
+
+- **Annual compensation limit for qualified plans (§401(a)(17))** — $360,000  _([IRS Notice 2025-67](https://www.irs.gov/retirement-plans/plan-participant-employee/retirement-topics-401k-and-profit-sharing-plan-contribution-limits))_
+- **401(k) catch-up contribution limit (age 50+)** — $8,000  _([IRS Notice 2025-67](https://www.irs.gov/retirement-plans/plan-participant-employee/retirement-topics-401k-and-profit-sharing-plan-contribution-limits))_
+- **401(k) enhanced catch-up contribution limit (age 60-63, SECURE 2.0)** — $11,250  _([IRS Notice 2025-67](https://www.irs.gov/retirement-plans/plan-participant-employee/retirement-topics-401k-and-profit-sharing-plan-contribution-limits))_
+- **401(k)/403(b) employee elective deferral limit (§402(g))** — $24,500  _([IRS Notice 2025-67](https://www.irs.gov/retirement-plans/plan-participant-employee/retirement-topics-401k-and-profit-sharing-plan-contribution-limits))_
+- **Defined-contribution annual additions limit (§415(c), employee + employer, excl. catch-up)** — $72,000  _([IRS Notice 2025-67](https://www.irs.gov/retirement-plans/plan-participant-employee/retirement-topics-401k-and-profit-sharing-plan-contribution-limits))_
+- **IRA catch-up contribution (age 50+)** — $1,100  _([IRS Notice 2025-67](https://www.irs.gov/newsroom/401k-limit-increases-to-24500-for-2026-ira-limit-increases-to-7500))_
+- **IRA contribution limit (traditional + Roth combined)** — $7,500  _([IRS Notice 2025-67](https://www.irs.gov/retirement-plans/plan-participant-employee/retirement-topics-ira-contribution-limits))_
+- **SIMPLE plan catch-up contribution (age 50+)** — $4,000  _([IRS Notice 2025-67](https://www.irs.gov/newsroom/401k-limit-increases-to-24500-for-2026-ira-limit-increases-to-7500))_
+- **SIMPLE plan enhanced catch-up contribution (age 60-63, SECURE 2.0)** — $5,250  _([IRS Notice 2025-67](https://www.irs.gov/newsroom/401k-limit-increases-to-24500-for-2026-ira-limit-increases-to-7500))_
+- **SIMPLE IRA / SIMPLE 401(k) employee elective deferral limit** — $17,000  _([IRS Notice 2025-67](https://www.irs.gov/newsroom/401k-limit-increases-to-24500-for-2026-ira-limit-increases-to-7500))_
+
+<!-- openaccountants-cta-block -->
+
+---
+
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

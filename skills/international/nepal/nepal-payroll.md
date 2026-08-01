@@ -2,15 +2,14 @@
 name: nepal-payroll
 description: Use this skill whenever asked about Nepal payroll processing for employed persons. Trigger on phrases like "Nepal payroll", "PAYE Nepal", "TDS on salary Nepal", "eTDS Nepal", "salary tax Nepal", "SSF contribution", "Social Security Fund Nepal", "provident fund Nepal", "gratuity Nepal", "CIT Nepal", "EPF Nepal", "net pay Nepal", "salary calculation Nepal", "NPR payroll", "Nepalese Rupee payroll", "minimum wage Nepal", "PAN Nepal", "D-01 D-03 Nepal", "female tax credit Nepal", "remote area allowance", "married couple tax Nepal", or any question about computing employee pay, salary withholding, or social security contributions for Nepal-based employees. This skill covers monthly TDS/PAYE salary withholding on progressive resident slabs (single and married-couple), the 1% first-band Social Security Tax and its SSF interaction, retirement-fund and insurance deductions, the female tax credit, the 31% Social Security Fund contribution (20% employer / 11% employee), provident fund and gratuity for non-SSF employers, the minimum wage, filing forms (eTDS, D-01/D-02/D-03) and penalties. Nepal DOES levy a personal income tax (progressive PAYE). ALWAYS read this skill before processing any Nepal payroll.
 jurisdiction: NP
-domain: payroll
 tax_year: 2025
-reviewed_by: Ashish Bista
-review_status: accountant-reviewed
+last_updated: 2026-06-03
+verified_by: Ashish Bista
 tier: 1
-last_updated: 2026-07-06
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# nepal-payroll
+# Nepal Payroll
 
 ## Nepal Payroll Skill v0.1
 
@@ -559,3 +558,21 @@ If you lack a complete payroll setup for a new client:
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a licensed chartered accountant or registered auditor in Nepal) before implementation.
 
 The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
+
+<!-- openaccountants-cta-block -->
+
+---
+
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

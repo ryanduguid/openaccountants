@@ -3,13 +3,13 @@ name: id-corporate-tax
 description: "Use this skill whenever asked about Indonesian corporate income tax (PPh Badan) for a resident Indonesian company (Perseroan Terbatas / PT). Trigger on phrases like \"Indonesia corporate tax\", \"PPh Badan\", \"SPT Tahunan 1771\", \"company tax Indonesia\", \"PT tax\", \"tarif PPh Badan\", \"small company facility 50%\", \"Pasal 31E\", \"PPh 25 installment\", \"tax holiday Indonesia\", \"tax allowance PP 78\", \"super deduction\", or \"transfer pricing Indonesia\". Covers the 22% standard rate (UU HPP), the Pasal 31E small-company facility (50% reduction on the slice of taxable income proportional to the first IDR 4.8 billion of turnover for companies with annual turnover ≤ IDR 50 billion), the Pasal 17(2b) listed-company 3% reduction, monthly PPh 25 installments, deductible vs non-deductible expenses under Pasal 6/9 UU PPh, fiscal reconciliation, depreciation under PMK 96/2009, tax incentives (tax holiday, tax allowance PP 78/2019, super-deduction R&D), transfer pricing documentation under PMK 213/2016 and PMK 172/2023, and SPT Tahunan 1771 filing via Coretax DJP. Out of scope: PPh Final UMKM 0.5% (use id-pph-final-umkm), employee payroll (use id-payroll-pph21), PPN/VAT (use indonesia-vat), permanent establishments / BUT, banking and insurance sector returns, oil/gas and mining contract regimes, Islamic finance, and consolidated/group returns. ALWAYS read this skill before touching any Indonesian corporate income tax work."
 jurisdiction: ID
 tax_year: 2025
-reviewed_by: RILIA PUTRI
-review_status: accountant-reviewed
+last_updated: 2026-05-27
+verified_by: RILIA PUTRI
 tier: 1
-last_updated: 2026-07-06
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# id-corporate-tax
+# ID Corporate Tax
 
 ## Indonesia Corporate Income Tax (PPh Badan) Skill v1.0
 
@@ -485,3 +485,21 @@ a formal engagement letter** — book a free 30-minute call:
 We'll route you to the named verifier covering your country or state. You can
 also see the full list of verified accountants at
 [openaccountants.com/network](https://openaccountants.com/network).
+
+<!-- openaccountants-cta-block -->
+
+---
+
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

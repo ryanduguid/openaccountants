@@ -1,668 +1,541 @@
 ---
 name: cn-vat
-description: 当用户要求准备、复核、分类与中国增值税（VAT / 增值税）相关的交易、申报或合规事项时，必须先阅读本技能。触发关键词包括："中国增值税"、"VAT 13%"、"增值税专用发票"、"一般纳税人"、"小规模纳税人 1%"、"进项税额抵扣"、"出口退税"、"金税四期"、"数电发票"、"增值税申报表"、"销项税额"、"进项税额转出"。同时触发英文表达："China VAT", "fapiao", "special VAT invoice", "small-scale taxpayer", "general taxpayer China", "Golden Tax Phase IV", "VAT return China", "China e-fapiao"。在处理任何中国增值税工作之前，务必先完整阅读本技能。/ Use this skill whenever asked to prepare, review, or classify transactions for a China VAT return, advise on general vs small-scale taxpayer status, classify input/output VAT, handle special VAT invoices (fapiao), or interact with Golden Tax Phase IV / e-fapiao compliance. ALWAYS read this skill before touching any China VAT work.
-version: 2.0
+description: Use this skill whenever asked to prepare, review, or classify transactions for a China VAT (增值税 / VAT) return, handle Golden Tax System (金税系统) compliance, classify transactions for Chinese VAT purposes, or advise on VAT registration and filing in China. Trigger on phrases like "增值税", "VAT return China", "增值税申报", "增值税专用发票", "金税系统", "一般纳税人", "小规模纳税人", or any China VAT request. ALWAYS read this skill before touching any China VAT work.
 jurisdiction: CN
 tax_year: 2025
-category: international
+last_updated: 2026-05-27
 verified_by: pending
-depends_on:
-  - vat-workflow-base
+tier: 2
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# 中国 — 增值税（VAT）— 技能 v2.0
+# china-vat
 
----
+## Section 1 — Quick reference
 
-## 一、快速参考
+**Quick reference table**
 
-| 项目 | 取值 |
-|---|---|
-| 国家 | 中华人民共和国 (People's Republic of China) |
-| 税种 | 增值税 (Zēngzhíshuì / Value Added Tax) |
-| 货币 | 人民币 CNY（仅限） |
-| 纳税年度 | 公历年（1 月 — 12 月） |
-| 法律依据（2025） | 《增值税暂行条例》及实施细则、财税〔2016〕36 号"营改增"通知、相关公告 |
-| 法律依据（2026 起） | 《中华人民共和国增值税法》（2024 年 12 月 25 日通过，2026 年 1 月 1 日施行）—— **2025 年仍以《暂行条例》及 36 号文为准；2026.1.1 起新法生效，部分配套细则待出台** |
-| 基本税率 | **13%** —— 销售货物（除特定低税率商品）、加工修理修配、有形动产租赁、进口货物 |
-| 低税率 9% | 交通运输、邮政、基础电信、建筑、不动产租赁、销售不动产、销售土地使用权、销售/进口农产品、自来水、暖气、图书、报刊、杂志 |
-| 低税率 6% | 增值电信、金融服务、现代服务（IT、咨询、研发、广告、设计、物流辅助）、生活服务（餐饮、住宿、旅游、文娱、居民服务）、销售无形资产（除土地使用权） |
-| 零税率 | 出口货物、跨境零税率服务（研发、技术转让、合同能源管理等） |
-| 小规模纳税人征收率 | 3% —— 疫情期间减按 1% 政策延续至 **2027.12.31**（以最新公告为准） |
-| 一般纳税人门槛 | 年应税销售额超过人民币 **500 万元** 须强制登记；未超过可自愿申请 |
-| 起征点（小规模） | 月销售额 10 万元以下免征；按季纳税者季销售额 30 万元以下免征 |
-| 主管机关 | 国家税务总局 (STA — State Taxation Administration) |
-| 申报渠道 | 电子税务局（各省市分别上线） |
-| 一般纳税人申报 | 按月或按季；次月（次季度终了次月）**15 日**前 |
-| 小规模纳税人申报 | 按季；次季度终了次月 **15 日**前 |
-| 发票形式 | 增值税专用发票（专票）、增值税普通发票（普票）、全国数电发票（数字化电子发票，金税四期推广中） |
-| 金税系统 | 金税四期（Golden Tax Phase IV）—— 以数电发票为核心的全要素监管平台 |
-| 维护方 | Open Accountants Community |
-| 验证状态 | 待签 —— 须由中国注册税务师（CTA）或注册会计师（CPA）签字确认 |
-| 技能版本 | 2.0 |
+| Field | Value |
+| --- | --- |
+| Country | People's Republic of China (中华人民共和国) |
+| Tax | 增值税 (Zēngzhíshuì / Value Added Tax) |
+| Currency | CNY (Renminbi 人民币 / RMB) only |
+| Tax year | Calendar year (January–December) |
+| Standard rate | 13% (goods, processing, repair, leasing of tangible assets) |
+| Reduced rate 9% | Agricultural products, utilities, transport, construction, real estate, postal |
+| Reduced rate 6% | Financial services, modern services (IT, consulting, R&D), telecom, consumer services |
+| Zero rate | Exports of goods and services (出口零税率) |
+| Small taxpayer rate | 3% (小规模纳税人 — currently partially reduced to 1% for some sectors) |
+| Tax authority | 国家税务总局 State Taxation Administration (STA) |
+| Filing portal | 电子税务局 (Online Tax Bureau — local provincial portals) |
+| General taxpayer filing | Monthly or quarterly; due 15th of following month/quarter |
+| Small taxpayer filing | Quarterly; due 15th of month following quarter |
+| Registration threshold (general) | CNY 500,000/year (services); CNY 500,000/year (goods) for voluntary registration |
+| Mandatory general taxpayer | Taxable sales > CNY 500,000 for service / CNY 500,000 for goods (verify current threshold) |
+| e-Invoice | 电子发票 (全面推行 — fully rolled out; paper invoices being phased out) |
+| Contributor | Open Accountants Community |
+| Validated by | Pending — requires sign-off by a China-licensed 注册税务师 (CTA) or 注册会计师 (CPA) |
+| Skill version | 2.0 |
 
-### 增值税申报表主要行次
+### Key return form lines (增值税申报表)
 
-| 行次 | 含义 |
-|---|---|
-| 1 | 13% 应税销售额（应税货物及劳务） |
-| 2 | 9% 应税销售额 |
-| 3 | 6% 应税销售额 |
-| 4 | 零税率销售额（出口） |
-| 5 | 免税销售额 |
-| 6 | 销项税额合计 |
-| 7 | 进项税额合计 |
-| 8 | 进项税额转出 |
-| 9 | 可抵扣进项税额净额 (7 − 8) |
-| 10 | 应纳税额 (6 − 9) |
-| 11 | 减免税额 |
-| 12 | 留抵税额结转 |
-| 13 | 抵减后应纳税额 |
+**Key return form lines**
 
-### 保守默认假设
+| Line | Meaning |
+| --- | --- |
+| 1 | Taxable sales at 13% (应税货物及劳务) |
+| 2 | Taxable sales at 9% |
+| 3 | Taxable sales at 6% |
+| 4 | Zero-rated sales (出口) |
+| 5 | Exempt sales (免税) |
+| 6 | Total output VAT (销项税额合计) |
+| 7 | Total input VAT (进项税额合计) |
+| 8 | Input VAT not deductible (进项税额转出) |
+| 9 | Net input VAT available (7 − 8) |
+| 10 | Net VAT payable (6 − 9) |
+| 11 | VAT reduction/exemption credits |
+| 12 | Excess credit carried forward |
+| 13 | Net VAT payable after credits |
 
-| 不确定情形 | 默认处理 |
-|---|---|
-| 销售税率不明 | 按 13% 处理 |
-| 纳税人身份不明 | 按一般纳税人（更保守） |
-| 对方所在国别不明 | 视为境内交易 |
-| 发票类型不明（专票 / 普票） | 普票 —— 不可抵扣 |
-| 业务使用比例不明 | 进项不可抵 0% |
-| 数字服务 B2B / B2C 不明 | B2C —— 无反向征收 |
-| 出口凭证状态不明 | 不按零税率，按境内 13% |
+### Conservative defaults
 
-### 红旗阈值
+**Conservative defaults**
 
-| 阈值 | 数值 |
-|---|---|
-| 单笔交易（高） | 人民币 200,000 元 |
-| 单一默认导致的税款差异（高） | 人民币 20,000 元 |
-| 对方集中度（中） | 占销项或进项 > 40% |
-| 单期保守默认计数（中） | 单期 > 4 次 |
-| 应纳税额绝对值（低） | 人民币 100,000 元 |
+| Ambiguity | Default |
+| --- | --- |
+| Unknown rate on a sale | 13% |
+| Unknown whether general or small taxpayer | General taxpayer (一般纳税人) — more conservative |
+| Unknown counterparty country | Domestic China |
+| Unknown whether special or ordinary invoice | Ordinary invoice — no input credit |
+| Unknown business-use % | 0% credit |
+| Unknown whether digital service is B2B or B2C | B2C — no reverse charge |
+| Unknown export documentation status | Not zero-rated — treat as domestic 13% |
 
----
+### Red flag thresholds
 
-## 二、必备输入与拒绝清单
+**Red flag thresholds**
 
-### 必备输入
+| Threshold | Value |
+| --- | --- |
+| HIGH single transaction | CNY 200,000 |
+| HIGH tax delta on single default | CNY 20,000 |
+| MEDIUM counterparty concentration | >40% of output or input |
+| MEDIUM conservative default count | >4 per period |
+| LOW absolute net VAT position | CNY 100,000 |
 
-**最低限度** —— 当期银行流水（CSV、PDF 或粘贴文本）；纳税人身份（一般纳税人 / 小规模纳税人）确认。
+## Section 2 — Required inputs and refusal catalogue
 
-**建议提供** —— 所有可抵扣进项对应的 **增值税专用发票**；18 位 **纳税人识别号**（统一社会信用代码）；上期申报表。
+### Required inputs
 
-**最佳提供** —— 金税系统导出的完整发票清单、固定资产台账、总账明细。
+- **Minimum viable** — bank statement for the period in CSV, PDF, or pasted text. Confirmation of taxpayer category (一般纳税人 general or 小规模纳税人 small).
+- **Recommended** — 增值税专用发票 (special VAT invoices) for all input credits, 税号 (TIN — 纳税人识别号 18-digit), prior period return.
+- **Ideal** — complete invoice register from Golden Tax System (金税系统), asset register, full general ledger.
+- **Refusal if minimum is missing** — SOFT WARN. No bank statement = hard stop. Without special invoices: "Input VAT credits in China require 增值税专用发票 (special VAT invoices) verified through the Golden Tax System. All input credits are provisional pending invoice verification."
 
-**最低限度缺失 —— 软警告。** 缺银行流水 = 硬性中止。缺专用发票时提示："中国进项税额抵扣必须以经金税系统认证的 **增值税专用发票** 为凭证；在专票核验完成前，所有进项均为预估。"
+### Refusal catalogue
 
-### 拒绝清单
+- **R-CN-1** — Small taxpayer (小规模纳税人) claiming input credits. "Small taxpayers cannot recover input VAT. They apply a simplified 3% rate on gross sales (or 1% under temporary relief). No input credit mechanism applies. This skill can calculate the simplified rate return but cannot process input credits."  _(R-CN-1)_
+- **R-CN-2** — VAT exemption schemes. "Certain industries have specific VAT exemption or reduction schemes (e.g., software enterprises, agriculture). These require specialist confirmation. Flag for review."  _(R-CN-2)_
+- **R-CN-3** — Real estate and construction (cross-period projects). "Long-term construction and real estate development projects have complex cross-period VAT rules. Out of scope — escalate to 注册税务师."  _(R-CN-3)_
+- **R-CN-4** — Cross-border services without clear PE analysis. "Services provided across the China border involving permanent establishment (PE) questions require specialist analysis. Out of scope."  _(R-CN-4)_
+- **R-CN-5** — Export refund (出口退税). "Export VAT refund claims require separate 出口退税申报 filings and customs documentation. Out of scope for this skill — escalate."  _(R-CN-5)_
+- **R-CN-6** — Financial institutions. "Banks and insurance companies have separate VAT calculation methods. Out of scope."  _(R-CN-6)_
 
-**R-CN-1 —— 小规模纳税人申报进项抵扣。** "小规模纳税人不可抵扣进项税额，按 3%（或政策性减按 1%）征收率以含税销售额简易计征。本技能可处理简易计征申报，但不处理进项抵扣。"
+## Section 3 — Supplier pattern library
 
-**R-CN-2 —— 行业性增值税减免。** "软件企业即征即退、农业生产者自产自销免税等行业性减免须由专业人士确认。请标记为待复核。"
+Match by case-insensitive substring on counterparty name or transaction reference. Most specific match wins. Fall through to Section 5 if no match.
 
-**R-CN-3 —— 房地产与建筑业（跨期项目）。** "长周期建筑、房地产开发涉及预缴、差额、跨期申报等复杂规则。**超出本技能范围 —— 请升级到注册税务师**。"
+### 3.1 Chinese banks — fees and charges (exempt / exclude)
 
-**R-CN-4 —— 涉及常设机构（PE）的跨境服务。** "跨境提供服务并可能构成 PE 的情形须由专业人士分析。超出范围。"
+**Chinese banks fees and charges table**
 
-**R-CN-5 —— 出口退税（出口退税）。** "出口退税须单独通过出口退税申报系统办理，并提供报关单等单证。**超出本技能范围 —— 请升级**。"
+| Pattern | Treatment | Notes |
+| --- | --- | --- |
+| 工商银行, ICBC, 中国工商银行 | EXCLUDE (fee lines) | Bank charges — exempt financial service |
+| 建设银行, CCB, 中国建设银行 | EXCLUDE (fee lines) | Same |
+| 农业银行, ABC, 中国农业银行 | EXCLUDE (fee lines) | Same |
+| 中国银行, BOC, BANK OF CHINA | EXCLUDE (fee lines) | Same |
+| 交通银行, BOCOM, 交通银行股份 | EXCLUDE (fee lines) | Same |
+| 招商银行, CMB, CHINA MERCHANTS | EXCLUDE (fee lines) | Same |
+| 浦发银行, SPDB | EXCLUDE (fee lines) | Same |
+| 中信银行, CITIC BANK | EXCLUDE (fee lines) | Same |
+| 手续费, 银行手续费 | EXCLUDE | Bank transaction fee — exempt |
+| 利息, 利息收入, INTEREST | EXCLUDE | Interest — exempt from VAT |
 
-**R-CN-6 —— 金融机构（银行、保险）增值税。** "银行、保险公司适用专门的计算方法。超出范围。"
+### 3.2 Digital payment platforms (exclude platform fees)
 
----
+**Digital payment platforms table**
 
-## 三、供应商分类（一般纳税人 vs 小规模纳税人）
+| Pattern | Treatment | Notes |
+| --- | --- | --- |
+| 支付宝, ALIPAY | EXCLUDE (fee lines) | Payment processing — exempt |
+| 微信支付, WECHAT PAY, 财付通 | EXCLUDE (fee lines) | Same |
+| 云闪付, UNIONPAY | EXCLUDE (fee lines) | Same |
+| 京东支付, JD PAY | EXCLUDE (fee lines) | Same |
 
-按对方名称或交易摘要进行子串匹配（不区分大小写），最具体匹配优先；无匹配时回退至第五节。
+### 3.3 Chinese government and statutory (exclude)
 
-### 3.1 中国境内银行手续费、利息（免税 / 排除）
+**Chinese government and statutory table**
 
-| 模式 | 处理 | 备注 |
-|---|---|---|
-| 工商银行、ICBC、中国工商银行 | 排除（手续费类） | 银行收费 —— 免税金融服务 |
-| 建设银行、CCB、中国建设银行 | 排除（手续费类） | 同上 |
-| 农业银行、ABC、中国农业银行 | 排除（手续费类） | 同上 |
-| 中国银行、BOC、BANK OF CHINA | 排除（手续费类） | 同上 |
-| 交通银行、BOCOM、交通银行股份 | 排除（手续费类） | 同上 |
-| 招商银行、CMB、CHINA MERCHANTS | 排除（手续费类） | 同上 |
-| 浦发银行、SPDB | 排除（手续费类） | 同上 |
-| 中信银行、CITIC BANK | 排除（手续费类） | 同上 |
-| 手续费、银行手续费 | 排除 | 银行交易手续费 —— 免税 |
-| 利息、利息收入、INTEREST | 排除 | 利息 —— 免征增值税 |
+| Pattern | Treatment | Notes |
+| --- | --- | --- |
+| 国家税务总局, 税务局, STA | EXCLUDE | Tax payment — not a supply |
+| 增值税, 企业所得税, 个人所得税 | EXCLUDE | Tax remittance |
+| 社会保险, 社保, SOCIAL INSURANCE | EXCLUDE | Statutory contribution |
+| 公积金, 住房公积金 | EXCLUDE | Housing provident fund |
+| 海关, 关税, CUSTOMS | EXCLUDE | Customs duty (but import VAT handled separately) |
+| 工商局, 市场监管 | EXCLUDE | Registration fees — government sovereign acts |
 
-### 3.2 第三方支付平台（手续费排除）
+### 3.4 Chinese utilities (taxable)
 
-| 模式 | 处理 | 备注 |
-|---|---|---|
-| 支付宝、ALIPAY | 排除（手续费类） | 支付通道 —— 免税 |
-| 微信支付、WECHAT PAY、财付通 | 排除（手续费类） | 同上 |
-| 云闪付、UNIONPAY | 排除（手续费类） | 同上 |
-| 京东支付、JD PAY | 排除（手续费类） | 同上 |
+**Chinese utilities table**
 
-### 3.3 政府及法定支出（排除）
+| Pattern | Treatment | Rate | Notes |
+| --- | --- | --- | --- |
+| 国家电网, STATE GRID, 国网 | Input 9% | 9% | Electricity — reduced rate |
+| 南方电网, CSG, 南网 | Input 9% | 9% | Electricity — reduced rate |
+| 中国石油, CNPC, 中石油, PETROCHINA | Input 9%/13% | 9%/13% | Gas distribution 9%; crude/refined 13% |
+| 中国石化, SINOPEC, 中石化 | Input 13% | 13% | Fuel — standard rate |
+| 城市燃气, 天然气公司 | Input 9% | 9% | Gas — reduced rate |
+| 自来水, 供水公司 | Input 9% | 9% | Water — reduced rate |
+| 中国移动, CHINA MOBILE, 移动通信 | Input 6% | 6% | Telecom — modern services rate |
+| 中国联通, CHINA UNICOM | Input 6% | 6% | Telecom — modern services rate |
+| 中国电信, CHINA TELECOM | Input 6% | 6% | Telecom — modern services rate |
 
-| 模式 | 处理 | 备注 |
-|---|---|---|
-| 国家税务总局、税务局、STA | 排除 | 缴税 —— 非应税行为 |
-| 增值税、企业所得税、个人所得税 | 排除 | 税款解缴 |
-| 社会保险、社保 | 排除 | 法定缴费 |
-| 公积金、住房公积金 | 排除 | 住房公积金 |
-| 海关、关税 | 排除 | 关税（进口环节增值税另行处理） |
-| 工商局、市场监督管理 | 排除 | 政府收费 |
+### 3.5 Transport and logistics (taxable)
 
-### 3.4 中国境内公用事业（应税）
+**Transport and logistics table**
 
-| 模式 | 处理 | 税率 | 备注 |
-|---|---|---|---|
-| 国家电网、STATE GRID、国网 | 进项 9% | 9% | 电力 —— 低税率 |
-| 南方电网、CSG、南网 | 进项 9% | 9% | 电力 —— 低税率 |
-| 中国石油、CNPC、中石油、PETROCHINA | 进项 9% / 13% | 9% / 13% | 燃气配送 9%；成品油 13% |
-| 中国石化、SINOPEC、中石化 | 进项 13% | 13% | 成品油 —— 基本税率 |
-| 城市燃气、天然气公司 | 进项 9% | 9% | 燃气 —— 低税率 |
-| 自来水、供水公司 | 进项 9% | 9% | 自来水 —— 低税率 |
-| 中国移动、CHINA MOBILE | 进项 6% | 6% | 增值电信 —— 现代服务 |
-| 中国联通、CHINA UNICOM | 进项 6% | 6% | 同上 |
-| 中国电信、CHINA TELECOM | 进项 6% | 6% | 同上 |
+| Pattern | Treatment | Rate | Notes |
+| --- | --- | --- | --- |
+| 顺丰速运, SF EXPRESS, 顺丰控股 | Input 9% | 9% | Domestic transport — reduced rate |
+| 京东物流, JD LOGISTICS | Input 9% | 9% | Transport — reduced rate |
+| 中通快递, ZTO EXPRESS | Input 9% | 9% | Transport — reduced rate |
+| 圆通快递, YTO EXPRESS | Input 9% | 9% | Transport — reduced rate |
+| 申通快递, STO EXPRESS | Input 9% | 9% | Transport — reduced rate |
+| 韵达快递, YUNDA EXPRESS | Input 9% | 9% | Transport — reduced rate |
+| 邮政EMS, CHINA POST EMS | Input 9% | 9% | Postal transport — reduced rate |
+| 滴滴出行, DIDI | Input 6% | 6% | Ride-hailing — modern service rate |
+| 中国国航, AIR CHINA, 国航 | Input 9%/0% | 9%/0% | Domestic 9%; international 0% |
+| 中国东航, CHINA EASTERN | Input 9%/0% | 9%/0% | Same |
+| 南方航空, CHINA SOUTHERN | Input 9%/0% | 9%/0% | Same |
+| 高铁, 铁路, CHINA RAILWAY, 中国铁路 | Input 9% | 9% | Rail transport — reduced rate |
 
-### 3.5 交通与物流（应税）
+### 3.6 Food and retail (taxable)
 
-| 模式 | 处理 | 税率 | 备注 |
-|---|---|---|---|
-| 顺丰速运、SF EXPRESS、顺丰控股 | 进项 9% | 9% | 国内运输 —— 低税率 |
-| 京东物流、JD LOGISTICS | 进项 9% | 9% | 运输 |
-| 中通快递、ZTO EXPRESS | 进项 9% | 9% | 运输 |
-| 圆通快递、YTO EXPRESS | 进项 9% | 9% | 运输 |
-| 申通快递、STO EXPRESS | 进项 9% | 9% | 运输 |
-| 韵达快递、YUNDA EXPRESS | 进项 9% | 9% | 运输 |
-| 邮政 EMS、CHINA POST EMS | 进项 9% | 9% | 邮政服务 |
-| 滴滴出行、DIDI | 进项 6% | 6% | 网约车 —— 现代服务 |
-| 中国国航、AIR CHINA、国航 | 进项 9% / 0% | 9% / 0% | 国内 9%；国际 0% |
-| 中国东航、CHINA EASTERN | 进项 9% / 0% | 9% / 0% | 同上 |
-| 南方航空、CHINA SOUTHERN | 进项 9% / 0% | 9% / 0% | 同上 |
-| 中国铁路、高铁 | 进项 9% | 9% | 铁路运输 —— 低税率 |
+**Food and retail table**
 
-### 3.6 餐饮与零售（应税）
+| Pattern | Treatment | Rate | Notes |
+| --- | --- | --- | --- |
+| 盒马, HEMA FRESH, 盒马鲜生 | Input 9% (food) | 9% | Fresh food retail — agricultural reduced rate |
+| 美团, MEITUAN (food delivery) | Input 9% | 9% | Food delivery — reduced rate for food items |
+| 饿了么, ELEME | Input 9% | 9% | Food delivery — reduced rate |
+| 大润发, RT-MART | Input 13%/9% | Mixed | Non-food 13%; food 9% |
+| 沃尔玛, WALMART CHINA | Input 13%/9% | Mixed | Same |
+| 家乐福, CARREFOUR CHINA | Input 13%/9% | Mixed | Same |
+| 永辉超市, YONGHUI | Input 9% (grocery) | 9% | Food supermarket |
 
-| 模式 | 处理 | 税率 | 备注 |
-|---|---|---|---|
-| 盒马鲜生、HEMA FRESH | 进项 9%（食品类） | 9% | 生鲜零售 —— 农产品低税率 |
-| 美团（外卖） | 进项 9% | 9% | 食品外送 |
-| 饿了么 | 进项 9% | 9% | 食品外送 |
-| 大润发、RT-MART | 进项 13% / 9% | 混合 | 非食品 13%；食品 9% |
-| 沃尔玛、WALMART CHINA | 进项 13% / 9% | 混合 | 同上 |
-| 家乐福、CARREFOUR CHINA | 进项 13% / 9% | 混合 | 同上 |
-| 永辉超市、YONGHUI | 进项 9%（食杂） | 9% | 食品超市 |
+### 3.7 SaaS — Chinese suppliers (modern services 6%)
 
-### 3.7 SaaS —— 中国境内供应商（现代服务 6%）
+**SaaS Chinese suppliers table**
 
-| 模式 | 处理 | 税率 | 备注 |
-|---|---|---|---|
-| 用友网络、YONYOU | 进项 6% | 6% | 国产 ERP —— 现代服务 |
-| 金蝶软件、KINGDEE | 进项 6% | 6% | 国产财务软件 |
-| 钉钉、DINGTALK | 进项 6% | 6% | 阿里协同办公 |
-| 企业微信、WECHAT WORK | 进项 6% | 6% | 腾讯协同 |
-| 阿里云、ALIBABA CLOUD | 进项 6% | 6% | 云服务 |
-| 腾讯云、TENCENT CLOUD | 进项 6% | 6% | 云服务 |
-| 华为云、HUAWEI CLOUD | 进项 6% | 6% | 云服务 |
-| 百度智能云、BAIDU CLOUD | 进项 6% | 6% | 云服务 |
+| Pattern | Treatment | Rate | Notes |
+| --- | --- | --- | --- |
+| 用友网络, YONYOU | Input 6% | 6% | Chinese ERP — modern services |
+| 金蝶软件, KINGDEE | Input 6% | 6% | Chinese accounting software |
+| 钉钉, DINGTALK | Input 6% | 6% | Alibaba groupware |
+| 企业微信, WECHAT WORK | Input 6% | 6% | Tencent enterprise tool |
+| 阿里云, ALIBABA CLOUD | Input 6% | 6% | Cloud services — modern services |
+| 腾讯云, TENCENT CLOUD | Input 6% | 6% | Cloud services |
+| 华为云, HUAWEI CLOUD | Input 6% | 6% | Cloud services |
+| 百度智能云, BAIDU CLOUD | Input 6% | 6% | Cloud services |
 
-### 3.8 SaaS —— 境外供应商（境内可用情形）
+### 3.8 SaaS — international suppliers (note: many blocked in China)
 
-| 模式 | 处理 | 备注 |
-|---|---|---|
-| GOOGLE（搜索、Workspace、Ads） | 中国大陆境内不可用 —— 出现请标记 | 多为 VPN 访问，非正常合规支出 |
-| FACEBOOK、META ADS | 同上 —— 出现请标记 | 境内不可用 |
-| TWITTER、X | 同上 —— 出现请标记 | 境内不可用 |
-| MICROSOFT（365、Azure） | 通过中国实体开票 —— 进项 6% | 由微软（中国）开具人民币专票 |
-| MICROSOFT 中国 | 进项 6% | 微软（中国）有限公司 —— 现代服务 |
-| SAP CHINA | 进项 6% | SAP 中国实体 |
-| ORACLE CHINA | 进项 6% | 同上 |
-| ADOBE（中国实体） | 进项 6% | 须核对发票主体 |
+**SaaS international suppliers table**
 
-### 3.9 内部划转与排除项
+| Pattern | Treatment | Notes |
+| --- | --- | --- |
+| GOOGLE (Search, Workspace, Ads) | BLOCKED in China | Google services not available without VPN — flag if appearing |
+| FACEBOOK, META ADS | BLOCKED in China | Not available — flag if appearing |
+| TWITTER, X | BLOCKED in China | Not available — flag if appearing |
+| MICROSOFT (365, Azure) | Input 6% via China entity | Microsoft operates via local China entity — standard 6% VAT invoiced |
+| MICROSOFT 中国 | Input 6% | Microsoft (China) Co. Ltd. — modern services |
+| SAP CHINA | Input 6% | SAP licensed via China entity |
+| ORACLE CHINA | Input 6% | Same |
+| ADOBE (China entity) | Input 6% | If via China entity — check invoice |
 
-| 模式 | 处理 | 备注 |
-|---|---|---|
-| 内部转账、账户间转账 | 排除 | 同主体内划转 |
-| 借款、贷款、还款 | 排除 | 借贷本金 |
-| 工资、薪资、薪酬 | 排除 | 工资 —— 不属于增值税征税范围 |
-| 股利、分红、DIVIDEND | 排除 | 股利 —— 不征收增值税 |
-| 押金、保证金 | 排除 | 押金 —— 实际使用前不征 |
+### 3.9 Internal transfers and exclusions
 
----
+**Internal transfers and exclusions table**
 
-## 四、计算示例
+| Pattern | Treatment | Notes |
+| --- | --- | --- |
+| 内部转账, 账户间转账 | EXCLUDE | Internal transfer |
+| 借款, 贷款, 还款 | EXCLUDE | Loan principal |
+| 工资, 薪资, 薪酬 | EXCLUDE | Payroll — out of VAT scope |
+| 股利, 分红, DIVIDEND | EXCLUDE | Dividend — out of VAT scope |
+| 押金, 保证金 | EXCLUDE | Deposit — out of VAT scope until applied |
 
-下列六个示例假设主体为上海某 IT 咨询公司（一般纳税人），银行流水为招商银行 (CMB) CSV 导出格式。
+## Section 4 — Worked examples
 
-### 示例一 —— 境内 B2B 服务收入（6%）
+Six classifications from a hypothetical bank statement of a Shanghai-based IT consulting firm. Format: 招商银行 (CMB) CSV export.
 
-**流水记录：**
+### Example 1 — Domestic B2B service revenue (6%)
+
+**Input line:**
 `2025-04-15  转账收入  北京科技有限公司  发票号: INV-2025-041  +530,000.00  CNY`
 
-**分析：**
-收到北京公司汇入 53 万元 IT 咨询费。IT 咨询属"现代服务"，税率 6%。如开票金额为 530,000 含税：销售额（计税基础） = 500,000 元 + 销项税额 30,000 元（6%）。须通过金税系统开具 **增值税专用发票**，注明 6% 税率，并在申报表第 3 行（6% 销售额）反映。
+**Reasoning:**
+Incoming CNY 530,000 from a Beijing company for IT consulting. IT consulting is a "modern service" (现代服务) taxed at 6%. If the invoice is CNY 530,000 gross: net = CNY 500,000 (销项税基) + CNY 30,000 output VAT (6%). The 增值税专用发票 must be issued through the Golden Tax System showing the 6% rate. Report on line 3 (6% sales).
 
-**分类结论：** 销项 6% —— 30,000 元；不含税销售额 500,000 元。
+**Classification:** Output VAT at 6% — CNY 30,000. Net sales: CNY 500,000.
 
-### 示例二 —— 货物采购（13%，进项凭专票）
+### Example 2 — Goods purchase (13%, input credit requires special invoice)
 
-**流水记录：**
-`2025-04-10  转账支出  联想集团有限公司  采购笔记本电脑 10 台  -113,000.00  CNY`
+**Input line:**
+`2025-04-10  转账支出  联想集团有限公司  采购笔记本电脑10台  -113,000.00  CNY`
 
-**分析：**
-向联想采购笔记本电脑 10 台。货物适用基本税率 13%。含税 113,000 元 = 不含税 100,000 + 进项 13,000。**仅在取得联想开具并经金税系统认证的 增值税专用发票** 时，可抵扣 13,000 元；如仅取得普通发票，则不可抵。
+**Reasoning:**
+Purchase of 10 laptops from Lenovo. Goods at standard rate 13%. Gross CNY 113,000. Net = CNY 100,000 + CNY 13,000 input VAT. Input credit of CNY 13,000 available ONLY if a valid 增值税专用发票 (special VAT invoice) is obtained from Lenovo and verified in the Golden Tax System. If only an ordinary invoice (普通发票) is held, no input credit.
 
-**分类结论：** 进项 13% —— 13,000 元（待专票认证，预估）。
+**Classification:** Input VAT 13% — CNY 13,000 (provisional, pending special invoice verification).
 
-### 示例三 —— 出口服务（零税率）
+### Example 3 — Export services (zero-rated)
 
-**流水记录：**
+**Input line:**
 `2025-04-22  外汇收入  ACME CORPORATION USA  技术服务费 Q1 2025  +700,000.00  CNY`
 
-**分析：**
-收到美国公司 70 万元（人民币等值）技术服务款。如服务完全在境外消费、向境外单位提供，符合"出口服务"，可适用零税率。所需证据：合同、外汇收款记录、服务在境外消费证明。在申报表第 4 行（零税率）填报。若出口资格未确认，按 6% 保守处理。
+**Reasoning:**
+Incoming CNY 700,000 (USD equivalent) from a US company for technical services. If the service qualifies as "exported services" (completely consumed outside China, provided to a foreign entity), it is zero-rated. Evidence required: signed contract, foreign payment records, proof service was consumed abroad. Report on line 4 (zero-rated). If export qualification uncertain — apply 6% default until confirmed.
 
-**分类结论：** 零税率出口销售 —— 700,000 元；销项 0 元（如确认）。保守默认 6%（42,000 元）。
+**Classification:** Zero-rated export sales — CNY 700,000. Output VAT: CNY 0 (if confirmed). Conservative default: 6% (CNY 42,000) pending confirmation.
 
-### 示例四 —— 货运 / 物流（9% 低税率）
+### Example 4 — Freight/logistics (9% reduced rate)
 
-**流水记录：**
-`2025-04-08  转账支出  顺丰速运股份有限公司  快递费 2025 年 3 月  -9,540.00  CNY`
+**Input line:**
+`2025-04-08  转账支出  顺丰速运股份有限公司  快递费 2025年3月  -9,540.00  CNY`
 
-**分析：**
-支付顺丰国内快递费。运输服务适用 9% 低税率。含税 9,540 元 = 不含税 8,752 元 + 进项 788 元。顺丰可开具增值税专用发票，进项可抵。
+**Reasoning:**
+Payment to SF Express for domestic courier services. Transport is taxed at 9% reduced rate. Gross CNY 9,540. Net = CNY 8,752 + CNY 788 input VAT at 9%. Input credit requires a special invoice (增值税专用发票) from SF Express — they are a QIS equivalent registered supplier.
 
-**分类结论：** 进项 9% —— 788 元；不含税成本 8,752 元。
+**Classification:** Input VAT 9% — CNY 788. Net expense: CNY 8,752.
 
-### 示例五 —— 境内云服务（6%）
+### Example 5 — Cloud services from Chinese provider (6%)
 
-**流水记录：**
+**Input line:**
 `2025-04-01  代扣  阿里云计算有限公司  云服务器费用 2025-04  -10,600.00  CNY`
 
-**分析：**
-向阿里云支付月度云主机费。云 / IT 服务属现代服务，6%。含税 10,600 = 不含税 10,000 + 进项 600。阿里云开具增值税专用发票，进项可抵。
+**Reasoning:**
+Monthly cloud hosting from Alibaba Cloud (阿里云). Cloud/IT services = modern services at 6%. CNY 10,600 gross. Net = CNY 10,000 + CNY 600 input VAT. Alibaba Cloud issues 增值税专用发票 — input credit available. Fully deductible for income tax purposes as well.
 
-**分类结论：** 进项 6% —— 600 元；不含税成本 10,000 元。
+**Classification:** Input VAT 6% — CNY 600. Net expense: CNY 10,000.
 
-### 示例六 —— 工资发放（不属增值税征税范围）
+### Example 6 — Payroll (outside VAT scope)
 
-**流水记录：**
-`2025-04-25  工资发放  员工薪酬  2025 年 4 月工资  -850,000.00  CNY`
+**Input line:**
+`2025-04-25  工资发放  员工薪酬  2025年4月工资  -850,000.00  CNY`
 
-**分析：**
-工资发放不属于销售货物或服务，**不属于增值税征税范围**（不征税），既无销项也无进项，从增值税申报表中完全排除。在企业所得税与个税中另行处理。
+**Reasoning:**
+Payroll payment. Wages and salaries are outside VAT scope entirely — not a supply of goods or services. No VAT input or output. EXCLUDE from the VAT return. This will appear in income tax calculations but not VAT.
 
-**分类结论：** 完全排除（不征税）。
+**Classification:** EXCLUDE from VAT return entirely. Out of scope (不征税).
 
----
+## Section 5 — Tier 1 rules (compressed)
 
-## 五、第一层分类规则
+### 5.1 Standard rate 13%
 
-### 5.1 基本税率 13%
+- **Standard rate** — 13% (Default rate for taxable supply of goods, processing, repair and replacement services, and leasing of tangible movable property.)  _(VAT Law (增值税法) Article 2; 财税[2016]36号)_
 
-适用于：销售货物（除特定低税率商品外）、加工修理修配劳务、有形动产租赁、进口货物。法律依据：《增值税暂行条例》第二条；财税〔2016〕36 号。
+### 5.2 Reduced rate 9%
 
-### 5.2 低税率 9%
+- **Reduced rate 9%** — 9% (Agricultural products (农产品), tap water, heating, cooling, gas, coal (household), books/newspapers, animal feed, agricultural machinery, fertilizer; transport services; postal services; construction and real estate.)  _(增值税税率 Schedule; 财税[2016]36号 附件1)_
 
-适用于：农产品（粮食、蔬菜、鲜活肉蛋等）、自来水、暖气、冷气、燃气、居民用煤、图书、报纸、杂志、饲料、农药、化肥、农机；交通运输服务；邮政服务；建筑服务；不动产销售与租赁；土地使用权销售。法律依据：财税〔2016〕36 号附件 1；财税〔2018〕32 号、〔2019〕39 号税率调整文件。
+### 5.3 Reduced rate 6%
 
-### 5.3 低税率 6%
+- **Reduced rate 6%** — 6% (Financial services (金融服务), modern services (现代服务: IT, consulting, R&D, advertising, design, logistics support), telecom services, life services (生活服务: catering, accommodation, tourism, entertainment, consumer services).)  _(财税[2016]36号)_
 
-适用于：金融服务、现代服务（IT、咨询、研发、广告、设计、物流辅助、鉴证咨询）、增值电信服务、生活服务（餐饮、住宿、文娱、旅游、居民服务）、销售无形资产（除土地使用权外）。法律依据：财税〔2016〕36 号。
+### 5.4 Zero rate — exports
 
-### 5.4 零税率 —— 出口
+- **Zero rate — exports** — 0% (Exports of goods and eligible exported services (完全在境外消费 — consumed entirely outside China). Evidence: customs export declaration for goods; contracts and payment proof for services.)  _(增值税法 Article 2(3))_
 
-出口货物（凭报关单）、符合条件的出口服务（如完全在境外消费的研发服务、合同能源管理、技术转让等）。证据：货物 —— 出口报关单；服务 —— 合同、收汇凭证、在境外消费证明。法律依据：财税〔2016〕36 号附件 4；财税〔2012〕196 号。
+### 5.5 Exempt supplies
 
-### 5.5 免税供应
+- **Exempt supplies** — Medical and healthcare, education, childcare, elderly care, financial services (some), cultural services, residential rent, certain agricultural self-produced goods. No output VAT; no input credit on exempt revenues.  _(增值税法 Article 13; 营改增 exemption list)_
 
-医疗、教育、托儿养老、部分金融服务、文化体育、住宅出租、农业生产者销售自产农产品等。免税销售对应进项不可抵扣。法律依据：财税〔2016〕36 号附件 3 "营改增"免税清单。
+### 5.6 Input VAT credit rules
 
-### 5.6 进项抵扣规则
+- **Input VAT credit conditions** — Input VAT is deductible only when: A valid 增值税专用发票 (or customs import VAT certificate) is held; The invoice is verified in the Golden Tax System (金税系统); The purchase relates to taxable (not exempt) business activities; Invoice is within the 360-day certification window. Ordinary invoices (普通发票) do NOT generate input credits.
 
-进项税额可抵扣的条件：
-- 持有合法的 **增值税专用发票**（或海关进口增值税专用缴款书）；
-- 发票已在金税系统认证勾选；
-- 采购用途为应税项目（非免税、非集体福利、非个人消费）；
-- 在 360 日认证期限内（注：现行制度下专票已基本取消勾选时限，但仍以最新公告为准）。
+### 5.7 Small taxpayer (小规模纳税人) simplified calculation
 
-**不可抵扣** 的进项：
-- 用于免税项目、集体福利、个人消费、非正常损失的购进；
-- 凭普通发票（普票）取得 —— 不得抵扣；
-- 取得不动产（**2019.4.1 起一次性抵扣，分 2 年抵扣的旧规已取消**）。
+- **Small taxpayer simplified calculation** — Rate: 3% on gross sales (currently reduced to 1% for some sectors — verify current policy). No input credit. No special invoices issued (only ordinary invoices unless authorised). Filing: quarterly. Gross sales × 3% (or 1%) = VAT payable.
 
-农产品收购可凭收购发票或销售发票按 9%（部分深加工 10%）扣除率计算抵扣。
+### 5.8 Filing deadlines
 
-### 5.7 小规模纳税人简易计税
+**Filing deadlines table**
 
-征收率：3%（**疫情期间减按 1%，延续至 2027.12.31，以最新公告为准**）。
-- 不可抵扣进项；
-- 一般只能开具普通发票（部分行业可自开专票）；
-- 按季申报；
-- 应纳税额 = 含税销售额 ÷ (1 + 1%) × 1%（或 3% 时同理）；
-- 季度销售额不超过 30 万元免征。
+| Filer type | Period | Due date |
+| --- | --- | --- |
+| General taxpayer (monthly) | Monthly | 15th of following month |
+| General taxpayer (quarterly) | Quarterly | 15th of month following quarter |
+| Small taxpayer | Quarterly | 15th of month following quarter |
+| Annual reconciliation | Calendar year | 31 March following year |
 
-### 5.8 申报期限
+### 5.9 Penalties
 
-| 纳税人 | 纳税期 | 申报截止 |
-|---|---|---|
-| 一般纳税人（按月） | 月度 | 次月 15 日 |
-| 一般纳税人（按季） | 季度 | 季度终了次月 15 日 |
-| 小规模纳税人 | 季度 | 季度终了次月 15 日 |
-| 企业所得税汇算清缴 | 年度 | 次年 5 月 31 日（增值税无年度汇算） |
+**Penalties table**
 
-### 5.9 处罚
+| Offence | Penalty |
+| --- | --- |
+| Late filing | CNY 2,000–10,000 fine |
+| Late payment (滞纳金) | 0.05% per day of unpaid tax |
+| Understatement | 50%–500% of tax evaded |
+| False invoicing (虚开发票) | Criminal liability possible |
 
-| 违法行为 | 处罚 |
-|---|---|
-| 逾期申报 | 罚款 2,000 — 10,000 元 |
-| 逾期缴税 | 滞纳金每日 0.05% |
-| 偷税 / 少缴 | 偷税金额 50% — 5 倍罚款 |
-| 虚开发票 | 行政处罚至刑事责任（《刑法》第二百零五条） |
+## Section 6 — Tier 2 catalogue
 
----
+### 6.1 Export service qualification (境外消费确认)
 
-## 六、第二层（视同销售、混合销售、兼营、跨境零税率、出口退税）
+- **Export service qualification** — What it shows: Revenue from a foreign client. What's missing: Whether the service was consumed entirely outside China (required for zero-rating). Conservative default: 6% domestic rate. Question to ask: "Was this service fully consumed outside China? Can you provide the contract and evidence that the service output was used abroad?"
 
-### 6.1 视同销售（应防遗漏的销项）
+### 6.2 Mixed-rate retail purchases (supermarket)
 
-将自产货物用于以下情形，**视同销售**，须确认销项：
-- 投资、分配给股东；
-- 集体福利、个人消费；
-- 无偿赠送他人；
-- 抵债、捐赠（公益捐赠有专门规定）；
-- 跨县市移送他用（同一县市内不视同销售）。
+- **Mixed-rate retail purchases** — What it shows: Supermarket debit (Walmart, Carrefour, RT-Mart China). What's missing: Split between food items (9%) and non-food (13%). Conservative default: 13% (standard rate). Question to ask: "Do you have the itemised receipt showing food vs. non-food items?"
 
-计税依据顺序：同期同类平均价 → 近期销售价 → 组成计税价（成本 × (1 + 成本利润率)）。
+### 6.3 Invoice type — special vs. ordinary
 
-### 6.2 混合销售（一项业务同时含货物和服务）
+- **Invoice type special vs ordinary** — What it shows: Payment to a supplier. What's missing: Whether a 增值税专用发票 (special) or 普通发票 (ordinary) was received. Conservative default: No input credit (assume ordinary invoice). Question to ask: "Did you receive a 增值税专用发票 from this supplier, verified in the Golden Tax System?"
 
-定义：**一项**销售行为既涉及货物又涉及服务（如销售空调并安装）。
-处理：
-- 从事货物生产、批发、零售的单位 —— 按销售货物 13%；
-- 其他单位（如建筑、安装企业销售自产货物并提供安装）—— **可分别核算分别计税** —— 货物 13%、安装 9%。
-依据：财税〔2016〕36 号附件 1 第四十条；国家税务总局公告 2017 年 11 号。
+### 6.4 Foreign SaaS / tech services (non-blocked)
 
-### 6.3 兼营行为
+- **Foreign SaaS tech services non-blocked** — What it shows: Payment to an international software company accessible in China (Microsoft, Oracle, SAP via China entity). What's missing: Whether invoice is from China local entity (6% VAT invoiced) or foreign entity (withholding tax / no VAT credit). Conservative default: No input credit until invoice confirmed. Question to ask: "Is the invoice from a Chinese registered entity? Does it show a Chinese 税号 (TIN)?"
 
-定义：**两项以上**独立销售行为（如同时销售货物 13% 和提供咨询 6%）。
-处理：**分别核算**，分别适用各自税率。未分别核算的，从高适用税率。
+### 6.5 Partial exempt proration
 
-### 6.4 跨境零税率服务
+- **Partial exempt proration** — What it shows: Business makes both taxable and exempt sales. What's missing: The proration ratio for input VAT allocation. Conservative default: 0% credit on shared costs. Question to ask: "What proportion of your sales are taxable vs. exempt? Provide monthly breakdown."
 
-适用零税率的跨境服务（财税〔2016〕36 号附件 4）：
-- 研发服务、合同能源管理服务（服务地点在境外）；
-- 设计服务（境外不动产除外）；
-- 软件、电路设计、信息系统服务（完全在境外消费）；
-- 技术转让、技术咨询服务；
-- 离岸服务外包业务；
-- 转让无形资产（在境外使用）。
-
-**免税**（区别于零税率，不退进项）：跨境保险、跨境运输、向境外提供广告投放地在境外的广告服务等。
-
-### 6.5 出口退税（"免抵退"与"免退"）
-
-**注意：出口退税的具体计算与申报由专项技能或专业人员处理（参见拒绝清单 R-CN-5）。** 本节仅作概念说明：
-
-- **生产企业 —— 免抵退**：免征出口环节销项税额、抵减内销应纳税额、不足抵减部分予以退还。
-- **外贸企业 —— 免退**：免征出口环节销项税额，按购进专票上的税额（结合退税率）申请退税。
-- 退税率不一定等于征税率（部分商品退税率低于 13%）。
-
-### 6.6 进口环节增值税
-
-进口货物 = (关税完税价格 + 关税 + 消费税) × 进口环节税率（13% 或 9%）。
-凭海关进口增值税专用缴款书抵扣进项。
-
-### 6.7 不动产、固定资产
-
-- 取得不动产（2019.4.1 起）—— 进项 **一次性抵扣**（旧规分 2 年抵扣已废止）。
-- 自用固定资产取得 —— 凭专票一次性抵扣。
-- 用于免税或简易计税项目的固定资产 —— 不得抵扣。
-
-### 6.8 留抵退税
-
-部分行业、连续 6 个月增量留抵超过 50 万元且符合条件的纳税人，可申请期末留抵退税（财政部、税务总局公告 2022 年 14 号；2025 年扩围政策以最新公告为准）。
-
----
-
-## 七、增值税申报工作底稿
+## Section 7 — Excel working paper template
 
 ```
-中国增值税申报工作底稿 —— 增值税计算表
-所属期：____________  纳税人：____________  纳税人识别号：____________
-纳税人类型：[ ] 一般纳税人  [ ] 小规模纳税人
+CHINA VAT WORKING PAPER — 增值税计算表
+Period: ____________  Entity: ____________  TIN: ____________
 
-A. 销项税额（销项税额）
-  A1. 13% 销售额（不含税）                ___________
-  A2. 9% 销售额（不含税）                 ___________
-  A3. 6% 销售额（不含税）                 ___________
-  A4. 零税率（出口）销售额（不含税）       ___________
-  A5. 免税销售额（不含税）                ___________
-  A6. 销项税额合计 (A1×13% + A2×9% + A3×6%)  _______
+A. OUTPUT VAT (销项税额)
+  A1. Sales at 13% (net)                      ___________
+  A2. Sales at 9% (net)                       ___________
+  A3. Sales at 6% (net)                       ___________
+  A4. Zero-rated exports (net)                ___________
+  A5. Exempt sales (net)                      ___________
+  A6. Total output VAT (A1×13% + A2×9% + A3×6%)  _______
 
-B. 进项税额（进项税额）
-  B1. 专用发票 13% 不含税金额             ___________
-  B2. 专用发票 9% 不含税金额              ___________
-  B3. 专用发票 6% 不含税金额              ___________
-  B4. 海关进口增值税专用缴款书            ___________
-  B5. 农产品收购发票（按 9% 或 10% 计算扣除） ___________
-  B6. 进项税额合计                        ___________
-  B7. 进项税额转出（用于免税、集体福利等） ___________
-  B8. 可抵扣进项税额净额 (B6 − B7)        ___________
+B. INPUT VAT (进项税额)
+  B1. Purchases — special invoices 13% (net)  ___________
+  B2. Purchases — special invoices 9% (net)   ___________
+  B3. Purchases — special invoices 6% (net)   ___________
+  B4. Import VAT certificates (net)           ___________
+  B5. Total input VAT (B1×13% + B2×9% + B3×6% + B4)  ____
+  B6. Input VAT not deductible (转出)         ___________
+  B7. Net input VAT (B5 − B6)                 ___________
 
-C. 应纳税额
-  C1. 应纳税额 (A6 − B8)                  ___________
-  C2. 减免税额                            ___________
-  C3. 上期留抵                            ___________
-  C4. 本期应纳（或留抵）税额 (C1 − C2 − C3)  __________
+C. NET VAT PAYABLE
+  C1. Net VAT (A6 − B7)                       ___________
+  C2. VAT reduction credits                   ___________
+  C3. Prior period excess credit              ___________
+  C4. Net payable / (refund) (C1 − C2 − C3)  ___________
 
-D. 小规模纳税人简易计税（仅小规模适用）
-  D1. 含税销售额                          ___________
-  D2. 不含税销售额 = D1 ÷ (1 + 征收率)    ___________
-  D3. 应纳税额 = D2 × 征收率（1% 或 3%）  ___________
-  D4. 免税情形（季度 ≤ 30 万元）          [ ] 是 [ ] 否
-
-复核要点：
-  [ ] 所有专用发票已在金税系统认证勾选？
-  [ ] 出口销售已确认零税率适用资格（合同 + 收汇 + 在境外消费）？
-  [ ] 小规模纳税人销售额是否超过 500 万元（应转为一般纳税人）？
-  [ ] 用于免税 / 集体福利 / 个人消费的进项是否已转出？
-  [ ] 视同销售情形是否已识别并计税？
-  [ ] 混合销售 / 兼营是否分别核算？
-  [ ] 上期留抵是否正确结转？
-  [ ] 数电发票（金税四期）开具状态是否一致？
+REVIEWER FLAGS:
+  [ ] All special invoices verified in Golden Tax System?
+  [ ] Export qualification confirmed for zero-rated sales?
+  [ ] Small taxpayer threshold check (CNY 500,000)?
+  [ ] Any blocked/international SaaS invoice type confirmed?
+  [ ] Proration calculated for any exempt sales?
 ```
 
----
+## Section 8 — Bank statement reading guide
 
-## 八、银行流水分类指南
+### Common Chinese bank CSV formats
 
-### 常见中国银行 CSV 格式
+**Common Chinese bank CSV formats table**
 
-| 银行 | 关键字段 | 日期格式 | 金额格式 |
-|---|---|---|---|
-| 招商银行 CMB | 交易日期、摘要、交易金额、账户余额 | YYYY-MM-DD | CNY 两位小数 |
-| 工商银行 ICBC | 记账日期、交易摘要、收入金额、支出金额、账户余额 | YYYYMMDD | CNY |
-| 建设银行 CCB | 记账日期、对方户名、交易金额、余额 | YYYY-MM-DD | CNY |
-| 中国银行 BOC | 交易日期、摘要、贷方金额、借方金额、余额 | YYYY/MM/DD | CNY |
-| 支付宝 Alipay | 交易时间、交易对方、商品说明、收/支、金额 | YYYY-MM-DD HH:MM | CNY |
-| 微信支付 WeChat | 交易时间、交易类型、交易对方、金额 | YYYY-MM-DD HH:MM:SS | CNY |
+| Bank | Key columns | Date format | Amount format |
+| --- | --- | --- | --- |
+| 招商银行 CMB | 交易日期, 摘要, 交易金额, 账户余额 | YYYY-MM-DD | CNY with 2 decimals |
+| 工商银行 ICBC | 记账日期, 交易摘要, 收入金额, 支出金额, 账户余额 | YYYYMMDD | CNY |
+| 建设银行 CCB | 记账日期, 对方户名, 交易金额, 余额 | YYYY-MM-DD | CNY |
+| 中国银行 BOC | 交易日期, 摘要, 贷方金额, 借方金额, 余额 | YYYY/MM/DD | CNY |
+| 支付宝 Alipay | 交易时间, 交易对方, 商品说明, 收/支, 金额 | YYYY-MM-DD HH:MM | CNY |
+| 微信支付 WeChat | 交易时间, 交易类型, 交易对方, 金额 | YYYY-MM-DD HH:MM:SS | CNY |
 
-### 银行流水常见中文术语
+### Key Chinese banking terms
 
-| 中文 | 含义 | 分类提示 |
-|---|---|---|
-| 转账收入 | 流入款项 | 可能为收入 |
-| 转账支出 | 流出款项 | 可能为支出 |
-| 代扣 | 代扣代缴 / 自动扣款 | 订阅类支出 |
-| 手续费 | 手续费 | 银行收费 —— 免税 |
-| 利息 | 利息收入 | 免征增值税 |
-| 余额 | 账户余额 | 流转余额 —— 忽略 |
-| 摘要 | 交易摘要 | 关键分类字段 |
-| 对方户名 | 对方名称 | 关键识别字段 |
-| 外汇收入 | 外汇收款 | 可能为出口 |
-| 工资发放 | 发放工资 | 不属增值税征税范围 |
+**Key Chinese banking terms table**
 
-### 流水分类工作步骤
+| Chinese | Meaning | Classification hint |
+| --- | --- | --- |
+| 转账收入 | Incoming transfer | Potential revenue |
+| 转账支出 | Outgoing transfer | Potential expense |
+| 代扣 | Direct debit / auto-deduction | Subscription expense |
+| 手续费 | Handling fee | Bank charge — exempt |
+| 利息 | Interest | Exempt |
+| 余额 | Balance | Running balance — ignore |
+| 摘要 | Description/narrative | Key classification field |
+| 对方户名 | Counterparty name | Key identification field |
+| 外汇收入 | Foreign currency receipt | Potential export |
+| 工资发放 | Payroll disbursement | Out of VAT scope |
 
-1. 按第三节模式库匹配；
-2. 无匹配则套用第一节保守默认；
-3. 第二层项目（兼营、出口资格、混合销售、专票核验等）标记 "**待复核**"；
-4. 生成工作底稿并附复核要点。
+## Section 9 — Onboarding fallback
+
+If the client provides a bank statement but cannot immediately answer all questions:
+
+1. Classify using the pattern library (Section 3)
+2. Apply conservative defaults (Section 1)
+3. Mark all Tier 2 items as "PENDING — reviewer must confirm"
+4. Generate working paper with flags
 
 ```
-中国增值税开户问卷 —— 最少必答项
-1. 纳税人身份：一般纳税人 还是 小规模纳税人？
-2. 18 位 纳税人识别号（统一社会信用代码）？
-3. 申报频率：按月 / 按季？
-4. 是否有出口销售（零税率）？
-   如有：是否有报关单、收汇凭证、在境外消费证明？
-5. 是否有免税销售（如金融、住宅出租）？
-6. 是否对应大额采购均持有 增值税专用发票，并经金税系统认证？
-7. 是否使用境外 SaaS？由哪个实体开票？是否含中国税号？
-8. 是否存在跨境服务、混合销售或兼营？
+CHINA VAT ONBOARDING — MINIMUM QUESTIONS
+1. Are you a 一般纳税人 (general taxpayer) or 小规模纳税人 (small taxpayer)?
+2. Your 纳税人识别号 (TIN / 18-digit tax registration number)?
+3. Filing frequency: monthly or quarterly?
+4. Do you make any export sales (zero-rated)?
+   If yes: do you have customs declarations or foreign payment evidence?
+5. Do you make any exempt sales (e.g. financial services, residential rent)?
+6. For all large purchases: do you hold 增值税专用发票 verified in 金税系统?
+7. Any international SaaS subscriptions? Which ones and are invoices from China entities?
 ```
 
----
+## Section 10 — Reference material
 
-## 九、衔接金税四期 / 数电发票
+### Key legislation
 
-### 9.1 金税四期（Golden Tax Phase IV）
+**Key legislation table**
 
-金税四期为国家税务总局推行的下一代税收征管平台，核心特征：
-- **以数为本** —— 以"数电发票"为底层凭据；
-- **以票管税向以数治税转变** —— 银行流水、社保、海关、工商、不动产等数据全面打通；
-- **全国统一电子税务局** —— 各省逐步整合；
-- **风险预警** —— 异常发票、空壳企业、虚开骗税自动识别。
+| Topic | Reference |
+| --- | --- |
+| VAT Law | 增值税法 (effective 2026) / 增值税暂行条例 (Provisional Regulations) |
+| VAT rates | 财税[2016]36号; 财税[2018]32号 (rate reductions) |
+| Exemptions | 增值税法 Article 13 |
+| Input credit rules | 增值税法 Article 14; 财税[2016]36号 附件1 |
+| Export zero-rating | 增值税法 Article 2(3); 财税[2012]196号 |
+| e-Invoice | 税总发[2020]124号; 全面推行 nationwide rollout circulars |
+| Small taxpayer | 增值税法 Article 17; 小规模纳税人免税政策 |
+| Penalties | 税收征管法 (Tax Collection Administration Law) |
 
-实务影响：
-- 进销项发票数据系统自动归集，纳税人申报"预填表"功能逐步铺开；
-- 异常凭证（异常增值税扣税凭证）增多 —— 取得后须及时检查；
-- 个人税号（自然人税号）也纳入监管。
+### Known gaps
 
-### 9.2 数电发票（全国数字化电子发票）
+- VAT refund for exporters (出口退税) — out of scope; requires separate filing
+- Real estate and construction cross-period rules — escalate
+- Financial institution simplified VAT — escalate
+- Transfer pricing adjustments affecting VAT base — escalate
+- Cultural/media VAT exemptions — verify current policy
 
-- 自 2021 年起在部分省市试点，截至 **2024 — 2025 年已基本覆盖全国大部分地区**；
-- 替代传统增值税专用发票与普通发票的纸质 / 普通电子版本；
-- 通过 **电子发票服务平台**（票 e 通 / 各省电子税务局）直接开具，无需税控盘 / Ukey；
-- 开票额度按"动态授信额度"调整，由系统按纳税人风险等级自动测算；
-- 与受票方"用票确认"机制结合 —— 取得后须在系统勾选确认用途（抵扣 / 出口退税 / 代办退税）。
+### Self-check before filing
 
-### 9.3 实务衔接要点
+- [ ] All special invoices (专用发票) verified in Golden Tax System
+- [ ] Export sales supported by customs/payment evidence
+- [ ] Small taxpayer threshold confirmed
+- [ ] Input VAT not deductible (转出) calculated for exempt activities
+- [ ] Prior period excess credit applied correctly
 
-| 议题 | 要点 |
-|---|---|
-| 发票类型 | 数电票分"数电专票"（替代专票）与"数电普票"（替代普票） |
-| 抵扣方式 | 数电专票通过电子发票服务平台勾选确认，**取消 360 天勾选期限**（以最新公告为准） |
-| 红字发票 | 销售退回 / 折让 / 开票有误时开具红字数电发票 —— 一般无需对方确认（受票方未抵扣）或须协同确认（已抵扣） |
-| 跨境业务 | 通过电子税务局国际业务模块申报；零税率服务须留存合同 / 收汇凭证 |
-| 风险预警 | 进销不匹配、税负率偏离行业均值、长期零申报、走逃户预警等 |
-| 个税联动 | 自然人取得报酬通过自然人电子税务局监控；个人代开数电票同样并入金税四期 |
+### Changelog
 
-### 9.4 复核清单（金税四期 / 数电发票）
+**Changelog table**
 
-- [ ] 当期所有数电票已通过电子发票服务平台勾选确认抵扣 / 用途；
-- [ ] 异常凭证（异常扣税凭证）已识别并作进项转出；
-- [ ] 数电票与银行流水匹配，确认无空开 / 虚开风险；
-- [ ] 发票额度状态（动态授信）正常，未触发临时减额；
-- [ ] 红字数电票流程合规，原票号正确引用；
-- [ ] 与企业所得税申报数据交叉核对（金税四期已联动）。
+| Version | Date | Change |
+| --- | --- | --- |
+| 1.0 | 2024 | Initial release |
+| 2.0 | April 2026 | Full v2.0 rewrite: pattern library, worked examples, no inline tier tags |
 
----
+## Prohibitions
 
-## 十、参考资料
+- NEVER claim input credit from an ordinary invoice (普通发票) — special invoice required
+- NEVER apply 13% to transport or agricultural services — these are 9%
+- NEVER apply 6% to goods sales — goods are 13% (or 9% for agricultural)
+- NEVER allow small taxpayer (小规模) to claim input credits
+- NEVER zero-rate a service without confirming it was consumed entirely outside China
+- NEVER present calculations as definitive — direct to a 注册税务师 (CTA) for confirmation
 
-### 主要法律法规
+## Disclaimer
 
-| 主题 | 法律依据 |
-|---|---|
-| 增值税法（2026 生效） | 《中华人民共和国增值税法》（2024.12.25 通过，2026.1.1 施行） |
-| 增值税暂行条例（2025 仍适用） | 《中华人民共和国增值税暂行条例》及实施细则 |
-| 营改增 | 财税〔2016〕36 号《关于全面推开营业税改征增值税试点的通知》及附件 1—4 |
-| 税率调整 | 财税〔2018〕32 号、〔2019〕39 号 |
-| 不动产抵扣 | 财政部 税务总局 公告 2019 年第 39 号（一次性抵扣） |
-| 留抵退税 | 财政部 税务总局 公告 2022 年第 14 号及后续公告 |
-| 出口退税 | 财税〔2012〕39 号、〔2012〕196 号 |
-| 数电发票 | 国家税务总局公告 2021 年第 30 号及后续试点扩围公告 |
-| 小规模减免 | 财政部 税务总局 公告（疫情期间减按 1%，延续至 2027.12.31，以最新公告为准） |
-| 税收征管 | 《中华人民共和国税收征收管理法》及实施细则 |
-| 发票管理 | 《中华人民共和国发票管理办法》（2023 年修订） |
+This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes. All outputs must be reviewed by a qualified professional (注册税务师 or 注册会计师) before filing.
 
-### 已知盲区
-
-- 出口退税具体计算与申报 —— 超出范围，须升级；
-- 房地产、建筑业跨期、预缴 —— 升级；
-- 金融机构（银行、保险）专门计算 —— 升级；
-- 关联交易、转让定价对增值税计税基础的影响 —— 升级；
-- 文化体育、宗教等行业性免税明细 —— 须核对最新公告；
-- 个体工商户特殊政策 —— 须按地方公告确认；
-- 跨境电子商务综合试验区相关 "无票免税" 政策 —— 单独处理。
-
-### 申报前自检清单
-
-- [ ] 所有专用发票（含数电专票）已在金税 / 电子发票服务平台勾选确认；
-- [ ] 出口销售已附报关单 / 收汇凭证 / 境外消费证明；
-- [ ] 小规模 ↔ 一般纳税人临界点（500 万元）已检查；
-- [ ] 视同销售、混合销售、兼营是否准确识别？
-- [ ] 用于免税 / 集体福利 / 个人消费 / 非正常损失的进项已转出？
-- [ ] 上期留抵已正确结转；
-- [ ] 申报期与缴款期均在 15 日截止日前完成；
-- [ ] 金税四期风险预警已查询，无异常预警。
-
-### 版本记录
-
-| 版本 | 日期 | 变更 |
-|---|---|---|
-| 1.0 | 2024 | 首次发布 |
-| 2.0 | 2026.04 | 全面重写：模式库、计算示例、金税四期 / 数电发票衔接、视同销售 / 兼营 / 混合销售细化；移除内嵌 Tier 标签；2026.1.1 新增值税法生效说明 |
-
----
-
-## 禁止事项
-
-- 严禁凭 **普通发票** 抵扣进项 —— 必须为专用发票（含数电专票）；
-- 严禁对运输 / 农产品 / 不动产 / 建筑等适用 13% —— 这些为 9%；
-- 严禁对销售货物适用 6% —— 货物为 13%（农产品 9%）；
-- 严禁允许小规模纳税人抵扣进项；
-- 严禁未确认境外消费即按零税率处理出口服务；
-- 严禁将本技能输出当作终局意见 —— 须由 **注册税务师（CTA）** 或 **注册会计师（CPA）** 复核签字后方可申报。
-
----
-
-## 免责声明
-
-本技能与其输出仅供信息参考与计算辅助，不构成税务、法律或财务意见。Open Accountants 及其贡献者不对任何错漏或后果承担责任。所有输出在正式申报前必须由具备资格的中国 **注册税务师** 或 **注册会计师** 复核确认。
-
-最新版本以 openaccountants.com 维护版本为准。
-
----
+The most up-to-date version is maintained at openaccountants.com.
 
 <!-- openaccountants-cta-block -->
 
+---
+
 ## Talk to a verified accountant
 
-This skill is a tool, not an engagement. Every taxpayer's situation is
-different, and the rules in the skill may not match your specific facts.
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
 
-To speak with one of the licensed accountants who verifies skills for your
-jurisdiction — **no liability on either side until you and the accountant sign
-a formal engagement letter** — book a free 30-minute call:
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
 
-**→ [Book a call](https://calendly.com/openaccountants-info/30min)**
-
-We'll route you to the named verifier covering your country or state. You can
-also see the full list of verified accountants at
-[openaccountants.com/network](https://www.openaccountants.com/network).
-
-<!-- openaccountants-mcp-cta -->
-
-## The accountant-verified version lives in the connector
-
-This file is the open, **research-grade draft**. The **accountant-verified**
-version of this skill is **not published to GitHub** — it is delivered free
-through the OpenAccountants MCP connector, where your AI agent loads the
-verified rules together with the name of the accountant who signed them off.
-
-**→ Install the free connector:** <https://www.openaccountants.com/connect>
-**MCP endpoint:** `https://www.openaccountants.com/api/mcp`
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

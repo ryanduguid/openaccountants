@@ -1,27 +1,20 @@
 ---
 name: ua-return-assembly
 description: >
-  Use this skill as the final orchestrator that assembles the complete Ukrainian
-  ФОП (FOP) filing package for a Ukraine-resident sole proprietor. It consumes the
-  outputs of the Ukraine content skills (ua-single-tax, ua-income-tax,
-  ua-social-contributions, ukraine-vat) and produces one unified reviewer package:
-  the correct declaration, all schedules, the filing-and-payment calendar, and a
-  pre-filing checklist. It computes nothing itself. Trigger on phrases like "file my
-  Ukrainian return", "assemble my FOP declaration", "submit single-tax return
-  Ukraine", or "put together my ФОП filing package".
 version: 0.1
 jurisdiction: UA
 tax_year: 2026
-tier: 2
-last_updated: 2026-06-12
+last_updated: 2026-05-23
+verified_by: pending
+depends_on: - ua-freelance-intake
 category: orchestrator
-depends_on:
-  - ua-freelance-intake
+tier: 2
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Ukraine FOP Return-Assembly Orchestrator v0.1
+# UA Return Assembly
 
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+## Ukraine FOP Return-Assembly Orchestrator v0.1
 
 ## 1. What this file is
 
@@ -39,8 +32,6 @@ All tax figures come from the content skills. This orchestrator only sequences, 
 
 Do not re-interrogate scope that `ua-freelance-intake` already validated (ФОП vs ТОВ, simplified vs general, group, VAT status, residency). Trust the intake package; cross-check specific numbers during reconciliation only.
 
----
-
 ## 2. Inputs required
 
 **The structured intake package** from `ua-freelance-intake`:
@@ -54,8 +45,6 @@ Do not re-interrogate scope that `ua-freelance-intake` already validated (ФОП
 - `ukraine-vat` — VAT return box values and net VAT payable/refundable (registered FOPs only).
 
 If a required output is missing, halt and route back to the relevant content skill before assembling.
-
----
 
 ## 3. Decision tree — which declaration, which schedules
 
@@ -85,14 +74,16 @@ Notes:
 - ЄСВ "for self" is now reconciled through the **quarterly combined report** (об'єднана звітність з ЄСВ, ПДФО та військовим збором). For simplified FOPs, ЄСВ "for self" continues to be declared via Додаток 1 to the single-tax declaration; the combined report covers ЄСВ/PIT/military-levy where the FOP has **employees** or pays individuals.
 - VAT is always its own return on its own monthly cycle; it is never folded into the income or single-tax declaration.
 
----
-
 ## 4. Filing & payment calendar (tax year 2026)
+
+**Filing & payment calendar (tax year 2026)**
 
 Standard rule: if a deadline falls on a weekend or public holiday, it moves to the next working day. Dates below already reflect 2026 weekend shifts where confirmed.
 
+**Filing & payment calendar table**  _(MoF Order No. 578; tax.gov.ua)_
+
 | Obligation | Group 1 & 2 (simplified) | Group 3 (simplified) | General system |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | **Single-tax / income declaration — filing** | Annual: by **2 Mar 2026** (for 2025; 1 Mar is Sunday) | Quarterly, within 40 days of quarter-end: Q1 by **11 May 2026**, Q2 by **10 Aug 2026**, Q3 by **9 Nov 2026**, Q4/annual by **9 Feb 2027** | Annual property-and-income declaration: by **1 May 2026** (for 2025) |
 | **Single tax — payment** | **Monthly**, by the **20th** of each month (advance payment) | **Quarterly**, within 10 days of the filing deadline: Q1 by ~20 May, Q2 by ~20 Aug, Q3 by ~19 Nov, Q4 by ~19 Feb 2027 | n/a (pays PIT instead) |
 | **PIT (18%)** | n/a | n/a | Final settlement by **10 May 2026** (10 days after filing); advance instalments during the year |
@@ -104,8 +95,6 @@ Standard rule: if a deadline falls on a weekend or public holiday, it moves to t
 **2026 reporting change — abolition of the separate monthly report:** From 1 January 2026 the separate **monthly** ЄСВ / PIT / military-levy calculation (Податковий розрахунок) is abolished for FOPs and self-employed persons. It is replaced by a **quarterly combined report** (об'єднана звітність), first due for Q1 2026 within 40 calendar days of quarter-end (i.e. by ~10–11 May 2026). The report is one quarterly form that still breaks the figures out month-by-month inside it. The monthly cycle remains only for legal entities. Confirm the FOP files the combined report only where it has employees / pays individuals; a FOP with no employees declares ЄСВ "for self" through the declaration's Додаток 1.
 
 > The exact ЄСВ minimum, single-tax fixed amounts, and military-levy figures for 2026 come from the content skills, not this orchestrator. Do not hard-code them here.
-
----
 
 ## 5. Submission — Електронний кабінет + КЕП
 
@@ -127,8 +116,6 @@ Process:
 
 Store both квитанції with the package as proof of filing. A missing or rejected Квитанція №2 means the report is **not** filed — resolve the rejection reason and resubmit before the deadline.
 
----
-
 ## 6. Final pre-filing checklist
 
 - [ ] Regime confirmed from the intake package: simplified (group 1/2/3) **or** general system — exactly one.
@@ -145,8 +132,6 @@ Store both квитанції with the package as proof of filing. A missing or 
 - [ ] КЕП valid and not expired; access to the Електронний кабінет confirmed.
 - [ ] Two receipts captured after submission; **Квитанція №2 = «Прийнято»** for every report.
 - [ ] Qualified Ukrainian accountant has reviewed and signed off **before** filing.
-
----
 
 ## 7. Reference Material
 
@@ -172,8 +157,48 @@ Store both квитанції with the package as proof of filing. A missing or 
 
 *Figures, rates, and minimum-base amounts are owned by the content skills, not this orchestrator. Deadlines shift to the next working day on weekends/holidays — re-verify each year.*
 
----
-
 ## Disclaimer
 
-This skill performs **orchestration only**: it selects the correct declaration, sequences the content skills, builds the calendar, and packages the result. It computes no tax. Every figure, schedule, and return assembled here is **provisional** and must be reviewed and signed off by a **qualified Ukrainian accountant or auditor** before it is filed with the State Tax Service. Deadlines and form references reflect rules as understood for tax year 2026 and must be re-verified against tax.gov.ua / dps.gov.ua at filing time. The most up-to-date version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com).
+This skill performs **orchestration only**: it selects the correct declaration, sequences the content skills, builds the calendar, and packages the result. It computes no tax. Every figure, schedule, and return assembled here is **provisional** and must be reviewed and signed off by a **qualified Ukrainian accountant or auditor** before it is filed with the State Tax Service. Deadlines and form references reflect rules as understood for tax year 2026 and must be re-verified against tax.gov.ua / dps.gov.ua at filing time. The most up-to-date version of this skill is maintained at [openaccountants.com](https://openaccountants.com).
+
+## 2. Inputs required
+
+0. **Intake package input** — Consume structured intake package
+0. **Single tax skill invocation** — Consume single-tax liability output
+0. **Income tax skill invocation** — Consume general-system PIT/military levy output
+0. **Social contributions skill invocation** — Consume ЄСВ output by quarter
+0. **VAT skill invocation** — Consume VAT return box values and net VAT payable/refundable
+
+## 3. Decision tree — which declaration, which schedules
+
+0. **Select declaration** — Select correct declaration and schedules per decision tree
+
+## 4. Filing & payment calendar (tax year 2026)
+
+0. **Build calendar** — Lay out filing-and-payment calendar by group
+
+## 5. Submission — Електронний кабінет + КЕП
+
+0. **Submission guidance** — Describe submission via Електронний кабінет with КЕП
+
+## 6. Final pre-filing checklist
+
+0. **Run checklist** — Run final pre-filing checklist
+
+<!-- openaccountants-cta-block -->
+
+---
+
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

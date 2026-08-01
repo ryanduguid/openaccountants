@@ -1,26 +1,25 @@
 ---
 name: australia-bookkeeping
 description: >
-  Use this skill whenever asked about Australian bookkeeping for sole traders, partnerships, or small companies. Trigger on phrases like "chart of accounts", "BAS", "GST codes", "bookkeeping", "profit and loss", "balance sheet", "AASB", "simplified disclosures", "Tier 2", "bank reconciliation", "expense categories", "revenue recognition", "depreciation", "instant asset write-off", "small business pool", "ABN", "ATO reporting", "activity statement", "accrual basis", "cash basis", "general ledger", or any question about day-to-day transaction recording, financial statement preparation, or account coding for an Australian business.
 version: 1.0
 jurisdiction: AU
-tier: 2
-last_updated: 2026-06-12
+tax_year: 2025
+last_updated: 2026-05-23
+verified_by: pending
+depends_on: - bookkeeping-workflow-base
 category: bookkeeping
-depends_on:
-  - bookkeeping-workflow-base
+tier: 2
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Australia Bookkeeping Skill v1.0
-
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
-
----
+# Australia Bookkeeping
 
 ## Section 1 -- Quick Reference
 
+**Quick Reference**
+
 | Field | Value |
-|---|---|
+| --- | --- |
 | Country | Australia (Commonwealth of Australia) |
 | Currency | AUD ($) only |
 | Financial year | 1 July – 30 June (standard); substituted accounting period available for companies |
@@ -32,16 +31,16 @@ depends_on:
 | Small business entity threshold | Aggregated turnover < $10 million |
 | BAS lodgement | Quarterly (most small businesses) or monthly ($20m+ turnover) |
 
----
-
 ## Section 2 -- Standard Chart of Accounts
 
 Australian software (Xero, MYOB, QuickBooks) typically uses 3–4 digit codes. The structure below follows common Australian practice.
 
 ### Assets (1000–1999)
 
+**Assets (1000–1999)**
+
 | Code | Account | Type |
-|---|---|---|
+| --- | --- | --- |
 | 1000 | Cash on Hand / Petty Cash | Current asset |
 | 1010 | Business Bank Account | Current asset |
 | 1020 | Savings Account | Current asset |
@@ -69,8 +68,10 @@ Australian software (Xero, MYOB, QuickBooks) typically uses 3–4 digit codes. T
 
 ### Liabilities (2000–2999)
 
+**Liabilities (2000–2999)**
+
 | Code | Account | Type |
-|---|---|---|
+| --- | --- | --- |
 | 2000 | Accounts Payable (Trade Creditors) | Current liability |
 | 2010 | Other Creditors | Current liability |
 | 2020 | Accrued Expenses | Current liability |
@@ -89,8 +90,10 @@ Australian software (Xero, MYOB, QuickBooks) typically uses 3–4 digit codes. T
 
 ### Equity (3000–3999)
 
+**Equity (3000–3999)**
+
 | Code | Account | Type |
-|---|---|---|
+| --- | --- | --- |
 | 3000 | Share Capital / Owner's Equity | Equity |
 | 3010 | Owner's Drawings | Equity |
 | 3020 | Owner's Contributions | Equity |
@@ -100,8 +103,10 @@ Australian software (Xero, MYOB, QuickBooks) typically uses 3–4 digit codes. T
 
 ### Revenue (4000–4999)
 
+**Revenue (4000–4999)**
+
 | Code | Account | Type |
-|---|---|---|
+| --- | --- | --- |
 | 4000 | Sales Revenue — Taxable (GST 10%) | Revenue |
 | 4010 | Sales Revenue — GST-Free | Revenue |
 | 4020 | Sales Revenue — Input Taxed | Revenue |
@@ -115,8 +120,10 @@ Australian software (Xero, MYOB, QuickBooks) typically uses 3–4 digit codes. T
 
 ### Cost of Goods Sold (5000–5999)
 
+**Cost of Goods Sold (5000–5999)**
+
 | Code | Account | Type |
-|---|---|---|
+| --- | --- | --- |
 | 5000 | Purchases — Trading Stock | COGS |
 | 5010 | Purchases — Materials / Components | COGS |
 | 5020 | Freight Inward | COGS |
@@ -128,8 +135,10 @@ Australian software (Xero, MYOB, QuickBooks) typically uses 3–4 digit codes. T
 
 ### Operating Expenses (6000–6999)
 
+**Operating Expenses (6000–6999)**
+
 | Code | Account | Type |
-|---|---|---|
+| --- | --- | --- |
 | 6000 | Rent — Business Premises | Expense |
 | 6010 | Rates and Body Corporate | Expense |
 | 6020 | Electricity and Gas | Expense |
@@ -168,8 +177,10 @@ Australian software (Xero, MYOB, QuickBooks) typically uses 3–4 digit codes. T
 
 ### Other Income / Expenses (7000–7999)
 
+**Other Income / Expenses (7000–7999)**
+
 | Code | Account | Type |
-|---|---|---|
+| --- | --- | --- |
 | 7000 | Gain on Sale of Assets | Other income |
 | 7010 | Loss on Sale of Assets | Other expense |
 | 7020 | Foreign Exchange Gain/Loss | Other income/expense |
@@ -177,20 +188,22 @@ Australian software (Xero, MYOB, QuickBooks) typically uses 3–4 digit codes. T
 
 ### Tax (8000–8999)
 
+**Tax (8000–8999)**
+
 | Code | Account | Type |
-|---|---|---|
+| --- | --- | --- |
 | 8000 | Income Tax Expense | Tax |
 | 8010 | Deferred Tax Liability | Tax |
 | 8020 | Deferred Tax Asset | Tax |
-
----
 
 ## Section 3 -- Revenue Recognition
 
 ### Cash vs Accrual Rules
 
+**Cash vs Accrual Rules**
+
 | Criterion | Cash Basis (Sole Traders / Small Business) | Accruals Basis |
-|---|---|---|
+| --- | --- | --- |
 | Eligibility | Aggregated turnover < $10m (small business entity) | All entities; mandatory for reporting entities |
 | Income recognised | When cash received | When earned (invoice raised or goods delivered) |
 | Expenses recognised | When cash paid | When incurred (liability arises) |
@@ -208,14 +221,14 @@ Applies to reporting entities using Tier 1/Tier 2. Five-step model:
 
 Small businesses using simplified reporting typically recognise on delivery/completion.
 
----
-
 ## Section 4 -- Expense Classification
 
 ### ATO Individual Tax Return Categories (Sole Trader — Business Schedule)
 
+**ATO Individual Tax Return Categories (Sole Trader — Business Schedule)**
+
 | Item | Category | Nominal Codes |
-|---|---|---|
+| --- | --- | --- |
 | A | All other business income | 4000–4500 |
 | B | Cost of sales | 5000–5200 |
 | C | Contractors and commission | 5040 |
@@ -239,44 +252,52 @@ Small businesses using simplified reporting typically recognise on delivery/comp
 
 ### GST Classification for BAS
 
+**GST Classification for BAS**
+
 | GST Code | Description | BAS Label |
-|---|---|---|
+| --- | --- | --- |
 | GST (10%) | Standard taxable supply | G1, 1A |
 | GST-Free | Food (basic), medical, education, exports | G1 (no 1A) |
 | Input Taxed | Financial supplies, residential rent | G1 (no credit) |
 | BAS Excluded | Wages, drawings, loan principal, private | Not reported |
 | No ABN Withholding | Payments to suppliers without ABN (49% w/h) | Separate |
 
----
-
 ## Section 5 -- Asset vs Expense Thresholds
 
 ### Instant Asset Write-Off (IAWO)
 
+**Instant Asset Write-Off (IAWO)**
+
 | Period | Threshold | Eligibility |
-|---|---|---|
+| --- | --- | --- |
 | 1 Jul 2023 – 30 Jun 2026 | < $20,000 per asset | Aggregated turnover < $10m, using simplified depreciation |
 | Permanent (from 1 Jul 2026) | < $20,000 per asset | Announced in 2026 Budget — made permanent |
 
 ### Small Business Pool (Simplified Depreciation)
 
+**Small Business Pool (Simplified Depreciation)**
+
 | Pool | Rate | Notes |
-|---|---|---|
+| --- | --- | --- |
 | Year 1 (first use) | 15% | On cost (or adjustable value if added later) |
 | Subsequent years | 30% | On opening pool balance |
 | Pool balance < IAWO threshold | Write off entire pool | End-of-year check |
 
 ### General (Non-SB) Depreciation
 
+**General (Non-SB) Depreciation**
+
 | Method | Application |
-|---|---|
+| --- | --- |
 | Diminishing value | rate = days held ÷ 365 × (200% ÷ effective life) |
 | Prime cost (straight-line) | rate = days held ÷ 365 × (100% ÷ effective life) |
 
 ### Common Effective Lives (ATO TR 2025/1 basis)
 
+**Common Effective Lives (ATO TR 2025/1 basis)**  _(ATO TR 2025/1)_
+
 | Asset | Effective Life | DV Rate | PC Rate |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Desktop computers | 4 years | 50% | 25% |
 | Laptops | 4 years | 50% | 25% |
 | Printers/Scanners | 5 years | 40% | 20% |
@@ -287,9 +308,7 @@ Small businesses using simplified reporting typically recognise on delivery/comp
 
 ### Car Limit
 
-For 2025–26, the car cost limit for depreciation purposes is $69,674. Only the business-use portion of this amount can be depreciated.
-
----
+- **Car cost limit for depreciation (2025–26)** — $69,674 AUD (Only the business-use portion of this amount can be depreciated)
 
 ## Section 6 -- P&L Format
 
@@ -343,8 +362,6 @@ BUSINESS EXPENSES
 
 NET INCOME OR LOSS FROM BUSINESS              xxx
 ```
-
----
 
 ## Section 7 -- Balance Sheet Format
 
@@ -401,14 +418,14 @@ TOTAL EQUITY                                          xxx
                                                      ════
 ```
 
----
-
 ## Section 8 -- Bank Reconciliation Patterns
 
 ### Common Australian Bank Formats
 
+**Common Australian Bank Formats**
+
 | Bank | Export Format | Key Fields |
-|---|---|---|
+| --- | --- | --- |
 | Commonwealth Bank (CBA) | CSV, OFX, QIF | Date, Amount, Description, Balance |
 | ANZ | CSV, OFX | Date, Description, Amount, Type |
 | Westpac | CSV, OFX, QIF | Date, Narration, Debit, Credit, Balance |
@@ -419,8 +436,10 @@ TOTAL EQUITY                                          xxx
 
 ### Common Transaction Descriptions
 
+**Common Transaction Descriptions**
+
 | Pattern | Likely Classification |
-|---|---|
+| --- | --- |
 | DIRECT CREDIT, BPAY CREDIT | Income — customer payment |
 | EFTPOS, VISA PURCHASE, DEBIT CARD | Expense — check merchant |
 | DIRECT DEBIT, D/D | Regular expense (insurance, subscription, utility) |
@@ -434,14 +453,14 @@ TOTAL EQUITY                                          xxx
 | SUPER STREAM, SUPER CLEARING | Superannuation (6110) |
 | XERO, STRIPE, SQUARE PAYOUT | Platform payout — match to invoices |
 
----
-
 ## Section 9 -- Micro-Entity / Small Business Simplifications
 
 ### Small Business Entity Concessions (turnover < $10m)
 
+**Small Business Entity Concessions (turnover < $10m)**
+
 | Concession | Detail |
-|---|---|
+| --- | --- |
 | Simplified depreciation | Instant write-off < $20,000; pool balance at 15%/30% |
 | Simplified trading stock | No stock-take if estimate change ≤ $5,000 |
 | Prepaid expenses | Immediate deduction if < 12 months and service period ends before next year |
@@ -452,8 +471,10 @@ TOTAL EQUITY                                          xxx
 
 ### Reporting Tiers
 
+**Reporting Tiers**
+
 | Tier | Who | Standards | Required Statements |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Tier 1 (Full AASB / IFRS) | Large proprietary companies, public companies, registered schemes | Full recognition + full disclosure | All 5 statements + notes |
 | Tier 2 (AASB 1060 Simplified) | Non-publicly accountable entities electing Tier 2 | Full recognition, reduced disclosure | All 5 statements + reduced notes |
 | Special Purpose (legacy) | Non-reporting entities (winding down) | Flexible | Varies (being phased out by 30 Jun 2023 for large) |
@@ -461,9 +482,7 @@ TOTAL EQUITY                                          xxx
 
 ### Large Proprietary Thresholds (must be reporting entity)
 
-Meet 2 of 3: Revenue ≥ $50m, assets ≥ $25m, employees ≥ 100.
-
----
+- **Large Proprietary Thresholds** — Meet 2 of 3: Revenue ≥ $50m, assets ≥ $25m, employees ≥ 100.
 
 ## Section 10 -- Interaction with Tax Skills
 
@@ -477,8 +496,10 @@ Meet 2 of 3: Revenue ≥ $50m, assets ≥ $25m, employees ≥ 100.
 
 ### BAS / GST Return
 
+**BAS / GST Return**
+
 | BAS Label | Description | CoA Mapping |
-|---|---|---|
+| --- | --- | --- |
 | G1 | Total sales (incl. GST-free and input taxed) | 4000–4500 |
 | 1A | GST on sales | 2050 |
 | 1B | GST on purchases (Input Tax Credits) | 1150 |
@@ -501,8 +522,39 @@ Meet 2 of 3: Revenue ≥ $50m, assets ≥ $25m, employees ≥ 100.
 - Common items: car fringe benefit, entertainment, loan fringe benefit
 - Meals/entertainment: 50/50 method available — 50% deductible for income tax, 50% subject to FBT
 
----
-
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, CA, registered tax agent, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
+
+## Talk to a verified accountant
+
+This skill is a tool, not an engagement. Every taxpayer's situation is
+different, and the rules in the skill may not match your specific facts.
+
+To speak with one of the licensed accountants who verifies skills for your
+jurisdiction — **no liability on either side until you and the accountant sign
+a formal engagement letter** — book a free 30-minute call:
+
+**→ [Book a call](https://calendly.com/openaccountants-info/30min)**
+
+We'll route you to the named verifier covering your country or state. You can
+also see the full list of verified accountants at
+[openaccountants.com/network](https://openaccountants.com/network).
+
+<!-- openaccountants-cta-block -->
+
+---
+
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

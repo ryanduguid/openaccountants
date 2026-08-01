@@ -1,22 +1,31 @@
 ---
 name: italy-einvoice
 description: >
-  Use this skill whenever asked about Italian e-invoicing, FatturaPA, Sistema di Interscambio (SDI), electronic invoicing compliance in Italy, Codice Destinatario, PEC invoicing, fattura elettronica, TD document types, cross-border e-invoicing via SDI, conservazione sostitutiva, or any question about issuing, receiving, validating, or archiving electronic invoices in Italy. Also trigger when preparing or reviewing XML invoices for SDI submission, handling SDI rejection (scarto) errors, configuring Codice Destinatario or PEC routing, or advising on FatturaPA technical format compliance. This skill covers the FatturaPA XML schema, SDI transmission channels, mandatory fields, validation rules, archiving, penalties, and interaction with Italian VAT returns. ALWAYS read this skill before touching any Italian e-invoicing work.
 version: 1.0
 jurisdiction: IT
+tax_year: 2025
+last_updated: 2026-05-23
+verified_by: pending
+depends_on: - einvoice-workflow-base
 category: invoicing
-depends_on:
-  - einvoice-workflow-base
+tier: 2
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Italy E-Invoicing -- FatturaPA / SDI Skill v1.0
+# Italy Einvoice
 
----
+## Italy E-Invoicing -- FatturaPA / SDI Skill v1.0
 
 ## Section 1 -- Quick Reference
 
+**Quick Reference**
+
+placeholder
+
+**Quick Reference**
+
 | Field | Value |
-|---|---|
+| --- | --- |
 | Country | Italy (Repubblica Italiana) |
 | Currency | EUR |
 | E-invoicing system | Sistema di Interscambio (SDI) |
@@ -32,14 +41,14 @@ depends_on:
 | EU derogation expires | 31 December 2027 (unless superseded by ViDA) |
 | Skill version | 1.0 |
 
----
-
 ## Section 2 -- Mandate Scope
 
 ### Who Must Comply
 
+**Who Must Comply**
+
 | Scope | Requirement |
-|---|---|
+| --- | --- |
 | B2G | Mandatory for all suppliers to public administrations since 2014 |
 | B2B | Mandatory for all domestic transactions between VAT-registered businesses since 1 January 2019 |
 | B2C | Mandatory since 2019 -- consumer invoices must transit SDI (consumer receives PDF copy) |
@@ -55,8 +64,10 @@ depends_on:
 
 ### Timeline Summary
 
+**Timeline Summary**
+
 | Date | Milestone |
-|---|---|
+| --- | --- |
 | June 2014 | B2G mandate begins |
 | January 2019 | B2B and B2C mandate for all except forfettari |
 | July 2022 | Esterometro abolished -- cross-border reporting migrates to SDI |
@@ -64,14 +75,14 @@ depends_on:
 | April 2025 | FatturaPA v1.9 specifications effective (TD29, RF20 updates) |
 | December 2027 | Current EU derogation expiry |
 
----
-
 ## Section 3 -- Technical Format
 
 ### Format Specification
 
+**Format Specification**
+
 | Parameter | Value |
-|---|---|
+| --- | --- |
 | Format | FatturaPA XML (proprietary, not EN 16931) |
 | Schema version | v1.9 (VFSM10.xsd) |
 | Root element | `<FatturaElettronica>` |
@@ -102,8 +113,10 @@ The FatturaPA file consists of three top-level complex types:
 
 ### Document Types (TipoDocumento)
 
+**Document Types (TipoDocumento)**
+
 | Code | Description |
-|---|---|
+| --- | --- |
 | TD01 | Standard invoice |
 | TD02 | Advance/down payment invoice |
 | TD04 | Credit note |
@@ -121,14 +134,14 @@ The FatturaPA file consists of three top-level complex types:
 | TD28 | San Marino purchases |
 | TD29 | Irregular supplier invoice reporting (new in v1.9) |
 
----
-
 ## Section 4 -- Mandatory Fields
 
 ### Header Fields (FatturaElettronicaHeader)
 
+**Header Fields (FatturaElettronicaHeader)**
+
 | XML Path | Field | Required |
-|---|---|---|
+| --- | --- | --- |
 | `DatiTrasmissione/IdTrasmittente/IdPaese` | Sender country code | Yes |
 | `DatiTrasmissione/IdTrasmittente/IdCodice` | Sender tax ID | Yes |
 | `DatiTrasmissione/ProgressivoInvio` | Progressive sending number | Yes |
@@ -142,8 +155,10 @@ The FatturaPA file consists of three top-level complex types:
 
 ### Body Fields (FatturaElettronicaBody)
 
+**Body Fields (FatturaElettronicaBody)**
+
 | XML Path | Field | Required |
-|---|---|---|
+| --- | --- | --- |
 | `DatiGenerali/DatiGeneraliDocumento/TipoDocumento` | Document type (TD01, etc.) | Yes |
 | `DatiGenerali/DatiGeneraliDocumento/Divisa` | Currency (ISO 4217) | Yes |
 | `DatiGenerali/DatiGeneraliDocumento/Data` | Invoice date (YYYY-MM-DD) | Yes |
@@ -161,14 +176,14 @@ The FatturaPA file consists of three top-level complex types:
 | `DatiPagamento/DettaglioPagamento/ModalitaPagamento` | Payment method | Yes (if payment section present) |
 | `DatiPagamento/DettaglioPagamento/ImportoPagamento` | Payment amount | Yes (if payment section present) |
 
----
-
 ## Section 5 -- Transmission Method
 
 ### SDI Channels
 
+**SDI Channels**
+
 | Channel | Description | Use Case |
-|---|---|---|
+| --- | --- | --- |
 | SDICoop (Web Service) | SOAP-based web service | High-volume automated B2B |
 | SDIFTP | Secure FTP with mutual TLS | Legacy system integration |
 | SPCoop | Public connectivity system | B2G via PA network |
@@ -184,8 +199,10 @@ The FatturaPA file consists of three top-level complex types:
 
 ### Submission Deadlines
 
+**Submission Deadlines**
+
 | Invoice Type | Deadline |
-|---|---|
+| --- | --- |
 | Immediate invoice | 12 days from transaction date |
 | Deferred invoice (TD24) | 15th of month following the reference month |
 | Cross-border (TD17--TD19) | 15th of month following receipt of foreign invoice |
@@ -198,14 +215,14 @@ The FatturaPA file consists of three top-level complex types:
 4. If invalid → SDI issues rejection notice (Notifica di Scarto) within 5 days
 5. Rejected invoices are treated as never issued -- must be corrected and resubmitted within 5 days
 
----
-
 ## Section 6 -- Validation Rules
 
 ### SDI Pre-Checks (Automated)
 
+**SDI Pre-Checks (Automated)**
+
 | Check | Error Code Range | Description |
-|---|---|---|
+| --- | --- | --- |
 | Schema validation | 00001--00100 | XML does not conform to FatturaPA XSD |
 | Duplicate detection | 00404 | Same sender, invoice number, date, and recipient already processed |
 | VAT number validation | 00301--00305 | IdFiscaleIVA not registered in Anagrafe Tributaria |
@@ -215,8 +232,10 @@ The FatturaPA file consists of three top-level complex types:
 
 ### Common Rejection Reasons
 
+**Common Rejection Reasons**
+
 | Issue | Resolution |
-|---|---|
+| --- | --- |
 | Invalid Partita IVA | Verify against VIES or AdE registry |
 | Duplicate invoice number | Check progressive numbering; reissue with different number |
 | Incorrect TipoDocumento | Match document type to transaction (e.g., TD04 for credit notes) |
@@ -224,14 +243,14 @@ The FatturaPA file consists of three top-level complex types:
 | Rounding errors | VAT amount must match: ImponibileImporto × AliquotaIVA / 100, rounded to 2 decimal places |
 | Expired digital certificate | Renew CAdES or XAdES certificate before submission |
 
----
-
 ## Section 7 -- Tax Computation Rules
 
 ### VAT Rates (2025/2026)
 
+**VAT Rates (2025/2026)**
+
 | Rate | Application |
-|---|---|
+| --- | --- |
 | 22% | Standard rate |
 | 10% | Reduced rate (hospitality, renovation, certain food) |
 | 5% | Super-reduced (specific goods) |
@@ -240,10 +259,10 @@ The FatturaPA file consists of three top-level complex types:
 
 ### Rounding
 
-- Line-level: `PrezzoTotale = PrezzoUnitario × Quantita`, rounded to 2 decimal places
-- Summary-level: `Imposta = ImponibileImporto × AliquotaIVA / 100`, rounded to 2 decimal places
-- Standard arithmetic rounding (0.5 rounds up)
-- SDI rejects invoices where computed VAT differs from stated VAT by more than EUR 1.00 per rate summary line
+- **Line-level rounding** — PrezzoTotale = PrezzoUnitario × Quantita, rounded to 2 decimal places
+- **Summary-level rounding** — Imposta = ImponibileImporto × AliquotaIVA / 100, rounded to 2 decimal places
+- **Standard arithmetic rounding** — 0.5 rounds up
+- **SDI rejection tolerance** — SDI rejects invoices where computed VAT differs from stated VAT by more than EUR 1.00 per rate summary line
 
 ### Multi-Rate Invoices
 
@@ -251,14 +270,14 @@ Each VAT rate on the invoice must have its own `DatiRiepilogo` block with separa
 
 ### Split Payment (Scissione dei Pagamenti)
 
-For B2G transactions and certain designated entities, the buyer withholds VAT and pays it directly to the Treasury. Set `EsigibilitaIVA` to `S` (split payment). The seller invoices the gross amount but receives only the net.
-
----
+- **Split Payment rule** — For B2G transactions and certain designated entities, the buyer withholds VAT and pays it directly to the Treasury. Set EsigibilitaIVA to S (split payment). The seller invoices the gross amount but receives only the net.
 
 ## Section 8 -- Archiving Requirements
 
+**Archiving Requirements**
+
 | Requirement | Detail |
-|---|---|
+| --- | --- |
 | Retention period | 10 years (conservazione sostitutiva) |
 | Format | Original XML as received/sent via SDI |
 | Digital signature | Time-stamped qualified electronic signature required on archived documents |
@@ -268,12 +287,12 @@ For B2G transactions and certain designated entities, the buyer withholds VAT an
 | Third-party archiving | Must use AGID-accredited conservators (Conservatori Accreditati) |
 | Audit access | Tax authorities may request full read access to the archive at any time |
 
----
-
 ## Section 9 -- Penalties for Non-Compliance
 
+**Penalties for Non-Compliance**
+
 | Violation | Penalty |
-|---|---|
+| --- | --- |
 | Failure to issue e-invoice via SDI | 90%--180% of VAT amount per invoice (Art. 6, D.Lgs. 471/1997) |
 | Minimum fine (no VAT impact) | EUR 250--2,000 per invoice |
 | Late submission to SDI (correct VAT settlement) | EUR 250--2,000 per document |
@@ -281,8 +300,6 @@ For B2G transactions and certain designated entities, the buyer withholds VAT an
 | Failure to maintain compliant digital archive | Penalties under D.Lgs. 82/2005 (Codice dell'Amministrazione Digitale) |
 | Rejected invoice not corrected within 5 days | Invoice treated as never issued -- full non-issuance penalties apply |
 | Reduced penalty (ravvedimento operoso) | Reduced to 1/9 if corrected within 90 days; 1/8 within annual return deadline |
-
----
 
 ## Section 10 -- Interaction with Tax Skills
 
@@ -305,17 +322,11 @@ For B2G transactions and certain designated entities, the buyer withholds VAT an
 - For professional services (TD06 parcella), the `DatiRitenuta` block in FatturaPA records withholding tax (ritenuta d'acconto) details
 - Withholding amount, rate, and payment type flow into the Certificazione Unica (CU) and Modello 770
 
----
-
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a commercialista, tax attorney, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
 
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
-
----
-
-<!-- openaccountants-cta-block -->
+The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
 
 ## Talk to a verified accountant
 
@@ -330,16 +341,22 @@ a formal engagement letter** — book a free 30-minute call:
 
 We'll route you to the named verifier covering your country or state. You can
 also see the full list of verified accountants at
-[openaccountants.com/network](https://www.openaccountants.com/network).
+[openaccountants.com/network](https://openaccountants.com/network).
 
-<!-- openaccountants-mcp-cta -->
+<!-- openaccountants-cta-block -->
 
-## The accountant-verified version lives in the connector
+---
 
-This file is the open, **research-grade draft**. The **accountant-verified**
-version of this skill is **not published to GitHub** — it is delivered free
-through the OpenAccountants MCP connector, where your AI agent loads the
-verified rules together with the name of the accountant who signed them off.
+## Talk to a verified accountant
 
-**→ Install the free connector:** <https://www.openaccountants.com/connect>
-**MCP endpoint:** `https://www.openaccountants.com/api/mcp`
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

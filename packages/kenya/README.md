@@ -7,9 +7,15 @@
 
 1. `foundation.md`
 2. `intake.md`
-3. `ke-income-tax.md`
-4. `ke-nhif-nssf.md`
-5. `kenya-vat.md`
+3. `ke-company-formation.md`
+4. `ke-corporate-income-tax.md`
+5. `ke-income-tax-2.md`
+6. `ke-income-tax.md`
+7. `ke-nhif-nssf.md`
+8. `ke-tax-overview.md`
+9. `kenya-vat.md`
+10. `the-burden-of-proof-in-tax-cases.md`
+11. `company-formation-workflow-base.md`
 
 ## Also known as
 

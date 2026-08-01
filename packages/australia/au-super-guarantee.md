@@ -1,23 +1,25 @@
 ---
 name: au-super-guarantee
 description: >
-  Use this skill whenever asked about Australian Superannuation Guarantee (SG) obligations, voluntary super contributions, concessional and non-concessional caps, Division 293 tax, government co-contribution, spouse contribution tax offset, carry-forward rules, or any question about super for sole traders or employers. Trigger on phrases like "how much super do I pay", "SG rate", "super guarantee", "concessional cap", "Division 293", "salary sacrifice super", "personal super contribution deduction", "co-contribution", "BPAY super", "ATO super clearing house", "super fund contribution", or any question about Australian superannuation. Also trigger when classifying bank statement transactions showing super fund payments, BPAY super debits, or ATO Small Business Super Clearing House (SBSCH) payments. ALWAYS read this skill before touching any SG-related work.
 version: 2.0
 jurisdiction: AU
-tax_year: 2024-25
+tax_year: 2024
+last_updated: 2026-04-13
+verified_by: pending
+depends_on: - social-contributions-workflow-base
 category: international
-depends_on:
-  - social-contributions-workflow-base
+tier: 2
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Australia Superannuation Guarantee (SG) -- Sole Trader & Employer Skill v2.0
+# AU Super Guarantee
 
 ## Section 1 -- Quick reference
 
-**Read this whole section before computing or classifying anything.**
+**Quick reference table**
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | Country | Australia |
 | Primary Legislation | Superannuation Guarantee (Administration) Act 1992 (SGAA 1992) |
 | Supporting Legislation | SIS Act 1993; ITAA 1997 Div 290-293; Co-contribution Act 2003 |
@@ -37,10 +39,12 @@ depends_on:
 | Validated by | Pending |
 | Validation date | April 2026 |
 
-**Conservative defaults:**
+**Read this whole section before computing or classifying anything.**
+
+**Conservative defaults**
 
 | Ambiguity | Default |
-|---|---|
+| --- | --- |
 | Unknown entity structure | Ask -- sole trader vs company affects SG obligation |
 | Unknown whether sole trader has employees | Ask -- determines SG requirement |
 | Unknown SG rate year | 2024-25 = 11.5%; 2025-26 = 12% |
@@ -48,29 +52,20 @@ depends_on:
 | Unknown s 290-150 notice status | Assume NOT lodged; warn about deadline |
 | Unknown contractor vs employee | Flag for reviewer -- multi-factor test |
 
----
-
 ## Section 2 -- Required inputs and refusal catalogue
 
 ### Required inputs
 
-**Minimum viable** -- entity structure (sole trader / company / trust / partnership), whether client has employees, OTE per quarter (for employers), and voluntary contribution intent (for sole traders).
-
-**Recommended** -- bank statements showing super fund debits, employee roster with OTE, TSB at 30 June prior year, taxable income for Division 293.
-
-**Ideal** -- complete activity statement data, super fund member statements, s 290-150 notice copies, ATO online account showing contribution caps.
+- **Minimum viable inputs** — entity structure (sole trader / company / trust / partnership), whether client has employees, OTE per quarter (for employers), and voluntary contribution intent (for sole traders).
+- **Recommended inputs** — bank statements showing super fund debits, employee roster with OTE, TSB at 30 June prior year, taxable income for Division 293.
+- **Ideal inputs** — complete activity statement data, super fund member statements, s 290-150 notice copies, ATO online account showing contribution caps.
 
 ### Refusal catalogue
 
-**R-AU-SG-1 -- Defined benefit funds.** *Trigger:* client has a defined benefit fund. *Message:* "Defined benefit fund calculations are actuarially determined and out of scope. Escalate."
-
-**R-AU-SG-2 -- Constitutionally protected funds.** *Trigger:* client has a constitutionally protected state fund. *Message:* "Out of scope. Escalate."
-
-**R-AU-SG-3 -- Family law splits.** *Trigger:* super splitting in divorce. *Message:* "Family law superannuation splits require legal advice. Out of scope."
-
-**R-AU-SG-4 -- SGC penalty computation.** *Trigger:* client has missed SG deadlines and asks about SGC. *Message:* "Super Guarantee Charge computation should be escalated to a qualified practitioner. SGC includes shortfall + 10% nominal interest + $20 per employee per quarter, and is NOT tax-deductible."
-
----
+- **R-AU-SG-1 -- Defined benefit funds** — Trigger: client has a defined benefit fund. Message: "Defined benefit fund calculations are actuarially determined and out of scope. Escalate."  _(R-AU-SG-1)_
+- **R-AU-SG-2 -- Constitutionally protected funds** — Trigger: client has a constitutionally protected state fund. Message: "Out of scope. Escalate."  _(R-AU-SG-2)_
+- **R-AU-SG-3 -- Family law splits** — Trigger: super splitting in divorce. Message: "Family law superannuation splits require legal advice. Out of scope."  _(R-AU-SG-3)_
+- **R-AU-SG-4 -- SGC penalty computation** — Trigger: client has missed SG deadlines and asks about SGC. Message: "Super Guarantee Charge computation should be escalated to a qualified practitioner. SGC includes shortfall + 10% nominal interest + $20 per employee per quarter, and is NOT tax-deductible."  _(R-AU-SG-4)_
 
 ## Section 3 -- Payment pattern library
 
@@ -78,8 +73,10 @@ This is the deterministic pre-classifier for bank statement transactions related
 
 ### 3.1 Super fund contributions (employer SG or personal)
 
+**Super fund contributions pattern table**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | SUPER, SUPERANNUATION | EXCLUDE -- super contribution | Generic super payment |
 | AUSTRALIAN SUPER, AUSTSUPER | EXCLUDE -- super contribution | AustralianSuper fund |
 | REST, REST SUPER | EXCLUDE -- super contribution | Retail Employees Super |
@@ -96,40 +93,48 @@ This is the deterministic pre-classifier for bank statement transactions related
 
 ### 3.2 BPAY super payments
 
+**BPAY super payments pattern table**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | BPAY SUPER, BPAY (+ fund name) | EXCLUDE -- super contribution | BPAY is common payment method for super |
 | BPAY (biller code matching known super fund) | EXCLUDE -- super contribution | Check BPAY biller code |
 
 ### 3.3 ATO Small Business Super Clearing House (SBSCH)
 
+**ATO SBSCH pattern table**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | ATO SUPER, ATO CLEARING HOUSE | EXCLUDE -- super contribution | Small businesses (<20 employees) can pay SG via ATO SBSCH |
 | ATO SBSCH | EXCLUDE -- super contribution | Clearing house payment |
 | SMALL BUSINESS SUPERANNUATION | EXCLUDE -- super contribution | ATO SBSCH reference |
 
 ### 3.4 Super guarantee charge (SGC -- late/missed SG)
 
+**SGC pattern table**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | ATO SGC, SUPER GUARANTEE CHARGE | EXCLUDE -- SGC payment | Late SG penalty payment to ATO |
 
 ### 3.5 Salary and wages (not super)
 
+**Salary and wages pattern table**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | SALARY, WAGES (outgoing) | Not super | Payroll expense -- SG is separate from wages |
 | PAYROLL | Not super | Wages payment |
 
 ### 3.6 ATO tax payments (not super)
 
+**ATO tax payments pattern table**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | ATO IAS, ATO BAS | EXCLUDE -- tax | Activity statement payment (PAYG/GST) |
 | ATO INCOME TAX | EXCLUDE -- tax | Not super |
-
----
 
 ## Section 4 -- Worked examples
 
@@ -195,99 +200,79 @@ Matches "ATO" + "IAS" (pattern 3.6). This is an Instalment Activity Statement (P
 
 **Classification:** EXCLUDE -- tax payment. NOT super.
 
----
-
 ## Section 5 -- Tier 1 rules
 
 ### Rule 1 -- SG formula
 
-```
-SG per quarter = min(Employee_OTE_for_quarter, $65,070) x 11.5%
-```
-
-No $450/month threshold (removed 1 July 2022). All employees eligible.
+- **SG per quarter formula** — SG per quarter = min(Employee_OTE_for_quarter, $65,070) x 11.5%  _(Rule 1 -- SG formula)_
+- **$450/month threshold removed** — No $450/month threshold (removed 1 July 2022). All employees eligible.  _(Rule 1 -- SG formula)_
 
 ### Rule 2 -- SG rate
 
-2024-25: 11.5%. 2025-26 onwards: 12%.
+- **SG rate by year** — 2024-25: 11.5%. 2025-26 onwards: 12%.  _(Rule 2 -- SG rate)_
 
 ### Rule 3 -- Quarterly deadlines
 
+**Quarterly deadlines table**
+
 | Quarter | Period | Due |
-|---|---|---|
+| --- | --- | --- |
 | Q1 | 1 Jul - 30 Sep | 28 October |
 | Q2 | 1 Oct - 31 Dec | 28 January |
 | Q3 | 1 Jan - 31 Mar | 28 April |
 | Q4 | 1 Apr - 30 Jun | 28 July |
 
-Late/missed: triggers Super Guarantee Charge (SGC). SGC is NOT tax-deductible.
+- **Late/missed deadline consequence** — Late/missed: triggers Super Guarantee Charge (SGC). SGC is NOT tax-deductible.  _(Rule 3 -- Quarterly deadlines)_
 
 ### Rule 4 -- Sole traders have NO SG obligation to themselves
 
-Drawings are not salary. Only voluntary contributions. Company directors paying themselves a salary: YES SG applies (director is employee of company).
+- **Sole trader / director SG obligation** — Drawings are not salary. Only voluntary contributions. Company directors paying themselves a salary: YES SG applies (director is employee of company).  _(Rule 4)_
 
 ### Rule 5 -- Concessional contributions cap
 
-$30,000 (2024-25). Includes employer SG + salary sacrifice + personal deductible contributions (with s 290-150 notice). Excess included in assessable income at marginal rate (with 15% offset).
+- **Concessional contributions cap** — $30,000 (2024-25). Includes employer SG + salary sacrifice + personal deductible contributions (with s 290-150 notice). Excess included in assessable income at marginal rate (with 15% offset).  _(Rule 5)_
 
 ### Rule 6 -- Carry-forward unused concessional cap
 
-Available from 2018-19 onward, up to 5 prior years, IF TSB < $500,000 at 30 June prior year. If TSB >= $500,000: no carry-forward.
+- **Carry-forward rule** — Available from 2018-19 onward, up to 5 prior years, IF TSB < $500,000 at 30 June prior year. If TSB >= $500,000: no carry-forward.  _(Rule 6)_
 
 ### Rule 7 -- Non-concessional cap
 
-$120,000 (2024-25). Bring-forward: $360,000 (3 years) if TSB < $1,660,000. TSB >= $1,900,000: nil cap.
+- **Non-concessional cap** — $120,000 (2024-25). Bring-forward: $360,000 (3 years) if TSB < $1,660,000. TSB >= $1,900,000: nil cap.  _(Rule 7)_
 
 ### Rule 8 -- s 290-150 notice (personal contribution deduction)
 
-Must lodge Notice of Intent to Claim a Deduction with the super fund AND receive acknowledgement BEFORE the earlier of: lodging the tax return, or end of following financial year. If not lodged: contribution stays non-concessional, NO deduction.
+- **s 290-150 notice requirement** — Must lodge Notice of Intent to Claim a Deduction with the super fund AND receive acknowledgement BEFORE the earlier of: lodging the tax return, or end of following financial year. If not lodged: contribution stays non-concessional, NO deduction.  _(Rule 8)_
 
 ### Rule 9 -- Division 293 (additional 15% for high earners)
 
-```
-Div 293 income = taxable income + concessional contributions
-If > $250,000: Div 293 tax = 15% x lesser of (concessional contributions, excess over $250,000)
-```
+- **Division 293 formula** — Div 293 income = taxable income + concessional contributions If > $250,000: Div 293 tax = 15% x lesser of (concessional contributions, excess over $250,000)  _(Rule 9)_
 
 ### Rule 10 -- Government co-contribution
 
-Max $500. Income < $60,400. Matching rate: 50c per $1 of non-concessional contribution (max $1,000 contributed). Reduces above $45,400. Automatic upon tax return lodgement.
-
----
+- **Government co-contribution rule** — Max $500. Income < $60,400. Matching rate: 50c per $1 of non-concessional contribution (max $1,000 contributed). Reduces above $45,400. Automatic upon tax return lodgement.  _(Rule 10)_
 
 ## Section 6 -- Tier 2 catalogue
 
 ### T2-1 -- Contractor vs employee for SG
 
-**Trigger:** Client engages a contractor who may be principally for labour (SGAA s 12(3)).
-**Issue:** Multi-factor test required. SG may be triggered.
-**Action:** Flag for reviewer.
+- **T2-1** — Trigger: Client engages a contractor who may be principally for labour (SGAA s 12(3)). Issue: Multi-factor test required. SG may be triggered. Action: Flag for reviewer.  _(SGAA s 12(3))_
 
 ### T2-2 -- Multiple employers exceeding concessional cap
 
-**Trigger:** Individual has two employers both paying SG. Combined may exceed $30,000.
-**Issue:** Neither employer at fault. Individual bears excess contributions tax.
-**Action:** Flag for reviewer to assess salary sacrifice adjustment.
+- **T2-2** — Trigger: Individual has two employers both paying SG. Combined may exceed $30,000. Issue: Neither employer at fault. Individual bears excess contributions tax. Action: Flag for reviewer to assess salary sacrifice adjustment.
 
 ### T2-3 -- Over-75 contributions
 
-**Trigger:** Client aged 75+ wants to make voluntary contributions.
-**Issue:** Work test applies (40 hours in 30 consecutive days). Mandated employer SG has no age limit.
-**Action:** Flag for reviewer.
+- **T2-3** — Trigger: Client aged 75+ wants to make voluntary contributions. Issue: Work test applies (40 hours in 30 consecutive days). Mandated employer SG has no age limit. Action: Flag for reviewer.
 
 ### T2-4 -- Carry-forward with borderline TSB
 
-**Trigger:** TSB close to $500,000 threshold.
-**Issue:** Carry-forward availability depends on exact TSB at 30 June.
-**Action:** Flag for reviewer to confirm TSB.
+- **T2-4** — Trigger: TSB close to $500,000 threshold. Issue: Carry-forward availability depends on exact TSB at 30 June. Action: Flag for reviewer to confirm TSB.
 
 ### T2-5 -- s 290-150 notice deadline approaching
 
-**Trigger:** Client made personal contributions but has not lodged notice.
-**Issue:** Missing the deadline is irreversible -- contribution stays non-concessional.
-**Action:** Urgent flag. Confirm notice status before lodging return.
-
----
+- **T2-5** — Trigger: Client made personal contributions but has not lodged notice. Issue: Missing the deadline is irreversible -- contribution stays non-concessional. Action: Urgent flag. Confirm notice status before lodging return.
 
 ## Section 7 -- Excel working paper template
 
@@ -336,8 +321,6 @@ REVIEWER FLAGS
   [List any Tier 2 flags]
 ```
 
----
-
 ## Section 8 -- Bank statement reading guide
 
 ### How super payments appear on Australian bank statements
@@ -365,8 +348,6 @@ REVIEWER FLAGS
 5. SGC payments go to ATO, not to the fund
 6. Payday Super (from 1 July 2026) will change timing to each payday
 
----
-
 ## Section 9 -- Onboarding fallback
 
 If the client provides only a bank statement:
@@ -377,14 +358,14 @@ If the client provides only a bank statement:
 4. **Sum quarterly SG payments** -- compare against expected OTE x 11.5% to verify completeness
 5. **Flag:** "Super contribution classification derived from bank statement patterns. Employee OTE, s 290-150 notice status, and TSB have not been independently verified. Reviewer must confirm before tax return lodgement."
 
----
-
 ## Section 10 -- Reference material
 
 ### Key rates and thresholds (2024-25)
 
+**Key rates and thresholds table**
+
 | Item | Value |
-|---|---|
+| --- | --- |
 | SG rate | 11.5% |
 | Max contribution base (quarterly) | $65,070 |
 | Maximum SG per quarter | $7,483.05 |
@@ -401,29 +382,29 @@ If the client provides only a bank statement:
 
 ### LISTO (Low Income Super Tax Offset)
 
-Adjusted taxable income <= $37,000: 15% of concessional contributions, max $500. Paid directly into super fund by ATO.
+- **LISTO rule** — Adjusted taxable income <= $37,000: 15% of concessional contributions, max $500. Paid directly into super fund by ATO.
 
 ### Spouse contribution tax offset
 
-Max $540 (18% of $3,000). Full offset if spouse income <= $37,000. Nil if spouse income >= $40,000.
+- **Spouse contribution tax offset rule** — Max $540 (18% of $3,000). Full offset if spouse income <= $37,000. Nil if spouse income >= $40,000.
 
 ### Test suite
 
-**Test 1:** Employee OTE $20,000/quarter, 2024-25. -> SG = $2,300.
+Employee OTE $20,000/quarter, 2024-25. -> SG = $2,300.
 
-**Test 2:** Employee OTE $80,000/quarter. -> SG = $7,483.05 (capped).
+Employee OTE $80,000/quarter. -> SG = $7,483.05 (capped).
 
-**Test 3:** Sole trader contributes $25,000, lodges s 290-150. TSB $200,000. -> $25,000 concessional. Deduction $25,000. Within cap.
+Sole trader contributes $25,000, lodges s 290-150. TSB $200,000. -> $25,000 concessional. Deduction $25,000. Within cap.
 
-**Test 4:** Taxable income $260,000, concessional $30,000. -> Div 293 income $290,000. Div 293 tax = 15% x $30,000 = $4,500.
+Taxable income $260,000, concessional $30,000. -> Div 293 income $290,000. Div 293 tax = 15% x $30,000 = $4,500.
 
-**Test 5:** TSB $400,000. Unused cap: $5,000 (2021-22) + $10,000 (2022-23) + $15,000 (2023-24). -> Available cap = $60,000.
+TSB $400,000. Unused cap: $5,000 (2021-22) + $10,000 (2022-23) + $15,000 (2023-24). -> Available cap = $60,000.
 
-**Test 6:** Income $50,000, non-concessional $1,000. -> Co-contribution = $346.68.
+Income $50,000, non-concessional $1,000. -> Co-contribution = $346.68.
 
-**Test 7:** $5,000 to spouse's fund, spouse income $36,000. -> Offset = $540.
+$5,000 to spouse's fund, spouse income $36,000. -> Offset = $540.
 
-**Test 8:** Sole trader asks about SG to self. -> $0. No obligation. Advise voluntary contributions.
+Sole trader asks about SG to self. -> $0. No obligation. Advise voluntary contributions.
 
 ### Prohibitions
 
@@ -436,17 +417,11 @@ Max $540 (18% of $3,000). Full offset if spouse income <= $37,000. Nil if spouse
 - NEVER compute SGC penalties without escalating
 - NEVER advise on defined benefit or constitutionally protected funds
 
----
-
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, CA, tax agent, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
 
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
-
----
-
-<!-- openaccountants-cta-block -->
+The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
 
 ## Talk to a verified accountant
 
@@ -461,16 +436,22 @@ a formal engagement letter** — book a free 30-minute call:
 
 We'll route you to the named verifier covering your country or state. You can
 also see the full list of verified accountants at
-[openaccountants.com/network](https://www.openaccountants.com/network).
+[openaccountants.com/network](https://openaccountants.com/network).
 
-<!-- openaccountants-mcp-cta -->
+<!-- openaccountants-cta-block -->
 
-## The accountant-verified version lives in the connector
+---
 
-This file is the open, **research-grade draft**. The **accountant-verified**
-version of this skill is **not published to GitHub** — it is delivered free
-through the OpenAccountants MCP connector, where your AI agent loads the
-verified rules together with the name of the accountant who signed them off.
+## Talk to a verified accountant
 
-**→ Install the free connector:** <https://www.openaccountants.com/connect>
-**MCP endpoint:** `https://www.openaccountants.com/api/mcp`
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

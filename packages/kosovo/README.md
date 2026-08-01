@@ -7,7 +7,12 @@
 
 1. `foundation.md`
 2. `intake.md`
-3. `kosovo-vat.md`
+3. `kosovo-income-tax.md`
+4. `kosovo-payroll.md`
+5. `kosovo-social-contributions.md`
+6. `kosovo-tax-optimization.md`
+7. `kosovo-vat.md`
+8. `payroll-workflow-base.md`
 
 ## How to use
 

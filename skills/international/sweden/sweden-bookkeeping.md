@@ -1,26 +1,25 @@
 ---
 name: sweden-bookkeeping
 description: >
-  Use this skill whenever asked about Swedish bookkeeping, chart of accounts, BAS kontoplan, financial statements, or accounting standards in Sweden. Trigger on phrases like "Swedish bookkeeping", "bokföring Sverige", "BAS kontoplan", "kontoplan", "årsredovisning", "K2", "K3", "BFL", "ÅRL", "resultaträkning", "balansräkning", "enskild firma bokföring", "årsbokslut", "Bokföringsnämnden", "BFN", "avskrivning", "förenklat årsbokslut", or any question about recording transactions, financial reporting, or accounting standards for Swedish entities.
 version: 1.0
 jurisdiction: SE
-tier: 2
-last_updated: 2026-06-12
+tax_year: 2025
+last_updated: 2026-05-23
+verified_by: pending
+depends_on: - bookkeeping-workflow-base
 category: bookkeeping
-depends_on:
-  - bookkeeping-workflow-base
+tier: 2
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Sweden Bookkeeping Skill v1.0
-
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
-
----
+# Sweden Bookkeeping
 
 ## Section 1 -- Quick Reference
 
+**Quick Reference**
+
 | Field | Value |
-|---|---|
+| --- | --- |
 | Country | Sweden (Konungariket Sverige) |
 | Currency | SEK (Swedish Krona) |
 | Financial year | Flexible; calendar year most common. Split year allowed for non-AB entities. |
@@ -32,16 +31,16 @@ depends_on:
 | Tax authority | Skatteverket (Swedish Tax Agency) |
 | Archival requirement | 7 years (bokföringslagen ch. 7) |
 
----
-
 ## Section 2 -- Standard Chart of Accounts (BAS-kontoplanen)
 
 The BAS chart is a four-digit decimal classification system aligned with ÅRL income statement and balance sheet formats. Classes 1-8 cover financial accounting.
 
 ### Class 1 -- Tillgångar (Assets)
 
+**Class 1 -- Tillgångar (Assets)**
+
 | Code | Account | Description |
-|---|---|---|
+| --- | --- | --- |
 | 1010 | Utvecklingsutgifter | Development expenditure (K3 only) |
 | 1020 | Koncessioner | Concessions |
 | 1030 | Patent | Patents |
@@ -73,8 +72,10 @@ The BAS chart is a four-digit decimal classification system aligned with ÅRL in
 
 ### Class 2 -- Eget Kapital och Skulder (Equity and Liabilities)
 
+**Class 2 -- Eget Kapital och Skulder (Equity and Liabilities)**
+
 | Code | Account | Description |
-|---|---|---|
+| --- | --- | --- |
 | 2010 | Eget kapital (enskild firma) | Owner's equity (sole trader) |
 | 2013 | Privata uttag | Owner's drawings |
 | 2018 | Egna insättningar | Owner's contributions |
@@ -108,8 +109,10 @@ The BAS chart is a four-digit decimal classification system aligned with ÅRL in
 
 ### Class 3 -- Rörelseintäkter (Operating Revenue)
 
+**Class 3 -- Rörelseintäkter (Operating Revenue)**
+
 | Code | Account | Description |
-|---|---|---|
+| --- | --- | --- |
 | 3010 | Försäljning varor (25% moms) | Sales of goods (25% VAT) |
 | 3040 | Försäljning varor (12% moms) | Sales of goods (12% VAT) |
 | 3050 | Försäljning varor (6% moms) | Sales of goods (6% VAT) |
@@ -121,8 +124,10 @@ The BAS chart is a four-digit decimal classification system aligned with ÅRL in
 
 ### Class 4 -- Kostnader för varor/material (COGS)
 
+**Class 4 -- Kostnader för varor/material (COGS)**
+
 | Code | Account | Description |
-|---|---|---|
+| --- | --- | --- |
 | 4010 | Inköp av varor (inom Sverige) | Purchases of goods (domestic) |
 | 4100 | Inköp av råvaror | Raw material purchases |
 | 4500 | Övriga inköp av varor/material | Other purchases |
@@ -131,8 +136,10 @@ The BAS chart is a four-digit decimal classification system aligned with ÅRL in
 
 ### Class 5 -- Övriga Externa Kostnader (Other External Expenses)
 
+**Class 5 -- Övriga Externa Kostnader (Other External Expenses)**
+
 | Code | Account | Description |
-|---|---|---|
+| --- | --- | --- |
 | 5010 | Lokalhyra | Premises rent |
 | 5020 | El för belysning | Electricity |
 | 5060 | Städning och renhållning | Cleaning |
@@ -172,8 +179,10 @@ The BAS chart is a four-digit decimal classification system aligned with ÅRL in
 
 ### Class 7 -- Personalkostnader m.m. (Staff Costs etc.)
 
+**Class 7 -- Personalkostnader m.m. (Staff Costs etc.)**
+
 | Code | Account | Description |
-|---|---|---|
+| --- | --- | --- |
 | 7010 | Löner till kollektivanställda | Wages -- collectively agreed |
 | 7210 | Löner till tjänstemän | Salaries -- employees |
 | 7220 | Löner till företagsledare | Directors' salaries |
@@ -190,8 +199,10 @@ The BAS chart is a four-digit decimal classification system aligned with ÅRL in
 
 ### Class 8 -- Finansiella poster, Skatt, Resultat (Financial Items, Tax, Result)
 
+**Class 8 -- Finansiella poster, Skatt, Resultat (Financial Items, Tax, Result)**
+
 | Code | Account | Description |
-|---|---|---|
+| --- | --- | --- |
 | 8310 | Ränteintäkter | Interest income |
 | 8410 | Räntekostnader | Interest expense |
 | 8420 | Räntekostnader banklån | Interest on bank loans |
@@ -199,14 +210,14 @@ The BAS chart is a four-digit decimal classification system aligned with ÅRL in
 | 8910 | Skatt på årets resultat | Current year income tax |
 | 8990 | Resultat | Net profit/loss |
 
----
-
 ## Section 3 -- Revenue Recognition
 
 ### Cash vs Accrual Basis
 
+**Cash vs Accrual Basis**
+
 | Entity Type | Basis | Notes |
-|---|---|---|
+| --- | --- | --- |
 | AB (Aktiebolag) | Accrual (mandatory) | BFL/ÅRL require accrual basis |
 | Enskild firma (sole trader) | Accrual | BFL requires current recording; may use simplified annual accounts |
 | Handelsbolag (partnership) | Accrual | Same as AB |
@@ -214,26 +225,26 @@ The BAS chart is a four-digit decimal classification system aligned with ÅRL in
 
 ### Key Rules
 
-- Revenue recognised when performance obligation is satisfied (goods: delivery; services: over time or at completion)
-- K2: simpler recognition -- revenue at point of invoicing for most service companies; construction contracts on completion
-- K3: percentage-of-completion required for long-term contracts where outcome can be estimated
-- Subscription income: recognised over the period of service
+- **Revenue recognition timing** — Revenue recognised when performance obligation is satisfied (goods: delivery; services: over time or at completion)
+- **K2 recognition** — K2: simpler recognition -- revenue at point of invoicing for most service companies; construction contracts on completion
+- **K3 recognition** — K3: percentage-of-completion required for long-term contracts where outcome can be estimated
+- **Subscription income** — Subscription income: recognised over the period of service
 
 ### Förenklat Årsbokslut (K1 -- Simplified Annual Accounts)
 
-- Available for sole traders (enskild firma) with net turnover ≤ SEK 3,000,000
-- Revenue recognised at invoice date (near-cash basis)
-- No accruals required for recurring items < SEK 5,000
-- Simplified inventory valuation
-
----
+- **Turnover threshold for K1 availability** — SEK 3,000,000 SEK (Net turnover limit for sole traders (enskild firma))
+- **Revenue recognition** — Revenue recognised at invoice date (near-cash basis)
+- **Accruals threshold for recurring items** — SEK 5,000 SEK (No accruals required for recurring items below this amount)
+- **Inventory valuation** — Simplified inventory valuation
 
 ## Section 4 -- Expense Classification
 
 ### Deductible Operating Expenses
 
+**Deductible Operating Expenses**
+
 | Category | BAS Code | Deductibility |
-|---|---|---|
+| --- | --- | --- |
 | Premises rent | 5010 | 100% deductible |
 | Electricity/utilities | 5020 | 100% deductible |
 | Accounting services | 6530 | 100% deductible |
@@ -249,8 +260,10 @@ The BAS chart is a four-digit decimal classification system aligned with ÅRL in
 
 ### Limited/Non-Deductible Expenses
 
+**Limited/Non-Deductible Expenses**
+
 | Category | Limitation |
-|---|---|
+| --- | --- |
 | Representation (extern) -- food/drink | Deductible up to SEK 350/person (excl. VAT) for income tax; VAT deduction limited to SEK 300/person |
 | Internal representation | Deductible up to SEK 600/person for 2 events/year |
 | Gifts to clients | Deductible if < SEK 300 (excl. VAT) per gift |
@@ -261,18 +274,18 @@ The BAS chart is a four-digit decimal classification system aligned with ÅRL in
 
 ### Vehicle (Bil) Rules
 
-- Company car private-use: taxed as benefit-in-kind (bilförmån) on employee; deductible for company
-- Sole trader: log required for business km; private km not deductible
-- Mileage allowance (if using private car for business): SEK 25/km (tax-free for employment; for self-employed: actual costs)
-
----
+- **Company car private-use** — Company car private-use: taxed as benefit-in-kind (bilförmån) on employee; deductible for company
+- **Sole trader vehicle log** — Sole trader: log required for business km; private km not deductible
+- **Mileage allowance** — 25 SEK/km (Mileage allowance (if using private car for business): SEK 25/km (tax-free for employment; for self-employed: actual costs))
 
 ## Section 5 -- Asset vs Expense Thresholds
 
 ### Capitalization Rules
 
+**Capitalization Rules**
+
 | Rule | Detail |
-|---|---|
+| --- | --- |
 | Low-value asset threshold (K2/tax) | SEK 25,000 (excl. VAT) -- items below may be expensed directly (account 5400) |
 | Grouping | Items forming a unit may be grouped and capitalised together even if individual cost < threshold |
 | K3 component approach | Required to separate significant components with different useful lives |
@@ -280,8 +293,10 @@ The BAS chart is a four-digit decimal classification system aligned with ÅRL in
 
 ### Depreciation Methods
 
+**Depreciation Methods**
+
 | Framework | Method | Notes |
-|---|---|---|
+| --- | --- | --- |
 | K2 | Straight-line only | No other method permitted |
 | K3 | Straight-line, diminishing balance, or units-of-production | Must reflect consumption pattern |
 | Tax (Räkenskapsenlig) | 30% declining balance (main rule) or 20% straight-line (5-year rule) | See below |
@@ -289,16 +304,20 @@ The BAS chart is a four-digit decimal classification system aligned with ÅRL in
 
 ### Tax Depreciation -- Machinery and Equipment (Inventarier)
 
+**Tax Depreciation -- Machinery and Equipment (Inventarier)**
+
 | Method | Rate | Notes |
-|---|---|---|
+| --- | --- | --- |
 | Huvudregeln (30% rule) | 30% of net book value per year | Declining balance; never fully written off |
 | Kompletteringsregeln (20% rule) | 20% of acquisition cost per year | Straight-line; fully written off in 5 years |
 | Immediate write-off | 100% (if < SEK 25,000 excl. VAT) | Or if expected useful life ≤ 3 years |
 
 ### Tax Depreciation -- Buildings
 
+**Tax Depreciation -- Buildings**
+
 | Building Type | Annual Rate |
-|---|---|
+| --- | --- |
 | Industrial buildings | 4% |
 | Commercial buildings | 2% |
 | Office buildings | 2% |
@@ -308,13 +327,11 @@ The BAS chart is a four-digit decimal classification system aligned with ÅRL in
 
 ### Tax Depreciation -- Land Improvements
 
-- Rate: 5% per year of acquisition cost
+- **Land improvements depreciation rate** — 5 % per year (Rate: 5% per year of acquisition cost)
 
 ### Överavskrivningar (Excess Depreciation)
 
-The difference between tax depreciation (typically higher via 30% rule) and book depreciation (straight-line per plan) is recorded in account 2150 (accumulated excess depreciation) as an untaxed reserve (obeskattad reserv).
-
----
+- **Excess depreciation treatment** — The difference between tax depreciation (typically higher via 30% rule) and book depreciation (straight-line per plan) is recorded in account 2150 (accumulated excess depreciation) as an untaxed reserve (obeskattad reserv).
 
 ## Section 6 -- P&L Format (Resultaträkning)
 
@@ -356,8 +373,6 @@ Skatt på årets resultat (Income tax)                          (xxx)
 ```
 
 *Bokslutsdispositioner (appropriations) are a uniquely Swedish feature -- transfers to/from untaxed reserves.
-
----
 
 ## Section 7 -- Balance Sheet Format (Balansräkning)
 
@@ -431,14 +446,14 @@ SUMMA EGET KAPITAL OCH SKULDER                                 xxx
 
 *Obeskattade reserver (untaxed reserves) is unique to Swedish accounting -- the portion deferred from taxation (78.4% equity, 21.6% deferred tax at current rate).
 
----
-
 ## Section 8 -- Bank Reconciliation Patterns
 
 ### Swedish Bank Statement Formats
 
+**Swedish Bank Statement Formats**
+
 | Bank | Format | Key Fields |
-|---|---|---|
+| --- | --- | --- |
 | Swedbank | CSV, SIE | Datum, Text, Belopp, Saldo |
 | SEB | CSV, SIE | Bokföringsdag, Text, Belopp, Saldo |
 | Nordea | CSV | Datum, Transaktion, Belopp, Saldo |
@@ -448,12 +463,14 @@ SUMMA EGET KAPITAL OCH SKULDER                                 xxx
 
 ### SIE Format
 
-SIE (Standard Import/Export) is the Swedish standard for transferring accounting data between systems. SIE4 files contain complete bookkeeping data and can be imported by all Swedish accounting software (Fortnox, Visma, Björn Lundén, etc.).
+- **SIE** — SIE (Standard Import/Export) is the Swedish standard for transferring accounting data between systems. SIE4 files contain complete bookkeeping data and can be imported by all Swedish accounting software (Fortnox, Visma, Björn Lundén, etc.).
 
 ### Common Transaction Descriptions
 
+**Common Transaction Descriptions**
+
 | Pattern | Classification |
-|---|---|
+| --- | --- |
 | BG (Bankgiro), PG (Plusgiro) | Transfer (check direction) |
 | AUTOGIRO | Direct debit (recurring expense) |
 | SWISH | Mobile payment (check direction) |
@@ -467,26 +484,26 @@ SIE (Standard Import/Export) is the Swedish standard for transferring accounting
 | AVGIFT, SERVICEAVGIFT | Bank/service charges |
 | FAKTURA, FAKT NR | Invoice payment (check context) |
 
----
-
 ## Section 9 -- Micro-Entity / Small Business Simplifications
 
 ### Size Categories (ÅRL Chapter 1, Section 3)
 
-A company is a "smaller company" (mindre företag) if it does NOT exceed more than one of:
+- **Smaller company definition** — A company is a "smaller company" (mindre företag) if it does NOT exceed more than one of the listed thresholds for two consecutive financial years. All others are "larger companies" (större företag).  _(ÅRL Chapter 1, Section 3)_
+
+**Size Categories (ÅRL Chapter 1, Section 3)**  _(ÅRL Chapter 1, Section 3)_
 
 | Criterion | Threshold |
-|---|---|
+| --- | --- |
 | Average employees | 50 |
 | Balance sheet total | SEK 40,000,000 |
 | Net turnover | SEK 80,000,000 |
 
-For two consecutive financial years. All others are "larger companies" (större företag).
-
 ### K-Regulation Hierarchy
 
+**K-Regulation Hierarchy**
+
 | Category | Regulation | Who Can Use |
-|---|---|---|
+| --- | --- | --- |
 | K1 | BFNAR 2006:1 (enskild firma) / 2010:1 (ideell) | Sole traders with turnover ≤ SEK 3M; simplified annual accounts |
 | K2 | BFNAR 2016:10 | Smaller companies (AB, HB, EF) that choose simplification |
 | K3 | BFNAR 2012:1 | Default for all companies preparing årsredovisning; mandatory for larger companies |
@@ -494,61 +511,90 @@ For two consecutive financial years. All others are "larger companies" (större 
 
 ### K1 Simplifications (Förenklat Årsbokslut)
 
-- No accruals needed for recurring items < SEK 5,000
-- Revenue at invoice date
-- Inventory: simplified valuation (latest purchase price × quantity)
-- Fixed assets: immediate write-off if < SEK 25,000 (half a prisbasbelopp)
-- No formal balance sheet filing (only part of tax return NE)
+- **No accruals for small recurring items** — No accruals needed for recurring items < SEK 5,000
+- **Revenue at invoice date** — Revenue at invoice date
+- **Inventory simplified valuation** — Inventory: simplified valuation (latest purchase price × quantity)
+- **Fixed asset immediate write-off threshold** — SEK 25,000 SEK (Fixed assets: immediate write-off if < SEK 25,000 (half a prisbasbelopp))
+- **No formal balance sheet filing** — No formal balance sheet filing (only part of tax return NE)
 
 ### K2 Simplifications
 
-- Straight-line depreciation only
-- No component approach for assets
-- No revaluation of assets
-- Limited disclosures in notes
-- No deferred tax in balance sheet
-- Intangible assets: only acquired intangibles may be capitalised (no internally generated)
-- Accrual threshold for expenses: SEK 7,000 (from 2025 K2 update)
-
----
+- **Straight-line depreciation only** — Straight-line depreciation only
+- **No component approach** — No component approach for assets
+- **No revaluation of assets** — No revaluation of assets
+- **Limited disclosures** — Limited disclosures in notes
+- **No deferred tax** — No deferred tax in balance sheet
+- **Intangible assets capitalisation** — Intangible assets: only acquired intangibles may be capitalised (no internally generated)
+- **Accrual threshold for expenses** — SEK 7,000 SEK (Accrual threshold for expenses (from 2025 K2 update))
 
 ## Section 10 -- Interaction with Tax Skills
 
 ### Income Tax (Inkomstskatt)
 
-- For AB: corporate tax rate 20.6% (bolagsskatt)
-- Taxable income starts from accounting result + tax adjustments
-- Key adjustments: excess depreciation (överavskrivning), allocation to periodiseringsfond (tax allocation reserve -- defer up to 25% of profit for 6 years)
-- For sole traders: progressive income tax on business profit (after social contributions)
-- Egenavgifter (self-employed social contributions): approximately 28.97% of profit
-- Schablonavdrag (standard deduction) available for home office: SEK 2,000/year
-- Use the se-income-tax skill for detailed computation
+- **Corporate tax rate (bolagsskatt)** — 20.6 % (For AB: corporate tax rate 20.6% (bolagsskatt))
+- **Taxable income basis** — Taxable income starts from accounting result + tax adjustments
+- **Key adjustments** — Key adjustments: excess depreciation (överavskrivning), allocation to periodiseringsfond (tax allocation reserve -- defer up to 25% of profit for 6 years)
+- **Sole trader taxation** — For sole traders: progressive income tax on business profit (after social contributions)
+- **Egenavgifter rate** — approximately 28.97 % (Egenavgifter (self-employed social contributions): approximately 28.97% of profit)
+- **Schablonavdrag home office deduction** — SEK 2,000/year SEK/year (Schablonavdrag (standard deduction) available for home office: SEK 2,000/year)
+- **Cross-reference** — Use the se-income-tax skill for detailed computation
 
 ### VAT (Moms)
 
-- VAT accounts: 2610-2650 in BAS
-- Standard rate: 25%; Reduced: 12% (food, hotels); 6% (books, newspapers, public transport)
-- Monthly filing if turnover > SEK 40M; quarterly if > SEK 1M; annual if ≤ SEK 1M
-- Use the sweden-vat-return skill for filing details
+- **VAT accounts** — VAT accounts: 2610-2650 in BAS
+- **Standard and reduced VAT rates** — 25% standard; 12% (food, hotels); 6% (books, newspapers, public transport) (Standard rate: 25%; Reduced: 12% (food, hotels); 6% (books, newspapers, public transport))
+- **VAT filing frequency** — Monthly filing if turnover > SEK 40M; quarterly if > SEK 1M; annual if ≤ SEK 1M
+- **Cross-reference** — Use the sweden-vat-return skill for filing details
 
 ### Employer Contributions (Arbetsgivaravgifter)
 
-- Rate: 31.42% of gross salary (2025)
-- Declared and paid monthly to Skatteverket via arbetsgivardeklaration
-- Recorded in accounts 7510/2731
-- Reduced contributions for employees born 1938-2006 (different rules apply)
-- Use the se-social-contributions skill for details
+- **Employer contributions rate** — 31.42 % (Rate: 31.42% of gross salary (2025))
+- **Declaration and payment** — Declared and paid monthly to Skatteverket via arbetsgivardeklaration
+- **Accounts used** — Recorded in accounts 7510/2731
+- **Reduced contributions** — Reduced contributions for employees born 1938-2006 (different rules apply)
+- **Cross-reference** — Use the se-social-contributions skill for details
 
 ### Periodiseringsfond (Tax Allocation Reserve)
 
-- Companies may defer up to 25% of taxable profit to a tax allocation reserve
-- Must be reversed within 6 years (FIFO)
-- Recorded as obeskattad reserv in accounts 2120-2139
-- Available for AB, enskild firma, and handelsbolag
-- Enskild firma: standard interest charge (schablonintäkt) on fund balance
-
----
+- **Deferral limit** — Companies may defer up to 25% of taxable profit to a tax allocation reserve
+- **Reversal period** — Must be reversed within 6 years (FIFO)
+- **Accounting treatment** — Recorded as obeskattad reserv in accounts 2120-2139
+- **Eligible entities** — Available for AB, enskild firma, and handelsbolag
+- **Enskild firma interest charge** — Enskild firma: standard interest charge (schablonintäkt) on fund balance
 
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional before filing or acting upon.
+
+## Talk to a verified accountant
+
+This skill is a tool, not an engagement. Every taxpayer's situation is
+different, and the rules in the skill may not match your specific facts.
+
+To speak with one of the licensed accountants who verifies skills for your
+jurisdiction — **no liability on either side until you and the accountant sign
+a formal engagement letter** — book a free 30-minute call:
+
+**→ [Book a call](https://calendly.com/openaccountants-info/30min)**
+
+We'll route you to the named verifier covering your country or state. You can
+also see the full list of verified accountants at
+[openaccountants.com/network](https://openaccountants.com/network).
+
+<!-- openaccountants-cta-block -->
+
+---
+
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

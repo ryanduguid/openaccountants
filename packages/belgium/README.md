@@ -7,20 +7,22 @@
 
 1. `foundation.md`
 2. `intake.md`
-3. `be-income-tax.md`
-4. `be-social-contributions.md`
-5. `belgium-bookkeeping.md`
-6. `belgium-crypto-tax.md`
-7. `belgium-einvoice.md`
-8. `belgium-financial-statements.md`
-9. `belgium-payroll.md`
-10. `belgium-vat-return.md`
-11. `eu-vat-directive.md`
-12. `bookkeeping-workflow-base.md`
-13. `einvoice-workflow-base.md`
-14. `payroll-workflow-base.md`
-15. `financial-statements-workflow-base.md`
-16. `crypto-tax-workflow-base.md`
+3. `be-capital-gains.md`
+4. `be-income-tax.md`
+5. `be-social-contributions.md`
+6. `be-vat-return.md`
+7. `belgium-bookkeeping.md`
+8. `belgium-crypto-tax.md`
+9. `belgium-einvoice.md`
+10. `belgium-financial-statements.md`
+11. `belgium-payroll.md`
+12. `belgium-vat-return.md`
+13. `eu-vat-directive.md`
+14. `bookkeeping-workflow-base.md`
+15. `einvoice-workflow-base.md`
+16. `payroll-workflow-base.md`
+17. `financial-statements-workflow-base.md`
+18. `crypto-tax-workflow-base.md`
 
 ## Also known as
 

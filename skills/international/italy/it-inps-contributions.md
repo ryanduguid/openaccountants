@@ -1,27 +1,25 @@
 ---
 name: it-inps-contributions
 description: >
-  Use this skill whenever asked about Italian INPS social contributions for self-employed professionals (Gestione Separata). Trigger on phrases like "INPS contributions", "Gestione Separata", "contributi previdenziali", "aliquota INPS", "rivalsa 4%", "acconto saldo INPS", "minimale contributivo", "massimale INPS", "F24 contributi", "how much INPS do I pay", or any question about Italian freelance social security obligations. Also trigger when classifying bank statement transactions showing F24 INPS payments, Gestione Separata acconti/saldo debits, or Agenzia delle Entrate INPS-related debits. ALWAYS read this skill before touching any Italian social contribution work.
 version: 2.0
 jurisdiction: IT
 tax_year: 2025
-tier: 2
-last_updated: 2026-06-12
+last_updated: 2026-04-13
+verified_by: pending
+depends_on: - social-contributions-workflow-base
 category: international
-depends_on:
-  - social-contributions-workflow-base
+tier: 2
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Italy INPS Contributions (Gestione Separata) -- Self-Employed Skill v2.0
-
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+# IT Inps Contributions
 
 ## Section 1 -- Quick reference
 
-**Read this whole section before computing or classifying anything.**
+**Quick reference table**
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | Country | Italy |
 | Primary Legislation | L. 335/1995 (Riforma Dini); L. 81/2017 (Jobs Act Autonomi) |
 | Supporting Legislation | TUIR Art. 10 (deductibility); D.P.R. 917/1986 Art. 54 |
@@ -40,17 +38,17 @@ depends_on:
 | Validated by | Pending -- requires sign-off by Dottore Commercialista |
 | Validation date | Pending |
 
-**Conservative defaults:**
+Read this whole section before computing or classifying anything.
+
+**Conservative defaults**
 
 | Ambiguity | Default |
-|---|---|
+| --- | --- |
 | Unknown whether cassa propria exists | STOP -- do not compute; must verify profession |
 | Unknown other pension coverage | Apply 26.07% (higher rate); flag for reviewer |
 | Unknown rivalsa 4% received | Assume zero; ask client |
 | Unknown regime (ordinario vs forfettario) | Ask -- affects base computation |
 | Unknown whether F24 debit is INPS or IRPEF | Flag for reviewer -- F24 combines multiple taxes |
-
----
 
 ## Section 2 -- Required inputs and refusal catalogue
 
@@ -64,13 +62,9 @@ depends_on:
 
 ### Refusal catalogue
 
-**R-IT-INPS-1 -- Cassa propria professions.** *Trigger:* client is avvocato, commercialista, medico, ingegnere, architetto, consulente del lavoro, notaio, farmacista, psicologo, veterinario, giornalista, geometra, or infermiere. *Message:* "Professionals with a cassa propria do NOT use Gestione Separata. This skill does not cover cassa-specific rates (Cassa Forense, CNPADC, ENPAM, Inarcassa, etc.). Escalate to Dottore Commercialista."
-
-**R-IT-INPS-2 -- Profession unclear on cassa.** *Trigger:* client is a "consulente" or ambiguous profession. *Message:* "Enrolling in the wrong scheme has severe consequences. The Dottore Commercialista must verify the profession against the cassa list before advising."
-
-**R-IT-INPS-3 -- ISCRO eligibility.** *Trigger:* client asks about ISCRO (Indennita Straordinaria). *Message:* "ISCRO conditions are complex and income-based. Flag for reviewer."
-
----
+- **R-IT-INPS-1 -- Cassa propria professions** — Professionals with a cassa propria do NOT use Gestione Separata. This skill does not cover cassa-specific rates (Cassa Forense, CNPADC, ENPAM, Inarcassa, etc.). Escalate to Dottore Commercialista. (Trigger: client is avvocato, commercialista, medico, ingegnere, architetto, consulente del lavoro, notaio, farmacista, psicologo, veterinario, giornalista, geometra, or infermiere.)
+- **R-IT-INPS-2 -- Profession unclear on cassa** — Enrolling in the wrong scheme has severe consequences. The Dottore Commercialista must verify the profession against the cassa list before advising. (Trigger: client is a "consulente" or ambiguous profession.)
+- **R-IT-INPS-3 -- ISCRO eligibility** — ISCRO conditions are complex and income-based. Flag for reviewer. (Trigger: client asks about ISCRO (Indennita Straordinaria).)
 
 ## Section 3 -- Payment pattern library
 
@@ -78,43 +72,49 @@ This is the deterministic pre-classifier for bank statement transactions related
 
 ### 3.1 F24 payments (combined tax and INPS)
 
+**F24 payments (combined tax and INPS)**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | F24, MODELLO F24 | EXCLUDE -- combined tax/INPS | F24 can include IRPEF, INPS, addizionali, IVA -- cannot isolate INPS from bank statement |
 | AGENZIA DELLE ENTRATE | EXCLUDE -- tax/INPS | F24 payments routed through AdE |
 | DELEGA F24 | EXCLUDE -- F24 | Bank description for F24 submission |
 
 ### 3.2 INPS-specific F24 codici tributo
 
-When F24 receipts (not bank statements) are available, these codes identify INPS:
+**INPS-specific F24 codici tributo**  _(When F24 receipts (not bank statements) are available, these codes identify INPS)_
 
 | Codice | Description | Treatment |
-|---|---|---|
+| --- | --- | --- |
 | DPPI | Gestione Separata professionisti -- acconto | EXCLUDE -- INPS acconto |
 | DPP | Gestione Separata professionisti -- saldo | EXCLUDE -- INPS saldo |
 | P10, PXX | Artigiani/Commercianti codes | EXCLUDE -- not Gestione Separata (different INPS scheme) |
 
 ### 3.3 Direct INPS debits (rare for professionisti)
 
+**Direct INPS debits (rare for professionisti)**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | INPS, ISTITUTO NAZIONALE PREVIDENZA | EXCLUDE -- INPS contribution | Direct debit to INPS (uncommon; most pay via F24) |
 
 ### 3.4 Rivalsa 4% (incoming -- revenue, not a contribution)
 
+**Rivalsa 4% (incoming -- revenue, not a contribution)**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | RIVALSA INPS, RIVALSA 4% | NOT an INPS payment | This is income RECEIVED from clients; it is revenue, not a contribution payment. It enters the INPS computation base. |
 
 ### 3.5 Tax payments (NOT INPS)
 
+**Tax payments (NOT INPS)**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | IRPEF, IMPOSTA SUL REDDITO | EXCLUDE -- income tax | Not INPS |
 | IVA, IMPOSTA VALORE AGGIUNTO | EXCLUDE -- VAT | Not INPS |
 | ADDIZIONALE REGIONALE, ADDIZIONALE COMUNALE | EXCLUDE -- local tax | Not INPS |
-
----
 
 ## Section 4 -- Worked examples
 
@@ -180,63 +180,60 @@ Matches F24 + "RAVVEDIMENTO" + "DPPI". This is a late INPS acconto payment with 
 
 **Classification:** EXCLUDE -- INPS late payment via ravvedimento. Flag for reviewer to split contribution (deductible in Quadro RP) from penalties/interest (not deductible).
 
----
-
 ## Section 5 -- Tier 1 rules
 
 ### Rule 1 -- Gestione Separata rate
 
+**Gestione Separata rate**
+
 | Category | Rate | Composition |
-|---|---|---|
+| --- | --- | --- |
 | No other pension coverage, not pensioned | 26.07% | 25.00% IVS + 0.72% maternita + 0.35% ISCRO |
 | With other coverage or pensioned | 24.00% | 24.00% IVS only |
 
 ### Rule 2 -- Computation formula
 
-```
-INPS base = Net professional income (Quadro RE or LM) + rivalsa 4% received
-INPS contribution = min(INPS_base, EUR 120,607) x aliquota
-```
+- **INPS computation formula** — INPS base = Net professional income (Quadro RE or LM) + rivalsa 4% received INPS contribution = min(INPS_base, EUR 120,607) x aliquota  _(Rule 2 -- Computation formula)_
 
 ### Rule 3 -- Massimale and minimale
 
-Massimale: EUR 120,607 -- no contributions on income above this. Minimale: EUR 18,555 -- income below this earns proportionally reduced pension credit months: `months = floor(income / EUR 18,555 x 12)`. There is NO mandatory minimum contribution in Gestione Separata.
+- **Massimale and minimale** — Massimale: EUR 120,607 -- no contributions on income above this. Minimale: EUR 18,555 -- income below this earns proportionally reduced pension credit months: months = floor(income / EUR 18,555 x 12). There is NO mandatory minimum contribution in Gestione Separata.  _(Rule 3 -- Massimale and minimale)_
 
 ### Rule 4 -- Rivalsa INPS 4%
 
-Optional (facolta, not obligation). Charged to clients as separate invoice line. Subject to IVA. Subject to ritenuta d'acconto. INCLUDED in INPS computation base. The rivalsa is revenue, not a deduction.
+- **Rivalsa INPS 4%** — Optional (facolta, not obligation). Charged to clients as separate invoice line. Subject to IVA. Subject to ritenuta d'acconto. INCLUDED in INPS computation base. The rivalsa is revenue, not a deduction.  _(Rule 4 -- Rivalsa INPS 4%)_
 
 ### Rule 5 -- Payment schedule (acconto/saldo)
 
+**Payment schedule (acconto/saldo)**
+
 | Payment | % | Deadline |
-|---|---|---|
+| --- | --- | --- |
 | Saldo (prior year balance) | Residual | 30 June (or 30 July +0.40%) |
 | Primo acconto | 40% of prior year total | 30 June (or 30 July +0.40%) |
 | Secondo acconto | 60% of prior year total | 30 November |
 
-Saldo and primo acconto can be paid in instalments (monthly, Jun-Nov, +0.33%/month). Secondo acconto CANNOT be paid in instalments.
+- **Instalment rules** — Saldo and primo acconto can be paid in instalments (monthly, Jun-Nov, +0.33%/month). Secondo acconto CANNOT be paid in instalments.  _(Rule 5 -- Payment schedule (acconto/saldo))_
 
 ### Rule 6 -- F24 codici tributo
 
-DPPI = acconto Gestione Separata professionisti. DPP = saldo Gestione Separata professionisti.
+- **F24 codici tributo** — DPPI = acconto Gestione Separata professionisti. DPP = saldo Gestione Separata professionisti.  _(Rule 6 -- F24 codici tributo)_
 
 ### Rule 7 -- Tax deductibility (IRPEF)
 
-INPS contributions are 100% deductible from reddito complessivo. Deducted in Quadro RP, Rigo RP21. Cash basis: contributions paid in year X deducted in year X. Under regime forfettario: INPS deducted from forfait income before flat rate applied.
+- **Tax deductibility (IRPEF)** — INPS contributions are 100% deductible from reddito complessivo. Deducted in Quadro RP, Rigo RP21. Cash basis: contributions paid in year X deducted in year X. Under regime forfettario: INPS deducted from forfait income before flat rate applied.  _(Rule 7 -- Tax deductibility (IRPEF))_
 
 ### Rule 8 -- Quadro RR
 
-INPS Gestione Separata contributions declared in Quadro RR, Sezione II of Modello Redditi PF. Deadline: 31 October (for prior year income).
+- **Quadro RR** — INPS Gestione Separata contributions declared in Quadro RR, Sezione II of Modello Redditi PF. Deadline: 31 October (for prior year income).  _(Rule 8 -- Quadro RR)_
 
 ### Rule 9 -- First year rule
 
-No prior year base for acconti. Pay nothing during the year and settle full saldo by 30 June following year, OR make voluntary advance payments.
+- **First year rule** — No prior year base for acconti. Pay nothing during the year and settle full saldo by 30 June following year, OR make voluntary advance payments.  _(Rule 9 -- First year rule)_
 
 ### Rule 10 -- INPS is computed on income BEFORE the INPS deduction
 
-Circular dependency resolved: INPS base = gross professional income. INPS deduction reduces IRPEF, not the INPS base itself.
-
----
+- **INPS computed before deduction** — Circular dependency resolved: INPS base = gross professional income. INPS deduction reduces IRPEF, not the INPS base itself.  _(Rule 10 -- INPS is computed on income BEFORE the INPS deduction)_
 
 ## Section 6 -- Tier 2 catalogue
 
@@ -270,11 +267,8 @@ Circular dependency resolved: INPS base = gross professional income. INPS deduct
 **Issue:** Full rate applies on actual income. No pro-rata of rate. Minimale of EUR 18,555 still applies for full-year credit assessment.
 **Action:** Confirm start date and first-year acconto strategy.
 
----
-
 ## Section 7 -- Excel working paper template
 
-```
 ITALY INPS GESTIONE SEPARATA -- WORKING PAPER
 Client: [name]
 Tax Year: [year]
@@ -307,9 +301,6 @@ MONTHS CREDITED
 
 REVIEWER FLAGS
   [List any Tier 2 flags]
-```
-
----
 
 ## Section 8 -- Bank statement reading guide
 
@@ -332,8 +323,6 @@ REVIEWER FLAGS
 4. Rateizzazione instalments (Jul-Nov) have progressively smaller amounts with interest
 5. Ravvedimento operoso adds penalties -- flag for reviewer to split
 
----
-
 ## Section 9 -- Onboarding fallback
 
 If the client provides only a bank statement:
@@ -344,14 +333,14 @@ If the client provides only a bank statement:
 4. **Check for rivalsa income** -- invoices received (credits) with "rivalsa" indicate INPS base includes 4% recovery
 5. **Flag:** "INPS contribution estimate requires the F24 receipt or Modello Redditi PF Quadro RR. Bank statement alone is insufficient for accurate INPS classification."
 
----
-
 ## Section 10 -- Reference material
 
 ### Key figures (2025)
 
+**Key figures (2025)**
+
 | Item | Value |
-|---|---|
+| --- | --- |
 | Aliquota (no other coverage) | 26.07% |
 | Aliquota (with coverage/pensioned) | 24.00% |
 | Massimale | EUR 120,607 |
@@ -360,8 +349,10 @@ If the client provides only a bank statement:
 
 ### Casse professionali (all T3 -- escalate)
 
+**Casse professionali (all T3 -- escalate)**
+
 | Profession | Cassa |
-|---|---|
+| --- | --- |
 | Avvocati | Cassa Forense |
 | Commercialisti | CNPADC |
 | Medici/Odontoiatri | ENPAM |
@@ -404,10 +395,41 @@ If the client provides only a bank statement:
 - NEVER advise on ISCRO without escalating
 - NEVER present figures as definitive
 
----
-
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, EA, tax attorney, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
 
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
+The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
+
+## Talk to a verified accountant
+
+This skill is a tool, not an engagement. Every taxpayer's situation is
+different, and the rules in the skill may not match your specific facts.
+
+To speak with one of the licensed accountants who verifies skills for your
+jurisdiction — **no liability on either side until you and the accountant sign
+a formal engagement letter** — book a free 30-minute call:
+
+**→ [Book a call](https://calendly.com/openaccountants-info/30min)**
+
+We'll route you to the named verifier covering your country or state. You can
+also see the full list of verified accountants at
+[openaccountants.com/network](https://openaccountants.com/network).
+
+<!-- openaccountants-cta-block -->
+
+---
+
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

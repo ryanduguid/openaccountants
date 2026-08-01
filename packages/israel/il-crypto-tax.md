@@ -3,20 +3,26 @@ name: il-crypto-tax
 description: Use this skill when advising on Israeli cryptocurrency tax reporting and capital gains calculations. Trigger on phrases like "crypto tax Israel", "bitcoin tax Israel", "מס קריפטו", "FIFO Israel", "Form 1325 crypto", "Form 1322", "capital gains crypto Israel", "staking tax Israel", "airdrop tax Israel", "DeFi tax Israel", "voluntary disclosure crypto Israel", "gilui mirtzon", "גילוי מרצון", or any Israeli cryptocurrency tax query. ALWAYS read this skill before advising on Israeli crypto taxation.
 version: 1.0
 jurisdiction: IL
-tax_year: 2025-2026
+tax_year: 2025
+last_updated: 2026-05-20
+verified_by: pending
 category: international
+tier: 2
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Israel Cryptocurrency Tax Reporting Skill v1.0
+# IL Crypto Tax
+
+## Israel Cryptocurrency Tax Reporting Skill v1.0
 
 > **Based on work by [Skills IL](https://github.com/skills-il/tax-and-finance)**, licensed under MIT. Adapted for the OpenAccountants format.
 
----
-
 ## Section 1 — Quick reference
 
+**Quick reference table**
+
 | Field | Value |
-|---|---|
+| --- | --- |
 | Country | Israel (מדינת ישראל) |
 | Scope | Cryptocurrency capital gains tax, DeFi income classification, reporting |
 | Currency | NIS (Israeli New Shekel — ₪) |
@@ -36,37 +42,31 @@ category: international
 
 ### Conservative defaults
 
+**Conservative defaults table**
+
 | Ambiguity | Default |
-|---|---|
+| --- | --- |
 | Unknown whether activity is business or investment | Treat as investment (25% capital gains) — flag for professional review if high frequency |
 | Staking reward classification unclear | Treat as income at receipt (most conservative) |
 | Unknown NIS exchange rate for transaction date | Use most recent Bank of Israel business day rate |
 | Crypto received as gift | Use donor's carryover basis (Section 97(a)(5)) |
 | Stablecoins (USDT, USDC) | Still an "asset" — every conversion is a taxable disposal |
 
----
-
 ## Section 2 — Legal framework
 
 ### 2.1 Core principles
 
-- Cryptocurrency is classified as an **asset** (Neches) under Section 88 of the Income Tax Ordinance (Pekudat Mas Hachnasa — פקודת מס הכנסה), NOT as currency
-- Gains are taxed as **capital gains** (Revach Hon) under Chapter E of the Ordinance
-- ITA Circular 2018/05 provides primary guidance on crypto taxation
-- Every disposal (sale, trade, conversion) is a taxable event valued in NIS
-- **Crypto-to-crypto swaps are taxable events** — unlike some jurisdictions, Israel has always treated these as disposals
+- **Crypto classification as asset** — Cryptocurrency is classified as an asset (Neches) under Section 88 of the Income Tax Ordinance (Pekudat Mas Hachnasa — פקודת מס הכנסה), NOT as currency  _(Section 88 ITO)_
+- **Gains taxed as capital gains** — Gains are taxed as capital gains (Revach Hon) under Chapter E of the Ordinance  _(Chapter E, Income Tax Ordinance)_
+- **Primary guidance** — ITA Circular 2018/05 provides primary guidance on crypto taxation  _(ITA Circular 2018/05)_
+- **Taxable event on every disposal** — Every disposal (sale, trade, conversion) is a taxable event valued in NIS
+- **Crypto-to-crypto swaps taxable** — Crypto-to-crypto swaps are taxable events — unlike some jurisdictions, Israel has always treated these as disposals
 
 ### 2.2 Business vs investment classification
 
-If crypto activity constitutes a business (Esek — עסק), gains are taxed as ordinary income at marginal rates (up to 50%). Classification depends on:
-- Frequency and volume of trading
-- Whether taxpayer holds crypto as inventory vs investment
-- Time and effort devoted to crypto activity
-- Whether the taxpayer has another profession
-
-When in doubt, treat as investment (25%) but flag for professional review.
-
----
+- **Business classification consequence** — If crypto activity constitutes a business (Esek — עסק), gains are taxed as ordinary income at marginal rates (up to 50%)
+- **Classification factors** — Classification depends on: Frequency and volume of trading; Whether taxpayer holds crypto as inventory vs investment; Time and effort devoted to crypto activity; Whether the taxpayer has another profession
+- **Default when in doubt** — When in doubt, treat as investment (25%) but flag for professional review
 
 ## Section 3 — FIFO cost basis method
 
@@ -74,24 +74,20 @@ Israel mandates FIFO (First In, First Out) for calculating cost basis unless the
 
 ### 3.1 FIFO rules
 
-1. Queue all purchases by date (oldest first)
-2. For each sale, match against the oldest available purchase lots
-3. Calculate gain/loss for each matched lot: (sale price − purchase price − fees) per unit
-4. If a lot is partially consumed, the remainder stays in the queue
-5. Sum all gains and losses for the tax year
+- **FIFO calculation steps** — 1. Queue all purchases by date (oldest first) 2. For each sale, match against the oldest available purchase lots 3. Calculate gain/loss for each matched lot: (sale price − purchase price − fees) per unit 4. If a lot is partially consumed, the remainder stays in the queue 5. Sum all gains and losses for the tax year
 
 ### 3.2 Currency conversion
 
-- All transactions must be converted to NIS at the Bank of Israel exchange rate (Sha'ar Yatzig — שער יציג) on the transaction date
-- For crypto-to-crypto trades, the NIS value of BOTH sides must be determined at the time of trade
-- For weekends/holidays when BOI doesn't publish rates, use the most recent business day rate
-
----
+- **NIS conversion at BOI exchange rate** — All transactions must be converted to NIS at the Bank of Israel exchange rate (Sha'ar Yatzig — שער יציג) on the transaction date
+- **Crypto-to-crypto NIS valuation** — For crypto-to-crypto trades, the NIS value of BOTH sides must be determined at the time of trade
+- **Weekend/holiday rate fallback** — For weekends/holidays when BOI doesn't publish rates, use the most recent business day rate
 
 ## Section 4 — DeFi and special income classification
 
+**DeFi and special income classification table**
+
 | Activity | Classification | Tax rate | Reporting form |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Buy and hold, then sell | Capital gain | 25% | Form 1325 |
 | Crypto-to-crypto swap | Capital gain (disposal + acquisition) | 25% | Form 1325 |
 | Staking rewards | Income at receipt (conservative); debated | 25–50% | Form 1301 or 1325 |
@@ -105,96 +101,69 @@ Israel mandates FIFO (First In, First Out) for calculating cost basis unless the
 
 ### Classification notes
 
-- **Staking:** ITA has not issued definitive guidance. Conservative approach treats rewards as income at receipt (market value), then capital gain/loss on subsequent sale
-- **Airdrops:** Received tokens are income at market value on receipt date. Cost basis for future sale = market value at receipt
-- **Hard forks:** New tokens have zero cost basis; entire sale proceeds are capital gain
-- **Stablecoins:** USDT, USDC, DAI are still "asset" under Section 88. Every USDT-to-USDC swap, every conversion leg of a DeFi trade, every off-ramp to fiat is a taxable disposal
-
----
+- **Staking guidance status** — ITA has not issued definitive guidance. Conservative approach treats rewards as income at receipt (market value), then capital gain/loss on subsequent sale
+- **Airdrop treatment** — Received tokens are income at market value on receipt date. Cost basis for future sale = market value at receipt
+- **Hard fork treatment** — New tokens have zero cost basis; entire sale proceeds are capital gain
+- **Stablecoin treatment** — USDT, USDC, DAI are still "asset" under Section 88. Every USDT-to-USDC swap, every conversion leg of a DeFi trade, every off-ramp to fiat is a taxable disposal  _(Section 88)_
 
 ## Section 5 — Loss offsetting rules
 
-- Capital losses from crypto can offset capital gains from crypto in the same tax year
-- Capital losses can offset gains from other assets (stocks, real estate) in the same year
-- Capital losses carry forward to offset future capital gains under Section 92 (but cannot offset ordinary income)
-- Losses from one spouse can offset gains of the other spouse if filing jointly
-- **Israel has no wash-sale rule** — a taxpayer can sell in December at a loss and re-buy in January with the loss fully recognized
-
----
+- **Crypto losses offset crypto gains** — Capital losses from crypto can offset capital gains from crypto in the same tax year
+- **Losses offset other asset gains** — Capital losses can offset gains from other assets (stocks, real estate) in the same year
+- **Loss carryforward** — Capital losses carry forward to offset future capital gains under Section 92 (but cannot offset ordinary income)  _(Section 92)_
+- **Spousal loss offset** — Losses from one spouse can offset gains of the other spouse if filing jointly
+- **No wash-sale rule** — Israel has no wash-sale rule — a taxpayer can sell in December at a loss and re-buy in January with the loss fully recognized
 
 ## Section 6 — Reporting requirements
 
 ### 6.1 Annual reporting (Forms 1322 / 1325)
 
-- **Form 1322** (Nispach Gimel — נספח ג) — primary capital gains schedule attached to annual return
-- **Form 1325** (Nispach Gimel(1) — נספח ג(1)) — auxiliary detail form for securities/crypto where tax was not withheld at source
-
-For each disposal, report:
-1. Asset description (e.g., "Bitcoin (BTC)")
-2. Date of acquisition (FIFO-determined)
-3. Date of disposal
-4. Acquisition cost (NIS)
-5. Disposal proceeds (NIS)
-6. Capital gain or loss (NIS)
-7. Holding period
+- **Form 1322** — Form 1322 (Nispach Gimel — נספח ג) — primary capital gains schedule attached to annual return
+- **Form 1325** — Form 1325 (Nispach Gimel(1) — נספח ג(1)) — auxiliary detail form for securities/crypto where tax was not withheld at source
+- **Disposal reporting items** — For each disposal, report: 1. Asset description (e.g., "Bitcoin (BTC)") 2. Date of acquisition (FIFO-determined) 3. Date of disposal 4. Acquisition cost (NIS) 5. Disposal proceeds (NIS) 6. Capital gain or loss (NIS) 7. Holding period
 
 ### 6.2 Advance payment (Form 1399י)
 
-- File within **30 days** of the capital gain event
-- Transaction codes: **77** (sale) and **71** (virtual currency)
-- Payment: 25% of gain for individuals (30% for significant shareholders)
-- Advance payments are credited against annual tax liability
-- Penalties for non-payment: interest (Ribit — ריבית) and CPI linkage (Hafreshei Hatzmada — הפרשי הצמדה)
+- **Filing deadline** — File within 30 days of the capital gain event
+- **Transaction codes** — Transaction codes: 77 (sale) and 71 (virtual currency)
+- **Payment rate** — Payment: 25% of gain for individuals (30% for significant shareholders)
+- **Advance payment credit** — Advance payments are credited against annual tax liability
+- **Non-payment penalties** — Penalties for non-payment: interest (Ribit — ריבית) and CPI linkage (Hafreshei Hatzmada — הפרשי הצמדה)
 
 ### 6.3 Annual return obligation
 
-Salaried individuals with crypto disposals must file Form 1301 even if they would otherwise be exempt. Any disposal generally triggers a filing obligation.
-
-**Filing deadlines (tax year 2025, filed in 2026):**
-- Online: June 30, 2026
-- Paper: May 31, 2026
-- CPA-represented: extensions available
-
----
+- **Filing obligation for salaried individuals** — Salaried individuals with crypto disposals must file Form 1301 even if they would otherwise be exempt. Any disposal generally triggers a filing obligation.
+- **Filing deadlines** — Filing deadlines (tax year 2025, filed in 2026): Online: June 30, 2026; Paper: May 31, 2026; CPA-represented: extensions available (tax year 2025)
 
 ## Section 7 — Surtax on crypto gains (Mas Yesafim — מס יסף)
 
-From 2026, capital income (including crypto gains) above NIS 721,560 is subject to:
-- 3% base surtax on all income above the threshold
-- Additional 2% on capital-source income above the same threshold
-- **Effective 5% surtax on crypto gains above NIS 721,560**
-- Threshold frozen through 2027
-
----
+- **Surtax structure from 2026** — From 2026, capital income (including crypto gains) above NIS 721,560 is subject to: 3% base surtax on all income above the threshold; Additional 2% on capital-source income above the same threshold; Effective 5% surtax on crypto gains above NIS 721,560 (effective 2026)
+- **Threshold freeze** — Threshold frozen through 2027
 
 ## Section 8 — Voluntary disclosure (Nohal Gilui Mirtzon — נוהל גילוי מרצון)
 
-The 2025–2026 Voluntary Disclosure Procedure expressly covers digital assets and grants criminal immunity.
+**Voluntary disclosure tracks table**
 
 | Track | Eligibility | Deadline |
-|---|---|---|
+| --- | --- | --- |
 | Green Track | Annual income up to NIS 500,000 and cumulative crypto assets up to NIS 1.5M (as of 31.12.2024) | 31 August 2026 |
 | Regular Track | Larger cases | 31 August 2026 |
 
-Anonymity is no longer available — all applications filed with identifying details.
-
----
+The 2025–2026 Voluntary Disclosure Procedure expressly covers digital assets and grants criminal immunity. Anonymity is no longer available — all applications filed with identifying details.
 
 ## Section 9 — Special rules
 
 ### 9.1 Gifts and inheritance
 
-Under Section 97(a)(5), gifts and inheritance use **carryover basis** — the recipient inherits the donor's original cost basis and acquisition date. Treating inherited crypto as zero-basis or fair-market-value at inheritance is incorrect.
+- **Carryover basis for gifts/inheritance** — Under Section 97(a)(5), gifts and inheritance use carryover basis — the recipient inherits the donor's original cost basis and acquisition date. Treating inherited crypto as zero-basis or fair-market-value at inheritance is incorrect.  _(Section 97(a)(5))_
 
 ### 9.2 Lost crypto
 
-Crypto lost to exchange insolvency (FTX, Celsius pattern), theft, or lost private keys is recognized as a capital loss ONLY when the loss is final and documented (e.g., bankruptcy court order, police report). Do not write off frozen-but-not-bankrupt balances.
+- **Lost crypto treatment** — Crypto lost to exchange insolvency (FTX, Celsius pattern), theft, or lost private keys is recognized as a capital loss ONLY when the loss is final and documented (e.g., bankruptcy court order, police report). Do not write off frozen-but-not-bankrupt balances.
 
 ### 9.3 Inflation indexation
 
-Section 91(b)(3) splits capital gain into a "real gain" (taxed at 25%) and an "inflation-component gain" (taxed at 0% for individuals on assets acquired after 1.1.1994). For long-held lots, a CPA should perform the manual indexation pass, which reduces effective tax.
-
----
+- **Inflation indexation split** — Section 91(b)(3) splits capital gain into a "real gain" (taxed at 25%) and an "inflation-component gain" (taxed at 0% for individuals on assets acquired after 1.1.1994). For long-held lots, a CPA should perform the manual indexation pass, which reduces effective tax. (assets acquired after 1.1.1994)  _(Section 91(b)(3))_
 
 ## Section 10 — Worked examples
 
@@ -232,12 +201,12 @@ Section 91(b)(3) splits capital gain into a "real gain" (taxed at 25%) and an "i
 - The 10 staked ETH have not been disposed — no capital gain event on those
 - Recommend professional consultation on staking classification
 
----
-
 ## Section 11 — Common errors
 
+**Common errors table**
+
 | Error | Consequence |
-|---|---|
+| --- | --- |
 | Using US capital gains rates (15%/20%) | Israeli rate is 25% for individuals |
 | Treating crypto-to-crypto as non-taxable | Always taxable in Israel |
 | Using average cost or LIFO | Israel mandates FIFO |
@@ -247,20 +216,18 @@ Section 91(b)(3) splits capital gain into a "real gain" (taxed at 25%) and an "i
 | Missing 30-day advance payment deadline | Interest and linkage penalties accrue |
 | Ignoring surtax on crypto gains | 5% additional on capital gains above NIS 721,560 |
 
----
-
 ## Section 12 — Reference material
 
+**Reference material table**
+
 | Resource | Reference |
-|---|---|
+| --- | --- |
 | ITA Circular 05/2018 (crypto classification) | https://www.gov.il/he/Departments/legalInfo/04-2018 |
 | Tax Authority — annual return service | https://www.gov.il/he/service/reporting-and-payment-2025-annual-tax-report-for-individuals |
 | Bank of Israel — exchange rates | https://www.boi.org.il/roles/markets/exchangerates/ |
 | Voluntary Disclosure Procedure 2025–2026 | https://www.gov.il/he/Departments/policies/voluntary-disclosure-2025 |
 | Bituach Leumi — self-employed rates | https://www.btl.gov.il/Insurance/National%20Insurance/type_list/Self_Employed/Pages/rates.aspx |
 | OECD CARF (Israel collection from 1 Jan 2026) | https://www.oecd.org/tax/exchange-of-tax-information/crypto-asset-reporting-framework.htm |
-
----
 
 ## Section 13 — When to escalate to a professional
 
@@ -272,19 +239,13 @@ Section 91(b)(3) splits capital gain into a "real gain" (taxed at 25%) and an "i
 - Cross-border transactions with foreign tax obligations
 - Voluntary disclosure consideration
 
----
-
 ## Disclaimer
 
 > **חשוב:** כל המידע בקובץ זה מיועד למטרות מידע וחישוב בלבד. יש לבדוק כל עמדה מול רואה חשבון (Ro'eh Cheshbon) או יועץ מס (Yo'etz Mas) מוסמך לפני הגשה או פעולה.
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional — such as a רואה חשבון (Ro'eh Cheshbon — CPA) or יועץ מס (Yo'etz Mas — tax advisor) licensed in Israel — before filing or acting upon.
 
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
-
----
-
-<!-- openaccountants-cta-block -->
+The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
 
 ## Talk to a verified accountant
 
@@ -299,16 +260,22 @@ a formal engagement letter** — book a free 30-minute call:
 
 We'll route you to the named verifier covering your country or state. You can
 also see the full list of verified accountants at
-[openaccountants.com/network](https://www.openaccountants.com/network).
+[openaccountants.com/network](https://openaccountants.com/network).
 
-<!-- openaccountants-mcp-cta -->
+<!-- openaccountants-cta-block -->
 
-## The accountant-verified version lives in the connector
+---
 
-This file is the open, **research-grade draft**. The **accountant-verified**
-version of this skill is **not published to GitHub** — it is delivered free
-through the OpenAccountants MCP connector, where your AI agent loads the
-verified rules together with the name of the accountant who signed them off.
+## Talk to a verified accountant
 
-**→ Install the free connector:** <https://www.openaccountants.com/connect>
-**MCP endpoint:** `https://www.openaccountants.com/api/mcp`
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

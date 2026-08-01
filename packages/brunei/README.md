@@ -7,7 +7,15 @@
 
 1. `foundation.md`
 2. `intake.md`
-3. `brunei-tax.md`
+3. `bn-company-formation.md`
+4. `bn-corporate-income-tax.md`
+5. `bn-income-tax.md`
+6. `bn-payroll-social.md`
+7. `bn-tax-overview.md`
+8. `bn-vat-gst.md`
+9. `brunei-tax.md`
+10. `payroll-workflow-base.md`
+11. `company-formation-workflow-base.md`
 
 ## How to use
 

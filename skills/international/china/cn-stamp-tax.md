@@ -2,13 +2,14 @@
 name: cn-stamp-tax
 description: 使用本技能处理一切与中国印花税相关的问题。触发短语包括“中国印花税”、“印花税法 2022”、“合同印花税”、“证券交易印花税”、“权证许可证印花税”、“产权转移书据印花税”、“营业账簿印花税”、“印花税申报”、“印花税税目税率表”、“按次申报印花税”、“按期申报印花税”、“涉外合同印花税”、“借款合同印花税”、“技术合同印花税”、“租赁合同印花税”。亦在英文短语出现时触发：“China stamp tax”、“China stamp duty”、“China stamp tax law 2022”、“PRC stamp duty”。涵盖范围包括《中华人民共和国印花税法》（2022年7月1日施行）下的13类合同税率、5项产权转移书据、营业账簿、证券交易印花税、计税依据、申报周期（按次/按期）、电子税务局申报流程、计算实例及小微企业优惠政策。在处理任何中国印花税工作之前，务必先阅读本技能。
 jurisdiction: CN
-domain: international
 tax_year: 2025
+last_updated: 2026-05-27
+verified_by: pending
 tier: 2
-last_updated: 2026-07-06
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# cn-stamp-tax
+# CN Stamp Tax
 
 ## 中国 — 印花税 — 技能 v1.0
 
@@ -331,3 +332,21 @@ To speak with one of the licensed accountants who verifies skills for your juris
 → [Book a call](https://calendly.com/openaccountants-info/30min)
 
 We'll route you to the named verifier covering your country or state. You can also see the full list of verified accountants at [openaccountants.com/network](https://openaccountants.com/network).
+
+<!-- openaccountants-cta-block -->
+
+---
+
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

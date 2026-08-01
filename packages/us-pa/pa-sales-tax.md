@@ -1,24 +1,25 @@
 ---
 name: pa-sales-tax
 description: >
-  Use this skill whenever asked about Pennsylvania sales and use tax, PA DOR filings, Pennsylvania clothing exemption, Philadelphia sales tax, Allegheny County tax, or any request involving Pennsylvania state sales and use tax compliance. Trigger on phrases like "Pennsylvania sales tax", "PA sales tax", "PA DOR", "PA-3", "Philadelphia tax", "Pennsylvania clothing exemption", or any request involving Pennsylvania sales tax. ALWAYS read this skill before touching any Pennsylvania sales tax work.
 version: 2.0
 jurisdiction: US-PA
 tax_year: 2025
+last_updated: 2026-05-22
+verified_by: pending
+depends_on: - us-sales-tax
 category: us-states
-depends_on:
-  - us-sales-tax
-validation_status: ai-drafted-q3
+tier: 2
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Pennsylvania Sales and Use Tax Skill v2.0
-
----
+# PA Sales Tax
 
 ## Section 1 -- Quick Reference
 
+**Quick Reference**
+
 | Field | Value |
-|---|---|
+| --- | --- |
 | State | Pennsylvania |
 | Tax | Sales and Use Tax (state + local) |
 | State rate | 6.00% |
@@ -37,8 +38,10 @@ validation_status: ai-drafted-q3
 
 ### Taxability Quick Matrix
 
+**Taxability Quick Matrix**
+
 | Item | Taxable? | Notes |
-|---|---|---|
+| --- | --- | --- |
 | Tangible personal property | YES | Default taxable |
 | SaaS / cloud software | YES | Taxable as canned software; custom software exempt |
 | Grocery food | NO | Most food for home consumption exempt |
@@ -51,55 +54,53 @@ validation_status: ai-drafted-q3
 
 ### Conservative Defaults
 
+**Conservative Defaults**
+
 | Ambiguity | Default |
-|---|---|
+| --- | --- |
 | Product taxability unknown | Taxable |
 | Clothing item unclear | Exempt (most clothing is exempt in PA) |
 | Custom vs canned software unknown | Taxable (canned) |
 | Philadelphia or Allegheny unclear | State rate only (6%) |
 
----
-
 ## Section 2 -- Required Inputs and Refusal Catalogue
 
 ### Required Inputs
 
-**Minimum viable:** Nexus confirmation, PA sales tax license, filing frequency, products/services sold, whether selling into Philadelphia or Allegheny County.
-
-**Recommended:** Sales by jurisdiction, exemption certificates, prior PA-3 returns.
-
-**Ideal:** Complete transaction log, exemption certificate register.
+- **Minimum viable inputs** — Nexus confirmation, PA sales tax license, filing frequency, products/services sold, whether selling into Philadelphia or Allegheny County.
+- **Recommended inputs** — Sales by jurisdiction, exemption certificates, prior PA-3 returns.
+- **Ideal inputs** — Complete transaction log, exemption certificate register.
 
 ### Refusal Catalogue
 
-**R-PA-1 -- Audit defense.** "Escalate."
-**R-PA-2 -- Complex use tax on construction.** "Construction use tax exemptions require specialist analysis. Escalate."
-
----
+- **R-PA-1 -- Audit defense** — Escalate.
+- **R-PA-2 -- Complex use tax on construction** — Construction use tax exemptions require specialist analysis. Escalate.
 
 ## Section 3 -- Transaction Pattern Library
 
 ### 3.1 Taxable Sales
 
+**Taxable Sales**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | Electronics / hardware | Taxable at combined rate | TPP |
 | SaaS subscription (canned) | Taxable | Canned software |
 | Repair services for TPP | Taxable | Enumerated service |
 | Cleaning services | Taxable | Enumerated |
-| Digital downloads | Taxable | |
+| Digital downloads | Taxable |  |
 
 ### 3.2 Exempt Sales
 
+**Exempt Sales**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | Clothing (most) | Exempt | PA exempts most clothing |
 | Grocery food (most) | Exempt | Food for home consumption |
 | Custom software | Exempt | Designed for specific customer |
-| Prescription medicine | Exempt | |
+| Prescription medicine | Exempt |  |
 | Resale with certificate | Exempt | REV-1220 |
-
----
 
 ## Section 4 -- Worked Examples
 
@@ -129,55 +130,56 @@ validation_status: ai-drafted-q3
 
 **Classification:** Tax = $0. Custom software is exempt in PA.
 
----
-
 ## Section 5 -- Tier 1 Rules (When Data Is Clear)
 
 ### 5.1 Rate Structure
 
-State: 6.00%. Philadelphia: +2.00% = 8.00%. Allegheny County: +1.00% = 7.00%. All other areas: 6.00%.
+- **State rate** — 6.00%
+- **Philadelphia combined rate** — +2.00% = 8.00%
+- **Allegheny County combined rate** — +1.00% = 7.00%
+- **State rate** — 6.00%
 
 ### 5.2 Filing Frequency
 
+**Filing Frequency**
+
 | Frequency | Criteria | Due Date |
-|---|---|---|
+| --- | --- | --- |
 | Monthly | Tax liability > $75/month | 20th of following month |
 | Quarterly | Tax liability $75 or less/month | 20th after quarter end |
 | Semi-annual | Very low volume | 20th after period end |
 
 ### 5.3 Economic Nexus
 
-$100,000 in gross sales into PA. Effective July 1, 2019. No transaction count test.
+- **Economic nexus threshold** — $100,000 in gross sales into PA USD (Effective July 1, 2019. No transaction count test.)
 
 ### 5.4 Marketplace Facilitator
 
-Required to collect and remit. Effective April 1, 2020.
+- **Marketplace facilitator collection requirement** — Required to collect and remit. Effective April 1, 2020.
 
 ### 5.5 Vendor Discount
 
-1% of tax collected for timely filing. Maximum $25/month for monthly filers.
+- **Vendor discount** — 1% of tax collected for timely filing. Maximum $25/month for monthly filers.
 
 ### 5.6 Penalties
 
+**Penalties**
+
 | Penalty | Rate |
-|---|---|
+| --- | --- |
 | Late filing | 5% per month (max 25%) |
 | Late payment | 3% per month (max 18%) |
 | Interest | Federal underpayment rate + 3% |
-
----
 
 ## Section 6 -- Tier 2 Catalogue (Reviewer Judgement Required)
 
 ### 6.1 Custom vs Canned Software
 
-Custom software (designed for a specific customer) is exempt. Canned/prewritten software is taxable. Mixed situations require analysis. Flag for reviewer.
+- **Custom vs canned software treatment** — Custom software (designed for a specific customer) is exempt. Canned/prewritten software is taxable. Mixed situations require analysis. Flag for reviewer.
 
 ### 6.2 Construction Exemptions
 
-Certain building machinery and equipment used in construction may qualify for exemption. Complex rules. Flag for reviewer.
-
----
+- **Construction machinery/equipment exemption** — Certain building machinery and equipment used in construction may qualify for exemption. Complex rules. Flag for reviewer.
 
 ## Section 7 -- Working Paper Template
 
@@ -196,16 +198,14 @@ G. VENDOR DISCOUNT (if timely)                   ___________
 H. NET REMITTANCE                                ___________
 ```
 
----
-
 ## Section 8 -- Bank Statement Reading Guide
 
+**Bank Statement Reading Guide**
+
 | Narration | Classification Hint |
-|---|---|
+| --- | --- |
 | PA DOR / REVENUE PA | Tax payment -- exclude |
 | AMAZON / SHOPIFY / STRIPE | Marketplace or processor |
-
----
 
 ## Section 9 -- Onboarding Fallback
 
@@ -221,14 +221,14 @@ ONBOARDING QUESTIONS -- PENNSYLVANIA SALES TAX
 8. Sell to exempt entities?
 ```
 
----
-
 ## Section 10 -- Reference Material
 
 ### Key Legislation
 
+**Key Legislation**
+
 | Topic | Reference |
-|---|---|
+| --- | --- |
 | Sales tax imposition | 72 P.S. 7202 |
 | Exemptions | 72 P.S. 7204 |
 | Clothing exemption | 72 P.S. 7204(26) |
@@ -238,12 +238,12 @@ ONBOARDING QUESTIONS -- PENNSYLVANIA SALES TAX
 
 ### Changelog
 
+**Changelog**
+
 | Version | Date | Change |
-|---|---|---|
+| --- | --- | --- |
 | 2.0 | April 2026 | Full rewrite to v2.0; taxability matrix; clothing exemption; custom vs canned software |
 | 1.0 | 2025 | Initial version |
-
----
 
 ## PROHIBITIONS
 
@@ -253,17 +253,11 @@ ONBOARDING QUESTIONS -- PENNSYLVANIA SALES TAX
 - NEVER treat grocery food as taxable -- most food for home consumption is exempt
 - NEVER present calculations as definitive -- direct client to qualified CPA or EA
 
----
-
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional before filing or acting upon.
 
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com).
-
----
-
-<!-- openaccountants-cta-block -->
+The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com).
 
 ## Talk to a verified accountant
 
@@ -278,16 +272,22 @@ a formal engagement letter** — book a free 30-minute call:
 
 We'll route you to the named verifier covering your country or state. You can
 also see the full list of verified accountants at
-[openaccountants.com/network](https://www.openaccountants.com/network).
+[openaccountants.com/network](https://openaccountants.com/network).
 
-<!-- openaccountants-mcp-cta -->
+<!-- openaccountants-cta-block -->
 
-## The accountant-verified version lives in the connector
+---
 
-This file is the open, **research-grade draft**. The **accountant-verified**
-version of this skill is **not published to GitHub** — it is delivered free
-through the OpenAccountants MCP connector, where your AI agent loads the
-verified rules together with the name of the accountant who signed them off.
+## Talk to a verified accountant
 
-**→ Install the free connector:** <https://www.openaccountants.com/connect>
-**MCP endpoint:** `https://www.openaccountants.com/api/mcp`
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

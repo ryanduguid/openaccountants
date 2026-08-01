@@ -3,21 +3,20 @@ name: in-freelance-intake
 description: ALWAYS USE THIS SKILL when a user asks for help preparing their India tax returns AND mentions freelancing, self-employment, contracting, professional services, or independent practice. Trigger on phrases like "help me do my taxes", "prepare my ITR", "I'm self-employed in India", "I'm a freelancer in India", "do my taxes as a consultant", "prepare my income tax return", or any similar phrasing where the user is an India-resident self-employed individual needing tax return preparation. This is the REQUIRED entry point for the India self-employed tax workflow -- every other skill in the stack (india-gst, in-income-tax, in-advance-tax, in-tds-freelance, in-return-assembly) depends on this skill running first to produce a structured intake package. Uses upload-first workflow -- the user dumps all their documents and the skill infers as much as possible before asking questions. Uses ask_user_input_v0 for structured questions instead of one-at-a-time prose. Built for speed. India full-year residents only; self-employed individuals and professionals only.
 version: 0.1
 jurisdiction: IN
+tax_year: 2025
+last_updated: 2026-04-13
+verified_by: pending
 tier: 2
-last_updated: 2026-06-12
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# India Self-Employed Intake Skill v0.1
-
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+# IN Freelance Intake
 
 ## What this file is
 
 The intake orchestrator for India-resident self-employed individuals and professionals. Every downstream India content skill (india-gst, in-income-tax, in-advance-tax, in-tds-freelance) and the assembly orchestrator (in-return-assembly) depend on this skill running first to produce a structured intake package.
 
 This skill does not compute any tax figures. Its job is to collect all the facts, parse all the documents, confirm everything with the user, and hand off a clean intake package to `in-return-assembly`.
-
----
 
 ## Design principles
 
@@ -47,8 +46,6 @@ Target: intake completes in 5 minutes for a prepared user, 15 minutes for a user
 
 **Exception for blocking decisions.** If a single question determines whether the user is in-scope or out-of-scope, ask it standalone.
 
----
-
 ## Section 1 -- The opening
 
 When triggered, respond with ONE message that:
@@ -75,8 +72,6 @@ Then immediately call `ask_user_input_v0` with the refusal questions.
 - List what documents you will eventually need
 - Give a disclaimer beyond the one reviewer line
 
----
-
 ## Section 2 -- Refusal sweep (compact)
 
 Present the refusal sweep as a single `ask_user_input_v0` call with 3 questions, all single-select.
@@ -94,23 +89,19 @@ Q3: "Nature of self-employment?"
     Options: ["Professional services (IT, consulting, legal, medical, accounting, etc.)", "Business (trading, manufacturing, retail)", "Freelance / contract work (domestic or international clients)", "Mixed (professional + business income)"]
 ```
 
-**After the response, evaluate:**
-
-- **Q1 = Resident** -> continue
-- **Q1 = RNOR** -> stop. "I'm set up for ordinary residents only. RNOR status has different rules around foreign income taxation. You need a CA who handles RNOR/NRI returns."
-- **Q1 = Non-resident** -> stop. "I'm set up for India-resident individuals only. NRIs have different rules around source income, DTAA benefits, and return filing. You need a CA who handles NRI returns."
-- **Q1 = Not sure** -> ask one follow-up: "Were you physically present in India for 182 days or more during FY 2025-26 (April 2025 to March 2026)? If yes, you're a Resident. If no, you may be NRI or RNOR depending on prior years."
-
-- **Q2 = Self-employed individual** -> continue
-- **Q2 = HUF** -> stop. "HUFs file separately with different rules for partition, co-parcenary income, and exemptions. You need a CA familiar with HUF returns."
-- **Q2 = Partnership / LLP** -> stop. "Partnerships and LLPs file separate returns (ITR-5) with different rules for partner remuneration and interest. You need a CA familiar with firm returns."
-- **Q2 = Pvt Ltd** -> stop. "I don't cover corporate returns. Private limited companies file ITR-6 with separate rules for directors' remuneration, dividends, and corporate tax. You need a CA."
-- **Q2 = Not sure** -> ask one follow-up: "Do you invoice clients in your own name (or a trade name) using your PAN? Or do you have a registered company/LLP with the MCA? If you invoice in your own name, you're a sole proprietor."
-
-- **Q3 = Professional services** -> continue. Section 44ADA presumptive eligible if gross receipts under INR 75 lakh (INR 50 lakh if cash receipts exceed 5%).
-- **Q3 = Business** -> continue. Section 44AD presumptive eligible if turnover under INR 3 crore (INR 2 crore if cash receipts exceed 5%).
-- **Q3 = Freelance / contract** -> continue. Likely 44ADA path. Flag if foreign clients (TCS on foreign remittance may apply).
-- **Q3 = Mixed** -> continue with flag: may need to track professional and business income separately for presumptive eligibility.
+- **Q1 evaluation - Resident** — Q1 = Resident -> continue
+- **Q1 evaluation - RNOR** — Q1 = RNOR -> stop. "I'm set up for ordinary residents only. RNOR status has different rules around foreign income taxation. You need a CA who handles RNOR/NRI returns."
+- **Q1 evaluation - Non-resident** — Q1 = Non-resident -> stop. "I'm set up for India-resident individuals only. NRIs have different rules around source income, DTAA benefits, and return filing. You need a CA who handles NRI returns."
+- **Q1 evaluation - Not sure** — Q1 = Not sure -> ask one follow-up: "Were you physically present in India for 182 days or more during FY 2025-26 (April 2025 to March 2026)? If yes, you're a Resident. If no, you may be NRI or RNOR depending on prior years."
+- **Q2 evaluation - Self-employed individual** — Q2 = Self-employed individual -> continue
+- **Q2 evaluation - HUF** — Q2 = HUF -> stop. "HUFs file separately with different rules for partition, co-parcenary income, and exemptions. You need a CA familiar with HUF returns."
+- **Q2 evaluation - Partnership / LLP** — Q2 = Partnership / LLP -> stop. "Partnerships and LLPs file separate returns (ITR-5) with different rules for partner remuneration and interest. You need a CA familiar with firm returns."
+- **Q2 evaluation - Pvt Ltd** — Q2 = Pvt Ltd -> stop. "I don't cover corporate returns. Private limited companies file ITR-6 with separate rules for directors' remuneration, dividends, and corporate tax. You need a CA."
+- **Q2 evaluation - Not sure** — Q2 = Not sure -> ask one follow-up: "Do you invoice clients in your own name (or a trade name) using your PAN? Or do you have a registered company/LLP with the MCA? If you invoice in your own name, you're a sole proprietor."
+- **Q3 evaluation - Professional services, Section 44ADA presumptive eligibility** — under INR 75 lakh (INR 50 lakh if cash receipts exceed 5%) INR (Section 44ADA presumptive eligible if gross receipts under INR 75 lakh (INR 50 lakh if cash receipts exceed 5%))  _(Section 44ADA)_
+- **Q3 evaluation - Business, Section 44AD presumptive eligibility** — under INR 3 crore (INR 2 crore if cash receipts exceed 5%) INR (Section 44AD presumptive eligible if turnover under INR 3 crore (INR 2 crore if cash receipts exceed 5%))  _(Section 44AD)_
+- **Q3 evaluation - Freelance / contract** — Q3 = Freelance / contract -> continue. Likely 44ADA path. Flag if foreign clients (TCS on foreign remittance may apply).
+- **Q3 evaluation - Mixed** — Q3 = Mixed -> continue with flag: may need to track professional and business income separately for presumptive eligibility.
 
 **After Q1-Q3 pass, ask the second batch of scope questions (also batched):**
 
@@ -125,25 +116,18 @@ Q6: "Age as of 31 March 2026?"
     Options: ["Below 60", "60-79 (senior citizen)", "80+ (super senior citizen)"]
 ```
 
-**Evaluate Q4:**
-- **PAN linked to Aadhaar** -> continue.
-- **PAN not linked** -> continue with flag: PAN may be inoperative under s.139AA. TDS at higher rate (20%) may apply. Urgent: link before filing.
-- **No PAN** -> stop. "You need a PAN to file income tax returns. Apply for PAN first, then come back."
-
-**Evaluate Q5:**
-- **GST registered (regular)** -> continue. GSTR-3B and GSTR-1 filing required.
-- **GST registered (composition)** -> continue with flag: composition scheme limits and flat rate apply.
-- **Not GST registered** -> continue with flag: if aggregate turnover exceeds INR 20 lakh (INR 10 lakh for special category states), registration is mandatory. Will check after inference.
-- **Not sure** -> ask one follow-up: "Do you have a 15-digit GSTIN? Do you charge GST on your invoices? If yes, you're registered."
-
-**Evaluate Q6:**
-- **Below 60** -> standard exemption limit INR 3,00,000 (new regime) or INR 2,50,000 (old regime).
-- **60-79** -> senior citizen: INR 3,00,000 old regime exemption. New regime same INR 3,00,000.
-- **80+** -> super senior: INR 5,00,000 old regime exemption. New regime same INR 3,00,000. Cannot file online (ITR must be paper-filed or through authorised representative).
+- **Q4 evaluation - PAN linked to Aadhaar** — PAN linked to Aadhaar -> continue.
+- **Q4 evaluation - PAN not linked** — PAN not linked -> continue with flag: PAN may be inoperative under s.139AA. TDS at higher rate (20%) may apply. Urgent: link before filing.  _(s.139AA)_
+- **Q4 evaluation - No PAN** — No PAN -> stop. "You need a PAN to file income tax returns. Apply for PAN first, then come back."
+- **Q5 evaluation - GST registered (regular)** — GST registered (regular) -> continue. GSTR-3B and GSTR-1 filing required.
+- **Q5 evaluation - GST registered (composition)** — GST registered (composition) -> continue with flag: composition scheme limits and flat rate apply.
+- **Q5 evaluation - GST registration threshold** — aggregate turnover exceeds INR 20 lakh (INR 10 lakh for special category states) INR (Not GST registered -> continue with flag: if aggregate turnover exceeds INR 20 lakh (INR 10 lakh for special category states), registration is mandatory. Will check after inference.)
+- **Q5 evaluation - Not sure** — Not sure -> ask one follow-up: "Do you have a 15-digit GSTIN? Do you charge GST on your invoices? If yes, you're registered."
+- **Q6 evaluation - Below 60 exemption limit** — INR 3,00,000 (new regime) or INR 2,50,000 (old regime) INR (Below 60 -> standard exemption limit)
+- **Q6 evaluation - 60-79 senior citizen exemption limit** — INR 3,00,000 old regime exemption. New regime same INR 3,00,000. INR (60-79 -> senior citizen)
+- **Q6 evaluation - 80+ super senior exemption limit** — INR 5,00,000 old regime exemption. New regime same INR 3,00,000. Cannot file online (ITR must be paper-filed or through authorised representative). INR (80+ -> super senior)
 
 **Total time:** ~45 seconds if the user taps through.
-
----
 
 ## Section 3 -- The dump
 
@@ -186,11 +170,7 @@ Then wait. Do not ask any other questions while waiting.
 >
 > Come back when you have something to upload. I'll work with whatever you bring.
 
----
-
 ## Section 4 -- The inference pass
-
-When documents arrive, parse each one. For each document, extract:
 
 **Bank statement:**
 - Total deposits (candidate gross receipts)
@@ -227,6 +207,8 @@ When documents arrive, parse each one. For each document, extract:
 - Supplier GSTIN (for ITC eligibility verification)
 - Any items that are blocked ITC under s.17(5) CGST Act
 
+- **Blocked ITC reference** — Any items that are blocked ITC under s.17(5) CGST Act  _(s.17(5) CGST Act)_
+
 **Prior year ITR:**
 - Which form was filed (ITR-3 or ITR-4)
 - Prior year total income and tax liability
@@ -249,8 +231,6 @@ When documents arrive, parse each one. For each document, extract:
 - Reconciliation against Form 26AS
 
 **After parsing everything, build an internal inference object.** Do not show the raw inference yet -- transform it into a compact summary for the user in Section 5.
-
----
 
 ## Section 5 -- The confirmation
 
@@ -321,7 +301,7 @@ After inference, present a single compact summary message. Use a structured form
 >
 > **Is any of this wrong? Reply "looks good" or tell me what to fix.**
 
----
+- **44ADA(4) lock-in rule** — Prior year was 44ADA; if switching to ITR-3 (actual profit), cannot go back to presumptive for 5 years under s.44ADA(4)  _(s.44ADA(4))_
 
 ## Section 6 -- Gap filling
 
@@ -337,7 +317,7 @@ After the user confirms the summary (or corrects it), ask about things that cann
 6. **Other income** -- Savings interest, FD interest, rental income, capital gains.
 7. **Professional tax paid** -- Deductible under s.16(iii) / business expense.
 
-**Tax regime gap-filling example:**
+- **Professional tax deductibility** — Professional tax paid -- Deductible under s.16(iii) / business expense.  _(s.16(iii))_
 
 Call `ask_user_input_v0` with:
 
@@ -354,8 +334,6 @@ If option 1 -> continue with new regime. No 80C/80D questions needed.
 If option 2 -> continue with old regime. Ask about 80C/80D/80CCD deductions.
 If option 3 -> flag for comparison computation: "I'll compute under both regimes and show you which is lower. For now, I need to know your potential deductions." Then ask about 80C/80D.
 
-**Presumptive vs actual profit example:**
-
 Call `ask_user_input_v0` with:
 
 ```
@@ -371,7 +349,7 @@ If option 1 -> presumptive path. Skip detailed expense categorisation.
 If option 2 -> actual profit path. Full expense schedule needed.
 If option 3 -> compute both and compare.
 
-**80C deductions example (old regime only):**
+- **80C deductions example (old regime only)** — max INR 1,50,000 INR (Section 80C investments in FY 2025-26 (max INR 1,50,000))  _(Section 80C)_
 
 Call `ask_user_input_v0` with:
 
@@ -389,8 +367,6 @@ Q: "Section 80C investments in FY 2025-26? (max INR 1,50,000)"
 ```
 
 If "Multiple" -> ask for amounts as text input.
-
-**Home office gap-filling example:**
 
 Call `ask_user_input_v0` with:
 
@@ -412,8 +388,6 @@ If option 4 -> rent is already captured in expenses. No home office calculation 
 If option 5 -> skip home office entirely.
 
 Flag all private-use percentages for reviewer confirmation.
-
----
 
 ## Section 7 -- The final handoff
 
@@ -440,7 +414,7 @@ Once gap-filling is done, produce a final handoff message and hand off to `in-re
 
 Then internally invoke `in-return-assembly` with the structured intake package.
 
----
+0. **Invoke in-return-assembly** — Internally invoke in-return-assembly with the structured intake package after gap-filling is complete.
 
 ## Section 8 -- Structured intake package (internal format)
 
@@ -536,8 +510,6 @@ The downstream skill (`in-return-assembly`) consumes a JSON structure. It is int
 }
 ```
 
----
-
 ## Section 9 -- Refusal handling
 
 Refusals fire from either the refusal sweep (Section 2) or during inference (e.g., company structure discovered in documents).
@@ -560,7 +532,7 @@ When a refusal fires:
 >
 > I can't help with this one.
 
----
+- **Pvt Ltd refusal sample** — Stop -- you operate through a Private Limited Company. I'm set up for self-employed individuals and sole proprietors only. Pvt Ltd companies file ITR-6 with separate rules for directors' salary, dividend distribution tax, and corporate tax rates. You need a CA familiar with corporate returns. I can't help with this one.
 
 ## Section 10 -- Self-checks
 
@@ -588,8 +560,6 @@ When a refusal fires:
 
 **Check IN12 -- Tax regime and presumptive status established.** Old vs new regime and 44ADA/44AD decision confirmed before handoff, as it changes the entire computation.
 
----
-
 ## Section 11 -- Performance targets
 
 For a prepared user (documents in a folder, ready to upload):
@@ -606,8 +576,6 @@ For an unprepared user (has to go fetch documents):
 - Rest: same
 - **Total**: 15-25 minutes
 
----
-
 ## Section 12 -- Cross-skill references
 
 **Inputs:** User-provided documents and answers.
@@ -620,7 +588,10 @@ For an unprepared user (has to go fetch documents):
 - `in-advance-tax` -- Quarterly advance tax reconciliation and interest computation
 - `in-tds-freelance` -- TDS credit reconciliation and reporting
 
----
+0. **india-gst downstream** — GSTR-3B + GSTR-1 reconciliation
+0. **in-income-tax downstream** — ITR-3 or ITR-4 return
+0. **in-advance-tax downstream** — Quarterly advance tax reconciliation and interest computation
+0. **in-tds-freelance downstream** — TDS credit reconciliation and reporting
 
 ### Change log
 
@@ -628,10 +599,26 @@ For an unprepared user (has to go fetch documents):
 
 ## End of Intake Skill v0.1
 
----
-
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a Chartered Accountant, tax practitioner, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
 
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
+The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
+
+<!-- openaccountants-cta-block -->
+
+---
+
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

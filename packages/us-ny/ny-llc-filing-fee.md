@@ -2,9 +2,14 @@
 name: ny-llc-filing-fee-it-204-ll
 description: Tier 2 New York content skill for preparing Form IT-204-LL (Partnership, Limited Liability Company, and Limited Liability Partnership Filing Fee Payment Form) for single-member LLCs disregarded for federal tax purposes whose sole member is a New York full-year resident individual. Covers the flat $25 disregarded-entity filing fee under NY Tax Law §658(c)(1), the "income, gain, loss, or deduction from New York sources" filing trigger, the dormancy exception, the March 15 due date with no extension available, late filing and late payment penalties, and the coordination with the owner's Form IT-201. Does NOT cover multi-member LLCs, LLCs taxed as partnerships or corporations, the gross-receipts-based sliding fee schedule for partnership-taxed LLCs, or LLCs doing business both inside and outside New York — see Section 7. MUST be loaded alongside us-tax-workflow-base v0.2 or later and ny-it-201-resident-return. New York full-year residents with disregarded SMLLCs only.
 version: 0.2
+jurisdiction: US-NY
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # New York IT-204-LL SMLLC Filing Fee Skill v0.2
+
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 ## What this file is, and what it is not
 
@@ -643,7 +648,6 @@ This skill is the smallest file in the NY stack. It was built first (before `ny-
 
 ## End of NY IT-204-LL SMLLC Filing Fee Skill v0.2
 
-
 ---
 
 ## Disclaimer
@@ -651,34 +655,3 @@ This skill is the smallest file in the NY stack. It was built first (before `ny-
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, EA, tax attorney, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
 
 The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
-
----
-
-<!-- openaccountants-cta-block -->
-
-## Talk to a verified accountant
-
-This skill is a tool, not an engagement. Every taxpayer's situation is
-different, and the rules in the skill may not match your specific facts.
-
-To speak with one of the licensed accountants who verifies skills for your
-jurisdiction — **no liability on either side until you and the accountant sign
-a formal engagement letter** — book a free 30-minute call:
-
-**→ [Book a call](https://calendly.com/openaccountants-info/30min)**
-
-We'll route you to the named verifier covering your country or state. You can
-also see the full list of verified accountants at
-[openaccountants.com/network](https://www.openaccountants.com/network).
-
-<!-- openaccountants-mcp-cta -->
-
-## The accountant-verified version lives in the connector
-
-This file is the open, **research-grade draft**. The **accountant-verified**
-version of this skill is **not published to GitHub** — it is delivered free
-through the OpenAccountants MCP connector, where your AI agent loads the
-verified rules together with the name of the accountant who signed them off.
-
-**→ Install the free connector:** <https://www.openaccountants.com/connect>
-**MCP endpoint:** `https://www.openaccountants.com/api/mcp`

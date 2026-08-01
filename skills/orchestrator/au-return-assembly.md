@@ -3,13 +3,16 @@ name: au-return-assembly
 description: Final orchestrator skill that assembles the complete Australian filing package for Australian-resident sole traders. Consumes outputs from all Australian content skills (australia-gst for BAS, au-individual-return for ITR, au-super-guarantee for voluntary contributions, au-medicare-levy for levy and surcharge, au-payg-instalments for instalment schedule) to produce a single unified reviewer package containing every worksheet, every form, every brief section, all cross-skill reconciliations, and the final action list with payment instructions, filing instructions, and next-year planning. This is the capstone skill that runs last and produces the final deliverable. MUST be loaded alongside all Australian content skills listed above. Australian full-year residents only. Sole traders only.
 version: 0.1
 jurisdiction: AU
+tax_year: 2025
+last_updated: 2026-04-13
+verified_by: pending
 tier: 2
-last_updated: 2026-06-12
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Australia Return Assembly Skill v0.1
+# AU Return Assembly
 
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+## Australia Return Assembly Skill v0.1
 
 ## CRITICAL EXECUTION DIRECTIVE -- READ FIRST
 
@@ -29,121 +32,87 @@ Specifically:
 
 **Failure mode to avoid:** The skill halts mid-execution and asks the user a meta-question about workflow pacing. If you feel the urge to ask "how should I proceed," the correct action is to pick the most defensible path and proceed, flagging the decision in the reviewer brief so the reviewer can challenge it.
 
----
-
 ## What this file is
 
 The final capstone skill for Australian sole trader returns. Every Australian content skill feeds into this one. The output is the complete reviewer package that a registered tax agent can review, sign off on, and deliver to the client along with lodgement instructions.
 
 This skill coordinates execution of the content skills, verifies cross-skill consistency, and assembles the final deliverable.
 
----
-
 ## Section 1 -- Scope
 
-Produces the complete Australian filing package for:
-- Full-year Australian residents
-- Sole traders
-- Tax year 2024-25 (1 July 2024 - 30 June 2025)
-- Lodging BAS (if GST registered), individual tax return (ITR), super reconciliation, Medicare levy calculation, PAYG instalment schedule
-
----
+- **Scope of package** — Produces the complete Australian filing package for: Full-year Australian residents; Sole traders; Tax year 2024-25 (1 July 2024 - 30 June 2025); Lodging BAS (if GST registered), individual tax return (ITR), super reconciliation, Medicare levy calculation, PAYG instalment schedule  _(Section 1 -- Scope)_
 
 ## Section 2 -- Execution order and dependency chain
 
-The skill enforces the following execution order:
+0. **Run australia-gst first** — BAS return (quarterly, if GST registered). Runs first because GST turnover figures feed into the ITR. For GST-registered: prepare any outstanding quarterly BAS; verify previously lodged quarters. Output: BAS box values (1A GST on sales, 1B GST on purchases), net GST position, turnover (ex-GST). Status check: australia-gst is currently a Q2 skill. If it has substantive computation content, use it. If it is still a placeholder, compute BAS figures from the intake package data and flag in the reviewer brief that the dedicated skill was not available.
+0. **Run au-individual-return second** — Individual tax return (ITR). Depends on BAS output: business income must use ex-GST turnover for GST-registered traders. Depends on BAS output: GST credits are excluded from deductible expenses (net amounts only). Output: ITR label values, taxable income, tax on taxable income, tax offsets, tax liability. Status check: au-individual-return is currently a Q2 skill. If it has substantive computation content, use it. If it is still a placeholder, compute ITR figures from the intake package data and flag in the reviewer brief that the dedicated skill was not available.
+0. **Run au-super-guarantee third** — Voluntary super contributions reconciliation. Depends on ITR: personal deductible contributions reduce taxable income. Verifies contributions are within the $30,000 concessional cap. Output: contribution amounts, cap utilisation, any excess contributions. Status check: au-super-guarantee is currently a Q2 skill. If it has substantive computation content, use it. If it is still a placeholder, compute super figures from the intake package data and flag in the reviewer brief that the dedicated skill was not available.
+0. **Run au-medicare-levy fourth** — Medicare levy and surcharge. Depends on ITR: levy is 2% of taxable income; surcharge applies if no PHI and income above threshold. Checks PHI status from intake package. Output: Medicare levy amount, surcharge amount (if applicable), PHI rebate adjustment. Status check: au-medicare-levy is currently a Q2 skill. If it has substantive computation content, use it. If it is still a placeholder, compute Medicare figures from the intake package data and flag in the reviewer brief that the dedicated skill was not available.
+0. **Run au-payg-instalments fifth** — PAYG instalment schedule (next year). Depends on ITR: instalment income and rate for 2025-26 based on 2024-25 return. Reconciles instalments paid during 2024-25 against final tax liability. Output: instalment credit for current year, next-year instalment schedule. Status check: au-payg-instalments is currently a Q4 stub. If the stub has substantive computation content, use it. If it is still a placeholder, compute PAYG instalment figures using the ATO's instalment rate method and flag in the reviewer brief that the dedicated skill was not available.
 
-1. **`australia-gst`** -- BAS return (quarterly, if GST registered)
-   - Runs first because GST turnover figures feed into the ITR
-   - For GST-registered: prepare any outstanding quarterly BAS; verify previously lodged quarters
-   - Output: BAS box values (1A GST on sales, 1B GST on purchases), net GST position, turnover (ex-GST)
-   - **Status check:** australia-gst is currently a Q2 skill. If it has substantive computation content, use it. If it is still a placeholder, compute BAS figures from the intake package data and flag in the reviewer brief that the dedicated skill was not available.
-
-2. **`au-individual-return`** -- Individual tax return (ITR)
-   - Depends on BAS output: business income must use ex-GST turnover for GST-registered traders
-   - Depends on BAS output: GST credits are excluded from deductible expenses (net amounts only)
-   - Output: ITR label values, taxable income, tax on taxable income, tax offsets, tax liability
-   - **Status check:** au-individual-return is currently a Q2 skill. If it has substantive computation content, use it. If it is still a placeholder, compute ITR figures from the intake package data and flag in the reviewer brief that the dedicated skill was not available.
-
-3. **`au-super-guarantee`** -- Voluntary super contributions reconciliation
-   - Depends on ITR: personal deductible contributions reduce taxable income
-   - Verifies contributions are within the $30,000 concessional cap
-   - Output: contribution amounts, cap utilisation, any excess contributions
-   - **Status check:** au-super-guarantee is currently a Q2 skill. If it has substantive computation content, use it. If it is still a placeholder, compute super figures from the intake package data and flag in the reviewer brief that the dedicated skill was not available.
-
-4. **`au-medicare-levy`** -- Medicare levy and surcharge
-   - Depends on ITR: levy is 2% of taxable income; surcharge applies if no PHI and income above threshold
-   - Checks PHI status from intake package
-   - Output: Medicare levy amount, surcharge amount (if applicable), PHI rebate adjustment
-   - **Status check:** au-medicare-levy is currently a Q2 skill. If it has substantive computation content, use it. If it is still a placeholder, compute Medicare figures from the intake package data and flag in the reviewer brief that the dedicated skill was not available.
-
-5. **`au-payg-instalments`** -- PAYG instalment schedule (next year)
-   - Depends on ITR: instalment income and rate for 2025-26 based on 2024-25 return
-   - Reconciles instalments paid during 2024-25 against final tax liability
-   - Output: instalment credit for current year, next-year instalment schedule
-   - **Status check:** au-payg-instalments is currently a Q4 stub. If the stub has substantive computation content, use it. If it is still a placeholder, compute PAYG instalment figures using the ATO's instalment rate method and flag in the reviewer brief that the dedicated skill was not available.
-
-If any upstream content skill fails to produce validated output, the assembly skill notes the failure in the reviewer brief and continues with available data rather than halting entirely.
-
----
-
-## Section 3 -- Cross-skill reconciliation
+- **Upstream failure handling** — If any upstream content skill fails to produce validated output, the assembly skill notes the failure in the reviewer brief and continues with available data rather than halting entirely.  _(Section 2 -- Execution order and dependency chain)_
 
 ### Cross-check 1: BAS G1 taxable sales = ITR business income (ex-GST)
 
+**If mismatch:** Flag for reviewer. Common causes: timing differences (cash vs accrual), private sales included in bank deposits, GST-free supplies, input-taxed supplies.
+
+**Cross-check 1 table**  _(Cross-check 1: BAS G1 taxable sales = ITR business income (ex-GST))_
+
 | BAS Output | ITR Input | Rule |
-|-----------|-----------|------|
+| --- | --- | --- |
 | BAS 1A total GST on sales (annual) | Implied from ITR business income x 10% | Must reconcile |
 | BAS G1 total sales (ex-GST, annual sum) | ITR business income label | Must match within $1 |
 | Non-GST registered: gross receipts | ITR business income label | Direct match (no GST separation) |
 
-**If mismatch:** Flag for reviewer. Common causes: timing differences (cash vs accrual), private sales included in bank deposits, GST-free supplies, input-taxed supplies.
-
 ### Cross-check 2: Super contributions within concessional cap ($30,000)
 
+**If excess:** Flag for reviewer. Excess concessional contributions are included in assessable income and taxed at marginal rate (plus excess concessional contributions charge). Division 293 tax applies if income + super > $250,000.
+
+**Cross-check 2 table**  _(Cross-check 2: Super contributions within concessional cap ($30,000))_
+
 | Super Input | Source | Rule |
-|------------|--------|------|
+| --- | --- | --- |
 | Employer contributions (if also employed) | PAYG summary / income statement | Counted toward cap |
 | Salary sacrifice (if any) | PAYG summary | Counted toward cap |
 | Personal deductible contributions | Super fund statement + s290-170 notice | Counted toward cap |
 | Total concessional | Sum of above | Must not exceed $30,000 |
 
-**If excess:** Flag for reviewer. Excess concessional contributions are included in assessable income and taxed at marginal rate (plus excess concessional contributions charge). Division 293 tax applies if income + super > $250,000.
-
 ### Cross-check 3: Medicare levy surcharge only if no PHI and income above threshold
 
+**If MLS applies:** Calculate and include in tax liability. Flag for reviewer with income calculation breakdown.
+
+**Cross-check 3 table**  _(Cross-check 3: Medicare levy surcharge only if no PHI and income above threshold)_
+
 | MLS Input | Source | Rule |
-|----------|--------|------|
+| --- | --- | --- |
 | Income for MLS purposes | ITR taxable income + reportable fringe benefits + total net investment loss + reportable super | Combined figure |
 | PHI status | Insurer statement | If adequate hospital cover for full year, no MLS |
 | MLS thresholds (2024-25) | Single: $93,000; Family: $186,000 | Below threshold = no MLS regardless of PHI |
 | MLS rates | Tier 1: 1%; Tier 2: 1.25%; Tier 3: 1.5% | Applied to taxable income |
 
-**If MLS applies:** Calculate and include in tax liability. Flag for reviewer with income calculation breakdown.
-
 ### Cross-check 4: PAYG instalments credit against final tax
 
+**If mismatch:** Common cause is varied instalments (taxpayer requested variation), or first year with no prior instalment history.
+
+**Cross-check 4 table**  _(Cross-check 4: PAYG instalments credit against final tax)_
+
 | PAYG Input | Source | Rule |
-|-----------|--------|------|
+| --- | --- | --- |
 | Instalments paid during 2024-25 | BAS PAYG instalment labels (T7/T8) or ATO records | Credit against final tax |
 | Tax withheld by employer (if any) | PAYG summary | Additional credit |
 | Final tax liability | ITR computation | Total tax - credits = balance due or refund |
 
-**If mismatch:** Common cause is varied instalments (taxpayer requested variation), or first year with no prior instalment history.
-
 ### Cross-check 5: Instant asset write-off consistency
-
-| System | Threshold (2024-25) | Treatment |
-|--------|---------------------|-----------|
-| GST-registered | Asset cost ex-GST < $20,000 | Immediate deduction; GST credit claimed separately |
-| Non-GST-registered | Asset cost inc-GST < $20,000 | Immediate deduction on gross cost |
-| Above threshold | Depreciate using effective life | ITR depreciation schedule |
 
 **If inconsistency:** An asset claimed as instant write-off but costing above the threshold (on the correct GST basis) must be moved to depreciation schedule. Flag for reviewer.
 
----
+**Cross-check 5 table**  _(Cross-check 5: Instant asset write-off consistency)_
 
-## Section 4 -- Final reviewer package contents
+| System | Threshold (2024-25) | Treatment |
+| --- | --- | --- |
+| GST-registered | Asset cost ex-GST < $20,000 | Immediate deduction; GST credit claimed separately |
+| Non-GST-registered | Asset cost inc-GST < $20,000 | Immediate deduction on gross cost |
+| Above threshold | Depreciate using effective life | ITR depreciation schedule |
 
 ### Documents
 
@@ -312,65 +281,38 @@ If any upstream content skill fails to produce validated output, the assembly sk
 6. Review PAYG instalment rate -- vary if income changes significantly
 ```
 
----
-
 ## Section 5 -- Refusals
 
-**R-AU-1 -- Upstream skill did not run.** Name the specific skill. Note: this is a warning, not a hard stop. Continue with available data and flag the gap.
-
-**R-AU-2 -- Upstream self-check failed.** Name the specific check and note it in the reviewer brief. Continue.
-
-**R-AU-3 -- Cross-skill reconciliation failed.** Name the specific reconciliation and describe the discrepancy. Flag for reviewer but continue.
-
-**R-AU-4 -- Intake incomplete.** Specific missing intake items prevent computation. List what is missing and ask the user for the specific data point.
-
-**R-AU-5 -- Out-of-scope item discovered during assembly.** E.g., rental income requiring rental schedule, capital gains requiring CGT schedule, foreign income requiring FITO. Flag and exclude from computation.
-
----
+- **R-AU-1** — Upstream skill did not run. Name the specific skill. Note: this is a warning, not a hard stop. Continue with available data and flag the gap.  _(Section 5 -- Refusals)_
+- **R-AU-2** — Upstream self-check failed. Name the specific check and note it in the reviewer brief. Continue.  _(Section 5 -- Refusals)_
+- **R-AU-3** — Cross-skill reconciliation failed. Name the specific reconciliation and describe the discrepancy. Flag for reviewer but continue.  _(Section 5 -- Refusals)_
+- **R-AU-4** — Intake incomplete. Specific missing intake items prevent computation. List what is missing and ask the user for the specific data point.  _(Section 5 -- Refusals)_
+- **R-AU-5** — Out-of-scope item discovered during assembly. E.g., rental income requiring rental schedule, capital gains requiring CGT schedule, foreign income requiring FITO. Flag and exclude from computation.  _(Section 5 -- Refusals)_
 
 ## Section 6 -- Self-checks
 
-**Check AU1 -- All upstream skills executed.** australia-gst, au-individual-return, au-super-guarantee, au-medicare-levy all produced output. au-payg-instalments produced output or was computed from ITR figures.
-
-**Check AU2 -- BAS G1 matches ITR business income.** Within $1 tolerance.
-
-**Check AU3 -- Super within concessional cap.** Total concessional contributions do not exceed $30,000 (or cap plus carry-forward unused amounts).
-
-**Check AU4 -- Medicare levy surcharge correctly assessed.** MLS applied only if no adequate PHI and income above threshold; MLS not applied if PHI held for full year.
-
-**Check AU5 -- PAYG instalments correctly credited.** Total instalments paid during 2024-25 credited against final tax liability.
-
-**Check AU6 -- GST treatment correct for registered traders.** Business income reported ex-GST; input tax credits excluded from deductible expenses; GST credits claimed on BAS.
-
-**Check AU7 -- GST treatment correct for unregistered traders.** Business income reported gross; all expenses reported gross (GST-inclusive); no BAS required.
-
-**Check AU8 -- Instant asset write-off threshold correct.** Assets under $20,000 (on correct GST basis) claimed as immediate deduction; assets above threshold depreciated.
-
-**Check AU9 -- Personal super deduction has s290-170 notice requirement flagged.** Reviewer brief notes that the taxpayer must lodge a notice of intent to claim with the super fund before the ITR is lodged.
-
-**Check AU10 -- Tax rate table correct for residency.** Resident tax rates applied (including tax-free threshold of $18,200).
-
-**Check AU11 -- HELP compulsory repayment calculated from repayment income.** Repayment income = taxable income + net investment loss + reportable fringe benefits + reportable super. Correct rate applied from HELP repayment thresholds.
-
-**Check AU12 -- Filing calendar is complete.** All deadlines for BAS, ITR, super, and PAYG instalments are listed with specific dates and amounts.
-
----
+- **Check AU1 -- All upstream skills executed** — australia-gst, au-individual-return, au-super-guarantee, au-medicare-levy all produced output. au-payg-instalments produced output or was computed from ITR figures.  _(Section 6 -- Self-checks)_
+- **Check AU2 -- BAS G1 matches ITR business income** — Within $1 tolerance.  _(Section 6 -- Self-checks)_
+- **Check AU3 -- Super within concessional cap** — Total concessional contributions do not exceed $30,000 (or cap plus carry-forward unused amounts).  _(Section 6 -- Self-checks)_
+- **Check AU4 -- Medicare levy surcharge correctly assessed** — MLS applied only if no adequate PHI and income above threshold; MLS not applied if PHI held for full year.  _(Section 6 -- Self-checks)_
+- **Check AU5 -- PAYG instalments correctly credited** — Total instalments paid during 2024-25 credited against final tax liability.  _(Section 6 -- Self-checks)_
+- **Check AU6 -- GST treatment correct for registered traders** — Business income reported ex-GST; input tax credits excluded from deductible expenses; GST credits claimed on BAS.  _(Section 6 -- Self-checks)_
+- **Check AU7 -- GST treatment correct for unregistered traders** — Business income reported gross; all expenses reported gross (GST-inclusive); no BAS required.  _(Section 6 -- Self-checks)_
+- **Check AU8 -- Instant asset write-off threshold correct** — Assets under $20,000 (on correct GST basis) claimed as immediate deduction; assets above threshold depreciated.  _(Section 6 -- Self-checks)_
+- **Check AU9 -- Personal super deduction s290-170 notice flagged** — Reviewer brief notes that the taxpayer must lodge a notice of intent to claim with the super fund before the ITR is lodged.  _(Section 6 -- Self-checks)_
+- **Check AU10 -- Tax rate table correct for residency** — Resident tax rates applied (including tax-free threshold of $18,200).  _(Section 6 -- Self-checks)_
+- **Check AU11 -- HELP compulsory repayment calculated from repayment income** — Repayment income = taxable income + net investment loss + reportable fringe benefits + reportable super. Correct rate applied from HELP repayment thresholds.  _(Section 6 -- Self-checks)_
+- **Check AU12 -- Filing calendar is complete** — All deadlines for BAS, ITR, super, and PAYG instalments are listed with specific dates and amounts.  _(Section 6 -- Self-checks)_
 
 ## Section 7 -- Output files
 
-The final output is **three files**:
-
-1. **`[client_slug]_2024-25_australia_master.xlsx`** -- Single master workbook containing every worksheet and form. Sheets include: Cover, BAS Summary (quarterly), ITR (label-by-label), Depreciation Schedule, Expense Detail, Super Reconciliation, Medicare Levy, PAYG Instalments, Cross-Check Summary. Use live formulas where possible -- e.g., ITR business income references the BAS turnover cell; Medicare levy references ITR taxable income; PAYG credit references BAS instalment totals. Verify no `#REF!` errors. Verify computed values match the computation model within $1 before shipping.
-
-2. **`reviewer_brief.md`** -- Single markdown file covering all sections from Section 4 above: executive summary, BAS, ITR, super, Medicare, PAYG, cross-skill reconciliation, flags, positions, planning notes.
-
-3. **`client_action_list.md`** -- Single markdown file with step-by-step actions: immediate lodgements and payments, quarterly calendar for 2025-26, ongoing compliance reminders.
+- **Output file 1: master workbook** — `[client_slug]_2024-25_australia_master.xlsx` -- Single master workbook containing every worksheet and form. Sheets include: Cover, BAS Summary (quarterly), ITR (label-by-label), Depreciation Schedule, Expense Detail, Super Reconciliation, Medicare Levy, PAYG Instalments, Cross-Check Summary. Use live formulas where possible -- e.g., ITR business income references the BAS turnover cell; Medicare levy references ITR taxable income; PAYG credit references BAS instalment totals. Verify no `#REF!` errors. Verify computed values match the computation model within $1 before shipping.  _(Section 7 -- Output files)_
+- **Output file 2: reviewer brief** — `reviewer_brief.md` -- Single markdown file covering all sections from Section 4 above: executive summary, BAS, ITR, super, Medicare, PAYG, cross-skill reconciliation, flags, positions, planning notes.  _(Section 7 -- Output files)_
+- **Output file 3: client action list** — `client_action_list.md` -- Single markdown file with step-by-step actions: immediate lodgements and payments, quarterly calendar for 2025-26, ongoing compliance reminders.  _(Section 7 -- Output files)_
 
 **If execution runs out of context mid-build:** produce whatever is complete, then state at the end which of the three files were not produced or are partial.
 
 **All files are placed in `/mnt/user-data/outputs/` and presented to the user via the `present_files` tool at the end.**
-
----
 
 ## Section 8 -- Cross-skill references
 
@@ -383,8 +325,6 @@ The final output is **three files**:
 - `au-payg-instalments` -- Instalment schedule (or fallback computation)
 
 **Outputs:** The final reviewer package. No downstream skill.
-
----
 
 ## Section 9 -- Known gaps
 
@@ -400,14 +340,31 @@ The final output is **three files**:
 10. The package is complete only for the 2024-25 tax year; 2025-26 appears only as prospective planning.
 
 ### Change log
-- **v0.1 (April 2026):** Initial draft. Modelled on mt-return-assembly v0.1 adapted for Australian jurisdiction with five content skills (BAS, ITR, super, Medicare, PAYG).
+
+**v0.1 (April 2026):** Initial draft. Modelled on mt-return-assembly v0.1 adapted for Australian jurisdiction with five content skills (BAS, ITR, super, Medicare, PAYG).
 
 ## End of skill
-
----
 
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, EA, tax attorney, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
 
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
+The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
+
+<!-- openaccountants-cta-block -->
+
+---
+
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

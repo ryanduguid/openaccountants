@@ -1,23 +1,25 @@
 ---
 name: ar-monotributo
 description: >
-  Use this skill whenever asked about the Argentine Monotributo simplified tax regime. Trigger on phrases like "monotributo", "regimen simplificado", "AFIP", "DAS monotributo", "categorias monotributo", "impuesto integrado", "monotributista", or any question about the unified monthly payment, category thresholds, or obligations for small self-employed individuals in Argentina. Covers the unified monthly payment (impuesto integrado + aportes jubilatorios + obra social), revenue-based categories (A through K), and exclusion rules. ALWAYS read this skill before touching any Argentine Monotributo work.
 version: 2.0
 jurisdiction: AR
 tax_year: 2025
+last_updated: 2026-04-13
+verified_by: Maria Valeria Benvenuti
+depends_on: - income-tax-workflow-base
 category: international
-depends_on:
-  - income-tax-workflow-base
+tier: 2
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Argentina Monotributo -- Self-Employed Skill v2.0
-
----
+# AR Monotributo
 
 ## Section 1 -- Quick Reference
 
+**Quick Reference**
+
 | Field | Value |
-|---|---|
+| --- | --- |
 | Country | Argentina |
 | Tax | Monotributo unified payment (impuesto integrado + SIPA pension + obra social) |
 | Currency | ARS only |
@@ -33,8 +35,10 @@ depends_on:
 
 ### Services Categories (2025 approximate)
 
+**Services Categories (2025 approximate)**
+
 | Cat. | Max Annual Revenue (ARS) | Impuesto Integrado (ARS/month) | Aportes Jubilatorios (ARS/month) | Obra Social (ARS/month) | Total Monthly (ARS) |
-|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- |
 | A | ~2,108,288 | ~1,047 | ~5,540 | ~7,402 | ~13,989 |
 | B | ~3,133,941 | ~2,014 | ~6,094 | ~7,402 | ~15,510 |
 | C | ~4,387,518 | ~3,441 | ~6,703 | ~7,402 | ~17,546 |
@@ -46,8 +50,10 @@ depends_on:
 
 ### Goods Categories (higher thresholds, additional physical parameters)
 
+**Goods Categories (higher thresholds, additional physical parameters)**
+
 | Cat. | Max Annual Revenue (ARS) |
-|---|---|
+| --- | --- |
 | I | ~13,337,213 |
 | J | ~15,285,088 |
 | K | ~16,957,968 |
@@ -56,15 +62,15 @@ All amounts are approximate. AFIP updates these semi-annually. Verify at afip.go
 
 ### Conservative Defaults
 
+**Conservative Defaults**
+
 | Ambiguity | Default |
-|---|---|
+| --- | --- |
 | Unknown activity type | Services (lower revenue ceilings -- most conservative) |
 | Unknown category | Highest category that fits revenue (highest payment) |
 | Unknown obra social election | Enrolled |
 | Unknown unit price limit | Assume limit applies |
 | Unknown employee count | Zero |
-
----
 
 ## Section 2 -- Required Inputs and Refusal Catalogue
 
@@ -78,22 +84,19 @@ All amounts are approximate. AFIP updates these semi-annually. Verify at afip.go
 
 ### Refusal Catalogue
 
-**R-AR-1 -- Regimen General.** "Revenue exceeds the maximum Monotributo threshold. Client must be in the Regimen General (IVA + Ganancias). This skill does not cover the general regime."
-
-**R-AR-2 -- Sociedades.** "Companies (SRL, SA, SAS) file under different regimes. This skill covers individual Monotributistas only."
-
-**R-AR-3 -- Exclusion transition planning.** "Transition from Monotributo to Regimen General involves retroactive effects and complex planning. Escalate to contador publico."
-
-**R-AR-4 -- Foreign income with CEPO.** "Foreign exchange regulations (CEPO) affecting receipt of foreign-source income require specialist analysis. Escalate."
-
----
+- **R-AR-1 -- Regimen General** — Revenue exceeds the maximum Monotributo threshold. Client must be in the Regimen General (IVA + Ganancias). This skill does not cover the general regime.
+- **R-AR-2 -- Sociedades** — Companies (SRL, SA, SAS) file under different regimes. This skill covers individual Monotributistas only.
+- **R-AR-3 -- Exclusion transition planning** — Transition from Monotributo to Regimen General involves retroactive effects and complex planning. Escalate to contador publico.
+- **R-AR-4 -- Foreign income with CEPO** — Foreign exchange regulations (CEPO) affecting receipt of foreign-source income require specialist analysis. Escalate.
 
 ## Section 3 -- Transaction Pattern Library
 
 ### 3.1 Income Patterns (Credits on Bank Statement)
 
+**Income Patterns (Credits on Bank Statement)**
+
 | Pattern | Tax Label | Treatment | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | CLIENT PAYMENT, TRANSFERENCIA | Monotributo revenue | Include in 12-month rolling revenue | Core income |
 | MERCADO PAGO, MP COBRO | Monotributo revenue | Include | Platform receipts |
 | FACTURA C COBRO | Monotributo revenue | Include | Invoice collection |
@@ -105,26 +108,28 @@ All amounts are approximate. AFIP updates these semi-annually. Verify at afip.go
 
 ### 3.2 Expense Patterns (Debits on Bank Statement)
 
-Monotributo does NOT require expense tracking (no deductions). However, these patterns help identify the DAS payment and operational context:
+**Expense Patterns (Debits on Bank Statement)**
 
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | AFIP DAS, MONOTRIBUTO, VEP | Monthly unified payment | Impuesto integrado + SIPA + obra social |
 | PAGO FACIL, RAPIPAGO (AFIP) | DAS payment via payment network | Same |
 | DEBITO AUTOMATICO AFIP | Automatic DAS deduction | Same |
 | INGRESOS BRUTOS, IIBB | Provincial gross receipts tax | Separate obligation -- not covered |
 | PERSONAL, SUPERMERCADO, ALQUILER | EXCLUDE | Personal expense |
 
+Monotributo does NOT require expense tracking (no deductions). However, these patterns help identify the DAS payment and operational context:
+
 ### 3.3 Platform-Specific Patterns
 
+**Platform-Specific Patterns**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | MERCADO LIBRE, ML VENTA | Revenue | Goods sale via marketplace |
 | PEDIDOS YA, RAPPI | Revenue | Delivery platform income |
 | PAYPAL, WISE, PAYONEER | Revenue (foreign) | Must issue Factura E; verify CEPO compliance |
 | STRIPE PAYOUT | Revenue (foreign) | Same |
-
----
 
 ## Section 4 -- Worked Examples
 
@@ -174,43 +179,31 @@ Monotributo does NOT require expense tracking (no deductions). However, these pa
 - Must recategorize to C at next semi-annual window
 - New monthly payment: ~ARS 17,546
 
----
-
 ## Section 5 -- Tier 1 Rules (When Data Is Clear)
 
 ### 5.1 Monotributo Structure
 
-**Legislation:** Ley 24.977, Art. 6-11
-
-The Monotributo is a unified monthly payment replacing income tax (Ganancias), VAT (IVA), pension contributions (SIPA), and health coverage (obra social) with a single fixed monthly amount determined by category.
+- **Monotributo structure** — The Monotributo is a unified monthly payment replacing income tax (Ganancias), VAT (IVA), pension contributions (SIPA), and health coverage (obra social) with a single fixed monthly amount determined by category.  _(Ley 24.977, Art. 6-11)_
 
 ### 5.2 Category Determination
 
-**Legislation:** Ley 24.977, Art. 8
-
-Category is determined by the highest of: (a) gross revenue in the last 12 months, (b) commercial premises area, (c) electricity consumption, (d) rent paid. For services, only revenue applies. For goods, all parameters apply.
+- **Category determination** — Category is determined by the highest of: (a) gross revenue in the last 12 months, (b) commercial premises area, (c) electricity consumption, (d) rent paid. For services, only revenue applies. For goods, all parameters apply.  _(Ley 24.977, Art. 8)_
 
 ### 5.3 Recategorization
 
-**Legislation:** Ley 24.977, Art. 9
-
-Semi-annual recategorization (January and July). Based on revenue and parameters over the preceding 12 months. Deadline: January 20 and July 20. AFIP may recategorize automatically based on electronic invoice data.
+- **Recategorization** — Semi-annual recategorization (January and July). Based on revenue and parameters over the preceding 12 months. Deadline: January 20 and July 20. AFIP may recategorize automatically based on electronic invoice data.  _(Ley 24.977, Art. 9)_
 
 ### 5.4 Factura C Requirements
 
-Monotributo invoices must be Factura C (no IVA discrimination). Must include: CUIT of issuer, current category letter, description of service/goods, total amount, and CAE from AFIP's online invoicing system. For exports: Factura E.
+- **Factura C requirements** — Monotributo invoices must be Factura C (no IVA discrimination). Must include: CUIT of issuer, current category letter, description of service/goods, total amount, and CAE from AFIP's online invoicing system. For exports: Factura E.
 
 ### 5.5 Physical Parameter Limits (Goods)
 
-**Legislation:** Ley 24.977, Art. 8
-
-Premises area: from 30 m2 (Cat A) to 200 m2 (Cat K). Electricity consumed: from 3,330 kW to 20,000 kW. Rent paid: increasing ceilings per category. Unit price: max ~ARS 180,589 per unit. Services categories do NOT have physical parameters.
+- **Physical parameter limits (goods)** — Premises area: from 30 m2 (Cat A) to 200 m2 (Cat K). Electricity consumed: from 3,330 kW to 20,000 kW. Rent paid: increasing ceilings per category. Unit price: max ~ARS 180,589 per unit. Services categories do NOT have physical parameters.  _(Ley 24.977, Art. 8)_
 
 ### 5.6 Payment and Compliance
 
-Payment deadline: 20th of each month. Methods: VEP, debito automatico, Pago Facil/Rapipago. Electronic invoicing is mandatory (Factura C). Annual informativa required for some categories.
-
----
+- **Payment and compliance** — Payment deadline: 20th of each month. Methods: VEP, debito automatico, Pago Facil/Rapipago. Electronic invoicing is mandatory (Factura C). Annual informativa required for some categories.
 
 ## Section 6 -- Tier 2 Catalogue (Reviewer Judgement Required)
 
@@ -228,9 +221,7 @@ Foreign-source income IS included in Monotributo revenue thresholds. Client must
 
 ### 6.4 Voluntary Departure from Monotributo
 
-Can voluntarily renounce Monotributo and register for IVA + Ganancias. Effective from the first day of the month following renunciation. Cannot return to Monotributo for 3 years.
-
----
+- **Voluntary departure from Monotributo** — Can voluntarily renounce Monotributo and register for IVA + Ganancias. Effective from the first day of the month following renunciation. Cannot return to Monotributo for 3 years.
 
 ## Section 7 -- Excel Working Paper Template
 
@@ -268,14 +259,14 @@ REVIEWER FLAGS:
   [ ] Approaching exclusion threshold?
 ```
 
----
-
 ## Section 8 -- Bank Statement Reading Guide
 
 ### Argentine Bank Statement Formats
 
+**Argentine Bank Statement Formats**
+
 | Bank | Format | Key Fields |
-|---|---|---|
+| --- | --- | --- |
 | Banco Nacion, Banco Provincia | PDF, CSV | Fecha, Descripcion, Debito, Credito, Saldo |
 | Galicia, BBVA, Santander | CSV, PDF | Fecha, Concepto, Importe, Saldo |
 | Brubank, Uala, Naranja X | CSV | Fecha, Descripcion, Monto |
@@ -284,8 +275,10 @@ REVIEWER FLAGS:
 
 ### Key Argentine Banking Terms
 
+**Key Argentine Banking Terms**
+
 | Term | Classification Hint |
-|---|---|
+| --- | --- |
 | TRANSFERENCIA RECIBIDA | Incoming payment -- likely revenue |
 | DEBITO AUTOMATICO | Regular outgoing -- check if DAS |
 | COMPRA CON DEBITO | Point-of-sale purchase |
@@ -293,8 +286,6 @@ REVIEWER FLAGS:
 | PLAZO FIJO | Term deposit interest |
 | MERCADO PAGO | Could be income or expense |
 | VEP AFIP | Tax payment |
-
----
 
 ## Section 9 -- Onboarding Fallback
 
@@ -312,14 +303,14 @@ ONBOARDING QUESTIONS -- ARGENTINA MONOTRIBUTO
 10. Date of last recategorization?
 ```
 
----
-
 ## Section 10 -- Reference Material
 
 ### Key Legislation
 
+**Key Legislation**
+
 | Topic | Reference |
-|---|---|
+| --- | --- |
 | Monotributo structure | Ley 24.977, Art. 6-11 |
 | Category table | Ley 24.977, Art. 8 |
 | Physical parameters | Ley 24.977, Art. 8 |
@@ -337,8 +328,6 @@ Monotributo Social is a reduced-cost version for vulnerable populations, coopera
 
 Interest accrues on unpaid amounts. After prolonged non-payment, AFIP may suspend the CUIT and the client loses obra social coverage. Must regularize through AFIP's payment plan system (Mis Facilidades).
 
----
-
 ## PROHIBITIONS
 
 - NEVER allow Monotributo for revenue exceeding the maximum category threshold -- client must be in Regimen General
@@ -350,17 +339,11 @@ Interest accrues on unpaid amounts. After prolonged non-payment, AFIP may suspen
 - NEVER ignore the 3-year lockout when voluntarily leaving Monotributo
 - NEVER present calculations as definitive -- always label as estimated and direct client to a contador publico
 
----
-
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a contador publico or equivalent licensed practitioner in Argentina) before filing or acting upon.
 
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
-
----
-
-<!-- openaccountants-cta-block -->
+The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
 
 ## Talk to a verified accountant
 
@@ -375,16 +358,22 @@ a formal engagement letter** — book a free 30-minute call:
 
 We'll route you to the named verifier covering your country or state. You can
 also see the full list of verified accountants at
-[openaccountants.com/network](https://www.openaccountants.com/network).
+[openaccountants.com/network](https://openaccountants.com/network).
 
-<!-- openaccountants-mcp-cta -->
+<!-- openaccountants-cta-block -->
 
-## The accountant-verified version lives in the connector
+---
 
-This file is the open, **research-grade draft**. The **accountant-verified**
-version of this skill is **not published to GitHub** — it is delivered free
-through the OpenAccountants MCP connector, where your AI agent loads the
-verified rules together with the name of the accountant who signed them off.
+## Talk to a verified accountant
 
-**→ Install the free connector:** <https://www.openaccountants.com/connect>
-**MCP endpoint:** `https://www.openaccountants.com/api/mcp`
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

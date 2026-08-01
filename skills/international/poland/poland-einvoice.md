@@ -1,26 +1,25 @@
 ---
 name: poland-einvoice
 description: >
-  Use this skill whenever asked about Polish e-invoicing, KSeF, Krajowy System e-Faktur, faktura ustrukturyzowana, FA(3) schema, structured invoice Poland, e-Faktura, UPO (Urzędowe Poświadczenie Odbioru), KSeF API, KSeF 2.0, batch submission Poland, offline mode KSeF, GTU codes, split payment MPP, NIP validation, or any question about issuing, receiving, validating, or archiving electronic invoices in Poland. Also trigger when preparing FA(3) XML invoices, configuring KSeF API integration, handling KSeF rejection errors, or advising on the transition to mandatory KSeF. This skill covers the FA(3) schema, KSeF API architecture, mandatory fields, validation rules, archiving, penalties, and interaction with Polish VAT returns. ALWAYS read this skill before touching any Polish e-invoicing work.
 version: 1.0
 jurisdiction: PL
-tier: 2
-last_updated: 2026-06-12
+tax_year: 2025
+last_updated: 2026-05-23
+verified_by: pending
+depends_on: - einvoice-workflow-base
 category: invoicing
-depends_on:
-  - einvoice-workflow-base
+tier: 2
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Poland E-Invoicing -- KSeF (Krajowy System e-Faktur) Skill v1.0
-
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
-
----
+# Poland Einvoice
 
 ## Section 1 -- Quick Reference
 
+**Section 1 -- Quick Reference**
+
 | Field | Value |
-|---|---|
+| --- | --- |
 | Country | Poland (Rzeczpospolita Polska) |
 | Currency | PLN (Polish złoty); foreign currency invoices also supported |
 | E-invoicing system | KSeF (Krajowy System e-Faktur) -- Krajowy System e-Faktur 2.0 |
@@ -37,14 +36,14 @@ depends_on:
 | Current status | Fully operational in production since 1 February 2026 |
 | Skill version | 1.0 |
 
----
-
 ## Section 2 -- Mandate Scope
 
 ### Who Must Comply
 
+**Who Must Comply**
+
 | Scope | From | Requirement |
-|---|---|---|
+| --- | --- | --- |
 | Large taxpayers (2024 VAT sales > PLN 200M) | 1 February 2026 | Must issue all B2B invoices via KSeF |
 | All remaining VAT-registered businesses | 1 April 2026 | Must issue all B2B invoices via KSeF |
 | B2G | 1 February 2026 | Invoices to public entities must be issued via KSeF (integration with PEF -- Platforma Elektronicznego Fakturowania) |
@@ -60,8 +59,10 @@ depends_on:
 
 ### Timeline Summary
 
+**Timeline Summary**
+
 | Date | Milestone |
-|---|---|
+| --- | --- |
 | October 2021 | KSeF legislative framework enacted |
 | January 2022 | Voluntary KSeF 1.0 launched |
 | September 2023 | FA(2) schema published |
@@ -73,14 +74,14 @@ depends_on:
 | 1 April 2026 | Mandatory for all remaining VAT-registered businesses |
 | 1 January 2027 | Financial penalties for non-compliance take effect |
 
----
-
 ## Section 3 -- Technical Format
 
 ### FA(3) Schema
 
+**FA(3) Schema**
+
 | Parameter | Value |
-|---|---|
+| --- | --- |
 | Format | Proprietary Polish XML schema (NOT EN 16931 / UBL / CII) |
 | Schema version | FA(3) (effective 1 February 2026, replacing FA(2)) |
 | Schema location | https://crd.gov.pl/wzor/2025/06/25/13775/ |
@@ -90,8 +91,10 @@ depends_on:
 
 ### FA(3) Root Structure
 
+**FA(3) Root Structure**
+
 | Element | Required | Description |
-|---|---|---|
+| --- | --- | --- |
 | `Naglowek` | Yes | Header: schema version, form code, creation date |
 | `Podmiot1` | Yes | Seller: tax ID (NIP), name, address |
 | `Podmiot2` | Yes | Buyer: tax ID (NIP or other), name, address |
@@ -103,8 +106,10 @@ depends_on:
 
 ### Key Differences from EN 16931
 
+**Key Differences from EN 16931**
+
 | Feature | KSeF FA(3) | EN 16931 |
-|---|---|---|
+| --- | --- | --- |
 | Schema | Proprietary Polish XSD | UBL 2.1 or CII |
 | GTU codes | Required for classified goods/services (GTU_01--GTU_13) | No equivalent |
 | MPP marker | Split payment indicator for transactions > PLN 15,000 | No equivalent |
@@ -112,14 +117,14 @@ depends_on:
 | Hash/chain integrity | Not in schema (KSeF assigns number) | Not applicable |
 | Peppol interoperability | Not supported -- closed national system | Core design principle |
 
----
-
 ## Section 4 -- Mandatory Fields
 
 ### Naglowek (Header)
 
+**Naglowek (Header)**
+
 | Field | Description | Required |
-|---|---|---|
+| --- | --- | --- |
 | `KodFormularza` | Form code (must be "FA") | Yes |
 | `WariantFormularza` | Schema variant (3 for FA(3)) | Yes |
 | `DataWytworzeniaFa` | XML creation datetime | Yes |
@@ -127,24 +132,30 @@ depends_on:
 
 ### Podmiot1 (Seller)
 
+**Podmiot1 (Seller)**
+
 | Field | Description | Required |
-|---|---|---|
+| --- | --- | --- |
 | `DaneIdentyfikacyjne/NIP` | Seller Polish tax ID (NIP, 10 digits) | Yes |
 | `DaneIdentyfikacyjne/Nazwa` | Seller full legal name | Yes |
 | `Adres` | Seller address (street, city, postal code, country) | Yes |
 
 ### Podmiot2 (Buyer)
 
+**Podmiot2 (Buyer)**
+
 | Field | Description | Required |
-|---|---|---|
+| --- | --- | --- |
 | `DaneIdentyfikacyjne/NIP` or `NrVatUE` or `KodUE`+`NrID` | Buyer identification | Yes (at least one) |
 | `DaneIdentyfikacyjne/Nazwa` | Buyer name | Yes |
 | `Adres` | Buyer address | Yes |
 
 ### Fa (Invoice Body)
 
+**Fa (Invoice Body)**
+
 | Field | Description | Required |
-|---|---|---|
+| --- | --- | --- |
 | `P_1` | Invoice issue date (YYYY-MM-DD) | Yes |
 | `P_2` | Invoice number (sequential) | Yes |
 | `P_3A` or `P_3B` | Sale/service date or period | Yes (one required) |
@@ -162,8 +173,10 @@ depends_on:
 
 ### Adnotacje (Annotations -- Mandatory Booleans)
 
+**Adnotacje (Annotations -- Mandatory Booleans)**
+
 | Field | Description | Values |
-|---|---|---|
+| --- | --- | --- |
 | `P_16` | Reverse charge (Art. 17 ust. 1 pkt 7/8) | 1 or 2 |
 | `P_17` | Self-supply (Art. 106a pkt 2 lit. b) | 1 or 2 |
 | `P_18` | Margin scheme | 1 or 2 |
@@ -172,8 +185,10 @@ depends_on:
 
 ### GTU Codes (Goods/Services Classification)
 
+**GTU Codes (Goods/Services Classification)**
+
 | Code | Category |
-|---|---|
+| --- | --- |
 | GTU_01 | Alcohol |
 | GTU_02 | Fuel |
 | GTU_03 | Heating oil |
@@ -188,14 +203,14 @@ depends_on:
 | GTU_12 | Intangible services (consulting, advisory, legal, management) |
 | GTU_13 | Transport services |
 
----
-
 ## Section 5 -- Transmission Method
 
 ### KSeF API 2.0
 
+**KSeF API 2.0**
+
 | Parameter | Detail |
-|---|---|
+| --- | --- |
 | API specification | OpenAPI 3.0.4 (JSON) |
 | Production endpoint | `https://api.ksef.mf.gov.pl/v2` |
 | DEMO endpoint | `https://api-demo.ksef.mf.gov.pl/v2` |
@@ -214,8 +229,10 @@ depends_on:
 
 ### Alternative Submission Methods
 
+**Alternative Submission Methods**
+
 | Method | Description |
-|---|---|
+| --- | --- |
 | Aplikacja Podatnika KSeF | Free web application from Ministry of Finance |
 | Aplikacja Mobilna KSeF | Free mobile app for issuing/receiving on smartphone |
 | e-mikrofirma | Integration with e-Urząd Skarbowy for micro-businesses |
@@ -232,18 +249,18 @@ If KSeF is unavailable (system downtime declared by MF), businesses may:
 
 ### KSeF Number Format
 
-Format: `{NIP}-{YYYYMMDD}-{sequential number}` -- assigned by KSeF upon acceptance. This number becomes the primary legal identifier of the invoice.
-
----
+- **KSeF Number Format** — Format: `{NIP}-{YYYYMMDD}-{sequential number}` -- assigned by KSeF upon acceptance. This number becomes the primary legal identifier of the invoice.
 
 ## Section 6 -- Validation Rules
 
 ### XSD Validation (First Layer)
 
-KSeF validates every submitted XML against the FA(3) XSD. Approximately 70% of rejections are XSD validation errors.
+- **XSD validation rejection rate** — KSeF validates every submitted XML against the FA(3) XSD. Approximately 70% of rejections are XSD validation errors.
+
+**XSD Validation (First Layer)**
 
 | Common XSD Error | Cause | Resolution |
-|---|---|---|
+| --- | --- | --- |
 | Missing required element | Required field not populated (e.g., NIP in Podmiot1) | Populate all mandatory fields |
 | Wrong date format | Dates must be YYYY-MM-DD (not DD.MM.YYYY or DD/MM/YYYY) | Standardise date formatting |
 | Invalid element order | XML elements must follow XSD-defined sequence | Reorder elements per schema |
@@ -252,8 +269,10 @@ KSeF validates every submitted XML against the FA(3) XSD. Approximately 70% of r
 
 ### Semantic Validation (Second Layer)
 
+**Semantic Validation (Second Layer)**
+
 | Rule | Description |
-|---|---|
+| --- | --- |
 | NIP checksum | Seller NIP must pass modulus-11 check digit validation |
 | Tax calculation | Sum of line net amounts per rate must equal summary amount (P_13_x); VAT amounts must equal P_14_x |
 | Gross total | P_15 must equal sum of all net amounts + all VAT amounts |
@@ -265,22 +284,24 @@ KSeF validates every submitted XML against the FA(3) XSD. Approximately 70% of r
 
 ### Common Rejection Scenarios
 
+**Common Rejection Scenarios**
+
 | Issue | Resolution |
-|---|---|
+| --- | --- |
 | Polish NIP in NrVatUE field | Polish NIPs go in the NIP field; NrVatUE is for EU VAT numbers with country prefix |
 | Rounding mismatch | Use banker's rounding; ensure line totals sum to header totals within 1 grosz |
 | Negative quantities on non-corrective invoice | Only corrective invoices (korekta) may have negative values |
 | Missing Adnotacje fields | Even if not applicable, P_16 through P_18A must contain value "2" (not applicable) |
 | Invalid bank account format | Polish IBAN must be exactly 26 characters (digits only, no PL prefix in domestic format) |
 
----
-
 ## Section 7 -- Tax Computation Rules
 
 ### VAT Rates (2025/2026)
 
+**VAT Rates (2025/2026)**
+
 | Rate Code | Rate | Application |
-|---|---|---|
+| --- | --- | --- |
 | 23 | 23% | Standard rate |
 | 8 | 8% | Reduced (construction, certain food, medical) |
 | 5 | 5% | Reduced (basic food, books, periodicals) |
@@ -291,41 +312,26 @@ KSeF validates every submitted XML against the FA(3) XSD. Approximately 70% of r
 
 ### Rounding
 
-- Line net amount (`P_11`): 2 decimal places
-- Unit price (`P_10`): up to 8 decimal places
-- Quantity (`P_9A`/`P_9B`): up to 6 decimal places
-- VAT amount per line (`P_11A`): 2 decimal places
-- Gross total (`P_15`): 2 decimal places
-- Use banker's rounding (round half to even) for consistency with KSeF validation
-- Sum of line amounts must exactly equal the corresponding summary field -- no tolerance
+- **Rounding rules** — - Line net amount (`P_11`): 2 decimal places - Unit price (`P_10`): up to 8 decimal places - Quantity (`P_9A`/`P_9B`): up to 6 decimal places - VAT amount per line (`P_11A`): 2 decimal places - Gross total (`P_15`): 2 decimal places - Use banker's rounding (round half to even) for consistency with KSeF validation - Sum of line amounts must exactly equal the corresponding summary field -- no tolerance
 
 ### Multi-Rate Invoice Handling
 
-- Each applicable VAT rate has dedicated summary fields (P_13_1/P_14_1 for 23%, P_13_2/P_14_2 for 8%, etc.)
-- Line items reference the rate via P_12
-- If a single invoice has lines at 23%, 8%, and exempt, all three summary pairs must be populated
-- P_15 (gross total) = sum of all P_13_x + sum of all P_14_x
+- **Multi-rate invoice handling** — - Each applicable VAT rate has dedicated summary fields (P_13_1/P_14_1 for 23%, P_13_2/P_14_2 for 8%, etc.) - Line items reference the rate via P_12 - If a single invoice has lines at 23%, 8%, and exempt, all three summary pairs must be populated - P_15 (gross total) = sum of all P_13_x + sum of all P_14_x
 
 ### Split Payment (Mechanizm Podzielonej Płatności -- MPP)
 
-- Mandatory for transactions > PLN 15,000 gross involving goods/services listed in Annex 15 to the VAT Act
-- Set annotation P_18A = 1 when MPP applies
-- Invoice must include the phrase "mechanizm podzielonej płatności"
-- Payment is split: net amount to seller's account, VAT amount to seller's VAT account
+- **Split payment (MPP) rule** — - Mandatory for transactions > PLN 15,000 gross involving goods/services listed in Annex 15 to the VAT Act - Set annotation P_18A = 1 when MPP applies - Invoice must include the phrase "mechanizm podzielonej płatności" - Payment is split: net amount to seller's account, VAT amount to seller's VAT account  _(Annex 15 to the VAT Act)_
 
 ### Corrective Invoices (Faktury Korygujące)
 
-- Must reference the original KSeF number of the corrected invoice
-- Show both "before" and "after" values, or the difference
-- Use same FA(3) schema with corrective-specific fields populated
-- KSeF validates that the referenced original invoice exists and belongs to the same seller NIP
-
----
+- **Corrective invoices rule** — - Must reference the original KSeF number of the corrected invoice - Show both "before" and "after" values, or the difference - Use same FA(3) schema with corrective-specific fields populated - KSeF validates that the referenced original invoice exists and belongs to the same seller NIP
 
 ## Section 8 -- Archiving Requirements
 
+**Section 8 -- Archiving Requirements**
+
 | Requirement | Detail |
-|---|---|
+| --- | --- |
 | KSeF as legal archive | KSeF stores all accepted invoices for 10 years -- this constitutes the legal archive |
 | No separate archiving needed | Once accepted by KSeF, the invoice is legally archived; businesses do not need to maintain separate copies for VAT purposes |
 | Attachments | KSeF does NOT store attachments (Zalacznik node in FA(3) is metadata only); supporting documents (contracts, delivery notes) must be archived separately by the business |
@@ -334,14 +340,16 @@ KSeF validates every submitted XML against the FA(3) XSD. Approximately 70% of r
 | Access | Both seller and buyer can retrieve invoices from KSeF at any time during the retention period using their NIP credentials |
 | Audit | Tax authorities have direct access to all KSeF invoices; no separate data provision needed during audits |
 
----
-
 ## Section 9 -- Penalties for Non-Compliance
 
 Financial penalties take effect from 1 January 2027. During 2026, the practical consequences of non-compliance are primarily operational (invoices not legally valid for VAT deduction).
 
+## Section 9 -- Penalties for Non-Compliance
+
+**Penalties table**
+
 | Violation | Penalty |
-|---|---|
+| --- | --- |
 | Issuing invoice outside KSeF (when mandatory) | Up to 100% of the VAT amount on the invoice |
 | Invoice not conforming to FA(3) schema | Rejection by KSeF -- invoice not legally issued; must correct and resubmit |
 | Failure to issue invoice at all | Standard VAT Act penalties apply (up to 720 daily rates under fiscal penal code) |
@@ -355,18 +363,11 @@ Financial penalties take effect from 1 January 2027. During 2026, the practical 
 - Trading partners may refuse non-KSeF invoices
 - Audit exposure increases as KAS cross-references KSeF data
 
----
-
 ## Section 10 -- Interaction with Tax Skills
 
 ### VAT Return Integration
 
-- KSeF data directly feeds into JPK_VAT (Jednolity Plik Kontrolny) -- the standard audit file for VAT
-- JPK_V7M (monthly) and JPK_V7K (quarterly) declarations must reconcile with invoices in KSeF
-- KSeF invoice numbers are used as references in JPK records
-- GTU codes from KSeF invoices must match GTU markings in JPK_VAT
-- Split payment (MPP) markers from KSeF feed into JPK_VAT classification
-- Tax authorities can automatically cross-check KSeF invoices against JPK declarations in real-time
+- **VAT return integration** — - KSeF data directly feeds into JPK_VAT (Jednolity Plik Kontrolny) -- the standard audit file for VAT - JPK_V7M (monthly) and JPK_V7K (quarterly) declarations must reconcile with invoices in KSeF - KSeF invoice numbers are used as references in JPK records - GTU codes from KSeF invoices must match GTU markings in JPK_VAT - Split payment (MPP) markers from KSeF feed into JPK_VAT classification - Tax authorities can automatically cross-check KSeF invoices against JPK declarations in real-time
 
 ### e-Urząd Skarbowy Integration
 
@@ -376,15 +377,11 @@ Financial penalties take effect from 1 January 2027. During 2026, the practical 
 
 ### Income Tax Integration
 
-- For sole proprietors (JDG -- jednoosobowa działalność gospodarcza), KSeF invoice data feeds into the annual PIT-36/PIT-36L return
-- Revenue and cost figures must reconcile with KSeF records
-- KSeF provides an authoritative source for income verification during audits
+- **Income tax integration** — - For sole proprietors (JDG -- jednoosobowa działalność gospodarcza), KSeF invoice data feeds into the annual PIT-36/PIT-36L return - Revenue and cost figures must reconcile with KSeF records - KSeF provides an authoritative source for income verification during audits
 
 ### Cross-Border Considerations
 
-- All invoices issued by Polish VAT payers, including intra-EU and export invoices, must be reported through KSeF
-- Intra-EU supplies must be reported in both KSeF and the EU VAT Information Exchange System (VIES) via VAT-UE declaration
-- Import VAT (from customs declarations) is handled separately but must reconcile with purchase invoices in KSeF
+- **Cross-border considerations** — - All invoices issued by Polish VAT payers, including intra-EU and export invoices, must be reported through KSeF - Intra-EU supplies must be reported in both KSeF and the EU VAT Information Exchange System (VIES) via VAT-UE declaration - Import VAT (from customs declarations) is handled separately but must reconcile with purchase invoices in KSeF
 
 ### PEF (Platforma Elektronicznego Fakturowania) Integration
 
@@ -392,10 +389,41 @@ Financial penalties take effect from 1 January 2027. During 2026, the practical 
 - From 1 February 2026, PEF forwards invoices to KSeF production environment
 - Public entities receive invoices through KSeF with PEF acting as an intermediary during transition
 
----
-
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a doradca podatkowy, biegły rewident, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
 
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
+The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
+
+## Talk to a verified accountant
+
+This skill is a tool, not an engagement. Every taxpayer's situation is
+different, and the rules in the skill may not match your specific facts.
+
+To speak with one of the licensed accountants who verifies skills for your
+jurisdiction — **no liability on either side until you and the accountant sign
+a formal engagement letter** — book a free 30-minute call:
+
+**→ [Book a call](https://calendly.com/openaccountants-info/30min)**
+
+We'll route you to the named verifier covering your country or state. You can
+also see the full list of verified accountants at
+[openaccountants.com/network](https://openaccountants.com/network).
+
+<!-- openaccountants-cta-block -->
+
+---
+
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

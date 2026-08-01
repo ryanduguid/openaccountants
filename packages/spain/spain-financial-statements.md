@@ -1,22 +1,27 @@
 ---
 name: spain-financial-statements
 description: >
-  Use this skill when preparing, reviewing, or advising on annual financial statements (cuentas anuales) for a Spanish company. Trigger on phrases like "cuentas anuales", "Registro Mercantil", "depósito de cuentas", "Plan General de Contabilidad", "PGC", "PGC PYMES", "balance", "cuenta de pérdidas y ganancias", "memoria", "auditoría España", "ICAC", or any question about preparing and filing statutory accounts under Spanish commercial law. Covers PGC/PGC-PYMES frameworks, size thresholds, required statements, formats, notes, filing deadlines, and audit requirements.
 version: 1.0
 jurisdiction: ES
+tax_year: 2025
+last_updated: 2026-05-23
+verified_by: pending
+depends_on: - financial-statements-workflow-base
 category: financial-statements
-depends_on:
-  - financial-statements-workflow-base
+tier: 2
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Spain Financial Statements Skill v1.0
+# Spain Financial Statements
 
----
+## Spain Financial Statements Skill v1.0
 
 ## Section 1 -- Quick Reference
 
+**Quick Reference**
+
 | Field | Value |
-|---|---|
+| --- | --- |
 | Country | Spain (Reino de España) |
 | Currency | EUR |
 | Filing authority | Registro Mercantil Provincial |
@@ -29,50 +34,52 @@ depends_on:
 | Filing fee | Approximately EUR 20–40 (varies by registry) |
 | Digital filing | Electronic via registradores.org or paper |
 
----
-
 ## Section 2 -- Reporting Framework
 
+**Reporting Framework**
+
 | Entity type | Applicable standard |
-|---|---|
+| --- | --- |
 | Large/medium companies | PGC (full Plan General de Contabilidad, RD 1514/2007) |
 | Small companies (eligible per Art. 257 TRLSC) | PGC-PYMES (simplified, RD 1515/2007) or full PGC (choice) |
 | Micro-entities (Art. 2 RD 1515/2007) | PGC-PYMES with additional micro-entity simplifications |
 | Listed groups (consolidated) | IFRS as adopted by the EU (mandatory) |
 | Non-listed groups (consolidated) | PGC consolidated rules or IFRS (choice) |
 
----
-
 ## Section 3 -- Size Thresholds
 
 ### Abbreviated accounts (cuentas anuales abreviadas) — Art. 257 TRLSC
 
-Companies may prepare abbreviated balance sheet and equity statement if for two consecutive years they meet at least 2 of 3:
+- **Eligibility condition** — Companies may prepare abbreviated balance sheet and equity statement if for two consecutive years they meet at least 2 of 3 criteria  _(Art. 257 TRLSC)_
+
+**Abbreviated balance sheet vs P&L thresholds**  _(Art. 257, Art. 258 TRLSC)_
 
 | Criterion | Abbreviated balance sheet (Art. 257) | Abbreviated P&L (Art. 258) |
-|---|---|---|
+| --- | --- | --- |
 | Total activo (Total assets) | ≤ EUR 4,000,000 | ≤ EUR 11,400,000 |
 | Cifra de negocios (Turnover) | ≤ EUR 8,000,000 | ≤ EUR 22,800,000 |
 | Empleados (Employees) | ≤ 50 | ≤ 250 |
 
 ### PGC-PYMES eligibility
 
-Same thresholds as abbreviated balance sheet (Art. 257 TRLSC): assets ≤ EUR 4M, turnover ≤ EUR 8M, employees ≤ 50.
+- **PGC-PYMES eligibility thresholds** — Same thresholds as abbreviated balance sheet (Art. 257 TRLSC): assets ≤ EUR 4M, turnover ≤ EUR 8M, employees ≤ 50.  _(Art. 257 TRLSC)_
 
 ### Micro-entity criteria (within PGC-PYMES)
 
+**Micro-entity criteria**
+
 | Criterion | Threshold |
-|---|---|
+| --- | --- |
 | Total activo | ≤ EUR 1,000,000 |
 | Cifra de negocios | ≤ EUR 2,000,000 |
 | Empleados | ≤ 10 |
 
----
-
 ## Section 4 -- Required Financial Statements
 
+**Required Financial Statements**
+
 | Document | Micro/Small (abbreviated) | Medium/Large (normal) |
-|---|---|---|
+| --- | --- | --- |
 | Balance (Balance sheet) | Required (abridged) | Required (full) |
 | Cuenta de pérdidas y ganancias (P&L) | Required (abridged if Art. 258 met) | Required (full) |
 | Estado de cambios en el patrimonio neto (ECPN) | Not required (abbreviated) | Required |
@@ -81,12 +88,12 @@ Same thresholds as abbreviated balance sheet (Art. 257 TRLSC): assets ≤ EUR 4M
 | Informe de gestión (Management report) | Not required (if abbreviated balance) | Required |
 | Informe de auditoría (Audit report) | If applicable | Required |
 
----
-
 ## Section 5 -- Year-End Adjustments Checklist
 
+**Year-End Adjustments Checklist**
+
 | # | Adjustment | Spain-specific notes |
-|---|---|---|
+| --- | --- | --- |
 | 1 | Amortización (Depreciation) | PGC NRV 2ª; systematic method; useful life; fiscal tables (tax alignment common for SMEs) |
 | 2 | Provisiones (Provisions) | PGC NRV 15ª; probable obligation, reliable estimate |
 | 3 | Periodificación (Accruals/prepayments) | Ajustes por periodificación; strict matching |
@@ -99,8 +106,6 @@ Same thresholds as abbreviated balance sheet (Art. 257 TRLSC): assets ≤ EUR 4M
 | 10 | Subvenciones de capital (Capital grants) | Recognised in equity, released to P&L over asset life |
 | 11 | Arrendamientos financieros (Finance leases) | Capitalised (PGC NRV 8ª) — substance over form |
 | 12 | Impuesto sobre Sociedades (IS provision) | Current tax + deferred tax adjustments |
-
----
 
 ## Section 6 -- Cuenta de Pérdidas y Ganancias Format (P&L)
 
@@ -159,8 +164,6 @@ B) OPERACIONES INTERRUMPIDAS
    A.5) RESULTADO DEL EJERCICIO
 ```
 
----
-
 ## Section 7 -- Balance Format (Balance Sheet)
 
 PGC format — normal model:
@@ -218,12 +221,12 @@ C) PASIVO CORRIENTE
 TOTAL PATRIMONIO NETO Y PASIVO
 ```
 
----
-
 ## Section 8 -- Memoria (Notes to Accounts)
 
+**Memoria (Notes to Accounts)**
+
 | # | Disclosure | Abbreviated | Normal |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | 1 | Actividad de la empresa (Company activity) | Required | Required |
 | 2 | Bases de presentación (Basis of preparation) | Required | Required |
 | 3 | Normas de valoración (Accounting policies) | Required (simplified) | Required (full) |
@@ -237,12 +240,12 @@ TOTAL PATRIMONIO NETO Y PASIVO
 | 11 | Otra información (Other) | Headcount, auditor fees | Full |
 | 12 | Hechos posteriores (Subsequent events) | Required | Required |
 
----
-
 ## Section 9 -- Filing Requirements
 
+**Filing Requirements**
+
 | Item | Detail |
-|---|---|
+| --- | --- |
 | Filing authority | Registro Mercantil of the province where registered office is located |
 | Filing method | Electronic (registradores.org) or paper at registry |
 | Formulation deadline | Directors must formulate accounts within 3 months of year-end |
@@ -259,21 +262,21 @@ TOTAL PATRIMONIO NETO Y PASIVO
 - **Registry closure**: if accounts not filed for one year, the Registro Mercantil closes the company's sheet — no new registrations (appointments, capital changes) until filed
 - **Fine**: ICAC can impose fines from EUR 1,200 to EUR 60,000 (based on turnover)
 
----
-
 ## Section 10 -- Audit Requirements
 
 ### Mandatory audit (Art. 263 TRLSC)
 
-A company must undergo audit if, for **two consecutive** financial years, it exceeds at least **2 of 3** thresholds:
+- **Mandatory audit trigger condition** — A company must undergo audit if, for two consecutive financial years, it exceeds at least 2 of 3 thresholds.  _(Art. 263 TRLSC)_
+
+**Mandatory audit thresholds**  _(Art. 263 TRLSC)_
 
 | Criterion | Threshold |
-|---|---|
+| --- | --- |
 | Total activo (Total assets) | > EUR 2,850,000 |
 | Cifra neta de negocios (Net turnover) | > EUR 5,700,000 |
 | Número medio de empleados (Employees) | > 50 |
 
-The audit obligation ceases when the company no longer exceeds two thresholds for two consecutive years.
+- **Cessation of audit obligation** — The audit obligation ceases when the company no longer exceeds two thresholds for two consecutive years.  _(Art. 263 TRLSC)_
 
 ### Always subject to audit (regardless of size)
 
@@ -284,17 +287,11 @@ The audit obligation ceases when the company no longer exceeds two thresholds fo
 
 ### Auditor qualification
 
-Auditor inscrito en el Registro Oficial de Auditores de Cuentas (ROAC), regulated by the Instituto de Contabilidad y Auditoría de Cuentas (ICAC).
-
----
+- **Auditor qualification requirement** — Auditor inscrito en el Registro Oficial de Auditores de Cuentas (ROAC), regulated by the Instituto de Contabilidad y Auditoría de Cuentas (ICAC).  _(ROAC / ICAC)_
 
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional before filing or acting upon.
-
----
-
-<!-- openaccountants-cta-block -->
 
 ## Talk to a verified accountant
 
@@ -309,16 +306,22 @@ a formal engagement letter** — book a free 30-minute call:
 
 We'll route you to the named verifier covering your country or state. You can
 also see the full list of verified accountants at
-[openaccountants.com/network](https://www.openaccountants.com/network).
+[openaccountants.com/network](https://openaccountants.com/network).
 
-<!-- openaccountants-mcp-cta -->
+<!-- openaccountants-cta-block -->
 
-## The accountant-verified version lives in the connector
+---
 
-This file is the open, **research-grade draft**. The **accountant-verified**
-version of this skill is **not published to GitHub** — it is delivered free
-through the OpenAccountants MCP connector, where your AI agent loads the
-verified rules together with the name of the accountant who signed them off.
+## Talk to a verified accountant
 
-**→ Install the free connector:** <https://www.openaccountants.com/connect>
-**MCP endpoint:** `https://www.openaccountants.com/api/mcp`
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

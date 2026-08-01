@@ -7,7 +7,15 @@
 
 1. `foundation.md`
 2. `intake.md`
-3. `uruguay-iva.md`
+3. `uruguay-income-tax.md`
+4. `uruguay-iva.md`
+5. `uruguay-payroll.md`
+6. `uruguay-social-contributions.md`
+7. `uy-company-formation.md`
+8. `uy-corporate-income-tax.md`
+9. `uy-tax-overview.md`
+10. `payroll-workflow-base.md`
+11. `company-formation-workflow-base.md`
 
 ## How to use
 

@@ -2,13 +2,14 @@
 name: pt-corporate-tax
 description: "LER SEMPRE este skill antes de tratar fiscalidade de pessoas coletivas em Portugal. Utilizar sempre que seja pedida assistência com Imposto sobre o Rendimento das Pessoas Coletivas (IRC) para sociedades residentes em Portugal. Ativar com expressões como \"IRC Portugal\", \"Modelo 22\", \"derrama estadual\", \"derrama municipal\", \"tributação autónoma\", \"Imposto sobre o Rendimento das Pessoas Coletivas\", \"SIFIDE II\", \"RFAI\", \"Pilar Dois Portugal\", \"Madeira IBC\", \"SGPS\", \"prejuízos fiscais 12 anos\", \"pagamentos por conta\", \"pagamento especial por conta\", \"PEC\", \"CIRC\", \"AT Autoridade Tributária\", \"IES\", \"preços de transferência Portugal\", \"CFC Portugal\", \"participation exemption Portugal\". Ativar também em inglês: \"Portugal corporate tax\", \"Portugal IRC\", \"Portugal Modelo 22\", \"Portugal Pillar Two top-up\", \"Madeira IBC 5%\", \"Portugal R&D credit\", \"Portugal SGPS participation exemption\". Cobre a taxa nominal de 21% nos termos do art.º 87.º CIRC, a taxa reduzida de 17% para PMEs sobre os primeiros €50.000 de matéria coletável, o regime do Centro Internacional de Negócios da Madeira (CINM/IBC) a 5% até 31 dez 2027, a Derrama Estadual progressiva (1,5%/3%/5%/9%) nos termos do art.º 87.º-A, a Derrama Municipal (0-1,5%), a Tributação Autónoma do art.º 88.º (viaturas, despesas de representação, ajudas de custo, paraísos fiscais), o Modelo 22 e respetivos Anexos (A regime geral, B simplificado, C grupos, D incentivos, E preços de transferência), os Pagamentos por Conta do art.º 105.º CIRC (3 prestações: julho, setembro, dezembro) a 80% da coleta do ano anterior, o Pagamento Especial por Conta (PEC) eliminado para PMEs em 2018 mas mantido para grandes empresas, o reporte de prejuízos fiscais a 12 anos com limitação a 65% da matéria coletável (art.º 52.º CIRC), o crédito SIFIDE II (32,5% + 50% incremental, aprovação ANI), o RFAI (25% / 10% por região), o regime SGPS (participation exemption art.º 51.º e 51.º-C), o Pilar Dois (Lei 27/2024 transpondo a Diretiva UE 2022/2523, MNE > €750M), os preços de transferência (art.º 63.º CIRC, Master/Local File por Portaria 268/2021, CbCR), as CFC do art.º 66.º, as retenções na fonte e o cumprimento do IES até 15 julho. Fora de âmbito: regime simplificado de tributação para microentidades (separado), entidades sem fins lucrativos / IPSS, sector financeiro e segurador (regimes especiais), exploração de petróleo e gás, organismos de investimento coletivo (regime especial), fundos de capital de risco, instituições religiosas. Para IVA ver portugal-vat-return; para IRS dos sócios ver pt-income-tax; para contabilidade e SAF-T ver portugal-bookkeeping."
 jurisdiction: PT
-domain: corporate-tax
 tax_year: 2025
+last_updated: 2026-05-27
+verified_by: pending
 tier: 2
-last_updated: 2026-07-06
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# pt-corporate-tax
+# PT Corporate Tax
 
 ## Portugal — IRC (Imposto sobre o Rendimento das Pessoas Coletivas) — Skill v1.0
 
@@ -648,3 +649,21 @@ a formal engagement letter** — book a free 30-minute call:
 We'll route you to the named verifier covering your country or state. You can
 also see the full list of verified accountants at
 [openaccountants.com/network](https://openaccountants.com/network).
+
+<!-- openaccountants-cta-block -->
+
+---
+
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

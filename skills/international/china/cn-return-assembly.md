@@ -2,13 +2,14 @@
 name: cn-return-assembly
 description: 本技能用于汇总组装中国税务申报与年度汇算清缴的最终复核包。触发短语包括："中国税务报表汇总"、"年度汇算清缴"、"企业所得税年度申报"、"个税综合所得汇算"、"电子税务局提交"、"国家税务总局 申报"、"China tax return assembly"、"China annual reconciliation"、"China CIT annual filing"、"China year-end tax"。这是终稿汇总（capstone）技能，统一整合 cn-iit、cn-corporate-tax、cn-vat、cn-fapiao-einvoice、cn-social-insurance、cn-withholding、cn-stamp-tax、cn-formation 等上游技能的输出，产生一份完整的复核包：工作底稿、税额汇总、对账明细、复核简报、纳税人最终动作清单。本技能不重新计算任何税额，仅做汇总、对账、复核与提交准备。完成中国税务申报工作时务必最后阅读本技能。
 jurisdiction: CN
-domain: international
 tax_year: 2025
+last_updated: 2026-05-27
+verified_by: pending
 tier: 2
-last_updated: 2026-07-06
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# cn-return-assembly
+# CN Return Assembly
 
 ## 中国 — 申报与汇算清缴 — 终稿组装 — 技能 v1.0
 
@@ -741,3 +742,21 @@ a formal engagement letter — book a free 30-minute call:
 We'll route you to the named verifier covering your country or state. You can
 also see the full list of verified accountants at
 [openaccountants.com/network](https://openaccountants.com/network).
+
+<!-- openaccountants-cta-block -->
+
+---
+
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

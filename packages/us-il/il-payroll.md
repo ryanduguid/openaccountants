@@ -2,14 +2,16 @@
 name: il-payroll
 description: Tier 2 Illinois content skill for employer payroll compliance covering tax year 2025. Includes the 4.95% flat PIT, supplemental 4.95%, IL-941 quarterly withholding, IL UI wage base $13,590 with rates 0.85-8.65%, the Secure Choice Savings Program auto-enroll mandate for 5+ employees (5% default deferral if no qualified retirement plan offered), Chicago Fair Workweek Ordinance predictive scheduling for 10+ employees in covered industries, Cook County paid sick leave, and the One Day Rest in Seven Act.
 jurisdiction: US-IL
-category: state
+tax_year: 2025
+last_updated: 2026-05-27
+verified_by: Amir Pelinkovic
 tier: 2
-verified_by: pending
-last_updated: 2025-11-15
-version: 0.1
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Illinois Payroll Compliance — Tax Year 2025
+# IL Payroll
+
+## Illinois Payroll Compliance — Tax Year 2025
 
 This skill covers employer payroll obligations under Illinois law for tax year 2025. It complements `us-federal-payroll` (federal withholding, FICA, FUTA, Form 941, W-2) and assumes the federal layer has already been resolved. Illinois imposes a flat personal income tax, a separate unemployment insurance system administered by IDES, a state-mandated retirement program (Secure Choice), and a layered set of labor standards including the One Day Rest in Seven Act and, in Chicago and Cook County, predictive scheduling and paid sick leave ordinances. The reviewer must hold an Illinois-relevant credential (CPA, EA with state experience, or licensed payroll specialist) and sign off before any return or filing is submitted.
 
@@ -17,9 +19,9 @@ The reviewer-oriented output for this skill is a payroll memo identifying every 
 
 ## Verified rates & thresholds (accountant-reviewed)
 
-> Reviewed against the cited tax authorities by **Amir Pelinkovic** on 2026-06-03.
-> This block is generated from the verified facts database at openaccountants.com —
-> edit the facts there, not this prose. Items under clarification are excluded.
+> Reviewed against the cited tax authorities by **a licensed accountant** on 2026-06-03.
+> Items flagged for further clarification are tracked separately and excluded here.
+> This block is generated from verified `skill_facts` — edit the facts, not the prose.
 
 ### IL Payroll
 
@@ -81,6 +83,8 @@ The reviewer-oriented output for this skill is a payroll memo identifying every 
 
 ### 2.1 Flat rate
 
+- **IL flat individual income tax rate** — 4.95%  _(35 ILCS 5/201(b)(5.4))_
+
 Illinois imposes a flat 4.95% individual income tax under 35 ILCS 5/201(b)(5.4). The rate has been unchanged since July 1, 2017 when SB 9 restored it from the 3.75% rate that prevailed January 1, 2015 to June 30, 2017. The "Fair Tax" graduated-rate constitutional amendment was rejected by voters in November 2020, so the flat rate remains in force for 2025.
 
 Withholding is required on:
@@ -92,29 +96,15 @@ Withholding is required on:
 
 ### 2.2 Computing withholding — Booklet IL-700-T
 
+- **Percentage method formula** — 1. Determine gross wages for the pay period. 2. Subtract the allowance amount: $2,775 per allowance per year (the basic personal exemption under 35 ILCS 5/204(b) for 2025), prorated by pay period: - Weekly: $2,775 / 52 = $53.37 per allowance - Bi-weekly: $2,775 / 26 = $106.73 per allowance - Semi-monthly: $2,775 / 24 = $115.63 per allowance - Monthly: $2,775 / 12 = $231.25 per allowance 3. Multiply the result by 4.95%. 4. Round to the nearest cent.  _(35 ILCS 5/204(b))_
+
 The Illinois Department of Revenue publishes Booklet IL-700-T (Illinois Withholding Tax Tables) annually. The 2025 edition retains the wage-bracket and percentage methods used since 2017.
-
-The percentage method formula:
-
-1. Determine gross wages for the pay period.
-2. Subtract the allowance amount: $2,775 per allowance per year (the basic personal exemption under 35 ILCS 5/204(b) for 2025), prorated by pay period:
-   - Weekly: $2,775 / 52 = $53.37 per allowance
-   - Bi-weekly: $2,775 / 26 = $106.73 per allowance
-   - Semi-monthly: $2,775 / 24 = $115.63 per allowance
-   - Monthly: $2,775 / 12 = $231.25 per allowance
-3. Multiply the result by 4.95%.
-4. Round to the nearest cent.
 
 > AUDIT FLASH POINT — The Illinois personal exemption amount is indexed annually under PA 102-0700 (2021). The 2025 amount of $2,775 differs from the 2024 amount of $2,775 (no change) and the 2023 amount of $2,425. Using a prior-year exemption causes systematic under-withholding. Verify the current amount against IL Booklet IL-700-T before locking payroll software for the year.
 
 ### 2.3 Supplemental wages
 
-Under 86 Ill. Adm. Code 100.7110, supplemental wages (bonuses, commissions, severance, stock option exercise, retroactive pay) are withheld at the flat 4.95% rate. There is no separate higher rate as in some federal contexts. The employer has two options:
-
-- **Aggregate method**: Add the supplemental payment to the regular wages and apply the regular withholding formula.
-- **Flat-rate method**: Withhold 4.95% on the supplemental payment without regard to allowances.
-
-The flat-rate method is administratively simpler and is the dominant practice. Either method satisfies the withholding obligation; the difference is reconciled on the employee's IL-1040 at year-end.
+- **Supplemental wage withholding methods** — Under 86 Ill. Adm. Code 100.7110, supplemental wages (bonuses, commissions, severance, stock option exercise, retroactive pay) are withheld at the flat 4.95% rate. There is no separate higher rate as in some federal contexts. The employer has two options: - **Aggregate method**: Add the supplemental payment to the regular wages and apply the regular withholding formula. - **Flat-rate method**: Withhold 4.95% on the supplemental payment without regard to allowances. The flat-rate method is administratively simpler and is the dominant practice. Either method satisfies the withholding obligation; the difference is reconciled on the employee's IL-1040 at year-end.  _(86 Ill. Adm. Code 100.7110)_
 
 ### 2.4 IL-W-4
 
@@ -142,10 +132,12 @@ To activate reciprocity, the employee files Form IL-W-5-NR (Employee's Statement
 
 ### 2.6 IL-941 quarterly return
 
-IL-941 (Illinois Withholding Income Tax Return) is filed quarterly by all Illinois withholding employers regardless of payment frequency. Due dates:
+- **IL-941 filing requirement** — IL-941 (Illinois Withholding Income Tax Return) is filed quarterly by all Illinois withholding employers regardless of payment frequency.  _(86 Ill. Adm. Code 100.7300)_
+
+**IL-941 due dates by quarter**  _(86 Ill. Adm. Code 100.7300)_
 
 | Quarter | Period | Due Date |
-|---|---|---|
+| --- | --- | --- |
 | Q1 2025 | January 1 – March 31 | April 30, 2025 |
 | Q2 2025 | April 1 – June 30 | July 31, 2025 |
 | Q3 2025 | July 1 – September 30 | October 31, 2025 |
@@ -155,39 +147,33 @@ IL-941 must be filed electronically via MyTax Illinois under 86 Ill. Adm. Code 1
 
 ### 2.7 Withholding payment frequency
 
-Withholding deposits are due on a schedule based on the employer's lookback-period liability, mirroring (but not identical to) the federal § 6302 schedule.
+**Withholding deposit schedule by threshold**
 
 | Schedule | Threshold | Deposit Timing |
-|---|---|---|
+| --- | --- | --- |
 | **Annual** | $1,000 or less withheld in prior calendar year | With IL-941 for Q4 (Feb 2026) |
 | **Quarterly** | More than $1,000 but $12,000 or less in lookback period | With each IL-941 |
 | **Monthly** | More than $12,000 in lookback period | 15th of month following payday |
 | **Semi-weekly** | More than $12,000 in lookback period AND $50,000+ in a single quarter, OR $100,000+ accumulated in any quarter | Wednesday for Wed-Fri paydays; Friday for Sat-Tue paydays |
 
-The lookback period is the 12-month period ending June 30 of the preceding calendar year (so for 2025, the lookback is July 1, 2023 to June 30, 2024).
-
-Semi-weekly depositors with a single accumulated liability of $100,000 or more in a quarter must deposit the next banking day under the federal-style "one-day rule," which Illinois has incorporated by reference.
+- **Lookback period definition** — The lookback period is the 12-month period ending June 30 of the preceding calendar year (so for 2025, the lookback is July 1, 2023 to June 30, 2024). Semi-weekly depositors with a single accumulated liability of $100,000 or more in a quarter must deposit the next banking day under the federal-style "one-day rule," which Illinois has incorporated by reference.
 
 ### 2.8 IL-W-3 annual reconciliation
 
-The IL-W-3 (Annual Withholding Income Tax Return Reconciliation) is reconciled on the Q4 IL-941 (there is no separate IL-W-3 form for 2025 — the reconciliation is built into the fourth-quarter return and the W-2 transmittal). Employers must:
-
-1. File the Q4 IL-941 by February 2, 2026.
-2. Electronically file W-2 copies with IL via MyTax Illinois by January 31, 2026.
-3. Electronically file 1099 copies with IL via MyTax Illinois by March 31, 2026 (only those with IL withholding or IL income).
-
-The W-2 totals must reconcile to the sum of the four IL-941s for the year. A mismatch generates a notice from IL DOR Compliance Division and triggers a desk audit.
+- **IL-W-3 reconciliation process** — The IL-W-3 (Annual Withholding Income Tax Return Reconciliation) is reconciled on the Q4 IL-941 (there is no separate IL-W-3 form for 2025 — the reconciliation is built into the fourth-quarter return and the W-2 transmittal). Employers must: 1. File the Q4 IL-941 by February 2, 2026. 2. Electronically file W-2 copies with IL via MyTax Illinois by January 31, 2026. 3. Electronically file 1099 copies with IL via MyTax Illinois by March 31, 2026 (only those with IL withholding or IL income). The W-2 totals must reconcile to the sum of the four IL-941s for the year. A mismatch generates a notice from IL DOR Compliance Division and triggers a desk audit.
 
 ## 3. Illinois Unemployment Insurance (IL UI)
 
 ### 3.1 IDES administration and SUTA framework
 
-IL UI is administered by the Illinois Department of Employment Security (IDES) under the Unemployment Insurance Act, 820 ILCS 405/. Every employer that pays $1,500 or more in wages in any calendar quarter or that employs at least one worker in 20 different weeks in a calendar year becomes subject to UI tax (820 ILCS 405/205).
+- **UI subjectivity threshold** — IL UI is administered by the Illinois Department of Employment Security (IDES) under the Unemployment Insurance Act, 820 ILCS 405/. Every employer that pays $1,500 or more in wages in any calendar quarter or that employs at least one worker in 20 different weeks in a calendar year becomes subject to UI tax (820 ILCS 405/205).  _(820 ILCS 405/205)_
 
 ### 3.2 2025 wage base and rates
 
+**2025 IL UI wage base and rate table**
+
 | Item | 2025 Value |
-|---|---|
+| --- | --- |
 | Taxable wage base per employee | $13,590 |
 | Minimum contribution rate (positive-balance employers) | 0.85% |
 | Maximum contribution rate (negative-balance employers) | 8.65% |
@@ -196,139 +182,88 @@ IL UI is administered by the Illinois Department of Employment Security (IDES) u
 | Fund Building Rate (component included in the above) | 0.55% |
 | State Experience Factor | 109% |
 
-These are set by IDES and published annually. The 2024 wage base was $13,590 (unchanged for 2025). Rates apply to the first $13,590 of each employee's calendar-year wages.
-
-The new employer rate applies for the first three calendar years of liability or until the employer accumulates sufficient experience to be experience-rated, whichever is later.
+- **New employer rate duration** — These are set by IDES and published annually. The 2024 wage base was $13,590 (unchanged for 2025). Rates apply to the first $13,590 of each employee's calendar-year wages. The new employer rate applies for the first three calendar years of liability or until the employer accumulates sufficient experience to be experience-rated, whichever is later.
 
 ### 3.3 Quarterly contribution and wage report
 
-Employers file Form UI-3/40 (Employer's Contribution and Wage Report) quarterly through MyTax Illinois. Due dates:
+**UI-3/40 due dates by quarter**
 
 | Quarter | Due Date |
-|---|---|
+| --- | --- |
 | Q1 2025 | April 30, 2025 |
 | Q2 2025 | July 31, 2025 |
 | Q3 2025 | October 31, 2025 |
 | Q4 2025 | January 31, 2026 |
 
-Employers with 25+ employees in any quarter of the prior calendar year must file electronically.
+- **e-file threshold** — Employers file Form UI-3/40 (Employer's Contribution and Wage Report) quarterly through MyTax Illinois. Employers with 25+ employees in any quarter of the prior calendar year must file electronically.
 
 ### 3.4 Successor employer
 
-When a business is acquired (asset purchase or stock purchase that constitutes a complete or partial transfer of the trade or business), the successor may take the predecessor's experience rate under 820 ILCS 405/1507. This is generally favorable when the predecessor's rate is below the new-employer rate (3.95%) and unfavorable when above. The transfer is mandatory in certain cases (substantial common ownership) and elective in others (arm's-length purchase) — see IDES Form UI-1S.
+- **Successor experience rate transfer** — When a business is acquired (asset purchase or stock purchase that constitutes a complete or partial transfer of the trade or business), the successor may take the predecessor's experience rate under 820 ILCS 405/1507. This is generally favorable when the predecessor's rate is below the new-employer rate (3.95%) and unfavorable when above. The transfer is mandatory in certain cases (substantial common ownership) and elective in others (arm's-length purchase) — see IDES Form UI-1S.  _(820 ILCS 405/1507)_
 
 ### 3.5 SUTA dumping
 
-IDES enforces the federal SUTA Dumping Prevention Act of 2004 (P.L. 108-295) through 820 ILCS 405/1507.1. Knowing transfers of business with the principal purpose of obtaining a lower contribution rate are subject to the maximum rate plus a penalty of 2.0% of the wage base for each year involved.
+- **SUTA dumping penalty** — IDES enforces the federal SUTA Dumping Prevention Act of 2004 (P.L. 108-295) through 820 ILCS 405/1507.1. Knowing transfers of business with the principal purpose of obtaining a lower contribution rate are subject to the maximum rate plus a penalty of 2.0% of the wage base for each year involved.  _(820 ILCS 405/1507.1)_
 
 ### 3.6 Voluntary contributions
 
-An employer may make a voluntary contribution under 820 ILCS 405/1500 to buy down its experience rate. The contribution must be made within 30 days of receiving the annual rate notice (typically mailed in late November or early December for the following calendar year). Voluntary contributions are most often economic when the rate would fall by at least one bracket relative to the cost.
+- **Voluntary contribution mechanics** — An employer may make a voluntary contribution under 820 ILCS 405/1500 to buy down its experience rate. The contribution must be made within 30 days of receiving the annual rate notice (typically mailed in late November or early December for the following calendar year). Voluntary contributions are most often economic when the rate would fall by at least one bracket relative to the cost.  _(820 ILCS 405/1500)_
 
 ## 4. Illinois Secure Choice Savings Program
 
 ### 4.1 Statutory framework
 
-The Illinois Secure Choice Savings Program Act (820 ILCS 80/) was enacted in 2015, amended by PA 101-0026 in 2019 and PA 102-0179 in 2021. It establishes a state-facilitated payroll-deduction Roth IRA program administered by the Illinois Treasurer's Office. The implementation timeline rolled out from late 2018 to 2023, with the final wave (employers with 5–15 employees) coming online November 1, 2023.
+- **Secure Choice statutory framework** — The Illinois Secure Choice Savings Program Act (820 ILCS 80/) was enacted in 2015, amended by PA 101-0026 in 2019 and PA 102-0179 in 2021. It establishes a state-facilitated payroll-deduction Roth IRA program administered by the Illinois Treasurer's Office. The implementation timeline rolled out from late 2018 to 2023, with the final wave (employers with 5–15 employees) coming online November 1, 2023.  _(820 ILCS 80/)_
 
 ### 4.2 Employer mandate
 
-An employer must register with Secure Choice if all of the following apply:
-
-1. The employer has had **5 or more Illinois employees** in every quarter of the preceding calendar year (under 820 ILCS 80/5, "employer" definition).
-2. The employer has been in business for at least **2 years**.
-3. The employer does **not offer a qualified retirement plan** in the preceding 2 years (qualified plans include 401(k), 403(b), 408(k) SEP-IRA, 408(p) SIMPLE IRA, 457(b), payroll-deduction IRA under § 7701, and certain defined benefit plans under § 401(a)).
-
-Employees who are not Illinois residents and do not work in Illinois are excluded from the headcount.
-
-> AUDIT FLASH POINT — The 5-employee threshold was lowered from 25 by PA 102-0179 effective November 1, 2022, with phased compliance dates by employer size. Many small Illinois employers (5–15 employees) are unaware they became subject November 1, 2023. The Illinois Treasurer publishes employer registration notices via the Illinois Secretary of State business registration data; non-registered employers receive enforcement letters with escalating penalties. Verify Secure Choice registration status (or a documented exemption) for every Illinois employer with 5+ employees at the start of any engagement.
+- **Employer mandate triggers** — An employer must register with Secure Choice if all of the following apply: 1. The employer has had **5 or more Illinois employees** in every quarter of the preceding calendar year (under 820 ILCS 80/5, "employer" definition). 2. The employer has been in business for at least **2 years**. 3. The employer does **not offer a qualified retirement plan** in the preceding 2 years (qualified plans include 401(k), 403(b), 408(k) SEP-IRA, 408(p) SIMPLE IRA, 457(b), payroll-deduction IRA under § 7701, and certain defined benefit plans under § 401(a)). Employees who are not Illinois residents and do not work in Illinois are excluded from the headcount. > AUDIT FLASH POINT — The 5-employee threshold was lowered from 25 by PA 102-0179 effective November 1, 2022, with phased compliance dates by employer size. Many small Illinois employers (5–15 employees) are unaware they became subject November 1, 2023. The Illinois Treasurer publishes employer registration notices via the Illinois Secretary of State business registration data; non-registered employers receive enforcement letters with escalating penalties. Verify Secure Choice registration status (or a documented exemption) for every Illinois employer with 5+ employees at the start of any engagement.  _(820 ILCS 80/5)_
 
 ### 4.3 Auto-enrollment mechanics
 
-Once registered, the employer must:
-
-1. Provide each eligible employee with an information packet from Secure Choice within 30 days of hire (or within 30 days of registration for existing employees at first onboarding).
-2. Give the employee 30 days to opt out, change the contribution rate, or change the investment allocation.
-3. If the employee does not opt out, automatically enroll the employee at the **default 5% deferral rate** of pre-tax wages (the deduction itself is post-tax because Secure Choice is a Roth IRA, but the 5% is computed on gross wages).
-4. Remit contributions to the Secure Choice trustee (currently Vestwell) via payroll deduction within 7 business days of each payroll.
-5. Provide a default investment in the Target Retirement Date Fund matching the employee's nearest retirement year (age 65 default).
-
-The default contribution rate auto-escalates by 1% per year up to a cap of 10%, unless the employee opts out of escalation.
+- **Auto-enrollment process** — Once registered, the employer must: 1. Provide each eligible employee with an information packet from Secure Choice within 30 days of hire (or within 30 days of registration for existing employees at first onboarding). 2. Give the employee 30 days to opt out, change the contribution rate, or change the investment allocation. 3. If the employee does not opt out, automatically enroll the employee at the **default 5% deferral rate** of pre-tax wages (the deduction itself is post-tax because Secure Choice is a Roth IRA, but the 5% is computed on gross wages). 4. Remit contributions to the Secure Choice trustee (currently Vestwell) via payroll deduction within 7 business days of each payroll. 5. Provide a default investment in the Target Retirement Date Fund matching the employee's nearest retirement year (age 65 default). The default contribution rate auto-escalates by 1% per year up to a cap of 10%, unless the employee opts out of escalation.
 
 ### 4.4 Employer responsibilities and prohibited activities
 
-The employer is a **facilitator only**. The employer:
-
-- Must NOT contribute to employee accounts (no employer match).
-- Must NOT serve as a fiduciary or provide investment advice.
-- Must NOT endorse the program or recommend participation.
-- Must NOT offer Secure Choice as a substitute for required workplace policies (e.g., final pay, posted wage notices).
-- Must withhold employee elections and remit timely.
-- Must maintain employee election records for 6 years.
-
-Failure to facilitate does not give the employee a private right of action against the employer.
+- **Facilitator-only obligations** — The employer is a **facilitator only**. The employer: - Must NOT contribute to employee accounts (no employer match). - Must NOT serve as a fiduciary or provide investment advice. - Must NOT endorse the program or recommend participation. - Must NOT offer Secure Choice as a substitute for required workplace policies (e.g., final pay, posted wage notices). - Must withhold employee elections and remit timely. - Must maintain employee election records for 6 years. Failure to facilitate does not give the employee a private right of action against the employer.
 
 ### 4.5 Penalties
 
-Under 820 ILCS 80/85, the Department of Revenue assesses penalties for non-compliance:
+**Secure Choice penalty table**  _(820 ILCS 80/85)_
 
 | Violation | Penalty |
-|---|---|
+| --- | --- |
 | Failure to enroll an employee (first year) | $250 per employee |
 | Failure to enroll an employee (each subsequent year) | $500 per employee |
 
-The penalty assessment runs cumulatively, so a 10-employee employer that fails to register and remains non-compliant for three years faces $250 + $500 + $500 = $1,250 per employee × 10 = $12,500.
+Under 820 ILCS 80/85, the Department of Revenue assesses penalties for non-compliance. The penalty assessment runs cumulatively, so a 10-employee employer that fails to register and remains non-compliant for three years faces $250 + $500 + $500 = $1,250 per employee × 10 = $12,500.
 
 > AUDIT FLASH POINT — Secure Choice penalty assessments are issued by IL DOR and processed through MyTax Illinois. They are not waivable for "reasonable cause" in the same way IRS penalties are; the Treasurer's office and DOR have taken the position that the statute is mandatory. The only relief pathway is to demonstrate that the employer was exempt (qualified plan offered, fewer than 5 employees in every quarter, less than 2 years in business). Maintain documentation of the qualified plan adoption date and the IRS determination letter or prototype adoption document.
 
 ### 4.6 Exemption registration
 
-Employers that offer a qualified plan or otherwise do not meet the criteria must affirmatively register their exemption through the Illinois Secure Choice employer portal (employer.ilsecurechoice.com). Filing the exemption clears the employer from the enforcement workflow. Re-confirmation is required annually.
+- **Exemption registration process** — Employers that offer a qualified plan or otherwise do not meet the criteria must affirmatively register their exemption through the Illinois Secure Choice employer portal (employer.ilsecurechoice.com). Filing the exemption clears the employer from the enforcement workflow. Re-confirmation is required annually.
 
 ## 5. Chicago Fair Workweek Ordinance
 
 ### 5.1 Coverage trigger
 
-The Chicago Fair Workweek Ordinance (Municipal Code of Chicago § 1-25) took effect July 1, 2020 (delayed from July 1, 2020 due to COVID, fully enforced from January 1, 2021). It applies to employers with:
-
-- **100 or more employees globally** (250+ for nonprofits), AND
-- **50 or more employees who perform work in Chicago in covered industries**.
-
-Covered industries:
-
-1. Building services
-2. Healthcare
-3. Hotels
-4. Manufacturing
-5. Restaurants (250+ employees and 30+ Chicago locations for restaurant trigger)
-6. Retail
-7. Warehouse services
+- **Fair Workweek coverage trigger and covered industries** — The Chicago Fair Workweek Ordinance (Municipal Code of Chicago § 1-25) took effect July 1, 2020 (delayed from July 1, 2020 due to COVID, fully enforced from January 1, 2021). It applies to employers with: - **100 or more employees globally** (250+ for nonprofits), AND - **50 or more employees who perform work in Chicago in covered industries**. Covered industries: 1. Building services 2. Healthcare 3. Hotels 4. Manufacturing 5. Restaurants (250+ employees and 30+ Chicago locations for restaurant trigger) 6. Retail 7. Warehouse services  _(MCC § 1-25)_
 
 ### 5.2 Predictive scheduling requirements
 
-For covered employees earning $30.99/hour or less or $61,149.35/year or less (2025 amounts indexed annually), the employer must:
-
-1. **Provide a good-faith estimate of work schedule** at time of hire — typical days per week, hours per week, expected start/end times.
-2. **Post schedule 14 days in advance** (the ordinance increased the advance notice from 10 days to 14 days effective July 1, 2022).
-3. **Pay predictability pay** for changes to the posted schedule:
-   - **1 hour of pay at the regular rate** for changes that add or subtract hours within 14 days but with at least 24 hours' notice.
-   - **No-fault pay equal to 50% of lost hours** if a shift is cancelled or hours are subtracted with less than 24 hours' notice.
-   - **1 hour additional pay** for added shifts with less than 14 days' notice.
-4. **Right to decline** previously unscheduled hours added with less than 14 days' notice without retaliation.
-5. **Right to rest** — employees may decline a shift that begins less than 10 hours after the end of the previous shift; if accepted, the hours are paid at 1.25× the regular rate.
+- **Predictive scheduling and predictability pay rules** — For covered employees earning $30.99/hour or less or $61,149.35/year or less (2025 amounts indexed annually), the employer must: 1. **Provide a good-faith estimate of work schedule** at time of hire — typical days per week, hours per week, expected start/end times. 2. **Post schedule 14 days in advance** (the ordinance increased the advance notice from 10 days to 14 days effective July 1, 2022). 3. **Pay predictability pay** for changes to the posted schedule: - **1 hour of pay at the regular rate** for changes that add or subtract hours within 14 days but with at least 24 hours' notice. - **No-fault pay equal to 50% of lost hours** if a shift is cancelled or hours are subtracted with less than 24 hours' notice. - **1 hour additional pay** for added shifts with less than 14 days' notice. 4. **Right to decline** previously unscheduled hours added with less than 14 days' notice without retaliation. 5. **Right to rest** — employees may decline a shift that begins less than 10 hours after the end of the previous shift; if accepted, the hours are paid at 1.25× the regular rate.  _(MCC § 1-25)_
 
 ### 5.3 Recordkeeping and posting
 
-Employers must:
-
-- Post the Fair Workweek notice (issued by the Chicago Department of Business Affairs and Consumer Protection, BACP) in the workplace.
-- Maintain schedule records, predictability pay records, and good-faith estimates for **3 years**.
-- Provide records to employees upon written request within 21 days.
+- **Recordkeeping requirements** — Employers must: - Post the Fair Workweek notice (issued by the Chicago Department of Business Affairs and Consumer Protection, BACP) in the workplace. - Maintain schedule records, predictability pay records, and good-faith estimates for **3 years**. - Provide records to employees upon written request within 21 days.
 
 ### 5.4 Penalties
 
+**Fair Workweek penalty table**
+
 | Violation | Penalty |
-|---|---|
+| --- | --- |
 | First violation | $300–$500 per violation per employee per day |
 | Subsequent violations | Up to $500 per violation per employee per day |
 | Private right of action | Yes, after exhausting BACP administrative remedies; double damages plus attorney's fees available |
@@ -337,131 +272,57 @@ Employers must:
 
 ### 5.5 Carve-outs
 
-The ordinance does not apply to:
-
-- Employees covered by a collective bargaining agreement that explicitly waives the Fair Workweek provisions (and the waiver must be specific, not general).
-- Employees of city, state, or federal government.
-- Independent contractors properly classified under the ABC test (see Section 7).
+- **Ordinance exclusions** — The ordinance does not apply to: - Employees covered by a collective bargaining agreement that explicitly waives the Fair Workweek provisions (and the waiver must be specific, not general). - Employees of city, state, or federal government. - Independent contractors properly classified under the ABC test (see Section 7).
 
 ## 6. Cook County Paid Sick Leave and Illinois Paid Leave for All Workers Act
 
 ### 6.1 Illinois Paid Leave for All Workers Act (statewide)
 
-Effective January 1, 2024, the Paid Leave for All Workers Act (820 ILCS 192/) requires nearly every Illinois employer to provide **40 hours of paid leave per 12-month period** that employees may use for any reason without justification. For 2025 this continues unchanged.
-
-Key features:
-
-- Accrual: 1 hour per 40 hours worked, OR front-loaded 40 hours at the start of the 12-month period.
-- Carry-over: Accrued hours must carry over (up to the 40-hour annual usage cap), unless the employer front-loads.
-- Use: Employees may begin using leave 90 days after employment starts.
-- No payout at termination required (unlike the Illinois Vacation Pay rule under 820 ILCS 115/5).
-- Cook County and Chicago have separate, more generous ordinances that preempt PLAWA within their boundaries.
+- **PLAWA statewide requirements** — Effective January 1, 2024, the Paid Leave for All Workers Act (820 ILCS 192/) requires nearly every Illinois employer to provide **40 hours of paid leave per 12-month period** that employees may use for any reason without justification. For 2025 this continues unchanged. Key features: - Accrual: 1 hour per 40 hours worked, OR front-loaded 40 hours at the start of the 12-month period. - Carry-over: Accrued hours must carry over (up to the 40-hour annual usage cap), unless the employer front-loads. - Use: Employees may begin using leave 90 days after employment starts. - No payout at termination required (unlike the Illinois Vacation Pay rule under 820 ILCS 115/5). - Cook County and Chicago have separate, more generous ordinances that preempt PLAWA within their boundaries.  _(820 ILCS 192/)_
 
 ### 6.2 Cook County Earned Sick Leave Ordinance
 
-The Cook County Paid Sick Leave Ordinance (Cook County Code § 42-2) applies to all employers with at least one employee working in unincorporated Cook County or in a Cook County municipality that has NOT opted out. Many Cook County municipalities did opt out in 2017-2018, but the trend has reversed since the 2024 statewide PLAWA mandate, and several municipalities have re-opted in.
-
-Accrual and use rules largely mirror Chicago's ordinance:
-
-- 1 hour earned per 40 hours worked.
-- Cap: 40 hours per 12-month period (60 hours under Chicago's ordinance — see § 6.3).
-- Use within 80 hours rolling, must be allowed for self, family member, domestic violence, public health emergency.
+- **Cook County sick leave accrual and use rules** — The Cook County Paid Sick Leave Ordinance (Cook County Code § 42-2) applies to all employers with at least one employee working in unincorporated Cook County or in a Cook County municipality that has NOT opted out. Many Cook County municipalities did opt out in 2017-2018, but the trend has reversed since the 2024 statewide PLAWA mandate, and several municipalities have re-opted in. Accrual and use rules largely mirror Chicago's ordinance: - 1 hour earned per 40 hours worked. - Cap: 40 hours per 12-month period (60 hours under Chicago's ordinance — see § 6.3). - Use within 80 hours rolling, must be allowed for self, family member, domestic violence, public health emergency.  _(Cook County Code § 42-2)_
 
 ### 6.3 Chicago Paid Leave and Paid Sick Leave Ordinance
 
-Effective July 1, 2024 (delayed from December 31, 2023 by the Chicago City Council), the Chicago ordinance now provides:
-
-- **40 hours of paid sick leave** per year (uses similar to Cook County).
-- **40 hours of paid leave for any reason** per year (similar to PLAWA).
-- Together, 80 hours of paid leave per year for Chicago employees.
-
-Payout at termination is required for the paid-leave-for-any-reason portion (40 hours) for employers with 51+ employees. The paid sick leave portion is not paid out.
-
-> AUDIT FLASH POINT — The Chicago ordinance is the most generous in Illinois. Employers with mixed Chicago / non-Chicago Illinois employees must track location of work weekly and apply the correct ordinance. The "majority of work performed in Chicago" test does not apply — it is per-hour. A Cook County employee who occasionally works in Chicago accrues at the Chicago rate for those hours.
+- **Chicago combined paid leave rules** — Effective July 1, 2024 (delayed from December 31, 2023 by the Chicago City Council), the Chicago ordinance now provides: - **40 hours of paid sick leave** per year (uses similar to Cook County). - **40 hours of paid leave for any reason** per year (similar to PLAWA). - Together, 80 hours of paid leave per year for Chicago employees. Payout at termination is required for the paid-leave-for-any-reason portion (40 hours) for employers with 51+ employees. The paid sick leave portion is not paid out. > AUDIT FLASH POINT — The Chicago ordinance is the most generous in Illinois. Employers with mixed Chicago / non-Chicago Illinois employees must track location of work weekly and apply the correct ordinance. The "majority of work performed in Chicago" test does not apply — it is per-hour. A Cook County employee who occasionally works in Chicago accrues at the Chicago rate for those hours.  _(MCC § 1-24)_
 
 ## 7. Worker Classification
 
 ### 7.1 Illinois UI Act ABC test
 
-Under 820 ILCS 405/212, a worker is presumed to be an employee for unemployment insurance purposes unless the employer proves ALL THREE prongs:
-
-- **(A)** The individual is free from control and direction over the performance of the work, both under contract and in fact.
-- **(B)** The work is performed either outside the usual course of business of the employer OR outside all of the employer's places of business.
-- **(C)** The individual is engaged in an independently established trade, occupation, profession, or business.
-
-The Illinois ABC test is among the strictest in the country. IDES applies it aggressively in audits.
+- **ABC test prongs** — Under 820 ILCS 405/212, a worker is presumed to be an employee for unemployment insurance purposes unless the employer proves ALL THREE prongs: - **(A)** The individual is free from control and direction over the performance of the work, both under contract and in fact. - **(B)** The work is performed either outside the usual course of business of the employer OR outside all of the employer's places of business. - **(C)** The individual is engaged in an independently established trade, occupation, profession, or business. The Illinois ABC test is among the strictest in the country. IDES applies it aggressively in audits.  _(820 ILCS 405/212)_
 
 ### 7.2 Illinois Employee Classification Act (construction)
 
-Under 820 ILCS 185/, the construction industry has an even stricter classification standard. A construction worker is conclusively presumed an employee unless the employer can prove the worker is a separate business entity meeting 12 enumerated factors (sole proprietor with own license, separate office, multiple clients, performs services for the public, files taxes as a business, etc.).
-
-The 12-factor test for sole proprietors operating as bona fide independent businesses is in 820 ILCS 185/10(c).
-
-Penalties for misclassification under the Employee Classification Act:
-
-- $1,500 per violation per day per worker for the first audit.
-- $2,500 per violation per day per worker for subsequent audits within 5 years.
-- Personal liability for corporate officers who knowingly misclassify.
-- Debarment from public contracts for 5 years for willful violators.
-
-> AUDIT FLASH POINT — The Illinois Department of Labor and IDES coordinate cross-referrals on classification audits. A worker who files for unemployment after being terminated as a "contractor" often triggers an IDES audit that propagates to IL DOR (withholding) and IDOL (Construction Act). Three agencies, three penalty regimes, one bad classification. Maintain contemporaneous 1099 vs W-2 analysis files for every contractor, refreshed at least annually.
+- **Construction classification standard and penalties** — Under 820 ILCS 185/, the construction industry has an even stricter classification standard. A construction worker is conclusively presumed an employee unless the employer can prove the worker is a separate business entity meeting 12 enumerated factors (sole proprietor with own license, separate office, multiple clients, performs services for the public, files taxes as a business, etc.). The 12-factor test for sole proprietors operating as bona fide independent businesses is in 820 ILCS 185/10(c). Penalties for misclassification under the Employee Classification Act: - $1,500 per violation per day per worker for the first audit. - $2,500 per violation per day per worker for subsequent audits within 5 years. - Personal liability for corporate officers who knowingly misclassify. - Debarment from public contracts for 5 years for willful violators. > AUDIT FLASH POINT — The Illinois Department of Labor and IDES coordinate cross-referrals on classification audits. A worker who files for unemployment after being terminated as a "contractor" often triggers an IDES audit that propagates to IL DOR (withholding) and IDOL (Construction Act). Three agencies, three penalty regimes, one bad classification. Maintain contemporaneous 1099 vs W-2 analysis files for every contractor, refreshed at least annually.  _(820 ILCS 185/; 820 ILCS 185/10(c))_
 
 ### 7.3 Withholding for non-residents working in Illinois temporarily
 
-Illinois does not have a "30-day" or "60-day" de minimis non-resident withholding rule. Withholding is required from the first day a non-resident (non-reciprocity-state) employee works in Illinois unless the IL-W-5-NR is on file (and only IA, KY, MI, WI residents may file IL-W-5-NR).
+- **No de minimis rule** — Illinois does not have a "30-day" or "60-day" de minimis non-resident withholding rule. Withholding is required from the first day a non-resident (non-reciprocity-state) employee works in Illinois unless the IL-W-5-NR is on file (and only IA, KY, MI, WI residents may file IL-W-5-NR).
 
 ## 8. Final Pay and Other Wage Standards
 
 ### 8.1 Final pay timing
 
-Under the Illinois Wage Payment and Collection Act (820 ILCS 115/5), final compensation must be paid:
-
-- **By the next regularly scheduled payday** following separation, regardless of whether the separation is voluntary or involuntary.
-- Earned but unused **vacation must be paid out** at the final rate of pay (820 ILCS 115/5 — Illinois treats earned vacation as wages).
-- PLAWA paid leave does NOT have to be paid out.
-- Chicago paid leave (40 hours of paid-leave-for-any-reason) MUST be paid out by employers with 51+ employees.
-
-A discharged employee may demand final compensation be paid sooner, but the employer has until the next payday to comply without penalty.
+- **Final pay and vacation payout rules** — Under the Illinois Wage Payment and Collection Act (820 ILCS 115/5), final compensation must be paid: - **By the next regularly scheduled payday** following separation, regardless of whether the separation is voluntary or involuntary. - Earned but unused **vacation must be paid out** at the final rate of pay (820 ILCS 115/5 — Illinois treats earned vacation as wages). - PLAWA paid leave does NOT have to be paid out. - Chicago paid leave (40 hours of paid-leave-for-any-reason) MUST be paid out by employers with 51+ employees. A discharged employee may demand final compensation be paid sooner, but the employer has until the next payday to comply without penalty.  _(820 ILCS 115/5)_
 
 ### 8.2 Frequency of pay
 
-Under 820 ILCS 115/3, wages must be paid:
-
-- At least **semi-monthly** for most employees.
-- **Monthly** for executive, administrative, and professional employees under FLSA exemptions, and for outside salespersons.
-- Within **13 days** after the end of the pay period (semi-monthly) or 21 days (monthly).
+- **Pay frequency rules** — Under 820 ILCS 115/3, wages must be paid: - At least **semi-monthly** for most employees. - **Monthly** for executive, administrative, and professional employees under FLSA exemptions, and for outside salespersons. - Within **13 days** after the end of the pay period (semi-monthly) or 21 days (monthly).  _(820 ILCS 115/3)_
 
 ### 8.3 One Day Rest in Seven Act
 
-Under 820 ILCS 140/, as amended by PA 102-0828 effective January 1, 2023, every employer must provide every employee:
-
-- **At least 24 consecutive hours of rest in every consecutive 7-day period** (not every calendar week).
-- A **20-minute meal break** for every 7.5-hour work period, with an additional 20-minute break for every 4.5 hours worked beyond 7.5.
-- Written notice of these rights via a poster (IDOL provides the template).
-
-Exemptions: agricultural workers, certain healthcare workers under collective bargaining, employees in a "supervisory capacity," part-time employees working less than 20 hours/week (limited).
-
-Voluntary waivers of the rest day are permitted only if the employer petitions IDOL for permission and shows undue hardship.
-
-Penalties under PA 102-0828:
-
-- $250–$500 per offense per employee (employers with fewer than 25 employees).
-- $250–$500 per offense per employee plus a $100–$250 additional damages payable to the employee (employers with 25+ employees).
+- **ODRISA rest, meal break, exemption, and penalty rules** — Under 820 ILCS 140/, as amended by PA 102-0828 effective January 1, 2023, every employer must provide every employee: - **At least 24 consecutive hours of rest in every consecutive 7-day period** (not every calendar week). - A **20-minute meal break** for every 7.5-hour work period, with an additional 20-minute break for every 4.5 hours worked beyond 7.5. - Written notice of these rights via a poster (IDOL provides the template). Exemptions: agricultural workers, certain healthcare workers under collective bargaining, employees in a "supervisory capacity," part-time employees working less than 20 hours/week (limited). Voluntary waivers of the rest day are permitted only if the employer petitions IDOL for permission and shows undue hardship. Penalties under PA 102-0828: - $250–$500 per offense per employee (employers with fewer than 25 employees). - $250–$500 per offense per employee plus a $100–$250 additional damages payable to the employee (employers with 25+ employees).  _(820 ILCS 140/; PA 102-0828)_
 
 ### 8.4 Construction industry drug testing
 
-Under 820 ILCS 265/ (Substance Abuse Prevention on Public Works Projects Act), contractors on Illinois public works projects must implement a substance abuse prevention program meeting minimum standards. This is not a payroll tax but a labor compliance obligation that affects:
-
-- Pre-employment drug testing requirements.
-- Random testing protocols (10% of workforce annually minimum).
-- Reasonable suspicion testing and post-accident testing.
-- The interaction with the Illinois Cannabis Regulation and Tax Act (410 ILCS 705/) — cannabis use off-duty is generally lawful but may still disqualify a worker from federally regulated construction roles.
+- **Substance abuse prevention program requirements** — Under 820 ILCS 265/ (Substance Abuse Prevention on Public Works Projects Act), contractors on Illinois public works projects must implement a substance abuse prevention program meeting minimum standards. This is not a payroll tax but a labor compliance obligation that affects: - Pre-employment drug testing requirements. - Random testing protocols (10% of workforce annually minimum). - Reasonable suspicion testing and post-accident testing. - The interaction with the Illinois Cannabis Regulation and Tax Act (410 ILCS 705/) — cannabis use off-duty is generally lawful but may still disqualify a worker from federally regulated construction roles.  _(820 ILCS 265/)_
 
 ### 8.5 Other notable payroll-adjacent obligations
 
-- **Wage Theft Enforcement Act** (820 ILCS 115/14) — willful refusal to pay wages is a Class A misdemeanor; repeat offenses are Class 4 felonies.
-- **Illinois Equal Pay Act** (820 ILCS 112/) — wage discrimination prohibitions; PA 101-0656 added pay data reporting for employers with 100+ employees (EEO-1 alignment).
-- **Illinois Pay Transparency Law** (effective January 1, 2025 under PA 103-0539) — employers with 15+ employees must include pay scale and benefits in job postings.
+- **Additional wage and pay statutes** — - **Wage Theft Enforcement Act** (820 ILCS 115/14) — willful refusal to pay wages is a Class A misdemeanor; repeat offenses are Class 4 felonies. - **Illinois Equal Pay Act** (820 ILCS 112/) — wage discrimination prohibitions; PA 101-0656 added pay data reporting for employers with 100+ employees (EEO-1 alignment). - **Illinois Pay Transparency Law** (effective January 1, 2025 under PA 103-0539) — employers with 15+ employees must include pay scale and benefits in job postings.  _(820 ILCS 115/14; 820 ILCS 112/; PA 103-0539)_
 
 ## 9. Worked Examples
 
@@ -562,8 +423,10 @@ Under 820 ILCS 265/ (Substance Abuse Prevention on Public Works Projects Act), c
 
 ## 10. Quick Reference Table — 2025 Illinois Payroll
 
+**Quick reference table**
+
 | Item | 2025 Value | Citation |
-|---|---|---|
+| --- | --- | --- |
 | IL PIT flat rate | 4.95% | 35 ILCS 5/201(b)(5.4) |
 | Personal exemption | $2,775 | 35 ILCS 5/204(b); IL Pub. 130 |
 | Supplemental wage rate | 4.95% | 86 Ill. Adm. Code 100.7110 |
@@ -652,10 +515,6 @@ This skill is marked `verified_by: pending`. Before publication, the reviewer mu
 
 End of skill.
 
----
-
-<!-- openaccountants-cta-block -->
-
 ## Talk to a verified accountant
 
 This skill is a tool, not an engagement. Every taxpayer's situation is
@@ -669,16 +528,22 @@ a formal engagement letter** — book a free 30-minute call:
 
 We'll route you to the named verifier covering your country or state. You can
 also see the full list of verified accountants at
-[openaccountants.com/network](https://www.openaccountants.com/network).
+[openaccountants.com/network](https://openaccountants.com/network).
 
-<!-- openaccountants-mcp-cta -->
+<!-- openaccountants-cta-block -->
 
-## The accountant-verified version lives in the connector
+---
 
-This file is the open, **research-grade draft**. The **accountant-verified**
-version of this skill is **not published to GitHub** — it is delivered free
-through the OpenAccountants MCP connector, where your AI agent loads the
-verified rules together with the name of the accountant who signed them off.
+## Talk to a verified accountant
 
-**→ Install the free connector:** <https://www.openaccountants.com/connect>
-**MCP endpoint:** `https://www.openaccountants.com/api/mcp`
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

@@ -2,14 +2,24 @@
 name: mauritius-vat
 description: Use this skill whenever asked to prepare, review, or classify transactions for a Mauritius VAT return. Standard rate 15%. Tourist refund scheme. Freeport treatment. GBL interactions. ALWAYS read before handling Mauritius VAT work.
 version: 2.0
+jurisdiction: MU
+tax_year: 2025
+last_updated: 2026-04-13
+verified_by: pending
+tier: 2
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Mauritius VAT Return Skill v2.0
+# Mauritius VAT
+
+## Mauritius VAT Return Skill v2.0
 
 ## Section 1 -- Quick reference
 
+**Quick reference**  _(VAT Act 1998 (Act No. 2 of 1998))_
+
 | Field | Value |
-|---|---|
+| --- | --- |
 | Country | Mauritius |
 | Standard rate | 15% |
 | Zero rate | 0% (exports, basic foodstuffs, domestic electricity first 75 kWh, freeport supplies) |
@@ -25,33 +35,28 @@ version: 2.0
 | Validated by | Pending |
 | Last research update | April 2026 |
 
----
-
 ## Section 2 -- Required inputs and refusal catalogue
 
-**Minimum viable** -- bank statement. Acceptable from MCB (Mauritius Commercial Bank), SBM (State Bank of Mauritius), Absa Mauritius, AfrAsia Bank, Bank One, or any Mauritian bank.
-
-**R-MU-1 -- GBL company.** Trigger: Global Business Licence. Message: "GBL companies have specific VAT treatment. Escalate."
-
----
+- **Minimum viable input** — Minimum viable -- bank statement. Acceptable from MCB (Mauritius Commercial Bank), SBM (State Bank of Mauritius), Absa Mauritius, AfrAsia Bank, Bank One, or any Mauritian bank.
+- **R-MU-1 -- GBL company** — Trigger: Global Business Licence. Message: "GBL companies have specific VAT treatment. Escalate."
 
 ## Section 3 -- Supplier pattern library
 
+**Supplier pattern library**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | MCB, MAURITIUS COMMERCIAL BANK | EXCLUDE | Exempt financial |
 | SBM, STATE BANK OF MAURITIUS | EXCLUDE | Same |
 | ABSA MU, AFRASIA | EXCLUDE | Same |
 | BANK ONE | EXCLUDE | Same |
 | MRA, MAURITIUS REVENUE | EXCLUDE | Tax payment |
-| CUSTOMS | Check for import VAT | |
+| CUSTOMS | Check for import VAT |  |
 | NPF, NSF, CSG | EXCLUDE | Social contributions |
 | CEB | Domestic 15% | Electricity |
 | CWA | Domestic 15% | Water |
 | MAURITIUS TELECOM, EMTEL, MTML | Domestic 15% | Telecoms |
 | GOOGLE, MICROSOFT, AWS | Reverse charge 15% | Non-resident |
-
----
 
 ## Section 4 -- Worked examples
 
@@ -63,45 +68,26 @@ MUR 1,000,000 net. Output VAT = MUR 150,000 (15%).
 
 Tourist purchases goods MUR 5,000. Issues Tax-Free Shopping receipt. Tourist claims refund at airport.
 
----
-
 ## Section 5 -- Classification rules
 
-15% standard. 0% exports, basic foodstuffs (rice, flour, bread, cooking gas), domestic electricity (first 75 kWh), freeport supplies. Exempt: financial, medical, education, residential rental, public transport, postal, residential property sales (subsequent).
-
-Tourist refund: minimum MUR 2,300 per invoice. Claimed at airport.
-
----
+- **Classification of supplies** — 15% standard. 0% exports, basic foodstuffs (rice, flour, bread, cooking gas), domestic electricity (first 75 kWh), freeport supplies. Exempt: financial, medical, education, residential rental, public transport, postal, residential property sales (subsequent).
+- **Tourist refund** — minimum MUR 2,300 per invoice. Claimed at airport. MUR
 
 ## Section 6 -- VAT return form
 
-Output: Boxes 1-7 (standard, zero-rated, exempt, total, output VAT, adjustments, total output).
-
-Input: Boxes 8-14 (local purchases, imports, input local, input imports, capital goods, adjustments, net input).
-
-Net: Boxes 15-17 (net, credit b/f, net payable).
-
----
+- **VAT return form boxes** — Output: Boxes 1-7 (standard, zero-rated, exempt, total, output VAT, adjustments, total output). Input: Boxes 8-14 (local purchases, imports, input local, input imports, capital goods, adjustments, net input). Net: Boxes 15-17 (net, credit b/f, net payable).
 
 ## Section 7 -- Reverse charge
 
-Non-resident services: self-assess 15%. Net zero. VAT Act s.7A.
-
----
+- **Reverse charge** — Non-resident services: self-assess 15%. Net zero. VAT Act s.7A.  _(VAT Act s.7A)_
 
 ## Section 8 -- Deductibility and blocked input
 
-Blocked (s.21): vehicles < 9 seats (unless taxi/hire/driving instruction/dealer), entertainment, clubs, personal use, invoices without VAT number.
-
-Partial exemption: s.20. MRA may approve alternative methods.
-
----
+- **Blocked input and partial exemption** — Blocked (s.21): vehicles < 9 seats (unless taxi/hire/driving instruction/dealer), entertainment, clubs, personal use, invoices without VAT number. Partial exemption: s.20. MRA may approve alternative methods.  _(s.21; s.20)_
 
 ## Section 9 -- Filing, deadlines, and penalties
 
-Quarterly: last day of month following quarter. Monthly (large): 20th. Late filing: MUR 5,000/month. Late payment: 2%/month.
-
----
+- **Filing, deadlines, and penalties** — Quarterly: last day of month following quarter. Monthly (large): 20th. Late filing: MUR 5,000/month. Late payment: 2%/month.
 
 ## Section 10 -- Edge cases, test suite, and escalation
 
@@ -129,41 +115,26 @@ Out of scope: CIT 15%, PAYE progressive, NPF/NSF, CSG 3%+1.5%/3%.
 - NEVER allow recovery on blocked categories
 - NEVER compute numbers -- engine handles arithmetic
 
----
-
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional before filing or acting upon.
 
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com).
-
----
+The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com).
 
 <!-- openaccountants-cta-block -->
 
+---
+
 ## Talk to a verified accountant
 
-This skill is a tool, not an engagement. Every taxpayer's situation is
-different, and the rules in the skill may not match your specific facts.
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
 
-To speak with one of the licensed accountants who verifies skills for your
-jurisdiction — **no liability on either side until you and the accountant sign
-a formal engagement letter** — book a free 30-minute call:
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
 
-**→ [Book a call](https://calendly.com/openaccountants-info/30min)**
-
-We'll route you to the named verifier covering your country or state. You can
-also see the full list of verified accountants at
-[openaccountants.com/network](https://www.openaccountants.com/network).
-
-<!-- openaccountants-mcp-cta -->
-
-## The accountant-verified version lives in the connector
-
-This file is the open, **research-grade draft**. The **accountant-verified**
-version of this skill is **not published to GitHub** — it is delivered free
-through the OpenAccountants MCP connector, where your AI agent loads the
-verified rules together with the name of the accountant who signed them off.
-
-**→ Install the free connector:** <https://www.openaccountants.com/connect>
-**MCP endpoint:** `https://www.openaccountants.com/api/mcp`
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

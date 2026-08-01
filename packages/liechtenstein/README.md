@@ -7,7 +7,14 @@
 
 1. `foundation.md`
 2. `intake.md`
-3. `liechtenstein-vat.md`
+3. `li-company-formation.md`
+4. `li-corporate-income-tax.md`
+5. `li-income-tax.md`
+6. `li-payroll-social.md`
+7. `li-tax-overview.md`
+8. `liechtenstein-vat.md`
+9. `payroll-workflow-base.md`
+10. `company-formation-workflow-base.md`
 
 ## How to use
 

@@ -3,11 +3,13 @@ name: ny-it-201-resident-return
 description: Tier 2 New York content skill for preparing Form IT-201 (Full-Year Resident Income Tax Return) for New York State full-year residents who are sole proprietors or single-member LLCs disregarded for federal tax purposes. Covers the NYAGI computation starting from federal AGI, Form IT-225 addition and subtraction modifications (notably A-201 for unincorporated business taxes deducted federally), Form IT-558 OBBBA decoupling adjustments including the §168(k) bonus depreciation add-back and the §174A R&E expensing uncertainty, the standard vs itemized deduction decision, NY state tax computation including the $107,650 recapture worksheet, NYC resident tax computation (lines 47a-53) including the NYC UBT credit flow via Form IT-219, Yonkers resident surcharge and nonresident earnings tax (lines 55-57), MCTMT for self-employed individuals in the MCTD (lines 54a-54b), credits and payments, and the reviewer brief for the complete NY state-level return package. Does NOT cover part-year or nonresident returns (Form IT-203), itemized deduction limitations above $100,000 NYAGI in detail, PTET election scenarios, convenience-of-the-employer rule cases, NY source income allocation for multi-state activity, or NYC Unincorporated Business Tax computation itself — see Section 7. MUST be loaded alongside us-tax-workflow-base v0.2 or later. Typically loaded alongside ny-llc-filing-fee-it-204-ll (if SMLLC), nyc-unincorporated-business-tax (if NYC resident), and ny-estimated-tax-it-2105. New York State full-year residents only.
 jurisdiction: US-NY
 tax_year: 2025
+last_updated: 2026-07-09
+verified_by: pending
 tier: 2
-last_updated: 2026-07-06
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# ny-it-201-resident-return
+# NY IT 201 Resident Return
 
 ## New York IT-201 Resident Return Skill v0.1
 
@@ -31,7 +33,7 @@ This skill cannot produce any output on its own. It must be loaded alongside `us
 - **Residency layers:** The skill handles all four possible geographic layers that a NY full-year resident may face: (a) NY state resident only (e.g., Westchester, Albany, Buffalo); (b) NY state resident + NYC resident (the five boroughs); (c) NY state resident + Yonkers resident; (d) NY state resident + MCTD-based self-employed subject to MCTMT (anywhere in the 12 MCTD counties: NYC 5 boroughs plus Rockland, Nassau, Suffolk, Orange, Putnam, Dutchess, Westchester).
 - **Income mix:** The freelancer's primary income is Schedule C self-employment income. Secondary income streams that the skill handles: W-2 wages from a non-NY employer, interest income, qualified and ordinary dividends, capital gains, unemployment compensation, federal and state tax refunds, and qualified pension/annuity income under the $20,000 exclusion. The skill handles the interaction of these streams with the NY modifications and the NYC resident tax.
 - **Deductions:** Standard deduction or itemized deduction via Form IT-196 (with the NY limitation above $100,000 NYAGI flagged for reviewer attention, not computed in detail).
-- **Modifications:** Form IT-225 additions (notably A-201 for unincorporated business taxes deducted at federal level) and subtractions (notably S-118 for income subject to NYC UBT, and the 414(h) retirement contribution adjustments for NY public employees, though the latter is rarely relevant for freelancers). Form IT-558 adjustments for NY decoupling from post-March-1-2020 IRC changes, including the 2025 OBBBA items: §168(k) bonus depreciation (confirmed decoupled) and §174A R&E expensing (flagged as uncertain, see Position 5.15).
+- **Modifications:** Form IT-225 additions (notably A-201 for unincorporated business taxes deducted at federal level) and subtractions (notably S-118 for income subject to NYC UBT, and the 414(h) retirement contribution adjustments for NY public employees, though the latter is rarely relevant for freelancers). Form IT-225 modifications for NY decoupling from 2025 OBBBA items, including qualified production property depreciation under IRC §168(n) (A-209/S-213) and §174/§174A R&E expenditures (A-225/S-221/S-222).
 - **Credits:** The state and NYC household credits, the NY and NYC earned income tax credits (EIC), the Empire State Child Credit, the NYC Unincorporated Business Tax credit (Form IT-219 → IT-201-ATT Section C → Line 53), the college tuition credit, the long-term care insurance credit, and the real property tax credit. The skill handles flow but defers detailed credit computation to the relevant credit forms' instructions.
 - **Tax layers:** NY state tax via the tax tables (if NYAGI ≤ $107,650) or the tax rate schedule (if NYAGI > $65,000 and ≤ $107,650) or the tax computation worksheet (if NYAGI > $107,650) — the third of these is the recapture mechanism that produces an almost-flat tax for high earners. NYC resident tax via NYC tables or rate schedule, with the NYC household credit. Yonkers resident surcharge at 16.75% of NY state tax. Yonkers nonresident earnings tax at 0.5% of Yonkers-source wages and self-employment earnings. MCTMT at 0.60% (Zone 1) or 0.34% (Zone 2) of net self-employment earnings above $50,000 per zone.
 - **Output:** A completed Form IT-201 worksheet with every line computed from source data, a reviewer brief covering all positions taken and all flags raised, a taxpayer action list, and Form IT-201-ATT if applicable.
@@ -59,7 +61,7 @@ The scope limitations align with `us-tax-workflow-base` Section 6 base refusals 
 
 **Tax year covered:** 2025 (calendar year, returns due April 15, 2026).
 
-**Currency date:** The skill is current as of April 2026. Every figure, every form reference, every statutory citation in this skill is verified against primary sources as of that date.
+**Currency date:** The skill is current as of July 2026. Core Form IT-201 figures are verified against the 2025 IT-201 instructions; OBBBA decoupling updates are verified against NY Notice N-26-1 (updated June 16, 2026).
 
 **Legislation and guidance current as of the currency date:**
 
@@ -70,18 +72,19 @@ The scope limitations align with `us-tax-workflow-base` Section 6 base refusals 
 - NY Tax Law Article 23 (Metropolitan Commuter Transportation Mobility Tax)
 - Form IT-201 (2025) and Form IT-201-I (2025) instructions, released by NYSDTF in January 2026
 - Form IT-225 (2025) and instructions
-- Form IT-558 (2025) and instructions
 - Form IT-219 (NYC UBT credit) instructions
 - NYSDTF Publication NYS-50-T-NYS (2025) — NY withholding tax tables and methods (used here as the authoritative source for the rate schedule construction, even though this skill does not compute withholding itself)
 - NY Regulations 20 NYCRR Part 100 et seq. (NYSDTF's personal income tax regulations)
 
-**Legislation monitored but NOT yet in force (as of the currency date) — flagged in Position 5.15:**
+**Post-OBBBA guidance now in force:**
 
-- **Governor Hochul's FY 2026-27 Executive Budget proposal** (released January 2026) proposes retroactive NY decoupling from federal OBBBA §174A R&E expensing for tax years beginning on or after January 1, 2025. The proposal would require NY taxpayers to recover domestic and foreign R&E expenditures over a 5-year period for NY state tax purposes even though federal law (post-OBBBA) allows immediate deduction. **This proposal has not been enacted as of the currency date of this skill.** The skill's default position on §174A is the conservative path (capitalize and recover over 5 years for NY state purposes, creating a Form IT-558 addition) with a reviewer decision point to elect the federal-conforming path if the reviewer prefers.
+- NY Notice N-26-1 confirms that the 2026-2027 New York State Budget decoupled from OBBBA accelerated depreciation for qualified production property and from the federal treatment of foreign and domestic R&E expenditures for tax years beginning on or after January 1, 2025. Individuals report these modifications on Form IT-225.
+- Qualified production property under IRC §168(n): calculate the NY depreciation modification on Form IT-398 and report addition code A-209 and subtraction code S-213 on Form IT-225.
+- Foreign and domestic R&E expenditures under IRC §§174 and 174A: report addition code A-225 and subtraction code S-221 for expenditures paid or incurred on or after January 1, 2025; use subtraction code S-222 for expenditures paid or incurred before January 1, 2025. Post-2024 expenditures are amortized over 60 months for NYS purposes.
 
 **Legislation expressly confirmed as already in force:**
 
-- NY decoupling from IRC §168(k) bonus depreciation (in force since well before 2025; tracked via Form IT-398 or Form IT-558)
+- NY decoupling from federal accelerated depreciation remains in force; standard §168(k) add-backs continue through NY modification mechanics, and 2025 qualified production property under IRC §168(n) is handled through Form IT-398 plus Form IT-225 codes A-209/S-213.
 - NY conformity with IRC §199A QBI deduction is **structural, not statutory**: because NY starts from federal AGI (not federal taxable income), and because QBI is a below-AGI deduction on federal Form 1040 line 13, QBI never flows into the NY computation for individuals. No add-back is required. QBI add-back only applies to estates and trusts where QBI flows through differently.
 - NY conformity with the SALT cap: NY does NOT impose its own SALT cap on the state deduction; the federal $10,000 cap (pre-OBBBA) and the post-OBBBA cap do not directly bind NY, BUT NY requires an add-back (IT-225 code A-201) for state and local income taxes deducted at the federal level, which produces a similar economic effect via a different mechanism.
 - NY NYC resident tax structure remains four brackets: 3.078%, 3.762%, 3.819%, 3.876% — unchanged since 2017
@@ -296,33 +299,38 @@ Rarely relevant for freelance developers but must be handled for older taxpayers
 
 ### Form IT-225 addition modification codes used by this skill
 
-**Form IT-225 addition modification codes used by this skill**  _(Form IT-225-I (2025))_
+**Form IT-225 addition modification codes used by this skill**  _([Form IT-225-I (2025); NY Notice N-26-1](https://www.tax.ny.gov/forms/n-notices/n-26-1.htm))_
 
 | Code | Description | Source | Notes for freelance developers |
 | --- | --- | --- | --- |
-| A-201 | Personal income taxes and unincorporated business taxes deducted in determining federal income | Form IT-225-I (2025) | **Critical for NYC freelancers who paid UBT.** UBT deducted on Schedule C is added back for NY state purposes. |
+| A-201 | Personal income taxes and unincorporated business taxes deducted in determining federal income | Form IT-225-I (2025) | Critical for NYC freelancers who paid UBT. UBT deducted on Schedule C is added back for NY state purposes. |
 | A-301 | NYC flexible benefits program (IRC §125) | Form IT-225-I (2025) | Rarely relevant for self-employed |
-| A-009 | Federal accelerated depreciation under IRC §168(k) (bonus depreciation) | Form IT-225-I (2025); NY Tax Law §612(b)(8) | NY decouples from federal bonus depreciation; required add-back for assets placed in service with federal bonus depreciation claimed. Use Form IT-398 to compute. |
+| A-009 | Federal accelerated depreciation under IRC §168(k) (bonus depreciation) | Form IT-225-I (2025); NY Tax Law §612(b)(8) | NY decouples from federal bonus depreciation; use the applicable NY depreciation schedule and modification code. |
+| A-209 | Federal accelerated depreciation for qualified production property under IRC §168(n) | NY Notice N-26-1; Form IT-225-I (2025) | For 2025 OBBBA qualified production property; calculate on Form IT-398 and add back on Form IT-225. |
+| A-225 | Federal deduction for R&E expenditures under IRC §§174 and 174A / OBBBA transition rules | NY Notice N-26-1; Form IT-225-I (2025) | For foreign and domestic R&E expenditures; pair with S-221 or S-222 as applicable. |
 | A-113 | Interest income on state and local bonds of other states | Form IT-225-I (2025) | Rarely relevant for freelance developers unless investing in muni bonds |
 
 ### Form IT-225 subtraction modification codes used by this skill
 
-**Form IT-225 subtraction modification codes used by this skill**  _(Form IT-225-I (2025))_
+**Form IT-225 subtraction modification codes used by this skill**  _([Form IT-225-I (2025); NY Notice N-26-1](https://www.tax.ny.gov/forms/n-notices/n-26-1.htm))_
 
 | Code | Description | Source | Notes for freelance developers |
 | --- | --- | --- | --- |
-| S-125 | NY depreciation subtraction for bonus depreciation assets (the flip side of A-009) | Form IT-225-I (2025); NY Tax Law §612(c)(13) | Annual recovery of bonus depreciation add-back over the asset's MACRS life. Required to prevent double-counting. |
-| S-118 | Income from services performed as a self-employed individual subject to NYC UBT | Form IT-225-I (2025) | Potentially relevant — but see Position 5.20: the A-201 UBT add-back and S-118 income adjustment operate in different directions and must not be conflated. |
+| S-125 | NY depreciation subtraction for bonus depreciation assets (the flip side of A-009) | Form IT-225-I (2025); NY Tax Law §612(c)(13) | Annual NY recovery of the depreciation add-back. Required to prevent double-counting. |
+| S-213 | NY depreciation subtraction for qualified production property under IRC §168(n) | NY Notice N-26-1; Form IT-225-I (2025) | For 2025 OBBBA qualified production property; calculate as if the special federal election had not been made. |
+| S-221 | R&E expenditure subtraction for expenditures paid or incurred on or after January 1, 2025 | NY Notice N-26-1; Form IT-225-I (2025) | Amortize foreign and domestic R&E expenditures over 60 months for NYS purposes. |
+| S-222 | R&E expenditure subtraction for expenditures paid or incurred before January 1, 2025 | NY Notice N-26-1; Form IT-225-I (2025) | Continue amortization under federal rules in effect on January 1, 2022. |
+| S-118 | Income from services performed as a self-employed individual subject to NYC UBT | Form IT-225-I (2025) | Potentially relevant, but see Position 5.20: the A-201 UBT add-back and S-118 income adjustment operate in different directions and must not be conflated. |
 
-### Form IT-558 adjustment codes used by this skill
+### Form IT-225 adjustment codes used by this skill
 
-**Form IT-558 adjustment codes used by this skill**  _(Form IT-558-I (2025); NY Tax Law §612(b)(36))_
+**Form IT-225 OBBBA decoupling codes used by this skill**  _([NY Notice N-26-1; Form IT-225-I (2025)](https://www.tax.ny.gov/forms/n-notices/n-26-1.htm))_
 
 | Code | Description | Source |
 | --- | --- | --- |
-| A-011 | Federal §168(k) bonus depreciation — NY decoupling add-back | Form IT-558-I (2025); NY Tax Law §612(b)(36) |
-| A-012 | Federal §163(j) business interest limitation — NY conformity adjustment | Form IT-558-I (2025) |
-| (TBD for §174A) | Potential future code if NY enacts §174A decoupling retroactively | NOT YET IN FORCE as of skill currency date |
+| A-209 / S-213 | Qualified production property accelerated depreciation under IRC §168(n): add back the federal accelerated depreciation and subtract NY depreciation computed as if the special election had not been made | NY Notice N-26-1; Form IT-225-I (2025) |
+| A-225 / S-221 | Foreign and domestic R&E expenditures paid or incurred on or after January 1, 2025: add back the federal deduction and subtract the NY 60-month amortization amount | NY Notice N-26-1; Form IT-225-I (2025) |
+| A-225 / S-222 | R&E expenditures paid or incurred before January 1, 2025: add back the federal deduction and continue amortization under federal rules in effect on January 1, 2022 | NY Notice N-26-1; Form IT-225-I (2025) |
 
 ### Critical threshold summary
 
@@ -359,7 +367,7 @@ Every position in this skill cites from this list. New citations added to the sk
 | NY Tax Law §611 | NY taxable income computation (starting point = federal AGI) |
 | NY Tax Law §612 | NY adjusted gross income — additions and subtractions to federal AGI |
 | NY Tax Law §612(b)(8) | Addition modification for federal bonus depreciation (IT-225 code A-009) |
-| NY Tax Law §612(b)(36) | Addition modification for post-March-1-2020 IRC changes (IT-558 code A-011 et seq.) |
+| NY Tax Law §612(b)(36) | Addition modification for post-March-1-2020 IRC changes (IT-225 code A-011 et seq.) |
 | NY Tax Law §612(c)(3-a) | Pension and annuity income subtraction (up to $20,000 at age 59½+) |
 | NY Tax Law §612(c)(13) | Subtraction modification for the NY alternative depreciation on bonus depreciation assets |
 | NY Tax Law §614 | NY standard deduction (amounts by filing status) |
@@ -415,23 +423,23 @@ Every position in this skill cites from this list. New citations added to the sk
 
 ### Federal authority (for starting-point and decoupling references)
 
-**Federal authority (for starting-point and decoupling references)**  _(IRC §61)_
+**Federal authority (for starting-point and decoupling references)**  _([IRC §61](https://www.tax.ny.gov/forms/n-notices/n-26-1.htm))_
 
 | Citation | Governs |
 | --- | --- |
 | IRC §61 | Gross income (starting point for federal AGI, which is starting point for NY) |
 | IRC §62 | Federal adjusted gross income definition |
-| IRC §163(j) | Business interest limitation (NY conforms; IT-558 adjustment if federal and NY differ) |
-| IRC §168(k) | Federal bonus depreciation (NY decouples; IT-225 A-009 or IT-558 A-011 add-back) |
+| IRC §163(j) | Business interest limitation (NY conforms; IT-225 adjustment if federal and NY differ) |
+| IRC §168(k) | Federal bonus depreciation (NY decouples; IT-225 A-009 or IT-225 A-011 add-back) |
 | IRC §174 | Research and experimental expenses — pre-OBBBA version (capitalize and amortize) |
-| IRC §174A | Research and experimental expenses — post-OBBBA version (immediate deduction); **NY decoupling uncertain as of skill currency date; see Position 5.15** |
+| IRC §174A | Research and experimental expenses — post-OBBBA version (immediate deduction); **NY decoupling enacted for tax years beginning on or after January 1, 2025; see NY Notice N-26-1** |
 | IRC §199A | Qualified business income deduction (NY conforms by construction — QBI is below AGI at federal level so never enters NY computation for individuals) |
 | IRC §1402(a) | Definition of net earnings from self-employment (incorporated by reference into MCTMT computation) |
 | Treas. Reg. §301.7701-3(b)(1)(ii) | Default disregarded classification of single-member LLCs |
 
 ### NYSDTF forms and instructions
 
-**NYSDTF forms and instructions**  _(Form IT-201 (2025))_
+**NYSDTF forms and instructions**  _([Form IT-201 (2025)](https://www.tax.ny.gov/forms/n-notices/n-26-1.htm))_
 
 | Citation | Governs |
 | --- | --- |
@@ -440,8 +448,8 @@ Every position in this skill cites from this list. New citations added to the sk
 | Form IT-201-ATT (2025) | Other tax credits and taxes, including NYC UBT credit Section C |
 | Form IT-225 (2025) | NY State additions and subtractions schedule |
 | Form IT-225-I (2025) | Instructions for IT-225; authority for modification codes |
-| Form IT-558 (2025) | NY adjustments due to decoupling from the IRC |
-| Form IT-558-I (2025) | Instructions for IT-558; authority for OBBBA handling |
+| Form IT-225 (2025) | NY adjustments due to decoupling from the IRC |
+| Form IT-225-I (2025) | Instructions for IT-225; authority for OBBBA handling |
 | Form IT-196 (2025) | NY itemized deductions (out of scope above $100,000 NYAGI) |
 | Form IT-219 | NYC unincorporated business tax credit (flows into IT-201-ATT Section C) |
 | Form IT-398 | NY depreciation schedule for §168(k) property |
@@ -472,13 +480,12 @@ Every position in this skill cites from this list. New citations added to the sk
 - 2025 Tax Table for Form IT-201: https://www.tax.ny.gov/pit/file/tax-tables/it201i-2025.htm
 - Form IT-225 (2025): https://www.tax.ny.gov/pdf/2025/inc/it225_2025_fill_in.pdf
 - Form IT-225 Instructions (2025): https://www.tax.ny.gov/forms/current-forms/it/it225i.htm
-- Form IT-558 (2025): https://www.tax.ny.gov/pdf/2025/inc/it558_2025_fill_in.pdf
-- Form IT-558 Instructions (2025) PDF: https://www.tax.ny.gov/pdf/2025/inc/it558i_2025.pdf
+- NY Notice N-26-1 (2025 OBBBA decoupling): https://www.tax.ny.gov/forms/n-notices/n-26-1.htm
 - Form IT-219 Instructions: https://www.tax.ny.gov/pdf/current_forms/it/it219i.pdf
 - MCTMT for self-employed: https://www.tax.ny.gov/bus/mctmt/selfemp.htm
 - NY personal income tax credits overview: https://www.tax.ny.gov/pit/credits/income_tax_credits.htm
 - NYC credits overview (includes UBT credit sliding scale): https://www.tax.ny.gov/pit/credits/new_york_city_credits.htm
-- Governor Hochul FY 2026-27 Executive Budget (for §174A decoupling proposal tracking): Budget website at budget.ny.gov
+- NY Notice N-26-1 (for enacted 2025 OBBBA depreciation and R&E decoupling): https://www.tax.ny.gov/forms/n-notices/n-26-1.htm
 
 ## End of Turn 1 — Sections 1-4 complete, Sections 5-14 pending
 
@@ -486,7 +493,7 @@ Every position in this skill cites from this list. New citations added to the sk
 
 ### Turn 1 summary
 
-This turn drafted the frontmatter, the preamble, and Sections 1-4 of `ny-it-201-resident-return`. Total lines in this turn: approximately 400. The foundation is in place: scope boundaries are explicit, tax year coverage is locked to 2025 with the currency date and OBBBA uncertainty flagged, the year-specific figures table covers every rate and threshold the skill needs, and the primary source library maps every citation the position rules will eventually reference.
+This turn drafted the frontmatter, the preamble, and Sections 1-4 of `ny-it-201-resident-return`. Total lines in this turn: approximately 400. The foundation is in place: scope boundaries are explicit, tax year coverage is locked to 2025 with the currency date and OBBBA decoupling update flagged, the year-specific figures table covers every rate and threshold the skill needs, and the primary source library maps every citation the position rules will eventually reference.
 
 Sections 5-14 will be drafted in turns 2-4. Estimated total file length at completion: 3,500-4,500 lines (the position rules section alone will be ~1,500 lines covering ~25 named positions, and the worked examples section will be ~800-1,000 lines).
 
@@ -553,7 +560,7 @@ These positions compute the NY additions and subtractions that transform federal
 #### Position 5.8 — Line 23 NY additions (Form IT-225 addition modifications)
 
 - **Line 23 additions trigger** — Any of the IT-225 addition modification codes apply. The most common for freelance developers is A-201 (personal income taxes and unincorporated business taxes deducted in determining federal income).  _(NY Tax Law §612(b)(3); Form IT-225-I (2025), A-201 code; Form IT-201-I (2025), Line 23.)_
-- **Line 23 additions rule** — Compute each applicable IT-225 addition and enter the total on Form IT-201 Line 23, with Form IT-225 attached. For a NYC-resident freelance developer who paid NYC UBT, the A-201 add-back is critical: the UBT paid during 2025 was deducted on federal Schedule C (most commonly on Line 23 "Taxes and licenses" or Line 17 "Legal and professional fees"), but NY does not allow a state-level deduction for unincorporated business taxes. The full amount of UBT deducted federally must be added back on IT-225 code A-201. Other A-codes to check for freelance developers: A-009: Federal bonus depreciation (§168(k)). If the freelancer placed any business asset in service during 2025 and claimed federal bonus depreciation, add back the difference between the federal deduction and the NY depreciation computed on Form IT-398. This applies to equipment, computers, software, vehicles, and any other depreciable business asset. The A-009 add-back is replaced in 2025 and later by the IT-558 A-011 code — use A-009 only if the taxpayer has pre-2025 bonus depreciation carryovers. A-113: Interest income on state and local bonds of other states (see Position 5.6 — this is the entry point if reported via IT-225 rather than directly on Line 20). A-301: NYC flexible benefits program (IRC §125) — rare for self-employed.  _(NY Tax Law §612(b)(3); Form IT-225-I (2025), A-201 code; Form IT-201-I (2025), Line 23.)_
+- **Line 23 additions rule** — Compute each applicable IT-225 addition and enter the total on Form IT-201 Line 23, with Form IT-225 attached. For a NYC-resident freelance developer who paid NYC UBT, the A-201 add-back is critical: the UBT paid during 2025 was deducted on federal Schedule C (most commonly on Line 23 "Taxes and licenses" or Line 17 "Legal and professional fees"), but NY does not allow a state-level deduction for unincorporated business taxes. The full amount of UBT deducted federally must be added back on IT-225 code A-201. Other A-codes to check for freelance developers: A-009: Federal bonus depreciation (§168(k)). If the freelancer placed any business asset in service during 2025 and claimed federal bonus depreciation, add back the difference between the federal deduction and the NY depreciation computed on Form IT-398. This applies to equipment, computers, software, vehicles, and any other depreciable business asset. The A-009 add-back is replaced in 2025 and later by the IT-225 A-011 code — use A-009 only if the taxpayer has pre-2025 bonus depreciation carryovers. A-113: Interest income on state and local bonds of other states (see Position 5.6 — this is the entry point if reported via IT-225 rather than directly on Line 20). A-301: NYC flexible benefits program (IRC §125) — rare for self-employed.  _(NY Tax Law §612(b)(3); Form IT-225-I (2025), A-201 code; Form IT-201-I (2025), Line 23.)_
 - **Line 23 additions conservative default** — If the taxpayer paid UBT in 2025 and the amount is not clearly documented, refuse to proceed and require the taxpayer to produce the NYC-202 or NYC-202S from the companion `nyc-unincorporated-business-tax` skill. Never estimate UBT for the A-201 add-back — it must match the actual amount deducted on federal Schedule C.  _(NY Tax Law §612(b)(3); Form IT-225-I (2025), A-201 code; Form IT-201-I (2025), Line 23.)_
 
 #### Position 5.9 — Line 28 NY subtractions (US government bond interest)
@@ -571,14 +578,14 @@ These positions compute the NY additions and subtractions that transform federal
 #### Position 5.11 — Line 31 NY subtractions (Form IT-225 subtraction modifications)
 
 - **Line 31 subtractions trigger** — Any of the IT-225 subtraction modification codes apply.  _(NY Tax Law §612(c); Form IT-225-I (2025); Form IT-201-I (2025), Line 31.)_
-- **Line 31 subtractions rule** — Compute each applicable IT-225 subtraction and enter the total on Form IT-201 Line 31, with Form IT-225 attached. The most common for freelance developers: S-125: NY depreciation subtraction for bonus depreciation assets — this is the annual flip side of the A-009 / IT-558 A-011 add-back. If the taxpayer added back bonus depreciation in a prior year, they receive a NY depreciation deduction each subsequent year on the normalized MACRS schedule until the asset is fully recovered. Use Form IT-398 to track the running balance. S-118: Certain income from services performed as a self-employed individual subject to NYC UBT — rarely material but exists to prevent double-counting.  _(NY Tax Law §612(c); Form IT-225-I (2025); Form IT-201-I (2025), Line 31.)_
+- **Line 31 subtractions rule** — Compute each applicable IT-225 subtraction and enter the total on Form IT-201 Line 31, with Form IT-225 attached. The most common for freelance developers: S-125: NY depreciation subtraction for bonus depreciation assets — this is the annual flip side of the A-009 / IT-225 A-011 add-back. If the taxpayer added back bonus depreciation in a prior year, they receive a NY depreciation deduction each subsequent year on the normalized MACRS schedule until the asset is fully recovered. Use Form IT-398 to track the running balance. S-118: Certain income from services performed as a self-employed individual subject to NYC UBT — rarely material but exists to prevent double-counting.  _(NY Tax Law §612(c); Form IT-225-I (2025); Form IT-201-I (2025), Line 31.)_
 - **Line 31 subtractions conservative default** — Apply only modifications the taxpayer can affirmatively document. Never estimate.  _(NY Tax Law §612(c); Form IT-225-I (2025); Form IT-201-I (2025), Line 31.)_
 
-#### Position 5.12 — Form IT-558 OBBBA decoupling adjustments
+#### Position 5.12 — Form IT-225 OBBBA decoupling adjustments
 
-- **IT-558 trigger** — The taxpayer has any federal item subject to NY decoupling from post-March-1-2020 IRC changes. As of the skill's currency date, the main items that trigger IT-558 for a freelance developer are: 1. §168(k) bonus depreciation placed in service during 2025 (IT-558 code A-011); 2. §163(j) business interest limitation if the federal and NY treatments differ (rare for freelance developers); 3. §174A R&E expensing if the freelancer has domestic research and experimental expenditures — see Position 5.15 (dedicated to this uncertainty).  _(NY Tax Law §612(b)(36); Form IT-558-I (2025); Form IT-398 instructions.)_
-- **IT-558 rule** — For each triggering item, compute the NY-federal difference and enter it on the appropriate IT-558 line. Form IT-558 produces a "recomputed federal AGI" that reflects NY's position on post-March-1-2020 IRC changes. The recomputed amount flows into the NY computation via IT-201. For §168(k) specifically: if the taxpayer claimed federal bonus depreciation of $X on equipment placed in service in 2025, and the same asset would generate $Y of regular MACRS depreciation in year 1 (typically half of the bonus amount depending on convention), the IT-558 A-011 addition is $X − $Y for 2025. In subsequent years, the taxpayer will have an IT-558 subtraction equal to the annual MACRS depreciation that was denied in the year of acquisition. Use Form IT-398 to track.  _(NY Tax Law §612(b)(36); Form IT-558-I (2025); Form IT-398 instructions.)_
-- **IT-558 conservative default** — If the federal bonus depreciation amount is not clearly documented, refuse to proceed. The IT-558 add-back must match the actual federal deduction.  _(NY Tax Law §612(b)(36); Form IT-558-I (2025); Form IT-398 instructions.)_
+- **IT-225 OBBBA decoupling trigger** — The taxpayer has a federal item subject to New York 2025 OBBBA decoupling. For freelancers, the main triggers are qualified production property under IRC §168(n), foreign or domestic R&E expenditures under IRC §§174 and 174A, and any documented federal/state depreciation difference that requires a NY modification. Use Form IT-225 and NY Notice N-26-1 guidance.  _([NY Notice N-26-1; Form IT-225-I (2025)](https://www.tax.ny.gov/forms/n-notices/n-26-1.htm))_
+- **IT-225 OBBBA decoupling rule** — For 2025 NY individual returns, report OBBBA decoupling modifications on Form IT-225. Qualified production property uses A-209/S-213 with Form IT-398 support. R&E expenditures use A-225 with S-221 for expenditures paid or incurred on or after January 1, 2025, or S-222 for pre-2025 expenditures.  _([NY Notice N-26-1; Form IT-225-I (2025)](https://www.tax.ny.gov/forms/n-notices/n-26-1.htm))_
+- **IT-225 OBBBA decoupling default** — Apply only documented NY modifications. If the federal deduction, NY amortization amount, or classification is unclear, refuse and route to reviewer rather than guessing the IT-225 amount.  _([NY Notice N-26-1; Form IT-225-I (2025)](https://www.tax.ny.gov/forms/n-notices/n-26-1.htm))_
 
 #### Position 5.13 — Line 32 recomputed federal AGI and Line 33 NYAGI
 
@@ -594,14 +601,14 @@ These positions compute the NY additions and subtractions that transform federal
 - **Standard vs itemized rule** — Compute both the NY standard deduction (from the Section 3 figures table by filing status) and the NY itemized deduction (via Form IT-196). Use whichever is larger. For most freelance developers without a mortgage, significant charitable contributions, or state tax deductions exceeding the standard deduction, the standard deduction is the right choice. Critical NYAGI > $100,000 note: If NYAGI exceeds $100,000, the NY itemized deduction is subject to a phase-out limitation under §615(f). The limitation is complex and out of scope for this skill. If the taxpayer's NYAGI exceeds $100,000 AND the taxpayer would benefit from itemizing (e.g., large mortgage interest, large state tax deduction, large charitable contribution), refuse under R-NY201-3 and route to reviewer. The simple case (NYAGI > $100,000 but standard deduction is obviously better) proceeds normally.  _(NY Tax Law §614 (standard), §615 (itemized); §615(f) (limitation); Form IT-201-I (2025), Step 5, Line 34.)_
 - **Standard vs itemized conservative default** — When in doubt, take the standard deduction. It is simpler, it does not require Form IT-196, and for most freelance developers it produces nearly the same result.  _(NY Tax Law §614 (standard), §615 (itemized); §615(f) (limitation); Form IT-201-I (2025), Step 5, Line 34.)_
 
-#### Position 5.15 — §174A R&E expensing — UNCERTAIN POSITION (dedicated section)
+#### Position 5.15 — §174/§174A R&E decoupling modifications (enacted 2025 rule)
 
-- **§174A trigger** — The taxpayer has domestic research and experimental (R&E) expenditures under IRC §174A for 2025. For a freelance software developer, this may apply if the developer spent time developing their own software products (not client deliverables — those are §162 ordinary business expenses), or paid contractors to do such development work.  _(IRC §174A (as added by OBBBA, P.L. 119-21); NY Tax Law §612 (rolling conformity baseline); Hochul FY 2026-27 Executive Budget proposal (monitored, not enacted); Bonadio CPA analysis of FY 2026-27 budget §174A item (for reviewer reference).)_
-- **The uncertainty** — Federal law under OBBBA §174A (effective for tax years beginning on or after January 1, 2025) allows immediate deduction of domestic R&E expenses. Pre-OBBBA IRC §174 required 5-year amortization for domestic R&E and 15-year for foreign. As of this skill's currency date, NY has not yet enacted decoupling from §174A, so the default rolling-conformity rule would have NY follow the federal immediate deduction. However, Governor Hochul's FY 2026-27 Executive Budget (released January 2026) proposes retroactive decoupling from §174A back to tax years beginning on or after January 1, 2025, requiring 5-year recovery for both domestic and foreign R&E for NY purposes. The proposal has not been enacted as of this skill's currency date.  _(IRC §174A (as added by OBBBA, P.L. 119-21); NY Tax Law §612 (rolling conformity baseline); Hochul FY 2026-27 Executive Budget proposal (monitored, not enacted); Bonadio CPA analysis of FY 2026-27 budget §174A item (for reviewer reference).)_
-- **Rule — Path A conservative default** — Path A (conservative default — THIS SKILL'S DEFAULT). Capitalize the §174A R&E expenses for NY state purposes and recover them over 5 years. Produce an IT-558 addition modification for 2025 equal to the difference between the federal immediate deduction and the NY 5-year recovery (which for the first year of a 5-year life at mid-year convention is typically federal deduction minus 10% of the asset base). Track the NY basis separately via a supplementary schedule. State in the reviewer brief that this position is taken because retroactive NY decoupling is proposed in the Hochul FY 2026-27 Executive Budget and is likely to pass. If the proposal does not pass, the taxpayer will file an amended IT-201 to claim the federal-conforming deduction. The cost of the conservative default is a timing difference (NY tax is higher in 2025 but lower in 2026-2029); the benefit is avoiding an amended return if the proposal passes.  _(IRC §174A (as added by OBBBA, P.L. 119-21); NY Tax Law §612 (rolling conformity baseline); Hochul FY 2026-27 Executive Budget proposal (monitored, not enacted); Bonadio CPA analysis of FY 2026-27 budget §174A item (for reviewer reference).)_
-- **Rule — Path B federal-conforming** — Path B (federal-conforming — requires reviewer affirmative election). Follow federal treatment and claim the immediate deduction for NY purposes. Do not file IT-558. State in the reviewer brief that this position is taken because the retroactive decoupling proposal has not been enacted as of the return's filing date and the rolling-conformity default governs. Flag explicitly that if the proposal passes, the taxpayer will need to file an amended IT-201 to add back the §174A deduction and compute the 5-year recovery retroactively. The cost of Path B is the amended-return risk; the benefit is matching federal treatment in the current year. The skill does not silently pick between A and B. The reviewer brief explicitly presents the decision with the dollar impact of each path and asks the reviewer to affirm the choice. The default is Path A (conservative) unless the reviewer expressly elects Path B.  _(IRC §174A (as added by OBBBA, P.L. 119-21); NY Tax Law §612 (rolling conformity baseline); Hochul FY 2026-27 Executive Budget proposal (monitored, not enacted); Bonadio CPA analysis of FY 2026-27 budget §174A item (for reviewer reference).)_
-- **§174A conservative default** — Path A.  _(IRC §174A (as added by OBBBA, P.L. 119-21); NY Tax Law §612 (rolling conformity baseline).)_
-- **Documentation required from the taxpayer** — If the taxpayer has §174A activity at all, collect: Total domestic R&E expenditures for 2025 (by category: in-house salaries, contractor payments, supplies, computer rental, etc.); Total foreign R&E expenditures for 2025 (these are already 15-year amortized under pre-OBBBA §174; §174A does not change this); A clear allocation between R&E expenditures and ordinary §162 business expenses (this is the hardest judgment — client deliverable work is NOT R&E; speculative product development is R&E); Whether the federal return claimed the §174A immediate deduction or used the transition rule. If the facts are unclear or the dollar impact is material (e.g., more than $10,000 of potential R&E), refuse under R-NY201-5 and route to reviewer. This position is too fact-sensitive and too legally uncertain for the skill to handle autonomously beyond flagging.  _(IRC §174A (as added by OBBBA, P.L. 119-21); NY Tax Law §612 (rolling conformity baseline).)_
+- **§174/§174A trigger** — The taxpayer has foreign or domestic research and experimental expenditures for 2025, including domestic R&E deducted federally under OBBBA §174A. For software developers, this is usually speculative own-product development, not ordinary client deliverable work.  _([NY Notice N-26-1; Form IT-225-I (2025)](https://www.tax.ny.gov/forms/n-notices/n-26-1.htm))_
+- **Enacted NY R&E decoupling rule** — NY Notice N-26-1 confirms New York decouples from the federal treatment of foreign and domestic R&E expenditures for tax years beginning on or after January 1, 2025. Individuals report the modifications on Form IT-225 using A-225 plus S-221 or S-222. Post-2024 expenditures are amortized over 60 months for NYS purposes.  _([NY Notice N-26-1; Form IT-225-I (2025)](https://www.tax.ny.gov/forms/n-notices/n-26-1.htm))_
+- **R&E Form IT-225 modification rule** — If the federal return deducted domestic R&E immediately under §174A, add back the federal deduction using Form IT-225 code A-225 and subtract the allowable NY 60-month amortization amount using S-221. Track the remaining NY recovery for later years.  _([NY Notice N-26-1; Form IT-225-I (2025)](https://www.tax.ny.gov/forms/n-notices/n-26-1.htm))_
+- **Required NY modification after NY Notice N-26-1** — Do not omit the NY modification merely because the federal return deducted domestic R&E immediately under §174A. NY Notice N-26-1 requires the 2025 NY modification on Form IT-225 when the item is within §174/§174A.  _([NY Notice N-26-1; Form IT-225-I (2025)](https://www.tax.ny.gov/forms/n-notices/n-26-1.htm))_
+- **§174/§174A default** — If R&E classification and amounts are clear and immaterial, apply the enacted NY Notice N-26-1 Form IT-225 modification. If classification or amount is material or fact-sensitive, refuse under R-NY201-5 and route to reviewer.  _([NY Notice N-26-1; Form IT-225-I (2025)](https://www.tax.ny.gov/forms/n-notices/n-26-1.htm))_
+- **Documentation required from the taxpayer** — Collect total domestic R&E expenditures for 2025, total foreign R&E expenditures for 2025, any pre-2025 unamortized R&E amounts affected by federal transition rules, the federal return treatment, and support for allocating costs between ordinary §162 business expenses and §174/§174A R&E.  _([NY Notice N-26-1; Form IT-225-I (2025)](https://www.tax.ny.gov/forms/n-notices/n-26-1.htm))_
 
 Example 6 in Section 9 (a developer with a potential R&E position who is routed to reviewer).
 
@@ -751,11 +758,11 @@ The positions must execute in this order: 1. 5.1 Residency gate → 5.2 Filing s
 
 ### Turn 2 summary
 
-This turn drafted Section 5 — position rules — for `ny-it-201-resident-return`. Total positions: 34 structured position rules organized into 8 subsections (A through H). Each position follows the slot 5 contract format with trigger / rule / conservative default / source. Key positions: Position 5.8 (Line 23 IT-225 additions) flags the A-201 UBT add-back as critical for NYC freelancers. Position 5.15 (§174A R&E expensing) is the dedicated uncertainty section with the two-path reviewer decision — this is the most consequential position in the skill because it handles the unresolved OBBBA decoupling question. Position 5.19 (NY state tax computation) explicitly handles the three-method decision (table / rate schedule / >$107,650 worksheet) with the recapture mechanism explained. Position 5.24 (NYC UBT credit via Form IT-219) flows the UBT credit from the companion NYC UBT skill through IT-219, IT-201-ATT Section C, and Line 53 with the sliding-scale phase-out computed. Positions 5.28-5.30 (MCTMT for self-employed) handle Zone 1 and Zone 2 separately with the per-individual-per-zone $50,000 threshold rule. Position count: 34 positions across 8 subsections (not the 25 originally estimated — the MCTMT per-zone rules and the sub-state layers required more structured positions than the initial plan budgeted). Total file length after Turn 1 + Turn 2: approximately 1,400 lines (440 from Turn 1, roughly 960 from Turn 2). Sections 6-14 remain for Turns 3 and 4. Estimated total file length at completion: 3,000-3,500 lines.
+This turn drafted Section 5 — position rules — for `ny-it-201-resident-return`. Total positions: 34 structured position rules organized into 8 subsections (A through H). Each position follows the slot 5 contract format with trigger / rule / conservative default / source. Key positions: Position 5.8 (Line 23 IT-225 additions) flags the A-201 UBT add-back as critical for NYC freelancers. Position 5.15 (§174/§174A R&E) is the enacted NY decoupling section under NY Notice N-26-1 and routes material classification issues to reviewer. Position 5.19 (NY state tax computation) explicitly handles the three-method decision (table / rate schedule / >$107,650 worksheet) with the recapture mechanism explained. Position 5.24 (NYC UBT credit via Form IT-219) flows the UBT credit from the companion NYC UBT skill through IT-219, IT-201-ATT Section C, and Line 53 with the sliding-scale phase-out computed. Positions 5.28-5.30 (MCTMT for self-employed) handle Zone 1 and Zone 2 separately with the per-individual-per-zone $50,000 threshold rule. Position count: 34 positions across 8 subsections (not the 25 originally estimated — the MCTMT per-zone rules and the sub-state layers required more structured positions than the initial plan budgeted). Total file length after Turn 1 + Turn 2: approximately 1,400 lines (440 from Turn 1, roughly 960 from Turn 2). Sections 6-14 remain for Turns 3 and 4. Estimated total file length at completion: 3,000-3,500 lines.
 
 ## Section 6 — Conservative defaults table
 
-**Section 6 — Conservative defaults table**  _(See individual row citations)_
+**Section 6 — Conservative defaults table**  _([See individual row citations](https://www.tax.ny.gov/forms/n-notices/n-26-1.htm))_
 
 | # | Ambiguity | Conservative default | Source |
 | --- | --- | --- | --- |
@@ -766,8 +773,8 @@ This turn drafted Section 5 — position rules — for `ny-it-201-resident-retur
 | 5 | Mutual fund 1099-INT does not report state-of-origin for tax-exempt interest | Assume 100% non-NY source; add back the full amount on Line 20 or via A-113 | NY Tax Law §612(b)(1); Position 5.6 |
 | 6 | Mutual fund does not report the US government obligation percentage | Assume 0%; do not claim the Line 28 subtraction | NY Tax Law §612(c)(1); Position 5.9 |
 | 7 | NYC UBT amount is not yet available from the companion skill | Refuse to proceed; the orchestrator must run the NYC UBT skill before this skill's IT-219 credit computation | Position 5.24 cross-skill dependency |
-| 8 | Federal bonus depreciation amount for 2025 asset acquisitions is not clearly documented | Refuse to proceed; the A-009 or IT-558 A-011 add-back must match the actual federal deduction exactly | NY Tax Law §612(b)(8); Form IT-398 |
-| 9 | Taxpayer has §174A R&E expenditures but the amount is ambiguous | Default to Path A (capitalize over 5 years for NY, IT-558 addition); present both paths in the reviewer brief; refuse if material amount (> $10,000) is involved | Position 5.15 |
+| 8 | Federal bonus depreciation amount for 2025 asset acquisitions is not clearly documented | Refuse to proceed; the A-009 or IT-225 A-011 add-back must match the actual federal deduction exactly | NY Tax Law §612(b)(8); Form IT-398 |
+| 9 | Taxpayer has §174A R&E expenditures but the amount is ambiguous | Default to NY modification path (capitalize over 5 years for NY, IT-225 addition); present both paths in the reviewer brief; refuse if material amount (> $10,000) is involved | Position 5.15 |
 | 10 | Taxpayer has R&E-adjacent costs that could be §162 or §174A (e.g., contractor payments for speculative prototype work vs. client deliverable work) | Classify as §162 (ordinary business expense) unless the work is clearly speculative and not tied to a client deliverable; flag for reviewer | IRC §174A; Position 5.15 |
 | 11 | NYAGI is near the $107,650 threshold for the recapture worksheet | Always use the method dictated by the actual NYAGI; never use the tax table for NYAGI exactly at or above the threshold | NY Tax Law §601; Position 5.19 |
 | 12 | NYAGI is near the $100,000 threshold for the itemized deduction limitation AND the taxpayer would benefit from itemizing | Refuse under R-NY201-3; route to reviewer for detailed limitation computation | NY Tax Law §615(f); Position 5.14 |
@@ -792,7 +799,7 @@ These refusals extend the base global catalogue in `us-tax-workflow-base` Sectio
 - **R-NY201-2 — Convenience-of-the-employer remote worker case** — New York's convenience-of-the-employer rule (20 NYCRR §132.18(a)) treats wages as New York source when a nonresident performs services outside New York for their convenience rather than the employer's necessity. This rule creates complex sourcing questions that require careful analysis of the bona fide employer office test and the employer's policies. This skill does not handle convenience-of-the-employer determinations. Please consult a CPA familiar with NY remote-work sourcing rules. (Trigger: The taxpayer is a NY resident who has W-2 wages from an out-of-state employer AND the employer claims NY source for those wages under NY's convenience-of-the-employer rule, OR the taxpayer is a nonresident W-2 employee who worked remotely for a NY employer and the employer sourced the wages to NY.)  _(20 NYCRR §132.18(a))_
 - **R-NY201-3 — Itemized deduction limitation above $100,000 NYAGI** — New York limits itemized deductions under NY Tax Law §615(f) for taxpayers with New York adjusted gross income above $100,000. The limitation phases out the itemized deduction through multiple income bands and requires a detailed computation under 20 NYCRR §112.3. This skill handles the simple case (standard deduction obviously superior) but refuses the complex case where the itemized deduction would materially benefit the taxpayer. Please consult a CPA to compute the NY itemized deduction limitation in detail. (Trigger: NYAGI exceeds $100,000 AND the taxpayer's NY itemized deduction (computed via Form IT-196) would exceed the NY standard deduction for their filing status. The §615(f) limitation applies and requires detailed phase-out computation.)  _(NY Tax Law §615(f); 20 NYCRR §112.3)_
 - **R-NY201-4 — PTET election scenario** — The New York Pass-Through Entity Tax (PTET) election under NY Tax Law Article 24-A applies to multi-owner pass-through entities (S corporations, LLCs taxed as partnerships, and general partnerships) that elect to pay state income tax at the entity level to bypass the federal SALT cap. The PTET is not available to disregarded single-member LLCs or bare sole proprietors because there is no separate pass-through entity to make the election. This skill covers only sole props and disregarded SMLLCs. If you are considering forming a multi-owner entity for PTET benefits, please consult a CPA to analyze the tradeoffs. (Trigger: The taxpayer is asking about the NY Pass-Through Entity Tax (PTET) election under NY Tax Law Article 24-A, OR operates through a multi-owner pass-through that may benefit from the PTET election.)  _(NY Tax Law Article 24-A)_
-- **R-NY201-5 — §174A R&E material amount** — The OBBBA §174A immediate deduction for domestic research and experimental expenditures creates a retroactive decoupling risk for New York state tax purposes. Governor Hochul's FY 2026-27 Executive Budget (January 2026) proposes retroactive NY decoupling to tax years beginning on or after January 1, 2025, but the proposal has not been enacted as of this skill's currency date. Material R&E positions require reviewer judgment on both the §162 vs §174A classification and the NY conservative-vs-federal-conforming path. This skill handles small R&E positions (under $10,000) via Position 5.15 with Path A as the default. Material positions are refused pending reviewer analysis. Please consult a CPA for the §174A classification and NY decoupling decision. (Trigger: The taxpayer has domestic R&E expenditures under IRC §174A with material dollar impact (more than $10,000 of potential R&E classification), AND the allocation between §162 ordinary expenses and §174A R&E is fact-sensitive.)  _(IRC §174A; Governor Hochul's FY 2026-27 Executive Budget (January 2026))_
+- **R-NY201-5 — §174/§174A R&E material classification** — NY Notice N-26-1 confirms New York decouples from the federal treatment of foreign and domestic R&E expenditures for tax years beginning on or after January 1, 2025. Material R&E positions require reviewer judgment on the §162 vs §174/§174A classification and the Form IT-225 A-225/S-221/S-222 modification schedule. This skill handles immaterial, clearly documented R&E positions by applying Position 5.15. Material or fact-sensitive positions are refused pending reviewer analysis. Please consult a CPA for the R&E classification and NY modification schedule. Trigger: R&E-adjacent costs have material dollar impact (more than $10,000) and the allocation between §162 ordinary expenses and §174/§174A R&E is fact-sensitive. (Trigger: The taxpayer has domestic R&E expenditures under IRC §174A with material dollar impact (more than $10,000 of potential R&E classification), AND the allocation between §162 ordinary expenses and §174A R&E is fact-sensitive.)  _([NY Notice N-26-1; Form IT-225-I (2025)](https://www.tax.ny.gov/forms/n-notices/n-26-1.htm))_
 - **R-NY201-6 — Credit for taxes paid to another state** — The New York resident credit for taxes paid to another state or political subdivision under NY Tax Law §620 is a complex allocation exercise that requires determining the New York source and non-New York source components of income, computing the credit cap under the §620(e) limitation formula, and coordinating with the other state's return. This skill does not compute the NY §620 credit. Please consult a CPA to compute the resident credit — it is often materially valuable and should not be skipped. (Trigger: The taxpayer is a NY resident who earned income that was taxed by another state or a political subdivision of another state (e.g., NY resident who worked in New Jersey and paid NJ income tax, NY resident with rental property in Connecticut, NY resident freelancer with clients in Massachusetts who withheld MA tax).)  _(NY Tax Law §620; §620(e))_
 - **R-NY201-7 — Multi-state business activity or multi-zone MCTMT allocation** — Multi-state business activity allocation under NY Tax Law §631 and MCTD zone allocation under NY Tax Law §800(b) both require Form IT-203-A (Business Allocation Schedule). This schedule is complex and requires detailed records of where each activity was performed. This skill assumes all activity is in a single location by virtue of the taxpayer's residency. Please consult a CPA for Form IT-203-A preparation. (Trigger: The taxpayer has business activity in multiple states requiring income apportionment, OR has self-employment activity in both MCTD Zone 1 and Zone 2 requiring allocation between zones.)  _(NY Tax Law §631; §800(b))_
 - **R-NY201-8 — Split-residence married couple** — Split-residence married couples require careful residency analysis for each spouse and may require separate New York returns under NY Tax Law §651(b) even if the couple files jointly at the federal level. The filing status interactions are complex and often benefit from separate NY filings even when the federal filing is joint. This skill does not handle split-residence couples. Please consult a CPA to analyze the optimal NY filing approach. (Trigger: The taxpayer is married and one spouse is a full-year NY resident while the other is a nonresident or part-year resident, OR one spouse is a full-year NYC resident and the other is not, OR one spouse is a Yonkers resident and the other is not.)  _(NY Tax Law §651(b))_
@@ -814,7 +821,7 @@ This skill produces a multi-layer tax computation (state + potentially NYC + pot
 | Total NY balance due (Line 78) > $5,000 | Material balance; verify all payments credited and all credits claimed |
 | Single IT-225 addition modification > $2,000 | Material positive adjustment; verify the modification code and amount |
 | A-201 UBT add-back > $1,000 | Material; verify the UBT paid matches the NYC-202/NYC-202S filing from the companion skill |
-| Form IT-558 A-011 bonus depreciation add-back > $5,000 | Material timing difference; verify Form IT-398 computation and ensure the asset basis is correct |
+| Form IT-225 A-011 bonus depreciation add-back > $5,000 | Material timing difference; verify Form IT-398 computation and ensure the asset basis is correct |
 | NYC UBT credit (Line 53) > $1,000 | Material; verify the IT-219 sliding-scale computation and confirm NYC UBT paid amount |
 | MCTMT combined (Lines 54a + 54b) > $500 | Material; verify zone allocation and per-individual threshold application |
 | Yonkers resident surcharge (Line 55) > $2,000 | Material; verify the 16.75% computation against Line 50 |
@@ -824,13 +831,13 @@ This skill produces a multi-layer tax computation (state + potentially NYC + pot
 
 ### Condition-based triggers
 
-**Condition-based triggers**
+**Condition-based triggers**  _(https://www.tax.ny.gov/forms/n-notices/n-26-1.htm)_
 
 | Trigger | Flag reason |
 | --- | --- |
 | NYAGI > $107,650 (recapture worksheet used) | Verify the correct band of the tax computation worksheet was applied; the bands are mechanical but error-prone |
 | NYAGI > $100,000 AND itemized deduction claimed | Verify the §615(f) limitation computation; if skill refused under R-NY201-3, verify refusal was appropriate |
-| Position 5.15 (§174A R&E) applied at all | Verify the reviewer election between Path A (conservative) and Path B (federal-conforming); affirm the dollar impact |
+| Position 5.15 (§174/§174A R&E) applied at all | Verify the §162 vs §174/§174A classification, A-225 add-back, S-221/S-222 subtraction, and later-year recovery schedule |
 | NYC resident with UBT credit flow | Verify three-document chain: NYC-202/NYC-202S from NYC UBT skill → IT-219 → IT-201-ATT Section C → IT-201 Line 53. Any break in the chain is an error. |
 | Yonkers resident claimed | Verify the Item D2 entries on the face of Form IT-201; the Yonkers resident determination can be fact-sensitive |
 | Both spouses have self-employment income subject to MCTMT (joint return) | Verify the per-individual-per-zone threshold application; each spouse tested separately against $50,000 |
@@ -855,7 +862,7 @@ This skill produces a multi-layer tax computation (state + potentially NYC + pot
 | Line 76 (total payments) = 0 but taxpayer had W-2 wages | NY withholding is missing; check W-2 Box 17 |
 | Line 76 > federal total payments | Unusual; NY payments should not exceed federal payments unless state-only estimated payments were made — verify |
 | Any IT-225 modification code is listed but Form IT-225 is not attached | Structural error; the form must be produced and attached |
-| Any IT-558 line has a value but Form IT-558 is not attached | Same structural error |
+| Any IT-225 line has a value but Form IT-225 is not attached | Same structural error |
 
 ## Section 9 — Worked examples
 
@@ -888,7 +895,7 @@ On her federal Schedule C, Sarah deducted the $2,800 UBT on Line 23 (Taxes and l
 
 **Position 5.11 (Line 31 IT-225 subtractions).** No applicable subtractions. Line 31 = $0.
 
-**Position 5.12 (IT-558 OBBBA).** Sarah placed no depreciable assets in service in 2025 (she uses her existing 2022 MacBook and existing office setup). No §168(k) add-back. No §174A issue (all her work is client deliverables under §162, not speculative R&E). IT-558 = not attached.
+**Position 5.12 (IT-225 OBBBA).** Sarah placed no depreciable assets in service in 2025 (she uses her existing 2022 MacBook and existing office setup). No §168(k) add-back. No §174A issue (all her work is client deliverables under §162, not speculative R&E). IT-225 = not attached.
 
 **Position 5.13 (Line 33 NYAGI).** NYAGI = $119,260 + $2,800 (A-201 add-back) − $0 (subtractions) = $122,060.
 
@@ -961,7 +968,7 @@ Reviewer attention: A-201 UBT add-back $2,800 matches the federal Schedule C Lin
 
 - **Primary sources cited** — NY Tax Law §601 (rates), §605(b) (residency), §612(b)(3) (A-201), §801(a) (MCTMT); NYC Admin Code §11-1701 (NYC rates), §11-503(b) (UBT credit), §11-1706 (school tax credit); Form IT-201 (2025) Lines 19-80; Form IT-225-I (2025) code A-201; Form IT-219 instructions; Form IT-201-ATT (2025) Section C  _(NY Tax Law §601, §605(b), §612(b)(3), §801(a); NYC Admin Code §11-1701, §11-503(b), §11-1706; Form IT-201 (2025); Form IT-225-I (2025); Form IT-219 instructions; Form IT-201-ATT (2025))_
 
-### Example 2 — David: Manhattan NYC resident with §174A uncertainty
+### Example 2 — David: Manhattan NYC resident with §174A R&E modification
 
 David is a 40-year-old freelance developer building his own iOS productivity app alongside client work. Full-year resident of Manhattan. Single.
 Schedule C 2025: $150,000 gross receipts from client consulting work, $90,000 expenses (of which $45,000 are contractor payments for product development work on his own app — the contested §174A question).
@@ -975,21 +982,21 @@ Positions 5.1-5.13 (entry through NYAGI): Standard computation. Federal AGI $48,
 
 Position 5.15 (§174A — the key decision). David has $45,000 of potentially §174A-classified expenditures. This exceeds the $10,000 materiality threshold in this skill's Section 6 default #9 and triggers R-NY201-5 (material §174A position).
 
-- **R-NY201-5 — §174A R&E material amount** — The OBBBA §174A immediate deduction for domestic research and experimental expenditures creates a retroactive decoupling risk for New York state tax purposes. Governor Hochul's FY 2026-27 Executive Budget (January 2026) proposes retroactive NY decoupling to tax years beginning on or after January 1, 2025, but the proposal has not been enacted as of this skill's currency date. Material R&E positions require reviewer judgment on both the §162 vs §174A classification and the NY conservative-vs-federal-conforming path. This skill handles small R&E positions (under $10,000) via Position 5.15 with Path A as the default. Material positions are refused pending reviewer analysis. Please consult a CPA for the §174A classification and NY decoupling decision. (Trigger: The taxpayer has domestic R&E expenditures under IRC §174A with material dollar impact (more than $10,000 of potential R&E classification), AND the allocation between §162 ordinary expenses and §174A R&E is fact-sensitive.)  _(IRC §174A; Governor Hochul's FY 2026-27 Executive Budget (January 2026))_
+- **R-NY201-5 — §174/§174A R&E material classification** — NY Notice N-26-1 confirms New York decouples from the federal treatment of foreign and domestic R&E expenditures for tax years beginning on or after January 1, 2025. Material R&E positions require reviewer judgment on the §162 vs §174/§174A classification and the Form IT-225 A-225/S-221/S-222 modification schedule. This skill handles immaterial, clearly documented R&E positions by applying Position 5.15. Material or fact-sensitive positions are refused pending reviewer analysis. Please consult a CPA for the R&E classification and NY modification schedule. Trigger: R&E-adjacent costs have material dollar impact (more than $10,000) and the allocation between §162 ordinary expenses and §174/§174A R&E is fact-sensitive. (Trigger: The taxpayer has domestic R&E expenditures under IRC §174A with material dollar impact (more than $10,000 of potential R&E classification), AND the allocation between §162 ordinary expenses and §174A R&E is fact-sensitive.)  _([NY Notice N-26-1; Form IT-225-I (2025)](https://www.tax.ny.gov/forms/n-notices/n-26-1.htm))_
 
 1. A partial IT-201 with the computation paused at NYAGI. The skill shows two possible NYAGI values:
-   - Path A (conservative, NY decouples from §174A retroactively): NY would require capitalization and 5-year recovery. First-year NY deduction would be approximately $4,500 (10% mid-year convention). The IT-558 addition for 2025 = $45,000 − $4,500 = $40,500. NYAGI (Path A) = $48,000 + $40,500 = $88,500.
-   - Path B (federal-conforming, NY follows §174A): No IT-558 addition. NYAGI (Path B) = $48,000.
-2. The dollar impact of the choice: $40,500 of additional NYAGI at David's likely marginal rate (around 6.85% combined state + NYC) ≈ $2,775 of additional NY+NYC tax in 2025 under Path A.
-3. A timing analysis: Under Path A, David recovers the $40,500 excess deduction over 2026-2029 via IT-558 subtractions, producing approximately $700-$1,000 of NY tax savings per year in those years, net-neutral over the 5-year window.
-4. The amendment risk under Path B: If the Hochul FY 2026-27 budget passes with retroactive effect, David will need to file an amended 2025 NY return to add back the $40,500. The amendment cost (preparer time + filing) plus interest on the late payment plus potential underpayment penalty would likely exceed $500-$1,500.
-5. The reviewer's decision point, stated explicitly: "Reviewer must choose Path A (conservative, file original return with IT-558 add-back, no amendment risk) or Path B (federal-conforming, file original return without IT-558, potential amendment risk). Skill default is Path A. Skill cannot proceed without reviewer affirmation."
+   - NY enacted modification path: NY would require capitalization and 5-year recovery. First-year NY deduction would be approximately $4,500 (10% mid-year convention). The IT-225 addition for 2025 = $45,000 − $4,500 = $40,500. NYAGI (NY modification path) = $48,000 + $40,500 = $88,500.
+   - No-addback omitted NY modification (not available after NY Notice N-26-1): No IT-225 addition. NYAGI (omitted NY modification) = $48,000.
+2. The dollar impact of the choice: $40,500 of additional NYAGI at David's likely marginal rate (around 6.85% combined state + NYC) ≈ $2,775 of additional NY+NYC tax in 2025 under NY modification path.
+3. A timing analysis: Under NY modification path, David recovers the $40,500 excess deduction over 2026-2029 via IT-225 subtractions, producing approximately $700-$1,000 of NY tax savings per year in those years, net-neutral over the 5-year window.
+4. Reviewer note: omitting the IT-225 modification would be inconsistent with NY Notice N-26-1 once the costs are classified as §174/§174A R&E.
+5. Reviewer decision point: confirm the §162 vs §174/§174A classification and the IT-225 A-225/S-221/S-222 amounts before the skill finalizes NYAGI.
 
-Material §174A position — $45,000 of potential R&E — refused under R-NY201-5 pending reviewer classification of (a) §162 vs §174A and (b) NY Path A vs Path B. Skill default is Path A if reviewer proceeds without affirmative election. See Position 5.15 for dedicated analysis and dollar impact.
+Material §174/§174A position — $45,000 of potential R&E — refused under R-NY201-5 pending reviewer classification of §162 vs §174/§174A and confirmation of the IT-225 modification amount.
 
-- **Source** — IRC §174A; NY Tax Law §612; Hochul FY 2026-27 Executive Budget (proposed, not enacted as of skill currency date); Position 5.15 of this skill.  _(IRC §174A; NY Tax Law §612; Hochul FY 2026-27 Executive Budget (proposed, not enacted))_
+- **Source** — NY Notice N-26-1; Form IT-225-I (2025); IRC §§162, 174, 174A.  _([NY Notice N-26-1; Form IT-225-I (2025)](https://www.tax.ny.gov/forms/n-notices/n-26-1.htm))_
 
-This example illustrates the skill's refusal behavior on a live legislative uncertainty. The skill does not silently pick a path — it produces a structured refusal with both paths documented and a clear reviewer decision point. If the reviewer affirms Path A, the skill can proceed to compute the rest of the return with the IT-558 addition. If the reviewer affirms Path B, the skill can proceed without the IT-558 addition but with the amendment risk flagged prominently in the brief.
+This example illustrates the skill's refusal behavior on a material classification issue. The law change is enacted; after reviewer classification, the skill proceeds using the NY Notice N-26-1 Form IT-225 modification path.
 
 ### Example 3 — Carlos: Yonkers resident freelancer
 
@@ -1058,9 +1065,9 @@ She placed a new $4,000 home office desk/chair setup in service in February 2025
 
 **Positions 5.1-5.5.** Full-year NY resident, Westchester, not NYC, not Yonkers. Zone 2 for MCTMT. Single.
 
-**Position 5.8 (IT-225 additions).** No UBT add-back (not NYC). §179 expensing: NY generally conforms to federal §179 expensing up to the full cap (there is no NY-specific §179 limit below the federal cap for 2025). So no §179 add-back. Line 23 = $0. (Note: if Priya had claimed §168(k) bonus depreciation instead, IT-225 A-009 or IT-558 A-011 would fire. She elected §179 specifically to avoid the bonus depreciation decoupling complication — smart tax planning.)
+**Position 5.8 (IT-225 additions).** No UBT add-back (not NYC). §179 expensing: NY generally conforms to federal §179 expensing up to the full cap (there is no NY-specific §179 limit below the federal cap for 2025). So no §179 add-back. Line 23 = $0. (Note: if Priya had claimed §168(k) bonus depreciation instead, IT-225 A-009 or IT-225 A-011 would fire. She elected §179 specifically to avoid the bonus depreciation decoupling complication — smart tax planning.)
 
-**Position 5.12 (IT-558 OBBBA).** No bonus depreciation, no §174A issue (she does client deliverable work only). IT-558 not attached.
+**Position 5.12 (IT-225 OBBBA).** No bonus depreciation, no §174A issue (she does client deliverable work only). IT-225 not attached.
 
 **Position 5.13 (Line 33 NYAGI).** $155,000 (no modifications).
 
@@ -1261,7 +1268,7 @@ This turn drafted Sections 6 through 9 — the behavioral sections of the skill.
 
 **Section 9 (Worked examples)** — **six fully worked examples** covering the six most common fact patterns the skill handles:
 1. **Sarah** — Brooklyn NYC resident freelancer with NYC UBT credit flow (demonstrates Positions 5.4, 5.8, 5.22, 5.24, 5.28, the full NYC + MCTMT + state layered computation)
-2. **David** — Manhattan resident with material §174A R&E uncertainty (demonstrates Position 5.15 refusal behavior with Path A and Path B dollar impact analysis)
+2. **David** — Manhattan resident with material §174/§174A R&E classification issue (demonstrates Position 5.15 and the IT-225 A-225/S-221 modification path)
 3. **Carlos** — Yonkers resident MFJ with itemized deduction §615(f) refusal (demonstrates Positions 5.14, 5.26, 5.29, and R-NY201-3 refusal)
 4. **Priya** — Westchester resident with §179 planning choice to avoid bonus depreciation decoupling (demonstrates Position 5.29 Zone 2 MCTMT and the §179-vs-§168(k) planning distinction)
 5. **Rachel** — Albany resident, simplest case with no local layers (demonstrates what a non-MCTD full-year NY resident looks like; critical for showing that Albany County is NOT in the MCTD despite having NYC clients)
@@ -1328,11 +1335,11 @@ NY additions:
     Code A-113 (other non-NY bond interest): $[amount]
     Other codes: $[amount]
     Subtotal IT-225 additions: $[amount]
-  Line 24 (IT-558 additions):
+  Line 24 (IT-225 additions):
     Code A-011 (2025+ §168(k) bonus depreciation): $[amount]
     Code §174A (if applicable — see Position 5.15): $[amount]  [PATH A / PATH B per reviewer election]
-    Other IT-558 codes: $[amount]
-    Subtotal IT-558 additions: $[amount]
+    Other IT-225 codes: $[amount]
+    Subtotal IT-225 additions: $[amount]
 
 Total NY additions: $[amount]
 
@@ -1444,7 +1451,7 @@ Insert these items into the base "Taxpayer action list" section of the brief, in
 ```
 NY action items:
 
-1. SIGN Form IT-201 and any supporting schedules (IT-225, IT-558, IT-196, IT-201-ATT, 
+1. SIGN Form IT-201 and any supporting schedules (IT-225, IT-225, IT-196, IT-201-ATT, 
    IT-213, IT-215, IT-219, IT-398, IT-272, Y-203) before filing.
 
 2. PAY the balance due on Line 78 by April 15, 2026. Payment options:
@@ -1473,13 +1480,13 @@ NY action items:
    statute of limitations for an assessment under NY Tax Law §683 is generally 3 years
    from the filing date, extended in cases of fraud or substantial understatement).
 
-8. IF §174A PATH A ELECTED: Track the 5-year NY recovery schedule for 2026-2029. Each
-   year, an IT-558 subtraction equal to the annual NY recovery will be required. A
+8. IF §174/§174A NY MODIFICATION APPLIES: Track the 5-year NY recovery schedule for 2026-2029. Each
+   year, an IT-225 subtraction equal to the annual NY recovery will be required. A
    separate tracking schedule is attached to this brief.
-   [This item is present only if Position 5.15 Path A was elected.]
+   [This item is present only if Position 5.15 NY modification applies.]
 
 9. IF §168(k) BONUS DEPRECIATION ADDED BACK: Track the Form IT-398 running balance for
-   future years. Each year of the asset's MACRS life, an IT-225 S-125 or IT-558
+   future years. Each year of the asset's MACRS life, an IT-225 S-125 or IT-225
    subtraction is available.
    [This item is present only if Position 5.12 fired with an add-back.]
 ```
@@ -1491,7 +1498,7 @@ The skill produces the following attachments to the reviewer brief, in this orde
 1. **Form IT-201 (full form)** — 4 pages
 2. **Form IT-201-ATT** — if any of Section A, B, C, or D is used (notably Section C for NYC UBT credit)
 3. **Form IT-225** — if any addition or subtraction modification is used
-4. **Form IT-558** — if any OBBBA decoupling adjustment is used
+4. **Form IT-225** — if any OBBBA decoupling adjustment is used
 5. **Form IT-196** — if itemized deductions are claimed (and not refused under R-NY201-3)
 6. **Form IT-213** — if Empire State Child Credit is claimed
 7. **Form IT-215** — if NY EIC is claimed
@@ -1500,7 +1507,7 @@ The skill produces the following attachments to the reviewer brief, in this orde
 10. **Form IT-272** — if college tuition credit is claimed
 11. **Form Y-203** — if Yonkers nonresident earnings tax is owed
 12. **Form IT-201-V payment voucher** — if paper-filing with a balance due
-13. **§174A tracking schedule (supplementary)** — if Position 5.15 Path A elected
+13. **§174A tracking schedule (supplementary)** — if Position 5.15 NY modification path elected
 14. **Cross-skill reconciliation schedule** — listing each value imported from an upstream skill with the source and timestamp
 
 ## Section 11 — Intake form additions
@@ -1599,7 +1606,7 @@ ask_user_input_v0 (only asked if federal return shows any Schedule C Line 17 "Le
   Question: "Do any of your 2025 Schedule C expenses relate to research and development of your own software product or technology (not work you did for clients)? For example, contractor payments to build a prototype of your own app."
   Options: ["No, all my expenses are for client deliverables", "Yes, less than $10,000 of potential R&D expenses", "Yes, more than $10,000 of potential R&D expenses", "I'm not sure"]
 ```
-Routing: "No" → Position 5.15 does not fire. "Less than $10,000" → Position 5.15 fires, default Path A, no refusal. "More than $10,000" or "Not sure" → refuse under R-NY201-5 and route to reviewer.
+Routing: "No" → Position 5.15 does not fire. "Less than $10,000" → Position 5.15 fires, default NY modification path, no refusal. "More than $10,000" or "Not sure" → refuse under R-NY201-5 and route to reviewer.
 
 **NY201-14 — §168(k) bonus depreciation.**
 ```
@@ -1607,7 +1614,7 @@ ask_user_input_v0:
   Question: "In 2025, did you purchase any business equipment, computers, or other depreciable assets and claim the federal bonus depreciation (§168(k)) deduction?"
   Options: ["No — I did not buy any depreciable assets", "I bought assets but used §179 expensing instead (not bonus)", "Yes — I claimed federal bonus depreciation", "I'm not sure"]
 ```
-Routing: "Yes" → invoke Form IT-398 / IT-558 A-011 computation per Position 5.12. "Not sure" → flag for reviewer.
+Routing: "Yes" → invoke Form IT-398 / IT-225 A-011 computation per Position 5.12. "Not sure" → flag for reviewer.
 
 **NY201-15 — Tax-exempt bond interest source.**
 ```
@@ -1696,13 +1703,13 @@ The base workflow provides 17 self-checks in `us-tax-workflow-base` Section 5. T
 
 - **Check 32 — Form IT-225 attached if modifications used** — If any IT-225 code appears on the return, Form IT-225 is included in the attachment manifest. If false: structural error; produce Form IT-225.  _(Section 12)_
 
-### Check 33 — Form IT-558 attached if decoupling used
+### Check 33 — Form IT-225 attached if decoupling used
 
-- **Check 33 — Form IT-558 attached if decoupling used** — If any IT-558 code appears on the return, Form IT-558 is included in the attachment manifest. If false: structural error; produce Form IT-558.  _(Section 12)_
+- **Check 33 — Form IT-225 attached if decoupling used** — If any IT-225 code appears on the return, Form IT-225 is included in the attachment manifest. If false: structural error; produce Form IT-225.  _(Section 12)_
 
 ### Check 34 — §174A position documented
 
-- **Check 34 — §174A position documented** — If Position 5.15 fired at all, the reviewer brief contains: (a) the federal §174A amount, (b) the Path A dollar impact, (c) the Path B dollar impact, (d) the reviewer election (Path A default or Path B affirmative), and (e) either the IT-558 addition (Path A) or the no-IT-558 note (Path B). If false: Position 5.15 documentation requirement violated; halt and complete the documentation.  _(Section 12)_
+- **Check 34 — §174/§174A position documented** — If Position 5.15 fired at all, the reviewer brief contains: (a) the federal §174/§174A amount, (b) the classification conclusion, (c) the IT-225 A-225 add-back if applicable, (d) the S-221 or S-222 subtraction, and (e) the later-year NY recovery schedule. If false: Position 5.15 documentation requirement violated; halt and complete the documentation.  _([NY Notice N-26-1; Form IT-225-I (2025)](https://www.tax.ny.gov/forms/n-notices/n-26-1.htm))_
 
 ### Check 35 — Correct tax computation method used
 
@@ -1856,8 +1863,8 @@ The primary source library in Section 4 lists all authoritative citations. The i
 - Publication 99, General Tax Information for New York State Residents
 - Publication 16, New York Tax Status of Limited Liability Companies and Limited Liability Partnerships (cross-reference with `ny-llc-filing-fee-it-204-ll`)
 
-**Secondary analysis of the §174A uncertainty (Position 5.15):**
-- Bonadio CPA firm analysis of the Hochul FY 2026-27 Executive Budget §174A decoupling proposal (January 2026)
+**Secondary analysis of the §174/§174A classification issue (Position 5.15):**
+- NY Notice N-26-1 guidance on enacted 2025 §174/§174A decoupling
 - The Tax Foundation state tax round-up for 2025-2026 (tracks state conformity to OBBBA; useful for comparing NY's position to other states)
 - The MoneyWise CPA blog post series on OBBBA state conformity (not authoritative but useful for tracking the legislative calendar)
 
@@ -1872,7 +1879,7 @@ The primary source library in Section 4 lists all authoritative citations. The i
 
 **Why this skill is load-bearing.** The `ny-it-201-resident-return` skill owns four intra-NY tax layers (state + NYC + Yonkers + MCTMT) that must be coordinated correctly because they share a common tax base (NY taxable income) with layer-specific modifications. No other skill in the NY stack has the authority to compute these layers. If this skill is wrong, every downstream skill (IT-204-LL, IT-2105, orchestrator) is wrong. For this reason, the skill has aggressive self-checks (28-46) and demands upstream lock before proceeding.
 
-**Why the §174A uncertainty is handled with a refusal rather than a default.** Position 5.15 could have defaulted silently to Path A (conservative) or Path B (federal-conforming). The skill instead refuses material positions and requires affirmative reviewer election because: (a) the legislative uncertainty is likely to resolve within 6-12 months of the skill's currency date, making any silent default potentially stale; (b) the dollar impact of the choice is typically material (a $40k+ R&E position at 6.85% combined rate = $2,700+ of tax); (c) the reviewer assumption in Circular 230 professional practice is that material positions require affirmative professional judgment, not a software default; (d) an amended return under Path B, if the Hochul proposal passes, is more expensive than the Path A conservative route, but the amendment risk must be acknowledged and documented, not hidden.
+**Why the §174/§174A classification issue is handled with a refusal rather than a default.** NY Notice N-26-1 resolves the conformity question for 2025: NY decouples and individuals use Form IT-225 A-225/S-221/S-222. The remaining risk is factual classification. For software developers, distinguishing ordinary §162 client deliverable work from §174/§174A R&E can be material and fact-sensitive, so this skill refuses material classification issues rather than silently creating or omitting a large NY modification.
 
 **Why the MCTMT per-individual-per-zone rule gets its own position.** The rule in NY Tax Law §801 is simple in text but easy to misapply in practice. A joint return with one spouse above the $50,000 threshold and one below looks, at first glance, like it should aggregate the spouses' bases for a single threshold test. It does not. Each spouse is tested separately. This is a common error in self-prepared returns and even in some professional returns. The dedicated positions (5.28-5.30) with explicit worked examples (Example 3, Carlos + Maria) anchor the rule in practice.
 
@@ -1904,19 +1911,19 @@ This skill follows the OpenAccountants skill versioning convention: `vMAJOR.MINO
 - 22 intake form additions (NY201-1 through NY201-22) in Section 11
 - Self-checks 28-46 in Section 12
 - Cross-skill coordination with `ny-llc-filing-fee-it-204-ll`, `nyc-unincorporated-business-tax` (pending), `ny-estimated-tax-it-2105` (pending)
-- Position 5.15 §174A uncertainty handled via two-path reviewer decision with R-NY201-5 refusing material positions
-- Currency date: April 2026; Hochul FY 2026-27 Executive Budget §174A proposal monitored but not enacted
+- Position 5.15 §174/§174A classification issue handled via two-path reviewer decision with R-NY201-5 refusing material positions
+- Currency date: April 2026; NY Notice N-26-1 enacted §174/§174A decoupling update incorporated
 
 **Pending for v0.2 (target: summer 2026):**
-- Update figures for any 2025 legislative changes enacted after April 2026
-- Resolve Position 5.15 §174A path once legislation clarifies
+- Monitor later NYSDTF 2025 form/instruction changes after NY Notice N-26-1
+- Keep Position 5.15 aligned with NY Notice N-26-1 and future IT-225 instructions
 - Add line number verification against the finalized 2025 Form IT-201 (current version locked from January 2026 release)
 - Refine NYC UBT credit worked example once `nyc-unincorporated-business-tax` skill is released and the cross-skill data contract is frozen
 
 **Pending for v1.0 (target: 2027 for tax year 2026 returns):**
 - Update all figures to 2026 values
 - Incorporate any §601 rate changes or threshold updates from Chapter 59 of the Laws of 2026
-- Revise Position 5.15 based on final §174A legislative outcome
+- Revise Position 5.15 for any later §174/§174A conformity changes
 - Add tax year 2026 rate schedules and standard deduction amounts
 - Verify line numbers against 2026 Form IT-201 (to be released January 2027)
 - Consider whether new sub-state layers (any new NYC surcharges, Yonkers rate changes, MCTMT threshold changes) require new positions
@@ -1936,7 +1943,7 @@ This skill follows the OpenAccountants skill versioning convention: `vMAJOR.MINO
 **Legislative monitoring sources for version maintenance:**
 - NYSDTF Personal Income Tax Up-to-Date Information page (tax.ny.gov/pit/personal_income_tax_up_to_date.htm)
 - Chapter Laws of the State of New York (the official source of enacted legislation)
-- Governor's Executive Budget proposals (budget.ny.gov)
+- NYSDTF N-Notices and enacted budget guidance
 - State Assembly Ways and Means Committee reports
 - NYSDTF TSB-M (Tax Bulletin Memoranda) releases
 
@@ -1956,7 +1963,7 @@ This turn drafted the final five sections (10-14) of `ny-it-201-resident-return`
 
 **Section 11 (Intake form additions)** — 22 structured intake questions (NY201-1 through NY201-22) using `ask_user_input_v0` format where interactive and free-text where documentary. Covers residency, county, school district, NYC/Yonkers living quarters, NYC UBT awareness, MCTMT awareness, prior-year carryforwards, retirement contributions, estimated tax payments, withholding, prior-year overpayment, §174A R&E activity, §168(k) bonus depreciation, tax-exempt bond sources, US government obligations, pension/annuity income, Empire State Child Credit, real property tax credit, NY Charitable Gifts Trust Fund, other NY credits, first-time filer status.
 
-**Section 12 (Self-check additions)** — Checks 28-46 (19 new checks), extending the base 1-17 and the IT-204-LL skill's 18-27. Covers: residency gate pass, federal AGI match, NYAGI arithmetic, A-201 UBT cross-skill reconciliation, IT-225/IT-558 attachment, §174A documentation, tax computation method selection, recapture band selection, §615(f) refusal check, NYC layer consistency, NYC UBT credit chain, Yonkers layer consistency, MCTMT zone determination, MCTMT rate per zone, per-individual-per-zone threshold, tax layer arithmetic, payment arithmetic, and balance due/refund consistency.
+**Section 12 (Self-check additions)** — Checks 28-46 (19 new checks), extending the base 1-17 and the IT-204-LL skill's 18-27. Covers: residency gate pass, federal AGI match, NYAGI arithmetic, A-201 UBT cross-skill reconciliation, IT-225/IT-225 attachment, §174A documentation, tax computation method selection, recapture band selection, §615(f) refusal check, NYC layer consistency, NYC UBT credit chain, Yonkers layer consistency, MCTMT zone determination, MCTMT rate per zone, per-individual-per-zone threshold, tax layer arithmetic, payment arithmetic, and balance due/refund consistency.
 
 **Section 13 (Cross-skill references)** — explicit documentation of upstream dependencies (7 federal skills plus workflow base), sibling dependencies (IT-204-LL, NYC UBT, IT-2105), and the orchestrator. Includes an interaction diagram showing the logical execution order.
 
@@ -1998,3 +2005,21 @@ This turn drafted the final five sections (10-14) of `ny-it-201-resident-return`
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, EA, tax attorney, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
 
 The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
+
+<!-- openaccountants-cta-block -->
+
+---
+
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

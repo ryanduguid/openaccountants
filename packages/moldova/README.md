@@ -7,7 +7,16 @@
 
 1. `foundation.md`
 2. `intake.md`
-3. `moldova-vat.md`
+3. `md-company-formation.md`
+4. `md-corporate-income-tax.md`
+5. `md-tax-overview.md`
+6. `moldova-income-tax.md`
+7. `moldova-payroll.md`
+8. `moldova-social-contributions.md`
+9. `moldova-tax-optimization.md`
+10. `moldova-vat.md`
+11. `payroll-workflow-base.md`
+12. `company-formation-workflow-base.md`
 
 ## How to use
 

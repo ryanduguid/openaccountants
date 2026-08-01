@@ -3,42 +3,44 @@ name: uk-return-assembly
 description: Final orchestrator skill that assembles the complete UK filing package for UK-resident sole traders. Consumes outputs from all UK content skills (uk-vat-return for VAT100, uk-self-employment-sa103 for trading income, uk-income-tax-sa100 for personal tax, uk-national-insurance for Class 2+4 NIC, uk-student-loan-repayment for student loan, uk-payments-on-account for payments on account) to produce a single unified reviewer package containing every worksheet, every form, every brief section, all cross-skill reconciliations, and the final action list with payment instructions, filing instructions, and next-year planning. This is the capstone skill that runs last and produces the final deliverable. MUST be loaded alongside all UK content skills listed above. UK full-year residents only. Sole traders only.
 version: 0.1
 jurisdiction: GB
-tax_year: 2025-26
+tax_year: 2025
+last_updated: 2026-05-23
 verified_by: pending
+tier: 2
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# UK Return Assembly Skill v0.1
+# UK Return Assembly
 
-> **Year applicability:** Rules in this skill apply across **2024-25, 2025-26, and 2026-27** unless a specific section flags a year-dated change. The pack is read alongside the rate-bearing skills (`uk-income-tax-sa100`, `uk-national-insurance`, `uk-dividends`, etc.) which carry full 3-year tables.
+## UK Return Assembly Skill v0.1
 
+UK Return Assembly Skill v0.1
+
+- **Year applicability** — Rules in this skill apply across 2024-25, 2025-26, and 2026-27 unless a specific section flags a year-dated change. The pack is read alongside the rate-bearing skills (uk-income-tax-sa100, uk-national-insurance, uk-dividends, etc.) which carry full 3-year tables.
 
 ## CRITICAL EXECUTION DIRECTIVE -- READ FIRST
 
-**When this skill is invoked, you have already passed through intake. The user has consented to the full workflow. Execute all steps without pausing for permission.**
+When this skill is invoked, you have already passed through intake. The user has consented to the full workflow. Execute all steps without pausing for permission.
 
 Specifically:
 
-- **Do NOT ask the user "how deep do you want me to go"** or "do you want the full package" or any variant. The user asked for their tax returns. They want their tax returns. Produce them.
-- **Do NOT announce how many tokens or tool calls this will take.** Execute.
-- **Do NOT ask which deliverables to prioritise.** Produce all deliverables listed in Section 4. If you run out of context mid-execution, finish the computation work first (numbers, positions, flags) then produce whatever formatted outputs you can, and at the very end state clearly which deliverables were not produced and why.
-- **Do NOT re-validate scope that intake already validated.** If `uk-freelance-intake` produced an intake package, trust it. You can cross-check specific numbers during reconciliation but do not re-interrogate the user about residency, business structure, or anything else intake already captured.
-- **Do NOT pause between content skills to check in.** Run them in dependency order (Section 2) without prose status updates between each one. A single status message at the end is fine.
-- **Self-checks are targets, not blockers.** If a self-check fails, note it in the reviewer brief's open flags section and continue. Do NOT halt the entire workflow because one self-check had an ambiguous answer.
-- **Primary source citations go in the final reviewer brief, not in intermediate computation steps.**
+- Do NOT ask the user "how deep do you want me to go" or "do you want the full package" or any variant. The user asked for their tax returns. They want their tax returns. Produce them.
+- Do NOT announce how many tokens or tool calls this will take. Execute.
+- Do NOT ask which deliverables to prioritise. Produce all deliverables listed in Section 4. If you run out of context mid-execution, finish the computation work first (numbers, positions, flags) then produce whatever formatted outputs you can, and at the very end state clearly which deliverables were not produced and why.
+- Do NOT re-validate scope that intake already validated. If uk-freelance-intake produced an intake package, trust it. You can cross-check specific numbers during reconciliation but do not re-interrogate the user about residency, business structure, or anything else intake already captured.
+- Do NOT pause between content skills to check in. Run them in dependency order (Section 2) without prose status updates between each one. A single status message at the end is fine.
+- Self-checks are targets, not blockers. If a self-check fails, note it in the reviewer brief's open flags section and continue. Do NOT halt the entire workflow because one self-check had an ambiguous answer.
+- Primary source citations go in the final reviewer brief, not in intermediate computation steps.
 
-**The user has already been told (by the intake skill) that the final package requires chartered accountant signoff before filing. State it once in the final output and move on.**
+The user has already been told (by the intake skill) that the final package requires chartered accountant signoff before filing. State it once in the final output and move on.
 
-**Failure mode to avoid:** The skill halts mid-execution and asks the user a meta-question about workflow pacing. If you feel the urge to ask "how should I proceed," the correct action is to pick the most defensible path and proceed, flagging the decision in the reviewer brief so the reviewer can challenge it.
-
----
+Failure mode to avoid: The skill halts mid-execution and asks the user a meta-question about workflow pacing. If you feel the urge to ask "how should I proceed," the correct action is to pick the most defensible path and proceed, flagging the decision in the reviewer brief so the reviewer can challenge it.
 
 ## What this file is
 
 The final capstone skill for UK sole trader returns. Every UK content skill feeds into this one. The output is the complete reviewer package that a chartered accountant can review, sign off on, and deliver to the client along with filing instructions.
 
 This skill coordinates execution of the content skills, verifies cross-skill consistency, and assembles the final deliverable.
-
----
 
 ## Section 1 -- Scope
 
@@ -48,123 +50,94 @@ Produces the complete UK filing package for:
 - Tax year 2025/26 (6 April 2025 to 5 April 2026)
 - Filing SA100 with SA103 (self-employment), VAT100 (if VAT registered), Class 2+4 NIC, student loan repayment (if applicable), payments on account for 2026/27
 
----
-
 ## Section 2 -- Execution order and dependency chain
 
 The skill enforces the following execution order:
 
-1. **`uk-vat-return`** -- VAT100 return (if VAT registered)
-   - Runs first because VAT turnover figures feed into the SA103
-   - For standard registration: prepare outstanding quarterly VAT100; verify prior quarters
-   - For Flat Rate Scheme: apply FRS percentage to gross turnover (including VAT)
-   - For unregistered: skip. Verify turnover stays under GBP 90,000 rolling 12-month threshold.
-   - Output: VAT100 box values, input VAT recovered (standard) or FRS saving, turnover (ex-VAT)
+0. **Step 1** — uk-vat-return -- VAT100 return (if VAT registered). Runs first because VAT turnover figures feed into the SA103. For standard registration: prepare outstanding quarterly VAT100; verify prior quarters. For Flat Rate Scheme: apply FRS percentage to gross turnover (including VAT). For unregistered: skip. Verify turnover stays under GBP 90,000 rolling 12-month threshold. Output: VAT100 box values, input VAT recovered (standard) or FRS saving, turnover (ex-VAT).
+0. **Step 2** — uk-self-employment-sa103 -- SA103 self-employment pages (trading income). Depends on VAT output: turnover on SA103 must be ex-VAT for VAT-registered traders. Covers: turnover (Box 15/16), allowable expenses (Boxes 17-30), net profit (Box 31), capital allowances (Box 34), adjustments. Cash basis vs accruals: affects timing of income and expense recognition. Output: SA103 box values, net profit for tax computation, capital allowances schedule.
+0. **Step 3** — uk-income-tax-sa100 -- SA100 main return (personal tax computation). Depends on SA103: net self-employment profit enters the SA100 as self-employment income. Depends on P60: employment income and PAYE tax deducted. Covers: total income, personal allowance (GBP 12,570, tapered above GBP 100,000), tax computation at applicable rates (rUK or Scottish), marriage allowance. Output: total income, taxable income, income tax liability, tax already paid (PAYE + POA), balancing payment/refund.
+0. **Step 4** — uk-national-insurance -- Class 2 + Class 4 NIC. Depends on SA103: net self-employment profit feeds Class 4 NIC computation. Class 2: flat rate GBP 3.45/week (GBP 179.40/year) if profits above Small Profits Threshold (GBP 6,725) -- voluntary below threshold. Class 4: 6% on profits between GBP 12,570 and GBP 50,270; 2% above GBP 50,270. Output: Class 2 amount, Class 4 amount, total NIC due via Self Assessment.
+0. **Step 5** — uk-student-loan-repayment -- Student loan repayment via Self Assessment (if applicable). Depends on SA100: total income determines repayment amount. Plan 1: 9% above GBP 22,015; Plan 2: 9% above GBP 27,295; Plan 4: 9% above GBP 27,660; Plan 5: 9% above GBP 25,000; Postgraduate: 6% above GBP 21,000. Deduct repayments already made via PAYE. Status check: uk-student-loan-repayment may be a Q4 stub. If the stub has substantive content, use it. If placeholder, compute using the thresholds above and flag in the reviewer brief. Output: total repayment due, amount via PAYE, amount via SA.
+0. **Step 6** — uk-payments-on-account -- Payments on account for 2026/27. Depends on SA100: payments on account are based on current year's SA liability. Status check: uk-payments-on-account is currently a Q4 stub. If the stub has substantive content, use it. If placeholder, compute: each POA = 50% of current year SA liability (income tax + Class 4 NIC, excluding PAYE, Class 2, student loan, capital gains tax). Due 31 January 2027 (1st POA) and 31 July 2027 (2nd POA). Flag in the reviewer brief. If SA liability < GBP 1,000, or > 80% was collected at source (PAYE), no POA required. Output: two POA amounts and dates for 2026/27.
 
-2. **`uk-self-employment-sa103`** -- SA103 self-employment pages (trading income)
-   - Depends on VAT output: turnover on SA103 must be ex-VAT for VAT-registered traders
-   - Covers: turnover (Box 15/16), allowable expenses (Boxes 17-30), net profit (Box 31), capital allowances (Box 34), adjustments
-   - Cash basis vs accruals: affects timing of income and expense recognition
-   - Output: SA103 box values, net profit for tax computation, capital allowances schedule
-
-3. **`uk-income-tax-sa100`** -- SA100 main return (personal tax computation)
-   - Depends on SA103: net self-employment profit enters the SA100 as self-employment income
-   - Depends on P60: employment income and PAYE tax deducted
-   - Covers: total income, personal allowance (GBP 12,570, tapered above GBP 100,000), tax computation at applicable rates (rUK or Scottish), marriage allowance
-   - Output: total income, taxable income, income tax liability, tax already paid (PAYE + POA), balancing payment/refund
-
-4. **`uk-national-insurance`** -- Class 2 + Class 4 NIC
-   - Depends on SA103: net self-employment profit feeds Class 4 NIC computation
-   - Class 2: flat rate GBP 3.50/week (GBP 182.00/year) if profits above Small Profits Threshold (GBP 6,845) -- voluntary below threshold
-   - Class 4: 6% on profits between GBP 12,570 and GBP 50,270; 2% above GBP 50,270
-   - Output: Class 2 amount, Class 4 amount, total NIC due via Self Assessment
-
-5. **`uk-student-loan-repayment`** -- Student loan repayment via Self Assessment (if applicable)
-   - Depends on SA100: total income determines repayment amount
-   - Plan 1: 9% above GBP 22,015; Plan 2: 9% above GBP 27,295; Plan 4: 9% above GBP 27,660; Plan 5: 9% above GBP 25,000; Postgraduate: 6% above GBP 21,000
-   - Deduct repayments already made via PAYE
-   - **Status check:** uk-student-loan-repayment may be a Q4 stub. If the stub has substantive content, use it. If placeholder, compute using the thresholds above and flag in the reviewer brief.
-   - Output: total repayment due, amount via PAYE, amount via SA
-
-6. **`uk-payments-on-account`** -- Payments on account for 2026/27
-   - Depends on SA100: payments on account are based on current year's SA liability
-   - **Status check:** uk-payments-on-account is currently a Q4 stub. If the stub has substantive content, use it. If placeholder, compute: each POA = 50% of current year SA liability (income tax + Class 4 NIC, excluding PAYE, Class 2, student loan, capital gains tax). Due 31 January 2027 (1st POA) and 31 July 2027 (2nd POA). Flag in the reviewer brief.
-   - If SA liability < GBP 1,000, or > 80% was collected at source (PAYE), no POA required.
-   - Output: two POA amounts and dates for 2026/27
-
-If any upstream content skill fails to produce validated output, the assembly skill notes the failure in the reviewer brief and continues with available data rather than halting entirely.
-
----
+- **Upstream failure handling** — If any upstream content skill fails to produce validated output, the assembly skill notes the failure in the reviewer brief and continues with available data rather than halting entirely.
 
 ## Section 3 -- Cross-skill reconciliation
 
 ### Cross-check 1: SA103 net profit = SA100 self-employment income
 
+**Cross-check 1 table**  _(Must match exactly)_
+
 | SA103 Output | SA100 Input | Rule |
-|-------------|-----------|------|
+| --- | --- | --- |
 | SA103 Box 31 (net profit) or Box 32 (net loss) | SA100 self-employment income field | Must match exactly |
 | SA103 turnover (Box 15/16) | Must be ex-VAT (if VAT registered) | VAT collected is not turnover on SA103 |
 
-**If mismatch:** Flag for reviewer. Common causes: timing difference between VAT period and tax year (VAT quarters don't align with 6 Apr-5 Apr), adjustments for private use.
+- **If mismatch** — Flag for reviewer. Common causes: timing difference between VAT period and tax year (VAT quarters don't align with 6 Apr-5 Apr), adjustments for private use.
 
 ### Cross-check 2: SA103 net profit feeds Class 4 NIC computation
 
+**Cross-check 2 table**  _(SA103 Box 31)_
+
 | NIC Input | Source | Rule |
-|-----------|--------|------|
+| --- | --- | --- |
 | Net self-employment profit | SA103 Box 31 | Class 4 base = net profit |
 | Class 4: 6% on GBP 12,570-50,270 | SA103 net profit | Lower profits limit = GBP 12,570, upper profits limit = GBP 50,270 |
 | Class 4: 2% above GBP 50,270 | SA103 net profit | No cap |
 
-**If mismatch:** Verify SA103 net profit figure. If multiple self-employments, combine profits for NIC purposes.
+- **If mismatch** — Verify SA103 net profit figure. If multiple self-employments, combine profits for NIC purposes.
 
 ### Cross-check 3: Payments on account = 50% of prior year SA balance
 
+**Cross-check 3 table**  _(Prior year SA302)_
+
 | POA Input | Source | Rule |
-|----------|--------|------|
+| --- | --- | --- |
 | Prior year total SA liability | Prior year SA302 | Relevant amount = income tax + Class 4 NIC via SA |
 | Less: PAYE tax deducted | P60 / prior year SA302 | PAYE deducted from the relevant amount |
 | Less: Class 2 NIC | Excluded from POA computation | Class 2 does not count toward POA |
 | Less: student loan | Excluded from POA computation | Student loan does not count toward POA |
-| Each POA = 50% of (relevant amount - PAYE) | | If result < GBP 1,000 total, no POA required |
+| Each POA = 50% of (relevant amount - PAYE) |  | If result < GBP 1,000 total, no POA required |
 
-**If mismatch:** Common cause is first year of self-employment (no POA due), or claim to reduce POA (SA303).
+- **If mismatch** — Common cause is first year of self-employment (no POA due), or claim to reduce POA (SA303).
 
 ### Cross-check 4: VAT turnover consistency with SA103
 
+**Cross-check 4 table**  _(Should broadly match, adjusted for VAT period vs tax year timing)_
+
 | VAT Output | SA103 Input | Rule |
-|-----------|-----------|------|
+| --- | --- | --- |
 | VAT100 Box 6 (total sales ex-VAT) | SA103 Box 15/16 (turnover) | Should broadly match, adjusted for VAT period vs tax year timing |
 | FRS: gross turnover x FRS% = VAT payable | SA103 turnover = gross ex-VAT (not FRS adjusted) | SA103 uses actual turnover, not FRS calculation |
 
-**If mismatch:** VAT periods (quarters ending Mar/Jun/Sep/Dec) don't perfectly align with the tax year (6 Apr-5 Apr). Small timing differences are expected. Large differences need investigation.
+- **If mismatch** — VAT periods (quarters ending Mar/Jun/Sep/Dec) don't perfectly align with the tax year (6 Apr-5 Apr). Small timing differences are expected. Large differences need investigation.
 
 ### Cross-check 5: Student loan computation consistent with total income
 
+**Cross-check 5 table**  _(SA100 total income field)_
+
 | Student Loan Input | Source | Rule |
-|-------------------|--------|------|
+| --- | --- | --- |
 | Total income from SA100 | SA100 total income field | Repayment based on total income minus threshold |
 | Repayments via PAYE | P60 student loan deductions | Deducted from total repayment due |
 | Net repayment via SA | Total - PAYE deductions | Cannot be negative (no refund of SL via SA) |
 
-**If no student loan:** This cross-check does not apply. Skip.
-
----
+- **If no student loan** — This cross-check does not apply. Skip.
 
 ## Section 4 -- Final reviewer package contents
 
-### Documents
-
-1. **Executive summary** -- one-page overview: filing status, income, tax liability, VAT position, NIC, student loan, payments on account, balancing payment/refund
-2. **VAT100 worksheet** (if VAT registered) -- box-by-box with formulas
-3. **SA103 worksheet** -- self-employment pages Box 15 through Box 52 with formulas and supporting schedules
-4. **SA100 computation** -- total income, personal allowance, taxable income, tax at applicable rates, NIC, student loan, less PAYE/POA, balancing payment
-5. **Capital allowances schedule** -- asset register with cost, date, AIA/WDA, annual allowance, WDV
-6. **NIC computation** -- Class 2 + Class 4 breakdown
-7. **Student loan computation** (if applicable) -- plan, threshold, repayment due, PAYE offset
-8. **Payments on account schedule** -- 2026/27 two-instalment calculation
-9. **Cross-skill reconciliation summary** -- all five cross-checks with pass/fail and notes
-10. **Reviewer brief** -- comprehensive narrative with positions, citations, flags, self-check results
-11. **Client action list** -- what the client needs to do, with dates and amounts
+1. Executive summary -- one-page overview: filing status, income, tax liability, VAT position, NIC, student loan, payments on account, balancing payment/refund
+2. VAT100 worksheet (if VAT registered) -- box-by-box with formulas
+3. SA103 worksheet -- self-employment pages Box 15 through Box 52 with formulas and supporting schedules
+4. SA100 computation -- total income, personal allowance, taxable income, tax at applicable rates, NIC, student loan, less PAYE/POA, balancing payment
+5. Capital allowances schedule -- asset register with cost, date, AIA/WDA, annual allowance, WDV
+6. NIC computation -- Class 2 + Class 4 breakdown
+7. Student loan computation (if applicable) -- plan, threshold, repayment due, PAYE offset
+8. Payments on account schedule -- 2026/27 two-instalment calculation
+9. Cross-skill reconciliation summary -- all five cross-checks with pass/fail and notes
+10. Reviewer brief -- comprehensive narrative with positions, citations, flags, self-check results
+11. Client action list -- what the client needs to do, with dates and amounts
 
 ### Reviewer brief contents
 
@@ -224,7 +197,7 @@ If any upstream content skill fails to produce validated output, the assembly sk
 
 ## National Insurance
 [Content from uk-national-insurance output]
-- Class 2: GBP 3.50/week, GBP 182.00/year (if profits > GBP 6,845)
+- Class 2: GBP 3.45/week, GBP 179.40/year (if profits > GBP 6,725)
 - Class 4: 6% on GBP 12,570-50,270 = GBP X
 - Class 4: 2% above GBP 50,270 = GBP X
 - Total NIC via Self Assessment: GBP X
@@ -273,7 +246,7 @@ If any upstream content skill fails to produce validated output, the assembly sk
 - e.g., "Motor vehicle simplified expenses 45p/mile x 8,000 miles = GBP 3,600 -- ITTOIA 2005 s94D"
 - e.g., "MacBook Pro GBP 1,800 claimed under AIA -- CAA 2001 s51A"
 - e.g., "Cash basis elected -- ITTOIA 2005 s25A, turnover under GBP 150,000"
-- e.g., "Class 2 NIC GBP 182.00 -- SSCBA 1992 s11(2)"
+- e.g., "Class 2 NIC GBP 179.40 -- SSCBA 1992 s11(2)"
 - e.g., "Class 4 NIC 6%/2% -- SSCBA 1992 s15"
 - e.g., "Student loan Plan 2 repayment 9% above GBP 27,295 -- Education (Student Loans) (Repayment) Regulations 2009"
 
@@ -316,84 +289,57 @@ If any upstream content skill fails to produce validated output, the assembly sk
 7. Prepare for MTD for Income Tax Self Assessment (ITSA) -- mandatory from April 2026 for businesses with turnover > GBP 50,000
 ```
 
----
-
 ## Section 5 -- Refusals
 
-**R-UK-1 -- Upstream skill did not run.** Name the specific skill. Note: this is a warning, not a hard stop. Continue with available data and flag the gap.
-
-**R-UK-2 -- Upstream self-check failed.** Name the specific check and note it in the reviewer brief. Continue.
-
-**R-UK-3 -- Cross-skill reconciliation failed.** Name the specific reconciliation and describe the discrepancy. Flag for reviewer but continue.
-
-**R-UK-4 -- Intake incomplete.** Specific missing intake items prevent computation. List what is missing and ask the user for the specific data point.
-
-**R-UK-5 -- Out-of-scope item discovered during assembly.** E.g., rental income requiring SA105, capital gains requiring SA108, foreign income requiring SA106. Flag and exclude from computation.
-
----
+- **R-UK-1** — Upstream skill did not run. Name the specific skill. Note: this is a warning, not a hard stop. Continue with available data and flag the gap.  _(R-UK-1)_
+- **R-UK-2** — Upstream self-check failed. Name the specific check and note it in the reviewer brief. Continue.  _(R-UK-2)_
+- **R-UK-3** — Cross-skill reconciliation failed. Name the specific reconciliation and describe the discrepancy. Flag for reviewer but continue.  _(R-UK-3)_
+- **R-UK-4** — Intake incomplete. Specific missing intake items prevent computation. List what is missing and ask the user for the specific data point.  _(R-UK-4)_
+- **R-UK-5** — Out-of-scope item discovered during assembly. E.g., rental income requiring SA105, capital gains requiring SA108, foreign income requiring SA106. Flag and exclude from computation.  _(R-UK-5)_
 
 ## Section 6 -- Self-checks
 
-**Check UK1 -- All upstream skills executed.** uk-vat-return (if VAT registered), uk-self-employment-sa103, uk-income-tax-sa100, uk-national-insurance all produced output. uk-student-loan-repayment produced output or was computed or was skipped (no loan). uk-payments-on-account produced output or was computed from SA liability.
-
-**Check UK2 -- SA103 net profit matches SA100 self-employment income.** Exact match required.
-
-**Check UK3 -- SA103 net profit feeds Class 4 NIC.** Class 4 computed on correct profit figure.
-
-**Check UK4 -- Payments on account correctly computed.** Each POA = 50% of (income tax + Class 4 NIC - PAYE). Exclusions: Class 2, student loan, CGT.
-
-**Check UK5 -- VAT treatment correct for registered traders.** Output VAT excluded from SA103 turnover; reclaimable input VAT excluded from SA103 expenses.
-
-**Check UK6 -- VAT treatment correct for unregistered traders.** No VAT separation needed; gross amounts used throughout.
-
-**Check UK7 -- Capital allowances correctly applied.** AIA on qualifying items (GBP 1,000,000 limit); WDA at 18% main pool / 6% special rate; small pools written off if WDV < GBP 1,000.
-
-**Check UK8 -- Personal allowance correctly applied.** GBP 12,570 standard; tapered by GBP 1 for every GBP 2 above GBP 100,000; zero above GBP 125,140.
-
-**Check UK9 -- Correct tax rate table applied.** Scottish rates if Scottish taxpayer; rUK rates otherwise.
-
-**Check UK10 -- Filing calendar is complete.** All deadlines for VAT, SA, NIC, and POA are listed with specific dates and amounts.
-
-**Check UK11 -- Class 2 NIC correctly determined.** Due if profits > Small Profits Threshold (GBP 6,845). Voluntary if below.
-
-**Check UK12 -- Reviewer brief contains legislation citations.** Every position taken references the specific Act and section.
-
-**Check UK13 -- Student loan plan type confirmed and correct threshold applied.** Plan 1/2/4/5/Postgraduate each have different thresholds.
-
-**Check UK14 -- Cash basis vs accruals consistently applied.** If cash basis elected, no accruals adjustments appear in SA103. If accruals, debtors/creditors adjustments are present.
-
----
+- **Check UK1 -- All upstream skills executed** — uk-vat-return (if VAT registered), uk-self-employment-sa103, uk-income-tax-sa100, uk-national-insurance all produced output. uk-student-loan-repayment produced output or was computed or was skipped (no loan). uk-payments-on-account produced output or was computed from SA liability.
+- **Check UK2 -- SA103 net profit matches SA100 self-employment income** — Exact match required.
+- **Check UK3 -- SA103 net profit feeds Class 4 NIC** — Class 4 computed on correct profit figure.
+- **Check UK4 -- Payments on account correctly computed** — Each POA = 50% of (income tax + Class 4 NIC - PAYE). Exclusions: Class 2, student loan, CGT.
+- **Check UK5 -- VAT treatment correct for registered traders** — Output VAT excluded from SA103 turnover; reclaimable input VAT excluded from SA103 expenses.
+- **Check UK6 -- VAT treatment correct for unregistered traders** — No VAT separation needed; gross amounts used throughout.
+- **Check UK7 -- Capital allowances correctly applied** — AIA on qualifying items (GBP 1,000,000 limit); WDA at 18% main pool / 6% special rate; small pools written off if WDV < GBP 1,000.
+- **Check UK8 -- Personal allowance correctly applied** — GBP 12,570 standard; tapered by GBP 1 for every GBP 2 above GBP 100,000; zero above GBP 125,140.
+- **Check UK9 -- Correct tax rate table applied** — Scottish rates if Scottish taxpayer; rUK rates otherwise.
+- **Check UK10 -- Filing calendar is complete** — All deadlines for VAT, SA, NIC, and POA are listed with specific dates and amounts.
+- **Check UK11 -- Class 2 NIC correctly determined** — Due if profits > Small Profits Threshold (GBP 6,725). Voluntary if below.
+- **Check UK12 -- Reviewer brief contains legislation citations** — Every position taken references the specific Act and section.
+- **Check UK13 -- Student loan plan type confirmed and correct threshold applied** — Plan 1/2/4/5/Postgraduate each have different thresholds.
+- **Check UK14 -- Cash basis vs accruals consistently applied** — If cash basis elected, no accruals adjustments appear in SA103. If accruals, debtors/creditors adjustments are present.
 
 ## Section 7 -- Output files
 
-The final output is **three files**:
+The final output is three files:
 
-1. **`[client_slug]_2025-26_uk_master.xlsx`** -- Single master workbook containing every worksheet and form. Sheets include: Cover, VAT100 (quarterly, if applicable), SA103 (self-employment), SA100 (tax computation), Capital Allowances, Expense Detail, NIC Computation, Student Loan (if applicable), Payments on Account 2026/27, Cross-Check Summary. Use live formulas where possible -- e.g., SA100 self-employment income references the SA103 net profit cell; Class 4 NIC references the SA103 sheet; POA references the SA100 liability. Verify no `#REF!` errors. Verify computed values match the computation model within GBP 1 before shipping.
+1. [client_slug]_2025-26_uk_master.xlsx -- Single master workbook containing every worksheet and form. Sheets include: Cover, VAT100 (quarterly, if applicable), SA103 (self-employment), SA100 (tax computation), Capital Allowances, Expense Detail, NIC Computation, Student Loan (if applicable), Payments on Account 2026/27, Cross-Check Summary. Use live formulas where possible -- e.g., SA100 self-employment income references the SA103 net profit cell; Class 4 NIC references the SA103 sheet; POA references the SA100 liability. Verify no #REF! errors. Verify computed values match the computation model within GBP 1 before shipping.
 
-2. **`reviewer_brief.md`** -- Single markdown file covering all sections from Section 4 above: executive summary, VAT, SA103, SA100, NIC, student loan, POA, cross-skill reconciliation, flags, positions, planning notes.
+2. reviewer_brief.md -- Single markdown file covering all sections from Section 4 above: executive summary, VAT, SA103, SA100, NIC, student loan, POA, cross-skill reconciliation, flags, positions, planning notes.
 
-3. **`client_action_list.md`** -- Single markdown file with step-by-step actions: immediate filings and payments, POA schedule, quarterly VAT calendar for 2026/27, ongoing compliance reminders.
+3. client_action_list.md -- Single markdown file with step-by-step actions: immediate filings and payments, POA schedule, quarterly VAT calendar for 2026/27, ongoing compliance reminders.
 
-**If execution runs out of context mid-build:** produce whatever is complete, then state at the end which of the three files were not produced or are partial.
+If execution runs out of context mid-build: produce whatever is complete, then state at the end which of the three files were not produced or are partial.
 
-**All files are placed in `/mnt/user-data/outputs/` and presented to the user via the `present_files` tool at the end.**
-
----
+All files are placed in /mnt/user-data/outputs/ and presented to the user via the present_files tool at the end.
 
 ## Section 8 -- Cross-skill references
 
-**Inputs:**
-- `uk-freelance-intake` -- structured intake package (JSON)
-- `uk-vat-return` -- VAT100 box values and classification output (if VAT registered)
-- `uk-self-employment-sa103` -- SA103 box values and computation output
-- `uk-income-tax-sa100` -- SA100 computation output
-- `uk-national-insurance` -- Class 2 + Class 4 NIC output
-- `uk-student-loan-repayment` -- Student loan computation output (or fallback, or N/A)
-- `uk-payments-on-account` -- POA schedule (or fallback computation)
+Inputs:
+- uk-freelance-intake -- structured intake package (JSON)
+- uk-vat-return -- VAT100 box values and classification output (if VAT registered)
+- uk-self-employment-sa103 -- SA103 box values and computation output
+- uk-income-tax-sa100 -- SA100 computation output
+- uk-national-insurance -- Class 2 + Class 4 NIC output
+- uk-student-loan-repayment -- Student loan computation output (or fallback, or N/A)
+- uk-payments-on-account -- POA schedule (or fallback computation)
 
-**Outputs:** The final reviewer package. No downstream skill.
-
----
+Outputs: The final reviewer package. No downstream skill.
 
 ## Section 9 -- Known gaps
 
@@ -412,22 +358,16 @@ The final output is **three files**:
 13. Making Tax Digital for ITSA (mandatory from April 2026 for turnover > GBP 50,000) may change quarterly reporting requirements -- flagged in planning notes.
 
 ### Change log
-- **v0.1 (April 2026):** Initial draft. Modelled on mt-return-assembly v0.1 adapted for UK jurisdiction with six content skills (VAT100, SA103, SA100, NIC, student loan, payments on account).
+
+v0.1 (April 2026): Initial draft. Modelled on mt-return-assembly v0.1 adapted for UK jurisdiction with six content skills (VAT100, SA103, SA100, NIC, student loan, payments on account).
 
 ## End of skill
-
-
----
 
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a chartered accountant, ACCA member, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
 
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
-
----
-
-<!-- openaccountants-cta-block -->
+The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
 
 ## Talk to a verified accountant
 
@@ -435,26 +375,29 @@ This skill is a tool, not an engagement. Every taxpayer's situation is
 different, and the rules in the skill may not match your specific facts.
 
 To speak with one of the licensed accountants who verifies skills for your
-jurisdiction — **no liability on either side until you and the accountant sign
-a formal engagement letter** — book a free 30-minute call:
+jurisdiction — no liability on either side until you and the accountant sign
+a formal engagement letter — book a free 30-minute call:
 
-**→ [Book a call](https://calendly.com/openaccountants-info/30min)**
+→ [Book a call](https://calendly.com/openaccountants-info/30min)
 
 We'll route you to the named verifier covering your country or state. You can
 also see the full list of verified accountants at
-[openaccountants.com/network](https://www.openaccountants.com/network).
+[openaccountants.com/network](https://openaccountants.com/network).
 
-<!-- openaccountants-mcp-cta -->
+<!-- openaccountants-cta-block -->
 
-## The accountant-verified version lives in the connector
+---
 
-This file is the open, **research-grade draft**. The **accountant-verified**
-version of this skill is **not published to GitHub** — it is delivered free
-through the OpenAccountants MCP connector, where your AI agent loads the
-verified rules together with the name of the accountant who signed them off.
+## Talk to a verified accountant
 
-**→ Install the free connector:** <https://www.openaccountants.com/connect>
-**MCP endpoint:** `https://www.openaccountants.com/api/mcp`
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
 
-## Changelog
-- **2026-07-05** — UK Class 2 NIC 2025/26 corrected (per packages/uk/rates.2025.json, SSCBA 1992): Small Profits Threshold GBP 6,845 (was 6,725), voluntary weekly rate GBP 3.50 / GBP 182.00 annual. 2024-25 comparison figures retained.
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

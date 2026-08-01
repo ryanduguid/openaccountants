@@ -2,13 +2,14 @@
 name: nepal-tds
 description: ALWAYS read this skill before touching any Nepal TDS / withholding tax work. Use whenever asked to compute or deduct Nepal withholding tax (TDS) on rent, interest, dividends, service/contract payments, or payments to non-residents under the Income Tax Act 2058. Trigger on phrases like "Nepal TDS", "Nepal withholding", "TDS rates Nepal", "Section 88 Nepal", "rent TDS Nepal 10%", "dividend TDS Nepal 5%", "interest TDS Nepal 6%", "contract TDS Nepal 1.5%", or "FY 2082/83 TDS". Out of scope — personal income tax computation (separate skill), corporate tax (separate skill), payroll/SSF salary TDS (use the payroll skill), and VAT.
 jurisdiction: NP
-domain: international
 tax_year: 2025
+last_updated: 2026-06-03
+verified_by: Ashish Bista
 tier: 2
-last_updated: 2026-07-06
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# nepal-tds
+# Nepal Tds
 
 ## Nepal — TDS / Withholding Tax — Skill v1.0
 
@@ -131,3 +132,21 @@ For informational and computational purposes only; not tax, legal, or financial 
 ## Talk to a verified accountant
 
 This skill is a tool, not an engagement. **No liability until both parties sign an engagement letter** — book a free 30-minute call: **→ [Book a call](https://calendly.com/openaccountants-info/30min)**
+
+<!-- openaccountants-cta-block -->
+
+---
+
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

@@ -2,9 +2,14 @@
 name: ca-estimated-tax-540es
 description: Tier 2 California content skill for computing California estimated tax payments under Form 540-ES for full-year California residents who are sole proprietors or single-member LLCs disregarded for federal tax. Covers the California 30/40/0/30 installment schedule (NOT equal quarterly like federal), due dates (April 15, June 15, September 15, January 15), the 100% prior-year safe harbor, underpayment penalty computation on Form 5805 / 5805-F, required annual payment rules, interaction with federal estimated tax (separate payments to separate agencies), and withholding credits from W-2 or backup withholding. Defers income tax computation to ca-540-individual-return and SMLLC franchise tax to ca-smllc-form-568. MUST be loaded alongside us-tax-workflow-base v0.1 or later. California residents only. Tax year 2025.
 version: 0.2
+jurisdiction: US-CA
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # CA Estimated Tax 540-ES Skill v0.2
+
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 ## What this file is, and what it is not
 
@@ -480,7 +485,6 @@ California estimated tax and federal estimated tax are completely independent:
 
 ## End of skill
 
-
 ---
 
 ## Disclaimer
@@ -488,34 +492,3 @@ California estimated tax and federal estimated tax are completely independent:
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, EA, tax attorney, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
 
 The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
-
----
-
-<!-- openaccountants-cta-block -->
-
-## Talk to a verified accountant
-
-This skill is a tool, not an engagement. Every taxpayer's situation is
-different, and the rules in the skill may not match your specific facts.
-
-To speak with one of the licensed accountants who verifies skills for your
-jurisdiction — **no liability on either side until you and the accountant sign
-a formal engagement letter** — book a free 30-minute call:
-
-**→ [Book a call](https://calendly.com/openaccountants-info/30min)**
-
-We'll route you to the named verifier covering your country or state. You can
-also see the full list of verified accountants at
-[openaccountants.com/network](https://www.openaccountants.com/network).
-
-<!-- openaccountants-mcp-cta -->
-
-## The accountant-verified version lives in the connector
-
-This file is the open, **research-grade draft**. The **accountant-verified**
-version of this skill is **not published to GitHub** — it is delivered free
-through the OpenAccountants MCP connector, where your AI agent loads the
-verified rules together with the name of the accountant who signed them off.
-
-**→ Install the free connector:** <https://www.openaccountants.com/connect>
-**MCP endpoint:** `https://www.openaccountants.com/api/mcp`

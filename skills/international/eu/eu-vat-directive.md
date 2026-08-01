@@ -1,10 +1,12 @@
 ---
-name: eu-vat-base
+name: eu-vat-directive
 description: Load this skill as a shared reference whenever working on VAT for any EU member state. Contains the common rules from Council Directive 2006/112/EC that apply across all 27 EU member states — intra-community acquisitions, reverse charge mechanics, place of supply rules, OSS, distance selling thresholds, and EU country list. Always load the country-specific VAT skill alongside this one. Do NOT use this skill alone — it must be combined with the relevant country skill (e.g. ireland-vat-return, germany-vat-return) which overrides anything country-specific.
 jurisdiction: EU
 tax_year: 2025
+last_updated: 2026-05-23
+verified_by: pending
 tier: 2
-last_updated: 2026-07-06
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
 # eu-vat-base
@@ -222,3 +224,21 @@ Always check the country skill for the specific blocked categories for that juri
 | Capital goods adjustment period | T3 -- varies by country; covered in country skills |
 
 Practitioner review required for: rate table accuracy (verify against EC TEDB), any T2 rules before advising clients.
+
+<!-- openaccountants-cta-block -->
+
+---
+
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

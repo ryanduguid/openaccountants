@@ -7,10 +7,14 @@
 
 1. `foundation.md`
 2. `intake.md`
-3. `co-income-tax.md`
-4. `co-social-contributions.md`
-5. `co-vat-return.md`
-6. `colombia-iva.md`
+3. `co-company-formation.md`
+4. `co-corporate-income-tax.md`
+5. `co-income-tax.md`
+6. `co-social-contributions.md`
+7. `co-tax-overview.md`
+8. `co-vat-return.md`
+9. `colombia-iva.md`
+10. `company-formation-workflow-base.md`
 
 ## Also known as
 

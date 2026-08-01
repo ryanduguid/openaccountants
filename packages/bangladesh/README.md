@@ -9,7 +9,26 @@
 2. `intake.md`
 3. `bangladesh-pit.md`
 4. `bangladesh-vat.md`
-5. `references.md`
+5. `bd-bookkeeping.md`
+6. `bd-company-formation.md`
+7. `bd-corporate-income-tax.md`
+8. `bd-crypto-tax.md`
+9. `bd-einvoice.md`
+10. `bd-financial-statements.md`
+11. `bd-formation.md`
+12. `bd-it-freelancer-tax.md`
+13. `bd-payroll-social.md`
+14. `bd-payroll.md`
+15. `bd-social-contributions.md`
+16. `bd-tax-optimization.md`
+17. `bd-tax-overview.md`
+18. `references.md`
+19. `bookkeeping-workflow-base.md`
+20. `einvoice-workflow-base.md`
+21. `payroll-workflow-base.md`
+22. `company-formation-workflow-base.md`
+23. `financial-statements-workflow-base.md`
+24. `crypto-tax-workflow-base.md`
 
 ## How to use
 

@@ -1,285 +1,354 @@
 ---
 name: wa-sales-tax
 description: >
-  Washington State Sales Tax for self-employed individuals selling taxable goods or services. Covers the 6.5% state rate, local tax add-ons, destination-based sourcing, use tax, and the Combined Excise Tax Return. Primary source: RCW 82.08 (sales tax), RCW 82.12 (use tax).
 version: 1.0
 jurisdiction: US-WA
 tax_year: 2025
+last_updated: 2026-04-13
+verified_by: pending
+depends_on: - us-tax-workflow-base
 category: state
-depends_on:
-  - us-tax-workflow-base
-validated: April 2026
-validation_status: ai-drafted-q3
+tier: 2
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Washington Sales Tax v1.0
+# washington-sales-tax
+
+## Section 1 -- Quick reference
+
+**Quick reference**
+
+| Field | Value |
+| --- | --- |
+| Jurisdiction | Washington, United States |
+| Jurisdiction code | US-WA |
+| Tax type | Sales and Use Tax + Business and Occupation (B&O) Tax (separate) |
+| State sales tax rate | 6.5% |
+| Local add-on range | 0.5% -- 4.0% |
+| Maximum combined rate | ~10.25% (parts of Seattle and Tacoma) |
+| Sourcing | Destination-based for ALL sales (SST rules) |
+| Economic nexus | $100,000 in gross receipts (revenue only) |
+| Primary legislation | RCW Chapter 82.08 (Sales); 82.12 (Use); 82.04 (B&O) |
+| Tax authority | Washington State Department of Revenue (DOR) |
+| Filing portal | https://dor.wa.gov |
+| SST member | Yes -- full member |
+| Return form | Combined Excise Tax Return (covers sales tax + B&O + use tax) |
+| Vendor discount | None |
+| No state income tax | Correct -- B&O tax is primary business tax |
+| Federal framework skill | us-sales-tax |
+| Skill version | 2.0 |
+
+**CRITICAL: Washington taxes virtually ALL digital products, including SaaS, streaming, and custom software delivered electronically. Broadest digital tax regime in the US.**
+
+### Required inputs
+
+**Required inputs**
+
+| # | Question | Why it matters |
+| --- | --- | --- |
+| 1 | Washington UBI number? | Required for filing |
+| 2 | Assigned filing frequency? | Monthly, quarterly, annual |
+| 3 | Nexus type? | $100K gross receipts threshold |
+| 4 | Sell through marketplace facilitators? | Facilitators collect on facilitated sales |
+| 5 | Sell digital products, SaaS, or streaming? | WA taxes virtually ALL digital products |
+| 6 | Sell custom software? | WA taxes custom software delivered electronically |
+| 7 | Understand B&O tax obligations? | B&O applies IN ADDITION to sales tax |
+| 8 | Primary delivery/sales location? | WA is destination-based; hundreds of local rates |
+
+### Refusal catalogue
+
+- **R-WA-1** — B&O tax detailed compliance. B&O tax has its own classifications and rates. Outside scope for detailed B&O filing.  _(R-WA-1)_
+- **R-WA-2** — Cannabis taxation. 37% excise tax plus sales tax. Complex regime. Escalate.  _(R-WA-2)_
+- **R-WA-3** — Capital gains tax. Enacted 2021. Outside scope.  _(R-WA-3)_
+
+### 3.1 Tangible personal property
+
+**Tangible personal property**  _(RCW 82.08.020)_
 
-## What this file is
+| Pattern | Taxable? | Notes |
+| --- | --- | --- |
+| General TPP | TAXABLE | RCW 82.08.020 |
+| Clothing and footwear | TAXABLE | NO clothing exemption |
+| Motor vehicles | TAXABLE | Plus separate excise taxes |
+
+### 3.2 Food and beverages
+
+**Food and beverages**  _(RCW 82.08.0293)_
+
+| Pattern | Taxable? | Citation |
+| --- | --- | --- |
+| Grocery food (unprepared, home consumption) | EXEMPT | RCW 82.08.0293 |
+| Prepared food (heated, with utensils, mixed ingredients) | TAXABLE | RCW 82.08.0293(2) |
+| Candy (SST definition: no flour) | TAXABLE | RCW 82.08.0293(2)(d) |
+| Soft drinks | TAXABLE | RCW 82.08.0293(2)(e) |
+| Dietary supplements | TAXABLE | RCW 82.08.0293(2)(f) |
+| Bottled water (plain, non-carbonated) | EXEMPT |  |
+| Alcoholic beverages | TAXABLE | Plus liquor taxes |
 
-**Obligation category:** CT (Consumption Tax)
-**Functional role:** Return preparation
-**Status:** Complete
+### 3.3 SaaS and digital goods -- BROADLY TAXED
 
-This is a Tier 2 content skill for the Washington state retail sales tax and use tax portion of the Combined Excise Tax Return. Washington has a 6.5% state rate plus local rates that vary by location, using destination-based sourcing.
+**SaaS and digital goods**  _(RCW 82.04.050(6))_
 
----
+| Pattern | Taxable? | Notes |
+| --- | --- | --- |
+| Canned software (any delivery) | TAXABLE | RCW 82.04.050(6)(a) |
+| Custom software (electronic delivery) | TAXABLE | Unlike most states -- WA taxes this |
+| SaaS (cloud-hosted) | TAXABLE | Digital automated service; RCW 82.04.050(6)(b) |
+| Digital music/movies/books | TAXABLE | Digital goods |
+| Streaming services | TAXABLE | Digital automated service |
+| Digital codes | TAXABLE | RCW 82.04.050(6)(c) |
+| Remote access software | TAXABLE | Digital automated service |
 
-## Section 1 -- Scope statement
+### 3.4 Services
 
-**In scope:**
+**Services**  _(RCW 82.04.050)_
 
-- Combined Excise Tax Return (retail sales tax and use tax sections)
-- State retail sales tax at 6.5%
-- Local sales tax (city, county, transit, regional transit)
-- Destination-based sourcing rules
-- Use tax on purchases where no WA sales tax was collected
-- Reseller permits and exemptions
+| Pattern | Taxable? | Notes |
+| --- | --- | --- |
+| Digital automated services | TAXABLE | RCW 82.04.050(6)(b) |
+| Extended warranties/service contracts | TAXABLE | RCW 82.04.050(7) |
+| Physical fitness services | TAXABLE | RCW 82.04.050(2)(a) |
+| Amusement/recreation | TAXABLE |  |
+| Professional services (legal, accounting, consulting, medical) | NOT TAXABLE (sales tax) | Subject to B&O tax only |
+| Landscape maintenance | NOT TAXABLE (sales tax) | B&O only |
 
-**Out of scope (refused):**
+### 3.5 Exemptions
 
-- B&O tax computation (separate skill: wa-business-occupation-tax)
-- Motor vehicle excise tax
-- Real estate excise tax
-- Spirits/tobacco/cannabis taxes
-- Marketplace facilitator obligations (platform responsibilities)
-- Multi-state nexus analysis
+**Exemptions**  _(RCW 82.08.0293)_
 
----
+| Pattern | Status | Citation |
+| --- | --- | --- |
+| Grocery food | EXEMPT | RCW 82.08.0293 |
+| Prescription drugs | EXEMPT | RCW 82.08.0281 |
+| OTC drugs | TAXABLE | No OTC exemption |
+| Agricultural machinery | EXEMPT | RCW 82.08.0268 |
+| Manufacturing M&E | PARTIAL EXEMPTION | RCW 82.08.02565 -- local tax exempt, state may apply |
+| Resale (WA Resale Certificate) | EXEMPT | RCW 82.08.030(1) |
+| Interstate commerce | EXEMPT | RCW 82.08.0273 |
+| Government purchases | EXEMPT | RCW 82.08.0255 |
+| Trade-in value | EXEMPT | RCW 82.08.010(1)(c) |
+| Newspapers (print) | EXEMPT | RCW 82.08.0253 |
 
-## Section 2 -- Filing requirements
+### 4.1 Key combined rates
 
-### Who must collect
+**Key combined rates**
 
-Any person making retail sales of tangible personal property or certain services in Washington must collect and remit retail sales tax. The seller must register with the Washington DOR. **Source:** RCW 82.08.050.
+| Jurisdiction | Combined rate |
+| --- | --- |
+| Seattle | ~10.25% |
+| Tacoma | ~10.20% |
+| Spokane | ~8.90% |
+| Vancouver (Clark County) | ~8.60% |
+| Olympia | ~9.00% |
+| Unincorporated King County | ~10.10% |
 
-### Filing frequency
+### 4.2 Sourcing
 
-Filing frequency aligns with the same thresholds used for B&O tax (the Combined Excise Tax Return reports both):
+**Sourcing**
 
-| Tax liability | Filing frequency | Due date |
-|--------------|------------------|----------|
-| Small (annual option) | Annual | April 15 |
-| Medium | Quarterly | Last day of month following quarter |
-| Large | Monthly | 25th of following month |
+| Scenario | Rate applied |
+| --- | --- |
+| All sales (shipped, counter, intrastate, interstate) | Destination-based |
 
----
+**Use DOR rate lookup: https://dor.wa.gov/taxes-rates/sales-use-tax-rates**
 
-## Section 3 -- Rates and thresholds
+### 5.1 General rule
 
-### State rate
+- **General rule** — All retail sales of TPP and enumerated services taxable unless exempted. Digital products taxed very broadly.  _(RCW 82.08.020)_
 
-| Item | Rate | Source |
-|------|------|--------|
-| State retail sales tax | 6.5% | RCW 82.08.020 |
-| State use tax | 6.5% | RCW 82.12.020 |
+### 5.2 B&O tax dual obligation
 
-### Local rate examples (2025)
+- **B&O tax dual obligation** — A retail business owes BOTH sales tax (from customer) AND B&O tax (on gross receipts). B&O cannot be passed to customer as a separate line item.
 
-Local rates vary significantly. Washington has over 400 local tax jurisdictions. Selected examples:
+### 5.3 B&O rates (context only)
 
-| Location | Local rate | Combined rate | Source |
-|----------|-----------|---------------|--------|
-| Seattle | 3.60% | 10.10% | DOR tax rate lookup |
-| Tacoma | 3.80% | 10.30% | DOR tax rate lookup |
-| Bellevue | 3.60% | 10.10% | DOR tax rate lookup |
-| Spokane | 2.40% | 8.90% | DOR tax rate lookup |
-| Vancouver (Clark Co.) | 2.00% | 8.50% | DOR tax rate lookup |
-| Unincorporated King Co. | 3.60% | 10.10% | DOR tax rate lookup |
+**B&O rates (context only)**
 
-**Critical:** Always use the DOR tax rate lookup tool (dor.wa.gov) to determine the exact rate for each delivery address. Rates change quarterly.
+| Classification | Rate |
+| --- | --- |
+| Retailing | 0.471% |
+| Wholesaling | 0.484% |
+| Manufacturing | 0.484% |
+| Service | 1.5% if prior-year taxable income < $1M; 1.75% if $1M–$4,999,999.99; 2.1% if $5M+ |
 
-### Sourcing
+### 6.1 Forms
 
-Washington uses **destination-based sourcing** for all retail sales:
-- Delivered goods: tax rate where the buyer receives the goods.
-- Over-the-counter (pickup): tax rate of the seller's location.
-- Services: tax rate where the service is received/performed.
-- Digital goods/services: tax rate of the buyer's address.
+**Forms**
 
-**Source:** RCW 82.32.730 (Streamlined Sales and Use Tax Agreement conformity).
+| Form | Use |
+| --- | --- |
+| Combined Excise Tax Return | Covers sales tax, B&O, use tax, other excise taxes |
 
----
+Filed through **My DOR** (online portal).
 
-## Section 4 -- Computation rules (Step format)
+### 6.2 Due dates
 
-### Step 1: Determine taxable vs. exempt sales
+**Due dates**
 
-For each sale, determine:
-1. Is the item tangible personal property or an enumerated taxable service? If yes, taxable unless exempt.
-2. Does the buyer have a valid reseller permit? If yes, the sale is exempt (sale for resale).
-3. Does another exemption apply? (See Section 5.)
+| Frequency | Due date |
+| --- | --- |
+| Monthly | 25th of following month |
+| Quarterly | April 25, July 25, October 25, January 25 |
+| Annual | April 15 |
 
-### Step 2: Determine the tax rate by destination
+### 7.1 Economic nexus
 
-For each taxable sale:
-1. Identify the delivery address (ship-to or pickup location).
-2. Look up the combined rate (state + local) for that address using the DOR tax rate lookup.
-3. Identify the location code (4-digit code) for reporting.
+**Economic nexus**  _(RCW 82.08.020; RCW 82.04.067)_
 
-### Step 3: Compute sales tax collected
+| Parameter | Value |
+| --- | --- |
+| Revenue threshold | $100,000 in gross receipts |
+| Transaction threshold | None |
+| Measurement period | Current or preceding calendar year |
+| Effective date | October 1, 2018 |
+| Sales included | Gross receipts including exempt sales |
+| Authority | RCW 82.08.020; RCW 82.04.067 |
 
-For each rate/location combination:
-- Taxable sales x combined rate = sales tax.
+### 7.2 Marketplace facilitator
 
-### Step 4: Report on Combined Excise Tax Return
+**Marketplace facilitator**  _(RCW 82.08.0531)_
 
-Group sales by location code. Report:
-- Gross sales
-- Exempt/deductible sales
-- Taxable sales
-- Tax collected
-- Location code
+| Rule | Detail |
+| --- | --- |
+| Effective date | January 1, 2018 (pre-Wayfair, one of earliest) |
+| Authority | RCW 82.08.0531 |
 
-### Step 5: Compute use tax
+### 7.3 Penalties
 
-For items purchased for use in Washington where no sales tax was collected:
-- Purchase price x combined rate (for the location where the item will be used) = use tax.
+**Penalties**
 
-### Step 6: Reconcile and remit
+| Penalty | Rate |
+| --- | --- |
+| Late filing | 5%/month (max 25%) |
+| Substantial underpayment | 5% |
+| Evasion/fraud | 50% |
 
-Total sales tax collected + use tax owed = total tax due.
+### 7.4 Record retention
 
-If sales tax collected exceeds the amount due (rounding differences), the excess is still remitted.
+- **Record retention** — 5 years from filing or due date.
 
----
+### 7.5 Statute of limitations
 
-## Section 5 -- Edge cases and special rules
+**Statute of limitations**
 
-### E-1: Services -- most are NOT taxable
+| Scenario | Period |
+| --- | --- |
+| Standard | 4 years |
+| No return | Unlimited |
+| Fraud | Unlimited |
 
-Washington taxes retail sales of tangible personal property and certain specifically enumerated services. Most professional services (consulting, legal, accounting, marketing) are NOT subject to retail sales tax. **Taxable services include:**
-- Construction/repair services (labor on real/personal property)
-- Landscaping, janitorial services
-- Physical fitness services
-- Digital automated services
-- Extended warranties/service contracts
+### EC1 -- B&O plus sales tax
 
-**Source:** RCW 82.04.050 (definition of retail sale).
+**Situation:** $1,000 sale in Seattle.
+**Resolution:** Collect ~$102.50 sales tax from customer. ALSO pay B&O ($1,000 x 0.471% = $4.71). B&O is retailer's own obligation.
 
-### E-2: Digital products and services
+### EC2 -- SaaS (digital automated service)
 
-Washington taxes digital goods (e-books, music, movies, apps) and digital automated services (SaaS). This is a significant difference from many states. **Source:** RCW 82.04.192; RCW 82.04.050(6).
+**Situation:** WA business subscribes to cloud HR platform. $100/month.
+**Resolution:** TAXABLE. Sales tax at combined rate.
 
-- Digital goods: taxed at the buyer's location rate.
-- Digital automated services (SaaS): taxed at the buyer's location rate.
-- Custom software: exempt from retail sales tax.
+### EC3 -- Custom software taxable
 
-### E-3: Food
+**Situation:** Business pays $20,000 for custom software, delivered electronically.
+**Resolution:** TAXABLE in WA (unlike most states). RCW 82.04.050(6)(a).
 
-- Prepared food (restaurants, heated food, food with utensils): taxable.
-- Grocery food (unprepared food for home consumption): exempt.
-- Dietary supplements: taxable.
-- Soft drinks: taxable.
+### EC4 -- Destination-based sourcing
 
-**Source:** RCW 82.08.0293.
+**Situation:** Seattle retailer ships to Spokane customer.
+**Resolution:** Charge Spokane rate (~8.90%), not Seattle rate (~10.25%).
 
-### E-4: Reseller permit
+### EC5 -- No vendor discount
 
-A buyer making purchases for resale must present a valid reseller permit (not the old resale certificate, which was retired in 2010). The seller must verify the permit using the DOR's online lookup tool. **Source:** RCW 82.04.060.
+**Situation:** Retailer asks about collection allowance.
+**Resolution:** Washington does NOT offer a vendor discount. Sellers retain no portion.
 
-### E-5: Manufacturing machinery and equipment
+### Test 1 -- Basic sale in Seattle
 
-Machinery and equipment used directly in a manufacturing operation is exempt from sales tax. This is a significant exemption for manufacturers. **Source:** RCW 82.08.02565.
+**Input:** $1,000 laptop. Rate: 10.25%.
+**Expected:** Tax = $102.50.
 
-### E-6: Interstate sales
+### Test 2 -- Grocery exempt
 
-Sales of goods shipped to buyers outside Washington are generally exempt from Washington retail sales tax if the seller ships via common carrier. The seller must retain documentation of out-of-state delivery. **Source:** RCW 82.08.0273.
+**Input:** $200 groceries.
+**Expected:** Tax = $0.
 
-### E-7: Marketplace facilitators
+### Test 3 -- SaaS taxable
 
-As of January 1, 2020, marketplace facilitators (Amazon, Etsy, etc.) must collect and remit Washington sales tax on behalf of marketplace sellers. If a marketplace facilitator collects the tax, the seller does NOT need to collect it again. **Source:** RCW 82.08.0531.
+**Input:** $300/month cloud HR. Spokane rate: 8.90%.
+**Expected:** Tax = $26.70/month.
 
----
+### Test 4 -- Economic nexus
 
-## Section 6 -- Test suite
+**Input:** Oregon seller, $120K WA sales.
+**Expected:** Exceeds $100K. Must register.
 
-### Test 1: In-store retail sale in Seattle
+### Test 5 -- Destination-based
 
-- **Input:** Sale of $500 of tangible goods, buyer picks up in Seattle. Combined rate: 10.10%.
-- **Expected:** Tax: $500 x 10.10% = $50.50.
+**Input:** Seattle retailer ships $500 to Vancouver, WA. Rate: 8.60%.
+**Expected:** Tax = $43.00.
 
-### Test 2: Shipped sale (destination-based)
+### Test 6 -- Candy taxable (SST)
 
-- **Input:** Seller in Seattle ships $1,000 of goods to buyer in Spokane. Spokane combined rate: 8.90%.
-- **Expected:** Tax: $1,000 x 8.90% = $89.00 (Spokane rate, not Seattle rate).
+**Input:** $5 chocolate bar (no flour) in Tacoma. Rate: 10.20%.
+**Expected:** Tax = $0.51.
 
-### Test 3: Digital product sale
+### Test 7 -- Clothing taxable
 
-- **Input:** Sale of $200 SaaS subscription to a Bellevue customer. Combined rate: 10.10%.
-- **Expected:** Taxable as digital automated service. Tax: $200 x 10.10% = $20.20.
+**Input:** $300 jacket in Seattle. Rate: 10.25%.
+**Expected:** Tax = $30.75.
 
-### Test 4: Professional service (not taxable)
+### Test 8 -- Extended warranty
 
-- **Input:** $5,000 consulting engagement for a Seattle client.
-- **Expected:** Professional consulting is NOT subject to retail sales tax. Tax: $0. (Note: B&O tax still applies.)
+**Input:** $50 warranty in Seattle. Rate: 10.25%.
+**Expected:** Tax = $5.13.
 
-### Test 5: Use tax
+### Test 9 -- Use tax
 
-- **Input:** Business in Tacoma purchases $2,000 of office furniture from Oregon vendor, no tax collected. Tacoma combined rate: 10.30%.
-- **Expected:** Use tax: $2,000 x 10.30% = $206.00.
+**Input:** Seattle business buys $3,000 from Oregon retailer. No tax collected. Rate: 10.25%.
+**Expected:** Use tax = $307.50.
 
----
+### Test 10 -- Custom software
 
-## Section 7 -- Prohibitions
+**Input:** $20,000 custom software delivered electronically. Seattle.
+**Expected:** Tax = $2,050.
 
-- **P-1:** Do NOT use origin-based sourcing. Washington is destination-based.
-- **P-2:** Do NOT assume all services are taxable. Most professional services are exempt from retail sales tax.
-- **P-3:** Do NOT accept the old resale certificate form. Only valid reseller permits are accepted (since 2010).
-- **P-4:** Do NOT tax grocery food. Only prepared food is taxable.
-- **P-5:** Do NOT ignore digital goods and SaaS. Washington taxes them.
-- **P-6:** Do NOT use a flat rate for all locations. Rates vary by destination address and change quarterly.
+## Section 10 -- Prohibitions
 
----
+- NEVER apply a clothing exemption -- clothing is fully taxable.
+- NEVER treat SaaS or digital automated services as nontaxable -- WA taxes digital products very broadly.
+- NEVER assume custom software is exempt -- WA taxes custom software delivered electronically.
+- NEVER forget B&O tax applies IN ADDITION to sales tax.
+- NEVER use origin-based sourcing -- WA is destination-based for ALL sales.
+- NEVER assume no vendor discount means no filing obligation.
+- NEVER forget candy and soft drinks are taxable (SST definitions).
+- NEVER refuse SST certificates -- WA is an SST member.
+- NEVER treat OTC drugs as exempt.
+- NEVER compute any number -- all arithmetic is handled by the deterministic engine, not Claude.
 
-## Section 8 -- Self-checks
+## Disclaimer
 
-Before delivering output, verify:
+This skill is provided for informational and computational purposes only and does not constitute tax, legal, or financial advice. All outputs must be reviewed by a qualified professional (CPA, EA, or tax attorney) before filing.
 
-- [ ] Destination-based sourcing applied (rate based on buyer's location)
-- [ ] Correct combined rate looked up per delivery address via DOR tool
-- [ ] Services correctly classified (most professional services exempt)
-- [ ] Digital goods/SaaS taxed at buyer's location rate
-- [ ] Grocery food exempt; prepared food taxable
-- [ ] Reseller permits verified (not old resale certificates)
-- [ ] Use tax reported for out-of-state purchases
-- [ ] Location codes correctly assigned for each jurisdiction
-- [ ] Sales shipped out of state properly excluded
-
----
-
-## Section 9 -- Disclaimer
+## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, EA, tax attorney, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
 
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
-
----
+The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
 
 <!-- openaccountants-cta-block -->
 
+---
+
 ## Talk to a verified accountant
 
-This skill is a tool, not an engagement. Every taxpayer's situation is
-different, and the rules in the skill may not match your specific facts.
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
 
-To speak with one of the licensed accountants who verifies skills for your
-jurisdiction — **no liability on either side until you and the accountant sign
-a formal engagement letter** — book a free 30-minute call:
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
 
-**→ [Book a call](https://calendly.com/openaccountants-info/30min)**
-
-We'll route you to the named verifier covering your country or state. You can
-also see the full list of verified accountants at
-[openaccountants.com/network](https://www.openaccountants.com/network).
-
-<!-- openaccountants-mcp-cta -->
-
-## The accountant-verified version lives in the connector
-
-This file is the open, **research-grade draft**. The **accountant-verified**
-version of this skill is **not published to GitHub** — it is delivered free
-through the OpenAccountants MCP connector, where your AI agent loads the
-verified rules together with the name of the accountant who signed them off.
-
-**→ Install the free connector:** <https://www.openaccountants.com/connect>
-**MCP endpoint:** `https://www.openaccountants.com/api/mcp`
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

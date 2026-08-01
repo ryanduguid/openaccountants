@@ -3,21 +3,24 @@
 > Open-source accounting skills for Saudi Arabia. Upload to Claude, ChatGPT, or any AI assistant.
 > Tax, bookkeeping, payroll, formation, financial statements, and more. Free and open source.
 
-## Verified by
-
-**Mehran Habib** (ICAP: 13480) — Lead accountant verifier for Saudi Arabia on OpenAccountants. 9 skills verified.
-[openaccountants.com/network/f9dbab51-2b89-451b-98f2-414b48fb4599](https://www.openaccountants.com/network/f9dbab51-2b89-451b-98f2-414b48fb4599)
-
-_Scope: the “Verified rates & thresholds” blocks inside these skill files are generated from the facts this verifier reviewed. Everything else in the files is an open, source-cited draft. The full accountant-verified tier, with the verifier’s name on every answer, is served via the [connector](https://www.openaccountants.com/connect)._
-
 ## What's in this folder
 
 1. `foundation.md`
 2. `intake.md`
 3. `references.md`
-4. `saudi-arabia-vat.md`
-5. `saudi-einvoice.md`
-6. `einvoice-workflow-base.md`
+4. `sa-corporate-tax.md`
+5. `sa-excise-tax.md`
+6. `sa-formation.md`
+7. `sa-freelance-intake.md`
+8. `sa-gosi-saudization.md`
+9. `sa-rett.md`
+10. `sa-return-assembly.md`
+11. `sa-withholding-tax.md`
+12. `sa-zakat.md`
+13. `saudi-arabia-vat.md`
+14. `saudi-einvoice.md`
+15. `einvoice-workflow-base.md`
+16. `company-formation-workflow-base.md`
 
 ## Also known as
 

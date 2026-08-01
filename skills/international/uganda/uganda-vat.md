@@ -3,18 +3,21 @@ name: uganda-vat
 description: Use this skill whenever asked to prepare, review, or classify transactions for a Uganda VAT return. Standard rate 18%. Withholding VAT 6% of taxable value. EAC customs union but no common VAT. ALWAYS read before handling Uganda VAT work.
 version: 2.0
 jurisdiction: UG
+tax_year: 2025
+last_updated: 2026-04-13
+verified_by: pending
 tier: 2
-last_updated: 2026-06-12
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Uganda VAT Return Skill v2.0
-
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+# Uganda VAT
 
 ## Section 1 -- Quick reference
 
+**Quick reference**
+
 | Field | Value |
-|---|---|
+| --- | --- |
 | Country | Uganda |
 | Standard rate | 18% |
 | Zero rate | 0% (exports, drugs/medicines, educational materials, agricultural inputs) |
@@ -30,31 +33,27 @@ last_updated: 2026-06-12
 | Validated by | Pending |
 | Last research update | April 2026 |
 
----
-
 ## Section 2 -- Required inputs and refusal catalogue
 
 **Minimum viable** -- bank statement. Acceptable from Stanbic Uganda, dfcu Bank, Standard Chartered UG, Centenary Bank, Bank of Baroda UG, or any Ugandan bank.
 
----
-
 ## Section 3 -- Supplier pattern library
 
+**Supplier pattern library**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | STANBIC UG, STANBIC UGANDA | EXCLUDE | Exempt financial |
 | DFCU, DFCU BANK | EXCLUDE | Same |
 | STANDARD CHARTERED UG | EXCLUDE | Same |
 | CENTENARY BANK | EXCLUDE | Same |
 | URA, UGANDA REVENUE | EXCLUDE | Tax payment |
-| CUSTOMS | Check for import VAT | |
+| CUSTOMS | Check for import VAT |  |
 | NSSF UGANDA | EXCLUDE | Social security |
 | UMEME | Domestic 18% | Electricity |
 | NWSC | Domestic 18% | Water |
 | MTN UG, AIRTEL UG | Domestic 18% | Telecoms |
 | GOOGLE, MICROSOFT, AWS | Reverse charge 18% | Non-resident |
-
----
 
 ## Section 4 -- Worked examples
 
@@ -66,13 +65,9 @@ Government pays supplier. Invoice UGX 50M + UGX 9M VAT = UGX 59M. Withholding = 
 
 Farm purchases fertilizer. Supplier charges 0%. Zero-rated supply.
 
----
-
 ## Section 5 -- Classification rules
 
 18% standard. 0% exports, drugs/medicines, educational materials, agricultural inputs (seeds/fertilizers/pesticides/hoes), aircraft for international transport, diplomatic. Exempt: unprocessed foodstuffs, financial (interest/forex/life insurance), medical/dental, education, residential rental (unfurnished), social welfare, burial, postal, water (domestic public).
-
----
 
 ## Section 6 -- VAT return form
 
@@ -82,33 +77,23 @@ Input: 5a-5c, 6-11 (local purchases, imports, imported services, input local, in
 
 Net: 12-15 (net, credit b/f, withholding VAT credits, net payable).
 
----
-
 ## Section 7 -- Withholding VAT and reverse charge
 
-Withholding VAT: designated agents deduct 6% of TAXABLE VALUE (not 6% of VAT). Supplier claims Box 14.
-
-Reverse charge: non-resident services. Self-assess 18%. Net zero. VAT Act s.14.
-
-EAC: no intra-community mechanism.
-
----
+- **Withholding VAT designated agents** — Designated agents deduct 6% of TAXABLE VALUE (not 6% of VAT). Supplier claims Box 14.
+- **Reverse charge for non-resident services** — Non-resident services. Self-assess 18%. Net zero.  _(VAT Act s.14)_
+- **EAC intra-community mechanism** — EAC: no intra-community mechanism.
 
 ## Section 8 -- Deductibility and blocked input
 
-Blocked (s.21): entertainment, vehicles < 10 seats (unless taxi/hire/driving instruction), clubs, personal use, non-taxable supply purchases.
-
-Deemed supplies: non-business use, gifts > UGX 100,000, cessation with stock.
-
-Bad debt: 3 years (long period).
-
----
+- **Blocked input** — Blocked (s.21): entertainment, vehicles < 10 seats (unless taxi/hire/driving instruction), clubs, personal use, non-taxable supply purchases.  _(s.21)_
+- **Deemed supplies** — Deemed supplies: non-business use, gifts > UGX 100,000, cessation with stock.
+- **Bad debt relief period** — Bad debt: 3 years (long period).
 
 ## Section 9 -- Filing, deadlines, and penalties
 
-Monthly, 15th. Late filing: UGX 200K/month or 2%/month, whichever greater. Late payment: 2%/month compounding.
-
----
+- **Filing frequency and deadline** — Monthly, 15th.
+- **Late filing penalty** — Late filing: UGX 200K/month or 2%/month, whichever greater.
+- **Late payment penalty** — Late payment: 2%/month compounding.
 
 ## Section 10 -- Edge cases, test suite, and escalation
 
@@ -139,10 +124,26 @@ Out of scope: CIT 30%, PAYE 0%-40%, NSSF 5%+5%, LST.
 - NEVER ignore withholding VAT credits
 - NEVER compute numbers -- engine handles arithmetic
 
----
-
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional before filing or acting upon.
 
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com).
+The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com).
+
+<!-- openaccountants-cta-block -->
+
+---
+
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

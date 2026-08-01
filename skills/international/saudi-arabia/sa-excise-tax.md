@@ -3,11 +3,13 @@ name: sa-excise-tax
 description: Use this skill whenever asked about Saudi Arabia Excise Tax. Trigger on phrases like "Saudi excise tax", "ZATCA excise", "Saudi sin tax", "tobacco tax Saudi", "energy drinks Saudi excise", "soft drinks excise Saudi", "sweetened drinks Saudi", "e-cigarette tax Saudi", "vape tax KSA", "Royal Decree A/86", "GCC excise", "excise tax warehouse Saudi", "excise registration ZATCA", or any question about computing, registering, filing, or reporting Saudi excise tax obligations on tobacco, energy drinks, soft drinks, sweetened drinks, or electronic smoking devices. Scope covers the Excise Tax Law issued by Royal Decree A/86 of 27/8/1438H (2017) and the Excise Tax Bylaws, the taxable product list and rates, the tax base (higher of retail selling price or ZATCA standard price), tax warehouse regime, importer/manufacturer registration, monthly filing through the ZATCA portal, penalties, and GCC harmonisation context. ALWAYS read this skill before touching any Saudi excise tax work.
 jurisdiction: SA
 tax_year: 2025
+last_updated: 2026-05-27
+verified_by: Mehran Habib
 tier: 2
-last_updated: 2026-07-06
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# sa-excise-tax
+# SA Excise Tax
 
 ## Saudi Arabia — Excise Tax — Skill v1.0
 
@@ -346,3 +348,21 @@ a formal engagement letter — book a free 30-minute call:
 We'll route you to the named verifier covering your country or state. You can
 also see the full list of verified accountants at
 [openaccountants.com/network](https://openaccountants.com/network).
+
+<!-- openaccountants-cta-block -->
+
+---
+
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

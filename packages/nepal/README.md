@@ -3,18 +3,16 @@
 > Open-source accounting skills for Nepal. Upload to Claude, ChatGPT, or any AI assistant.
 > Tax, bookkeeping, payroll, formation, financial statements, and more. Free and open source.
 
-## Verified by
-
-**Ashish Bista CA** (ICAN: 1765) — Lead accountant verifier for Nepal on OpenAccountants. 5 skills verified.
-[openaccountants.com/network/78ab67db-8f29-4746-8102-7b52d17309aa](https://www.openaccountants.com/network/78ab67db-8f29-4746-8102-7b52d17309aa)
-
-_Scope: the “Verified rates & thresholds” blocks inside these skill files are generated from the facts this verifier reviewed. Everything else in the files is an open, source-cited draft. The full accountant-verified tier, with the verifier’s name on every answer, is served via the [connector](https://www.openaccountants.com/connect)._
-
 ## What's in this folder
 
 1. `foundation.md`
 2. `intake.md`
-3. `nepal-vat.md`
+3. `nepal-corporate-tax.md`
+4. `nepal-income-tax.md`
+5. `nepal-payroll.md`
+6. `nepal-tds.md`
+7. `nepal-vat.md`
+8. `payroll-workflow-base.md`
 
 ## How to use
 

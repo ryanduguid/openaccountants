@@ -4,18 +4,19 @@ description: ALWAYS USE THIS SKILL when a user asks for help preparing their Ger
 version: 0.1
 jurisdiction: DE
 tax_year: 2025
+last_updated: 2026-04-13
 verified_by: pending
+tier: 2
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Germany Self-Employed Intake Skill v0.1
+# DE Freelance Intake
 
 ## What this file is
 
 The intake orchestrator for Germany-resident self-employed individuals (Freiberufler and Gewerbetreibende). Every downstream Germany content skill (germany-vat-return, de-income-tax, de-social-contributions, de-trade-tax, de-estimated-tax) and the assembly orchestrator (de-return-assembly) depend on this skill running first to produce a structured intake package.
 
 This skill does not compute any tax figures. Its job is to collect all the facts, parse all the documents, confirm everything with the user, and hand off a clean intake package to `de-return-assembly`.
-
----
 
 ## Design principles
 
@@ -45,8 +46,6 @@ Target: intake completes in 5 minutes for a prepared user, 15 minutes for a user
 
 **Exception for blocking decisions.** If a single question determines whether the user is in-scope or out-of-scope, ask it standalone.
 
----
-
 ## Section 1 -- The opening
 
 When triggered, respond with ONE message that:
@@ -73,8 +72,6 @@ Then immediately call `ask_user_input_v0` with the refusal questions.
 - List what documents you will eventually need
 - Give a disclaimer beyond the one reviewer line
 
----
-
 ## Section 2 -- Refusal sweep (compact)
 
 Present the refusal sweep as a single `ask_user_input_v0` call with 3 questions, all single-select.
@@ -89,23 +86,13 @@ Q2: "Business structure?"
     Options: ["Freiberufler (§18 EStG -- liberal profession)", "Gewerbetreibender (§15 EStG -- trade/business)", "GbR / Partnership", "GmbH / UG / Kapitalgesellschaft", "Not sure"]
 
 Q3: "VAT status?"
-    Options: ["Regelbesteuerung (standard VAT -- charge and reclaim USt)", "Kleinunternehmer §19 UStG (no VAT charged, under EUR 22,000)", "Not sure"]
+    Options: ["Regelbesteuerung (standard VAT -- charge and reclaim USt)", "Kleinunternehmer §19 UStG (no VAT charged, under EUR 25,000)", "Not sure"]
 ```
 
-**After the response, evaluate:**
-
-- **Q1 = Full year** -> continue
-- **Q1 = Part year or did not live in Germany** -> stop. "I'm set up for full-year German residents (unbeschränkt steuerpflichtig) only. Part-year or non-residents have different rules around beschränkte Steuerpflicht. You need a Steuerberater who handles non-resident returns."
-
-- **Q2 = Freiberufler** -> continue. No Gewerbesteuer applies.
-- **Q2 = Gewerbetreibender** -> continue with a flag: Gewerbesteuer applies, will need Hebesatz for the municipality.
-- **Q2 = GbR / Partnership** -> stop. "Partnerships file a separate Feststellungserklärung with different rules for profit allocation. You need a Steuerberater familiar with partnership returns."
-- **Q2 = GmbH / UG / Kapitalgesellschaft** -> stop. "I don't cover corporate returns. Kapitalgesellschaften file KStE and GewStE with separate rules. You need a Steuerberater."
-- **Q2 = Not sure** -> ask one follow-up: "What is your main activity? Freiberufler covers professions like software development, consulting, writing, design, medicine, law, engineering (Katalogberufe under §18 EStG). Gewerbetreibender covers trade, retail, manufacturing, or anything not listed under §18. If your Finanzamt issued a Gewerbeschein, you're Gewerbetreibender."
-
-- **Q3 = Regelbesteuerung** -> continue. Standard UStVA monthly/quarterly.
-- **Q3 = Kleinunternehmer** -> continue. No UStVA filing required (unless voluntarily opted in). Turnover must stay under EUR 22,000 prior year / EUR 50,000 current year.
-- **Q3 = Not sure** -> ask one follow-up: "Do you charge 19% (or 7%) USt on your invoices? If yes, you're Regelbesteuert. If your invoices say 'Kleinunternehmer gemäß §19 UStG' or show no USt, you're Kleinunternehmer."
+- **Q1 evaluation** — Q1 = Full year -> continue. Q1 = Part year or did not live in Germany -> stop. "I'm set up for full-year German residents (unbeschränkt steuerpflichtig) only. Part-year or non-residents have different rules around beschränkte Steuerpflicht. You need a Steuerberater who handles non-resident returns."
+- **Q2 evaluation** — Q2 = Freiberufler -> continue. No Gewerbesteuer applies. Q2 = Gewerbetreibender -> continue with a flag: Gewerbesteuer applies, will need Hebesatz for the municipality. Q2 = GbR / Partnership -> stop. "Partnerships file a separate Feststellungserklärung with different rules for profit allocation. You need a Steuerberater familiar with partnership returns." Q2 = GmbH / UG / Kapitalgesellschaft -> stop. "I don't cover corporate returns. Kapitalgesellschaften file KStE and GewStE with separate rules. You need a Steuerberater." Q2 = Not sure -> ask one follow-up: "What is your main activity? Freiberufler covers professions like software development, consulting, writing, design, medicine, law, engineering (Katalogberufe under §18 EStG). Gewerbetreibender covers trade, retail, manufacturing, or anything not listed under §18. If your Finanzamt issued a Gewerbeschein, you're Gewerbetreibender."  _(§18 EStG; §15 EStG)_
+- **Q3 evaluation** — Q3 = Regelbesteuerung -> continue. Standard UStVA monthly/quarterly. Q3 = Kleinunternehmer -> continue. No UStVA filing required (unless voluntarily opted in). Turnover must stay under EUR 25,000 prior year / EUR 100,000 current year. Q3 = Not sure -> ask one follow-up: "Do you charge 19% (or 7%) USt on your invoices? If yes, you're Regelbesteuert. If your invoices say 'Kleinunternehmer gemäß §19 UStG' or show no USt, you're Kleinunternehmer."  _(§19 UStG)_
+- **Kleinunternehmer turnover threshold** — EUR 25,000 prior year / EUR 100,000 current year EUR  _(§19 UStG)_
 
 **After Q1-Q3 pass, ask the second batch of scope questions (also batched):**
 
@@ -117,19 +104,10 @@ Q5: "Partnerships or joint ventures?"
     Options: ["None -- I operate alone", "I'm a partner in a GbR or other partnership alongside this business", "Not sure"]
 ```
 
-**Evaluate Q4:**
-- **No employees** -> continue
-- **1-5 employees** -> continue with a flag: Lohnsteuer obligations exist but are out of scope for this workflow. Flag for Steuerberater review.
-- **More than 5** -> stop. "I'm set up for sole operators and very small businesses. With more than 5 employees, the payroll and Lohnsteuer complexity requires a dedicated Steuerberater."
-
-**Evaluate Q5:**
-- **None** -> continue
-- **Partner in a GbR** -> continue with a flag: partnership income will appear in the Feststellungsbescheid and needs to be entered in Anlage S or Anlage G. Will address during gap-filling.
-- **Not sure** -> ask one follow-up: "Do you share business income with another person or file a joint business return (Feststellungserklärung)? If not, you operate alone."
+- **Q4 evaluation** — No employees -> continue. 1-5 employees -> continue with a flag: Lohnsteuer obligations exist but are out of scope for this workflow. Flag for Steuerberater review. More than 5 -> stop. "I'm set up for sole operators and very small businesses. With more than 5 employees, the payroll and Lohnsteuer complexity requires a dedicated Steuerberater."
+- **Q5 evaluation** — None -> continue. Partner in a GbR -> continue with a flag: partnership income will appear in the Feststellungsbescheid and needs to be entered in Anlage S or Anlage G. Will address during gap-filling. Not sure -> ask one follow-up: "Do you share business income with another person or file a joint business return (Feststellungserklärung)? If not, you operate alone."
 
 **Total time:** ~45 seconds if the user taps through.
-
----
 
 ## Section 3 -- The dump
 
@@ -168,71 +146,23 @@ Then wait. Do not ask any other questions while waiting.
 >
 > Come back when you have something to upload. I'll work with whatever you bring.
 
----
-
 ## Section 4 -- The inference pass
 
 When documents arrive, parse each one. For each document, extract:
 
-**Bank statement (Kontoauszüge):**
-- Total deposits (candidate Betriebseinnahmen)
-- Recurring inflows (client payments with names)
-- Outflows to Finanzamt (Vorauszahlungen ESt/SolZ/KiSt with dates)
-- Outflows to Finanzamt (USt-Vorauszahlungen with dates)
-- Outflows to Krankenkasse GKV or PKV (health insurance premiums)
-- Outflows to Rentenversicherung (if voluntary or Pflichtversichert via Künstlersozialkasse)
-- Equipment purchases (potential Anlagevermögen)
-- Transfers to personal account (Privatentnahmen)
-- Office rent payments (Büromiete)
-- SaaS / software subscriptions
-- Professional memberships (IHK Beiträge, Berufsverband)
-- Insurance payments (Berufshaftpflicht, Kfz)
-- Telefon / Internet payments
-- Kfz expenses (fuel, maintenance, leasing)
+- **Bank statement (Kontoauszüge) extraction items** — Total deposits (candidate Betriebseinnahmen); Recurring inflows (client payments with names); Outflows to Finanzamt (Vorauszahlungen ESt/SolZ/KiSt with dates); Outflows to Finanzamt (USt-Vorauszahlungen with dates); Outflows to Krankenkasse GKV or PKV (health insurance premiums); Outflows to Rentenversicherung (if voluntary or Pflichtversichert via Künstlersozialkasse); Equipment purchases (potential Anlagevermögen); Transfers to personal account (Privatentnahmen); Office rent payments (Büromiete); SaaS / software subscriptions; Professional memberships (IHK Beiträge, Berufsverband); Insurance payments (Berufshaftpflicht, Kfz); Telefon / Internet payments; Kfz expenses (fuel, maintenance, leasing)
+- **Sales invoices (Ausgangsrechnungen) extraction items** — Client names and amounts (netto + USt); Whether USt was charged (Regelbesteuerung indicator); Whether invoices say "Kleinunternehmer §19 UStG" (Kleinunternehmer indicator); Total Umsatz reconciliation against bank deposits; Any EU clients (innergemeinschaftliche Leistung -- reverse charge); Any non-EU clients (Drittlandsleistung -- §3a UStG); Proper invoice format check (§14 UStG requirements)  _(§3a UStG; §14 UStG)_
+- **Purchase invoices (Eingangsrechnungen) extraction items** — Expense category (Betriebsausgaben, Anlagevermögen, durchlaufende Posten); Vorsteuer amount on each (reclaimable for Regelbesteuert, cost for Kleinunternehmer); Supplier location (inland, EU, Drittland); Any items over EUR 800 netto (GWG threshold for immediate write-off) or over EUR 250 (Pool-Abschreibung); Any blocked categories (Bewirtungskosten 70% limit, Geschenke EUR 50 limit)
+- **GWG immediate write-off threshold** — EUR 800 netto EUR
+- **Pool-Abschreibung threshold** — EUR 250 EUR
+- **Bewirtungskosten limit** — 70% limit
+- **Geschenke limit** — EUR 50 EUR
+- **Prior year Steuerbescheid extraction items** — Prior year festgesetzte Einkommensteuer (drives Vorauszahlungen); Prior year Solidaritätszuschlag; Prior year Kirchensteuer (if applicable); Any Nachzahlung or Erstattung; Vorauszahlungen festgesetzt for current year
+- **Vorauszahlungsbescheide quarterly dates** — Quarterly ESt Vorauszahlungen (10 Mar, 10 Jun, 10 Sep, 10 Dec); SolZ amounts; KiSt amounts (if applicable)
+- **Prior EÜR (Anlage EÜR) extraction items** — Prior year Betriebseinnahmen and Betriebsausgaben; Prior year Gewinn; Capital allowances schedule (AfA-Tabelle -- continuing depreciation); Any Sonderabschreibung §7g used  _(§7g)_
+- **Krankenversicherung Beitragsbescheinigung extraction items** — Annual GKV or PKV premiums paid; Basisabsicherung amount (deductible under §10 EStG as Sonderausgaben); Pflegeversicherung amount; Any Zusatzbeiträge  _(§10 EStG)_
 
-**Sales invoices (Ausgangsrechnungen):**
-- Client names and amounts (netto + USt)
-- Whether USt was charged (Regelbesteuerung indicator)
-- Whether invoices say "Kleinunternehmer §19 UStG" (Kleinunternehmer indicator)
-- Total Umsatz reconciliation against bank deposits
-- Any EU clients (innergemeinschaftliche Leistung -- reverse charge)
-- Any non-EU clients (Drittlandsleistung -- §3a UStG)
-- Proper invoice format check (§14 UStG requirements)
-
-**Purchase invoices (Eingangsrechnungen):**
-- Expense category (Betriebsausgaben, Anlagevermögen, durchlaufende Posten)
-- Vorsteuer amount on each (reclaimable for Regelbesteuert, cost for Kleinunternehmer)
-- Supplier location (inland, EU, Drittland)
-- Any items over EUR 800 netto (GWG threshold for immediate write-off) or over EUR 250 (Pool-Abschreibung)
-- Any blocked categories (Bewirtungskosten 70% limit, Geschenke EUR 50 limit)
-
-**Prior year Steuerbescheid:**
-- Prior year festgesetzte Einkommensteuer (drives Vorauszahlungen)
-- Prior year Solidaritätszuschlag
-- Prior year Kirchensteuer (if applicable)
-- Any Nachzahlung or Erstattung
-- Vorauszahlungen festgesetzt for current year
-
-**Vorauszahlungsbescheide:**
-- Quarterly ESt Vorauszahlungen (10 Mar, 10 Jun, 10 Sep, 10 Dec)
-- SolZ amounts
-- KiSt amounts (if applicable)
-
-**Prior EÜR (Anlage EÜR):**
-- Prior year Betriebseinnahmen and Betriebsausgaben
-- Prior year Gewinn
-- Capital allowances schedule (AfA-Tabelle -- continuing depreciation)
-- Any Sonderabschreibung §7g used
-
-**Krankenversicherung Beitragsbescheinigung:**
-- Annual GKV or PKV premiums paid
-- Basisabsicherung amount (deductible under §10 EStG as Sonderausgaben)
-- Pflegeversicherung amount
-- Any Zusatzbeiträge
-
-**After parsing everything, build an internal inference object.** Do not show the raw inference yet -- transform it into a compact summary for the user in Section 5.
-
----
+After parsing everything, build an internal inference object. Do not show the raw inference yet -- transform it into a compact summary for the user in Section 5.
 
 ## Section 5 -- The confirmation
 
@@ -296,8 +226,6 @@ After inference, present a single compact summary message. Use a structured form
 >
 > **Is any of this wrong? Reply "looks good" or tell me what to fix.**
 
----
-
 ## Section 6 -- Gap filling
 
 After the user confirms the summary (or corrects it), ask about things that cannot be inferred from documents. Use `ask_user_input_v0` where possible.
@@ -313,7 +241,7 @@ After the user confirms the summary (or corrects it), ask about things that cann
 7. **Bundesland** -- Needed for Kirchensteuersatz and Gewerbesteuer Hebesatz (if Gewerbetreibender).
 8. **Other income** -- Employment income (Anlage N), rental (Anlage V), Kapitalerträge (Anlage KAP).
 
-**Home office gap-filling example:**
+- **Tagespauschale home office rule** — EUR 6/day, max EUR 1,260/year, since 2023 reform (or actual costs if Mittelpunkt der Tätigkeit) EUR
 
 Call `ask_user_input_v0` with:
 
@@ -334,8 +262,6 @@ If option 3 -> ask for number of home office days in 2025. Compute EUR 6 x days,
 If option 4 -> rent already in Betriebsausgaben. Skip.
 If option 5 -> skip entirely.
 
-**Kfz method example:**
-
 Call `ask_user_input_v0` with:
 
 ```
@@ -353,7 +279,8 @@ If 1%-Regelung -> ask for Bruttolistenpreis. Compute 1% x 12 months private use 
 If Km-Pauschale -> ask for business km driven. EUR 0.30/km (EUR 0.38/km above 21st km for Pendlerpauschale, but that's for commuting, not business trips).
 If no vehicle -> skip.
 
-**Kirchensteuer:**
+- **Km-Pauschale business trips rate** — EUR 0.30/km EUR/km
+- **Pendlerpauschale rate above 21st km (commuting, not business trips)** — EUR 0.38/km EUR/km
 
 Call `ask_user_input_v0` with:
 
@@ -367,7 +294,8 @@ Q: "Kirchensteuer?"
 
 If yes -> need Bundesland for rate (8% in Bayern/Baden-Württemberg, 9% elsewhere).
 
-**Bundesland:**
+- **Kirchensteuer rate Bayern/Baden-Württemberg** — 8% %
+- **Kirchensteuer rate other Bundesländer** — 9% %
 
 Call `ask_user_input_v0` with:
 
@@ -384,8 +312,6 @@ Q: "Bundesland?"
 Needed for: Kirchensteuersatz and Gewerbesteuer Hebesatz (if Gewerbetreibender -- will look up municipality Hebesatz during assembly).
 
 Flag all private-use percentages as T2 -- Steuerberater must confirm the percentage is reasonable and documented.
-
----
 
 ## Section 7 -- The final handoff
 
@@ -412,8 +338,6 @@ Once gap-filling is done, produce a final handoff message and hand off to `de-re
 > Starting now.
 
 Then internally invoke `de-return-assembly` with the structured intake package.
-
----
 
 ## Section 8 -- Structured intake package (internal format)
 
@@ -514,8 +438,6 @@ The downstream skill (`de-return-assembly`) consumes a JSON structure. It is int
 }
 ```
 
----
-
 ## Section 9 -- Refusal handling
 
 Refusals fire from either the refusal sweep (Section 2) or during inference (e.g., GmbH structure discovered in documents).
@@ -538,37 +460,21 @@ When a refusal fires:
 >
 > I can't help with this one.
 
----
-
 ## Section 10 -- Self-checks
 
-**Check IN1 -- No one-question-at-a-time prose in the refusal sweep.** If the skill asked "Question 1 of 10" or walked through questions as separate messages, check fails.
-
-**Check IN2 -- Refusal sweep used ask_user_input_v0.** The first substantive interaction used the interactive tool, not prose questions.
-
-**Check IN3 -- Upload-first flow honoured.** After refusal sweep, the skill asked for a document dump before asking any content questions.
-
-**Check IN4 -- Documents were parsed and inferred before asking questions.** The inference summary (Section 5) was shown before gap-filling questions (Section 6).
-
-**Check IN5 -- Gap-filling only asked about things NOT visible in documents.** If the skill asked "did you pay Krankenversicherung" after the bank statement showed TK payments, check fails.
-
-**Check IN6 -- Open flags captured.** Anything ambiguous, risky, or attention-worthy during inference is in the `open_flags` list in the handoff package.
-
-**Check IN7 -- Handoff to `de-return-assembly` is explicit.** The user was told "I'm now going to run the return preparation," and the downstream orchestrator was explicitly invoked with the intake package.
-
-**Check IN8 -- Reviewer step was stated upfront and reiterated before handoff.** The opening message mentioned Steuerberater signoff.
-
-**Check IN9 -- Refusals were clean.** No hedging. Stop means stop.
-
-**Check IN10 -- No meta-commentary about workflow phases.** The skill did not say "Phase 1," "Phase 2," etc.
-
-**Check IN11 -- Total user-facing turn count is low.** Target: 8 turns or fewer from start to handoff for a prepared user (1 refusal batch + 1 upload + 1 confirmation + 1-3 gap fills + 1 handoff). More than 12 turns for a normal intake is a check failure.
-
-**Check IN12 -- VAT status was established.** Regelbesteuerung vs Kleinunternehmer was confirmed before inference, as it changes how every transaction is classified.
-
-**Check IN13 -- Business type was established.** Freiberufler vs Gewerbetreibender was confirmed, as it determines Gewerbesteuer applicability.
-
----
+- **Check IN1** — No one-question-at-a-time prose in the refusal sweep. If the skill asked "Question 1 of 10" or walked through questions as separate messages, check fails.
+- **Check IN2** — Refusal sweep used ask_user_input_v0. The first substantive interaction used the interactive tool, not prose questions.
+- **Check IN3** — Upload-first flow honoured. After refusal sweep, the skill asked for a document dump before asking any content questions.
+- **Check IN4** — Documents were parsed and inferred before asking questions. The inference summary (Section 5) was shown before gap-filling questions (Section 6).
+- **Check IN5** — Gap-filling only asked about things NOT visible in documents. If the skill asked "did you pay Krankenversicherung" after the bank statement showed TK payments, check fails.
+- **Check IN6** — Open flags captured. Anything ambiguous, risky, or attention-worthy during inference is in the `open_flags` list in the handoff package.
+- **Check IN7** — Handoff to `de-return-assembly` is explicit. The user was told "I'm now going to run the return preparation," and the downstream orchestrator was explicitly invoked with the intake package.
+- **Check IN8** — Reviewer step was stated upfront and reiterated before handoff. The opening message mentioned Steuerberater signoff.
+- **Check IN9** — Refusals were clean. No hedging. Stop means stop.
+- **Check IN10** — No meta-commentary about workflow phases. The skill did not say "Phase 1," "Phase 2," etc.
+- **Check IN11** — Total user-facing turn count is low. Target: 8 turns or fewer from start to handoff for a prepared user (1 refusal batch + 1 upload + 1 confirmation + 1-3 gap fills + 1 handoff). More than 12 turns for a normal intake is a check failure.
+- **Check IN12** — VAT status was established. Regelbesteuerung vs Kleinunternehmer was confirmed before inference, as it changes how every transaction is classified.
+- **Check IN13** — Business type was established. Freiberufler vs Gewerbetreibender was confirmed, as it determines Gewerbesteuer applicability.
 
 ## Section 11 -- Performance targets
 
@@ -586,8 +492,6 @@ For an unprepared user (has to go fetch documents):
 - Rest: same
 - **Total**: 15-25 minutes
 
----
-
 ## Section 12 -- Cross-skill references
 
 **Inputs:** User-provided documents and answers.
@@ -601,26 +505,17 @@ For an unprepared user (has to go fetch documents):
 - `de-trade-tax` -- Gewerbesteuer (only if Gewerbetreibender)
 - `de-estimated-tax` -- Vorauszahlungen schedule
 
----
-
 ### Change log
 
 - **v0.1 (April 2026):** Initial draft. Upload-first, inference-then-confirm pattern modelled on mt-freelance-intake v0.1.
 
 ## End of Intake Skill v0.1
 
-
----
-
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a Steuerberater, Wirtschaftsprüfer, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
 
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
-
----
-
-<!-- openaccountants-cta-block -->
+The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
 
 ## Talk to a verified accountant
 
@@ -635,16 +530,22 @@ a formal engagement letter** — book a free 30-minute call:
 
 We'll route you to the named verifier covering your country or state. You can
 also see the full list of verified accountants at
-[openaccountants.com/network](https://www.openaccountants.com/network).
+[openaccountants.com/network](https://openaccountants.com/network).
 
-<!-- openaccountants-mcp-cta -->
+<!-- openaccountants-cta-block -->
 
-## The accountant-verified version lives in the connector
+---
 
-This file is the open, **research-grade draft**. The **accountant-verified**
-version of this skill is **not published to GitHub** — it is delivered free
-through the OpenAccountants MCP connector, where your AI agent loads the
-verified rules together with the name of the accountant who signed them off.
+## Talk to a verified accountant
 
-**→ Install the free connector:** <https://www.openaccountants.com/connect>
-**MCP endpoint:** `https://www.openaccountants.com/api/mcp`
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

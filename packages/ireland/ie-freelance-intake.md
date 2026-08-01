@@ -1,22 +1,21 @@
 ---
 name: ie-freelance-intake
 description: ALWAYS USE THIS SKILL when a user asks for help preparing an Irish tax return AND mentions freelancing, self-employment, sole trader, LTD, contractor, or PSC in Ireland. Trigger on phrases like "Ireland tax return", "Form 11 Ireland", "Form 12 Ireland", "Irish sole trader", "Irish LTD CT1", "ROS Revenue Online Service", "self-assessment Ireland", "preliminary tax Ireland", "PRSI Class S", "USC Ireland", "Irish VAT registration", "Pillar Two QDMTT Ireland", or any similar phrasing where the user is an Irish tax resident self-employed individual, sole trader, partner, or small LTD director-shareholder. This is the REQUIRED entry point for the Irish freelance / SME workflow — every downstream skill in the stack (ie-income-tax-form11, ie-preliminary-tax, ie-prsi-class-s, ie-usc, ireland-vat-return, ie-corporation-tax, ie-paye, ie-payroll, ie-cgt, ie-cat, ie-formation, ie-return-assembly) depends on this skill running first. Uses ask_user_input_v0-style structured questions. Irish tax residents only (full-year residents under Section 819 TCA 1997, plus the 280-day combined test). ALWAYS read this skill first when starting an Irish freelance / SME tax workflow.
-version: 1.0
 jurisdiction: IE
 tax_year: 2025
-category: international
+last_updated: 2026-05-27
 verified_by: pending
+tier: 2
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Ireland — Freelance / SME Intake — Skill v1.0
+# IE Freelance Intake
 
 ## What this file is
 
 The intake orchestrator for Irish-resident self-employed individuals, sole traders, partners, and small LTD (private company limited by shares) director-shareholders, including personal service companies (PSCs). Every downstream Irish content skill depends on this skill producing a structured intake package first.
 
 Job: (1) confirm the taxpayer is Irish tax resident under Section 819 TCA 1997, (2) determine domicile (resident-non-domiciled taxpayers attract the remittance basis under Section 71 TCA 1997), (3) classify the regime (sole trader / partnership → Form 11 income tax + PRSI Class S + USC; LTD → CT1 corporation tax + director Form 11; large MNE → Pillar Two top-up via QDMTT), (4) identify downstream skills to run, (5) hand off to `ie-return-assembly`. Outputs addressed to a credentialed Irish tax reviewer (a Chartered Tax Adviser (CTA) of the Irish Tax Institute, an ACA / ACCA / CPA, or an AITI-qualified agent registered on ROS). The reviewer signs off — this skill is not the preparer of record.
-
----
 
 ## Section 1 — Quick reference: regime decision tree at a glance
 
@@ -60,8 +59,6 @@ Parallel routing (independent of entity):
 - Entity unclear or formation needed → route `ie-formation`.
 - Always final → `ie-return-assembly`.
 
----
-
 ## Section 2 — Workflow runbook (order of operations)
 
 Strict order. Do not narrate steps.
@@ -77,8 +74,6 @@ Strict order. Do not narrate steps.
 
 Operating principles: use `ask_user_input_v0` for multi-choice; free text only for names / PPSN / TRN. Batch up to 3 related independent questions. Never re-ask documents-visible facts. Irish terms in parentheses on first mention (e.g., "Personal Public Service Number (PPSN)"). All amounts in EUR.
 
----
-
 ## Section 3 — Required inputs
 
 Some inferred from documents, the rest gap-filled. All mandatory before handoff.
@@ -91,105 +86,88 @@ Some inferred from documents, the rest gap-filled. All mandatory before handoff.
 - **Operational:** employee count (PAYE / PRSI / USC obligations under Section 985 TCA 1997), VAT registration (mandatory or elective under Section 9 VAT Consolidation Act 2010), RCT (Relevant Contracts Tax) if construction / forestry / meat processing principal (Section 530A TCA 1997), Local Property Tax (LPT) discharged.
 - **Documents:** bank statements 2025, sales invoices, purchase invoices, prior Form 11 / CT1, ROS notices of assessment, P60 / employment-detail summary if also employed, payroll register if employer, VAT3 returns, eBrief / RTD annual VAT return, RCT deduction summary.
 
----
-
 ## Section 4 — Regime decision tree with thresholds and citations
 
 All thresholds 2025-effective (Finance Act 2024, Finance (No. 2) Act 2023, Finance Act 2023).
 
 ### 4.1 Residency gate — Section 819 TCA 1997
 
-Irish tax resident = present in Ireland for 183 days in the tax year, OR 280 days combined in the current year plus the immediately preceding year (with at least 30 days in each year). A "day" is any day on which the individual is present in the State (the historic midnight rule was abolished by Finance Act 2008; the current rule under Section 819(4) is "any part of a day").
-
-- Full-year resident → continue.
-- Part-year resident with split-year relief (Section 822 TCA 1997 — arrival year for employment income, departure year for employment income; **does not apply to self-employment / trading income**) → **REFUSE** for split-year self-employment; refer to a Chartered Tax Adviser.
-- Non-resident → **REFUSE**.
+- **Residency test** — Irish tax resident = present in Ireland for 183 days in the tax year, OR 280 days combined in the current year plus the immediately preceding year (with at least 30 days in each year). A "day" is any day on which the individual is present in the State (the historic midnight rule was abolished by Finance Act 2008; the current rule under Section 819(4) is "any part of a day"). - Full-year resident → continue. - Part-year resident with split-year relief (Section 822 TCA 1997 — arrival year for employment income, departure year for employment income; **does not apply to self-employment / trading income**) → **REFUSE** for split-year self-employment; refer to a Chartered Tax Adviser. - Non-resident → **REFUSE**.  _(Section 819 TCA 1997; Finance Act 2008)_
 
 ### 4.2 Domicile gate — Section 71 TCA 1997 + common-law domicile rules
 
-Domicile is a common-law concept (domicile of origin, domicile of choice). Resident-non-domiciled individuals are taxed on Irish-source income and gains in full, but foreign income and gains only when **remitted** to Ireland (the remittance basis). The remittance basis does **not** apply to UK-source income for Irish-resident-non-domiciled persons (UK income is taxed on the arising basis under the Ireland-UK DTA / Section 73 TCA 1997).
-
-If domicile is unclear or foreign → flag for reviewer; route `ie-income-tax-form11` with `remittance_basis_election` flag. Do not assume.
+- **Domicile / remittance basis** — Domicile is a common-law concept (domicile of origin, domicile of choice). Resident-non-domiciled individuals are taxed on Irish-source income and gains in full, but foreign income and gains only when **remitted** to Ireland (the remittance basis). The remittance basis does **not** apply to UK-source income for Irish-resident-non-domiciled persons (UK income is taxed on the arising basis under the Ireland-UK DTA / Section 73 TCA 1997). If domicile is unclear or foreign → flag for reviewer; route `ie-income-tax-form11` with `remittance_basis_election` flag. Do not assume.  _(Section 71 TCA 1997; Section 73 TCA 1997; Ireland-UK DTA)_
 
 ### 4.3 Entity gate
 
-- **Sole trader / partnership:** Form 11 self-assessment. Trading income taxed at marginal rates (20% standard band up to EUR 44,000 single / EUR 53,000 one-earner married 2025; 40% above). Partnerships file Form 1 (Partnership) plus each partner's share on their own Form 11. Route `ie-income-tax-form11`.
-- **LTD trading:** CT1 corporation tax. Trading income at 12.5% (Section 21 TCA 1997). Non-trading (passive) income at 25%. Close-company surcharge of 20% on undistributed investment / rental income (Section 440 TCA 1997) and 15% on undistributed service-company income (Section 441 TCA 1997). Director-shareholder also files Form 11 for own salary (Schedule E) and dividends (Schedule F). Route `ie-corporation-tax` + `ie-income-tax-form11`.
-- **LTD non-trading / investment holding:** CT1 at 25%; close-company surcharge likely. Route `ie-corporation-tax`.
-- **Entity unclear / formation needed:** route `ie-formation`.
-
-Out-of-scope refusals at this gate:
-
-- LTDs with > 50 employees → refer to in-house finance + audit firm.
-- Group structures with Irish parent and overseas subsidiaries → refer to specialist.
-- Large MNEs (consolidated revenue ≥ EUR 750m in 2 of last 4 years) caught by Pillar Two → QDMTT / IIR / UTPR under Part 4A TCA 1997 (inserted by Finance (No. 2) Act 2023, transposing Council Directive (EU) 2022/2523) → **REFUSE**; refer to Big 4 / specialist.
+- **Entity classification routing** — - **Sole trader / partnership:** Form 11 self-assessment. Trading income taxed at marginal rates (20% standard band up to EUR 44,000 single / EUR 53,000 one-earner married 2025; 40% above). Partnerships file Form 1 (Partnership) plus each partner's share on their own Form 11. Route `ie-income-tax-form11`. - **LTD trading:** CT1 corporation tax. Trading income at 12.5% (Section 21 TCA 1997). Non-trading (passive) income at 25%. Close-company surcharge of 20% on undistributed investment / rental income (Section 440 TCA 1997) and 15% on undistributed service-company income (Section 441 TCA 1997). Director-shareholder also files Form 11 for own salary (Schedule E) and dividends (Schedule F). Route `ie-corporation-tax` + `ie-income-tax-form11`. - **LTD non-trading / investment holding:** CT1 at 25%; close-company surcharge likely. Route `ie-corporation-tax`. - **Entity unclear / formation needed:** route `ie-formation`. Out-of-scope refusals at this gate: - LTDs with > 50 employees → refer to in-house finance + audit firm. - Group structures with Irish parent and overseas subsidiaries → refer to specialist. - Large MNEs (consolidated revenue ≥ EUR 750m in 2 of last 4 years) caught by Pillar Two → QDMTT / IIR / UTPR under Part 4A TCA 1997 (inserted by Finance (No. 2) Act 2023, transposing Council Directive (EU) 2022/2523) → **REFUSE**; refer to Big 4 / specialist.  _(Section 21 TCA 1997; Section 440/441 TCA 1997; Part 4A TCA 1997; Finance (No. 2) Act 2023; Council Directive (EU) 2022/2523)_
 
 ### 4.4 VAT registration gate — Section 6 + Section 9 VAT Consolidation Act 2010; Finance Act 2024
 
-VAT registration is mandatory when turnover in any rolling 12-month period exceeds:
-
-- **EUR 85,000** for supplies of goods (raised from EUR 80,000 by Finance Act 2023, then from EUR 80,000 to EUR 85,000 effective 1 January 2024).
-- **EUR 42,500** for supplies of services (raised from EUR 37,500 to EUR 42,500 by Finance Act 2024, effective 1 January 2025).
-- Mixed supplies: the **services** threshold (EUR 42,500) applies if services are more than 10% of total turnover; otherwise the goods threshold applies.
-- Distance sales into Ireland from another EU Member State: EUR 10,000 EU-wide threshold (OSS / IOSS).
-- Acquisitions from EU Member States by an exempt or non-taxable person: EUR 41,000.
-
-If above threshold → route `ireland-vat-return`. Below threshold → elective registration may still be advantageous (input VAT recovery); route only if user elects or reviewer flags. VAT rates 2025: 23% standard, 13.5% reduced (most services, construction, restaurant food was at 9% then back to 13.5% from 1 September 2023), 9% reduced (gas and electricity to end-October 2025 under Finance Act 2024 extension; newspapers; some e-publications), 4.8% livestock, 0% (food staples, children's clothing, exports, intra-EU B2B with VIES).
+- **VAT registration mandatory threshold — goods** — EUR 85,000 EUR (rolling 12-month period, supplies of goods, raised from EUR 80,000 by Finance Act 2023, then to EUR 85,000 effective 1 January 2024)  _(Section 6 / Section 9 VAT Consolidation Act 2010; Finance Act 2023; Finance Act 2024)_
+- **VAT registration mandatory threshold — services** — EUR 42,500 EUR (rolling 12-month period, raised from EUR 37,500 to EUR 42,500 by Finance Act 2024, effective 1 January 2025)  _(Finance Act 2024)_
+- **Mixed supplies threshold rule** — Mixed supplies: the services threshold (EUR 42,500) applies if services are more than 10% of total turnover; otherwise the goods threshold applies.  _(Section 6 / Section 9 VAT Consolidation Act 2010)_
+- **Distance sales into Ireland threshold** — EUR 10,000 EUR (EU-wide threshold (OSS / IOSS))  _(Section 6 / Section 9 VAT Consolidation Act 2010)_
+- **Acquisitions from EU Member States by exempt/non-taxable person threshold** — EUR 41,000 EUR  _(Section 6 / Section 9 VAT Consolidation Act 2010)_
+- **Below-threshold elective registration** — If above threshold → route `ireland-vat-return`. Below threshold → elective registration may still be advantageous (input VAT recovery); route only if user elects or reviewer flags.  _(Section 6 / Section 9 VAT Consolidation Act 2010)_
+- **VAT standard rate 2025** — 23% percent  _(VAT Consolidation Act 2010)_
+- **VAT reduced rate 13.5%** — 13.5% percent (most services, construction, restaurant food was at 9% then back to 13.5% from 1 September 2023)  _(VAT Consolidation Act 2010)_
+- **VAT reduced rate 9%** — 9% percent (gas and electricity to end-October 2025 under Finance Act 2024 extension; newspapers; some e-publications)  _(Finance Act 2024)_
+- **VAT livestock rate** — 4.8% percent  _(VAT Consolidation Act 2010)_
+- **VAT zero rate** — 0% percent (food staples, children's clothing, exports, intra-EU B2B with VIES)  _(VAT Consolidation Act 2010)_
 
 ### 4.5 PRSI Class S gate — Social Welfare Consolidation Act 2005, Section 20A; Social Welfare Act 2023
 
-Self-employed individuals (sole traders, partners, proprietary directors with ≥ 50% shareholding) pay PRSI Class S on reckonable income (trading income + investment income + rental income). Rate increased from 4.0% to **4.1% effective 1 October 2024** (Social Welfare Act 2023) — the full 2025 year is at 4.1%. Minimum annual reckonable income of EUR 5,000 to be liable. Minimum annual contribution EUR 650. Class S covers State Pension (Contributory), Maternity / Paternity / Adoptive Benefit, Treatment Benefit, Widow's / Widower's Pension, Invalidity Pension (added 2017), Jobseeker's Benefit Self-Employed (added November 2019). Route `ie-prsi-class-s`.
+- **PRSI Class S rate** — 4.1% percent (effective 1 October 2024; full 2025 year is at 4.1% (increased from 4.0%))  _(Social Welfare Consolidation Act 2005, Section 20A; Social Welfare Act 2023)_
+- **Minimum annual reckonable income to be liable** — EUR 5,000 EUR  _(Social Welfare Consolidation Act 2005, Section 20A)_
+- **Minimum annual contribution** — EUR 650 EUR  _(Social Welfare Consolidation Act 2005, Section 20A)_
+- **Class S coverage** — Self-employed individuals (sole traders, partners, proprietary directors with ≥ 50% shareholding) pay PRSI Class S on reckonable income (trading income + investment income + rental income). Class S covers State Pension (Contributory), Maternity / Paternity / Adoptive Benefit, Treatment Benefit, Widow's / Widower's Pension, Invalidity Pension (added 2017), Jobseeker's Benefit Self-Employed (added November 2019). Route `ie-prsi-class-s`.  _(Social Welfare Consolidation Act 2005, Section 20A)_
 
 ### 4.6 USC gate — Part 18D TCA 1997, Sections 531AM–531AAF; Finance Act 2024
 
-Universal Social Charge applies to gross income (no PRSI / pension relief shelter). 2025 rates (per Finance Act 2024, which reduced the 4% band rate to 3% and widened the 2% band):
+**USC 2025 rate bands**  _(Part 18D TCA 1997, Sections 531AM–531AAF; Finance Act 2024)_
 
-- 0.5% on income up to EUR 12,012.
-- 2.0% on the next EUR 15,370 (so up to EUR 27,382 — band widened from EUR 25,760).
-- 3.0% on the next EUR 42,662 (so up to EUR 70,044) — **rate reduced from 4% to 3% by Finance Act 2024**.
-- 8.0% on the balance above EUR 70,044.
-- **Self-employed surcharge of 3% on non-PAYE income above EUR 100,000** under Section 531AN(2) TCA 1997 — making the effective top USC rate 11% on self-employment income over EUR 100k.
+| Band | Rate |
+| --- | --- |
+| Up to EUR 12,012 | 0.5% |
+| Next EUR 15,370 (up to EUR 27,382) | 2.0% |
+| Next EUR 42,662 (up to EUR 70,044) | 3.0% |
+| Balance above EUR 70,044 | 8.0% |
 
-Exemption thresholds: total income ≤ EUR 13,000 (full exemption); medical-card holders + over-70s capped at 2%. Route `ie-usc`.
+- **Self-employed USC surcharge** — 3% percent (on non-PAYE income above EUR 100,000 under Section 531AN(2) TCA 1997 — making effective top USC rate 11% on self-employment income over EUR 100k)  _(Section 531AN(2) TCA 1997)_
+- **USC full exemption threshold** — EUR 13,000 EUR (total income; medical-card holders + over-70s capped at 2%)  _(Part 18D TCA 1997)_
 
 ### 4.7 Preliminary tax gate — Section 958 TCA 1997; Section 959AN
 
-Sole traders / partners on self-assessment must pay preliminary tax by **31 October 2025** (or the ROS extended deadline — typically mid-November — if filing **and** paying via ROS). The amount must be the **lower** of:
-
-- **90%** of the final liability for 2025 (current-year basis), OR
-- **100%** of the final liability for 2024 (prior-year basis), OR
-- **105%** of the final liability for 2023 (pre-prior-year basis) — only available where preliminary tax is paid by direct debit and the pre-prior year is not zero.
-
-Failure → interest at 0.0219% per day (~8% annualised) under Section 1080 TCA 1997 + surcharge of 5% (filed within 2 months late) or 10% (later) under Section 1084 TCA 1997. Route `ie-preliminary-tax`.
+- **Preliminary tax deadline and calculation rule** — Sole traders / partners on self-assessment must pay preliminary tax by **31 October 2025** (or the ROS extended deadline — typically mid-November — if filing **and** paying via ROS). The amount must be the **lower** of: - **90%** of the final liability for 2025 (current-year basis), OR - **100%** of the final liability for 2024 (prior-year basis), OR - **105%** of the final liability for 2023 (pre-prior-year basis) — only available where preliminary tax is paid by direct debit and the pre-prior year is not zero. Failure → interest at 0.0219% per day (~8% annualised) under Section 1080 TCA 1997 + surcharge of 5% (filed within 2 months late) or 10% (later) under Section 1084 TCA 1997. Route `ie-preliminary-tax`.  _(Section 958 TCA 1997; Section 959AN TCA 1997; Section 1080 TCA 1997; Section 1084 TCA 1997)_
 
 ### 4.8 Employer gate — Section 985 TCA 1997; PAYE Modernisation (Real-Time Reporting) from 1 January 2019
 
-Employees → operate PAYE / PRSI / USC in real time via ROS payroll software, file Payroll Submission Requests (PSRs) on or before each payday. Employer PRSI 8.8% on weekly earnings ≤ EUR 496 / 11.05% above (Class A1 — 2025 rate increased from 11.05% to **11.15% effective 1 October 2024**, so full 2025 is 11.15%). Route `ie-paye` + `ie-payroll`.
+- **PAYE / employer PRSI rules** — Employees → operate PAYE / PRSI / USC in real time via ROS payroll software, file Payroll Submission Requests (PSRs) on or before each payday. Employer PRSI 8.9% Jan-Sep 2025; 9.0% from 1 Oct 2025 on weekly earnings ≤ EUR 496 / 11.05% above (Class A1 — 2025 rate increased from 11.05% to 11.15% Jan-Sep 2025; 11.25% from 1 Oct 2025 effective 1 October 2024, so full 2025 is 11.15% Jan-Sep 2025; 11.25% from 1 Oct 2025). Route `ie-paye` + `ie-payroll`.  _(Section 985 TCA 1997; PAYE Modernisation (from 1 January 2019))_
 
 ### 4.9 CGT gate — Section 28 TCA 1997 et seq.
 
-Disposal of a chargeable asset (shares, property other than principal private residence, crypto, business assets) in 2025 → CGT at **33%** on gains above EUR 1,270 annual exemption (Section 601 TCA 1997). Payment deadlines:
-
-- Disposals 1 January – 30 November 2025 → CGT due **15 December 2025**.
-- Disposals 1 – 31 December 2025 → CGT due **31 January 2026**.
-
-Return (Form CG1 for non-Form-11 filers, or via Form 11 for self-assessed) due by 31 October 2026. Route `ie-cgt`.
+- **Effective CGT rate for companies** — 33% percent  _(Section 28 TCA)_
+- **CGT annual exemption** — EUR 1,270 EUR  _(Section 601 TCA 1997)_
+- **CGT payment deadlines** — Disposals 1 January – 30 November 2025 → CGT due 15 December 2025. Disposals 1 – 31 December 2025 → CGT due 31 January 2026. Return (Form CG1 for non-Form-11 filers, or via Form 11 for self-assessed) due by 31 October 2026. Route `ie-cgt`.  _(Section 28 TCA 1997 et seq.)_
 
 ### 4.10 CAT gate — Capital Acquisitions Tax Consolidation Act 2003
 
-Received a gift or inheritance in 2025 → CAT at **33%** on the value above the relevant Group threshold (Finance Act 2024 thresholds, effective from 2 October 2024 Budget Day):
+- **CAT rate** — 33% percent (on the value above the relevant Group threshold (Finance Act 2024 thresholds, effective from 2 October 2024 Budget Day))  _(Capital Acquisitions Tax Consolidation Act 2003; Finance Act 2024)_
 
-- **Group A** (child of disponer): EUR 400,000 (raised from EUR 335,000).
-- **Group B** (sibling, niece / nephew, lineal ancestor / descendant other than child): EUR 40,000 (raised from EUR 32,500).
-- **Group C** (all others): EUR 20,000 (raised from EUR 16,250).
+**CAT Group thresholds**  _(Capital Acquisitions Tax Consolidation Act 2003; Finance Act 2024)_
 
-Pay-and-file by 31 October of the year following the valuation date if the valuation date falls between 1 September and 31 August. Route `ie-cat`.
+| Group | Description | Threshold |
+| --- | --- | --- |
+| Group A | child of disponer | EUR 400,000 (raised from EUR 335,000) |
+| Group B | sibling, niece / nephew, lineal ancestor / descendant other than child | EUR 40,000 (raised from EUR 32,500) |
+| Group C | all others | EUR 20,000 (raised from EUR 16,250) |
+
+- **CAT pay-and-file deadline** — Pay-and-file by 31 October of the year following the valuation date if the valuation date falls between 1 September and 31 August. Route `ie-cat`.  _(Capital Acquisitions Tax Consolidation Act 2003)_
 
 ### 4.11 ROS digital-certificate channel
 
-Form 11, CT1, VAT3, RTD, payroll PSRs, and preliminary tax are all filed through Revenue Online Service (ROS). If the user does not have an active ROS digital certificate, flag in `open_flags` — ROS onboarding takes 5–8 working days (RAN / dormant-cert reset). Without ROS access the user falls outside the ROS-extended pay-and-file deadline.
-
----
+- **ROS filing channel requirement** — Form 11, CT1, VAT3, RTD, payroll PSRs, and preliminary tax are all filed through Revenue Online Service (ROS). If the user does not have an active ROS digital certificate, flag in `open_flags` — ROS onboarding takes 5–8 working days (RAN / dormant-cert reset). Without ROS access the user falls outside the ROS-extended pay-and-file deadline.
 
 ## Section 5 — Questions to ask the user
 
@@ -203,10 +181,10 @@ Use `ask_user_input_v0`. Batch where independent.
 - **Q4 2025 gross turnover (EUR):** ≤ EUR 42,500 | EUR 42,500 – EUR 85,000 | EUR 85,000 – EUR 500,000 | EUR 500,000 – EUR 5m | EUR 5m – EUR 50m | > EUR 50m | Not sure (infer from docs).
 - **Q5 Activity mix:** Pure services | Pure goods | Mixed services + goods | Construction / forestry / meat-processing principal (RCT applies) | Financial services / investment funds (out of scope).
 
-Routing:
+**Routing table**
 
 | Answer | Action |
-|---|---|
+| --- | --- |
 | Q1 full-year or combined-test | continue |
 | Q1 part-year | **REFUSE** for self-employment split-year (Section 822 TCA 1997 does not cover trading income); refer to CTA |
 | Q1 non-resident | **REFUSE** |
@@ -232,10 +210,10 @@ Routing:
 - **Q8 VAT registration status:** Registered (VAT number active on ROS) | Not registered (below threshold) | Not registered (above threshold — overdue) | Cancelled / deregistered in 2025 | Not sure.
 - **Q9 Prior preliminary tax payment for 2024:** Paid in full by 31 October 2024 | Paid partial | Not paid | Did not file Form 11 for 2023 (first year) | Not sure.
 
-Routing:
+**Routing table**
 
 | Answer | Action |
-|---|---|
+| --- | --- |
 | Q6 jointly assessed | tax bands and credits computed jointly; partner's PPSN required |
 | Q6 separately assessed | each spouse files own Form 11; limited credit transfer |
 | Q7 ≥ 1 employee | route `ie-paye` + `ie-payroll` |
@@ -248,10 +226,10 @@ Routing:
 
 - **Q10 In 2025 did you:** Dispose of a chargeable asset (shares, second property, crypto, business) | Receive a gift or inheritance | Both | Neither | Not sure.
 
-Routing:
+**Routing table**
 
 | Answer | Action |
-|---|---|
+| --- | --- |
 | Q10 disposal | route `ie-cgt`; capture disposal date for 15 December vs 31 January window |
 | Q10 gift / inheritance | route `ie-cat`; capture relationship to disponer for Group A / B / C |
 | Q10 both | route both |
@@ -276,8 +254,6 @@ If the user has no PPSN (individual) or no TRN (newly formed entity), the workfl
 - Individual without PPSN → refer to DSP (Department of Social Protection) Intreo or MyWelfare PPSN application. Cannot file Form 11 / Form 12 without PPSN.
 - Entity without TRN → file Form TR1 (sole trader) / TR2 (company) via ROS or paper; TRN issues within 5 working days. Newly incorporated LTDs auto-receive a TRN on CRO registration if Form TR2 is filed concurrently with CRO Form A1.
 - Director without PPSN (non-resident director of Irish LTD) → since 11 June 2023 (Companies (Corporate Enforcement Authority) Act 2021, s. 35) all directors filing with the CRO must have a PPSN, a CRO-issued IPN (Identified Person Number) via Form VIF, or an RBO PPSN-verification number. Flag `director_ppsn_required`.
-
----
 
 ## Section 6 — Intake output template
 
@@ -393,14 +369,14 @@ Confirm or correct anything above.
 }
 ```
 
----
-
 ## Section 7 — Conservative defaults
 
 When uncertain, prefer the safer (higher-tax / stricter-compliance) outcome and flag. All defaults visible to reviewer in `conservative_defaults_applied`.
 
+**Conservative defaults table**
+
 | Ambiguity | Conservative default |
-|---|---|
+| --- | --- |
 | Residency borderline (~180 days, no combined-test data) | Assume non-resident → REFUSE; flag for day-count proof |
 | Domicile unclear | Assume foreign domicile → flag `remittance_basis_review`; tax foreign income on arising basis pending reviewer call |
 | Turnover near services threshold (EUR 40k–EUR 45k) | Assume above threshold → VAT registration mandatory |
@@ -415,8 +391,6 @@ When uncertain, prefer the safer (higher-tax / stricter-compliance) outcome and 
 | Foreign income flagged but DTA unclear | Tax on arising basis with no FTC; reviewer to claim credit |
 | ROS access unknown | Assume not active; flag for onboarding |
 | Director PPSN status unknown (non-resident director) | Assume PPSN / IPN required under CCEA 2021 s. 35; flag |
-
----
 
 ## Section 8 — Refusal handling
 
@@ -436,7 +410,7 @@ In-scope refusals:
 
 Sample: "Stop — you arrived in Ireland in May 2025, so you are a part-year resident. Split-year relief under Section 822 TCA 1997 covers employment income only, not trading / self-employment income, so I cannot prepare your Form 11 for 2025 alone. You need a Chartered Tax Adviser (CTA) to handle the apportionment and the prior-jurisdiction interaction."
 
----
+- **In-scope refusal list** — Part-year resident self-employment; Non-resident; Turnover > EUR 50m; LTDs with > 50 employees; Group structures with Irish parent and overseas subsidiaries; Large MNEs in Pillar Two (consolidated revenue ≥ EUR 750m in 2 of last 4 years); Financial services / regulated investment funds; Charities / approved bodies; Trusts and estates  _(Section 822 TCA 1997; Part 4A TCA 1997; Finance (No. 2) Act 2023; Section 207/208 TCA 1997; Section 769 TCA 1997 et seq.)_
 
 ## Section 9 — Self-checks before handoff
 
@@ -457,8 +431,6 @@ Run all 14 before invoking `ie-return-assembly`. Any failure → fix, do not han
 13. ROS certificate status captured; PPSN / TRN gaps flagged.
 14. All conservative defaults recorded with citation; reviewer disclaimer present in opening + handoff.
 
----
-
 ## Section 10 — Final handoff to ie-return-assembly
 
 Once gap-filling and self-checks pass, output a short handoff message naming (a) taxpayer + entity + Revenue district + ROS status, (b) regime selected with headline computation citation, (c) downstream skills in run-order, (d) skills explicitly not running and why, (e) reviewer reminder (CTA / ACA / ACCA / AITI sign-off via ROS). Then invoke `ie-return-assembly` with the Section 6.2 package.
@@ -466,8 +438,6 @@ Once gap-filling and self-checks pass, output a short handoff message naming (a)
 Example (sole trader, services, VAT-registered, no employees, single):
 
 > Intake complete. Aoife Ní Bhriain, sole trader (IT consultancy), PPSN 1234567T, Revenue district Dublin City Centre, ROS active. Full-year resident 2025, Irish-domiciled. 2025 turnover EUR 92,000 (services) → VAT-registered (above EUR 42,500 services threshold). Regime: Form 11 income tax at 20% / 40% bands + PRSI Class S 4.1% + USC 0.5% / 2% / 3% / 8% (no 3% self-employed surcharge — income below EUR 100,000). Preliminary tax due 31 October 2025 (ROS-extended mid-November); applying 100% prior-year safe harbour from 2024 Form 11. Running: ie-income-tax-form11, ie-preliminary-tax, ie-prsi-class-s, ie-usc, ireland-vat-return, ie-return-assembly. Not running: ie-corporation-tax, ie-paye, ie-payroll, ie-cgt, ie-cat, ie-formation. Needs CTA / AITI sign-off before ROS submission. Handing off now.
-
----
 
 ## Section 11 — Cross-skill references
 
@@ -481,13 +451,11 @@ Downstream skills (via ie-return-assembly):
 - `ie-usc` — Universal Social Charge bands + 3% self-employed surcharge over EUR 100k.
 - `ireland-vat-return` — VAT3 + RTD; rates 23% / 13.5% / 9% / 4.8% / 0%; thresholds EUR 85,000 goods / EUR 42,500 services.
 - `ie-corporation-tax` — CT1 at 12.5% trading / 25% non-trading; close-company surcharge Section 440 / 441 TCA 1997.
-- `ie-paye` + `ie-payroll` — PAYE Modernisation real-time reporting; employer PRSI Class A1 8.8% / 11.15% from 1 October 2024.
+- `ie-paye` + `ie-payroll` — PAYE Modernisation real-time reporting; employer PRSI Class A1 8.9% Jan-Sep 2025; 9.0% from 1 Oct 2025 / 11.15% Jan-Sep 2025; 11.25% from 1 Oct 2025 from 1 October 2024.
 - `ie-cgt` — Section 28 TCA 1997 et seq.; 33% on gains > EUR 1,270; 15 December / 31 January split.
 - `ie-cat` — Capital Acquisitions Tax Consolidation Act 2003; Group A / B / C thresholds EUR 400,000 / EUR 40,000 / EUR 20,000.
 - `ie-formation` — sole trader vs partnership vs LTD; CRO + ROS TR1 / TR2 registration.
 - `ie-return-assembly` — final orchestrator (Form 11 / CT1, working paper, reviewer brief, action list).
-
----
 
 ## Section 12 — Sources
 
@@ -526,29 +494,21 @@ Primary statutes and regulations cited (all 2025-effective; reviewer to verify F
 - **Council Directive (EU) 2022/2523** — Pillar Two Directive.
 - **Revenue eBrief 99/19** + **Karshan (Midlands) Ltd v Revenue Commissioners [2023] IESC 24** — employment vs self-employment / IR35-equivalent test.
 
----
-
 ## Change log
 
-- **v1.0 (May 2026):** Initial intake skill for the Irish freelance / SME workflow. Routes to ie-income-tax-form11, ie-preliminary-tax, ie-prsi-class-s, ie-usc, ireland-vat-return, ie-corporation-tax, ie-paye, ie-payroll, ie-cgt, ie-cat, ie-formation, ie-return-assembly. Reflects Finance Act 2024 (services VAT threshold EUR 42,500, CAT Group A EUR 400,000, USC 4% band cut to 3%), Social Welfare Act 2023 (PRSI Class S 4.1% from 1 October 2024), Finance (No. 2) Act 2023 (Pillar Two QDMTT / IIR / UTPR), and CCEA 2021 s. 35 (director PPSN requirement) for tax year 2025.
-
----
+**v1.0 (May 2026):** Initial intake skill for the Irish freelance / SME workflow. Routes to ie-income-tax-form11, ie-preliminary-tax, ie-prsi-class-s, ie-usc, ireland-vat-return, ie-corporation-tax, ie-paye, ie-payroll, ie-cgt, ie-cat, ie-formation, ie-return-assembly. Reflects Finance Act 2024 (services VAT threshold EUR 42,500, CAT Group A EUR 400,000, USC 4% band cut to 3%), Social Welfare Act 2023 (PRSI Class S 4.1% from 1 October 2024), Finance (No. 2) Act 2023 (Pillar Two QDMTT / IIR / UTPR), and CCEA 2021 s. 35 (director PPSN requirement) for tax year 2025.
 
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. OpenAccountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified Irish tax professional (a Chartered Tax Adviser (CTA) of the Irish Tax Institute, an ACA / ACCA / CPA, or an AITI-qualified agent registered on ROS) before filing with Revenue via ROS or acting upon.
 
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com).
+The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com).
 
 ---
 
 *OpenAccountants — open-source accounting skills for AI*
 *This output must be reviewed by a qualified professional before filing or acting upon.*
 *Latest verified skills: openaccountants.com | Report errors: github.com/openaccountants/openaccountants*
-
----
-
-<!-- openaccountants-cta-block -->
 
 ## Talk to a verified accountant
 
@@ -563,16 +523,37 @@ a formal engagement letter** — book a free 30-minute call:
 
 We'll route you to the named verifier covering your country or state. You can
 also see the full list of verified accountants at
-[openaccountants.com/network](https://www.openaccountants.com/network).
+[openaccountants.com/network](https://openaccountants.com/network).
 
-<!-- openaccountants-mcp-cta -->
+## Section 2 — Workflow runbook (order of operations)
 
-## The accountant-verified version lives in the connector
+0. **Step 1 Opening** — One-line greeting + flow summary + reviewer reminder, then launch the refusal sweep.
+0. **Step 2 Refusal sweep** — Single ask_user_input_v0 call with the 5 questions in Section 5.1.
+0. **Step 3 Document dump** — Ask user to upload everything at once (bank statements, sales invoices, purchase invoices, prior Form 11 / CT1, ROS notices of assessment, P30 / PAYE summaries, payroll registers, VAT3 returns, RCT records if construction).
+0. **Step 4 Inference pass** — Parse every document; extract turnover, expenses, PAYE withheld, prior preliminary tax, VAT collected / reclaimed.
+0. **Step 5 Regime classification** — Apply Section 4 decision tree using inferred turnover + sweep answers.
+0. **Step 6 Confirmation** — Show inferred summary + proposed regime + downstream-skill list; invite corrections.
+0. **Step 7 Gap filling** — ask_user_input_v0 only for items documents cannot answer (domicile, PPSN / TRN, marital status / joint-assessment election, ROS access).
+0. **Step 8 Handoff** — Produce Section 6 summary and invoke ie-return-assembly.
 
-This file is the open, **research-grade draft**. The **accountant-verified**
-version of this skill is **not published to GitHub** — it is delivered free
-through the OpenAccountants MCP connector, where your AI agent loads the
-verified rules together with the name of the accountant who signed them off.
+## Section 10 — Final handoff to ie-return-assembly
 
-**→ Install the free connector:** <https://www.openaccountants.com/connect>
-**MCP endpoint:** `https://www.openaccountants.com/api/mcp`
+0. **Invoke ie-return-assembly** — Once gap-filling and self-checks pass, output handoff message and invoke ie-return-assembly with the Section 6.2 package.
+
+<!-- openaccountants-cta-block -->
+
+---
+
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

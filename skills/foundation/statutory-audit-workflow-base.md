@@ -1,18 +1,17 @@
 ---
 name: statutory-audit-workflow-base
 description: >
-  Tier 1 workflow base for statutory audit skills. Covers the audit lifecycle — engagement acceptance, risk assessment, audit planning, evidence gathering, fieldwork, opinion formulation, reporting — applied to the International Standards on Auditing (ISA) as issued by the IAASB plus country overlays (US GAAS for public co's, UK FRC ISA(UK), Germany IDW PS, France NEP, Italy ISA-Italia). Workflow architecture only — no engagement-specific procedures, materiality benchmarks, or audit programs. MUST be loaded alongside a content skill that provides the country-specific audit threshold rules, regulator inspection regime, statutory deadlines, and any non-ISA local standards. Assumes a qualified statutory auditor (RA, CPA, CA, Wirtschaftsprüfer, commissaire aux comptes, revisore legale, etc.) signs the audit report. Does NOT cover: internal audit, regulatory audit (banking, insurance prudential), tax audit by tax authority, IT general controls testing methodology, or forensic audit.
 version: 0.1
 jurisdiction: GLOBAL
-tier: 2
-last_updated: 2026-06-12
-category: foundation
+tax_year: 2025
+last_updated: 2026-05-23
 verified_by: pending
+category: foundation
+tier: 2
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Statutory Audit Workflow Base v0.1
-
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+# Statutory Audit Workflow Base
 
 ## What this file is
 
@@ -30,16 +29,14 @@ This is the **Tier 1 workflow base** for statutory audit content skills. It does
 
 **Every statutory audit skill MUST be loaded alongside this base.**
 
----
-
 ## Section 1 — Audit lifecycle (ISA-aligned)
 
 ### Phase 1 — Engagement acceptance / continuance (ISA 220, 220R, 210)
 
-**[T1]** Before accepting or continuing:
+**Before accepting or continuing tests**  _(ISA 220, 220R, 210)_
 
 | Test | Reference |
-|---|---|
+| --- | --- |
 | Independence (firm-level + engagement team) | IESBA Code Part 4A; PCAOB Rule 3520; FRC ES 1; IDW PS 220 |
 | Competence to perform the audit | ISA 220 ¶15 |
 | Acceptance approval by appropriate partner | Firm policy; ISA 220 ¶16 |
@@ -59,18 +56,19 @@ This is the **Tier 1 workflow base** for statutory audit content skills. It does
 
 ### Phase 3 — Audit plan and materiality (ISA 320, 330)
 
-**[T1] Materiality:**
-- **Overall materiality** — judgment based on benchmark and percentage (commonly 5% of PBT, 0.5-1% of revenue, 1-2% of equity, 1-2% of total assets, depending on user emphasis)
-- **Performance materiality** — typically 50-75% of overall materiality
-- **Specific materiality** — for particular classes of transactions / accounts / disclosures requiring lower threshold (e.g., related parties, executive compensation)
-- **Clearly trivial threshold** — typically 5% of performance materiality
+- **Overall materiality** — Overall materiality — judgment based on benchmark and percentage (commonly 5% of PBT, 0.5-1% of revenue, 1-2% of equity, 1-2% of total assets, depending on user emphasis)  _(ISA 320, 330)_
+- **Performance materiality** — Performance materiality — typically 50-75% of overall materiality  _(ISA 320, 330)_
+- **Specific materiality** — Specific materiality — for particular classes of transactions / accounts / disclosures requiring lower threshold (e.g., related parties, executive compensation)  _(ISA 320, 330)_
+- **Clearly trivial threshold** — Clearly trivial threshold — typically 5% of performance materiality  _(ISA 320, 330)_
 
 ### Phase 4 — Fieldwork / procedures (ISA 330, 500, 501-540)
 
-**[T1] Audit evidence** must be sufficient (quantity) and appropriate (relevance + reliability). Per assertion (existence, completeness, valuation, rights/obligations, classification, presentation/disclosure, accuracy, cut-off), select procedures from:
+- **Audit evidence requirement** — Audit evidence must be sufficient (quantity) and appropriate (relevance + reliability). Per assertion (existence, completeness, valuation, rights/obligations, classification, presentation/disclosure, accuracy, cut-off), select procedures from the procedures table.  _(ISA 330, 500, 501-540)_
+
+**Procedures and Types**  _(ISA 330, 500, 501-540)_
 
 | Procedure | Type |
-|---|---|
+| --- | --- |
 | Inspection of records or documents | Substantive / control |
 | Inspection of tangible assets | Substantive (existence) |
 | Observation | Control |
@@ -80,58 +78,28 @@ This is the **Tier 1 workflow base** for statutory audit content skills. It does
 | Reperformance | Control |
 | Analytical procedures | Substantive (when designed appropriately) |
 
-**[T1]** Specific ISA-required procedures:
-- ISA 240 — fraud: testing journal entries, related party transactions, management override
-- ISA 250 — laws and regulations: inquiries, document inspection, legal letters
-- ISA 501 — inventory observation, litigation legal letters, segment information
-- ISA 540 (Revised) — accounting estimates (including ECL, pensions, goodwill, fair value)
-- ISA 550 — related party transactions
-- ISA 560 — subsequent events review through report date
-- ISA 570 — going concern (12 months from balance sheet date in most jurisdictions; 12 from report sign-off in some)
-- ISA 600 — group audits and component auditor reliance
+- **ISA-required specific procedures** — Specific ISA-required procedures: - ISA 240 — fraud: testing journal entries, related party transactions, management override - ISA 250 — laws and regulations: inquiries, document inspection, legal letters - ISA 501 — inventory observation, litigation legal letters, segment information - ISA 540 (Revised) — accounting estimates (including ECL, pensions, goodwill, fair value) - ISA 550 — related party transactions - ISA 560 — subsequent events review through report date - ISA 570 — going concern (12 months from balance sheet date in most jurisdictions; 12 from report sign-off in some) - ISA 600 — group audits and component auditor reliance  _(ISA 240, 250, 501, 540, 550, 560, 570, 600)_
 
 ### Phase 5 — Completion (ISA 700-720)
 
-**[T1] Completion checklist:**
-- Going concern assessment (ISA 570)
-- Subsequent events review (ISA 560)
-- Written representations from management (ISA 580)
-- Quality control review (ISA 220, 220R)
-- Engagement Quality Review (EQR) for PIE / listed audits (ISA 220R, ISQM 1)
-- Key Audit Matters (KAM) selection (ISA 701 — listed entities) / equivalent for unlisted in some jurisdictions
-- Audit opinion formulation (ISA 700, 705, 706)
-- Annual report or other information reading (ISA 720)
+- **Completion checklist** — Completion checklist: - Going concern assessment (ISA 570) - Subsequent events review (ISA 560) - Written representations from management (ISA 580) - Quality control review (ISA 220, 220R) - Engagement Quality Review (EQR) for PIE / listed audits (ISA 220R, ISQM 1) - Key Audit Matters (KAM) selection (ISA 701 — listed entities) / equivalent for unlisted in some jurisdictions - Audit opinion formulation (ISA 700, 705, 706) - Annual report or other information reading (ISA 720)  _(ISA 700-720)_
 
 ### Phase 6 — Reporting (ISA 700/705/706/701/710)
 
-**[T1]** Opinion options:
-- **Unmodified** — financial statements give a true and fair view
-- **Qualified** — material but not pervasive misstatement OR scope limitation
-- **Adverse** — material and pervasive misstatement
-- **Disclaimer** — material and pervasive scope limitation
-- **Emphasis of matter** — adds emphasis without modifying opinion (e.g., subsequent event after issuance)
-- **Other matter** — additional matters not addressed in financial statements
-- **Key Audit Matters** — significant matters in current period audit (listed and certain unlisted)
-- **Going concern paragraph** — material uncertainty paragraph or going concern KAM
+- **Opinion options** — Opinion options: - **Unmodified** — financial statements give a true and fair view - **Qualified** — material but not pervasive misstatement OR scope limitation - **Adverse** — material and pervasive misstatement - **Disclaimer** — material and pervasive scope limitation - **Emphasis of matter** — adds emphasis without modifying opinion (e.g., subsequent event after issuance) - **Other matter** — additional matters not addressed in financial statements - **Key Audit Matters** — significant matters in current period audit (listed and certain unlisted) - **Going concern paragraph** — material uncertainty paragraph or going concern KAM  _(ISA 700/705/706/701/710)_
 
 ### Phase 7 — Post-issuance (ISA 220R, ISQM 1)
 
-**[T1]**
-- Engagement quality reviews
-- Firm monitoring and remediation
-- Inspections by regulators (PCAOB, FRC, AOB, etc.)
-- Subsequent discovery of facts (ISA 560 ¶14-17)
-
----
+- **Post-issuance activities** — - Engagement quality reviews - Firm monitoring and remediation - Inspections by regulators (PCAOB, FRC, AOB, etc.) - Subsequent discovery of facts (ISA 560 ¶14-17)  _(ISA 220R, ISQM 1)_
 
 ## Section 2 — When is a statutory audit required?
 
 Each country sets size thresholds (typically two-of-three test on balance sheet total, revenue, employees) above which an audit is mandatory.
 
-**[T1] Illustrative thresholds (2025):**
+**Illustrative thresholds (2025)**  _(Illustrative thresholds (2025))_
 
 | Country | Total assets | Net revenue | Employees | Notes |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | **UK** | GBP 5.1m | GBP 10.2m | 50 | Two-of-three; PIEs/PLCs always audited |
 | **Germany (BilanzRichtlinie umgesetzt §267 HGB)** | EUR 6m | EUR 12m | 50 | "Mittelgroße" company audited; "Kleine" exempt |
 | **France** | EUR 5m | EUR 10m | 50 | Loi PACTE 2019 raised thresholds |
@@ -148,18 +116,16 @@ Each country sets size thresholds (typically two-of-three test on balance sheet 
 | **Brazil** | BRL 78m total assets | BRL 300m gross revenue | n/a | Listed always |
 | **Singapore** | SGD 10m total assets | SGD 10m revenue | 50 | Two-of-three; Small Company Concept since 2014 |
 
-**[T1]** PIEs (Public Interest Entities — listed, banks, insurers): always audited, with additional partner rotation, audit firm rotation, and enhanced reporting (KAMs).
-
----
+- **PIE definition and requirements** — PIEs (Public Interest Entities — listed, banks, insurers): always audited, with additional partner rotation, audit firm rotation, and enhanced reporting (KAMs).
 
 ## Section 3 — Engagement structure
 
 ### 3.1 Roles
 
-**[T1]**
+**Roles and Responsibilities**
 
 | Role | Responsibility |
-|---|---|
+| --- | --- |
 | Audit engagement partner | Overall accountability; signs the report (ISA 220) |
 | Engagement Quality Reviewer (EQR) | Independent objective evaluation (ISA 220R, ISQM 1) — required for PIEs, recommended for higher-risk |
 | Manager | Day-to-day engagement leadership |
@@ -171,16 +137,7 @@ Each country sets size thresholds (typically two-of-three test on balance sheet 
 
 ### 3.2 Independence (IESBA Code Part 4A)
 
-**[T1] Self-interest, self-review, advocacy, familiarity, intimidation threats** must be evaluated. Specific prohibitions for PIEs:
-- Bookkeeping / accounting services
-- Internal audit outsourcing
-- Valuations relevant to the financial statements
-- Tax services involving advocacy
-- Certain corporate finance / advisory engagements
-- Rotation of engagement partner (typically 5 years on / 5 off; PIE rotation rules vary)
-- Audit firm rotation (EU mandatory rotation cap typically 10-24 years for PIEs)
-
----
+- **Threats and prohibitions** — Self-interest, self-review, advocacy, familiarity, intimidation threats must be evaluated. Specific prohibitions for PIEs: - Bookkeeping / accounting services - Internal audit outsourcing - Valuations relevant to the financial statements - Tax services involving advocacy - Certain corporate finance / advisory engagements - Rotation of engagement partner (typically 5 years on / 5 off; PIE rotation rules vary) - Audit firm rotation (EU mandatory rotation cap typically 10-24 years for PIEs)  _(IESBA Code Part 4A)_
 
 ## Section 4 — Reviewer brief (audit working paper file)
 
@@ -230,11 +187,7 @@ Every audit produces a file containing:
    - Audit committee communications (ISA 260, 265)
 ```
 
----
-
 ## Section 5 — Opinion formulation decision tree
-
-**[T1]**
 
 ```
 Misstatement detected?
@@ -255,8 +208,6 @@ Going concern material uncertainty?
   Yes + Adequate disclosure → Unmodified + going concern paragraph
   Yes + Inadequate disclosure → Qualified or adverse depending on materiality/pervasiveness
 ```
-
----
 
 ## Section 6 — 21 self-checks
 
@@ -284,14 +235,12 @@ Before signing the opinion, verify:
 20. [ ] KAMs identified and documented for listed entities (ISA 701)
 21. [ ] Audit file assembled and archived per ISQM 1 and country regulations (typically 5+ years)
 
----
-
 ## Section 7 — Global refusal catalogue
 
-Refuse to act / escalate to firm leadership if:
+**Global refusal catalogue**
 
 | Refusal | Trigger |
-|---|---|
+| --- | --- |
 | **R-AUDIT-1** | Independence cannot be established or threats cannot be reduced to acceptable level |
 | **R-AUDIT-2** | Predecessor auditor will not communicate or hostile transition |
 | **R-AUDIT-3** | Management refuses to provide written representations |
@@ -303,7 +252,16 @@ Refuse to act / escalate to firm leadership if:
 | **R-AUDIT-9** | Component auditor refuses cooperation in group audit |
 | **R-AUDIT-10** | Regulatory inspection finding against firm requires re-issuance of opinion |
 
----
+- **R-AUDIT-1** — Independence cannot be established or threats cannot be reduced to acceptable level
+- **R-AUDIT-2** — Predecessor auditor will not communicate or hostile transition
+- **R-AUDIT-3** — Management refuses to provide written representations
+- **R-AUDIT-4** — Material misstatement detected and management refuses to correct
+- **R-AUDIT-5** — Limitation on scope imposed by management
+- **R-AUDIT-6** — Suspected fraud — escalate per firm fraud protocols and ISA 240 ¶42
+- **R-AUDIT-7** — Suspected non-compliance with laws and regulations affecting financial statements — ISA 250 ¶27 escalation
+- **R-AUDIT-8** — Going concern material uncertainty with inadequate disclosure that management refuses to enhance
+- **R-AUDIT-9** — Component auditor refuses cooperation in group audit
+- **R-AUDIT-10** — Regulatory inspection finding against firm requires re-issuance of opinion
 
 ## Section 8 — Slot contract for country audit content skills
 
@@ -349,10 +307,26 @@ Every country statutory audit content skill must populate:
 - Pillar Two — auditor responsibility for tax provision and disclosure
 ```
 
----
-
 ## Section 9 — Disclaimer
 
 This workflow base produces working papers for audit engagement, not direct accounting or financial advice. Every audit opinion must be signed by a qualified statutory auditor in compliance with the local regulator's requirements.
 
-The most up-to-date, verified version of this workflow base is maintained at [openaccountants.com](https://www.openaccountants.com).
+The most up-to-date, verified version of this workflow base is maintained at [openaccountants.com](https://openaccountants.com).
+
+<!-- openaccountants-cta-block -->
+
+---
+
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

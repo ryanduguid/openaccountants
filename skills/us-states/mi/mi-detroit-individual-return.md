@@ -3,11 +3,13 @@ name: mi-detroit-individual-return
 description: Use this skill whenever asked about Detroit (Michigan) city individual income tax for residents, non-residents who work in Detroit, or part-year residents. Trigger on phrases like "Detroit income tax", "City of Detroit return", "Form 5118", "Form 5119", "Form 5120", "Detroit resident tax", "Detroit non-resident allocation", "days worked in Detroit", "Form 5121", "Form 5123 estimated", "Uniform City Income Tax Act", "MCL 141.501".
 jurisdiction: US-MI
 tax_year: 2025
+last_updated: 2026-05-28
+verified_by: pending
 tier: 2
-last_updated: 2026-07-06
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# mi-detroit-individual-return
+# MI Detroit Individual Return
 
 ## Detroit Individual City Income Tax Skill — Residents, Non-Residents, Part-Year
 
@@ -459,3 +461,21 @@ To speak with one of the licensed accountants who verifies skills for your juris
 **→ [Book a call](https://calendly.com/openaccountants-info/30min)**
 
 We'll route you to the named verifier covering your country or state. You can also see the full list of verified accountants at [openaccountants.com/network](https://openaccountants.com/network).
+
+<!-- openaccountants-cta-block -->
+
+---
+
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

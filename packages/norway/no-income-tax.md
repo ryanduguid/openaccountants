@@ -1,23 +1,25 @@
 ---
 name: no-income-tax
 description: >
-  Use this skill whenever asked about Norwegian income tax for self-employed individuals (enkeltpersonforetak). Trigger on phrases like "Norwegian tax", "trinnskatt", "alminnelig inntekt", "personfradrag", "skattemelding", "RF-1175", "naeringsoppgave", "enkeltpersonforetak", "self-employed tax Norway", or any question about filing or computing income tax for a Norwegian self-employed client. Covers alminnelig inntekt (22%), trinnskatt (5 brackets), personfradrag, naeringsinntekt computation, deductible expenses, filing deadlines, and penalties. ALWAYS read this skill before touching any Norwegian income tax work.
 version: 2.0
-jurisdiction: "NO"
+jurisdiction: NO
 tax_year: 2025
+last_updated: 2026-04-13
+verified_by: pending
+depends_on: - income-tax-workflow-base
 category: international
-depends_on:
-  - income-tax-workflow-base
+tier: 2
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Norway Income Tax -- Self-Employed Skill v2.0
-
----
+# NO Income Tax
 
 ## Section 1 -- Quick Reference
 
+**Quick Reference**
+
 | Field | Value |
-|---|---|
+| --- | --- |
 | Country | Norway (Kongeriket Norge) |
 | Tax | Alminnelig inntekt (22%) + Trinnskatt (5 brackets) + Trygdeavgift (11.0% for self-employed) |
 | Currency | NOK only |
@@ -34,52 +36,60 @@ depends_on:
 
 ### Alminnelig Inntekt (General Income Tax)
 
+**Alminnelig Inntekt (General Income Tax)**
+
 | Item | Value |
-|---|---|
+| --- | --- |
 | Rate | 22% flat |
 | Applied to | Net income after all deductions minus personfradrag |
 | Personfradrag | NOK 108,550 (class 1, 2025) |
 
 ### Trinnskatt Brackets (2025)
 
+**Trinnskatt Brackets (2025)**
+
 | Trinn | Income Range (NOK) | Rate |
-|---|---|---|
+| --- | --- | --- |
 | 1 | 217,401 -- 306,050 | 1.7% |
 | 2 | 306,051 -- 697,150 | 4.0% |
 | 3 | 697,151 -- 942,400 | 13.7% |
 | 4 | 942,401 -- 1,410,750 | 16.7% |
 | 5 | Above 1,410,750 | 17.7% |
 
-Trinnskatt applies to personinntekt (NOT alminnelig inntekt).
+- **Trinnskatt application** — Trinnskatt applies to personinntekt (NOT alminnelig inntekt).
 
 ### Trygdeavgift (National Insurance)
 
+**Trygdeavgift (National Insurance)**
+
 | Income Type | Rate |
-|---|---|
+| --- | --- |
 | Naeringsinntekt (self-employment) | 11.0% |
 | Lonnsinntekt (employment) | 7.9% |
 | Pensjonsinntekt (pension) | 5.1% |
 
-Lower threshold: ~NOK 69,650.
+- **Trygdeavgift lower threshold** — ~NOK 69,650 NOK
 
 ### Key Form
 
+**Key Form**
+
 | Form | Who | Threshold |
-|---|---|---|
+| --- | --- | --- |
 | RF-1175 Naeringsoppgave 1 | All enkeltpersonforetak | Gross revenue > NOK 50,000 |
 | Skattemelding | All taxpayers | Filed via Altinn by 30 April |
 
 ### Conservative Defaults
 
+**Conservative Defaults**
+
 | Ambiguity | Default |
-|---|---|
+| --- | --- |
 | Unknown business form | Enkeltpersonforetak |
 | Unknown business-use % | 0% deduction |
 | Unknown expense category | Not deductible |
 | Unknown asset useful life | Use saldogruppe rates |
 | Unknown minstefradrag claim | NOT applicable to naeringsinntekt |
-
----
 
 ## Section 2 -- Required Inputs and Refusal Catalogue
 
@@ -95,15 +105,10 @@ Lower threshold: ~NOK 69,650.
 
 ### Refusal Catalogue
 
-**R-NO-1 -- Companies (AS, ASA).** "This skill covers enkeltpersonforetak only. Aksjeselskap files separate return. Out of scope."
-
-**R-NO-2 -- International income / permanent establishment.** "Cross-border income requires specialist analysis. Escalate."
-
-**R-NO-3 -- Complex restructuring.** "Business restructuring (omdanning) requires specialist advice. Escalate."
-
-**R-NO-4 -- Petroleum tax.** "Petroleum taxation is out of scope."
-
----
+- **R-NO-1** — Companies (AS, ASA). "This skill covers enkeltpersonforetak only. Aksjeselskap files separate return. Out of scope."
+- **R-NO-2** — International income / permanent establishment. "Cross-border income requires specialist analysis. Escalate."
+- **R-NO-3** — Complex restructuring. "Business restructuring (omdanning) requires specialist advice. Escalate."
+- **R-NO-4** — Petroleum tax. "Petroleum taxation is out of scope."
 
 ## Section 3 -- Transaction Pattern Library
 
@@ -111,8 +116,10 @@ This is the deterministic pre-classifier. When a bank statement transaction matc
 
 ### 3.1 Income Patterns (Credits)
 
+**3.1 Income Patterns (Credits)**
+
 | Pattern | Tax Line | Treatment | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | OVERF. [client], BETALING, HONORAR, FAKTURA | Driftsinntekter | Business income | If MVA-registered, extract net (excl. 25% MVA) |
 | STRIPE PAYOUT, PAYPAL PAYOUT | Driftsinntekter | Business income | Platform payout |
 | UPWORK, FIVERR, TOPTAL | Driftsinntekter | Business income | Freelance platform |
@@ -124,42 +131,50 @@ This is the deterministic pre-classifier. When a bank statement transaction matc
 
 ### 3.2 Expense Patterns (Debits) -- Fully Deductible
 
+**3.2 Expense Patterns (Debits) -- Fully Deductible**
+
 | Pattern | Category | Treatment | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | KONTORLEIE, HUSLEIE KONTOR | Lokalekostnader | Fully deductible | Dedicated premises |
 | YRKESSKADEFORSIKRING, ANSVARSFORSIKRING | Forsikring | Fully deductible | Professional insurance |
-| REVISOR, REGNSKAPSFORER, BOKHOLDER | Revisjonskostnader | Fully deductible | |
+| REVISOR, REGNSKAPSFORER, BOKHOLDER | Revisjonskostnader | Fully deductible |  |
 | ADVOKAT (business) | Advokatkostnader | Fully deductible | Business-related |
-| KONTORREKVISITA, KONTORMATERIELL | Kontorkostnader | Fully deductible | |
-| REKLAME, MARKEDSFORING, GOOGLE ADS | Markedsforingskostnader | Fully deductible | |
+| KONTORREKVISITA, KONTORMATERIELL | Kontorkostnader | Fully deductible |  |
+| REKLAME, MARKEDSFORING, GOOGLE ADS | Markedsforingskostnader | Fully deductible |  |
 | FAGLIG OPPDATERING, KURS, SEMINAR | Utdanningskostnader | Fully deductible | Current profession ONLY |
-| BRANSJEFORENING, FAGFORENING | Kontingenter | Fully deductible | |
+| BRANSJEFORENING, FAGFORENING | Kontingenter | Fully deductible |  |
 | BANKGEBYR, KONTOGEBYR | Bankkostnader | Fully deductible | Business account |
-| STRIPE FEE, PAYPAL FEE | Transaksjonskostnader | Fully deductible | |
-| SOFTWARE, ABONNEMENT, LISENS | IT-kostnader | Fully deductible | |
-| PORTO, POSTEN | Portokostnader | Fully deductible | |
+| STRIPE FEE, PAYPAL FEE | Transaksjonskostnader | Fully deductible |  |
+| SOFTWARE, ABONNEMENT, LISENS | IT-kostnader | Fully deductible |  |
+| PORTO, POSTEN | Portokostnader | Fully deductible |  |
 
 ### 3.3 Expense Patterns -- Travel
 
+**3.3 Expense Patterns -- Travel**
+
 | Pattern | Category | Treatment | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | FLY, SAS, NORWEGIAN, WIDEROE | Reisekostnader | Fully deductible | Business travel |
 | HOTELL, BOOKING.COM | Reisekostnader | Fully deductible | Business travel |
 | NSB, VY, RUTER | Reisekostnader | Fully deductible | Business travel |
 | TAXI, UBER, BOLT | Reisekostnader | Fully deductible | Business purpose |
 | BENSIN, DIESEL, CIRCLE K, ESSO, SHELL | Bilkostnader | T2 -- business km only | Standard NOK 3.50/km or actual |
-| BOMPENGER, PARKERING | Bilkostnader | T2 -- business km only | |
+| BOMPENGER, PARKERING | Bilkostnader | T2 -- business km only |  |
 
 ### 3.4 Expense Patterns -- Partially Deductible
 
+**3.4 Expense Patterns -- Partially Deductible**
+
 | Pattern | Deductibility | Treatment | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | REPRESENTASJON, KUNDEMIDDAG | Up to NOK 559/person/event | Limited | Must document business purpose |
 
 ### 3.5 Expense Patterns -- NOT Deductible
 
+**3.5 Expense Patterns -- NOT Deductible**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | PRIVAT, DAGLIGVARER, KIWI, REMA, COOP | NOT deductible | Personal living costs |
 | BOT, FORELEGG, GEBYR (penalty) | NOT deductible | Fines |
 | SKATT, FORSKUDDSSKATT, RESTSKATT | NOT deductible | Income tax |
@@ -169,21 +184,25 @@ This is the deterministic pre-classifier. When a bank statement transaction matc
 
 ### 3.6 Capital Items (Saldogrupper)
 
+**3.6 Capital Items (Saldogrupper)**
+
 | Pattern | Saldogruppe | Max Rate | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | KONTORMASKIN, PC, LAPTOP, SKRIVER | a (office machines) | 30% | Declining balance pool |
-| BIL, PERSONBIL (business) | d (passenger cars) | 20% | |
-| VAREBIL, LASTEBIL | c (trucks/vans) | 24% | |
-| INVENTAR, MOBLER | d (fixtures) | 20% | |
-| BYGNING (commercial) | i (office buildings) | 2% | |
-| BYGNING (hotel, industrial) | h (commercial) | 4% | |
+| BIL, PERSONBIL (business) | d (passenger cars) | 20% |  |
+| VAREBIL, LASTEBIL | c (trucks/vans) | 24% |  |
+| INVENTAR, MOBLER | d (fixtures) | 20% |  |
+| BYGNING (commercial) | i (office buildings) | 2% |  |
+| BYGNING (hotel, industrial) | h (commercial) | 4% |  |
 | Low-value (under NOK 15,000) | Immediate | 100% | Direct expense |
 | Short-life (under 3 years) | Immediate | 100% | Regardless of cost |
 
 ### 3.7 Exclusions
 
+**3.7 Exclusions**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | INTERN OVERF., EGNE KONTI | EXCLUDE | Own-account transfer |
 | LAN, AVDRAG, NEDBETALING | EXCLUDE | Loan principal |
 | RENTER LAN (business) | Deductible | Business loan interest |
@@ -192,16 +211,16 @@ This is the deterministic pre-classifier. When a bank statement transaction matc
 
 ### 3.8 Norwegian Banks -- Statement Format Reference
 
+**3.8 Norwegian Banks -- Statement Format Reference**
+
 | Bank | Format | Key Fields | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | DNB | CSV, PDF | Dato, Forklaring/Tekst, Inn/Ut, Saldo | Most common; DNB Nettbank export |
-| Nordea NO | CSV, PDF | Bokforingsdato, Tekst, Belop | |
+| Nordea NO | CSV, PDF | Bokforingsdato, Tekst, Belop |  |
 | SpareBank 1 | CSV, PDF | Dato, Beskrivelse, Belop | Regional SpareBank 1 banks |
 | Handelsbanken NO | CSV, PDF | Datum, Text, Belopp | Swedish parent format |
 | Sbanken | CSV | Dato, Tekst, Belop | Clean CSV |
 | Revolut, Wise | CSV | Date, Counterparty, Amount | Multi-currency |
-
----
 
 ## Section 4 -- Worked Examples
 
@@ -265,34 +284,34 @@ Underskudd (losses) carry forward with no time limit. Reduces alminnelig inntekt
 
 **Classification:** Alminnelig inntekt base = NOK 400,000 - NOK 150,000 = NOK 250,000. Trinnskatt/trygdeavgift on NOK 400,000.
 
----
-
 ## Section 5 -- Tier 1 Rules (When Data Is Clear)
 
 ### 5.1 Naeringsinntekt Computation
 
-Gross revenue minus cost of sales minus operating expenses minus depreciation = naeringsinntekt. Skjermingsfradrag then reduces personinntekt (T2).
+- **Naeringsinntekt computation** — Gross revenue minus cost of sales minus operating expenses minus depreciation = naeringsinntekt. Skjermingsfradrag then reduces personinntekt (T2).
 
 ### 5.2 Alminnelig Inntekt
 
-22% flat on net income (all sources minus all deductions minus personfradrag NOK 108,550). Applies to both personal and capital income.
+- **Alminnelig inntekt rule** — 22% flat on net income (all sources minus all deductions minus personfradrag NOK 108,550). Applies to both personal and capital income.
 
 ### 5.3 Trinnskatt
 
-Applies to personinntekt (gross personal income less skjermingsfradrag), NOT alminnelig inntekt. Cumulative brackets.
+- **Trinnskatt rule** — Applies to personinntekt (gross personal income less skjermingsfradrag), NOT alminnelig inntekt. Cumulative brackets.
 
 ### 5.4 Trygdeavgift
 
-11.0% on personinntekt from naeringsinntekt. Lower threshold ~NOK 69,650.
+- **Trygdeavgift rule** — 11.0% on personinntekt from naeringsinntekt. Lower threshold ~NOK 69,650.
 
 ### 5.5 Minstefradrag -- NOT for Self-Employed
 
-Minstefradrag applies ONLY to lonnsinntekt. Self-employed must deduct actual documented expenses.
+- **Minstefradrag rule** — Minstefradrag applies ONLY to lonnsinntekt. Self-employed must deduct actual documented expenses.
 
 ### 5.6 Depreciation (Saldogrupper)
 
+**5.6 Depreciation (Saldogrupper)**
+
 | Group | Assets | Max Rate |
-|---|---|---|
+| --- | --- | --- |
 | a | Office machines, equipment | 30% |
 | b | Goodwill | 20% |
 | c | Trucks, buses, vans | 24% |
@@ -303,12 +322,14 @@ Minstefradrag applies ONLY to lonnsinntekt. Self-employed must deduct actual doc
 | h | Commercial buildings | 4% |
 | i | Office buildings | 2% |
 
-Declining balance on pool. Low-value under NOK 15,000 or life under 3 years: immediate.
+- **Depreciation method** — Declining balance on pool. Low-value under NOK 15,000 or life under 3 years: immediate.
 
 ### 5.7 Non-Deductible
 
+**5.7 Non-Deductible**
+
 | Expense | Reason |
-|---|---|
+| --- | --- |
 | Private living expenses | Not connected to income |
 | Fines | Public policy |
 | Income tax, trygdeavgift | Not deductible |
@@ -318,12 +339,14 @@ Declining balance on pool. Low-value under NOK 15,000 or life under 3 years: imm
 
 ### 5.8 Forskuddsskatt (Preliminary Tax)
 
-4 quarterly instalments: 15 March, 15 June, 15 September, 15 December. Based on expected income. Adjustable via skatteetaten.no.
+- **Forskuddsskatt schedule** — 4 quarterly instalments: 15 March, 15 June, 15 September, 15 December. Based on expected income. Adjustable via skatteetaten.no.
 
 ### 5.9 Filing Deadlines and Penalties
 
+**5.9 Filing Deadlines and Penalties**
+
 | Item | Detail |
-|---|---|
+| --- | --- |
 | Skattemelding deadline | 30 April |
 | RF-1175 | Filed with skattemelding |
 | Late filing | Tvangsmulkt NOK 641/day (max ~NOK 64,100) |
@@ -333,8 +356,10 @@ Declining balance on pool. Low-value under NOK 15,000 or life under 3 years: imm
 
 ### 5.10 MVA Interaction
 
+**5.10 MVA Interaction**
+
 | Scenario | Income Tax Treatment |
-|---|---|
+| --- | --- |
 | MVA collected (registered) | NOT income -- exclude from revenue |
 | Input MVA recovered | NOT expense -- exclude |
 | Non-deductible MVA | IS expense |
@@ -342,42 +367,33 @@ Declining balance on pool. Low-value under NOK 15,000 or life under 3 years: imm
 
 ### 5.11 RF-1175 Threshold
 
-Gross revenue over NOK 50,000: must file naeringsoppgave. At or below: exempt.
+- **RF-1175 threshold** — Gross revenue over NOK 50,000: must file naeringsoppgave. At or below: exempt. NOK
 
 ### 5.12 Loss Carry-Forward
 
-Underskudd carries forward with no time limit. Reduces alminnelig inntekt but NOT personinntekt.
-
----
+- **Loss carry-forward rule** — Underskudd carries forward with no time limit. Reduces alminnelig inntekt but NOT personinntekt.
 
 ## Section 6 -- Tier 2 Catalogue (Reviewer Judgement Required)
 
 ### 6.1 Skjermingsfradrag (Shielding Deduction)
 
-Shields risk-free return on business capital from trinnskatt/trygdeavgift. Net positive business assets x skjermingsrente. Reduces personinntekt. Flag for reviewer -- requires accurate balance sheet.
+- **Skjermingsfradrag** — Shields risk-free return on business capital from trinnskatt/trygdeavgift. Net positive business assets x skjermingsrente. Reduces personinntekt. Flag for reviewer -- requires accurate balance sheet.
 
 ### 6.2 Home Office
 
-- Dedicated room exclusively for business: proportional actual costs
-- Standard deduction: NOK 2,050/year (2025) as alternative
-- Dual-use room: standard deduction only
-- Flag for reviewer
+- **Home office** — - Dedicated room exclusively for business: proportional actual costs - Standard deduction: NOK 2,050/year (2025) as alternative - Dual-use room: standard deduction only - Flag for reviewer
 
 ### 6.3 Vehicle Business Use
 
-- Standard rate: NOK 3.50/km for business trips
-- Or actual costs with logbook
-- Flag for reviewer
+- **Vehicle business use** — - Standard rate: NOK 3.50/km for business trips - Or actual costs with logbook - Flag for reviewer
 
 ### 6.4 Phone / Internet
 
-Business portion only. Default 0%.
+- **Phone/Internet** — Business portion only. Default 0%.
 
 ### 6.5 First Year Forskuddsskatt
 
-New self-employed must estimate and register via skatteetaten.no. If not registered, SKAT sets at NOK 0 -- underpayment interest applies.
-
----
+- **First year forskuddsskatt** — New self-employed must estimate and register via skatteetaten.no. If not registered, SKAT sets at NOK 0 -- underpayment interest applies.
 
 ## Section 7 -- Excel Working Paper Template
 
@@ -430,16 +446,16 @@ REVIEWER FLAGS:
   [ ] Loss carry-forward correctly applied?
 ```
 
----
-
 ## Section 8 -- Bank Statement Reading Guide
 
 ### Norwegian Bank Statement Formats
 
+**Norwegian Bank Statement Formats**
+
 | Bank | Format | Key Fields | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | DNB | CSV, PDF | Dato, Forklaring, Inn, Ut, Saldo | DNB Nettbank CSV export |
-| Nordea NO | CSV, PDF | Bokføringsdato, Tekst, Beløp | |
+| Nordea NO | CSV, PDF | Bokføringsdato, Tekst, Beløp |  |
 | SpareBank 1 | CSV, PDF | Dato, Beskrivelse, Beløp | Regional banks (SR-Bank, SMN, etc.) |
 | Handelsbanken | CSV, PDF | Datum, Text, Belopp | Swedish parent format |
 | Sbanken | CSV | Dato, Tekst, Beløp | Clean CSV export |
@@ -447,8 +463,10 @@ REVIEWER FLAGS:
 
 ### Key Norwegian Banking Terms
 
+**Key Norwegian Banking Terms**
+
 | Term | English | Hint |
-|---|---|---|
+| --- | --- | --- |
 | Innbetaling | Deposit/credit | Potential income |
 | Utbetaling | Withdrawal/debit | Potential expense |
 | Overføring | Transfer | Check direction |
@@ -457,8 +475,6 @@ REVIEWER FLAGS:
 | Kontantuttak | Cash withdrawal | Ask purpose |
 | Gebyr | Fee/charge | Bank charge |
 | Nettgiro | Online payment | Expense |
-
----
 
 ## Section 9 -- Onboarding Fallback
 
@@ -476,14 +492,14 @@ ONBOARDING QUESTIONS -- NORWAY INCOME TAX
 10. Prior year skattemelding available?
 ```
 
----
-
 ## Section 10 -- Reference Material
 
 ### Key Legislation
 
+**Key Legislation**
+
 | Topic | Reference |
-|---|---|
+| --- | --- |
 | General income tax | Skatteloven |
 | Alminnelig inntekt | Skatteloven ss 15-2 |
 | Trinnskatt | Stortingsvedtak om skatt |
@@ -522,8 +538,6 @@ Expected: Saldogruppe a, 30% = NOK 7,500.
 Input: Prior loss NOK 150,000, current NOK 400,000.
 Expected: Alminnelig base NOK 250,000. Trinnskatt/trygdeavgift on NOK 400,000.
 
----
-
 ## PROHIBITIONS
 
 - NEVER apply minstefradrag to naeringsinntekt
@@ -536,17 +550,11 @@ Expected: Alminnelig base NOK 250,000. Trinnskatt/trygdeavgift on NOK 400,000.
 - NEVER ignore personfradrag NOK 108,550
 - NEVER present calculations as definitive
 
----
-
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a statsautorisert revisor, registrert revisor, or equivalent licensed practitioner in Norway) before filing or acting upon.
 
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
-
----
-
-<!-- openaccountants-cta-block -->
+The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
 
 ## Talk to a verified accountant
 
@@ -561,16 +569,22 @@ a formal engagement letter** — book a free 30-minute call:
 
 We'll route you to the named verifier covering your country or state. You can
 also see the full list of verified accountants at
-[openaccountants.com/network](https://www.openaccountants.com/network).
+[openaccountants.com/network](https://openaccountants.com/network).
 
-<!-- openaccountants-mcp-cta -->
+<!-- openaccountants-cta-block -->
 
-## The accountant-verified version lives in the connector
+---
 
-This file is the open, **research-grade draft**. The **accountant-verified**
-version of this skill is **not published to GitHub** — it is delivered free
-through the OpenAccountants MCP connector, where your AI agent loads the
-verified rules together with the name of the accountant who signed them off.
+## Talk to a verified accountant
 
-**→ Install the free connector:** <https://www.openaccountants.com/connect>
-**MCP endpoint:** `https://www.openaccountants.com/api/mcp`
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

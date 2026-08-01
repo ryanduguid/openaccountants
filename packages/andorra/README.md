@@ -7,7 +7,14 @@
 
 1. `foundation.md`
 2. `intake.md`
-3. `andorra-igi.md`
+3. `ad-company-formation.md`
+4. `ad-corporate-income-tax.md`
+5. `ad-income-tax.md`
+6. `ad-payroll-social.md`
+7. `ad-tax-overview.md`
+8. `andorra-igi.md`
+9. `payroll-workflow-base.md`
+10. `company-formation-workflow-base.md`
 
 ## How to use
 

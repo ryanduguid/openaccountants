@@ -7,7 +7,11 @@
 
 1. `foundation.md`
 2. `intake.md`
-3. `algeria-vat.md`
+3. `algeria-income-tax.md`
+4. `algeria-payroll.md`
+5. `algeria-social-contributions.md`
+6. `algeria-vat.md`
+7. `payroll-workflow-base.md`
 
 ## How to use
 

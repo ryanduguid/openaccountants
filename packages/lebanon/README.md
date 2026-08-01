@@ -7,7 +7,14 @@
 
 1. `foundation.md`
 2. `intake.md`
-3. `lebanon-vat.md`
+3. `lb-company-formation.md`
+4. `lb-corporate-income-tax.md`
+5. `lb-income-tax.md`
+6. `lb-payroll-social.md`
+7. `lb-tax-overview.md`
+8. `lebanon-vat.md`
+9. `payroll-workflow-base.md`
+10. `company-formation-workflow-base.md`
 
 ## How to use
 

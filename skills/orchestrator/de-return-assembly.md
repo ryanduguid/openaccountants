@@ -3,13 +3,14 @@ name: de-return-assembly
 description: Final orchestrator skill that assembles the complete German filing package for Germany-resident self-employed individuals (Freiberufler and Gewerbetreibende). Consumes outputs from all Germany content skills (germany-vat-return for UStVA, de-income-tax for ESt + EÜR, de-social-contributions for KV/PV/RV, de-trade-tax for GewSt, de-estimated-tax for Vorauszahlungen) to produce a single unified reviewer package containing every worksheet, every form, every brief section, all cross-skill reconciliations, and the final action list with payment instructions, filing instructions, and next-year planning. This is the capstone skill that runs last and produces the final deliverable. MUST be loaded alongside all Germany content skills listed above. Germany full-year residents only. Self-employed individuals and sole proprietors only.
 version: 0.1
 jurisdiction: DE
+tax_year: 2025
+last_updated: 2026-04-13
+verified_by: pending
 tier: 2
-last_updated: 2026-06-12
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Germany Return Assembly Skill v0.1
-
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+# DE Return Assembly
 
 ## CRITICAL EXECUTION DIRECTIVE -- READ FIRST
 
@@ -29,69 +30,36 @@ Specifically:
 
 **Failure mode to avoid:** The skill halts mid-execution and asks the user a meta-question about workflow pacing. If you feel the urge to ask "how should I proceed," the correct action is to pick the most defensible path and proceed, flagging the decision in the reviewer brief so the reviewer can challenge it.
 
----
-
 ## What this file is
 
 The final capstone skill for Germany self-employed returns. Every Germany content skill feeds into this one. The output is the complete reviewer package that a Steuerberater can review, sign off on, and deliver to the client along with filing instructions.
 
 This skill coordinates execution of the content skills, verifies cross-skill consistency, and assembles the final deliverable.
 
----
-
 ## Section 1 -- Scope
 
-Produces the complete German filing package for:
-- Full-year Germany residents (unbeschränkt steuerpflichtig)
-- Self-employed individuals: Freiberufler (§18 EStG) and Gewerbetreibende (§15 EStG)
-- Tax year 2025
-- Filing UStVA / Umsatzsteuererklärung, ESt with Anlage EÜR + Anlage S/G + Anlage Vorsorgeaufwand, Gewerbesteuererklärung (if applicable), Vorauszahlungen schedule
-
----
+- **Scope of package** — Produces the complete German filing package for: Full-year Germany residents (unbeschränkt steuerpflichtig); Self-employed individuals: Freiberufler (§18 EStG) and Gewerbetreibende (§15 EStG); Tax year 2025; Filing UStVA / Umsatzsteuererklärung, ESt with Anlage EÜR + Anlage S/G + Anlage Vorsorgeaufwand, Gewerbesteuererklärung (if applicable), Vorauszahlungen schedule  _(§18 EStG; §15 EStG)_
 
 ## Section 2 -- Execution order and dependency chain
 
 The skill enforces the following execution order:
 
-1. **`germany-vat-return`** -- UStVA (Umsatzsteuer-Voranmeldung / Umsatzsteuererklärung)
-   - Runs first because VAT turnover figures feed into the EÜR
-   - For Regelbesteuerung: prepare outstanding monthly/quarterly UStVA; prepare annual Umsatzsteuererklärung
-   - For Kleinunternehmer: no UStVA required; verify turnover stays under EUR 22,000 prior year / EUR 50,000 current year thresholds
-   - Output: UStVA line values, Vorsteuer recovered/blocked, Umsatz (netto), Sondervorauszahlung reconciliation
+0. **UStVA step** — Runs first because VAT turnover figures feed into the EÜR. For Regelbesteuerung: prepare outstanding monthly/quarterly UStVA; prepare annual Umsatzsteuererklärung. For Kleinunternehmer: no UStVA required; verify turnover stays under EUR 22,000 prior year / EUR 50,000 current year thresholds. Output: UStVA line values, Vorsteuer recovered/blocked, Umsatz (netto), Sondervorauszahlung reconciliation
+0. **ESt + EÜR step** — Depends on VAT output: Betriebseinnahmen in EÜR must use netto turnover for Regelbesteuerte (USt is durchlaufender Posten). Depends on VAT output: blocked Vorsteuer becomes a Betriebsausgabe in EÜR. Includes: Anlage EÜR (Zeilen 11-90), Anlage S (Freiberufler) or Anlage G (Gewerbetreibender), Anlage Vorsorgeaufwand, AfA-Tabelle. Output: EÜR Gewinn, zu versteuerndes Einkommen, festzusetzende ESt, Solidaritätszuschlag, Kirchensteuer
+0. **KV/PV/RV step** — Depends on EÜR: Gewinn determines KV/PV Beitragsbemessungsgrundlage for GKV (for following year's Beiträge). KV/PV premiums paid during 2025 enter Anlage Vorsorgeaufwand as Sonderausgaben. Output: annual KV/PV/RV amounts, Basisabsicherung for Sonderausgaben, any Nachzahlung/Erstattung from Einkommensanpassung
+0. **GewSt step** — Only if Gewerbetreibender. Depends on EÜR: Gewinn aus Gewerbebetrieb is the starting point for Gewerbeertrag. Status check: de-trade-tax is currently a Q4 stub. If the stub has substantive computation content, use it. If it is still a placeholder, compute Gewerbesteuer using: Gewerbeertrag = EÜR Gewinn + Hinzurechnungen (§8 GewStG) - Kürzungen (§9 GewStG), Freibetrag EUR 24,500, Steuermesszahl 3.5%, then apply Hebesatz. Flag in the reviewer brief that the dedicated skill was not available. GewSt Anrechnung on ESt: §35 EStG allows credit of 4.0x Steuermessbetrag against ESt (capped at actual GewSt paid). If Freiberufler: skip entirely. Freiberufler are not subject to Gewerbesteuer. Output: Gewerbeertrag, Steuermessbetrag, GewSt payable, §35 EStG Anrechnung amount
+0. **Vorauszahlungen step** — Depends on ESt: Vorauszahlungen for next year are based on current year's festgesetzte ESt. Status check: de-estimated-tax is currently a Q4 stub. If the stub has substantive computation content, use it. If it is still a placeholder, compute Vorauszahlungen using: quarterly ESt Vorauszahlung = festgesetzte ESt / 4 (adjusted for Anrechnungsbeträge), quarterly SolZ = festgesetzter SolZ / 4, quarterly KiSt = festgesetzte KiSt / 4. Due dates: 10 Mar, 10 Jun, 10 Sep, 10 Dec. Finanzamt may adjust via Vorauszahlungsbescheid. Flag in the reviewer brief that the dedicated skill was not available. Output: four quarterly instalment amounts (ESt + SolZ + KiSt) and dates for 2026
 
-2. **`de-income-tax`** -- ESt + EÜR (Einkommensteuererklärung with Anlage EÜR)
-   - Depends on VAT output: Betriebseinnahmen in EÜR must use netto turnover for Regelbesteuerte (USt is durchlaufender Posten)
-   - Depends on VAT output: blocked Vorsteuer becomes a Betriebsausgabe in EÜR
-   - Includes: Anlage EÜR (Zeilen 11-90), Anlage S (Freiberufler) or Anlage G (Gewerbetreibender), Anlage Vorsorgeaufwand, AfA-Tabelle
-   - Output: EÜR Gewinn, zu versteuerndes Einkommen, festzusetzende ESt, Solidaritätszuschlag, Kirchensteuer
-
-3. **`de-social-contributions`** -- KV/PV/RV (Kranken-, Pflege-, Rentenversicherung)
-   - Depends on EÜR: Gewinn determines KV/PV Beitragsbemessungsgrundlage for GKV (for following year's Beiträge)
-   - KV/PV premiums paid during 2025 enter Anlage Vorsorgeaufwand as Sonderausgaben
-   - Output: annual KV/PV/RV amounts, Basisabsicherung for Sonderausgaben, any Nachzahlung/Erstattung from Einkommensanpassung
-
-4. **`de-trade-tax`** -- Gewerbesteuer (GewSt) -- only if Gewerbetreibender
-   - Depends on EÜR: Gewinn aus Gewerbebetrieb is the starting point for Gewerbeertrag
-   - **Status check:** de-trade-tax is currently a Q4 stub. If the stub has substantive computation content, use it. If it is still a placeholder, compute Gewerbesteuer using: Gewerbeertrag = EÜR Gewinn + Hinzurechnungen (§8 GewStG) - Kürzungen (§9 GewStG), Freibetrag EUR 24,500, Steuermesszahl 3.5%, then apply Hebesatz. Flag in the reviewer brief that the dedicated skill was not available.
-   - GewSt Anrechnung on ESt: §35 EStG allows credit of 4.0x Steuermessbetrag against ESt (capped at actual GewSt paid)
-   - If Freiberufler: skip entirely. Freiberufler are not subject to Gewerbesteuer.
-   - Output: Gewerbeertrag, Steuermessbetrag, GewSt payable, §35 EStG Anrechnung amount
-
-5. **`de-estimated-tax`** -- Vorauszahlungen (estimated tax payments for 2026)
-   - Depends on ESt: Vorauszahlungen for next year are based on current year's festgesetzte ESt
-   - **Status check:** de-estimated-tax is currently a Q4 stub. If the stub has substantive computation content, use it. If it is still a placeholder, compute Vorauszahlungen using: quarterly ESt Vorauszahlung = festgesetzte ESt / 4 (adjusted for Anrechnungsbeträge), quarterly SolZ = festgesetzter SolZ / 4, quarterly KiSt = festgesetzte KiSt / 4. Due dates: 10 Mar, 10 Jun, 10 Sep, 10 Dec. Finanzamt may adjust via Vorauszahlungsbescheid. Flag in the reviewer brief that the dedicated skill was not available.
-   - Output: four quarterly instalment amounts (ESt + SolZ + KiSt) and dates for 2026
-
-If any upstream content skill fails to produce validated output, the assembly skill notes the failure in the reviewer brief and continues with available data rather than halting entirely.
-
----
+- **Upstream failure handling** — If any upstream content skill fails to produce validated output, the assembly skill notes the failure in the reviewer brief and continues with available data rather than halting entirely.  _(Section 2)_
 
 ## Section 3 -- Cross-skill reconciliation
 
 ### Cross-check 1: UStVA turnover = EÜR Betriebseinnahmen (net of USt)
 
+**Cross-check 1 table**  _(Section 3, Cross-check 1)_
+
 | VAT Output | EÜR Input | Rule |
-|-----------|-----------|------|
+| --- | --- | --- |
 | UStVA total Umsatz (netto) | EÜR Zeile 11 Betriebseinnahmen | Must match within EUR 1 |
 | Regelbesteuerung: sum of Umsätze at 19% + 7% (netto) | EÜR Betriebseinnahmen (excl. USt as durchlaufender Posten) | USt collected is NOT Betriebseinnahmen in EÜR |
 | Kleinunternehmer: declared Umsatz | EÜR Betriebseinnahmen (brutto = netto, no USt separation) | Turnover is gross |
@@ -100,8 +68,10 @@ If any upstream content skill fails to produce validated output, the assembly sk
 
 ### Cross-check 2: ESt net income feeds Sozialversicherung Beitragsbemessungsgrundlage
 
+**Cross-check 2 table**  _(Section 3, Cross-check 2)_
+
 | SV Input | Source | Rule |
-|-----------|--------|------|
+| --- | --- | --- |
 | Gewinn aus selbständiger Arbeit/Gewerbebetrieb | EÜR Zeile 90 | GKV Beitragsbemessungsgrundlage for Einkommensanpassung |
 | Current year KV/PV premiums paid | Beitragsbescheinigung / bank statement | Enter Anlage Vorsorgeaufwand as Sonderausgaben |
 
@@ -109,8 +79,10 @@ If any upstream content skill fails to produce validated output, the assembly sk
 
 ### Cross-check 3: GewSt Anrechnung reduces ESt (§35 EStG)
 
+**Cross-check 3 table**  _(Section 3, Cross-check 3)_
+
 | GewSt Output | ESt Input | Rule |
-|-------------|-----------|------|
+| --- | --- | --- |
 | Steuermessbetrag (3.5% of Gewerbeertrag above Freibetrag) | ESt Anrechnung: 4.0x Steuermessbetrag | Capped at actual GewSt paid AND at ESt on gewerbliche Einkünfte |
 | GewSt payable (Steuermessbetrag x Hebesatz) | Not directly in ESt, but cap for §35 credit | If Hebesatz > 400%, excess GewSt is non-creditable cost |
 
@@ -120,8 +92,10 @@ If any upstream content skill fails to produce validated output, the assembly sk
 
 ### Cross-check 4: Vorauszahlungen based on prior-year ESt
 
+**Cross-check 4 table**  _(Section 3, Cross-check 4)_
+
 | Vorauszahlung Input | Source | Rule |
-|--------------------|--------|------|
+| --- | --- | --- |
 | Prior year festgesetzte ESt | Prior year Steuerbescheid | Drives Vorauszahlungsbescheid amounts |
 | Payments made during 2025 | Bank statement / Finanzamt receipts | Must reconcile to ESt-Erklärung Vorauszahlungen line |
 | 2026 schedule | Current year festgesetzte ESt (after all credits) | Drives next year's quarterly amounts |
@@ -130,16 +104,16 @@ If any upstream content skill fails to produce validated output, the assembly sk
 
 ### Cross-check 5: EÜR Vorsteuer consistency with UStVA
 
+**Cross-check 5 table**  _(Section 3, Cross-check 5)_
+
 | Item | VAT Treatment | EÜR Treatment |
-|------|--------------|---------------|
+| --- | --- | --- |
 | Reclaimable Vorsteuer (Regelbesteuerung) | Claimed in UStVA | NOT a Betriebsausgabe (netto amount only in EÜR) |
 | Blocked Vorsteuer (Regelbesteuerung, e.g., §15 Abs. 1a UStG) | Not claimed | IS a Betriebsausgabe (added to cost in EÜR) |
 | All USt paid (Kleinunternehmer) | No recovery | IS a Betriebsausgabe (gross amount is cost in EÜR) |
 | USt on Eigenverbrauch (private Kfz-Nutzung) | Output USt in UStVA | Corresponding private use is Entnahme in EÜR |
 
 **If inconsistency:** An expense claimed netto in the EÜR while also not claimed in the UStVA means the Vorsteuer is lost. Flag for reviewer.
-
----
 
 ## Section 4 -- Final reviewer package contents
 
@@ -304,53 +278,30 @@ If any upstream content skill fails to produce validated output, the assembly sk
 6. Report Einkommensänderung to Krankenkasse if GKV
 ```
 
----
-
 ## Section 5 -- Refusals
 
-**R-DE-1 -- Upstream skill did not run.** Name the specific skill. Note: this is a warning, not a hard stop. Continue with available data and flag the gap.
-
-**R-DE-2 -- Upstream self-check failed.** Name the specific check and note it in the reviewer brief. Continue.
-
-**R-DE-3 -- Cross-skill reconciliation failed.** Name the specific reconciliation and describe the discrepancy. Flag for reviewer but continue.
-
-**R-DE-4 -- Intake incomplete.** Specific missing intake items prevent computation. List what is missing and ask the user for the specific data point.
-
-**R-DE-5 -- Out-of-scope item discovered during assembly.** E.g., rental income requiring Anlage V, Kapitalerträge requiring Anlage KAP, foreign source income requiring Anlage AUS. Flag and exclude from computation.
-
----
+- **R-DE-1** — Upstream skill did not run. Name the specific skill. Note: this is a warning, not a hard stop. Continue with available data and flag the gap.  _(Section 5)_
+- **R-DE-2** — Upstream self-check failed. Name the specific check and note it in the reviewer brief. Continue.  _(Section 5)_
+- **R-DE-3** — Cross-skill reconciliation failed. Name the specific reconciliation and describe the discrepancy. Flag for reviewer but continue.  _(Section 5)_
+- **R-DE-4** — Intake incomplete. Specific missing intake items prevent computation. List what is missing and ask the user for the specific data point.  _(Section 5)_
+- **R-DE-5** — Out-of-scope item discovered during assembly. E.g., rental income requiring Anlage V, Kapitalerträge requiring Anlage KAP, foreign source income requiring Anlage AUS. Flag and exclude from computation.  _(Section 5)_
 
 ## Section 6 -- Self-checks
 
-**Check DE1 -- All upstream skills executed.** germany-vat-return, de-income-tax, de-social-contributions all produced output. de-trade-tax produced output or was skipped (Freiberufler) or was computed from EÜR Gewinn if stub. de-estimated-tax produced output or was computed from festgesetzte ESt.
-
-**Check DE2 -- UStVA Umsatz matches EÜR Betriebseinnahmen.** Within EUR 1 tolerance (netto for Regelbesteuerung, brutto for Kleinunternehmer).
-
-**Check DE3 -- SV uses correct Gewinn figure.** EÜR Gewinn matches the figure used for KV/PV Beitragsbemessungsgrundlage information.
-
-**Check DE4 -- Vorauszahlungen match prior-year ESt.** Quarterly amounts x 4 = prior year festgesetzte ESt (approximately, Finanzamt may round).
-
-**Check DE5 -- Regelbesteuerung USt treatment correct.** Ausgangs-USt excluded from EÜR Betriebseinnahmen (durchlaufender Posten); reclaimable Vorsteuer excluded from Betriebsausgaben; blocked Vorsteuer included in Betriebsausgaben.
-
-**Check DE6 -- Kleinunternehmer treatment correct.** No Ausgangs-USt charged; all Vorsteuer included in Betriebsausgaben (brutto = Aufwand); turnover under EUR 22,000 prior year confirmed.
-
-**Check DE7 -- AfA correctly classified.** Items <= EUR 800 netto as GWG (sofort abgeschrieben); items EUR 250-800 netto as GWG or Pool; items > EUR 800 netto per AfA-Tabelle Nutzungsdauer.
-
-**Check DE8 -- KV/PV Basisabsicherung entered in Anlage Vorsorgeaufwand.** Amount from Beitragsbescheinigung, not total premium.
-
-**Check DE9 -- Grundtabelle or Splittingtabelle correctly applied.** Single = Grundtabelle; married Zusammenveranlagung = Splittingtabelle.
-
-**Check DE10 -- Filing calendar is complete.** All deadlines for UStVA, ESt, GewSt, and Vorauszahlungen are listed with specific dates and amounts.
-
-**Check DE11 -- GewSt Anrechnung correctly computed (if Gewerbetreibender).** 4.0x Steuermessbetrag, capped at actual GewSt and at ESt on gewerbliche Einkünfte. §35 EStG cited.
-
-**Check DE12 -- Reviewer brief contains legislation citations.** Every position taken references the specific paragraph of EStG, UStG, GewStG, or SGB.
-
-**Check DE13 -- SolZ Freigrenze correctly applied.** SolZ = 0 if ESt <= EUR 18,130 (Grundtabelle) or EUR 36,260 (Splittingtabelle). Gleitzone above Freigrenze correctly computed.
-
-**Check DE14 -- Kirchensteuer correctly computed.** 8% (Bayern, Baden-Württemberg) or 9% (all other Bundesländer) of festgesetzte ESt, or EUR 0 if no church membership.
-
----
+- **Check DE1** — All upstream skills executed. germany-vat-return, de-income-tax, de-social-contributions all produced output. de-trade-tax produced output or was skipped (Freiberufler) or was computed from EÜR Gewinn if stub. de-estimated-tax produced output or was computed from festgesetzte ESt.  _(Section 6, Check DE1)_
+- **Check DE2** — UStVA Umsatz matches EÜR Betriebseinnahmen. Within EUR 1 tolerance (netto for Regelbesteuerung, brutto for Kleinunternehmer).  _(Section 6, Check DE2)_
+- **Check DE3** — SV uses correct Gewinn figure. EÜR Gewinn matches the figure used for KV/PV Beitragsbemessungsgrundlage information.  _(Section 6, Check DE3)_
+- **Check DE4** — Vorauszahlungen match prior-year ESt. Quarterly amounts x 4 = prior year festgesetzte ESt (approximately, Finanzamt may round).  _(Section 6, Check DE4)_
+- **Check DE5** — Regelbesteuerung USt treatment correct. Ausgangs-USt excluded from EÜR Betriebseinnahmen (durchlaufender Posten); reclaimable Vorsteuer excluded from Betriebsausgaben; blocked Vorsteuer included in Betriebsausgaben.  _(Section 6, Check DE5)_
+- **Check DE6** — Kleinunternehmer treatment correct. No Ausgangs-USt charged; all Vorsteuer included in Betriebsausgaben (brutto = Aufwand); turnover under EUR 22,000 prior year confirmed.  _(Section 6, Check DE6)_
+- **Check DE7** — AfA correctly classified. Items <= EUR 800 netto as GWG (sofort abgeschrieben); items EUR 250-800 netto as GWG or Pool; items > EUR 800 netto per AfA-Tabelle Nutzungsdauer.  _(Section 6, Check DE7)_
+- **Check DE8** — KV/PV Basisabsicherung entered in Anlage Vorsorgeaufwand. Amount from Beitragsbescheinigung, not total premium.  _(Section 6, Check DE8)_
+- **Check DE9** — Grundtabelle or Splittingtabelle correctly applied. Single = Grundtabelle; married Zusammenveranlagung = Splittingtabelle.  _(Section 6, Check DE9)_
+- **Check DE10** — Filing calendar is complete. All deadlines for UStVA, ESt, GewSt, and Vorauszahlungen are listed with specific dates and amounts.  _(Section 6, Check DE10)_
+- **Check DE11** — GewSt Anrechnung correctly computed (if Gewerbetreibender). 4.0x Steuermessbetrag, capped at actual GewSt and at ESt on gewerbliche Einkünfte. §35 EStG cited.  _(Section 6, Check DE11, §35 EStG)_
+- **Check DE12** — Reviewer brief contains legislation citations. Every position taken references the specific paragraph of EStG, UStG, GewStG, or SGB.  _(Section 6, Check DE12)_
+- **Check DE13 - SolZ Freigrenze** — SolZ = 0 if ESt <= EUR 18,130 (Grundtabelle) or EUR 36,260 (Splittingtabelle). Gleitzone above Freigrenze correctly computed. EUR  _(Section 6, Check DE13)_
+- **Check DE14 - Kirchensteuer rate** — 8% (Bayern, Baden-Württemberg) or 9% (all other Bundesländer) of festgesetzte ESt, or EUR 0 if no church membership. %  _(Section 6, Check DE14)_
 
 ## Section 7 -- Output files
 
@@ -366,8 +317,6 @@ The final output is **three files**:
 
 **All files are placed in `/mnt/user-data/outputs/` and presented to the user via the `present_files` tool at the end.**
 
----
-
 ## Section 8 -- Cross-skill references
 
 **Inputs:**
@@ -379,8 +328,6 @@ The final output is **three files**:
 - `de-estimated-tax` -- Vorauszahlungen schedule (or fallback computation)
 
 **Outputs:** The final reviewer package. No downstream skill.
-
----
 
 ## Section 9 -- Known gaps
 
@@ -398,14 +345,46 @@ The final output is **three files**:
 12. The package is complete only for the 2025 tax year; 2026 appears only as prospective planning.
 
 ### Change log
+
 - **v0.1 (April 2026):** Initial draft. Modelled on mt-return-assembly v0.1 adapted for Germany jurisdiction with five content skills (UStVA, ESt+EÜR, SV, GewSt, Vorauszahlungen).
 
 ## End of skill
-
----
 
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a Steuerberater, Wirtschaftsprüfer, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
 
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
+The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
+
+## Talk to a verified accountant
+
+This skill is a tool, not an engagement. Every taxpayer's situation is
+different, and the rules in the skill may not match your specific facts.
+
+To speak with one of the licensed accountants who verifies skills for your
+jurisdiction — **no liability on either side until you and the accountant sign
+a formal engagement letter** — book a free 30-minute call:
+
+**→ [Book a call](https://calendly.com/openaccountants-info/30min)**
+
+We'll route you to the named verifier covering your country or state. You can
+also see the full list of verified accountants at
+[openaccountants.com/network](https://openaccountants.com/network).
+
+<!-- openaccountants-cta-block -->
+
+---
+
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

@@ -7,9 +7,14 @@
 
 1. `foundation.md`
 2. `intake.md`
-3. `hk-mpf.md`
-4. `hk-salaries-tax.md`
-5. `hong-kong-tax.md`
+3. `hk-company-formation.md`
+4. `hk-corporate-income-tax.md`
+5. `hk-mpf.md`
+6. `hk-salaries-tax.md`
+7. `hk-tax-overview.md`
+8. `hk-vat-gst.md`
+9. `hong-kong-tax.md`
+10. `company-formation-workflow-base.md`
 
 ## Also known as
 

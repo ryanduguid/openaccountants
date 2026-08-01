@@ -3,11 +3,13 @@ name: id-tax-optimization
 description: "Use this skill whenever asked about Indonesian tax planning, regime selection, or year-end optimization for self-employed individuals (Orang Pribadi) and small businesses. Trigger on phrases like \"Indonesia tax planning\", \"PPh Final vs progressive Indonesia\", \"UMKM 0.5% break-even\", \"PP 55/2022\", \"optimize Indonesian tax\", \"PTKP planning\", \"Indonesian tax savings\", \"NPPN vs pembukuan\", \"PT Perorangan vs OP\", \"perencanaan pajak Indonesia\", \"hemat pajak\", \"tarif final UMKM\". Covers regime selection (UMKM Final 0.5%, NPPN deemed-profit, pembukuan), entity choice (OP vs PT Perorangan vs PT), Pasal 6/Pasal 9 deduction planning, PTKP optimization, PPh Final Pasal 4(2) for rental and construction, BPJS wage-cap planning, year-end timing. Out of scope: aggressive avoidance, treaty shopping, transfer pricing, paper-PT structures, CFC planning, and anything caught by UU KUP substance rules or Pasal 18 UU PPh. ALWAYS read this skill before advising on Indonesian tax planning."
 jurisdiction: ID
 tax_year: 2025
+last_updated: 2026-05-27
+verified_by: RILIA PUTRI
 tier: 2
-last_updated: 2026-07-06
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# id-tax-optimization
+# ID Tax Optimization
 
 ## Indonesia Tax Optimization -- Self-Employed & Small Business Skill v1.0
 
@@ -490,3 +492,21 @@ To speak with one of the licensed accountants who verifies skills for your juris
 **→ [Book a call](https://calendly.com/openaccountants-info/30min)**
 
 We'll route you to the named verifier covering your country or state. You can also see the full list of verified accountants at [openaccountants.com/network](https://openaccountants.com/network).
+
+<!-- openaccountants-cta-block -->
+
+---
+
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

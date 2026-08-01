@@ -1,35 +1,29 @@
 ---
 name: uk-bookkeeping
 description: >
-  Use this skill whenever asked about UK bookkeeping for sole traders, micro-entities, or small companies. Trigger on phrases like "chart of accounts", "nominal codes", "bookkeeping", "profit and loss", "balance sheet", "FRS 105", "FRS 102 Section 1A", "Making Tax Digital", "MTD", "MTD ITSA bookkeeping", "April 2026 quarterly", "VAT threshold £90,000", "bank reconciliation", "double-entry", "expense categories", "revenue recognition", "depreciation", "capital allowances", "micro-entity accounts", "small company accounts", "accrual basis", "cash basis", "general ledger", or any question about day-to-day transaction recording, financial statement preparation, or account coding for a UK business.
 version: 1.1
 jurisdiction: GB
-category: bookkeeping
-depends_on:
-  - bookkeeping-workflow-base
 tax_year: 2025
-tax_year_notes: "2025-26"
-tier: 2
-last_updated: 2026-07-04
-applicable_years:
-  - 2024-25
-  - 2025-26
-  - 2026-27
+last_updated: 2026-05-23
 verified_by: pending
+depends_on: - bookkeeping-workflow-base
+category: bookkeeping
+tier: 2
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# UK Bookkeeping Skill v1.1
+# UK Bookkeeping
 
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
-
----
+## UK Bookkeeping Skill v1.1
 
 ## Section 1 -- Quick Reference
 
-**Year applicability:** Rules in this skill apply across 2024-25, 2025-26, and 2026-27 unless specified. The biggest 2026-27 change is mandatory MTD ITSA quarterly bookkeeping for in-scope sole traders and landlords.
+Year applicability: Rules in this skill apply across 2024-25, 2025-26, and 2026-27 unless specified. The biggest 2026-27 change is mandatory MTD ITSA quarterly bookkeeping for in-scope sole traders and landlords.
+
+**Quick Reference Fields**
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | Country | United Kingdom (England, Wales, Scotland, Northern Ireland) |
 | Currency | GBP (£) only |
 | Financial year | Flexible — companies choose their own year-end; sole traders on tax-year basis 6 April -- 5 April (basis period reform complete; clean tax-year basis for 2025-26 and 2026-27, no transitional adjustments) |
@@ -43,8 +37,10 @@ verified_by: pending
 
 ### 3-Year Thresholds at a Glance
 
+**3-Year Thresholds at a Glance**
+
 | Item | 2024-25 | 2025-26 | 2026-27 |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | VAT registration threshold | £90,000 (from 1 Apr 2024) | £90,000 | £90,000 |
 | VAT deregistration threshold | £88,000 (from 1 Apr 2024) | £88,000 | £88,000 |
 | MTD VAT | All VAT-registered | All VAT-registered | All VAT-registered |
@@ -55,16 +51,16 @@ verified_by: pending
 | Small company (Companies Act) | Turnover ≤ £10.2m | **Turnover ≤ £15m** (from 6 Apr 2025), BS ≤ £7.5m, ≤50 employees | Turnover ≤ £15m, BS ≤ £7.5m, ≤50 employees |
 | Micro-entity (FRS 105) | Turnover ≤ £632k | **Turnover ≤ £1m** (from 6 Apr 2025), BS ≤ £500k, ≤10 employees | Turnover ≤ £1m, BS ≤ £500k, ≤10 employees |
 
----
-
 ## Section 2 -- Standard Chart of Accounts (Nominal Codes)
 
 UK practice uses 4-digit nominal codes. Ranges below follow the Sage/Xero/QuickBooks convention widely adopted.
 
 ### Assets (0001–1999)
 
+**Assets (0001–1999)**
+
 | Code | Account | Type |
-|---|---|---|
+| --- | --- | --- |
 | 0010 | Freehold Property | Non-current asset |
 | 0020 | Leasehold Property | Non-current asset |
 | 0030 | Plant and Machinery | Non-current asset |
@@ -85,8 +81,10 @@ UK practice uses 4-digit nominal codes. Ranges below follow the Sage/Xero/QuickB
 
 ### Liabilities (2000–2999)
 
+**Liabilities (2000–2999)**
+
 | Code | Account | Type |
-|---|---|---|
+| --- | --- | --- |
 | 2100 | Trade Creditors (Accounts Payable) | Current liability |
 | 2101 | Other Creditors | Current liability |
 | 2102 | Accruals | Current liability |
@@ -103,8 +101,10 @@ UK practice uses 4-digit nominal codes. Ranges below follow the Sage/Xero/QuickB
 
 ### Equity (3000–3999)
 
+**Equity (3000–3999)**
+
 | Code | Account | Type |
-|---|---|---|
+| --- | --- | --- |
 | 3000 | Share Capital (Ordinary) | Equity |
 | 3001 | Share Premium | Equity |
 | 3100 | Retained Earnings | Equity |
@@ -114,8 +114,10 @@ UK practice uses 4-digit nominal codes. Ranges below follow the Sage/Xero/QuickB
 
 ### Revenue (4000–4999)
 
+**Revenue (4000–4999)**
+
 | Code | Account | Type |
-|---|---|---|
+| --- | --- | --- |
 | 4000 | Sales — Standard Rate (20% VAT) | Revenue |
 | 4001 | Sales — Reduced Rate (5% VAT) | Revenue |
 | 4002 | Sales — Zero Rate (0% VAT) | Revenue |
@@ -126,8 +128,10 @@ UK practice uses 4-digit nominal codes. Ranges below follow the Sage/Xero/QuickB
 
 ### Cost of Goods Sold (5000–5999)
 
+**Cost of Goods Sold (5000–5999)**
+
 | Code | Account | Type |
-|---|---|---|
+| --- | --- | --- |
 | 5000 | Purchases — Goods for Resale | COGS |
 | 5001 | Purchases — Materials | COGS |
 | 5100 | Carriage Inward | COGS |
@@ -136,8 +140,10 @@ UK practice uses 4-digit nominal codes. Ranges below follow the Sage/Xero/QuickB
 
 ### Operating Expenses (6000–6999)
 
+**Operating Expenses (6000–6999)**
+
 | Code | Account | Type |
-|---|---|---|
+| --- | --- | --- |
 | 6000 | Rent | Overhead |
 | 6001 | Rates | Overhead |
 | 6010 | Light, Heat and Power | Overhead |
@@ -166,8 +172,10 @@ UK practice uses 4-digit nominal codes. Ranges below follow the Sage/Xero/QuickB
 
 ### Other Income / Expenses (7000–7999)
 
+**Other Income / Expenses (7000–7999)**
+
 | Code | Account | Type |
-|---|---|---|
+| --- | --- | --- |
 | 7000 | Interest Received | Other income |
 | 7010 | Rental Income | Other income |
 | 7100 | Profit/Loss on Disposal of Assets | Other income/expense |
@@ -175,8 +183,10 @@ UK practice uses 4-digit nominal codes. Ranges below follow the Sage/Xero/QuickB
 
 ### Depreciation and Tax (8000–8999)
 
+**Depreciation and Tax (8000–8999)**
+
 | Code | Account | Type |
-|---|---|---|
+| --- | --- | --- |
 | 8000 | Depreciation — Property | Expense |
 | 8010 | Depreciation — Plant and Machinery | Expense |
 | 8020 | Depreciation — Fixtures and Fittings | Expense |
@@ -185,14 +195,14 @@ UK practice uses 4-digit nominal codes. Ranges below follow the Sage/Xero/QuickB
 | 8100 | Corporation Tax Charge | Tax expense |
 | 8200 | Dividends Receivable | Other income |
 
----
-
 ## Section 3 -- Revenue Recognition
 
 ### Cash Basis vs Accruals Basis
 
+**Cash Basis vs Accruals Basis**
+
 | Criterion | Cash Basis (Sole Traders) | Accruals Basis |
-|---|---|---|
+| --- | --- | --- |
 | Eligibility | Default for sole traders & partnerships from 2024-25 (no income cap since reform); election out by formal election | All entities; mandatory for companies |
 | Income recognised | When cash received | When earned (invoice date) |
 | Expenses recognised | When cash paid | When incurred |
@@ -203,12 +213,7 @@ UK practice uses 4-digit nominal codes. Ranges below follow the Sage/Xero/QuickB
 
 ### Companies Act Recognition
 
-Under FRS 102/105, revenue is recognised when:
-- Goods: risks and rewards of ownership transferred
-- Services: percentage of completion or when service delivered
-- Long-term contracts: stage of completion method
-
----
+- **Revenue recognition under FRS 102/105** — Under FRS 102/105, revenue is recognised when: Goods: risks and rewards of ownership transferred; Services: percentage of completion or when service delivered; Long-term contracts: stage of completion method  _(FRS 102/105)_
 
 ## Section 4 -- Expense Classification
 
@@ -216,8 +221,10 @@ Under FRS 102/105, revenue is recognised when:
 
 For sole traders, HMRC groups expenses on form SA103:
 
+**HMRC Self-Assessment Categories (SA103)**
+
 | SA103 Box | Category | Nominal Codes |
-|---|---|---|
+| --- | --- | --- |
 | Box 17 | Cost of goods sold | 5000–5300 |
 | Box 18 | Construction industry subcontractor costs | 5200 |
 | Box 19 | Wages, salaries and other staff costs | 6100–6120 |
@@ -236,13 +243,7 @@ For sole traders, HMRC groups expenses on form SA103:
 
 ### Non-Deductible Expenses (UK Tax)
 
-- Business entertaining (clients) — disallowed for income tax/CT
-- Personal expenses — not wholly and exclusively for trade
-- Fines and penalties — public policy
-- Capital expenditure — must go through capital allowances
-- General provisions — only specific bad debts are allowable
-
----
+- **Non-deductible expenses list** — Business entertaining (clients) — disallowed for income tax/CT; Personal expenses — not wholly and exclusively for trade; Fines and penalties — public policy; Capital expenditure — must go through capital allowances; General provisions — only specific bad debts are allowable
 
 ## Section 5 -- Asset vs Expense Thresholds
 
@@ -250,24 +251,28 @@ For sole traders, HMRC groups expenses on form SA103:
 
 UK tax does NOT use accounting depreciation — it adds back book depreciation and substitutes capital allowances.
 
+**Capital Allowances (Not Accounting Depreciation)**
+
 | Allowance | Rate | Notes |
-|---|---|---|
+| --- | --- | --- |
 | Annual Investment Allowance (AIA) | 100% up to £1,000,000 | Most plant & machinery; NOT cars |
 | First Year Allowance (40%) | 40% | From 1 Jan 2026 for unincorporated businesses |
 | Full Expensing | 100% | Companies only, new P&M (from April 2023) |
 | Main Pool WDA | 18% reducing balance (14% from April 2026) | Items not covered by AIA |
 | Special Rate Pool WDA | 6% reducing balance | Long-life assets, integral features, high-emission cars |
 | Cars: CO₂ ≤ 0 g/km | 100% FYA | Electric/zero-emission |
-| Cars: CO₂ 1–50 g/km | 18% main pool | |
-| Cars: CO₂ > 50 g/km | 6% special rate | |
-| Small Pools Allowance | Write off pool balance ≤ £1,000 | |
+| Cars: CO₂ 1–50 g/km | 18% main pool |  |
+| Cars: CO₂ > 50 g/km | 6% special rate |  |
+| Small Pools Allowance | Write off pool balance ≤ £1,000 |  |
 
 ### Accounting Depreciation (Book Purposes)
 
 For FRS 105/102 accounts, depreciate over useful life:
 
+**Accounting Depreciation (Book Purposes)**
+
 | Asset Class | Typical Book Rate | Method |
-|---|---|---|
+| --- | --- | --- |
 | Freehold property | 2% | Straight-line |
 | Leasehold improvements | Over lease term | Straight-line |
 | Plant and machinery | 15–25% | Reducing balance or straight-line |
@@ -277,15 +282,12 @@ For FRS 105/102 accounts, depreciate over useful life:
 
 ### Low-Value Items
 
-No statutory de minimis in UK GAAP, but common practice: items under £100–£500 expensed directly. Firms should set and document their own capitalisation policy.
-
----
+- **Low-value item policy** — No statutory de minimis in UK GAAP, but common practice: items under £100–£500 expensed directly. Firms should set and document their own capitalisation policy.
 
 ## Section 6 -- Profit & Loss Format
 
 ### FRS 105 Micro-Entity Format (Format 2 — by nature)
 
-```
 PROFIT AND LOSS ACCOUNT
                                     This Year (£)    Prior Year (£)
 Turnover                                xxx              xxx
@@ -299,11 +301,9 @@ Other charges                          (xxx)            (xxx)
 Tax                                    (xxx)            (xxx)
                                        ────             ────
 Profit (loss) for the financial year    xxx              xxx
-```
 
 ### FRS 102 Section 1A Small Company (Format 1 — by function)
 
-```
 PROFIT AND LOSS ACCOUNT
 Turnover                                xxx
 Cost of sales                          (xxx)
@@ -320,15 +320,11 @@ Profit before tax                       xxx
 Tax on profit                          (xxx)
                                        ────
 Profit for the financial year           xxx
-```
-
----
 
 ## Section 7 -- Balance Sheet Format
 
 ### FRS 105 / Small Company Balance Sheet (Vertical Format)
 
-```
 BALANCE SHEET as at [date]
                                         £           £
 FIXED ASSETS
@@ -362,16 +358,15 @@ Profit and loss account (retained earnings)       xxx
                                                    ────
 SHAREHOLDERS' FUNDS                                xxx
                                                    ════
-```
-
----
 
 ## Section 8 -- Bank Reconciliation Patterns
 
 ### Common UK Bank Formats
 
+**Common UK Bank Formats**
+
 | Bank | Export Format | Key Fields |
-|---|---|---|
+| --- | --- | --- |
 | Barclays | CSV, OFX | Date, Description, Amount, Balance |
 | HSBC | CSV, PDF | Date, Payment Type, Description, Paid Out, Paid In, Balance |
 | Lloyds | CSV, OFX | Transaction Date, Description, Debit, Credit, Balance |
@@ -382,8 +377,10 @@ SHAREHOLDERS' FUNDS                                xxx
 
 ### Common Transaction Descriptions
 
+**Common Transaction Descriptions**
+
 | Pattern | Likely Classification |
-|---|---|
+| --- | --- |
 | FPO / FPI (Faster Payment Out/In) | Transfer — check counterparty |
 | DD (Direct Debit) | Regular expense (insurance, utility, subscription) |
 | STO (Standing Order) | Regular expense (rent, loan repayment) |
@@ -394,14 +391,14 @@ SHAREHOLDERS' FUNDS                                xxx
 | STRIPE, PAYPAL, GOCARDLESS | Payment processor — match to invoices |
 | TFR (Transfer) | Internal — possible own-account transfer |
 
----
-
 ## Section 9 -- Micro-Entity / Small Business Simplifications
 
 ### FRS 105 Simplifications (Micro-Entities)
 
+**FRS 105 Simplifications (Micro-Entities)**
+
 | Feature | Simplification |
-|---|---|
+| --- | --- |
 | Financial statements | Balance sheet + P&L only (no cash flow, no directors' report) |
 | Disclosures | Minimal — only advances/credits to directors, guarantees |
 | Revaluation | Prohibited — historical cost only |
@@ -413,51 +410,37 @@ SHAREHOLDERS' FUNDS                                xxx
 
 ### Qualifying Thresholds (from 6 April 2025)
 
+**Qualifying Thresholds (from 6 April 2025)**
+
 | Regime | Turnover | Balance Sheet | Employees |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Micro-entity (FRS 105) | ≤ £1,000,000 | ≤ £500,000 | ≤ 10 |
 | Small company (FRS 102 s.1A) | ≤ £15,000,000 | ≤ £7,500,000 | ≤ 50 |
 
 ### Cash Basis for Sole Traders
 
-From 2024-25 onwards, cash basis is the **default** for sole traders and partnerships, with **no income cap** following the reform. Taxpayers may elect out via a formal election to use the accruals basis. Under cash basis:
-- No debtors/creditors accounting
-- No depreciation (capital items expensed — except cars)
-- Interest expense capped at £500
-- Loss relief restricted to current trade only
+- **Cash basis default and features** — From 2024-25 onwards, cash basis is the default for sole traders and partnerships, with no income cap following the reform. Taxpayers may elect out via a formal election to use the accruals basis. Under cash basis: No debtors/creditors accounting; No depreciation (capital items expensed — except cars); Interest expense capped at £500; Loss relief restricted to current trade only
 
 ### MTD ITSA — From 6 April 2026
 
-Sole traders and landlords with **gross income > £50,000 in 2024-25** are mandated into MTD ITSA from **6 April 2026**. This is the largest bookkeeping change in the 3-year window:
-- Quarterly updates (digital records of income and expenses) submitted via MTD-compatible software
-- End-of-period statement and final declaration replace the traditional SA return for in-scope taxpayers
-- Digital record-keeping requirement — paper ledgers no longer sufficient for in-scope businesses
-- Phase 2 (>£30,000) follows from 6 April 2027
-
-Bookkeeping software choice and chart-of-accounts mapping should be MTD-ITSA-ready for any client expected to cross the £50,000 threshold for 2024-25.
-
----
+- **MTD ITSA mandate details** — Sole traders and landlords with gross income > £50,000 in 2024-25 are mandated into MTD ITSA from 6 April 2026. This is the largest bookkeeping change in the 3-year window: Quarterly updates (digital records of income and expenses) submitted via MTD-compatible software; End-of-period statement and final declaration replace the traditional SA return for in-scope taxpayers; Digital record-keeping requirement — paper ledgers no longer sufficient for in-scope businesses; Phase 2 (>£30,000) follows from 6 April 2027. Bookkeeping software choice and chart-of-accounts mapping should be MTD-ITSA-ready for any client expected to cross the £50,000 threshold for 2024-25.  _(6 April 2026)_
 
 ## Section 10 -- Interaction with Tax Skills
 
 ### Income Tax (Self-Assessment SA103/SA105)
 
-- Bookkeeping P&L feeds directly into SA103 (self-employment) or SA105 (property)
-- Add back: entertaining, depreciation, personal element of mixed expenses
-- Deduct: capital allowances (in place of depreciation), trading losses brought forward
-- Cash basis taxpayers report income/expenses as per bank, with no accruals adjustments
+- **Bookkeeping to income tax mapping** — Bookkeeping P&L feeds directly into SA103 (self-employment) or SA105 (property); Add back: entertaining, depreciation, personal element of mixed expenses; Deduct: capital allowances (in place of depreciation), trading losses brought forward; Cash basis taxpayers report income/expenses as per bank, with no accruals adjustments
 
 ### Corporation Tax (CT600)
 
-- Start with accounting profit per FRS 105/102
-- Adjust: add back book depreciation, non-deductible entertainment, general provisions
-- Deduct: capital allowances, R&D enhanced deduction if eligible
-- GAAR / transfer pricing for connected parties
+- **Bookkeeping to CT600 mapping** — Start with accounting profit per FRS 105/102; Adjust: add back book depreciation, non-deductible entertainment, general provisions; Deduct: capital allowances, R&D enhanced deduction if eligible; GAAR / transfer pricing for connected parties
 
 ### VAT Return (Making Tax Digital)
 
+**VAT Return (Making Tax Digital)**
+
 | BAS Box | Description | CoA Mapping |
-|---|---|---|
+| --- | --- | --- |
 | Box 1 | VAT due on sales | 2202 (output VAT) |
 | Box 2 | VAT due on acquisitions from EU | 2202 |
 | Box 3 | Total VAT due (Box 1 + 2) | Calculated |
@@ -470,12 +453,41 @@ Bookkeeping software choice and chart-of-accounts mapping should be MTD-ITSA-rea
 
 ### Payroll (RTI — Real Time Information)
 
-- Report PAYE/NIC to HMRC on or before each pay date via Full Payment Submission (FPS)
-- Employer Payment Summary (EPS) for recoverable amounts
-- Nominal 6100 (gross wages) + 6110 (employer NIC) + 6120 (employer pension) = total staff cost
-
----
+- **Payroll RTI reporting rules** — Report PAYE/NIC to HMRC on or before each pay date via Full Payment Submission (FPS); Employer Payment Summary (EPS) for recoverable amounts; Nominal 6100 (gross wages) + 6110 (employer NIC) + 6120 (employer pension) = total staff cost
 
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a chartered accountant, ACCA member, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
+
+## Talk to a verified accountant
+
+This skill is a tool, not an engagement. Every taxpayer's situation is
+different, and the rules in the skill may not match your specific facts.
+
+To speak with one of the licensed accountants who verifies skills for your
+jurisdiction — **no liability on either side until you and the accountant sign
+a formal engagement letter** — book a free 30-minute call:
+
+**→ [Book a call](https://calendly.com/openaccountants-info/30min)**
+
+We'll route you to the named verifier covering your country or state. You can
+also see the full list of verified accountants at
+[openaccountants.com/network](https://openaccountants.com/network).
+
+<!-- openaccountants-cta-block -->
+
+---
+
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

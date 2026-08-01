@@ -7,7 +7,15 @@
 
 1. `foundation.md`
 2. `intake.md`
-3. `ethiopia-vat.md`
+3. `et-company-formation.md`
+4. `et-corporate-income-tax.md`
+5. `et-tax-overview.md`
+6. `ethiopia-income-tax.md`
+7. `ethiopia-payroll.md`
+8. `ethiopia-social-contributions.md`
+9. `ethiopia-vat.md`
+10. `payroll-workflow-base.md`
+11. `company-formation-workflow-base.md`
 
 ## How to use
 

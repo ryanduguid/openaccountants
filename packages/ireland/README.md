@@ -7,12 +7,23 @@
 
 1. `foundation.md`
 2. `intake.md`
-3. `ie-income-tax-form11.md`
-4. `ie-preliminary-tax.md`
-5. `ie-prsi-class-s.md`
-6. `ie-usc.md`
-7. `ireland-vat-return.md`
-8. `eu-vat-directive.md`
+3. `ie-cat.md`
+4. `ie-cgt.md`
+5. `ie-corporation-tax.md`
+6. `ie-formation.md`
+7. `ie-freelance-intake.md`
+8. `ie-income-tax-form11.md`
+9. `ie-non-dom.md`
+10. `ie-payroll.md`
+11. `ie-preliminary-tax.md`
+12. `ie-prsi-class-s.md`
+13. `ie-return-assembly.md`
+14. `ie-usc.md`
+15. `ie-vat-return.md`
+16. `ireland-vat-return.md`
+17. `eu-vat-directive.md`
+18. `payroll-workflow-base.md`
+19. `company-formation-workflow-base.md`
 
 ## Also known as
 

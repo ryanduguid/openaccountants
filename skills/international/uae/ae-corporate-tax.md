@@ -1,34 +1,35 @@
 ---
 name: ae-corporate-tax
 description: >
-  Use this skill whenever asked about UAE Corporate Tax for freelancers, sole establishments, or small businesses. Trigger on phrases like "how much tax do I pay in UAE", "corporate tax UAE", "CT return", "FTA", "small business relief", "free zone tax", "qualifying free zone person", "AED 375,000", "9% tax", "taxable income UAE", "corporate tax registration", "UAE tax return", "self-employed tax UAE", "freelancer tax Dubai", "EmaraTax", or any question about computing or filing UAE corporate tax. This skill covers the 0%/9% rate structure, small business relief (revenue under AED 3M), qualifying free zone person rules, deductible and non-deductible expenses, transfer pricing, registration requirements, and filing deadlines. Note: the UAE has NO personal income tax — self-employed individuals and sole establishments are subject to corporate tax. ALWAYS read this skill before touching any UAE corporate tax work.
 version: 2.0
 jurisdiction: AE
+tax_year: 2025
+last_updated: 2026-04-13
+verified_by: Mehran Habib
 tier: 2
-last_updated: 2026-06-12
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# UAE Corporate Tax — Freelancers and Sole Establishments v2.0
-
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
-
-## Section 1 — Quick Reference
+# AE Corporate Tax
 
 ### Corporate Tax Rates
 
+**Corporate Tax Rates**
+
 | Taxable Income (AED) | Rate |
-|---|---|
+| --- | --- |
 | 0 -- 375,000 | 0% |
 | 375,001+ | 9% |
 
-Qualifying Free Zone Person: 0% on qualifying income; 9% on non-qualifying income.
-
-No personal income tax in the UAE. Self-employed individuals and sole establishments are subject to corporate tax if turnover exceeds AED 1,000,000.
+- **Qualifying Free Zone Person rate** — 0% on qualifying income; 9% on non-qualifying income
+- **No personal income tax** — No personal income tax in the UAE. Self-employed individuals and sole establishments are subject to corporate tax if turnover exceeds AED 1,000,000.
 
 ### Small Business Relief (SBR)
 
+**Small Business Relief (SBR)**
+
 | Condition | Requirement |
-|---|---|
+| --- | --- |
 | Revenue threshold | <= AED 3,000,000 |
 | Must be Resident Person | Yes |
 | Not a QFZP | Cannot claim both |
@@ -39,16 +40,20 @@ No personal income tax in the UAE. Self-employed individuals and sole establishm
 
 ### Natural Person Threshold
 
+**Natural Person Threshold**
+
 | Rule | Detail |
-|---|---|
+| --- | --- |
 | Turnover threshold | AED 1,000,000 in a calendar year |
 | Below threshold | Not subject to corporate tax; no registration required |
 | Above threshold | Must register, file, and pay corporate tax |
 
 ### Computation Structure
 
+**Computation Structure**
+
 | Step | Description |
-|---|---|
+| --- | --- |
 | A | Accounting income per financial statements (IFRS) |
 | B | +/- Adjustments required by CT Law |
 | C | Less: Exempt income (qualifying dividends, participations) |
@@ -61,8 +66,10 @@ No personal income tax in the UAE. Self-employed individuals and sole establishm
 
 ### Non-Deductible Expenses
 
+**Non-Deductible Expenses**
+
 | Expense | Treatment |
-|---|---|
+| --- | --- |
 | Fines and penalties (government) | Fully non-deductible |
 | Bribes / corrupt payments | Fully non-deductible |
 | Non-qualifying donations | Non-deductible |
@@ -75,8 +82,10 @@ No personal income tax in the UAE. Self-employed individuals and sole establishm
 
 ### Conservative Defaults
 
+**Conservative Defaults**
+
 | Situation | Default Assumption |
-|---|---|
+| --- | --- |
 | Business structure unknown | STOP — determines applicable rules |
 | SBR eligibility unclear | Check revenue <= AED 3M; election must be active |
 | Entertainment deduction | Apply 50% only |
@@ -87,18 +96,16 @@ No personal income tax in the UAE. Self-employed individuals and sole establishm
 
 ### Red Flag Thresholds
 
+**Red Flag Thresholds**
+
 | Flag | Threshold |
-|---|---|
+| --- | --- |
 | Revenue > AED 3M | SBR not available |
 | Revenue < AED 1M (natural person) | Not subject to CT |
 | SBR not elected despite eligibility | Tax calculated normally — alert client |
 | Entertainment fully deducted | Must cap at 50% |
 | Personal expenses in business costs | Non-deductible — remove |
 | Related party transactions | Flag for transfer pricing review |
-
----
-
-## Section 2 — Required Inputs + Refusal Catalogue
 
 ### Required Inputs
 
@@ -115,8 +122,10 @@ No personal income tax in the UAE. Self-employed individuals and sole establishm
 
 ### Refusal Catalogue
 
+**Refusal Catalogue**
+
 | Code | Situation | Action |
-|---|---|---|
+| --- | --- | --- |
 | R-AE-1 | Business structure unknown | Stop — cannot determine applicable rules |
 | R-AE-2 | Employee asking about income tax on salary | Stop — UAE has NO personal income tax; salary is not taxable |
 | R-AE-3 | Group relief / holding company structure | Escalate — complex group rules outside scope |
@@ -124,14 +133,19 @@ No personal income tax in the UAE. Self-employed individuals and sole establishm
 | R-AE-5 | Pillar Two (15% rate for large MNEs) | Escalate — applies to EUR 750M+ consolidated revenue groups |
 | R-AE-6 | QFZP claim without full verification | Do not apply 0% rate without confirming all conditions |
 
----
-
-## Section 3 — Transaction Pattern Library
+- **R-AE-1** — Business structure unknown  _(Stop — cannot determine applicable rules)_
+- **R-AE-2** — Employee asking about income tax on salary  _(Stop — UAE has NO personal income tax; salary is not taxable)_
+- **R-AE-3** — Group relief / holding company structure  _(Escalate — complex group rules outside scope)_
+- **R-AE-4** — Permanent establishment determination for foreign entity  _(Escalate — requires detailed analysis)_
+- **R-AE-5** — Pillar Two (15% rate for large MNEs)  _(Escalate — applies to EUR 750M+ consolidated revenue groups)_
+- **R-AE-6** — QFZP claim without full verification  _(Do not apply 0% rate without confirming all conditions)_
 
 ### 3.1 Income Patterns
 
+**3.1 Income Patterns**
+
 | # | Narration Pattern | Tax Line | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | I-01 | `TRANSFER FROM [client]` / `INCOMING TT [client]` | Gross income — CT taxable | Standard wire/transfer from client |
 | I-02 | `SALARY TRANSFER` / `WPS CREDIT` | NOT business income — employment | If sole establishment owner pays themselves; exclude personal salary |
 | I-03 | `STRIPE PAYOUT AED` / `STRIPE PAYMENTS` | Gross income — gross-up | Stripe net payout; fee deductible |
@@ -145,13 +159,15 @@ No personal income tax in the UAE. Self-employed individuals and sole establishm
 
 ### 3.2 Expense Patterns
 
+**3.2 Expense Patterns**
+
 | # | Narration Pattern | Tax Line | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | E-01 | `OFFICE RENT` / `RENT PAYMENT` / `EJARI` | Rent — fully deductible | Business premises rent |
 | E-02 | `DEWA` / `SEWA` / `FEWA` / `AADC` / `ADDC` | Utilities — fully deductible | Dubai/Sharjah/Fujairah/Abu Dhabi utilities |
 | E-03 | `DU` / `ETISALAT` / `E& BUSINESS` | Telecom — fully deductible | Business phone/internet |
 | E-04 | `ADOBE` / `MICROSOFT 365` / `GOOGLE WORKSPACE` | Software — fully deductible | Professional tools |
-| E-05 | `ACCOUNTING FEE` / `AUDIT FEE` / `TAX AGENT` | Professional fees — fully deductible | |
+| E-05 | `ACCOUNTING FEE` / `AUDIT FEE` / `TAX AGENT` | Professional fees — fully deductible |  |
 | E-06 | `EMIRATES` / `FLYDUBAI` / `ETIHAD` / `AIR ARABIA` | Air travel — fully deductible (business) | Document purpose |
 | E-07 | `HOTEL` / `BOOKING.COM` / `AIRBNB` | Accommodation — fully deductible (business) | Business travel |
 | E-08 | `RESTAURANT` / `FOOD` / `ENTERTAINMENT` | Entertainment — 50% deductible only | Cap at 50%; flag if fully deducted |
@@ -169,23 +185,27 @@ No personal income tax in the UAE. Self-employed individuals and sole establishm
 
 ### 3.3 UAE Bank Fees (Deductible)
 
+**3.3 UAE Bank Fees (Deductible)**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | EMIRATES NBD | Deductible for business account fees | Largest UAE bank |
-| FAB (First Abu Dhabi Bank) | Deductible for business account fees | |
-| ADCB (Abu Dhabi Commercial Bank) | Deductible for business account fees | |
-| MASHREQ, MASHREQBANK | Deductible for business account fees | |
-| RAK BANK, NATIONAL BANK OF RAS AL KHAIMAH | Deductible for business account fees | |
-| DIB (Dubai Islamic Bank) | Deductible for business account fees | |
-| CBD (Commercial Bank of Dubai) | Deductible for business account fees | |
-| ADIB (Abu Dhabi Islamic Bank) | Deductible for business account fees | |
+| FAB (First Abu Dhabi Bank) | Deductible for business account fees |  |
+| ADCB (Abu Dhabi Commercial Bank) | Deductible for business account fees |  |
+| MASHREQ, MASHREQBANK | Deductible for business account fees |  |
+| RAK BANK, NATIONAL BANK OF RAS AL KHAIMAH | Deductible for business account fees |  |
+| DIB (Dubai Islamic Bank) | Deductible for business account fees |  |
+| CBD (Commercial Bank of Dubai) | Deductible for business account fees |  |
+| ADIB (Abu Dhabi Islamic Bank) | Deductible for business account fees |  |
 | ENBD / FAB / ADCB ACCOUNT MAINTENANCE | Deductible | Monthly/quarterly account fees |
 | SWIFT CHARGES, TT CHARGES | Deductible | Wire transfer fees |
 
 ### 3.4 Government and Regulatory (Exclude)
 
+**3.4 Government and Regulatory (Exclude)**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | FTA, FEDERAL TAX AUTHORITY | EXCLUDE | Tax payment |
 | DED (Department of Economic Development) | Business licence — deductible | Trade licence renewal fee |
 | DMCC, JAFZA, DAFZA, DIFC, ADGM | Free zone authority — deductible | Licence/registration fees |
@@ -193,16 +213,14 @@ No personal income tax in the UAE. Self-employed individuals and sole establishm
 
 ### 3.5 Internal Transfers and Exclusions
 
+**3.5 Internal Transfers and Exclusions**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | INTERNAL TRANSFER, OWN ACCOUNT | EXCLUDE | Internal movement |
 | LOAN REPAYMENT | EXCLUDE | Principal repayment |
 | PERSONAL EXPENSE, OWNER DRAWING | EXCLUDE | Non-deductible personal |
 | CASH WITHDRAWAL, ATM | TIER 2 — ask | Default exclude; determine purpose |
-
----
-
-## Section 4 — Worked Examples
 
 ### Example 1 — Emirates NBD (Dubai, IT Consultant — SBR)
 
@@ -282,45 +300,28 @@ If car and phone partially business: flag for reviewer to determine reasonable b
 2025: revenue AED 2,500,000 (SBR eligible). Elects SBR.
 Result: taxable income deemed nil. Prior loss CANNOT be used in SBR year. Loss of AED 200,000 remains available for future non-SBR years.
 
----
-
 ## Section 5 — Tier 1 Rules (Apply Directly)
 
-**T1-AE-1 — No personal income tax in the UAE**
-The UAE does not impose personal income tax on individuals. Salary, wages, investment income earned personally are not taxable. Corporate tax applies only to business activities.
-
-**T1-AE-2 — SBR must be actively elected**
-Small business relief is NOT automatic. The election must be made on the CT return via EmaraTax. Without the election, tax is calculated normally.
-
-**T1-AE-3 — Entertainment capped at 50%**
-Entertainment expenditure is only 50% deductible. Always apply the 50% cap. Add back the other 50% to taxable income.
-
-**T1-AE-4 — Personal expenses are fully non-deductible**
-Owner's personal expenses (personal car, family phone, vacation, personal insurance) are non-deductible. Remove entirely from business deductions.
-
-**T1-AE-5 — Loss carry-forward capped at 75%**
-Tax losses can be carried forward indefinitely, but only 75% of current-year taxable income can be offset. The remaining 25% is taxed.
-
-**T1-AE-6 — Fines and penalties are non-deductible**
-Government-imposed fines (traffic, regulatory, tax) are never deductible. Remove from deductions.
-
-**T1-AE-7 — Filing deadline is 9 months after FY end**
-CT return and payment due within 9 months of financial year end. No provisional payment system.
-
----
+- **T1-AE-1 — No personal income tax in the UAE** — The UAE does not impose personal income tax on individuals. Salary, wages, investment income earned personally are not taxable. Corporate tax applies only to business activities.
+- **T1-AE-2 — SBR must be actively elected** — Small business relief is NOT automatic. The election must be made on the CT return via EmaraTax. Without the election, tax is calculated normally.
+- **T1-AE-3 — Entertainment capped at 50%** — Entertainment expenditure is only 50% deductible. Always apply the 50% cap. Add back the other 50% to taxable income.
+- **T1-AE-4 — Personal expenses are fully non-deductible** — Owner's personal expenses (personal car, family phone, vacation, personal insurance) are non-deductible. Remove entirely from business deductions.
+- **T1-AE-5 — Loss carry-forward capped at 75%** — Tax losses can be carried forward indefinitely, but only 75% of current-year taxable income can be offset. The remaining 25% is taxed.
+- **T1-AE-6 — Fines and penalties are non-deductible** — Government-imposed fines (traffic, regulatory, tax) are never deductible. Remove from deductions.
+- **T1-AE-7 — Filing deadline is 9 months after FY end** — CT return and payment due within 9 months of financial year end. No provisional payment system.
 
 ## Section 6 — Tier 2 Catalogue (Reviewer Judgement Required)
 
+**Section 6 — Tier 2 Catalogue (Reviewer Judgement Required)**
+
 | Code | Situation | Escalation Reason | Suggested Treatment |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | T2-AE-1 | QFZP determination | Complex conditions — substance, qualifying activities, de minimis test | Flag — licensed tax agent must verify all conditions |
 | T2-AE-2 | Transfer pricing for related party transactions | Arm's length test required; documentation may be needed | Flag — confirm nature and market rate of services |
 | T2-AE-3 | Mixed personal/business expenses | Allocation requires documented business-use percentage | Flag — reviewer determines reasonable split |
 | T2-AE-4 | Thin capitalisation (interest expense cap) | Net interest capped at 30% EBITDA or AED 12M | Flag if significant interest expenses |
 | T2-AE-5 | Free zone company with mainland individual customers | Non-qualifying income; may breach QFZP de minimis test | Flag — 5% / AED 5M threshold check required |
 | T2-AE-6 | Withholding tax on cross-border payments | 0% WHT currently but subject to change / treaty interaction | Escalate for treaty analysis |
-
----
 
 ## Section 7 — Excel Working Paper Template
 
@@ -390,11 +391,8 @@ SECTION H — REVIEWER FLAGS
 [ ] QFZP conditions verified (if free zone)?
 ```
 
----
-
-## Section 8 — Bank Statement Reading Guide
-
 ### Emirates NBD
+
 - Export: CSV/Excel from ENBD Online Business Banking
 - Columns: `Date;Description;Debit;Credit;Balance`
 - Amount format: comma thousands, period decimal (e.g., `85,000.00`)
@@ -402,46 +400,52 @@ SECTION H — REVIEWER FLAGS
 - Credit narrations: `TT FROM [sender]`, `INCOMING REMITTANCE`
 
 ### First Abu Dhabi Bank (FAB)
+
 - Export: CSV from FAB Online
 - Columns: `Date;Narrative;Debit;Credit;Balance`
 - Standard UAE format
 - Credits: `INCOMING TT [sender]`, `CREDIT TRANSFER`
 
 ### ADCB (Abu Dhabi Commercial Bank)
+
 - Export: CSV/Excel from ADCB Business Online
 - Columns: `Date;Description;Debit Amount;Credit Amount;Balance`
 - Credits: `TT CREDIT FROM [sender]`
 
 ### Mashreq Bank
+
 - Export: CSV from Mashreq Online
 - Standard format: `Date;Description;Debit;Credit;Balance`
 
 ### RAK Bank
+
 - Export: CSV/PDF from RAK Business Online
 - Standard format
 
 ### Dubai Islamic Bank (DIB)
+
 - Export: CSV from DIB Business Online
 - Narrations may include Islamic finance terminology (Murabaha, Wakala)
 - Profit distributions: `PROFIT ON WAKALA DEPOSIT` (not interest)
 
 ### Commercial Bank of Dubai (CBD)
+
 - Export: CSV from CBD Online
 - Standard UAE format
 
 ### ADIB (Abu Dhabi Islamic Bank)
+
 - Export: CSV from ADIB Online
 - Islamic banking narrations
 
 ### Key UAE Banking Notes
+
 - All amounts in AED (UAE dirhams); comma thousands, period decimal
 - AED is pegged to USD at 3.6725
 - International wires often appear as `TT` (telegraphic transfer)
 - SWIFT charges appear as separate debit narrations
 - WPS (Wage Protection System) credits are salary — exclude from business income
 - Many UAE businesses maintain accounts in multiple banks across emirates
-
----
 
 ## Section 9 — Onboarding Fallback
 
@@ -457,11 +461,8 @@ SECTION H — REVIEWER FLAGS
 **Free zone status:**
 > "Is your business registered in a UAE free zone? If so, you may qualify as a Qualifying Free Zone Person (QFZP), which allows 0% tax on qualifying income. QFZP status has strict requirements including adequate substance, qualifying activities only, and audited financial statements. I would need to verify all conditions before advising on the 0% rate."
 
----
-
-## Section 10 — Reference Material
-
 ### Key Legislation
+
 - **Federal Decree-Law No. 47 of 2022** — Taxation of Corporations and Businesses
 - **Cabinet Decision No. 116 of 2022** — Small Business Relief
 - **Cabinet Decision No. 37 of 2023** — Free Zone rules
@@ -472,8 +473,10 @@ SECTION H — REVIEWER FLAGS
 
 ### Filing Deadlines
 
+**Filing Deadlines**
+
 | FY End | CT Return and Payment Due |
-|---|---|
+| --- | --- |
 | 31 December 2024 | 30 September 2025 |
 | 31 March 2025 | 31 December 2025 |
 | 30 June 2025 | 31 March 2026 |
@@ -481,28 +484,48 @@ SECTION H — REVIEWER FLAGS
 
 ### Penalties
 
+**Penalties**
+
 | Offence | Penalty |
-|---|---|
+| --- | --- |
 | Failure to register on time | AED 10,000 |
 | Late filing | AED 500/month from month after due date |
 | Late payment | 14% per annum on outstanding amount |
 | Failure to maintain records | AED 10,000 (first); AED 20,000 (repeat) |
 
 ### Record Keeping
+
 - Minimum retention: 7 years from end of tax period
 - Financial statements, accounting records, contracts, invoices, bank statements
 - Audited financial statements required for QFZP
 
 ### Useful References
+
 - FTA / EmaraTax: tax.gov.ae
 - CT registration: EmaraTax portal
 - IFRS guidance: ifrs.org
 - Free zone authorities: DMCC, JAFZA, DAFZA, DIFC, ADGM (individual portals)
 
----
-
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, EA, tax attorney, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
 
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
+The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
+
+<!-- openaccountants-cta-block -->
+
+---
+
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

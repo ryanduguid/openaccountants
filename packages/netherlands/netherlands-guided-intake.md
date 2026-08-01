@@ -3,18 +3,21 @@ name: nl-freelance-intake
 description: ALWAYS USE THIS SKILL when a user asks for help preparing their Netherlands tax returns AND mentions freelancing, self-employment, ZZP, eenmanszaak, or sole proprietorship. Trigger on phrases like "help me do my taxes", "prepare my IB-aangifte", "I'm a ZZP'er in the Netherlands", "I'm a freelancer in the Netherlands", "do my taxes as a contractor", "prepare my BTW return and income tax", or any similar phrasing where the user is a Netherlands-resident self-employed individual needing tax return preparation. This is the REQUIRED entry point for the Netherlands self-employed tax workflow -- every other skill in the stack (nl-btw-return, nl-income-tax, nl-zvw, nl-return-assembly) depends on this skill running first to produce a structured intake package. Uses upload-first workflow -- the user dumps all their documents and the skill infers as much as possible before asking questions. Uses ask_user_input_v0 for structured questions instead of one-at-a-time prose. Built for speed. Netherlands full-year residents only; self-employed individuals and sole proprietors.
 version: 1.0
 jurisdiction: NL
+tax_year: 2025
+last_updated: 2026-05-23
+verified_by: pending
 category: orchestrator
+tier: 2
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Netherlands Self-Employed Intake Skill v1.0
+# NL Freelance Intake
 
 ## What this file is
 
 The intake orchestrator for Netherlands-resident self-employed individuals. Every downstream Netherlands content skill (nl-btw-return, nl-income-tax, nl-zvw) and the assembly orchestrator (nl-return-assembly) depend on this skill running first to produce a structured intake package.
 
 This skill does not compute any tax figures. Its job is to collect all the facts, parse all the documents, confirm everything with the user, and hand off a clean intake package to `nl-return-assembly`.
-
----
 
 ## Design principles
 
@@ -44,8 +47,6 @@ Target: intake completes in 5 minutes for a prepared user, 15 minutes for a user
 
 **Exception for blocking decisions.** If a single question determines whether the user is in-scope or out-of-scope, ask it standalone.
 
----
-
 ## Section 1 -- The opening
 
 When triggered, respond with ONE message that:
@@ -72,8 +73,6 @@ Then immediately call `ask_user_input_v0` with the refusal questions.
 - List what documents you will eventually need
 - Give a disclaimer beyond the one reviewer line
 
----
-
 ## Section 2 -- Refusal sweep (compact)
 
 Present the refusal sweep as a single `ask_user_input_v0` call with 3 questions, all single-select.
@@ -91,20 +90,9 @@ Q3: "Employment status in 2025?"
     Options: ["Fully self-employed (no employer)", "Employed + side self-employment", "Employed only (no self-employment income)"]
 ```
 
-**After the response, evaluate:**
-
-- **Q1 = Full year** -> continue
-- **Q1 = Part year** -> stop. "I'm set up for full-year Netherlands residents only. Part-year residents have M-biljet (migratieaangifte) requirements with different rules around worldwide vs Dutch-source income. You need a belastingadviseur who handles M-biljetten."
-- **Q1 = Did not live in the Netherlands** -> stop. "Non-residents file C-biljet (buitenlandse belastingplicht) with different rules. You need a belastingadviseur who handles non-resident returns."
-
-- **Q2 = ZZP / eenmanszaak** -> continue
-- **Q2 = VOF** -> stop. "VOF partnerships file separately with joint and individual obligations (firmantenaangifte). You need a belastingadviseur familiar with VOF returns."
-- **Q2 = BV** -> stop. "I don't cover corporate returns. BVs file vennootschapsbelasting (VPB) returns with separate rules for DGA salaries, dividends, and Box 2 income. You need a belastingadviseur."
-- **Q2 = Not sure** -> ask one follow-up: "Do you invoice clients in your own name (or a trade name registered at KvK), or do you have a BV registered at KvK? If you invoice in your own name with a KvK eenmanszaak registration, you're ZZP/eenmanszaak. If you have a BV, you're a limited company."
-
-- **Q3 = Fully self-employed** -> continue
-- **Q3 = Employed + side self-employment** -> continue with a flag: urencriterium (1,225 hours) may not be met, affecting zelfstandigenaftrek eligibility. Will evaluate after inference.
-- **Q3 = Employed only** -> stop. "You don't have self-employment income. This workflow is for self-employed individuals. Your employer handles your tax through loonheffing deductions. If you have other income (rental, investments, Box 3 assets), you need a belastingadviseur for your aangifte inkomstenbelasting."
+- **Q1 evaluation -- residency** — Q1 = Full year -> continue. Q1 = Part year -> stop: "I'm set up for full-year Netherlands residents only. Part-year residents have M-biljet (migratieaangifte) requirements with different rules around worldwide vs Dutch-source income. You need a belastingadviseur who handles M-biljetten." Q1 = Did not live in the Netherlands -> stop: "Non-residents file C-biljet (buitenlandse belastingplicht) with different rules. You need a belastingadviseur who handles non-resident returns."  _(Section 2 -- Refusal sweep (compact))_
+- **Q2 evaluation -- business structure** — Q2 = ZZP / eenmanszaak -> continue. Q2 = VOF -> stop: "VOF partnerships file separately with joint and individual obligations (firmantenaangifte). You need a belastingadviseur familiar with VOF returns." Q2 = BV -> stop: "I don't cover corporate returns. BVs file vennootschapsbelasting (VPB) returns with separate rules for DGA salaries, dividends, and Box 2 income. You need a belastingadviseur." Q2 = Not sure -> ask follow-up: "Do you invoice clients in your own name (or a trade name registered at KvK), or do you have a BV registered at KvK? If you invoice in your own name with a KvK eenmanszaak registration, you're ZZP/eenmanszaak. If you have a BV, you're a limited company."  _(Section 2 -- Refusal sweep (compact))_
+- **Q3 evaluation -- employment status** — Q3 = Fully self-employed -> continue. Q3 = Employed + side self-employment -> continue with a flag: urencriterium (1,225 hours) may not be met, affecting zelfstandigenaftrek eligibility. Will evaluate after inference. Q3 = Employed only -> stop: "You don't have self-employment income. This workflow is for self-employed individuals. Your employer handles your tax through loonheffing deductions. If you have other income (rental, investments, Box 3 assets), you need a belastingadviseur for your aangifte inkomstenbelasting."  _(Section 2 -- Refusal sweep (compact))_
 
 **After Q1-Q3 pass, ask the second batch of scope questions (also batched):**
 
@@ -119,26 +107,12 @@ Q6: "KvK registration?"
     Options: ["Yes, registered at KvK", "No, not registered", "Not sure"]
 ```
 
-**Evaluate Q4:**
-- **Regular BTW** -> continue. Standard quarterly or monthly BTW-aangifte.
-- **KOR** -> continue. No BTW-aangifte filing required, no input BTW recovery, turnover must remain under EUR 20,000 per calendar year.
-- **Not BTW registered** -> continue with a flag: if turnover exceeds EUR 20,000, KOR exemption is automatically revoked. If no BTW registration at all and not KOR, may need registration.
-- **Not sure** -> ask one follow-up: "Do you charge 21% BTW on your invoices? If yes, you have regular BTW registration. If your invoices say 'BTW verlegd' or show no BTW and your annual revenue is under EUR 20,000, you may be on the KOR."
-
-**Evaluate Q5:**
-- **Single** -> continue. No partner allocation.
-- **Married / registered partner** -> continue. Fiscal partner allocation applies (income from own dwelling Box 1, Box 3 assets, heffingskortingen can be optimised).
-- **Living together with fiscal partner** -> continue. Same as married for tax purposes.
-- **Living together without fiscal partner status** -> continue. No partner allocation.
-
-**Evaluate Q6:**
-- **Yes** -> continue. Standard ZZP path.
-- **No** -> flag: without KvK registration, the Belastingdienst may classify income as resultaat uit overige werkzaamheden (ROW) rather than winst uit onderneming, disqualifying zelfstandigenaftrek, startersaftrek, and MKB-winstvrijstelling.
-- **Not sure** -> "Check kvk.nl/zoeken with your name. If you have a registration with an active eenmanszaak, you're registered."
+- **KOR turnover threshold** — 20,000 EUR per calendar year (Kleineondernemersregeling (KOR) turnover must remain under this amount)  _(Section 2 -- Refusal sweep (compact))_
+- **Q4 evaluation -- BTW status** — Regular BTW -> continue, standard quarterly or monthly BTW-aangifte. KOR -> continue, no BTW-aangifte filing required, no input BTW recovery, turnover must remain under EUR 20,000 per calendar year. Not BTW registered -> continue with flag: if turnover exceeds EUR 20,000, KOR exemption is automatically revoked; if no BTW registration at all and not KOR, may need registration. Not sure -> ask follow-up: "Do you charge 21% BTW on your invoices? If yes, you have regular BTW registration. If your invoices say 'BTW verlegd' or show no BTW and your annual revenue is under EUR 20,000, you may be on the KOR."  _(Section 2 -- Refusal sweep (compact))_
+- **Q5 evaluation -- marital status** — Single -> continue, no partner allocation. Married / registered partner -> continue, fiscal partner allocation applies (income from own dwelling Box 1, Box 3 assets, heffingskortingen can be optimised). Living together with fiscal partner -> continue, same as married for tax purposes. Living together without fiscal partner status -> continue, no partner allocation.  _(Section 2 -- Refusal sweep (compact))_
+- **Q6 evaluation -- KvK registration** — Yes -> continue, standard ZZP path. No -> flag: without KvK registration, the Belastingdienst may classify income as resultaat uit overige werkzaamheden (ROW) rather than winst uit onderneming, disqualifying zelfstandigenaftrek, startersaftrek, and MKB-winstvrijstelling. Not sure -> "Check kvk.nl/zoeken with your name. If you have a registration with an active eenmanszaak, you're registered."  _(Section 2 -- Refusal sweep (compact))_
 
 **Total time:** ~45 seconds if the user taps through.
-
----
 
 ## Section 3 -- The dump
 
@@ -179,11 +153,7 @@ Then wait. Do not ask any other questions while waiting.
 >
 > Come back when you have something to upload. I'll work with whatever you bring.
 
----
-
 ## Section 4 -- The inference pass
-
-When documents arrive, parse each one. For each document, extract:
 
 **Bank statement:**
 - Total deposits (candidate gross receipts)
@@ -238,8 +208,6 @@ When documents arrive, parse each one. For each document, extract:
 - Eigenwoningschuld outstanding
 
 **After parsing everything, build an internal inference object.** Do not show the raw inference yet -- transform it into a compact summary for the user in Section 5.
-
----
 
 ## Section 5 -- The confirmation
 
@@ -307,7 +275,9 @@ After inference, present a single compact summary message. Use a structured form
 >
 > **Is any of this wrong? Reply "looks good" or tell me what to fix.**
 
----
+- **Example zelfstandigenaftrek rate (2025)** — 2,470 EUR (2025 rate, example in confirmation summary)  _(Section 5 -- The confirmation)_
+- **MKB-winstvrijstelling percentage** — 13.31 % (applied to remaining winst after zelfstandigenaftrek)  _(Section 5 -- The confirmation)_
+- **Eigenwoningforfait rate example (2025)** — 0.55 % of WOZ-waarde (example in confirmation summary, 2025 rate)  _(Section 5 -- The confirmation)_
 
 ## Section 6 -- Gap filling
 
@@ -325,7 +295,7 @@ After the user confirms the summary (or corrects it), ask about things that cann
 8. **Other income** -- Employment income, rental income, periodic payments (alimentatie).
 9. **Fiscal partner allocation** -- If fiscal partner exists, how to split Box 3, eigen woning, and heffingskortingen.
 
-**Urencriterium gap-filling example:**
+- **Urencriterium hours requirement** — 1,225 hours (minimum hours devoted to the onderneming for zelfstandigenaftrek eligibility)  _(Section 6 -- Gap filling)_
 
 Call `ask_user_input_v0` with:
 
@@ -344,7 +314,7 @@ If option 2 -> flag T2: marginal case, urenadministratie is critical. Reviewer m
 If option 3 -> no zelfstandigenaftrek, no startersaftrek, no FOR. MKB-winstvrijstelling still applies. Income is still winst uit onderneming if KvK-registered.
 If option 4 -> "The urencriterium requires you to have spent at least 1,225 hours on your business. Full-time freelancers almost always meet it. If you also had employment, count only the hours on your business. Do you think you're above or below?"
 
-**Startersaftrek gap-filling example:**
+- **Startersaftrek amount (2025)** — 2,123 EUR (startersaftrek on top of zelfstandigenaftrek, 2025)  _(Section 6 -- Gap filling)_
 
 Call `ask_user_input_v0` with:
 
@@ -362,8 +332,6 @@ Q: "Startersaftrek eligibility?"
 If option 1 or 2 -> EUR 2,123 startersaftrek on top of zelfstandigenaftrek (2025).
 If option 3 or 4 -> no startersaftrek.
 If not sure -> "When did you register at KvK? The 5-year window starts from your first year of claiming zelfstandigenaftrek."
-
-**Werkruimte (home office) gap-filling example:**
 
 Call `ask_user_input_v0` with:
 
@@ -384,7 +352,7 @@ If option 3 -> does not qualify as zelfstandige werkruimte. No home office deduc
 If option 4 -> rent already captured in business expenses. No home office calculation needed.
 If option 5 -> skip werkruimte entirely.
 
-**FOR (fiscale oudedagsreserve):**
+- **FOR maximum percentage and cap (2025)** — 9.44% of winst, up to EUR 9,632 % / EUR (fiscale oudedagsreserve maximum reserve, 2025, applies only if urencriterium met and under AOW age)  _(Section 6 -- Gap filling)_
 
 Call `ask_user_input_v0` with:
 
@@ -401,8 +369,6 @@ Q: "Do you want to reserve FOR (fiscale oudedagsreserve) for 2025?"
 If "What is FOR?" -> "FOR lets you reserve up to 9.44% of your winst (max EUR 9,632 in 2025) as a tax-deductible pension reserve. It defers tax, not eliminates it -- you pay tax when you convert it to a lijfrente or at age 67. The maximum applies only if you meet the urencriterium and are under AOW age."
 
 Flag all private-use percentages as T2 -- belastingadviseur must confirm the percentage is reasonable and documented.
-
----
 
 ## Section 7 -- The final handoff
 
@@ -429,7 +395,7 @@ Once gap-filling is done, produce a final handoff message and hand off to `nl-re
 
 Then internally invoke `nl-return-assembly` with the structured intake package.
 
----
+0. **Invoke return assembly** — Internally invoke nl-return-assembly with the structured intake package
 
 ## Section 8 -- Structured intake package (internal format)
 
@@ -534,8 +500,6 @@ The downstream skill (`nl-return-assembly`) consumes a JSON structure. It is int
 }
 ```
 
----
-
 ## Section 9 -- Refusal handling
 
 Refusals fire from either the refusal sweep (Section 2) or during inference (e.g., BV structure discovered in documents).
@@ -552,21 +516,13 @@ When a refusal fires:
 - Suggest the user "might be able to" fit into scope if they answer differently
 - Continue silently
 
-**Refusals:**
-
-**R-NL-1 -- BV with employees > 5.** "Stop -- you have a BV with more than 5 employees. I'm set up for ZZP/eenmanszaak sole proprietors only. BVs with employees involve vennootschapsbelasting, loonbelasting, and werknemersverzekeringen. You need a belastingadviseur familiar with BV/werkgever returns."
-
-**R-NL-2 -- Holding structures.** "Stop -- you have a holding/werkmaatschappij structure. Multi-entity structures involve intercompany transactions, fiscal unity (fiscale eenheid), and participation exemption (deelnemingsvrijstelling). You need a belastingadviseur who specialises in holding structures."
-
-**R-NL-3 -- International payroll.** "Stop -- you have international payroll obligations. Cross-border employment involves 30% ruling, social security coordination (A1 detachering), and tax treaties. You need a belastingadviseur with international expertise."
-
-**Sample refusal:**
+- **R-NL-1 -- BV with employees > 5** — Stop -- you have a BV with more than 5 employees. I'm set up for ZZP/eenmanszaak sole proprietors only. BVs with employees involve vennootschapsbelasting, loonbelasting, and werknemersverzekeringen. You need a belastingadviseur familiar with BV/werkgever returns.  _(Section 9 -- Refusal handling)_
+- **R-NL-2 -- Holding structures** — Stop -- you have a holding/werkmaatschappij structure. Multi-entity structures involve intercompany transactions, fiscal unity (fiscale eenheid), and participation exemption (deelnemingsvrijstelling). You need a belastingadviseur who specialises in holding structures.  _(Section 9 -- Refusal handling)_
+- **R-NL-3 -- International payroll** — Stop -- you have international payroll obligations. Cross-border employment involves 30% ruling, social security coordination (A1 detachering), and tax treaties. You need a belastingadviseur with international expertise.  _(Section 9 -- Refusal handling)_
 
 > Stop -- you have a registered BV. I'm set up for ZZP/eenmanszaak sole proprietors only. BVs file vennootschapsbelasting returns with different rules for DGA-salaris, dividendbelasting, and Box 2 income. You need a belastingadviseur familiar with BV returns.
 >
 > I can't help with this one.
-
----
 
 ## Section 10 -- Self-checks
 
@@ -594,8 +550,6 @@ When a refusal fires:
 
 **Check IN12 -- BTW registration type was established.** Regular vs KOR was confirmed before inference, as it changes how every transaction is classified.
 
----
-
 ## Section 11 -- Performance targets
 
 For a prepared user (documents in a folder, ready to upload):
@@ -612,8 +566,6 @@ For an unprepared user (has to go fetch documents):
 - Rest: same
 - **Total**: 15-25 minutes
 
----
-
 ## Section 12 -- Cross-skill references
 
 **Inputs:** User-provided documents and answers.
@@ -625,7 +577,9 @@ For an unprepared user (has to go fetch documents):
 - `nl-income-tax` -- Aangifte inkomstenbelasting (Box 1/2/3)
 - `nl-zvw` -- Zorgverzekeringswet bijdrage reconciliation
 
----
+0. **Trigger nl-btw-return** — BTW-aangifte (quarterly/monthly or KOR annual)
+0. **Trigger nl-income-tax** — Aangifte inkomstenbelasting (Box 1/2/3)
+0. **Trigger nl-zvw** — Zorgverzekeringswet bijdrage reconciliation
 
 ### Change log
 
@@ -633,18 +587,11 @@ For an unprepared user (has to go fetch documents):
 
 ## End of Intake Skill v1.0
 
-
----
-
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, EA, tax attorney, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
 
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
-
----
-
-<!-- openaccountants-cta-block -->
+The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
 
 ## Talk to a verified accountant
 
@@ -659,16 +606,22 @@ a formal engagement letter** — book a free 30-minute call:
 
 We'll route you to the named verifier covering your country or state. You can
 also see the full list of verified accountants at
-[openaccountants.com/network](https://www.openaccountants.com/network).
+[openaccountants.com/network](https://openaccountants.com/network).
 
-<!-- openaccountants-mcp-cta -->
+<!-- openaccountants-cta-block -->
 
-## The accountant-verified version lives in the connector
+---
 
-This file is the open, **research-grade draft**. The **accountant-verified**
-version of this skill is **not published to GitHub** — it is delivered free
-through the OpenAccountants MCP connector, where your AI agent loads the
-verified rules together with the name of the accountant who signed them off.
+## Talk to a verified accountant
 
-**→ Install the free connector:** <https://www.openaccountants.com/connect>
-**MCP endpoint:** `https://www.openaccountants.com/api/mcp`
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

@@ -1,38 +1,35 @@
 ---
 name: saas-digital-products
 description: >
-  Use this skill whenever a SaaS company, digital platform, app developer, marketplace, or other digital-product business asks about sector-specific tax / accounting / cross-border issues. Trigger on phrases like "SaaS revenue recognition", "ASC 606 SaaS", "IFRS 15 SaaS", "subscription revenue", "ARR", "MRR", "deferred revenue", "termed license vs subscription", "ASC 985-20 software", "SaaS sales tax US", "Wayfair nexus SaaS", "EU OSS digital services", "marketplace facilitator", "permanent establishment server", "EU place of supply digital", "EU MOSS", "VAT digital services B2C", "GST low-value imported services", "US state sales tax SaaS", "MTD VAT SaaS UK", or any SaaS-specific tax / accounting question. Covers IFRS 15 / ASC 606 SaaS revenue recognition, US state sales tax SaaS nexus (Wayfair post-2018), EU OSS / IOSS for digital services to consumers, EU VAT place of supply for cross-border B2B/B2C SaaS, Australia GST low-value imported services, India OIDAR / Equalisation Levy, Canada digital service GST/HST. Does NOT cover: software development methodology, app store revenue share economics, SOC 2 / ISO 27001 audit procedures.
 version: 0.1
 jurisdiction: GLOBAL
-category: vertical
-depends_on:
-  - corporate-income-tax-workflow-base
+tax_year: 2025
+last_updated: 2026-05-23
 verified_by: pending
+depends_on: - corporate-income-tax-workflow-base
+category: vertical
+tier: 2
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# SaaS & Digital Products Sector Tax & Accounting v0.1
+# SAAS Digital Products
 
 ## What this file is
 
 A sector overlay for SaaS, digital platforms, app developers, marketplaces, and other digital-product businesses.
 
----
-
 ## Section 1 — Revenue recognition (IFRS 15 / ASC 606)
 
 ### 1.1 Five-step model
 
-**[T1]**
-1. Identify the contract with a customer
-2. Identify the performance obligations
-3. Determine the transaction price
-4. Allocate the price to the performance obligations
-5. Recognise revenue when each performance obligation is satisfied
+- **Five-step revenue recognition model** — 1. Identify the contract with a customer 2. Identify the performance obligations 3. Determine the transaction price 4. Allocate the price to the performance obligations 5. Recognise revenue when each performance obligation is satisfied  _([T1])_
 
 ### 1.2 Key SaaS issues
 
+**Key SaaS issues table**
+
 | Topic | Treatment |
-|---|---|
+| --- | --- |
 | **Subscription / SaaS access** | Generally one performance obligation, satisfied over time (stand-ready obligation) — straight-line revenue over the term |
 | **Implementation services** | Distinct (separate PO) only if customer can benefit from the SaaS without them; otherwise combined and recognised over the SaaS term |
 | **Right of use license vs hosted service** | If the customer has a right to use the underlying software (e.g., download), revenue at point in time; if hosted, recognise over the contract term (stand-ready) |
@@ -53,81 +50,66 @@ Contract: 3 years; $100k year 1, $150k years 2 and 3. Total $400k.
 - If implementation specific to SaaS and customer can't benefit without it → one PO, recognise both over SaaS contract term
 - If implementation could be sold separately and customer can use other vendors → separate POs, implementation recognised on completion
 
----
-
 ## Section 2 — US state sales tax on SaaS (post-Wayfair)
 
-**[T1] South Dakota v. Wayfair (2018)** overturned the physical presence test for sales tax nexus. Economic nexus now applies — typically $100,000 in sales or 200 transactions to the state.
+- **South Dakota v. Wayfair (2018)** — Overturned the physical presence test for sales tax nexus. Economic nexus now applies — typically $100,000 in sales or 200 transactions to the state.  _([T1])_
 
 ### 2.1 SaaS taxability by state (sample)
 
+**SaaS taxability by state (sample)**
+
 | State | SaaS taxable? | Notes |
-|---|---|---|
+| --- | --- | --- |
 | **California** | No (generally) — service not tangible personal property | But certain "canned software" downloads taxable |
-| **New York** | Yes — sales tax on SaaS to NY customers since 2010 |
-| **Texas** | Yes — "data processing service" since 1980s; 20% exemption under §151.351 |
-| **Florida** | No — service, not tangible | |
-| **Washington** | Yes — Retail Sales Tax + B&O Tax | |
-| **Illinois** | Generally no for SaaS but specific products taxable | |
-| **Pennsylvania** | Yes — Sales and Use Tax on "computer services" | |
-| **Massachusetts** | Yes if "prewritten" but no if customer-specific | |
-| **Ohio** | Yes if "electronic information services" | |
-| **Virginia** | No — service | |
-| **Tennessee** | Yes — Telecommunication Sales Tax also applies | |
-| **Georgia** | No — service | |
-| **North Carolina** | Yes — "digital codes" but SaaS itself contested | |
+| **New York** | Yes — sales tax on SaaS to NY customers since 2010 |  |
+| **Texas** | Yes — "data processing service" since 1980s; 20% exemption under §151.351 |  |
+| **Florida** | No — service, not tangible |  |
+| **Washington** | Yes — Retail Sales Tax + B&O Tax |  |
+| **Illinois** | Generally no for SaaS but specific products taxable |  |
+| **Pennsylvania** | Yes — Sales and Use Tax on "computer services" |  |
+| **Massachusetts** | Yes if "prewritten" but no if customer-specific |  |
+| **Ohio** | Yes if "electronic information services" |  |
+| **Virginia** | No — service |  |
+| **Tennessee** | Yes — Telecommunication Sales Tax also applies |  |
+| **Georgia** | No — service |  |
+| **North Carolina** | Yes — "digital codes" but SaaS itself contested |  |
 
-**[T1] Marketplace facilitator laws** — most states require marketplaces (Amazon, Etsy, etc.) to collect on behalf of sellers above thresholds.
-
----
+- **Marketplace facilitator laws** — Most states require marketplaces (Amazon, Etsy, etc.) to collect on behalf of sellers above thresholds.  _([T1])_
 
 ## Section 3 — EU VAT for digital services
 
 ### 3.1 Place of supply
 
-**[T1] Article 58 PVD:**
-- B2C electronic services: place of supply is **where the customer is established / has permanent address / usually resides**
-- B2B electronic services: place of supply is **where the customer is established** (reverse charge)
+- **Article 58 PVD** — B2C electronic services: place of supply is where the customer is established / has permanent address / usually resides. B2B electronic services: place of supply is where the customer is established (reverse charge).  _([T1] Article 58 PVD)_
 
 ### 3.2 OSS (One-Stop-Shop) and IOSS (Import OSS)
 
-**[T1]**
-- **Union OSS**: EU established supplier registers in home MS, declares all B2C cross-border EU sales of services + intra-EU B2C distance sales of goods
-- **Non-Union OSS**: non-EU supplier registers in chosen MS for B2C EU electronic services
-- **IOSS**: import OSS for goods ≤ EUR 150 imported into EU
+- **Union OSS** — EU established supplier registers in home MS, declares all B2C cross-border EU sales of services + intra-EU B2C distance sales of goods  _([T1])_
+- **Non-Union OSS** — Non-EU supplier registers in chosen MS for B2C EU electronic services  _([T1])_
+- **IOSS** — Import OSS for goods ≤ EUR 150 imported into EU  _([T1])_
 
 ### 3.3 VAT rates by country
 
 Country-specific. For digital services to consumers, the destination MS rate applies. See country VAT skills.
 
----
-
 ## Section 4 — Other major SaaS VAT/GST regimes
 
 ### 4.1 United Kingdom
 
-**[T1]** Post-Brexit, UK applies own VAT regime:
-- Same place-of-supply rules as EU but UK-specific
-- VAT on Electronic Services (VOES) registration for non-UK suppliers
-- Standard rate 20%
+- **UK post-Brexit VAT regime** — Post-Brexit, UK applies own VAT regime: Same place-of-supply rules as EU but UK-specific; VAT on Electronic Services (VOES) registration for non-UK suppliers; Standard rate 20%  _([T1])_
 
 ### 4.2 Australia — GST low-value imported services
 
-**[T1]** Since 1 July 2017 (digital services) and 1 July 2018 (goods ≤ AUD 1,000):
-- Non-resident suppliers must register and collect 10% GST on supplies to Australian consumers if turnover ≥ AUD 75k
-- B2B reverse charge
+- **Australia GST low-value imported services** — Since 1 July 2017 (digital services) and 1 July 2018 (goods ≤ AUD 1,000): Non-resident suppliers must register and collect 10% GST on supplies to Australian consumers if turnover ≥ AUD 75k; B2B reverse charge  _([T1])_
 
 ### 4.3 Canada — GST/HST on digital products
 
-**[T1]** Since 1 July 2021:
-- Non-resident suppliers register and collect GST/HST on B2C digital services if Canadian sales ≥ CAD 30k
-- Provincial PST/RST/QST may also apply (BC, MB, QC)
+- **Canada GST/HST on digital products** — Since 1 July 2021: Non-resident suppliers register and collect GST/HST on B2C digital services if Canadian sales ≥ CAD 30k; Provincial PST/RST/QST may also apply (BC, MB, QC)  _([T1])_
 
 ### 4.4 India — OIDAR + Equalisation Levy
 
-**[T1]**
-- **OIDAR (Online Information Database Access or Retrieval)** services to Indian consumers — non-resident supplier registers and collects GST (18%)
-- **Equalisation Levy 2.0 — 6% on advertising income** (the 2% e-commerce levy was repealed 1 August 2024)
+- **OIDAR (Online Information Database Access or Retrieval)** — Services to Indian consumers — non-resident supplier registers and collects GST (18%)  _([T1])_
+- **Equalisation Levy 2.0** — 6% on advertising income (the 2% e-commerce levy was repealed 1 August 2024)  _([T1])_
 
 ### 4.5 Other notable
 
@@ -139,37 +121,28 @@ Country-specific. For digital services to consumers, the destination MS rate app
 - **Chile** — 19% VAT on digital services
 - **Argentina** — 21% VAT plus 8% withholding on digital services
 
----
-
 ## Section 5 — Permanent establishment risk for SaaS
 
-**[T1]** OECD Model Article 5 — physical presence threshold. Pure SaaS without local server typically does not create PE. Risk areas:
+OECD Model Article 5 — physical presence threshold. Pure SaaS without local server typically does not create PE. Risk areas:
 - Dependent agents soliciting business
 - Customer success / support staff in country
 - Co-located servers (Article 5 commentary: server can be a PE if customised, owned, and CIGAs performed there)
 - Marketing / sales offices
 
-**[T1] BEPS Action 1 / digital PE**: OECD Pillar One Amount A would create a new taxing right for "market jurisdictions" — pending ratification. DSTs continue in 25+ countries (see `digital-services-tax-matrix.md`).
-
----
+- **BEPS Action 1 / digital PE** — OECD Pillar One Amount A would create a new taxing right for "market jurisdictions" — pending ratification. DSTs continue in 25+ countries (see digital-services-tax-matrix.md).  _([T1])_
 
 ## Section 6 — IFRS 15 / ASC 606 acquisition cost capitalisation
 
-**[T1]** Sales commissions paid on customer acquisition:
-- Capitalise if incremental and recoverable (IFRS 15 ¶91-94 / ASC 340-40)
-- Amortise over the **expected customer life** (often longer than initial contract — including expected renewals)
-- Practical expedient: expense if amortisation period < 1 year
-
-This typically generates a significant balance sheet asset for high-growth SaaS companies.
-
----
+- **Sales commission capitalisation** — Sales commissions paid on customer acquisition: - Capitalise if incremental and recoverable (IFRS 15 ¶91-94 / ASC 340-40) - Amortise over the expected customer life (often longer than initial contract — including expected renewals) - Practical expedient: expense if amortisation period < 1 year This typically generates a significant balance sheet asset for high-growth SaaS companies.  _([T1])_
 
 ## Section 7 — SaaS-specific KPIs interaction with accounting
 
 **[T1] Non-GAAP / management measures:**
 
+**SaaS-specific KPIs table**
+
 | Metric | Definition | Accounting interaction |
-|---|---|---|
+| --- | --- | --- |
 | **MRR / ARR** | Monthly / annual recurring revenue | Often gross; differs from GAAP revenue (which is subscription net of discounts, recognised over time) |
 | **Bookings** | New contract value signed | Pre-recognition |
 | **Deferred revenue** | Cash received before service delivered | Balance sheet liability under ASC 606 / IFRS 15 |
@@ -177,8 +150,6 @@ This typically generates a significant balance sheet asset for high-growth SaaS 
 | **Customer churn / NRR (Net Revenue Retention)** | Customer departures and expansions | Drives expected customer life for commission amortisation |
 | **CAC (Customer Acquisition Cost)** | Total sales+marketing ÷ new customers | Forms basis of LTV/CAC ratio |
 | **LTV (Lifetime Value)** | Gross margin × expected customer life | Critical for impairment testing |
-
----
 
 ## Section 8 — Self-checks
 
@@ -195,15 +166,9 @@ This typically generates a significant balance sheet asset for high-growth SaaS 
 - [ ] Deferred revenue reconciled to bookings and contract value
 - [ ] Output flags every [T2]/[T3] item for reviewer judgement
 
----
-
 ## Section 9 — Disclaimer
 
-SaaS sector taxation involves substantial cross-border complexity. Outputs must be reviewed by credentialed practitioners. The most up-to-date version is at [openaccountants.com](https://www.openaccountants.com).
-
----
-
-<!-- openaccountants-cta-block -->
+SaaS sector taxation involves substantial cross-border complexity. Outputs must be reviewed by credentialed practitioners. The most up-to-date version is at [openaccountants.com](https://openaccountants.com).
 
 ## Talk to a verified accountant
 
@@ -218,16 +183,22 @@ a formal engagement letter** — book a free 30-minute call:
 
 We'll route you to the named verifier covering your country or state. You can
 also see the full list of verified accountants at
-[openaccountants.com/network](https://www.openaccountants.com/network).
+[openaccountants.com/network](https://openaccountants.com/network).
 
-<!-- openaccountants-mcp-cta -->
+<!-- openaccountants-cta-block -->
 
-## The accountant-verified version lives in the connector
+---
 
-This file is the open, **research-grade draft**. The **accountant-verified**
-version of this skill is **not published to GitHub** — it is delivered free
-through the OpenAccountants MCP connector, where your AI agent loads the
-verified rules together with the name of the accountant who signed them off.
+## Talk to a verified accountant
 
-**→ Install the free connector:** <https://www.openaccountants.com/connect>
-**MCP endpoint:** `https://www.openaccountants.com/api/mcp`
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

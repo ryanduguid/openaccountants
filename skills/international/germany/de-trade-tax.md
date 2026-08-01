@@ -1,28 +1,38 @@
 ---
 name: de-trade-tax
 description: >
-  Use this skill whenever asked about German Trade Tax (Gewerbesteuer / GewSt) for self-employed Gewerbetreibende. Trigger on phrases like "Gewerbesteuer", "trade tax Germany", "GewSt", "Hebesatz", "Gewerbeertrag", "Steuermessbetrag", "Freibetrag 24500", "Gewerbesteuer Anrechnung", "§35 EStG", "trade tax credit", "Hinzurechnungen", "Kürzungen", "GewSt 1 A", or any question about German municipal trade tax obligations. Covers the Gewerbeertrag computation, EUR 24,500 Freibetrag, 3.5% Steuermesszahl, Hebesatz by municipality, Anrechnung on Einkommensteuer (4.0x credit under §35 EStG), Hinzurechnungen and Kürzungen, effective rate analysis, and Vorauszahlungen. ALWAYS read this skill before touching any Gewerbesteuer work.
 version: 1.0
 jurisdiction: DE
 tax_year: 2025
-tier: 2
-last_updated: 2026-06-12
-category: international
-depends_on:
-  - income-tax-workflow-base
+last_updated: 2026-04-13
 verified_by: pending
+depends_on: - income-tax-workflow-base
+category: international
+tier: 2
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Germany Trade Tax (Gewerbesteuer / GewSt) -- Gewerbetreibende Skill
-
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
-
----
+# DE Trade Tax
 
 ## Skill Metadata
 
+- **Jurisdiction** — Germany (Bundesrepublik Deutschland)
+- **Jurisdiction Code** — DE
+- **Primary Legislation** — Gewerbesteuergesetz (GewStG)
+- **Supporting Legislation** — Einkommensteuergesetz (EStG) §35 (Anrechnung); Gewerbesteuer-Durchführungsverordnung (GewStDV); Gewerbesteuer-Richtlinien (GewStR); Abgabenordnung (AO)
+- **Tax Authority** — Finanzamt (assessment) + Gemeinde/Stadt (collection)
+- **Filing Portal** — ELSTER (elster.de)
+- **Contributor** — Open Accountants Community
+- **Validated By** — Pending -- requires sign-off by a Steuerberater or Wirtschaftsprüfer
+- **Validation Date** — Pending
+- **Skill Version** — 1.0
+- **Tax Year** — 2025
+- **Confidence Coverage** — Tier 1: Freibetrag, Steuermesszahl, Hebesatz application, Anrechnung formula, filing deadlines. Tier 2: Hinzurechnungen classification, Kürzungen computation, multi-municipality apportionment. Tier 3: Organschaft, international PE allocation, Zerlegung between multiple Gemeinden, partnership GewSt.
+
+**Skill Metadata**
+
 | Field | Value |
-|-------|-------|
+| --- | --- |
 | Jurisdiction | Germany (Bundesrepublik Deutschland) |
 | Jurisdiction Code | DE |
 | Primary Legislation | Gewerbesteuergesetz (GewStG) |
@@ -36,15 +46,11 @@ verified_by: pending
 | Tax Year | 2025 |
 | Confidence Coverage | Tier 1: Freibetrag, Steuermesszahl, Hebesatz application, Anrechnung formula, filing deadlines. Tier 2: Hinzurechnungen classification, Kürzungen computation, multi-municipality apportionment. Tier 3: Organschaft, international PE allocation, Zerlegung between multiple Gemeinden, partnership GewSt. |
 
----
-
 ## Confidence Tier Definitions
 
 - **[T1] Tier 1 -- Deterministic.** Apply exactly as written. No reviewer judgement required.
 - **[T2] Tier 2 -- Reviewer Judgement Required.** Claude flags and presents options. Steuerberater must confirm.
 - **[T3] Tier 3 -- Out of Scope / Escalate.** Do not guess. Escalate and document.
-
----
 
 ## Step 0: Client Onboarding Questions
 
@@ -60,14 +66,14 @@ Before computing any Gewerbesteuer figure, you MUST know:
 
 **If the client is a Freiberufler, STOP. Gewerbesteuer does not apply. Confirm Freiberufler status with the Finanzamt classification letter (Fragebogen zur steuerlichen Erfassung).**
 
----
-
 ## Step 1: Who Must Pay Gewerbesteuer? [T1]
 
-**Legislation:** GewStG §2
+- **Legislation** — GewStG §2  _(GewStG §2)_
+
+**GewSt Obligation by Category**  _(GewStG §2)_
 
 | Category | GewSt Obligation |
-|----------|-----------------|
+| --- | --- |
 | Gewerbetreibende (traders, retailers, manufacturers, service businesses) | YES -- GewSt applies |
 | Freiberufler (doctors, lawyers, architects, engineers, IT consultants, artists, journalists) | NO -- exempt under §18 EStG |
 | Mixed activity (Gewerbe + Freiberuf) | [T2] -- if activities are inseparable, entire income may be treated as Gewerbe (Abfärbetheorie / Infektionstheorie). Flag for Steuerberater. |
@@ -78,39 +84,34 @@ The classification is determined by the Finanzamt based on the Fragebogen zur st
 
 **WARNING:** An IT consultant may be classified as Freiberufler (if providing intellectual/creative services) or Gewerbetreibender (if reselling software/hardware). The boundary is fact-specific. [T2] if classification is unclear.
 
----
-
 ## Step 2: Gewerbeertrag Computation [T1]
 
-**Legislation:** GewStG §7
-
-The Gewerbeertrag (trade income) is the adjusted profit from the Gewerbebetrieb.
+- **Legislation** — GewStG §7  _(GewStG §7)_
+- **Gewerbeertrag definition** — The Gewerbeertrag (trade income) is the adjusted profit from the Gewerbebetrieb.  _(GewStG §7)_
 
 ### Formula
 
-```
-Gewerbeertrag = Gewinn_aus_Gewerbebetrieb
-              + Hinzurechnungen (§8 GewStG)
-              - Kürzungen (§9 GewStG)
-```
+- **Gewerbeertrag formula** — Gewerbeertrag = Gewinn_aus_Gewerbebetrieb + Hinzurechnungen (§8 GewStG) - Kürzungen (§9 GewStG)  _(GewStG §7)_
 
 ### Starting Point
 
+**Starting Point**
+
 | Legal Form | Starting Point |
-|------------|---------------|
+| --- | --- |
 | Einzelunternehmen (sole proprietor) | Gewinn from Anlage G (EÜR or Bilanz) |
 | Personengesellschaft | Gewinn from gesonderte und einheitliche Feststellung |
 
----
-
 ## Step 3: Hinzurechnungen (Add-Backs) [T2]
 
-**Legislation:** GewStG §8
+- **Legislation** — GewStG §8  _(GewStG §8)_
 
 Certain financing and rental costs that were already deducted as Betriebsausgaben must be partially added back.
 
+**Hinzurechnungen Add-Back Rates**  _(GewStG §8)_
+
 | Category | Add-Back Rate | Threshold |
-|----------|--------------|-----------|
+| --- | --- | --- |
 | Interest on debt (Entgelte für Schulden) | 100% of amount | Subject to Freibetrag below |
 | Rent for movable assets (Mieten für bewegliche WG) | 20% of rent | Subject to Freibetrag below |
 | Rent for immovable assets (Mieten für unbewegliche WG) | 50% of rent | Subject to Freibetrag below |
@@ -118,77 +119,60 @@ Certain financing and rental costs that were already deducted as Betriebsausgabe
 
 ### Hinzurechnungen Freibetrag
 
-```
-total_hinzurechnungen = interest_100% + movable_rent_20% + immovable_rent_50% + royalties_25%
-if total_hinzurechnungen <= EUR 200,000: no add-back
-if total_hinzurechnungen > EUR 200,000: add back 25% of the excess over EUR 200,000
-```
+- **Hinzurechnungen Freibetrag formula** — total_hinzurechnungen = interest_100% + movable_rent_20% + immovable_rent_50% + royalties_25% if total_hinzurechnungen <= EUR 200,000: no add-back if total_hinzurechnungen > EUR 200,000: add back 25% of the excess over EUR 200,000  _(GewStG §8)_
 
 **Simplified:** Most sole proprietors with modest financing costs fall below the EUR 200,000 threshold. Hinzurechnungen are relevant primarily for capital-intensive businesses.
 
 **[T2] Flag for reviewer whenever Hinzurechnungen exceed EUR 50,000 (approaching threshold territory).**
 
----
-
 ## Step 4: Kürzungen (Reductions) [T2]
 
-**Legislation:** GewStG §9
+- **Legislation** — GewStG §9  _(GewStG §9)_
+
+**Kürzungen table**  _(GewStG §9)_
 
 | Kürzung | Amount | Condition |
-|---------|--------|-----------|
+| --- | --- | --- |
 | Grundbesitzkürzung (real property) | 1.2% of Einheitswert of owned business property | Property must be owned by the Gewerbetreibender and used in the business |
 | Extended Grundbesitzkürzung | Actual income from property | Only for Grundstücksunternehmen (property management companies) -- [T3] |
 
 **Most sole proprietors:** Only the standard 1.2% Grundbesitzkürzung applies, and only if they own the business premises. If renting, no Kürzung.
 
----
-
 ## Step 5: Freibetrag [T1]
 
-**Legislation:** GewStG §11 Abs. 1
+- **Legislation** — GewStG §11 Abs. 1  _(GewStG §11 Abs. 1)_
+
+**Freibetrag by Entity Type**  _(GewStG §11 Abs. 1)_
 
 | Entity Type | Freibetrag |
-|-------------|-----------|
+| --- | --- |
 | Natürliche Personen (sole proprietors) | EUR 24,500 |
 | Personengesellschaften | EUR 24,500 |
 | Kapitalgesellschaften (GmbH, AG) | EUR 0 (no Freibetrag) |
 
-```
-gewerbeertrag_after_freibetrag = max(0, Gewerbeertrag - 24,500)
-```
-
-**If Gewerbeertrag <= EUR 24,500, GewSt = EUR 0. No trade tax is due.**
-
----
+- **Freibetrag formula** — gewerbeertrag_after_freibetrag = max(0, Gewerbeertrag - 24,500)  _(GewStG §11 Abs. 1)_
+- **Below Freibetrag rule** — If Gewerbeertrag <= EUR 24,500, GewSt = EUR 0. No trade tax is due.  _(GewStG §11 Abs. 1)_
 
 ## Step 6: Steuermessbetrag [T1]
 
-**Legislation:** GewStG §11 Abs. 2
-
-```
-Steuermessbetrag = gewerbeertrag_after_freibetrag × 3.5%
-```
-
-The Steuermesszahl (tax measurement rate) is a federal constant: **3.5%**.
+- **Legislation** — GewStG §11 Abs. 2  _(GewStG §11 Abs. 2)_
+- **Steuermessbetrag formula** — Steuermessbetrag = gewerbeertrag_after_freibetrag × 3.5%  _(GewStG §11 Abs. 2)_
+- **Steuermesszahl (federal constant)** — 3.5%  _(GewStG §11 Abs. 2)_
 
 The Finanzamt issues the Gewerbesteuermessbescheid (assessment notice) stating the Steuermessbetrag. The municipality then applies its Hebesatz.
 
----
-
 ## Step 7: Hebesatz and Final GewSt [T1]
 
-**Legislation:** GewStG §16
-
-```
-Gewerbesteuer = Steuermessbetrag × Hebesatz / 100
-```
-
-The Hebesatz is set by each municipality. Minimum Hebesatz: 200%.
+- **Legislation** — GewStG §16  _(GewStG §16)_
+- **Gewerbesteuer formula** — Gewerbesteuer = Steuermessbetrag × Hebesatz / 100  _(GewStG §16)_
+- **Minimum Hebesatz** — 200%  _(GewStG §16)_
 
 ### Hebesätze -- Major Cities (2025)
 
+**Hebesätze -- Major Cities (2025)**
+
 | City | Hebesatz |
-|------|----------|
+| --- | --- |
 | Berlin | 410% |
 | Munich (München) | 490% |
 | Hamburg | 470% |
@@ -202,32 +186,25 @@ The Hebesatz is set by each municipality. Minimum Hebesatz: 200%.
 
 **WARNING:** Hebesätze change. Always verify the current Hebesatz with the municipality (Gemeindeverwaltung) or Steuerberater. The rates above are indicative for 2025.
 
----
-
 ## Step 8: Anrechnung on Einkommensteuer (§35 EStG) [T1]
 
-**Legislation:** EStG §35 Abs. 1
+- **Legislation** — EStG §35 Abs. 1  _(EStG §35 Abs. 1)_
 
 Sole proprietors and partners can credit GewSt against their income tax. This is the key mechanism that makes GewSt effectively neutral for many businesses.
 
 ### Formula
 
-```
-Anrechnungsbetrag = min(Steuermessbetrag × 4.0, actual_ESt_on_gewerbliche_Einkünfte)
-```
-
-The credit is **4.0 times the Steuermessbetrag**, capped at the actual income tax attributable to the Gewerbe income.
+- **Anrechnungsbetrag formula** — Anrechnungsbetrag = min(Steuermessbetrag × 4.0, actual_ESt_on_gewerbliche_Einkünfte)  _(EStG §35 Abs. 1)_
+- **Credit multiple** — The credit is 4.0 times the Steuermessbetrag, capped at the actual income tax attributable to the Gewerbe income.  _(EStG §35 Abs. 1)_
 
 ### Effective Rate Analysis
 
-```
-GewSt_rate = Hebesatz × 3.5% / 100
-Anrechnung_rate = 4.0 × 3.5% = 14.0%
-Net_effective_GewSt = GewSt_rate - 14.0%
-```
+- **Effective rate formulas** — GewSt_rate = Hebesatz × 3.5% / 100 Anrechnung_rate = 4.0 × 3.5% = 14.0% Net_effective_GewSt = GewSt_rate - 14.0%
+
+**Effective Rate Analysis by Hebesatz**
 
 | Hebesatz | GewSt Rate | Anrechnung | Net Effective Rate |
-|----------|-----------|------------|-------------------|
+| --- | --- | --- | --- |
 | 200% | 7.0% | 14.0% | 0% (fully offset) |
 | 300% | 10.5% | 14.0% | 0% (fully offset) |
 | 400% | 14.0% | 14.0% | 0% (fully offset) |
@@ -240,42 +217,40 @@ Net_effective_GewSt = GewSt_rate - 14.0%
 
 ### Limitations on Anrechnung
 
+**Limitations on Anrechnung**
+
 | Limitation | Detail |
-|-----------|--------|
+| --- | --- |
 | Cap | Cannot exceed the actual ESt on gewerbliche Einkünfte |
 | Low income | If ESt is low (e.g., income near Grundfreibetrag), the credit may exceed the ESt, creating a partial loss of credit |
 | No carryforward | Unused Anrechnung is lost -- it cannot be carried forward |
 | Solidaritätszuschlag | The Anrechnung does NOT reduce Solidaritätszuschlag -- only ESt |
 
----
-
 ## Step 9: GewSt Vorauszahlungen (Advance Payments) [T1]
 
-**Legislation:** GewStG §19
+- **Legislation** — GewStG §19  _(GewStG §19)_
+
+**GewSt Vorauszahlungen details**  _(GewStG §19)_
 
 | Aspect | Detail |
-|--------|--------|
+| --- | --- |
 | Frequency | Quarterly: 15 February, 15 May, 15 August, 15 November |
 | Basis | Prior year's GewSt (Gewerbesteuermessbescheid) |
 | Each payment | 25% of the annual GewSt |
 | Minimum | No Vorauszahlung if annual GewSt < EUR 50 |
 | Adjustment | Finanzamt adjusts Vorauszahlungen when a new Messbescheid is issued |
 
----
-
 ## Step 10: Filing and Deadlines [T1]
 
-**Legislation:** GewStG §14a; AO §149
+- **Legislation** — GewStG §14a; AO §149  _(GewStG §14a; AO §149)_
+
+**Filing requirements and deadlines**  _(GewStG §14a; AO §149)_
 
 | Requirement | Deadline |
-|-------------|----------|
+| --- | --- |
 | Gewerbesteuererklärung (GewSt 1 A) | 31 July of the following year (with Steuerberater: extended to end of February of the year after) |
 | Filing method | ELSTER (electronic, mandatory) |
 | Supporting forms | GewSt 1 A main form + Anlage EMU (if Hinzurechnungen/Kürzungen apply) |
-
----
-
-## Step 11: Full Computation Walkthrough [T1]
 
 ### Example: Sole Proprietor in Berlin, Profit EUR 80,000
 
@@ -294,47 +269,52 @@ Step 10: Net effective GewSt cost         = EUR 7,964.25 - EUR 7,770.00 = EUR 19
 
 **Net cost of GewSt for this Berlin sole proprietor: EUR 194.25** (effectively 0.24% of the Gewerbeertrag above Freibetrag).
 
----
-
 ## Step 12: Edge Case Registry
 
 ### EC1 -- Freiberufler reclassified as Gewerbetreibender [T2]
+
 **Situation:** IT consultant was treated as Freiberufler for 3 years. Finanzamt reclassifies as Gewerbetreibender after a Betriebsprüfung (tax audit).
 **Resolution:** GewSt becomes due retroactively for all open years. §35 Anrechnung can be claimed retroactively on amended ESt returns. [T2] flag for Steuerberater -- significant financial and compliance impact.
 
 ### EC2 -- Gewerbeertrag below Freibetrag [T1]
+
 **Situation:** Sole proprietor with Gewinn = EUR 18,000.
 **Resolution:** Gewerbeertrag EUR 18,000 < Freibetrag EUR 24,500. GewSt = EUR 0. No GewSt return required if Finanzamt has not requested one, but recommended to file anyway.
 
 ### EC3 -- Abfärbetheorie (infection theory) for mixed activity [T2]
+
 **Situation:** Freiberufler (architect) also sells building materials (Gewerbe). Revenue from materials = EUR 5,000, total revenue = EUR 100,000.
 **Resolution:** If the gewerbliche activity exceeds the de minimis threshold (3% of total revenue AND EUR 24,500 absolute), the ENTIRE income may be reclassified as gewerblich. EUR 5,000 / EUR 100,000 = 5% > 3%. [T2] flag for Steuerberater. Separation into distinct businesses (sachliche Trennung) may be possible.
 
 ### EC4 -- Anrechnung exceeds ESt on Gewerbe income [T1]
+
 **Situation:** Sole proprietor in low-Hebesatz municipality. Gewerbeertrag = EUR 30,000. ESt on this income (marginal) = EUR 3,000. Anrechnung = EUR 770. GewSt = EUR 385 (Hebesatz 200%).
 **Resolution:** Anrechnung (EUR 770) > GewSt paid (EUR 385). Credit is limited to actual GewSt paid. BUT: Anrechnung is also limited to ESt on gewerbliche Einkünfte. Excess Anrechnung over ESt is lost.
 
 ### EC5 -- Client moves municipality mid-year [T2]
+
 **Situation:** Business relocates from Munich (490%) to Leipzig (460%) in June.
 **Resolution:** Zerlegung (apportionment) applies if the business had Betriebsstätten in both municipalities during the year. GewSt is apportioned based on payroll (Arbeitslöhne) in each municipality. For sole proprietors without employees, the municipality where the business is registered at year-end typically applies. [T2] flag for Steuerberater.
 
 ### EC6 -- GewSt Vorauszahlung significantly exceeds actual liability [T1]
+
 **Situation:** Vorauszahlungen paid: EUR 8,000. Actual GewSt = EUR 3,000.
 **Resolution:** Overpayment of EUR 5,000. The Gemeinde issues a refund after the Gewerbesteuerbescheid is finalised. Processing time varies by municipality.
 
 ### EC7 -- Sole proprietor with significant interest expenses [T2]
+
 **Situation:** Business loan interest = EUR 50,000. All deducted as Betriebsausgaben in EÜR.
 **Resolution:** Hinzurechnung: 100% of EUR 50,000 = EUR 50,000 (below EUR 200,000 Freibetrag for Hinzurechnungen). No add-back. But if combined with rent and royalties, total may exceed threshold. [T2] flag if total Hinzurechnungen approach EUR 150,000+.
 
 ### EC8 -- Gewerbeanmeldung vs Finanzamt registration [T1]
+
 **Situation:** Client registered Gewerbe with the Gewerbeamt but forgot to register with the Finanzamt.
 **Resolution:** GewSt obligation arises from the Gewerbeanmeldung, regardless of Finanzamt registration. The Gewerbeamt forwards the registration to the Finanzamt. Client should proactively register with Finanzamt (Fragebogen zur steuerlichen Erfassung) to avoid penalties.
 
 ### EC9 -- Kirchensteuer interaction with GewSt Anrechnung [T1]
+
 **Situation:** Client is a church member. Does the §35 Anrechnung also reduce Kirchensteuer?
 **Resolution:** No. The §35 credit reduces only the Einkommensteuer. Kirchensteuer (8% or 9% of ESt) is computed on the ESt BEFORE the §35 Anrechnung. Solidaritätszuschlag is also computed before Anrechnung.
-
----
 
 ## Step 13: Reviewer Escalation Protocol
 
@@ -362,56 +342,82 @@ Issue: [outside skill scope]
 Action Required: Do not advise. Refer to Steuerberater. Document gap.
 ```
 
----
-
 ## Step 14: Test Suite
 
 ### Test 1 -- Standard computation, Berlin
+
 **Input:** Sole proprietor, Berlin (Hebesatz 410%), Gewinn = EUR 80,000, no Hinzurechnungen/Kürzungen.
 **Expected output:** Gewerbeertrag = EUR 80,000. After Freibetrag = EUR 55,500. Messbetrag = EUR 1,942.50. GewSt = EUR 7,964.25. Anrechnung = EUR 7,770.00. Net cost = EUR 194.25.
 
 ### Test 2 -- Below Freibetrag
+
 **Input:** Sole proprietor, Hamburg (470%), Gewinn = EUR 20,000.
 **Expected output:** Gewerbeertrag EUR 20,000 < Freibetrag EUR 24,500. GewSt = EUR 0. No Anrechnung needed.
 
 ### Test 3 -- Low Hebesatz, full offset
+
 **Input:** Sole proprietor, Monheim am Rhein (250%), Gewinn = EUR 60,000. Sufficient ESt liability.
 **Expected output:** Gewerbeertrag after Freibetrag = EUR 35,500. Messbetrag = EUR 1,242.50. GewSt = EUR 3,106.25. Anrechnung = EUR 4,970.00. Net cost = EUR 0 (fully offset, excess Anrechnung lost).
 
 ### Test 4 -- Munich, high Hebesatz
+
 **Input:** Sole proprietor, Munich (490%), Gewinn = EUR 100,000, no Hinzurechnungen/Kürzungen.
 **Expected output:** After Freibetrag = EUR 75,500. Messbetrag = EUR 2,642.50. GewSt = EUR 12,948.25. Anrechnung = EUR 10,570.00. Net cost = EUR 2,378.25.
 
 ### Test 5 -- Freiberufler (no GewSt)
+
 **Input:** Freelance architect, classified as Freiberufler by Finanzamt, Gewinn = EUR 90,000.
 **Expected output:** GewSt does NOT apply. EUR 0. No GewSt return required.
 
 ### Test 6 -- Vorauszahlungen computation
+
 **Input:** Prior year GewSt = EUR 6,000.
 **Expected output:** Quarterly Vorauszahlungen = EUR 1,500 each. Due: 15 Feb, 15 May, 15 Aug, 15 Nov.
 
 ### Test 7 -- Anrechnung limited by low ESt
+
 **Input:** Sole proprietor, Berlin (410%), Gewerbeertrag after Freibetrag = EUR 10,000. ESt on gewerbliche Einkünfte = EUR 1,200.
 **Expected output:** Messbetrag = EUR 350. GewSt = EUR 1,435. Anrechnung = min(EUR 1,400, EUR 1,200) = EUR 1,200. Net cost = EUR 235.
 
----
-
 ## PROHIBITIONS
 
-- NEVER apply Gewerbesteuer to a Freiberufler -- GewSt is ONLY for Gewerbetreibende
-- NEVER use a Hebesatz without verifying it with the specific municipality -- rates change annually
-- NEVER forget the EUR 24,500 Freibetrag for sole proprietors and partnerships
-- NEVER apply the §35 Anrechnung to Solidaritätszuschlag or Kirchensteuer -- it reduces only ESt
-- NEVER assume Hinzurechnungen apply without checking the EUR 200,000 aggregate threshold
-- NEVER carry forward unused Anrechnung -- it is lost if it exceeds the ESt cap
-- NEVER classify a mixed-activity client without flagging Abfärbetheorie risk for Steuerberater review
-- NEVER compute GewSt for a Kapitalgesellschaft using the EUR 24,500 Freibetrag -- Freibetrag is zero for GmbH/AG
-- NEVER present Hebesatz figures as definitive -- always note they are subject to annual municipal decision
-
----
+- **Prohibitions list** — - NEVER apply Gewerbesteuer to a Freiberufler -- GewSt is ONLY for Gewerbetreibende - NEVER use a Hebesatz without verifying it with the specific municipality -- rates change annually - NEVER forget the EUR 24,500 Freibetrag for sole proprietors and partnerships - NEVER apply the §35 Anrechnung to Solidaritätszuschlag or Kirchensteuer -- it reduces only ESt - NEVER assume Hinzurechnungen apply without checking the EUR 200,000 aggregate threshold - NEVER carry forward unused Anrechnung -- it is lost if it exceeds the ESt cap - NEVER classify a mixed-activity client without flagging Abfärbetheorie risk for Steuerberater review - NEVER compute GewSt for a Kapitalgesellschaft using the EUR 24,500 Freibetrag -- Freibetrag is zero for GmbH/AG - NEVER present Hebesatz figures as definitive -- always note they are subject to annual municipal decision
 
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, EA, tax attorney, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
 
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
+The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
+
+## Talk to a verified accountant
+
+This skill is a tool, not an engagement. Every taxpayer's situation is
+different, and the rules in the skill may not match your specific facts.
+
+To speak with one of the licensed accountants who verifies skills for your
+jurisdiction — **no liability on either side until you and the accountant sign
+a formal engagement letter** — book a free 30-minute call:
+
+**→ [Book a call](https://calendly.com/openaccountants-info/30min)**
+
+We'll route you to the named verifier covering your country or state. You can
+also see the full list of verified accountants at
+[openaccountants.com/network](https://openaccountants.com/network).
+
+<!-- openaccountants-cta-block -->
+
+---
+
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

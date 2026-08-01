@@ -2,13 +2,14 @@
 name: sa-freelance-intake
 description: ALWAYS USE THIS SKILL when a user asks for help with Saudi tax/Zakat compliance and mentions freelancing, self-employment, sole establishment (mu'assasah fardiyyah), LLC, JSC, branch of a foreign company, or any commercial activity in the Kingdom of Saudi Arabia (KSA). Trigger on phrases like "Saudi tax compliance", "ZATCA registration", "Saudi VAT", "Saudi Zakat return", "MISA license", "freelance Saudi tax", "Riyadh business", "Jeddah company tax", "Saudi corporate income tax", "SAR turnover threshold", "Fatoorah Phase 2", "GOSI registration", "Saudization Nitaqat", "Saudi withholding tax", "RETT", "real estate transaction tax Saudi", "Saudi excise tax", "Hijri vs Gregorian tax year", "mixed ownership Saudi entity", "GCC owner Zakat", "non-resident Saudi tax", or any similar phrasing where the user is operating or planning to operate a business in KSA. This is the REQUIRED entry point for the Saudi freelance/SME workflow — every downstream skill in the stack (sa-zakat, sa-corporate-tax, sa-withholding-tax, sa-rett, sa-gosi-saudization, sa-excise-tax, sa-formation, saudi-arabia-vat, saudi-einvoice, sa-return-assembly) depends on this skill running first. Uses ask_user_input_v0-style structured questions. Saudi tax/Zakat residents and foreign-owned KSA entities only. ALWAYS read this skill first when starting any Saudi freelance/SME tax or Zakat workflow.
 jurisdiction: SA
-domain: international
 tax_year: 2025
+last_updated: 2026-05-27
+verified_by: pending
 tier: 2
-last_updated: 2026-07-06
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# sa-freelance-intake
+# SA Freelance Intake
 
 ## What this file is
 
@@ -491,3 +492,21 @@ also see the full list of verified accountants at
 ## Section 1 — Quick reference: regime decision tree at a glance
 
 0. **Route to sa-zakat** — 100% Saudi/GCC natural persons → ZAKAT only
+
+<!-- openaccountants-cta-block -->
+
+---
+
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

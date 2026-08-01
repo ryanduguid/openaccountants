@@ -7,7 +7,14 @@
 
 1. `foundation.md`
 2. `intake.md`
-3. `qatar-tax.md`
+3. `qa-company-formation.md`
+4. `qa-corporate-income-tax.md`
+5. `qa-payroll-social.md`
+6. `qa-tax-overview.md`
+7. `qa-vat-gst.md`
+8. `qatar-tax.md`
+9. `payroll-workflow-base.md`
+10. `company-formation-workflow-base.md`
 
 ## How to use
 

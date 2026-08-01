@@ -3,18 +3,21 @@ name: senegal-vat
 description: Use this skill whenever asked to prepare, review, or classify transactions for a Senegal VAT (TVA) return. Standard rate 18%, reduced 10% (tourism). WAEMU member. Precompte TVA mechanism. ALWAYS read before handling Senegal VAT work.
 version: 2.0
 jurisdiction: SN
+tax_year: 2025
+last_updated: 2026-04-13
+verified_by: pending
 tier: 2
-last_updated: 2026-06-12
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Senegal VAT (TVA) Return Skill v2.0
-
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+# Senegal VAT
 
 ## Section 1 -- Quick reference
 
+**Quick reference**
+
 | Field | Value |
-|---|---|
+| --- | --- |
 | Country | Senegal |
 | Standard rate | 18% |
 | Reduced rate | 10% (tourism accommodation/catering) |
@@ -30,30 +33,26 @@ last_updated: 2026-06-12
 | Validated by | Pending |
 | Last research update | April 2026 |
 
----
-
 ## Section 2 -- Required inputs and refusal catalogue
 
 **Minimum viable** -- bank statement. Acceptable from CBAO, SGBS (Societe Generale Banques au Senegal), Ecobank SN, BOA SN, BIS, BNDE, or any Senegalese bank.
 
----
-
 ## Section 3 -- Supplier pattern library
 
+**Supplier pattern library**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | CBAO | EXCLUDE | Exempt financial |
 | SGBS, SOCIETE GENERALE SN | EXCLUDE | Same |
 | ECOBANK SN, BOA SN | EXCLUDE | Same |
 | DGID | EXCLUDE | Tax payment |
-| DOUANE | Check for import TVA | |
+| DOUANE | Check for import TVA |  |
 | CSS, IPRES | EXCLUDE | Social charges |
 | SENELEC | Domestic 18% | Electricity |
 | SDE, SEN'EAU | Domestic 18% | Water |
 | ORANGE SN, FREE SN, EXPRESSO | Domestic 18% | Telecoms |
 | GOOGLE, MICROSOFT, AWS | Autoliquidation 18% | Non-resident |
-
----
 
 ## Section 4 -- Worked examples
 
@@ -65,13 +64,9 @@ FCFA 10M net. TVA = FCFA 1.8M (18%).
 
 Government entity pays supplier. Precompte withheld. Supplier claims credit on Line III.3.
 
----
-
 ## Section 5 -- Classification rules
 
-18% standard. 10% reduced (tourism). 0% exports. Exempt: basic foodstuffs, financial, medical, education, residential rental, agricultural inputs, petroleum (specific taxes).
-
----
+- **Classification rules** — 18% standard. 10% reduced (tourism). 0% exports. Exempt: basic foodstuffs, financial, medical, education, residential rental, agricultural inputs, petroleum (specific taxes).
 
 ## Section 6 -- VAT return form
 
@@ -81,27 +76,21 @@ Input: II.1-II.6 (local, imports, autoliquidation input, capital goods, adjustme
 
 Net: III.1-III.4 (net, credit reporte, precompte, payable/credit).
 
----
-
 ## Section 7 -- Reverse charge
 
-Non-resident services: self-assess 18%. Net zero if fully taxable. CGI Art. 364.
-
----
+- **Reverse charge for non-resident services** — Non-resident services: self-assess 18%. Net zero if fully taxable.  _(CGI Art. 364)_
 
 ## Section 8 -- Deductibility and blocked input
 
-Blocked (CGI Art. 376-379): vehicles < 9 seats, staff accommodation, entertainment, fuel for blocked vehicles, personal use, invoices without NINEA.
-
-Prorata: CGI Art. 375. Capital goods: 20yr immovable, 5yr movable.
-
----
+- **Blocked input VAT** — Blocked: vehicles < 9 seats, staff accommodation, entertainment, fuel for blocked vehicles, personal use, invoices without NINEA.  _(CGI Art. 376-379)_
+- **Prorata rule** — Prorata deduction rule applies.  _(CGI Art. 375)_
+- **Capital goods adjustment periods** — Capital goods: 20yr immovable, 5yr movable.
 
 ## Section 9 -- Filing, deadlines, and penalties
 
-Monthly 15th. Quarterly for simplifie. Late filing: 50% surcharge (min FCFA 200K). Late payment: 1%/month.
-
----
+- **Filing deadlines** — Monthly 15th. Quarterly for simplifie.
+- **Late filing penalty** — Late filing: 50% surcharge (min FCFA 200K).
+- **Late payment penalty** — Late payment: 1%/month.
 
 ## Section 10 -- Edge cases, test suite, and escalation
 
@@ -127,10 +116,26 @@ Out of scope: IS 30%, PAYE progressive, IPRES/CSS.
 - NEVER accept invoices without NINEA
 - NEVER compute numbers -- engine handles arithmetic
 
----
-
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional before filing or acting upon.
 
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com).
+The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com).
+
+<!-- openaccountants-cta-block -->
+
+---
+
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

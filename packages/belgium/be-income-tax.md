@@ -1,23 +1,27 @@
 ---
 name: be-income-tax
 description: >
-  Use this skill whenever asked about Belgian income tax (Personenbelasting / Impot des personnes physiques) for self-employed individuals. Trigger on phrases like "personenbelasting", "IPP", "belastingaangifte", "belastingvrij minimum", "gemeentebelasting", "beroepskosten", "sociale bijdragen", "VAPZ", "PLCI", "Belgian income tax", "self-employed tax Belgium", "Tax-on-web", or any question about computing or filing income tax for a self-employed person in Belgium. This skill covers progressive brackets (25--50%), belastingvrij minimum, gemeentebelasting, beroepskosten (actual vs forfaitaire), sociale bijdragen deductibility, VAPZ/PLCI pension deduction, and Tax-on-web filing. ALWAYS read this skill before touching any Belgian income tax work.
 version: 2.0
 jurisdiction: BE
 tax_year: 2025
+last_updated: 2026-04-13
+verified_by: pending
+depends_on: - income-tax-workflow-base
 category: international
-depends_on:
-  - income-tax-workflow-base
+tier: 2
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Belgium Income Tax (PB/IPP) -- Self-Employed Skill v2.0
+# BE Income Tax
 
----
+## Belgium Income Tax (PB/IPP) -- Self-Employed Skill v2.0
 
 ## Section 1 -- Quick Reference
 
+**Quick Reference table**
+
 | Field | Value |
-|---|---|
+| --- | --- |
 | Country | Belgium (Koninkrijk Belgie / Royaume de Belgique) |
 | Tax | Personenbelasting (PB) / Impot des personnes physiques (IPP) + Gemeentebelasting |
 | Currency | EUR only |
@@ -34,17 +38,21 @@ depends_on:
 
 ### Progressive Tax Brackets (Income Year 2025 / AJ 2026)
 
+**Progressive Tax Brackets table**
+
 | Taxable Income (EUR) | Marginal Rate |
-|---|---|
-| 0 -- 16,720 | 25% |
-| 16,721 -- 29,510 | 40% |
-| 29,511 -- 51,070 | 45% |
-| Above 51,070 | 50% |
+| --- | --- |
+| 0 -- 16,320 | 25% |
+| 16,721 -- 28,800 | 40% |
+| 29,511 -- 49,840 | 45% |
+| Above 49,840 | 50% |
 
 ### Belastingvrij Minimum (Tax-Free Allowance)
 
+**Belastingvrij Minimum table**
+
 | Category | EUR |
-|---|---|
+| --- | --- |
 | Base | 10,910 |
 | +1 dependant child | +1,850 |
 | +2 dependant children | +4,760 |
@@ -56,14 +64,15 @@ Converted to tax reduction at 25% rate: EUR 10,910 x 25% = EUR 2,727.50 base.
 
 ### Gemeentebelasting (Municipal Surcharge)
 
-- Range: 0% to 9% of federal tax
-- Average: ~7%
-- **MUST know municipality to compute. STOP if unknown.**
+- **Gemeentebelasting range** — 0% to 9% of federal tax % (Average ~7%)
+- **Unknown municipality rule** — MUST know municipality to compute. STOP if unknown.
 
 ### Key Deductions
 
+**Key Deductions table**
+
 | Item | Rule |
-|---|---|
+| --- | --- |
 | Sociale bijdragen | Fully deductible as professional expense |
 | Restaurant meals (business) | 69% deductible |
 | Business gifts | 50% deductible |
@@ -73,39 +82,31 @@ Converted to tax reduction at 25% rate: EUR 10,910 x 25% = EUR 2,727.50 base.
 
 ### Conservative Defaults
 
+**Conservative Defaults table**
+
 | Ambiguity | Default |
-|---|---|
+| --- | --- |
 | Unknown municipality | STOP -- cannot compute gemeentebelasting |
 | Unknown expense method | Forfaitaire beroepskosten |
 | Unknown business-use % | 0% deduction |
 | Unknown VAPZ type | Gewoon VAPZ |
 | Unknown vehicle CO2 | Minimum deductibility percentage |
 
----
-
 ## Section 2 -- Required Inputs and Refusal Catalogue
 
 ### Required Inputs
 
-**Minimum viable** -- bank statement for the full tax year, municipality of residence, marital/family status.
-
-**Recommended** -- all invoices, sociale bijdragen statements from social fund, VAPZ/PLCI certificates, prior year aanslagbiljet.
-
-**Ideal** -- complete accounting records, asset register, voorafbetalingen confirmations, employment income fiche 281.10.
-
-**Refusal if minimum is missing -- SOFT WARN.** No bank statement = hard stop. No municipality = hard stop.
+- **Minimum viable** — bank statement for the full tax year, municipality of residence, marital/family status.
+- **Recommended** — all invoices, sociale bijdragen statements from social fund, VAPZ/PLCI certificates, prior year aanslagbiljet.
+- **Ideal** — complete accounting records, asset register, voorafbetalingen confirmations, employment income fiche 281.10.
+- **Refusal if minimum is missing** — SOFT WARN. No bank statement = hard stop. No municipality = hard stop.
 
 ### Refusal Catalogue
 
-**R-BE-1 -- Companies (BV, NV, CV).** "This skill covers natural persons (personenbelasting) only. Vennootschapsbelasting is out of scope."
-
-**R-BE-2 -- Non-resident.** "Non-resident taxation (BNI/INR) has different rules. Escalate."
-
-**R-BE-3 -- International structures.** "Cross-border income and tax treaties require specialist analysis. Escalate."
-
-**R-BE-4 -- Fiscale procedures / bezwaar.** "Objections and appeals require specialist advice. Escalate."
-
----
+- **R-BE-1 -- Companies (BV, NV, CV)** — This skill covers natural persons (personenbelasting) only. Vennootschapsbelasting is out of scope.
+- **R-BE-2 -- Non-resident** — Non-resident taxation (BNI/INR) has different rules. Escalate.
+- **R-BE-3 -- International structures** — Cross-border income and tax treaties require specialist analysis. Escalate.
+- **R-BE-4 -- Fiscale procedures / bezwaar** — Objections and appeals require specialist advice. Escalate.
 
 ## Section 3 -- Transaction Pattern Library
 
@@ -113,8 +114,10 @@ This is the deterministic pre-classifier. When a bank statement transaction matc
 
 ### 3.1 Income Patterns (Credits)
 
+**Income Patterns table**
+
 | Pattern | Tax Line | Treatment | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | OVERSCHRIJVING [client], BETALING, HONORARIUM | Beroepsinkomsten | Business income | Net of BTW if BTW-registered |
 | STRIPE PAYOUT, PAYPAL PAYOUT | Beroepsinkomsten | Business income | Platform payout |
 | LOON, WEDDE, WERKGEVER | Bezoldiging | NOT self-employment | Employment income |
@@ -124,32 +127,38 @@ This is the deterministic pre-classifier. When a bank statement transaction matc
 
 ### 3.2 Expense Patterns (Debits) -- Fully Deductible
 
+**Fully Deductible Expenses table**
+
 | Pattern | Category | Treatment | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | KANTOORHUUR, HUUR KANTOOR, OFFICE RENT | Huurkosten | Fully deductible | Dedicated premises |
 | BEROEPSAANSPRAKELIJKHEID, BA VERZEKERING | Verzekering | Fully deductible | Professional insurance |
-| BOEKHOUDER, ACCOUNTANT, FISCALIST | Erelonen | Fully deductible | |
+| BOEKHOUDER, ACCOUNTANT, FISCALIST | Erelonen | Fully deductible |  |
 | ADVOCAAT, NOTARIS (business) | Erelonen | Fully deductible | Business-related |
-| KANTOORMATERIAAL, BUREELBENODIGDHEDEN | Kantoorkosten | Fully deductible | |
-| RECLAME, MARKETING, GOOGLE ADS | Reclamekosten | Fully deductible | |
+| KANTOORMATERIAAL, BUREELBENODIGDHEDEN | Kantoorkosten | Fully deductible |  |
+| RECLAME, MARKETING, GOOGLE ADS | Reclamekosten | Fully deductible |  |
 | OPLEIDING, VORMING, BIJSCHOLING | Opleidingskosten | Fully deductible | Current profession |
-| LIDMAATSCHAP, BEROEPSVERENIGING | Bijdragen | Fully deductible | |
+| LIDMAATSCHAP, BEROEPSVERENIGING | Bijdragen | Fully deductible |  |
 | BANKREKENINGKOSTEN, BANKKOSTEN | Financiele kosten | Fully deductible | Business account |
-| STRIPE FEE, PAYPAL FEE | Transactiekosten | Fully deductible | |
-| SOFTWARE, LICENTIE, ABONNEMENT | IT-kosten | Fully deductible | |
+| STRIPE FEE, PAYPAL FEE | Transactiekosten | Fully deductible |  |
+| SOFTWARE, LICENTIE, ABONNEMENT | IT-kosten | Fully deductible |  |
 
 ### 3.3 Expense Patterns -- Sociale Bijdragen
 
+**Sociale Bijdragen table**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | ACERTA, LIANTIS, XERIUS, GROUP S, PARTENA | Fully deductible | Social insurance fund contributions |
 | SOCIALE BIJDRAGEN, COTISATIONS SOCIALES | Fully deductible | Quarterly social contributions |
 | VAPZ, PLCI, AANVULLEND PENSIOEN | Deductible (within limits) | See Section 6 for caps |
 
 ### 3.4 Expense Patterns -- Partially Deductible
 
+**Partially Deductible table**
+
 | Pattern | Deductibility | Treatment | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | RESTAURANT, ETENTJE, ZAKENLUNCH | 69% | Partially deductible | Business purpose restaurant meals |
 | GESCHENK, CADEAU, RELATIEGESCHENK | 50% | Partially deductible | Business gifts |
 | BRANDSTOF, BENZINE, DIESEL, TOTAL, Q8 | CO2-based % | T2 | Vehicle fuel -- see CO2 rules |
@@ -157,8 +166,10 @@ This is the deterministic pre-classifier. When a bank statement transaction matc
 
 ### 3.5 Expense Patterns -- NOT Deductible
 
+**NOT Deductible table**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | PRIVE, BOODSCHAPPEN, SUPERMARKT, COLRUYT, DELHAIZE | NOT deductible | Personal living costs |
 | BOETE, GELDBOETE | NOT deductible | Fines |
 | PERSONENBELASTING, PB BETALING | NOT deductible | Income tax |
@@ -166,18 +177,22 @@ This is the deterministic pre-classifier. When a bank statement transaction matc
 
 ### 3.6 Capital Items
 
+**Capital Items table**
+
 | Pattern | Useful Life | Annual Rate | Notes |
-|---|---|---|---|
-| COMPUTER, LAPTOP, PC | 3 years | 33.3% | |
-| PRINTER, SCANNER | 5 years | 20% | |
-| KANTOORMEUBILAIR, BUREAU | 10 years | 10% | |
+| --- | --- | --- | --- |
+| COMPUTER, LAPTOP, PC | 3 years | 33.3% |  |
+| PRINTER, SCANNER | 5 years | 20% |  |
+| KANTOORMEUBILAIR, BUREAU | 10 years | 10% |  |
 | AUTO, WAGEN (business) | 5 years | 20% | CO2 deductibility limits apply |
-| GEBOUW (commercial) | 33 years | 3% | |
+| GEBOUW (commercial) | 33 years | 3% |  |
 
 ### 3.7 Exclusions
 
+**Exclusions table**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | EIGEN REKENING, INTERNE OVERSCHRIJVING | EXCLUDE | Own-account transfer |
 | LENING, AFLOSSING | EXCLUDE | Loan principal |
 | LENINGSINTERESTEN (business) | Deductible | Business loan interest |
@@ -186,16 +201,16 @@ This is the deterministic pre-classifier. When a bank statement transaction matc
 
 ### 3.8 Belgian Banks -- Statement Format Reference
 
+**Belgian Banks Statement Format table**
+
 | Bank | Format | Key Fields | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | BNP Paribas Fortis | CSV, PDF | Datum, Omschrijving, Bedrag | Most common; CODA format available |
 | KBC | CSV, PDF | Boekingsdatum, Omschrijving, Bedrag | KBC Touch export |
-| Belfius | CSV, PDF | Datum, Mededeling, Bedrag | |
-| ING Belgium | CSV, PDF | Datum, Naam tegenpartij, Bedrag | |
-| Argenta | CSV, PDF | Datum, Verrichting, Bedrag | |
+| Belfius | CSV, PDF | Datum, Mededeling, Bedrag |  |
+| ING Belgium | CSV, PDF | Datum, Naam tegenpartij, Bedrag |  |
+| Argenta | CSV, PDF | Datum, Verrichting, Bedrag |  |
 | N26, Revolut | CSV | Date, Counterparty, Amount | Neobank format |
-
----
 
 ## Section 4 -- Worked Examples
 
@@ -259,26 +274,22 @@ Personal groceries. Not business-related.
 
 **Classification:** NOT deductible. Exclude.
 
----
-
 ## Section 5 -- Tier 1 Rules (When Data Is Clear)
 
 ### 5.1 Beroepsinkomsten
 
-All business income is beroepsinkomsten. For BTW-registered, report net of BTW.
+- **Beroepsinkomsten treatment** — All business income is beroepsinkomsten. For BTW-registered, report net of BTW.
 
 ### 5.2 Beroepskosten
 
-Two methods (choose one):
-- **Werkelijke (actual):** All documented business expenses meeting the test
-- **Forfaitaire (flat-rate):** Graduated scale, max ~EUR 5,750
-
-Cannot combine both. Sociale bijdragen deductible under either method.
+- **Two methods** — Werkelijke (actual): All documented business expenses meeting the test. Forfaitaire (flat-rate): Graduated scale, max ~EUR 5,750. Cannot combine both. Sociale bijdragen deductible under either method.
 
 ### 5.3 Forfaitaire Beroepskosten Scale
 
+**Forfaitaire Beroepskosten Scale table**
+
 | Income Bracket (EUR) | Rate |
-|---|---|
+| --- | --- |
 | 0 -- 19,620 | 30% |
 | 19,621 -- 38,900 | 11% |
 | 38,901 -- 64,770 | 3% |
@@ -286,8 +297,10 @@ Cannot combine both. Sociale bijdragen deductible under either method.
 
 ### 5.4 Non-Deductible Expenses
 
+**Non-Deductible Expenses table**
+
 | Expense | Reason |
-|---|---|
+| --- | --- |
 | Personal living expenses | Not business-related |
 | Fines (boetes) | Public policy |
 | Income tax (personenbelasting) | Tax on income |
@@ -295,8 +308,10 @@ Cannot combine both. Sociale bijdragen deductible under either method.
 
 ### 5.5 Partially Deductible
 
+**Partially Deductible table**
+
 | Item | % Deductible |
-|---|---|
+| --- | --- |
 | Restaurant meals (business) | 69% |
 | Business gifts | 50% |
 | Vehicle costs (fuel) | Max 75% |
@@ -304,79 +319,79 @@ Cannot combine both. Sociale bijdragen deductible under either method.
 
 ### 5.6 Voorafbetalingen (Advance Payments)
 
+**Voorafbetalingen table**
+
 | Quarter | Deadline | Benefit % |
-|---|---|---|
+| --- | --- | --- |
 | VA1 | 10 April | 12% |
 | VA2 | 10 July | 10% |
 | VA3 | 10 October | 8% |
 | VA4 | 20 December | 6% |
 
-Vermeerdering (~9% of tax) for insufficient advance payments. Making VA earns bonification to offset.
+- **Vermeerdering** — Vermeerdering (~9% of tax) for insufficient advance payments. Making VA earns bonification to offset.
 
 ### 5.7 Filing Deadlines
 
+**Filing Deadlines table**
+
 | Item | Deadline |
-|---|---|
+| --- | --- |
 | Tax-on-web (self) | 30 June |
 | With accountant | Mid-October |
 | Paper filing | End of June |
 
 ### 5.8 Penalties
 
+**Penalties table**
+
 | Offence | Penalty |
-|---|---|
+| --- | --- |
 | Late filing (first) | EUR 50/month |
 | Late payment interest | 4% per year (2025) |
 | Non-filing / serious | EUR 50-1,250 + tax increase 10%-200% |
 
 ### 5.9 Afschrijvingen (Depreciation)
 
+**Afschrijvingen table**
+
 | Asset | Life | Rate |
-|---|---|---|
+| --- | --- | --- |
 | Computer | 3 years | 33.3% |
 | Software | 3 years | 33.3% |
 | Furniture | 10 years | 10% |
 | Vehicles | 5 years | 20% |
 | Buildings | 33 years | 3% |
 
-Straight-line or declining balance (degressief) permitted.
-
----
+- **Depreciation methods permitted** — Straight-line or declining balance (degressief) permitted.
 
 ## Section 6 -- Tier 2 Catalogue (Reviewer Judgement Required)
 
 ### 6.1 Werkelijke vs Forfaitaire Comparison
 
-Compare actual expenses (including sociale bijdragen) against forfaitaire scale. Flag for reviewer.
+- **Comparison rule** — Compare actual expenses (including sociale bijdragen) against forfaitaire scale. Flag for reviewer.
 
 ### 6.2 Motor Vehicle CO2 Deductibility
 
-From 2025, formula: 120% - (0.5% x coefficient x CO2 g/km). High-emission vehicles significantly limited. Flag for reviewer to compute using exact CO2 and fuel type.
+- **CO2 deductibility formula** — 120% - (0.5% x coefficient x CO2 g/km) (From 2025. High-emission vehicles significantly limited. Flag for reviewer to compute using exact CO2 and fuel type.)
 
 ### 6.3 VAPZ/PLCI Limits
 
-- Gewoon: 8.17% of reference income (max ~EUR 3,965)
-- Sociaal: 9.40% of reference income (max ~EUR 4,562)
-- Reference income = net professional income from 3 years prior
-- Flag for reviewer to confirm limit
+- **VAPZ/PLCI limits** — Gewoon: 8.17% of reference income (max ~EUR 3,965). Sociaal: 9.40% of reference income (max ~EUR 4,562). Reference income = net professional income from 3 years prior. Flag for reviewer to confirm limit.
 
 ### 6.4 Home Office
 
-Dedicated workspace required. Proportional by floor area. Dual-use does not qualify.
+- **Home office deduction rule** — Dedicated workspace required. Proportional by floor area. Dual-use does not qualify.
 
 ### 6.5 Phone / Internet Mixed Use
 
-Business portion only. Default 0%.
+- **Phone/Internet mixed use rule** — Business portion only. Default 0%.
 
 ### 6.6 Sociale Bijdragen in First 3 Years
 
-Provisional contributions on minimum basis. Regularisation later. Adjustment in year of payment/receipt.
-
----
+- **First 3 years sociale bijdragen rule** — Provisional contributions on minimum basis. Regularisation later. Adjustment in year of payment/receipt.
 
 ## Section 7 -- Excel Working Paper Template
 
-```
 BELGIUM INCOME TAX -- PB/IPP WORKING PAPER
 Tax Year: 2025 (AJ 2026)
 Client: ___________________________
@@ -420,26 +435,27 @@ REVIEWER FLAGS:
   [ ] Restaurant meals at 69%?
   [ ] VAPZ within limits?
   [ ] Vermeerdering for missing VA?
-```
-
----
 
 ## Section 8 -- Bank Statement Reading Guide
 
 ### Belgian Bank Statement Formats
 
+**Belgian Bank Statement Formats table**
+
 | Bank | Format | Key Fields | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | BNP Paribas Fortis | CSV, PDF, CODA | Datum, Omschrijving/Mededeling, Bedrag | CODA format = structured |
 | KBC | CSV, PDF | Boekingsdatum, Omschrijving, Bedrag | KBC Touch/Business |
-| Belfius | CSV, PDF | Datum, Mededeling, Bedrag | |
-| ING Belgium | CSV, PDF | Datum, Naam tegenpartij, Mededeling, Bedrag | |
-| Argenta | CSV, PDF | Datum, Verrichting, Bedrag | |
+| Belfius | CSV, PDF | Datum, Mededeling, Bedrag |  |
+| ING Belgium | CSV, PDF | Datum, Naam tegenpartij, Mededeling, Bedrag |  |
+| Argenta | CSV, PDF | Datum, Verrichting, Bedrag |  |
 
 ### Key Belgian Banking Terms
 
+**Key Belgian Banking Terms table**
+
 | Term | English | Hint |
-|---|---|---|
+| --- | --- | --- |
 | Overschrijving | Transfer | Check direction |
 | Domiciliering | Direct debit | Regular expense |
 | Storting | Deposit | Potential income |
@@ -447,11 +463,8 @@ REVIEWER FLAGS:
 | Bancontact | Debit card payment | Expense |
 | Rekeningkosten | Account charges | Deductible |
 
----
-
 ## Section 9 -- Onboarding Fallback
 
-```
 ONBOARDING QUESTIONS -- BELGIUM INCOME TAX
 1. Municipality of residence? (Required for gemeentebelasting)
 2. Family status: single, married/cohabitant, dependants?
@@ -463,16 +476,15 @@ ONBOARDING QUESTIONS -- BELGIUM INCOME TAX
 8. Phone/internet: business %?
 9. Other income (employment, rental, investment)?
 10. Voorafbetalingen made? Amounts and dates?
-```
-
----
 
 ## Section 10 -- Reference Material
 
 ### Key Legislation
 
+**Key Legislation table**
+
 | Topic | Reference |
-|---|---|
+| --- | --- |
 | Tax brackets | WIB 92, Art. 130+ |
 | Belastingvrij minimum | WIB 92, Art. 131-145 |
 | Beroepskosten | WIB 92, Art. 49-66 |
@@ -487,31 +499,23 @@ ONBOARDING QUESTIONS -- BELGIUM INCOME TAX
 
 ### Test Suite
 
-**Test 1 -- Single, Antwerp (8.4%), mid-range.**
 Input: Turnover EUR 50,000, actual expenses EUR 10,000 (incl. sociale bijdragen EUR 5,500).
 Expected: Net EUR 40,000. Federal tax ~EUR 14,016. Less belastingvrij EUR 2,728 = EUR 11,289. Gemeente EUR 948.
 
-**Test 2 -- Forfaitaire comparison.**
 Input: Turnover EUR 30,000, actual EUR 2,000.
 Expected: Forfaitaire ~EUR 7,028. Forfaitaire is better.
 
-**Test 3 -- Restaurant meals.**
 Input: EUR 3,000 restaurant at 100%.
 Expected: 69% = EUR 2,070 deductible. Remove EUR 930.
 
-**Test 4 -- VAPZ cap.**
 Input: EUR 5,000 gewoon VAPZ. Max EUR 3,965.
 Expected: EUR 1,035 excess not deductible.
 
-**Test 5 -- Gemeentebelasting.**
 Input: Federal tax EUR 8,000, rate 7%.
 Expected: Gemeente EUR 560. Total EUR 8,560.
 
-**Test 6 -- Vermeerdering.**
 Input: Tax EUR 10,000, no VA.
 Expected: Vermeerdering ~EUR 900. Total EUR 10,900.
-
----
 
 ## PROHIBITIONS
 
@@ -524,17 +528,11 @@ Expected: Vermeerdering ~EUR 900. Total EUR 10,900.
 - NEVER ignore vermeerdering for missing advance payments
 - NEVER present calculations as definitive
 
----
-
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as an erkend boekhouder-fiscalist or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
 
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
-
----
-
-<!-- openaccountants-cta-block -->
+The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
 
 ## Talk to a verified accountant
 
@@ -549,16 +547,22 @@ a formal engagement letter** — book a free 30-minute call:
 
 We'll route you to the named verifier covering your country or state. You can
 also see the full list of verified accountants at
-[openaccountants.com/network](https://www.openaccountants.com/network).
+[openaccountants.com/network](https://openaccountants.com/network).
 
-<!-- openaccountants-mcp-cta -->
+<!-- openaccountants-cta-block -->
 
-## The accountant-verified version lives in the connector
+---
 
-This file is the open, **research-grade draft**. The **accountant-verified**
-version of this skill is **not published to GitHub** — it is delivered free
-through the OpenAccountants MCP connector, where your AI agent loads the
-verified rules together with the name of the accountant who signed them off.
+## Talk to a verified accountant
 
-**→ Install the free connector:** <https://www.openaccountants.com/connect>
-**MCP endpoint:** `https://www.openaccountants.com/api/mcp`
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

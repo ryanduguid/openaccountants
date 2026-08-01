@@ -4,15 +4,22 @@ description: Use this skill whenever asked about Irish PRSI Class S contribution
 version: 2.0
 jurisdiction: IE
 tax_year: 2025
+last_updated: 2026-04-13
 verified_by: pending
+tier: 2
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Ireland PRSI Class S -- Self-Employed Skill v2.0
+# IE Prsi Class S
+
+## Ireland PRSI Class S -- Self-Employed Skill v2.0
 
 ## Section 1 -- Quick reference
 
+**Quick reference table**
+
 | Field | Value |
-|---|---|
+| --- | --- |
 | Country | Ireland |
 | Authority | Department of Social Protection (DSP); Revenue Commissioners (collection) |
 | Primary legislation | Social Welfare Consolidation Act 2005 (as amended) |
@@ -29,60 +36,43 @@ verified_by: pending
 | Validated by | Pending -- licensed Irish practitioner sign-off required |
 | Validation date | Pending |
 
----
-
 ## Section 2 -- Required inputs and refusal catalogue
 
 ### Required inputs
 
-Before computing any PRSI Class S figure, you MUST obtain:
-
-1. **Tax year** -- rates change annually and mid-year (1 October)
-2. **Total income from all sources** -- PRSI Class S is levied on aggregate income, not just self-employment
-3. **Is income from all sources below EUR 5,000?** -- if yes, no PRSI liability
-4. **Does the client have any PAYE employment?** -- may already pay Class A
-5. **Age** -- PRSI is not payable once the client reaches age 66
-6. **Is the client a proprietary director?** -- 15%+ shareholding pays Class S
-
-**If tax year is unknown, STOP. Do not compute PRSI.**
+- **Required inputs before computing PRSI Class S** — Before computing any PRSI Class S figure, you MUST obtain: 1. Tax year -- rates change annually and mid-year (1 October) 2. Total income from all sources -- PRSI Class S is levied on aggregate income, not just self-employment 3. Is income from all sources below EUR 5,000? -- if yes, no PRSI liability 4. Does the client have any PAYE employment? -- may already pay Class A 5. Age -- PRSI is not payable once the client reaches age 66 6. Is the client a proprietary director? -- 15%+ shareholding pays Class S. If tax year is unknown, STOP. Do not compute PRSI.
 
 ### Refusal catalogue
 
-**R-IE-PRSI-1 -- EU/EEA cross-border worker.** Trigger: client is self-employed in Ireland but resident in another EU/EEA state. Message: "EU Regulation 883/2004 governs which state collects social insurance. Escalate -- do not advise without specialist cross-border guidance."
+- **R-IE-PRSI-1 -- EU/EEA cross-border worker** — Trigger: client is self-employed in Ireland but resident in another EU/EEA state. Message: "EU Regulation 883/2004 governs which state collects social insurance. Escalate -- do not advise without specialist cross-border guidance."
 
 ### Prohibitions
 
-- NEVER compute PRSI without confirming the tax year -- rates change annually and mid-year
-- NEVER tell a client they owe no PRSI without checking the EUR 5,000 threshold from ALL sources
-- NEVER apply a single rate (4.1% or 4.2%) to an annual return -- use the blended rate
-- NEVER treat a proprietary director as Class A -- they are Class S regardless of salary arrangements
-- NEVER state that PRSI is deductible for income tax -- it is NOT
-- NEVER pro-rate the EUR 5,000 threshold for partial years -- it is an annual threshold
-- NEVER conflate USC and PRSI -- they are separate charges
-
----
+- **Prohibitions list** — NEVER compute PRSI without confirming the tax year -- rates change annually and mid-year. NEVER tell a client they owe no PRSI without checking the EUR 5,000 threshold from ALL sources. NEVER apply a single rate (4.1% or 4.2%) to an annual return -- use the blended rate. NEVER treat a proprietary director as Class A -- they are Class S regardless of salary arrangements. NEVER state that PRSI is deductible for income tax -- it is NOT. NEVER pro-rate the EUR 5,000 threshold for partial years -- it is an annual threshold. NEVER conflate USC and PRSI -- they are separate charges.
 
 ## Section 3 -- Liability determination
 
-**Legislation:** Social Welfare Consolidation Act 2005, Part II
+- **Legislation citation** — Legislation: Social Welfare Consolidation Act 2005, Part II  _(Social Welfare Consolidation Act 2005, Part II)_
+
+**Liability determination table**  _(Social Welfare Consolidation Act 2005, Part II)_
 
 | Condition | PRSI liability |
-|---|---|
+| --- | --- |
 | Total income from all sources >= EUR 5,000 | Class S applies |
 | Total income from all sources < EUR 5,000 | No PRSI liability |
 | Client aged 66 or over | No PRSI liability |
 | Client already paying Class A as PAYE employee | See dual status rules |
 
-"Total income from all sources" includes self-employment income, rental income, investment income, and any other assessable income. The EUR 5,000 threshold is all-or-nothing: if income is EUR 5,001, PRSI applies to the FULL EUR 5,001.
-
----
+- **Total income from all sources definition and threshold rule** — "Total income from all sources" includes self-employment income, rental income, investment income, and any other assessable income. The EUR 5,000 threshold is all-or-nothing: if income is EUR 5,001, PRSI applies to the FULL EUR 5,001.
 
 ## Section 4 -- Rates, formula, and dual status
 
 ### Rate schedule
 
+**Rate schedule table**
+
 | Period | Rate |
-|---|---|
+| --- | --- |
 | 1 Jan 2025 -- 30 Sep 2025 | 4.1% |
 | 1 Oct 2025 -- 31 Dec 2025 | 4.2% |
 | 1 Jan 2026 -- 30 Sep 2026 | 4.2% |
@@ -90,98 +80,86 @@ Before computing any PRSI Class S figure, you MUST obtain:
 
 ### Formula
 
-```
-PRSI = max(total_income x blended_rate, minimum_contribution)
-```
+- **PRSI formula** — PRSI = max(total_income x blended_rate, minimum_contribution)
 
 ### Dual status -- PAYE employment + self-employment
 
+**Dual status table**
+
 | Scenario | PRSI treatment |
-|---|---|
+| --- | --- |
 | PAYE (Class A) + self-employment >= EUR 5,000 | Class A on employment + Class S on non-PAYE income |
 | PAYE (Class A) + self-employment < EUR 5,000 | Class A only |
 | Proprietary director (15%+ shareholding) | Class S on all income |
 
-Class A and Class S can both apply simultaneously to the same individual on different income streams.
-
----
+- **Simultaneous Class A and Class S** — Class A and Class S can both apply simultaneously to the same individual on different income streams.
 
 ## Section 5 -- Key rules and coverage
 
-**Legislation:** Social Welfare Consolidation Act 2005
-
-1. PRSI Class S is based on CURRENT year income via self-assessment
-2. No upper earnings limit -- applies to ALL income above threshold with no cap
-3. Minimum contribution of EUR 650 applies whenever income >= EUR 5,000 but calculated PRSI < EUR 650
-4. PRSI is NOT deductible for income tax purposes
-5. Class S covers: pension, widow/widower's pension, guardian's payment, maternity/paternity/parent's benefit, treatment benefit (from 2025)
-
----
+- **Key rules and coverage list** — Legislation: Social Welfare Consolidation Act 2005. 1. PRSI Class S is based on CURRENT year income via self-assessment. 2. No upper earnings limit -- applies to ALL income above threshold with no cap. 3. Minimum contribution of EUR 650 applies whenever income >= EUR 5,000 but calculated PRSI < EUR 650. 4. PRSI is NOT deductible for income tax purposes. 5. Class S covers: pension, widow/widower's pension, guardian's payment, maternity/paternity/parent's benefit, treatment benefit (from 2025).  _(Social Welfare Consolidation Act 2005)_
 
 ## Section 6 -- Payment schedule and registration
 
 ### Payment schedule
 
+**Payment schedule table**
+
 | Event | Deadline |
-|---|---|
+| --- | --- |
 | Preliminary tax (including PRSI) | 31 October (mid-November for ROS e-filers) |
 | Final return and balance | 31 October following year (mid-November for ROS) |
 
-PRSI Class S is collected by Revenue through the self-assessment system (Form 11). It is NOT paid separately to DSP.
+- **Collection method** — PRSI Class S is collected by Revenue through the self-assessment system (Form 11). It is NOT paid separately to DSP.
 
 ### Voluntary contributions
 
-Former Class S contributors who have ceased self-employment may pay voluntary contributions at EUR 500/year (flat rate, 2025/2026) to maintain pension entitlement. Must apply within 60 months of last compulsory contribution. Confirm contribution record with DSP before advising.
+- **Voluntary contributions rule** — Former Class S contributors who have ceased self-employment may pay voluntary contributions at EUR 500/year (flat rate, 2025/2026) to maintain pension entitlement. Must apply within 60 months of last compulsory contribution. Confirm contribution record with DSP before advising.
 
 ### Registration
 
-Register with Revenue Commissioners (Form TR1 for individuals) within 30 days of commencing self-employment.
-
----
+- **Registration requirement** — Register with Revenue Commissioners (Form TR1 for individuals) within 30 days of commencing self-employment.
 
 ## Section 7 -- Interaction with USC and income tax
 
+**Interaction with USC and income tax table**
+
 | Question | Answer |
-|---|---|
+| --- | --- |
 | Is PRSI deductible for income tax? | NO |
 | Is PRSI part of USC? | NO -- entirely separate charges |
 | Are income tax credits applied against PRSI? | NO |
 
-PRSI, USC, and income tax are three independent charges computed separately on different bases with different rules.
-
----
+- **Three independent charges** — PRSI, USC, and income tax are three independent charges computed separately on different bases with different rules.
 
 ## Section 8 -- Edge case registry
 
 ### EC1 -- Income exactly EUR 5,000
-**Situation:** Client's total income from all sources is exactly EUR 5,000.
-**Resolution:** PRSI applies. Calculated = EUR 206.25 (2025). Minimum EUR 650 applies. Client pays EUR 650.
+
+- **EC1 resolution** — Situation: Client's total income from all sources is exactly EUR 5,000. Resolution: PRSI applies. Calculated = EUR 206.25 (2025). Minimum EUR 650 applies. Client pays EUR 650.
 
 ### EC2 -- Income EUR 4,999
-**Situation:** Client's total income is EUR 4,999.
-**Resolution:** No PRSI liability. Threshold not met.
+
+- **EC2 resolution** — Situation: Client's total income is EUR 4,999. Resolution: No PRSI liability. Threshold not met.
 
 ### EC3 -- Mid-year commencement
-**Situation:** Client started self-employment in July 2025.
-**Resolution:** PRSI based on total income for the full tax year, not pro-rated. If total >= EUR 5,000, Class S applies on full income.
+
+- **EC3 resolution** — Situation: Client started self-employment in July 2025. Resolution: PRSI based on total income for the full tax year, not pro-rated. If total >= EUR 5,000, Class S applies on full income.
 
 ### EC4 -- Proprietary director receiving only salary
-**Situation:** Proprietary director (15%+ shareholding) receiving PAYE salary but no dividends.
-**Resolution:** Class S, not Class A, regardless of how they draw income. Employer does NOT deduct Class A PRSI. Flag for reviewer to confirm shareholding.
+
+- **EC4 resolution** — Situation: Proprietary director (15%+ shareholding) receiving PAYE salary but no dividends. Resolution: Class S, not Class A, regardless of how they draw income. Employer does NOT deduct Class A PRSI. Flag for reviewer to confirm shareholding.
 
 ### EC5 -- Client turning 66 mid-year
-**Situation:** Client reaches age 66 in August 2025.
-**Resolution:** PRSI ceases from the contribution week in which client turns 66. Income after that date not subject to PRSI.
+
+- **EC5 resolution** — Situation: Client reaches age 66 in August 2025. Resolution: PRSI ceases from the contribution week in which client turns 66. Income after that date not subject to PRSI.
 
 ### EC6 -- Rental income only, no trade
-**Situation:** Client has EUR 30,000 rental income, no trade.
-**Resolution:** Class S applies to rental income if total income >= EUR 5,000.
+
+- **EC6 resolution** — Situation: Client has EUR 30,000 rental income, no trade. Resolution: Class S applies to rental income if total income >= EUR 5,000.
 
 ### EC7 -- Rate transition year
-**Situation:** Client asks which rate applies for 2025.
-**Resolution:** Blended rate 4.125% for the annual return. Do not apply 4.1% or 4.2% separately.
 
----
+- **EC7 resolution** — Situation: Client asks which rate applies for 2025. Resolution: Blended rate 4.125% for the annual return. Do not apply 4.1% or 4.2% separately.
 
 ## Section 9 -- Reviewer escalation protocol
 
@@ -209,49 +187,41 @@ Issue: [outside skill scope]
 Action Required: Do not advise. Refer to qualified practitioner. Document gap.
 ```
 
----
-
 ## Section 10 -- Test suite
 
 ### Test 1 -- Standard self-employed, mid-range income (2025)
-**Input:** Total income EUR 50,000, age 45, no PAYE.
-**Expected output:** PRSI = EUR 50,000 x 4.125% = EUR 2,062.50.
+
+Input: Total income EUR 50,000, age 45, no PAYE. Expected output: PRSI = EUR 50,000 x 4.125% = EUR 2,062.50.
 
 ### Test 2 -- Below threshold
-**Input:** Total income EUR 4,500, age 35.
-**Expected output:** PRSI = EUR 0.
+
+Input: Total income EUR 4,500, age 35. Expected output: PRSI = EUR 0.
 
 ### Test 3 -- Minimum contribution applies
-**Input:** Total income EUR 10,000, age 40.
-**Expected output:** Calculated = EUR 412.50. Below minimum. PRSI = EUR 650.
+
+Input: Total income EUR 10,000, age 40. Expected output: Calculated = EUR 412.50. Below minimum. PRSI = EUR 650.
 
 ### Test 4 -- Aged 66+
-**Input:** Total income EUR 80,000, age 67.
-**Expected output:** PRSI = EUR 0.
+
+Input: Total income EUR 80,000, age 67. Expected output: PRSI = EUR 0.
 
 ### Test 5 -- Dual Class A and Class S
-**Input:** PAYE EUR 60,000 (Class A at source) + self-employment EUR 25,000, age 50.
-**Expected output:** Class S on EUR 25,000: EUR 1,031.25.
+
+Input: PAYE EUR 60,000 (Class A at source) + self-employment EUR 25,000, age 50. Expected output: Class S on EUR 25,000: EUR 1,031.25.
 
 ### Test 6 -- Exactly at threshold
-**Input:** Total income EUR 5,000, age 30.
-**Expected output:** PRSI = EUR 650 (minimum applies).
+
+Input: Total income EUR 5,000, age 30. Expected output: PRSI = EUR 650 (minimum applies).
 
 ### Test 7 -- 2026 rate
-**Input:** Total income EUR 80,000, age 42, tax year 2026.
-**Expected output:** PRSI = EUR 80,000 x 4.2375% = EUR 3,390.00.
 
----
+Input: Total income EUR 80,000, age 42, tax year 2026. Expected output: PRSI = EUR 80,000 x 4.2375% = EUR 3,390.00.
 
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CTA, AITI, or equivalent licensed practitioner in Ireland) before filing or acting upon.
 
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
-
----
-
-<!-- openaccountants-cta-block -->
+The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
 
 ## Talk to a verified accountant
 
@@ -259,23 +229,29 @@ This skill is a tool, not an engagement. Every taxpayer's situation is
 different, and the rules in the skill may not match your specific facts.
 
 To speak with one of the licensed accountants who verifies skills for your
-jurisdiction — **no liability on either side until you and the accountant sign
-a formal engagement letter** — book a free 30-minute call:
+jurisdiction — no liability on either side until you and the accountant sign
+a formal engagement letter — book a free 30-minute call:
 
-**→ [Book a call](https://calendly.com/openaccountants-info/30min)**
+→ [Book a call](https://calendly.com/openaccountants-info/30min)
 
 We'll route you to the named verifier covering your country or state. You can
 also see the full list of verified accountants at
-[openaccountants.com/network](https://www.openaccountants.com/network).
+[openaccountants.com/network](https://openaccountants.com/network).
 
-<!-- openaccountants-mcp-cta -->
+<!-- openaccountants-cta-block -->
 
-## The accountant-verified version lives in the connector
+---
 
-This file is the open, **research-grade draft**. The **accountant-verified**
-version of this skill is **not published to GitHub** — it is delivered free
-through the OpenAccountants MCP connector, where your AI agent loads the
-verified rules together with the name of the accountant who signed them off.
+## Talk to a verified accountant
 
-**→ Install the free connector:** <https://www.openaccountants.com/connect>
-**MCP endpoint:** `https://www.openaccountants.com/api/mcp`
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

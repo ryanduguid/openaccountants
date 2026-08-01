@@ -1,12 +1,12 @@
 ---
-name: Bulgaria Corporate Income Tax
+name: bg-corporate-income-tax
 description: "Source-cited draft: corporate income tax for Bulgaria (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
 jurisdiction: BG
-domain: income-tax
-role: compute
 tax_year: 2025
+last_updated: 2026-06-25
+verified_by: pending
 tier: 2
-last_updated: 2026-07-06
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
 # Bulgaria Corporate Income Tax
@@ -29,3 +29,21 @@ Bulgaria levies a flat 10% corporate income tax on the accounting profit adjuste
 - **Advance installments — monthly** — Monthly advance CIT for companies with prior-year net sales revenue above BGN 3,000,000 (approx — confirm) BGN  _(Corporate Income Tax Act (ZKPO) — https://taxsummaries.pwc.com/bulgaria/corporate/tax-administration)_
 - **Advance installments — quarterly** — Quarterly advance CIT for companies with prior-year net sales revenue between BGN 300,000 and BGN 3,000,000 (approx — confirm) BGN  _(Corporate Income Tax Act (ZKPO) — https://taxsummaries.pwc.com/bulgaria/corporate/tax-administration)_
 - **Advance installments — exemption** — No advance payments for companies with prior-year net sales revenue below BGN 300,000 (approx — confirm) BGN  _(Corporate Income Tax Act (ZKPO) — https://taxsummaries.pwc.com/bulgaria/corporate/tax-administration)_
+
+<!-- openaccountants-cta-block -->
+
+---
+
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

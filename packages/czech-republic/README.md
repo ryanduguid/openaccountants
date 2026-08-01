@@ -7,11 +7,16 @@
 
 1. `foundation.md`
 2. `intake.md`
-3. `cz-income-tax.md`
-4. `cz-social-health.md`
-5. `czech-republic-vat-return.md`
-6. `references.md`
-7. `eu-vat-directive.md`
+3. `cz-company-formation.md`
+4. `cz-corporate-income-tax.md`
+5. `cz-income-tax.md`
+6. `cz-social-health.md`
+7. `cz-tax-overview.md`
+8. `cz-vat-return.md`
+9. `czech-republic-vat-return.md`
+10. `references.md`
+11. `eu-vat-directive.md`
+12. `company-formation-workflow-base.md`
 
 ## Also known as
 

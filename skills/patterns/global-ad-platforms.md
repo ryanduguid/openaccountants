@@ -1,23 +1,30 @@
 ---
 name: global-ad-platforms
 description: >
-  Pattern library for advertising platforms appearing on bank statements worldwide. Covers Google Ads, Meta / Facebook Ads (incl. Instagram), LinkedIn Ads, TikTok Ads / Bytedance, X (Twitter) Ads, Microsoft Ads / Bing Ads, Amazon Ads, Reddit Ads, Pinterest Ads, Snap Ads, Taboola, Outbrain, Quora Ads, Yahoo / Yahoo Japan Ads, Yandex Direct (where applicable), Baidu Ads, Naver Search Advertising, Spotify Ads, Apple Search Ads, RTB / DSP providers (The Trade Desk, DV360, Amazon DSP), and influencer / affiliate platforms (Awin, Impact, ShareASale, Refersion, Partnerize). Provides bank-statement variations, default classification, VAT / GST treatment (notably the India equalisation levy 6% withholding on advertising payments to non-residents), and the relevant DST / sales-tax overlay. Does NOT cover: cloud / hosting (see global-cloud-infrastructure), productivity SaaS (see global-productivity-tools), or payment processors (see global-payment-processors).
 version: 0.1
 jurisdiction: GLOBAL
-tier: 2
-last_updated: 2026-06-12
-category: pattern
+tax_year: 2025
+last_updated: 2026-05-23
 verified_by: pending
+category: pattern
+tier: 2
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Global Ad Platform Vendor Patterns v0.1
+# Global Ad Platforms
 
-> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+## Global Ad Platform Vendor Patterns v0.1
 
 ## Pattern table
 
+**Ad platform vendor pattern table**  _([Skill markdown pattern table](placeholder))_
+
+value
+
+**Ad platform vendor pattern table**  _(Skill markdown pattern table)_
+
 | Vendor | Bank statement variations | Default category | VAT/GST notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | **Google Ads** | `GOOGLE*ADS`, `GOOGLE *ADWORDS`, `GOOGLE IRELAND LTD`, `GOOGLE ADS DUBLIN` | Advertising | EU B2B reverse charge (Google Ireland). UK: reverse charge. India: 6% equalisation levy withholding on payments by Indian payors |
 | **Meta / Facebook / Instagram Ads** | `FACEBK *`, `META PLATFORMS`, `FACEBOOK IRELAND`, `META PLATFORMS IRELAND` | Advertising | Same as Google Ads — EU/UK B2B reverse charge from Meta Ireland; India 6% EL |
 | **LinkedIn Ads** | `LINKEDIN`, `LINKEDIN CORP`, `LINKEDIN IRELAND` | Advertising | Microsoft subsidiary; LinkedIn Ireland for EU |
@@ -47,11 +54,9 @@ verified_by: pending
 | **Refersion** | `REFERSION INC` | Affiliate marketing | US supplier |
 | **Partnerize** | `PARTNERIZE LTD` | Affiliate / partnership | UK supplier |
 
----
-
 ## Special treatment: India Equalisation Levy 2.0
 
-**[T1] Indian payors must withhold 6% Equalisation Levy** on payments for online advertising services to non-residents (Finance Act 2016 §165). Failure leads to disallowance under §40(a)(ib) ITA.
+- **Indian payors must withhold 6% Equalisation Levy** — Indian payors must withhold 6% Equalisation Levy on payments for online advertising services to non-residents. Failure leads to disallowance under §40(a)(ib) ITA.  _([T1] Finance Act 2016 §165; §40(a)(ib) ITA)_
 
 The Indian advertiser:
 1. Withholds 6% from payment
@@ -61,21 +66,15 @@ The Indian advertiser:
 
 See `digital-services-tax-matrix.md` for full DST treatment.
 
----
-
 ## EU place of supply (B2B advertising)
 
-**[T1]** Article 44 PVD: B2B services taxed where customer established → reverse charge for cross-border B2B. Article 59a may shift to country of effective use/enjoyment for some non-EU customer cases — confirm.
-
----
+- **Article 44 PVD B2B place of supply** — Article 44 PVD: B2B services taxed where customer established → reverse charge for cross-border B2B. Article 59a may shift to country of effective use/enjoyment for some non-EU customer cases — confirm.  _([T1] Article 44 PVD; Article 59a PVD)_
 
 ## Default classification
 
-- **Schedule C**: Line 8 — Advertising
-- **UK self-employment**: Box 14 (Advertising and entertainment)
-- **EU bookkeeping**: "Werbung und Marketing" / "Publicité"
-
----
+- **Schedule C** — Line 8 — Advertising  _(Schedule C)_
+- **UK self-employment** — Box 14 (Advertising and entertainment)  _(UK self-employment)_
+- **EU bookkeeping** — "Werbung und Marketing" / "Publicité"  _(EU bookkeeping)_
 
 ## Self-checks
 
@@ -84,3 +83,21 @@ See `digital-services-tax-matrix.md` for full DST treatment.
 - [ ] EU/UK B2B reverse charge applied
 - [ ] Currency conversion at payment date
 - [ ] Russia / sanctioned-jurisdiction advertising screened
+
+<!-- openaccountants-cta-block -->
+
+---
+
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

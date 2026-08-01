@@ -7,7 +7,13 @@
 
 1. `foundation.md`
 2. `intake.md`
-3. `tanzania-vat.md`
+3. `tanzania-income-tax.md`
+4. `tanzania-payroll.md`
+5. `tanzania-social-contributions.md`
+6. `tanzania-tax-optimization.md`
+7. `tanzania-vat.md`
+8. `tanzania-withholding-tax.md`
+9. `payroll-workflow-base.md`
 
 ## How to use
 

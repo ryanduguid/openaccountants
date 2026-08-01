@@ -2,15 +2,14 @@
 name: ng-cit
 description: "Use this skill whenever asked about Nigerian Companies Income Tax (CIT) for a resident Nigerian company. Trigger on phrases like \"Nigeria CIT\", \"Companies Income Tax Nigeria\", \"FIRS CIT\", \"Nigeria Tax Act 2025 corporate\", \"NTA 2025\", \"CITA\", \"small company CIT Nigeria\", \"medium company tax Nigeria\", \"large company tax Nigeria\", \"Nigeria minimum tax\", \"development levy Nigeria\", \"TET Nigeria\", \"Pillar Two Nigeria\", \"Tax Pro-Max\", \"Nigeria capital allowances\", or \"Nigeria CIT return\". Covers the transitional 2025 regime under the legacy Companies Income Tax Act (CITA, Cap. C21 LFN 2004 as amended) AND the new Nigeria Tax Act 2025 (NTA 2025) regime taking effect 1 January 2026, including the small-company 0% rate (turnover ≤ ₦100M and asset base ≤ ₦250M), medium-company 20% rate (₦100M < turnover ≤ ₦1B), large-company 30% rate phased to ~25% by 2029, the unified 2% Development Levy replacing TET/NITDA/NASENI/Police Trust Fund, the 15% Minimum Effective Tax Rate for multinationals with consolidated revenue > €750M (Pillar Two), capital allowances under the Sixth Schedule, indefinite loss carry-forward, monthly minimum tax interaction, the 6-month annual filing deadline via FIRS Tax Pro-Max, and TIN registration. Out of scope: personal income tax (use ng-income-tax), VAT (use ng-vat-return / nigeria-vat), petroleum profits tax / hydrocarbon tax, upstream oil & gas under PIA 2021, banking and insurance sector returns, capital gains on share disposals beyond ordinary CIT scope, free trade zone enterprises, NEPZA / OGFZA regimes, transfer pricing controversy, and pioneer status / industrial development income tax relief processing. ALWAYS read this skill before touching any Nigerian corporate income tax work."
 jurisdiction: NG
-domain: international
 tax_year: 2025
-reviewed_by: Omolola Fasasi 
-review_status: accountant-reviewed
+last_updated: 2026-05-27
+verified_by: Omolola Fasasi 
 tier: 1
-last_updated: 2026-07-06
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# ng-cit
+# NG Cit
 
 ## Nigeria — Companies Income Tax (CIT) — Skill v1.0
 
@@ -508,3 +507,21 @@ a formal engagement letter** — book a free 30-minute call:
 We'll route you to the named verifier covering your country or state. You can
 also see the full list of verified accountants at
 [openaccountants.com/network](https://openaccountants.com/network).
+
+<!-- openaccountants-cta-block -->
+
+---
+
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

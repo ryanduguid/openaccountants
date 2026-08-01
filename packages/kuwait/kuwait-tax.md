@@ -2,14 +2,22 @@
 name: kuwait-tax
 description: Use this skill whenever asked about Kuwait taxation, corporate income tax, ZAKAT, or VAT status. Kuwait does NOT have VAT. CIT at 15% applies to foreign entities only. Kuwaiti entities pay ZAKAT. DMTT at 15% for qualifying MNEs from 1 Jan 2025. ALWAYS read before handling Kuwait tax work.
 version: 2.0
+jurisdiction: KW
+tax_year: 2025
+last_updated: 2026-04-13
+verified_by: pending
+tier: 2
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Kuwait Tax Compliance Skill v2.0
+# Kuwait Tax
 
 ## Section 1 -- Quick reference
 
+**Quick reference**
+
 | Field | Value |
-|---|---|
+| --- | --- |
 | Country | Kuwait |
 | VAT/GST status | NOT IMPLEMENTED |
 | CIT | 15% flat on foreign-owned share of profits |
@@ -26,20 +34,18 @@ version: 2.0
 | Validated by | Pending |
 | Last research update | April 2026 |
 
----
-
 ## Section 2 -- Required inputs and refusal catalogue
 
 **Minimum viable** -- bank statement. Acceptable from NBK, KFH, Gulf Bank, Burgan Bank, Al Ahli United, Boubyan, or any Kuwaiti bank.
-
----
 
 ## Section 3 -- Supplier pattern library
 
 ### 3.1 Kuwaiti banks
 
+**Kuwaiti banks supplier patterns**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | NBK, NATIONAL BANK OF KUWAIT | EXCLUDE | No VAT system |
 | KFH, KUWAIT FINANCE HOUSE | EXCLUDE | Same |
 | GULF BANK | EXCLUDE | Same |
@@ -47,13 +53,13 @@ version: 2.0
 
 ### 3.2 Government
 
+**Government supplier patterns**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | MOF, MINISTRY OF FINANCE | EXCLUDE | Tax payment |
 | CUSTOMS | Customs duty only (5% CET) | No VAT |
 | PIFSS, PUBLIC INSTITUTION FOR SOCIAL SECURITY | EXCLUDE | Social insurance |
-
----
 
 ## Section 4 -- Worked examples
 
@@ -65,62 +71,54 @@ UK company branch in Kuwait. Net profits KWD 100,000. CIT at 15% = KWD 15,000. F
 
 Company 70% Kuwaiti, 30% US-owned. Profits KWD 200,000. CIT on 30% foreign share = KWD 60,000 x 15% = KWD 9,000.
 
----
-
 ## Section 5 -- Classification rules
 
 ### 5.1 No VAT
 
-No VAT registration, returns, invoicing, or recovery in Kuwait.
+- **No VAT** — No VAT registration, returns, invoicing, or recovery in Kuwait.
 
 ### 5.2 CIT (foreign entities only)
 
-15% flat on foreign-owned share. Kuwaiti-owned exempt from CIT. GCC nationals treated as foreign.
+- **CIT foreign entities only** — 15% flat on foreign-owned share. Kuwaiti-owned exempt from CIT. GCC nationals treated as foreign.
 
 ### 5.3 ZAKAT (Kuwaiti listed companies)
 
-1% of net profits for companies listed on Boursa Kuwait.
+- **ZAKAT Kuwaiti listed companies** — 1% of net profits for companies listed on Boursa Kuwait.
 
 ### 5.4 Customs
 
-5% CIF standard (GCC Common External Tariff).
-
----
+- **Customs rate** — 5% CIF standard (GCC Common External Tariff).
 
 ## Section 6 -- No VAT return
 
 CIT return due 15th of 4th month after year-end. Audited Arabic financial statements required.
 
----
-
 ## Section 7 -- No reverse charge
 
 No VAT system means no reverse charge.
-
----
 
 ## Section 8 -- No input deductibility
 
 No VAT input recovery. Foreign VAT is irrecoverable cost.
 
----
-
 ## Section 9 -- Filing, deadlines, and penalties
 
+**Filing and deadlines**
+
 | Obligation | Deadline |
-|---|---|
+| --- | --- |
 | CIT return | 15th of 4th month after year-end |
 | Advance CIT | 25% quarterly instalments |
 | Tax retention (govt contracts) | 5% of contract value withheld |
 
+**Penalties**
+
 | Violation | Penalty |
-|---|---|
+| --- | --- |
 | Late filing | 1% per month (max 50%) |
 | Failure to register | Backdated assessment |
 
-Social insurance (PIFSS): Kuwaiti nationals 10.5% employee + 11.5% employer.
-
----
+- **Social insurance PIFSS Kuwaiti nationals** — 10.5% employee + 11.5% employer percent
 
 ## Section 10 -- Edge cases, test suite, and escalation
 
@@ -158,41 +156,26 @@ Social insurance (PIFSS): Kuwaiti nationals 10.5% employee + 11.5% employer.
 - NEVER treat GCC nationals as Kuwaiti for CIT
 - NEVER compute numbers -- engine handles arithmetic
 
----
-
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional before filing or acting upon.
 
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com).
-
----
+The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com).
 
 <!-- openaccountants-cta-block -->
 
+---
+
 ## Talk to a verified accountant
 
-This skill is a tool, not an engagement. Every taxpayer's situation is
-different, and the rules in the skill may not match your specific facts.
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
 
-To speak with one of the licensed accountants who verifies skills for your
-jurisdiction — **no liability on either side until you and the accountant sign
-a formal engagement letter** — book a free 30-minute call:
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
 
-**→ [Book a call](https://calendly.com/openaccountants-info/30min)**
-
-We'll route you to the named verifier covering your country or state. You can
-also see the full list of verified accountants at
-[openaccountants.com/network](https://www.openaccountants.com/network).
-
-<!-- openaccountants-mcp-cta -->
-
-## The accountant-verified version lives in the connector
-
-This file is the open, **research-grade draft**. The **accountant-verified**
-version of this skill is **not published to GitHub** — it is delivered free
-through the OpenAccountants MCP connector, where your AI agent loads the
-verified rules together with the name of the accountant who signed them off.
-
-**→ Install the free connector:** <https://www.openaccountants.com/connect>
-**MCP endpoint:** `https://www.openaccountants.com/api/mcp`
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

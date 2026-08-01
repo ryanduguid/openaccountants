@@ -8,6 +8,13 @@
 1. `foundation.md`
 2. `intake.md`
 3. `bahrain-vat.md`
+4. `bh-company-formation.md`
+5. `bh-corporate-income-tax.md`
+6. `bh-income-tax.md`
+7. `bh-payroll-social.md`
+8. `bh-tax-overview.md`
+9. `payroll-workflow-base.md`
+10. `company-formation-workflow-base.md`
 
 ## How to use
 

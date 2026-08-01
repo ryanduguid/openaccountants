@@ -2,15 +2,14 @@
 name: pk-cgt
 description: Use this skill whenever asked about Pakistan Capital Gains Tax. Trigger on phrases like "Pakistan CGT", "capital gains tax Pakistan", "PSX shares gain Pakistan", "property gain Pakistan", "Section 37A Pakistan", "Section 37 ITO 2001", "immovable property CGT Pakistan", "NCCPL capital gains", "filer vs non-filer CGT Pakistan", "crypto CGT Pakistan", "FBR capital gains", or any question about computing, filing, or reporting capital gains under the Income Tax Ordinance 2001. Scope covers CGT on securities (Section 37A) including PSX-listed shares, modaraba certificates and redeemable capital; CGT on immovable property (Section 37) including the holding-period scale and FBR valuation tables; CGT on other capital assets under Section 37; filer vs non-filer rate differentials; NCCPL collection at source for securities; bank/registrar collection for property; loss set-off and carry-forward; and the uncertain crypto position. ALWAYS read this skill before touching Pakistan CGT work.
 jurisdiction: PK
-domain: international
 tax_year: 2025
-reviewed_by: Ibrar Ali
-review_status: accountant-reviewed
+last_updated: 2026-05-27
+verified_by: Ibrar Ali
 tier: 1
-last_updated: 2026-07-06
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# pk-cgt
+# PK Cgt
 
 ## Pakistan — Capital Gains Tax — Skill v1.0
 
@@ -328,3 +327,21 @@ a formal engagement letter** — book a free 30-minute call:
 We'll route you to the named verifier covering your country or state. You can
 also see the full list of verified accountants at
 [openaccountants.com/network](https://openaccountants.com/network).
+
+<!-- openaccountants-cta-block -->
+
+---
+
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

@@ -2,16 +2,26 @@
 name: hungary-vat-return
 description: Use this skill whenever asked to prepare, review, or classify transactions for a Hungary VAT return (form 2565 / AFA bevallas) for any client. Trigger on phrases like "prepare VAT return", "do the AFA", "fill in 2565", "Hungarian VAT", or any request involving Hungary VAT filing. This skill covers Hungary only and standard AFA registration. MUST be loaded alongside BOTH vat-workflow-base v0.1 or later AND eu-vat-directive v0.1 or later. ALWAYS read this skill before touching any Hungarian VAT work.
 version: 2.0
+jurisdiction: HU
+tax_year: 2025
+last_updated: 2026-04-13
+verified_by: pending
+tier: 2
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Hungary VAT Return Skill (Form 2565 / AFA Bevallas) v2.0
+# Hungary VAT Return
 
 ## Section 1 — Quick reference
 
-**Read this whole section before classifying anything. The workflow runbook is in `vat-workflow-base` Section 1.**
+Read this whole section before classifying anything. The workflow runbook is in `vat-workflow-base` Section 1.
+
+**Quick reference field table**
+
+**Quick reference field table**
 
 | Field | Value |
-|---|---|
+| --- | --- |
 | Country | Hungary (Magyarorszag) |
 | Standard rate | 27% (highest in the EU) |
 | Reduced rates | 18% (accommodation, specified foodstuffs: milk, dairy, flour, bread, eggs, poultry), 5% (medicines, books, newspapers, internet access, restaurant/catering, district heating, live music/theatre, certain new residential property) |
@@ -28,10 +38,10 @@ version: 2.0
 | Validated by | Deep research verification, April 2026 |
 | Validation date | April 2026 |
 
-**Key Form 2565 lines:**
+**Key Form 2565 lines**
 
 | Line | Meaning |
-|---|---|
+| --- | --- |
 | 01-02 | Domestic supplies at 27% — base / AFA |
 | 03-04 | Domestic supplies at 18% — base / AFA |
 | 05-06 | Domestic supplies at 5% — base / AFA |
@@ -53,10 +63,10 @@ version: 2.0
 | 40 | Net AFA payable (Line 20 minus Line 30) |
 | 41 | Excess credit (visszaigenyelni hagyott) |
 
-**Conservative defaults:**
+**Conservative defaults**
 
 | Ambiguity | Default |
-|---|---|
+| --- | --- |
 | Unknown rate on a sale | 27% |
 | Unknown VAT status of a purchase | Not deductible |
 | Unknown counterparty country | Domestic Hungary |
@@ -65,17 +75,15 @@ version: 2.0
 | Unknown SaaS billing entity | Reverse charge from non-EU |
 | Unknown blocked-input status | Blocked |
 
-**Red flag thresholds:**
+**Red flag thresholds**
 
 | Threshold | Value |
-|---|---|
+| --- | --- |
 | HIGH single-transaction size | HUF 1,000,000 |
 | HIGH tax-delta on single default | HUF 70,000 |
 | MEDIUM counterparty concentration | >40% |
 | MEDIUM conservative-default count | >4 |
 | LOW absolute net AFA position | HUF 1,750,000 |
-
----
 
 ## Section 2 — Required inputs and refusal catalogue
 
@@ -89,24 +97,20 @@ version: 2.0
 
 ### Hungary-specific refusal catalogue
 
-**R-HU-1 — Alanyi mentes (exempt small enterprise).** *Trigger:* turnover < HUF 18M (2025) / HUF 20M (2026). *Message:* "Exempt small enterprises do not charge AFA and cannot recover input AFA."
-
-**R-HU-2 — KATA subject.** *Trigger:* client is KATA taxpayer. *Message:* "KATA taxpayers have limited AFA implications. Specialist review required."
-
-**R-HU-3 — Partial exemption.** *Message:* "Mixed supplies require aranyositas. Use an adotanacsado."
-
-**R-HU-4 — VAT group.** *Message:* "Group registration out of scope."
-
-**R-HU-5 — Special schemes.** *Message:* "Margin/travel agent out of scope."
-
----
+- **R-HU-1 — Alanyi mentes (exempt small enterprise)** — Trigger: turnover < HUF 18M (2025) / HUF 20M (2026). Message: "Exempt small enterprises do not charge AFA and cannot recover input AFA."
+- **R-HU-2 — KATA subject** — Trigger: client is KATA taxpayer. Message: "KATA taxpayers have limited AFA implications. Specialist review required."
+- **R-HU-3 — Partial exemption** — Message: "Mixed supplies require aranyositas. Use an adotanacsado."
+- **R-HU-4 — VAT group** — Message: "Group registration out of scope."
+- **R-HU-5 — Special schemes** — Message: "Margin/travel agent out of scope."
 
 ## Section 3 — Supplier pattern library
 
 ### 3.1 Hungarian banks (exempt — exclude)
 
+**Hungarian banks pattern table**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | OTP, OTP BANK | EXCLUDE | Financial service, exempt |
 | K&H, K&H BANK | EXCLUDE | Same |
 | ERSTE BANK HU, ERSTE | EXCLUDE | Same |
@@ -119,8 +123,10 @@ version: 2.0
 
 ### 3.2 Hungarian government (exclude)
 
+**Hungarian government pattern table**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | NAV, NEMZETI ADO | EXCLUDE | Tax payment |
 | TB, TARSADALOMBIZTOSITAS | EXCLUDE | Social insurance |
 | ONKORMANYZAT, MUNICIPALITY | EXCLUDE | Municipal fees |
@@ -128,8 +134,10 @@ version: 2.0
 
 ### 3.3 Hungarian utilities
 
+**Hungarian utilities pattern table**
+
 | Pattern | Treatment | Line | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | MVM, ELMÜ-ÉMÁSZ, E.ON HU | Domestic 27% | 31 | Electricity |
 | FŐVÁROSI VÍZMŰVEK, VÍZMŰ | Domestic 27% | 31 | Water |
 | FŐGÁZ, GÁZ | Domestic 27% | 31 | Gas |
@@ -139,8 +147,10 @@ version: 2.0
 
 ### 3.4 Insurance (exempt — exclude)
 
+**Insurance pattern table**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | ALLIANZ HUNGARIA | EXCLUDE | Exempt |
 | GENERALI BIZTOSITO | EXCLUDE | Same |
 | GROUPAMA BIZTOSITO | EXCLUDE | Same |
@@ -148,17 +158,21 @@ version: 2.0
 
 ### 3.5 Post and logistics
 
+**Post and logistics pattern table**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
-| MAGYAR POSTA | EXCLUDE for standard post; 27% for parcel | |
+| --- | --- | --- |
+| MAGYAR POSTA | EXCLUDE for standard post; 27% for parcel |  |
 | GLS HU | Domestic 27% | Courier |
 | MPL (Magyar Posta Logisztika) | Domestic 27% | Parcel |
 | DHL INTERNATIONAL | EU reverse charge | Check entity |
 
 ### 3.6 SaaS — EU suppliers (reverse charge, Line 13-14 + 32)
 
+**SaaS EU suppliers pattern table**
+
 | Pattern | Billing entity | Notes |
-|---|---|---|
+| --- | --- | --- |
 | GOOGLE | Google Ireland Ltd (IE) | EU RC |
 | MICROSOFT | Microsoft Ireland (IE) | RC |
 | ADOBE | Adobe Ireland (IE) | RC |
@@ -171,8 +185,10 @@ version: 2.0
 
 ### 3.7 SaaS — non-EU suppliers (reverse charge, Line 15-16 + 34)
 
+**SaaS non-EU suppliers pattern table**
+
 | Pattern | Billing entity | Notes |
-|---|---|---|
+| --- | --- | --- |
 | AWS EMEA SARL | LU entity | EU RC (Line 13-14) |
 | NOTION | Notion Labs Inc (US) | Non-EU RC |
 | ANTHROPIC, CLAUDE | Anthropic PBC (US) | Non-EU RC |
@@ -183,127 +199,164 @@ version: 2.0
 
 ### 3.8 Payment processors
 
+**Payment processors pattern table**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | STRIPE (transaction fees) | EXCLUDE (exempt) | Financial service |
 | PAYPAL (transaction fees) | EXCLUDE (exempt) | Same |
 
 ### 3.9 Professional services
 
+**Professional services pattern table**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | KÖZJEGYZŐ, NOTARY | Domestic 27% | Legal |
 | KÖNYVELŐ, ACCOUNTANT | Domestic 27% | Accounting |
 | ÜGYVÉD, LAWYER | Domestic 27% | Legal |
 
 ### 3.10 Payroll (exclude)
 
+**Payroll pattern table**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | TB, JÁRULÉK | EXCLUDE | Social contributions |
 | BÉR, FIZETÉS, SALARY | EXCLUDE | Wages |
 | SZJA | EXCLUDE | Income tax |
 
 ### 3.11 Food retail
 
+**Food retail pattern table**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | TESCO HU, ALDI HU, LIDL HU, SPAR HU, PENNY | Default BLOCK | Personal provisioning |
 | ÉTTEREM, RESTAURANT, VENDÉGLŐ | Default BLOCK | Entertainment |
 
 ### 3.12 Internal transfers and exclusions
 
+**Internal transfers pattern table**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | SAJÁT ÁTUTALÁS, OWN TRANSFER | EXCLUDE | Internal |
 | OSZTALÉK, DIVIDEND | EXCLUDE | Out of scope |
 | HITELTÖRLESZTÉS, LOAN REPAYMENT | EXCLUDE | Loan principal |
 | ATM, KÉSZPÉNZ | Ask | Default exclude |
 
----
-
 ## Section 4 — Worked examples
 
 ### Example 1 — Non-EU SaaS reverse charge (Notion)
+
 **Input:** `03.04.2026 ; NOTION LABS INC ; -5,870 HUF`
 **Treatment:** Non-EU RC. Line 15 (base). Self-assessed AFA at 27%. Input in Line 34.
 
 ### Example 2 — EU service reverse charge (Google Ads)
+
 **Input:** `10.04.2026 ; GOOGLE IRELAND LIMITED ; -340,000 HUF`
 **Treatment:** EU RC. Line 13 (base). Line 14 (output AFA at 27%). Line 32 (input).
 
 ### Example 3 — Entertainment
+
 **Input:** `15.04.2026 ; BORKONYHA ÉTTEREM ; -88,000 HUF`
 **Treatment:** Restaurant. In Hungary, entertainment/representation: input AFA is deductible IF business purpose documented AND invoice compliant. Unlike Malta's hard block. Default: block (purpose unknown).
 
 ### Example 4 — EU B2B service sale
+
 **Input:** `22.04.2026 ; STUDIO KREBS GMBH ; +1,400,000 HUF`
 **Treatment:** B2B to DE. Line 09. 0%. Verify USt-IdNr.
 
 ### Example 5 — Capital goods
+
 **Input:** `18.04.2026 ; MEDIAMARKT HU ; Laptop ; -638,000 HUF`
 **Treatment:** Above HUF 200,000: capital goods. 5-year adjustment. Input AFA at 27% in Line 31.
 
 ### Example 6 — Motor vehicle
+
 **Input:** `28.04.2026 ; MOL NYRT ; Fuel ; -32,000 HUF`
 **Treatment:** In Hungary, passenger car fuel: input AFA deductible if used for business. Default: 0%.
-
----
 
 ## Section 5 — Tier 1 classification rules (compressed)
 
 ### 5.1 Standard 27% (Sec. 82)
-Default. Sales: Line 01-02. Input: Line 31.
+
+- **Standard 27% rule** — Default. Sales: Line 01-02. Input: Line 31.  _(Sec. 82)_
 
 ### 5.2 Reduced 18% (Sec. 82(2))
-Accommodation, specified foodstuffs.
+
+- **Reduced 18% rule** — Accommodation, specified foodstuffs.  _(Sec. 82(2))_
 
 ### 5.3 Reduced 5% (Sec. 82(2))
-Medicines, books, newspapers, internet, restaurant/catering, district heating, performances, certain new residential.
+
+- **Reduced 5% rule** — Medicines, books, newspapers, internet, restaurant/catering, district heating, performances, certain new residential.  _(Sec. 82(2))_
 
 ### 5.4 Zero rate / exports
-Exports: Line 10. Intra-EU goods: Line 08. Intra-EU services: Line 09.
+
+- **Zero rate / exports rule** — Exports: Line 10. Intra-EU goods: Line 08. Intra-EU services: Line 09.
 
 ### 5.5 Exempt (Sec. 85-86)
-Financial, insurance, healthcare, education, postal, residential rental, gambling.
+
+- **Exempt rule** — Financial, insurance, healthcare, education, postal, residential rental, gambling.  _(Sec. 85-86)_
 
 ### 5.6 Reverse charge — EU (Sec. 140-142)
-Goods: Line 11-12. Services: Line 13-14.
+
+- **Reverse charge EU rule** — Goods: Line 11-12. Services: Line 13-14.  _(Sec. 140-142)_
 
 ### 5.7 Reverse charge — non-EU
-Services: Line 15-16.
+
+- **Reverse charge non-EU rule** — Services: Line 15-16.
 
 ### 5.8 Capital goods (Sec. 135-136)
-> HUF 200,000 net, life > 1 year: 5-year adjustment (movable), 20-year (immovable).
+
+- **Capital goods threshold** — HUF 200,000 net, life > 1 year: 5-year adjustment (movable), 20-year (immovable).  _(Sec. 135-136)_
 
 ### 5.9 NAV Online Invoice
-Mandatory for ALL domestic invoices. Real-time reporting to NAV system.
+
+- **NAV Online Invoice rule** — Mandatory for ALL domestic invoices. Real-time reporting to NAV system.
 
 ### 5.10 Blocked input
-- Personal use: blocked
-- Entertainment: deductible if business purpose (no hard block like Malta)
-- Vehicle: no hard block; deductible if business use
 
----
+- **Blocked input rules** — - Personal use: blocked - Entertainment: deductible if business purpose (no hard block like Malta) - Vehicle: no hard block; deductible if business use
 
 ## Section 6 — Tier 2 catalogue (compressed)
 
-### 6.1 Vehicle costs — *Default:* 0%. *Question:* "Business use?"
-### 6.2 Entertainment — *Default:* block. *Question:* "Business purpose documented?"
-### 6.3 SaaS entity — *Default:* non-EU RC.
-### 6.4 Owner transfers — *Default:* exclude.
-### 6.5 Large purchases (> HUF 200,000) — *Default:* capital goods register.
-### 6.6 Mixed-use telecom — *Default:* 0%.
-### 6.7 Cash withdrawals — *Default:* exclude.
-### 6.8 KATA status — *Default:* flag reviewer.
+### 6.1 Vehicle costs
 
----
+- **Vehicle costs** — Default: 0%. Question: "Business use?"
+
+### 6.2 Entertainment
+
+- **Entertainment** — Default: block. Question: "Business purpose documented?"
+
+### 6.3 SaaS entity
+
+- **SaaS entity** — Default: non-EU RC.
+
+### 6.4 Owner transfers
+
+- **Owner transfers** — Default: exclude.
+
+### 6.5 Large purchases (> HUF 200,000)
+
+- **Large purchases** — Default: capital goods register.
+
+### 6.6 Mixed-use telecom
+
+- **Mixed-use telecom** — Default: 0%.
+
+### 6.7 Cash withdrawals
+
+- **Cash withdrawals** — Default: exclude.
+
+### 6.8 KATA status
+
+- **KATA status** — Default: flag reviewer.
 
 ## Section 7 — Excel working paper template
 
 Per `vat-workflow-base` Section 3. Column H accepts Hungarian form 2565 line codes. Bottom-line: Line 40 (payable) or Line 41 (excess credit).
-
----
 
 ## Section 8 — Hungary bank statement reading guide
 
@@ -315,29 +368,47 @@ Per `vat-workflow-base` Section 3. Column H accepts Hungarian form 2565 line cod
 
 **IBAN prefix.** HU = Hungary.
 
----
-
 ## Section 9 — Onboarding fallback
 
-### 9.1 Entity type — *Inference:* Kft. = company; egyeni vallalkozo = sole trader.
-### 9.2 AFA registration — *Fallback:* "Standard AFA payer or alanyi mentes?"
-### 9.3 Adoszam — *Fallback:* "Tax number? (11 digits)"
-### 9.4 Filing frequency — *Fallback:* "Monthly, quarterly, or annual?"
-### 9.5 NAV Online Invoice — *Fallback:* "Using NAV Online Invoice system?"
-### 9.6 Exempt supplies — *Fallback:* "Any exempt supplies?"
-### 9.7 Credit brought forward — *Fallback:* "Excess AFA credit from prior period?"
+### 9.1 Entity type
 
----
+- **Entity type inference** — Inference: Kft. = company; egyeni vallalkozo = sole trader.
+
+### 9.2 AFA registration
+
+- **AFA registration fallback** — Fallback: "Standard AFA payer or alanyi mentes?"
+
+### 9.3 Adoszam
+
+- **Adoszam fallback** — Fallback: "Tax number? (11 digits)"
+
+### 9.4 Filing frequency
+
+- **Filing frequency fallback** — Fallback: "Monthly, quarterly, or annual?"
+
+### 9.5 NAV Online Invoice
+
+- **NAV Online Invoice fallback** — Fallback: "Using NAV Online Invoice system?"
+
+### 9.6 Exempt supplies
+
+- **Exempt supplies fallback** — Fallback: "Any exempt supplies?"
+
+### 9.7 Credit brought forward
+
+- **Credit brought forward fallback** — Fallback: "Excess AFA credit from prior period?"
 
 ## Section 10 — Reference material
 
 ### Sources
+
 1. VAT Act (Act CXXVII of 2007, as amended)
 2. NAV Online Invoice Regulation
 3. EU VAT Directive 2006/112/EC — via companion skill
 4. VIES — https://ec.europa.eu/taxation_customs/vies/
 
 ### Change log
+
 - **v2.0 (April 2026):** Full rewrite. Hungarian banks (OTP, K&H, Erste HU).
 - **v1.0 (April 2026):** Initial skill.
 
@@ -345,41 +416,26 @@ Per `vat-workflow-base` Section 3. Column H accepts Hungarian form 2565 line cod
 
 This skill is incomplete without BOTH companion files: `vat-workflow-base` v0.1+ AND `eu-vat-directive` v0.1+.
 
----
-
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional before filing or acting upon.
 
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com).
-
----
+The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com).
 
 <!-- openaccountants-cta-block -->
 
+---
+
 ## Talk to a verified accountant
 
-This skill is a tool, not an engagement. Every taxpayer's situation is
-different, and the rules in the skill may not match your specific facts.
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
 
-To speak with one of the licensed accountants who verifies skills for your
-jurisdiction — **no liability on either side until you and the accountant sign
-a formal engagement letter** — book a free 30-minute call:
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
 
-**→ [Book a call](https://calendly.com/openaccountants-info/30min)**
-
-We'll route you to the named verifier covering your country or state. You can
-also see the full list of verified accountants at
-[openaccountants.com/network](https://www.openaccountants.com/network).
-
-<!-- openaccountants-mcp-cta -->
-
-## The accountant-verified version lives in the connector
-
-This file is the open, **research-grade draft**. The **accountant-verified**
-version of this skill is **not published to GitHub** — it is delivered free
-through the OpenAccountants MCP connector, where your AI agent loads the
-verified rules together with the name of the accountant who signed them off.
-
-**→ Install the free connector:** <https://www.openaccountants.com/connect>
-**MCP endpoint:** `https://www.openaccountants.com/api/mcp`
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

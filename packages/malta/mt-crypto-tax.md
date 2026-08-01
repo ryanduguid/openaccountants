@@ -1,24 +1,27 @@
 ---
 name: mt-crypto-tax
 description: >
-  Use this skill whenever asked about Malta cryptocurrency or digital asset taxation. Trigger on phrases like "crypto tax Malta", "Bitcoin Malta", "DLT assets", "cryptocurrency gains", "crypto income Malta", "Binance Malta tax", "staking Malta", "mining income Malta", "NFT tax Malta", "Coinbase Malta", "Revolut crypto Malta", "token tax", "distributed ledger", "MFSA crypto", "DAC8", or any question about the income tax, capital gains, or VAT treatment of cryptocurrency, tokens, or digital assets for Malta tax residents or Malta-source crypto income. Covers the CfR DLT asset guidelines, classification of coins/tokens, trading vs investment distinction, VAT treatment, and DAC8 reporting. ALWAYS read this skill before touching any Malta crypto work.
 version: 1.0
 jurisdiction: MT
 tax_year: 2025
-category: international
-depends_on:
-  - malta-income-tax
+last_updated: 2026-05-23
 verified_by: pending
+depends_on: - malta-income-tax
+category: international
+tier: 2
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Malta Crypto / Digital Assets Tax Skill v1.0
+# MT Crypto Tax
 
----
+## Malta Crypto / Digital Assets Tax Skill v1.0
 
 ## Section 1 -- Quick Reference
 
+**Quick Reference**
+
 | Field | Value |
-|---|---|
+| --- | --- |
 | Country | Malta (Republic of Malta) |
 | Tax | Income Tax on DLT Assets (Crypto) |
 | Currency | EUR (values must be converted to EUR at transaction date) |
@@ -34,8 +37,10 @@ verified_by: pending
 
 ### DLT Asset Classification (CfR Guidelines)
 
+**DLT Asset Classification**  _(CfR Guidelines)_
+
 | Asset Type | CfR Definition | Capital Gains Tax (Art. 5) | Income Tax |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Coins (cryptocurrencies) | Medium of exchange / store of value (e.g. BTC, ETH, LTC) | NOT subject to CGT | Trading profits = ordinary income; investment gains generally not taxed |
 | Utility Tokens | Access to a product/service on a DLT platform | NOT subject to CGT | Trading profits = ordinary income |
 | Financial Tokens (securities) | Participate in profits, mimic shares/bonds/units in CIS | Subject to CGT if they meet "securities" definition under Art. 5 | Trading profits = ordinary income |
@@ -43,15 +48,15 @@ verified_by: pending
 
 ### Conservative Defaults
 
+**Conservative Defaults**
+
 | Ambiguity | Default |
-|---|---|
+| --- | --- |
 | Unknown whether trading or investment | Treat as trading (taxable as ordinary income) |
 | Unknown token classification | Treat as coin (not subject to CGT, but trading profits taxable) |
 | Unknown cost basis | STOP — cannot compute gain without acquisition cost |
 | Unknown residency / domicile | STOP — affects source and remittance rules |
 | Unknown whether activity is commercial mining | Treat as commercial (taxable) |
-
----
 
 ## Section 2 -- Required Inputs and Refusal Catalogue
 
@@ -65,17 +70,11 @@ verified_by: pending
 
 ### Refusal Catalogue
 
-**R-MTC-1 -- Residency/domicile unknown.** "Malta's crypto tax treatment depends critically on residency and domicile status. Non-domiciled residents are only taxed on foreign-source income remitted to Malta. Cannot proceed without this information."
-
-**R-MTC-2 -- No transaction records.** "Crypto tax computations require detailed transaction records with dates, amounts, and counterparties. Without exchange/wallet records, gains cannot be calculated. Cannot proceed."
-
-**R-MTC-3 -- ICO/STO issuance.** "Token issuance (ICOs, STOs, IEOs) has complex tax implications for the issuer including potential VAT, income tax, and regulatory obligations. Escalate to a warranted accountant with MFSA expertise."
-
-**R-MTC-4 -- Corporate crypto holdings.** "Companies holding crypto on their balance sheet have different accounting and tax treatment. This skill covers individuals only. Escalate to a warranted accountant."
-
-**R-MTC-5 -- Cross-border DeFi structures.** "Complex DeFi arrangements involving multiple jurisdictions, DAOs, or liquidity pool governance tokens require specialist international tax advice. Escalate."
-
----
+- **R-MTC-1 -- Residency/domicile unknown** — "Malta's crypto tax treatment depends critically on residency and domicile status. Non-domiciled residents are only taxed on foreign-source income remitted to Malta. Cannot proceed without this information."
+- **R-MTC-2 -- No transaction records** — "Crypto tax computations require detailed transaction records with dates, amounts, and counterparties. Without exchange/wallet records, gains cannot be calculated. Cannot proceed."
+- **R-MTC-3 -- ICO/STO issuance** — "Token issuance (ICOs, STOs, IEOs) has complex tax implications for the issuer including potential VAT, income tax, and regulatory obligations. Escalate to a warranted accountant with MFSA expertise."
+- **R-MTC-4 -- Corporate crypto holdings** — "Companies holding crypto on their balance sheet have different accounting and tax treatment. This skill covers individuals only. Escalate to a warranted accountant."
+- **R-MTC-5 -- Cross-border DeFi structures** — "Complex DeFi arrangements involving multiple jurisdictions, DAOs, or liquidity pool governance tokens require specialist international tax advice. Escalate."
 
 ## Section 3 -- Computation Rules
 
@@ -83,8 +82,10 @@ verified_by: pending
 
 **Key principle:** Coins are treated analogously to foreign currency. They are NOT securities under Article 5 ITA.
 
+**Coins Tax Treatment**
+
 | Scenario | Tax Treatment |
-|---|---|
+| --- | --- |
 | Held as trading stock (frequent buy/sell for profit) | Profits are **ordinary income**, taxed at progressive rates (0%--35%) |
 | Held as long-term investment (buy and hold) | Gains on disposal generally **NOT taxable** (not within CGT scope, not trading income) |
 | Mining — private scale | Income at market value when received; if sold within short period, practical approach: taxable as other income |
@@ -97,8 +98,10 @@ verified_by: pending
 
 The CfR applies general income tax principles. There is no statutory bright-line test. Factors indicating **trading**:
 
+**Factors indicating Trading**
+
 | Factor | Indicates Trading |
-|---|---|
+| --- | --- |
 | Frequency of transactions | High volume, multiple trades per day/week |
 | Holding period | Short (days to weeks) |
 | Intent | Profit from short-term price movements |
@@ -108,8 +111,10 @@ The CfR applies general income tax principles. There is no statutory bright-line
 
 Factors indicating **investment**:
 
+**Factors indicating Investment**
+
 | Factor | Indicates Investment |
-|---|---|
+| --- | --- |
 | Frequency | Infrequent, buy-and-hold |
 | Holding period | Long (months to years) |
 | Intent | Long-term capital appreciation |
@@ -120,46 +125,43 @@ Factors indicating **investment**:
 
 ### 3.3 Financial Tokens (Security Tokens)
 
-If a token meets the definition of "securities" under Article 5 ITA (participates in company profits, return not limited to fixed rate, or units in a CIS), then:
-
-- Transfer is subject to **capital gains tax** under Article 5
-- Capital gains rate: generally 0% for transfers of securities listed on a recognised exchange, or taxed at progressive rates for unlisted securities depending on the nature of the underlying
-- Losses on securities within the CGT regime can only offset gains within that regime
+- **Financial Tokens treatment** — If a token meets the definition of "securities" under Article 5 ITA (participates in company profits, return not limited to fixed rate, or units in a CIS), then: - Transfer is subject to **capital gains tax** under Article 5 - Capital gains rate: generally 0% for transfers of securities listed on a recognised exchange, or taxed at progressive rates for unlisted securities depending on the nature of the underlying - Losses on securities within the CGT regime can only offset gains within that regime  _(Article 5 ITA)_
 
 ### 3.4 Cost Basis and Methods
 
+**Cost Basis Methods**
+
 | Method | Status |
-|---|---|
+| --- | --- |
 | FIFO (First In, First Out) | Accepted by CfR; recommended |
 | Specific identification | Acceptable if clearly documented |
 | Average cost | May be accepted; less common |
 | LIFO | Not standard practice in Malta |
 
-The cost basis includes:
-- Purchase price in EUR (convert at exchange rate on date of acquisition)
-- Exchange fees and commissions paid on acquisition
-- Network/gas fees directly attributable to the transaction
+- **Cost basis includes** — The cost basis includes: - Purchase price in EUR (convert at exchange rate on date of acquisition) - Exchange fees and commissions paid on acquisition - Network/gas fees directly attributable to the transaction
 
 ### 3.5 Non-Domiciled Residents (Special Rules)
 
 Malta's remittance basis for non-domiciled residents is critical for crypto:
 
+**Non-Dom Rules**
+
 | Scenario | Tax Treatment |
-|---|---|
+| --- | --- |
 | Malta-domiciled resident | Worldwide crypto income taxable |
 | Malta-resident but NOT Malta-domiciled | Foreign-source crypto income taxable ONLY if remitted to Malta |
 | Crypto gains kept on foreign exchange (not remitted) | NOT taxable for non-doms (if source is foreign) |
 | Proceeds transferred to Malta bank account | Taxable for non-doms (remittance) |
 | Minimum tax for non-doms | EUR 5,000 per year (regardless of actual remittance) |
 
----
-
 ## Section 4 -- VAT Treatment
 
 ### 4.1 Crypto and VAT
 
+**Crypto and VAT**  _(CJEU C-264/14 Hedqvist; EU VAT rules)_
+
 | Transaction | VAT Treatment | Authority |
-|---|---|---|
+| --- | --- | --- |
 | Exchange of crypto for fiat (and vice versa) | Exempt financial service (no VAT) | CJEU C-264/14 Hedqvist |
 | Payment for goods/services using crypto | VAT applies to the underlying supply (not the crypto itself) | Standard EU VAT rules |
 | Crypto exchange platform services | Exempt financial service | CJEU Hedqvist |
@@ -168,14 +170,14 @@ Malta's remittance basis for non-domiciled residents is critical for crypto:
 | NFT sale (digital art/collectible) | Subject to VAT at 18% (electronically supplied service) | EU VAT rules on digital services |
 | Staking-as-a-service | Likely exempt financial service; case-by-case | CfR position evolving |
 
----
-
 ## Section 5 -- Transaction Pattern Library
 
 ### 5.1 Income Patterns (Credits)
 
+**Income Patterns**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | BINANCE WITHDRAWAL, BINANCE DEPOSIT (to bank) | Potential disposal proceeds | Convert EUR amount on date; match to cost basis |
 | COINBASE PAYOUT, COINBASE EUR | Potential disposal proceeds | Match to trades on Coinbase |
 | REVOLUT CRYPTO SELL, REVOLUT EXCHANGE | Disposal proceeds | Revolut provides transaction history in-app |
@@ -187,8 +189,10 @@ Malta's remittance basis for non-domiciled residents is critical for crypto:
 
 ### 5.2 Expense Patterns (Debits)
 
+**Expense Patterns**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | BINANCE DEPOSIT, COINBASE BUY, REVOLUT CRYPTO BUY | Acquisition cost | Record as cost basis for FIFO |
 | GAS FEE, NETWORK FEE, TRANSACTION FEE | Part of cost basis | Add to acquisition cost of the asset obtained |
 | EXCHANGE FEE, TRADING FEE, COMMISSION | Part of cost basis or disposal cost | Deductible from gain computation |
@@ -196,38 +200,38 @@ Malta's remittance basis for non-domiciled residents is critical for crypto:
 
 ### 5.3 Exclusions
 
+**Exclusions**
+
 | Pattern | Treatment |
-|---|---|
+| --- | --- |
 | TRANSFER BETWEEN OWN WALLETS | EXCLUDE — not a disposal |
 | EXCHANGE TO EXCHANGE TRANSFER (same owner) | EXCLUDE — not a disposal |
 | WRAPPING/UNWRAPPING (e.g. ETH → WETH) | Generally EXCLUDE — no change in economic ownership |
 | STABLECOIN CONVERSION (EUR equivalent) | Technically a disposal — but gain is typically zero or negligible |
 
----
-
 ## Section 6 -- MFSA Regulatory Framework (Non-Tax)
 
 The MFSA regulatory framework is distinct from tax but relevant for context:
 
+**MFSA Regulatory Framework**
+
 | Framework | Scope | Tax Relevance |
-|---|---|---|
+| --- | --- | --- |
 | Virtual Financial Assets Act (VFAA, Chapter 590) | Licensing of VFA service providers, ICO rules | Regulatory compliance does not affect tax classification |
 | Innovative Technology Arrangements Act (ITAA, Chapter 592) | Certification of DLT platforms | No direct tax impact |
 | MiCA (EU Markets in Crypto-Assets Regulation) | EU-wide crypto regulation from 2024/2025 | Standardises classification; may influence future CfR guidance |
 | DAC8 / CARF | Automatic exchange of crypto transaction data | Exchanges report to CfR from 2026; foreign holdings >EUR 5,000 must be declared |
 
----
-
 ## Section 7 -- Record-Keeping Requirements
 
+**Record-Keeping Requirements**
+
 | Requirement | Detail |
-|---|---|
+| --- | --- |
 | Retention period | 6 years from end of relevant tax year |
 | Records to maintain | Full transaction logs from all exchanges, wallet addresses, cost basis calculations, FIFO ledger, staking/mining logs |
 | Format | CSV exports preferred; screenshots acceptable as backup; on-chain records (block explorer links) recommended |
 | Burden of proof | On the taxpayer — CfR can request records; DAC8 data will allow cross-referencing |
-
----
 
 ## Section 8 -- Worked Examples
 
@@ -282,8 +286,6 @@ Tax: Taxable at progressive rates, added to other income
 Cost basis of staked ETH received: EUR 1,750 (for future disposal)
 ```
 
----
-
 ## Section 9 -- Edge Cases
 
 ### 9.1 Hard Forks
@@ -307,8 +309,6 @@ When a blockchain forks and the holder receives new coins (e.g. BTC → BCH), th
 - Creation and sale of NFT (artist/creator): business income
 - VAT: electronically supplied service — 18% VAT may apply on B2C sales to EU customers
 
----
-
 ## PROHIBITIONS
 
 - NEVER assume all crypto gains are tax-free in Malta — trading profits are taxable as ordinary income
@@ -321,17 +321,11 @@ When a blockchain forks and the holder receives new coins (e.g. BTC → BCH), th
 - NEVER ignore DAC8 reporting obligations from 2026
 - NEVER present crypto tax positions as definitive — always label as estimated and flag for professional review
 
----
-
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, EA, tax attorney, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
 
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
-
----
-
-<!-- openaccountants-cta-block -->
+The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
 
 ## Talk to a verified accountant
 
@@ -346,16 +340,22 @@ a formal engagement letter** — book a free 30-minute call:
 
 We'll route you to the named verifier covering your country or state. You can
 also see the full list of verified accountants at
-[openaccountants.com/network](https://www.openaccountants.com/network).
+[openaccountants.com/network](https://openaccountants.com/network).
 
-<!-- openaccountants-mcp-cta -->
+<!-- openaccountants-cta-block -->
 
-## The accountant-verified version lives in the connector
+---
 
-This file is the open, **research-grade draft**. The **accountant-verified**
-version of this skill is **not published to GitHub** — it is delivered free
-through the OpenAccountants MCP connector, where your AI agent loads the
-verified rules together with the name of the accountant who signed them off.
+## Talk to a verified accountant
 
-**→ Install the free connector:** <https://www.openaccountants.com/connect>
-**MCP endpoint:** `https://www.openaccountants.com/api/mcp`
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

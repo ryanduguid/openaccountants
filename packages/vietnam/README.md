@@ -10,6 +10,12 @@
 3. `references.md`
 4. `vietnam-pit.md`
 5. `vietnam-vat.md`
+6. `vn-company-formation.md`
+7. `vn-corporate-income-tax.md`
+8. `vn-payroll-social.md`
+9. `vn-tax-overview.md`
+10. `payroll-workflow-base.md`
+11. `company-formation-workflow-base.md`
 
 ## Also known as
 

@@ -2,14 +2,22 @@
 name: mozambique-vat
 description: Use this skill whenever asked to prepare, review, or classify transactions for a Mozambique VAT (IVA) return. Standard rate 16%, reduced 5%. ISPC simplified regime for small taxpayers. Portuguese-language terminology. ALWAYS read before handling Mozambique IVA work.
 version: 2.0
+jurisdiction: MZ
+tax_year: 2025
+last_updated: 2026-04-13
+verified_by: pending
+tier: 2
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Mozambique VAT (IVA) Return Skill v2.0
+# Mozambique VAT
 
 ## Section 1 -- Quick reference
 
+**Quick reference**
+
 | Field | Value |
-|---|---|
+| --- | --- |
 | Country | Mozambique |
 | Standard rate | 16% |
 | Reduced rate | 5% (private health, education, vocational training) |
@@ -26,32 +34,28 @@ version: 2.0
 | Validated by | Pending |
 | Last research update | April 2026 |
 
----
-
 ## Section 2 -- Required inputs and refusal catalogue
 
 **Minimum viable** -- bank statement. Acceptable from BCI (Banco Comercial e de Investimentos), Millennium bim, Standard Bank MZ, BCI Fomento, Absa MZ, or any Mozambican bank.
 
-**R-MZ-1 -- Megaproject.** Trigger: LNG, Sasol, mining concessions. Message: "Megaproject fiscal regimes are negotiated individually. Escalate."
-
----
+- **R-MZ-1 -- Megaproject** — Trigger: LNG, Sasol, mining concessions. Message: "Megaproject fiscal regimes are negotiated individually. Escalate."
 
 ## Section 3 -- Supplier pattern library
 
+**Supplier pattern library**
+
 | Pattern | Treatment | Notes |
-|---|---|---|
+| --- | --- | --- |
 | BCI, BANCO COMERCIAL | EXCLUDE | Exempt financial |
 | MILLENNIUM BIM | EXCLUDE | Same |
 | STANDARD BANK MZ | EXCLUDE | Same |
 | AT, AUTORIDADE TRIBUTARIA | EXCLUDE | Tax payment |
-| ALFANDEGAS, CUSTOMS | Check for import IVA | |
+| ALFANDEGAS, CUSTOMS | Check for import IVA |  |
 | INSS | EXCLUDE | Social security |
 | EDM, ELECTRICIDADE | Domestic 16% | Electricity |
 | FIPAG | Domestic 16% | Water |
 | VODACOM MZ, TMCEL, MOVITEL | Domestic 16% | Telecoms |
 | GOOGLE, MICROSOFT, AWS | Autoliquidacao 16% | Non-resident |
-
----
 
 ## Section 4 -- Worked examples
 
@@ -63,15 +67,10 @@ MZN 1,000,000 net. IVA = MZN 160,000 (16%).
 
 Small retailer under ISPC. Quarterly sales MZN 400,000. ISPC = 3% = MZN 12,000. No input recovery.
 
----
-
 ## Section 5 -- Classification rules
 
-16% standard. 5% reduced (private health/education). 0% exports. Exempt: basic foodstuffs, financial, medical (public), education (public), residential rental, public transport, agricultural inputs.
-
-ISPC: 3% of gross turnover for businesses below MZN 2,500,000. No IVA charged, no input recovery.
-
----
+- **Standard rate classification** — 16% standard. 5% reduced (private health/education). 0% exports. Exempt: basic foodstuffs, financial, medical (public), education (public), residential rental, public transport, agricultural inputs.
+- **ISPC classification** — ISPC: 3% of gross turnover for businesses below MZN 2,500,000. No IVA charged, no input recovery.
 
 ## Section 6 -- IVA return form
 
@@ -81,89 +80,71 @@ Input: Lines 9-14 (local, imports, autoliquidacao input, capital goods, exclusio
 
 Net: Lines 15-17 (net, credit transitado, payable/credit).
 
----
-
 ## Section 7 -- Reverse charge (autoliquidacao)
 
-Non-resident services: self-assess 16%. Net zero. CIVA Art. 23.
-
----
+- **Non-resident services reverse charge** — Non-resident services: self-assess 16%. Net zero.  _(CIVA Art. 23)_
 
 ## Section 8 -- Deductibility and blocked input
 
-Blocked (CIVA Art. 20-22): vehicles < 9 seats, entertainment, personal use, fuel for blocked vehicles, invoices without NUIT.
-
-Prorata: CIVA Art. 19.
-
----
+- **Blocked input VAT** — Blocked: vehicles < 9 seats, entertainment, personal use, fuel for blocked vehicles, invoices without NUIT.  _(CIVA Art. 20-22)_
+- **Prorata deduction** — Prorata deduction rule applies.  _(CIVA Art. 19)_
 
 ## Section 9 -- Filing, deadlines, and penalties
 
-Monthly or quarterly. Last working day of following month. Late filing: MZN 5K-50K. Late payment: 2%/month.
-
----
+- **Filing frequency and deadline** — Monthly or quarterly. Last working day of following month.
+- **Late filing penalty** — MZN 5K-50K
+- **Late payment penalty** — 2%/month
 
 ## Section 10 -- Edge cases, test suite, and escalation
 
-**EC1 -- SaaS.** Autoliquidacao 16%. Net zero.
-**EC2 -- Prawn export.** Zero-rated. Input recoverable.
-**EC3 -- Motor vehicle blocked.**
-**EC4 -- ISPC boundary.** Exceeds MZN 2.5M: must register for IVA.
-**EC5 -- Megaproject (LNG).** Escalate.
-**EC6 -- Basic foodstuffs exempt.** Rice/bread exempt. No output, no input recovery.
+Autoliquidacao 16%. Net zero.
 
-**Test 1** -- MZN 1M sale. IVA MZN 160K.
-**Test 2** -- MZN 500K purchase + IVA 80K. Recoverable.
-**Test 3** -- SA services MZN 3M. Output 480K, input 480K. Net zero.
-**Test 4** -- Export MZN 50M. Zero-rated.
-**Test 5** -- Entertainment. Blocked.
-**Test 6** -- ISPC quarterly MZN 400K. ISPC = MZN 12K.
+Zero-rated. Input recoverable.
+
+Exceeds MZN 2.5M: must register for IVA.
+
+Escalate.
+
+Rice/bread exempt. No output, no input recovery.
+
+MZN 1M sale. IVA MZN 160K.
+
+MZN 500K purchase + IVA 80K. Recoverable.
+
+SA services MZN 3M. Output 480K, input 480K. Net zero.
+
+Export MZN 50M. Zero-rated.
+
+Entertainment. Blocked.
+
+ISPC quarterly MZN 400K. ISPC = MZN 12K.
 
 Out of scope: IRPC 32%, IRPS progressive 10%-32%, INSS employer 4% + employee 3%.
 
 ### Prohibitions
 
-- NEVER confuse IVA with ISPC
-- NEVER allow ISPC taxpayers to charge IVA
-- NEVER apply standard rules to megaprojects without verification
-- NEVER accept invoices without NUIT
-- NEVER compute numbers -- engine handles arithmetic
-
----
+- **Prohibitions list** — - NEVER confuse IVA with ISPC - NEVER allow ISPC taxpayers to charge IVA - NEVER apply standard rules to megaprojects without verification - NEVER accept invoices without NUIT - NEVER compute numbers -- engine handles arithmetic
 
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional before filing or acting upon.
 
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com).
-
----
+The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com).
 
 <!-- openaccountants-cta-block -->
 
+---
+
 ## Talk to a verified accountant
 
-This skill is a tool, not an engagement. Every taxpayer's situation is
-different, and the rules in the skill may not match your specific facts.
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
 
-To speak with one of the licensed accountants who verifies skills for your
-jurisdiction — **no liability on either side until you and the accountant sign
-a formal engagement letter** — book a free 30-minute call:
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
 
-**→ [Book a call](https://calendly.com/openaccountants-info/30min)**
-
-We'll route you to the named verifier covering your country or state. You can
-also see the full list of verified accountants at
-[openaccountants.com/network](https://www.openaccountants.com/network).
-
-<!-- openaccountants-mcp-cta -->
-
-## The accountant-verified version lives in the connector
-
-This file is the open, **research-grade draft**. The **accountant-verified**
-version of this skill is **not published to GitHub** — it is delivered free
-through the OpenAccountants MCP connector, where your AI agent loads the
-verified rules together with the name of the accountant who signed them off.
-
-**→ Install the free connector:** <https://www.openaccountants.com/connect>
-**MCP endpoint:** `https://www.openaccountants.com/api/mcp`
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

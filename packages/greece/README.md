@@ -7,12 +7,17 @@
 
 1. `foundation.md`
 2. `intake.md`
-3. `gr-efka.md`
-4. `gr-income-tax.md`
-5. `greece-einvoice.md`
-6. `greece-vat-return.md`
-7. `eu-vat-directive.md`
-8. `einvoice-workflow-base.md`
+3. `gr-company-formation.md`
+4. `gr-corporate-income-tax.md`
+5. `gr-efka.md`
+6. `gr-income-tax.md`
+7. `gr-tax-overview.md`
+8. `gr-vat-return.md`
+9. `greece-einvoice.md`
+10. `greece-vat-return.md`
+11. `eu-vat-directive.md`
+12. `einvoice-workflow-base.md`
+13. `company-formation-workflow-base.md`
 
 ## Also known as
 

@@ -1,10 +1,5 @@
 # Canada — Tax Skills Index
 
-## Verification status
-
-Research-verified — accountant verification in progress.
-[Claim Canada →](https://www.openaccountants.com/onboarding/accountant)
-
 Pick your province or territory package below. Each package contains the
 federal Canadian tax skills (T1, T2125, CPP/EI, GST/HST, T1135, instalments,
 crypto, bookkeeping, payroll, formation, financial statements, transfer pricing,

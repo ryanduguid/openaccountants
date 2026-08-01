@@ -1,36 +1,34 @@
 ---
 name: md-income-tax
 description: >
-  Use this skill whenever asked about Maryland individual income tax. Trigger on phrases like
-  "Maryland income tax", "MD income tax", "Form 502", "Comptroller of Maryland", "Maryland
-  county tax", "piggyback tax". Maryland has 10 graduated state brackets (2%–6.50%) PLUS
-  mandatory county/city income taxes (2.25%–3.20%). ALWAYS load us-tax-workflow-base first.
-jurisdiction: US-MD
 version: "0.1"
-validation_status: ai-drafted-q3
+jurisdiction: US-MD
+tax_year: 2025
+last_updated: 2026-05-22
+verified_by: pending
+tier: 2
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Maryland Individual Income Tax Skill — Self-Employed / Sole Proprietor
+# MD Income Tax
+
+## Maryland Individual Income Tax Skill — Self-Employed / Sole Proprietor
 
 > **Scope.** This skill covers Maryland Form 502 (Resident Income Tax Return) for sole proprietors and single-member LLCs. It addresses the 10-bracket graduated state income tax, mandatory county/Baltimore City piggyback taxes, and Maryland-specific deductions. It does NOT cover nonresident returns (Form 505), part-year returns, corporate returns (Form 500), or the pass-through entity tax (Form 510).
 
 > **Quality tier.** Q3 — AI-drafted, not independently verified. All outputs must be reviewed by a qualified tax professional before filing.
 
----
-
 ## Section 1: Metadata
 
-| Field | Value |
-|---|---|
-| Jurisdiction | Maryland (US-MD) |
-| Tax authority | [Comptroller of Maryland](https://www.marylandtaxes.gov/) |
-| Filing portal | [Maryland iFile](https://interactive.marylandtaxes.gov/Individuals/iFile_ChooseForm/) |
-| Legislation | Md. Code Ann., Tax–General, Title 10 |
-| Primary form | Form 502 (Maryland Resident Income Tax Return) |
-| Filing deadline | April 15, 2027 (for tax year 2026) |
-| Version | 0.1 |
-| Date | May 22, 2026 |
-| Validation status | AI-drafted — Q3 |
+- **Jurisdiction** — Maryland (US-MD)
+- **Tax authority** — [Comptroller of Maryland](https://www.marylandtaxes.gov/)
+- **Filing portal** — [Maryland iFile](https://interactive.marylandtaxes.gov/Individuals/iFile_ChooseForm/)
+- **Legislation** — Md. Code Ann., Tax–General, Title 10
+- **Primary form** — Form 502 (Maryland Resident Income Tax Return)
+- **Filing deadline** — April 15, 2027 (for tax year 2026)
+- **Version** — 0.1
+- **Date** — May 22, 2026
+- **Validation status** — AI-drafted — Q3
 
 ### Sources consulted
 
@@ -40,14 +38,14 @@ validation_status: ai-drafted-q3
 4. StateByStateTax — Maryland County Rates: <https://www.statebystatetax.com/states/maryland.html>
 5. Md. Code Ann., Tax–General, §§ 10-105, 10-106
 
----
-
 ## Section 2: Quick reference — rates and thresholds
 
 ### State income tax brackets — Single, Married Filing Separately, Dependent (TY2025+)
 
+**State income tax brackets — Single, Married Filing Separately, Dependent (TY2025+)**
+
 | Taxable net income | Rate | Tax calculation |
-|---|---|---|
+| --- | --- | --- |
 | $0 – $1,000 | 2.00% | 2.00% of taxable net income |
 | $1,001 – $2,000 | 3.00% | $20 + 3.00% of excess over $1,000 |
 | $2,001 – $3,000 | 4.00% | $50 + 4.00% of excess over $2,000 |
@@ -61,8 +59,10 @@ validation_status: ai-drafted-q3
 
 ### State income tax brackets — Married Filing Jointly, Head of Household, Qualifying Surviving Spouse
 
+**State income tax brackets — Married Filing Jointly, Head of Household, Qualifying Surviving Spouse**
+
 | Taxable net income | Rate | Tax calculation |
-|---|---|---|
+| --- | --- | --- |
 | $0 – $1,000 | 2.00% | 2.00% of taxable net income |
 | $1,001 – $2,000 | 3.00% | $20 + 3.00% of excess over $1,000 |
 | $2,001 – $3,000 | 4.00% | $50 + 4.00% of excess over $2,000 |
@@ -76,8 +76,10 @@ validation_status: ai-drafted-q3
 
 ### County / Baltimore City piggyback tax rates (TY2025)
 
+**County / Baltimore City piggyback tax rates (TY2025)**
+
 | Jurisdiction | Rate | Type |
-|---|---|---|
+| --- | --- | --- |
 | Baltimore City | 3.20% | Flat |
 | Allegany County | 3.20% | Flat |
 | Anne Arundel County | 2.25%–3.20% | Progressive |
@@ -107,40 +109,46 @@ validation_status: ai-drafted-q3
 
 ### Standard deduction
 
+**Standard deduction table**
+
 | Filing status | Amount |
-|---|---|
+| --- | --- |
 | Single / MFS / Dependent | 15% of Maryland AGI, min $1,800, max $3,350 |
 | MFJ / HoH / QSS | 15% of Maryland AGI, min $3,600, max $6,700 |
 
 ### Personal exemption
 
+**Personal exemption table**
+
 | Category | Amount (TY2025) |
-|---|---|
+| --- | --- |
 | Each taxpayer, spouse, dependent | $3,200 |
 | Additional for age 65+ or blind | $1,000 per qualifying condition |
 
 Personal exemptions phase out for higher incomes (above ~$100,000 single / ~$150,000 MFJ — see Form 502 instructions).
 
----
-
 ## Section 3: How this skill works with the federal return
 
 ### Starting point
 
-Maryland starts from **federal adjusted gross income (AGI)** — Form 1040, Line 11. This is entered on Form 502, Line 1.
+- **Starting point** — Maryland starts from **federal adjusted gross income (AGI)** — Form 1040, Line 11. This is entered on Form 502, Line 1.
 
 ### Additions to income
 
+**Additions to income table**
+
 | Item | Description | Source |
-|---|---|---|
+| --- | --- | --- |
 | Out-of-state bond interest | Interest on bonds of other states | Md. Tax–General § 10-204 |
 | Bonus depreciation add-back | Maryland decouples from IRC §168(k) bonus depreciation | Md. Tax–General § 10-210.1 |
 | Other IRC decoupling items | Maryland may decouple from certain federal provisions — verify annually | Md. Tax–General § 10-107 |
 
 ### Subtractions from income
 
+**Subtractions from income table**
+
 | Item | Description | Source |
-|---|---|---|
+| --- | --- | --- |
 | U.S. government interest | Interest on U.S. obligations | Md. Tax–General § 10-207(a) |
 | Social Security benefits | Maryland fully exempts Social Security from state tax | Md. Tax–General § 10-207(q) |
 | Pension exclusion | Up to $39,500 (2025) for qualifying taxpayers age 65+ or permanently disabled | Md. Tax–General § 10-209 |
@@ -150,18 +158,18 @@ Maryland starts from **federal adjusted gross income (AGI)** — Form 1040, Line
 
 ### Resulting computation
 
-Federal AGI + additions − subtractions = Maryland AGI → minus standard or itemized deduction → minus personal exemptions = Maryland taxable net income → apply state bracket rates → apply county rate → sum = total Maryland income tax.
-
----
+- **Maryland tax computation formula** — Federal AGI + additions − subtractions = Maryland AGI → minus standard or itemized deduction → minus personal exemptions = Maryland taxable net income → apply state bracket rates → apply county rate → sum = total Maryland income tax.
 
 ## Section 4: Self-employed specific rules
 
 ### Estimated tax payments
 
-Self-employed individuals must make quarterly estimated tax payments if they expect to owe $500 or more in combined state and county tax.
+- **Estimated tax payment threshold** — Self-employed individuals must make quarterly estimated tax payments if they expect to owe $500 or more in combined state and county tax.
+
+**Estimated tax payment schedule**
 
 | Voucher | Due date |
-|---|---|
+| --- | --- |
 | 1st quarter | April 15 |
 | 2nd quarter | June 15 |
 | 3rd quarter | September 15 |
@@ -170,26 +178,31 @@ Self-employed individuals must make quarterly estimated tax payments if they exp
 Use Form 502D for estimated payments.
 
 ### Self-employment health insurance
-Maryland follows federal treatment — the deduction reduces federal AGI and flows through.
+
+- **SE health insurance treatment** — Maryland follows federal treatment — the deduction reduces federal AGI and flows through.
 
 ### Retirement contributions (SEP, SIMPLE, Solo 401(k))
-Maryland follows federal treatment — these deductions reduce federal AGI and flow through.
+
+- **Retirement contributions treatment** — Maryland follows federal treatment — these deductions reduce federal AGI and flow through.
 
 ### Home office deduction
-Maryland follows the federal home office deduction as part of Schedule C, included in federal AGI.
+
+- **Home office deduction treatment** — Maryland follows the federal home office deduction as part of Schedule C, included in federal AGI.
 
 ### QBI deduction (Section 199A)
-Maryland does **not** allow the federal QBI deduction because Maryland starts from federal AGI (before the QBI deduction). The QBI deduction does not affect Maryland taxable income.
+
+- **QBI deduction treatment** — Maryland does **not** allow the federal QBI deduction because Maryland starts from federal AGI (before the QBI deduction). The QBI deduction does not affect Maryland taxable income.
 
 ### County tax on self-employment income
-The county piggyback tax applies to Maryland taxable income, which includes self-employment income. The county is determined by the taxpayer's residence as of the last day of the tax year (December 31).
 
----
+- **County tax on self-employment income** — The county piggyback tax applies to Maryland taxable income, which includes self-employment income. The county is determined by the taxpayer's residence as of the last day of the tax year (December 31).
 
 ## Section 5: Tier 1 rules — deterministic
 
+**Tier 1 rules table**
+
 | Rule | Description |
-|---|---|
+| --- | --- |
 | R-1 | Apply the 10-bracket graduated rate schedule based on filing status. |
 | R-2 | Apply the county/city piggyback tax rate based on county of residence as of December 31. |
 | R-3 | Start from federal AGI and apply Maryland additions and subtractions. |
@@ -201,12 +214,12 @@ The county piggyback tax applies to Maryland taxable income, which includes self
 | R-9 | Both state and county taxes are computed on the same Maryland taxable net income. |
 | R-10 | The county tax base = Maryland taxable net income (same as the state tax base, Form 502, Line 21). |
 
----
-
 ## Section 6: Tier 2 rules — requires judgment
 
+**Tier 2 rules table**
+
 | Rule | Description |
-|---|---|
+| --- | --- |
 | J-1 | Determine whether the personal exemption phase-out applies based on income level. |
 | J-2 | Evaluate whether Maryland itemized deductions exceed the standard deduction (15% of AGI with caps). |
 | J-3 | Determine the correct county rate when the taxpayer moved during the year (use county as of Dec 31). |
@@ -215,12 +228,12 @@ The county piggyback tax applies to Maryland taxable income, which includes self
 | J-6 | Evaluate credit for taxes paid to other states (important for D.C./VA border commuters). |
 | J-7 | Apply Anne Arundel or Frederick County progressive local rates when applicable. |
 
----
-
 ## Section 7: Supplier pattern library
 
+**Supplier pattern library table**
+
 | Pattern | Maryland treatment |
-|---|---|
+| --- | --- |
 | Freelance income (Schedule C) | Flows through federal AGI → Maryland AGI. Subject to state graduated rates + county rate. |
 | Rental income (Schedule E) | Flows through federal AGI → Maryland AGI. Subject to both state and county tax. |
 | Capital gains | Fully taxable at graduated state rates + county rate. |
@@ -228,12 +241,12 @@ The county piggyback tax applies to Maryland taxable income, which includes self
 | Social Security | Fully exempt from Maryland state and county income tax. |
 | Pension / retirement | Up to $39,500 exempt for age 65+ (pension exclusion). Remainder taxable. |
 
----
-
 ## Section 8: Form mapping
 
+**Form 502 mapping table**
+
 | Form 502 line | Description | Source |
-|---|---|---|
+| --- | --- | --- |
 | Line 1 | Federal AGI (Form 1040, Line 11) | Federal return |
 | Lines 2–6 | Additions to income | Md. Tax–General § 10-204 |
 | Lines 7–14 | Subtractions from income | Md. Tax–General §§ 10-207, 10-209 |
@@ -249,12 +262,12 @@ The county piggyback tax applies to Maryland taxable income, which includes self
 | Lines 39–46 | Payments, withholding, estimated payments | Various |
 | Line 50 | Balance due or refund | Computed |
 
----
-
 ## Section 9: Refusal catalogue
 
+**Refusal catalogue table**
+
 | Code | Situation | Action |
-|---|---|---|
+| --- | --- | --- |
 | REF-MD-01 | Taxpayer is a nonresident or part-year resident | Refuse; requires Form 505 or 515. |
 | REF-MD-02 | Taxpayer lives in Anne Arundel or Frederick County (progressive local rates) | Flag for reviewer — requires local bracket lookup. |
 | REF-MD-03 | Taxpayer has pass-through entity tax (PTET) election | Flag for reviewer — requires Form 510. |
@@ -262,17 +275,11 @@ The county piggyback tax applies to Maryland taxable income, which includes self
 | REF-MD-05 | Taxpayer is a D.C. or Virginia commuter needing credit for taxes paid to other states | Flag for reviewer — reciprocal agreements and credit computation needed. |
 | REF-MD-06 | Taxpayer's personal exemptions are subject to the income-based phase-out | Flag for reviewer — verify exemption reduction calculation. |
 
----
-
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional before filing or acting upon.
 
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com).
-
----
-
-<!-- openaccountants-cta-block -->
+The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com).
 
 ## Talk to a verified accountant
 
@@ -287,16 +294,22 @@ a formal engagement letter** — book a free 30-minute call:
 
 We'll route you to the named verifier covering your country or state. You can
 also see the full list of verified accountants at
-[openaccountants.com/network](https://www.openaccountants.com/network).
+[openaccountants.com/network](https://openaccountants.com/network).
 
-<!-- openaccountants-mcp-cta -->
+<!-- openaccountants-cta-block -->
 
-## The accountant-verified version lives in the connector
+---
 
-This file is the open, **research-grade draft**. The **accountant-verified**
-version of this skill is **not published to GitHub** — it is delivered free
-through the OpenAccountants MCP connector, where your AI agent loads the
-verified rules together with the name of the accountant who signed them off.
+## Talk to a verified accountant
 
-**→ Install the free connector:** <https://www.openaccountants.com/connect>
-**MCP endpoint:** `https://www.openaccountants.com/api/mcp`
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

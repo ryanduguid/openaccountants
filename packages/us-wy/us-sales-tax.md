@@ -2,15 +2,23 @@
 name: us-sales-tax
 description: Use this skill whenever asked about United States sales tax, use tax, sales tax nexus, multi-state tax compliance, sales tax returns, exemption certificates, taxability of goods or services, economic nexus, or any request involving US state-level consumption taxes. Trigger on phrases like "sales tax", "use tax", "nexus", "Wayfair", "sales tax return", "exemption certificate", "resale certificate", "taxability", "sales tax rate", "marketplace facilitator", "Streamlined Sales Tax", "SST", or any request involving US state sales and use tax filing, classification, or compliance. This skill contains the complete US sales and use tax framework. ALWAYS read this skill before touching any US sales tax work.
 version: 2.0
+jurisdiction: US
+tax_year: 2025
+last_updated: 2026-04-13
+verified_by: James Wallach
+tier: 2
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# United States Sales and Use Tax Framework Skill v2.0
+# US Sales Tax
+
+## United States Sales and Use Tax Framework Skill v2.0
 
 ## Verified rates & thresholds (accountant-reviewed)
 
-> Reviewed against the cited tax authorities by **Amir Pelinkovic** on 2026-06-03.
-> This block is generated from the verified facts database at openaccountants.com —
-> edit the facts there, not this prose. Items under clarification are excluded.
+Reviewed against the cited tax authorities by a licensed accountant on 2026-06-03.
+Items flagged for further clarification are tracked separately and excluded here.
+This block is generated from verified `skill_facts` — edit the facts, not the prose.
 
 ### US Sales Tax
 
@@ -21,8 +29,10 @@ version: 2.0
 
 ## Section 1 -- Quick reference
 
+**Quick reference**
+
 | Field | Value |
-|---|---|
+| --- | --- |
 | Jurisdiction | United States of America |
 | Tax type | Sales and Use Tax (state-level; no federal equivalent) |
 | States with general sales tax | 45 states + DC |
@@ -35,14 +45,12 @@ version: 2.0
 | Federal framework skill | This IS the framework skill |
 | Skill version | 2.0 |
 
----
-
-## Section 2 -- Required inputs and refusal catalogue
-
 ### Required inputs for multi-state analysis
 
+**Required inputs for multi-state analysis**
+
 | # | Question | Why it matters |
-|---|----------|----------------|
+| --- | --- | --- |
 | 1 | Which states do you sell into? | Determines which state skills to load |
 | 2 | What do you sell (TPP, services, digital goods)? | Taxability varies dramatically by state |
 | 3 | Annual revenue by state? | Determines economic nexus in each state |
@@ -53,13 +61,9 @@ version: 2.0
 
 ### Refusal catalogue
 
-**R-US-1 -- Import duties and customs.** Federal customs duties are outside scope. Refer to customs broker.
-
-**R-US-2 -- Excise taxes.** Federal excise taxes (fuel, alcohol, tobacco, firearms) are separate. Outside scope.
-
-**R-US-3 -- Property tax.** Real and personal property taxes are separate. Outside scope.
-
----
+- **R-US-1 -- Import duties and customs** — Federal customs duties are outside scope. Refer to customs broker.
+- **R-US-2 -- Excise taxes** — Federal excise taxes (fuel, alcohol, tobacco, firearms) are separate. Outside scope.
+- **R-US-3 -- Property tax** — Real and personal property taxes are separate. Outside scope.
 
 ## Section 3 -- Transaction pattern library (cross-state reference)
 
@@ -67,24 +71,30 @@ This table provides the default taxability pattern across US states. Always veri
 
 ### 3.1 SaaS / cloud software
 
+**SaaS taxability by state group**
+
 | State group | SaaS taxable? |
-|---|---|
+| --- | --- |
 | TAXABLE: NY, TX, WA, PA, CT, OH, SC, TN, UT, SD, ND, HI, NM, WV, RI, DC, AZ, IA, KY, MS, NE | Yes |
 | NOT TAXABLE: CA, IL, CO, GA, MO, VA, MN, NC, MI, OK, OR, IN, WI, AR, KS, ME, VT | No or unclear |
 | 20% EXEMPT: TX | Data processing services 80% taxable |
 
 ### 3.2 Food (grocery, unprepared)
 
+**Food taxability by treatment**
+
 | Treatment | States |
-|---|---|
+| --- | --- |
 | EXEMPT | Most states (CA, NY, FL, TX, PA, OH, NJ, MA, etc.) |
 | TAXABLE at reduced rate | IL (1%), VA (1%), AR (0.125%), MO (1.225%), TN (4%), KS (varying) |
 | FULLY TAXABLE | AL, MS, SD, OK (state level), HI |
 
 ### 3.3 Clothing
 
+**Clothing taxability by treatment**
+
 | Treatment | States |
-|---|---|
+| --- | --- |
 | EXEMPT (all clothing) | PA, NJ, MN |
 | EXEMPT under threshold | NY (under $110/item), MA (under $175/item), VT (under $110), RI (under $250) |
 | FULLY TAXABLE | CA, TX, FL, IL, WA, OH, GA, NC, and most other states |
@@ -92,33 +102,37 @@ This table provides the default taxability pattern across US states. Always veri
 
 ### 3.4 Digital goods (downloads)
 
+**Digital goods taxability by state group**
+
 | State group | Taxable? |
-|---|---|
+| --- | --- |
 | TAXABLE: WA, NY, TX, NJ, CT, TN, UT, WI, KY, NE, SD, ND, HI, NM | Yes |
 | NOT TAXABLE: CA (streaming), IL (streaming), GA, MO, OR | Generally no |
 
 ### 3.5 Professional services
 
+**Professional services taxability**
+
 | Treatment | Notes |
-|---|---|
+| --- | --- |
 | NOT TAXABLE | Vast majority of states do not tax professional services |
 | BROADLY TAXABLE | HI, NM, SD, WV tax most services including professional |
 
 ### 3.6 Manufacturing equipment
 
+**Manufacturing equipment taxability**
+
 | Treatment | States |
-|---|---|
+| --- | --- |
 | FULLY EXEMPT | Most states provide full or substantial exemption |
 | PARTIAL EXEMPTION | CA (state rate reduced, district tax applies) |
 
----
-
-## Section 4 -- Rate lookup (state-level reference)
-
 ### 4.1 State base rates
 
+**State base rates**
+
 | State | Rate | State | Rate | State | Rate |
-|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- |
 | AL | 4.00% | KY | 6.00% | ND | 5.00% |
 | AZ | 5.60% | LA | 4.45% | NE | 5.50% |
 | AR | 6.50% | ME | 5.50% | NV | 6.85% |
@@ -136,32 +150,32 @@ This table provides the default taxability pattern across US states. Always veri
 | IA | 6.00% | VT | 6.00% | VA | 5.30% |
 | KS | 6.50% | WA | 6.50% | WV | 6.00% |
 | WI | 5.00% | WY | 4.00% | AK | None (local only) |
-| MN | 6.875% | | | | |
+| MN | 6.875% |  |  |  |  |
 
 ### 4.2 Sourcing rules overview
 
+**Sourcing rules overview**
+
 | Type | States |
-|---|---|
+| --- | --- |
 | Destination-based | Most states (CA for district taxes, NY, FL, WA, and SST states) |
 | Origin-based (intrastate) | TX, IL, OH, PA, VA, MS, MO, TN, AZ |
 | Mixed | Some states use origin for intrastate, destination for interstate |
 
----
-
-## Section 5 -- Classification rules
-
 ### 5.1 Sales tax vs. use tax
 
-Sales tax: collected by seller at point of sale. Use tax: owed by buyer when sales tax was not collected. Rates are identical within a jurisdiction. You pay one or the other, never both.
+- **Sales tax vs use tax** — Sales tax: collected by seller at point of sale. Use tax: owed by buyer when sales tax was not collected. Rates are identical within a jurisdiction. You pay one or the other, never both.
 
 ### 5.2 Tax base
 
-Sales tax generally applies to retail sale of tangible personal property (TPP). Service taxation varies enormously by state. Digital goods and SaaS are evolving and inconsistent.
+- **Tax base** — Sales tax generally applies to retail sale of tangible personal property (TPP). Service taxation varies enormously by state. Digital goods and SaaS are evolving and inconsistent.
 
 ### 5.3 Nexus types
 
+**Nexus types**
+
 | Type | Description |
-|---|---|
+| --- | --- |
 | Physical nexus | Offices, employees, inventory, property, representatives in the state |
 | Economic nexus (post-Wayfair) | Revenue and/or transaction thresholds met |
 | Click-through nexus | Referral agreements with in-state entities |
@@ -170,41 +184,37 @@ Sales tax generally applies to retail sale of tangible personal property (TPP). 
 
 ### 5.4 Economic nexus thresholds (common patterns)
 
+**Economic nexus thresholds (common patterns)**
+
 | Threshold | States |
-|---|---|
+| --- | --- |
 | $100K OR 200 transactions | Most states (SD, IN, IA, KY, ME, etc.) |
 | $100K only (no transaction count) | FL, WA, NV, TX (uses $500K), CA ($500K) |
 | $500K | CA, TX |
 | $500K AND 100 transactions | NY (AND test -- unique) |
 
----
-
-## Section 6 -- Return form and filing
-
 ### 6.1 Filing overview
 
-Each state has its own return form. Common elements: gross sales, exempt sales, taxable sales, tax collected, local tax breakdown, use tax.
+- **Filing overview** — Each state has its own return form. Common elements: gross sales, exempt sales, taxable sales, tax collected, local tax breakdown, use tax.
 
 ### 6.2 Marketplace facilitator impact
 
-In all states with marketplace facilitator laws (all 45 + DC as of 2024), the marketplace collects on facilitated sales. Sellers file for direct sales only.
+- **Marketplace facilitator impact** — In all states with marketplace facilitator laws (all 45 + DC as of 2024), the marketplace collects on facilitated sales. Sellers file for direct sales only.
 
 ### 6.3 SST centralized registration
 
-Remote sellers can register in all 24 SST member states through a single application at https://www.sstregister.org.
-
----
-
-## Section 7 -- Thresholds, penalties, and deadlines
+- **SST centralized registration** — Remote sellers can register in all 24 SST member states through a single application at https://www.sstregister.org.
 
 ### 7.1 Wayfair decision (2018)
 
-States may require remote sellers to collect sales tax if they meet economic nexus thresholds, even without physical presence. All 45 sales tax states + DC have enacted post-Wayfair economic nexus laws.
+- **Wayfair decision (2018)** — States may require remote sellers to collect sales tax if they meet economic nexus thresholds, even without physical presence. All 45 sales tax states + DC have enacted post-Wayfair economic nexus laws.
 
 ### 7.2 Common penalty patterns
 
+**Common penalty patterns**
+
 | Penalty type | Typical range |
-|---|---|
+| --- | --- |
 | Late filing | 5-10% of tax due |
 | Late payment | 5-10% of tax due |
 | Fraud | 25-100% of deficiency |
@@ -212,62 +222,52 @@ States may require remote sellers to collect sales tax if they meet economic nex
 
 ### 7.3 Voluntary disclosure agreements (VDA)
 
-Most states offer VDAs for sellers who discover past-due nexus obligations. Benefits: penalty waiver, limited lookback (typically 3-4 years).
-
----
-
-## Section 8 -- Edge cases
+- **Voluntary disclosure agreements (VDA)** — Most states offer VDAs for sellers who discover past-due nexus obligations. Benefits: penalty waiver, limited lookback (typically 3-4 years).
 
 ### EC1 -- Multi-state seller nexus analysis
 
-**Situation:** E-commerce seller with $2M in national sales ships to all 50 states.
-**Resolution:** Must analyze economic nexus in each state individually. Revenue/transaction thresholds differ by state. Marketplace sales (Amazon, etc.) typically handled by the marketplace.
+Situation: E-commerce seller with $2M in national sales ships to all 50 states.
+Resolution: Must analyze economic nexus in each state individually. Revenue/transaction thresholds differ by state. Marketplace sales (Amazon, etc.) typically handled by the marketplace.
 
 ### EC2 -- SaaS taxability varies by state
 
-**Situation:** SaaS company sells nationwide.
-**Resolution:** SaaS is taxable in approximately 20+ states. Must determine taxability state by state. TX provides 20% exemption. CA and IL generally do not tax pure SaaS.
+Situation: SaaS company sells nationwide.
+Resolution: SaaS is taxable in approximately 20+ states. Must determine taxability state by state. TX provides 20% exemption. CA and IL generally do not tax pure SaaS.
 
 ### EC3 -- Drop shipments
 
-**Situation:** Retailer in State A directs supplier in State B to ship to customer in State C.
-**Resolution:** Three-party arrangement. Taxability depends on where nexus exists and which exemption certificates are provided. Complex area requiring state-specific analysis.
+Situation: Retailer in State A directs supplier in State B to ship to customer in State C.
+Resolution: Three-party arrangement. Taxability depends on where nexus exists and which exemption certificates are provided. Complex area requiring state-specific analysis.
 
 ### EC4 -- No-sales-tax state sellers
 
-**Situation:** Oregon seller ships to customers in other states.
-**Resolution:** Oregon's lack of sales tax does NOT relieve the seller of collection obligations in states where they have nexus.
-
----
-
-## Section 9 -- Test suite
+Situation: Oregon seller ships to customers in other states.
+Resolution: Oregon's lack of sales tax does NOT relieve the seller of collection obligations in states where they have nexus.
 
 ### Test 1 -- Economic nexus determination
 
-**Input:** Seller has $150K in FL sales, $90K in NY sales, $80K in CA sales.
-**Expected:** FL: nexus ($100K met). NY: no nexus (need $500K AND 100 transactions). CA: no nexus (need $500K).
+Input: Seller has $150K in FL sales, $90K in NY sales, $80K in CA sales.
+Expected: FL: nexus ($100K met). NY: no nexus (need $500K AND 100 transactions). CA: no nexus (need $500K).
 
 ### Test 2 -- SaaS multi-state
 
-**Input:** SaaS company with customers in NY, CA, and IL.
-**Expected:** NY: taxable. CA: not taxable (pure SaaS). IL: not taxable (pure cloud, no download).
+Input: SaaS company with customers in NY, CA, and IL.
+Expected: NY: taxable. CA: not taxable (pure SaaS). IL: not taxable (pure cloud, no download).
 
 ### Test 3 -- Food taxability
 
-**Input:** Grocery food sold in IL, TX, and AL.
-**Expected:** IL: 1% reduced rate. TX: exempt. AL: fully taxable.
+Input: Grocery food sold in IL, TX, and AL.
+Expected: IL: 1% reduced rate. TX: exempt. AL: fully taxable.
 
 ### Test 4 -- Clothing taxability
 
-**Input:** $200 jacket sold in NY, PA, and CA.
-**Expected:** NY: taxable (over $110). PA: exempt. CA: taxable.
+Input: $200 jacket sold in NY, PA, and CA.
+Expected: NY: taxable (over $110). PA: exempt. CA: taxable.
 
 ### Test 5 -- Marketplace facilitator
 
-**Input:** Seller makes $80K on Amazon, $30K direct, in a $100K nexus state.
-**Expected:** Amazon collects on $80K. Seller must analyze if $30K direct creates separate nexus.
-
----
+Input: Seller makes $80K on Amazon, $30K direct, in a $100K nexus state.
+Expected: Amazon collects on $80K. Seller must analyze if $30K direct creates separate nexus.
 
 ## Section 10 -- Prohibitions
 
@@ -282,24 +282,15 @@ Most states offer VDAs for sellers who discover past-due nexus obligations. Bene
 - NEVER treat economic nexus thresholds as uniform -- they range from $100K to $500K with varying tests.
 - NEVER compute any number -- all arithmetic is handled by the deterministic engine, not Claude.
 
----
-
 ## Disclaimer
 
 This skill is provided for informational and computational purposes only and does not constitute tax, legal, or financial advice. All outputs must be reviewed by a qualified professional (CPA, EA, or tax attorney) before filing.
-
-
----
 
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, EA, tax attorney, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
 
-The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
-
----
-
-<!-- openaccountants-cta-block -->
+The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
 
 ## Talk to a verified accountant
 
@@ -307,23 +298,29 @@ This skill is a tool, not an engagement. Every taxpayer's situation is
 different, and the rules in the skill may not match your specific facts.
 
 To speak with one of the licensed accountants who verifies skills for your
-jurisdiction — **no liability on either side until you and the accountant sign
-a formal engagement letter** — book a free 30-minute call:
+jurisdiction — no liability on either side until you and the accountant sign
+a formal engagement letter — book a free 30-minute call:
 
-**→ [Book a call](https://calendly.com/openaccountants-info/30min)**
+→ [Book a call](https://calendly.com/openaccountants-info/30min)
 
 We'll route you to the named verifier covering your country or state. You can
 also see the full list of verified accountants at
-[openaccountants.com/network](https://www.openaccountants.com/network).
+[openaccountants.com/network](https://openaccountants.com/network).
 
-<!-- openaccountants-mcp-cta -->
+<!-- openaccountants-cta-block -->
 
-## The accountant-verified version lives in the connector
+---
 
-This file is the open, **research-grade draft**. The **accountant-verified**
-version of this skill is **not published to GitHub** — it is delivered free
-through the OpenAccountants MCP connector, where your AI agent loads the
-verified rules together with the name of the accountant who signed them off.
+## Talk to a verified accountant
 
-**→ Install the free connector:** <https://www.openaccountants.com/connect>
-**MCP endpoint:** `https://www.openaccountants.com/api/mcp`
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

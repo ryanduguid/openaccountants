@@ -7,9 +7,15 @@
 
 1. `foundation.md`
 2. `intake.md`
-3. `no-income-tax.md`
-4. `no-social-contributions.md`
-5. `norway-mva.md`
+3. `no-capital-gains.md`
+4. `no-company-formation.md`
+5. `no-corporate-income-tax.md`
+6. `no-income-tax.md`
+7. `no-social-contributions.md`
+8. `no-tax-overview.md`
+9. `no-vat-return.md`
+10. `norway-mva.md`
+11. `company-formation-workflow-base.md`
 
 ## Also known as
 

@@ -1,44 +1,17 @@
 ---
 name: pt-return-assembly
-description: >
-  Utilizar esta skill sempre que for solicitada a montagem, finalização ou consolidação de
-  um pacote fiscal anual português — IRS (pessoas singulares) e/ou IRC (sociedades).
-  Acionar com expressões como "preparar declaração IRS final", "preparar Modelo 22 final",
-  "pacote contabilista certificado", "working paper Portugal", "submissão Portal das Finanças",
-  "consolidação fiscal Portugal", "fechar a declaração", "montar dossier fiscal", "review
-  final antes de submeter no Portal das Finanças", "pacote OCC para revisão", "encerramento
-  do ano fiscal português", "preparar IES", "preparar SAF-T anual", "consolidar Modelo 3 e
-  Anexos", "consolidar Modelo 22 e Anexos", ou pedidos equivalentes em inglês: "Portugal
-  return assembly", "Portugal final tax package", "Portugal working paper",
-  "Portugal IRS/IRC submission package", "Portuguese tax return capstone". Esta é a skill
-  capstone orquestradora que consolida os outputs de pt-income-tax, pt-nhr-ifici,
-  pt-foreign-source-treaties, pt-corporate-tax, portugal-vat-return, pt-social-contributions,
-  portugal-payroll, portugal-bookkeeping, portugal-financial-statements e portugal-crypto-tax
-  num único working paper unificado, com reconciliações cross-skill, instruções de pagamento
-  via Portal das Finanças (Multibanco / MBWay / IBAN), instruções de submissão (Modelo 3 /
-  Modelo 22 / IES / SAF-T) e lista final de ações do contribuinte. Não recalcula nada —
-  apenas reconcilia, monta e empacota para o revisor. LER SEMPRE este skill em ÚLTIMO LUGAR
-  — é o capstone que consolida todos os outputs upstream.
-version: 1.0
+description: "Utilizar esta skill sempre que for solicitada a montagem, finalização ou consolidação de um pacote fiscal anual português — IRS (pessoas singulares) e/ou IRC (sociedades). Acionar com expressões como \"preparar declaração IRS final\", \"preparar Modelo 22 final\", \"pacote contabilista certificado\", \"working paper Portugal\", \"submissão Portal das Finanças\", \"consolidação fiscal Portugal\", \"fechar a declaração\", \"montar dossier fiscal\", \"review final antes de submeter no Portal das Finanças\", \"pacote OCC para revisão\", \"encerramento do ano fiscal português\", \"preparar IES\", \"preparar SAF-T anual\", \"consolidar Modelo 3 e Anexos\", \"consolidar Modelo 22 e Anexos\", ou pedidos equivalentes em inglês: \"Portugal return assembly\", \"Portugal final tax package\", \"Portugal working paper\", \"Portugal IRS/IRC submission package\", \"Portuguese tax return capstone\". Esta é a skill capstone orquestradora que consolida os outputs de pt-income-tax, pt-nhr-ifici, pt-foreign-source-treaties, pt-corporate-tax, portugal-vat-return, pt-social-contributions, portugal-payroll, portugal-bookkeeping, portugal-financial-statements e portugal-crypto-tax num único working paper unificado, com reconciliações cross-skill, instruções de pagamento via Portal das Finanças (Multibanco / MBWay / IBAN), instruções de submissão (Modelo 3 / Modelo 22 / IES / SAF-T) e lista final de ações do contribuinte. Não recalcula nada — apenas reconcilia, monta e empacota para o revisor. LER SEMPRE este skill em ÚLTIMO LUGAR — é o capstone que consolida todos os outputs upstream."
 jurisdiction: PT
 tax_year: 2025
-category: orchestrator
+last_updated: 2026-05-27
 verified_by: pending
-depends_on:
-  - foundation
-  - pt-income-tax
-  - pt-nhr-ifici
-  - pt-foreign-source-treaties
-  - pt-corporate-tax
-  - portugal-vat-return
-  - pt-social-contributions
-  - portugal-payroll
-  - portugal-bookkeeping
-  - portugal-financial-statements
-  - portugal-crypto-tax
+tier: 2
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Portugal — Montagem Final da Declaração (Capstone) — Skill v1.0
+# PT Return Assembly
+
+## Portugal — Montagem Final da Declaração (Capstone) — Skill v1.0
 
 ## DIRETIVA DE EXECUÇÃO CRÍTICA — LER PRIMEIRO
 
@@ -54,8 +27,6 @@ Em concreto:
 
 **Se sentir necessidade de perguntar "como devo proceder?", escolha o caminho mais defensável, prossiga, e sinalize a decisão para o revisor.**
 
----
-
 ## O que este ficheiro é
 
 A skill capstone final para a campanha fiscal portuguesa. Consome os outputs de todas as outras skills Portugal e monta um único working paper unificado que cobre, conforme aplicável:
@@ -70,12 +41,12 @@ A skill capstone final para a campanha fiscal portuguesa. Consome os outputs de 
 
 O output é um pacote pronto para o revisor: working paper linha-a-linha, tabela de reconciliação cross-skill, instruções de pagamento (referência Multibanco, IBAN AT, MBWay), instruções de submissão para Portal das Finanças e portal da Segurança Social, checklist do revisor, e lista final de ações do contribuinte.
 
----
-
 ## Secção 1 — Referência Rápida
 
+**Referência Rápida**
+
 | Campo | Valor |
-|---|---|
+| --- | --- |
 | País | República Portuguesa |
 | Autoridade tributária | Autoridade Tributária e Aduaneira (AT) |
 | Portal de submissão (fiscal) | Portal das Finanças (https://www.portaldasfinancas.gov.pt) |
@@ -104,16 +75,16 @@ O output é um pacote pronto para o revisor: working paper linha-a-linha, tabela
 | Versão da skill | 1.0 |
 | Validada por | Pendente — requer assinatura por **Contabilista Certificado** membro da OCC (Ordem dos Contabilistas Certificados); para opiniões de planeamento fiscal específico, também **Consultor Fiscal** inscrito |
 
----
-
 ## Secção 2 — Entradas Obrigatórias dos Skills Upstream
 
 A skill de montagem **não recalcula nada**. Espera outputs estruturados das skills upstream abaixo. Se uma skill upstream não tiver corrido, a montagem sinaliza a lacuna e continua com os dados disponíveis.
 
 ### 2.1 Declaração singular (Modelo 3) — inputs
 
+**Inputs Modelo 3**
+
 | Skill upstream | Output consumido | Onde aparece no Modelo 3 |
-|---|---|---|
+| --- | --- | --- |
 | `pt-income-tax` | Rendimento global, deduções específicas, deduções à coleta, taxas progressivas, adicional de solidariedade, retenções na fonte (IRS), regime simplificado vs contabilidade organizada, IRS Jovem | Modelo 3 — Rosto, Anexo A (trabalho dependente), Anexo B (trabalho independente), Anexo C (contabilidade organizada), Anexo H (deduções à coleta) |
 | `pt-nhr-ifici` | Regime de Residente Não Habitual (legacy 2024–2034 cohort) ou IFICI (Incentivo Fiscal à Investigação Científica e Inovação); rendimentos de fonte estrangeira com tributação reduzida; rendimentos de "atividades de elevado valor acrescentado" | Modelo 3 — Anexo L (rendimentos obtidos no estrangeiro — RNH/IFICI) |
 | `pt-foreign-source-treaties` | Rendimentos de fonte estrangeira, crédito de imposto por dupla tributação internacional (CIRS Art.º 81º), aplicação de Convenções para Evitar a Dupla Tributação (CDT) | Modelo 3 — Anexo J (rendimentos obtidos no estrangeiro) |
@@ -126,8 +97,10 @@ A skill de montagem **não recalcula nada**. Espera outputs estruturados das ski
 
 ### 2.2 Declaração de sociedades (Modelo 22) — inputs
 
+**Inputs Modelo 22**
+
 | Skill upstream | Output consumido | Onde aparece no Modelo 22 |
-|---|---|---|
+| --- | --- | --- |
 | `pt-corporate-tax` | Lucro tributável, derrama estadual (CIRC Art.º 87º-A), derrama municipal (Lei das Finanças Locais), tributações autónomas (CIRC Art.º 88º), prejuízos fiscais reportáveis (CIRC Art.º 52º), regime simplificado de IRC (CIRC Art.º 86º-A e seguintes), benefícios fiscais ao investimento (CFI, RFAI, SIFIDE) | Modelo 22 — Quadros 07, 09, 10, 11, 13; Anexos A, B, D |
 | `portugal-bookkeeping` | Balancete final pós-encerramento, demonstração de resultados, balanço, mapas de depreciações e amortizações (Modelo 32) | Suporta Modelo 22 + IES |
 | `portugal-financial-statements` | Demonstrações financeiras (SNC ou NCM): Balanço, Demonstração de Resultados por Naturezas, Demonstração das Alterações no Capital Próprio, Demonstração dos Fluxos de Caixa, Anexo | Submetidas via IES; suportam Modelo 22 |
@@ -139,8 +112,10 @@ A skill de montagem **não recalcula nada**. Espera outputs estruturados das ski
 
 ### 2.3 Identificadores exigidos pelo intake
 
+**Identificadores**
+
 | Identificador | Obrigatório para |
-|---|---|
+| --- | --- |
 | **NIF** (Número de Identificação Fiscal) — 9 dígitos, atribuído pela AT a pessoas singulares e coletivas | Todas as declarações |
 | **NISS** (Número de Identificação de Segurança Social) — 11 dígitos | Declarações Segurança Social, DMR, DRI |
 | **NIPC** (Número de Identificação de Pessoa Coletiva) — coincide com NIF para sociedades | Modelo 22, IES |
@@ -154,7 +129,7 @@ A skill de montagem **não recalcula nada**. Espera outputs estruturados das ski
 | **Residência fiscal** (residente, não-residente, RNH, IFICI, status fiscal de Madeira/Açores) | Modelo 3 |
 | **IBAN PT** + comprovativo de morada | Reembolsos e pagamentos |
 
-Se qualquer identificador estiver em falta, a skill de montagem sinaliza-o como **"Necessita Input"** e produz o working paper com placeholders em vez de parar.
+- **Identificador em falta** — Se qualquer identificador estiver em falta, a skill de montagem sinaliza-o como "Necessita Input" e produz o working paper com placeholders em vez de parar.  _(unsure - no explicit legal citation provided)_
 
 ### 2.4 Coordenação AT + Segurança Social + e-fatura
 
@@ -166,16 +141,16 @@ Portugal tem múltiplas obrigações declarativas em portais distintos, mas a AT
 
 A capstone produz **um pacote único integrado** com as três vertentes reconciliadas. Um sócio-gerente de uma sociedade unipessoal por quotas, por exemplo, terá obrigações como contribuinte singular (Modelo 3), como sociedade (Modelo 22), e como sujeito passivo de Segurança Social (TSU + DRI). A montagem cruza as três.
 
----
-
 ## Secção 3 — Workflow de Montagem — Reconciliações Cross-Skill
 
-A skill de montagem verifica que os números das skills upstream são mutuamente consistentes. Se uma verificação cruzada falhar por mais de **€1,00**, a discrepância é levantada no brief do revisor — nunca arredondada silenciosamente.
+- **Regra geral de tolerância** — A skill de montagem verifica que os números das skills upstream são mutuamente consistentes. Se uma verificação cruzada falhar por mais de €1,00, a discrepância é levantada no brief do revisor — nunca arredondada silenciosamente.  _(unsure - no explicit legal citation provided)_
 
 ### 3.1 Verificação cruzada 1 — Reconciliação de volume de negócios
 
+**Reconciliação volume de negócios**
+
 | Origem | Valor | Regra |
-|---|---|---|
+| --- | --- | --- |
 | `portugal-bookkeeping` / balancete — volume de negócios líquido | Total dos rendimentos operacionais | Valor âncora |
 | `portugal-vat-return` — soma das bases tributáveis anuais de IVA (Campo 1 + Campo 5 + Campo 7 do Modelo C, ajustado para operações isentas/não sujeitas) | Soma do output das 12 declarações mensais (ou 4 trimestrais) | Deve reconciliar com a contabilidade ± diferenças temporais admissíveis e operações fora do campo do IVA |
 | `pt-corporate-tax` (sociedades) / `pt-income-tax` (singulares) — total dos rendimentos brutos | Topo do quadro de apuramento fiscal | Tem de igualar a contabilidade ± correções fiscais ao resultado contabilístico (Quadro 07 do Modelo 22) |
@@ -185,10 +160,10 @@ A skill de montagem verifica que os números das skills upstream são mutuamente
 
 ### 3.2 Verificação cruzada 2 — Créditos de imposto e retenções
 
-Para pessoas singulares (Modelo 3):
+**Créditos e retenções — pessoas singulares (Modelo 3)**
 
 | Linha | Skill de origem | Descrição |
-|---|---|---|
+| --- | --- | --- |
 | Retenções na fonte sobre rendimentos do trabalho dependente | pt-income-tax + portugal-payroll | Crédito; campo do Anexo A |
 | Retenções na fonte sobre rendimentos da Categoria B (independentes) — 25% / 11,5% / 16,5% | pt-income-tax | Crédito; campo do Anexo B |
 | Retenções na fonte sobre rendimentos prediais (Categoria F) — 25% | pt-income-tax | Crédito; campo do Anexo F |
@@ -196,10 +171,10 @@ Para pessoas singulares (Modelo 3):
 | Crédito de imposto por dupla tributação internacional (CIRS Art.º 81º) | pt-foreign-source-treaties | Crédito; limitado ao menor entre imposto pago no estrangeiro e fração do IRS correspondente |
 | Pagamentos por conta de IRS efetuados durante 2025 (CIRS Art.º 102º) | pt-income-tax | Crédito |
 
-Para sociedades (Modelo 22):
+**Créditos e retenções — sociedades (Modelo 22)**
 
 | Linha | Skill de origem | Descrição |
-|---|---|---|
+| --- | --- | --- |
 | Retenções na fonte suportadas pela sociedade (rendas, juros, dividendos, prestações de serviços) | pt-corporate-tax | Crédito; campo 359 do Modelo 22 |
 | Pagamentos por conta de IRC (CIRC Art.º 105º) — três prestações em julho, setembro, dezembro | pt-corporate-tax | Crédito; campo 360 |
 | Pagamento adicional por conta (CIRC Art.º 105º-A) — se aplicável | pt-corporate-tax | Crédito; campo 361 |
@@ -207,12 +182,14 @@ Para sociedades (Modelo 22):
 | Crédito de imposto por dupla tributação internacional (CIRC Art.º 91º) | pt-foreign-source-treaties | Crédito; campo 353 |
 | Benefícios fiscais com natureza de crédito (RFAI, SIFIDE, CFEI II) | pt-corporate-tax | Crédito; Anexo D |
 
-**Regra:** O total dos créditos não pode exceder a coleta para efeitos de reembolso a não ser que esteja expressamente previsto na lei (e.g., excesso de crédito SIFIDE pode ser reportado 8 anos). Cada retenção tem de ser suportada por declaração de retenção / Modelo 39 (rendimentos de capitais) ou Modelo 10 (rendimentos do trabalho e Categoria B) emitido pelo substituto tributário.
+- **Regra de créditos** — O total dos créditos não pode exceder a coleta para efeitos de reembolso a não ser que esteja expressamente previsto na lei (e.g., excesso de crédito SIFIDE pode ser reportado 8 anos). Cada retenção tem de ser suportada por declaração de retenção / Modelo 39 (rendimentos de capitais) ou Modelo 10 (rendimentos do trabalho e Categoria B) emitido pelo substituto tributário.  _(unsure - no explicit legal citation provided for the SIFIDE 8-year carryover)_
 
 ### 3.3 Verificação cruzada 3 — DMR mensal vs Modelo 10 anual
 
+**DMR vs Modelo 10**
+
 | Item | Origem | Regra |
-|---|---|---|
+| --- | --- | --- |
 | Soma das 12 DMR (janeiro-dezembro 2025) — total de rendimentos pagos e retenções de IRS | portugal-payroll | Tem de igualar o Modelo 10 / Anexo J do Modelo 22 |
 | Modelo 10 (declaração anual de rendimentos pagos e retenções) — prazo 10 fevereiro 2026 | portugal-payroll | Suporta o Anexo A do Modelo 3 dos colaboradores |
 | Coima por atraso DMR | RGIT Art.º 117º | €100 a €2.500 por declaração em atraso |
@@ -221,20 +198,24 @@ Para sociedades (Modelo 22):
 
 ### 3.4 Verificação cruzada 4 — Contribuições Segurança Social — empregadores e independentes
 
+**Contribuições SS**
+
 | Item | Origem | Regra |
-|---|---|---|
+| --- | --- | --- |
 | TSU empregador 23,75% + colaborador 11% sobre remunerações sujeitas | pt-social-contributions + portugal-payroll | DMR mensal cruzar com folhas de salário |
 | Contribuições trabalhador independente — 21,4% sobre 70% do rendimento relevante (regime geral) ou 25,2% sobre 70% (sócios-gerentes / membros estatutários) | pt-social-contributions | DRI trimestral; reconciliar com Modelo 3 Anexo B |
 | Isenção do primeiro ano de atividade para trabalhadores independentes | pt-social-contributions | Confirmar elegibilidade |
 | Taxa reduzida 18,4% para trabalhadores independentes que sejam pensionistas | pt-social-contributions | Confirmar status |
 | Coima por atraso na entrega de DMR para Segurança Social | RGIT + Código Contributivo | €100 a €2.500 |
 
-**Para o reembolso TSU "primeiro emprego" (jovens até 30 anos):** verificar elegibilidade ao abrigo do regime de **incentivo à contratação de jovens** (Decreto-Lei nº 72/2017 com alterações) — pode haver isenção parcial até 7 anos.
+- **Reembolso TSU primeiro emprego** — Para o reembolso TSU "primeiro emprego" (jovens até 30 anos): verificar elegibilidade ao abrigo do regime de incentivo à contratação de jovens (Decreto-Lei nº 72/2017 com alterações) — pode haver isenção parcial até 7 anos.  _(Decreto-Lei nº 72/2017)_
 
 ### 3.5 Verificação cruzada 5 — IVA suportado e dedutível, pro-rata
 
+**IVA suportado e dedutível**
+
 | Item | Origem | Regra |
-|---|---|---|
+| --- | --- | --- |
 | IVA liquidado (output) — Campo 4 do Modelo C | portugal-vat-return | Sobre operações tributáveis em PT |
 | IVA dedutível (input) — Campo 22 do Modelo C | portugal-vat-return | Apenas sobre bens/serviços afetos a operações tributáveis |
 | Pro-rata definitivo do ano (se sujeito passivo misto) — CIVA Art.º 23º | portugal-vat-return | Calcular pro-rata anual; regularizar diferença vs pro-rata provisório nas declarações mensais |
@@ -246,10 +227,12 @@ Para sociedades (Modelo 22):
 
 ### 3.6 Verificação cruzada 6 — Tributações autónomas (Modelo 22 — Quadro 13)
 
-Para sociedades — as tributações autónomas são **adicionadas à coleta** e calculadas sobre encargos específicos, mesmo em situação de prejuízo:
+Para sociedades — as tributações autónomas são adicionadas à coleta e calculadas sobre encargos específicos, mesmo em situação de prejuízo:
+
+**Tributações autónomas**
 
 | Encargo | Taxa base | Acréscimo se prejuízo |
-|---|---|---|
+| --- | --- | --- |
 | Despesas não documentadas | 50% | +10 pp = 60% |
 | Despesas com viaturas ligeiras de passageiros < €27.500 (custo) | 10% | +10 pp |
 | Viaturas €27.500 a €35.000 | 27,5% | +10 pp |
@@ -262,34 +245,34 @@ Para sociedades — as tributações autónomas são **adicionadas à coleta** e
 | Indemnizações de cessação de funções de gestor | 35% | +10 pp |
 | Lucros distribuídos a entidades total ou parcialmente isentas | 23% | n/a |
 
-A skill de montagem confirma que `pt-corporate-tax` calculou todas as TA aplicáveis e que a TA total foi adicionada à coleta no Quadro 10. **Tolerância: €1.**
+- **Confirmação TA** — A skill de montagem confirma que pt-corporate-tax calculou todas as TA aplicáveis e que a TA total foi adicionada à coleta no Quadro 10. Tolerância: €1.  _(unsure - no explicit legal citation provided)_
 
 ### 3.7 Verificação cruzada 7 — Derramas (municipal + estadual)
 
+**Derramas**
+
 | Derrama | Base | Taxa | Quem |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | **Derrama Municipal** (Lei das Finanças Locais — Lei nº 73/2013) | Lucro tributável da sociedade | Até 1,5% — definida por cada município anualmente; muitos municípios cobram 1,5%, outros 0% para PME | Sociedades, exceto as do regime simplificado em alguns municípios |
 | **Derrama Estadual** (CIRC Art.º 87º-A) | Lucro tributável > €1.500.000 | 3% (€1,5M-€7,5M) + 5% (€7,5M-€35M) + 9% (>€35M) | Sociedades com lucro tributável superior a €1,5M |
 | **Derrama Regional** Madeira/Açores | Equivalente em regimes regionais autónomos | Taxas regionais | Sociedades sediadas nas regiões autónomas |
 
-**Verificação:** a soma `Coleta IRC + Derrama Municipal + Derrama Estadual + Tributações Autónomas` produz o Total da Coleta (Campo 351 do Modelo 22).
+- **Total da Coleta** — Coleta IRC + Derrama Municipal + Derrama Estadual + Tributações Autónomas = Total da Coleta (Campo 351 do Modelo 22)  _(Modelo 22 Campo 351)_
 
 ### 3.8 Verificação cruzada 8 — Adicional de solidariedade (IRS)
 
-Para pessoas singulares com **rendimento coletável agregado > €80.000**:
+**Adicional de solidariedade**
 
 | Escalão | Taxa adicional |
-|---|---|
+| --- | --- |
 | €80.000 a €250.000 | 2,5% |
 | > €250.000 | 5% |
 
-O adicional incide apenas sobre a parte do rendimento que excede o limiar. A skill de montagem cruza com `pt-income-tax` para confirmar que foi corretamente aplicado, em particular para sujeitos passivos casados com tributação separada (em que o limiar se aplica individualmente).
+- **Regra do adicional de solidariedade** — O adicional incide apenas sobre a parte do rendimento que excede o limiar. A skill de montagem cruza com pt-income-tax para confirmar que foi corretamente aplicado, em particular para sujeitos passivos casados com tributação separada (em que o limiar se aplica individualmente). Aplicável para pessoas singulares com rendimento coletável agregado > €80.000.  _(unsure - no explicit legal citation provided)_
 
 ### 3.9 Verificação cruzada 9 — Disciplina de tolerância
 
-Para cada verificação cruzada acima, o limiar é **€1,00**. Se uma diferença estiver entre **€1 e €100**, documentar a variação e prosseguir com sinalização ao revisor. Acima de **€100**, levantar como **"Necessita Input"** — o revisor deve resolver antes da assinatura.
-
----
+- **Disciplina de tolerância** — Para cada verificação cruzada acima, o limiar é €1,00. Se uma diferença estiver entre €1 e €100, documentar a variação e prosseguir com sinalização ao revisor. Acima de €100, levantar como "Necessita Input" — o revisor deve resolver antes da assinatura.  _(unsure - no explicit legal citation provided)_
 
 ## Secção 4 — Estrutura do Working Paper para o Contabilista Certificado (OCC)
 
@@ -424,8 +407,6 @@ O revisor é um **Contabilista Certificado** membro da **OCC — Ordem dos Conta
 [Ver Secção 9]
 ```
 
----
-
 ## Secção 5 — Resumo da Liquidação Fiscal (Bloco Headline)
 
 Este bloco é o cabeçalho que o revisor e o contribuinte leem primeiro.
@@ -489,11 +470,9 @@ Portal: Portal das Finanças
 Pagamento: Multibanco / IBAN AT
 ```
 
----
-
 ## Secção 6 — Instruções de Pagamento — Portal das Finanças
 
-Os pagamentos de IRS, IRC, IVA e outros tributos são processados através do **Portal das Finanças**, que gera uma **referência de pagamento (entidade + referência Multibanco + valor)** após a submissão da declaração ou da nota de liquidação. O contribuinte paga via:
+Os pagamentos de IRS, IRC, IVA e outros tributos são processados através do Portal das Finanças, que gera uma referência de pagamento (entidade + referência Multibanco + valor) após a submissão da declaração ou da nota de liquidação. O contribuinte paga via:
 
 - **Multibanco** (caixa automática ou home banking) — usando a referência gerada (entidade 5 dígitos + referência 9 dígitos + montante)
 - **MBWay** — funcionalidade disponível para alguns tributos via aplicação móvel
@@ -503,8 +482,10 @@ Os pagamentos de IRS, IRC, IVA e outros tributos são processados através do **
 
 ### 6.1 Tipos de tributo e canais
 
+**Tipos de tributo e canais**
+
 | Tributo | Autoridade | Portal | Canal de pagamento |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | IRS | AT | Portal das Finanças | Multibanco / MBWay / IBAN AT / débito direto |
 | IRC | AT | Portal das Finanças | Idem |
 | IVA | AT | Portal das Finanças | Idem |
@@ -520,57 +501,57 @@ Os pagamentos de IRS, IRC, IVA e outros tributos são processados através do **
 
 ### 6.2 Fluxo Portal das Finanças → Multibanco
 
-1. Aceder ao **Portal das Finanças** (https://www.portaldasfinancas.gov.pt) com NIF + senha (ou Chave Móvel Digital / Cartão de Cidadão)
+1. Aceder ao Portal das Finanças (https://www.portaldasfinancas.gov.pt) com NIF + senha (ou Chave Móvel Digital / Cartão de Cidadão)
 2. Submeter a declaração (Modelo 3, Modelo 22, declaração periódica IVA)
-3. Após validação, o sistema processa e emite a **nota de liquidação** (geralmente em horas para IVA; até final do ano civil seguinte para IRS/IRC)
-4. A nota de liquidação contém a **referência de pagamento Multibanco** (Entidade + Referência + Montante)
+3. Após validação, o sistema processa e emite a nota de liquidação (geralmente em horas para IVA; até final do ano civil seguinte para IRS/IRC)
+4. A nota de liquidação contém a referência de pagamento Multibanco (Entidade + Referência + Montante)
 5. Pagar até à data-limite indicada:
    - Caixa Multibanco (com cartão débito)
    - Home banking (todos os bancos portugueses oferecem "Pagamentos ao Estado")
    - MBWay (limites por tributo)
    - Transferência IBAN AT (atenção: identificar o IBAN correto no Portal das Finanças)
-6. Após o pagamento, a AT atualiza o estado no Portal das Finanças e emite **comprovativo de pagamento** (PDF descarregável)
+6. Após o pagamento, a AT atualiza o estado no Portal das Finanças e emite comprovativo de pagamento (PDF descarregável)
 
 ### 6.3 Pagamentos por conta de IRC (CIRC Art.º 105º)
 
-Para sociedades com volume de negócios > €500.000 (em geral), três pagamentos por conta:
+**Pagamentos por conta IRC**  _(CIRC Art.º 105º)_
 
 | PPC | Prazo | Base de cálculo |
-|---|---|---|
+| --- | --- | --- |
 | 1ª prestação | Até **31 julho** | 80% (ou 95% se VN>€500.000) da coleta do ano anterior dividida por 3 |
 | 2ª prestação | Até **30 setembro** | Idem |
 | 3ª prestação | Até **15 dezembro** | Idem |
 
-**Limitação à dispensa (CIRC Art.º 107º):** pode dispensar-se da 3ª prestação se o sujeito passivo entender que a soma das duas primeiras já cobre o IRC final, mas suporta juros compensatórios se errar por mais de 20%.
+- **Limitação à dispensa** — Pode dispensar-se da 3ª prestação se o sujeito passivo entender que a soma das duas primeiras já cobre o IRC final, mas suporta juros compensatórios se errar por mais de 20%.  _(CIRC Art.º 107º)_
 
 ### 6.4 Pagamentos por conta de IRS (CIRS Art.º 102º)
 
-Trabalhadores independentes Categoria B sem retenção na fonte (ou com retenção insuficiente):
+**Pagamentos por conta IRS**  _(CIRS Art.º 102º)_
 
 | PPC | Prazo | Base de cálculo |
-|---|---|---|
+| --- | --- | --- |
 | 1ª prestação | Até **20 julho** | 76,5% × IRS do penúltimo ano × coeficiente |
 | 2ª prestação | Até **20 setembro** | Idem |
 | 3ª prestação | Até **20 dezembro** | Idem |
 
 ### 6.5 Comprovativos de pagamento a conservar
 
+**Comprovativos a conservar**
+
 | Documento | Emitido por | Conservar por |
-|---|---|---|
+| --- | --- | --- |
 | Comprovativo de submissão (Modelo 3 / 22 / IES / IVA) | Portal das Finanças | Indefinidamente |
 | Nota de liquidação | AT | Indefinidamente |
 | Comprovativo Multibanco (talão) ou print home banking | Banco | Pelo menos 4 anos (caducidade tributária — LGT Art.º 45º) |
 | Comprovativo de pagamento no Portal das Finanças | AT | Indefinidamente |
 | Certidões de não-dívida (à AT e à Segurança Social) | AT / SS | 3 meses validade; renovar conforme necessário |
 
----
-
-## Secção 7 — Instruções de Submissão
-
 ### 7.1 Submissões no Portal das Finanças
 
+**Canais de submissão**
+
 | Canal | Descrição | Adequado para |
-|---|---|---|
+| --- | --- | --- |
 | **Portal das Finanças — preenchimento direto** | Formulário online no Portal | Contribuintes singulares sem CC; PME simples |
 | **Portal das Finanças — ficheiro de submissão** | Upload de ficheiros XML / ZIP gerados por software de contabilidade certificado | CC profissionais; sociedades com volume |
 | **Software certificado de contabilidade / faturação** | Integração API via webservices da AT | Sociedades com ERP; grandes contribuintes |
@@ -578,10 +559,10 @@ Trabalhadores independentes Categoria B sem retenção na fonte (ou com retenç�
 ### 7.2 Submissão do Modelo 3 (IRS)
 
 1. Aceder ao Portal das Finanças com NIF + senha (ou Chave Móvel Digital / Cartão de Cidadão / autenticação.gov)
-2. Menu: **"Cidadãos" → "Serviços" → "IRS" → "Entregar Declaração — Modelo 3"**
-3. Selecionar ano de tributação **2025**
-4. O sistema apresenta uma **declaração pré-preenchida** com dados já comunicados à AT (rendimentos do trabalho, retenções, despesas dedutíveis via e-fatura, contribuições SS, faturas com NIF, etc.)
-5. **Validar e corrigir** os anexos pré-preenchidos; acrescentar Anexos manualmente:
+2. Menu: "Cidadãos" → "Serviços" → "IRS" → "Entregar Declaração — Modelo 3"
+3. Selecionar ano de tributação 2025
+4. O sistema apresenta uma declaração pré-preenchida com dados já comunicados à AT (rendimentos do trabalho, retenções, despesas dedutíveis via e-fatura, contribuições SS, faturas com NIF, etc.)
+5. Validar e corrigir os anexos pré-preenchidos; acrescentar Anexos manualmente:
    - Anexo A (trabalho dependente — geralmente pré-preenchido)
    - Anexo B (independentes regime simplificado)
    - Anexo C (independentes contabilidade organizada)
@@ -593,18 +574,18 @@ Trabalhadores independentes Categoria B sem retenção na fonte (ou com retenç�
    - Anexo J (rendimentos obtidos no estrangeiro)
    - Anexo L (RNH / IFICI)
 6. Validar — Portal das Finanças executa verificações lógicas e aritméticas; resolver erros (a vermelho) e analisar avisos (a amarelo)
-7. **Submeter** → sistema emite comprovativo de entrega (PDF)
-8. Aguardar **nota de liquidação** — geralmente emitida ao longo de julho/agosto para declarações entregues a tempo
+7. Submeter → sistema emite comprovativo de entrega (PDF)
+8. Aguardar nota de liquidação — geralmente emitida ao longo de julho/agosto para declarações entregues a tempo
 
 **Atenção:** uma declaração entregue com IBAN PT válido permite reembolso por transferência. Sem IBAN, o reembolso é por cheque (mais demorado e em desuso).
 
 ### 7.3 Submissão do Modelo 22 (IRC)
 
-A submissão do Modelo 22 **obriga à intervenção de Contabilista Certificado** (CIRC Art.º 117º; Estatuto da OCC). O CC submete pelo seu acesso pessoal ao Portal das Finanças com a sua senha de CC.
+A submissão do Modelo 22 obriga à intervenção de Contabilista Certificado (CIRC Art.º 117º; Estatuto da OCC). O CC submete pelo seu acesso pessoal ao Portal das Finanças com a sua senha de CC.
 
 1. CC acede ao Portal das Finanças com NIF do CC + senha CC
-2. Menu: **"Empresas" → "Serviços" → "IRC" → "Entregar Declaração — Modelo 22"**
-3. Selecionar período de tributação **2025**
+2. Menu: "Empresas" → "Serviços" → "IRC" → "Entregar Declaração — Modelo 22"
+3. Selecionar período de tributação 2025
 4. Preencher Quadros 01 a 13:
    - Quadro 01: Identificação
    - Quadro 02: Características da declaração
@@ -625,15 +606,15 @@ A submissão do Modelo 22 **obriga à intervenção de Contabilista Certificado*
    - Anexo C (operações nas regiões autónomas)
    - Anexo D (benefícios fiscais — RFAI, SIFIDE, CFEI, DLRR)
    - Anexo E (regime simplificado)
-6. **Validar e submeter** — Portal emite comprovativo
-7. Aguardar **nota de liquidação** e referência de pagamento Multibanco
+6. Validar e submeter — Portal emite comprovativo
+7. Aguardar nota de liquidação e referência de pagamento Multibanco
 
 ### 7.4 Submissão da IES (Informação Empresarial Simplificada)
 
-A IES é declaração conjunta para AT + Banco de Portugal + INE + Conservatória do Registo Comercial. Substitui múltiplas declarações antigas (declaração anual contabilística, prestação de contas, etc.). **Submetida pelo CC.**
+A IES é declaração conjunta para AT + Banco de Portugal + INE + Conservatória do Registo Comercial. Substitui múltiplas declarações antigas (declaração anual contabilística, prestação de contas, etc.). Submetida pelo CC.
 
 1. CC acede ao Portal das Finanças
-2. Menu: **"Empresas" → "Serviços" → "IES — Declaração Anual"**
+2. Menu: "Empresas" → "Serviços" → "IES — Declaração Anual"
 3. Preencher Anexos:
    - Anexo A: Informação contabilística (SNC ou NCM ou NCM-ME conforme dimensão)
    - Anexo L: Operações com partes relacionadas (Preços de Transferência) — se VN > €3M
@@ -641,12 +622,12 @@ A IES é declaração conjunta para AT + Banco de Portugal + INE + Conservatóri
    - Anexo Q: Operações com territórios offshore
    - Outros anexos consoante natureza
 4. Anexar SAF-T contabilístico (.xml) gerado pelo software certificado
-5. **Validar e submeter** — Portal emite comprovativo único que serve as 4 entidades destinatárias
+5. Validar e submeter — Portal emite comprovativo único que serve as 4 entidades destinatárias
 
 ### 7.5 Submissão da Declaração Periódica de IVA (Modelo C)
 
 1. CC ou sujeito passivo acede ao Portal das Finanças
-2. Menu: **"Empresas" / "Cidadãos" → "Serviços" → "IVA" → "Declaração Periódica"**
+2. Menu: "Empresas" / "Cidadãos" → "Serviços" → "IVA" → "Declaração Periódica"
 3. Selecionar período (mês ou trimestre)
 4. Preencher Quadros 01 a 06 + Anexo R (regularizações)
 5. Submeter → comprovativo + nota de liquidação
@@ -654,16 +635,20 @@ A IES é declaração conjunta para AT + Banco de Portugal + INE + Conservatóri
 
 ### 7.6 Submissão de SAF-T (PT)
 
+**Tipos de SAF-T**
+
 | Tipo SAF-T | Submissão | Prazo |
-|---|---|---|
+| --- | --- | --- |
 | **SAF-T Faturação** | Comunicação mensal de documentos (faturas, notas de crédito, recibos) | Até **dia 5** do mês seguinte (Portaria 195/2020) — via webservice ou e-fatura |
 | **SAF-T Contabilístico** | Anual, junto com IES | **15 julho 2026** para 2025 |
 | **SAF-T Auditoria fiscal** | Sob solicitação da AT em inspeções | Variável |
 
 ### 7.7 Submissões na Segurança Social Direta
 
+**Submissões Segurança Social Direta**
+
 | Declaração | Prazo |
-|---|---|
+| --- | --- |
 | **DMR** (declaração mensal de remunerações — parte SS) | Até **dia 10** do mês seguinte |
 | **DRI** (declaração de rendimentos independentes) | Até **dia 31** do mês seguinte ao fim do trimestre (jan, abr, jul, out) |
 | **Folha de Férias / Mapa de Encargos** | Anualmente em janeiro |
@@ -671,8 +656,10 @@ A IES é declaração conjunta para AT + Banco de Portugal + INE + Conservatóri
 
 ### 7.8 Resumo de prazos (período 2025)
 
+**Resumo de prazos**
+
 | Tipo de declarante | Declaração | Autoridade | Prazo |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Singular (residente) | Modelo 3 IRS + Anexos | AT | **30 junho 2026** |
 | Sociedade (período = ano civil) | Modelo 22 IRC + Anexos | AT | **31 maio 2026** |
 | Sociedade | IES + SAF-T contabilístico anual | AT (+ BdP + INE + ConservRegCom) | **15 julho 2026** |
@@ -687,8 +674,10 @@ A IES é declaração conjunta para AT + Banco de Portugal + INE + Conservatóri
 
 ### 7.9 Coimas por atraso
 
+**Coimas por atraso**
+
 | Infração | Coima | Base legal |
-|---|---|---|
+| --- | --- | --- |
 | Falta ou atraso na entrega de declaração obrigatória (Modelo 3, Modelo 22, IVA, IES) | €150 a €3.750 | RGIT Art.º 116º |
 | Falta ou atraso na entrega de DMR | €100 a €2.500 | RGIT Art.º 117º |
 | Falta de comunicação de elementos no e-fatura | €150 a €3.750 | RGIT Art.º 117º |
@@ -696,16 +685,11 @@ A IES é declaração conjunta para AT + Banco de Portugal + INE + Conservatóri
 | Falta de pagamento (não falta de declaração) — juros compensatórios | Taxa juros compensatórios + coima | LGT Art.º 35º + RGIT Art.º 114º |
 | Falta de retenção na fonte | Coima + retenção em singelo + juros | RGIT Art.º 114º |
 
-**Atenuante:** entrega voluntária antes de qualquer ato inspetivo reduz a coima ao mínimo legal.
+- **Atenuante** — Entrega voluntária antes de qualquer ato inspetivo reduz a coima ao mínimo legal.  _(RGIT Art.º 29º)_
 
 ### 7.10 Substituição de declaração
 
-Se uma declaração já submetida contiver erros, deve apresentar-se **declaração de substituição** ao abrigo do CIRS Art.º 59º / CIRC Art.º 122º. Pode ser:
-- **Dentro do prazo legal:** sem coima
-- **Fora do prazo legal:** com coima reduzida (RGIT Art.º 29º — atenuação para regularização espontânea)
-- **Em consequência de inspeção:** sem atenuação; pode haver crime fiscal se houver ocultação
-
----
+- **Substituição de declaração** — Se uma declaração já submetida contiver erros, deve apresentar-se declaração de substituição ao abrigo do CIRS Art.º 59º / CIRC Art.º 122º. Pode ser: (i) Dentro do prazo legal: sem coima; (ii) Fora do prazo legal: com coima reduzida (RGIT Art.º 29º — atenuação para regularização espontânea); (iii) Em consequência de inspeção: sem atenuação; pode haver crime fiscal se houver ocultação.  _(CIRS Art.º 59º / CIRC Art.º 122º / RGIT Art.º 29º)_
 
 ## Secção 8 — Lista Final de Ações do Contribuinte (Calendar)
 
@@ -792,7 +776,7 @@ Se uma declaração já submetida contiver erros, deve apresentar-se **declaraç
 
 ## Conservação de documentos
 
-Por força da **LGT Art.º 123º + Decreto-Lei nº 36/2017 + Código Comercial Art.º 40º**, os livros, registos contabilísticos e respetivos documentos de suporte devem ser conservados por **10 anos**. Para efeitos exclusivamente fiscais, o prazo é de **4 anos** (LGT Art.º 45º — caducidade do direito à liquidação), mas estende-se a 12 anos se houver direito ao reporte de prejuízos.
+Por força da LGT Art.º 123º + Decreto-Lei nº 36/2017 + Código Comercial Art.º 40º, os livros, registos contabilísticos e respetivos documentos de suporte devem ser conservados por 10 anos. Para efeitos exclusivamente fiscais, o prazo é de 4 anos (LGT Art.º 45º — caducidade do direito à liquidação), mas estende-se a 12 anos se houver direito ao reporte de prejuízos.
 
 Conservar pelo menos:
 - Demonstrações financeiras + Anexo (sociedades)
@@ -810,7 +794,42 @@ Conservar pelo menos:
 - Atas de assembleias-gerais e órgãos de administração (sociedades)
 ```
 
----
+## Secção 2 — Entradas Obrigatórias dos Skills Upstream
+
+0. **Invocar pt-income-tax** — Consumir output para Modelo 3 rendimento, deduções, taxas, retenções
+0. **Invocar pt-nhr-ifici** — Consumir output RNH/IFICI para Anexo L
+0. **Invocar pt-foreign-source-treaties** — Consumir crédito de dupla tributação para Anexo J
+0. **Invocar pt-corporate-tax** — Consumir lucro tributável, derramas, tributações autónomas para Modelo 22
+0. **Invocar portugal-vat-return** — Consumir posição anual de IVA para reconciliação
+0. **Invocar pt-social-contributions** — Consumir TSU e contribuições independentes
+0. **Invocar portugal-payroll** — Consumir custos com pessoal, retenções Categoria A, DMR
+0. **Invocar portugal-bookkeeping** — Consumir balancete, demonstração de resultados, mapas de depreciação
+0. **Invocar portugal-financial-statements** — Consumir demonstrações financeiras SNC/NCM para IES
+0. **Invocar portugal-crypto-tax** — Consumir mais-valias e rendimentos de criptoativos
+
+## Secção 3 — Workflow de Montagem — Reconciliações Cross-Skill
+
+0. **Executar verificações cruzadas 1-9** — Reconciliar volume de negócios, créditos e retenções, DMR vs Modelo 10, contribuições SS, IVA e pro-rata, tributações autónomas, derramas, adicional de solidariedade, e aplicar disciplina de tolerância
+
+## Secção 4 — Estrutura do Working Paper para o Contabilista Certificado (OCC)
+
+0. **Montar working paper** — Consolidar todos os outputs upstream no template markdown do working paper para o CC
+
+## Secção 5 — Resumo da Liquidação Fiscal (Bloco Headline)
+
+0. **Gerar bloco headline** — Produzir bloco headline IRS e/ou IRC conforme aplicável
+
+## Secção 6 — Instruções de Pagamento — Portal das Finanças
+
+0. **Gerar instruções de pagamento** — Produzir instruções de pagamento via Portal das Finanças / Multibanco / MBWay
+
+## Secção 7 — Instruções de Submissão
+
+0. **Gerar instruções de submissão** — Produzir instruções de submissão para Portal das Finanças, SAF-T e Segurança Social Direta
+
+## Secção 8 — Lista Final de Ações do Contribuinte (Calendar)
+
+0. **Gerar lista final de ações** — Produzir calendário de ações mensal do contribuinte para 2026
 
 ## Secção 9 — Notas para o Exercício de 2026 (Planeamento)
 
@@ -820,8 +839,12 @@ A capstone produz uma secção prospetiva para que o contribuinte chegue à pró
 
 À data desta versão da skill, o Orçamento do Estado 2026 (OE 2026) está em discussão parlamentar. Pontos estruturais a monitorizar:
 
+**OE 2026 — pontos de atenção**  _(OE 2025/2026)_
+
+**OE 2026 — tabela de pontos de atenção**  _(OE 2025 / OE 2026 (projetado))_
+
 | Área | OE 2025 (atual) | OE 2026 (projetado / em discussão) | Ação |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Taxa geral IRC | 21% (CIRC Art.º 87º) | Possível redução adicional para 19% (PSD/governo propõe trajetória de descida) | Reforecast pós-OE 2026 |
 | Taxa reduzida IRC PME (primeiros €50.000) | 17% | Possível redução para 15% | Reforecast |
 | Adicional de solidariedade IRS — limiar | €80.000 | Manutenção esperada | Sem alteração |
@@ -885,8 +908,6 @@ Confirmar que a contabilidade e a faturação estão a alimentar o e-fatura em t
 - Faturas recebidas com NIF do sujeito passivo — pré-preenchimento automático do Modelo 3
 - Para Categoria B: faturas emitidas via Portal das Finanças (recibos eletrónicos) ou software certificado
 
----
-
 ## Secção 10 — Bloco de Atestação do Revisor (OCC Sign-off)
 
 O working paper final inclui um bloco de atestação que o **Contabilista Certificado** assina antes de qualquer submissão.
@@ -945,14 +966,14 @@ Seguro de Responsabilidade Civil — Apólice: ____________________ / Validade: 
 
 Para o **Modelo 22 (IRC)**, a intervenção do CC é **obrigatória por lei** (CIRC Art.º 117º). Para o **Modelo 3 (IRS)** com Categoria B em contabilidade organizada, a intervenção do CC é igualmente obrigatória. Para o IRS Categoria B em regime simplificado e para o IRS sem rendimentos profissionais, o contribuinte pode submeter diretamente.
 
----
-
 ## Secção 11 — Defaults Conservadores
 
 Quando os inputs das skills upstream forem ambíguos ou estiverem em falta, aplicar os seguintes defaults e sinalizar para o revisor:
 
+**Tabela de defaults conservadores**
+
 | Situação | Default conservador |
-|---|---|
+| --- | --- |
 | Reconciliação cross-skill difere > €1 | Sinalizar como "Necessita Input"; não arredondar silenciosamente |
 | Coeficiente regime simplificado Categoria B ambíguo (entre dois CAE) | Aplicar o **coeficiente mais alto** (menos favorável ao contribuinte); sinalizar |
 | Classificação PME / não-PME para taxa reduzida IRC 17% borderline | Aplicar taxa geral 21% sobre TODO o lucro; sinalizar para revisão de elegibilidade PME (DL 372/2007) |
@@ -972,91 +993,53 @@ Quando os inputs das skills upstream forem ambíguos ou estiverem em falta, apli
 | Regime de transparência fiscal aplicável incerto | Aplicar o regime que produz tributação superior (conservador); sinalizar |
 | OE 2026 aplicado ao ano 2025 | Rejeitar; 2025 usa regras OE 2025; OE 2026 aplica-se desde 1 jan 2026 |
 
-**Regra de tolerância (reforço):** tolerância de **€1**. Qualquer discrepância superior é escalada, não absorvida.
-
----
+- **Regra de tolerância (reforço)** — Tolerância de €1. Qualquer discrepância superior é escalada, não absorvida.
 
 ## Secção 12 — Catálogo de Recusas
 
-**R-PT-ASM-1 — Skill upstream não correu.** Nomear a skill em falta. Continuar com os dados disponíveis; sinalizar a lacuna; não fabricar a computação em falta.
-
-**R-PT-ASM-2 — Auto-verificação upstream falhou.** Registar a verificação específica; continuar mas sinalizar.
-
-**R-PT-ASM-3 — Reconciliação cross-skill > €1.** Levantar como "Necessita Input"; não arredondar silenciosamente.
-
-**R-PT-ASM-4 — Declaração já submetida no Portal das Finanças e o pedido é submeter declaração nova "em cima".** Recusar e explicar o procedimento de **declaração de substituição** (CIRS Art.º 59º / CIRC Art.º 122º). Produzir o working paper da substituição se solicitado, com indicação clara de que se trata de substituição.
-
-**R-PT-ASM-5 — Falta de Contabilista Certificado quando obrigatório.** Para Modelo 22 IRC (todas as sociedades) e para IRS Categoria B em contabilidade organizada, a intervenção do CC é **obrigatória por lei** (CIRC Art.º 117º; CIRS regulamentação). Sinalizar como bloqueador; não submeter sem CC. Idem para sociedades com volume de negócios > €200.000 que não tenham CC vinculado.
-
-**R-PT-ASM-6 — Inconsistências entre Modelo 3 e Modelo 22 do mesmo contribuinte.** Sócio-gerente que receba pró-labore deve aparecer simultaneamente no Modelo 22 da sociedade (gasto com pessoal) e no Modelo 3 do próprio (Categoria A). Se houver inconsistência > €1, levantar para reconciliação antes de submeter qualquer das duas declarações.
-
-**R-PT-ASM-7 — Fora do âmbito: regime fiscal de Zona Franca da Madeira (ZFM) Centro Internacional de Negócios, isenções IRC específicas para entidades com determinados estatutos especiais (cooperativas em certos regimes, IPSS), companhias de seguros e instituições de crédito (regimes especiais CIRC), atividades petrolíferas, jogos e apostas (regime especial), tributação de fundos de investimento e SGPS (regimes específicos).** Encaminhar para especialista; não tentar.
-
-**R-PT-ASM-8 — Fora do âmbito: não-residentes fiscais sem estabelecimento estável em PT, residentes que mudaram durante o ano, expatriados com obrigações em múltiplas jurisdições, Permanent Establishment determinação ao abrigo de CDT.** Encaminhar para especialista internacional; esta skill assume residência fiscal portuguesa anual completa.
-
-**R-PT-ASM-9 — Fora do âmbito: contencioso tributário, reclamações graciosas, impugnações judiciais, recursos hierárquicos, ações junto do CAAD (Centro de Arbitragem Administrativa), defesa em inspeção tributária.** Encaminhar para advogado fiscalista / consultor fiscal com prática contenciosa.
-
-**R-PT-ASM-10 — Intake incompleto.** Nomear o campo de intake em falta (NIF, NIPC, NISS, CAE, residência fiscal, regime de IVA, etc.). Não é possível finalizar a declaração até ser fornecido.
-
-**R-PT-ASM-11 — Pedido para submeter diretamente no Portal das Finanças.** Esta skill produz um working paper. A submissão é ação do contribuinte ou do CC (no portal do CC), após revisão e atestação. Recusar educadamente; fornecer as instruções de submissão.
-
-**R-PT-ASM-12 — Aplicação retroativa de regras OE 2026 ao ano 2025.** As datas de entrada em vigor governam; não retro-aplicar taxas / limiares 2026 a declarações 2025. Recusar educadamente; explicar regras transitórias.
-
-**R-PT-ASM-13 — Fora do âmbito: regimes setoriais especiais (banca, seguros, exploração de jogos, atividades extrativas, agricultura e silvicultura com regime especial), regime das SIIMI / OIC, regime das SGPS, fusões/cisões com regime de neutralidade fiscal complexa, reorganizações empresariais transfronteiriças, fiscalidade verde (carbono, plástico).** Encaminhar para especialista.
-
-**R-PT-ASM-14 — Pedido envolve criptografia / NFTs / DeFi com perfil ambíguo.** Sinalizar para análise especializada (skill `portugal-crypto-tax` deve cobrir os casos standard; perfis complexos exigem opinião escrita).
-
----
+- **R-PT-ASM-1** — Skill upstream não correu. Nomear a skill em falta. Continuar com os dados disponíveis; sinalizar a lacuna; não fabricar a computação em falta.
+- **R-PT-ASM-2** — Auto-verificação upstream falhou. Registar a verificação específica; continuar mas sinalizar.
+- **R-PT-ASM-3** — Reconciliação cross-skill > €1. Levantar como "Necessita Input"; não arredondar silenciosamente.
+- **R-PT-ASM-4** — Declaração já submetida no Portal das Finanças e o pedido é submeter declaração nova "em cima". Recusar e explicar o procedimento de declaração de substituição (CIRS Art.º 59º / CIRC Art.º 122º). Produzir o working paper da substituição se solicitado, com indicação clara de que se trata de substituição.  _(CIRS Art.º 59º / CIRC Art.º 122º)_
+- **R-PT-ASM-5** — Falta de Contabilista Certificado quando obrigatório. Para Modelo 22 IRC (todas as sociedades) e para IRS Categoria B em contabilidade organizada, a intervenção do CC é obrigatória por lei (CIRC Art.º 117º; CIRS regulamentação). Sinalizar como bloqueador; não submeter sem CC. Idem para sociedades com volume de negócios > €200.000 que não tenham CC vinculado.  _(CIRC Art.º 117º)_
+- **R-PT-ASM-6** — Inconsistências entre Modelo 3 e Modelo 22 do mesmo contribuinte. Sócio-gerente que receba pró-labore deve aparecer simultaneamente no Modelo 22 da sociedade (gasto com pessoal) e no Modelo 3 do próprio (Categoria A). Se houver inconsistência > €1, levantar para reconciliação antes de submeter qualquer das duas declarações.
+- **R-PT-ASM-7** — Fora do âmbito: regime fiscal de Zona Franca da Madeira (ZFM) Centro Internacional de Negócios, isenções IRC específicas para entidades com determinados estatutos especiais (cooperativas em certos regimes, IPSS), companhias de seguros e instituições de crédito (regimes especiais CIRC), atividades petrolíferas, jogos e apostas (regime especial), tributação de fundos de investimento e SGPS (regimes específicos). Encaminhar para especialista; não tentar.
+- **R-PT-ASM-8** — Fora do âmbito: não-residentes fiscais sem estabelecimento estável em PT, residentes que mudaram durante o ano, expatriados com obrigações em múltiplas jurisdições, Permanent Establishment determinação ao abrigo de CDT. Encaminhar para especialista internacional; esta skill assume residência fiscal portuguesa anual completa.
+- **R-PT-ASM-9** — Fora do âmbito: contencioso tributário, reclamações graciosas, impugnações judiciais, recursos hierárquicos, ações junto do CAAD (Centro de Arbitragem Administrativa), defesa em inspeção tributária. Encaminhar para advogado fiscalista / consultor fiscal com prática contenciosa.
+- **R-PT-ASM-10** — Intake incompleto. Nomear o campo de intake em falta (NIF, NIPC, NISS, CAE, residência fiscal, regime de IVA, etc.). Não é possível finalizar a declaração até ser fornecido.
+- **R-PT-ASM-11** — Pedido para submeter diretamente no Portal das Finanças. Esta skill produz um working paper. A submissão é ação do contribuinte ou do CC (no portal do CC), após revisão e atestação. Recusar educadamente; fornecer as instruções de submissão.
+- **R-PT-ASM-12** — Aplicação retroativa de regras OE 2026 ao ano 2025. As datas de entrada em vigor governam; não retro-aplicar taxas / limiares 2026 a declarações 2025. Recusar educadamente; explicar regras transitórias.
+- **R-PT-ASM-13** — Fora do âmbito: regimes setoriais especiais (banca, seguros, exploração de jogos, atividades extrativas, agricultura e silvicultura com regime especial), regime das SIIMI / OIC, regime das SGPS, fusões/cisões com regime de neutralidade fiscal complexa, reorganizações empresariais transfronteiriças, fiscalidade verde (carbono, plástico). Encaminhar para especialista.
+- **R-PT-ASM-14** — Pedido envolve criptografia / NFTs / DeFi com perfil ambíguo. Sinalizar para análise especializada (skill `portugal-crypto-tax` deve cobrir os casos standard; perfis complexos exigem opinião escrita).
 
 ## Secção 13 — Auto-verificações
 
-**Verificação PT-ASM-1** — Todas as skills upstream exigidas para o tipo de declaração escolhido produziram output, ou a lacuna está sinalizada.
-
-**Verificação PT-ASM-2** — O volume de negócios reconcilia entre `portugal-bookkeeping`, `portugal-vat-return`, e a skill de imposto sobre rendimento aplicável (`pt-income-tax` / `pt-corporate-tax`) dentro de €1.
-
-**Verificação PT-ASM-3** — As retenções na fonte declaradas (Anexo A / Anexo B / Modelo 22 campo 359) estão suportadas por Modelo 10 / Modelo 39 dos substitutos tributários; cada retenção tem comprovativo.
-
-**Verificação PT-ASM-4** — A soma das 12 DMR mensais (parte fiscal) reconcilia com o Modelo 10 anual; o Anexo A do Modelo 3 dos colaboradores é coerente.
-
-**Verificação PT-ASM-5** — TSU empregador + colaboradores pagas até dia 20 do mês seguinte; nenhuma em mora; certidão de não-dívida da Segurança Social verificada.
-
-**Verificação PT-ASM-6** — Pro-rata IVA definitivo (se aplicável) calculado e Anexo R do Modelo C com regularizações apresentado.
-
-**Verificação PT-ASM-7** — SAF-T faturação anual reconcilia com a contabilidade (volume de negócios e IVA liquidado).
-
-**Verificação PT-ASM-8** — Tributações autónomas (Quadro 13 do Modelo 22) calculadas com as taxas corretas, com acréscimo de 10 pp em caso de prejuízo, e adicionadas à coleta no Campo 365.
-
-**Verificação PT-ASM-9** — Derrama municipal aplicada com taxa do município do domicílio fiscal; Anexo A do Modelo 22 preenchido. Derrama estadual aplicada por escalões se lucro tributável > €1.500.000.
-
-**Verificação PT-ASM-10** — Adicional de solidariedade IRS aplicado por escalão se rendimento coletável > €80.000.
-
-**Verificação PT-ASM-11** — Coeficientes do regime simplificado Categoria B aplicados corretamente conforme CAE (CIRS Art.º 31º — 0,15 / 0,75 / 0,35 / 0,95 / 0,30 / 1,00 consoante atividade).
-
-**Verificação PT-ASM-12** — Prejuízos fiscais reportáveis (CIRC Art.º 52º) utilizados dentro do limite de **70% da matéria coletável** e dentro dos prazos de reporte (5 anos / 12 anos PME até 2023 / 5 anos a partir de 2024).
-
-**Verificação PT-ASM-13** — Benefícios fiscais (RFAI, SIFIDE, CFEI, DLRR) declarados no Anexo D do Modelo 22, com limites respeitados (RFAI: até 25% do investimento + 50% da coleta; SIFIDE: dedução até concorrência da coleta + reporte 8 anos).
-
-**Verificação PT-ASM-14** — Prazos explícitos na lista de ações: 5 jan (SAF-T), 10 jan (DMR), 31 jan (DRI/Modelo 39), 10 fev (Modelo 10 / IVA mensal), 20 fev (IVA trimestral), 31 mai (Modelo 22), 30 jun (Modelo 3), 15 jul (IES).
-
-**Verificação PT-ASM-15** — Fluxo Portal das Finanças descrito: submissão → nota de liquidação → referência Multibanco → pagamento → comprovativo.
-
-**Verificação PT-ASM-16** — Período de conservação de documentos (10 anos LGT + Código Comercial; 4 anos caducidade tributária) declarado.
-
-**Verificação PT-ASM-17** — Brief do revisor contém referências legais para cada posição adotada (CIRS, CIRC, CIVA, LGT, EBF, Portarias).
-
-**Verificação PT-ASM-18** — Para sociedades: CC obrigatório identificado, com Cédula Profissional ativa e seguro RC. Para Categoria B contabilidade organizada: CC identificado.
-
-**Verificação PT-ASM-19** — Notas de planeamento 2026 (OE 2026, fim RNH legacy, IFICI, Pilar Dois, DAC8 cripto, evolução SAF-T) incluídas no brief; regras prospetivas NÃO back-aplicadas.
-
-**Verificação PT-ASM-20** — IBAN PT do contribuinte registado no Portal das Finanças para reembolso (se aplicável); confirmado coincidir com a titularidade do NIF.
-
----
+- **Verificação PT-ASM-1** — Todas as skills upstream exigidas para o tipo de declaração escolhido produziram output, ou a lacuna está sinalizada.
+- **Verificação PT-ASM-2** — O volume de negócios reconcilia entre `portugal-bookkeeping`, `portugal-vat-return`, e a skill de imposto sobre rendimento aplicável (`pt-income-tax` / `pt-corporate-tax`) dentro de €1.
+- **Verificação PT-ASM-3** — As retenções na fonte declaradas (Anexo A / Anexo B / Modelo 22 campo 359) estão suportadas por Modelo 10 / Modelo 39 dos substitutos tributários; cada retenção tem comprovativo.
+- **Verificação PT-ASM-4** — A soma das 12 DMR mensais (parte fiscal) reconcilia com o Modelo 10 anual; o Anexo A do Modelo 3 dos colaboradores é coerente.
+- **Verificação PT-ASM-5** — TSU empregador + colaboradores pagas até dia 20 do mês seguinte; nenhuma em mora; certidão de não-dívida da Segurança Social verificada.
+- **Verificação PT-ASM-6** — Pro-rata IVA definitivo (se aplicável) calculado e Anexo R do Modelo C com regularizações apresentado.
+- **Verificação PT-ASM-7** — SAF-T faturação anual reconcilia com a contabilidade (volume de negócios e IVA liquidado).
+- **Verificação PT-ASM-8** — Tributações autónomas (Quadro 13 do Modelo 22) calculadas com as taxas corretas, com acréscimo de 10 pp em caso de prejuízo, e adicionadas à coleta no Campo 365.
+- **Verificação PT-ASM-9** — Derrama municipal aplicada com taxa do município do domicílio fiscal; Anexo A do Modelo 22 preenchido. Derrama estadual aplicada por escalões se lucro tributável > €1.500.000.
+- **Verificação PT-ASM-10** — Adicional de solidariedade IRS aplicado por escalão se rendimento coletável > €80.000.
+- **Verificação PT-ASM-11** — Coeficientes do regime simplificado Categoria B aplicados corretamente conforme CAE (CIRS Art.º 31º — 0,15 / 0,75 / 0,35 / 0,95 / 0,30 / 1,00 consoante atividade).  _(CIRS Art.º 31º)_
+- **Verificação PT-ASM-12** — Prejuízos fiscais reportáveis (CIRC Art.º 52º) utilizados dentro do limite de 70% da matéria coletável e dentro dos prazos de reporte (5 anos / 12 anos PME até 2023 / 5 anos a partir de 2024).  _(CIRC Art.º 52º)_
+- **Verificação PT-ASM-13** — Benefícios fiscais (RFAI, SIFIDE, CFEI, DLRR) declarados no Anexo D do Modelo 22, com limites respeitados (RFAI: até 25% do investimento + 50% da coleta; SIFIDE: dedução até concorrência da coleta + reporte 8 anos).
+- **Verificação PT-ASM-14** — Prazos explícitos na lista de ações: 5 jan (SAF-T), 10 jan (DMR), 31 jan (DRI/Modelo 39), 10 fev (Modelo 10 / IVA mensal), 20 fev (IVA trimestral), 31 mai (Modelo 22), 30 jun (Modelo 3), 15 jul (IES).
+- **Verificação PT-ASM-15** — Fluxo Portal das Finanças descrito: submissão → nota de liquidação → referência Multibanco → pagamento → comprovativo.
+- **Verificação PT-ASM-16** — Período de conservação de documentos (10 anos LGT + Código Comercial; 4 anos caducidade tributária) declarado.
+- **Verificação PT-ASM-17** — Brief do revisor contém referências legais para cada posição adotada (CIRS, CIRC, CIVA, LGT, EBF, Portarias).
+- **Verificação PT-ASM-18** — Para sociedades: CC obrigatório identificado, com Cédula Profissional ativa e seguro RC. Para Categoria B contabilidade organizada: CC identificado.
+- **Verificação PT-ASM-19** — Notas de planeamento 2026 (OE 2026, fim RNH legacy, IFICI, Pilar Dois, DAC8 cripto, evolução SAF-T) incluídas no brief; regras prospetivas NÃO back-aplicadas.
+- **Verificação PT-ASM-20** — IBAN PT do contribuinte registado no Portal das Finanças para reembolso (se aplicável); confirmado coincidir com a titularidade do NIF.
 
 ## Secção 14 — Output Files (PDF / Excel package)
 
-O output final é um conjunto de **três ficheiros**, colocados em `/mnt/user-data/outputs/`:
+O output final é um conjunto de três ficheiros, colocados em `/mnt/user-data/outputs/`:
 
-1. **`[slug_contribuinte]_2025_pt_master.xlsx`** — Master workbook. Folhas:
+1. `[slug_contribuinte]_2025_pt_master.xlsx` — Master workbook. Folhas:
    - Cover (identificação)
    - Identidade & regime fiscal
    - Modelo 3 (se aplicável) — todos os Anexos preenchidos linha a linha
@@ -1072,15 +1055,13 @@ O output final é um conjunto de **três ficheiros**, colocados em `/mnt/user-da
    - Sinalizações para o revisor
    Usar fórmulas vivas onde possível; verificar ausência de `#REF!`.
 
-2. **`reviewer_brief.md`** — Ficheiro markdown com todo o conteúdo da Secção 4 (estrutura do working paper para o CC), com os blocos headline da Secção 5 e o bloco de atestação da Secção 10.
+2. `reviewer_brief.md` — Ficheiro markdown com todo o conteúdo da Secção 4 (estrutura do working paper para o CC), com os blocos headline da Secção 5 e o bloco de atestação da Secção 10.
 
-3. **`taxpayer_action_list.md`** — Ficheiro markdown com a lista de ações da Secção 8, mais o bloco de instruções de pagamento da Secção 6 e o bloco de instruções de submissão da Secção 7.
+3. `taxpayer_action_list.md` — Ficheiro markdown com a lista de ações da Secção 8, mais o bloco de instruções de pagamento da Secção 6 e o bloco de instruções de submissão da Secção 7.
 
 Os três ficheiros são apresentados ao utilizador no final.
 
 Se a execução esgotar o contexto a meio da construção, completar primeiro o trabalho de cálculo / reconciliação e produzir os outputs formatados que forem possíveis, indicando claramente quais os deliverables que ficaram parciais.
-
----
 
 ## Secção 15 — Limitações Conhecidas + Change Log
 
@@ -1089,26 +1070,26 @@ Se a execução esgotar o contexto a meio da construção, completar primeiro o 
 1. O preenchimento direto dos PDFs oficiais da AT não é automatizado; o CC ou o contribuinte introduz os valores no Portal das Finanças usando o working paper como guia.
 2. O Portal das Finanças aceita ficheiros XML normalizados gerados por software de contabilidade certificado pela AT; esta skill não gera o XML — gera os valores que alimentam o XML.
 3. Demonstrações financeiras (SNC, NCM, NCM-ME) são geradas pelas skills `portugal-financial-statements` e `portugal-bookkeeping`; a montagem apenas confirma a sua existência e consistência.
-4. Dossier completo de **Preços de Transferência** (Master File + Local File ao abrigo da Portaria 268/2021) não é assembled aqui; carece skill própria para volumes complexos.
+4. Dossier completo de Preços de Transferência (Master File + Local File ao abrigo da Portaria 268/2021) não é assembled aqui; carece skill própria para volumes complexos.
 5. Regimes setoriais especiais (banca, seguros, jogos, ZFM Madeira CINM, OIC, SGPS, agricultura) estão fora do âmbito.
-6. **Pilar Dois** (Lei nº 41/2024) — apenas sinalização para entidades em grupos MNE ≥ €750M; a declaração GIR carece skill própria.
-7. **Country-by-Country Report** (Anexo H da IES + reporte específico) está fora do âmbito de assemblagem aqui.
-8. As **regras prospetivas do OE 2026** poderão sofrer alterações até promulgação final; toda regra prospetiva neste skill deve ser re-verificada contra a Lei do OE 2026 quando publicada em Diário da República.
-9. Submissão automática no Portal das Finanças via webservice **não** é executada pela skill — fica a cargo do CC / contribuinte.
-10. **Comunicações de e-fatura** mensais ocorrem em paralelo durante o ano, não no momento da montagem; a skill apenas confirma que o e-fatura está em dia.
-11. **Cripto DeFi avançado** (LP tokens, yield farming, NFTs, DAOs) pode exceder o enquadramento padrão do CIRS Art.º 10º-A; a skill `portugal-crypto-tax` cobre casos standard.
-12. A skill assume **um único CC vinculado**; se houver mudança de CC durante o exercício, há obrigações de comunicação ao Portal das Finanças que ficam fora do âmbito desta capstone.
+6. Pilar Dois (Lei nº 41/2024) — apenas sinalização para entidades em grupos MNE ≥ €750M; a declaração GIR carece skill própria.
+7. Country-by-Country Report (Anexo H da IES + reporte específico) está fora do âmbito de assemblagem aqui.
+8. As regras prospetivas do OE 2026 poderão sofrer alterações até promulgação final; toda regra prospetiva neste skill deve ser re-verificada contra a Lei do OE 2026 quando publicada em Diário da República.
+9. Submissão automática no Portal das Finanças via webservice não é executada pela skill — fica a cargo do CC / contribuinte.
+10. Comunicações de e-fatura mensais ocorrem em paralelo durante o ano, não no momento da montagem; a skill apenas confirma que o e-fatura está em dia.
+11. Cripto DeFi avançado (LP tokens, yield farming, NFTs, DAOs) pode exceder o enquadramento padrão do CIRS Art.º 10º-A; a skill `portugal-crypto-tax` cobre casos standard.
+12. A skill assume um único CC vinculado; se houver mudança de CC durante o exercício, há obrigações de comunicação ao Portal das Finanças que ficam fora do âmbito desta capstone.
 
 ### 15.2 Change log
 
-- **v1.0 (2026-05):** Versão inicial. Modelada sobre `ng-return-assembly`, `id-return-assembly`, `mt-return-assembly` e `us-ca-return-assembly`. Adaptada para Modelo 3 IRS + Anexos, Modelo 22 IRC + Anexos, IES, SAF-T (PT), DMR/DRI, declaração periódica de IVA, submissão via Portal das Finanças, pagamento Multibanco/IBAN AT, e impacto prospetivo do OE 2026. Coordena 11 skills upstream Portugal (foundation, pt-income-tax, pt-nhr-ifici, pt-foreign-source-treaties, pt-corporate-tax, portugal-vat-return, pt-social-contributions, portugal-payroll, portugal-bookkeeping, portugal-financial-statements, portugal-crypto-tax). Atestação requer Contabilista Certificado membro da OCC.
-
----
+- v1.0 (2026-05): Versão inicial. Modelada sobre `ng-return-assembly`, `id-return-assembly`, `mt-return-assembly` e `us-ca-return-assembly`. Adaptada para Modelo 3 IRS + Anexos, Modelo 22 IRC + Anexos, IES, SAF-T (PT), DMR/DRI, declaração periódica de IVA, submissão via Portal das Finanças, pagamento Multibanco/IBAN AT, e impacto prospetivo do OE 2026. Coordena 11 skills upstream Portugal (foundation, pt-income-tax, pt-nhr-ifici, pt-foreign-source-treaties, pt-corporate-tax, portugal-vat-return, pt-social-contributions, portugal-payroll, portugal-bookkeeping, portugal-financial-statements, portugal-crypto-tax). Atestação requer Contabilista Certificado membro da OCC.
 
 ## Secção 16 — Fontes
 
+**Tabela de fontes**
+
 | Fonte | Referência |
-|---|---|
+| --- | --- |
 | Código do IRS (CIRS) — Decreto-Lei nº 442-A/88, de 30 novembro, com sucessivas alterações | Tributação singular; Art.º 22º (englobamento), 31º (regime simplificado), 59º (substituição), 60º (prazo Modelo 3), 68º (taxas gerais), 78º (deduções à coleta), 81º (CDT), 102º (PPC), 119º (DMR) |
 | Código do IRC (CIRC) — Decreto-Lei nº 442-B/88, de 30 novembro, com sucessivas alterações | Tributação societária; Art.º 6º (transparência fiscal), 8º (período de tributação), 18º (regime de acréscimo), 23º-A (despesas não dedutíveis / paraísos fiscais), 28º a 39º-A (provisões e ajustamentos), 51º (participation exemption), 52º (prejuízos fiscais), 63º (preços de transferência), 67º (limitação dedução de juros), 73º (neutralidade fusões), 86º-A e seguintes (regime simplificado IRC), 87º (taxa geral 21%, taxa PME 17%), 87º-A (derrama estadual), 88º (tributações autónomas), 91º (CDT), 105º (PPC), 117º (intervenção do CC), 120º (prazo Modelo 22), 121º (IES), 122º (substituição) |
 | Código do IVA (CIVA) — Decreto-Lei nº 394-B/84, de 26 dezembro, com sucessivas alterações | IVA; Art.º 9º (isenções), 23º (pro-rata), 24º (regularização ativos fixos), 53º (regime de isenção pequenos sujeitos passivos), 60º (regime forfetário), 41º a 44º (declarações periódicas) |
@@ -1133,38 +1114,35 @@ Se a execução esgotar o contexto a meio da construção, completar primeiro o 
 | Diário da República Eletrónico | https://dre.pt |
 | Versão da skill | 1.0 |
 
----
+## Disclaimer final
 
-*OpenAccountants — skills de contabilidade open-source para IA*
-*Isto não constitui aconselhamento fiscal. Todos os outputs devem ser revistos e assinados por um Contabilista Certificado (membro da OCC — Ordem dos Contabilistas Certificados) com Cédula Profissional ativa e seguro de responsabilidade civil profissional, antes de submissão no Portal das Finanças, no portal da Segurança Social Direta, ou em qualquer outra plataforma oficial.*
-
----
-
-<!-- openaccountants-cta-block -->
+OpenAccountants — skills de contabilidade open-source para IA
+Isto não constitui aconselhamento fiscal. Todos os outputs devem ser revistos e assinados por um Contabilista Certificado (membro da OCC — Ordem dos Contabilistas Certificados) com Cédula Profissional ativa e seguro de responsabilidade civil profissional, antes de submissão no Portal das Finanças, no portal da Segurança Social Direta, ou em qualquer outra plataforma oficial.
 
 ## Talk to a verified accountant
 
-This skill is a tool, not an engagement. Every taxpayer's situation is
-different, and the rules in the skill may not match your specific facts.
+This skill is a tool, not an engagement. Every taxpayer's situation is different, and the rules in the skill may not match your specific facts.
 
-To speak with one of the licensed accountants who verifies skills for your
-jurisdiction — **no liability on either side until you and the accountant sign
-a formal engagement letter** — book a free 30-minute call:
+To speak with one of the licensed accountants who verifies skills for your jurisdiction — no liability on either side until you and the accountant sign a formal engagement letter — book a free 30-minute call:
 
-**→ [Book a call](https://calendly.com/openaccountants-info/30min)**
+→ [Book a call](https://calendly.com/openaccountants-info/30min)
 
-We'll route you to the named verifier covering your country or state. You can
-also see the full list of verified accountants at
-[openaccountants.com/network](https://www.openaccountants.com/network).
+We'll route you to the named verifier covering your country or state. You can also see the full list of verified accountants at [openaccountants.com/network](https://openaccountants.com/network).
 
-<!-- openaccountants-mcp-cta -->
+<!-- openaccountants-cta-block -->
 
-## The accountant-verified version lives in the connector
+---
 
-This file is the open, **research-grade draft**. The **accountant-verified**
-version of this skill is **not published to GitHub** — it is delivered free
-through the OpenAccountants MCP connector, where your AI agent loads the
-verified rules together with the name of the accountant who signed them off.
+## Talk to a verified accountant
 
-**→ Install the free connector:** <https://www.openaccountants.com/connect>
-**MCP endpoint:** `https://www.openaccountants.com/api/mcp`
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

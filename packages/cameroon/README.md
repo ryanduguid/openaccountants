@@ -7,7 +7,11 @@
 
 1. `foundation.md`
 2. `intake.md`
-3. `cameroon-vat.md`
+3. `cameroon-income-tax.md`
+4. `cameroon-payroll.md`
+5. `cameroon-social-contributions.md`
+6. `cameroon-vat.md`
+7. `payroll-workflow-base.md`
 
 ## How to use
 

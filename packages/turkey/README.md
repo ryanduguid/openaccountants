@@ -8,8 +8,14 @@
 1. `foundation.md`
 2. `intake.md`
 3. `references.md`
-4. `turkey-pit.md`
-5. `turkey-vat.md`
+4. `tr-company-formation.md`
+5. `tr-corporate-income-tax.md`
+6. `tr-payroll-social.md`
+7. `tr-tax-overview.md`
+8. `turkey-pit.md`
+9. `turkey-vat.md`
+10. `payroll-workflow-base.md`
+11. `company-formation-workflow-base.md`
 
 ## Also known as
 

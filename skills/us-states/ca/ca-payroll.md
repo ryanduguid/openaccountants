@@ -2,13 +2,14 @@
 name: ca-payroll
 description: Tier 2 California content skill for employer payroll compliance covering tax year 2025. Includes the 13.3% top PIT bracket with 1% mental health surtax over $1M, SDI 1.2% with no wage cap (SB 951), Form DE 9/DE 9C quarterly returns, the CalSavers retirement mandate for 1+ employees, AB5 / ABC test contractor classification, DE 542 reporting for $600+ contractors, supplemental wage withholding at 10.23%, ETT 0.1% on first $7,000, and SUI with $7,000 base and 1.5-6.2% experience-rated range. Covers federal payroll interactions and CA labor-code wage statement requirements.
 jurisdiction: US-CA
-domain: state-tax
 tax_year: 2025
+last_updated: 2026-07-09
+verified_by: pending
 tier: 2
-last_updated: 2026-07-06
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# ca-payroll
+# CA Payroll
 
 ## 1. Scope
 
@@ -46,12 +47,12 @@ This skill covers California employer payroll compliance for the 2025 tax year, 
 
 ## 2. The Four California Employer Payroll Taxes (Quick Map)
 
-**The Four California Employer Payroll Taxes (Quick Map)**
+**The Four California Employer Payroll Taxes (Quick Map)**  _(https://edd.ca.gov/en/payroll_taxes/rates_and_withholding/)_
 
 | Tax | Who Pays | 2025 Rate | 2025 Wage Base | Notes |
 | --- | --- | --- | --- | --- |
-| **PIT (Personal Income Tax)** | Employee (withheld) | Per DE 4 / DE 44 tables; supplemental flat 10.23% (or 6.6% for bonuses non-equity, but EDD has consolidated to 10.23% effective for all supplemental wages); top marginal 13.3% incl. MHST | No cap on wages subject; bracket-based | Mental Health Services Tax 1% over $1,000,000 |
-| **SDI / PFL** | Employee (withheld) | 1.1% | **NO WAGE CAP** (SB 951 removed cap effective 2024 and continuing 2025) | Includes Paid Family Leave |
+| **PIT (Personal Income Tax)** | Employee (withheld) | Per DE 4 / DE 44 tables; supplemental flat 10.23% for bonuses and stock options, 6.6% for other supplemental wages; top marginal 13.3% incl. MHST | No cap on wages subject; bracket-based | Mental Health Services Tax 1% over $1,000,000 |
+| **SDI / PFL** | Employee (withheld) | 1.2% | **NO WAGE CAP** (SB 951 removed cap effective 2024 and continuing 2025) | Includes Paid Family Leave |
 | **SUI (UI)** | Employer | New employer 3.4% for first 2-3 years; experience-rated 1.5%-6.2% thereafter | $7,000 per employee per year | UI Trust Fund; CA fund is currently in deficit and FUTA credit-reduction state in 2024 (carryover risk for 2025) |
 | **ETT (Employment Training Tax)** | Employer | 0.1% (positive-reserve employers only; negative-reserve employers are exempt) | $7,000 per employee per year | Funds workforce training |
 
@@ -62,7 +63,7 @@ In addition, the employer must also withhold and remit federal taxes (FIT, FICA 
 ### 3.1 Authority and Method
 
 - **PIT withholding authority** — PIT withholding is governed by California Revenue and Taxation Code §18661 et seq. and Unemployment Insurance Code §13020. The EDD publishes the withholding method in Publication DE 44 (California Employer's Guide) and the bracket-and-table schedules in DE 44 Appendix.  _(R&TC §18661 et seq.; Unemployment Insurance Code §13020; DE 44)_
-- **Withholding methods** — 1. Method A — Wage Bracket Tables (per DE 44). Suitable for most pay periods. 2. Method B — Exact Calculation Method (per DE 44). Required when wages exceed the top wage-bracket entry. Most payroll software uses Method B. 3. Supplemental flat rate for supplemental wages (bonuses, commissions, stock-based comp not paid with regular wages): 10.23% in 2025.  _(DE 44)_
+- **Withholding methods** — 1. Method A — Wage Bracket Tables (per DE 44). Suitable for most pay periods. 2. Method B — Exact Calculation Method (per DE 44). Required when wages exceed the top wage-bracket entry. Most payroll software uses Method B. 3. Supplemental wage withholding: 10.23% for bonuses and stock options; 6.6% for other supplemental wages (commissions, overtime paid separately, sales awards, severance, vacation pay), unless aggregated with regular wages under DE 44.  _([DE 44](https://edd.ca.gov/siteassets/files/pdf_pub_ctr/de44-25.pdf))_
 
 ### 3.2 2025 California PIT Brackets
 
@@ -94,12 +95,12 @@ Bracket figures above reflect FTB inflation indexing publicly available as of th
 
 ### 3.4 Supplemental Wage Withholding — 10.23%
 
-- **Supplemental wage withholding rate 2025** — 10.23% percent  _(DE 44 (current))_
+- **Supplemental wage withholding rates 2025** — Use 10.23% for bonuses and stock options; use 6.6% for other supplemental wages such as commissions, separately paid overtime, sales awards, severance, and vacation pay. If supplemental wages are paid with regular wages, DE 44 permits aggregate withholding under Method A/B.  _([DE 44 (current)](https://edd.ca.gov/siteassets/files/pdf_pub_ctr/de44-25.pdf))_
 - **Supplemental wages definition** — Supplemental wages are wages paid in addition to regular wages and include bonuses, commissions, overtime when paid separately, severance, accumulated PTO payouts, retroactive pay, and most equity compensation events (RSU vesting, NQSO exercise spread, ESPP disqualifying disposition).
 
-(Prior to 2018 California maintained a separate 6.6% rate for non-stock-option supplemental wages and 10.23% for stock options and bonuses; the EDD has since consolidated to a single 10.23% rate for most supplemental wages. Confirm against current DE 44 because the EDD has been known to adjust this.)
+EDD DE 44 for 2025 still distinguishes supplemental wage categories: bonuses and stock options use 10.23%; other supplemental wages (commissions, overtime paid separately, sales awards, severance, and vacation pay) use 6.6%. Confirm against the current DE 44 before filing because EDD updates the guide annually.
 
-- **Concurrent vs separate supplemental payments** — For supplemental wages paid concurrently with regular wages, the employer may either: aggregate the supplemental wages with the regular paycheck and compute total withholding under Method A/B, OR use the 10.23% flat rate on the supplemental portion only. For separate supplemental payments (a standalone bonus check, equity vest run through a brokerage), the 10.23% flat rate is required.
+- **Concurrent vs separate supplemental payments** — For supplemental wages paid concurrently with regular wages, the employer may aggregate the supplemental wages with the regular paycheck and compute total withholding under Method A/B. If using the flat-rate method for a separate supplemental payment, apply the DE 44 category rate: 10.23% for bonuses and stock options; 6.6% for other supplemental wages such as commissions, separately paid overtime, sales awards, severance, and vacation pay.  _(https://edd.ca.gov/siteassets/files/pdf_pub_ctr/de44-25.pdf)_
 
 ### 3.5 AUDIT FLASH POINT — Equity Compensation Undercollection at the Top Marginal Rate
 
@@ -126,13 +127,13 @@ Verify the CA wage base independently — payroll software occasionally misses t
 ### 4.1 SDI — Cap Removal Under SB 951
 
 - **SB 951 cap removal** — Senate Bill 951 (Chapter 878, Statutes of 2022) eliminated the SDI taxable wage cap effective January 1, 2024, and the cap remains removed for 2025.  _(SB 951 (Chapter 878, Statutes of 2022))_
-- **2025 SDI mechanics** — Rate: 1.1% of gross wages; Wage cap: None (uncapped); Paid by: Employee only (employer withholds and remits); Remitted on: Form DE 9 / DE 9C, alongside PIT; Reported on: Form W-2 Box 14 ("CA SDI") percent
+- **2025 SDI mechanics** — Rate: 1.2% of gross wages; Wage cap: None (uncapped); Paid by: Employee only (employer withholds and remits); Remitted on: Form DE 9 / DE 9C, alongside PIT; Reported on: Form W-2 Box 14 ("CA SDI") percent  _(https://edd.ca.gov/en/payroll_taxes/rates_and_withholding/)_
 
 Prior to 2024, SDI had a wage cap ($153,164 in 2023 at a 0.9% rate, capping employee SDI at ~$1,378/year). With the cap removed and the 2025 rate at 1.2%, a Silicon Valley executive earning $5 million pays $60,000 in SDI for 2025 (vs ~$1,378 under pre-2024 rules). This is a 40× increase for top earners and is the largest CA payroll cost shift in a generation.
 
 ### 4.2 PFL — Bundled Into SDI
 
-- **PFL bundled into SDI** — Paid Family Leave is administratively bundled into SDI. The same 1.1% withholding funds both the SDI benefit (own disability, including pregnancy) and the PFL benefit (bonding with new child, caring for seriously ill family member, qualifying military exigency).
+- **PFL bundled into SDI** — Paid Family Leave is administratively bundled into SDI. The same 1.2% withholding funds both the SDI benefit (own disability, including pregnancy) and the PFL benefit (bonding with new child, caring for seriously ill family member, qualifying military exigency).  _(https://edd.ca.gov/en/payroll_taxes/rates_and_withholding/)_
 - **2025 PFL benefit** — Up to 8 weeks of partial wage replacement, capped at approximately $1,681 per week maximum (the benefit cap is set as a function of statewide average weekly wage; 60-70% wage replacement subject to the cap). SB 951 also increased the wage-replacement percentage for lower-wage workers up to 90% effective 2025.  _(SB 951)_
 
 The employer's payroll obligation is identical for SDI and PFL — there is no separate withholding. Employees apply for benefits directly through EDD; the employer's role at claim time is verifying employment and reporting the last day worked.
@@ -144,11 +145,11 @@ For payroll systems that were not properly reconfigured when the cap was removed
 - Payroll software continued to apply the 2023 cap ($153,164) or some other stale cap into 2024 and 2025
 - High earners were under-withheld for SDI
 - The employer's DE 9/DE 9C for Q1-Q4 2024 understated SDI liability
-- Form W-2 Box 14 reports an SDI figure smaller than 1.1% of Box 16 CA wages
+- Form W-2 Box 14 reports an SDI figure smaller than 1.2% of Box 16 CA wages
 
 **Reconciliation procedure:**
 1. Pull Box 14 (CA SDI) and Box 16 (CA wages) from all 2024 and 2025 W-2s
-2. Compute expected SDI = 1.1% × Box 16
+2. Compute expected SDI = 1.2% × Box 16
 3. Difference > $5 per employee is a flag
 4. Employer must issue corrected W-2c, file amended DE 9X (DE 9 amended return), and collect the under-withheld SDI from the employee per Labor Code §221 (employer cannot absorb the SDI — it is the employee's tax)
 5. EDD interest applies on the underpayment
@@ -389,25 +390,25 @@ Confirm the employer's city and check the city's business-license ordinance. Mos
 
 No bonuses, no equity. Acme offers a Solo 401(k) for the founder only — does NOT cover the W-2 employees. The W-2 employees have no employer-sponsored retirement plan.
 
-**California payroll tax computation for Q1 2025 (Jan-Mar)**
+**California payroll tax computation for Q1 2025 (Jan-Mar)**  _(https://edd.ca.gov/siteassets/files/pdf_pub_ctr/de44-25.pdf)_
 
-| Employee | Q1 Wages | PIT Withheld (est. Method B) | SDI 1.1% | SUI (3.4% × min($7,000, Q1 wages)) | ETT 0.1% on same |
+| Employee | Q1 Wages | PIT Withheld (est. Method B) | SDI 1.2% | SUI (3.4% × min($7,000, Q1 wages)) | ETT 0.1% on same |
 | --- | --- | --- | --- | --- | --- |
-| Ada | $62,500 | ~$5,200 | $687.50 | $238 (cap hit) | $7 |
-| Ben | $45,000 | ~$3,400 | $495.00 | $238 (cap hit) | $7 |
-| Carol | $30,000 | ~$1,800 | $330.00 | $238 (cap hit) | $7 |
-| Dan | $22,500 | ~$1,400 | $247.50 | $238 (cap hit) | $7 |
-| Eve | $15,000 | ~$700 | $165.00 | $238 (cap hit) | $7 |
-| **Total Q1** | $175,000 | $12,500 | $1,925 | $1,190 | $35 |
+| Ada | $62,500 | ~$5,200 | $750.00 | $238 (cap hit) | $7 |
+| Ben | $45,000 | ~$3,400 | $540.00 | $238 (cap hit) | $7 |
+| Carol | $30,000 | ~$1,800 | $360.00 | $238 (cap hit) | $7 |
+| Dan | $22,500 | ~$1,400 | $270.00 | $238 (cap hit) | $7 |
+| Eve | $15,000 | ~$700 | $180.00 | $238 (cap hit) | $7 |
+| **Total Q1** | $175,000 | $12,500 | $2,100 | $1,190 | $35 |
 
 (PIT amounts are approximate Method B estimates for illustration; actual amounts depend on pay-period bracketing.)
 
-- **Q1 DE 9 total liability to EDD** — $12,500 (PIT) + $1,925 (SDI, employee) + $1,190 (SUI, employer) + $35 (ETT, employer) = $15,650
+- **Q1 DE 9 total liability to EDD** — $12,500 (PIT) + $2,100 (SDI, employee) + $1,190 (SUI, employer) + $35 (ETT, employer) = $15,825  _(https://edd.ca.gov/siteassets/files/pdf_pub_ctr/de44-25.pdf)_
 
 **Deposit cadence:** Q1 PIT withholding is $12,500, which is materially above the $500 quarterly threshold. Acme's federal deposit schedule (assumed monthly based on prior-year aggregate < $50,000) translates to monthly CA deposits on the 15th of the following month:
-- Jan PIT + SDI ≈ $4,800: deposit by Feb 15
-- Feb PIT + SDI ≈ $4,800: deposit by Mar 15
-- Mar PIT + SDI ≈ $4,800: deposit by Apr 15
+- Jan PIT + SDI ≈ $4,870: deposit by Feb 15
+- Feb PIT + SDI ≈ $4,870: deposit by Mar 15
+- Mar PIT + SDI ≈ $4,870: deposit by Apr 15
 
 SUI ($1,190) and ETT ($35) are remitted with the DE 9 by April 30 (not deposited monthly).
 
@@ -434,7 +435,7 @@ SUI ($1,190) and ETT ($35) are remitted with the DE 9 by April 30 (not deposited
 
 CA payroll on Sarah's Q1:
 - PIT withheld (Method B, approximated, single, 1 allowance, quarterly): ~$340
-- SDI 1.1% × $16,920 = $186.12 (employee)
+- SDI 1.2% × $16,920 = $203.04 (employee)
 - SUI 3.4% × min($7,000, $16,920) = $238 (employer, capped at $7,000 wage base)
 - ETT 0.1% × $7,000 = $7 (employer)
 
@@ -450,11 +451,11 @@ CA payroll on Sarah's Q1:
 - Eight engineers collectively vest $2,800,000 in RSUs
 - Base salaries totaling $625,000 paid in Q1
 
-- **California PIT withholding on RSU vests** — RSU vesting events generate W-2 ordinary income equal to the FMV of the shares at vest, less any amount paid by the employee (typically zero for RSUs). This income is supplemental wages for California withholding purposes — subject to the 10.23% flat supplemental rate unless aggregated with the regular paycheck.
+- **California PIT withholding on RSU vests** — RSU vesting events generate W-2 ordinary income equal to the FMV of the shares at vest, less any amount paid by the employee (typically zero for RSUs). This income is supplemental wages for California withholding purposes — subject to the 10.23% flat supplemental rate unless aggregated with the regular paycheck.  _(https://edd.ca.gov/siteassets/files/pdf_pub_ctr/de44-25.pdf)_
 
 For Frank's $400,000 vest:
 - CA PIT supplemental withholding at 10.23%: **$40,920**
-- SDI 1.1% × $400,000: **$4,400** (no wage cap — full vest is SDI-taxable)
+- SDI 1.2% × $400,000: **$4,800** (no wage cap — full vest is SDI-taxable)
 - Federal supplemental withholding at 22% (first $1M of supplemental in a calendar year): **$88,000**
 - Federal Medicare 1.45% + Additional Medicare 0.9% (Frank's YTD > $200,000): **$9,400**
 - Federal Social Security 6.2% — likely already capped from prior wages or this vest; if not, up to $176,100 base × 6.2% = up to $10,918
@@ -466,21 +467,21 @@ For Frank's $400,000 vest:
 
 Across the year, if Frank has four such quarterly vests, the under-withholding compounds to ~$49,000 owed at year-end on Form 540. **AUDIT FLASH POINT** (§3.5 referenced) — Frank should file a DE 4 requesting additional fixed-dollar withholding per pay period, or make estimated payments via Form 540-ES (see `ca-540-es-estimated-tax`).
 
-**Aggregate Q1 CA payroll cost to Crescent**
+**Aggregate Q1 CA payroll cost to Crescent**  _(https://edd.ca.gov/siteassets/files/pdf_pub_ctr/de44-25.pdf)_
 
 | Component | Amount |
 | --- | --- |
 | PIT withholding on base salaries (9 employees, mixed brackets) | ~$70,000 |
 | PIT withholding on RSU vests ($3.2M × 10.23%) | $327,360 |
-| SDI on all wages ($625K base + $3.2M vest = $3.825M × 1.1%) | $42,075 |
+| SDI on all wages ($625K base + $3.2M vest = $3.825M × 1.2%) | $45,900 |
 | SUI on first $7,000 per employee × 9 employees × 3.4% (assuming experience-rated; if new employer use 3.4%) | $2,142 |
 | ETT 0.1% × $7,000 × 9 employees | $63 |
-| **Total Q1 CA EDD remittance** | **$441,640** |
+| **Total Q1 CA EDD remittance** | **$445,465** |
 
-The bulk is PIT withholding; SDI is the second-largest line item due to the uncapped wage base — $42K of SDI for a 9-person engineering team is a material expense category that did not exist before SB 951's cap removal.
+The bulk is PIT withholding; SDI is the second-largest line item due to the uncapped wage base — about $46K of SDI for a 9-person engineering team is a material expense category that did not exist before SB 951's cap removal.
 
 - **Wage statement §226 for RSU vests** — Each RSU vest event creates wages that must appear on the wage statement for the pay period in which the vest is settled. If Crescent uses a payroll integration with the equity-management platform (e.g., Carta), the vest amount and supplemental withholding lines must flow through to the pay stub. Otherwise, an off-cycle stub must be issued. Failure exposes Crescent to §226(e) penalties per vest event per employee.  _(§226(e))_
-- **§83(b) elections, ESPP disqualifying dispositions, NQSO exercises** — All follow similar mechanics — supplemental withholding at 10.23% CA + 22% federal (or 37% on supplemental wages above $1M YTD federal). Refer to equity-comp specialist for §409A and §83(b) interactions.
+- **§83(b) elections, ESPP disqualifying dispositions, NQSO exercises** — All follow similar mechanics — supplemental withholding at 10.23% CA + 22% federal (or 37% on supplemental wages above $1M YTD federal). Refer to equity-comp specialist for §409A and §83(b) interactions.  _(https://edd.ca.gov/siteassets/files/pdf_pub_ctr/de44-25.pdf)_
 - **CalSavers exemption for Crescent** — Crescent offers a 401(k) plan to all employees with company match — Crescent is therefore EXEMPT from the CalSavers mandate but must still file the CalSavers exemption attestation in the portal (one-time, then maintained).
 
 ## 16. Cross-Skill Coordination
@@ -498,14 +499,14 @@ When called from `us-ca-return-assembly`, this skill produces the prior-year W-2
 
 ## 17. Conservative Defaults — Quick Reference
 
-**Conservative Defaults — Quick Reference**
+**Conservative Defaults — Quick Reference**  _(https://edd.ca.gov/siteassets/files/pdf_pub_ctr/de44-25.pdf)_
 
 | Ambiguity | Conservative Default |
 | --- | --- |
 | Worker is contractor vs employee under ABC test | **Employee** unless all three prongs clearly pass |
 | Tip amount disputed by employee | Use employee's reported figure (Form 4070 / payroll declaration) |
 | SDI cap question | **No cap** (since 2024) |
-| Supplemental withholding rate uncertainty | **10.23%** (consolidated 2025 rate) |
+| Supplemental withholding rate uncertainty | **Use DE 44 category rate**: 10.23% for bonuses/stock options; 6.6% for other supplemental wages |
 | CalSavers exemption claim where qualified plan coverage is fuzzy | Register with CalSavers; the exemption attestation requires affirmative qualified-plan status |
 | Final-pay timing question | Same day for involuntary; same day or within 72 hours for voluntary |
 | Wage-statement item missing | Reissue corrected statement and document the correction |
@@ -591,3 +592,21 @@ a formal engagement letter** — book a free 30-minute call:
 We'll route you to the named verifier covering your country or state. You can
 also see the full list of verified accountants at
 [openaccountants.com/network](https://openaccountants.com/network).
+
+<!-- openaccountants-cta-block -->
+
+---
+
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.
