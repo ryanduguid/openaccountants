@@ -130,7 +130,7 @@ https://www.openaccountants.com
 
 ========================================================================
 
-## Guide inventory (1899 guides, 243 jurisdictions, 45 accountant-reviewed)
+## Guide inventory (1900 guides, 243 jurisdictions, 45 accountant-reviewed)
 
 - us-1099-k-and-payment-processors | US | tier 2 | reviewed_by -
 - us-education-credits-8863 | US | tier 2 | reviewed_by -
@@ -335,6 +335,7 @@ https://www.openaccountants.com
 - armenia-vat | AM | tier 2 | reviewed_by -
 - au-capital-gains | AU | tier 2 | reviewed_by -
 - au-crypto-tax | AU | tier 2 | reviewed_by -
+- au-div7a | AU | tier 2 | reviewed_by -
 - au-gst-bas | AU | tier 2 | reviewed_by -
 - au-individual-return | AU | tier 2 | reviewed_by -
 - au-medicare-levy | AU | tier 2 | reviewed_by -

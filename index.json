@@ -1,7 +1,7 @@
 {
- "generated_at": "2026-07-14T05:53:39+00:00",
+ "generated_at": "2026-08-01T06:59:21+00:00",
  "counts": {
-  "guides": 1899,
+  "guides": 1900,
   "jurisdictions": 243,
   "accountant_reviewed": 45
  },
@@ -2441,6 +2441,18 @@
    "reviewed_by": null,
    "tax_year": "2025",
    "last_updated": "2026-06-12"
+  },
+  {
+   "slug": "au-div7a",
+   "path": "skills/international/australia/au-div7a.md",
+   "name": "au-div7a",
+   "jurisdiction": "AU",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "tax_year": "2026",
+   "last_updated": "2026-08-01"
   },
   {
    "slug": "au-gst-bas",
