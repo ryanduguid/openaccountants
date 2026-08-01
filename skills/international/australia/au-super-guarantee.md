@@ -181,7 +181,7 @@ Commercial clearing house debit covering both employees for the 14 August payday
 ### Example 4 -- Annual maximum contribution base reached
 
 **Input line:**
-(no super debit present for Employee B for the 2 April 2027 payday)
+(no super debit present for Employee B for the 9 April 2027 payday)
 
 **Reasoning:**
 Employee B's year-to-date qualifying earnings passed $270,830 in March 2027 (large bonus in Q3). Under the ANNUAL maximum contribution base, once YTD qualifying earnings for 2026-27 reach $270,830, no further SG is required for the rest of the financial year. Maximum SG for the year = $32,499.60. Note front-loaded income exhausts the cap early -- this replaces the old per-quarter cap logic entirely.
@@ -302,7 +302,7 @@ Payment due the day the assessment is made. Unpaid 28 days after assessment -> N
 ### T2-3 -- Over-75 contributions
 
 **Trigger:** Client aged 75+ wants to make voluntary contributions.
-**Issue:** Work test applies (40 hours in 30 consecutive days). Mandated employer SG has no age limit.
+**Issue:** From 28 days after the end of the month the client turns 75, funds cannot accept voluntary contributions (non-concessional, salary sacrifice, or personal deductible) -- downsizer contributions are the only exception (no upper age limit). The 40-hours-in-30-days work test applies at ages 67-74 and, since 1 July 2022, only as a condition for claiming a deduction on personal contributions (ITAA97 s 290-165). Mandated employer SG has no age limit.
 **Action:** Flag for reviewer.
 
 ### T2-4 -- Carry-forward with borderline TSB

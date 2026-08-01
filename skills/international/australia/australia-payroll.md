@@ -11,8 +11,10 @@ description: >
   "activity statement", "annual leave", "long service leave",
   "minimum wage Australia", or any question about running payroll in Australia.
   ALWAYS read this skill before processing any Australian payroll work.
-version: 1.0
+version: 2.0
 jurisdiction: AU
+tax_year: 2026
+tax_year_notes: "2026-27 (payday super regime; 15% second-bracket PAYG rate from 1 July 2026)"
 tier: 2
 last_updated: 2026-08-01
 category: payroll
@@ -20,7 +22,7 @@ depends_on:
   - payroll-workflow-base
 ---
 
-# Australia -- Payroll Skill v1.0
+# Australia -- Payroll Skill v2.0
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
@@ -40,7 +42,7 @@ depends_on:
 | Pay frequency | Weekly, fortnightly, monthly (fortnightly most common) |
 | Employer registration | ABN + PAYG withholding registration via ATO |
 | Validated by | Pending -- requires sign-off by an Australian CPA, CA, or registered tax agent |
-| Skill version | 1.0 |
+| Skill version | 2.0 |
 
 ---
 
@@ -48,17 +50,17 @@ depends_on:
 
 PAYG withholding is calculated per pay period using ATO tax tables (Schedule 1 -- NAT 1004) or the Statement of Formulas. The employer applies the appropriate coefficients based on weekly/fortnightly/monthly earnings.
 
-### Resident Individual Tax Rates (2025--26)
+### Resident Individual Tax Rates (2026--27)
 
 | Taxable Income (AUD) | Rate | Tax on This Income |
 |---|---|---|
 | 0 -- 18,200 | 0% | Nil |
-| 18,201 -- 45,000 | 16% | 16c for each $1 over $18,200 |
-| 45,001 -- 135,000 | 30% | $4,288 plus 30c for each $1 over $45,000 |
-| 135,001 -- 190,000 | 37% | $31,288 plus 37c for each $1 over $135,000 |
-| 190,001+ | 45% | $51,638 plus 45c for each $1 over $190,000 |
+| 18,201 -- 45,000 | 15% | 15c for each $1 over $18,200 |
+| 45,001 -- 135,000 | 30% | $4,020 plus 30c for each $1 over $45,000 |
+| 135,001 -- 190,000 | 37% | $31,020 plus 37c for each $1 over $135,000 |
+| 190,001+ | 45% | $51,370 plus 45c for each $1 over $190,000 |
 
-These rates **exclude** the Medicare levy (2%).
+These rates **exclude** the Medicare levy (2%). From 1 July 2026 the rate on $18,201--$45,000 dropped from 16% to 15% (Treasury Laws Amendment (More Cost of Living Relief) Act 2025); it drops again to 14% from 1 July 2027.
 
 ### Medicare Levy
 
@@ -268,12 +270,12 @@ Not strictly required on payslips but must be provided to employees on request. 
 
 ### Superannuation Remittance
 
-| Due Date | Quarter |
+| Item | Detail |
 |---|---|
-| 28 October | July -- September |
-| 28 January | October -- December |
-| 28 April | January -- March |
-| 28 July | April -- June |
+| Payment deadline (earnings paid from 1 Jul 2026) | Received by the employee's fund within **7 business days of each payday** (clearing house receipt does not count) |
+| New employee / new fund | 20 business days for the first contribution |
+
+**Legacy:** quarterly due dates (28 Oct / 28 Jan / 28 Apr / 28 Jul) apply only to earnings paid up to 30 June 2026; the final quarterly deadline was 28 July 2026.
 
 ### Annual Obligations
 
@@ -288,7 +290,7 @@ Not strictly required on payslips but must be provided to employees on request. 
 
 | Violation | Consequence |
 |---|---|
-| Late SG payment | SGC: shortfall + 10% interest + $20/employee admin fee; not deductible |
+| Late SG payment | SGC (ATO-assessed per payday): shortfall + notional earnings (GIC rate) + administrative uplift (up to 60%) + choice loading; deductible (the late payment penalty and GIC on unpaid SGC are not) -- see Section 4 |
 | Failure to withhold PAYG | Employer liable for amount that should have been withheld |
 | Late BAS/IAS lodgement | General interest charge (GIC) + potential failure-to-lodge penalty |
 | Payslip non-compliance | Up to $16,500 per contravention (individual); $82,500 (body corporate) |
@@ -302,9 +304,9 @@ Not strictly required on payslips but must be provided to employees on request. 
 Annual salary $85,000. Paid monthly. No STSL debt.
 
 1. Monthly gross: $85,000 ÷ 12 = $7,083.33
-2. PAYG withholding: per Schedule 1 tax table coefficients (~$1,420/month incl. Medicare)
+2. PAYG withholding: per Schedule 1 tax table coefficients (~$1,475/month incl. Medicare, 2026-27 rates)
 3. Super guarantee: $7,083.33 × 12% = $850.00 (employer cost, received by the fund within 7 business days of the payday)
-4. Net pay: $7,083.33 - $1,420.00 - deductions
+4. Net pay: $7,083.33 - $1,475.00 - deductions
 
 ### Pattern 2 -- Casual Employee with Loading
 
@@ -321,7 +323,7 @@ Annual salary $120,000. Sacrifices $10,000/year to super.
 
 1. Taxable salary: $110,000 (reduced PAYG base)
 2. Employer SG: $120,000 × 12% = $14,400 (calculated on pre-sacrifice OTE)
-3. Concessional super cap: $30,000 (includes SG $14,400 + sacrifice $10,000 = $24,400; within cap)
+3. Concessional super cap: $32,500 (2026-27) (includes SG $14,400 + sacrifice $10,000 = $24,400; within cap)
 4. The $10,000 is taxed at 15% inside the super fund instead of the employee's marginal rate
 
 ### Pattern 4 -- STSL Repayment
