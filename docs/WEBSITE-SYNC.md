@@ -1,76 +1,33 @@
-# Website sync — how skills reach openaccountants.com
+# Website ↔ repo sync
 
-This repo is the **source of truth for skill content**. The website does **not** read GitHub directly.
+The platform database (openaccountants.com) is the source of truth for guide
+content. This repo is its public projection — with one exception: external
+contributions merged here flow back INTO the platform.
 
-## How it works
+## Outbound (platform → repo), daily
 
-1. You edit files under **`skills/`** (never `packages/` — those are generated).
-2. Your changes merge to **`main`** on GitHub.
-3. Someone runs **Sync Skills** in the **web app repo** (openaccountants.com backend).
-4. Sync reads **`skills/` only** — not `packages/`, not `mcp/`.
-5. Each skill is upserted into **Supabase** and appears on the site.
+A scheduled job in the platform repo renders every published guide with the same
+serving code the website uses and pushes the result here:
 
-**Merging to `main` does not make a skill live.** Sync must run after merge.
+- `skills/**` is written per guide (`skills.github_path` in the platform DB).
+- Each accountant's changes are committed under **their own name** (git author);
+  the committer is `openaccountants-sync[bot]`.
+- Derived trees — `packages/`, `index.json`, `llms-full.txt` — are regenerated
+  in the same run and committed by the bot. **Never edit them in a PR.**
+- Frontmatter schema: `reviewed_by` + `review_status` (`current` |
+  `pending_review`). The legacy `verified_by` key is removed on rewrite.
 
-## Jurisdiction — required for sync
+## Inbound (repo → platform)
 
-Every skill file that should appear on the website must have a **resolvable jurisdiction**. Sync uses:
+Merged PRs touching `skills/**` are ingested into the platform: new files become
+published guides credited to the PR author; edits to existing guides replace the
+served content (and supersede prior professional reviews, since a review covers
+the text it reviewed). Until the automated ingest ships, a maintainer runs the
+ingest tool after merge — same result, same attribution.
 
-1. **Folder path** (preferred when obvious), or
-2. **`jurisdiction:` in YAML frontmatter** (required backup)
+## What this means for contributors
 
-If sync cannot resolve jurisdiction → **the file is skipped** and will not show on openaccountants.com.
-
-### Recognized folder → jurisdiction mapping
-
-| Path | Jurisdiction code |
-|------|-------------------|
-| `skills/international/malta/` | `MT` |
-| `skills/international/uk/` | `GB` |
-| `skills/international/germany/` | `DE` |
-| `skills/international/[country-slug]/` | ISO code from folder (see country skill frontmatter) |
-| `skills/federal/` | `US` |
-| `skills/us-states/ca/` | `US-CA` |
-| `skills/us-states/[code]/` | `US-[CODE]` (two-letter state code, uppercase) |
-| `skills/cross-border/` | Set in frontmatter — use `INTL`, `EU-27`, or `GLOBAL` |
-| `skills/verticals/` | `GLOBAL` in frontmatter |
-| `skills/integrations/` | `GLOBAL` in frontmatter |
-| `skills/orchestrator/` | Country code (e.g. `MT`, `GB`) or `GLOBAL` for global-router |
-| `skills/foundation/` | Usually **not synced** to website (MCP/packages only) |
-
-When in doubt, add explicit frontmatter:
-
-```yaml
-jurisdiction: MT   # Malta
-jurisdiction: GB   # United Kingdom
-jurisdiction: US   # US federal
-jurisdiction: US-CA
-jurisdiction: GLOBAL   # verticals, integrations, global orchestrator
-jurisdiction: INTL   # cross-border (non-EU-specific)
-jurisdiction: EU-27  # EU-wide cross-border rules
-```
-
-## What sync does NOT use
-
-- **`packages/`** — generated output for MCP/manual upload; not the website source
-- **`index.json`** — the repo's canonical machine-readable inventory (see `docs/REPO-LAYOUT.md`); sync works from files + frontmatter, not from it
-
-(The old `skills/manifest.json` and `packages/manifest.json` inventories have been removed — nothing consumed them. Folder + frontmatter are all a skill needs to sync.)
-
-## Checklist before you expect a skill to go live
-
-- [ ] File is in `skills/` (not only in `packages/`)
-- [ ] Jurisdiction is clear (folder path or `jurisdiction:` in frontmatter)
-- [ ] PR merged to `main`
-- [ ] **Sync Skills** run in the web app repo
-- [ ] Skill visible on openaccountants.com (may take a few minutes)
-
-## What lives elsewhere
-
-| Concern | Where |
-|---------|--------|
-| Supabase schema, sync script, deploy | Web app repo |
-| Accountant verification, user accounts | openaccountants.com |
-| MCP server, package generation | This repo (`mcp/`, `scripts/build-packages.py`) |
-
-This repo owns **content and structure**. The web app owns **publishing and verification**.
+1. Edit `skills/**` only.
+2. Merge = published. Your commit stands; the sync will not clobber it.
+3. Set your GitHub username in your accountant profile on openaccountants.com
+   and your platform edits are publicly credited to your GitHub account too.

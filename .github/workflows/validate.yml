@@ -1,3 +1,13 @@
+# PR contract:
+#   - Contributors edit skills/** ONLY. Guides are validated file-by-file.
+#   - index.json, llms-full.txt and packages/** (except the us-federal carve-out,
+#     until it too becomes generated) are DERIVED: the platform's daily sync is
+#     their only writer. A PR touching them fails with an explanation instead of
+#     forcing every contributor to regenerate 586KB of JSON that conflicts with
+#     every other open PR.
+#   - Push-to-main runs guide validation only; derived-tree freshness is checked
+#     where it can actually be a bug: inside the sync that generates them.
+
 name: Validate Guides
 
 on:
@@ -6,6 +16,45 @@ on:
     branches: [main]
 
 jobs:
+  guard-derived-trees:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Fail if the PR edits generated files
+        id: guard
+        run: |
+          BASE="origin/${{ github.base_ref }}"
+          git fetch origin "${{ github.base_ref }}" --depth 50
+          BAD=$(git diff --name-only "$BASE"...HEAD -- \
+            'index.json' 'llms-full.txt' 'packages/**' \
+            ':(exclude)packages/us-federal/**' | head -20)
+          if [ -n "$BAD" ]; then
+            echo "generated_files_touched<<EOM" >> "$GITHUB_OUTPUT"
+            echo "$BAD" >> "$GITHUB_OUTPUT"
+            echo "EOM" >> "$GITHUB_OUTPUT"
+            echo "::error::This PR edits generated files. Edit skills/** only — index.json, llms-full.txt and packages/ are rebuilt automatically by the daily sync within 24h of merge."
+            exit 1
+          fi
+          echo "clean"
+      - name: Explain in a comment
+        if: failure() && steps.guard.outputs.generated_files_touched != ''
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const files = `${{ steps.guard.outputs.generated_files_touched }}`.trim();
+            await github.rest.issues.createComment({
+              ...context.repo,
+              issue_number: context.issue.number,
+              body: [
+                "Thanks for the contribution! One fix needed: this PR touches **generated files** —",
+                "```", files, "```",
+                "`index.json`, `llms-full.txt` and `packages/` are rebuilt automatically by the daily sync, so please revert those paths and keep only your `skills/**` changes. No generator scripts to run — your guide edits are all that's needed. 🙌",
+              ].join("\n"),
+            });
+
   validate:
     runs-on: ubuntu-latest
     steps:
@@ -15,5 +64,11 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-      - name: Validate guides
-        run: python3 scripts/validate-guides.py
+      - name: Validate changed guides (PR) / all guides (main)
+        run: |
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            git fetch origin "${{ github.base_ref }}" --depth 50
+            python3 scripts/validate-guides.py --changed-only --no-index-check
+          else
+            python3 scripts/validate-guides.py --no-index-check
+          fi
