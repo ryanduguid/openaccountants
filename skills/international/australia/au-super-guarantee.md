@@ -9,7 +9,6 @@ tax_year_notes: "2026-27 (payday super regime; quarterly rules apply to earnings
 tier: 2
 last_updated: 2026-08-01
 category: international
-tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
