@@ -7,10 +7,10 @@ description: >
   "cross-border Egypt Saudi", "Egypt Saudi Arabia withholding". ALWAYS read this skill
   before applying treaty rates.
 jurisdiction: EG-SA
-tax_year: 2025
+tax_year: 2026
 tier: 2
-last_updated: 2026-07-12
-version: 0.1
+last_updated: 2026-07-14
+version: 1.0
 depends_on:
   - eg-corporate-tax
   - eg-withholding-tax
@@ -308,6 +308,58 @@ The original Article 27 (main-purpose test) has been **replaced by the MLI Artic
 7. **Technical services:** No separate FTS article in this treaty. IP-related technical assistance falls under royalties (Art 12 at 10%). Non-IP technical services fall under business profits (Art 7), taxable only if PE exists in source state. This is a significant advantage over Egypt's 20% domestic WHT on service payments to non-residents.
 
 8. **Saudi non-discrimination article:** The non-discrimination article is NOT currently in force — it applies only prospectively if KSA includes a non-discrimination article in a treaty with a non-GCC country. Verify current status if relevant.
+
+---
+
+## Worked Examples
+
+### Example 1: Saudi company paying dividends to Egyptian shareholder
+
+**Facts:** A Saudi Arabian company (SA Co) distributes SAR 1,000,000 in dividends to its Egyptian parent company (EG HoldCo), which holds 25% of SA Co's capital directly.
+
+**Analysis:**
+- Treaty Article 10(2)(a): 5% rate applies because EG HoldCo holds directly ≥20% of capital
+- Saudi domestic WHT on dividends: 5% (same as treaty rate)
+- WHT = SAR 1,000,000 × 5% = SAR 50,000
+- Note: Saudi domestic rate already matches treaty rate — no additional relief needed
+
+### Example 2: Egyptian company paying interest to Saudi bank
+
+**Facts:** An Egyptian company (EG Co) pays EGP 5,000,000 in interest to a Saudi commercial bank (SA Bank, not government-owned).
+
+**Analysis:**
+- Treaty Article 11(2): 10% rate applies
+- Egyptian domestic WHT on interest: 20%
+- Egypt applies pay-and-refund mechanism:
+  1. EG Co withholds 20% at source = EGP 1,000,000
+  2. SA Bank files refund claim with ETA for differential (20% - 10% = 10%)
+  3. Refund amount = EGP 500,000
+- Net WHT after refund = EGP 500,000 (10% treaty rate)
+- Note: If SA Bank were government-owned (SAMA, GOSI, etc.), Article 11(3) would exempt the interest entirely
+
+### Example 3: Egyptian company paying royalties to Saudi tech company
+
+**Facts:** An Egyptian company (EG Co) pays EGP 2,000,000 in royalties (software licence + know-how) to a Saudi tech company (SA Tech).
+
+**Analysis:**
+- Treaty Article 12(2): 10% rate applies (royalties include software licences and technical assistance related to IP)
+- Egyptian domestic WHT on royalties: 20%
+- Pay-and-refund:
+  1. EG Co withholds 20% = EGP 400,000
+  2. SA Tech files refund claim for 10% differential = EGP 200,000
+  3. Net WHT after refund = EGP 200,000 (10% treaty rate)
+- Saudi side: SA Tech receives EGP 1,800,000, reports as business income. If Saudi-owned, Zakat 2.5% applies (not income tax). Article 23(6) protocol: Zakat is not creditable against Egyptian tax.
+
+### Example 4: Construction PE — 7-month project
+
+**Facts:** A Saudi construction company (SA Build) sends a team to Egypt for a 7-month building project for EG Co.
+
+**Analysis:**
+- Article 5(3): Construction PE threshold = 6 months
+- 7 months > 6 months → PE exists in Egypt
+- MLI anti-fragmentation: if SA Build splits the project into two 4-month contracts with a 1-month gap, the closely related enterprise periods (>30 days) are aggregated → PE still exists
+- Consequence: Article 7 — profits attributable to PE are taxable in Egypt at 22.5% CIT
+- If no PE (e.g., 5 months only): profits taxable only in Saudi Arabia
 
 ---
 

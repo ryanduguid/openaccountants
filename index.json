@@ -1,7 +1,7 @@
 {
- "generated_at": "2026-08-02T07:13:49+00:00",
+ "generated_at": "2026-08-01T06:59:21+00:00",
  "counts": {
-  "guides": 1905,
+  "guides": 1900,
   "jurisdictions": 243,
   "accountant_reviewed": 270
  },
@@ -735,8 +735,8 @@
    "tier": 2,
    "verified_by": "pending",
    "reviewed_by": null,
-   "tax_year": "2025",
-   "last_updated": "2026-07-12"
+   "tax_year": "2026",
+   "last_updated": "2026-07-14"
   },
   {
    "slug": "dtt-summary",
@@ -747,8 +747,8 @@
    "tier": 2,
    "verified_by": "pending",
    "reviewed_by": null,
-   "tax_year": "2025",
-   "last_updated": "2026-07-12"
+   "tax_year": "2026",
+   "last_updated": "2026-07-14"
   },
   {
    "slug": "emerging-market-corridors",
@@ -2443,6 +2443,30 @@
    "last_updated": "2026-05-23"
   },
   {
+   "slug": "au-fbt",
+   "path": "skills/international/australia/au-fbt.md",
+   "name": "au-fbt",
+   "jurisdiction": "AU",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "tax_year": "2026",
+   "last_updated": "2026-08-01"
+  },
+  {
+   "slug": "au-div7a",
+   "path": "skills/international/australia/au-div7a.md",
+   "name": "au-div7a",
+   "jurisdiction": "AU",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "tax_year": "2026",
+   "last_updated": "2026-08-01"
+  },
+  {
    "slug": "au-gst-bas",
    "path": "skills/international/australia/au-gst-bas.md",
    "name": "au-gst-bas",
@@ -2535,8 +2559,8 @@
    "tier": 2,
    "verified_by": "pending",
    "reviewed_by": null,
-   "tax_year": "2024",
-   "last_updated": "2026-04-13"
+   "tax_year": "2026",
+   "last_updated": "2026-08-01"
   },
   {
    "slug": "au-tax-residency",
@@ -2607,8 +2631,8 @@
    "tier": 2,
    "verified_by": "pending",
    "reviewed_by": null,
-   "tax_year": "2025",
-   "last_updated": "2026-05-23"
+   "tax_year": "2026",
+   "last_updated": "2026-08-01"
   },
   {
    "slug": "australia-tax-optimization",
