@@ -20,7 +20,9 @@ If you cannot agree, do not open this PR — contact **info@openaccountants.com*
 
 - [ ] File is in `skills/` (not only `packages/`)
 - [ ] Jurisdiction is clear (folder path or `jurisdiction:` in frontmatter)
-- [ ] Ran `python3 scripts/build-packages.py` if packages should update
+- [ ] I only edited files under `skills/**` (generated trees rebuild automatically)
+- [ ] **Name for attribution** (as it should appear on the guide): ______
+- [ ] My OpenAccountants profile GitHub username matches this account (optional — set it at openaccountants.com/profile for full credit)
 
 ### Content quality
 

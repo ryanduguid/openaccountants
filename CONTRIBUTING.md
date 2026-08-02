@@ -20,10 +20,10 @@ Anyone. You don't need to be an accountant to write a skill. You need to know yo
 1. Fork this repo
 2. Create your skill in the appropriate **source** directory (`skills/federal/`, `skills/us-states/[code]/`, `skills/international/[country]/`, etc.)
 3. Follow the [skill template](docs/skill-template.md)
-4. Run `python3 scripts/build-packages.py` to regenerate packages
+4. Do **not** run any generator scripts — `index.json`, `llms-full.txt` and `packages/` rebuild automatically within 24h of merge
 5. Open a PR with a description of what tax forms/schedules the skill covers
 
-> **Important:** never edit files under `packages/` directly — with one exception. Packages are generated from `skills/` by `scripts/build-packages.py` and will be overwritten on the next build. The exception is **`packages/us-federal/`**: it is hand-authored (US federal form guides + rates JSONs) and protected from the build wipe, so edit those files directly in place.
+> **Important:** edit `skills/**` only. `packages/`, `index.json` and `llms-full.txt` are generated — CI will ask you to revert any changes to them, and the daily sync regenerates them within 24h of your merge. One exception for now: **`packages/us-federal/`** is hand-authored and may be edited directly.
 
 ## Repo layout
 
@@ -36,7 +36,7 @@ Every skill in `skills/` that should appear on [openaccountants.com](https://www
 1. Live in a **recognized country folder** (`skills/international/<country>/`, `skills/federal/`, `skills/us-states/<code>/`), **or**
 2. Include **`jurisdiction:` in YAML frontmatter** (e.g. `MT`, `GB`, `US`, `US-CA`, `GLOBAL`, `INTL`)
 
-**Merging to `main` does not publish to the site.** After merge, someone runs **Sync Skills** in the web app repo. Sync reads `skills/` only — not `packages/`. Files without a resolvable jurisdiction are **skipped** and will not appear on the website.
+**Your merged commit stands.** The platform and this repo sync continuously in both directions: guide changes made on openaccountants.com land here daily, committed under the accountant's own name, and your merged PR is ingested into the platform — the daily sync will not overwrite you with stale content. Frontmatter uses `reviewed_by` + `review_status` (the legacy `verified_by` key is being retired automatically). Want your platform edits credited to your GitHub account? Set your GitHub username in your accountant profile on openaccountants.com.
 
 Full details: [docs/WEBSITE-SYNC.md](docs/WEBSITE-SYNC.md)
 
@@ -96,7 +96,7 @@ All domain skills for a country live in the same directory (e.g., `skills/intern
 | Platform integration skills | `skills/integrations/` |
 | Orchestrator files (router, intake, assembly) | `skills/orchestrator/` |
 
-After editing, run `python3 scripts/build-packages.py` to regenerate all packages under `packages/`. You can also use `--us-only` to regenerate just US state packages. The build is safe for `packages/us-federal/` — it skips hand-authored packages and will never wipe or regenerate that directory.
+You never need to run the generators: the daily sync regenerates every derived tree after your merge.
 
 If you add a `references.md` to a country's source directory, it will be included in the generated package automatically.
 
