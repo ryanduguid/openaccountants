@@ -335,7 +335,7 @@ https://www.openaccountants.com
 - armenia-vat | AM | tier 2 | reviewed_by -
 - au-capital-gains | AU | tier 2 | reviewed_by -
 - au-crypto-tax | AU | tier 2 | reviewed_by -
-- au-fbt | AU | tier 2 | reviewed_by -
+- au-div7a | AU | tier 2 | reviewed_by -
 - au-gst-bas | AU | tier 2 | reviewed_by -
 - au-individual-return | AU | tier 2 | reviewed_by -
 - au-medicare-levy | AU | tier 2 | reviewed_by -
