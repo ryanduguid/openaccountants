@@ -1,11 +1,11 @@
 ---
 name: global-home-office
-description: >
+description: Home office expense patterns and deduction rules across the top 10 jurisdictions for freelancers and self-employed individuals. Covers simplified and actual methods, rates, requirements, ceilings, and common mistakes.
 version: 0.1
 jurisdiction: GLOBAL
 tax_year: 2025
-last_updated: 2026-04-13
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: []
 category: patterns
 tier: 2

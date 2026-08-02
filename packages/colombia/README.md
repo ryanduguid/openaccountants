@@ -14,7 +14,8 @@
 7. `co-tax-overview.md`
 8. `co-vat-return.md`
 9. `colombia-iva.md`
-10. `company-formation-workflow-base.md`
+10. `formalizing-small-informal-businesses-in-colombia.md`
+11. `company-formation-workflow-base.md`
 
 ## Also known as
 

@@ -1,14 +1,15 @@
 ---
 name: portugal-financial-statements
-description: >
+description: Utilize esta skill na preparação, revisão ou aconselhamento sobre demonstrações financeiras anuais de uma sociedade portuguesa. Acione com expressões como "demonstrações financeiras", "IES", "Informação Empresarial Simplificada", "SNC", "NCRF", "NC-PE", "NC-ME", "balanço", "demonstração de resultados", "demonstração de fluxos de caixa", "anexo", "Portal das Finanças", "depósito de contas", "ROC", "revisão legal de contas" ou qualquer questão sobre preparação e depósito de contas estatutárias ao abrigo da lei portuguesa. Abrange o referencial SNC, limiares dimensionais, demonstrações obrigatórias, formatos, anexo, submissão da IES e requisitos de auditoria. Trigger also on: "Portuguese financial statements", "SNC accounts", "IES filing Portugal", "NCRF", "NC-ME microentities", "NC-PE small entities", "balanço", "demonstração de resultados", "Portal das Finanças deposit of accounts", "ROC statutory audit Portugal".
 version: 1.0
 jurisdiction: PT
 tax_year: 2025
-last_updated: 2026-05-23
-verified_by: Mário Jorge da costa Vale
+last_updated: 2026-07-13
+reviewed_by: Mário Jorge da costa Vale
+review_status: current
 depends_on: - financial-statements-workflow-base
 category: financial-statements
-tier: 2
+tier: 1
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 

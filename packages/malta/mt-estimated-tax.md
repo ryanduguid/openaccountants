@@ -1,14 +1,15 @@
 ---
 name: mt-estimated-tax
-description: >
+description: Use this skill whenever asked about Malta provisional tax (estimated tax) for self-employed or self-occupied individuals. Trigger on phrases like "provisional tax Malta", "estimated tax", "PT instalments", "how much provisional tax do I pay", "20% 30% 50%", "April instalment", "August instalment", "December instalment", "TA24 overpayment", "refund of provisional tax", "Chapter 372", "ITA provisional tax", or any question about Malta's advance income tax payment obligations. Covers the three-instalment schedule (20/30/50), basis of computation (prior year assessment), first-year rules, minimum provisional tax, penalties for late payment, and interaction with the TA24 final assessment. ALWAYS read this skill before touching any Malta provisional tax work.
 version: 2.0
 jurisdiction: MT
 tax_year: 2025
-last_updated: 2026-04-13
-verified_by: Michael Cutajar, CPA (Malta)
+last_updated: 2026-07-13
+reviewed_by: Michael Cutajar, CPA (Malta)
+review_status: current
 depends_on: - income-tax-workflow-base
 category: international
-tier: 1
+tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 

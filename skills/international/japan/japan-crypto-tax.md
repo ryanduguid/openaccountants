@@ -1,11 +1,11 @@
 ---
 name: japan-crypto-tax
-description: >
+description: Use this skill whenever asked about Japan cryptocurrency or digital asset taxation. Trigger on phrases like "crypto tax Japan", "Bitcoin Japan tax", "暗号資産 税金", "仮想通貨 税金", "cryptocurrency Japan", "crypto income Japan", "miscellaneous income crypto", "雑所得", "NTA crypto", "staking tax Japan", "mining tax Japan", "NFT tax Japan", "DeFi tax Japan", "確定申告 crypto", "kakutei shinkoku crypto", "bitFlyer tax", "Coincheck tax", "crypto-to-crypto Japan", "総平均法", "移動平均法", or any question about the income tax, reporting, or cost basis treatment of cryptocurrency, tokens, or digital assets for Japan tax residents. Covers NTA Crypto FAQ guidance, miscellaneous income classification, aggregate taxation, cost basis methods (total average / moving average), the ¥200,000 filing threshold, and Kakutei Shinkoku reporting. ALWAYS read this skill before touching any Japan crypto work.
 version: 1.0
 jurisdiction: JP
 tax_year: 2025
-last_updated: 2026-05-23
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - jp-income-tax
 category: crypto
 tier: 2

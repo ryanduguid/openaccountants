@@ -1,11 +1,11 @@
 ---
 name: ca-capital-gains
-description: >
+description: Canada capital gains tax: inclusion rate (50% / 2/3 above $250k from 2024), lifetime capital gains exemption (LCGE), principal residence exemption, adjusted cost base. Trigger on: "Canada capital gains tax", "CRA capital gains", "inclusion rate Canada", "sell shares Canada", "T5008", "adjusted cost base Canada", "LCGE Canada", "principal residence exemption Canada", "capital gains inclusion rate 2/3", "sell small business shares Canada". For non-residents see ca-nonresident-cgt.
 version: 1.0
 jurisdiction: CA
 tax_year: 2025
-last_updated: 2026-06-05
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 category: international
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)

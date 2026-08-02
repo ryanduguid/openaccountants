@@ -1,11 +1,12 @@
 ---
 name: us-fbar-fatca-reporting
-description: >
+description: US foreign-account and foreign-asset reporting for US persons: the FBAR (FinCEN Form 114) and FATCA (Form 8938, IRC §6038D). Covers the $10,000 FBAR aggregate threshold, the higher Form 8938 thresholds, who must file, what each regime counts, deadlines, the willful/non-willful penalty regime, and the streamlined and delinquent-FBAR remediation paths. Produces a working paper and a reviewer brief — not a filed return. MUST load alongside cross-border-tax-workflow-base.
 version: 0.1
 jurisdiction: US
 tax_year: 2025
-last_updated: 2026-05-31
-verified_by: James Wallach
+last_updated: 2026-07-13
+reviewed_by: James Wallach
+review_status: current
 depends_on: - cross-border-tax-workflow-base
 category: international
 tier: 2

@@ -1,11 +1,11 @@
 ---
 name: pillar-two-globe-minimum-tax
-description: >
+description: Use this skill whenever a multinational enterprise (MNE) group with consolidated revenue at or above EUR 750 million asks about the OECD Pillar Two / GloBE (Global Anti-Base Erosion) 15% global minimum tax. Trigger on phrases like "Pillar Two", "GloBE", "global minimum tax", "15% minimum tax", "IIR", "UTPR", "QDMTT", "domestic top-up tax", "GloBE Information Return", "GIR", "covered taxes", "transitional CbCR safe harbour", "substance-based income exclusion", or any request to assess Pillar Two exposure, compute a top-up tax, or determine which entities in a group are in scope. This skill covers the OECD GloBE Model Rules (December 2021), the Commentary (March 2022) and Administrative Guidance through 2024, plus the EU implementing Directive 2022/2523. It does NOT cover Pillar One (Amount A or Amount B), country-by-country reporting (CbCR) under BEPS Action 13, or US GILTI/CAMT as standalone regimes (but does map their interaction). Always read this skill before computing top-up tax, advising on jurisdictional ETRs, or designing group restructurings affected by GloBE.
 version: 0.1
 jurisdiction: GLOBAL
 tax_year: 2025
-last_updated: 2026-05-23
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - cross-border-workflow-base
 category: cross-border
 tier: 2

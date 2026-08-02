@@ -1,11 +1,11 @@
 ---
 name: algeria-social-contributions
-description: >
+description: Use this skill whenever asked about Algeria social security / social insurance contributions (CNAS for salaried employees, CASNOS for self-employed/non-salaried) and the interaction with Algerian personal income tax (IRG). Trigger on phrases like "how much CNAS do I pay", "Algeria payroll contributions", "employer social security Algeria", "CNAS employee deduction", "CASNOS self-employed contribution", "G50 declaration", "DAS annual salary declaration", "IRG on salary", "Algerian minimum wage SNMG", "social security Algeria calculation", or any question about Algerian payroll, contribution or IRG obligations. Also trigger when classifying bank statement transactions that relate to CNAS/CASNOS debits, G50 tax payments, or DGI/Trésor payments from BNA, BEA, CPA, BADR, or other Algerian banks. This skill covers CNAS 26%/9% branch rates, the CASNOS 15% self-employed regime, the SNMG floor, IRG progressive brackets, G50/DAS filing and deadlines, penalties, bank statement classification patterns, and edge cases. ALWAYS read this skill before touching any Algerian contribution or payroll work.
 version: 0.1
 jurisdiction: DZ
 tax_year: 2025
-last_updated: 2026-06-04
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - social-contributions-workflow-base
 category: international
 tier: 2

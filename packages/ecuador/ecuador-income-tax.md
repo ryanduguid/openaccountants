@@ -1,11 +1,11 @@
 ---
 name: ecuador-income-tax
-description: >
+description: Use this skill whenever asked about Ecuador personal income tax (Impuesto a la Renta) for self-employed individuals and natural persons. Trigger on phrases like "how much income tax do I pay in Ecuador", "Impuesto a la Renta", "Formulario 102", "Formulario 102A", "declaración de renta personas naturales", "gastos personales", "rebaja por gastos personales", "RIMPE", "Negocio Popular", "Emprendedor", "aporte IESS", "décimo tercero", "décimo cuarto", "fondos de reserva", "noveno dígito", "self-employed tax Ecuador", "non-resident 25%", or any question about filing or computing income tax for a self-employed person, professional, or individual resident/non-resident in Ecuador. Also trigger when preparing or reviewing a Formulario 102/102A, the Anexo de Gastos Personales, an IESS contribution computation, or advising on the RIMPE simplified regime. This skill covers the progressive 0%-37% PIT table, the personal-expense rebate, IESS contributions, the 13th/14th salaries, RIMPE, residency, penalties, and interaction with IVA and social security. ALWAYS read this skill before touching any Ecuador income tax work.
 version: 0.1
 jurisdiction: EC
 tax_year: 2025
-last_updated: 2026-06-04
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - income-tax-workflow-base
 category: international
 tier: 2

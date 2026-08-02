@@ -3,8 +3,9 @@ name: us-form-5471-cfc-information
 description: US federal content skill for Form 5471 — US Information Return for Controlled Foreign Corporations and other foreign corps requiring US-shareholder reporting under §§6038 and 6046. Covers tax year 2025 including the five filing categories (Cat 1 SFC, Cat 2 officer/director, Cat 3 acquisition/disposition, Cat 4 controller >50%, Cat 5 CFC shareholder), the §958(b)(4) repeal expanding the CFC universe through downward attribution, the eleven schedules (A through Q), §951 Subpart F + §951A GILTI inclusion mechanics, §959 PTEP tracking, §954(b)(4) high-tax exception, the $10,000 per-failure-per-year §6038 penalty, and reasonable-cause defense paths including Streamlined Foreign Offshore Procedures.
 jurisdiction: US
 tax_year: 2025
-last_updated: 2026-05-27
-verified_by: James Wallach
+last_updated: 2026-07-13
+reviewed_by: Christopher Aryee
+review_status: current
 tier: 1
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---

@@ -4,8 +4,8 @@ description: version: 1.0
 version: 1.0
 jurisdiction: GLOBAL
 tax_year: 2025
-last_updated: 2026-05-23
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 category: cross-border
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)

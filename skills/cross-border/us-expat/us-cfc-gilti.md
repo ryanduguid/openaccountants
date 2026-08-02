@@ -1,11 +1,12 @@
 ---
 name: us-cfc-gilti
-description: >
+description: US anti-deferral rules for US persons owning foreign corporations: Controlled Foreign Corporation status (IRC §957/§951(b)), Subpart F income (§951/§952), GILTI (§951A) and the §250 deduction, the §962 election to be taxed at corporate rates with deemed-paid credits, the high-tax exception, and Form 5471 filing. Produces a working paper and a reviewer brief — not a filed return. MUST load alongside cross-border-tax-workflow-base.
 version: 0.1
 jurisdiction: US
 tax_year: 2025
-last_updated: 2026-05-31
-verified_by: James Wallach
+last_updated: 2026-07-13
+reviewed_by: James Wallach
+review_status: current
 depends_on: - cross-border-tax-workflow-base
 category: international
 tier: 2

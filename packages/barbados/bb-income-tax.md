@@ -3,8 +3,8 @@ name: bb-income-tax
 description: Use this skill whenever asked about Barbados personal income tax, NIS contributions, or payroll obligations. Trigger on phrases like "how much tax do I pay in Barbados", "BRA", "Barbados Revenue Authority", "TAMIS", "PAYE Barbados", "NIS contributions", "National Insurance Barbados", "self-employed tax Barbados", "Reverse Tax Credit", "quarterly prepayments", "PIT return", "VAT registration Barbados", or any question about filing or computing income tax for a resident, non-resident, employed, or self-employed individual in Barbados. Also trigger when computing NIS contributions, applying personal allowances, checking filing deadlines, or advising on the Barbados Reverse Tax Credit. This skill covers PIT brackets, NIS rates, personal allowances, PAYE, self-assessment, quarterly prepayments, VAT registration thresholds, penalties, and withholding taxes. ALWAYS read this skill before touching any Barbados income tax or payroll work.
 jurisdiction: BB
 tax_year: 2025
-last_updated: 2026-06-25
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---

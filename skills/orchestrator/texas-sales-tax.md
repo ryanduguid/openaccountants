@@ -3,8 +3,8 @@ name: texas-sales-tax
 description: Use this skill whenever asked about Texas sales and use tax, Comptroller filings, Texas tax permits, Texas exemptions, Texas nexus, or any request involving Texas state sales and use tax compliance. Trigger on phrases like "Texas sales tax", "TX sales tax", "Comptroller", "Texas use tax", "Texas sales tax return", "Texas exemption certificate", or any request involving Texas sales and use tax classification, filing, or compliance. ALWAYS read this skill before touching any Texas sales tax work.
 jurisdiction: US-TX
 tax_year: 2025
-last_updated: 2026-07-09
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---

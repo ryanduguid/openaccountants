@@ -1,11 +1,11 @@
 ---
 name: ru-financial-statements
-description: >
+description: Use this skill whenever asked about financial statements or formal accounting reporting obligations in Russia for self-employed people, individual entrepreneurs (ИП), or the organisations they might set up (ООО, АО). Trigger phrases like "Russia financial statements", "бухгалтерская отчётность", "РСБУ", "ФСБУ", "do I file accounts as ИП", "ГИР БО", "бухгалтерский баланс", "отчёт о финансовых результатах", "обязательный аудит", "упрощённая бухгалтерская отчётность", "МСФО / IFRS Russia", "consolidated financial statements Russia", "when does an ООО file accounts", "31 марта deadline accounts". Explains that an ИП and a самозанятый file NO financial statements (Federal Law 402-ФЗ), and what changes if they incorporate an organisation.
 version: 1.0
 jurisdiction: RU
 tax_year: 2026
-last_updated: 2026-05-23
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - income-tax-workflow-base
 category: international
 tier: 2

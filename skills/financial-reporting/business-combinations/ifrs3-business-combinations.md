@@ -1,11 +1,11 @@
 ---
 name: ifrs3-business-combinations
-description: >
+description: IFRS accounting for business combinations under IFRS 3 (Business Combinations) and the related goodwill impairment guidance in IAS 36 (Impairment of Assets). Covers the acquisition method — identify the acquirer, determine the acquisition date, recognise and measure the identifiable assets acquired, liabilities assumed and any non-controlling interest, and recognise goodwill or a bargain purchase gain — plus consideration transferred and contingent consideration, acquisition-related costs, the measurement period, step acquisitions, recognition exceptions, the definition of a business and the optional concentration test, in-process R&D, and subsequent goodwill impairment testing at the cash-generating-unit level under IAS 36. Produces recognition conclusions, journal entries, and a reviewer brief. Issued as the IFRS edition of the business-combinations topic; see us-gaap-asc805-business-combinations for the US GAAP edition. MUST load alongside financial-reporting-workflow-base.
 version: 0.1
 jurisdiction: GLOBAL
 tax_year: 2025
-last_updated: 2026-05-29
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - financial-reporting-workflow-base
 category: financial-reporting
 tier: 2

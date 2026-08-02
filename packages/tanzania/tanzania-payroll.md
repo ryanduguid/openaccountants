@@ -3,9 +3,10 @@ name: tanzania-payroll
 description: Use this skill whenever asked about Tanzania payroll processing for employed persons. Trigger on phrases like "Tanzania payroll", "PAYE Tanzania", "TRA PAYE", "NSSF contribution", "PSSSF", "SDL Tanzania", "Skills Development Levy", "WCF Tanzania", "Workers Compensation Fund", "ITX 300.01.E", "net salary Tanzania", "tax withholding Tanzania", "employer NSSF", "minimum wage Tanzania", "gross to net Tanzania", "salary calculation Tanzania", "TZS payroll", "Tanzanian Shilling salary", "non-resident PAYE Tanzania", "Zanzibar PAYE", or any question about computing employee pay, income-tax (PAYE) withholding, or social-security and payroll levies for Tanzania-based employees. This skill covers PAYE income-tax withholding by the employer, NSSF/PSSSF social security, the Skills Development Levy (SDL), the Workers Compensation Fund (WCF), minimum wage, and filing obligations to TRA / NSSF / WCF. ALWAYS read this skill before processing any Tanzania payroll.
 jurisdiction: TZ
 tax_year: 2026
-last_updated: 2026-06-04
-verified_by: Baraka Cassian
-tier: 2
+last_updated: 2026-07-13
+reviewed_by: Baraka Cassian
+review_status: current
+tier: 1
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 

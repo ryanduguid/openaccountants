@@ -4,9 +4,10 @@ description: Use this skill whenever asked to prepare, review, or classify trans
 version: 2.0
 jurisdiction: MT
 tax_year: 2025
-last_updated: 2026-05-23
-verified_by: Michael Cutajar, CPA (Malta)
-tier: 1
+last_updated: 2026-07-13
+reviewed_by: Michael Cutajar, CPA (Malta)
+review_status: current
+tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 

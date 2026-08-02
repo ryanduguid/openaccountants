@@ -1,11 +1,11 @@
 ---
 name: international-incorporation
-description: >
+description: International company formation and jurisdiction selection guide for solo founders, freelancers, and digital nomads. Use when the user asks about: where to register a company, business jurisdiction selection, Wyoming LLC setup, Delaware LLC, Hong Kong company formation, Singapore Pte Ltd, Estonia e-Residency OÜ, UK Ltd incorporation, Dubai freezone company, offshore company structure, one-person company (一人公司), solo founder incorporation, entity type selection, pass-through vs corporation, company formation costs, annual compliance by jurisdiction, 注册公司, 海外公司, 开公司, 离岸公司, 会社設立, 法人化, incorporating abroad, best country to register a business, cheapest jurisdiction, Stripe Atlas, company for non-US founders, company closure, operating agreement, or any question about choosing where to incorporate an international business.
 version: 1.0
 jurisdiction: INTL
 tax_year: 2025
-last_updated: 2026-05-20
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 category: international
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)

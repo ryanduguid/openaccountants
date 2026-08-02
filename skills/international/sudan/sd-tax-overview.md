@@ -1,11 +1,11 @@
 ---
 name: sd-tax-overview
-description: >
+description: Use this skill whenever asked for a high-level overview of the Sudanese tax system — the full structure of direct and indirect taxes, the administering authority, recent reform history, and where to start for a deeper dive. Trigger on phrases like "Sudan tax", "Sudan tax system", "Sudan taxation", "الضرائب في السودان", "taxes in Sudan", "Sudan corporate tax", or any request for a top-down summary of Sudan's tax regime. ALWAYS read this skill as the entry point before consulting any Sudan-specific tax skill.
 version: 0.1
 jurisdiction: SD
 tax_year: 2025
-last_updated: 2026-06-25
-verified_by: pending
+last_updated: 2026-07-22
+review_status: pending_review
 depends_on: - income-tax-workflow-base
 category: international
 tier: 2

@@ -1,11 +1,11 @@
 ---
 name: la-income-tax
-description: >
+description: Use this skill whenever asked about Louisiana individual income tax. Trigger on phrases like "Louisiana income tax", "LA income tax", "IT-540", "LDR", "R.S. 47:21", "Louisiana flat tax". Louisiana reformed to a flat 3% rate effective 2025 (Act 11 of 2024 3rd Extraordinary Session). ALWAYS load us-tax-workflow-base first.
 version: "0.1"
 jurisdiction: US-LA
 tax_year: 2025
-last_updated: 2026-05-22
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---

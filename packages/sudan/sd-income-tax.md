@@ -1,11 +1,11 @@
 ---
 name: sd-income-tax
-description: >
+description: Use this skill whenever asked about Sudanese personal income tax for resident individuals, sole proprietors, professionals, and non-residents earning Sudan-source income — to compute, review, or explain it. Trigger on phrases like "Sudan income tax", "Sudan personal tax", "ضريبة الدخل السودان", "Sudan tax brackets", "Sudan PAYE", "Sudan freelance tax", or any request to prepare or check a Sudanese individual income tax return. ALWAYS read this skill before touching any Sudan personal income tax work.
 version: 0.1
 jurisdiction: SD
 tax_year: 2025
-last_updated: 2026-06-25
-verified_by: pending
+last_updated: 2026-07-22
+review_status: pending_review
 depends_on: - income-tax-workflow-base
 category: international
 tier: 2

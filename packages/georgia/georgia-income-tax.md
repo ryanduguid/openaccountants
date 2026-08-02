@@ -1,11 +1,12 @@
 ---
 name: georgia-income-tax
-description: >
+description: Use this skill whenever asked about personal income tax in the country of Georgia (Sakartvelo, GE — NOT the US state). Trigger on phrases like "how much tax do I pay in Georgia", "Georgia flat tax", "20% income tax", "small business status", "1% tax Georgia", "individual entrepreneur", "micro business status", "Georgian rental income tax", "funded pension Georgia", "rs.ge declaration", "Revenue Service of Georgia", "GEL tax", "VAT registration Georgia", or any question about filing or computing income tax for an individual, self-employed person, or individual entrepreneur tax-resident in Georgia. Also trigger when preparing or reviewing an annual income tax declaration, a monthly Small Business turnover declaration, computing the 2%+2% funded pension, or advising on PIT advance instalments. This skill covers the flat 20% PIT, Small Business Status (1%/3%), Micro Business Status (0%), rental and capital-gains rates, withholding taxes, the mandatory funded pension, VAT thresholds, deadlines, and penalties. ALWAYS read this skill before touching any Georgia income tax work.
 version: 0.1
 jurisdiction: GE
 tax_year: 2025
 last_updated: 2026-07-13
-verified_by: Gvantsa Amiridze
+reviewed_by: Gvantsa Amiridze, ACCA
+review_status: current
 depends_on: - income-tax-workflow-base
 category: international
 tier: 2

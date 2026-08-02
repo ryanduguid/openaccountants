@@ -1,14 +1,15 @@
 ---
 name: venezuela-iva
-description: >
+description: Use this skill whenever asked to prepare, review, or create a Venezuela IVA (Impuesto al Valor Agregado) return for any client. Trigger on phrases like "prepare IVA return", "do the IVA", "Venezuela VAT", "SENIAT IVA", "Forma 30", "debito fiscal", "credito fiscal", "Contribuyente Especial", or any request involving Venezuela value added tax filing. CRITICAL -- Venezuela's economic instability means rates and thresholds change frequently; ALWAYS verify current rates before filing. ALWAYS read this skill before touching any Venezuela IVA work.
 version: 2.0
 jurisdiction: VE
 tax_year: 2025
-last_updated: 2026-04-13
-verified_by: Jose Padilla
+last_updated: 2026-07-13
+reviewed_by: Jose Padilla
+review_status: current
 depends_on: - vat-workflow-base
 category: international
-tier: 2
+tier: 1
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 

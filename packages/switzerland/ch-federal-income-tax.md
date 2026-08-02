@@ -1,11 +1,11 @@
 ---
 name: ch-federal-income-tax
-description: >
+description: Use this skill whenever asked about Swiss federal income tax (direkte Bundessteuer / impot federal direct) for self-employed individuals. Trigger on phrases like "Bundessteuer", "direkte Bundessteuer", "impot federal direct", "Steuererklarung Schweiz", "selbstandig Steuern Schweiz", "Swiss federal income tax", "self-employed tax Switzerland", "AHV deduction", "Saule 3a", "BVG", "Geschaftsaufwand", or any question about computing or filing FEDERAL income tax for a self-employed person in Switzerland. This skill covers FEDERAL progressive brackets only (0--11.5%), Geschaftsaufwand, AHV/IV/EO deductibility, BVG/Saule 3a deductions, and federal filing. Cantonal and municipal taxes are out of scope. ALWAYS read this skill before touching any Swiss federal income tax work.
 version: 2.0
 jurisdiction: CH
 tax_year: 2025
-last_updated: 2026-04-13
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - income-tax-workflow-base
 category: international
 tier: 2

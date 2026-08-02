@@ -1,11 +1,11 @@
 ---
 name: eu-social-security-coordination
-description: >
+description: EU social security coordination rules under Regulation (EC) No 883/2004 and Implementing Regulation (EC) No 987/2009. Determines which single EU/EEA/Swiss country's social security legislation applies to a cross-border worker. Use when the user asks about social security for workers active in multiple EU countries, posted workers, A1 certificates, which country to pay social insurance in, multi-state freelancers, or social security coordination between EU member states. Covers posted worker exception, multi-state worker rules, self-employed across borders, simultaneous employment/self-employment, EEA/Switzerland extension, and UK post-Brexit rules under the Trade and Cooperation Agreement.
 version: 1.0
 jurisdiction: EU/EEA/CH/UK
 tax_year: 2025
-last_updated: 2026-05-23
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 category: cross-border
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)

@@ -1,11 +1,11 @@
 ---
 name: estonia-social-contributions
-description: >
+description: Use this skill whenever asked about Estonian social security contributions, social tax (sotsiaalmaks), unemployment insurance premiums (töötuskindlustusmakse), or mandatory funded pension (II-pillar / kogumispension) for employers, employees, board members, or self-employed (FIE). Trigger on phrases like "how much social tax do I pay in Estonia", "Estonian payroll on-cost", "sotsiaalmaks 33%", "employer cost above gross", "II pillar pension contribution", "unemployment insurance premium", "minimum social tax base", "Form TSD", "FIE social tax", "Estonia net salary calculation", "what is the employer cost on top of salary", or any question about Estonian social charges. Also trigger when classifying bank-statement transactions that relate to EMTA (Maksu- ja Tolliamet) tax payments, Töötukassa unemployment premiums, or II-pillar pension transfers from Estonian banks (Swedbank, SEB, LHV, Luminor). Also trigger when computing Estonian payroll where the 22% flat income tax, the basic exemption (maksuvaba tulu), and the social tax floor interact. This skill covers social tax (33%), unemployment insurance (employee 1.6% + employer 0.8%), II-pillar funded pension (2/4/6%), the minimum monthly social tax base, the 22% flat PIT, the basic exemption, Form TSD filing, FIE advance payments, bank-statement classification patterns, and edge cases. ALWAYS read this skill before touching any Estonian social-contribution or payroll-charge work.
 version: 0.1
 jurisdiction: EE
 tax_year: 2025
-last_updated: 2026-06-04
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - social-contributions-workflow-base
 category: international
 tier: 2

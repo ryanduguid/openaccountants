@@ -1,11 +1,11 @@
 ---
 name: hu-income-tax
-description: >
+description: Use this skill whenever asked about Hungarian income tax for self-employed individuals (egyéni vállalkozó). Trigger on phrases like "how much tax do I pay", "SZJA", "personal income tax Hungary", "KATA", "átalányadózás", "flat-rate taxation", "egyéni vállalkozó", "self-employed tax Hungary", "SZOCHO", "TB járulék", or any question about filing or computing income tax for a self-employed or freelance client in Hungary. ALWAYS read this skill before touching any Hungarian income tax work.
 version: 2.0
 jurisdiction: HU
 tax_year: 2025
-last_updated: 2026-04-13
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - income-tax-workflow-base
 category: international
 tier: 2

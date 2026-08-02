@@ -3,8 +3,9 @@ name: us-crypto-reporting
 description: US federal cryptocurrency REPORTING & disclosure — Form 1040 digital-asset question, Form 8949 + Schedule D, Schedule C/Schedule 1, Form 1099-DA broker reporting (IRC §6045) phase-in, §6050I/Form 8300, FBAR (FinCEN Form 114), FATCA Form 8938, charitable-donation qualified appraisal (Form 8283), gift reporting (Form 709), and recordkeeping. Substantive treatment, income recognition, and NFTs are in sibling skills.
 jurisdiction: US
 tax_year: 2025
-last_updated: 2026-06-23
-verified_by: James Wallach
+last_updated: 2026-07-13
+reviewed_by: Christopher Aryee
+review_status: current
 tier: 1
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---

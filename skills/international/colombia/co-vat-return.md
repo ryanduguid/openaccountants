@@ -1,11 +1,11 @@
 ---
 name: co-vat-return
-description: >
+description: Colombian VAT return (IVA -- Impuesto sobre las Ventas) for self-employed individuals under the regimen comun/responsable. Covers the standard 19% rate, reduced 5%, excluded goods/services, bimonthly/quarterly filing, electronic invoicing, and Regimen Simple de Tributacion (SIMPLE). Primary source: Estatuto Tributario (E.T.) Libro Tercero; Ley 1819/2016; Ley 2277/2022.
 version: 1.0
 jurisdiction: CO
 tax_year: 2025
-last_updated: 2026-04-13
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - vat-workflow-base
 category: international
 tier: 2

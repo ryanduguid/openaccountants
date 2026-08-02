@@ -1,11 +1,11 @@
 ---
 name: ua-income-tax
-description: >
+description: Ukrainian general-system (загальна система) personal income tax for a self-employed sole proprietor (ФОП): net business profit taxed at 18% PIT plus the 5% military levy with documented business expenses deductible under Art. 177.
 version: 1.0
 jurisdiction: UA
 tax_year: 2026
-last_updated: 2026-05-23
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - income-tax-workflow-base
 category: international
 tier: 2

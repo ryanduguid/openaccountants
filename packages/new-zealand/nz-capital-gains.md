@@ -1,11 +1,11 @@
 ---
 name: nz-capital-gains
-description: >
+description: New Zealand capital gains: no general CGT, but bright-line test on residential property (2-year rule), share investor vs trader distinction, FIF regime for foreign shares. Trigger on: "New Zealand CGT", "NZ capital gains", "bright-line test NZ", "sell property NZ", "NZ no capital gains tax", "foreign investment fund NZ", "FIF regime", "NZ share trading tax", "sell NZ property within 2 years".
 version: 1.0
 jurisdiction: NZ
 tax_year: 2025
-last_updated: 2026-06-05
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 category: international
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)

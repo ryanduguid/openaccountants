@@ -1,11 +1,11 @@
 ---
 name: qc-individual-return
-description: >
+description: Use this skill whenever asked about Quebec provincial income tax (TP-1) for a self-employed sole proprietor. Trigger on phrases like "Quebec tax", "TP-1", "Quebec income tax", "QPP", "QPIP", "Revenu Quebec", "QHSF", "health services fund", "solidarity tax credit", "Quebec abatement", or any question about computing Quebec provincial tax. ALWAYS read this skill before touching any Quebec provincial tax work.
 version: 2.0
 jurisdiction: CA
 tax_year: 2025
-last_updated: 2026-04-13
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - income-tax-workflow-base
 category: international
 tier: 2

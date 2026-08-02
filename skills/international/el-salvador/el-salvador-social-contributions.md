@@ -1,11 +1,11 @@
 ---
 name: el-salvador-social-contributions
-description: >
+description: Use this skill whenever asked about El Salvador statutory payroll contributions, social security, pensions, or payroll-related income tax withholding for employees and employers. Trigger on phrases like "ISSS contribution", "how much ISSS do I pay", "AFP pension contribution", "Salvadoran payroll deductions", "descuentos de ley", "cotización ISSS", "cotización AFP", "INSAFORP levy", "retención de renta", "sueldo neto El Salvador", "planilla ISSS", "OVISSS", "salario mínimo El Salvador", or any question about El Salvador employer/employee social cost. Also trigger when classifying bank-statement transactions that relate to ISSS debits, AFP (Crecer, Confía) pension debits, INSAFORP payments, or Ministerio de Hacienda income-tax withholding from Salvadoran banks (Banco Agrícola, Cuscatlán, Davivienda, BAC). Also trigger when preparing or reviewing a Form F-11 (Declaración del Impuesto sobre la Renta) where statutory deductions are relevant. This skill covers ISSS health rates and the USD 1,000 cap, AFP pension rates and the SSF maximum contributory base, the INSAFORP 1% training levy, minimum wages, progressive resident PIT and non-resident flat tax, monthly withholding tables, payment channels, penalties, and bank-statement classification patterns. ALWAYS read this skill before touching any El Salvador payroll, social-security, or payroll-withholding work.
 version: 0.1
 jurisdiction: SV
 tax_year: 2025
-last_updated: 2026-06-04
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - social-contributions-workflow-base
 category: international
 tier: 2

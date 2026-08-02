@@ -1,11 +1,11 @@
 ---
 name: uruguay-income-tax
-description: >
+description: Use this skill whenever asked about Uruguay personal income tax (IRPF) for resident individuals, employees, and the self-employed. Trigger on phrases like "how much IRPF do I pay", "Impuesto a la Renta de las Personas Físicas", "Categoría I", "Categoría II", "rentas del trabajo", "rentas del capital", "declaración jurada IRPF", "Formulario 1102", "Formulario 1103", "núcleo familiar", "deducciones IRPF", "aportes BPS", "FONASA", "monotributo", "unipersonal", "servicios personales", "IRNR", "non-resident Uruguay tax", or any question about computing or filing income tax for a Uruguayan-resident individual. Also trigger when preparing or reviewing an IRPF annual return, computing the deduction credit, or advising on BPS social-security contributions. This skill covers the IRPF dual scheme (Category I capital income at 12% flat; Category II labour income on a 0%–36% progressive scale), the deduction-credit mechanic, BPS contributions, monotributo, filing forms/deadlines, and DGI penalties. ALWAYS read this skill before touching any Uruguay income tax work.
 version: 0.1
 jurisdiction: UY
 tax_year: 2025
-last_updated: 2026-06-04
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - income-tax-workflow-base
 category: international
 tier: 2

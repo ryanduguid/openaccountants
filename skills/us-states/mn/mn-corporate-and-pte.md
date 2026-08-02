@@ -3,8 +3,8 @@ name: mn-corporate-and-pte
 description: Minnesota Corporate Franchise Tax and Pass-Through Entity Tax
 jurisdiction: US-MN
 tax_year: 2025
-last_updated: 2026-05-27
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---

@@ -3,8 +3,9 @@ name: il-pprt
 description: "Illinois Personal Property Replacement Tax under 35 ILCS 5/201(c) and (d): 2.5% on C-corporations (and S-corps for the corporate-level PPRT shell) and 1.5% on partnerships, trusts, and S-corporations, computed on net income allocated and apportioned to Illinois using a single sales factor with market-based sourcing. Sole proprietorships are exempt; LLCs follow their federal classification. Owners of pass-through entities can claim a partial credit against Illinois personal income tax. Interacts with the optional Illinois Pass-Through Entity (PTE) tax election at 4.95%. Tax year 2025."
 jurisdiction: US-IL
 tax_year: 2025
-last_updated: 2026-05-27
-verified_by: Amir Pelinkovic
+last_updated: 2026-07-13
+reviewed_by: Amir Pelinkovic
+review_status: current
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---

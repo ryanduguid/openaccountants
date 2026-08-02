@@ -1,11 +1,11 @@
 ---
 name: nicaragua-social-contributions
-description: >
+description: Use this skill whenever asked about Nicaragua (ISO NI) social security and payroll taxes for employees and employers. Trigger on phrases like "how much INSS do I pay", "Nicaragua social security", "INSS employer contribution", "INSS laboral patronal", "INATEC 2%", "Nicaragua payroll tax", "Régimen Integral", "IVM IVM-RP", "córdoba payroll", "IR rentas del trabajo", "Nicaragua income tax withholding", "Form IR-122", "Form IR-106", "retención salarial Nicaragua", or any question about Nicaraguan INSS/INATEC/payroll IR obligations. Also trigger when classifying Nicaraguan bank statement transactions that relate to INSS debits, INATEC payments, DGI retention remittances, or payroll runs from BANPRO, BAC, LAFISE, FICOHSA or other Nicaraguan banks. This skill covers INSS employee/employer rates by regime, the INATEC training levy, the IR progressive employment-income schedule, monthly and annual filing deadlines, registration, bank statement classification patterns, and edge cases. ALWAYS read this skill before touching any Nicaraguan social-contribution or payroll work.
 version: 0.1
 jurisdiction: NI
 tax_year: 2025
-last_updated: 2026-06-04
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - social-contributions-workflow-base
 category: international
 tier: 2

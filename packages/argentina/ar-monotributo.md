@@ -1,14 +1,15 @@
 ---
 name: ar-monotributo
-description: >
+description: Use this skill whenever asked about the Argentine Monotributo simplified tax regime. Trigger on phrases like "monotributo", "regimen simplificado", "AFIP", "DAS monotributo", "categorias monotributo", "impuesto integrado", "monotributista", or any question about the unified monthly payment, category thresholds, or obligations for small self-employed individuals in Argentina. Covers the unified monthly payment (impuesto integrado + aportes jubilatorios + obra social), revenue-based categories (A through K), and exclusion rules. ALWAYS read this skill before touching any Argentine Monotributo work.
 version: 2.0
 jurisdiction: AR
 tax_year: 2025
-last_updated: 2026-04-13
-verified_by: Maria Valeria Benvenuti
+last_updated: 2026-07-13
+reviewed_by: Maria Valeria Benvenuti
+review_status: current
 depends_on: - income-tax-workflow-base
 category: international
-tier: 2
+tier: 1
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 

@@ -1,11 +1,11 @@
 ---
 name: slovenia-payroll
-description: >
+description: Use this skill whenever asked about Slovenia payroll processing for employed persons. Trigger on phrases like "Slovenia payroll", "Slovenian payroll", "akontacija dohodnine", "dohodnina withholding", "REK-O", "REK obrazec", "prispevki ZPIZ", "social contributions Slovenia", "ZZZS contributions", "long-term care contribution Slovenia", "ZDOsk", "splošna olajšava", "minimalna plača", "minimum wage Slovenia", "bruto plača", "neto plača", "net salary Slovenia", "gross to net Slovenia", "employer SSC Slovenia", "FURS payroll", "eDavki", "salary calculation Slovenia", or any question about computing employee pay, withholding income tax, or social security contributions for Slovenia-based employees. This skill covers progressive PIT withholding (akontacija dohodnine), employee and employer social security contributions (ZPIZ pension, ZZZS health, unemployment, parental, injury-at-work), the new long-term care contribution (ZDOsk-1, from 1 July 2025), the flat compulsory health contribution, minimum wage, the general tax allowance, and REK-O filing obligations. ALWAYS read this skill before processing any Slovenia payroll.
 version: 0.1
 jurisdiction: SI
 tax_year: 2025
-last_updated: 2026-06-04
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - payroll-workflow-base
 category: payroll
 tier: 2

@@ -1,11 +1,11 @@
 ---
 name: ru-payroll
-description: >
+description: Use this skill whenever asked about payroll in Russia — how an individual entrepreneur (ИП) or a company (ООО) computes, withholds, reports, and pays the taxes and contributions on employee wages in 2026. Covers НДФЛ withheld from salaries at the progressive scale, employer страховые взносы under the единый тариф (30% up to the unified base, 15.1% above), the reduced ~15% SME tariff on wages above 1.5× МРОТ for priority-sector SMEs, injury contributions (взносы на травматизм) paid to СФР, payroll reporting (РСВ, 6-НДФЛ, персонифицированные сведения, ЕФС-1), the ЕНП/ЕНС unified tax account, and pay/withholding deadlines. Trigger on phrases like "payroll Russia", "hiring an employee Russia", "страховые взносы employer", "6-НДФЛ", "зарплатные налоги", "РСВ", "сколько стоит сотрудник", "gross to net Russia", "НДФЛ с зарплаты".
 version: 1.0
 jurisdiction: RU
 tax_year: 2026
-last_updated: 2026-05-23
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - income-tax-workflow-base
 category: international
 tier: 2

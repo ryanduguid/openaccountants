@@ -4,9 +4,10 @@ description: Use this skill whenever asked about states with no sales tax, Alask
 version: 2.0
 jurisdiction: US
 tax_year: 2025
-last_updated: 2026-04-13
-verified_by: James Wallach
-tier: 2
+last_updated: 2026-07-13
+reviewed_by: James Wallach
+review_status: current
+tier: 1
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 

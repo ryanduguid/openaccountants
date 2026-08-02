@@ -1,11 +1,11 @@
 ---
 name: switzerland-crypto-tax
-description: >
+description: Use this skill whenever asked about Switzerland cryptocurrency or digital asset taxation. Trigger on phrases like "crypto tax Switzerland", "Bitcoin Switzerland", "cryptocurrency gains Switzerland", "crypto income Switzerland", "staking Switzerland", "mining income Switzerland", "NFT tax Switzerland", "wealth tax crypto", "Vermögenssteuer crypto", "ESTV crypto", "Kursliste crypto", "Kreisschreiben 36", "professional trader crypto Switzerland", "gewerbsmässiger Handel", "Steuererklärung crypto", "Wertschriftenverzeichnis crypto", "canton crypto tax", "Zug crypto", "Swiss crypto valuation", "CARF Switzerland", or any question about the income tax, wealth tax, capital gains, or reporting treatment of cryptocurrency, tokens, or digital assets for Swiss tax residents. Covers tax-free capital gains for private investors, annual wealth tax, ESTV crypto valuations, Kreisschreiben Nr. 36 safe-haven criteria, professional trader classification, and cantonal variations. ALWAYS read this skill before touching any Switzerland crypto work.
 version: 1.0
 jurisdiction: CH
 tax_year: 2025
-last_updated: 2026-05-23
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - switzerland-income-tax
 category: crypto
 tier: 2

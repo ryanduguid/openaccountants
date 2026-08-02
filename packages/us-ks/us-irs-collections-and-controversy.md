@@ -3,8 +3,9 @@ name: us-irs-collections-and-controversy
 description: Tier 2 US federal content skill for IRS notices, audits, collections, and controversy procedures. Covers common notices (CP2000, CP14, CP504, LT11/CP90), the 30-day Collection Due Process window under §6330 (Form 12153), the 10-year Collection Statute Expiration Date under §6502, collection alternatives (installment agreement, currently-not-collectible, offer in compromise, partial-pay IA), audit types and the §7430 attorney fees rule, Tax Court / District Court / Claims Court forum choice, §6662 accuracy and §6663 fraud penalties, First-Time Abatement (Notice 2014-2), and §6015 innocent spouse relief. Tax year 2025.
 jurisdiction: US
 tax_year: 2025
-last_updated: 2026-05-27
-verified_by: James Wallach
+last_updated: 2026-07-13
+reviewed_by: James Wallach
+review_status: current
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---

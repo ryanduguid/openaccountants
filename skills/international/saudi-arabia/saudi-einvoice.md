@@ -1,11 +1,12 @@
 ---
 name: saudi-einvoice
-description: >
+description: Use this skill whenever asked about Saudi Arabia e-invoicing, ZATCA FATOORA platform, Phase 1 generation, Phase 2 integration, e-invoice clearance, e-invoice reporting, ZATCA API, UBL 2.1 XML for Saudi invoices, cryptographic stamp, QR code TLV encoding, ECDSA signing, CSID certificate, onboarding OTP, Simplified vs Standard tax invoice, B2B clearance, B2C reporting, or any question about generating, submitting, or troubleshooting Saudi e-invoices. Also trigger when advising on ZATCA compliance waves, XML structure, digital signature requirements, or integration architecture. ALWAYS read this skill before touching any Saudi e-invoice work.
 version: 1.0
 jurisdiction: SA
 tax_year: 2025
-last_updated: 2026-05-23
-verified_by: Mehran Habib
+last_updated: 2026-07-13
+reviewed_by: Mehran Habib
+review_status: current
 depends_on: - einvoice-workflow-base
 category: invoicing
 tier: 2

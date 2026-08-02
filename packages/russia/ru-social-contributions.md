@@ -1,11 +1,11 @@
 ---
 name: ru-social-contributions
-description: >
+description: Use this skill whenever asked about insurance contributions (страховые взносы) in Russia for self-employed people — individual entrepreneurs (ИП) and the self-employed (самозанятые / НПД). Covers the ИП fixed annual contribution «за себя», the additional 1% on income over 300,000 ₽, payment deadlines, the НПД exemption, how страховые взносы reduce УСН and ОСНО tax, and employer contributions when an ИП hires staff. Trigger on phrases like "страховые взносы", "insurance contributions Russia", "ИП за себя", "fixed contributions Russia", "1% over 300000", "взносы свыше 300000", "единый тариф", "пониженный тариф МСП", "do self-employed pay social contributions in Russia".
 version: 1.0
 jurisdiction: RU
 tax_year: 2026
-last_updated: 2026-05-23
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - social-contributions-workflow-base
 category: international
 tier: 2

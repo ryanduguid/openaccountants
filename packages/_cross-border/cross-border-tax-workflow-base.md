@@ -1,11 +1,11 @@
 ---
 name: cross-border-tax-workflow-base
-description: >
+description: Foundation workflow base for cross-border / international personal-tax content skills. Contains the residency-map intake, the sequenced-plan output contract (a cross-border answer is an ORDERED set of steps, not N separate answers), the cross-border conservative-default principle, the AUDIT FLASH POINT marker convention, the double-tax-relief / treaty-bridge convention, and the mandatory human hand-off. This skill provides workflow architecture only — it contains no country-specific or topic-specific rules. It MUST be loaded alongside a topic content skill (e.g. us-feie-ftc, us-foreign-trust-reporting) and the relevant country skills. This base is the foundation every international content skill loads on top of.
 version: 0.1
 jurisdiction: GLOBAL
 tax_year: 2025
-last_updated: 2026-05-31
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: []
 category: international
 tier: 2

@@ -1,11 +1,11 @@
 ---
 name: eg-withholding-tax
-description: >
+description: Use this skill whenever asked about Egyptian withholding tax (WHT) on outbound payments to non-residents — dividends, interest, royalties, technical/management/consulting fees, and rental income. Trigger on phrases like "Egypt WHT", "Egypt withholding tax", "ضريبة الخصم تحت الحساب", "dividends to non-resident Egypt", "royalty WHT Egypt", "technical services fee Egypt", or any cross-border payment from an Egyptian payer. ALWAYS read this skill before touching any Egypt WHT work.
 version: 0.1
 jurisdiction: EG
 tax_year: 2025
 last_updated: 2026-07-22
-verified_by: pending
+review_status: pending_review
 depends_on: - income-tax-workflow-base
 category: international
 tier: 2

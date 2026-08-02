@@ -1,11 +1,11 @@
 ---
 name: uruguay-iva
-description: >
+description: Use this skill whenever asked to prepare, review, or create a Uruguay IVA (Impuesto al Valor Agregado) return for any client. Trigger on phrases like "prepare IVA return", "do the IVA", "Uruguay VAT", "DGI Uruguay", "tasa basica", "tasa minima", "CFE Uruguay", or any request involving Uruguay value added tax filing. Covers the 22% standard rate (tasa basica), 10% reduced rate (tasa minima), exempt supplies, monthly filing to DGI, input/output IVA computation, CFE electronic invoicing, and withholding/perception rules. ALWAYS read this skill before touching any Uruguay IVA work.
 version: 2.0
 jurisdiction: UY
 tax_year: 2025
-last_updated: 2026-04-13
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - vat-workflow-base
 category: international
 tier: 2

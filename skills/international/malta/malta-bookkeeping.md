@@ -1,11 +1,11 @@
 ---
 name: malta-bookkeeping
-description: >
+description: Use this skill whenever asked about bookkeeping, chart of accounts, financial statements, P&L format, balance sheet layout, bank reconciliation, expense classification, asset capitalisation, or day-to-day accounting for a Maltese entity. Trigger on phrases like "chart of accounts Malta", "nominal codes", "GAPSME financial statements", "P&L format", "balance sheet Malta", "expense account", "capitalise or expense", "depreciation Malta", "bank reconciliation", "micro-entity Malta", "small company accounts", "bookkeeping Malta", or any question about recording transactions, classifying expenses, or preparing management accounts under Maltese law. ALWAYS read this skill before touching any bookkeeping work for Malta.
 version: 1.0
 jurisdiction: MT
 tax_year: 2025
-last_updated: 2026-05-23
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - bookkeeping-workflow-base
 category: bookkeeping
 tier: 2

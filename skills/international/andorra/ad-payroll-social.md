@@ -3,8 +3,8 @@ name: ad-payroll-social
 description: Use this skill whenever asked about Andorra payroll processing for employed persons. Trigger on phrases like "Andorra payroll", "CASS contributions", "IRPF withholding Andorra", "employee CASS", "employer CASS", "retencions Andorra", "CASS-0031", "salari Andorra", "net salary Andorra", "gross to net Andorra", "withholding tax Andorra", "Andorra social security", "retenidor Andorra", "DTF withholding", "IRNR Andorra", "non-resident tax Andorra", "minimum wage Andorra", "salari mínim Andorra", or any question about computing employee pay, withholding tax, or social security contributions for Andorra-based employees. This skill covers IRPF employment income withholding, CASS contributions (employee and employer), non-resident income tax (IRNR), minimum wage, mandatory registration obligations, payslip requirements, and filing obligations. ALWAYS read this skill before processing any Andorra payroll.
 jurisdiction: AD
 tax_year: 2025
-last_updated: 2026-06-25
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---

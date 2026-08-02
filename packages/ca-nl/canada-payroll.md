@@ -1,14 +1,15 @@
 ---
 name: canada-payroll
-description: >
+description: Use this skill whenever asked about Canadian payroll, source deductions, CPP contributions, EI premiums, or employer obligations in Canada. Trigger on phrases like "source deductions", "CPP", "Canada Pension Plan", "CPP2", "EI", "employment insurance", "T4", "TD1", "payroll deductions", "CRA payroll", "remittance", "ROE", "record of employment", "statutory holiday pay", "vacation pay Canada", "minimum wage Canada", "provincial tax", "payroll Canada", "PD7A", "remitter type", or any question about running payroll in Canada. This skill covers federal rules; Quebec (QPP/QPIP) differences are noted but not fully detailed. ALWAYS read this skill before processing any Canadian payroll work.
 version: 1.0
 jurisdiction: CA
 tax_year: 2025
-last_updated: 2026-05-23
-verified_by: Edgar Lautsyus
+last_updated: 2026-07-13
+reviewed_by: Edgar Lautsyus
+review_status: current
 depends_on: - payroll-workflow-base
 category: payroll
-tier: 2
+tier: 1
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 

@@ -1,11 +1,11 @@
 ---
 name: slovenia-tax-optimization
-description: >
+description: Use this skill whenever asked about reducing tax in Slovenia, tax planning, or legal strategies to minimise tax for a self-employed person (s.p.) or small company in Slovenia. Trigger on phrases like "reduce tax Slovenia", "normiranec", "normirani s.p.", "lump-sum tax Slovenia", "80% expense deduction", "flat-rate sole proprietor Slovenia", "s.p. vs d.o.o.", "save tax Slovenia", "tax planning Slovenia". This skill covers the normiranec (standardised-expense) flat-rate regime giving tax on ~20% of revenue, the revenue thresholds and mandatory-exit rules, regular s.p. vs d.o.o., the 2026 changes, and the disguised-employment red line. ALWAYS read this skill before advising on any Slovenian tax optimisation.
 version: 0.1
 jurisdiction: SI
 tax_year: 2025
-last_updated: 2026-06-04
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: []
 category: tax-optimization
 tier: 2

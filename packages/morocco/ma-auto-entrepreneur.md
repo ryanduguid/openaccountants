@@ -1,11 +1,11 @@
 ---
 name: ma-auto-entrepreneur
-description: >
+description: Use this skill whenever asked about Morocco's auto-entrepreneur regime — the simplified turnover-based tax and social-cover status for freelancers and micro-businesses. Trigger on phrases like "auto-entrepreneur Maroc", "Morocco freelancer tax", "régime auto-entrepreneur", "micro business Morocco tax", "RNAE", "statut auto-entrepreneur", "تاجر ذاتي", "freelance Maroc impôt". Covers turnover ceilings, the 0.5%/1% liberatory IR, the single-client 80,000 MAD anti-disguised-salary withholding, dedicated CNSS/AMO cover, registration via the RNAE (Poste Maroc / ae.gov.ma), excluded regulated professions, and exit on ceiling breach. Reply in the user's language (English, French, or Moroccan Arabic / Darija). Cross-reference ma-cpu and ma-income-tax for alternatives.
 version: 1.0
 jurisdiction: MA
 tax_year: 2025
-last_updated: 2026-06-08
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - income-tax-workflow-base
 category: international
 tier: 2

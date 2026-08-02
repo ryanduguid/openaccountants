@@ -1,11 +1,11 @@
 ---
 name: nicaragua-payroll
-description: >
+description: Use this skill whenever asked about Nicaragua payroll processing for employed persons. Trigger on phrases like "Nicaragua payroll", "nomina Nicaragua", "INSS deduction", "INSS laboral", "INSS patronal", "IR rentas del trabajo", "retencion IR Nicaragua", "INATEC 2%", "Form IR-122", "Form IR-106", "planilla INSS", "salario neto Nicaragua", "net salary Nicaragua", "cordoba payroll", "employer social security Nicaragua", "salario minimo Nicaragua", "minimum wage Nicaragua", "gross to net Nicaragua", or any question about computing employee pay, income-tax withholding, or social-security contributions for Nicaragua-based employees. This skill covers IR (rentas del trabajo) progressive withholding, INSS employee/employer contributions (Regimen Integral), the INATEC training levy, sector minimum wages, payroll filing obligations (IR-122, IR-106, INSS planilla), and penalties. The reporting currency is the Nicaraguan cordoba (NIO / C$). ALWAYS read this skill before processing any Nicaragua payroll.
 version: 0.1
 jurisdiction: NI
 tax_year: 2025
-last_updated: 2026-06-04
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - payroll-workflow-base
 category: payroll
 tier: 2

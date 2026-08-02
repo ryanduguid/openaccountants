@@ -3,8 +3,9 @@ name: sa-withholding-tax
 description: "Use this skill whenever asked to compute, classify, or review Saudi Arabian Withholding Tax (WHT) obligations payable by a resident payer on payments to non-resident recipients for services, rent, royalties, dividends, interest, management fees, insurance premiums, freight, telecommunications, or other in-scope categories under Article 68 of the Saudi Income Tax Law and Articles 63–67 of the Implementing Regulations. Trigger on phrases like \"Saudi WHT\", \"ZATCA withholding\", \"5% WHT KSA\", \"15% WHT KSA\", \"20% management fee WHT\", \"Article 68 Saudi\", \"treaty rates Saudi\", \"WHT Saudi Arabia\", \"Saudi royalty WHT\", \"Saudi dividend withholding\", \"non-resident WHT Saudi\", \"ZATCA monthly WHT return\", \"TRC Saudi treaty\", \"Saudi PE risk WHT\", or any request involving the classification, deduction, or remittance of Saudi withholding tax. This skill covers WHT under the Income Tax Law (Royal Decree No. M/1 dated 15/1/1425H, as amended) and the Implementing Regulations issued by the Zakat, Tax and Customs Authority (ZATCA, formerly GAZT), including the Tier 1 standard rates (services 5%, rent 5%, royalties 15%, dividends 5%, interest 5%, management fees 20%, insurance/reinsurance premiums 5%, international telecommunications 5%, air/sea freight 5%), Tier 2 treaty-rate reductions across Saudi Arabia's growing treaty network (UK, France, China, India, Pakistan, etc.), mixed-source transactions, capital gains by non-residents on Saudi-source assets, and the interaction with the Pillar Two top-up regime. Out of scope: Zakat (Saudi/GCC-owned entity charge — see sa-zakat); Corporate Income Tax on resident non-GCC-owned entities (see sa-corporate-tax); VAT (see saudi-arabia-vat); E-invoicing (see saudi-einvoice); upstream petroleum special regime; expatriate employee levy; the GCC selective tax. ALWAYS read this skill before touching any Saudi WHT work."
 jurisdiction: SA
 tax_year: 2025
-last_updated: 2026-05-27
-verified_by: Mehran Habib
+last_updated: 2026-07-13
+reviewed_by: Mehran Habib
+review_status: current
 tier: 1
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---

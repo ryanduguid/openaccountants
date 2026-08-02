@@ -7,15 +7,20 @@
 
 1. `foundation.md`
 2. `intake.md`
-3. `ke-company-formation.md`
-4. `ke-corporate-income-tax.md`
-5. `ke-income-tax-2.md`
-6. `ke-income-tax.md`
-7. `ke-nhif-nssf.md`
-8. `ke-tax-overview.md`
-9. `kenya-vat.md`
-10. `the-burden-of-proof-in-tax-cases.md`
-11. `company-formation-workflow-base.md`
+3. `audit-quality-assurance-aqa.md`
+4. `export-declaration-requirement-for-imported-goods.md`
+5. `ke-company-formation.md`
+6. `ke-corporate-income-tax.md`
+7. `ke-income-tax-2.md`
+8. `ke-income-tax.md`
+9. `ke-nhif-nssf.md`
+10. `ke-tax-overview.md`
+11. `kenya-vat.md`
+12. `non-resident-rental-income-tax-on-kenyan-property.md`
+13. `set-up-your-company-in-kenya-we-handle-it-from-abroad.md`
+14. `tax-amnesty.md`
+15. `the-burden-of-proof-in-tax-cases.md`
+16. `company-formation-workflow-base.md`
 
 ## Also known as
 

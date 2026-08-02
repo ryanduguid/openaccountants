@@ -1,11 +1,11 @@
 ---
 name: rwanda-payroll
-description: >
+description: Use this skill whenever asked about Rwanda payroll processing for employed persons. Trigger on phrases like "Rwanda payroll", "PAYE Rwanda", "RRA PAYE", "RSSB contribution", "pension Rwanda", "occupational hazards Rwanda", "maternity contribution Rwanda", "RAMA", "medical insurance Rwanda", "CBHI", "Mutuelle de Santé", "Ejo Heza", "casual labour Rwanda", "net salary Rwanda", "tax withholding Rwanda", "employer RSSB", "minimum wage Rwanda", "gross to net Rwanda", "salary calculation Rwanda", "RWF payroll", "Frw salary", or any question about computing employee pay, income-tax (PAYE) withholding, or social-security contributions for Rwanda-based employees. This skill covers PAYE income-tax withholding by the employer, RSSB pension, occupational hazards, maternity leave benefits, medical insurance and CBHI contributions, casual-labour withholding, minimum wage, and filing obligations to RRA/RSSB. ALWAYS read this skill before processing any Rwanda payroll.
 version: 0.1
 jurisdiction: RW
 tax_year: 2025
-last_updated: 2026-06-04
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - payroll-workflow-base
 category: payroll
 tier: 2

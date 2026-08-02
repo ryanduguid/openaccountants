@@ -1,11 +1,11 @@
 ---
 name: on-individual-return
-description: >
+description: Use this skill whenever asked about Ontario provincial income tax for a self-employed sole proprietor. Trigger on phrases like "Ontario tax", "ON428", "Ontario income tax", "Ontario surtax", "Ontario Health Premium", "OHP", "OEPTC", "Ontario trillium", "provincial tax Ontario", or any question about computing Ontario provincial tax. ALWAYS read this skill before touching any Ontario provincial tax work.
 version: 2.0
 jurisdiction: CA
 tax_year: 2025
-last_updated: 2026-04-13
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - income-tax-workflow-base
 category: international
 tier: 2

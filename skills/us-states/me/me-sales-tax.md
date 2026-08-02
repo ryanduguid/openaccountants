@@ -4,8 +4,8 @@ description: Use this skill whenever asked about Maine sales and use tax. Trigge
 version: 2.0
 jurisdiction: US-ME
 tax_year: 2025
-last_updated: 2026-05-22
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---

@@ -1,11 +1,11 @@
 ---
 name: global-saas-vendors
-description: >
+description: Deterministic lookup table of 100+ common SaaS/tech vendors that appear on freelancer bank statements worldwide. Maps bank statement text to vendor, category, default classification, and VAT/GST treatment for instant transaction recognition.
 version: 0.1
 jurisdiction: GLOBAL
 tax_year: 2025
-last_updated: 2026-04-13
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: []
 category: patterns
 tier: 2

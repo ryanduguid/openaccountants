@@ -1,11 +1,12 @@
 ---
 name: dominican-republic-payroll
-description: >
+description: Use this skill whenever asked about Dominican Republic payroll processing for employed persons. Trigger on phrases like "Dominican Republic payroll", "nómina República Dominicana", "TSS", "retención ISR nómina", "descuentos de ley RD", "sueldo neto Dominican Republic", "net salary Dominican Republic", "AFP SFS descuento", "regalía pascual", "salario de navidad", "INFOTEP", "salario mínimo RD", "gross to net Dominican Republic", "employer cost Dominican Republic", or any question about computing employee pay, income-tax withholding (retención de ISR), or social-security (TSS) contributions for Dominican Republic-based employees. This skill covers ISR monthly withholding (DGII escala salarial), TSS contributions (AFP, SFS, SRL, INFOTEP), the regalía pascual (13th salary), minimum wage, payslip and monthly filing obligations. ALWAYS read this skill before processing any Dominican Republic payroll.
 version: 0.1
 jurisdiction: DO
 tax_year: 2025
-last_updated: 2026-06-04
-verified_by: Miguel Lantigua
+last_updated: 2026-07-13
+reviewed_by: Miguel Lantigua
+review_status: current
 depends_on: - payroll-workflow-base
 category: payroll
 tier: 2

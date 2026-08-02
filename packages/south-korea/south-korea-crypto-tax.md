@@ -1,14 +1,15 @@
 ---
 name: south-korea-crypto-tax
-description: >
+description: Use this skill whenever asked about South Korea cryptocurrency or virtual asset taxation. Trigger on phrases like "crypto tax Korea", "Bitcoin Korea tax", "가상자산 과세", "virtual asset tax Korea", "cryptocurrency gains Korea", "crypto income Korea", "Upbit tax", "Bithumb tax", "staking Korea", "mining income Korea", "NFT tax Korea", "NTS crypto", "종합소득세 crypto", "Korean crypto regulation", "virtual asset users protection act", or any question about the income tax treatment of cryptocurrency, tokens, or digital assets for Korean tax residents. Covers the Income Tax Act provisions on virtual asset income, NTS reporting requirements, exchange obligations, cost basis rules, and CARF implementation. ALWAYS read this skill before touching any South Korea crypto work.
 version: 1.0
 jurisdiction: KR
 tax_year: 2025
-last_updated: 2026-05-23
-verified_by: Yeong Min Lee
+last_updated: 2026-07-13
+reviewed_by: Yeong Min Lee
+review_status: current
 depends_on: - south-korea-income-tax
 category: crypto
-tier: 2
+tier: 1
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 

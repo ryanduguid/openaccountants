@@ -1,11 +1,11 @@
 ---
 name: ua-formation
-description: >
+description: Use this skill whenever asked about registering or forming a business in Ukraine for a self-employed person. Trigger on phrases like "register a FOP", "how do I become a ФОП", "start a business in Ukraine", "open a sole proprietorship Ukraine", "Diia registration", "ТОВ vs ФОП", "LLC vs sole proprietor Ukraine", "choose КВЕД codes", "single tax election", "register for VAT Ukraine", "open a business bank account Ukraine", "close my ФОП", or any question about the formation, registration, tax-system choice at start-up, or deregistration of a Ukrainian sole proprietor (ФОП) or company (ТОВ). Covers registering via Diia or a state registrar/notary, documents required, choosing КВЕД activity codes, electing the single-tax group (1/2/3) vs the general system, the ₴1,000,000 VAT threshold, ЄСВ registration, opening a bank account, the ФОП-vs-ТОВ decision, and closing a ФОП. ALWAYS read this skill before any Ukrainian business-formation work.
 version: 1.0
 jurisdiction: UA
 tax_year: 2026
-last_updated: 2026-05-23
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - income-tax-workflow-base
 category: international
 tier: 2

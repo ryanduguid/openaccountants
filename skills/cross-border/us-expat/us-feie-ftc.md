@@ -1,11 +1,12 @@
 ---
 name: us-feie-ftc
-description: >
+description: US federal tax for citizens and green-card holders living abroad: the Foreign Earned Income Exclusion (IRC §911, Form 2555) versus the Foreign Tax Credit (IRC §901/§904, Form 1116). Covers the bona-fide-residence and physical-presence tests, the foreign housing exclusion, the §911 election and its revocation lock-out, the stacking rule, and the FEIE-versus-FTC decision. Produces a working paper and a reviewer brief — not a filed return. MUST load alongside cross-border-tax-workflow-base.
 version: 0.1
 jurisdiction: US
 tax_year: 2025
-last_updated: 2026-05-31
-verified_by: James Wallach
+last_updated: 2026-07-13
+reviewed_by: James Wallach
+review_status: current
 depends_on: - cross-border-tax-workflow-base
 category: international
 tier: 2

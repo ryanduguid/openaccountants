@@ -1,11 +1,11 @@
 ---
 name: italy-financial-statements
-description: >
+description: Use this skill when preparing, reviewing, or advising on annual financial statements (bilancio d'esercizio) for an Italian company. Trigger on phrases like "bilancio", "deposito bilancio", "Camera di Commercio", "Registro delle Imprese", "XBRL Italy", "codice civile 2423", "bilancio abbreviato", "micro imprese", "OIC", "revisione legale", "collegio sindacale", "nota integrativa", or any question about preparing and filing statutory accounts under Italian civil code. Covers OIC standards, size thresholds, required statements, formats, notes, filing deadlines, and audit requirements.
 version: 1.0
 jurisdiction: IT
 tax_year: 2025
-last_updated: 2026-05-23
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - financial-statements-workflow-base
 category: financial-statements
 tier: 2

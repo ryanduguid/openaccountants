@@ -3,8 +3,9 @@ name: ng-return-assembly
 description: Use this skill whenever asked to assemble, finalize, or package a Nigerian annual tax return. Trigger on phrases like "assemble Nigerian return", "Nigeria SPT package", "final review Nigerian tax", "FIRS Tax Pro-Max submission", "year-end Nigeria", "prepare CIT return", "prepare PIT return", "Nigeria filing package", "Form A annual return", "Form H1 reconciliation", or "Nigerian working paper". This is the capstone orchestrator that pulls together outputs from ng-cit, ng-personal-income-tax, ng-paye, ng-statutory-deductions, ng-wht, ng-cgt, ng-vat, ng-payroll, and ng-formation into a single unified working paper plus payment and filing instructions. It does not recompute anything itself — it reconciles upstream outputs, builds the line-by-line return working paper, generates Tax Pro-Max / Remita payment instructions, and produces a reviewer brief and taxpayer action list. ALWAYS read this skill last — it's the capstone.
 jurisdiction: NG
 tax_year: 2025
-last_updated: 2026-05-27
-verified_by: Omolola Fasasi 
+last_updated: 2026-07-13
+reviewed_by: Omolola Fasasi
+review_status: current
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---

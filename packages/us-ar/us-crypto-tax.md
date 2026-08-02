@@ -4,10 +4,11 @@ description: ALWAYS USE THIS SKILL when a user asks about cryptocurrency taxatio
 version: 1.0
 jurisdiction: US
 tax_year: 2025
-last_updated: 2026-05-23
-verified_by: Christopher Aryee
+last_updated: 2026-07-13
+reviewed_by: James Wallach
+review_status: current
 category: federal
-tier: 2
+tier: 1
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 

@@ -1,11 +1,11 @@
 ---
 name: japan-tax-optimization
-description: >
+description: Use this skill when advising on LEGAL tax minimization strategies for Japanese taxpayers — individuals, sole proprietors (kojin jigyō), and small corporations (KK/GK). Trigger on phrases like "reduce my tax Japan", "tax planning", "blue return", "ao-iro shinkoku", "furusato nozei", "iDeCo", "NISA", "sole proprietor vs corporation", "shakai hoken", "social insurance optimization", "consumption tax", or any question about legally minimizing Japanese income tax. Covers entity selection, blue return optimization, deductions, capital allowances, loss utilization, timing, consumption tax, social insurance, and red lines. ALWAYS read this skill before giving Japanese tax optimization advice.
 version: 1.0
 jurisdiction: JP
 tax_year: 2025
-last_updated: 2026-05-23
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - bookkeeping-workflow-base
 category: tax-optimization
 tier: 2

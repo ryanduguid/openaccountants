@@ -1,14 +1,15 @@
 ---
 name: br-estimated-tax
-description: >
+description: Use esta skill sempre que for solicitado a tratar de pagamentos mensais estimados de imposto de renda no Brasil (Carnê-Leão) para profissionais autônomos, freelancers ou profissionais que recebem rendimentos de pessoas físicas ou de fontes do exterior. Cobre o cronograma de pagamento mensal, a tabela progressiva, despesas dedutíveis (livro caixa), o procedimento de pagamento via DARF 0190, multas por atraso e a interação com a declaração anual (DIRPF). SEMPRE leia esta skill antes de qualquer trabalho de imposto estimado no Brasil. Trigger also on: "Carne-Leao", "carne-leao", "estimated tax Brazil", "Brazilian monthly tax", "DARF 0190", "recolhimento mensal obrigatorio", "livro caixa", "autonomous income tax", or any question about monthly advance income tax obligations under Brazilian tax law.
 version: 2.0
 jurisdiction: BR
 tax_year: 2025
-last_updated: 2026-04-13
-verified_by: Ariane Marrocos
+last_updated: 2026-07-13
+reviewed_by: Ariane Marrocos
+review_status: current
 depends_on: - income-tax-workflow-base
 category: international
-tier: 2
+tier: 1
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 

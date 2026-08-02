@@ -1,11 +1,11 @@
 ---
 name: slovenia-social-contributions
-description: >
+description: Use this skill whenever asked about Slovenia social security contributions (prispevki za socialno varnost) for employees, employers, self-employed (samostojni podjetnik / s.p.), or pensioners. Trigger on phrases like "how much social security in Slovenia", "Slovenian payroll contributions", "prispevki za socialno varnost", "PIZ pension contribution", "ZZZS health contribution", "long-term care contribution Slovenia", "ZDOsk-1 LTC", "compulsory health contribution OZP", "REK-O form", "M-1 registration", "employer cost Slovenia", "gross to net Slovenia", "samostojni podjetnik prispevki", "self-employed contribution base Slovenia", or any question about Slovenian SSC obligations, rates, bases, ceilings, or deadlines. Also trigger when classifying bank statement transactions that relate to FURS contribution debits, ZPIZ/ZZZS payments, or eDavki/SPOT social-security transfers from NLB, NKBM, SKB, Intesa Sanpaolo, or other Slovenian banks. Also trigger when preparing payroll or an informative tax calculation (informativni izracun dohodnine) where contribution amounts and PIT withholding interact. This skill covers employee/employer contribution rates, the 1 July 2025 long-term care change, the flat OZP health contribution, the self-employed min/max base, REK-O and M-1 forms, payment deadlines, penalties, interaction with personal income tax (dohodnina), bank statement classification patterns, and edge cases. ALWAYS read this skill before touching any Slovenian SSC or payroll work.
 version: 0.1
 jurisdiction: SI
 tax_year: 2025
-last_updated: 2026-06-04
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - social-contributions-workflow-base
 category: international
 tier: 2

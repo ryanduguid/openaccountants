@@ -1,11 +1,11 @@
 ---
 name: el-salvador-payroll
-description: >
+description: Use this skill whenever asked about El Salvador payroll processing for employed persons. Trigger on phrases like "El Salvador payroll", "planilla El Salvador", "ISSS", "AFP Crecer", "AFP Confía", "retención de renta", "ISR planilla", "descuentos de ley", "sueldo neto El Salvador", "net salary El Salvador", "aguinaldo", "INSAFORP", "salario mínimo El Salvador", "gross to net El Salvador", "employer cost El Salvador", "cotización ISSS AFP", or any question about computing employee pay, income-tax withholding (retención), or social-security/pension contributions for El Salvador-based employees. This skill covers ISR monthly withholding (Decreto Ejecutivo 10, in force 8 May 2025), ISSS health contributions (employee + employer, $1,000 base cap), AFP pension contributions, the INSAFORP training levy, minimum wage, the mandatory aguinaldo (Christmas bonus), vacation, payslip and monthly filing obligations. ALWAYS read this skill before processing any El Salvador payroll.
 version: 0.1
 jurisdiction: SV
 tax_year: 2025
-last_updated: 2026-06-04
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - payroll-workflow-base
 category: payroll
 tier: 2

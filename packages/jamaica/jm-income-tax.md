@@ -3,8 +3,8 @@ name: jm-income-tax
 description: Use this skill whenever asked about Jamaica personal income tax for self-employed individuals or employees with additional income. Trigger on phrases like "how much tax do I pay in Jamaica", "S04 return", "IT01 return", "chargeable income", "tax-free threshold", "NIS contributions", "NHT contributions", "Education Tax", "HEART levy", "PAYE Jamaica", "self-employed tax Jamaica", "TAJ filing", "statutory deductions Jamaica", or any question about filing or computing income tax for a self-employed person or an employee with other income sources in Jamaica. Also trigger when computing payroll deductions, quarterly estimated tax (S04A), NIS ceiling, NHT contributions, Education Tax, or capital allowances for a Jamaican taxpayer. This skill covers income tax rates and brackets, the tax-free threshold (including the April 2025 mid-year increase), statutory contributions (NIS, NHT, Education Tax, HEART), allowable deductions, capital allowances, filing forms and deadlines, penalties, and GCT registration requirements for small businesses. ALWAYS read this skill before touching any Jamaica income tax work.
 jurisdiction: JM
 tax_year: 2025
-last_updated: 2026-06-25
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---

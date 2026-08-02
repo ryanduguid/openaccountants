@@ -1,11 +1,11 @@
 ---
 name: uzbekistan-social-contributions
-description: >
+description: Use this skill whenever asked about Uzbekistan employer social tax (social insurance contributions), payroll withholding, personal income tax (PIT), or the Individual Accumulated Pension Fund (INPS) for employees and employers in the Republic of Uzbekistan. Trigger on phrases like "how much social tax do I pay in Uzbekistan", "Uzbek payroll tax", "social insurance contributions Uzbekistan", "INPS pension", "izhtimoiy soliq", "soliq.uz social tax", "12% social tax", "Uzbekistan PIT withholding", "do I withhold pension in Uzbekistan", "budget organisation social tax 25%", "Uzbek minimum wage payroll", or any question about employer/employee statutory contributions in Uzbekistan. Also trigger when classifying bank statement transactions that relate to Soliq (State Tax Committee) debits, social tax remittances, PIT withholding payments, or pension fund transfers from Uzbek banks (NBU, Ipoteka Bank, Asaka Bank, Kapitalbank, Hamkorbank, etc.). This skill covers employer social tax rates (12% private / 25% budget / 7% / 4.7% / 1% incentives), the flat 12% PIT, the 0.1% INPS carve-out, monthly reporting deadlines, residency rules, minimum wage and BCU, bank statement classification patterns, and edge cases. ALWAYS read this skill before touching any Uzbekistan social-tax or payroll work.
 version: 0.1
 jurisdiction: UZ
 tax_year: 2025
-last_updated: 2026-06-04
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - social-contributions-workflow-base
 category: international
 tier: 2

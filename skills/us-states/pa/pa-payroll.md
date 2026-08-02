@@ -3,8 +3,8 @@ name: pa-payroll
 description: Tier 2 Pennsylvania content skill for employer payroll compliance covering tax year 2025. Includes the 3.07% flat PIT, Local Earned Income Tax under Act 32 with employer withholding by employee-residence PSD code (rates 0.5-3.9%), Local Services Tax (typically $52/year), reciprocal agreements with NJ/OH/IN/MD/VA/WV that exempt non-resident employees from state withholding, Philadelphia and Pittsburgh wage taxes (separate from state PIT under Sterling Act), SUC wage base $10,000 with rates 1.4-9.1%, REV-419 state withholding form, the Construction Workplace Misclassification Act, and quarterly PA-501/UC-2 combined filings.
 jurisdiction: US-PA
 tax_year: 2025
-last_updated: 2026-05-27
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---

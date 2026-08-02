@@ -1,11 +1,11 @@
 ---
 name: kosovo-payroll
-description: >
+description: Use this skill whenever asked about Kosovo payroll processing for employed persons. Trigger on phrases like "Kosovo payroll", "Kosova paga", "tatimi mbi pagat", "personal income tax Kosovo", "tatimi në të ardhura personale", "withholding tax Kosovo", "mbajtja në burim", "pension contribution Kosovo", "kontributi pensional", "KPST", "Trusti pensional", "ATK", "TAK", "Administrata Tatimore e Kosovës", "EDI declaration", "WM form Kosovo", "net salary Kosovo", "paga neto", "gross to net Kosovo", "PAYE Kosovo", "employer contributions Kosovo", "minimum wage Kosovo", "paga minimale", "secondary employer Kosovo", "benefit in kind Kosovo", or any question about computing employee pay, withholding personal income tax, or mandatory pension contributions for Kosovo-based employees. This skill covers PIT monthly withholding (progressive 0%/8%/10% bands for the primary employer, flat 10% for secondary employers), mandatory pension contributions (5% employee + 5% employer to KPST), voluntary supplementary pension, benefit-in-kind thresholds, minimum wage, new-hire reporting, and the monthly WM declaration and annual reconciliation. ALWAYS read this skill before processing any Kosovo payroll.
 version: 0.1
 jurisdiction: XK
 tax_year: 2025
-last_updated: 2026-06-04
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - payroll-workflow-base
 category: payroll
 tier: 2

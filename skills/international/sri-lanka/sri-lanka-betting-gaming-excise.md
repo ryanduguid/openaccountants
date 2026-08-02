@@ -3,8 +3,9 @@ name: sri-lanka-betting-gaming-excise
 description: Sri Lanka betting & gaming levy, excise duty and customs import duties — rates and obligations for Y/A 2025/26 (with 2026 amendments).
 jurisdiction: LK
 tax_year: 2025
-last_updated: 2026-06-25
-verified_by: Lal kumarasiri
+last_updated: 2026-07-13
+reviewed_by: Lal kumarasiri
+review_status: current
 tier: 1
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---

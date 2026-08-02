@@ -1,11 +1,11 @@
 ---
 name: malta-payroll
-description: >
+description: Use this skill whenever asked about Malta payroll processing for employed persons. Trigger on phrases like "Malta payroll", "FSS deduction", "employee SSC", "Class 1 contributions", "FS5", "FS3", "FS7", "payslip Malta", "net salary Malta", "PAYE Malta", "tax withholding Malta", "employer SSC Malta", "Maternity Trust Fund", "COLA Malta", "minimum wage Malta", "overtime Malta", "gross to net Malta", "salary calculation Malta", or any question about computing employee pay, withholding tax, or social security contributions for Malta-based employees. This skill covers FSS income tax withholding, Class 1 SSC (employee and employer), statutory bonuses, minimum wage, mandatory benefits, payslip requirements, and filing obligations. ALWAYS read this skill before processing any Malta payroll.
 version: 1.0
 jurisdiction: MT
 tax_year: 2026
-last_updated: 2026-05-23
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - payroll-workflow-base
 category: payroll
 tier: 2

@@ -1,11 +1,12 @@
 ---
 name: us-capital-gains
-description: >
+description: US federal capital gains tax for residents: short-term vs long-term rates, 2025 0%/15%/20% LTCG brackets by filing status, 3.8% NIIT thresholds and Form 8960 computation, §1202 QSBS including post-OBBBA issuance-date rules, §1031 like-kind exchange, installment sales, wash sale rule, Schedule D, and state-tax caveats. Trigger on: "US capital gains tax", "long-term capital gains US", "Schedule D", "LTCG rate US", "NIIT net investment income tax", "QSBS exclusion", "1031 exchange", "sell US shares tax", "US CGT resident", "capital loss carryforward US". For non-residents see us-nonresident-cgt.
 version: 1.0
 jurisdiction: US
 tax_year: 2025
-last_updated: 2026-07-10
-verified_by: James Wallach
+last_updated: 2026-07-13
+reviewed_by: James Wallach
+review_status: current
 category: international
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)

@@ -4,8 +4,8 @@ description: Tier 2 California content skill for Form 3853 (Health Coverage Exem
 version: 0.2
 jurisdiction: US-CA
 tax_year: 2025
-last_updated: 2026-07-09
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---

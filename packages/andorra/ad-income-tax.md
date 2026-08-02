@@ -3,8 +3,8 @@ name: ad-income-tax
 description: Use this skill whenever asked about Andorra personal income tax (IRPF — Impost sobre la Renda de les Persones Físiques) for residents or self-employed individuals. Trigger on phrases like "how much tax do I pay in Andorra", "IRPF Andorra", "income tax return Andorra", "declaració IRPF", "self-employed Andorra", "autònom Andorra", "compte propi", "CASS contributions", "social security Andorra", "move to Andorra taxes", "Andorra tax residency", "183 days Andorra", or any question about computing, filing, or planning income tax for an Andorran tax resident. Also trigger when reviewing IRPF deductions (housing, dependants, education), CASS social security brackets, IGI registration thresholds, or non-resident withholding (IRNR) on Andorra-source income. This skill covers IRPF rates and brackets, the bonificació mechanism, savings base exemption, CASS contribution tables for employed and self-employed workers, IGI (indirect tax) obligations, penalties, real-estate capital gains, and double taxation agreements. ALWAYS read this skill before touching any Andorra income tax work.
 jurisdiction: AD
 tax_year: 2025
-last_updated: 2026-06-25
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---

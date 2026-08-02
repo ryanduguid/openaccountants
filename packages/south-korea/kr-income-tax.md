@@ -1,14 +1,15 @@
 ---
 name: kr-income-tax
-description: >
+description: Use this skill whenever asked about South Korean income tax for self-employed individuals. Trigger on phrases like "comprehensive income tax", "종합소득세", "global income tax Korea", "사업소득", "business income Korea", "간편장부", "simplified bookkeeping", "복식부기", "double-entry Korea", "local income tax surtax", "estimated tax Korea", "Korean income tax return", "Hometax Korea", "Kakao Pay income", "Naver Pay settlement", "KakaoBank statement", or any question about filing or computing income tax for a Korean freelancer or self-employed person. This skill covers progressive brackets (6--45%), local income tax (10% surtax), bookkeeping methods, standard deduction rates, personal deductions, estimated tax, filing deadlines, and penalties. ALWAYS read this skill before touching any Korean income tax work.
 version: 2.0
 jurisdiction: KR
 tax_year: 2025
-last_updated: 2026-04-13
-verified_by: Yeong Min Lee
+last_updated: 2026-07-13
+reviewed_by: Yeong Min Lee
+review_status: current
 depends_on: - income-tax-workflow-base
 category: international
-tier: 2
+tier: 1
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 

@@ -1,11 +1,11 @@
 ---
 name: montenegro-income-tax
-description: >
+description: Use this skill whenever asked about Montenegro personal income tax (porez na dohodak fizičkih lica) for self-employed individuals, sole proprietors (preduzetnik), and employees. Trigger on phrases like "how much tax do I pay in Montenegro", "Montenegro income tax", "GPP-FL", "IOPPD", "prirez", "municipal surtax", "Europe Now", "Evropa sad", "self-employed tax Montenegro", "Montenegro payroll", "pension contribution Montenegro", "PIO", "Montenegro net salary", or any question about computing or filing personal income tax, payroll withholding, or social contributions for an individual or sole proprietor in Montenegro. Also trigger when preparing or reviewing a GPP-FL annual return or an IOPPD monthly payroll report, computing employee/employer social contributions, or advising on the progressive 0/9/15% rate structure and the 13/15% municipal surtax. This skill covers PIT rate bands (employment monthly vs self-employment annual), the post-Europe-Now-2 contribution structure, municipal surtax, residency, VAT registration threshold, forms, and deadlines. ALWAYS read this skill before touching any Montenegro income tax work.
 version: 0.1
 jurisdiction: ME
 tax_year: 2025
-last_updated: 2026-06-04
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - income-tax-workflow-base
 category: international
 tier: 2

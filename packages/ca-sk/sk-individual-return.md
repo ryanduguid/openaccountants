@@ -1,11 +1,11 @@
 ---
 name: sk-individual-return
-description: >
+description: Use this skill whenever asked about Saskatchewan provincial individual income tax. Trigger on phrases like "Saskatchewan tax", "SK provincial tax", "Saskatchewan T1", "Saskatchewan brackets", "PST Saskatchewan", "Saskatchewan credits", or any question about computing Saskatchewan provincial tax for an individual return. This skill covers Saskatchewan's three-bracket tax system, PST at 6%, provincial credits, and filing requirements. ALWAYS read this skill before touching any Saskatchewan individual tax return work.
 version: "1.0"
 jurisdiction: CA
 tax_year: 2025
-last_updated: 2026-05-23
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 category: international
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)

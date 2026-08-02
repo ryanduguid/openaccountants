@@ -1,11 +1,11 @@
 ---
 name: pk-return-assembly
-description: >
+description: Use this skill whenever asked to assemble, finalize, or package a Pakistani annual tax return. Trigger on phrases like "Pakistan tax return assembly", "FBR IRIS final filing", "year-end Pakistan", "ATL filing", "Section 114 return", "assemble Pakistan return", "finalize PK return", "Pakistan working paper", or "IRIS filing package". This is the capstone orchestrator that pulls together outputs from pk-income-tax, pk-corporate-tax, pk-withholding-tax, pk-sales-tax-federal, pk-sales-tax-services, pk-payroll-eobi, pk-cgt, and pk-formation into a single unified working paper plus payment and filing instructions. It does not recompute anything itself — it reconciles upstream outputs, builds the line-by-line IRIS working paper, generates PSID payment instructions for FBR e-payment via designated banks, and produces a reviewer brief and taxpayer action list. ALWAYS read this skill last when finalizing a Pakistani tax return.
 version: 0.1
 jurisdiction: PK
 tax_year: 2025
-last_updated: 2026-05-27
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - pk-freelance-intake
 category: orchestrator
 tier: 2

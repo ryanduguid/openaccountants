@@ -1,11 +1,11 @@
 ---
 name: el-salvador-income-tax
-description: >
+description: Use this skill whenever asked about El Salvador personal income tax (Impuesto sobre la Renta) for self-employed individuals and individuals. Trigger on phrases like "how much income tax do I pay in El Salvador", "Impuesto sobre la Renta", "ISR", "declaración de renta", "F-11", "F-14", "retención de renta", "pago a cuenta", "honorarios", "10% withholding professional fees", "ISSS", "AFP", "self-employed tax El Salvador", "renta El Salvador", or any question about filing or computing income tax for a self-employed individual or salaried person in El Salvador. Also trigger when preparing or reviewing an F-11 annual return, computing deductible expenses or the 10% professional-fee withholding, or advising on the progressive renta table, social-security (ISSS) or pension (AFP) contributions. This skill covers the progressive ISR table (0/10/20/30%), the 2025 reform raising the exempt threshold to USD 6,600, monthly retención tables, ISSS and AFP contributions, the 10% honorarios withholding, deductions, filing forms and penalties, and interaction with IVA. ALWAYS read this skill before touching any El Salvador income tax work.
 version: 0.1
 jurisdiction: SV
 tax_year: 2025
-last_updated: 2026-06-04
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - income-tax-workflow-base
 category: international
 tier: 2

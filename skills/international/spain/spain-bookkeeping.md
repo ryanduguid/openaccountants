@@ -1,11 +1,11 @@
 ---
 name: spain-bookkeeping
-description: >
+description: Use this skill whenever asked about bookkeeping, chart of accounts, Plan General de Contabilidad (PGC), financial statements, P&L format, balance sheet layout, bank reconciliation, expense classification, asset capitalisation, or day-to-day accounting for a Spanish entity. Trigger on phrases like "PGC", "Plan General de Contabilidad", "cuadro de cuentas", "chart of accounts Spain", "balance", "cuenta de pérdidas y ganancias", "PYMES accounting", "microempresa Spain", "capitalise or expense Spain", "amortización", "depreciation Spain", "bank reconciliation Spain", "autónomo bookkeeping", "bookkeeping Spain", or any question about recording transactions, classifying expenses, or preparing accounts under Spanish law. ALWAYS read this skill before touching any bookkeeping work for Spain.
 version: 1.0
 jurisdiction: ES
 tax_year: 2025
-last_updated: 2026-05-23
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - bookkeeping-workflow-base
 category: bookkeeping
 tier: 2

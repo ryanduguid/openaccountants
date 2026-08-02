@@ -1,11 +1,11 @@
 ---
 name: fr-social-contributions
-description: >
+description: Use this skill whenever asked about French social contributions (cotisations sociales URSSAF) for self-employed individuals (travailleurs independants), including professions liberales and BNC taxpayers. Trigger on phrases like "cotisations URSSAF", "charges sociales independant", "CSG CRDS freelance France", "CIPAV retraite", "ACRE reduction", "social contributions France", "cotisations minimales", "prelevement URSSAF", "cotisations trimestrielles", or any question about French self-employed social security. Also trigger when classifying bank statement transactions showing URSSAF prelevements, CIPAV debits, or cotisations trimestrielles. ALWAYS read this skill before touching any French social contribution work.
 version: 2.0
 jurisdiction: FR
 tax_year: 2025
-last_updated: 2026-04-13
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - social-contributions-workflow-base
 category: international
 tier: 2

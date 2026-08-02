@@ -1,11 +1,11 @@
 ---
 name: croatia-payroll
-description: >
+description: Use this skill whenever asked about Croatia payroll processing for employed persons. Trigger on phrases like "Croatia payroll", "Hrvatska plaća", "JOPPD form", "income tax Croatia", "porez na dohodak", "mirovinsko osiguranje", "pension Pillar I Pillar II", "I. stup II. stup", "zdravstveno osiguranje", "health contribution Croatia", "net salary Croatia", "neto plaća", "PAYE Croatia", "tax withholding Croatia", "employer contributions Croatia", "doprinosi", "minimum wage Croatia", "minimalna plaća", "personal allowance Croatia", "osobni odbitak", "gross to net Croatia", "bruto neto", "ePorezna", "Porezna uprava", "predujam poreza na dohodak", or any question about computing employee pay, withholding income tax, or mandatory social contributions for Croatia-based employees. This skill covers PAYE income tax withholding (two-rate local system), employee pension contributions (Pillar I + Pillar II), the employer health insurance contribution, the personal allowance, dependent-child allowances, minimum wage, contribution floors and ceilings, and JOPPD filing obligations. ALWAYS read this skill before processing any Croatia payroll.
 version: 0.1
 jurisdiction: HR
 tax_year: 2025
-last_updated: 2026-06-04
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - payroll-workflow-base
 category: payroll
 tier: 2

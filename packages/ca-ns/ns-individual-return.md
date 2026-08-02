@@ -1,11 +1,11 @@
 ---
 name: ns-individual-return
-description: >
+description: Use this skill whenever asked about Nova Scotia provincial individual income tax. Trigger on phrases like "Nova Scotia tax", "NS provincial tax", "Nova Scotia T1", "Nova Scotia brackets", "HST Nova Scotia", "Nova Scotia credits", "Nova Scotia surtax", or any question about computing Nova Scotia provincial tax for an individual return. This skill covers Nova Scotia's five-bracket tax system, HST at 15%, provincial credits, and filing requirements. ALWAYS read this skill before touching any Nova Scotia individual tax return work.
 version: "1.0"
 jurisdiction: CA
 tax_year: 2025
-last_updated: 2026-05-23
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 category: international
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)

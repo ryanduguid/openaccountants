@@ -1,11 +1,11 @@
 ---
 name: guatemala-social-contributions
-description: >
+description: Use this skill whenever asked about Guatemala social-security contributions (IGSS) and payroll income-tax withholding (ISR sobre rentas del trabajo) for employees and employers. Trigger on phrases like "how much IGSS do I pay", "cuota laboral", "cuota patronal", "IGSS employee rate", "IGSS employer rate", "INTECAP IRTRA", "Guatemala payroll deductions", "ISR retencion empleados", "ISR planilla", "salario minimo Guatemala", "bonificacion incentivo", "Q250 bono", "constancia de retencion", "SAT-1331", "crédito por IVA planilla", or any question about Guatemalan payroll, social contributions, or employee income-tax withholding. Also trigger when classifying bank statement transactions that relate to IGSS debits, INTECAP/IRTRA levies, or SAT income-tax payments from Banco Industrial, Banrural, BAM, G&T Continental, or other Guatemalan banks. This skill covers the 15.50% combined IGSS split (4.83% employee / 10.67% employer + 2% parafiscal), the Q250 bonificación incentivo, the 2026 minimum wage, ISR brackets and deductions (including the Decreto 13-2026 reform), forms, deadlines, penalties, bank-statement classification, and edge cases. ALWAYS read this skill before touching any Guatemalan payroll or IGSS work.
 version: 0.1
 jurisdiction: GT
 tax_year: 2026
-last_updated: 2026-06-04
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - social-contributions-workflow-base
 category: international
 tier: 2

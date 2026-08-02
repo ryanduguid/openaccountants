@@ -1,11 +1,11 @@
 ---
 name: germany-financial-statements
-description: >
+description: Use this skill when preparing, reviewing, or advising on annual financial statements (Jahresabschluss) for a German company. Trigger on phrases like "Jahresabschluss", "HGB", "Handelsgesetzbuch", "Bundesanzeiger", "Unternehmensregister", "Offenlegung", "Bilanz", "GuV", "GmbH accounts", "Kapitalgesellschaft", "audit Germany", "Kleinstkapitalgesellschaft", "kleine Kapitalgesellschaft", or any question about preparing and filing statutory accounts under German commercial law. Covers HGB frameworks, size thresholds, required statements, formats, notes, filing deadlines, and audit requirements.
 version: 1.0
 jurisdiction: DE
 tax_year: 2025
-last_updated: 2026-05-23
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - financial-statements-workflow-base
 category: financial-statements
 tier: 2

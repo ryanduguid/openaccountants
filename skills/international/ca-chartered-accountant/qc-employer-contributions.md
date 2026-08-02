@@ -3,8 +3,8 @@ name: qc-employer-contributions
 description: Use this skill whenever asked about Quebec-specific employer contributions — CNESST (CSST), HSF (Health Services Fund / Fonds des services de santé), QPIP (Quebec Parental Insurance Plan / RQAP), QPP (Quebec Pension Plan — replaces CPP for Quebec employees), WSDRF (1% training levy). Trigger on "Quebec payroll", "QPP Quebec", "QPIP RQAP", "CNESST", "HSF Quebec", "FSS", "Fonds services santé", "Quebec employer contributions". ALWAYS read this skill for Quebec payroll alongside canada-payroll (federal).
 jurisdiction: CA
 tax_year: 2025
-last_updated: 2026-05-27
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---

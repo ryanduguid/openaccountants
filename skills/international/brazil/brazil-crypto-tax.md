@@ -1,14 +1,15 @@
 ---
 name: brazil-crypto-tax
-description: >
+description: Use this skill whenever asked about Brazil cryptocurrency or digital asset taxation / Use esta skill sempre que for solicitado sobre tributação de criptomoedas ou ativos digitais no Brasil. Trigger on phrases like "crypto tax Brazil", "imposto de renda cripto", "Bitcoin Brazil", "criptoativos Brasil", "cryptocurrency gains Brazil", "Receita Federal crypto", "DARF crypto", "GCAP crypto", "staking Brazil", "mining income Brazil", "NFT tax Brazil", "Binance Brazil", "Mercado Bitcoin", "IN 1888", "Instrução Normativa 1888", "IRPF crypto", "ganho de capital crypto", or any question about the income tax, capital gains, or reporting obligations for cryptocurrency, tokens, or digital assets for Brazilian tax residents / ou qualquer pergunta sobre imposto de renda, ganhos de capital ou obrigações acessórias relativas a criptomoedas, tokens ou ativos digitais para residentes fiscais no Brasil. Covers progressive capital gains rates, monthly R$35,000 de minimis threshold, IN RFB 1,888/2019 reporting, DARF payments, IRPF annual declaration, and Crypto Framework Law 14,478/2022 / Abrange alíquotas progressivas de ganho de capital, isenção mensal de R$ 35.000, obrigação acessória da IN RFB 1.888/2019, pagamento de DARF, declaração anual de IRPF e Lei 14.478/2022 (Marco Legal das Criptos). ALWAYS read this skill before touching any Brazil crypto work / SEMPRE leia esta skill antes de qualquer trabalho com criptoativos no Brasil.
 version: 1.0
 jurisdiction: BR
 tax_year: 2025
-last_updated: 2026-05-23
-verified_by: Ariane Marrocos
+last_updated: 2026-07-13
+reviewed_by: Ariane Marrocos
+review_status: current
 depends_on: - brazil-income-tax
 category: crypto
-tier: 2
+tier: 1
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 

@@ -1,11 +1,11 @@
 ---
 name: ng-income-tax
-description: >
+description: Use this skill whenever asked about Nigerian personal income tax for self-employed individuals (sole proprietors / freelancers). Trigger on phrases like "Nigeria income tax", "PITA", "FIRS", "self-assessment Nigeria", "progressive tax Nigeria", "minimum tax Nigeria", "consolidated relief", "CRA Nigeria", "TIN Nigeria", "WHT Nigeria", "income tax Lagos", "income tax Abuja", "state IRS", or any question about computing or filing income tax for a self-employed person in Nigeria. This skill covers progressive rates (7-24%), minimum tax (1% of gross income), consolidated relief allowance, capital allowances, withholding tax credits, self-assessment filing, and FIRS/state IRS requirements. ALWAYS read this skill before touching any Nigerian income tax work.
 version: 2.0
 jurisdiction: NG
 tax_year: 2025
-last_updated: 2026-04-13
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---

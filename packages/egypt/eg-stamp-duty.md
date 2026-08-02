@@ -1,11 +1,11 @@
 ---
 name: eg-stamp-duty
-description: >
+description: Use this skill whenever asked about Egyptian stamp duty, document duty, or any tax-stamped contract question — including company formation capital duty, employment contracts, lease stamping, and electronic document stamping. Trigger on "Egypt stamp duty", "ضريبة الدمغة", "document tax Egypt", "capital duty Egypt", "e-stamp Egypt", "stamp tax Egypt". ALWAYS read this skill before computing or discussing Egypt stamp duty.
 version: 0.1
 jurisdiction: EG
 tax_year: 2025
 last_updated: 2026-07-22
-verified_by: pending
+review_status: pending_review
 depends_on: - workflow-base
 category: international
 tier: 2

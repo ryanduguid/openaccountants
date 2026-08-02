@@ -1,11 +1,12 @@
 ---
 name: cameroon-social-contributions
-description: >
+description: Use this skill whenever asked about Cameroon (CM) social security contributions (CNPS), payroll-linked levies, or personal income tax on salaries. Trigger on phrases like "CNPS contributions", "Cameroon social security", "how much CNPS do I pay", "pension vieillesse", "prestations familiales", "risques professionnels", "Cameroon payroll tax", "Crédit Foncier CFC", "Fonds National de l'Emploi FNE", "Cameroon PIT", "IRPP Cameroun", "centimes additionnels communaux CAC", "Cameroon PAYE", "Cameroon expat 183 days", or any question about Cameroon employer/employee contribution computation. Also trigger when classifying bank statement transactions that relate to CNPS debits, DGI/impôts payments, CFC or FNE remittances from Afriland, SGBC, BICEC, Ecobank, UBA Cameroon, or other Cameroonian banks. This skill covers CNPS pension/family/occupational-risk rates, the XAF 750,000 monthly ceiling, CFC and FNE payroll levies, the 10%/15%/25%/35% PIT scale (and the 11%/16.5%/27.5%/38.5% effective rates with the 10% CAC surcharge), local council/audiovisual levies, monthly remittance deadlines, registration, penalties, bank statement classification, and edge cases. ALWAYS read this skill before touching any Cameroon payroll or contribution work.
 version: 0.1
 jurisdiction: CM
 tax_year: 2025
-last_updated: 2026-06-04
-verified_by: Nkinyam Courage Ndasi
+last_updated: 2026-07-13
+reviewed_by: Nkinyam Courage Ndasi
+review_status: current
 depends_on: - social-contributions-workflow-base
 category: international
 tier: 2

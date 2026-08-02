@@ -1,14 +1,15 @@
 ---
 name: cyprus-tax-optimization
-description: >
+description: Use this skill whenever asked about reducing tax in Cyprus, tax planning, or legal strategies to minimise tax for an individual, freelancer, or company in Cyprus. Trigger on phrases like "reduce tax Cyprus", "Cyprus non-dom", "non-domiciled", "0% dividend tax", "SDC exemption", "Cyprus IP box", "3% tax IP", "Cyprus company dividends", "60-day rule", "save tax Cyprus", "tax planning Cyprus". This skill covers the non-dom regime (17 years 0% SDC on dividends/interest/rents), the company-plus-dividend extraction structure, the IP Box (~3% on qualifying IP), self-employment vs company, the personal-income reliefs, and the substance/anti-avoidance red lines. ALWAYS read this skill before advising on any Cyprus tax optimisation.
 version: 0.1
 jurisdiction: CY
 tax_year: 2025
-last_updated: 2026-06-04
-verified_by: Christos Thoma
+last_updated: 2026-07-13
+reviewed_by: Christos Thoma
+review_status: current
 depends_on: []
 category: tax-optimization
-tier: 2
+tier: 1
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 

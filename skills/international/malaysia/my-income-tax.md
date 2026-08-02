@@ -1,11 +1,12 @@
 ---
 name: my-income-tax
-description: >
+description: Use this skill whenever asked about Malaysia income tax for self-employed individuals or sole proprietors. Trigger on phrases like "Malaysia income tax", "LHDN", "Lembaga Hasil Dalam Negeri", "hasil.gov.my", "Form B", "Form BE", "Section 4(a)", "personal reliefs Malaysia", "chargeable income Malaysia", "tax deductions Malaysia", "Malaysian tax return", "e-Filing Malaysia", or any question about Malaysian income tax rates, filing, reliefs, or deductions for self-employed or business individuals. Covers progressive tax rates, business income, personal reliefs, deductions, and filing via e-Filing. ALWAYS read this skill before touching any Malaysia income tax work.
 version: 1.0
 jurisdiction: MY
 tax_year: 2025
-last_updated: 2026-05-23
-verified_by: MUHAMMAD HANIS MAT HUSSIN
+last_updated: 2026-07-13
+reviewed_by: MUHAMMAD HANIS MAT HUSSIN
+review_status: current
 depends_on: - income-tax-workflow-base
 category: international
 tier: 2

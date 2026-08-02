@@ -1,11 +1,11 @@
 ---
 name: north-macedonia-social-contributions
-description: >
+description: Use this skill whenever asked about North Macedonia (Republic of North Macedonia, MK) compulsory social security contributions and the related payroll/personal income tax mechanics for 2025. Trigger on phrases like "Macedonia social contributions", "Macedonia payroll tax", "PIOM contribution", "FZOM health contribution", "how much social security do I pay in Macedonia", "Macedonia gross to net salary", "MPIN form", "Macedonia minimum wage contributions", "Macedonia pension contribution rate", "denar payroll", "Macedonia flat tax 10%", "Macedonia personal allowance", "Macedonia contribution ceiling", or any question about an employer withholding/remitting contributions in North Macedonia. Also trigger when classifying bank-statement transactions that relate to UJP (Public Revenue Office) payroll debits, PIOM/FZOM remittances, or social-contribution transfers from Komercijalna Banka, Stopanska Banka, NLB Banka or other Macedonian banks. This skill covers the 28% total employee-borne contribution rate, the four constituent funds, the min/max monthly contribution bases, the flat 10% personal income tax and personal allowance, the MPIN integrated monthly filing, gross-to-net computation, bank-statement classification, and edge cases. ALWAYS read this skill before touching any North Macedonia payroll or social-contribution work.
 version: 0.1
 jurisdiction: MK
 tax_year: 2025
-last_updated: 2026-06-04
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - social-contributions-workflow-base
 category: international
 tier: 2

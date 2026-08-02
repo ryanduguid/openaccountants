@@ -3,8 +3,8 @@ name: pt-foreign-source-treaties
 description: "Utilizar esta skill sempre que estejam em causa rendimentos estrangeiros declarados em Portugal ou a aplicação de uma Convenção de Dupla Tributação celebrada por Portugal. Acionar com frases como \"CDT Portugal\", \"Convenção de Dupla Tributação\", \"rendimentos estrangeiros Portugal\", \"isenção dividendos estrangeiros Portugal\", \"pensão estrangeira Portugal\", \"tax credit Portugal\", \"crédito de imposto por dupla tributação internacional\", \"MLI Portugal\", \"Instrumento Multilateral\", \"Anexo J IRS\", \"Modelo 3 Anexo J\", \"imputação ordinária Portugal\", \"método de isenção CDT\", \"RNH rendimento estrangeiro\", \"IFICI rendimento estrangeiro\". Também ativar para: \"Portugal double tax treaty\", \"Portugal DTA matrix\", \"foreign income Portugal taxation\", \"Portugal MLI\", \"Portugal tax treaty network\", \"Portugal withholding tax relief\". LER SEMPRE esta skill antes de tratar de qualquer rendimento estrangeiro declarado em Portugal por residente fiscal português, ou antes de aplicar uma CDT a um caso concreto. Cobre a rede de ~80 CDTs em vigor, o método de imputação ordinária do art.º 81.º CIRS, as especificidades do RNH legado e do IFICI quanto ao método de isenção, o MLI e a cláusula PPT, o preenchimento do Anexo J do Modelo 3 e a documentação probatória exigida pela AT."
 jurisdiction: PT
 tax_year: 2025
-last_updated: 2026-05-27
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---

@@ -1,14 +1,15 @@
 ---
 name: india-transfer-pricing
-description: >
+description: Use this skill whenever asked about India transfer pricing rules, documentation requirements, or CBDT transfer pricing compliance. Trigger on phrases like "transfer pricing India", "Indian TP documentation", "Form 3CEB", "master file India", "local file India", "CbCR India", "APA India", "Section 92", "safe harbour India", "specified domestic transactions", or any question about intercompany pricing for Indian entities.
 version: 1.0
 jurisdiction: IN
 tax_year: 2025
-last_updated: 2026-05-23
-verified_by: Mayur Deokar
+last_updated: 2026-07-13
+reviewed_by: Mayur Deokar
+review_status: current
 depends_on: - transfer-pricing-workflow-base
 category: transfer-pricing
-tier: 2
+tier: 1
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 

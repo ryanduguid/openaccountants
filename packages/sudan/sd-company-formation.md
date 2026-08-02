@@ -1,11 +1,11 @@
 ---
 name: sd-company-formation
-description: >
+description: Use this skill whenever asked about Sudanese company formation, entity types, registration procedure, capital requirements, sectoral licensing, and tax/VAT registration. Trigger on phrases like "Sudan company registration", "Sudan LLC", "Sudan share company", "Sudan branch registration", "تسجيل شركة السودان", "Sudan GAFI", "company formation Sudan", or any request to incorporate a business in Sudan. ALWAYS read this skill before touching any Sudan company formation or registration work.
 version: 0.1
 jurisdiction: SD
 tax_year: 2025
-last_updated: 2026-06-25
-verified_by: pending
+last_updated: 2026-07-22
+review_status: pending_review
 depends_on: - company-formation-workflow-base
 category: international
 tier: 2

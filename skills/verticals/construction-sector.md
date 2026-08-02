@@ -1,11 +1,11 @@
 ---
 name: construction-sector
-description: >
+description: Use this skill whenever a construction contractor, subcontractor, developer, or design-build firm asks about sector-specific tax / accounting. Trigger on phrases like "construction industry scheme", "CIS", "CIS deduction", "reverse charge construction VAT", "domestic reverse charge construction services", "developer's relief", "long-term contract", "percentage of completion", "completed contract", "ASC 606 construction", "uninstalled materials", "retention", "subcontractor 1099", "USDOL prevailing wage", "Davis-Bacon", "construction VAT zero-rate new residential", or any construction-sector tax question. Covers UK Construction Industry Scheme (CIS), UK domestic reverse charge VAT for construction services (effective 1 March 2021), US construction tax (long-term contracts under IRC §460; percentage-of-completion-capitalisable; small contractor exception), EU developer reliefs and new-build zero/reduced VAT rates, retentions and progress billing accounting. Does NOT cover: construction safety regulation, building permit procedures, or technical engineering standards.
 version: 0.1
 jurisdiction: GLOBAL
 tax_year: 2025
-last_updated: 2026-05-23
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - corporate-income-tax-workflow-base
 category: vertical
 tier: 2

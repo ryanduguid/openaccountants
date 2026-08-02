@@ -1,11 +1,11 @@
 ---
 name: ecuador-social-contributions
-description: >
+description: Use this skill whenever asked about Ecuador social security contributions (IESS), payroll, or personal income tax (Impuesto a la Renta) for a dependent worker, employer, or self-employed/voluntary affiliate. Trigger on phrases like "how much IESS do I pay", "aporte personal IESS", "aporte patronal", "9.45% IESS", "11.15% employer contribution", "fondos de reserva", "decimo tercero", "decimo cuarto", "Ecuador payroll cost", "retencion en relacion de dependencia", "Formulario 102", "Formulario 107", "planilla IESS", "afiliado voluntario", or any question about Ecuadorian social-insurance or wage-tax obligations. Also trigger when classifying bank-statement transactions that relate to IESS debits, SRI tax payments, planilla payments, fondos de reserva, or decimos from Banco Pichincha, Banco del Pacifico, Produbanco, Banco Guayaquil, or other Ecuadorian banks. This skill covers IESS employee/employer rates and their internal breakdown, IECE/SECAP levies, fondos de reserva, the SBU minimum-wage floor, decimo tercero/cuarto, utilidades, the FY2025 and FY2026 progressive income-tax tables, filing forms and deadlines, penalties, bank-statement classification patterns, and edge cases. ALWAYS read this skill before touching any Ecuador IESS, payroll, or income-tax work.
 version: 0.1
 jurisdiction: EC
 tax_year: 2025
-last_updated: 2026-06-04
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - social-contributions-workflow-base
 category: international
 tier: 2

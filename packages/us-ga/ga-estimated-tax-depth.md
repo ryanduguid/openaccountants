@@ -3,8 +3,8 @@ name: ga-estimated-tax-depth
 description: Tier 2 Georgia content skill for individual and corporate estimated tax payments covering tax year 2025. Includes Form 500-ES quarterly installment schedule (Apr 15 / Jun 15 / Sep 15 / Jan 15), safe-harbor rules (100% prior year tax or 70% current year, with 110% prior-year safe harbor for high-income taxpayers with AGI over $150,000), Form GA-8453 underpayment penalty computation, the annualized income method for seasonal income, GA Department of Revenue interest rate for underpayment penalty calculation, and interaction with the GA PTE election under O.C.G.A. §48-7-23.
 jurisdiction: US-GA
 tax_year: 2025
-last_updated: 2026-05-27
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---

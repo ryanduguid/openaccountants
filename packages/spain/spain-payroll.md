@@ -1,11 +1,11 @@
 ---
 name: spain-payroll
-description: >
+description: Use this skill whenever asked about Spanish payroll processing for employees. Trigger on phrases like "Spanish payroll", "nómina España", "IRPF retención", "retenciones nómina", "Seguridad Social cotización", "contingencias comunes", "base de cotización", "Salario Mínimo Interprofesional", "SMI", "paga extra", "tredicesima España", "Agencia Tributaria retención", "modelo 111", "modelo 190", "Sistema RED", "Siltra", "TC1 TC2", "RLC RNT", "MEI cotización", "cuota solidaridad", "bruto neto España", "despido indemnización", "FOGASA", or any question about computing employee pay, income tax withholding, or social security contributions in Spain. This skill covers IRPF withholding, Seguridad Social contributions (employee and employer), mandatory benefits, nómina (payslip) requirements, filing obligations, and employer cost analysis. ALWAYS read this skill before processing any Spanish employee payroll.
 version: 1.0
 jurisdiction: ES
 tax_year: 2026
-last_updated: 2026-05-23
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - payroll-workflow-base
 category: payroll
 tier: 2

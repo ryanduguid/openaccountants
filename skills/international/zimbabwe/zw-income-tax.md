@@ -3,8 +3,8 @@ name: zw-income-tax
 description: Use this skill whenever asked about Zimbabwe income tax (PAYE, self-employed trade tax, or provisional tax) for individuals. Trigger on phrases like "how much PAYE do I pay", "ZIMRA tax tables", "USD tax bands", "ZiG / ZWG tax", "AIDS levy", "ITF1", "ITF12C", "ITF12B", "QPD provisional tax", "self-employed tax Zimbabwe", "NSSA contributions", "tax-free threshold Zimbabwe", "elderly credit", or any question about filing or computing income tax for an employee or a self-employed trader in Zimbabwe. Also trigger when classifying a Zimbabwean bank statement (USD or ZiG), computing the 3% AIDS levy, or advising on QPD instalments. This skill covers the dual-currency PAYE tables (USD and ZWG), the flat 25% trade/business rate, the AIDS levy, NSSA, provisional tax (QPDs), filing forms/deadlines, and registration/VAT thresholds. ALWAYS read this skill before touching any Zimbabwe income tax work.
 jurisdiction: ZW
 tax_year: 2025
-last_updated: 2026-06-25
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---

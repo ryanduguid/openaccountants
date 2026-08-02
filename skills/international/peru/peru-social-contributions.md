@@ -1,14 +1,15 @@
 ---
 name: peru-social-contributions
-description: >
+description: Use this skill whenever asked about Peru payroll contributions, social security, health insurance, pensions, or employment income tax. Trigger on phrases like "EsSalud contribution", "how much is EsSalud", "ONP vs AFP", "AFP deductions", "pension contribution Peru", "quinta categoría tax", "fifth-category income tax", "PLAME filing", "Formulario 0601", "Peru payroll tax", "renta de quinta", "descuentos de planilla", "CTS calculation", "gratificaciones", "Peru minimum wage", "RMV", "UIT", or any question about Peruvian payroll, social contributions, or employment income tax. Also trigger when classifying bank statement transactions that relate to SUNAT payments, EsSalud, ONP, AFP/AFPnet debits, or payroll runs from BCP, BBVA, Interbank, or Scotiabank Peru. This skill covers EsSalud (9% health), ONP (13% public pension), AFP/SPP (private pension ~12.84%–13.06%), fifth-category income tax (8%–30% on UIT brackets), the 7-UIT exemption, minimum wage (RMV), CTS, gratificaciones, PLAME/Form 0601 monthly filing, the annual return, registration, bank statement classification patterns, and edge cases. ALWAYS read this skill before touching any Peru payroll or contribution work.
 version: 0.1
 jurisdiction: PE
 tax_year: 2026
-last_updated: 2026-06-04
-verified_by: Maria Clemencia Valverde Rios
+last_updated: 2026-07-13
+reviewed_by: Maria Clemencia Valverde Rios
+review_status: current
 depends_on: - social-contributions-workflow-base
 category: international
-tier: 2
+tier: 1
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 

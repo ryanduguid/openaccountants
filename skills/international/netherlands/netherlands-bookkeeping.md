@@ -1,11 +1,11 @@
 ---
 name: netherlands-bookkeeping
-description: >
+description: Use this skill whenever asked about Dutch bookkeeping, chart of accounts, financial statements, RGS mapping, jaarrekening preparation, balance sheet or P&L format in the Netherlands. Trigger on phrases like "Dutch bookkeeping", "boekhouding", "grootboekrekening", "jaarrekening", "RGS", "chart of accounts Netherlands", "balans", "winst- en verliesrekening", "micro-entity Netherlands", "BW2 Title 9", "Dutch GAAP", "RJ guidelines", "small company accounts NL", "annual accounts Netherlands", or any question about recording transactions, financial reporting, or accounting standards for Dutch entities.
 version: 1.0
 jurisdiction: NL
 tax_year: 2025
-last_updated: 2026-05-23
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - bookkeeping-workflow-base
 category: bookkeeping
 tier: 2

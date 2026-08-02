@@ -1,11 +1,11 @@
 ---
 name: bc-individual-return
-description: >
+description: Use this skill whenever asked about British Columbia provincial income tax for a self-employed sole proprietor. Trigger on phrases like "BC tax", "BC428", "British Columbia income tax", "BC tax brackets", "BC tax reduction", "BC climate action tax credit", "provincial tax BC", or any question about computing BC provincial tax for a self-employed individual. Covers BC tax brackets, personal credits, BC tax reduction, climate action tax credit, and BC-specific rules. ALWAYS read this skill before touching any BC provincial tax work.
 version: 2.0
 jurisdiction: CA
 tax_year: 2025
-last_updated: 2026-04-13
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - income-tax-workflow-base
 category: international
 tier: 2

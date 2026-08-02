@@ -1,11 +1,11 @@
 ---
 name: qc-qst-return
-description: >
+description: Use this skill whenever asked about Quebec Sales Tax (QST / TVQ) return preparation for a self-employed sole proprietor or small business. Trigger on phrases like "QST return", "TVQ", "Quebec sales tax", "QST filing", "input tax refund", "ITR", "QST registration", "Revenu Quebec QST", "9.975%", or any question about computing or filing QST. ALWAYS read this skill before touching any QST work.
 version: 2.0
 jurisdiction: CA
 tax_year: 2025
-last_updated: 2026-04-13
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - vat-workflow-base
 category: international
 tier: 2

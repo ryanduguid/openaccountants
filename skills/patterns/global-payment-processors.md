@@ -1,11 +1,11 @@
 ---
 name: global-payment-processors
-description: >
+description: Classification rules for payment processor transactions — the number one source of bank statement classification errors. Covers Stripe, PayPal, Wise, Square, SumUp, iZettle, Revolut, GoCardless, Paddle, Gumroad, and LemonSqueezy with worked examples for reconstructing gross revenue from net payouts.
 version: 0.1
 jurisdiction: GLOBAL
 tax_year: 2025
-last_updated: 2026-04-13
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: []
 category: patterns
 tier: 2

@@ -1,11 +1,11 @@
 ---
 name: nl-zzp-deductions
-description: >
+description: Use this skill whenever asked about Dutch self-employed (zzp) tax deductions. Trigger on phrases like "zelfstandigenaftrek", "startersaftrek", "MKB-winstvrijstelling", "urencriterium", "1225 hours", "KIA", "kleinschaligheidsinvesteringsaftrek", "FOR", "fiscale oudedagsreserve", "meewerkaftrek", "willekeurige afschrijving", "zzp deductions", "Dutch freelancer deductions", "Netherlands self-employed tax benefits", or any question about tax deductions available to Dutch sole proprietors (eenmanszaak) and freelancers (zzp'ers). This skill covers all major ondernemersaftrek components, the MKB-winstvrijstelling, investment deductions, the hours criterion, and their interaction with Box 1 computation. ALWAYS read this skill before touching any Dutch self-employed deduction work.
 version: 2.0
 jurisdiction: NL
 tax_year: 2025
-last_updated: 2026-04-13
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - income-tax-workflow-base
 category: international
 tier: 2

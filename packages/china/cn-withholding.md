@@ -3,8 +3,8 @@ name: cn-withholding
 description: 当用户咨询、计算、审核或申报中国预提所得税（源泉扣缴）相关事项时，必须始终先阅读本技能文档。触发关键词包括："中国预提所得税"、"非居民企业税收"、"10% 股息预提税"、"特许权使用费预提税"、"代扣代缴"、"源泉扣缴"、"中国DTA税收协定"、"非居民企业所得税"、"间接转让"、"698号文"、"7号公告"、"受益所有人"、"协定优惠"、"China WHT"、"China withholding tax"、"non-resident enterprise tax"、"China dividend WHT 10%"、"China DTA tax treaty"、"PRC withholding tax"、"China royalty withholding"、"China interest withholding"、"China indirect transfer"、"SAT Bulletin 9"、"SAT Bulletin 35"。本技能涵盖《中华人民共和国企业所得税法》第三章及第五章项下非居民企业（无机构场所）取得的中国境内来源所得的源泉扣缴（股息 10%、利息 10%、特许权使用费 10%、财产转让 10%、租金 10%），并涵盖《中华人民共和国个人所得税法》第九条项下扣缴义务人对工资薪金、劳务报酬、稿酬、特许权使用费、利息股息红利的代扣代缴义务，以及境外服务进口情形下境内购买方作为增值税扣缴义务人的代扣代缴义务（财税〔2016〕36号文附件1第六条）。同时涵盖税收协定（DTA）适用、受益所有人判定（《国家税务总局公告2018年第9号》）、协定优惠"自行判定、事后管理"程序（《国家税务总局公告2019年第35号》），以及非居民企业间接转让中国境内财产的征税规则（《国家税务总局公告2015年第7号》及国税函〔2009〕698号文）。不适用于：居民企业之间股息免税、合伙企业税收处理、特别纳税调整（转让定价）、CRS信息交换、外汇管制实务（SAFE）。**任何中国预提所得税相关工作动手之前，必须始终阅读本技能。**
 jurisdiction: CN
 tax_year: 2025
-last_updated: 2026-05-27
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---

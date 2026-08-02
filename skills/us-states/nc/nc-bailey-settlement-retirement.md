@@ -3,8 +3,8 @@ name: nc-bailey-settlement-retirement
 description: Use this skill whenever asked about North Carolina state taxation of retirement income for an individual on Form D-400 — specifically the Bailey settlement exclusion for vested NC state/local government, federal, and military retirees, plus the broader NC retirement income treatment (Social Security exemption, military retirement exemption under S.L. 2021-180, private-pension and IRA/401(k) treatment). Trigger on phrases like "Bailey settlement", "Bailey-protected", "TSERS retiree", "LGERS retiree", "CSRS retiree", "FERS retiree", "NC military retirement", "vested by August 12 1989", "NC pension exclusion", or any D-400 Schedule S Part B Line 20 or Line 21 question.
 jurisdiction: US-NC
 tax_year: 2025
-last_updated: 2026-05-28
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---

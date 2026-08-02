@@ -1,11 +1,11 @@
 ---
 name: tax-residency-planning
-description: >
+description: Personal tax residency rules, the 183-day rule, digital nomad visas, exit taxes, and tax residency planning for international founders and freelancers. Use when the user asks about: tax residency, 183-day rule, where am I taxed, digital nomad visa, tax residency change, exit tax, departure tax, territorial tax countries, zero tax countries, tax nowhere, permanent establishment risk, center of vital interests, tax treaty tie-breaker, DTA tie-breaker, OECD Article 4, split tax year, mid-year relocation, FEIE, Foreign Earned Income Exclusion, bona fide residence test, tax residency certificate, 税务居民, 居住者, 非居住者, residencia fiscal, digital nomad tax, Beckham Law Spain, NHR Portugal, Thailand LTR visa, Panama territorial tax, Georgia micro business, Dubai 0% tax, flag theory, or any question about personal tax residency and where to pay personal income tax as an international founder.
 version: 1.0
 jurisdiction: INTL
 tax_year: 2025
-last_updated: 2026-05-20
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 category: international
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)

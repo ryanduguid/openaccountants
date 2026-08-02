@@ -1,11 +1,11 @@
 ---
 name: croatia-income-tax
-description: >
+description: Use this skill whenever asked about Croatia (Hrvatska) personal income tax (porez na dohodak) for self-employed individuals and employees. Trigger on phrases like "how much tax do I pay in Croatia", "porez na dohodak", "godišnja porezna prijava", "osobni odbitak", "personal allowance Croatia", "obrt tax", "paušalni obrt", "JOPPD", "DOH form", "PO-SD", "doprinosi", "mirovinsko", "net salary Croatia", "neto plaća", "self-employed Croatia", "sole trader Croatia", "prirez", or any question about computing or filing personal income tax for an individual or sole trader (obrtnik) in Croatia. Also trigger when preparing or reviewing a payroll net-pay computation, an annual income tax return, or advising on the lump-sum (paušalni) regime. This skill covers progressive PIT rates (default 20%/30% with local-unit ranges), final/flat income taxes (12%/24%/36%), the personal allowance and dependant coefficients, employee and self-employed contributions (pension 20% + health 16.5%), the JOPPD/DOH/PO-SD forms, and penalties. ALWAYS read this skill before touching any Croatian income tax work.
 version: 0.1
 jurisdiction: HR
 tax_year: 2025
-last_updated: 2026-06-04
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - income-tax-workflow-base
 category: international
 tier: 2

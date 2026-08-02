@@ -1,11 +1,11 @@
 ---
 name: stamp-duty-matrix
-description: >
+description: Use this skill whenever an attorney, transaction lawyer, or in-house counsel asks about stamp duty on documents, securities transfers, or financial transactions. Trigger on phrases like "stamp duty", "stamp tax", "SDRT", "stamp duty reserve tax", "stamp duty on shares", "share transfer tax", "FTT", "financial transaction tax", "France FTT", "Italy FTT", "Spain FTT IFT", "Ireland stamp duty shares", "Hong Kong stamp duty shares", "Singapore ACD additional conveyance duty", "stamp duty Australia", "Indian stamp duty", "Schedule I Indian Stamp Act", "stamp duty Bahamas", "Brazil IOF", "Argentina impuesto de sellos", "Mexico ISN", or any request to assess stamp duty exposure on a document, security transfer, lease, or financial transaction. Maps stamp duty AND financial transaction tax (FTT) regimes across 40+ jurisdictions. Excludes the property/real-estate transfer side (see property-transfer-tax-matrix). ALWAYS read this skill before computing stamp duty on a share transfer, instrument, or financial transaction.
 version: 0.1
 jurisdiction: GLOBAL
 tax_year: 2025
-last_updated: 2026-05-23
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - cross-border-workflow-base
 category: cross-border
 tier: 2

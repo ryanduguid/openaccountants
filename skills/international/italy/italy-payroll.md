@@ -1,11 +1,11 @@
 ---
 name: italy-payroll
-description: >
+description: Use this skill whenever asked about Italian payroll processing for employees. Trigger on phrases like "Italian payroll", "busta paga", "cedolino", "IRPEF ritenuta", "ritenuta d'acconto dipendenti", "INPS contributi", "contributi previdenziali", "TFR", "trattamento di fine rapporto", "CU certificazione unica", "F24", "tredicesima", "quattordicesima", "stipendio netto Italia", "brutto netto Italia", "Agenzia delle Entrate", "addizionale regionale", "addizionale comunale", "CCNL minimum wage", "ferie maturate", "malattia INPS", "maternità INPS", or any question about computing employee pay, income tax withholding, or social contributions in Italy. This skill covers IRPEF withholding, INPS contributions (employee and employer), TFR, mandatory benefits, busta paga (payslip) requirements, CU/F24 filing, and employer cost analysis. ALWAYS read this skill before processing any Italian employee payroll.
 version: 1.0
 jurisdiction: IT
 tax_year: 2026
-last_updated: 2026-05-23
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - payroll-workflow-base
 category: payroll
 tier: 2

@@ -1,11 +1,11 @@
 ---
 name: nl-tax-objection
-description: >
+description: Use this skill whenever asked about Dutch tax objection procedures (bezwaar) or tax correspondence with the Belastingdienst. Trigger on phrases like "bezwaar", "bezwaarschrift", "objection letter", "tax objection Netherlands", "reactie op aanslag", "aanslag betwisten", "bezwaartermijn", "6 weken termijn", "ambtshalve vermindering", "beroep belastingrechter", "motiveringsbrief", "tax appeal NL", "machtiging belastingdienst", "pro forma bezwaar", "uitspraak op bezwaar", "hoorzitting", or any question about objecting to a Dutch tax assessment, responding to Belastingdienst correspondence, or preparing tax dispute documentation. This skill covers the bezwaar procedure, deadlines, required elements, escalation to beroep, and correspondence templates. ALWAYS read this skill before drafting any Dutch tax objection or Belastingdienst correspondence.
 version: 1.0
 jurisdiction: NL
 tax_year: 2025
-last_updated: 2026-05-20
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - income-tax-workflow-base
 category: international
 tier: 2

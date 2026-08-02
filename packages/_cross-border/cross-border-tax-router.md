@@ -1,11 +1,11 @@
 ---
 name: cross-border-tax-router
-description: >
+description: Entry point for the OpenAccountants cross-border / international personal-tax skill library. ALWAYS load this skill first when a person's facts touch more than one country — e.g. a US citizen living abroad, a dual resident, someone moving countries, a non-dom, an expatriating citizen, a foreign trust or foreign company owner, or "how is this taxed in country A and country B". The router computes nothing. It (1) builds the person's residency / citizenship / domicile map, (2) identifies which country skills and which international topic skills the facts engage, (3) gates out corridors the library does not yet cover, (4) SEQUENCES the steps — in cross-border, the order of events changes the tax (sever residency before vs. after a sale), and (5) hands off to cross-border-tax-workflow-base plus the topic skills. Every international topic skill (FEIE/FTC, FBAR/FATCA, CFC/GILTI, foreign trusts, exit tax) assumes this routing step has happened first.
 version: 0.1
 jurisdiction: GLOBAL
 tax_year: 2025
-last_updated: 2026-05-31
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: []
 category: international
 tier: 2

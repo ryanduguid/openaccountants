@@ -1,14 +1,15 @@
 ---
 name: india-financial-statements
-description: >
+description: Use this skill when preparing, reviewing, or advising on annual financial statements for an Indian company. Trigger on phrases like "financial statements India", "MCA filing", "AOC-4", "Schedule III", "Ind AS", "Indian Accounting Standards", "Companies Act 2013", "CARO", "statutory audit India", "ROC filing", "small company India", "OPC", "balance sheet format India", or any question about preparing and filing statutory accounts under the Companies Act 2013. Covers Ind AS/AS frameworks, Schedule III formats, size thresholds, required statements, notes, MCA filing, and audit requirements.
 version: 1.0
 jurisdiction: IN
 tax_year: 2025
-last_updated: 2026-05-23
-verified_by: Mayur Deokar
+last_updated: 2026-07-13
+reviewed_by: Mayur Deokar
+review_status: current
 depends_on: - financial-statements-workflow-base
 category: financial-statements
-tier: 2
+tier: 1
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 

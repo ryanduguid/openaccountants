@@ -1,11 +1,11 @@
 ---
 name: ru-self-employed-npd
-description: >
+description: Use this skill whenever asked about the Russian self-employed tax regime for individuals and freelancers — the Professional Income Tax (Налог на профессиональный доход / НПД). Trigger on phrases like "самозанятый", "self-employed Russia", "НПД", "professional income tax Russia", "Мой налог", "4% 6% tax Russia freelancer", "налог для самозанятых", "register as self-employed in Russia", "Russian freelancer tax", or any request involving the НПД special regime, the 2.4 million ruble cap, the «Мой налог» app, чек (receipt) issuance, the 10,000 ₽ deduction, or whether a Russian freelancer must pay страховые взносы. Covers eligibility, the 4%/6% split, the deduction mechanics, monthly payment, and what happens when the cap is exceeded. References ru-usn and ru-income-tax for alternatives once НПД no longer fits.
 version: 1.0
 jurisdiction: RU
 tax_year: 2026
-last_updated: 2026-05-23
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - income-tax-workflow-base
 category: international
 tier: 2

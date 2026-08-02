@@ -1,11 +1,11 @@
 ---
 name: global-marketplaces-banking-fees
-description: >
+description: Pattern library for online marketplaces (Etsy, eBay, Amazon Seller, AliExpress, Mercari, Depop, Vinted, Fiverr, Upwork, Toptal, Catalant, Andela, Patreon, Substack, Gumroad, Lemonsqueezy, Beehiiv, Whop) and recurring bank / payment-platform fees (wire fees, currency conversion, FX spreads, ATM fees, monthly account fees, overdraft, returned cheque). Provides bank-statement variations, classification, VAT/GST treatment, marketplace facilitator collection rules (post-Wayfair US states; EU marketplace deemed-supplier; UK platform reporting under DAC7-equivalent), and the 1099-K threshold reduction for US sellers (USD 5,000 for 2024, USD 600 for 2026 per OBBBA confirmation). Does NOT cover: cloud (see global-cloud-infrastructure), productivity SaaS (see global-productivity-tools), ad platforms (see global-ad-platforms), payment processors (see global-payment-processors).
 version: 0.1
 jurisdiction: GLOBAL
 tax_year: 2025
-last_updated: 2026-05-23
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 category: pattern
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)

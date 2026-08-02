@@ -1,14 +1,15 @@
 ---
 name: ng-vat-return
-description: >
+description: Use this skill whenever asked about Nigerian VAT returns for self-employed individuals or small businesses. Trigger on phrases like "Nigeria VAT", "FIRS VAT", "7.5% VAT", "VAT return Nigeria", "value added tax Nigeria", "TaxPro Max", or any question about VAT computation or filing for businesses in Nigeria. Covers the 7.5% standard rate, exempt supplies, registration threshold (NGN 25M), monthly filing to FIRS, and input/output VAT computation. ALWAYS read this skill before touching any Nigerian VAT work.
 version: 2.0
 jurisdiction: NG
 tax_year: 2025
-last_updated: 2026-04-13
-verified_by: Omolola Fasasi 
+last_updated: 2026-07-13
+reviewed_by: Omolola Fasasi 
+review_status: current
 depends_on: - vat-workflow-base
 category: international
-tier: 2
+tier: 1
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 

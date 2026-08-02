@@ -1,14 +1,15 @@
 ---
 name: cyprus-payroll
-description: >
+description: Use this skill whenever asked about Cyprus payroll processing for employed persons. Trigger on phrases like "Cyprus payroll", "PAYE Cyprus", "TD7", "TD63", "TD59", "TD1 Cyprus", "Social Insurance Cyprus", "GESY", "GHS contribution", "Cyprus payslip", "net salary Cyprus", "tax withholding Cyprus", "employer social cost Cyprus", "Redundancy Fund", "HRDA", "Social Cohesion Fund", "Central Holiday Fund", "insurable earnings ceiling Cyprus", "minimum wage Cyprus", "ERGANI", "50% expat exemption Cyprus", "20% new-resident exemption", "TAX FOR ALL", "TFA", "gross to net Cyprus", "salary calculation Cyprus", or any question about computing employee pay, withholding income tax, or social contributions for Cyprus-based employees. This skill covers PAYE income tax withholding, Social Insurance (employee and employer), General Healthcare System (GHS/GESY), the employer-only Redundancy / HRDA / Social Cohesion / Central Holiday funds, the new-resident 20% and 50% income-tax exemptions, minimum wage, and filing obligations. ALWAYS read this skill before processing any Cyprus payroll.
 version: 0.1
 jurisdiction: CY
 tax_year: 2025
-last_updated: 2026-06-04
-verified_by: Christos Thoma
+last_updated: 2026-07-13
+reviewed_by: Christos Thoma
+review_status: current
 depends_on: - payroll-workflow-base
 category: payroll
-tier: 2
+tier: 1
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 

@@ -3,8 +3,9 @@ name: sri-lanka-corporate-tax
 description: "ALWAYS read this skill before touching any Sri Lanka corporate income tax work. Use whenever asked about Sri Lanka company tax for a resident company. Trigger on phrases like \"Sri Lanka corporate tax\", \"Sri Lanka CIT\", \"company tax Sri Lanka\", \"30% corporate rate Sri Lanka\", \"betting and gaming tax Sri Lanka\", \"liquor tobacco tax Sri Lanka\", \"Inland Revenue Act 24 of 2017 company\", or \"year of assessment 2025/26 company\". Covers the Inland Revenue Act No. 24 of 2017 as amended by the Inland Revenue (Amendment) Act No. 02 of 2025 (effective 1 April 2025): the 30% standard rate, the 15% concessionary rate on remitted foreign-currency income/services, and the 45% rate on betting/gaming and liquor/tobacco. Out of scope — personal income tax (separate skill), withholding/AIT (separate skill), SSCL, VAT, banking/insurance/sector special regimes, and group/transfer-pricing matters."
 jurisdiction: LK
 tax_year: 2025
-last_updated: 2026-06-03
-verified_by: Lal kumarasiri
+last_updated: 2026-07-13
+reviewed_by: Lal kumarasiri
+review_status: current
 tier: 1
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---

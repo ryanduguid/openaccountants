@@ -3,8 +3,8 @@ name: md-payroll
 description: Tier 2 Maryland content skill for employer payroll compliance covering tax year 2025. Includes the MD PIT brackets up to 5.75% state plus county tax 2.25-3.20% (effective combined 4.25-8.95%), MW507 state W-4, MW-506 quarterly withholding, MD SUI wage base $8,500 with rates 0.30-7.50%, the 24-county + Baltimore City local tax structure (highest counties Howard/Montgomery/PG/Baltimore City at 3.20%), Maryland Healthy Working Families Act (Sick & Safe Leave 1 hour per 30 hours), reciprocal agreements with DC/PA/VA/WV exempting non-residents, and ABC contractor classification test.
 jurisdiction: US-MD
 tax_year: 2025
-last_updated: 2026-05-27
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---

@@ -3,8 +3,8 @@ name: eu-oss-digital
 description: Use this skill whenever a business sells digital services (electronically supplied services) B2C to consumers in other EU member states and needs to determine the correct VAT treatment. Trigger on phrases like "OSS", "One-Stop-Shop", "MOSS", "Mini One-Stop-Shop", "digital services VAT", "electronically supplied services", "B2C cross-border EU", "EU VAT on digital", "EUR 10,000 threshold", "destination country VAT rate", "non-Union OSS", or any request involving the VAT treatment of digital services sold to EU consumers. This skill contains the complete OSS rules, the EUR 10,000 threshold, destination VAT rate table, filing requirements, consumer location evidence rules, and the Union vs non-Union OSS distinction. ALWAYS read this skill before advising on any B2C digital services VAT question.
 jurisdiction: GLOBAL
 tax_year: 2025
-last_updated: 2026-04-13
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---

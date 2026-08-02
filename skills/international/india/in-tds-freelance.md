@@ -1,14 +1,15 @@
 ---
 name: in-tds-freelance
-description: >
+description: Use this skill whenever asked about Indian TDS (Tax Deducted at Source) on payments to freelancers, contractors, or professionals. Trigger on phrases like "TDS freelance India", "Section 194J", "Section 194C", "Section 194O", "TDS rate professional services", "Form 26Q", "Form 16A", "TDS certificate", "26AS", "AIS reconciliation", "TDS return India", "lower deduction certificate", "Section 197", "Section 206AA", "PAN not provided TDS", or any question about TDS obligations when paying or receiving freelance/contractor payments in India. Covers Section 194J (professional/technical services), 194C (contractor payments), 194O (e-commerce), TDS return filing (Form 26Q), TDS certificates (Form 16A), Form 26AS/AIS reconciliation, higher rate for missing PAN (Section 206AA), and lower deduction certificates (Section 197). ALWAYS read this skill before touching any India TDS work involving freelancers or contractors.
 version: 1.0
 jurisdiction: IN
 tax_year: 2025
-last_updated: 2026-04-13
-verified_by: Mayur Deokar
+last_updated: 2026-07-13
+reviewed_by: Mayur Deokar
+review_status: current
 depends_on: - income-tax-workflow-base
 category: international
-tier: 2
+tier: 1
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 

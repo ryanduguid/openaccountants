@@ -1,11 +1,11 @@
 ---
 name: costa-rica-tax-optimization
-description: >
+description: Use this skill whenever asked about reducing tax in Costa Rica, tax planning, or legal strategies to minimise tax for a small business or self-employed person in Costa Rica. Trigger on phrases like "reduce tax Costa Rica", "régimen simplificado Costa Rica", "RTS", "territorial taxation", "PYME exemption", "Costa Rica dividends 15%", "save tax Costa Rica", "tax planning Costa Rica". This skill covers the Régimen de Tributación Simplificada, the territorial system (only CR-source income taxed), the traditional ISR regime and exempt minimum, dividends, and the eligibility/anti-avoidance red lines. ALWAYS read this skill before advising on any Costa Rican tax optimisation.
 version: 0.1
 jurisdiction: CR
 tax_year: 2025
-last_updated: 2026-06-04
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: []
 category: tax-optimization
 tier: 2

@@ -3,8 +3,9 @@ name: us-state-formation-matrix
 description: Tier 2 US federal-level reference skill providing the 50-state at-a-glance entity formation matrix for LLCs and corporations — initial filing fees, annual report fees, minimum franchise and privilege taxes (CA $800, DE $300 LLC, TN $100 minimum, NV $325 + business license), registered agent requirements, foreign qualification thresholds, publication requirements (NY, AZ, NE), Series LLC availability (DE/IL/TX/TN/NV/UT and others), Professional Service Entity rules (PLLC/PC), and the Corporate Transparency Act / BOI status (currently stayed per December 2024 federal injunction). Tax year 2025.
 jurisdiction: US
 tax_year: 2025
-last_updated: 2026-05-27
-verified_by: James Wallach
+last_updated: 2026-07-13
+reviewed_by: James Wallach
+review_status: current
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---

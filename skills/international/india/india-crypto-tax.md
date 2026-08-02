@@ -1,14 +1,15 @@
 ---
 name: india-crypto-tax
-description: >
+description: Use this skill whenever asked about India cryptocurrency or virtual digital asset (VDA) taxation. Trigger on phrases like "crypto tax India", "Bitcoin India tax", "VDA tax", "Section 115BBH", "194S TDS crypto", "crypto TDS India", "virtual digital asset India", "crypto income India", "NFT tax India", "mining tax India", "staking tax India", "WazirX tax", "CoinDCX tax", "crypto loss India", "Schedule VDA", "ITR crypto", "30% crypto tax India", "1% TDS crypto", or any question about the income tax, TDS, or reporting treatment of cryptocurrency, tokens, NFTs, or virtual digital assets under Indian tax law. Covers Finance Act 2022 amendments (Sections 115BBH, 194S, 2(47A)), the no-loss-offset rule, ITR Schedule VDA, and advance tax obligations. ALWAYS read this skill before touching any India crypto work.
 version: 1.0
 jurisdiction: IN
 tax_year: 2025
-last_updated: 2026-05-23
-verified_by: Mayur Deokar
+last_updated: 2026-07-13
+reviewed_by: Mayur Deokar
+review_status: current
 depends_on: - in-income-tax
 category: crypto
-tier: 2
+tier: 1
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 

@@ -1,14 +1,15 @@
 ---
 name: us-quarterly-estimated-tax
-description: >
+description: Use this skill whenever asked about US federal quarterly estimated income tax payments for sole proprietors and single-member LLCs. Trigger on phrases like "1040-ES", "estimated tax", "quarterly tax", "safe harbor", "underpayment penalty", "Form 2210", "annualized income", or any question about federal estimated tax requirements. Covers the $1,000 threshold, 100%/110% prior-year safe harbor, 90% current-year method, quarterly due dates, annualized income instalment method, Form 2210 penalty computation, and withholding strategies. MUST be loaded alongside us-tax-workflow-base v0.1+. Federal only.
 version: 2.0
 jurisdiction: US
 tax_year: 2025
-last_updated: 2026-05-23
-verified_by: Amir Pelinkovic
+last_updated: 2026-07-13
+reviewed_by: Amir Pelinkovic
+review_status: current
 depends_on: - us-tax-workflow-base
 category: federal
-tier: 2
+tier: 1
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 

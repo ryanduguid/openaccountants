@@ -3,8 +3,9 @@ name: sa-gosi-saudization
 description: ALWAYS read this skill before touching any Saudi Arabia employer compliance work — social insurance contributions, Saudization quotas, or monthly wage filings. Use whenever asked to compute, review, or advise on Saudi private-sector payroll obligations — General Organization for Social Insurance (GOSI) contributions split between the Annuity (retirement) branch, the Occupational Hazards branch, and the SANED unemployment insurance branch; Saudization compliance under the Nitaqat program administered by the Ministry of Human Resources and Social Development (MHRSD); and the Wage Protection System (WPS) submitted monthly via the Mudad platform. Trigger on phrases like "Saudi GOSI", "Saudization Nitaqat", "Wage Protection System Saudi", "Mudad WPS", "9% GOSI Saudi", "SANED unemployment", "Saudi employer compliance", "Saudi labor law", "Saudi expat 2% GOSI", "Nitaqat Platinum Green Yellow Red", "iqama renewal Saudi", "MHRSD quota", or any request involving running monthly payroll, hiring Saudis vs expats, or assessing Nitaqat tier impact on visa quotas for a private-sector establishment in the Kingdom of Saudi Arabia. This skill is the ORCHESTRATOR for SA employer compliance — it sequences GOSI registration, monthly contribution calculation, Nitaqat tier monitoring, and WPS filing into the correct order, and flags when sector-specific Saudization quotas need verification against the current MHRSD notification.
 jurisdiction: SA
 tax_year: 2025
-last_updated: 2026-05-27
-verified_by: Mehran Habib
+last_updated: 2026-07-13
+reviewed_by: Mehran Habib
+review_status: current
 tier: 1
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---

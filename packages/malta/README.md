@@ -23,15 +23,16 @@
 16. `mt-estimated-tax.md`
 17. `mt-non-dom.md`
 18. `mt-rental-income.md`
-19. `eu-vat-directive.md`
-20. `bookkeeping-workflow-base.md`
-21. `payroll-workflow-base.md`
-22. `company-formation-workflow-base.md`
-23. `financial-statements-workflow-base.md`
-24. `transfer-pricing-workflow-base.md`
-25. `crypto-tax-workflow-base.md`
-26. `malta-guided-intake.md`
-27. `malta-return-assembly.md`
+19. `selling-a-company-in-malta.md`
+20. `eu-vat-directive.md`
+21. `bookkeeping-workflow-base.md`
+22. `payroll-workflow-base.md`
+23. `company-formation-workflow-base.md`
+24. `financial-statements-workflow-base.md`
+25. `transfer-pricing-workflow-base.md`
+26. `crypto-tax-workflow-base.md`
+27. `malta-guided-intake.md`
+28. `malta-return-assembly.md`
 
 ## Also known as
 

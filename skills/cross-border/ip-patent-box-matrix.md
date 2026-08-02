@@ -1,11 +1,11 @@
 ---
 name: ip-patent-box-matrix
-description: >
+description: Use this skill whenever a company holding intellectual property asks about preferential tax regimes for income derived from that IP. Trigger on phrases like "patent box", "IP box", "innovation box", "nexus approach", "qualifying IP income", "qualifying expenditure", "uplift expenditure", "modified nexus", "BEPS Action 5", "Cyprus IP box", "Dutch innovation box", "UK patent box", "Italian patent box", "Belgian innovation income deduction", "Luxembourg IP box", "Irish KDB", "knowledge development box", "Swiss patent box", "Hungary patent box", "Singapore IDI", "China HNTE", "qualifying IP", "embedded IP income", or any request to assess whether a company's IP income qualifies for a preferential tax rate, and to compute the effective rate under the OECD modified nexus approach. Covers 18+ in-force IP regimes that satisfy the BEPS Action 5 modified nexus approach plus historical grandfathering. Does NOT cover: R&D tax credits (see rd-tax-credits-matrix), depreciation of IP assets, withholding tax on royalties (see withholding-tax-matrix), or transfer pricing of IP (see transfer-pricing-workflow-base). ALWAYS read this skill before advising on IP regime eligibility, computing the effective rate, or designing an IP holding structure.
 version: 0.1
 jurisdiction: GLOBAL
 tax_year: 2025
-last_updated: 2026-05-23
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - cross-border-workflow-base
 category: cross-border
 tier: 2

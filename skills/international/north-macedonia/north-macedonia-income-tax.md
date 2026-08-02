@@ -1,11 +1,11 @@
 ---
 name: north-macedonia-income-tax
-description: >
+description: Use this skill whenever asked about North Macedonia (Republic of North Macedonia) personal income tax for self-employed individuals and employees. Trigger on phrases like "how much tax do I pay in Macedonia", "Macedonian income tax", "personal income tax", "данок на личен доход", "MPIN salary declaration", "social contributions Macedonia", "denar payroll", "gross-to-net Macedonia", "self-employed tax Macedonia", "service contract tax", "UJP", "Public Revenue Office", "annual draft tax return", or any question about filing or computing personal income tax (PIT) for an employed or self-employed client in North Macedonia. Also trigger when preparing or reviewing a monthly salary calculation, a service-contract withholding, or an annual self-employed tax balance, computing the 28% social contributions, or advising on the MKD 10,270 personal exemption. This skill covers the flat 10% PIT, the 15%/70% special rates, social-contribution rates and bases, the personal monthly exemption, registration thresholds, forms/deadlines, and interaction with VAT. ALWAYS read this skill before touching any North Macedonia income tax work.
 version: 0.1
 jurisdiction: MK
 tax_year: 2025
-last_updated: 2026-06-04
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - income-tax-workflow-base
 category: international
 tier: 2

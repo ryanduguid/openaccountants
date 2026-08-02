@@ -1,11 +1,11 @@
 ---
 name: statutory-audit-workflow-base
-description: >
+description: Tier 1 workflow base for statutory audit skills. Covers the audit lifecycle — engagement acceptance, risk assessment, audit planning, evidence gathering, fieldwork, opinion formulation, reporting — applied to the International Standards on Auditing (ISA) as issued by the IAASB plus country overlays (US GAAS for public co's, UK FRC ISA(UK), Germany IDW PS, France NEP, Italy ISA-Italia). Workflow architecture only — no engagement-specific procedures, materiality benchmarks, or audit programs. MUST be loaded alongside a content skill that provides the country-specific audit threshold rules, regulator inspection regime, statutory deadlines, and any non-ISA local standards. Assumes a qualified statutory auditor (RA, CPA, CA, Wirtschaftsprüfer, commissaire aux comptes, revisore legale, etc.) signs the audit report. Does NOT cover: internal audit, regulatory audit (banking, insurance prudential), tax audit by tax authority, IT general controls testing methodology, or forensic audit.
 version: 0.1
 jurisdiction: GLOBAL
 tax_year: 2025
-last_updated: 2026-05-23
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 category: foundation
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)

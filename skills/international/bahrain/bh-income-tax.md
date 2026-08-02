@@ -3,8 +3,8 @@ name: bh-income-tax
 description: "Use this skill whenever asked about Bahrain personal income tax for individuals or the self-employed. Trigger on phrases like \"how much income tax do I pay in Bahrain\", \"Bahrain personal income tax\", \"self-employed tax Bahrain\", \"do I file a tax return in Bahrain\", \"income tax return Bahrain\", \"tax on salary Bahrain\", \"freelancer tax Bahrain\", \"sole trader tax Bahrain\", or any question about computing or filing personal income tax in the Kingdom of Bahrain. CRITICAL: Bahrain has NO personal income tax regime — no brackets, no rates, no PIT returns, no PIT deadlines. This skill exists to state that clearly and to redirect the user to what actually applies to individuals and the self-employed: Social Insurance (SIO) contributions, the expatriate End-of-Service Benefit (EOSB) funded scheme, VAT at 10% for business/self-employed turnover, the Wage Protection System (WPS), and corporate-level taxes (DMTT / hydrocarbon). ALWAYS read this skill before touching any Bahrain \"income tax\" work."
 jurisdiction: BH
 tax_year: 2025
-last_updated: 2026-06-25
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---

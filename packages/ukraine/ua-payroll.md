@@ -1,11 +1,11 @@
 ---
 name: ua-payroll
-description: >
+description: Use this skill whenever asked about Ukrainian payroll for a sole proprietor (ФОП) or small employer who hires staff. Trigger on phrases like "Ukraine payroll", "hiring an employee in Ukraine", "payroll taxes Ukraine", "how much does it cost to employ someone in Ukraine", "ЄСВ on salary", "ПДФО on wages", "military levy on salary", "зарплата податки", "найняти працівника ФОП", "gross to net Ukraine", "employee vs ФОП contractor", or any question about wages, payroll withholding, the employer's social contribution, or the unified PIT/ЄСВ/military-levy report. Covers employer registration duties, the 18% PIT + 5% military levy withheld from the employee, the 22% ЄСВ paid by the employer on top of gross, the minimum-wage ЄСВ floor, the reduced 8.41% ЄСВ for employees with disabilities, the reporting and payment calendar, and misclassification risk when engaging another ФОП instead of hiring. ALWAYS read this skill before any Ukrainian payroll work.
 version: 1.0
 jurisdiction: UA
 tax_year: 2026
-last_updated: 2026-05-23
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - income-tax-workflow-base
 category: international
 tier: 2

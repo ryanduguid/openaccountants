@@ -1,11 +1,11 @@
 ---
 name: bolivia-payroll
-description: >
+description: Use this skill whenever asked about Bolivia payroll processing for employed (dependent) persons. Trigger on phrases like "Bolivia payroll", "planilla Bolivia", "RC-IVA", "Regimen Complementario al IVA", "retencion RC-IVA", "Form 608", "Formulario 608", "Form 110", "Formulario 110", "Form 610", "aporte laboral", "aporte patronal", "Gestora Publica", "AFP Bolivia", "Caja Nacional de Salud", "CNS", "riesgo comun", "riesgo profesional", "aporte solidario", "Aporte Nacional Solidario", "ANS", "aguinaldo", "segundo aguinaldo", "indemnizacion", "desahucio", "salario minimo nacional", "SMN Bolivia", "total ganado", "descuentos planilla Bolivia", "net salary Bolivia", "gross to net Bolivia", "withholding Bolivia", or any question about computing employee pay, RC-IVA withholding, or social/pension contributions for Bolivia-based employees. This skill covers RC-IVA (13%) wage withholding via the employer as agente de retencion, employee pension-side contributions (Aporte Laboral 12.71%), the Aporte Nacional Solidario, employer social charges (Aporte Patronal 17.21% general / 19.51% mining), the minimum wage (SMN), statutory bonuses (aguinaldo), severance, and filing obligations. ALWAYS read this skill before processing any Bolivia payroll.
 version: 0.1
 jurisdiction: BO
 tax_year: 2025
-last_updated: 2026-06-04
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - payroll-workflow-base
 category: payroll
 tier: 2

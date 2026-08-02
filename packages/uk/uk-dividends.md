@@ -1,14 +1,15 @@
 ---
 name: uk-dividends
-description: >
+description: Use this skill whenever asked about UK dividend income taxation. Trigger on phrases like "dividend tax UK", "dividend allowance", "dividend income", "company dividends", "director dividends", "salary vs dividends", "dividend voucher", "SA100 dividends", "foreign dividends UK", "dividend waiver", "dividend tax rates", "8.75%", "33.75%", "39.35%", "10.75%", "35.75%", "April 2026 dividend hike", "Autumn Budget 2025 dividend", "Scottish dividend tax", or any question about computing, declaring, or optimising dividend income for UK individual taxpayers. Covers dividend allowance, rates, salary-vs-dividend planning for company directors, foreign dividends and double tax relief, dividend waivers, and interaction with other income. ALWAYS read this skill before touching any UK dividend work.
 version: 1.1
 jurisdiction: GB
 tax_year: 2025
-last_updated: 2026-05-23
-verified_by: James Power
+last_updated: 2026-07-13
+reviewed_by: James Power
+review_status: current
 depends_on: - uk-income-tax-sa100
 category: international
-tier: 2
+tier: 1
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 

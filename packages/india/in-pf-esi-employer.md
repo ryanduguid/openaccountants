@@ -1,13 +1,14 @@
 ---
 name: in-pf-esi-employer
-description: >
+description: Use this skill whenever asked about Indian EPF (Employees' Provident Fund), ESI (Employees' State Insurance), or employer social security obligations. Trigger on phrases like "PF contribution India", "EPF employer", "ESI contribution", "provident fund India", "PF admin charges", "EDLI", "EPS pension", "ECR filing", "PF return", "ESI threshold", "PF applicability", "12% PF", "employer PF obligation", or any question about computing, depositing, or filing EPF/ESI in India. This skill covers EPF contribution rates, EPS, EDLI, ESI rates and thresholds, applicability criteria, monthly filing (ECR), and compliance deadlines. ALWAYS read this skill before touching any Indian PF/ESI employer work.
 version: "1.0"
 jurisdiction: IN
 tax_year: 2025
-last_updated: 2026-05-23
-verified_by: Mayur Deokar
+last_updated: 2026-07-13
+reviewed_by: Mayur Deokar
+review_status: current
 category: international
-tier: 2
+tier: 1
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 

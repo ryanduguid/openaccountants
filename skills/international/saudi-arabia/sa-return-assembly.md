@@ -3,8 +3,8 @@ name: sa-return-assembly
 description: Use this skill whenever asked to assemble, finalize, or package a Saudi Arabian annual tax return or Zakat declaration. Trigger on phrases like "Saudi return assembly", "ZATCA submission", "Saudi annual filing", "120-day deadline Saudi", "Zakat declaration", "Saudi CIT return", "assemble Saudi return", "finalize KSA return", "Saudi working paper", or "ZATCA filing package". This is the capstone orchestrator that pulls together outputs from sa-zakat, sa-corporate-tax, sa-withholding-tax, sa-rett, sa-gosi-saudization, sa-excise-tax, sa-formation, saudi-arabia-vat, and saudi-einvoice into a single unified working paper plus payment and filing instructions. It does not recompute anything itself — it reconciles upstream outputs, builds the line-by-line ZATCA working paper, generates SADAD billing instructions for ZATCA portal payment, and produces a reviewer brief and taxpayer action list. ALWAYS read this skill last when finalizing a Saudi tax return or Zakat declaration.
 jurisdiction: SA
 tax_year: 2025
-last_updated: 2026-05-27
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---

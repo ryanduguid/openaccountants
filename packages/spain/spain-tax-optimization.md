@@ -1,11 +1,11 @@
 ---
 name: spain-tax-optimization
-description: >
+description: Use this skill whenever asked about reducing tax in Spain, tax planning, saving tax, optimizing tax, allowances, deductions the client might be missing, or any question about legal strategies to minimize income tax liability for self-employed individuals (autónomos) in Spain. Trigger on phrases like "reduce tax", "tax planning", "save tax", "optimize", "allowances", "deductions I'm missing", "pagar menos impuestos", "optimización fiscal", "ahorrar en impuestos", "deducciones IRPF", "autónomo fiscal". ALWAYS read this skill before advising on any Spanish tax optimization strategy.
 version: 1.0
 jurisdiction: ES
 tax_year: 2025
-last_updated: 2026-05-23
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: []
 category: tax-optimization
 tier: 2

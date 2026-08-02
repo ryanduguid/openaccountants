@@ -1,11 +1,11 @@
 ---
 name: de-estimated-tax
-description: >
+description: Use this skill whenever asked about German estimated income tax prepayments (Vorauszahlungen) for self-employed individuals, freelancers, or Freiberufler. Trigger on phrases like "Vorauszahlungen", "Einkommensteuer-Vorauszahlung", "estimated tax Germany", "German advance tax", "EStG 37", "quarterly tax Germany", "Finanzamt prepayment", "adjustment of prepayments", "Vorauszahlungsbescheid", or any question about advance income tax obligations under the Einkommensteuergesetz. Covers the quarterly payment schedule (10 Mar, 10 Jun, 10 Sep, 10 Dec), assessment basis, minimum thresholds, adjustment requests, late payment surcharges, solidarity surcharge interaction, and payment procedures. ALWAYS read this skill before touching any estimated tax work for Germany.
 version: 2.0
 jurisdiction: DE
 tax_year: 2025
-last_updated: 2026-04-13
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - income-tax-workflow-base
 category: international
 tier: 2

@@ -3,8 +3,8 @@ name: ga-payroll
 description: Tier 2 Georgia content skill for employer payroll compliance covering tax year 2025. Includes the GA PIT 5.19% flat (reduced from 5.39% by HB 111 signed April 15, 2025, retroactive to January 1, 2025; phasing down toward 4.99% by 2030 contingent on revenue triggers), G-4 state W-4 equivalent, G-7 quarterly withholding return, GA-V payment voucher for monthly/quarterly remittance, G-1003 annual reconciliation, GA UI wage base $9,500 with rates 0.04-8.10%, Administrative Assessment 0.06%, new-hire reporting via GA DOL within 10 days (shorter than federal 20-day deadline), and the absence of state-mandated paid sick leave or paid family leave.
 jurisdiction: US-GA
 tax_year: 2025
-last_updated: 2026-05-30
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---

@@ -1,11 +1,11 @@
 ---
 name: charity-nonprofit
-description: >
+description: Use this skill whenever a charity, nonprofit, foundation, NGO, religious organisation, or social enterprise asks about accounting / tax / reporting specific to the nonprofit sector. Trigger on phrases like "501(c)(3)", "private foundation", "public charity", "UBI", "unrelated business income", "Form 990", "Form 990-PF", "CIO", "Charity Commission", "FRS 102 SORP", "Charities SORP", "fund accounting", "restricted vs unrestricted", "gift aid", "Public Benefit Test", "PBO", "Section 18A", "trustees report", "donor-advised fund", "DAF", "private operating foundation", "minimum distribution requirement", "5% payout", "self-dealing", or any nonprofit-sector question. Covers US §501(c) exemption / Form 990 series, UK CIO / Charities Act 2011 / Charities SORP (FRS 102), EU foundation regimes, fund accounting, and the unrelated business income (UBI) / VAT exemption complications. Does NOT cover: fundraising regulation, donor management, or governance procedure beyond tax accounting.
 version: 0.1
 jurisdiction: GLOBAL
 tax_year: 2025
-last_updated: 2026-05-23
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - corporate-income-tax-workflow-base
 category: vertical
 tier: 2

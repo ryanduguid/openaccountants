@@ -1,11 +1,11 @@
 ---
 name: malta-transfer-pricing
-description: >
+description: Use this skill whenever asked about Malta transfer pricing rules, documentation requirements, or arm's length pricing for cross-border related-party transactions. Trigger on phrases like "transfer pricing Malta", "TP documentation", "master file Malta", "local file Malta", "arm's length Malta", "related party transactions Malta", "CbCR Malta", "country-by-country report Malta", "BEPS Malta", "intercompany pricing Malta", or any question about transfer pricing compliance for Maltese entities within multinational groups.
 version: 1.0
 jurisdiction: MT
 tax_year: 2025
-last_updated: 2026-05-23
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - transfer-pricing-workflow-base
 category: transfer-pricing
 tier: 2

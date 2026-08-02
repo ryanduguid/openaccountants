@@ -1,11 +1,11 @@
 ---
 name: au-nonresident-cgt
-description: >
+description: Use this skill for any non-resident selling Australian assets. Trigger on: "non-resident CGT Australia", "TAP test Australia", "taxable Australian property", "FRCGW", "foreign resident capital gains withholding", "12.5% withholding Australia", "clearance certificate ATO", "sell Australian shares non-resident", "sell Australian property non-resident", "Australian CGT non-resident seller", "no CGT discount non-resident Australia". Covers the TAP test, 30% flat rate, FRCGW withholding, clearance certificates. For Australian residents see au-capital-gains.
 version: 1.0
 jurisdiction: AU
 tax_year: 2025
-last_updated: 2026-06-05
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 category: international
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)

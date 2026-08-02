@@ -3,8 +3,8 @@ name: ri-sales-tax
 description: Use this skill whenever asked about Rhode Island sales tax, RI use tax, Rhode Island Tax Division filing, Rhode Island SaaS tax, or Rhode Island sales tax compliance. Trigger on phrases like "Rhode Island sales tax", "RI sales tax", "R.I.G.L. §44-18", "RI Tax Division", "Rhode Island clothing exemption", "Rhode Island SaaS", or any request involving Rhode Island sales and use tax compliance. ALWAYS load us-sales-tax first for federal context.
 jurisdiction: US-RI
 tax_year: 2025
-last_updated: 2026-05-22
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---

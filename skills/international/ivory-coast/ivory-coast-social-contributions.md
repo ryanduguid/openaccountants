@@ -1,11 +1,11 @@
 ---
 name: ivory-coast-social-contributions
-description: >
+description: Use this skill whenever asked about Côte d'Ivoire (Ivory Coast) social security contributions (CNPS) for employers and salaried employees. Trigger on phrases like "CNPS contributions", "cotisations sociales Côte d'Ivoire", "Ivory Coast social security", "retraite CNPS", "prestations familiales", "accident du travail rate", "CMU contribution", "how much CNPS do I pay", "employer social charges Ivory Coast", "assiette plafonnée", "plafond CNPS", or any question about Ivorian social-contribution obligations. Also trigger when classifying bank-statement or payroll transactions that relate to CNPS débits, cotisations sociales, or CMU payments from Ivorian banks (SGCI, BICICI, Ecobank, NSIA, Coris). Also trigger when preparing a DISA/DASC annual declaration or a monthly/quarterly appel de cotisations where contribution ceilings and rates are relevant. This skill covers pension (vieillesse) rates and the XOF 3,375,000 ceiling, family benefits, maternity, work-injury bands, CMU, the SMIG floor, declaration periodicity, penalties, registration, payment patterns, and edge cases. ALWAYS read this skill before touching any CNPS-related work.
 version: 0.1
 jurisdiction: CI
 tax_year: 2025
-last_updated: 2026-06-04
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - social-contributions-workflow-base
 category: international
 tier: 2

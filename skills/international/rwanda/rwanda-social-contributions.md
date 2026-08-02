@@ -1,11 +1,11 @@
 ---
 name: rwanda-social-contributions
-description: >
+description: Use this skill whenever asked about Rwanda payroll taxes, PAYE, or social security / RSSB contributions for employees and employers. Trigger on phrases like "how much PAYE in Rwanda", "RSSB pension contribution", "Rwanda social security rate", "what is the pension rate 2025", "occupational hazards contribution", "maternity scheme RSSB", "CBHIS deduction", "RAMA / medical insurance scheme", "net pay calculation Rwanda", "casual labour tax rate", "Rwanda monthly declaration deadline", or any question about an employee's or employer's RSSB / RRA obligations. Also trigger when classifying bank statement transactions that relate to RRA tax payments, RSSB contribution debits, or PAYE remittances from Bank of Kigali, BPR, Equity Bank Rwanda, I&M Bank or other Rwandan banks. Also trigger when preparing or reviewing a monthly unified PAYE + RSSB declaration on E-Tax / MyRRA. This skill covers the 2025 PAYE brackets, the five RSSB schemes (pension, occupational hazards, maternity, CBHIS, medical), their differing contribution bases, the unified monthly declaration, penalties and interest under the Tax Procedures Law, expat/KIFC treatment, bank statement classification patterns, and edge cases. ALWAYS read this skill before touching any Rwanda payroll or social-contribution work.
 version: 0.1
 jurisdiction: RW
 tax_year: 2025
-last_updated: 2026-06-04
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - social-contributions-workflow-base
 category: international
 tier: 2

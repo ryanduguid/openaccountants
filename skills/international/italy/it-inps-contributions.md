@@ -1,11 +1,11 @@
 ---
 name: it-inps-contributions
-description: >
+description: Use this skill whenever asked about Italian INPS social contributions for self-employed professionals (Gestione Separata). Trigger on phrases like "INPS contributions", "Gestione Separata", "contributi previdenziali", "aliquota INPS", "rivalsa 4%", "acconto saldo INPS", "minimale contributivo", "massimale INPS", "F24 contributi", "how much INPS do I pay", or any question about Italian freelance social security obligations. Also trigger when classifying bank statement transactions showing F24 INPS payments, Gestione Separata acconti/saldo debits, or Agenzia delle Entrate INPS-related debits. ALWAYS read this skill before touching any Italian social contribution work.
 version: 2.0
 jurisdiction: IT
 tax_year: 2025
-last_updated: 2026-04-13
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - social-contributions-workflow-base
 category: international
 tier: 2

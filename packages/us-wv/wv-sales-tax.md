@@ -3,8 +3,8 @@ name: wv-sales-tax
 description: Use this skill whenever asked about West Virginia sales tax, WV use tax, West Virginia Tax Division filing, West Virginia SaaS tax, West Virginia service taxation, or West Virginia sales tax compliance. Trigger on phrases like "West Virginia sales tax", "WV sales tax", "W.Va. Code §11-15", "WV Tax Division", "West Virginia SaaS", "West Virginia SST", or any request involving West Virginia state and local sales and use tax compliance. ALWAYS load us-sales-tax first for federal context.
 jurisdiction: US-WV
 tax_year: 2025
-last_updated: 2026-05-22
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---

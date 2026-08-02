@@ -1,11 +1,11 @@
 ---
 name: ru-crypto-tax
-description: >
+description: Use this skill whenever asked about the taxation of cryptocurrency or digital currency (цифровая валюта) for individuals in Russia. Trigger on phrases like "crypto tax Russia", "цифровая валюта налог", "Bitcoin tax Russia", "mining tax Russia", "майнинг налог", "налог на криптовалюту", "crypto НДФЛ", "is crypto legal in Russia", "реестр майнеров", "продажа криптовалюты налог", "crypto property Russia", or any request to compute, classify, or advise on Russian tax on disposal of digital currency, mining income, or holding crypto. Covers Federal Law No. 418-ФЗ (29 Nov 2024) which treats digital currency as PROPERTY (имущество), the two distinct НДФЛ tax bases (disposal gains capped at 15 %, mining income on the general 13–22 % scale), cost-basis deduction, the mining registry (реестр майнеров) and reporting, the ban on domestic crypto payments, the experimental legal regime (ЭПР) for foreign-trade settlements, the 3-НДФЛ declaration, and the absence of VAT (НДС) on digital currency. For ordinary income tax see ru-income-tax; for self-employed see ru-self-employed-npd.
 version: 1.0
 jurisdiction: RU
 tax_year: 2026
-last_updated: 2026-05-23
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - income-tax-workflow-base
 category: international
 tier: 2

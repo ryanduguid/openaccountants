@@ -1,11 +1,11 @@
 ---
 name: eg-financial-statements
-description: >
+description: Use this skill whenever asked about Egyptian financial statements, financial reporting, or the accounting standards an Egyptian business must follow. Trigger on phrases like "Egypt financial statements", "Egyptian Accounting Standards", "EAS", "القوائم المالية", "المعايير المحاسبية المصرية", "do I file accounts Egypt", "audit Egypt company", "audited financial statements Egypt", "balance sheet Egypt", "IFRS Egypt", "EGX listed company accounts", "FRA filing", or any request to explain who must prepare, audit, or file financial statements in Egypt — and what a self-employed person files instead. ALWAYS read this skill before advising on Egyptian financial reporting or audit.
 version: 1.0
 jurisdiction: EG
 tax_year: 2026
-last_updated: 2026-05-24
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - income-tax-workflow-base
 category: international
 tier: 2

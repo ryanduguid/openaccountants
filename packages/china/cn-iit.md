@@ -3,8 +3,8 @@ name: cn-iit
 description: 在处理任何中国个人所得税（IIT）事项之前，必须先阅读本技能。本技能适用于中国税务居民个人和非居民个人的个人所得税申报、计算与审核工作，包括综合所得（工资薪金、劳务报酬、稿酬、特许权使用费）的累计预扣预缴与年度汇算清缴，经营所得的五级累进计税，专项附加扣除（子女教育、继续教育、大病医疗、住房贷款利息、住房租金、赡养老人、3岁以下婴幼儿照护），居民判定（183天规则），境外所得抵免，股权激励与全年一次性奖金单独计税过渡政策，以及通过个税APP、自然人电子税务局、单位代扣代缴等方式完成 3月1日至6月30日 综合所得年度汇算清缴的全过程。
 jurisdiction: CN
 tax_year: 2025
-last_updated: 2026-05-27
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---

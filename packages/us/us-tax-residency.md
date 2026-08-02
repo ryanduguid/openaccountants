@@ -1,11 +1,12 @@
 ---
 name: us-tax-residency
-description: >
+description: US tax residency for non-US-citizens: substantial presence test, green card test, first-year election, closer connection exception, treaty tie-breaker, dual-status returns. Trigger on: "US tax resident alien", "substantial presence test", "183-day US test", "green card tax residency", "first year election US", "closer connection exception", "US dual status return", "non-resident alien US", "treaty tie-breaker US", "moving to US taxes", "leaving US taxes". US citizens are always resident — this skill covers non-citizens only.
 version: 1.0
 jurisdiction: US
 tax_year: 2025
-last_updated: 2026-06-05
-verified_by: James Wallach
+last_updated: 2026-07-13
+reviewed_by: James Wallach
+review_status: current
 category: international
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)

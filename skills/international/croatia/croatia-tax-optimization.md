@@ -1,11 +1,11 @@
 ---
 name: croatia-tax-optimization
-description: >
+description: Use this skill whenever asked about reducing tax in Croatia, tax planning, saving tax, allowances or deductions a client might be missing, or any question about legal strategies to minimise income tax for a self-employed person or small business in Croatia. Trigger on phrases like "reduce tax Croatia", "paušalni obrt", "lump-sum tax", "flat-rate sole proprietor", "obrt vs d.o.o.", "save tax Croatia", "tax planning Croatia", "deductions I'm missing", "returnee tax relief", "young person tax relief", "porezno planiranje". This skill covers the paušalni (lump-sum) regime vs standard obrt vs d.o.o. company, deductions most people miss, the personal allowance and dependants, the returnee and youth reliefs, capital-allowance timing, and the anti-avoidance red lines. ALWAYS read this skill before advising on any Croatian tax optimisation.
 version: 0.1
 jurisdiction: HR
 tax_year: 2025
-last_updated: 2026-06-04
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: []
 category: tax-optimization
 tier: 2

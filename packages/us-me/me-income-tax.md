@@ -1,11 +1,11 @@
 ---
 name: me-income-tax
-description: >
+description: Use this skill whenever asked about Maine individual income tax for self-employed persons, sole proprietors, or single-member LLCs. Trigger on phrases like "Maine income tax", "ME income tax", "Form 1040ME", "Maine Revenue Services", "36 M.R.S. § 5111".
 version: "0.1"
 jurisdiction: US-ME
 tax_year: 2025
-last_updated: 2026-05-22
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---

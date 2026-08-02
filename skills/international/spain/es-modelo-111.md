@@ -1,11 +1,11 @@
 ---
 name: es-modelo-111
-description: >
+description: Use this skill whenever asked about Spanish Modelo 111 (quarterly withholdings on professional services). Trigger on phrases like "Modelo 111", "retenciones profesionales", "retención 15%", "retención 7%", "quarterly withholdings Spain", "IRPF withholding professionals", "Modelo 190", "certificado de retenciones", "pago fraccionado", "retenedor", or any question about withholding tax on payments to professionals in Spain. This skill covers Modelo 111 rates, filing deadlines, who must withhold, the relationship to Modelo 190 annual summary, interaction with Modelo 130, and compliance requirements. ALWAYS read this skill before touching any Spanish withholding tax work.
 version: "1.0"
 jurisdiction: ES
 tax_year: 2025
-last_updated: 2026-05-23
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 category: international
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)

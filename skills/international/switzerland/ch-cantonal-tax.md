@@ -1,11 +1,11 @@
 ---
 name: ch-cantonal-tax
-description: >
+description: Use this skill whenever asked about Swiss cantonal and communal income tax (Staatssteuer / Gemeindesteuer / impot cantonal et communal) for self-employed individuals. Trigger on phrases like "Kantonssteuer", "Gemeindesteuer", "cantonal tax Switzerland", "Steuerfuss", "tax multiplier Swiss", "kirchensteuer Schweiz", "impot cantonal", "communal tax rate", "Steuerausscheidung", "Swiss income tax", "einfache Steuer", or any question about cantonal/communal income tax for a self-employed person in Switzerland. This skill covers the cantonal tax multiplier system (Steuerfuss), church tax, inter-cantonal allocation, and the interaction between cantonal and federal returns. MUST be loaded alongside ch-federal-income-tax for the complete picture. ALWAYS read this skill before touching any Swiss cantonal tax work.
 version: 2.0
 jurisdiction: CH
 tax_year: 2025
-last_updated: 2026-04-13
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---

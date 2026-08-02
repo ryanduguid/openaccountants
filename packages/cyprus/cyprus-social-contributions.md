@@ -1,14 +1,15 @@
 ---
 name: cyprus-social-contributions
-description: >
+description: Use this skill whenever asked about Cyprus social insurance and General Healthcare System (GHS/GESY) contributions for employees, employers, or self-employed individuals. Trigger on phrases like "how much social insurance do I pay in Cyprus", "Cyprus GESY contributions", "GHS rate", "employer on-cost Cyprus", "self-employed social insurance Cyprus", "Social Cohesion Fund", "Redundancy Fund", "HRDA contribution", "insurable earnings ceiling", "Cyprus payroll deductions", "Cyprus PAYE", or any question about Cyprus social-security or healthcare contribution obligations. Also trigger when classifying bank statement transactions that relate to Department of Social Insurance Services (Υπηρεσίες Κοινωνικών Ασφαλίσεων) debits, GHS/GESY payments, HIO (Health Insurance Organisation) payments, or government social-security remittances from Bank of Cyprus, Hellenic Bank, or other Cypriot banks. Also trigger when preparing a T.D.1 (TD1) personal income tax return where contribution deductibility or aggregate income caps are relevant. This skill covers social insurance employee/employer/self-employed rates, GHS/GESY rates across all income categories, employer-only funds (Social Cohesion, Redundancy, HRDA), insurable-earnings and GHS ceilings, payment schedule, registration, penalties, interaction with personal income tax, bank statement classification patterns, and edge cases. ALWAYS read this skill before touching any Cyprus social-contribution work.
 version: 0.1
 jurisdiction: CY
 tax_year: 2025
-last_updated: 2026-06-04
-verified_by: Christos Thoma
+last_updated: 2026-07-13
+reviewed_by: Christos Thoma
+review_status: current
 depends_on: - social-contributions-workflow-base
 category: international
-tier: 2
+tier: 1
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 

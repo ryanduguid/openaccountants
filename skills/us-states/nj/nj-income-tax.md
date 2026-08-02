@@ -1,11 +1,11 @@
 ---
 name: nj-income-tax
-description: >
+description: Use this skill whenever asked about New Jersey individual income tax for self-employed / sole proprietors. Trigger on phrases like "New Jersey income tax", "NJ income tax", "Form NJ-1040", "NJ Division of Taxation", "NJ self-employment tax".
 version: "0.1"
 jurisdiction: US-NJ
 tax_year: 2025
-last_updated: 2026-05-22
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---

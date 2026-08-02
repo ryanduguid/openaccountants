@@ -3,8 +3,8 @@ name: pe-tax-credits
 description: Use this skill for Prince Edward Island provincial tax credits — PEI Low-Income Tax Reduction, PEI Sales Tax Credit, PEI Volunteer Firefighter / Ground Search and Rescue Tax Credit, Teacher School Supply Amount (PEI), PEI Equity Tax Credit (35%), PEI Innovation and Development Labour Rebate. Triggers "PEI tax credits", "Prince Edward Island credits", "PEI Equity Tax Credit", "Form PE428", "PEI ITC".
 jurisdiction: CA
 tax_year: 2025
-last_updated: 2026-05-27
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---

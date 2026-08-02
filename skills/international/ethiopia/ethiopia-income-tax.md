@@ -1,11 +1,11 @@
 ---
 name: ethiopia-income-tax
-description: >
+description: Use this skill whenever asked about Ethiopia (ET) personal or business income tax. Trigger on phrases like "how much income tax do I pay in Ethiopia", "PAYE Ethiopia", "ETB salary tax", "Schedule A B C D", "Category A taxpayer", "Category B turnover tax", "rental income tax Ethiopia", "Proclamation 1395/2025", "pension contribution Ethiopia", "POESSA", "Ministry of Revenues", "net pay calculation Birr", "minimum alternative tax", or any question about computing or filing income tax for an employee, sole proprietor, or landlord in Ethiopia. Also trigger when reviewing payroll, computing PAYE withholding, classifying business income, or advising on advance tax. This skill covers monthly PAYE brackets, business/rental annual schedules, Category A/B turnover tax, pension contributions, VAT registration interaction, filing deadlines, and the Ethiopian fiscal calendar. ALWAYS read this skill before touching any Ethiopia income tax work.
 version: 0.1
 jurisdiction: ET
 tax_year: 2025
-last_updated: 2026-06-04
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - income-tax-workflow-base
 category: international
 tier: 2

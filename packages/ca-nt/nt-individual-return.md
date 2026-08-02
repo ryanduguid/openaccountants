@@ -1,11 +1,11 @@
 ---
 name: nt-individual-return
-description: >
+description: Use this skill whenever asked about Northwest Territories territorial income tax for a self-employed sole proprietor. Trigger on phrases like "NWT tax", "NT428", "Northwest Territories income tax", "NWT Cost of Living Tax Credit", "NWT Child Benefit", "territorial tax NWT", or any question about computing Northwest Territories territorial tax. ALWAYS read this skill before touching any Northwest Territories territorial tax work.
 version: 1.0
 jurisdiction: CA
 tax_year: 2025
-last_updated: 2026-05-23
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - income-tax-workflow-base
 category: international
 tier: 2

@@ -1,11 +1,11 @@
 ---
 name: cross-border-payroll-coordination
-description: >
+description: Cross-border payroll compliance for companies with employees or contractors in multiple countries. Use when the user asks about: cross-border payroll, remote worker payroll, shadow payroll, hypothetical tax, employer of record, EOR, 183-day rule, economic employer, PE risk from employees, A1 certificate, social security certificate, bilateral social security, posted worker, business traveler tax, contractor vs employee cross-border, misclassification, equity compensation cross-border, RSU cross-border, stock options international, payroll obligations foreign employee, remote worker abroad, digital nomad payroll, cross-border withholding, or any question about payroll compliance when workers cross borders.
 version: 1.0
 jurisdiction: INTL
 tax_year: 2025
-last_updated: 2026-05-23
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 category: cross-border
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)

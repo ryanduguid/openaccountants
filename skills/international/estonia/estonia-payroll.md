@@ -1,11 +1,11 @@
 ---
 name: estonia-payroll
-description: >
+description: Use this skill whenever asked about Estonia payroll processing for employed persons. Trigger on phrases like "Estonia payroll", "Estonian payroll", "palgaarvestus", "sotsiaalmaks", "social tax Estonia", "income tax withholding Estonia", "tulumaks kinnipidamine", "töötuskindlustusmakse", "unemployment insurance premium Estonia", "II pillar", "II sammas", "kohustuslik kogumispension", "funded pension Estonia", "Form TSD", "TSD declaration", "net salary Estonia", "gross to net Estonia", "palk", "netopalk", "EMTA payroll", "Maksu- ja Tolliamet payroll", "basic exemption Estonia", "maksuvaba tulu", "minimum wage Estonia", "employer cost Estonia", "what does an Estonian employee cost", or any question about computing employee pay, withholding income tax, social tax, unemployment premiums, or funded-pension contributions for Estonia-based employees. This skill covers flat 22% income tax withholding (after basic exemption), 33% employer social tax (uncapped, with a monthly minimum base), employee/employer unemployment insurance premiums, mandatory funded (II pillar) pension contributions, the basic exemption, minimum wage, employment-register registration, bank statement classification patterns, and monthly Form TSD filing. ALWAYS read this skill before processing any Estonia payroll.
 version: 0.1
 jurisdiction: EE
 tax_year: 2025
-last_updated: 2026-06-04
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - payroll-workflow-base
 category: payroll
 tier: 2

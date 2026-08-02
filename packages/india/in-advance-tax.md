@@ -1,14 +1,15 @@
 ---
 name: in-advance-tax
-description: >
+description: Use this skill whenever asked about Indian advance tax for self-employed individuals, freelancers, or professionals. Trigger on phrases like "advance tax India", "advance tax instalments", "Section 234B", "Section 234C", "Challan 280", "advance tax due dates", "interest on late advance tax", "presumptive tax instalment", "estimated tax India", or any question about advance tax obligations under the Income-tax Act 1961. This skill covers the quarterly instalment schedule, presumptive taxation single instalment, threshold, interest for shortfall under s.234B and s.234C, senior citizen exemption, Challan 280 payment procedure, TDS credit interaction, and edge cases. ALWAYS read this skill before touching any advance tax-related work for India.
 version: 2.0
 jurisdiction: IN
 tax_year: 2025
-last_updated: 2026-04-13
-verified_by: Mayur Deokar
+last_updated: 2026-07-13
+reviewed_by: Mayur Deokar
+review_status: current
 depends_on: - income-tax-workflow-base
 category: international
-tier: 2
+tier: 1
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 

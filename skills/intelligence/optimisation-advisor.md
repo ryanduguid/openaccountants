@@ -1,11 +1,11 @@
 ---
 name: optimisation-advisor
-description: >
+description: Intelligence skill that identifies tax savings opportunities after the base computation is complete. Runs 40 optimisation checks across 8 jurisdictions (US, UK, DE, AU, CA, IN, ES, MT) covering retirement contributions, entity structure, timing, elections, and unclaimed reliefs. Each check has a trigger condition, calculation formula, materiality threshold (EUR/USD 100 minimum), and reviewer flag.
 version: 0.1
 jurisdiction: GLOBAL
 tax_year: 2025
-last_updated: 2026-04-13
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - workflow-base
 category: intelligence
 tier: 2

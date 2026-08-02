@@ -3,8 +3,9 @@ name: us-1099-k-and-payment-processors
 description: "Tier 2 US federal content skill for Form 1099-K reporting under IRC §6050W for tax year 2025. Covers the current federal TPSO threshold restored by OBBBA: more than $20,000 and more than 200 transactions, reconciliation between gross 1099-K amounts and Schedule C / Schedule 1 / Schedule D reporting, IRS-recommended treatment of personal items sold at loss (Schedule 1 Lines 8z + 24z offset), hobby vs business §183 determination, PayPal/Venmo Friends-and-Family vs Goods-and-Services categorization, marketplace facilitator sales-tax exclusion under Wayfair, ride-share and content-creator double-form scenarios (1099-K + 1099-NEC), the 2025 1099-DA digital asset transition, and IRS CP2000 matching defense."
 jurisdiction: US
 tax_year: 2025
-last_updated: 2026-07-10
-verified_by: James Wallach
+last_updated: 2026-07-13
+reviewed_by: James Wallach
+review_status: current
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---

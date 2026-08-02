@@ -3,8 +3,8 @@ name: pg-income-tax
 description: Use this skill whenever asked about Papua New Guinea (PNG) personal income tax for employees and self-employed individuals. Trigger on phrases like "how much tax do I pay in PNG", "salary or wages tax", "SWT", "PAYE Papua New Guinea", "Kina income tax", "provisional tax", "annual income tax return", "IRC return", "fortnightly tax", "superannuation contribution", "Nambawan Super", "Nasfund", "GST registration", "self-employed tax PNG", or any question about filing or computing income tax for an employee or sole trader in Papua New Guinea. Also trigger when computing fortnightly salary/wages tax, provisional tax instalments, or superannuation, and when reading a PNG bank statement to classify business income and expenses. This skill covers resident and non-resident rate brackets, SWT/PAYE mechanics, provisional tax, superannuation, GST interaction, filing deadlines, penalties, and the new Income Tax Act 2025 regime effective 1 January 2026. ALWAYS read this skill before touching any PNG income tax work.
 jurisdiction: PG
 tax_year: 2025
-last_updated: 2026-06-25
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---

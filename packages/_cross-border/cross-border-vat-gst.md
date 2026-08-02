@@ -1,11 +1,11 @@
 ---
 name: cross-border-vat-gst
-description: >
+description: VAT, GST, and sales tax compliance for international digital businesses. Use when the user asks about: VAT, GST, sales tax, value added tax, goods and services tax, EU VAT, UK VAT, VAT OSS, One-Stop Shop, VAT registration, reverse charge, Merchant of Record, Paddle, Lemon Squeezy, Stripe Tax, digital services tax, DST, IOSS, Import One-Stop Shop, B2C digital VAT, B2B reverse charge, VIES validation, Australia GST, Singapore GST, Japan JCT, consumption tax, Canada GST/HST, US sales tax, economic nexus, SaaS tax, digital product tax, VAT compliance, VAT threshold, EU B2C sales, cross-border VAT, international VAT, when to register for VAT, VAT penalties, late registration, Mehrwertsteuer, TVA, IVA, 消費税, or any question about indirect tax compliance for businesses selling digital products or services internationally.
 version: 1.0
 jurisdiction: INTL
 tax_year: 2025
-last_updated: 2026-05-20
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 category: international
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)

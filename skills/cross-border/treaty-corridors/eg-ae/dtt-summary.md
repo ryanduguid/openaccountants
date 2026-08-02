@@ -1,20 +1,19 @@
 ---
-name: eg-ae-dtt
+name: eg-ae-dtt-corridor
 description: >
   Use this skill whenever asked about the Egypt-UAE Double Tax Treaty
   — for residents/companies with cross-border flows between the two jurisdictions.
   Trigger on "Egypt UAE tax treaty", "DTT Egypt UAE", "ضريبة الازدواج مصر الإمارات",
   "cross-border Egypt UAE", "Egypt United Arab Emirates withholding". ALWAYS read this
   skill before applying treaty rates.
-jurisdiction: EG-AE
-tax_year: 2026
-tier: 2
-last_updated: 2026-07-14
 version: 1.0
-depends_on:
-  - eg-corporate-tax
-  - eg-withholding-tax
-verified_by: pending
+jurisdiction: EG-AE
+tax_year: 2025
+last_updated: 2026-08-02
+review_status: pending_review
+depends_on: - eg-corporate-tax
+tier: 2
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
 # Egypt ↔ UAE Double Tax Treaty (DTT) Summary
@@ -36,12 +35,7 @@ verified_by: pending
 | Last Verified | July 2026 |
 | Key Note | New treaty fundamentally changes dividend treatment (0% → 5%/10%), capital gains (residence → source state), and adds PPT. Interest remains 10%. UAE has 0% domestic WHT — treaty rates bind Egypt as source state only. |
 
----
-
-## Withholding Tax Rate Summary
-
-| Income Type | Treaty Rate (New TT) | Treaty Rate (Old TT) | Domestic Rate (Egypt) | Domestic Rate (UAE) | Treaty Article | Notes |
-|-------------|---------------------|-----------------------|----------------------|---------------------|----------------|-------|
+----------|---------------------|-----------------------|----------------------|---------------------|----------------|-------|
 | Dividends — portfolio | 10% | 0% (no WHT) | 10% (unlisted) / 5% (listed) | 0% | Art 10 | Source state may tax for the first time under new TT |
 | Dividends — substantial (≥10% voting stock, 365-day holding) | 5% | 0% (no WHT) | 10% (unlisted) / 5% (listed) | 0% | Art 10 | 365-day holding period requirement (ending on dividend distribution date); branch profit tax ≤5% |
 | Interest | 10% | 10% | 20% | 0% | Art 11 | Same rate under old and new treaty; government exemption removed from new TT |
@@ -367,3 +361,23 @@ The new treaty includes a standalone **Principal Purpose Test (PPT)** (Article 3
 - **Egypt ETA — Bilateral agreements:** https://eta.gov.eg/en/content/bilateral-agreements
 
 **Last verified:** July 2026
+
+> Contributed by Ahmed Hassan.
+
+<!-- openaccountants-cta-block -->
+
+---
+
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

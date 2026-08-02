@@ -1,14 +1,15 @@
 ---
 name: ca-fed-t1135
-description: >
+description: Use this skill whenever asked about Canada Form T1135, Foreign Income Verification Statement, specified foreign property, foreign asset reporting, the $100,000 cost amount threshold, the $250,000 simplified-versus-detailed reporting boundary, or how to classify foreign accounts, foreign securities, foreign real estate, foreign trusts, and other foreign property for a Canadian resident taxpayer. Trigger on phrases like "T1135", "foreign income verification statement", "specified foreign property", "foreign assets over 100000", "do I need to file T1135", "foreign bank account reporting Canada", "US brokerage T1135", "foreign rental property T1135", "simplified T1135", "Part A Part B T1135", or any question about whether a Canadian resident individual, corporation, trust, or partnership must disclose foreign property. ALWAYS read this skill before touching any Canada T1135-related work.
 version: 2.0
 jurisdiction: CA
 tax_year: 2025
-last_updated: 2026-05-23
-verified_by: Edgar Lautsyus
+last_updated: 2026-07-13
+reviewed_by: Edgar Lautsyus
+review_status: current
 depends_on: - income-tax-workflow-base
 category: international
-tier: 2
+tier: 1
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 

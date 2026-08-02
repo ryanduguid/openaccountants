@@ -1,11 +1,11 @@
 ---
 name: ky-income-tax
-description: >
+description: Use this skill whenever asked about Kentucky individual income tax. Trigger on phrases like "Kentucky income tax", "KY income tax", "Form 740", "KRS 141", "Kentucky flat tax". Kentucky has a flat 3.5% rate for TY2026 (was 4% for TY2025). ALWAYS load us-tax-workflow-base first.
 version: "0.1"
 jurisdiction: US-KY
 tax_year: 2025
-last_updated: 2026-05-22
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---

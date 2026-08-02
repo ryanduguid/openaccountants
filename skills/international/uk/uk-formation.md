@@ -1,14 +1,15 @@
 ---
 name: uk-formation
-description: >
+description: Use this skill whenever asked about forming, incorporating, or registering a company in the United Kingdom. Trigger on phrases like "set up a company in the UK", "UK Ltd", "Companies House", "incorporate in England", "UK company formation", "register a business UK", "limited company UK", "LLP formation UK", "UK company costs", "confirmation statement", or any question about starting a business entity in England, Wales, Scotland, or Northern Ireland. Covers entity types, registration process, capital requirements, costs, post-formation compliance, and bank account opening. ALWAYS read this skill before advising on UK company formation.
 version: 1.0
 jurisdiction: GB
 tax_year: 2025
-last_updated: 2026-05-23
-verified_by: James Power
+last_updated: 2026-07-13
+reviewed_by: James Power
+review_status: current
 depends_on: - company-formation-workflow-base
 category: formation
-tier: 2
+tier: 1
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 

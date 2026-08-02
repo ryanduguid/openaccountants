@@ -1,11 +1,11 @@
 ---
 name: ca-tax-residency
-description: >
+description: Canada tax residency: factual resident, deemed resident (183-day sojourner), deemed non-resident, departure return, departure tax on deemed disposition. Trigger on: "Canadian tax resident", "CRA residency", "leaving Canada taxes", "departure return Canada", "factual resident Canada", "183 days Canada", "sojourner Canada", "deemed resident Canada", "moving to Canada taxes", "residential ties Canada", "NR73".
 version: 1.0
 jurisdiction: CA
 tax_year: 2025
-last_updated: 2026-06-05
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 category: international
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)

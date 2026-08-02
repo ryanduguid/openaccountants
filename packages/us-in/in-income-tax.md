@@ -1,11 +1,11 @@
 ---
 name: in-income-tax
-description: >
+description: Use this skill whenever asked about Indiana individual income tax. Trigger on phrases like "Indiana income tax", "IN income tax", "IT-40", "Indiana county tax", "IC 6-3". Indiana has a flat 2.95% state rate plus mandatory county income taxes (0.5%–3.38%). ALWAYS load us-tax-workflow-base first.
 version: "0.1"
 jurisdiction: IN
 tax_year: 2025
-last_updated: 2026-07-10
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---

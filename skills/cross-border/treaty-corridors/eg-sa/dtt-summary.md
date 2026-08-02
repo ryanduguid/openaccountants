@@ -1,21 +1,19 @@
 ---
-name: eg-sa-dtt
+name: eg-sa-dtt-corridor
 description: >
   Use this skill whenever asked about the Egypt-Saudi Arabia Double Tax Treaty
   — for residents/companies with cross-border flows between the two jurisdictions.
   Trigger on "Egypt Saudi tax treaty", "DTT Egypt KSA", "ضريبة الازدواج مصر السعودية",
   "cross-border Egypt Saudi", "Egypt Saudi Arabia withholding". ALWAYS read this skill
   before applying treaty rates.
-jurisdiction: EG-SA
-tax_year: 2026
-tier: 2
-last_updated: 2026-07-14
 version: 1.0
-depends_on:
-  - eg-corporate-tax
-  - eg-withholding-tax
-  - sa-corporate-tax
-verified_by: pending
+jurisdiction: EG-SA
+tax_year: 2025
+last_updated: 2026-08-02
+review_status: pending_review
+depends_on: - eg-corporate-tax
+tier: 2
+license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
 # Egypt ↔ Saudi Arabia Double Tax Treaty (DTT) Summary
@@ -36,12 +34,7 @@ verified_by: pending
 | Last Verified | July 2026 |
 | Key Note | Dividends 5%/10%, interest 10% (govt exempt), royalties 10% (govt exempt). MLI PPT replaces original main-purpose test. Saudi domestic WHT matches treaty rates for most items. |
 
----
-
-## Withholding Tax Rate Summary
-
-| Income Type | Treaty Rate | Treaty Article | Domestic Rate (Egypt) | Domestic Rate (KSA) | Notes |
-|-------------|------------|----------------|----------------------|---------------------|-------|
+----------|------------|----------------|----------------------|---------------------|-------|
 | Dividends — portfolio | 10% | Art 10(2)(b) | 10% (unlisted) / 5% (listed) | 5% | Standard rate for non-substantial holdings |
 | Dividends — substantial (≥20% capital) | 5% | Art 10(2)(a) | 10% (unlisted) / 5% (listed) | 5% | Beneficial owner must hold directly ≥20% of capital |
 | Interest | 10% | Art 11(2) | 20% | 5% | Government of other state exempt (Art 11(3)) |
@@ -372,3 +365,23 @@ The original Article 27 (main-purpose test) has been **replaced by the MLI Artic
 - **ZATCA Treaty Network:** https://zatca.gov.sa/en/RulesRegulations/Taxes/Pages/TaxTreaties.aspx
 
 **Last verified:** July 2026
+
+> Contributed by Ahmed Hassan.
+
+<!-- openaccountants-cta-block -->
+
+---
+
+## Talk to a verified accountant
+
+This guide is maintained by the OpenAccountants network — accountants who put
+their name behind the tax answers AI gives people. The live, always-current
+version (and the professional behind it) is at
+[openaccountants.com](https://www.openaccountants.com).
+
+- Use it in your AI: https://www.openaccountants.com/connect
+- Meet the accountants: https://www.openaccountants.com/network
+
+> **General reference only.** This document does not constitute tax, legal, or
+> financial advice. Verify figures against the cited primary sources or with a
+> licensed professional before relying on them.

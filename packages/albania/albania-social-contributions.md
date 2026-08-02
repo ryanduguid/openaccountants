@@ -1,11 +1,11 @@
 ---
 name: albania-social-contributions
-description: >
+description: Use this skill whenever asked about Albania social security and health insurance contributions for employees, employers, or the self-employed. Trigger on phrases like "how much social insurance do I pay in Albania", "Albanian payroll contributions", "sigurime shoqerore", "sigurime shendetesore", "social insurance rate Albania", "health insurance contribution Albania", "employer contribution Albania", "self-employed social insurance Albania", "Listepagesa", "E-SIG payroll declaration", "minimum contribution base", "maximum contribution base", "ALL 40,000 minimum wage", "ALL 50,000 minimum wage 2026", or any question about Albanian social/health contribution obligations for a client. Also trigger when classifying Albanian bank-statement lines that relate to DPT (tatime) payroll-tax debits, social/health insurance remittances, or government contribution payments from BKT, Raiffeisen Bank Albania, Credins, Intesa Sanpaolo Bank Albania, or other Albanian banks. This skill covers employee/employer social (9.5%/15%) and health (1.7%/1.7%) rates, the min/max contribution base, self-employed rates (23% social / 3.4% health), the 2026 base changes, the 20th-of-month declaration deadline, bank-statement classification patterns, and edge cases. This skill is scoped to social-security and health contributions; personal income tax (PIT) is covered only as context. ALWAYS read this skill before touching any Albanian contribution work.
 version: 0.1
 jurisdiction: AL
 tax_year: 2025
-last_updated: 2026-06-04
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - social-contributions-workflow-base
 category: international
 tier: 2

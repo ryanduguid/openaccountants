@@ -1,11 +1,12 @@
 ---
 name: cameroon-payroll
-description: >
+description: Use this skill whenever asked about Cameroon payroll processing for employed persons. Trigger on phrases like "Cameroon payroll", "IRPP withholding", "PAYE Cameroon", "CNPS contribution", "CFC housing fund", "FNE employment fund", "CAC surcharge", "centimes additionnels", "DIPE", "payslip Cameroon", "bulletin de paie", "net salary Cameroon", "salaire net", "tax withholding Cameroon", "employer social security Cameroon", "SMIG Cameroon", "minimum wage Cameroon", "gross to net Cameroon", "XAF salary calculation", or any question about computing employee pay, withholding tax (IRPP/PAYE), or social security (CNPS) for Cameroon-based employees. This skill covers IRPP progressive withholding with the 10% Additional Council Tax (CAC), CNPS pension/family-allowance/accident contributions, the CFC housing fund and FNE employment fund payroll levies, council tax and audiovisual royalty, minimum wage (SMIG), monthly DIPE filing, and remittance deadlines. ALWAYS read this skill before processing any Cameroon payroll.
 version: 0.1
 jurisdiction: CM
 tax_year: 2025
-last_updated: 2026-06-04
-verified_by: Nkinyam Courage Ndasi
+last_updated: 2026-07-13
+reviewed_by: Nkinyam Courage Ndasi
+review_status: current
 depends_on: - payroll-workflow-base
 category: payroll
 tier: 2

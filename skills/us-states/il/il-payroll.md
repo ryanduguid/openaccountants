@@ -3,9 +3,10 @@ name: il-payroll
 description: Tier 2 Illinois content skill for employer payroll compliance covering tax year 2025. Includes the 4.95% flat PIT, supplemental 4.95%, IL-941 quarterly withholding, IL UI wage base $13,590 with rates 0.85-8.65%, the Secure Choice Savings Program auto-enroll mandate for 5+ employees (5% default deferral if no qualified retirement plan offered), Chicago Fair Workweek Ordinance predictive scheduling for 10+ employees in covered industries, Cook County paid sick leave, and the One Day Rest in Seven Act.
 jurisdiction: US-IL
 tax_year: 2025
-last_updated: 2026-05-27
-verified_by: Amir Pelinkovic
-tier: 2
+last_updated: 2026-07-13
+reviewed_by: Amir Pelinkovic
+review_status: current
+tier: 1
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 

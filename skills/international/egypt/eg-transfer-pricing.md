@@ -1,11 +1,11 @@
 ---
 name: eg-transfer-pricing
-description: >
+description: Use this skill whenever asked about Egyptian transfer pricing documentation, benchmarking, or related-party transaction review — for residents with cross-border or domestic related-party dealings. Trigger on "Egypt TP", "Egypt transfer pricing", "Master File Egypt", "CbCR Egypt", "ضريبة نفقات الشركات المرتبطة مصر". ALWAYS read this skill before touching any Egypt TP work.
 version: 0.1
 jurisdiction: EG
 tax_year: 2025
 last_updated: 2026-07-22
-verified_by: pending
+review_status: pending_review
 depends_on: - transfer-pricing-workflow-base
 category: transfer-pricing
 tier: 2

@@ -1,11 +1,11 @@
 ---
 name: sd-corporate-income-tax
-description: >
+description: Use this skill whenever asked about Sudanese corporate income tax (Business Profits Tax) for resident companies, branches of foreign companies, and petroleum operations — to compute, review, or explain BPT liability, sector rates, deductions, losses, free zones, and the petroleum PSA regime. Trigger on phrases like "Sudan corporate tax", "Sudan BPT", "business profits tax Sudan", "ضريبة أرباح الأعمال السودان", "Sudan petroleum tax", or any request to prepare or check a Sudanese corporate tax return. ALWAYS read this skill before touching any Sudan corporate tax work.
 version: 0.1
 jurisdiction: SD
 tax_year: 2025
-last_updated: 2026-06-25
-verified_by: pending
+last_updated: 2026-07-22
+review_status: pending_review
 depends_on: - income-tax-workflow-base
 category: international
 tier: 2

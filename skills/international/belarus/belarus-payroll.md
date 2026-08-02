@@ -1,11 +1,11 @@
 ---
 name: belarus-payroll
-description: >
+description: Use this skill whenever asked about Belarus payroll processing for employed persons. Trigger on phrases like "Belarus payroll", "Belarusian salary", "зарплата", "podokhodny nalog", "подоходный налог", "13% income tax Belarus", "PIT Belarus", "tax agent Belarus", "FSZN", "ФСЗН", "Social Protection Fund Belarus", "Фонд социальной защиты населения", "взносы в ФСЗН", "vznosy v FSZN", "28% pension Belarus", "6% social insurance Belarus", "1% employee contribution Belarus", "Belgosstrakh", "Белгосстрах", "accident insurance Belarus", "Form 4-fund", "4-фонд", "PU-3", "ПУ-3", "standard deduction Belarus", "child deduction Belarus", "minimum wage Belarus", "минимальная зарплата", "MZP Belarus", "net salary Belarus", "gross to net Belarus", "PAYE Belarus", "tax withholding Belarus", "employer contributions Belarus", "high-income 25% Belarus", "BYN 220000 threshold", "HTP Belarus", "High-Tech Park payroll", "foreign worker salary Belarus", or any question about computing employee pay, withholding income tax, or mandatory social/accident contributions for Belarus-based employees. This skill covers the flat 13% income tax withholding (employer as tax agent), the FSZN employer 34% (28% pension + 6% social) and employee 1% contributions, compulsory Belgosstrakh accident insurance, the standard/child/category deductions, the high-income 25% annual surtax, minimum wage, foreign-worker salary thresholds, the High-Tech Park base cap, and Form 4-fund / PU-3 filing obligations. ALWAYS read this skill before processing any Belarus payroll.
 version: 0.1
 jurisdiction: BY
 tax_year: 2025
-last_updated: 2026-06-04
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - payroll-workflow-base
 category: payroll
 tier: 2

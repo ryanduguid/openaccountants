@@ -1,13 +1,14 @@
 ---
 name: ae-tax-residency
-description: >
+description: Use this skill for any question about UAE tax residency. Trigger on: "UAE tax resident", "Dubai tax residency", "UAE residency certificate", "183 days UAE", "move to Dubai taxes", "UAE domicile", "tax residency certificate UAE", "centre of vital interests UAE", "leave UAE tax implications", "Emirates ID tax". Covers how to establish UAE tax residency, the conditions, and what it means for tax purposes.
 version: 1.0
 jurisdiction: AE
 tax_year: 2025
-last_updated: 2026-06-05
-verified_by: Mehran Habib
+last_updated: 2026-07-13
+reviewed_by: Mehran Habib
+review_status: current
 category: international
-tier: 2
+tier: 1
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 

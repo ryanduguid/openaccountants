@@ -1,11 +1,11 @@
 ---
 name: vat-place-of-supply-master
-description: >
+description: The definitive place-of-supply reference for cross-border VAT on services and goods. Use when the user asks about: place of supply, where is VAT due, which country's VAT, Art 44, Art 45, B2B place of supply, B2C place of supply, immovable property VAT, transport VAT, electronically supplied services place of supply, distance selling, chain transactions, triangulation, OSS decision tree, IOSS, intra-EU supply, import VAT, Art 47, Art 48, Art 53, Art 55, Art 56, Art 58, Art 31, Art 32, Art 33, Art 36a, US sales tax nexus, Australian GST on imports, India OIDAR, Japan consumption tax, freelancer cross-border VAT, "where do I charge VAT", or any question about determining the correct country for VAT/GST on a cross-border transaction.
 version: 1.0
 jurisdiction: INTL
 tax_year: 2025
-last_updated: 2026-05-23
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 category: cross-border
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)

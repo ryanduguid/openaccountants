@@ -1,11 +1,11 @@
 ---
 name: fr-tax-audit
-description: >
+description: French tax audit procedures, penalties, and taxpayer rights (contrôle fiscal). Trigger on phrases like "contrôle fiscal", "vérification de comptabilité", "redressement fiscal", "DGFIP contrôle", "proposition de rectification", "pénalités fiscales", "majoration 40%", "manquement délibéré", "intérêts de retard", "abus de droit", "commission départementale", "recours hiérarchique", "charte du contribuable vérifié", "FEC contrôle", "rejet de comptabilité", "acte anormal de gestion", "tax audit France", "tax penalties France", "objection tax France", "délai de reprise", "prescription fiscale", "régularisation spontanée". Covers the 8 verification axes (FEC, IS, charge deductibility, CCA 455, revenue, TVA, fixed assets, international), penalty schedules, audit procedures, and taxpayer rights.
 version: 1.0
 jurisdiction: FR
 tax_year: 2025
-last_updated: 2026-05-20
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 category: international
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)

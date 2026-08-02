@@ -1,11 +1,11 @@
 ---
 name: ma-bookkeeping
-description: >
+description: Use this skill whenever asked about record-keeping, bookkeeping, or invoicing obligations for self-employed people and micro-businesses in Morocco — which books or registers each tax regime must keep, what must appear on an invoice, the ICE identifier, the move toward e-invoicing, document retention, and when a taxpayer must move up to full accounting. Trigger on phrases like "Morocco bookkeeping", "comptabilité Maroc", "facture ICE", "e-invoicing Morocco", "facturation électronique Maroc", "registre des recettes", "tenue de comptabilité Maroc", "mentions obligatoires facture", "محاسبة المغرب", "فاتورة ICE". Covers the auto-entrepreneur receipts register, the CPU register of receipts and purchases, RNS / RNR full accounting under the CGNC and Code de Commerce, mandatory invoice mentions, the DGI e-invoicing roadmap, the SIMPL teleservices, and the 10-year retention rule. Reply in the user's language (English, French, or Moroccan Arabic / Darija). Cross-reference ma-auto-entrepreneur, ma-cpu, and ma-income-tax for the tax computation.
 version: 1.0
 jurisdiction: MA
 tax_year: 2025
-last_updated: 2026-06-08
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - income-tax-workflow-base
 category: international
 tier: 2

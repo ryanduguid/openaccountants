@@ -1,11 +1,11 @@
 ---
 name: mn-income-tax
-description: >
+description: Use this skill whenever asked about Minnesota individual income tax for self-employed persons, sole proprietors, or single-member LLCs. Trigger on phrases like "Minnesota income tax", "MN income tax", "Form M1", "Minnesota DOR", "Minn. Stat. § 290.06".
 version: "0.1"
 jurisdiction: US-MN
 tax_year: 2025
-last_updated: 2026-05-22
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---

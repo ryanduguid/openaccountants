@@ -1,11 +1,11 @@
 ---
 name: estonia-tax-optimization
-description: >
+description: Use this skill whenever asked about reducing tax in Estonia, tax planning, saving tax, or legal strategies to minimise tax for a self-employed person, freelancer, or small company in Estonia. Trigger on phrases like "reduce tax Estonia", "0% corporate tax", "retained profits", "FIE vs OÜ", "OÜ tax", "ettevõtluskonto", "entrepreneur account", "salary vs dividend Estonia", "distributed profits", "participation exemption", "Estonian holding company", "save tax Estonia", "tax planning Estonia". This skill covers the entity-choice / profit-deferral decision (FIE vs OÜ vs entrepreneur account), the 0%-on-retained-profits system, salary-vs-dividend mix, the distributed-profits CIT, the basic exemption, the II-pillar election, the holding/participation exemption, and the anti-avoidance red lines. ALWAYS read this skill before advising on any Estonian tax optimisation.
 version: 0.1
 jurisdiction: EE
 tax_year: 2025
-last_updated: 2026-06-04
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: []
 category: tax-optimization
 tier: 2

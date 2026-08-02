@@ -1,11 +1,11 @@
 ---
 name: ua-crypto-tax
-description: >
+description: Taxation of cryptocurrency / virtual assets for individuals in Ukraine under the framework legislated to take effect from 1 January 2026: 18% PIT + 5% military levy on annual gains, the one-off 5% PIT transition for pre-law assets sold in 2026, taxable events, cost basis, and record-keeping.
 version: 1.0
 jurisdiction: UA
 tax_year: 2026
-last_updated: 2026-05-23
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - income-tax-workflow-base
 category: international
 tier: 2

@@ -1,11 +1,11 @@
 ---
 name: ru-usn
-description: >
+description: Use this skill whenever asked about the Russian simplified taxation system (УСН / Упрощённая система налогообложения) for individual entrepreneurs (ИП) and small organisations — choosing between the «Доходы» (6%) and «Доходы минус расходы» (15%) objects, regional reduced rates, eligibility limits, the minimum tax, the 2025+ reform making УСН payers liable for VAT (НДС), the КУДиР ledger, quarterly advance payments, the annual declaration, and страховые взносы offset. Trigger on phrases like "УСН", "simplified tax Russia", "ИП 6%", "доходы минус расходы", "USN Russia", "ИП налоги", "упрощёнка", "минимальный налог УСН", "НДС на УСН", or any request to compute or review УСН tax for a self-employed person or small business in Russia. The AI replies in the user's own language.
 version: 1.0
 jurisdiction: RU
 tax_year: 2026
-last_updated: 2026-05-23
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - income-tax-workflow-base
 category: international
 tier: 2

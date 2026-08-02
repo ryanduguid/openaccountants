@@ -4,8 +4,9 @@ description: Tier 2 orchestrator skill that assembles the complete federal incom
 version: 0.2
 jurisdiction: US
 tax_year: 2025
-last_updated: 2026-04-09
-verified_by: James Wallach
+last_updated: 2026-07-13
+reviewed_by: James Wallach
+review_status: current
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---

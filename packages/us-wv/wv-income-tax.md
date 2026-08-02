@@ -1,11 +1,11 @@
 ---
 name: wv-income-tax
-description: >
+description: Use this skill whenever asked about West Virginia individual income tax, West Virginia Form IT-140, West Virginia graduated tax rates, West Virginia self-employment income tax at the state level, West Virginia 2026 rate cut, or any West Virginia personal income tax question for sole proprietors. Trigger on phrases like "West Virginia income tax", "WV income tax", "Form IT-140", "West Virginia tax brackets", "WV 4.58%", "W.Va. Code §11-21", or any request involving West Virginia state individual income tax computation or filing.
 version: "0.1"
 jurisdiction: US-WV
 tax_year: 2025
-last_updated: 2026-05-22
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---

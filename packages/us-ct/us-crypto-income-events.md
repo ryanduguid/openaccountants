@@ -3,8 +3,9 @@ name: us-crypto-income-events
 description: US federal tax on cryptocurrency INCOME / RECEIPT events — mining, staking rewards (Rev. Rul. 2023-14), airdrops and hard forks (Rev. Rul. 2019-24), DeFi lending/yield, interest and rewards. Ordinary-income recognition at FMV on dominion & control, self-employment tax for mining/staking businesses, and basis created on receipt. Disposals/basis/rates, forms, and NFTs are covered by us-crypto-tax, us-crypto-reporting, and us-nft-tax.
 jurisdiction: US
 tax_year: 2025
-last_updated: 2026-06-23
-verified_by: Christopher Aryee
+last_updated: 2026-07-13
+reviewed_by: Christopher Aryee
+review_status: current
 tier: 1
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---

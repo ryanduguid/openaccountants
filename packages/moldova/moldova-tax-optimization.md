@@ -1,11 +1,11 @@
 ---
 name: moldova-tax-optimization
-description: >
+description: Use this skill whenever asked about reducing tax in Moldova, tax planning, or legal strategies to minimise tax for a self-employed person, IT business, or small company in Moldova. Trigger on phrases like "reduce tax Moldova", "Moldova IT Park", "7% tax IT", "small business 4% Moldova", "turnover tax Moldova", "sole proprietor vs SRL", "Moldova dividends 6%", "save tax Moldova", "tax planning Moldova". This skill covers the IT Park 7%-of-turnover regime, the 4% small-business turnover regime, the standard SRL/sole-proprietor system, dividend extraction, and the eligibility/anti-avoidance red lines. ALWAYS read this skill before advising on any Moldovan tax optimisation.
 version: 0.1
 jurisdiction: MD
 tax_year: 2025
-last_updated: 2026-06-04
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: []
 category: tax-optimization
 tier: 2

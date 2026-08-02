@@ -1,11 +1,11 @@
 ---
 name: global-ad-platforms
-description: >
+description: Pattern library for advertising platforms appearing on bank statements worldwide. Covers Google Ads, Meta / Facebook Ads (incl. Instagram), LinkedIn Ads, TikTok Ads / Bytedance, X (Twitter) Ads, Microsoft Ads / Bing Ads, Amazon Ads, Reddit Ads, Pinterest Ads, Snap Ads, Taboola, Outbrain, Quora Ads, Yahoo / Yahoo Japan Ads, Yandex Direct (where applicable), Baidu Ads, Naver Search Advertising, Spotify Ads, Apple Search Ads, RTB / DSP providers (The Trade Desk, DV360, Amazon DSP), and influencer / affiliate platforms (Awin, Impact, ShareASale, Refersion, Partnerize). Provides bank-statement variations, default classification, VAT / GST treatment (notably the India equalisation levy 6% withholding on advertising payments to non-residents), and the relevant DST / sales-tax overlay. Does NOT cover: cloud / hosting (see global-cloud-infrastructure), productivity SaaS (see global-productivity-tools), or payment processors (see global-payment-processors).
 version: 0.1
 jurisdiction: GLOBAL
 tax_year: 2025
-last_updated: 2026-05-23
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 category: pattern
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)

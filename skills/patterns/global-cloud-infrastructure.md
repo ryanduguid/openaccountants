@@ -1,11 +1,11 @@
 ---
 name: global-cloud-infrastructure
-description: >
+description: Pattern library for cloud, infrastructure, and developer tool vendors that appear on bank statements and ledger detail worldwide. Use when classifying an unknown transaction line. Provides the canonical vendor name, common bank statement variations, default Schedule C / category mapping, VAT treatment (B2B reverse charge for most cross-border digital services), and notes on currency, billing cycle, and any sector-specific gotchas. Covers AWS, Azure, GCP, Cloudflare, DigitalOcean, Linode/Akamai, Hetzner, OVHcloud, Vultr, Render, Vercel, Netlify, Fly.io, Railway, Heroku, Backblaze, Wasabi, Datadog, New Relic, PagerDuty, GitHub, GitLab, Sentry, LaunchDarkly, Twilio, SendGrid, Mailgun, Resend, Postmark. Does NOT cover: SaaS productivity tools (see global-productivity-tools), ad platforms (see global-ad-platforms), or payment processors (see global-payment-processors).
 version: 0.1
 jurisdiction: GLOBAL
 tax_year: 2025
-last_updated: 2026-05-23
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 category: pattern
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)

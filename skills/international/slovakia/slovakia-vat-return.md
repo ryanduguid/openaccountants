@@ -3,8 +3,8 @@ name: slovakia-vat-return
 description: Use this skill whenever asked to prepare, review, or create a Slovak VAT return (DPH form / DPHv25) for any client. Trigger on phrases like "prepare VAT return", "do the DPH", "fill in DPH", "create the return", "Slovak VAT", or any request involving Slovakia VAT filing. Also trigger when classifying transactions for VAT purposes from bank statements, invoices, or other source data. This skill contains the complete Slovak VAT classification rules, box mappings, deductibility rules, reverse charge treatment, import VAT reverse charge, and filing deadlines required to produce a correct return. ALWAYS read this skill before touching any VAT-related work for Slovakia.
 jurisdiction: SK
 tax_year: 2025
-last_updated: 2026-04-13
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---

@@ -1,11 +1,12 @@
 ---
 name: my-epf-socso
-description: >
+description: Use this skill whenever asked about Malaysia EPF (KWSP), SOCSO (PERKESO), or EIS contributions. Trigger on phrases like "EPF Malaysia", "KWSP", "Kumpulan Wang Simpanan Pekerja", "SOCSO", "PERKESO", "EIS", "Employment Insurance System", "employer contribution Malaysia", "employee contribution Malaysia", "i-Saraan", "self-employed EPF", "social security Malaysia", or any question about mandatory employment contributions in Malaysia. Covers EPF rates, SOCSO rates, EIS rates, self-employed options, and registration. ALWAYS read this skill before advising on Malaysian employment contributions.
 version: 1.0
 jurisdiction: MY
 tax_year: 2025
-last_updated: 2026-05-23
-verified_by: MUHAMMAD HANIS MAT HUSSIN
+last_updated: 2026-07-13
+reviewed_by: MUHAMMAD HANIS MAT HUSSIN
+review_status: current
 depends_on: - my-income-tax
 category: international
 tier: 2

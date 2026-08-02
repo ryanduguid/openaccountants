@@ -1,11 +1,11 @@
 ---
 name: jp-etax-filing
-description: >
+description: Use this skill whenever asked about filing a Japanese tax return electronically via e-Tax (確定申告書等作成コーナー). Trigger on phrases like "e-Tax", "電子申告", "e-Tax filing", "確定申告書等作成コーナー", "how to file taxes in Japan online", "e-Tax submission", "マイナンバーカード認証", "QR code authentication e-Tax", "blue return financial statements", "決算書入力", "所得税申告書", "consumption tax return filing", "消費税申告書作成", or any question about the step-by-step process of filing income tax or consumption tax returns electronically in Japan. This skill covers the complete e-Tax workflow: authentication, financial statement entry (決算書), income tax return entry (申告書B), consumption tax return entry, and electronic submission. ALWAYS read this skill before assisting with any Japan e-Tax filing work.
 version: 1.0
 jurisdiction: JP
 tax_year: 2025
-last_updated: 2026-05-20
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - jp-income-tax
 category: international
 tier: 2

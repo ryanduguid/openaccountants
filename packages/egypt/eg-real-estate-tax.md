@@ -1,11 +1,11 @@
 ---
 name: eg-real-estate-tax
-description: >
+description: Use this skill whenever asked about Egyptian real estate tax (ضريبة العقارات) under Law 196/2008 — annual rental value tax on owned property in Egypt. Trigger on "Egypt real estate tax", "ضريبة العقارات", "real estate levy Egypt", "annual rental value tax", or any property-tax compliance question for Egyptian owners/landlords.
 version: 0.1
 jurisdiction: EG
 tax_year: 2025
 last_updated: 2026-07-22
-verified_by: pending
+review_status: pending_review
 depends_on: - workflow-base
 category: international
 tier: 2

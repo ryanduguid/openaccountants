@@ -1,11 +1,11 @@
 ---
 name: uk-statutory-residence-test
-description: >
+description: Use this skill for any question about UK tax residency. Trigger on: "UK tax resident", "statutory residence test", "SRT UK", "183 days UK", "leave UK tax", "UK ties test", "automatic overseas test UK", "split year UK", "ceasing UK residency", "UK non-resident", "UK resident abroad", "how many days UK tax", "UK day count rules", "UK resident status". Covers the Statutory Residence Test (SRT) in full — automatic tests, sufficient ties, and split-year treatment.
 version: 1.0
 jurisdiction: GB
 tax_year: 2025
-last_updated: 2026-06-05
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 category: international
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)

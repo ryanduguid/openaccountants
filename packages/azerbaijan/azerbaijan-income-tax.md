@@ -1,11 +1,11 @@
 ---
 name: azerbaijan-income-tax
-description: >
+description: Use this skill whenever asked about Azerbaijan personal income tax for individuals, employees, and self-employed individual entrepreneurs. Trigger on phrases like "how much income tax do I pay in Azerbaijan", "Azerbaijan payroll tax", "DSMF social insurance", "simplified tax regime", "individual entrepreneur tax", "private non-oil sector holiday", "oil and gas sector tax", "annual income tax return Azerbaijan", "AZN withholding", "compulsory medical insurance", "unemployment insurance contribution", "taxes.gov.az", or any question about computing, withholding, or filing personal income tax in the Republic of Azerbaijan. Also trigger when classifying AZN bank-statement lines for an individual entrepreneur, computing payroll deductions, or advising on the 2025 holiday regime versus the 2026 progressive reform. This skill covers personal income tax brackets (private non-oil, oil/gas/public, 2026 reform), DSMF/UIC/medical contributions, the simplified-tax regime, micro-entrepreneur exemptions, filing deadlines, and penalties. ALWAYS read this skill before touching any Azerbaijan income tax work.
 version: 0.1
 jurisdiction: AZ
 tax_year: 2025
-last_updated: 2026-06-04
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - income-tax-workflow-base
 category: international
 tier: 2

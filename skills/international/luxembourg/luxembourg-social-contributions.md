@@ -1,11 +1,11 @@
 ---
 name: luxembourg-social-contributions
-description: >
+description: Use this skill whenever asked about Luxembourg social security contributions (cotisations sociales) for employees, employers, or the self-employed (independants). Trigger on phrases like "how much social security in Luxembourg", "CCSS contributions", "Luxembourg payroll deductions", "pension contribution Luxembourg 2026", "assurance dependance", "dependency insurance", "Mutualite des employeurs", "accident insurance Luxembourg", "CNS health contribution", "CNAP pension", "social parameters 2026", "contribution ceiling 5x SSM", "declaration d'entree", "decompte CCSS", or any question about Luxembourg social-security obligations for a payroll, employer registration, or self-employed client. Also trigger when classifying bank statement transactions that relate to CCSS debits, social-security direct debits, or government contribution payments from BCEE, BGL BNP Paribas, Banque de Luxembourg, Spuerkeess, or other Luxembourg banks. This skill covers the 2026 contribution rates (including the pension reform of 18 Dec 2025), employee/employer/self-employed splits, the SSM floor and 5x-SSM ceiling, the dependency abatement, registration and wage-declaration forms, payment deadlines, penalties, and bank statement classification patterns. Personal income tax (PIT) is administered separately by the ACD and is documented here only for context. ALWAYS read this skill before touching any Luxembourg social-contribution work.
 version: 0.1
 jurisdiction: LU
 tax_year: 2026
-last_updated: 2026-06-04
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - social-contributions-workflow-base
 category: international
 tier: 2

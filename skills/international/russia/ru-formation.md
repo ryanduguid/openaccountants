@@ -1,11 +1,11 @@
 ---
 name: ru-formation
-description: >
+description: Use this skill whenever asked about starting, registering, or formally setting up a business in Russia as a self-employed person. Trigger on phrases like "register ИП", "become самозанятый", "start a business Russia", "open sole proprietorship Russia", "ИП vs ООО", "how to register as self-employed in Russia", "Russian business registration", "ОКВЭД codes", "open a расчётный счёт", "choose tax regime at registration", "close ИП", "deregister самозанятый", "регистрация ИП", "как стать самозанятым", "открыть ООО". Covers becoming самозанятый via «Мой налог», registering as ИП (individual entrepreneur) via ФНС / Госуслуги / banks, the 800 ₽ state duty and the free electronic route, choosing ОКВЭД activity codes, choosing the tax regime at or after registration (НПД / УСН / ПСН / ОСНО) including the 30-day УСН election deadline, opening a расчётный счёт, a brief comparison with forming an ООО, the ЕГРИП / ЕГРЮЛ registers, timing and cost, and deregistering / closing an ИП or самозанятый. References ru-self-employed-npd, ru-usn, ru-income-tax, and ru-social-contributions for what happens after the entity exists.
 version: 1.0
 jurisdiction: RU
 tax_year: 2026
-last_updated: 2026-05-23
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - income-tax-workflow-base
 category: international
 tier: 2

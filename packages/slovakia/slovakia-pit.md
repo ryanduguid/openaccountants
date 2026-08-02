@@ -4,8 +4,8 @@ description: Use this skill whenever asked to prepare, review, or classify trans
 version: 1.0
 jurisdiction: SK
 tax_year: 2025
-last_updated: 2026-05-22
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - foundation
 category: international
 tier: 2

@@ -3,8 +3,9 @@ name: ge-tax-overview
 description: "Source-cited draft: tax overview for Georgia (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
 jurisdiction: GE
 tax_year: 2025
-last_updated: 2026-06-25
-verified_by: Gvantsa Amiridze
+last_updated: 2026-07-13
+reviewed_by: Gvantsa Amiridze
+review_status: current
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---

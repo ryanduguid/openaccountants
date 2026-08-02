@@ -3,8 +3,8 @@ name: ga-net-worth-tax
 description: Tier 2 Georgia content skill for the Net Worth Tax under Form 600 Part II — a separate capital/equity tax distinct from corporate income tax. Covers tax year 2025 including the application to C-corporations, S-corporations, and LLCs taxed as corporations (NOT to sole props, partnerships, or multi-member LLCs taxed as partnerships), the tax base as the greater of issued+outstanding capital stock+paid-in-capital or net worth (assets minus liabilities), the graduated rate structure with cap at $5,000, apportionment for multistate corporations, and filing combined with the corporate income tax Form 600.
 jurisdiction: US-GA
 tax_year: 2025
-last_updated: 2026-05-27
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---

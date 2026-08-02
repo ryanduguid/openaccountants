@@ -1,11 +1,11 @@
 ---
 name: latvia-income-tax
-description: >
+description: Use this skill whenever asked about Latvia personal income tax (iedzīvotāju ienākuma nodoklis, IIN) for employees, self-employed / economic-activity individuals, pensioners, or capital-income recipients. Trigger on phrases like "how much income tax do I pay in Latvia", "Latvia PIT rate", "gada ienākumu deklarācija", "annual income declaration", "non-taxable minimum", "neapliekamais minimums", "VSAOI", "social contributions Latvia", "solidarity tax", "solidaritātes nodoklis", "micro-enterprise tax", "mikrouzņēmuma nodoklis", "MET", "economic activity registration", "capital gains Latvia", "dividend tax Latvia", "self-employed Latvia tax", "EDS", or any question about filing or computing Latvian personal income tax. Also trigger when preparing or reviewing a Latvian annual income declaration (form GID), a capital-gains return (GD/GDz), or a monthly payroll computation, computing the fixed non-taxable minimum and allowances, or advising on VSAOI / solidarity tax interaction. This skill covers the 25.5% / 33% progressive PIT, the +3% high-income surtax, the fixed non-taxable minimum and allowances, VSAOI rates and bases, the solidarity tax, the micro-enterprise tax regime, capital-income tax, penalties, and the interaction with VAT and social insurance. ALWAYS read this skill before touching any Latvian income tax work.
 version: 0.1
 jurisdiction: LV
 tax_year: 2025
-last_updated: 2026-06-04
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - income-tax-workflow-base
 category: international
 tier: 2

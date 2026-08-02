@@ -1,11 +1,11 @@
 ---
 name: fr-rental-income
-description: >
+description: French rental income taxation: revenus fonciers, LMNP, LMP, and SCI à l'IR. Trigger on phrases like "revenus fonciers", "location nue", "location meublée", "LMNP", "LMP", "meublé de tourisme", "micro-foncier", "régime réel foncier", "déficit foncier", "micro-BIC location", "amortissement LMNP", "SCI à l'IR", "SCI transparence fiscale", "Airbnb France impôts", "déclaration 2044", "déclaration 2031", "liasse BIC meublé", "charges déductibles location", "travaux déductibles foncier", "bascule LMP LMNP", "loi Le Meur meublé tourisme", "location saisonnière fiscalité", "déficit imputable revenu global". Covers bare rental (micro-foncier and réel), furnished rental (LMNP micro-BIC and réel with amortisation), LMP status, SCI à l'IR, and déficit foncier rules.
 version: 1.0
 jurisdiction: FR
 tax_year: 2025
-last_updated: 2026-05-20
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 category: international
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)

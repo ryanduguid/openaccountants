@@ -3,8 +3,8 @@ name: bc-speculation-vacancy-tax
 description: Use this skill for BC Speculation and Vacancy Tax on residential properties in designated areas. Triggers "BC SVT", "BC speculation tax", "vacant home tax BC", "0.5% SVT BC", "2% SVT foreign", "speculation tax declaration BC". DIFFERENT from federal Underused Housing Tax (UHT) which also applies.
 jurisdiction: CA
 tax_year: 2025
-last_updated: 2026-05-27
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---

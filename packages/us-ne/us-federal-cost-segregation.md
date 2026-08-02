@@ -3,8 +3,9 @@ name: us-federal-cost-segregation
 description: "Cost segregation studies for US real property: reclassifiable basis, bonus rate, Form 3115 look-back, passive-loss usability."
 jurisdiction: US
 tax_year: 2025
-last_updated: 2026-07-06
-verified_by: James Wallach
+last_updated: 2026-07-13
+reviewed_by: James Wallach
+review_status: current
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---

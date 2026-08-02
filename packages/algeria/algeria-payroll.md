@@ -1,11 +1,11 @@
 ---
 name: algeria-payroll
-description: >
+description: Use this skill whenever asked about Algeria payroll processing for employed persons. Trigger on phrases like "Algeria payroll", "IRG Traitements et Salaires", "IRG withholding Algeria", "retenue à la source Algérie", "CNAS deduction", "cotisation sociale Algérie", "G50 declaration", "DAS CNAS", "bordereau CNAS", "salaire net Algérie", "PAYE Algeria", "net salary Algeria", "SNMG", "salaire minimum Algérie", "abattement 40% salaire", "employer social security Algeria", "gross to net Algeria", "barème IRG", or any question about computing employee pay, income-tax withholding, or social-security contributions for Algeria-based employees. This skill covers IRG (income tax) withholding by the employer, CNAS social security (employee 9% + employer 26%), the branch-by-branch contribution breakdown, the 40% salary abattement, the SNMG minimum wage, and filing obligations to the DGI (G50) and CNAS (monthly + annual DAS). ALWAYS read this skill before processing any Algeria payroll.
 version: 0.1
 jurisdiction: DZ
 tax_year: 2025
-last_updated: 2026-06-04
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - payroll-workflow-base
 category: payroll
 tier: 2

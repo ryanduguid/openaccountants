@@ -1,11 +1,11 @@
 ---
 name: guatemala-payroll
-description: >
+description: Use this skill whenever asked about Guatemala payroll processing for employed persons. Trigger on phrases like "Guatemala payroll", "nómina Guatemala", "ISR Guatemala", "retención ISR", "rentas del trabajo en relación de dependencia", "cuota laboral IGSS", "cuota patronal", "IGSS contribution", "INTECAP", "IRTRA", "bonificación incentivo", "bono 14", "aguinaldo", "salario mínimo Guatemala", "net salary Guatemala", "salario neto", "PAYE Guatemala", "tax withholding Guatemala", "employer contributions Guatemala", "RetenISR", "constancia de retención", "SAT Guatemala", "gross to net Guatemala", "GTQ payroll", "quetzal salary", or any question about computing employee pay, withholding income tax (ISR), or mandatory social-security contributions for Guatemala-based employees. This skill covers ISR withholding on employment income (Decreto 10-2012), employee and employer IGSS/INTECAP/IRTRA contributions, the standard personal deduction and IVA credit, statutory bonuses (bonificación incentivo, aguinaldo, Bono 14), minimum wage by economic circumscription, non-resident withholding, and SAT/IGSS filing obligations. ALWAYS read this skill before processing any Guatemala payroll.
 version: 0.1
 jurisdiction: GT
 tax_year: 2026
-last_updated: 2026-06-04
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - payroll-workflow-base
 category: payroll
 tier: 2

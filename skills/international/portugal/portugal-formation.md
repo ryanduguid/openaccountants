@@ -1,14 +1,15 @@
 ---
 name: portugal-formation
-description: >
+description: Utilize esta skill sempre que lhe perguntarem sobre constituição, incorporação ou registo de uma empresa em Portugal. Acione perante expressões como "constituir empresa em Portugal", "constituição de Lda", "sociedade por quotas", "Empresa na Hora", "constituição de empresa portuguesa", "registar negócio em Portugal", "sociedade unipessoal", "NIF Portugal", "Registo Comercial", ou qualquer questão sobre o início de uma entidade empresarial em Portugal. Abrange tipos de entidade (Lda, SA, ENI), processo de registo, requisitos de capital, custos, cumprimento pós-constituição e abertura de conta bancária. LEIA SEMPRE esta skill antes de aconselhar sobre a constituição de empresas em Portugal. Trigger also on: "set up a company in Portugal", "Lda formation", "sociedade por quotas", "Empresa na Hora", "Portuguese company formation", "register a business Portugal", "sociedade unipessoal", "NIF Portugal", "Registo Comercial".
 version: 1.0
 jurisdiction: PT
 tax_year: 2025
-last_updated: 2026-05-23
-verified_by: Mário Jorge da costa Vale
+last_updated: 2026-07-13
+reviewed_by: Mário Jorge da costa Vale
+review_status: current
 depends_on: - company-formation-workflow-base
 category: formation
-tier: 2
+tier: 1
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 

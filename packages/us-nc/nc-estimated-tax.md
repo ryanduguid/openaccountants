@@ -3,8 +3,8 @@ name: nc-estimated-tax
 description: Use this skill whenever asked about North Carolina individual quarterly estimated income tax. Trigger on phrases like "NC estimated tax", "Form NC-40", "NC quarterly payments", "NC safe harbor", "Form D-422", "NC underpayment penalty", "do I need to make NC estimates".
 jurisdiction: US-NC
 tax_year: 2025
-last_updated: 2026-05-28
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---

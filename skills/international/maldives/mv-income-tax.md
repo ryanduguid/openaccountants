@@ -3,8 +3,8 @@ name: mv-income-tax
 description: Use this skill whenever asked about Maldives (Maldivian) personal/individual income tax for self-employed individuals, sole proprietors, or employees. Trigger on phrases like "how much income tax do I pay in the Maldives", "MIRA", "EWT", "employee withholding tax", "MIRA 601", "income tax return Maldives", "interim payment", "tax-free threshold MVR 720,000", "MVR 60,000 a month", "MRPS", "pension contribution Maldives", "self-employed tax Maldives", "income tax registration threshold", or any question about filing or computing income tax for a self-employed or employed client in the Maldives. Also trigger when preparing or reviewing the individual income tax return or an EWT return, computing the progressive income-tax bands, or advising on interim payments and pension. Despite stale secondary sources that claim "the Maldives has no income tax", the Maldives DOES levy a personal income tax under the Income Tax Act (Law No. 25/2019). This skill covers the progressive income-tax brackets, employee withholding tax (EWT), interim/final filing for the self-employed, registration thresholds, the Maldives Retirement Pension Scheme (MRPS), GST context, and penalties. ALWAYS read this skill before touching any Maldives income tax work.
 jurisdiction: MV
 tax_year: 2025
-last_updated: 2026-06-25
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---

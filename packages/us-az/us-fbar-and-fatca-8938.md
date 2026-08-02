@@ -3,8 +3,9 @@ name: us-fbar-and-fatca-8938
 description: Tier 2 US federal content skill for the dual foreign financial account disclosure regimes — FinCEN Form 114 (FBAR) under 31 USC §5314 and Form 8938 (FATCA) under IRC §6038D. Covers tax year 2025 including the $10,000 aggregate FBAR threshold (per Bittner 2023 non-willful penalty is per-form not per-account), Form 8938 specified person and SFFA thresholds ($50k/$100k/$200k/$400k tiers), the differences in coverage (signature authority for FBAR, ownership for 8938, foreign mutual funds for 8938 only), willful and non-willful penalty severity, and the Streamlined Foreign Offshore / Domestic Offshore compliance paths for catching up.
 jurisdiction: US
 tax_year: 2025
-last_updated: 2026-05-27
-verified_by: Christopher Aryee
+last_updated: 2026-07-13
+reviewed_by: James Wallach
+review_status: current
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---

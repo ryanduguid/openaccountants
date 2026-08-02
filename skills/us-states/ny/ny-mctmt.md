@@ -3,8 +3,8 @@ name: ny-mctmt
 description: "The NY Metropolitan Commuter Transportation Mobility Tax (MCTMT, Tax Law Article 23) is a payroll-and-self-employment tax on employers and self-employed individuals doing business in the Metropolitan Commuter Transportation District (MCTD): the five NYC boroughs (Zone 1) and the suburban counties of Dutchess, Nassau, Orange, Putnam, Rockland, Suffolk, and Westchester (Zone 2). Quarterly payroll brackets run from 0.11% up to 0.60% in Zone 1 and 0.34% in Zone 2. Self-employed individuals owe MCTMT only when MCTD-allocated net earnings exceed $50,000 annually, paid via Form MTA-6 quarterly estimates and reconciled on the NY personal return. Employers file quarterly through NYS-45 (which absorbed Form MTA-305). Exemptions cover federal government, certain NY state employees, agricultural employers, public school districts, and household employers."
 jurisdiction: US-NY
 tax_year: 2025
-last_updated: 2026-05-27
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---

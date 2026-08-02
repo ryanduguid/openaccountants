@@ -1,11 +1,12 @@
 ---
 name: us-gaap-asc606-revenue
-description: >
+description: US GAAP revenue recognition under ASC 606 (Revenue from Contracts with Customers) and the related contract-cost guidance in ASC 340-40. Covers the five-step model — identify the contract, identify performance obligations, determine the transaction price, allocate it, and recognize revenue as or when obligations are satisfied — plus variable consideration and the constraint, significant financing components, principal-versus-agent, licenses, contract modifications, contract assets and liabilities, and the cost-to-obtain and cost-to-fulfill rules. Produces recognition conclusions, journal entries, and a reviewer brief. Issued as the US GAAP edition of the revenue topic; see ifrs15-revenue for the IFRS edition. MUST load alongside financial-reporting-workflow-base.
 version: 0.1
 jurisdiction: US
 tax_year: 2025
-last_updated: 2026-05-29
-verified_by: James Wallach
+last_updated: 2026-07-13
+reviewed_by: James Wallach
+review_status: current
 depends_on: - financial-reporting-workflow-base
 category: financial-reporting
 tier: 2

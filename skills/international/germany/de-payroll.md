@@ -1,11 +1,11 @@
 ---
 name: de-payroll
-description: >
+description: Use this skill whenever asked about German payroll tax (Lohnsteuer) computation for EMPLOYEES. Trigger on phrases like "Lohnsteuer", "Gehaltsabrechnung", "payslip Germany", "Steuerklasse", "Brutto Netto", "Solidaritaetszuschlag on wages", "Kirchensteuer on payroll", "Sozialversicherungsbeitraege employee", "Arbeitnehmeranteil", "Arbeitgeberanteil", "Beitragsbemessungsgrenze", "Lohnabrechnung", "Nettolohn", "payroll withholding Germany", "German wage tax", "Lohnsteuerklasse I II III IV V VI", or any question about computing employee payroll deductions in Germany. Covers Lohnsteuer (income tax withholding), Solidaritatszuschlag, Kirchensteuer, and all four branches of Sozialversicherung (RV, KV, PV, AV) from an employer/employee split perspective. This is SEPARATE from the self-employed income tax skill (de-income-tax.md). ALWAYS read this skill before computing any German employee payroll.
 version: 1.0
 jurisdiction: DE
 tax_year: 2025
-last_updated: 2026-05-22
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - income-tax-workflow-base
 category: international
 tier: 2

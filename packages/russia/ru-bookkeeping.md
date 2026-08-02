@@ -1,11 +1,11 @@
 ---
 name: ru-bookkeeping
-description: >
+description: Use this skill whenever asked about record-keeping, bookkeeping, or accounting obligations for self-employed people and individual entrepreneurs (ИП) in Russia. Trigger phrases like "КУДиР", "bookkeeping Russia", "онлайн-касса", "ККТ", "what records ИП keep", "самозанятый records", "книга учёта доходов и расходов", "do I need a cash register in Russia", "Мой налог чеки", "ОФД", "сколько хранить документы", "first-aid documents акт накладная счёт", "does an ИП need full accounting", "НПД vs УСН vs ОСНО records". Distinguishes obligations by tax regime (НПД / самозанятый, УСН, ОСНО) and explains why ИП generally are NOT required to keep full бухгалтерский учёт.
 version: 1.0
 jurisdiction: RU
 tax_year: 2026
-last_updated: 2026-05-23
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - income-tax-workflow-base
 category: international
 tier: 2

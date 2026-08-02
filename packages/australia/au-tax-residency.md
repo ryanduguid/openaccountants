@@ -1,11 +1,11 @@
 ---
 name: au-tax-residency
-description: >
+description: Use this skill for any question about Australian tax residency. Trigger on: "am I an Australian tax resident", "Australian residency test", "leaving Australia tax", "ceasing Australian residency", "domicile test Australia", "183-day test Australia", "resides test Australia", "exit CGT Australia", "Australian resident abroad", "dual resident Australia", "moving from Australia", "Australian expat tax status". Covers the four residency tests, how to formally cease Australian residency, exit CGT consequences, and partial-year residency.
 version: 1.0
 jurisdiction: AU
 tax_year: 2025
-last_updated: 2026-06-05
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 category: international
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)

@@ -1,11 +1,11 @@
 ---
 name: ifrs15-revenue
-description: >
+description: IFRS revenue recognition under IFRS 15 (Revenue from Contracts with Customers) and the related contract-cost guidance within IFRS 15. Covers the five-step model — identify the contract, identify performance obligations, determine the transaction price, allocate it, and recognise revenue as or when obligations are satisfied — plus variable consideration and the constraint, significant financing components, principal-versus-agent, licences, contract modifications, contract assets and liabilities, and the costs of obtaining and fulfilling a contract. Produces recognition conclusions, journal entries, and a reviewer brief. Issued as the IFRS edition of the revenue topic; see us-gaap-asc606-revenue for the US GAAP edition. MUST load alongside financial-reporting-workflow-base.
 version: 0.1
 jurisdiction: GLOBAL
 tax_year: 2025
-last_updated: 2026-05-29
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - financial-reporting-workflow-base
 category: financial-reporting
 tier: 2

@@ -1,11 +1,12 @@
 ---
 name: us-gaap-asc805-business-combinations
-description: >
+description: US GAAP accounting for business combinations under ASC 805 (Business Combinations) and the related goodwill guidance in ASC 350 (Intangibles — Goodwill and Other). Covers the acquisition method — identify the acquirer, determine the acquisition date, recognize and measure the identifiable assets acquired, liabilities assumed and any non-controlling interest at fair value, and recognize goodwill or a bargain purchase gain — plus consideration transferred and contingent consideration, acquisition-related costs, the measurement period, step acquisitions, recognition exceptions, the definition of a business, in-process R&D, and subsequent goodwill impairment under ASC 350-20. Produces recognition conclusions, journal entries, and a reviewer brief. Issued as the US GAAP edition of the business-combinations topic; see ifrs3-business-combinations for the IFRS edition. MUST load alongside financial-reporting-workflow-base.
 version: 0.1
 jurisdiction: US
 tax_year: 2025
-last_updated: 2026-05-29
-verified_by: James Wallach
+last_updated: 2026-07-13
+reviewed_by: James Wallach
+review_status: current
 depends_on: - financial-reporting-workflow-base
 category: financial-reporting
 tier: 2

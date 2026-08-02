@@ -1,11 +1,11 @@
 ---
 name: ny-estimated-tax
-description: >
+description: Use this skill whenever asked about New York State estimated tax (Form IT-2105) for self-employed individuals. Trigger on phrases like "IT-2105", "NY estimated tax", "New York quarterly tax", "MCTMT", "NYC estimated tax", "Yonkers tax", "NY underpayment penalty", "IT-2105.9", or any question about quarterly estimated income tax payments for New York State, NYC, or Yonkers. Covers quarterly instalment requirements, safe harbour rules, MCTMT estimated payments, underpayment penalty via IT-2105.9, and NYC estimated tax. ALWAYS read this skill before touching any NY estimated tax work.
 version: 2.0
 jurisdiction: US-NY
 tax_year: 2025
-last_updated: 2026-04-13
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - us-tax-workflow-base
 category: state
 tier: 2

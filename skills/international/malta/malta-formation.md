@@ -1,11 +1,11 @@
 ---
 name: malta-formation
-description: >
+description: Use this skill whenever asked about forming, incorporating, or registering a company in Malta. Trigger on phrases like "set up a company in Malta", "Malta Ltd", "Malta company formation", "register a business in Malta", "MBR registration", "Malta Business Registry", "incorporate in Malta", "Malta company costs", "Malta share capital", "Malta memorandum and articles", or any question about starting a limited liability company in Malta. Covers entity types, registration process, capital requirements, costs, post-formation compliance, and bank account opening. ALWAYS read this skill before advising on Malta company formation.
 version: 1.0
 jurisdiction: MT
 tax_year: 2025
-last_updated: 2026-05-23
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - company-formation-workflow-base
 category: formation
 tier: 2

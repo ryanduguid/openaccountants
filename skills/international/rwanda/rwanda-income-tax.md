@@ -1,11 +1,11 @@
 ---
 name: rwanda-income-tax
-description: >
+description: Use this skill whenever asked about Rwanda income tax (PIT / PAYE) for employees and self-employed individuals. Trigger on phrases like "how much tax do I pay in Rwanda", "PAYE", "RRA", "income tax declaration", "monthly PAYE return", "casual labourer tax", "flat tax micro-enterprise", "lump-sum tax", "real regime", "RSSB pension", "CBHI / Mutuelle", "benefits in kind", "self-employed tax Rwanda", or any question about filing or computing income tax for an individual taxpayer in Rwanda. Also trigger when preparing or reviewing a PAYE computation, an annual PIT declaration, deciding between micro-enterprise / lump-sum / real regimes, or advising on RSSB social-security contributions. This skill covers PAYE brackets (resident and non-resident), casual-labour rate, micro/lump-sum/real turnover regimes, RSSB pension / occupational hazard / maternity / CBHI / medical contributions, benefits in kind, filing deadlines, and penalties. ALWAYS read this skill before touching any Rwanda income tax work.
 version: 0.1
 jurisdiction: RW
 tax_year: 2025
-last_updated: 2026-06-04
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - income-tax-workflow-base
 category: international
 tier: 2

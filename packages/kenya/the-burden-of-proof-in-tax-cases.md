@@ -3,8 +3,9 @@ name: the-burden-of-proof-in-tax-cases
 description: FFP CONSULT LTD
 jurisdiction: KE
 tax_year: 2025
-last_updated: 2026-07-22
-verified_by: pending
+last_updated: 2026-07-21
+review_status: pending_review
+tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 

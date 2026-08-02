@@ -3,8 +3,8 @@ name: panama-itbms
 description: Use this skill whenever asked to prepare, review, or create a Panama ITBMS (Impuesto de Transferencia de Bienes Muebles y Servicios) return for any client. Trigger on phrases like "prepare ITBMS return", "do the ITBMS", "Panama VAT", "Panama tax", or any request involving Panama consumption tax filing. Also trigger when classifying transactions for ITBMS purposes. This skill contains the complete Panama ITBMS classification rules, return form mappings, deductibility rules, and filing deadlines. ALWAYS read this skill before touching any ITBMS-related work.
 jurisdiction: PA
 tax_year: 2025
-last_updated: 2026-04-13
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---

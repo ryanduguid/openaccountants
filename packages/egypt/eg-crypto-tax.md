@@ -1,11 +1,11 @@
 ---
 name: eg-crypto-tax
-description: >
+description: Use this skill whenever asked about the legal status or taxation of cryptocurrency in Egypt — Bitcoin, stablecoins, tokens, NFTs, mining, staking, or trading — for individuals, freelancers, or small businesses. Trigger on phrases like "crypto tax Egypt", "is crypto legal in Egypt", "Bitcoin Egypt tax", "cryptocurrency Egypt", "ضريبة العملات المشفرة", "هل البيتكوين قانوني في مصر", "العملات الرقمية مصر", or any request to classify, compute, or explain Egyptian tax on crypto gains. ALWAYS read this skill before touching any Egypt crypto question. The AI must reply in the user's language (English or Arabic / Egyptian Arabic).
 version: 1.0
 jurisdiction: EG
 tax_year: 2026
-last_updated: 2026-05-24
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - income-tax-workflow-base
 category: international
 tier: 2

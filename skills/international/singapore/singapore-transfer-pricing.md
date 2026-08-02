@@ -1,11 +1,11 @@
 ---
 name: singapore-transfer-pricing
-description: >
+description: Use this skill whenever asked about Singapore transfer pricing rules, documentation requirements, or IRAS transfer pricing compliance. Trigger on phrases like "transfer pricing Singapore", "Singapore TP documentation", "IRAS transfer pricing", "master file Singapore", "local file Singapore", "CbCR Singapore", "APA Singapore", "Section 34D", "Section 34F", "arm's length Singapore", or any question about intercompany pricing for Singapore entities.
 version: 1.0
 jurisdiction: SG
 tax_year: 2025
-last_updated: 2026-05-23
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - transfer-pricing-workflow-base
 category: transfer-pricing
 tier: 2

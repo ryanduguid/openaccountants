@@ -4,11 +4,12 @@ description: Use this skill whenever asked to calculate, review, or advise on In
 version: 1.0
 jurisdiction: ID
 tax_year: 2025
-last_updated: 2026-05-22
-verified_by: RILIA PUTRI
+last_updated: 2026-07-13
+reviewed_by: RILIA PUTRI
+review_status: current
 depends_on: - foundation
 category: international
-tier: 2
+tier: 1
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 

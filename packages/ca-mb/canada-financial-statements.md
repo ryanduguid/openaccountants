@@ -1,14 +1,15 @@
 ---
 name: canada-financial-statements
-description: >
+description: Use this skill when preparing, reviewing, or advising on annual financial statements for a Canadian company. Trigger on phrases like "ASPE", "IFRS Canada", "Canadian GAAP", "CPA Canada Handbook", "financial statements Canada", "compilation engagement", "review engagement Canada", "audit Canada", "CBCA", "OBCA", "annual return Canada", "CSRE 2400", or any question about preparing and reporting statutory accounts under Canadian corporate law. Covers ASPE/IFRS frameworks, assurance level options, required statements, formats, notes, filing requirements, and audit/review thresholds.
 version: 1.0
 jurisdiction: CA
 tax_year: 2025
-last_updated: 2026-05-23
-verified_by: Edgar Lautsyus
+last_updated: 2026-07-13
+reviewed_by: Edgar Lautsyus
+review_status: current
 depends_on: - financial-statements-workflow-base
 category: financial-statements
-tier: 2
+tier: 1
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 

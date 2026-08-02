@@ -1,11 +1,11 @@
 ---
 name: paraguay-social-contributions
-description: >
+description: Use this skill whenever asked about Paraguay IPS social security contributions (aportes IPS) for employed persons, domestic workers, or independent contributors. Trigger on phrases like "aportes IPS", "IPS Paraguay", "social security Paraguay", "aporte obrero", "aporte patronal", "9% IPS", "16.5% IPS", "25.5% IPS", "Instituto de Previsión Social", "trabajo doméstico IPS", "domestic worker social security Paraguay", "empleada doméstica aportes", "REI Paraguay", "planilla de aporte obrero-patronal", "número patronal", "IPS deadline", "recargos IPS", "salario mínimo Paraguay IPS base", "how much IPS do I pay", or any question about computing or classifying IPS social-security contributions for a Paraguay-based worker. Also trigger when classifying bank statement transactions that relate to IPS debits or aporte obrero-patronal payments from Paraguayan banks (Itaú, Continental, Visión, Regional, Ueno). This skill covers the general-regime employee/employer rates, the post-2019 domestic-worker rate, the contribution base, the minimum-wage floor, monthly REI filing, payment deadlines by número patronal, surcharges, and edge cases. ALWAYS read this skill before touching any Paraguay IPS work.
 version: 0.1
 jurisdiction: PY
 tax_year: 2025
-last_updated: 2026-06-04
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - social-contributions-workflow-base
 category: international
 tier: 2

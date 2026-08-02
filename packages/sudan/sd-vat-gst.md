@@ -1,11 +1,11 @@
 ---
 name: sd-vat-gst
-description: >
+description: Use this skill whenever asked to prepare, review, or classify transactions for a Sudan VAT return, or to advise on Sudanese VAT registration, filing, and input tax recovery. Trigger on phrases like "Sudan VAT", "Sudan value added tax", "ضريبة القيمة المضافة السودان", "Sudan VAT return", "Sudan VAT registration", "sales tax Sudan", or any Sudan VAT request. ALWAYS read this skill before touching any Sudan VAT work.
 version: 0.1
 jurisdiction: SD
 tax_year: 2025
-last_updated: 2026-06-25
-verified_by: pending
+last_updated: 2026-07-22
+review_status: pending_review
 depends_on: - vat-workflow-base
 category: international
 tier: 2

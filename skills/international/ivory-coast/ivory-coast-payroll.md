@@ -1,11 +1,11 @@
 ---
 name: ivory-coast-payroll
-description: >
+description: Use this skill whenever asked about Côte d'Ivoire (Ivory Coast) payroll processing for employed persons. Trigger on phrases like "Ivory Coast payroll", "Côte d'Ivoire payroll", "ITS", "Impôt sur les Traitements et Salaires", "salary tax Côte d'Ivoire", "CNPS contributions", "CNPS retraite", "prestations familiales", "FDFP levy", "taxe d'apprentissage", "contribution employeur", "expatriate payroll tax Ivory Coast", "RICF family reduction", "SMIG", "CMU", "DISA", "net salary Côte d'Ivoire", "gross to net XOF", "FCFA payroll", "e-Impôts", or any question about computing employee pay, salary withholding tax, or social security contributions for Ivory Coast-based employees. This skill covers ITS progressive income-tax withholding, the RICF family-charge reduction, CNPS social contributions (employee and employer), the employer payroll tax (local vs expatriate), FDFP training levies, CMU, minimum wage, and filing obligations to the DGI and CNPS. ALWAYS read this skill before processing any Côte d'Ivoire payroll.
 version: 0.1
 jurisdiction: CI
 tax_year: 2025
-last_updated: 2026-06-04
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - payroll-workflow-base
 category: payroll
 tier: 2

@@ -1,11 +1,11 @@
 ---
 name: pe-individual-return
-description: >
+description: Use this skill whenever asked about Prince Edward Island provincial individual income tax. Trigger on phrases like "PEI tax", "Prince Edward Island tax", "PE provincial tax", "PEI T1", "PEI brackets", "HST PEI", "PEI surtax", "PEI credits", or any question about computing PEI provincial tax for an individual return. This skill covers PEI's four-bracket tax system with surtax, HST at 15%, provincial credits, and filing requirements. ALWAYS read this skill before touching any PEI individual tax return work.
 version: "1.0"
 jurisdiction: CA
 tax_year: 2025
-last_updated: 2026-05-23
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 category: international
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)

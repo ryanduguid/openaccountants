@@ -1,11 +1,12 @@
 ---
 name: dominican-republic-social-contributions
-description: >
+description: Use this skill whenever asked about Dominican Republic social-security contributions (Sistema Dominicano de Seguridad Social / SDSS) for employees, employers, or self-employed persons. Trigger on phrases like "TSS contributions", "Tesorería de la Seguridad Social", "AFP Dominican Republic", "SFS health insurance", "Seguro Familiar de Salud", "SRL riesgos laborales", "INFOTEP", "aporte seguridad social RD", "cotización TSS", "salario cotizable", "tope cotizable", "self-employed social security Dominican Republic", or any question about SDSS contribution rates, ceilings, or TSS filing. Also trigger when classifying bank transactions for TSS / AFP / SFS / INFOTEP remittances, or reconciling SDSS for an ISR computation. This skill covers AFP (pension), SFS (health), SRL (occupational risk), INFOTEP (training), the contributory-wage floor and ceilings, payment schedule, and the interaction with income tax (ISR). ALWAYS read this skill before touching any Dominican Republic social-contribution work.
 version: 0.1
 jurisdiction: DO
 tax_year: 2025
-last_updated: 2026-06-04
-verified_by: Miguel Lantigua
+last_updated: 2026-07-13
+reviewed_by: Miguel Lantigua
+review_status: current
 depends_on: - social-contributions-workflow-base
 category: international
 tier: 2

@@ -13,10 +13,11 @@
 6. `sk-payroll-social.md`
 7. `sk-tax-overview.md`
 8. `slovakia-pit.md`
-9. `slovakia-vat-return.md`
-10. `eu-vat-directive.md`
-11. `payroll-workflow-base.md`
-12. `company-formation-workflow-base.md`
+9. `slovakia-vat-registration-4-7-7a.md`
+10. `slovakia-vat-return.md`
+11. `eu-vat-directive.md`
+12. `payroll-workflow-base.md`
+13. `company-formation-workflow-base.md`
 
 ## How to use
 

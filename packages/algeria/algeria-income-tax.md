@@ -1,11 +1,11 @@
 ---
 name: algeria-income-tax
-description: >
+description: Use this skill whenever asked about Algeria personal income tax (IRG -- Impôt sur le Revenu Global) for employees and self-employed individuals. Trigger on phrases like "how much IRG do I pay", "barème IRG", "Algeria income tax", "IFU", "impôt forfaitaire unique", "G50", "G12", "G12 bis", "CNAS", "CASNOS", "auto-entrepreneur Algérie", "DZD tax", "salaire net", "self-employed tax Algeria", "déclaration revenu global", or any question about filing or computing income tax for an Algerian employee, sole trader, or micro-operator. Also trigger when preparing or reviewing an IRG payroll computation, an IFU turnover declaration, social contribution (CNAS/CASNOS) calculations, or advising on filing deadlines. This skill covers the IRG progressive scale, schedular/investment rates, the IFU micro regime, CNAS/CASNOS social contributions, the SNMG minimum wage, filing forms and deadlines, and penalties. ALWAYS read this skill before touching any Algerian income tax work.
 version: 0.1
 jurisdiction: DZ
 tax_year: 2025
-last_updated: 2026-06-04
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - income-tax-workflow-base
 category: international
 tier: 2

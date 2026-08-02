@@ -1,11 +1,11 @@
 ---
 name: ru-tax-optimization
-description: >
+description: Use this skill whenever asked about legal tax optimization or tax planning for a self-employed person, freelancer, or individual entrepreneur (ИП) in Russia — choosing the cheapest legitimate regime among самозанятый/НПД, УСН «Доходы» (6%), УСН «Доходы минус расходы» (15%), the ПСН patent, and ОСНО; the break-even logic between them; cutting УСН/ОСНО tax with the страховые взносы offset; regional reduced УСН rates (1%/5%) and the risks of "registering in a low-rate region"; managing the 2026 УСН VAT (НДС) threshold of 20M ₽; and the legal red lines (the самозанятый 2-year ban on income from a former employer, ФНС misclassification scrutiny, and the prohibited «дробление бизнеса» splitting scheme). Trigger on phrases like "reduce tax Russia", "lower taxes ИП", "НПД vs УСН", "tax planning Russia freelancer", "patent vs simplified Russia", "какой режим выгоднее", "как платить меньше налогов ИП", "самозанятый или ИП", or any request to compare regimes or plan tax legally for a self-employed person in Russia. This skill covers LEGAL planning only and never advises evasion. The AI replies in the user's own language.
 version: 1.0
 jurisdiction: RU
 tax_year: 2026
-last_updated: 2026-05-23
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - income-tax-workflow-base
 category: international
 tier: 2

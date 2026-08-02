@@ -1,11 +1,11 @@
 ---
 name: eg-social-insurance
-description: >
+description: Use this skill whenever asked about Egypt social insurance contributions for an employee, employer, or self-employed business owner, professional, craftsman, merchant, farmer, freelancer, or irregular worker. Trigger on phrases like "Egypt social insurance", "التأمينات الاجتماعية", "social insurance contributions Egypt", "self-employed social insurance Egypt", "Law 148 2019", "NOSI", "insurance wage Egypt", "comprehensive social insurance scheme", "تأمين أصحاب الأعمال", or any request to compute, classify, or advise on Egyptian social insurance obligations. Distinguishes employee, employer, and self-employed contributions. ALWAYS read this skill before touching any Egypt social insurance work.
 version: 1.0
 jurisdiction: EG
 tax_year: 2026
-last_updated: 2026-05-24
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - social-contributions-workflow-base
 category: international
 tier: 2

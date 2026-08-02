@@ -1,14 +1,15 @@
 ---
 name: india-payroll
-description: >
+description: Use this skill whenever asked about Indian payroll processing, employee salary calculations, TDS on salary (Section 192), Provident Fund (PF/EPF), Employee State Insurance (ESI), employer cost calculations, CTC breakdowns, net-to-gross or gross-to-net conversions, Indian payslip structure, Form 24Q/Form 138 filings, or any question about computing wages, deductions, or employer obligations in India. Trigger on phrases like "Indian payroll", "TDS on salary", "PF contribution", "ESI contribution", "EPF", "CTC breakdown", "new tax regime India", "old tax regime", "Form 16", "Form 130", "salary structure India", "basic DA HRA", "professional tax", "gratuity", "bonus India", or "minimum wages India".
 version: 1.0
 jurisdiction: IN
 tax_year: 2025
-last_updated: 2026-05-23
-verified_by: Mayur Deokar
+last_updated: 2026-07-13
+reviewed_by: Mayur Deokar
+review_status: current
 depends_on: - payroll-workflow-base
 category: payroll
-tier: 2
+tier: 1
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 

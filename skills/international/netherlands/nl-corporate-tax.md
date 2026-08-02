@@ -1,11 +1,11 @@
 ---
 name: nl-corporate-tax
-description: >
+description: Use this skill whenever asked about Dutch corporate income tax (vennootschapsbelasting / VPB) for BV entities. Trigger on phrases like "vennootschapsbelasting", "VPB aangifte", "corporate tax Netherlands", "BV belasting", "fiscal unity", "fiscale eenheid", "innovatiebox", "verliesverrekening", "carry forward losses", "DGA salary", "gebruikelijk loon", "deelnemingsvrijstelling", "participation exemption", "fiscal profit bridge", "commercial to fiscal result", "liquidatieverliesregeling", or any question about computing or filing corporate income tax for a Dutch BV or NV. Also trigger when preparing annual accounts-to-tax reconciliation, computing VPB liability, or advising on fiscal adjustments. This skill covers VPB rates, fiscal profit computation, loss relief, fiscal unity, the innovation box, participation exemption, DGA salary rules, filing deadlines, and penalties. ALWAYS read this skill before touching any Dutch corporate tax work.
 version: 1.0
 jurisdiction: NL
 tax_year: 2025
-last_updated: 2026-05-20
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - income-tax-workflow-base
 category: international
 tier: 2

@@ -1,11 +1,11 @@
 ---
 name: ivory-coast-income-tax
-description: >
+description: Use this skill whenever asked about Côte d'Ivoire (Ivory Coast) personal income tax, salary tax, or self-employed/business income tax. Trigger on phrases like "how much tax do I pay in Côte d'Ivoire", "Ivory Coast income tax", "ITS", "impôt sur les traitements et salaires", "salaire net", "net pay Abidjan", "CNPS contributions", "régime de l'entreprenant", "microentreprise tax", "BIC", "BNC", "taxe sur salaires", "RICF family reduction", "DGI", or any question about computing or filing income tax for an employee, self-employed person, or small business in Côte d'Ivoire. Also trigger when reading an Ivorian payslip or bank statement (FCFA / XOF), computing employer payroll tax, or advising on the entreprenant / microentreprise / réel regimes. This skill covers the post-2024-reform monthly ITS progressive scale, the RICF family-responsibility reduction, employer payroll tax, CNPS social security, business income regimes by turnover, withholding on BNC, filing deadlines, and penalties. ALWAYS read this skill before touching any Ivorian income tax work.
 version: 0.1
 jurisdiction: CI
 tax_year: 2025
-last_updated: 2026-06-04
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - income-tax-workflow-base
 category: international
 tier: 2

@@ -3,8 +3,9 @@ name: ng-vat
 description: "Use this skill whenever asked to prepare, review, classify transactions for, or advise on Nigerian VAT (Value Added Tax) for self-employed individuals, sole traders, partnerships, or small companies operating in Nigeria. Trigger on phrases like \"Nigeria VAT\", \"FIRS VAT\", \"VAT Nigeria 7.5%\", \"VAT return Nigeria\", \"VAT Form 002\", \"TaxPro Max\", \"e-invoicing FIRS\", \"Merchant Buyer System\", \"MBS Nigeria\", \"VAT Act Nigeria\", \"NTA 2025 VAT\", \"Nigeria Tax Act 2025\", \"Section 10 VAT Act\", \"non-resident digital services Nigeria\", \"reverse charge Nigeria\", \"WHT-VAT Nigeria\", or any request involving Nigerian VAT registration, computation, classification, filing, or compliance. Covers the 7.5% standard rate under the VAT Act (as amended by Finance Acts 2019/2020/2021/2023) and the consolidation under the Nigeria Tax Act 2025 framework effective 1 January 2026, the NGN 25 million registration threshold, monthly Form VAT 002 filing to FIRS by the 21st of the following month via TaxPro Max, the FIRS Merchant Buyer Solution (MBS) phased e-invoicing mandate (large taxpayers from Q3 2024, medium taxpayers through 2025-2026), non-resident digital service registration under Section 10A, reverse-charge self-accounting on imported services, and WHT-VAT interaction on government and large-taxpayer contracts. Out of scope (refusal catalogue): excise duties, Petroleum Profit Tax, Companies Income Tax, transfer pricing, refund litigation, free trade zone (FTZ) treatment, state-level consumption taxes, real estate VAT, and VAT grouping. ALWAYS read this skill before touching any Nigerian VAT work."
 jurisdiction: NG
 tax_year: 2025
-last_updated: 2026-05-27
-verified_by: Omolola Fasasi 
+last_updated: 2026-07-13
+reviewed_by: Omolola Fasasi
+review_status: current
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---

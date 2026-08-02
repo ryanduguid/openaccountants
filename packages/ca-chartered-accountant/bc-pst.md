@@ -3,8 +3,8 @@ name: bc-pst
 description: Use this skill for British Columbia Provincial Sales Tax — 7% non-harmonized retail sales tax separate from federal GST 5%. Triggers "BC PST", "British Columbia sales tax", "PST registration BC", "PST 7%", "FIN 400", "eTaxBC", "MRDT BC", "BC PST online sales". ALWAYS read this skill for BC sellers / online platforms with BC customers (NOT included in canada-gst-hst).
 jurisdiction: CA
 tax_year: 2025
-last_updated: 2026-05-27
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---

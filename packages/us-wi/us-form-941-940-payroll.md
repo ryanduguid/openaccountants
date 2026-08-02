@@ -3,8 +3,9 @@ name: us-form-941-940-payroll
 description: Tier 2 US federal content skill for employer payroll tax compliance — Forms 941 (quarterly), 940 (annual FUTA), W-2 (employee), W-3 (SSA transmittal). Covers tax year 2025 including the $176,100 Social Security wage base, the 0.9% Additional Medicare withholding threshold, monthly vs semiweekly vs next-day deposit schedules under IRC §6302, the $7,000 FUTA wage base and 5.4% state UI credit (0.6% effective in non-credit-reduction states), W-2 Box 1/3/5 reconciliation traps with §125, HSA, retirement, and the 10+ W-2 electronic-filing mandate from the 2024 IRS final regs.
 jurisdiction: US
 tax_year: 2025
-last_updated: 2026-05-27
-verified_by: Christopher Aryee
+last_updated: 2026-07-13
+reviewed_by: James Wallach
+review_status: current
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---

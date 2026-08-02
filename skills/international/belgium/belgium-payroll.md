@@ -1,11 +1,11 @@
 ---
 name: belgium-payroll
-description: >
+description: Use this skill whenever asked about Belgian payroll processing, employee salary calculations, précompte professionnel (professional withholding tax), ONSS/RSZ social security contributions, employer cost calculations, net-to-gross or gross-to-net conversions, Belgian payslip structure, DmfA declarations, or any question about computing wages, deductions, or employer obligations in Belgium. Trigger on phrases like "Belgian payroll", "ONSS contributions", "RSZ bijdragen", "précompte professionnel", "bedrijfsvoorheffing", "net salary Belgium", "employer cost Belgium", "DmfA filing", "social security Belgium", "Belgian payslip", "13th month Belgium", "double holiday pay", "meal vouchers Belgium", or "eco-cheques".
 version: 1.0
 jurisdiction: BE
 tax_year: 2025
-last_updated: 2026-05-23
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - payroll-workflow-base
 category: payroll
 tier: 2

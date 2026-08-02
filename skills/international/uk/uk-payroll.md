@@ -1,14 +1,15 @@
 ---
 name: uk-payroll
-description: >
+description: Use this skill whenever asked about UK payroll, PAYE, National Insurance contributions, employer obligations, RTI submissions, statutory payments, or payslip requirements. Trigger on phrases like "PAYE", "National Insurance", "NIC", "Class 1 NI", "employer NI", "employee NI", "RTI", "FPS", "EPS", "real time information", "P45", "P60", "P11D", "statutory sick pay", "SSP", "statutory maternity pay", "SMP", "national minimum wage", "national living wage", "payslip", "tax code", "student loan deduction", "workplace pension", "auto-enrolment", "HMRC payroll", or any question about running payroll in the United Kingdom. ALWAYS read this skill before processing any UK payroll work.
 version: 1.0
 jurisdiction: GB
 tax_year: 2025
-last_updated: 2026-05-23
-verified_by: James Power
+last_updated: 2026-07-13
+reviewed_by: James Power
+review_status: current
 depends_on: - payroll-workflow-base
 category: payroll
-tier: 2
+tier: 1
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 

@@ -1,11 +1,11 @@
 ---
 name: es-estimated-tax
-description: >
+description: Use this skill whenever asked about Spanish estimated income tax payments (pagos fraccionados) for self-employed individuals (autonomos). Trigger on phrases like "Modelo 130", "pagos fraccionados", "estimated tax Spain", "IRPF quarterly", "Spanish advance tax", "autonomo tax payments", "estimacion directa", "Modelo 131", or any question about quarterly income tax prepayment obligations under the IRPF. Covers the quarterly filing schedule (Apr 20, Jul 20, Oct 20, Jan 30), the 20% cumulative computation method, the 70% withholding exemption, penalties for late filing, and payment procedures. ALWAYS read this skill before touching any estimated tax work for Spain.
 version: 2.0
 jurisdiction: ES
 tax_year: 2025
-last_updated: 2026-04-13
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - income-tax-workflow-base
 category: international
 tier: 2

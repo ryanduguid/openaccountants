@@ -1,11 +1,11 @@
 ---
 name: bolivia-tax-optimization
-description: >
+description: Use this skill whenever asked about reducing tax in Bolivia, tax planning, or legal strategies to minimise tax for a small trader or business in Bolivia. Trigger on phrases like "reduce tax Bolivia", "régimen simplificado", "RTS Bolivia", "small trader tax", "IUE 25%", "self-employed Bolivia", "save tax Bolivia", "tax planning Bolivia". This skill covers the Régimen Tributario Simplificado (capital-based fixed fee), the general regime (IUE/IVA/IT/RC-IVA), and the eligibility/anti-avoidance red lines. ALWAYS read this skill before advising on any Bolivian tax optimisation.
 version: 0.1
 jurisdiction: BO
 tax_year: 2025
-last_updated: 2026-06-04
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: []
 category: tax-optimization
 tier: 2

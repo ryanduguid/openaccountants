@@ -4,10 +4,9 @@ description: >
   Use this skill whenever asked about Australian Superannuation Guarantee (SG) obligations, payday super deadlines, voluntary super contributions, concessional and non-concessional caps, Division 293 tax, government co-contribution, spouse contribution tax offset, carry-forward rules, or any question about super for sole traders or employers. Trigger on phrases like "how much super do I pay", "SG rate", "super guarantee", "payday super", "7 business days super", "SG shortfall", "concessional cap", "Division 293", "salary sacrifice super", "personal super contribution deduction", "co-contribution", "BPAY super", "super clearing house", "super fund contribution", or any question about Australian superannuation. Also trigger when classifying bank statement transactions showing super fund payments, BPAY super debits, or clearing house payments. ALWAYS read this skill before touching any SG-related work.
 version: 3.0
 jurisdiction: AU
-tax_year: 2026
-tax_year_notes: "2026-27 (payday super regime; quarterly rules apply to earnings paid up to 30 June 2026)"
-tier: 2
-last_updated: 2026-08-01
+tax_year: 2024
+last_updated: 2026-08-02
+review_status: pending_review
 category: international
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -80,18 +79,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 **R-AU-SG-4 -- SGC computation.** *Trigger:* client has missed payday super deadlines and asks about the Super Guarantee Charge. *Message:* "SGC under the payday super regime is ATO-assessed per payday from STP and fund data -- it is not self-assessed and should be escalated to a qualified practitioner. Components: final SG shortfall + notional earnings (GIC rate, compounding daily) + administrative uplift + any choice loading. Note the NEW SGC (payday regime) is tax-deductible; the OLD quarterly-regime SGC remains non-deductible."
 
----
-
-## Section 3 -- Payment pattern library
-
-This is the deterministic pre-classifier for bank statement transactions related to superannuation.
-
-### 3.1 Super fund contributions (employer SG or personal)
-
-**Super fund contributions pattern table**
-
-| Pattern | Treatment | Notes |
-| --- | --- | --- |
+ | --- | --- |
 | SUPER, SUPERANNUATION | EXCLUDE -- super contribution | Generic super payment |
 | AUSTRALIAN SUPER, AUSTSUPER | EXCLUDE -- super contribution | AustralianSuper fund |
 | REST, REST SUPER | EXCLUDE -- super contribution | Retail Employees Super |
@@ -519,6 +507,8 @@ a formal engagement letter** — book a free 30-minute call:
 We'll route you to the named verifier covering your country or state. You can
 also see the full list of verified accountants at
 [openaccountants.com/network](https://openaccountants.com/network).
+
+> Contributed by Ryan Duguid.
 
 <!-- openaccountants-cta-block -->
 

@@ -1,11 +1,11 @@
 ---
 name: senegal-income-tax
-description: >
+description: Use this skill whenever asked about Senegal personal income tax (IRPP — Impôt sur le Revenu des Personnes Physiques) for employees and self-employed individuals. Trigger on phrases like "how much tax do I pay in Senegal", "IRPP", "impôt sur le revenu Sénégal", "barème IRPP", "quotient familial", "TRIMF", "Contribution Globale Unique", "CGU", "IPRES", "CSS", "CFCE", "déclaration de revenus", "abattement 30%", "net salary Senegal", "salaire net", "self-employed tax Senegal", or any question about filing or computing income tax for an individual resident in Senegal. Also trigger when preparing or reviewing an annual IRPP return, computing the family quotient, the 30% lump-sum deduction, social contributions, or payroll withholding (PAYE). This skill covers the progressive IRPP barème, the family-quotient parts system, TRIMF, social security (IPRES/CSS/CFCE), CGU for small businesses, filing deadlines, and benefits-in-kind. ALWAYS read this skill before touching any Senegal income tax work. Figures use West African CFA franc (XOF / FCFA).
 version: 0.1
 jurisdiction: SN
 tax_year: 2025
-last_updated: 2026-06-04
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - income-tax-workflow-base
 category: international
 tier: 2

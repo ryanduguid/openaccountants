@@ -1,11 +1,11 @@
 ---
 name: es-rental-income
-description: >
+description: Use this skill whenever asked about Spanish rental income taxation. Trigger on phrases like "rental income Spain", "alquiler IRPF", "rendimientos del capital inmobiliario", "rental deductions Spain", "60% reduction rental Spain", "non-resident rental Spain", "IBI deduction", "Modelo 100 rental", "vivienda turística", "imputación de rentas inmobiliarias", "valor catastral", "amortización inmueble", or any question about declaring rental income in Spain. This skill covers IRPF rental computation, deductible expenses, the 60% reduction for residential rental, non-resident flat rate, tourist rental, and imputed income for vacant properties. ALWAYS read this skill before touching any Spanish rental income work.
 version: "1.0"
 jurisdiction: ES
 tax_year: 2025
-last_updated: 2026-05-23
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 category: international
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)

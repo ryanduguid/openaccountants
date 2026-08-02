@@ -3,8 +3,8 @@ name: id-return-assembly
 description: Use this skill whenever asked to assemble, finalize, or package an Indonesian annual tax return. Trigger on phrases like "assemble Indonesian return", "prepare SPT 1770", "prepare SPT 1771", "Indonesia annual tax return", "Indonesian working paper", "Indonesian tax filing package", "finalize SPT Tahunan", or "Coretax filing package". This is the capstone orchestrator that pulls together outputs from id-pph-final-umkm, id-income-tax, id-corporate-tax, id-payroll-pph21, indonesia-vat, id-withholding, and id-bookkeeping into a single SPT working paper plus payment and filing instructions. It does not recompute anything itself — it reconciles upstream outputs, builds the line-by-line SPT working paper, generates kode billing payment instructions for Coretax, and produces a reviewer brief and taxpayer action list. ALWAYS read this skill last when finalizing an Indonesian tax return.
 jurisdiction: ID
 tax_year: 2025
-last_updated: 2026-05-27
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---

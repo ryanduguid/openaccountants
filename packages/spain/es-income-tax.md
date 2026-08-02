@@ -1,11 +1,11 @@
 ---
 name: es-income-tax
-description: >
+description: Use this skill whenever asked about Spanish personal income tax (IRPF -- Impuesto sobre la Renta de las Personas Fisicas) for self-employed individuals (autonomos). Trigger on phrases like "how much tax do I pay in Spain", "IRPF", "Modelo 100", "Modelo 130", "pago fraccionado", "estimacion directa", "retencion", "autonomo tax", "rendimientos de actividades economicas", "gastos deducibles", "amortizacion", "minimo personal", "cuota autonomica", or any question about filing or computing income tax for a self-employed or freelance client in Spain. Covers IRPF progressive rates, Modelo 100 structure, estimacion directa normal vs simplificada, deductible expenses, depreciation, quarterly payments (Modelo 130), withholding (retenciones), regional surcharges, personal and family allowances, and interaction with IVA and Social Security. ALWAYS read this skill before touching any Spanish income tax work.
 version: 2.0
 jurisdiction: ES
 tax_year: 2025
-last_updated: 2026-04-13
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - income-tax-workflow-base
 category: international
 tier: 2

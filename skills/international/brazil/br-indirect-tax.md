@@ -1,11 +1,11 @@
 ---
 name: br-indirect-tax
-description: >
+description: Use this skill whenever asked about Brazilian indirect tax obligations (ICMS, ISS, IPI) for self-employed individuals or small businesses. Trigger on phrases like "ICMS", "ISS", "IPI", "Brazil VAT", "Brazilian indirect tax", "nota fiscal", "imposto sobre servicos", "imposto sobre circulacao de mercadorias", or any question about indirect tax computation or compliance in Brazil. Covers ISS (municipal, 2-5%), ICMS (state, variable), IPI (federal), interaction with Simples Nacional, and the upcoming IBS/CBS tax reform. ALWAYS read this skill before touching any Brazilian indirect tax work.
 version: 2.0
 jurisdiction: BR
 tax_year: 2025
-last_updated: 2026-04-13
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - income-tax-workflow-base
 category: international
 tier: 2

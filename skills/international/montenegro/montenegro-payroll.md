@@ -1,11 +1,11 @@
 ---
 name: montenegro-payroll
-description: >
+description: Use this skill whenever asked about Montenegro payroll processing for employed persons. Trigger on phrases like "Montenegro payroll", "Crna Gora plata", "porez na dohodak fizičkih lica", "PIT Montenegro", "withholding tax Montenegro", "IOPPD form", "IOPPD obrazac", "social contributions Montenegro", "doprinosi za socijalno osiguranje", "PIO pension Montenegro", "Fond PIO", "penziono i invalidsko osiguranje", "unemployment contribution Montenegro", "health insurance Montenegro", "prirez Montenegro", "municipal surtax Montenegro", "Europe Now 2", "Evropa sad 2", "net salary Montenegro", "neto plata", "bruto neto Crna Gora", "PAYE Montenegro", "employer contributions Montenegro", "minimum wage Montenegro", "minimalna zarada", "gross to net Montenegro", "Uprava prihoda i carina", or any question about computing employee pay, withholding personal income tax, or mandatory social contributions for Montenegro-based employees. This skill covers progressive PIT withholding on gross salary, the municipal surtax (prirez) on assessed PIT, employee social contributions (PIO + unemployment), the residual employer contributions, the dual-tier minimum wage, and IOPPD filing obligations under the post-October-2024 "Europe Now 2.0" reform. ALWAYS read this skill before processing any Montenegro payroll.
 version: 0.1
 jurisdiction: ME
 tax_year: 2025
-last_updated: 2026-06-04
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - payroll-workflow-base
 category: payroll
 tier: 2

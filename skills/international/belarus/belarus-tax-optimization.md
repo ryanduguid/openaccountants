@@ -1,11 +1,11 @@
 ---
 name: belarus-tax-optimization
-description: >
+description: Use this skill whenever asked about reducing tax in Belarus, tax planning, or legal strategies to minimise tax for an individual entrepreneur or small company in Belarus. Trigger on phrases like "reduce tax Belarus", "individual entrepreneur Belarus", "IP vs LLC", "simplified tax Belarus", "self-employed Belarus", "HTP", "High-Tech Park", "save tax Belarus", "tax planning Belarus". This skill covers the (now-restricted) individual-entrepreneur regimes, the self-employed scheme, the HTP/IT regime, the 2025 dividend/capital-gains changes, and the major IP-to-LLC transition red line. ALWAYS read this skill before advising on any Belarusian tax optimisation.
 version: 0.1
 jurisdiction: BY
 tax_year: 2025
-last_updated: 2026-06-04
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: []
 category: tax-optimization
 tier: 2

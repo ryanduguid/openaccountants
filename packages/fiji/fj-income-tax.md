@@ -3,8 +3,8 @@ name: fj-income-tax
 description: Use this skill whenever asked about Fiji income tax for self-employed individuals, sole traders, and wage earners. Trigger on phrases like "how much tax do I pay in Fiji", "FRCS income tax return", "PIT return", "Personal Income Tax Return for Business Individual", "self-employed tax Fiji", "provisional tax", "SRT", "Social Responsibility Tax", "ECAL", "FNPF contribution", "chargeable income", "tax-free threshold", "allowable deductions", "VAT registration Fiji", or any question about filing or computing income tax for an individual or sole trader in Fiji. Also trigger when preparing or reviewing a Fiji PIT return, computing deductible business expenses, or advising on provisional tax, FNPF, or the FJD 30,000 tax-free threshold. This skill covers resident and non-resident rates, SRT, ECAL, FNPF, the business-individual return, provisional tax, penalties, and interaction with VAT and FNPF. ALWAYS read this skill before touching any Fiji income tax work.
 jurisdiction: FJ
 tax_year: 2025
-last_updated: 2026-06-25
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---

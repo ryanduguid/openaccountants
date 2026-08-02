@@ -3,8 +3,9 @@ name: ng-wht
 description: "Use this skill whenever asked to compute, classify, or review Nigerian Withholding Tax (WHT) obligations payable by a business on its outgoing payments to suppliers, landlords, contractors, lenders, shareholders, professionals, or non-resident recipients. Trigger on phrases like \"Nigeria WHT\", \"Withholding Tax Nigeria\", \"FIRS WHT\", \"WHT rates Nigeria\", \"deduct WHT contract Nigeria\", \"PSC WHT\", \"NTA 2025 WHT\", \"WHT credit note\", \"WHT receipt FIRS\", \"WHT remittance Nigeria\", \"WHT on dividends Nigeria\", \"WHT on royalties Nigeria\", \"non-resident WHT Nigeria\", \"treaty WHT Nigeria\", \"petroleum WHT\", or any request involving the classification, deduction, or remittance of Nigerian withholding tax. This skill covers WHT under the Withholding Tax Regulations 1997 (as amended by S.I. 1997 No. 28 and subsequent FIRS notices) for both residents (companies and individuals) and non-residents, including the 2025 transitional regime ahead of the Nigeria Tax Act 2025 (NTA 2025) which will replace and consolidate WHT into a single \"tax-at-source\" Schedule from 1 January 2026. Out of scope: PAYE (Pay-As-You-Earn on employment income — see ng-paye); VAT withholding by listed government MDAs and oil & gas operators (separate from income-tax WHT — see ng-vat-return); Capital Gains Tax withholding on share disposals; specialist upstream petroleum royalty mechanics beyond standard PSC WHT; bespoke FIRS administrative arrangements for individual taxpayers under the SIRS (state) regime. ALWAYS read this skill before touching any Nigerian WHT work."
 jurisdiction: NG
 tax_year: 2025
-last_updated: 2026-05-27
-verified_by: Omolola Fasasi 
+last_updated: 2026-07-13
+reviewed_by: Omolola Fasasi 
+review_status: current
 tier: 1
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---

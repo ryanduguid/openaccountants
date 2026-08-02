@@ -1,11 +1,11 @@
 ---
 name: moldova-income-tax
-description: >
+description: Use this skill whenever asked about Moldova (Republic of Moldova) personal income tax for self-employed individuals and individuals. Trigger on phrases like "how much tax do I pay in Moldova", "impozit pe venit", "CET18", "Declaratia persoanei fizice", "flat 12% tax", "income tax return Moldova", "deductible expenses", "personal exemption / scutire personala", "CAS / BASS social insurance", "CNAM / CAM health insurance", "fixed annual contribution", "self-employed tax Moldova", "freelancer tax Moldova", "IT Park 7%", "independent retail 1%", or any question about filing or computing personal income tax for a resident individual or sole proprietor in Moldova. Also trigger when preparing or reviewing a CET18 return, computing the monthly payroll PIT base, or advising on social (CAS) and health (CNAM) contributions. This skill covers the flat 12% PIT, reduced 7% farming rate, final withholding rates (dividends, royalties, winnings), personal/dependent exemptions, employer/employee CAS and CNAM, fixed annual contributions for the self-employed, the CET18 return, penalties, and interaction with VAT and the IT Park regime. ALWAYS read this skill before touching any Moldova income tax work.
 version: 0.1
 jurisdiction: MD
 tax_year: 2025
-last_updated: 2026-06-04
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - income-tax-workflow-base
 category: international
 tier: 2

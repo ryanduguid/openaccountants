@@ -1,11 +1,11 @@
 ---
 name: de-rental-income
-description: >
+description: Use this skill whenever asked about German rental income taxation (Vermietung und Verpachtung). Trigger on phrases like "Mieteinnahmen", "Vermietung", "Verpachtung", "Anlage V", "§21 EStG", "AfA", "Abschreibung", "Werbungskosten Vermietung", "Hausgeld", "Grundsteuer deduction", "Erhaltungsaufwand", "Herstellungskosten", "verbilligte Vermietung", "Möblierungszuschlag", "rental income Germany", "German property tax deduction", "depreciation German property", "Verlustverrechnung", "rental loss Germany", or any question about computing, filing, or optimising income from letting immovable property in Germany. Covers Anlage V structure, AfA depreciation rates, Werbungskosten, repairs vs improvements, reduced-rent rules, furnished premium, and loss offset. ALWAYS read this skill before touching any German rental income work.
 version: 1.0
 jurisdiction: DE
 tax_year: 2025
-last_updated: 2026-05-23
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - de-income-tax
 category: international
 tier: 2

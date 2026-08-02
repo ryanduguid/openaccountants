@@ -3,8 +3,9 @@ name: us-education-credits-8863
 description: Tier 2 US federal content skill for education tax benefits — the American Opportunity Tax Credit (AOTC, $2,500 per student, 40% refundable, $80k/$160k MAGI phaseout) under §25A(i), the Lifetime Learning Credit ($2,000 per return) under §25A, the §221 student loan interest deduction, §529 Qualified Tuition Programs including the 2024 §126 SECURE 2.0 $35,000 lifetime 529-to-Roth rollover, K-12 tuition expansion, §527 Coverdell ESA, §117 scholarship treatment, and §127 employer-provided educational assistance ($5,250/year including student loan repayments). Tax year 2025.
 jurisdiction: US
 tax_year: 2025
-last_updated: 2026-07-10
-verified_by: James Wallach
+last_updated: 2026-07-13
+reviewed_by: James Wallach
+review_status: current
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---

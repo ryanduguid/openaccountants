@@ -1,11 +1,11 @@
 ---
 name: bosnia-tax-optimization
-description: >
+description: Use this skill whenever asked about reducing tax in Bosnia and Herzegovina, tax planning, or legal strategies to minimise tax for a self-employed person or small company. Trigger on phrases like "reduce tax Bosnia", "flat 10% tax Bosnia", "small entrepreneur 2%", "FBiH vs RS tax", "sole proprietor vs doo Bosnia", "0% dividend Bosnia", "save tax Bosnia", "tax planning Bosnia". This skill covers the flat PIT (10% FBiH / 8% RS), the small-entrepreneur 2%-of-revenue option, the entity/region choice, the 0% dividend + 10% CIT extraction, and the disguised-employment red line. ALWAYS read this skill before advising on any Bosnia & Herzegovina tax optimisation.
 version: 0.1
 jurisdiction: BA
 tax_year: 2025
-last_updated: 2026-06-04
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: []
 category: tax-optimization
 tier: 2

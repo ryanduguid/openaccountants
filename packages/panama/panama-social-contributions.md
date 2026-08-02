@@ -1,11 +1,11 @@
 ---
 name: panama-social-contributions
-description: >
+description: Use this skill whenever asked about Panama social security and payroll contributions (Caja de Seguro Social / CSS) for employees, employers, or self-employed independent professionals. Trigger on phrases like "Panama CSS contributions", "Caja de Seguro Social", "cuota obrero-patronal", "seguro educativo", "how much social security do I pay in Panama", "Panama payroll taxes", "Law 462 / Ley 462 CSS reform", "Panama employer contribution rate", "self-employed CSS Panama", "IVM contribution", "Panama planilla", or any question about Panama CSS, educational insurance tax, or payroll obligations. Also trigger when classifying bank-statement transactions that relate to CSS debits, seguro educativo, planilla payments, or DGI tax payments from Banco General, Banistmo, BAC, or other Panamanian banks. Also trigger when Panama personal income tax (Impuesto sobre la Renta) withholding or the territorial-income rules are relevant. This skill covers employee/employer CSS rates, the Law 462 staggered employer-rate increase, educational insurance tax, self-employed IVM/health rates, the (lack of) contribution ceiling, late-payment surcharges, interaction with territorial income tax, the 13th month, minimum wage context, bank-statement classification patterns, and edge cases. ALWAYS read this skill before touching any Panama CSS or payroll work.
 version: 0.1
 jurisdiction: PA
 tax_year: 2025
-last_updated: 2026-06-04
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - social-contributions-workflow-base
 category: international
 tier: 2

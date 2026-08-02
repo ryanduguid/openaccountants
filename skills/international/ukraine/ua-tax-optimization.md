@@ -1,11 +1,11 @@
 ---
 name: ua-tax-optimization
-description: >
+description: Use this skill whenever asked about legal tax optimization or tax planning for self-employed people in Ukraine. Trigger on phrases like "reduce tax Ukraine", "Diia City", "single tax vs general system", "tax planning Ukraine freelancer", "optimise FOP taxes", "should I be on єдиний податок or загальна система", "lower my tax as an IT freelancer in Ukraine", "Group 3 5% vs general system", "Diia City gig contract", "do I need to register for VAT", or any question about legitimately structuring a Ukrainian self-employed person's affairs to pay less tax. Covers choosing the right regime, the ₴1,000,000 VAT threshold lever, the Diia City IT regime, ЄСВ minimisation, expense documentation on the general system, foreign-client / FX considerations, and the red flags of fictitious-FOP misclassification. This skill is about LEGAL planning only — it never advises evasion. ALWAYS read this skill before any Ukrainian self-employed tax-planning work, and cross-read ua-single-tax, ua-income-tax, ua-payroll and ua-formation.
 version: 1.0
 jurisdiction: UA
 tax_year: 2026
-last_updated: 2026-05-23
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - income-tax-workflow-base
 category: international
 tier: 2

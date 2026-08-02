@@ -1,11 +1,11 @@
 ---
 name: bulgaria-payroll
-description: >
+description: Use this skill whenever asked about Bulgaria payroll processing for employed persons. Trigger on phrases like "Bulgaria payroll", "Bulgarian salary", "заплата", "ZDDFL", "ЗДДФЛ", "flat tax Bulgaria", "10% income tax Bulgaria", "data varhu dohodite", "social security Bulgaria", "осигуровки", "osigurovki", "ДОО", "DOO", "pension fund Bulgaria", "Универсален пенсионен фонд", "Universal Pension Fund", "UPF Bulgaria", "2nd pillar Bulgaria", "health insurance Bulgaria", "здравно осигуряване", "НЗОК", "NZOK", "NHIF", "Declaration 1", "Declaration 6", "Декларация образец 1", "Декларация образец 6", "Obrazets 1", "Obrazets 6", "net salary Bulgaria", "gross to net Bulgaria", "PAYE Bulgaria", "tax withholding Bulgaria", "employer contributions Bulgaria", "employer on-cost Bulgaria", "minimum wage Bulgaria", "минимална работна заплата", "МРЗ", "minimum insurable income", "МОД", "maximum insurable income", "осигурителен доход", "TZPB", "work accident Bulgaria", "NRA", "НАП", "NSSI", "НОИ", "Art. 62 notification", "employment contract registration Bulgaria", or any question about computing employee pay, withholding income tax, or mandatory social/health contributions for Bulgaria-based employees. This skill covers the 10% flat income tax withholding, state social insurance (ДОО) contributions (pension, supplementary 2nd-pillar pension, sickness/maternity, unemployment, work-accident), health insurance, the insurable-income floor and ceiling, minimum wage, the euro changeover from 1 January 2026, Declaration 1 / Declaration 6 filing, and Art. 62 employment-contract registration. ALWAYS read this skill before processing any Bulgaria payroll.
 version: 0.1
 jurisdiction: BG
 tax_year: 2025
-last_updated: 2026-06-04
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - payroll-workflow-base
 category: payroll
 tier: 2

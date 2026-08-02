@@ -3,8 +3,9 @@ name: sri-lanka-income-tax
 description: Use this skill whenever asked about Sri Lanka income tax for individuals, sole proprietors, freelancers, and self-employed people. Trigger on phrases like "how much income tax do I pay in Sri Lanka", "APIT", "PAYE", "personal relief", "Inland Revenue Department", "IRD", "tax year of assessment", "self-assessment instalments", "EPF ETF", "TIN registration", "SET statement of estimated tax", "Asmt_IIT return", "withholding tax interest", "SSCL", "VAT registration Sri Lanka", "freelancer tax LKR", or any question about computing or filing personal income tax for a resident or non-resident-citizen individual in Sri Lanka. Also trigger when classifying LKR bank statement lines, computing EPF/ETF on-costs, or advising on quarterly instalment deadlines. This skill covers the 2025/2026 progressive rates (6%-36%), the Rs. 1,800,000 personal relief, APIT (the employer-deducted advance tax), EPF/ETF/gratuity, the 30 November return deadline, quarterly self-assessment instalments, TIN/VAT/SSCL registration thresholds, and withholding tax on interest/rent/dividends. ALWAYS read this skill before touching any Sri Lanka income tax work.
 jurisdiction: LK
 tax_year: 2025
-last_updated: 2026-06-03
-verified_by: Lal kumarasiri
+last_updated: 2026-07-13
+reviewed_by: Lal kumarasiri
+review_status: current
 tier: 1
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---

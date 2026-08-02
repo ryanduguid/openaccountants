@@ -1,11 +1,11 @@
 ---
 name: fr-capital-gains
-description: >
+description: French capital gains, investment income, and equity compensation tax rules. Trigger on phrases like "plus-values mobilières", "PFU", "flat tax", "prélèvement forfaitaire unique", "dividendes France", "intérêts", "revenus de capitaux mobiliers", "RCM", "PEA", "plan d'épargne en actions", "assurance-vie", "rachat assurance-vie", "abattement 40% dividendes", "option barème", "prélèvements sociaux", "RSU France", "actions gratuites", "AGA", "BSPCE", "stock-options", "PEE", "PERCO", "épargne salariale", "abondement employeur", "gain d'acquisition", "equity salarial", "PER sortie capital", "PV mobilières", "cession de titres", "compte-titres ordinaire", "CTO". Covers PFU vs barème arbitrage, dividends, interest, capital gains on securities, PEA, assurance-vie rachats, RSU/BSPCE/stock-options, PEE/PERCO, and the differentiated PS rates under LFSS 2026. For crypto see fr-crypto-tax.
 version: 1.0
 jurisdiction: FR
 tax_year: 2025
-last_updated: 2026-05-20
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 category: international
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)

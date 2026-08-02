@@ -1,11 +1,12 @@
 ---
 name: ph-income-tax
-description: >
+description: Use this skill whenever asked about Philippines income tax for self-employed individuals or professionals. Trigger on phrases like "Philippines income tax", "BIR", "Bureau of Internal Revenue", "TRAIN law", "8% flat rate", "graduated tax", "Form 1701", "Form 1701Q", "OSD", "itemized deductions", "self-employed Philippines", "professional tax Philippines", "bir.gov.ph", "quarterly ITR Philippines", or any question about Philippine income tax rates, filing, deductions, or the 8% option. Covers graduated rates, 8% flat rate option, quarterly and annual filing, deductions, and BIR compliance. ALWAYS read this skill before touching any Philippines income tax work.
 version: 1.0
 jurisdiction: PH
 tax_year: 2025
 last_updated: 2026-07-13
-verified_by: Jonathan I. Ruiz
+reviewed_by: Jonathan I. Ruiz, CPA
+review_status: current
 depends_on: - income-tax-workflow-base
 category: international
 tier: 2

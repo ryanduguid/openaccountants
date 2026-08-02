@@ -1,11 +1,11 @@
 ---
 name: jp-estimated-tax
-description: >
+description: Use this skill whenever asked about Japanese estimated tax prepayments (yotei nozei / 予定納税) for self-employed individuals, freelancers, or sole proprietors. Trigger on phrases like "予定納税", "yotei nozei", "estimated tax Japan", "Japanese advance tax", "予定納税基準額", "reduction application", "予定納税額の減額申請", or any question about advance income tax obligations under the Income Tax Act (所得税法). Covers the two-instalment schedule (July and November), the JPY 150,000 threshold, reduction applications, penalties for non-payment, and payment procedures. ALWAYS read this skill before touching any estimated tax work for Japan.
 version: 2.0
 jurisdiction: JP
 tax_year: 2025
-last_updated: 2026-04-13
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - income-tax-workflow-base
 category: international
 tier: 2

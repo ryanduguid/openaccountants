@@ -3,9 +3,10 @@ name: do-selective-consumption-tax
 description: Dominican Republic Selective Consumption Tax (ISC) — accountant-verified rules from the DGII validation matrix (Miguel Lantigua, CPA Lic. 17839).
 jurisdiction: DO
 tax_year: 2025
-last_updated: 2026-06-25
-verified_by: Miguel Lantigua
-tier: 2
+last_updated: 2026-07-13
+reviewed_by: Miguel Lantigua
+review_status: current
+tier: 1
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 

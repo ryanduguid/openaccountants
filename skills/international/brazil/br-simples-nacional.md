@@ -1,14 +1,15 @@
 ---
 name: br-simples-nacional
-description: >
+description: [PT-BR] Use esta skill sempre que for solicitado tratar do Simples Nacional brasileiro ou do regime MEI. Acione com expressões como "Simples Nacional", "MEI", "microempreendedor individual", "DAS", "DASN-SIMEI", "anexo Simples", "tabela do Simples", "Fator R", ou qualquer dúvida sobre o regime unificado de tributação para micro e pequenas empresas no Brasil. Cobre o DAS mensal fixo do MEI, as tabelas progressivas do Simples Nacional (Anexos I-V), os limites de faturamento, o Fator R, as declarações anuais e a interação com a Reforma Tributária 2026 (CBS/IBS). SEMPRE leia esta skill antes de tocar em qualquer trabalho de Simples Nacional ou MEI no Brasil. — [EN] Use this skill whenever asked about the Brazilian Simples Nacional or MEI regime. Triggers include "Simples Nacional", "MEI", "DAS", "DASN-SIMEI", "Anexo Simples", "Fator R", and any question on the unified tax regime for Brazilian micro and small businesses. Covers MEI fixed monthly DAS, Simples Nacional progressive tables (Anexos I-V), revenue thresholds, Fator R, annual declarations, and the interaction with the 2026 CBS/IBS tax reform. ALWAYS read this skill before touching any Brazilian Simples Nacional or MEI work.
 version: 2.0
 jurisdiction: BR
 tax_year: 2025
-last_updated: 2026-04-13
-verified_by: Ariane Marrocos
+last_updated: 2026-07-13
+reviewed_by: Ariane Marrocos
+review_status: current
 depends_on: - income-tax-workflow-base
 category: international
-tier: 2
+tier: 1
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 

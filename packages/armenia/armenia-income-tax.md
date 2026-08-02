@@ -1,11 +1,11 @@
 ---
 name: armenia-income-tax
-description: >
+description: Use this skill whenever asked about Armenian personal income tax for individuals, self-employed individual entrepreneurs (IE), and employees. Trigger on phrases like "how much income tax in Armenia", "Armenian PIT", "flat 20% tax", "funded pension contribution", "turnover tax", "micro-business regime", "individual entrepreneur tax", "withholding on salary Armenia", "annual income declaration", "AMD net pay", "State Revenue Committee", "stamp duty on salary", "health insurance contribution", or any question about filing or computing personal/self-employment income tax for an Armenian-resident or Armenian-source taxpayer. Also trigger when preparing or reviewing an Armenian payroll calculation, an annual individual income tax declaration, a turnover-tax return, or advising on the micro-business regime. This skill covers the flat PIT rate, schedular rates (dividends, interest, royalties, rent, property sales), residency tests, mandatory funded pension, health-insurance and stamp-duty payroll levies, turnover-tax and micro-business special regimes, filing deadlines, and penalties. ALWAYS read this skill before touching any Armenian income tax work.
 version: 0.1
 jurisdiction: AM
 tax_year: 2025
-last_updated: 2026-06-04
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - income-tax-workflow-base
 category: international
 tier: 2

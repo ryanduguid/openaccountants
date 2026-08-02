@@ -1,14 +1,15 @@
 ---
 name: canada-transfer-pricing
-description: >
+description: Use this skill whenever asked about Canada transfer pricing rules, documentation requirements, or CRA transfer pricing compliance. Trigger on phrases like "transfer pricing Canada", "Canadian TP documentation", "CRA transfer pricing", "master file Canada", "local file Canada", "CbCR Canada", "APA Canada", "Section 247", "Form T106", "contemporaneous documentation Canada", or any question about intercompany pricing for Canadian entities.
 version: 1.0
 jurisdiction: CA
 tax_year: 2025
-last_updated: 2026-05-23
-verified_by: Edgar Lautsyus
+last_updated: 2026-07-13
+reviewed_by: Edgar Lautsyus
+review_status: current
 depends_on: - transfer-pricing-workflow-base
 category: transfer-pricing
-tier: 2
+tier: 1
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 

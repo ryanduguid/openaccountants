@@ -1,11 +1,11 @@
 ---
 name: de-gross-receipts-tax
-description: >
+description: Delaware Gross Receipts Tax for sole proprietors and self-employed individuals. Covers tax rates by business activity category, monthly/quarterly exclusions, filing frequency, and compliance requirements. Delaware has no sales tax but imposes this tax on gross business revenues. Trigger: any person or entity conducting business in Delaware.
 version: "0.1"
 jurisdiction: US-DE
 tax_year: 2025
-last_updated: 2026-05-22
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---

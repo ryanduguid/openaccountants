@@ -1,11 +1,11 @@
 ---
 name: mb-individual-return
-description: >
+description: Use this skill whenever asked about Manitoba provincial individual income tax. Trigger on phrases like "Manitoba tax", "MB provincial tax", "Manitoba T1", "Manitoba brackets", "RST Manitoba", "Manitoba health levy", "Manitoba education property tax credit", or any question about computing Manitoba provincial tax for an individual return. This skill covers Manitoba's three-bracket tax system, RST at 7%, health and education levy, provincial credits, and filing requirements. ALWAYS read this skill before touching any Manitoba individual tax return work.
 version: "1.0"
 jurisdiction: CA
 tax_year: 2025
-last_updated: 2026-05-23
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 category: international
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)

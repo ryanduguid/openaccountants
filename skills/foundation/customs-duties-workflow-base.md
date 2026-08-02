@@ -1,11 +1,11 @@
 ---
 name: customs-duties-workflow-base
-description: >
+description: Tier 1 workflow base for customs duty skills. Covers the customs declaration lifecycle from origin determination, HS classification, valuation, preference, special procedures, through to release for free circulation. Workflow architecture only — no country-specific tariff rates or detailed special procedure mechanics. MUST be loaded alongside a country/region customs content skill (EU UCC, US CBP, UK CDS post-Brexit, etc.). Assumes a licensed customs broker, AEO/CTPAT certified party, or in-house customs manager files the declaration. Does NOT cover: CBAM (see cbam-carbon-border-adjustment), import VAT (see country VAT skills), excise duties (see excise-tax-workflow-base), or anti-dumping / countervailing duty investigation procedure (only their tariff effect at point of declaration).
 version: 0.1
 jurisdiction: GLOBAL
 tax_year: 2025
-last_updated: 2026-05-23
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 category: foundation
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)

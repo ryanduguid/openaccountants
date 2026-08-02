@@ -1,11 +1,11 @@
 ---
 name: latvia-payroll
-description: >
+description: Use this skill whenever asked about Latvia payroll processing for employed persons. Trigger on phrases like "Latvia payroll", "VSAOI", "IIN Latvia", "PIT withholding Latvia", "social contributions Latvia", "Darba devēja ziņojums", "employer's report Latvia", "non-taxable minimum Latvia", "algas nodokļa grāmatiņa", "wage tax book", "solidarity tax Latvia", "business risk state fee", "uzņēmējdarbības riska valsts nodeva", "net salary Latvia", "gross to net Latvia", "minimum wage Latvia", "EDS report", "VID withholding", "salary calculation Latvia", or any question about computing employee pay, personal income tax withholding, or state social insurance contributions for Latvia-based employees. This skill covers IIN (personal income tax) — flat 25.5% monthly withholding, with the 33% band and +3% surtax settled at the annual income declaration — VSAOI state social insurance (employee and employer shares), the business risk state fee, the fixed non-taxable minimum, dependant and disability allowances, solidarity tax, minimum wage, and EDS filing obligations for tax year 2025. ALWAYS read this skill before processing any Latvia payroll.
 version: 0.1
 jurisdiction: LV
 tax_year: 2025
-last_updated: 2026-06-04
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - payroll-workflow-base
 category: payroll
 tier: 2

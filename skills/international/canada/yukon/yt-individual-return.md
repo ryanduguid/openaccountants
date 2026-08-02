@@ -1,11 +1,11 @@
 ---
 name: yt-individual-return
-description: >
+description: Use this skill whenever asked about Yukon territorial income tax for a self-employed sole proprietor. Trigger on phrases like "Yukon tax", "YT428", "Yukon income tax", "Yukon First Nations Income Tax Credit", "Pioneer Utility Grant", "territorial tax Yukon", or any question about computing Yukon territorial tax. ALWAYS read this skill before touching any Yukon territorial tax work.
 version: 1.0
 jurisdiction: CA
 tax_year: 2025
-last_updated: 2026-05-23
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - income-tax-workflow-base
 category: international
 tier: 2

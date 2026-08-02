@@ -1,11 +1,11 @@
 ---
 name: senegal-social-contributions
-description: >
+description: Use this skill whenever asked about Senegal social security / social insurance contributions and employer payroll taxes for employees, directors, or expatriate staff. Trigger on phrases like "how much IPRES do I pay", "Senegal social security", "CSS contribution", "IPM health insurance", "CFCE payroll tax", "Senegal payroll deductions", "IPRES cadre scheme", "retenue IRPP", "cotisation sociale Sénégal", "Senegal employer charges", or any question about Senegalese payroll contribution obligations. Also trigger when classifying bank statement transactions that relate to IPRES, CSS, IPM, CFCE, or DGID/Trésor Public payroll debits from CBAO, SGBS, Ecobank, BICIS, or other Senegalese banks. Also trigger when preparing the monthly PAYE (retenue à la source) and the annual recapitulative payroll returns. This skill covers IPRES (general + cadre), CSS (family allowances + work injury), IPM health insurance, CFCE employer payroll tax, the IRPP progressive scale, minimum PIT (MPIT), contribution ceilings, payment/filing schedule, penalties, bank statement classification patterns, and edge cases. ALWAYS read this skill before touching any Senegal payroll or social-contribution work.
 version: 0.1
 jurisdiction: SN
 tax_year: 2026
-last_updated: 2026-06-04
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - social-contributions-workflow-base
 category: international
 tier: 2

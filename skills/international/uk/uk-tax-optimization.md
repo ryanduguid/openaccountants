@@ -1,14 +1,15 @@
 ---
 name: uk-tax-optimization
-description: >
+description: Use this skill whenever asked about reducing tax in the UK, tax planning, saving tax, optimizing tax, allowances, deductions the client might be missing, or any question about legal strategies to minimize income tax liability for self-employed individuals in the UK. Trigger on phrases like "reduce tax", "tax planning", "save tax", "optimize", "allowances", "deductions I'm missing", "pay less tax", "tax-efficient", "tax minimization", "how to lower my tax bill". ALWAYS read this skill before advising on any UK tax optimization strategy.
 version: 1.0
 jurisdiction: GB
 tax_year: 2025
-last_updated: 2026-05-23
-verified_by: James Power
+last_updated: 2026-07-13
+reviewed_by: James Power
+review_status: current
 depends_on: []
 category: tax-optimization
-tier: 2
+tier: 1
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 

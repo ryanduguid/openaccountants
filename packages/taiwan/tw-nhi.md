@@ -1,11 +1,11 @@
 ---
 name: tw-nhi
-description: >
+description: Use this skill whenever asked about Taiwan National Health Insurance (NHI) contributions. Trigger on phrases like "NHI Taiwan", "健保", "全民健康保險", "健保費", "supplementary premium", "補充保費", "NHI self-employed", "health insurance Taiwan", "NHIA", "衛生福利部中央健康保險署", or any question about computing, paying, or understanding NHI premiums for self-employed individuals in Taiwan. This skill covers the general premium rate, supplementary premium, insured payroll categories, and payment obligations. ALWAYS read this skill before advising on Taiwan NHI.
 version: 1.0
 jurisdiction: TW
 tax_year: 2025
-last_updated: 2026-05-23
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - tw-income-tax
 category: international
 tier: 2

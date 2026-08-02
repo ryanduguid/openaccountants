@@ -1,11 +1,11 @@
 ---
 name: nl-payroll-tax
-description: >
+description: Use this skill whenever asked about Dutch payroll taxes (loonheffingen) or the work cost scheme (werkkostenregeling / WKR). Trigger on phrases like "loonheffingen", "payroll tax Netherlands", "werkkostenregeling", "WKR", "loonbelasting", "premies volksverzekeringen", "premies werknemersverzekeringen", "wage tax NL", "eindheffing", "vrije ruimte", "salary administration", "loonadministratie", "werkgeverslasten", "employer costs NL", "payroll period filing", "loonstrook", "jaarloonopgave", "UWV premies", "WAO/WIA", "ZW premie", "AWf premie", "Whk premie", or any question about Dutch employer withholding, social contributions, or employee benefit taxation. Also trigger when reviewing payroll runs, computing employer costs, or advising on WKR allocation. ALWAYS read this skill before touching any Dutch payroll tax work.
 version: 1.0
 jurisdiction: NL
 tax_year: 2025
-last_updated: 2026-05-20
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - income-tax-workflow-base
 category: international
 tier: 2

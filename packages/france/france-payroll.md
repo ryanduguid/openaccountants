@@ -1,11 +1,11 @@
 ---
 name: france-payroll
-description: >
+description: Use this skill whenever asked about French payroll processing for employees. Trigger on phrases like "French payroll", "bulletin de paie", "fiche de paie", "prélèvement à la source", "PAS", "URSSAF cotisations", "cotisations sociales France", "CSG CRDS", "SMIC", "AGIRC-ARRCO", "retraite complémentaire", "DSN", "net imposable", "net à payer", "salaire brut net France", "charges patronales", "charges salariales", "PMSS", "plafond sécurité sociale", "minimum wage France", "congés payés", "13ème mois", "mutuelle obligatoire", or any question about computing employee pay, income tax withholding, or social contributions in France. This skill covers prélèvement à la source (PAS), URSSAF contributions, AGIRC-ARRCO, CSG/CRDS, mandatory benefits, payslip (bulletin de paie) requirements, DSN filing, and employer cost analysis. ALWAYS read this skill before processing any French employee payroll.
 version: 1.0
 jurisdiction: FR
 tax_year: 2026
-last_updated: 2026-05-23
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - payroll-workflow-base
 category: payroll
 tier: 2

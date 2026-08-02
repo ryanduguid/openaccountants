@@ -3,8 +3,9 @@ name: tanzania-withholding-tax
 description: Tanzania Mainland withholding tax (WHT) on payments, resident & non-resident rates, TRA administration under Income Tax Act Cap. 332 and Tax Administration Act Cap. 438.
 jurisdiction: TZ
 tax_year: 2025
-last_updated: 2026-06-11
-verified_by: Baraka Cassian
+last_updated: 2026-07-13
+reviewed_by: Baraka Cassian
+review_status: current
 tier: 1
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---

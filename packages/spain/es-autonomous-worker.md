@@ -1,11 +1,11 @@
 ---
 name: es-autonomous-worker
-description: >
+description: Use this skill whenever asked about Spanish self-employed (autónomo) tax and social security obligations beyond IRPF computation. Trigger on phrases like "autonomo", "autónomo", "cuota de autonomos", "cuota seguridad social autonomo", "RETA", "tarifa plana", "alta autonomo", "baja autonomo", "cotizacion por ingresos reales", "obligaciones fiscales autonomo", "modelos autonomo", "Modelo 303", "Modelo 130", "Modelo 390", "Modelo 349", "calendario fiscal autonomo", "pluriactividad", "autonomo societario", "facturacion autonomo", "estimacion directa", "libro registro", "IGIC autonomo", "IPSI autonomo", "autonomo Canarias", "autonomo Ceuta Melilla", "cuanto paga un autonomo", or any question about the complete fiscal and social security picture for a self-employed worker in Spain. ALWAYS read this skill before advising on autónomo setup, ongoing obligations, or take-home pay calculations.
 version: 1.0
 jurisdiction: ES
 tax_year: 2025
-last_updated: 2026-05-20
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - es-income-tax
 category: international
 tier: 2

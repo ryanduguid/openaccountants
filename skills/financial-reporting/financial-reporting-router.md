@@ -1,11 +1,11 @@
 ---
 name: financial-reporting-router
-description: >
+description: Entry point for the OpenAccountants financial-reporting (US GAAP / IFRS) skill library. ALWAYS load this skill first when a user asks how to account for, recognise, measure, classify, or disclose a transaction under US GAAP or IFRS — e.g. "how do I book this contract", "is this a lease", "debt or equity", "how do I account for this acquisition", "revenue recognition for...", "what's the journal entry for...". The router does not compute anything. It (1) establishes the entity's reporting framework, (2) identifies which accounting standard(s) the transaction touches, (3) gates out transactions whose governing standard the library does not yet cover, (4) sequences the topic skills when more than one applies, and (5) hands off to the financial-reporting-workflow-base plus the correct topic content skill(s). Every topic skill (revenue, leases, debt vs. equity, business combinations) assumes this routing step has happened first.
 version: 0.1
 jurisdiction: GLOBAL
 tax_year: 2025
-last_updated: 2026-05-29
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: []
 category: financial-reporting
 tier: 2

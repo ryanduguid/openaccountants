@@ -1,11 +1,11 @@
 ---
 name: fr-crypto-tax
-description: >
+description: French cryptocurrency and digital asset taxation for individuals. Trigger on phrases like "crypto France impôt", "fiscalité crypto", "bitcoin impôt France", "ethereum déclaration France", "plus-value crypto", "PAMC crypto", "prix d'acquisition moyen pondéré", "formulaire 2086", "déclaration 2086", "cession crypto-actifs", "staking impôt France", "mining fiscalité", "airdrop fiscalité", "exonération 305 euros", "crypto flat tax France", "échange crypto-to-crypto", "stablecoin fiscalité", "Koinly France", "Waltio", "déclaration crypto France", "BNC staking". Covers the PAMC method, the EUR 305 exemption threshold, PFU 31.4%, barème option, form 2086, staking/mining/airdrops, and documentation obligations.
 version: 1.0
 jurisdiction: FR
 tax_year: 2025
-last_updated: 2026-05-20
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 category: international
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)

@@ -4,9 +4,10 @@ description: Use this skill whenever asked to prepare, review, or classify trans
 version: 2.0
 jurisdiction: GB
 tax_year: 2025
-last_updated: 2026-04-13
-verified_by: James Power
-tier: 2
+last_updated: 2026-07-13
+reviewed_by: James Power
+review_status: current
+tier: 1
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 

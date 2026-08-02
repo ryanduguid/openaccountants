@@ -3,8 +3,8 @@ name: nd-return-assembly
 description: "Final capstone orchestrator that assembles the complete federal + North Dakota filing package for a full-year North Dakota-resident sole proprietor or single-member LLC disregarded for federal tax. Consumes outputs from every upstream federal and North Dakota content skill (bookkeeping, Schedule C/SE, QBI, retirement, SE health insurance, quarterly estimated tax, federal assembly, 1099-NEC, nd-income-tax, nd-estimated-tax, nd-payroll, nd-corporate-tax routing checks, and nd-sales-tax for closing out the indirect-tax year) to produce a single unified reviewer package: every worksheet, every form, every cross-skill reconciliation, the final taxpayer action list with payment and filing instructions, the next-year ND-1ES voucher schedule, and the reviewer brief. This skill does NOT recompute tax — it ORCHESTRATES. Trigger on phrases like \"assemble the North Dakota return\", \"final ND package\", \"ND-1 reviewer package\", \"ND return assembly\", or \"package up the Dakota return\". MUST be loaded alongside us-tax-workflow-base v0.2 or later and every content skill listed in Section 5. North Dakota full-year residents only. Sole proprietors and single-member LLCs disregarded for federal tax only."
 jurisdiction: US-ND
 tax_year: 2025
-last_updated: 2026-05-29
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---

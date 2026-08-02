@@ -1,11 +1,11 @@
 ---
 name: mexico-crypto-tax
-description: >
+description: Use this skill whenever asked about Mexico cryptocurrency or virtual asset taxation. Trigger on phrases like "crypto tax Mexico", "Bitcoin Mexico", "impuesto criptomonedas", "ISR crypto", "SAT crypto", "activos virtuales Mexico", "Bitso tax", "staking Mexico", "mining income Mexico", "NFT tax Mexico", "Ley Fintech crypto", "declaración anual crypto", "CFDI crypto", or any question about the income tax, ISR, or IVA treatment of cryptocurrency, tokens, or digital assets for Mexican tax residents or Mexico-source crypto income. Covers SAT treatment of virtual assets, ISR rates, cost basis, CARF reporting, and Ley Fintech classification. ALWAYS read this skill before touching any Mexico crypto work.
 version: 1.0
 jurisdiction: MX
 tax_year: 2025
-last_updated: 2026-05-23
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - mexico-income-tax
 category: crypto
 tier: 2

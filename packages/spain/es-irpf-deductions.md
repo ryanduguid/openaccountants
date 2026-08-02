@@ -1,11 +1,11 @@
 ---
 name: es-irpf-deductions
-description: >
+description: Use this skill whenever asked about Spanish regional tax deductions (deducciones autonomicas), IRPF deductions by Comunidad Autonoma, or territory-specific tax benefits. Trigger on phrases like "deducciones autonomicas", "deduccion por vivienda", "deduccion por familia numerosa", "deduccion por nacimiento", "deduccion Madrid", "deduccion Cataluna", "deduccion Valencia", "deducciones por discapacidad", "deducciones por alquiler", "deducciones IRPF por comunidad", "casilla AEAT", "territory deductions Spain", "regional tax credits Spain", "Ceuta Melilla deduction", "foral deductions", "Pais Vasco IRPF", "Navarra IRPF", "deduccion por donativo", "deduccion por guarderia", "deduccion por maternidad autonomica", or any question about which IRPF deductions apply in a specific Spanish territory. ALWAYS read this skill before advising on territory-specific deductions.
 version: 1.0
 jurisdiction: ES
 tax_year: 2025
-last_updated: 2026-05-20
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - es-income-tax
 category: international
 tier: 2

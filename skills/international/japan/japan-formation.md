@@ -1,11 +1,11 @@
 ---
 name: japan-formation
-description: >
+description: Use this skill whenever asked about forming, incorporating, or registering a company in Japan. Trigger on phrases like "set up a company in Japan", "KK formation", "GK formation", "kabushiki kaisha", "godo kaisha", "法務局", "Legal Affairs Bureau", "Japanese company formation", "register a business Japan", "会社設立", "定款", "登録免許税", or any question about starting a business entity in Japan. Covers entity types (KK, GK, branch office), registration process, capital requirements, costs, post-formation compliance, and bank account opening. ALWAYS read this skill before advising on Japanese company formation.
 version: 1.0
 jurisdiction: JP
 tax_year: 2025
-last_updated: 2026-05-23
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - company-formation-workflow-base
 category: formation
 tier: 2

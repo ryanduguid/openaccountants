@@ -1,11 +1,11 @@
 ---
 name: eu-directives-cross-border
-description: >
+description: Key EU directives governing cross-border corporate taxation within the EU. Covers the Parent-Subsidiary Directive (2011/96/EU), Interest & Royalties Directive (2003/49/EC), Anti-Tax Avoidance Directives (ATAD I & II), DAC6/DAC7/DAC8 mandatory disclosure rules, and the EU Merger Directive. Use when advising on cross-border dividend flows, intercompany interest/royalty payments, CFC rules, hybrid mismatches, exit taxation, mandatory reporting of cross-border arrangements, or tax-neutral reorganizations within the EU. Trigger on: "Parent-Subsidiary Directive", "Interest and Royalties Directive", "ATAD", "CFC rules", "DAC6", "DAC7", "DAC8", "exit tax EU", "hybrid mismatch", "cross-border merger", "EU WHT exemption", "participation exemption", or any question about EU-wide corporate tax harmonization measures.
 version: 1.0
 jurisdiction: EU-27
 tax_year: 2025
-last_updated: 2026-05-23
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 category: cross-border
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)

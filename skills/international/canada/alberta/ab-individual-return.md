@@ -1,11 +1,11 @@
 ---
 name: ab-individual-return
-description: >
+description: Use this skill whenever asked about Alberta provincial individual income tax. Trigger on phrases like "Alberta tax", "Alberta T1", "AB provincial tax", "Alberta flat tax", "Alberta credits", "Alberta personal amount", "no PST Alberta", or any question about computing Alberta provincial tax for an individual return. This skill covers Alberta's 10% flat personal income tax rate, provincial credits, interaction with federal T1, and Alberta-specific deductions. ALWAYS read this skill before touching any Alberta individual tax return work.
 version: "1.0"
 jurisdiction: CA
 tax_year: 2025
-last_updated: 2026-05-23
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 category: international
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)

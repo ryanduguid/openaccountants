@@ -1,11 +1,12 @@
 ---
 name: ph-sss-philhealth
-description: >
+description: Use this skill whenever asked about Philippine social security contributions for self-employed individuals. Trigger on phrases like "SSS contribution", "PhilHealth premium", "Pag-IBIG", "self-employed Philippines contributions", "HDMF", "voluntary SSS", "PhilHealth self-employed", "social contributions Philippines", "mandatory contributions freelancer Philippines", or any question about computing, paying, or filing SSS, PhilHealth, or Pag-IBIG as a self-employed worker in the Philippines. This skill covers the 2025 contribution tables, registration, payment methods, and deadlines. ALWAYS read this skill before advising on Philippine social insurance obligations.
 version: 1.0
 jurisdiction: PH
 tax_year: 2025
 last_updated: 2026-07-13
-verified_by: Jonathan I. Ruiz
+reviewed_by: Jonathan I. Ruiz, CPA
+review_status: current
 depends_on: - income-tax-workflow-base
 category: international
 tier: 2

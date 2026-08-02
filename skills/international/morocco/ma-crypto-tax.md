@@ -1,11 +1,11 @@
 ---
 name: ma-crypto-tax
-description: >
+description: Use this skill whenever asked about the taxation and legal status of cryptocurrency / crypto-assets in Morocco for a self-employed individual. Trigger on phrases like "Morocco crypto tax", "Bitcoin Maroc impôt", "cryptomonnaie Maroc légal", "crypto Morocco", "crypto-actifs Maroc", "is crypto legal in Morocco", "taxe cryptomonnaie Maroc", "Bitcoin impôt Maroc", "Office des Changes crypto", "loi 42.25 crypto", "stablecoin dirham", "الضريبة على العملات المشفرة المغرب", "العملات الرقمية المغرب". Covers the RESTRICTED / UNREGULATED status under the November 2017 Bank Al-Maghrib / AMMC / Office des Changes notice, the pending draft Law 42.25 on crypto-assets (verify 2026 status), the ABSENCE of any specific crypto tax regime, how gains MIGHT be treated if realised (profits from disposal of movable property / profits de capitaux mobiliers, or professional income / revenus professionnels if habitual, under the Impôt sur le Revenu), and the exchange-control (réglementation des changes) implications. This is HIGH-UNCERTAINTY, HIGH-RISK territory — the skill must never assert a settled regime. Reply in the user's language (English, French, or Moroccan Arabic / Darija) and keep native French terms in context.
 version: 1.0
 jurisdiction: MA
 tax_year: 2026
-last_updated: 2026-05-24
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - income-tax-workflow-base
 category: international
 tier: 2

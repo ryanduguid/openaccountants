@@ -1,11 +1,11 @@
 ---
 name: spain-crypto-tax
-description: >
+description: Use this skill whenever asked about Spain cryptocurrency or digital asset taxation. Trigger on phrases like "crypto tax Spain", "Bitcoin Spain", "criptomonedas IRPF", "cryptocurrency gains Spain", "crypto income Spain", "staking Spain", "mining income Spain", "NFT tax Spain", "Modelo 721", "Modelo 100 crypto", "rentas del ahorro crypto", "base del ahorro", "AEAT crypto", "Binance Spain tax", "Coinbase Spain tax", "Revolut crypto Spain", "DeFi tax Spain", "Hacienda crypto", "declaración renta criptomonedas", or any question about the income tax, capital gains, or VAT treatment of cryptocurrency, tokens, or digital assets for Spanish tax residents or Spain-source crypto income. Covers IRPF savings base taxation, Modelo 721 foreign crypto reporting, FIFO cost basis, Ley 11/2021 anti-fraud provisions, and DAC8 reporting. ALWAYS read this skill before touching any Spain crypto work.
 version: 1.0
 jurisdiction: ES
 tax_year: 2025
-last_updated: 2026-05-23
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - spain-income-tax
 category: crypto
 tier: 2

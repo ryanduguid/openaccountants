@@ -1,11 +1,11 @@
 ---
 name: oh-sales-tax
-description: >
+description: Use this skill whenever asked about Ohio sales and use tax, ODT filings, Ohio CAT, Ohio exemptions, Ohio nexus, or any request involving Ohio state sales and use tax compliance. Trigger on phrases like "Ohio sales tax", "OH sales tax", "ODT", "UST-1", "Ohio exemption certificate", "Streamlined Sales Tax Ohio", or any request involving Ohio sales and use tax classification, filing, or compliance. ALWAYS read this skill before touching any Ohio sales tax work.
 version: 2.0
 jurisdiction: US-OH
 tax_year: 2025
-last_updated: 2026-05-22
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - us-sales-tax
 category: us-states
 tier: 2

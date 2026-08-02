@@ -1,11 +1,11 @@
 ---
 name: singapore-crypto-tax
-description: >
+description: Use this skill whenever asked about Singapore cryptocurrency or digital asset taxation. Trigger on phrases like "crypto tax Singapore", "Bitcoin Singapore", "digital tokens Singapore", "cryptocurrency gains Singapore", "IRAS crypto", "GST crypto Singapore", "staking Singapore", "mining income Singapore", "NFT tax Singapore", "Coinbase Singapore", "Binance Singapore", "payment tokens", "digital payment tokens", "capital gains Singapore crypto", "crypto business income Singapore", or any question about the income tax, GST, or reporting obligations for cryptocurrency, tokens, or digital assets for Singapore tax residents or Singapore-source crypto income. Covers IRAS e-Tax Guide on Digital Tokens (income tax and GST), trader vs investor distinction, badges of trade, and GST exemption for digital payment tokens. ALWAYS read this skill before touching any Singapore crypto work.
 version: 1.0
 jurisdiction: SG
 tax_year: 2025
-last_updated: 2026-05-23
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - singapore-income-tax
 category: crypto
 tier: 2

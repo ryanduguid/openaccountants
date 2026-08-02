@@ -1,11 +1,11 @@
 ---
 name: be-capital-gains
-description: >
+description: Belgium capital gains: generally exempt for private investors on shares; TOB stock exchange tax on transactions; real property gains taxed. Trigger on: "Belgium CGT", "capital gains Belgium", "Belgium shares exempt", "TOB Belgium", "Belgium tax on shares", "Belgium no capital gains tax", "beurs van transactie", "Belgium property gain tax".
 version: 1.0
 jurisdiction: BE
 tax_year: 2025
-last_updated: 2026-06-05
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 category: international
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)

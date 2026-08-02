@@ -1,11 +1,12 @@
 ---
 name: my-pcb
-description: >
+description: Use this skill whenever asked about Malaysia PCB (monthly tax deduction) or CP500 instalment payments. Trigger on phrases like "PCB", "Potongan Cukai Bulanan", "monthly tax deduction Malaysia", "CP500", "instalment tax Malaysia", "self-employed tax payment Malaysia", "e-PCB", "LHDN instalments", "advance tax Malaysia", or any question about paying income tax during the year in Malaysia. Covers PCB for employees, CP500 for self-employed, payment schedules, penalties, and revision procedures. ALWAYS read this skill before advising on Malaysian tax prepayments.
 version: 1.0
 jurisdiction: MY
 tax_year: 2025
-last_updated: 2026-05-23
-verified_by: MUHAMMAD HANIS MAT HUSSIN
+last_updated: 2026-07-13
+reviewed_by: MUHAMMAD HANIS MAT HUSSIN
+review_status: current
 depends_on: - my-income-tax
 category: international
 tier: 2

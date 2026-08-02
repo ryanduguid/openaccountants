@@ -3,8 +3,8 @@ name: va-sales-tax
 description: Use this skill whenever asked about Virginia sales tax, Virginia use tax, Virginia sales tax nexus, Virginia sales tax returns, Virginia exemption certificates, taxability of goods or services in Virginia, or any request involving Virginia state-level consumption taxes. Trigger on phrases like "Virginia sales tax", "VA sales tax", "Virginia use tax", "Virginia nexus", "Va. Code 58.1-603", "Virginia Tax Department", or any request involving Virginia sales and use tax filing, classification, or compliance. ALWAYS read the parent us-sales-tax skill first for federal context, then layer this Virginia-specific skill on top.
 jurisdiction: US-VA
 tax_year: 2025
-last_updated: 2026-05-22
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---

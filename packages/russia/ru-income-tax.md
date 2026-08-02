@@ -1,11 +1,11 @@
 ---
 name: ru-income-tax
-description: >
+description: Use this skill whenever asked about Russian personal income tax (НДФЛ / nalog na dokhody fizicheskikh lits) for individuals or for individual entrepreneurs (ИП) on the general system (ОСНО). Trigger on phrases like "НДФЛ", "income tax Russia", "13% 15% Russia", "progressive scale Russia", "3-НДФЛ", "ИП ОСНО", "professional deduction Russia", "профессиональный вычет", "tax residency Russia 183 days", "personal income tax Russia 2026", or any request to compute, classify, or advise on Russian НДФЛ. This skill covers the progressive НДФЛ scale (13/15/18/20/22%) effective from 1 Jan 2025, tax residency, the non-resident 30% rate, ИП on ОСНО paying НДФЛ on net business profit with the professional deduction, the annual 3-НДФЛ declaration, advance payments, and the standard/social/property deduction overview. For simplified alternatives see ru-usn (УСН) and ru-self-employed-npd (НПД / самозанятые).
 version: 1.0
 jurisdiction: RU
 tax_year: 2026
-last_updated: 2026-05-23
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - income-tax-workflow-base
 category: international
 tier: 2

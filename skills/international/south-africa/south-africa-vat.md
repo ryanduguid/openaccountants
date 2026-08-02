@@ -4,8 +4,9 @@ description: Use this skill whenever asked to prepare, review, or classify trans
 version: 2.1
 jurisdiction: ZA
 tax_year: 2025
-last_updated: 2026-04-13
-verified_by: Werner Britz
+last_updated: 2026-07-13
+reviewed_by: Werner Britz
+review_status: current
 depends_on: - vat-workflow-base
 category: international
 tier: 1

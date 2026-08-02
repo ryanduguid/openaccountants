@@ -3,8 +3,8 @@ name: bc-eht
 description: Use this skill for British Columbia Employer Health Tax — replaced MSP premiums in 2019. Different structure from Ontario EHT. Triggers "BC EHT", "British Columbia Employer Health Tax", "BC payroll tax", "EHT BC $1.5M threshold", "eTaxBC EHT". ALWAYS read alongside canada-payroll.
 jurisdiction: CA
 tax_year: 2025
-last_updated: 2026-05-27
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---

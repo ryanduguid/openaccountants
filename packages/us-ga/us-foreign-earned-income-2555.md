@@ -3,8 +3,9 @@ name: us-foreign-earned-income-2555
 description: Tier 2 US federal content skill for §911 Foreign Earned Income Exclusion (Form 2555) for US citizens and green card holders living abroad. Covers tax year 2025 including the $130,000 FEIE cap, the Bona Fide Residence vs Physical Presence (330 days in 12 months) qualifying tests, the §911(c) housing exclusion/deduction (16% base, 30% cap with location-specific Notice 2024-44 successor adjustments), the stacked tax computation under §911(f), the SE-tax trap (FEIE excludes income tax only — 15.3% SE tax still owed), the election-revocation 5-year lockout, and the strategic choice between §911 and Foreign Tax Credit (Form 1116). June 15 automatic extension under §6072(c).
 jurisdiction: US
 tax_year: 2025
-last_updated: 2026-05-27
-verified_by: James Wallach
+last_updated: 2026-07-13
+reviewed_by: James Wallach
+review_status: current
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---

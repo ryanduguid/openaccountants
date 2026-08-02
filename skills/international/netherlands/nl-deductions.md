@@ -1,11 +1,11 @@
 ---
 name: nl-deductions
-description: >
+description: Use this skill whenever asked about Dutch tax deductions and special schemes (aftrekposten en regelingen) beyond self-employed deductions. Trigger on phrases like "aftrekposten", "belastingaftrek", "deductions Netherlands", "hypotheekrenteaftrek", "mortgage interest deduction", "eigenwoningforfait", "specifieke zorgkosten", "giftenaftrek", "studiekosten", "alimentatie aftrek", "persoonsgebonden aftrek", "partnerregeling", "heffingskorting", "ouderenkorting", "jonggehandicaptenkorting", "levensloopvrijstelling", "box 3 vrijstelling", "groene belegging", "ANBI", "kom ik in aanmerking", "tax deduction check NL", or any question about Dutch individual or business tax deductions, credits, or special regimes. This skill covers persoonsgebonden aftrek, hypotheekrenteaftrek, zorgkosten, giften, heffingskortingen, and business investment schemes. ALWAYS read this skill before advising on Dutch deduction eligibility.
 version: 1.0
 jurisdiction: NL
 tax_year: 2025
-last_updated: 2026-05-20
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - income-tax-workflow-base
 category: international
 tier: 2

@@ -3,8 +3,8 @@ name: wy-formation
 description: Tier 2 Wyoming content skill for entity formation covering tax year 2025. Includes the WY LLC $100 filing fee + $60 annual report (cheapest in US), no state PIT, anonymous ownership (member name not on public record), the strongest charging-order asset protection statute in US (charging order as exclusive remedy), Dynasty Trust 1,000-year duration, Series LLC availability, foreign qualification requirements when "doing business" in other states, and the federal compliance overlay (Form 5472 for foreign-owned single-member LLCs).
 jurisdiction: US-WY
 tax_year: 2025
-last_updated: 2026-05-27
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---

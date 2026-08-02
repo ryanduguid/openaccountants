@@ -1,11 +1,11 @@
 ---
 name: ma-tax-optimization
-description: >
+description: Use this skill whenever asked about legitimate (legal) tax optimization for a self-employed person, freelancer, or sole trader in Morocco — that is, choosing the most efficient tax regime and using lawful levers to reduce the tax bill without evasion. Trigger on phrases like 'reduce tax Morocco', 'optimiser mes impôts Maroc', 'auto-entrepreneur vs CPU', 'tax planning Morocco freelancer', 'quel régime fiscal Maroc', 'lower my tax legally Morocco', 'best status freelance Maroc', 'كيف أقلل الضريبة'. Covers the choice between auto-entrepreneur (0.5% / 1% of turnover), the Contribution Professionnelle Unique (CPU), and the Résultat Net Simplifié / Réel (RNS / RNR, net profit on the IR scale to 37%), with break-even logic by turnover and margin; the auto-entrepreneur single-client 80,000 MAD anti-disguised-salary rule and disguised-employment risk; the cotisation minimale and new-business exemption; VAT registration threshold management; and export / Casablanca Finance City incentives. Reply in the user's language (English, French, or Moroccan Arabic / Darija). LEGAL planning only — never advise evasion. Cross-reference ma-auto-entrepreneur, ma-cpu, ma-income-tax.
 version: 1.0
 jurisdiction: MA
 tax_year: 2026
-last_updated: 2026-05-24
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - income-tax-workflow-base
 category: international
 tier: 2

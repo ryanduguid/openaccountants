@@ -3,8 +3,8 @@ name: withholding-tax-matrix
 description: Use this skill whenever a freelancer or small business receives or makes a cross-border payment and the question is whether withholding tax (WHT) applies. Trigger on phrases like "withholding tax", "WHT", "tax withheld", "double tax treaty", "treaty rate", "certificate of residence", "tax residency certificate", "form W-8BEN", "royalty withholding", "interest withholding", "TDS on services", or any request involving tax deducted at source on cross-border payments for services, royalties, or interest. This skill contains the withholding tax matrix for the top 30 country pairs, treaty rate lookups, certificate of residence requirements, and zero-WHT corridors. ALWAYS read this skill before advising on any cross-border withholding tax question.
 jurisdiction: GLOBAL
 tax_year: 2025
-last_updated: 2026-04-13
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---

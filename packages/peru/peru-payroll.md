@@ -1,14 +1,15 @@
 ---
 name: peru-payroll
-description: >
+description: Use this skill whenever asked about Peru payroll processing for employed persons. Trigger on phrases like "Peru payroll", "nómina Perú", "planilla Perú", "renta de quinta categoría", "retención de quinta", "impuesto a la renta quinta", "PLAME", "Formulario 601", "EsSalud", "aporte EsSalud 9%", "ONP", "SNP 13%", "AFP", "aporte AFP", "comisión AFP", "prima de seguro AFP", "SBS AFP", "T-Registro", "UIT Perú", "RMV", "salario mínimo Perú", "sueldo mínimo Perú", "net salary Peru", "sueldo neto", "PAYE Peru", "tax withholding Peru", "employer contributions Peru", "SUNAT planilla", "gross to net Peru", "PEN payroll", "sol salary", or any question about computing employee pay, withholding fifth-category income tax, or mandatory social contributions (EsSalud, ONP, AFP) for Peru-based employees. This skill covers fifth-category income-tax withholding (7-UIT exemption + 8%–30% progressive schedule), EsSalud (employer), the ONP/AFP pension choice (employee-borne), the RMV minimum wage, non-domiciled flat withholding, T-Registro registration, and PLAME/SUNAT filing obligations. ALWAYS read this skill before processing any Peru payroll.
 version: 0.1
 jurisdiction: PE
 tax_year: 2026
-last_updated: 2026-06-04
-verified_by: Maria Clemencia Valverde Rios
+last_updated: 2026-07-13
+reviewed_by: Maria Clemencia Valverde Rios
+review_status: current
 depends_on: - payroll-workflow-base
 category: payroll
-tier: 2
+tier: 1
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 

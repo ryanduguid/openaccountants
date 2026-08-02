@@ -1,11 +1,11 @@
 ---
 name: costa-rica-income-tax
-description: >
+description: Use this skill whenever asked about Costa Rica income tax for self-employed individuals or persons with profit-generating activity. Trigger on phrases like "how much tax do I pay in Costa Rica", "impuesto sobre la renta", "D-101", "declaración de renta", "renta del trabajo dependiente", "impuesto a las utilidades", "deducción del 25%", "Ley 10667", "trabajador independiente", "CCSS self-employed", "pagos parciales", "régimen simplificado", "TRIBU-CR", "salario base", "self-employed tax Costa Rica", "Costa Rica freelancer tax", or any question about filing or computing income tax for a self-employed Costa Rican client. Also trigger when preparing or reviewing a D-101, computing the 25% standard deduction vs documented expenses, advising on CCSS (Caja) self-employed contributions, or advising on partial-payment instalments. This skill covers the annual self-employed brackets, salaried monthly brackets, the Law 10667 25% standard deduction, CCSS contributions, family tax credits, VAT (IVA) interaction, the simplified regime, penalties, and the TRIBU-CR platform. ALWAYS read this skill before touching any Costa Rica income tax work.
 version: 0.1
 jurisdiction: CR
 tax_year: 2026
-last_updated: 2026-06-04
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - income-tax-workflow-base
 category: international
 tier: 2

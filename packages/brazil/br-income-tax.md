@@ -1,12 +1,13 @@
 ---
 name: br-income-tax
-description: >
+description: Use esta skill sempre que for solicitado sobre o imposto de renda brasileiro para pessoas físicas autônomas (autônomos / profissionais liberais). Ative com frases como "quanto de imposto eu pago no Brasil", "DIRPF", "IRPF", "Carnê-Leão", "livro caixa", "imposto de renda", "CPF", "declaração de imposto de renda Brasil", "despesas dedutíveis Brasil", "imposto autônomo Brasil", "desconto simplificado", "INSS autônomo", "pró-labore", "DAS MEI", ou qualquer pergunta sobre apuração ou cálculo de imposto de renda para um cliente autônomo ou freelancer no Brasil. Esta skill cobre a DIRPF anual, os pagamentos mensais estimados via Carnê-Leão, as faixas progressivas do IRPF, livro caixa, deduções permitidas, desconto simplificado (20%), limites obrigatórios de entrega da declaração, contribuições ao INSS e penalidades. SEMPRE leia esta skill antes de tratar qualquer trabalho de imposto de renda brasileiro. Trigger also on: "how much tax do I pay in Brazil", "DIRPF", "IRPF", "Carnê-Leão", "livro caixa", "income tax return Brazil", "deductible expenses Brazil", "self-employed tax Brazil", "INSS autônomo".
 version: 2.0
 jurisdiction: BR
 tax_year: 2025
-last_updated: 2026-04-13
-verified_by: Ariane Marrocos
-tier: 2
+last_updated: 2026-07-13
+reviewed_by: Ariane Marrocos
+review_status: current
+tier: 1
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 

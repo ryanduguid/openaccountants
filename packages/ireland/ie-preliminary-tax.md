@@ -1,11 +1,11 @@
 ---
 name: ie-preliminary-tax
-description: >
+description: Use this skill whenever asked about Irish Preliminary Tax for self-employed individuals. Trigger on phrases like "preliminary tax Ireland", "Form 11", "self-assessed tax Ireland", "October 31 deadline", "ROS filing", "100% rule preliminary tax", "90% rule Ireland", or any question about estimated tax payment obligations for a self-employed client in Ireland. Covers the 100%/90% prior-year/current-year rules, payment deadlines, and surcharges. ALWAYS read this skill before touching any Ireland preliminary tax work.
 version: 2.0
 jurisdiction: IE
 tax_year: 2025
-last_updated: 2026-04-13
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - income-tax-workflow-base
 category: international
 tier: 2

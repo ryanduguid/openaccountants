@@ -3,8 +3,9 @@ name: us-state-estimated-tax-safe-harbors-matrix
 description: Tier 2 US federal-level reference skill providing the 50-state matrix of estimated tax safe-harbor rules for individuals and corporations. Covers tax year 2025 including California's unique 30/40/0/30 installment schedule under R&TC §19136 (which differs from the federal 25/25/25/25 equal-installment rule), New York's corporate Mandatory First Installment (MFI) of 25% or 40% based on prior-year liability, state-by-state safe-harbor percentages (most mirror federal 100%/110% but some require 90% current-year only), underpayment penalty rates, annualized income method availability under §6654(d)(2)-equivalent state rules, and PTE election estimated payment schedules separate from corporate estimates.
 jurisdiction: US
 tax_year: 2025
-last_updated: 2026-05-27
-verified_by: James Wallach
+last_updated: 2026-07-13
+reviewed_by: James Wallach
+review_status: current
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---

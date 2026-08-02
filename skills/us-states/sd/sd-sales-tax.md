@@ -3,8 +3,8 @@ name: sd-sales-tax
 description: Use this skill whenever asked about South Dakota sales tax, South Dakota use tax, South Dakota DOR filing, South Dakota Wayfair, South Dakota municipal gross receipts tax, or South Dakota sales tax compliance. Trigger on phrases like "South Dakota sales tax", "SD sales tax", "SDCL §10-45", "South Dakota DOR", "Wayfair", "South Dakota grocery tax", "South Dakota SST", "South Dakota no income tax", or any request involving South Dakota sales and use tax compliance. ALWAYS load us-sales-tax first for federal context.
 jurisdiction: US-SD
 tax_year: 2025
-last_updated: 2026-05-22
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---

@@ -1,11 +1,11 @@
 ---
 name: belgium-crypto-tax
-description: >
+description: Use this skill whenever asked about Belgium cryptocurrency or digital asset taxation. Trigger on phrases like "crypto tax Belgium", "Bitcoin Belgium", "cryptocurrency gains Belgium", "crypto income Belgium", "staking Belgium", "mining income Belgium", "NFT tax Belgium", "goede huisvader crypto", "bon père de famille crypto", "speculative income Belgium", "miscellaneous income Belgium", "divers inkomen crypto", "revenus divers crypto", "professional income crypto Belgium", "Ruling Commission crypto", "Service des Décisions Anticipées crypto", "SDA crypto", "Belgian crypto audit", or any question about the income tax, capital gains, or reporting treatment of cryptocurrency, tokens, or digital assets for Belgian tax residents. Covers the three-tier classification system (normal management / speculative / professional), SDA ruling criteria, the 25% wealth threshold, and the upcoming 2026 capital gains regime. ALWAYS read this skill before touching any Belgium crypto work.
 version: 1.0
 jurisdiction: BE
 tax_year: 2025
-last_updated: 2026-05-23
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - belgium-income-tax
 category: crypto
 tier: 2

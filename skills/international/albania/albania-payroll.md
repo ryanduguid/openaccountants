@@ -1,11 +1,11 @@
 ---
 name: albania-payroll
-description: >
+description: Use this skill whenever asked about Albania payroll processing for employed persons. Trigger on phrases like "Albania payroll", "Albanian payroll", "lista e pagave", "payroll list Albania", "PAYE Albania", "withholding tax Albania", "tatimi mbi te ardhurat Albania", "social insurance Albania", "sigurime shoqerore", "sigurime shendetesore", "health insurance contribution Albania", "ISSH contribution", "net salary Albania", "neto pagese", "gross to net Albania", "employer contribution Albania", "16.7%", "11.2%", "DIVA Albania", "minimum wage Albania", "paga minimale", "tatime.gov.al payroll", or any question about computing employee pay, withholding tax (PIT), or social/health insurance contributions for Albania-based employees. This skill covers cumulative monthly PIT withholding under Law 29/2023, social and health insurance contributions (employee and employer shares), the social-insurance floor and ceiling, the minimum wage, the monthly payroll-list declaration, and the annual DIVA reconciliation. ALWAYS read this skill before processing any Albania payroll.
 version: 0.1
 jurisdiction: AL
 tax_year: 2025
-last_updated: 2026-06-04
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - payroll-workflow-base
 category: payroll
 tier: 2

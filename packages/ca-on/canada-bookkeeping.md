@@ -1,11 +1,12 @@
 ---
 name: canada-bookkeeping
-description: >
+description: Use this skill whenever asked about Canadian bookkeeping for sole proprietors, partnerships, or private corporations. Trigger on phrases like "chart of accounts", "GIFI codes", "bookkeeping", "profit and loss", "balance sheet", "ASPE", "ASNPO", "CRA categories", "bank reconciliation", "expense categories", "revenue recognition", "depreciation", "CCA", "capital cost allowance", "GST/HST", "input tax credits", "T2125", "T2", "general ledger", "HST return", or any question about day-to-day transaction recording, financial statement preparation, or account coding for a Canadian business.
 version: 1.0
 jurisdiction: CA
 tax_year: 2025
-last_updated: 2026-07-10
-verified_by: Khushboo Talreja
+last_updated: 2026-07-13
+reviewed_by: Khushboo Talreja, CPA
+review_status: current
 depends_on: - bookkeeping-workflow-base
 category: bookkeeping
 tier: 2

@@ -1,11 +1,11 @@
 ---
 name: latvia-social-contributions
-description: >
+description: Use this skill whenever asked about Latvia mandatory state social insurance contributions (VSAOI / valsts sociālās apdrošināšanas obligātās iemaksas) and the social-insurance side of Latvian payroll. Trigger on phrases like "how much social tax do I pay in Latvia", "VSAOI rate", "Latvian social contributions", "employer 23.59% employee 10.50%", "social insurance self-employed Latvia", "solidarity tax Latvia", "minimum mandatory contributions object", "darba devēja ziņojums", "Latvian payroll contributions", "VID social insurance", "VSAA contributions", or any question about Latvian VSAOI obligations for an employee, pensioner, self-employed person, or worker of a foreign employer. Also trigger when classifying bank statement transactions that relate to VID payments, social-tax debits, payroll withholding, or solidarity tax from Swedbank, SEB, Citadele, Luminor, or other Latvian banks. Also trigger when preparing or reconciling the annual income declaration (Gada ienākumu deklarācija / GID) where VSAOI and the EUR 105,300 cap interact with personal income tax. This skill covers VSAOI rates and splits, the EUR 105,300 annual cap, the 25% solidarity tax, the self-employed minimum-object regime and 10% pension contribution, royalty NSIC, non-taxable minimum and allowances, bank-statement classification, deadlines, penalties, and edge cases. ALWAYS read this skill before touching any Latvian social-contribution or payroll work.
 version: 0.1
 jurisdiction: LV
 tax_year: 2025
-last_updated: 2026-06-04
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - social-contributions-workflow-base
 category: international
 tier: 2

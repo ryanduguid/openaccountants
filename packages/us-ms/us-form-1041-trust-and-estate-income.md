@@ -3,9 +3,10 @@ name: us-form-1041-trust-and-estate-income
 description: Tier 2 US federal content skill for Form 1041 — US Income Tax Return for Estates and Trusts. Covers tax year 2025 including the compressed bracket structure (37% at $15,650; LTCG 20% at $15,200; NIIT 3.8% same threshold), Distributable Net Income under §643, distribution deduction §651 (simple) and §661 (complex), the §663(b) 65-day rule, §645 election to combine estate + revocable trust, §691 income in respect of decedent, §642(g) election to deduct on 706 vs 1041, fiscal-year for estates only, Schedule K-1 character flow-through to beneficiaries, and §1361 ESBTs.
 jurisdiction: US
 tax_year: 2025
-last_updated: 2026-05-27
-verified_by: James Wallach
-tier: 2
+last_updated: 2026-07-13
+reviewed_by: Christopher Aryee
+review_status: current
+tier: 1
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 

@@ -3,8 +3,8 @@ name: ct-payroll
 description: Tier 2 Connecticut content skill for employer payroll compliance covering tax year 2025. Includes the CT PIT brackets up to 6.99%, CT-W4 state W-4, CT-941 quarterly withholding, CT-W3 annual reconciliation, CT UI wage base $25,000 with rates 0.50-6.20%, CT Paid Leave 0.5% employee-paid contribution effective January 2022, the post-2024 expansion of Paid Sick Leave to all 50+ employer industries, no reciprocal agreement with NY, and the convenience-of-employer rule for CT employers with remote out-of-state workers.
 jurisdiction: US-CT
 tax_year: 2025
-last_updated: 2026-05-27
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---

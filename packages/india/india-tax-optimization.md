@@ -1,14 +1,15 @@
 ---
 name: india-tax-optimization
-description: >
+description: Use this skill when advising on LEGAL tax minimization strategies for Indian taxpayers — salaried individuals, self-employed professionals, and business owners. Trigger on phrases like "reduce my tax India", "tax planning", "80C", "80D", "old vs new regime", "HRA", "NPS", "Section 24", "presumptive taxation", "capital gains", "GST input credit", or any question about legally minimizing Indian income tax. Covers regime selection, deduction optimization, capital allowances, loss set-off, timing, GST planning, social security, and red lines. ALWAYS read this skill before giving Indian tax optimization advice.
 version: 1.0
 jurisdiction: IN
 tax_year: 2025
-last_updated: 2026-05-23
-verified_by: Mayur Deokar
+last_updated: 2026-07-13
+reviewed_by: Mayur Deokar
+review_status: current
 depends_on: - bookkeeping-workflow-base
 category: tax-optimization
-tier: 2
+tier: 1
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 

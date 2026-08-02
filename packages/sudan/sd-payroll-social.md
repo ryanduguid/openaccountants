@@ -1,11 +1,11 @@
 ---
 name: sd-payroll-social
-description: >
+description: Use this skill whenever asked about Sudanese payroll, social insurance contributions (NSIF), employer withholding obligations, PAYE remittance, and employee/employer contribution rates. Trigger on phrases like "Sudan payroll", "Sudan social insurance", "NSIF contribution", "Sudan employer taxes", "ضمان اجتماعي السودان", "Sudan PAYE", or any request to compute or review Sudanese payroll deductions. ALWAYS read this skill before touching any Sudan payroll or social insurance work.
 version: 0.1
 jurisdiction: SD
 tax_year: 2025
-last_updated: 2026-06-25
-verified_by: pending
+last_updated: 2026-07-22
+review_status: pending_review
 depends_on: - payroll-workflow-base
 category: payroll
 tier: 2

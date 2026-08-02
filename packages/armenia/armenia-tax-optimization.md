@@ -1,11 +1,11 @@
 ---
 name: armenia-tax-optimization
-description: >
+description: Use this skill whenever asked about reducing tax in Armenia, tax planning, or legal strategies to minimise tax for a sole proprietor or small company in Armenia. Trigger on phrases like "reduce tax Armenia", "turnover tax Armenia", "micro business Armenia 0%", "simplified tax", "sole proprietor vs LLC Armenia", "Armenia dividends 5%", "save tax Armenia", "tax planning Armenia". This skill covers the turnover-tax (simplified) regime, the micro-business 0% regime, the general system (CIT/PIT + VAT), dividend taxation, and the critical 2025 exclusion of professional/advisory services from the special regimes. ALWAYS read this skill before advising on any Armenian tax optimisation.
 version: 0.1
 jurisdiction: AM
 tax_year: 2025
-last_updated: 2026-06-04
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: []
 category: tax-optimization
 tier: 2

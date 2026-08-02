@@ -1,11 +1,11 @@
 ---
 name: uzbekistan-vat
-description: >
+description: Use this skill whenever asked to prepare, review, or create an Uzbekistan VAT return or any VAT filing for an Uzbek business. Trigger on phrases like "prepare VAT return", "Uzbekistan VAT", "STC filing", "soliq.uz", "E-faktura", "factura.uz", or any request involving Uzbekistan VAT. Covers the 12% standard rate, E-faktura mandatory invoicing, input credit rules, turnover tax interaction, import VAT, and monthly filing to the State Tax Committee. ALWAYS read this skill before touching any Uzbekistan VAT work.
 version: 2.0
 jurisdiction: UZ
 tax_year: 2025
-last_updated: 2026-04-13
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - vat-workflow-base
 category: international
 tier: 2

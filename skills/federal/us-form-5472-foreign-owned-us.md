@@ -3,9 +3,10 @@ name: us-form-5472-foreign-owned-us
 description: Tier 2 US federal content skill for Form 5472 — Information Return of a 25% Foreign-Owned US Corporation or US Trade-or-Business of a Foreign Corp under IRC §§6038A and 6038C. Covers tax year 2025 including the 2017 T.D. 9796 expansion treating foreign-owned single-member US LLCs as separate "reporting corporations" requiring annual Form 5472 plus a pro forma Form 1120, the $25,000 per-year automatic penalty, reportable related-party transactions with NO de minimis threshold, the §482 transfer pricing nexus, indirect ownership via §318 with §6038A modifications, and the 7-year recordkeeping obligation for foreign owners.
 jurisdiction: US
 tax_year: 2025
-last_updated: 2026-05-27
-verified_by: James Wallach
-tier: 2
+last_updated: 2026-07-13
+reviewed_by: Christopher Aryee
+review_status: current
+tier: 1
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 

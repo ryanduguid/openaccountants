@@ -1,11 +1,11 @@
 ---
 name: iceland-social-contributions
-description: >
+description: Use this skill whenever asked about Iceland (Ísland) social security contributions, payroll levies, and mandatory pension for employers, employees, and self-employed individuals. Trigger on phrases like "how much social security do I pay in Iceland", "tryggingagjald", "social security contribution Iceland", "payroll tax Iceland", "lífeyrissjóður", "mandatory pension fund", "occupational pension contribution", "4% employee pension", "11.5% employer pension", "séreignarsparnaður", "additional voluntary pension", "A1 certificate Iceland", "fishermen social security", "staðgreiðsla withholding", "self-employed pension reiknað endurgjald", or any question about Icelandic social/payroll contribution obligations. Also trigger when classifying bank statement transactions for tryggingagjald remittances, pension fund (lífeyrissjóður) debits, or Skatturinn withholding payments from Landsbankinn, Íslandsbanki, Arion banki, or other Icelandic banks. This skill covers the 6.35% general payroll levy (tryggingagjald), fishermen and A1 reduced rates, the 15.5% mandatory occupational pension split (4% employee / 11.5% employer), voluntary pension, self-employed contributions, employer pension tax-free caps, the monthly PAYE/staðgreiðsla remittance cycle, bank statement classification, and edge cases. ALWAYS read this skill before touching any Icelandic social contribution work.
 version: 0.1
 jurisdiction: IS
 tax_year: 2025
-last_updated: 2026-06-04
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - social-contributions-workflow-base
 category: international
 tier: 2

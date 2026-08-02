@@ -3,8 +3,8 @@ name: zm-income-tax
 description: Use this skill whenever asked about Zambia personal income tax (PAYE) or self-employed / small-business income tax. Trigger on phrases like "how much PAYE do I pay", "Zambia income tax", "net pay Zambia", "PAYE bands", "NAPSA contributions", "NHIMA", "turnover tax", "presumptive tax", "rental income tax Zambia", "provisional tax", "ITF P16", "ZRA return", "tax-free threshold Zambia", or any question about computing or filing income tax for an employee, sole trader, or small business in Zambia. Also trigger when preparing or reviewing a PAYE computation, a turnover-tax return, or advising on NAPSA/NHIMA payroll deductions. This skill covers PAYE bands, NAPSA social security, NHIMA health insurance, turnover tax, rental income tax, presumptive tax, provisional income tax, VAT registration, filing deadlines, employer obligations, and penalties. ALWAYS read this skill before touching any Zambia income tax work.
 jurisdiction: ZM
 tax_year: 2025
-last_updated: 2026-06-25
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---

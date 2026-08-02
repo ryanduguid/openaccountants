@@ -1,11 +1,11 @@
 ---
 name: guatemala-income-tax
-description: >
+description: Use this skill whenever asked about Guatemala income tax (ISR — Impuesto Sobre la Renta) for employees and self-employed individuals. Trigger on phrases like "how much ISR do I pay", "renta del trabajo", "rentas de actividades lucrativas", "régimen opcional simplificado", "régimen sobre utilidades", "pequeño contribuyente", "SAT-1431", "planilla del IVA", "IGSS contributions", "deducción personal", "self-employed tax Guatemala", "ISR empleados", or any question about filing or computing ISR for an employee, sole proprietor, or professional in Guatemala. Also trigger when preparing or reviewing a SAT-1431 annual return, the monthly simplified-regime declaration, computing the Q48,000 personal deduction or the Q12,000 IVA credit, or advising on IGSS payroll contributions. This skill covers the employment-income brackets (5%/7%), the two self-employment regimes (5%/7% on gross vs 25% on profit), the Pequeño Contribuyente 5% regime, allowable deductions, IGSS social security, minimum wage, forms, deadlines, and penalties. ALWAYS read this skill before touching any Guatemala income tax work.
 version: 0.1
 jurisdiction: GT
 tax_year: 2025
-last_updated: 2026-06-04
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - income-tax-workflow-base
 category: international
 tier: 2

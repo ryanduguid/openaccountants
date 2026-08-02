@@ -1,14 +1,15 @@
 ---
 name: brazil-einvoice
-description: >
+description: Use esta skill sempre que for questionado sobre nota fiscal eletrônica no Brasil, NF-e (Nota Fiscal Eletrônica), NFS-e (Nota Fiscal de Serviço Eletrônica), NFC-e (Nota Fiscal de Consumidor Eletrônica), CT-e (Conhecimento de Transporte Eletrônico), MDF-e, SEFAZ (Secretaria da Fazenda), DANFE, chave de acesso, layout XML 4.00, certificado digital A1/A3, ICMS, IPI, PIS, COFINS, CBS, IBS, ou qualquer questão sobre geração, transmissão, validação ou troubleshooting de documentos fiscais eletrônicos brasileiros. Acione também ao orientar sobre integração SEFAZ, modos de contingência (EPEC, SVC), eventos (cancelamento, carta de correção), sistema nacional NFS-e (SNNFSe) e a Reforma Tributária 2026 (CBS/IBS). SEMPRE leia esta skill antes de tocar em qualquer trabalho de nota fiscal eletrônica do Brasil. — Use this skill whenever asked about Brazil e-invoicing (NF-e, NFS-e, NFC-e, CT-e, MDF-e), SEFAZ integration, XML 4.00 layout, ICP-Brasil certificates, ICMS/IPI/PIS/COFINS, or the 2026 CBS/IBS Tax Reform impact on electronic fiscal documents. ALWAYS read this skill before touching any Brazil e-invoice work.
 version: 1.0
 jurisdiction: BR
 tax_year: 2025
-last_updated: 2026-05-23
-verified_by: Ariane Marrocos
+last_updated: 2026-07-13
+reviewed_by: Ariane Marrocos
+review_status: current
 depends_on: - einvoice-workflow-base
 category: invoicing
-tier: 2
+tier: 1
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 

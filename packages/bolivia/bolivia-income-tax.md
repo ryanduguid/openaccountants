@@ -1,11 +1,11 @@
 ---
 name: bolivia-income-tax
-description: >
+description: Use this skill whenever asked about Bolivia personal income tax for self-employed individuals, independent professionals, or employees. Trigger on phrases like "how much tax do I pay in Bolivia", "RC-IVA", "Regimen Complementario al IVA", "Formulario 610", "Formulario 110", "impuesto a la renta Bolivia", "retencion RC-IVA", "aportes a la Gestora", "independent professional tax Bolivia", "aguinaldo", "salario minimo nacional", "IUE-BE", "beneficiarios del exterior", "impuesto a las grandes fortunas", "IGF", or any question about computing or filing personal income tax for a Bolivian individual, self-employed person, or independent professional. Also trigger when classifying a Bolivian bank statement, computing the 13% RC-IVA, the VAT-credit offset on Form 110, social security contributions (Gestora/Caja de Salud), or non-resident withholding. This skill covers RC-IVA (13% flat), the VAT-credit invoice mechanism, social security contributions, the IUE-BE non-resident withholding, the IGF wealth tax, forms 610/110/530, deadlines, and penalties. ALWAYS read this skill before touching any Bolivian income tax work.
 version: 0.1
 jurisdiction: BO
 tax_year: 2025
-last_updated: 2026-06-04
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - income-tax-workflow-base
 category: international
 tier: 2

@@ -1,13 +1,14 @@
 ---
 name: ca-crypto-tax
-description: >
+description: Use this skill whenever asked about Canadian cryptocurrency taxation. Trigger on phrases like "crypto tax Canada", "CRA crypto", "Bitcoin capital gains Canada", "crypto business income CRA", "adjusted cost base crypto", "ACB crypto", "mining tax Canada", "staking tax Canada", "GST HST crypto", "crypto inclusion rate Canada", or any question about how cryptocurrency is taxed by the CRA. This skill covers capital gains vs business income treatment, the 50% inclusion rate, ACB tracking, mining/staking as business income, GST/HST on crypto payments, and record-keeping requirements. ALWAYS read this skill before touching any Canadian crypto tax work.
 version: "1.0"
 jurisdiction: CA
 tax_year: 2025
-last_updated: 2026-05-23
-verified_by: Edgar Lautsyus
+last_updated: 2026-07-13
+reviewed_by: Edgar Lautsyus
+review_status: current
 category: international
-tier: 2
+tier: 1
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 

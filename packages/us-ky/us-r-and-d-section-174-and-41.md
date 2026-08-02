@@ -3,8 +3,9 @@ name: us-r-and-d-section-174-and-41
 description: Tier 2 US federal content skill for the §174 mandatory R&E capitalization regime (TCJA, eff. 1/1/2022, 5-year domestic / 15-year foreign amortization, half-year convention) and the §41 R&D Credit (Regular Credit 20% / Alternative Simplified Credit 14%, four-part test, contract research at 65%, IUS software hurdle), including the §41(h) payroll tax credit election for Qualified Small Businesses (< $5M gross, no prior receipts beyond Immediate expensing unless §174A(c) amortization election is made) — increased to $500k by IRA 2022 — applied against Form 941 via Form 8974. Tax year 2025 (§174 capitalization remains law absent year-end extender). Federal only.
 jurisdiction: US
 tax_year: 2025
-last_updated: 2026-07-10
-verified_by: James Wallach
+last_updated: 2026-07-13
+reviewed_by: James Wallach
+review_status: current
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---

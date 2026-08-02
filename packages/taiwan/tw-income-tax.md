@@ -1,11 +1,11 @@
 ---
 name: tw-income-tax
-description: >
+description: Use this skill whenever asked about Taiwan individual income tax. Trigger on phrases like "Taiwan income tax", "綜合所得稅", "個人所得稅", "Taiwan tax return", "eFiling Taiwan", "National Taxation Bureau", "執行業務所得", "營利所得", "standard deduction Taiwan", "progressive rate Taiwan", "Taiwan freelance tax", or any question about computing, filing, or planning individual income tax for a Taiwan tax resident. This skill covers the progressive rate table, deductions, exemptions, filing via eFiling, and common categories of income for self-employed professionals. ALWAYS read this skill before advising on Taiwan individual income tax.
 version: 1.0
 jurisdiction: TW
 tax_year: 2025
-last_updated: 2026-05-23
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - income-tax-workflow-base
 category: international
 tier: 2

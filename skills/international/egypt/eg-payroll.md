@@ -1,11 +1,11 @@
 ---
 name: eg-payroll
-description: >
+description: Use this skill whenever asked about running payroll for an employer in Egypt, including a sole proprietor who hires staff. Trigger on phrases like "Egypt payroll", "salary tax Egypt", "ضريبة كسب العمل", "payroll tax Egypt", "hiring employees Egypt", "withholding tax on salaries Egypt", "Form 4 Egypt", "نموذج 4", "gross to net salary Egypt", "employer cost Egypt", "end of service Egypt", "employee vs freelancer Egypt", or any request to compute, classify, or advise on Egyptian salary tax (employment income tax) withholding, social-insurance withholding, payroll remittance, or payroll reporting. ALWAYS read this skill before touching any Egypt payroll work.
 version: 1.0
 jurisdiction: EG
 tax_year: 2026
-last_updated: 2026-05-24
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - income-tax-workflow-base
 category: international
 tier: 2

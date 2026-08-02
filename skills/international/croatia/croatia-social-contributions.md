@@ -1,11 +1,11 @@
 ---
 name: croatia-social-contributions
-description: >
+description: Use this skill whenever asked about Croatian social security contributions (doprinosi) and the related personal income tax (porez na dohodak) on employment income for the 2025 tax year. Trigger on phrases like "how much pension contribution do I pay", "Croatia payroll contributions", "Pillar I and Pillar II pension", "mirovinsko osiguranje", "zdravstveno osiguranje", "16.5% health contribution", "20% pension contribution", "gross to net Croatia", "Croatian salary calculation", "doprinosi za mirovinsko", "HZZO contribution", "Croatia income tax rate", "porez na dohodak", "JOPPD", "Croatian minimum wage 2025", or any question about a Croatian employee's gross-to-net pay, employer on-costs, or contribution caps. Also trigger when classifying bank statement transactions that relate to HZMO, HZZO, Porezna uprava, doprinosi, or plaća payments from Croatian banks (Zagrebačka banka, PBZ, Erste, OTP, Raiffeisen). Also trigger when preparing or reviewing a JOPPD report where contribution bases, low-salary relief, or the pension base cap are relevant. This skill covers employee pension contributions (15% Pillar I + 5% Pillar II), the 16.5% employer health contribution, low-salary pension relief, monthly/annual base caps, the floor base, the two-band income tax, JOPPD filing, bank statement classification patterns, and edge cases. ALWAYS read this skill before touching any Croatian contributions or payroll work.
 version: 0.1
 jurisdiction: HR
 tax_year: 2025
-last_updated: 2026-06-04
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - social-contributions-workflow-base
 category: international
 tier: 2

@@ -1,11 +1,11 @@
 ---
 name: dk-income-tax
-description: >
+description: Use this skill whenever asked about Danish income tax for self-employed individuals (selvstaendig erhvervsdrivende). Trigger on phrases like "Danish tax", "AM-bidrag", "bundskat", "topskat", "kommuneskat", "virksomhedsordningen", "kapitalafkastordningen", "personfradrag", "Arsopgorelse", "Oplysningsskema", "self-employed tax Denmark", or any question about filing or computing income tax for a Danish self-employed client. Covers AM-bidrag (8%), bundskat, topskat, kommuneskat, kirkeskat, virksomhedsordningen, kapitalafkastordningen, deductible expenses, filing deadlines, and penalties. ALWAYS read this skill before touching any Danish income tax work.
 version: 2.0
 jurisdiction: DK
 tax_year: 2025
-last_updated: 2026-04-13
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - income-tax-workflow-base
 category: international
 tier: 2

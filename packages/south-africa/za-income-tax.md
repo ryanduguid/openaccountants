@@ -4,8 +4,9 @@ description: Use this skill whenever asked about South African income tax for se
 version: 2.0
 jurisdiction: ZA
 tax_year: 2025
-last_updated: 2026-05-23
-verified_by: Werner Britz
+last_updated: 2026-07-13
+reviewed_by: Werner Britz
+review_status: current
 tier: 1
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---

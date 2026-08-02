@@ -1,11 +1,11 @@
 ---
 name: es-beckham
-description: >
+description: Spain Beckham Law (Régimen Especial para Trabajadores Desplazados): 24% flat rate for inbound workers, 6-year duration, conditions, foreign income treatment. Trigger on: "Beckham law Spain", "Spain special expat tax regime", "24% flat rate Spain", "RETD Spain", "impatriados Spain", "Spain non-resident tax rate", "Spain digital nomad visa tax", "Ley Beckham", "Spain inbound worker tax regime". ALWAYS load before advising a new Spain-based worker on their tax rate.
 version: 1.0
 jurisdiction: ES
 tax_year: 2025
-last_updated: 2026-06-05
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 category: international
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)

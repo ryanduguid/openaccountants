@@ -1,11 +1,11 @@
 ---
 name: eg-corporate-tax
-description: >
+description: Use this skill whenever asked about Egyptian corporate income tax for resident companies, branches of foreign companies, and permanent establishments — to compute, review, or explain CIT liability, deductions, losses, thin capitalisation, and filing requirements. Trigger on phrases like "Egypt corporate tax", "Egypt CIT", "Egyptian company tax", "ضريبة دخل الشركات", "شركة مقيمة مصر", "permanent establishment Egypt", or any request to prepare or check an Egyptian corporate tax return. ALWAYS read this skill before touching any Egypt corporate tax work.
 version: 0.1
 jurisdiction: EG
 tax_year: 2025
 last_updated: 2026-07-22
-verified_by: pending
+review_status: pending_review
 depends_on: - income-tax-workflow-base
 category: international
 tier: 2

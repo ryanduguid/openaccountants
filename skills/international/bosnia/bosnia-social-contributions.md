@@ -1,11 +1,11 @@
 ---
 name: bosnia-social-contributions
-description: >
+description: Use this skill whenever asked about Bosnia and Herzegovina (BiH) payroll social security contributions, salary taxes, or personal income tax withholding. Trigger on phrases like "how much social contributions in Bosnia", "BiH payroll", "Federation of BiH contributions", "Republika Srpska contributions", "doprinosi", "MIO/PIO", "PIO/MIO", "Brcko District payroll", "BiH net to gross", "gross to net salary Bosnia", "FBiH employer contributions 5%", "RS 32.8% contributions", "BiH personal income tax", "porez na dohodak", "BAM salary tax", "do I pay social security in Bosnia", or any question about computing Bosnian payroll deductions, employer on-costs, or PIT withholding. CRITICAL: Bosnia and Herzegovina has NO single nationwide payroll/social-security system — contributions and PIT are set and collected at ENTITY level (Federation of BiH, Republika Srpska, Brcko District) with materially different rates and bases. ALWAYS branch on entity before computing. Also trigger when classifying bank-statement transactions that relate to payroll-tax payments to Porezna uprava FBiH, Poreska uprava RS, entity pension/health funds, or UINO (VAT). ALWAYS read this skill before touching any BiH social-contributions or payroll work.
 version: 0.1
 jurisdiction: BA
 tax_year: 2025
-last_updated: 2026-06-04
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - social-contributions-workflow-base
 category: international
 tier: 2

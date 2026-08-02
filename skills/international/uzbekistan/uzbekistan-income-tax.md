@@ -1,11 +1,11 @@
 ---
 name: uzbekistan-income-tax
-description: >
+description: Use this skill whenever asked about Uzbekistan personal income tax (PIT) for individuals, self-employed persons, and individual entrepreneurs. Trigger on phrases like "how much income tax in Uzbekistan", "Uzbekistan PIT", "soliq", "12% flat tax", "INPS pension", "social tax", "individual entrepreneur turnover tax", "non-resident tax Uzbekistan", "annual income declaration", "dividends tax Uzbekistan", "payroll Uzbekistan", "minimum wage UZS", "BHM/BRV base amount", or any question about computing or filing personal income tax for a resident or non-resident individual, an employee, a sole trader, or an individual entrepreneur in Uzbekistan. Also trigger when classifying UZS bank-statement lines for income tax, modelling take-home pay, or computing employer social tax. This skill covers the flat 12% PIT, the 5% dividend/interest rate, non-resident rates, the INPS 0.1% accumulative pension carve-out, employer social tax (12%/25%/7%/4.7%/1%), the calendar-year filing cycle, and the 2026 self-employed turnover-tax changes. ALWAYS read this skill before touching any Uzbekistan income tax work.
 version: 0.1
 jurisdiction: UZ
 tax_year: 2025
-last_updated: 2026-06-04
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - income-tax-workflow-base
 category: international
 tier: 2

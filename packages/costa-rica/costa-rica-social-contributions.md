@@ -1,11 +1,11 @@
 ---
 name: costa-rica-social-contributions
-description: >
+description: Use this skill whenever asked about Costa Rica social-security / payroll contributions ("cargas sociales") to the CCSS and the related employment-income withholding. Trigger on phrases like "how much CCSS do I pay", "cargas sociales Costa Rica", "CCSS employer cost", "patrono CCSS", "cuota obrero-patronal", "IVM contribution", "SEM CCSS", "planilla CCSS", "Banco Popular deduction", "FODESAF", "INA exemption", "deducciones de planilla", "retención del impuesto al trabajo dependiente", "Costa Rica payroll tax", "social charges 2025/2026", "trabajador independiente CCSS", or any question about Costa Rican employer/employee social contributions, the monthly salary-tax withholding, the minimum contribution base (BMC), or net-pay computation. Also trigger when classifying bank-statement lines that relate to CCSS planilla debits, SICERE payments, INS riesgos-del-trabajo premiums, Banco Popular debits, or D-103 withholding remittances on BAC, BN, BCR, Davivienda, or other Costa Rican bank statements. This skill covers the SEM and IVM rates (including the confirmed 1 Jan 2026 IVM increase), FODESAF/IMAS/INA/FCL/ROP/Banco Popular components, the INS work-risk premium, employer and employee totals, the BMC floor, the monthly progressive salary-tax brackets, family tax credits, aguinaldo treatment, minimum wage, forms D-103/D-101/D-151, the CCSS planilla cycle, bank-statement classification patterns, and edge cases. ALWAYS read this skill before touching any Costa Rican payroll / social-contribution work.
 version: 0.1
 jurisdiction: CR
 tax_year: 2025
-last_updated: 2026-06-04
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - social-contributions-workflow-base
 category: international
 tier: 2

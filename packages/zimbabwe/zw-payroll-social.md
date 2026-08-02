@@ -3,8 +3,8 @@ name: zw-payroll-social
 description: Use this skill whenever asked about Zimbabwe payroll processing for employed persons. Trigger on phrases like "Zimbabwe payroll", "ZIMRA PAYE", "PAYE Zimbabwe", "P2 return", "AIDS Levy", "NSSA contribution", "POBS", "APWCS", "WCIF", "ZIMDEF levy", "manpower levy", "payslip Zimbabwe", "net salary Zimbabwe", "USD payroll Zimbabwe", "ZiG payroll", "ZWG PAYE", "tax withholding Zimbabwe", "employer NSSA", "Final Deduction System", "FDS", "TaRMS", "minimum wage Zimbabwe", "gross to net Zimbabwe", or any question about computing employee pay, PAYE withholding, AIDS Levy, or social security contributions for Zimbabwe-based employees. This skill covers Zimbabwe's dual-currency (USD and ZiG/ZWG) PAYE withholding, the 3% AIDS Levy, NSSA POBS and APWCS contributions, the ZIMDEF manpower levy, minimum wage, payslip requirements, and ZIMRA filing obligations. ALWAYS read this skill before processing any Zimbabwe payroll.
 jurisdiction: ZW
 tax_year: 2025
-last_updated: 2026-06-25
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---

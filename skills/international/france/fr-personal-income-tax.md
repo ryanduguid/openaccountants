@@ -1,11 +1,11 @@
 ---
 name: fr-personal-income-tax
-description: >
+description: Comprehensive French personal income tax (impôt sur le revenu / IR) guide for all individuals. Trigger on phrases like "impôt sur le revenu", "IR France", "barème progressif", "quotient familial", "décote", "prélèvement à la source", "PAS", "CEHR", "contribution exceptionnelle hauts revenus", "CDHR", "déclaration 2042", "revenus exceptionnels", "quotient pour revenus exceptionnels", "TMI", "taux marginal d'imposition", "tranches d'imposition France", "parts fiscales", "parent isolé case T", "pension alimentaire déduction", "réductions d'impôt", "crédits d'impôt", "emploi à domicile", "dons associations", "plafonnement niches fiscales", "non-résident fiscal France", "exit tax", "impatriation", "PUMA cotisation subsidiaire", "calcul IR France", "simulation impôt sur le revenu", "avis d'imposition". Covers the full IR computation sequence: progressive brackets, quotient familial with plafonnement, décote, CEHR, CDHR, prélèvement à la source, deductions/reductions/credits, non-residents, and special cases. For capital gains see fr-capital-gains, for rental income see fr-rental-income, for crypto see fr-crypto-tax.
 version: 1.0
 jurisdiction: FR
 tax_year: 2025
-last_updated: 2026-05-20
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 category: international
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)

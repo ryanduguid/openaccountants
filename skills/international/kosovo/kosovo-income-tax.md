@@ -1,11 +1,11 @@
 ---
 name: kosovo-income-tax
-description: >
+description: Use this skill whenever asked about Kosovo personal income tax for self-employed individuals and individuals. Trigger on phrases like "how much tax do I pay in Kosovo", "tatimi mbi te ardhurat personale", "ATK declaration", "TAK return", "annual personal income tax return", "PD form", "quarterly advance payment", "gross-income method", "real-income method", "self-employed tax Kosovo", "Trusti pension contribution", "wage withholding Kosovo", "EDI declaration", or any question about filing or computing personal income tax for a self-employed or employed individual in Kosovo. Also trigger when preparing or reviewing a Kosovo annual PD return, quarterly advance instalment, payroll withholding, computing deductible business expenses, or advising on the gross-income vs real-income method. This skill covers the graduated PIT rates (0%/8%/10%), the self-employed gross-income (3%/9%) and real-income (10%) methods, mandatory pension contributions (Trusti/KPST), payroll withholding, penalties, and interaction with VAT. ALWAYS read this skill before touching any Kosovo income tax work.
 version: 0.1
 jurisdiction: XK
 tax_year: 2025
-last_updated: 2026-06-04
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - income-tax-workflow-base
 category: international
 tier: 2

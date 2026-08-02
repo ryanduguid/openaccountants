@@ -4,8 +4,9 @@ description: Use this skill whenever asked to prepare, review, or classify trans
 version: 2.0
 jurisdiction: MY
 tax_year: 2025
-last_updated: 2026-04-13
-verified_by: MUHAMMAD HANIS MAT HUSSIN
+last_updated: 2026-07-13
+reviewed_by: MUHAMMAD HANIS MAT HUSSIN
+review_status: current
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---

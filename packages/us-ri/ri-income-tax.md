@@ -4,8 +4,8 @@ description: Triggers when the taxpayer is a Rhode Island resident sole propriet
 version: "0.1"
 jurisdiction: US-RI
 tax_year: 2025
-last_updated: 2026-05-22
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---

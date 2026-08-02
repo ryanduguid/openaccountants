@@ -3,8 +3,8 @@ name: ab-corporate-tax
 description: Use this skill for Alberta provincial corporate income tax. Triggers "Alberta CIT", "AT1 Alberta", "Alberta small business deduction", "Job Creation Tax Cut Alberta", "Alberta corporate tax 8%". ALWAYS read alongside federal T2.
 jurisdiction: CA
 tax_year: 2025
-last_updated: 2026-05-27
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---

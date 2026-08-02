@@ -1,11 +1,11 @@
 ---
 name: global-vehicle-expenses
-description: >
+description: Vehicle expense deduction rules across the top 10 jurisdictions for freelancers and self-employed individuals. Covers per-kilometre/mileage rates, actual cost methods, logbook requirements, business-use caps, and common mistakes.
 version: 0.1
 jurisdiction: GLOBAL
 tax_year: 2025
-last_updated: 2026-04-13
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: []
 category: patterns
 tier: 2

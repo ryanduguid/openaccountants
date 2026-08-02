@@ -3,8 +3,8 @@ name: nl-tax-credits
 description: Use this skill for Newfoundland and Labrador provincial tax credits + NL Insurance Premium Tax. Includes NL Low-Income Tax Reduction, NL Income Supplement, NL Seniors' Benefit, Volunteer Firefighters Tax Credit, NL Direct Equity Tax Credit (35%), NL Film & Video Industry Tax Credit, plus the NL Insurance Premium Tax (15% on commercial insurance — unique to NL). Triggers "Newfoundland tax credits", "NL Income Supplement", "NL Direct Equity Tax Credit", "Newfoundland Insurance Premium Tax", "NL IPT 15%", "Form NL428".
 jurisdiction: CA
 tax_year: 2025
-last_updated: 2026-05-27
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---

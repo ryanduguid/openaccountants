@@ -1,11 +1,12 @@
 ---
 name: us-gaap-asc842-leases
-description: >
+description: US GAAP lease accounting under ASC 842 (Leases). Covers the lessee dual model — every lease (other than short-term) puts a right-of-use asset and a lease liability on the balance sheet, then splits into finance leases (front-loaded interest + straight-line ROU amortization) versus operating leases (a single straight-line total lease cost). Covers lease identification and the finance-versus-operating classification criteria, initial and subsequent measurement, the discount rate, short-term and component elections, variable lease payments, remeasurement and reassessment triggers, modifications, the lessor model (sales-type, direct financing, operating), and sale-leaseback. Produces classification conclusions, journal entries, and a reviewer brief. Issued as the US GAAP edition of the leases topic; see ifrs16-leases for the IFRS edition. MUST load alongside financial-reporting-workflow-base.
 version: 0.1
 jurisdiction: US
 tax_year: 2025
-last_updated: 2026-05-29
-verified_by: James Wallach
+last_updated: 2026-07-13
+reviewed_by: James Wallach
+review_status: current
 depends_on: - financial-reporting-workflow-base
 category: financial-reporting
 tier: 2

@@ -1,11 +1,11 @@
 ---
 name: fi-income-tax
-description: >
+description: Use this skill whenever asked about Finland income tax for self-employed individuals or freelancers. Trigger on phrases like "Finland income tax", "Finnish tax", "Verohallinto", "OmaVero", "vero.fi", "elinkeinotulo", "pääomatulo", "ansiotulo", "Finnish tax return", "ennakkoperintä", "municipal tax Finland", "capital income Finland", "state tax Finland", or any question about Finnish income tax filing, rates, or deductions for self-employed persons. Covers progressive state tax, municipal tax, capital income tax, church tax, deductions, and filing via OmaVero. ALWAYS read this skill before touching any Finland income tax work.
 version: 1.0
 jurisdiction: FI
 tax_year: 2025
-last_updated: 2026-05-23
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - income-tax-workflow-base
 category: international
 tier: 2

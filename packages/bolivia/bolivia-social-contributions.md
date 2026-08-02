@@ -1,11 +1,11 @@
 ---
 name: bolivia-social-contributions
-description: >
+description: Use this skill whenever asked about Bolivia social-security (seguridad social) contributions and dependent-employee payroll taxation for the 2025 tax year. Trigger on phrases like "how much do I pay to the Gestora", "aportes AFP Bolivia", "12.71% worker contribution", "aporte solidario", "Aporte Nacional Solidario", "ANS calculation", "Caja de Salud employer contribution", "Pro-Vivienda housing fund", "RC-IVA withholding", "Form 110 invoices", "Form 608", "total ganado contributions", "Bolivia payroll cost", "Gestora Pública contribution", or any question about Bolivian employer/employee social-security obligations. Also trigger when classifying bank statement transactions that relate to Gestora Pública, Caja de Salud (CNS), APS, or SIN/SIAT payments from Bolivian banks (Banco Unión, BNB, Banco Mercantil Santa Cruz, Banco BISA, Banco de Crédito BCP). Also trigger when preparing or reconciling RC-IVA (personal income tax) where social-contribution deductibility is relevant. This skill covers the 12.71% employee rate, the ANS high-earner surcharge, the 17.21% (19.51% mining) employer rate, the RC-IVA flat 13% mechanics, minimum wage (SMN), contribution base (total ganado), payment/filing deadlines, bank statement classification patterns, and edge cases. ALWAYS read this skill before touching any Bolivian social-contribution or RC-IVA work.
 version: 0.1
 jurisdiction: BO
 tax_year: 2025
-last_updated: 2026-06-04
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - social-contributions-workflow-base
 category: international
 tier: 2

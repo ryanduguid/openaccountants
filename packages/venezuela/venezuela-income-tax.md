@@ -1,14 +1,15 @@
 ---
 name: venezuela-income-tax
-description: >
+description: Use this skill whenever asked about Venezuela personal income tax (ISLR — Impuesto Sobre la Renta) for resident or non-resident individuals, self-employed professionals, and contractors. Trigger on phrases like "how much ISLR do I pay", "Venezuela income tax", "declaración definitiva de rentas", "Unidad Tributaria", "UT", "tarifa 1", "sustraendo", "desgravamen único", "rebajas personales", "RIF", "SENIAT", "estimated return", "declaración estimada", "retención ISLR", "self-employed tax Venezuela", "bonos vs salario", or any question about filing or computing ISLR for an individual in Venezuela. Also trigger when preparing or reviewing a Venezuelan annual income tax return, computing deductions in Tax Units, or advising on withholding and social-security parafiscal contributions. This skill covers the UT mechanism, the Tarifa Nº 1 graduated schedule, sustraendos, standard vs itemized deductions, personal credits, the 31 March deadline, social-security/parafiscal regimes, and the hyperinflationary dual-track measurement reality. ALWAYS read this skill before touching any Venezuela income tax work.
 version: 0.1
 jurisdiction: VE
 tax_year: 2025
-last_updated: 2026-06-04
-verified_by: Jose Padilla
+last_updated: 2026-07-13
+reviewed_by: Jose Padilla
+review_status: current
 depends_on: - income-tax-workflow-base
 category: international
-tier: 2
+tier: 1
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 

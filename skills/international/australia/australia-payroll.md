@@ -13,10 +13,9 @@ description: >
   ALWAYS read this skill before processing any Australian payroll work.
 version: 2.0
 jurisdiction: AU
-tax_year: 2026
-tax_year_notes: "2026-27 (payday super regime; 15% second-bracket PAYG rate from 1 July 2026)"
-tier: 2
-last_updated: 2026-08-01
+tax_year: 2025
+last_updated: 2026-08-02
+review_status: pending_review
 category: payroll
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -99,14 +98,7 @@ Australia does not have a separate employee social security contribution. The Me
 
 There is no employee-paid social insurance premium equivalent to NIC (UK) or social security tax (US).
 
----
-
-## Section 4 -- Social Security: Employer Contributions
-
-### Superannuation Guarantee (SG) -- Payday Super from 1 July 2026
-
-| Parameter | 2026--27 Value |
-|---|---|
+|---|
 | SG rate | 12% of qualifying earnings |
 | Maximum contribution base | $270,830 per year (ANNUAL, year-to-date basis; quarterly base abolished for earnings paid from 1 Jul 2026) |
 | Minimum earnings threshold | Abolished (no $450/month threshold from 1 Jul 2022) |
@@ -366,6 +358,8 @@ To speak with one of the licensed accountants who verifies skills for your juris
 → [Book a call](https://calendly.com/openaccountants-info/30min)
 
 We'll route you to the named verifier covering your country or state. You can also see the full list of verified accountants at [openaccountants.com/network](https://openaccountants.com/network).
+
+> Contributed by Ryan Duguid.
 
 <!-- openaccountants-cta-block -->
 

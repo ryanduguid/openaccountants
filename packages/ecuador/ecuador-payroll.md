@@ -1,11 +1,11 @@
 ---
 name: ecuador-payroll
-description: >
+description: Use this skill whenever asked about Ecuador payroll processing for employed persons (relación de dependencia). Trigger on phrases like "Ecuador payroll", "rol de pagos", "aporte IESS", "aporte personal 9.45%", "aporte patronal 11.15%", "retención impuesto a la renta en relación de dependencia", "proyección anual", "décimo tercero", "décimo cuarto", "fondos de reserva", "sueldo neto Ecuador", "net salary Ecuador", "salario básico unificado", "SBU", "gross to net Ecuador", "employer cost Ecuador", or any question about computing employee pay, income-tax withholding, IESS contributions, or mandatory bonuses for Ecuador-based employees. This skill covers IESS personal and patronal contributions, the annual income-tax projection-and-withholding method, the personal-expense rebate, the 13th and 14th salaries, fondos de reserva, the SBU, payslip and filing obligations. ALWAYS read this skill before processing any Ecuador payroll.
 version: 0.1
 jurisdiction: EC
 tax_year: 2025
-last_updated: 2026-06-04
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - payroll-workflow-base
 category: payroll
 tier: 2

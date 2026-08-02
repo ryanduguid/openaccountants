@@ -1,11 +1,11 @@
 ---
 name: slovenia-income-tax
-description: >
+description: Use this skill whenever asked about Slovenia (Slovenija) personal income tax for self-employed individuals (s.p. / samostojni podjetnik) and resident individuals. Trigger on phrases like "how much dohodnina do I pay", "income tax Slovenia", "informativni izračun dohodnine", "IID", "DohDej", "davek od dohodka iz dejavnosti", "normirani odhodki", "lump-sum expenses", "splošna olajšava", "general allowance", "ZPIZ contributions", "ZZZS health", "long-term care contribution", "OZP", "OPSVZ", "minimalna plača", "self-employed tax Slovenia", or any question about filing or computing Slovenian personal income tax for a resident, sole proprietor, or employee. Also trigger when preparing or reviewing an IID or DohDej return, computing the progressive dohodnina scale, social security contributions, or advising on advance-tax (akontacija) installments. This skill covers the 2025 five-band progressive scale, capital-income cedular rates, ZPIZ/ZZZS/unemployment/parental/injury and new long-term-care (ZDOsk-1) contributions, the OZP flat health contribution, the normirani odhodki regime, allowances, forms, deadlines, and penalties. ALWAYS read this skill before touching any Slovenian income tax work.
 version: 0.1
 jurisdiction: SI
 tax_year: 2025
-last_updated: 2026-06-04
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - income-tax-workflow-base
 category: international
 tier: 2

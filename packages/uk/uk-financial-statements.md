@@ -1,14 +1,15 @@
 ---
 name: uk-financial-statements
-description: >
+description: Use this skill when preparing, reviewing, or advising on annual financial statements for a UK company. Trigger on phrases like "Companies House accounts", "FRS 102", "FRS 105", "micro-entity accounts", "small company accounts", "abbreviated accounts", "directors' report UK", "filing accounts UK", "audit exemption UK", "year-end adjustments UK", "iXBRL", "abridged accounts", or any question about preparing statutory accounts under the Companies Act 2006. Covers FRS 102/105 frameworks, size thresholds, required statements, P&L and balance sheet formats, notes, filing deadlines, and audit requirements.
 version: 1.0
 jurisdiction: GB
 tax_year: 2025
-last_updated: 2026-05-23
-verified_by: James Power
+last_updated: 2026-07-13
+reviewed_by: James Power
+review_status: current
 depends_on: - financial-statements-workflow-base
 category: financial-statements
-tier: 2
+tier: 1
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 

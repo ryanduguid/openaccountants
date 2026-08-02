@@ -1,11 +1,11 @@
 ---
 name: ie-income-tax-form11
-description: >
+description: Use this skill whenever asked about Irish income tax for self-employed individuals filing Form 11. Trigger on phrases like "Form 11", "self-assessment Ireland", "Case I profits", "Case II profits", "USC", "PRSI Class S", "preliminary tax Ireland", "earned income credit", "trading profits", "self-employed tax Ireland", "ROS filing", or any question about computing or filing income tax for a self-employed person in Ireland. This skill covers income tax rates (20%/40%), USC bands, PRSI Class S, personal tax credits, allowable deductions, capital allowances, preliminary tax, and Form 11 structure. ALWAYS read this skill before touching any Irish income tax work.
 version: 2.0
 jurisdiction: IE
 tax_year: 2025
-last_updated: 2026-04-13
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - income-tax-workflow-base
 category: international
 tier: 2

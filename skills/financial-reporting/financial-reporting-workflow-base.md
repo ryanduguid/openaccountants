@@ -1,11 +1,11 @@
 ---
 name: financial-reporting-workflow-base
-description: >
+description: Foundation workflow base for financial-reporting (US GAAP and IFRS) content skills. Contains the universal runbook, the two-layer output contract (reference layer + executable computation layer), the journal-entry format, the dual-standard convention, the AUDIT FLASH POINT marker convention, conservative-default principle, the structured question form, and the universal self-checks. This skill provides workflow architecture only — it contains no standard-specific recognition or measurement content. It MUST be loaded alongside a topic content skill (e.g. us-gaap-asc606-revenue, ifrs15-revenue) that provides the actual recognition, measurement, presentation, and disclosure rules. This base is the foundation every financial-reporting content skill loads on top of.
 version: 0.1
 jurisdiction: GLOBAL
 tax_year: 2025
-last_updated: 2026-05-29
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: []
 category: financial-reporting
 tier: 2

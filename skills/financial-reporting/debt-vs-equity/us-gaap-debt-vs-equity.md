@@ -1,11 +1,12 @@
 ---
 name: us-gaap-debt-vs-equity
-description: >
+description: US GAAP classification of issued financial instruments as liabilities, equity, mezzanine (temporary) equity, or compound instruments under ASC 480 (Distinguishing Liabilities from Equity), ASC 470-20 (convertible debt, as amended by ASU 2020-06), ASC 815-40 (contracts in an entity's own equity), and ASC 505 (equity). Covers the three classes of freestanding instruments classified as liabilities, the post-ASU 2020-06 single-liability model for most convertible debt, the indexed-to-own-stock and equity-classification conditions, and SEC temporary/mezzanine equity. Produces classification conclusions, journal entries, and a reviewer brief. Issued as the US GAAP edition of the debt-vs-equity topic; see ias32-debt-vs-equity for the IFRS edition. MUST load alongside financial-reporting-workflow-base.
 version: 0.1
 jurisdiction: US
 tax_year: 2025
-last_updated: 2026-05-29
-verified_by: James Wallach
+last_updated: 2026-07-13
+reviewed_by: James Wallach
+review_status: current
 depends_on: - financial-reporting-workflow-base
 category: financial-reporting
 tier: 2

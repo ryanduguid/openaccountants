@@ -1,11 +1,11 @@
 ---
 name: honduras-payroll
-description: >
+description: Use this skill whenever asked about Honduras payroll processing for employed persons. Trigger on phrases like "Honduras payroll", "ISR Honduras", "Impuesto Sobre la Renta withholding", "IHSS deduction", "RAP contribution", "INFOP", "planilla Honduras", "aguinaldo", "decimo tercer mes", "decimo cuarto mes", "catorceavo", "tabla progresiva ISR", "net salary Honduras", "PAYE Honduras", "salario minimo Honduras", "techo de cotizacion IHSS", "employer payroll Honduras", "gross to net Honduras", "salario neto Honduras", or any question about computing employee pay, income-tax withholding, or social-security/private-fund contributions for Honduras-based employees. This skill covers ISR (income tax) withholding by the employer, IHSS social security (EM + IVM + occupational risk), RAP private contributions, the INFOP training levy, the 13th and 14th month statutory salaries, minimum wage, and filing obligations to SAR. ALWAYS read this skill before processing any Honduras payroll.
 version: 0.1
 jurisdiction: HN
 tax_year: 2025
-last_updated: 2026-06-04
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - payroll-workflow-base
 category: payroll
 tier: 2

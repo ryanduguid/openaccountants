@@ -1,11 +1,11 @@
 ---
 name: shipping-aviation-tonnage-tax
-description: >
+description: Use this skill whenever a shipping company, vessel operator, ship owner, ship manager, or aviation lessor / airline asks about sector-specific tax regimes. Trigger on phrases like "tonnage tax", "Greek tonnage tax", "Cyprus tonnage tax", "Malta tonnage tax", "UK tonnage tax", "Norwegian shipping regime", "Dutch tonnage tax", "Singapore MSI", "Hong Kong tonnage tax", "qualifying shipping income", "qualifying ancillary income", "strategic / commercial management test", "EU State Aid Guidelines on State Aid to Maritime Transport", "flag state requirement", "EU/EEA flag minimum", "aviation lessor tax", "Section 110 SPV Ireland", "Cape Town Convention", "Aircraft Lease Securitisation", or any question on shipping or aviation tax/accounting. Maps tonnage tax regimes in 18+ jurisdictions plus aviation lessor regimes (Ireland Section 110, Singapore Aircraft Leasing Scheme). Does NOT cover: vessel registration, ship financing structures, IMO regulatory compliance, or aviation safety regulation.
 version: 0.1
 jurisdiction: GLOBAL
 tax_year: 2025
-last_updated: 2026-05-23
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - corporate-income-tax-workflow-base
 category: vertical
 tier: 2

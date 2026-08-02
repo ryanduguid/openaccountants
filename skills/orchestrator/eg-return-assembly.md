@@ -1,11 +1,11 @@
 ---
 name: eg-return-assembly
-description: >
+description: Use this skill as the final orchestrator that assembles the complete Egyptian filing package for an Egypt-resident self-employed person. It computes nothing itself — it sequences and stitches together the Egypt content skills into one reviewer-ready filing package (income tax return, VAT returns, social insurance, e-invoicing precondition, ETA submission). Trigger on phrases like "file my Egyptian tax return", "submit income tax return Egypt", "ETA filing", "assemble my Egypt return", "قدّم الإقرار الضريبي", "إقرار ضريبة الدخل مصر".
 version: 0.1
 jurisdiction: EG
 tax_year: 2026
-last_updated: 2026-05-24
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - eg-freelance-intake
 category: orchestrator
 tier: 2

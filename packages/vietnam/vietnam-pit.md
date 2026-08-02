@@ -1,11 +1,11 @@
 ---
 name: vietnam-pit
-description: >
+description: Use this skill whenever asked about Vietnam personal income tax (thuế thu nhập cá nhân / TNCN) for resident individuals, self-employed persons, or sole proprietors. Trigger on phrases like "thuế TNCN", "Vietnam income tax", "thuế thu nhập cá nhân", "giảm trừ gia cảnh", "biểu thuế lũy tiến", "progressive tax Vietnam", "personal deduction Vietnam", "dependent deduction Vietnam", "PIT Vietnam", or any question about computing or filing personal income tax in Vietnam. Covers the 2026 five-bracket progressive rate schedule (Luật số 109/2025/QH15), personal and dependent deductions, and filing obligations. ALWAYS read this skill before touching any Vietnam PIT work.
 version: 1.0
 jurisdiction: VN
 tax_year: 2026
-last_updated: 2026-05-22
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - income-tax-workflow-base
 category: international
 tier: 2

@@ -1,11 +1,11 @@
 ---
 name: ut-income-tax
-description: >
+description: Use this skill whenever asked about Utah individual income tax, Utah Form TC-40, Utah flat tax rate, Utah taxpayer tax credit, Utah self-employment tax at the state level, or any Utah personal income tax question for sole proprietors. Trigger on phrases like "Utah income tax", "UT income tax", "Form TC-40", "Utah flat tax", "Utah taxpayer tax credit", "Utah 4.45%", or any request involving Utah state individual income tax computation or filing.
 version: "0.1"
 jurisdiction: US-UT
 tax_year: 2025
-last_updated: 2026-05-22
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---

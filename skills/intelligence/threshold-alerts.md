@@ -1,11 +1,11 @@
 ---
 name: threshold-alerts
-description: >
+description: Intelligence skill that detects when the user is near important tax thresholds. Covers 14 threshold checks across 10 jurisdictions (EU, US, UK, DE, AU, IN, ES, NL, SG, MT, CA). For each threshold: calculates proximity, determines direction of travel, and recommends specific action. Flags the crossing point where obligations change materially.
 version: 0.1
 jurisdiction: GLOBAL
 tax_year: 2025
-last_updated: 2026-04-13
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - workflow-base
 category: intelligence
 tier: 2

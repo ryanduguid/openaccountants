@@ -3,8 +3,9 @@ name: us-secure-2-and-retirement-updates
 description: Tier 2 US federal content skill for SECURE Act 2.0 (Division T of CAA 2023) retirement plan changes plus IRS guidance through 2025. Covers the RMD age 73 (born 1951-1959) / 75 (born 1960+) transition, the $11,250 super catch-up for ages 60-63 effective 2025, the 2026 Roth-mandatory catch-up for $145k+ wage earners (delayed from 2024), the inherited-IRA annual RMDs during the 10-year rule effective 2025 per the July 2024 final regs, Saver's Match replacing Saver's Credit in 2027, Solo 401(k) ability to establish + fund by extended return due date, emergency-savings within plans, $1,000 emergency distribution, $10k domestic-abuse withdrawal, 529-to-Roth $35k lifetime rollover, the $108,000 QCD limit for 2025, Roth SEP and Roth SIMPLE, and the backdoor / mega-backdoor Roth mechanics with §408(d)(2) pro-rata.
 jurisdiction: US
 tax_year: 2025
-last_updated: 2026-05-27
-verified_by: James Wallach
+last_updated: 2026-07-13
+reviewed_by: James Wallach
+review_status: current
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---

@@ -4,7 +4,8 @@ description: "Source-cited draft: tax overview for Philippines (tax year 2025) â
 jurisdiction: PH
 tax_year: 2025
 last_updated: 2026-07-13
-verified_by: Jonathan I. Ruiz
+reviewed_by: Jonathan I. Ruiz, CPA
+review_status: current
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---

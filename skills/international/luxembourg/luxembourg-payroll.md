@@ -1,11 +1,11 @@
 ---
 name: luxembourg-payroll
-description: >
+description: Use this skill whenever asked about Luxembourg payroll processing for employed persons. Trigger on phrases like "Luxembourg payroll", "retenue d'impot Luxembourg", "wage withholding Luxembourg", "fiche de retenue", "tax card Luxembourg", "tax class 1 1a 2", "CCSS contributions", "centre commun de la securite sociale", "pension contribution Luxembourg", "assurance dependance", "dependency insurance", "Mutualite des Employeurs", "MDE", "accident insurance Luxembourg", "sante au travail", "SSM Luxembourg", "salaire social minimum", "social minimum wage Luxembourg", "CIS CISSM CIM tax credit", "solidarity surcharge Luxembourg", "fonds pour l'emploi", "MyGuichet payroll", "extrait de compte salaire", "net salary Luxembourg", "gross to net Luxembourg", "PAYE Luxembourg", or any question about computing employee pay, wage withholding tax, or social security contributions for Luxembourg-based employees. This skill covers monthly wage withholding tax (PAYE via the tax card), CCSS social security (employee and employer), the dependency-insurance abatement, employer-only funds (accident, occupational health, Mutualite des Employeurs), the social minimum wage, tax credits (CIS, CISSM, CIM) and filing obligations. ALWAYS read this skill before processing any Luxembourg payroll.
 version: 0.1
 jurisdiction: LU
 tax_year: 2025
-last_updated: 2026-06-04
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - payroll-workflow-base
 category: payroll
 tier: 2

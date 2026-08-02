@@ -1,14 +1,15 @@
 ---
 name: malta-tax-optimization
-description: >
+description: Use this skill whenever asked about reducing tax in Malta, tax planning, saving tax, optimizing tax, allowances, deductions the client might be missing, or any question about legal strategies to minimize income tax liability for self-employed individuals in Malta. Trigger on phrases like "reduce tax", "tax planning", "save tax", "optimize", "allowances", "deductions I'm missing", "pay less tax", "tax-efficient", "tax minimization", "how to lower my tax bill". ALWAYS read this skill before advising on any Malta tax optimization strategy.
 version: 1.0
 jurisdiction: MT
 tax_year: 2025
-last_updated: 2026-05-23
-verified_by: Michael Cutajar, CPA (Malta)
+last_updated: 2026-07-13
+reviewed_by: Michael Cutajar, CPA (Malta)
+review_status: current
 depends_on: []
 category: tax-optimization
-tier: 1
+tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 

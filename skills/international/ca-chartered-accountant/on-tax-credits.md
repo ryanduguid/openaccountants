@@ -3,8 +3,8 @@ name: on-tax-credits
 description: Use this skill for Ontario personal tax credits — Ontario Trillium Benefit (OTB), OEPTC (Ontario Energy and Property Tax Credit), Ontario Sales Tax Credit (OSTC), NOEC (Northern Ontario Energy Credit), Ontario Child Care Tax Credit (CARE), Ontario Senior Homeowners Property Tax Grant, Ontario Senior Care at Home Credit. Triggers "Ontario Trillium", "OTB", "OEPTC Ontario", "CARE credit Ontario", "Form ON479". ALWAYS read alongside ca-fed-t1-return.
 jurisdiction: CA
 tax_year: 2025
-last_updated: 2026-05-27
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---

@@ -1,11 +1,11 @@
 ---
 name: ua-einvoice
-description: >
+description: Use this skill whenever asked about Ukrainian electronic invoicing and digital tax reporting for self-employed people and small businesses. Trigger on phrases like "Ukraine tax invoice", "податкова накладна", "ЄРПН", "VAT invoice registration Ukraine", "register tax invoice Ukraine", "СЕА ПДВ", "VAT account Ukraine", "ПРРО receipt", "fiscal receipt Ukraine FOP", "blocked tax invoice", "зупинення реєстрації ПН", "СМКОР", "КЕП Ukraine", "Електронний кабінет", "SAF-T Ukraine", or any question about how a Ukrainian VAT payer or ФОП issues invoices and reports electronically. Covers the VAT tax invoice and its mandatory ЄРПН registration, the SMKOR registration-blocking system, the СЕА ПДВ electronic VAT administration system and the VAT account, ПРРО software fiscal receipts for retail, qualified electronic signatures (КЕП), the Електронний кабінет, and the status of SAF-T UA. ALWAYS read this skill before any Ukrainian e-invoicing or digital tax-reporting work.
 version: 1.0
 jurisdiction: UA
 tax_year: 2026
-last_updated: 2026-05-23
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - income-tax-workflow-base
 category: international
 tier: 2

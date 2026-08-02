@@ -3,8 +3,9 @@ name: us-state-payroll-matrix
 description: Tier 2 US federal-level reference skill providing the 50-state at-a-glance payroll matrix covering income-tax withholding registration, quarterly return forms and due dates, SUTA wage base and rate ranges, new-hire reporting agencies and 20-day deadlines under §453A, state disability and paid family/medical leave mandates (CA SDI, NY/NJ DBL, CO FAMLI, MA PFML, WA PFML, OR Paid Leave, CT PFML, DC PFL), local payroll taxes (PA Act 32 EIT, OH RITA/CCA, NYC, CA SDI), and state-specific quirks (CalSavers mandate, OR TriMet transit tax, WA Cares Fund). Tax year 2025.
 jurisdiction: US
 tax_year: 2025
-last_updated: 2026-05-27
-verified_by: James Wallach
+last_updated: 2026-07-13
+reviewed_by: James Wallach
+review_status: current
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---

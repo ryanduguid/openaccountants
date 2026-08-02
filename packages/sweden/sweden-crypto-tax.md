@@ -1,11 +1,11 @@
 ---
 name: sweden-crypto-tax
-description: >
+description: Use this skill whenever asked about Sweden cryptocurrency or digital asset taxation. Trigger on phrases like "crypto tax Sweden", "Bitcoin Sweden", "kryptovaluta skatt", "cryptocurrency gains Sweden", "crypto income Sweden", "staking Sweden", "mining income Sweden", "NFT tax Sweden", "K4 form crypto", "Skatteverket crypto", "genomsnittsmetoden", "average cost method Sweden", "DeFi tax Sweden", "Inkomstdeklaration crypto", "kapitalvinst krypto", or any question about the income tax, capital gains, or reporting treatment of cryptocurrency, tokens, or digital assets for Swedish tax residents. Covers Skatteverket guidance on crypto as "andra tillgångar", the mandatory average cost method, K4 reporting, mining/staking income treatment, and DAC8/CARF reporting from 2026. ALWAYS read this skill before touching any Sweden crypto work.
 version: 1.0
 jurisdiction: SE
 tax_year: 2025
-last_updated: 2026-05-23
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - sweden-income-tax
 category: crypto
 tier: 2

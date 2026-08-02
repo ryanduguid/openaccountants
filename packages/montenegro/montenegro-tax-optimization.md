@@ -1,11 +1,11 @@
 ---
 name: montenegro-tax-optimization
-description: >
+description: Use this skill whenever asked about reducing tax in Montenegro, tax planning, or legal strategies to minimise tax for a self-employed person or small company in Montenegro. Trigger on phrases like "reduce tax Montenegro", "lump-sum tax Montenegro", "paušal", "entrepreneur income tax 9% 15%", "self-employed vs company Montenegro", "Montenegro corporate 9%", "save tax Montenegro", "tax planning Montenegro". This skill covers the low progressive entrepreneurial PIT (0/9/15%), the lump-sum regime (under €30k, with its professional-services exclusion), the low progressive CIT (9/12/15%), the municipal surtax, and the anti-avoidance red lines. ALWAYS read this skill before advising on any Montenegro tax optimisation.
 version: 0.1
 jurisdiction: ME
 tax_year: 2025
-last_updated: 2026-06-04
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: []
 category: tax-optimization
 tier: 2

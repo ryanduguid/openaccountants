@@ -1,11 +1,11 @@
 ---
 name: forex-controls
-description: >
+description: Foreign exchange controls and cross-border money movement rules by country. Use when the user asks about: forex controls, foreign exchange limits, FEMA, LRS, SAFE, 外汇管制, capital controls, money transfer limits, remittance limits, CRS reporting, TCS India, IOF Brazil, sending money abroad, receiving money from overseas, forex restrictions China, India remittance limit, Brazil forex, Taiwan outward remittance, Korea forex reporting, Japan foreign exchange, ODI filing China, cross-border transfer, 境外汇款, 购汇额度, 地下钱庄, forex quota, capital movement restrictions, repatriation of profits, sending money home, or any question about moving money across international borders as a founder or freelancer.
 version: 1.0
 jurisdiction: INTL
 tax_year: 2025
-last_updated: 2026-05-20
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 category: international
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)

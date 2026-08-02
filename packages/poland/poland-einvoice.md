@@ -1,11 +1,11 @@
 ---
 name: poland-einvoice
-description: >
+description: Use this skill whenever asked about Polish e-invoicing, KSeF, Krajowy System e-Faktur, faktura ustrukturyzowana, FA(3) schema, structured invoice Poland, e-Faktura, UPO (Urzędowe Poświadczenie Odbioru), KSeF API, KSeF 2.0, batch submission Poland, offline mode KSeF, GTU codes, split payment MPP, NIP validation, or any question about issuing, receiving, validating, or archiving electronic invoices in Poland. Also trigger when preparing FA(3) XML invoices, configuring KSeF API integration, handling KSeF rejection errors, or advising on the transition to mandatory KSeF. This skill covers the FA(3) schema, KSeF API architecture, mandatory fields, validation rules, archiving, penalties, and interaction with Polish VAT returns. ALWAYS read this skill before touching any Polish e-invoicing work.
 version: 1.0
 jurisdiction: PL
 tax_year: 2025
-last_updated: 2026-05-23
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - einvoice-workflow-base
 category: invoicing
 tier: 2

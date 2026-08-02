@@ -1,11 +1,12 @@
 ---
 name: brazil-payroll
-description: >
+description: Use esta skill sempre que perguntarem sobre processamento de folha de pagamento brasileira, cálculo de salários, IRRF (Imposto de Renda Retido na Fonte), contribuições ao INSS, depósitos de FGTS, 13º salário (décimo terceiro), custo do empregador, conversões de líquido para bruto ou de bruto para líquido, estrutura de holerite/contracheque, eventos do eSocial, ou qualquer questão sobre cálculo de remuneração, deduções ou obrigações do empregador no Brasil. Acione com frases como "folha de pagamento brasileira", "folha de pagamento", "INSS", "IRRF", "FGTS", "13º salário", "décimo terceiro", "férias", "salário líquido", "holerite", "eSocial", "DCTF Web", "custo do empregador Brasil", "CLT", "rescisão", "aviso prévio", ou "salário mínimo Brasil". / Use this skill whenever asked about Brazilian payroll processing, employee salary calculations, IRRF, INSS contributions, FGTS deposits, 13th salary, employer cost, gross-to-net or net-to-gross conversions, Brazilian payslip structure, eSocial filings, or any question about computing wages, deductions, or employer obligations in Brazil.
 version: 1.0
 jurisdiction: BR
 tax_year: 2025
-last_updated: 2026-05-23
-verified_by: Ariane Marrocos
+last_updated: 2026-07-13
+reviewed_by: Ariane Marrocos
+review_status: current
 depends_on: - payroll-workflow-base
 category: payroll
 tier: 2

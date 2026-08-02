@@ -3,8 +3,8 @@ name: bs-income-tax
 description: "Use this skill whenever asked about Bahamas tax obligations for individuals, self-employed persons, or sole traders. Trigger on phrases like \"do I pay income tax in the Bahamas\", \"NIB contributions\", \"National Insurance Board\", \"business licence fee\", \"VAT registration Bahamas\", \"real property tax Bahamas\", \"stamp duty Bahamas\", \"self-employed tax Bahamas\", \"payroll Bahamas\", or any question about tax filing or obligations for a person living or working in the Bahamas. Also trigger when computing NIB contribution amounts, preparing a business licence application, determining VAT registration thresholds, or advising on property taxes and stamp duty. This skill covers the full Bahamas tax reality: no personal income tax of any kind, NIB social contributions (the primary individual obligation), VAT, Business Licence, Real Property Tax, and Stamp Duty. ALWAYS read this skill before touching any Bahamas tax or compliance work."
 jurisdiction: BS
 tax_year: 2025
-last_updated: 2026-06-25
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---

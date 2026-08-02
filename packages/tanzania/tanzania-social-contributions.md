@@ -3,9 +3,10 @@ name: tanzania-social-contributions
 description: Use this skill whenever asked about Tanzania (Mainland) payroll taxes and social security contributions for employers and employees. Trigger on phrases like "Tanzania PAYE", "how much NSSF do I pay", "NSSF contribution", "PSSSF", "Skills and Development Levy", "SDL Tanzania", "Workers Compensation Fund", "WCF Tanzania", "TZS payroll", "Tanzania payroll deductions", "PAYE bracket Tanzania", "social security Tanzania", "pension contribution Tanzania", or any question about Tanzanian employer/employee statutory contributions. Also trigger when classifying bank statement transactions that relate to TRA payments, NSSF/PSSSF pension debits, SDL, or WCF remittances from CRDB, NMB, NBC, or other Tanzanian banks. This skill covers PAYE progressive brackets, NSSF/PSSSF pension splits, SDL, WCF, monthly remittance deadlines, penalties, minimum wage, bank statement classification patterns, and edge cases. ALWAYS read this skill before touching any Tanzanian payroll or contributions work.
 jurisdiction: TZ
 tax_year: 2026
-last_updated: 2026-06-04
-verified_by: Baraka Cassian
-tier: 2
+last_updated: 2026-07-13
+reviewed_by: Baraka Cassian
+review_status: current
+tier: 1
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 

@@ -3,9 +3,10 @@ name: pk-sales-tax-services
 description: Source-cited tax guide for PK: pk sales tax services. Unverified draft, pending local-accountant review.
 jurisdiction: PK
 tax_year: 2025
-last_updated: 2026-05-27
-verified_by: Ibrar Ali
-tier: 2
+last_updated: 2026-07-13
+reviewed_by: Ibrar Ali
+review_status: current
+tier: 1
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 

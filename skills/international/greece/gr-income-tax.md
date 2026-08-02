@@ -1,11 +1,11 @@
 ---
 name: gr-income-tax
-description: >
+description: Use this skill whenever asked about Greek income tax for self-employed individuals (ελεύθερος επαγγελματίας). Trigger on phrases like "how much tax do I pay", "φορολογική δήλωση", "E1", "E3", "income tax return Greece", "τεκμήρια", "EFKA", "MyDATA", "self-employed tax Greece", or any question about filing or computing income tax for a self-employed or freelance client in Greece. ALWAYS read this skill before touching any Greek income tax work.
 version: 2.0
 jurisdiction: GR
 tax_year: 2025
-last_updated: 2026-04-13
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - income-tax-workflow-base
 category: international
 tier: 2

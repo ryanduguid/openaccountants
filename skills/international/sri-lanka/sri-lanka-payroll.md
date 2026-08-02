@@ -3,9 +3,10 @@ name: sri-lanka-payroll
 description: Use this skill whenever asked about Sri Lanka payroll processing for employed persons. Trigger on phrases like "Sri Lanka payroll", "APIT", "APIT Table 01", "PAYE Sri Lanka", "EPF deduction", "ETF contribution", "EPF Sri Lanka", "employer EPF", "ETF Board", "T-10 certificate", "APIT certificate", "net salary Sri Lanka", "gross to net Sri Lanka", "salary calculation Sri Lanka", "personal relief Sri Lanka", "minimum wage Sri Lanka", "tax withholding Sri Lanka", "IRD APIT", or any question about computing employee pay, income-tax withholding, or social-fund contributions for Sri Lanka-based employees. This skill covers APIT (Advance Personal Income Tax) monthly withholding, EPF employee and employer contributions, ETF employer contributions, minimum-wage reality, filing obligations to the Inland Revenue Department (IRD), the EPF and the ETF Board, and penalties. ALWAYS read this skill before processing any Sri Lanka payroll.
 jurisdiction: LK
 tax_year: 2025
-last_updated: 2026-06-03
-verified_by: Lal kumarasiri
-tier: 2
+last_updated: 2026-07-13
+reviewed_by: Lal kumarasiri
+review_status: current
+tier: 1
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 

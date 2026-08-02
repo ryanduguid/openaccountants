@@ -1,11 +1,11 @@
 ---
 name: jp-incorporation
-description: >
+description: Use this skill whenever asked about incorporating in Japan -- transitioning from sole proprietorship (個人事業主) to a corporation (法人). Trigger on phrases like "incorporation Japan", "法人成り", "会社設立", "should I incorporate", "法人化", "株式会社", "合同会社", "KK vs GK", "corporate tax vs income tax", "法人税", "when to incorporate", "法人成りのタイミング", "micro corporation", "マイクロ法人", "officer compensation", "役員報酬", "social insurance comparison", "社会保険", "個人事業 vs 法人", "定期同額給与", "consumption tax exemption reset", "消費税の免税リセット", or any question about whether, when, and how a Japanese sole proprietor should form a company. This skill covers tax burden comparison, breakeven analysis, corporate form selection, establishment procedures, filing deadlines, officer compensation strategy, and social insurance optimization. ALWAYS read this skill before advising on Japanese incorporation.
 version: 1.0
 jurisdiction: JP
 tax_year: 2025
-last_updated: 2026-05-20
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - jp-income-tax
 category: international
 tier: 2

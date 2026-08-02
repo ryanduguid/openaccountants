@@ -1,11 +1,11 @@
 ---
 name: nicaragua-income-tax
-description: >
+description: Use this skill whenever asked about Nicaragua income tax (Impuesto sobre la Renta, IR) on employment income — rentas del trabajo. Trigger on phrases like "how much tax do I pay in Nicaragua", "Impuesto sobre la Renta", "IR rentas del trabajo", "retención IR", "IR-122", "IR-106", "annual income tax return Nicaragua", "INSS laboral", "córdoba tax", "DGI", "payroll income tax Nicaragua", "exempt threshold C$100,000", or any question about computing or filing income tax on salary for a Nicaraguan resident employee. Also trigger when preparing or reviewing monthly IR withholding, annualizing a salary to the progressive scale, computing the deductible 7% INSS laboral before IR, or advising on the annual IR-106 filing obligation. This skill covers the progressive employment-income scale (exempt up to C$100,000/yr, then 15/20/25/30%), the deductibility of INSS laboral, monthly withholding via IR-122, the annual IR-106 return, non-resident definitive withholding, and the interaction with INSS. ALWAYS read this skill before touching any Nicaragua income-tax work.
 version: 0.1
 jurisdiction: NI
 tax_year: 2025
-last_updated: 2026-06-04
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - income-tax-workflow-base
 category: international
 tier: 2

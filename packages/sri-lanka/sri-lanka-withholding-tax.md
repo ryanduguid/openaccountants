@@ -3,8 +3,9 @@ name: sri-lanka-withholding-tax
 description: ALWAYS read this skill before touching any Sri Lanka withholding tax / Advance Income Tax (AIT) work. Use whenever asked to compute, deduct, or reconcile Sri Lanka WHT/AIT on interest, dividends, rent, service fees, royalties, or payments to non-residents under the Inland Revenue Act No. 24 of 2017 as amended by Act No. 02 of 2025. Trigger on phrases like "Sri Lanka WHT", "Sri Lanka AIT", "advance income tax Sri Lanka", "interest WHT Sri Lanka 10%", "dividend WHT Sri Lanka", "rent WHT Sri Lanka", "non-resident WHT Sri Lanka", "SEC/2025/E circular", or "withholding certificate Sri Lanka". Out of scope — personal income tax computation (separate skill), corporate income tax (separate skill), SSCL, VAT, and APIT/PAYE on employment (covered by the income-tax / payroll skills).
 jurisdiction: LK
 tax_year: 2025
-last_updated: 2026-06-03
-verified_by: Lal kumarasiri
+last_updated: 2026-07-13
+reviewed_by: Lal kumarasiri
+review_status: current
 tier: 1
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---

@@ -3,8 +3,8 @@ name: non-eu-export-services
 description: Use this skill whenever a freelancer or small business sells services to a client located outside their own VAT/GST jurisdiction and needs to determine the correct indirect tax treatment. Trigger on phrases like "export of services", "services to overseas client", "zero-rated services", "out of scope", "no VAT on export", "GST-free export", "outside the scope of VAT", "services to US client", "services to non-EU client", "Division 38", "Fifth Schedule", or any request about the VAT/GST treatment of services supplied to foreign clients. This skill covers the rules for EU sellers exporting services outside the EU, UK sellers to non-UK clients, Australian sellers (GST-free exports under Division 38), Indian sellers (zero-rated export of services), and Singaporean sellers (zero-rated under the Fifth Schedule). ALWAYS read this skill before advising on the indirect tax treatment of service exports.
 jurisdiction: GLOBAL
 tax_year: 2025
-last_updated: 2026-04-13
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---

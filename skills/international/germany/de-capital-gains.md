@@ -1,11 +1,11 @@
 ---
 name: de-capital-gains
-description: >
+description: Use this skill for any German capital gains tax question. Trigger on: "Abgeltungsteuer", "capital gains Germany", "CGT Germany", "Kapitalertragsteuer", "Sparer-Pauschbetrag", "sell shares Germany", "German exit tax", "Wegzugsbesteuerung", "leaving Germany tax shares", "crypto Germany CGT", "German investment gains", "German shareholder 1% rule". Covers Abgeltungsteuer flat rate, annual exemption, offsetting losses, exit tax on departure.
 version: 1.0
 jurisdiction: DE
 tax_year: 2025
-last_updated: 2026-06-05
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - de-income-tax
 category: international
 tier: 2

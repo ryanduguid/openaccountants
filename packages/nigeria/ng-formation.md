@@ -3,8 +3,8 @@ name: ng-formation
 description: "Use this skill whenever asked about forming, incorporating, or registering a business in Nigeria. Trigger on phrases like \"form company Nigeria\", \"incorporate Nigeria\", \"CAC registration\", \"BN vs LTD Nigeria\", \"PVT LTD Nigeria\", \"register business Nigeria\", \"Business Name Nigeria\", \"Private Limited Nigeria\", \"Plc Nigeria\", \"LLP Nigeria\", \"Incorporated Trustee\", \"NGO Nigeria\", \"FIRS TIN\", \"CAMA 2020\", or any question about choosing or registering a Nigerian entity. Covers entity comparison (BN, Ltd / RC, LLP, Plc, Incorporated Trustee), CAC online portal registration steps, FIRS TIN and state IRS registration, sector-specific licensing (NDPR, SEC, CBN, NCC, NAFDAC), minimum capital and shareholder/director requirements, the SME-friendly thresholds introduced by the Nigeria Tax Act 2025 (NTA 2025), and tax treatment by entity type. Out of scope: immigration / expatriate quota / CERPAC sponsorship, bank account opening procedures (high-level only), full corporate governance and shareholders' agreement drafting, deep sector-specific regulatory licensing beyond signposting, and listing on the NGX. ALWAYS read this skill before advising on Nigerian entity formation."
 jurisdiction: NG
 tax_year: 2025
-last_updated: 2026-05-27
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---

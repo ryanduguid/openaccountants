@@ -1,11 +1,11 @@
 ---
 name: se-capital-gains
-description: >
+description: Sweden capital gains tax: 30% on capital income, ISK investment savings account (schablonbeskattning), exit tax on departure. Trigger on: "Sweden CGT", "capital gains Sweden", "Sweden 30% capital gains", "ISK account Sweden", "investeringssparkonto", "sell shares Sweden", "Sweden exit tax", "Sweden capital income tax".
 version: 1.0
 jurisdiction: SE
 tax_year: 2025
-last_updated: 2026-06-05
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 category: international
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)

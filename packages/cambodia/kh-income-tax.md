@@ -3,8 +3,8 @@ name: kh-income-tax
 description: Use this skill whenever asked about Cambodia personal income tax, Tax on Salary (TOS), or Tax on Income (TOI) for individuals, sole proprietors, and employers. Trigger on phrases like "how much salary tax do I pay in Cambodia", "Tax on Salary", "TOS withholding", "Tax on Income Cambodia", "monthly salary tax bracket", "NSSF contribution", "tax on fringe benefits", "non-resident 20% salary tax", "dependent allowance Khmer", "sole proprietor tax Cambodia", "GDT e-filing", "20th of the month tax return", or any question about computing or filing employment-income tax, payroll withholding, or annual business-income tax for a Cambodian taxpayer. Also trigger when preparing or reviewing a monthly TOS return, computing NSSF (National Social Security Fund) contributions, applying dependent relief, or advising on annual TOI for a physical person. Cambodia has NO Western-style "personal income tax" — it runs Tax on Salary (monthly, progressive 0%–20%) and Tax on Income (annual, progressive 0%–20%) instead. This skill covers resident/non-resident TOS brackets, dependent allowances, fringe-benefit tax, NSSF schemes, annual TOI, GDT filing forms and deadlines, and penalties. ALWAYS read this skill before touching any Cambodian income-tax or payroll work.
 jurisdiction: KH
 tax_year: 2025
-last_updated: 2026-06-25
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---

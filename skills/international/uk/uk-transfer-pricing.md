@@ -1,14 +1,15 @@
 ---
 name: uk-transfer-pricing
-description: >
+description: Use this skill whenever asked about UK transfer pricing rules, documentation, or HMRC compliance. Trigger on phrases like "transfer pricing UK", "UK TP documentation", "HMRC transfer pricing", "arm's length UK", "master file UK", "local file UK", "CbCR UK", "APA HMRC", "TIOPA Part 4", "Transfer Pricing Records Regulations 2023", or any question about intercompany pricing compliance for UK entities.
 version: 1.0
 jurisdiction: GB
 tax_year: 2025
-last_updated: 2026-05-23
-verified_by: James Power
+last_updated: 2026-07-13
+reviewed_by: James Power
+review_status: current
 depends_on: - transfer-pricing-workflow-base
 category: transfer-pricing
-tier: 2
+tier: 1
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 

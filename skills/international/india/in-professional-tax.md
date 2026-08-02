@@ -1,13 +1,14 @@
 ---
 name: in-professional-tax
-description: >
+description: Use this skill whenever asked about Indian professional tax (profession tax). Trigger on phrases like "professional tax India", "profession tax", "state professional tax", "Maharashtra professional tax", "Karnataka professional tax", "West Bengal professional tax", "PT registration", "PT return", "Section 16(iii)", "profession tax deduction", or any question about professional tax obligations, rates, registration, or payment in India. This skill covers state-level professional tax rates and slabs for major states, deductibility under Income Tax Act, registration and filing requirements, and employer obligations. ALWAYS read this skill before touching any Indian professional tax work.
 version: "1.0"
 jurisdiction: IN
 tax_year: 2025
-last_updated: 2026-05-23
-verified_by: Mayur Deokar
+last_updated: 2026-07-13
+reviewed_by: Mayur Deokar
+review_status: current
 category: international
-tier: 2
+tier: 1
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 

@@ -1,11 +1,11 @@
 ---
 name: sg-cpf-medisave
-description: >
+description: Use this skill whenever asked about Singapore CPF MediSave contributions for self-employed persons (SEPs). Trigger on phrases like "MediSave contribution", "CPF self-employed", "how much MediSave do I pay", "net trade income CPF", "voluntary CPF contributions", "BHS", "Basic Healthcare Sum", "MediShield Life", or any question about MediSave obligations for a self-employed client in Singapore. This skill covers mandatory MediSave rates by age, contribution caps, voluntary CPF contributions, tax relief, payment deadlines, penalties, and edge cases. ALWAYS read this skill before touching any Singapore CPF/MediSave-related work.
 version: 2.0
 jurisdiction: SG
 tax_year: 2025
-last_updated: 2026-04-13
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 category: international
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)

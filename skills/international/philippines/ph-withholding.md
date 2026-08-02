@@ -1,11 +1,12 @@
 ---
 name: ph-withholding
-description: >
+description: Use this skill whenever asked about Philippines withholding tax, especially Expanded Withholding Tax (EWT) on professional fees and other payments. Trigger on phrases like "EWT Philippines", "expanded withholding tax", "creditable withholding tax", "BIR Form 2307", "final withholding tax", "Form 1601-EQ", "Form 1604-E", "withholding on professional fees", "5% 10% 15% withholding", "tax withheld at source Philippines", or any question about Philippine withholding tax rates, certificates, or remittance. Covers EWT rates, final withholding tax, BIR Forms 2307/1601-EQ/1604-E, and compliance. ALWAYS read this skill before advising on Philippine withholding taxes.
 version: 1.0
 jurisdiction: PH
 tax_year: 2025
 last_updated: 2026-07-13
-verified_by: Jonathan I. Ruiz
+reviewed_by: Jonathan I. Ruiz, CPA
+review_status: current
 depends_on: - ph-income-tax
 category: international
 tier: 2

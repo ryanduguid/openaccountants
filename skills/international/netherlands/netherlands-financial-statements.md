@@ -1,11 +1,11 @@
 ---
 name: netherlands-financial-statements
-description: >
+description: Use this skill when preparing, reviewing, or advising on annual financial statements (jaarrekening) for a Dutch company. Trigger on phrases like "jaarrekening", "KvK filing", "Kamer van Koophandel", "BW2 Titel 9", "Dutch GAAP", "RJ richtlijnen", "deponeren", "annual accounts Netherlands", "audit Netherlands", "small BV", "micro BV", or any question about preparing and filing statutory accounts under Dutch law. Covers Dutch GAAP (RJ guidelines), size thresholds, required statements, formats, notes, filing deadlines, and audit requirements.
 version: 1.0
 jurisdiction: NL
 tax_year: 2025
-last_updated: 2026-05-23
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - financial-statements-workflow-base
 category: financial-statements
 tier: 2

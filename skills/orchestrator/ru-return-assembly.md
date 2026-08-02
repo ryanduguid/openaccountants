@@ -1,11 +1,11 @@
 ---
 name: ru-return-assembly
-description: >
+description: Use this skill as the final orchestrator that assembles the complete Russian filing package for a Russia-resident self-employed person (самозанятый, ИП). It runs last, after the Russia content skills, and produces the ready-to-file set of declarations, payment notifications (уведомления), and the ЕНП/ЕНС reconciliation. It computes nothing of its own — every figure comes from the upstream content skills and is signed off by a qualified Russian accountant. Trigger on phrases like "file my Russian tax return", "submit УСН declaration", "сдать декларацию по УСН", "3-НДФЛ filing", "подать 3-НДФЛ", "ЕНП payment", "уплатить ЕНП", "assemble my Russian filing package", or any request to finalise and submit a Russia self-employed return. Russia-resident self-employed only.
 version: 0.1
 jurisdiction: RU
 tax_year: 2026
-last_updated: 2026-05-23
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - ru-freelance-intake
 category: orchestrator
 tier: 2

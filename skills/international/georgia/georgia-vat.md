@@ -5,7 +5,8 @@ version: 2.0
 jurisdiction: GE
 tax_year: 2025
 last_updated: 2026-07-13
-verified_by: Gvantsa Amiridze
+reviewed_by: Gvantsa Amiridze, ACCA
+review_status: current
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---

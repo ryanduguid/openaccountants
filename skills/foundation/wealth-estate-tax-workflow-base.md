@@ -1,11 +1,11 @@
 ---
 name: wealth-estate-tax-workflow-base
-description: >
+description: Tier 1 workflow base for wealth tax, inheritance / estate tax, gift tax, and property transfer tax skills. Covers asset inventory, valuation, beneficiary / heir identification, exemption / relief analysis, computation, double-tax relief, and filing assembly. Workflow architecture only — no country rate tables. MUST be loaded alongside a content skill — wealth-tax-matrix, inheritance-estate-gift-matrix, property-transfer-tax-matrix, or a country-specific skill. Assumes a credentialed estate planning practitioner (private client lawyer, notary, CPA, EA, or equivalent) reviews and signs off on every output. Does NOT cover: probate procedure, will drafting, trust administration beyond tax mechanics.
 version: 0.1
 jurisdiction: GLOBAL
 tax_year: 2025
-last_updated: 2026-05-23
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 category: foundation
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)

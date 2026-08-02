@@ -1,11 +1,11 @@
 ---
 name: netherlands-crypto-tax
-description: >
+description: Use this skill whenever asked about Netherlands cryptocurrency or digital asset taxation. Trigger on phrases like "crypto tax Netherlands", "Bitcoin Netherlands", "crypto belasting", "Box 3 crypto", "vermogensrendementsheffing crypto", "cryptocurrency Netherlands", "crypto income Netherlands", "staking Netherlands", "mining income Netherlands", "NFT tax Netherlands", "Belastingdienst crypto", "Dutch crypto tax", "fictief rendement crypto", "heffingsvrij vermogen", "Overbruggingswet box 3", "Binance Netherlands tax", "Coinbase Netherlands tax", "aangifte crypto", or any question about the income tax, wealth tax, or VAT treatment of cryptocurrency, tokens, or digital assets for Dutch tax residents or Netherlands-source crypto income. Covers Box 3 wealth taxation, fictional return system, actual return counter-evidence, Box 1 business classification, and DAC8 reporting. ALWAYS read this skill before touching any Netherlands crypto work.
 version: 1.0
 jurisdiction: NL
 tax_year: 2025
-last_updated: 2026-05-23
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - netherlands-income-tax
 category: crypto
 tier: 2

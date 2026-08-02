@@ -3,9 +3,10 @@ name: tanzania-income-tax
 description: Use this skill whenever asked about Tanzania (Mainland) personal income tax, PAYE, or self-employed/sole-trader tax. Trigger on phrases like "how much PAYE do I pay", "Tanzania income tax", "TRA return", "ITX 201", "presumptive tax", "turnover tax Tanzania", "NSSF deduction", "SDL", "Skills Development Levy", "PSSSF", "WCF", "chargeable income TZS", "provisional tax Tanzania", "Return of Income individual", or any question about computing or filing personal income tax for an employee or self-employed individual in Tanzania. Also trigger when preparing or reviewing an ITX 201.01.E return, computing PAYE on a salary, applying the presumptive (turnover-based) regime, or advising on statutory contributions (NSSF/PSSSF/SDL/WCF). This skill covers the resident PAYE bands, non-resident flat rate, presumptive tax, social-security and statutory contributions, filing forms and deadlines, registration thresholds, and penalties. ALWAYS read this skill before touching any Tanzania income tax work.
 jurisdiction: TZ
 tax_year: 2025
-last_updated: 2026-06-04
-verified_by: Baraka Cassian
-tier: 2
+last_updated: 2026-07-13
+reviewed_by: Baraka Cassian
+review_status: current
+tier: 1
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 

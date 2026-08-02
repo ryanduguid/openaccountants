@@ -3,8 +3,8 @@ name: pennsylvania-sales-tax
 description: Use this skill whenever asked about Pennsylvania sales and use tax, PA DOR filings, Pennsylvania clothing exemption, Philadelphia sales tax, Allegheny County tax, or any request involving Pennsylvania state sales and use tax compliance. Trigger on phrases like "Pennsylvania sales tax", "PA sales tax", "PA DOR", "PA-3", "Philadelphia tax", "Pennsylvania clothing exemption", or any request involving Pennsylvania sales tax. ALWAYS read this skill before touching any Pennsylvania sales tax work.
 jurisdiction: US-PA
 tax_year: 2025
-last_updated: 2026-04-13
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---

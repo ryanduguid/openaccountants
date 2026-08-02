@@ -1,11 +1,11 @@
 ---
 name: north-macedonia-tax-optimization
-description: >
+description: Use this skill whenever asked about reducing tax in North Macedonia, tax planning, or legal strategies to minimise tax for a self-employed person or small company. Trigger on phrases like "reduce tax North Macedonia", "flat 10% tax Macedonia", "lump-sum tax", "paušal", "sole proprietor vs company Macedonia", "craftsman tax", "save tax North Macedonia", "tax planning North Macedonia". This skill covers the flat 10% PIT/CIT, the lump-sum (paušal) self-employment regime vs the net-income basis, the personal allowance, company extraction, and the disguised-employment red line. ALWAYS read this skill before advising on any North Macedonia tax optimisation.
 version: 0.1
 jurisdiction: MK
 tax_year: 2025
-last_updated: 2026-06-04
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: []
 category: tax-optimization
 tier: 2

@@ -1,11 +1,11 @@
 ---
 name: ua-financial-statements
-description: >
+description: Use this skill whenever asked about Ukrainian financial statements and financial reporting (фінансова звітність) for legal entities, or whether a self-employed person must prepare them. Trigger on phrases like "Ukraine financial statements", "фінансова звітність", "П(С)БО", "НП(С)БО", "IFRS Ukraine", "МСФЗ", "do I file accounts as a FOP", "balance sheet Ukraine", "звіт про фінансові результати", "Форма 1-м", "Форма 1-мс", "enterprise size category Ukraine", "micro small medium large enterprise Ukraine", "statutory audit Ukraine", "Держстат financial report", "ТОВ financial statements", or any question about who must prepare and file financial statements, which accounting standards apply, the simplified report forms, deadlines, or audit obligations. This skill is about FORMAL FINANCIAL STATEMENTS for legal entities. A FOP (sole proprietor) does NOT prepare these — defer FOP records to ua-bookkeeping and FOP tax to ua-single-tax / ua-income-tax. ALWAYS read this skill before any Ukrainian financial-statement or financial-reporting work.
 version: 1.0
 jurisdiction: UA
 tax_year: 2026
-last_updated: 2026-05-23
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - income-tax-workflow-base
 category: international
 tier: 2

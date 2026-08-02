@@ -1,14 +1,15 @@
 ---
 name: india-einvoice
-description: >
+description: Use this skill whenever asked about India GST e-invoicing, Invoice Registration Portal (IRP), IRN generation, e-invoice JSON schema, NIC portal, GST INV-01 format, e-invoice threshold, B2B invoice reporting under GST, QR code on invoices, GSTR-1 auto-population, e-way bill integration with e-invoice, or any question about generating, validating, or troubleshooting Indian e-invoices. Also trigger when advising on e-invoice compliance for businesses crossing Rs 5 crore turnover, configuring ERP/billing software for IRP integration, or handling IRP rejections. ALWAYS read this skill before touching any India e-invoice work.
 version: 1.0
 jurisdiction: IN
 tax_year: 2025
-last_updated: 2026-05-23
-verified_by: Mayur Deokar
+last_updated: 2026-07-13
+reviewed_by: Mayur Deokar
+review_status: current
 depends_on: - einvoice-workflow-base
 category: invoicing
-tier: 2
+tier: 1
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 

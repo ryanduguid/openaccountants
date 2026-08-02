@@ -1,11 +1,11 @@
 ---
 name: ma-formation
-description: >
+description: Use this skill whenever asked about registering or forming a business in Morocco as a self-employed person — choosing and obtaining a legal status, the identifiers every business needs, and the tax regime picked at registration. Trigger on phrases like "register auto-entrepreneur Morocco", "créer auto-entrepreneur", "comment s'inscrire auto-entrepreneur Maroc", "ICE Maroc", "obtenir un IF", "Registre de Commerce Maroc", "start business Morocco", "créer une SARL Maroc", "patente / taxe professionnelle", "كيفاش نسجل مقاول ذاتي", "تسجيل شركة المغرب". Covers RNAE auto-entrepreneur registration (ae.gov.ma / Poste Maroc), obtaining the ICE, the IF (Identifiant Fiscal) from the DGI, the RC (Registre de Commerce), the taxe professionnelle (ex-patente) and its new-business exemption, regulated professions, choosing the regime (auto-entrepreneur vs CPU vs RNR/RNS), VAT registration, and forming a SARL / SARL-AU via the CRI / OMPIC, with timing and cost. Reply in the user's language (English, French, or Moroccan Arabic / Darija) and keep the native terms. Cross-reference ma-auto-entrepreneur, ma-cpu, ma-income-tax, and morocco-vat for the downstream tax detail.
 version: 1.0
 jurisdiction: MA
 tax_year: 2025
-last_updated: 2026-06-08
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - income-tax-workflow-base
 category: international
 tier: 2

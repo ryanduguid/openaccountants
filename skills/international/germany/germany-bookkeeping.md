@@ -1,11 +1,11 @@
 ---
 name: germany-bookkeeping
-description: >
+description: Use this skill whenever asked about bookkeeping, chart of accounts, Kontenrahmen, SKR03, SKR04, financial statements, P&L format, balance sheet layout, bank reconciliation, expense classification, asset capitalisation, GWG, or day-to-day accounting for a German entity. Trigger on phrases like "Kontenrahmen", "SKR03", "SKR04", "HGB", "Buchhaltung", "chart of accounts Germany", "EÜR", "Einnahmen-Überschussrechnung", "Bilanz", "GuV", "capitalise or expense Germany", "GWG threshold", "Geringwertige Wirtschaftsgüter", "depreciation Germany", "AfA", "bank reconciliation Germany", "Kleinunternehmer", "bookkeeping Germany", or any question about recording transactions, classifying expenses, or preparing accounts under German law. ALWAYS read this skill before touching any bookkeeping work for Germany.
 version: 1.0
 jurisdiction: DE
 tax_year: 2025
-last_updated: 2026-05-23
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - bookkeeping-workflow-base
 category: bookkeeping
 tier: 2

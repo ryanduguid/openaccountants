@@ -3,8 +3,8 @@ name: nb-tax-credits
 description: Use this skill for New Brunswick provincial tax credits — NB Low-Income Tax Reduction, NB Harmonized Sales Tax Credit, Seniors' Home Renovation Tax Credit, Tuition Amount, NB Small Business Investor Tax Credit (refundable 50% for individuals), NB Film Tax Credit. Triggers "New Brunswick tax credits", "Form NB428", "NB Small Business Investor Tax Credit", "NB seniors home renovation".
 jurisdiction: CA
 tax_year: 2025
-last_updated: 2026-05-27
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---

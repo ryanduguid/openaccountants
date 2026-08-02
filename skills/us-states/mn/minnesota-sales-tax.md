@@ -3,8 +3,8 @@ name: minnesota-sales-tax
 description: Use this skill whenever asked about Minnesota sales and use tax. Trigger on phrases like "Minnesota sales tax", "MN sales tax", "M.S. 297A", "Minnesota DOR". NOTE -- Minnesota EXEMPTS clothing. ALWAYS load us-sales-tax first.
 jurisdiction: US-MN
 tax_year: 2025
-last_updated: 2026-04-13
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---

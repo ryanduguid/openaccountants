@@ -3,8 +3,8 @@ name: utah-sales-tax
 description: Use this skill whenever asked about Utah sales tax, Utah use tax, USTC sales tax filing, Utah grocery tax reduced rate, Utah SaaS tax, or Utah sales tax compliance. Trigger on phrases like "Utah sales tax", "UT sales tax", "Utah Code §59-12", "USTC", "Utah grocery tax", "Utah SaaS", "Utah SST", or any request involving Utah state and local sales and use tax compliance. ALWAYS load us-sales-tax first for federal context.
 jurisdiction: US-UT
 tax_year: 2025
-last_updated: 2026-04-13
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---

@@ -1,11 +1,11 @@
 ---
 name: serbia-payroll
-description: >
+description: Use this skill whenever asked about Serbia payroll processing for employed persons. Trigger on phrases like "Serbia payroll", "Serbian payroll", "obracun zarade", "zarada", "salary tax Serbia", "porez na zarade", "social contributions Serbia", "doprinosi", "PIO Serbia", "PPP-PD", "ePorezi payroll", "CROSO", "M obrazac", "net salary Serbia", "neto zarada", "bruto na neto", "gross to net Serbia", "employer cost Serbia", "minimum wage Serbia", "minimalna zarada", "non-taxable amount Serbia", "neoporezivi iznos", or any question about computing employee pay, salary withholding tax, or mandatory social insurance contributions for Serbia-based employees. This skill covers the 10% flat salary tax on the gross-minus-non-taxable base, the 35.05% combined social insurance contributions (employee 19.9% + employer 15.15%), contribution floors/ceilings, minimum wage, statutory non-taxable benefits, the supplementary annual personal income tax (PP-GPDG), and filing on the consolidated PPP-PD return via ePorezi. ALWAYS read this skill before processing any Serbia payroll.
 version: 0.1
 jurisdiction: RS
 tax_year: 2025
-last_updated: 2026-06-04
-verified_by: pending
+last_updated: 2026-07-13
+review_status: pending_review
 depends_on: - payroll-workflow-base
 category: payroll
 tier: 2
