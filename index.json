@@ -1,7 +1,7 @@
 {
- "generated_at": "2026-08-01T06:12:15+00:00",
+ "generated_at": "2026-08-01T06:46:47+00:00",
  "counts": {
-  "guides": 1899,
+  "guides": 1900,
   "jurisdictions": 243,
   "accountant_reviewed": 270
  },
@@ -2441,6 +2441,18 @@
    "reviewed_by": null,
    "tax_year": "2025",
    "last_updated": "2026-05-23"
+  },
+  {
+   "slug": "au-fbt",
+   "path": "skills/international/australia/au-fbt.md",
+   "name": "au-fbt",
+   "jurisdiction": "AU",
+   "category": "international",
+   "tier": 2,
+   "verified_by": "pending",
+   "reviewed_by": null,
+   "tax_year": "2026",
+   "last_updated": "2026-08-01"
   },
   {
    "slug": "au-gst-bas",
