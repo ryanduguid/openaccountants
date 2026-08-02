@@ -17,7 +17,6 @@ tax_year: 2025
 last_updated: 2026-08-02
 review_status: pending_review
 category: payroll
-tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
