@@ -1,18 +1,28 @@
 ---
 name: australia-payroll
 description: >
-version: 1.0
+  Use this skill whenever asked about Australian payroll, PAYG withholding,
+  superannuation guarantee, Single Touch Payroll, or employer obligations in
+  Australia. Trigger on phrases like "PAYG", "pay as you go withholding",
+  "superannuation", "super guarantee", "STP", "Single Touch Payroll",
+  "STP Phase 2", "Medicare levy", "tax file number", "TFN declaration",
+  "HECS-HELP", "STSL", "Fair Work", "NES", "national employment standards",
+  "modern award", "payslip Australia", "ATO payroll", "BAS", "IAS",
+  "activity statement", "annual leave", "long service leave",
+  "minimum wage Australia", or any question about running payroll in Australia.
+  ALWAYS read this skill before processing any Australian payroll work.
+version: 2.0
 jurisdiction: AU
-tax_year: 2025
-last_updated: 2026-05-23
-verified_by: pending
-depends_on: - payroll-workflow-base
+tax_year: 2026
+tax_year_notes: "2026-27 (payday super regime; 15% second-bracket PAYG rate from 1 July 2026)"
+tier: 2
+last_updated: 2026-08-01
 category: payroll
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Australia Payroll
+# Australia -- Payroll Skill v2.0
 
 ## Australia -- Payroll Skill v1.0
 
@@ -32,25 +42,25 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Pay frequency | Weekly, fortnightly, monthly (fortnightly most common) |
 | Employer registration | ABN + PAYG withholding registration via ATO |
 | Validated by | Pending -- requires sign-off by an Australian CPA, CA, or registered tax agent |
-| Skill version | 1.0 |
+| Skill version | 2.0 |
 
 ## Section 2 -- Income Tax Withholding (PAYG)
 
 PAYG withholding is calculated per pay period using ATO tax tables (Schedule 1 -- NAT 1004) or the Statement of Formulas. The employer applies the appropriate coefficients based on weekly/fortnightly/monthly earnings.
 
-### Resident Individual Tax Rates (2025--26)
+### Resident Individual Tax Rates (2026--27)
 
 **Resident Individual Tax Rates (2025--26)**
 
 | Taxable Income (AUD) | Rate | Tax on This Income |
 | --- | --- | --- |
 | 0 -- 18,200 | 0% | Nil |
-| 18,201 -- 45,000 | 16% | 16c for each $1 over $18,200 |
-| 45,001 -- 135,000 | 30% | $4,288 plus 30c for each $1 over $45,000 |
-| 135,001 -- 190,000 | 37% | $31,288 plus 37c for each $1 over $135,000 |
-| 190,001+ | 45% | $51,638 plus 45c for each $1 over $190,000 |
+| 18,201 -- 45,000 | 15% | 15c for each $1 over $18,200 |
+| 45,001 -- 135,000 | 30% | $4,020 plus 30c for each $1 over $45,000 |
+| 135,001 -- 190,000 | 37% | $31,020 plus 37c for each $1 over $135,000 |
+| 190,001+ | 45% | $51,370 plus 45c for each $1 over $190,000 |
 
-- **Medicare levy exclusion** — These rates exclude the Medicare levy (2%).
+These rates **exclude** the Medicare levy (2%). From 1 July 2026 the rate on $18,201--$45,000 dropped from 16% to 15% (Treasury Laws Amendment (More Cost of Living Relief) Act 2025); it drops again to 14% from 1 July 2027.
 
 ### Medicare Levy
 
@@ -85,28 +95,39 @@ Australia does not have a separate employee social security contribution. The Me
 | --- | --- | --- | --- |
 | PAYG income tax | Progressive (see above) | No ceiling | Includes Medicare levy in tax tables |
 | STSL repayment | 1%--10% (income-based) | No ceiling | Only if employee has HELP/STSL debt |
-| Salary sacrifice (super) | Voluntary | Concessional cap $30,000/year | Pre-tax; reduces PAYG withholding base |
+| Salary sacrifice (super) | Voluntary | Concessional cap $32,500/year (2026-27) | Pre-tax; reduces PAYG withholding base |
 
 There is no employee-paid social insurance premium equivalent to NIC (UK) or social security tax (US).
 
-### Superannuation Guarantee (SG)
+---
 
-**Superannuation Guarantee (SG) parameters 2025-26**
+## Section 4 -- Social Security: Employer Contributions
 
-| Parameter | 2025--26 Value |
-| --- | --- |
-| SG rate | 12% of ordinary time earnings (OTE) |
-| Maximum contribution base | $62,500 per quarter for 2025-26; no annual MCB applies for SG through 30 Jun 2026 |
+### Superannuation Guarantee (SG) -- Payday Super from 1 July 2026
+
+| Parameter | 2026--27 Value |
+|---|---|
+| SG rate | 12% of qualifying earnings |
+| Maximum contribution base | $270,830 per year (ANNUAL, year-to-date basis; quarterly base abolished for earnings paid from 1 Jul 2026) |
 | Minimum earnings threshold | Abolished (no $450/month threshold from 1 Jul 2022) |
-| Payment frequency | Quarterly (28 days after quarter end) |
+| Payment deadline | Received by the employee's fund within **7 business days of each payday** (clearing house receipt does not count) |
 | Eligible employees | All employees 18+; under-18s working 30+ hours/week |
 
-- **SG quarterly due dates** — 28 October, 28 January, 28 April, 28 July.
-- **Final scheduled SG rate** — 12% is the final scheduled SG rate (reached 1 July 2025). No further increases are planned.
+**Deadline exceptions:** new employee / new fund -- 20 business days for the first contribution; out-of-cycle payments (bonuses) ride with the next regular payday's deadline; ATO exceptional-circumstances determinations -- 20 business days.
 
-### Superannuation Guarantee Charge (SGC)
+**Legacy:** quarterly due dates (28 Oct/28 Jan/28 Apr/28 Jul) apply only to earnings paid up to 30 June 2026; the final quarterly deadline was 28 July 2026. The ATO Small Business Super Clearing House closed permanently on 1 July 2026 -- small employers now use payroll-software super payments or commercial clearing houses.
 
-- **SGC requirements** — If SG is not paid in full by the quarterly deadline, the employer must lodge an SGC statement and pay: The shortfall amount (calculated on total salary/wages, not just OTE); Nominal interest (10% per annum); An administration fee ($20 per employee per quarter). SGC amounts are not tax-deductible.
+12% is the final scheduled SG rate (reached 1 July 2025). No further increases are planned.
+
+### Superannuation Guarantee Charge (SGC) -- redesigned from 1 July 2026
+
+For earnings paid from 1 July 2026, SGC is **ATO-assessed per payday** (no SGC statement is lodged; the ATO matches STP data against fund reporting). Components:
+- The final SG shortfall (12% of qualifying earnings unpaid)
+- Notional earnings (GIC-rate interest, compounding daily from the day after the deadline)
+- An administrative uplift (starts at 60% of shortfall + notional earnings; reduced for clean history and voluntary disclosure, to 0% if disclosed within 30 days with a clean 2-year record)
+- Choice loading (25%, capped at $1,200 per notice period) where choice-of-fund rules were breached
+
+The redesigned SGC **is tax-deductible** (GIC on late SGC and the late payment penalty are not). Old-regime SGC for quarters before 1 July 2026 remains non-deductible. Unpaid SGC 28 days after assessment triggers a Notice to Pay, then a 25% or 50% late payment penalty. First-year ATO approach: PCG 2026/1.
 
 ### Workers' Compensation Insurance
 
@@ -257,14 +278,12 @@ Not strictly required on payslips but must be provided to employees on request. 
 
 ### Superannuation Remittance
 
-**Superannuation Remittance**
+| Item | Detail |
+|---|---|
+| Payment deadline (earnings paid from 1 Jul 2026) | Received by the employee's fund within **7 business days of each payday** (clearing house receipt does not count) |
+| New employee / new fund | 20 business days for the first contribution |
 
-| Due Date | Quarter |
-| --- | --- |
-| 28 October | July -- September |
-| 28 January | October -- December |
-| 28 April | January -- March |
-| 28 July | April -- June |
+**Legacy:** quarterly due dates (28 Oct / 28 Jan / 28 Apr / 28 Jul) apply only to earnings paid up to 30 June 2026; the final quarterly deadline was 28 July 2026.
 
 ### Annual Obligations
 
@@ -282,8 +301,8 @@ Not strictly required on payslips but must be provided to employees on request. 
 **Penalties**
 
 | Violation | Consequence |
-| --- | --- |
-| Late SG payment | SGC: shortfall + 10% interest + $20/employee admin fee; not deductible |
+|---|---|
+| Late SG payment | SGC (ATO-assessed per payday): shortfall + notional earnings (GIC rate) + administrative uplift (up to 60%) + choice loading; deductible (the late payment penalty and GIC on unpaid SGC are not) -- see Section 4 |
 | Failure to withhold PAYG | Employer liable for amount that should have been withheld |
 | Late BAS/IAS lodgement | General interest charge (GIC) + potential failure-to-lodge penalty |
 | Payslip non-compliance | Up to $16,500 per contravention (individual); $82,500 (body corporate) |
@@ -295,9 +314,9 @@ Not strictly required on payslips but must be provided to employees on request. 
 Annual salary $85,000. Paid monthly. No STSL debt.
 
 1. Monthly gross: $85,000 ÷ 12 = $7,083.33
-2. PAYG withholding: per Schedule 1 tax table coefficients (~$1,420/month incl. Medicare)
-3. Super guarantee: $7,083.33 × 12% = $850.00 (employer cost, paid quarterly)
-4. Net pay: $7,083.33 - $1,420.00 - deductions
+2. PAYG withholding: per Schedule 1 tax table coefficients (~$1,475/month incl. Medicare, 2026-27 rates)
+3. Super guarantee: $7,083.33 × 12% = $850.00 (employer cost, received by the fund within 7 business days of the payday)
+4. Net pay: $7,083.33 - $1,475.00 - deductions
 
 ### Pattern 2 -- Casual Employee with Loading
 
@@ -314,7 +333,7 @@ Annual salary $120,000. Sacrifices $10,000/year to super.
 
 1. Taxable salary: $110,000 (reduced PAYG base)
 2. Employer SG: $120,000 × 12% = $14,400 (calculated on pre-sacrifice OTE)
-3. Concessional super cap: $30,000 (includes SG $14,400 + sacrifice $10,000 = $24,400; within cap)
+3. Concessional super cap: $32,500 (2026-27) (includes SG $14,400 + sacrifice $10,000 = $24,400; within cap)
 4. The $10,000 is taxed at 15% inside the super fund instead of the employee's marginal rate
 
 ### Pattern 4 -- STSL Repayment
