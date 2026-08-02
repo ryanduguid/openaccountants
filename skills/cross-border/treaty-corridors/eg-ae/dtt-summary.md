@@ -7,10 +7,10 @@ description: >
   "cross-border Egypt UAE", "Egypt United Arab Emirates withholding". ALWAYS read this
   skill before applying treaty rates.
 jurisdiction: EG-AE
-tax_year: 2025
+tax_year: 2026
 tier: 2
-last_updated: 2026-07-12
-version: 0.1
+last_updated: 2026-07-14
+version: 1.0
 depends_on:
   - eg-corporate-tax
   - eg-withholding-tax
@@ -60,6 +60,23 @@ verified_by: pending
 
 ## Article-by-Article Summary
 
+### Article 2: Taxes Covered
+
+- **Egypt:** Individual income tax (wages, commercial/industrial, professional, real estate), corporate income tax, withholding tax, additional percentage taxes
+- **UAE:** Corporate tax (Federal Decree-Law No. 47 of 2022, 9% from June 2023). UAE does not levy personal income tax. The treaty covers corporate tax but UAE's 0% personal income tax regime means the treaty is primarily relevant for corporate cross-border flows and WHT relief on Egyptian-source payments.
+- Note: The old 2002 treaty predated UAE corporate tax; the new treaty explicitly covers the UAE CT regime.
+
+### Article 4: Resident — Tie-Breaker Rules
+
+A dual-resident individual's status is determined in sequence:
+1. **Permanent home** — state where permanent home is available
+2. **Centre of vital interests** — if permanent home in both states, state with closer personal/economic relations
+3. **Habitual abode** — if centre of vital interests cannot be determined or no permanent home in either state
+4. **Nationality** — if habitual abode in both or neither state
+5. **Mutual agreement** — competent authorities settle if national of both or neither
+
+For companies, the primary tie-breaker is the place of effective management. This is particularly relevant for UAE free zone entities that may have management in Egypt — the competent authorities will determine residence based on where board decisions are effectively made.
+
 ### Article 5: Permanent Establishment (PE)
 
 The new treaty modernizes the PE definition with BEPS-aligned provisions:
@@ -71,10 +88,23 @@ The new treaty modernizes the PE definition with BEPS-aligned provisions:
 
 **Closely related enterprise:** An enterprise is closely related to another if one controls the other or both are under the same control. Control = owning directly/indirectly at least **50%** of beneficial interest. Protocol: states shall exchange information to identify closely related persons.
 
+### Article 6: Income from Immovable Property
+
+Source state may tax income from immovable property (including agriculture/forestry). Ships and aircraft are excluded. Applies to direct use, letting, and other use forms. Also applies to income from immovable property used for business or independent personal services.
+
 ### Article 7: Business Profits
 
 - No taxation in source country unless non-resident carries on business through PE
 - New rules on profit attribution to PEs (aligned with OECD Authorized OECD Approach)
+- Profits attributable to PE are taxable in source state; balance is taxable only in residence state
+
+### Article 8: Shipping and Air Transport
+
+Taxable only in state of effective management. If management aboard a ship, state of home harbor or operator's residence. This is significant for UAE-based shipping lines and airlines operating to Egyptian ports — profits from such operations are taxable only in UAE (where management is located), not in Egypt.
+
+### Article 9: Associated Enterprises
+
+Arm's length principle applies. Transfer pricing adjustments allowed with corresponding adjustments. If one enterprise adjusts profits based on arm's length pricing, the other state must make a corresponding adjustment. Time limit: no adjustment after 5 years from year-end (aligning with Egypt's TP decree timelines). Disputes may be resolved through MAP (Article 24/MLI Article 16).
 
 ### Article 10: Dividends — Key Changes
 
@@ -102,6 +132,18 @@ The new treaty modernizes the PE definition with BEPS-aligned provisions:
 - Exception: gains from immovable property (Art 13(1) — source state taxes)
 - Ships/aircraft (Art 13(3) — management state taxes)
 
+### Article 14: Independent Personal Services
+
+Taxable only in residence state unless:
+- (a) Fixed base regularly available in source state (only income attributable to base taxed), OR
+- (b) Stay in source state ≥183 days in any 12-month period (only income from activities in source state taxed)
+
+Includes: scientific, literary, artistic, educational, teaching activities, physicians, lawyers, engineers, architects, dentists, accountants. Relevant for UAE-based consultants providing services in Egypt — without a fixed base or 183-day presence, their income is taxable only in UAE (0% personal income tax).
+
+### Article 17: Artistes and Sportspersons
+
+Source state may tax income of artistes, musicians, actors, sportsmen from personal activities exercised therein, even if income accrues to another person. This overrides the 183-day threshold for employment income — any performance in the source state is taxable.
+
 ### Article 15: Dependent Personal Services (Employment)
 
 - 183-day threshold: source state may tax if employment exercised in source state ≥183 days in any 12-month period
@@ -124,6 +166,44 @@ Source state (where company is resident) may tax directors' fees.
 ### Article 21: Other Income
 
 - New clarification for immovable property effectively connected to PE
+- Items not dealt with in other articles: residence state may tax
+- If connected to PE/fixed base, Articles 7/14 apply instead
+
+### Article 20: Students and Trainees
+
+- Maintenance/education/training payments from sources outside host state: not taxed
+- Remuneration from services connected with education/training: not taxed in host state for up to 3 years
+
+### Article 22: Methods for Elimination of Double Taxation
+
+- **Credit method:** Egypt allows deduction for tax paid in UAE (including the 0% rate, meaning no credit) against Egyptian tax on the same income
+- **UAE approach:** UAE introduced Corporate Tax (9% from June 2023). Foreign tax credits for Egyptian tax suffered may be available under UAE CT law — verify against UAE Federal Decree-Law No. 47 of 2022 provisions
+- Previously (pre-2023), UAE had no income tax; the treaty operated as a one-way relief mechanism (preventing Egyptian WHT). Now that UAE has CT, the relief is more reciprocal
+
+### Article 24: Mutual Agreement Procedure (MAP)
+
+- Case must be presented within **3 years** from first notification (MLI modified)
+- Competent authorities endeavour to resolve by mutual agreement
+- Any agreement implemented notwithstanding domestic time limits
+- Competent authorities may consult on interpretation/application and for cases not provided for
+- No mandatory arbitration included in the treaty
+
+### Article 25: Exchange of Information
+
+- Information exchanged for tax assessment/collection/enforcement/prosecution/appeals
+- Treated as secret, disclosed only to relevant persons/authorities
+- Cannot require administrative measures at variance with domestic law/practices
+- Cannot require information not obtainable under normal administration
+- Cannot require disclosure of professional secret/trade process/contrary to public policy
+- Information must be obtained even if not needed for requesting state's own tax purposes
+- **UAE significance:** UAE FTA cooperates with ETA on cross-border tax information exchange, including for free zone entities
+
+### Article 29: Entry into Force
+
+- Entry into force: 19 April 2021 (entered into force)
+- Applies from 1 January 2022 for all taxes covered
+- WHT: applies to amounts paid on or after 1 January 2022
+- Other taxes: applies to taxable years beginning on or after 1 January 2022
 
 ### Article 28: Savings Clause for Hydrocarbons
 
@@ -216,6 +296,65 @@ The new treaty includes a standalone **Principal Purpose Test (PPT)** (Article 3
 9. **Government exemption removed:** The government/central bank exemption for interest has been removed from the new treaty. Government-owned entities that previously enjoyed 0% interest must now verify their position under the new treaty.
 
 10. **MLI effective dates:** MLI provisions apply to WHT from dates on or after 1 January 2021 (Egypt) / dates per UAE MLI position. Check whether MLI PPT or treaty PPT applies first depending on effective dates.
+
+---
+
+## Worked Examples
+
+### Example 1: Egyptian company paying dividends to UAE shareholder (post-2022 treaty)
+
+**Facts:** An Egyptian company (EG Co) distributes EGP 10,000,000 in dividends to its UAE parent company (UAE HoldCo), which holds 15% of EG Co's voting stock. UAE HoldCo has held the shares for 400 days including the dividend distribution date.
+
+**Analysis:**
+- New treaty Article 10: 5% rate applies if beneficial owner holds ≥10% of voting stock for 365 days including distribution date
+- UAE HoldCo holds 15% > 10% threshold AND 400 days > 365-day holding period → 5% rate applies
+- Egyptian domestic WHT: 10% (unlisted company)
+- Egypt applies treaty rate directly for dividends (unlike interest/royalties where pay-and-refund applies):
+  - WHT = EGP 10,000,000 × 5% = EGP 500,000 (treaty rate used directly)
+- Under the old treaty (pre-2022): 0% WHT — this is a **new cost** for UAE investors
+- UAE side: UAE HoldCo receives EGP 9,500,000. UAE CT at 9% applies if taxable income aggregate exceeds AED 375,000 threshold. Foreign tax credit for Egyptian WHT may be available under UAE CT law.
+
+### Example 2: Egyptian company paying interest to UAE bank (new treaty)
+
+**Facts:** An Egyptian company (EG Co) pays EGP 8,000,000 in interest to a UAE commercial bank (UAE Bank, not government-owned).
+
+**Analysis:**
+- New treaty Article 11: 10% rate in source state
+- Egyptian domestic WHT on interest: 20%
+- Pay-and-refund mechanism applies:
+  1. EG Co withholds 20% at source = EGP 1,600,000
+  2. UAE Bank files refund claim with ETA for 10% differential = EGP 800,000
+  3. Net WHT after refund = EGP 800,000 (10% treaty rate)
+- Under the old treaty: the rate was also 10%, but government-owned banks were exempt. Under the new treaty, the government exemption is removed — UAE government-owned entities (e.g., Emirates NBD with sovereign ownership) may now face the 10% WHT where they were previously exempt.
+
+### Example 3: UAE shareholder selling Egyptian company shares (new treaty)
+
+**Facts:** A UAE investment company (UAE Inv) sells shares in an Egyptian listed company for EGP 50,000,000. The shares were acquired for EGP 30,000,000 (gain = EGP 20,000,000). UAE Inv is the beneficial owner and has held the shares for 2 years.
+
+**Analysis:**
+- **Old treaty:** Residence state (UAE) had exclusive taxing rights → 0% Egyptian tax on the gain
+- **New treaty Article 13:** Source state (Egypt) may tax gains from alienation of shares
+- Egyptian tax = EGP 20,000,000 × 22.5% (CIT rate) = EGP 4,500,000
+- This is a **major change** — UAE investors must now budget for Egyptian CGT on share disposals
+- UAE CT side: Foreign tax credit for EGP 4,500,000 Egyptian tax against UAE CT on the same gain
+  - UAE CT = EGP 20,000,000 × 9% = EGP 1,800,000
+  - Since Egyptian tax (EGP 4.5M) > UAE CT (EGP 1.8M), no additional UAE tax is due, but the excess is not refundable
+  - Effective total tax rate = 22.5% (capped at Egyptian rate)
+
+### Example 4: Film & TV royalties — split rate under new treaty
+
+**Facts:** An Egyptian broadcasting company (EG Broadcast) pays AED 5,000,000 to a UAE media company (UAE Media) for: (a) AED 3,000,000 in software/know-how royalties, and (b) AED 2,000,000 in film & TV broadcasting rights.
+
+**Analysis:**
+- Software/know-how: Article 12 → 10% treaty rate (vs 20% domestic)
+- Film & TV: Article 12 → 15% treaty rate (vs 20% domestic) — **increased from 10% under old treaty**
+- Pay-and-refund:
+  1. EG Broadcast withholds 20% on total = AED 1,000,000
+  2. UAE Media files refund claims:
+     - Software/know-how refund: AED 3,000,000 × (20% - 10%) = AED 300,000
+     - Film/TV refund: AED 2,000,000 × (20% - 15%) = AED 100,000
+  3. Total refund = AED 400,000
+  4. Net WHT = AED 600,000 (AED 300,000 at 10% + AED 300,000 at 15%)
 
 ---
 

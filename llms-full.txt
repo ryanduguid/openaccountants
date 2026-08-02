@@ -130,7 +130,7 @@ https://www.openaccountants.com
 
 ========================================================================
 
-## Guide inventory (1905 guides, 243 jurisdictions, 270 accountant-reviewed)
+## Guide inventory (1899 guides, 243 jurisdictions, 45 accountant-reviewed)
 
 - us-1099-k-and-payment-processors | US | tier 2 | reviewed_by -
 - us-education-credits-8863 | US | tier 2 | reviewed_by -
