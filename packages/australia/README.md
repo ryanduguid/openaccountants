@@ -27,15 +27,16 @@
 20. `australia-payroll.md`
 21. `australia-tax-optimization.md`
 22. `australia-transfer-pricing.md`
-23. `references.md`
-24. `bookkeeping-workflow-base.md`
-25. `payroll-workflow-base.md`
-26. `company-formation-workflow-base.md`
-27. `financial-statements-workflow-base.md`
-28. `transfer-pricing-workflow-base.md`
-29. `crypto-tax-workflow-base.md`
-30. `australia-guided-intake.md`
-31. `australia-return-assembly.md`
+23. `leaving-australia-tax-residency-cgt.md`
+24. `references.md`
+25. `bookkeeping-workflow-base.md`
+26. `payroll-workflow-base.md`
+27. `company-formation-workflow-base.md`
+28. `financial-statements-workflow-base.md`
+29. `transfer-pricing-workflow-base.md`
+30. `crypto-tax-workflow-base.md`
+31. `australia-guided-intake.md`
+32. `australia-return-assembly.md`
 
 ## Also known as
 

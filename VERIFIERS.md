@@ -35,4 +35,4 @@ nightly from the platform — the site is the source of truth; edits here are ov
 | Justin Reslan | CPA - AC50847 | US-FL | 1 |
 | MUHAMMAD HANIS MAT HUSSIN | CA-53636 | MY | 1 |
 
-<sub>Updated 2026-08-03. Become one: https://www.openaccountants.com/for-accountants</sub>
+<sub>Updated 2026-08-04. Become one: https://www.openaccountants.com/for-accountants</sub>

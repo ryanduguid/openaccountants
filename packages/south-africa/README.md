@@ -7,14 +7,15 @@
 
 1. `foundation.md`
 2. `intake.md`
-3. `south-africa-transfer-pricing.md`
-4. `south-africa-vat.md`
-5. `za-capital-gains.md`
-6. `za-income-tax.md`
-7. `za-provisional-tax.md`
-8. `za-tax-residency.md`
-9. `za-vat-return.md`
-10. `transfer-pricing-workflow-base.md`
+3. `leaving-south-africa-tax-emigration.md`
+4. `south-africa-transfer-pricing.md`
+5. `south-africa-vat.md`
+6. `za-capital-gains.md`
+7. `za-income-tax.md`
+8. `za-provisional-tax.md`
+9. `za-tax-residency.md`
+10. `za-vat-return.md`
+11. `transfer-pricing-workflow-base.md`
 
 ## Also known as
 

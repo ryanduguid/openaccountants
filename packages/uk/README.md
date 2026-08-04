@@ -25,18 +25,20 @@
 18. `uk-statutory-residence-test.md`
 19. `uk-student-loan-repayment.md`
 20. `uk-tax-optimization.md`
-21. `uk-transfer-pricing.md`
-22. `uk-vat-return.md`
-23. `vat-returns-for-small-businesses-in-the-uk.md`
-24. `xero-uk-vat-close.md`
-25. `bookkeeping-workflow-base.md`
-26. `payroll-workflow-base.md`
-27. `company-formation-workflow-base.md`
-28. `financial-statements-workflow-base.md`
-29. `transfer-pricing-workflow-base.md`
-30. `crypto-tax-workflow-base.md`
-31. `uk-guided-intake.md`
-32. `uk-return-assembly.md`
+21. `uk-to-italy-flat-tax-relocation.md`
+22. `uk-to-uae-relocation-tax.md`
+23. `uk-transfer-pricing.md`
+24. `uk-vat-return.md`
+25. `vat-returns-for-small-businesses-in-the-uk.md`
+26. `xero-uk-vat-close.md`
+27. `bookkeeping-workflow-base.md`
+28. `payroll-workflow-base.md`
+29. `company-formation-workflow-base.md`
+30. `financial-statements-workflow-base.md`
+31. `transfer-pricing-workflow-base.md`
+32. `crypto-tax-workflow-base.md`
+33. `uk-guided-intake.md`
+34. `uk-return-assembly.md`
 
 ## Also known as
 

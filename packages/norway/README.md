@@ -15,7 +15,8 @@
 8. `no-tax-overview.md`
 9. `no-vat-return.md`
 10. `norway-mva.md`
-11. `company-formation-workflow-base.md`
+11. `norway-to-switzerland-wealth-tax-exit.md`
+12. `company-formation-workflow-base.md`
 
 ## Also known as
 

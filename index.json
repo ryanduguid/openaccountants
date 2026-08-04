@@ -1,7 +1,7 @@
 {
- "generated_at": "2026-08-03T08:10:56+00:00",
+ "generated_at": "2026-08-04T07:24:37+00:00",
  "counts": {
-  "guides": 1920,
+  "guides": 1931,
   "jurisdictions": 244,
   "accountant_reviewed": 270
  },
@@ -941,6 +941,18 @@
    "reviewed_by": "James Wallach",
    "tax_year": "2025",
    "last_updated": "2026-07-13"
+  },
+  {
+   "slug": "us-citizen-moving-abroad-tax",
+   "path": "skills/federal/us-citizen-moving-abroad-tax.md",
+   "name": "us-citizen-moving-abroad-tax",
+   "jurisdiction": "US",
+   "category": null,
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "tax_year": "2025",
+   "last_updated": "2026-08-03"
   },
   {
    "slug": "us-crypto-income-events",
@@ -2669,6 +2681,18 @@
    "reviewed_by": null,
    "tax_year": "2025",
    "last_updated": "2026-07-13"
+  },
+  {
+   "slug": "leaving-australia-tax-residency-cgt",
+   "path": "skills/international/australia/leaving-australia-tax-residency-cgt.md",
+   "name": "leaving-australia-tax-residency-cgt",
+   "jurisdiction": "AU",
+   "category": null,
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "tax_year": "2025",
+   "last_updated": "2026-08-03"
   },
   {
    "slug": "references",
@@ -5659,6 +5683,18 @@
    "last_updated": "2026-07-13"
   },
   {
+   "slug": "china-to-singapore-relocation-tax",
+   "path": "skills/international/china/china-to-singapore-relocation-tax.md",
+   "name": "china-to-singapore-relocation-tax",
+   "jurisdiction": "CN",
+   "category": null,
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "tax_year": "2025",
+   "last_updated": "2026-08-03"
+  },
+  {
    "slug": "china-vat",
    "path": "skills/international/china/china-vat.md",
    "name": "china-vat",
@@ -7951,6 +7987,18 @@
    "last_updated": "2026-07-13"
   },
   {
+   "slug": "leaving-france-exit-tax",
+   "path": "skills/international/france/leaving-france-exit-tax.md",
+   "name": "leaving-france-exit-tax",
+   "jurisdiction": "FR",
+   "category": null,
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "tax_year": "2025",
+   "last_updated": "2026-08-03"
+  },
+  {
    "slug": "references",
    "path": "skills/international/france/references.md",
    "name": "france-references",
@@ -8381,6 +8429,18 @@
    "reviewed_by": null,
    "tax_year": "2025",
    "last_updated": "2026-07-13"
+  },
+  {
+   "slug": "germany-to-switzerland-cross-border-tax",
+   "path": "skills/international/germany/germany-to-switzerland-cross-border-tax.md",
+   "name": "germany-to-switzerland-cross-border-tax",
+   "jurisdiction": "DE",
+   "category": null,
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "tax_year": "2025",
+   "last_updated": "2026-08-03"
   },
   {
    "slug": "germany-transfer-pricing",
@@ -9449,6 +9509,18 @@
    "reviewed_by": "Mayur Deokar",
    "tax_year": "2025",
    "last_updated": "2026-07-13"
+  },
+  {
+   "slug": "india-to-uae-singapore-nri-tax",
+   "path": "skills/international/india/india-to-uae-singapore-nri-tax.md",
+   "name": "india-to-uae-singapore-nri-tax",
+   "jurisdiction": "IN",
+   "category": null,
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "tax_year": "2025",
+   "last_updated": "2026-08-03"
   },
   {
    "slug": "india-transfer-pricing",
@@ -12439,6 +12511,18 @@
    "last_updated": "2026-07-13"
   },
   {
+   "slug": "moving-to-malta-tax-residence",
+   "path": "skills/international/malta/moving-to-malta-tax-residence.md",
+   "name": "moving-to-malta-tax-residence",
+   "jurisdiction": "MT",
+   "category": null,
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "tax_year": "2025",
+   "last_updated": "2026-08-03"
+  },
+  {
    "slug": "mt-capital-gains",
    "path": "skills/international/malta/mt-capital-gains.md",
    "name": "mt-capital-gains",
@@ -14333,6 +14417,18 @@
    "reviewed_by": null,
    "tax_year": "2025",
    "last_updated": "2026-07-13"
+  },
+  {
+   "slug": "norway-to-switzerland-wealth-tax-exit",
+   "path": "skills/international/norway/norway-to-switzerland-wealth-tax-exit.md",
+   "name": "norway-to-switzerland-wealth-tax-exit",
+   "jurisdiction": "NO",
+   "category": null,
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "tax_year": "2025",
+   "last_updated": "2026-08-03"
   },
   {
    "slug": "om-company-formation",
@@ -16735,6 +16831,18 @@
    "last_updated": "2026-07-13"
   },
   {
+   "slug": "leaving-south-africa-tax-emigration",
+   "path": "skills/international/south-africa/leaving-south-africa-tax-emigration.md",
+   "name": "leaving-south-africa-tax-emigration",
+   "jurisdiction": "ZA",
+   "category": null,
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "tax_year": "2025",
+   "last_updated": "2026-08-03"
+  },
+  {
    "slug": "south-africa-transfer-pricing",
    "path": "skills/international/south-africa/south-africa-transfer-pricing.md",
    "name": "south-africa-transfer-pricing",
@@ -18881,6 +18989,30 @@
    "reviewed_by": "James Power",
    "tax_year": "2025",
    "last_updated": "2026-07-13"
+  },
+  {
+   "slug": "uk-to-italy-flat-tax-relocation",
+   "path": "skills/international/uk/uk-to-italy-flat-tax-relocation.md",
+   "name": "uk-to-italy-flat-tax-relocation",
+   "jurisdiction": "GB",
+   "category": null,
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "tax_year": "2025",
+   "last_updated": "2026-08-03"
+  },
+  {
+   "slug": "uk-to-uae-relocation-tax",
+   "path": "skills/international/uk/uk-to-uae-relocation-tax.md",
+   "name": "uk-to-uae-relocation-tax",
+   "jurisdiction": "GB",
+   "category": null,
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "tax_year": "2025",
+   "last_updated": "2026-08-03"
   },
   {
    "slug": "uk-transfer-pricing",

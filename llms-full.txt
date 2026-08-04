@@ -130,7 +130,7 @@ https://www.openaccountants.com
 
 ========================================================================
 
-## Guide inventory (1920 guides, 244 jurisdictions, 270 accountant-reviewed)
+## Guide inventory (1931 guides, 244 jurisdictions, 270 accountant-reviewed)
 
 - us-1099-k-and-payment-processors | US | tier 2 | reviewed_by -
 - us-education-credits-8863 | US | tier 2 | reviewed_by -
@@ -210,6 +210,7 @@ https://www.openaccountants.com
 - no-sales-tax-states | US | tier 1 | reviewed_by James Wallach
 - us-1099-k-and-payment-processors | US | tier 2 | reviewed_by James Wallach
 - us-1099-nec-issuance | US | tier 1 | reviewed_by James Wallach
+- us-citizen-moving-abroad-tax | US | tier 2 | reviewed_by -
 - us-crypto-income-events | US | tier 1 | reviewed_by Christopher Aryee
 - us-crypto-reporting | US | tier 1 | reviewed_by Christopher Aryee
 - us-crypto-tax | US | tier 1 | reviewed_by James Wallach
@@ -354,6 +355,7 @@ https://www.openaccountants.com
 - australia-payroll | AU | tier 2 | reviewed_by -
 - australia-tax-optimization | AU | tier 2 | reviewed_by -
 - australia-transfer-pricing | AU | tier 2 | reviewed_by -
+- leaving-australia-tax-residency-cgt | AU | tier 2 | reviewed_by -
 - references | AU | tier 2 | reviewed_by -
 - at-company-formation | AT | tier 2 | reviewed_by -
 - at-corporate-income-tax | AT | tier 2 | reviewed_by -
@@ -603,6 +605,7 @@ https://www.openaccountants.com
 - cl-vat-return | CL | tier 2 | reviewed_by -
 - references | CL | tier 2 | reviewed_by -
 - china-pit | CN | tier 2 | reviewed_by -
+- china-to-singapore-relocation-tax | CN | tier 2 | reviewed_by -
 - china-vat | CN | tier 2 | reviewed_by -
 - cn-corporate-tax | CN | tier 2 | reviewed_by -
 - cn-fapiao-einvoice | CN | tier 2 | reviewed_by -
@@ -794,6 +797,7 @@ https://www.openaccountants.com
 - france-tax-optimization | FR | tier 2 | reviewed_by -
 - france-transfer-pricing | FR | tier 2 | reviewed_by -
 - france-vat-return | FR | tier 2 | reviewed_by -
+- leaving-france-exit-tax | FR | tier 2 | reviewed_by -
 - references | FR | tier 2 | reviewed_by -
 - ga-company-formation | GA | tier 2 | reviewed_by -
 - ga-corporate-income-tax | GA | tier 2 | reviewed_by -
@@ -830,6 +834,7 @@ https://www.openaccountants.com
 - germany-formation | DE | tier 2 | reviewed_by -
 - germany-payroll | DE | tier 2 | reviewed_by -
 - germany-tax-optimization | DE | tier 2 | reviewed_by -
+- germany-to-switzerland-cross-border-tax | DE | tier 2 | reviewed_by -
 - germany-transfer-pricing | DE | tier 2 | reviewed_by -
 - germany-vat-return | DE | tier 2 | reviewed_by -
 - references | DE | tier 2 | reviewed_by -
@@ -919,6 +924,7 @@ https://www.openaccountants.com
 - india-gst | IN | tier 1 | reviewed_by Mayur Deokar
 - india-payroll | IN | tier 1 | reviewed_by Mayur Deokar
 - india-tax-optimization | IN | tier 1 | reviewed_by Mayur Deokar
+- india-to-uae-singapore-nri-tax | IN | tier 2 | reviewed_by -
 - india-transfer-pricing | IN | tier 1 | reviewed_by Mayur Deokar
 - references | IN | tier 2 | reviewed_by -
 - id-bookkeeping | ID | tier 1 | reviewed_by RILIA PUTRI
@@ -1168,6 +1174,7 @@ https://www.openaccountants.com
 - malta-tax-optimization | MT | tier 2 | reviewed_by Michael Cutajar, CPA (Malta)
 - malta-transfer-pricing | MT | tier 2 | reviewed_by -
 - malta-vat-return | MT | tier 2 | reviewed_by Michael Cutajar, CPA (Malta)
+- moving-to-malta-tax-residence | MT | tier 2 | reviewed_by -
 - mt-capital-gains | MT | tier 2 | reviewed_by -
 - mt-crypto-tax | MT | tier 2 | reviewed_by -
 - mt-estimated-tax | MT | tier 2 | reviewed_by Michael Cutajar, CPA (Malta)
@@ -1326,6 +1333,7 @@ https://www.openaccountants.com
 - no-tax-overview | NO | tier 2 | reviewed_by -
 - no-vat-return | NO | tier 2 | reviewed_by -
 - norway-mva | NO | tier 2 | reviewed_by -
+- norway-to-switzerland-wealth-tax-exit | NO | tier 2 | reviewed_by -
 - om-company-formation | OM | tier 2 | reviewed_by -
 - om-corporate-income-tax | OM | tier 2 | reviewed_by -
 - om-income-tax | OM | tier 2 | reviewed_by -
@@ -1526,6 +1534,7 @@ https://www.openaccountants.com
 - so-payroll-social | SO | tier 2 | reviewed_by -
 - so-tax-overview | SO | tier 2 | reviewed_by -
 - so-vat-gst | SO | tier 2 | reviewed_by -
+- leaving-south-africa-tax-emigration | ZA | tier 2 | reviewed_by -
 - south-africa-transfer-pricing | ZA | tier 2 | reviewed_by Werner Britz
 - south-africa-vat | ZA | tier 1 | reviewed_by Werner Britz
 - za-capital-gains | ZA | tier 2 | reviewed_by Werner Britz
@@ -1705,6 +1714,8 @@ https://www.openaccountants.com
 - uk-statutory-residence-test | GB | tier 2 | reviewed_by -
 - uk-student-loan-repayment | GB | tier 1 | reviewed_by James Power
 - uk-tax-optimization | GB | tier 1 | reviewed_by James Power
+- uk-to-italy-flat-tax-relocation | GB | tier 2 | reviewed_by -
+- uk-to-uae-relocation-tax | GB | tier 2 | reviewed_by -
 - uk-transfer-pricing | GB | tier 1 | reviewed_by James Power
 - uk-vat-return | GB | tier 1 | reviewed_by James Power
 - vat-returns-for-small-businesses-in-the-uk | GB | tier 2 | reviewed_by -

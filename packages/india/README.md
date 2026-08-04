@@ -21,16 +21,17 @@
 14. `india-gst.md`
 15. `india-payroll.md`
 16. `india-tax-optimization.md`
-17. `india-transfer-pricing.md`
-18. `references.md`
-19. `einvoice-workflow-base.md`
-20. `payroll-workflow-base.md`
-21. `company-formation-workflow-base.md`
-22. `financial-statements-workflow-base.md`
-23. `transfer-pricing-workflow-base.md`
-24. `crypto-tax-workflow-base.md`
-25. `india-guided-intake.md`
-26. `india-return-assembly.md`
+17. `india-to-uae-singapore-nri-tax.md`
+18. `india-transfer-pricing.md`
+19. `references.md`
+20. `einvoice-workflow-base.md`
+21. `payroll-workflow-base.md`
+22. `company-formation-workflow-base.md`
+23. `financial-statements-workflow-base.md`
+24. `transfer-pricing-workflow-base.md`
+25. `crypto-tax-workflow-base.md`
+26. `india-guided-intake.md`
+27. `india-return-assembly.md`
 
 ## Also known as
 
