@@ -58,7 +58,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Late SPT filing (individual)** — IDR 100,000 fine  _(UU KUP Art. 7)_
 - **Late PPh 29 payment** — Monthly interest at MoF-published rate, max 24 months  _(UU KUP Art. 9(2a-b))_
 - **Failure after warning** — SKPKB jabatan + 50% surcharge  _(UU KUP Art. 13(3) as amended by UU HPP No. 7/2021)_
-- **PPh 21 credit** — Withholding by employers — bukti potong 1721-A1  _(UU PPh Art. 21)_
+- **PPh 21 credit** — BPA1 (formerly 1721-A1) — bukti pemotongan PPh Pasal 21 for permanent employees/periodic pensioners, per PER-11/PJ/2025  _([UU PPh Art. 21](https://www.pajak.go.id/en/node/118937))_
 - **PPh 22 credit** — Imports, government procurement — bukti pungut  _(UU PPh Art. 22)_
 - **PPh 23 credit** — Services, royalties, dividends — 2%/15%  _(UU PPh Art. 23)_
 - **PPh 24 credit** — Foreign tax — per-country cap, no carry-forward  _(UU PPh Art. 24)_

@@ -29,13 +29,13 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Luxury goods (PPnBM-listed) rate** — 12% on full DPP from 1 Feb 2025. Transitional 11/12 DPP in Jan 2025.  _(PMK 131/2024)_
 - **Export rate** — 0% on goods; qualifying exported services  _(UU PPN Art. 7(2))_
 - **PKP mandatory threshold** — IDR 4,800,000,000 annual turnover  _(UU PPN Art. 3A; PMK 197/2013)_
-- **SPT Masa PPN filing deadline** — Generally due within 20 days after the end of the tax period, subject to applicable VAT filing regulations and DJP administrative provisions.  _(UU KUP as amended by UU HPP No. 7/2021.)_
+- **SPT Masa PPN filing deadline** — SPT Masa PPN must be filed no later than the end of the following month after the tax period ends (akhir bulan berikutnya setelah berakhirnya Masa Pajak).  _([UU KUP as amended by UU HPP No. 7/2021.](https://www.pajak.go.id/en/node/34988))_
 - **PPN payment deadline** — PPN and PPnBM generally must be paid by the end of the month following the tax period and before the relevant SPT Masa PPN is submitted, subject to applicable VAT regulations.  _(UU KUP, PMK 81/2024 Article 94(3) as amended by PMK 01/2026; UU KUP as amended by UU HPP No. 7/2021.)_
 - **Faktur Pajak issuance** — Faktur Pajak generally must be issued at the time of taxable supply or in accordance with applicable VAT invoicing and electronic tax administration regulations.  _(PMK-151/PMK.03/2013, Indonesian VAT Law Article 13, PER-11/PJ/2025, and PMK 81/2024 as amended by PMK 01/2026.)_
 - **Input credit window** — Within 3 months of the tax period  _(UU PPN)_
 - **Late filing SPT Masa PPN** — IDR 500,000 per month  _(UU KUP Art. 7)_
 - **Late PPN payment** — 2% per month of unpaid tax  _(UU KUP Article 9(2a), Article 13(2))_
-- **Late Faktur Pajak** — 2% of DPP per Faktur  _(Indonesian VAT Law Article 14(4))_
+- **Late Faktur Pajak** — 1% of DPP per Faktur  _([Indonesian VAT Law Article 14(4)](https://www.pajak.go.id/en/node/101543))_
 - **Underpayment on audit** — 100% of underpaid tax  _(UU KUP Article 13(3), UU KUP as amended by UU HPP No. 7/2021.)_
 - **Basic food staples** — Basic food staples such as rice, corn, sago, soybeans, salt, fresh meat, eggs, milk, fruits, and vegetables  _(Indonesian VAT Law Article 4A as amended by UU HPP No. 7/2021)_
 - **Services exempt** — Medical, education, financial, insurance, employment, water supply  _(Indonesian VAT Law Article 4A as amended by UU HPP No. 7/2021, PMK 70/PMK.03/2022 Articles 3, 5–8)_
