@@ -24,8 +24,12 @@ concurrency:
   group: sync-mcp
   cancel-in-progress: false
 
+permissions: {}
+
 jobs:
   sync:
+    # A manual dispatch must still originate from the trusted default branch.
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     permissions:
       contents: read
