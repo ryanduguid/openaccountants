@@ -16,6 +16,16 @@ import asyncio
 import sys
 from pathlib import Path
 
+
+# The smoke test intentionally prints human-readable Unicode symbols.  GitHub
+# Actions is UTF-8, but a Windows console can still default to a legacy code
+# page; configure its text stream so a successful test cannot crash while
+# reporting its own result.
+try:
+    sys.stdout.reconfigure(encoding="utf-8")
+except (AttributeError, OSError):
+    pass
+
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 failures = 0

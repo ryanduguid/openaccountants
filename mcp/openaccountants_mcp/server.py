@@ -38,7 +38,7 @@ from __future__ import annotations
 import os
 import re
 from collections import Counter, defaultdict
-from datetime import datetime, timezone
+from datetime import date, datetime, timezone
 from functools import lru_cache
 from pathlib import Path
 from typing import Any
@@ -129,6 +129,27 @@ def _quality_tier(meta: dict[str, Any]) -> str:
     return "accountant-verified" if _real_verifier(meta) else "research-verified"
 
 
+def _declared_last_updated(meta: dict[str, Any]) -> str | None:
+    """Return the source's declared update date, never a local file timestamp.
+
+    Skill bundles can be extracted, copied, or installed long after their legal
+    content was reviewed.  Filesystem mtimes therefore describe the transport,
+    not the source.  PyYAML parses unquoted ISO dates as ``date`` objects, while
+    older bundles may retain them as strings, so accept both representations.
+    """
+    value = meta.get("last_updated")
+    if isinstance(value, datetime):
+        return value.date().isoformat()
+    if isinstance(value, date):
+        return value.isoformat()
+    if isinstance(value, str):
+        try:
+            return date.fromisoformat(value.strip()).isoformat()
+        except ValueError:
+            return None
+    return None
+
+
 def _split_sections(body: str) -> list[dict[str, Any]]:
     """Split markdown body into sections keyed by ATX headings."""
     sections: list[dict[str, Any]] = []
@@ -193,6 +214,9 @@ def _index() -> dict[str, dict[str, Any]]:
     dir_codes: dict[str, Counter] = defaultdict(Counter)
     for path in sorted(PACKAGES_DIR.rglob("*.md")):
         try:
+            stat = path.stat()
+            if stat.st_size > MAX_FILE_BYTES:
+                continue
             text = path.read_text(encoding="utf-8")
         except (OSError, UnicodeDecodeError):
             continue
@@ -204,7 +228,6 @@ def _index() -> dict[str, dict[str, Any]]:
         own = str(meta.get("jurisdiction") or "").strip().upper()
         if own:
             dir_codes[topdir][own] += 1
-        mtime = datetime.fromtimestamp(path.stat().st_mtime, tz=timezone.utc)
         rows.append({
             "slug": slug,
             "title": _first_h1(body) or slug,
@@ -213,7 +236,7 @@ def _index() -> dict[str, dict[str, Any]]:
             "category": str(meta.get("category") or ""),
             "quality_tier": _quality_tier(meta),
             "verified_by": _real_verifier(meta),
-            "last_updated": mtime.date().isoformat(),
+            "last_updated": _declared_last_updated(meta),
             "relpath": str(path.relative_to(PACKAGES_DIR)),
         })
 
