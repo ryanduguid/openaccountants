@@ -212,14 +212,33 @@ For contributors who'd rather iterate inside a container, the repo root ships a 
 
 ```bash
 docker build -t openaccountants-mcp .
-docker run --rm -p 8000:8000 openaccountants-mcp
+docker run --rm -p 127.0.0.1:8000:8000 -e MCP_HOST=0.0.0.0 openaccountants-mcp
 # Point an MCP client at http://localhost:8000/mcp
 ```
+
+The server itself defaults to the loopback address `127.0.0.1`. Docker's port
+forwarder reaches the container through its network interface, so the local-only
+Docker example above deliberately sets `MCP_HOST=0.0.0.0` **inside the container**
+while binding the published host port to `127.0.0.1`. That keeps the endpoint
+available only to local clients.
+
+Remote network binding is an explicit operator choice, not a default:
+
+```bash
+MCP_TRANSPORT=streamable-http MCP_HOST=0.0.0.0 openaccountants-mcp
+```
+
+This package does not add an authentication layer. Only use a non-loopback
+`MCP_HOST` behind an authenticated, TLS-terminating reverse proxy or equivalent
+network controls; do not publish the raw MCP endpoint directly to the internet.
 
 When fronted by a reverse proxy that strips an upstream path prefix (e.g. Caddy `uri strip_prefix /oamcp`), set `MCP_STREAMABLE_HTTP_PATH=/` so the endpoint mounts at the proxied root:
 
 ```bash
-docker run --rm -p 8000:8000 -e MCP_STREAMABLE_HTTP_PATH=/ openaccountants-mcp
+docker run --rm -p 127.0.0.1:8000:8000 \
+  -e MCP_HOST=0.0.0.0 \
+  -e MCP_STREAMABLE_HTTP_PATH=/ \
+  openaccountants-mcp
 ```
 
 The default stdio transport (`pip install ./mcp && openaccountants-mcp`) is unchanged.
@@ -230,7 +249,7 @@ The default stdio transport (`pip install ./mcp && openaccountants-mcp`) is unch
 |----------|---------|-------------|
 | `OPENACCOUNTANTS_ROOT` | Auto-detected repo root (parent of `mcp/`) | Path to your OpenAccountants checkout. The server reads `$OPENACCOUNTANTS_ROOT/packages/`. |
 | `MCP_TRANSPORT` | `stdio` | `stdio`, `streamable-http`, or `sse`. HTTP transports let remote MCP clients connect via a reverse proxy. |
-| `MCP_HOST` | `127.0.0.1` (stdio) / `0.0.0.0` (HTTP) | Bind host for HTTP transports. |
+| `MCP_HOST` | `127.0.0.1` | Bind host for HTTP transports. Set explicitly, for example to `0.0.0.0`, only when an authenticated reverse proxy or equivalent network boundary is intentionally exposing the service. |
 | `MCP_PORT` | `8000` | Bind port for HTTP transports. |
 | `MCP_STREAMABLE_HTTP_PATH` | `/mcp` | Path the Streamable-HTTP endpoint is mounted at. Set to `/` when behind a proxy that strips the upstream prefix. |
 

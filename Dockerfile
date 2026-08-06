@@ -4,14 +4,18 @@
 # connectors, ChatGPT, agents behind a reverse proxy, etc.) can connect over
 # HTTP instead of stdio.
 #
-# Usage:
+# Usage (local host only):
 #   docker build -t openaccountants-mcp .
-#   docker run --rm -p 8000:8000 openaccountants-mcp
-#   # then point an MCP client at http://localhost:8000/mcp
+#   docker run --rm -p 127.0.0.1:8000:8000 -e MCP_HOST=0.0.0.0 openaccountants-mcp
+#   # then point a local MCP client at http://localhost:8000/mcp
+#
+# The process defaults to 127.0.0.1. Docker port publishing needs an explicit
+# container-side MCP_HOST=0.0.0.0; the host-side 127.0.0.1 binding above keeps
+# that published port local. See mcp/README.md before exposing it remotely.
 #
 # Environment knobs (all optional, see mcp/openaccountants_mcp/server.py):
 #   MCP_TRANSPORT             stdio | streamable-http | sse   (default here: streamable-http)
-#   MCP_HOST                  bind host                       (default here: 0.0.0.0)
+#   MCP_HOST                  bind host                       (default here: 127.0.0.1)
 #   MCP_PORT                  bind port                       (default here: 8000)
 #   MCP_STREAMABLE_HTTP_PATH  mount path                      (default: /mcp;
 #                             set to "/" when fronted by a proxy that strips
@@ -31,7 +35,7 @@ COPY packages ./packages
 
 ENV OPENACCOUNTANTS_ROOT=/app \
     MCP_TRANSPORT=streamable-http \
-    MCP_HOST=0.0.0.0 \
+    MCP_HOST=127.0.0.1 \
     MCP_PORT=8000
 
 EXPOSE 8000
