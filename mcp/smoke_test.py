@@ -85,14 +85,14 @@ check("section shape", all(set(s) >= {"heading", "content", "level"} for s in se
 # --- start (onboarding) ---------------------------------------------------
 print("\nstart():")
 empty = S.start()
-check("no args → needs_input", empty["status"] == "needs_input", empty.get("status"))
+check("no args -> needs_input", empty["status"] == "needs_input", empty.get("status"))
 check("needs both fields", set(empty.get("needs", [])) == {"intent", "jurisdiction"},
       str(empty.get("needs")))
 check("available_intents non-empty", len(empty.get("available_intents", [])) >= 5)
 
 print("start(intent='taxes'):")
 intent_only = S.start(intent="taxes")
-check("intent only → needs jurisdiction", intent_only["status"] == "needs_input"
+check("intent only -> needs jurisdiction", intent_only["status"] == "needs_input"
       and intent_only.get("needs") == ["jurisdiction"], intent_only.get("status"))
 check("jurisdictions list non-empty", len(intent_only.get("available_jurisdictions", [])) > 10)
 check("MT is among the available jurisdictions",
@@ -100,14 +100,14 @@ check("MT is among the available jurisdictions",
 
 print("start(jurisdiction='MT'):")
 jx_only = S.start(jurisdiction="MT")
-check("jurisdiction only → needs intent",
+check("jurisdiction only -> needs intent",
       jx_only["status"] == "needs_input" and jx_only.get("needs") == ["intent"])
 check("MT has taxes intent available",
       any(i["key"] == "taxes" for i in jx_only.get("available_intents", [])))
 
 print("start(intent='taxes', jurisdiction='MT'):")
 ready = S.start(intent="taxes", jurisdiction="MT")
-check("both → ready", ready["status"] == "ready", ready.get("status"))
+check("both -> ready", ready["status"] == "ready", ready.get("status"))
 slugs = [s["slug"] for s in ready.get("skills_to_load", [])]
 check("skills_to_load non-empty", len(slugs) > 0, str(slugs))
 check("malta-income-tax in plan", "malta-income-tax" in slugs, str(slugs))
@@ -118,7 +118,7 @@ check("plan has guardrails", len(ready.get("guardrails", [])) >= 3)
 
 print("start(intent='set up a company', jurisdiction='MT'):")
 synonym = S.start(intent="set up a company", jurisdiction="MT")
-check("synonym 'set up a company' → formation plan",
+check("synonym 'set up a company' -> formation plan",
       synonym["status"] == "ready" and synonym.get("intent") == "formation",
       str(synonym.get("intent")))
 check("formation plan includes malta-formation",
@@ -126,7 +126,7 @@ check("formation plan includes malta-formation",
 
 print("start(intent='gibberish'):")
 gib = S.start(intent="gibberish")
-check("unmatched intent → needs_clarification",
+check("unmatched intent -> needs_clarification",
       gib["status"] == "needs_clarification", gib.get("status"))
 
 # --- submit_feedback ------------------------------------------------------
