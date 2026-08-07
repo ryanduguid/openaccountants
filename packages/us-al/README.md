@@ -58,7 +58,8 @@ This package contains **federal** tax skills (which apply to all US states) plus
 48. `global-router.md`
 49. `al-income-tax.md`
 50. `al-sales-tax.md`
-51. `alabama-sales-tax.md`
+51. `alabama-income-tax.md`
+52. `alabama-sales-tax.md`
 
 ## How to use
 

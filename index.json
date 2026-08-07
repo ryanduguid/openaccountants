@@ -1,7 +1,7 @@
 {
- "generated_at": "2026-08-06T07:17:07+00:00",
+ "generated_at": "2026-08-07T06:11:07+00:00",
  "counts": {
-  "guides": 1931,
+  "guides": 1932,
   "jurisdictions": 244,
   "accountant_reviewed": 270
  },
@@ -20717,6 +20717,18 @@
    "reviewed_by": null,
    "tax_year": "2025",
    "last_updated": "2026-07-13"
+  },
+  {
+   "slug": "alabama-income-tax",
+   "path": "skills/us-states/al/alabama-income-tax.md",
+   "name": "alabama-income-tax",
+   "jurisdiction": "US-AL",
+   "category": null,
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "tax_year": "2025",
+   "last_updated": "2026-08-06"
   },
   {
    "slug": "alabama-sales-tax",

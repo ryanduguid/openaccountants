@@ -130,7 +130,7 @@ https://www.openaccountants.com
 
 ========================================================================
 
-## Guide inventory (1931 guides, 244 jurisdictions, 270 accountant-reviewed)
+## Guide inventory (1932 guides, 244 jurisdictions, 270 accountant-reviewed)
 
 - us-1099-k-and-payment-processors | US | tier 2 | reviewed_by -
 - us-education-credits-8863 | US | tier 2 | reviewed_by -
@@ -1858,6 +1858,7 @@ https://www.openaccountants.com
 - ak-sales-tax | US-AK | tier 2 | reviewed_by -
 - al-income-tax | US-AL | tier 2 | reviewed_by -
 - al-sales-tax | US-AL | tier 2 | reviewed_by -
+- alabama-income-tax | US-AL | tier 2 | reviewed_by -
 - alabama-sales-tax | US-AL | tier 2 | reviewed_by -
 - ar-income-tax | US-AR | tier 2 | reviewed_by -
 - ar-sales-tax | US-AR | tier 2 | reviewed_by -
