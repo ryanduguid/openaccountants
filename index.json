@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-08-07T06:11:07+00:00",
+ "generated_at": "2026-08-08T05:37:52+00:00",
  "counts": {
   "guides": 1932,
   "jurisdictions": 244,
@@ -2495,7 +2495,7 @@
    "path": "skills/international/australia/au-gst-bas.md",
    "name": "au-gst-bas",
    "jurisdiction": "AU",
-   "category": null,
+   "category": "international",
    "tier": 2,
    "verified_by": null,
    "reviewed_by": null,
