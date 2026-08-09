@@ -81,6 +81,16 @@ class SyncWorkflowOrderingTests(unittest.TestCase):
                 self.assertNotIn(forbidden, deploy_text.lower())
 
 
+class WorkflowDependencyPinTests(unittest.TestCase):
+    def test_pyyaml_is_exactly_pinned_in_executed_workflows(self):
+        for workflow_name in ("validate.yml", "sync-mcp.yml"):
+            with self.subTest(workflow=workflow_name):
+                workflow_path = REPO_ROOT / ".github" / "workflows" / workflow_name
+                workflow_text = workflow_path.read_text(encoding="utf-8")
+                self.assertIn('"PyYAML==6.0.3"', workflow_text)
+                self.assertNotIn('"PyYAML>=', workflow_text)
+
+
 class ClaWorkflowSafetyTests(unittest.TestCase):
     def test_privileged_cla_job_runs_only_in_canonical_repository(self):
         workflow_path = REPO_ROOT / ".github" / "workflows" / "cla.yml"

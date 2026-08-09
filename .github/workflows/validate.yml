@@ -27,7 +27,7 @@ jobs:
         with:
           python-version: "3.11"
       - name: Install validation dependencies
-        run: python3 -m pip install --disable-pip-version-check "mcp==1.28.1" "PyYAML>=6.0,<7" "uv==0.12.2"
+        run: python3 -m pip install --disable-pip-version-check "mcp==1.28.1" "PyYAML==6.0.3" "uv==0.12.2"
       - name: Verify the locked dependency graph
         run: uv lock --check --project mcp
       - name: Validate guides
