@@ -8,7 +8,9 @@
 #      the "CLA Assistant" status check REQUIRED. (Not enabled automatically —
 #      that would also block direct pushes to main.)
 #
-# Until contributors sign, this workflow intentionally fails the PR check.
+# Fork-internal pull requests do not own or update canonical CLA state. The job
+# runs only in openaccountants/openaccountants, including for PRs raised there
+# from forks. Until contributors sign, it intentionally fails that PR check.
 # Contributors accept the CLA by commenting
 # "I have read the CLA Document and I hereby sign the CLA" on their PR, or by
 # ticking the CLA box in the pull request template (see CLA.md).
@@ -32,12 +34,13 @@ jobs:
   cla:
     name: Verify CLA acceptance
     if: >-
-      (github.event_name == 'pull_request_target' &&
-       (github.event.action != 'closed' || github.event.pull_request.merged == true)) ||
-      (github.event_name == 'issue_comment' &&
-       github.event.issue.pull_request && github.event.issue.state == 'open' &&
-       (github.event.comment.body == 'recheck' ||
-        github.event.comment.body == 'I have read the CLA Document and I hereby sign the CLA'))
+      github.repository == 'openaccountants/openaccountants' &&
+      ((github.event_name == 'pull_request_target' &&
+        (github.event.action != 'closed' || github.event.pull_request.merged == true)) ||
+       (github.event_name == 'issue_comment' &&
+        github.event.issue.pull_request && github.event.issue.state == 'open' &&
+        (github.event.comment.body == 'recheck' ||
+         github.event.comment.body == 'I have read the CLA Document and I hereby sign the CLA')))
     runs-on: ubuntu-latest
     timeout-minutes: 10
     permissions:

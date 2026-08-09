@@ -81,5 +81,17 @@ class SyncWorkflowOrderingTests(unittest.TestCase):
                 self.assertNotIn(forbidden, deploy_text.lower())
 
 
+class ClaWorkflowSafetyTests(unittest.TestCase):
+    def test_privileged_cla_job_runs_only_in_canonical_repository(self):
+        workflow_path = REPO_ROOT / ".github" / "workflows" / "cla.yml"
+        workflow = yaml.load(
+            workflow_path.read_text(encoding="utf-8"), Loader=yaml.BaseLoader
+        )
+        job_condition = workflow["jobs"]["cla"]["if"]
+        self.assertIn(
+            "github.repository == 'openaccountants/openaccountants'", job_condition
+        )
+
+
 if __name__ == "__main__":
     unittest.main()
