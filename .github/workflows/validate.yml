@@ -70,3 +70,55 @@ jobs:
           )
       - name: Smoke-test the supported MCP minimum
         run: python3 mcp/smoke_test.py
+
+  codeql-branch-verification:
+    name: CodeQL branch verification (${{ matrix.language }})
+    if: github.event_name == 'pull_request'
+    needs: validate
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        language: [javascript-typescript, python]
+
+    steps:
+      - name: Checkout audited branch
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+        with:
+          persist-credentials: false
+
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@5595ccaf912efad79be6eef63a5619ff05969be3 # v4.37.6
+        with:
+          languages: ${{ matrix.language }}
+          build-mode: none
+
+      - name: Analyze without replacing default setup
+        uses: github/codeql-action/analyze@5595ccaf912efad79be6eef63a5619ff05969be3 # v4.37.6
+        with:
+          category: /branch-verification:${{ matrix.language }}
+          output: codeql-results
+          upload: never
+
+      - name: Require a clean CodeQL result set
+        shell: bash
+        run: |
+          shopt -s nullglob
+          sarif_files=(codeql-results/*.sarif)
+          if (( ${#sarif_files[@]} == 0 )); then
+            echo "CodeQL did not produce a SARIF result." >&2
+            exit 1
+          fi
+          result_count="$(jq -s '[.[].runs[]?.results[]?] | length' "${sarif_files[@]}")"
+          echo "CodeQL findings: ${result_count}"
+          test "${result_count}" -eq 0
+
+      - name: Retain CodeQL evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: codeql-${{ matrix.language }}-${{ github.run_id }}
+          path: codeql-results
+          if-no-files-found: error
+          retention-days: 14
