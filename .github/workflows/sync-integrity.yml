@@ -1,0 +1,58 @@
+name: Sync Integrity
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  unit-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Run sync-integrity tests
+        run: python3 -m unittest discover -s tests -p "test_sync_integrity.py" -v
+
+  compare:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Audit source-guide changes
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          PR_BASE: ${{ github.event.pull_request.base.sha }}
+          PR_HEAD: ${{ github.event.pull_request.head.sha }}
+          PUSH_BASE: ${{ github.event.before }}
+          PUSH_HEAD: ${{ github.sha }}
+        run: |
+          if [ "$EVENT_NAME" = "pull_request" ]; then
+            MERGE_BASE=$(git merge-base "$PR_BASE" "$PR_HEAD")
+            python3 scripts/check-sync-integrity.py \
+              --base "$MERGE_BASE" \
+              --head "$PR_HEAD" \
+              --mode audit
+          elif [ "$PUSH_BASE" = "0000000000000000000000000000000000000000" ]; then
+            echo "Initial branch push has no base revision; unit tests still ran."
+          else
+            # This is a last-resort alarm after main changed. Prevention belongs
+            # in the platform's CAS preflight and protected PR publication flow.
+            python3 scripts/check-sync-integrity.py \
+              --base "$PUSH_BASE" \
+              --head "$PUSH_HEAD" \
+              --mode audit \
+              --strict-metadata
+          fi

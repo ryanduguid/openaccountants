@@ -1,4 +1,4 @@
-# Every PR requires review from the core team
+# Core-team review is requested for every PR
 * @michaelcutajar1995
 
 # Skills changes require review
@@ -8,3 +8,9 @@
 # Foundation and orchestration changes are critical
 /skills/foundation/ @michaelcutajar1995
 /skills/orchestrator/ @michaelcutajar1995
+
+# Sync-integrity controls are owned by the core team
+/scripts/check-sync-integrity.py @michaelcutajar1995
+/tests/test_sync_integrity.py @michaelcutajar1995
+/.github/workflows/sync-integrity.yml @michaelcutajar1995
+/docs/WEBSITE-SYNC.md @michaelcutajar1995
