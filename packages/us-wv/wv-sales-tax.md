@@ -2,10 +2,14 @@
 name: wv-sales-tax
 description: Use this skill whenever asked about West Virginia sales tax, WV use tax, West Virginia Tax Division filing, West Virginia SaaS tax, West Virginia service taxation, or West Virginia sales tax compliance. Trigger on phrases like "West Virginia sales tax", "WV sales tax", "W.Va. Code §11-15", "WV Tax Division", "West Virginia SaaS", "West Virginia SST", or any request involving West Virginia state and local sales and use tax compliance. ALWAYS load us-sales-tax first for federal context.
 jurisdiction: US-WV
+tier: 2
+last_updated: 2026-06-12
 validation_status: ai-drafted-q3
 ---
 
 # West Virginia Sales and Use Tax Skill
+
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 ---
 
@@ -181,7 +185,6 @@ Exemptions identified in Step 2 above are the primary deductibility rules for We
 - **Manufacturing exemptions:** Where applicable per Step 2. [T2]
 
 All exemption certificates must be collected at or before the time of sale and retained per the state's statute of limitations. [T1]
-
 
 ---
 

@@ -10,11 +10,15 @@ description: >
   before advising on any Spanish tax optimization strategy.
 version: 1.0
 jurisdiction: ES
+tier: 2
+last_updated: 2026-06-12
 category: tax-optimization
 depends_on: []
 ---
 
 # Spain Tax Optimization -- Self-Employed (Autónomo) Skill v1.0
+
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 ---
 

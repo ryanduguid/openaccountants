@@ -1,5 +1,5 @@
 ---
-description: Source-cited tax guide for US-NV: nv commerce and mbt. Unverified draft, pending local-accountant review.
+description: 'Source-cited tax guide for US-NV: nv commerce and mbt. Unverified draft, pending local-accountant review.'
 name: nv-commerce-and-mbt
 jurisdiction: US-NV
 domain: state-tax

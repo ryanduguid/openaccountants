@@ -10,11 +10,13 @@
 3. `new-zealand-crypto-tax.md`
 4. `new-zealand-gst.md`
 5. `nz-acc-levies.md`
-6. `nz-gst-return.md`
-7. `nz-income-tax-ir3.md`
-8. `nz-provisional-tax.md`
-9. `references.md`
-10. `crypto-tax-workflow-base.md`
+6. `nz-capital-gains.md`
+7. `nz-gst-return.md`
+8. `nz-income-tax-ir3.md`
+9. `nz-provisional-tax.md`
+10. `nz-tax-residency.md`
+11. `references.md`
+12. `crypto-tax-workflow-base.md`
 
 ## Also known as
 

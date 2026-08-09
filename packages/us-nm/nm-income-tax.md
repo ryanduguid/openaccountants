@@ -5,11 +5,15 @@ description: >
   self-employed / sole proprietors. Trigger on phrases like "New Mexico income tax",
   "NM income tax", "Form PIT-1", "NM Taxation and Revenue", "NM self-employment tax".
 jurisdiction: US-NM
+tier: 2
+last_updated: 2026-06-12
 version: "0.1"
 validation_status: ai-drafted-q3
 ---
 
 # New Mexico Individual Income Tax Skill — Self-Employed / Sole Proprietor
+
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 > **Scope.** This skill covers New Mexico Form PIT-1 (Personal Income Tax Return)
 > for full-year NM residents who are sole proprietors or single-member LLC owners.

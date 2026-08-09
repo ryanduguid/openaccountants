@@ -2,9 +2,14 @@
 name: us-sole-prop-bookkeeping
 description: Tier 2 content skill for classifying business transactions into US federal Schedule C (Form 1040) line items for sole proprietors and single-member LLCs disregarded for federal tax. Covers tax year 2025 under OBBBA (P.L. 119-21) with post-OBBBA depreciation rules, permanent QBI framework, and new tip/overtime/auto loan interest deductions. Handles Schedule C Parts I-V, the §162 ordinary and necessary standard, §263 capitalization, §280A home office, §280F vehicle and listed property, §274 substantiation and meals, §168(k) bonus depreciation cutoff at January 19 2025, §179 expensing, §471(c) small business inventory exception, §183 hobby loss, and §6001 / §274(d) recordkeeping. Defers Schedule C net profit, Schedule SE, QBI, retirement contributions, and quarterly estimated tax to companion content skills. MUST be loaded alongside us-tax-workflow-base v0.1 or later. Federal only. No state tax.
 version: 2.0
+jurisdiction: US
+tier: 2
+last_updated: 2026-07-05
 ---
 
 # US Sole Prop Bookkeeping Skill v2.0
+
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 ## Section 1 — Quick reference
 
@@ -293,7 +298,7 @@ This is the deterministic pre-classifier. When a transaction's counterparty matc
 | Pattern | Treatment | Line | Notes |
 |---|---|---|---|
 | IRS, UNITED STATES TREASURY, EFTPS, US TREASURY | EXCLUDE | — | Federal tax payments (income tax, SE tax, estimated tax) are NOT deductible on Schedule C. They are personal tax obligations. |
-| FTB, FRANCHISE TAX BOARD (CA) | EXCLUDE | — | State income tax payments — personal, not Schedule C. May be deductible on Schedule A (SALT, subject to $10K cap). |
+| FTB, FRANCHISE TAX BOARD (CA) | EXCLUDE | — | State income tax payments — personal, not Schedule C. May be deductible on Schedule A (SALT cap $40,000 for 2025 under OBBBA §70120, with a 30% phase-down above $500K MAGI, never below $10,000; reverts to $10,000 after 2029). |
 | EDD, EMPLOYMENT DEVELOPMENT (CA) | EXCLUDE from Schedule C OR Line 23 | — or 23 | State unemployment tax (employer portion) → Line 23. Personal income tax withholding → EXCLUDE. |
 | STATE TAX PAYMENT, STATE ESTIMATED TAX | EXCLUDE | — | Personal state income tax, not Schedule C |
 | BUSINESS LICENSE, CITY LICENSE, COUNTY LICENSE | Line 23 Taxes and licenses | 23 | Business license fees and permits |
@@ -840,7 +845,6 @@ The workflow in `us-tax-workflow-base` mandates inferring the client profile fro
 
 This skill is incomplete without the companion workflow file loaded alongside it: `us-tax-workflow-base` v0.1 or later (Tier 1, workflow architecture). Do not attempt to produce a Schedule C working paper without the base loaded.
 
-
 ---
 
 ## Disclaimer
@@ -848,6 +852,10 @@ This skill is incomplete without the companion workflow file loaded alongside it
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, EA, tax attorney, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
 
 The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
+
+
+## Changelog
+- **2026-07-05** — SALT deduction cap updated to $40,000 for 2025 (OBBBA §70120) from the stale $10,000.
 
 ---
 

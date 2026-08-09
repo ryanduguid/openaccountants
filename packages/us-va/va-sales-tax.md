@@ -2,10 +2,14 @@
 name: va-sales-tax
 description: Use this skill whenever asked about Virginia sales tax, Virginia use tax, Virginia sales tax nexus, Virginia sales tax returns, Virginia exemption certificates, taxability of goods or services in Virginia, or any request involving Virginia state-level consumption taxes. Trigger on phrases like "Virginia sales tax", "VA sales tax", "Virginia use tax", "Virginia nexus", "Va. Code 58.1-603", "Virginia Tax Department", or any request involving Virginia sales and use tax filing, classification, or compliance. ALWAYS read the parent us-sales-tax skill first for federal context, then layer this Virginia-specific skill on top.
 jurisdiction: US-VA
+tier: 2
+last_updated: 2026-06-12
 validation_status: ai-drafted-q3
 ---
 
 # Virginia Sales and Use Tax Skill
+
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 ---
 
@@ -261,7 +265,6 @@ Virginia relieves sellers of liability when they accept exemption certificates i
 Exemption certificates must be retained for **3 years** from the date of the last sale made under the certificate. [T1]
 
 ---
-
 
 ### 6.1 When Use Tax Applies
 

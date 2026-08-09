@@ -3,13 +3,18 @@ name: bangladesh-pit
 description: Use this skill whenever asked to prepare, review, or classify transactions for Bangladesh Personal Income Tax, annual return filing with NBR, or advise on Bangladeshi income tax slabs, exemptions, and investment rebates. Trigger on phrases like "আয়কর", "income tax Bangladesh", "NBR", "TIN", "salary tax BD", or any Bangladesh personal tax request. ALWAYS read this skill before touching any Bangladesh PIT work.
 version: 1.0
 jurisdiction: BD
-tax_year: 2024-25
+tax_year: 2024
+tax_year_notes: "2024-25"
+tier: 2
+last_updated: 2026-07-04
 category: international
 depends_on:
   - foundation
 ---
 
 # Bangladesh Personal Income Tax (আয়কর) Skill v1.0
+
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 ---
 

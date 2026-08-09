@@ -7,7 +7,24 @@
 
 1. `foundation.md`
 2. `intake.md`
-3. `russia-vat.md`
+3. `ru-bookkeeping.md`
+4. `ru-crypto-tax.md`
+5. `ru-einvoice.md`
+6. `ru-financial-statements.md`
+7. `ru-formation.md`
+8. `ru-income-tax.md`
+9. `ru-payroll.md`
+10. `ru-self-employed-npd.md`
+11. `ru-social-contributions.md`
+12. `ru-tax-optimization.md`
+13. `ru-usn.md`
+14. `russia-vat.md`
+15. `bookkeeping-workflow-base.md`
+16. `einvoice-workflow-base.md`
+17. `payroll-workflow-base.md`
+18. `company-formation-workflow-base.md`
+19. `financial-statements-workflow-base.md`
+20. `crypto-tax-workflow-base.md`
 
 ## Also known as
 
@@ -30,17 +47,17 @@ The AI will:
 - Ask onboarding questions to confirm your situation
 - Load the right domain skills (tax, bookkeeping, payroll, etc.)
 - Produce working papers for each obligation
-- Flag anything that needs your qualified tax professional's attention
+- Flag anything that needs your tax professional's attention
 
 ## Important
 
-**This is not tax, legal, or financial advice.** Everything produced must be reviewed and signed off by a qualified qualified tax professional before filing or acting upon.
+**This is not tax, legal, or financial advice.** Everything produced must be reviewed and signed off by a qualified tax professional before filing or acting upon.
 
 The most up-to-date, verified version of these skills is maintained at [openaccountants.com](https://www.openaccountants.com).
 
 ---
 
-## Are you a qualified tax professional?
+## Are you a tax professional?
 
 These Russia tax skills need your eye. Every rate, threshold, and form reference was AI-drafted and needs a human professional to verify it.
 

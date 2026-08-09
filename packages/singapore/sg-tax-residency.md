@@ -1,0 +1,140 @@
+---
+name: sg-tax-residency
+description: >
+  Use this skill for any question about Singapore tax residency. Trigger on: "Singapore tax resident", "SG residency 183 days", "move to Singapore tax", "Singapore non-resident tax rate", "Employment Pass Singapore tax", "Singapore PR taxes", "Singapore foreigner income tax", "SG territorial taxation". Covers residency tests, resident vs non-resident rates, territorial taxation, and foreign income exemption.
+version: 1.0
+jurisdiction: SG
+tax_year: 2025
+tier: 2
+last_updated: 2026-06-12
+category: international
+---
+
+# Singapore — Tax Residency & Territorial Taxation — Skill v1.0
+
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
+---
+
+## Section 1 — Quick Reference
+
+| Field | Value |
+|---|---|
+| Country | Singapore |
+| Tax system | Territorial — Singapore-sourced income only |
+| Capital gains tax | **None** — Singapore has no CGT |
+| Residency test | 183+ days physical presence in calendar year |
+| Resident individual top rate | 24% (marginal, from YA 2024) |
+| Non-resident rate | 15% flat on employment income or 22% (higher of) |
+| Primary legislation | Income Tax Act 1947 (Cap. 134) |
+| Tax authority | Inland Revenue Authority of Singapore (iras.gov.sg) |
+| Verified by | Pending — Singapore tax adviser sign-off required |
+
+---
+
+## Section 2 — Tax Residency Tests
+
+An individual is a **Singapore tax resident** for a Year of Assessment (YA) if:
+
+1. **183+ days**: Physically present in Singapore for 183 days or more during the preceding calendar year, OR
+
+2. **Employment**: In continuous employment in Singapore for an uninterrupted period spanning 3 consecutive calendar years (including the immediate preceding year and following year), OR
+
+3. **Permanent resident**: A Singapore Permanent Resident (PR) who has established a "permanent home" in Singapore
+
+**Key point**: Singapore uses a calendar-year basis for presence, but tax is assessed in the following year (e.g. income earned Jan-Dec 2024 is assessed in YA 2025).
+
+---
+
+## Section 3 — Territorial Taxation: The Key Feature
+
+Singapore taxes on a **source** basis, not a worldwide basis. This means:
+
+| Income type | Taxed in Singapore? |
+|---|---|
+| Income from Singapore employment | Yes |
+| Business income from Singapore | Yes |
+| Dividends from Singapore companies (one-tier) | **Exempt** (already taxed at company level) |
+| Foreign-source income (dividends, interest, profits) remitted to Singapore | **Generally exempt** (since 2004) |
+| Capital gains | **No CGT at all** — see sg-zero-cgt |
+| Rental income from Singapore property | Yes |
+| Rental income from overseas property | Generally exempt (foreign-source) |
+
+**Foreign income exemption**: since 1 Jan 2004, foreign-sourced dividends, branch profits, and service income remitted to Singapore are **exempt from tax**, provided they were subject to tax in the source country (headline rate ≥ 15%).
+
+---
+
+## Section 4 — Tax Rates: Resident vs Non-Resident
+
+**Resident rates (YA 2024+):**
+
+| Chargeable income (SGD) | Rate |
+|---|---|
+| First 20,000 | 0% |
+| 20,001 – 30,000 | 2% |
+| 30,001 – 40,000 | 3.5% |
+| 40,001 – 80,000 | 7% |
+| 80,001 – 120,000 | 11.5% |
+| 120,001 – 160,000 | 15% |
+| 160,001 – 200,000 | 18% |
+| 200,001 – 240,000 | 19% |
+| 240,001 – 280,000 | 19.5% |
+| 280,001 – 320,000 | 20% |
+| Above 320,000 | **24%** |
+
+**Non-resident rates:**
+- Employment income: 15% or progressive resident rates, whichever is higher
+- Director fees: 24%
+- Other income (interest, royalties): 24%
+
+---
+
+## Section 5 — Key Employment Passes
+
+| Pass | Who for | Tax residency impact |
+|---|---|---|
+| Employment Pass (EP) | Foreign professionals, salary ≥ SGD 5,000/month | Resident if 183+ days |
+| S Pass | Mid-level skills, salary ≥ SGD 3,150 | Resident if 183+ days |
+| Personalised Employment Pass | High earners (fixed 3 years) | Resident if 183+ days |
+| EntrePass | Entrepreneurs | Resident if 183+ days |
+| Permanent Resident | Indefinite | Resident once PR established |
+
+---
+
+## Section 6 — Sources
+
+- Income Tax Act 1947, Sections 2, 10, 13 (exemptions)
+- IRAS: iras.gov.sg/taxes/individual-income-tax/basics-of-individual-income-tax/tax-residency-and-tax-rates
+
+> **Working paper only.** Have a qualified Singapore tax adviser review.
+
+---
+
+<!-- openaccountants-cta-block -->
+
+## Talk to a verified accountant
+
+This skill is a tool, not an engagement. Every taxpayer's situation is
+different, and the rules in the skill may not match your specific facts.
+
+To speak with one of the licensed accountants who verifies skills for your
+jurisdiction — **no liability on either side until you and the accountant sign
+a formal engagement letter** — book a free 30-minute call:
+
+**→ [Book a call](https://calendly.com/openaccountants-info/30min)**
+
+We'll route you to the named verifier covering your country or state. You can
+also see the full list of verified accountants at
+[openaccountants.com/network](https://www.openaccountants.com/network).
+
+<!-- openaccountants-mcp-cta -->
+
+## The accountant-verified version lives in the connector
+
+This file is the open, **research-grade draft**. The **accountant-verified**
+version of this skill is **not published to GitHub** — it is delivered free
+through the OpenAccountants MCP connector, where your AI agent loads the
+verified rules together with the name of the accountant who signed them off.
+
+**→ Install the free connector:** <https://www.openaccountants.com/connect>
+**MCP endpoint:** `https://www.openaccountants.com/api/mcp`

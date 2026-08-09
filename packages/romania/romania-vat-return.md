@@ -1,9 +1,14 @@
 ---
 name: romania-vat-return
 description: Use this skill whenever asked to prepare, review, or create a Romania VAT return (Declaratia 300 / D300 form) for any client. Trigger on phrases like "prepare VAT return", "do the VAT", "fill in D300", "create the return", "Romanian VAT", "TVA", or any request involving Romania VAT filing. Also trigger when classifying transactions for VAT purposes from bank statements, invoices, or other source data. This skill contains the complete Romania VAT classification rules, box mappings, deductibility rules, reverse charge treatment, SAF-T obligations, e-invoicing (RO e-Factura), and filing deadlines required to produce a correct return. ALWAYS read this skill before touching any Romanian VAT-related work.
+jurisdiction: RO
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # Romania VAT Return Preparation Skill
+
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 ---
 
@@ -704,7 +709,6 @@ This skill does not compute income tax. The following is reference information o
 This skill covers Romania's VAT system based on the Fiscal Code (Law 227/2015) as amended by OUG 59/2025. Key distinctive features include: the August 2025 rate changes (19% to 21%, 9%/5% consolidation to 11%), the RO e-Factura mandatory e-invoicing system, SAF-T (D406) reporting, the vehicle 50% rule, entertainment deductibility for TVA purposes, pre-filled returns (RO e-TVA), and ANAF's active cancellation of non-compliant VAT registrations. Validation by a qualified Romanian consultant fiscal or expert contabil is required before production use.
 
 **A skill may not be published without sign-off from a qualified practitioner in the relevant jurisdiction.**
-
 
 ---
 

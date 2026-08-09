@@ -4,6 +4,8 @@ description: >
   Use this skill whenever asked about UK Payments on Account (POA) for Self Assessment taxpayers. Trigger on phrases like "payments on account", "POA", "POA 2026", "January payment", "July payment", "balancing payment", "SA303", "claim to reduce", "reduce payments on account", "do I need to make payments on account", "POA threshold", "tax underpayment", "MTD ITSA payments on account", or any question about advance income tax payments under UK Self Assessment. Covers the two-payment schedule (31 January / 31 July), the GBP 1,000 threshold, the 80% PAYE test, balancing payment mechanics, SA303 claim to reduce, excluded items (Class 2 NIC, student loan, CGT), interest on late payments, the interaction with MTD ITSA quarterly updates from 6 April 2026, and interaction with tax codes. ALWAYS read this skill before touching any UK POA work.
 version: 3.0
 jurisdiction: GB
+tier: 2
+last_updated: 2026-06-12
 tax_years: [2024-25, 2025-26, 2026-27]
 category: international
 depends_on:
@@ -13,22 +15,7 @@ verified_by: pending
 
 # UK Payments on Account (POA) -- Self Assessment Skill v3.0
 
-## Verified rates & thresholds (accountant-reviewed)
-
-> Reviewed against the cited tax authorities by **James Power** on 2026-06-03.
-> This block is generated from the verified facts database at openaccountants.com —
-> edit the facts there, not this prose. Items under clarification are excluded.
-
-### Payments on Account
-
-- **De minimis** — SA balance < £1,000 → no POA  _(TMA 1970 s.59A)_
-- **PAYE dominance** — >80% of total tax via PAYE → no POA  _(TMA 1970 s.59A)_
-- **1st POA** — 31 January in tax year (50% of prior year SA balance)  _(TMA 1970)_
-- **2nd POA** — 31 July after tax year (50%)  _(TMA 1970)_
-- **Balancing payment** — 31 January following tax year  _(TMA 1970)_
-- **Items** — Class 2 NIC, student loan, postgraduate loan, CGT, marriage allowance  _(TMA 1970)_
-- **Rate** — BoE base rate + 2.5%  _(TMA 1970 s.86)_
-- **Type** — Simple interest (not compound)  _(TMA 1970)_
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 ## Section 1 -- Quick reference
 
@@ -46,7 +33,7 @@ verified_by: pending
 | Excluded items | Class 2 NIC, student loan, postgraduate loan, CGT, marriage allowance |
 | Contributor | Open Accountants Community |
 | Validated by | Pending -- requires sign-off by UK-qualified accountant (ACA/ACCA/CTA) |
-| Validation date | Verified by James Power on 2026-06-03 |
+| Validation date | Pending |
 
 ### 1.1 Three-year comparison: variable elements
 

@@ -1,7 +1,7 @@
 ---
-name: Norway Corporate Income Tax
+name: no-corporate-income-tax
 description: "Source-cited draft: corporate income tax for Norway (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
-jurisdiction: NO
+jurisdiction: "NO"
 domain: income-tax
 role: compute
 tax_year: 2025

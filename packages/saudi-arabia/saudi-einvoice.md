@@ -8,29 +8,16 @@ category: invoicing
 depends_on:
   - einvoice-workflow-base
 tax_year: 2025
+tier: 2
+last_updated: 2026-06-12
 verified_by: pending
 ---
 
 # Saudi Arabia ZATCA E-Invoice (FATOORA) Skill v1.0
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 ---
-
-## Verified rates & thresholds (accountant-reviewed)
-
-> Reviewed against the cited tax authorities by **Mehran Habib** on 2026-06-06.
-> This block is generated from the verified facts database at openaccountants.com —
-> edit the facts there, not this prose. Items under clarification are excluded.
-
-### E-Invoice (FATOORA)
-
-- **Phase 1 (Generation)** — All VAT-registered since 4 Dec 2021  _(E-Invoicing Regulation, First: Scope of application)_
-- **Phase 2 (Integration)** — Rolling waves from 1 Jan 2023 by revenue  _(E-Invoicing Regulation, Sixth: Integration)_
-- **Format** — XML format or PDF/A-3 format (with embedded XML)  _(E-Invoicing Regulation, Second Requirements and details for Generation of Electronic Invoices and Electronic Notes - 2)_
-- **Signing** — ECDSA secp256k1 + SHA-256  _(E-Invoicing Regulation, Annex 1 Technical Requirements of E-invoice Generation Solutions)_
-- **B2B clearance** — Real-time before sharing with buyer  _(E-Invoicing Regulation, Annex 1 Technical Requirements of E-invoice Generation Solutions)_
-- **B2C reporting** — Within 24 hours  _(E-Invoicing Regulation, Second Requirements and details for Generation of Electronic Invoices and Electronic Notes - 3(B))_
-- **Non-issuance of e-invoice** — SAR 5,000–50,000 per violation  _(VAT Law, Article 45)_
-- **Modification after issuance** — SAR 10,000–50,000 per violation  _(VAT Law, Article 45)_
 
 ## Section 1 -- Quick Reference
 

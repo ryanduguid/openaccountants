@@ -4,6 +4,8 @@ description: >
   Use this skill whenever asked about forming, incorporating, or registering a company in India. Trigger on phrases like "set up a company in India", "Pvt Ltd India", "private limited company India", "MCA registration", "SPICe+", "Indian company formation", "register a business India", "OPC India", "LLP India", "ROC filing", "DIN", "DSC", or any question about starting a business entity in India. Covers entity types (Pvt Ltd, OPC, LLP, public), registration process via SPICe+, capital requirements, costs, post-formation compliance, and bank account opening. ALWAYS read this skill before advising on Indian company formation.
 version: 1.0
 jurisdiction: IN
+tier: 2
+last_updated: 2026-06-12
 category: formation
 depends_on:
   - company-formation-workflow-base
@@ -11,35 +13,9 @@ depends_on:
 
 # India Company Formation Skill v1.0
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 ---
-
-## Verified rates & thresholds (accountant-reviewed)
-
-> Reviewed against the cited tax authorities by **Mayur Deokar** on 2026-06-06.
-> This block is generated from the verified facts database at openaccountants.com —
-> edit the facts there, not this prose. Items under clarification are excluded.
-
-### Company Formation
-
-- **Paid-up capital** — ≤ ₹10 crore  _(Companies Act s 2(85))_
-- **Turnover** — ≤ ₹100 crore  _(Companies Act s 2(85))_
-- **Exemptions** — No cash flow statement, no CARO, no auditor rotation  _(Companies Act)_
-- **Pvt Ltd — min directors** — 2 directors + 2 shareholders  _(Companies Act 2013)_
-- **Pvt Ltd — min capital** — ₹1 lakh authorised (no statutory paid-up min)  _(Companies Act 2013)_
-- **OPC — founders** — 1 + 1 nominee  _(Companies Act s 2(62))_
-- **LLP — min partners** — 2 designated partners  _(LLP Act 2008)_
-- **Public Ltd — paid-up** — No minimum paid-up capital requirement  _(Companies Amendment Act 2015)_
-- **Resident director** — At least 1 director resident 182+ days in India  _(Companies Act s 149(3))_
-- **Domestic company (new regime)** — 22% + surcharge + cess = ~25.17% effective  _(ITA s 115BAA)_
-- **New manufacturing (set up after Oct 2019)** — 15% + surcharge + cess = ~17.16%  _(ITA s 115BAB)_
-- **AGM deadline** — 6 months from FY-end (30 September)  _(Companies Act s 96)_
-- **AOC-4 (financial statements)** — 30 days from AGM  _(Companies Act s 137)_
-- **MGT-7A (annual return)** — 60 days from AGM  _(Companies Act s 92)_
-- **DIR-3 KYC** — 30 September annually  _(MCA rules)_
-- **Late filing penalty** — ₹100/day of delay (no cap)  _(Companies Act s 403)_
-- **Small Company (s 2(85)) — Paid-up capital** — ≤ ₹10 crore  _(Companies Act s 2(85))_
-- **Small Company (s 2(85)) — Turnover** — ≤ ₹100 crore  _(Companies Act s 2(85))_
-- **Small Company (s 2(85)) — Exemptions** — No cash flow statement, no CARO, no auditor rotation  _(Companies Act)_
 
 ## Section 1 -- Quick Reference
 

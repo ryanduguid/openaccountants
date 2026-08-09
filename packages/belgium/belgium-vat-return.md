@@ -2,9 +2,14 @@
 name: belgium-vat-return
 description: Use this skill whenever asked to prepare, review, or classify transactions for a Belgian VAT return (déclaration périodique TVA / periodieke BTW-aangifte) for a self-employed individual or small business in Belgium. Trigger on phrases like "prepare Belgian VAT return", "Belgian BTW", "déclaration TVA Belgique", "BTW-aangifte", "classify transactions for Belgian VAT", or any request involving Belgium VAT filing. This skill covers Belgium only, standard regime (normal/normal simplifié). Régime forfaitaire, partial exemption, margin scheme, and VAT units are in the refusal catalogue. MUST be loaded alongside BOTH vat-workflow-base v0.1 or later AND eu-vat-directive v0.1 or later. ALWAYS read this skill before touching any Belgian VAT work.
 version: 2.0
+jurisdiction: BE
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # Belgium VAT Return Skill (Déclaration Périodique / Periodieke Aangifte) v2.0
+
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 ## Section 1 — Quick reference
 
@@ -637,7 +642,6 @@ python /mnt/skills/public/xlsx/scripts/recalc.py /mnt/user-data/outputs/belgium-
 ## End of Belgium VAT Return Skill v2.0
 
 This skill is incomplete without BOTH companion files: `vat-workflow-base` v0.1+ AND `eu-vat-directive` v0.1+.
-
 
 ---
 

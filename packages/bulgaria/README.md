@@ -7,8 +7,16 @@
 
 1. `foundation.md`
 2. `intake.md`
-3. `bulgaria-vat-return.md`
-4. `eu-vat-directive.md`
+3. `bg-company-formation.md`
+4. `bg-tax-overview.md`
+5. `bulgaria-income-tax.md`
+6. `bulgaria-payroll.md`
+7. `bulgaria-social-contributions.md`
+8. `bulgaria-tax-optimization.md`
+9. `bulgaria-vat-return.md`
+10. `eu-vat-directive.md`
+11. `payroll-workflow-base.md`
+12. `company-formation-workflow-base.md`
 
 ## How to use
 
@@ -25,17 +33,17 @@ The AI will:
 - Ask onboarding questions to confirm your situation
 - Load the right domain skills (tax, bookkeeping, payroll, etc.)
 - Produce working papers for each obligation
-- Flag anything that needs your qualified tax professional's attention
+- Flag anything that needs your tax professional's attention
 
 ## Important
 
-**This is not tax, legal, or financial advice.** Everything produced must be reviewed and signed off by a qualified qualified tax professional before filing or acting upon.
+**This is not tax, legal, or financial advice.** Everything produced must be reviewed and signed off by a qualified tax professional before filing or acting upon.
 
 The most up-to-date, verified version of these skills is maintained at [openaccountants.com](https://www.openaccountants.com).
 
 ---
 
-## Are you a qualified tax professional?
+## Are you a tax professional?
 
 These Bulgaria tax skills need your eye. Every rate, threshold, and form reference was AI-drafted and needs a human professional to verify it.
 

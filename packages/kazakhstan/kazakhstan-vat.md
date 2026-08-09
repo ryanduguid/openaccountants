@@ -2,9 +2,14 @@
 name: kazakhstan-vat
 description: Use this skill whenever asked to prepare, review, or classify transactions for a Kazakhstan VAT (NDS) return (Form 300.00) for any client. Trigger on phrases like "Kazakhstan VAT", "NDS return", "Form 300", "KGD filing", or any request involving Kazakh VAT. This skill covers standard NDS payers filing quarterly returns. Simplified declaration and special tax regimes are in the refusal catalogue. MUST be loaded alongside vat-workflow-base v0.1 or later. ALWAYS read this skill before touching any Kazakhstan VAT work.
 version: 2.0
+jurisdiction: KZ
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # Kazakhstan VAT (NDS) Return Skill — Form 300.00 v2.0
+
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 ## Section 1 — Quick reference
 
@@ -315,7 +320,6 @@ Per `vat-workflow-base` Section 3 with Kazakhstan Form 300.00 line codes.
 - **v2.0 (April 2026):** Full rewrite to Malta v2.0 10-section structure.
 
 ## End of Kazakhstan VAT (NDS) Skill v2.0
-
 
 ---
 

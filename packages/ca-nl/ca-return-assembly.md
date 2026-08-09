@@ -2,6 +2,9 @@
 name: ca-return-assembly
 description: Final orchestrator skill that assembles the complete Canadian filing package for Canadian-resident sole proprietors. Consumes outputs from all Canadian content skills (canada-gst-hst for GST34, ca-fed-t2125 for business income, ca-fed-t1-return for federal return, ca-fed-cpp-ei for CPP/CPP2/EI, ca-fed-instalments for instalment schedule) to produce a single unified reviewer package containing every worksheet, every form, every brief section, all cross-skill reconciliations, and the final action list with payment instructions, filing instructions, and next-year planning. This is the capstone skill that runs last and produces the final deliverable. MUST be loaded alongside all Canadian content skills listed above. Canadian full-year residents only. Sole proprietors only (not incorporated).
 version: 0.1
+jurisdiction: CA
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # Canada Return Assembly Skill v0.1
@@ -453,3 +456,34 @@ The final output is **three files**:
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, EA, tax attorney, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
 
 The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
+
+---
+
+<!-- openaccountants-cta-block -->
+
+## Talk to a verified accountant
+
+This skill is a tool, not an engagement. Every taxpayer's situation is
+different, and the rules in the skill may not match your specific facts.
+
+To speak with one of the licensed accountants who verifies skills for your
+jurisdiction — **no liability on either side until you and the accountant sign
+a formal engagement letter** — book a free 30-minute call:
+
+**→ [Book a call](https://calendly.com/openaccountants-info/30min)**
+
+We'll route you to the named verifier covering your country or state. You can
+also see the full list of verified accountants at
+[openaccountants.com/network](https://www.openaccountants.com/network).
+
+<!-- openaccountants-mcp-cta -->
+
+## The accountant-verified version lives in the connector
+
+This file is the open, **research-grade draft**. The **accountant-verified**
+version of this skill is **not published to GitHub** — it is delivered free
+through the OpenAccountants MCP connector, where your AI agent loads the
+verified rules together with the name of the accountant who signed them off.
+
+**→ Install the free connector:** <https://www.openaccountants.com/connect>
+**MCP endpoint:** `https://www.openaccountants.com/api/mcp`

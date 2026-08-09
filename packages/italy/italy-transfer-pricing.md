@@ -4,12 +4,16 @@ description: >
   Use this skill whenever asked about Italy transfer pricing rules, documentation requirements, or prezzi di trasferimento compliance. Trigger on phrases like "transfer pricing Italy", "Italian TP documentation", "prezzi di trasferimento", "master file Italy", "local file Italy", "penalty protection Italy", "CbCR Italy", "APA Italy", "Agenzia delle Entrate TP", or any question about intercompany pricing for Italian entities.
 version: 1.0
 jurisdiction: IT
+tier: 2
+last_updated: 2026-06-12
 category: transfer-pricing
 depends_on:
   - transfer-pricing-workflow-base
 ---
 
 # Italy Transfer Pricing Skill v1.0
+
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 ---
 

@@ -4,6 +4,8 @@ description: >
   Use this skill when preparing, reviewing, or advising on annual financial statements for a Canadian company. Trigger on phrases like "ASPE", "IFRS Canada", "Canadian GAAP", "CPA Canada Handbook", "financial statements Canada", "compilation engagement", "review engagement Canada", "audit Canada", "CBCA", "OBCA", "annual return Canada", "CSRE 2400", or any question about preparing and reporting statutory accounts under Canadian corporate law. Covers ASPE/IFRS frameworks, assurance level options, required statements, formats, notes, filing requirements, and audit/review thresholds.
 version: 1.0
 jurisdiction: CA
+tier: 2
+last_updated: 2026-06-12
 category: financial-statements
 depends_on:
   - financial-statements-workflow-base
@@ -284,3 +286,34 @@ Licensed CPA (Chartered Professional Accountant) holding a public accounting lic
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional before filing or acting upon.
+
+---
+
+<!-- openaccountants-cta-block -->
+
+## Talk to a verified accountant
+
+This skill is a tool, not an engagement. Every taxpayer's situation is
+different, and the rules in the skill may not match your specific facts.
+
+To speak with one of the licensed accountants who verifies skills for your
+jurisdiction — **no liability on either side until you and the accountant sign
+a formal engagement letter** — book a free 30-minute call:
+
+**→ [Book a call](https://calendly.com/openaccountants-info/30min)**
+
+We'll route you to the named verifier covering your country or state. You can
+also see the full list of verified accountants at
+[openaccountants.com/network](https://www.openaccountants.com/network).
+
+<!-- openaccountants-mcp-cta -->
+
+## The accountant-verified version lives in the connector
+
+This file is the open, **research-grade draft**. The **accountant-verified**
+version of this skill is **not published to GitHub** — it is delivered free
+through the OpenAccountants MCP connector, where your AI agent loads the
+verified rules together with the name of the accountant who signed them off.
+
+**→ Install the free connector:** <https://www.openaccountants.com/connect>
+**MCP endpoint:** `https://www.openaccountants.com/api/mcp`

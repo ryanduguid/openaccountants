@@ -6,11 +6,15 @@ description: >
   Louisiana reformed to a flat 3% rate effective 2025 (Act 11 of 2024 3rd Extraordinary Session).
   ALWAYS load us-tax-workflow-base first.
 jurisdiction: US-LA
+tier: 2
+last_updated: 2026-06-12
 version: "0.1"
 validation_status: ai-drafted-q3
 ---
 
 # Louisiana Individual Income Tax Skill — Self-Employed / Sole Proprietor
+
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 > **Scope.** This skill covers Louisiana Form IT-540 (Resident Individual Income Tax Return) for sole proprietors and single-member LLCs. It addresses the flat 3% income tax rate (effective 2025), the significantly increased standard deduction, and Louisiana-specific modifications to federal AGI. It does NOT cover nonresident returns (Form IT-540B), corporate returns (CIFT-620), or partnership/S-corp pass-throughs.
 

@@ -16,7 +16,9 @@ on:
   push:
     branches: [main]
     paths:
+      - 'skills/**'
       - 'packages/**'
+      - 'scripts/build-packages.py'
       - '.github/workflows/sync-mcp.yml'
   workflow_dispatch:
 
@@ -24,19 +26,74 @@ concurrency:
   group: sync-mcp
   cancel-in-progress: false
 
+permissions: {}
+
 jobs:
-  sync:
+  build:
+    name: Validate and build MCP packages
+    # Manual dispatches must still deploy only from the trusted default branch.
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     permissions:
       contents: read
     steps:
       - name: Checkout source (openaccountants)
-        uses: actions/checkout@v4
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
         with:
           path: source
+          persist-credentials: false
+
+      - name: Set up Python
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5.6.0
+        with:
+          python-version: "3.11"
+
+      - name: Install validation dependencies
+        run: python3 -m pip install --disable-pip-version-check "mcp==1.28.1" "PyYAML>=6.0,<7"
+
+      - name: Validate trusted source before loading deploy credentials
+        working-directory: source
+        run: |
+          python3 scripts/validate-guides.py
+          python3 -m unittest discover -s scripts -p 'test*.py'
+          python3 -m unittest discover -s mcp -p 'test*.py'
+
+      - name: Rebuild generated packages
+        working-directory: source
+        run: python3 scripts/build-packages.py
+
+      - name: Smoke-test rebuilt MCP catalogue
+        working-directory: source
+        run: python3 mcp/smoke_test.py
+
+      # The build job has no deploy credential. Its output crosses into a
+      # fresh runner as inert files, so repository code and build dependencies
+      # cannot remain resident when the destination key is loaded.
+      - name: Upload validated package artifact
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: mcp-packages-${{ github.sha }}
+          path: source/packages
+          if-no-files-found: error
+          retention-days: 1
+
+  deploy:
+    name: Sync validated packages to MCP repository
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    steps:
+      - name: Download validated package artifact
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
+        with:
+          name: mcp-packages-${{ github.sha }}
+          path: source/packages
 
       - name: Checkout destination (openaccountants-mcp)
-        uses: actions/checkout@v4
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
         with:
           repository: openaccountants/openaccountants-mcp
           ssh-key: ${{ secrets.MCP_SYNC_DEPLOY_KEY }}

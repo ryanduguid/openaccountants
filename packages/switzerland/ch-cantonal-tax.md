@@ -3,9 +3,14 @@ name: ch-cantonal-tax
 description: >
   Use this skill whenever asked about Swiss cantonal and communal income tax (Staatssteuer / Gemeindesteuer / impot cantonal et communal) for self-employed individuals. Trigger on phrases like "Kantonssteuer", "Gemeindesteuer", "cantonal tax Switzerland", "Steuerfuss", "tax multiplier Swiss", "kirchensteuer Schweiz", "impot cantonal", "communal tax rate", "Steuerausscheidung", "Swiss income tax", "einfache Steuer", or any question about cantonal/communal income tax for a self-employed person in Switzerland. This skill covers the cantonal tax multiplier system (Steuerfuss), church tax, inter-cantonal allocation, and the interaction between cantonal and federal returns. MUST be loaded alongside ch-federal-income-tax for the complete picture. ALWAYS read this skill before touching any Swiss cantonal tax work.
 version: 2.0
+jurisdiction: CH
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # Switzerland Cantonal and Communal Income Tax — Self-Employed v2.0
+
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 ## Section 1 — Quick Reference
 
@@ -493,7 +498,6 @@ SECTION F — REVIEWER FLAGS
 - Steuererklarung and Beilagen: 10 years
 - Business records (Buchfuhrung): 10 years (OR Art. 958f)
 - Church exit documentation: retain permanently
-
 
 ---
 

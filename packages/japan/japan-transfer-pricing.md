@@ -4,12 +4,16 @@ description: >
   Use this skill whenever asked about Japan transfer pricing rules, documentation requirements, or 移転価格税制 compliance. Trigger on phrases like "transfer pricing Japan", "Japanese TP documentation", "移転価格", "master file Japan", "local file Japan", "CbCR Japan", "APA Japan", "Article 66-4 ASMT", "NTA transfer pricing", or any question about intercompany pricing for Japanese entities.
 version: 1.0
 jurisdiction: JP
+tier: 2
+last_updated: 2026-06-12
 category: transfer-pricing
 depends_on:
   - transfer-pricing-workflow-base
 ---
 
 # Japan Transfer Pricing Skill v1.0
+
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 ---
 

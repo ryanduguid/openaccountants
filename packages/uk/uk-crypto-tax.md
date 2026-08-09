@@ -4,6 +4,8 @@ description: >
   Use this skill whenever asked about UK cryptocurrency or digital asset taxation. Trigger on phrases like "crypto tax UK", "Bitcoin UK tax", "HMRC crypto", "cryptoassets UK", "crypto capital gains UK", "staking tax UK", "mining tax UK", "NFT tax UK", "DeFi tax UK", "SA108 crypto", "crypto CGT", "bed and breakfasting crypto", "S104 pool", "crypto loss UK", "Coinbase UK tax", "Binance UK tax", "Revolut crypto UK", "crypto income UK", "DAC8 UK", "CARF crypto", "crypto reporting 2026", "18% 24% crypto", "HMRC cryptoassets manual", or any question about the income tax, capital gains tax, or reporting treatment of cryptocurrency, tokens, or digital assets for UK tax residents. Covers HMRC's Cryptoassets Manual (CRYPTO10000+), S104 pooling, same-day and 30-day matching rules, DeFi lending/staking, NFTs, mining, SA108 reporting, and the Crypto Asset Reporting Framework (CARF) from 2026. ALWAYS read this skill before touching any UK crypto work.
 version: 2.0
 jurisdiction: GB
+tier: 2
+last_updated: 2026-06-12
 tax_years: [2024-25, 2025-26, 2026-27]
 category: crypto
 depends_on:
@@ -14,31 +16,11 @@ verified_by: pending
 
 # UK Crypto / Digital Assets Tax Skill v2.0
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 Covers three UK tax years: **2024-25**, **2025-26**, and **2026-27**, including the mid-year CGT rate change on 30 October 2024 and the introduction of the Crypto Asset Reporting Framework (CARF) from April 2026.
 
 ---
-
-## Verified rates & thresholds (accountant-reviewed)
-
-> Reviewed against the cited tax authorities by **James Power** on 2026-06-03.
-> This block is generated from the verified facts database at openaccountants.com —
-> edit the facts there, not this prose. Items under clarification are excluded.
-
-### Crypto Tax
-
-- **Basic rate taxpayer** — 18%  _(TCGA 1992)_
-- **Higher/additional rate** — 24%  _(TCGA 1992)_
-- **AEA** — £3,000  _(TCGA 1992)_
-- **Required method** — S104 pooling (weighted average)  _(TCGA 1992 s.104)_
-- **FIFO** — NOT permitted  _(HMRC CRYPTO22200)_
-- **Specific identification** — NOT permitted for crypto  _(HMRC CRYPTO22200)_
-- **1st: Same-day** — Match same-day acquisitions  _(TCGA s.105(1))_
-- **2nd: 30-day rule** — Match acquisitions within 30 days AFTER disposal  _(TCGA s.106A)_
-- **3rd: S104 pool** — Average cost from pool  _(TCGA s.104)_
-- **Mining (hobbyist)** — Miscellaneous income at FMV  _(ITTOIA s.687)_
-- **Staking rewards** — Miscellaneous income at FMV  _(HMRC CRYPTO21200)_
-- **Airdrop (service performed)** — Miscellaneous income at FMV  _(HMRC CRYPTO21250)_
-- **Airdrop (unsolicited)** — Not income; CGT on disposal from zero cost  _(HMRC CRYPTO21250)_
 
 ## Section 1 — Quick Reference
 

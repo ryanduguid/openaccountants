@@ -4,12 +4,16 @@ description: >
   Use this skill whenever asked about Spanish e-invoicing, factura electrónica Spain, FACe, Facturae, Veri*factu, VERI*FACTU, SII (Suministro Inmediato de Información), AEAT e-invoicing, B2B e-invoicing mandate Spain, RD 1007/2023, RD 238/2026, Ley Crea y Crece, QR tributario, anti-fraud invoicing software, SPFE (Solución Pública de Facturación Electrónica), or any question about issuing, receiving, validating, or archiving electronic invoices in Spain. Also trigger when configuring Veri*factu-compliant billing software, setting up SII real-time reporting, submitting B2G invoices via FACe, or advising on the transition from SII to Veri*factu. This skill covers FACe B2G, SII reporting, Veri*factu anti-fraud system, B2B mandate timeline, accepted formats (Facturae, UBL, CII), mandatory fields, validation rules, archiving, penalties, and interaction with Spanish VAT returns. ALWAYS read this skill before touching any Spanish e-invoicing work.
 version: 1.0
 jurisdiction: ES
+tier: 2
+last_updated: 2026-06-12
 category: invoicing
 depends_on:
   - einvoice-workflow-base
 ---
 
 # Spain E-Invoicing -- FACe / SII / Veri*factu Skill v1.0
+
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 ---
 

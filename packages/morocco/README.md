@@ -7,7 +7,26 @@
 
 1. `foundation.md`
 2. `intake.md`
-3. `morocco-vat.md`
+3. `ma-auto-entrepreneur.md`
+4. `ma-bookkeeping.md`
+5. `ma-cpu.md`
+6. `ma-crypto-tax.md`
+7. `ma-einvoice.md`
+8. `ma-financial-statements.md`
+9. `ma-formation.md`
+10. `ma-income-tax.md`
+11. `ma-payroll.md`
+12. `ma-social-contributions.md`
+13. `ma-tax-optimization.md`
+14. `morocco-income-tax.md`
+15. `morocco-payroll.md`
+16. `morocco-vat.md`
+17. `bookkeeping-workflow-base.md`
+18. `einvoice-workflow-base.md`
+19. `payroll-workflow-base.md`
+20. `company-formation-workflow-base.md`
+21. `financial-statements-workflow-base.md`
+22. `crypto-tax-workflow-base.md`
 
 ## How to use
 
@@ -24,17 +43,17 @@ The AI will:
 - Ask onboarding questions to confirm your situation
 - Load the right domain skills (tax, bookkeeping, payroll, etc.)
 - Produce working papers for each obligation
-- Flag anything that needs your qualified tax professional's attention
+- Flag anything that needs your tax professional's attention
 
 ## Important
 
-**This is not tax, legal, or financial advice.** Everything produced must be reviewed and signed off by a qualified qualified tax professional before filing or acting upon.
+**This is not tax, legal, or financial advice.** Everything produced must be reviewed and signed off by a qualified tax professional before filing or acting upon.
 
 The most up-to-date, verified version of these skills is maintained at [openaccountants.com](https://www.openaccountants.com).
 
 ---
 
-## Are you a qualified tax professional?
+## Are you a tax professional?
 
 These Morocco tax skills need your eye. Every rate, threshold, and form reference was AI-drafted and needs a human professional to verify it.
 

@@ -291,6 +291,9 @@ Full layout and "which file do I edit": [docs/REPO-LAYOUT.md](docs/REPO-LAYOUT.m
 
 ```bash
 python3 scripts/build-packages.py   # us-federal is never touched
+# Targeted rebuild: only packages/us-*/; Canada and other packages stay untouched.
+python3 scripts/build-packages.py --us-only
+python3 -m pip install "PyYAML>=6,<7"  # once: strict index/guide parsing
 python3 scripts/build-index.py      # refresh index.json
 ```
 

@@ -5,9 +5,14 @@ category: integration
 description: >
   Integration skill for QuickBooks Online CSV exports and imports. Activate when the user uploads a QuickBooks
   transaction export, bank transaction CSV, or mentions QuickBooks, QBO, or Intuit.
+jurisdiction: GLOBAL
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # QuickBooks Online Integration Skill v1.0
+
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 ## Section 1 — Platform Overview
 

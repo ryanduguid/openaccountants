@@ -7,12 +7,16 @@
 
 1. `foundation.md`
 2. `intake.md`
-3. `ar-income-tax.md`
-4. `ar-monotributo.md`
-5. `ar-social-contributions.md`
-6. `ar-vat-return.md`
-7. `argentina-iva.md`
-8. `references.md`
+3. `ar-company-formation.md`
+4. `ar-corporate-income-tax.md`
+5. `ar-income-tax.md`
+6. `ar-monotributo.md`
+7. `ar-social-contributions.md`
+8. `ar-tax-overview.md`
+9. `ar-vat-return.md`
+10. `argentina-iva.md`
+11. `references.md`
+12. `company-formation-workflow-base.md`
 
 ## Also known as
 
@@ -35,17 +39,17 @@ The AI will:
 - Ask onboarding questions to confirm your situation
 - Load the right domain skills (tax, bookkeeping, payroll, etc.)
 - Produce working papers for each obligation
-- Flag anything that needs your qualified tax professional's attention
+- Flag anything that needs your tax professional's attention
 
 ## Important
 
-**This is not tax, legal, or financial advice.** Everything produced must be reviewed and signed off by a qualified qualified tax professional before filing or acting upon.
+**This is not tax, legal, or financial advice.** Everything produced must be reviewed and signed off by a qualified tax professional before filing or acting upon.
 
 The most up-to-date, verified version of these skills is maintained at [openaccountants.com](https://www.openaccountants.com).
 
 ---
 
-## Are you a qualified tax professional?
+## Are you a tax professional?
 
 These Argentina tax skills need your eye. Every rate, threshold, and form reference was AI-drafted and needs a human professional to verify it.
 

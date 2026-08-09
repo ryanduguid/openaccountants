@@ -4,12 +4,16 @@ description: >
   Use this skill when preparing, reviewing, or advising on annual financial statements (計算書類 / 財務諸表) for a Japanese company. Trigger on phrases like "計算書類", "財務諸表", "会社法", "金融商品取引法", "J-GAAP", "日本基準", "決算書", "貸借対照表", "損益計算書", "大会社", "会計監査人", "有価証券報告書", or any question about preparing and filing statutory accounts under Japanese corporate law. Covers J-GAAP framework, company categories (大会社/中小), required statements, formats, notes, filing, and audit requirements.
 version: 1.0
 jurisdiction: JP
+tier: 2
+last_updated: 2026-06-12
 category: financial-statements
 depends_on:
   - financial-statements-workflow-base
 ---
 
 # Japan Financial Statements Skill v1.0
+
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 ---
 

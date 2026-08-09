@@ -6,11 +6,15 @@ description: >
   exemptions, modifications to federal AGI, and estimated tax (Form N-1). Trigger: taxpayer
   is a Hawaii resident or has Hawaii-source income.
 jurisdiction: US-HI
+tier: 2
+last_updated: 2026-06-12
 version: "0.1"
 validation_status: ai-drafted-q3
 ---
 
 # Hawaii Individual Income Tax Skill — Self-Employed / Sole Proprietor
+
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 > **Scope.** This skill covers Hawaii individual income tax for self-employed individuals and sole proprietors filing Form N-11. Hawaii has one of the most progressive rate structures in the U.S. with 12 brackets ranging from 1.4% to 11%.
 > **Quality tier.** Q3 — AI-drafted with citations. Must be reviewed by a qualified professional before use.

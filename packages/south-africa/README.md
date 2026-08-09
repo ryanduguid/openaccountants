@@ -3,23 +3,18 @@
 > Open-source accounting skills for South Africa. Upload to Claude, ChatGPT, or any AI assistant.
 > Tax, bookkeeping, payroll, formation, financial statements, and more. Free and open source.
 
-## Verified by
-
-**Werner Britz CA(SA)** — Lead accountant verifier for South Africa on OpenAccountants.
-[View profile →](https://www.openaccountants.com/network/28a3ec1b-d699-4c5d-bb60-3114eedc59d0)
-
-_Scope: the “Verified rates & thresholds” blocks inside these skill files are generated from the facts this verifier reviewed. Everything else in the files is an open, source-cited draft. The full accountant-verified tier, with the verifier’s name on every answer, is served via the [connector](https://www.openaccountants.com/connect)._
-
 ## What's in this folder
 
 1. `foundation.md`
 2. `intake.md`
 3. `south-africa-transfer-pricing.md`
 4. `south-africa-vat.md`
-5. `za-income-tax.md`
-6. `za-provisional-tax.md`
-7. `za-vat-return.md`
-8. `transfer-pricing-workflow-base.md`
+5. `za-capital-gains.md`
+6. `za-income-tax.md`
+7. `za-provisional-tax.md`
+8. `za-tax-residency.md`
+9. `za-vat-return.md`
+10. `transfer-pricing-workflow-base.md`
 
 ## Also known as
 
@@ -48,7 +43,7 @@ The AI will:
 
 **This is not tax, legal, or financial advice.** Everything produced must be reviewed and signed off by a qualified SAIPA/SAICA member before filing or acting upon.
 
-The most up-to-date, verified version of these skills is maintained at [openaccountants.com](https://openaccountants.com).
+The most up-to-date, verified version of these skills is maintained at [openaccountants.com](https://www.openaccountants.com).
 
 ---
 
@@ -60,9 +55,9 @@ These South Africa tax skills need your eye. Every rate, threshold, and form ref
 
 1. Download the files in this folder
 2. Check the rates against South African Revenue Service (SARS)'s website
-3. Email your corrections to **info@openaaccountants.com** — Word doc, Excel, PDF, tracked changes, whatever works
+3. Email your corrections to **info@openaccountants.com** — Word doc, Excel, PDF, tracked changes, whatever works
 
-We'll update the skill and credit you publicly as the verified reviewer at [openaccountants.com](https://openaccountants.com).
+We'll update the skill and credit you publicly as the verified reviewer at [openaccountants.com](https://www.openaccountants.com).
 
 Or if you're comfortable with GitHub: fork the repo, fix the source file under `skills/`, and submit a PR.
 
@@ -71,5 +66,5 @@ Or if you're comfortable with GitHub: fork the repo, fix the source file under `
 ---
 
 *OpenAccountants — open-source accounting skills for AI*
-*134 countries + 51 US states — [openaccountants.com](https://openaccountants.com)*
-*info@openaaccountants.com*
+*134 countries + 51 US states — [openaccountants.com](https://www.openaccountants.com)*
+*info@openaccountants.com*

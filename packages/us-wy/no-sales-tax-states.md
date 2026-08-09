@@ -2,23 +2,14 @@
 name: no-sales-tax-states
 description: Use this skill whenever asked about states with no sales tax, Alaska local sales tax, Delaware gross receipts tax, Montana resort tax, New Hampshire meals and rooms tax, Oregon Corporate Activity Tax, or tax obligations in AK, DE, MT, NH, or OR. Trigger on phrases like "no sales tax states", "Alaska sales tax", "Delaware gross receipts", "Montana resort tax", "New Hampshire meals tax", "Oregon CAT", "Oregon no sales tax", or any request involving tax compliance in states that do not impose a general statewide sales tax. ALWAYS load us-sales-tax first for federal context.
 version: 2.0
+jurisdiction: US
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # No-Sales-Tax States Skill v2.0 -- AK, DE, MT, NH, OR
 
-## Verified rates & thresholds (accountant-reviewed)
-
-> Reviewed against the cited tax authorities by **Amir Pelinkovic** on 2026-06-03.
-> This block is generated from the verified facts database at openaccountants.com —
-> edit the facts there, not this prose. Items under clarification are excluded.
-
-### No-Sales-Tax States
-
-- **Alaska** — No state sales tax; 100+ localities levy up to ~7.5% (e.g., Kodiak 7.5%)  _(Alaska Remote Seller Sales Tax Commission; local codes.)_
-- **Delaware** — No sales tax; gross receipts tax ranges ~0.0945%-1.9914% by activity  _(Del. Code tit. 30; DE Division of Revenue.)_
-- **Montana** — Resort tax up to 3% is correct, but Montana's lodging tax is 8% total (4% Lodging Facility Use Tax + 4% sales tax on accommodations); 'lodging 4%' reflects only one component.  _(Mont. Code Ann. 15-65 & 15-68; MT DOR.)_
-- **NH** — NH Meals & Rentals tax = 8.5% (since 10/1/2021)  _(NH DRA; RSA 78-A.)_
-- **Oregon** — Oregon Corporate Activity Tax = $250 + 0.57% of commercial activity over $1,000,000  _(ORS 317A; OR DOR.)_
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 ## Section 1 -- Quick reference
 
@@ -262,7 +253,6 @@ Buyers who purchase in no-sales-tax states may owe USE TAX in their home state o
 ## Disclaimer
 
 This skill is provided for informational and computational purposes only and does not constitute tax, legal, or financial advice. All outputs must be reviewed by a qualified professional (CPA, EA, or tax attorney) before filing.
-
 
 ---
 

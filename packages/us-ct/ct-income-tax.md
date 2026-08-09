@@ -2,11 +2,15 @@
 name: ct-income-tax
 description: Use this skill whenever asked about Connecticut individual income tax for self-employed individuals or sole proprietors — filing Form CT-1040, CT estimated tax (Form CT-1040ES), Connecticut tax brackets, Connecticut personal exemption, or any query involving Connecticut state income tax compliance. Trigger on phrases like "Connecticut income tax", "CT income tax", "Form CT-1040", "Connecticut estimated tax", "Connecticut self-employed tax", "DRS income tax", "CT AGI", or "Conn. Gen. Stat. §12-700".
 jurisdiction: US-CT
+tier: 2
+last_updated: 2026-06-12
 version: "0.1"
 validation_status: ai-drafted-q3
 ---
 
 # Connecticut Individual Income Tax Skill — Self-Employed / Sole Proprietor
+
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 > **Scope.** This skill covers Connecticut individual income tax for self-employed individuals and sole proprietors filing Form CT-1040. It addresses tax computation, personal exemptions, estimated payments, and form mapping.
 > **Quality tier.** Q3 — AI-drafted with citations; not independently verified by a licensed professional.

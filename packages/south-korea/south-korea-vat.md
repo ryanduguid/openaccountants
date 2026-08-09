@@ -2,9 +2,14 @@
 name: south-korea-vat
 description: Use this skill whenever asked to prepare, review, or classify transactions for a South Korea VAT return (부가가치세 신고서) for any business operator. Trigger on phrases like "prepare Korean VAT return", "Korean VAT", "HomeTax filing", "e-tax invoice", "전자세금계산서", "부가가치세", or any request involving South Korea VAT filing. Also trigger when classifying transactions for VAT purposes from bank statements, invoices, or other source data. This skill contains the complete South Korea VAT classification rules, return form mappings, deductibility rules, reverse charge treatment, simplified taxation thresholds, and filing deadlines required to produce a correct return. ALWAYS read this skill before touching any South Korea VAT-related work.
 version: 2.0
+jurisdiction: KR
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # South Korea VAT Return Preparation Skill v2.0
+
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 ## Section 1 -- Quick reference
 
@@ -625,7 +630,6 @@ Blue for hardcoded values from bank statement. Black for formulas. Green for cro
 15. Refusal catalogue present: yes (Section 2, R-KR-1 through R-KR-6).
 
 ## End of South Korea VAT Return Skill v2.0
-
 
 ---
 

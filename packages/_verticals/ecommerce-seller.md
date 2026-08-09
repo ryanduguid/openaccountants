@@ -3,9 +3,14 @@ name: ecommerce-seller
 description: Industry vertical for e-commerce sellers including Amazon FBA, Shopify, Etsy, eBay, and direct-to-consumer brands. Loaded alongside any country skill to provide industry-specific classification guidance for inventory accounting, marketplace fees, shipping costs, and multi-channel revenue. Trigger phrases — Amazon seller, FBA, Shopify store, Etsy seller, eBay seller, e-commerce, online store, dropshipping, marketplace seller, DTC brand.
 version: 1.0
 category: vertical
+jurisdiction: GLOBAL
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # E-commerce Seller Vertical Skill v1.0
+
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 ## Section 1 — Industry Profile
 

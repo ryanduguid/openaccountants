@@ -6,11 +6,15 @@ description: >
   "NV business tax", "Nevada $4 million threshold". This tax applies to business entities
   with Nevada gross revenue exceeding $4 million per taxable year.
 jurisdiction: US-NV
+tier: 2
+last_updated: 2026-06-12
 version: "0.1"
 validation_status: ai-drafted-q3
 ---
 
 # Nevada Commerce Tax Skill
+
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 > **Scope.** This skill covers the Nevada Commerce Tax (NRS Chapter 363C), a gross
 > receipts tax imposed on business entities with Nevada gross revenue exceeding

@@ -2,22 +2,14 @@
 name: us-sales-tax
 description: Use this skill whenever asked about United States sales tax, use tax, sales tax nexus, multi-state tax compliance, sales tax returns, exemption certificates, taxability of goods or services, economic nexus, or any request involving US state-level consumption taxes. Trigger on phrases like "sales tax", "use tax", "nexus", "Wayfair", "sales tax return", "exemption certificate", "resale certificate", "taxability", "sales tax rate", "marketplace facilitator", "Streamlined Sales Tax", "SST", or any request involving US state sales and use tax filing, classification, or compliance. This skill contains the complete US sales and use tax framework. ALWAYS read this skill before touching any US sales tax work.
 version: 2.0
+jurisdiction: US
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # United States Sales and Use Tax Framework Skill v2.0
 
-## Verified rates & thresholds (accountant-reviewed)
-
-> Reviewed against the cited tax authorities by **Amir Pelinkovic** on 2026-06-03.
-> This block is generated from the verified facts database at openaccountants.com —
-> edit the facts there, not this prose. Items under clarification are excluded.
-
-### US Sales Tax
-
-- **States w/ tax** — 45 states + DC impose a statewide sales tax; 5 (NOMAD) do not  _(State statutes; Streamlined Sales Tax.)_
-- **IL rate** — 6.25% state  _(35 ILCS 120/2-10.)_
-- **Nexus most** — $100,000 is the common post-Wayfair economic-nexus sales threshold; the '200 transactions' prong has been dropped by many states (and some, e.g., CA/TX, never used it). Verify per state.  _(South Dakota v. Wayfair; state statutes.)_
-- **CA/TX** — CA and TX economic-nexus threshold = $500,000 (no transaction-count test)  _(Cal. RTC 6203; Texas Comptroller Rule 3.286.)_
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 ## Section 1 -- Quick reference
 
@@ -287,7 +279,6 @@ Most states offer VDAs for sellers who discover past-due nexus obligations. Bene
 ## Disclaimer
 
 This skill is provided for informational and computational purposes only and does not constitute tax, legal, or financial advice. All outputs must be reviewed by a qualified professional (CPA, EA, or tax attorney) before filing.
-
 
 ---
 

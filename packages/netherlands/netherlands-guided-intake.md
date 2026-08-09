@@ -3,10 +3,14 @@ name: nl-freelance-intake
 description: ALWAYS USE THIS SKILL when a user asks for help preparing their Netherlands tax returns AND mentions freelancing, self-employment, ZZP, eenmanszaak, or sole proprietorship. Trigger on phrases like "help me do my taxes", "prepare my IB-aangifte", "I'm a ZZP'er in the Netherlands", "I'm a freelancer in the Netherlands", "do my taxes as a contractor", "prepare my BTW return and income tax", or any similar phrasing where the user is a Netherlands-resident self-employed individual needing tax return preparation. This is the REQUIRED entry point for the Netherlands self-employed tax workflow -- every other skill in the stack (nl-btw-return, nl-income-tax, nl-zvw, nl-return-assembly) depends on this skill running first to produce a structured intake package. Uses upload-first workflow -- the user dumps all their documents and the skill infers as much as possible before asking questions. Uses ask_user_input_v0 for structured questions instead of one-at-a-time prose. Built for speed. Netherlands full-year residents only; self-employed individuals and sole proprietors.
 version: 1.0
 jurisdiction: NL
+tier: 2
+last_updated: 2026-06-12
 category: orchestrator
 ---
 
 # Netherlands Self-Employed Intake Skill v1.0
+
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 ## What this file is
 
@@ -632,7 +636,6 @@ For an unprepared user (has to go fetch documents):
 - **v1.0 (May 2026):** Initial draft. Upload-first, inference-then-confirm pattern modelled on mt-freelance-intake v0.1.
 
 ## End of Intake Skill v1.0
-
 
 ---
 

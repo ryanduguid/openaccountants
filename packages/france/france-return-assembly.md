@@ -3,10 +3,14 @@ name: fr-return-assembly
 description: Final orchestrator skill that assembles the complete French filing package for France-resident self-employed individuals, micro-entrepreneurs, and sole proprietors. Consumes outputs from all French content skills (france-tva for TVA CA3/CA12, france-income-tax for 2042/2042-C-PRO/2035/2031, france-cotisations for URSSAF/SSI, fr-estimated-tax for prélèvement à la source) to produce a single unified reviewer package containing every worksheet, every form, every brief section, all cross-skill reconciliations, and the final action list with payment instructions, filing instructions, and next-year planning. This is the capstone skill that runs last and produces the final deliverable. MUST be loaded alongside all French content skills listed above. France full-year residents only. Self-employed individuals, micro-entrepreneurs, and sole proprietors only.
 version: 1.0
 jurisdiction: FR
+tier: 2
+last_updated: 2026-06-12
 category: orchestrator
 ---
 
 # France Return Assembly Skill v1.0
+
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 ## CRITICAL EXECUTION DIRECTIVE -- READ FIRST
 
@@ -428,7 +432,6 @@ The final output is **three files**:
 - **v1.0 (May 2026):** Initial draft. Modelled on mt-return-assembly v0.1 adapted for France jurisdiction with four content skills (TVA, income tax, cotisations sociales, PAS/estimated tax).
 
 ## End of skill
-
 
 ---
 

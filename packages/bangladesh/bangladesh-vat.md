@@ -2,9 +2,14 @@
 name: bangladesh-vat
 description: Use this skill whenever asked to prepare, review, or classify transactions for a Bangladesh VAT return (Mushak-9.1) or turnover tax return for any client. Trigger on phrases like "prepare VAT return", "Bangladesh VAT", "Mushak", "BIN registration", "NBR filing", or any request involving Bangladesh VAT. Also trigger when classifying transactions for VAT purposes from bank statements, invoices, or other source data. This skill covers standard VAT-registered (Article 10 equivalent) and turnover tax filers. Complex multi-establishment structures, bond/export processing zones, and supplementary duty computations are in the refusal catalogue. MUST be loaded alongside vat-workflow-base v0.1 or later (for workflow architecture). ALWAYS read this skill before touching any Bangladesh VAT work.
 version: 2.0
+jurisdiction: BD
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # Bangladesh VAT Return Skill (Mushak-9.1) v2.0
+
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 ## Section 1 — Quick reference
 

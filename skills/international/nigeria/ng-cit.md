@@ -4,7 +4,7 @@ description: "Use this skill whenever asked about Nigerian Companies Income Tax 
 jurisdiction: NG
 domain: international
 tax_year: 2025
-reviewed_by: Omolola Fasasi 
+reviewed_by: Omolola Fasasi
 review_status: accountant-reviewed
 tier: 1
 last_updated: 2026-07-06

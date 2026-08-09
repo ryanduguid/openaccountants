@@ -2,10 +2,14 @@
 name: ri-sales-tax
 description: Use this skill whenever asked about Rhode Island sales tax, RI use tax, Rhode Island Tax Division filing, Rhode Island SaaS tax, or Rhode Island sales tax compliance. Trigger on phrases like "Rhode Island sales tax", "RI sales tax", "R.I.G.L. §44-18", "RI Tax Division", "Rhode Island clothing exemption", "Rhode Island SaaS", or any request involving Rhode Island sales and use tax compliance. ALWAYS load us-sales-tax first for federal context.
 jurisdiction: US-RI
+tier: 2
+last_updated: 2026-06-12
 validation_status: ai-drafted-q3
 ---
 
 # Rhode Island Sales and Use Tax Skill
+
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 ---
 
@@ -163,7 +167,6 @@ Exemptions identified in Step 2 above are the primary deductibility rules for Rh
 - **Manufacturing exemptions:** Where applicable per Step 2. [T2]
 
 All exemption certificates must be collected at or before the time of sale and retained per the state's statute of limitations. [T1]
-
 
 ---
 

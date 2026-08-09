@@ -2,9 +2,14 @@
 name: ca-smllc-form-568
 description: Tier 2 California content skill for preparing California Form 568 (Limited Liability Company Return of Income) for single-member LLCs disregarded for federal tax purposes but treated as separate entities by California for the $800 annual franchise tax and the gross receipts-based LLC fee. Covers tax year 2025 including the $800 minimum franchise tax (R&TC section 17941), the tiered LLC fee schedule (R&TC section 17942), first-year exemption rules, Form 3522 (LLC Tax Voucher), Form 3536 (Estimated Fee), Schedule B balance sheet requirements, and penalty and interest computations. Defers individual income tax to ca-540-individual-return and estimated personal tax to ca-estimated-tax-540es. MUST be loaded alongside us-tax-workflow-base v0.1 or later. California SMLLCs only.
 version: 0.2
+jurisdiction: US-CA
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # CA SMLLC Form 568 Skill v0.2
+
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 ## What this file is, and what it is not
 
@@ -377,7 +382,6 @@ The LLC fee is based on "total income" computed on Schedule IW:
 - **v0.2 (April 2026):** Full content skill with $800 franchise tax, LLC fee schedule, Form 568 preparation, edge cases, and test suite.
 
 ## End of skill
-
 
 ---
 

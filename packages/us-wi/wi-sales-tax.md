@@ -2,10 +2,14 @@
 name: wi-sales-tax
 description: Use this skill whenever asked about Wisconsin sales tax, Wisconsin use tax, Wisconsin sales tax nexus, Wisconsin sales tax returns, Wisconsin exemption certificates, taxability of goods or services in Wisconsin, or any request involving Wisconsin state-level consumption taxes. Trigger on phrases like "Wisconsin sales tax", "WI sales tax", "Wisconsin use tax", "Wisconsin nexus", "Wis. Stat. 77.51", "Wisconsin DOR sales tax", or any request involving Wisconsin sales and use tax filing, classification, or compliance. ALWAYS read the parent us-sales-tax skill first for federal context.
 jurisdiction: US-WI
+tier: 2
+last_updated: 2026-06-12
 validation_status: ai-drafted-q3
 ---
 
 # Wisconsin Sales and Use Tax Skill
+
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 ---
 
@@ -229,7 +233,6 @@ Valid certificates must include: purchaser information, seller's permit number (
 Good faith acceptance protects sellers. Certificates must be retained for **4 years** from the date of the last transaction. [T1]
 
 ---
-
 
 ### 6.1 When Use Tax Applies
 

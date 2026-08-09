@@ -2,9 +2,14 @@
 name: gr-efka
 description: Use this skill whenever asked about Greek EFKA (e-EFKA / Ενιαίος Φορέας Κοινωνικής Ασφάλισης) social insurance contributions for self-employed individuals. Trigger on phrases like "EFKA contributions", "Greek social insurance", "ελεύθερος επαγγελματίας ασφάλιση", "EFKA categories", "self-employed Greece insurance", or any question about social insurance obligations for a self-employed client in Greece. Covers the 6-category system for main pension, healthcare, and supplementary pension. ALWAYS read this skill before touching any Greece social contributions work.
 version: 2.0
+jurisdiction: GR
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # Greece EFKA Contributions -- Self-Employed Skill v2.0
+
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 ## Section 1 -- Quick reference
 

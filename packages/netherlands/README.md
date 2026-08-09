@@ -15,22 +15,24 @@
 8. `netherlands-tax-optimization.md`
 9. `netherlands-transfer-pricing.md`
 10. `netherlands-vat-return.md`
-11. `nl-corporate-tax.md`
-12. `nl-deductions.md`
-13. `nl-income-tax.md`
-14. `nl-payroll-tax.md`
-15. `nl-tax-objection.md`
-16. `nl-zzp-deductions.md`
-17. `references.md`
-18. `eu-vat-directive.md`
-19. `bookkeeping-workflow-base.md`
-20. `payroll-workflow-base.md`
-21. `company-formation-workflow-base.md`
-22. `financial-statements-workflow-base.md`
-23. `transfer-pricing-workflow-base.md`
-24. `crypto-tax-workflow-base.md`
-25. `netherlands-guided-intake.md`
-26. `netherlands-return-assembly.md`
+11. `nl-30-percent-ruling.md`
+12. `nl-corporate-tax.md`
+13. `nl-deductions.md`
+14. `nl-income-tax.md`
+15. `nl-payroll-tax.md`
+16. `nl-tax-objection.md`
+17. `nl-vat-return.md`
+18. `nl-zzp-deductions.md`
+19. `references.md`
+20. `eu-vat-directive.md`
+21. `bookkeeping-workflow-base.md`
+22. `payroll-workflow-base.md`
+23. `company-formation-workflow-base.md`
+24. `financial-statements-workflow-base.md`
+25. `transfer-pricing-workflow-base.md`
+26. `crypto-tax-workflow-base.md`
+27. `netherlands-guided-intake.md`
+28. `netherlands-return-assembly.md`
 
 ## Also known as
 

@@ -3,9 +3,14 @@ name: content-creator
 description: Industry vertical for content creators including YouTubers, podcasters, bloggers, newsletter writers, course creators, and social media influencers. Loaded alongside any country skill to provide industry-specific classification guidance for multi-stream revenue, content production costs, and platform income. Trigger phrases — YouTuber, podcaster, blogger, newsletter, course creator, influencer, content creator, streamer, Twitch, Patreon creator, digital creator.
 version: 1.0
 category: vertical
+jurisdiction: GLOBAL
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # Content Creator Vertical Skill v1.0
+
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 ## Section 1 — Industry Profile
 

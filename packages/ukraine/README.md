@@ -7,7 +7,25 @@
 
 1. `foundation.md`
 2. `intake.md`
-3. `ukraine-vat.md`
+3. `ua-bookkeeping.md`
+4. `ua-corporate-income-tax.md`
+5. `ua-crypto-tax.md`
+6. `ua-einvoice.md`
+7. `ua-financial-statements.md`
+8. `ua-formation.md`
+9. `ua-income-tax.md`
+10. `ua-payroll.md`
+11. `ua-single-tax.md`
+12. `ua-social-contributions.md`
+13. `ua-tax-optimization.md`
+14. `ua-tax-overview.md`
+15. `ukraine-vat.md`
+16. `bookkeeping-workflow-base.md`
+17. `einvoice-workflow-base.md`
+18. `payroll-workflow-base.md`
+19. `company-formation-workflow-base.md`
+20. `financial-statements-workflow-base.md`
+21. `crypto-tax-workflow-base.md`
 
 ## How to use
 
@@ -24,17 +42,17 @@ The AI will:
 - Ask onboarding questions to confirm your situation
 - Load the right domain skills (tax, bookkeeping, payroll, etc.)
 - Produce working papers for each obligation
-- Flag anything that needs your qualified tax professional's attention
+- Flag anything that needs your tax professional's attention
 
 ## Important
 
-**This is not tax, legal, or financial advice.** Everything produced must be reviewed and signed off by a qualified qualified tax professional before filing or acting upon.
+**This is not tax, legal, or financial advice.** Everything produced must be reviewed and signed off by a qualified tax professional before filing or acting upon.
 
 The most up-to-date, verified version of these skills is maintained at [openaccountants.com](https://www.openaccountants.com).
 
 ---
 
-## Are you a qualified tax professional?
+## Are you a tax professional?
 
 These Ukraine tax skills need your eye. Every rate, threshold, and form reference was AI-drafted and needs a human professional to verify it.
 

@@ -96,7 +96,7 @@ All domain skills for a country live in the same directory (e.g., `skills/intern
 | Platform integration skills | `skills/integrations/` |
 | Orchestrator files (router, intake, assembly) | `skills/orchestrator/` |
 
-After editing, run `python3 scripts/build-packages.py` to regenerate all packages under `packages/`. You can also use `--us-only` to regenerate just US state packages. The build is safe for `packages/us-federal/` — it skips hand-authored packages and will never wipe or regenerate that directory.
+After editing, run `python3 scripts/build-packages.py` to regenerate all packages under `packages/`. You can also use `--us-only` to regenerate only `packages/us-*/`; it leaves Canada and every other package untouched. The build validates its required source directories and arguments before cleanup, and is safe for `packages/us-federal/` — it skips hand-authored packages and will never wipe or regenerate that directory.
 
 If you add a `references.md` to a country's source directory, it will be included in the generated package automatically.
 
@@ -108,7 +108,7 @@ After you submit, Partners — licensed accountants — review your skill on [op
 
 OpenAccountants is a **mixed-licence** project: software is **AGPL-3.0-only** and the Guides are under the source-available **OA Guide License**, with a commercial track for both (see [LICENSING.md](LICENSING.md)). The [Contributor License Agreement](CLA.md) lets Glimpse Ltd distribute your contribution under **all** of these tracks. You **retain copyright**; you are granting a license, not handing over ownership.
 
-**GitHub pull requests:** we rely on an **explicit opt-in**. When you open a PR, you must **tick the CLA checkbox** in the [pull request template](.github/PULL_REQUEST_TEMPLATE.md) (and leave it checked on updates to the same PR). That single action is how you record agreement. Maintainers should not merge PRs where the contributor has not confirmed the CLA.
+**GitHub pull requests:** we rely on an **explicit opt-in**. When you open a PR, tick the CLA checkbox in the [pull request template](.github/PULL_REQUEST_TEMPLATE.md) and leave it checked on updates. To create the durable signature record used by the automated merge gate, also post this exact PR comment: **I have read the CLA Document and I hereby sign the CLA**. Maintainers should not merge PRs where the contributor has not completed the automated CLA check.
 
 **Website / other channels:** follow whatever acceptance flow that channel provides, or contact **info@openaccountants.com** for a formal signed agreement.
 

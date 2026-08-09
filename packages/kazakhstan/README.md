@@ -8,6 +8,26 @@
 1. `foundation.md`
 2. `intake.md`
 3. `kazakhstan-vat.md`
+4. `kz-bookkeeping.md`
+5. `kz-company-formation.md`
+6. `kz-corporate-income-tax.md`
+7. `kz-crypto-tax.md`
+8. `kz-einvoice.md`
+9. `kz-financial-statements.md`
+10. `kz-formation.md`
+11. `kz-income-tax.md`
+12. `kz-payroll-social.md`
+13. `kz-payroll.md`
+14. `kz-simplified-regime.md`
+15. `kz-social-contributions.md`
+16. `kz-tax-optimization.md`
+17. `kz-tax-overview.md`
+18. `bookkeeping-workflow-base.md`
+19. `einvoice-workflow-base.md`
+20. `payroll-workflow-base.md`
+21. `company-formation-workflow-base.md`
+22. `financial-statements-workflow-base.md`
+23. `crypto-tax-workflow-base.md`
 
 ## How to use
 
@@ -24,17 +44,17 @@ The AI will:
 - Ask onboarding questions to confirm your situation
 - Load the right domain skills (tax, bookkeeping, payroll, etc.)
 - Produce working papers for each obligation
-- Flag anything that needs your qualified tax professional's attention
+- Flag anything that needs your tax professional's attention
 
 ## Important
 
-**This is not tax, legal, or financial advice.** Everything produced must be reviewed and signed off by a qualified qualified tax professional before filing or acting upon.
+**This is not tax, legal, or financial advice.** Everything produced must be reviewed and signed off by a qualified tax professional before filing or acting upon.
 
 The most up-to-date, verified version of these skills is maintained at [openaccountants.com](https://www.openaccountants.com).
 
 ---
 
-## Are you a qualified tax professional?
+## Are you a tax professional?
 
 These Kazakhstan tax skills need your eye. Every rate, threshold, and form reference was AI-drafted and needs a human professional to verify it.
 

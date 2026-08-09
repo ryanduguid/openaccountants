@@ -2,9 +2,14 @@
 name: nicaragua-iva
 description: Use this skill whenever asked to prepare, review, or classify transactions for a Nicaragua IVA (Impuesto al Valor Agregado) return for any client. Trigger on phrases like "prepare IVA return", "Nicaragua VAT", "DGI return", "VET filing", or any request involving Nicaragua value added tax filing. This skill covers Regimen General IVA filers only. Cuota Fija (fixed-fee small taxpayer) and free-zone entities are in the refusal catalogue. ALWAYS read this skill before touching any Nicaragua IVA work.
 version: 2.0
+jurisdiction: NI
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # Nicaragua IVA Return Skill v2.0
+
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 ## Section 1 — Quick reference
 

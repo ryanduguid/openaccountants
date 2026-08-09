@@ -2,10 +2,12 @@
 // Inserts a "General reference only" disclaimer blockquote after the first H1
 // in every skill markdown file under skills/. Idempotent: skips files that
 // already contain the marker. Run with --apply to write; default is dry-run.
-import { readFileSync, writeFileSync, readdirSync, statSync } from "node:fs";
-import { join } from "node:path";
+import { lstatSync, readFileSync, readdirSync, writeFileSync } from "node:fs";
+import { dirname, join } from "node:path";
+import { fileURLToPath } from "node:url";
 
-const ROOT = "skills";
+const REPO_ROOT = dirname(dirname(fileURLToPath(import.meta.url)));
+const ROOT = join(REPO_ROOT, "skills");
 const APPLY = process.argv.includes("--apply");
 const MARKER = "General reference only";
 const DISCLAIMER =
@@ -14,7 +16,9 @@ const DISCLAIMER =
 function walk(dir, out = []) {
   for (const name of readdirSync(dir)) {
     const p = join(dir, name);
-    const s = statSync(p);
+    const s = lstatSync(p);
+    // Never follow a repository symlink into an external tree during --apply.
+    if (s.isSymbolicLink()) continue;
     if (s.isDirectory()) walk(p, out);
     else if (name.endsWith(".md")) out.push(p);
   }
@@ -40,18 +44,22 @@ for (const f of files) {
     skipped++;
     continue;
   }
-  const lines = text.split("\n");
+  const newline = text.includes("\r\n") ? "\r\n" : "\n";
+  const lines = text.split(/\r?\n/);
   const i = lines.findIndex((l) => /^#\s+\S/.test(l));
   if (i === -1) {
     noH1++;
     continue;
   }
   // Insert: blank, disclaimer, blank right after the H1 line.
-  const next = [...lines.slice(0, i + 1), "", DISCLAIMER, "", ...lines.slice(i + 1)];
-  // avoid double blank if the original line after H1 was already blank
-  const out = next.filter((l, idx) => !(idx > 0 && next[idx - 1] === "" && l === ""));
+  const suffix = lines.slice(i + 1);
+  const out = [...lines.slice(0, i + 1), "", DISCLAIMER];
+  // Reuse an existing blank after the H1; do not normalize blank lines in the
+  // rest of the document as the earlier whole-file filter did.
+  if (suffix[0] !== "") out.push("");
+  out.push(...suffix);
   if (!sample) sample = { f, before: lines.slice(i, i + 3), after: out.slice(i, i + 4) };
-  if (APPLY) writeFileSync(f, out.join("\n"));
+  if (APPLY) writeFileSync(f, out.join(newline), "utf8");
   changed++;
 }
 

@@ -3,10 +3,14 @@ name: md-sales-tax
 description: Use this skill whenever asked about Maryland sales and use tax. Trigger on phrases like "Maryland sales tax", "MD sales tax", "Maryland Comptroller", "digital advertising tax". ALWAYS load us-sales-tax first.
 version: 2.0
 jurisdiction: US-MD
+tier: 2
+last_updated: 2026-06-12
 validation_status: ai-drafted-q3
 ---
 
 # Maryland Sales and Use Tax Skill v2.0
+
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 ## Section 1 -- Quick reference
 
@@ -50,7 +54,6 @@ validation_status: ai-drafted-q3
 ## Disclaimer
 
 Informational only. Review by qualified professional required before filing.
-
 
 ---
 

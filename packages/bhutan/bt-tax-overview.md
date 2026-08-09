@@ -1,0 +1,59 @@
+---
+name: Bhutan Tax Overview
+description: "Source-cited draft: tax overview for Bhutan (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
+jurisdiction: BT
+domain: income-tax
+role: reference
+tax_year: 2025
+tier: 2
+last_updated: 2026-07-06
+---
+
+# Bhutan Tax Overview
+
+## Bhutan tax system at a glance (income year 2025)
+
+Bhutan's direct taxes for income year 2025 run under the Income Tax Act of the Kingdom of Bhutan 2001 (as amended), administered by the Department of Revenue and Customs (DRC) under the Ministry of Finance. A major reform — the Income Tax Act of Bhutan 2025 and a new Goods and Services Tax — takes effect 1 January 2026, so the figures below are the pre-reform rules still in force for the 2025 income year.
+
+- **Tax (income) year** — Calendar year, 1 January to 31 December  _([Income Tax Act of the Kingdom of Bhutan 2001](https://www.drc.gov.bt/notification-tax-filing-for-income-year-2025/))_
+- **Currency** — Bhutanese Ngultrum (BTN / Nu), pegged 1:1 to the Indian Rupee  _(Royal Monetary Authority of Bhutan Act)_
+- **Tax authority** — Department of Revenue and Customs (DRC), Ministry of Finance  _([Income Tax Act of the Kingdom of Bhutan 2001](https://www.drc.gov.bt/))_
+- **Basis of taxation** — Source-based; income derived from sources in Bhutan is taxable, with limited taxation of foreign-source income ((approx — confirm))  _(Income Tax Act of the Kingdom of Bhutan 2001)_
+- **Personal income tax exemption threshold** — Nu 300,000 of annual taxable income BTN  _([Income Tax Act of the Kingdom of Bhutan 2001](https://www.drc.gov.bt/personal-income-tax-pit/))_
+- **Top personal income tax rate** — 30% percent (on annual income above Nu 3,500,000)  _([Income Tax Act of the Kingdom of Bhutan 2001](https://www.drc.gov.bt/personal-income-tax-pit/))_
+- **Personal income tax surcharge (2025)** — 10% surcharge on net tax payable where gross income is Nu 1,000,000 or more (removed under the Income Tax Act 2025 from 2026)  _(Income Tax Act of the Kingdom of Bhutan 2001)_
+- **Corporate Income Tax (CIT) rate** — 30% (registered companies) percent (reduced to 22% under the Income Tax Act 2025 from 1 Jan 2026)  _(Income Tax Act of the Kingdom of Bhutan 2001)_
+- **Business Income Tax (BIT) rate** — 30% (unincorporated businesses) ((approx — confirm)) percent  _(Income Tax Act of the Kingdom of Bhutan 2001)_
+- **VAT / GST in 2025** — No GST in force in 2025; indirect tax was Sales Tax. GST at 5% takes effect 1 January 2026  _([Goods and Services Tax Act of Bhutan 2020 (as amended 2025)](https://www.drc.gov.bt/wp-content/uploads/2025/12/Consolidated-GST-Act-of-Bhutan-2020-and-amendment-thereof.pdf))_
+- **Annual income tax filing deadline** — By 31 March following the close of the income year (e.g. 31 March 2026 for income year 2025) ((approx — confirm exact date in DRC annual notification))  _([Income Tax Act of the Kingdom of Bhutan 2001](https://www.drc.gov.bt/notification-tax-filing-for-income-year-2025/))_
+
+---
+
+<!-- openaccountants-cta-block -->
+
+## Talk to a verified accountant
+
+This skill is a tool, not an engagement. Every taxpayer's situation is
+different, and the rules in the skill may not match your specific facts.
+
+To speak with one of the licensed accountants who verifies skills for your
+jurisdiction — **no liability on either side until you and the accountant sign
+a formal engagement letter** — book a free 30-minute call:
+
+**→ [Book a call](https://calendly.com/openaccountants-info/30min)**
+
+We'll route you to the named verifier covering your country or state. You can
+also see the full list of verified accountants at
+[openaccountants.com/network](https://www.openaccountants.com/network).
+
+<!-- openaccountants-mcp-cta -->
+
+## The accountant-verified version lives in the connector
+
+This file is the open, **research-grade draft**. The **accountant-verified**
+version of this skill is **not published to GitHub** — it is delivered free
+through the OpenAccountants MCP connector, where your AI agent loads the
+verified rules together with the name of the accountant who signed them off.
+
+**→ Install the free connector:** <https://www.openaccountants.com/connect>
+**MCP endpoint:** `https://www.openaccountants.com/api/mcp`

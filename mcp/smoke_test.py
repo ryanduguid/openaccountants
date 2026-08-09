@@ -4,7 +4,7 @@ Smoke test for the OpenAccountants MCP server.
 
 Run from the repo root (needs the MCP SDK + PyYAML, e.g. via uv):
 
-    uv run --python 3.12 --with "mcp>=1.0.0" --with pyyaml python mcp/smoke_test.py
+    uv run --python 3.12 --with "mcp>=1.28.1,<2" --with pyyaml python mcp/smoke_test.py
 
 If the dependencies aren't installed, the server can't be imported; the test
 then falls back to a minimal filesystem check so it still exits cleanly.
@@ -44,7 +44,7 @@ except ImportError as exc:
     check("packages/ has skills", any(PACKAGES_DIR.rglob("*.md")))
     check("malta-income-tax.md present", (PACKAGES_DIR / "malta" / "malta-income-tax.md").is_file())
     print()
-    print("FILESYSTEM CHECKS PASSED." if not failures else f"FAILED — {failures} check(s).")
+    print("FILESYSTEM CHECKS PASSED." if not failures else f"FAILED -- {failures} check(s).")
     sys.exit(1 if failures else 0)
 
 
@@ -59,6 +59,24 @@ check("MT filter only MT", all(s["jurisdiction"] == "MT" for s in mt["skills"]),
       str({s["jurisdiction"] for s in mt["skills"]}))
 check("MT includes malta-vat-return (no own frontmatter jurisdiction)",
       any(s["slug"] == "malta-vat-return" for s in mt["skills"]))
+pk = S.list_skills(jurisdiction="PK")
+check("indexes the PK YAML guide", any(s["slug"] == "pk-sales-tax-services" for s in pk["skills"]))
+no = S.list_skills(jurisdiction="NO")
+no_slugs = {s["slug"] for s in no["skills"]}
+check(
+    "NO code keeps the formerly coerced guides",
+    {
+        "no-capital-gains",
+        "no-company-formation",
+        "no-corporate-income-tax",
+        "no-income-tax",
+        "no-social-contributions",
+        "no-tax-overview",
+        "no-vat-return",
+        "norway-mva",
+    }.issubset(no_slugs),
+    str(no_slugs),
+)
 usca = S.list_skills(jurisdiction="US-CA")
 check("US-CA filter works (sub-national dir)", len(usca["skills"]) > 0, f"got {len(usca['skills'])}")
 sample = mt["skills"][0]
@@ -75,6 +93,26 @@ check("has provenance footer", "Provenance & attribution" in gs["markdown"])
 check("accountant-verified tier", gs["quality_tier"] == "accountant-verified", gs["quality_tier"])
 check("verifier is a name, not an email", gs["verified_by"] and "@" not in str(gs["verified_by"]),
       str(gs["verified_by"]))
+check("preserves source last_updated", gs["last_updated"] == "2026-06-12", gs["last_updated"])
+
+# --- collision-safe slugs -------------------------------------------------
+print("\ncollision-safe guide slugs:")
+ar_slugs = {s["slug"] for s in S.list_skills(jurisdiction="AR")["skills"]}
+usar_slugs = {s["slug"] for s in S.list_skills(jurisdiction="US-AR")["skills"]}
+check("Argentina collision gets a path-qualified slug",
+      "path:argentina/ar-income-tax" in ar_slugs, str(ar_slugs))
+check("Arkansas collision gets a distinct path-qualified slug",
+      "path:us-ar/ar-income-tax" in usar_slugs, str(usar_slugs))
+try:
+    S.get_skill("ar-income-tax")
+    check("ambiguous legacy slug rejected", False, "did NOT raise")
+except ValueError as exc:
+    check("ambiguous legacy slug rejected",
+          "ambiguous" in str(exc).lower() and "path:argentina/ar-income-tax" in str(exc), str(exc))
+ar_guide = S.get_skill("path:argentina/ar-income-tax")
+check("path-qualified slug loads the intended jurisdiction",
+      ar_guide["jurisdiction"] == "AR" and ar_guide.get("legacy_slug") == "ar-income-tax",
+      str(ar_guide))
 
 # --- get_skill_sections ---------------------------------------------------
 print("\nget_skill_sections('malta-income-tax'):")
@@ -85,14 +123,14 @@ check("section shape", all(set(s) >= {"heading", "content", "level"} for s in se
 # --- start (onboarding) ---------------------------------------------------
 print("\nstart():")
 empty = S.start()
-check("no args → needs_input", empty["status"] == "needs_input", empty.get("status"))
+check("no args -> needs_input", empty["status"] == "needs_input", empty.get("status"))
 check("needs both fields", set(empty.get("needs", [])) == {"intent", "jurisdiction"},
       str(empty.get("needs")))
 check("available_intents non-empty", len(empty.get("available_intents", [])) >= 5)
 
 print("start(intent='taxes'):")
 intent_only = S.start(intent="taxes")
-check("intent only → needs jurisdiction", intent_only["status"] == "needs_input"
+check("intent only -> needs jurisdiction", intent_only["status"] == "needs_input"
       and intent_only.get("needs") == ["jurisdiction"], intent_only.get("status"))
 check("jurisdictions list non-empty", len(intent_only.get("available_jurisdictions", [])) > 10)
 check("MT is among the available jurisdictions",
@@ -100,14 +138,14 @@ check("MT is among the available jurisdictions",
 
 print("start(jurisdiction='MT'):")
 jx_only = S.start(jurisdiction="MT")
-check("jurisdiction only → needs intent",
+check("jurisdiction only -> needs intent",
       jx_only["status"] == "needs_input" and jx_only.get("needs") == ["intent"])
 check("MT has taxes intent available",
       any(i["key"] == "taxes" for i in jx_only.get("available_intents", [])))
 
 print("start(intent='taxes', jurisdiction='MT'):")
 ready = S.start(intent="taxes", jurisdiction="MT")
-check("both → ready", ready["status"] == "ready", ready.get("status"))
+check("both -> ready", ready["status"] == "ready", ready.get("status"))
 slugs = [s["slug"] for s in ready.get("skills_to_load", [])]
 check("skills_to_load non-empty", len(slugs) > 0, str(slugs))
 check("malta-income-tax in plan", "malta-income-tax" in slugs, str(slugs))
@@ -118,7 +156,7 @@ check("plan has guardrails", len(ready.get("guardrails", [])) >= 3)
 
 print("start(intent='set up a company', jurisdiction='MT'):")
 synonym = S.start(intent="set up a company", jurisdiction="MT")
-check("synonym 'set up a company' → formation plan",
+check("synonym 'set up a company' -> formation plan",
       synonym["status"] == "ready" and synonym.get("intent") == "formation",
       str(synonym.get("intent")))
 check("formation plan includes malta-formation",
@@ -126,7 +164,7 @@ check("formation plan includes malta-formation",
 
 print("start(intent='gibberish'):")
 gib = S.start(intent="gibberish")
-check("unmatched intent → needs_clarification",
+check("unmatched intent -> needs_clarification",
       gib["status"] == "needs_clarification", gib.get("status"))
 
 # --- submit_feedback ------------------------------------------------------
@@ -227,6 +265,6 @@ asyncio.run(_registry())
 
 print()
 if failures:
-    print(f"FAILED — {failures} check(s) did not pass.")
+    print(f"FAILED -- {failures} check(s) did not pass.")
     sys.exit(1)
 print("ALL CHECKS PASSED.")

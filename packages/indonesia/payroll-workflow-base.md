@@ -3,9 +3,14 @@ name: payroll-workflow-base
 description: Universal payroll computation workflow base that defines the gross-to-net calculation, statutory deduction handling, payslip generation, and payroll reporting runbook for all jurisdictions. Contains no jurisdiction-specific content — no tax brackets, no social security rates, no minimum wages, no filing forms. This skill MUST be loaded alongside a country-specific payroll skill that provides the withholding tables, contribution rates, and local payroll rules. This skill alone cannot produce any output.
 version: 1.0
 category: foundation
+jurisdiction: GLOBAL
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # Payroll Workflow Base Skill v1.0
+
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 ## What this file is, and what it is not
 

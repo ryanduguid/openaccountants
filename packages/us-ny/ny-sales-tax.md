@@ -3,10 +3,14 @@ name: new-york-sales-tax
 description: Use this skill whenever asked about New York sales and use tax, NYS DTF filings, NYC sales tax, New York exemptions, New York clothing exemption, New York nexus, or any request involving New York state sales and use tax compliance. Trigger on phrases like "New York sales tax", "NY sales tax", "NYC sales tax", "DTF", "ST-100", "New York clothing exemption", "New York resale certificate", or any request involving New York sales and use tax classification, filing, or compliance. ALWAYS read this skill before touching any New York sales tax work.
 version: 2.0
 jurisdiction: US-NY
+tier: 2
+last_updated: 2026-06-12
 validation_status: ai-drafted-q3
 ---
 
 # New York Sales and Use Tax Skill v2.0
+
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 ## Section 1 -- Quick reference
 
@@ -369,7 +373,6 @@ All food at restaurants is taxable regardless of individual item exemption statu
 ## Disclaimer
 
 This skill is provided for informational and computational purposes only and does not constitute tax, legal, or financial advice. All outputs must be reviewed by a qualified professional (CPA, EA, or tax attorney) before filing.
-
 
 ---
 

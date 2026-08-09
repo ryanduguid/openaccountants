@@ -4,7 +4,10 @@ description: >
   Use this skill whenever asked about UK Student Loan repayment for self-employed individuals. Trigger on phrases like "student loan repayment", "Plan 1", "Plan 2", "Plan 4", "Plan 5", "Plan 5 student loan", "Postgraduate loan repayment", "postgraduate loan", "April 2026 student loan threshold", "student loan self-employed", "student loan Self Assessment", "SLC repayment", "student loan deduction", or any question about student loan obligations for a self-employed client. Also trigger when classifying bank statement transactions showing SLC repayments via SA, PAYE student loan deductions, or direct SLC payments. This skill covers Plan 1-5 and Postgraduate Loan thresholds across three tax years (2024-25, 2025-26, 2026-27), self-employed SA calculation, multiple plan interaction, bank statement classification patterns, overseas earnings, write-off periods, and edge cases. ALWAYS read this skill before touching any UK student loan repayment work.
 version: 2.1
 jurisdiction: GB
-tax_year: 2024-25, 2025-26, 2026-27
+tax_year: 2024
+tax_year_notes: "2024-25, 2025-26, 2026-27"
+tier: 2
+last_updated: 2026-07-04
 category: international
 depends_on:
   - income-tax-workflow-base
@@ -13,22 +16,7 @@ verified_by: pending
 
 # UK Student Loan Repayment -- Self-Employed Skill v2.1
 
-## Verified rates & thresholds (accountant-reviewed)
-
-> Reviewed against the cited tax authorities by **James Power** on 2026-06-03.
-> This block is generated from the verified facts database at openaccountants.com —
-> edit the facts there, not this prose. Items under clarification are excluded.
-
-### Student Loan Repayment
-
-- **Plan 1 (pre-2012)** — £26,065 / 9%  _(SL Regs 2009)_
-- **Plan 2 (post-2012)** — £28,470 / 9%  _(SL Regs 2009)_
-- **Plan 4 (Scotland)** — £32,745 / 9%  _(SL Regs 2009)_
-- **Plan 5 (post-2023)** — £25,000 / 9%  _(SL Regs 2009)_
-- **Postgraduate Loan** — £21,000 / 6%  _(SL Regs)_
-- **Tax-deductible?** — NO — not a business expense  _(ITA 2007)_
-- **CGT included?** — NO — capital gains excluded  _(SL Regs)_
-- **Unearned income included?** — Only if total unearned > £2,000  _(SL Regs)_
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 ## Section 1 -- Quick reference
 
@@ -45,7 +33,7 @@ verified_by: pending
 | Not tax-deductible | Student loan repayments are NOT business expenses |
 | Contributor | Open Accountants |
 | Validated by | Pending -- requires sign-off by a UK-qualified practitioner |
-| Validation date | Verified by James Power on 2026-06-03 |
+| Validation date | Pending |
 
 ### 1.1 Three-year threshold table -- all plans
 

@@ -2,9 +2,14 @@
 name: denmark-vat-return
 description: Use this skill whenever asked to prepare, review, or classify transactions for a Danish VAT return (Momsangivelse) for a self-employed individual or small business in Denmark. Trigger on phrases like "prepare VAT return", "do the VAT", "Danish VAT", "moms", "momsangivelse", or any request involving Denmark VAT filing. Also trigger when classifying transactions for VAT purposes from bank statements, invoices, or other source data. This skill covers Denmark only and only standard-registered businesses. Loensumsafgift-only entities, VAT groups, and fiscal representatives are in the refusal catalogue. MUST be loaded alongside BOTH vat-workflow-base v0.1 or later (for workflow architecture) AND eu-vat-directive v0.1 or later (for EU directive content). ALWAYS read this skill before touching any Danish VAT work.
 version: 2.0
+jurisdiction: DK
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # Denmark VAT Return Skill (Momsangivelse) v2.0
+
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 ## Section 1 — Quick reference
 
@@ -629,7 +634,6 @@ This skill is v2.0, rewritten in April 2026 to align with the three-tier Accora 
 10. No reduced rates — 25% only: explicitly stated in Section 1 and Section 5.1.
 11. Entertainment partial recovery (25% under §42(2)) documented: yes (Section 3.7, Example 3, Section 5.8).
 12. Vehicle rules documented: yes (Section 5.8, Example 6).
-
 
 ---
 

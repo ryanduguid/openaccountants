@@ -4,12 +4,16 @@ description: Use this skill whenever asked to prepare, review, or classify trans
 version: 2.0
 jurisdiction: EG
 tax_year: 2025
+tier: 2
+last_updated: 2026-06-12
 category: international
 depends_on:
   - vat-workflow-base
 ---
 
 # Egypt VAT (ضريبة القيمة المضافة) Skill v2.0
+
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 ---
 
@@ -434,7 +438,6 @@ When client cannot provide ETA e-Invoices for all transactions:
 | VAT Executive Regulations | Ministerial Decree 2017 |
 | ETA e-Invoice mandatory rules | ETA Decree 2020/2021 — phased rollout |
 | Reduced rate schedule | Annex to VAT Law — ministerial updates |
-
 
 ---
 

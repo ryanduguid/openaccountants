@@ -3,11 +3,15 @@ name: wi-income-tax
 description: >
   Use this skill whenever asked about Wisconsin individual income tax, Wisconsin Form 1, Wisconsin graduated tax rates, Wisconsin self-employment income tax at the state level, Wisconsin sliding-scale standard deduction, or any Wisconsin personal income tax question for sole proprietors. Trigger on phrases like "Wisconsin income tax", "WI income tax", "Wisconsin Form 1", "Wisconsin tax brackets", "Wisconsin 7.65%", "Wis. Stat. 71", or any request involving Wisconsin state individual income tax computation or filing.
 jurisdiction: US-WI
+tier: 2
+last_updated: 2026-06-12
 version: "0.1"
 validation_status: ai-drafted-q3
 ---
 
 # Wisconsin Individual Income Tax Skill — Self-Employed / Sole Proprietor
+
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 > **Scope.** This skill covers the Wisconsin individual income tax return (Form 1) for full-year Wisconsin residents who are sole proprietors or single-member LLC owners. It addresses the graduated rate computation, Wisconsin income starting from federal AGI, the sliding-scale standard deduction, and Wisconsin-specific credits.
 

@@ -3,11 +3,15 @@ name: va-income-tax
 description: >
   Use this skill whenever asked about Virginia individual income tax, Virginia Form 760, Virginia graduated tax rates, Virginia self-employment income tax at the state level, Virginia standard deduction, or any Virginia personal income tax question for sole proprietors. Trigger on phrases like "Virginia income tax", "VA income tax", "Form 760", "Virginia tax brackets", "Virginia 5.75%", "Virginia standard deduction", or any request involving Virginia state individual income tax computation or filing.
 jurisdiction: US-VA
+tier: 2
+last_updated: 2026-06-12
 version: "0.1"
 validation_status: ai-drafted-q3
 ---
 
 # Virginia Individual Income Tax Skill — Self-Employed / Sole Proprietor
+
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 > **Scope.** This skill covers the Virginia individual income tax return (Form 760) for full-year Virginia residents who are sole proprietors or single-member LLC owners. It addresses the graduated rate computation, Virginia adjustments to federal AGI, the standard deduction, and Virginia-specific credits.
 

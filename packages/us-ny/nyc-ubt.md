@@ -3,8 +3,10 @@ name: nyc-unincorporated-business-tax
 description: >
   NYC Unincorporated Business Tax (UBT) for sole proprietors and SMLLCs operating in the five boroughs. Covers the 4% tax rate, $95,000 exemption with phase-out, Form NYC-202, Form NYC-202S (simplified), the IT-219 credit against NYC resident income tax, and estimated UBT payments. Primary source: NYC Admin Code Title 11, Chapter 5.
 version: 1.0
-jurisdiction: US-NY-NYC
+jurisdiction: US-NY
 tax_year: 2025
+tier: 2
+last_updated: 2026-06-12
 category: state
 depends_on:
   - us-tax-workflow-base
@@ -12,6 +14,8 @@ validated: April 2026
 ---
 
 # NYC Unincorporated Business Tax (UBT) v1.0
+
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 ## What this file is
 

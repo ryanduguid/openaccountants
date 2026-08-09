@@ -5,9 +5,14 @@ category: integration
 description: >
   Integration skill for Sage 50 and Sage Business Cloud (Sage Accounting) CSV exports. Activate when the user
   uploads a Sage CSV, Sage transaction export, or mentions Sage 50, Sage Accounting, or Sage Business Cloud.
+jurisdiction: GLOBAL
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # Sage Integration Skill v1.0
+
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 ## Section 1 — Platform Overview
 

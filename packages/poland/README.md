@@ -7,13 +7,15 @@
 
 1. `foundation.md`
 2. `intake.md`
-3. `pl-income-tax.md`
-4. `pl-zus-contributions.md`
-5. `poland-einvoice.md`
-6. `poland-vat-return.md`
-7. `references.md`
-8. `eu-vat-directive.md`
-9. `einvoice-workflow-base.md`
+3. `pl-capital-gains.md`
+4. `pl-income-tax.md`
+5. `pl-vat-return.md`
+6. `pl-zus-contributions.md`
+7. `poland-einvoice.md`
+8. `poland-vat-return.md`
+9. `references.md`
+10. `eu-vat-directive.md`
+11. `einvoice-workflow-base.md`
 
 ## Also known as
 
@@ -36,17 +38,17 @@ The AI will:
 - Ask onboarding questions to confirm your situation
 - Load the right domain skills (tax, bookkeeping, payroll, etc.)
 - Produce working papers for each obligation
-- Flag anything that needs your qualified tax professional's attention
+- Flag anything that needs your tax professional's attention
 
 ## Important
 
-**This is not tax, legal, or financial advice.** Everything produced must be reviewed and signed off by a qualified qualified tax professional before filing or acting upon.
+**This is not tax, legal, or financial advice.** Everything produced must be reviewed and signed off by a qualified tax professional before filing or acting upon.
 
 The most up-to-date, verified version of these skills is maintained at [openaccountants.com](https://www.openaccountants.com).
 
 ---
 
-## Are you a qualified tax professional?
+## Are you a tax professional?
 
 These Poland tax skills need your eye. Every rate, threshold, and form reference was AI-drafted and needs a human professional to verify it.
 

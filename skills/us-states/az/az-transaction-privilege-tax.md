@@ -1,5 +1,5 @@
 ---
-description: Source-cited tax guide for US-AZ: az transaction privilege tax. Unverified draft, pending local-accountant review.
+description: 'Source-cited tax guide for US-AZ: az transaction privilege tax. Unverified draft, pending local-accountant review.'
 name: az-transaction-privilege-tax
 jurisdiction: US-AZ
 domain: state-tax
@@ -16,7 +16,7 @@ Arizona TPT under A.R.S. §42-5001 et seq. is a tax on the seller's privilege of
 
 ## 1. Scope and Refusals
 
-- **Section heading** — 
+- **Section heading** —
 
 ### 1.1 In scope
 

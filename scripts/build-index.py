@@ -13,8 +13,8 @@ the repo root:
                 "verified_by", "reviewed_by", "tax_year", "last_updated" }, ... ]
 }
 
-Dependency-free (stdlib only). Frontmatter is parsed with a simple ---block
-line scanner; malformed YAML is tolerated by regex-extracting the known keys.
+Requires PyYAML. Frontmatter is parsed with the same safe YAML loader used by
+the MCP server; malformed or non-mapping metadata stops index publication.
 
 Usage:
     python3 scripts/build-index.py            # write index.json at repo root
@@ -25,7 +25,8 @@ import json
 import os
 import re
 import sys
-from datetime import datetime, timezone
+import tempfile
+from datetime import date, datetime, timezone
 
 REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -47,11 +48,13 @@ KNOWN_KEYS = [
     "last_updated",
 ]
 
-# `key: value` at column 0. Tolerates malformed YAML elsewhere in the block.
+# `key: value` at column 0. This legacy scanner remains available to the
+# metadata-repair and contradiction tools, but build_index() itself is strict.
 KEY_RE = re.compile(r"^([A-Za-z_][A-Za-z0-9_-]*):[ \t]*(.*)$")
 
 # Jurisdiction values that look like codes get uppercased (MT, US, US-CA, CA-ON).
 CODE_RE = re.compile(r"^[A-Za-z]{2,3}(-[A-Za-z0-9]{1,4})*$")
+ISO_DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 
 
 def extract_frontmatter(text):
@@ -98,6 +101,55 @@ def parse_known_keys(block):
     return fields
 
 
+def parse_yaml_mapping(block, rel_path):
+    """Parse a guide frontmatter block as the MCP server will consume it."""
+    try:
+        import yaml
+    except ModuleNotFoundError as exc:
+        raise RuntimeError(
+            "build-index.py requires PyYAML; install it with `python -m pip install PyYAML`"
+        ) from exc
+    try:
+        fields = yaml.safe_load(block)
+    except yaml.YAMLError as exc:
+        problem = getattr(exc, "problem", None) or str(exc).splitlines()[0]
+        raise ValueError(f"{rel_path}: invalid YAML frontmatter ({problem})") from exc
+    if not isinstance(fields, dict):
+        raise ValueError(f"{rel_path}: frontmatter must be a YAML mapping")
+    return fields
+
+
+def text_field(fields, key, rel_path):
+    """Return an optional scalar text field without YAML's implicit coercion."""
+    value = fields.get(key)
+    if value is None:
+        return None
+    if not isinstance(value, str):
+        raise ValueError(f"{rel_path}: `{key}` must be text (got {value!r})")
+    return value
+
+
+def iso_date_field(fields, key, rel_path):
+    """Return an optional date as ISO text, matching the MCP's metadata rules."""
+    value = fields.get(key)
+    if value is None:
+        return None
+    if type(value) is date:
+        return value.isoformat()
+    if isinstance(value, str):
+        if not ISO_DATE_RE.fullmatch(value):
+            raise ValueError(
+                f"{rel_path}: `{key}` must be a valid YYYY-MM-DD date (got {value!r})"
+            )
+        try:
+            return date.fromisoformat(value).isoformat()
+        except ValueError as exc:
+            raise ValueError(
+                f"{rel_path}: `{key}` must be a valid YYYY-MM-DD date (got {value!r})"
+            ) from exc
+    raise ValueError(f"{rel_path}: `{key}` must be a date (got {value!r})")
+
+
 def guide_files():
     """Yield repo-relative paths of candidate guide files, sorted."""
     paths = []
@@ -125,27 +177,33 @@ def build_index():
         block = extract_frontmatter(text)
         if block is None:
             continue  # not a guide (no frontmatter)
-        fields = parse_known_keys(block)
+        fields = parse_yaml_mapping(block, rel_path)
 
-        jurisdiction = fields["jurisdiction"]
+        jurisdiction = text_field(fields, "jurisdiction", rel_path)
         if jurisdiction and CODE_RE.match(jurisdiction):
             jurisdiction = jurisdiction.upper()
 
-        tier = fields["tier"]
-        if isinstance(tier, str) and tier.isdigit():
-            tier = int(tier)
+        tier = fields.get("tier")
+        if tier is not None and type(tier) is not int:
+            raise ValueError(f"{rel_path}: `tier` must be an integer (got {tier!r})")
+
+        tax_year = fields.get("tax_year")
+        if tax_year is not None and type(tax_year) is not int:
+            raise ValueError(f"{rel_path}: `tax_year` must be an integer (got {tax_year!r})")
 
         guides.append({
             "slug": os.path.splitext(os.path.basename(rel_path))[0],
             "path": rel_path,
-            "name": fields["name"],
+            "name": text_field(fields, "name", rel_path),
             "jurisdiction": jurisdiction,
-            "category": fields["category"],
+            "category": text_field(fields, "category", rel_path),
             "tier": tier,
-            "verified_by": fields["verified_by"],
-            "reviewed_by": fields["reviewed_by"],
-            "tax_year": fields["tax_year"],
-            "last_updated": fields["last_updated"],
+            "verified_by": text_field(fields, "verified_by", rel_path),
+            "reviewed_by": text_field(fields, "reviewed_by", rel_path),
+            # Retain the established JSON representation while parsing the
+            # source as an integer rather than accepting arbitrary text.
+            "tax_year": str(tax_year) if tax_year is not None else None,
+            "last_updated": iso_date_field(fields, "last_updated", rel_path),
         })
 
     guides.sort(key=lambda g: g["path"])
@@ -176,9 +234,19 @@ def main():
     if "--out" in sys.argv:
         out_path = sys.argv[sys.argv.index("--out") + 1]
     index = build_index()
-    with open(out_path, "w", encoding="utf-8") as fh:
-        json.dump(index, fh, indent=1, ensure_ascii=False)
-        fh.write("\n")
+    out_dir = os.path.dirname(os.path.abspath(out_path))
+    fd, tmp_path = tempfile.mkstemp(prefix=".index.", suffix=".json.tmp", dir=out_dir)
+    try:
+        with os.fdopen(fd, "w", encoding="utf-8") as fh:
+            json.dump(index, fh, indent=1, ensure_ascii=False)
+            fh.write("\n")
+            fh.flush()
+            os.fsync(fh.fileno())
+        os.replace(tmp_path, out_path)
+        tmp_path = None
+    finally:
+        if tmp_path is not None and os.path.exists(tmp_path):
+            os.unlink(tmp_path)
     counts = index["counts"]
     print(f"index written to {out_path}")
     print(f"  guides: {counts['guides']}")

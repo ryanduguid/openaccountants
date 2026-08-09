@@ -2,9 +2,14 @@
 name: andorra-igi
 description: Use this skill whenever asked to prepare, review, or classify transactions for an Andorran IGI (Impost General Indirecte) return for any client. Trigger on phrases like "Andorra VAT", "Andorra IGI", "IGI return", "Andorran tax", or any request involving Andorran indirect tax filing. Andorra does NOT have VAT — it has the IGI at 4.5% standard rate. Andorra is NOT in the EU and is NOT harmonized with the EU VAT Directive. ALWAYS read this skill before touching any Andorran IGI work.
 version: 2.0
+jurisdiction: AD
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # Andorra IGI Return Skill (Declaracio de l'IGI) v2.0
+
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 ## Section 1 — Quick reference
 

@@ -1,5 +1,5 @@
 ---
-description: Source-cited tax guide for US-NH: nh bpt bet. Unverified draft, pending local-accountant review.
+description: 'Source-cited tax guide for US-NH: nh bpt bet. Unverified draft, pending local-accountant review.'
 name: nh-bpt-bet
 jurisdiction: US-NH
 domain: Business Profits Tax (BPT) and Business Enterprise Tax (BET)

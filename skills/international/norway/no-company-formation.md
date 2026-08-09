@@ -1,7 +1,7 @@
 ---
-name: Norway Company Formation & Entity Choice
+name: no-company-formation
 description: "Source-cited draft: company formation & entity choice for Norway (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
-jurisdiction: NO
+jurisdiction: "NO"
 domain: formation
 role: reference
 tax_year: 2025

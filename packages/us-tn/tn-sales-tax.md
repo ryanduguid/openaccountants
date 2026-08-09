@@ -1,11 +1,15 @@
 ---
 name: tn-sales-tax
-description: Use this skill whenever asked about Tennessee sales tax, Tennessee use tax, Tennessee sales tax nexus, Tennessee sales tax returns, Tennessee exemption certificates, taxability of goods or services in Tennessee, or any request involving Tennessee state-level consumption taxes. Trigger on phrases like "Tennessee sales tax", "TN sales tax", "Tennessee use tax", "Tennessee nexus", "T.C.A. 67-6", "Tennessee DOR sales tax", or any request involving Tennessee sales and use tax filing, classification, or compliance. NOTE: Tennessee has NO state income tax, making sales tax revenue critical. Tennessee has among the HIGHEST combined sales tax rates in the US (up to 9.75%). ALWAYS read the parent us-sales-tax skill first for federal context.
+description: 'Use this skill whenever asked about Tennessee sales tax, Tennessee use tax, Tennessee sales tax nexus, Tennessee sales tax returns, Tennessee exemption certificates, taxability of goods or services in Tennessee, or any request involving Tennessee state-level consumption taxes. Trigger on phrases like "Tennessee sales tax", "TN sales tax", "Tennessee use tax", "Tennessee nexus", "T.C.A. 67-6", "Tennessee DOR sales tax", or any request involving Tennessee sales and use tax filing, classification, or compliance. NOTE: Tennessee has NO state income tax, making sales tax revenue critical. Tennessee has among the HIGHEST combined sales tax rates in the US (up to 9.75%). ALWAYS read the parent us-sales-tax skill first for federal context.'
 jurisdiction: US-TN
+tier: 2
+last_updated: 2026-06-12
 validation_status: ai-drafted-q3
 ---
 
 # Tennessee Sales and Use Tax Skill
+
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 ---
 
@@ -236,7 +240,6 @@ Valid certificates must include purchaser information, Tennessee registration nu
 Good faith acceptance protects sellers. Certificates must be retained for **3 years** from the date of the last transaction. [T1]
 
 ---
-
 
 ### 6.1 When Use Tax Applies
 

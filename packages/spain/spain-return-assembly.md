@@ -2,9 +2,14 @@
 name: es-return-assembly
 description: Final orchestrator skill that assembles the complete Spain filing package for Spain-resident self-employed individuals (autónomos). Consumes outputs from all Spain content skills (spain-vat-return for Modelo 303, es-income-tax for IRPF Modelo 100, es-social-contributions for RETA, es-estimated-tax for Modelo 130 pagos fraccionados) to produce a single unified reviewer package containing every worksheet, every form, every brief section, all cross-skill reconciliations, and the final action list with payment instructions, filing instructions, and next-year planning. This is the capstone skill that runs last and produces the final deliverable. MUST be loaded alongside all Spain content skills listed above. Spain full-year residents only. Autónomos (self-employed individuals) only.
 version: 0.1
+jurisdiction: ES
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # Spain Return Assembly Skill v0.1
+
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 ## CRITICAL EXECUTION DIRECTIVE -- READ FIRST
 
@@ -380,7 +385,6 @@ The final output is **three files**:
 - **v0.1 (April 2026):** Initial draft. Modelled on mt-return-assembly v0.1 adapted for Spain jurisdiction with four content skills (IVA Modelo 303, IRPF Modelo 100, RETA, Modelo 130).
 
 ## End of skill
-
 
 ---
 

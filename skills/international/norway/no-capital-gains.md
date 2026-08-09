@@ -6,7 +6,7 @@ description: >
   "Norway 22% capital gains", "skjermingsfradrag", "shareholder model Norway",
   "sell shares Norway", "Norway aksjer skatt", "Norway exit tax shares".
 version: 1.0
-jurisdiction: NO
+jurisdiction: "NO"
 tax_year: 2025
 tier: 2
 last_updated: 2026-06-12

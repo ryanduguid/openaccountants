@@ -28,18 +28,19 @@ financial statements, transfer pricing, tax optimization) plus
 16. `canada-payroll.md`
 17. `canada-tax-optimization.md`
 18. `canada-transfer-pricing.md`
-19. `references.md`
-20. `bookkeeping-workflow-base.md`
-21. `payroll-workflow-base.md`
-22. `company-formation-workflow-base.md`
-23. `financial-statements-workflow-base.md`
-24. `transfer-pricing-workflow-base.md`
-25. `crypto-tax-workflow-base.md`
-26. `qc-individual-return.md`
-27. `qc-qst-return.md`
-28. `ca-freelance-intake.md`
-29. `ca-return-assembly.md`
-30. `global-router.md`
+19. `qc-corporate-tax-co17.md`
+20. `references.md`
+21. `bookkeeping-workflow-base.md`
+22. `payroll-workflow-base.md`
+23. `company-formation-workflow-base.md`
+24. `financial-statements-workflow-base.md`
+25. `transfer-pricing-workflow-base.md`
+26. `crypto-tax-workflow-base.md`
+27. `qc-individual-return.md`
+28. `qc-qst-return.md`
+29. `ca-freelance-intake.md`
+30. `ca-return-assembly.md`
+31. `global-router.md`
 
 ## How to use
 

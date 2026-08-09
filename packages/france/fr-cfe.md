@@ -1,9 +1,14 @@
 ---
 name: fr-cfe
 description: Use this skill whenever asked about the French Cotisation Foncière des Entreprises (CFE) for self-employed individuals. Trigger on phrases like "CFE France", "Cotisation Foncière", "cotisation foncière des entreprises", "CET France", "CFE auto-entrepreneur", "taxe professionnelle", "CFE micro-entreprise", or any question about local business tax obligations for a self-employed client in France. Covers the rental value base, municipal rates, first-year exemption, and minimum contribution. ALWAYS read this skill before touching any France CFE work.
+jurisdiction: FR
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # France CFE (Cotisation Foncière des Entreprises) -- Self-Employed Skill
+
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 ---
 

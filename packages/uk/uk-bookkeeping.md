@@ -7,7 +7,10 @@ jurisdiction: GB
 category: bookkeeping
 depends_on:
   - bookkeeping-workflow-base
-tax_year: 2025-26
+tax_year: 2025
+tax_year_notes: "2025-26"
+tier: 2
+last_updated: 2026-07-04
 applicable_years:
   - 2024-25
   - 2025-26
@@ -16,6 +19,8 @@ verified_by: pending
 ---
 
 # UK Bookkeeping Skill v1.1
+
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 ---
 

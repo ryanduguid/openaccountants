@@ -5,11 +5,15 @@ description: >
   self-employed / sole proprietors. Trigger on phrases like "New Jersey income tax",
   "NJ income tax", "Form NJ-1040", "NJ Division of Taxation", "NJ self-employment tax".
 jurisdiction: US-NJ
+tier: 2
+last_updated: 2026-06-12
 version: "0.1"
 validation_status: ai-drafted-q3
 ---
 
 # New Jersey Individual Income Tax Skill — Self-Employed / Sole Proprietor
+
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 > **Scope.** This skill covers New Jersey Form NJ-1040 (Resident Income Tax Return)
 > for full-year NJ residents who are sole proprietors or single-member LLC owners.

@@ -2,9 +2,14 @@
 name: france-vat-return
 description: Use this skill whenever asked to prepare, review, or classify transactions for a French VAT return (déclaration de TVA CA3) for a self-employed individual or small business under the régime réel normal in France. Trigger on phrases like "prepare CA3", "French VAT return", "TVA", "déclaration de TVA", "classify these transactions for French VAT", or any request involving France VAT filing. This skill covers France only, régime réel normal (monthly CA3) and régime réel simplifié (annual CA12 with two advance payments). Micro-entreprise (franchise en base de TVA), partial exemption, and margin schemes are in the refusal catalogue. MUST be loaded alongside BOTH vat-workflow-base v0.1 or later (for workflow architecture) AND eu-vat-directive v0.1 or later (for EU directive content). ALWAYS read this skill before touching any French VAT work.
 version: 2.0
+jurisdiction: FR
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # France VAT Return Skill (CA3 / CA12) v2.0
+
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 ## Section 1 — Quick reference
 
@@ -719,7 +724,6 @@ This skill is v2.0, written in April 2026 to align with the three-tier Accora ar
 ## End of France VAT Return Skill v2.0
 
 This skill is incomplete without BOTH companion files loaded alongside it: `vat-workflow-base` v0.1 or later (Tier 1, workflow architecture) AND `eu-vat-directive` v0.1 or later (Tier 2, EU directive content). Do not attempt to produce a CA3 without all three files loaded.
-
 
 ---
 

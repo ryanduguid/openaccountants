@@ -7,41 +7,20 @@ jurisdiction: GB
 category: financial-statements
 depends_on:
   - financial-statements-workflow-base
-tax_year: 2025-26
+tax_year: 2025
+tax_year_notes: "2025-26"
+tier: 2
+last_updated: 2026-07-04
 verified_by: pending
 ---
 
 # UK Financial Statements Skill v1.0
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 > **Year applicability:** Rules in this skill apply across **2024-25, 2025-26, and 2026-27** unless a specific section flags a year-dated change. The pack is read alongside the rate-bearing skills (`uk-income-tax-sa100`, `uk-national-insurance`, `uk-dividends`, etc.) which carry full 3-year tables.
 
-
 ---
-
-## Verified rates & thresholds (accountant-reviewed)
-
-> Reviewed against the cited tax authorities by **James Power** on 2026-06-03.
-> This block is generated from the verified facts database at openaccountants.com —
-> edit the facts there, not this prose. Items under clarification are excluded.
-
-### Financial Statements
-
-- **Micro — turnover** — ≤ £1,000,000  _(CA 2006 s.384A)_
-- **Micro — balance sheet** — ≤ £500,000  _(CA 2006)_
-- **Micro — employees** — ≤ 10  _(CA 2006)_
-- **Small — turnover** — ≤ £15,000,000  _(CA 2006 s.382)_
-- **Small — balance sheet** — ≤ £7,500,000  _(CA 2006)_
-- **Small — employees** — ≤ 50  _(CA 2006)_
-- **Medium — turnover** — ≤ £54,000,000  _(CA 2006 s.465)_
-- **Medium — balance sheet** — ≤ £27,000,000  _(CA 2006)_
-- **Medium — employees** — ≤ 250  _(CA 2006)_
-- **Test** — 2 out of 3 criteria in current + preceding year  _(CA 2006)_
-- **Private company deadline** — 9 months after year-end  _(CA 2006 s.442)_
-- **Public company deadline** — 6 months after year-end  _(CA 2006)_
-- **Late filing penalty (private)** — £150 to £1,500  _(CA 2006 s.453)_
-- **Micro/small company** — Exempt from audit  _(CA 2006 s.477)_
-- **Medium/large company** — Required  _(CA 2006)_
-- **10% shareholder request** — Overrides small company exemption  _(CA 2006 s.476)_
 
 ## Section 1 -- Quick Reference
 

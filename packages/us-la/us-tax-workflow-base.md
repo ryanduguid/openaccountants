@@ -2,9 +2,14 @@
 name: us-tax-workflow-base
 description: Tier 1 workflow base for US federal income tax skills serving sole proprietors and single-member LLCs disregarded for federal tax. Contains the workflow runbook, conservative defaults principle, structured intake form, reviewer-oriented output spec, self-checks, global refusal catalogue, citation discipline, and content skill slot contract. Workflow architecture only — no tax content, no rates, no thresholds, no form line references, no year-specific figures. MUST be loaded alongside at least one content skill (e.g., us-sole-prop-bookkeeping, us-schedule-c-and-se-computation, us-form-1040-self-employed-positions, us-quarterly-estimated-tax) that provides actual federal tax rules and current-year figures. Assumes a human reviewer credentialed under Circular 230 (Enrolled Agent, CPA, or attorney) reviews and signs off on every output before it reaches the taxpayer or the IRS. Federal-only in scope. State income tax skills may load it for workflow scaffolding but the base does not address state tax.
 version: 0.2
+jurisdiction: US
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # US Tax Workflow Base Skill v0.2
+
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 ## What this file is, and what it is not
 
@@ -838,7 +843,6 @@ Architecturally lifted from `vat-workflow-base` v0.1. Content adapted for US fed
 ## End of US Tax Workflow Base Skill v0.1
 
 This base is incomplete without at least one content skill loaded alongside it. If you are reading this without any content skill loaded, ask the user which task they are working on (bookkeeping classification, Schedule C and SE computation, federal 1040 positions like QBI, or quarterly estimated tax) and refuse to proceed until the appropriate content skill is loaded.
-
 
 ---
 

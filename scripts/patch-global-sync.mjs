@@ -264,6 +264,16 @@ function main() {
   console.log("\n=== OpenAccountants GLOBAL sync patch ===\n");
   console.log("Repo root:", REPO_ROOT);
 
+  // This was a one-off migration for skills/manifest.json. That manifest was
+  // deliberately removed in favour of the root index.json. Continuing into
+  // the old workflow would mutate skill files and only then fail when the
+  // deleted manifest is opened, leaving a partial working tree.
+  console.error(
+    "DEPRECATED: patch-global-sync.mjs no longer applies to this repository. " +
+      "Use scripts/build-index.py and scripts/validate-guides.py instead.",
+  );
+  process.exit(1);
+
   if (!fs.existsSync(SKILLS_DIR)) {
     console.error("Expected skills/ directory at", SKILLS_DIR);
     process.exit(1);

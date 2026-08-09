@@ -1,9 +1,14 @@
 ---
 name: jp-consumption-tax
 description: Use this skill whenever asked about Japanese Consumption Tax (消費税 / JCT) for self-employed individuals. Trigger on phrases like "consumption tax", "shohizei", "JCT", "qualified invoice", "invoice system", "T-number", "simplified taxation", "簡易課税", "消費税確定申告", or any question about consumption tax filing, rates, or the qualified invoice system for sole proprietors in Japan. Covers standard rate (10%), reduced rate (8%), qualified invoice system (インボイス制度), simplified taxation (簡易課税), and registration thresholds. ALWAYS read this skill before touching any Japanese consumption tax work.
+jurisdiction: JP
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # Japan Consumption Tax (消費税) -- Self-Employed Skill
+
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 ---
 

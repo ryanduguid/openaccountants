@@ -7,11 +7,15 @@ description: >
   imposes this tax on gross business revenues. Trigger: any person or entity
   conducting business in Delaware.
 jurisdiction: US-DE
+tier: 2
+last_updated: 2026-06-12
 version: "0.1"
 validation_status: ai-drafted-q3
 ---
 
 # Delaware Gross Receipts Tax Skill — Self-Employed / Sole Proprietor
+
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 > **Scope.** This skill covers the Delaware Gross Receipts Tax (GRT) for self-employed individuals and sole proprietors doing business in Delaware. Delaware has no general sales tax; the GRT serves as the state's primary transaction-level tax, levied on the seller rather than the buyer.
 > **Quality tier.** Q3 — AI-drafted with citations. Must be reviewed by a qualified professional before use.

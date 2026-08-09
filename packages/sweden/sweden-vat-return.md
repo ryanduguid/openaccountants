@@ -2,9 +2,14 @@
 name: sweden-vat-return
 description: Use this skill whenever asked to prepare, review, or classify transactions for a Swedish VAT return (momsdeklaration) for a self-employed individual or small business in Sweden. Trigger on phrases like "prepare VAT return", "do the Swedish VAT", "momsdeklaration", "moms", "skattedeklaration", or any request involving Swedish VAT filing. Also trigger when classifying transactions for VAT purposes from bank statements, invoices, or other source data. This skill covers Sweden only and only standard-registered businesses. VAT groups, fiscal representatives, and flat-rate schemes are in the refusal catalogue. MUST be loaded alongside BOTH vat-workflow-base v0.1 or later (for workflow architecture) AND eu-vat-directive v0.1 or later (for EU directive content). ALWAYS read this skill before touching any Swedish VAT work.
 version: 2.0
+jurisdiction: SE
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # Sweden VAT Return Skill (Momsdeklaration) v2.0
+
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 ## Section 1 â€” Quick reference
 
@@ -630,7 +635,6 @@ v2.0, rewritten April 2026. Awaiting validation by auktoriserad revisor or godkÃ
 10. Three rates (25%/12%/6%) correctly mapped to ruta 06-08/10-12: yes.
 11. Spotify domestic exception documented: yes (Section 3.8).
 12. Representation limits (SEK 300/person) documented: yes.
-
 
 ---
 

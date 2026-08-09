@@ -2,9 +2,14 @@
 name: greece-vat-return
 description: Use this skill whenever asked to prepare, review, or classify transactions for a Greek VAT return (Periodiki Dilosi FPA) for a self-employed individual or small business in Greece. Trigger on phrases like "prepare VAT return", "do the VAT", "Greek VAT", "FPA", "myAADE", "TAXISnet", or any request involving Greece VAT filing. Also trigger when classifying transactions for VAT purposes from bank statements, invoices, or other source data. This skill covers Greece only and only standard normal-regime registrations. Small business exemption (Art. 39), farmers flat-rate (Art. 41), travel agent scheme (Art. 43), and VAT groups are in the refusal catalogue. MUST be loaded alongside BOTH vat-workflow-base v0.1 or later AND eu-vat-directive v0.1 or later. ALWAYS read this skill before touching any Greek VAT work.
 version: 2.0
+jurisdiction: GR
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # Greece VAT Return Skill (Periodiki Dilosi FPA) v2.0
+
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 ## Section 1 — Quick reference
 
@@ -642,7 +647,6 @@ v2.0, rewritten April 2026. Awaiting validation by logistis-forotechnikos in Gre
 10. Three rates (24%/13%/6%) mapped: yes.
 11. Aegean island rates documented: yes (Section 1, Section 5.4).
 12. myDATA requirements documented: yes (Section 5.12).
-
 
 ---
 

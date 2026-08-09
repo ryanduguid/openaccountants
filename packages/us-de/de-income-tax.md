@@ -6,11 +6,15 @@ description: >
   federal AGI, and personal credits. Trigger: taxpayer is a Delaware resident with gross income
   exceeding filing thresholds.
 jurisdiction: US-DE
+tier: 2
+last_updated: 2026-06-12
 version: "0.1"
 validation_status: ai-drafted-q3
 ---
 
 # Delaware Individual Income Tax Skill — Self-Employed / Sole Proprietor
+
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 > **Scope.** This skill covers Delaware individual income tax for self-employed individuals and sole proprietors filing Form PIT-RES (formerly Form 200-01). It handles the graduated rate structure, Delaware-specific standard deduction, and modifications to federal AGI.
 > **Quality tier.** Q3 — AI-drafted with citations. Must be reviewed by a qualified professional before use.

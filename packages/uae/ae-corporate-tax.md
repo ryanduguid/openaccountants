@@ -3,9 +3,14 @@ name: ae-corporate-tax
 description: >
   Use this skill whenever asked about UAE Corporate Tax for freelancers, sole establishments, or small businesses. Trigger on phrases like "how much tax do I pay in UAE", "corporate tax UAE", "CT return", "FTA", "small business relief", "free zone tax", "qualifying free zone person", "AED 375,000", "9% tax", "taxable income UAE", "corporate tax registration", "UAE tax return", "self-employed tax UAE", "freelancer tax Dubai", "EmaraTax", or any question about computing or filing UAE corporate tax. This skill covers the 0%/9% rate structure, small business relief (revenue under AED 3M), qualifying free zone person rules, deductible and non-deductible expenses, transfer pricing, registration requirements, and filing deadlines. Note: the UAE has NO personal income tax — self-employed individuals and sole establishments are subject to corporate tax. ALWAYS read this skill before touching any UAE corporate tax work.
 version: 2.0
+jurisdiction: AE
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # UAE Corporate Tax — Freelancers and Sole Establishments v2.0
+
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 ## Section 1 — Quick Reference
 
@@ -493,7 +498,6 @@ SECTION H — REVIEWER FLAGS
 - CT registration: EmaraTax portal
 - IFRS guidance: ifrs.org
 - Free zone authorities: DMCC, JAFZA, DAFZA, DIFC, ADGM (individual portals)
-
 
 ---
 

@@ -1,0 +1,118 @@
+---
+name: georgia-tax-optimization
+description: >
+  Use this skill whenever asked about reducing tax in Georgia (country), tax planning, or legal strategies to minimise tax for an individual entrepreneur or small business in Georgia. Trigger on phrases like "reduce tax Georgia", "1% tax Georgia", "small business status", "individual entrepreneur Georgia", "micro business status", "Georgia turnover tax", "save tax Georgia", "tax planning Georgia". This skill covers the Small Business Status (1% turnover tax), the Micro Business Status (0%), the standard 20%/15% system, the VAT threshold, and the eligibility/anti-avoidance red lines. ALWAYS read this skill before advising on any Georgian tax optimisation.
+version: 0.1
+jurisdiction: GE
+tier: 2
+last_updated: 2026-06-12
+category: tax-optimization
+depends_on: []
+verified_by: pending
+---
+
+# Georgia Tax Optimization Skill v0.1
+
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
+**Tier 2 — research-verified. Sources: Revenue Service of Georgia, PwC Georgia, Andersen/IBCCS Georgia. Figures must agree with `georgia-income-tax.md` / `georgia-social-contributions.md`. NOT yet signed off by a Georgian tax adviser. Aggressive positions are never advised; every suggestion must be reviewed.**
+
+---
+
+## Section 1 -- Quick Reference
+
+| Field | Value |
+|---|---|
+| Country | Georgia (country) |
+| Currency | GEL (lari) |
+| Headline lever | **Small Business Status — 1% tax on turnover** up to GEL 500,000 |
+| Standard PIT | 20%; corporate tax 15% (Estonian-model: taxed on distribution) |
+| VAT threshold | GEL 100,000 turnover (18%) — services to **non-residents** are excluded |
+| Anti-avoidance | Genuine self-employment; prohibited-activity list; threshold rules |
+
+> **Georgia's headline is one of the lowest effective rates anywhere:** an **Individual Entrepreneur with Small Business Status pays 1% on TURNOVER** (not profit) up to **GEL 500,000/yr** (~USD 180k). Above that, the excess is 3%.
+
+---
+
+## Section 2 -- Small Business Status (1% turnover tax)
+
+| Feature | Detail |
+|---|---|
+| Rate | **1% of turnover** up to GEL 500,000/yr; **3%** on the excess |
+| Eligibility | Registered Individual Entrepreneur, sole operator, genuinely self-employed, activity not on the prohibited list; residency/citizenship NOT required |
+| Employees | Allowed (payroll withholding due on their salaries) |
+| Loss of status | If turnover exceeds GEL 500,000 in **two consecutive years**, status is revoked from 1 January of the third year |
+| Reporting | **Monthly** income-tax declaration via the Revenue Service portal — even with no income |
+
+(expathub.ge; Andersen; IBCCS)
+
+---
+
+## Section 3 -- Micro Business Status (0%)
+
+- **0% tax** for individuals with annual turnover **< GEL 30,000**, in eligible activities, **no employees**. IE registration not required to obtain it.
+
+---
+
+## Section 4 -- VAT & the Standard System
+
+- **VAT registration** is mandatory once turnover in any rolling 12 months exceeds **GEL 100,000** (18%). **Services supplied to non-residents are generally outside Georgian VAT** and excluded from the GEL 100,000 threshold — important for exporters/remote service providers. **[RESEARCH GAP — reviewer to confirm the place-of-supply rules for the specific service.]**
+- Outside the small/micro regimes: 20% PIT / 15% corporate tax (the latter Estonian-style — taxed on distribution).
+
+---
+
+## Section 5 -- Red Lines (do not cross)
+
+- **Prohibited activities:** consultancy in certain regulated fields and listed activities are barred from Small Business Status — confirm the activity qualifies. **AUDIT FLASH POINT**.
+- **Genuine self-employment:** a single-client IE under employer-like control risks reclassification.
+- **Two-year cap:** don't manipulate turnover timing to dodge the revocation rule.
+- Monthly filing is mandatory — missing it risks losing the status.
+
+---
+
+## PROHIBITIONS
+
+- NEVER assume Small Business Status applies without checking the prohibited-activity list and the GEL 500,000 cap.
+- NEVER present the 1% as applying to profit — it is on TURNOVER.
+- NEVER ignore the GEL 100,000 VAT registration trigger (unless genuinely non-resident services).
+- NEVER contradict the rates in `georgia-income-tax.md` / `georgia-social-contributions.md`.
+- NEVER present [RESEARCH GAP] figures as confirmed, nor optimisation as definitive advice — route to a licensed Georgian tax adviser.
+
+---
+
+## Disclaimer
+
+This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a licensed tax adviser in Georgia) before acting upon.
+
+The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
+
+---
+
+<!-- openaccountants-cta-block -->
+
+## Talk to a verified accountant
+
+This skill is a tool, not an engagement. Every taxpayer's situation is
+different, and the rules in the skill may not match your specific facts.
+
+To speak with one of the licensed accountants who verifies skills for your
+jurisdiction — **no liability on either side until you and the accountant sign
+a formal engagement letter** — book a free 30-minute call:
+
+**→ [Book a call](https://calendly.com/openaccountants-info/30min)**
+
+We'll route you to the named verifier covering your country or state. You can
+also see the full list of verified accountants at
+[openaccountants.com/network](https://www.openaccountants.com/network).
+
+<!-- openaccountants-mcp-cta -->
+
+## The accountant-verified version lives in the connector
+
+This file is the open, **research-grade draft**. The **accountant-verified**
+version of this skill is **not published to GitHub** — it is delivered free
+through the OpenAccountants MCP connector, where your AI agent loads the
+verified rules together with the name of the accountant who signed them off.
+
+**→ Install the free connector:** <https://www.openaccountants.com/connect>
+**MCP endpoint:** `https://www.openaccountants.com/api/mcp`

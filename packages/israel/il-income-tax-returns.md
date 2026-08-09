@@ -3,11 +3,16 @@ name: il-income-tax-returns
 description: Use this skill when preparing, reviewing, or advising on Israeli annual income tax returns. Trigger on phrases like "doch shnati", "Form 1301", "Form 1214", "דוח שנתי", "mas hachnasa", "income tax Israel", "nekudot zikui", "נקודות זיכוי", "tax brackets Israel", "mas yesafim", "מס יסף", "surtax Israel", "mikdamot", "מקדמות", "Mas Shevach", "מס שבח", "capital gains Israel", "Form 6111", "Form 856", "Form 126", or any Israel income tax return query. ALWAYS read this skill before advising on Israeli income tax returns.
 version: 1.0
 jurisdiction: IL
-tax_year: 2025-2026
+tax_year: 2025
+tax_year_notes: "2025-2026"
+tier: 2
+last_updated: 2026-07-04
 category: international
 ---
 
 # Israel Income Tax Returns Skill v1.0
+
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 > **Based on work by [Skills IL](https://github.com/skills-il/tax-and-finance)**, licensed under MIT. Adapted for the OpenAccountants format.
 

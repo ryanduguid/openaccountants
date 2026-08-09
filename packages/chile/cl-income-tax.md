@@ -3,9 +3,14 @@ name: cl-income-tax
 description: >
   Use this skill whenever asked about Chilean income tax for self-employed individuals (trabajadores independientes / trabajadores a honorarios). Trigger on phrases like "Impuesto Global Complementario", "Operación Renta", "boleta de honorarios", "trabajador independiente", "PPM", "retención honorarios", "gastos presuntos", "segunda categoría", "Formulario 22", "SII", "RUT Chile", "cotizaciones previsionales", "APV", or any question about filing or computing income tax for a self-employed or independent worker in Chile. This skill covers Impuesto Global Complementario (progressive 0-40%), honorarios withholding, PPM credits, gastos efectivos vs presuntos, cotizaciones previsionales, and SII filing. ALWAYS read this skill before touching any Chilean income tax work.
 version: 2.0
+jurisdiction: CL
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # Chilean Income Tax — Trabajador Independiente / Honorarios (IGC) v2.0
+
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 ## Section 1 — Quick Reference
 
@@ -551,7 +556,6 @@ SECTION I — REVIEWER FLAGS
 - Operación Renta: www.sii.cl/renta
 - Previred (cotizaciones): www.previred.com
 - UTA values: www.sii.cl/valores_702/utm_uta_702.html
-
 
 ---
 

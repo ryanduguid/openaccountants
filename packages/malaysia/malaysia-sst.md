@@ -2,9 +2,14 @@
 name: malaysia-sst
 description: Use this skill whenever asked to prepare, review, or classify transactions for a Malaysia Sales and Service Tax (SST) return (SST-02) for any client. Trigger on phrases like "Malaysia SST", "Sales Tax Malaysia", "Service Tax Malaysia", "SST-02", "MySST", "RMCD", or any request involving Malaysia SST. This is NOT a VAT — there is NO input tax credit. MUST be loaded alongside vat-workflow-base v0.1 or later. ALWAYS read this skill before touching any Malaysia SST work.
 version: 2.0
+jurisdiction: MY
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # Malaysia SST Return Skill (SST-02) v2.0
+
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 ## Section 1 — Quick reference
 
@@ -311,7 +316,6 @@ Maybank, CIMB, Public Bank exports CSV/PDF with DD/MM/YYYY. MYR primary. Interna
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. All outputs must be reviewed by a qualified professional before filing.
 
 The most up-to-date version is maintained at [openaccountants.com](https://www.openaccountants.com).
-
 
 ---
 

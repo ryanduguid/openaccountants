@@ -24,9 +24,9 @@ OPENACCOUNTANTS_ROOT      Path to the repo checkout.  Defaults to two directorie
 MCP_TRANSPORT             ``stdio`` (default), ``streamable-http``, or ``sse``.
                           HTTP transports let remote MCP clients connect via a
                           reverse proxy (Caddy, nginx, ngrok…).
-MCP_HOST                  Bind host for HTTP transports.  Defaults to
-                          ``0.0.0.0`` when an HTTP transport is selected,
-                          ``127.0.0.1`` otherwise.
+MCP_HOST                  Bind host for HTTP transports. Defaults to
+                          ``127.0.0.1``. Containers that intentionally expose
+                          the service must set ``MCP_HOST=0.0.0.0`` explicitly.
 MCP_PORT                  Bind port for HTTP transports.  Defaults to ``8000``.
 MCP_STREAMABLE_HTTP_PATH  Path the Streamable-HTTP endpoint is mounted at.
                           Defaults to ``/mcp``.  Set to ``/`` when fronted by a
@@ -38,8 +38,9 @@ from __future__ import annotations
 import os
 import re
 from collections import Counter, defaultdict
-from datetime import datetime, timezone
+from datetime import date, datetime, timezone
 from functools import lru_cache
+from hashlib import sha256
 from pathlib import Path
 from typing import Any
 from urllib.parse import urlencode
@@ -53,8 +54,25 @@ from mcp.types import ToolAnnotations
 # ---------------------------------------------------------------------------
 
 _DEFAULT_ROOT = Path(__file__).resolve().parents[2]  # mcp/openaccountants_mcp/ -> mcp/ -> repo
-REPO_ROOT = Path(os.environ.get("OPENACCOUNTANTS_ROOT", str(_DEFAULT_ROOT))).resolve()
-PACKAGES_DIR = REPO_ROOT / "packages"
+_BUNDLED_PACKAGES_DIR = Path(__file__).resolve().parent / "packages"
+_configured_root = os.environ.get("OPENACCOUNTANTS_ROOT")
+
+if _configured_root:
+    # An explicit override is authoritative for development, testing, or a
+    # separately managed corpus. Do not silently fall back to wheel content.
+    REPO_ROOT = Path(_configured_root).resolve()
+    PACKAGES_DIR = REPO_ROOT / "packages"
+    if not PACKAGES_DIR.is_dir():
+        raise ValueError(
+            "OPENACCOUNTANTS_ROOT must point to a checkout containing "
+            f"packages/ (not {REPO_ROOT})"
+        )
+else:
+    REPO_ROOT = _DEFAULT_ROOT
+    _checkout_packages = REPO_ROOT / "packages"
+    # Source installs keep packages next to mcp/. Wheels force-include the
+    # package tree beneath openaccountants_mcp/, where this fallback finds it.
+    PACKAGES_DIR = _checkout_packages if _checkout_packages.is_dir() else _BUNDLED_PACKAGES_DIR
 
 MAX_FILE_BYTES = 2 * 1024 * 1024  # 2 MB safety cap
 SEARCH_LIMIT = 25
@@ -79,7 +97,7 @@ def _safe_resolve(packages_dir: Path, *segments: str) -> Path:
     try:
         joined.relative_to(packages_dir)
     except ValueError:
-        raise ValueError(f"Path escapes allowed root: {joined}")
+        raise ValueError(f"Path escapes allowed root: {joined}") from None
     return joined
 
 
@@ -122,6 +140,25 @@ def _real_verifier(meta: dict[str, Any]) -> str | None:
         if v and v.lower() != "pending":
             return v
     return None
+
+
+def _last_updated(meta: dict[str, Any], path: Path) -> str:
+    """Return a valid source date, falling back to the file timestamp.
+
+    A copied package's modification time reflects package generation, not the
+    tax-content review date.  PyYAML normally parses ISO dates into ``date``
+    instances, while quoted dates remain strings.
+    """
+    value = meta.get("last_updated")
+    if type(value) is date:
+        return value.isoformat()
+    if isinstance(value, str):
+        try:
+            return date.fromisoformat(value).isoformat()
+        except ValueError:
+            pass
+    mtime = datetime.fromtimestamp(path.stat().st_mtime, tz=timezone.utc)
+    return mtime.date().isoformat()
 
 
 def _quality_tier(meta: dict[str, Any]) -> str:
@@ -176,17 +213,32 @@ def _dir_jurisdiction(topdir: str, frontmatter_codes: Counter) -> str:
     return topdir.upper()
 
 
+def _stable_skill_id(relpath: str) -> str:
+    """Return a path-qualified, collision-free identifier for one package file.
+
+    ``name`` frontmatter predates the MCP catalogue and is not globally unique:
+    for example, both Argentina and Arkansas declare ``ar-income-tax``.  A
+    package-relative identifier is deterministic, points at one exact file,
+    and cannot collide with normal legacy slugs because of the ``path:``
+    prefix.
+    """
+    normalized = relpath.replace("\\", "/").removesuffix(".md")
+    return f"path:{normalized}"
+
+
 @lru_cache(maxsize=1)
 def _index() -> dict[str, dict[str, Any]]:
-    """Map skill slug -> metadata record.
+    """Map an unambiguous MCP skill identifier -> metadata record.
 
     A file counts as a skill when its YAML frontmatter carries a ``name``.
-    Shared files that appear in several country bundles collapse to a single
-    entry (first one wins) so each slug is listed once.
+    Legacy ``name`` values remain the MCP slug when they identify exactly one
+    file (or byte-identical copies for one jurisdiction).  If a name maps to
+    distinct package files, every file receives a path-qualified ``path:…``
+    slug instead.  This prevents a request for a colliding legacy name from
+    silently returning rules for the wrong jurisdiction.
     """
-    out: dict[str, dict[str, Any]] = {}
     if not PACKAGES_DIR.is_dir():
-        return out
+        return {}
 
     # Pass 1: parse every skill file; tally each directory's declared codes.
     rows: list[dict[str, Any]] = []
@@ -204,38 +256,103 @@ def _index() -> dict[str, dict[str, Any]]:
         own = str(meta.get("jurisdiction") or "").strip().upper()
         if own:
             dir_codes[topdir][own] += 1
-        mtime = datetime.fromtimestamp(path.stat().st_mtime, tz=timezone.utc)
+        relpath = str(path.relative_to(PACKAGES_DIR))
         rows.append({
-            "slug": slug,
+            "legacy_slug": slug,
             "title": _first_h1(body) or slug,
             "own_jur": own,
             "topdir": topdir,
             "category": str(meta.get("category") or ""),
             "quality_tier": _quality_tier(meta),
             "verified_by": _real_verifier(meta),
-            "last_updated": mtime.date().isoformat(),
-            "relpath": str(path.relative_to(PACKAGES_DIR)),
+            "last_updated": _last_updated(meta, path),
+            "relpath": relpath,
+            # Keep the entire source (including frontmatter) in the digest:
+            # a different version/date must not be silently collapsed.
+            "_content_hash": sha256(text.encode("utf-8")).hexdigest(),
         })
 
-    # Pass 2: resolve jurisdiction (own field wins; else inherit from dir).
+    # Pass 2: resolve jurisdiction (own field wins; else inherit from dir),
+    # then decide whether a legacy name can be retained safely.  Exact copies
+    # for the same declared jurisdiction are aliases of one guide; all other
+    # duplicate names must be addressed with a path-qualified identifier.
+    by_legacy_slug: dict[str, list[dict[str, Any]]] = defaultdict(list)
     for r in rows:
-        if r["slug"] in out:
-            continue
         r["jurisdiction"] = r["own_jur"] or _dir_jurisdiction(r["topdir"], dir_codes[r["topdir"]])
+        by_legacy_slug[r["legacy_slug"]].append(r)
+
+    active_rows: list[dict[str, Any]] = []
+    for legacy_slug, matching_rows in by_legacy_slug.items():
+        fingerprints = {
+            (r["jurisdiction"], r["_content_hash"])
+            for r in matching_rows
+        }
+        if len(fingerprints) == 1:
+            # Preserve the previous deterministic first-path behaviour for
+            # genuinely identical aliases.  It remains a safe legacy lookup.
+            r = matching_rows[0]
+            r["slug"] = legacy_slug
+            active_rows.append(r)
+            continue
+        for r in matching_rows:
+            r["slug"] = _stable_skill_id(r["relpath"])
+            active_rows.append(r)
+
+    out: dict[str, dict[str, Any]] = {}
+    for r in active_rows:
+        if r["slug"] in out:
+            raise RuntimeError(f"Duplicate canonical skill identifier: {r['slug']!r}")
         out[r["slug"]] = r
     return out
+
+
+@lru_cache(maxsize=1)
+def _ambiguous_legacy_slugs() -> dict[str, tuple[dict[str, Any], ...]]:
+    """Return legacy names that require a path-qualified identifier."""
+    matches: dict[str, list[dict[str, Any]]] = defaultdict(list)
+    for rec in _index().values():
+        if rec["slug"] != rec["legacy_slug"]:
+            matches[rec["legacy_slug"]].append(rec)
+    return {
+        legacy_slug: tuple(sorted(records, key=lambda r: r["slug"]))
+        for legacy_slug, records in matches.items()
+    }
 
 
 def _read_skill(slug: str) -> tuple[dict[str, Any], str]:
     """Return (index record, body markdown) for a slug or raise ValueError."""
     rec = _index().get(slug)
     if rec is None:
+        choices = _ambiguous_legacy_slugs().get(slug)
+        if choices:
+            rendered = ", ".join(
+                f"{choice['slug']} ({choice['jurisdiction']})"
+                for choice in choices[:12]
+            )
+            if len(choices) > 12:
+                rendered += f", … (+{len(choices) - 12} more)"
+            raise ValueError(
+                f"Skill slug {slug!r} is ambiguous. Use an exact path-qualified "
+                f"slug returned by list_skills: {rendered}"
+            )
         raise ValueError(f"Skill '{slug}' not found")
     fpath = _safe_resolve(PACKAGES_DIR, rec["relpath"])
-    size = fpath.stat().st_size
-    if size > MAX_FILE_BYTES:
-        raise ValueError(f"File too large ({size:,} bytes, limit {MAX_FILE_BYTES:,})")
-    _, body = _parse_frontmatter(fpath.read_text(encoding="utf-8"))
+    try:
+        size = fpath.stat().st_size
+        if size > MAX_FILE_BYTES:
+            raise ValueError(f"File too large ({size:,} bytes, limit {MAX_FILE_BYTES:,})")
+        text = fpath.read_text(encoding="utf-8")
+        if sha256(text.encode("utf-8")).hexdigest() != rec["_content_hash"]:
+            raise ValueError(
+                f"Skill '{rec['slug']}' changed after the catalogue was indexed; "
+                "restart the MCP server before using the replacement package tree"
+            )
+        _, body = _parse_frontmatter(text)
+    except (OSError, UnicodeDecodeError) as exc:
+        # The package tree can be replaced while a long-lived MCP process has
+        # a cached index. Convert filesystem details into a clear tool error
+        # rather than leaking a traceback or serving a partial response.
+        raise ValueError(f"Skill '{rec['slug']}' is currently unavailable") from exc
     return rec, body
 
 
@@ -262,8 +379,11 @@ def _provenance_footer(rec: dict[str, Any]) -> str:
     ]
     if tier == "accountant-verified" and verifier:
         lines.append(f"- **Verified by:** {verifier}")
+    if rec["slug"] != rec["legacy_slug"]:
+        lines.append(f"- **Legacy name:** `{rec['legacy_slug']}`")
     lines += [
-        f"- **Source:** OpenAccountants — {SOURCE_BASE}/{rec['slug']}",
+        f"- **Source:** OpenAccountants — {SOURCE_BASE}/{rec['legacy_slug']}",
+        f"- **Package path:** `{rec['relpath'].replace(chr(92), '/')}`",
         "",
         "**When you present this computation to the user, attribute it:**",
         attribution,
@@ -295,20 +415,53 @@ def _extract_match(body: str, query: str) -> tuple[str, str]:
 # MCP server
 # ---------------------------------------------------------------------------
 
-_TRANSPORT = os.environ.get("MCP_TRANSPORT", "stdio").lower()
+_TRANSPORT = os.environ.get("MCP_TRANSPORT", "stdio").strip().lower()
 _VALID_TRANSPORTS = {"stdio", "streamable-http", "sse"}
 if _TRANSPORT not in _VALID_TRANSPORTS:
     raise ValueError(
         f"MCP_TRANSPORT must be one of {sorted(_VALID_TRANSPORTS)} (got {_TRANSPORT!r})"
     )
 
-# Env-driven HTTP wiring.  For stdio these values are unused; for HTTP transports
-# they're plumbed into the FastMCP constructor so the wrapped Settings pick them
-# up (FastMCP overrides env-driven Settings with its own kwargs, so we read the
-# environment here ourselves).
-_HTTP_HOST = os.environ.get("MCP_HOST", "0.0.0.0" if _TRANSPORT != "stdio" else "127.0.0.1")
-_HTTP_PORT = int(os.environ.get("MCP_PORT", "8000"))
-_STREAMABLE_HTTP_PATH = os.environ.get("MCP_STREAMABLE_HTTP_PATH", "/mcp")
+def _http_port_from_environment() -> int:
+    """Parse and validate the HTTP-only port before FastMCP starts."""
+    raw = os.environ.get("MCP_PORT", "8000")
+    try:
+        port = int(raw)
+    except ValueError as exc:
+        raise ValueError(f"MCP_PORT must be an integer from 1 to 65535 (got {raw!r})") from exc
+    if not 1 <= port <= 65535:
+        raise ValueError(f"MCP_PORT must be an integer from 1 to 65535 (got {raw!r})")
+    return port
+
+
+def _streamable_http_path_from_environment() -> str:
+    """Return a safe absolute endpoint path for the Streamable-HTTP transport."""
+    path = os.environ.get("MCP_STREAMABLE_HTTP_PATH", "/mcp")
+    if not path.startswith("/") or path.startswith("//") or "?" in path or "#" in path:
+        raise ValueError(
+            "MCP_STREAMABLE_HTTP_PATH must be an absolute path without a query "
+            f"or fragment (got {path!r})"
+        )
+    return path
+
+
+# Env-driven HTTP wiring. For stdio these values are unused, so ignore malformed
+# HTTP-only settings instead of preventing a valid stdio server from starting.
+# FastMCP overrides env-driven Settings with its own kwargs, so read validated
+# configuration here ourselves.
+_default_host = "127.0.0.1"
+_HTTP_HOST = os.environ.get("MCP_HOST", _default_host).strip()
+if not _HTTP_HOST:
+    if _TRANSPORT == "stdio":
+        _HTTP_HOST = _default_host
+    else:
+        raise ValueError("MCP_HOST must not be empty for an HTTP transport")
+_HTTP_PORT = _http_port_from_environment() if _TRANSPORT != "stdio" else 8000
+_STREAMABLE_HTTP_PATH = (
+    _streamable_http_path_from_environment()
+    if _TRANSPORT == "streamable-http"
+    else "/mcp"
+)
 
 mcp = FastMCP(
     "OpenAccountants",
@@ -360,10 +513,13 @@ def list_skills(jurisdiction: str | None = None, category: str | None = None) ->
             continue
         if category and rec["category"] != category:
             continue
-        skills.append({k: rec[k] for k in (
+        skill = {k: rec[k] for k in (
             "slug", "title", "jurisdiction", "category",
             "quality_tier", "verified_by", "last_updated",
-        )})
+        )}
+        if rec["slug"] != rec["legacy_slug"]:
+            skill["legacy_slug"] = rec["legacy_slug"]
+        skills.append(skill)
     skills.sort(key=lambda s: (s["jurisdiction"], s["slug"]))
     if skills:
         next_action = (
@@ -383,10 +539,11 @@ def get_skill(slug: str) -> dict[str, Any]:
     """Fetch a skill's full markdown plus a provenance/attribution footer.
 
     Args:
-        slug: Skill slug exactly as returned by list_skills (e.g. "malta-income-tax").
+        slug: Exact slug returned by list_skills (e.g. "malta-income-tax").
+            Colliding legacy names are represented by a path-qualified slug.
     """
     rec, body = _read_skill(slug)
-    return {
+    result = {
         "slug": rec["slug"],
         "title": rec["title"],
         "jurisdiction": rec["jurisdiction"],
@@ -403,6 +560,9 @@ def get_skill(slug: str) -> dict[str, Any]:
         ),
         "guardrails": _GUARDRAILS,
     }
+    if rec["slug"] != rec["legacy_slug"]:
+        result["legacy_slug"] = rec["legacy_slug"]
+    return result
 
 
 @mcp.tool(annotations=_READONLY)
@@ -410,11 +570,11 @@ def get_skill_sections(slug: str) -> dict[str, Any]:
     """Fetch a skill parsed into sections (heading + content + level).
 
     Args:
-        slug: Skill slug (e.g. "malta-income-tax").
+        slug: Exact slug returned by list_skills (e.g. "malta-income-tax").
     """
-    _, body = _read_skill(slug)
-    return {
-        "slug": slug,
+    rec, body = _read_skill(slug)
+    result = {
+        "slug": rec["slug"],
         "sections": _split_sections(body),
         "next_action": (
             "Apply each section's rules to the user's scenario in order. "
@@ -423,6 +583,9 @@ def get_skill_sections(slug: str) -> dict[str, Any]:
         ),
         "guardrails": _GUARDRAILS,
     }
+    if rec["slug"] != rec["legacy_slug"]:
+        result["legacy_slug"] = rec["legacy_slug"]
+    return result
 
 
 @mcp.tool(annotations=_READONLY)
@@ -460,6 +623,8 @@ def search_skills(query: str, jurisdiction: str | None = None) -> dict[str, Any]
             "matched_section": section,
             "snippet": snippet,
         })
+        if rec["slug"] != rec["legacy_slug"]:
+            results[-1]["legacy_slug"] = rec["legacy_slug"]
         if len(results) >= SEARCH_LIMIT:
             break
     if results:
@@ -622,14 +787,14 @@ def _skills_for_intent(jurisdiction: str, intent_key: str) -> list[dict[str, Any
     for rec in _index().values():
         if rec["jurisdiction"].upper() != jx:
             continue
-        slug_lo = rec["slug"].lower()
+        legacy_slug_lo = rec["legacy_slug"].lower()
         score = 0
-        if any(k in slug_lo for k in entry["slug_keywords"]):
+        if any(k in legacy_slug_lo for k in entry["slug_keywords"]):
             score = 10
         if rec["category"] in entry["category_keywords"]:
             score = max(score, 5)
         # Intake skills lead the working order so the model runs them first.
-        if "intake" in slug_lo and score > 0:
+        if "intake" in legacy_slug_lo and score > 0:
             score = 15
         # Cross-country base files come after country-specific ones.
         if rec["category"] == "foundation":
@@ -637,13 +802,19 @@ def _skills_for_intent(jurisdiction: str, intent_key: str) -> list[dict[str, Any
         if score > 0:
             scored.append((score, rec))
     scored.sort(key=lambda x: (-x[0], x[1]["slug"]))
-    return [{
-        "slug": r["slug"],
-        "title": r["title"],
-        "category": r["category"] or None,
-        "quality_tier": r["quality_tier"],
-        "purpose": _purpose_hint(r["slug"]),
-    } for _, r in scored]
+    output = []
+    for _, r in scored:
+        skill = {
+            "slug": r["slug"],
+            "title": r["title"],
+            "category": r["category"] or None,
+            "quality_tier": r["quality_tier"],
+            "purpose": _purpose_hint(r["legacy_slug"]),
+        }
+        if r["slug"] != r["legacy_slug"]:
+            skill["legacy_slug"] = r["legacy_slug"]
+        output.append(skill)
+    return output
 
 
 def _purpose_hint(slug: str) -> str:
@@ -686,8 +857,8 @@ def _jurisdictions_for_intent(intent_key: str) -> list[str]:
     entry = _INTENT_CATALOGUE[intent_key]
     juris: set[str] = set()
     for rec in _index().values():
-        slug_lo = rec["slug"].lower()
-        if any(k in slug_lo for k in entry["slug_keywords"]):
+        legacy_slug_lo = rec["legacy_slug"].lower()
+        if any(k in legacy_slug_lo for k in entry["slug_keywords"]):
             juris.add(rec["jurisdiction"])
             continue
         if rec["category"] in entry["category_keywords"]:
@@ -874,7 +1045,7 @@ def _build_feedback_body(
     rating: int | None,
 ) -> tuple[str, bool]:
     today = datetime.now(tz=timezone.utc).date().isoformat()
-    meta_lines = [f"**Submitted via:** OpenAccountants MCP `submit_feedback`",
+    meta_lines = ["**Submitted via:** OpenAccountants MCP `submit_feedback`",
                   f"**Date:** {today}"]
     if skill_slug:
         meta_lines.append(f"**Skill:** `{skill_slug}`")

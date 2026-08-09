@@ -1,9 +1,14 @@
 ---
 name: trinidad-vat
 description: Use this skill whenever asked to prepare, review, or create a Trinidad and Tobago VAT return for any client. Trigger on phrases like "prepare VAT return", "do the VAT", "Trinidad VAT", "T&T VAT", or any request involving Trinidad and Tobago VAT filing. Also trigger when classifying transactions for VAT purposes from bank statements, invoices, or other source data. This skill contains the complete Trinidad and Tobago VAT classification rules, return form mappings, deductibility rules, and filing deadlines required to produce a correct return. ALWAYS read this skill before touching any Trinidad VAT-related work.
+jurisdiction: TT
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # Trinidad and Tobago VAT Return Preparation Skill
+
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 ---
 
@@ -515,7 +520,6 @@ If adapting this skill for another Caribbean jurisdiction:
 6. Add your own edge cases for known ambiguous situations.
 
 **A skill may not be published without sign-off from a licensed practitioner in the relevant jurisdiction.**
-
 
 ---
 

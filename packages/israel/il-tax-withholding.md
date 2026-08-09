@@ -3,11 +3,16 @@ name: il-tax-withholding
 description: Use this skill when advising on Israeli tax withholding at source (ניכוי מס במקור — Nikui Mas BeMakor). Trigger on phrases like "withholding tax Israel", "nikui mas", "ishur nikui", "withholding certificate", "Form 856", "Form 102", "tium mas", "tax coordination", "ניכוי מס במקור", "אישור ניכוי", or any Israeli withholding tax query. Covers payments to suppliers, freelancers, landlords, and non-residents. ALWAYS read this skill before advising on Israeli withholding tax.
 version: 1.0
 jurisdiction: IL
-tax_year: 2025-2026
+tax_year: 2025
+tax_year_notes: "2025-2026"
+tier: 2
+last_updated: 2026-07-04
 category: international
 ---
 
 # Israel Tax Withholding (Nikui Mas BeMakor — ניכוי מס במקור) Skill v1.0
+
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 > **Based on work by [Skills IL](https://github.com/skills-il/tax-and-finance)**, licensed under MIT. Adapted for the OpenAccountants format.
 

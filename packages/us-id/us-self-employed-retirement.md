@@ -2,9 +2,14 @@
 name: us-self-employed-retirement
 description: Tier 2 content skill for computing the self-employed retirement contribution deduction for US sole proprietors and single-member LLCs disregarded for federal tax purposes. Covers tax year 2025 SEP-IRA, Solo 401(k), SIMPLE IRA, and traditional/Roth IRA options with SECURE 2.0 super catch-up provisions. Handles the net SE earnings calculation, the 92.35% adjustment, the employer contribution formula (20% effective rate for sole props), employee deferral limits ($23,500), catch-up and super catch-up contributions, the SEP-IRA 25% limit ($70,000 cap), SIMPLE IRA rules, traditional and Roth IRA income limits and deductibility phase-outs, and establishment/contribution deadlines. Consumes Schedule C net profit and SE tax from us-schedule-c-and-se-computation. Feeds QBI computation in us-qbi-deduction. MUST be loaded alongside us-tax-workflow-base v0.1 or later. Federal only. No state tax.
 version: 0.2
+jurisdiction: US
+tier: 2
+last_updated: 2026-07-06
 ---
 
 # US Self-Employed Retirement Skill v0.2
+
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 ## What this file is, and what it is not
 
@@ -40,7 +45,7 @@ This skill covers, for tax year 2025:
 - **Solo 401(k)** — employee deferrals, employer (profit-sharing) contributions, catch-up and super catch-up contributions, Roth elective deferral option, establishment and contribution deadlines
 - **SEP-IRA** — employer contribution formula (25% of compensation / 20% effective rate for sole props), maximum contribution, establishment and contribution deadlines
 - **SIMPLE IRA** — employee deferrals, employer matching or non-elective contributions, catch-up and super catch-up, establishment deadlines
-- **Traditional IRA** — $7,000 contribution limit, $8,000 catch-up (age 50+), deductibility rules when covered by an employer plan
+- **Traditional IRA** — $7,000 contribution limit ($8,000 total with the $1,000 age-50+ catch-up), deductibility rules when covered by an employer plan
 - **Roth IRA** — income limits and phase-outs, contribution limits, backdoor Roth mechanics (flagged, not computed)
 - **Net self-employment earnings calculation** — the base for employer contributions
 - **Interaction with QBI** — deductible retirement contributions reduce QBI
@@ -67,14 +72,14 @@ This skill does NOT cover:
 
 **Legislation reflected:**
 - Internal Revenue Code §§401, 402, 404, 408, 408A, 408(p), 414, 415, 219 as in force for tax year 2025
-- SECURE 2.0 Act of 2022 (Division T of the Consolidated Appropriations Act, 2023; P.L. 117-328) — provisions effective 2025: super catch-up for ages 60-63 under §414(v)(2)(E), mandatory Roth catch-up for high earners (delayed to 2026 per IRS Notice 2024-02), enhanced SIMPLE IRA limits
+- SECURE 2.0 Act of 2022 (Division T of the Consolidated Appropriations Act, 2023; P.L. 117-328) — provisions effective 2025: super catch-up for ages 60-63 under §414(v)(2)(E), mandatory Roth catch-up for high earners (2-year administrative transition through Dec 31, 2025 per IRS Notice 2023-62; applies to plan years beginning after Dec 31, 2025), enhanced SIMPLE IRA limits
 - One Big Beautiful Bill Act (OBBBA, P.L. 119-21) — OBBBA did NOT change retirement contribution limits for 2025. The limits were set by Notice 2024-80 before OBBBA's enactment.
 - IRS Notice 2024-80 — 2025 retirement plan limits (issued November 2024)
 - IRS Publication 560 (2025) — Retirement Plans for Small Business
 - IRS Publication 590-A (2025) — Contributions to Individual Retirement Arrangements
 
 **Currency limitations:**
-- SECURE 2.0 §603 mandatory Roth catch-up for employees earning > $145,000 was delayed by IRS Notice 2024-02 to plan years beginning after December 31, 2025. This does NOT affect sole props for 2025 (no W-2 earnings threshold for sole props).
+- SECURE 2.0 §603 mandatory Roth catch-up for employees earning > $145,000 was granted a 2-year administrative transition (through December 31, 2025) by IRS Notice 2023-62, so it applies to plan years beginning after December 31, 2025. This does NOT affect sole props for 2025 (no W-2 earnings threshold for sole props).
 - The super catch-up for ages 60-63 under SECURE 2.0 §109 is effective for 2025 and is reflected in this skill.
 
 ---
@@ -260,17 +265,17 @@ Solo 401(k) plans can be designed to accept Roth (after-tax) elective deferrals.
 - Do NOT reduce QBI (since there is no deduction)
 - Grow tax-free and are distributed tax-free in retirement (if qualified)
 
-The skill computes Roth deferrals at $0 deduction but notes the total contributed for informational purposes. The employer profit-sharing portion is always pre-tax (traditional).
+The skill computes Roth deferrals at $0 deduction but notes the total contributed for informational purposes. The employer profit-sharing portion is pre-tax by default; SECURE 2.0 §604 permits a plan to allow employer contributions to be designated Roth, though custodian support is limited.
 
 ### Establishment and contribution deadlines
 
 | Action | Deadline |
 |---|---|
-| Establish a new Solo 401(k) plan | December 31, 2025 (for 2025 contributions) |
-| Make employee elective deferrals (2025) | December 31, 2025 (must be made by end of tax year) |
+| Establish a new Solo 401(k) plan | Return due date including extensions — Oct 15, 2026 (SECURE Act §201). For a first-year plan of a sole prop with no employees, elective deferrals require adoption by the unextended due date, April 15, 2026 (SECURE 2.0 §317). |
+| Make employee elective deferrals (2025) | First-year plan, sole prop with no common-law employees: by the unextended return due date (April 15, 2026) under SECURE 2.0 §317. Existing plan: deferral election must have been in place by Dec 31, 2025. |
 | Make employer profit-sharing contributions (2025) | Tax filing deadline including extensions (April 15, 2026, or October 15, 2026 with extension) |
 
-**Critical:** A Solo 401(k) must be established (plan adoption agreement executed) by December 31 of the tax year. If the plan was not established by December 31, 2025, the sole prop CANNOT make 2025 Solo 401(k) contributions — even if they file an extension. This is different from a SEP-IRA.
+**Critical (updated by the SECURE Act and SECURE 2.0):** Two provisions relax the old December 31 establishment rule. (1) Under **SECURE Act §201 (IRC §401(b)(2))**, a Solo 401(k) adopted by the return due date **including extensions** (October 15, 2026 for a 2025 calendar-year sole prop) is treated as effective for 2025, so the EMPLOYER profit-sharing contribution can be enabled retroactively. (2) Under **SECURE 2.0 §317**, a sole proprietor who is the only employee may make an initial-year **elective DEFERRAL** election for 2025 up to the **unextended** return due date (April 15, 2026) for a newly adopted first-year plan — the pre-2023 rule that deferrals required a Dec 31 election no longer applies to a first-year solo plan. (An existing plan from a prior year still needs its deferral election in place by Dec 31.) Net effect: a sole prop with no plan can, after year-end, open a first-year Solo 401(k) and make BOTH the employer contribution (by the extended due date) and 2025 employee deferrals (by April 15, 2026).
 
 ### Form 5500-EZ filing requirement
 
@@ -303,7 +308,7 @@ Maximum SEP contribution = lesser of:
 - No employee deferral component — total contribution limited to 20% of net SE earnings
 - For sole props with net SE earnings under ~$117,500, the SEP-IRA allows LESS total contribution than a Solo 401(k) with employee deferrals
 - No catch-up contributions (the catch-up rules apply only to elective deferrals, not employer contributions)
-- No Roth option (all SEP contributions are pre-tax)
+- Roth SEP option is technically available (SECURE 2.0 §601, for years after 2022) but custodian support is still limited, so in practice most SEP contributions are pre-tax
 
 ### Establishment and contribution deadlines
 
@@ -312,7 +317,7 @@ Maximum SEP contribution = lesser of:
 | Establish SEP-IRA | Tax filing deadline including extensions (can establish and fund on same day) |
 | Make 2025 contributions | Tax filing deadline including extensions (April 15, 2026, or October 15, 2026) |
 
-**Key advantage:** A sole prop who did not plan ahead can establish a SEP-IRA and make 2025 contributions as late as October 15, 2026 (if they file an extension). This is NOT possible with a Solo 401(k).
+**Key advantage:** A sole prop who did not plan ahead can establish a SEP-IRA and make 2025 contributions as late as October 15, 2026 (if they file an extension). A first-year Solo 401(k) is now also adoptable after year-end (SECURE Act §201 for the employer contribution by the extended due date; SECURE 2.0 §317 for first-year employee deferrals by the unextended April 15, 2026 date), so the SEP-IRA no longer holds a unique late-establishment advantage — its edge is purely administrative simplicity (Form 5305-SEP, no plan document or Form 5500-EZ).
 
 ---
 
@@ -433,14 +438,16 @@ Is net SE earnings > $0?
 ├── NO → No SE retirement contributions possible (may still contribute to IRA from other income)
 ├── YES → Continue
     │
-    Was a Solo 401(k) established by Dec 31, 2025?
+    Solo 401(k) available? (existing plan, OR a first-year plan a sole prop
+    with no employees can still adopt post-year-end — deferrals by Apr 15, 2026
+    per SECURE 2.0 §317; employer contribution by the extended due date per §201)
     ├── YES → Solo 401(k) is almost always the best choice
     │         Employee deferral: up to $23,500
     │         + Employer: 20% of net SE earnings
     │         + Catch-up if applicable
     │         + Optional Roth IRA on top ($7,000/$8,000 if MAGI permits)
     │
-    ├── NO → Can still establish a SEP-IRA by filing deadline
+    ├── SEP-IRA route (simplest; also open until the extended filing deadline)
     │         SEP-IRA: 20% of net SE earnings (max $70,000)
     │         + Optional Roth IRA on top ($7,000/$8,000 if MAGI permits)
     │
@@ -469,9 +476,9 @@ At net SE earnings of ~$232,500: both Solo 401(k) employer + deferral and SEP-IR
 
 | Ambiguity | Conservative default |
 |---|---|
-| Plan type not specified | Assume Solo 401(k) if established by Dec 31; otherwise SEP-IRA |
+| Plan type not specified | Default to SEP-IRA for the estimate (simplest), but note a first-year Solo 401(k) is still adoptable post-year-end under SECURE 2.0 §317 / SECURE Act §201 |
 | Age not provided | Assume under 50 (lowest contribution limits); ask for age |
-| Solo 401(k) establishment date unclear | Assume NOT established by Dec 31 (cannot use Solo 401(k)); default to SEP-IRA |
+| Solo 401(k) establishment date unclear | A prior-year plan needs a Dec 31 deferral election; a first-year plan for a sole prop with no employees can still be adopted (deferrals by Apr 15, 2026). Default to SEP-IRA only for simplicity, not because Solo 401(k) is barred. |
 | Roth vs. traditional deferral preference not stated | Assume pre-tax (traditional) for maximum current-year deduction and QBI reduction |
 | MAGI not computed for Roth eligibility | Compute MAGI from available data; if MAGI unclear, assume above Roth limits (no Roth recommendation) |
 | Whether taxpayer has existing IRA balances (for backdoor Roth) | Assume yes (pro-rata rule applies); flag for reviewer |
@@ -509,7 +516,7 @@ Output: "Roth conversions are taxable events with complex interactions (pro-rata
 | Threshold | Trigger | Rationale |
 |---|---|---|
 | Total retirement contributions > $50,000 | Always flag | Verify §415(c) limit compliance |
-| Solo 401(k) established after Oct 1 | Always flag | Verify December 31 establishment was completed |
+| Solo 401(k) first-year deferrals claimed post-year-end | Always flag | Verify SECURE 2.0 §317 eligibility (sole prop, no common-law employees; plan adopted by the unextended due date) |
 | Sole prop has employees | Always flag | Nondiscrimination and coverage rules apply |
 | Net SE earnings < $23,500 | Always flag | Employee deferral limited to net SE earnings; verify computation |
 | Taxpayer age 60-63 | Always flag | Super catch-up eligible — verify age documentation |
@@ -540,21 +547,27 @@ Deduction on Schedule 1: $35,143
 
 ### Example 2 — SEP-IRA, high income
 
-**Taxpayer:** James Chen, single, age 42, freelance software developer, Schedule C net profit = $250,000, deductible half of SE tax = $16,583. No Solo 401(k) established (missed Dec 31 deadline).
+**Taxpayer:** James Chen, single, age 42, freelance software developer, Schedule C net profit = $250,000, deductible half of SE tax = $14,266. Using a SEP-IRA for its simplicity (single Form 5305-SEP, no annual Form 5500).
 
 ```
-Net SE earnings for retirement = $250,000 − $16,583 = $233,417
+SE tax check (2025 OASDI wage base $176,100):
+  SE base = $250,000 × 0.9235 = $230,875
+  OASDI  = $176,100 × 12.4% = $21,836.40   (capped at the wage base)
+  Medicare = $230,875 × 2.9% = $6,695.38
+  SE tax = $28,531.78; deductible half = $14,266
 
-SEP-IRA: 20% × $233,417 = $46,683
-§415(c) check: $46,683 ≤ $70,000 ✓
+Net SE earnings for retirement = $250,000 − $14,266 = $235,734
 
-Deduction on Schedule 1: $46,683
+SEP-IRA: 20% × $235,734 = $47,147
+§415(c) check: $47,147 ≤ $70,000 ✓
 
-Had he established a Solo 401(k):
+Deduction on Schedule 1: $47,147
+
+Had he used a Solo 401(k):
   Employee deferral: $23,500
-  Employer: $46,683 (same as SEP)
+  Employer: $47,147 (same as SEP)
   Total: $70,000 (hits §415(c) cap, so capped at $70,000)
-  Additional savings: $70,000 − $46,683 = $23,317 more in retirement
+  Additional savings: $70,000 − $47,147 = $22,853 more in retirement
 ```
 
 ### Example 3 — Solo 401(k) with super catch-up
@@ -586,13 +599,13 @@ Net SE earnings = $18,000 − $1,272 = $16,728
 Could establish SEP-IRA by filing deadline:
   20% × $16,728 = $3,346
 
-Could establish Solo 401(k) by Dec 31:
-  Employee deferral: $16,728 (limited to net SE earnings)
-  Employer: $3,346
-  Total: limited by net SE earnings interaction
-  In practice: can defer up to $16,728 (less than $23,500 limit)
-  + employer: 20% × $16,728 = $3,346
-  Total: up to ~$16,728 (deferral cannot exceed earned income)
+Could adopt a first-year Solo 401(k) even after year-end
+(sole prop, no employees — deferrals by Apr 15, 2026 per SECURE 2.0 §317):
+  Employee deferral: up to $16,728 (limited to net SE earnings)
+  §415(c) caps total additions at 100% of compensation = $16,728,
+  so a full $16,728 deferral leaves no room for an employer contribution.
+  Total: $16,728 (vs $3,346 under the SEP) — the Solo 401(k) allows
+  far more at this income because the deferral is not tied to the 20% rate.
 
 Traditional IRA (no employer plan, fully deductible): $7,000
 Roth IRA: $7,000 (MAGI well below $150,000)
@@ -631,16 +644,16 @@ Roth IRA: $7,000 (MAGI well below $150,000)
 **Expected:** Net SE earnings for retirement = $92,935. Employee deferral = $23,500. Employer = 20% × $92,935 = $18,587. Total = $42,087. §415(c) check: $42,087 ≤ $70,000. **Deduction = $42,087.**
 
 ### Test 2 — SEP-IRA, high income hitting cap
-**Input:** Schedule C net profit $400,000; deductible half SE tax $23,886; age 55; no Solo 401(k).
-**Expected:** Net SE earnings = $376,114. SEP = 20% × $376,114 = $75,223, CAPPED at $70,000. **SEP deduction = $70,000.**
+**Input:** Schedule C net profit $400,000; deductible half SE tax $16,275 (OASDI capped at the $176,100 wage base: $21,836.40 + Medicare $10,712.60 = $32,549; half = $16,275); age 55; no Solo 401(k).
+**Expected:** Net SE earnings = $383,725. SEP = 20% × $383,725 = $76,745, CAPPED at $70,000. **SEP deduction = $70,000.**
 
 ### Test 3 — Solo 401(k) with super catch-up
-**Input:** Schedule C net profit $200,000; deductible half SE tax $14,130; age 62; Solo 401(k) established.
-**Expected:** Net SE earnings = $185,870. Employee deferral = $23,500. Employer = 20% × $185,870 = $37,174. Subtotal = $60,674 ≤ $70,000 §415(c). Super catch-up = $11,250. **Total deduction = $71,924.**
+**Input:** Schedule C net profit $200,000; deductible half SE tax $13,596 (OASDI capped: $21,836.40 + Medicare $5,356.30 = $27,192.70; half = $13,596); age 62; Solo 401(k) established.
+**Expected:** Net SE earnings = $186,404. Employee deferral = $23,500. Employer = 20% × $186,404 = $37,281. Subtotal = $60,781 ≤ $70,000 §415(c). Super catch-up = $11,250. **Total deduction = $72,031.**
 
 ### Test 4 — Low income, deferral limited by earnings
 **Input:** Schedule C net profit $20,000; deductible half SE tax $1,413; age 30; Solo 401(k) established.
-**Expected:** Net SE earnings = $18,587. Employee deferral = $18,587 (limited by net SE earnings, not $23,500). Employer = 20% × $18,587 = $3,717. Total = $22,304. But total cannot exceed net SE earnings in a meaningful way — verify: $23,500 deferral limit > $18,587 net SE earnings, so deferral capped at $18,587. **Total deduction = $22,304.**
+**Expected:** Net SE earnings = $18,587. Employee deferral = $18,587 (limited by net SE earnings, not $23,500). Because §415(c)(1)(B) caps total annual additions at 100% of compensation ($18,587), the $18,587 deferral leaves no room for an employer contribution. **Total deduction = $18,587.**
 
 ### Test 5 — Shared 401(k) deferral with employer plan
 **Input:** Schedule C net profit $80,000; deductible half SE tax $5,652; age 45; Solo 401(k) established; also has W-2 job where deferred $15,000 in employer 401(k).
@@ -656,7 +669,7 @@ Roth IRA: $7,000 (MAGI well below $150,000)
 
 1. **NEVER use the 25% rate directly for a sole prop's employer contribution.** The effective rate is 20% (25% / 1.25) because the contribution reduces the base. Using 25% overstates the maximum contribution.
 
-2. **NEVER allow a Solo 401(k) for 2025 if the plan was not established by December 31, 2025.** Default to SEP-IRA if the establishment date is unknown or after December 31.
+2. **Do NOT apply the old "Solo 401(k) must be established by December 31" rule.** SECURE Act §201 lets a sole prop adopt the plan by the extended return due date (Oct 15, 2026) for the employer contribution, and SECURE 2.0 §317 lets a sole prop with no employees make first-year 2025 elective deferrals if the plan is adopted by the unextended due date (April 15, 2026). SEP-IRA is still the simpler default when the establishment date is unknown, but a post-year-end first-year Solo 401(k) is now permissible.
 
 3. **NEVER ignore the §415(c) $70,000 cap.** Employee deferrals + employer contributions (excluding catch-up) cannot exceed $70,000. Catch-up is on top.
 
@@ -696,6 +709,12 @@ Roth IRA: $7,000 (MAGI well below $150,000)
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, EA, tax attorney, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
 
 The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
+
+## Changelog
+
+- **2026-07-06** - Worked-example arithmetic + deadline-law fixes. Corrected the SE-tax figures in Example 2 (James Chen) and Tests 2/3/4, which ignored the 2025 OASDI wage base ($176,100): deductible-half figures and every downstream SEP/Solo-401(k) number now cap OASDI at the wage base (e.g. James Chen half $16,583->$14,266, SEP $46,683->$47,147; Test 3 total $71,924->$72,031). Fixed Test 4 and the Alex Rivera example to apply the §415(c) 100%-of-compensation cap on total additions. Replaced the repealed "Solo 401(k) must be established by December 31" rule throughout with SECURE Act §201 (employer contribution by the extended due date) and SECURE 2.0 §317 (first-year elective deferrals for a sole prop with no employees by the unextended April 15 due date) in the deadline table, decision tree, refusal defaults, review thresholds, and hard rules.
+
+- **2026-07-05** — Corrections (Fable review, verified): Solo 401(k) establishment deadline updated for SECURE Act §201 (adopt by extended return due date; deferral elections still by Dec 31); Roth SEP (SECURE 2.0 §601) and Roth employer contributions (§604) now noted instead of a flat no-Roth statement; IRA catch-up wording ($1,000 catch-up / $8,000 total, age 50+); mandatory-Roth-catch-up transition re-cited to Notice 2023-62. FLAGGED for an arithmetic pass: Section 15/17 examples compute SE tax at 15.3%% of full net earnings, ignoring the $176,100 OASDI wage base, and the SEP-vs-Solo-401(k) crossover figures (Sections 7, 11) need recomputation.
 
 ---
 

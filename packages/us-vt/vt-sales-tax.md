@@ -2,10 +2,14 @@
 name: vt-sales-tax
 description: Use this skill whenever asked about Vermont sales tax, Vermont use tax, Vermont Tax Dept sales tax filing, Vermont local option tax, Vermont SaaS tax, or Vermont sales tax compliance. Trigger on phrases like "Vermont sales tax", "VT sales tax", "32 V.S.A. §9771", "Vermont Tax Dept", "Vermont local option", "Vermont SaaS", "Vermont SST", or any request involving Vermont state and local sales and use tax compliance. ALWAYS load us-sales-tax first for federal context.
 jurisdiction: US-VT
+tier: 2
+last_updated: 2026-06-12
 validation_status: ai-drafted-q3
 ---
 
 # Vermont Sales and Use Tax Skill
+
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 ---
 
@@ -175,7 +179,6 @@ Exemptions identified in Step 2 above are the primary deductibility rules for Ve
 - **Manufacturing exemptions:** Where applicable per Step 2. [T2]
 
 All exemption certificates must be collected at or before the time of sale and retained per the state's statute of limitations. [T1]
-
 
 ---
 

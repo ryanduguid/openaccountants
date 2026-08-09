@@ -12,37 +12,18 @@ version: 1.0
 jurisdiction: GB
 category: tax-optimization
 depends_on: []
-tax_year: 2025-26
+tax_year: 2025
+tax_year_notes: "2025-26"
+tier: 2
+last_updated: 2026-07-05
 verified_by: pending
 ---
 
 # UK Tax Optimization -- Self-Employed Skill v1.0
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 ---
-
-## Verified rates & thresholds (accountant-reviewed)
-
-> Reviewed against the cited tax authorities by **James Power** on 2026-06-03.
-> This block is generated from the verified facts database at openaccountants.com —
-> edit the facts there, not this prose. Items under clarification are excluded.
-
-### Tax Optimisation
-
-- **AIA** — £1,000,000 (100% first-year)  _(CAA 2001)_
-- **Main pool WDA (2025-26)** — 18% reducing balance  _(CAA 2001)_
-- **Main pool WDA (from Apr 2026)** — 14%  _(Finance Act 2025)_
-- **Special rate pool** — 6%  _(CAA 2001)_
-- **Electric car (0 g/km)** — 100% FYA  _(CAA 2001)_
-- **Car 1-50 g/km** — Main pool (18%/14%)  _(CAA 2001)_
-- **Car over 50 g/km** — Special rate pool (6%)  _(CAA 2001)_
-- **Sideways (s.64)** — Against total income same/prior year; cap £50,000 or 25%  _(ITA 2007 s.64)_
-- **Carry-forward (s.83)** — Unlimited, no time limit, same trade only  _(ITA 2007 s.83)_
-- **Early trade (s.72)** — First 4 years losses carried back 3 years  _(ITA 2007 s.72)_
-- **Terminal (s.89)** — Final 12 months, back 3 years (no cap)  _(ITA 2007 s.89)_
-- **When to consider** — Profits consistently £40,000-£50,000+  _(Tax planning)_
-- **Corp tax — small profits** — 19% (taxable profits ≤ £50,000)  _(CTA 2010)_
-- **Corp tax — main rate** — 25% (profits > £250,000)  _(CTA 2010)_
-- **Corp tax — marginal** — 26.5% effective (£50,001 – £250,000)  _(CTA 2010)_
 
 ## Section 1 -- Quick Reference
 
@@ -215,7 +196,7 @@ In a loss-making year, accelerate expenditure (training, equipment, marketing) t
 
 | Strategy | Detail |
 |---|---|
-| Voluntary Class 2 | If profits below £6,845, pay voluntary Class 2 (£3.45/week) to protect State Pension entitlement. |
+| Voluntary Class 2 | If profits below £6,845, pay voluntary Class 2 (£3.50/week) to protect State Pension entitlement. |
 | NIC holiday (incorporation) | Directors of Ltd companies can set salary below the Primary Threshold (£12,570) to avoid employee NIC while still building NIC credits. |
 | Maximize pension contributions | Pension contributions reduce income for the Personal Allowance taper calculation but do not reduce NIC-liable profits. |
 
@@ -337,6 +318,9 @@ In a loss-making year, accelerate expenditure (training, equipment, marketing) t
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, EA, tax attorney, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
 
 The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com).
+
+## Changelog
+- **2026-07-05** — UK Class 2 NIC 2025/26 corrected (per packages/uk/rates.2025.json, SSCBA 1992): Small Profits Threshold GBP 6,845 (was 6,725), voluntary weekly rate GBP 3.50 / GBP 182.00 annual. 2024-25 comparison figures retained.
 
 ---
 

@@ -4,12 +4,16 @@ description: >
   Use this skill when preparing, reviewing, or advising on annual financial statements for a Maltese company. Trigger on phrases like "annual accounts Malta", "financial statements Malta", "Companies Act filing", "MBR filing", "balance sheet format", "profit and loss format", "directors' report", "audit exemption Malta", "small company Malta", "abridged accounts", "year-end adjustments", or any question about preparing statutory accounts under the Malta Companies Act (Cap. 386). Covers reporting frameworks, size thresholds, required statements, P&L and balance sheet formats, notes disclosures, filing deadlines, and audit requirements.
 version: 1.0
 jurisdiction: MT
+tier: 2
+last_updated: 2026-06-12
 category: financial-statements
 depends_on:
   - financial-statements-workflow-base
 ---
 
 # Malta Financial Statements Skill v1.0
+
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 ---
 

@@ -9,11 +9,18 @@
 2. `intake.md`
 3. `references.md`
 4. `ro-cas-cass.md`
-5. `ro-income-tax.md`
-6. `romania-einvoice.md`
-7. `romania-vat-return.md`
-8. `eu-vat-directive.md`
-9. `einvoice-workflow-base.md`
+5. `ro-company-formation.md`
+6. `ro-corporate-income-tax.md`
+7. `ro-income-tax.md`
+8. `ro-payroll-social.md`
+9. `ro-tax-overview.md`
+10. `ro-vat-return.md`
+11. `romania-einvoice.md`
+12. `romania-vat-return.md`
+13. `eu-vat-directive.md`
+14. `einvoice-workflow-base.md`
+15. `payroll-workflow-base.md`
+16. `company-formation-workflow-base.md`
 
 ## Also known as
 
@@ -36,17 +43,17 @@ The AI will:
 - Ask onboarding questions to confirm your situation
 - Load the right domain skills (tax, bookkeeping, payroll, etc.)
 - Produce working papers for each obligation
-- Flag anything that needs your qualified tax professional's attention
+- Flag anything that needs your tax professional's attention
 
 ## Important
 
-**This is not tax, legal, or financial advice.** Everything produced must be reviewed and signed off by a qualified qualified tax professional before filing or acting upon.
+**This is not tax, legal, or financial advice.** Everything produced must be reviewed and signed off by a qualified tax professional before filing or acting upon.
 
 The most up-to-date, verified version of these skills is maintained at [openaccountants.com](https://www.openaccountants.com).
 
 ---
 
-## Are you a qualified tax professional?
+## Are you a tax professional?
 
 These Romania tax skills need your eye. Every rate, threshold, and form reference was AI-drafted and needs a human professional to verify it.
 

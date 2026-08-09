@@ -3,9 +3,14 @@ name: financial-statements-workflow-base
 description: Universal financial statements preparation workflow base that defines the trial balance review, year-end adjustments, income statement and balance sheet preparation, notes to accounts, and filing runbook for all jurisdictions. Contains no jurisdiction-specific content — no local GAAP rules, no filing portals, no reporting thresholds, no specific account formats. This skill MUST be loaded alongside a country-specific financial statements skill that provides the reporting framework, format requirements, and local filing rules. This skill alone cannot produce any output.
 version: 1.0
 category: foundation
+jurisdiction: GLOBAL
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # Financial Statements Workflow Base Skill v1.0
+
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 ## What this file is, and what it is not
 

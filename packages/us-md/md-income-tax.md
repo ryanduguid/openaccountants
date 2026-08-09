@@ -6,11 +6,15 @@ description: >
   county tax", "piggyback tax". Maryland has 10 graduated state brackets (2%–6.50%) PLUS
   mandatory county/city income taxes (2.25%–3.20%). ALWAYS load us-tax-workflow-base first.
 jurisdiction: US-MD
+tier: 2
+last_updated: 2026-06-12
 version: "0.1"
 validation_status: ai-drafted-q3
 ---
 
 # Maryland Individual Income Tax Skill — Self-Employed / Sole Proprietor
+
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 > **Scope.** This skill covers Maryland Form 502 (Resident Income Tax Return) for sole proprietors and single-member LLCs. It addresses the 10-bracket graduated state income tax, mandatory county/Baltimore City piggyback taxes, and Maryland-specific deductions. It does NOT cover nonresident returns (Form 505), part-year returns, corporate returns (Form 500), or the pass-through entity tax (Form 510).
 

@@ -3,11 +3,16 @@ name: il-corporate-tax
 description: Use this skill when advising on Israeli corporate tax strategy, profit extraction methods, or controlling shareholder (בעל שליטה) tax planning. Trigger on phrases like "corporate tax Israel", "dividend vs salary Israel", "baal shlita", "בעל שליטה", "halokat dividendim", "חלוקת דיבידנדים", "shareholder loan Israel", "halvaat baalim", "הלוואת בעלים", "Section 3 tet", "סעיף 3 ט", "dmei nihul", "דמי ניהול", "management fees Israel", "chevra me'atim", "חברה מעטים", or any Israeli corporate tax extraction query. ALWAYS read this skill before advising on Israeli corporate profit extraction.
 version: 1.0
 jurisdiction: IL
-tax_year: 2025-2026
+tax_year: 2025
+tax_year_notes: "2025-2026"
+tier: 2
+last_updated: 2026-07-04
 category: international
 ---
 
 # Israel Corporate Tax Strategy Skill v1.0
+
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 > **Based on work by [Skills IL](https://github.com/skills-il/tax-and-finance)**, licensed under MIT. Adapted for the OpenAccountants format.
 

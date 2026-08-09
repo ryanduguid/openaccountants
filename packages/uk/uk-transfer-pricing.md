@@ -7,39 +7,20 @@ jurisdiction: GB
 category: transfer-pricing
 depends_on:
   - transfer-pricing-workflow-base
-tax_year: 2025-26
+tax_year: 2025
+tax_year_notes: "2025-26"
+tier: 2
+last_updated: 2026-07-04
 verified_by: pending
 ---
 
 # UK Transfer Pricing Skill v1.0
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 > **Year applicability:** Rules in this skill apply across **2024-25, 2025-26, and 2026-27** unless a specific section flags a year-dated change. The pack is read alongside the rate-bearing skills (`uk-income-tax-sa100`, `uk-national-insurance`, `uk-dividends`, etc.) which carry full 3-year tables.
 
-
 ---
-
-## Verified rates & thresholds (accountant-reviewed)
-
-> Reviewed against the cited tax authorities by **James Power** on 2026-06-03.
-> This block is generated from the verified facts database at openaccountants.com —
-> edit the facts there, not this prose. Items under clarification are excluded.
-
-### Transfer Pricing
-
-- **Legislation** — TIOPA 2010 Part 4; SI 2023/818  _(TIOPA 2010)_
-- **Master File** — OECD format; available within 30 days of HMRC request  _(SI 2023/818)_
-- **Local File** — OECD format; available within 30 days  _(SI 2023/818)_
-- **CbCR threshold** — Group revenue ≥ EUR 750m  _(TIOPA 2010 s.286)_
-- **CbCR filing deadline** — 12 months after end of reporting period  _(TIOPA 2010)_
-- **Criteria** — Turnover < £10m AND < 50 employees AND assets < £5m  _(TIOPA s.166)_
-- **Medium exemption** — < 250 employees, turnover < £36m or assets < £18m (unless tax haven)  _(TIOPA)_
-- **Failure to keep TP records** — Up to £3,000 per failure per return period  _(FA 2007 Sch.24)_
-- **Careless inaccuracy** — 0-30% of tax  _(FA 2007 Sch.24)_
-- **Deliberate inaccuracy** — 20-70% of tax  _(FA 2007 Sch.24)_
-- **Deliberate and concealed** — 30-100% of tax  _(FA 2007 Sch.24)_
-- **HMRC fees** — No fees charged  _(TIOPA ss.218-230)_
-- **Duration** — 3-5 years prospective (rollback possible)  _(TIOPA)_
-- **Low-value services safe harbour** — Cost-plus 5% accepted  _(OECD Guidelines)_
 
 ## Section 1 -- Quick Reference
 

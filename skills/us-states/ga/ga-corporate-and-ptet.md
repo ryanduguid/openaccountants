@@ -1,5 +1,5 @@
 ---
-description: Source-cited tax guide for US-GA: ga corporate and ptet. Unverified draft, pending local-accountant review.
+description: 'Source-cited tax guide for US-GA: ga corporate and ptet. Unverified draft, pending local-accountant review.'
 name: ga-corporate-and-ptet
 jurisdiction: US-GA
 domain: state-tax

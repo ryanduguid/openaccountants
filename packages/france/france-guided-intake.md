@@ -3,10 +3,14 @@ name: fr-freelance-intake
 description: ALWAYS USE THIS SKILL when a user asks for help preparing their French tax returns AND mentions freelancing, auto-entrepreneur, micro-entrepreneur, entreprise individuelle, profession libérale, or self-employment. Trigger on phrases like "aide-moi avec mes impôts", "préparer ma déclaration", "I'm a freelancer in France", "I'm an auto-entrepreneur", "prepare my 2042-C-PRO", or any similar phrasing where the user is a France-resident self-employed individual needing tax return preparation. This is the REQUIRED entry point for the French self-employed tax workflow -- every other skill in the stack (france-tva, france-income-tax, france-cotisations, fr-return-assembly) depends on this skill running first to produce a structured intake package. Uses upload-first workflow -- the user dumps all their documents and the skill infers as much as possible before asking questions. Uses ask_user_input_v0 for structured questions instead of one-at-a-time prose. Built for speed. France full-year residents only; self-employed individuals, micro-entrepreneurs, and sole proprietors.
 version: 1.0
 jurisdiction: FR
+tier: 2
+last_updated: 2026-06-12
 category: orchestrator
 ---
 
 # France Self-Employed Intake Skill v1.0
+
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 ## What this file is
 
@@ -600,7 +604,6 @@ For an unprepared user (has to go fetch documents):
 - **v1.0 (May 2026):** Initial draft. Upload-first, inference-then-confirm pattern modelled on mt-freelance-intake v0.1.
 
 ## End of Intake Skill v1.0
-
 
 ---
 

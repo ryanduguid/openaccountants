@@ -3,11 +3,16 @@ name: il-crypto-tax
 description: Use this skill when advising on Israeli cryptocurrency tax reporting and capital gains calculations. Trigger on phrases like "crypto tax Israel", "bitcoin tax Israel", "מס קריפטו", "FIFO Israel", "Form 1325 crypto", "Form 1322", "capital gains crypto Israel", "staking tax Israel", "airdrop tax Israel", "DeFi tax Israel", "voluntary disclosure crypto Israel", "gilui mirtzon", "גילוי מרצון", or any Israeli cryptocurrency tax query. ALWAYS read this skill before advising on Israeli crypto taxation.
 version: 1.0
 jurisdiction: IL
-tax_year: 2025-2026
+tax_year: 2025
+tax_year_notes: "2025-2026"
+tier: 2
+last_updated: 2026-07-04
 category: international
 ---
 
 # Israel Cryptocurrency Tax Reporting Skill v1.0
+
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 > **Based on work by [Skills IL](https://github.com/skills-il/tax-and-finance)**, licensed under MIT. Adapted for the OpenAccountants format.
 

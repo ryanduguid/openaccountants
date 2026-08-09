@@ -10,6 +10,8 @@ description: >
   on any Malta tax optimization strategy.
 version: 1.0
 jurisdiction: MT
+tier: 1
+last_updated: 2026-06-12
 category: tax-optimization
 depends_on: []
 verified_by: Michael Cutajar, CPA (Malta)
@@ -19,6 +21,8 @@ verified_by: Michael Cutajar, CPA (Malta)
 
 > ✅ **Accountant-reviewed** · **Michael Cutajar, CPA (Malta)** · credential verified · [public record](https://www.openaccountants.com/network)
 
+
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 ---
 

@@ -2,9 +2,14 @@
 name: bahrain-vat
 description: Use this skill whenever asked to prepare, review, or classify transactions for a Bahrain VAT return for any client. Trigger on phrases like "prepare VAT return", "Bahrain VAT", "NBR return", "file VAT Bahrain", or any request involving Bahrain VAT filing. Also trigger when classifying transactions for VAT purposes from bank statements, invoices, or other source data. This skill contains the complete Bahrain VAT classification rules, return box mappings, deductibility rules, reverse charge treatment, GCC transitional provisions, and filing deadlines. Bahrain applies VAT at 10% under Decree-Law No. 48 of 2018, administered by the National Bureau for Revenue (NBR). ALWAYS read this skill before touching any Bahrain VAT-related work.
 version: 2.0
+jurisdiction: BH
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # Bahrain VAT Return Skill v2.0
+
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 ## Section 1 -- Quick reference
 

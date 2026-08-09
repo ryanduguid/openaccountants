@@ -1,5 +1,5 @@
 ---
-description: Source-cited tax guide for US-NC: nc corporate tax. Unverified draft, pending local-accountant review.
+description: 'Source-cited tax guide for US-NC: nc corporate tax. Unverified draft, pending local-accountant review.'
 name: nc-corporate-tax
 jurisdiction: US-NC
 tax_year: 2025

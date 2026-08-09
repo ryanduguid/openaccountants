@@ -6,11 +6,15 @@ description: >
   Indiana has a flat 2.95% state rate plus mandatory county income taxes (0.5%–3.38%).
   ALWAYS load us-tax-workflow-base first.
 jurisdiction: US-IN
+tier: 2
+last_updated: 2026-06-12
 version: "0.1"
 validation_status: ai-drafted-q3
 ---
 
 # Indiana Individual Income Tax Skill — Self-Employed / Sole Proprietor
+
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 > **Scope.** This skill covers Indiana Form IT-40 (Full-Year Resident Individual Income Tax Return) for sole proprietors and single-member LLCs. It addresses the flat state income tax, county income taxes, and Indiana-specific modifications to federal adjusted gross income. It does NOT cover part-year or nonresident returns (Form IT-40PNR), corporate returns, or partnership/S-corp pass-throughs.
 

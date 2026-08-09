@@ -1,5 +1,5 @@
 ---
-description: Source-cited tax guide for US-VA: va corporate tax and bpol. Unverified draft, pending local-accountant review.
+description: 'Source-cited tax guide for US-VA: va corporate tax and bpol. Unverified draft, pending local-accountant review.'
 name: va-corporate-tax-and-bpol
 jurisdiction: US-VA
 domain: state-tax

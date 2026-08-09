@@ -3,21 +3,26 @@
 > Open-source accounting skills for Indonesia. Upload to Claude, ChatGPT, or any AI assistant.
 > Tax, bookkeeping, payroll, formation, financial statements, and more. Free and open source.
 
-## Verified by
-
-**Rilia Putri CA** (Akuntanpedia) — Lead accountant verifier for Indonesia on OpenAccountants. 10 skills verified.
-[openaccountants.com/network/ec70d43e-18c0-4b4e-b92c-4f8a22e10152](https://www.openaccountants.com/network/ec70d43e-18c0-4b4e-b92c-4f8a22e10152)
-
-_Scope: the “Verified rates & thresholds” blocks inside these skill files are generated from the facts this verifier reviewed. Everything else in the files is an open, source-cited draft. The full accountant-verified tier, with the verifier’s name on every answer, is served via the [connector](https://www.openaccountants.com/connect)._
-
 ## What's in this folder
 
 1. `foundation.md`
 2. `intake.md`
-3. `id-payroll-pph21.md`
-4. `indonesia-vat.md`
-5. `references.md`
-6. `payroll-workflow-base.md`
+3. `id-bookkeeping.md`
+4. `id-corporate-tax.md`
+5. `id-einvoice-coretax.md`
+6. `id-formation.md`
+7. `id-freelance-intake.md`
+8. `id-payroll-pph21.md`
+9. `id-pph-final-umkm.md`
+10. `id-return-assembly.md`
+11. `id-tax-optimization.md`
+12. `id-withholding.md`
+13. `indonesia-vat.md`
+14. `references.md`
+15. `bookkeeping-workflow-base.md`
+16. `einvoice-workflow-base.md`
+17. `payroll-workflow-base.md`
+18. `company-formation-workflow-base.md`
 
 ## Also known as
 
@@ -40,17 +45,17 @@ The AI will:
 - Ask onboarding questions to confirm your situation
 - Load the right domain skills (tax, bookkeeping, payroll, etc.)
 - Produce working papers for each obligation
-- Flag anything that needs your qualified tax professional's attention
+- Flag anything that needs your tax professional's attention
 
 ## Important
 
-**This is not tax, legal, or financial advice.** Everything produced must be reviewed and signed off by a qualified qualified tax professional before filing or acting upon.
+**This is not tax, legal, or financial advice.** Everything produced must be reviewed and signed off by a qualified tax professional before filing or acting upon.
 
 The most up-to-date, verified version of these skills is maintained at [openaccountants.com](https://www.openaccountants.com).
 
 ---
 
-## Are you a qualified tax professional?
+## Are you a tax professional?
 
 These Indonesia tax skills need your eye. Every rate, threshold, and form reference was AI-drafted and needs a human professional to verify it.
 

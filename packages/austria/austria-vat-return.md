@@ -2,9 +2,14 @@
 name: austria-vat-return
 description: Use this skill whenever asked to prepare, review, or classify transactions for an Austrian VAT return (Umsatzsteuervoranmeldung / UVA) or annual declaration (Umsatzsteuererklärung / U1) for a self-employed individual or small business in Austria. Trigger on phrases like "prepare UVA", "Austrian VAT return", "Umsatzsteuer", "classify transactions for Austrian VAT", or any request involving Austria VAT filing. This skill covers Austria only, standard regime (Regelbesteuerung). Kleinunternehmerregelung, partial exemption, margin scheme (Differenzbesteuerung), and VAT groups (Organschaft) are in the refusal catalogue. MUST be loaded alongside BOTH vat-workflow-base v0.1 or later AND eu-vat-directive v0.1 or later. ALWAYS read this skill before touching any Austrian VAT work.
 version: 2.0
+jurisdiction: AT
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # Austria VAT Return Skill (UVA / Umsatzsteuervoranmeldung) v2.0
+
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 ## Section 1 — Quick reference
 
@@ -627,7 +632,6 @@ python /mnt/skills/public/xlsx/scripts/recalc.py /mnt/user-data/outputs/austria-
 ## End of Austria VAT Return Skill v2.0
 
 This skill is incomplete without BOTH companion files: `vat-workflow-base` v0.1+ AND `eu-vat-directive` v0.1+.
-
 
 ---
 

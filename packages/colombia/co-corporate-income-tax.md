@@ -1,0 +1,58 @@
+---
+name: Colombia Corporate Income Tax
+description: "Source-cited draft: corporate income tax for Colombia (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
+jurisdiction: CO
+domain: income-tax
+role: compute
+tax_year: 2025
+tier: 2
+last_updated: 2026-07-06
+---
+
+# Colombia Corporate Income Tax
+
+## Corporate income tax rates and surcharges
+
+- **General corporate income tax rate** — 35% %  _(Estatuto Tributario Nacional, art. 240 — https://taxsummaries.pwc.com/colombia/corporate/taxes-on-corporate-income)_
+- **Overview of corporate taxation** — Colombian-incorporated companies are taxed on worldwide income at a general 35% rate; foreign entities are taxed on Colombian-source income. Sector surcharges apply to financial institutions and extractive industries, and a 15% minimum effective tax rate (METR) acts as a floor.  _(Estatuto Tributario Nacional, art. 240 — https://taxsummaries.pwc.com/colombia/corporate/taxes-on-corporate-income)_
+- **Surcharge for financial institutions** — Additional 5% (total 40%) through 2027 where taxable income is at least 120,000 UVT %  _(Estatuto Tributario Nacional, art. 240 parágrafo; Ley 2277 de 2022 — https://taxsummaries.pwc.com/colombia/corporate/taxes-on-corporate-income)_
+- **Surcharge for oil/coal extraction** — Variable surtax from 5% up to 10% (up to 15% for oil extraction), depending on price levels, where taxable income is at least ~50,000 UVT %  _(Estatuto Tributario Nacional, art. 240; Ley 2277 de 2022 — https://taxsummaries.pwc.com/colombia/corporate/taxes-on-corporate-income)_
+- **Minimum effective tax rate (METR)** — 15% floor on adjusted financial profit for resident corporations %  _(Estatuto Tributario Nacional, art. 240 parágrafo 6; Ley 2277 de 2022 — https://taxsummaries.pwc.com/colombia/corporate/taxes-on-corporate-income)_
+- **Tax base** — Worldwide income for Colombian national companies; Colombian-source income for foreign entities/PEs  _(Estatuto Tributario Nacional, art. 12 — https://taxsummaries.pwc.com/colombia/corporate/taxes-on-corporate-income)_
+- **WHT on dividends to non-residents (from taxed earnings)** — 20% %  _(Estatuto Tributario Nacional, art. 245 — https://taxsummaries.pwc.com/colombia/corporate/withholding-taxes)_
+- **WHT on dividends to non-residents (from untaxed earnings)** — 48% (then 20% on the remainder) %  _(Estatuto Tributario Nacional, art. 245 — https://taxsummaries.pwc.com/colombia/corporate/withholding-taxes)_
+- **WHT on interest to non-residents** — 15% or 20% (general); 5% for qualifying 8+ year infrastructure loans %  _(Estatuto Tributario Nacional, art. 408 — https://taxsummaries.pwc.com/colombia/corporate/withholding-taxes)_
+- **WHT on royalties to non-residents (incl. software)** — 20% %  _(Estatuto Tributario Nacional, art. 408 — https://taxsummaries.pwc.com/colombia/corporate/withholding-taxes)_
+- **Treaty relief** — Reduced WHT rates may apply under Colombia's double-tax treaties  _(Applicable double taxation conventions (Convenios para evitar la doble imposición) — https://taxsummaries.pwc.com/colombia/corporate/withholding-taxes)_
+- **CIT return filing and payment** — Annual return filed electronically with DIAN; deadlines (typically Apr–May) staggered by NIT, with an advance payment installment for large taxpayers ((approx — confirm exact dates in DIAN annual deadline decree))  _(DIAN annual tax deadline decree (Decreto de plazos) — https://en.tpcgroup-int.com/news/2026-tax-calendar-in-colombia-transfer-pricing-and-key-obligations/)_
+
+---
+
+<!-- openaccountants-cta-block -->
+
+## Talk to a verified accountant
+
+This skill is a tool, not an engagement. Every taxpayer's situation is
+different, and the rules in the skill may not match your specific facts.
+
+To speak with one of the licensed accountants who verifies skills for your
+jurisdiction — **no liability on either side until you and the accountant sign
+a formal engagement letter** — book a free 30-minute call:
+
+**→ [Book a call](https://calendly.com/openaccountants-info/30min)**
+
+We'll route you to the named verifier covering your country or state. You can
+also see the full list of verified accountants at
+[openaccountants.com/network](https://www.openaccountants.com/network).
+
+<!-- openaccountants-mcp-cta -->
+
+## The accountant-verified version lives in the connector
+
+This file is the open, **research-grade draft**. The **accountant-verified**
+version of this skill is **not published to GitHub** — it is delivered free
+through the OpenAccountants MCP connector, where your AI agent loads the
+verified rules together with the name of the accountant who signed them off.
+
+**→ Install the free connector:** <https://www.openaccountants.com/connect>
+**MCP endpoint:** `https://www.openaccountants.com/api/mcp`

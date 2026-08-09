@@ -2,9 +2,14 @@
 name: ny-llc-filing-fee-it-204-ll
 description: Tier 2 New York content skill for preparing Form IT-204-LL (Partnership, Limited Liability Company, and Limited Liability Partnership Filing Fee Payment Form) for single-member LLCs disregarded for federal tax purposes whose sole member is a New York full-year resident individual. Covers the flat $25 disregarded-entity filing fee under NY Tax Law §658(c)(1), the "income, gain, loss, or deduction from New York sources" filing trigger, the dormancy exception, the March 15 due date with no extension available, late filing and late payment penalties, and the coordination with the owner's Form IT-201. Does NOT cover multi-member LLCs, LLCs taxed as partnerships or corporations, the gross-receipts-based sliding fee schedule for partnership-taxed LLCs, or LLCs doing business both inside and outside New York — see Section 7. MUST be loaded alongside us-tax-workflow-base v0.2 or later and ny-it-201-resident-return. New York full-year residents with disregarded SMLLCs only.
 version: 0.2
+jurisdiction: US-NY
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # New York IT-204-LL SMLLC Filing Fee Skill v0.2
+
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 ## What this file is, and what it is not
 
@@ -642,7 +647,6 @@ This skill is the smallest file in the NY stack. It was built first (before `ny-
 - **v0.2 (April 2026):** Rewrite to strict slot contract conformance. Restructured into 14 sections mapping to the 13 mandatory slots and 1 optional slot (cross-skill references). Added structured year-specific figures table, primary source library with governance descriptions, seven structured position rules, thirteen-row conservative defaults table, ten topical refusals in trigger/output format, ten-row reviewer attention thresholds, five worked examples covering common fact patterns, output format extension for the brief, ten-question intake additions with blocking logic, ten self-check additions numbered 18-27 to avoid collision with base checks 1-17. Currency date: April 2026. All figures verified against tax.ny.gov primary sources during a deep research pass preceding this draft.
 
 ## End of NY IT-204-LL SMLLC Filing Fee Skill v0.2
-
 
 ---
 

@@ -2,9 +2,14 @@
 name: ro-cas-cass
 description: Use this skill whenever asked about Romanian self-employed social and health contributions (CAS/CASS). Trigger on phrases like "CAS Romania", "CASS Romania", "contribuții sociale PFA", "Declarația Unică", "pensie PFA", "Romanian social contributions", or any question about social/health insurance obligations for a self-employed client in Romania. Covers CAS 25% and CASS 10% on fixed tier bases tied to minimum gross wage multiples. ALWAYS read this skill before touching any Romania social contributions work.
 version: 2.0
+jurisdiction: RO
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # Romania CAS/CASS -- Self-Employed Skill v2.0
+
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 ## Section 1 -- Quick reference
 

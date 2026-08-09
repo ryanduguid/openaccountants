@@ -1,11 +1,15 @@
 ---
 name: sc-sales-tax
-description: Use this skill whenever asked about South Carolina sales tax, South Carolina use tax, SC sales tax nexus, SC sales tax returns, SC exemption certificates, taxability of goods or services in South Carolina, or any request involving South Carolina state-level consumption taxes. Trigger on phrases like "South Carolina sales tax", "SC sales tax", "SC use tax", "SC nexus", "S.C. Code 12-36", "SC DOR sales tax", or any request involving South Carolina sales and use tax filing, classification, or compliance. NOTE: SC has a max tax cap of $500 on certain items (vehicles, boats, aircraft). ALWAYS read the parent us-sales-tax skill first for federal context.
+description: 'Use this skill whenever asked about South Carolina sales tax, South Carolina use tax, SC sales tax nexus, SC sales tax returns, SC exemption certificates, taxability of goods or services in South Carolina, or any request involving South Carolina state-level consumption taxes. Trigger on phrases like "South Carolina sales tax", "SC sales tax", "SC use tax", "SC nexus", "S.C. Code 12-36", "SC DOR sales tax", or any request involving South Carolina sales and use tax filing, classification, or compliance. NOTE: SC has a max tax cap of $500 on certain items (vehicles, boats, aircraft). ALWAYS read the parent us-sales-tax skill first for federal context.'
 jurisdiction: US-SC
+tier: 2
+last_updated: 2026-06-12
 validation_status: ai-drafted-q3
 ---
 
 # South Carolina Sales and Use Tax Skill
+
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 ---
 
@@ -245,7 +249,6 @@ Valid certificates must include: purchaser information, SC retail license number
 Good faith acceptance protects sellers. Certificates must be retained for **3 years** from the date of the last transaction. [T1]
 
 ---
-
 
 ### 6.1 When Use Tax Applies
 

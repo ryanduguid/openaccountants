@@ -3,11 +3,15 @@ name: wv-income-tax
 description: >
   Use this skill whenever asked about West Virginia individual income tax, West Virginia Form IT-140, West Virginia graduated tax rates, West Virginia self-employment income tax at the state level, West Virginia 2026 rate cut, or any West Virginia personal income tax question for sole proprietors. Trigger on phrases like "West Virginia income tax", "WV income tax", "Form IT-140", "West Virginia tax brackets", "WV 4.58%", "W.Va. Code §11-21", or any request involving West Virginia state individual income tax computation or filing.
 jurisdiction: US-WV
+tier: 2
+last_updated: 2026-06-12
 version: "0.1"
 validation_status: ai-drafted-q3
 ---
 
 # West Virginia Individual Income Tax Skill — Self-Employed / Sole Proprietor
+
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 > **Scope.** This skill covers the West Virginia individual income tax return (Form IT-140) for full-year West Virginia residents who are sole proprietors or single-member LLC owners. It addresses the graduated rate computation (updated for the 2026 rate cut under SB 392), West Virginia adjustments to federal AGI, and West Virginia-specific credits.
 

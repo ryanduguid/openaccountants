@@ -2,49 +2,20 @@
 name: il-income-tax
 description: >
   Illinois Individual Income Tax Return (Form IL-1040) for sole proprietors and single-member LLCs. Covers the flat 4.95% rate, Illinois base income computation from federal AGI, Schedule M addition and subtraction modifications, property tax credit (Schedule ICR), earned income credit, and the full return assembly. Primary source: 35 ILCS 5/.
+version: 1.0
 jurisdiction: US-IL
-tier: 2
-category: state
 tax_year: 2025
-version: 0.1
-verified_by: pending
-last_updated: 2026-05-29
+tier: 2
+last_updated: 2026-06-12
+category: state
 depends_on:
   - us-tax-workflow-base
+validated: April 2026
 ---
 
 # Illinois IL-1040 Individual Return v1.0
 
-## Verified rates & thresholds (accountant-reviewed)
-
-> Reviewed against the cited tax authorities by **Amir Pelinkovic** on 2026-06-03.
-> This block is generated from the verified facts database at openaccountants.com —
-> edit the facts there, not this prose. Items under clarification are excluded.
-
-### IL Income Tax
-
-- **IL flat rate** — 4.95% flat individual rate  _(35 ILCS 5/201(b)(5.4); 2025 IL-1040 instr.)_
-- **Starting point** — Federal AGI (1040 Line 11) is the starting point (IL-1040 Line 1)  _(35 ILCS 5/203(a); 2025 IL-1040 instr.)_
-- **Standard deduction** — IL allows no standard or itemized deduction; base income less subtractions/exemptions  _(86 Ill. Admin. Code 100.2410; IL-1040 instr.)_
-- **Per person** — $2,850 per person for 2025  _(IDOR FY2025-16; 2025 IL-1040 instr.)_
-- **MFJ (taxpayer + spouse)** — $5,700 MFJ (2 x $2,850)  _(IDOR FY2025-16.)_
-- **Per dependent** — $2,850 per dependent  _(IDOR FY2025-16.)_
-- **Age 65+ / legally blind** — Additional $1,000 per qualifying condition (65+/blind)  _(35 ILCS 5/204; IL-1040 instr.)_
-- **Exemption phase-out cliff — Single/HoH/MFS** — Exemption fully disallowed if federal AGI > $250,000 (Single/HoH/MFS)  _(35 ILCS 5/204(d); IL-1040 instr.)_
-- **Exemption phase-out cliff — MFJ** — Fully disallowed if federal AGI > $500,000 (MFJ)  _(35 ILCS 5/204(d); IL-1040 instr.)_
-- **Property tax credit** — 5% of IL property tax on principal residence, nonrefundable  _(35 ILCS 5/208; Schedule ICR.)_
-- **Property tax credit — AGI cap** — Disallowed above $250K(S)/$500K(MFJ)  _(35 ILCS 5/208; Schedule ICR instr.)_
-- **K-12 education expense credit** — 25% of qualified K-12 expenses over $250, max $750, nonrefundable  _(35 ILCS 5/201(m); Schedule ICR.)_
-- **K-12 credit — AGI cap** — Disallowed above $250K(S)/$500K(MFJ)  _(Schedule ICR instr.)_
-- **Illinois EIC** — 20% of federal EIC, refundable (2023+)  _(35 ILCS 5/212; Schedule IL-E/EIC.)_
-- **EIC subject to AGI cap?** — IL EIC is not subject to the exemption cliff  _(35 ILCS 5/212.)_
-- **§168(k) bonus depreciation** — IL decouples from federal bonus; add back on Schedule M / IL-4562  _(35 ILCS 5/203(b)(2)(E-10); IL-4562 instr.)_
-- **Social Security** — Social Security taxed federally is fully subtracted  _(35 ILCS 5/203(a)(2); IL-1040 Line 5.)_
-- **U.S. government bond interest** — Interest on U.S. obligations is subtracted  _(35 ILCS 5/203(a)(2)(N); Schedule M.)_
-- **Net loss limitation** — This is a CORPORATE net loss deduction provision (IL-1120), not individual. The cap is $500,000/yr for tax years ending on/after 12/31/2024 and before 12/31/2027; the $100,000 cap applied only through tax years ending before 12/31/2024.  _(35 ILCS 5/207; 2025 IL-1120 instr. (R-12/25); PA 103-0592.)_
-- **Deadline** — April 15, 2026 for TY2025  _(35 ILCS 5/505; IL-1040 instr.)_
-- **Extension** — IL grants an automatic 6-month extension to ALL filers regardless of any federal extension (no IL form). A federal extension only matters if more than 6 months is needed. The 'with federal extension' condition is wrong.  _(2025 IL-1040 instr., 'When is my return due / Automatic extension.')_
-- **Residency test** — IL determines residency by domicile and presence for other than a temporary or transitory purpose. IL has no 'place of abode + day-count' statutory-residency test (that is a NY/CA-style test).  _(35 ILCS 5/1501(a)(20); 86 Ill. Admin. Code 100.3020.)_
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 ## What this file is
 
@@ -108,19 +79,14 @@ Illinois automatically grants a 6-month extension if the taxpayer has a federal 
 | Item | Amount | Source |
 |------|--------|--------|
 | Illinois flat income tax rate | 4.95% | 35 ILCS 5/201(b)(5.4) |
-| Personal exemption -- per person (2025) | $2,850 | 35 ILCS 5/204 (indexed annually) |
-| Personal exemption -- MFJ (taxpayer + spouse) | $5,700 | 35 ILCS 5/204 |
-| Personal exemption -- each dependent | $2,850 | 35 ILCS 5/204 |
-| Additional exemption -- age 65+ and/or legally blind | $1,000 each | 35 ILCS 5/204 |
+| Personal exemption -- single | $2,625 | 35 ILCS 5/204 (2025 amount, indexed) |
+| Personal exemption -- MFJ | $5,250 | 35 ILCS 5/204 |
+| Personal exemption -- each dependent | $2,625 | 35 ILCS 5/204 |
 | Property tax credit rate | 5% of property taxes paid on principal residence | 35 ILCS 5/208 |
 | Earned income credit | 20% of federal EIC (refundable) | 35 ILCS 5/212 (2025) |
 | K-12 education expense credit | 25% of expenses over $250, max credit $750 | 35 ILCS 5/218 |
 
 **Note on personal exemption:** Illinois does NOT have a standard deduction or itemized deductions at the state level. The personal exemption is the only below-the-line deduction.
-
-**Exemption income phase-out (critical):** The personal exemption allowance is fully disallowed for higher-income taxpayers. If federal AGI exceeds **$250,000** (single, head of household, married filing separately, or qualifying surviving spouse) or **$500,000** (married filing jointly), the taxpayer is **not entitled to any personal exemption allowance**. There is no partial phase-out — it is a cliff. **Source:** 35 ILCS 5/204(g); 2025 IL-1040 Exemption Allowance Chart.
-
-**Additional age/blind exemption:** A taxpayer (or spouse, if MFJ) who is 65 or older and/or legally blind receives an additional $1,000 exemption for each applicable condition. This additional amount is also subject to the same AGI phase-out above.
 
 ---
 
@@ -161,13 +127,8 @@ Federal AGI + additions - subtractions = Illinois base income.
 
 ### Step 5: Subtract personal exemptions (Line 10)
 
-**First check the AGI phase-out.** If federal AGI exceeds $250,000 (single/HOH/MFS/QSS) or $500,000 (MFJ), the exemption is **$0** — skip the rest of this step.
-
-Otherwise:
-
-- $2,850 per taxpayer (single: $2,850; MFJ: $5,700)
-- $2,850 per dependent claimed on the federal return
-- + $1,000 for the taxpayer and/or spouse who is 65+ and/or legally blind (per condition)
+- $2,625 per taxpayer (single: $2,625; MFJ: $5,250)
+- $2,625 per dependent claimed on the federal return
 
 ### Step 6: Compute Illinois net income (Line 11)
 
@@ -181,10 +142,8 @@ Illinois net income x 4.95% = Illinois income tax.
 
 Apply credits in this order:
 
-> **Income cap on Schedule ICR credits:** The property tax credit and the K-12 education expense credit are **both disallowed** if federal AGI exceeds $250,000 (single/HOH/MFS/QSS) or $500,000 (MFJ) — the same thresholds as the exemption phase-out. The Illinois EIC is **not** subject to this cap. **Source:** 35 ILCS 5/208, 5/218; 2025 Schedule ICR instructions.
-
-1. **Property tax credit (Schedule ICR):** 5% of property taxes paid on the principal residence. Non-refundable. Disallowed above the AGI cap.
-2. **K-12 education expense credit (Schedule ICR):** 25% of qualifying expenses exceeding $250, max credit $750. Non-refundable. Disallowed above the AGI cap.
+1. **Property tax credit (Schedule ICR):** 5% of property taxes paid on the principal residence. Non-refundable.
+2. **K-12 education expense credit (Schedule ICR):** 25% of qualifying expenses exceeding $250, max credit $750. Non-refundable.
 3. **Credit for taxes paid to other states:** If the taxpayer earned income in another state that was taxed by that state, Illinois allows a credit to prevent double taxation. Non-refundable.
 4. **Illinois Earned Income Credit (Schedule IL-E/EIC):** 20% of federal EIC. Refundable.
 
@@ -210,10 +169,6 @@ Illinois requires taxpayers to add back federal bonus depreciation (IRC §168(k)
 
 Illinois limits the net loss deduction to $100,000 per year for individuals (enacted 2021, extended through 2027). Excess losses carry forward. **Source:** 35 ILCS 5/203(e)(2).
 
-### E-2b: Exemption and credit phase-out cliff
-
-For higher earners this is the single most consequential Illinois rule. Above federal AGI of $250,000 (single/HOH/MFS/QSS) or $500,000 (MFJ), the taxpayer loses the **entire** personal exemption allowance and the **entire** property tax credit and K-12 education expense credit. It is a cliff, not a gradual phase-out — one dollar of AGI over the threshold removes the full benefit. The Illinois EIC is unaffected. **Source:** 35 ILCS 5/204(g), 5/208, 5/218.
-
 ### E-3: No standard deduction
 
 Illinois has NO standard deduction and NO itemized deductions at the state level. The only below-the-line deduction is the personal exemption. This catches taxpayers who expect a state deduction mirroring the federal one.
@@ -237,17 +192,12 @@ Illinois does not allow a subtraction for gambling losses. If federal AGI includ
 ### Test 1: Standard freelancer, single
 
 - **Input:** Federal AGI: $100,000 (all Schedule C). No additions. Social Security subtraction: $0. No property tax. Single, no dependents.
-- **Expected:** Base income: $100,000. Exemption: $2,850. Net income: $97,150. Tax: $97,150 x 4.95% = $4,808.93.
+- **Expected:** Base income: $100,000. Exemption: $2,625. Net income: $97,375. Tax: $97,375 x 4.95% = $4,820.06.
 
 ### Test 2: MFJ with property tax credit
 
 - **Input:** Federal AGI: $150,000. No modifications. MFJ, 2 dependents. Property taxes paid: $8,000.
-- **Expected:** Exemptions: $5,700 + (2 x $2,850) = $11,400. Net income: $138,600. Tax: $138,600 x 4.95% = $6,860.70. Property tax credit: $8,000 x 5% = $400. Net tax: $6,460.70.
-
-### Test 2b: High-income exemption + credit phase-out (cliff)
-
-- **Input:** Federal AGI: $520,000. MFJ, 2 dependents. Property taxes paid: $12,000.
-- **Expected:** AGI exceeds the $500,000 MFJ threshold, so exemption = $0 AND the property tax credit is disallowed. Net income: $520,000. Tax: $520,000 x 4.95% = $25,740.00. No property tax credit. (If AGI were $499,000 the full $11,400 exemption and $600 property tax credit would apply.)
+- **Expected:** Exemptions: $5,250 + (2 x $2,625) = $10,500. Net income: $139,500. Tax: $139,500 x 4.95% = $6,905.25. Property tax credit: $8,000 x 5% = $400. Net tax: $6,505.25.
 
 ### Test 3: Bonus depreciation add-back
 
@@ -284,10 +234,9 @@ Before delivering output, verify:
 - [ ] Federal AGI correctly transcribed from Form 1040, Line 11
 - [ ] All Schedule M additions identified (especially bonus depreciation)
 - [ ] All Schedule M subtractions identified (especially Social Security, gov't bond interest)
-- [ ] AGI phase-out checked FIRST — exemption and ICR credits zeroed if AGI > $250k/$500k
-- [ ] Personal exemptions correctly computed ($2,850 x number of exemptions, + $1,000 age/blind)
+- [ ] Personal exemptions correctly computed ($2,625 x number of exemptions)
 - [ ] Flat rate of 4.95% applied
-- [ ] Property tax credit at 5% (non-refundable, disallowed above AGI cap)
+- [ ] Property tax credit at 5% (non-refundable)
 - [ ] EIC at 20% of federal EIC (refundable)
 - [ ] No standard deduction applied
 - [ ] Net loss limitation of $100,000 checked

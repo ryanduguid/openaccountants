@@ -25,9 +25,15 @@ import sys
 from pathlib import Path
 
 import openpyxl
-from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
-from openpyxl.worksheet.datavalidation import DataValidation
+from openpyxl.styles import Alignment, Border, Font, PatternFill, Side
 from openpyxl.utils import get_column_letter
+from openpyxl.worksheet.datavalidation import DataValidation
+
+REPO_ROOT = Path(__file__).resolve().parents[2]
+if str(REPO_ROOT) not in sys.path:
+    sys.path.insert(0, str(REPO_ROOT))
+
+from scripts.excel_safety import excel_safe, safe_filename_component
 
 # Flag dropdown — NO "Correct": blank = correct by default.
 FLAG_OPTIONS = ["Wrong", "Outdated", "Missing detail", "Unsure"]
@@ -78,22 +84,22 @@ def _add_skill_tab(wb, skill):
     ws = wb.create_sheet(_sheet_title(skill["tab"]))
     _style_header(ws)
     dv = DataValidation(
-        type="list", formula1='"%s"' % ",".join(FLAG_OPTIONS), allow_blank=True
+        type="list", formula1=f'"{",".join(FLAG_OPTIONS)}"', allow_blank=True
     )
     ws.add_data_validation(dv)
 
     r = 2
     for section in skill["sections"]:
-        ws.cell(row=r, column=1, value=section["section"]).font = SECTION_FONT
+        ws.cell(row=r, column=1, value=excel_safe(section["section"])).font = SECTION_FONT
         for c in range(1, len(HEADERS) + 1):
             cell = ws.cell(row=r, column=c)
             cell.fill = _fill(SECTION)
             cell.border = BORDER
         r += 1
         for row in section["rows"]:
-            ws.cell(row=r, column=1, value=row.get("item", ""))
-            ws.cell(row=r, column=2, value=row.get("value", ""))
-            ws.cell(row=r, column=6, value=row.get("ref", ""))
+            ws.cell(row=r, column=1, value=excel_safe(row.get("item", "")))
+            ws.cell(row=r, column=2, value=excel_safe(row.get("value", "")))
+            ws.cell(row=r, column=6, value=excel_safe(row.get("ref", "")))
             for c in range(1, len(HEADERS) + 1):
                 cell = ws.cell(row=r, column=c)
                 cell.alignment = WRAP_TOP
@@ -137,36 +143,55 @@ def _instructions(wb, data):
     ws = wb.create_sheet("Instructions", 0)
     ws.column_dimensions["A"].width = 120
     block = [
-        ("%s Tax Skills — Verification Workbook" % data["jurisdiction_label"],
+        (f"{data['jurisdiction_label']} Tax Skills — Verification Workbook",
          Font(bold=True, size=16, color="1F3A5F")),
         ("OpenAccountants — openaccountants.com", Font(size=10, color="666666")),
         ("", None),
         ("How this works — please read", Font(bold=True, size=12)),
         ("• You only mark what's WRONG or MISSING. Anything you leave blank, we take as CONFIRMED CORRECT.", None),
-        ("• For a wrong row: set the Flag (Wrong / Outdated / Missing detail / Unsure), put the right value in "
-         "'Correct value', and a short 'Why / reason'.", None),
+        (
+            (
+                "• For a wrong row: set the Flag (Wrong / Outdated / Missing detail / Unsure), put the right value in "
+                "'Correct value', and a short 'Why / reason'."
+            ),
+            None,
+        ),
         ("• 'Reference / source' is pre-filled with the skill's citation — correct it if it's wrong.", None),
         ("• Found something we don't cover? Add it in the '➕ Missing' block at the bottom of each tab.", None),
         ("", None),
         ("Why bother — you get credited", Font(bold=True, size=12)),
-        ("Every correction or addition you make publishes your name and credential as the verifying accountant on "
-         "the skill at openaccountants.com — the skill your clients' AI then follows, with your booking link attached.", None),
+        (
+            (
+                "Every correction or addition you make publishes your name and credential as the verifying accountant on "
+                "the skill at openaccountants.com — the skill your clients' AI then follows, with your booking link attached."
+            ),
+            None,
+        ),
         ("", None),
         ("Skills in this workbook (one per tab):", Font(bold=True, size=11)),
     ]
     r = 1
     for text, font in block:
-        cell = ws.cell(row=r, column=1, value=text)
+        cell = ws.cell(row=r, column=1, value=excel_safe(text))
         if font:
             cell.font = font
         cell.alignment = Alignment(wrap_text=True, vertical="top")
         r += 1
     for s in data["skills"]:
-        ws.cell(row=r, column=1, value="   • %s  (%s)" % (s["tab"], s.get("slug", "")))
+        ws.cell(
+            row=r,
+            column=1,
+            value=excel_safe(f"   • {s['tab']}  ({s.get('slug', '')})"),
+        )
         r += 1
     r += 1
-    ws.cell(row=r, column=1,
-            value="Jurisdiction: %s   |   Tax year: %s" % (data["jurisdiction_code"], data.get("tax_year", "")))
+    ws.cell(
+        row=r,
+        column=1,
+        value=excel_safe(
+            f"Jurisdiction: {data['jurisdiction_code']}   |   Tax year: {data.get('tax_year', '')}"
+        ),
+    )
     r += 1
     ws.cell(row=r, column=1,
             value="Verifier (print name + credential): ____________________________     Date: ____________")
@@ -177,7 +202,11 @@ def _hidden_map(wb, data):
     ws.sheet_state = "hidden"
     ws.append(["tab", "slug", "version"])
     for s in data["skills"]:
-        ws.append([_sheet_title(s["tab"]), s.get("slug", ""), str(s.get("version", ""))])
+        ws.append([
+            excel_safe(_sheet_title(s["tab"])),
+            excel_safe(s.get("slug", "")),
+            excel_safe(str(s.get("version", ""))),
+        ])
 
 
 def build(data):
@@ -199,10 +228,11 @@ def main():
     out_dir.mkdir(parents=True, exist_ok=True)
     data = json.loads(data_path.read_text())
     wb = build(data)
-    out = out_dir / ("%s_Tax_Skills_Verification.xlsx" % data["jurisdiction_code"])
+    jurisdiction_code = safe_filename_component(data["jurisdiction_code"])
+    out = out_dir / f"{jurisdiction_code}_Tax_Skills_Verification.xlsx"
     wb.save(out)
     n_rows = sum(len(sec["rows"]) for s in data["skills"] for sec in s["sections"])
-    print("Wrote %s — %d skill tabs, %d pre-filled line items" % (out, len(data["skills"]), n_rows))
+    print(f"Wrote {out} — {len(data['skills'])} skill tabs, {n_rows} pre-filled line items")
 
 
 if __name__ == "__main__":

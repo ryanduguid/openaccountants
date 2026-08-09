@@ -288,7 +288,7 @@ All citations are to primary Indonesian statutes, government regulations (PP), M
 
 ### Primary legislation
 
-- **placeholder** — 
+- **placeholder** —
 - **UU 7/2021 (HPP)** — amends UU PPh, UU PPN, UU KUP; introduced NIK-as-NPWP.  _([UU 7/2021](https://peraturan.bpk.go.id/Details/187081/uu-no-7-tahun-2021))_
 - **UU 36/2008 (PPh), as amended** — Art. 4(2) authorises final taxes; Art. 17 is the ordinary progressive schedule.  _([UU 36/2008](https://peraturan.bpk.go.id/Details/39305/uu-no-36-tahun-2008))_
 - **UU 6/1983 (KUP), as amended** — Arts. 9, 28, 36, 38.  _([UU 6/1983](https://peraturan.bpk.go.id/Details/47169/uu-no-6-tahun-1983))_

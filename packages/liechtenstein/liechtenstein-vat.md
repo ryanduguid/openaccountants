@@ -2,9 +2,14 @@
 name: liechtenstein-vat
 description: Use this skill whenever asked to prepare, review, or classify transactions for a Liechtenstein VAT (MWST) return for any client. Trigger on phrases like "Liechtenstein VAT", "MWST Liechtenstein", "Liechtenstein tax return", or any request involving Liechtenstein VAT. Liechtenstein forms a customs union with Switzerland and applies Swiss MWST law identically. Supplies between Liechtenstein and Switzerland are domestic. ALWAYS read this skill before touching any Liechtenstein MWST work.
 version: 2.0
+jurisdiction: LI
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # Liechtenstein MWST Return Skill v2.0
+
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 ## Section 1 — Quick reference
 

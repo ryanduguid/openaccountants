@@ -3,9 +3,14 @@ name: mx-income-tax
 description: >
   Use this skill whenever asked about Mexican individual income tax (ISR) for self-employed individuals (personas físicas con actividades empresariales y profesionales). Trigger on phrases like "how much tax do I pay in Mexico", "ISR", "Declaración Anual", "pagos provisionales", "actividades profesionales", "honorarios", "RESICO", "deducciones personales", "deducciones autorizadas", "retenciones", "RFC", "income tax return Mexico", "SAT", "CFDI honorarios", "comprobante fiscal", or any question about filing or computing income tax for a self-employed or freelance client in Mexico. This skill covers the Declaración Anual PF (Personas Físicas), pagos provisionales (monthly estimated payments), progressive ISR brackets, deducciones autorizadas and personales, retenciones on professional CFDI, and the RESICO regime. ALWAYS read this skill before touching any Mexican income tax work.
 version: 2.0
+jurisdiction: MX
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # Mexican Income Tax — Persona Física Actividades Profesionales (ISR) v2.0
+
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 ## Section 1 — Quick Reference
 
@@ -538,7 +543,6 @@ Always cross-reference bank statement credits with CFDI de ingresos in SAT porta
 - CFDI validation: verificacfdi.facturaelectronica.sat.gob.mx
 - Exchange rates (SAT): sat.gob.mx/consultas/18038/consulta-de-tipo-de-cambio
 - RESICO enrollment: sat.gob.mx → "Trámites" → "RFC y obligaciones"
-
 
 ---
 

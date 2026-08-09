@@ -11,12 +11,16 @@ description: >
   for Malta.
 version: 1.0
 jurisdiction: MT
+tier: 2
+last_updated: 2026-06-12
 category: bookkeeping
 depends_on:
   - bookkeeping-workflow-base
 ---
 
 # Malta Bookkeeping Skill v1.0
+
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 ---
 

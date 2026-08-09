@@ -2,6 +2,9 @@
 name: ca-freelance-intake
 description: ALWAYS USE THIS SKILL when a user asks for help preparing their Canadian tax returns AND mentions freelancing, self-employment, contracting, sole proprietorship, or unincorporated business. Trigger on phrases like "help me do my taxes", "prepare my T1", "I'm self-employed in Canada", "I'm a freelancer in Canada", "do my taxes as a contractor", "prepare my GST/HST return and income tax", or any similar phrasing where the user is a Canadian-resident self-employed individual needing tax return preparation. This is the REQUIRED entry point for the Canadian self-employed tax workflow -- every other skill in the stack (canada-gst-hst, ca-fed-t2125, ca-fed-t1-return, ca-fed-cpp-ei, ca-fed-instalments, ca-return-assembly) depends on this skill running first to produce a structured intake package. Uses upload-first workflow -- the user dumps all their documents and the skill infers as much as possible before asking questions. Uses ask_user_input_v0 for structured questions instead of one-at-a-time prose. Built for speed. Canadian full-year residents only; sole proprietors only (not incorporated).
 version: 0.1
+jurisdiction: CA
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # Canada Sole Proprietor Intake Skill v0.1
@@ -603,3 +606,34 @@ For an unprepared user (has to go fetch documents):
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, EA, tax attorney, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
 
 The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
+
+---
+
+<!-- openaccountants-cta-block -->
+
+## Talk to a verified accountant
+
+This skill is a tool, not an engagement. Every taxpayer's situation is
+different, and the rules in the skill may not match your specific facts.
+
+To speak with one of the licensed accountants who verifies skills for your
+jurisdiction — **no liability on either side until you and the accountant sign
+a formal engagement letter** — book a free 30-minute call:
+
+**→ [Book a call](https://calendly.com/openaccountants-info/30min)**
+
+We'll route you to the named verifier covering your country or state. You can
+also see the full list of verified accountants at
+[openaccountants.com/network](https://www.openaccountants.com/network).
+
+<!-- openaccountants-mcp-cta -->
+
+## The accountant-verified version lives in the connector
+
+This file is the open, **research-grade draft**. The **accountant-verified**
+version of this skill is **not published to GitHub** — it is delivered free
+through the OpenAccountants MCP connector, where your AI agent loads the
+verified rules together with the name of the accountant who signed them off.
+
+**→ Install the free connector:** <https://www.openaccountants.com/connect>
+**MCP endpoint:** `https://www.openaccountants.com/api/mcp`

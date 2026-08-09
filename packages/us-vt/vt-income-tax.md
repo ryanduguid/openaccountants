@@ -3,11 +3,15 @@ name: vt-income-tax
 description: >
   Use this skill whenever asked about Vermont individual income tax, Vermont Form IN-111, Vermont graduated tax rates, Vermont self-employment income tax at the state level, Vermont earned income tax credit, or any Vermont personal income tax question for sole proprietors. Trigger on phrases like "Vermont income tax", "VT income tax", "Form IN-111", "Vermont tax brackets", "Vermont 8.75%", "32 V.S.A. Chapter 151", or any request involving Vermont state individual income tax computation or filing.
 jurisdiction: US-VT
+tier: 2
+last_updated: 2026-06-12
 version: "0.1"
 validation_status: ai-drafted-q3
 ---
 
 # Vermont Individual Income Tax Skill — Self-Employed / Sole Proprietor
+
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 > **Scope.** This skill covers the Vermont individual income tax return (Form IN-111) for full-year Vermont residents who are sole proprietors or single-member LLC owners. It addresses the graduated rate computation, Vermont taxable income derived from federal taxable income, and Vermont-specific credits.
 

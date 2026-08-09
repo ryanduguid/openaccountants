@@ -2,23 +2,14 @@
 name: us-self-employed-health-insurance
 description: Tier 2 content skill for computing the self-employed health insurance deduction under IRC §162(l) for US sole proprietors and single-member LLCs disregarded for federal tax purposes. Covers tax year 2025 rules including the 100% deduction for medical, dental, vision, and qualified long-term care premiums, the age-based long-term care premium limits, the net SE earnings limitation, the employer-sponsored plan eligibility bar, the Medicare premium eligibility rules (Parts A voluntary, B, D, Medigap), COBRA continuation premiums, ACA Marketplace interaction with the Premium Tax Credit, the month-by-month coverage calculation, and the Schedule 1 Line 17 reporting position. Consumes Schedule C net profit and SE tax from us-schedule-c-and-se-computation. Feeds QBI computation in us-qbi-deduction. MUST be loaded alongside us-tax-workflow-base v0.1 or later. Federal only. No state tax.
 version: 0.2
+jurisdiction: US
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # US Self-Employed Health Insurance Skill v0.2
 
-## Verified rates & thresholds (accountant-reviewed)
-
-> Reviewed against the cited tax authorities by **Amir Pelinkovic** on 2026-06-03.
-> This block is generated from the verified facts database at openaccountants.com —
-> edit the facts there, not this prose. Items under clarification are excluded.
-
-### SE Health Insurance
-
-- **≤40** — 2025 limit $480 (age 40 or less)  _(Rev. Proc. 2024-40.)_
-- **41-50** — 2025 limit $900 (41-50)  _(Rev. Proc. 2024-40.)_
-- **51-60** — 2025 limit is $1,800 (51-60), not $1,790  _(Rev. Proc. 2024-40.)_
-- **61-70** — 2025 limit is $4,810 (61-70), not $4,770  _(Rev. Proc. 2024-40.)_
-- **70+** — 2025 limit is $6,020 (age > 70), not $5,960  _(Rev. Proc. 2024-40.)_
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 ## What this file is, and what it is not
 

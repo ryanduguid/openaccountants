@@ -4,12 +4,16 @@ description: Use this skill whenever asked to prepare, review, or classify trans
 version: 2.0
 jurisdiction: IL
 tax_year: 2025
+tier: 2
+last_updated: 2026-06-12
 category: international
 depends_on:
   - vat-workflow-base
 ---
 
 # Israel VAT (Ma'am — מע"מ) Skill v2.0
+
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 ---
 
@@ -432,7 +436,6 @@ When client cannot provide Heshbonit Mase for all transactions:
 | Registration threshold updates | ITA annual circular |
 | Heshbonit Mase requirements | Section 9 Ma'am Law |
 | Tourist refund scheme | ITA Form 1345 guidance |
-
 
 ---
 

@@ -31,14 +31,21 @@ import os
 import re
 import sys
 import urllib.error
+import urllib.parse
 import urllib.request
-from datetime import date
+from datetime import datetime, timezone
+from pathlib import Path
 
 from openpyxl import Workbook
-from openpyxl.styles import Alignment, Border, Font, PatternFill, Side
+from openpyxl.styles import Alignment, Font, PatternFill, Side
 from openpyxl.utils import get_column_letter
 from openpyxl.worksheet.datavalidation import DataValidation
 
+REPO_ROOT = Path(__file__).resolve().parents[1]
+if str(REPO_ROOT) not in sys.path:
+    sys.path.insert(0, str(REPO_ROOT))
+
+from scripts.excel_safety import excel_safe
 
 # ---------------------------------------------------------------------------
 # Args + env
@@ -56,9 +63,48 @@ args = ap.parse_args()
 if not args.slugs and not args.jurisdiction:
     sys.exit("Provide --slugs OR --jurisdiction.")
 
-URL = os.environ["NEXT_PUBLIC_SUPABASE_URL"]
+URL = os.environ["NEXT_PUBLIC_SUPABASE_URL"].rstrip("/")
 KEY = os.environ["SUPABASE_SERVICE_ROLE_KEY"]
 HEADERS = {"apikey": KEY, "Authorization": f"Bearer {KEY}"}
+
+
+def _origin(url: str) -> tuple[str, str, int]:
+    """Return a normalized network origin or reject an unsafe API URL."""
+    parsed = urllib.parse.urlsplit(url)
+    hostname = (parsed.hostname or "").lower()
+    local_http = parsed.scheme == "http" and hostname in {
+        "localhost", "127.0.0.1", "::1",
+    }
+    if parsed.scheme != "https" and not local_http:
+        raise ValueError("Supabase URL must use HTTPS (HTTP is allowed only for localhost)")
+    if not hostname or parsed.username or parsed.password:
+        raise ValueError("Supabase URL must not contain credentials")
+    default_port = 443 if parsed.scheme == "https" else 80
+    return parsed.scheme, hostname, parsed.port or default_port
+
+
+_base_url_parts = urllib.parse.urlsplit(URL)
+if _base_url_parts.query or _base_url_parts.fragment:
+    raise ValueError("Supabase base URL must not contain a query or fragment")
+SUPABASE_ORIGIN = _origin(URL)
+
+
+class _SameOriginRedirectHandler(urllib.request.HTTPRedirectHandler):
+    """Prevent the service-role Authorization header crossing an origin."""
+
+    def redirect_request(self, req, fp, code, msg, headers, newurl):
+        if _origin(newurl) != SUPABASE_ORIGIN:
+            raise urllib.error.HTTPError(
+                req.full_url,
+                code,
+                "Refusing cross-origin Supabase redirect",
+                headers,
+                fp,
+            )
+        return super().redirect_request(req, fp, code, msg, headers, newurl)
+
+
+HTTP = urllib.request.build_opener(_SameOriginRedirectHandler)
 
 
 # ---------------------------------------------------------------------------
@@ -66,8 +112,10 @@ HEADERS = {"apikey": KEY, "Authorization": f"Bearer {KEY}"}
 # ---------------------------------------------------------------------------
 
 def http_get(path: str):
+    if not path.startswith("/rest/v1/") or any(ord(char) < 32 for char in path):
+        raise ValueError("Supabase API path must stay under /rest/v1/")
     req = urllib.request.Request(f"{URL}{path}", headers=HEADERS)
-    with urllib.request.urlopen(req) as r:
+    with HTTP.open(req, timeout=30) as r:
         return json.load(r)
 
 
@@ -101,7 +149,7 @@ def fetch_skills():
 # ---------------------------------------------------------------------------
 
 def strip_frontmatter(md: str) -> str:
-    m = re.match(r"^---\s*\n.+?\n---\s*\n", md, re.S)
+    m = re.match(r"^---\s*\n.+?\n---\s*\n", md, re.DOTALL)
     return md[m.end():] if m else md
 
 
@@ -203,14 +251,14 @@ def build_cover_sheet(wb, skills):
     ws["A1"].font = Font(bold=True, color="047857", size=24)
     ws.row_dimensions[1].height = 32
 
-    ws["A2"] = args.title
+    ws["A2"] = excel_safe(args.title)
     ws["A2"].font = Font(bold=True, size=14, color="111111")
     ws.merge_cells("A2:B2")
 
     fields = [
         ("Verifier", args.verifier),
         ("Credential", args.credential or "(fill in below)"),
-        ("Date prepared", date.today().isoformat()),
+        ("Date prepared", datetime.now(tz=timezone.utc).date().isoformat()),
         ("Skills in scope", str(len(skills))),
         ("MCP endpoint", "https://www.openaccountants.com/api/mcp"),
         ("Network page", "https://www.openaccountants.com/network"),
@@ -218,7 +266,7 @@ def build_cover_sheet(wb, skills):
     ]
     for i, (k, v) in enumerate(fields, start=4):
         ws.cell(row=i, column=1, value=k).font = Font(bold=True)
-        ws.cell(row=i, column=2, value=v)
+        ws.cell(row=i, column=2, value=excel_safe(v))
 
     row = 4 + len(fields) + 1
     ws.cell(row=row, column=1, value="How to use this workbook").font = H2_FONT
@@ -320,10 +368,10 @@ def build_summary_sheet(wb, skills):
     for i, s in enumerate(skills, start=2):
         n_sections = len(parse_sections(s["markdown"]))
         ws.cell(row=i, column=1, value=i - 1)
-        ws.cell(row=i, column=2, value=s["slug"])
-        ws.cell(row=i, column=3, value=s.get("name") or s["slug"])
-        ws.cell(row=i, column=4, value=s.get("jurisdiction"))
-        ws.cell(row=i, column=5, value=s.get("category"))
+        ws.cell(row=i, column=2, value=excel_safe(s["slug"]))
+        ws.cell(row=i, column=3, value=excel_safe(s.get("name") or s["slug"]))
+        ws.cell(row=i, column=4, value=excel_safe(s.get("jurisdiction")))
+        ws.cell(row=i, column=5, value=excel_safe(s.get("category")))
         ws.cell(row=i, column=6, value=f"Tier {s.get('tier')}")
         ws.cell(row=i, column=7, value=n_sections)
         ws.cell(row=i, column=8).value = ""
@@ -343,11 +391,11 @@ def build_skill_sheet(wb, s):
         ws.column_dimensions[get_column_letter(i)].width = w
 
     # Title block
-    ws["A1"] = s["slug"]
+    ws["A1"] = excel_safe(s["slug"])
     ws["A1"].font = TITLE_FONT
     ws.merge_cells("A1:E1")
 
-    ws["A2"] = s.get("name") or ""
+    ws["A2"] = excel_safe(s.get("name") or "")
     ws["A2"].font = Font(italic=True, color="666666", size=11)
     ws.merge_cells("A2:E2")
 
@@ -360,12 +408,20 @@ def build_skill_sheet(wb, s):
     ]
     for i, (k, v) in enumerate(meta_rows, start=3):
         ws.cell(row=i, column=1, value=k).font = Font(bold=True)
-        ws.cell(row=i, column=2, value=str(v) if v is not None else "—")
+        ws.cell(
+            row=i,
+            column=2,
+            value=excel_safe(str(v) if v is not None else "—"),
+        )
 
     # Description
     head_row = 3 + len(meta_rows) + 1
     ws.cell(row=head_row, column=1, value="Description").font = Font(bold=True)
-    ws.cell(row=head_row, column=2, value=s.get("description") or "").alignment = WRAP
+    ws.cell(
+        row=head_row,
+        column=2,
+        value=excel_safe(s.get("description") or ""),
+    ).alignment = WRAP
     ws.merge_cells(start_row=head_row, start_column=2, end_row=head_row, end_column=5)
     ws.row_dimensions[head_row].height = 80
 
@@ -401,10 +457,14 @@ def build_skill_sheet(wb, s):
     row = table_head_row + 1
     for level, heading, content in sections:
         prefix = "  " * (level - 1)
-        ws.cell(row=row, column=1, value=f"{prefix}{heading}").alignment = WRAP
+        ws.cell(
+            row=row,
+            column=1,
+            value=excel_safe(f"{prefix}{heading}"),
+        ).alignment = WRAP
         # Cell text limit ~32k. Truncate longer sections with a note.
         snippet = content if len(content) <= 30000 else (content[:30000] + "\n\n[…truncated for cell limit; see github.com/openaccountants/openaccountants for full content]")
-        ws.cell(row=row, column=2, value=snippet).alignment = WRAP
+        ws.cell(row=row, column=2, value=excel_safe(snippet)).alignment = WRAP
         ws.cell(row=row, column=3).alignment = TOP
         status_dv.add(f"C{row}")
         ws.cell(row=row, column=4).alignment = WRAP
@@ -438,7 +498,7 @@ def build_skill_sheet(wb, s):
         row += 1
         ws.cell(row=row, column=1, value=k).font = Font(bold=True)
         ws.cell(row=row, column=1).fill = SIGNOFF_FILL
-        ws.cell(row=row, column=2, value=v).alignment = WRAP
+        ws.cell(row=row, column=2, value=excel_safe(v)).alignment = WRAP
         ws.merge_cells(start_row=row, start_column=2, end_row=row, end_column=5)
         ws.row_dimensions[row].height = 24
 

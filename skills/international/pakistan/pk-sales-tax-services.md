@@ -1,5 +1,5 @@
 ---
-description: Source-cited tax guide for PK: pk sales tax services. Unverified draft, pending local-accountant review.
+description: 'Source-cited tax guide for PK: pk sales tax services. Unverified draft, pending local-accountant review.'
 name: pk-sales-tax-services
 jurisdiction: PK
 tax_year: 2025

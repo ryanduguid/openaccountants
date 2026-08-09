@@ -52,9 +52,115 @@ PACKAGES_DIR = os.path.join(REPO_ROOT, "packages")
 # ============================================================================
 HAND_AUTHORED_PACKAGES = {"us-federal"}
 
+
+def parse_build_args(argv):
+    """Parse the deliberately small CLI surface before mutating packages/."""
+    allowed = {"--us-only"}
+    unknown = sorted(set(argv) - allowed)
+    if unknown:
+        raise SystemExit(
+            "Usage: python3 scripts/build-packages.py [--us-only] "
+            f"(unknown argument(s): {', '.join(unknown)})"
+        )
+    return "--us-only" in argv
+
+
+def preflight_sources(us_only):
+    """Fail before cleanup if the source tree cannot produce a complete build."""
+    required = [
+        (os.path.join(SKILLS_DIR, "foundation"), "skills/foundation"),
+        (os.path.join(SKILLS_DIR, "orchestrator"), "skills/orchestrator"),
+        (os.path.join(SKILLS_DIR, "federal"), "skills/federal"),
+        (os.path.join(SKILLS_DIR, "us-states"), "skills/us-states"),
+    ]
+    if not us_only:
+        required.extend([
+            (os.path.join(SKILLS_DIR, "international"), "skills/international"),
+            (os.path.join(SKILLS_DIR, "international", "canada"), "skills/international/canada"),
+        ])
+    missing = [label for path, label in required if not os.path.isdir(path)]
+    if missing:
+        raise RuntimeError(
+            "Refusing to alter packages/: required source path(s) missing: "
+            + ", ".join(missing)
+        )
+
+# Every distributed skill carries this notice. It lives in the package builder
+# instead of each source file so the editorial source remains uncluttered while
+# all package targets (manual downloads and the MCP bundle) receive identical,
+# idempotent disclosure and contact guidance.
+CTA_MARKER = b"<!-- openaccountants-cta-block -->"
+CTA_BLOCK = """---
+
+<!-- openaccountants-cta-block -->
+
+## Talk to a verified accountant
+
+This skill is a tool, not an engagement. Every taxpayer's situation is
+different, and the rules in the skill may not match your specific facts.
+
+To speak with one of the licensed accountants who verifies skills for your
+jurisdiction — **no liability on either side until you and the accountant sign
+a formal engagement letter** — book a free 30-minute call:
+
+**→ [Book a call](https://calendly.com/openaccountants-info/30min)**
+
+We'll route you to the named verifier covering your country or state. You can
+also see the full list of verified accountants at
+[openaccountants.com/network](https://www.openaccountants.com/network).
+
+<!-- openaccountants-mcp-cta -->
+
+## The accountant-verified version lives in the connector
+
+This file is the open, **research-grade draft**. The **accountant-verified**
+version of this skill is **not published to GitHub** — it is delivered free
+through the OpenAccountants MCP connector, where your AI agent loads the
+verified rules together with the name of the accountant who signed them off.
+
+**→ Install the free connector:** <https://www.openaccountants.com/connect>
+**MCP endpoint:** `https://www.openaccountants.com/api/mcp`
+""".encode()
+
+
+def stamp_cta_blocks(us_only=False):
+    """Append CTA blocks to generated skills without touching hand-authored output.
+
+    Read and append bytes so copied skill files retain their source encoding and
+    line endings. In ``--us-only`` mode, do not touch any non-US-state package;
+    README files describe a package rather than being a skill and deliberately
+    do not receive the block.
+    """
+    for root, dirs, files in os.walk(PACKAGES_DIR):
+        rel = os.path.relpath(root, PACKAGES_DIR)
+        top_level = None if rel == os.curdir else rel.split(os.sep)[0]
+        if (
+            top_level in HAND_AUTHORED_PACKAGES
+            or (us_only and top_level is not None and not top_level.startswith("us-"))
+        ):
+            dirs[:] = []
+            continue
+        for filename in files:
+            if not filename.endswith(".md") or filename == "README.md":
+                continue
+            path = os.path.join(root, filename)
+            with open(path, "rb") as f:
+                body = f.read()
+            if CTA_MARKER in body:
+                continue
+            newline = b"\r\n" if b"\r\n" in body else b"\n"
+            block = CTA_BLOCK.replace(b"\n", newline)
+            with open(path, "ab") as f:
+                # Keep the original body intact: append one blank line and the
+                # block, rather than rewriting copied skill content.
+                if not body.endswith(newline):
+                    f.write(newline)
+                f.write(newline + block)
+
 # Country code → display name mapping
 COUNTRY_NAMES = {
     "MT": "Malta", "GB": "United Kingdom", "DE": "Germany", "AU": "Australia",
+    "US": "United States",
     "CA": "Canada", "IN": "India", "ES": "Spain", "US-CA": "United States (California)",
     "FR": "France", "IT": "Italy", "NL": "Netherlands", "PT": "Portugal",
     "BE": "Belgium", "AT": "Austria", "CH": "Switzerland", "SE": "Sweden",
@@ -100,12 +206,13 @@ PRACTITIONER_TITLES = {
     "AT": "Steuerberater", "CH": "Steuerberater/fiduciaire", "SE": "auktoriserad revisor",
     "JP": "税理士 (zeirishi)", "SG": "ISCA member", "KR": "세무사 (semusa)",
     "NZ": "chartered accountant", "BR": "contador", "MX": "contador público",
+    "US": "CPA or EA",
     "ZA": "SAIPA/SAICA member", "US-CA": "CPA or EA",
 }
 
 # Directory name → jurisdiction code mapping
 DIR_TO_CODE = {
-    "malta": "MT", "uk": "GB", "germany": "DE", "australia": "AU",
+    "malta": "MT", "uk": "GB", "germany": "DE", "australia": "AU", "us": "US",
     "canada": "CA", "india": "IN", "spain": "ES", "france": "FR",
     "italy": "IT", "netherlands": "NL", "portugal": "PT", "belgium": "BE",
     "austria": "AT", "switzerland": "CH", "sweden": "SE", "denmark": "DK",
@@ -472,14 +579,12 @@ Or if you're comfortable with GitHub: fork the repo, fix the source file under `
 
 def _is_redirect(filepath):
     """Return True if a .md file is a redirect stub (not real content)."""
-    with open(filepath, 'r', errors='ignore') as fh:
+    with open(filepath, 'r', encoding='utf-8', errors='ignore') as fh:
         lines = fh.readlines()
     if len(lines) <= 50:
         content = ''.join(lines[:20]).lower()
-        if 'consolidated' in content or 'redirect' in content:
-            return True
         # Short non-redirect files (like references.md) are kept
-        return False
+        return 'consolidated' in content or 'redirect' in content
     return False
 
 
@@ -496,7 +601,7 @@ def find_country_skills(country_dir):
             filepath = os.path.join(root, f)
             if _is_redirect(filepath):
                 continue
-            with open(filepath, 'r', errors='ignore') as fh:
+            with open(filepath, 'r', encoding='utf-8', errors='ignore') as fh:
                 line_count = sum(1 for _ in fh)
             if line_count < 5:
                 continue  # skip near-empty stubs
@@ -535,7 +640,7 @@ def build_package(country_dir_name, country_dir):
     """Build a complete package for one jurisdiction."""
     code = DIR_TO_CODE.get(country_dir_name, country_dir_name.upper()[:2])
     name = COUNTRY_NAMES.get(code, country_dir_name.replace('-', ' ').title())
-    practitioner = PRACTITIONER_TITLES.get(code, "qualified tax professional")
+    practitioner = PRACTITIONER_TITLES.get(code, "tax professional")
 
     # Find content skills
     content_skills = find_country_skills(country_dir)
@@ -547,11 +652,11 @@ def build_package(country_dir_name, country_dir):
     os.makedirs(pkg_dir, exist_ok=True)
 
     # Write foundation
-    with open(os.path.join(pkg_dir, "foundation.md"), 'w') as f:
+    with open(os.path.join(pkg_dir, "foundation.md"), 'w', encoding='utf-8', newline='\n') as f:
         f.write(build_foundation())
 
     # Write intake
-    with open(os.path.join(pkg_dir, "intake.md"), 'w') as f:
+    with open(os.path.join(pkg_dir, "intake.md"), 'w', encoding='utf-8', newline='\n') as f:
         f.write(build_intake(name, practitioner, code))
 
     # Copy content skills
@@ -596,7 +701,7 @@ def build_package(country_dir_name, country_dir):
         copied_files.append(f"{country_dir_name}-return-assembly.md")
 
     # Write README
-    with open(os.path.join(pkg_dir, "README.md"), 'w') as f:
+    with open(os.path.join(pkg_dir, "README.md"), 'w', encoding='utf-8', newline='\n') as f:
         f.write(build_readme(name, copied_files, practitioner, code))
 
     # Count actual computation skills (not metadata like references.md)
@@ -778,7 +883,7 @@ def build_us_state_package(state_code):
                 state_skill_count += 1
 
     # 6. Generate README
-    with open(os.path.join(pkg_dir, "README.md"), "w") as fh:
+    with open(os.path.join(pkg_dir, "README.md"), "w", encoding='utf-8', newline='\n') as fh:
         fh.write(build_us_state_readme(state_name, state_code, copied_files))
     copied_files.append("README.md")
 
@@ -904,12 +1009,12 @@ def build_canada_province_package(province_code):
     copied_files = []
 
     # 1. Universal foundation
-    with open(os.path.join(pkg_dir, "foundation.md"), "w") as fh:
+    with open(os.path.join(pkg_dir, "foundation.md"), "w", encoding='utf-8', newline='\n') as fh:
         fh.write(build_foundation())
     copied_files.append("foundation.md")
 
     # 2. Canada-flavoured intake
-    with open(os.path.join(pkg_dir, "intake.md"), "w") as fh:
+    with open(os.path.join(pkg_dir, "intake.md"), "w", encoding='utf-8', newline='\n') as fh:
         fh.write(build_intake("Canada", "CPA", "CA"))
     copied_files.append("intake.md")
 
@@ -957,7 +1062,7 @@ def build_canada_province_package(province_code):
             copied_files.append(orch_file)
 
     # 7. Generate README
-    with open(os.path.join(pkg_dir, "README.md"), "w") as fh:
+    with open(os.path.join(pkg_dir, "README.md"), "w", encoding='utf-8', newline='\n') as fh:
         fh.write(build_canada_province_readme(province_name, province_code, copied_files))
     copied_files.append("README.md")
 
@@ -980,8 +1085,10 @@ def build_all_canada_packages():
     return results
 
 
-def main():
-    us_only = "--us-only" in sys.argv
+def main(argv=None):
+    argv = sys.argv[1:] if argv is None else argv
+    us_only = parse_build_args(argv)
+    preflight_sources(us_only)
 
     if not us_only:
         # Clean packages directory — but NEVER remove hand-authored packages
@@ -1074,7 +1181,7 @@ def main():
                 shutil.copy2(xb_base, os.path.join(xb_pkg, "cross-border-workflow-base.md"))
                 xb_files.append("cross-border-workflow-base.md")
             if xb_files:
-                with open(os.path.join(xb_pkg, "README.md"), "w") as fh:
+                with open(os.path.join(xb_pkg, "README.md"), "w", encoding='utf-8', newline='\n') as fh:
                     fh.write("# Cross-Border Accounting Skills\n\n"
                              "Multi-jurisdiction orchestrator for international transactions: "
                              "tax residency, VAT place of supply, withholding tax treaties, "
@@ -1106,7 +1213,7 @@ def main():
                     shutil.copy2(os.path.join(vert_dir, f), os.path.join(vert_pkg, f))
                     vert_files.append(f)
             if vert_files:
-                with open(os.path.join(vert_pkg, "README.md"), "w") as fh:
+                with open(os.path.join(vert_pkg, "README.md"), "w", encoding='utf-8', newline='\n') as fh:
                     fh.write("# Industry Vertical Skills\n\n"
                              "Industry-specific accounting patterns for freelancers and small businesses.\n"
                              "Load alongside your country package for industry-aware tax classification.\n\n"
@@ -1134,7 +1241,7 @@ def main():
                     shutil.copy2(os.path.join(integ_dir, f), os.path.join(integ_pkg, f))
                     integ_files.append(f)
             if integ_files:
-                with open(os.path.join(integ_pkg, "README.md"), "w") as fh:
+                with open(os.path.join(integ_pkg, "README.md"), "w", encoding='utf-8', newline='\n') as fh:
                     fh.write("# Software & Platform Integration Skills\n\n"
                              "Column mappings, export formats, and reconciliation guides for popular\n"
                              "accounting software and payment platforms.\n\n"
@@ -1162,32 +1269,37 @@ def main():
         print(f"    {', '.join(r['jurisdiction'] for r in no_state_skills)}")
 
     # ---- Canada province/territory packages ----
-    ca_results = build_all_canada_packages()
-    no_prov_skills = [r for r in ca_results if r["province_skills"] == 0]
-    print(f"\nCanada province/territory packages built: {len(ca_results)}")
-    print(f"  With province-specific skills: {len(ca_results) - len(no_prov_skills)}")
-    if no_prov_skills:
-        print(f"  No province-specific skills (federal only): {', '.join(r['jurisdiction'] for r in no_prov_skills)}")
+    # `--us-only` must leave every non-US package untouched. Previously this
+    # block still rebuilt Canada after the targeted US cleanup, making the
+    # documented narrow mode unexpectedly rewrite unrelated output.
+    ca_results = []
+    if not us_only:
+        ca_results = build_all_canada_packages()
+        no_prov_skills = [r for r in ca_results if r["province_skills"] == 0]
+        print(f"\nCanada province/territory packages built: {len(ca_results)}")
+        print(f"  With province-specific skills: {len(ca_results) - len(no_prov_skills)}")
+        if no_prov_skills:
+            print(f"  No province-specific skills (federal only): {', '.join(r['jurisdiction'] for r in no_prov_skills)}")
 
-    # Regenerate Canada index (packages/canada/README.md)
-    ca_index_dir = os.path.join(PACKAGES_DIR, "canada")
-    os.makedirs(ca_index_dir, exist_ok=True)
-    with open(os.path.join(ca_index_dir, "README.md"), "w") as fh:
-        rows = "\n".join(
-            f"| {CA_PROVINCE_NAMES[c]} | `{c.upper()}` | [`packages/ca-{c}/`](../ca-{c}/) |"
-            for c in CA_PROVINCE_CODES
-        )
-        fh.write(
-            "# Canada — Tax Skills Index\n\n"
-            "Pick your province or territory package below. Each package contains the\n"
-            "federal Canadian tax skills (T1, T2125, CPP/EI, GST/HST, T1135, instalments,\n"
-            "crypto, bookkeeping, payroll, formation, financial statements, transfer pricing,\n"
-            "tax optimization) plus the province/territory-specific tax skill.\n\n"
-            "| Province / Territory | Code | Package |\n"
-            "|---|---|---|\n"
-            f"{rows}\n\n"
-            "See the repo [README](../../README.md) for upload instructions.\n"
-        )
+        # Regenerate Canada index (packages/canada/README.md)
+        ca_index_dir = os.path.join(PACKAGES_DIR, "canada")
+        os.makedirs(ca_index_dir, exist_ok=True)
+        with open(os.path.join(ca_index_dir, "README.md"), "w", encoding='utf-8', newline='\n') as fh:
+            rows = "\n".join(
+                f"| {CA_PROVINCE_NAMES[c]} | `{c.upper()}` | [`packages/ca-{c}/`](../ca-{c}/) |"
+                for c in CA_PROVINCE_CODES
+            )
+            fh.write(
+                "# Canada — Tax Skills Index\n\n"
+                "Pick your province or territory package below. Each package contains the\n"
+                "federal Canadian tax skills (T1, T2125, CPP/EI, GST/HST, T1135, instalments,\n"
+                "crypto, bookkeeping, payroll, formation, financial statements, transfer pricing,\n"
+                "tax optimization) plus the province/territory-specific tax skill.\n\n"
+                "| Province / Territory | Code | Package |\n"
+                "|---|---|---|\n"
+                f"{rows}\n\n"
+                "See the repo [README](../../README.md) for upload instructions.\n"
+            )
 
     # Regenerate US index (packages/us/README.md)
     us_index_dir = os.path.join(PACKAGES_DIR, "us")
@@ -1195,10 +1307,12 @@ def main():
     us_index_src = os.path.join(PACKAGES_DIR, "us", "README.md")
     # Preserve the existing index if present; it's maintained in the repo
     if not os.path.isfile(us_index_src):
-        with open(us_index_src, "w") as fh:
+        with open(us_index_src, "w", encoding='utf-8', newline='\n') as fh:
             fh.write("# United States — Tax Skills Index\n\n"
                      "Pick your state package under `packages/us-[code]/`.\n"
                      "See the repo README for details.\n")
+
+    stamp_cta_blocks(us_only=us_only)
 
     # ---- Summary ----
     # NOTE: packages/manifest.json is DEPRECATED and no longer written. The

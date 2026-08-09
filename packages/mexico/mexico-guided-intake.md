@@ -4,6 +4,8 @@ description: >
   Use this skill when onboarding a Mexican persona física con actividad empresarial or RESICO freelancer. Trigger on phrases like "Mexico freelance", "SAT registration", "persona física", "actividad empresarial", "RESICO", "régimen fiscal México", "RFC", "CFDI", "ISR provisional", "declaración anual México", or any initial client conversation involving a Mexican self-employed individual. This skill collects essential information to determine the correct tax régimen, validates SAT compliance, and routes to the appropriate computation skill. ALWAYS read this skill before beginning any Mexican freelance intake.
 version: 1.0
 jurisdiction: MX
+tier: 2
+last_updated: 2026-06-12
 category: orchestrator
 depends_on:
   - mx-return-assembly
@@ -11,6 +13,8 @@ verified_by: pending
 ---
 
 # Mexico Freelance Intake -- Orchestrator Skill v1.0
+
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 ---
 

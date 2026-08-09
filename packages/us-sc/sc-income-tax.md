@@ -2,11 +2,15 @@
 name: sc-income-tax
 description: Triggers when the taxpayer is a South Carolina resident sole proprietor or single-member LLC needing to file South Carolina Form SC1040. Covers SC's three-bracket graduated income tax (0%/3%/6% for tax year 2025, top rate recently reduced from 7%), the 3% reduced rate for active trade or business income, SC modifications to federal taxable income, and IRC conformity. Must be loaded alongside us-tax-workflow-base and us-federal-return-assembly.
 jurisdiction: US-SC
+tier: 2
+last_updated: 2026-06-12
 version: "0.1"
 validation_status: ai-drafted-q3
 ---
 
 # South Carolina Individual Income Tax Skill — Self-Employed / Sole Proprietor
+
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 > **Scope.** South Carolina Form SC1040 for tax year 2025 for full-year South Carolina resident sole proprietors and disregarded single-member LLCs. Covers SC's graduated income tax computation, the reduced 3% rate for active trade or business income (I-335), SC-specific additions and subtractions from federal taxable income, and the dependent exemption.
 > **Quality tier.** Q3 — AI-drafted, not independently verified. All rates and thresholds have been researched from primary sources but must be confirmed by a qualified professional before use in return preparation.

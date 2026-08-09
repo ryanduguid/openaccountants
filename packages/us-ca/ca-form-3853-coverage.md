@@ -2,9 +2,14 @@
 name: ca-form-3853-coverage
 description: Tier 2 California content skill for Form 3853 (Health Coverage Exemptions and Individual Shared Responsibility Penalty) for California residents under the state individual mandate enacted by SB 78 (2019) and codified at R&TC section 61000 et seq. Covers tax year 2025 including the penalty computation (greater of flat dollar amount or percentage of income), Minimum Essential Coverage (MEC) requirements using the federal ACA definition, month-by-month coverage analysis, exemption categories (affordability, short gap, religious conscience, hardship, and others), Covered California interaction, and reporting forms (1095-A, 1095-B, 1095-C). Defers income tax computation to ca-540-individual-return and estimated tax to ca-estimated-tax-540es. MUST be loaded alongside us-tax-workflow-base v0.1 or later. California residents only.
 version: 0.2
+jurisdiction: US-CA
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # CA Form 3853 Coverage Skill v0.2
+
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 ## What this file is, and what it is not
 
@@ -429,7 +434,6 @@ For each month without coverage and without exemption:
 - **v0.2 (April 2026):** Full content skill with MEC definitions, exemptions, penalty computation, edge cases, and test suite.
 
 ## End of skill
-
 
 ---
 

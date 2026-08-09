@@ -78,7 +78,7 @@ last_updated: 2026-07-06
 
 ## Section 3 — Tier 1 rules
 
-- **Tier 1 rules intro** — 
+- **Tier 1 rules intro** —
 
 ### 3.1 Rent — 10%
 

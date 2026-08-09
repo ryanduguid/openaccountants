@@ -56,6 +56,18 @@ The self-hosted server exposes 6 read-only tools below. The hosted server at `ht
 
 Skill access is **read-only** and **path-sandboxed** to the `packages/` directory; `submit_feedback` does not call GitHub itself, it only constructs a URL.
 
+### Skill identifiers and duplicate names
+
+Always pass the exact `slug` returned by `list_skills` to `get_skill` or
+`get_skill_sections`. Existing globally unique guide names keep their familiar
+slugs, such as `malta-income-tax`. Some independently authored files share a
+legacy frontmatter name (for example, Argentina and Arkansas both use
+`ar-income-tax`). Those entries are returned with a stable path-qualified slug
+such as `path:argentina/ar-income-tax` or `path:us-ar/ar-income-tax`, plus the
+original value in `legacy_slug`. Calling a colliding legacy name directly is
+rejected with the available exact choices; the server never guesses a
+jurisdiction for it.
+
 ### The `start` flow
 
 `start` is what makes the connector self-guiding. A typical session looks like:
@@ -141,7 +153,9 @@ Or with `uv`:
 uv pip install ./mcp
 ```
 
-The server reads `packages/` from the repo root (override with `OPENACCOUNTANTS_ROOT`, see environment variables below).
+The server reads `packages/` from the repo root in a clone and the bundled
+`openaccountants_mcp/packages/` tree in a wheel. Set `OPENACCOUNTANTS_ROOT` to
+make either installation read a specific checkout instead.
 
 ### Connect to your AI client
 
@@ -212,14 +226,32 @@ For contributors who'd rather iterate inside a container, the repo root ships a 
 
 ```bash
 docker build -t openaccountants-mcp .
-docker run --rm -p 8000:8000 openaccountants-mcp
+docker run --rm -p 127.0.0.1:8000:8000 -e MCP_HOST=0.0.0.0 openaccountants-mcp
 # Point an MCP client at http://localhost:8000/mcp
 ```
+
+The server itself defaults to the loopback address `127.0.0.1`. Docker's port
+forwarder reaches the container through its network interface, so the local-only
+example deliberately sets `MCP_HOST=0.0.0.0` **inside the container** while
+binding the published host port to `127.0.0.1`. That keeps the endpoint local.
+
+Remote network binding is an explicit operator choice:
+
+```bash
+MCP_TRANSPORT=streamable-http MCP_HOST=0.0.0.0 openaccountants-mcp
+```
+
+This package does not add an authentication layer. Only use a non-loopback
+`MCP_HOST` behind an authenticated, TLS-terminating reverse proxy or equivalent
+network controls; do not publish the raw MCP endpoint directly to the internet.
 
 When fronted by a reverse proxy that strips an upstream path prefix (e.g. Caddy `uri strip_prefix /oamcp`), set `MCP_STREAMABLE_HTTP_PATH=/` so the endpoint mounts at the proxied root:
 
 ```bash
-docker run --rm -p 8000:8000 -e MCP_STREAMABLE_HTTP_PATH=/ openaccountants-mcp
+docker run --rm -p 127.0.0.1:8000:8000 \
+  -e MCP_HOST=0.0.0.0 \
+  -e MCP_STREAMABLE_HTTP_PATH=/ \
+  openaccountants-mcp
 ```
 
 The default stdio transport (`pip install ./mcp && openaccountants-mcp`) is unchanged.
@@ -228,11 +260,11 @@ The default stdio transport (`pip install ./mcp && openaccountants-mcp`) is unch
 
 | Variable | Default | Description |
 |----------|---------|-------------|
-| `OPENACCOUNTANTS_ROOT` | Auto-detected repo root (parent of `mcp/`) | Path to your OpenAccountants checkout. The server reads `$OPENACCOUNTANTS_ROOT/packages/`. |
+| `OPENACCOUNTANTS_ROOT` | Auto-detected repo root (parent of `mcp/`) | Path to an OpenAccountants checkout containing `packages/`; an invalid explicit path fails at startup. |
 | `MCP_TRANSPORT` | `stdio` | `stdio`, `streamable-http`, or `sse`. HTTP transports let remote MCP clients connect via a reverse proxy. |
-| `MCP_HOST` | `127.0.0.1` (stdio) / `0.0.0.0` (HTTP) | Bind host for HTTP transports. |
-| `MCP_PORT` | `8000` | Bind port for HTTP transports. |
-| `MCP_STREAMABLE_HTTP_PATH` | `/mcp` | Path the Streamable-HTTP endpoint is mounted at. Set to `/` when behind a proxy that strips the upstream prefix. |
+| `MCP_HOST` | `127.0.0.1` | Bind host for HTTP transports. Set `0.0.0.0` explicitly only when a container or trusted network boundary must expose the service. |
+| `MCP_PORT` | `8000` | Bind port for HTTP transports (`1`–`65535`). |
+| `MCP_STREAMABLE_HTTP_PATH` | `/mcp` | Absolute Streamable-HTTP endpoint path, without query/fragment. Set to `/` when behind a proxy that strips the upstream prefix. |
 
 ## What changes vs manual upload
 

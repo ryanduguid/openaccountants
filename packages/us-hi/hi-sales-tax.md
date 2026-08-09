@@ -3,10 +3,14 @@ name: hi-sales-tax
 description: Use this skill whenever asked about Hawaii General Excise Tax (GET). Trigger on phrases like "Hawaii GET", "General Excise Tax", "HI sales tax", "HRS §237". Hawaii has a GET on the SELLER, not a traditional sales tax. ALWAYS load us-sales-tax first.
 version: 2.0
 jurisdiction: US-HI
+tier: 2
+last_updated: 2026-06-12
 validation_status: ai-drafted-q3
 ---
 
 # Hawaii General Excise Tax (GET) Skill v2.0
+
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 ## Section 1 -- Quick reference
 
@@ -67,7 +71,6 @@ Hawaii has one of the broadest tax bases in the US. Legal, accounting, medical, 
 ## Disclaimer
 
 Informational only. Review by qualified professional required before filing.
-
 
 ---
 

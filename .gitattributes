@@ -1,0 +1,7 @@
+# The packages tree is generator-owned; keep pull request review focused on
+# source, generator, workflow, and test changes.
+packages/** linguist-generated=true
+
+# Generated guides can contain Markdown's intentional trailing-space hard
+# breaks. Do not treat those as whitespace errors in generated output.
+packages/**/*.md whitespace=-blank-at-eol

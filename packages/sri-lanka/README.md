@@ -7,7 +7,17 @@
 
 1. `foundation.md`
 2. `intake.md`
-3. `sri-lanka-vat.md`
+3. `sri-lanka-betting-gaming-excise.md`
+4. `sri-lanka-capital-gains-tax.md`
+5. `sri-lanka-corporate-tax.md`
+6. `sri-lanka-income-tax.md`
+7. `sri-lanka-payroll.md`
+8. `sri-lanka-provisional-tax-ait.md`
+9. `sri-lanka-sscl.md`
+10. `sri-lanka-stamp-duty.md`
+11. `sri-lanka-vat.md`
+12. `sri-lanka-withholding-tax.md`
+13. `payroll-workflow-base.md`
 
 ## How to use
 
@@ -24,17 +34,17 @@ The AI will:
 - Ask onboarding questions to confirm your situation
 - Load the right domain skills (tax, bookkeeping, payroll, etc.)
 - Produce working papers for each obligation
-- Flag anything that needs your qualified tax professional's attention
+- Flag anything that needs your tax professional's attention
 
 ## Important
 
-**This is not tax, legal, or financial advice.** Everything produced must be reviewed and signed off by a qualified qualified tax professional before filing or acting upon.
+**This is not tax, legal, or financial advice.** Everything produced must be reviewed and signed off by a qualified tax professional before filing or acting upon.
 
 The most up-to-date, verified version of these skills is maintained at [openaccountants.com](https://www.openaccountants.com).
 
 ---
 
-## Are you a qualified tax professional?
+## Are you a tax professional?
 
 These Sri Lanka tax skills need your eye. Every rate, threshold, and form reference was AI-drafted and needs a human professional to verify it.
 

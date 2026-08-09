@@ -1,0 +1,60 @@
+---
+name: Trinidad and Tobago Personal Income Tax
+description: "Source-cited draft: personal income tax for Trinidad and Tobago (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
+jurisdiction: TT
+domain: income-tax
+role: compute
+tax_year: 2025
+tier: 2
+last_updated: 2026-07-06
+---
+
+# Trinidad and Tobago Personal Income Tax
+
+## Personal income tax rates and bands
+
+- **Chargeable income basis and two-tier rate** — Personal income tax is charged on chargeable income (assessable income less allowances and deductions). A two-tier rate applies, with a higher 30% rate on chargeable income above TTD 1,000,000.
+- **Rate on chargeable income up to TTD 1,000,000** — 25%  _(Income Tax Act (Chap. 75:01) — https://taxsummaries.pwc.com/trinidad-and-tobago/individual/taxes-on-personal-income)_
+- **Rate on chargeable income over TTD 1,000,000** — 30%  _(Income Tax Act (Chap. 75:01) — https://taxsummaries.pwc.com/trinidad-and-tobago/individual/taxes-on-personal-income)_
+- **Personal allowance (tax-free threshold)** — TTD 90,000 per year TTD/year  _(Income Tax Act (Chap. 75:01) — https://taxsummaries.pwc.com/trinidad-and-tobago/individual/deductions)_
+- **Personal allowance for non-residents** — Generally not available, except non-residents receiving TT-source pension income  _(Income Tax Act (Chap. 75:01) — https://taxsummaries.pwc.com/trinidad-and-tobago/individual/taxes-on-personal-income)_
+- **Non-resident rates on TT-source income** — Same 25% / 30% scale applies to chargeable income; passive income may instead suffer final withholding tax  _(Income Tax Act (Chap. 75:01) — https://taxsummaries.pwc.com/trinidad-and-tobago/individual/taxes-on-personal-income)_
+- **Residence test** — Individual is resident if present in Trinidad and Tobago for at least 183 days in the year of income, or otherwise ordinarily resident ((approx — confirm))  _(Income Tax Act (Chap. 75:01) — https://taxsummaries.pwc.com/trinidad-and-tobago/individual/residence)_
+- **National Insurance (NIS) contributions** — Employee NIS contributions are deductible in computing chargeable income  _(Income Tax Act (Chap. 75:01) — https://taxsummaries.pwc.com/trinidad-and-tobago/individual/deductions)_
+- **Tertiary education expenses deduction** — Up to TTD 72,000 per year for tertiary education expenses at institutions outside Trinidad and Tobago ((approx — confirm)) TTD/year  _(Income Tax Act (Chap. 75:01) — https://taxsummaries.pwc.com/trinidad-and-tobago/individual/deductions)_
+- **Approved pension/annuity/NIS deduction cap** — Contributions to approved pension funds, annuities and NIS deductible up to TTD 60,000 per year combined TTD/year  _(Income Tax Act (Chap. 75:01) — https://taxsummaries.pwc.com/trinidad-and-tobago/individual/deductions)_
+- **First-time homeowner allowance** — Up to TTD 30,000 per year for the first five years (acquisitions on or after 1 January 2023) ((approx — confirm)) TTD/year  _(Income Tax Act (Chap. 75:01) — https://taxsummaries.pwc.com/trinidad-and-tobago/individual/deductions)_
+- **Individual return filing deadline** — 30 April of the year following the year of income  _(Income Tax Act (Chap. 75:01) — https://taxsummaries.pwc.com/trinidad-and-tobago/individual/tax-administration)_
+- **Self-employed quarterly instalments** — Estimated tax payable in quarterly instalments by 31 March, 30 June, 30 September and 31 December, with the balance due by 30 April  _(Income Tax Act (Chap. 75:01) — https://www.finance.gov.tt/services/income-tax/paying-your-taxes/)_
+- **Business levy on self-employed** — 0.6% on gross income/receipts exceeding TTD 360,000 per year, where it exceeds the income tax liability  _(Income Tax Act (Chap. 75:01) — https://taxsummaries.pwc.com/trinidad-and-tobago/individual/other-taxes)_
+
+---
+
+<!-- openaccountants-cta-block -->
+
+## Talk to a verified accountant
+
+This skill is a tool, not an engagement. Every taxpayer's situation is
+different, and the rules in the skill may not match your specific facts.
+
+To speak with one of the licensed accountants who verifies skills for your
+jurisdiction — **no liability on either side until you and the accountant sign
+a formal engagement letter** — book a free 30-minute call:
+
+**→ [Book a call](https://calendly.com/openaccountants-info/30min)**
+
+We'll route you to the named verifier covering your country or state. You can
+also see the full list of verified accountants at
+[openaccountants.com/network](https://www.openaccountants.com/network).
+
+<!-- openaccountants-mcp-cta -->
+
+## The accountant-verified version lives in the connector
+
+This file is the open, **research-grade draft**. The **accountant-verified**
+version of this skill is **not published to GitHub** — it is delivered free
+through the OpenAccountants MCP connector, where your AI agent loads the
+verified rules together with the name of the accountant who signed them off.
+
+**→ Install the free connector:** <https://www.openaccountants.com/connect>
+**MCP endpoint:** `https://www.openaccountants.com/api/mcp`

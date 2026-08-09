@@ -3,9 +3,14 @@ name: company-formation-workflow-base
 description: Universal company formation and entity selection workflow base that defines the entity comparison, registration checklist, and ongoing compliance runbook for all jurisdictions. Contains no jurisdiction-specific content — no entity type names, no registration fees, no filing portals. This skill MUST be loaded alongside a country-specific formation skill that provides the entity types, registration authorities, and local requirements. This skill alone cannot produce any output.
 version: 1.0
 category: foundation
+jurisdiction: GLOBAL
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # Company Formation Workflow Base Skill v1.0
+
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 ## What this file is, and what it is not
 

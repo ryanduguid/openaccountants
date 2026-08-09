@@ -414,10 +414,10 @@ This section consolidates the audit flash points scattered through the skill int
 ### 11.4 Series LLC
 
 - **Articles of Organization expressly authorize series** — NRS 86.1255(1).  _(NRS 86.1255(1))_
-- **Operating agreement identifies each series and its members, managers, assets, business purpose** — 
+- **Operating agreement identifies each series and its members, managers, assets, business purpose** —
 - **Separate bank accounts and accounting per series** — Inter-series transfers documented as intercompany loans or capital movements.
 - **Separate insurance per series** — Each series should be a named insured on policies relating to its assets.
-- **Deeds, contracts, and tenant agreements reference the specific series, not the master LLC** — 
+- **Deeds, contracts, and tenant agreements reference the specific series, not the master LLC** —
 - **Separate EINs per series** — Safer position pending finalization of Prop. Reg. §301.7701-1(a)(5).  _(Prop. Reg. §301.7701-1(a)(5))_
 - **Out-of-state recognition checked** — Before assuming inter-series protection in another state, verify that state's recognition (or non-recognition) of Series LLCs.
 

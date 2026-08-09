@@ -7,10 +7,14 @@
 
 1. `foundation.md`
 2. `intake.md`
-3. `co-income-tax.md`
-4. `co-social-contributions.md`
-5. `co-vat-return.md`
-6. `colombia-iva.md`
+3. `co-company-formation.md`
+4. `co-corporate-income-tax.md`
+5. `co-income-tax.md`
+6. `co-social-contributions.md`
+7. `co-tax-overview.md`
+8. `co-vat-return.md`
+9. `colombia-iva.md`
+10. `company-formation-workflow-base.md`
 
 ## Also known as
 
@@ -33,17 +37,17 @@ The AI will:
 - Ask onboarding questions to confirm your situation
 - Load the right domain skills (tax, bookkeeping, payroll, etc.)
 - Produce working papers for each obligation
-- Flag anything that needs your qualified tax professional's attention
+- Flag anything that needs your tax professional's attention
 
 ## Important
 
-**This is not tax, legal, or financial advice.** Everything produced must be reviewed and signed off by a qualified qualified tax professional before filing or acting upon.
+**This is not tax, legal, or financial advice.** Everything produced must be reviewed and signed off by a qualified tax professional before filing or acting upon.
 
 The most up-to-date, verified version of these skills is maintained at [openaccountants.com](https://www.openaccountants.com).
 
 ---
 
-## Are you a qualified tax professional?
+## Are you a tax professional?
 
 These Colombia tax skills need your eye. Every rate, threshold, and form reference was AI-drafted and needs a human professional to verify it.
 

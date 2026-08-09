@@ -4,12 +4,16 @@ description: >
   Use this skill when preparing, reviewing, or advising on annual financial statements (cuentas anuales) for a Spanish company. Trigger on phrases like "cuentas anuales", "Registro Mercantil", "depósito de cuentas", "Plan General de Contabilidad", "PGC", "PGC PYMES", "balance", "cuenta de pérdidas y ganancias", "memoria", "auditoría España", "ICAC", or any question about preparing and filing statutory accounts under Spanish commercial law. Covers PGC/PGC-PYMES frameworks, size thresholds, required statements, formats, notes, filing deadlines, and audit requirements.
 version: 1.0
 jurisdiction: ES
+tier: 2
+last_updated: 2026-06-12
 category: financial-statements
 depends_on:
   - financial-statements-workflow-base
 ---
 
 # Spain Financial Statements Skill v1.0
+
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 ---
 

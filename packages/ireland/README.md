@@ -7,12 +7,23 @@
 
 1. `foundation.md`
 2. `intake.md`
-3. `ie-income-tax-form11.md`
-4. `ie-preliminary-tax.md`
-5. `ie-prsi-class-s.md`
-6. `ie-usc.md`
-7. `ireland-vat-return.md`
-8. `eu-vat-directive.md`
+3. `ie-cat.md`
+4. `ie-cgt.md`
+5. `ie-corporation-tax.md`
+6. `ie-formation.md`
+7. `ie-freelance-intake.md`
+8. `ie-income-tax-form11.md`
+9. `ie-non-dom.md`
+10. `ie-payroll.md`
+11. `ie-preliminary-tax.md`
+12. `ie-prsi-class-s.md`
+13. `ie-return-assembly.md`
+14. `ie-usc.md`
+15. `ie-vat-return.md`
+16. `ireland-vat-return.md`
+17. `eu-vat-directive.md`
+18. `payroll-workflow-base.md`
+19. `company-formation-workflow-base.md`
 
 ## Also known as
 
@@ -35,17 +46,17 @@ The AI will:
 - Ask onboarding questions to confirm your situation
 - Load the right domain skills (tax, bookkeeping, payroll, etc.)
 - Produce working papers for each obligation
-- Flag anything that needs your qualified tax professional's attention
+- Flag anything that needs your tax professional's attention
 
 ## Important
 
-**This is not tax, legal, or financial advice.** Everything produced must be reviewed and signed off by a qualified qualified tax professional before filing or acting upon.
+**This is not tax, legal, or financial advice.** Everything produced must be reviewed and signed off by a qualified tax professional before filing or acting upon.
 
 The most up-to-date, verified version of these skills is maintained at [openaccountants.com](https://www.openaccountants.com).
 
 ---
 
-## Are you a qualified tax professional?
+## Are you a tax professional?
 
 These Ireland tax skills need your eye. Every rate, threshold, and form reference was AI-drafted and needs a human professional to verify it.
 

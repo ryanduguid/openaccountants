@@ -1,5 +1,5 @@
 ---
-description: Source-cited tax guide for US-FL: fl corporate income tax. Unverified draft, pending local-accountant review.
+description: 'Source-cited tax guide for US-FL: fl corporate income tax. Unverified draft, pending local-accountant review.'
 name: fl-corporate-income-tax
 jurisdiction: US-FL
 domain: tax

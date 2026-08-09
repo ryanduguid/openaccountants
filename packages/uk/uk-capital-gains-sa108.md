@@ -5,6 +5,8 @@ description: >
 version: 2.0
 jurisdiction: GB
 tax_year: 2025
+tier: 2
+last_updated: 2026-06-12
 category: international
 depends_on:
   - uk-income-tax-sa100
@@ -13,29 +15,9 @@ verified_by: pending
 
 # UK Capital Gains Tax (SA108) Skill v2.0
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 ---
-
-## Verified rates & thresholds (accountant-reviewed)
-
-> Reviewed against the cited tax authorities by **James Power** on 2026-06-03.
-> This block is generated from the verified facts database at openaccountants.com —
-> edit the facts there, not this prose. Items under clarification are excluded.
-
-### Capital Gains SA108
-
-- **All assets — basic rate** — 18%  _(TCGA 1992 s.1H/1I)_
-- **All assets — higher rate** — 24%  _(TCGA 1992)_
-- **BADR qualifying gains (2025-26)** — 14%  _(TCGA s.169H)_
-- **BADR qualifying gains (2026-27)** — 18%  _(Finance Act 2025)_
-- **BADR lifetime limit** — £1,000,000  _(TCGA 1992)_
-- **2024-25 individuals** — £3,000  _(TCGA 1992)_
-- **2025-26 individuals** — £3,000  _(TCGA 1992)_
-- **2025-26 trustees** — £1,500  _(TCGA 1992)_
-- **Last months always exempt** — 9 months  _(TCGA s.222-226)_
-- **Letting relief cap** — £40,000  _(TCGA s.223)_
-- **Garden/grounds exempt** — Up to 0.5 hectares  _(TCGA s.222)_
-- **Deadline** — 60 days from completion  _(TCGA 1992)_
-- **Late reporting penalty** — £100 initial  _(TMA 1970)_
 
 ## Section 1 -- Quick Reference
 

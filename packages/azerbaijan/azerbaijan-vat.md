@@ -2,9 +2,14 @@
 name: azerbaijan-vat
 description: Use this skill whenever asked to prepare, review, or classify transactions for an Azerbaijan VAT (EDV) return for any client. Trigger on phrases like "Azerbaijan VAT", "EDV return", "Azerbaijani tax", or any request involving Azerbaijan VAT filing. This skill covers standard EDV payers filing monthly returns. Simplified tax regime and micro-enterprise exemptions are in the refusal catalogue. MUST be loaded alongside vat-workflow-base v0.1 or later. ALWAYS read this skill before touching any Azerbaijan VAT work.
 version: 2.0
+jurisdiction: AZ
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # Azerbaijan VAT (EDV) Return Skill v2.0
+
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 ## Section 1 — Quick reference
 
@@ -299,7 +304,6 @@ Per `vat-workflow-base` Section 3 with Azerbaijan-specific box codes.
 - **v2.0 (April 2026):** Full rewrite to Malta v2.0 10-section structure.
 
 ## End of Azerbaijan VAT (EDV) Skill v2.0
-
 
 ---
 

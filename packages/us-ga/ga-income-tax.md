@@ -6,12 +6,15 @@ description: >
   standard deduction, dependent exemption, and estimated tax. Trigger: taxpayer is a Georgia
   resident or has Georgia-source income.
 jurisdiction: US-GA
-version: "1.0"
-verified_by: pending
 tier: 2
+last_updated: 2026-06-12
+version: "0.1"
+validation_status: ai-drafted-q3
 ---
 
 # Georgia Individual Income Tax Skill — Self-Employed / Sole Proprietor
+
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 > **Scope.** This skill covers Georgia individual income tax for self-employed individuals and sole proprietors filing Form 500. Georgia has a flat income tax rate of 5.19% for tax year 2025.
 > **Quality tier.** Q3 — AI-drafted with citations. Must be reviewed by a qualified professional before use.
@@ -31,13 +34,15 @@ tier: 2
 | Extension | Automatic with federal extension (attach Form 4868 or IRS confirmation); or use GA Form IT-303 |
 | Version | 0.1 |
 | Generated date | May 22, 2026 |
-| Validation status | Tier 2 — AI-drafted with citations; pending accountant verification |
+| Validation status | AI-drafted — Q3 |
 
 ### Sources consulted
 
 - Georgia DOR — 2025 IT-511 Individual Income Tax Booklet: https://dor.georgia.gov/document/document/2025-it-511-individual-income-tax-booklet/download
 - Georgia DOR — Important Tax Updates: https://dor.georgia.gov/taxes/important-tax-updates
 - O.C.G.A. § 48-7-20 (tax rate): as amended by HB 111 (signed April 2025)
+- NerdWallet — Georgia State Income Tax: https://www.nerdwallet.com/taxes/learn/georgia-state-tax
+- BlueWave HR — Georgia Flat Income Tax 2026: https://bluewavehr.com/blog/georgia-flat-income-tax-2026.html
 
 ---
 
@@ -89,7 +94,7 @@ You must file Georgia Form 500 if:
 
 ### Key subtractions from Georgia income (Schedule 3)
 - Social Security benefits (Georgia fully exempts Social Security from state income tax)
-- Retirement income exclusion under O.C.G.A. §48-7-27(a)(5): up to **$35,000** per taxpayer age 62–64; up to **$65,000** per taxpayer age 65+ (includes retirement plan distributions, interest, dividends, capital gains, rental income). Within the exclusion, earned income (wages, self-employment income) is capped at $4,000.
+- Retirement income exclusion: up to $65,000 per taxpayer age 62–64; up to $65,000 per taxpayer age 65+ (includes retirement plan distributions, interest, dividends, capital gains, rental income)
 - Georgia lottery winnings (first $5,000 exempt)
 - Military retirement income (up to $35,000 for taxpayers under 62)
 

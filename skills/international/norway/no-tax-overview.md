@@ -1,7 +1,7 @@
 ---
-name: Norway Tax Overview
+name: no-tax-overview
 description: "Source-cited draft: tax overview for Norway (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
-jurisdiction: NO
+jurisdiction: "NO"
 domain: income-tax
 role: reference
 tax_year: 2025

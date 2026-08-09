@@ -480,7 +480,7 @@ def extract_claims(rel_path, text, jurisdiction, compiled, stats):
     for i, line in enumerate(body.splitlines()):
         lineno = line_offset + i + 1
         stripped = line.strip()
-        if stripped.startswith("```") or stripped.startswith("~~~"):
+        if stripped.startswith(("```", "~~~")):
             in_fence = not in_fence
             continue
         if in_fence:
@@ -740,7 +740,7 @@ def render_report(results):
         "never used as claim sources.",
         "",
     ]
-    for jur, (claims, candidates, drift, stats) in results.items():
+    for jur, (_claims, candidates, drift, stats) in results.items():
         highs = [(k, c) for k, c in candidates if rank_candidate(c) == "HIGH"]
         meds = [(k, c) for k, c in candidates if rank_candidate(c) == "MEDIUM"]
         lines.append(f"## {jur}")
@@ -813,7 +813,7 @@ def main(argv=None):
             total_med += meds
             print(f"{jur}: {highs} HIGH, {meds} MEDIUM, {len(drift)} copy-drift "
                   f"({stats['files_scanned']} files, {stats['claims']} claims)")
-        print(f"TOTAL: {total_high} HIGH, {total_med} MEDIUM → {args.out}")
+        print(f"TOTAL: {total_high} HIGH, {total_med} MEDIUM -> {args.out}")
     else:
         sys.stdout.write(report)
     return 0

@@ -4,6 +4,8 @@ description: >
   Use this skill whenever a bank, neobank, payment institution, e-money institution, or regulated financial holding company asks about accounting, regulatory capital, or tax issues specific to financial institutions. Trigger on phrases like "bank tax", "bank levy", "IRB approach", "standardised approach", "IFRS 9 ECL", "FRTB", "Basel III", "Basel IV", "CRR/CRD", "Prudential regulation", "PRA", "ECB SSM", "FED CCAR", "OSFI", "expected credit loss", "ICAAP", "ILAAP", "stress testing", "interchange fee", "MREL", "TLAC", "resolution planning", "deposit guarantee scheme contribution", or any question about bank accounting / tax / regulation. Covers IFRS 9 ECL, capital adequacy interactions with tax (DTA recognition), bank levies (UK, EU), specific tax rules for banks (FTT, securitisation, hedge accounting). Does NOT cover: detailed banking regulation (CRR/CRD specifics, FRTB calibration); audit of banks (see statutory-audit-workflow-base); routine corporate tax (see corporate-income-tax-workflow-base). ALWAYS read this skill before classifying a bank's transactions or computing its tax position.
 version: 0.1
 jurisdiction: GLOBAL
+tier: 2
+last_updated: 2026-06-12
 category: vertical
 depends_on:
   - corporate-income-tax-workflow-base
@@ -11,6 +13,8 @@ verified_by: pending
 ---
 
 # Banking Sector Tax & Accounting v0.1
+
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 ## What this file is
 

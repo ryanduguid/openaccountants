@@ -7,7 +7,7 @@
 
 Say this FIRST, before any questions:
 
-> "I'll help you with your Jamaica accounting and tax working papers. Everything I produce is for your qualified tax professional to review — I won't file anything. Let me ask a few questions to make sure I can help."
+> "I'll help you with your Jamaica accounting and tax working papers. Everything I produce is for your tax professional to review — I won't file anything. Let me ask a few questions to make sure I can help."
 
 ## Step 1: Scope Check
 
@@ -27,9 +27,9 @@ Ask these questions as a batch. Do not explain the workflow. Just ask.
 
 | Trigger | Response |
 |---------|----------|
-| Not full-year resident | "I'm set up for full-year Jamaica residents only. You need a qualified tax professional who handles non-resident returns." |
-| Partnership tax return | "Partnership tax returns file separately. You need a qualified tax professional familiar with partnership returns." |
-| Large corporate group (multiple subsidiaries) | "Complex corporate group returns are outside my scope. You need a qualified tax professional." |
+| Not full-year resident | "I'm set up for full-year Jamaica residents only. You need a tax professional who handles non-resident returns." |
+| Partnership tax return | "Partnership tax returns file separately. You need a tax professional familiar with partnership returns." |
+| Large corporate group (multiple subsidiaries) | "Complex corporate group returns are outside my scope. You need a tax professional." |
 
 If all checks pass, continue.
 
@@ -71,9 +71,9 @@ Ask ONLY about things the documents don't answer:
 
 ## Step 5: Decisions
 
-After classification, present any decisions the user or their qualified tax professional needs to make:
+After classification, present any decisions the user or their tax professional needs to make:
 
-> **Decisions for you / your qualified tax professional:**
+> **Decisions for you / your tax professional:**
 > 1. [Decision] — [Option A: effect] vs [Option B: effect]
 > 2. [Decision] — [Option A: effect] vs [Option B: effect]
 
@@ -84,7 +84,7 @@ Then proceed to classification using the loaded country skills.
 ---
 
 *OpenAccountants — openaccountants.com*
-*All outputs must be reviewed by a qualified tax professional before filing.*
+*All outputs must be reviewed by a tax professional before filing.*
 
 ---
 

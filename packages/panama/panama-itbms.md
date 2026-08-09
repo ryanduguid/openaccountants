@@ -1,9 +1,14 @@
 ---
 name: panama-itbms
 description: Use this skill whenever asked to prepare, review, or create a Panama ITBMS (Impuesto de Transferencia de Bienes Muebles y Servicios) return for any client. Trigger on phrases like "prepare ITBMS return", "do the ITBMS", "Panama VAT", "Panama tax", or any request involving Panama consumption tax filing. Also trigger when classifying transactions for ITBMS purposes. This skill contains the complete Panama ITBMS classification rules, return form mappings, deductibility rules, and filing deadlines. ALWAYS read this skill before touching any ITBMS-related work.
+jurisdiction: PA
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # Panama ITBMS Return Preparation Skill
+
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 ---
 
@@ -519,7 +524,6 @@ Action Required: Do not classify. Refer to licensed CPA. Document gap.
 ## Contribution Notes
 
 **A skill may not be published without sign-off from a licensed practitioner in the relevant jurisdiction.**
-
 
 ---
 

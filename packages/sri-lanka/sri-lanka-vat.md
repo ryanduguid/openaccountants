@@ -1,16 +1,15 @@
 ---
 name: sri-lanka-vat
 description: Use this skill whenever asked to prepare, review, or classify transactions for a Sri Lanka VAT return for any client. Trigger on phrases like "Sri Lanka VAT", "IRD return", "CGIR filing", or any request involving Sri Lanka VAT. MUST be loaded alongside vat-workflow-base v0.1 or later. ALWAYS read this skill before touching any Sri Lanka VAT work.
-version: 2.1
+version: 2.0
 jurisdiction: LK
-tax_year: 2025-26
-category: international
-verified_by: pending
-depends_on:
-  - vat-workflow-base
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # Sri Lanka VAT Return Skill v2.0
+
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 ## Section 1 — Quick reference
 
@@ -208,8 +207,15 @@ BOC, People's Bank, Commercial Bank exports CSV/PDF. LKR primary. Sinhala/Tamil 
 1. BOI enterprises refused. 2. SSCL status changes frequently. 3. Rate changed from 15% to 18% in Jan 2024 — verify for transitional periods.
 
 ### Change log
-- v2.1 (June 2026): Added jurisdiction/verification frontmatter; removed duplicate disclaimer; standard rate 18% re-confirmed against IRD YA 2025/26 tax chart.
 - v2.0 (April 2026): Full rewrite to Malta v2.0 ten-section structure.
+
+---
+
+## Disclaimer
+
+This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. All outputs must be reviewed by a qualified professional before filing.
+
+The most up-to-date version is maintained at [openaccountants.com](https://www.openaccountants.com).
 
 ---
 

@@ -4,12 +4,16 @@ description: >
   Use this skill whenever asked about Spain transfer pricing rules, documentation requirements, or precios de transferencia compliance. Trigger on phrases like "transfer pricing Spain", "Spanish TP documentation", "precios de transferencia", "master file Spain", "local file Spain", "CbCR Spain", "APA Spain", "Model 232", "AEAT transfer pricing", or any question about intercompany pricing for Spanish entities.
 version: 1.0
 jurisdiction: ES
+tier: 2
+last_updated: 2026-06-12
 category: transfer-pricing
 depends_on:
   - transfer-pricing-workflow-base
 ---
 
 # Spain Transfer Pricing Skill v1.0
+
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 ---
 

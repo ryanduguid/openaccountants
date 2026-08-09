@@ -2,9 +2,14 @@
 name: brunei-tax
 description: Use this skill whenever asked about Brunei Darussalam tax obligations. Trigger on phrases like "Brunei tax", "Brunei VAT", "Brunei GST", "corporate tax Brunei", "MOFE filing". Brunei has NO VAT/GST and NO personal income tax. This skill covers corporate income tax at 18.5% and clarifies the absence of consumption tax. MUST be loaded alongside vat-workflow-base v0.1 or later. ALWAYS read this skill before touching any Brunei tax work.
 version: 2.0
+jurisdiction: BN
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # Brunei Darussalam Tax Skill v2.0
+
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 ## Section 1 — Quick reference
 
@@ -171,7 +176,6 @@ BIBD and Baiduri exports CSV/PDF. BND primary (pegged to SGD). Malay language de
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. All outputs must be reviewed by a qualified professional before filing.
 
 The most up-to-date version is maintained at [openaccountants.com](https://www.openaccountants.com).
-
 
 ---
 

@@ -5,6 +5,8 @@ description: >
 version: 1.0
 jurisdiction: CO
 tax_year: 2025
+tier: 2
+last_updated: 2026-06-12
 category: international
 depends_on:
   - vat-workflow-base
@@ -12,6 +14,8 @@ validated: April 2026
 ---
 
 # Colombia VAT Return (IVA) v1.0
+
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 ## What this file is
 

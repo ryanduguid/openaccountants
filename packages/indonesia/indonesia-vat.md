@@ -1,52 +1,21 @@
 ---
 name: indonesia-vat
 description: Use this skill whenever asked to prepare, review, or classify transactions for an Indonesia VAT (PPN — Pajak Pertambahan Nilai) return (SPT Masa PPN), handle e-Faktur compliance, or advise on PPN registration and filing in Indonesia. Trigger on phrases like "PPN Indonesia", "Pajak Pertambahan Nilai", "SPT Masa PPN", "e-Faktur", "Faktur Pajak", "PKP registration", "Pengusaha Kena Pajak", or any Indonesia PPN request. ALWAYS read this skill before touching any Indonesia PPN work.
-version: 2.1
+version: 2.0
 jurisdiction: ID
 tax_year: 2025
+tier: 2
+last_updated: 2026-06-12
 category: international
-verified_by: pending
 depends_on:
   - vat-workflow-base
 ---
 
-# Indonesia PPN (Pajak Pertambahan Nilai / VAT) Skill v2.1
+# Indonesia PPN (Pajak Pertambahan Nilai / VAT) Skill v2.0
+
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 ---
-
-## Verified rates & thresholds (accountant-reviewed)
-
-> Reviewed against the cited tax authorities by **RILIA PUTRI** on 2026-06-03.
-> This block is generated from the verified facts database at openaccountants.com —
-> edit the facts there, not this prose. Items under clarification are excluded.
-
-### PPN - VAT
-
-- **Standard effective rate (non-luxury)** — 11% — nominal 12% applied to DPP of 11/12 × selling price  _(UU HPP Art. 7; PMK 131/2024)_
-- **Luxury goods (PPnBM-listed) rate** — 12% on full DPP from 1 Feb 2025. Transitional 11/12 DPP in Jan 2025.  _(PMK 131/2024)_
-- **Export rate** — 0% on goods; qualifying exported services  _(UU PPN Art. 7(2))_
-- **PKP mandatory threshold** — IDR 4,800,000,000 annual turnover  _(UU PPN Art. 3A; PMK 197/2013)_
-- **SPT Masa PPN filing deadline** — Generally due within 20 days after the end of the tax period, subject to applicable VAT filing regulations and DJP administrative provisions.  _(UU KUP as amended by UU HPP No. 7/2021.)_
-- **PPN payment deadline** — PPN and PPnBM generally must be paid by the end of the month following the tax period and before the relevant SPT Masa PPN is submitted, subject to applicable VAT regulations.  _(UU KUP, PMK 81/2024 Article 94(3) as amended by PMK 01/2026; UU KUP as amended by UU HPP No. 7/2021.)_
-- **Faktur Pajak issuance** — Faktur Pajak generally must be issued at the time of taxable supply or in accordance with applicable VAT invoicing and electronic tax administration regulations.  _(PMK-151/PMK.03/2013, Indonesian VAT Law Article 13, PER-11/PJ/2025, and PMK 81/2024 as amended by PMK 01/2026.)_
-- **Input credit window** — Within 3 months of the tax period  _(UU PPN)_
-- **Late filing SPT Masa PPN** — IDR 500,000 per month  _(UU KUP Art. 7)_
-- **Late PPN payment** — 2% per month of unpaid tax  _(UU KUP Article 9(2a), Article 13(2))_
-- **Late Faktur Pajak** — 2% of DPP per Faktur  _(Indonesian VAT Law Article 14(4))_
-- **Underpayment on audit** — 100% of underpaid tax  _(UU KUP Article 13(3) , UU KUP as amended by UU HPP No. 7/2021.)_
-- **Basic food staples** — Basic food staples such as rice, corn, sago, soybeans, salt, fresh meat, eggs, milk, fruits, and vegetables  _(Indonesian VAT Law Article 4A as amended by UU HPP No. 7/2021)_
-- **Services exempt** — Medical, education, financial, insurance, employment, water supply  _(Indonesian VAT Law Article 4A as amended by UU HPP No. 7/2021, PMK 70/PMK.03/2022 Articles 3, 5–8)_
-- **PMSE PPN rate** — 11% collected by registered foreign providers  _(Indonesian VAT Law Article 7, PMK 81/2024 Articles 332–339)_
-- **PMSE registration threshold** — >IDR 600m annual turnover from Indonesia OR >12,000 users/year  _(PMK 81/2024 Articles 332–339)_
-- **I.A — Taxable sales 11%** — Taxable supplies subject to VAT (Tax Base/DPP)  _(Indonesian VAT Law Articles 4 & 7; UU HPP No. 7/2021 Article 7)_
-- **I.B — Zero-rated (exports)** — Exports  _(Indonesian VAT Law Articles 3A, 4(1)(f),(g),(h), & 7(2))_
-- **I.C — Exempt/non-taxable** — VAT-exempt supplies  _(Indonesian VAT Law Article 4A as amended by UU HPP No. 7/2021; PMK 70/PMK.03/2022 Articles 3 & 5–8)_
-- **II — Output PPN** — Output VAT  _(Indonesian VAT Law Articles 1A, 4, & 9)_
-- **III.A — Domestic input PPN** — Domestic Input VAT  _(Indonesian VAT Law Article 9)_
-- **IV — PPN payable** — Output VAT less allowable Input VAT  _(Indonesian VAT Law Article 9(2))_
-- **Coretax mandatory from** — January 2025 implementation for VAT administration  _(PMK 81/2024 as amended by PMK 01/2026)_
-- **e-Faktur system** — Mandatory for taxable entrepreneurs (PKPs); integrated with Coretax  _(Indonesian VAT Law Article 13; PER-11/PJ/2025; PMK 81/2024 as amended by PMK 01/2026)_
-- **NPWP format on Faktur Pajak** — 16-digit NIK-based Taxpayer Identification Number  _(PMK-112/PMK.03/2022 Article 2(1)–(3) & PER-6/PJ/2024)_
 
 ## Section 1 — Quick reference
 
@@ -56,7 +25,7 @@ depends_on:
 | Tax | PPN — Pajak Pertambahan Nilai (Value Added Tax) |
 | Currency | IDR (Indonesian Rupiah / Rupiah) |
 | Tax year | Calendar year (1 Jan – 31 Dec) |
-| Standard rate | Effective **11%** for non-luxury goods/services; **12%** for LGST-listed luxury goods from 1 Feb 2025. Under PMK 131/2024, the nominal rate is 12% but the tax base (DPP) for non-luxury supplies is 11/12 of the selling price, so the effective rate remains 11%. (See "Section — Recent changes (PMK 131/2024 + Coretax)" below.) |
+| Standard rate | 11% (effective April 2022; previously 10%) |
 | Zero rate | 0% (exports of goods; exported services meeting criteria) |
 | Exempt | Basic food staples (beras, jagung, etc.), medical services, education, financial services, insurance, employment services, certain mining activities, water (drinking water supply) |
 | PPnBM | Pajak Penjualan atas Barang Mewah (Luxury Goods Sales Tax) — separate 10%–200% on luxury items; out of scope for this skill |
@@ -562,40 +531,13 @@ INDONESIA PPN ONBOARDING — PERTANYAAN MINIMUM
 |---|---|---|
 | 1.0 | 2024 | Initial release |
 | 2.0 | April 2026 | Full v2.0 rewrite: pattern library, worked examples, PMSE section, no inline tier tags |
-| 2.1 | 2026-05 | Add PMK 131/2024 (nominal 12% with 11/12 DPP keeping non-luxury at 11% effective; 12% effective on LGST goods from 1 Feb 2025); add Coretax DJP filing channel; flag pending accountant verification |
-
----
-
-## Section — Recent changes (PMK 131/2024 + Coretax)
-
-### PMK 131/2024 — the 11% / 12% split (effective 1 January 2025)
-
-PMK 131/2024 (issued 31 December 2024) changed the **nominal** PPN rate to **12%**, but kept the **effective** rate at **11%** for non-luxury supplies through a tax-base (DPP — Dasar Pengenaan Pajak) adjustment:
-
-- **Non-luxury goods/services**: 12% applied to a DPP of **11/12 × selling price** → effective PPN = 11%. Output VAT and input VAT both follow this formula. Faktur Pajak shows the 12% rate but the underlying DPP is 11/12 of price.
-- **Luxury goods (LGST-listed — PPnBM)**: from **1 February 2025**, 12% applied to the full selling price → effective 12%. For 1–31 January 2025, the transitional 11/12 DPP also applied to luxury goods.
-
-Practical implication: most freelance/SME invoices remain effectively 11%. Only LGST-listed items (luxury vehicles, luxury non-vehicles per PMK 96/2021 + PMK 15/2023 and PMK 141/2021 + PMK 42/2022) carry a real 12%.
-
-### Coretax DJP — the new filing channel (effective 1 January 2025)
-
-From tax year 2025 onward, all PPN compliance flows through **Coretax DJP**:
-
-- **e-Faktur** is inside Coretax (replaces the standalone desktop app). NSFP (Nomor Seri Faktur Pajak) requested in-platform; QR code generated automatically.
-- **SPT Masa PPN** filed via Coretax (web upload / Coretax Form / Coretax Mobile).
-- For tax periods through December 2024, the legacy DJP Online / e-Faktur desktop is still used; from January 2025 (filed February 2025) onward, Coretax.
-- See `id-einvoice-coretax` skill for the full Coretax workflow.
-
-### NPWP = NIK (effective 1 July 2024)
-
-Indonesian-citizen taxpayers now use their 16-digit **NIK** (national ID) as their **NPWP**. Foreign-national taxpayers retain the 15-digit NPWP until further notice. Faktur Pajak issued to/from Indonesian counterparts should carry the 16-digit identifier.
 
 ---
 
 ## Prohibitions
 
 - NEVER claim input credit from a non-PKP supplier's document — only valid Faktur Pajak qualifies
-- NEVER apply 10% rate — current nominal rate is 12% with an effective 11% on non-luxury via the PMK 131/2024 DPP 11/12 mechanism
+- NEVER apply 10% rate — current rate is 11% (since April 2022)
 - NEVER exempt basic food staples if they are processed/packaged (only raw staples listed in Article 4A are exempt)
 - NEVER omit withholding PPN from government clients — track SSP separately
 - NEVER present calculations as definitive — direct to a licensed Indonesian tax consultant (Konsultan Pajak)

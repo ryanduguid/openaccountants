@@ -3,13 +3,6 @@
 > Open-source accounting skills for Malta. Upload to Claude, ChatGPT, or any AI assistant.
 > Tax, bookkeeping, payroll, formation, financial statements, and more. Free and open source.
 
-## Verified by
-
-**Michael Cutajar CPA (Malta)** — Lead accountant verifier for Malta on OpenAccountants.
-[openaccountants.com/network](https://www.openaccountants.com/network)
-
-_Scope: the “Verified rates & thresholds” blocks inside these skill files are generated from the facts this verifier reviewed. Everything else in the files is an open, source-cited draft. The full accountant-verified tier, with the verifier’s name on every answer, is served via the [connector](https://www.openaccountants.com/connect)._
-
 ## What's in this folder
 
 1. `foundation.md`
@@ -23,18 +16,20 @@ _Scope: the “Verified rates & thresholds” blocks inside these skill files ar
 9. `malta-tax-optimization.md`
 10. `malta-transfer-pricing.md`
 11. `malta-vat-return.md`
-12. `mt-crypto-tax.md`
-13. `mt-estimated-tax.md`
-14. `mt-rental-income.md`
-15. `eu-vat-directive.md`
-16. `bookkeeping-workflow-base.md`
-17. `payroll-workflow-base.md`
-18. `company-formation-workflow-base.md`
-19. `financial-statements-workflow-base.md`
-20. `transfer-pricing-workflow-base.md`
-21. `crypto-tax-workflow-base.md`
-22. `malta-guided-intake.md`
-23. `malta-return-assembly.md`
+12. `mt-capital-gains.md`
+13. `mt-crypto-tax.md`
+14. `mt-estimated-tax.md`
+15. `mt-non-dom.md`
+16. `mt-rental-income.md`
+17. `eu-vat-directive.md`
+18. `bookkeeping-workflow-base.md`
+19. `payroll-workflow-base.md`
+20. `company-formation-workflow-base.md`
+21. `financial-statements-workflow-base.md`
+22. `transfer-pricing-workflow-base.md`
+23. `crypto-tax-workflow-base.md`
+24. `malta-guided-intake.md`
+25. `malta-return-assembly.md`
 
 ## Also known as
 
@@ -63,7 +58,7 @@ The AI will:
 
 **This is not tax, legal, or financial advice.** Everything produced must be reviewed and signed off by a qualified warranted accountant before filing or acting upon.
 
-The most up-to-date, verified version of these skills is maintained at [openaccountants.com](https://openaccountants.com).
+The most up-to-date, verified version of these skills is maintained at [openaccountants.com](https://www.openaccountants.com).
 
 ---
 
@@ -75,9 +70,9 @@ These Malta tax skills need your eye. Every rate, threshold, and form reference 
 
 1. Download the files in this folder
 2. Check the rates against Commissioner for Revenue (CFR)'s website
-3. Email your corrections to **info@openaaccountants.com** — Word doc, Excel, PDF, tracked changes, whatever works
+3. Email your corrections to **info@openaccountants.com** — Word doc, Excel, PDF, tracked changes, whatever works
 
-We'll update the skill and credit you publicly as the verified reviewer at [openaccountants.com](https://openaccountants.com).
+We'll update the skill and credit you publicly as the verified reviewer at [openaccountants.com](https://www.openaccountants.com).
 
 Or if you're comfortable with GitHub: fork the repo, fix the source file under `skills/`, and submit a PR.
 
@@ -86,5 +81,5 @@ Or if you're comfortable with GitHub: fork the repo, fix the source file under `
 ---
 
 *OpenAccountants — open-source accounting skills for AI*
-*134 countries + 51 US states — [openaccountants.com](https://openaccountants.com)*
-*info@openaaccountants.com*
+*134 countries + 51 US states — [openaccountants.com](https://www.openaccountants.com)*
+*info@openaccountants.com*

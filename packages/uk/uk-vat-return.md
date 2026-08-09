@@ -3,38 +3,18 @@ name: uk-vat-return
 description: Use this skill whenever asked to prepare, review, or classify transactions for a UK VAT return (VAT100) for a self-employed individual or very small business in Great Britain. Trigger on phrases like "prepare VAT return", "do my VAT", "classify these for VAT", "VAT100", "9-box return", "MTD", "Making Tax Digital", "flat rate scheme", "FRS", "cash accounting VAT", "input tax", "output tax", "reverse charge construction", "CIS reverse charge", "bad debt relief", "Box 1 to Box 9", "reduced rate UK", "zero-rated UK", "exempt supply UK", "de minimis VAT", "annual accounting scheme", or any question about UK VAT obligations. Covers the VAT100 9-box structure, standard/reduced/zero rates, registration threshold (GBP 90,000), Flat Rate Scheme, cash accounting scheme, annual accounting scheme, MTD requirements, input tax blocked categories, partial exemption, bad debt relief, and reverse charge for construction (CIS). MUST be loaded alongside vat-workflow-base v0.1 or later (for workflow architecture). ALWAYS read this skill before touching any UK VAT work.
 version: 2.0
 jurisdiction: GB
-tax_year: 2025-26
+tax_year: 2025
+tax_year_notes: "2025-26"
+tier: 2
+last_updated: 2026-07-04
 verified_by: pending
 ---
 
 # UK VAT Return Skill (VAT100) v2.0
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 > **Year applicability:** Rules in this skill apply across **2024-25, 2025-26, and 2026-27** unless a specific section flags a year-dated change. The pack is read alongside the rate-bearing skills (`uk-income-tax-sa100`, `uk-national-insurance`, `uk-dividends`, etc.) which carry full 3-year tables.
-
-
-## Verified rates & thresholds (accountant-reviewed)
-
-> Reviewed against the cited tax authorities by **James Power** on 2026-06-03.
-> This block is generated from the verified facts database at openaccountants.com —
-> edit the facts there, not this prose. Items under clarification are excluded.
-
-### VAT Return
-
-- **Standard rate** — 20%  _(VATA 1994)_
-- **Reduced rate** — 5%  _(VATA 1994)_
-- **Zero rate** — 0%  _(VATA 1994)_
-- **Registration threshold** — £90,000 (rolling 12-month)  _(VATA 1994 Sch.1)_
-- **Deregistration threshold** — £88,000  _(VATA 1994)_
-- **FRS entry threshold** — £150,000 (est. taxable excl. VAT)  _(FRS Order 2004)_
-- **FRS exit threshold** — £230,000 (total incl. VAT)  _(FRS Order 2004)_
-- **Cash accounting entry** — £1,350,000  _(VAT Regs 1995)_
-- **Cash accounting exit** — £1,600,000  _(VAT Regs 1995)_
-- **Computer and IT consultancy** — 14.5%  _(FRS Order 2004)_
-- **Management consultancy** — 14.0%  _(FRS Order 2004)_
-- **Accountancy or bookkeeping** — 14.5%  _(FRS Order 2004)_
-- **Limited Cost Trader** — 16.5%  _(FRS Order 2004)_
-- **Quarterly deadline** — 1 month + 7 days after period end  _(VATA 1994)_
-- **MTD requirement** — All VAT-registered: MTD-compatible software  _(MTD (VAT) Regs 2018)_
 
 ## Section 1 — Quick reference
 
@@ -62,7 +42,7 @@ verified_by: pending
 | Companion skill (Tier 1, workflow) | **vat-workflow-base v0.1 or later — MUST be loaded** |
 | Contributor | Open Accountants Community |
 | Validated by | Pending — requires sign-off by a UK-qualified accountant (ACA/ACCA/CTA) |
-| Validation date | Verified by James Power on 2026-06-03 |
+| Validation date | Pending |
 
 **Key VAT100 boxes (the boxes you will use most):**
 

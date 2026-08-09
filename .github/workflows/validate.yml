@@ -5,15 +5,68 @@ on:
   push:
     branches: [main]
 
+# Validation only reads the checkout; do not inherit repository write permissions.
+permissions:
+  contents: read
+
+concurrency:
+  group: validate-${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
 jobs:
   validate:
+    name: Validate guides, package, and MCP runtime
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
         with:
           fetch-depth: 0
-      - uses: actions/setup-python@v5
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5.6.0
         with:
           python-version: "3.11"
+      - name: Install validation dependencies
+        run: python3 -m pip install --disable-pip-version-check "mcp==1.28.1" "PyYAML>=6.0,<7" "uv==0.12.2"
+      - name: Verify the locked dependency graph
+        run: uv lock --check --project mcp
       - name: Validate guides
         run: python3 scripts/validate-guides.py
+      - name: Run focused MCP regression tests
+        run: python3 -m unittest discover -s mcp -p 'test*.py'
+      - name: Run package-builder safety tests
+        run: python3 -m unittest discover -s scripts -p 'test*.py'
+      - name: Verify generated packages are current
+        run: |
+          python3 scripts/build-packages.py
+          if [[ -n "$(git status --porcelain -- packages)" ]]; then
+            echo "Generated packages are stale. Run python3 scripts/build-packages.py and commit packages/."
+            git status --short -- packages
+            git diff -- packages
+            exit 1
+          fi
+      - name: Build and smoke-test the installable MCP wheel
+        run: |
+          python3 -m pip install --disable-pip-version-check "build>=1.2,<2"
+          WHEEL_DIR="$RUNNER_TEMP/openaccountants-mcp-wheel"
+          VENV_DIR="$RUNNER_TEMP/openaccountants-mcp-wheel-venv"
+          mkdir -p "$WHEEL_DIR"
+          python3 -m build --wheel --outdir "$WHEEL_DIR" mcp
+          python3 mcp/wheel_smoke_test.py "$WHEEL_DIR"/*.whl
+          python3 -m venv --system-site-packages "$VENV_DIR"
+          "$VENV_DIR/bin/python" -m pip install --no-index --no-deps "$WHEEL_DIR"/*.whl
+          (
+            cd "$RUNNER_TEMP"
+            OPENACCOUNTANTS_ROOT= MCP_TRANSPORT=stdio "$VENV_DIR/bin/python" - <<'PY'
+          from openaccountants_mcp import server
+
+          if "openaccountants_mcp" not in server.PACKAGES_DIR.as_posix():
+              raise SystemExit(f"wheel did not select its bundled packages: {server.PACKAGES_DIR}")
+          skill = server.get_skill("malta-income-tax")
+          if skill["jurisdiction"] != "MT" or len(server.list_skills()["skills"]) <= 300:
+              raise SystemExit("installed wheel did not expose the expected MCP catalogue")
+          print(f"installed MCP wheel runtime verified: {server.PACKAGES_DIR}")
+          PY
+          )
+      - name: Smoke-test the supported MCP minimum
+        run: python3 mcp/smoke_test.py

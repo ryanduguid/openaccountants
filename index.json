@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-14T05:53:39+00:00",
+ "generated_at": "2026-08-06T12:01:55+00:00",
  "counts": {
   "guides": 1899,
   "jurisdictions": 243,
@@ -14073,7 +14073,7 @@
   {
    "slug": "no-company-formation",
    "path": "skills/international/norway/no-company-formation.md",
-   "name": "Norway Company Formation & Entity Choice",
+   "name": "no-company-formation",
    "jurisdiction": "NO",
    "category": null,
    "tier": 2,
@@ -14085,7 +14085,7 @@
   {
    "slug": "no-corporate-income-tax",
    "path": "skills/international/norway/no-corporate-income-tax.md",
-   "name": "Norway Corporate Income Tax",
+   "name": "no-corporate-income-tax",
    "jurisdiction": "NO",
    "category": null,
    "tier": 2,
@@ -14121,7 +14121,7 @@
   {
    "slug": "no-tax-overview",
    "path": "skills/international/norway/no-tax-overview.md",
-   "name": "Norway Tax Overview",
+   "name": "no-tax-overview",
    "jurisdiction": "NO",
    "category": null,
    "tier": 2,
@@ -14133,7 +14133,7 @@
   {
    "slug": "no-vat-return",
    "path": "skills/international/norway/no-vat-return.md",
-   "name": "norway-mva",
+   "name": "no-vat-return",
    "jurisdiction": "NO",
    "category": null,
    "tier": 2,

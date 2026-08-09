@@ -4,6 +4,8 @@ description: >
   Use this skill whenever an insurer, reinsurer, captive, MGA, or insurance broker asks about accounting, regulatory, or tax issues specific to insurance entities. Trigger on phrases like "IFRS 17", "ASC 944", "LDTI", "Solvency II", "Bermuda EBT", "captive insurance", "PFIC insurance exclusion", "PRA Pillar 1/2/3", "SCR", "MCR", "Lloyd's syndicate", "reinsurance recoverable", "deferred acquisition costs", "DAC", "premium deficiency reserve", "loss reserve discount", "insurance premium tax", "IPT", "consumption levy on insurance", or any insurance-specific accounting/tax question. Covers IFRS 17 transition, US ASC 944 Long-Duration Targeted Improvements (LDTI), Solvency II prudential interaction with tax, captive insurance regimes (Bermuda, Cayman, Guernsey, Vermont), insurance premium tax matrix, and the PFIC active insurance exception. Does NOT cover: insurance product design / pricing, actuarial valuation methodology beyond reference, or insurance regulatory authorisation.
 version: 0.1
 jurisdiction: GLOBAL
+tier: 2
+last_updated: 2026-06-12
 category: vertical
 depends_on:
   - corporate-income-tax-workflow-base
@@ -11,6 +13,8 @@ verified_by: pending
 ---
 
 # Insurance Sector Tax & Accounting v0.1
+
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 ## What this file is
 

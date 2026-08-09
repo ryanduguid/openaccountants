@@ -2,9 +2,14 @@
 name: us-federal-return-assembly
 description: Tier 2 orchestrator skill that assembles the complete federal income tax return package for US freelance software developers filing as sole proprietors or single-member LLCs disregarded for federal tax. Sequences the upstream content skills (bookkeeping, SE computation, retirement, SE health insurance, QBI, estimated tax) in dependency order, resolves circular computations between SE health insurance and retirement contributions, produces Form 1040 with all required schedules (Schedule 1, Schedule 2, Schedule 3, Schedule C, Schedule SE, Schedule D if needed, Form 8829, Form 4562, Form 8995 or 8995-A, Form 8962 if marketplace coverage, Form 2210 if penalty, Form 7206), performs cross-form reconciliation checks, and produces the final reviewer package. Does not itself compute tax amounts — delegates to upstream content skills. MUST be loaded alongside us-tax-workflow-base v0.2 or later and all content skills it orchestrates. Federal only.
 version: 0.2
+jurisdiction: US
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # US Federal Return Assembly Skill v0.2
+
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 ## CRITICAL EXECUTION DIRECTIVE — READ FIRST
 
@@ -483,7 +488,6 @@ If the taxpayer is in AK, FL, NV, NH, SD, TN, TX, WA, or WY — there is no stat
 - **v0.1 (April 2026):** Initial draft for freelance software developer product.
 
 ## End of US Federal Return Assembly Skill v0.1
-
 
 ---
 

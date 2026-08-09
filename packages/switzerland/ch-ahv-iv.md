@@ -2,9 +2,14 @@
 name: ch-ahv-iv
 description: Use this skill whenever asked about Swiss AHV/IV (Alters- und Hinterlassenenversicherung / Invalidenversicherung) social contributions for self-employed individuals. Trigger on phrases like "AHV contributions", "Swiss social security self-employed", "AHV/IV/EO", "Beitragsverfügung", "sliding scale AHV", "Swiss self-employed insurance", or any question about social insurance obligations for a self-employed client in Switzerland. Covers the 5.371-10% sliding scale, EO, minimum contribution, and BVG voluntary pillar 2. ALWAYS read this skill before touching any Switzerland social contributions work.
 version: 2.0
+jurisdiction: CH
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # Switzerland AHV/IV Contributions -- Self-Employed Skill v2.0
+
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 ## Section 1 -- Quick reference
 

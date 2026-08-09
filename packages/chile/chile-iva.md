@@ -4,12 +4,16 @@ description: Use this skill whenever asked to prepare, review, or classify trans
 version: 2.0
 jurisdiction: CL
 tax_year: 2025
+tier: 2
+last_updated: 2026-06-12
 category: international
 depends_on:
   - vat-workflow-base
 ---
 
 # Chile IVA (Impuesto al Valor Agregado) Skill v2.0
+
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 ---
 
@@ -495,7 +499,6 @@ When client cannot provide DTEs for all transactions:
 | Non-resident digital services — SII | SII Circular 42/2020 |
 | IVA exportadores — refund guide | SII — guías de usuario |
 | LibreDTE lib-core (SII codes, AGPL-3.0) | https://github.com/LibreDTE/libredte-lib-core |
-
 
 ---
 

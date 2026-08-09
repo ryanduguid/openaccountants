@@ -2,9 +2,14 @@
 name: ca-estimated-tax-540es
 description: Tier 2 California content skill for computing California estimated tax payments under Form 540-ES for full-year California residents who are sole proprietors or single-member LLCs disregarded for federal tax. Covers the California 30/40/0/30 installment schedule (NOT equal quarterly like federal), due dates (April 15, June 15, September 15, January 15), the 100% prior-year safe harbor, underpayment penalty computation on Form 5805 / 5805-F, required annual payment rules, interaction with federal estimated tax (separate payments to separate agencies), and withholding credits from W-2 or backup withholding. Defers income tax computation to ca-540-individual-return and SMLLC franchise tax to ca-smllc-form-568. MUST be loaded alongside us-tax-workflow-base v0.1 or later. California residents only. Tax year 2025.
 version: 0.2
+jurisdiction: US-CA
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # CA Estimated Tax 540-ES Skill v0.2
+
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 ## What this file is, and what it is not
 
@@ -479,7 +484,6 @@ California estimated tax and federal estimated tax are completely independent:
 - **v0.2 (April 2026):** Full content skill with 30/40/0/30 schedule, safe harbor, underpayment penalty, edge cases, and test suite.
 
 ## End of skill
-
 
 ---
 

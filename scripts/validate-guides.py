@@ -3,9 +3,10 @@
 Validate guide files, the hand-authored us-federal set, and index.json.
 
 Checks (ERROR = exit 1, WARN = printed summary only):
-  1. Every guide file's frontmatter block parses (a file that opens `---`
-     must close it). Files without any frontmatter are treated as docs, not
-     guides, and skipped (same rule scripts/build-index.py uses).
+  1. Every guide file's frontmatter block parses with the same PyYAML loader
+     used by the MCP server (a file that opens `---` must close it). Files
+     without any frontmatter are treated as docs, not guides, and skipped
+     (same rule scripts/build-index.py uses).
   2. `name` and `description` are present — ERROR if missing, except for the
      frozen LEGACY_MISSING_DESCRIPTION baseline below (grandfathered; the
      list must only ever shrink).
@@ -29,7 +30,7 @@ Checks (ERROR = exit 1, WARN = printed summary only):
      packages/manifest.json). index.json is the single canonical inventory;
      the old manifests had no consumers and were removed so they can't drift.
 
-Stdlib only. Run: python3 scripts/validate-guides.py
+Requires PyYAML. Run: python3 scripts/validate-guides.py
 """
 
 import importlib.util
@@ -39,6 +40,9 @@ import re
 import subprocess
 import sys
 import tempfile
+from datetime import date
+
+import yaml
 
 REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BUILD_INDEX = os.path.join(REPO_ROOT, "scripts", "build-index.py")
@@ -78,11 +82,26 @@ def load_build_index():
 # `tax_year` must be a bare integer year, e.g. `tax_year: 2025`. Ranges,
 # calendars, and qualifiers go in `tax_year_notes` (see
 # scripts/normalize-tax-year.py, issue #49).
-TAX_YEAR_RE = re.compile(r"^tax_year:[ \t]*(.*?)[ \t]*$", re.MULTILINE)
 TAX_YEAR_MIN, TAX_YEAR_MAX = 2015, 2035
+ISO_DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 
 
-LAST_UPDATED_FMT = re.compile(r"\d{4}-\d{2}-\d{2}")
+def text_value(value):
+    """Return non-empty string values as normalized text, else None."""
+    return value.strip() if isinstance(value, str) and value.strip() else None
+
+
+def valid_last_updated(value):
+    """Whether *value* is an ISO calendar date the MCP can preserve."""
+    if type(value) is date:
+        return True
+    if not isinstance(value, str) or not ISO_DATE_RE.fullmatch(value):
+        return False
+    try:
+        date.fromisoformat(value)
+    except ValueError:
+        return False
+    return True
 
 
 def check_guides(bi, errors, warnings):
@@ -99,34 +118,45 @@ def check_guides(bi, errors, warnings):
                 skipped += 1  # doc file, not a guide
             continue
         guides += 1
-        fields = bi.parse_known_keys(block)
-        if not fields["name"]:
+        try:
+            fields = yaml.safe_load(block)
+        except yaml.YAMLError as exc:
+            problem = getattr(exc, "problem", None) or str(exc).splitlines()[0]
+            errors.append(f"{rel}: invalid YAML frontmatter ({problem})")
+            continue
+        if not isinstance(fields, dict):
+            errors.append(f"{rel}: frontmatter must be a YAML mapping")
+            continue
+
+        if not text_value(fields.get("name")):
             errors.append(f"{rel}: missing required frontmatter key `name`")
-        has_description = re.search(r"^description:", block, re.MULTILINE)
-        if not has_description and rel not in LEGACY_MISSING_DESCRIPTION:
+        if not text_value(fields.get("description")) and rel not in LEGACY_MISSING_DESCRIPTION:
             errors.append(f"{rel}: missing required frontmatter key `description`")
-        tax_year = TAX_YEAR_RE.search(block)
-        if tax_year:
-            value = tax_year.group(1)
-            if not re.fullmatch(r"\d{4}", value) or not (TAX_YEAR_MIN <= int(value) <= TAX_YEAR_MAX):
-                errors.append(
-                    f"{rel}: `tax_year` must be a bare integer "
-                    f"{TAX_YEAR_MIN}-{TAX_YEAR_MAX} (got {value!r}) — put "
-                    "ranges/calendars/qualifiers in `tax_year_notes`"
-                )
-        tier = fields["tier"]
-        if not tier:
-            errors.append(f"{rel}: missing required frontmatter key `tier`")
-        elif tier not in ("1", "2"):
-            errors.append(f"{rel}: `tier` must be 1 or 2 (got {tier!r})")
-        last_updated = fields["last_updated"]
-        if not last_updated:
-            errors.append(f"{rel}: missing required frontmatter key `last_updated`")
-        elif not LAST_UPDATED_FMT.fullmatch(last_updated):
+
+        tax_year = fields.get("tax_year")
+        if tax_year is not None and (
+            type(tax_year) is not int
+            or not TAX_YEAR_MIN <= tax_year <= TAX_YEAR_MAX
+        ):
             errors.append(
-                f"{rel}: `last_updated` must be YYYY-MM-DD (got {last_updated!r})"
+                f"{rel}: `tax_year` must be a bare integer "
+                f"{TAX_YEAR_MIN}-{TAX_YEAR_MAX} (got {tax_year!r}) — put "
+                "ranges/calendars/qualifiers in `tax_year_notes`"
             )
-        if not fields["jurisdiction"]:
+
+        tier = fields.get("tier")
+        if tier is None:
+            errors.append(f"{rel}: missing required frontmatter key `tier`")
+        elif type(tier) is not int or tier not in (1, 2):
+            errors.append(f"{rel}: `tier` must be 1 or 2 (got {tier!r})")
+        last_updated = fields.get("last_updated")
+        if last_updated is None:
+            errors.append(f"{rel}: missing required frontmatter key `last_updated`")
+        elif not valid_last_updated(last_updated):
+            errors.append(
+                f"{rel}: `last_updated` must be a valid YYYY-MM-DD date (got {last_updated!r})"
+            )
+        if not text_value(fields.get("jurisdiction")):
             if os.path.dirname(rel) in JURISDICTION_OPTIONAL_DIRS:
                 warn_counts["jurisdiction (jurisdiction-agnostic dirs)"] += 1
             else:
@@ -144,7 +174,14 @@ def check_us_federal_deletions(errors):
         ("working tree vs HEAD", ["git", "diff", "--name-status", "HEAD", "--", "packages/us-federal"]),
     ):
         try:
-            out = subprocess.run(args, cwd=REPO_ROOT, capture_output=True, text=True, timeout=60)
+            out = subprocess.run(
+                args,
+                cwd=REPO_ROOT,
+                capture_output=True,
+                text=True,
+                timeout=60,
+                check=False,
+            )
         except (OSError, subprocess.TimeoutExpired):
             print(f"skipping us-federal deletion check ({label}): git unavailable")
             continue
@@ -167,6 +204,7 @@ def check_index_fresh(errors):
         result = subprocess.run(
             [sys.executable, BUILD_INDEX, "--out", fresh_path],
             cwd=REPO_ROOT, capture_output=True, text=True,
+            check=False,
         )
         if result.returncode != 0:
             errors.append(f"build-index.py failed while checking freshness: {result.stderr.strip()}")
@@ -221,6 +259,7 @@ def check_llms_full_fresh(errors):
             [sys.executable, os.path.join(REPO_ROOT, "scripts", "build-llms-full.py"),
              "--out", tmp],
             capture_output=True, text=True,
+            check=False,
         )
         if result.returncode != 0:
             errors.append(f"build-llms-full.py failed during freshness check: {result.stderr.strip()}")

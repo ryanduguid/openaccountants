@@ -1,9 +1,14 @@
 ---
 name: slovenia-vat-return
 description: Use this skill whenever asked to prepare, review, or create a Slovenian VAT return (DDV-O form) for any client. Trigger on phrases like "prepare VAT return", "do the DDV", "fill in DDV-O", "create the return", "Slovenian VAT", or any request involving Slovenia VAT filing. Also trigger when classifying transactions for VAT purposes from bank statements, invoices, or other source data. This skill contains the complete Slovenian VAT classification rules, box mappings, deductibility rules, reverse charge treatment, and filing deadlines required to produce a correct return. ALWAYS read this skill before touching any VAT-related work for Slovenia.
+jurisdiction: SI
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # Slovenia VAT Return Preparation Skill
+
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 ---
 
@@ -702,7 +707,6 @@ This skill does not compute income tax. The following is reference information o
 This skill covers Slovenia's VAT system based on ZDDV-1 (Official Gazette RS 13/11 as amended). Key distinctive features include: the 22%/9.5%/5% three-tier rate structure, full blocking of passenger cars and entertainment, the flat-rate agriculture scheme (8% compensation), the new July 2025 record submission obligations (Record of Charged DDV and Record of DDV Deduction), domestic reverse charge for construction/waste/emissions, and quarterly filing for businesses under EUR 210,000. Validation by a qualified Slovenian davcni svetovalec or pooblasceni revizor is required before production use.
 
 **A skill may not be published without sign-off from a qualified practitioner in the relevant jurisdiction.**
-
 
 ---
 

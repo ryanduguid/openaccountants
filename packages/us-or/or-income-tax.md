@@ -2,11 +2,15 @@
 name: or-income-tax
 description: Triggers when the taxpayer is an Oregon resident sole proprietor or single-member LLC needing to file Oregon Form OR-40. Covers Oregon's four-bracket graduated income tax (4.75%–9.9% for tax year 2025), standard and itemized deductions, personal exemption credit, federal tax subtraction, and Oregon's unique no-sales-tax environment. Must be loaded alongside us-tax-workflow-base and us-federal-return-assembly.
 jurisdiction: US-OR
+tier: 2
+last_updated: 2026-06-12
 version: "0.1"
 validation_status: ai-drafted-q3
 ---
 
 # Oregon Individual Income Tax Skill — Self-Employed / Sole Proprietor
+
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 > **Scope.** Oregon Form OR-40 (Full-Year Resident) for tax year 2025 for full-year Oregon resident sole proprietors and disregarded single-member LLCs. Covers Oregon's four-bracket graduated income tax, standard and itemized deductions, Oregon-specific modifications to federal income, and credits.
 > **Quality tier.** Q3 — AI-drafted, not independently verified. All rates and thresholds have been researched from primary sources but must be confirmed by a qualified professional before use in return preparation.

@@ -1,9 +1,14 @@
 ---
 name: ukraine-vat
 description: Use this skill whenever asked to prepare, review, or advise on a Ukraine VAT (PDV) return or any PDV-related classification. Trigger on phrases like "prepare PDV return", "Ukraine VAT", "podatok na dodanu vartist", "Ukrainian VAT filing", "DPS", "SEA PDV", "tax invoice registration", or any request involving Ukrainian VAT obligations. This skill contains the complete Ukrainian PDV classification rules, rate tables, electronic administration system (SEA PDV) rules, mandatory tax invoice registration, filing deadlines, and deductibility rules required to produce a correct return. ALWAYS read this skill before touching any Ukraine VAT-related work.
+jurisdiction: UA
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # Ukraine VAT (PDV) Return Preparation Skill
+
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 ---
 
@@ -774,7 +779,6 @@ Action Required: Do not classify. Refer to qualified tax adviser. Document gap.
 This skill covers Ukrainian PDV as of April 2026. Ukrainian tax law is subject to frequent amendment, particularly during the period of martial law. Wartime provisions are temporary and may be extended, modified, or terminated at any time by the Verkhovna Rada. All rates, thresholds, and wartime provisions should be verified against the most recent legislation and DPS guidance before filing. A qualified Ukrainian tax adviser (podatkovyi konsultant) or auditor must validate all T1 rules before this skill is used in production.
 
 **A skill may not be published without sign-off from a qualified practitioner in the relevant jurisdiction.**
-
 
 ---
 

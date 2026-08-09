@@ -22,12 +22,12 @@ This block is generated from verified `skill_facts` — edit the facts, not the 
 
 ### pk-cgt
 
-- **Securities §37A (TBC FA 2025)** — 
+- **Securities §37A (TBC FA 2025)** —
 - **PSX-listed shares — filer** — 15% flat  _(ITO 2001 §37A)_
 - **PSX-listed shares — non-filer** — Normal slab rates (up to 45%), with a minimum of 15%  _(ITO 2001 §37A)_
 - **Modaraba certs / redeemable capital / listed debt** — Same 15% (filer) / normal slab rates up to 45% with a 15% minimum (non-filer)  _(ITO 2001 §37A)_
 - **Collection** — At source by NCCPL on settled trades; investor reconciles in annual return  _(§37A / NCCPL)_
-- **Immovable property §37 (illustrative taper — verify FA 2025)** — 
+- **Immovable property §37 (illustrative taper — verify FA 2025)** —
 - **Holding ≤ 1 year — filer** — 15% (full statutory rate)  _(ITO 2001 §37)_
 - **Holding > 1 ≤ 2 years** — 0.15  _(ITO 2001 §37)_
 - **Holding > 2 ≤ 3 years** — 0.15  _(ITO 2001 §37)_

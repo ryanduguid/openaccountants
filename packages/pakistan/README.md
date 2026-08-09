@@ -8,6 +8,28 @@
 1. `foundation.md`
 2. `intake.md`
 3. `pakistan-sales-tax.md`
+4. `pk-bookkeeping.md`
+5. `pk-cgt.md`
+6. `pk-corporate-tax.md`
+7. `pk-crypto-tax.md`
+8. `pk-einvoice.md`
+9. `pk-financial-statements.md`
+10. `pk-formation.md`
+11. `pk-income-tax.md`
+12. `pk-it-export-tax.md`
+13. `pk-payroll-eobi.md`
+14. `pk-payroll.md`
+15. `pk-sales-tax-federal.md`
+16. `pk-sales-tax-services.md`
+17. `pk-social-contributions.md`
+18. `pk-tax-optimization.md`
+19. `pk-withholding-tax.md`
+20. `bookkeeping-workflow-base.md`
+21. `einvoice-workflow-base.md`
+22. `payroll-workflow-base.md`
+23. `company-formation-workflow-base.md`
+24. `financial-statements-workflow-base.md`
+25. `crypto-tax-workflow-base.md`
 
 ## How to use
 
@@ -24,17 +46,17 @@ The AI will:
 - Ask onboarding questions to confirm your situation
 - Load the right domain skills (tax, bookkeeping, payroll, etc.)
 - Produce working papers for each obligation
-- Flag anything that needs your qualified tax professional's attention
+- Flag anything that needs your tax professional's attention
 
 ## Important
 
-**This is not tax, legal, or financial advice.** Everything produced must be reviewed and signed off by a qualified qualified tax professional before filing or acting upon.
+**This is not tax, legal, or financial advice.** Everything produced must be reviewed and signed off by a qualified tax professional before filing or acting upon.
 
 The most up-to-date, verified version of these skills is maintained at [openaccountants.com](https://www.openaccountants.com).
 
 ---
 
-## Are you a qualified tax professional?
+## Are you a tax professional?
 
 These Pakistan tax skills need your eye. Every rate, threshold, and form reference was AI-drafted and needs a human professional to verify it.
 

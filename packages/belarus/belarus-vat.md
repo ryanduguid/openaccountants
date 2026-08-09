@@ -2,9 +2,14 @@
 name: belarus-vat
 description: Use this skill whenever asked to prepare, review, or classify transactions for a Belarus VAT (NDS) return for any client. Trigger on phrases like "Belarus VAT", "Belarusian NDS", "MNS filing", or any request involving Belarusian VAT. This skill covers standard NDS payers filing monthly/quarterly returns. Simplified taxation and individual entrepreneur special regimes are in the refusal catalogue. MUST be loaded alongside vat-workflow-base v0.1 or later. ALWAYS read this skill before touching any Belarus VAT work.
 version: 2.0
+jurisdiction: BY
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # Belarus VAT (NDS) Return Skill v2.0
+
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 ## Section 1 — Quick reference
 
@@ -333,7 +338,6 @@ Per `vat-workflow-base` Section 3 with Belarus-specific box codes.
 - **v2.0 (April 2026):** Full rewrite to Malta v2.0 10-section structure.
 
 ## End of Belarus VAT (NDS) Skill v2.0
-
 
 ---
 

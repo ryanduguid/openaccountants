@@ -4,7 +4,10 @@ description: >
   Use this skill whenever asked about UK property income or rental income for individuals. Trigger on phrases like "SA105", "rental income UK", "property income", "buy-to-let", "letting income", "landlord tax UK", "rent-a-room", "mortgage interest relief", "Section 24", "property allowance", "non-resident landlord scheme", "NRLS", "furnished holiday let", "FHL abolished", "FHL abolition", "repairs deduction", "letting agent fees", "property expenses", "UK property pages", "April 2026 property tax", "property income hike", "MTD ITSA landlord", or any question about computing, filing, or reporting UK property income on a Self Assessment tax return. Covers SA105 form structure, allowable expenses, mortgage interest restriction, Rent-a-Room relief, property income allowance, non-resident landlord scheme, the abolition of FHL rules, and the April 2026 property income rate change announced at Autumn Budget 2025. ALWAYS read this skill before touching any UK rental income work.
 version: 1.1
 jurisdiction: GB
-tax_year: 2025-26
+tax_year: 2025
+tax_year_notes: "2025-26"
+tier: 2
+last_updated: 2026-07-04
 category: international
 depends_on:
   - uk-income-tax-sa100
@@ -13,20 +16,9 @@ verified_by: pending
 
 # UK Property Income (SA105) Skill v1.1
 
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
 ---
-
-## Verified rates & thresholds (accountant-reviewed)
-
-> Reviewed against the cited tax authorities by **James Power** on 2026-06-03.
-> This block is generated from the verified facts database at openaccountants.com —
-> edit the facts there, not this prose. Items under clarification are excluded.
-
-### Rental SA105
-
-- **Allowance** — £1,000  _(ITTOIA 2005)_
-- **Threshold** — £7,500/year (£3,750 if joint)  _(ITTOIA ss.784-802)_
-- **Deductible as expense?** — NO — tax credit at 20% of finance costs  _(ITA 2007 ss.274A-274D)_
-- **Status from 2025-26** — Abolished — treated as normal property income  _(Finance Act 2025)_
 
 ## Section 1 -- Quick Reference
 

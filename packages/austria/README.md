@@ -7,10 +7,15 @@
 
 1. `foundation.md`
 2. `intake.md`
-3. `at-income-tax.md`
-4. `at-svs-contributions.md`
-5. `austria-vat-return.md`
-6. `eu-vat-directive.md`
+3. `at-company-formation.md`
+4. `at-corporate-income-tax.md`
+5. `at-income-tax.md`
+6. `at-svs-contributions.md`
+7. `at-tax-overview.md`
+8. `at-vat-return.md`
+9. `austria-vat-return.md`
+10. `eu-vat-directive.md`
+11. `company-formation-workflow-base.md`
 
 ## Also known as
 

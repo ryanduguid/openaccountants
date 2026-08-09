@@ -4,7 +4,10 @@ description: >
   Use this skill whenever asked about UK income tax for individuals filing SA100 Self Assessment. Trigger on phrases like "income tax UK", "SA100", "personal allowance", "tax bands", "tax computation", "marriage allowance", "savings allowance", "dividend allowance", "Scottish tax rates", "payments on account", "tax reducers", "tax relief", "April 2026", "2026-27", "Autumn Budget 2025", "income tax bands frozen 2027-28", or any question about computing a UK individual's income tax liability. Covers personal allowance (including taper), income tax bands for rUK and Scotland, marriage allowance, savings and dividend allowances, tax reducers, the final tax computation, payments on account, and the Autumn Budget 2025 changes from April 2026. ALWAYS read this skill before touching any UK income tax return work.
 version: 2.1
 jurisdiction: GB
-tax_year: 2025-26
+tax_year: 2025
+tax_year_notes: "2025-26"
+tier: 2
+last_updated: 2026-07-04
 category: international
 depends_on:
   - income-tax-workflow-base
@@ -12,6 +15,8 @@ verified_by: pending
 ---
 
 # UK Income Tax (SA100) -- Individual Tax Computation Skill v2.1
+
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 This skill covers **three tax years in parallel**:
 
@@ -22,39 +27,6 @@ This skill covers **three tax years in parallel**:
 All headline income tax rates and thresholds are **frozen through 2027-28**. The Autumn Budget 2025 announced targeted rate increases on investment income (dividends, savings, property) effective 6 April 2026 -- see Section 1.5.
 
 ---
-
-## Verified rates & thresholds (accountant-reviewed)
-
-> Reviewed against the cited tax authorities by **James Power** on 2026-06-03.
-> This block is generated from the verified facts database at openaccountants.com —
-> edit the facts there, not this prose. Items under clarification are excluded.
-
-### Income Tax SA100
-
-- **Personal allowance** — £0 – £12,570 at 0%  _(ITA 2007)_
-- **Basic rate** — £12,571 – £50,270 at 20%  _(ITA 2007)_
-- **Higher rate** — £50,271 – £125,140 at 40%  _(ITA 2007)_
-- **Additional rate** — Over £125,140 at 45%  _(ITA 2007)_
-- **Starter rate** — £12,571 – £14,876 at 19%  _(Scotland Act 2016)_
-- **Basic rate** — £14,877 – £26,561 at 20%  _(Scotland Act 2016)_
-- **Intermediate rate** — £26,562 – £43,662 at 21%  _(Scotland Act 2016)_
-- **Higher rate** — £43,663 – £75,000 at 42%  _(Scotland Act 2016)_
-- **Advanced rate** — £75,001 – £125,140 at 45%  _(Scotland Act 2016)_
-- **Top rate** — Over £125,140 at 48%  _(Scotland Act 2016)_
-- **Personal allowance** — £12,570  _(ITA 2007)_
-- **PA taper starts** — £100,000 adjusted net income  _(ITA 2007)_
-- **PA fully withdrawn** — £125,140  _(ITA 2007)_
-- **Basic rate band** — £37,700  _(ITA 2007)_
-- **PSA (basic rate)** — £1,000  _(ITA 2007)_
-- **PSA (higher rate)** — £500  _(ITA 2007)_
-- **Dividend allowance** — £500  _(ITA 2007 s.13A)_
-- **Marriage allowance transfer** — £1,260 (reducer £252)  _(ITA 2007)_
-- **Pension annual allowance** — £60,000  _(Finance Act)_
-- **Basic rate band** — 8.75%  _(ITA 2007)_
-- **Higher rate band** — 33.75%  _(ITA 2007)_
-- **Additional rate band** — 39.35%  _(ITA 2007)_
-- **Online SA return** — 31 January following tax year  _(TMA 1970)_
-- **Paper SA return** — 31 October following tax year  _(TMA 1970)_
 
 ## Section 1 -- Quick Reference
 

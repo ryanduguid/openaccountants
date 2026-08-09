@@ -2,9 +2,14 @@
 name: lithuania-vat-return
 description: Use this skill whenever asked to prepare, review, or classify transactions for a Lithuanian VAT return (FR0600 form) for any client. Trigger on phrases like "prepare VAT return", "Lithuanian VAT", "PVM return", "FR0600", "pridetines vertes mokestis", or any request involving Lithuania VAT filing. MUST be loaded alongside BOTH vat-workflow-base and eu-vat-directive companion skills. ALWAYS read this skill before touching any Lithuania VAT work.
 version: 2.0
+jurisdiction: LT
+tier: 2
+last_updated: 2026-06-12
 ---
 
 # Lithuania PVM Return Skill (FR0600) v2.0
+
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 ## Section 1 — Quick reference
 

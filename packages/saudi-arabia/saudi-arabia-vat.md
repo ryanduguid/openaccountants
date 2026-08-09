@@ -4,28 +4,14 @@ description: Use this skill whenever asked to prepare, review, or classify trans
 version: 2.0
 jurisdiction: SA
 tax_year: 2025
+tier: 2
+last_updated: 2026-06-12
 verified_by: pending
 ---
 
 # Saudi Arabia VAT Return Skill v2.0
 
-## Verified rates & thresholds (accountant-reviewed)
-
-> Reviewed against the cited tax authorities by **Mehran Habib** on 2026-06-06.
-> This block is generated from the verified facts database at openaccountants.com —
-> edit the facts there, not this prose. Items under clarification are excluded.
-
-### VAT
-
-- **Standard rate** — 15% (from 1 Jul 2020; was 5%)  _(VAT Law + Transitional Provisions; Guide to Transitional Provisions for Value Added Tax - 1 July 2020)_
-- **Zero-rated** — 0% — exports, intl transport, qualifying medicines and medical equipments, investment metals 99%  _(VAT Implementing Regs; Chapter six - Article 29 & 30 (ZATCA VAT Implementing Regulations))_
-- **Exempt** — Financial services (margin-based), residential rental, life insurance  _(VAT Implementing Regs; Chapter five - Article 29 & 30 (ZATCA VAT Implementing Regulations))_
-- **Mandatory threshold** — SAR 375,000 annual taxable supplies  _(VAT Implementing Regs; Chapter two - Article 3 (ZATCA VAT Implementing Regulations) + ZATCA VAT Guidelines 7.1.1)_
-- **Voluntary threshold** — SAR 187,500  _(VAT Implementing Regs; Chapter two - Article 7 (ZATCA VAT Implementing Regulations) + ZATCA VAT Guidelines 7.2.1 & 7.2.2)_
-- **TIN format** — 15-digit starting and ending with 3  _(ZATCA E-Invoicing Technical Guideline; E-Invoicing detailed technical guidelines 3.3.3.1)_
-- **Monthly filing** — Turnover > SAR 40,000,000  _(VAT Implementing Regs; Chapter ten - Article 58 (1) - Tax Period (ZATCA VAT Implementing Regulation))_
-- **Quarterly filing** — Turnover ≤ SAR 40,000,000  _(VAT Implementing Regs; Chapter ten - Article 58 (2) - Tax Period (ZATCA VAT Implementing Regulation))_
-- **Deadline** — Last day of month following period end  _(VAT Implementing Regs; Chapter ten - Article 62 (1) - Tax Period (ZATCA VAT Implementing Regulation))_
+> **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 ## Section 1 — Quick reference
 
@@ -733,7 +719,6 @@ This skill is v2.0, rewritten in April 2026 to align with the Malta v2.0 structu
 ## End of Saudi Arabia VAT Return Skill v2.0
 
 This skill is incomplete without the companion file loaded alongside it: `vat-workflow-base` v0.1 or later (Tier 1, workflow architecture). Do not attempt to produce a VAT return without both files loaded.
-
 
 ---
 

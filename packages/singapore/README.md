@@ -8,15 +8,18 @@
 1. `foundation.md`
 2. `intake.md`
 3. `sg-cpf-medisave.md`
-4. `sg-income-tax.md`
-5. `singapore-crypto-tax.md`
-6. `singapore-formation.md`
-7. `singapore-gst.md`
-8. `singapore-tax-optimization.md`
-9. `singapore-transfer-pricing.md`
-10. `company-formation-workflow-base.md`
-11. `transfer-pricing-workflow-base.md`
-12. `crypto-tax-workflow-base.md`
+4. `sg-gst-return.md`
+5. `sg-income-tax.md`
+6. `sg-tax-residency.md`
+7. `sg-zero-cgt.md`
+8. `singapore-crypto-tax.md`
+9. `singapore-formation.md`
+10. `singapore-gst.md`
+11. `singapore-tax-optimization.md`
+12. `singapore-transfer-pricing.md`
+13. `company-formation-workflow-base.md`
+14. `transfer-pricing-workflow-base.md`
+15. `crypto-tax-workflow-base.md`
 
 ## Also known as
 

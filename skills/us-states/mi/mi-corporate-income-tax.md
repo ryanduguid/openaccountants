@@ -1,5 +1,5 @@
 ---
-description: Source-cited tax guide for US-MI: mi corporate income tax. Unverified draft, pending local-accountant review.
+description: 'Source-cited tax guide for US-MI: mi corporate income tax. Unverified draft, pending local-accountant review.'
 name: mi-corporate-income-tax
 jurisdiction: US-MI
 domain: corporate-income-tax
@@ -16,7 +16,7 @@ Michigan imposes a 6% flat Corporate Income Tax on the apportioned business inco
 
 ## 1. Scope
 
-- **Scope heading** — 
+- **Scope heading** —
 
 ### 1.1 Who is subject to CIT
 
@@ -46,7 +46,7 @@ Michigan imposes a 6% flat Corporate Income Tax on the apportioned business inco
 
 ## 2. Rate and tax base
 
-- **Rate and tax base heading** — 
+- **Rate and tax base heading** —
 
 ### 2.1 Rate
 
@@ -86,7 +86,7 @@ Michigan imposes a 6% flat Corporate Income Tax on the apportioned business inco
 
 ## 3. Small Business Alternative Credit
 
-- **SBAC heading** — 
+- **SBAC heading** —
 
 ### 3.1 Statutory basis
 
@@ -115,7 +115,7 @@ In practice, because of the multiplicative effect of the reduction and the loss 
 
 ## 4. Apportionment
 
-- **Apportionment heading** — 
+- **Apportionment heading** —
 
 ### 4.1 Single sales factor
 
@@ -144,7 +144,7 @@ In practice, because of the multiplicative effect of the reduction and the loss 
 
 ## 5. Combined / unitary returns
 
-- **Combined/unitary returns heading** — 
+- **Combined/unitary returns heading** —
 
 ### 5.1 Mandatory unitary combined filing
 
@@ -175,7 +175,7 @@ In practice, because of the multiplicative effect of the reduction and the loss 
 
 ## 6. MBT legacy regime
 
-- **MBT legacy regime heading** — 
+- **MBT legacy regime heading** —
 
 ### 6.1 The MBT-to-CIT transition
 
@@ -198,7 +198,7 @@ For freelance developer-scale taxpayers and the typical small-and-mid C-corp tha
 
 ## 7. Flow-Through Entity Tax (FTE)
 
-- **FTE heading** — 
+- **FTE heading** —
 
 ### 7.1 Statutory basis: PA 135 of 2021
 
@@ -242,7 +242,7 @@ For freelance developer-scale taxpayers and the typical small-and-mid C-corp tha
 
 ## 8. Filing and estimated tax
 
-- **Filing and estimated tax heading** — 
+- **Filing and estimated tax heading** —
 
 ### 8.1 Annual return
 
