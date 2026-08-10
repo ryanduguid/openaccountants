@@ -1,13 +1,14 @@
 ---
 name: us-expatriation-exit-tax
-description: US expatriation tax for citizens renouncing and long-term green-card holders abandoning status: the covered-expatriate tests (IRC §877A/§877), the mark-to-market exit tax, the special rules for deferred compensation, tax-deferred accounts and non-grantor trust interests, the dual-citizen and minor exceptions, Form 8854, and the §2801 tax on US recipients of gifts from covered expatriates. Produces a working paper and a reviewer brief — not a filed return. MUST load alongside cross-border-tax-workflow-base.
+description: "US expatriation tax for citizens renouncing and long-term green-card holders abandoning status: the covered-expatriate tests (IRC §877A/§877), the mark-to-market exit tax, the special rules for deferred compensation, tax-deferred accounts and non-grantor trust interests, the dual-citizen and minor exceptions, Form 8854, and the §2801 tax on US recipients of gifts from covered expatriates. Produces a working paper and a reviewer brief — not a filed return. MUST load alongside cross-border-tax-workflow-base."
 version: 0.1
 jurisdiction: US
 tax_year: 2025
 last_updated: 2026-07-13
 reviewed_by: James Wallach
 review_status: current
-depends_on: - cross-border-tax-workflow-base
+depends_on:
+  - cross-border-tax-workflow-base
 category: international
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)

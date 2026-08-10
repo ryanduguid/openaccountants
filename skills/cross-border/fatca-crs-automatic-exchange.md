@@ -1,12 +1,13 @@
 ---
 name: fatca-crs-automatic-exchange
-description: Use this skill whenever a Financial Institution (FI), trustee, or account holder asks about automatic exchange of financial account information. Trigger on phrases like "FATCA", "CRS", "Common Reporting Standard", "automatic exchange of information", "AEOI", "Form W-9", "Form W-8BEN", "Form W-8BEN-E", "self-certification", "Reportable Account", "Reportable Person", "Controlling Person", "passive NFE", "active NFFE", "GIIN", "responsible officer certification", "FATCA 8966", "FBAR", "Form 8938", "DAC2", "CARF", or any question about whether a financial account, entity, or person is reportable for AEOI purposes. Covers the US Foreign Account Tax Compliance Act (FATCA — IRC §1471-1474 and Treasury Regulations §§1.1471-1.1474, intergovernmental agreements Model 1 and Model 2), the OECD Common Reporting Standard (CRS — published 2014, updated 2023 with the Crypto-Asset Reporting Framework / CARF and CRS 2.0 amendments), and the EU's CRS implementation under DAC2 (Council Directive 2014/107/EU). Does NOT cover: FBAR (FinCEN 114) which is a US-only beneficial-owner disclosure; Form 8938 individual reporting; ultimate-beneficial-ownership (UBO) registers under EU AMLD; or the OECD MDR on CRS Avoidance Arrangements (see dac6-mdr-reportable-arrangements). ALWAYS read this skill before classifying an account as reportable or determining due diligence obligations.
+description: "Use this skill whenever a Financial Institution (FI), trustee, or account holder asks about automatic exchange of financial account information. Trigger on phrases like \"FATCA\", \"CRS\", \"Common Reporting Standard\", \"automatic exchange of information\", \"AEOI\", \"Form W-9\", \"Form W-8BEN\", \"Form W-8BEN-E\", \"self-certification\", \"Reportable Account\", \"Reportable Person\", \"Controlling Person\", \"passive NFE\", \"active NFFE\", \"GIIN\", \"responsible officer certification\", \"FATCA 8966\", \"FBAR\", \"Form 8938\", \"DAC2\", \"CARF\", or any question about whether a financial account, entity, or person is reportable for AEOI purposes. Covers the US Foreign Account Tax Compliance Act (FATCA — IRC §1471-1474 and Treasury Regulations §§1.1471-1.1474, intergovernmental agreements Model 1 and Model 2), the OECD Common Reporting Standard (CRS — published 2014, updated 2023 with the Crypto-Asset Reporting Framework / CARF and CRS 2.0 amendments), and the EU's CRS implementation under DAC2 (Council Directive 2014/107/EU). Does NOT cover: FBAR (FinCEN 114) which is a US-only beneficial-owner disclosure; Form 8938 individual reporting; ultimate-beneficial-ownership (UBO) registers under EU AMLD; or the OECD MDR on CRS Avoidance Arrangements (see dac6-mdr-reportable-arrangements). ALWAYS read this skill before classifying an account as reportable or determining due diligence obligations."
 version: 0.1
 jurisdiction: GLOBAL
 tax_year: 2025
 last_updated: 2026-07-13
 review_status: pending_review
-depends_on: - cross-border-workflow-base
+depends_on:
+  - cross-border-workflow-base
 category: cross-border
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)

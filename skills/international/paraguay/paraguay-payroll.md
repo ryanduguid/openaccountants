@@ -1,12 +1,13 @@
 ---
 name: paraguay-payroll
-description: Use this skill whenever asked about Paraguay payroll processing for employed persons. Trigger on phrases like "Paraguay payroll", "Paraguayan payroll", "planilla de sueldos", "planilla de aporte obrero-patronal", "IPS Paraguay", "aporte obrero", "aporte patronal", "Instituto de Previsión Social", "social security Paraguay", "9% IPS", "16.5% IPS", "IRP Paraguay", "Impuesto a la Renta Personal", "renta de servicios personales", "Formulario 515", "Marangatú", "salario mínimo Paraguay", "minimum wage Paraguay", "aguinaldo", "13th salary Paraguay", "net salary Paraguay", "salario neto", "gross to net Paraguay", "employer contribution Paraguay", "DNIT payroll", "REI Paraguay", or any question about computing employee pay, social security contributions, or the income-tax position for Paraguay-based employees. CRITICAL STRUCTURAL FACT: in Paraguay the employer is generally NOT an income-tax (IRP) withholding agent on dependent salaries — IRP is self-assessed annually by the individual. The employer's mandatory payroll burden is IPS social security (employee 9% + employer 16.5% commercial). This skill covers IPS contributions, the minimum wage, the mandatory aguinaldo (13th salary), the IRP self-assessment position, monthly IPS filing, and payslip/income-certificate obligations. ALWAYS read this skill before processing any Paraguay payroll.
+description: "Use this skill whenever asked about Paraguay payroll processing for employed persons. Trigger on phrases like \"Paraguay payroll\", \"Paraguayan payroll\", \"planilla de sueldos\", \"planilla de aporte obrero-patronal\", \"IPS Paraguay\", \"aporte obrero\", \"aporte patronal\", \"Instituto de Previsión Social\", \"social security Paraguay\", \"9% IPS\", \"16.5% IPS\", \"IRP Paraguay\", \"Impuesto a la Renta Personal\", \"renta de servicios personales\", \"Formulario 515\", \"Marangatú\", \"salario mínimo Paraguay\", \"minimum wage Paraguay\", \"aguinaldo\", \"13th salary Paraguay\", \"net salary Paraguay\", \"salario neto\", \"gross to net Paraguay\", \"employer contribution Paraguay\", \"DNIT payroll\", \"REI Paraguay\", or any question about computing employee pay, social security contributions, or the income-tax position for Paraguay-based employees. CRITICAL STRUCTURAL FACT: in Paraguay the employer is generally NOT an income-tax (IRP) withholding agent on dependent salaries — IRP is self-assessed annually by the individual. The employer's mandatory payroll burden is IPS social security (employee 9% + employer 16.5% commercial). This skill covers IPS contributions, the minimum wage, the mandatory aguinaldo (13th salary), the IRP self-assessment position, monthly IPS filing, and payslip/income-certificate obligations. ALWAYS read this skill before processing any Paraguay payroll."
 version: 0.1
 jurisdiction: PY
 tax_year: 2025
 last_updated: 2026-07-13
 review_status: pending_review
-depends_on: - payroll-workflow-base
+depends_on:
+  - payroll-workflow-base
 category: payroll
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)

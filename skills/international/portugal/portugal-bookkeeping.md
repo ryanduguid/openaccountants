@@ -1,12 +1,13 @@
 ---
 name: portugal-bookkeeping
-description: Utilize esta skill sempre que lhe forem colocadas questões sobre contabilidade portuguesa, plano de contas, SNC, demonstrações financeiras ou normas contabilísticas em Portugal. Active perante expressões como "contabilidade Portugal", "SNC", "código de contas", "Sistema de Normalização Contabilística", "plano de contas", "microentidade", "pequena entidade", "NCRF", "NCRF-PE", "NC-ME", "balanço", "demonstração de resultados", "IES", "contabilista certificado", "regime simplificado", "contabilidade organizada", "SAF-T(PT)", "CAE", "Categoria B", ou qualquer questão sobre o registo de operações, relato financeiro ou regras contabilísticas para entidades portuguesas. Trigger also on: "Portuguese bookkeeping", "Portugal accounting", "SNC chart of accounts", "Portuguese GAAP", "simplified regime Portugal", "organized accounting Portugal", "self-employed Portugal Cat B", "SAF-T Portugal", "CAE coefficients", "Portuguese certified accountant".
+description: "Utilize esta skill sempre que lhe forem colocadas questões sobre contabilidade portuguesa, plano de contas, SNC, demonstrações financeiras ou normas contabilísticas em Portugal. Active perante expressões como \"contabilidade Portugal\", \"SNC\", \"código de contas\", \"Sistema de Normalização Contabilística\", \"plano de contas\", \"microentidade\", \"pequena entidade\", \"NCRF\", \"NCRF-PE\", \"NC-ME\", \"balanço\", \"demonstração de resultados\", \"IES\", \"contabilista certificado\", \"regime simplificado\", \"contabilidade organizada\", \"SAF-T(PT)\", \"CAE\", \"Categoria B\", ou qualquer questão sobre o registo de operações, relato financeiro ou regras contabilísticas para entidades portuguesas. Trigger also on: \"Portuguese bookkeeping\", \"Portugal accounting\", \"SNC chart of accounts\", \"Portuguese GAAP\", \"simplified regime Portugal\", \"organized accounting Portugal\", \"self-employed Portugal Cat B\", \"SAF-T Portugal\", \"CAE coefficients\", \"Portuguese certified accountant\"."
 version: 1.0
 jurisdiction: PT
 tax_year: 2025
 last_updated: 2026-07-13
 review_status: pending_review
-depends_on: - bookkeeping-workflow-base
+depends_on:
+  - bookkeeping-workflow-base
 category: bookkeeping
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)

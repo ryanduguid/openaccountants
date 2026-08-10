@@ -1,6 +1,6 @@
 ---
 name: README
-description: jurisdiction: US-WY
+description: "jurisdiction: US-WY"
 jurisdiction: US-WY
 tax_year: 2025
 last_updated: 2026-07-13

@@ -1,12 +1,13 @@
 ---
 name: saf-t-realtime-ereporting-matrix
-description: Use this skill whenever a tax preparer, ERP implementer, or e-invoicing project asks about country mandates for SAF-T (Standard Audit File for Tax), real-time invoice reporting, or e-receipt clearance. Trigger on phrases like "SAF-T", "Standard Audit File", "SAF-T Poland", "SAF-T Portugal", "SAF-T Romania", "JPK", "SAF-T Norway", "real-time invoice reporting", "SII Spain", "RTIR Hungary", "KSeF Poland", "SDI Italy", "NF-e Brazil", "CFDI Mexico", "e-Fatura Turkey", "e-fapiao", "Peppol BIS", "ViDA", "DRR digital reporting requirements", "EN 16931", "structured invoice", "XRechnung", "Factur-X", or any request to determine whether a country mandates SAF-T submission or real-time / near-real-time invoice transmission. Maps the mandate scope, file format, transmission method, threshold triggers, deadline, and penalty for 40+ countries. Does NOT cover: country-specific VAT rate determination (see country VAT skills); e-archiving requirements beyond minimums; structured invoice content beyond format references; software-vendor accreditation procedures. ALWAYS read this skill before scoping an e-invoicing or SAF-T implementation.
+description: "Use this skill whenever a tax preparer, ERP implementer, or e-invoicing project asks about country mandates for SAF-T (Standard Audit File for Tax), real-time invoice reporting, or e-receipt clearance. Trigger on phrases like \"SAF-T\", \"Standard Audit File\", \"SAF-T Poland\", \"SAF-T Portugal\", \"SAF-T Romania\", \"JPK\", \"SAF-T Norway\", \"real-time invoice reporting\", \"SII Spain\", \"RTIR Hungary\", \"KSeF Poland\", \"SDI Italy\", \"NF-e Brazil\", \"CFDI Mexico\", \"e-Fatura Turkey\", \"e-fapiao\", \"Peppol BIS\", \"ViDA\", \"DRR digital reporting requirements\", \"EN 16931\", \"structured invoice\", \"XRechnung\", \"Factur-X\", or any request to determine whether a country mandates SAF-T submission or real-time / near-real-time invoice transmission. Maps the mandate scope, file format, transmission method, threshold triggers, deadline, and penalty for 40+ countries. Does NOT cover: country-specific VAT rate determination (see country VAT skills); e-archiving requirements beyond minimums; structured invoice content beyond format references; software-vendor accreditation procedures. ALWAYS read this skill before scoping an e-invoicing or SAF-T implementation."
 version: 0.1
 jurisdiction: GLOBAL
 tax_year: 2025
 last_updated: 2026-07-13
 review_status: pending_review
-depends_on: - cross-border-workflow-base
+depends_on:
+  - cross-border-workflow-base
 category: cross-border
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)

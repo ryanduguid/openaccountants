@@ -1,12 +1,13 @@
 ---
 name: wa-sales-tax
-description: Washington State Sales Tax for self-employed individuals selling taxable goods or services. Covers the 6.5% state rate, local tax add-ons, destination-based sourcing, use tax, and the Combined Excise Tax Return. Primary source: RCW 82.08 (sales tax), RCW 82.12 (use tax).
+description: "Washington State Sales Tax for self-employed individuals selling taxable goods or services. Covers the 6.5% state rate, local tax add-ons, destination-based sourcing, use tax, and the Combined Excise Tax Return. Primary source: RCW 82.08 (sales tax), RCW 82.12 (use tax)."
 version: 1.0
 jurisdiction: US-WA
 tax_year: 2025
 last_updated: 2026-07-13
 review_status: pending_review
-depends_on: - us-tax-workflow-base
+depends_on:
+  - us-tax-workflow-base
 category: state
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)

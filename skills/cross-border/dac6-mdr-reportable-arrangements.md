@@ -1,12 +1,13 @@
 ---
 name: dac6-mdr-reportable-arrangements
-description: Use this skill whenever an intermediary (tax adviser, lawyer, accountant, bank, trust company) or a relevant taxpayer asks about mandatory disclosure of cross-border tax arrangements. Trigger on phrases like "DAC6", "MDR", "mandatory disclosure rules", "reportable cross-border arrangement", "hallmark A1", "hallmark E3", "main benefit test", "MBT", "legal professional privilege", "DAC6 notification", "BZSt reporting", "arrangement reference number", "ARN", "OECD model MDR", "CRS avoidance arrangement", or any request to determine whether an arrangement must be reported under DAC6 (EU Directive 2018/822) or equivalent OECD MDR rules in non-EU jurisdictions. Covers EU Member States, UK MDR (the post-Brexit OECD-aligned regime in SI 2023/38), and the OECD Model Mandatory Disclosure Rules on CRS Avoidance Arrangements and Opaque Offshore Structures (2018). Does NOT cover: domestic-only tax shelter disclosure regimes (e.g., US §6111 reportable transactions, UK DOTAS, Canada §237.3), country-by-country reporting (BEPS Action 13), or FATCA/CRS automatic exchange (see fatca-crs-automatic-exchange). ALWAYS read this skill before advising on whether a cross-border arrangement triggers reporting.
+description: "Use this skill whenever an intermediary (tax adviser, lawyer, accountant, bank, trust company) or a relevant taxpayer asks about mandatory disclosure of cross-border tax arrangements. Trigger on phrases like \"DAC6\", \"MDR\", \"mandatory disclosure rules\", \"reportable cross-border arrangement\", \"hallmark A1\", \"hallmark E3\", \"main benefit test\", \"MBT\", \"legal professional privilege\", \"DAC6 notification\", \"BZSt reporting\", \"arrangement reference number\", \"ARN\", \"OECD model MDR\", \"CRS avoidance arrangement\", or any request to determine whether an arrangement must be reported under DAC6 (EU Directive 2018/822) or equivalent OECD MDR rules in non-EU jurisdictions. Covers EU Member States, UK MDR (the post-Brexit OECD-aligned regime in SI 2023/38), and the OECD Model Mandatory Disclosure Rules on CRS Avoidance Arrangements and Opaque Offshore Structures (2018). Does NOT cover: domestic-only tax shelter disclosure regimes (e.g., US §6111 reportable transactions, UK DOTAS, Canada §237.3), country-by-country reporting (BEPS Action 13), or FATCA/CRS automatic exchange (see fatca-crs-automatic-exchange). ALWAYS read this skill before advising on whether a cross-border arrangement triggers reporting."
 version: 0.1
 jurisdiction: GLOBAL
 tax_year: 2025
 last_updated: 2026-07-13
 review_status: pending_review
-depends_on: - cross-border-workflow-base
+depends_on:
+  - cross-border-workflow-base
 category: cross-border
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)

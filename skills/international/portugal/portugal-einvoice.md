@@ -1,13 +1,14 @@
 ---
 name: portugal-einvoice
-description: Utilize esta skill sempre que lhe forem colocadas questões sobre facturação electrónica em Portugal, códigos ATCUD, comunicação do SAF-T(PT), requisitos do QR Code nas facturas, software certificado AT (Portaria/Modelo 24), portal e-fatura, Assinatura Electrónica Qualificada (AEQ) para facturas, CIUS-PT, facturação electrónica B2G via Peppol/FE-AP, ou qualquer questão relativa à emissão, transmissão, validação ou arquivo de facturas electrónicas ao abrigo da lei portuguesa. Trigger also on: "ATCUD", "SAF-T Portugal", "e-fatura", "QR code invoice", "certified software AT", "Peppol Portugal", "B2G e-invoice", "invoice hash chain", "Portaria 363/2010", "Decreto-Lei 28/2019", or "Qualified Electronic Signature Portugal". LEIA SEMPRE esta skill antes de tocar em qualquer trabalho de conformidade de facturação em Portugal.
+description: "Utilize esta skill sempre que lhe forem colocadas questões sobre facturação electrónica em Portugal, códigos ATCUD, comunicação do SAF-T(PT), requisitos do QR Code nas facturas, software certificado AT (Portaria/Modelo 24), portal e-fatura, Assinatura Electrónica Qualificada (AEQ) para facturas, CIUS-PT, facturação electrónica B2G via Peppol/FE-AP, ou qualquer questão relativa à emissão, transmissão, validação ou arquivo de facturas electrónicas ao abrigo da lei portuguesa. Trigger also on: \"ATCUD\", \"SAF-T Portugal\", \"e-fatura\", \"QR code invoice\", \"certified software AT\", \"Peppol Portugal\", \"B2G e-invoice\", \"invoice hash chain\", \"Portaria 363/2010\", \"Decreto-Lei 28/2019\", or \"Qualified Electronic Signature Portugal\". LEIA SEMPRE esta skill antes de tocar em qualquer trabalho de conformidade de facturação em Portugal."
 version: 1.0
 jurisdiction: PT
 tax_year: 2025
 last_updated: 2026-07-13
 reviewed_by: Mário Jorge da costa Vale
 review_status: current
-depends_on: - einvoice-workflow-base
+depends_on:
+  - einvoice-workflow-base
 category: invoicing
 tier: 1
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)

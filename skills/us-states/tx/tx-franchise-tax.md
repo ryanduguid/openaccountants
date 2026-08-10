@@ -1,12 +1,13 @@
 ---
 name: tx-franchise-tax
-description: Texas Franchise Tax for single-member LLCs and other taxable entities. Covers the 2026 report no-tax-due threshold ($2,650,000), discontinued Form 05-163 for report years 2024+, required PIR/OIR filing, E-Z computation rate (0.331%), standard computation, passive-entity filing path, and annual filing requirements. Primary source: Texas Comptroller and Texas Tax Code Chapter 171.
+description: "Texas Franchise Tax for single-member LLCs and other taxable entities. Covers the 2026 report no-tax-due threshold ($2,650,000), discontinued Form 05-163 for report years 2024+, required PIR/OIR filing, E-Z computation rate (0.331%), standard computation, passive-entity filing path, and annual filing requirements. Primary source: Texas Comptroller and Texas Tax Code Chapter 171."
 version: 1.0
 jurisdiction: US-TX
 tax_year: 2025
 last_updated: 2026-07-13
 review_status: pending_review
-depends_on: - us-tax-workflow-base
+depends_on:
+  - us-tax-workflow-base
 category: state
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)

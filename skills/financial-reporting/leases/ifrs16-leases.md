@@ -1,12 +1,13 @@
 ---
 name: ifrs16-leases
-description: IFRS lease accounting under IFRS 16 (Leases). Covers the lessee single model — every lease (other than the two recognition exemptions) puts a right-of-use asset and a lease liability on the balance sheet, and the expense is ALWAYS front-loaded: depreciation of the ROU asset plus interest on the lease liability, with no operating/finance split for lessees. Covers lease identification, the short-term and low-value-asset exemptions, initial and subsequent measurement, the discount rate, variable lease payments, reassessment and remeasurement triggers, modifications, sale-and-leaseback, the sublease classification rule, and the retained lessor dual model (finance versus operating). Produces recognition conclusions, journal entries, and a reviewer brief. Issued as the IFRS edition of the leases topic; see us-gaap-asc842-leases for the US GAAP edition. MUST load alongside financial-reporting-workflow-base.
+description: "IFRS lease accounting under IFRS 16 (Leases). Covers the lessee single model — every lease (other than the two recognition exemptions) puts a right-of-use asset and a lease liability on the balance sheet, and the expense is ALWAYS front-loaded: depreciation of the ROU asset plus interest on the lease liability, with no operating/finance split for lessees. Covers lease identification, the short-term and low-value-asset exemptions, initial and subsequent measurement, the discount rate, variable lease payments, reassessment and remeasurement triggers, modifications, sale-and-leaseback, the sublease classification rule, and the retained lessor dual model (finance versus operating). Produces recognition conclusions, journal entries, and a reviewer brief. Issued as the IFRS edition of the leases topic; see us-gaap-asc842-leases for the US GAAP edition. MUST load alongside financial-reporting-workflow-base."
 version: 0.1
 jurisdiction: GLOBAL
 tax_year: 2025
 last_updated: 2026-07-13
 review_status: pending_review
-depends_on: - financial-reporting-workflow-base
+depends_on:
+  - financial-reporting-workflow-base
 category: financial-reporting
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)

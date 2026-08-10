@@ -1,12 +1,13 @@
 ---
 name: ias32-debt-vs-equity
-description: IFRS classification of issued financial instruments as financial liabilities, equity, or compound instruments under IAS 32 (Financial Instruments: Presentation), with the related liability-measurement rules in IFRS 9. Covers the substance-over-form principle, the contractual-obligation test, the fixed-for-fixed test for contracts settled in the entity's own equity, contingent settlement provisions, the puttable-instruments exception, split accounting for compound instruments (convertible bonds), treasury shares, classification of interest/dividends/gains/losses, and offsetting. Produces classification conclusions, journal entries (including compound-instrument split accounting), and a reviewer brief. Issued as the IFRS edition of the debt-vs-equity topic; see us-gaap-debt-vs-equity for the US GAAP edition. MUST load alongside financial-reporting-workflow-base.
+description: "IFRS classification of issued financial instruments as financial liabilities, equity, or compound instruments under IAS 32 (Financial Instruments: Presentation), with the related liability-measurement rules in IFRS 9. Covers the substance-over-form principle, the contractual-obligation test, the fixed-for-fixed test for contracts settled in the entity's own equity, contingent settlement provisions, the puttable-instruments exception, split accounting for compound instruments (convertible bonds), treasury shares, classification of interest/dividends/gains/losses, and offsetting. Produces classification conclusions, journal entries (including compound-instrument split accounting), and a reviewer brief. Issued as the IFRS edition of the debt-vs-equity topic; see us-gaap-debt-vs-equity for the US GAAP edition. MUST load alongside financial-reporting-workflow-base."
 version: 0.1
 jurisdiction: GLOBAL
 tax_year: 2025
 last_updated: 2026-07-13
 review_status: pending_review
-depends_on: - financial-reporting-workflow-base
+depends_on:
+  - financial-reporting-workflow-base
 category: financial-reporting
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)

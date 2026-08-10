@@ -1,13 +1,14 @@
 ---
 name: il-sales-tax
-description: Illinois Sales Tax return (Form ST-1) for self-employed individuals. Covers all four Illinois occupation and use taxes (ROT, UT, SOT, SUT), state and local rates, origin-based sourcing, vendor discount, and filing frequencies. Primary source: 35 ILCS 120/ (ROT), 35 ILCS 105/ (UT), 35 ILCS 115/ (SOT), 35 ILCS 110/ (SUT).
+description: "Illinois Sales Tax return (Form ST-1) for self-employed individuals. Covers all four Illinois occupation and use taxes (ROT, UT, SOT, SUT), state and local rates, origin-based sourcing, vendor discount, and filing frequencies. Primary source: 35 ILCS 120/ (ROT), 35 ILCS 105/ (UT), 35 ILCS 115/ (SOT), 35 ILCS 110/ (SUT)."
 version: 1.0
 jurisdiction: US-IL
 tax_year: 2025
 last_updated: 2026-07-13
 reviewed_by: Amir Pelinkovic
 review_status: current
-depends_on: - us-tax-workflow-base
+depends_on:
+  - us-tax-workflow-base
 category: state
 tier: 1
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)

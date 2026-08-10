@@ -1,12 +1,13 @@
 ---
 name: ru-einvoice
-description: Use this skill whenever asked about Russian electronic invoicing or digital tax reporting for a self-employed person or small business: the VAT invoice (счёт-фактура), the universal transfer document (УПД), electronic document exchange (ЭДО) and when e-invoices are mandatory, the goods traceability system (национальная система прослеживаемости товаров), online cash registers (ККТ / онлайн-касса) transmitting via ОФД to ФНС, product labelling («Честный знак» / маркировка), the electronically filed VAT return, and what a самозанятый (НПД), an ИП on УСН, and an ИП/ООО on ОСНО must each do. Trigger on phrases like "счёт-фактура", "УПД", "ЭДО Russia", "online cash register Russia", "ККТ", "онлайн-касса", "ОФД", "прослеживаемость", "маркировка", "Честный знак", "e-invoicing Russia", or any question about Russian digital invoicing or fiscal reporting. Always read this skill before advising on Russian e-invoicing or fiscal reporting.
+description: "Use this skill whenever asked about Russian electronic invoicing or digital tax reporting for a self-employed person or small business: the VAT invoice (счёт-фактура), the universal transfer document (УПД), electronic document exchange (ЭДО) and when e-invoices are mandatory, the goods traceability system (национальная система прослеживаемости товаров), online cash registers (ККТ / онлайн-касса) transmitting via ОФД to ФНС, product labelling («Честный знак» / маркировка), the electronically filed VAT return, and what a самозанятый (НПД), an ИП on УСН, and an ИП/ООО on ОСНО must each do. Trigger on phrases like \"счёт-фактура\", \"УПД\", \"ЭДО Russia\", \"online cash register Russia\", \"ККТ\", \"онлайн-касса\", \"ОФД\", \"прослеживаемость\", \"маркировка\", \"Честный знак\", \"e-invoicing Russia\", or any question about Russian digital invoicing or fiscal reporting. Always read this skill before advising on Russian e-invoicing or fiscal reporting."
 version: 1.0
 jurisdiction: RU
 tax_year: 2026
 last_updated: 2026-07-13
 review_status: pending_review
-depends_on: - income-tax-workflow-base
+depends_on:
+  - income-tax-workflow-base
 category: international
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
