@@ -1,13 +1,14 @@
 ---
 name: us-foreign-trust-reporting
-description: US taxation and reporting of foreign trusts for US persons: the court/control tests (IRC §7701), grantor-trust ownership under §671–679 (especially §679), the throwback / accumulation-distribution regime (§665–668) and its interest charge, and Forms 3520 and 3520-A with their penalties. Produces a working paper and a reviewer brief — not a filed return. MUST load alongside cross-border-tax-workflow-base.
+description: "US taxation and reporting of foreign trusts for US persons: the court/control tests (IRC §7701), grantor-trust ownership under §671–679 (especially §679), the throwback / accumulation-distribution regime (§665–668) and its interest charge, and Forms 3520 and 3520-A with their penalties. Produces a working paper and a reviewer brief — not a filed return. MUST load alongside cross-border-tax-workflow-base."
 version: 0.1
 jurisdiction: US
 tax_year: 2025
 last_updated: 2026-07-13
 reviewed_by: James Wallach
 review_status: current
-depends_on: - cross-border-tax-workflow-base
+depends_on:
+  - cross-border-tax-workflow-base
 category: international
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)

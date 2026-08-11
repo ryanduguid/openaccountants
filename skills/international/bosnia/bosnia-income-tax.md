@@ -1,12 +1,13 @@
 ---
 name: bosnia-income-tax
-description: Use this skill whenever asked about Bosnia and Herzegovina personal income tax (porez na dohodak) for employees or self-employed individuals. Trigger on phrases like "how much tax do I pay in Bosnia", "FBiH income tax", "Republika Srpska income tax", "Brcko District tax", "porez na dohodak", "doprinosi", "social contributions Bosnia", "net pay BAM", "personal allowance", "lichni odbitak", "godisnja poreska prijava", "minimum wage Bosnia", "VAT registration UINO", "PDV", or any question about computing or filing personal income tax and payroll contributions for a B&H worker or sole trader. CRITICAL: Bosnia has NO single national income tax — there are three separate entity/district systems (FBiH, RS, Brcko District). ALWAYS determine the taxpayer's entity FIRST. Also trigger when reviewing a monthly payroll specification (MIP-1023 / Obrazac 1002) or an annual return (GPD-1051). ALWAYS read this skill before touching any B&H income tax work.
+description: "Use this skill whenever asked about Bosnia and Herzegovina personal income tax (porez na dohodak) for employees or self-employed individuals. Trigger on phrases like \"how much tax do I pay in Bosnia\", \"FBiH income tax\", \"Republika Srpska income tax\", \"Brcko District tax\", \"porez na dohodak\", \"doprinosi\", \"social contributions Bosnia\", \"net pay BAM\", \"personal allowance\", \"lichni odbitak\", \"godisnja poreska prijava\", \"minimum wage Bosnia\", \"VAT registration UINO\", \"PDV\", or any question about computing or filing personal income tax and payroll contributions for a B&H worker or sole trader. CRITICAL: Bosnia has NO single national income tax — there are three separate entity/district systems (FBiH, RS, Brcko District). ALWAYS determine the taxpayer's entity FIRST. Also trigger when reviewing a monthly payroll specification (MIP-1023 / Obrazac 1002) or an annual return (GPD-1051). ALWAYS read this skill before touching any B&H income tax work."
 version: 0.1
 jurisdiction: BA
 tax_year: 2025
 last_updated: 2026-07-13
 review_status: pending_review
-depends_on: - income-tax-workflow-base
+depends_on:
+  - income-tax-workflow-base
 category: international
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)

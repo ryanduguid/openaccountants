@@ -1,13 +1,14 @@
 ---
 name: portugal-tax-optimization
-description: Utilize esta skill ao aconselhar sobre estratégias LEGAIS de minimização fiscal para contribuintes portugueses — particulares, trabalhadores independentes (recibos verdes) e pequenos empresários. Acione com expressões como "reduzir o meu imposto Portugal", "planeamento fiscal", "regime simplificado", "contabilidade organizada", "optimização do IRS", "segurança social trabalhador independente", "IVA", "recibos verdes", "Categoria B", "deduções Portugal", ou qualquer questão sobre minimização legal do IRS ou IRC português. Cobre selecção de entidade, regime simplificado vs contabilidade organizada, estratégias de dedução, amortizações, utilização de prejuízos, timing, optimização do IVA, segurança social e linhas vermelhas. LEIA SEMPRE esta skill antes de prestar aconselhamento de optimização fiscal portuguesa. Trigger also on: "reduce my tax Portugal", "tax planning", "regime simplificado", "organized accounts", "IRS optimization", "social security self-employed", "IVA", "recibos verdes", "Category B", "deductions Portugal".
+description: "Utilize esta skill ao aconselhar sobre estratégias LEGAIS de minimização fiscal para contribuintes portugueses — particulares, trabalhadores independentes (recibos verdes) e pequenos empresários. Acione com expressões como \"reduzir o meu imposto Portugal\", \"planeamento fiscal\", \"regime simplificado\", \"contabilidade organizada\", \"optimização do IRS\", \"segurança social trabalhador independente\", \"IVA\", \"recibos verdes\", \"Categoria B\", \"deduções Portugal\", ou qualquer questão sobre minimização legal do IRS ou IRC português. Cobre selecção de entidade, regime simplificado vs contabilidade organizada, estratégias de dedução, amortizações, utilização de prejuízos, timing, optimização do IVA, segurança social e linhas vermelhas. LEIA SEMPRE esta skill antes de prestar aconselhamento de optimização fiscal portuguesa. Trigger also on: \"reduce my tax Portugal\", \"tax planning\", \"regime simplificado\", \"organized accounts\", \"IRS optimization\", \"social security self-employed\", \"IVA\", \"recibos verdes\", \"Category B\", \"deductions Portugal\"."
 version: 1.0
 jurisdiction: PT
 tax_year: 2025
 last_updated: 2026-07-13
 reviewed_by: Mário Jorge da costa Vale
 review_status: current
-depends_on: - bookkeeping-workflow-base
+depends_on:
+  - bookkeeping-workflow-base
 category: tax-optimization
 tier: 1
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)

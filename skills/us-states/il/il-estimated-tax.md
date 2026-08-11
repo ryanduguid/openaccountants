@@ -1,13 +1,14 @@
 ---
 name: il-estimated-tax
-description: Illinois Estimated Income Tax (Form IL-1040-ES) for self-employed individuals. Covers quarterly payment requirements, 4.95% flat rate computation, safe harbour rules, underpayment penalty calculation, and payment schedule. Primary source: 35 ILCS 5/803; 86 Ill. Admin. Code 100.8010.
+description: "Illinois Estimated Income Tax (Form IL-1040-ES) for self-employed individuals. Covers quarterly payment requirements, 4.95% flat rate computation, safe harbour rules, underpayment penalty calculation, and payment schedule. Primary source: 35 ILCS 5/803; 86 Ill. Admin. Code 100.8010."
 version: 1.0
 jurisdiction: US-IL
 tax_year: 2025
 last_updated: 2026-07-13
 reviewed_by: Amir Pelinkovic
 review_status: current
-depends_on: - us-tax-workflow-base
+depends_on:
+  - us-tax-workflow-base
 category: state
 tier: 1
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)

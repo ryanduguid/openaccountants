@@ -1,12 +1,13 @@
 ---
 name: digital-services-tax-matrix
-description: Use this skill whenever a digital services provider asks about country-level Digital Services Tax (DST) exposure. Trigger on phrases like "DST", "digital services tax", "digital tax", "France DST", "UK DST", "Italy DST", "Spain DST", "Austria DST", "Turkey DST", "India equalisation levy", "Kenya DST", "Canada DST", "DST nexus", "DST scope", "user location attribution", "DST and Pillar One", "DST sunset", or any request to assess whether a service falls within a country's DST. Covers all DSTs in force or proposed as of mid-2025 across 25+ jurisdictions including the Canada DST (in force from 28 June 2024, retroactive to 2022) and India's equalisation levy regime. Maps the scope, rate, threshold, taxable services definition, user-location attribution method, filing/payment mechanics, and Pillar One Amount A interaction. Does NOT cover: corporate income tax / permanent establishment; VAT/GST on digital services (B2C and OSS); EU DAC7 platform reporting; OECD Pillar One Amount A computation (separate skill); WHT on royalties / technical services. ALWAYS read this skill before computing DST liability or advising on DST mitigation.
+description: "Use this skill whenever a digital services provider asks about country-level Digital Services Tax (DST) exposure. Trigger on phrases like \"DST\", \"digital services tax\", \"digital tax\", \"France DST\", \"UK DST\", \"Italy DST\", \"Spain DST\", \"Austria DST\", \"Turkey DST\", \"India equalisation levy\", \"Kenya DST\", \"Canada DST\", \"DST nexus\", \"DST scope\", \"user location attribution\", \"DST and Pillar One\", \"DST sunset\", or any request to assess whether a service falls within a country's DST. Covers all DSTs in force or proposed as of mid-2025 across 25+ jurisdictions including the Canada DST (in force from 28 June 2024, retroactive to 2022) and India's equalisation levy regime. Maps the scope, rate, threshold, taxable services definition, user-location attribution method, filing/payment mechanics, and Pillar One Amount A interaction. Does NOT cover: corporate income tax / permanent establishment; VAT/GST on digital services (B2C and OSS); EU DAC7 platform reporting; OECD Pillar One Amount A computation (separate skill); WHT on royalties / technical services. ALWAYS read this skill before computing DST liability or advising on DST mitigation."
 version: 0.1
 jurisdiction: GLOBAL
 tax_year: 2025
 last_updated: 2026-07-13
 review_status: pending_review
-depends_on: - cross-border-workflow-base
+depends_on:
+  - cross-border-workflow-base
 category: cross-border
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)

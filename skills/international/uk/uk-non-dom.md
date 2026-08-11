@@ -1,12 +1,13 @@
 ---
 name: uk-non-dom
-description: Use this skill for any question about UK non-dom rules. Trigger on: "UK non-dom", "UK non-domiciled", "remittance basis UK", "FIG regime UK", "foreign income gains UK new resident", "UK domicile rules", "UK non-dom reform 2025", "arising basis UK", "4-year exemption UK tax", "UK overseas workday relief", "UK non-dom abolished". Covers the new 4-year FIG regime (from April 2025), transitional provisions for existing non-doms, and remittance basis overview.
+description: "Use this skill for any question about UK non-dom rules. Trigger on: \"UK non-dom\", \"UK non-domiciled\", \"remittance basis UK\", \"FIG regime UK\", \"foreign income gains UK new resident\", \"UK domicile rules\", \"UK non-dom reform 2025\", \"arising basis UK\", \"4-year exemption UK tax\", \"UK overseas workday relief\", \"UK non-dom abolished\". Covers the new 4-year FIG regime (from April 2025), transitional provisions for existing non-doms, and remittance basis overview."
 version: 1.0
 jurisdiction: GB
 tax_year: 2025
 last_updated: 2026-07-13
 review_status: pending_review
-depends_on: - uk-income-tax-sa100
+depends_on:
+  - uk-income-tax-sa100
 category: international
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)

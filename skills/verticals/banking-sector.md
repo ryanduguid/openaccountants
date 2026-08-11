@@ -1,12 +1,13 @@
 ---
 name: banking-sector
-description: Use this skill whenever a bank, neobank, payment institution, e-money institution, or regulated financial holding company asks about accounting, regulatory capital, or tax issues specific to financial institutions. Trigger on phrases like "bank tax", "bank levy", "IRB approach", "standardised approach", "IFRS 9 ECL", "FRTB", "Basel III", "Basel IV", "CRR/CRD", "Prudential regulation", "PRA", "ECB SSM", "FED CCAR", "OSFI", "expected credit loss", "ICAAP", "ILAAP", "stress testing", "interchange fee", "MREL", "TLAC", "resolution planning", "deposit guarantee scheme contribution", or any question about bank accounting / tax / regulation. Covers IFRS 9 ECL, capital adequacy interactions with tax (DTA recognition), bank levies (UK, EU), specific tax rules for banks (FTT, securitisation, hedge accounting). Does NOT cover: detailed banking regulation (CRR/CRD specifics, FRTB calibration); audit of banks (see statutory-audit-workflow-base); routine corporate tax (see corporate-income-tax-workflow-base). ALWAYS read this skill before classifying a bank's transactions or computing its tax position.
+description: "Use this skill whenever a bank, neobank, payment institution, e-money institution, or regulated financial holding company asks about accounting, regulatory capital, or tax issues specific to financial institutions. Trigger on phrases like \"bank tax\", \"bank levy\", \"IRB approach\", \"standardised approach\", \"IFRS 9 ECL\", \"FRTB\", \"Basel III\", \"Basel IV\", \"CRR/CRD\", \"Prudential regulation\", \"PRA\", \"ECB SSM\", \"FED CCAR\", \"OSFI\", \"expected credit loss\", \"ICAAP\", \"ILAAP\", \"stress testing\", \"interchange fee\", \"MREL\", \"TLAC\", \"resolution planning\", \"deposit guarantee scheme contribution\", or any question about bank accounting / tax / regulation. Covers IFRS 9 ECL, capital adequacy interactions with tax (DTA recognition), bank levies (UK, EU), specific tax rules for banks (FTT, securitisation, hedge accounting). Does NOT cover: detailed banking regulation (CRR/CRD specifics, FRTB calibration); audit of banks (see statutory-audit-workflow-base); routine corporate tax (see corporate-income-tax-workflow-base). ALWAYS read this skill before classifying a bank's transactions or computing its tax position."
 version: 0.1
 jurisdiction: GLOBAL
 tax_year: 2025
 last_updated: 2026-07-13
 review_status: pending_review
-depends_on: - corporate-income-tax-workflow-base
+depends_on:
+  - corporate-income-tax-workflow-base
 category: vertical
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)

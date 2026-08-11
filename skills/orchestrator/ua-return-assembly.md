@@ -1,12 +1,13 @@
 ---
 name: ua-return-assembly
-description: Final orchestrator that assembles the complete Ukrainian ФОП (FOP) filing package for a Ukraine-resident sole proprietor: consumes the Ukraine content-skill outputs and produces one unified reviewer package with the correct declaration, schedules, filing-and-payment calendar, and pre-filing checklist. Computes nothing itself.
+description: "Final orchestrator that assembles the complete Ukrainian ФОП (FOP) filing package for a Ukraine-resident sole proprietor: consumes the Ukraine content-skill outputs and produces one unified reviewer package with the correct declaration, schedules, filing-and-payment calendar, and pre-filing checklist. Computes nothing itself."
 version: 0.1
 jurisdiction: UA
 tax_year: 2026
 last_updated: 2026-07-13
 review_status: pending_review
-depends_on: - ua-freelance-intake
+depends_on:
+  - ua-freelance-intake
 category: orchestrator
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)

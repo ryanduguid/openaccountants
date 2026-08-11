@@ -1,12 +1,13 @@
 ---
 name: threshold-alerts
-description: Intelligence skill that detects when the user is near important tax thresholds. Covers 14 threshold checks across 10 jurisdictions (EU, US, UK, DE, AU, IN, ES, NL, SG, MT, CA). For each threshold: calculates proximity, determines direction of travel, and recommends specific action. Flags the crossing point where obligations change materially.
+description: "Intelligence skill that detects when the user is near important tax thresholds. Covers 14 threshold checks across 10 jurisdictions (EU, US, UK, DE, AU, IN, ES, NL, SG, MT, CA). For each threshold: calculates proximity, determines direction of travel, and recommends specific action. Flags the crossing point where obligations change materially."
 version: 0.1
 jurisdiction: GLOBAL
 tax_year: 2025
 last_updated: 2026-07-13
 review_status: pending_review
-depends_on: - workflow-base
+depends_on:
+  - workflow-base
 category: intelligence
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)

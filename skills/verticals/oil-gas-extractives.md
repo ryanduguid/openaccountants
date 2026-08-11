@@ -1,12 +1,13 @@
 ---
 name: oil-gas-extractives
-description: Use this skill whenever a producer, refiner, miner, oilfield services company, midstream operator, or LNG developer asks about sector-specific tax and accounting. Trigger on phrases like "petroleum revenue tax", "PRT", "ring-fence corporation tax", "RFCT", "supplementary charge", "energy profits levy", "EPL", "OBPS", "carbon levy", "EU Solidarity Contribution", "windfall tax energy", "Norwegian special tax", "petroleum tax", "production sharing contract", "PSC", "concession", "royalty", "ad valorem royalty", "severance tax", "depletion allowance", "intangible drilling costs", "IDC", "successful efforts vs full cost", "decommissioning ARO", "EITI", "extractive industries transparency initiative", "country-by-country resource payments", "mining royalty", or any question on extractives. Maps petroleum and mining fiscal regimes for 25+ jurisdictions plus the windfall taxes introduced 2022-2025. Does NOT cover: HSE / safety regulation, environmental remediation procedure beyond tax accounting, oil & gas reserves estimation methodology (PRMS).
+description: "Use this skill whenever a producer, refiner, miner, oilfield services company, midstream operator, or LNG developer asks about sector-specific tax and accounting. Trigger on phrases like \"petroleum revenue tax\", \"PRT\", \"ring-fence corporation tax\", \"RFCT\", \"supplementary charge\", \"energy profits levy\", \"EPL\", \"OBPS\", \"carbon levy\", \"EU Solidarity Contribution\", \"windfall tax energy\", \"Norwegian special tax\", \"petroleum tax\", \"production sharing contract\", \"PSC\", \"concession\", \"royalty\", \"ad valorem royalty\", \"severance tax\", \"depletion allowance\", \"intangible drilling costs\", \"IDC\", \"successful efforts vs full cost\", \"decommissioning ARO\", \"EITI\", \"extractive industries transparency initiative\", \"country-by-country resource payments\", \"mining royalty\", or any question on extractives. Maps petroleum and mining fiscal regimes for 25+ jurisdictions plus the windfall taxes introduced 2022-2025. Does NOT cover: HSE / safety regulation, environmental remediation procedure beyond tax accounting, oil & gas reserves estimation methodology (PRMS)."
 version: 0.1
 jurisdiction: GLOBAL
 tax_year: 2025
 last_updated: 2026-07-13
 review_status: pending_review
-depends_on: - corporate-income-tax-workflow-base
+depends_on:
+  - corporate-income-tax-workflow-base
 category: vertical
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
