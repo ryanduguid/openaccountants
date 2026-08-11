@@ -12,7 +12,7 @@
 | `category` | one of the vocabulary below | Domain the skill covers |
 | `tax_year` | **bare integer**, e.g. `2025` | The **coverage start year**. Ranges, fiscal calendars, and qualifiers ("2025-26", "YA 2026", "2567 (2024)") go in `tax_year_notes`, never here. CI errors on anything that is not an integer 2015-2035 |
 | `tier` | `1` or `2` | `1` = **accountant-reviewed** (a named licensed accountant fully reviewed and signed off); `2` = **source-cited draft** (drafted from primary sources, awaiting review). These are the only two quality states |
-| `last_updated` | `YYYY-MM-DD` | Date the content was last checked/edited |
+| `last_updated` | `YYYY-MM-DD` | Date the content was last checked/edited. It must never move backwards |
 
 ## Optional keys
 
@@ -22,7 +22,19 @@
 | `verified_by` | `pending` or `Name, Credential` | e.g. `Michael Cutajar, CPA (Malta)`. Stored identifier — the field name stays `verified_by` even though the display language is "reviewed". A real name here implies `tier: 1` |
 | `reviewed_by` | `Name, Credential` | Used on the hand-authored `packages/us-federal/` guides (e.g. `Christopher Aryee, CPA`) |
 | `depends_on` | YAML list of slugs | Workflow base or country skill this loads on top of |
-| `version` | e.g. `0.1` | Content version, bumped on substantive change |
+| `version` | numeric dotted value, e.g. `0.1` | Content version, bumped on substantive change when present. Keep any body-heading version in step |
+
+## Sync integrity rules
+
+`last_updated` and a numeric `version` are monotonic content metadata: an edit
+must not decrease either value. A substantive body change should advance the
+date, the version, or both, and a heading such as `v1.1` must agree with the
+frontmatter version.
+
+These values are not synchronization tokens. The platform exporter must still
+compare its stored Git blob hash with the current repository blob before it
+rewrites an existing `skills/**` file. See [WEBSITE-SYNC.md](WEBSITE-SYNC.md)
+for the fail-closed compare-and-swap contract and pre-push command.
 
 ## Category vocabulary (the real one)
 

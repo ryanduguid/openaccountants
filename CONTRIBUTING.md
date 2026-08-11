@@ -20,10 +20,10 @@ Anyone. You don't need to be an accountant to write a skill. You need to know yo
 1. Fork this repo
 2. Create your skill in the appropriate **source** directory (`skills/federal/`, `skills/us-states/[code]/`, `skills/international/[country]/`, etc.)
 3. Follow the [skill template](docs/skill-template.md)
-4. Do **not** run any generator scripts — `index.json`, `llms-full.txt` and `packages/` rebuild automatically within 24h of merge
+4. Do **not** run any generator scripts — `index.json`, `llms-full.txt` and `packages/` rebuild in the scheduled platform sync after the source change is ingested
 5. Open a PR with a description of what tax forms/schedules the skill covers
 
-> **Important:** edit `skills/**` only. `packages/`, `index.json` and `llms-full.txt` are generated — CI will ask you to revert any changes to them, and the daily sync regenerates them within 24h of your merge. One exception for now: **`packages/us-federal/`** is hand-authored and may be edited directly.
+> **Important:** edit `skills/**` only. `packages/`, `index.json` and `llms-full.txt` are generated — CI will ask you to revert any changes to them, and the scheduled platform sync regenerates them after confirmed source ingestion. One exception for now: **`packages/us-federal/`** is hand-authored and may be edited directly.
 
 ## Repo layout
 
@@ -36,13 +36,13 @@ Every skill in `skills/` that should appear on [openaccountants.com](https://www
 1. Live in a **recognized country folder** (`skills/international/<country>/`, `skills/federal/`, `skills/us-states/<code>/`), **or**
 2. Include **`jurisdiction:` in YAML frontmatter** (e.g. `MT`, `GB`, `US`, `US-CA`, `GLOBAL`, `INTL`)
 
-**Your merged commit stands.** The platform and this repo sync continuously in both directions: guide changes made on openaccountants.com land here daily, committed under the accountant's own name, and your merged PR is ingested into the platform — the daily sync will not overwrite you with stale content. Frontmatter uses `reviewed_by` + `review_status` (the legacy `verified_by` key is being retired automatically). Want your platform edits credited to your GitHub account? Set your GitHub username in your accountant profile on openaccountants.com.
+Guide changes made on openaccountants.com land here through the scheduled sync, committed under the responsible accountant's name. A merged pull request must be ingested and verified in the platform before the next outbound export; until automated inbound ingestion ships, a maintainer performs that step manually. The exporter must fail closed if its stored Git blob does not match the current source guide. Frontmatter uses `reviewed_by` + `review_status` (the legacy `verified_by` key is being retired automatically). Want your platform edits credited to your GitHub account? Set your GitHub username in your accountant profile on openaccountants.com.
 
 Full details: [docs/WEBSITE-SYNC.md](docs/WEBSITE-SYNC.md)
 
 ## Skill structure and frontmatter
 
-**The canonical spec for skill files — required/optional frontmatter keys, formats, the `category` vocabulary, and the body section order — is [docs/skill-template.md](docs/skill-template.md).** Don't restate it; follow it. CI enforces it via `scripts/validate-guides.py`.
+**The canonical spec for skill files — required/optional frontmatter keys, formats, the `category` vocabulary, and the body section order — is [docs/skill-template.md](docs/skill-template.md).** Don't restate it; follow it. CI validates required guide schema with `scripts/validate-guides.py` and synchronization metadata with `scripts/check-sync-integrity.py`; citation quality and body structure still require reviewer judgment.
 
 One-line summary: YAML frontmatter (`name`, `description`, `jurisdiction`, `category`, `tax_year`, `tier`, `last_updated`, plus optional keys), then a body that runs scope → filing requirements → rates with citations → step-by-step computation rules → edge cases → self-checks → disclaimer.
 
@@ -96,7 +96,7 @@ All domain skills for a country live in the same directory (e.g., `skills/intern
 | Platform integration skills | `skills/integrations/` |
 | Orchestrator files (router, intake, assembly) | `skills/orchestrator/` |
 
-You never need to run the generators: the daily sync regenerates every derived tree after your merge.
+You never need to run the generators: the scheduled platform sync regenerates every derived tree after your source change has been ingested.
 
 If you add a `references.md` to a country's source directory, it will be included in the generated package automatically.
 

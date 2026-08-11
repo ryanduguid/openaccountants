@@ -82,7 +82,7 @@ The current roster: **[VERIFIERS.md](VERIFIERS.md)** (generated nightly from the
 Edit **`skills/**` only** — everything else regenerates automatically:
 
 - `packages/`, `index.json`, `llms-full.txt` — generated nightly; never edit in a PR
-- Merged PRs are ingested into the platform and credited to you; the sync will not overwrite your merged content
+- Merged source PRs are credited to you and must be confirmed as ingested before the next platform export
 - Full guide: [CONTRIBUTING.md](CONTRIBUTING.md) · Layout: [docs/REPO-LAYOUT.md](docs/REPO-LAYOUT.md)
 
 ---

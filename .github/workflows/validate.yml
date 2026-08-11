@@ -35,7 +35,7 @@ jobs:
             echo "generated_files_touched<<EOM" >> "$GITHUB_OUTPUT"
             echo "$BAD" >> "$GITHUB_OUTPUT"
             echo "EOM" >> "$GITHUB_OUTPUT"
-            echo "::error::This PR edits generated files. Edit skills/** only — index.json, llms-full.txt and packages/ are rebuilt automatically by the daily sync within 24h of merge."
+            echo "::error::This PR edits generated files. Edit skills/** only — index.json, llms-full.txt and packages/ are rebuilt by the scheduled platform sync after confirmed source ingestion."
             exit 1
           fi
           echo "clean"
@@ -51,7 +51,7 @@ jobs:
               body: [
                 "Thanks for the contribution! One fix needed: this PR touches **generated files** —",
                 "```", files, "```",
-                "`index.json`, `llms-full.txt` and `packages/` are rebuilt automatically by the daily sync, so please revert those paths and keep only your `skills/**` changes. No generator scripts to run — your guide edits are all that's needed. 🙌",
+                "`index.json`, `llms-full.txt` and `packages/` are rebuilt by the scheduled platform sync after confirmed source ingestion, so please revert those paths and keep only your `skills/**` changes. No generator scripts to run — your guide edits are all that's needed. 🙌",
               ].join("\n"),
             });
 
