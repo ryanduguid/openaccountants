@@ -35,6 +35,7 @@ MCP_STREAMABLE_HTTP_PATH  Path the Streamable-HTTP endpoint is mounted at.
 
 from __future__ import annotations
 
+import logging
 import os
 import re
 from collections import Counter, defaultdict
@@ -47,6 +48,8 @@ from urllib.parse import urlencode
 import yaml
 from mcp.server.fastmcp import FastMCP
 from mcp.types import ToolAnnotations
+
+log = logging.getLogger(__name__)
 
 # ---------------------------------------------------------------------------
 # Resolve repo root + packages directory
@@ -91,15 +94,58 @@ _FM_RE = re.compile(r"^---\s*\n(.*?)\n---\s*\n?(.*)$", re.DOTALL)
 _HEADING_RE = re.compile(r"^(#{1,6})\s+(.*\S)\s*$")
 
 
-def _parse_frontmatter(text: str) -> tuple[dict[str, Any], str]:
+_KEYLINE_RE = re.compile(r"^([A-Za-z_][\w-]*):(.*)$")
+
+
+def _salvage_frontmatter(block: str) -> dict[str, Any]:
+    """Recover the key/value pairs that *do* parse from a malformed block.
+
+    A single unquoted colon shouldn't cost us the whole guide: without this,
+    one bad ``description:`` line drops the file's ``name`` too, and the guide
+    vanishes from the index entirely. Keys that still won't parse are kept as
+    raw strings so ``name``/``jurisdiction`` survive and the guide stays
+    discoverable.
+    """
+    meta: dict[str, Any] = {}
+    key: str | None = None
+    buf: list[str] = []
+
+    def flush() -> None:
+        if key is None:
+            return
+        raw = "\n".join(buf).strip()
+        try:
+            parsed = yaml.safe_load(f"{key}: {raw}") if raw else {key: None}
+            meta[key] = (parsed or {}).get(key)
+        except yaml.YAMLError:
+            meta[key] = " ".join(raw.split())
+
+    for line in block.split("\n"):
+        m = _KEYLINE_RE.match(line)
+        if m and not line.startswith((" ", "\t")):
+            flush()
+            key, buf = m.group(1), [m.group(2)]
+        elif key is not None:
+            buf.append(line)
+    flush()
+    return meta
+
+
+def _parse_frontmatter(text: str, source: Any = None) -> tuple[dict[str, Any], str]:
     """Split a markdown file into (frontmatter dict, body)."""
     m = _FM_RE.match(text)
     if not m:
         return {}, text
     try:
         meta = yaml.safe_load(m.group(1)) or {}
-    except yaml.YAMLError:
-        meta = {}
+    except yaml.YAMLError as exc:
+        meta = _salvage_frontmatter(m.group(1))
+        log.warning(
+            "malformed YAML frontmatter in %s: %s -- salvaged %d key(s)",
+            source or "<unknown>",
+            str(exc).splitlines()[0] if str(exc) else exc.__class__.__name__,
+            len(meta),
+        )
     if not isinstance(meta, dict):
         meta = {}
     return meta, m.group(2)
@@ -113,14 +159,22 @@ def _first_h1(body: str) -> str | None:
     return None
 
 
+#: Frontmatter has migrated to ``reviewed_by``; ``verified_by`` is the legacy
+#: spelling that CONTRIBUTING.md says is being retired. Read both, newest first,
+#: or every guide reviewed under the current convention reports as unreviewed.
+_VERIFIER_KEYS = ("reviewed_by", "verified_by")
+_NOT_A_VERIFIER = {"pending", "pending_review", "none", "n/a", "-"}
+
+
 def _real_verifier(meta: dict[str, Any]) -> str | None:
     """The named verifier, or None. Treats the 'pending' placeholder (and blanks)
     as no verifier so a skill awaiting sign-off isn't claimed as verified."""
-    v = meta.get("verified_by")
-    if isinstance(v, str):
-        v = v.strip()
-        if v and v.lower() != "pending":
-            return v
+    for key in _VERIFIER_KEYS:
+        v = meta.get(key)
+        if isinstance(v, str):
+            v = v.strip()
+            if v and v.lower() not in _NOT_A_VERIFIER:
+                return v
     return None
 
 
@@ -196,7 +250,7 @@ def _index() -> dict[str, dict[str, Any]]:
             text = path.read_text(encoding="utf-8")
         except (OSError, UnicodeDecodeError):
             continue
-        meta, body = _parse_frontmatter(text)
+        meta, body = _parse_frontmatter(text, source=path.relative_to(PACKAGES_DIR))
         slug = meta.get("name")
         if not slug or not isinstance(slug, str):
             continue
@@ -235,7 +289,7 @@ def _read_skill(slug: str) -> tuple[dict[str, Any], str]:
     size = fpath.stat().st_size
     if size > MAX_FILE_BYTES:
         raise ValueError(f"File too large ({size:,} bytes, limit {MAX_FILE_BYTES:,})")
-    _, body = _parse_frontmatter(fpath.read_text(encoding="utf-8"))
+    _, body = _parse_frontmatter(fpath.read_text(encoding="utf-8"), source=fpath.name)
     return rec, body
 
 
