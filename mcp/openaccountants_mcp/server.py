@@ -25,8 +25,9 @@ MCP_TRANSPORT             ``stdio`` (default), ``streamable-http``, or ``sse``.
                           HTTP transports let remote MCP clients connect via a
                           reverse proxy (Caddy, nginx, ngrok…).
 MCP_HOST                  Bind host for HTTP transports.  Defaults to
-                          ``0.0.0.0`` when an HTTP transport is selected,
-                          ``127.0.0.1`` otherwise.
+                          ``127.0.0.1``.  Set this explicitly (for example,
+                          ``MCP_HOST=0.0.0.0``) only when a reverse proxy or
+                          other network boundary is intentionally exposing it.
 MCP_PORT                  Bind port for HTTP transports.  Defaults to ``8000``.
 MCP_STREAMABLE_HTTP_PATH  Path the Streamable-HTTP endpoint is mounted at.
                           Defaults to ``/mcp``.  Set to ``/`` when fronted by a
@@ -359,8 +360,9 @@ if _TRANSPORT not in _VALID_TRANSPORTS:
 # Env-driven HTTP wiring.  For stdio these values are unused; for HTTP transports
 # they're plumbed into the FastMCP constructor so the wrapped Settings pick them
 # up (FastMCP overrides env-driven Settings with its own kwargs, so we read the
-# environment here ourselves).
-_HTTP_HOST = os.environ.get("MCP_HOST", "0.0.0.0" if _TRANSPORT != "stdio" else "127.0.0.1")
+# environment here ourselves).  HTTP is loopback-only unless an operator
+# deliberately sets MCP_HOST for a reverse-proxy or other controlled deployment.
+_HTTP_HOST = os.environ.get("MCP_HOST") or "127.0.0.1"
 _HTTP_PORT = int(os.environ.get("MCP_PORT", "8000"))
 _STREAMABLE_HTTP_PATH = os.environ.get("MCP_STREAMABLE_HTTP_PATH", "/mcp")
 
