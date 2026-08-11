@@ -130,7 +130,7 @@ https://www.openaccountants.com
 
 ========================================================================
 
-## Guide inventory (1932 guides, 244 jurisdictions, 270 accountant-reviewed)
+## Guide inventory (1937 guides, 244 jurisdictions, 270 accountant-reviewed)
 
 - us-1099-k-and-payment-processors | US | tier 2 | reviewed_by -
 - us-education-credits-8863 | US | tier 2 | reviewed_by -
@@ -207,6 +207,7 @@ https://www.openaccountants.com
 - vat-place-of-supply-master | INTL | tier 2 | reviewed_by -
 - wealth-tax-matrix | GLOBAL | tier 2 | reviewed_by -
 - withholding-tax-matrix | GLOBAL | tier 2 | reviewed_by -
+- 990-returns | US | tier 2 | reviewed_by -
 - no-sales-tax-states | US | tier 1 | reviewed_by James Wallach
 - us-1099-k-and-payment-processors | US | tier 2 | reviewed_by James Wallach
 - us-1099-nec-issuance | US | tier 1 | reviewed_by James Wallach
@@ -1665,6 +1666,7 @@ https://www.openaccountants.com
 - tt-income-tax | TT | tier 2 | reviewed_by -
 - tt-payroll-social | TT | tier 2 | reviewed_by -
 - tt-tax-overview | TT | tier 2 | reviewed_by -
+- irpp-calculation | TN | tier 2 | reviewed_by -
 - tn-company-formation | TN | tier 2 | reviewed_by -
 - tn-corporate-income-tax | TN | tier 2 | reviewed_by -
 - tn-income-tax | TN | tier 2 | reviewed_by -
@@ -1903,6 +1905,9 @@ https://www.openaccountants.com
 - ga-net-worth-tax | US-GA | tier 2 | reviewed_by -
 - ga-payroll | US-GA | tier 2 | reviewed_by -
 - ga-sales-tax | US-GA | tier 2 | reviewed_by -
+- georgia-corporate-income-tax-returns-form-600 | US-GA | tier 2 | reviewed_by -
+- georgia-individual-tax-return-form-500 | US-GA | tier 2 | reviewed_by -
+- georgia-pass-through-entity-returns-form-700-partnership-and-form-600s-s-corporation | US-GA | tier 2 | reviewed_by -
 - hi-income-tax | US-HI | tier 2 | reviewed_by -
 - hi-sales-tax | US-HI | tier 2 | reviewed_by -
 - ia-income-tax | US-IA | tier 2 | reviewed_by -

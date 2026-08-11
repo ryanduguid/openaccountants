@@ -1,7 +1,7 @@
 {
- "generated_at": "2026-08-10T05:58:14+00:00",
+ "generated_at": "2026-08-11T05:38:26+00:00",
  "counts": {
-  "guides": 1932,
+  "guides": 1937,
   "jurisdictions": 244,
   "accountant_reviewed": 270
  },
@@ -905,6 +905,18 @@
    "reviewed_by": null,
    "tax_year": "2025",
    "last_updated": "2026-07-13"
+  },
+  {
+   "slug": "990-returns",
+   "path": "skills/federal/990-returns.md",
+   "name": "990-returns",
+   "jurisdiction": "US",
+   "category": null,
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "tax_year": "2025",
+   "last_updated": "2026-08-10"
   },
   {
    "slug": "no-sales-tax-states",
@@ -18403,6 +18415,18 @@
    "last_updated": "2026-07-13"
   },
   {
+   "slug": "irpp-calculation",
+   "path": "skills/international/tunisia/irpp-calculation.md",
+   "name": "irpp-calculation",
+   "jurisdiction": "TN",
+   "category": null,
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "tax_year": "2025",
+   "last_updated": "2026-08-10"
+  },
+  {
    "slug": "tn-company-formation",
    "path": "skills/international/tunisia/tn-company-formation.md",
    "name": "tn-company-formation",
@@ -21257,6 +21281,42 @@
    "reviewed_by": null,
    "tax_year": "2025",
    "last_updated": "2026-07-13"
+  },
+  {
+   "slug": "georgia-corporate-income-tax-returns-form-600",
+   "path": "skills/us-states/ga/georgia-corporate-income-tax-returns-form-600.md",
+   "name": "georgia-corporate-income-tax-returns-form-600",
+   "jurisdiction": "US-GA",
+   "category": null,
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "tax_year": "2025",
+   "last_updated": "2026-08-10"
+  },
+  {
+   "slug": "georgia-individual-tax-return-form-500",
+   "path": "skills/us-states/ga/georgia-individual-tax-return-form-500.md",
+   "name": "georgia-individual-tax-return-form-500",
+   "jurisdiction": "US-GA",
+   "category": null,
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "tax_year": "2025",
+   "last_updated": "2026-08-10"
+  },
+  {
+   "slug": "georgia-pass-through-entity-returns-form-700-partnership-and-form-600s-s-corporation",
+   "path": "skills/us-states/ga/georgia-pass-through-entity-returns-form-700-partnership-and-form-600s-s-corporation.md",
+   "name": "georgia-pass-through-entity-returns-form-700-partnership-and-form-600s-s-corporation",
+   "jurisdiction": "US-GA",
+   "category": null,
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "tax_year": "2025",
+   "last_updated": "2026-08-10"
   },
   {
    "slug": "hi-income-tax",

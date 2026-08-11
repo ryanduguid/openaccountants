@@ -7,14 +7,15 @@
 
 1. `foundation.md`
 2. `intake.md`
-3. `tn-company-formation.md`
-4. `tn-corporate-income-tax.md`
-5. `tn-income-tax.md`
-6. `tn-payroll-social.md`
-7. `tn-tax-overview.md`
-8. `tunisia-vat.md`
-9. `payroll-workflow-base.md`
-10. `company-formation-workflow-base.md`
+3. `irpp-calculation.md`
+4. `tn-company-formation.md`
+5. `tn-corporate-income-tax.md`
+6. `tn-income-tax.md`
+7. `tn-payroll-social.md`
+8. `tn-tax-overview.md`
+9. `tunisia-vat.md`
+10. `payroll-workflow-base.md`
+11. `company-formation-workflow-base.md`
 
 ## How to use
 

@@ -34,5 +34,6 @@ nightly from the platform — the site is the source of truth; edits here are ov
 | Madhav Dhirubhai Bhayani | 609431 | IN | 1 |
 | Justin Reslan | CPA - AC50847 | US-FL | 1 |
 | MUHAMMAD HANIS MAT HUSSIN | CA-53636 | MY | 1 |
+| firas masmoudi | — | TN | 1 |
 
-<sub>Updated 2026-08-10. Become one: https://www.openaccountants.com/for-accountants</sub>
+<sub>Updated 2026-08-11. Become one: https://www.openaccountants.com/for-accountants</sub>
