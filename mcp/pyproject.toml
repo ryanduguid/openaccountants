@@ -14,7 +14,6 @@ keywords = [
 classifiers = [
     "Development Status :: 4 - Beta",
     "Topic :: Office/Business :: Financial :: Accounting",
-    "License :: OSI Approved :: GNU Affero General Public License v3 (AGPLv3)",
     "Programming Language :: Python :: 3",
     "Intended Audience :: Financial and Insurance Industry",
     "Intended Audience :: Developers",
