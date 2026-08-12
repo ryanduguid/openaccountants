@@ -180,8 +180,18 @@ def _real_verifier(meta: dict[str, Any]) -> str | None:
 
 
 def _quality_tier(meta: dict[str, Any]) -> str:
-    """A named verifier means accountant-verified; otherwise research-verified."""
-    return "accountant-verified" if _real_verifier(meta) else "research-verified"
+    """Map explicit frontmatter tier to the public quality identifier.
+
+    Tier 1 also requires a named reviewer. Missing or inconsistent metadata
+    fails closed as research-verified rather than inferring sign-off from a
+    reviewer field alone.
+    """
+    tier = str(meta.get("tier") or "").strip()
+    return (
+        "accountant-verified"
+        if tier == "1" and _real_verifier(meta)
+        else "research-verified"
+    )
 
 
 def _split_sections(body: str) -> list[dict[str, Any]]:
@@ -260,14 +270,19 @@ def _index() -> dict[str, dict[str, Any]]:
         if own:
             dir_codes[topdir][own] += 1
         mtime = datetime.fromtimestamp(path.stat().st_mtime, tz=timezone.utc)
+        quality_tier = _quality_tier(meta)
         rows.append({
             "slug": slug,
             "title": _first_h1(body) or slug,
             "own_jur": own,
             "topdir": topdir,
             "category": str(meta.get("category") or ""),
-            "quality_tier": _quality_tier(meta),
-            "verified_by": _real_verifier(meta),
+            "quality_tier": quality_tier,
+            "verified_by": (
+                _real_verifier(meta)
+                if quality_tier == "accountant-verified"
+                else None
+            ),
             "last_updated": mtime.date().isoformat(),
             "relpath": str(path.relative_to(PACKAGES_DIR)),
         })
