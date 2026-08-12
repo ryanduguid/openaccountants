@@ -8,4 +8,10 @@ import json
 from openaccountants_mcp.server import _duplicate_report
 
 
-print(json.dumps(_duplicate_report(), indent=2))
+def main() -> None:
+    """Print the current duplicate inventory."""
+    print(json.dumps(_duplicate_report(), indent=2))
+
+
+if __name__ == "__main__":
+    main()

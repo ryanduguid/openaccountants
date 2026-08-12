@@ -2,6 +2,9 @@
 
 from __future__ import annotations
 
+import contextlib
+import io
+import runpy
 import tempfile
 import unittest
 from pathlib import Path
@@ -72,6 +75,29 @@ class DuplicateSlugTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, "Path escapes allowed root"):
                 server._safe_resolve(self.packages, "escape.md")
 
+    def test_catalogue_rejects_a_symlink_before_reading_outside_content(self) -> None:
+        with tempfile.TemporaryDirectory() as outside_dir:
+            outside = Path(outside_dir) / "outside-skill.md"
+            outside.write_text(_skill("outside", "Outside"), encoding="utf-8")
+            link = self.packages / "escape.md"
+            try:
+                link.symlink_to(outside)
+            except OSError as exc:
+                self.skipTest(f"symlink creation is unavailable: {exc}")
+
+            self.assertNotIn("outside", server._index())
+            self.assertEqual(server._duplicate_report()["rejected_paths"], ["escape.md"])
+
+    def test_duplicate_report_module_is_quiet_when_imported(self) -> None:
+        script = Path(server.__file__).resolve().parents[1] / "duplicate_slug_report.py"
+        stdout = io.StringIO()
+
+        with contextlib.redirect_stdout(stdout):
+            namespace = runpy.run_path(str(script), run_name="duplicate_report_import")
+
+        self.assertEqual(stdout.getvalue(), "")
+        self.assertIn("main", namespace)
+
     def test_hand_authored_us_federal_copy_has_documented_precedence(self) -> None:
         self._write("us-ca/federal.md", _skill("federal-skill", "Generated", "US-CA"))
         self._write("us-federal/federal.md", _skill("federal-skill", "Federal", "US"))
@@ -105,6 +131,7 @@ class DuplicateSlugTests(unittest.TestCase):
                 "identical_aliases": 0,
                 "federal_precedence": 0,
                 "ambiguous_slugs": 1,
+                "rejected_paths": [],
                 "ambiguous": [
                     {
                         "slug": "collision",

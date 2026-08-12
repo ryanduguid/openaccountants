@@ -41,6 +41,7 @@ import os
 import re
 from hashlib import sha256
 from collections import Counter, defaultdict
+from datetime import datetime, timezone
 from functools import lru_cache
 from pathlib import Path
 from typing import Any
@@ -79,11 +80,12 @@ FEEDBACK_MAX_TITLE_CHARS = 120
 
 def _safe_resolve(packages_dir: Path, *segments: str) -> Path:
     """Resolve *segments* under *packages_dir* and reject escapes."""
-    joined = packages_dir.joinpath(*segments).resolve()
+    root = packages_dir.resolve()
+    joined = root.joinpath(*segments).resolve()
     try:
-        joined.relative_to(packages_dir)
+        joined.relative_to(root)
     except ValueError:
-        raise ValueError(f"Path escapes allowed root: {joined}")
+        raise ValueError("Path escapes allowed root")
     return joined
 
 
@@ -235,7 +237,7 @@ def _dir_jurisdiction(topdir: str, frontmatter_codes: Counter) -> str:
 def _catalogue() -> tuple[
     dict[str, dict[str, Any]],
     dict[str, tuple[str, ...]],
-    dict[str, int],
+    dict[str, Any],
 ]:
     """Build the index, unresolved slug map, and duplicate inventory."""
     out: dict[str, dict[str, Any]] = {}
@@ -247,22 +249,30 @@ def _catalogue() -> tuple[
             "identical_aliases": 0,
             "federal_precedence": 0,
             "ambiguous_slugs": 0,
+            "rejected_paths": [],
         }
 
     # Pass 1: parse every skill file; tally each directory's declared codes.
     rows: list[dict[str, Any]] = []
     dir_codes: dict[str, Counter] = defaultdict(Counter)
+    rejected_paths: list[str] = []
     for path in sorted(PACKAGES_DIR.rglob("*.md")):
+        relpath = path.relative_to(PACKAGES_DIR)
         try:
-            raw = path.read_bytes()
+            safe_path = _safe_resolve(PACKAGES_DIR, relpath.as_posix())
+        except ValueError:
+            rejected_paths.append(relpath.as_posix())
+            continue
+        try:
+            raw = safe_path.read_bytes()
             text = raw.decode("utf-8")
         except (OSError, UnicodeDecodeError):
             continue
-        meta, body = _parse_frontmatter(text, source=path.relative_to(PACKAGES_DIR))
+        meta, body = _parse_frontmatter(text, source=relpath)
         slug = meta.get("name")
         if not slug or not isinstance(slug, str):
             continue
-        topdir = path.relative_to(PACKAGES_DIR).parts[0]
+        topdir = relpath.parts[0]
         own = str(meta.get("jurisdiction") or "").strip().upper()
         if own:
             dir_codes[topdir][own] += 1
@@ -275,7 +285,7 @@ def _catalogue() -> tuple[
             "quality_tier": _quality_tier(meta),
             "verified_by": _real_verifier(meta),
             "last_updated": str(meta.get("last_updated") or ""),
-            "relpath": path.relative_to(PACKAGES_DIR).as_posix(),
+            "relpath": relpath.as_posix(),
             "content_hash": sha256(raw).digest(),
         })
 
@@ -321,6 +331,7 @@ def _catalogue() -> tuple[
         "identical_aliases": identical_aliases,
         "federal_precedence": federal_precedence,
         "ambiguous_slugs": len(ambiguous),
+        "rejected_paths": rejected_paths,
     }
     return out, ambiguous, report
 
