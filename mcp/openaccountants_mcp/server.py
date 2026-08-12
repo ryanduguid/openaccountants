@@ -39,6 +39,7 @@ from __future__ import annotations
 import logging
 import os
 import re
+from hashlib import sha256
 from collections import Counter, defaultdict
 from datetime import datetime, timezone
 from functools import lru_cache
@@ -232,23 +233,30 @@ def _dir_jurisdiction(topdir: str, frontmatter_codes: Counter) -> str:
 
 
 @lru_cache(maxsize=1)
-def _index() -> dict[str, dict[str, Any]]:
-    """Map skill slug -> metadata record.
-
-    A file counts as a skill when its YAML frontmatter carries a ``name``.
-    Shared files that appear in several country bundles collapse to a single
-    entry (first one wins) so each slug is listed once.
-    """
+def _catalogue() -> tuple[
+    dict[str, dict[str, Any]],
+    dict[str, tuple[str, ...]],
+    dict[str, int],
+]:
+    """Build the index, unresolved slug map, and duplicate inventory."""
     out: dict[str, dict[str, Any]] = {}
     if not PACKAGES_DIR.is_dir():
-        return out
+        return out, {}, {
+            "skill_files": 0,
+            "slugs": 0,
+            "duplicate_slugs": 0,
+            "identical_aliases": 0,
+            "federal_precedence": 0,
+            "ambiguous_slugs": 0,
+        }
 
     # Pass 1: parse every skill file; tally each directory's declared codes.
     rows: list[dict[str, Any]] = []
     dir_codes: dict[str, Counter] = defaultdict(Counter)
     for path in sorted(PACKAGES_DIR.rglob("*.md")):
         try:
-            text = path.read_text(encoding="utf-8")
+            raw = path.read_bytes()
+            text = raw.decode("utf-8")
         except (OSError, UnicodeDecodeError):
             continue
         meta, body = _parse_frontmatter(text, source=path.relative_to(PACKAGES_DIR))
@@ -269,21 +277,83 @@ def _index() -> dict[str, dict[str, Any]]:
             "quality_tier": _quality_tier(meta),
             "verified_by": _real_verifier(meta),
             "last_updated": mtime.date().isoformat(),
-            "relpath": str(path.relative_to(PACKAGES_DIR)),
+            "relpath": path.relative_to(PACKAGES_DIR).as_posix(),
+            "content_hash": sha256(raw).digest(),
         })
 
-    # Pass 2: resolve jurisdiction (own field wins; else inherit from dir).
-    for r in rows:
-        if r["slug"] in out:
+    # Pass 2: choose only an authority supported by the repository contract.
+    # packages/us-federal is the hand-authored exception. Other byte-identical
+    # package aliases are interchangeable. Divergent generated copies have no
+    # declared precedence, so omit only that slug and fail closed when asked.
+    candidates: dict[str, list[dict[str, Any]]] = defaultdict(list)
+    for row in rows:
+        candidates[row["slug"]].append(row)
+
+    ambiguous: dict[str, tuple[str, ...]] = {}
+    duplicate_slugs = identical_aliases = federal_precedence = 0
+    for slug in sorted(candidates):
+        group = candidates[slug]
+        if len(group) > 1:
+            duplicate_slugs += 1
+        federal = [r for r in group if r["topdir"] == "us-federal"]
+        if len(federal) == 1:
+            selected = federal[0]
+            if len(group) > 1:
+                federal_precedence += 1
+        elif len({r["content_hash"] for r in group}) == 1:
+            selected = min(group, key=lambda r: r["relpath"])
+            if len(group) > 1:
+                identical_aliases += 1
+        elif len(group) == 1:
+            selected = group[0]
+        else:
+            ambiguous[slug] = tuple(sorted(r["relpath"] for r in group))
             continue
-        r["jurisdiction"] = r["own_jur"] or _dir_jurisdiction(r["topdir"], dir_codes[r["topdir"]])
-        out[r["slug"]] = r
-    return out
+
+        selected["jurisdiction"] = selected["own_jur"] or _dir_jurisdiction(
+            selected["topdir"], dir_codes[selected["topdir"]]
+        )
+        selected.pop("content_hash")
+        out[slug] = selected
+
+    report = {
+        "skill_files": len(rows),
+        "slugs": len(candidates),
+        "duplicate_slugs": duplicate_slugs,
+        "identical_aliases": identical_aliases,
+        "federal_precedence": federal_precedence,
+        "ambiguous_slugs": len(ambiguous),
+    }
+    return out, ambiguous, report
+
+
+def _index() -> dict[str, dict[str, Any]]:
+    """Map unambiguous skill slugs to metadata records."""
+    return _catalogue()[0]
+
+
+def _duplicate_report() -> dict[str, Any]:
+    """Return a deterministic duplicate inventory for maintainer diagnostics."""
+    _, ambiguous, counts = _catalogue()
+    return {
+        **counts,
+        "ambiguous": [
+            {"slug": slug, "paths": list(paths)}
+            for slug, paths in sorted(ambiguous.items())
+        ],
+    }
 
 
 def _read_skill(slug: str) -> tuple[dict[str, Any], str]:
     """Return (index record, body markdown) for a slug or raise ValueError."""
-    rec = _index().get(slug)
+    index, ambiguous, _ = _catalogue()
+    if slug in ambiguous:
+        paths = ", ".join(ambiguous[slug])
+        raise ValueError(
+            f"Skill '{slug}' is ambiguous because packaged copies differ: "
+            f"{paths}. Resolve the duplicate source names before using it."
+        )
+    rec = index.get(slug)
     if rec is None:
         raise ValueError(f"Skill '{slug}' not found")
     fpath = _safe_resolve(PACKAGES_DIR, rec["relpath"])
