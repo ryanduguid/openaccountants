@@ -13,13 +13,18 @@ class SkillQualityTests(unittest.TestCase):
 
         self.assertEqual(server._quality_tier(meta), "accountant-verified")
 
+    def test_legacy_verified_by_field_still_supports_tier_one(self) -> None:
+        meta = {"tier": "1", "verified_by": "Alex Example, CPA"}
+
+        self.assertEqual(server._quality_tier(meta), "accountant-verified")
+
     def test_tier_two_remains_research_even_with_reviewer_name(self) -> None:
         meta = {"tier": 2, "reviewed_by": "Alex Example, CPA"}
 
         self.assertEqual(server._quality_tier(meta), "research-verified")
 
     def test_tier_one_without_real_reviewer_fails_closed(self) -> None:
-        for reviewer in (None, "", "pending", "n/a"):
+        for reviewer in (None, "", "pending", "pending_review", "none", "n/a", "-"):
             with self.subTest(reviewer=reviewer):
                 meta = {"tier": 1, "reviewed_by": reviewer}
                 self.assertEqual(server._quality_tier(meta), "research-verified")
@@ -28,6 +33,12 @@ class SkillQualityTests(unittest.TestCase):
         meta = {"verified_by": "Alex Example, CPA"}
 
         self.assertEqual(server._quality_tier(meta), "research-verified")
+
+    def test_invalid_tier_values_fail_closed(self) -> None:
+        for tier in (0, 3, "one", "draft"):
+            with self.subTest(tier=tier):
+                meta = {"tier": tier, "reviewed_by": "Alex Example, CPA"}
+                self.assertEqual(server._quality_tier(meta), "research-verified")
 
 
 if __name__ == "__main__":
