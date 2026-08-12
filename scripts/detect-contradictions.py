@@ -83,6 +83,8 @@ def available_rate_years(rates_dir=US_FEDERAL_RATES_DIR):
         if not match:
             continue
         year = int(match.group(1))
+        if year < 1000:
+            raise ValueError(f"canonical rate file {name} must use a positive four-digit year")
         try:
             with open(os.path.join(rates_dir, name), encoding="utf-8") as fh:
                 payload = json.load(fh)

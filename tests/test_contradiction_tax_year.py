@@ -58,6 +58,14 @@ class ContradictionTaxYearTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, r"rates\.2026\.json.*tax_year 2026"):
                 scanner.resolve_tax_year(rates_dir=directory)
 
+    def test_zero_canonical_rate_year_fails_closed(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            (Path(directory) / "rates.0000.json").write_text(
+                json.dumps({"tax_year": 0}), encoding="utf-8"
+            )
+            with self.assertRaisesRegex(ValueError, "positive four-digit"):
+                scanner.resolve_tax_year(rates_dir=directory)
+
     def test_frontmatter_year_wins_and_missing_year_uses_default(self) -> None:
         compiled = scanner.compile_concepts()
         stats = {
