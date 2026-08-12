@@ -16,6 +16,7 @@ def _skill(name: str, title: str, jurisdiction: str = "XX") -> str:
         f"jurisdiction: {jurisdiction}\n"
         "category: international\n"
         "tier: 2\n"
+        "last_updated: 2026-01-02\n"
         "---\n\n"
         f"# {title}\n\nBody for {title}.\n"
     )
@@ -27,11 +28,11 @@ class DuplicateSlugTests(unittest.TestCase):
         self.packages = Path(self._tmp.name)
         self._original_packages = server.PACKAGES_DIR
         server.PACKAGES_DIR = self.packages
-        server._catalogue.cache_clear()
+        server._index.cache_clear()
 
     def tearDown(self) -> None:
         server.PACKAGES_DIR = self._original_packages
-        server._catalogue.cache_clear()
+        server._index.cache_clear()
         self._tmp.cleanup()
 
     def _write(self, relpath: str, content: str) -> None:
@@ -47,7 +48,31 @@ class DuplicateSlugTests(unittest.TestCase):
         record = server._index()["shared-skill"]
 
         self.assertEqual(record["relpath"], "a/shared.md")
+        self.assertEqual(record["last_updated"], "2026-01-02")
         self.assertEqual(server._duplicate_report()["identical_aliases"], 1)
+
+    def test_cache_clear_refreshes_the_complete_catalogue(self) -> None:
+        self._write("a/first.md", _skill("first", "First"))
+        self.assertIn("first", server._index())
+        self._write("b/second.md", _skill("second", "Second"))
+
+        self.assertNotIn("second", server._index())
+        server._index.cache_clear()
+        self.assertIn("second", server._index())
+
+    def test_safe_resolve_rejects_a_symlink_escape(self) -> None:
+        outside = Path(self._tmp.name).parent / "outside-skill.md"
+        outside.write_text("outside", encoding="utf-8")
+        link = self.packages / "escape.md"
+        try:
+            link.symlink_to(outside)
+        except OSError as exc:
+            self.skipTest(f"symlink creation is unavailable: {exc}")
+        try:
+            with self.assertRaisesRegex(ValueError, "Path escapes allowed root"):
+                server._safe_resolve(self.packages, "escape.md")
+        finally:
+            outside.unlink(missing_ok=True)
 
     def test_hand_authored_us_federal_copy_has_documented_precedence(self) -> None:
         self._write("us-ca/federal.md", _skill("federal-skill", "Generated", "US-CA"))

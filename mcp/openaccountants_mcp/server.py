@@ -41,7 +41,6 @@ import os
 import re
 from hashlib import sha256
 from collections import Counter, defaultdict
-from datetime import datetime, timezone
 from functools import lru_cache
 from pathlib import Path
 from typing import Any
@@ -267,7 +266,6 @@ def _catalogue() -> tuple[
         own = str(meta.get("jurisdiction") or "").strip().upper()
         if own:
             dir_codes[topdir][own] += 1
-        mtime = datetime.fromtimestamp(path.stat().st_mtime, tz=timezone.utc)
         rows.append({
             "slug": slug,
             "title": _first_h1(body) or slug,
@@ -276,7 +274,7 @@ def _catalogue() -> tuple[
             "category": str(meta.get("category") or ""),
             "quality_tier": _quality_tier(meta),
             "verified_by": _real_verifier(meta),
-            "last_updated": mtime.date().isoformat(),
+            "last_updated": str(meta.get("last_updated") or ""),
             "relpath": path.relative_to(PACKAGES_DIR).as_posix(),
             "content_hash": sha256(raw).digest(),
         })
@@ -330,6 +328,14 @@ def _catalogue() -> tuple[
 def _index() -> dict[str, dict[str, Any]]:
     """Map unambiguous skill slugs to metadata records."""
     return _catalogue()[0]
+
+
+def _clear_index_cache() -> None:
+    """Clear the complete cached catalogue (keeps the former test hook)."""
+    _catalogue.cache_clear()
+
+
+_index.cache_clear = _clear_index_cache  # type: ignore[attr-defined]
 
 
 def _duplicate_report() -> dict[str, Any]:
