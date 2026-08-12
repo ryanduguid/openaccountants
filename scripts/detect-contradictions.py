@@ -74,11 +74,11 @@ BINDING_YEARS = range(2023, 2028)
 
 
 def available_rate_years(rates_dir=US_FEDERAL_RATES_DIR):
-    """Return years from structurally valid canonical rates.YYYY.json files."""
+    """Return canonical rate years, rejecting malformed matching files."""
     years = []
     if not os.path.isdir(rates_dir):
         return years
-    for name in os.listdir(rates_dir):
+    for name in sorted(os.listdir(rates_dir)):
         match = re.fullmatch(r"rates\.(\d{4})\.json", name)
         if not match:
             continue
@@ -86,18 +86,25 @@ def available_rate_years(rates_dir=US_FEDERAL_RATES_DIR):
         try:
             with open(os.path.join(rates_dir, name), encoding="utf-8") as fh:
                 payload = json.load(fh)
-        except (OSError, json.JSONDecodeError):
-            continue
-        if isinstance(payload, dict) and payload.get("tax_year") == year:
-            years.append(year)
+        except OSError as exc:
+            raise ValueError(f"cannot read canonical rate file {name}: {exc.strerror}") from exc
+        except json.JSONDecodeError as exc:
+            raise ValueError(f"invalid JSON in canonical rate file {name}") from exc
+        if not isinstance(payload, dict):
+            raise ValueError(f"canonical rate file {name} must contain a JSON object")
+        if payload.get("tax_year") != year:
+            raise ValueError(
+                f"canonical rate file {name} must declare tax_year {year}"
+            )
+        years.append(year)
     return sorted(years)
 
 
 def resolve_tax_year(explicit=None, rates_dir=US_FEDERAL_RATES_DIR):
     """Use an explicit year, otherwise the newest validated canonical rates file."""
     if explicit is not None:
-        if explicit < 2015 or explicit > 2035:
-            raise ValueError("tax year must be between 2015 and 2035")
+        if explicit < 1000 or explicit > 9999:
+            raise ValueError("tax year must be a positive four-digit year")
         return explicit
     years = available_rate_years(rates_dir)
     if not years:

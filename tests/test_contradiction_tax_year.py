@@ -26,21 +26,36 @@ class ContradictionTaxYearTests(unittest.TestCase):
             (root / "rates.2026.json").write_text(
                 json.dumps({"tax_year": 2026}), encoding="utf-8"
             )
-            (root / "rates.2027.json").write_text("not json", encoding="utf-8")
+            (root / "rates.latest.json").write_text("not json", encoding="utf-8")
 
             self.assertEqual(scanner.resolve_tax_year(rates_dir=directory), 2026)
             self.assertEqual(scanner.available_rate_years(directory), [2025, 2026])
 
     def test_explicit_year_overrides_rate_files(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
-            self.assertEqual(scanner.resolve_tax_year(2025, directory), 2025)
+            self.assertEqual(scanner.resolve_tax_year(2042, directory), 2042)
+            with self.assertRaisesRegex(ValueError, "positive four-digit"):
+                scanner.resolve_tax_year(999, directory)
 
-    def test_missing_or_invalid_rate_directory_fails(self) -> None:
+    def test_missing_rate_directory_fails(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
-            (Path(directory) / "rates.2026.json").write_text(
+            with self.assertRaisesRegex(ValueError, "no valid rates"):
+                scanner.resolve_tax_year(rates_dir=directory)
+
+    def test_malformed_or_mismatched_canonical_rate_file_fails_closed(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / "rates.2025.json").write_text(
                 json.dumps({"tax_year": 2025}), encoding="utf-8"
             )
-            with self.assertRaisesRegex(ValueError, "no valid rates"):
+            (root / "rates.2026.json").write_text("not json", encoding="utf-8")
+            with self.assertRaisesRegex(ValueError, r"invalid JSON.*rates\.2026\.json"):
+                scanner.resolve_tax_year(rates_dir=directory)
+
+            (root / "rates.2026.json").write_text(
+                json.dumps({"tax_year": 2025}), encoding="utf-8"
+            )
+            with self.assertRaisesRegex(ValueError, r"rates\.2026\.json.*tax_year 2026"):
                 scanner.resolve_tax_year(rates_dir=directory)
 
     def test_frontmatter_year_wins_and_missing_year_uses_default(self) -> None:
