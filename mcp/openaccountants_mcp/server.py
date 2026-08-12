@@ -164,7 +164,7 @@ def _first_h1(body: str) -> str | None:
 #: spelling that CONTRIBUTING.md says is being retired. Read both, newest first,
 #: or every guide reviewed under the current convention reports as unreviewed.
 _VERIFIER_KEYS = ("reviewed_by", "verified_by")
-_NOT_A_VERIFIER = {"pending", "pending_review", "none", "n/a", "-"}
+_NOT_A_VERIFIER = {"pending", "pending_review", "none", "no", "false", "n/a", "tbd", "-"}
 
 
 def _real_verifier(meta: dict[str, Any]) -> str | None:
