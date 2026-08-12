@@ -38,6 +38,7 @@ Usage:
 
 import argparse
 import importlib.util
+import json
 import os
 import re
 import sys
@@ -68,8 +69,40 @@ JURISDICTION_TREES = {
     "DE": {"scan": ["skills/international/germany"], "shadow": "packages/germany"},
 }
 
-DEFAULT_TAX_YEAR = 2025  # repo's current default year (all rates.*.json are 2025)
+US_FEDERAL_RATES_DIR = os.path.join(REPO_ROOT, "packages", "us-federal")
 BINDING_YEARS = range(2023, 2028)
+
+
+def available_rate_years(rates_dir=US_FEDERAL_RATES_DIR):
+    """Return years from structurally valid canonical rates.YYYY.json files."""
+    years = []
+    if not os.path.isdir(rates_dir):
+        return years
+    for name in os.listdir(rates_dir):
+        match = re.fullmatch(r"rates\.(\d{4})\.json", name)
+        if not match:
+            continue
+        year = int(match.group(1))
+        try:
+            with open(os.path.join(rates_dir, name), encoding="utf-8") as fh:
+                payload = json.load(fh)
+        except (OSError, json.JSONDecodeError):
+            continue
+        if isinstance(payload, dict) and payload.get("tax_year") == year:
+            years.append(year)
+    return sorted(years)
+
+
+def resolve_tax_year(explicit=None, rates_dir=US_FEDERAL_RATES_DIR):
+    """Use an explicit year, otherwise the newest validated canonical rates file."""
+    if explicit is not None:
+        if explicit < 2015 or explicit > 2035:
+            raise ValueError("tax year must be between 2015 and 2035")
+        return explicit
+    years = available_rate_years(rates_dir)
+    if not years:
+        raise ValueError(f"no valid rates.YYYY.json files found in {rates_dir}")
+    return years[-1]
 
 # A file only contributes claims when its frontmatter jurisdiction matches the
 # scan (keeps e.g. packages/germany/eu-vat-directive.md — other member states'
@@ -450,7 +483,7 @@ def strip_frontmatter_body(text):
     return block, (text[body_start:], offset)
 
 
-def extract_claims(rel_path, text, jurisdiction, compiled, stats):
+def extract_claims(rel_path, text, jurisdiction, compiled, stats, default_tax_year):
     """Yield claim dicts from one guide file."""
     block, body_info = strip_frontmatter_body(text)
     if body_info is None:
@@ -468,7 +501,7 @@ def extract_claims(rel_path, text, jurisdiction, compiled, stats):
         m = re.match(r"(\d{4})", str(fields["tax_year"]))
         if m:
             fm_year = int(m.group(1))
-    fm_year = fm_year or DEFAULT_TAX_YEAR
+    fm_year = fm_year or default_tax_year
 
     body, line_offset = body_info
     claims = []
@@ -619,7 +652,7 @@ def read(rel_path):
         return fh.read()
 
 
-def scan_jurisdiction(jurisdiction, compiled):
+def scan_jurisdiction(jurisdiction, compiled, default_tax_year):
     trees = JURISDICTION_TREES[jurisdiction]
     stats = {
         "files_scanned": 0, "claims": 0, "multivalue_lines_skipped": 0,
@@ -630,7 +663,9 @@ def scan_jurisdiction(jurisdiction, compiled):
     scanned_basenames = set()
     for tree in trees["scan"]:
         for rel in md_files(tree):
-            file_claims = extract_claims(rel, read(rel), jurisdiction, compiled, stats)
+            file_claims = extract_claims(
+                rel, read(rel), jurisdiction, compiled, stats, default_tax_year
+            )
             if file_claims is not None:
                 stats["files_scanned"] += 1
                 claims.extend(file_claims or [])
@@ -649,13 +684,17 @@ def scan_jurisdiction(jurisdiction, compiled):
                     break
             if canonical is None:
                 # Package-only file: scan it directly (nothing to drift against).
-                file_claims = extract_claims(rel, read(rel), jurisdiction, compiled, stats)
+                file_claims = extract_claims(
+                    rel, read(rel), jurisdiction, compiled, stats, default_tax_year
+                )
                 if file_claims:
                     stats["files_scanned"] += 1
                     claims.extend(file_claims)
                 continue
             shadow_stats = dict.fromkeys(stats, 0)  # throwaway counters
-            shadow_claims = extract_claims(rel, read(rel), jurisdiction, compiled, shadow_stats)
+            shadow_claims = extract_claims(
+                rel, read(rel), jurisdiction, compiled, shadow_stats, default_tax_year
+            )
             canon_claims = [c for c in claims if c["path"] == canonical]
             drift.extend(compare_copies(canonical, canon_claims, rel, shadow_claims))
 
@@ -789,7 +828,15 @@ def main(argv=None):
                         help="Jurisdiction to scan (repeatable).")
     parser.add_argument("--all", action="store_true", help="Scan all supported jurisdictions.")
     parser.add_argument("--out", help="Write the markdown report here (default: stdout).")
+    parser.add_argument(
+        "--tax-year", type=int,
+        help="Fallback year for claims without a year (default: newest valid US rates file).",
+    )
     args = parser.parse_args(argv)
+    try:
+        default_tax_year = resolve_tax_year(args.tax_year)
+    except ValueError as exc:
+        parser.error(str(exc))
 
     if args.all or not args.jurisdiction:
         jurisdictions = sorted(JURISDICTION_TREES)
@@ -799,7 +846,7 @@ def main(argv=None):
     compiled = compile_concepts()
     results = {}
     for jur in jurisdictions:
-        results[jur] = scan_jurisdiction(jur, compiled)
+        results[jur] = scan_jurisdiction(jur, compiled, default_tax_year)
 
     report = render_report(results)
     if args.out:
@@ -813,7 +860,7 @@ def main(argv=None):
             total_med += meds
             print(f"{jur}: {highs} HIGH, {meds} MEDIUM, {len(drift)} copy-drift "
                   f"({stats['files_scanned']} files, {stats['claims']} claims)")
-        print(f"TOTAL: {total_high} HIGH, {total_med} MEDIUM → {args.out}")
+        print(f"TOTAL: {total_high} HIGH, {total_med} MEDIUM -> {args.out}")
     else:
         sys.stdout.write(report)
     return 0
