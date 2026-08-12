@@ -53,6 +53,10 @@ KEY_RE = re.compile(r"^([A-Za-z_][A-Za-z0-9_-]*):[ \t]*(.*)$")
 # Jurisdiction values that look like codes get uppercased (MT, US, US-CA, CA-ON).
 CODE_RE = re.compile(r"^[A-Za-z]{2,3}(-[A-Za-z0-9]{1,4})*$")
 
+UNREVIEWED_MARKERS = {
+    "pending", "pending_review", "none", "no", "false", "-", "n/a", "tbd",
+}
+
 
 def extract_frontmatter(text):
     """Return the raw frontmatter block (str) or None if the file has none."""
@@ -98,6 +102,16 @@ def parse_known_keys(block):
     return fields
 
 
+def is_accountant_reviewed(guide):
+    """Return true only for Tier 1 guides with a real reviewer identity."""
+    if guide.get("tier") != 1:
+        return False
+    return any(
+        value and str(value).strip().lower() not in UNREVIEWED_MARKERS
+        for value in (guide.get("reviewed_by"), guide.get("verified_by"))
+    )
+
+
 def guide_files():
     """Yield repo-relative paths of candidate guide files, sorted."""
     paths = []
@@ -132,7 +146,7 @@ def build_index():
             jurisdiction = jurisdiction.upper()
 
         tier = fields["tier"]
-        if isinstance(tier, str) and tier.isdigit():
+        if tier in ("1", "2"):
             tier = int(tier)
 
         guides.append({
@@ -151,21 +165,12 @@ def build_index():
     guides.sort(key=lambda g: g["path"])
 
     jurisdictions = {g["jurisdiction"] for g in guides if g["jurisdiction"]}
-    unreviewed_markers = {"pending", "none", "no", "false", "-", "n/a", "tbd"}
-
-    def is_reviewed(guide):
-        for key in ("reviewed_by", "verified_by"):
-            value = guide[key]
-            if value and str(value).strip().lower() not in unreviewed_markers:
-                return True
-        return False
-
     return {
         "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         "counts": {
             "guides": len(guides),
             "jurisdictions": len(jurisdictions),
-            "accountant_reviewed": sum(1 for g in guides if is_reviewed(g)),
+            "accountant_reviewed": sum(is_accountant_reviewed(g) for g in guides),
         },
         "guides": guides,
     }
