@@ -61,18 +61,16 @@ class DuplicateSlugTests(unittest.TestCase):
         self.assertIn("second", server._index())
 
     def test_safe_resolve_rejects_a_symlink_escape(self) -> None:
-        outside = Path(self._tmp.name).parent / "outside-skill.md"
-        outside.write_text("outside", encoding="utf-8")
-        link = self.packages / "escape.md"
-        try:
-            link.symlink_to(outside)
-        except OSError as exc:
-            self.skipTest(f"symlink creation is unavailable: {exc}")
-        try:
+        with tempfile.TemporaryDirectory() as outside_dir:
+            outside = Path(outside_dir) / "outside-skill.md"
+            outside.write_text("outside", encoding="utf-8")
+            link = self.packages / "escape.md"
+            try:
+                link.symlink_to(outside)
+            except OSError as exc:
+                self.skipTest(f"symlink creation is unavailable: {exc}")
             with self.assertRaisesRegex(ValueError, "Path escapes allowed root"):
                 server._safe_resolve(self.packages, "escape.md")
-        finally:
-            outside.unlink(missing_ok=True)
 
     def test_hand_authored_us_federal_copy_has_documented_precedence(self) -> None:
         self._write("us-ca/federal.md", _skill("federal-skill", "Generated", "US-CA"))
