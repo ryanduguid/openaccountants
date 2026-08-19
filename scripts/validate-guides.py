@@ -83,6 +83,27 @@ TAX_YEAR_MIN, TAX_YEAR_MAX = 2015, 2035
 
 
 LAST_UPDATED_FMT = re.compile(r"\d{4}-\d{2}-\d{2}")
+NON_REVIEWER_MARKERS = {"pending", "pending_review", "none", "no", "false", "-", "n/a", "tbd"}
+
+
+def real_reviewer(value):
+    """Whether a frontmatter reviewer field makes a real named claim."""
+    return bool(value and str(value).strip().lower() not in NON_REVIEWER_MARKERS)
+
+
+def check_quality_metadata(rel, fields, errors):
+    """Enforce the fail-closed quality-tier contract for canonical sources."""
+    tier = fields["tier"]
+    reviewed_by = real_reviewer(fields["reviewed_by"])
+    verified_by = real_reviewer(fields["verified_by"])
+    if not tier:
+        errors.append(f"{rel}: missing required frontmatter key `tier`")
+    elif tier not in ("1", "2"):
+        errors.append(f"{rel}: `tier` must be 1 or 2 (got {tier!r})")
+    elif tier == "1" and not (reviewed_by or verified_by):
+        errors.append(f"{rel}: tier 1 requires a real `reviewed_by` or `verified_by` value")
+    elif tier == "2" and verified_by:
+        errors.append(f"{rel}: tier 2 must not claim accountant verification in `verified_by`")
 
 
 def changed_files_vs_main():
@@ -130,11 +151,7 @@ def check_guides(bi, errors, warnings, only_files=None):
                     f"{TAX_YEAR_MIN}-{TAX_YEAR_MAX} (got {value!r}) — put "
                     "ranges/calendars/qualifiers in `tax_year_notes`"
                 )
-        tier = fields["tier"]
-        if not tier:
-            errors.append(f"{rel}: missing required frontmatter key `tier`")
-        elif tier not in ("1", "2"):
-            errors.append(f"{rel}: `tier` must be 1 or 2 (got {tier!r})")
+        check_quality_metadata(rel, fields, errors)
         last_updated = fields["last_updated"]
         if not last_updated:
             errors.append(f"{rel}: missing required frontmatter key `last_updated`")

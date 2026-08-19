@@ -86,8 +86,9 @@ print("\nget_skill('malta-income-tax'):")
 gs = S.get_skill("malta-income-tax")
 check("has markdown", len(gs["markdown"]) > 500)
 check("has provenance footer", "Provenance & attribution" in gs["markdown"])
-check("accountant-verified tier", gs["quality_tier"] == "accountant-verified", gs["quality_tier"])
-check("verifier is a name, not an email", gs["verified_by"] and "@" not in str(gs["verified_by"]),
+check("explicit tier 2 stays research-verified",
+      gs["quality_tier"] == "research-verified", gs["quality_tier"])
+check("tier 2 does not expose a reviewer as verified", gs["verified_by"] is None,
       str(gs["verified_by"]))
 
 # --- get_skill_sections ---------------------------------------------------

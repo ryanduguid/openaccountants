@@ -166,7 +166,7 @@ def _first_h1(body: str) -> str | None:
 #: spelling that CONTRIBUTING.md says is being retired. Read both, newest first,
 #: or every guide reviewed under the current convention reports as unreviewed.
 _VERIFIER_KEYS = ("reviewed_by", "verified_by")
-_NOT_A_VERIFIER = {"pending", "pending_review", "none", "n/a", "-"}
+_NOT_A_VERIFIER = {"pending", "pending_review", "none", "no", "false", "n/a", "tbd", "-"}
 
 
 def _real_verifier(meta: dict[str, Any]) -> str | None:
@@ -182,8 +182,18 @@ def _real_verifier(meta: dict[str, Any]) -> str | None:
 
 
 def _quality_tier(meta: dict[str, Any]) -> str:
-    """A named verifier means accountant-verified; otherwise research-verified."""
-    return "accountant-verified" if _real_verifier(meta) else "research-verified"
+    """Map explicit frontmatter tier to the public quality identifier.
+
+    Tier 1 also requires a named reviewer. Missing or inconsistent metadata
+    fails closed as research-verified rather than inferring sign-off from a
+    reviewer field alone.
+    """
+    tier = str(meta.get("tier") or "").strip()
+    return (
+        "accountant-verified"
+        if tier == "1" and _real_verifier(meta)
+        else "research-verified"
+    )
 
 
 def _split_sections(body: str) -> list[dict[str, Any]]:
@@ -275,14 +285,19 @@ def _catalogue() -> tuple[
         own = str(meta.get("jurisdiction") or "").strip().upper()
         if own:
             dir_codes[topdir][own] += 1
+        quality_tier = _quality_tier(meta)
         rows.append({
             "slug": slug,
             "title": _first_h1(body) or slug,
             "own_jur": own,
             "topdir": topdir,
             "category": str(meta.get("category") or ""),
-            "quality_tier": _quality_tier(meta),
-            "verified_by": _real_verifier(meta),
+            "quality_tier": quality_tier,
+            "verified_by": (
+                _real_verifier(meta)
+                if quality_tier == "accountant-verified"
+                else None
+            ),
             "last_updated": str(meta.get("last_updated") or ""),
             "relpath": relpath.as_posix(),
             # Hash the guidance, not the file. Over whole bytes a differing
