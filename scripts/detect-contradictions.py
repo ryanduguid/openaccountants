@@ -38,9 +38,11 @@ Usage:
 
 import argparse
 import importlib.util
+import json
 import os
 import re
 import sys
+from collections import Counter
 from datetime import datetime, timezone
 
 REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -68,8 +70,127 @@ JURISDICTION_TREES = {
     "DE": {"scan": ["skills/international/germany"], "shadow": "packages/germany"},
 }
 
-DEFAULT_TAX_YEAR = 2025  # repo's current default year (all rates.*.json are 2025)
-BINDING_YEARS = range(2023, 2028)
+US_FEDERAL_RATES_DIR = os.path.join(REPO_ROOT, "packages", "us-federal")
+
+# How far either side of the binding anchor a bare 4-digit number in prose may
+# still be read as a tax year. Tax guides routinely compare against the prior
+# two years and flag sunsets a couple of years out; past that a number like
+# 2015 is far more likely to be a code section or an amount. The window is
+# anchored on the resolved year rather than written out as a literal range: a
+# hard-coded `range(2023, 2028)` was a second year expiry on the very logic
+# this script exists to de-hardcode, and any anchor outside it made
+# sentence_years() return nothing, so no prose could bind and claims fell away
+# with no signal.
+BINDING_LOOKBACK = 2
+BINDING_LOOKAHEAD = 2
+
+# Sections a canonical rates file must have populated before it can bind a
+# year. ANNUAL-UPDATE-RUNBOOK.md has next year's skeleton created in December,
+# before the markdown is refreshed, so without this max(rates year) leads the
+# content by a year every year.
+REQUIRED_RATE_LEAVES = (
+    ("valid_as_of",),
+    ("legislative_basis",),
+    ("rates_individual", "standard_deduction"),
+    ("rates_individual", "ordinary_income_brackets"),
+)
+
+
+def binding_years(default_tax_year):
+    """Years a bare 4-digit number in prose may bind to, derived from the anchor."""
+    return range(
+        default_tax_year - BINDING_LOOKBACK, default_tax_year + BINDING_LOOKAHEAD + 1
+    )
+
+
+def _has_todo_marker(node):
+    """True when any key anywhere in the payload is an unfilled `_TODO` slot."""
+    if isinstance(node, dict):
+        return any(
+            str(key).startswith("_TODO") or _has_todo_marker(value)
+            for key, value in node.items()
+        )
+    if isinstance(node, list):
+        return any(_has_todo_marker(item) for item in node)
+    return False
+
+
+def is_populated_rates(payload):
+    """Whether a canonical rates payload carries real figures, not a skeleton."""
+    if _has_todo_marker(payload):
+        return False
+    for path in REQUIRED_RATE_LEAVES:
+        node = payload
+        for key in path:
+            if not isinstance(node, dict) or node.get(key) is None:
+                return False
+            node = node[key]
+        # A branch whose every real leaf is still null is just as unpopulated
+        # as a missing one (2026 ships `ordinary_income_brackets` with all four
+        # filing statuses set to null).
+        if isinstance(node, dict) and all(
+            value is None
+            for key, value in node.items()
+            if not str(key).startswith("_")
+        ):
+            return False
+    return True
+
+
+def available_rate_years(rates_dir=US_FEDERAL_RATES_DIR):
+    """Return canonical rate years, rejecting malformed matching files.
+
+    Malformed files raise. An unpopulated next-year skeleton is skipped rather
+    than raising: the annual runbook mandates creating it months before the
+    figures land, so it is an expected state, not an error.
+    """
+    years = []
+    if not os.path.isdir(rates_dir):
+        return years
+    for name in sorted(os.listdir(rates_dir)):
+        match = re.fullmatch(r"rates\.(\d{4})\.json", name)
+        if not match:
+            continue
+        year = int(match.group(1))
+        if year < 1000:
+            raise ValueError(f"canonical rate file {name} must use a positive four-digit year")
+        try:
+            with open(os.path.join(rates_dir, name), encoding="utf-8") as fh:
+                payload = json.load(fh)
+        except OSError as exc:
+            raise ValueError(f"cannot read canonical rate file {name}: {exc.strerror}") from exc
+        except json.JSONDecodeError as exc:
+            raise ValueError(f"invalid JSON in canonical rate file {name}") from exc
+        if not isinstance(payload, dict):
+            raise ValueError(f"canonical rate file {name} must contain a JSON object")
+        if payload.get("tax_year") != year:
+            raise ValueError(
+                f"canonical rate file {name} must declare tax_year {year}"
+            )
+        if not is_populated_rates(payload):
+            continue
+        years.append(year)
+    return sorted(years)
+
+
+def resolve_tax_year(explicit=None, rates_dir=US_FEDERAL_RATES_DIR):
+    """Use an explicit year, otherwise the newest populated canonical rates file."""
+    years = available_rate_years(rates_dir)
+    if explicit is not None:
+        if explicit < 1000 or explicit > 9999:
+            raise ValueError("tax year must be a positive four-digit year")
+        # Unchecked, an override binds every undated claim to a year no
+        # sentence or frontmatter year can ever join, emptying its bucket.
+        if explicit not in years:
+            listed = ", ".join(str(y) for y in years) or "none"
+            raise ValueError(
+                f"tax year {explicit} has no populated canonical rates file "
+                f"(available: {listed})"
+            )
+        return explicit
+    if not years:
+        raise ValueError(f"no valid rates.YYYY.json files found in {rates_dir}")
+    return years[-1]
 
 # A file only contributes claims when its frontmatter jurisdiction matches the
 # scan (keeps e.g. packages/germany/eu-vat-directive.md — other member states'
@@ -279,8 +400,10 @@ CENTS_RE = re.compile(r"\b(\d{1,3}(?:\.\d{1,2})?) cents?\b")
 PERCENT_RE = re.compile(r"(\d{1,3}(?:[.,]\d{1,3})?)\s?%")
 MILLION_RE = re.compile(r"^\s?(?:million|m\b|mio)", re.IGNORECASE)
 
-# 2023-2027, tolerating "2025-26" / "2025/26" tax-year labels (start year binds).
-YEAR_RE = re.compile(r"\b(20[12]\d)(?:[-/](?:\d{2}|20\d{2}))?\b")
+# Any 21st-century year, tolerating "2025-26" / "2025/26" tax-year labels (start
+# year binds). Which of them may actually bind is decided by binding_years(),
+# not by this pattern — a decade cap here was a second silent year expiry.
+YEAR_RE = re.compile(r"\b(20\d\d)(?:[-/](?:\d{2}|20\d{2}))?\b")
 
 HEADING_RE = re.compile(r"^\s{0,3}#{1,6}\s")
 # Worked-example / test-vector prose: numbers there are scenario arithmetic,
@@ -404,14 +527,41 @@ def extract_money_values(line, percent_spans):
     return values
 
 
-def sentence_years(line):
+def sentence_years(line, binding):
     """Distinct 4-digit binding years mentioned (start year of 2025-26 labels)."""
     years = set()
     for m in YEAR_RE.finditer(line):
         y = int(m.group(1))
-        if y in BINDING_YEARS:
+        if y in binding:
             years.add(y)
     return years
+
+
+def content_tax_year(text, default_tax_year, binding):
+    """The year an undated guide's claims bind to, read off its own content.
+
+    All 29 packages/us-federal guides carry no frontmatter `tax_year`, so
+    without this the newest rates filename decides their year and relabels
+    2025 prose a year forward. The year the guide cites most often is the one
+    it describes; ties fall back to the newest year it mentions. Either way the
+    result is capped at `default_tax_year` — the newest year with a populated
+    canonical rates file — so an undated guide is never bound a year ahead of
+    its own content.
+    """
+    counts = Counter()
+    for m in YEAR_RE.finditer(text):
+        y = int(m.group(1))
+        if y in binding:
+            counts[y] += 1
+    if not counts:
+        return default_tax_year
+    ranked = counts.most_common()
+    dominant = (
+        ranked[0][0]
+        if len(ranked) == 1 or ranked[0][1] > ranked[1][1]
+        else max(counts)
+    )
+    return min(default_tax_year, dominant)
 
 
 def qualifiers_for(line):
@@ -450,7 +600,7 @@ def strip_frontmatter_body(text):
     return block, (text[body_start:], offset)
 
 
-def extract_claims(rel_path, text, jurisdiction, compiled, stats):
+def extract_claims(rel_path, text, jurisdiction, compiled, stats, default_tax_year):
     """Yield claim dicts from one guide file."""
     block, body_info = strip_frontmatter_body(text)
     if body_info is None:
@@ -463,12 +613,14 @@ def extract_claims(rel_path, text, jurisdiction, compiled, stats):
     file_jur = (fields.get("jurisdiction") or "").strip().upper()
     if file_jur not in JURISDICTION_CODES[jurisdiction]:
         return []
+    binding = binding_years(default_tax_year)
     fm_year = None
     if fields.get("tax_year"):
         m = re.match(r"(\d{4})", str(fields["tax_year"]))
         if m:
             fm_year = int(m.group(1))
-    fm_year = fm_year or DEFAULT_TAX_YEAR
+    if not fm_year:
+        fm_year = content_tax_year(text, default_tax_year, binding)
 
     body, line_offset = body_info
     claims = []
@@ -487,7 +639,7 @@ def extract_claims(rel_path, text, jurisdiction, compiled, stats):
             continue
         if HEADING_RE.match(line):
             in_changelog = bool(CHANGELOG_HEADING_RE.search(line))
-            hy = sentence_years(line)
+            hy = sentence_years(line, binding)
             heading_year = next(iter(hy)) if len(hy) == 1 else None
             continue  # headings are context, never claim sources
         if in_changelog or not stripped:
@@ -510,7 +662,7 @@ def extract_claims(rel_path, text, jurisdiction, compiled, stats):
             if spec["kind"] in ("percent", "any"):
                 kinds.append(("percent", pct_values))
 
-            years = sentence_years(line)
+            years = sentence_years(line, binding)
             for kind, values in kinds:
                 # 0 is never a normative value for these concepts — it's
                 # always example output ("SolZ = 0%"). Plausibility bounds
@@ -619,7 +771,7 @@ def read(rel_path):
         return fh.read()
 
 
-def scan_jurisdiction(jurisdiction, compiled):
+def scan_jurisdiction(jurisdiction, compiled, default_tax_year):
     trees = JURISDICTION_TREES[jurisdiction]
     stats = {
         "files_scanned": 0, "claims": 0, "multivalue_lines_skipped": 0,
@@ -630,7 +782,9 @@ def scan_jurisdiction(jurisdiction, compiled):
     scanned_basenames = set()
     for tree in trees["scan"]:
         for rel in md_files(tree):
-            file_claims = extract_claims(rel, read(rel), jurisdiction, compiled, stats)
+            file_claims = extract_claims(
+                rel, read(rel), jurisdiction, compiled, stats, default_tax_year
+            )
             if file_claims is not None:
                 stats["files_scanned"] += 1
                 claims.extend(file_claims or [])
@@ -649,13 +803,17 @@ def scan_jurisdiction(jurisdiction, compiled):
                     break
             if canonical is None:
                 # Package-only file: scan it directly (nothing to drift against).
-                file_claims = extract_claims(rel, read(rel), jurisdiction, compiled, stats)
+                file_claims = extract_claims(
+                    rel, read(rel), jurisdiction, compiled, stats, default_tax_year
+                )
                 if file_claims:
                     stats["files_scanned"] += 1
                     claims.extend(file_claims)
                 continue
             shadow_stats = dict.fromkeys(stats, 0)  # throwaway counters
-            shadow_claims = extract_claims(rel, read(rel), jurisdiction, compiled, shadow_stats)
+            shadow_claims = extract_claims(
+                rel, read(rel), jurisdiction, compiled, shadow_stats, default_tax_year
+            )
             canon_claims = [c for c in claims if c["path"] == canonical]
             drift.extend(compare_copies(canonical, canon_claims, rel, shadow_claims))
 
@@ -721,7 +879,7 @@ def render_candidate(lines, key, clusters):
             if sig in seen:
                 continue
             seen.add(sig)
-            marker = "" if c["year_explicit"] else " _(year from frontmatter)_"
+            marker = "" if c["year_explicit"] else " _(year inferred from the guide)_"
             lines.append(f"  - `{c['path']}:{c['line']}`{marker}")
             lines.append(f"    > {c['sentence']}")
     lines.append("")
@@ -789,7 +947,15 @@ def main(argv=None):
                         help="Jurisdiction to scan (repeatable).")
     parser.add_argument("--all", action="store_true", help="Scan all supported jurisdictions.")
     parser.add_argument("--out", help="Write the markdown report here (default: stdout).")
+    parser.add_argument(
+        "--tax-year", type=int,
+        help="Fallback year for claims without a year (default: newest valid US rates file).",
+    )
     args = parser.parse_args(argv)
+    try:
+        default_tax_year = resolve_tax_year(args.tax_year)
+    except ValueError as exc:
+        parser.error(str(exc))
 
     if args.all or not args.jurisdiction:
         jurisdictions = sorted(JURISDICTION_TREES)
@@ -799,7 +965,7 @@ def main(argv=None):
     compiled = compile_concepts()
     results = {}
     for jur in jurisdictions:
-        results[jur] = scan_jurisdiction(jur, compiled)
+        results[jur] = scan_jurisdiction(jur, compiled, default_tax_year)
 
     report = render_report(results)
     if args.out:
@@ -813,7 +979,7 @@ def main(argv=None):
             total_med += meds
             print(f"{jur}: {highs} HIGH, {meds} MEDIUM, {len(drift)} copy-drift "
                   f"({stats['files_scanned']} files, {stats['claims']} claims)")
-        print(f"TOTAL: {total_high} HIGH, {total_med} MEDIUM → {args.out}")
+        print(f"TOTAL: {total_high} HIGH, {total_med} MEDIUM -> {args.out}")
     else:
         sys.stdout.write(report)
     return 0
