@@ -25,6 +25,36 @@ def _skill(name: str, title: str, jurisdiction: str = "XX") -> str:
     )
 
 
+#: Same guidance, different quality stamps — the class the whole-file hash
+#: could not tell apart from a real conflict.
+TWIN_METADATA_A = """---
+name: twin
+jurisdiction: AA
+category: international
+tier: 2
+last_updated: 2026-01-02
+---
+
+# Twin
+
+Identical guidance in both copies.
+"""
+
+TWIN_METADATA_B = """---
+name: twin
+jurisdiction: AA
+category: international
+tier: 1
+reviewed_by: Alex Example, CPA
+last_updated: 2026-03-09
+---
+
+# Twin
+
+Identical guidance in both copies.
+"""
+
+
 class DuplicateSlugTests(unittest.TestCase):
     def setUp(self) -> None:
         self._tmp = tempfile.TemporaryDirectory()
@@ -42,6 +72,40 @@ class DuplicateSlugTests(unittest.TestCase):
         path = self.packages / relpath
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text(content, encoding="utf-8")
+
+    def test_metadata_only_difference_is_not_treated_as_divergence(self) -> None:
+        """Divergence is judged on the guidance, not on frontmatter stamps.
+
+        Hashing whole file bytes made a differing tier/reviewed_by/last_updated
+        stamp indistinguishable from genuinely different tax law, so
+        metadata-only twins were dropped as if their content conflicted.
+        """
+        self._write("country-a/twin.md", TWIN_METADATA_A)
+        self._write("country-b/twin.md", TWIN_METADATA_B)
+
+        self.assertIn("twin", server._index())
+        report = server._duplicate_report()
+        self.assertEqual(report["ambiguous_slugs"], 0)
+        self.assertEqual(report["identical_aliases"], 1)
+
+    def test_dropped_slugs_are_logged_and_surfaced_by_start(self) -> None:
+        """A dropped slug must not be silent: nine jurisdictions' core skills
+        vanished while start() still answered and list_skills() just reported a
+        smaller total."""
+        self._write("country-a/collision.md", _skill("collision", "Country A", "AA"))
+        self._write("country-b/collision.md", _skill("collision", "Country B", "BB"))
+
+        with self.assertLogs(server.log, level="WARNING") as captured:
+            server._catalogue()
+        logged = " | ".join(captured.output)
+        self.assertIn("collision", logged)
+        self.assertIn("country-a/collision.md", logged)
+        self.assertIn("country-b/collision.md", logged)
+
+        response = server.start()
+
+        self.assertIn("warning", response)
+        self.assertIn("collision", response["warning"])
 
     def test_byte_identical_aliases_collapse_to_sorted_path(self) -> None:
         content = _skill("shared-skill", "Shared")
@@ -89,7 +153,7 @@ class DuplicateSlugTests(unittest.TestCase):
             self.assertEqual(server._duplicate_report()["rejected_paths"], ["escape.md"])
 
     def test_duplicate_report_module_is_quiet_when_imported(self) -> None:
-        script = Path(server.__file__).resolve().parents[1] / "duplicate_slug_report.py"
+        script = Path(server.__file__).resolve().parent / "duplicate_slug_report.py"
         stdout = io.StringIO()
 
         with contextlib.redirect_stdout(stdout):

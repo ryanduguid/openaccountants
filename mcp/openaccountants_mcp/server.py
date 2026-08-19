@@ -264,8 +264,7 @@ def _catalogue() -> tuple[
             rejected_paths.append(relpath.as_posix())
             continue
         try:
-            raw = safe_path.read_bytes()
-            text = raw.decode("utf-8")
+            text = safe_path.read_text(encoding="utf-8")
         except (OSError, UnicodeDecodeError):
             continue
         meta, body = _parse_frontmatter(text, source=relpath)
@@ -286,7 +285,11 @@ def _catalogue() -> tuple[
             "verified_by": _real_verifier(meta),
             "last_updated": str(meta.get("last_updated") or ""),
             "relpath": relpath.as_posix(),
-            "content_hash": sha256(raw).digest(),
+            # Hash the guidance, not the file. Over whole bytes a differing
+            # `tier`/`verified_by`/`last_updated` stamp is indistinguishable
+            # from genuinely different tax law, so metadata-only twins were
+            # dropped as if their content conflicted.
+            "content_hash": sha256(body.encode("utf-8")).digest(),
         })
 
     # Pass 2: choose only an authority supported by the repository contract.
@@ -324,6 +327,14 @@ def _catalogue() -> tuple[
         selected.pop("content_hash")
         out[slug] = selected
 
+    for slug, paths in sorted(ambiguous.items()):
+        log.warning(
+            "skill %r omitted from the catalogue: packaged copies carry "
+            "different guidance (%s). Resolve the duplicate source names; "
+            "until then get_skill(%r) fails closed.",
+            slug, ", ".join(paths), slug,
+        )
+
     report = {
         "skill_files": len(rows),
         "slugs": len(candidates),
@@ -347,6 +358,27 @@ def _clear_index_cache() -> None:
 
 
 _index.cache_clear = _clear_index_cache  # type: ignore[attr-defined]
+
+
+def _catalogue_warning() -> str | None:
+    """Operator-facing note that some slugs are absent from the catalogue."""
+    _, ambiguous, _ = _catalogue()
+    if not ambiguous:
+        return None
+    return (
+        f"{len(ambiguous)} skill slug(s) are absent from the catalogue because "
+        f"packaged copies carry different guidance: {', '.join(sorted(ambiguous))}. "
+        "Their jurisdictions will look thinner than the corpus really is."
+    )
+
+
+def _with_catalogue_warning(result: dict[str, Any]) -> dict[str, Any]:
+    """Attach the dropped-slug note so no status can hide it from the caller."""
+    note = _catalogue_warning()
+    if note:
+        existing = result.get("warning")
+        result["warning"] = f"{existing} {note}" if existing else note
+    return result
 
 
 def _duplicate_report() -> dict[str, Any]:
@@ -883,7 +915,7 @@ def start(intent: str | None = None, jurisdiction: str | None = None) -> dict[st
     #    is more important than picking a country first.
     if intent and not intent_key:
         suggest = candidates if candidates else list(_INTENT_CATALOGUE)[:5]
-        return {
+        return _with_catalogue_warning({
             "status": "needs_clarification",
             "intent_raw": intent,
             "candidates": _catalogue_entries(suggest),
@@ -891,11 +923,11 @@ def start(intent: str | None = None, jurisdiction: str | None = None) -> dict[st
                 f"Couldn't confidently match the intent {intent!r}. "
                 "Ask the user to pick one of the candidates below, then call start() again."
             ),
-        }
+        })
 
     # 2) Nothing provided.
     if not intent_key and not jx:
-        return {
+        return _with_catalogue_warning({
             "status": "needs_input",
             "needs": ["intent", "jurisdiction"],
             "message": (
@@ -910,11 +942,11 @@ def start(intent: str | None = None, jurisdiction: str | None = None) -> dict[st
                 "Call list_skills() to enumerate every jurisdiction."
             ),
             "guardrails": _GUARDRAILS,
-        }
+        })
 
     # 3) Intent only.
     if intent_key and not jx:
-        return {
+        return _with_catalogue_warning({
             "status": "needs_input",
             "needs": ["jurisdiction"],
             "intent": intent_key,
@@ -924,13 +956,13 @@ def start(intent: str | None = None, jurisdiction: str | None = None) -> dict[st
                 "Ask which country or jurisdiction (ISO code or name), then call start() again."
             ),
             "available_jurisdictions": _jurisdictions_for_intent(intent_key),
-        }
+        })
 
     # 4) Jurisdiction only.
     if jx and not intent_key:
         avail = _intents_for_jurisdiction(jx)
         if not avail:
-            return {
+            return _with_catalogue_warning({
                 "status": "needs_input",
                 "needs": ["intent"],
                 "jurisdiction": jx,
@@ -939,8 +971,8 @@ def start(intent: str | None = None, jurisdiction: str | None = None) -> dict[st
                     "Confirm the code with the user — call list_skills() to see what's available."
                 ),
                 "available_intents": _catalogue_entries(),
-            }
-        return {
+            })
+        return _with_catalogue_warning({
             "status": "needs_input",
             "needs": ["intent"],
             "jurisdiction": jx,
@@ -949,14 +981,14 @@ def start(intent: str | None = None, jurisdiction: str | None = None) -> dict[st
                 "then call start() again with both arguments."
             ),
             "available_intents": _catalogue_entries(avail),
-        }
+        })
 
     # 5) Both inputs resolved — build the plan.
     assert intent_key and jx
     skills = _skills_for_intent(jx, intent_key)
     label = _INTENT_CATALOGUE[intent_key]["label"]
     if not skills:
-        return {
+        return _with_catalogue_warning({
             "status": "ready",
             "intent": intent_key,
             "intent_label": label,
@@ -968,8 +1000,8 @@ def start(intent: str | None = None, jurisdiction: str | None = None) -> dict[st
             ),
             "skills_to_load": [],
             "guardrails": _GUARDRAILS,
-        }
-    return {
+        })
+    return _with_catalogue_warning({
         "status": "ready",
         "intent": intent_key,
         "intent_label": label,
@@ -988,7 +1020,7 @@ def start(intent: str | None = None, jurisdiction: str | None = None) -> dict[st
             "entity type, etc.), say so and stop instead of guessing."
         ),
         "guardrails": _GUARDRAILS,
-    }
+    })
 
 
 # ---------------------------------------------------------------------------
