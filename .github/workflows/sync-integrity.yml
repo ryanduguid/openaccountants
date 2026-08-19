@@ -18,8 +18,18 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-      - name: Run sync-integrity tests
-        run: python3 -m unittest discover -s tests -p "test_sync_integrity.py" -v
+      - name: Run repo unit tests
+        # Discover every test_*.py. A literal single-file pattern silently
+        # skipped every other suite in tests/, so reverting the code they
+        # cover left CI green.
+        run: python3 -m unittest discover -s tests -p "test_*.py" -v
+      - name: Install the MCP server and its dependencies
+        run: python3 -m pip install ./mcp
+      - name: Run MCP unit tests
+        # mcp/tests/ is a separate top-level directory; without this step the
+        # MCP server's own regression suites never execute in CI.
+        working-directory: mcp
+        run: python3 -m unittest discover -s tests -p "test_*.py" -v
 
   compare:
     runs-on: ubuntu-latest

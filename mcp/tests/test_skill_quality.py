@@ -2,7 +2,10 @@
 
 from __future__ import annotations
 
+import tempfile
 import unittest
+from pathlib import Path
+from unittest import mock
 
 from openaccountants_mcp import server
 
@@ -39,6 +42,52 @@ class SkillQualityTests(unittest.TestCase):
             with self.subTest(tier=tier):
                 meta = {"tier": tier, "reviewed_by": "Alex Example, CPA"}
                 self.assertEqual(server._quality_tier(meta), "research-verified")
+
+
+class IndexVerifierExposureTests(unittest.TestCase):
+    """A non-tier-1 row must not publish a reviewer name in ``verified_by``.
+
+    The ``_quality_tier`` tests above do not cover this: deleting the
+    conditional in ``_index`` that nulls the field leaves every one of them
+    passing while the server still hands callers a tier 2 guide's reviewer as
+    its verifier.
+    """
+
+    GUIDE = """---
+name: {slug}
+tier: {tier}
+jurisdiction: MT
+reviewed_by: Alex Example, CPA
+---
+
+# {slug}
+"""
+
+    def _row_for(self, slug: str, tier: int) -> dict:
+        """Build a one-guide packages tree and return that guide's index row."""
+        tmp = tempfile.TemporaryDirectory()
+        self.addCleanup(tmp.cleanup)
+        package = Path(tmp.name) / "malta"
+        package.mkdir(parents=True)
+        (package / f"{slug}.md").write_text(
+            self.GUIDE.format(slug=slug, tier=tier), encoding="utf-8"
+        )
+        self.addCleanup(server._index.cache_clear)
+        with mock.patch.object(server, "PACKAGES_DIR", Path(tmp.name)):
+            server._index.cache_clear()
+            return server._index()[slug]
+
+    def test_tier_two_row_does_not_expose_its_reviewer(self) -> None:
+        row = self._row_for("tier-two-guide", 2)
+
+        self.assertEqual(row["quality_tier"], "research-verified")
+        self.assertIsNone(row["verified_by"])
+
+    def test_tier_one_row_still_publishes_its_verifier(self) -> None:
+        row = self._row_for("tier-one-guide", 1)
+
+        self.assertEqual(row["quality_tier"], "accountant-verified")
+        self.assertEqual(row["verified_by"], "Alex Example, CPA")
 
 
 if __name__ == "__main__":
