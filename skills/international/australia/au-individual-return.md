@@ -7,7 +7,8 @@ tax_year: 2024
 tax_year_notes: "2024-25 computation base; HELP repayment tables updated for 2025-26 and 2026-27 (marginal system)"
 last_updated: 2026-08-20
 review_status: pending_review
-depends_on: - income-tax-workflow-base
+depends_on:
+  - income-tax-workflow-base
 category: international
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)

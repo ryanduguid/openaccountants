@@ -7,7 +7,8 @@ tax_year: 2025
 tax_year_notes: "2025-26; includes 1 July 2027 CGT reform alert (Tax Reform No. 1 Act 2026)"
 last_updated: 2026-08-20
 review_status: pending_review
-depends_on: - au-individual-return
+depends_on:
+  - au-individual-return
 category: international
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
