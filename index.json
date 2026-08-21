@@ -1,9 +1,9 @@
 {
- "generated_at": "2026-08-20T05:14:39+00:00",
+ "generated_at": "2026-08-21T05:17:47+00:00",
  "counts": {
-  "guides": 1937,
+  "guides": 1939,
   "jurisdictions": 244,
-  "accountant_reviewed": 171
+  "accountant_reviewed": 166
  },
  "guides": [
   {
@@ -1262,7 +1262,7 @@
    "category": "federal",
    "tier": 1,
    "verified_by": null,
-   "reviewed_by": "Amir Pelinkovic",
+   "reviewed_by": null,
    "tax_year": "2025",
    "last_updated": "2026-07-13"
   },
@@ -16267,6 +16267,30 @@
    "last_updated": "2026-07-13"
   },
   {
+   "slug": "can-a-foreigner-start-a-business-in-serbia",
+   "path": "skills/international/serbia/can-a-foreigner-start-a-business-in-serbia.md",
+   "name": "can-a-foreigner-start-a-business-in-serbia",
+   "jurisdiction": "RS",
+   "category": null,
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "tax_year": "2025",
+   "last_updated": "2026-08-20"
+  },
+  {
+   "slug": "how-to-open-a-company-in-serbia-as-a-foreigner-doo-entrepreneur-registration-guide",
+   "path": "skills/international/serbia/how-to-open-a-company-in-serbia-as-a-foreigner-doo-entrepreneur-registration-guide.md",
+   "name": "how-to-open-a-company-in-serbia-as-a-foreigner-doo-entrepreneur-registration-guide",
+   "jurisdiction": "RS",
+   "category": null,
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "tax_year": "2025",
+   "last_updated": "2026-08-20"
+  },
+  {
    "slug": "serbia-income-tax",
    "path": "skills/international/serbia/serbia-income-tax.md",
    "name": "serbia-income-tax",
@@ -21410,7 +21434,7 @@
    "category": "state",
    "tier": 1,
    "verified_by": null,
-   "reviewed_by": "Amir Pelinkovic",
+   "reviewed_by": null,
    "tax_year": "2025",
    "last_updated": "2026-07-13"
   },
@@ -21422,7 +21446,7 @@
    "category": "state",
    "tier": 1,
    "verified_by": null,
-   "reviewed_by": "Amir Pelinkovic",
+   "reviewed_by": null,
    "tax_year": "2025",
    "last_updated": "2026-07-13"
   },
@@ -21434,7 +21458,7 @@
    "category": null,
    "tier": 1,
    "verified_by": null,
-   "reviewed_by": "Amir Pelinkovic",
+   "reviewed_by": null,
    "tax_year": "2025",
    "last_updated": "2026-07-13"
   },
@@ -21446,7 +21470,7 @@
    "category": null,
    "tier": 2,
    "verified_by": null,
-   "reviewed_by": "Amir Pelinkovic",
+   "reviewed_by": null,
    "tax_year": "2025",
    "last_updated": "2026-07-13"
   },
@@ -21458,7 +21482,7 @@
    "category": "state",
    "tier": 1,
    "verified_by": null,
-   "reviewed_by": "Amir Pelinkovic",
+   "reviewed_by": null,
    "tax_year": "2025",
    "last_updated": "2026-07-13"
   },

@@ -130,7 +130,7 @@ https://www.openaccountants.com
 
 ========================================================================
 
-## Guide inventory (1937 guides, 244 jurisdictions, 171 accountant-reviewed)
+## Guide inventory (1939 guides, 244 jurisdictions, 166 accountant-reviewed)
 
 - us-1099-k-and-payment-processors | US | tier 2 | reviewed_by -
 - us-education-credits-8863 | US | tier 2 | reviewed_by -
@@ -236,7 +236,7 @@ https://www.openaccountants.com
 - us-pl-86-272-income-tax-nexus | US | tier 2 | reviewed_by James Wallach
 - us-pte-state-matrix | US | tier 2 | reviewed_by James Wallach
 - us-qbi-deduction | US | tier 1 | reviewed_by James Wallach
-- us-quarterly-estimated-tax | US | tier 1 | reviewed_by Amir Pelinkovic
+- us-quarterly-estimated-tax | US | tier 1 | reviewed_by -
 - us-r-and-d-section-174-and-41 | US | tier 2 | reviewed_by James Wallach
 - us-s-corp-election-decision | US | tier 1 | reviewed_by James Wallach
 - us-sales-tax-nexus-50-state-matrix | US | tier 2 | reviewed_by James Wallach
@@ -1487,6 +1487,8 @@ https://www.openaccountants.com
 - sn-company-formation | SN | tier 2 | reviewed_by -
 - sn-corporate-income-tax | SN | tier 2 | reviewed_by -
 - sn-tax-overview | SN | tier 2 | reviewed_by -
+- can-a-foreigner-start-a-business-in-serbia | RS | tier 2 | reviewed_by -
+- how-to-open-a-company-in-serbia-as-a-foreigner-doo-entrepreneur-registration-guide | RS | tier 2 | reviewed_by -
 - serbia-income-tax | RS | tier 2 | reviewed_by -
 - serbia-payroll | RS | tier 2 | reviewed_by -
 - serbia-social-contributions | RS | tier 2 | reviewed_by -
@@ -1915,11 +1917,11 @@ https://www.openaccountants.com
 - id-income-tax | ID | tier 1 | reviewed_by RILIA PUTRI
 - id-sales-tax | US-ID | tier 2 | reviewed_by -
 - idaho-sales-tax | US-ID | tier 2 | reviewed_by -
-- il-estimated-tax | US-IL | tier 1 | reviewed_by Amir Pelinkovic
-- il-income-tax | US-IL | tier 1 | reviewed_by Amir Pelinkovic
-- il-payroll | US-IL | tier 1 | reviewed_by Amir Pelinkovic
-- il-pprt | US-IL | tier 2 | reviewed_by Amir Pelinkovic
-- il-sales-tax | US-IL | tier 1 | reviewed_by Amir Pelinkovic
+- il-estimated-tax | US-IL | tier 1 | reviewed_by -
+- il-income-tax | US-IL | tier 1 | reviewed_by -
+- il-payroll | US-IL | tier 1 | reviewed_by -
+- il-pprt | US-IL | tier 2 | reviewed_by -
+- il-sales-tax | US-IL | tier 1 | reviewed_by -
 - illinois-sales-tax | US-IL | tier 2 | reviewed_by -
 - in-income-tax | IN | tier 2 | reviewed_by -
 - in-payroll | US-IN | tier 2 | reviewed_by -
