@@ -4,7 +4,7 @@ description: Final orchestrator skill that assembles the complete Australian fil
 version: 0.2
 jurisdiction: AU
 tax_year: 2025
-last_updated: 2026-08-20
+last_updated: 2026-07-13
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -12,7 +12,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # AU Return Assembly
 
-## Australia Return Assembly Skill v0.2
+## Australia Return Assembly Skill v0.1
 
 ## CRITICAL EXECUTION DIRECTIVE -- READ FIRST
 
@@ -87,8 +87,8 @@ This skill coordinates execution of the content skills, verifies cross-skill con
 | --- | --- | --- |
 | Income for MLS purposes | ITR taxable income + reportable fringe benefits + total net investment loss + reportable super | Combined figure |
 | PHI status | Insurer statement | If adequate hospital cover for full year, no MLS |
-| MLS thresholds | 2025-26: Single $101,000; Family $202,000. 2024-25: Single $97,000; Family $194,000 | Below threshold = no MLS regardless of PHI |
-| MLS rates | Tier 1: 1%; Tier 2: 1.25%; Tier 3: 1.5% | Applied to income for MLS purposes |
+| MLS thresholds (2024-25) | Single: $93,000; Family: $186,000 | Below threshold = no MLS regardless of PHI |
+| MLS rates | Tier 1: 1%; Tier 2: 1.25%; Tier 3: 1.5% | Applied to taxable income |
 
 ### Cross-check 4: PAYG instalments credit against final tax
 

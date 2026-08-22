@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Australian rental property inco
 version: "1.1"
 jurisdiction: AU
 tax_year: 2025
-last_updated: 2026-08-20
+last_updated: 2026-07-13
 review_status: pending_review
 category: international
 tier: 2
@@ -13,9 +13,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # AU Rental Property
 
-> **Law-change alert — negative gearing (passed June 2026, applies from 1 July 2027).** The *Treasury Laws Amendment (Tax Reform No. 1) Act 2026* limits negative gearing of residential property to **new builds** from **1 July 2027**. Existing properties acquired on or before Budget night (**12 May 2026**) are fully grandfathered. Residential property acquired **after 12 May 2026** that is not a new dwelling can still be negatively geared up to 30 June 2027, but from 1 July 2027 its net rental losses are **quarantined** — usable only against future residential-property income, not salary or business income. The same Act replaces the 50% CGT discount with indexation + a 30% minimum rate for gains accruing from 1 July 2027 (see au-capital-gains). Acquisition date and new-build status are now mandatory intake facts for every rental client.
-
-## Australia Rental Property -- Income & Deductions Skill v1.1
+## Australia Rental Property -- Income & Deductions Skill v1.0
 
 ## Section 1 -- Quick Reference
 
@@ -91,7 +89,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ### 2.2 Negative Gearing
 
-- **Negative gearing** — Where total deductions exceed gross rental income, the net rental loss reduces other assessable income (salary, business income). This remains the law for all properties through 30 June 2027, and permanently for grandfathered properties (acquired on or before 12 May 2026) and new builds. **From 1 July 2027**, losses on residential property acquired after 12 May 2026 that is not a new dwelling are quarantined to future residential-property income (Tax Reform No. 1 Act 2026 — see the alert at the top of this skill).
+- **Negative gearing** — Where total deductions exceed gross rental income, the net rental loss reduces other assessable income (salary, business income). There is no cap on negative gearing for existing or new properties (as of 2025 law).
 
 ### 2.3 Deductible Expenses (Immediate)
 
@@ -202,7 +200,7 @@ Applies to the structural elements (building itself, fixed improvements).
 | --- | --- |
 | Applies to | Non-resident landlords receiving Australian rental income |
 | Rate | Payer (tenant/agent) must withhold amounts as directed by ATO |
-| FRCGW (foreign resident CGT withholding) | 15% of market value (usually sale price), no threshold, for contracts signed from 1 Jan 2025 (12.5% ≥ $750,000 for contracts signed 1 Jul 2017 – 31 Dec 2024); buyer withholds |
+| FRCGW (foreign resident CGT withholding) | 12.5% of sale price if property value ≥ $750,000 (buyer withholds) |
 | Clearance certificate | Resident vendor obtains to avoid FRCGW at settlement |
 
 ## Section 3 -- Transaction Pattern Library

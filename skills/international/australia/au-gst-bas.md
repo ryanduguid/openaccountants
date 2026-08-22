@@ -4,7 +4,7 @@ description: Australian Business Activity Statement (BAS) — non-GST sections. 
 version: 1.2
 jurisdiction: AU
 tax_year: 2025
-last_updated: 2026-08-20
+last_updated: 2026-08-11
 review_status: pending_review
 category: international
 tier: 2
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## AU GST Bas
 
-## Australia BAS — Non-GST Sections v1.2
+## Australia BAS — Non-GST Sections v1.1
 
 ## What this file is
 
@@ -143,7 +143,7 @@ Two methods are available:
 
 ### 5.1 Variation of PAYG instalments
 
-- **PAYG instalment variation and GIC exposure** — A taxpayer may vary their instalment amount or rate downward if they expect lower income. **GIC exposure:** If the varied amount is less than 85% of the correct instalment, a general interest charge applies on the shortfall. The GIC rate is updated quarterly by the ATO (base rate = 90-day bank bill rate + 7%). **GIC incurred on or after 1 July 2025 is not tax-deductible** (Treasury Laws Amendment (Tax Incentives and Integrity) Act 2025 Sch 2), which makes under-variation materially more expensive. **Variation uplift factor:** If the taxpayer varies for two or more consecutive quarters, the ATO may apply a higher GDP uplift factor in the following year.  _(TAA 1953 Sch 1 s 45-205)_
+- **PAYG instalment variation and GIC exposure** — A taxpayer may vary their instalment amount or rate downward if they expect lower income. **GIC exposure:** If the varied amount is less than 85% of the correct instalment, a general interest charge applies on the shortfall. The GIC rate is updated quarterly by the ATO (base rate = 90-day bank bill rate + 7%). **Variation uplift factor:** If the taxpayer varies for two or more consecutive quarters, the ATO may apply a higher GDP uplift factor in the following year.  _(TAA 1953 Sch 1 s 45-205)_
 
 ### 5.2 First year of business
 

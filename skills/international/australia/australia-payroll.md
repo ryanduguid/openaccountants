@@ -13,18 +13,17 @@ description: >
   ALWAYS read this skill before processing any Australian payroll work.
 version: 2.1
 jurisdiction: AU
-tax_year: 2026
-tax_year_notes: "2026-27 (payday super year); payroll tax and minimum wage tables current at Aug 2026"
-last_updated: 2026-08-20
+tax_year: 2025
+last_updated: 2026-08-02
 review_status: pending_review
 category: payroll
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Australia -- Payroll Skill v2.1
+# Australia -- Payroll Skill v2.0
 
-## Australia -- Payroll Skill v2.1
+## Australia -- Payroll Skill v1.0
 
 ## Section 1 -- Quick Reference
 
@@ -42,7 +41,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Pay frequency | Weekly, fortnightly, monthly (fortnightly most common) |
 | Employer registration | ABN + PAYG withholding registration via ATO |
 | Validated by | Pending -- requires sign-off by an Australian CPA, CA, or registered tax agent |
-| Skill version | 2.1 |
+| Skill version | 2.0 |
 
 ## Section 2 -- Income Tax Withholding (PAYG)
 
@@ -50,7 +49,7 @@ PAYG withholding is calculated per pay period using ATO tax tables (Schedule 1 -
 
 ### Resident Individual Tax Rates (2026--27)
 
-**Resident Individual Tax Rates (2026--27)** — first bracket 15% from 1 July 2026 (was 16% in 2025-26; drops to 14% from 1 July 2027)
+**Resident Individual Tax Rates (2025--26)**
 
 | Taxable Income (AUD) | Rate | Tax on This Income |
 | --- | --- | --- |
@@ -128,31 +127,30 @@ The redesigned SGC **is tax-deductible** (GIC on late SGC and the late payment p
 
 ### Payroll Tax (State/Territory)
 
-**Payroll Tax (State/Territory) — 2026-27**
+**Payroll Tax (State/Territory)**
 
 | State/Territory | Threshold (Annual) | Rate |
 | --- | --- | --- |
-| NSW | $1,200,000 | 5.45% |
-| VIC | $1,000,000 (from 1 Jul 2025; phase-out above; regional 1.2125%) | 4.85% |
-| QLD | $1,300,000 (deduction phases out to $10.4m) | 4.75% (≤$6.5m wages); 4.95% above |
+| NSW | $1,200,000 | 4.85% |
+| VIC | $900,000 | 4.85% |
+| QLD | $1,300,000 | 4.75% |
 | WA | $1,000,000 | 5.50% |
-| SA | $1,500,000 | Variable 0%–4.95% |
-| TAS | $1,250,000 | 4.00% (to $2m); 6.10% above |
+| SA | $1,500,000 | Varies (0%--4.95%) |
+| TAS | $1,250,000 | 4.00% |
 | ACT | $2,000,000 | 6.85% |
-| NT | $1,500,000 (deduction phases out to $7.5m) | 5.50% |
+| NT | $1,500,000 | 5.50% |
 
-- **Payroll tax nature** — Payroll tax is a state/territory tax on total Australian wages above the threshold. Interstate employers must register in each jurisdiction where they have employees; thresholds are apportioned by interstate wage share and change frequently — always confirm on the state revenue office site before advising.
-- **VIC surcharges** — Victorian employers with national payrolls above $10m also pay the mental health and wellbeing surcharge (0.5%, plus 0.5% above $100m) and the COVID-19 debt temporary payroll tax surcharge (0.5%, plus 0.5% above $100m; legislated to 30 June 2033).
+- **Payroll tax nature** — Payroll tax is a state/territory tax on total Australian wages above the threshold. Interstate employers must register in each jurisdiction where they have employees.
 
 ## Section 5 -- Minimum Wage and Overtime
 
-### National Minimum Wage (from 1 July 2026)
+### National Minimum Wage (from 1 July 2025)
 
-**National Minimum Wage (from 1 July 2026)** — Annual Wage Review 2025-26 (3.5% increase). Prior year (from 1 July 2025): $24.95/hour, $948.10/week.
+**National Minimum Wage (from 1 July 2025)**
 
 | Category | Rate |
 | --- | --- |
-| Adult (full-time, 38 hrs/week) | $26.44/hour ($1,004.90/week) |
+| Adult (full-time, 38 hrs/week) | $24.95/hour ($948.10/week) |
 | Junior rates | Percentage of adult rate by age (under awards) |
 | Casual loading | 25% on top of base rate (in lieu of leave entitlements) |
 

@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Australian cryptocurrency taxat
 version: "1.1"
 jurisdiction: AU
 tax_year: 2025
-last_updated: 2026-08-20
+last_updated: 2026-07-13
 review_status: pending_review
 category: international
 tier: 2
@@ -13,7 +13,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # AU Crypto Tax
 
-## Australia Crypto Tax -- CGT & Income Skill v1.1
+## Australia Crypto Tax -- CGT & Income Skill v1.0
 
 ## Section 1 -- Quick Reference
 
@@ -32,25 +32,23 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Tax authority | Australian Taxation Office (ATO) |
 | Filing portal | myTax / tax agent lodgement |
 | Filing deadline | 31 October (self-lodgement); agent-managed deadlines vary |
-| Skill version | 1.1 |
+| Skill version | 1.0 |
 
 ### Core Principle
 
-> **Law-change alert (applies from 1 July 2027).** Crypto assets are CGT assets, so the *Treasury Laws Amendment (Tax Reform No. 1) Act 2026* CGT reform applies to them: for gains accruing from 1 July 2027, the 50% discount for individuals and trusts is replaced by cost-base indexation + a 30% minimum rate, with a deemed re-acquisition of assets held at 30 June 2027. The 50%-discount statements below remain correct for gains accruing up to 30 June 2027 — see au-capital-gains for the full alert.
-
 The ATO treats cryptocurrency (including Bitcoin, Ethereum, stablecoins, NFTs, and DeFi tokens) as a **CGT asset**, not as foreign currency. Each disposal triggers a CGT event.
 
-### Individual Marginal Tax Rates
+### Individual Marginal Tax Rates (2024-25)
 
-**Individual Marginal Tax Rates (2024-25 and 2025-26; second bracket 15% in 2026-27, 14% from 2027-28)**
+**Individual Marginal Tax Rates (2024-25)**
 
-| Taxable Income (AUD) | Rate (2024-25 / 2025-26) | Rate (2026-27) |
-| --- | --- | --- |
-| 0 -- 18,200 | 0% | 0% |
-| 18,201 -- 45,000 | 16% | 15% |
-| 45,001 -- 135,000 | 30% | 30% |
-| 135,001 -- 190,000 | 37% | 37% |
-| 190,001+ | 45% | 45% |
+| Taxable Income (AUD) | Rate |
+| --- | --- |
+| 0 -- 18,200 | 0% |
+| 18,201 -- 45,000 | 16% |
+| 45,001 -- 135,000 | 30% |
+| 135,001 -- 190,000 | 37% |
+| 190,001+ | 45% |
 
 ### Key Thresholds
 
