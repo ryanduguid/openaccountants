@@ -1,5 +1,27 @@
 # OpenAccountants
 
+> [!IMPORTANT]
+> **Archived historical fork.** This repository is a point-in-time fork of
+> [`openaccountants/openaccountants`](https://github.com/openaccountants/openaccountants),
+> not an actively maintained or authoritative tax source. The guides, generated
+> packages, badges, counts, hosted-service links, and examples below may be
+> stale. GitHub Actions are disabled and no scheduled sync or publication runs
+> from this fork. Use the upstream repository for current work.
+
+<details>
+<summary><strong>Conditions for reactivating this fork</strong></summary>
+
+Only unarchive this repository when all of these conditions are met:
+
+- a named maintainer owns releases, security response, and ongoing review;
+- the authoritative guide corpus is identified and reconciled with upstream;
+- a real, access-controlled sync destination replaces the retired publication path;
+- unit, MCP, full-guide validation, and sync-integrity checks pass within documented bounds;
+- every publication verifies the expected source commit before writing, so a stale job cannot overwrite newer work; and
+- GitHub Actions are re-enabled only after the first maintenance change is reviewed.
+
+</details>
+
 **Open-source Tax Guides your AI can cite — reviewed by named, licensed accountants.**
 
 Every AI can do tax math. None of them can stand behind an answer. Here, real accountants put their **name, credential and review date** on the Guides your AI reads — publicly, on the record, in this repo.
