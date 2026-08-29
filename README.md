@@ -22,9 +22,7 @@ Only unarchive this repository when all of these conditions are met:
 
 </details>
 
-**Open-source Tax Guides your AI can cite — reviewed by named, licensed accountants.**
-
-Every AI can do tax math. None of them can stand behind an answer. Here, real accountants put their **name, credential and review date** on the Guides your AI reads — publicly, on the record, in this repo.
+Named, licensed accountants put their name, credential and review date on the tax guides in the upstream project. This fork does not publish or sync those guides.
 
 [![License: AGPL-3.0](https://img.shields.io/badge/license-AGPL--3.0-047857)](LICENSE)
 [![PyPI](https://img.shields.io/pypi/v/openaccountants-mcp?label=openaccountants-mcp&color=047857)](https://pypi.org/project/openaccountants-mcp/)
@@ -32,45 +30,22 @@ Every AI can do tax math. None of them can stand behind an answer. Here, real ac
 [![GitHub stars](https://img.shields.io/github/stars/openaccountants/openaccountants?style=social)](https://github.com/openaccountants/openaccountants/stargazers)
 
 <!-- oa-stats:start -->
+Counts below were copied with the fork. They are not live on this repository.
+
 **1,798 Guides** across **232 jurisdictions** · **191 accountant-reviewed** · **36 named accountants** · **7,332 questions answered** through connected AIs
 
-<sub>Live from openaccountants.com — updated 2026-08-22 by the nightly sync.</sub>
+<sub>Upstream figure dated 2026-08-22. Not refreshed here.</sub>
 <!-- oa-stats:end -->
 
 ---
 
-## Try it in 60 seconds
+## Hosted product
 
-Add the hosted connector to Claude, ChatGPT, Cursor, Windsurf or any MCP client:
-
-```
-https://www.openaccountants.com/api/mcp
-```
-
-Guided setup: **[openaccountants.com/connect](https://www.openaccountants.com/connect)**
-
-Then ask a question your AI would otherwise guess at:
-
-> *"What's the combined sales tax rate in Manatee County, Florida for 2026?"*
-
-Without OpenAccountants, models answer from training data. With it, the answer cites the current Guide — and names the accountant who reviewed it.
-
-```
-You:    "I'm a freelancer in South Africa. What do I owe?"
-          ↓  loads za-income-tax, za-provisional-tax
-AI:     ITR12 working paper · IRP6 provisional schedule
-        Medical credits · Retirement annuity deduction
-        ─────────────────────────────────────────
-        Reviewed by Werner Britz CA(SA)
-```
-
-<details>
-<summary><strong>Prefer self-hosting or manual files?</strong></summary>
-
-- **pip MCP server:** `pip install openaccountants-mcp` (mirrors this repo's `packages/`)
-- **Manual:** download your jurisdiction's folder from [`packages/`](packages/) and upload the files to your AI. Start with your country's main package; `index.json` is the machine-readable inventory.
-
-</details>
+The MCP endpoint, connect flow, and nightly stats belong to
+[openaccountants/openaccountants](https://github.com/openaccountants/openaccountants)
+and [openaccountants.com](https://www.openaccountants.com/). They are not
+operated from this fork. A checkout of this tree still contains `packages/`,
+`index.json`, and `mcp/` as they stood when the fork was taken.
 
 ---
 
@@ -87,25 +62,20 @@ Every Guide is in exactly one state — and the repo greps honestly:
 
 ---
 
-## Are you an accountant?
+## Accountant roster
 
-Your name on the tax knowledge AI actually uses — with attribution built in:
-
-1. **Build a Guide** for the work you know cold: [openaccountants.com/skills/new](https://www.openaccountants.com/skills/new). It publishes credited to you, and lands in this repo under your name.
-2. **Review a Guide** in your jurisdiction — your name, credential and review date go on it, here and on every AI answer that cites it.
-3. **Set your GitHub username** in [your profile](https://www.openaccountants.com/profile) and your platform edits are committed to this repo as *you* — your contribution graph reflects your work.
-
-The current roster: **[VERIFIERS.md](VERIFIERS.md)** (generated nightly from the platform).
+Guide review happens on the upstream project. The roster file frozen in this
+tree is [VERIFIERS.md](VERIFIERS.md). Do not treat it as current.
 
 ---
 
 ## Contributing
 
-Edit **`skills/**` only** — everything else regenerates automatically:
+This fork is archived history. Send guide and code changes to
+[openaccountants/openaccountants](https://github.com/openaccountants/openaccountants).
 
-- `packages/`, `index.json`, `llms-full.txt` — generated nightly; never edit in a PR
-- Merged source PRs are credited to you and must be confirmed as ingested before the next platform export
-- Full guide: [CONTRIBUTING.md](CONTRIBUTING.md) · Layout: [docs/REPO-LAYOUT.md](docs/REPO-LAYOUT.md)
+Upstream still edits `skills/` only; generated files regenerate there. See
+[CONTRIBUTING.md](CONTRIBUTING.md) and [docs/REPO-LAYOUT.md](docs/REPO-LAYOUT.md).
 
 ---
 
