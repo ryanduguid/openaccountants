@@ -130,7 +130,7 @@ https://www.openaccountants.com
 
 ========================================================================
 
-## Guide inventory (1998 guides, 245 jurisdictions, 171 accountant-reviewed)
+## Guide inventory (1999 guides, 245 jurisdictions, 171 accountant-reviewed)
 
 - us-1099-k-and-payment-processors | US | tier 2 | reviewed_by -
 - us-education-credits-8863 | US | tier 2 | reviewed_by -
@@ -937,6 +937,7 @@ https://www.openaccountants.com
 - im-tax-overview | IM | tier 2 | reviewed_by -
 - ca-prompt-library-and-tax-updates | IN | tier 2 | reviewed_by -
 - in-advance-tax | IN | tier 1 | reviewed_by Mayur Deokar
+- in-cross-border-india-dual-resident-treaty | IN | tier 2 | reviewed_by -
 - in-gst-return | IN | tier 2 | reviewed_by -
 - in-income-tax | IN | tier 2 | reviewed_by -
 - in-pf-esi-employer | IN | tier 1 | reviewed_by Mayur Deokar

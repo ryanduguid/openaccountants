@@ -1,7 +1,7 @@
 {
- "generated_at": "2026-09-06T08:51:07+00:00",
+ "generated_at": "2026-09-07T09:40:30+00:00",
  "counts": {
-  "guides": 1998,
+  "guides": 1999,
   "jurisdictions": 245,
   "accountant_reviewed": 171
  },
@@ -9665,6 +9665,18 @@
    "reviewed_by": "Mayur Deokar",
    "tax_year": "2025",
    "last_updated": "2026-07-13"
+  },
+  {
+   "slug": "in-cross-border-india-dual-resident-treaty",
+   "path": "skills/international/india/in-cross-border-india-dual-resident-treaty.md",
+   "name": "in-cross-border-india-dual-resident-treaty",
+   "jurisdiction": "IN",
+   "category": null,
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "tax_year": "2026",
+   "last_updated": "2026-09-06"
   },
   {
    "slug": "in-gst-return",
