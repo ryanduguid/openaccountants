@@ -389,9 +389,9 @@ TOTAAL PASSIVA                                                xxx
 - **Jaarrekening as basis for tax return** — The jaarrekening (annual accounts) forms the basis for the tax return
 - **Fiscal adjustments outside accounts** — Fiscal adjustments are made outside the accounts (e.g., entertainment 20% add-back, KIA deduction, MKB profit exemption)
 - **Fiscal accounting principles for micro/small entities** — Micro/small entities may use fiscal accounting principles for their jaarrekening, eliminating most differences
-- **Zelfstandigenaftrek** — EUR 3,750 EUR (2025)
-- **Startersaftrek** — EUR 2,123 EUR
-- **MKB-winstvrijstelling** — 13.31% % of profit
+- **Zelfstandigenaftrek** — EUR 2,470 (2025). The relief is on a statutory decline: EUR 3,750 (2024), EUR 2,470 (2025), EUR 1,200 (2026), EUR 900 (2027) — see `nl-zzp-deductions` for the full schedule and the urencriterium
+- **Startersaftrek** — EUR 2,123, on top of the zelfstandigenaftrek
+- **MKB-winstvrijstelling** — 12.7% of profit after ondernemersaftrek (2025; it was 13.31% in 2024)
 
 ### VAT (BTW)
 
