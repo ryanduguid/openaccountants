@@ -61,7 +61,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Currency | EUR |
 | Headline levers | Non-dom (0% SDC on dividends/interest/rents); company + dividend extraction; IP Box (~3% on qualifying IP) |
 | Personal income tax | 0% up to €19,500 (2025); 20/25/30/35% bands above. **2026 reform raises the 0% band to €22,000** — confirm against `cyprus-income-tax.md`. |
-| Corporate tax | 12.5% → **15%** under OECD Pillar Two (confirm effective date) |
+| Corporate tax | **15%** from 1 January 2026 under the Cyprus tax reform (12.5% up to 31 December 2025); 15% is also the OECD Pillar Two minimum |
 | SDC (Special Defence Contribution) | Applies to dividends/interest/rents of Cyprus-DOMICILED residents; **non-doms are exempt** |
 | Self-employed social insurance | ~16.6% of deemed income |
 | Anti-avoidance | Substance / place-of-effective-management; ATAD GAAR |

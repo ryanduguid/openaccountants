@@ -13,9 +13,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Corporate income tax (pelno mokestis) - 2025
 
-The standard corporate income tax rate is 16% for 2025 (rising to 17% in 2026). Small companies and start-ups can qualify for reduced or 0% rates. Tax is on worldwide profit for resident companies.
+The standard corporate income tax rate is 17% from 1 January 2026 (it was 16% for 2025). Small companies and start-ups can qualify for reduced or 0% rates. Tax is on worldwide profit for resident companies.
 
-- **Standard CIT rate** — 16% (2025); 17% from 1 January 2026 percent  _(Law on Corporate Income Tax — https://taxsummaries.pwc.com/lithuania/corporate/taxes-on-corporate-income)_
+- **Standard CIT rate** — 17% from 1 January 2026 (16% applied for 2025) percent  _(Law on Corporate Income Tax — https://taxsummaries.pwc.com/lithuania/corporate/taxes-on-corporate-income)_
 - **Reduced rate for small companies** — 6% (2025) for companies with fewer than 10 employees and gross annual revenue below EUR 300,000; rises to 7% from 2026 percent  _(Law on Corporate Income Tax — https://taxsummaries.pwc.com/lithuania/corporate/taxes-on-corporate-income)_
 - **Start-up 0% rate (first period)** — 0% for the first tax period for qualifying new small companies (extended to first two periods from 2026) percent  _(Law on Corporate Income Tax — https://taxsummaries.pwc.com/lithuania/corporate/taxes-on-corporate-income)_
 - **Tax base** — Resident companies: worldwide taxable profit (income less allowable deductions); non-resident: Lithuanian-source / PE profit  _(Law on Corporate Income Tax — https://taxsummaries.pwc.com/lithuania/corporate/income-determination)_
