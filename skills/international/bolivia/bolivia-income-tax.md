@@ -13,9 +13,9 @@ tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Bolivia Income Tax (RC-IVA) -- Self-Employed and Individuals
+# Bolivian Income Tax (RC-IVA) -- Self-Employed and Individuals
 
-## Bolivia Income Tax (RC-IVA) -- Self-Employed and Individuals Skill v0.1
+## Bolivian Income Tax (RC-IVA) -- Self-Employed and Individuals Skill v0.1
 
 Tier 2 (research-verified). Figures below are drawn from PwC Worldwide Tax Summaries, the official SIN/SIAT site, the LexiVox text of DS 5383, and Bolivian professional sources. They have NOT yet been signed off by a Bolivian-licensed accountant (Contador Público Autorizado / auditor). Treat every output as a draft for professional review. Items marked **[RESEARCH GAP -- reviewer to confirm]** require verification against primary statute before filing.
 

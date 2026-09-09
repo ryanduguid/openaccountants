@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # RO Income Tax
 
-## Romania Income Tax (Declarația Unică) -- Self-Employed Skill v2.0
+## Romanian Income Tax (Declarația Unică) -- Self-Employed Skill v2.0
 
 ## Section 1 -- Quick reference
 

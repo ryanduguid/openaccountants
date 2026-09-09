@@ -10,9 +10,9 @@ tier: 1
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Sri Lanka Income Tax
+# Sri Lankan Income Tax
 
-## Sri Lanka Income Tax -- Individual / Self-Employed Skill v0.1
+## Sri Lankan Income Tax -- Individual / Self-Employed Skill v0.1
 
 > **Tier 2 (research-verified).** Figures are sourced from the Inland Revenue Department (IRD), the EPF (Central Bank of Sri Lanka), the ETF Board, the Ministry of Labour, and Parliament. Items marked **[RESEARCH GAP -- reviewer to confirm]** were not extractable from a primary source at authoring time and MUST be confirmed by a Sri Lankan tax professional before filing.
 

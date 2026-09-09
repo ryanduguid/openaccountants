@@ -16,7 +16,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # MY Income Tax
 
-## Malaysia Income Tax -- Self-Employed Skill v1.0
+## Malaysian Income Tax -- Self-Employed Skill v1.0
 
 ## Section 1 -- Quick Reference
 

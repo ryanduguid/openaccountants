@@ -17,7 +17,7 @@ This skill covers Virginia-specific employer payroll compliance for tax year 202
 
 **In scope:**
 - Virginia personal income tax (VA PIT) withholding from wages paid to Virginia residents and non-residents performing services in Virginia
-- VA-4 (Employee's Virginia Income Tax Withholding Exemption Certificate)
+- VA-4 (Employee's Virginian Income Tax Withholding Exemption Certificate)
 - VA-5 (Monthly) and VA-15 (Quarterly) withholding returns — and the Semi-Weekly accelerated regime
 - VA-6 / VA-16 annual reconciliation and wage report
 - Virginia State Unemployment Insurance (SUI) administered by the Virginia Employment Commission (VEC)

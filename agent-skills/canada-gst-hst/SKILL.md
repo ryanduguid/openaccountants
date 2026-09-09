@@ -352,7 +352,7 @@ Shopify is an Ontario-headquartered Canadian company. They charge 13% HST. The C
 `2026-04-15 ; THE KEG STEAKHOUSE ; DEBIT ; Client dinner ; -285.00 ; CAD`
 
 **Reasoning:**
-Restaurant meal. Under ETA s.67.1 (via Income Tax Act cross-reference), meals and entertainment expenses are limited to 50% for income tax purposes. However, the full GST/HST ITC is claimable on the portion that is deductible for income tax (i.e., 50% of the GST/HST). Conservative default: block entirely as likely personal. If confirmed as business entertainment, 50% of ITC is claimable.
+Restaurant meal. Under ETA s.67.1 (vian Income Tax Act cross-reference), meals and entertainment expenses are limited to 50% for income tax purposes. However, the full GST/HST ITC is claimable on the portion that is deductible for income tax (i.e., 50% of the GST/HST). Conservative default: block entirely as likely personal. If confirmed as business entertainment, 50% of ITC is claimable.
 
 **Output:**
 

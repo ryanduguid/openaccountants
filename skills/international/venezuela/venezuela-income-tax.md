@@ -14,9 +14,9 @@ tier: 1
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Venezuela Income Tax (ISLR) — Individual
+# Venezuelan Income Tax (ISLR) — Individual
 
-## Venezuela Income Tax (ISLR) — Individual Skill v0.1
+## Venezuelan Income Tax (ISLR) — Individual Skill v0.1
 
 ## Verified rates & thresholds (accountant-reviewed)
 

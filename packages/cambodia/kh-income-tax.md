@@ -11,7 +11,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # cambodia-income-tax
 
-## Cambodia Income Tax (Tax on Salary & Tax on Income) -- Skill v0.1
+## Cambodian Income Tax (Tax on Salary & Tax on Income) -- Skill v0.1
 
 ## Section 1 -- Quick Reference
 

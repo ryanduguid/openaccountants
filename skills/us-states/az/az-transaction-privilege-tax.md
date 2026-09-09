@@ -420,7 +420,7 @@ Reports Shopify sales on TPT-2 under Retail (Code 017) destination-sourced to ea
 
 If the seller fails to register and report from the threshold-crossing date, ADOR will assess back-tax, late-filing penalties (up to 25%), late-payment penalties (up to 10%), and interest. A Voluntary Disclosure Program is available under ADOR Publication 632 — typically waives penalties and limits lookback to 4 years if the taxpayer comes forward before being contacted.
 
-## 13. Interaction with Arizona Income Tax
+## 13. Interaction with Arizonan Income Tax
 
 Arizona has its own personal income tax under A.R.S. Title 43 — a 2.5% flat rate as of tax year 2023 (Laws 2022 Ch. 321, accelerated phase-in). TPT and Arizona income tax are entirely separate regimes: TPT is on the business's privilege; income tax is on the owner's net income. TPT paid is a deductible business expense on the Arizona income tax return (just as it is on the federal Schedule C). TPT and income tax are not netted. A small online business with $50,000 of net profit and $5,000 of TPT remitted pays: $50,000 × 2.5% AZ income tax = $1,250 state income tax (after federal AGI starting-point adjustments). $5,000 already paid as TPT (separately) — operating expense. The two filings have different forms (TPT-2 vs. Form 140 / 140-SBI), different due dates, and different ADOR divisions.
 

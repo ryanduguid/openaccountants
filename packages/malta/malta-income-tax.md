@@ -14,7 +14,7 @@ tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Malta Income Tax
+# Maltan Income Tax
 
 ## malta-income-tax
 

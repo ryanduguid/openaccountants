@@ -13,7 +13,7 @@ tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Slovenia Income Tax -- Self-Employed and Individuals
+# Slovenian Income Tax -- Self-Employed and Individuals
 
 ## Section 1 -- Quick Reference
 

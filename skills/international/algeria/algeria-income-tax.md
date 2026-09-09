@@ -13,7 +13,7 @@ tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Algeria Income Tax (IRG) -- Employee & Self-Employed
+# Algerian Income Tax (IRG) -- Employee & Self-Employed
 
 ## Section 1 -- Quick Reference
 

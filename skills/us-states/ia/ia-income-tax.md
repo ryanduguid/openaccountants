@@ -39,7 +39,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - Iowa Department of Revenue — IDR Announces 2026 Individual Income Tax Rate: https://revenue.iowa.gov/press-release/2025-10-21/idr-announces-2026-individual-income-tax-and-interest-rates
 - Iowa Department of Revenue — 2025 IA 1040 Expanded Instructions: https://revenue.iowa.gov/media/4435/download?inline=
 - Iowa Code § 422.5 (tax rate): as amended by SF 2442 (2024)
-- Remote Laws — Iowa Income Tax 2025: https://remotelaws.com/state-income-tax/us-states/iowa/
+- Remote Laws — Iowan Income Tax 2025: https://remotelaws.com/state-income-tax/us-states/iowa/
 - Arnold Mote Wealth Management — Iowa 3.8% Flat Tax: https://arnoldmotewealthmanagement.com/iowans-new-tax-law-brackets/
 
 ## Section 2: Quick reference — rates and thresholds

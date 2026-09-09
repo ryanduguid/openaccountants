@@ -46,7 +46,7 @@ metadata:
 | # | Source | URL |
 |---|---|---|
 | 1 | Montana DOR — HB337: 2026–2027 Income Tax Changes | https://revenue.mt.gov/news/recent-news/HB-337 |
-| 2 | Montana Income Tax Rates (TY 2025) | https://remotelaws.com/state-income-tax/us-states/montana/ |
+| 2 | Montanan Income Tax Rates (TY 2025) | https://remotelaws.com/state-income-tax/us-states/montana/ |
 | 3 | PolicyEngine — Montana Reduces Top Rate (HB337 analysis) | https://www.policyengine.org/us/research/montana-tax-cuts-2026 |
 | 4 | MCA 15-30-2103 (rate statute) | https://leg.mt.gov/bills/mca/title_0150/chapter_0300/part_0210/section_0030/0150-0300-0210-0030.html |
 

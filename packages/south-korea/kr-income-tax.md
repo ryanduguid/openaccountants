@@ -16,7 +16,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # KR Income Tax
 
-## South Korea Income Tax (종합소득세) -- Self-Employed Skill v2.0
+## South Korean Income Tax (종합소득세) -- Self-Employed Skill v2.0
 
 ## Section 1 -- Quick Reference
 
