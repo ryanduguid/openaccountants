@@ -107,8 +107,23 @@ like three-eighths of one per cent and is really "3% or 8%". Neither reading
 settles anything. The IRD's own withholding guide settles all three in one
 page.
 
-Still open: 118 jurisdictions state a rate, 26 hedge at least one of their own,
-and 8 have been checked.
+  * Belize    WRONG on two of three, understated by ten points each. The guide
+              gave 15% for all three and hedged interest and royalties with
+              "sources vary 15%/25%, confirm". Interest and royalties to
+              non-residents are 25%, as are fees for services such as
+              consultancy; only dividends are 15%. Grandfathered international
+              business companies are exempt from withholding on payments to
+              non-residents.
+  * Zimbabwe  CORRECT, hedge resolved. The 15% non-residents' tax on interest
+              was reintroduced by the 2026 national budget presented on
+              27 November 2025 and is payable in US dollars, so interest paid
+              before 1 January 2026 falls outside it and the payment date has
+              to be checked before the rate is applied.
+
+Still open: 118 jurisdictions state a rate, 24 hedge at least one of their own,
+and 10 have been checked. Four of the ten were wrong and every one of the four
+had hedged itself, which is the argument for working this column by its own
+doubts rather than by a random draw.
 
 Usage: python3 scripts/list-withholding-rates.py [--selftest]
 """

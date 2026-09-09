@@ -62,7 +62,7 @@ jurisdiction at a time. This section records how far that has got.
 | Headline corporate rate | ~135 jurisdictions | 3 | Lithuania, Cyprus, Portugal |
 | Annual return filing deadline | 24 jurisdictions | 8 | Italy, Greece, Armenia, Cyprus, Finland, Australia, Norway, Brazil |
 | VAT/GST registration threshold | 20 jurisdictions | 3 | Egypt, Albania, France |
-| Withholding rate on dividends, interest, royalties | 8 of the 118 stating one | 3 | Ethiopia, Iceland, Trinidad and Tobago |
+| Withholding rate on dividends, interest, royalties | 10 of the 118 stating one | 4 | Ethiopia, Iceland, Trinidad and Tobago, Belize |
 
 The deadline pass has covered 24 jurisdictions of 200. Nobody has run an external
 pass over anything else. That leaves payroll rates and thresholds, registration
