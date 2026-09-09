@@ -30,7 +30,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Tax year | 2025 (filed 2026) |
 | Primary form | Form D-400 (line 9 deduction total) |
 | Supporting schedule | Form D-400 Schedule S, Part B, Lines 19 / 20 / 21 |
-| Tax structure | Flat 4.25% rate (TY 2025); 3.99% (TY 2026) [VERIFY: S.L. 2023-134 schedule has been adjusted in subsequent sessions — confirm against NCDOR Tax Rate Schedules before relying] |
+| Tax structure | Flat 4.25% rate (TY 2025); 3.99% (TY 2026), legislated by S.L. 2023-134 (G.S. 105-153.7 as amended by S.L. 2023-134; NCDOR Tax Rate Schedules). A further cut to 3.49% for TY 2027 is contingent on the FY 2025-26 revenue trigger of $33.042 billion [VERIFY: whether the 2027 trigger was met — confirm against NCDOR Tax Rate Schedules before relying] |
 | Filing deadline | April 15, 2026 |
 | Extension deadline | October 15, 2026 |
 | Tax authority | North Carolina Department of Revenue (NCDOR) |
@@ -240,7 +240,7 @@ This is the full picture of how NC treats each type of retirement income — Bai
 | NC-BAILEY-T1-10 | A Form 1099-R must be attached to Form D-400 supporting any Line 20 or Line 21 deduction | NCDOR 2025 D-401 instructions [VERIFY exact wording] |
 | NC-BAILEY-T1-11 | Private pensions, IRAs (other than rolled-from-Bailey traceable), and 401(k)s **are fully taxable** to NC | N.C. Gen. Stat. § 105-153.5 (no general retirement deduction) |
 | NC-BAILEY-T1-12 | NC standard deduction TY 2025: $12,750 single / $25,500 MFJ / $12,750 MFS / $19,125 HoH `[VERIFY: confirm against TY 2025 D-401]` | N.C. Gen. Stat. § 105-153.5(a)(1) |
-| NC-BAILEY-T1-13 | NC flat rate TY 2025 = 4.25%; TY 2026 = 3.99% `[VERIFY against most recent rate schedule]` | Session Law 2023-134 |
+| NC-BAILEY-T1-13 | NC flat rate TY 2025 = 4.25%; TY 2026 = 3.99% — confirmed (G.S. 105-153.7 as amended by S.L. 2023-134; NCDOR Tax Rate Schedules) | Session Law 2023-134 |
 
 ## Section 8: Tier 2 — judgment rules
 

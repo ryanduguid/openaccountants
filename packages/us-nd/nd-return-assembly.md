@@ -228,10 +228,10 @@ Every line below is a hard equality. Tolerance is $1 unless noted otherwise. A f
 | N-2 | ND-1SA additions total = ND-1 Line 2 | nd-income-tax |
 | N-3 | ND-1SA subtractions total = ND-1 Line 3 | nd-income-tax |
 | N-4 | ND-1 Line 4 = Line 1 + Line 2 − Line 3 (ND taxable income) | nd-income-tax |
-| N-5 | ND-1 Line 6 (tax) = bracket math against Line 4 using the filing-status-specific schedule (Single 0% / 1.95% / 2.50% with breakpoints at $48,475 and $244,825 for TY 2025) `[VERIFY:]` 2025 brackets | nd-income-tax |
-| N-6 | If MFJ: bracket breakpoints $80,975 and $298,075 `[VERIFY:]` | nd-income-tax |
-| N-7 | If HoH: bracket breakpoints $64,950 and $271,450 `[VERIFY:]` | nd-income-tax |
-| N-8 | If MFS: bracket breakpoints $40,475 and $149,025 `[VERIFY:]` | nd-income-tax |
+| N-5 | ND-1 Line 6 (tax) = bracket math against Line 4 using the filing-status-specific schedule (Single 0% / 1.95% / 2.50% with breakpoints at $48,475 and $244,825 for TY 2025 — confirmed against the ND Office of State Tax Commissioner, 2025 Form ND-1 tax rate schedules) | nd-income-tax |
+| N-6 | If MFJ / QSS: bracket breakpoints $80,975 and $298,075 — confirmed against the ND Office of State Tax Commissioner, 2025 Form ND-1 tax rate schedules | nd-income-tax |
+| N-7 | If HoH: bracket breakpoints $64,950 and $271,450 — confirmed against the ND Office of State Tax Commissioner, 2025 Form ND-1 tax rate schedules | nd-income-tax |
+| N-8 | If MFS: bracket breakpoints $40,475 and $149,025 — confirmed against the ND Office of State Tax Commissioner, 2025 Form ND-1 tax rate schedules | nd-income-tax |
 | N-9 | ND-1 credits line = Schedule ND-1TC total | nd-income-tax |
 | N-10 | If ND-1CR claimed: credit ≤ lesser of (tax paid to other state) and (ND tax on the same income) | nd-income-tax |
 | N-11 | If Schedule ND-1FA (farm averaging) claimed: averaging tax replaces Line 6 amount and is documented | nd-income-tax |
@@ -510,7 +510,7 @@ The brief follows this fixed structure:
 ## Bracket Math Audit
 - ND-1 Line 4 (ND taxable income): $X
 - Filing-status bracket schedule: [Single / MFJ / MFS / HoH]
-- Breakpoints: [$48,475 / $244,825] (Single TY 2025) `[VERIFY:]`
+- Breakpoints: $48,475 / $244,825 (Single TY 2025) — confirmed against the ND Office of State Tax Commissioner, 2025 Form ND-1 tax rate schedules
 - Tax band landed in: [0% / 1.95% / 2.50%]
 - ND-1 Line 6 (computed tax): $X
 
