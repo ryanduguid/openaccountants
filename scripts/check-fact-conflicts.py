@@ -22,6 +22,27 @@ Usage:
     python3 scripts/check-fact-conflicts.py
 
 Exit status is always 0: this is a review aid, not a gate.
+
+Do not narrow this to penalty and interest rates as a separate checker; that
+was tried and every one of its four hits was correct. Two shapes defeat it,
+and both are worth knowing before writing any percentage comparison:
+
+  * one label, several regimes. Indonesia's no-NPWP charge is +20% on PPh 21
+    employment tax (UU PPh Art. 21(5a)) and a doubling to 30% under PPh 23
+    (Pasal 23 ayat (1a)) -- different articles, different mechanisms, both
+    right. Nigeria's late-payment charge is 10% under the income tax Act and
+    5% under the VAT Act; Egypt's is 1.5% on transfer pricing and 2% on social
+    insurance.
+  * a spread is not a rate. Pakistan's default surcharge is "higher of 12% per
+    annum or KIBOR + 3%" for income tax (ITO §205) and "KIBOR + 3%" for sales
+    tax (STA §34). Reading the 3% as a rate makes the two look like a 12-vs-3
+    conflict; it is a margin over a floating benchmark and is not comparable
+    to anything.
+
+The label normalisation here already tolerates the first case badly enough
+that its 18 hits were all benign. Treat any percentage conflict as a question
+about which regime each figure belongs to before treating it as an error.
+
 """
 import os,re,sys,collections
 LABELLED=[
