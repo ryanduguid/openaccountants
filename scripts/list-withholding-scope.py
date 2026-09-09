@@ -220,6 +220,40 @@ produced, roughly 40% were artefacts of how it measures. A checker that has not
 been measured against its own blind spots is reporting its shape as much as the
 corpus's.
 
+THE BLIND SPOT THAT RAN BACKWARDS: DEDICATED WITHHOLDING GUIDES
+
+The worst one, found last, because it made the output look tidier rather than
+messier.
+
+Israel's `il-tax-withholding.md` is a ten-section guide devoted entirely to
+withholding, with a rate table giving services at 30% (up to ~47% for an
+unverified payee), business rent 35%, residential rent 30%, royalties 23%,
+interest 25%, dividends 25-30% and non-residents 25%, each with its ITO section.
+Israel showed here as naming no head at all.
+
+Two causes, both in the parsing rather than the corpus. `LABEL` required the
+word "withholding" in the row label, and a guide that is *entirely* about
+withholding does not repeat the word in every row -- its rows say "Services --
+individuals, no certificate" and "Rent -- business/commercial property". And
+`ROW` read only the second cell as the value, while Israel's table is
+`| Payment type | Hebrew | Default rate | ITO Section |`, so the value came back
+as a Hebrew term with no rate in it and the row was discarded for stating
+nothing.
+
+The premise of the script was therefore inverted for exactly the jurisdictions
+that had done the best job: a proper withholding guide with a proper rate table
+scored lower than three bullets bolted onto a CIT guide. Fixing both -- a
+filename test that relaxes the label requirement inside a withholding guide, and
+a `ROW` value that spans every cell after the label -- moved seven jurisdictions
+out of classic-only: Israel, Egypt, Indonesia, Nigeria, the Philippines, Sri
+Lanka and the Dominican Republic, with Pakistan, Saudi Arabia and Tanzania
+gaining heads they already documented. Classic-only went 34 to 27, and none of
+it was a change to a guide.
+
+The general lesson is the one worth keeping: a false positive makes a checker
+look careless and gets fixed. A false *negative* makes it look clean, and can
+sit there for as long as nobody checks a jurisdiction it is quietly wrong about.
+
 WHAT THE TAIL OF THE QUEUE ACTUALLY IS
 
 Worth knowing before anyone budgets time against the remaining entries. After
@@ -335,7 +369,12 @@ CLASSIC = ('dividends', 'interest', 'royalties')
 # prose put rates from other taxes into that script's output, so a fact has to
 # arrive in a labelled bullet or a table row.
 BULL = re.compile(r'^\s*-\s+\*\*([^*]{4,90}?)\*\*\s*[—-]+\s*(.+)$')
-ROW = re.compile(r'^\s*\|\s*([^|]{4,90}?)\s*\|\s*([^|]+?)\s*\|')
+# The value is EVERY remaining cell, not just the second one. Israel's rate
+# table is `| Payment type | Hebrew | Default rate | ITO Section |`, so reading
+# only the second cell got the Hebrew term and no rate, and the whole table was
+# discarded for stating no value. Any table that puts the rate in a later
+# column had the same problem.
+ROW = re.compile(r'^\s*\|\s*([^|]{4,90}?)\s*\|\s*(.+?)\s*\|?\s*$')
 LABEL = re.compile(r'\b(?:WHT|withholding(?:\s+tax)?|NRST|'
                    r'non[- ]?residents?.{0,12}tax)\b', re.I)
 # A head is only a head if the label commits to a rate or an exemption. "See
@@ -372,18 +411,42 @@ SKIP_DIRS = ('orchestrator', 'cross-border', 'verticals', 'integrations')
 SKIP_TREES = ('us-states', 'foundation', 'templates', 'patterns')
 
 
-def heads_in(line):
-    """Return the set of withholding heads a labelled line names, else None."""
+def heads_in(line, in_wht_guide=False):
+    """Return the set of withholding heads a labelled line names, else None.
+
+    `in_wht_guide` relaxes the requirement that the label itself say
+    "withholding". Set it when the FILE is a dedicated withholding guide.
+
+    This is the blind spot Israel exposed, and it inverts the premise of the
+    whole script. `il-tax-withholding.md` carries a complete rate table --
+    services 30% (up to ~47% for an unverified payee), business rent 35%,
+    residential rent 30%, royalties 23%, interest 25%, dividends 25-30%,
+    non-residents 25%, each with its ITO section and its Hebrew term -- and
+    every row was invisible here, because the rows are labelled "Services --
+    individuals, no certificate" and "Rent -- business/commercial property".
+    A guide that is entirely about withholding does not repeat the word
+    "withholding" in each row label; there would be no point.
+
+    So the better a jurisdiction's coverage -- a dedicated withholding guide
+    with a proper table instead of three bullets bolted onto a CIT guide -- the
+    thinner it looked. That is exactly backwards, and it is the kind of error
+    that survives indefinitely because it makes the tool's output look tidier.
+    """
     m = BULL.match(line) or ROW.match(line)
     if not m:
         return None
     label, value = m.group(1), m.group(2)
-    if not LABEL.search(label):
+    if not (LABEL.search(label) or in_wht_guide):
         return None
     if not VALUE.search(value):
         return None
     found = {name for name, pat in HEADS if re.search(pat, label, re.I)}
     return found or None
+
+
+# A file whose name says it is about withholding. Its rows do not need to
+# repeat the word -- see heads_in.
+WHT_FILE = re.compile(r'withhold|(?:^|[-_])wht(?:[-_.]|$)', re.I)
 
 
 URL = re.compile(r'https?://\S+')
@@ -454,9 +517,10 @@ def scan(root='skills'):
         for fn in sorted(fns):
             if not fn.endswith('.md'):
                 continue
+            wht_guide = bool(WHT_FILE.search(fn))
             with open(os.path.join(dp, fn), encoding='utf-8', errors='replace') as fh:
                 for line in fh:
-                    got = heads_in(line)
+                    got = heads_in(line, wht_guide)
                     if got:
                         labels[jur] |= got
                         m = BULL.match(line) or ROW.match(line)
@@ -505,6 +569,27 @@ def selftest():
     # prose, whatever words it contains
     assert heads_in('Withholding taxes apply to dividends, interest and royalties, '
                     'subject to EU directives and tax treaties.') is None
+
+    # Inside a dedicated withholding guide the row labels do not repeat the
+    # word "withholding" -- Israel's table is the case that found this.
+    israel_row = ('| Services -- individuals, no certificate | '
+                  'transliterated Hebrew term | 30% (up to ~47% for unverified '
+                  'payees) | 164 |')
+    assert heads_in(israel_row) is None, 'needs the guide-level flag'
+    assert heads_in(israel_row, in_wht_guide=True) == {'services'}, \
+        heads_in(israel_row, in_wht_guide=True)
+    # and the rate is in the THIRD cell, so the value must be every cell after
+    # the label, not just the second one
+    rent_row = '| Rent -- business/commercial property | Hebrew | 35% | 170 |'
+    assert heads_in(rent_row, in_wht_guide=True) == {'rent'}
+    # the flag relaxes the label requirement, it does not stop requiring a rate
+    assert heads_in('| Payment type | Hebrew | Default rate | ITO Section |',
+                    in_wht_guide=True) is None
+    # filenames that turn the flag on, and one that must not
+    assert WHT_FILE.search('il-tax-withholding.md')
+    assert WHT_FILE.search('ng-wht.md')
+    assert not WHT_FILE.search('ba-corporate-income-tax.md')
+    assert not WHT_FILE.search('mw-payroll-social.md')
 
     # a citation URL is not a head of charge (San Marino's "hire-employees" slug)
     assert body_heads_in(
