@@ -14,13 +14,14 @@
 
 | File | What it covers |
 |---|---|
-| wi-sales-tax.md | Wisconsin sales and use tax — 5% state rate, county tax 0.5%, filing mechanics |
-| wi-income-tax.md | Wisconsin individual income tax — graduated rates 3.5%–7.65%, Form 1, self-employed rules |
+| `wi-income-tax.md` | Wisconsin individual income tax, Wisconsin Form 1, Wisconsin graduated tax rates, Wisconsin... |
+| `wi-payroll.md` | Wisconsin Payroll Skill (Tax Year 2025) |
+| `wi-sales-tax.md` | Wisconsin sales tax, Wisconsin use tax, Wisconsin sales tax nexus, Wisconsin sales tax returns, Wisconsin... |
+| `wisconsin-sales-tax.md` | Wisconsin sales tax, Wisconsin use tax, Wisconsin sales tax nexus, Wisconsin sales tax returns, Wisconsin... |
 
 ## What's NOT covered
 
 - Corporate income/franchise tax (Form 4)
-- Withholding tax (Form WT-6)
 - Property tax
 - Motor fuel tax
 - Estate/inheritance tax (Wisconsin has none)

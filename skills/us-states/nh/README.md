@@ -15,6 +15,7 @@
 | File | What it covers |
 |---|---|
 | `nh-interest-dividends-note.md` | Note on the repeal of the Interest & Dividends Tax (effective 2025) |
+| `nh-bpt-bet.md` | Source-cited tax guide for US-NH: nh bpt bet |
 
 ## What's NOT covered
 - Business Profits Tax (8.5% on business income over $75k — applies to businesses, not covered here)

@@ -13,8 +13,9 @@
 ## Files in this folder
 | File | What it covers |
 |---|---|
-| _(none)_ | **No Indiana individual income tax guide.** The file that occupied this slot was a copy of the **India** income tax guide with an Indiana description bolted on; it has been removed, since `skills/international/india/in-income-tax.md` already covers India properly. Indiana individual income tax (Form IT-40, flat state rate plus county income taxes) still needs writing. |
 | `in-sales-tax.md` | Indiana sales and use tax — 7% flat statewide rate, no local sales taxes. |
+| `in-payroll.md` | Indiana Payroll Skill |
+| `indiana-sales-tax.md` | Indiana sales and use tax |
 
 ## What's NOT covered
 - Corporate income tax (Form IT-20)
@@ -24,7 +25,6 @@
 - Inheritance tax (repealed)
 - Detailed county income tax rate tables (see DOR Departmental Notice #1 for current rates)
 - Amended returns (Form IT-40X)
-- Withholding agent filings (WH-1, WH-3)
 
 ## How to use
 Upload all `.md` files in this folder PLUS the federal skills from `skills/foundation/` and `skills/federal/` to your LLM.

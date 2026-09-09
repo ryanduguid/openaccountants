@@ -16,7 +16,8 @@
 |---|---|
 | `tx-franchise-tax.md` | Franchise (margin) tax for taxable entities |
 | `tx-sales-tax.md` | State and local sales & use tax compliance |
-| `tx-sales-tax-legacy.md` | Legacy sales tax reference (prior format) |
+| `tx-formation.md` | Texas content skill for entity formation covering tax year 2025 |
+| `tx-sales-use-tax.md` | Texas Sales and Use Tax return (Form 01-114) for self-employed individuals and small businesses |
 
 ## What's NOT covered
 - Payroll / employer withholding taxes (Texas has no state income tax withholding)

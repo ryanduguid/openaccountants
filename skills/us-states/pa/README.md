@@ -16,9 +16,11 @@
 |---|---|
 | `pa-income-tax.md` | Individual income tax for self-employed / sole proprietors (Form PA-40) |
 | `pa-sales-tax.md` | State and local sales & use tax compliance |
+| `pa-local-eit.md` | Pennsylvania Local Earned Income Tax (LEIT) — Act 32 of 2008 |
+| `pa-payroll.md` | Pennsylvania content skill for employer payroll compliance covering tax year 2025 |
+| `pennsylvania-sales-tax.md` | Pennsylvania sales and use tax, PA DOR filings, Pennsylvania clothing exemption, Philadelphia sales tax,... |
 
 ## What's NOT covered
-- Payroll / employer withholding taxes
 - Local earned income tax (EIT) — over 2,500 jurisdictions with rates typically 1%–3.9%
 - Philadelphia wage tax / net profits tax (3.75% for residents)
 - Property tax (administered at county/local level)

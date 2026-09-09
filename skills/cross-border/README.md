@@ -2,6 +2,14 @@
 
 Multi-jurisdiction skills. Load alongside the country packages when your situation spans more than one country.
 
+## Start here
+
+| File | What it covers |
+|---|---|
+| [`cross-border-tax-router.md`](cross-border-tax-router.md) | Entry point for the cross-border / international personal-tax library — load this first when a person's situation spans more than one country |
+| [`cross-border-tax-workflow-base.md`](cross-border-tax-workflow-base.md) | Foundation workflow base for the cross-border content skills: residency-map intake and the sequenced-priority method |
+| [`tax-research-with-your-ai-how-to-do-it-defensibly.md`](tax-research-with-your-ai-how-to-do-it-defensibly.md) | How to research a tax question with an AI so the answer is citable and reviewable rather than merely plausible |
+
 ## Universal regimes — one file applies across all jurisdictions
 
 | File | What it covers |

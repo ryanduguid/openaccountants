@@ -16,9 +16,11 @@
 |---|---|
 | `co-income-tax.md` | Individual income tax for self-employed / sole proprietors (Form DR 0104) |
 | `co-sales-tax.md` | State and local sales & use tax compliance |
+| `co-payroll.md` | Colorado content skill for employer payroll compliance covering tax year 2025 |
+| `co-retail-delivery-and-suts.md` | Colorado Retail Delivery Fee and Sales & Use Tax System (SUTS) |
+| `colorado-sales-tax.md` | Colorado sales and use tax, home-rule cities, CDOR filings |
 
 ## What's NOT covered
-- Payroll / employer withholding taxes
 - Property tax (administered at county level)
 - Corporate income tax
 - Estate / inheritance tax (Colorado has none)

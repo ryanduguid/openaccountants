@@ -13,8 +13,8 @@
 ## Files in this folder
 | File | What it covers |
 |---|---|
-| _(none)_ | **No Idaho individual income tax guide.** The file that occupied this slot was the accountant-reviewed **Indonesian** PPh Orang Pribadi guide with an Idaho description bolted on; it has been moved to `skills/international/indonesia/id-income-tax.md` where it belongs. Idaho individual income tax (Form 40, flat 5.695% for 2025) still needs writing. |
 | `id-sales-tax.md` | Sales and use tax obligations (6% state rate) |
+| `idaho-sales-tax.md` | Idaho sales and use tax |
 
 ## What's NOT covered
 - Corporate income tax

@@ -14,13 +14,13 @@
 
 | File | What it covers |
 |---|---|
-| va-sales-tax.md | Virginia sales and use tax — 5.3% general rate (6% in certain regions), filing mechanics |
-| va-income-tax.md | Virginia individual income tax — graduated rates 2%–5.75%, Form 760, self-employed rules |
+| `va-corporate-tax-and-bpol.md` | Source-cited tax guide for US-VA: va corporate tax and bpol |
+| `va-income-tax.md` | Virginia individual income tax, Virginia Form 760, Virginia graduated tax rates, Virginia self-employment... |
+| `va-payroll.md` | Virginia content skill for employer payroll compliance covering tax year 2025 |
+| `va-sales-tax.md` | Virginia sales tax, Virginia use tax, Virginia sales tax nexus, Virginia sales tax returns, Virginia... |
 
 ## What's NOT covered
 
-- Corporate income tax (Form 500)
-- Withholding tax (Form VA-5)
 - Property tax (administered locally)
 - BPOL (Business, Professional and Occupational License) tax (local)
 - Motor fuel tax

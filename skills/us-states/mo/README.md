@@ -16,6 +16,8 @@
 |---|---|
 | `mo-income-tax.md` | Individual income tax for self-employed / sole proprietors (Form MO-1040) |
 | `mo-sales-tax.md` | Sales and use tax obligations and rates |
+| `missouri-sales-tax.md` | Missouri sales and use tax |
+| `mo-payroll.md` | Missouri content skill for employer payroll compliance covering tax year 2025 |
 
 ## What's NOT covered
 

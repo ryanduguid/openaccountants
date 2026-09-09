@@ -16,7 +16,9 @@
 |---|---|
 | `wa-b-and-o-tax.md` | Business & Occupation (B&O) gross receipts tax |
 | `wa-sales-tax.md` | State and local sales & use tax compliance |
-| `wa-sales-tax-legacy.md` | Legacy sales tax reference (prior format) |
+| `wa-bo-tax.md` | content skill for Washington State Business & Occupation tax under RCW Title 82.04 |
+| `wa-business-occupation-tax.md` | Washington State Business and Occupation (B&O) Tax for self-employed individuals |
+| `washington-sales-tax.md` | Washington State sales and use tax, WA DOR filings, B&O tax overview, Washington digital goods tax,... |
 
 ## What's NOT covered
 - Payroll / employer withholding taxes (Washington has no state income tax withholding)

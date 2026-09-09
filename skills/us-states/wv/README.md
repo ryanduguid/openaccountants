@@ -14,8 +14,8 @@
 
 | File | What it covers |
 |---|---|
-| wv-sales-tax.md | West Virginia sales and use tax — 6% state rate, municipal taxes, filing mechanics |
-| wv-income-tax.md | West Virginia individual income tax — graduated rates 2.11%–4.58% (2026), Form IT-140, self-employed rules |
+| `wv-income-tax.md` | West Virginia individual income tax, West Virginia Form IT-140, West Virginia graduated tax rates, West... |
+| `wv-sales-tax.md` | West Virginia sales tax, WV use tax, West Virginia Tax Division filing, West Virginia SaaS tax, West... |
 
 ## What's NOT covered
 

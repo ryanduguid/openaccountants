@@ -16,15 +16,16 @@
 |---|---|
 | `nj-income-tax.md` | Individual income tax for self-employed / sole proprietors (Form NJ-1040) |
 | `nj-sales-tax.md` | State sales & use tax compliance |
+| `new-jersey-sales-tax.md` | New Jersey sales and use tax |
+| `nj-cbt-and-bait.md` | New Jersey Corporation Business Tax (CBT) and Business Alternative Income Tax (BAIT) |
+| `nj-payroll.md` | New Jersey content skill for employer payroll compliance covering tax year 2025 |
 
 ## What's NOT covered
-- Payroll / employer withholding taxes
 - Corporation Business Tax (CBT)
 - Property tax (administered at municipal level — NJ has the highest property taxes in the US)
 - Estate tax (NJ repealed its estate tax effective 2018)
 - Inheritance tax (NJ still has an inheritance tax for non-lineal heirs)
 - Pass-through business alternative income tax (PTE/BAIT)
-- Payroll-based Transitional Energy Facility Assessment
 
 ## How to use
 Upload all `.md` files in this folder PLUS the federal skills from `skills/foundation/` and `skills/federal/` to your LLM. See the main README for details.
