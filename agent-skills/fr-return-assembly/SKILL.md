@@ -61,7 +61,7 @@ The skill enforces the following execution order:
    - Runs first because TVA turnover figures feed into the income tax declaration
    - For réel normal: verify or prepare CA3 returns (monthly/quarterly)
    - For réel simplifié: verify or prepare CA12 (annual + 2 acomptes semestriels in July and December)
-   - For franchise en base: verify threshold compliance (€36,800 basic / €39,100 tolérance for services; €91,900 / €101,000 for goods -- Article 293 B CGI)
+   - For franchise en base: verify threshold compliance (€37,500 basic / €41,250 tolérance for services; €85,000 / €93,500 for goods -- Article 293 B CGI)
    - Flag if franchise threshold exceeded: mandatory TVA registration required
    - Output: TVA position (collectée, déductible, solde), turnover HT confirmed, any crédit de TVA
 
@@ -281,7 +281,7 @@ If any upstream content skill fails to produce validated output, the assembly sk
 
 ## Positions Taken
 [List with legislation citations]
-- e.g., "Franchise en base maintained per Article 293 B CGI -- CA €34,200 remains below €36,800 seuil de base"
+- e.g., "Franchise en base maintained per Article 293 B CGI -- CA €34,200 remains below €37,500 seuil de base"
 - e.g., "Abattement forfaitaire micro-BNC at 34% applied per Article 102 ter CGI"
 - e.g., "Home office deduction at 20% of surface -- prorata applied per BOI-BNC-BASE-40-60-60"
 - e.g., "ACRE 50% reduction applied for first 4 quarters per Article L.131-6-4 CSS"

@@ -122,9 +122,8 @@ What this does NOT establish: VAT is one field. Corporate rates, payroll
 thresholds, registration thresholds, filing deadlines, penalty rates and form
 names change on the same cycle and have had none of this treatment.
 
-Open: Botswana. A rise to 14% -> 15% was proposed for 1 April 2025 and cannot be
-confirmed as enacted; PwC's 2026 chart still shows 14% and BURS serves a bot
-check instead of its rate page. The guides state 14% and say so.
+Botswana remains at 14% in the cited rate sources. An earlier proposed rise
+to 15% needs an enacted instrument before it can replace that rate.
 
 Note the shape of the four errors: every one is a jurisdiction where the overview
 guide had the right rate and the dedicated VAT guide -- the one an agent loads to

@@ -3,7 +3,7 @@ name: it-irap
 description: Use this skill whenever asked about Italian IRAP (Imposta Regionale sulle Attività Produttive) for self-employed professionals. Trigger on phrases like "IRAP", "imposta regionale", "IRAP professionista", "IRAP autonomo", "valore della produzione", "regional production tax Italy", or any question about IRAP obligations for a self-employed client in Italy. Covers the standard 3.9% rate, valore della produzione netta, regional variations, and the landmark exemption for autonomous professionals without autonomous organisation. ALWAYS read this skill before touching any Italy IRAP work.
 jurisdiction: IT
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-10
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -169,7 +169,7 @@ Before computing, you MUST know:
 | Obligation | Detail |
 | --- | --- |
 | Form | Dichiarazione IRAP (filed with income tax return) |
-| Deadline | Same as Redditi PF/SP: **30 November** of the following year |
+| Deadline | Follows the filer's income-tax return, and the two rules differ. **Individuals and partnerships (Redditi PF/SP):** 31 October of the following year, so 2 November 2026 for FY2025 because 31 October is a Saturday. **Companies (Redditi SC):** the last day of the **10th month** after the tax period closes, which lands on the same 31 October only for a calendar-year company. A company with a non-calendar period counts ten months from its own close |
 | Filing | Telematic (via Entratel or Fisconline) |
 
 ## Step 7: Tax Deductibility of IRAP [T1]

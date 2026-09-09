@@ -1,28 +1,22 @@
-"""Build a per-jurisdiction register of form identifiers for human review.
+"""Build a per-jurisdiction register of form identifiers shared by guides.
 
-`docs/COVERAGE.md` records why silent misuse of a form name cannot be caught by
-consistency checking: the misusing guide never defines the term, so there is no
-second claim to contradict. Malta's `mt-estimated-tax` used `TA24` -- the rental
-final-tax form -- twenty-four times as its name for the self-employed income tax
-return, agreed with itself throughout, and passed every structural check here.
+Single-guide identifiers, currencies and known non-form tokens are excluded.
+Federal guides share one group; international and US-state guides group by folder.
+Review the resulting list manually: a shared identifier is not proof of misuse.
 
-Tooling cannot close that. What tooling can do is make the human pass cheap.
-This lists every form identifier used in more than one guide in a jurisdiction,
-with the guides that use it, so a reviewer who knows the jurisdiction can scan a
-page instead of reading a pack. The Malta defect is obvious in this shape --
-a rental form appearing in a provisional-tax guide -- and takes a second to see
-once the guides are listed beside the token.
-
-Written to `docs/FORM-REGISTER.md`. Regenerate with:
-    python3 scripts/build-form-register.py
-
-Single-guide forms are omitted: a form named once cannot be inconsistent with a
-sibling, and including them buried the register. Currency codes are excluded --
-`USD 700` is not a form, and an early version of this listed several.
+Usage: python3 scripts/build-form-register.py [--selftest]
+Output: docs/FORM-REGISTER.md
 """
 import os, re, collections
 
-FORM = re.compile(r'(?<![A-Za-z0-9])((?:[A-Z]{2,5}-?\d{1,4}[A-Z]?)|'
+# The lookbehind rejects a preceding hyphen as well as a letter or digit, and
+# that single character was 57% of the register. This corpus numbers its own
+# refusal rules R-AL-1, R-AU-1, R-DZ-1, and a lookbehind of (?<![A-Za-z0-9])
+# happily matched from after the first hyphen, so "AL-1" was filed as an
+# Albanian form used by two guides. 521 of 914 identifiers were refusal codes.
+# The register exists to make a human pass cheap on the one error class no
+# checker can see, and more than half of it was pointing at nothing.
+FORM = re.compile(r'(?<![A-Za-z0-9-])((?:[A-Z]{2,5}-?\d{1,4}[A-Z]?)|'
                   r'(?:Form\s+[A-Z0-9][\w\-/]{1,10}))(?![A-Za-z0-9])')
 CUR = re.compile(r'^(USD|EUR|GBP|VES|ZAR|AUD|NZD|CAD|MXN|BRL|INR|JPY|CNY|CHF|SEK|NOK|'
                  r'DKK|PLN|RON|HUF|CZK|TRY|RUB|ILS|AED|SAR|KES|NGN|GHS|ZMW|MWK|TZS|UGX|'
@@ -35,6 +29,20 @@ CUR = re.compile(r'^(USD|EUR|GBP|VES|ZAR|AUD|NZD|CAD|MXN|BRL|INR|JPY|CNY|CHF|SEK
 NOTFORM = re.compile(r'^(?:IAS|IFRS|ISA|ASC|ISO|GRI|SIC|NACE|COVID|G20|OECD|IRC\d'
                      r'|AGPL-?\d?|EC\d{1,2}|EU-?\d|QH\d{1,2}|CO2|FY\d{4}|INV-?\d{4}'
                      r'|T\d|TY\d{4}|R-[A-Z]{2}|Form Structure|Form Type|Form Name)$', re.I)
+
+
+def selftest():
+    """A refusal code is not a form, and a real form is still a form."""
+    def toks(t):
+        return [m.group(1) for m in FORM.finditer(t)
+                if not (CUR.match(m.group(1)) or NOTFORM.match(m.group(1)))]
+    assert toks('- **R-AL-1** - Residency unknown.') == [], \
+        'R-AL-1 is a refusal code; its tail is not an Albanian form'
+    assert toks('- **R-AU-1 -- Companies and trusts**') == []
+    assert 'TA24' in toks('the prior year TA24 must be filed'), 'TA24 is a real form'
+    assert 'VAT201' in toks('submit the VAT201 return')
+    assert toks('paid USD 700 in fees') == [], 'a currency amount is not a form'
+    print('selftest: refusal codes excluded, real forms kept')
 
 
 def main():
@@ -52,7 +60,8 @@ def main():
                 tok = re.sub(r'\s+', ' ', m.group(1)).strip()
                 if CUR.match(tok) or NOTFORM.match(tok):
                     continue
-                jur[parts[2]][tok].add(os.path.basename(p)[:-3])
+                jurisdiction = parts[2] if len(parts) >= 4 else parts[1]
+                jur[jurisdiction][tok].add(os.path.basename(p)[:-3])
 
     rows = tokens = 0
     out = ['# Form register',
@@ -91,4 +100,8 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    import sys
+    if '--selftest' in sys.argv:
+        selftest()
+    else:
+        main()

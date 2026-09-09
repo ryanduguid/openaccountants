@@ -3,7 +3,7 @@ name: ad-corporate-income-tax
 description: "Source-cited draft: corporate income tax for Andorra (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
 jurisdiction: AD
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-09
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -21,7 +21,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Corporate residence** — A company is resident if incorporated under Andorran law, has its registered office in Andorra, or has its effective management in Andorra  _(Llei 95/2010 IS)_
 - **Withholding tax on dividends to non-residents** — 0% — no withholding tax on dividends paid by Andorran companies to non-residents %  _(Llei 94/2010 IRNR)_
 - **Withholding tax on interest to non-residents** — 0% — no withholding tax on interest paid to non-residents %  _(Llei 94/2010 IRNR)_
-- **Withholding tax on royalties to non-residents** — 5% (may be reduced under an applicable double tax treaty) % (approx — confirm treaty rates)  _(Llei 94/2010 IRNR)_
+- **Withholding tax on royalties to non-residents** — **5%**. This is a reduced rate: the general IRNR rate on Andorran-source income of a non-resident without a permanent establishment is **10%**, so a payment that is not a royalty does not get the 5%. The domestic 5% is settled; what varies is treaty relief, and Andorra's treaty network is small enough that the counterparty's country should be checked for a treaty rather than assumed to have one %  _(Llei 94/2010 IRNR)_
 - **IS filing deadline** — Within 6 months of the close of the financial year (commonly filed in July for calendar-year companies via Model 200) (approx — confirm exact statutory deadline)  _(Llei 95/2010 IS)_
 - **Advance / instalment payment** — A payment on account (Model 202) of around 50% of the prior year's liability is due during the year, typically in September (approx — confirm rate and date)  _(Llei 95/2010 IS)_
 

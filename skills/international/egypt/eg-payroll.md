@@ -4,7 +4,7 @@ description: Use this skill whenever asked about running payroll for an employer
 version: 1.0
 jurisdiction: EG
 tax_year: 2026
-last_updated: 2026-07-13
+last_updated: 2026-09-10
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -37,7 +37,7 @@ This skill is written for an **employer** running monthly payroll — including 
 | Currency | EGP (Egyptian Pound — ج.م) |
 | Tax authority | Egyptian Tax Authority (**ETA** — مصلحة الضرائب المصرية, eta.gov.eg) |
 | Social-insurance authority | National Organization for Social Insurance (**NOSI**) |
-| **Annual personal exemption** | **EGP 20,000** per employee (residents and non-residents) — *verify current value* |
+| **Annual personal exemption** | **EGP 20,000** per employee (residents and non-residents), confirmed against the ETA schedule |
 | Salary-tax basis | Annual taxable employment income after the exemption, on progressive brackets, withheld in monthly instalments |
 | **Social insurance — employee** | **11%** of the insurance wage (الأجر التأميني) |
 | **Social insurance — employer** | **18.75%** of the insurance wage |

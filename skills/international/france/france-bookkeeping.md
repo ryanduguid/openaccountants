@@ -4,7 +4,7 @@ description: Use this skill whenever asked about bookkeeping, chart of accounts,
 version: 1.0
 jurisdiction: FR
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-10
 review_status: pending_review
 depends_on:
   - bookkeeping-workflow-base
@@ -371,8 +371,8 @@ The PCG prescribes a tabular (horizontal) balance sheet with assets on the left 
 
 | Activity | Basic threshold | Enhanced threshold |
 | --- | --- | --- |
-| Goods / accommodation | EUR 91,900 | EUR 101,000 |
-| Services | EUR 36,800 | EUR 39,100 |
+| Goods / accommodation | EUR 85,000 | EUR 93,500 |
+| Services | EUR 37,500 | EUR 41,250 |
 
 - **TVA franchise transition rule** — Below basic threshold: TVA franchise. Between basic and enhanced: TVA franchise maintained unless exceeded in prior year. Above enhanced: immediate TVA registration.
 

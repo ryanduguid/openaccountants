@@ -4,7 +4,7 @@ description: Use this skill whenever asked about UK property income or rental in
 version: 1.1
 jurisdiction: GB
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-10
 reviewed_by: James Power
 review_status: current
 depends_on:
@@ -93,7 +93,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Box 39 | Loss brought forward from earlier years | Losses |
 | Box 40 | Taxable profit (Box 38 minus Box 39) | Final |
 
-Note: Box layout for 2026-27 is expected to be substantially similar but TBC — confirm against HMRC's published 2026-27 SA105 when released.
+Note: the box layout above is the 2025-26 SA105. The 2026-27 form is genuinely still to come — HMRC publishes each year's SA105 shortly after that tax year ends, so the 2026-27 edition is due around April 2027 — and the layout is expected to be substantially similar. This is a live gap rather than a stale one: check it after April 2027, not before.
 
 ### Income Tax Rates — 2024-25 (Prior Year)
 

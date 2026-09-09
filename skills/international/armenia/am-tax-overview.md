@@ -3,7 +3,7 @@ name: am-tax-overview
 description: "Source-cited draft: tax overview for Armenia (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
 jurisdiction: AM
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-10
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -22,7 +22,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Headline corporate income tax rate** — 18 %  _(Tax Code of the Republic of Armenia — https://taxsummaries.pwc.com/armenia)_
 - **Does VAT exist** — Yes — VAT applies at a standard rate of 20% %  _(Tax Code of the Republic of Armenia — https://taxsummaries.pwc.com/armenia)_
 - **Annual corporate tax return deadline** — 20 April following the tax year  _(Tax Code of the Republic of Armenia — https://taxsummaries.pwc.com/armenia)_
-- **Annual personal income tax return deadline** — 1 November following the tax year (Where an annual PIT return is required)  _(Tax Code of the Republic of Armenia — https://taxsummaries.pwc.com/armenia)_
+- **Annual personal income tax return deadline** — 1 November 2026 for tax year 2025, a transitional window running from 2 March. From tax year 2026 the window closes on **1 July** of the following year. Universal declaration reaches every adult resident from 2026, so the population filing this return is far larger than the "where a return is required" case  _(Tax Code of the Republic of Armenia; State Revenue Committee universal declaration schedule — https://taxsummaries.pwc.com/armenia/individual/tax-administration)_
 - **Net wealth, inheritance and gift taxes** — None — Armenia levies no net wealth, inheritance or gift taxes  _(Tax Code of the Republic of Armenia — https://taxsummaries.pwc.com/armenia)_
 
 <!-- openaccountants-cta-block -->

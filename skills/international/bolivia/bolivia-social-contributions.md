@@ -4,7 +4,8 @@ description: Use this skill whenever asked about Bolivia social-security (seguri
 version: 0.1
 jurisdiction: BO
 tax_year: 2025
-last_updated: 2026-07-13
+tax_year_notes: "2025 (SMN-derived thresholds also stated at the 2026 SMN of Bs 3,300, DS 5516)"
+last_updated: 2026-09-10
 review_status: pending_review
 depends_on:
   - social-contributions-workflow-base
@@ -114,11 +115,11 @@ PwC summarises the scale as "1.15% up to 11.48%". **[RESEARCH GAP — reviewer t
 | Name | Value | Source |
 | --- | --- | --- |
 | Minimum wage (SMN) 2025 | Bs 2,750/month, from 1 May 2025 retroactive to Jan 2025 (+10% vs Bs 2,500 in 2024) | DS 5383; Orbitax |
-| Minimum wage (SMN) 2026 | Bs 3,300/month | DS 5503 |
+| Minimum wage (SMN) 2026 | Bs 3,300/month (+20%), retroactive to 1 Jan 2026 | DS 5516 of 13 Jan 2026, which replaced the abrogated DS 5503 of 17 Dec 2025 |
 | Mandatory salary increase 2025 | 5% on basic salary (private sector); free negotiation above; senior management excluded | DS 5383 / wage policy |
-| RC-IVA non-taxable allowance | 2 × SMN = Bs 5,500/month (2 × Bs 2,750) | Ley 843; Rigoberto Paredes |
-| RC-IVA presumed deduction (DS 5383) | 13% of 1 SMN = Bs 357.50/month (reduced from 13% of 2 SMN) | DS 5383; Rigoberto Paredes |
-| RC-IVA practical threshold 2025 | ≈ Bs 9,451–9,456/month gross above which RC-IVA becomes payable absent invoice offset | Rigoberto Paredes; Visión360 |
+| RC-IVA non-taxable allowance | 2 × SMN = Bs 5,500/month in 2025 (2 × Bs 2,750) and Bs 6,600/month in 2026 (2 × Bs 3,300) | Ley 843; DS 5383; DS 5516; Rigoberto Paredes |
+| RC-IVA presumed deduction (DS 5383) | 13% of 1 SMN, reduced from 13% of 2 SMN = Bs 357.50/month in 2025 and Bs 429.00/month in 2026 | DS 5383; DS 5516; Rigoberto Paredes |
+| RC-IVA practical threshold | ≈ Bs 9,451–9,456/month gross in 2025, ≈ Bs 11,341/month in 2026, above which RC-IVA becomes payable absent invoice offset. The threshold is 3 SMN ÷ 0.8729, so it moves with the SMN | Rigoberto Paredes; Visión360; derived for 2026 from DS 5516 |
 | ANS entry threshold | Bs 13,000/month total ganado (then 25,000 / 35,000) | Ley 1582; PwC |
 | Pension contribution ceiling (tope) | 60 national minimum salaries/month = **Bs 165,000 in 2025** (60 × Bs 2,750) and **Bs 198,000 in 2026** (60 × Bs 3,300) | PwC; DS 5383; DS 5516 — **see caveat below** |
 | VAT (IVA) rate | 13% nominal (14.94% effective tax-inclusive) | SIN; PwC |
@@ -139,7 +140,7 @@ PwC summarises the scale as "1.15% up to 11.48%". **[RESEARCH GAP — reviewer t
 | RC-IVA | 13% flat on income net of social contributions and ANS, with 2-SMN exemption and invoice-based VAT offset | Ley 843; PwC; DS 5383 |
 | Unknown sector | Assume general (17.21%), not mining; flag for reviewer | Conservative — lower of the two only if confirmed non-mining |
 | Unknown total ganado | STOP — do not compute contributions without the gross | Base is total ganado; no default gross |
-| 2025 vs 2026 SMN | Use Bs 2,750 (DS 5383) for the 2025 tax year | This skill is for tax_year 2025 |
+| 2025 vs 2026 SMN | Take the SMN from the period being computed: Bs 2,750 (DS 5383) for 2025, Bs 3,300 (DS 5516) for 2026 | Every SMN-derived figure in this skill — the 2-SMN RC-IVA allowance, the presumed deduction, the 60-SMN pension ceiling — moves with it. The skill is written for tax_year 2025 and the 2026 values are stated alongside |
 
 ## Section 2 — Required inputs and refusal catalogue
 
@@ -319,7 +320,7 @@ These rules apply when payroll data is clear and all required inputs are availab
 
 ### Rule 9 — Minimum wage
 
-- **Minimum wage rule** — The 2025 SMN is Bs 2,750/month (DS 5383, eff. 1 May 2025 retroactive to January; +10% vs Bs 2,500 in 2024). 2026 SMN is Bs 3,300 (DS 5503). The 2025 mandatory private-sector basic-salary increase is 5%, with free negotiation above; senior management is excluded.  _(DS 5383; DS 5503)_
+- **Minimum wage rule** — The 2025 SMN is Bs 2,750/month (DS 5383, eff. 1 May 2025 retroactive to January; +10% vs Bs 2,500 in 2024). 2026 SMN is Bs 3,300 (DS 5516 of 13 Jan 2026, +20%, retroactive to 1 January; it replaced DS 5503 of 17 Dec 2025, which was abrogated). The 2025 mandatory private-sector basic-salary increase is 5%, with free negotiation above; senior management is excluded. DS 5516 imposes no across-the-board 2026 increase: only alignment to the new SMN is compulsory, and pay above it is left to negotiation.  _(DS 5383; DS 5516)_
 
 ### Rule 10 — Filing & payment schedule
 

@@ -4,7 +4,8 @@ description: Use this skill whenever asked about Paraguay IPS social security co
 version: 0.1
 jurisdiction: PY
 tax_year: 2025
-last_updated: 2026-07-13
+tax_year_notes: "2025 (minimum-wage floor also stated at the 1 July 2026 level of PYG 3,044,000)"
+last_updated: 2026-09-10
 review_status: pending_review
 depends_on:
   - social-contributions-workflow-base
@@ -50,7 +51,7 @@ Paraguay IPS Social Security Contributions (Aportes) -- Skill v0.1
 | Contribution base | Total remuneration in cash or in kind (salary, overtime, commissions, regalías, bonuses); EXCLUDES aguinaldo and family allowance |
 | Base floor | Legal minimum wage |
 | Base ceiling | No general-regime salary ceiling confirmed — **[RESEARCH GAP — reviewer to confirm]**; treat as uncapped |
-| Monthly minimum wage (from 1 Jul 2025) | ₲ 2.899.048 (MTESS Resolución N° 677/2025) |
+| Monthly minimum wage | ₲ 3.044.000 from 1 Jul 2026 (+5%, Decreto N° 6225; MTESS Resolución N° 670/2026); ₲ 2.899.048 from 1 Jul 2025 (MTESS Resolución N° 677/2025). Paraguay adjusts in **July**, so the month decides the floor, not the year |
 | Filing system | REI — Registro Electrónico de Información (monthly planilla) |
 | Payment frequency | Monthly |
 | Deadline | Monthly, staggered by last digit of the employer's número patronal (first business days of the following month) |
@@ -75,7 +76,7 @@ Paraguay IPS Social Security Contributions (Aportes) -- Skill v0.1
 | Unknown worker category | Assume general regime (9% / 16.5%) |
 | Domestic worker, unsure which rate | Use general 9% / 16.5% (post-2019); NEVER the old 2.5% / 5.5% |
 | Bank/financial-sector worker | Flag — confirm whether affiliated to a separate caja, not a higher IPS rate (see §10) |
-| Unknown gross wage | Apply the minimum-wage floor (₲ 2.899.048/month) |
+| Unknown gross wage | Apply the minimum-wage floor for the pay period (₲ 3.044.000/month from 1 Jul 2026; ₲ 2.899.048/month before that) |
 | Wage below minimum wage | Contribution base = at least the proportional minimum wage |
 | Unknown whether aguinaldo/family allowance included | Exclude both from the IPS base |
 | Unknown ceiling | Treat IPS as uncapped on the full wage |
@@ -164,7 +165,7 @@ Six worked examples in guaraní (₲) for a hypothetical Paraguayan employer. **
 
 ### Example 1 -- General employee at the minimum wage
 
-**Input:** General-regime employee, gross monthly wage = the minimum wage ₲ 2.899.048.
+**Input:** General-regime employee, pay period in the year to 30 June 2026, gross monthly wage = the minimum wage then in force, ₲ 2.899.048.
 
 **Reasoning:**
 - Aporte obrero (9%) = 2.899.048 × 0,09 = **₲ 260.914,32** → withheld from wage.
@@ -253,7 +254,7 @@ These rules apply when worker category and remuneration are clear. Apply exactly
 
 ### Rule 5 -- Minimum-wage floor
 
-- **Minimum-wage floor** — The base may not fall below the legal minimum wage (₲ 2.899.048/month from 1 Jul 2025). A worker earning below the minimum wage still contributes on at least the proportional minimum-wage base.
+- **Minimum-wage floor** — The base may not fall below the legal minimum wage (₲ 3.044.000/month from 1 Jul 2026; ₲ 2.899.048/month from 1 Jul 2025 to 30 Jun 2026). A worker earning below the minimum wage still contributes on at least the proportional minimum-wage base.
 
 ### Rule 6 -- No confirmed ceiling
 
@@ -319,7 +320,7 @@ INPUT DATA
   Gross monthly remuneration:    ₲ [____]
   In-kind component:             ₲ [____]
   Aguinaldo / family allowance:  EXCLUDED from base
-  Minimum-wage floor applied:    [YES/NO]  (₲ 2.899.048 from 1 Jul 2025)
+  Minimum-wage floor applied:    [YES/NO]  (₲ 3.044.000 from 1 Jul 2026; ₲ 2.899.048 from 1 Jul 2025)
 
 COMPUTATION (general / domestic regime)
   Contribution base:             ₲ [____]
@@ -394,11 +395,11 @@ Employer 16.5% breakdown: **14% to IPS proper + 2.5%** earmarked for public-heal
 
 | Field | Value |
 | --- | --- |
-| Monthly minimum wage (diurnal, general activities) | ₲ 2.899.048 (from 1 Jul 2025, +3,6%, MTESS Resolución N° 677/2025) |
-| Daily jornal | ₲ 111.502 |
-| Part-time diurnal hour | ₲ 13.937 |
+| Monthly minimum wage (diurnal, general activities) | ₲ 3.044.000 (from 1 Jul 2026, +5%, Decreto N° 6225 / MTESS Resolución N° 670/2026); ₲ 2.899.048 (from 1 Jul 2025, +3,6%, MTESS Resolución N° 677/2025) |
+| Daily jornal | ₲ 117.077 from 1 Jul 2026; ₲ 111.502 from 1 Jul 2025 to 30 Jun 2026 |
+| Part-time diurnal hour | The prior table quoted ₲ 13.937 for 2025-26. Confirm the separate part-time hourly row in MTESS Resolution 670/2026 before using a rate from July 2026 |
 
-**[RESEARCH GAP — reviewer to confirm]** A new tripartite minimum-wage adjustment was reportedly under discussion for ~mid-2026; verify the current figure before reliance.
+The July 2026 monthly and daily adjustment is published in MTESS Resolution 670/2026. The part-time hourly row remains to be checked against that resolution.
 
 ### Filing & payment
 
@@ -423,7 +424,7 @@ Employer 16.5% breakdown: **14% to IPS proper + 2.5%** earmarked for public-heal
 
 1. **Bank/financial 28% rate:** PwC publishes an 11% / 17% (28%) figure, and the sibling `paraguay-payroll` skill repeats it. Per the IPS "separate caja" framing and this skill's design, do not author a differentiated 28% IPS rate. If addressing banks, note the historical separate fund (Caja Bancaria), not a higher IPS tariff. This is a known discrepancy to reconcile across the Paraguay skill set.
 2. **Domestic-worker law number:** use Law N° 6.338/2019 (not "6.368").
-3. **Minimum wage is time-sensitive** — ₲ 2.899.048 valid from Jul 2025; re-check for any 2026 adjustment.
+3. **Minimum wage is time-sensitive, and the boundary is July** — ₲ 3.044.000 from Jul 2026; ₲ 2.899.048 from Jul 2025 to Jun 2026. Re-check each June for the next adjustment. Every worked example and test below uses the 2025-26 floor: at the 2026-27 floor the obrero 9% is ₲ 273.960, the patronal 16.5% is ₲ 502.260 and the combined 25.5% is ₲ 776.220.
 4. **Independent-regime and special-regime rates** (13% independent; ANDE 6%/12%; Magisterio 5.5%/2.5%; pensioners 6%) are secondary/lower-confidence — [RESEARCH GAP]; confirm before use.
 
 ### Test suite

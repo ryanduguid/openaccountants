@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Australian bookkeeping for sole
 version: 1.0
 jurisdiction: AU
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-10
 review_status: pending_review
 depends_on:
   - bookkeeping-workflow-base
@@ -272,7 +272,7 @@ Small businesses using simplified reporting typically recognise on delivery/comp
 | Period | Threshold | Eligibility |
 | --- | --- | --- |
 | 1 Jul 2023 – 30 Jun 2026 | < $20,000 per asset | Aggregated turnover < $10m, using simplified depreciation |
-| Permanent (from 1 Jul 2026) | < $20,000 per asset | Announced in 2026 Budget — made permanent |
+| From 1 Jul 2026 | < $20,000 per asset under enacted amendments | Eligible small business entities using simplified depreciation. Treasury Laws Amendment (Tax Reform No. 2) Act 2026 received assent on 26 August 2026. Schedule 2 commences on 1 October 2026, with application to assets first used or installed ready for taxable use from 1 July 2026. As at 10 September the amendment has not commenced. [Act, section 2 and Schedule 2 item 15](https://www.legislation.gov.au/C2026A00071/asmade/text) |
 
 ### Small Business Pool (Simplified Depreciation)
 

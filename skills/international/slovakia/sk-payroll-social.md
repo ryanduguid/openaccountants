@@ -3,7 +3,7 @@ name: sk-payroll-social
 description: "Source-cited draft: payroll & social contributions for Slovakia (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
 jurisdiction: SK
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-10
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -19,7 +19,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Employer accident insurance** — 0.8% of total payroll, with no maximum assessment base percent  _(Social Insurance Act (Act No. 461/2003 Coll.) — https://taxsummaries.pwc.com/slovak-republic/individual/other-taxes)_
 - **Employer health-insurance contribution** — 11% of remuneration, with no maximum assessment base percent  _(Act on Health Insurance (Act No. 580/2004 Coll.) — https://taxsummaries.pwc.com/slovak-republic/individual/other-taxes)_
 - **Maximum monthly assessment base (social insurance)** — EUR 15,730 per month for 2025 (11x the average wage of two years prior) EUR (Applies to social insurance only; health insurance is uncapped)  _(Social Insurance Act (Act No. 461/2003 Coll.) — https://taxsummaries.pwc.com/slovak-republic/individual/other-taxes)_
-- **Maximum monthly employee social contribution** — Approx. EUR 1,478.62 per month (9.4% of the EUR 15,730 cap) EUR ((approx — derived from 2025 cap; confirm))  _(Social Insurance Act (Act No. 461/2003 Coll.) — https://taxsummaries.pwc.com/slovak-republic/individual/other-taxes)_
+- **Maximum monthly employee social contribution** — **EUR 1,575.82** per month, being 9.4% of the **EUR 16,764** maximum assessment base that applies from 1 January 2026 to 31 December 2026. The 2025 base was EUR 15,730 and gave EUR 1,478.62, so a calculation carried over from last year understates the ceiling by about EUR 97 a month. Health insurance is separate and uncapped, and the employee share rises from 4% to 5% for 2026  _(Social Insurance Act (Act No. 461/2003 Coll.) — https://taxsummaries.pwc.com/slovak-republic/individual/other-taxes)_
 - **Income tax withholding on wages (PAYE-equivalent)** — Employer withholds monthly advance income tax at 19% (and 25% above the monthly equivalent of the band), reconciled in the annual return or employer annual reconciliation  _(Income Tax Act (Act No. 595/2003 Coll.) — https://taxsummaries.pwc.com/slovak-republic/individual/taxes-on-personal-income)_
 - **Contribution remittance deadline** — Social and health contributions are due on the employer's regular payday for the relevant month  _(Social Insurance Act (Act No. 461/2003 Coll.); Act on Health Insurance (Act No. 580/2004 Coll.) — https://taxsummaries.pwc.com/slovak-republic/individual/other-taxes)_
 - **Withheld wage tax remittance deadline** — By the 5th day after the wages are paid ((confirm exact statutory day))  _(Income Tax Act (Act No. 595/2003 Coll.) — https://taxsummaries.pwc.com/slovak-republic/individual/tax-administration)_

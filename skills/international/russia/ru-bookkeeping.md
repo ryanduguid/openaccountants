@@ -4,7 +4,7 @@ description: Use this skill whenever asked about record-keeping, bookkeeping, or
 version: 1.0
 jurisdiction: RU
 tax_year: 2026
-last_updated: 2026-07-13
+last_updated: 2026-09-10
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -42,7 +42,7 @@ This skill covers what records a self-employed person in Russia must keep, by ta
 
 - **Assume records ARE required** unless the user clearly qualifies for an exemption. Default to keeping a ledger and primary documents.
 - **Assume ККТ (онлайн-касса) IS required** for ИП taking payment from individuals for goods/works/services, unless a specific exemption is established. The general deferral for ИП without employees ended 01.07.2021 — verify no new exemption applies.
-- **Самозанятые (НПД): no ledger, no ККТ** — but every taxable receipt MUST produce a чек in «Мой налог». Treat a missing чек as a compliance failure (penalty 20% of the amount, 100% on repeat within 6 months — verify current value).
+- **Самозанятые (НПД): no ledger, no ККТ** — but every taxable receipt MUST produce a чек in «Мой налог». Treat a missing чек as a compliance failure: **20% of the amount** under ст. 129.13 НК РФ, and **100% on a repeat within six months**. Confirmed. The six months run from the date the first penalty was imposed, not from the first offence, and income with no чек cannot be taxed under НПД at all.
 - **Retention: keep everything ≥ 5 years.** When in doubt, keep longer.
 - **Never invent form numbers, line numbers, rates, or thresholds.** If not verified, say "verify current value" and point the user to nalog.gov.ru.
 - ИП do **not** keep full бухгалтерский учёт; do not advise an ИП to prepare financial statements (бухгалтерская отчётность) — that is an ООО obligation.
@@ -107,7 +107,7 @@ A self-employed person whose income approaches the **НПД limit of 2,400,000 �
 - Exact **current КУДиР form** and any 2026 reissue.
 - Whether a **specific activity** qualifies for a 54-ФЗ ККТ exemption (list is narrow, changes often).
 - **Penalty amounts** under ст. 120 / ст. 126 НК РФ and КоАП ст. 14.5 — verify before quoting figures.
-- **НПД income limit** (2,400,000 ₽; possible increase to 3,000,000 ₽ discussed but not confirmed as of May 2026 — verify current value).
+- **НПД income limit** — still **2,400,000 ₽** for 2026. Several bills to raise it are before the Duma and none has passed: 3,400,000 ₽ tabled in June 2026 and scheduled for October, and 4,300,000 ₽ tabled on 25 August 2026. Use 2,400,000 ₽ and check whether either has been enacted before relying on a higher figure.
 - Patent (ПСН) regime specifics — out of primary scope here; route to a patent-specific resource.
 - ООО / legal-entity бухгалтерский учёт — **out of scope** (this skill is self-employed only).
 

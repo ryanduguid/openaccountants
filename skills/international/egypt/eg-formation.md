@@ -4,7 +4,7 @@ description: Use this skill whenever asked about how to register, form, or set u
 version: 1.0
 jurisdiction: EG
 tax_year: 2026
-last_updated: 2026-07-13
+last_updated: 2026-09-10
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -35,7 +35,7 @@ This skill walks a self-employed person in Egypt through **getting legally set u
 | Income tax law (general) | Income Tax Law **No. 91 of 2005** (as amended) |
 | Simplified regime | **Law No. 6 of 2025** turnover-based system for turnover ≤ **EGP 20,000,000** (see `eg-sme-tax`) |
 | VAT law | VAT Law **No. 67 of 2016** (as amended) — standard rate **14%** |
-| VAT registration threshold | Historically **EGP 500,000** turnover; **lowered to EGP 250,000** effective **1 Jan 2026** per **Resolution No. 281 of 2025** — **verify current value with ETA** |
+| VAT registration threshold | **EGP 500,000** of annual turnover, under VAT Law No. 67 of 2016. ETA states this figure directly. **EGP 250,000 is not the VAT threshold** -- see the note below |
 | Social insurance | Law **No. 148 of 2019** — self-employed contribute (commonly cited) **~21%** of a chosen reference wage — **verify current rate/bands** |
 | Quality tier | **Research-verified — pending sign-off by an Egyptian accountant** |
 | Version | 1.0 |
@@ -43,7 +43,22 @@ This skill walks a self-employed person in Egypt through **getting legally set u
 ### Conservative defaults
 
 - **Default to registering, not waiting.** Operating without a tax card / tax file is non-compliant. If income is at or near any threshold, assume registration is required and confirm with ETA.
-- **Default to the lower VAT threshold.** Treat **EGP 250,000** (effective 2026) as the trigger to register for VAT and e-invoicing, and flag "verify current value" — do not assume the old EGP 500,000 figure still applies.
+- **Use EGP 500,000 for VAT registration.** That is what the Egyptian Tax
+  Authority publishes, and VAT Law No. 67 of 2016 has not been amended to halve
+  it.
+
+> **Where the EGP 250,000 figure comes from, and why it is not the VAT
+> threshold.** A large number of advisory write-ups report that "Resolution No.
+> 281 of 2025 halved the threshold from EGP 500,000 to EGP 250,000". ETA
+> Decision No. 281 of 2025 is the **second sub-phase of the eighth main phase of
+> the e-receipt system**: it obliges the taxpayers named in its attached list to
+> issue electronic receipts for final-consumer (B2C) sales from 15 September
+> 2025. It is an enrolment decision for the e-receipt rollout, not an amendment
+> to the VAT Law's registration threshold, and ETA's own VAT guidance still
+> gives EGP 500,000. Treat the two as separate questions: whether you must
+> register for VAT, and whether your ETA phase requires e-invoices or
+> e-receipts.  _(ETA, eta.gov.eg/ar/node/1379 for the VAT threshold; ETA's
+> notice for Decision 281 for the e-receipt phase)_
 - **Default to "syndicate first" for regulated professions.** Lawyers, doctors, engineers, accountants and similar professions generally **cannot practise lawfully** without syndicate (نقابة) membership — treat it as a prerequisite, not optional.
 - **Default to sole proprietorship (منشأة فردية) for a solo freelancer** unless there is a specific reason for an LLC (see Section 5). Do not recommend an LLC by default.
 - **Never present a fee, threshold, rate, or procedure as final** without an Egyptian accountant's sign-off and a same-day check against ETA / GAFI portals. Fees and thresholds change frequently by decree.
@@ -106,12 +121,12 @@ These are **separate** from income tax and from the tax card — registering for
 ### 4.1 VAT registration (VAT Law No. 67 of 2016)
 
 - **Standard VAT rate** — 14% percent (special/table rates apply to some goods/services — out of scope here)  _(VAT Law No. 67 of 2016)_
-- **VAT registration threshold** — Historically EGP 500,000 of annual taxable turnover; under Resolution No. 281 of 2025, lowered to EGP 250,000 effective 1 January 2026, with a registration deadline reported as 31 March 2026 for those who exceeded EGP 250,000 in 2025. Verify the current value and deadline with ETA before relying on it. EGP (⚠ verify current value and deadline with ETA)  _(Resolution No. 281 of 2025)_
+- **VAT registration threshold** — **EGP 500,000** of annual taxable turnover under VAT Law No. 67 of 2016, confirmed against ETA's own VAT guidance. The widely repeated claim that Resolution No. 281 of 2025 halved this to EGP 250,000 does not survive a reading of that decision, which is an e-receipt phase enrolment (see the note in Section 1) EGP  _(VAT Law No. 67 of 2016; ETA, eta.gov.eg/ar/node/1379)_
 - **VAT threshold measurement and registration process** — The threshold is measured on gross revenue (turnover), not profit. Register via the ETA portal once turnover crosses (or is expected to cross) the threshold. Voluntary registration below the threshold may be possible — verify. Within the simplified regime, VAT returns are filed quarterly (vs monthly in the general system). See `eg-sme-tax`.
 
 ### 4.2 E-invoicing / e-receipt registration (ETA portal)
 
-- **E-invoicing/e-receipt system and obligations** — Egypt operates a mandatory electronic invoicing (الفاتورة الإلكترونية) and electronic receipt (الإيصال الإلكتروني) system on the ETA platform. Resolution No. 281 of 2025 is reported to expand e-invoicing/e-receipt obligations to smaller businesses in step with the lowered EGP 250,000 threshold, with B2C e-receipt obligations expanding through 2025–2026. Verify the exact phase-in dates and who is in scope. Registration requires an ETA portal account and (typically) a digital signature / e-seal and onboarding of an invoicing solution. Verify the current technical onboarding steps. Penalties for non-registration/non-compliance are significant — sources cite fixed fines plus daily penalties and, ultimately, loss of the ability to issue valid invoices. Verify current penalty figures with ETA.  _(Resolution No. 281 of 2025)_
+- **E-invoicing/e-receipt system and obligations** — Egypt operates two distinct mandatory systems on the ETA platform: **electronic invoices** (الفاتورة الإلكترونية) for B2B and B2G transactions, and **electronic receipts** (الإيصال الإلكتروني) for B2C sales to final consumers. They are phased in separately and by named taxpayer lists, so which one applies to a business depends on its transaction types and its ETA phase, not on a single turnover number. Decision No. 281 of 2025 is the second sub-phase of the eighth main e-receipt phase, effective 15 September 2025 for the taxpayers it names. Verify the business's phase with ETA rather than inferring it from turnover. Registration requires an ETA portal account and (typically) a digital signature / e-seal and onboarding of an invoicing solution. Verify the current technical onboarding steps. Penalties for non-registration/non-compliance are significant — sources cite fixed fines plus daily penalties and, ultimately, loss of the ability to issue valid invoices. Verify current penalty figures with ETA.  _(Resolution No. 281 of 2025)_
 
 ### 4.3 Social insurance registration (التأمينات الاجتماعية — Law No. 148 of 2019)
 
@@ -153,14 +168,14 @@ Most solo freelancers should default to a sole proprietorship (منشأة فرد
 ### Example 1 — Freelance graphic designer, EGP 180,000/year, solo
 
 - **Path:** Register an individual tax file + obtain the **tax card** at ETA. Likely **no commercial register** (a service/professional activity) — **verify**. No syndicate (unregulated profession).
-- **VAT:** Turnover **below** the EGP 250,000 (2026) threshold → **no mandatory VAT registration** yet. Watch the threshold; e-invoicing may still be encouraged — **verify scope**.
+- **VAT:** Turnover **below** the EGP 500,000 threshold → **no mandatory VAT registration** yet. E-invoicing or e-receipt obligations can still arise separately if ETA names the taxpayer in a rollout phase — **verify the phase with ETA**.
 - **Income tax:** Eligible for the **simplified turnover regime**; high margin → likely cheapest. Compare with general system. See `eg-sme-tax`.
 - **Social insurance:** Should register with **NOSI** as self-employed at a chosen reference wage — **verify rate/bands**.
 
 ### Example 2 — Software developer/contractor, EGP 900,000/year, one big client
 
 - **Path:** Tax file + **tax card**. Service activity — check commercial register vs professional treatment. No syndicate.
-- **VAT:** **Above** EGP 250,000 → **must register for VAT (14%)** and for **e-invoicing** on the ETA portal; verify the 31 Mar 2026 deadline if 2025 turnover exceeded the threshold.
+- **VAT:** **Above** EGP 500,000 → **must register for VAT (14%)**. Whether the business must also issue e-invoices (B2B/B2G) or e-receipts (B2C) is a separate question decided by its ETA phase and transaction types — check both.
 - **Income tax:** Eligible for simplified regime (≤ EGP 20m). **Flag client concentration** — single-client dependence can raise exclusion/abuse questions in the simplified regime; escalate to `eg-sme-tax`.
 - **Social insurance:** Register with NOSI; choose reference wage.
 
@@ -192,8 +207,8 @@ Most solo freelancers should default to a sole proprietorship (منشأة فرد
 - **Income Tax Law No. 91 of 2005** (as amended) — general system.
 - **Law No. 6 of 2025** — integrated simplified turnover-based regime (≤ EGP 20m); see `eg-sme-tax`.
 - **Law No. 152 of 2020** — MSME Development Law (size definitions/incentives).
-- **VAT Law No. 67 of 2016** (as amended) — 14% rate; registration threshold (historically EGP 500,000; **EGP 250,000 from 1 Jan 2026 per Resolution No. 281 of 2025 — verify**).
-- **Resolution No. 281 of 2025** — lowered VAT/e-invoicing threshold and expanded e-receipt obligations — **verify scope, dates, and penalties**.
+- **VAT Law No. 67 of 2016** (as amended) — 14% rate; mandatory registration threshold **EGP 500,000**.
+- **ETA Decision No. 281 of 2025** — second sub-phase of the eighth main e-receipt phase; obliges the taxpayers on its attached list to issue B2C electronic receipts from 15 September 2025. It does **not** change the VAT registration threshold — **verify scope, dates, and penalties**.
 - **Law No. 148 of 2019** — social insurance (incl. self-employed); see `eg-social-insurance`.
 - **GAFI** (gafi.gov.eg) — LLC incorporation, name reservation, fees, document lists.
 - **ETA** (eta.gov.eg; eservice.incometax.gov.eg) — tax file, tax card, VAT, e-invoicing portals.
@@ -219,7 +234,7 @@ Most solo freelancers should default to a sole proprietorship (منشأة فرد
 ## PROHIBITIONS
 
 - **Do NOT** tell anyone they can operate without a **tax card / tax file** — that is non-compliant.
-- **Do NOT** state the **VAT threshold** as EGP 500,000 without flagging the **EGP 250,000 (from 1 Jan 2026)** change and "verify current value" — do not present either figure as settled without an ETA check.
+- **Do NOT** state the **VAT registration threshold** as EGP 250,000. It is **EGP 500,000** under VAT Law No. 67 of 2016, which is what ETA publishes. The EGP 250,000 figure belongs to the e-receipt rollout and is repeated as a VAT threshold by many advisory write-ups that have not read Decision No. 281.
 - **Do NOT** quote any **fee, threshold, rate, penalty, or deadline** (commercial register fees, GAFI incorporation fees, social-insurance rate/bands, e-invoicing penalties) as final without same-day verification — flag with "verify current value/procedure".
 - **Do NOT** tell a member of a **regulated profession** they can practise without the relevant **syndicate (نقابة)** membership.
 - **Do NOT** assume an activity is "professional" vs "commercial" (and thus which register applies) — verify per activity.
@@ -230,7 +245,7 @@ Most solo freelancers should default to a sole proprietorship (منشأة فرد
 
 ## Disclaimer
 
-This skill is **research-verified** against the Egyptian Tax Authority (eta.gov.eg), GAFI (gafi.gov.eg), and reputable Egyptian and international tax/legal publications (EY, WTS, Andersen Egypt, Deel, and Egyptian law-firm alerts), current to **May 2026**. It is **not** a substitute for professional advice and has **not yet been signed off by a qualified Egyptian accountant**. Egyptian registration procedures, fees, the VAT rate/threshold (notably the EGP 500,000 → EGP 250,000 change for 2026), e-invoicing scope and penalties, social-insurance rates/bands, and GAFI rules are subject to change by decree. Always verify current figures and procedures with ETA, GAFI, the relevant commercial registry, the relevant syndicate (نقابة), and NOSI, and obtain sign-off from a credentialed Egyptian tax/legal professional before registering, filing, or relying on any output. Provided by **openaccountants.com** as open-source guidance, without warranty.
+This skill is **research-verified** against the Egyptian Tax Authority (eta.gov.eg), GAFI (gafi.gov.eg), and reputable Egyptian and international tax/legal publications (EY, WTS, Andersen Egypt, Deel, and Egyptian law-firm alerts), current to **May 2026**. It is **not** a substitute for professional advice and has **not yet been signed off by a qualified Egyptian accountant**. Egyptian registration procedures, fees, the VAT rate and threshold, e-invoicing and e-receipt scope and penalties, social-insurance rates/bands, and GAFI rules are subject to change by decree. Always verify current figures and procedures with ETA, GAFI, the relevant commercial registry, the relevant syndicate (نقابة), and NOSI, and obtain sign-off from a credentialed Egyptian tax/legal professional before registering, filing, or relying on any output. Provided by **openaccountants.com** as open-source guidance, without warranty.
 
 <!-- openaccountants-cta-block -->
 

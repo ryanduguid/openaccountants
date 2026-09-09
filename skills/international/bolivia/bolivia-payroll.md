@@ -4,7 +4,8 @@ description: Use this skill whenever asked about Bolivia payroll processing for 
 version: 0.1
 jurisdiction: BO
 tax_year: 2025
-last_updated: 2026-07-13
+tax_year_notes: "2025 (SMN-derived thresholds also stated at the 2026 SMN of Bs 3,300, DS 5516)"
+last_updated: 2026-09-10
 review_status: pending_review
 depends_on:
   - payroll-workflow-base
@@ -155,7 +156,9 @@ Arithmetic check (general): 10.00 + 1.71 + 2.00 + 3.50 = 17.21%. ✓ Mining: 17.
 | 2025 | **Bs 2,750** | DS 5383 (1 May 2025; +10% vs Bs 2,500; basic-salary haber increase 5%, retroactive to 1 Jan 2025) (DS 5383 / Lexivox) |
 | 2026 | **Bs 3,300** | DS 5516 (published 13 Jan 2026; +20%, retroactive to 1 Jan 2026) (DS 5516; secondary sources) |
 
-The SMN drives both the RC-IVA non-taxable minimum (2 SMN) and the pension cap (60 SMN), so figures must be updated annually with each salary decree. [RESEARCH GAP — reviewer to confirm the 2026 SMN Bs 3,300 against the Gaceta Oficial; it is reported consistently by multiple secondary sources.]
+The SMN drives both the RC-IVA non-taxable minimum (2 SMN) and the pension cap (60 SMN), so figures must be updated annually with each salary decree.
+
+Note the decree number. The 2026 rise was first decreed by **DS 5503 of 17 December 2025**, which was **abrogated** after union mobilisation and replaced by **DS 5516**, published in the Gaceta Oficial on **13 January 2026** and retroactive to 1 January. Both set the same Bs 3,300, so a guide citing DS 5503 lands on the right number from a decree that no longer exists. Cite DS 5516. DS 5516 also breaks with the previous pattern of a compulsory across-the-board percentage rise: only alignment to the new SMN is mandatory, and pay above the minimum is left to free negotiation (art. 21). Confirmed against the Gaceta text as reproduced by derechoteca.com and against press reporting of the 13 January publication; the Gaceta PDF itself was not opened.
 
 ### Statutory Bonuses and Benefits
 

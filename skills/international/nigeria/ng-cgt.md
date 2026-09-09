@@ -3,7 +3,7 @@ name: ng-cgt
 description: Use this skill whenever asked about Nigerian Capital Gains Tax. Trigger on phrases like "Nigeria CGT", "Capital Gains Tax Nigeria", "sale of shares Nigeria", "property gains Nigeria", "10% CGT Nigeria", "CGTA Nigeria", "disposal of chargeable assets Nigeria", "Section 30 CGTA", "rollover relief Nigeria", "NGX share disposal tax", "₦100M share threshold", "non-resident CGT Nigeria", or any question about computing, filing, or reporting capital gains on Nigerian chargeable assets. Scope covers CGT computation for chargeable assets (real property, shares, business assets, intangibles), statutory exemptions, rollover relief on replacement of business assets, the Finance Act 2021 share disposal threshold, and the NTA 2025 consolidation of CGT into the general income tax framework. ALWAYS read this skill before touching Nigerian CGT work.
 jurisdiction: NG
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-10
 reviewed_by: Omolola Fasasi
 review_status: current
 tier: 2
@@ -40,7 +40,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Amending legislation | Finance Act 2019; Finance Act 2020; Finance Act 2021; Finance Act 2022; Finance Act 2023 |
 | Post-2025 framework | Nigeria Tax Act (NTA) 2025 — CGT consolidated into the general income tax framework (implementing regulations pending) |
 | Headline rate | **10%** on chargeable gains |
-| Tax authority (residents) | Federal Inland Revenue Service (FIRS) for companies and non-residents; relevant State Internal Revenue Service (SIRS) for resident individuals |
+| Tax authority (residents) | **Nigeria Revenue Service (NRS)** — the Federal Inland Revenue Service (FIRS) was renamed and re-established as the NRS by the Nigeria Revenue Service (Establishment) Act 2025, with effect from **1 January 2026**, for companies and non-residents; relevant State Internal Revenue Service (SIRS) for resident individuals |
 | Filing | Lodged with the annual income tax return — CIT (companies) or PIT (individuals) |
 | Validated by | Verified by Omolola Fasasi (MB058950) on 2026-06-21 |
 | Skill version | 1.0 |
@@ -74,7 +74,7 @@ STOP and do not produce a final CGT figure where any of the following applies:
 - **Disposal of partnership interests** — Treatment uncertain under CGTA; refer to FIRS guidance
 - **Mineral rights / oil-block disposals** — Petroleum Industry Act overlay — out of scope
 - **Trust / estate disposals** — Specialist trust-CGT regime — out of scope
-- **Disposal occurring after NTA 2025 commencement where final implementing regulations are not yet published** — Conservative default: compute under CGTA framework, flag for review once NTA regulations issued
+- **Disposal on or after 1 January 2026** - Apply the NTA 2025 framework. If the applicable treatment cannot be established, stop the tax calculation and obtain qualified review. Do not use the repealed CGTA as a default for these periods. [Nigeria Tax Act 2025, ss.56, 59 and 202](https://nass.gov.ng/documents/download/11249)
 - **Insufficient evidence that the ₦100M share threshold has been correctly aggregated across the taxpayer's full portfolio** — Cannot confirm exemption eligibility
 
 ## Section 3 — Tier 1 — chargeable persons, chargeable assets, computation
@@ -133,7 +133,7 @@ The following are exempt from CGT:
 
 ### 4.4 NTA 2025 — consolidation of CGT into the income tax framework
 
-- **NTA 2025 consolidation** — The Nigeria Tax Act (NTA) 2025, part of the suite of fiscal reforms enacted in 2025, consolidates Capital Gains Tax into the general income tax framework. Pre-2025 CGTA provisions remain operative for disposals during transitional periods, but for periods on or after the NTA commencement date: - CGT is administered alongside Companies Income Tax (CIT) and Personal Income Tax (PIT) under a unified return. - The 10% headline rate is retained for most asset classes (subject to confirmation in implementing regulations). - Treatment of share disposals, the ₦100M threshold, rollover relief, and exemptions is being re-codified — implementing regulations are pending as of the 2025 tax year. - Conservative default: until FIRS publishes the implementing regulations, prepare CGT computations under the pre-NTA CGTA framework and flag the position for review once the regulations are finalised.  _(Nigeria Tax Act (NTA) 2025)_
+- **NTA 2025 consolidation** - From 1 January 2026, gains fall within the new income-tax framework. Company rates follow section 56 and individual rates follow section 58 and the Fourth Schedule. The historical 10% CGTA rate is not a general 2026 rate. The pre-2026 rules and examples in this guide must remain labelled for their period. [Nigeria Tax Act 2025, ss.56, 59 and 202](https://nass.gov.ng/documents/download/11249)
 
 ## Section 5 — Worked examples
 
@@ -215,7 +215,7 @@ The CGT is reported with the 2025 PIT return. If Mrs Okonkwo had reinvested ≥ 
 | Unknown whether reinvestment in Nigerian shares occurred within the tax year | Assume no reinvestment → tax the residual |
 | Unknown whether parties are connected | Treat as connected → apply market value rule |
 | Routine repair vs enhancement expenditure ambiguous | Treat as routine repair → NOT deductible |
-| Disposal post NTA 2025 commencement, regulations pending | Compute under CGTA framework; flag for review under NTA implementing regulations |
+| Disposal on or after 1 January 2026, a detail turning on an unissued regulation | Compute under NTA 2025 — it is in force — and flag only the uncertain detail. Do NOT revert the computation to the repealed CGTA framework |
 | Cross-border disposal with possible treaty relief | STOP — refer to specialist treaty review |
 | PPR claimed but property was let or had non-residential use | Restrict PPR proportionally; conservative default → no PPR |
 | Non-resident disposal where withholding obligation unclear | Assume withholding applies; remit 10% to FIRS pending clarification |

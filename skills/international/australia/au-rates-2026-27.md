@@ -5,7 +5,7 @@ version: "1.0"
 jurisdiction: AU
 tax_year: 2026
 tax_year_notes: "2026-27 primary; 2025-26 retained for lodgment-season work"
-last_updated: 2026-08-20
+last_updated: 2026-09-10
 review_status: pending_review
 category: international
 tier: 2
@@ -60,14 +60,18 @@ One-off 20% debt reduction applied before 1 June 2026 indexation; thresholds ind
 
 ## Medicare
 
-| Item | 2025-26 | Source |
-| --- | --- | --- |
-| Levy | 2% of taxable income | MLA 1986 |
-| Low-income threshold (single) | $28,011 / shade-in to $35,013 | ATO QC 27031 |
-| Low-income threshold (family) | $47,238 + $4,338 per child | ATO QC 27031 |
-| SAPTO single | $44,268 / $55,335 | ATO QC 27031 |
-| MLS base tier | Single $101,000 / family $202,000 (then 1% / 1.25% / 1.5%) | ATO MLS thresholds |
-| PHI rebate (base, under 65) | 24.288% to 31 Mar 2026; 24.118% from 1 Apr 2026 | PHI Circular 12/26 |
+This table mixes years and says so per row: the MLS tiers are indexed and
+published for 2026-27, while the low-income thresholds and SAPTO amounts are
+still the 2025-26 figures because the ATO indexes them later in the year.
+
+| Item | Value | Year | Source |
+| --- | --- | --- | --- |
+| Levy | 2% of taxable income | unchanged | MLA 1986 |
+| Low-income threshold (single) | $28,011 / shade-in to $35,013 | **2025-26** -- 2026-27 not yet indexed | ATO QC 27031 |
+| Low-income threshold (family) | $47,238 + $4,338 per child | **2025-26** -- 2026-27 not yet indexed | ATO QC 27031 |
+| SAPTO single | $44,268 / $55,335 | **2025-26** -- 2026-27 not yet indexed | ATO QC 27031 |
+| MLS base tier | Single **$105,000** / family **$210,000** (then 1% / 1.25% / 1.5%); the family threshold rises by $1,500 for each MLS dependent child after the first. $101,000 and $202,000 were the 2025-26 figures | **2026-27** | ATO MLS thresholds |
+| PHI rebate (base, under 65) | 24.288% to 31 Mar 2026; 24.118% from 1 Apr 2026 | spans both | PHI Circular 12/26 |
 
 2026-27 Medicare low-income thresholds index with CPI; confirm at ATO QC 27031 when lodging 2026-27.
 

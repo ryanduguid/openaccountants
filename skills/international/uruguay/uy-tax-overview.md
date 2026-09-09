@@ -3,13 +3,15 @@ name: uy-tax-overview
 description: "Source-cited draft: tax overview for Uruguay (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
 jurisdiction: UY
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-10
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
 # Uruguay Tax Overview
+
+> **2026 retirement ceiling requires period verification.** The UYU 288,836 figure is reported for February 2026 onward. Its January application has not been established here. Confirm the BPS ceiling and pension regime for the pay month before using any retirement calculation or template below; do not assume that the BPC and retirement ceiling change on the same date.
 
 ## Uruguayan tax system at a glance
 
@@ -20,7 +22,7 @@ Uruguay operates a territorial-source tax system administered by the Direccion G
 - **National tax authority** — Direccion General Impositiva (DGI)  _([[Direccion General Impositiva](https://www.gub.uy/direccion-general-impositiva)](https://www.gub.uy/direccion-general-impositiva))_
 - **Social security authority** — Banco de Prevision Social (BPS)  _([[Banco de Prevision Social](https://www.bps.gub.uy)](https://www.bps.gub.uy))_
 - **Basis of taxation** — Territorial / source-based — Uruguay-source income is taxed; most foreign-source income is exempt (with limited exceptions, e.g. certain foreign capital income of resident individuals)  _(Titulo 7 Texto Ordenado 1996 (IRPF))_
-- **Base de Prestaciones y Contribuciones (BPC) — indexing unit** — UYU 6,576 per month for 2025 (UYU 6,864 for 2026) UYU  _(Decreto del Poder Ejecutivo - valor de la BPC 2025)_
+- **Base de Prestaciones y Contribuciones (BPC) — indexing unit** — UYU 6,864 per month for 2026 (+4.38%, from 1 January); UYU 6,576 for 2025. Most Uruguayan thresholds are BPC multiples and move with it on 1 January. Two that matter are **not**: the BPS retirement contribution ceiling is set separately by BPS (UYU 288,836 for 2026, a 5.97% rise against the BPC's 4.38%), and the minimum wage changed twice in 2026. Do not index either from the BPC UYU  _(Decreto N° 11/026 (BPC 2026); Decreto N° 5/025 (BPC 2025))_
 - **Headline personal income tax (IRPF) top rate** — 36% on the top labour-income band; capital income generally a flat 12% %  _(Titulo 7 Texto Ordenado 1996 (IRPF))_
 - **Headline corporate income tax (IRAE) rate** — 25% %  _(Titulo 4 Texto Ordenado 1996 (IRAE))_
 - **Does Uruguay have a VAT/GST?** — Yes — Impuesto al Valor Agregado (IVA), standard rate 22% %  _(Titulo 10 Texto Ordenado 1996 (IVA))_

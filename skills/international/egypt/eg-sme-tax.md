@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Egypt's simplified or SME tax r
 version: 1.0
 jurisdiction: EG
 tax_year: 2026
-last_updated: 2026-07-13
+last_updated: 2026-09-10
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -60,7 +60,7 @@ The income tax is a flat percentage of **annual turnover** (إجمالي رقم 
 
 - **Default to general income-tax system unless opted in** — Default to the general income-tax system unless the user confirms they have formally applied to and been accepted into the Law 6/2025 regime. The regime is opt-in by request — it is not automatic.  _(Conservative defaults)_
 - **Default to higher band near boundary** — Default to the higher band if turnover is near a band boundary.  _(Conservative defaults)_
-- **Assume VAT registration required** — Assume VAT registration is still required at the standard EGP 500,000 registration threshold — Law 6/2025 simplifies VAT filing frequency, it does not abolish VAT.  _(Conservative defaults)_
+- **Assume VAT registration required** — Assume VAT registration is still required at the standard **EGP 500,000** registration threshold (VAT Law No. 67 of 2016, as published by ETA) — Law 6/2025 simplifies VAT filing frequency, it does not abolish VAT. Do not use EGP 250,000 here: that figure comes from the e-receipt rollout under ETA Decision No. 281 of 2025 and is not the VAT threshold.  _(Conservative defaults)_
 - **Assume e-invoicing mandatory** — Assume e-invoicing / e-receipt compliance is mandatory to keep the incentives.  _(Conservative defaults)_
 - **Assume 5-year lock-in applies** — Assume the 5-year lock-in applies once enrolled — do not advise the user they can freely exit.  _(Conservative defaults)_
 - **Never compute final liability without sign-off** — Never compute a final liability without a credentialed Egyptian accountant sign-off. This skill is research-verified, not authority-certified.  _(Conservative defaults)_
@@ -142,7 +142,7 @@ The regime simplifies filing cadence, not the existence of the taxes.
 
 ### Key VAT points
 
-- **VAT registration still applies** — VAT registration still applies at the general turnover threshold (EGP 500,000 — verify current value). Law 6/2025 changes how often you file, not whether you must register.  _(VAT Law No. 67 of 2016)_
+- **VAT registration still applies** - The general annual turnover threshold is EGP 500,000. Law 6/2025 changes filing frequency, not the registration threshold. ETA Decision 281/2025 concerns named taxpayers in an e-receipt rollout phase. _([Egyptian Tax Authority](https://www.eta.gov.eg/ar/node/1379); VAT Law No. 67 of 2016)_
 - **Standard VAT rate** — 14% % (verify current; certain goods/services have special rates such as the 5% machinery rate or the schedule/table-tax items)  _(VAT Law No. 67 of 2016)_
 - **E-invoicing/e-receipt precondition** — E-invoicing / e-receipt integration is a precondition for staying in the regime — non-compliance can forfeit the incentives.  _(Law No. 6 of 2025)_
 

@@ -4,7 +4,8 @@ description: "Use this skill whenever asked about Paraguay payroll processing fo
 version: 0.1
 jurisdiction: PY
 tax_year: 2025
-last_updated: 2026-07-13
+tax_year_notes: "2025 (minimum-wage floor also stated at the 1 July 2026 level of PYG 3,044,000)"
+last_updated: 2026-09-10
 review_status: pending_review
 depends_on:
   - payroll-workflow-base
@@ -40,7 +41,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | IPS ceiling | No salary ceiling confirmed — **[RESEARCH GAP — reviewer to confirm]** (PwC reports none specified) |
 | IRP registration/filing threshold | Gross personal-service income **> PYG 80,000,000/year** (DNIT; PwC) |
 | IRP rates (net taxable income) | 8% up to 50,000,000; 9% on 50,000,001–150,000,000; 10% above 150,000,000 (PwC; DNIT) |
-| Minimum wage (from 1 Jul 2025) | **PYG 2,899,048/month** (general) (MTESS Resolución N° 677/2025) |
+| Minimum wage | **PYG 3,044,000/month** (general) from 1 Jul 2026 (+5%); **PYG 2,899,048/month** from 1 Jul 2025. Paraguay adjusts in July, so a calendar year spans two floors (Decreto N° 6225 of 17 Jun 2026, reglamentado by MTESS Resolución N° 670/2026; MTESS Resolución N° 677/2025) |
 | Aguinaldo (13th salary) | Mandatory; 1/12 of annual remuneration; payable before 31 Dec; **exempt from IPS and IRP** (Ley N° 417/73) |
 | Tax authority | DNIT — Dirección Nacional de Ingresos Tributarios (absorbed the former SET in 2023) |
 | Social-security authority | IPS — Instituto de Previsión Social |
@@ -160,19 +161,26 @@ Paraguay's mandatory social-security scheme is **IPS (Instituto de Previsión So
 
 **Minimum wage table**  _(MTESS Resolución N° 677/2025)_
 
-| Item | 2025 value | Source |
+| Item | Value | Source |
 | --- | --- | --- |
-| Monthly minimum (general/unspecified activities) | **PYG 2,899,048** | MTESS Resolución N° 677/2025 |
-| Daily wage (jornaleros) | PYG 111,502 | MTESS Res. 677/2025 |
-| Daily rate (mensualizados) | PYG 96,635 | MTESS Res. 677/2025 |
-| Hourly rate (mensualizados) | PYG 12,080 | MTESS Res. 677/2025 |
-| Night-shift monthly (with +30%) | PYG 3,768,763 | MTESS Res. 677/2025 |
+| Monthly minimum (general/unspecified activities), from 1 Jul 2026 | **PYG 3,044,000** (jornal mínimo PYG 117,077; daily rate for monthly-paid staff PYG 101,467; hourly PYG 12,683) | Decreto N° 6225 (17 Jun 2026); MTESS Resolución N° 670/2026 |
+| Monthly minimum (general/unspecified activities), 1 Jul 2025 to 30 Jun 2026 | **PYG 2,899,048** | MTESS Resolución N° 677/2025 |
+| Daily wage (jornaleros) | PYG 117,077 from 1 Jul 2026; PYG 111,502 from 1 Jul 2025 to 30 Jun 2026 | MTESS Res. 670/2026; Res. 677/2025 |
+| Daily rate (mensualizados) | PYG 101,467 from 1 Jul 2026; PYG 96,635 before | MTESS Res. 670/2026; Res. 677/2025 |
+| Hourly rate (mensualizados) | PYG 12,683 from 1 Jul 2026; PYG 12,080 before | MTESS Res. 670/2026; Res. 677/2025 |
+| Night-shift monthly (with +30%) | PYG 3,957,200 from 1 Jul 2026; PYG 3,768,763 before | Derived: minimum wage x 1.30 |
 
-**Authority:** MTESS. Current: **Resolución MTESS N° 677/2025**, effective **1 July 2025** (+3.6% adjustment).
+**Authority:** MTESS. Resolución N° 670/2026 applies from 1 July 2026; Resolución N° 677/2025 applies from 1 July 2025 to 30 June 2026.
 
 - The minimum wage also functions as the **IPS contribution floor** (Section 3).
 
-> **[RESEARCH GAP — reviewer to confirm]** The next adjustment is expected July 2026 (under tripartite negotiation as of April 2026; not yet officially confirmed). Use the **PYG 2,899,048** figure as the current authoritative minimum; do not apply an unconfirmed 2026 figure.
+> **The July 2026 adjustment happened.** Decreto N° 6225 of 17 June 2026 raised the
+> minimum wage by 5% from 1 July 2026, and MTESS Resolución N° 670/2026 published
+> the regulated table: **PYG 3,044,000/month**, jornal mínimo PYG 117,077, daily
+> rate for monthly-paid staff PYG 101,467, hourly PYG 12,683. The rise checks
+> against the prior floor: 2,899,048 x 1.05 = 3,044,000. Paraguay adjusts in July,
+> so a calendar year straddles two floors and the **month** decides which applies,
+> not the year.
 
 ## Section 6 -- Aguinaldo (13th-month salary) — mandatory
 
@@ -189,7 +197,7 @@ Paraguay's mandatory social-security scheme is **IPS (Instituto de Previsión So
 
 ## Section 7 -- Conservative Defaults
 
-- **Conservative defaults list** — When inputs are ambiguous, apply these defaults and flag the assumption to the user: 1. No employer IRP withholding. Never withhold IRP from a monthly salary. Compute IPS only; treat IRP as the employee's own annual self-assessment (Section 2). If asked to "withhold income tax from the salary", explain that Paraguay does not do this for dependent employees. 2. Sector = commercial. Apply the commercial IPS rates (employee 9.0% / employer 16.5%) unless the employer is a bank/finance entity, in which case use 11% / 17% (Section 4). 3. IPS base = full gross (every cash/in-kind wage item) excluding aguinaldo and family allowance, with the minimum-wage floor applied. Apply no ceiling (uncapped) absent confirmed authority — and flag this as a research gap (Section 3). 4. Currency: all amounts in PYG. Never assume USD or any other currency. 5. Pay period: assume FY2025 figures (minimum wage PYG 2,899,048 from 1 Jul 2025). Do not apply an unconfirmed 2026 minimum wage. 6. Aguinaldo: compute as 1/12 of annual remuneration, exempt from both IPS and IRP (Section 6). 7. IRP deductions: do not assume any deduction figures — they are a research gap (Section 2.4). Compute IRP illustrations on stated net taxable income only, and label them estimates.
+- **Conservative defaults list** — When inputs are ambiguous, apply these defaults and flag the assumption to the user: 1. No employer IRP withholding. Never withhold IRP from a monthly salary. Compute IPS only; treat IRP as the employee's own annual self-assessment (Section 2). If asked to "withhold income tax from the salary", explain that Paraguay does not do this for dependent employees. 2. Sector = commercial. Apply the commercial IPS rates (employee 9.0% / employer 16.5%) unless the employer is a bank/finance entity, in which case use 11% / 17% (Section 4). 3. IPS base = full gross (every cash/in-kind wage item) excluding aguinaldo and family allowance, with the minimum-wage floor applied. Apply no ceiling (uncapped) absent confirmed authority — and flag this as a research gap (Section 3). 4. Currency: all amounts in PYG. Never assume USD or any other currency. 5. Pay period: take the minimum-wage floor from the month, since Paraguay adjusts in July rather than January — PYG 3,044,000 from 1 Jul 2026, PYG 2,899,048 from 1 Jul 2025 to 30 Jun 2026. If the month is unknown, ask; never assume the earlier floor. 6. Aguinaldo: compute as 1/12 of annual remuneration, exempt from both IPS and IRP (Section 6). 7. IRP deductions: do not assume any deduction figures — they are a research gap (Section 2.4). Compute IRP illustrations on stated net taxable income only, and label them estimates.
 
 ### 8.1 Required inputs (must have before computing IPS payroll)
 
@@ -199,7 +207,7 @@ Paraguay's mandatory social-security scheme is **IPS (Instituto de Previsión So
 | --- | --- |
 | Monthly **gross** wage in PYG (cash + in kind) | Drives the IPS base and both contribution shares |
 | Employer sector (commercial vs financial) | Selects 9%/16.5% vs 11%/17% IPS rates |
-| Pay period (month/year) | Confirms which minimum-wage floor applies (FY2025 = PYG 2,899,048) |
+| Pay period (month/year) | Selects the minimum-wage floor. The floor changes on 1 July, not 1 January: PYG 3,044,000 from 1 Jul 2026, PYG 2,899,048 from 1 Jul 2025 to 30 Jun 2026 |
 | Whether the wage includes aguinaldo or family allowance | Those are excluded from the IPS base |
 | Employer registration with IPS (REI) | Must be registered before running payroll |
 
@@ -212,14 +220,14 @@ Paraguay's mandatory social-security scheme is **IPS (Instituto de Previsión So
 | Wage stated in USD or another currency | **Refuse to compute.** Ask for the PYG gross amount (or the FX basis the employer uses). |
 | User asks the employer to "withhold income tax (IRP) from the salary" | Do **not** do it. Explain Paraguay does not withhold IRP on dependent salaries — IRP is the employee's annual self-assessment (Section 2). Offer to compute IPS instead. |
 | User asks for the employee's exact IRP liability | Compute only on a stated **net taxable income**, label it an estimate, and flag that deductible categories/caps are a research gap (Section 2.4) and that the PYG 80M registration threshold applies. |
-| Pay period in 2026 or later | Flag that the FY2025 minimum wage applies until the (unconfirmed) July-2026 adjustment; do not invent a 2026 figure. |
+| Pay period after 30 Jun 2027 | Flag that the July-2026 floor (PYG 3,044,000) is the last confirmed one until the next July adjustment is decreed; do not invent a figure. |
 | Financial-sector employer not confirmed | Confirm the sector; do not silently apply 11%/17% to a commercial employer or vice versa. |
 | Request for exact IPS late-payment surcharge amount | State the reported 1%–50% range and flag it as a research gap (Section 4.4) — do not present a precise figure as confirmed. |
 | Self-employed / sole trader, not an employee | Out of scope for employer payroll — direct to the IRP self-assessment / income-tax skill. |
 
 ## Section 9 -- Worked Examples
 
-All figures in PYG, tax year 2025, **commercial sector** unless stated. IPS base = full gross (no aguinaldo/family allowance), floored at the minimum wage (PYG 2,899,048), **no ceiling** applied. **No IRP is withheld by the employer** in any example. Each line is recomputed end-to-end.
+All figures in PYG. Every example below is a **pay period between 1 July 2025 and 30 June 2026**, **commercial sector** unless stated. IPS base = full gross (no aguinaldo/family allowance), floored at the minimum wage in force for that window (PYG 2,899,048), **no ceiling** applied. For a period from 1 July 2026 the mechanics are identical and only the floor moves, to PYG 3,044,000 — at which the employee 9% is PYG 273,960, the employer 16.5% is PYG 502,260 and the combined 25.5% is PYG 776,220. **No IRP is withheld by the employer** in any example. Each line is recomputed end-to-end.
 
 ### Example A — Minimum wage, gross PYG 2,899,048/month (floor edge)
 
@@ -312,7 +320,7 @@ Reference only — the employer does not compute this. Employee with **net taxab
 
 ## Section 10 -- Tier 1 Rules (deterministic — apply mechanically)
 
-- **Tier 1 rules list** — 1. The employer does NOT withhold IRP from dependent salaries — IRP is the employee's annual self-assessment (Ley N° 6380/2019; DNIT). 2. Commercial-sector IPS: employee 9.0%, employer 16.5%, combined 25.5% (PwC; IPS). 3. Financial-sector IPS: employee 11%, employer 17%, combined 28% (PwC). 4. IPS base = every cash/in-kind wage item EXCEPT aguinaldo and family allowance (PwC). 5. IPS contribution base cannot fall below the minimum wage (PYG 2,899,048 in FY2025) (PwC; MTESS). 6. No confirmed IPS salary ceiling — treat as uncapped, flag as a research gap (Section 3). 7. It is illegal to deduct more than the 9% employee share from the worker's pay; the 16.5% employer share is paid from employer funds (MTESS). 8. IRP applies only where the individual's gross personal-service income exceeds PYG 80,000,000/year (DNIT; PwC). 9. IRP rates on net taxable income: 8% up to 50,000,000; 9% on 50,000,001–150,000,000; 10% above 150,000,000 (PwC; DNIT). 10. Aguinaldo = 1/12 of annual remuneration, payable before 31 December, exempt from both IPS and IRP (Ley N° 417/73). 11. Minimum wage = PYG 2,899,048/month from 1 July 2025 (MTESS Res. 677/2025). 12. Monthly IPS planilla filed and paid via REI per the IPS "Calendario de Pago"; Mora Patronal arises the day after the due date (IPS; Vouga). 13. IRP Form 515 filed by the individual via Marangatú annually in March, keyed to the RUC ending digit (DNIT). 14. All payroll amounts in PYG (Guaraní) — never another currency.
+- **Tier 1 rules list** — 1. The employer does NOT withhold IRP from dependent salaries — IRP is the employee's annual self-assessment (Ley N° 6380/2019; DNIT). 2. Commercial-sector IPS: employee 9.0%, employer 16.5%, combined 25.5% (PwC; IPS). 3. Financial-sector IPS: employee 11%, employer 17%, combined 28% (PwC). 4. IPS base = every cash/in-kind wage item EXCEPT aguinaldo and family allowance (PwC). 5. IPS contribution base cannot fall below the minimum wage in force for the period (PYG 3,044,000 from 1 Jul 2026; PYG 2,899,048 from 1 Jul 2025) (PwC; MTESS). 6. No confirmed IPS salary ceiling — treat as uncapped, flag as a research gap (Section 3). 7. It is illegal to deduct more than the 9% employee share from the worker's pay; the 16.5% employer share is paid from employer funds (MTESS). 8. IRP applies only where the individual's gross personal-service income exceeds PYG 80,000,000/year (DNIT; PwC). 9. IRP rates on net taxable income: 8% up to 50,000,000; 9% on 50,000,001–150,000,000; 10% above 150,000,000 (PwC; DNIT). 10. Aguinaldo = 1/12 of annual remuneration, payable before 31 December, exempt from both IPS and IRP (Ley N° 417/73). 11. Minimum wage = PYG 3,044,000/month from 1 July 2026 (Decreto N° 6225; MTESS Res. 670/2026); PYG 2,899,048/month from 1 July 2025 (MTESS Res. 677/2025). 12. Monthly IPS planilla filed and paid via REI per the IPS "Calendario de Pago"; Mora Patronal arises the day after the due date (IPS; Vouga). 13. IRP Form 515 filed by the individual via Marangatú annually in March, keyed to the RUC ending digit (DNIT). 14. All payroll amounts in PYG (Guaraní) — never another currency.
 
 ## Section 11 -- Tier 2 Catalogue (reviewer judgement required)
 
@@ -321,7 +329,7 @@ These items require a licensed Paraguayan accountant's judgement and/or confirma
 1. IRP itemized deductions / caps (Section 2.4) — governed by Decreto N° 3184/2019; exact deductible categories and caps not quoted from a figure-level source. Confirm before computing any employee's net taxable income.
 2. IPS contribution ceiling (Section 3) — no salary cap confirmed; PwC reports none specified. Confirm whether IPS is truly uncapped.
 3. Exact IPS late-payment surcharge schedule (Section 4.4) — the 1%–50% range comes from secondary aggregators, not the IPS resolution. Confirm the exact recargos moratorios schedule.
-4. 2026 figures (Section 5) — the July-2026 minimum-wage adjustment and any IRP changes are under negotiation and NOT officially confirmed. Do not apply 2026 figures until published.
+4. IRP changes for 2026 (Section 2) — no IRP rate or threshold change has been confirmed for 2026; confirm against DNIT before applying one. The **minimum wage is no longer a research gap**: Decreto N° 6225 of 17 June 2026 raised it 5% to PYG 3,044,000 from 1 July 2026, regulated by MTESS Resolución N° 670/2026.
 5. IRP rate break-point (Section 2.3) — one secondary summary cited a "9% at PYG 100M" break-point; this skill uses the authoritative PwC/DNIT 50M/150M thresholds. Confirm against current DNIT guidance.
 6. In-kind wage valuation for the IPS base — confirm how in-kind remuneration is valued for contribution purposes.
 
@@ -353,13 +361,13 @@ These items require a licensed Paraguayan accountant's judgement and/or confirma
 | IPS employer rate (commercial) | 16.5% of gross | PwC; IPS |
 | IPS combined (commercial) | 25.5% | PwC |
 | IPS employee / employer (financial) | 11% / 17% | PwC |
-| IPS base floor | Minimum wage (PYG 2,899,048 in FY2025) | PwC; MTESS |
+| IPS base floor | Minimum wage: PYG 3,044,000 from 1 Jul 2026; PYG 2,899,048 from 1 Jul 2025 | PwC; MTESS |
 | IPS ceiling | None confirmed — **[RESEARCH GAP — reviewer to confirm]** | PwC (reports none) |
 | IRP registration/filing threshold | Gross personal-service income > PYG 80,000,000/year | DNIT; PwC |
 | IRP rate band 1 | 8% on net taxable income up to 50,000,000 | PwC; DNIT |
 | IRP rate band 2 | 9% on net taxable income 50,000,001–150,000,000 | PwC; DNIT |
 | IRP rate band 3 | 10% on net taxable income above 150,000,000 | PwC; DNIT |
-| Minimum wage (from 1 Jul 2025) | PYG 2,899,048/month | MTESS Resolución N° 677/2025 |
+| Minimum wage | PYG 3,044,000/month from 1 Jul 2026; PYG 2,899,048/month from 1 Jul 2025 | Decreto N° 6225; MTESS Resoluciones N° 670/2026 and N° 677/2025 |
 | Aguinaldo | 1/12 of annual remuneration; before 31 Dec; IPS & IRP exempt | Ley N° 417/73 |
 | IPS administrative component | 1% (post Ley N° 7446/2024) | Ley N° 7446/2024 |
 | IRP filing deadline | March (per RUC ending digit) | DNIT |
@@ -387,7 +395,7 @@ These items require a licensed Paraguayan accountant's judgement and/or confirma
 | 2 | Pay period (month/year) | input |
 | 3 | Sector (C = commercial / F = financial) | input |
 | 4 | **Gross wage (cash + in kind, excl. aguinaldo/family allowance)** | input |
-| 5 | Minimum-wage floor | `2899048` (FY2025) |
+| 5 | Minimum-wage floor | `3044000` from 1 Jul 2026; `2899048` for 1 Jul 2025 to 30 Jun 2026. Pick from B2, the pay period |
 | 6 | IPS base | `=MAX(B4,B5)` (floor; no ceiling) |
 | 7 | Employee IPS rate | `=IF(B3="F",0.11,0.09)` |
 | 8 | **Employee IPS** | `=B6*B7` |
@@ -445,7 +453,7 @@ Common Paraguayan payroll terms (Spanish → English) and typical bank-statement
 If the user has not provided enough to run payroll, collect in this order:
 1. Monthly gross wage in PYG (cash + in kind) — refuse if given in USD or another currency (Section 8.2).
 2. Employer sector — commercial (9%/16.5%) or financial (11%/17%).
-3. Pay period (month + year) — confirm FY2025 minimum wage (PYG 2,899,048).
+3. Pay period (month + year) — selects the minimum-wage floor, which changes on 1 July: PYG 3,044,000 from 1 Jul 2026, PYG 2,899,048 before that.
 4. Whether the wage includes aguinaldo or family allowance (excluded from the IPS base).
 5. Confirm the employer is registered with IPS (REI).
 6. Clarify if the user is asking about the employee's IRP self-assessment (annual, individual) rather than employer payroll — the employer does not withhold IRP.
@@ -483,6 +491,7 @@ If any required input is missing, state what is missing and do not fabricate a f
 | 6 | IPS — contribución obrero-patronal | Instituto de Previsión Social (IPS) | https://portal.ips.gov.py/sistemas/ipsportal/contenido.php?c=315 |
 | 7 | REI — Registro del Empleador por Internet | IPS | https://portal.ips.gov.py/sistemas/ipsportal/contenido.php?e=12 |
 | 8 | Resolución MTESS N° 677/2025 — salario mínimo (1 Jul 2025) | MTESS | https://www.mtess.gov.py/?p=30682 |
+| 8a | Decreto N° 6225 (17 Jun 2026) + Resolución MTESS N° 670/2026 — salario mínimo (1 Jul 2026) | MTESS | https://www.mtess.gov.py/wp-content/uploads/2026/07/Resolucion-MTESS-N%C2%B0-670-REGLAMENTACION-SALARIO-2026.pdf |
 | 9 | El MTESS reglamenta los nuevos salarios mínimos | Vouga Abogados | https://www.vouga.com.py/en/el-mtess-reglamenta-los-nuevos-salarios-minimos/ |
 | 10 | El IPS estableció nuevos criterios (Calendario de Pago / Mora Patronal) | Vouga Abogados | https://www.vouga.com.py/en/el-instituto-de-prevision-social-ips-establecio-nuevos-criterios/ |
 | 11 | Ley N° 417/73 (aguinaldo) | BACN | https://www.bacn.gov.py/leyes-paraguayas/2518/ |
@@ -512,11 +521,11 @@ If any required input is missing, state what is missing and do not fabricate a f
 - NEVER include the aguinaldo or family allowance in the IPS contribution base.
 - NEVER apply IPS contributions to the aguinaldo, and never deduct IPS or IRP from it — it is exempt and unembargable.
 - NEVER deduct more than the 9% employee IPS share from the worker's pay — the 16.5% employer share is paid from employer funds (misappropriation offence otherwise).
-- NEVER compute the IPS base below the minimum-wage floor (PYG 2,899,048 in FY2025).
+- NEVER compute the IPS base below the minimum-wage floor in force for the pay period (PYG 3,044,000 from 1 Jul 2026; PYG 2,899,048 from 1 Jul 2025 to 30 Jun 2026).
 - NEVER assert an IPS salary ceiling as confirmed — none is confirmed (research gap); treat IPS as uncapped.
 - NEVER state exact IPS late-payment surcharges or IRP penalty amounts as confirmed — they are research gaps pending primary-source confirmation.
 - NEVER quote IRP deduction figures/caps as confirmed — the deductible categories are a research gap pending Decreto N° 3184/2019 confirmation.
-- NEVER apply an unconfirmed 2026 minimum wage — use the FY2025 figure until the July-2026 adjustment is published.
+- NEVER apply a minimum wage from the wrong side of 1 July. The floor changes mid-year, not on 1 January: PYG 3,044,000 from 1 Jul 2026 (Decreto N° 6225; MTESS Res. 670/2026), PYG 2,899,048 from 1 Jul 2025 to 30 Jun 2026.
 - NEVER present payroll computations as definitive — label them estimated and direct the user to a licensed Paraguayan accountant.
 
 ## Disclaimer

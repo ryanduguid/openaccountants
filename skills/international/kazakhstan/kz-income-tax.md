@@ -4,7 +4,7 @@ description: "Source-cited draft: personal income tax for Kazakhstan (tax year 2
 version: 1.0
 jurisdiction: KZ
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-10
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -25,7 +25,7 @@ For tax year 2025 Kazakhstan applies a flat 10% personal income tax (PIT) on res
 - **Non-resident PIT rate on employment income** — 10% % (on Kazakhstan-source employment income (approx — confirm); other non-resident income categories are subject to withholding at 5%-20% depending on income type)  _(Tax Code of the Republic of Kazakhstan (https://taxsummaries.pwc.com/kazakhstan/individual/taxes-on-personal-income))_
 - **Non-resident withholding on other income (general)** — 20% % (on Kazakhstan-source income other than employment (e.g. management/consulting fees), unless reduced by treaty)  _(Tax Code of the Republic of Kazakhstan (https://taxsummaries.pwc.com/kazakhstan/corporate/withholding-taxes))_
 - **PIT rate on dividends (resident individual)** — 5% (where conditions met) up to a cap; otherwise generally 10%-15% % ((approx — confirm); dividend exemptions/reduced rates depend on holding conditions)  _(Tax Code of the Republic of Kazakhstan (https://taxsummaries.pwc.com/kazakhstan/individual/income-determination))_
-- **Standard personal deduction** — 14 MCI per month (14 x KZT 3,932 = KZT 55,048 per month in 2025) KZT  _(Tax Code of the Republic of Kazakhstan (https://taxsummaries.pwc.com/kazakhstan/individual/deductions))_
+- **Standard personal deduction** - For 2025, 14 MCI per month at KZT 3,932 gives KZT 55,048. From 2026 the basic deduction is 30 MCI per month, so 30 x KZT 4,325 = KZT 129,750. Both the statutory multiple and the MCI changed; do not carry the 14-MCI rule into 2026. _([State Revenue Committee](https://www.gov.kz/memleket/entities/kgd-shymkent/press/news/details/1189861?lang=ru))_
 - **Mandatory pension contributions (OPV) deductible from PIT base** — Employee OPV of 10% is deducted before calculating the PIT base  _(Tax Code of the Republic of Kazakhstan (https://taxsummaries.pwc.com/kazakhstan/individual/other-taxes))_
 - **Medical insurance contribution (VOSMS) deductible from PIT base** — Employee VOSMS of 2% is deducted before calculating the PIT base  _(Law on Mandatory Social Health Insurance (https://taxsummaries.pwc.com/kazakhstan/individual/other-taxes))_
 - **Tax-free threshold** — No general tax-free band; relief is given via the 14 MCI standard deduction plus mandatory-contribution deductions  _(Tax Code of the Republic of Kazakhstan (https://taxsummaries.pwc.com/kazakhstan/individual/deductions))_

@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Australian individual income ta
 version: 2.1
 jurisdiction: AU
 tax_year: 2024
-last_updated: 2026-07-13
+last_updated: 2026-09-10
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -29,7 +29,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Supporting legislation | Tax Administration Act 1953; Medicare Levy Act 1986; Higher Education Support Act 2003 |
 | Tax authority | Australian Taxation Office (ATO) |
 | Filing portal | myTax (via myGov) or registered tax agent |
-| Filing deadline | 31 October 2025 (self-lodged); May 2026 (tax agent) |
+| Filing deadline | Self-lodged: 31 October following the 30 June year-end. Tax-agent dates depend on the client: 15 May is the general date for eligible clients not required earlier, and engagement before 31 October does not guarantee it. For 2024-25, confirm the assigned date in the ATO lodgment program; self-lodgment was due 31 October 2025 |
 | Contributor | Open Accountants Community |
 | Validated by | Pending -- Australian CPA/CA sign-off required |
 | Skill version | 2.0 |
@@ -260,7 +260,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Diminishing value** — Base value x (days held / 365) x (200% / effective life)  _(ITAA 1997 Div 40)_
 - **Prime cost (straight line)** — Cost x (days held / 365) x (100% / effective life)  _(ITAA 1997 Div 40)_
 - **Small business entity simplified depreciation** — Small business entity (turnover < $10M): can use simplified depreciation -- pool all assets over $20,000 at 15% first year, 30% thereafter.  _(ITAA 1997 Div 40)_
-- **Instant asset write-off** — Assets costing less than $20,000 (2024-25) can be immediately deducted by small business entities. This threshold may change each year -- confirm for current year.  _(ITAA 1997 Div 40)_
+- **Instant asset write-off** - Eligible small business entities can deduct assets costing less than $20,000 for 2024-25, the year covered here. For assets first used or installed ready for taxable use from 1 July 2026, Schedule 2 of the Treasury Laws Amendment (Tax Reform No. 2) Act 2026 legislates a permanent $20,000 threshold. The Act received assent on 26 August 2026; Schedule 2 commences on 1 October 2026 and applies to those assets from 1 July 2026. As at 10 September, the amendment is enacted but has not commenced. Apply the relevant year and commencement provisions. _([Act, section 2 and Schedule 2 item 15](https://www.legislation.gov.au/C2026A00071/asmade/text))_
 
 ### 5.4 Superannuation [T1]
 
@@ -287,7 +287,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 | Item | Value |
 | --- | --- |
-| Self-lodge deadline | 31 October 2025 |
+| Self-lodge deadline | 31 October following the year-end -- 31 October 2025 for the 2024-25 year this guide covers |
 | Tax agent deadline | Varies (typically March-May 2026) |
 | Failure to lodge on time | $313 per 28-day period, up to 5 periods ($1,565 max) |
 | Shortfall penalty (reasonable care not taken) | 25% of shortfall |

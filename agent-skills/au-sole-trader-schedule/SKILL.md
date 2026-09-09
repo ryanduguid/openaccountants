@@ -57,8 +57,8 @@ Any individual who carried on a business as a sole trader during the income year
 
 | Lodgement type | Due date |
 |----------------|----------|
-| Self-lodgers | 31 October 2025 |
-| Tax agent lodgement | Per the ATO tax agent lodgement programme (typically March-May 2026 depending on client category) |
+| Self-lodgers | 31 October following the 30 June year-end (31 October 2025 for 2024-25) |
+| Tax agent lodgement | Per the ATO lodgment program, running to **15 May** following the self-lodge date (15 May 2026 for 2024-25); earlier categories from March |
 
 ### 2.3 ABN requirement
 

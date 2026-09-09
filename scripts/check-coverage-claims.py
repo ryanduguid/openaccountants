@@ -91,7 +91,76 @@ def main():
               % (DOC, m.group(1), len(people)))
         problems += 1
 
+    problems += readme_headline()
     print('derived coverage rows disagreeing with the tree:', problems)
+
+
+def readme_headline():
+    """The four repo-derived numbers in README.md's opening line.
+
+    The same drift, on the page a reader reaches first, and worse in direction.
+    It read "1,798 Guides across 232 jurisdictions - 191 accountant-reviewed -
+    36 named accountants" against a tree holding 1,953, 244, 171 and 23. The
+    guide and jurisdiction counts understated the corpus, which costs nothing.
+    The other two overstated how much of it a practitioner has signed, by 20
+    guides and 13 people, and docs/ACCURACY-METHODOLOGY.md exists to say that
+    the one claim this project must not inflate is how much review has happened.
+
+    The trailing "questions answered" figure is a website metric and cannot be
+    derived from this checkout, so it is left alone.
+    """
+    if not os.path.exists('README.md'):
+        return 0
+    line = None
+    for l in io.open('README.md', encoding='utf-8'):
+        if 'accountant-reviewed' in l and 'Guides' in l:
+            line = l
+            break
+    if line is None:
+        print('README.md: the headline claim line is missing')
+        return 1
+
+    data = json.load(open('index.json'))
+    guides = data['guides']
+
+    # Match build-index.py exactly. Counting only a truthy `reviewed_by` was
+    # wrong twice over: it ignored the legacy `verified_by` field, and it
+    # accepted sentinels like "pending", so this check could disagree with the
+    # accountant_reviewed count in the very file it reads.
+    unreviewed = {'pending', 'none', 'no', 'false', '-', 'n/a', 'tbd'}
+
+    def reviewer_of(g):
+        if str(g.get('tier') or '').strip() != '1':
+            return None
+        for key in ('reviewed_by', 'verified_by'):
+            v = g.get(key)
+            if v and str(v).strip().lower() not in unreviewed:
+                return str(v).strip()
+        return None
+
+    reviewers = {reviewer_of(g) for g in guides}
+    reviewers.discard(None)
+    # One reviewer asked not to be named, so they are reviewed but not *named*.
+    named = {r for r in reviewers if 'name withheld' not in r.lower()}
+    want = [('Guides', len(guides)),
+            ('jurisdictions', len({g['jurisdiction'] for g in guides if g.get('jurisdiction')})),
+            ('accountant-reviewed', data.get('counts', {}).get(
+                'accountant_reviewed', sum(1 for g in guides if reviewer_of(g)))),
+            ('named accountants', len(named))]
+    bad = 0
+    for label, n in want:
+        # the headline bolds the number and its label together: **1,953 Guides**
+        m = re.search(r'\*\*([\d,]+)\s+' + re.escape(label) + r'\*\*', line)
+        if not m:
+            print('README.md: no figure found for "%s"' % label)
+            bad += 1
+            continue
+        claimed = int(m.group(1).replace(',', ''))
+        if claimed != n:
+            print('README.md: headline says %s %s, the tree has %s'
+                  % (format(claimed, ','), label, format(n, ',')))
+            bad += 1
+    return bad
 
 
 main()

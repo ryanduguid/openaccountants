@@ -3,7 +3,7 @@ name: ng-vat
 description: "Use this skill whenever asked to prepare, review, classify transactions for, or advise on Nigerian VAT (Value Added Tax) for self-employed individuals, sole traders, partnerships, or small companies operating in Nigeria. Trigger on phrases like \"Nigeria VAT\", \"FIRS VAT\", \"VAT Nigeria 7.5%\", \"VAT return Nigeria\", \"VAT Form 002\", \"TaxPro Max\", \"e-invoicing FIRS\", \"Merchant Buyer System\", \"MBS Nigeria\", \"VAT Act Nigeria\", \"NTA 2025 VAT\", \"Nigeria Tax Act 2025\", \"Section 10 VAT Act\", \"non-resident digital services Nigeria\", \"reverse charge Nigeria\", \"WHT-VAT Nigeria\", or any request involving Nigerian VAT registration, computation, classification, filing, or compliance. Covers the 7.5% standard rate under the VAT Act (as amended by Finance Acts 2019/2020/2021/2023) and the consolidation under the Nigeria Tax Act 2025 framework effective 1 January 2026, the NGN 25 million registration threshold, monthly Form VAT 002 filing to FIRS by the 21st of the following month via TaxPro Max, the FIRS Merchant Buyer Solution (MBS) phased e-invoicing mandate (large taxpayers from Q3 2024, medium taxpayers through 2025-2026), non-resident digital service registration under Section 10A, reverse-charge self-accounting on imported services, and WHT-VAT interaction on government and large-taxpayer contracts. Out of scope (refusal catalogue): excise duties, Petroleum Profit Tax, Companies Income Tax, transfer pricing, refund litigation, free trade zone (FTZ) treatment, state-level consumption taxes, real estate VAT, and VAT grouping. ALWAYS read this skill before touching any Nigerian VAT work."
 jurisdiction: NG
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-10
 reviewed_by: Omolola Fasasi
 review_status: current
 tier: 2
@@ -70,7 +70,7 @@ This block is generated from verified `skill_facts` — edit the facts, not the 
 | Zero rate | 0% on exports of goods and services, supplies to diplomatic missions, goods purchased by humanitarian donor organisations (Finance Act 2021) |
 | Exempt | Basic food items (unprocessed agricultural produce), medical/pharmaceutical products (NAFDAC-registered), pharmaceutical raw materials, baby products, newspapers and educational materials, financial services (banking fees, insurance premiums), natural gas (domestic), residential rent, public transport, locally-produced agricultural equipment, fertilizers, plant and machinery for use in EPZs |
 | Registration threshold | **NGN 25,000,000** annual turnover (Finance Act 2019, effective 2020). Below threshold — no obligation to register. Voluntary registration permitted. |
-| Tax authority | Federal Inland Revenue Service (FIRS) |
+| Tax authority | **Nigeria Revenue Service (NRS)** — the Federal Inland Revenue Service (FIRS) was renamed and re-established as the NRS by the Nigeria Revenue Service (Establishment) Act 2025, with effect from **1 January 2026** |
 | Filing portal | FIRS TaxPro Max — https://taxpromax.firs.gov.ng |
 | Return form | **VAT Form 002** (monthly return) |
 | Filing frequency | **Monthly** for all registered persons (including nil returns) |
@@ -510,7 +510,7 @@ The NTA 2025 is **effective 1 January 2026**. Implementing regulations and FIRS 
 | Input VAT scope | VATA s 17 (restrictions on capital items historically; some loosened by Finance Acts) | **Broadened** under NTA 2025 to align more closely with full-credit IVA models — practitioner should verify under implementing regulations |
 | e-Invoicing (MBS) | FIRS regulations under VATA | **Codified** as a statutory requirement in NTA 2025 with the phased timeline confirmed |
 | Penalties | VATA s 16-18 | **Recalibrated and standardised** across the consolidated tax types |
-| Tax authority name | Federal Inland Revenue Service (FIRS) | **Nigeria Revenue Service (NRS)** — in some draft versions; FIRS brand may persist administratively during transition |
+| Tax authority name | Federal Inland Revenue Service (FIRS) | **Nigeria Revenue Service (NRS)** — settled, not draft. The rename took effect **1 January 2026** under the Nigeria Revenue Service (Establishment) Act 2025, and the NRS launched its own brand identity that day. Documents and circulars issued before then keep the FIRS name and remain valid |
 
 ### 8.3 Transitional issues to watch
 

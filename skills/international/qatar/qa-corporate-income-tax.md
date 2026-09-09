@@ -3,7 +3,7 @@ name: qa-corporate-income-tax
 description: "Source-cited draft: corporate income tax for Qatar (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
 jurisdiction: QA
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-09
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -23,7 +23,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Withholding tax on dividends** — 0% percent  _(Income Tax Law No. 24 of 2018 (https://taxsummaries.pwc.com/qatar))_
 - **Withholding tax on interest (to non-residents)** — 5% percent  _(Income Tax Law No. 24 of 2018 (https://taxsummaries.pwc.com/qatar))_
 - **Withholding tax on royalties (to non-residents)** — 5% percent  _(Income Tax Law No. 24 of 2018 (https://taxsummaries.pwc.com/qatar))_
-- **Withholding tax on technical/service fees & other payments to non-residents** — 5% on services/commissions and other payments for services performed wholly or partly in Qatar (approx — confirm) percent  _(Income Tax Law No. 24 of 2018 (https://taxsummaries.pwc.com/qatar/corporate/other-taxes))_
+- **Withholding tax on technical/service fees & other payments to non-residents** — **5%**, and the test is **where the service is used, not where it is performed**. It applies to all services used, utilised or benefited in Qatar **even where they are carried out wholly or partly outside the State**, so a foreign adviser working entirely abroad on a Qatari matter is inside it. This line previously read "services performed wholly or partly in Qatar", which is the narrower, superseded test and under-withholds on exactly that case. The 5% reaches interest, royalties, technical fees, commissions, brokerage and other service payments to a non-resident that has **no permanent establishment** in Qatar; a non-resident with a Qatari PE is outside the withholding and inside the ordinary tax net instead. The payer withholds and remits to the GTA by the **16th of the month following payment**. From **16 March 2026** the "Trusted Entity" regime lets an eligible recipient take treaty relief at source rather than paying and reclaiming percent  _(Income Tax Law No. 24 of 2018 — https://taxsummaries.pwc.com/qatar/corporate/withholding-taxes)_
 - **CIT return filing & final payment deadline** — Within 4 months from the end of the accounting period  _(Income Tax Law No. 24 of 2018 (https://taxsummaries.pwc.com/qatar))_
 
 <!-- openaccountants-cta-block -->

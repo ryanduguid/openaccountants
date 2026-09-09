@@ -3,7 +3,7 @@ name: kz-company-formation
 description: "Source-cited draft: company formation & entity choice for Kazakhstan (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
 jurisdiction: KZ
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-10
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -18,7 +18,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Branch / representative office** — A foreign company may register a branch or representative office instead of a subsidiary; a branch can carry on commercial activity, a representative office cannot  _(Law on State Registration of Legal Entities (https://www.dentons.com/en/services-and-solutions/global-tax-guide-to-doing-business-in/kazakhstan))_
 - **Individual entrepreneur (IP)** — Sole-proprietor registration available to individuals, often using simplified/special tax regimes  _(Entrepreneurial Code of the Republic of Kazakhstan (https://www.commenda.io/kazakhstan/business-setup))_
 - **Minimum charter capital — small-business LLP** — KZT 0 (no minimum) for LLPs classified as small business entities KZT  _(Law on Limited and Additional Liability Partnerships (https://chandrawatpartners.com/how-to-incorporate-an-llc-too-llp-in-kazakhstan-key-insights-practical-overview/))_
-- **Minimum charter capital — medium/large LLP** — At least 100 MCI (100 x KZT 3,932 = KZT 393,200 in 2025) (approx — confirm) KZT  _(Law on Limited and Additional Liability Partnerships (https://chandrawatpartners.com/how-to-incorporate-an-llc-too-llp-in-kazakhstan-key-insights-practical-overview/))_
+- **Minimum charter capital — medium/large LLP** — At least 100 MCI, so **KZT 432,500 for 2026** at an MCI of KZT 4,325. It was KZT 393,200 in 2025 at an MCI of KZT 3,932. The requirement is denominated in MCI, so recompute it each year rather than carrying the tenge figure forward  _(Law No. 239-VIII of 8 December 2025 on the republican budget for 2026-2028)_  _(Law on Limited and Additional Liability Partnerships (https://chandrawatpartners.com/how-to-incorporate-an-llc-too-llp-in-kazakhstan-key-insights-practical-overview/))_
 - **Charter capital contribution deadline** — Charter capital must be contributed within one year of state registration  _(Law on Limited and Additional Liability Partnerships (https://chandrawatpartners.com/how-to-incorporate-an-llc-too-llp-in-kazakhstan-key-insights-practical-overview/))_
 - **Registration authority** — Ministry of Justice (state registration of legal entities), issuing a Business Identification Number (BIN)  _(Law on State Registration of Legal Entities (https://secure-immigration.kz/en/company-registration-kazakhstan-guide-2025/))_
 - **Core incorporation documents** — Charter (and a foundation agreement where there is more than one founder); for foreign founders, legalized/apostilled and notarized translated corporate documents  _(Law on State Registration of Legal Entities (https://chandrawatpartners.com/how-to-incorporate-an-llc-too-llp-in-kazakhstan-key-insights-practical-overview/))_

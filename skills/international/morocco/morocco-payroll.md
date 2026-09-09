@@ -3,7 +3,7 @@ name: morocco-payroll
 description: Morocco — Payroll for a Self-Employed Person Who Hires Employees (IR salarial / CNSS / AMO / TFP)
 jurisdiction: MA
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-10
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -38,8 +38,8 @@ This skill replies in the user's language. Moroccan users mix English, French, a
 | Frais professionnels | **35%** if gross ≤ MAD 6,500/month (cap MAD 2,500/mo) — **25%** if > MAD 6,500/month (cap MAD 2,916.67/mo) *(verify monthly thresholds vs annual MAD 78,000)* |
 | Family deduction | **MAD 50/month per dependent**, max **MAD 300/month** (6 dependents) |
 | CNSS ceiling | **MAD 6,000/month** gross for short-term + long-term branches |
-| CNSS + AMO + TFP — employer | **≈ 21.09%** total *(verify)* |
-| CNSS + AMO — employee | **≈ 6.74%** total *(verify)* |
+| CNSS + AMO + TFP — employer | **21.09%** is the sum of the component rates, confirmed against the CNSS 2026 rate table. It is **not** an effective percentage of gross pay: the short- and long-term branches are capped at the first MAD 6,000 of monthly salary, while AMO, family allowances and TFP run on the full salary. Above MAD 6,000 the effective rate falls below 21.09% — compute branch by branch (Section 3) |
+| CNSS + AMO — employee | **6.74%** is the sum of the component rates, confirmed against the CNSS 2026 rate table. Same caveat: the capped branches stop at MAD 6,000 while AMO does not, so 6.74% of gross overstates the deduction for anyone earning above the ceiling — compute branch by branch (Section 3) |
 | TFP | **1.60% employer**, uncapped (taxe de formation professionnelle, collected by CNSS) |
 | Declaration — CNSS | **Damancom** (DNS / BDS), filed + paid by the **10th** of the following month |
 | Declaration — IR | **SIMPL-IR** (DGI portal), withheld IR paid by DGI deadline (typically by the end of the following month) *(verify exact date)* |

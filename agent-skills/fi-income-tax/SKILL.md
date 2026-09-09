@@ -30,7 +30,7 @@ metadata:
 | Supporting legislation | Business Income Tax Act (laki elinkeinotulon verottamisesta 360/1968); Municipal Tax Act |
 | Tax authority | Finnish Tax Administration (Verohallinto / Vero) |
 | Filing portal | OmaVero (https://www.vero.fi/omavero) |
-| Filing deadline | Self-employed: 1 April of the following year; Employees: mid-April (dates vary, e.g. 15 April, 22 April, 29 April 2025) |
+| Filing deadline | Self-employed: 1 April of the following year. Employees: one of several April dates, assigned per taxpayer and printed on the return and in MyTax -- **1, 14, 21 or 28 April 2026** for tax year 2025 (they were 15, 22 and 29 April in the previous season, so do not carry a year forward) |
 | Validated by | Pending -- requires sign-off by a Finnish KHT/HT auditor or tax adviser |
 | Validation date | Pending |
 | Skill version | 1.0 |
@@ -192,7 +192,7 @@ State tax = €10,837.93
 | Item | Detail |
 |---|---|
 | Self-employed filing deadline | 1 April of the following year (from 2025 onwards) |
-| Employee filing deadline | Mid-April (dates vary: 15, 22, or 29 April) |
+| Employee filing deadline | An April date assigned per taxpayer, printed on the return and in MyTax. **1, 14, 21 or 28 April 2026** for tax year 2025 |
 | Portal | OmaVero (omavero.fi) |
 | Pre-populated return | Verohallinto pre-fills income from employers, banks, pension companies |
 | Self-employed attachment | Income statement (tuloslaskelma) and balance sheet (tase) if double-entry bookkeeping |

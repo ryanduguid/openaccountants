@@ -282,7 +282,7 @@ The busta paga (cedolino) is governed by L. 4/1953 and subsequent regulations.
 | Item | Detail |
 |---|---|
 | Modello 730 (assisted tax return) | Submission windows: April -- September; employer/CAF processes refund/debit in July--November payroll |
-| Modello Redditi PF | Alternative to 730; deadline 30 November |
+| Modello Redditi PF | Alternative to 730; deadline **31 October** (30 November was the deadline before the 2024 filing season) |
 
 ---
 

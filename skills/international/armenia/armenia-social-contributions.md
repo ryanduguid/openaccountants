@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Armenia payroll social contribu
 version: 0.1
 jurisdiction: AM
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-09
 review_status: pending_review
 depends_on:
   - social-contributions-workflow-base
@@ -241,7 +241,7 @@ These rules apply when payroll data is clear and all required inputs are availab
 
 ### Rule 9 -- Other withholding-tax rates (context, not employee social contributions)
 
-- **Other withholding-tax rates** — Royalties 10%; interest 20% (from 1 Jan 2023); property lease income 10% (plus an additional 10% if annual lease income exceeds AMD 60,000,000); dividends 5% (refundable if reinvested in the same entity within the tax year).  _(PwC)_
+- **Other withholding-tax rates** — Royalties 10%; **interest 10%** (this line read "20% (from 1 Jan 2023)", which contradicted `am-corporate-income-tax.md` and is wrong — PwC groups interest, royalties, income from the lease of property and non-securities capital gains together at 10%); property lease income 10% (plus an additional 10% if annual lease income exceeds AMD 60,000,000); dividends 5% (refundable if reinvested in the same entity within the tax year); **income from services 20%**; insurance and transportation 5%. For the full non-resident table see `am-corporate-income-tax.md`, which is the guide to load for this question  _(PwC — Armenia, Corporate, Withholding taxes)_
 
 ### Rule 10 -- Annual personal income tax declaration
 

@@ -3,7 +3,7 @@ name: am-corporate-income-tax
 description: "Source-cited draft: corporate income tax for Armenia (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
 jurisdiction: AM
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-09
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -23,6 +23,9 @@ Resident companies and non-residents with a permanent establishment pay corporat
 - **Withholding tax on dividends (non-residents)** — 5 % (Before treaty relief)  _(Tax Code of the Republic of Armenia — https://taxsummaries.pwc.com/armenia)_
 - **Withholding tax on interest (non-residents)** — 10 % (Before treaty relief)  _(Tax Code of the Republic of Armenia — https://taxsummaries.pwc.com/armenia)_
 - **Withholding tax on royalties (non-residents)** — 10 % (Before treaty relief)  _(Tax Code of the Republic of Armenia — https://taxsummaries.pwc.com/armenia)_
+- **Withholding tax on income from services (non-residents)** — **20%**, double the interest and royalty rate and the highest in the Armenian table. This head was missing from the guide until September 2026, and it is the one a reader is most likely to get wrong by analogy: nothing else here is 20%  _(Tax Code of the Republic of Armenia — https://taxsummaries.pwc.com/armenia/corporate/withholding-taxes)_
+- **Withholding tax on lease and rental income (non-residents)** — **10%**, the same rate as interest and royalties. PwC groups them explicitly: interest, royalties, income from the lease of property and capital gains other than on securities all take 10%  _(Tax Code of the Republic of Armenia — https://taxsummaries.pwc.com/armenia/corporate/withholding-taxes)_
+- **Withholding tax on insurance and transportation (non-residents)** — **5%**, the same as dividends and half the interest rate  _(Tax Code of the Republic of Armenia — https://taxsummaries.pwc.com/armenia/corporate/withholding-taxes)_
 - **Provincial / local income taxes** — None — Armenia has no provincial or local income taxes  _(Tax Code of the Republic of Armenia — https://taxsummaries.pwc.com/armenia/corporate/taxes-on-corporate-income)_
 - **CIT return deadline** — 20 April following the tax year  _(Tax Code of the Republic of Armenia — https://taxsummaries.pwc.com/armenia)_
 - **Advance / estimated CIT payments** — Quarterly, due by the 20th day of the last month of each quarter  _(Tax Code of the Republic of Armenia — https://taxsummaries.pwc.com/armenia)_

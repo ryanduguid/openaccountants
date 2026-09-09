@@ -3,7 +3,7 @@ name: co-corporate-income-tax
 description: "Source-cited draft: corporate income tax for Colombia (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
 jurisdiction: CO
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-09
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -23,6 +23,12 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **WHT on dividends to non-residents (from untaxed earnings)** — 48% (then 20% on the remainder) %  _(Estatuto Tributario Nacional, art. 245 — https://taxsummaries.pwc.com/colombia/corporate/withholding-taxes)_
 - **WHT on interest to non-residents** — 15% or 20% (general); 5% for qualifying 8+ year infrastructure loans %  _(Estatuto Tributario Nacional, art. 408 — https://taxsummaries.pwc.com/colombia/corporate/withholding-taxes)_
 - **WHT on royalties to non-residents (incl. software)** — 20% %  _(Estatuto Tributario Nacional, art. 408 — https://taxsummaries.pwc.com/colombia/corporate/withholding-taxes)_
+- **WHT on technical assistance, consulting and technical services** — **20%**, the same as royalties. This head was missing from the guide until September 2026 and it is the one most cross-border service contracts land in %  _(Estatuto Tributario Nacional, art. 408 — https://taxsummaries.pwc.com/colombia/corporate/withholding-taxes)_
+- **WHT on administrative expenses** — **33%**, the highest rate in the Colombian table and thirteen points above technical services. The line between an administration or management charge and a technical service is therefore worth thirteen points, and it is not a distinction a payer makes by instinct %  _(Estatuto Tributario Nacional — https://taxsummaries.pwc.com/colombia/corporate/withholding-taxes)_
+- **WHT on other payments to non-residents (residual)** — **15%** on Colombian-source payments that fall into no named category. Note the direction: the residual here is **below** the royalty and service rate, unlike Georgia or Kazakhstan where it sits above %  _(Estatuto Tributario Nacional, art. 408 — https://taxsummaries.pwc.com/colombia/corporate/withholding-taxes)_
+- **WHT on leasing** — **1%** on aircraft and ship leasing, and **15%** on standard leasing agreements with a term of a year or more. The 1% is the lowest rate in the table by a wide margin %  _(Estatuto Tributario Nacional — https://taxsummaries.pwc.com/colombia/corporate/withholding-taxes)_
+- **WHT on significant economic presence (SEP) payments** — **10%** where a non-resident with a significant economic presence in Colombia does **not** voluntarily register. Registration changes the treatment, so establish the payee's registration status before withholding — this is the head a digital or cross-border platform business meets %  _(Estatuto Tributario Nacional — https://taxsummaries.pwc.com/colombia/corporate/withholding-taxes)_
+- **Staleness warning on the source, not the guide** — The PwC table these rates come from is headed "FY 2023". Colombian withholding rates have moved with successive tax reforms, so treat every figure in this block as needing confirmation against the Estatuto Tributario or a Colombian adviser before a payment, and do not read the absence of a later table as confirmation that nothing changed  _(Estatuto Tributario Nacional; https://taxsummaries.pwc.com/colombia/corporate/withholding-taxes)_
 - **Treaty relief** — Reduced WHT rates may apply under Colombia's double-tax treaties  _(Applicable double taxation conventions (Convenios para evitar la doble imposición) — https://taxsummaries.pwc.com/colombia/corporate/withholding-taxes)_
 - **CIT return filing and payment** — Annual return filed electronically with DIAN; deadlines (typically Apr–May) staggered by NIT, with an advance payment installment for large taxpayers ((approx — confirm exact dates in DIAN annual deadline decree))  _(DIAN annual tax deadline decree (Decreto de plazos) — https://en.tpcgroup-int.com/news/2026-tax-calendar-in-colombia-transfer-pricing-and-key-obligations/)_
 
