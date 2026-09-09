@@ -212,7 +212,7 @@ Map bank-statement narrations (typically in Serbian) to payroll classifications.
 | --- | --- | --- |
 | Average **annual** salary (2024) | RSD 1,813,032 (published by the Republic Statistical Office, 26 Feb 2025) | Forvis Mazars |
 | 3× average annual salary (filing threshold) | RSD 5,439,096 | PwC; Eurofast |
-| 6× average annual salary (top-band threshold) | RSD 10,878,192 | PwC; Eurofast |
+| 6× average annual salary (10%/15% break, measured on the base, not on gross income) | RSD 10,878,192 | KPMG Feb 2026; taxadvisorserbia.com |
 
 > 2026 annual PIT thresholds (based on the 2025 average salary) will be published in early 2027. `[RESEARCH GAP — reviewer to confirm 2025-income-year thresholds when published.]` Source: research caveat (4).
 
@@ -220,11 +220,14 @@ Map bank-statement narrations (typically in Serbian) to payroll classifications.
 
 **Annual PIT bands**  _(PwC; Eurofast)_
 
-| Band | Annual income range (2024) | Rate | Source |
+Bands apply to the **base**, built as: annual income − non-taxable amount (RSD 5,439,096) − allowances (capped at 50% of the amount after the non-taxable amount). They are not applied to gross income.
+
+| Band | Base after the non-taxable amount and allowances (RSD) | Rate | Source |
 | --- | --- | --- | --- |
-| 1 | Up to 3× avg = RSD 5,439,096 | 0% (exempt) | PwC; Eurofast |
-| 2 | 3×--6× avg = RSD 5,439,096 -- 10,878,192 | 10% | PwC; Eurofast |
-| 3 | Above 6× avg = above RSD 10,878,192 | 15% | PwC; Eurofast |
+| 1 | 0 -- 10,878,192 | 10% | KPMG Feb 2026; taxadvisorserbia.com |
+| 2 | Above 10,878,192 | 15% | KPMG Feb 2026; taxadvisorserbia.com |
+
+Income at or below RSD 5,439,096 produces no base and no filing obligation.
 
 ### Annual PIT allowances (2025 income) [T1]
 
@@ -300,17 +303,15 @@ Uses 2026 parameters: non-taxable RSD 34,221; floor RSD 51,297; ceiling RSD 732,
 
 ### Example 6 -- Supplementary annual PIT, 2025 income RSD 11,000,000, over 40, 1 dependent [T2]
 
-- Income 11,000,000 > 3× threshold (5,439,096) → annual PIT applies. Source: PwC.
-- Personal allowance = 725,213; dependent allowance = 271,955; total allowances = 893,659.
-- Allowance cap = 50% × 11,000,000 = 5,500,000; 893,659 < cap → full allowances used. [T1]
-- Taxable base (income after allowances) = 11,000,000 − 893,659 = 10,106,341.
-- Apply bands to the taxable base:
-  - Band 1 (0–5,439,096): 0% → 0
-  - Band 2 (5,439,096–10,878,192): (10,878,192 − 5,439,096) × 10% = 5,439,096 × 10% = **487,450.80**
-  - Band 3 (above 10,878,192): (10,106,341 − 10,878,192) × 15% = 357,325 × 15% = **53,598.75**
-- **Annual PIT ≈ 487,450.80 + 53,598.75 = 541,049.55**
+- Income 11,000,000 > 3× threshold (5,439,096) → annual PIT applies.
+- Less the non-taxable amount: 11,000,000 − 5,439,096 = 5,560,904.
+- Personal allowance = 725,213; dependent allowance = 271,955; total allowances = 725,213 + 271,955 = **997,168**.
+- Allowance cap = 50% × 5,560,904 = 2,780,452; 997,168 < cap → full allowances used.
+- Base = 5,560,904 − 997,168 = **4,563,736**.
+- The base is below the RSD 10,878,192 break, so it is taxed wholly at 10%: 4,563,736 × 10% = **456,373.60**. The 15% band is not reached.
+- **Annual PIT = RSD 456,373.60**
 
-> **[T2] / [RESEARCH GAP — reviewer to confirm]** the base ordering (bands on income before vs after allowances) per the Section 9 note. This example applies bands after allowances. The monthly 10% salary tax already paid is separate and is not netted here — confirm interaction with the adviser. Source: research caveat (3)/(4).
+> The monthly 10% salary tax already withheld during the year is a separate charge and is not netted against this figure. Base ordering follows KPMG's Feb 2026 worked example (income → less the non-taxable amount → less allowances → 10% on the first 10,878,192, 15% above), corroborated by taxadvisorserbia.com; `serbia-income-tax` and `serbia-social-contributions` state the same order.
 
 ## Section 11 -- Minimum Wage
 
@@ -513,7 +514,7 @@ Each test states inputs and the recomputed expected output. Reviewers should rer
 ### Test 7 -- Supplementary annual PIT [T2]
 
 **Input:** 2024 total income RSD 11,000,000, taxpayer over 40, 1 dependent.
-**Expected:** Allowances 725,213 + 271,955 = **997,168** (< 50% cap). [RESEARCH GAP — the taxable base and band figures below were derived from an incorrect allowance sum of 893,659 and have NOT been recomputed: the base-ordering question flagged for this test (whether the 3x-average non-taxable amount of 5,439,096 comes off before the allowances) has to be settled first, and it moves the answer far more than the addition does. Do not rely on the following figures until a reviewer resolves the ordering.] Previously stated: taxable base 10,106,341; Band 2 = 487,450.80; Band 3 = 53,598.75; Annual PIT ~ 541,049.55. [T2]
+**Expected:** Income 11,000,000 − non-taxable amount 5,439,096 = 5,560,904. Allowances 725,213 + 271,955 = **997,168**, below the 50% cap of 2,780,452, so allowed in full. Base = 5,560,904 − 997,168 = **4,563,736**, which is under the RSD 10,878,192 break → Annual PIT = 4,563,736 × 10% = **456,373.60**. (The base ordering is settled: the non-taxable amount comes off before the allowances, per KPMG's Feb 2026 worked example and taxadvisorserbia.com. Earlier revisions of this test carried an allowance sum of 893,659 and banded on gross income, giving 541,049.55; both were wrong.)
 
 ### Test 8 -- Below filing threshold, no annual PIT
 

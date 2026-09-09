@@ -121,7 +121,7 @@ Arithmetic check: 10.00 + 1.71 + 0.50 + 0.50 = 12.71%. ✓
 
 ### Pension contribution ceiling (tope)
 
-- **Pension contribution ceiling** — Pension (vejez and riesgo comun) contributions are levied up to a cap of 60 SMN per month = Bs 165,000 in 2025 (60 x Bs 2,750) and Bs 198,000 in 2026 (60 x Bs 3,300). PwC cites the cap as ~USD 28,450. [RESEARCH GAP — reviewer to confirm whether the 0.50% comision, the 0.50% aporte solidario and the ANS are also subject to the 60-SMN cap or computed on uncapped total ganado.]  _(PwC; Ley 065)_
+- **Pension contribution ceiling** — Pension (vejez and riesgo comun) contributions are levied up to a cap of 60 SMN per month = Bs 165,000 in 2025 (60 x Bs 2,750) and Bs 198,000 in 2026 (60 x Bs 3,300). PwC quotes the cap as ~USD 28,450, which corresponds to the 2026 figure at the official Bs 6.96/USD peg (198,000 ÷ 6.96 = 28,448), not to the 2025 one. [RESEARCH GAP — reviewer to confirm] The 60-SMN multiplier itself rests on PwC and has not been confirmed against an APS/Gestora circular; that, and which contribution branches sit under the cap, are the open questions. Also unresolved: whether the 0.50% comision, the 0.50% aporte solidario and the ANS sit under the 60-SMN cap or are computed on uncapped total ganado. `bolivia-social-contributions` and `bolivia-income-tax` state the same position.  _(PwC; Ley 065; DS 5383; DS 5516)_
 
 ## Section 4 -- Social Security -- Employer Contributions (Aporte Patronal)
 

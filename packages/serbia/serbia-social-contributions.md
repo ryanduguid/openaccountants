@@ -255,11 +255,12 @@ Six payroll classifications and computations for a hypothetical Serbian employer
 - Income above the non-taxable threshold = 20,000,000 − 5,439,096 = 14,560,904.
 - Standard personal deduction = RSD 725,213. Deduction cap = 50% x 14,560,904 = 7,280,452; the RSD 725,213 deduction is below the cap, so allowed in full.
 - Taxable base = 14,560,904 − 725,213 = 13,835,691.
+- The RSD 10,878,192 break is measured on this base, not on gross income (KPMG Feb 2026 worked example; taxadvisorserbia.com).
 - Band 1 (10% up to RSD 10,878,192): 10% x 10,878,192 = **1,087,819.20**.
 - Band 2 (15% above RSD 10,878,192): 15% x (13,835,691 − 10,878,192) = 15% x 2,957,499 = **443,624.85**.
 - Annual PIT due = 1,087,819.20 + 443,624.85 = **1,531,444.05**.
 
-**Classification:** Personal obligation of the individual, EXCLUDE from VAT and from employer payroll. File PP GPDG online by 15 May 2026. Note: this supplementary PIT is **separate from and on top of** the monthly 10% salary tax already withheld; it is not a contribution. Reviewer to confirm the exact ordering of deductions vs the 10%/15% bracket break [RESEARCH GAP — reviewer to confirm].
+**Classification:** Personal obligation of the individual, EXCLUDE from VAT and from employer payroll. File PP GPDG online by 15 May 2026. Note: this supplementary PIT is **separate from and on top of** the monthly 10% salary tax already withheld; it is not a contribution.
 
 ## Section 5 -- Tier 1 rules
 
@@ -332,7 +333,7 @@ When data is ambiguous or circumstances are unclear, flag these for reviewer con
 
 ### T2-4 -- Deduction-ordering for the annual PIT
 
-- **Trigger / Issue / Action** — Trigger: computing PP GPDG where personal/dependent deductions and the 10%/15% bracket interact. Issue: The exact ordering of deductions versus the RSD 10,878,192 bracket break, and whether the 50%-of-net-income cap is measured on gross net income or income-above-threshold, is not fully pinned [RESEARCH GAP — reviewer to confirm]. Action: Flag for reviewer before finalising the annual PIT figure.
+- **Trigger / Issue / Action** — Trigger: computing PP GPDG where personal/dependent deductions and the 10%/15% bracket interact. Resolved: the order is income − non-taxable amount (5,439,096) − deductions, and the RSD 10,878,192 break is measured on that base, per KPMG's Feb 2026 worked example and taxadvisorserbia.com; the 50% deduction cap is measured on income **after** the non-taxable amount, which is the basis used in Example 6 and Test 7. Action: no reviewer flag needed for the ordering itself; still confirm the figures against the current-year KPMG alert.
 
 ### T2-5 -- Entrepreneurs and 'other income'
 
