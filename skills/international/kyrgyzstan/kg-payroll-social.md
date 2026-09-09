@@ -15,11 +15,11 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 Employers in Kyrgyzstan withhold 10% personal income tax and the employee's Social Fund contribution from salary, and pay an additional employer Social Fund contribution on top of gross pay. Contributions fund the state pension, medical insurance and the accumulative pension pillar.
 
-- **Total employer Social Fund contribution** — 17.25% percent of gross salary  _([Law on State Social Insurance of the Kyrgyz Republic](https://rivermate.com/guides/kyrgyzstan/taxes))_
+- **Total employer Social Fund contribution** — 17.25% percent of gross salary  _(Law on State Social Insurance of the Kyrgyz Republic (as described at [rivermate.com](https://rivermate.com/guides/kyrgyzstan/taxes)))_
 - **Employer — Pension Fund** — 15% percent of gross salary (approx — confirm component split)  _(Law on State Social Insurance of the Kyrgyz Republic)_
 - **Employer — Mandatory Medical Insurance Fund** — 2% percent of gross salary (approx — confirm component split)  _(Law on State Social Insurance of the Kyrgyz Republic)_
 - **Employer — Health Improvement Fund** — 0.25% percent of gross salary (approx — confirm component split)  _(Law on State Social Insurance of the Kyrgyz Republic)_
-- **Total employee Social Fund contribution** — 10% percent of gross salary  _([Law on State Social Insurance of the Kyrgyz Republic](https://rivermate.com/guides/kyrgyzstan/taxes))_
+- **Total employee Social Fund contribution** — 10% percent of gross salary  _(Law on State Social Insurance of the Kyrgyz Republic (as described at [rivermate.com](https://rivermate.com/guides/kyrgyzstan/taxes)))_
 - **Employee — Pension Fund** — 8% percent of gross salary (approx — confirm component split)  _(Law on State Social Insurance of the Kyrgyz Republic)_
 - **Employee — State Accumulative Pension Fund** — 2% percent of gross salary (approx — confirm component split)  _(Law on State Social Insurance of the Kyrgyz Republic)_
 - **Combined Social Fund rate (employer + employee)** — 27.25% percent of gross salary  _(Law on State Social Insurance of the Kyrgyz Republic)_

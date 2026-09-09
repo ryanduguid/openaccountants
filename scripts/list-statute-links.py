@@ -53,7 +53,8 @@ HOST = re.compile(r'https?://([^/\s)\]>"]+)')
 # these from a statute-named link is a convention, not a trap.
 PUBLISHER = re.compile(r'pwc|kpmg|deloitte|ey\.com|bakermckenzie|chambers|'
                        r'grantthornton|pkf|bdo|crowe|mazars|lexology|ibfd|'
-                       r'orbitax|taxsummaries|practiceguides', re.I)
+                       r'orbitax|taxsummaries|practiceguides|legal500|'
+                       r'bloombergtax', re.I)
 
 SKIP_TREES = ('us-states', 'foundation', 'templates', 'patterns')
 

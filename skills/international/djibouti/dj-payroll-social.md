@@ -23,8 +23,8 @@ Employers and employees contribute to the CNSS, which covers pensions, work inju
 - **Combined employer + employee CNSS rate** — 14.7% of gross salary percent ((approx — confirm))  _([CNSS regulations (Caisse Nationale de Securite Sociale)](https://rivermate.com/guides/djibouti/taxes))_
 - **Pension contribution ceiling** — A wage ceiling applies to pension contributions, adjusted annually ((approx — confirm current ceiling amount))  _([CNSS regulations (Caisse Nationale de Securite Sociale)](https://rivermate.com/guides/djibouti/taxes))_
 - **Payroll income tax withholding (PAYE-equivalent)** — Employer withholds ITS (progressive 2% to 30%) from each employee's monthly salary percent  _([Impot sur les Traitements et Salaires (ITS), Code General des Impots](https://www.ministere-finances.dj/ITS%20IMPOTS%20DIRECT.html))_
-- **Monthly remittance deadline (ITS and CNSS)** — 15th day of the following month  _([CNSS regulations; Code General des Impots (Djibouti)](https://rivermate.com/guides/djibouti/taxes))_
-- **Filing requirement** — Employers file monthly ITS and CNSS declarations  _([CNSS regulations; Code General des Impots (Djibouti)](https://rivermate.com/guides/djibouti/taxes))_
+- **Monthly remittance deadline (ITS and CNSS)** — 15th day of the following month  _(CNSS regulations; Code General des Impots (Djibouti) (as described at [rivermate.com](https://rivermate.com/guides/djibouti/taxes)))_
+- **Filing requirement** — Employers file monthly ITS and CNSS declarations  _(CNSS regulations; Code General des Impots (Djibouti) (as described at [rivermate.com](https://rivermate.com/guides/djibouti/taxes)))_
 
 <!-- openaccountants-cta-block -->
 

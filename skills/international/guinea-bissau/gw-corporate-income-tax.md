@@ -22,7 +22,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Withholding tax on royalties** — 15% percent ((approx — confirm exact rate))  _(Imposto sobre o Rendimento das Pessoas Colectivas (IRPC) statute — withholding provisions)_
 - **Withholding tax on non-resident service fees** — A final withholding tax applies to payments to non-residents for services rendered in/connected to Guinea-Bissau ((approx — confirm rate))  _(Imposto sobre o Rendimento das Pessoas Colectivas (IRPC) statute — withholding provisions)_
 - **Tax loss carry-forward** — Trading losses may be carried forward for a limited number of years (commonly 3–5 years in WAEMU-style codes) ((approx — confirm period))  _(Imposto sobre o Rendimento das Pessoas Colectivas (IRPC) / Contribuição Industrial statute)_
-- **Annual corporate return filing deadline** — 31 March of the year following the financial year ((approx — confirm))  _([Código Geral Tributário (General Tax Code)](https://taxatlas.io/country/guinea-bissau))_
+- **Annual corporate return filing deadline** — 31 March of the year following the financial year ((approx — confirm))  _(Código Geral Tributário (General Tax Code) (as described at [taxatlas.io](https://taxatlas.io/country/guinea-bissau)))_
 - **Corporate tax payment** — Tax is typically paid via advance instalments during the year with a final balancing payment on filing ((approx — confirm instalment schedule))  _(Código Geral Tributário (General Tax Code))_
 
 <!-- openaccountants-cta-block -->

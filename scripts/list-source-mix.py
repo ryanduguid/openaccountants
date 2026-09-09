@@ -82,6 +82,22 @@ NON_GOV_AUTHORITY = frozenset((
     'vinhi.vg',           # BVI National Health Insurance: its own bulletin of
                           # 12 Sep 2024 sets the ceiling the guide cites
                           # (US$102,000 a year, 3.75% + 3.75%).
+    # Fourth pass, over the destinations the statute-link checker was calling
+    # marketing sites. Each of these is the body that computes and collects the
+    # charge the guide quotes, publishing its own contribution page.
+    'vissb.vg',           # Virgin Islands Social Security Board
+    'nibtt.net',          # National Insurance Board of Trinidad and Tobago
+    'nib-bahamas.com',    # National Insurance Board of The Bahamas
+    'svbcur.org',         # Sociale Verzekeringsbank Curacao (AOV/AWW/BVZ)
+    'nationalsif.netlify.app',   # South Sudan National Social Insurance Fund;
+                                 # a statutory fund on free hosting is still
+                                 # the statutory fund.
+    'obr.bi',             # Office Burundais des Recettes
+    'llv.li',             # Liechtenstein Landesverwaltung (Steuerverwaltung)
+    'prh.fi',             # Finnish Patent and Registration Office, trade register
+    'tonga.tradeportal.org',     # hosts the Laws of Tonga: the Consumption Tax
+                                 # Act CAP. 26.02 s.5(3)(a) is the 15% the
+                                 # guide cites, in full, as a PDF.
     # Central banks, cited for official conversion rates
     'ecb.europa.eu', 'bnr.rw', 'bnb.bg', 'bnro.ro', 'bportugal.pt',
     # Legislatures, cited for the statute itself

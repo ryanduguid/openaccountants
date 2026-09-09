@@ -23,7 +23,7 @@ Ethiopia operates a federal direct- and indirect-tax system administered by the 
 - **Standard corporate income tax rate** — 30% %  _([Income Tax Proclamation No. 979/2016](https://taxsummaries.pwc.com/ethiopia/corporate/taxes-on-corporate-income))_
 - **Does VAT exist** — Yes — Value Added Tax at a standard rate of 15% %  _([Value Added Tax Proclamation No. 1341/2024](https://www.ey.com/en_gl/technical/tax-alerts/ethiopia-introduces-new-vat-proclamation-introducing-raft-of-changes))_
 - **Annual income tax return deadline (companies / Category A)** — Within 4 months of the end of the tax year (i.e. by 7 November for an 8 July–7 July year) (approx — confirm)  _([Tax Administration Proclamation No. 983/2016](https://taxsummaries.pwc.com/ethiopia/individual/tax-administration))_
-- **VAT return frequency and deadline** — Monthly, due by the 21st day (per local practice; some sources cite end of the following month) (approx — confirm)  _([Value Added Tax Proclamation No. 1341/2024](https://www.vatupdate.com/2025/09/23/ethiopia-broadens-scope-of-vat-registration/))_
+- **VAT return frequency and deadline** — Monthly, due by the 21st day (per local practice; some sources cite end of the following month) (approx — confirm)  _(Value Added Tax Proclamation No. 1341/2024 (as described at [vatupdate.com](https://www.vatupdate.com/2025/09/23/ethiopia-broadens-scope-of-vat-registration/)))_
 
 <!-- openaccountants-cta-block -->
 

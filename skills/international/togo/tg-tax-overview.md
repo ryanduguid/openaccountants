@@ -18,11 +18,11 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Currency** — West African CFA franc (XOF / FCFA)  _(WAEMU monetary union)_
 - **Tax authority** — Office Togolais des Recettes (OTR)  _([Office Togolais des Recettes](https://taxatlas.io/country/togo))_
 - **Residence / taxation basis** — Residents taxed on worldwide income; non-residents taxed on Togo-source income ((approx — confirm))  _(Code Général des Impôts (Togo))_
-- **Headline personal income tax (IRPP)** — Progressive 0.5% to 35% percent percent  _([Code Général des Impôts (Togo) — IRPP](https://www.lloydsbanktrade.com/en/market-potential/togo/taxes))_
-- **Headline corporate income tax (IS)** — 27% percent percent  _([Code Général des Impôts (Togo) — Impôt sur les Sociétés](https://www.lloydsbanktrade.com/en/market-potential/togo/taxes))_
-- **VAT (TVA) in force** — Yes — standard rate 18% percent percent  _([Code Général des Impôts (Togo) — TVA](https://www.lloydsbanktrade.com/en/market-potential/togo/taxes))_
-- **Annual IS return deadline** — 31 March of the following year  _([Code Général des Impôts (Togo)](https://taxatlas.io/country/togo))_
-- **Monthly remittance (IRPP withholding, VAT, CNSS)** — By the 15th of the month following the period  _([Code Général des Impôts (Togo)](https://rivermate.com/guides/togo/taxes))_
+- **Headline personal income tax (IRPP)** — Progressive 0.5% to 35% percent percent  _(Code Général des Impôts (Togo) — IRPP (as described at [lloydsbanktrade.com](https://www.lloydsbanktrade.com/en/market-potential/togo/taxes)))_
+- **Headline corporate income tax (IS)** — 27% percent percent  _(Code Général des Impôts (Togo) — Impôt sur les Sociétés (as described at [lloydsbanktrade.com](https://www.lloydsbanktrade.com/en/market-potential/togo/taxes)))_
+- **VAT (TVA) in force** — Yes — standard rate 18% percent percent  _(Code Général des Impôts (Togo) — TVA (as described at [lloydsbanktrade.com](https://www.lloydsbanktrade.com/en/market-potential/togo/taxes)))_
+- **Annual IS return deadline** — 31 March of the following year  _(Code Général des Impôts (Togo) (as described at [taxatlas.io](https://taxatlas.io/country/togo)))_
+- **Monthly remittance (IRPP withholding, VAT, CNSS)** — By the 15th of the month following the period  _(Code Général des Impôts (Togo) (as described at [rivermate.com](https://rivermate.com/guides/togo/taxes)))_
 
 <!-- openaccountants-cta-block -->
 

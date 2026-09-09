@@ -19,12 +19,12 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Agriculture / qualifying sector incentive** — Reduced rates and tax holidays available for approved agriculture and priority-sector investors (approx — confirm)  _(Income Tax Act 2000)_
 - **Minimum/turnover tax** — A minimum tax of around 3% of turnover may apply to companies in a loss or low-profit position percent (approx — confirm)  _(Income Tax Act 2000)_
 - **Tax base** — Accounting profit adjusted for tax (non-deductibles added back, capital allowances and exempt income deducted)  _(Income Tax Act 2000)_
-- **Withholding tax on dividends** — 15% (resident and non-resident) percent  _([Income Tax Act 2000](https://gordonassociates-sl.com/withholding-taxes-in-sierra-leone/))_
-- **Withholding tax on interest** — 15% (resident and non-resident) percent  _([Income Tax Act 2000](https://gordonassociates-sl.com/withholding-taxes-in-sierra-leone/))_
-- **Withholding tax on royalties** — 15% (resident and non-resident) percent  _([Income Tax Act 2000](https://gordonassociates-sl.com/withholding-taxes-in-sierra-leone/))_
-- **Withholding tax on rent** — 10% resident; 15% non-resident percent  _([Income Tax Act 2000](https://gordonassociates-sl.com/withholding-taxes-in-sierra-leone/))_
-- **Withholding tax on management/professional fees** — 15% (resident and non-resident) percent  _([Income Tax Act 2000](https://gordonassociates-sl.com/withholding-taxes-in-sierra-leone/))_
-- **Withholding tax on contractors (goods & services)** — 6.5% resident; 11.5% non-resident percent  _([Income Tax Act 2000](https://gordonassociates-sl.com/withholding-taxes-in-sierra-leone/))_
+- **Withholding tax on dividends** — 15% (resident and non-resident) percent  _(Income Tax Act 2000 (as described at [gordonassociates-sl.com](https://gordonassociates-sl.com/withholding-taxes-in-sierra-leone/)))_
+- **Withholding tax on interest** — 15% (resident and non-resident) percent  _(Income Tax Act 2000 (as described at [gordonassociates-sl.com](https://gordonassociates-sl.com/withholding-taxes-in-sierra-leone/)))_
+- **Withholding tax on royalties** — 15% (resident and non-resident) percent  _(Income Tax Act 2000 (as described at [gordonassociates-sl.com](https://gordonassociates-sl.com/withholding-taxes-in-sierra-leone/)))_
+- **Withholding tax on rent** — 10% resident; 15% non-resident percent  _(Income Tax Act 2000 (as described at [gordonassociates-sl.com](https://gordonassociates-sl.com/withholding-taxes-in-sierra-leone/)))_
+- **Withholding tax on management/professional fees** — 15% (resident and non-resident) percent  _(Income Tax Act 2000 (as described at [gordonassociates-sl.com](https://gordonassociates-sl.com/withholding-taxes-in-sierra-leone/)))_
+- **Withholding tax on contractors (goods & services)** — 6.5% resident; 11.5% non-resident percent  _(Income Tax Act 2000 (as described at [gordonassociates-sl.com](https://gordonassociates-sl.com/withholding-taxes-in-sierra-leone/)))_
 - **Contractor WHT threshold** — WHT on supplier/contractor payments applies above NLe 500 in the month of payment NLe (approx — confirm)  _(Income Tax Act 2000)_
 - **Annual return deadline** — Within 120 days of year end (by 30 April for a calendar-year company) (approx — confirm)  _(Income Tax Act 2000)_
 - **Provisional tax instalments** — Quarterly provisional tax instalments are payable during the year, with final balance on filing (approx — confirm)  _(Income Tax Act 2000)_

@@ -22,7 +22,7 @@ Employers withhold income tax under PAYE and remit compulsory retirement fund co
 - **Contribution wage base** — Calculated as a percentage of the employee's gross salary/earnings (approx — confirm whether any cap or floor applies)  _(National Retirement Benefit Fund Act)_
 - **Separate payroll tax** — No separate general payroll tax beyond PAYE income tax withholding and retirement contributions (approx — confirm)  _(Income Tax Act 2007)_
 - **Monthly PAYE remittance deadline** — By the 15th day of the following month ((approx — confirm))  _(Income Tax Act 2007 (https://www.rivermate.com/guides/tonga/taxes))_
-- **Annual PAYE reconciliation** — Typically due by 31 March (employer year-end reconciliation) (approx — confirm)  _([Income Tax Act 2007](https://www.rivermate.com/guides/tonga/taxes))_
+- **Annual PAYE reconciliation** — Typically due by 31 March (employer year-end reconciliation) (approx — confirm)  _(Income Tax Act 2007 (as described at [rivermate.com](https://www.rivermate.com/guides/tonga/taxes)))_
 
 <!-- openaccountants-cta-block -->
 
