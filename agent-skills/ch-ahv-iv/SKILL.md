@@ -24,8 +24,8 @@ metadata:
 | Federal oversight | BSV (Bundesamt für Sozialversicherungen) |
 | Primary legislation | AHVG (Bundesgesetz über die Alters- und Hinterlassenenversicherung) |
 | Supporting legislation | IVG; EOG; AHVV; BVG (Berufliche Vorsorge); DBG |
-| Full rate (income >= CHF 58,800) | 10.00% (AHV 8.10% + IV 1.40% + EO 0.50%) |
-| Sliding scale range | CHF 9,800 -- CHF 58,800 (rates 5.371% -- 10.00%) |
+| Full rate (income >= CHF 60,500) | 10.00% (AHV 8.10% + IV 1.40% + EO 0.50%) |
+| Sliding scale range | CHF 10,100 -- CHF 60,500 (rates 5.371% -- 10.00%) |
 | Minimum annual contribution | CHF 514 |
 | Upper cap | None -- no maximum on AHV/IV/EO contributions |
 | Payment frequency | Quarterly advance payments (Akontobeiträge) |
@@ -61,7 +61,7 @@ Before computing any AHV/IV figure, you MUST obtain:
 ### Prohibitions
 
 - NEVER determine self-employment status yourself -- only the Ausgleichskasse can confirm this
-- NEVER apply the full 10% rate to incomes below CHF 58,800 -- the sliding scale must be used
+- NEVER apply the full 10% rate to incomes below CHF 60,500 -- the sliding scale must be used
 - NEVER state there is a maximum cap on AHV/IV contributions -- there is no upper cap in Switzerland
 - NEVER ignore the CHF 514 minimum contribution -- it always applies regardless of income level
 - NEVER confuse the self-employed contribution (full rate) with the employee half-rate (5.00%)
@@ -96,7 +96,7 @@ contribution_base = net_self_employment_income
 
 ### Rate components
 
-| Component | Full rate (income >= CHF 58,800) |
+| Component | Full rate (income >= CHF 60,500) |
 |---|---|
 | AHV (old-age and survivors) | 8.10% |
 | IV (disability) | 1.40% |
@@ -107,8 +107,8 @@ contribution_base = net_self_employment_income
 
 | Annual net income | AHV/IV/EO rate |
 |---|---|
-| Up to CHF 9,800 | Minimum contribution (CHF 514/year) |
-| CHF 9,800 | 5.371% |
+| Up to CHF 10,100 | Minimum contribution (CHF 514/year) |
+| CHF 10,100 | 5.371% |
 | CHF 17,400 | 5.509% |
 | CHF 21,400 | 5.666% |
 | CHF 25,200 | 5.859% |
@@ -121,7 +121,7 @@ contribution_base = net_self_employment_income
 | CHF 49,200 | 8.849% |
 | CHF 52,200 | 9.444% |
 | CHF 55,400 | 9.953% |
-| CHF 58,800 and above | 10.000% |
+| CHF 60,500 and above | 10.000% |
 
 ### Additional charges
 
@@ -132,10 +132,10 @@ contribution_base = net_self_employment_income
 
 | Parameter | Amount (2025) |
 |---|---|
-| BVG minimum insured salary | CHF 22,050 |
-| BVG maximum insured salary | CHF 88,200 |
-| Pillar 3a with BVG | Max CHF 7,056 |
-| Pillar 3a without BVG | Max 20% of net income, up to CHF 35,280 |
+| BVG minimum insured salary | CHF 22,680 |
+| BVG maximum insured salary | CHF 90,720 |
+| Pillar 3a with BVG | Max CHF 7,258 |
+| Pillar 3a without BVG | Max 20% of net income, up to CHF 36,288 |
 
 Self-employed persons are NOT obligatorily insured under BVG but may join voluntarily. Contribution rates are age-dependent: 7% (25-34), 10% (35-44), 15% (45-54), 18% (55-65). Confirm specific fund rules with the Stiftung before advising.
 
@@ -155,9 +155,9 @@ In practice, the Ausgleichskasse computes this via published tables.
 ### Step 5.2 -- Apply sliding scale or full rate
 
 ```
-IF adjusted_income <= 9,800:
+IF adjusted_income <= 10,100:
     annual_contribution = 514  (minimum)
-ELIF adjusted_income < 58,800:
+ELIF adjusted_income < 60,500:
     annual_contribution = adjusted_income x sliding_scale_rate  (from table)
 ELSE:
     annual_contribution = adjusted_income x 10.00%
@@ -291,7 +291,7 @@ Action Required: Do not advise. Refer to qualified Treuhänder. Document gap.
 
 ### Test 5 -- Post-reference-age with Freibetrag
 **Input:** Net self-employment income CHF 25,000, age 67.
-**Expected output:** Freibetrag = CHF 16,800. Contributory income = CHF 8,200. Below minimum threshold of CHF 9,800, so minimum of CHF 514 applies (AHV/EO only, no IV).
+**Expected output:** Freibetrag = CHF 16,800. Contributory income = CHF 8,200. Below minimum threshold of CHF 10,100, so minimum of CHF 514 applies (AHV/EO only, no IV).
 
 ### Test 6 -- Concurrent employment + self-employment
 **Input:** Employment salary CHF 80,000 (AHV paid by employer), self-employment income CHF 30,000, age 38.
@@ -299,7 +299,7 @@ Action Required: Do not advise. Refer to qualified Treuhänder. Document gap.
 
 ### Test 7 -- Pillar 3a without BVG
 **Input:** Self-employed, no BVG, net income CHF 120,000, age 42.
-**Expected output:** Maximum Pillar 3a = 20% x CHF 120,000 = CHF 24,000, capped at CHF 35,280. Deductible: CHF 24,000.
+**Expected output:** Maximum Pillar 3a = 20% x CHF 120,000 = CHF 24,000, capped at CHF 36,288. Deductible: CHF 24,000.
 
 ---
 

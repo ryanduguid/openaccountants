@@ -146,7 +146,7 @@ All dollar thresholds, rates, and indexed figures in one place.
 
 | Figure | Value |
 |---|---|
-| SDI rate | 1.1% |
+| SDI rate | 1.2% |
 | SDI taxable wage ceiling | $153,164 (verify 2025) |
 | Maximum SDI withholding | $1,684.80 (verify 2025) |
 | SDI deductibility on CA return | Deductible as itemized deduction (not above-the-line) |
