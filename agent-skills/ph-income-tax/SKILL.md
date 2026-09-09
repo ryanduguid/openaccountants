@@ -234,7 +234,7 @@ No deductions allowed. No percentage tax due.
 | Offence | Penalty |
 |---|---|
 | Late filing | 25% surcharge on tax due |
-| Late payment | 20% interest per annum on unpaid tax |
+| Late payment | 12% interest per annum on unpaid tax (double the 6% BSP legal rate) — NIRC s.249 as amended by TRAIN (RA 10963), per RR 21-2018 |
 | Failure to file | ₱1,000 -- ₱25,000 fine and/or imprisonment |
 | Substantial underdeclaration | 50% surcharge |
 | Fraud | 50% surcharge + criminal penalties |

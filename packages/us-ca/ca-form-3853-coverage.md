@@ -87,7 +87,7 @@ This skill does NOT cover:
 
 | Figure | Value |
 | --- | --- |
-| Coverage is unaffordable if lowest-cost bronze plan exceeds | 7.28% of household income (2025 FTB affordability percentage) |
+| Coverage is unaffordable if lowest-cost bronze plan exceeds | 8.24% of household income (2025 FTB affordability percentage, 2025 Instructions for Form FTB 3853) |
 
 ## Section 4 -- Primary source library
 
@@ -146,7 +146,7 @@ This skill does NOT cover:
 
 | Exemption | Description | How to claim |
 | --- | --- | --- |
-| **Affordability** | Lowest-cost bronze plan through Covered California exceeds 7.28% of household income (2025 FTB affordability percentage) | Form 3853 Part III, or apply through Covered California for ECN |
+| **Affordability** | Lowest-cost bronze plan through Covered California exceeds 8.24% of household income (2025 FTB affordability percentage, 2025 Instructions for Form FTB 3853) | Form 3853 Part III, or apply through Covered California for ECN |
 | **Short coverage gap** | Gap of less than 3 consecutive months during the year | Form 3853 Part III -- automatic if gap < 3 months. Only one short gap per year. |
 | **Income below filing threshold** | Gross income below CA filing threshold (so no CA return is filed) | No Form 3853 needed if no return is filed |
 | **Religious conscience** | Member of a recognized religious sect with objection to insurance | Must obtain Exemption Certificate Number (ECN) from Covered California |
@@ -155,7 +155,7 @@ This skill does NOT cover:
 | **Hardship** | Various hardship circumstances (homelessness, eviction, domestic violence, etc.) | Form 3853 Part III, or apply through Covered California for ECN |
 | **Members of Indian tribes** | Enrolled member or eligible for IHS services | Form 3853 Part III |
 | **Certain noncitizens** | Not required to file a tax return because of foreign-earned income exclusion | Form 3853 Part III |
-| **Coverage considered unaffordable** | Employer coverage is unaffordable (employee share > 7.28% of income) | Form 3853 Part III |
+| **Coverage considered unaffordable** | Employer coverage is unaffordable (employee share > 8.24% of income) | Form 3853 Part III |
 
 ### 6.2 -- Short coverage gap rules
 
@@ -163,7 +163,7 @@ This skill does NOT cover:
 
 ### 6.3 -- Affordability exemption details
 
-- **Affordability exemption details** — Compare the annual premium for the lowest-cost bronze-level plan available through Covered California (for the taxpayer's household size and zip code) against 7.28% of household income for 2025. If the premium exceeds 7.28%, the taxpayer qualifies for the affordability exemption. Household income = MAGI (modified adjusted gross income) for all members of the tax household. The taxpayer can either self-certify on Form 3853 or obtain an ECN from Covered California.  _(https://www.ftb.ca.gov/file/personal/filing-situations/health-care-mandate/personal.html)_
+- **Affordability exemption details** — Compare the annual premium for the lowest-cost bronze-level plan available through Covered California (for the taxpayer's household size and zip code) against 8.24% of household income for 2025. If the premium exceeds 8.24%, the taxpayer qualifies for the affordability exemption. Household income = MAGI (modified adjusted gross income) for all members of the tax household. The taxpayer can either self-certify on Form 3853 or obtain an ECN from Covered California.  _(https://www.ftb.ca.gov/file/personal/filing-situations/health-care-mandate/personal.html)_
 
 ## Section 7 -- Penalty computation
 
@@ -304,14 +304,14 @@ This skill does NOT cover:
 
 ### EC-3853-8 -- Affordability exemption borderline
 
-**Situation:** Single filer, household income $45,000. Lowest-cost bronze plan on Covered California = $3,800/year. Affordability threshold = 7.28%.
+**Situation:** Single filer, household income $45,000. Lowest-cost bronze plan on Covered California = $3,800/year. Affordability threshold = 8.24%.
 
 **Resolution:**
-- 7.28% of $45,000 = $3,276.00.
+- 8.24% of $45,000 = $3,708.00.
 - $3,800 > $3,276.00. Coverage is UNAFFORDABLE.
 - Affordability exemption applies for all 12 months.
 - No penalty.
-- If income were higher (about $52,300), then 7.28% x $52,300 = $3,807.44, and coverage would be affordable ($3,800 < $3,807.44). Penalty would apply.
+- If income were higher (about $46,200), then 8.24% x $46,200 = $3,806.88, and coverage would be affordable ($3,800 < $3,806.88). Penalty would apply. (Break-even income for a $3,800 plan is $46,116.50.)
 - **Flag for reviewer:** Verify the exact premium for the taxpayer's zip code, age, and household size.
 
 ## Section 11 -- Test Suite
@@ -343,7 +343,7 @@ This skill does NOT cover:
 
 ### Test 3853-6 -- Affordability exemption
 
-**Input:** Single, household income $40,000. Lowest bronze plan = $3,500/year. 7.28% x $40,000 = $2,912.
+**Input:** Single, household income $40,000. Lowest bronze plan = $3,500/year. 8.24% x $40,000 = $3,296.
 **Expected:** $3,500 > $2,912. Coverage is unaffordable. Affordability exemption applies. No penalty. File Form 3853 claiming affordability exemption.
 
 ## Section 12 -- Self-checks
@@ -381,7 +381,7 @@ This skill does NOT cover:
 1. Covered California premium amounts by zip code and household size are not embedded in this skill; they must be looked up at filing time.
 2. The statewide average bronze plan premium cap for 2025 must be verified against FTB/Covered California publications.
 3. Part-year residents require pro-rata analysis; this skill covers full-year residents primarily.
-4. The affordability percentage is indexed annually; this guide uses the FTB 2025 value of 7.28%.
+4. The affordability percentage is indexed annually; this guide uses the FTB 2025 value of 8.24%.
 5. Hardship exemption determinations require case-by-case analysis beyond this skill's scope.
 
 ### Change log
