@@ -286,16 +286,18 @@ Run it rather than trusting the numbers below:
 python3 scripts/list-source-mix.py
 ```
 
-**As at 9 September 2026: 67% of citations were secondary — 4,921 against 2,460
-authority links, with 22 of 189 jurisdictions citing no authority domain at
+**As at 9 September 2026: 66% of citations were secondary — 4,863 against 2,503
+authority links, with 20 of 189 jurisdictions citing no authority domain at
 all.** One publisher, PwC's Worldwide Tax Summaries, carries about a third of
 all external citations on its own; the next largest is the IRS at 140, then
 Estonia's tax board at 82.
 
 Those counts are a dated snapshot and are quoted for the argument, not as a
-current figure. They drifted twice while this section was being written —
-adding `lex.uz` to the classifier moved the zero-authority count by one, and
-correcting Uzbekistan moved the citation totals — which is the same defect
+current figure. They drifted **four times** while this section was being
+written — adding `lex.uz` to the classifier moved the zero-authority count by
+one, correcting Uzbekistan moved the citation totals, and then auditing the
+statute-link queue found nine more revenue authorities and statutory funds the
+classifier had been calling marketing sites. That is the same defect
 `scripts/check-coverage-claims.py` exists to catch in `COVERAGE.md`: a derived
 number copied into prose is stale the moment the thing it describes changes.
 The command is the durable statement; the numbers are an illustration of it.
@@ -408,6 +410,38 @@ NCCPL, FRCS and BURS — the body that computes and collects the charge,
 publishing the table it collects under. BVI's two best citations were about to
 be filed as defects. `vinhi.vg` is now a recognised authority in
 `list-source-mix.py`, which also lifts BVI out of the zero-authority list.
+
+**So the whole queue was audited destination by destination before a single
+link was converted, and 45 of the 305 were wrong — 15%.** Nine were bodies
+that compute and collect the charge the guide quotes: Burundi's `obr.bi`,
+Curaçao's `svbcur.org`, the national insurance boards of Trinidad, the BVI and
+the Bahamas, South Sudan's social insurance fund (on free hosting, which is
+why it looked like a brochure), Liechtenstein's `llv.li`, Finland's `prh.fi`.
+Two more were recognised publishers under another name — Legal 500 and
+Bloomberg Tax.
+
+Tonga is the one worth spelling out. Its links point at PDFs on a trade
+portal, which reads like a brochure site. The PDF is the **Consumption Tax Act
+CAP. 26.02, 2016 Revised Edition**, 31 pages, and s.5(3)(a) says "The rate of
+Consumption Tax shall be 15 per cent" — the exact figure the guide cites. The
+link was already doing what its anchor promised, and the checker was about to
+recommend rewriting it.
+
+**A heuristic was tried here and thrown away, which is worth recording.** The
+idea was to exempt a link when the URL path echoes words from the anchor, on
+the theory that the destination is then the instrument itself. It exempted
+nine links and eight were wrong: a blog post *about* Ethiopia's amendment
+Proclamation, a country page that happened to contain "tome" and "principe".
+And it missed Tonga — the very case that prompted it — because the anchor was
+short enough that only one word overlapped. String overlap between a label and
+a URL does not test whether a document is a statute. It is the same mistake as
+testing a file-level claim with a line-level pattern: **scope the test to the
+claim.** Checking what the domain actually is does test it, and costs one
+fetch.
+
+The queue is now empty. That is not a claim that every citation in the corpus
+points somewhere good — 66% of them still point at commentary, and the checker
+only ever measured the sharp end.
 
 ### Three ways a guide comes to name three heads, and what each costs to fix
 
