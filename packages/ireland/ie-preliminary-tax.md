@@ -212,6 +212,7 @@ This is the deterministic pre-classifier for bank statement transactions. When a
 | --- | --- |
 | Rate | 4.125% |
 | Minimum annual contribution | EUR 650 (even if 4.125% < EUR 650) |
+| Why 4.125% | A 2025-only blended rate. Class S was **4.1%** to 30 September 2025 and **4.2%** from 1 October, and Revenue's self-assessment system applies the proportionate 4.125% across the year. Do not carry it into 2026: the rate is 4.2% until it rises to 4.35% on 1 October 2026, blending to roughly 4.2375% for that year |
 | Applied to | All self-employment income, no upper limit |
 | Exemption | Income below EUR 5,000 |
 

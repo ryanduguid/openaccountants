@@ -30,7 +30,7 @@ metadata:
 | Payment schedule | Annual lump sum: 31 October (paper) or ~14 November (ROS) |
 | Safe harbours | 100% of prior year liability OR 90% of current year liability |
 | De minimis | Prior year liability <= EUR 200: no preliminary tax required |
-| Components | Income tax + USC + PRSI (Class S at 4%) |
+| Components | Income tax + USC + PRSI (Class S at 4.125%) |
 | CGT | Separate payment dates (15 Dec / 31 Jan) -- NOT part of preliminary tax |
 | Contributor | Open Accountants Community |
 | Validated by | Pending -- requires validation by Irish Chartered Accountant or CTA |
@@ -171,7 +171,7 @@ Taxpayer meets obligation if they pay at least ONE of these amounts.
 
 ### 5.2 What constitutes "tax liability"
 
-Preliminary tax = income tax + USC + PRSI (Class S at 4%). PRSI minimum = EUR 500 if income > EUR 5,000.
+Preliminary tax = income tax + USC + PRSI (Class S at 4.125%). PRSI minimum = EUR 650 if income > EUR 5,000.
 
 ### 5.3 Computation steps
 
@@ -218,8 +218,9 @@ The surcharge applies to the RETURN, not the payment. Even if payment is on time
 
 | Parameter | Value |
 |---|---|
-| Rate | 4% |
-| Minimum annual contribution | EUR 500 (even if 4% < EUR 500) |
+| Rate | 4.125% |
+| Minimum annual contribution | EUR 650 (even if 4.125% < EUR 650) |
+| Why 4.125% | A 2025-only blended rate. Class S was **4.1%** to 30 September 2025 and **4.2%** from 1 October, and Revenue's self-assessment system applies the proportionate 4.125% across the year. Do not carry it into 2026: the rate is 4.2% until it rises to 4.35% on 1 October 2026, blending to roughly 4.2375% for that year |
 | Applied to | All self-employment income, no upper limit |
 | Exemption | Income below EUR 5,000 |
 
@@ -253,7 +254,7 @@ Before delivering output, verify:
 
 - [ ] Safe harbour rule selected (100% prior / 90% current / 105% pre-prior DD)
 - [ ] All three components included (income tax + USC + PRSI)
-- [ ] PRSI minimum EUR 500 checked if income > EUR 5,000
+- [ ] PRSI minimum EUR 650 checked if income > EUR 5,000
 - [ ] CGT excluded from 31 October payment
 - [ ] Correct deadline used (paper 31 Oct vs ROS ~14 Nov)
 - [ ] De minimis EUR 200 threshold checked

@@ -24,7 +24,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Supporting legislation | OUG nr. 168/2022; annual minimum wage ordinances |
 | CAS rate | 25% on fixed tier base |
 | CASS rate | 10% on fixed tier base |
-| Minimum gross wage (2025) | RON 3,590/month |
+| Minimum gross wage (2025) | RON 4,050/month |
 | CAS threshold | 12x min wage = RON 48,600 (below: voluntary) |
 | CAS upper tier | 24x min wage = RON 97,200 |
 | CASS lowest tier | 6x min wage = RON 24,300 |
@@ -160,7 +160,7 @@ Resolution: CAS RON 0. CASS RON 0. Flag: no health coverage. Recommend voluntary
 ### EC2 -- Just above 12x threshold
 
 Situation: PFA net income RON 44,000.
-Resolution: CAS RON 12,150. CASS RON 4,860. Total RON 15,078.
+Resolution: CAS RON 12,150. CASS RON 4,860. Total RON 17,010.
 
 ### EC3 -- Voluntary CAS opt-in
 
@@ -213,12 +213,12 @@ Expected output: CAS RON 0. CASS RON 0. Flag: no health coverage.
 ### Test 2 -- Mid-range, 12-24x tier
 
 Input: PFA net income RON 60,000, no employment.
-Expected output: CAS RON 12,150. CASS RON 4,860. Total RON 15,078.
+Expected output: CAS RON 12,150. CASS RON 4,860. Total RON 17,010.
 
 ### Test 3 -- High income, above 24x
 
 Input: PFA net income RON 150,000.
-Expected output: CAS RON 24,300. CASS RON 9,720. Total RON 30,156.
+Expected output: CAS RON 24,300. CASS RON 9,720. Total RON 34,020.
 
 ### Test 4 -- Between 6x and 12x
 
@@ -228,12 +228,12 @@ Expected output: CAS RON 0. CASS RON 2,430. Total RON 2,430.
 ### Test 5 -- Employed plus self-employed
 
 Input: Employment RON 50,000, PFA RON 50,000.
-Expected output: SE CAS RON 12,150. SE CASS RON 4,860. Total additional RON 15,078.
+Expected output: SE CAS RON 12,150. SE CASS RON 4,860. Total additional RON 17,010.
 
 ### Test 6 -- Voluntary CAS opt-in
 
 Input: PFA net income RON 20,000, opts in.
-Expected output: Voluntary CAS RON 12,150. CASS RON 2,430. Total RON 12,924.
+Expected output: Voluntary CAS RON 12,150. CASS RON 2,430. Total RON 14,580.
 
 ## Disclaimer
 

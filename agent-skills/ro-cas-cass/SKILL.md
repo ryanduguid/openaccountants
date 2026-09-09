@@ -25,10 +25,10 @@ metadata:
 | Supporting legislation | OUG nr. 168/2022; annual minimum wage ordinances |
 | CAS rate | 25% on fixed tier base |
 | CASS rate | 10% on fixed tier base |
-| Minimum gross wage (2025) | RON 3,590/month |
-| CAS threshold | 12x min wage = RON 43,080 (below: voluntary) |
-| CAS upper tier | 24x min wage = RON 86,160 |
-| CASS lowest tier | 6x min wage = RON 21,540 |
+| Minimum gross wage (2025) | RON 4,050/month |
+| CAS threshold | 12x min wage = RON 48,600 (below: voluntary) |
+| CAS upper tier | 24x min wage = RON 97,200 |
+| CASS lowest tier | 6x min wage = RON 24,300 |
 | Filing form | Declarația Unică (Formular 212) |
 | Payment deadline | 25 May of following year |
 | Currency | RON only |
@@ -74,9 +74,9 @@ Before computing, you MUST obtain:
 
 | Estimated annual net income | CAS due? | Contribution base | Annual CAS (25%) |
 |---|---|---|---|
-| Below RON 43,080 (< 12x min wage) | Voluntary only | N/A | RON 0 (unless opt-in at RON 10,770) |
-| RON 43,080 -- RON 86,160 | Mandatory | RON 43,080 | RON 10,770 |
-| Above RON 86,160 (> 24x min wage) | Mandatory | RON 86,160 | RON 21,540 |
+| Below RON 48,600 (< 12x min wage) | Voluntary only | N/A | RON 0 (unless opt-in at RON 12,150) |
+| RON 48,600 -- RON 97,200 | Mandatory | RON 48,600 | RON 12,150 |
+| Above RON 97,200 (> 24x min wage) | Mandatory | RON 97,200 | RON 24,300 |
 
 CAS is based on ESTIMATED net income declared in the Declarația Unică. The base is fixed at tier level, NOT at actual income.
 
@@ -88,10 +88,10 @@ CAS is based on ESTIMATED net income declared in the Declarația Unică. The bas
 
 | Estimated annual net income | CASS due? | Contribution base | Annual CASS (10%) |
 |---|---|---|---|
-| Below RON 21,540 (< 6x min wage) | No (but no health coverage) | N/A | RON 0 |
-| RON 21,540 -- RON 43,080 | Yes | RON 21,540 | RON 2,154 |
-| RON 43,080 -- RON 86,160 | Yes | RON 43,080 | RON 4,308 |
-| Above RON 86,160 | Yes | RON 86,160 | RON 8,616 |
+| Below RON 24,300 (< 6x min wage) | No (but no health coverage) | N/A | RON 0 |
+| RON 24,300 -- RON 48,600 | Yes | RON 24,300 | RON 2,430 |
+| RON 48,600 -- RON 97,200 | Yes | RON 48,600 | RON 4,860 |
+| Above RON 97,200 | Yes | RON 97,200 | RON 9,720 |
 
 ---
 
@@ -106,25 +106,25 @@ net_income = gross_revenue - deductible_expenses
 ### Step 5.2 -- Determine CAS tier
 
 ```
-IF net_income < 43,080:
-    CAS = 0  (voluntary opt-in at RON 10,770)
-ELIF net_income <= 86,160:
-    CAS = 43,080 x 25% = 10,770
+IF net_income < 48,600:
+    CAS = 0  (voluntary opt-in at RON 12,150)
+ELIF net_income <= 97,200:
+    CAS = 48,600 x 25% = 12,150
 ELSE:
-    CAS = 86,160 x 25% = 21,540
+    CAS = 97,200 x 25% = 24,300
 ```
 
 ### Step 5.3 -- Determine CASS tier
 
 ```
-IF net_income < 21,540:
+IF net_income < 24,300:
     CASS = 0  (no health coverage)
-ELIF net_income < 43,080:
-    CASS = 21,540 x 10% = 2,154
-ELIF net_income <= 86,160:
-    CASS = 43,080 x 10% = 4,308
+ELIF net_income < 48,600:
+    CASS = 24,300 x 10% = 2,430
+ELIF net_income <= 97,200:
+    CASS = 48,600 x 10% = 4,860
 ELSE:
-    CASS = 86,160 x 10% = 8,616
+    CASS = 97,200 x 10% = 9,720
 ```
 
 ### Step 5.4 -- Total
@@ -190,15 +190,15 @@ Estimated income for remaining months only. Thresholds are NOT pro-rated -- they
 
 ### EC1 -- Below all thresholds
 **Situation:** PFA net income RON 15,000/year.
-**Resolution:** CAS RON 0. CASS RON 0. Flag: no health coverage. Recommend voluntary CASS (RON 2,154).
+**Resolution:** CAS RON 0. CASS RON 0. Flag: no health coverage. Recommend voluntary CASS (RON 2,430).
 
 ### EC2 -- Just above 12x threshold
 **Situation:** PFA net income RON 44,000.
-**Resolution:** CAS RON 10,770. CASS RON 4,308. Total RON 15,078.
+**Resolution:** CAS RON 12,150. CASS RON 4,860. Total RON 17,010.
 
 ### EC3 -- Voluntary CAS opt-in
-**Situation:** Income below RON 43,080, client wants pension credits.
-**Resolution:** Voluntary CAS at RON 10,770. Provides pension credit for the year.
+**Situation:** Income below RON 48,600, client wants pension credits.
+**Resolution:** Voluntary CAS at RON 12,150. Provides pension credit for the year.
 
 ### EC4 -- Multiple income sources
 **Situation:** PFA + IP + rental income.
@@ -206,7 +206,7 @@ Estimated income for remaining months only. Thresholds are NOT pro-rated -- they
 
 ### EC5 -- Concurrent employment, high SE income
 **Situation:** Employment RON 60,000, PFA RON 100,000.
-**Resolution:** SE CAS: RON 21,540 (>24x tier). SE CASS: RON 8,616. Employment handled separately.
+**Resolution:** SE CAS: RON 24,300 (>24x tier). SE CASS: RON 9,720. Employment handled separately.
 
 ---
 
@@ -246,23 +246,23 @@ Action Required: Do not advise. Refer to qualified consultant fiscal. Document g
 
 ### Test 2 -- Mid-range, 12-24x tier
 **Input:** PFA net income RON 60,000, no employment.
-**Expected output:** CAS RON 10,770. CASS RON 4,308. Total RON 15,078.
+**Expected output:** CAS RON 12,150. CASS RON 4,860. Total RON 17,010.
 
 ### Test 3 -- High income, above 24x
 **Input:** PFA net income RON 150,000.
-**Expected output:** CAS RON 21,540. CASS RON 8,616. Total RON 30,156.
+**Expected output:** CAS RON 24,300. CASS RON 9,720. Total RON 34,020.
 
 ### Test 4 -- Between 6x and 12x
 **Input:** PFA net income RON 30,000.
-**Expected output:** CAS RON 0. CASS RON 2,154. Total RON 2,154.
+**Expected output:** CAS RON 0. CASS RON 2,430. Total RON 2,430.
 
 ### Test 5 -- Employed plus self-employed
 **Input:** Employment RON 50,000, PFA RON 50,000.
-**Expected output:** SE CAS RON 10,770. SE CASS RON 4,308. Total additional RON 15,078.
+**Expected output:** SE CAS RON 12,150. SE CASS RON 4,860. Total additional RON 17,010.
 
 ### Test 6 -- Voluntary CAS opt-in
 **Input:** PFA net income RON 20,000, opts in.
-**Expected output:** Voluntary CAS RON 10,770. CASS RON 2,154. Total RON 12,924.
+**Expected output:** Voluntary CAS RON 12,150. CASS RON 2,430. Total RON 14,580.
 
 ---
 
