@@ -28,6 +28,33 @@ of `index.json` carries the first three rows.
 
 US coverage is complete at state level: all 50 states plus DC are present.
 
+### Guides two tax years behind
+
+Seven guides carry `tax_year: 2024`, the oldest in the corpus. They are correctly
+labelled — the spec defines `tax_year` as the coverage *start* year, so 2024 is
+right for a 2024-25 or 2024/25 guide — and each states the year it covers in its
+own quick-reference table, so nothing in them is presented as current when it is
+not. They are a coverage gap, not an error:
+
+| Guide | Covers | Current period as at this writing |
+|---|---|---|
+| `au-individual-return` | 1 Jul 2024 – 30 Jun 2025 | 2025-26 is the lodgment year |
+| `au-medicare-levy` | 2024-25 | 2025-26 |
+| `hk-salaries-tax` | YA 2024/25 | YA 2025/26 |
+| `hk-mpf` | 2024 | 2026 |
+| `bangladesh-pit` | 2024 (1 Jul – 30 Jun) | 2025-26 |
+| `ghana-pit` | 2024 calendar year | 2026 |
+| `thailand-pit` | 2024 calendar year | 2026 |
+
+Regenerate this list with:
+
+```
+python3 -c "import json;d=json.load(open('index.json'));print(sorted(g['slug'] for g in d['guides'] if str(g.get('tax_year')) <= '2024' and g.get('tax_year')))"
+```
+
+Everything else in the corpus is on `tax_year` 2025 (1,737), 2026 (109), or is
+year-agnostic and carries none (100 — mostly workflow bases).
+
 > **Two numbers below are contradicted by this tree, and a maintainer needs to
 > resolve which is right.** The table further down says Tier 1 lives on the
 > "MCP server only (not in this repo)" and counts 85 of them — but this
