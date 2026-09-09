@@ -95,6 +95,33 @@ as the VAT rate and 10% as the combined rate; Taiwan's 15% is the proposed
 global-minimum-tax rate for MNE groups, not VAT (VAT is 5%); Bhutan's 30% is the
 corporate rate beside its new 5% GST.
 
+Fifth pass closes the column. All 157 jurisdictions that state a standard rate
+have now been checked against an outside source.
+
+WAEMU settles five at once: the harmonised standard rate is 18% for Benin,
+Burkina Faso, Mali, Togo, Côte d'Ivoire and Senegal, and 19% for Niger. All
+match. So do Andorra 4.5, Belize 12.5, Equatorial Guinea 15, Isle of Man 20,
+Samoa 15, Vanuatu 15, Burundi 18, Gambia 15, Lesotho 15, Eswatini 15,
+Seychelles 15, Djibouti 10, Kyrgyzstan 12, Turkmenistan 15, Belarus 20,
+Suriname 10 and Tonga 15. Liechtenstein 8.1 and Monaco 20 follow from the Swiss
+and French rates already checked, since both sit inside those VAT territories.
+
+Republic of Congo is the one place the corpus beats the aggregator: charts give
+a flat 18.9%, while both guides give 18% plus the 5% non-deductible centimes
+additionnels and explain that this is what produces 18.9%. Someone computing a
+return needs the mechanism, not the product.
+
+FINAL: 157 of 157 checked. Six errors, all fixed -- Fiji, India, Kazakhstan,
+Zimbabwe, Malawi, Maldives. Every one of the six was a jurisdiction whose
+overview or income-tax guide carried the correct current rate while its
+dedicated indirect-tax guide, the file an agent loads to prepare the return, did
+not. That is a maintenance pattern, not six coincidences: overviews get
+refreshed from summary sources and the deep guides do not.
+
+What this does NOT establish: VAT is one field. Corporate rates, payroll
+thresholds, registration thresholds, filing deadlines, penalty rates and form
+names change on the same cycle and have had none of this treatment.
+
 Open: Botswana. A rise to 14% -> 15% was proposed for 1 April 2025 and cannot be
 confirmed as enacted; PwC's 2026 chart still shows 14% and BURS serves a bot
 check instead of its rate page. The guides state 14% and say so.
