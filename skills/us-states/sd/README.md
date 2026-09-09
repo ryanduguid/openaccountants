@@ -14,7 +14,7 @@
 
 | File | What it covers |
 |---|---|
-| sd-sales-tax.md | South Dakota sales and use tax — 4.5% state rate, municipal tax up to 2%, Wayfair nexus, filing mechanics |
+| `sd-sales-tax.md` | South Dakota sales tax, South Dakota use tax, South Dakota DOR filing, South Dakota Wayfair, South Dakota... |
 
 ## What's NOT covered
 

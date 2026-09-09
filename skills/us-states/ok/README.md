@@ -16,6 +16,7 @@
 |---|---|
 | `ok-income-tax.md` | Individual income tax for self-employed / sole proprietors (Form 511) |
 | `ok-sales-tax.md` | State and local sales & use tax compliance |
+| `oklahoma-sales-tax.md` | Oklahoma sales tax, Oklahoma use tax, OTC sales tax filing, Oklahoma grocery tax exemption (2024), or... |
 
 ## What's NOT covered
 - Payroll / employer withholding taxes

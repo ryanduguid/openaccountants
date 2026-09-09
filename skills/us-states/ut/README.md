@@ -14,8 +14,9 @@
 
 | File | What it covers |
 |---|---|
-| ut-sales-tax.md | Utah sales and use tax — state rate 4.85%, local rates, SST membership, filing mechanics |
-| ut-income-tax.md | Utah individual income tax — flat 4.45% rate (2026), Form TC-40, self-employed rules |
+| `ut-income-tax.md` | Utah individual income tax, Utah Form TC-40, Utah flat tax rate, Utah taxpayer tax credit, Utah... |
+| `ut-sales-tax.md` | Utah sales tax, Utah use tax, USTC sales tax filing, Utah grocery tax reduced rate, Utah SaaS tax, or Utah... |
+| `utah-sales-tax.md` | Utah sales tax, Utah use tax, USTC sales tax filing, Utah grocery tax reduced rate, Utah SaaS tax, or Utah... |
 
 ## What's NOT covered
 

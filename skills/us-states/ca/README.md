@@ -19,9 +19,10 @@
 | `ca-form-3853-coverage.md` | Health coverage mandate / individual shared responsibility penalty (Form 3853) |
 | `ca-smllc-form-568.md` | Single-member LLC annual tax & fee (Form 568) |
 | `ca-sales-use-tax.md` | State and district sales & use tax compliance |
+| `ca-formation.md` | California content skill for entity formation covering tax year 2025 |
+| `ca-payroll.md` | California content skill for employer payroll compliance covering tax year 2025 |
 
 ## What's NOT covered
-- Payroll / employer withholding taxes
 - Property tax (administered at county level)
 - Corporate income / franchise tax (Form 100)
 - S-corporation tax (Form 100S)

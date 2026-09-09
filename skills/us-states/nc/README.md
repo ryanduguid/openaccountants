@@ -16,10 +16,13 @@
 |---|---|
 | `nc-income-tax.md` | Individual income tax for self-employed / sole proprietors (Form D-400) |
 | `nc-sales-tax.md` | State and local sales & use tax compliance |
+| `nc-bailey-settlement-retirement.md` | North Carolina state taxation of retirement income for an individual on Form D-400 — specifically the... |
+| `nc-corporate-tax.md` | Source-cited tax guide for US-NC: nc corporate tax |
+| `nc-estimated-tax.md` | North Carolina individual quarterly estimated income tax |
+| `nc-payroll.md` | North Carolina content skill for employer payroll compliance covering tax year 2025 |
+| `nc-return-assembly.md` | Final capstone orchestrator that assembles the complete federal + North Carolina filing package for a... |
 
 ## What's NOT covered
-- Payroll / employer withholding taxes
-- Corporate income tax (Form CD-405)
 - Franchise tax (only applies to C-corps and S-corps, not sole proprietors)
 - Property tax (administered at county level)
 - Estate / inheritance tax (North Carolina has none)

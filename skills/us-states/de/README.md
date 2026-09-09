@@ -15,9 +15,10 @@
 |---|---|
 | `de-income-tax.md` | Individual income tax (Form PIT-RES) — graduated 0%–6.6%, self-employed focus |
 | `de-gross-receipts-tax.md` | Gross Receipts Tax — rates by business activity, exclusions, filing frequency |
+| `de-formation.md` | Delaware content skill for entity formation covering tax year 2025 |
+| `de-franchise-tax-and-llc.md` | Delaware LLCs, LPs, and GPs owe a flat $300 annual tax due June 1, regardless of income or activity |
 
 ## What's NOT covered
-- Corporate income tax (Form 1100)
 - Corporate franchise tax (annual report fee)
 - Withholding tax
 - Real property transfer tax

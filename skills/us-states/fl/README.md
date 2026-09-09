@@ -15,11 +15,13 @@
 | File | What it covers |
 |---|---|
 | `fl-sales-tax.md` | State and county sales & use tax compliance |
-| `fl-sales-tax-legacy.md` | Legacy sales tax reference (prior format) |
 | `fl-annual-report.md` | Annual report filing requirements for LLCs and corporations |
+| `fl-corporate-income-tax.md` | Source-cited tax guide for US-FL: fl corporate income tax |
+| `fl-sales-use-tax-surtax.md` | Florida discretionary sales surtax rates for all 67 counties (CY2026, FDOR DR-15DSS) on top of the 6%... |
+| `fl-sales-use-tax.md` | Florida Sales and Use Tax return (Form DR-15) for self-employed individuals and small businesses |
+| `fl-transient-rental-tax.md` | Florida local-option transient rental (tourist development) tax rates for all 67 counties (FDOR DR-15TDT),... |
 
 ## What's NOT covered
-- Corporate income tax (5.5% on C-corps only)
 - Reemployment (unemployment) tax
 - Property tax (administered at county level)
 - Documentary stamp tax

@@ -16,9 +16,10 @@
 |---|---|
 | `ct-income-tax.md` | Individual income tax for self-employed / sole proprietors (Form CT-1040) |
 | `ct-sales-tax.md` | State sales & use tax compliance |
+| `connecticut-sales-tax.md` | Connecticut sales and use tax, luxury tax, DRS filings |
+| `ct-payroll.md` | Connecticut content skill for employer payroll compliance covering tax year 2025 |
 
 ## What's NOT covered
-- Payroll / employer withholding taxes
 - Property tax (administered at municipal level — significant in CT)
 - Corporate business tax
 - Estate / gift tax (Connecticut has an estate tax)

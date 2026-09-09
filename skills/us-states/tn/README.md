@@ -14,7 +14,7 @@
 
 | File | What it covers |
 |---|---|
-| tn-sales-tax.md | Tennessee sales and use tax — 7% state rate (4% on grocery food), local up to 2.75%, filing mechanics |
+| `tn-sales-tax.md` | Tennessee sales tax, Tennessee use tax, Tennessee sales tax nexus, Tennessee sales tax returns, Tennessee... |
 
 ## What's NOT covered
 

@@ -16,6 +16,9 @@
 |---|---|
 | `nv-commerce-tax.md` | Nevada Commerce Tax — gross receipts tax for businesses with >$4M NV revenue |
 | `nv-sales-tax.md` | State and local sales & use tax compliance |
+| `nevada-sales-tax.md` | Nevada sales and use tax |
+| `nv-commerce-and-mbt.md` | Source-cited tax guide for US-NV: nv commerce and mbt |
+| `nv-formation.md` | Nevada content skill for entity formation covering tax year 2025 |
 
 ## What's NOT covered
 - Modified Business Tax (payroll tax — applies to employers)
