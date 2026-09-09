@@ -56,7 +56,7 @@ It does **not** itself execute a PTET filing — actual return preparation is de
 
 ### 2.3 OBBBA technical changes
 
-- **OBBBA changes relevant to PTET planning** — OBBBA made three changes relevant to PTET planning: 1. SALT cap raised to $40,000 (2025-2029) with phase-down above $500k MAGI. 2. §199A QBI made permanent at 20%, rising to 20% in 2026. PTET reduces QBI (because PTET reduces ordinary income flowing through K-1 Line 1), so the QBI deduction is reduced by 20% (or 20% in 2026) of the PTET deduction — netting the PTET federal benefit. 3. No direct PTET changes — Treasury has not retracted Notice 2020-75, and OBBBA did not codify or restrict the workaround. PTET remains an administrative blessing, not a statutory one.  _(P.L. 119-21 (OBBBA))_
+- **OBBBA changes relevant to PTET planning** — OBBBA made three changes relevant to PTET planning: 1. SALT cap raised to $40,000 (2025-2029) with phase-down above $500k MAGI. 2. §199A QBI made permanent at **20%** (OBBBA §70105). The rate did not change — the House bill's proposed 23% was not enacted, so do not model a step-up in 2026. OBBBA widened the phase-in ranges to $75,000 non-joint / $150,000 joint and added a $400 minimum deduction for taxpayers with at least $1,000 of qualified business income. PTET reduces QBI (because PTET reduces ordinary income flowing through K-1 line 1), so the QBI deduction falls by 20% of the PTET deduction in every year — netting roughly a fifth of the PTET federal benefit back out. 3. No direct PTET changes — Treasury has not retracted Notice 2020-75, and OBBBA did not codify or restrict the workaround. PTET remains an administrative blessing, not a statutory one.  _(P.L. 119-21 (OBBBA))_
 
 ## 3. PTET State Matrix
 
