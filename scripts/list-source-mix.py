@@ -96,6 +96,7 @@ NON_GOV_AUTHORITY = frozenset((
     'finances.belgium.be',
     'bmf-steuerrechner.de',    # German Federal Ministry of Finance calculator
     'riksdagen.se', 'parliament.lk',
+    'lex.uz',             # Uzbekistan, official national legislation database
     'cabinet.salyk.kz',   # Kazakhstan tax portal (salyk = tax)
     'ciregistry.ky',      # Cayman Islands registry
     'rdb.rw', 'org.rdb.rw', 'businessprocedures.rdb.rw',   # Rwanda Development Board
@@ -239,6 +240,7 @@ def selftest():
     assert classify('belastingdienst.nl') == 'authority'
     assert classify('skatteverket.se') == 'authority'
     assert classify('legislation.mt') == 'authority'
+    assert classify('lex.uz') == 'authority'             # official legislation
     assert classify('guichet.public.lu') == 'authority'   # via the GOV pattern
     assert classify('mi.government.bg') == 'authority'    # via the GOV pattern
     # every subdomain of the Vietnamese government portal, not just the ones
