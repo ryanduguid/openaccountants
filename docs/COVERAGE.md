@@ -170,3 +170,11 @@ subject it does not belong to. That view found a sixth Malta guide still using
 `TA24` for the income tax return, in `malta-vat-return`'s refusal rule, after
 five had already been corrected by hand: a rental form listed beside a VAT
 guide is visible in a second.
+
+Reading the register is the point, and it does not automate. An obvious filter
+— report a form whose guides share no topic — returns 811 rows, because a
+country's guides cross-reference each other constantly and legitimately: an
+income-tax guide naming the payroll withholding certificate is correct, not
+suspicious. What made Malta's `TA24` stand out was knowing that TA24 is a
+rental form. The register puts that knowledge one glance from the evidence; it
+cannot supply it.
