@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Chilean self-employed social co
 version: 2.0
 jurisdiction: CL
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-09
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -26,7 +26,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | AFP comisión | 0.46%-1.44% (varies by AFP) |
 | SIS rate | ~1.49% (2025) |
 | Salud rate | 7% (Fonasa/Isapre) |
-| Withholding rate | 13.75% of gross boleta (2025) |
+| Withholding rate | **15.25% of gross boleta (2026)**. Ley 21.133 raises it yearly: 13.75% (2024), 14.5% (2025), 15.25% (2026), 16% (2027), 17% (2028). This row read "13.75% (2025)", which is the 2024 rate — two years behind, and it contradicted cl-income-tax.md |
 | Renta imponible | Gross boleta x 80% / 12 |
 | Tope imponible | 87.8 UF/month |
 | Phase-in | 100% from 2025 (complete) |
@@ -77,7 +77,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 | Item | Detail |
 | --- | --- |
-| Rate | 13.75% of gross boleta |
+| Rate | 15.25% of gross boleta (2026) — see the Ley 21.133 schedule above; use the rate for the boleta's year |
 | Withheld by | Pagador (paying entity) |
 | Destination | SII holds, distributes at Operación Renta |
 
@@ -103,7 +103,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | --- | --- |
 | Are cotizaciones deductible? | YES -- reduce income tax base |
 | Where? | Annual return (Formulario 22) |
-| 13.75% withholding | Covers BOTH income tax and previsional |
+| The boleta withholding | Covers BOTH income tax and previsional, at whatever the year's rate is (15.25% in 2026) |
 
 ### Penalties
 
@@ -148,7 +148,7 @@ Situation: Isapre plan at 9%. Resolution: 2% difference paid directly to Isapre.
 
 ### EC5 -- Insufficient withholding
 
-Situation: 13.75% withholding totals CLP 500,000 but owed CLP 800,000. Resolution: CLP 300,000 shortfall at Operación Renta. Priority: SIS > AFP > salud.
+Situation: the year's boleta withholding totals CLP 500,000 but CLP 800,000 is owed. Resolution: CLP 300,000 shortfall at Operación Renta. Priority: SIS > AFP > salud.
 
 ### EC6 -- No boletas (informal)
 

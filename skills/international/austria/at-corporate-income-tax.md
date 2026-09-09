@@ -3,7 +3,7 @@ name: at-corporate-income-tax
 description: "Source-cited draft: corporate income tax for Austria (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
 jurisdiction: AT
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-09
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -23,6 +23,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **WHT on dividends to non-residents** — 27.5% (individuals) / 23% (corporations) before treaty or EU Parent-Subsidiary relief percent  _(Einkommensteuergesetz (EStG) / Körperschaftsteuergesetz (KStG) — https://taxsummaries.pwc.com/austria/corporate/withholding-taxes)_
 - **WHT on interest to non-residents** — Generally 0% for non-resident corporations; 25% (bank deposits) / 27.5% (Austrian bonds) can apply to individuals percent  _(Einkommensteuergesetz (EStG) — https://taxsummaries.pwc.com/austria/corporate/withholding-taxes)_
 - **WHT on royalties to non-residents** — 20% before treaty or EU Interest & Royalties Directive relief percent  _(Einkommensteuergesetz (EStG) — https://taxsummaries.pwc.com/austria/corporate/withholding-taxes)_
+- **Heads beyond these three: checked, not settled** — Whether Austria withholds on commercial or technical consulting fees, on supervisory board fees, or on other service payments to non-residents is **not answered by the source this guide cites**: PwC's Austria withholding page establishes no categories beyond dividends, interest and royalties/licences, and says so. That is a gap in the evidence and not a finding that no such head exists — the two read identically from here. Check §98 and §99 EStG, or ask an Austrian adviser, before telling a payer that a consulting fee to a non-resident carries no Austrian withholding  _(Einkommensteuergesetz (EStG))_
 - **Group taxation (Gruppenbesteuerung)** — Available — profits/losses of group members can be pooled at the group parent; requires a financial connection of more than 50%  _(Körperschaftsteuergesetz (KStG) — https://taxsummaries.pwc.com/austria/corporate/group-taxation)_
 - **CIT advance payments** — Quarterly prepayments due 15 February, 15 May, 15 August, 15 November  _(Bundesabgabenordnung (BAO) — https://taxsummaries.pwc.com/austria/corporate/tax-administration)_
 - **CIT return filing deadline** — 30 April of the following year (30 June via FinanzOnline); represented taxpayers may obtain longer extensions  _(Bundesabgabenordnung (BAO) — https://taxsummaries.pwc.com/austria/corporate/tax-administration)_
