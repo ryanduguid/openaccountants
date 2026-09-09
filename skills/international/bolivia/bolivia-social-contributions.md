@@ -120,11 +120,11 @@ PwC summarises the scale as "1.15% up to 11.48%". **[RESEARCH GAP — reviewer t
 | RC-IVA presumed deduction (DS 5383) | 13% of 1 SMN = Bs 357.50/month (reduced from 13% of 2 SMN) | DS 5383; Rigoberto Paredes |
 | RC-IVA practical threshold 2025 | ≈ Bs 9,451–9,456/month gross above which RC-IVA becomes payable absent invoice offset | Rigoberto Paredes; Visión360 |
 | ANS entry threshold | Bs 13,000/month total ganado (then 25,000 / 35,000) | Ley 1582; PwC |
-| Pension contribution ceiling (tope) | 60 national minimum salaries/month (≈ USD 28,450 per PwC) | PwC — **see caveat below** |
+| Pension contribution ceiling (tope) | 60 national minimum salaries/month = **Bs 165,000 in 2025** (60 × Bs 2,750) and **Bs 198,000 in 2026** (60 × Bs 3,300) | PwC; DS 5383; DS 5516 — **see caveat below** |
 | VAT (IVA) rate | 13% nominal (14.94% effective tax-inclusive) | SIN; PwC |
 | Transactions Tax (IT) rate | 3% of gross income | SIN; PwC |
 
-**Pension ceiling caveat — [RESEARCH GAP — reviewer to confirm].** PwC states a cap of 60 national minimum salaries/month (≈ USD 28,450). At the 2025 SMN of Bs 2,750 that nominally implies ≈ Bs 165,000/month, but the exact Bs figure — and whether the SMN multiplier was restated for 2025 — was not independently confirmed against an APS/Gestora circular. Verify the exact Bs cap before applying it to any high earner.
+**Pension ceiling caveat — [RESEARCH GAP — reviewer to confirm].** PwC states a cap of 60 national minimum salaries/month, quoted as ≈ USD 28,450. Given that multiplier the Bs figure is not itself in doubt — it is 60 × the SMN this pack already sources to DS 5383 and DS 5516: **Bs 165,000/month for 2025** and **Bs 198,000/month for 2026**. The USD quote corresponds to the 2026 figure, not the 2025 one (198,000 ÷ the official Bs 6.96/USD peg = USD 28,448); read against the 2025 SMN it does not tie, which is what made it look unreconcilable. The 60-SMN multiplier itself rests on PwC and has not been confirmed against an APS/Gestora circular; that, and which contribution branches sit under the cap, are the open questions. `bolivia-payroll` and `bolivia-income-tax` state the same position.
 
 ## Section 1C — Conservative defaults
 
@@ -151,7 +151,7 @@ PwC summarises the scale as "1.15% up to 11.48%". **[RESEARCH GAP — reviewer t
 
 - **R-BO-SS-1 — Total ganado unknown** — Trigger: gross monthly remuneration not provided. Message: "Monthly total ganado is mandatory. All Bolivian social-security contributions (12.71% employee, 17.21%/19.51% employer) and RC-IVA are computed on it. Cannot proceed without the gross figure."
 - **R-BO-SS-2 — ANS mechanism / high earner** — Trigger: total ganado above Bs 13,000/month and the client needs a definitive ANS figure. Message: "The National Solidarity Contribution (ANS) under Ley 1582 uses thresholds at Bs 13,000 / 25,000 / 35,000 at 1.15% / 5.74% / 11.48%. The exact application mechanism (marginal-slice vs aggregate) is not fully confirmed against the statute in this skill. Escalate to a Bolivian-qualified professional before filing."
-- **R-BO-SS-3 — Pension ceiling for very high earners** — Trigger: total ganado near/above 60 SMN (≈ Bs 165,000/month). Message: "The pension contribution ceiling (PwC: 60 minimum salaries, ≈ USD 28,450) is not confirmed in exact Bs terms in this skill. Do not cap contributions without confirming the precise APS/Gestora ceiling. Escalate to a Bolivian-qualified professional."
+- **R-BO-SS-3 — Pension ceiling for very high earners** — Trigger: total ganado near/above 60 SMN (Bs 165,000/month in 2025; Bs 198,000/month in 2026). Message: "The 60-SMN pension contribution ceiling comes from PwC and is not confirmed against an APS/Gestora circular, and which branches sit under it is unresolved. The Bs amount follows from the SMN once the multiplier is accepted. Do not cap contributions without confirming that the ceiling applies and to which branches. Escalate to a Bolivian-qualified professional."
 - **R-BO-SS-4 — Contribution arrears / penalties** — Trigger: unpaid contributions or late RC-IVA from prior periods. Message: "Penalty and surcharge percentages for late contributions (APS) and tax non-compliance (Código Tributario, Ley 2492) are not captured authoritatively in this skill. Do not quantify arrears or penalties. Escalate to a Bolivian-qualified professional with the APS/SIN statements."
 - **R-BO-SS-5 — Independent/voluntary affiliates** — Trigger: self-employed, independent (trabajador independiente), or voluntary SIP affiliate. Message: "This skill covers dependent (employee) payroll. Independent and voluntary SIP affiliation uses a different declared base and rate structure. Escalate to a Bolivian-qualified professional."
 
@@ -311,7 +311,7 @@ These rules apply when payroll data is clear and all required inputs are availab
 
 ### Rule 7 — Pension contribution ceiling
 
-- **Pension ceiling** — Contributions are levied on total ganado up to a ceiling of 60 national minimum salaries/month (≈ USD 28,450 per PwC). [RESEARCH GAP — reviewer to confirm] the exact Bs figure and SMN multiplier for 2025.  _(PwC)_
+- **Pension ceiling** — Contributions are levied on total ganado up to a ceiling of 60 national minimum salaries/month = Bs 165,000 in 2025 (60 × Bs 2,750) and Bs 198,000 in 2026 (60 × Bs 3,300). [RESEARCH GAP — reviewer to confirm] The 60-SMN multiplier itself rests on PwC and has not been confirmed against an APS/Gestora circular; that, and which contribution branches sit under the cap, are the open questions.  _(PwC; DS 5383; DS 5516)_
 
 ### Rule 8 — Employer is the withholding agent
 

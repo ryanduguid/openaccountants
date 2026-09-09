@@ -337,7 +337,7 @@ Arithmetic check: 10 + 1.71 + 0.5 + 0.5 = 12.71%. ✓
 
 - **Solidarity bands applied to excess** — These are applied to the excess in each band, in addition to the 12.71%.  _(rigobertoparedes.com/es; brackets per Ley 065)_
 
-[RESEARCH GAP -- reviewer to confirm.] Ley 1582 (2024) revised the solidarity-fund parameters; one source cites an effective recalculated burden of ~1.15% / 5.74% / 11.48%. The precise current statutory percentages should be confirmed against the consolidated Ley 065 text. A pension-contribution salary ceiling (commonly cited as 60 SMN) could not be confirmed from an authoritative source -- confirm whether a ceiling applies.
+[RESEARCH GAP -- reviewer to confirm.] Ley 1582 (2024) revised the solidarity-fund parameters; one source cites an effective recalculated burden of ~1.15% / 5.74% / 11.48%. The precise current statutory percentages should be confirmed against the consolidated Ley 065 text. A pension-contribution salary ceiling of 60 SMN is cited by PwC and carried by `bolivia-payroll` and `bolivia-social-contributions`; on that multiplier it is Bs 165,000/month for 2025 (60 x Bs 2,750) and Bs 198,000/month for 2026 (60 x Bs 3,300). The 60-SMN multiplier itself rests on PwC and has not been confirmed against an APS/Gestora circular; that, and which contribution branches sit under the cap, are the open questions.
 
 **Employer social security table**  _(planifica.com.bo)_
 

@@ -35,8 +35,27 @@ were real:
     was not; the example around it produced three mutually inconsistent
     monthly totals.
 
-Every remaining flag in `skills/` has since been read in context and each one
-holds: the FEIE example's $56,503 is the correct 2025 tax on $248,250, Iceland's
+A third miss was structural rather than a triage error, and it was silent. An
+answer written in bold -- `... = **487,450.80**` -- reached `eval` with the
+asterisks still attached, `eval` raised, and the span was dropped without ever
+being counted. Nothing in the output said so: the totals simply omitted it.
+Stripping markdown emphasis before parsing took `skills packages agent-skills`
+from 20,666 evaluated expressions to 23,402, so roughly one asserted sum in
+eight had never been checked at all, and surfaced two real errors:
+
+  * `ethiopia-social-contributions` -- `12,000 x 30% - 1,350 = 3,600 - 1,350 =
+    2,550` is 2,250. The file's own band table and its sibling
+    `ethiopia-payroll` both give 2,250; the wrong figure had propagated into
+    net pay, the classification line, a fabricated bank-statement line and the
+    test suite.
+  * `serbia-payroll` -- `5,439,096 x 10% = 487,450.80` is 543,909.60, and the
+    line beneath it subtracted to a negative and then used the positive. Both
+    sat inside a worked example that banded the annual supplementary tax on
+    gross income, which three guides in the pack modelled three different ways.
+
+Prefer bolding the answer, not the whole expression; either way the parser now
+sees through it. Every remaining flag in `skills/` has since been read in
+context and each one holds: the FEIE example's $56,503 is the correct 2025 tax on $248,250, Iceland's
 three terms sum exactly, Virginia's line states its own multiplicand
 ("on $186,750"), China's arithmetic is in 万, Brazil's and Portugal's decimals
 are European, and Croatia's line self-verifies. That is the standard to meet
@@ -126,6 +145,12 @@ for root in sys.argv[1:]:
                 EURO[0]=bool(re.search(r'\d\.\d{3},\d|\d+,\d{1,2}\b(?!\d)', line)) and not re.search(r'\d,\d{3}(?!\d)', line)
                 for cell in line.split('|'):
                     cell=CURWORD.sub(' ',cell)
+                    # `**` around a bolded answer is markdown, not exponentiation;
+                    # left in place it makes eval raise and the span is dropped in
+                    # silence. A real operator is whitespace-delimited (OPSP), so
+                    # an asterisk touching a digit is emphasis too.
+                    cell=cell.replace('**','')
+                    cell=re.sub(r'\*(?=[\d(])|(?<=[\d%)])\*', ' ', cell)
                     for m in SPAN.finditer(cell):
                         span=m.group(0)
                         sides=[s for s in span.split('=') if s.strip()]
