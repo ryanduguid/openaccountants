@@ -12,6 +12,21 @@ states. 6 April is a clean boundary in the UK and mid-year everywhere else.
 It ranks, it does not accuse: a line can be correct and terse, and a change can
 be so old that nothing straddles it any more. Always exits 0.
 
+IT CURRENTLY REPORTS NOTHING, AND HERE IS HOW TO TELL THAT IS REAL
+
+At the default cutoff the corpus is clean on this dimension, which is the
+easiest possible state for a broken checker to fake. Two ways to confirm it is
+not faking. Widen the window -- `--since 2020` still returns ten lines, so the
+machinery finds things when things are there. And plant one: a guide reading
+"| Tax year | Calendar year |" plus "- **VAT standard rate** - 23% from
+1 August 2026" is reported immediately.
+
+It got to zero honestly. Of 112 raw hits, two were real and are fixed (the
+Maldives TGST rise on 1 July 2025 and Fiji's VAT cut on 1 August 2025, both
+missing the earlier period and the time-of-supply test that decides it); the
+rest were the checker not knowing how guides write. Each filter below names the
+guide that forced it.
+
 Usage: python3 scripts/list-midyear-changes.py [--selftest] [--since YEAR]
 """
 import os, re, sys, collections, datetime
@@ -50,6 +65,14 @@ ROW = re.compile(r'^\s*\|\s*([^|]{4,120}?)\s*\|\s*(.+?)\s*\|?\s*$')
 HANDLED = re.compile(r'\bto 3[01] [A-Z]|\buntil\b|\bbefore\b|\bpro[- ]rat|\bsplit\b|'
                      r'\bfor the period\b|\bmonth\b|\bearlier\b|\bpreviously\b|'
                      r'\bwas\b'
+                     # Wording that names the old figure without naming a period.
+                     # Every one of these was a false positive on the first run:
+                     # Barbados "increased from 0.1% effective 1 April 2025",
+                     # Ireland "4.1% (rising to 4.2% from 1 October 2025)",
+                     # India "the former 12% and 28% slabs were abolished".
+                     r'|\b(?:increased|reduced|cut|raised|risen|up|down)\s+from\b'
+                     r'|\brising to\b|\bfalling to\b|\bformer\b|\bprior\b'
+                     r'|\breverts?\b|\breverting\b'
                      # A date range written with a dash is the commonest way a
                      # guide states the earlier period, and the first version of
                      # this pattern missed it. Estonia's VAT line reads
@@ -113,6 +136,16 @@ def flagged(line, start, since, file_text=''):
         return None
     if HANDLED.search(whole):
         return None
+    # A table that lists successive effective dates handles the split by
+    # structure rather than by wording -- Barbados's minimum-wage schedule is
+    # a row per date, and no row needs to explain the one above it. If this is
+    # a table row and the file has another row with a DIFFERENT effective date,
+    # treat the series as the explanation.
+    if ROW.match(line) and not BULL.match(line):
+        others = {x.group(0) for x in EFFECTIVE.finditer(file_text)}
+        if len(others) > 1:
+            return None
+
     # The split may be explained anywhere in the guide. Look for the same month
     # and year mentioned alongside earlier-period wording.
     # Match the same change written any of the ways guides write it:
@@ -152,10 +185,10 @@ def selftest():
     # Romania's shape: the rate row is terse, and the split is explained
     # elsewhere in the same file. Testing the line alone reported it; testing
     # the file does not.
-    romania = ('| 11% | Reduced (from 1 August 2025) replacing the former 9% '
-               'and 5% categories | Fiscal Code Art. 291(2) |\n'
-               '| Row 2 | Domestic supplies at reduced rate (11% from Aug 2025 '
-               '/ 9% before) | 11%/9% |\n')
+    romania = ('- **Reduced VAT** - 11% on food and accommodation '
+               '(from 1 August 2025)\n'
+               'Row 2: domestic supplies at reduced rate (11% from Aug 2025 '
+               '/ 9% before)\n')
     row = romania.splitlines()[0]
     assert flagged(row, cal, 2025) == 'from 1 August 2025'      # line alone
     assert flagged(row, cal, 2025, romania) is None             # whole file
@@ -166,12 +199,28 @@ def selftest():
     assert flagged('- **VAT** - 24% from 1 July 2025, 22% Jan-Jun\n',
                    cal, 2025) is None
 
+    # the old figure named without a period is still the split, stated
+    assert flagged('- **Levy** - 0.25% (increased from 0.1% effective 1 April 2025)\n',
+                   cal, 2025) is None
+    assert flagged('| PRSI | 4.1% (rising to 4.2% from 1 October 2025) |\n',
+                   cal, 2025) is None
+    assert flagged('| GST | two slabs from 22 September 2025; the former 12% '
+                   'and 28% slabs were abolished |\n', cal, 2025) is None
+
+    # a schedule that lists successive dates explains itself by structure
+    schedule = ('| From 21 January 2026 | 10.71 | 2% CPI increase |\n'
+                '| From 1 April 2025 | 10.50 | prior step |\n')
+    assert flagged(schedule.splitlines()[0], cal, 2025, schedule) is None
+    # but a lone table row with one date in the file is still reported
+    lone = '| VAT | 21% from 1 August 2025 | Fiscal Code |\n'
+    assert flagged(lone.splitlines()[0], cal, 2025, lone) == 'from 1 August 2025'
+
     # KNOWN MISS, and the reason this ranks rather than accuses: HANDLED keys on
     # wording, so a line that gives the earlier figure without any of those
     # words is still reported. "21% from 1 August 2025; 19% for January to
     # July" survives only because it contains "month"-free prose that happens to
     # match nothing. Read the line before editing it.
-    print('selftest: %d cases pass (1 documented miss)' % 16)
+    print('selftest: %d cases pass (1 documented miss)' % 21)
 
 
 def main(since=None):
