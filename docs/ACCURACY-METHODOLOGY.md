@@ -82,6 +82,7 @@ jurisdiction at a time. This section records how far that has got.
 | Late payment interest | UK | 0, restated | — |
 | High-income surcharge | Pakistan | 0, self-contradiction fixed | — |
 | Loss carryforward caps | Dominican Republic | 0 | — |
+| Indexation units (MCI, minimum wage) | Kazakhstan | 1 | Kazakhstan |
 
 The deadline pass has covered 24 jurisdictions of 200. Nobody has run an external
 pass over anything else. That leaves payroll rates and thresholds, registration
@@ -150,6 +151,24 @@ current value". That date has passed, the change is in force, and a hedge
 written before a commencement date should be revisited after it rather than
 carried forward. Its prohibition now reads "do NOT state the threshold as
 EGP 500,000" rather than "do not present either figure as settled".
+
+### One stale unit moves everything denominated in it
+
+Kazakhstan states many of its thresholds in MCI, the monthly calculation index,
+which the budget law resets each year. It went from KZT 3,932 for 2025 to
+KZT 4,325 for 2026, about 10%. Three of the four guides carrying it already had
+4,325 and hedged it; kz-company-formation had converted 100 MCI to tenge at the
+2025 rate and stored the tenge figure, so its minimum charter capital read
+KZT 393,200 where it is now KZT 432,500.
+
+That is the shape to watch in any jurisdiction with an indexation unit. The
+guide that keeps the unit stays right for free and the guide that converts once
+goes stale silently, because the arithmetic it did was correct on the day. The
+line now says to recompute from MCI rather than carry the tenge forward.
+
+The minimum wage in the same law did not move, staying at KZT 85,000 for both
+years, which is worth stating beside the MCI so a reader does not assume
+everything indexes together.
 
 ### Work the queue by who reads it, not by who hedges most
 
