@@ -48,8 +48,26 @@ Chile withholds 4% on interest to foreign banks against 35% generally, Colombia
 corporate shareholders and 5% to individuals, Zimbabwe 5% on listed shares and
 10% on unlisted, Hong Kong 4.95% on royalties to unassociated non-residents.
 
-Still open: 118 jurisdictions state a rate, 31 hedge at least one of their own,
-and 2 have been checked.
+  * Guatemala CORRECT, hedge resolved. 5% on dividends to non-residents and the
+              same 5% to residents, a final tax withheld by the distributing
+              company under Decreto 10-2012. The guide had said "some guides
+              cite up to 10% -- confirm". They do, and 10% is not the dividend
+              rate.
+  * Barbados  CORRECT, and it nearly was not. A first search gave 15% on
+              royalties to non-residents and the guide says 0%, which looked
+              like a clear error. PwC, the source the guide cites, publishes 0%
+              for royalties and interest and 0% or 5% for dividends. The 15%
+              appears in older summaries and predates the 2019 convergence of
+              the domestic and international regimes. The rate stays at 0% and
+              the vague hedge is replaced by the specific conflict and a
+              warning, because the payer carries an under-deduction.
+
+That is the sixth time in this pass that an outside source disagreed and the
+corpus turned out right. Read the guide, and read what it cites, before you
+change a number.
+
+Still open: 118 jurisdictions state a rate, 28 hedge at least one of their own,
+and 4 have been checked.
 
 Usage: python3 scripts/list-withholding-rates.py [--selftest]
 """
