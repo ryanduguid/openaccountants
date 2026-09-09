@@ -65,6 +65,23 @@ class FactCheckerTests(unittest.TestCase):
         self.assertNotRegex(output, r"queue:\s+broad\b")
         self.assertRegex(output, r"\bbroad\s+dividends, rent, services")
 
+    def test_solo_citations_rank_uncorroborated_instruments(self):
+        # "lonely" leans on one instrument nobody else cites; "shared" cites an
+        # instrument that appears in a second guide, so it is corroborated
+        # inside the corpus and is not ranked however often it appears.
+        lonely = "Regulated by Portaria n.º 999/2024/1. " * 9
+        shared = "Under Lei n.º 82/2023 the regime applies. " * 9
+        output = self.run_checker("list-solo-citations.py", {
+            "lonely/guide.md": lonely,
+            "shared/guide.md": shared,
+            "other/guide.md": "See also Lei n.º 82/2023 for the enabling provision.\n",
+        })
+        self.assertRegex(output, r"9x\s+Portaria 999/2024/1")
+        self.assertNotRegex(output, r"Lei 82/2023")
+        self.assertIn("cited 8+ times in exactly one guide", output)
+        # it ranks, it does not accuse
+        self.assertIn("blast-radius ranking, not a defect report", output)
+
     def test_withholding_scope_excludes_zero_rate_jurisdictions(self):
         # "nowht" charges nothing, so it names no service or rent head because
         # there is nothing to name. That is a complete guide, not a thin one,

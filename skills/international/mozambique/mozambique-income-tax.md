@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Mozambique personal income tax 
 version: 0.1
 jurisdiction: MZ
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-09
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -290,7 +290,7 @@ Classification: EXCLUDE.
 
 - **Double-taxation relief credit** — Double-taxation relief credit is also available.  _(PwC — https://taxsummaries.pwc.com/mozambique/individual/deductions)_
 
-[RESEARCH GAP — reviewer to confirm] These are legacy values and may be revised by the pending Law 11/2025 regulations; not yet confirmed for 2026.
+[RESEARCH GAP — reviewer to confirm] **Status as at September 2026.** These are legacy values. **Lei n.º 11/2025, de 29 de dezembro** (Boletim da República n.º 248), which amends the IRPS Code approved by Lei n.º 33/2007, **entered into force on 1 January 2026** — it is no longer "pending". The Government had **180 days, to June 2026**, to approve the complementary regulations, and that window has now closed. So these deductions are not merely unconfirmed for 2026: the law that may have changed them has been in force for the whole of the year, and the regulation deadline has passed. Confirm against the amended IRPS Code and the Autoridade Tributária before applying any figure in this table to a 2026 computation, and note that the companion **Lei n.º 12/2025** made the equivalent amendments to the IRPC Code.
 
 ### 5.5 The Wholly-and-Exclusively Test (2nd category)
 
