@@ -66,8 +66,27 @@ That is the sixth time in this pass that an outside source disagreed and the
 corpus turned out right. Read the guide, and read what it cites, before you
 change a number.
 
-Still open: 118 jurisdictions state a rate, 28 hedge at least one of their own,
-and 4 have been checked.
+  * Monaco    CORRECT on all three, hedges resolved. Monaco levies no
+              withholding tax on outbound dividends, interest or royalties.
+              Worth stating the limit as well, which the guide did not: a zero
+              rate in Monaco is not a zero rate on the payment, because income
+              arriving from abroad is still withheld at source.
+  * Fiji      GENUINELY UNRESOLVED, and now says so precisely. The guide read
+              "position uncertain: some sources cite 0% (dividend WHT removed
+              effective 1 August 2017), others cite 15%". Checked, and the
+              conflict is real: dividends were exempted from 1 August 2017 and
+              the Income Tax Act still carries a 15% non-resident dividend
+              withholding tax, with neither source retracting the other. The
+              guide now defaults to withholding 15% and says to ask FRCS before
+              paying gross, because an under-deduction is the payer's liability
+              while an over-deduction is the recipient's to reclaim.
+
+Fiji is the shape to copy when a field cannot be settled. "Position uncertain"
+tells a reader nothing they can act on; naming both sources, both dates and
+which way to err tells them what to do this afternoon.
+
+Still open: 118 jurisdictions state a rate, 27 hedge at least one of their own,
+and 6 have been checked.
 
 Usage: python3 scripts/list-withholding-rates.py [--selftest]
 """
