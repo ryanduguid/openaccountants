@@ -71,6 +71,8 @@ jurisdiction at a time. This section records how far that has got.
 | Alternative minimum tax status | Taiwan | 1 | Taiwan |
 | Penalty and interest on overdue tax | Cyprus | 0, one conflict recorded | — |
 | Minimum corporate tax bands | Slovakia | 1 | Slovakia |
+| Statutory citations | Pakistan, Ireland (partial) | 0, one unverified | — |
+| Forthcoming rate steps | Ireland | 1 gap filled | Ireland |
 
 The deadline pass has covered 24 jurisdictions of 200. Nobody has run an external
 pass over anything else. That leaves payroll rates and thresholds, registration

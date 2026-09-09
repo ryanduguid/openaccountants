@@ -451,7 +451,7 @@ Downstream skills (via ie-return-assembly):
 - `ie-usc` — Universal Social Charge bands + 3% self-employed surcharge over EUR 100k.
 - `ireland-vat-return` — VAT3 + RTD; rates 23% / 13.5% / 9% / 4.8% / 0%; thresholds EUR 85,000 goods / EUR 42,500 services.
 - `ie-corporation-tax` — CT1 at 12.5% trading / 25% non-trading; close-company surcharge Section 440 / 441 TCA 1997.
-- `ie-paye` + `ie-payroll` — PAYE Modernisation real-time reporting; employer PRSI Class A1 8.9% Jan-Sep 2025; 9.0% from 1 Oct 2025 / 11.15% Jan-Sep 2025; 11.25% from 1 Oct 2025 from 1 October 2024.
+- `ie-paye` + `ie-payroll` — PAYE Modernisation real-time reporting; employer PRSI Class A1 lower sub-class 8.9% Jan-Sep 2025, 9.0% from 1 Oct 2025, **9.15% from 1 Oct 2026**; standard 11.15% Jan-Sep 2025, 11.25% from 1 Oct 2025, **11.40% from 1 Oct 2026**.
 - `ie-cgt` — Section 28 TCA 1997 et seq.; 33% on gains > EUR 1,270; 15 December / 31 January split.
 - `ie-cat` — Capital Acquisitions Tax Consolidation Act 2003; Group A / B / C thresholds EUR 400,000 / EUR 40,000 / EUR 20,000.
 - `ie-formation` — sole trader vs partnership vs LTD; CRO + ROS TR1 / TR2 registration.
