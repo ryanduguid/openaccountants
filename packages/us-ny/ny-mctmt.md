@@ -327,7 +327,7 @@ This skill does NOT cover the following items, which require either a specialize
 - **Form NYS-45 instructions** — Quarterly Combined Withholding, Wage Reporting, and Unemployment Insurance Return — Part D covers MCTMT effective March 1, 2022.  _(Form NYS-45 instructions)_
 - **Form MTA-6 instructions** — Metropolitan Commuter Transportation Mobility Tax Return for Individuals.  _(Form MTA-6 instructions)_
 - **Form MTA-305 instructions** — Discontinued for periods beginning March 1, 2022 — historical only.  _(Form MTA-305 instructions)_
-- **NYSDTF online MCTMT resource center** — tax.ny.gov/bus/mctmt/  _([tax.ny.gov/bus/mctmt/](tax.ny.gov/bus/mctmt/))_
+- **NYSDTF online MCTMT resource center** — tax.ny.gov/bus/mctmt/  _([tax.ny.gov/bus/mctmt/](https://tax.ny.gov/bus/mctmt/))_
 
 ### Federal cross-references
 

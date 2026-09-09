@@ -585,7 +585,7 @@ Total entity-level ND tax              ~$5M+
 - **Form 40-UT instructions** — underpayment penalty computation.  _(Form 40-UT instructions)_
 - **Form 60 instructions** — ND S-corporation filing.  _(Form 60 instructions)_
 - **Form 58 instructions** — ND partnership filing.  _(Form 58 instructions)_
-- **ND Office of State Tax Commissioner Corporate Income Tax web page** — current rates, forms, and Commissioner directives.  _([tax.nd.gov/business/corporate-income-tax](tax.nd.gov/business/corporate-income-tax))_
+- **ND Office of State Tax Commissioner Corporate Income Tax web page** — current rates, forms, and Commissioner directives.  _([tax.nd.gov/business/corporate-income-tax](https://tax.nd.gov/business/corporate-income-tax))_
 
 ### 14.5 Cross-references in this skill bundle
 

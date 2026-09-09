@@ -17,7 +17,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Pattern table
 
-**Ad platform vendor pattern table**  _([Skill markdown pattern table](placeholder))_
+**Ad platform vendor pattern table**  _(Skill markdown pattern table)_
 
 value
 
