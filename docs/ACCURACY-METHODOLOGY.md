@@ -60,10 +60,10 @@ jurisdiction at a time. This section records how far that has got.
 |---|---|---|---|
 | Standard VAT / GST rate | 157 of 157 jurisdictions stating one | 6 | Fiji, India, Kazakhstan, Zimbabwe, Malawi, Maldives |
 | Headline corporate rate | ~135 jurisdictions | 3 | Lithuania, Cyprus, Portugal |
-| Annual return filing deadline | 20 of the 200 jurisdictions stating one | 7 | Italy, Greece, Armenia, Cyprus, Finland, Australia, Norway |
+| Annual return filing deadline | 24 jurisdictions | 8 | Italy, Greece, Armenia, Cyprus, Finland, Australia, Norway, Brazil |
 | VAT/GST registration threshold | 20 jurisdictions | 3 | Egypt, Albania, France |
 
-The deadline pass has covered 20 jurisdictions of 200. Nobody has run an external
+The deadline pass has covered 24 jurisdictions of 200. Nobody has run an external
 pass over anything else. That leaves payroll rates and thresholds, registration
 and filing thresholds, penalty and interest rates, social-contribution bands,
 capital allowances, withholding rates, form names and statutory citations. All
@@ -73,6 +73,13 @@ The threshold column is the newest and has the same split as the deadline one.
 Reading it for odd rows found Egypt and Albania; a random draw of ten found only
 Albania. Both errors were a guide stating a figure the jurisdiction had already
 changed, and in both a sibling guide in the same pack had it right.
+
+Looking at what a column does not contain became the most productive lead of
+all, and it works on any field. In the deadline column it found Brazil, whose
+guide leads with a flat "30 de maio" while its own citation says the date is
+set annually, and South Africa, whose guide names the ITR12 and never says when
+it is due. The South African case is the one to remember: a missing figure
+passes every check ever written here, because nothing contradicts it.
 
 France came from looking at what the column does not contain. Only eight EU
 states appear in it, so the obvious question was whether the rest have no

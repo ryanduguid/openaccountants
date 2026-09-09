@@ -125,7 +125,34 @@ taxpayer, so the two can be compared.
                31 July under Regnskapsloven section 8-2. The six-month rule was
                attached to the wrong step. Hedge resolved.
 
-Still open: 200 jurisdictions state a deadline and 20 have been checked.
+Fifth lead, borrowed from the threshold pass: look at the jurisdictions the
+column does NOT contain. France, Portugal, Brazil and South Africa have no row
+here, and all four had something to say.
+
+  * Brazil        WRONG as a standing rule. br-income-tax leads with "Prazo da
+                  DIRPF - 30 de maio do ano seguinte" while its own citation
+                  says Receita Federal fixes the date each year by Instrucao
+                  Normativa and names 30 May 2025 as that year's. The DIRPF 2026
+                  window ran 23 March to 29 May 2026, shorter than the year
+                  before. Third instance of a filing season frozen into a rule,
+                  after Armenia and Finland.
+  * South Africa  NOT WRONG, MISSING. za-income-tax names the return form as
+                  ITR12 and never says when it is due, in a guide for filing it.
+                  SARS sets the season annually: for the 2026 year of
+                  assessment, auto-assessments 1 to 12 July 2026, manual filing
+                  from 13 July, non-provisional deadline 23 October 2026, and
+                  provisional taxpayers and trusts 22 January 2027. Added.
+  * France        CORRECT. Declaration 2042 is due late May or early June,
+                  staggered by departement, and the corporate declaration de
+                  resultats within three months of year-end, four for a
+                  31 December year-end.
+  * Portugal      CORRECT. Modelo 22 by 31 May of the following year.
+
+None of the four uses the wording this script looks for, so all four were
+invisible to it before and two of them are invisible still. A jurisdiction
+missing from the column is a question, not a pass.
+
+Still open: 200 jurisdictions state a deadline and 24 have been checked.
 
 Usage: python3 scripts/list-filing-deadlines.py [--selftest]
 """
