@@ -111,7 +111,7 @@ Q3: "TVA regime?"
 - **Q2 = Above thresholds** -> continue with a flag: if currently micro-entrepreneur, mandatory switch to réel for the second consecutive year above thresholds (Article 293 B and Article 50-0 CGI). Will verify after inference.
 - **Q2 = Not sure** -> continue, infer from documents.
 
-- **Q3 = Franchise en base** -> continue. No TVA charged or recovered. Threshold: €36,800 services / €91,900 goods (basic franchise), with tolerance up to €39,100 / €101,000 (Article 293 B CGI).
+- **Q3 = Franchise en base** -> continue. No TVA charged or recovered. Threshold: €37,500 services / €85,000 goods (basic franchise), with tolerance up to €41,250 / €93,500 (Article 293 B CGI).
 - **Q3 = Réel simplifié** -> continue. Annual CA12 with two acomptes semestriels (July and December). Input TVA recovery available.
 - **Q3 = Réel normal** -> continue. Monthly CA3 (or quarterly if TVA < €4,000/year).
 - **Q3 = Not sure** -> ask one follow-up: "Do your invoices include TVA (5.5%, 10%, or 20%)? If they say 'TVA non applicable, article 293 B du CGI', you're in franchise en base. If you charge TVA and file monthly/quarterly, you're réel normal. If you file one annual TVA return with two advance payments, you're réel simplifié."
@@ -307,7 +307,7 @@ After inference, present a single compact summary message. Use a structured form
 >
 > **Flags I already see:**
 > 1. EU client (Germany) -- services to EU business: autoliquidation by client, but need to verify DEB/DES declaration obligation (déclaration européenne de services) if > €0 in services to EU
-> 2. CA approaching franchise en base BNC threshold (€36,800 basic / €39,100 tolérance) -- at €58,000 she should have been charging TVA. **Red flag: franchise en base not available above threshold. Needs immediate TVA registration.**
+> 2. CA approaching franchise en base BNC threshold (€37,500 basic / €41,250 tolérance) -- at €58,000 she should have been charging TVA. **Red flag: franchise en base not available above threshold. Needs immediate TVA registration.**
 > 3. If versement libératoire IR was opted in, verify RFR N-2 eligibility: RFR per part must be ≤ €27,478 (2025 threshold on 2023 RFR)
 >
 > **Is any of this wrong? Reply "looks good" or tell me what to fix.**
@@ -566,7 +566,7 @@ When a refusal fires:
 
 **Check IN12 -- TVA regime was established.** Franchise en base vs réel simplifié vs réel normal was confirmed before inference, as it changes how every transaction is classified.
 
-**Check IN13 -- Franchise en base threshold was verified.** If micro-entrepreneur CA exceeds €36,800 (services) or €91,900 (goods), the franchise en base is lost and TVA registration is mandatory. This must be flagged.
+**Check IN13 -- Franchise en base threshold was verified.** If micro-entrepreneur CA exceeds €37,500 (services) or €85,000 (goods), the franchise en base is lost and TVA registration is mandatory. This must be flagged.
 
 ---
 

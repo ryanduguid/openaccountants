@@ -161,7 +161,7 @@ If starting a business with heavy initial costs, structure as a profession libé
 
 | Strategy | Detail |
 | --- | --- |
-| Franchise en base de TVA | Below EUR 36,800 (services) or EUR 91,900 (goods): no TVA charged. No input TVA recovery. Competitive advantage for B2C. |
+| Franchise en base de TVA | Below EUR 37,500 (services) or EUR 85,000 (goods): no TVA charged. No input TVA recovery. Competitive advantage for B2C. |
 | Opt for TVA | If significant input TVA (investment phase), opt to charge TVA to recover inputs. Lock-in: 2 calendar years. |
 | Régime simplifié | Annual TVA return with 2 quarterly acomptes. Available if turnover < EUR 840,000 (goods) / EUR 254,000 (services). |
 | TVA sur les débits vs encaissements | For service providers: TVA on encaissements (payment received) defers TVA liability vs. débits (invoice date). |

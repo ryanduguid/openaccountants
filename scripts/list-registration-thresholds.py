@@ -51,7 +51,35 @@ Paraguay was in the draw and is not this field. Its row comes from
 paraguay-payroll and is the PYG 80M IRP registration threshold, an income tax.
 The guide is right; the column is reading past its own subject.
 
-Still open: 102 jurisdictions use this wording and 11 have been checked.
+EU tranche, all eight that state one under this wording, against a single table
+of member-state thresholds. Every one correct: Bulgaria BGN 100,000 (~EUR
+51,000), Croatia EUR 60,000, Cyprus EUR 15,600, Estonia EUR 40,000, Ireland
+EUR 42,500 and 85,000, Latvia EUR 50,000, Luxembourg EUR 50,000, Slovenia
+EUR 60,000.
+
+The interesting part was the EU states NOT in the column, because several state
+a threshold under their own name for it.
+
+  * France    WRONG, in 14 places across skills, agent-skills and the
+              orchestrator. Franchise en base under art. 293 B CGI was given as
+              EUR 36,800 for services (tolerance 39,100) and EUR 91,900 for
+              goods (tolerance 101,000). Those are the pre-2025 figures. It is
+              EUR 37,500 (tolerance 41,250) and EUR 85,000 (tolerance 93,500).
+              Every worked example still holds at the new figures.
+  * Germany   CORRECT. Kleinunternehmer under section 19 UStG at EUR 25,000
+              prior year and EUR 100,000 current year.
+  * Netherlands CORRECT. KOR at EUR 20,000.
+  * Italy and Spain have no domestic VAT registration threshold, so their
+    absence from the column is right. Italy's EUR 85,000 is the regime
+    forfettario, a different thing.
+
+France is the case for not trusting this column's coverage number. It states
+its threshold in four files and none of them says "registration threshold", so
+a reader watching only this output would have called France unstated rather
+than wrong.
+
+Still open: 102 jurisdictions use this wording, and 20 jurisdictions have now
+been checked.
 
 Usage: python3 scripts/list-registration-thresholds.py [--selftest]
 """
