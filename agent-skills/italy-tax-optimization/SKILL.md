@@ -26,7 +26,7 @@ metadata:
 | Tax authority attitude to planning | The Agenzia delle Entrate accepts legitimate planning. Italy has a general anti-avoidance rule under Art. 10-bis L. 212/2000 (Statuto del Contribuente): arrangements lacking economic substance whose principal purpose is to obtain undue tax advantages can be disregarded. Penalties: 100-200% of unpaid tax for abuse. Ruling requests (interpello) available for certainty. |
 | Currency | EUR |
 | Tax year | Calendar year (1 Jan -- 31 Dec) |
-| Filing deadline | 30 November (Modello Redditi PF); Modello 730 typically by 30 September |
+| Filing deadline | 31 October (Modello Redditi PF; 2 November 2026 as 31 October is a Saturday); 30 September (Modello 730) |
 
 ### IRPEF Rates 2026 (Legge di Bilancio 2026)
 
@@ -260,12 +260,12 @@ Various tax credits for capital investments (Industria 4.0, Transizione 5.0) may
 | March | Review fondo pensione contribution strategy. Calculate expected income for the year. |
 | April | File Modello 730 (if eligible) or begin Modello Redditi PF preparation. |
 | May | Compare forfettario vs ordinario for current year's situation. |
-| June | **16 June** -- saldo IRPEF prior year + 1st acconto (40%). Pay IVA balance (if ordinario). **30 June** -- deadline for Modello Redditi PF (if filed electronically). |
+| June | **30 June** -- saldo IRPEF prior year + 1st acconto (40%), deferrable to 30 July with a 0.40% surcharge. Pay IVA balance (if ordinario). This is a PAYMENT date, not a filing date. |
 | July | Mid-year revenue review: track EUR 85,000 forfettario ceiling. |
 | August | Review capital expenditure needs. Plan asset purchases for H2. |
 | September | **30 September** -- 730 deadline (if via CAF/intermediario). Review building bonus opportunities. |
 | October | Assess fondo pensione headroom. Estimate full-year income for acconto calculation. |
-| November | **30 November** -- 2nd acconto IRPEF (60%). Use metodo previsionale if income is lower. **30 November** -- Modello Redditi PF final deadline. Maximize fondo pensione contributions (EUR 5,300). |
+| November | **30 November** -- 2nd acconto IRPEF (60%). Use metodo previsionale if income is lower. Maximize fondo pensione contributions (EUR 5,300). Note the Redditi PF filing deadline has already passed on 31 October. |
 | December | Defer invoicing if approaching forfettario threshold. Make charitable donations. Pay medical expenses (traceable payments for detrazione). Prepay deductible expenses. |
 
 ---

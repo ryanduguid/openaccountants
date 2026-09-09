@@ -23,6 +23,12 @@ confirms the drafting, not the law, and will report clean whether or not the
 deadline has since moved. Prefer the tax authority's own filing-season page for
 any jurisdiction whose provenance names an aggregator.
 
+It also cannot tell an assertion from a warning about one. A guide that says
+"30 June is not the filing deadline" reads here as a guide claiming 30 June,
+and the Italy correction produced exactly that until the sentence was reworded.
+A row that disagrees with itself may be a guide arguing with a date rather than
+stating one, so read the line before you act on it.
+
 Usage: python3 scripts/list-filing-deadlines.py [--selftest]
 """
 import os, re, sys, collections

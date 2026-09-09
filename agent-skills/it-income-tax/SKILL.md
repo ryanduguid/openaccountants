@@ -29,7 +29,7 @@ metadata:
 | Primary legislation | DPR 917/1986 (TUIR -- Testo Unico delle Imposte sui Redditi) |
 | Tax authority | Agenzia delle Entrate (AdE) |
 | Filing portal | Fisconline / Entratel (dichiarazioni.agenziaentrate.it) |
-| Filing deadline | 30 June (online Modello Redditi PF); 30 November (Modello 730 via sostituto) |
+| Filing deadline | 31 October (online Modello Redditi PF; 2 November 2026 as 31 October is a Saturday); 30 September (Modello 730). 30 June is the **payment** date, not a filing date |
 | Contributor | Open Accountants Community |
 | Validated by | Pending -- requires sign-off by a qualified Italian Commercialista |
 | Skill version | 2.0 |
@@ -316,10 +316,10 @@ Plus: Addizionale comunale (% x net income)
 
 | Item | Deadline |
 |---|---|
-| Modello Redditi PF (online) | 30 June of following year |
+| Modello Redditi PF (online) | **31 October** of the following year (2 November 2026, because 31 October 2026 is a Saturday) |
 | IRPEF saldo + 1st acconto (40%) | 30 June |
 | 2nd acconto IRPEF (60%) | 30 November |
-| Modello 730 (via sostituto) | 30 November |
+| Modello 730 (Agenzia telematic, sostituto, CAF or professional) | **30 September** of the following year -- absolute, the 730 cannot be filed after it |
 
 ### 5.11 Penalties
 

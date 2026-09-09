@@ -226,7 +226,7 @@ If prior-year IRAP <= EUR 51.65: no advance payments required.
 | Obligation | Detail |
 |------------|--------|
 | Form | Dichiarazione IRAP (filed with income tax return) |
-| Deadline | Same as Redditi PF/SP: **30 November** of the following year |
+| Deadline | Same as Redditi PF/SP: **31 October** of the following year (2 November 2026, as 31 October is a Saturday) |
 | Filing | Telematic (via Entratel or Fisconline) |
 
 ---
