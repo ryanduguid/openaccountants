@@ -67,7 +67,7 @@ The employer withholds income tax monthly under the Final Settlement System (FSS
 
 | Chargeable Income (EUR) | Rate | Subtract (EUR) |
 |---|---|---|
-| 0 -- 15,500 | 0% | 0 |
+| 0 -- 15,000 | 0% | 0 |
 | 15,001 -- 23,000 | 15% | 2,250 |
 | 23,001 -- 60,000 | 25% | 4,550 |
 | 60,001+ | 35% | 10,550 |

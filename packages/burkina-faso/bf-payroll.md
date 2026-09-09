@@ -48,14 +48,16 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Monthly taxable income (FCFA) | Rate |
 | --- | --- |
 | 0 to 30,000 | 0% |
-| 30,100 to 50,000 | 12.10% |
-| 50,100 to 80,000 | 13.90% |
-| 80,100 to 120,000 | 15.70% |
-| 120,100 to 170,000 | 18.40% |
-| 170,100 to 250,000 | 21.70% |
-| 250,100 and above | 25% |
+| 30,001 to 50,000 | 12.10% |
+| 50,001 to 80,000 | 13.90% |
+| 80,001 to 120,000 | 15.70% |
+| 120,001 to 170,000 | 18.40% |
+| 170,001 to 250,000 | 21.70% |
+| 250,001 and above | 25% |
 
 Per CGI Art. 110 (current scale; the older 2%–30% scale is repealed):
+
+> **[RESEARCH GAP — reviewer to confirm the year.]** Secondary sources publish a different IUTS scale for **2026**: six bands computed on **annual** income (0 / 8.25% / 13.75% / 16.5% / 22% / 27.5%, top band above FCFA 3,000,000), rather than the seven monthly bands topping at 25% above. This skill is `tax_year: 2025` and the scale above is the Art. 110 monthly scale, but a 2026 engagement must be checked against the Loi de finances 2026 and DGI instructions before use — the two scales are not a monthly/annual restatement of each other (30,000/month is 360,000/year, not 300,000).
 
 ## Section 3 -- From gross to taxable, then to tax
 

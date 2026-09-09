@@ -39,10 +39,10 @@ metadata:
 | Revenu net imposable (EUR/part) | Rate |
 |---|---|
 | 0 -- 11,497 | 0% |
-| 11,498 -- 26,231 | 11% |
-| 26,232 -- 74,545 | 30% |
-| 74,546 -- 160,336 | 41% |
-| Above 160,336 | 45% |
+| 11,498 -- 29,315 | 11% |
+| 29,316 -- 83,823 | 30% |
+| 83,824 -- 180,294 | 41% |
+| Above 180,294 | 45% |
 
 **France uses a family quotient system (quotient familial). Rates apply per "part" (share). A single person = 1 part; a married couple = 2 parts; each child = 0.5 additional part. Taxable income is divided by number of parts, rates applied, then multiplied back.**
 
