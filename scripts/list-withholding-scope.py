@@ -220,6 +220,53 @@ produced, roughly 40% were artefacts of how it measures. A checker that has not
 been measured against its own blind spots is reporting its shape as much as the
 corpus's.
 
+WHAT THE TAIL OF THE QUEUE ACTUALLY IS
+
+Worth knowing before anyone budgets time against the remaining entries. After
+the artefacts were removed and the well-sourced jurisdictions worked, the queue
+was measured against the corpus's main source by asking PwC's Worldwide Tax
+Summaries for each remaining jurisdiction's `corporate/withholding-taxes` page.
+
+Of the twelve small jurisdictions left — Andorra, Belarus, Benin, Bhutan, Cuba,
+Eritrea, Iran, Libya, Sao Tome and Principe, Suriname, Tajikistan and Togo —
+that page exists for exactly **one**. Libya. Eleven return 404, Belarus among
+them (PwC no longer covers it at all).
+
+And Libya, the one with a page, turned out to levy **no withholding tax
+whatsoever**, so working it added no head to the corpus — it converted three
+hedged near-denials into a stated zero and a warning that a foreign contractor
+is still assessed on deemed profit at contract registration.
+
+So the tail of this queue is not a backlog of pages nobody has opened. It is the
+set of jurisdictions the corpus's main source does not cover. Closing them means
+national gazettes, regional firm tax cards, or a paid database, at a different
+order of cost per jurisdiction than the Kenya and Laos cases. That is the honest
+reason the queue stops shrinking, and it should be stated rather than left to
+look like inattention.
+
+A KNOWN MISS: PAYE KEEPS A ZERO-WHT JURISDICTION OUT OF THE ZERO LIST
+
+Libya levies no withholding taxes at all — PwC states it in one line, "Libyan
+law has no withholding taxes (WHTs)" — so once its guide said so plainly it
+should have been reported as `zero-wht` rather than queued. It is not. Its
+payroll guide carries "Employers withhold personal income tax (5%/10%) at
+source from salaries", `is_zero` sees a non-zero rate on a withholding-labelled
+line, and `nonzero[libya]` is set.
+
+That is wrong in principle: PAYE on salaries is employment withholding, a
+different tax from the non-resident payment withholding this script models.
+Every zero-WHT jurisdiction that also has a payroll guide with a rate will be
+misclassified the same way. The eleven currently on the zero list escape it only
+because places like the British Virgin Islands and Cayman have no income tax to
+run PAYE on.
+
+Left as a known miss rather than patched, and asserted in the selftest so it
+stays known. Excluding lines whose label says payroll, PAYE, salary or wages
+would fix Libya and would also suppress a genuine non-resident employment-income
+head wherever one exists — and the practical cost here is zero, because Libya
+now names four heads and has left the queue on its own. Recording the shape is
+worth more than a rule that trades one misclassification for another.
+
 A THIRD BLIND SPOT: NOT EVERY DIRECTORY IS A JURISDICTION THAT WITHHOLDS
 
 Found the same way as the first two, on the third pass through the queue. Four
@@ -426,7 +473,22 @@ def selftest():
     # prose, whatever words it contains
     assert heads_in('Withholding taxes apply to dividends, interest and royalties, '
                     'subject to EU directives and tax treaties.') is None
-    print('selftest: %d cases pass' % len(cases))
+
+    # zero detection, including the phrasings the hand pass wrote into the guides
+    assert is_zero('**0% -- Libya levies no withholding tax on dividends**')
+    assert is_zero('**Libya levies no withholding taxes at all.** Not on '
+                   'dividends, interest, royalties, services or rent')
+    assert is_zero('None')
+    assert not is_zero('15% on the gross fee')
+
+    # KNOWN MISS, documented above: a payroll PAYE line keeps a zero-WHT
+    # jurisdiction off the zero list, because employment withholding is a
+    # different tax from the non-resident payment withholding modelled here and
+    # nothing distinguishes them at this level.
+    assert not is_zero('Employers withhold personal income tax (5%/10%) at '
+                       'source from salaries and remit it monthly')
+    print('selftest: %d cases pass (plus zero detection and 1 known miss)'
+          % len(cases))
 
 
 def show(jur, root='skills'):

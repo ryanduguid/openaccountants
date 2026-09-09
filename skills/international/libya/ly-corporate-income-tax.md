@@ -3,7 +3,7 @@ name: ly-corporate-income-tax
 description: "Source-cited draft: corporate income tax for Libya (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
 jurisdiction: LY
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-09
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -18,9 +18,31 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Tax base** — Worldwide income — income arising both in Libya and abroad is assessable  _([Income Tax Law No. 7 of 2010](https://taxsummaries.pwc.com/libya/corporate/taxes-on-corporate-income))_
 - **Jihad tax surcharge** — Abolished — previously 4% on CIT  _([Income Tax Law No. 7 of 2010](https://taxsummaries.pwc.com/libya/corporate/significant-developments))_
 - **Stamp duty on contracts** — Main service/supply contracts 1% of value; subcontracts 0.1% percent  _([Stamp Duty Law](https://taxsummaries.pwc.com/libya/corporate/other-taxes))_
-- **Withholding tax on dividends** — Generally no separate dividend withholding tax in Libya ((approx — confirm))  _([Income Tax Law No. 7 of 2010](https://taxsummaries.pwc.com/libya/corporate/withholding-taxes))_
-- **Withholding tax on interest** — No general statutory interest withholding tax regime ((approx — confirm))  _([Income Tax Law No. 7 of 2010](https://taxsummaries.pwc.com/libya/corporate/withholding-taxes))_
-- **Withholding tax on royalties** — No general statutory royalty withholding tax regime ((approx — confirm))  _([Income Tax Law No. 7 of 2010](https://taxsummaries.pwc.com/libya/corporate/withholding-taxes))_
+- **Withholding tax — the general rule** — **Libya levies no withholding taxes at all.** Not on dividends, interest, royalties, services, contractors or rent, and not to residents or non-residents. This is a statement of the whole regime, not a list of the heads that happen to be exempt  _([Income Tax Law No. 7 of 2010](https://taxsummaries.pwc.com/libya/corporate/withholding-taxes))_
+- **Withholding tax on dividends** — **0% — Libya levies no withholding tax on dividends**  _([Income Tax Law No. 7 of 2010](https://taxsummaries.pwc.com/libya/corporate/withholding-taxes))_
+- **Withholding tax on interest** — **0% — Libya levies no withholding tax on interest**  _([Income Tax Law No. 7 of 2010](https://taxsummaries.pwc.com/libya/corporate/withholding-taxes))_
+- **Withholding tax on royalties** — **0% — Libya levies no withholding tax on royalties**  _([Income Tax Law No. 7 of 2010](https://taxsummaries.pwc.com/libya/corporate/withholding-taxes))_
+- **Withholding tax on service and contractor payments** — **0% — Libya levies no withholding tax on payments for services or to contractors.** See the deemed-profit warning below: the absence of withholding does not mean the absence of Libyan tax  _([Income Tax Law No. 7 of 2010](https://taxsummaries.pwc.com/libya/corporate/withholding-taxes))_
+
+> **"No withholding tax" is not "no tax" — and for a foreign contractor it is
+> the more expensive answer.**
+>
+> Because Libya withholds nothing, a foreign entity's Libyan tax is not settled
+> at source and does not go away. An **unregistered foreign entity** has its
+> corporate income tax assessed on a **deemed-profit basis when the contract is
+> registered**. That is a direct assessment on the entity, not a deduction by
+> the payer, so:
+>
+> - there is no rate for the Libyan payer to apply and no certificate to issue;
+> - the foreign contractor carries the Libyan filing and payment obligation
+>   itself; and
+> - the exposure is sized by the deemed-profit margin applied at registration,
+>   not by a percentage of the invoice.
+>
+> An agent that reads "0% withholding" and stops has answered the payer's
+> question and missed the contractor's liability entirely. Confirm the current
+> deemed-profit percentages with a Libya-registered adviser before pricing a
+> contract  _([PwC Worldwide Tax Summaries, Libya — corporate withholding taxes](https://taxsummaries.pwc.com/libya/corporate/withholding-taxes))_
 - **Annual return filing deadline** — Within four months of year-end, or within one month of the audit report, whichever is earlier  _([Income Tax Law No. 7 of 2010](https://taxsummaries.pwc.com/libya/corporate/tax-administration))_
 - **Payment dates** — CIT payable quarterly on 10 March, 10 June, 10 September and 10 December, commencing the first quarter date after an assessment is issued  _([Income Tax Law No. 7 of 2010](https://taxsummaries.pwc.com/libya/corporate/tax-administration))_
 - **Tax year** — Generally the calendar year; a company's own year-end is permitted with prior Tax Department approval  _([Income Tax Law No. 7 of 2010](https://taxsummaries.pwc.com/libya/corporate/tax-administration))_
