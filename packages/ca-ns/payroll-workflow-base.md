@@ -16,7 +16,7 @@ last_updated: 2026-06-12
 
 **This file contains workflow architecture only.** It defines how Claude should approach a payroll computation task: the order of operations, how to calculate gross-to-net pay, how to handle statutory deductions, how to produce payslips and payroll journals, what to check before delivering. It contains no tax brackets, no social security rates, no employer contribution percentages, no minimum wage figures, no overtime multipliers, no filing deadlines, no return form names.
 
-**This file must always be loaded with a country-specific payroll skill** that provides the withholding tables, social security rates, employer contribution schedules, and local employment law parameters (e.g., `uk-payroll`, `au-payroll`, `de-payroll`). This file alone cannot produce a payslip, a payroll journal, or a filing calendar. Loading it without a companion is a configuration error and Claude must refuse to proceed.
+**This file must always be loaded with a country-specific payroll skill** that provides the withholding tables, social security rates, employer contribution schedules, and local employment law parameters (e.g., `uk-payroll`, `australia-payroll`, `de-payroll`). This file alone cannot produce a payslip, a payroll journal, or a filing calendar. Loading it without a companion is a configuration error and Claude must refuse to proceed.
 
 **This file is the contract.** When a country payroll skill says it conforms to v1.0 of this base, it means: it fills the country slots specified in Section 6, it produces outputs in the format specified in Section 3, its computations can be validated by the self-checks in Section 5, and it participates in the workflow in Section 1.
 

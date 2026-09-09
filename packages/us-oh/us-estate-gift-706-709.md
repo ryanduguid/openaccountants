@@ -29,7 +29,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ### 1.2 Out of scope
 
-- **Form 1041 fiduciary income tax** — Form 1041 — Income tax of the estate or trust. Fiduciary income tax is a separate regime under Subchapter J; addressed by `us-form-1041-fiduciary-income` (not yet released).  _(Subchapter J)_
+- **Form 1041 fiduciary income tax** — Form 1041 — Income tax of the estate or trust. Fiduciary income tax is a separate regime under Subchapter J; addressed by `us-form-1041-trust-and-estate-income` (not yet released).  _(Subchapter J)_
 - **State estate, inheritance, and gift taxes** — Covered at overview level only (see Section 12); each affected state requires its own Tier 2 skill for filing.
 - **Non-resident alien decedent returns on Form 706-NA** — Mentioned in Section 13 but not produced under this skill; the §60,000 NRA exemption and treaty modifications are sufficiently jurisdiction-specific to warrant dedicated review.  _(§60,000 NRA exemption)_
 - **QDOT regulations under §2056A** — Qualified domestic trust (QDOT) regulations under §2056A for non-citizen surviving spouses. Mentioned in Section 7.5; technical QDOT drafting and Schedule M election require a trust and estate attorney.  _(§2056A)_

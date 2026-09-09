@@ -31,7 +31,7 @@ This skill governs employer payroll obligations in the State of Colorado for tax
 - Construction industry compliance overlays: separate SUTA rate schedule, HB 19-1267 wage-theft criminal exposure, and the construction-employee retainage rules.
 
 Out of scope:
-- Federal income tax withholding, FICA, FUTA — see `us-federal-payroll` and `us-payroll-fundamentals`.
+- Federal income tax withholding, FICA, FUTA — see `us-form-941-940-payroll`. (There is no separate `us-payroll-fundamentals` guide in this repository.)
 - Local occupational privilege taxes ("OPT" or "head taxes") imposed by Denver, Aurora, Glendale, Greenwood Village, and Sheridan — see `co-local-opt`. This skill mentions them only at the integration points.
 - Workers' compensation insurance under C.R.S. §8-40-101 et seq.
 - ERISA-governed retirement plans, except where the Colorado SecureSavings state mandate intersects with payroll. SecureSavings registration enforcement is addressed in `co-securesavings`.
@@ -153,7 +153,7 @@ Workpapers MUST document the 20-week headcount computation and retain the underl
 
 ### 4.4 Private plan substitution
 
-- **Private plan substitution rules** — An employer may apply to CDLE-FAMLI for approval to substitute a private paid-leave plan that meets or exceeds FAMLI benefits and costs no more to the employee than the FAMLI program. Approval is on a one-year basis renewable annually; private-plan employers are exempt from the 0.9% premium but pay a separate administrative fee to CDLE-FAMLI. This skill does not deep-dive private plan administration — refer to `co-famli-private-plan` (planned).  _(CDLE-FAMLI private plan program)_
+- **Private plan substitution rules** — An employer may apply to CDLE-FAMLI for approval to substitute a private paid-leave plan that meets or exceeds FAMLI benefits and costs no more to the employee than the FAMLI program. Approval is on a one-year basis renewable annually; private-plan employers are exempt from the 0.9% premium but pay a separate administrative fee to CDLE-FAMLI. This skill does not deep-dive private plan administration — refer to a private-plan FAMLI guide (not present in this repository — work the private-plan rules from the CDLE approval documents) (planned).  _(CDLE-FAMLI private plan program)_
 
 ### 4.5 Job protection
 

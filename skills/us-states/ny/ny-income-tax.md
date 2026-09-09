@@ -19,7 +19,7 @@ This is the **load-bearing skill in the NY stack**. It owns the NYAGI computatio
 
 This skill cannot produce any output on its own. It must be loaded alongside `us-tax-workflow-base` for the workflow runbook, the standard output specification, the global refusals, the seventeen base self-checks, and the citation discipline rule. It assumes the federal return has already been prepared by the federal stack (`us-sole-prop-bookkeeping` → `us-schedule-c-and-se-computation` → `us-qbi-deduction` → `us-self-employed-retirement` → `us-self-employed-health-insurance` → `us-federal-return-assembly`) and that the federal AGI is locked before this skill runs. It does not recompute any federal position.
 
-**Execution pacing.** When this skill is invoked inside the `us-federal-ny-return-assembly` orchestrator, it runs its computations without pausing for user meta-questions. Self-check failures become reviewer flags, not workflow halts. Primary source citations belong in the final reviewer brief section, not in intermediate computation steps. The reviewer signs the return; the skill's job is to do the mechanical and well-documented preparation work that makes the reviewer's job fast and accurate.
+**Execution pacing.** When this skill is invoked inside the `us-ny-return-assembly` orchestrator, it runs its computations without pausing for user meta-questions. Self-check failures become reviewer flags, not workflow halts. Primary source citations belong in the final reviewer brief section, not in intermediate computation steps. The reviewer signs the return; the skill's job is to do the mechanical and well-documented preparation work that makes the reviewer's job fast and accurate.
 
 **The reviewer assumption.** Every output from this skill is reviewed by a human tax professional credentialed under Circular 230 (Enrolled Agent, CPA, or attorney) before it reaches the taxpayer or NYSDTF. The skill is not the preparer of record. The reviewer is.
 
@@ -47,7 +47,7 @@ This skill cannot produce any output on its own. It must be loaded alongside `us
 - PTET (Pass-Through Entity Tax) election scenarios under AB 2522 (2021) — these are for multi-owner pass-throughs, not disregarded SMLLCs
 - NYC Unincorporated Business Tax computation itself (the NYC-202/NYC-202S preparation is in `nyc-unincorporated-business-tax`; this skill only handles the IT-219 credit flow back to IT-201)
 - Form IT-204-LL filing fee computation (this is in `ny-llc-filing-fee-it-204-ll`; this skill references it but does not prepare it)
-- NY estimated tax computation for 2026 (this is in `ny-estimated-tax-it-2105`; this skill produces inputs but does not compute the safe harbor)
+- NY estimated tax computation for 2026 (this is in `ny-estimated-tax`; this skill produces inputs but does not compute the safe harbor)
 - Claim of right credit (§615(d)) and other complex carryover credits
 - NY Credit for taxes paid to another state or jurisdiction (for residents who earned income taxed by another state) — this is a complex allocation exercise that belongs in a separate skill
 - Returns for deceased taxpayers, decedent estate returns, or fiduciary returns
@@ -487,7 +487,7 @@ These positions run first and gate everything downstream. If any of them refuses
 
 The individual income components (wages, interest, dividends, business income, capital gains, IRA distributions, pension income, Social Security, etc.) flow to Form IT-201 lines 1 through 19 individually. Line 19 is the "federal AGI from your federal return" reconciliation check.
 
-**Conservative default.** If the federal return is not locked, refuse to proceed. The orchestrator `us-federal-ny-return-assembly` enforces the federal-before-state execution order.
+**Conservative default.** If the federal return is not locked, refuse to proceed. The orchestrator `us-ny-return-assembly` enforces the federal-before-state execution order.
 
 **Source.** NY Tax Law §611 (NY taxable income starts from federal taxable income, but the mechanics via §612 effectively make the starting point federal AGI); Form IT-201-I (2025), Step 3.
 
@@ -997,7 +997,7 @@ Payments flow to Lines 63-75: refundable credits, NY/NYC/Yonkers withholding (fr
 
 Line 76 = total payments. If Line 76 > Line 61, the difference is overpaid (Line 77). If Line 76 < Line 61, the difference is owed (Line 78).
 
-**Critical reviewer flag:** If Line 78 (amount owed) is significant (> $1,000), the taxpayer may owe an underpayment penalty. Form IT-2105.9 computes this penalty. The skill produces the balance due figure but defers the penalty computation to `ny-estimated-tax-it-2105`.
+**Critical reviewer flag:** If Line 78 (amount owed) is significant (> $1,000), the taxpayer may owe an underpayment penalty. Form IT-2105.9 computes this penalty. The skill produces the balance due figure but defers the penalty computation to `ny-estimated-tax`.
 
 **Conservative default.** Compute the balance correctly. Do not apply an estimated underpayment penalty in this skill — that is the estimated tax skill's job.
 
@@ -1018,7 +1018,7 @@ The positions must execute in this order:
 7. 5.22-5.25 NYC layer (only if NYC resident; can run in parallel with 5.26-5.27 Yonkers layer and 5.28-5.30 MCTMT layer)
 8. 5.31 Refundable credits → 5.32 Total NY taxes → 5.33 Total sub-state → 5.34 Final balance
 
-Any position that refuses halts the workflow. The orchestrator `us-federal-ny-return-assembly` enforces this order.
+Any position that refuses halts the workflow. The orchestrator `us-ny-return-assembly` enforces this order.
 
 ---
 
@@ -1068,7 +1068,7 @@ Sections 6-14 remain for Turns 3 and 4. Estimated total file length at completio
 | 19 | Empire State Child Credit phase-out computation produces a fractional amount | Round to the nearest dollar; document the computation in the reviewer brief | NY Tax Law §606(c-1); Form IT-213 instructions |
 | 20 | NY EIC is claimed but the federal EIC is contested or the taxpayer is near the federal phase-out | Defer to the federal return's final EIC amount; 30% of the federal figure, no independent computation | NY Tax Law §606(d); Form IT-215 |
 | 21 | Payments from Form IT-2105 vouchers are claimed but voucher receipts are not produced | Flag for reviewer; do not include un-documented estimated payments | Form IT-201 (2025) Line 75 |
-| 22 | Taxpayer owes more than $1,000 on Line 78 but has not run the underpayment penalty computation | Note the balance due; defer penalty computation to the `ny-estimated-tax-it-2105` skill; do not estimate the penalty in this skill | Form IT-2105.9; Position 5.34 |
+| 22 | Taxpayer owes more than $1,000 on Line 78 but has not run the underpayment penalty computation | Note the balance due; defer penalty computation to the `ny-estimated-tax` skill; do not estimate the penalty in this skill | Form IT-2105.9; Position 5.34 |
 | 23 | Form IT-225 addition modification amount is close to the standard deduction (making the NY tax near-zero) | Double-check the A-201 UBT add-back arithmetic; a missing UBT add-back can materially understate NY tax | Form IT-225-I (2025) code A-201 |
 | 24 | Taxpayer has a 2025 retirement contribution deadline that extends past April 15, 2026 (e.g., SEP with extended federal return) | Use the federal return's treatment; do not compute NY separately | Position 5.3; federal return is source of truth |
 
@@ -1282,7 +1282,7 @@ Line 54a = **$1,119**.
 **Reviewer brief entries.**
 - Position 5.15 §174A: N/A (no R&E).
 - High flag: NYC UBT credit of $1,246 flowing from Form IT-219 — verify cross-skill chain with `nyc-unincorporated-business-tax` skill output (UBT $2,800).
-- High flag: Balance due $1,185 — under the $5,000 reviewer attention threshold but close to the $1,000 underpayment penalty floor; route to `ny-estimated-tax-it-2105` for penalty computation.
+- High flag: Balance due $1,185 — under the $5,000 reviewer attention threshold but close to the $1,000 underpayment penalty floor; route to `ny-estimated-tax` for penalty computation.
 - Reviewer attention: NYAGI $122,060 used the recapture worksheet band; verify the Section 3 worksheet computation.
 - Reviewer attention: A-201 UBT add-back $2,800 matches the federal Schedule C Line 23 deduction of $2,800; verified.
 
@@ -1565,7 +1565,7 @@ NYC tax = 3.078% × $12,000 + 3.762% × $13,000 + 3.819% × $25,000 + 3.876% × 
 - **High flag: NYC UBT credit $3,864** at the 23% floor rate. Verify Form IT-219 computation and confirm NYC taxable income > $142,000.
 - **High flag: MCTMT Zone 1 $3,241** at the 0.60% rate. Verify NESE allocation (all Zone 1 because all work is Manhattan-based).
 - Reviewer attention: NYAGI in the $211,550 to $1,077,550 recapture band — verify the correct worksheet was used (there are multiple bands at higher income levels).
-- Reviewer attention: Balance due $4,179 approaches the $5,000 threshold and is well above the $1,000 underpayment penalty floor. Route to `ny-estimated-tax-it-2105` for penalty computation. Jake's prior-year tax was likely in a similar range; the 110% safe harbor applies (prior-year NYAGI > $150,000 triggers 110% requirement).
+- Reviewer attention: Balance due $4,179 approaches the $5,000 threshold and is well above the $1,000 underpayment penalty floor. Route to `ny-estimated-tax` for penalty computation. Jake's prior-year tax was likely in a similar range; the 110% safe harbor applies (prior-year NYAGI > $150,000 triggers 110% requirement).
 - Sanity check: Total NY + NYC + MCTMT effective rate on $511,800 NYAGI = $52,179 / $511,800 = **10.2%**. This is consistent with the top-band marginal rates and is a useful reasonableness check.
 
 ---
@@ -2158,20 +2158,20 @@ This skill interacts with the following other skills in the Accora stack. Each i
 
 #### `ny-llc-filing-fee-it-204-ll`
 - **Payload:** Whether the taxpayer must file IT-204-LL (yes if SMLLC with any NY source income), the $25 fee amount, and the March 16, 2026 due date.
-- **Order:** This skill does not depend on IT-204-LL computation to produce IT-201. The two returns are independent in computation but both flow into the final deliverable. The orchestrator `us-federal-ny-return-assembly` coordinates them.
+- **Order:** This skill does not depend on IT-204-LL computation to produce IT-201. The two returns are independent in computation but both flow into the final deliverable. The orchestrator `us-ny-return-assembly` coordinates them.
 
 #### `nyc-unincorporated-business-tax` (to be built next)
 - **Payload:** NYC UBT liability amount, Form NYC-202 or NYC-202S status, UBT paid during 2025 (the A-201 add-back source), and the Form IT-219 credit input.
 - **Order:** **This skill depends on the NYC UBT skill's output.** Position 5.8 (A-201 add-back) and Position 5.24 (IT-219 credit computation) both consume the UBT amount. The orchestrator runs the NYC UBT skill before this skill's NYC-dependent positions.
 - **Interaction point:** Position 5.24 receives the UBT-paid figure and applies the IT-219 sliding-scale; the resulting credit flows back to IT-201 Line 53.
 
-#### `ny-estimated-tax-it-2105` (to be built)
+#### `ny-estimated-tax` (to be built)
 - **Payload:** 2026 quarterly estimated tax vouchers (prospective) and 2025 underpayment penalty computation (retrospective, if applicable).
 - **Order:** This skill produces the inputs (2025 NY tax, 2024 NY tax for safe harbor, balance due) but does NOT compute the penalty or the 2026 vouchers. The ny-estimated-tax skill consumes this skill's output.
 
 ### Orchestrator
 
-#### `us-federal-ny-return-assembly` (to be built)
+#### `us-ny-return-assembly` (to be built)
 - **Purpose:** Enforces the execution order: federal stack → ny-it-201-resident-return → nyc-unincorporated-business-tax (if applicable) → ny-llc-filing-fee-it-204-ll (if applicable) → ny-estimated-tax-it-2105 (for 2026 planning).
 - **Responsibility:** Produces the final unified reviewer package with the federal return, the NY return, the NYC UBT return (if any), the IT-204-LL filing (if any), and the 2026 estimated tax schedule. Runs the cross-skill reconciliation check (A-201 add-back vs UBT paid; IT-219 credit vs UBT paid; MCTMT NESE vs Schedule C).
 
@@ -2262,7 +2262,7 @@ This skill follows the Accora skill versioning convention: `vMAJOR.MINOR` where 
 - 6 worked examples in Section 9
 - 22 intake form additions (NY201-1 through NY201-22) in Section 11
 - Self-checks 28-46 in Section 12
-- Cross-skill coordination with `ny-llc-filing-fee-it-204-ll`, `nyc-unincorporated-business-tax` (pending), `ny-estimated-tax-it-2105` (pending)
+- Cross-skill coordination with `ny-llc-filing-fee-it-204-ll`, `nyc-unincorporated-business-tax` (pending), `ny-estimated-tax` (pending)
 - Position 5.15 §174A uncertainty handled via two-path reviewer decision with R-NY201-5 refusing material positions
 - Currency date: April 2026; Hochul FY 2026-27 Executive Budget §174A proposal monitored but not enacted
 
@@ -2349,9 +2349,9 @@ This turn drafted the final five sections (10-14) of `ny-it-201-resident-return`
 1. Kevin or Darren review of the complete skill
 2. Four remaining NY skills to build:
    - `nyc-unincorporated-business-tax` (~1,800 lines, the biggest remaining)
-   - `ny-estimated-tax-it-2105` (~700 lines)
+   - `ny-estimated-tax` (~700 lines)
    - `us-multi-state-sole-prop-intake` (updates to existing intake)
-   - `us-federal-ny-return-assembly` orchestrator (~500 lines)
+   - `us-ny-return-assembly` orchestrator (~500 lines)
 3. Cross-skill validation: run a test case through the full NY stack end-to-end to verify the A-201 UBT add-back, IT-219 credit flow, and MCTMT computations all reconcile correctly
 
 ---

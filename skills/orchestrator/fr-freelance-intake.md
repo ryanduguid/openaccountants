@@ -546,9 +546,9 @@ For an unprepared user (has to go fetch documents):
 
 **Downstream skills triggered (via fr-return-assembly):**
 - `france-tva` -- TVA return (CA3/CA12) or franchise en base verification
-- `france-income-tax` -- Déclaration de revenus (2042 / 2042-C-PRO / 2035 / 2031)
+- `fr-income-tax` -- Déclaration de revenus (2042 / 2042-C-PRO / 2035 / 2031)
 - `france-cotisations` -- Cotisations sociales (URSSAF micro-social or TNS réel)
-- `fr-estimated-tax` -- Prélèvement à la source rate update and acomptes contemporains
+- French instalment payments (**not present in this repository** — acomptes are covered inside `fr-income-tax`) -- Prélèvement à la source rate update and acomptes contemporains
 
 ### Change log
 

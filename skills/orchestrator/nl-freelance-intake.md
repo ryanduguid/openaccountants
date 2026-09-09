@@ -573,7 +573,7 @@ For an unprepared user (has to go fetch documents):
 **Outputs:** Structured intake package consumed by `nl-return-assembly`.
 
 **Downstream skills triggered (via nl-return-assembly):**
-- `nl-btw-return` -- BTW-aangifte (quarterly/monthly or KOR annual)
+- `nl-vat-return` -- BTW-aangifte (quarterly/monthly or KOR annual)
 - `nl-income-tax` -- Aangifte inkomstenbelasting (Box 1/2/3)
 - `nl-zvw` -- Zorgverzekeringswet bijdrage reconciliation
 

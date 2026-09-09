@@ -34,7 +34,7 @@ This skill is the authoritative Tier 2 content layer for Oregon employer payroll
 
 ### 1.2 What this skill does NOT cover
 
-- Oregon Corporate Activity Tax (CAT) — see `or-corporate-activity-tax`
+- Oregon Corporate Activity Tax (CAT) — see `or-cat`
 - Oregon individual income tax return preparation — see `or-income-tax`
 - Federal payroll (FICA, FUTA, federal income tax withholding, Form 941, Form 940) — outside scope; covered elsewhere
 - Multistate apportionment for employers outside Oregon with zero Oregon nexus

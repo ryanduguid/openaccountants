@@ -40,7 +40,7 @@ This skill provides the technical content for the three flagship TCJA internatio
 | Topic | Why deferred | Refer to |
 | --- | --- | --- |
 | §901(j) sanctioned country FTC denial | Country list shifts; sanctions law overlay | Treasury OFAC + specialist FTC skill |
-| Foreign tax credit basket mechanics beyond GILTI basket | Full §904 limitation calc is its own skill | `us-foreign-tax-credit` (not yet authored) |
+| Foreign tax credit basket mechanics beyond GILTI basket | Full §904 limitation calc is its own skill | `us-foreign-tax-credit-1116` (not yet authored) |
 | Inbound (FDAP / ECI) taxation under §871, §881, §882 | Different conceptual frame | Inbound skill (not yet authored) |
 | FIRPTA §897 | Real estate-specific | FIRPTA skill |
 | Treaty analysis and LOB clauses | Treaty-by-treaty | Treaty-specific skills |

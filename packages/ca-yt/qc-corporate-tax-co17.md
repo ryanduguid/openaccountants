@@ -598,7 +598,7 @@ Quebec CIT and federal CIT are computed on the same accounting starting point (f
 
 | Topic | Skill |
 | --- | --- |
-| Federal Corporate Income Tax (T2) | `canada-corporate-tax-t2` |
+| Federal Corporate Income Tax (T2) | **Not present in this repository.** The Canadian pack covers `ca-fed-t2125` (self-employment) and this Quebec CO-17 guide; the federal T2 must be prepared outside these guides |
 | Canadian corporate formation | `canada-formation` |
 | Quebec personal income tax (TP-1) | `qc-individual-return` |
 | Quebec Sales Tax (QST / TVQ) | `qc-qst-return` |

@@ -251,7 +251,7 @@ Ontario and US customers are charged GST/HST as applicable (5% GST for US zero-r
 - **Form FIN 418** — Application for Registration for Provincial Sales Tax.
 - **Form FIN 490** — Certificate of Exemption — General.
 
-> **Coordinate with:** `canada-gst-hst` (5% federal GST overlay on every BC taxable sale), `ca-bc-individual-return` (BC personal income tax — separate regime), and any sector-specific skill for liquor, cannabis, or fuel tax which fall outside this skill's scope.
+> **Coordinate with:** `canada-gst-hst` (5% federal GST overlay on every BC taxable sale), `bc-individual-return` (BC personal income tax — separate regime), and any sector-specific skill for liquor, cannabis, or fuel tax which fall outside this skill's scope.
 
 ## Talk to a verified accountant
 

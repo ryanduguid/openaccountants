@@ -713,9 +713,9 @@ The following items in this skill should be flagged for reviewer confirmation:
 
 - Federal Schedule C, Schedule SE — see `us-sole-prop-bookkeeping` and `us-schedule-c-and-se-computation`
 - Federal Form 1120S — see federal S-corp skill (pending)
-- Virginia individual income tax computation — see `va-individual-income-tax` (pending)
-- Virginia sales and use tax — see `va-sales-use-tax` (pending)
-- Virginia M&T and personal property — see `va-local-property-taxes` (pending)
+- Virginia individual income tax computation — see `va-income-tax` (pending)
+- Virginia sales and use tax — see `va-sales-tax` (pending)
+- Virginia M&T and personal property — see Virginia local property taxes (**not present in this repository**) (pending)
 
 ## End of skill
 

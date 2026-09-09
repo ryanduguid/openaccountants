@@ -545,7 +545,7 @@ ND Oil & Gas Gross Production Tax        (varies — typically a similar magnitu
 Total entity-level ND tax              ~$5M+
 ```
 
-**Takeaway — audit flash point.** The severance taxes are vastly larger than the CIT for an ND oil producer and are governed by entirely separate statutes and forms. A new ND practitioner who attempts to net severance tax against CIT, or to claim a CIT credit, will produce a materially wrong return. The two regimes are independent. The only interaction is that the severance taxes are federally deductible (reducing federal taxable income, which is the starting point for ND CIT). For the actual severance computation, refer to a dedicated `nd-oil-extraction-tax` skill (not yet authored as of v0.1).
+**Takeaway — audit flash point.** The severance taxes are vastly larger than the CIT for an ND oil producer and are governed by entirely separate statutes and forms. A new ND practitioner who attempts to net severance tax against CIT, or to claim a CIT credit, will produce a materially wrong return. The two regimes are independent. The only interaction is that the severance taxes are federally deductible (reducing federal taxable income, which is the starting point for ND CIT). For the actual severance computation, refer to a dedicated ND oil extraction and gross production taxes (**not present in this repository**; N.D.C.C. chs. 57-51 and 57-51.1) skill (not yet authored as of v0.1).
 
 ## 12. Quick Reference Summary Table
 
