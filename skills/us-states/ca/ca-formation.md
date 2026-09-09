@@ -326,7 +326,7 @@ For 2025:
 - Form LLC-12 by mid-April 2025 (within 90 days of January 15 formation): $20.
 - Form 568 for 2025 will report all California-related activity and reconcile.
 
-**Plus California sales tax:** as a California retailer selling tangible personal property, the entrepreneur must register with the CDTFA for a seller's permit (free), collect California sales tax on California-destination sales (statewide 7.25% plus local district taxes — combined ~9.0%–10.5% in most metro areas), and file CDTFA-401 quarterly or annually depending on volume. Sales tax mechanics are covered in `california-sales-use-tax`. The entrepreneur should also register for sales tax in other states where economic-nexus thresholds (Wayfair) are met based on the $140,000 of out-of-state sales — most states' economic-nexus thresholds are $100,000 of sales or 200 transactions.
+**Plus California sales tax:** as a California retailer selling tangible personal property, the entrepreneur must register with the CDTFA for a seller's permit (free), collect California sales tax on California-destination sales (statewide 7.25% plus local district taxes — combined ~9.0%–10.5% in most metro areas), and file CDTFA-401 quarterly or annually depending on volume. Sales tax mechanics are covered in `california-sales-tax`. The entrepreneur should also register for sales tax in other states where economic-nexus thresholds (Wayfair) are met based on the $140,000 of out-of-state sales — most states' economic-nexus thresholds are $100,000 of sales or 200 transactions.
 
 **Plus federal:** the $90,000 of net SMLLC profit flows to the entrepreneur's Schedule C. Self-employment tax under IRC §1401 applies; QBI deduction under §199A may apply (retail is non-SSTB). See `us-sole-prop-bookkeeping`, `us-schedule-c-and-se-computation`, and `us-qbi-deduction`.
 
@@ -413,7 +413,7 @@ All outputs include the standard reviewer disclaimer: this is a draft for review
 ## 14. Refusals and Out-of-Scope
 
 - **Federal entity classification mechanics out of scope** — Delegated to `us-s-corp-election-decision` and to federal entity-election skills.  _(14. Refusals and Out-of-Scope)_
-- **California sales and use tax out of scope** — Delegated to `california-sales-use-tax`.  _(14. Refusals and Out-of-Scope)_
+- **California sales and use tax out of scope** — Delegated to `california-sales-tax`.  _(14. Refusals and Out-of-Scope)_
 - **California payroll tax (EDD) out of scope** — Out of scope. A separate payroll-tax skill is required.  _(14. Refusals and Out-of-Scope)_
 - **Nonresident individual returns (Form 540NR) out of scope** — Out of scope. Use a 540NR-specific skill.  _(14. Refusals and Out-of-Scope)_
 - **Series LLCs not recognized** — California does not recognize series LLCs as separate taxable entities. Any series LLC formed in another state and doing business in California is treated as a single LLC for California purposes, with one $800 minimum franchise tax for the master series.  _(14. Refusals and Out-of-Scope)_

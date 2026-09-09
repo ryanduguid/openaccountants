@@ -351,7 +351,7 @@ All files are placed in `/mnt/user-data/outputs/` and presented to the user via 
 
 Inputs:
 - `nl-freelance-intake` -- structured intake package (JSON)
-- `nl-btw-return` -- BTW-aangifte rubriek values and classification output
+- `nl-vat-return` -- BTW-aangifte rubriek values and classification output
 - `nl-income-tax` -- IB-aangifte values and computation output (Box 1/2/3)
 - `nl-zvw` -- ZVW bijdrage reconciliation output
 

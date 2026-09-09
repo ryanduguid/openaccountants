@@ -439,8 +439,8 @@ For an unprepared user (has to go fetch documents):
 
 **Downstream skills triggered (via jp-return-assembly):**
 - `japan-consumption-tax` -- 消費税確定申告書 (consumption tax return)
-- `japan-income-tax` -- 所得税確定申告書 with 青色申告決算書 or 収支内訳書
-- `japan-social-insurance` -- 社会保険料 reconciliation (国民健康保険, 国民年金, 小規模企業共済)
+- `jp-income-tax` -- 所得税確定申告書 with 青色申告決算書 or 収支内訳書
+- `jp-social-insurance` -- 社会保険料 reconciliation (国民健康保険, 国民年金, 小規模企業共済)
 - `jp-estimated-tax` -- 予定納税 and estimated payments schedule
 
 ### Change log

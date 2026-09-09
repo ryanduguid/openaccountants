@@ -461,7 +461,7 @@ START: Is the in-state activity TPP-sales-related?
 - `us-pte-state-matrix` — state pass-through entity tax election framework.
 - `ca-540-individual-return`, `ca-smllc-form-568` — California taxpayer-side compliance.
 - `texas-sales-tax`, `tx-franchise-tax` — Texas state tax companions.
-- `california-sales-use-tax` — California sales/use tax companion.
+- `california-sales-tax` — California sales/use tax companion.
 - `us-tax-workflow-base` — Tier 1 workflow runbook (load first).
 
 All output of this skill must be reviewed and signed off by a Circular 230 practitioner (EA, CPA, or attorney) before delivery to the taxpayer or any state revenue department. The MTC interpretation is contested; constitutional defenses should be preserved in protective filings; voluntary disclosure decisions involve material commercial judgment beyond the scope of this skill.

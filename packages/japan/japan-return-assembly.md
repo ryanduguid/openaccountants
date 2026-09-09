@@ -401,8 +401,8 @@ All files are placed in `/mnt/user-data/outputs/` and presented to the user via 
 Inputs:
 - `jp-freelance-intake` -- structured intake package (JSON)
 - `japan-consumption-tax` -- 消費税 computation and form output
-- `japan-income-tax` -- 所得税確定申告書 and 決算書 computation output
-- `japan-social-insurance` -- 社会保険料 reconciliation output
+- `jp-income-tax` -- 所得税確定申告書 and 決算書 computation output
+- `jp-social-insurance` -- 社会保険料 reconciliation output
 - `jp-estimated-tax` -- 予定納税 schedule
 
 Outputs: The final reviewer package. No downstream skill.

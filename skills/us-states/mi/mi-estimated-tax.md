@@ -455,7 +455,7 @@ For W-2 couples, increasing Michigan withholding via MI-W4 line 6 ("additional a
 | ID | Situation | Action |
 | --- | --- | --- |
 | MI-EST-R-01 | Estate or trust estimated payments (MI-1041ES) | Refuse — separate fiduciary skill required |
-| MI-EST-R-02 | S-corp / partnership PTET estimated payments (MCL 206.813) | Refuse — load `mi-ptet-estimated-tax` (separate skill, pending) |
+| MI-EST-R-02 | S-corp / partnership PTET estimated payments (MCL 206.813) | Refuse — load Michigan flow-through entity tax estimates (**not present in this repository**) (separate skill, pending) |
 | MI-EST-R-03 | Corporate Income Tax estimates (Form 4913) | Refuse — load `mi-corporate-income-tax` |
 | MI-EST-R-04 | Multistate apportionment with Michigan as one of several states | Refuse — flag for professional review |
 | MI-EST-R-05 | Part-year or non-resident estimates (Schedule NR) | Refuse — out of scope |

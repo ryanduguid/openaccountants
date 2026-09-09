@@ -416,7 +416,7 @@ Inputs from `ny-it-201-resident-return`:
 - Owner residency confirmation (must match this skill's Position 5.2)
 - NYC vs. non-NYC residency within NY state (for the UBT cross-reference trigger)
 
-Outputs to `us-federal-ny-return-assembly` orchestrator:
+Outputs to `us-ny-return-assembly` orchestrator:
 - Completed Form IT-204-LL worksheet (or "not required — dormancy" determination)
 - $25 payment instruction (if required) with the March 16, 2026 due date
 - Reviewer brief section per Section 10 above
@@ -432,7 +432,7 @@ Does NOT interact with:
 - `us-self-employed-health-insurance` (health insurance is at the owner level)
 - `us-qbi-deduction` (QBI is computed at the owner level; disregarded LLC is transparent)
 - `us-quarterly-estimated-tax` (federal estimated tax is at the owner level)
-- `ny-estimated-tax-it-2105` (NY estimated tax is at the owner level)
+- `ny-estimated-tax` (NY estimated tax is at the owner level)
 
 The LLC-level filing is genuinely isolated from all the owner-level tax mechanics. This is deliberate and reflects the disregarded entity's tax-transparent status for federal income tax while maintaining separate compliance obligations with NY state.
 

@@ -222,7 +222,7 @@ Self-assessed RST on out-of-province purchases used in MB: Cloud hosting from a 
 
 ## Skill version footer
 
-*Skill version 1.0 — tax year 2025. Verification pending (Canadian provincial sales tax specialist). Federal GST/HST handled by the CRA / `ca-gst-hst` skill; this skill covers Manitoba RST only.*
+*Skill version 1.0 — tax year 2025. Verification pending (Canadian provincial sales tax specialist). Federal GST/HST handled by the CRA / `canada-gst-hst` skill; this skill covers Manitoba RST only.*
 
 ## Talk to a verified accountant
 

@@ -508,7 +508,7 @@ Taxable income cap = 20% × $425,093 = $85,019 (not binding)
 | --- | --- |
 | `us-quarterly-estimated-tax` | QBI deduction amount (reduces estimated tax liability) |
 | `us-federal-return-assembly` | QBI deduction for Form 1040 Line 13 |
-| `us-federal-tx-return-assembly` | QBI deduction for Texas-resident federal return |
+| `us-tx-return-assembly` | QBI deduction for Texas-resident federal return |
 | `us-ca-return-assembly` | QBI deduction for CA-resident federal return |
 
 ## Disclaimer

@@ -13,7 +13,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## 1. Scope
 
-This skill covers Minnesota state-level payroll tax and labor-law compliance for employers with one or more workers performing services in Minnesota during tax year 2025, with forward-looking guidance for the 2026 transition to the Minnesota Paid Leave program. It is designed to be loaded alongside `us-federal-payroll` (FICA, FUTA, federal withholding, Form 941, Form 940, W-2/W-3 federal copy) and any sibling state skills where the employer operates in more than one jurisdiction.
+This skill covers Minnesota state-level payroll tax and labor-law compliance for employers with one or more workers performing services in Minnesota during tax year 2025, with forward-looking guidance for the 2026 transition to the Minnesota Paid Leave program. It is designed to be loaded alongside `us-form-941-940-payroll` (FICA, FUTA, federal withholding, Form 941, Form 940, W-2/W-3 federal copy) and any sibling state skills where the employer operates in more than one jurisdiction.
 
 In scope:
 
@@ -30,9 +30,9 @@ In scope:
 
 Out of scope (handled by other skills or expressly excluded):
 
-- Federal income tax withholding, FICA, FUTA, ACA reporting → see `us-federal-payroll`.
-- Minnesota corporate income tax (M4) and pass-through entity tax → see `us-mn-business-tax`.
-- Minnesota sales and use tax → see `us-mn-sales-tax`.
+- Federal income tax withholding, FICA, FUTA, ACA reporting → see `us-form-941-940-payroll`.
+- Minnesota corporate income tax (M4) and pass-through entity tax → see `mn-corporate-and-pte`.
+- Minnesota sales and use tax → see `mn-sales-tax`.
 - Local-level employment ordinances (e.g., Minneapolis and Saint Paul earned sick and safe time ordinances, Minneapolis minimum wage ordinance, Saint Paul minimum wage ordinance, the Minneapolis Wage Theft Prevention Ordinance). These local rules layer on top of the state ESST and WTPA and are addressed in the companion local-ordinance addendum (`us-mn-local-ordinances`), not here.
 - Workers' compensation insurance procurement (mandatory in Minnesota; handled by `us-mn-workers-comp`).
 - Multi-state apportionment of wages where the employee performs services in more than one state — refer to Minnesota Revenue Notice 03-12 and the reciprocity discussion below, and consult a credentialed multi-state payroll specialist.

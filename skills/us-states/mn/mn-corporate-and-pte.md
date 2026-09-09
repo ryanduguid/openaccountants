@@ -515,7 +515,7 @@ The §965 deemed repatriation transition tax (one-time, for tax year 2017 / 2018
 - `us-federal-return-assembly` — federal 1040/1120 assembly
 - `us-qbi-deduction` — federal §199A (Minnesota does not allow QBI for individuals — note the M1M add-back; covered conceptually here only by reference)
 - `us-quarterly-estimated-tax` — federal quarterlies (Minnesota state quarterlies are computed in parallel)
-- `us-ca-return-assembly` and `us-federal-tx-return-assembly` — parallel state assembly patterns to model the MN return assembly on
+- `us-ca-return-assembly` and `us-tx-return-assembly` — parallel state assembly patterns to model the MN return assembly on
 
 ### Reviewer signoff requirements
 

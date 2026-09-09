@@ -32,7 +32,7 @@ This reference skill is the single lookup table for **economic sales tax nexus**
 - Arizona TPT mechanics — see `az-tpt`
 - Colorado SUTS portal — see `co-suts`
 - Washington B&O — see `wa-bo-tax`
-- California sales tax line-level preparation — see `california-sales-use-tax`
+- California sales tax line-level preparation — see `california-sales-tax`
 - Texas sales tax line-level preparation — see `tx-sales-tax`
 - US federal income tax — see other Tier 2 skills in this package
 - Use tax on consumer purchases (these are 50 separate compliance projects for individual taxpayers)

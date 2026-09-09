@@ -45,10 +45,10 @@ This skill covers the preparation of **Form 1120, U.S. Corporation Income Tax Re
 - **Foreign corporations** with US-source income — use Form 1120-F; refer out.
 - **Forms 5471 (CFC reporting)** — refer to `us-form-5471-cfc`.
 - **Forms 5472 (25%+ foreign-owned US corp reporting)** — refer to `us-form-5472`.
-- **Forms 8990/8991 BEAT** — complex; refer to `us-base-erosion-tax`.
-- **Form 6765 R&D credit and §174 capitalization mechanics** — refer to `us-r-and-d-credit-and-174`.
+- **Forms 8990/8991 BEAT** — complex; refer to `us-gilti-fdii-beat`.
+- **Form 6765 R&D credit and §174 capitalization mechanics** — refer to `us-r-and-d-section-174-and-41`.
 - **Stock buyback excise tax (IRC §4501) and Form 7208** — refer to `us-stock-buyback-excise`.
-- **State and local corporate income, franchise, gross receipts, and minimum taxes** — route to state skills (e.g., `us-ca-form-100`, `us-tx-franchise-tax`, `us-de-franchise`, `us-ny-form-ct-3`).
+- **State and local corporate income, franchise, gross receipts, and minimum taxes** — route to state skills (e.g., `us-ca-form-100`, `tx-franchise-tax`, `us-de-franchise`, `us-ny-form-ct-3`).
 
 ### 1.1 Consolidated returns — quick refusal note
 
@@ -360,7 +360,7 @@ Even though there was a $1M NOL fully covering the $800k income, only $640k coul
 
 ### 10.4 Mechanics on Form 1120
 
-- **§174 mechanics on Form 1120** — Domestic SREs incurred in 2025 are deductible in the year incurred under §174A (OBBBA § 70302); report them with other deductions (Line 26 with a supporting statement), reduced by any §41 credit. Foreign SREs are not directly deductible on Lines 13, 22, 26, etc. Capitalize foreign SREs (and domestic SREs from 2022-2024 still amortizing) on Form 4562 (intangibles section); foreign SREs amortize over 15 years. For domestic SREs capitalized in 2022-2024, the continuing amortization deduction (1/10 of domestic SREs in year 1 under half-year convention, then 1/5 per year for 4 years, then 1/10 in year 6 — actually: 10% / 20% / 20% / 20% / 20% / 10% over 6 calendar years for 5-year period under half-year, OR 1/2 month start of midpoint convention depending on interpretation; the IRS in Rev. Proc. 2023-8 / Rev. Proc. 2023-11 has clarified mechanics) flows to Form 1120 Line 26 (or appropriate line) as "amortization of §174 costs." Refer R&D mechanics to `us-r-and-d-credit-and-174` for detail. This skill notes the existence of the rule and flags it for the preparer; for any return with material R&E spend (defined here as >$50k of arguable SRE), the R&D skill should be loaded alongside.  _(Form 4562; Rev. Proc. 2023-8; Rev. Proc. 2023-11)_
+- **§174 mechanics on Form 1120** — Domestic SREs incurred in 2025 are deductible in the year incurred under §174A (OBBBA § 70302); report them with other deductions (Line 26 with a supporting statement), reduced by any §41 credit. Foreign SREs are not directly deductible on Lines 13, 22, 26, etc. Capitalize foreign SREs (and domestic SREs from 2022-2024 still amortizing) on Form 4562 (intangibles section); foreign SREs amortize over 15 years. For domestic SREs capitalized in 2022-2024, the continuing amortization deduction (1/10 of domestic SREs in year 1 under half-year convention, then 1/5 per year for 4 years, then 1/10 in year 6 — actually: 10% / 20% / 20% / 20% / 20% / 10% over 6 calendar years for 5-year period under half-year, OR 1/2 month start of midpoint convention depending on interpretation; the IRS in Rev. Proc. 2023-8 / Rev. Proc. 2023-11 has clarified mechanics) flows to Form 1120 Line 26 (or appropriate line) as "amortization of §174 costs." Refer R&D mechanics to `us-r-and-d-section-174-and-41` for detail. This skill notes the existence of the rule and flags it for the preparer; for any return with material R&E spend (defined here as >$50k of arguable SRE), the R&D skill should be loaded alongside.  _(Form 4562; Rev. Proc. 2023-8; Rev. Proc. 2023-11)_
 
 ### 10.5 Interaction with §41 R&D credit
 
@@ -430,7 +430,7 @@ Practical effect: CAMT applies only to a few thousand of the largest US corporat
 
 ### 12.8 Provisional and final regulations
 
-Treasury issued proposed regulations (REG-112129-23, September 2024) that run several hundred pages. Final regs may differ. For any actual CAMT computation, refer to `us-corporate-amt-computation` (separate skill) — this is too specialized for first-line preparation under this skill.
+Treasury issued proposed regulations (REG-112129-23, September 2024) that run several hundred pages. Final regs may differ. For any actual CAMT computation, a dedicated CAMT computation guide is **not** present in this repository — this is too specialized for first-line preparation under this skill.
 
 ### 13.1 Schedule B — Additional Information for Schedule M-3 Filers
 
@@ -490,7 +490,7 @@ Prior year overpayment, current-year estimated tax, Form 7004 extension payment,
 | **Schedule D (Form 1120)** | Capital gain net income on Line 8; net of short-term and long-term. |
 | **Form 5471 — Information Return for CFCs** | Required if the corp is a US shareholder of a controlled foreign corporation. **Refer to `us-form-5471-cfc`.** |
 | **Form 5472 — Information Return of 25% Foreign-Owned US Corp** | Required if 25% or more of the corp is owned by a foreign person at any time during the year. **Refer to `us-form-5472`.** |
-| **Form 6765 — Credit for Increasing Research Activities (R&D credit)** | §41 credit; mandatory for §174 SRE coordination. **Refer to `us-r-and-d-credit-and-174`.** |
+| **Form 6765 — Credit for Increasing Research Activities (R&D credit)** | §41 credit; mandatory for §174 SRE coordination. **Refer to `us-r-and-d-section-174-and-41`.** |
 | **Form 8990 — §163(j) Limitation on Business Interest** | If subject to §163(j) and not exempt under §448(c). |
 | **Form 8991 — BEAT (§59A)** | If the corp meets the BEAT thresholds (3-year avg gross receipts ≥ $500M and base erosion %≥ 3%). **Refer to BEAT skill.** |
 | **Form 8993 — §250 Deduction** | If any GILTI inclusion or FDII; see §11. |
