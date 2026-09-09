@@ -80,6 +80,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | **Minimum Effective Tax Rate (MET)** | Multinational groups with consolidated revenue > **€750M** | **15%** floor (Pillar Two GloBE alignment) |
 
 > **TBC — verify under NTA 2025 final implementing regulations:** the exact MET top-up mechanics and the Development Levy allocation formula between beneficiaries are subject to implementing regulations. The **rate** and **base** of the levy are not TBC — they are fixed by s.59 at 4% of assessable profits.
+>
+> **Status as at September 2026:** NTA 2025 **commenced on 1 January 2026** and is in force, and the Federal Ministry of Finance has issued **General / Transition Guidelines** for the Tax Acts 2025. Every "TBC — verify under NTA 2025 implementing regulations" marker in this pack was written before commencement and before those guidelines existed, so check the guidelines and the gazetted text before treating any of them as still open. A TBC that has outlived what it was waiting for reads as current uncertainty when it is really a stale note.
 
 ### 1.2 Conservative Defaults
 
