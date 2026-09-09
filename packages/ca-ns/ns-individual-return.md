@@ -35,11 +35,13 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 | Taxable Income (CAD) | Rate |
 | --- | --- |
-| 0 -- 29,590 | 8.79% |
-| 29,591 -- 59,180 | 14.95% |
-| 59,181 -- 93,000 | 16.67% |
-| 93,001 -- 150,000 | 17.5% |
-| 150,001+ | 21% |
+| 0 -- 30,507 | 8.79% |
+| 30,508 -- 61,015 | 14.95% |
+| 61,016 -- 95,883 | 16.67% |
+| 95,884 -- 154,650 | 17.5% |
+| 154,651+ | 21% |
+
+Nova Scotia began indexing its brackets and personal amounts on 1 January 2025; before that they were frozen for many years. It indexes on the 12-month CPI average ending in August, not September as the federal government does.  _(TaxTips.ca, *Nova Scotia 2025 tax rates*)_
 
 ### Key Nova Scotia Features
 
@@ -48,8 +50,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Feature | Detail |
 | --- | --- |
 | Harmonized sales tax (HST) | 15% (5% federal + 10% provincial) |
-| Basic personal amount (2025) | $8,481 |
-| Spousal/equivalent amount | $8,481 |
+| Basic personal amount (2025) | $11,744 |
+| Spousal/equivalent amount | $11,744 |
 | Age amount | $4,141 |
 | Nova Scotia Affordable Living Tax Credit | Refundable; up to $255/individual |
 | Nova Scotia Child Benefit (NSCB) | $150/child (income-tested) |
@@ -62,15 +64,15 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 | Taxable Income (CAD) | Combined Rate |
 | --- | --- |
-| 0 -- 29,590 | 23.79% |
-| 29,591 -- 57,375 | 29.95% |
-| 57,376 -- 59,180 | 35.45% |
-| 59,181 -- 93,000 | 37.17% |
-| 93,001 -- 114,750 | 38% |
-| 114,751 -- 150,000 | 43.5% |
-| 150,001 -- 158,468 | 47% |
-| 158,469 -- 220,000 | 50% |
-| 220,001+ | 54% |
+| 0 -- 30,507 | 23.29% |
+| 30,508 -- 57,375 | 29.45% |
+| 57,376 -- 61,015 | 35.45% |
+| 61,016 -- 95,883 | 37.17% |
+| 95,884 -- 114,750 | 38% |
+| 114,751 -- 154,650 | 43.5% |
+| 154,651 -- 177,882 | 47% |
+| 177,883 -- 253,414 | 50% |
+| 253,415+ | 54% |
 
 ### Conservative Defaults
 
@@ -99,8 +101,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 | Credit | Amount (2025) | Rate |
 | --- | --- | --- |
-| Basic personal amount | $8,481 | 8.79% |
-| Spousal / common-law partner | $8,481 | 8.79% |
+| Basic personal amount | $11,744 | 8.79% |
+| Spousal / common-law partner | $11,744 | 8.79% |
 | CPP/EI contributions | Actual | 8.79% |
 | Age amount | $4,141 | 8.79% |
 | Pension income | Up to $1,000 | 8.79% |
@@ -130,7 +132,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ### Step 2: Apply Nova Scotia Bracket Rates
 
-- **Apply Nova Scotia Bracket Rates** — First $29,590 × 8.79%; $29,591 to $59,180 × 14.95%; $59,181 to $93,000 × 16.67%; $93,001 to $150,000 × 17.5%; Above $150,000 × 21%
+- **Apply Nova Scotia Bracket Rates** — First $30,507 × 8.79%; $30,508 to $61,015 × 14.95%; $61,016 to $95,883 × 16.67%; $95,884 to $154,650 × 17.5%; Above $154,650 × 21%
 
 ### Step 3: Subtract Non-Refundable Tax Credits
 
@@ -231,17 +233,17 @@ At 54% combined marginal rate (over $220K), Nova Scotia has one of the highest c
 | Step | Calculation | Amount |
 | --- | --- | --- |
 | Taxable income |  | $75,000 |
-| NS tax on first $29,590 | $29,590 × 8.79% | $2,601 |
-| NS tax on $29,591 -- $59,180 | $29,590 × 14.95% | $4,424 |
-| NS tax on $59,181 -- $75,000 | $15,820 × 16.67% | $2,637 |
-| Gross NS provincial tax |  | $9,662 |
-| Less: Basic personal credit | $8,481 × 8.79% | ($745) |
-| Less: CPP credit | ~$3,867 × 8.79% | ($340) |
-| Less: EI credit | ~$1,049 × 8.79% | ($92) |
-| Net NS provincial tax |  | $8,485 |
-| Federal tax (for reference) |  | $11,252 |
-| Total combined tax (approx.) |  | $19,737 |
-| Effective combined rate |  | ~26.3% |
+| NS tax on first $30,507 | $30,507 × 8.79% | $2,682 |
+| NS tax on $30,508 -- $61,015 | $30,508 × 14.95% | $4,561 |
+| NS tax on $61,016 -- $75,000 | $13,985 × 16.67% | $2,331 |
+| Gross NS provincial tax |  | $9,574 |
+| Less: Basic personal credit | $11,744 × 8.79% | ($1,032) |
+| Less: CPP credit | $4,034 × 8.79% | ($355) |
+| Less: EI credit | $1,077 × 8.79% | ($95) |
+| Net NS provincial tax |  | $8,092 |
+| Federal tax (14.5% / 20.5%, net of the same three credits at 14.5%) |  | $8,853 |
+| Total combined tax (approx.) |  | $16,945 |
+| Effective combined rate |  | ~22.6% |
 
 ## Section 7 -- Worked Example
 

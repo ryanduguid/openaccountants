@@ -1,6 +1,6 @@
 ---
 name: ab-individual-return
-description: Use this skill whenever asked about Alberta provincial individual income tax. Trigger on phrases like "Alberta tax", "Alberta T1", "AB provincial tax", "Alberta flat tax", "Alberta credits", "Alberta personal amount", "no PST Alberta", or any question about computing Alberta provincial tax for an individual return. This skill covers Alberta's 10% flat personal income tax rate, provincial credits, interaction with federal T1, and Alberta-specific deductions. ALWAYS read this skill before touching any Alberta individual tax return work.
+description: Use this skill whenever asked about Alberta provincial individual income tax. Trigger on phrases like "Alberta tax", "Alberta T1", "AB provincial tax", "Alberta credits", "Alberta personal amount", "no PST Alberta", or any question about computing Alberta provincial tax for an individual return. This skill covers Alberta's six-bracket personal income tax (8% on the first $60,000 from 2025, rising to 15%), provincial credits, interaction with federal T1, and Alberta-specific deductions. ALWAYS read this skill before touching any Alberta individual tax return work.
 version: "1.0"
 jurisdiction: CA
 tax_year: 2025
@@ -30,15 +30,20 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Filing deadline | 30 April 2026 (15 June 2026 if self-employed; balance due 30 April) |
 | Skill version | 1.0 |
 
-### Alberta Provincial Tax Rate (2025)
+### Alberta Provincial Tax Rates (2025)
 
-**Alberta Provincial Tax Rate (2025)**
+**Alberta Provincial Tax Rates (2025)**
 
 | Taxable Income (CAD) | Rate |
 | --- | --- |
-| All taxable income | 10% (flat rate) |
+| 0 -- 60,000 | 8% |
+| 60,001 -- 151,234 | 10% |
+| 151,235 -- 181,481 | 12% |
+| 181,482 -- 241,974 | 13% |
+| 241,975 -- 362,961 | 14% |
+| 362,962+ | 15% |
 
-Alberta is the only province with a single flat-rate personal income tax. There are no provincial tax brackets.
+Alberta is **not** a flat-tax province. It has levied higher brackets above roughly $150,000 since 2016, and effective 1 January 2025 it introduced a new **8% bracket on the first $60,000** of income, worth up to $750 a year. Do not apply a single 10% rate to all income.  _(Alberta.ca, *Personal income tax*)_
 
 ### Key Alberta Features
 
@@ -48,8 +53,8 @@ Alberta is the only province with a single flat-rate personal income tax. There 
 | --- | --- |
 | Provincial sales tax (PST) | None -- Alberta has no PST |
 | GST only | 5% federal GST applies |
-| Alberta personal amount (2025) | $21,003 |
-| Spousal/equivalent amount | $21,003 |
+| Alberta personal amount (2025) | $22,323 |
+| Spousal/equivalent amount | $22,323 |
 | Age amount (65+) | $5,853 (reduced at higher income) |
 | Alberta Family Employment Tax Credit | Refundable credit for working families with children under 18 |
 | Alberta Climate Leadership Adjustment | Phased out |
@@ -61,11 +66,13 @@ Alberta is the only province with a single flat-rate personal income tax. There 
 
 | Taxable Income (CAD) | Rate |
 | --- | --- |
-| 0 -- 57,375 | 15% |
+| 0 -- 57,375 | 14.5% |
 | 57,376 -- 114,750 | 20.5% |
-| 114,751 -- 158,468 | 26% |
-| 158,469 -- 220,000 | 29% |
-| 220,001+ | 33% |
+| 114,751 -- 177,882 | 26% |
+| 177,883 -- 253,414 | 29% |
+| 253,415+ | 33% |
+
+The lowest federal rate is **14.5% for 2025 only**: it was cut from 15% to 14% effective 1 July 2025, so the 2025 rate is the blended figure. It is 14% for 2026 onward. Non-refundable federal credits are valued at 14.5% for 2025.  _(CRA, *Federal income tax rates and brackets*)_
 
 ### Combined Federal + Alberta Marginal Rates (2025)
 
@@ -73,11 +80,16 @@ Alberta is the only province with a single flat-rate personal income tax. There 
 
 | Taxable Income (CAD) | Combined Rate |
 | --- | --- |
-| 0 -- 57,375 | 25% |
-| 57,376 -- 114,750 | 30.5% |
-| 114,751 -- 158,468 | 36% |
-| 158,469 -- 220,000 | 39% |
-| 220,001+ | 43% |
+| 0 -- 57,375 | 22.5% |
+| 57,376 -- 60,000 | 28.5% |
+| 60,001 -- 114,750 | 30.5% |
+| 114,751 -- 151,234 | 36% |
+| 151,235 -- 177,882 | 38% |
+| 177,883 -- 181,481 | 41% |
+| 181,482 -- 241,974 | 42% |
+| 241,975 -- 253,414 | 43% |
+| 253,415 -- 362,961 | 47% |
+| 362,962+ | 48% |
 
 ### Conservative Defaults
 
@@ -113,9 +125,9 @@ Alberta is the only province with a single flat-rate personal income tax. There 
 
 | Credit | Amount (2025) | Type |
 | --- | --- | --- |
-| Basic personal amount | $21,003 | Non-refundable |
-| Spousal / common-law partner | $21,003 (reduced by spouse income) | Non-refundable |
-| Eligible dependant amount | $21,003 | Non-refundable |
+| Basic personal amount | $22,323 | Non-refundable |
+| Spousal / common-law partner | $22,323 (reduced by spouse income) | Non-refundable |
+| Eligible dependant amount | $22,323 | Non-refundable |
 | CPP/QPP contributions (employee) | Actual contributions | Non-refundable |
 | EI premiums | Actual premiums | Non-refundable |
 | Age amount (65+) | $5,853 | Non-refundable (income-tested) |
@@ -123,10 +135,10 @@ Alberta is the only province with a single flat-rate personal income tax. There 
 | Disability amount | $16,494 | Non-refundable |
 | Tuition and education | Actual tuition | Non-refundable |
 | Medical expenses | Excess over 3% of net income (or $2,635) | Non-refundable |
-| Donations and gifts | First $200 at 10%; excess at 21% | Non-refundable |
+| Donations and gifts | First $200 at 60%; excess at 21% | Non-refundable -- Alberta raised the first-$200 rate from 10% to 60% effective 1 January 2023 (Bill 202), the only province where the first-$200 rate exceeds the rate above $200 |
 | Political contributions (Alberta) | 75% of first $200 + 50% next $900 + 33.33% above | Non-refundable |
 
-- **Credit rate** — 10% (Alberta's flat rate applies to convert credit amounts to tax reductions).
+- **Credit rate** — 8% (Alberta's lowest bracket rate applies to convert credit amounts to tax reductions).
 
 ### 2.4 Alberta Family Employment Tax Credit (AFETC)
 
@@ -148,11 +160,11 @@ Alberta is the only province with a single flat-rate personal income tax. There 
 
 ### Step 2: Apply Alberta Tax Rate
 
-- **Alberta tax formula** — Alberta tax = Taxable income × 10%.
+- **Alberta tax formula** — Apply the bracket scale: first $60,000 × 8%; $60,001-$151,234 × 10%; $151,235-$181,481 × 12%; $181,482-$241,974 × 13%; $241,975-$362,961 × 14%; above $362,961 × 15%. Do not multiply total taxable income by a single rate.
 
 ### Step 3: Subtract Non-Refundable Credits
 
-- **Credit reduction and basic tax formula** — Total credit amounts × 10% = credit reduction. Alberta basic tax = Step 2 − Step 3.
+- **Credit reduction and basic tax formula** — Total credit amounts × 8% (the lowest bracket rate) = credit reduction. Alberta basic tax = Step 2 − Step 3.
 
 ### Step 4: Add Alberta Tax on Split Income (TOSI)
 
@@ -183,7 +195,7 @@ Combined tax on non-eligible dividends (top bracket): ~42.3%
 ### 4.2 Capital Gains
 
 - **Capital gains inclusion rate** — 50% inclusion rate for all capital gains; the proposed 66.67% increase and $250,000 threshold were cancelled March 21, 2025
-- **Combined rate on capital gains (50% inclusion, top bracket, AB)** — 21.5%
+- **Combined rate on capital gains (50% inclusion, top bracket, AB)** — 24% (half of the 48% top combined rate)
 - **Lifetime Capital Gains Exemption (qualifying small business shares, 2025)** — $1,250,000
 - **LCGE on qualified farm/fishing property** — $1,250,000
 
@@ -256,7 +268,7 @@ Combined tax on non-eligible dividends (top bracket): ~42.3%
 - **Prohibition 1** — NEVER apply provincial tax rates for another province to an Alberta resident
 - **Prohibition 2** — NEVER apply PST calculations to Alberta transactions
 - **Prohibition 3** — NEVER claim Alberta credits without confirming Alberta residency on December 31
-- **Prohibition 4** — NEVER apply bracket-based rates -- Alberta uses a single 10% flat rate
+- **Prohibition 4** — NEVER apply a single flat rate to all Alberta income. Alberta is bracketed: 8% on the first $60,000, 10% to $151,234, then 12%/13%/14%/15%.
 - **Prohibition 5** — NEVER ignore the federal tax calculation -- provincial tax is in addition to federal
 - **Prohibition 6** — NEVER present tax calculations as definitive -- always label as estimated
 

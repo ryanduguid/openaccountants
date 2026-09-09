@@ -79,11 +79,11 @@ This block is generated from verified `skill_facts` — edit the facts, not the 
 
 | Taxable Income (CAD) | Rate |
 | --- | --- |
-| 0 – 57,375 | 14% |
-| 57,376 – 114,750 | 20.5% |
-| 117,045 – 181,440 | 26% |
-| 181,440 – 258,482 | 29% |
-| 258,482+ | 33% |
+| 0 – 58,523 | 14% |
+| 58,524 – 117,045 | 20.5% |
+| 117,046 – 181,440 | 26% |
+| 181,441 – 258,482 | 29% |
+| 258,483+ | 33% |
 
 Note: The lowest bracket rate was reduced to 14% (from 15%) effective 2026 via Bill C-4.
 
