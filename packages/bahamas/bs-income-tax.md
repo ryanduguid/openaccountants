@@ -397,13 +397,13 @@ Income tax:               BSD 0
 - Employer share: 6.65% × BSD 600 = BSD 39.90
 - Combined per employee: BSD 67.80/week
 
-**NIB for all 3 employees per month (≈4.333 weeks):**
-- Total employee NIB: BSD 27.90 × 3 × 4.333 = BSD 362.95/month
-- Total employer NIB: BSD 39.90 × 3 × 4.333 = BSD 518.74/month
-- **Total monthly NIB (C10 form): BSD 881.70**
+**NIB for all 3 employees per month (52/12 = 4.3333 weeks):**
+- Total employee NIB: BSD 27.90 × 3 × 52/12 = BSD 362.70/month
+- Total employer NIB: BSD 39.90 × 3 × 52/12 = BSD 518.70/month
+- **Total monthly NIB (C10 form): BSD 881.40**
 - Due: **15th of the following month** via C10 form
 
-*BSD 600/week is below the BSD 810 ceiling, so full earnings are insurable. Arithmetic: 27.90 + 39.90 = BSD 67.80/employee/week. 67.80 × 3 = 203.40/week × 4.333 = BSD 881.51 ≈ BSD 882/month ✓*
+*BSD 600/week is below the BSD 810 ceiling, so full earnings are insurable. Arithmetic: 27.90 + 39.90 = BSD 67.80/employee/week. 67.80 × 3 = BSD 203.40/week, and 203.40 × 52/12 = BSD 881.40/month — which reconciles with the two lines above, 362.70 + 518.70 = 881.40 ✓*
 
 ### 5.1 The Fundamental Rule -- No Personal Income Tax
 

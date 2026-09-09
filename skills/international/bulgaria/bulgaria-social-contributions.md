@@ -502,7 +502,7 @@ Self-check: 14.8 + 5 + 8 = 27.8; 27.8 + 3.5 = 31.3. Unemployment and work-accide
 | Max insurable income (ceiling, all) | 3,750 (Jan–Mar); 4,130 (Apr–Dec) | 2,111.64 (= BGN 4,130, carried over pending Budget Act; draft proposes 2,352) | Ministry of Economy; PwC *Other taxes* |
 | Minimum monthly wage | 1,077 (from 1 Jan 2025, = EUR 550.66) | 620.20 (= BGN 1,213, from 1 Jan 2026; Council of Ministers Decree No. 243 of 13.11.2025) | Ministry of Economy; Ruskov & Kollegen |
 
-Euro conversions at the irrevocable fixed rate BGN 1.95583 = EUR 1. Note the two distinct 2026 floors: the **employee** floor is the 2026 minimum wage EUR 620.20 (= BGN 1,213 / 1.95583 = 620.20); the **self-insured** floor is EUR 550.66 (= the 2025 BGN 1,077 carried over: 1,077 / 1.95583 = 550.66). These are NOT the same BGN amount — BGN 1,077 ≠ BGN 1,213. Ceiling: BGN 4,130 / 1.95583 = 2,111.65 (PwC rounds to EUR 2,111.64).
+Euro conversions at the irrevocable fixed rate BGN 1.95583 = EUR 1. Note the two distinct 2026 floors: the **employee** floor is the 2026 minimum wage EUR 620.20 (= BGN 1,213 / 1.95583 = 620.20); the **self-insured** floor is EUR 550.66 (= the 2025 BGN 1,077 carried over: 1,077 / 1.95583 = 550.66). These are NOT the same BGN amount — BGN 1,077 ≠ BGN 1,213. Ceiling: BGN 4,130 / 1.95583 = 2,111.6355, i.e. EUR 2,111.64, which is the figure used everywhere else in this skill and the one PwC publishes.
 
 ### Taxes (context)
 
