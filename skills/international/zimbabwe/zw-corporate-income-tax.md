@@ -3,7 +3,7 @@ name: zw-corporate-income-tax
 description: "Source-cited draft: corporate income tax for Zimbabwe (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
 jurisdiction: ZW
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-09
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -24,7 +24,7 @@ Companies are taxed on Zimbabwe-source income at a standard rate of 25% from 1 J
 - **Withholding tax on dividends (unlisted / to non-resident)** — 15% non-resident shareholders' tax on dividends from unlisted companies percent  _(Income Tax Act (Chapter 23:06))_
 - **Withholding tax on dividends (VFEX-listed)** — 5% on dividends from Victoria Falls Stock Exchange-listed securities percent  _(Income Tax Act (Chapter 23:06))_
 - **Withholding tax on royalties to non-residents** — 15%, payable within 10 days of the date of payment percent  _(Income Tax Act (Chapter 23:06))_
-- **Withholding tax on interest to non-residents** — **15%** non-residents' tax on interest, confirmed. Reintroduced by the 2026 national budget presented on 27 November 2025 and payable in US dollars. Interest paid before 1 January 2026 falls outside it, so check the payment date before applying this rate  _(Finance Act, 2025; 2026 national budget statement)_
+- **Withholding tax on interest to non-residents** — **15%** non-residents' tax on interest, reintroduced with effect from **1 January 2026** by the 2026 national budget (presented 27 November 2025). Interest paid before that date falls outside it, so check the payment date before applying this rate. **Withhold the tax and remit the return within 30 days of the payment date.** A payer who fails to withhold is **personally liable for the tax due plus a further 15% of that tax** — the penalty is on the payer, not the recipient. Exempt: interest payable by licensed investors in respect of their special economic zone business, and interest payable by the Infrastructure Development Bank of Zimbabwe to non-resident institutional shareholders  _(2026 national budget statement; Finance Act, 2025; EY Zimbabwe post-budget tax spotlight, November 2025)_
 - **Double tax treaty relief** — Reduced WHT rates (often 10% or less) under Zimbabwe's DTAs; relief must be claimed, it is not automatic  _(Income Tax Act (Chapter 23:06))_
 - **Annual return filing** — Self-assessment return (ITF12C) due 30 April after year-end ((approx — confirm filing date))  _(Income Tax Act (Chapter 23:06))_
 - **Provisional tax (QPDs)** — Quarterly Payment Dates: 25 March (10%), 25 June (25%), 25 September (30%), 20 December (35%) ((approx — confirm QPD percentages/dates))  _(Income Tax Act (Chapter 23:06))_

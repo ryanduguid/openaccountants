@@ -161,16 +161,42 @@ page.
               consultancy; only dividends are 15%. Grandfathered international
               business companies are exempt from withholding on payments to
               non-residents.
-  * Zimbabwe  CORRECT, hedge resolved. The 15% non-residents' tax on interest
-              was reintroduced by the 2026 national budget presented on
-              27 November 2025 and is payable in US dollars, so interest paid
-              before 1 January 2026 falls outside it and the payment date has
-              to be checked before the rate is applied.
+  * Zimbabwe  CORRECT on the rate, and the line around it was thin. The 15%
+              non-residents' tax on interest was reintroduced with effect from
+              1 January 2026 by the 2026 national budget, so the payment date
+              still decides it. What the entry had added and could not support
+              was "payable in US dollars"; no source found for it, so it is
+              gone. What no source had been read for, and matters more, is in:
+              withhold and remit the return within 30 days of payment, a payer
+              who fails to withhold is personally liable for the tax plus a
+              further 15% of it, and two exemptions -- interest payable by
+              licensed investors on their special economic zone business, and
+              interest payable by the Infrastructure Development Bank of
+              Zimbabwe to non-resident institutional shareholders.
+  * Romania   CORRECT at 16% from 1 January 2026 under Law 141/2025 (Official
+              Gazette 699/2025), and missing the rule that decides most of the
+              answers being asked in 2026. Interim dividends distributed during
+              2025 out of the 31 March, 30 June or 30 September 2025 interim
+              statements stay at 10%, including on regularisation in 2026; a
+              distribution out of the 31 December 2025 annual statements is
+              16%, because those statements cannot be approved until after
+              1 January. So the question to ask is which financial statements
+              the distribution sits on, not which year it is paid in. The line
+              also cited a KPMG note from February 2025 for a law published in
+              July 2025, which cannot support it; the citation now names the
+              Gazette.
+
+Zimbabwe and Romania are the same shape as Bosnia from the other direction. In
+Bosnia a guide stated one side of a split. Here each stated a correct headline
+rate and stopped before the transitional rule, the exemption and the penalty,
+which are the parts that change what a reader does this week. A rate is the
+cheapest thing on the line to get right and the least of what the line owes.
 
 Still open: 124 jurisdictions state a rate, 25 hedge at least one of their own,
-and 10 have been checked. Four of the ten were wrong and every one of the four
+and 14 have been checked. Four were wrong outright and every one of those four
 had hedged itself, which is the argument for working this column by its own
-doubts rather than by a random draw.
+doubts rather than by a random draw. Four more were right at the headline and
+incomplete underneath, which no hedge flags at all.
 
 Two recall limits the PR #16 review found, both still open and worth knowing
 before reading a zero in this output as an absence:
