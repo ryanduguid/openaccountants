@@ -440,8 +440,58 @@ claim.** Checking what the domain actually is does test it, and costs one
 fetch.
 
 The queue is now empty. That is not a claim that every citation in the corpus
-points somewhere good — 66% of them still point at commentary, and the checker
+points somewhere good — 65% of them still point at commentary, and the checker
 only ever measured the sharp end.
+
+### Reading the statute changes the answer, and twice it nearly changed it wrongly
+
+The zero-authority list is where the corpus carries the most inherited risk, so
+two of its jurisdictions were worked by reading their law rather than a summary
+of it: Armenia (48 citations, none to an authority) and Kosovo (16).
+
+Both produced real errors. Armenia's guide taxed a registered individual
+entrepreneur's business income at the flat 20% income tax; art. 104(1)(1) makes
+an IE a resident *profit* taxpayer and art. 125(3.1) sets that at 23%. Its
+turnover-tax table was two regimes out of date, and it stated in three places
+that the turnover tax allows no deductions — art. 258(2)–(5), from 1 January
+2025, cuts the computed tax by up to 9.5% of documented expenses, so the
+guide's worked example overstated the tax by as much as ten times. Kosovo cited
+**Law No. 08/L-110** as its Personal Income Tax Act. That law establishes the
+Kosovo Accreditation Agency. The tax law is 05/L-028 — as the guide's own
+payroll and social-contributions files both correctly said.
+
+**Two ways this could have gone wrong, and nearly did.**
+
+*The general rate article is not the end of the article.* Armenia's art. 125(1)
+says 18%, and two secondary sources agreed that an individual entrepreneur pays
+18%. The corpus's own optimisation guide said 23%, which looked like a leftover
+from the pre-2023 income tax and was queued for correction. Art. 125(3.1),
+three subparagraphs further down, sets 23% for IEs specifically. The guide was
+right; "correcting" it against the headline rate would have broken a correct
+figure with a wrong one from the same statute.
+
+*A search summary is not a source.* A search result reported Armenia's minimum
+wage as having risen to AMD 75,000 in January 2025 from AMD 68,000, which would
+have made the guide's "since 1 January 2023" wrong. The Law on Minimum Monthly
+Salary on `arlis.am` shows the amendment dated 7 December 2022, effective the
+following January — the guide was right. Separately, a news article the same
+search surfaced as evidence of a 2026 increase turned out to be from **November
+2021**, describing a five-year plan to reach AMD 85,000 by 2026. The year in
+the target is not the year of the article.
+
+Both near-misses share a shape with the Iceland interest rate a reviewer caught
+earlier on this branch: the correction was the confident move, and the
+confidence came from a source that was not the law.
+
+**And the wrong citation propagates into the instructions for fixing it.**
+Kosovo's guide flagged its own open question — is the gross-income-method
+ceiling EUR 50,000 or EUR 30,000? — and told the reviewer to settle it "against
+the consolidated text of PIT Law No. 08/L-110", which is the accreditation
+statute. The answer is that Kosovo has three thresholds in three laws: EUR
+50,000 for the personal gross-income method (05/L-028), EUR 30,000 for the
+corporate small-taxpayer flat tax (06/L-105, which *reduced* it from 50,000 in
+2019), and EUR 30,000 for VAT registration (05/L-037). The old corporate figure
+and the current personal one are the same number, which is how they merge.
 
 ### Three ways a guide comes to name three heads, and what each costs to fix
 

@@ -117,6 +117,15 @@ NON_GOV_AUTHORITY = frozenset((
     'e-govern.ad',        # Andorran government portal
     'atk-ks.org',         # Administrata Tatimore e Kosoves (and etax. portal)
     'bqk-kos.org',        # Central Bank of the Republic of Kosovo
+    'rks-gov.net',        # Kosovo government, including gzk.rks-gov.net, the
+                          # Official Gazette. Hyphenated into rks-gov, so "gov"
+                          # is not a label of its own and the GOV pattern -
+                          # which matches whole dot-separated labels - misses
+                          # the entire national domain.
+    'egov.mv',            # Maldives government portal; "egov" is not "gov"
+                          # either. Requiring a whole label is still right:
+                          # it is what keeps rigobertoparedes.com, a Honduran
+                          # law firm, out of the authority count.
     # Central banks, cited for official conversion rates
     'ecb.europa.eu', 'bnr.rw', 'bnb.bg', 'bnro.ro', 'bportugal.pt',
     # Legislatures, cited for the statute itself
