@@ -21,7 +21,7 @@ metadata:
 |---|---|
 | Country | Kazakhstan (Republic of Kazakhstan) |
 | Tax name | NDS (Nalog na Dobavlennuyu Stoimost / VAT) |
-| Standard rate | 12% |
+| Standard rate | 16% from 1 January 2026 (was 12%). Apply the rate in force at the time of supply |
 | Reduced rates | None (single standard rate for domestic) |
 | Zero rate | 0% (exports, international transport, certain agricultural) |
 | Return form | Form 300.00 (quarterly NDS declaration) |
@@ -40,7 +40,7 @@ metadata:
 
 | Line | Meaning |
 |---|---|
-| 300.00.001 | Taxable turnover at 12% |
+| 300.00.001 | Taxable turnover at 16% |
 | 300.00.002 | Zero-rated turnover (exports) |
 | 300.00.003 | Exempt turnover |
 | 300.00.004 | Reverse charge on imported services |
@@ -58,7 +58,7 @@ metadata:
 
 | Ambiguity | Default |
 |---|---|
-| Unknown rate on a sale | 12% |
+| Unknown rate on a sale | 16% |
 | Unknown VAT status of a purchase | Not deductible |
 | Unknown counterparty country | Domestic Kazakhstan |
 | Unknown EAEU vs non-EAEU origin | Non-EAEU (customs) |
@@ -128,9 +128,9 @@ metadata:
 
 | Pattern | Treatment | Box | Notes |
 |---|---|---|---|
-| SAMRUK-ENERGO, KEGOC, AREK | Domestic 12% | 300.00.007 | Electricity |
-| ALMATY SU, ASTANA SU | Domestic 12% | 300.00.007 | Water |
-| KAZAKHTELECOM, KCELL, BEELINE KZ, TELE2 KZ | Domestic 12% | 300.00.007 | Telecoms |
+| SAMRUK-ENERGO, KEGOC, AREK | Domestic 16% | 300.00.007 | Electricity |
+| ALMATY SU, ASTANA SU | Domestic 16% | 300.00.007 | Water |
+| KAZAKHTELECOM, KCELL, BEELINE KZ, TELE2 KZ | Domestic 16% | 300.00.007 | Telecoms |
 
 ### 3.4 Insurance (exempt — exclude)
 
@@ -150,7 +150,7 @@ metadata:
 
 | Pattern | Box | Notes |
 |---|---|---|
-| GOOGLE, MICROSOFT, ADOBE, META | 300.00.004/010 | Reverse charge at 12% |
+| GOOGLE, MICROSOFT, ADOBE, META | 300.00.004/010 | Reverse charge at 16% |
 | SLACK, ZOOM, NOTION, AWS, ANTHROPIC, OPENAI | 300.00.004/010 | Same |
 
 ### 3.7 EAEU suppliers
@@ -163,9 +163,9 @@ metadata:
 
 | Pattern | Treatment | Box | Notes |
 |---|---|---|---|
-| NOTER, NOTARY | Domestic 12% | 300.00.007 | If business purpose |
-| AUDITOR, BUKHGALTER | Domestic 12% | 300.00.007 | Deductible |
-| ADVOKAT, LAWYER | Domestic 12% | 300.00.007 | If business matter |
+| NOTER, NOTARY | Domestic 16% | 300.00.007 | If business purpose |
+| AUDITOR, BUKHGALTER | Domestic 16% | 300.00.007 | Deductible |
+| ADVOKAT, LAWYER | Domestic 16% | 300.00.007 | If business matter |
 
 ### 3.9 Payroll and exclusions
 
@@ -184,11 +184,11 @@ metadata:
 
 **Input line:** `03.04.2026 ; NOTION LABS INC ; DEBIT ; Subscription ; USD 16.00 ; KZT 7,520`
 
-**Reasoning:** US entity. Reverse charge at 12%. 300.00.004 (base/output), 300.00.010 (input credit). Net zero.
+**Reasoning:** US entity. Reverse charge at 16%. 300.00.004 (base/output), 300.00.010 (input credit). Net zero.
 
 | Date | Counterparty | Gross | Net | VAT | Rate | Box (in) | Box (out) | Default? |
 |---|---|---|---|---|---|---|---|---|
-| 03.04.2026 | NOTION LABS INC | -7,520 | -7,520 | 902 | 12% | 010 | 004 | N |
+| 03.04.2026 | NOTION LABS INC | -7,520 | -7,520 | 1,203.20 | 16% | 010 | 004 | N |
 
 ### Example 2 — Domestic utility
 
@@ -196,7 +196,7 @@ metadata:
 
 | Date | Counterparty | Gross | Net | VAT | Rate | Box | Default? |
 |---|---|---|---|---|---|---|---|
-| 10.04.2026 | KAZAKHTELECOM | -18,500 | -16,518 | -1,982 | 12% | 007 | N |
+| 10.04.2026 | KAZAKHTELECOM | -18,500 | -15,948.28 | -2,551.72 | 16% | 007 | N |
 
 ### Example 3 — Entertainment blocked
 
@@ -222,7 +222,7 @@ metadata:
 
 | Date | Counterparty | Gross | Net | VAT | Rate | Box (in) | Box (out) | Default? |
 |---|---|---|---|---|---|---|---|---|
-| 18.04.2026 | OOO TECHNOPARK | -1,500,000 | -1,500,000 | 180,000 | 12% | 009 | 005 | N |
+| 18.04.2026 | OOO TECHNOPARK | -1,500,000 | -1,500,000 | 240,000 | 16% | 009 | 005 | N |
 
 ### Example 6 — Motor vehicle blocked
 
@@ -236,7 +236,7 @@ metadata:
 
 ## Section 5 — Tier 1 classification rules (compressed)
 
-### 5.1 Standard rate 12% (Tax Code Article 422)
+### 5.1 Standard rate 16% (Tax Code Article 422; 16% from 1 January 2026, previously 12%)
 Lowest standard rate in the region. Single rate. Sales to 300.00.001. Purchases to 300.00.007.
 
 ### 5.2 Zero rate
@@ -246,13 +246,13 @@ Exports, international transport, certain agricultural produce. 300.00.002.
 Financial, insurance, medical, educational, residential rental, public transport.
 
 ### 5.4 Reverse charge — non-resident services
-Self-assess at 12%. 300.00.004 (output), 300.00.010 (input). Net zero.
+Self-assess at 16%. 300.00.004 (output), 300.00.010 (input). Net zero.
 
 ### 5.5 EAEU imports
 From Russia, Belarus, Armenia, Kyrgyzstan. Self-assessed NDS, not at customs. 300.00.005/009. Form 328.00 by 20th of month following import.
 
 ### 5.6 Non-EAEU imports
-At customs. 12%. 300.00.008. Recoverable.
+At customs. 16%. 300.00.008. Recoverable.
 
 ### 5.7 Blocked input NDS
 Passenger vehicles, entertainment, personal consumption, no valid ESF/invoice.
@@ -266,7 +266,7 @@ Mandatory electronic invoices via esf.gov.kz. Input NDS requires valid ESF.
 
 ### 6.1 Fuel/vehicles — *Default:* 0%. *Question:* "Car or commercial?"
 ### 6.2 Entertainment — *Default:* block.
-### 6.3 SaaS entities — *Default:* reverse charge at 12%.
+### 6.3 SaaS entities — *Default:* reverse charge at 16%.
 ### 6.4 EAEU vs non-EAEU — *Default:* non-EAEU. *Question:* "EAEU country supplier?"
 ### 6.5 Owner transfers — *Default:* exclude.
 ### 6.6 Foreign incoming — *Default:* zero-rated. *Question:* "Export docs?"
