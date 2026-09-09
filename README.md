@@ -32,7 +32,7 @@ Named, licensed accountants put their name, credential and review date on the ta
 <!-- oa-stats:start -->
 Counts below were copied with the fork. They are not live on this repository.
 
-**1,798 Guides** across **232 jurisdictions** · **191 accountant-reviewed** · **36 named accountants** · **7,332 questions answered** through connected AIs
+**1,953 Guides** across **244 jurisdictions** · **171 accountant-reviewed** · **23 named accountants** · **7,332 questions answered** through connected AIs
 
 <sub>Upstream figure dated 2026-08-22. Not refreshed here.</sub>
 <!-- oa-stats:end -->
