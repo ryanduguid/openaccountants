@@ -68,7 +68,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 - **Threshold requiring NC estimates** — $1,000 USD (Tax shown due on return, reduced by NC withholding and allowable tax credits, is $1,000 or more; applies regardless of how much income is non-wage.)  _(NCDOR NC-40 Instructions; G.S. § 105-163.15(a))_
 
-`[VERIFY:]` Some commentary suggests NC may treat the threshold as lower in specific transitional years. Current NCDOR guidance for 2025 and 2026 explicitly uses $1,000.
+Confirmed: a NC resident individual must make estimated payments where expected NC tax less expected withholding and allowable credits is $1,000 or more. NCDOR guidance for 2025 and 2026 uses $1,000; commentary suggesting a lower transitional threshold is not supported.
 
 ### Safe harbor (no underpayment interest)
 
@@ -415,7 +415,7 @@ When a taxpayer files MFJ federally and MFJ NC, send one combined quarterly work
 | NC-EST-T1-02 | Four installments due 4/15, 6/15, 9/15, 1/15 (following year) | G.S. § 105-163.15(b) |
 | NC-EST-T1-03 | Jan 15 installment may be skipped if return filed and balance paid by Jan 31 | G.S. § 105-163.15(d) |
 | NC-EST-T1-04 | Safe harbor = lower of 90% current-year or 100% prior-year NC tax | G.S. § 105-163.15(c) |
-| NC-EST-T1-05 | Prior-year safe harbor = 110% if prior-year NC AGI > $150,000 ($75,000 MFS) | G.S. § 105-163.15(c); `[VERIFY:]` annual NCDOR memo |
+| NC-EST-T1-05 | Prior-year safe harbor = 110% if prior-year NC AGI > $150,000 ($75,000 MFS) — confirmed | G.S. § 105-163.15 |
 | NC-EST-T1-06 | Underpayment interest rate set by Secretary, between 5% and 16% | G.S. § 105-241.21(a) |
 | NC-EST-T1-07 | Current rate (Jul 2025 – Jun 2026) = 7% annual | NCDOR Interest Rate Memos |
 | NC-EST-T1-08 | If annualized method used for any installment, must use for all four | Form D-422A instructions |
