@@ -257,6 +257,52 @@ worth looking for directly. It survives every check the repo has, because both
 numbers are real, both appear in the authority's own table, and nothing in the
 line contradicts anything else in the corpus. Only reading the source settles it.
 
+THE FOURTH COLUMN THIS SCRIPT CANNOT SEE
+
+KIND below covers dividends, interest and royalties. Withholding on SERVICE and
+TECHNICAL FEES is a fourth head that most jurisdictions levy separately, and no
+checker in this repo touches it. Five were read on the first pass, chosen
+because their own hedges mentioned residency, and three were wrong:
+
+  * Greece    WRONG, and backwards. The line read "20% ... paid to certain
+              non-residents / domestic recipients". Those are the two groups
+              that are EXEMPT. A Greek tax-resident legal entity is not subject
+              to it, and neither is a non-resident with no Greek PE. It catches
+              a NON-EU entity with a PE in Greece; an EU entity receiving the
+              same fees through a Greek PE is exempt. So the ordinary case, a
+              Greek company paying an EU consultancy with no Greek presence,
+              bears no Greek withholding at all and the guide would have had
+              20% deducted from the whole invoice.
+  * Croatia   WRONG list against the wrong rate. Market research, tax
+              consulting, business consulting and audit services are the 25%
+              categories, and only for a payee in an EU non-cooperative
+              jurisdiction with no treaty. The general 15% is IP-right fees and
+              interest. The guide had the four advisory categories at 15%,
+              which over-withholds on an ordinary adviser and under-withholds
+              by ten points on a blacklisted one.
+  * Qatar     WRONG TEST. The line said "services performed wholly or partly in
+              Qatar". The rule is where the service is USED: 5% on all services
+              used, utilised or benefited in Qatar even if carried out wholly
+              outside it. A foreign adviser working entirely abroad on a Qatari
+              matter is inside the charge and the guide put them outside it.
+              Also added: the 5% applies only where the non-resident has no
+              Qatari PE, remittance is by the 16th of the following month, and
+              the Trusted Entity regime from 16 March 2026 gives treaty relief
+              at source instead of pay-and-reclaim.
+  * Malaysia  CORRECT at 10%, and missing a limb. Section 4A also covers rental
+              of movable property, and the scope question the hedge asked is
+              answered by the territorial test: services performed in Malaysia.
+  * Estonia   CORRECT at 10% for services provided in Estonia, and missing the
+              22% that applies where the recipient is a tax-haven entity. Its
+              royalty definition also reaches payments for the use of
+              industrial, commercial or scientific equipment, so an equipment
+              rental is a royalty there rather than an untaxed service fee.
+
+Three of five wrong is the worst hit rate of any field checked so far, and it is
+the field with no checker. The pattern is not bad rates but bad SCOPE: who is
+caught, where the service must happen, which list the category belongs to. A
+rate can be verified against a chart; a scope has to be read.
+
 Two recall limits the PR #16 review found, both still open and worth knowing
 before reading a zero in this output as an absence:
 

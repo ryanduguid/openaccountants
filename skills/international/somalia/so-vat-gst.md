@@ -20,9 +20,9 @@ Somalia does not yet operate a full value-added tax. Instead a 5% Sales Tax appl
 - **Import sales tax** — Sales tax is also levied on imports, collected by the Customs Department alongside import duty and excise  _(Federal Ministry of Finance — Customs Department (https://mof.gov.so/departments/revenue-department))_
 - **Split-payment mechanism** — Since 18 August 2024, sales tax is remitted directly to the central treasury at the time of sale  _(Federal Ministry of Finance — Sales Tax (split payments) (https://www.vatcalc.com/somalia/somalia-split-payments-sales-tax/))_
 - **Filing frequency** — Monthly — taxpayers report sales tax collected each month to the Inland Revenue Department on the prescribed form  _(Inland Revenue Department — monthly sales tax return (https://www.vatcalc.com/somalia/somalia-split-payments-sales-tax/))_
-- **Registration threshold** — No clearly published mandatory registration turnover threshold; businesses collecting sales tax must register with the IRD (approx — confirm) (approx — confirm)  _(Inland Revenue Department (https://www.vatcalc.com/somalia/somalia-split-payments-sales-tax/))_
-- **Reverse charge** — No general reverse-charge mechanism — Somalia has a sales tax, not an input/output VAT, so cross-border service reverse charge does not apply (approx — confirm) (approx — confirm)  _(Federal Ministry of Finance — Sales Tax (https://www.vatcalc.com/somalia/somalia-split-payments-sales-tax/))_
-- **Input tax credit** — As a single-stage sales tax (not VAT), there is generally no input-tax credit mechanism (approx — confirm) (approx — confirm)  _(Federal Ministry of Finance — Sales Tax (https://www.vatcalc.com/somalia/somalia-split-payments-sales-tax/))_
+- **Registration threshold** — No clearly published mandatory registration turnover threshold; businesses collecting sales tax must register with the IRD (approx — confirm)  _(Inland Revenue Department (https://www.vatcalc.com/somalia/somalia-split-payments-sales-tax/))_
+- **Reverse charge** — No general reverse-charge mechanism — Somalia has a sales tax, not an input/output VAT, so cross-border service reverse charge does not apply (approx — confirm)  _(Federal Ministry of Finance — Sales Tax (https://www.vatcalc.com/somalia/somalia-split-payments-sales-tax/))_
+- **Input tax credit** — As a single-stage sales tax (not VAT), there is generally no input-tax credit mechanism (approx — confirm)  _(Federal Ministry of Finance — Sales Tax (https://www.vatcalc.com/somalia/somalia-split-payments-sales-tax/))_
 
 <!-- openaccountants-cta-block -->
 

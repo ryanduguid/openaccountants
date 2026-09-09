@@ -23,8 +23,8 @@ Kyrgyzstan operates a low, broadly flat tax system codified in the Tax Code of t
 - **Standard corporate profit tax rate** — 10% percent  _([Tax Code of the Kyrgyz Republic](https://kgaccount.com/en/income-tax-2/))_
 - **Value Added Tax** — Yes — VAT exists, standard rate 12% percent  _(Tax Code of the Kyrgyz Republic)_
 - **Sales tax** — Yes — a separate turnover-based sales tax of 0%–5% applies in addition to or instead of VAT, depending on activity and payment method (approx — confirm) percent (approx — confirm)  _(Tax Code of the Kyrgyz Republic)_
-- **Annual corporate profit tax return deadline** — By 1 March of the year following the reporting year (approx — confirm) (approx — confirm)  _(Tax Code of the Kyrgyz Republic)_
-- **Annual personal income tax return deadline** — By 1 April of the year following the reporting year (approx — confirm) (approx — confirm)  _(Tax Code of the Kyrgyz Republic)_
+- **Annual corporate profit tax return deadline** — By 1 March of the year following the reporting year (approx — confirm)  _(Tax Code of the Kyrgyz Republic)_
+- **Annual personal income tax return deadline** — By 1 April of the year following the reporting year (approx — confirm)  _(Tax Code of the Kyrgyz Republic)_
 
 <!-- openaccountants-cta-block -->
 

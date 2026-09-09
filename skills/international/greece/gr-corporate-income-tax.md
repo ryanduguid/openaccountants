@@ -3,7 +3,7 @@ name: gr-corporate-income-tax
 description: "Source-cited draft: corporate income tax for Greece (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
 jurisdiction: GR
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-09
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -28,7 +28,7 @@ Domestic withholding tax rates apply to dividends, interest and royalties, subje
 - **Withholding tax on dividends** — 5% percent (may be reduced to 0% under EU Parent-Subsidiary Directive or treaty)  _([Greek Income Tax Code (Law 4172/2013)](https://taxsummaries.pwc.com/greece/corporate/withholding-taxes))_
 - **Withholding tax on interest** — 15% percent (reducible under EU Interest-Royalties Directive or treaty)  _([Greek Income Tax Code (Law 4172/2013)](https://taxsummaries.pwc.com/greece/corporate/withholding-taxes))_
 - **Withholding tax on royalties** — 20% percent (reducible under EU Interest-Royalties Directive or treaty)  _([Greek Income Tax Code (Law 4172/2013)](https://taxsummaries.pwc.com/greece/corporate/withholding-taxes))_
-- **Withholding tax on management/consultancy fees and technical services** — 20% percent (paid to certain non-residents / domestic recipients per the Code (approx scope — confirm applicable category))  _([Greek Income Tax Code (Law 4172/2013)](https://taxsummaries.pwc.com/greece/corporate/withholding-taxes))_
+- **Withholding tax on management/consultancy fees and technical services** — **20%**, and the scope is far narrower than the rate suggests. It does **not** apply to a legal entity tax-resident in Greece (exempt, general government bodies aside), and it does **not** apply to a non-resident legal entity that has **no permanent establishment** in Greece. It applies to a **non-EU** legal entity that maintains a **PE in Greece**; an **EU** entity receiving the same fees through its Greek PE is exempt. So the ordinary cross-border case — a Greek company paying an EU consultancy with no Greek presence — carries **no Greek withholding at all**, and deducting 20% there withholds the entire amount wrongly. Establish the recipient's tax residence, EU status and PE position before withholding. This line previously read "paid to certain non-residents / domestic recipients", which points at the two groups that are exempt percent  _([Greek Income Tax Code (Law 4172/2013)](https://taxsummaries.pwc.com/greece/corporate/withholding-taxes))_
 
 ## Corporate filing and payment deadlines
 
