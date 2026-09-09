@@ -368,20 +368,20 @@ Both produce $0 net US tax for 2025. The FTC-only approach generates MORE carryf
 
 **Total exclusion**: $130,000 + $37,600 = $167,600.
 
-**Taxable income**: $264,000 − $167,600 = $96,400 − $15,750 standard deduction (2025 single) = $81,800.
+**Taxable income**: $264,000 − $167,600 = $96,400 − $15,750 standard deduction (2025 single) = $80,650.
 
-**§911(f) stacked tax** (on $81,800 + $167,600 = $249,400 reported "as if"):
-- Tax on $249,400 ≈ $56,872.
-- Tax on $167,600 ≈ $32,460.
-- Net US tax = $56,872 − $32,460 = $24,412.
+**§911(f) stacked tax** (on $80,650 + $167,600 = $248,250 reported "as if"):
+- Tax on $248,250 ≈ $56,503.
+- Tax on $167,600 ≈ $33,071.
+- Net US tax = $56,503 − $33,071 = $23,432.
 
 **Foreign tax credit**: $0 (UAE collected no tax).
 
 **SE tax**: $0 (W-2 employee, not self-employed).
 
-**Net US federal tax owed**: $24,412.
+**Net US federal tax owed**: $23,432.
 
-**Compare without FEIE**: Tax on $204,000 + $60,000 − $15,750 = $249,400 = $56,872. Far worse. §911 saves $32,460.
+**Compare without FEIE**: Tax on $204,000 + $60,000 − $15,750 = $248,250 = $56,503. Far worse. §911 saves $33,071. (The without-FEIE taxable income and the §911(f) stacked base are the same $248,250 by construction — stacking adds the exclusion back — so the saving is exactly the tax on the excluded $167,600.)
 
 ### 15.2 Example B — Freelance US Citizen in Lisbon Using FTC + NHR
 
