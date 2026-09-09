@@ -86,7 +86,7 @@ When invoked, the agent executes the following steps in order. No step is option
 
 ### Step 1 — Confirm intake artifact exists
 
-0. **Step 1** — Verify the intake skill has produced: Taxpayer name, SSN/ITIN (last 4 only in working files); Filing status (Single / MFJ / MFS / HoH / QSS); Residency confirmation (full-year North Dakota); Date of birth for taxpayer and spouse (drives the federal age-65 additional standard deduction, which feeds Line 1 starting point); Dependents list with SSNs (drives federal dependents — ND has no separate child deduction unlike NC); Business structure (sole prop or SMLLC disregarded); MN/MT reciprocity flag — taxpayer wages earned in Minnesota or Montana while a ND resident are exempt from those states' income tax under the reciprocity agreements; conversely a ND resident working a W-2 job in MN/MT files no MN/MT return for those wages; Oil & gas / mineral income flag — flag-only; the orchestrator does not produce ND oil extraction tax filings (out of scope, see R-ND-FINAL-21); Tribal-enrollment flag — enrolled tribal members earning income on their reservation may take a Schedule ND-1SA subtraction; Renaissance Zone flag — income from a designated ND Renaissance Zone may be exempt under N.D.C.C. §57-38-01.18; Military retirement flag — ND fully subtracts military retirement pay per N.D.C.C. §57-38-30(5) `[VERIFY:]` 2025 conformity; Social Security flag — ND fully subtracts taxable Social Security benefits per N.D.C.C. §57-38-30 `[VERIFY:]` 2025 statute reference; Job Service ND unemployment benefits flag — taxable federally; subtracted on ND-1SA `[VERIFY:]` 2025 schedule line; Health coverage history (federal Form 1095-A / B / C); W-2s, 1099-NECs, 1099-Rs received. If any item is missing, refuse with R-ND-FINAL-5.
+0. **Step 1** — Verify the intake skill has produced: Taxpayer name, SSN/ITIN (last 4 only in working files); Filing status (Single / MFJ / MFS / HoH / QSS); Residency confirmation (full-year North Dakota); Date of birth for taxpayer and spouse (drives the federal age-65 additional standard deduction, which feeds Line 1 starting point); Dependents list with SSNs (drives federal dependents — ND has no separate child deduction unlike NC); Business structure (sole prop or SMLLC disregarded); MN/MT reciprocity flag — taxpayer wages earned in Minnesota or Montana while a ND resident are exempt from those states' income tax under the reciprocity agreements; conversely a ND resident working a W-2 job in MN/MT files no MN/MT return for those wages; Oil & gas / mineral income flag — flag-only; the orchestrator does not produce ND oil extraction tax filings (out of scope, see R-ND-FINAL-21); Tribal-enrollment flag — enrolled tribal members earning income on their reservation may take a Schedule ND-1SA subtraction; Renaissance Zone flag — income from a designated ND Renaissance Zone may be exempt under N.D.C.C. §57-38-01.18; Military retirement flag — ND fully subtracts retired military personnel benefits, including those paid to the surviving spouse of a deceased retired member, to the extent included in federal taxable income, per **N.D.C.C. § 57-38-30.3(2)(r)** — confirmed (note: **not** § 57-38-30(5), which does not exist; § 57-38-30 is the corporate rate section and has three subsections). Active-duty, national guard and reserve **pay** is separately subtracted under § 57-38-30.3(2)(g); Social Security flag — ND fully subtracts social security benefits included in federal adjusted gross income under IRC § 86, per **N.D.C.C. § 57-38-30.3(2)(s)** — confirmed, with no income limit; Job Service ND unemployment benefits flag — taxable federally; subtracted on ND-1SA. Do not overlook **§ 57-38-30.3(2)(t)**, the retired law enforcement personnel benefits subtraction for a taxpayer with at least twenty combined years as a peace officer or who medically retired from those duties — it works the same way as the military retirement subtraction and is easy to miss on a 1099-R; Health coverage history (federal Form 1095-A / B / C); W-2s, 1099-NECs, 1099-Rs received. If any item is missing, refuse with R-ND-FINAL-5.
 
 - **R-ND-FINAL-5** — Refuse if any required intake item is missing.  _(Step 1)_
 
@@ -260,7 +260,7 @@ Every line below is a hard equality. Tolerance is $1 unless noted otherwise. A f
 | C-12 | Federal standard deduction (or federal itemized, whichever taken) is ALREADY embedded in Form 1040 Line 15 — ND does NOT add or take another deduction. Verify no duplication. |
 | C-13 | Federal age-65 additional standard deduction is embedded in Line 15 — flows through to ND with no separate ND senior deduction |
 | C-14 | Military retirement pay (1099-R coded for military retirement) → ND-1SA subtraction. ND fully exempts military retirement pay: the subtraction equals the taxable amount of the benefits reported on the federal return, for retired US armed forces, Reserve and National Guard members and their surviving spouses — confirmed (ND Office of State Tax Commissioner, Income Tax: Military Service Members guideline). Subtract only the military retirement portion, not other 1099-R amounts |
-| C-15 | Job Service ND unemployment benefits taxable federally on Schedule 1 → ND-1SA subtraction `[VERIFY:]` 2025 schedule line and statutory authority |
+| C-15 | Job Service ND unemployment benefits are taxable federally on Schedule 1 and **remain taxable in North Dakota — there is no ND-1SA subtraction for them.** ND taxable income starts at federal taxable income and is adjusted only by the closed list in N.D.C.C. § 57-38-30.3(2); unemployment compensation is not in it, and § 57-38-01.2 (the old individual adjustments section) was repealed in 2009. Do not subtract them |
 | C-16 | Renaissance Zone income: federal reporting unchanged; ND-1SA subtraction only for documented qualifying RZ income with project certification |
 | C-17 | Tribal reservation income (enrolled member): federal reporting unchanged; ND-1SA subtraction only with enrollment documentation and on-reservation sourcing |
 
@@ -542,8 +542,10 @@ treatment; else N/A]
 [items requiring reviewer judgment, with citations]
 
 ## Planning Notes for 2026
-- ND rate stability watch — `[VERIFY:]` any 69th Legislative
-  Assembly changes to N.D.C.C. §57-38-30.3
+- ND rate stability: the 69th Legislative Assembly (2025) adjourned sine die
+  without changing the 0% / 1.95% / 2.50% individual schedule in N.D.C.C.
+  § 57-38-30.3. Bracket thresholds still index annually under § 57-38-30.3(1)(g),
+  so take each year's figures from the published schedule
 - Federal §199A QBI rate unchanged at 20% under OBBBA (P.L. 119-21) — flows through
   to ND because ND starts at federal taxable income
 - 1099 threshold change to $2,000 in 2026 under OBBBA
@@ -563,14 +565,14 @@ treatment; else N/A]
 | --- | --- |
 | ND-ASM-T1-01 | Federal Form 1040 must be computed before ND-1. No exceptions. |
 | ND-ASM-T1-02 | ND-1 Line 1 = Form 1040 Line 15 (federal **taxable** income, NOT federal AGI). |
-| ND-ASM-T1-03 | ND tax = graduated bracket computation against ND-1 Line 4 using the filing-status schedule (TY 2025: Single 0%/1.95%/2.50% at $48,475/$244,825; MFJ at $80,975/$298,075; HoH at $64,950/$271,450; MFS at $40,475/$149,025) `[VERIFY:]` 2025 brackets per N.D.C.C. §57-38-30.3. |
+| ND-ASM-T1-03 | ND tax = graduated bracket computation against ND-1 Line 4 using the filing-status schedule (TY 2025: Single 0%/1.95%/2.50% at $48,475/$244,825; MFJ at $80,975/$298,075; HoH at $64,950/$271,450; MFS at $40,475/$149,025) — confirmed. The MFS and HoH thresholds match the 2025 Form ND-1ES rate schedules exactly, and each schedule's second-step constant reconciles: 1.95% × ($244,825 − $48,475) = $3,828.83 single, × ($298,075 − $80,975) = $4,233.45 MFJ, × ($271,450 − $64,950) = $4,026.75 HoH, × ($149,025 − $40,475) = $2,116.73 MFS. The statutory schedules in N.D.C.C. § 57-38-30.3(1)(a)-(e) are the unindexed base amounts; § 57-38-30.3(1)(g) directs the Tax Commissioner to publish indexed schedules each year, so always take the year's figures from the form, not from the Century Code |
 | ND-ASM-T1-04 | ND has no city or local individual income tax. Skip any city-return step. |
 | ND-ASM-T1-05 | The April 15, 2026 filing deadline applies. ND grants automatic 6-month extension when a federal Form 4868 is filed — no separate ND extension form required. |
 | ND-ASM-T1-06 | Extension to file is NOT extension to pay. Any ND balance due is still due April 15. |
 | ND-ASM-T1-07 | ND fully subtracts taxable Social Security benefits (ND-1SA). ND has fully exempted Social Security benefits from state income tax since 2021, at every income level — confirmed. |
 | ND-ASM-T1-08 | ND fully subtracts military retirement pay (ND-1SA), equal to the taxable amount reported federally — confirmed. |
-| ND-ASM-T1-09 | ND-1ES estimated payments are required if expected ND net tax liability is $1,000 or more (N.D.C.C. §57-38-62). |
-| ND-ASM-T1-10 | ND safe harbor: lesser of 100% of prior-year ND tax OR 90% of current-year ND tax. No 110%-of-AGI step. `[VERIFY:]` |
+| ND-ASM-T1-09 | ND-1ES estimated payments are required only where the taxpayer is subject to IRC § 6654 **and** neither ND-1ES worksheet stop test is met: current-year net tax liability less estimated withholding under $1,000 (line 10), or prior-year net tax liability under $1,000 (line 12). "Net tax liability" is computed before withholding — § 57-38-62(5). See `nd-estimated-tax` |
+| ND-ASM-T1-10 | ND safe harbor: lesser of 100% of prior-year ND tax OR 90% of current-year ND tax. No 110%-of-AGI step — confirmed, N.D.C.C. § 57-38-62(1)(b) and Form ND-1ES worksheet line 12 |
 | ND-ASM-T1-11 | ND conforms to federal §168(k) bonus depreciation — no add-back required. |
 | ND-ASM-T1-12 | ND conforms to federal §179 — no separate cap, no add-back. |
 | ND-ASM-T1-13 | ND effectively recognizes federal §199A QBI deduction because ND starts at federal taxable income (after QBI). No separate ND adjustment. |
@@ -764,8 +766,10 @@ treatment; else N/A]
   ND when Form MWR is timely filed.
 
 ## Planning Notes for 2026
-- ND rate stability: 0%/1.95%/2.50% schedule projected to continue
-  in 2026 absent 69th Legislative Assembly action `[VERIFY:]`.
+- ND rate stability: the 0% / 1.95% / 2.50% schedule continues in 2026 — the
+  69th Legislative Assembly made no rate change. The 2026 thresholds are
+  Single $49,575 / $250,400; MFJ $82,800 / $304,850; MFS $41,400 / $152,425;
+  HoH $66,400 / $277,600 (2026 Form ND-1ES rate schedules).
 - Federal §199A QBI rate stays at 20% under OBBBA (P.L. 119-21) —
   the 23% rate in the House-passed bill was not enacted. From 2026
   the phase-in ranges widen to $75,000/$150,000.
