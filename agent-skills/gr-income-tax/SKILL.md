@@ -30,7 +30,7 @@ metadata:
 | Filing portal | TAXISnet / myAADE |
 | Currency | EUR only |
 | Return forms | E1 (income tax) + E3 (business income schedule) |
-| Filing deadline | 30 June of the following year |
+| Filing deadline | **15 July** of the following year, set each year by AADE decision (the window opens 15 March). For tax year 2025 AADE extended it to **24 July 2026**. Not 30 June |
 | Tax payment | Up to 8 monthly instalments from 31 July |
 | Prepayment (προκαταβολή) | 55% of current tax (50% first 3 years) |
 | EFKA contributions | 6 categories, EUR 3,060--7,800/year |

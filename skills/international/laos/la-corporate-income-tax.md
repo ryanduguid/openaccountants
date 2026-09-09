@@ -35,7 +35,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Withholding on dividends** — 10% (domestic-law rate; treaties may reduce, e.g. 5% for ≥10% holdings) percent  _(Law on Income Tax (Law No. 67/NA, 2019) — https://taxsummaries.pwc.com/lao-pdr/corporate/withholding-taxes)_
 - **Withholding on interest** — 10% percent  _(Law on Income Tax (Law No. 67/NA, 2019) — https://taxsummaries.pwc.com/lao-pdr/corporate/withholding-taxes)_
 - **Withholding on royalties (IP)** — 5% percent  _(Law on Income Tax (Law No. 67/NA, 2019) — https://taxsummaries.pwc.com/lao-pdr/corporate/withholding-taxes)_
-- **Annual profit tax return deadline** — By 20 January of the year following the tax year (approx — confirm)  _(Tax Administration Law (Lao PDR) — https://laos.acclime.com/guides/financial-statement-filing/)_
+- **Annual profit tax return deadline** — By 20 January of the year following the tax year. Confirmed: the return and the financial statements have different dates, 20 January and 31 March, and the two filings draw on the same accounts  _(Tax Administration Law (Lao PDR); PwC Worldwide Tax Summaries, Lao PDR corporate tax administration)_
 - **Annual financial statement filing** — By 31 March following a 31 December year-end  _(Accounting Law (Lao PDR) — https://news.bloombergtax.com/daily-tax-report-international/laos-tax-agency-issues-notice-on-2025-financial-statement-filing-deadline-for-enterprise-account-holders)_
 - **Tax base** — Domestic companies taxed on worldwide income; foreign companies on Lao-source income  _(Law on Income Tax (Law No. 67/NA, 2019) — https://taxsummaries.pwc.com/lao-pdr/corporate/taxes-on-corporate-income)_
 

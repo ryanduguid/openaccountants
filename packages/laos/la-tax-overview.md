@@ -24,7 +24,7 @@ Lao PDR taxes income, profits and consumption under a codified Tax Law framework
 - **Top personal income tax rate (salary)** — 25% percent  _([Law on Income Tax (Law No. 67/NA, 2019)](https://taxsummaries.pwc.com/lao-pdr/individual/taxes-on-personal-income))_
 - **Standard profit tax rate** — 20% percent  _(Law on Income Tax (Law No. 67/NA, 2019) — https://taxsummaries.pwc.com/lao-pdr/corporate/taxes-on-corporate-income)_
 - **Value-added tax (VAT)** — Yes — VAT applies at a standard rate of 10% percent  _([Law on Value-Added Tax (Lao PDR)](https://taxsummaries.pwc.com/lao-pdr/corporate/other-taxes))_
-- **Annual profit tax return deadline** — By 20 January of the year following the tax year ((approx — confirm))  _([Tax Administration Law (Lao PDR)](https://laos.acclime.com/guides/financial-statement-filing/))_
+- **Annual profit tax return deadline** — By 20 January of the year following the tax year. Confirmed against PwC; the 31 March date below is the financial statements, not the return  _([Tax Administration Law (Lao PDR)](https://taxsummaries.pwc.com/lao-pdr/corporate/tax-administration))_
 - **Annual financial statement filing deadline** — By 31 March following a 31 December year-end  _([Accounting Law (Lao PDR)](https://news.bloombergtax.com/daily-tax-report-international/laos-tax-agency-issues-notice-on-2025-financial-statement-filing-deadline-for-enterprise-account-holders))_
 - **Provincial / local income tax** — None — there are no provincial or local income taxes  _([Law on Income Tax (Law No. 67/NA, 2019)](https://taxsummaries.pwc.com/lao-pdr/individual/taxes-on-personal-income))_
 

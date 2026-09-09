@@ -61,6 +61,13 @@ BARE = re.compile(r'\b(filing deadline|lodgment deadline|lodgement deadline|'
 SLUG = re.compile(r'(individual|personal|income-tax|corporate-tax|company-tax|'
                   r'corporate-income-tax|tax-return|return)', re.I)
 
+# A trailing source citation in the house _( ... )_ form.
+CITE = re.compile(r'_\([^)]*\)_\s*$')
+
+# "between 1 March and 30 June", "1 April - 30 June", "15 March to 15 July".
+_D = r'(?:\d{1,2}\s+(?:%s)|(?:%s)\s+\d{1,2})' % (MONTH, MONTH)
+WINDOW = re.compile(r'\b(?:between\s+)?(%s)\s*(?:and|to|[-\u2013\u2014])\s*(%s)\b' % (_D, _D), re.I)
+
 PERSONAL = re.compile(r'\b(individual|personal|employee|self[- ]employed)\b', re.I)
 CORPORATE = re.compile(r'\b(corporate|company|companies|corporation|CIT|profits tax)\b', re.I)
 
@@ -75,6 +82,12 @@ def kind(line, slug=''):
     return 'unspecified'
 
 
+def _spell(match):
+    """Render a DATE match day-first, whichever way the guide wrote it."""
+    g = match.groups()
+    return '%s %s' % (g[0], g[1]) if g[0] else '%s %s' % (g[3], g[2])
+
+
 def deadline_in(line, slug=''):
     """Return (kind, stated deadline) for a line that states one, else None.
 
@@ -82,17 +95,25 @@ def deadline_in(line, slug=''):
     "15th day of the 6th month after year-end (15 June for calendar-year
     companies)" is more useful read as 15 June.
     """
+    # The house style ends a bullet with its source in _( ... )_, and those
+    # carry dates. Monaco cites "Sovereign Ordinance no. 3.152 of 19 March
+    # 1964" and was reported as filing on 19 March.
+    line = CITE.sub(' ', line)
     m = LABEL.search(line)
     if not m and slug and SLUG.search(slug):
         m = BARE.search(line)
     if not m:
         return None
     tail = line[m.end():]
-    d = DATE.search(tail) or DATE.search(line)
+    text = tail if DATE.search(tail) else line
+    # A window names its opening first. Bulgaria files "between 1 March and
+    # 30 June" and only the second date is the deadline.
+    w = WINDOW.search(text)
+    if w:
+        return kind(line, slug), _spell(DATE.match(w.group(2)) or DATE.search(w.group(2)))
+    d = DATE.search(text)
     if d:
-        g = d.groups()
-        stated = '%s %s' % (g[0], g[1]) if g[0] else '%s %s' % (g[3], g[2])
-        return kind(line, slug), stated
+        return kind(line, slug), _spell(d)
     r = RULE.search(tail)
     if r:
         return kind(line, slug), r.group(0).strip()[:48]
@@ -136,6 +157,17 @@ def selftest():
         else:
             assert not DATE.search(stated), (
                 'expected a rule, got a calendar date %r from: %s' % (stated, line))
+    # a window names its opening first; the deadline is the far end
+    # "Annual CIT return deadline" reaches the reader through the bare label,
+    # since LABEL spells out income/tax and not every acronym in between.
+    assert deadline_in('- **Annual CIT return deadline** - Between 1 March and 30 June of the '
+                       'year following the tax year',
+                       'bg-corporate-income-tax') == ('corporate', '30 June')
+    # a date inside the trailing source citation is not a deadline
+    mc = ('- **ISB return filing deadline** - Annual return due within 3 months of the financial '
+          'year-end  _(Sovereign Ordinance no. 3.152 of 19 March 1964)_')
+    got = deadline_in(mc, 'mc-corporate-income-tax')
+    assert got and '19 March' not in got[1], 'read the citation date as a deadline: %r' % (got,)
     # a bare label counts only inside a file whose slug names the return
     au = '| Filing deadline | 31 October 2025 (self-lodged); May 2026 (tax agent) |'
     assert deadline_in(au, 'au-individual-return') == ('personal', '31 October')
