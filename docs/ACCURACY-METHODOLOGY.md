@@ -261,6 +261,55 @@ against itself, and a 10% rate understates the credit by four points of the
 deduction sum, which overstates the tax. Reading what a guide cites is the
 cheapest check available and it keeps paying.
 
+### The same Act, two commencement dates, and a guide that read one
+
+Working the expired-rule queue into the UK pack turned up the sharpest instance
+yet of a class this document has recorded twice before: an announcement is not a
+law, and a law is not in force on the day it is announced.
+
+The Finance Bill following the Autumn Budget of 26 November 2025 received Royal
+Assent on 18 March 2026 as Finance Act 2026 (c. 11). It raises three sets of
+rates by two percentage points, and it commences them on **two different dates**:
+
+  * s.4  dividends -- ordinary 8.75% to 10.75%, upper 33.75% to 35.75%, from
+         **6 April 2026**, so it bites on a 2026-27 return.
+  * s.5  savings -- basic 22%, higher 42%, additional 47%, from **6 April 2027**.
+  * s.7  property, as a new rate category of its own -- the same 22/42/47, also
+         from **6 April 2027**.
+
+`uk-income-tax-sa100` had the dividend half exactly right and read the savings
+half a year early. Its Scottish worked example applied "expected 42%" to a
+higher-rate taxpayer's bank interest in 2026-27, where the rate is still 40%,
+and its legislation table carried both changes as "TBC pending Finance Bill
+enactment" five months after Royal Assent. Its prohibitions told the reader not
+to finalise a 2026-27 return before an enactment that had already happened.
+
+Two details make this worth recording rather than just fixing.
+
+The first is that the sibling guide had it right and said so loudly.
+`uk-rental-sa105` states the 2027-28 commencement, restates the 2026-27 rates as
+20/40/45, and warns in as many words that a Scottish taxpayer's 42% is a
+residence rate on non-savings income and that "the coincidence of the number is
+a trap". `uk-income-tax-sa100` then walked into precisely that trap, writing 42%
+into a Scottish example. Nine times on this branch the reference guide has been
+current while the working guide was stale; this is the first time one sibling
+documented the exact error another sibling was making.
+
+The second is what the placeholder cost. "TBC pending enactment" reads as
+caution, and caution is normally free. Here it was not: while the guide waited
+for an enactment that had happened, it also carried a provisional figure derived
+from the announcement, and that figure applied a 2027-28 rate to a 2026-27
+return and overstated the example by GBP 50. A hedge that carries a working
+estimate is not a refusal to answer. It is an answer, with a disclaimer attached.
+
+The Scottish half of the same example was simply out of date rather than wrong
+in kind. The 2026-27 Scottish Budget widened the starter band 7.4% to GBP 16,537
+and the basic band 7.4% to GBP 29,526 while freezing the higher, advanced and
+top thresholds. On the example's GBP 50,000 that makes the Scottish tax GBP
+8,982.05 rather than the GBP 9,013.80 the guide carried forward from 2025-26 --
+lower, not higher, which is the direction a "working estimate" is least likely
+to guess.
+
 ### Work the queue by who reads it, not by who hedges most
 
 The hedge queue sorted by count puts Central African Republic first with 27 and

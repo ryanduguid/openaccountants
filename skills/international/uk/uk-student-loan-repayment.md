@@ -67,8 +67,8 @@ This block is generated from verified `skill_facts` — edit the facts, not the 
 | Plan 5 | 9% | £25,000 | £25,000 (frozen by SLC) | £25,000 (fixed to April 2027) |
 | Postgraduate Loan | 6% | £21,000 | £21,000 | £21,000 (still frozen) |
 
-**Note on the 2026-27 column.** It was carried as "TBC -- HMRC publishes annually"
-until this update. The 2026-27 year began on 6 April 2026 and the thresholds are
+**Note on the 2026-27 column.** It carried a placeholder until this update. The
+2026-27 year began on 6 April 2026 and the thresholds are
 published on GOV.UK, so the placeholder had outlived its purpose. The figures
 above are read off GOV.UK "Repaying your student loan -- what you pay", which
 shows the thresholds currently in force. **The accountant review recorded at the
