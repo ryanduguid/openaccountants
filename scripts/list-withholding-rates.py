@@ -20,6 +20,37 @@ The hedges are the leads. Many of these lines already end in "(approx --
 confirm)" or say the position is uncertain, and those are the rows where an
 outside source settles something rather than confirming it.
 
+Checked against an outside source so far. Two jurisdictions, both hedged by
+their own guides, and both settled.
+
+  * Ethiopia  Right numbers, wrong reason. The guide read "5% to 10% depending
+              on residency/context (approx -- confirm split between
+              resident/non-resident)". The split is by the KIND of royalty, not
+              the residency of the payee: 5% for art and culture, 10% for
+              everything else, both raised from a flat 5% by the Income Tax
+              (Amendment) Proclamation No. 1395/2025. A non-resident gets 10%
+              with no art-and-culture reduction. Its dividend rate of 15% and
+              interest rate of 10% were already correct under the same
+              proclamation, so only the reason was wrong, which is the class
+              this corpus keeps producing.
+  * Iceland   Understated. The guide led with 12% on interest to non-residents
+              while its own hedge said "PwC cites 13% gross, statutory 12%".
+              PwC publishes 13% for corporate and individual recipients alike.
+              The two have not been reconciled, so the guide now deducts at 13%
+              on the methodology's own rule of taking the higher-tax position
+              where a rate is unsettled. An under-deduction is the payer's
+              liability, which is why this field defaults upward.
+
+Read and found correct, so not chased again: Benin states three real dividend
+rates (15% standard, 10% regularly distributed, 7% for WAEMU-listed companies),
+Chile withholds 4% on interest to foreign banks against 35% generally, Colombia
+20% on dividends from taxed earnings and 48% from untaxed, Vietnam 0% to
+corporate shareholders and 5% to individuals, Zimbabwe 5% on listed shares and
+10% on unlisted, Hong Kong 4.95% on royalties to unassociated non-residents.
+
+Still open: 118 jurisdictions state a rate, 31 hedge at least one of their own,
+and 2 have been checked.
+
 Usage: python3 scripts/list-withholding-rates.py [--selftest]
 """
 import os, re, sys, collections
