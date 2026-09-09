@@ -39,9 +39,10 @@ and both are worth knowing before writing any percentage comparison:
     conflict; it is a margin over a floating benchmark and is not comparable
     to anything.
 
-The label normalisation here already tolerates the first case badly enough
-that its 18 hits were all benign. Treat any percentage conflict as a question
-about which regime each figure belongs to before treating it as an error.
+The original 18 leads covered bullets only: an early loop exit skipped table
+rows. Windows paths also caused every guide to be skipped. Both are now covered
+by regression tests. Treat each lead as a question about which regime the
+figures belong to; earlier triage does not cover the newly included tables.
 
 """
 import os,re,sys,collections
@@ -58,7 +59,7 @@ def norm_label(s):
     s=re.sub(r'\b(the|a|an|for|of|in|on|at|to|and|or|is|rate|rates)\b',' ',s)
     return ' '.join(s.split())
 def pack_of(path):
-    p=path.split('/')
+    p=os.path.normpath(path).split(os.sep)
     if p[0]=='skills' and p[1]=='international': return 'int:'+p[2]
     if p[0]=='skills' and p[1]=='us-states': return 'us:'+p[2]
     if p[0]=='skills': return 'skills:'+p[1]
@@ -73,7 +74,7 @@ for dp,dn,fn in os.walk('skills'):
             if '%' not in line: continue
             for rx in LABELLED:
                 m=rx.match(line)
-                if not m: break
+                if not m: continue
                 lab=norm_label(m.group('lab')); val=m.group('val')
                 if len(lab)<6: break
                 pcts=PCT.findall(val)

@@ -82,7 +82,7 @@ def main():
     skipped = collections.defaultdict(list)
 
     for p in sorted(glob.glob('skills/international/*/*.md')):
-        juris = p.split(os.sep)[2]
+        juris = os.path.basename(os.path.dirname(p))
         for n, line in enumerate(io.open(p, encoding='utf-8', errors='replace'), 1):
             m = LINE.match(line)
             if not m:

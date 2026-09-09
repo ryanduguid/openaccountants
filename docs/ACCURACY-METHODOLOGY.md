@@ -15,7 +15,10 @@ See [QUALITY-TIERS.md](QUALITY-TIERS.md) for the full definitions. In short:
 | **Source-cited draft** (Tier 2) | Every rate, threshold, form, and deadline drafted from authoritative sources (tax-authority publications and primary legislation) | Drafted + cross-checked, awaiting a full accountant review |
 | **Accountant-reviewed** (Tier 1) | A licensed practitioner has reviewed the skill, tested it against representative data, and put their name + credential on it | Named CPA / CA / EA / Steuerberater / local equivalent |
 
-The honest headline is **"source-cited drafts here, accountant-reviewed via MCP"** — never a blanket "reviewed by accountants." Most skills in this repo are Tier 2. See [COVERAGE.md](COVERAGE.md) for the exact split.
+This historical fork contains both tiers. Its metadata records upstream review
+status; this fork does not operate the hosted MCP service or commission fresh
+accountant reviews. See [COVERAGE.md](COVERAGE.md) for the recorded split and
+[README.md](../README.md) for the fork's maintenance status.
 
 ## Sources
 
@@ -50,9 +53,17 @@ The product is designed around this honesty: the AI produces a working paper and
 
 The scripts in `scripts/` compare the corpus against itself: across the three
 trees, across sibling guides in one jurisdiction, and against its own arithmetic.
-None of them can see a figure that every copy agrees on and that is wrong. To
-close that gap you have to ask a source outside the repository, one field and one
-jurisdiction at a time. This section records how far that has got.
+Agreement between copies does not establish that a tax rule is correct. That
+requires checking an external source for the relevant jurisdiction and period.
+The results below record earlier branch work; they are not a fresh independent
+verification of every guide.
+
+The `check-*.py` review aids generally exit zero even when they report leads.
+Read their output and distinguish confirmed defects from parser limitations,
+different tax periods and different regimes. Guide validation and unit tests
+check software and metadata; neither certifies the tax content. The
+percentage-conflict checker previously skipped table rows and all Windows
+paths, so its earlier results did not cover those inputs.
 
 ### Checked against an outside source
 
@@ -61,11 +72,11 @@ jurisdiction at a time. This section records how far that has got.
 | Standard VAT / GST rate | 157 of 157 jurisdictions stating one | 6 | Fiji, India, Kazakhstan, Zimbabwe, Malawi, Maldives |
 | Headline corporate rate | ~135 jurisdictions | 3 | Lithuania, Cyprus, Portugal |
 
-No one has run an external pass over anything else. That leaves payroll rates and
-thresholds, registration and filing thresholds, filing deadlines, penalty and
-interest rates, social-contribution bands, capital allowances, withholding rates,
-form names and statutory citations. All of them move on the same annual cycle as
-the two fields above, and those two produced nine errors.
+The table does not establish a complete external review of payroll rates and
+thresholds, registration and filing thresholds, filing deadlines, penalties,
+interest, social-contribution bands, capital allowances, withholding rates,
+form names or statutory citations. Earlier individual corrections do not
+establish that every guide covering those topics has been checked.
 
 ### What the six VAT errors had in common
 
