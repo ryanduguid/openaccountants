@@ -70,6 +70,7 @@ jurisdiction at a time. This section records how far that has got.
 | Social contribution ceilings | Slovakia | 1 | Slovakia |
 | Alternative minimum tax status | Taiwan | 1 | Taiwan |
 | Penalty and interest on overdue tax | Cyprus | 0, one conflict recorded | — |
+| Minimum corporate tax bands | Slovakia | 1 | Slovakia |
 
 The deadline pass has covered 24 jurisdictions of 200. Nobody has run an external
 pass over anything else. That leaves payroll rates and thresholds, registration
@@ -173,6 +174,12 @@ six. A figure labelled with its year is honest and ages badly, and every
 "lowered to X from 2026" written in 2025 becomes a wrong headline in 2026
 unless someone turns it around. Lead with the rule in force and keep the
 superseded figure behind it.
+
+All fourteen dated hedges have now been worked. Six were wrong: Romania twice,
+Albania, Slovakia twice and Taiwan. Latvia, Cyprus, Russia, Seychelles and
+Egypt's remaining lines were right, though Cyprus does not resolve and says so.
+Six in fourteen is the densest seam this branch found, against four in ten for
+hedges generally and zero in ten for a random draw.
 
 ### The best lead in the corpus is the corpus's own doubt
 

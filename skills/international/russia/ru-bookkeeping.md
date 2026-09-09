@@ -107,7 +107,7 @@ A self-employed person whose income approaches the **НПД limit of 2,400,000 �
 - Exact **current КУДиР form** and any 2026 reissue.
 - Whether a **specific activity** qualifies for a 54-ФЗ ККТ exemption (list is narrow, changes often).
 - **Penalty amounts** under ст. 120 / ст. 126 НК РФ and КоАП ст. 14.5 — verify before quoting figures.
-- **НПД income limit** (2,400,000 ₽; possible increase to 3,000,000 ₽ discussed but not confirmed as of May 2026 — verify current value).
+- **НПД income limit** — still **2,400,000 ₽** for 2026. Several bills to raise it are before the Duma and none has passed: 3,400,000 ₽ tabled in June 2026 and scheduled for October, and 4,300,000 ₽ tabled on 25 August 2026. Use 2,400,000 ₽ and check whether either has been enacted before relying on a higher figure.
 - Patent (ПСН) regime specifics — out of primary scope here; route to a patent-specific resource.
 - ООО / legal-entity бухгалтерский учёт — **out of scope** (this skill is self-employed only).
 
