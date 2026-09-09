@@ -40,7 +40,7 @@ This skill is for informational purposes only and does not constitute tax, legal
 | **C3i credit rate (low-vitality / resource regions)** | **40%** of qualified investment (e.g., Gaspésie–Îles-de-la-Madeleine, Bas-Saint-Laurent, Côte-Nord, Nord-du-Québec, Saguenay–Lac-Saint-Jean designated portions) |
 | **C3i credit refundability** | Fully **refundable** for CCPCs with assets ≤ $50M; partially refundable on a sliding scale up to $100M; **non-refundable** above $100M |
 | **R&D credit (Quebec)** | Quebec stacks on top of the federal SR&ED ITC. Refundable for CCPCs. Multiple components: salaries (general rate up to **30%** for SMEs sliding to 14% for large), university / public research contracts, private partnership pre-competitive research, fees paid to eligible research consortia |
-| **Capital gains inclusion** | 50% for gains realised on or before 24 June 2024; 66.67% thereafter — Quebec **harmonised** with the federal change announced in the 2024 federal Budget and confirmed in the Quebec 2024–25 Information Bulletins |
+| **Capital gains inclusion** | **50% for all gains.** Quebec harmonised with the federal 66.67% proposal in its 2024–25 Information Bulletins, but the federal increase was cancelled on 21 March 2025 and Quebec confirmed it would follow, so the 50% rate stands and the 24 June 2024 split date no longer applies |
 | **Compensation tax on financial institutions** | Separate tax under Title IV.1.1 QTA (out of scope of this skill) |
 | **Allocation of taxable income** | "Taxable income earned in Quebec" (TIEQ) — based on the **two-factor formula** (50% wages + 50% gross revenue from a Quebec PE) — Section 771R QTA and Regulation 771R |
 | **Annual return** | **Form CO-17 — Déclaration de revenus des sociétés** |
@@ -68,7 +68,7 @@ This skill is for informational purposes only and does not constitute tax, legal
 | C3i property qualification unclear | Do not claim until qualified-property test confirmed against Section 1029.8.36.166.40 et seq. QTA |
 | Refundability of credits unclear | Default to non-refundable treatment until taxable-capital threshold verified |
 | Quebec R&D harmonised with federal SR&ED | Quebec rules are separate — never assume federal SR&ED qualification automatically qualifies for the Quebec credit |
-| Capital gains inclusion rate (transitional 2024 year) | Apply 50% pre-25-June and 66.67% post-24-June **per the federal split** unless the proposed federal deferral changes the harmonised position |
+| Capital gains inclusion rate | Apply **50%** throughout. The federal 66.67% increase — and with it the 25 June 2024 split — was cancelled on 21 March 2025; there is no transitional calculation |
 
 ## Section 2 — Required Inputs and Refusal Catalogue
 
@@ -557,7 +557,7 @@ The CO-17 — Déclaration de revenus des sociétés is filed electronically thr
 | C3i qualified-property test | Do not claim until line-item asset register matched to qualified-property categories |
 | Refundability test | Default to non-refundable until taxable capital threshold confirmed |
 | Quebec R&D | Do not claim without federal SR&ED filing first prepared |
-| Capital gains inclusion rate transitional year | 50% until federal legislation finalises 66.67% |
+| Capital gains inclusion rate | 50% — the federal 66.67% proposal was cancelled 21 March 2025 and never became law |
 | IMRTD beginning balance | Reconcile to federal RDTOH split (eligible / non-eligible) |
 | Associated-corporation status | Default to associated if any common control, ownership, or de-facto influence — Section 1142.1 QTA |
 | Meals and entertainment | Apply federal 50% AND Quebec sales-based cap (Section 421.1) |
@@ -584,7 +584,7 @@ Quebec CIT and federal CIT are computed on the same accounting starting point (f
 | RDTOH | Federal eligible / non-eligible RDTOH | Quebec IMRTD eligible / non-eligible | Reconcile beginning balances; track refunds separately |
 | Foreign tax credit | Section 126 ITA | Section 772 QTA | Parallel but separate computations |
 | R&D | Federal SR&ED ITC (Section 127.1 ITA) | Quebec R&D credits (multiple sections, see 3.9) | Both claimed; Quebec credit treated as government assistance reducing federal SR&ED base |
-| Capital gains inclusion | 50% / 66.67% per federal final law | Harmonised | Confirm at filing time |
+| Capital gains inclusion | 50% (federal 66.67% proposal cancelled 21 March 2025) | Harmonised | Confirm at filing time |
 | Filing deadline | 6 months after year-end | 6 months after year-end | Same |
 | Payment deadline | 2 months (3 months for SBD CCPCs) | 2 months (3 months for SBD CCPCs) | Same |
 | Reassessment period | 3 years CCPC / 4 years other | 3 years CCPC / 4 years other | Parallel — Section 152(3.1) ITA / Section 1010 QTA |

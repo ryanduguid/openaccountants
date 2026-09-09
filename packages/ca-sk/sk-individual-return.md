@@ -180,7 +180,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ### 5.3 Capital Gains
 
-- **Capital Gains for Saskatchewan residents** — Capital gains for Saskatchewan residents follow federal rules: 50% inclusion rate for individuals (first $250,000 of net gains); 66.67% inclusion for gains above $250,000 (effective June 2024); Capital gains on qualified small business corporation shares eligible for Lifetime Capital Gains Exemption ($1,250,000 in 2025)
+- **Capital Gains for Saskatchewan residents** — Capital gains for Saskatchewan residents follow federal rules: a **50% inclusion rate on all net gains**, with no $250,000 threshold — The proposed increase to a 66.67% inclusion rate was cancelled on 21 March 2025 (confirmed in Budget 2025); the 50% rate applies to all capital gains, with no $250,000 threshold and no 2024 split-period calculation. The separate increase in the Lifetime Capital Gains Exemption to $1,250,000 for qualified small business corporation shares and qualified farm or fishing property did proceed and remains in force
 
 ## Section 6 -- Edge Cases
 
