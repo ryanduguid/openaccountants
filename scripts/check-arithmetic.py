@@ -54,7 +54,18 @@ eight had never been checked at all, and surfaced two real errors:
     gross income, which three guides in the pack modelled three different ways.
 
 Prefer bolding the answer, not the whole expression; either way the parser now
-sees through it. Every remaining flag in `skills/` has since been read in
+sees through it.
+
+Do not build a separate "base rate + levy = combined" checker on top of this;
+it was tried and it is strictly worse. Contribution breakdowns are n-term sums
+-- `10.67% + 1% + 1% = 12.67%` in Guatemala, `14% + 5.15% + 0.75% = 19.90%` in
+Serbia -- and a two-term pattern truncates the third term and reports a
+correct line as broken: 29 of its 142 hits were that, and every one was right.
+The `expr = expr` span above already evaluates them with any number of terms.
+The same trap caught a nominal-vs-effective checker, which assumed the
+tax-inclusive identity `eff = nom / (1 - nom)`; the corpus mostly states
+additive levies instead (Australia's 45% + 2% Medicare = 47%, Zimbabwe's 25%
+x 1.03 AIDS levy = 25.75%), so 35 of its 38 pairs were correct and flagged. Every remaining flag in `skills/` has since been read in
 context and each one holds: the FEIE example's $56,503 is the correct 2025 tax on $248,250, Iceland's
 three terms sum exactly, Virginia's line states its own multiplicand
 ("on $186,750"), China's arithmetic is in 万, Brazil's and Portugal's decimals
