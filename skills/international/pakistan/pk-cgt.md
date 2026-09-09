@@ -22,7 +22,7 @@ This block is generated from verified `skill_facts` — edit the facts, not the 
 
 ### pk-cgt
 
-- **Securities §37A — the cohort is set by acquisition date** — 
+- **Securities §37A — the cohort is set by acquisition date** —
 - **PSX-listed shares acquired on or after 1 July 2024 — filer** — 15% flat, no holding-period taper  _(ITO 2001 §37A)_
 - **PSX-listed shares acquired 1 Jul 2022 – 30 Jun 2024 — filer** — Taper by holding period: 15% (<1y), 12.5% (1-2y), 10% (2-3y), 7.5% (3-4y), 5% (4-5y), 2.5% (5-6y), 0% (>6y)  _(ITO 2001 §37A)_
 - **PSX-listed shares acquired 1 Jul 2013 – 30 Jun 2022 — filer** — 12.5% flat, irrespective of holding period  _(ITO 2001 §37A)_

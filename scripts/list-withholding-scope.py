@@ -220,13 +220,36 @@ produced, roughly 40% were artefacts of how it measures. A checker that has not
 been measured against its own blind spots is reporting its shape as much as the
 corpus's.
 
-A CAVEAT ABOUT THE THIN END
+A THIRD BLIND SPOT: NOT EVERY DIRECTORY IS A JURISDICTION THAT WITHHOLDS
 
-Jurisdiction keys come from the third path segment, so `us`, `im`, `in` and `nc`
-are Isle of Man, the United States, Indiana and North Carolina, and the
-single-head rows are mostly guides shaped differently rather than jurisdictions
-withholding on one thing. Read the classic-only list, which is the real queue;
-treat the 1- and 2-head rows as a note about guide structure.
+Found the same way as the first two, on the third pass through the queue. Four
+of the 24 entries were not corpus defects at all.
+
+`in` was **Indiana**, not India. Jurisdiction keys come from the third path
+segment, so `skills/us-states/in/in-payroll.md` reads as a jurisdiction named
+`in`, and it reached the queue because a payroll guide mentions an interest rate
+on unpaid PAYE withholding. A US state does not levy withholding on dividends,
+interest or royalties paid abroad — that is federal — so all 52 directories
+under `us-states` were guaranteed noise. `SKIP_TREES` now excludes that tree,
+along with `foundation`, `templates` and `patterns`, which hold workflow bases
+rather than jurisdictions.
+
+`canada` and `us` are a different and unfixable case, and worth stating rather
+than patching. Canada's withholding content is real and correct — Part XIII at
+25% with treaty reductions, and the §116 clearance-certificate regime — but it
+lives in `ca-nonresident-cgt.md`, because Canada's corpus is sliced by topic
+rather than by tax. The same is true of `us-nonresident-cgt.md`, which carries
+FIRPTA and the 30% dividend rate. Both jurisdictions look thin here because the
+heads they name sit in a capital-gains guide, which names capital gains heads.
+Nothing in this script can tell that apart from a genuinely thin CIT guide, and
+trying to would mean encoding an expectation about which file a head belongs in.
+So: **a jurisdiction whose only withholding lines come from a non-CIT guide is
+a note about corpus organisation, not a lead.** Check the filenames in `--show`
+before treating a major jurisdiction as thin.
+
+That leaves the single- and double-head rows, which are mostly guides shaped
+differently rather than jurisdictions withholding on one thing. Read the
+classic-only list, which is the real queue.
 
 Usage: python3 scripts/list-withholding-scope.py [--selftest] [--classic-only]
        python3 scripts/list-withholding-scope.py --show <jurisdiction>
@@ -292,6 +315,15 @@ def is_zero(value):
 
 SKIP_DIRS = ('orchestrator', 'cross-border', 'verticals', 'integrations')
 
+# Whole trees whose directories are not jurisdictions that levy non-resident
+# withholding. `us-states` is the one that matters: a US state does not charge
+# withholding on dividends, interest or royalties paid abroad -- that is
+# federal -- so all 52 directories under it are guaranteed noise, and the queue
+# was carrying Indiana because `in-payroll.md` mentions an interest rate on
+# unpaid PAYE withholding. The other three hold workflow bases and templates
+# with no jurisdiction of their own.
+SKIP_TREES = ('us-states', 'foundation', 'templates', 'patterns')
+
 
 def heads_in(line):
     """Return the set of withholding heads a labelled line names, else None."""
@@ -335,6 +367,8 @@ def scan(root='skills'):
     nonzero = collections.defaultdict(bool)
     for dp, _, fns in os.walk(root):
         parts = dp.split(os.sep)
+        if len(parts) >= 2 and parts[1] in SKIP_TREES:
+            continue
         jur = parts[2] if len(parts) >= 3 else ''
         if not jur or jur in SKIP_DIRS:
             continue
@@ -377,6 +411,9 @@ def selftest():
         # a bare "fees" head, as ZIMRA names it
         ("- **Non-residents' tax on fees** - **15%** of the gross where a person "
          'pays a non-resident for services performed in Zimbabwe', {'services'}),
+        # PNG's technical-fee head, missed until the third pass over the queue
+        ('- **Withholding / non-resident tax on technical fees** - **15%** on '
+         'the gross fee', {'services'}),
     ]
     for line, want in cases:
         got = heads_in(line)

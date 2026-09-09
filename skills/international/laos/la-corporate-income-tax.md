@@ -31,10 +31,22 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Withholding tax and filing
 
-- **Overview of withholding tax and filing** — Lao PDR applies withholding/income tax to dividends, interest and royalties, and sets annual return and instalment deadlines.
+- **Overview of withholding tax and filing** — Lao PDR withholds on **six** heads of domestic income, not three, and runs a **separate deemed-profit regime for foreign contractors** on top. The annual return and instalment deadlines are below.
 - **Withholding on dividends** — 10% (domestic-law rate; treaties may reduce, e.g. 5% for ≥10% holdings) percent  _(Law on Income Tax (Law No. 67/NA, 2019) — https://taxsummaries.pwc.com/lao-pdr/corporate/withholding-taxes)_
 - **Withholding on interest** — 10% percent  _(Law on Income Tax (Law No. 67/NA, 2019) — https://taxsummaries.pwc.com/lao-pdr/corporate/withholding-taxes)_
-- **Withholding on royalties (IP)** — 5% percent  _(Law on Income Tax (Law No. 67/NA, 2019) — https://taxsummaries.pwc.com/lao-pdr/corporate/withholding-taxes)_
+- **Withholding on royalties (IP)** — 5% percent. Note the asymmetry: royalties are the **lowest**-rated head at 5%, while an ordinary consulting invoice is at 10%  _(Law on Income Tax (Law No. 67/NA, 2019) — https://taxsummaries.pwc.com/lao-pdr/corporate/withholding-taxes)_
+- **Withholding on service fees** — **10%** on brokerage, consulting and service fees  _(Law on Income Tax (Law No. 67/NA, 2019) — https://taxsummaries.pwc.com/lao-pdr/corporate/withholding-taxes)_
+- **Withholding on rent** — **10%** on the sale and lease of assets  _(Law on Income Tax (Law No. 67/NA, 2019) — https://taxsummaries.pwc.com/lao-pdr/corporate/withholding-taxes)_
+- **Withholding on artist and athlete income** — **10%**  _(Law on Income Tax (Law No. 67/NA, 2019) — https://taxsummaries.pwc.com/lao-pdr/corporate/withholding-taxes)_
+- **Withholding on share transfers** — **2%**  _(Law on Income Tax (Law No. 67/NA, 2019) — https://taxsummaries.pwc.com/lao-pdr/corporate/withholding-taxes)_
+- **Foreign Withholding Tax (FWHT) on foreign contractors — a separate regime, and a final tax** — A foreign supplier without a Lao presence is not taxed on profit but on **deemed profit by activity**, and the FWHT bundles **profit tax and VAT** into one deduction. The deemed-profit tax element runs **1.4%** (agricultural manufacturing), **2%** (industrial production), **3%** (commerce and services) and **6%** (electricity and mineral supply), with **10% VAT** added on services. It is the **final** tax on the foreign supplier — there is no return and no refund of it — so the rate has to be right in the contract, not corrected later  _(Law on Income Tax (Law No. 67/NA, 2019) — https://taxsummaries.pwc.com/lao-pdr/corporate/withholding-taxes)_
+
+> **The three heads this guide used to name were the first three rows of the
+> source it cites.** PwC's Lao PDR withholding page carries six domestic rows and
+> the FWHT deemed-profit table; the guide reproduced dividends, interest and
+> royalties and stopped. A Lao payer engaging a foreign consultant, leasing an
+> asset, or booking a performer would have found nothing here — and for a foreign
+> contractor the FWHT is a final tax, so getting it wrong is not recoverable.
 - **Annual profit tax return deadline** — By 20 January of the year following the tax year. Confirmed: the return and the financial statements have different dates, 20 January and 31 March, and the two filings draw on the same accounts  _(Tax Administration Law (Lao PDR); PwC Worldwide Tax Summaries, Lao PDR corporate tax administration)_
 - **Annual financial statement filing** — By 31 March following a 31 December year-end  _(Accounting Law (Lao PDR) — https://news.bloombergtax.com/daily-tax-report-international/laos-tax-agency-issues-notice-on-2025-financial-statement-filing-deadline-for-enterprise-account-holders)_
 - **Tax base** — Domestic companies taxed on worldwide income; foreign companies on Lao-source income  _(Law on Income Tax (Law No. 67/NA, 2019) — https://taxsummaries.pwc.com/lao-pdr/corporate/taxes-on-corporate-income)_
