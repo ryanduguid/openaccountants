@@ -130,7 +130,7 @@ https://www.openaccountants.com
 
 ========================================================================
 
-## Guide inventory (1999 guides, 245 jurisdictions, 171 accountant-reviewed)
+## Guide inventory (2011 guides, 245 jurisdictions, 171 accountant-reviewed)
 
 - us-1099-k-and-payment-processors | US | tier 2 | reviewed_by -
 - us-education-credits-8863 | US | tier 2 | reviewed_by -
@@ -342,9 +342,12 @@ https://www.openaccountants.com
 - armenia-social-contributions | AM | tier 2 | reviewed_by -
 - armenia-tax-optimization | AM | tier 2 | reviewed_by -
 - armenia-vat | AM | tier 2 | reviewed_by -
+- amending-an-individual-income-tax-return-in-australia | AU | tier 2 | reviewed_by -
 - au-amending-individual-income-tax-return-period | AU | tier 2 | reviewed_by -
+- au-capital-gains-2 | AU | tier 2 | reviewed_by -
 - au-capital-gains | AU | tier 2 | reviewed_by -
 - au-company-tax | AU | tier 2 | reviewed_by -
+- au-crypto-tax-2 | AU | tier 2 | reviewed_by -
 - au-crypto-tax | AU | tier 2 | reviewed_by -
 - au-deceased-estates | AU | tier 2 | reviewed_by -
 - au-div7a | AU | tier 2 | reviewed_by -
@@ -357,28 +360,37 @@ https://www.openaccountants.com
 - au-individual-return | AU | tier 2 | reviewed_by -
 - au-land-tax | AU | tier 2 | reviewed_by -
 - au-medicare-levy | AU | tier 2 | reviewed_by -
+- au-nonresident-cgt-2 | AU | tier 2 | reviewed_by -
 - au-nonresident-cgt | AU | tier 2 | reviewed_by -
 - au-not-for-profit | AU | tier 2 | reviewed_by -
 - au-partnerships | AU | tier 2 | reviewed_by -
+- au-payg-instalments-2 | AU | tier 2 | reviewed_by -
 - au-payg-instalments | AU | tier 2 | reviewed_by -
 - au-psi | AU | tier 2 | reviewed_by -
 - au-rates-2026-27 | AU | tier 2 | reviewed_by -
 - au-rd-incentive | AU | tier 2 | reviewed_by -
+- au-rental-property-2 | AU | tier 2 | reviewed_by -
 - au-rental-property | AU | tier 2 | reviewed_by -
 - au-small-business-cgt | AU | tier 2 | reviewed_by -
 - au-smsf | AU | tier 2 | reviewed_by -
 - au-sole-trader-schedule | AU | tier 2 | reviewed_by -
 - au-stamp-duty | AU | tier 2 | reviewed_by -
 - au-super-guarantee | AU | tier 2 | reviewed_by -
+- au-tax-residency-2 | AU | tier 2 | reviewed_by -
 - au-tax-residency | AU | tier 2 | reviewed_by -
 - au-trust-distributions | AU | tier 2 | reviewed_by -
 - australia-bookkeeping | AU | tier 2 | reviewed_by -
+- australia-financial-statements-2 | AU | tier 2 | reviewed_by -
 - australia-financial-statements | AU | tier 2 | reviewed_by -
+- australia-formation-2 | AU | tier 2 | reviewed_by -
 - australia-formation | AU | tier 2 | reviewed_by -
 - australia-gst | AU | tier 2 | reviewed_by -
 - australia-payroll | AU | tier 2 | reviewed_by -
+- australia-tax-optimization-2 | AU | tier 2 | reviewed_by -
 - australia-tax-optimization | AU | tier 2 | reviewed_by -
 - australia-transfer-pricing | AU | tier 2 | reviewed_by -
+- foreign-currency-forex-realisation-gains-and-losses-under-division-775 | AU | tier 2 | reviewed_by -
+- leaving-australia-residency-the-cgt-departure-choice-and-what-follows-you | AU | tier 2 | reviewed_by -
 - leaving-australia-tax-residency-cgt | AU | tier 2 | reviewed_by -
 - references | AU | tier 2 | reviewed_by -
 - at-company-formation | AT | tier 2 | reviewed_by -

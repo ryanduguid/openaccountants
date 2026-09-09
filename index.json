@@ -1,7 +1,7 @@
 {
- "generated_at": "2026-09-08T09:02:48+00:00",
+ "generated_at": "2026-09-09T09:09:08+00:00",
  "counts": {
-  "guides": 1999,
+  "guides": 2011,
   "jurisdictions": 245,
   "accountant_reviewed": 171
  },
@@ -2527,6 +2527,18 @@
    "last_updated": "2026-07-13"
   },
   {
+   "slug": "amending-an-individual-income-tax-return-in-australia",
+   "path": "skills/international/australia/amending-an-individual-income-tax-return-in-australia.md",
+   "name": "amending-an-individual-income-tax-return-in-australia",
+   "jurisdiction": "AU",
+   "category": null,
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "tax_year": null,
+   "last_updated": "2026-09-08"
+  },
+  {
    "slug": "au-amending-individual-income-tax-return-period",
    "path": "skills/international/australia/au-amending-individual-income-tax-return-period.md",
    "name": "au-amending-individual-income-tax-return-period",
@@ -2537,6 +2549,18 @@
    "reviewed_by": null,
    "tax_year": "2026",
    "last_updated": "2026-09-03"
+  },
+  {
+   "slug": "au-capital-gains-2",
+   "path": "skills/international/australia/au-capital-gains-2.md",
+   "name": "au-capital-gains-2",
+   "jurisdiction": "AU",
+   "category": null,
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "tax_year": null,
+   "last_updated": "2026-09-08"
   },
   {
    "slug": "au-capital-gains",
@@ -2561,6 +2585,18 @@
    "reviewed_by": null,
    "tax_year": "2026",
    "last_updated": "2026-08-20"
+  },
+  {
+   "slug": "au-crypto-tax-2",
+   "path": "skills/international/australia/au-crypto-tax-2.md",
+   "name": "au-crypto-tax-2",
+   "jurisdiction": "AU",
+   "category": null,
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "tax_year": null,
+   "last_updated": "2026-09-08"
   },
   {
    "slug": "au-crypto-tax",
@@ -2707,6 +2743,18 @@
    "last_updated": "2026-08-28"
   },
   {
+   "slug": "au-nonresident-cgt-2",
+   "path": "skills/international/australia/au-nonresident-cgt-2.md",
+   "name": "au-nonresident-cgt-2",
+   "jurisdiction": "AU",
+   "category": null,
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "tax_year": null,
+   "last_updated": "2026-09-08"
+  },
+  {
    "slug": "au-nonresident-cgt",
    "path": "skills/international/australia/au-nonresident-cgt.md",
    "name": "au-nonresident-cgt",
@@ -2741,6 +2789,18 @@
    "reviewed_by": null,
    "tax_year": "2026",
    "last_updated": "2026-08-20"
+  },
+  {
+   "slug": "au-payg-instalments-2",
+   "path": "skills/international/australia/au-payg-instalments-2.md",
+   "name": "au-payg-instalments-2",
+   "jurisdiction": "AU",
+   "category": null,
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "tax_year": null,
+   "last_updated": "2026-09-08"
   },
   {
    "slug": "au-payg-instalments",
@@ -2789,6 +2849,18 @@
    "reviewed_by": null,
    "tax_year": "2026",
    "last_updated": "2026-08-20"
+  },
+  {
+   "slug": "au-rental-property-2",
+   "path": "skills/international/australia/au-rental-property-2.md",
+   "name": "au-rental-property-2",
+   "jurisdiction": "AU",
+   "category": null,
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "tax_year": null,
+   "last_updated": "2026-09-08"
   },
   {
    "slug": "au-rental-property",
@@ -2863,6 +2935,18 @@
    "last_updated": "2026-08-28"
   },
   {
+   "slug": "au-tax-residency-2",
+   "path": "skills/international/australia/au-tax-residency-2.md",
+   "name": "au-tax-residency-2",
+   "jurisdiction": "AU",
+   "category": null,
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "tax_year": null,
+   "last_updated": "2026-09-08"
+  },
+  {
    "slug": "au-tax-residency",
    "path": "skills/international/australia/au-tax-residency.md",
    "name": "au-tax-residency",
@@ -2899,6 +2983,18 @@
    "last_updated": "2026-08-28"
   },
   {
+   "slug": "australia-financial-statements-2",
+   "path": "skills/international/australia/australia-financial-statements-2.md",
+   "name": "australia-financial-statements-2",
+   "jurisdiction": "AU",
+   "category": null,
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "tax_year": null,
+   "last_updated": "2026-09-08"
+  },
+  {
    "slug": "australia-financial-statements",
    "path": "skills/international/australia/australia-financial-statements.md",
    "name": "australia-financial-statements",
@@ -2909,6 +3005,18 @@
    "reviewed_by": null,
    "tax_year": "2025",
    "last_updated": "2026-07-13"
+  },
+  {
+   "slug": "australia-formation-2",
+   "path": "skills/international/australia/australia-formation-2.md",
+   "name": "australia-formation-2",
+   "jurisdiction": "AU",
+   "category": null,
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "tax_year": null,
+   "last_updated": "2026-09-08"
   },
   {
    "slug": "australia-formation",
@@ -2947,6 +3055,18 @@
    "last_updated": "2026-09-02"
   },
   {
+   "slug": "australia-tax-optimization-2",
+   "path": "skills/international/australia/australia-tax-optimization-2.md",
+   "name": "australia-tax-optimization-2",
+   "jurisdiction": "AU",
+   "category": null,
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "tax_year": null,
+   "last_updated": "2026-09-08"
+  },
+  {
    "slug": "australia-tax-optimization",
    "path": "skills/international/australia/australia-tax-optimization.md",
    "name": "australia-tax-optimization",
@@ -2969,6 +3089,30 @@
    "reviewed_by": null,
    "tax_year": "2025",
    "last_updated": "2026-08-28"
+  },
+  {
+   "slug": "foreign-currency-forex-realisation-gains-and-losses-under-division-775",
+   "path": "skills/international/australia/foreign-currency-forex-realisation-gains-and-losses-under-division-775.md",
+   "name": "foreign-currency-forex-realisation-gains-and-losses-under-division-775",
+   "jurisdiction": "AU",
+   "category": null,
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "tax_year": null,
+   "last_updated": "2026-09-08"
+  },
+  {
+   "slug": "leaving-australia-residency-the-cgt-departure-choice-and-what-follows-you",
+   "path": "skills/international/australia/leaving-australia-residency-the-cgt-departure-choice-and-what-follows-you.md",
+   "name": "leaving-australia-residency-the-cgt-departure-choice-and-what-follows-you",
+   "jurisdiction": "AU",
+   "category": null,
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "tax_year": null,
+   "last_updated": "2026-09-08"
   },
   {
    "slug": "leaving-australia-tax-residency-cgt",
