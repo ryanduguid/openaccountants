@@ -177,8 +177,8 @@ Effective **6 April 2026**, the following changes take effect under measures ann
 | Dividend ordinary rate | 8.75% | **10.75%** |
 | Dividend upper rate | 33.75% | **35.75%** |
 | Dividend additional rate | 39.35% | 39.35% (unchanged) |
-| Savings income basic / higher / additional | 20% / 40% / 45% | **TBC -- expected 22% / 42% / 45%** (Autumn Budget 2025 announcement; verify against enacted Finance Bill) |
-| Property income basic / higher / additional | 20% / 40% / 45% | **TBC -- expected 22% / 42% / 45%** (Autumn Budget 2025 announcement; verify against enacted Finance Bill) |
+| Savings income basic / higher / additional | 20% / 40% / 45% | **20% / 40% / 45% — unchanged for 2026-27.** The Autumn Budget 2025 rates of **22% / 42% / 47%** apply **from April 2027**, a year after the dividend change above |
+| Property income basic / higher / additional | 20% / 40% / 45% | **20% / 40% / 45% — unchanged for 2026-27.** The Autumn Budget 2025 rates of **22% / 42% / 47%** apply **from April 2027**. Note the additional rate goes to 47%, not 45% as an earlier draft of this table had it |
 | All other headline bands and PA | frozen | frozen (no change) |
 | HICBC tapered threshold | GBP 60,000 / GBP 80,000 | GBP 60,000 / GBP 80,000 (unchanged from 2024-25 reform) |
 
