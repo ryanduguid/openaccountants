@@ -176,6 +176,35 @@ figure beside it, and the arithmetic that produced it was right. Where a
 jurisdiction indexes, keep the unit and recompute; that instruction is now in
 each of the lines.
 
+The last two of the six were Bolivia and Uruguay, and both turned out larger
+than a line.
+
+  * Bolivia. The SMN rose from Bs 2,750 to Bs 3,300 on 1 January 2026, twenty
+    per cent, the largest rise in a decade. Every RC-IVA threshold is an SMN
+    multiple: the 2-SMN non-taxable minimum, the presumed VAT credit at 13% of
+    1 SMN, the 60-SMN pension ceiling. bolivia-payroll carried both years
+    correctly and told the reader never to mix them. bolivia-income-tax, which
+    is the guide an agent loads to compute the tax, had only 2025 in its key
+    thresholds table and in its conservative defaults.
+  * Uruguay. The BPC rose from UYU 6,576 to UYU 6,864, 4.38%, on 1 January 2026.
+    Nearly every Uruguayan threshold is a BPC multiple: the whole IRPF Category
+    II scale, the non-taxable minimum, the FONASA band split, the deduction
+    credit threshold, the child deductions. uy-tax-overview named both values.
+    uruguay-payroll, uruguay-social-contributions and uruguay-income-tax — the
+    three that actually compute anything — banked every peso figure at 6,576.
+
+That is the reference-guide-current, working-guide-stale split again, for the
+ninth time on this branch, and it is worth stating as a rule: when an
+indexation unit moves, check the guides that *use* it before the guide that
+*defines* it.
+
+One figure in the Uruguayan set is not a BPC multiple and cannot be derived.
+The BPS retirement contribution ceiling went from UYU 272,564 to UYU 288,836,
+a rise of 5.97% against the BPC's 4.38%, because BPS sets it separately. A
+sweep that recomputes everything from the new unit would have got that one
+wrong in the confident direction. The guides now say which figures are
+multiples and which have to be read off the BPS table.
+
 
 
 Kazakhstan states many of its thresholds in MCI, the monthly calculation index,
@@ -193,6 +222,44 @@ line now says to recompute from MCI rather than carry the tenge forward.
 The minimum wage in the same law did not move, staying at KZT 85,000 for both
 years, which is worth stating beside the MCI so a reader does not assume
 everything indexes together.
+
+### Three ways the Bolivia and Uruguay pass nearly went wrong
+
+Restating a whole bracket table from an outside source is a bigger move than
+correcting one number, and this pass produced three near-misses worth keeping.
+
+**An outside source published a different scale, and it was the source that was
+wrong.** A Uruguayan advisory site gives a 2026 IRPF Category II scale with nine
+bands and new rates of 20% and 22% at boundaries of 24, 36, 54 and 80 BPC,
+against the eight bands and 0/10/15/24/25/27/31/36 the corpus carries. Three
+things settled it. The Ley de Presupuesto Nacional 2025-2029 (Ley 20.446)
+changed IRPF for foreign-source income, the tax-holiday election and FONASA
+credit offset, and four law firms writing it up mention no change to the labour
+scale. A DGI-sourced 2026 table carries the eight bands. And the advisory
+table does not reconcile to itself: it labels a band top of 80 BPC and prints
+553,920, where 80 BPC at the 2026 BPC is 549,120. That last check cost nothing
+and would have caught it alone. The corpus was right and the guide now carries
+a note naming the wrong scale, because the next person to search will find the
+same page.
+
+**The right number from a decree that no longer exists.**
+bolivia-social-contributions credited the 2026 SMN of Bs 3,300 to DS 5503, and
+Bs 3,300 is correct. DS 5503, of 17 December 2025, was abrogated after union
+mobilisation and replaced by DS 5516, published in the Gaceta Oficial on
+13 January 2026, which set the same figure. The file cited DS 5516 correctly one
+row below its own DS 5503 citation. A checker comparing numbers between sibling
+guides sees nothing here, because the numbers agree; what disagrees is the
+authority, and defects keep clustering in the nouns rather than the digits.
+
+**A rate where two siblings outvoted the third, and the third's own citation
+agreed with them.** uruguay-income-tax put the IRPF deduction credit at 10% for
+income below the 15 BPC threshold, while uruguay-payroll and
+uruguay-social-contributions both said 14% and cited the BPS comunicado.
+Outside sources give 14% and 8%. The source uruguay-income-tax named as
+corroboration says "8% o 14%" on its own page. So the citation was checkable
+against itself, and a 10% rate understates the credit by four points of the
+deduction sum, which overstates the tax. Reading what a guide cites is the
+cheapest check available and it keeps paying.
 
 ### Work the queue by who reads it, not by who hedges most
 
@@ -303,6 +370,33 @@ Albania, Slovakia twice and Taiwan. Latvia, Cyprus, Russia, Seychelles and
 Egypt's remaining lines were right, though Cyprus does not resolve and says so.
 Six in fourteen is the densest seam this branch found, against four in ten for
 hedges generally and zero in ten for a random draw.
+
+### A refusal rule expires the same way a figure does
+
+The Uruguayan pass turned up a variant that is worse than a stale number,
+because it is an instruction and an agent will follow it. Both BPS guides
+carried a conservative-defaults row reading, in substance, "pay period in 2026
+or later: apply the FY2025 values and flag; do not invent 2026 figures", and
+uruguay-payroll's prohibitions ended with "NEVER apply unconfirmed 2026 figures
+— use FY2025 values until 2026 values are published".
+
+Every word of that was right when it was written. The 2026 BPC was not yet
+decreed, and telling an agent to hold the old value and say so is exactly the
+conservative behaviour this corpus wants. The values were published on
+20 January 2026. From that morning the rule stopped protecting anyone and
+started causing the error it was written to prevent, and nothing in the file
+knew.
+
+A figure labelled with its year at least tells a reader it is dated. A refusal
+rule reads as current policy however old it is, so it is the more dangerous of
+the two. The rows now point forward — "pay period in 2027 or later: apply the
+2026 constants and flag" — which will age in its turn, but ages into caution
+rather than into a wrong answer.
+
+The general form: any guidance conditioned on "until X is published" needs a
+check that fires when X is published. Grepping the corpus for "until", "not yet
+published", "when available" and "pending publication" beside a year is the
+search that finds them, and it is not yet a script.
 
 ### The best lead in the corpus is the corpus's own doubt
 

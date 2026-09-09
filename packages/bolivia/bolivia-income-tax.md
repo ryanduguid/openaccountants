@@ -4,7 +4,8 @@ description: Use this skill whenever asked about Bolivia personal income tax for
 version: 0.1
 jurisdiction: BO
 tax_year: 2025
-last_updated: 2026-07-13
+tax_year_notes: "2025 (SMN-derived thresholds also stated at the 2026 SMN of Bs 3,300, DS 5516)"
+last_updated: 2026-09-09
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -30,7 +31,7 @@ Tier 2 (research-verified). Figures below are drawn from PwC Worldwide Tax Summa
 | Currency | BOB only (Boliviano, Bs) |
 | Tax year | Calendar year (1 January -- 31 December) |
 | Primary legislation | Ley 843 (Texto Ordenado), Titulo II, arts. 19-36 (RC-IVA); reglamento DS 21531 |
-| Supporting legislation | Ley 1448 (2021) + DS 4850 -- independent professionals moved to RC-IVA from 1 Jan 2023; Ley 065 de Pensiones (2010), modified by Ley 1582 (2024); Ley 1357 (IGF wealth tax, 2020); Ley 843 art. 51 (IUE-BE non-resident WHT); DS 5383 (1 May 2025, minimum wage); Codigo Tributario Ley 2492 (penalties) |
+| Supporting legislation | Ley 1448 (2021) + DS 4850 -- independent professionals moved to RC-IVA from 1 Jan 2023; Ley 065 de Pensiones (2010), modified by Ley 1582 (2024); Ley 1357 (IGF wealth tax, 2020); Ley 843 art. 51 (IUE-BE non-resident WHT); DS 5383 (1 May 2025, minimum wage Bs 2,750); DS 5516 (13 Jan 2026, minimum wage Bs 3,300); Codigo Tributario Ley 2492 (penalties) |
 | Tax authority | Servicio de Impuestos Nacionales (SIN) -- siat.impuestos.gob.bo / impuestos.gob.bo |
 | Social security | Gestora Publica de la Seguridad Social de Largo Plazo (gestora.bo); APS (regulator) |
 | Labor / minimum wage | Ministerio de Trabajo, Empleo y Prevision Social (mintrabajo.gob.bo) |
@@ -68,19 +69,24 @@ Tier 2 (research-verified). Figures below are drawn from PwC Worldwide Tax Summa
 
 - **IGF threshold and residency test** — net wealth exceeding Bs 30,000,000 at 31 December; residency test = 183 days in any 12-month period  _(impuestos.com.bo / Ley 1357)_
 
-### Key Thresholds (2025)
+### Key Thresholds
 
-**Key Thresholds (2025) table**
+Every RC-IVA threshold below is a multiple of the SMN, so all of them move when
+the SMN moves. Take the multiple as the rule and the bolivianos as this year's
+arithmetic: **recompute from the SMN for the period you are taxing** rather than
+carrying a peso figure forward.
 
-| Item | Value | Source |
-| --- | --- | --- |
-| National minimum wage (Salario Minimo Nacional, SMN) 2025 | **Bs 2,750/month** (+10% over 2024's Bs 2,500), retroactive to 1 Jan 2025 | DS 5383 art. 7, https://www.lexivox.org/norms/BO-DS-N5383.html |
-| RC-IVA non-taxable minimum (employees) | **2 x SMN = 2 x Bs 2,750 = Bs 5,500/month** deducted from net taxable base | https://www.rigobertoparedes.com/en/bolivia-2025-salary-increase/ |
-| RC-IVA presumed VAT credit (employees, 2025 onward) | **13% of 1 SMN = Bs 357.50/month** (cut in 2025 from 13% of 2 SMN = Bs 715 under DS 5383) | https://www.rigobertoparedes.com/en/bolivia-2025-salary-increase/ |
-| Practical RC-IVA withholding bite (employees, 2025) | approx **Bs 9,451/month gross** -- above this, employees generally owe RC-IVA unless they present sufficient VAT-credit invoices on Form 110 | https://www.rigobertoparedes.com/en/bolivia-2025-salary-increase/ |
-| RE-IVA VAT refund program (Ley 1355) | individuals earning up to **Bs 9,000/month** can claim a refund of 5% of invoiced purchases | https://taxsummaries.pwc.com/bolivia/individual/significant-developments |
-| IGF wealth tax threshold | net wealth exceeding **Bs 30,000,000** at 31 Dec (status uncertain -- see above) | https://impuestos.com.bo/impuesto-a-las-grandes-fortunas-ley-1357/ |
-| IUE-BE non-resident WHT | effective **12.5%** of gross remitted (50% presumed profit x 25%) | https://impuestos.com.bo/iue-be-impuestos-sobre-las-utilidades-beneficiarios-del-exterior/ |
+**Key Thresholds table**
+
+| Item | 2025 | 2026 | Source |
+| --- | --- | --- | --- |
+| National minimum wage (Salario Minimo Nacional, SMN) | **Bs 2,750/month** (+10% over 2024's Bs 2,500), retroactive to 1 Jan 2025 | **Bs 3,300/month** (+20%), retroactive to 1 Jan 2026 | 2025: DS 5383 art. 7, https://www.lexivox.org/norms/BO-DS-N5383.html. 2026: DS 5516 of 13 Jan 2026 (Gaceta Oficial), which replaced the abrogated DS 5503 of 17 Dec 2025 |
+| RC-IVA non-taxable minimum (employees) = **2 SMN/month** | 2 x Bs 2,750 = **Bs 5,500/month** | 2 x Bs 3,300 = **Bs 6,600/month** | Ley 843 arts. 19-36; DS 5383; DS 5516 |
+| RC-IVA presumed VAT credit (employees, 2025 onward) = **13% of 1 SMN** | 13% x Bs 2,750 = **Bs 357.50/month** (cut in 2025 from 13% of 2 SMN = Bs 715 under DS 5383) | 13% x Bs 3,300 = **Bs 429.00/month** | https://www.rigobertoparedes.com/en/bolivia-2025-salary-increase/ |
+| Practical RC-IVA withholding bite (employees) = **3 SMN / 0.8729** | approx **Bs 9,451/month gross** | approx **Bs 11,341/month gross** | Derived: RC-IVA is nil while 13% x (gross x 0.8729 - 2 SMN) <= 13% x 1 SMN. 2025 figure corroborated by rigobertoparedes.com |
+| RE-IVA VAT refund program (Ley 1355) -- **not SMN-linked** | individuals earning up to **Bs 9,000/month** can claim a refund of 5% of invoiced purchases | same | https://taxsummaries.pwc.com/bolivia/individual/significant-developments |
+| IGF wealth tax threshold -- **not SMN-linked** | net wealth exceeding **Bs 30,000,000** at 31 Dec (status uncertain -- see above) | same | https://impuestos.com.bo/impuesto-a-las-grandes-fortunas-ley-1357/ |
+| IUE-BE non-resident WHT -- **not SMN-linked** | effective **12.5%** of gross remitted (50% presumed profit x 25%) | same | https://impuestos.com.bo/iue-be-impuestos-sobre-las-utilidades-beneficiarios-del-exterior/ |
 
 ### Conservative Defaults
 
@@ -89,7 +95,7 @@ Tier 2 (research-verified). Figures below are drawn from PwC Worldwide Tax Summa
 | Ambiguity | Default |
 | --- | --- |
 | Unknown employment status | STOP -- do not compute without knowing employee vs self-employed/independent professional |
-| Employee with no VAT-credit invoices | Apply RC-IVA 13% on (gross - 12.71% SS - 2 SMN), minus only the presumed credit (Bs 357.50/month for 2025) |
+| Employee with no VAT-credit invoices | Apply RC-IVA 13% on (gross - 12.71% SS - 2 SMN), minus only the presumed credit (13% of 1 SMN: Bs 357.50/month in 2025, Bs 429.00/month in 2026) |
 | Self-employed / independent professional | Treat under RC-IVA (13%, quarterly Form 610), NOT IUE -- independents moved out of IUE from 1 Jan 2023; also liable to IVA 13% and IT 3% on services billed |
 | Unknown whether VAT invoices exist | Assume none -- compute full 13% net of presumed credit only |
 | Unknown net wealth (IGF) | Assume NOT applicable (threshold Bs 30M) AND flag uncertain legal status for 2025/2026 |
@@ -212,7 +218,14 @@ For independent professionals, RC-IVA is charged on income; business costs are N
 
 ## Section 4 -- Worked Examples
 
-All examples use the 2025 figures: SMN = Bs 2,750; non-taxable minimum 2 SMN = Bs 5,500/month; presumed credit Bs 357.50/month; employee social security 12.71%. RC-IVA flat rate 13%.
+Every example below is a **2025 pay period** and uses the 2025 figures: SMN =
+Bs 2,750; non-taxable minimum 2 SMN = Bs 5,500/month; presumed credit
+Bs 357.50/month; employee social security 12.71%. RC-IVA flat rate 13%.
+
+For a **2026** period the mechanics are identical and only the SMN changes:
+SMN = Bs 3,300, so 2 SMN = Bs 6,600/month and the presumed credit is
+Bs 429.00/month. Do not copy a peso figure out of these examples into a 2026
+computation -- recompute it from the SMN.
 
 ### Example 1 -- Employee, mid income, NO facturas
 
@@ -298,12 +311,12 @@ Classification: EXCLUDE from RC-IVA.
 
 ### 5.3 Employee RC-IVA Mechanism
 
-- **Monthly computation steps** — 1. Start with gross monthly remuneration (excluding aguinaldo). 2. Deduct employee social security contributions (standard 12.71%). 3. Deduct the non-taxable minimum: 2 SMN = Bs 5,500/month (2025). 4. Apply 13% to the resulting base. 5. Offset against (a) the presumed VAT credit Bs 357.50/month (13% of 1 SMN, 2025) and (b) 13% of valid facturas presented on Form 110. 6. Any residual is RC-IVA withheld by the employer. Excess credit carries forward; it is not refunded.  _(rigobertoparedes.com/en/bolivia-2025-salary-increase; SIN RC-IVA page)_
+- **Monthly computation steps** — 1. Start with gross monthly remuneration (excluding aguinaldo). 2. Deduct employee social security contributions (standard 12.71%). 3. Deduct the non-taxable minimum: 2 SMN = Bs 5,500/month in 2025, Bs 6,600/month in 2026. 4. Apply 13% to the resulting base. 5. Offset against (a) the presumed VAT credit, 13% of 1 SMN = Bs 357.50/month in 2025 and Bs 429.00/month in 2026, and (b) 13% of valid facturas presented on Form 110. 6. Any residual is RC-IVA withheld by the employer. Excess credit carries forward; it is not refunded. Steps 3 and 5 are SMN multiples, so take them from the SMN in force for the month being taxed.  _(rigobertoparedes.com/en/bolivia-2025-salary-increase; SIN RC-IVA page; DS 5383; DS 5516)_
 - **No annual return for employees** — Employees do NOT file an annual RC-IVA return. The employer (withholding agent) files a monthly consolidated return; the employee only interacts via Form 110 (invoice detail) given to the employer.  _(PwC, tax-administration)_
 
 ### 5.4 The 2025 Change (DS 5383)
 
-- **Presumed credit cut 2025** — The presumed VAT credit was cut from 13% of 2 SMN (Bs 715) to 13% of 1 SMN (Bs 357.50/month), raising effective RC-IVA for employees who do not submit facturas; the practical withholding now bites at approx Bs 9,451/month gross.  _(rigobertoparedes.com/en/bolivia-2025-salary-increase)_
+- **Presumed credit cut 2025** — The presumed VAT credit was cut from 13% of 2 SMN to 13% of 1 SMN, raising effective RC-IVA for employees who do not submit facturas. The cut is to the multiple, and it persists; the peso amount moves with the SMN. The credit is Bs 357.50/month in 2025 and Bs 429.00/month in 2026, and the practical withholding bites at approx Bs 9,451/month gross in 2025 and approx Bs 11,341/month in 2026.  _(rigobertoparedes.com/en/bolivia-2025-salary-increase; DS 5516)_
 
 ### 5.5 Independent Professionals -> RC-IVA (not IUE)
 
@@ -354,9 +367,10 @@ Arithmetic check: 10 + 1.71 + 2 + 3 = 16.71%; with 3.5% solidarity = 17.21%. ✓
 
 [RESEARCH GAP -- reviewer to confirm.] The Aporte Patronal Solidario rate (3% vs 3.5% under Ley 1582; mining employer solidarity 2% vs 2.3%) should be confirmed against the consolidated statute.
 
-### 5.8 Minimum Wage and Salary Increase (2025)
+### 5.8 Minimum Wage and Salary Increase
 
 - **Minimum wage 2025** — National minimum wage (SMN) for 2025 = Bs 2,750/month, +10% over 2024's Bs 2,500, retroactive to 1 Jan 2025 (art. 7). General private-sector salary increase up to 5% on the basico.  _(DS 5383 (1 May 2025); lexivox.org/norms/BO-DS-N5383)_
+- **Minimum wage 2026** — SMN for 2026 = Bs 3,300/month, +20% over Bs 2,750 and the largest rise in a decade, retroactive to 1 Jan 2026. Set by DS 5516, published in the Gaceta Oficial on 13 January 2026, which replaced DS 5503 of 17 December 2025 after that decree was abrogated. DS 5516 breaks with the earlier pattern of a compulsory across-the-board percentage rise: only alignment to the new SMN is mandatory, and pay above the minimum is left to free negotiation (art. 21).  _(DS 5516 (13 Jan 2026), Gaceta Oficial; derechoteca.com/gacetabolivia/decreto-supremo-no-5516-del-13-de-enero-de-2026)_
 
 ### 5.9 Capital Gains and Dividends
 
@@ -403,7 +417,9 @@ Arithmetic check: 10 + 1.71 + 2 + 3 = 16.71%; with 3.5% solidarity = 17.21%. ✓
 ## Section 7 -- Excel Working Paper Template
 
 BOLIVIA RC-IVA -- WORKING PAPER
-Tax Year: 2025   (SMN = Bs 2,750; 2 SMN = Bs 5,500; presumed credit = Bs 357.50)
+Tax Year: ______  Fill the three SMN-derived constants from the year being taxed:
+  2026 (SMN = Bs 3,300; 2 SMN = Bs 6,600; presumed credit = Bs 429.00)
+  2025 (SMN = Bs 2,750; 2 SMN = Bs 5,500; presumed credit = Bs 357.50)
 Client: ___________________________
 Status: Employee / Independent professional / Direct contributor
 NIT: ___________   NIT last digit (filing calendar): ____
@@ -412,20 +428,20 @@ A. EMPLOYEE MONTHLY RC-IVA (repeat per month)
   A1. Gross remuneration (excl. aguinaldo)        ___________
   A2. Less employee social security (12.71%)      ___________
   A3. Net after SS (A1 - A2)                       ___________
-  A4. Less non-taxable minimum (2 SMN = 5,500)    ___________
+  A4. Less non-taxable minimum (2 SMN)            ___________
   A5. RC-IVA base (A3 - A4, floor at 0)            ___________
   A6. Gross 13% liability (A5 x 13%)               ___________
-  A7. Less presumed credit (357.50)                ___________
+  A7. Less presumed credit (13% of 1 SMN)          ___________
   A8. Less 13% of facturas (Form 110)              ___________
   A9. RC-IVA withheld (A6 - A7 - A8, floor 0)      ___________
   A10. Credit carried forward (if negative A9)     ___________
 
 B. INDEPENDENT / DIRECT CONTRIBUTOR QUARTERLY (Form 610)
   B1. Total honorarios billed (quarter)            ___________
-  B2. Less 2 SMN x 3 months (16,500)  [GAP]        ___________
+  B2. Less 2 SMN x 3 months  [GAP]                 ___________
   B3. RC-IVA base (B1 - B2)                         ___________
   B4. Gross 13% liability (B3 x 13%)               ___________
-  B5. Less presumed credit (357.50 x 3 = 1,072.50) ___________
+  B5. Less presumed credit (13% of 1 SMN x 3)      ___________
   B6. Less 13% of facturas (Form 110)              ___________
   B7. RC-IVA payable on Form 610 (B4-B5-B6, floor 0)__________
 
@@ -610,7 +626,8 @@ Expected: NOT subject to RC-IVA. Bs 0 tax.
 - NEVER treat dividends from Bolivian companies to residents as RC-IVA income
 - NEVER tax foreign-source income under RC-IVA -- Bolivia is territorial
 - NEVER reduce RC-IVA below zero into a cash refund -- excess factura credit carries forward
-- NEVER use the old presumed credit of Bs 715 for 2025 -- it was cut to Bs 357.50 by DS 5383
+- NEVER use the old presumed credit of 13% of 2 SMN (Bs 715) -- DS 5383 cut it to 13% of 1 SMN from 2025
+- NEVER carry a boliviano figure across a year boundary: the 2 SMN minimum, the presumed credit and the pension cap are SMN multiples, and the SMN rose from Bs 2,750 to Bs 3,300 on 1 January 2026 (DS 5516). Recompute them from the SMN for the period being taxed
 - NEVER omit the IUE-BE 12.5% withholding on payments to non-residents
 - NEVER present tax calculations as definitive -- always label as estimated and pending professional review
 - NEVER rely on a [RESEARCH GAP] figure for filing without a Bolivian-licensed accountant's confirmation

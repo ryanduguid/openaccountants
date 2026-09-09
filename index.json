@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-09T17:17:49+00:00",
+ "generated_at": "2026-09-09T17:35:57+00:00",
  "counts": {
   "guides": 1953,
   "jurisdictions": 244,
@@ -4012,7 +4012,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-09"
   },
   {
    "slug": "bolivia-iva",
@@ -4036,7 +4036,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-09"
   },
   {
    "slug": "bolivia-social-contributions",
@@ -4048,7 +4048,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-09"
   },
   {
    "slug": "bolivia-tax-optimization",
@@ -19480,7 +19480,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-09"
   },
   {
    "slug": "uruguay-iva",
@@ -19504,7 +19504,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-09"
   },
   {
    "slug": "uruguay-social-contributions",
@@ -19516,7 +19516,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-09"
   },
   {
    "slug": "uy-company-formation",
