@@ -280,12 +280,25 @@ oddly beside one naming eight, and that the difference is worth an hour.
 at a tax authority or at a secondary source, ignoring the CTA block each guide
 ends with. The measurement:
 
-- **67% of citations are secondary** — 4,920 against 2,453 authority links.
-- One publisher, PwC's Worldwide Tax Summaries, carries about a third of all
-  external citations on its own. No authority comes close; the next largest is
-  the IRS at 140, then Estonia's tax board at 82.
-- **23 of 189 jurisdictions cite no authority domain at all.** Every figure they
-  carry rests on a summary.
+Run it rather than trusting the numbers below:
+
+```
+python3 scripts/list-source-mix.py
+```
+
+**As at 9 September 2026: 67% of citations were secondary — 4,921 against 2,460
+authority links, with 22 of 189 jurisdictions citing no authority domain at
+all.** One publisher, PwC's Worldwide Tax Summaries, carries about a third of
+all external citations on its own; the next largest is the IRS at 140, then
+Estonia's tax board at 82.
+
+Those counts are a dated snapshot and are quoted for the argument, not as a
+current figure. They drifted twice while this section was being written —
+adding `lex.uz` to the classifier moved the zero-authority count by one, and
+correcting Uzbekistan moved the citation totals — which is the same defect
+`scripts/check-coverage-claims.py` exists to catch in `COVERAGE.md`: a derived
+number copied into prose is stale the moment the thing it describes changes.
+The command is the durable statement; the numbers are an illustration of it.
 
 > **The first version of this measurement was wrong, and the way it was wrong is
 > the point.** It reported 76% secondary and 41 zero-authority jurisdictions,
