@@ -1,7 +1,7 @@
 {
- "generated_at": "2026-09-09T10:30:24+00:00",
+ "generated_at": "2026-09-09T11:43:30+00:00",
  "counts": {
-  "guides": 1954,
+  "guides": 1953,
   "jurisdictions": 244,
   "accountant_reviewed": 171
  },
@@ -9799,6 +9799,18 @@
    "last_updated": "2026-07-13"
   },
   {
+   "slug": "id-income-tax",
+   "path": "skills/international/indonesia/id-income-tax.md",
+   "name": "id-income-tax",
+   "jurisdiction": "ID",
+   "category": "international",
+   "tier": 1,
+   "verified_by": null,
+   "reviewed_by": "RILIA PUTRI",
+   "tax_year": "2025",
+   "last_updated": "2026-07-13"
+  },
+  {
    "slug": "id-payroll-pph21",
    "path": "skills/international/indonesia/id-payroll-pph21.md",
    "name": "id-payroll-pph21",
@@ -13469,18 +13481,6 @@
    "reviewed_by": null,
    "tax_year": "2026",
    "last_updated": "2026-06-12"
-  },
-  {
-   "slug": "ma-payroll",
-   "path": "skills/international/morocco/ma-payroll.md",
-   "name": "ma-payroll",
-   "jurisdiction": "US-MA",
-   "category": "international",
-   "tier": 2,
-   "verified_by": null,
-   "reviewed_by": null,
-   "tax_year": "2025",
-   "last_updated": "2026-07-13"
   },
   {
    "slug": "ma-social-contributions",
@@ -20995,9 +20995,9 @@
    "last_updated": "2026-07-13"
   },
   {
-   "slug": "arizona-sales-tax",
-   "path": "skills/us-states/ar/arizona-sales-tax.md",
-   "name": "arizona-sales-tax",
+   "slug": "arkansas-sales-tax",
+   "path": "skills/us-states/ar/arkansas-sales-tax.md",
+   "name": "arkansas-sales-tax",
    "jurisdiction": "US-AR",
    "category": null,
    "tier": 2,
@@ -21007,10 +21007,10 @@
    "last_updated": "2026-07-13"
   },
   {
-   "slug": "arkansas-sales-tax",
-   "path": "skills/us-states/ar/arkansas-sales-tax.md",
-   "name": "arkansas-sales-tax",
-   "jurisdiction": "US-AR",
+   "slug": "arizona-sales-tax",
+   "path": "skills/us-states/az/arizona-sales-tax.md",
+   "name": "arizona-sales-tax",
+   "jurisdiction": "US-AZ",
    "category": null,
    "tier": 2,
    "verified_by": null,
@@ -21212,9 +21212,9 @@
   },
   {
    "slug": "connecticut-sales-tax",
-   "path": "skills/us-states/co/connecticut-sales-tax.md",
+   "path": "skills/us-states/ct/connecticut-sales-tax.md",
    "name": "connecticut-sales-tax",
-   "jurisdiction": "US-CO",
+   "jurisdiction": "US-CT",
    "category": null,
    "tier": 2,
    "verified_by": null,
@@ -21571,18 +21571,6 @@
    "last_updated": "2026-07-13"
   },
   {
-   "slug": "id-income-tax",
-   "path": "skills/us-states/id/id-income-tax.md",
-   "name": "id-income-tax",
-   "jurisdiction": "ID",
-   "category": null,
-   "tier": 1,
-   "verified_by": null,
-   "reviewed_by": "RILIA PUTRI",
-   "tax_year": "2025",
-   "last_updated": "2026-07-13"
-  },
-  {
    "slug": "id-sales-tax",
    "path": "skills/us-states/id/id-sales-tax.md",
    "name": "id-sales-tax",
@@ -21671,18 +21659,6 @@
    "path": "skills/us-states/il/illinois-sales-tax.md",
    "name": "illinois-sales-tax",
    "jurisdiction": "US-IL",
-   "category": null,
-   "tier": 2,
-   "verified_by": null,
-   "reviewed_by": null,
-   "tax_year": "2025",
-   "last_updated": "2026-07-13"
-  },
-  {
-   "slug": "in-income-tax",
-   "path": "skills/us-states/in/in-income-tax.md",
-   "name": "in-income-tax",
-   "jurisdiction": "IN",
    "category": null,
    "tier": 2,
    "verified_by": null,
@@ -21835,33 +21811,21 @@
    "last_updated": "2026-07-13"
   },
   {
+   "slug": "ma-payroll",
+   "path": "skills/us-states/ma/ma-payroll.md",
+   "name": "ma-payroll",
+   "jurisdiction": "US-MA",
+   "category": null,
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "tax_year": "2025",
+   "last_updated": "2026-07-13"
+  },
+  {
    "slug": "ma-sales-tax",
    "path": "skills/us-states/ma/ma-sales-tax.md",
    "name": "ma-sales-tax",
-   "jurisdiction": "US-MA",
-   "category": null,
-   "tier": 2,
-   "verified_by": null,
-   "reviewed_by": null,
-   "tax_year": "2025",
-   "last_updated": "2026-07-13"
-  },
-  {
-   "slug": "maine-sales-tax",
-   "path": "skills/us-states/ma/maine-sales-tax.md",
-   "name": "maine-sales-tax",
-   "jurisdiction": "US-MA",
-   "category": null,
-   "tier": 2,
-   "verified_by": null,
-   "reviewed_by": null,
-   "tax_year": "2025",
-   "last_updated": "2026-07-13"
-  },
-  {
-   "slug": "maryland-sales-tax",
-   "path": "skills/us-states/ma/maryland-sales-tax.md",
-   "name": "maryland-sales-tax",
    "jurisdiction": "US-MA",
    "category": null,
    "tier": 2,
@@ -21875,6 +21839,18 @@
    "path": "skills/us-states/ma/massachusetts-sales-tax.md",
    "name": "massachusetts-sales-tax",
    "jurisdiction": "US-MA",
+   "category": null,
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "tax_year": "2025",
+   "last_updated": "2026-07-13"
+  },
+  {
+   "slug": "maryland-sales-tax",
+   "path": "skills/us-states/md/maryland-sales-tax.md",
+   "name": "maryland-sales-tax",
+   "jurisdiction": "US-MD",
    "category": null,
    "tier": 2,
    "verified_by": null,
@@ -21911,6 +21887,18 @@
    "path": "skills/us-states/md/md-sales-tax.md",
    "name": "md-sales-tax",
    "jurisdiction": "US-MD",
+   "category": null,
+   "tier": 2,
+   "verified_by": null,
+   "reviewed_by": null,
+   "tax_year": "2025",
+   "last_updated": "2026-07-13"
+  },
+  {
+   "slug": "maine-sales-tax",
+   "path": "skills/us-states/me/maine-sales-tax.md",
+   "name": "maine-sales-tax",
+   "jurisdiction": "US-ME",
    "category": null,
    "tier": 2,
    "verified_by": null,

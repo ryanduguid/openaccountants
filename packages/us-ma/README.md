@@ -59,10 +59,9 @@ This package contains **federal** tax skills (which apply to all US states) plus
 49. `global-router.md`
 50. `ma-corporate-excise.md`
 51. `ma-income-tax.md`
-52. `ma-sales-tax.md`
-53. `maine-sales-tax.md`
-54. `maryland-sales-tax.md`
-55. `massachusetts-sales-tax.md`
+52. `ma-payroll.md`
+53. `ma-sales-tax.md`
+54. `massachusetts-sales-tax.md`
 
 ## How to use
 

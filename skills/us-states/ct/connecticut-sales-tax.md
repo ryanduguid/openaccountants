@@ -1,7 +1,7 @@
 ---
-name: maine-sales-tax
-description: Use this skill whenever asked about Maine sales and use tax. Trigger on phrases like "Maine sales tax", "ME sales tax", "MRS", "36 M.R.S. §1811". ALWAYS load us-sales-tax first.
-jurisdiction: US-MA
+name: connecticut-sales-tax
+description: Use this skill whenever asked about Connecticut sales and use tax, luxury tax, DRS filings. Trigger on phrases like "Connecticut sales tax", "CT sales tax", "DRS", "luxury tax Connecticut". ALWAYS load us-sales-tax first.
+jurisdiction: US-CT
 tax_year: 2025
 last_updated: 2026-07-13
 review_status: pending_review
@@ -9,7 +9,7 @@ tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Maine Sales Tax
+# Connecticut Sales Tax
 
 ## Section 1 -- Quick reference
 
@@ -17,15 +17,18 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 | Field | Value |
 | --- | --- |
-| Jurisdiction | Maine |
-| State rate | 5.50% (general); 8.00% (short-term auto rental); 9.00% (lodging/prepared food) |
-| Local taxes | None |
+| Jurisdiction | Connecticut |
+| State rate | 6.35% (standard); 7.75% (luxury items over $5,000) |
+| Local taxes | None -- no local sales taxes |
+| Maximum rate | 7.75% |
 | Sourcing | Destination-based |
-| Economic nexus | $100,000 OR 200 transactions |
-| Tax authority | Maine Revenue Services (MRS) |
-| Portal | https://www.maine.gov/revenue |
+| Economic nexus | $100,000 AND 200 transactions (AND test) |
+| Tax authority | Connecticut DRS |
+| Portal | https://portal.ct.gov/DRS |
 | SST member | No |
 | Skill version | 2.0 |
+
+**UNIQUE: Luxury rate 7.75% on vehicles, jewelry, clothing, handbags, luggage, footwear over $5,000. AND test for nexus like NY.**
 
 ## Section 3 -- Transaction pattern library
 
@@ -33,14 +36,16 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 | Pattern | Taxable? | Notes |
 | --- | --- | --- |
-| General TPP | TAXABLE 5.50% |  |
-| Clothing | TAXABLE | No exemption |
+| General TPP | TAXABLE 6.35% |  |
+| Luxury items >$5,000 | TAXABLE 7.75% | Vehicles, jewelry, clothing, etc. |
+| Clothing under $50/item | EXEMPT |  |
+| Clothing $50-$999 | TAXABLE 6.35% |  |
+| Clothing $1,000+ | TAXABLE 7.75% | Luxury rate |
 | Grocery food | EXEMPT |  |
-| Prepared food | TAXABLE 9.00% | Higher rate |
-| Lodging | TAXABLE 9.00% | Higher rate |
-| Short-term auto rental | TAXABLE 8.00% |  |
-| SaaS | NOT TAXABLE | Maine does not tax SaaS |
-| Canned software (download) | TAXABLE |  |
+| Prepared food/meals | TAXABLE 7.35% | Special restaurant rate |
+| SaaS | TAXABLE | Computer/data processing services |
+| Computer/data processing services | TAXABLE at 1% | Special reduced rate |
+| Digital goods | TAXABLE |  |
 | Professional services | NOT TAXABLE |  |
 | Manufacturing equipment | EXEMPT |  |
 | Prescription drugs | EXEMPT |  |
@@ -48,9 +53,11 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Section 10 -- Prohibitions
 
-- **Prohibition: prepared food/lodging rate** — NEVER use the 5.50% rate for prepared food or lodging -- they have higher rates (9%).  _(unsure)_
-- **Prohibition: short-term auto rental rate** — NEVER forget the 8% short-term auto rental rate.  _(unsure)_
-- **Prohibition: computation** — NEVER compute any number.  _(unsure)_
+- **Never forget luxury rate** — NEVER forget the 7.75% luxury rate on items over $5,000.
+- **Never forget clothing exemption** — NEVER forget the clothing exemption under $50.
+- **Never assume single-threshold nexus** — NEVER assume nexus with only one threshold -- CT requires BOTH $100K AND 200 transactions.
+- **Never ignore 1% rate** — NEVER ignore the 1% rate on computer/data processing services.
+- **Never compute numbers** — NEVER compute any number.
 
 ## Disclaimer
 
