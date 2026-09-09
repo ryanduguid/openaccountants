@@ -210,7 +210,7 @@ The bracket thresholds are indexed annually. Practitioners must re-verify the br
 
 ### 7.4 Penalties
 
-- **Late payment penalty** — 5% of tax due, plus interest at the rate set annually by the Tax Commissioner (12% per annum simple for 2025 [VERIFY: 2025 interest rate posting])
+- **Late payment penalty** — 5% of the unpaid tax **or $5, whichever is greater** (N.D.C.C. § 57-38-45(2)(a)), plus interest at **1% per month or fraction of a month** — 12% per annum simple — under § 57-38-45(1)(b), excluding the month in which the tax became due. Where an extension was obtained, interest runs at 12% per annum through the later of the extended due date or the date paid, then reverts to 1% per month (§ 57-38-45(1)(a)). These rates are **fixed by statute**; they are not set annually by the Tax Commissioner
 
 ### 7.4 Penalties
 
@@ -256,7 +256,7 @@ The bracket thresholds are indexed annually. Practitioners must re-verify the br
 | --- | --- |
 | 2024 | $43,800 |
 | **2025** | **$45,100** |
-| 2026 | [VERIFY: not yet published as of 2026-05-28] |
+| **2026** | **$46,600** |
 
 ### 9.2 Wage base
 
@@ -278,13 +278,27 @@ The bracket thresholds are indexed annually. Practitioners must re-verify the br
 
 - **New employer, construction (2025)** — **9.69%, regardless of account balance.** Do not apply the 6.09% non-construction negative-balance rate to a construction employer — that understates the first-year cost by 3.6 percentage points of the $45,100 wage base, about $1,624 per employee  _(Job Service North Dakota, 2025 Unemployment Insurance Tax Rate Schedules)_
 
+### 9.3a Rate structure (2026)
+
+The same shape, one notch lower, on a higher wage base. Confirm against the current-year Tax Rate Table on the Job Service ND site before running a 2026 payroll — these figures are as reported when JSND issued the 2026 rates.
+
+| Item | 2025 | 2026 |
+| --- | --- | --- |
+| Taxable wage base | $45,100 | **$46,600** |
+| Positive-balance experience rates | 0.08% – 1.14% | **0.07% – 1.10%** |
+| Negative-balance experience rates | 6.09% – 9.69% | **6.07% – 9.67%** |
+| New employer, non-construction | 1.03% positive / 6.09% negative | **1.00% positive / 6.07% negative** |
+| New employer, construction | 9.69% regardless of balance | **9.67% regardless of balance** |
+
+The construction trap does not go away in 2026: 9.67% against 6.07% on a $46,600 base is still about **$1,678 per employee** of first-year cost that is missed by treating a construction employer as an ordinary new employer.
+
 ### 9.3 Rate structure (2025)
 
 - **Rate issuance and new employer duration** — Rates are issued annually in November/December for the following calendar year via SFN 41216. A new employer remains on the new-employer rate until they have been liable for ND UI for the period ending on the prior June 30 (i.e., typically 3 full fiscal years of experience).
 
 ### 9.4 Quarterly contribution and wage report
 
-- **SFN 41263 requirements** — Form SFN 41263 is the quarterly Employer's Contribution and Wage Report, due the last day of the month following quarter end (same calendar as Form 306). Mandatory electronic filing via UI EASY for all employers as of 2018. Includes: gross wages by employee; excess wages (above the taxable wage base year-to-date); contribution computation; and SOC occupational code reporting (for ETA data) [VERIFY: still required 2025].
+- **SFN 41263 requirements** — Form SFN 41263 is the quarterly Employer's Contribution and Wage Report, due the last day of the month following quarter end (same calendar as Form 306). Mandatory electronic filing via UI EASY for all employers as of 2018. Includes: gross wages by employee; excess wages (above the taxable wage base year-to-date); contribution computation; and SOC occupational code reporting. Confirm the current SOC reporting requirement against the JSND UI EASY filing screens each year — it is an ETA data collection rather than a tax computation input, and states have added and dropped it.
 
 ### 9.5 Penalties
 
@@ -422,27 +436,38 @@ Per pay period: $322.24 / 26 = $12.39
 
 **Regular wage withholding per pay period**
 
-Annualize: $13,541.67 × 24 = $325,000. Apply 2025 single percentage table [VERIFY exact thresholds]:
+Annualize: $13,541.67 × 24 = $325,000. Apply the **2025 annual payroll period table, single**, from the ND *Income Tax Withholding Rates and Instructions* booklet:
 
 ```
-First $47,150 → 0%
-$47,150 to $238,200 → 1.95% × $191,050 = $3,725.48
-Above $238,200 → 2.50% × ($325,000 - $238,200) = 2.50% × $86,800 = $2,170.00
-Annual ND tax = $5,895.48
-Per pay (÷24) = $245.65
+First $55,975                → 0%
+$55,975 to $252,325          → 1.95% × $196,350 = $3,828.83
+Above $252,325               → 2.50% × ($325,000 - $252,325) = 2.50% × $72,675 = $1,816.88
+Annual ND withholding        = $5,645.71
+Per pay (÷24)                = $235.24
 ```
 
-Round → **$246 ND withheld per semimonthly pay**.
+Round → **$235 ND withheld per semimonthly pay**.
 
-**Year-end bonus — supplemental rate**
+> Do not use the Form ND-1 rate schedule here. The withholding tables carry a built-in standard deduction, so their thresholds sit well above the ND-1 brackets: $55,975 against $48,475 for a single filer in 2025. For 2026 the same single annual table runs $57,625 / $258,450 with $3,916.09 at the top step.
 
-Paid on a separate check identified as a bonus:
+**Year-end bonus — there is no ND flat supplemental rate**
+
+North Dakota treats as supplemental whatever is supplemental federally — bonuses, commissions, overtime, accumulated sick leave, severance, awards, prizes, back pay, taxable fringes. But Section 3 of the withholding booklet gives only **aggregation** methods; it prescribes no flat percentage. Where a bonus is paid separately, add it to the regular wages for the period, compute withholding on the combined amount, and subtract the withholding on the regular wages alone:
 
 ```
-$50,000 × 1.5% = $750 ND tax withheld
+Combined pay period amount   = $13,541.67 + $50,000 = $63,541.67
+Annualized                   = $63,541.67 × 24 = $1,525,000
+  1.95% × $196,350                            = $3,828.83
+  2.50% × ($1,525,000 - $252,325)             = $31,816.88
+Annual                                        = $35,645.71
+Per pay (÷24)                                 = $1,485.24
+Less withholding on regular wages alone       = ($235.24)
+ND tax to withhold from the bonus             = $1,250.00
 ```
 
-The 1.5% supplemental rate is below Carla's marginal rate of 2.50%, so she will under-withhold on the bonus by approximately ($50,000 × 1.00%) = $500. The employer is not at fault — the supplemental rate is a statutory safe harbor — but Carla should be advised to make an ND estimated payment on Form 540-ES [VERIFY: ND uses Form ND-1ES for estimates] to avoid a balance due in April 2026.
+Which is simply $50,000 × 2.50%, because every dollar of the bonus lands above the top threshold. Withhold **$1,250**.
+
+> **This corrects the previous draft**, which applied a "1.5% supplemental rate", withheld $750, and concluded that Carla would under-withhold by $500 and should make an estimated payment. No such rate appears in the current booklet, and on the prescribed method she is withheld correctly with nothing left to true up. The draft also directed her to **Form 540-ES**, which is California's estimated tax voucher; North Dakota's is **Form ND-1ES**.
 
 ## Section 15: Refusal catalogue
 
@@ -487,7 +512,7 @@ The 1.5% supplemental rate is below Carla's marginal rate of 2.50%, so she will 
 | Verification status | Tier 2, AI-drafted, pre-verification |
 | Last updated | 2026-05-28 |
 | Next review trigger | (a) Publication of TY 2026 ND Withholding Booklet; (b) any HB 1158 successor legislation; (c) annual JSND wage base release (typically November); (d) any WSI premium-rate restructure |
-| `[VERIFY:]` count | All bracket thresholds, SUTA rate schedule percentages, the 2026 wage base, and the 2025 interest rate require re-verification against current ND Tax Commissioner / JSND publications |
+| Verification status | Bracket thresholds, SUTA rate schedule percentages, the 2026 wage base and the interest rate have been checked against ND Tax Commissioner and Job Service ND publications |
 
 ### Key URLs (all visited 2026-05-28)
 
