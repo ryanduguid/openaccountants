@@ -205,6 +205,12 @@ withholding on one thing. Read the classic-only list, which is the real queue;
 treat the 1- and 2-head rows as a note about guide structure.
 
 Usage: python3 scripts/list-withholding-scope.py [--selftest] [--classic-only]
+       python3 scripts/list-withholding-scope.py --show <jurisdiction>
+
+Run --show before editing a jurisdiction. It prints every withholding-labelled
+line the jurisdiction has, with file and line number, so a claim about what a
+guide omits can be checked against the guide rather than against this script's
+summary. Three wrong claims on this branch came from skipping that step.
 """
 import os, re, sys, collections
 
@@ -340,6 +346,53 @@ def selftest():
     print('selftest: %d cases pass' % len(cases))
 
 
+def show(jur, root='skills'):
+    """Print every withholding line one jurisdiction has, with its file.
+
+    This exists because of a mistake made three times on this branch. The
+    summary output prints a jurisdiction's HEADS, not its lines, and three
+    times a fix was written asserting "this guide did not carry X" after
+    reading only those heads. Seychelles already had the service-fee line three
+    bullets below the ones the checker surfaced. Vietnam already had four FCT
+    lines further down the same file. Both claims were false and both were
+    caught only by the editor showing the whole file back.
+
+    A resolution to read more carefully has now failed twice, so this is the
+    mechanism instead: run --show before editing, read every line it prints,
+    and only then write about what a guide omits.
+    """
+    seen = 0
+    for dp, _, fns in sorted(os.walk(root)):
+        parts = dp.split(os.sep)
+        if len(parts) < 3 or parts[2] != jur:
+            continue
+        for fn in sorted(fns):
+            if not fn.endswith('.md'):
+                continue
+            path = os.path.join(dp, fn)
+            with open(path, encoding='utf-8', errors='replace') as fh:
+                for n, line in enumerate(fh, 1):
+                    m = BULL.match(line) or ROW.match(line)
+                    if not m or not LABEL.search(m.group(1)):
+                        continue
+                    heads = {name for name, pat in HEADS
+                             if re.search(pat, m.group(1), re.I)}
+                    body = {name for name, pat in HEADS
+                            if name not in CLASSIC and re.search(pat, m.group(2), re.I)}
+                    tag = ','.join(sorted(heads)) or '-'
+                    extra = (' +body:' + ','.join(sorted(body - heads))) if body - heads else ''
+                    print('%s:%d  [%s%s]\n    %s\n    %s' % (
+                        path, n, tag, extra, m.group(1).strip(),
+                        m.group(2).strip()[:300]))
+                    seen += 1
+    if not seen:
+        print('no withholding-labelled lines found for %r' % jur)
+    else:
+        print('\n%d withholding-labelled line(s) in %s. Read all of them before '
+              'writing that the guide omits anything.' % (seen, jur))
+    return 0
+
+
 def main(classic_only=False):
     found = scan()
     rows = []
@@ -385,5 +438,10 @@ def main(classic_only=False):
 if __name__ == '__main__':
     if '--selftest' in sys.argv:
         selftest()
+    elif '--show' in sys.argv:
+        i = sys.argv.index('--show')
+        if i + 1 >= len(sys.argv):
+            sys.exit('--show needs a jurisdiction, e.g. --show vietnam')
+        sys.exit(show(sys.argv[i + 1]))
     else:
         sys.exit(main('--classic-only' in sys.argv))
