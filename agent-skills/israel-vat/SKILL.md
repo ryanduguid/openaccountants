@@ -229,12 +229,12 @@ Refuse and escalate to a licensed CPA (רואה חשבון) for:
 תאריך    : 15/04/2025
 סוג פעולה: זיכוי - העברה בנקאית
 תיאור    : TECH SOLUTIONS LTD - חשבונית 041/2025 - שכ"ט ייעוץ
-סכום     : +234,000 ₪
+סכום     : +236,000 ₪
 ```
 
 **Working:**
 - Heshbonit Mase: net ILS 200,000 + Ma'am 18% ILS 36,000 = ILS 236,000
-- Return entry: Output Iska — ILS 200,000 | Output Ma'am: ILS 34,000
+- Return entry: Output Iska — ILS 200,000 | Output Ma'am: ILS 36,000
 
 ---
 
@@ -290,9 +290,10 @@ Refuse and escalate to a licensed CPA (רואה חשבון) for:
 
 **Working:**
 - Foreign digital service to Israeli business — treated as supplied in Israel
-- Buyer self-assesses: ILS 5,865 × 17/117 = ILS 852 Ma'am (or ILS 5,013 net + ILS 852 Ma'am)
+- Buyer self-assesses: ILS 5,865 × 18/118 = ILS 895 Ma'am (or ILS 4,970 net + ILS 895 Ma'am)
 - Declare as output AND claim as input — net zero for fully taxable business
-- Return entry: Reverse-charge output ILS 5,013 | and Input Totchaot ILS 5,013
+- Return entry: Reverse-charge output ILS 4,970 | and Input Totchaot ILS 4,970
+- **[RESEARCH GAP — reviewer to settle the base.]** This example extracts Ma'am from the sum paid, treating ILS 5,865 as tax-inclusive. A foreign supplier billing from Ireland charges no Israeli Ma'am, so the sum paid is arguably the net consideration and the self-invoice should add 18% on top (5,865 × 18% = ILS 1,055.70) rather than extract it. The two readings are net-zero for a fully taxable business but differ for a partially exempt one, and they produce different return entries.
 
 ---
 
@@ -322,14 +323,14 @@ Refuse and escalate to a licensed CPA (רואה חשבון) for:
 
 | Item | Net (ILS) | Ma'am (ILS) |
 |---|---|---|
-| Software sales (domestic) | 800,000 | 136,000 |
+| Software sales (domestic) | 800,000 | 144,000 |
 | Export (zero-rated) | 300,000 | 0 |
-| Total Output | 1,100,000 | 136,000 |
-| Purchases — hardware | 200,000 | 34,000 |
-| Office rent | 50,000 | 8,500 |
-| Cloud subscriptions (reverse-charge) | 30,000 | 5,100 |
-| Total Input | 280,000 | 47,600 |
-| **Net Ma'am payable** | | **88,400** |
+| Total Output | 1,100,000 | 144,000 |
+| Purchases — hardware | 200,000 | 36,000 |
+| Office rent | 50,000 | 9,000 |
+| Cloud subscriptions (reverse-charge) | 30,000 | 5,400 |
+| Total Input | 280,000 | 50,400 |
+| **Net Ma'am payable** | | **93,600** |
 
 ---
 
@@ -395,18 +396,18 @@ Net_Maam_Payable = Total_Output_Maam - Total_Input_Maam - Excess_BF
 תאריך    : 15/04/2025
 סוג פעולה: זיכוי - העברה בנקאית
 תיאור    : TECH SOLUTIONS - חשבונית 041/2025
-סכום     : +234,000 ₪
-יתרה     : 1,234,000 ₪
+סכום     : +236,000 ₪
+יתרה     : 1,236,000 ₪
 ```
 Fields: תאריך (date) | סוג פעולה (transaction type) | תיאור (description) | סכום (amount, ILS)
 
 ### Bank Leumi format
 ```
-15.04.2025  |  זיכוי  |  TECH SOLUTIONS  |  +234,000.00  |  יתרה: 1,234,000.00
+15.04.2025  |  זיכוי  |  TECH SOLUTIONS  |  +236,000.00  |  יתרה: 1,236,000.00
 ```
 
 ### Key patterns:
-- **ILS number format:** Comma = thousands separator; period = decimal (ILS 234,000.00)
+- **ILS number format:** Comma = thousands separator; period = decimal (ILS 236,000.00)
 - **זיכוי (credit):** Money in — match to issued Heshbonit Mase
 - **חיוב (debit):** Money out — match to received Heshbonit Mase for input credit
 - **מטבע חוץ (foreign currency):** Foreign payment — check for zero-rated export or reverse-charge
@@ -419,7 +420,7 @@ Fields: תאריך (date) | סוג פעולה (transaction type) | תיאור (d
 When client cannot provide Heshbonit Mase for all transactions:
 
 1. Use bank statement amounts as Ma'am-inclusive totals and back-calculate:
-   - Net = Total ÷ 1.17 | Ma'am = Total − Net
+   - Net = Total ÷ 1.18 | Ma'am = Total − Net
 2. Apply conservative defaults: 18% output on all unverified sales; 0% input credit without valid Heshbonit Mase
 3. Flag all items without Heshbonit Mase in Tier2_Items tab
 4. Issue data request listing missing invoice references
