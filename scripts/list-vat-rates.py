@@ -11,6 +11,28 @@ Israel's dedicated VAT guide had 17% (the rate until 31 December 2024) while
 two sibling guides had the correct 18%, and Fiji's had 9%, a rate that ended
 on 31 July 2023 and has since been replaced twice.
 
+Checked externally so far (do not re-derive these from the corpus):
+
+  * Israel   18%    -- the dedicated VAT guide had 17%, the rate until 31 Dec 2024.
+  * Fiji     12.5%  -- from 1 Aug 2025; 15% ran 1 Aug 2023 - 31 Jul 2025, and the
+                       9% before that ended 31 Jul 2023. fj-income-tax still said
+                       "15% (from 1 Aug 2024)", wrong on the rate AND the date.
+  * Russia   22%    -- from 1 Jan 2026, Federal Law No. 425-FZ. CORRECT in the
+                       corpus; the 20% hits are its own historical notes.
+  * Finland  25.5%  -- from 1 Sep 2024. CORRECT; the 24% hit is a historical note.
+  * Slovakia 23%    -- from 1 Jan 2025 (reduced 10% abolished, new 19%). CORRECT.
+  * Romania  21%    -- from 1 Aug 2025, reduced rates consolidated to 11%. CORRECT.
+  * Vietnam  10%    -- standard, with the 2% cut to 8% extended to 31 Dec 2026 by
+                       Resolution 204/2025/QH15 and Decree 174/2025/ND-CP. CORRECT.
+  * Estonia  24%    -- permanent from 1 Jul 2025; 22% ran 1 Jan 2024 - 30 Jun 2025.
+  * Indonesia       -- 12% nominal from 1 Jan 2025 but PMK 131/2024 sets the base at
+                       11/12 for non-luxury supplies, so 11% effective. CORRECT, and
+                       stated with that nuance.
+
+Six of the nine were already right, which is the point of writing the check down:
+"the corpus disagrees with itself" and "the corpus is wrong" are different
+questions, and a rate flagged here is a claim to verify, not a defect found.
+
 Read the output with care. The regex takes "standard rate" literally, and in
 Hong Kong that phrase means the salaries tax standard rate, in Australia it
 catches the corporate rate, and a handful of jurisdictions return an artefact

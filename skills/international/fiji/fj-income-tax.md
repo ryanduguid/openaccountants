@@ -401,7 +401,7 @@ Classification: Income tax = $8,000.00.
 | Input VAT recovered (registered) | NOT an expense — exclude |
 | Not VAT-registered (turnover ≤ $100,000) | Gross amounts are income/expense; no VAT split |
 
-- **VAT registration mandatory threshold** — VAT registration is mandatory once annual gross turnover exceeds FJD 100,000 (register within 21 days). VAT standard rate is 15% (from 1 Aug 2024).  _(Source: FRCS VAT Guide — https://www.frcs.org.fj/wp-content/uploads/2023/11/VAT-Guide-01.11.2-Online-version.pdf)_
+- **VAT registration mandatory threshold** — VAT registration is mandatory once annual gross turnover exceeds FJD 100,000 (register within 21 days). VAT standard rate is 12.5% from 1 August 2025 (it was 15% from 1 Aug 2023 to 31 Jul 2025).  _(Source: FRCS VAT Guide — https://www.frcs.org.fj/wp-content/uploads/2023/11/VAT-Guide-01.11.2-Online-version.pdf)_
 
 ### 5.9 Provisional Tax
 
