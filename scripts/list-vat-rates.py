@@ -58,6 +58,30 @@ Wrong, and fixed:
   * Zimbabwe   15.5% from 1 Jan 2026. zimbabwe-vat said 15% in twelve places
                while zw-tax-overview knew about the rise.
 
+Third pass, PwC chart again plus a global rates page for what it omits. These
+matched: Austria 20, Belgium 21, Bulgaria 20, Cabo Verde 15, Chad 18, China 13
+(9 and 6 for other categories), Croatia 25, Cyprus 19, Denmark 25, France 20,
+Gabon 18, Germany 19, Guyana 14, Hungary 27, Ireland 23, Italy 22, Japan 10,
+Latvia 21, Lithuania 21, Luxembourg 17, Malta 18, Mauritania 16, Netherlands 21,
+New Zealand 15, Papua New Guinea 10, Philippines 12, Poland 23, Portugal 23,
+Rwanda 18, Singapore 9, Slovenia 22, South Africa 15, Spain 21, Sweden 25,
+Switzerland 8.1, Taiwan 5, Tanzania 18, Thailand 7, Turkey 20, Uganda 18,
+UK 20, Uzbekistan 12, Algeria 19, Ethiopia 15, Nepal 13, South Korea 10,
+Bhutan 5 (new GST from 1 Jan 2026).
+
+  * Malawi   17.5% from the start of 2026, raised from 16.5% by the Value Added
+             Tax (Amendment) Act 2025 and listed in the MRA's own New Tax
+             Measures notice for the Mid-Year Budget Review. Both guides knew
+             about the rise but led with "Standard VAT rate (2025) -- 16.5
+             percent", so the headline figure was the superseded one. Fixed to
+             lead with 17.5%.
+
+Three of the remaining "guides disagree" flags are artefacts worth not chasing
+again: Iran is 9% VAT plus 1% municipal tax, and the guides correctly give 9%
+as the VAT rate and 10% as the combined rate; Taiwan's 15% is the proposed
+global-minimum-tax rate for MNE groups, not VAT (VAT is 5%); Bhutan's 30% is the
+corporate rate beside its new 5% GST.
+
 Open: Botswana. A rise to 14% -> 15% was proposed for 1 April 2025 and cannot be
 confirmed as enacted; PwC's 2026 chart still shows 14% and BURS serves a bot
 check instead of its rate page. The guides state 14% and say so.
