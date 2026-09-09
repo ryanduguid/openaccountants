@@ -39,17 +39,17 @@ metadata:
 
 PAYG withholding is calculated per pay period using ATO tax tables (Schedule 1 -- NAT 1004) or the Statement of Formulas. The employer applies the appropriate coefficients based on weekly/fortnightly/monthly earnings.
 
-### Resident Individual Tax Rates (2025--26)
+### Resident Individual Tax Rates (2026--27)
 
 | Taxable Income (AUD) | Rate | Tax on This Income |
 |---|---|---|
 | 0 -- 18,200 | 0% | Nil |
-| 18,201 -- 45,000 | 16% | 16c for each $1 over $18,200 |
-| 45,001 -- 135,000 | 30% | $4,288 plus 30c for each $1 over $45,000 |
-| 135,001 -- 190,000 | 37% | $31,288 plus 37c for each $1 over $135,000 |
-| 190,001+ | 45% | $51,638 plus 45c for each $1 over $190,000 |
+| 18,201 -- 45,000 | 15% | 15c for each $1 over $18,200 |
+| 45,001 -- 135,000 | 30% | $4,020 plus 30c for each $1 over $45,000 |
+| 135,001 -- 190,000 | 37% | $31,020 plus 37c for each $1 over $135,000 |
+| 190,001+ | 45% | $51,370 plus 45c for each $1 over $190,000 |
 
-These rates **exclude** the Medicare levy (2%).
+These rates **exclude** the Medicare levy (2%). From 1 July 2026 the rate on $18,201--$45,000 dropped from 16% to 15% (Treasury Laws Amendment (More Cost of Living Relief) Act 2025); it drops again to 14% from 1 July 2027.
 
 ### Medicare Levy
 
@@ -82,7 +82,7 @@ Australia does not have a separate employee social security contribution. The Me
 |---|---|---|---|
 | PAYG income tax | Progressive (see above) | No ceiling | Includes Medicare levy in tax tables |
 | STSL repayment | 1%--10% (income-based) | No ceiling | Only if employee has HELP/STSL debt |
-| Salary sacrifice (super) | Voluntary | Concessional cap $30,000/year | Pre-tax; reduces PAYG withholding base |
+| Salary sacrifice (super) | Voluntary | Concessional cap $32,500/year (2026-27) | Pre-tax; reduces PAYG withholding base |
 
 There is no employee-paid social insurance premium equivalent to NIC (UK) or social security tax (US).
 
@@ -95,7 +95,7 @@ There is no employee-paid social insurance premium equivalent to NIC (UK) or soc
 | Parameter | 2025--26 Value |
 |---|---|
 | SG rate | 12% of ordinary time earnings (OTE) |
-| Maximum contribution base | $65,070 per quarter ($260,280/year) |
+| Maximum contribution base | $270,830 per year (ANNUAL, year-to-date basis; quarterly base abolished for earnings paid from 1 Jul 2026) |
 | Minimum earnings threshold | Abolished (no $450/month threshold from 1 Jul 2022) |
 | Payment frequency | Quarterly (28 days after quarter end) |
 | Eligible employees | All employees 18+; under-18s working 30+ hours/week |
@@ -276,7 +276,7 @@ Not strictly required on payslips but must be provided to employees on request. 
 
 | Violation | Consequence |
 |---|---|
-| Late SG payment | SGC: shortfall + 10% interest + $20/employee admin fee; not deductible |
+| Late SG payment | SGC (ATO-assessed per payday): shortfall + notional earnings (GIC rate) + administrative uplift (up to 60%) + choice loading; deductible (the late payment penalty and GIC on unpaid SGC are not) |
 | Failure to withhold PAYG | Employer liable for amount that should have been withheld |
 | Late BAS/IAS lodgement | General interest charge (GIC) + potential failure-to-lodge penalty |
 | Payslip non-compliance | Up to $16,500 per contravention (individual); $82,500 (body corporate) |
@@ -309,7 +309,7 @@ Annual salary $120,000. Sacrifices $10,000/year to super.
 
 1. Taxable salary: $110,000 (reduced PAYG base)
 2. Employer SG: $120,000 × 12% = $14,400 (calculated on pre-sacrifice OTE)
-3. Concessional super cap: $30,000 (includes SG $14,400 + sacrifice $10,000 = $24,400; within cap)
+3. Concessional super cap: $32,500 (2026-27) (includes SG $14,400 + sacrifice $10,000 = $24,400; within cap)
 4. The $10,000 is taxed at 15% inside the super fund instead of the employee's marginal rate
 
 ### Pattern 4 -- STSL Repayment

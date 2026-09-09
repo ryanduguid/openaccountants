@@ -407,8 +407,8 @@ If the client provides only a bank statement:
 | Bring-forward (3 years) | $360,000 |
 | Div 293 threshold | $250,000 |
 | Co-contribution max | $500 |
-| Co-contribution lower threshold | $45,400 |
-| Co-contribution upper threshold | $60,400 |
+| Co-contribution lower threshold | $49,293 |
+| Co-contribution upper threshold | $64,293 |
 | LISTO threshold | $37,000 |
 | Spouse offset max | $540 |
 | Transfer balance cap | $1,900,000 |
