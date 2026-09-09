@@ -27,8 +27,14 @@ FORM = re.compile(r'(?<![A-Za-z0-9])((?:[A-Z]{2,5}-?\d{1,4}[A-Z]?)|'
 CUR = re.compile(r'^(USD|EUR|GBP|VES|ZAR|AUD|NZD|CAD|MXN|BRL|INR|JPY|CNY|CHF|SEK|NOK|'
                  r'DKK|PLN|RON|HUF|CZK|TRY|RUB|ILS|AED|SAR|KES|NGN|GHS|ZMW|MWK|TZS|UGX|'
                  r'MUR|LKR|PKR|BDT|IDR|MYR|THB|PHP|VND|SGD|HKD|TWD|KRW|BOB|PEN|CLP|COP)\b')
-# tokens that look like forms but are laws, standards or section references
-NOTFORM = re.compile(r'^(IAS|IFRS|ISA|ASC|ISO|GRI|SIC|NACE|SIC\d|COVID|G20|OECD|EU\d|IRC\d)')
+# Tokens the form pattern matches that are not forms. Each was found by reading
+# the generated register: AGPL-3 is the licence line and appeared under 240
+# jurisdictions; EC1-EC8 are the guides' own edge-case labels; QH12-QH14 are
+# Vietnamese National Assembly sessions; "Form Structure" is a heading. A
+# register full of these is worse than none, because a reviewer stops reading.
+NOTFORM = re.compile(r'^(?:IAS|IFRS|ISA|ASC|ISO|GRI|SIC|NACE|COVID|G20|OECD|IRC\d'
+                     r'|AGPL-?\d?|EC\d{1,2}|EU-?\d|QH\d{1,2}|CO2|FY\d{4}|INV-?\d{4}'
+                     r'|T\d|TY\d{4}|R-[A-Z]{2}|Form Structure|Form Type|Form Name)$', re.I)
 
 
 def main():

@@ -13,27 +13,17 @@ subject it does not belong to: a rental form in a provisional-tax guide,
 a payroll form in a VAT guide. That is the shape the one confirmed
 instance took.
 
-## afghanistan
-
-| Form | Guides |
-|---|---|
-| `AGPL-3` | `af-company-formation`, `af-corporate-income-tax`, `af-income-tax`, `af-payroll-social`, `af-tax-overview`, `af-vat-gst` |
-
 ## al
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `al-sales-tax`, `alabama-income-tax`, `alabama-sales-tax` |
 | `AL-1` | `al-sales-tax`, `alabama-sales-tax` |
-| `EC1` | `al-sales-tax`, `alabama-sales-tax` |
-| `EC2` | `al-sales-tax`, `alabama-sales-tax` |
 | `Form 40` | `README`, `al-income-tax`, `alabama-income-tax` |
 
 ## albania
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `albania-income-tax`, `albania-payroll`, `albania-social-contributions`, `albania-tax-optimization`, `albania-vat` |
 | `AL-1` | `albania-income-tax`, `albania-vat` |
 | `AL-2` | `albania-income-tax`, `albania-vat` |
 | `AL-3` | `albania-income-tax`, `albania-vat` |
@@ -45,7 +35,6 @@ instance took.
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `algeria-income-tax`, `algeria-payroll`, `algeria-social-contributions`, `algeria-vat` |
 | `DZ-1` | `algeria-income-tax`, `algeria-vat` |
 | `DZ-2` | `algeria-income-tax`, `algeria-vat` |
 | `DZ-3` | `algeria-income-tax`, `algeria-vat` |
@@ -62,26 +51,17 @@ instance took.
 | `AD-3` | `ad-income-tax`, `andorra-igi` |
 | `AD-4` | `ad-income-tax`, `andorra-igi` |
 | `AD-5` | `ad-income-tax`, `andorra-igi` |
-| `AGPL-3` | `ad-company-formation`, `ad-corporate-income-tax`, `ad-income-tax`, `ad-payroll-social`, `ad-tax-overview`, `andorra-igi` |
-
-## angola
-
-| Form | Guides |
-|---|---|
-| `AGPL-3` | `ao-company-formation`, `ao-corporate-income-tax`, `ao-income-tax`, `ao-payroll-social`, `ao-tax-overview`, `ao-vat-gst` |
 
 ## ar
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `ar-income-tax`, `ar-sales-tax`, `arkansas-sales-tax` |
 | `Form AR1000F` | `README`, `ar-income-tax` |
 
 ## argentina
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `ar-company-formation`, `ar-corporate-income-tax`, `ar-monotributo`, `ar-social-contributions`, `ar-tax-overview`, `ar-vat-return`, `references` |
 | `AR-1` | `ar-income-tax`, `ar-monotributo` |
 | `AR-2` | `ar-income-tax`, `ar-monotributo` |
 | `AR-3` | `ar-income-tax`, `ar-monotributo` |
@@ -91,7 +71,6 @@ instance took.
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `am-company-formation`, `am-corporate-income-tax`, `am-tax-overview`, `armenia-income-tax`, `armenia-payroll`, `armenia-social-contributions`, `armenia-tax-optimization`, `armenia-vat` |
 | `AM-1` | `armenia-income-tax`, `armenia-vat` |
 | `AM-2` | `armenia-income-tax`, `armenia-vat` |
 | `AM-3` | `armenia-income-tax`, `armenia-vat` |
@@ -104,7 +83,6 @@ instance took.
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `au-capital-gains`, `au-company-tax`, `au-crypto-tax`, `au-deceased-estates`, `au-div7a`, `au-fbt`, `au-fbt-year`, `au-foreign-income`, `au-gst-bas`, `au-gst-property`, `au-individual-return`, `au-land-tax`, `au-medicare-levy`, `au-nonresident-cgt`, `au-not-for-profit`, `au-partnerships`, `au-payg-instalments`, `au-psi`, `au-rates-2026-27`, `au-rd-incentive`, `au-rental-property`, `au-small-business-cgt`, `au-smsf`, `au-sole-trader-schedule`, `au-stamp-duty`, `au-super-guarantee`, `au-tax-residency`, `au-trust-distributions`, `australia-bookkeeping`, `australia-financial-statements`, `australia-formation`, `australia-gst`, `australia-payroll`, `australia-tax-optimization`, `australia-transfer-pricing`, `leaving-australia-tax-residency-cgt`, `references` |
 | `AU-1` | `au-gst-property`, `au-individual-return`, `australia-gst` |
 | `AU-2` | `au-individual-return`, `australia-gst` |
 | `AU-3` | `au-gst-property`, `au-individual-return`, `australia-gst` |
@@ -117,7 +95,6 @@ instance took.
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `at-company-formation`, `at-corporate-income-tax`, `at-income-tax`, `at-svs-contributions`, `at-tax-overview`, `at-vat-return`, `austria-vat-return` |
 | `AT-1` | `at-income-tax`, `at-vat-return`, `austria-vat-return` |
 | `AT-2` | `at-income-tax`, `at-vat-return`, `austria-vat-return` |
 | `AT-2026` | `at-vat-return`, `austria-vat-return` |
@@ -127,22 +104,18 @@ instance took.
 | `AT-6` | `at-vat-return`, `austria-vat-return` |
 | `AT-7` | `at-vat-return`, `austria-vat-return` |
 | `AT-8` | `at-vat-return`, `austria-vat-return` |
-| `EU-5` | `at-vat-return`, `austria-vat-return` |
 
 ## az
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `arizona-sales-tax`, `az-payroll`, `az-sales-tax`, `az-transaction-privilege-tax` |
 | `AZ-1` | `arizona-sales-tax`, `az-sales-tax` |
-| `EC1` | `arizona-sales-tax`, `az-sales-tax` |
 | `Form 140` | `README`, `az-income-tax`, `az-transaction-privilege-tax` |
 
 ## azerbaijan
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `az-company-formation`, `az-corporate-income-tax`, `az-tax-overview`, `azerbaijan-income-tax`, `azerbaijan-payroll`, `azerbaijan-social-contributions`, `azerbaijan-tax-optimization`, `azerbaijan-vat` |
 | `AZ-1` | `azerbaijan-income-tax`, `azerbaijan-vat` |
 | `AZ-2` | `azerbaijan-income-tax`, `azerbaijan-vat` |
 | `AZ-3` | `azerbaijan-income-tax`, `azerbaijan-vat` |
@@ -153,7 +126,6 @@ instance took.
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `bahamas-vat`, `bs-company-formation`, `bs-corporate-income-tax`, `bs-income-tax`, `bs-payroll-social`, `bs-tax-overview` |
 | `BS-1` | `bahamas-vat`, `bs-income-tax` |
 | `BS-2` | `bahamas-vat`, `bs-income-tax` |
 
@@ -161,7 +133,6 @@ instance took.
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `bahrain-vat`, `bh-company-formation`, `bh-corporate-income-tax`, `bh-income-tax`, `bh-payroll-social`, `bh-tax-overview` |
 | `BH-1` | `bahrain-vat`, `bh-income-tax` |
 | `BH-2` | `bahrain-vat`, `bh-income-tax` |
 | `BH-3` | `bahrain-vat`, `bh-income-tax` |
@@ -170,14 +141,12 @@ instance took.
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `bangladesh-pit`, `bangladesh-vat`, `bd-company-formation`, `bd-corporate-income-tax`, `bd-payroll-social`, `bd-tax-overview`, `references` |
 | `MPL-2` | `bangladesh-pit`, `references` |
 
 ## barbados
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `barbados-vat`, `bb-company-formation`, `bb-corporate-income-tax`, `bb-income-tax`, `bb-payroll-social`, `bb-tax-overview` |
 | `BB-1` | `barbados-vat`, `bb-income-tax` |
 | `BB-2` | `barbados-vat`, `bb-income-tax` |
 
@@ -185,7 +154,6 @@ instance took.
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `belarus-income-tax`, `belarus-payroll`, `belarus-social-contributions`, `belarus-tax-optimization`, `belarus-vat`, `by-company-formation`, `by-corporate-income-tax`, `by-tax-overview` |
 | `BY-1` | `belarus-income-tax`, `belarus-vat` |
 | `BY-2` | `belarus-income-tax`, `belarus-vat` |
 | `BY-3` | `belarus-income-tax`, `belarus-vat` |
@@ -198,7 +166,6 @@ instance took.
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `be-capital-gains`, `be-income-tax`, `be-social-contributions`, `be-vat-return`, `belgium-bookkeeping`, `belgium-crypto-tax`, `belgium-einvoice`, `belgium-financial-statements`, `belgium-payroll`, `belgium-vat-return` |
 | `BE-1` | `be-income-tax`, `be-vat-return`, `belgium-vat-return` |
 | `BE-2` | `be-income-tax`, `be-vat-return`, `belgium-vat-return` |
 | `BE-2026` | `be-vat-return`, `belgium-vat-return` |
@@ -208,39 +175,17 @@ instance took.
 | `BE-6` | `be-vat-return`, `belgium-vat-return` |
 | `BE-7` | `be-vat-return`, `belgium-vat-return` |
 | `BE-8` | `be-vat-return`, `belgium-vat-return` |
-| `CO2` | `be-income-tax`, `belgium-payroll` |
-| `EU-5` | `be-vat-return`, `belgium-vat-return` |
 
 ## belize
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `bz-company-formation`, `bz-corporate-income-tax`, `bz-income-tax`, `bz-payroll-social`, `bz-tax-overview`, `bz-vat-gst` |
 | `Form BTS210` | `bz-tax-overview`, `bz-vat-gst` |
-
-## benin
-
-| Form | Guides |
-|---|---|
-| `AGPL-3` | `bj-company-formation`, `bj-corporate-income-tax`, `bj-income-tax`, `bj-payroll-social`, `bj-tax-overview`, `bj-vat-gst` |
-
-## bermuda
-
-| Form | Guides |
-|---|---|
-| `AGPL-3` | `bermuda-tax`, `bm-company-formation`, `bm-corporate-income-tax`, `bm-income-tax`, `bm-payroll-social`, `bm-tax-overview`, `bm-vat-gst` |
-
-## bhutan
-
-| Form | Guides |
-|---|---|
-| `AGPL-3` | `bt-company-formation`, `bt-corporate-income-tax`, `bt-income-tax`, `bt-payroll-social`, `bt-tax-overview`, `bt-vat-gst` |
 
 ## bolivia
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `bolivia-income-tax`, `bolivia-iva`, `bolivia-payroll`, `bolivia-social-contributions`, `bolivia-tax-optimization` |
 | `BO-1` | `bolivia-income-tax`, `bolivia-iva` |
 | `BO-2` | `bolivia-income-tax`, `bolivia-iva` |
 | `BO-3` | `bolivia-income-tax`, `bolivia-iva` |
@@ -253,55 +198,28 @@ instance took.
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `ba-company-formation`, `ba-corporate-income-tax`, `ba-tax-overview`, `bosnia-income-tax`, `bosnia-payroll`, `bosnia-social-contributions`, `bosnia-tax-optimization`, `bosnia-vat` |
 | `BA-1` | `bosnia-income-tax`, `bosnia-vat` |
 | `BA-2` | `bosnia-income-tax`, `bosnia-vat` |
 | `BA-3` | `bosnia-income-tax`, `bosnia-vat` |
 | `BA-4` | `bosnia-income-tax`, `bosnia-vat` |
 | `MIP-1023` | `bosnia-income-tax`, `bosnia-payroll` |
 
-## botswana
-
-| Form | Guides |
-|---|---|
-| `AGPL-3` | `bw-company-formation`, `bw-corporate-income-tax`, `bw-income-tax`, `bw-payroll-social`, `bw-tax-overview`, `bw-vat-gst` |
-
 ## brazil
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `br-estimated-tax`, `br-income-tax`, `br-indirect-tax`, `br-inss`, `br-simples-nacional`, `brazil-crypto-tax`, `brazil-einvoice`, `brazil-payroll`, `brazil-transfer-pricing`, `brazil-vat`, `references` |
 | `BR-1` | `br-income-tax`, `br-indirect-tax`, `brazil-vat` |
 | `BR-2` | `br-income-tax`, `br-indirect-tax`, `brazil-vat` |
 | `BR-3` | `br-income-tax`, `br-indirect-tax`, `brazil-vat` |
 | `BR-4` | `br-income-tax`, `br-indirect-tax`, `brazil-vat` |
 | `BR-5` | `br-income-tax`, `brazil-vat` |
 | `BR-6` | `br-income-tax`, `brazil-vat` |
-| `EC1` | `br-estimated-tax`, `br-inss` |
-| `EC2` | `br-estimated-tax`, `br-inss` |
-| `EC3` | `br-estimated-tax`, `br-inss` |
-| `EC4` | `br-estimated-tax`, `br-inss` |
-| `EC5` | `br-estimated-tax`, `br-inss` |
-| `EC6` | `br-estimated-tax`, `br-inss` |
 | `RBT12` | `br-indirect-tax`, `br-simples-nacional`, `brazil-vat` |
-
-## british-virgin-islands
-
-| Form | Guides |
-|---|---|
-| `AGPL-3` | `vg-company-formation`, `vg-corporate-income-tax`, `vg-payroll-social`, `vg-tax-overview`, `vg-vat-gst` |
-
-## brunei
-
-| Form | Guides |
-|---|---|
-| `AGPL-3` | `bn-company-formation`, `bn-corporate-income-tax`, `bn-income-tax`, `bn-payroll-social`, `bn-tax-overview`, `bn-vat-gst`, `brunei-tax` |
 
 ## bulgaria
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `bg-company-formation`, `bg-corporate-income-tax`, `bg-tax-overview`, `bulgaria-income-tax`, `bulgaria-payroll`, `bulgaria-social-contributions`, `bulgaria-tax-optimization`, `bulgaria-vat-return` |
 | `BG-1` | `bulgaria-income-tax`, `bulgaria-vat-return` |
 | `BG-2` | `bulgaria-income-tax`, `bulgaria-vat-return` |
 | `BG-3` | `bulgaria-income-tax`, `bulgaria-vat-return` |
@@ -309,29 +227,10 @@ instance took.
 | `BG-5` | `bulgaria-income-tax`, `bulgaria-vat-return` |
 | `BG-6` | `bulgaria-income-tax`, `bulgaria-vat-return` |
 
-## burkina-faso
-
-| Form | Guides |
-|---|---|
-| `AGPL-3` | `bf-company-formation`, `bf-corporate-tax`, `bf-income-tax`, `bf-payroll`, `bf-social-contributions`, `bf-tax-optimization`, `bf-tax-overview`, `bf-vat` |
-
-## burundi
-
-| Form | Guides |
-|---|---|
-| `AGPL-3` | `bi-company-formation`, `bi-corporate-income-tax`, `bi-income-tax`, `bi-payroll-social`, `bi-tax-overview`, `bi-vat-gst` |
-
-## business-combinations
-
-| Form | Guides |
-|---|---|
-| `AGPL-3` | `ifrs3-business-combinations`, `us-gaap-asc805-business-combinations` |
-
 ## ca
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `ca-form-3853-coverage`, `ca-formation`, `ca-payroll`, `ca-smllc-form-568` |
 | `CDTFA-401` | `ca-formation`, `ca-sales-use-tax` |
 | `Form 100` | `README`, `ca-formation`, `ca-smllc-form-568` |
 | `Form 100S` | `README`, `ca-smllc-form-568` |
@@ -350,7 +249,6 @@ instance took.
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `ab-corporate-tax`, `bc-eht`, `bc-pst`, `bc-speculation-vacancy-tax`, `mb-rst`, `nb-tax-credits`, `nl-tax-credits`, `ns-tax-credits`, `nt-payroll-tax`, `nu-tax-credits`, `on-eht`, `on-tax-credits`, `pe-tax-credits`, `qc-employer-contributions`, `sk-pst`, `yt-tax-credits` |
 | `EHT-1` | `bc-eht`, `on-eht` |
 | `EHT-2` | `bc-eht`, `on-eht` |
 | `EHT-3` | `bc-eht`, `on-eht` |
@@ -364,7 +262,6 @@ instance took.
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `cambodia-vat`, `kh-company-formation`, `kh-corporate-income-tax`, `kh-income-tax`, `kh-payroll-social`, `kh-tax-overview` |
 | `KH-1` | `cambodia-vat`, `kh-income-tax` |
 | `KH-2` | `cambodia-vat`, `kh-income-tax` |
 | `KH-3` | `cambodia-vat`, `kh-income-tax` |
@@ -373,7 +270,6 @@ instance took.
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `cameroon-income-tax`, `cameroon-payroll`, `cameroon-social-contributions`, `cameroon-vat` |
 | `CM-1` | `cameroon-income-tax`, `cameroon-vat` |
 | `CM-2` | `cameroon-income-tax`, `cameroon-vat` |
 
@@ -381,7 +277,6 @@ instance took.
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `ab-individual-return`, `bc-individual-return`, `ca-capital-gains`, `ca-crypto-tax`, `ca-fed-cpp-ei`, `ca-fed-instalments`, `ca-fed-t1-return`, `ca-fed-t1135`, `ca-fed-t2125`, `ca-nonresident-cgt`, `ca-tax-residency`, `canada-bookkeeping`, `canada-financial-statements`, `canada-formation`, `canada-gst-hst`, `canada-payroll`, `canada-tax-optimization`, `canada-transfer-pricing`, `mb-individual-return`, `nb-individual-return`, `nl-individual-return`, `ns-individual-return`, `nt-individual-return`, `nu-individual-return`, `on-individual-return`, `pe-individual-return`, `qc-corporate-tax-co17`, `qc-individual-return`, `qc-qst-return`, `references`, `sk-individual-return`, `yt-individual-return` |
 | `CA-1` | `ca-fed-t2125`, `canada-gst-hst` |
 | `CA-2` | `ca-fed-t2125`, `canada-gst-hst` |
 | `CA-3` | `ca-fed-t2125`, `canada-gst-hst` |
@@ -394,54 +289,21 @@ instance took.
 | `RL-1` | `canada-payroll`, `qc-individual-return` |
 | `TP-1` | `qc-corporate-tax-co17`, `qc-individual-return` |
 
-## cape-verde
-
-| Form | Guides |
-|---|---|
-| `AGPL-3` | `cv-company-formation`, `cv-corporate-income-tax`, `cv-income-tax`, `cv-payroll-social`, `cv-tax-overview`, `cv-vat-gst` |
-
-## cayman-islands
-
-| Form | Guides |
-|---|---|
-| `AGPL-3` | `cayman-tax`, `ky-company-formation`, `ky-corporate-income-tax`, `ky-payroll-social`, `ky-tax-overview`, `ky-vat-gst` |
-
-## central-african-republic
-
-| Form | Guides |
-|---|---|
-| `AGPL-3` | `cf-company-formation`, `cf-corporate-income-tax`, `cf-income-tax`, `cf-payroll-social`, `cf-tax-overview`, `cf-vat-gst` |
-
-## chad
-
-| Form | Guides |
-|---|---|
-| `AGPL-3` | `td-company-formation`, `td-corporate-income-tax`, `td-income-tax`, `td-payroll-social`, `td-tax-overview`, `td-vat-gst` |
-
-## chile
-
-| Form | Guides |
-|---|---|
-| `AGPL-3` | `chile-iva`, `cl-company-formation`, `cl-corporate-income-tax`, `cl-income-tax`, `cl-social-contributions`, `cl-tax-overview`, `cl-vat-return`, `references` |
-
 ## china
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `china-pit`, `china-to-singapore-relocation-tax`, `china-vat`, `cn-corporate-tax`, `cn-fapiao-einvoice`, `cn-formation`, `cn-freelance-intake`, `cn-iit`, `cn-return-assembly`, `cn-social-insurance`, `cn-stamp-tax`, `cn-vat`, `cn-withholding`, `references` |
 | `CN-1` | `china-vat`, `cn-vat` |
 | `CN-2` | `china-vat`, `cn-vat` |
 | `CN-3` | `china-vat`, `cn-vat` |
 | `CN-4` | `china-vat`, `cn-vat` |
 | `CN-5` | `china-vat`, `cn-vat` |
 | `CN-6` | `china-vat`, `cn-vat` |
-| `INV-2025` | `china-vat`, `cn-vat` |
 
 ## co
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `co-income-tax`, `co-payroll`, `co-retail-delivery-and-suts`, `co-sales-tax`, `colorado-sales-tax` |
 | `Form 104` | `co-income-tax`, `co-retail-delivery-and-suts` |
 | `Form DR` | `README`, `co-income-tax`, `co-retail-delivery-and-suts` |
 
@@ -450,20 +312,11 @@ instance took.
 | Form | Guides |
 |---|---|
 | `AB12` | `co-vat-return`, `colombia-iva` |
-| `AGPL-3` | `co-company-formation`, `co-corporate-income-tax`, `co-social-contributions`, `co-tax-overview`, `co-vat-return`, `colombia-iva`, `formalizing-small-informal-businesses-in-colombia` |
-| `INV-2025` | `co-vat-return`, `colombia-iva` |
-
-## costa-rica
-
-| Form | Guides |
-|---|---|
-| `AGPL-3` | `costa-rica-income-tax`, `costa-rica-iva`, `costa-rica-payroll`, `costa-rica-social-contributions`, `costa-rica-tax-optimization` |
 
 ## croatia
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `croatia-income-tax`, `croatia-payroll`, `croatia-social-contributions`, `croatia-tax-optimization`, `croatia-vat-return`, `hr-company-formation`, `hr-corporate-income-tax`, `hr-tax-overview` |
 | `Form PD` | `hr-company-formation`, `hr-corporate-income-tax`, `hr-tax-overview` |
 | `HR-1` | `croatia-income-tax`, `croatia-vat-return` |
 | `HR-2` | `croatia-income-tax`, `croatia-vat-return` |
@@ -476,27 +329,13 @@ instance took.
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `connecticut-sales-tax`, `ct-income-tax`, `ct-payroll`, `ct-sales-tax` |
 | `CT-1040` | `ct-income-tax`, `ct-payroll` |
 | `Form CT-1040` | `README`, `ct-income-tax`, `ct-payroll` |
-
-## cuba
-
-| Form | Guides |
-|---|---|
-| `AGPL-3` | `cu-company-formation`, `cu-corporate-income-tax`, `cu-income-tax`, `cu-payroll-social`, `cu-tax-overview`, `cu-vat-gst` |
-
-## cura-ao
-
-| Form | Guides |
-|---|---|
-| `AGPL-3` | `cw-company-formation`, `cw-corporate-income-tax`, `cw-income-tax`, `cw-payroll-social`, `cw-tax-overview`, `cw-vat-gst` |
 
 ## cyprus
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `cy-non-dom`, `cyprus-income-tax`, `cyprus-payroll`, `cyprus-social-contributions`, `cyprus-tax-optimization`, `cyprus-vat-return` |
 | `CY-1` | `cyprus-income-tax`, `cyprus-vat-return` |
 | `CY-2` | `cyprus-income-tax`, `cyprus-vat-return` |
 | `CY-3` | `cyprus-income-tax`, `cyprus-vat-return` |
@@ -510,22 +349,16 @@ instance took.
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `cz-company-formation`, `cz-corporate-income-tax`, `cz-income-tax`, `cz-social-health`, `cz-tax-overview`, `cz-vat-return`, `czech-republic-vat-return`, `references` |
 | `CZ-1` | `cz-income-tax`, `cz-vat-return`, `czech-republic-vat-return` |
 | `CZ-2` | `cz-income-tax`, `cz-vat-return`, `czech-republic-vat-return` |
 | `CZ-3` | `cz-income-tax`, `cz-vat-return`, `czech-republic-vat-return` |
 | `CZ-4` | `cz-income-tax`, `cz-vat-return`, `czech-republic-vat-return` |
 | `CZ-5` | `cz-vat-return`, `czech-republic-vat-return` |
-| `EC1` | `cz-income-tax`, `cz-social-health` |
-| `EC2` | `cz-income-tax`, `cz-social-health` |
-| `EC3` | `cz-income-tax`, `cz-social-health` |
-| `EC4` | `cz-income-tax`, `cz-social-health` |
 
 ## dc
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `dc-income-tax`, `dc-sales-tax` |
 | `Form D-30` | `README`, `dc-income-tax` |
 | `Form D-40` | `README`, `dc-income-tax` |
 
@@ -533,7 +366,6 @@ instance took.
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `de-formation`, `de-franchise-tax-and-llc`, `de-gross-receipts-tax`, `de-income-tax` |
 | `Form 1120` | `de-formation`, `de-franchise-tax-and-llc` |
 | `Form PIT-RES` | `README`, `de-income-tax` |
 | `GRT-01` | `de-gross-receipts-tax`, `de-income-tax` |
@@ -544,17 +376,10 @@ instance took.
 | `GRT-1` | `de-gross-receipts-tax`, `de-income-tax` |
 | `GRT-2` | `de-gross-receipts-tax`, `de-income-tax` |
 
-## debt-vs-equity
-
-| Form | Guides |
-|---|---|
-| `AGPL-3` | `ias32-debt-vs-equity`, `us-gaap-debt-vs-equity` |
-
 ## denmark
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `denmark-vat-return`, `dk-capital-gains`, `dk-income-tax`, `dk-vat-return`, `references` |
 | `DK-1` | `denmark-vat-return`, `dk-income-tax`, `dk-vat-return` |
 | `DK-2` | `denmark-vat-return`, `dk-income-tax`, `dk-vat-return` |
 | `DK-2026` | `denmark-vat-return`, `dk-vat-return` |
@@ -564,28 +389,16 @@ instance took.
 | `DK-6` | `denmark-vat-return`, `dk-vat-return` |
 | `DK-7` | `denmark-vat-return`, `dk-vat-return` |
 | `DK2026` | `denmark-vat-return`, `dk-vat-return` |
-| `EU-1` | `denmark-vat-return`, `dk-vat-return` |
 | `EU-12` | `denmark-vat-return`, `dk-vat-return` |
-| `EU-5` | `denmark-vat-return`, `dk-vat-return` |
 | `HI3G` | `denmark-vat-return`, `dk-vat-return` |
-
-## djibouti
-
-| Form | Guides |
-|---|---|
-| `AGPL-3` | `dj-company-formation`, `dj-corporate-income-tax`, `dj-income-tax`, `dj-payroll-social`, `dj-tax-overview`, `dj-vat-gst` |
 
 ## dominican-republic
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `do-asset-tax`, `do-capital-gains-tax`, `do-company-formation`, `do-corporate-income-tax`, `do-customs`, `do-donations-estates`, `do-municipal-taxes`, `do-real-estate-tax`, `do-selective-consumption-tax`, `do-simplified-regimes`, `do-special-tax-regimes`, `do-tax-defense`, `do-tax-overview`, `do-tax-registration`, `do-tax-treaties`, `do-transfer-pricing`, `do-withholding-tax`, `dominican-republic-income-tax`, `dominican-republic-itbis`, `dominican-republic-payroll`, `dominican-republic-social-contributions`, `dominican-republic-tax-optimization` |
 | `AR1` | `do-real-estate-tax`, `do-simplified-regimes`, `do-transfer-pricing` |
 | `DO-1` | `dominican-republic-income-tax`, `dominican-republic-itbis` |
 | `DO-2` | `dominican-republic-income-tax`, `dominican-republic-itbis` |
-| `FY2024` | `dominican-republic-income-tax`, `dominican-republic-payroll` |
-| `FY2025` | `dominican-republic-income-tax`, `dominican-republic-payroll`, `dominican-republic-social-contributions` |
-| `FY2026` | `dominican-republic-income-tax`, `dominican-republic-payroll` |
 | `Form IR-1` | `do-tax-overview`, `dominican-republic-income-tax` |
 | `Form IR-2` | `do-corporate-income-tax`, `do-tax-overview` |
 | `Form IT-1` | `do-tax-overview`, `dominican-republic-income-tax`, `dominican-republic-itbis` |
@@ -595,17 +408,10 @@ instance took.
 | `IR-3` | `do-withholding-tax`, `dominican-republic-income-tax`, `dominican-republic-payroll` |
 | `IT-1` | `do-tax-overview`, `do-withholding-tax`, `dominican-republic-income-tax` |
 
-## dr-congo
-
-| Form | Guides |
-|---|---|
-| `AGPL-3` | `cd-company-formation`, `cd-corporate-income-tax`, `cd-income-tax`, `cd-payroll-social`, `cd-tax-overview`, `cd-vat-gst` |
-
 ## ecuador
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `ec-company-formation`, `ec-corporate-income-tax`, `ec-tax-overview`, `ecuador-income-tax`, `ecuador-iva`, `ecuador-payroll`, `ecuador-social-contributions`, `ecuador-tax-optimization` |
 | `EC-1` | `ecuador-income-tax`, `ecuador-iva` |
 | `EC-2` | `ecuador-income-tax`, `ecuador-iva` |
 | `EC-3` | `ecuador-income-tax`, `ecuador-iva` |
@@ -617,7 +423,6 @@ instance took.
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `eg-bookkeeping`, `eg-corporate-tax`, `eg-crypto-tax`, `eg-financial-statements`, `eg-formation`, `eg-income-tax`, `eg-payroll`, `eg-real-estate-tax`, `eg-sme-tax`, `eg-social-insurance`, `eg-stamp-duty`, `eg-tax-optimization`, `eg-transfer-pricing`, `eg-withholding-tax`, `egypt-vat` |
 | `EG-1` | `eg-income-tax`, `eg-sme-tax` |
 | `EG-2` | `eg-income-tax`, `eg-sme-tax` |
 | `EG-3` | `eg-income-tax`, `eg-sme-tax` |
@@ -626,13 +431,11 @@ instance took.
 | `EG-6` | `eg-income-tax`, `eg-sme-tax` |
 | `EG-7` | `eg-income-tax`, `eg-sme-tax` |
 | `EG-8` | `eg-income-tax`, `eg-sme-tax` |
-| `TY2026` | `eg-income-tax`, `eg-tax-optimization` |
 
 ## el-salvador
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `el-salvador-income-tax`, `el-salvador-iva`, `el-salvador-payroll`, `el-salvador-social-contributions`, `el-salvador-tax-optimization` |
 | `Form F-11` | `el-salvador-payroll`, `el-salvador-social-contributions` |
 | `SV-1` | `el-salvador-income-tax`, `el-salvador-iva` |
 | `SV-2` | `el-salvador-income-tax`, `el-salvador-iva` |
@@ -642,22 +445,13 @@ instance took.
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `gq-company-formation`, `gq-corporate-income-tax`, `gq-income-tax`, `gq-payroll-social`, `gq-tax-overview`, `gq-vat-gst` |
 | `CEMAC-028` | `gq-tax-overview`, `gq-vat-gst` |
 | `CM-03` | `gq-tax-overview`, `gq-vat-gst` |
-| `FY2025` | `gq-corporate-income-tax`, `gq-tax-overview` |
-
-## eritrea
-
-| Form | Guides |
-|---|---|
-| `AGPL-3` | `er-company-formation`, `er-corporate-income-tax`, `er-income-tax`, `er-payroll-social`, `er-tax-overview`, `er-vat-gst` |
 
 ## estonia
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `ee-company-formation`, `ee-corporate-income-tax`, `ee-tax-overview`, `estonia-income-tax`, `estonia-payroll`, `estonia-social-contributions`, `estonia-tax-optimization`, `estonia-vat-return` |
 | `EE-1` | `estonia-income-tax`, `estonia-vat-return` |
 | `EE-2` | `estonia-income-tax`, `estonia-vat-return` |
 | `EE-3` | `estonia-income-tax`, `estonia-vat-return` |
@@ -665,34 +459,20 @@ instance took.
 | `Form TSD` | `ee-company-formation`, `ee-corporate-income-tax`, `ee-tax-overview`, `estonia-income-tax`, `estonia-payroll`, `estonia-social-contributions` |
 | `TELE2` | `estonia-income-tax`, `estonia-vat-return` |
 
-## eswatini
-
-| Form | Guides |
-|---|---|
-| `AGPL-3` | `sz-company-formation`, `sz-corporate-income-tax`, `sz-income-tax`, `sz-payroll-social`, `sz-tax-overview`, `sz-vat-gst` |
-
 ## ethiopia
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `et-company-formation`, `et-corporate-income-tax`, `et-tax-overview`, `ethiopia-income-tax`, `ethiopia-payroll`, `ethiopia-social-contributions`, `ethiopia-vat` |
 | `ET-1` | `ethiopia-income-tax`, `ethiopia-social-contributions`, `ethiopia-vat` |
 | `ET-2` | `ethiopia-income-tax`, `ethiopia-social-contributions` |
 | `ET-3` | `ethiopia-income-tax`, `ethiopia-social-contributions` |
 | `ET-4` | `ethiopia-income-tax`, `ethiopia-social-contributions` |
 | `ET-5` | `ethiopia-income-tax`, `ethiopia-social-contributions` |
 
-## eu
-
-| Form | Guides |
-|---|---|
-| `AGPL-3` | `eu-vat-base`, `eu-vat-directive` |
-
 ## fiji
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `fiji-vat`, `fj-company-formation`, `fj-corporate-income-tax`, `fj-income-tax`, `fj-payroll-social`, `fj-tax-overview` |
 | `FJ-1` | `fiji-vat`, `fj-income-tax`, `fj-payroll-social` |
 | `FJ-2` | `fiji-vat`, `fj-income-tax`, `fj-payroll-social` |
 | `FJ-3` | `fj-income-tax`, `fj-payroll-social` |
@@ -704,7 +484,6 @@ instance took.
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `fi-company-formation`, `fi-corporate-income-tax`, `fi-income-tax`, `fi-prepayments`, `fi-tax-overview`, `fi-yel-social`, `finland-vat-return` |
 | `FI-1` | `fi-income-tax`, `finland-vat-return` |
 | `FI-2` | `fi-income-tax`, `finland-vat-return` |
 | `FI-3` | `fi-income-tax`, `finland-vat-return` |
@@ -714,7 +493,6 @@ instance took.
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `fl-annual-report`, `fl-corporate-income-tax`, `fl-sales-use-tax`, `fl-sales-use-tax-surtax`, `fl-transient-rental-tax` |
 | `CY2026` | `README`, `fl-sales-use-tax-surtax` |
 | `DR-13` | `fl-sales-tax`, `fl-sales-use-tax` |
 | `DR-14A` | `fl-sales-tax`, `fl-sales-use-tax` |
@@ -730,7 +508,6 @@ instance took.
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `fr-business-accounting`, `fr-capital-gains`, `fr-cfe`, `fr-crypto-tax`, `fr-income-tax`, `fr-personal-income-tax`, `fr-rental-income`, `fr-social-contributions`, `fr-tax-audit`, `france-bookkeeping`, `france-einvoice`, `france-financial-statements`, `france-formation`, `france-payroll`, `france-tax-optimization`, `france-transfer-pricing`, `france-vat-return`, `leaving-france-exit-tax`, `references` |
 | `CA12` | `fr-business-accounting`, `fr-income-tax`, `fr-tax-audit`, `france-bookkeeping`, `france-vat-return` |
 | `CA3` | `fr-business-accounting`, `fr-income-tax`, `fr-tax-audit`, `france-bookkeeping`, `france-einvoice`, `france-vat-return` |
 | `FR-1` | `fr-income-tax`, `france-vat-return` |
@@ -743,7 +520,6 @@ instance took.
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `ga-corporate-and-ptet`, `ga-estimated-tax-depth`, `ga-formation`, `ga-income-tax`, `ga-net-worth-tax`, `ga-payroll`, `ga-sales-tax`, `georgia-corporate-income-tax-returns-form-600`, `georgia-individual-tax-return-form-500`, `georgia-pass-through-entity-returns-form-700-partnership-and-form-600s-s-corporation` |
 | `Form 1040` | `ga-estimated-tax-depth`, `ga-formation`, `ga-income-tax` |
 | `Form 1120` | `ga-formation`, `ga-net-worth-tax`, `georgia-corporate-income-tax-returns-form-600` |
 | `Form 2553` | `ga-formation`, `ga-net-worth-tax` |
@@ -758,23 +534,10 @@ instance took.
 | `Form 7004` | `ga-corporate-and-ptet`, `ga-net-worth-tax` |
 | `Form IT-303` | `ga-corporate-and-ptet`, `ga-income-tax`, `ga-net-worth-tax` |
 
-## gabon
-
-| Form | Guides |
-|---|---|
-| `AGPL-3` | `ga-company-formation`, `ga-corporate-income-tax`, `ga-payroll-social`, `ga-tax-overview`, `ga-vat-gst` |
-
-## gambia
-
-| Form | Guides |
-|---|---|
-| `AGPL-3` | `gm-company-formation`, `gm-corporate-income-tax`, `gm-income-tax`, `gm-payroll-social`, `gm-tax-overview`, `gm-vat-gst` |
-
 ## georgia
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `ge-company-formation`, `ge-corporate-income-tax`, `ge-tax-overview`, `georgia-income-tax`, `georgia-payroll`, `georgia-social-contributions`, `georgia-tax-optimization`, `georgia-vat` |
 | `GE-1` | `georgia-income-tax`, `georgia-vat` |
 | `GE-2` | `georgia-income-tax`, `georgia-vat` |
 | `GE-3` | `georgia-income-tax`, `georgia-vat` |
@@ -787,7 +550,6 @@ instance took.
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `de-capital-gains`, `de-crypto-tax`, `de-einkommensteuer-freelancer`, `de-estimated-tax`, `de-payroll`, `de-rental-income`, `de-social-contributions`, `de-trade-tax`, `de-ustva-vat-return`, `germany-bookkeeping`, `germany-einvoice`, `germany-financial-statements`, `germany-formation`, `germany-payroll`, `germany-tax-optimization`, `germany-to-switzerland-cross-border-tax`, `germany-transfer-pricing`, `germany-vat-return`, `references` |
 | `DE-1` | `de-income-tax`, `germany-vat-return` |
 | `DE-2` | `de-income-tax`, `germany-vat-return` |
 | `DE-3` | `de-income-tax`, `germany-vat-return` |
@@ -797,24 +559,10 @@ instance took.
 | `MT940` | `de-income-tax`, `germany-bookkeeping` |
 | `UPTAB25` | `de-payroll`, `references` |
 
-## ghana
-
-| Form | Guides |
-|---|---|
-| `AGPL-3` | `gh-company-formation`, `gh-corporate-income-tax`, `gh-payroll-social`, `gh-tax-overview`, `ghana-pit`, `ghana-vat`, `references` |
-
 ## greece
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `gr-company-formation`, `gr-corporate-income-tax`, `gr-efka`, `gr-income-tax`, `gr-tax-overview`, `gr-vat-return`, `greece-einvoice`, `greece-vat-return` |
-| `EC1` | `gr-efka`, `gr-income-tax` |
-| `EC2` | `gr-efka`, `gr-income-tax` |
-| `EC3` | `gr-efka`, `gr-income-tax` |
-| `EC4` | `gr-efka`, `gr-income-tax` |
-| `EC5` | `gr-efka`, `gr-income-tax` |
-| `EC6` | `gr-efka`, `gr-income-tax` |
-| `EU-5` | `gr-vat-return`, `greece-vat-return` |
 | `GR-1` | `gr-income-tax`, `gr-vat-return`, `greece-vat-return` |
 | `GR-2` | `gr-income-tax`, `gr-vat-return`, `greece-vat-return` |
 | `GR-2026` | `gr-vat-return`, `greece-vat-return` |
@@ -829,7 +577,6 @@ instance took.
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `gt-company-formation`, `gt-corporate-income-tax`, `gt-tax-overview`, `guatemala-income-tax`, `guatemala-iva`, `guatemala-payroll`, `guatemala-social-contributions` |
 | `CE1` | `guatemala-income-tax`, `guatemala-payroll` |
 | `CE2` | `guatemala-income-tax`, `guatemala-payroll` |
 | `GT-1` | `guatemala-income-tax`, `guatemala-iva`, `guatemala-social-contributions` |
@@ -839,29 +586,10 @@ instance took.
 | `GT-5` | `guatemala-income-tax`, `guatemala-social-contributions` |
 | `SAT-1431` | `guatemala-income-tax`, `guatemala-payroll`, `guatemala-social-contributions` |
 
-## guinea
-
-| Form | Guides |
-|---|---|
-| `AGPL-3` | `gn-company-formation`, `gn-corporate-income-tax`, `gn-income-tax`, `gn-payroll-social`, `gn-tax-overview`, `gn-vat-gst` |
-
-## guinea-bissau
-
-| Form | Guides |
-|---|---|
-| `AGPL-3` | `gw-company-formation`, `gw-corporate-income-tax`, `gw-income-tax`, `gw-payroll-social`, `gw-tax-overview`, `gw-vat-gst` |
-
-## guyana
-
-| Form | Guides |
-|---|---|
-| `AGPL-3` | `gy-company-formation`, `gy-corporate-income-tax`, `gy-income-tax`, `gy-payroll-social`, `gy-tax-overview`, `gy-vat-gst` |
-
 ## hi
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `hi-income-tax`, `hi-sales-tax` |
 | `Form N-11` | `README`, `hi-income-tax` |
 | `Form N-15` | `README`, `hi-income-tax` |
 | `Form N-30` | `README`, `hi-income-tax` |
@@ -870,9 +598,6 @@ instance took.
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `hn-company-formation`, `hn-corporate-income-tax`, `hn-tax-overview`, `honduras-income-tax`, `honduras-isv`, `honduras-payroll`, `honduras-social-contributions` |
-| `FY2025` | `honduras-income-tax`, `honduras-social-contributions` |
-| `FY2026` | `honduras-income-tax`, `honduras-social-contributions` |
 | `Form 102` | `honduras-income-tax`, `honduras-payroll`, `honduras-social-contributions` |
 | `HN-1` | `honduras-income-tax`, `honduras-social-contributions` |
 | `HN-2` | `honduras-income-tax`, `honduras-social-contributions` |
@@ -884,20 +609,12 @@ instance took.
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `hk-company-formation`, `hk-corporate-income-tax`, `hk-mpf`, `hk-salaries-tax`, `hk-tax-overview`, `hk-vat-gst`, `hong-kong-tax` |
 | `BIR60` | `hk-mpf`, `hk-salaries-tax`, `hk-tax-overview`, `hong-kong-tax` |
 
 ## hungary
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `hu-income-tax`, `hu-social-contributions`, `hu-vat-return`, `hungary-einvoice`, `hungary-vat-return` |
-| `EC1` | `hu-income-tax`, `hu-social-contributions` |
-| `EC2` | `hu-income-tax`, `hu-social-contributions` |
-| `EC3` | `hu-income-tax`, `hu-social-contributions` |
-| `EC4` | `hu-income-tax`, `hu-social-contributions` |
-| `EC5` | `hu-income-tax`, `hu-social-contributions` |
-| `EC6` | `hu-income-tax`, `hu-social-contributions` |
 | `Form 2565` | `hu-vat-return`, `hungary-vat-return` |
 | `HU-1` | `hu-income-tax`, `hu-vat-return`, `hungary-vat-return` |
 | `HU-2` | `hu-income-tax`, `hu-vat-return`, `hungary-vat-return` |
@@ -909,31 +626,21 @@ instance took.
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `ia-income-tax`, `ia-sales-tax` |
 | `Form IA` | `README`, `ia-income-tax` |
 
 ## iceland
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `iceland-income-tax`, `iceland-payroll`, `iceland-social-contributions`, `iceland-tax-optimization`, `iceland-vat`, `is-company-formation`, `is-corporate-income-tax`, `is-tax-overview` |
 | `IS-1` | `iceland-income-tax`, `iceland-vat` |
 | `IS-2` | `iceland-income-tax`, `iceland-vat` |
 | `IS-3` | `iceland-income-tax`, `iceland-vat` |
 | `IS-4` | `iceland-income-tax`, `iceland-vat` |
 
-## id
-
-| Form | Guides |
-|---|---|
-| `AGPL-3` | `id-sales-tax`, `idaho-sales-tax` |
-
 ## il
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `il-estimated-tax`, `il-income-tax`, `il-payroll`, `il-pprt`, `il-sales-tax`, `illinois-sales-tax` |
-| `FY2025` | `il-estimated-tax`, `il-income-tax`, `il-payroll` |
 | `Form IL-1040` | `il-income-tax`, `il-pprt` |
 | `Form IL-1040-ES` | `il-estimated-tax`, `il-income-tax` |
 | `Form IL-1120` | `il-income-tax`, `il-pprt` |
@@ -941,33 +648,12 @@ instance took.
 | `IL-1120` | `il-income-tax`, `il-pprt` |
 | `ST-1` | `il-sales-tax`, `illinois-sales-tax` |
 
-## im
-
-| Form | Guides |
-|---|---|
-| `AGPL-3` | `im-company-formation`, `im-corporate-income-tax`, `im-income-tax`, `im-payroll-social`, `im-tax-overview` |
-
-## in
-
-| Form | Guides |
-|---|---|
-| `AGPL-3` | `in-payroll`, `in-sales-tax`, `indiana-sales-tax` |
-
 ## india
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `in-advance-tax`, `in-gst-return`, `in-pf-esi-employer`, `in-professional-tax`, `in-tax-residency`, `in-tds-freelance`, `india-crypto-tax`, `india-einvoice`, `india-financial-statements`, `india-formation`, `india-gst`, `india-payroll`, `india-tax-optimization`, `india-to-uae-singapore-nri-tax`, `india-transfer-pricing`, `references` |
 | `AOC-4` | `india-financial-statements`, `india-formation` |
 | `CMP-08` | `in-gst-return`, `india-gst` |
-| `EC1` | `in-advance-tax`, `in-tds-freelance` |
-| `EC2` | `in-advance-tax`, `in-tds-freelance` |
-| `EC3` | `in-advance-tax`, `in-tds-freelance` |
-| `EC4` | `in-advance-tax`, `in-tds-freelance` |
-| `EC5` | `in-advance-tax`, `in-tds-freelance` |
-| `EC6` | `in-advance-tax`, `in-tds-freelance` |
-| `EC7` | `in-advance-tax`, `in-tds-freelance` |
-| `EC8` | `in-advance-tax`, `in-tds-freelance` |
 | `Form 130` | `india-payroll`, `india-tax-optimization` |
 | `Form 16` | `in-income-tax`, `in-professional-tax`, `india-payroll`, `india-tax-optimization` |
 | `Form 16A` | `in-income-tax`, `in-tds-freelance` |
@@ -995,7 +681,6 @@ instance took.
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `id-bookkeeping`, `id-corporate-tax`, `id-einvoice-coretax`, `id-formation`, `id-freelance-intake`, `id-income-tax`, `id-payroll-pph21`, `id-pph-final-umkm`, `id-return-assembly`, `id-tax-optimization`, `id-withholding`, `indonesia-vat` |
 | `CT-1` | `id-corporate-tax`, `id-einvoice-coretax` |
 | `CT-2` | `id-corporate-tax`, `id-einvoice-coretax` |
 | `CT-3` | `id-corporate-tax`, `id-einvoice-coretax` |
@@ -1025,33 +710,12 @@ instance took.
 | `PPH21` | `id-payroll-pph21`, `references` |
 | `SE-17` | `id-einvoice-coretax`, `indonesia-vat` |
 
-## iran
-
-| Form | Guides |
-|---|---|
-| `AGPL-3` | `ir-company-formation`, `ir-corporate-income-tax`, `ir-income-tax`, `ir-payroll-social`, `ir-tax-overview`, `iran-vat` |
-| `FY1404` | `ir-income-tax`, `ir-payroll-social`, `ir-tax-overview` |
-
-## iraq
-
-| Form | Guides |
-|---|---|
-| `AGPL-3` | `iq-company-formation`, `iq-corporate-income-tax`, `iq-income-tax`, `iq-payroll-social`, `iq-tax-overview`, `iq-vat-gst`, `iraq-tax` |
-
 ## ireland
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `ie-cat`, `ie-cgt`, `ie-corporation-tax`, `ie-formation`, `ie-freelance-intake`, `ie-income-tax-form11`, `ie-non-dom`, `ie-payroll`, `ie-preliminary-tax`, `ie-prsi-class-s`, `ie-return-assembly`, `ie-usc`, `ie-vat-return`, `ireland-vat-return` |
 | `CG1` | `ie-cgt`, `ie-return-assembly` |
 | `CT1` | `ie-corporation-tax`, `ie-formation`, `ie-freelance-intake`, `ie-return-assembly` |
-| `EC1` | `ie-prsi-class-s`, `ie-usc` |
-| `EC2` | `ie-prsi-class-s`, `ie-usc` |
-| `EC3` | `ie-prsi-class-s`, `ie-usc` |
-| `EC4` | `ie-prsi-class-s`, `ie-usc` |
-| `EC5` | `ie-prsi-class-s`, `ie-usc` |
-| `EC6` | `ie-prsi-class-s`, `ie-usc` |
-| `EU-5` | `ie-vat-return`, `ireland-vat-return` |
 | `Form 11` | `ie-cgt`, `ie-corporation-tax`, `ie-formation`, `ie-freelance-intake`, `ie-income-tax-form11`, `ie-payroll`, `ie-preliminary-tax`, `ie-prsi-class-s`, `ie-return-assembly`, `ie-usc` |
 | `Form 11S` | `ie-cgt`, `ie-return-assembly` |
 | `Form 12` | `ie-freelance-intake`, `ie-payroll`, `ie-return-assembly` |
@@ -1079,7 +743,6 @@ instance took.
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `il-corporate-tax`, `il-crypto-tax`, `il-customs-duty`, `il-employee-tax-refund`, `il-freelancer-ops`, `il-income-tax-returns`, `il-new-immigrant`, `il-tax-withholding`, `israel-vat`, `references` |
 | `Form 126` | `il-corporate-tax`, `il-income-tax-returns` |
 | `Form 1301` | `il-crypto-tax`, `il-employee-tax-refund`, `il-freelancer-ops`, `il-income-tax-returns` |
 | `Form 1325` | `il-crypto-tax`, `references` |
@@ -1090,7 +753,6 @@ instance took.
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `it-estimated-tax`, `it-impatriati`, `it-income-tax`, `it-inps-contributions`, `it-irap`, `italy-bookkeeping`, `italy-crypto-tax`, `italy-einvoice`, `italy-financial-statements`, `italy-formation`, `italy-payroll`, `italy-tax-optimization`, `italy-transfer-pricing`, `italy-vat-return`, `references` |
 | `IT-1` | `it-income-tax`, `italy-vat-return` |
 | `IT-2` | `it-income-tax`, `italy-vat-return` |
 | `IT-3` | `it-income-tax`, `italy-vat-return` |
@@ -1101,14 +763,12 @@ instance took.
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `ivory-coast-income-tax`, `ivory-coast-payroll`, `ivory-coast-social-contributions`, `ivory-coast-vat` |
 | `CI-1` | `ivory-coast-income-tax`, `ivory-coast-vat` |
 
 ## jamaica
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `jamaica-gct`, `jm-company-formation`, `jm-corporate-income-tax`, `jm-income-tax`, `jm-payroll-social`, `jm-tax-overview` |
 | `JM-1` | `jamaica-gct`, `jm-income-tax` |
 | `JM-2` | `jamaica-gct`, `jm-income-tax` |
 | `JM-3` | `jamaica-gct`, `jm-income-tax` |
@@ -1119,30 +779,16 @@ instance took.
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `japan-bookkeeping`, `japan-consumption-tax`, `japan-crypto-tax`, `japan-financial-statements`, `japan-formation`, `japan-payroll`, `japan-tax-optimization`, `japan-transfer-pricing`, `jp-bookkeeping`, `jp-consumption-tax`, `jp-estimated-tax`, `jp-etax-filing`, `jp-income-tax`, `jp-incorporation`, `jp-nonpermanent-resident`, `jp-social-insurance`, `references` |
-| `EC1` | `jp-consumption-tax`, `jp-social-insurance` |
-| `EC2` | `jp-consumption-tax`, `jp-social-insurance` |
-| `EC3` | `jp-consumption-tax`, `jp-social-insurance` |
-| `EC4` | `jp-consumption-tax`, `jp-social-insurance` |
-| `EC5` | `jp-consumption-tax`, `jp-social-insurance` |
-| `EC6` | `jp-consumption-tax`, `jp-social-insurance` |
 | `JP-1` | `japan-consumption-tax`, `jp-income-tax` |
 | `JP-2` | `japan-consumption-tax`, `jp-income-tax` |
 | `JP-3` | `japan-consumption-tax`, `jp-income-tax` |
 | `JP-4` | `japan-consumption-tax`, `jp-income-tax` |
 | `JP-5` | `japan-consumption-tax`, `jp-income-tax` |
 
-## jordan
-
-| Form | Guides |
-|---|---|
-| `AGPL-3` | `jo-company-formation`, `jo-corporate-income-tax`, `jo-income-tax`, `jo-payroll-social`, `jo-tax-overview`, `jordan-gst` |
-
 ## kazakhstan
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `kazakhstan-vat`, `kz-company-formation`, `kz-corporate-income-tax`, `kz-income-tax`, `kz-payroll-social`, `kz-tax-overview` |
 | `Form 200` | `kz-bookkeeping`, `kz-payroll` |
 | `Form 300` | `kazakhstan-vat`, `kz-bookkeeping` |
 | `Form 910` | `kz-bookkeeping`, `kz-financial-statements`, `kz-simplified-regime` |
@@ -1151,15 +797,9 @@ instance took.
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `audit-quality-assurance-aqa`, `export-declaration-requirement-for-imported-goods`, `ke-company-formation`, `ke-corporate-income-tax`, `ke-income-tax`, `ke-income-tax-2`, `ke-nhif-nssf`, `ke-tax-overview`, `ke-vat-return`, `kenya-vat`, `non-resident-rental-income-tax-on-kenyan-property`, `set-up-your-company-in-kenya-we-handle-it-from-abroad`, `tax-amnesty`, `the-burden-of-proof-in-tax-cases` |
 | `CR1` | `ke-company-formation`, `set-up-your-company-in-kenya-we-handle-it-from-abroad` |
 | `CR2` | `ke-company-formation`, `set-up-your-company-in-kenya-we-handle-it-from-abroad` |
 | `CR8` | `ke-company-formation`, `set-up-your-company-in-kenya-we-handle-it-from-abroad` |
-| `EC1` | `ke-income-tax`, `ke-nhif-nssf` |
-| `EC2` | `ke-income-tax`, `ke-nhif-nssf` |
-| `EC3` | `ke-income-tax`, `ke-nhif-nssf` |
-| `EC4` | `ke-income-tax`, `ke-nhif-nssf` |
-| `EC5` | `ke-income-tax`, `ke-nhif-nssf` |
 | `KE-1` | `ke-income-tax`, `kenya-vat` |
 | `KE-2` | `ke-income-tax`, `kenya-vat` |
 | `KE-3` | `ke-income-tax`, `kenya-vat` |
@@ -1169,7 +809,6 @@ instance took.
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `kosovo-income-tax`, `kosovo-payroll`, `kosovo-social-contributions`, `kosovo-tax-optimization`, `kosovo-vat` |
 | `XK-1` | `kosovo-income-tax`, `kosovo-social-contributions`, `kosovo-vat` |
 | `XK-2` | `kosovo-income-tax`, `kosovo-social-contributions`, `kosovo-vat` |
 | `XK-3` | `kosovo-income-tax`, `kosovo-social-contributions`, `kosovo-vat` |
@@ -1180,104 +819,39 @@ instance took.
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `ks-income-tax`, `ks-sales-tax` |
 | `Form K-40` | `README`, `ks-income-tax` |
-
-## kuwait
-
-| Form | Guides |
-|---|---|
-| `AGPL-3` | `kuwait-tax`, `kw-company-formation`, `kw-corporate-income-tax`, `kw-payroll-social`, `kw-tax-overview`, `kw-vat-gst` |
 
 ## ky
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `ky-income-tax`, `ky-payroll`, `ky-sales-tax` |
 | `Form 720` | `README`, `ky-income-tax` |
 | `Form 725` | `README`, `ky-income-tax` |
 | `Form 740` | `README`, `ky-income-tax`, `ky-payroll` |
 | `Form 740-ES` | `ky-income-tax`, `ky-payroll` |
 | `Form 740-NP` | `README`, `ky-income-tax` |
 
-## kyrgyzstan
-
-| Form | Guides |
-|---|---|
-| `AGPL-3` | `kg-company-formation`, `kg-corporate-income-tax`, `kg-income-tax`, `kg-payroll-social`, `kg-tax-overview`, `kg-vat-gst` |
-
 ## la
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `la-income-tax`, `la-sales-tax` |
 | `CIFT-620` | `README`, `la-income-tax` |
 | `Form IT-540` | `README`, `la-income-tax` |
 | `Form IT-540B` | `README`, `la-income-tax` |
-
-## laos
-
-| Form | Guides |
-|---|---|
-| `AGPL-3` | `la-company-formation`, `la-corporate-income-tax`, `la-payroll-social`, `la-tax-overview`, `laos-vat` |
 
 ## latvia
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `latvia-income-tax`, `latvia-payroll`, `latvia-social-contributions`, `latvia-tax-optimization`, `latvia-vat-return`, `lv-company-formation`, `lv-corporate-income-tax`, `lv-tax-overview` |
 | `LV-1` | `latvia-income-tax`, `latvia-vat-return` |
 | `LV-2` | `latvia-income-tax`, `latvia-vat-return` |
 | `LV-3` | `latvia-income-tax`, `latvia-vat-return` |
 | `TELE2` | `latvia-income-tax`, `latvia-vat-return` |
 
-## leases
-
-| Form | Guides |
-|---|---|
-| `AGPL-3` | `ifrs16-leases`, `us-gaap-asc842-leases` |
-
-## lebanon
-
-| Form | Guides |
-|---|---|
-| `AGPL-3` | `lb-company-formation`, `lb-corporate-income-tax`, `lb-income-tax`, `lb-payroll-social`, `lb-tax-overview`, `lebanon-vat` |
-
-## lesotho
-
-| Form | Guides |
-|---|---|
-| `AGPL-3` | `ls-company-formation`, `ls-corporate-income-tax`, `ls-income-tax`, `ls-payroll-social`, `ls-tax-overview`, `ls-vat-gst` |
-
-## liberia
-
-| Form | Guides |
-|---|---|
-| `AGPL-3` | `lr-company-formation`, `lr-corporate-income-tax`, `lr-income-tax`, `lr-payroll-social`, `lr-tax-overview`, `lr-vat-gst` |
-
-## libya
-
-| Form | Guides |
-|---|---|
-| `AGPL-3` | `ly-company-formation`, `ly-corporate-income-tax`, `ly-income-tax`, `ly-payroll-social`, `ly-tax-overview`, `ly-vat-gst` |
-
-## liechtenstein
-
-| Form | Guides |
-|---|---|
-| `AGPL-3` | `li-company-formation`, `li-corporate-income-tax`, `li-income-tax`, `li-payroll-social`, `li-tax-overview`, `liechtenstein-vat` |
-
-## lithuania
-
-| Form | Guides |
-|---|---|
-| `AGPL-3` | `lithuania-pit`, `lithuania-vat-return`, `lt-company-formation`, `lt-corporate-income-tax`, `lt-payroll-social`, `lt-tax-overview`, `references` |
-
 ## luxembourg
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `luxembourg-income-tax`, `luxembourg-payroll`, `luxembourg-social-contributions`, `luxembourg-tax-optimization`, `luxembourg-vat-return` |
 | `LU-1` | `luxembourg-income-tax`, `luxembourg-vat-return` |
 | `LU-2` | `luxembourg-income-tax`, `luxembourg-vat-return` |
 | `LU-3` | `luxembourg-income-tax`, `luxembourg-vat-return` |
@@ -1286,7 +860,6 @@ instance took.
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `ma-corporate-excise`, `ma-income-tax`, `ma-payroll`, `ma-sales-tax`, `massachusetts-sales-tax` |
 | `Form 1-ES` | `ma-corporate-excise`, `ma-income-tax` |
 | `Form 1-NR/PY` | `README`, `ma-corporate-excise`, `ma-income-tax` |
 | `Form 1040` | `ma-income-tax`, `ma-payroll` |
@@ -1294,29 +867,10 @@ instance took.
 | `Form M-4` | `ma-corporate-excise`, `ma-payroll` |
 | `ST-9` | `ma-sales-tax`, `massachusetts-sales-tax` |
 
-## macau
-
-| Form | Guides |
-|---|---|
-| `AGPL-3` | `mo-company-formation`, `mo-corporate-income-tax`, `mo-payroll-social`, `mo-tax-overview`, `mo-vat-gst` |
-
-## madagascar
-
-| Form | Guides |
-|---|---|
-| `AGPL-3` | `mg-company-formation`, `mg-corporate-income-tax`, `mg-income-tax`, `mg-payroll-social`, `mg-tax-overview`, `mg-vat-gst` |
-
-## malawi
-
-| Form | Guides |
-|---|---|
-| `AGPL-3` | `mw-company-formation`, `mw-corporate-income-tax`, `mw-income-tax`, `mw-payroll-social`, `mw-tax-overview`, `mw-vat-gst` |
-
 ## malaysia
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `malaysia-einvoice`, `malaysia-sst`, `my-company-formation`, `my-corporate-income-tax`, `my-epf-socso`, `my-income-tax`, `my-pcb`, `my-tax-overview` |
 | `CP500` | `my-income-tax`, `my-pcb` |
 | `Form BE` | `my-income-tax`, `my-tax-overview` |
 | `MY-1` | `malaysia-sst`, `my-income-tax` |
@@ -1342,24 +896,13 @@ instance took.
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `maldives-gst`, `mv-company-formation`, `mv-corporate-income-tax`, `mv-income-tax`, `mv-payroll-social`, `mv-tax-overview` |
 | `MV-1` | `maldives-gst`, `mv-income-tax` |
 | `MV-2` | `maldives-gst`, `mv-income-tax` |
-
-## mali
-
-| Form | Guides |
-|---|---|
-| `AGPL-3` | `ml-company-formation`, `ml-corporate-income-tax`, `ml-income-tax`, `ml-payroll-social`, `ml-tax-overview`, `ml-vat-gst` |
 
 ## malta
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `how-to-account-for-rental-income-in-malta`, `how-to-submit-capital-gain-taxes-in-malta`, `malta-bookkeeping`, `malta-financial-statements`, `malta-formation`, `malta-income-tax`, `malta-payroll`, `malta-ssc`, `malta-tax-optimization`, `malta-transfer-pricing`, `malta-vat-return`, `moving-to-malta-tax-residence`, `mt-capital-gains`, `mt-crypto-tax`, `mt-estimated-tax`, `mt-non-dom`, `mt-rental-income`, `selling-a-company-in-malta` |
-| `EC4` | `malta-vat-return`, `mt-estimated-tax` |
-| `EC5` | `malta-vat-return`, `mt-estimated-tax` |
-| `EC8` | `malta-vat-return`, `mt-estimated-tax` |
 | `FS3` | `malta-payroll`, `malta-vat-return` |
 | `MT-1` | `malta-income-tax`, `malta-vat-return` |
 | `MT-2` | `malta-income-tax`, `malta-vat-return` |
@@ -1371,23 +914,10 @@ instance took.
 | `TA22` | `malta-income-tax`, `malta-payroll`, `malta-ssc`, `malta-tax-optimization` |
 | `TA24` | `malta-income-tax`, `malta-vat-return`, `mt-rental-income` |
 
-## mauritania
-
-| Form | Guides |
-|---|---|
-| `AGPL-3` | `mr-company-formation`, `mr-corporate-income-tax`, `mr-income-tax`, `mr-payroll-social`, `mr-tax-overview`, `mr-vat-gst` |
-
-## mauritius
-
-| Form | Guides |
-|---|---|
-| `AGPL-3` | `mauritius-vat`, `mu-company-formation`, `mu-corporate-income-tax`, `mu-income-tax`, `mu-payroll-social`, `mu-tax-overview` |
-
 ## md
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `maryland-sales-tax`, `md-income-tax`, `md-payroll`, `md-sales-tax` |
 | `Form 500` | `README`, `md-income-tax` |
 | `Form 502` | `README`, `md-income-tax`, `md-payroll` |
 | `Form 505` | `README`, `md-income-tax` |
@@ -1397,7 +927,6 @@ instance took.
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `maine-sales-tax`, `me-income-tax`, `me-sales-tax` |
 | `Form 1040ME` | `README`, `me-income-tax` |
 | `Form 1120ME` | `README`, `me-income-tax` |
 
@@ -1405,7 +934,6 @@ instance took.
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `mexico-crypto-tax`, `mexico-einvoice`, `mexico-iva`, `mexico-transfer-pricing`, `mx-cfdi`, `mx-estimated-tax`, `mx-imss`, `mx-income-tax`, `mx-vat-return`, `references` |
 | `FE-2026` | `mexico-iva`, `mx-vat-return` |
 | `MX-1` | `mexico-iva`, `mx-imss`, `mx-income-tax`, `mx-vat-return` |
 | `MX-2` | `mexico-iva`, `mx-imss`, `mx-income-tax`, `mx-vat-return` |
@@ -1419,7 +947,6 @@ instance took.
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `mi-corporate-income-tax`, `mi-detroit-individual-return`, `mi-estimated-tax`, `mi-homestead-credit`, `mi-income-tax`, `mi-payroll`, `mi-pension-retirement-subtraction`, `mi-return-assembly`, `mi-sales-tax` |
 | `CR-7` | `mi-homestead-credit`, `mi-return-assembly` |
 | `Form 1040` | `mi-detroit-individual-return`, `mi-estimated-tax`, `mi-income-tax`, `mi-pension-retirement-subtraction`, `mi-return-assembly` |
 | `Form 1040-ES` | `mi-estimated-tax`, `mi-income-tax`, `mi-return-assembly` |
@@ -1444,13 +971,11 @@ instance took.
 | `Form W-4` | `mi-estimated-tax`, `mi-payroll` |
 | `MI-1040` | `mi-detroit-individual-return`, `mi-estimated-tax`, `mi-homestead-credit`, `mi-income-tax`, `mi-payroll`, `mi-pension-retirement-subtraction`, `mi-return-assembly` |
 | `PA-0004` | `mi-homestead-credit`, `mi-pension-retirement-subtraction` |
-| `TY2025` | `mi-detroit-individual-return`, `mi-estimated-tax`, `mi-homestead-credit`, `mi-income-tax`, `mi-pension-retirement-subtraction`, `mi-return-assembly` |
 
 ## mn
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `minnesota-sales-tax`, `mn-corporate-and-pte`, `mn-income-tax`, `mn-payroll`, `mn-sales-tax` |
 | `Form M1` | `README`, `mn-corporate-and-pte`, `mn-income-tax`, `mn-payroll` |
 | `Form M4` | `README`, `mn-corporate-and-pte`, `mn-income-tax` |
 | `Form M706` | `README`, `mn-income-tax` |
@@ -1459,7 +984,6 @@ instance took.
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `missouri-sales-tax`, `mo-income-tax`, `mo-payroll`, `mo-sales-tax` |
 | `Form MO-1040` | `README`, `mo-income-tax` |
 | `Form MO-1040P` | `README`, `mo-income-tax` |
 | `Form MO-1120` | `README`, `mo-income-tax` |
@@ -1470,7 +994,6 @@ instance took.
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `md-company-formation`, `md-corporate-income-tax`, `md-tax-overview`, `moldova-income-tax`, `moldova-payroll`, `moldova-social-contributions`, `moldova-tax-optimization`, `moldova-vat` |
 | `CET18` | `moldova-income-tax`, `moldova-payroll`, `moldova-social-contributions` |
 | `Form IPC21` | `moldova-payroll`, `moldova-social-contributions` |
 | `IPC21` | `moldova-payroll`, `moldova-social-contributions` |
@@ -1483,20 +1006,12 @@ instance took.
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `mc-company-formation`, `mc-corporate-income-tax`, `mc-income-tax`, `mc-payroll-social`, `mc-tax-overview`, `monaco-vat` |
 | `CA3` | `mc-company-formation`, `monaco-vat` |
-
-## mongolia
-
-| Form | Guides |
-|---|---|
-| `AGPL-3` | `mn-company-formation`, `mn-corporate-income-tax`, `mn-payroll-social`, `mn-tax-overview`, `mongolia-vat` |
 
 ## montenegro
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `me-company-formation`, `me-corporate-income-tax`, `me-tax-overview`, `montenegro-income-tax`, `montenegro-payroll`, `montenegro-social-contributions`, `montenegro-tax-optimization`, `montenegro-vat` |
 | `ME-1` | `montenegro-income-tax`, `montenegro-vat` |
 | `ME-2` | `montenegro-income-tax`, `montenegro-vat` |
 | `ME-3` | `montenegro-income-tax`, `montenegro-vat` |
@@ -1505,7 +1020,6 @@ instance took.
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `ma-auto-entrepreneur`, `ma-bookkeeping`, `ma-cpu`, `ma-crypto-tax`, `ma-einvoice`, `ma-financial-statements`, `ma-formation`, `ma-social-contributions`, `ma-tax-optimization`, `morocco-income-tax`, `morocco-payroll`, `morocco-vat` |
 | `MA-1` | `ma-income-tax`, `morocco-income-tax`, `morocco-vat` |
 | `MA-2` | `ma-income-tax`, `morocco-income-tax` |
 | `MA-3` | `ma-income-tax`, `morocco-income-tax` |
@@ -1518,14 +1032,12 @@ instance took.
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `mozambique-income-tax`, `mozambique-payroll`, `mozambique-social-contributions`, `mozambique-vat` |
 | `MZ-1` | `mozambique-income-tax`, `mozambique-vat` |
 
 ## ms
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `mississippi-sales-tax`, `ms-income-tax`, `ms-sales-tax` |
 | `Form 80-105` | `README`, `ms-income-tax` |
 | `Form 80-205` | `README`, `ms-income-tax` |
 | `Form 83-100` | `README`, `ms-income-tax` |
@@ -1536,23 +1048,10 @@ instance took.
 |---|---|
 | `Form CIT` | `README`, `mt-income-tax` |
 
-## myanmar
-
-| Form | Guides |
-|---|---|
-| `AGPL-3` | `mm-company-formation`, `mm-income-tax`, `mm-payroll-social`, `mm-tax-overview`, `mm-vat-gst`, `myanmar-ct` |
-
-## namibia
-
-| Form | Guides |
-|---|---|
-| `AGPL-3` | `na-company-formation`, `na-corporate-income-tax`, `na-income-tax`, `na-payroll-social`, `na-tax-overview`, `na-vat-gst` |
-
 ## nc
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `nc-bailey-settlement-retirement`, `nc-corporate-tax`, `nc-estimated-tax`, `nc-income-tax`, `nc-payroll`, `nc-return-assembly`, `nc-sales-tax` |
 | `CD-401S` | `nc-corporate-tax`, `nc-return-assembly` |
 | `CD-405` | `nc-corporate-tax`, `nc-income-tax`, `nc-return-assembly` |
 | `Form 1040` | `nc-bailey-settlement-retirement`, `nc-income-tax`, `nc-return-assembly` |
@@ -1569,13 +1068,11 @@ instance took.
 | `NC-4` | `nc-estimated-tax`, `nc-payroll`, `nc-return-assembly` |
 | `NC-40` | `nc-estimated-tax`, `nc-income-tax`, `nc-payroll`, `nc-return-assembly` |
 | `SF-50` | `nc-bailey-settlement-retirement`, `nc-return-assembly` |
-| `TY2024` | `nc-bailey-settlement-retirement`, `nc-return-assembly` |
 
 ## nd
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `nd-corporate-tax`, `nd-estimated-tax`, `nd-income-tax`, `nd-payroll`, `nd-return-assembly`, `nd-sales-tax` |
 | `Form 1040` | `nd-income-tax`, `nd-return-assembly` |
 | `Form 1040-ES` | `nd-estimated-tax`, `nd-return-assembly` |
 | `Form 1120-S` | `nd-corporate-tax`, `nd-return-assembly` |
@@ -1596,7 +1093,6 @@ instance took.
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `ne-income-tax`, `ne-sales-tax` |
 | `Form 1040N` | `README`, `ne-income-tax` |
 | `Form 1120N` | `README`, `ne-income-tax` |
 
@@ -1604,7 +1100,6 @@ instance took.
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `nepal-corporate-tax`, `nepal-income-tax`, `nepal-payroll`, `nepal-tds`, `nepal-vat` |
 | `NP-1` | `nepal-income-tax`, `nepal-vat` |
 | `NP-2` | `nepal-income-tax`, `nepal-vat` |
 
@@ -1612,10 +1107,8 @@ instance took.
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `netherlands-30-percent-ruling`, `netherlands-bookkeeping`, `netherlands-crypto-tax`, `netherlands-financial-statements`, `netherlands-formation`, `netherlands-payroll`, `netherlands-tax-optimization`, `netherlands-transfer-pricing`, `netherlands-vat-return`, `nl-30-percent-ruling`, `nl-corporate-tax`, `nl-deductions`, `nl-income-tax`, `nl-payroll-tax`, `nl-tax-objection`, `nl-vat-return`, `nl-zzp-deductions`, `references` |
 | `BW2` | `netherlands-bookkeeping`, `netherlands-financial-statements` |
 | `DEL2026` | `netherlands-vat-return`, `nl-vat-return` |
-| `EU-5` | `netherlands-vat-return`, `nl-vat-return` |
 | `MT940` | `netherlands-bookkeeping`, `nl-income-tax` |
 | `NL-1` | `netherlands-vat-return`, `nl-income-tax`, `nl-vat-return` |
 | `NL-2` | `netherlands-vat-return`, `nl-income-tax`, `nl-vat-return` |
@@ -1631,7 +1124,6 @@ instance took.
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `new-zealand-crypto-tax`, `new-zealand-gst`, `nz-acc-levies`, `nz-capital-gains`, `nz-gst-return`, `nz-income-tax-ir3`, `nz-provisional-tax`, `nz-tax-residency`, `references` |
 | `GST101A` | `new-zealand-gst`, `nz-gst-return` |
 | `IR3` | `new-zealand-crypto-tax`, `nz-acc-levies`, `nz-income-tax-ir3`, `nz-provisional-tax` |
 | `NZ-1` | `new-zealand-gst`, `nz-gst-return`, `nz-income-tax-ir3` |
@@ -1640,17 +1132,10 @@ instance took.
 | `NZ-4` | `new-zealand-gst`, `nz-gst-return`, `nz-income-tax-ir3` |
 | `NZ-5` | `new-zealand-gst`, `nz-income-tax-ir3` |
 
-## nh
-
-| Form | Guides |
-|---|---|
-| `AGPL-3` | `nh-bpt-bet`, `nh-interest-dividends-note` |
-
 ## nicaragua
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `ni-company-formation`, `ni-corporate-income-tax`, `ni-tax-overview`, `nicaragua-income-tax`, `nicaragua-iva`, `nicaragua-payroll`, `nicaragua-social-contributions` |
 | `Form IR-106` | `ni-tax-overview`, `nicaragua-income-tax`, `nicaragua-payroll`, `nicaragua-social-contributions` |
 | `Form IR-122` | `nicaragua-income-tax`, `nicaragua-payroll`, `nicaragua-social-contributions` |
 | `IR-106` | `nicaragua-income-tax`, `nicaragua-payroll`, `nicaragua-social-contributions` |
@@ -1659,22 +1144,14 @@ instance took.
 | `NI-2` | `nicaragua-income-tax`, `nicaragua-iva` |
 | `NI-3` | `nicaragua-income-tax`, `nicaragua-iva` |
 
-## niger
-
-| Form | Guides |
-|---|---|
-| `AGPL-3` | `ne-company-formation`, `ne-corporate-income-tax`, `ne-payroll-social`, `ne-tax-overview`, `ne-vat-gst` |
-
 ## nigeria
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `ng-cgt`, `ng-cit`, `ng-formation`, `ng-freelance-intake`, `ng-income-tax`, `ng-payroll`, `ng-personal-income-tax`, `ng-return-assembly`, `ng-vat`, `ng-vat-return`, `ng-wht`, `nigeria-vat`, `references` |
 | `AGR-2025` | `ng-vat`, `nigeria-vat` |
 | `Form 002` | `ng-return-assembly`, `ng-vat`, `nigeria-vat` |
 | `Form CIT` | `ng-cit`, `ng-wht` |
 | `Form H1` | `ng-freelance-intake`, `ng-payroll`, `ng-return-assembly` |
-| `INV-2025` | `ng-vat`, `nigeria-vat` |
 | `NG-1` | `ng-income-tax`, `ng-vat`, `ng-vat-return` |
 | `NG-2` | `ng-income-tax`, `ng-vat`, `ng-vat-return` |
 | `NG-3` | `ng-income-tax`, `ng-vat`, `ng-vat-return` |
@@ -1686,7 +1163,6 @@ instance took.
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `new-jersey-sales-tax`, `nj-cbt-and-bait`, `nj-income-tax`, `nj-payroll`, `nj-sales-tax` |
 | `Form NJ-1040` | `README`, `nj-cbt-and-bait`, `nj-income-tax` |
 | `Form PTE-150` | `nj-cbt-and-bait`, `nj-payroll` |
 | `NJ-1040` | `nj-cbt-and-bait`, `nj-income-tax`, `nj-payroll` |
@@ -1697,14 +1173,12 @@ instance took.
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `new-mexico-sales-tax`, `nm-income-tax`, `nm-sales-tax` |
 | `Form PIT-1` | `README`, `nm-income-tax` |
 
 ## north-macedonia
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `mk-company-formation`, `mk-corporate-income-tax`, `mk-tax-overview`, `north-macedonia-income-tax`, `north-macedonia-payroll`, `north-macedonia-social-contributions`, `north-macedonia-tax-optimization`, `north-macedonia-vat` |
 | `MK-1` | `north-macedonia-income-tax`, `north-macedonia-vat` |
 | `MK-2` | `north-macedonia-income-tax`, `north-macedonia-vat` |
 | `MK-3` | `north-macedonia-income-tax`, `north-macedonia-vat` |
@@ -1713,7 +1187,6 @@ instance took.
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `no-capital-gains`, `no-company-formation`, `no-corporate-income-tax`, `no-income-tax`, `no-social-contributions`, `no-tax-overview`, `no-vat-return`, `norway-mva`, `norway-to-switzerland-wealth-tax-exit` |
 | `LOV-2009` | `no-vat-return`, `norway-mva` |
 | `NO-1` | `no-income-tax`, `no-vat-return`, `norway-mva` |
 | `NO-2` | `no-income-tax`, `no-vat-return`, `norway-mva` |
@@ -1724,20 +1197,12 @@ instance took.
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `nevada-sales-tax`, `nv-commerce-and-mbt`, `nv-commerce-tax`, `nv-formation`, `nv-sales-tax` |
 | `Form 1040` | `nv-commerce-and-mbt`, `nv-formation` |
 
 ## ny
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `new-york-sales-tax`, `ny-estimated-tax`, `ny-formation`, `ny-mctmt` |
-| `EC1` | `new-york-sales-tax`, `ny-sales-tax` |
-| `EC2` | `new-york-sales-tax`, `ny-sales-tax` |
-| `EC3` | `new-york-sales-tax`, `ny-sales-tax` |
-| `EC4` | `new-york-sales-tax`, `ny-sales-tax` |
-| `EC5` | `new-york-sales-tax`, `ny-sales-tax` |
-| `EC6` | `new-york-sales-tax`, `ny-sales-tax` |
 | `Form 1065` | `ny-formation`, `ny-mctmt` |
 | `Form 1120` | `ny-formation`, `ny-llc-filing-fee`, `ny-mctmt` |
 | `Form 2553` | `ny-formation`, `ny-llc-filing-fee` |
@@ -1772,7 +1237,6 @@ instance took.
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `oh-cat`, `oh-cat-tax`, `oh-income-tax`, `oh-payroll`, `oh-sales-tax`, `ohio-sales-tax` |
 | `Form CAT` | `oh-cat`, `oh-cat-tax` |
 | `Form IT` | `README`, `oh-income-tax`, `oh-payroll` |
 | `IT-1040` | `oh-sales-tax`, `ohio-sales-tax` |
@@ -1785,28 +1249,12 @@ instance took.
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `ok-income-tax`, `ok-sales-tax`, `oklahoma-sales-tax` |
-| `EC1` | `ok-sales-tax`, `oklahoma-sales-tax` |
-| `EC2` | `ok-sales-tax`, `oklahoma-sales-tax` |
-| `EC3` | `ok-sales-tax`, `oklahoma-sales-tax` |
-| `EC4` | `ok-sales-tax`, `oklahoma-sales-tax` |
-| `EC5` | `ok-sales-tax`, `oklahoma-sales-tax` |
-| `EC6` | `ok-sales-tax`, `oklahoma-sales-tax` |
-| `EC7` | `ok-sales-tax`, `oklahoma-sales-tax` |
 | `Form 511` | `README`, `ok-income-tax` |
-| `Form Structure` | `ok-sales-tax`, `oklahoma-sales-tax` |
-
-## oman
-
-| Form | Guides |
-|---|---|
-| `AGPL-3` | `om-company-formation`, `om-corporate-income-tax`, `om-income-tax`, `om-payroll-social`, `om-tax-overview`, `oman-vat` |
 
 ## or
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `or-cat`, `or-income-tax`, `or-payroll` |
 | `Form OR-40` | `README`, `or-cat`, `or-income-tax` |
 | `OR-40` | `or-cat`, `or-income-tax` |
 
@@ -1814,7 +1262,6 @@ instance took.
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `pa-income-tax`, `pa-local-eit`, `pa-payroll`, `pa-sales-tax`, `pennsylvania-sales-tax` |
 | `CLGS-32` | `pa-local-eit`, `pa-payroll` |
 | `Form 941` | `pa-local-eit`, `pa-payroll` |
 | `Form CLGS-32-6` | `pa-local-eit`, `pa-payroll` |
@@ -1825,48 +1272,20 @@ instance took.
 | `PA-40` | `pa-income-tax`, `pa-local-eit` |
 | `REV-1220` | `pa-sales-tax`, `pennsylvania-sales-tax` |
 
-## pakistan
-
-| Form | Guides |
-|---|---|
-| `AGPL-3` | `pakistan-sales-tax`, `pk-cgt`, `pk-corporate-tax`, `pk-formation`, `pk-income-tax`, `pk-payroll-eobi`, `pk-sales-tax-federal`, `pk-sales-tax-services`, `pk-withholding-tax` |
-
-## panama
-
-| Form | Guides |
-|---|---|
-| `AGPL-3` | `panama-income-tax`, `panama-itbms`, `panama-payroll`, `panama-social-contributions` |
-
-## papua-new-guinea
-
-| Form | Guides |
-|---|---|
-| `AGPL-3` | `pg-company-formation`, `pg-corporate-income-tax`, `pg-income-tax`, `pg-payroll-social`, `pg-tax-overview`, `png-gst` |
-
-## paraguay
-
-| Form | Guides |
-|---|---|
-| `AGPL-3` | `paraguay-income-tax`, `paraguay-iva`, `paraguay-payroll`, `paraguay-social-contributions` |
-| `FY2025` | `paraguay-income-tax`, `paraguay-payroll` |
-
 ## peru
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `pe-company-formation`, `pe-corporate-income-tax`, `pe-tax-overview`, `peru-igv`, `peru-income-tax`, `peru-payroll`, `peru-social-contributions` |
 | `PE-1` | `peru-income-tax`, `peru-social-contributions` |
 | `PE-2` | `peru-income-tax`, `peru-social-contributions` |
 | `PE-3` | `peru-income-tax`, `peru-social-contributions` |
 | `PE-4` | `peru-income-tax`, `peru-social-contributions` |
 | `PE-5` | `peru-income-tax`, `peru-social-contributions` |
-| `TY2025` | `pe-corporate-income-tax`, `pe-tax-overview`, `peru-income-tax` |
 
 ## philippines
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `ph-company-formation`, `ph-corporate-income-tax`, `ph-income-tax`, `ph-sss-philhealth`, `ph-tax-overview`, `ph-withholding`, `philippines-vat` |
 | `Form 1701/1701A` | `ph-income-tax`, `ph-withholding` |
 | `Form 1702` | `ph-company-formation`, `ph-corporate-income-tax`, `ph-income-tax` |
 | `Form 1702-RT` | `ph-corporate-income-tax`, `ph-tax-overview` |
@@ -1883,8 +1302,6 @@ instance took.
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `pl-capital-gains`, `pl-income-tax`, `pl-vat-return`, `pl-zus-contributions`, `poland-einvoice`, `poland-vat-return`, `references` |
-| `EU-5` | `pl-vat-return`, `poland-vat-return` |
 | `PIT-28` | `pl-income-tax`, `pl-zus-contributions` |
 | `PIT-36` | `pl-income-tax`, `pl-zus-contributions`, `poland-einvoice` |
 | `PIT-36L` | `pl-income-tax`, `pl-zus-contributions`, `poland-einvoice` |
@@ -1905,10 +1322,7 @@ instance took.
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `portugal-bookkeeping`, `portugal-crypto-tax`, `portugal-einvoice`, `portugal-financial-statements`, `portugal-formation`, `portugal-payroll`, `portugal-tax-optimization`, `portugal-vat-return`, `pt-corporate-tax`, `pt-foreign-source-treaties`, `pt-income-tax`, `pt-nhr-ifici`, `pt-return-assembly`, `pt-social-contributions`, `pt-vat-return` |
-| `CO2` | `portugal-vat-return`, `pt-vat-return` |
 | `DAC8` | `portugal-crypto-tax`, `pt-return-assembly` |
-| `EU-5` | `portugal-vat-return`, `pt-vat-return` |
 | `PT-1` | `portugal-vat-return`, `pt-income-tax`, `pt-vat-return` |
 | `PT-2` | `portugal-vat-return`, `pt-income-tax`, `pt-vat-return` |
 | `PT-2026` | `portugal-vat-return`, `pt-vat-return` |
@@ -1919,63 +1333,23 @@ instance took.
 | `PT-7` | `portugal-vat-return`, `pt-income-tax`, `pt-vat-return` |
 | `PT-8` | `portugal-vat-return`, `pt-income-tax`, `pt-vat-return` |
 
-## qatar
-
-| Form | Guides |
-|---|---|
-| `AGPL-3` | `qa-company-formation`, `qa-corporate-income-tax`, `qa-payroll-social`, `qa-tax-overview`, `qa-vat-gst`, `qatar-tax` |
-
-## republic-of-congo
-
-| Form | Guides |
-|---|---|
-| `AGPL-3` | `cg-company-formation`, `cg-corporate-income-tax`, `cg-income-tax`, `cg-payroll-social`, `cg-tax-overview`, `cg-vat-gst` |
-
-## revenue-recognition
-
-| Form | Guides |
-|---|---|
-| `AGPL-3` | `ifrs15-revenue`, `us-gaap-asc606-revenue` |
-
 ## ri
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `ri-income-tax`, `ri-sales-tax` |
 | `Form RI-1040` | `README`, `ri-income-tax` |
 
 ## romania
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `references`, `ro-cas-cass`, `ro-company-formation`, `ro-corporate-income-tax`, `ro-income-tax`, `ro-payroll-social`, `ro-tax-overview`, `ro-vat-return`, `romania-einvoice`, `romania-vat-return` |
-| `CO2` | `ro-vat-return`, `romania-vat-return` |
-| `EC1` | `ro-cas-cass`, `ro-income-tax`, `ro-vat-return`, `romania-vat-return` |
-| `EC10` | `ro-income-tax`, `ro-vat-return`, `romania-vat-return` |
-| `EC11` | `ro-vat-return`, `romania-vat-return` |
-| `EC12` | `ro-vat-return`, `romania-vat-return` |
-| `EC13` | `ro-vat-return`, `romania-vat-return` |
-| `EC14` | `ro-vat-return`, `romania-vat-return` |
-| `EC15` | `ro-vat-return`, `romania-vat-return` |
-| `EC16` | `ro-vat-return`, `romania-vat-return` |
-| `EC17` | `ro-vat-return`, `romania-vat-return` |
-| `EC2` | `ro-cas-cass`, `ro-income-tax`, `ro-vat-return`, `romania-vat-return` |
-| `EC3` | `ro-cas-cass`, `ro-income-tax`, `ro-vat-return`, `romania-vat-return` |
-| `EC4` | `ro-cas-cass`, `ro-income-tax`, `ro-vat-return`, `romania-vat-return` |
-| `EC5` | `ro-cas-cass`, `ro-income-tax`, `ro-vat-return`, `romania-vat-return` |
-| `EC6` | `ro-income-tax`, `ro-vat-return`, `romania-vat-return` |
-| `EC7` | `ro-income-tax`, `ro-vat-return`, `romania-vat-return` |
-| `EC8` | `ro-income-tax`, `ro-vat-return`, `romania-vat-return` |
-| `EC9` | `ro-income-tax`, `ro-vat-return`, `romania-vat-return` |
 | `Form 101` | `ro-corporate-income-tax`, `ro-tax-overview` |
 | `Form 112` | `ro-company-formation`, `ro-payroll-social` |
-| `Form Structure` | `ro-vat-return`, `romania-vat-return` |
 
 ## russia
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `ru-bookkeeping`, `ru-crypto-tax`, `ru-einvoice`, `ru-financial-statements`, `ru-formation`, `ru-income-tax`, `ru-payroll`, `ru-self-employed-npd`, `ru-social-contributions`, `ru-tax-optimization`, `ru-usn`, `russia-vat` |
 | `RU-1` | `ru-income-tax`, `ru-self-employed-npd`, `ru-usn` |
 | `RU-2` | `ru-income-tax`, `ru-self-employed-npd`, `ru-usn` |
 | `RU-3` | `ru-income-tax`, `ru-self-employed-npd`, `ru-usn` |
@@ -1989,7 +1363,6 @@ instance took.
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `rw-company-formation`, `rw-corporate-income-tax`, `rw-income-tax`, `rw-tax-overview`, `rwanda-income-tax`, `rwanda-payroll`, `rwanda-social-contributions`, `rwanda-vat` |
 | `RW-1` | `rw-income-tax`, `rwanda-income-tax`, `rwanda-social-contributions` |
 | `RW-2` | `rw-income-tax`, `rwanda-income-tax`, `rwanda-social-contributions` |
 | `RW-3` | `rw-income-tax`, `rwanda-income-tax`, `rwanda-social-contributions` |
@@ -1997,66 +1370,16 @@ instance took.
 | `RW-5` | `rw-income-tax`, `rwanda-income-tax`, `rwanda-social-contributions` |
 | `RW-6` | `rw-income-tax`, `rwanda-income-tax` |
 
-## s-o-tom-and-pr-ncipe
-
-| Form | Guides |
-|---|---|
-| `AGPL-3` | `st-company-formation`, `st-corporate-income-tax`, `st-income-tax`, `st-payroll-social`, `st-tax-overview`, `st-vat-gst` |
-
-## samoa
-
-| Form | Guides |
-|---|---|
-| `AGPL-3` | `ws-company-formation`, `ws-corporate-income-tax`, `ws-income-tax`, `ws-payroll-social`, `ws-tax-overview`, `ws-vat-gst` |
-
-## san-marino
-
-| Form | Guides |
-|---|---|
-| `AGPL-3` | `sm-company-formation`, `sm-corporate-income-tax`, `sm-income-tax`, `sm-payroll-social`, `sm-tax-overview`, `sm-vat-gst` |
-
-## saudi-arabia
-
-| Form | Guides |
-|---|---|
-| `AGPL-3` | `references`, `sa-corporate-tax`, `sa-excise-tax`, `sa-formation`, `sa-freelance-intake`, `sa-gosi-saudization`, `sa-rett`, `sa-return-assembly`, `sa-withholding-tax`, `sa-zakat`, `saudi-arabia-vat`, `saudi-einvoice` |
-
 ## sc
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `sc-income-tax`, `sc-sales-tax` |
 | `Form SC1040` | `README`, `sc-income-tax`, `sc-sales-tax` |
-
-## senegal
-
-| Form | Guides |
-|---|---|
-| `AGPL-3` | `senegal-income-tax`, `senegal-payroll`, `senegal-social-contributions`, `senegal-vat`, `sn-company-formation`, `sn-corporate-income-tax`, `sn-tax-overview` |
-
-## serbia
-
-| Form | Guides |
-|---|---|
-| `AGPL-3` | `can-a-foreigner-start-a-business-in-serbia`, `how-to-open-a-company-in-serbia-as-a-foreigner-doo-entrepreneur-registration-guide`, `serbia-income-tax`, `serbia-payroll`, `serbia-social-contributions`, `serbia-tax-optimization`, `serbia-vat` |
-
-## seychelles
-
-| Form | Guides |
-|---|---|
-| `AGPL-3` | `sc-company-formation`, `sc-corporate-income-tax`, `sc-payroll-social`, `sc-tax-overview`, `sc-vat-gst` |
-
-## sierra-leone
-
-| Form | Guides |
-|---|---|
-| `AGPL-3` | `sl-company-formation`, `sl-corporate-income-tax`, `sl-income-tax`, `sl-payroll-social`, `sl-tax-overview`, `sl-vat-gst` |
 
 ## singapore
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `sg-cpf-medisave`, `sg-gst-return`, `sg-income-tax`, `sg-tax-residency`, `sg-zero-cgt`, `singapore-crypto-tax`, `singapore-formation`, `singapore-gst`, `singapore-tax-optimization`, `singapore-transfer-pricing` |
 | `CT-2026` | `sg-gst-return`, `singapore-gst` |
 | `Form B1` | `sg-income-tax`, `singapore-crypto-tax` |
 | `SG-1` | `sg-gst-return`, `sg-income-tax`, `singapore-gst` |
@@ -2067,17 +1390,10 @@ instance took.
 | `SG-5` | `sg-gst-return`, `sg-income-tax`, `singapore-gst` |
 | `SG-6` | `sg-gst-return`, `singapore-gst` |
 
-## slovakia
-
-| Form | Guides |
-|---|---|
-| `AGPL-3` | `references`, `sk-company-formation`, `sk-corporate-income-tax`, `sk-payroll-social`, `sk-tax-overview`, `slovakia-pit`, `slovakia-vat-registration-4-7-7a`, `slovakia-vat-return` |
-
 ## slovenia
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `si-company-formation`, `si-corporate-income-tax`, `si-tax-overview`, `slovenia-income-tax`, `slovenia-payroll`, `slovenia-social-contributions`, `slovenia-tax-optimization`, `slovenia-vat-return` |
 | `REK-1` | `slovenia-payroll`, `slovenia-social-contributions` |
 | `ZDDPO-2` | `si-corporate-income-tax`, `si-tax-overview`, `slovenia-vat-return` |
 | `ZDDV-1` | `si-company-formation`, `si-tax-overview`, `slovenia-vat-return` |
@@ -2087,24 +1403,12 @@ instance took.
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `so-company-formation`, `so-corporate-income-tax`, `so-income-tax`, `so-payroll-social`, `so-tax-overview`, `so-vat-gst` |
 | `Form TR1` | `so-company-formation`, `so-income-tax`, `so-payroll-social`, `so-tax-overview` |
 
 ## south-africa
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `leaving-south-africa-tax-emigration`, `south-africa-transfer-pricing`, `south-africa-vat`, `za-capital-gains`, `za-income-tax`, `za-provisional-tax`, `za-tax-residency`, `za-vat-return` |
-| `EC1` | `za-income-tax`, `za-provisional-tax` |
-| `EC10` | `za-income-tax`, `za-provisional-tax` |
-| `EC2` | `za-income-tax`, `za-provisional-tax` |
-| `EC3` | `za-income-tax`, `za-provisional-tax` |
-| `EC4` | `za-income-tax`, `za-provisional-tax` |
-| `EC5` | `za-income-tax`, `za-provisional-tax` |
-| `EC6` | `za-income-tax`, `za-provisional-tax` |
-| `EC7` | `za-income-tax`, `za-provisional-tax` |
-| `EC8` | `za-income-tax`, `za-provisional-tax` |
-| `EC9` | `za-income-tax`, `za-provisional-tax` |
 | `Form VAT215` | `south-africa-vat`, `za-vat-return` |
 | `IRP6` | `za-income-tax`, `za-provisional-tax` |
 | `ITR14` | `south-africa-transfer-pricing`, `za-income-tax` |
@@ -2119,24 +1423,16 @@ instance took.
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `kr-income-tax`, `references`, `simplified-business-operator-registration-under-vat-act`, `south-korea-crypto-tax`, `south-korea-vat` |
 | `KR-1` | `kr-income-tax`, `south-korea-vat` |
 | `KR-2` | `kr-income-tax`, `south-korea-vat` |
 | `KR-3` | `kr-income-tax`, `south-korea-vat` |
 | `KR-4` | `kr-income-tax`, `south-korea-vat` |
 | `KR-5` | `kr-income-tax`, `south-korea-vat` |
 
-## south-sudan
-
-| Form | Guides |
-|---|---|
-| `AGPL-3` | `ss-company-formation`, `ss-corporate-income-tax`, `ss-income-tax`, `ss-payroll-social`, `ss-tax-overview`, `ss-vat-gst` |
-
 ## spain
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `es-autonomous-worker`, `es-beckham`, `es-capital-gains`, `es-corporate-tax`, `es-estimated-tax`, `es-income-tax`, `es-irpf-deductions`, `es-modelo-111`, `es-rental-income`, `es-social-contributions`, `es-vat-return`, `references`, `spain-bookkeeping`, `spain-crypto-tax`, `spain-einvoice`, `spain-financial-statements`, `spain-formation`, `spain-payroll`, `spain-tax-optimization`, `spain-transfer-pricing`, `spain-vat-return` |
 | `ES-1` | `es-income-tax`, `es-vat-return`, `spain-vat-return` |
 | `ES-2` | `es-income-tax`, `es-vat-return`, `spain-vat-return` |
 | `ES-2026` | `es-vat-return`, `spain-vat-return` |
@@ -2146,9 +1442,7 @@ instance took.
 | `ES-6` | `es-vat-return`, `spain-vat-return` |
 | `ES-7` | `es-vat-return`, `spain-vat-return` |
 | `ES-8` | `es-vat-return`, `spain-vat-return` |
-| `EU-1` | `es-vat-return`, `spain-vat-return` |
 | `EU-12` | `es-vat-return`, `spain-vat-return` |
-| `EU-5` | `es-vat-return`, `spain-vat-return` |
 | `TC1` | `es-social-contributions`, `spain-payroll` |
 | `TC2` | `es-social-contributions`, `spain-payroll` |
 
@@ -2156,35 +1450,14 @@ instance took.
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `sri-lanka-betting-gaming-excise`, `sri-lanka-capital-gains-tax`, `sri-lanka-corporate-tax`, `sri-lanka-income-tax`, `sri-lanka-payroll`, `sri-lanka-provisional-tax-ait`, `sri-lanka-sscl`, `sri-lanka-stamp-duty`, `sri-lanka-vat`, `sri-lanka-withholding-tax` |
 | `LK-1` | `sri-lanka-income-tax`, `sri-lanka-vat` |
 | `LK-2` | `sri-lanka-income-tax`, `sri-lanka-vat` |
 | `LK-3` | `sri-lanka-income-tax`, `sri-lanka-vat` |
-
-## sudan
-
-| Form | Guides |
-|---|---|
-| `AGPL-3` | `sd-company-formation`, `sd-corporate-income-tax`, `sd-income-tax`, `sd-payroll-social`, `sd-tax-overview`, `sd-vat-gst` |
-
-## suriname
-
-| Form | Guides |
-|---|---|
-| `AGPL-3` | `sr-company-formation`, `sr-corporate-income-tax`, `sr-income-tax`, `sr-payroll-social`, `sr-tax-overview`, `sr-vat-gst` |
 
 ## sweden
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `references`, `se-capital-gains`, `se-income-tax`, `se-social-contributions`, `se-vat-return`, `sweden-bookkeeping`, `sweden-crypto-tax`, `sweden-payroll`, `sweden-vat-return` |
-| `EC1` | `se-income-tax`, `se-social-contributions` |
-| `EC2` | `se-income-tax`, `se-social-contributions` |
-| `EC3` | `se-income-tax`, `se-social-contributions` |
-| `EC4` | `se-income-tax`, `se-social-contributions` |
-| `EC5` | `se-income-tax`, `se-social-contributions` |
-| `EC6` | `se-income-tax`, `se-social-contributions` |
-| `EU-5` | `se-vat-return`, `sweden-vat-return` |
 | `OKQ8` | `se-income-tax`, `se-vat-return`, `sweden-vat-return` |
 | `SE-1` | `se-income-tax`, `se-vat-return`, `sweden-vat-return` |
 | `SE-2` | `se-income-tax`, `se-vat-return`, `sweden-vat-return` |
@@ -2199,7 +1472,6 @@ instance took.
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `ch-ahv-iv`, `ch-cantonal-tax`, `ch-company-formation`, `ch-corporate-income-tax`, `ch-federal-income-tax`, `ch-lump-sum`, `ch-tax-overview`, `ch-vat-return`, `switzerland-crypto-tax`, `switzerland-vat` |
 | `CH-1` | `ch-cantonal-tax`, `ch-federal-income-tax`, `ch-vat-return`, `switzerland-vat` |
 | `CH-2` | `ch-cantonal-tax`, `ch-federal-income-tax`, `ch-vat-return`, `switzerland-vat` |
 | `CH-2026` | `ch-vat-return`, `switzerland-vat` |
@@ -2210,23 +1482,10 @@ instance took.
 | `CH-7` | `ch-vat-return`, `switzerland-vat` |
 | `CH-8` | `ch-vat-return`, `switzerland-vat` |
 
-## taiwan
-
-| Form | Guides |
-|---|---|
-| `AGPL-3` | `taiwan-vat`, `tw-company-formation`, `tw-corporate-income-tax`, `tw-income-tax`, `tw-nhi`, `tw-tax-overview` |
-
-## tajikistan
-
-| Form | Guides |
-|---|---|
-| `AGPL-3` | `tj-company-formation`, `tj-corporate-income-tax`, `tj-income-tax`, `tj-payroll-social`, `tj-tax-overview`, `tj-vat-gst` |
-
 ## tanzania
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `tanzania-income-tax`, `tanzania-payroll`, `tanzania-social-contributions`, `tanzania-tax-optimization`, `tanzania-vat`, `tanzania-withholding-tax` |
 | `FA2025` | `tanzania-income-tax`, `tanzania-tax-optimization`, `tanzania-withholding-tax` |
 | `Form ITX` | `tanzania-income-tax`, `tanzania-social-contributions` |
 | `TZ-1` | `tanzania-income-tax`, `tanzania-tax-optimization`, `tanzania-vat`, `tanzania-withholding-tax` |
@@ -2240,67 +1499,22 @@ instance took.
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `references`, `th-company-formation`, `th-corporate-income-tax`, `th-payroll-social`, `th-tax-overview`, `thailand-pit`, `thailand-vat` |
 | `Form PND` | `th-company-formation`, `th-corporate-income-tax`, `th-payroll-social`, `th-tax-overview` |
-
-## timor-leste
-
-| Form | Guides |
-|---|---|
-| `AGPL-3` | `tl-company-formation`, `tl-corporate-income-tax`, `tl-income-tax`, `tl-payroll-social`, `tl-tax-overview`, `tl-vat-gst` |
-
-## togo
-
-| Form | Guides |
-|---|---|
-| `AGPL-3` | `tg-company-formation`, `tg-corporate-income-tax`, `tg-income-tax`, `tg-payroll-social`, `tg-tax-overview`, `tg-vat-gst` |
-
-## tonga
-
-| Form | Guides |
-|---|---|
-| `AGPL-3` | `to-company-formation`, `to-corporate-income-tax`, `to-income-tax`, `to-payroll-social`, `to-tax-overview`, `to-vat-gst` |
 
 ## treaty-corridors
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `americas-corridors`, `asia-pacific-corridors`, `dtt-summary`, `emerging-market-corridors`, `eu-intra-rates`, `uk-major-partners`, `us-major-partners` |
 | `Form 10F` | `asia-pacific-corridors`, `emerging-market-corridors`, `uk-major-partners` |
 | `Form 41` | `asia-pacific-corridors`, `emerging-market-corridors`, `uk-major-partners` |
 | `Form Required` | `americas-corridors`, `uk-major-partners` |
 | `NR301` | `americas-corridors`, `uk-major-partners` |
 | `NR302` | `americas-corridors`, `uk-major-partners` |
 
-## trinidad-and-tobago
-
-| Form | Guides |
-|---|---|
-| `AGPL-3` | `trinidad-vat`, `tt-company-formation`, `tt-corporate-income-tax`, `tt-income-tax`, `tt-payroll-social`, `tt-tax-overview` |
-
-## tunisia
-
-| Form | Guides |
-|---|---|
-| `AGPL-3` | `irpp-calculation`, `tn-company-formation`, `tn-corporate-income-tax`, `tn-income-tax`, `tn-payroll-social`, `tn-tax-overview`, `tunisia-vat` |
-
-## turkey
-
-| Form | Guides |
-|---|---|
-| `AGPL-3` | `references`, `tr-company-formation`, `tr-corporate-income-tax`, `tr-payroll-social`, `tr-tax-overview`, `turkey-pit`, `turkey-vat` |
-
-## turkmenistan
-
-| Form | Guides |
-|---|---|
-| `AGPL-3` | `tm-company-formation`, `tm-corporate-income-tax`, `tm-income-tax`, `tm-payroll-social`, `tm-tax-overview`, `tm-vat-gst` |
-
 ## tx
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `tx-formation`, `tx-franchise-tax`, `tx-sales-use-tax` |
 | `Form 01-114` | `README`, `tx-formation`, `tx-sales-tax`, `tx-sales-use-tax` |
 | `Form 05-102` | `tx-formation`, `tx-franchise-tax` |
 | `Form 05-163` | `tx-formation`, `tx-franchise-tax` |
@@ -2318,20 +1532,11 @@ instance took.
 | `AE-5` | `ae-corporate-tax`, `uae-vat` |
 | `AE-6` | `ae-corporate-tax`, `uae-vat` |
 | `AE-7` | `ae-corporate-tax`, `uae-vat` |
-| `AGPL-3` | `ae-corporate-tax`, `ae-income-tax`, `ae-payroll-social`, `ae-tax-overview`, `ae-tax-residency`, `uae-vat` |
-
-## uganda
-
-| Form | Guides |
-|---|---|
-| `AGPL-3` | `ug-company-formation`, `ug-corporate-income-tax`, `ug-income-tax`, `ug-payroll-social`, `ug-tax-overview`, `uganda-vat` |
 
 ## uk
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `close-the-uk-vat-quarter-from-xero`, `references`, `uk-bookkeeping`, `uk-capital-gains-sa108`, `uk-crypto-tax`, `uk-dividends`, `uk-financial-statements`, `uk-formation`, `uk-income-tax-sa100`, `uk-national-insurance`, `uk-non-dom`, `uk-payments-on-account`, `uk-payroll`, `uk-rental-sa105`, `uk-self-employment-sa103`, `uk-statutory-residence-test`, `uk-student-loan-repayment`, `uk-tax-optimization`, `uk-to-italy-flat-tax-relocation`, `uk-to-uae-relocation-tax`, `uk-transfer-pricing`, `uk-vat-return`, `vat-returns-for-small-businesses-in-the-uk`, `xero-uk-vat-close` |
-| `CO2` | `uk-self-employment-sa103`, `uk-tax-optimization` |
 | `CT600` | `uk-bookkeeping`, `uk-formation`, `uk-transfer-pricing` |
 | `IR35` | `uk-dividends`, `uk-tax-optimization` |
 | `NRL1` | `uk-rental-sa105`, `uk-to-uae-relocation-tax` |
@@ -2351,7 +1556,6 @@ instance took.
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `ua-bookkeeping`, `ua-corporate-income-tax`, `ua-crypto-tax`, `ua-einvoice`, `ua-financial-statements`, `ua-formation`, `ua-income-tax`, `ua-payroll`, `ua-single-tax`, `ua-social-contributions`, `ua-tax-optimization`, `ua-tax-overview`, `ukraine-vat` |
 | `UA-1` | `ua-income-tax`, `ua-payroll`, `ua-single-tax` |
 | `UA-2` | `ua-income-tax`, `ua-payroll`, `ua-single-tax` |
 | `UA-3` | `ua-income-tax`, `ua-payroll`, `ua-single-tax` |
@@ -2359,19 +1563,10 @@ instance took.
 | `UA-5` | `ua-income-tax`, `ua-payroll` |
 | `UA-6` | `ua-income-tax`, `ua-payroll` |
 
-## united-arab-emirates
-
-| Form | Guides |
-|---|---|
-| `AGPL-3` | `ae-company-formation`, `ae-vat-return` |
-
 ## uruguay
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `uruguay-income-tax`, `uruguay-iva`, `uruguay-payroll`, `uruguay-social-contributions`, `uy-company-formation`, `uy-corporate-income-tax`, `uy-tax-overview` |
-| `FY2024` | `uruguay-income-tax`, `uruguay-payroll` |
-| `FY2025` | `uruguay-payroll`, `uruguay-social-contributions` |
 | `Form 1102/1103` | `uruguay-payroll`, `uruguay-social-contributions` |
 | `UY-1` | `uruguay-income-tax`, `uruguay-iva`, `uruguay-social-contributions` |
 | `UY-2` | `uruguay-income-tax`, `uruguay-iva`, `uruguay-social-contributions` |
@@ -2385,7 +1580,6 @@ instance took.
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `us-capital-gains`, `us-nonresident-cgt`, `us-tax-residency` |
 | `Form 1040` | `us-capital-gains`, `us-tax-residency` |
 | `Form 1040-NR` | `us-nonresident-cgt`, `us-tax-residency` |
 | `Form 8833` | `us-nonresident-cgt`, `us-tax-residency` |
@@ -2394,7 +1588,6 @@ instance took.
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `us-cfc-gilti`, `us-expatriation-exit-tax`, `us-fbar-fatca-reporting`, `us-feie-ftc`, `us-foreign-trust-reporting` |
 | `Form 1040` | `us-fbar-fatca-reporting`, `us-feie-ftc` |
 | `Form 8938` | `us-fbar-fatca-reporting`, `us-feie-ftc` |
 
@@ -2402,15 +1595,6 @@ instance took.
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `ut-income-tax`, `ut-sales-tax`, `utah-sales-tax` |
-| `EC1` | `ut-sales-tax`, `utah-sales-tax` |
-| `EC2` | `ut-sales-tax`, `utah-sales-tax` |
-| `EC3` | `ut-sales-tax`, `utah-sales-tax` |
-| `EC4` | `ut-sales-tax`, `utah-sales-tax` |
-| `EC5` | `ut-sales-tax`, `utah-sales-tax` |
-| `EC6` | `ut-sales-tax`, `utah-sales-tax` |
-| `EC7` | `ut-sales-tax`, `utah-sales-tax` |
-| `Form Structure` | `ut-sales-tax`, `utah-sales-tax` |
 | `Form TC-20` | `README`, `ut-income-tax` |
 | `Form TC-40` | `README`, `ut-income-tax` |
 | `TC-62S` | `ut-sales-tax`, `utah-sales-tax` |
@@ -2419,7 +1603,6 @@ instance took.
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `uz-company-formation`, `uz-corporate-income-tax`, `uz-tax-overview`, `uzbekistan-income-tax`, `uzbekistan-payroll`, `uzbekistan-social-contributions`, `uzbekistan-tax-optimization`, `uzbekistan-vat` |
 | `UZ-1` | `uzbekistan-income-tax`, `uzbekistan-vat` |
 | `UZ-2` | `uzbekistan-income-tax`, `uzbekistan-vat` |
 | `UZ-3` | `uzbekistan-income-tax`, `uzbekistan-vat` |
@@ -2429,7 +1612,6 @@ instance took.
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `va-corporate-tax-and-bpol`, `va-income-tax`, `va-payroll`, `va-sales-tax` |
 | `Form 500` | `va-corporate-tax-and-bpol`, `va-income-tax` |
 | `Form 760` | `README`, `va-corporate-tax-and-bpol`, `va-income-tax`, `va-payroll`, `va-sales-tax` |
 | `Form 763` | `va-corporate-tax-and-bpol`, `va-income-tax`, `va-payroll` |
@@ -2441,37 +1623,19 @@ instance took.
 | `VA-6` | `va-income-tax`, `va-payroll` |
 | `VA-7` | `va-income-tax`, `va-payroll` |
 
-## vanuatu
-
-| Form | Guides |
-|---|---|
-| `AGPL-3` | `vu-company-formation`, `vu-corporate-income-tax`, `vu-income-tax`, `vu-payroll-social`, `vu-tax-overview`, `vu-vat-gst` |
-
 ## venezuela
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `venezuela-income-tax`, `venezuela-iva`, `venezuela-payroll`, `venezuela-social-contributions`, `venezuela-tax-optimization` |
 | `VE-1` | `venezuela-income-tax`, `venezuela-iva` |
 | `VE-2` | `venezuela-income-tax`, `venezuela-iva` |
 | `VE-3` | `venezuela-income-tax`, `venezuela-iva` |
 | `VE-4` | `venezuela-income-tax`, `venezuela-iva` |
 
-## vietnam
-
-| Form | Guides |
-|---|---|
-| `AGPL-3` | `references`, `vietnam-pit`, `vietnam-vat`, `vn-company-formation`, `vn-corporate-income-tax`, `vn-payroll-social`, `vn-tax-overview` |
-| `QH12` | `references`, `vietnam-pit`, `vietnam-vat`, `vn-company-formation`, `vn-corporate-income-tax`, `vn-payroll-social`, `vn-tax-overview` |
-| `QH13` | `vietnam-pit`, `vn-company-formation` |
-| `QH14` | `references`, `vietnam-pit`, `vietnam-vat`, `vn-company-formation`, `vn-corporate-income-tax`, `vn-payroll-social`, `vn-tax-overview` |
-| `QH15` | `references`, `vietnam-pit` |
-
 ## vt
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `vt-income-tax`, `vt-sales-tax` |
 | `Form CO-411` | `README`, `vt-income-tax` |
 | `Form IN-111` | `README`, `vt-income-tax` |
 
@@ -2479,12 +1643,6 @@ instance took.
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `wa-bo-tax`, `wa-business-occupation-tax`, `wa-sales-tax`, `washington-sales-tax` |
-| `EC1` | `wa-sales-tax`, `washington-sales-tax` |
-| `EC2` | `wa-sales-tax`, `washington-sales-tax` |
-| `EC3` | `wa-sales-tax`, `washington-sales-tax` |
-| `EC4` | `wa-sales-tax`, `washington-sales-tax` |
-| `EC5` | `wa-sales-tax`, `washington-sales-tax` |
 | `WA-1` | `wa-sales-tax`, `washington-sales-tax` |
 | `WA-2` | `wa-sales-tax`, `washington-sales-tax` |
 | `WA-3` | `wa-sales-tax`, `washington-sales-tax` |
@@ -2493,45 +1651,22 @@ instance took.
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `wi-income-tax`, `wi-payroll`, `wi-sales-tax`, `wisconsin-sales-tax` |
 | `Form S-211` | `wi-sales-tax`, `wisconsin-sales-tax` |
 | `Form S-211E` | `wi-sales-tax`, `wisconsin-sales-tax` |
 | `Form ST-12` | `wi-sales-tax`, `wisconsin-sales-tax` |
-| `Form Structure` | `wi-sales-tax`, `wisconsin-sales-tax` |
 
 ## wv
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `wv-income-tax`, `wv-sales-tax` |
 | `Form IT-140` | `README`, `wv-income-tax` |
-
-## wy
-
-| Form | Guides |
-|---|---|
-| `AGPL-3` | `wy-formation`, `wy-sales-tax`, `wyoming-sales-tax` |
-| `EC1` | `wy-sales-tax`, `wyoming-sales-tax` |
-| `EC2` | `wy-sales-tax`, `wyoming-sales-tax` |
-| `EC3` | `wy-sales-tax`, `wyoming-sales-tax` |
-| `EC4` | `wy-sales-tax`, `wyoming-sales-tax` |
-| `EC5` | `wy-sales-tax`, `wyoming-sales-tax` |
-| `EC6` | `wy-sales-tax`, `wyoming-sales-tax` |
-| `EC7` | `wy-sales-tax`, `wyoming-sales-tax` |
-
-## zambia
-
-| Form | Guides |
-|---|---|
-| `AGPL-3` | `zambia-vat`, `zm-company-formation`, `zm-corporate-income-tax`, `zm-income-tax`, `zm-payroll-social`, `zm-tax-overview` |
 
 ## zimbabwe
 
 | Form | Guides |
 |---|---|
-| `AGPL-3` | `zimbabwe-vat`, `zw-company-formation`, `zw-corporate-income-tax`, `zw-income-tax`, `zw-payroll-social`, `zw-tax-overview` |
 | `ITF12C` | `zw-company-formation`, `zw-corporate-income-tax`, `zw-income-tax`, `zw-tax-overview` |
 
 ---
 
-241 jurisdictions, 1314 shared form identifiers.
+148 jurisdictions, 914 shared form identifiers.
