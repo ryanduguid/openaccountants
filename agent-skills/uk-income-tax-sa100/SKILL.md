@@ -22,7 +22,7 @@ This skill covers **three tax years in parallel**:
 - **Current year:** 2025-26 (6 April 2025 -- 5 April 2026) -- filed by 31 January 2027
 - **From 6 April 2026:** 2026-27 (6 April 2026 -- 5 April 2027) -- filed by 31 January 2028
 
-All headline income tax rates and thresholds are **frozen through 2027-28**. The Autumn Budget 2025 announced targeted rate increases on investment income (dividends, savings, property) effective 6 April 2026 -- see Section 1.5.
+All headline income tax rates and thresholds are **frozen through 2027-28**. The Autumn Budget 2025 announced targeted rate increases on investment income, but they do **not** all start together: **dividends** rise from 6 April 2026, while **savings** and **property** income rise from 6 April **2027** -- see Section 1.5.
 
 ---
 
@@ -128,15 +128,15 @@ Effective **6 April 2026**, the following changes take effect under measures ann
 | Dividend ordinary rate | 8.75% | **10.75%** |
 | Dividend upper rate | 33.75% | **35.75%** |
 | Dividend additional rate | 39.35% | 39.35% (unchanged) |
-| Savings income basic / higher / additional | 20% / 40% / 45% | **TBC -- expected 22% / 42% / 45%** (Autumn Budget 2025 announcement; verify against enacted Finance Bill) |
-| Property income basic / higher / additional | 20% / 40% / 45% | **TBC -- expected 22% / 42% / 45%** (Autumn Budget 2025 announcement; verify against enacted Finance Bill) |
+| Savings income basic / higher / additional | 20% / 40% / 45% | **20% / 40% / 45% — unchanged for 2026-27.** The Autumn Budget 2025 rates of **22% / 42% / 47%** apply **from April 2027**, a year after the dividend change above |
+| Property income basic / higher / additional | 20% / 40% / 45% | **20% / 40% / 45% — unchanged for 2026-27.** The Autumn Budget 2025 rates of **22% / 42% / 47%** apply **from April 2027**. The additional rate goes to 47%, not 45% |
 | All other headline bands and PA | frozen | frozen (no change) |
 | HICBC tapered threshold | GBP 60,000 / GBP 80,000 | GBP 60,000 / GBP 80,000 (unchanged from 2024-25 reform) |
 
 **Key points:**
 
 - **Dividend rates** -- confirmed 2pp uplift on ordinary and upper rates from 6 April 2026. See companion skill `uk-dividends` for the detailed dividend computation, the GBP 500 allowance interaction, and worked examples.
-- **Savings income and property income** -- the Autumn Budget 2025 announced changes aligning these income streams more closely with the dividend treatment, expected to be a 2pp uplift on basic and higher rate bands (no change at additional rate). **TBC -- verify against Finance (No. 2) Bill 2024-26 / Finance Bill 2026 once enacted.** Do not finalise a 2026-27 computation involving material savings or property income until the rates are confirmed. Flag for reviewer.
+- **Savings income and property income** -- the Autumn Budget 2025 rates are **22% / 42% / 47%**, and they apply **from 6 April 2027**, a year after the dividend change. They are specific, not "expected", and the additional rate does move (to 47%). For **2026-27** savings and property income is taxed at the ordinary **20% / 40% / 45%**: compute it, do not hold it open. Applying 22/42/47 to a 2026-27 return overstates the liability at every band.
 - **HICBC** -- the GBP 60,000 starting / GBP 80,000 full claw-back tapered threshold introduced from 2024-25 remains in force for 2026-27 (no further reform announced).
 - **All other bands frozen** -- Personal Allowance (GBP 12,570), basic rate threshold (GBP 50,270), additional rate threshold (GBP 125,140), and PA taper threshold (GBP 100,000) are all frozen through 2027-28.
 
@@ -177,7 +177,7 @@ See companion skill `uk-dividends` for full dividend-specific guidance, includin
 | Unknown income category | Non-savings income |
 | Unknown pension contribution method | Relief at source |
 | Unknown marriage allowance eligibility | Do not apply |
-| Unknown 2026-27 savings/property rate | Flag TBC; do not finalise without Finance Bill confirmation |
+| 2026-27 savings/property rate | 20% / 40% / 45% -- unchanged. The 22/42/47 rates begin in 2027-28 |
 
 ---
 
@@ -203,7 +203,7 @@ See companion skill `uk-dividends` for full dividend-specific guidance, includin
 
 **R-UK-IT-5 -- Capital gains.** "Capital gains are computed separately on SA108. This skill covers income tax only."
 
-**R-UK-IT-6 -- 2026-27 savings/property rate finalisation.** "The Autumn Budget 2025 announced rate changes to savings and property income from 6 April 2026 but the specific rates are pending Finance Bill enactment. Do not finalise a 2026-27 return involving material savings or property income until the Finance Bill receives Royal Assent. Flag for reviewer."
+**R-UK-IT-6 -- savings/property income for 2027-28 onward.** "The 22 / 42 / 47 rates on savings and property income begin 6 April 2027. Flag a return spanning them, and their interaction with the Section 24 reducer, which stays at the basic rate of 20%. A 2026-27 return needs no such flag: those rates are unchanged at 20 / 40 / 45."
 
 ---
 
@@ -470,7 +470,7 @@ When savings and dividends push income across rate band boundaries, the interact
 
 ### 6.6 2026-27 Savings and Property Income Rate Confirmation [T2]
 
-The Autumn Budget 2025 announced rate increases on savings and property income from 6 April 2026, expected to mirror the 2pp uplift on basic and higher bands. **The specific rates are TBC pending Finance (No. 2) Bill 2024-26 / Finance Bill 2026 enactment.** Flag any 2026-27 return with material savings or property income for reviewer; do not finalise until rates are confirmed in legislation.
+The Autumn Budget 2025 rates for savings and property income are **22% / 42% / 47%** and they apply **from 6 April 2027**, not 6 April 2026 — a year after the dividend change. For **2026-27** both streams stay at the ordinary **20% / 40% / 45%**, so a 2026-27 return can be finalised: there is nothing to hold open. Note the additional rate does move, to 47%. The Section 24 finance-cost reducer stays at 20% throughout: it follows the basic rate of income tax, which the Budget did not change.
 
 ---
 

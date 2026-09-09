@@ -240,10 +240,10 @@ This is the operative statutory split as of the 2024 amendments. (Earlier 2023 c
 
 ### 7.3 Taxable wage base
 
-- **Paid Leave taxable wage base (2025 SS wage base)** — $176,100 USD (for 2025; the 2026 figure will be published by SSA in October 2025; Paid Leave premium applies to wages up to the Social Security wage base)
+- **Paid Leave taxable wage base (Social Security wage base)** — **$184,500** for 2026; $176,100 for 2025. The SSA published the 2026 figure in October 2025 and it is carried in `packages/us-federal/rates.2026.json`. Paid Leave premium applies to wages up to the Social Security wage base, so this figure moves every year — take it from the rates file rather than hard-coding it.
 - **Wage base comparison to UI** — This is materially higher than the UI wage base of $43,000 — meaning Paid Leave premium continues to accrue on the same wages long after UI has capped out.
 
-For an employee earning $176,100 or more in 2026, the maximum annual Paid Leave premium is approximately: Employer: $176,100 × 0.44% ≈ $774.84. Employee: $176,100 × 0.44% ≈ $774.84. Combined: ≈ $1,549.68 per high-earner per year. For a $60,000 employee: Employer: $264; Employee: $264; Combined: $528.
+For an employee earning $184,500 or more in 2026, the maximum annual Paid Leave premium is approximately: Employer: $184,500 × 0.44% ≈ $811.80. Employee: $184,500 × 0.44% ≈ $811.80. Combined: ≈ $1,623.60 per high-earner per year. For a $60,000 employee: Employer: $264; Employee: $264; Combined: $528.
 
 ### 7.4 Small-employer relief
 
