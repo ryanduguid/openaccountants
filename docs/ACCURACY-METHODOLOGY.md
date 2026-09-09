@@ -69,6 +69,7 @@ jurisdiction at a time. This section records how far that has got.
 | Minimum wage feeding contribution bases | Albania | 1 | Albania |
 | Social contribution ceilings | Slovakia | 1 | Slovakia |
 | Alternative minimum tax status | Taiwan | 1 | Taiwan |
+| Penalty and interest on overdue tax | Cyprus | 0, one conflict recorded | — |
 
 The deadline pass has covered 24 jurisdictions of 200. Nobody has run an external
 pass over anything else. That leaves payroll rates and thresholds, registration
