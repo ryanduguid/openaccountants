@@ -43,11 +43,29 @@ def _find_enc_dict(buf):
     return m.group(0) if m else None
 
 def _pdfstr(blob, key):
-    m = re.search(key + rb'\s*\((.*?)\)(?=/|>>)', blob, re.S)
+    # walk the literal string honouring escapes and nested parens; a lookahead
+    # regex truncates whenever the random bytes happen to contain ")/"
+    m = re.search(key + rb'\s*\(', blob)
     if m:
-        v = m.group(1)
-        v = re.sub(rb'\\([0-7]{1,3})', lambda x: bytes([int(x.group(1), 8) & 0xFF]), v)
-        return re.sub(rb'\\(.)', rb'\1', v)
+        i, depth, out = m.end(), 1, bytearray()
+        while i < len(blob):
+            c = blob[i]
+            if c == 0x5C:                      # backslash
+                nxt = blob[i+1:i+2]
+                oct_ = re.match(rb'[0-7]{1,3}', blob[i+1:i+4])
+                if oct_:
+                    out.append(int(oct_.group(0), 8) & 0xFF); i += 1 + len(oct_.group(0))
+                else:
+                    out += {b'n': b'\n', b'r': b'\r', b't': b'\t', b'b': b'\b',
+                            b'f': b'\f'}.get(nxt, nxt)
+                    i += 2
+                continue
+            if c == 0x28: depth += 1
+            elif c == 0x29:
+                depth -= 1
+                if depth == 0: return bytes(out)
+            out.append(c); i += 1
+        return bytes(out)
     m = re.search(key + rb'\s*<([0-9A-Fa-f\s]*)>', blob, re.S)
     if m:
         return bytes.fromhex(re.sub(rb'\s', b'', m.group(1)).decode())

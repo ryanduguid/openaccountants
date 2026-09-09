@@ -176,7 +176,7 @@ Detroit residency is determined **independently** from Michigan state residency.
 | W-2 wages, salary, bonus, commission | **Taxable** on all wages | **Taxable** only on wages for work physically done in Detroit (apportion) | MCL 141.612 / 141.613 |
 | Self-employment net profit (Schedule C) | **Taxable** on full net profit | **Taxable** on Detroit-apportioned share (Form 5327) | MCL 141.613(b) |
 | Partnership K-1 (ordinary business income) | **Taxable** on full distributive share | **Taxable** on distributive share apportioned to Detroit business activity | MCL 141.613(c) |
-| S-corp K-1 (ordinary business income) | **Taxable** if elected to pass through; see Section 9 (S-corp treatment note) | Generally **not taxable** to non-resident shareholder for city income tax purposes — Detroit treats S-corps differently from federal | `[VERIFY:]` Detroit Ordinance §6; Form 5119 instructions |
+| S-corp K-1 (ordinary business income) | **Taxable** if elected to pass through; see Section 9 (S-corp treatment note) | **Not reportable** by a non-resident shareholder — and the loss is not deductible either | Confirmed: 2025 Form 5119 instructions, line 13: "If you are a shareholder in a tax-option corporation that has elected to file under Sub-Chapter S of the Internal Revenue Code, you are not required to report a distribution, nor may you deduct your share of any loss sustained by the corporation" |
 | Interest (bank, brokerage) | **Taxable** | **Not taxable** | MCL 141.612 |
 | Dividends | **Taxable** | **Not taxable** | MCL 141.612 |
 | Capital gain — intangibles (stocks, mutual funds) | **Taxable** | **Not taxable** | MCL 141.613 |
@@ -191,7 +191,7 @@ Detroit residency is determined **independently** from Michigan state residency.
 | Military pay (active duty) | **NOT TAXABLE** | **Not taxable** | Detroit Ordinance — military exclusion |
 | Worker's comp / disability | **NOT TAXABLE** | **Not taxable** | Detroit Ordinance |
 | State / federal income tax refunds | **NOT TAXABLE** (Detroit does not pick up federal AGI inclusion of state refunds) | **Not taxable** | Form 5118 subtraction line |
-| Gambling winnings | **Taxable** on full amount | `[VERIFY — DISPUTED, DO NOT FILE ON THIS LINE WITHOUT CHECKING]` The guide states these are taxable to a non-resident if won at a Detroit-licensed casino (MotorCity, MGM Grand, Hollywood/Greektown). Practitioner sources take the opposite view: a non-resident is taxed only on Detroit-source compensation and business net profits under MCL 141.611 and 141.613, and casino winnings fall outside that, even though the casino reports them as Detroit income. Read MCL 141.613 before taking either position — the two answers differ by the whole liability | MCL 141.613(g) |
+| Gambling winnings | **Taxable** — they sit in federal AGI, which is where Form 5118 line 9 starts, and no subtraction backs them out | **Not taxable.** MCL 141.613 confines a non-resident's city tax base to three categories: compensation for work done or services performed in the city; the distributive share of net profits of an unincorporated business from activity conducted in the city; and capital gains and net rental profits from **real and tangible personal property** located in the city. Casino winnings are none of those, and Form 5119 has no line that reaches them — its catch-all at line 13 is enumerated to partnership and estate/trust income from Schedule E. If a Detroit casino withheld city tax, file Form 5119 to recover it | MCL 141.613; 2025 Forms 5118 and 5119 and instructions |
 | Alimony received (pre-2019 decrees) | **Taxable** | **Not taxable** | Conforms to federal AGI definition |
 
 **Key takeaway:** Detroit is more generous than the Michigan state return for **retired** taxpayers — pensions, IRAs, Social Security, and 401(k) distributions are entirely outside the Detroit base. This means a retired Detroit resident with only investment income and pensions typically owes **zero** Detroit tax even though they may owe Michigan state tax.
@@ -268,7 +268,7 @@ Detroit residency is determined **independently** from Michigan state residency.
 
 ### Detroit homestead property tax credit
 
-- **No city-level homestead credit** — Detroit does **not** offer a city-level homestead property tax credit on the Detroit return. The Michigan state-level credit is claimed on Form MI-1040CR (the Homestead Property Tax Credit) filed with the Michigan state return, not with Form 5118. Some practitioner guides conflate this — be careful. `[VERIFY:]` Confirm against TY 2025 5313 City Book that no new Detroit-specific homestead credit has been introduced for 2025.  _(Form MI-1040CR)_
+- **No city-level homestead credit** — Confirmed for TY 2025. Detroit does **not** offer a city-level homestead property tax credit. The 2025 Form 5118 credits are limited to city tax withheld (Form 5121), estimated payments (Form 5123) and city tax paid on the filer's behalf by a partnership; there is no property-tax credit among them. The only place the words appear on the resident return runs the other way — line 33 lets the filer **subtract** "state and local income tax refunds and homestead property tax credit refunds that were included in AGI", which is backing the *state* credit's refund out of the city base, not granting a city credit. The Michigan credit itself is claimed on Form MI-1040CR with the state return. Practitioner guides conflate the two — the subtraction line is probably why.  _(2025 Form 5118 and instructions, lines 17-19 and line 33; Form MI-1040CR)_
 
 ### Renaissance Zone deduction (effectively a credit)
 
@@ -306,11 +306,11 @@ Detroit residency is determined **independently** from Michigan state residency.
 | DET-T2-03 | **"Occasional work at home" trap** — Regulation 13.2 still bars allocation for incidental off-hours email/calls from home. The home must be the regular full-day work location. | Distinguish full-time WFH from "took work home." |
 | DET-T2-04 | **Spouse in different residency status** — if one spouse is a Detroit resident and the other is not, they must file Detroit returns separately (Form 5118 for the resident; Form 5119 for the non-resident if they have Detroit-source income). They cannot file a joint Detroit return combining both residencies. | Use separate filing statuses on each form. |
 | DET-T2-05 | **Part-year residency split date** — use actual move-in / move-out date. Income received before move-in date that was earned during a period of non-residency stays in the non-resident bucket. | Cash-basis allocation. |
-| DET-T2-06 | **S-corp distributive share** — Detroit treats S-corps as separate taxable entities (NOT flow-through to shareholders for city tax purposes — different from federal). The S-corp pays Detroit corporate income tax on the entity's apportioned income; the resident shareholder is generally not double-taxed on the K-1 ordinary income. | This is a significant Detroit-specific deviation from federal pass-through. Flag for reviewer. `[VERIFY:]` Detroit Ordinance §6 and current treatment. |
+| DET-T2-06 | **S-corp distributive share** — Detroit treats S-corps as separate taxable entities, not as flow-throughs. The S-corp pays Detroit corporate income tax on its apportioned income; the shareholder neither reports the distribution nor deducts a share of the corporation's loss. | Confirmed against the 2025 Form 5119 instructions for line 13. A genuine deviation from federal pass-through treatment, and note it cuts both ways — a shareholder in a loss year gets no city deduction for it. |
 | DET-T2-07 | **Partnership distributive share** — Detroit follows the federal flow-through treatment for partnerships. Resident partners include full distributive share; non-resident partners include Detroit-apportioned share via Form 5327 at the partnership level. | Different from S-corp treatment. |
 | DET-T2-08 | **Renaissance Zone qualification** — depends on physical residence/business location within a designated Zone for the full taxable year and on Zone phase-out schedule. | Verify Zone status with Detroit Planning Dept. |
 | DET-T2-09 | **Multi-Michigan-city situation** — resident of Detroit working in Grand Rapids: claim credit on Form 5118. Non-resident of Detroit working partly in Detroit and partly in Lansing: file Form 5119 for Detroit days, file Lansing's CF-1040 separately for Lansing days. | Separate non-resident returns for each city. |
-| DET-T2-10 | **Estimated tax safe harbors** — Detroit has no statutory safe-harbor structure as detailed as the federal §6654; Treasury historically waives penalty if total payments ≥ prior year's liability and ≥ 70% of current year. | `[VERIFY:]` current safe-harbor mechanics from Form 5338 instructions. |
+| DET-T2-10 | **Estimated tax threshold and mechanics** — The 2025 return instructions put it plainly: "Typically, if you owe more than $100, you are required to make estimated payments." Underpayment interest and penalty are computed on **Form 5338** (City Underpayment of Estimated Income Tax) and entered on the return; if the filer does not complete Form 5338, Treasury computes it and bills. | Confirmed: 2025 Form 5119 instructions, line 24d. Take the detailed safe-harbor percentages from the Form 5338 instructions themselves rather than by analogy to federal § 6654. |
 
 ## Section 10: Worked examples
 
@@ -438,13 +438,20 @@ Below the $100 threshold for required estimated payments. Priya should **keep co
 9. Confirm federal extension was not relied on for Detroit deadline — if extension needed, Form 5209 must be on file.
 10. Confirm quarterly estimated payments were made if prior year liability exceeded $100.
 
-### Known uncertainties — `[VERIFY:]`
+### Verification status
 
-- Exact underpayment penalty form number for TY 2025 (5125 vs 5338) — confirm against current Treasury form catalogue.
-- S-corp shareholder treatment for Detroit resident — Detroit Ordinance §6 historically treated S-corps as separate taxable entities, but practice may have evolved; confirm before relying on DET-T2-06.
-- Whether the Detroit homestead-credit equivalent exists at the city level for TY 2025 — confirmed absent in older years but `[VERIFY:]` against current City Book.
-- Treatment of gambling winnings from Detroit casinos for non-residents — confirm against MCL 141.613(g) and current Treasury policy.
-- Detroit estimated-tax safe-harbor structure (prior-year vs current-year) — confirm against Form 5338 instructions for TY 2025.
+All five items previously listed here are resolved against the 2025 forms and MCL 141.613:
+
+- **Underpayment form is 5338** — City Underpayment of Estimated Income Tax, named at line 24d of the 2025 Form 5119 instructions. There is no 5125 in the city series; 5121 is the City of Detroit Withholding Tax Schedule.
+- **S-corp shareholder treatment** — confirmed by the line 13 instruction quoted at DET-T2-06: no distribution reported, no share of loss deducted.
+- **No city homestead credit** — confirmed absent from the 2025 Form 5118 credits; see §Credits above for why the line 33 subtraction is mistaken for one.
+- **Gambling winnings** — resolved, and the guide's earlier position was wrong for non-residents. MCL 141.613 confines the non-resident base to three enumerated categories and casino winnings are outside all three.
+- **Estimated tax** — the "more than $100" threshold and Form 5338 are on the face of the 2025 instructions.
+
+Two further figures picked up from the same instructions and worth carrying:
+
+- **Interest** runs at one percentage point above the adjusted prime rate, reset on 1 January and 1 July. It is **8.48% annually (0.0002324 daily) through 30 June 2026**, the same rate the Michigan state return uses.
+- **Late-payment penalty** accrues at 1% of the tax due per month and increases by a further 1% each month, with a partial month counted as a full month.
 
 ## Disclaimer
 
