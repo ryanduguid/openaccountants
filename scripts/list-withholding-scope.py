@@ -1,344 +1,19 @@
-"""List which heads of withholding tax each jurisdiction's guides actually state.
+"""List which heads of withholding tax each jurisdiction's guides state.
 
-`list-withholding-rates.py` checks the RATE on dividends, interest and
-royalties. Ten jurisdictions were then read by hand against their statutes, and
-four were wrong. What is more interesting is the other six: every rate they
-stated was correct and every one of them was materially incomplete. The defect
-was not a number. It was a missing head of charge.
+Every other check here compares a stated value against something. An omitted
+head of charge states nothing, so nothing could see it. This inverts that: it
+reports what each jurisdiction DOES name, and a guide naming only dividends,
+interest and royalties sits oddly beside one naming eight.
 
-North Macedonia stated three of the eight categories its Law on Profit Tax
-withholds on, omitting entertainment and sporting activities, management and
-consulting services, insurance premiums, telecommunications and the lease of
-immovable property. Azerbaijan stated four of eight, omitting rent at 14%,
-insurance at 4% and telecommunications at 6%. Namibia stated the 10% on
-management fees and not the 25% on non-resident directors and entertainers,
-which carries no treaty relief at all.
+It is a queue, not a defect report. A jurisdiction is queued because its profile
+is thin against its peers, which is a reason to spend an hour, not a finding.
 
-A guide that names dividends, interest and royalties and stops reads as
-complete. Nothing in this repo could see that it was not, because every check
-here compares a stated value against something, and an omitted head states
-nothing. This script inverts that: it reports what each jurisdiction's guides
-DO name, so the gaps become visible as gaps.
-
-WHAT THIS CATCHES, AND WHAT IT DOES NOT
-
-Of the ten jurisdictions read by hand, this would have flagged one: North
-Macedonia, which named only the classic three. That is not a good hit rate and
-saying so is the point of this note. There are three failure shapes here and
-this sees one of them.
-
-  1. NAMES ONLY THE CLASSIC THREE.  Seen: North Macedonia. Caught here, as
-     `classic-only`.
-  2. NAMES SOME EXTRA HEADS, MISSES OTHERS.  Seen: Azerbaijan, which had a
-     services line and no rent, insurance or telecommunications line. Partly
-     caught: it shows up as a thin profile against jurisdictions that name
-     seven, but nothing here knows which heads Azerbaijan's Tax Code actually
-     charges, so it is a ranking and not a finding.
-  3. NAMES THE HEAD, MISSES THE CARVE-OUT.  Seen: Namibia, whose service line
-     was right and whose 25% director and entertainer rate was absent; Angola,
-     whose 6.5% was right and which did not say the rate is an advance for a
-     resident and final for a non-resident. NOT caught, and not catchable this
-     way. A head that is named passes.
-
-So this is a queue, not a report of defects. A jurisdiction near the top of it
-has either a thin withholding regime or a thin guide, and only the statute
-distinguishes those. Estonia genuinely charges few heads. North Macedonia
-charged eight and said three.
-
-The heads below were chosen from what the ten hand-read jurisdictions actually
-levied, not from a model treaty, which is why `branch` and `directors` are in
-the list: Namibia and Bangladesh both turn on them and neither is a classic
-category.
-
-FIRST DRAW OFF THE QUEUE
-
-64 of 142 jurisdictions named only classic heads. Kenya was taken first, for
-readership rather than for anything the output said about it, and it carried one
-stale rate and six missing heads:
-
-  * Dividends to non-residents were stated at 10%. They are 15%, and have been
-    since the Finance Act 2023. Five points, and the payer carries a shortfall.
-  * Management and professional fees: 5% resident, 20% non-resident. Absent.
-  * Training fees: 5% resident, 20% non-resident. Absent.
-  * Contractual fees: 3% resident, 20% non-resident. Absent.
-  * Rent to non-residents: 30% on immovable property, 15% on other property.
-    Absent -- and 30% is the HIGHEST rate in Kenya's withholding table. A guide
-    that stops after royalties leaves its reader treating a non-resident
-    landlord as a 15% case, or as no case at all.
-  * Insurance and reinsurance premiums: 5% resident. Absent.
-  * Interest sub-rates by instrument (bearer instruments 25%, government bonds
-    of two years or more 15%, bearer bonds of ten years or more 10%). Absent;
-    the guide carried only the 15% general rate.
-
-That is the shape the queue is for. Kenya's three stated rates were two right
-and one stale, and the damage was mostly in what was not there.
-
-WHY 64 JURISDICTIONS LOOK THE SAME
-
-Turkey and Thailand were taken next, both from the classic-only list and both
-already worked on this branch for their rates. Neither guide was careless. PwC's
-`corporate/withholding-taxes` page -- the page both guides cite, and the page
-most of this corpus was built from -- carries, for these two countries,
-dividends, interest, royalties and a treaty matrix. Nothing else. The other
-heads are real and are somewhere else entirely.
-
-  * Turkey also withholds 20% on professional services (17% on certain
-    copyright work), 20% on commercial rent computed on the GROSS rent, and 5%
-    on progress payments to contractors on construction spanning more than one
-    calendar year, with 1% for certain long-term projects. Its 30% on payments
-    to harmful-tax-competition jurisdictions IS on the PwC page, and the guide
-    did not carry that either.
-  * Thailand also withholds 15% under Section 70 on service income,
-    professional services and rentals paid to a foreign company not carrying on
-    business there, and domestically 3% on professional and service fees, 5% on
-    rent, 2% on advertising and 1% on transport.
-
-So the classic-only shape is not sloppiness. It is faithful reproduction of a
-source that is itself three-headed for that country, and the corpus inherited
-its scope along with its numbers. Two things follow.
-
-First, this queue is systematically incomplete rather than randomly so, which
-makes it worth working all the way down rather than sampling.
-
-Second, and more useful: RE-READING THE PAGE THE GUIDE CITES WILL NEVER FIND
-THIS. Every other check on this branch was satisfied by going back to the
-authority the guide named. Here the guide named its source faithfully and the
-source does not answer the question. Coverage varies by country and cannot be
-assumed either way -- PwC's Kenya page does carry the full table, which is how
-Kenya's six missing heads were found in one fetch. When a jurisdiction appears
-below with three heads, the next step is a different page or the statute, not
-the one in the citation.
-
-TWO TRUE NEGATIVES, AND THE RULE THEY SUGGEST
-
-Ukraine and Kazakhstan came off the queue next and were both thin -- Ukraine
-missing engineering, agency and brokerage, freight at 6%, real-estate and
-securities disposals, Eurobond and government-bond treatment and deemed
-dividends; Kazakhstan missing services at 20%, the 20% residual, insurance at
-15%, reinsurance and international transport at 5% and constructive dividends,
-and attributing its reduced 5% dividend rate to a holding-period test when the
-real test is a 230,000 MCI distribution ceiling.
-
-Switzerland and Hong Kong were then checked expecting the same, and both were
-entirely correct. Switzerland charges 35% on dividends and on interest from
-bonds and bank deposits, nothing on ordinary loan interest, and nothing at all
-on royalties. Hong Kong charges nothing on dividends or interest and taxes
-royalties through deemed assessable profits, 4.95% to an unassociated
-non-resident and up to 16.5% to an associate. Three heads each, because three
-heads is what those two jurisdictions have.
-
-So the queue has real true negatives, and the two of them share the property
-that makes them verifiable in a minute rather than an hour: THEY STATE THE ZERO.
-Switzerland's guide says "0% -- Switzerland levies no withholding tax on royalty
-payments". Hong Kong's says "0% (no withholding tax on dividends)". Neither
-leaves the reader inferring an absence from a silence.
-
-That is the cheap resolution for much of this queue. A guide that omits a head
-is indistinguishable from a jurisdiction that does not charge it, and the
-distinction cannot be recovered from the guide -- which is why 64 entries needed
-a statute lookup each. A guide that writes the zero down converts itself from a
-question into an answer, and the next reader spends no time on it at all. Where
-a jurisdiction genuinely charges nothing on services or rent, saying so is worth
-as much as a rate.
-
-THE REMITTANCE RETURN IS THE COMPLETENESS SOURCE
-
-Zimbabwe produced the best answer yet to "how do you find out what a statute
-charges when the summary page only carries three heads". PwC has no Zimbabwe
-withholding page at all -- it 404s. ZIMRA's rate schedule was not readily
-retrievable either. But ZIMRA publishes REV 5, the return a payer files to REMIT
-withholding taxes, and a remittance return has to enumerate every head, because
-each one needs a line for the payer to write a figure on.
-
-REV 5 lists fourteen: resident shareholders' tax, non-resident shareholders'
-tax, resident tax on interest, non-residents' tax on fees, on remittances and on
-royalties, tax on non-executive directors' fees, the automated financial
-transaction tax, tax on the exercise of share options granted before 1 February
-2009, capital gains withholding tax on immovable property and on marketable
-securities as two separate heads, withholding tax on tenders, value added
-withholding tax, and the tobacco levy.
-
-The guide carried five. Nothing about the form gives a rate, and that is fine:
-the form answers the question this script asks, which is what heads exist. Rates
-can then be chased one at a time, and the ones that cannot be settled get said
-so -- Zimbabwe's tender and no-tax-clearance withholding is stated as a live
-conflict between a 30% and a 10% source, with the instruction to withhold the
-higher where no ITF263 is produced, because an under-deduction is the payer's.
-
-So the order of search for a queue entry is: the authority's remittance or
-declaration form first, its rate schedule second, a summary page third. The
-form is the only one of the three that is structurally obliged to be complete.
-
-THE QUEUE OVER-REPORTED BY 30%, AND NOW SPLITS ITSELF
-
-After ten jurisdictions had been worked off the list by hand it was worth
-asking how many of the rest were real. This script indexes the heads named in a
-bullet's LABEL, because labels are where the corpus states facts and bodies are
-prose. That is the right primary signal and it has a predictable blind spot: a
-guide that names five heads inside one bullet's body reads here as naming none
-of them.
-
-Measured, 15 of the 50 classic-only entries name an extra head in a body. Some
-are real coverage the label does not advertise; some are a word like "insurance"
-appearing in a sentence about something else; and a few are this branch's own
-work, where a fix was written as one headline bullet rather than one bullet per
-head. All three cases share the useful property that they are cheaper to triage
-by eye than to research from a statute.
-
-So the output now splits. `queue` is the 35 that name nothing beyond the classic
-three anywhere -- those need the statute. `triage` is the 15 whose bodies mention
-a service, rent, insurance or similar head -- read those first, and most will
-either already be covered or need only restructuring so the head sits in a label
-where it can be found. The exit code follows `queue`, not the total, so a run
-that leaves only triage entries is a clean run.
-
-The lesson is narrower than it looks and worth keeping: a checker's blind spot
-is measurable, and measuring it before working its output is cheaper than
-working the output. Thirty per cent of this queue was the tool, not the corpus.
-
-ELEVEN OF THE QUEUE WITHHELD NOTHING AT ALL
-
-The second measured blind spot, found the same way as the first. A jurisdiction
-that levies no withholding tax names no service, rent or insurance head because
-there is nothing to name, so it is indistinguishable here from a guide that
-forgot them. Eleven were sitting on the queue for that reason: the British
-Virgin Islands, Cayman, Bermuda, the Bahamas, Vanuatu, Bahrain, Monaco, Macau,
-Curacao, the Isle of Man and Liechtenstein.
-
-All eleven already state their zeros plainly -- "0% (no withholding tax on
-dividends)", "None" -- which is exactly the habit recommended above, and it is
-what makes them mechanically separable. `is_zero` reads the rate out of the
-value: if every rate a jurisdiction states is zero, or the value says none or
-nil, the guide is complete rather than thin and it is reported as `zero-wht`
-instead of queued.
-
-That is 11 removed on top of the 15 the body-mention split removed. Between
-them the queue has gone from 64 to 24 without a single statute being opened,
-because both were the tool describing itself rather than the corpus. It is
-worth stating the ratio plainly: of the 64 entries this script originally
-produced, roughly 40% were artefacts of how it measures. A checker that has not
-been measured against its own blind spots is reporting its shape as much as the
-corpus's.
-
-THE BLIND SPOT THAT RAN BACKWARDS: DEDICATED WITHHOLDING GUIDES
-
-The worst one, found last, because it made the output look tidier rather than
-messier.
-
-Israel's `il-tax-withholding.md` is a ten-section guide devoted entirely to
-withholding, with a rate table giving services at 30% (up to ~47% for an
-unverified payee), business rent 35%, residential rent 30%, royalties 23%,
-interest 25%, dividends 25-30% and non-residents 25%, each with its ITO section.
-Israel showed here as naming no head at all.
-
-Two causes, both in the parsing rather than the corpus. `LABEL` required the
-word "withholding" in the row label, and a guide that is *entirely* about
-withholding does not repeat the word in every row -- its rows say "Services --
-individuals, no certificate" and "Rent -- business/commercial property". And
-`ROW` read only the second cell as the value, while Israel's table is
-`| Payment type | Hebrew | Default rate | ITO Section |`, so the value came back
-as a Hebrew term with no rate in it and the row was discarded for stating
-nothing.
-
-The premise of the script was therefore inverted for exactly the jurisdictions
-that had done the best job: a proper withholding guide with a proper rate table
-scored lower than three bullets bolted onto a CIT guide. Fixing both -- a
-filename test that relaxes the label requirement inside a withholding guide, and
-a `ROW` value that spans every cell after the label -- moved seven jurisdictions
-out of classic-only: Israel, Egypt, Indonesia, Nigeria, the Philippines, Sri
-Lanka and the Dominican Republic, with Pakistan, Saudi Arabia and Tanzania
-gaining heads they already documented. Classic-only went 34 to 27, and none of
-it was a change to a guide.
-
-The general lesson is the one worth keeping: a false positive makes a checker
-look careless and gets fixed. A false *negative* makes it look clean, and can
-sit there for as long as nobody checks a jurisdiction it is quietly wrong about.
-
-WHAT THE TAIL OF THE QUEUE ACTUALLY IS
-
-Worth knowing before anyone budgets time against the remaining entries. After
-the artefacts were removed and the well-sourced jurisdictions worked, the queue
-was measured against the corpus's main source by asking PwC's Worldwide Tax
-Summaries for each remaining jurisdiction's `corporate/withholding-taxes` page.
-
-Of the twelve small jurisdictions left — Andorra, Belarus, Benin, Bhutan, Cuba,
-Eritrea, Iran, Libya, Sao Tome and Principe, Suriname, Tajikistan and Togo —
-that page exists for exactly **one**. Libya. Eleven return 404, Belarus among
-them (PwC no longer covers it at all).
-
-And Libya, the one with a page, turned out to levy **no withholding tax
-whatsoever**, so working it added no head to the corpus — it converted three
-hedged near-denials into a stated zero and a warning that a foreign contractor
-is still assessed on deemed profit at contract registration.
-
-So the tail of this queue is not a backlog of pages nobody has opened. It is the
-set of jurisdictions the corpus's main source does not cover. Closing them means
-national gazettes, regional firm tax cards, or a paid database, at a different
-order of cost per jurisdiction than the Kenya and Laos cases. That is the honest
-reason the queue stops shrinking, and it should be stated rather than left to
-look like inattention.
-
-A KNOWN MISS: PAYE KEEPS A ZERO-WHT JURISDICTION OUT OF THE ZERO LIST
-
-Libya levies no withholding taxes at all — PwC states it in one line, "Libyan
-law has no withholding taxes (WHTs)" — so once its guide said so plainly it
-should have been reported as `zero-wht` rather than queued. It is not. Its
-payroll guide carries "Employers withhold personal income tax (5%/10%) at
-source from salaries", `is_zero` sees a non-zero rate on a withholding-labelled
-line, and `nonzero[libya]` is set.
-
-That is wrong in principle: PAYE on salaries is employment withholding, a
-different tax from the non-resident payment withholding this script models.
-Every zero-WHT jurisdiction that also has a payroll guide with a rate will be
-misclassified the same way. The eleven currently on the zero list escape it only
-because places like the British Virgin Islands and Cayman have no income tax to
-run PAYE on.
-
-Left as a known miss rather than patched, and asserted in the selftest so it
-stays known. Excluding lines whose label says payroll, PAYE, salary or wages
-would fix Libya and would also suppress a genuine non-resident employment-income
-head wherever one exists — and the practical cost here is zero, because Libya
-now names four heads and has left the queue on its own. Recording the shape is
-worth more than a rule that trades one misclassification for another.
-
-A THIRD BLIND SPOT: NOT EVERY DIRECTORY IS A JURISDICTION THAT WITHHOLDS
-
-Found the same way as the first two, on the third pass through the queue. Four
-of the 24 entries were not corpus defects at all.
-
-`in` was **Indiana**, not India. Jurisdiction keys come from the third path
-segment, so `skills/us-states/in/in-payroll.md` reads as a jurisdiction named
-`in`, and it reached the queue because a payroll guide mentions an interest rate
-on unpaid PAYE withholding. A US state does not levy withholding on dividends,
-interest or royalties paid abroad — that is federal — so all 52 directories
-under `us-states` were guaranteed noise. `SKIP_TREES` now excludes that tree,
-along with `foundation`, `templates` and `patterns`, which hold workflow bases
-rather than jurisdictions.
-
-`canada` and `us` are a different and unfixable case, and worth stating rather
-than patching. Canada's withholding content is real and correct — Part XIII at
-25% with treaty reductions, and the §116 clearance-certificate regime — but it
-lives in `ca-nonresident-cgt.md`, because Canada's corpus is sliced by topic
-rather than by tax. The same is true of `us-nonresident-cgt.md`, which carries
-FIRPTA and the 30% dividend rate. Both jurisdictions look thin here because the
-heads they name sit in a capital-gains guide, which names capital gains heads.
-Nothing in this script can tell that apart from a genuinely thin CIT guide, and
-trying to would mean encoding an expectation about which file a head belongs in.
-So: **a jurisdiction whose only withholding lines come from a non-CIT guide is
-a note about corpus organisation, not a lead.** Check the filenames in `--show`
-before treating a major jurisdiction as thin.
-
-That leaves the single- and double-head rows, which are mostly guides shaped
-differently rather than jurisdictions withholding on one thing. Read the
-classic-only list, which is the real queue.
+Run --show <jurisdiction> before editing. It prints every withholding-labelled
+line that jurisdiction has, with file and line number. Three wrong claims about
+what a guide omits were written on this branch from the summary alone.
 
 Usage: python3 scripts/list-withholding-scope.py [--selftest] [--classic-only]
        python3 scripts/list-withholding-scope.py --show <jurisdiction>
-
-Run --show before editing a jurisdiction. It prints every withholding-labelled
-line the jurisdiction has, with file and line number, so a claim about what a
-guide omits can be checked against the guide rather than against this script's
-summary. Three wrong claims on this branch came from skipping that step.
 """
 import os, re, sys, collections
 
@@ -393,6 +68,13 @@ def is_zero(value):
     thin guide. The British Virgin Islands, Cayman, Bermuda, the Bahamas,
     Vanuatu and Bahrain were all sitting on the queue for that reason, and all
     six already state their zeros plainly. Reading the rate separates them.
+
+    KNOWN MISS: a payroll PAYE line defeats this. Libya levies no withholding at
+    all, but its payroll guide says employers withhold PIT at 5%/10%, so a
+    non-zero rate is seen and Libya stays off the zero list. Employment
+    withholding is a different tax, and no pattern separates the two without
+    also losing a real non-resident employment-income head. Asserted in the
+    selftest so it stays known.
     """
     rates = PCT.findall(value)
     if rates:
@@ -409,28 +91,23 @@ SKIP_DIRS = ('orchestrator', 'cross-border', 'verticals', 'integrations')
 # unpaid PAYE withholding. The other three hold workflow bases and templates
 # with no jurisdiction of their own.
 SKIP_TREES = ('us-states', 'foundation', 'templates', 'patterns')
+# Not skippable, and worth knowing before treating a major jurisdiction as thin:
+# `canada` and `us` look classic-only because their withholding content sits in
+# topic-sliced capital-gains guides (Part XIII and s.116; FIRPTA and the 30%
+# dividend rate), not because a head is missing. Telling that apart from a thin
+# CIT guide would mean encoding an expectation about which file a head belongs
+# in. Check the filenames in --show first.
 
 
 def heads_in(line, in_wht_guide=False):
     """Return the set of withholding heads a labelled line names, else None.
 
     `in_wht_guide` relaxes the requirement that the label itself say
-    "withholding". Set it when the FILE is a dedicated withholding guide.
-
-    This is the blind spot Israel exposed, and it inverts the premise of the
-    whole script. `il-tax-withholding.md` carries a complete rate table --
-    services 30% (up to ~47% for an unverified payee), business rent 35%,
-    residential rent 30%, royalties 23%, interest 25%, dividends 25-30%,
-    non-residents 25%, each with its ITO section and its Hebrew term -- and
-    every row was invisible here, because the rows are labelled "Services --
-    individuals, no certificate" and "Rent -- business/commercial property".
-    A guide that is entirely about withholding does not repeat the word
-    "withholding" in each row label; there would be no point.
-
-    So the better a jurisdiction's coverage -- a dedicated withholding guide
-    with a proper table instead of three bullets bolted onto a CIT guide -- the
-    thinner it looked. That is exactly backwards, and it is the kind of error
-    that survives indefinitely because it makes the tool's output look tidier.
+    "withholding". Set it when the FILE is a dedicated withholding guide: such a
+    guide does not repeat the word in every row label, so requiring it scored a
+    proper withholding guide lower than three bullets bolted onto a CIT guide.
+    Israel's whole rate table -- services 30%, business rent 35%, royalties 23%
+    -- was invisible for that reason.
     """
     m = BULL.match(line) or ROW.match(line)
     if not m:
