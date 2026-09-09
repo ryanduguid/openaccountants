@@ -141,6 +141,34 @@ question into an answer, and the next reader spends no time on it at all. Where
 a jurisdiction genuinely charges nothing on services or rent, saying so is worth
 as much as a rate.
 
+THE REMITTANCE RETURN IS THE COMPLETENESS SOURCE
+
+Zimbabwe produced the best answer yet to "how do you find out what a statute
+charges when the summary page only carries three heads". PwC has no Zimbabwe
+withholding page at all -- it 404s. ZIMRA's rate schedule was not readily
+retrievable either. But ZIMRA publishes REV 5, the return a payer files to REMIT
+withholding taxes, and a remittance return has to enumerate every head, because
+each one needs a line for the payer to write a figure on.
+
+REV 5 lists fourteen: resident shareholders' tax, non-resident shareholders'
+tax, resident tax on interest, non-residents' tax on fees, on remittances and on
+royalties, tax on non-executive directors' fees, the automated financial
+transaction tax, tax on the exercise of share options granted before 1 February
+2009, capital gains withholding tax on immovable property and on marketable
+securities as two separate heads, withholding tax on tenders, value added
+withholding tax, and the tobacco levy.
+
+The guide carried five. Nothing about the form gives a rate, and that is fine:
+the form answers the question this script asks, which is what heads exist. Rates
+can then be chased one at a time, and the ones that cannot be settled get said
+so -- Zimbabwe's tender and no-tax-clearance withholding is stated as a live
+conflict between a 30% and a 10% source, with the instruction to withhold the
+higher where no ITF263 is produced, because an under-deduction is the payer's.
+
+So the order of search for a queue entry is: the authority's remittance or
+declaration form first, its rate schedule second, a summary page third. The
+form is the only one of the three that is structurally obliged to be complete.
+
 A CAVEAT ABOUT THE THIN END
 
 Jurisdiction keys come from the third path segment, so `us`, `im`, `in` and `nc`
@@ -160,8 +188,12 @@ HEADS = (
     ('dividends', r'dividend'),
     ('interest', r'\binterest\b'),
     ('royalties', r'royalt'),
+    # A bare "fees" counts. Zimbabwe's head is called "non-residents' tax on
+    # fees" and nothing else in the label says what kind, so requiring
+    # "professional fees" left the whole head invisible and the jurisdiction
+    # on the queue after it had been worked.
     ('services', r'\bservices?\b|\btechnical\b|\bmanagement\b|\bconsultanc|'
-                 r'\bconsulting\b|\bprofessional fees?\b|\bcontractor'),
+                 r'\bconsulting\b|\bfees?\b|\bcontractor'),
     ('rent', r'\brent\b|\brentals?\b|\bleas(?:e|ing)\b|\bhire\b|'
              r'\bimmovable propert|\bmovable propert'),
     ('insurance', r'\binsurance\b|\breinsurance\b|\bpremiums?\b'),
@@ -237,6 +269,9 @@ def selftest():
          'services** - **6%**', {'telecoms', 'services'}),
         ('- **NRST on dividends - all other cases** - 20 percent', {'dividends'}),
         ('| WHT on branch remittance | 10% | Income Tax Act |', {'branch'}),
+        # a bare "fees" head, as ZIMRA names it
+        ("- **Non-residents' tax on fees** - **15%** of the gross where a person "
+         'pays a non-resident for services performed in Zimbabwe', {'services'}),
     ]
     for line, want in cases:
         got = heads_in(line)
