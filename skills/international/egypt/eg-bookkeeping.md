@@ -66,9 +66,9 @@ The e-invoicing system handles **B2B and B2G** transactions. A registered seller
 
 ### 2.1 Who must register
 
-- **Small-business exemption threshold / registration deadline** — EGP 500,000 → EGP 250,000 annual revenue; registration deadline cited as 31 March 2026 EGP (cited, reported in late 2025 — verify the threshold and the taxpayer's exact registration deadline on eta.gov.eg)  _(eta.gov.eg)_
+- **Small-business exemption threshold / registration deadline (e-invoicing, NOT VAT)** — EGP 500,000 → EGP 250,000 annual revenue is reported as the e-invoicing enrolment criterion, with a registration deadline cited as 31 March 2026. This is **not** the VAT registration threshold, which remains EGP 500,000 under VAT Law No. 67 of 2016; the two are routinely conflated in advisory write-ups EGP (verify the criterion and the taxpayer's exact phase on eta.gov.eg)  _(eta.gov.eg)_
 
-E-invoicing rolled out in waves from 2020 and is now mandatory for essentially all VAT-registered businesses and professionals doing B2B/B2G work. Reporting in late 2025 indicates the small-business exemption threshold was lowered (cited as EGP 500,000 → **EGP 250,000** annual revenue), with newly-in-scope taxpayers required to register by an early-2026 deadline (cited as **31 March 2026**). *Verify the threshold and the taxpayer's exact registration deadline on eta.gov.eg — these figures changed recently.*
+E-invoicing rolled out in waves from 2020 and is now mandatory for essentially all VAT-registered businesses and professionals doing B2B/B2G work. Reporting in late 2025 indicates the small-business exemption threshold for **e-invoicing** was lowered (cited as EGP 500,000 → **EGP 250,000** annual revenue), with newly-in-scope taxpayers required to register by an early-2026 deadline (cited as **31 March 2026**). Do not carry that figure across to VAT: the VAT registration threshold is EGP 500,000 and was not changed. *Verify the criterion and the taxpayer's exact phase on eta.gov.eg — ETA assigns phases by named taxpayer list, not by turnover alone.*
 
 ### 2.2 Registration steps (high level)
 

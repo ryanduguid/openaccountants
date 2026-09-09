@@ -257,6 +257,8 @@ Change from 2024-25: **down £105.75** (Plan 2 threshold rose by £1,175 -> £1,
 
 Change from 2025-26: **down £82.35** (Plan 2 threshold rose by £915 -> £915 x 9% = £82.35 less on Plan 2; PGL threshold unchanged for a third year).
 
+**Rounding.** Self Assessment collects student loan repayments in whole pounds, rounded down, so the amounts actually payable are **£1,135** on Plan 2 and **£1,260** on the PGL, **£2,395** in total. The pence above are the calculation, not the charge. The same applies to years 1 and 2: £2,583 and £2,477.
+
 **Key takeaway:** With constant profits of £42,000, the SA deduction falls a
 little each year as the Plan 2 threshold rises -- £2,583.45, then £2,477.70, then
 £2,395.35. The PGL component has not moved at all across the three years,

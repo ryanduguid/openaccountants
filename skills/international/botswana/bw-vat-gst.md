@@ -17,7 +17,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Zero-rated supplies** — 0% % (e.g. exports and certain basic foodstuffs (e.g. sorghum, maize meal, certain agricultural inputs) — Confirm the current zero-rated schedule)  _(Value Added Tax Act (Cap. 50:03) — https://www.burs.org.bw/index.php/tax/value-added-tax)_
 - **Exempt supplies** — Exempt (no VAT, no input credit) — e.g. prescribed financial services, residential accommodation, certain education and medical services (Confirm the current exempt schedule)  _(Value Added Tax Act (Cap. 50:03) — https://www.burs.org.bw/index.php/tax/value-added-tax)_
 
-Botswana levies VAT under the Value Added Tax Act. The standard rate is **14%**; the rise to 15% proposed for 1 April 2025 appears never to have taken effect, with PwC's 2026 chart and a BURS notice under the VAT Act both giving 14% eighteen months on. Certain supplies are zero-rated or exempt.
+Botswana levies VAT under the Value Added Tax Act. The standard rate is **14%**; the rise to 15% proposed for 1 April 2025 appears never to have taken effect, with PwC's 2026 chart and a BURS notice under the VAT Act both giving 14% well over a year on. Certain supplies are zero-rated or exempt.
 
 ## Registration
 

@@ -161,14 +161,14 @@ Paraguay's mandatory social-security scheme is **IPS (Instituto de Previsión So
 
 **Minimum wage table**  _(MTESS Resolución N° 677/2025)_
 
-| Item | 2025 value | Source |
+| Item | Value | Source |
 | --- | --- | --- |
 | Monthly minimum (general/unspecified activities), from 1 Jul 2026 | **PYG 3,044,000** (jornal mínimo PYG 117,077; daily rate for monthly-paid staff PYG 101,467; hourly PYG 12,683) | Decreto N° 6225 (17 Jun 2026); MTESS Resolución N° 670/2026 |
 | Monthly minimum (general/unspecified activities), 1 Jul 2025 to 30 Jun 2026 | **PYG 2,899,048** | MTESS Resolución N° 677/2025 |
-| Daily wage (jornaleros) | PYG 111,502 | MTESS Res. 677/2025 |
-| Daily rate (mensualizados) | PYG 96,635 | MTESS Res. 677/2025 |
-| Hourly rate (mensualizados) | PYG 12,080 | MTESS Res. 677/2025 |
-| Night-shift monthly (with +30%) | PYG 3,768,763 | MTESS Res. 677/2025 |
+| Daily wage (jornaleros) | PYG 117,077 from 1 Jul 2026; PYG 111,502 from 1 Jul 2025 to 30 Jun 2026 | MTESS Res. 670/2026; Res. 677/2025 |
+| Daily rate (mensualizados) | PYG 101,467 from 1 Jul 2026; PYG 96,635 before | MTESS Res. 670/2026; Res. 677/2025 |
+| Hourly rate (mensualizados) | PYG 12,683 from 1 Jul 2026; PYG 12,080 before | MTESS Res. 670/2026; Res. 677/2025 |
+| Night-shift monthly (with +30%) | PYG 3,957,200 from 1 Jul 2026; PYG 3,768,763 before | Derived: minimum wage x 1.30 |
 
 **Authority:** MTESS. Current: **Resolución MTESS N° 677/2025**, effective **1 July 2025** (+3.6% adjustment).
 
@@ -329,7 +329,7 @@ These items require a licensed Paraguayan accountant's judgement and/or confirma
 1. IRP itemized deductions / caps (Section 2.4) — governed by Decreto N° 3184/2019; exact deductible categories and caps not quoted from a figure-level source. Confirm before computing any employee's net taxable income.
 2. IPS contribution ceiling (Section 3) — no salary cap confirmed; PwC reports none specified. Confirm whether IPS is truly uncapped.
 3. Exact IPS late-payment surcharge schedule (Section 4.4) — the 1%–50% range comes from secondary aggregators, not the IPS resolution. Confirm the exact recargos moratorios schedule.
-4. 2026 figures (Section 5) — the July-2026 minimum-wage adjustment and any IRP changes are under negotiation and NOT officially confirmed. Do not apply 2026 figures until published.
+4. IRP changes for 2026 (Section 2) — no IRP rate or threshold change has been confirmed for 2026; confirm against DNIT before applying one. The **minimum wage is no longer a research gap**: Decreto N° 6225 of 17 June 2026 raised it 5% to PYG 3,044,000 from 1 July 2026, regulated by MTESS Resolución N° 670/2026.
 5. IRP rate break-point (Section 2.3) — one secondary summary cited a "9% at PYG 100M" break-point; this skill uses the authoritative PwC/DNIT 50M/150M thresholds. Confirm against current DNIT guidance.
 6. In-kind wage valuation for the IPS base — confirm how in-kind remuneration is valued for contribution purposes.
 
@@ -395,7 +395,7 @@ These items require a licensed Paraguayan accountant's judgement and/or confirma
 | 2 | Pay period (month/year) | input |
 | 3 | Sector (C = commercial / F = financial) | input |
 | 4 | **Gross wage (cash + in kind, excl. aguinaldo/family allowance)** | input |
-| 5 | Minimum-wage floor | `2899048` (FY2025) |
+| 5 | Minimum-wage floor | `3044000` from 1 Jul 2026; `2899048` for 1 Jul 2025 to 30 Jun 2026. Pick from B2, the pay period |
 | 6 | IPS base | `=MAX(B4,B5)` (floor; no ceiling) |
 | 7 | Employee IPS rate | `=IF(B3="F",0.11,0.09)` |
 | 8 | **Employee IPS** | `=B6*B7` |
@@ -525,7 +525,7 @@ If any required input is missing, state what is missing and do not fabricate a f
 - NEVER assert an IPS salary ceiling as confirmed — none is confirmed (research gap); treat IPS as uncapped.
 - NEVER state exact IPS late-payment surcharges or IRP penalty amounts as confirmed — they are research gaps pending primary-source confirmation.
 - NEVER quote IRP deduction figures/caps as confirmed — the deductible categories are a research gap pending Decreto N° 3184/2019 confirmation.
-- NEVER apply an unconfirmed 2026 minimum wage — use the FY2025 figure until the July-2026 adjustment is published.
+- NEVER apply a minimum wage from the wrong side of 1 July. The floor changes mid-year, not on 1 January: PYG 3,044,000 from 1 Jul 2026 (Decreto N° 6225; MTESS Res. 670/2026), PYG 2,899,048 from 1 Jul 2025 to 30 Jun 2026.
 - NEVER present payroll computations as definitive — label them estimated and direct the user to a licensed Paraguayan accountant.
 
 ## Disclaimer

@@ -165,7 +165,30 @@ Headline rates and thresholds are **unchanged** from 2025-26 -- the freeze conti
 
 #### Scottish Bands 2026-27
 
-**TBC -- Scottish Budget 2025-26 not yet enacted at time of writing.** The Scottish Government typically announces rates in December for the following April. Verify against the Scottish Rate Resolution before finalising any 2026-27 computation. Until then, apply 2025-26 bands as a working estimate and flag for reviewer.
+Set at the Scottish Budget delivered on 13 January 2026. The six rates are
+unchanged; the starter and basic band limits rose 7.4% and the higher, advanced
+and top thresholds are frozen.
+
+| Band | Taxable income (after personal allowance) | Rate |
+| --- | --- | --- |
+| Starter rate | GBP 12,571 -- 16,537 | 19% |
+| Basic rate | GBP 16,538 -- 29,526 | 20% |
+| Intermediate rate | GBP 29,527 -- 43,662 | 21% |
+| Higher rate | GBP 43,663 -- 75,000 | 42% |
+| Advanced rate | GBP 75,001 -- 125,140 | 45% |
+| Top rate | Over GBP 125,140 | 48% |
+
+The combination is worth stating because it is counter-intuitive: widening the
+two lowest bands while freezing the higher-rate threshold **reduces** tax for a
+Scottish taxpayer at GBP 50,000 by GBP 31.75 against 2025-26, even though no
+rate fell. Section 4's worked example carries that through.
+
+This block previously read "TBC -- Scottish Budget 2025-26 not yet enacted at
+time of writing ... apply 2025-26 bands as a working estimate". The Budget was
+delivered on 13 January 2026 and the placeholder outlived it, while the worked
+example further down had already been updated to the real thresholds. Reference
+table stale, example current -- the reverse of the usual direction, and a
+reminder to fix both halves.  _(gov.scot, "Scottish Income Tax 2026 to 2027: technical factsheet"; Scottish Rate Resolution)_
 
 ### 1.5 Changes from April 2026 -- Autumn Budget 2025 [T1]
 
@@ -198,10 +221,10 @@ The Autumn Budget 2025 changes take effect in two stages. **Dividends** rise fro
 | PA taper threshold | GBP 100,000 | GBP 100,000 | GBP 100,000 |
 | PA fully withdrawn | GBP 125,140 | GBP 125,140 | GBP 125,140 |
 | Basic rate band | GBP 37,700 | GBP 37,700 | GBP 37,700 |
-| Personal savings allowance (basic rate) | GBP 1,000 | GBP 1,000 | GBP 1,000 (TBC -- verify Finance Bill 2026) |
-| Personal savings allowance (higher rate) | GBP 500 | GBP 500 | GBP 500 (TBC -- verify Finance Bill 2026) |
+| Personal savings allowance (basic rate) | GBP 1,000 | GBP 1,000 | GBP 1,000 |
+| Personal savings allowance (higher rate) | GBP 500 | GBP 500 | GBP 500 |
 | Personal savings allowance (additional rate) | GBP 0 | GBP 0 | GBP 0 |
-| Starting rate for savings band | GBP 5,000 | GBP 5,000 | GBP 5,000 (TBC) |
+| Starting rate for savings band | GBP 5,000 | GBP 5,000 | GBP 5,000 |
 | Dividend allowance | GBP 500 | GBP 500 | GBP 500 |
 | Marriage allowance transfer | GBP 1,260 (reducer GBP 252) | GBP 1,260 (reducer GBP 252) | GBP 1,260 (reducer GBP 252) |
 | Annual pension allowance | GBP 60,000 | GBP 60,000 | GBP 60,000 |

@@ -396,7 +396,7 @@ Employer 16.5% breakdown: **14% to IPS proper + 2.5%** earmarked for public-heal
 | Field | Value |
 | --- | --- |
 | Monthly minimum wage (diurnal, general activities) | ₲ 3.044.000 (from 1 Jul 2026, +5%, Decreto N° 6225 / MTESS Resolución N° 670/2026); ₲ 2.899.048 (from 1 Jul 2025, +3,6%, MTESS Resolución N° 677/2025) |
-| Daily jornal | ₲ 111.502 |
+| Daily jornal | ₲ 117.077 from 1 Jul 2026; ₲ 111.502 from 1 Jul 2025 to 30 Jun 2026 |
 | Part-time diurnal hour | ₲ 13.937 |
 
 **[RESEARCH GAP — reviewer to confirm]** A new tripartite minimum-wage adjustment was reportedly under discussion for ~mid-2026; verify the current figure before reliance.

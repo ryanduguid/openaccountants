@@ -121,7 +121,7 @@ The headline rate is a flat 12%; the reduced rates are item-specific exceptions.
 | Unknown filing unit (individual vs núcleo familiar) | Individual (Formulario 1102) |
 | Unknown residency | STOP -- do not apply resident scale without confirming tax residency |
 | Unknown income category | STOP -- Category I (capital) and Category II (labour) use different scales |
-| Unknown deduction-credit rate (8% vs 10%) | 8% (higher-income default; less favourable to taxpayer) |
+| Unknown deduction-credit rate (14% vs 8%) | 8% (higher-income default; less favourable to taxpayer) |
 | Unknown dependent-child status | 0 children (no fictitious child deduction) |
 | Unknown self-employment regime | IRPF general (servicios personales), NOT monotributo |
 | Unknown business-use % (vehicle, phone, home) | 0% |
@@ -313,7 +313,7 @@ The ceiling is not a BPC multiple — BPS sets it separately and it rose 5.97% f
 > **Corrected: the low-income deduction rate is 14%, not 10%.** Earlier versions of this file put the lower rate at 10%, against 14% in `uruguay-payroll` and `uruguay-social-contributions`, which cite the BPS comunicado. Outside sources give 14% and 8%, and the source this file cited as corroboration (etti.edu.uy) itself says "8% o 14%". A 10% rate understates the credit by four points of the deduction sum and so overstates the tax.
 - **15 BPC/month equivalent threshold** — UYU 102,960/month in 2026 (at BPC 6,864) and UYU 98,640/month in 2025 (at BPC 6,576) UYU  _(certificadodeingresos.uy (unipersonal guide 2025); corroborated by etti.edu.uy.)_
 
-[RESEARCH GAP — reviewer to confirm the 8%/10% threshold and the exact annual mechanic against DGI; some 2025 payroll guides phrase the monthly mechanic as 14%/8%.]
+The rates are **14%** at or below 15 BPC/month (180 BPC a year, excluding aguinaldo and salario vacacional) and **8%** above it, consistent with `uruguay-payroll` and `uruguay-social-contributions`. [RESEARCH GAP — reviewer to confirm the exact annual mechanic against DGI; the rates themselves are settled.]
 
 ### 5.4 Deductible Items (for the credit)
 
@@ -354,7 +354,7 @@ Peso conversions for 2026 are 13 BPC × 6,864 = 89,232 and 26 BPC × 6,864 = 178
 | --- | --- |
 | Forms | Formulario 1102 (individual); Formulario 1103 (núcleo familiar) |
 | Filing window (FY2025 / 2026) | 29 June -- 31 August 2026, unstaggered (FY2024 / 2025 ran 7 July -- 28 August 2025, staggered by RUT/CI ending) |
-| Balance payment | Up to 5 equal monthly instalments; 1st on 29 Aug 2025, 5th by 30 Dec 2025 |
+| Balance payment | Up to 5 equal monthly instalments. The FY2024 campaign ran the 1st on 29 Aug 2025 and the 5th by 30 Dec 2025; DGI sets the equivalent dates for each campaign, so read the FY2025 instalment dates off the 2026 vencimientos calendar rather than carrying these forward. [RESEARCH GAP — reviewer to confirm the FY2025 instalment dates against DGI's 2026 calendar.] |
 | Pure-wage single-employer earners | Generally NOT required to file -- employer withholds; automatic devolution |
 
 ### 5.8 Penalties (DGI)
@@ -378,7 +378,7 @@ Peso conversions for 2026 are 13 BPC × 6,864 = 89,232 and 26 BPC × 6,864 = 178
 - **Conservative default:** individual filing (Formulario 1102) until reviewer models both.
 - **Flag for reviewer:** run both computations and elect the lower total.
 
-### 6.2 Deduction-Credit Rate (8% vs 10%)
+### 6.2 Deduction-Credit Rate (14% vs 8%)
 
 - The rate depends on whether annual labour income exceeds the 15 BPC/month equivalent.
 - **Conservative default:** 8% (less favourable) until income level confirmed.
@@ -439,7 +439,7 @@ D. DEDUCTION CREDIT (Section 5.3)
   D4. 6% of housing rent                           ___________
   D5. Mortgage interest (capped)                   ___________
   D6. SUM of deductions (D1..D5)                   ___________
-  D7. Deduction rate (8% or 10%)                   ___________
+  D7. Deduction rate (14% at or below 15 BPC, else 8%) ___________
   D8. Deduction credit (D6 x D7)                   ___________
 
 E. CATEGORY II TAX DUE (C1 - D8, floored at 0)    ___________
@@ -456,7 +456,7 @@ G. CREDITS
 REVIEWER FLAGS:
   [ ] Tax residency confirmed?
   [ ] Filing unit modelled both ways (1102 vs 1103)?
-  [ ] Deduction rate (8% vs 10%) confirmed?
+  [ ] Deduction rate (14% vs 8%) confirmed against income?
   [ ] FONASA family situation confirmed?
   [ ] Dependent-child deduction confirmed?
   [ ] Category I vs Category II split correct?
@@ -586,7 +586,7 @@ Expected: 7.5% + 5% + 0.10% + 0.025% = 12.625%.
 
 - NEVER apply the resident IRPF scale without confirming tax residency
 - NEVER pool Category I (capital) and Category II (labour) income -- they are taxed separately
-- NEVER subtract deductions from the IRPF base -- deductions feed a credit (sum × 8% or 10%) against gross tax
+- NEVER subtract deductions from the IRPF base -- deductions feed a credit (sum × 14% or 8%) against gross tax
 - NEVER assume the 14% deduction rate -- default to 8% until the income is confirmed to be at or below the 15 BPC/month equivalent
 - NEVER apply a FONASA rate above 3% without confirming income level and family situation
 - NEVER apply monotributo without confirming revenue-cap eligibility

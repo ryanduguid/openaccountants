@@ -60,7 +60,7 @@ The income tax is a flat percentage of **annual turnover** (إجمالي رقم 
 
 - **Default to general income-tax system unless opted in** — Default to the general income-tax system unless the user confirms they have formally applied to and been accepted into the Law 6/2025 regime. The regime is opt-in by request — it is not automatic.  _(Conservative defaults)_
 - **Default to higher band near boundary** — Default to the higher band if turnover is near a band boundary.  _(Conservative defaults)_
-- **Assume VAT registration required** — Assume VAT registration is still required at the standard **EGP 250,000** registration threshold, halved from EGP 500,000 with effect from 1 January 2026 by Resolution No. 281 of 2025 — Law 6/2025 simplifies VAT filing frequency, it does not abolish VAT.  _(Conservative defaults)_
+- **Assume VAT registration required** — Assume VAT registration is still required at the standard **EGP 500,000** registration threshold (VAT Law No. 67 of 2016, as published by ETA) — Law 6/2025 simplifies VAT filing frequency, it does not abolish VAT. Do not use EGP 250,000 here: that figure comes from the e-receipt rollout under ETA Decision No. 281 of 2025 and is not the VAT threshold.  _(Conservative defaults)_
 - **Assume e-invoicing mandatory** — Assume e-invoicing / e-receipt compliance is mandatory to keep the incentives.  _(Conservative defaults)_
 - **Assume 5-year lock-in applies** — Assume the 5-year lock-in applies once enrolled — do not advise the user they can freely exit.  _(Conservative defaults)_
 - **Never compute final liability without sign-off** — Never compute a final liability without a credentialed Egyptian accountant sign-off. This skill is research-verified, not authority-certified.  _(Conservative defaults)_

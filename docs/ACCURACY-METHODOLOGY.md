@@ -72,14 +72,14 @@ paths, so its earlier results did not cover those inputs.
 | Standard VAT / GST rate | 157 of 157 jurisdictions stating one | 6 | Fiji, India, Kazakhstan, Zimbabwe, Malawi, Maldives |
 | Headline corporate rate | ~135 jurisdictions | 3 | Lithuania, Cyprus, Portugal |
 | Annual return filing deadline | 24 jurisdictions | 8 | Italy, Greece, Armenia, Cyprus, Finland, Australia, Norway, Brazil |
-| VAT/GST registration threshold | 20 jurisdictions | 3 | Egypt, Albania, France |
-| Withholding rate on dividends, interest, royalties | 10 of the 118 stating one | 4 | Ethiopia, Iceland, Trinidad and Tobago, Belize |
+| VAT/GST registration threshold | 20 jurisdictions | 2 | Albania, France. Egypt was **not** an error — see "Three corrections that were the opposite of corrections" |
+| Withholding rate on dividends, interest, royalties | 10 of the 118 stating one | 3 | Ethiopia, Trinidad and Tobago, Belize. Iceland was **not** an error — see "Three corrections that were the opposite of corrections" |
 | Payroll and social contribution rates | Morocco, Egypt | 0 | — |
 | Personal income tax bands and exemptions | Egypt | 0 | — |
 | Micro-regime threshold and dividend WHT | Romania | 2 | Romania |
 | Minimum wage feeding contribution bases | Albania | 1 | Albania |
 | Social contribution ceilings | Slovakia | 1 | Slovakia |
-| Alternative minimum tax status | Taiwan | 1 | Taiwan |
+| Alternative minimum tax status | Taiwan | 0 | Taiwan — reverted, see "Three corrections that were the opposite of corrections" |
 | Penalty and interest on overdue tax | Cyprus | 0, one conflict recorded | — |
 | Minimum corporate tax bands | Slovakia | 1 | Slovakia |
 | Statutory citations | Pakistan, Ireland (partial) | 0, one unverified | — |
@@ -102,7 +102,7 @@ interest, social-contribution bands, capital allowances, withholding rates,
 form names or statutory citations. Earlier individual corrections do not
 establish that every guide covering those topics has been checked.
 
-To put a number on it: the deadline pass has covered 24 jurisdictions of 200,
+To put a number on it: the deadline pass has covered 24 of the 201 jurisdictions that state a deadline,
 and the fields just listed move on the same annual cycle as the ones in the
 table above.
 
@@ -237,6 +237,59 @@ line now says to recompute from MCI rather than carry the tenge forward.
 The minimum wage in the same law did not move, staying at KZT 85,000 for both
 years, which is worth stating beside the MCI so a reader does not assume
 everything indexes together.
+
+### Three corrections that were the opposite of corrections
+
+A code review on the pull request read the diff against outside sources and
+found that three of the changes on this branch had made a correct guide wrong.
+All three failed the same way, and it is the way this document already warns
+about: I took a secondary source over the authority, on a field where the
+authority is one page away.
+
+**Egypt.** The guide said the VAT registration threshold is EGP 500,000 and
+hedged it. Advisory write-ups say in chorus that "Resolution No. 281 of 2025
+halved the threshold from EGP 500,000 to EGP 250,000", so I changed it, removed
+the hedge, and added a prohibition reading "Do NOT state the VAT threshold as
+EGP 500,000." ETA's own VAT page says: the mandatory registration threshold is
+500 thousand pounds. Decision No. 281 is the second sub-phase of the eighth main
+phase of the **e-receipt** rollout, obliging the taxpayers on its attached list
+to issue B2C electronic receipts from 15 September 2025. The EGP 250,000 in
+those write-ups is an e-invoicing enrolment criterion that has been repeated
+until it reads like a VAT threshold. So the guide was right, I overwrote it, and
+the prohibition I wrote pointed the reader away from the correct figure.
+
+**Iceland.** The guide gave 12% on interest to non-residents and noted that PwC
+publishes 13%. I resolved that by deducting at 13%, on this document's own rule
+of taking the higher-tax position where a rate is unsettled. Skatturinn states:
+"interest income tax rate is 12% except for 2024, then it is 13%." The rate was
+never unsettled. It was dated, PwC's page had not caught up, and the
+higher-tax rule is for genuine disputes rather than for a stale secondary source.
+Applying a conservative default to a question that has an answer is not caution.
+
+**Taiwan.** The guide called the 15% enterprise Income Basic Tax rate for large
+MNE groups "proposed". I changed it to "in force since 1 January 2025 — not a
+proposal". PwC, which the guide cites, says "currently there are draft
+proposals"; Taiwan's Ministry of Finance calls it a draft amendment. The
+complication is real — the Executive Yuan can set the IBT rate within statutory
+limits without a Legislative Yuan amendment, so "announced and effective" and
+"still a draft" can both be said honestly — but that is an argument for the
+Fiji treatment, naming both positions and which way to err, not for asserting
+one of them.
+
+The pattern across all three: each began as a hedged line, and a hedged line is
+where this branch has found most of its real errors. That made me quick to
+resolve one, and resolving a hedge in the wrong direction is worse than leaving
+it, because the hedge told the reader to check and the resolution tells them not
+to. The rule that would have caught all three is already in `scripts/
+list-withholding-rates.py`: read the guide, and read what it cites, before you
+change a number. I wrote that after nearly breaking Barbados. Then I broke
+Egypt.
+
+Worth recording the mechanism as well as the lesson. All three survived my own
+verification because I checked them the way I had found errors — search, read
+the consensus of secondary sources, act — rather than the way the corpus is
+supposed to be checked, which is to open the authority's page. Consensus among
+advisory write-ups is not corroboration; they copy each other.
 
 ### Three ways the Bolivia and Uruguay pass nearly went wrong
 
