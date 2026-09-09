@@ -61,9 +61,14 @@ try:
 except (AttributeError, ValueError):
     pass
 
+# "confirm" is an instruction and "confirmed" is its resolution, and a pattern
+# that matches both counts every settled line as still open. Resolving a hedge
+# by writing "— Confirmed" left it in the queue, which inflated the count and
+# would have had the next reader re-check work already done.
 HEDGE = re.compile(r'\(\(?\s*approx[^)]*\)|verify current value|confirm current|'
                    r'position uncertain|not verified against a primary source|'
-                   r'sources conflict|sources vary|--\s*confirm|— confirm', re.I)
+                   r'sources conflict|sources vary|--\s*confirm(?!ed)\b|'
+                   r'—\s*confirm(?!ed)\b', re.I)
 # A figure a reader would act on: a rate, or an amount with thousands separators.
 FIGURE = re.compile(r'\d{1,3}(?:\.\d+)?\s?%|\b\d{1,3}(?:[,\.]\d{3})+\b')
 # Where this corpus states facts, as opposed to explaining them.
@@ -98,6 +103,11 @@ def selftest():
     ]
     for line, label in hits:
         assert hedged_in(line) == label, 'read %r from: %s' % (hedged_in(line), line[:60])
+    # a resolved hedge is not a hedge: "confirmed" is the opposite of "confirm"
+    assert hedged_in('- **Tax loss carryforward** — Confirmed. Losses carry forward for 5 years '
+                     'and no more than 20% may be deducted in any one year.') is None
+    assert hedged_in('- **Tax loss carryforward** — 20% per year — confirm annual cap '
+                     'mechanics') is not None, 'an unresolved hedge still counts'
     # a hedge with no figure is a maintainer's note, not a claim to verify
     assert hedged_in('- **Filing portal** — Use the online service (approx — confirm the URL)') is None
     # a figure with no hedge is not this list's business

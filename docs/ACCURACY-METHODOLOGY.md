@@ -80,6 +80,8 @@ jurisdiction at a time. This section records how far that has got.
 | Penalty rates | Russia | 0 | — |
 | Medicare levy surcharge thresholds | Australia | 1 | Australia |
 | Late payment interest | UK | 0, restated | — |
+| High-income surcharge | Pakistan | 0, self-contradiction fixed | — |
+| Loss carryforward caps | Dominican Republic | 0 | — |
 
 The deadline pass has covered 24 jurisdictions of 200. Nobody has run an external
 pass over anything else. That leaves payroll rates and thresholds, registration
