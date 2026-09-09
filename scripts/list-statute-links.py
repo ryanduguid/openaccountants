@@ -37,9 +37,16 @@ _mix = importlib.util.module_from_spec(_spec)
 _spec.loader.exec_module(_mix)
 
 LINK = re.compile(r'\[([^\]]{4,160})\]\((https?://[^)\s]+)\)')
-# An instrument, in the languages this corpus cites in.
+# An instrument, in the languages and legal systems this corpus cites in.
+# Ethiopia and Eritrea legislate by Proclamation and nothing else, so leaving
+# the word out hid 21 links -- every statutory citation those two guides make.
+# Measured and left out: Order (25 anchors, 0 hits), Rules, Bill, Statute,
+# Constitution, Notification, Circular. Each is either ambiguous in English or
+# absent from the corpus; add one when a guide actually cites it.
 STATUTE = re.compile(r'\b(?:Act|Code|Law|Ordinance|Decree|Uniform Act|Loi|'
-                     r'C[oó]digo|Codice|Gesetz|Ley|Decreto)\b')
+                     r'C[oó]digo|Codice|Gesetz|Ley|Lei|Legge|Decreto|'
+                     r'Proclamation|Regulations?|Reglamento|Resolution|'
+                     r'Statutory Instrument|S\.I\. No)\b')
 HOST = re.compile(r'https?://([^/\s)\]>"]+)')
 
 # Publishers whose pages a reader can recognise as commentary. Landing on one of
@@ -57,7 +64,7 @@ def misleading(line):
     for m in LINK.finditer(line):
         anchor, url = m.group(1), m.group(2)
         if not STATUTE.search(anchor):
-            return out or []
+            continue  # not `return`: a later link on the same line still counts
         host = HOST.match(url).group(1)
         if _mix.classify(host) != 'secondary' or PUBLISHER.search(host):
             continue
@@ -81,7 +88,13 @@ def selftest():
 
     # a link that names no instrument is out of scope however odd its target
     assert not misleading('See the [country guide](https://www.rivermate.com/benin)')
-    print('selftest: 6 cases pass')
+
+    # a trap behind an ordinary link on the same line. 39 lines in the corpus
+    # put a plain link first; scanning must not stop at the first non-statute.
+    got = misleading('See the [country guide](https://www.rivermate.com/benin) and '
+                     '[Code Général des Impôts](https://www.rivermate.com/guides/benin)')
+    assert got and got[0][1] == 'www.rivermate.com', got
+    print('selftest: 7 cases pass')
 
 
 def main(only=None):

@@ -359,12 +359,11 @@ anchor text describes the law and the destination is something else entirely.
 
 Most of the time that is harmless: a reader who clicks `[Income Tax Act]` and
 lands on PwC can see immediately what they are looking at. The checker leaves
-those alone. What it reports is the sharp end — **358 links across 51
-jurisdictions** where the destination was neither a tax authority nor a
-recognised tax publisher. `[Code Général des Impôts (Bénin) — IRPP barème]`
-went to an HR platform's country page. `[OHADA Uniform Act on Commercial
-Companies]` went to a corporate-services firm. `[Civil Code of Curaçao, Book 2]`
-went to a law firm's marketing site.
+those alone. What it reports is the sharp end — links where the destination was
+neither a tax authority nor a recognised tax publisher. `[Code Général des
+Impôts (Bénin) — IRPP barème]` went to an HR platform's country page. `[OHADA
+Uniform Act on Commercial Companies]` went to a corporate-services firm.
+`[Civil Code of Curaçao, Book 2]` went to a law firm's marketing site.
 
 The figures beside them may be perfectly correct. The citation is still telling
 the reader something untrue about where it came from, and — like Portugal's
@@ -375,8 +374,40 @@ The fix is presentational and safe: move the instrument name out of the anchor
 so the link says where it goes. `[Code Général des Impôts (Bénin)](rivermate)`
 becomes `Code Général des Impôts (Bénin) (as described at [rivermate.com](…))`.
 Nothing about the tax changes; the reader stops being told they are clicking
-through to a statute. Three jurisdictions were converted this way as a worked
-example, taking the count to 280.
+through to a statute. Run `python3 scripts/list-statute-links.py` for the
+current count; it was 305 across 53 jurisdictions when the queue opened.
+
+**Two blind spots in that checker, found by testing it rather than reading it.**
+Both were false negatives, which is the kind that survives — a checker that
+under-reports looks clean.
+
+The first was a one-word slip: on a line with several links, `return` where
+`continue` belonged, so scanning stopped at the first link that did not name an
+instrument. Thirty-nine lines in the corpus start with a plain link, and every
+statute link after one was invisible. It happened to change no count on today's
+corpus, which is exactly why it would have lasted.
+
+The second was worse, because it was a gap in what the checker knew rather than
+a slip in how it looped. The instrument vocabulary was `Act|Code|Law|Ordinance|
+Decree|Loi|Código|Ley|…` — the words a common-law and francophone reader
+reaches for. Ethiopia and Eritrea legislate by **Proclamation** and by nothing
+else. Every statutory citation in both guides was therefore out of scope, and
+Eritrea alone accounted for 18 of them, all pointing at commercial tax-data
+sites. A vocabulary drawn from the legal systems you already know will silently
+exempt the ones you do not. Adding `Proclamation`, `Regulation`, `Lei`, `Legge`
+and `Resolution` found 27 more. `Order`, `Rules`, `Bill`, `Statute`,
+`Constitution`, `Notification` and `Circular` were measured too and left out —
+each is either ambiguous in English or absent from the corpus.
+
+**And one false positive, which is the kind that gets caught.** The British
+Virgin Islands' two `[National Health Insurance Regulations]` links go to
+`vinhi.vg`, which the checker called a marketing site. It is the scheme itself:
+its bulletin of 12 September 2024 sets the US$102,000 ceiling and the 3.75% +
+3.75% split the guide quotes, over its own contact details. Same class as
+NCCPL, FRCS and BURS — the body that computes and collects the charge,
+publishing the table it collects under. BVI's two best citations were about to
+be filed as defects. `vinhi.vg` is now a recognised authority in
+`list-source-mix.py`, which also lifts BVI out of the zero-authority list.
 
 ### Three ways a guide comes to name three heads, and what each costs to fix
 

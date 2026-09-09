@@ -79,6 +79,9 @@ NON_GOV_AUTHORITY = frozenset((
     'myfnpf.com.fj', 'nis.org.gy', 'epf.lk', 'etfb.lk', 'vnpf.com.vu',
     'nppf.org.bt', 'sshfc.gm', 'nassit.org.sl', 'ssnit.org.gh', 'npf.ws',
     'bipa.na', 'cleiss.fr',
+    'vinhi.vg',           # BVI National Health Insurance: its own bulletin of
+                          # 12 Sep 2024 sets the ceiling the guide cites
+                          # (US$102,000 a year, 3.75% + 3.75%).
     # Central banks, cited for official conversion rates
     'ecb.europa.eu', 'bnr.rw', 'bnb.bg', 'bnro.ro', 'bportugal.pt',
     # Legislatures, cited for the statute itself

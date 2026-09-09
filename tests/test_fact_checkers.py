@@ -187,6 +187,49 @@ class FactCheckerTests(unittest.TestCase):
         self.assertIn("across 1 jurisdictions", output)
         self.assertIn("move the instrument name out of the anchor text", output)
 
+    def test_statute_links_see_past_a_plain_link_on_the_same_line(self):
+        # The checker once stopped scanning a line at the first link that named
+        # no instrument. 39 lines in the corpus open with a plain link, so every
+        # statute link behind one was invisible — a false negative, which is the
+        # kind that survives because the checker keeps looking clean.
+        output = self.run_checker("list-statute-links.py", {
+            "behind/cit.md": (
+                "- See the [country guide](https://www.rivermate.com/benin) and "
+                "_([Code Général des Impôts](https://www.rivermate.com/guides/benin))_\n"
+            ),
+        })
+        self.assertRegex(output, r"behind\s+1")
+
+    def test_statute_links_know_instruments_outside_common_law(self):
+        # Ethiopia and Eritrea legislate by Proclamation and nothing else. A
+        # vocabulary of Act/Code/Law/Decree silently exempts them: 18 of
+        # Eritrea's citations were out of scope for no reason but wording.
+        output = self.run_checker("list-statute-links.py", {
+            "horn/cit.md": (
+                "- **Rate** - 30% _([Income Tax Proclamation No. 24/2011]"
+                "(https://taxatlas.io/country/eritrea))_\n"
+            ),
+            "lusophone/cit.md": (
+                "- **Rate** - 25% _([Lei das Contribuições](https://remotepeople.com/x))_\n"
+            ),
+        })
+        self.assertRegex(output, r"horn\s+1")
+        self.assertRegex(output, r"lusophone\s+1")
+
+    def test_a_scheme_publishing_its_own_ceiling_is_an_authority(self):
+        # vinhi.vg is the BVI National Health Insurance scheme, not a marketing
+        # site: its own bulletin sets the ceiling the guide quotes. Same class
+        # as NCCPL and FRCS — the body that collects the charge, publishing the
+        # table it collects under. Reporting it would condemn a good citation.
+        output = self.run_checker("list-statute-links.py", {
+            "vg/social.md": (
+                "- **NHI ceiling** - US$102,000 _([National Health Insurance "
+                "Regulations](https://www.vinhi.vg/nhi-contribution-breakdown/))_\n"
+            ),
+        })
+        self.assertNotRegex(output, r"\bvg\b")
+        self.assertIn("across 0 jurisdictions", output)
+
     def test_solo_citations_rank_uncorroborated_instruments(self):
         # "lonely" leans on one instrument nobody else cites; "shared" cites an
         # instrument that appears in a second guide, so it is corroborated
