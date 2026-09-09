@@ -29,7 +29,7 @@ metadata:
 | Anti-avoidance | GAAR (s 245 ITA); TOSI (s 120.4) |
 | Tax authority | Canada Revenue Agency (CRA) |
 | Filing deadline | 30 April (employees); 15 June (self-employed, but tax owing still due 30 April) |
-| Individual top federal rate | 33% (on income >$253,414) |
+| Individual top federal rate | 33% (on income >$258,482) |
 | Combined top rate (varies by province) | ~50–54% |
 | CCPC small business rate (federal) | 9% on first $500,000 active business income |
 | General corporate rate (federal) | 15% |
@@ -44,7 +44,7 @@ metadata:
 | 57,376 – 114,750 | 20.5% |
 | 114,751 – 158,468 | 26% |
 | 158,469 – 220,000 | 29% |
-| 220,001 – 253,414 | 33% |
+| 220,001 – 258,482 | 33% |
 
 Note: The lowest bracket rate was reduced to 14% (from 15%) effective 2026 via Bill C-4.
 
