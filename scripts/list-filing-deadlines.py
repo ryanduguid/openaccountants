@@ -152,7 +152,26 @@ None of the four uses the wording this script looks for, so all four were
 invisible to it before and two of them are invisible still. A jurisdiction
 missing from the column is a question, not a pass.
 
-Still open: 200 jurisdictions state a deadline and 24 have been checked.
+All 30 jurisdictions the column omitted were then read, because a missing
+figure passes every check in scripts/ and that made the omissions worth more
+than the rows. The result bounds the worry rather than confirming it.
+
+Only ONE was genuinely silent: South Africa, now fixed. Vanuatu is silent on
+purpose and says so, because individuals there file no annual income tax
+return. The other 28 all state a deadline in wording this reader cannot
+represent, and nearly all of it is the same thing: a deadline that is not one
+date. Ecuador staggers by the ninth digit of the RUC, Colombia by the NIT,
+Uruguay by the RUT, Hong Kong runs a month from the date the BIR60 is issued,
+and Russia, Israel, China and Portugal each state theirs plainly under a label
+this script does not look for.
+
+So the corpus covers this field far better than the column suggests, and the
+gap between 201 rows and 189 international jurisdictions plus states is mostly
+this script's vocabulary. Do not read an absent jurisdiction as an absent
+deadline. Read it as a question, which is how Brazil, France and South Africa
+were found.
+
+Still open: 201 jurisdictions state a deadline and 24 have been checked.
 
 Usage: python3 scripts/list-filing-deadlines.py [--selftest]
 """
@@ -173,8 +192,13 @@ LABEL = re.compile(
 DATE = re.compile(r'\b(\d{1,2})\s+(%s)\b|\b(%s)\s+(\d{1,2})\b' % (MONTH, MONTH))
 
 # A deadline expressed as a rule off the year-end rather than a calendar date.
-RULE = re.compile(r'\b(\d{1,2})(?:st|nd|rd|th)?\s+(day|month|days|months)\b'
-                  r'[^|\n]{0,60}?\b(year[- ]end|following|after|close)\b', re.I)
+# The count may be spelled out: Libya files "within four months of year-end"
+# and Eritrea, Ghana and Kenya word theirs the same way, so a digits-only
+# pattern reported all of them as stating no deadline at all.
+_COUNT = (r'\d{1,2}|one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve')
+RULE = re.compile(r'\b(%s)(?:st|nd|rd|th)?\s+(day|month|days|months)\b'
+                  r'[^|\n]{0,60}?\b(year[- ]end|following|after|close|balance date)\b'
+                  % _COUNT, re.I)
 
 # A bare deadline label, accepted only inside a file whose slug already says
 # which return it is. Australia writes "| Filing deadline | 31 October 2025
@@ -300,6 +324,10 @@ def selftest():
     # a year-end inside the label is not the deadline
     assert deadline_in('- **CIT return filing deadline (30 June year-end)** - 15 November',
                        'mg-corporate-income-tax') == ('corporate', '15 November')
+    # the count may be spelled out rather than written in digits
+    assert deadline_in('- **Annual return filing deadline** - Within four months of year-end, '
+                       'or within one month of the audit report',
+                       'ly-corporate-income-tax') == ('corporate', 'four months of year-end')
     # the house style also writes the window with a doubled dash
     assert deadline_in('| Filing deadline | 1 April -- 30 September of the following year |',
                        'ad-income-tax') == ('unspecified', '30 September')

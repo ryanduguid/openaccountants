@@ -81,6 +81,15 @@ set annually, and South Africa, whose guide names the ITR12 and never says when
 it is due. The South African case is the one to remember: a missing figure
 passes every check ever written here, because nothing contradicts it.
 
+So all 30 jurisdictions absent from the deadline column were read. Exactly one
+was genuinely silent, and that was South Africa. Vanuatu is silent on purpose,
+since individuals there file no annual return. The other 28 state a deadline
+the script cannot represent, and almost always because the deadline is not a
+single date: Ecuador staggers it by the ninth digit of the RUC, Colombia by the
+NIT, Uruguay by the RUT, and Hong Kong counts a month from the day the return
+is issued. Treat an absence as a question rather than a gap. Asking it found
+Brazil, France and South Africa; answering it thirty times found one hole.
+
 France came from looking at what the column does not contain. Only eight EU
 states appear in it, so the obvious question was whether the rest have no
 threshold or no wording the script recognises. Germany, the Netherlands and
