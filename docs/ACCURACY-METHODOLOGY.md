@@ -63,6 +63,7 @@ jurisdiction at a time. This section records how far that has got.
 | Annual return filing deadline | 24 jurisdictions | 8 | Italy, Greece, Armenia, Cyprus, Finland, Australia, Norway, Brazil |
 | VAT/GST registration threshold | 20 jurisdictions | 3 | Egypt, Albania, France |
 | Withholding rate on dividends, interest, royalties | 10 of the 118 stating one | 4 | Ethiopia, Iceland, Trinidad and Tobago, Belize |
+| Payroll and social contribution rates | Morocco only | 0 | — |
 
 The deadline pass has covered 24 jurisdictions of 200. Nobody has run an external
 pass over anything else. That leaves payroll rates and thresholds, registration
@@ -97,6 +98,26 @@ threshold or no wording the script recognises. Germany, the Netherlands and
 France all state one under their own name for it, and France's was four years
 out of date in fourteen places. A coverage number counts the phrasing a script
 knows, and the gap between that and the field is where this error was sitting.
+
+### The first payroll figures checked outside the repo
+
+Morocco, chosen because the hedge queue is dominated by contribution rates and
+Morocco sits near the top of it. Every figure checked was right.
+
+CNSS totals of 21.09% employer and 6.74% employee match the 2026 rate table, as
+do the MAD 6,000 monthly ceiling on the two prestations sociales branches, AMO
+at 4.11% employer and 2.26% employee, family allowances at 6.40% and the
+vocational training tax at 1.60%, both uncapped. The auto-entrepreneur regime
+checks out too: MAD 500,000 for commercial, industrial and artisanal activity,
+MAD 200,000 for services, 0.5% and 1% of collected turnover, and the rule that
+service income above MAD 80,000 from a single client is withheld at 30% instead.
+
+One thing the check could not settle, recorded rather than smoothed over. The
+guide puts the employee capped branches at 4.48%, and the published component
+breakdown gives 0.33% plus 3.96%, which is 4.29%. The published components do
+not sum to the published employee total either, 6.55% against 6.74%. The same
+0.19% is missing from both, so the guide agrees with the total and disagrees
+with the parts. Its hedge on the component split stays.
 
 ### The best lead in the corpus is the corpus's own doubt
 

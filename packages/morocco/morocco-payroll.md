@@ -38,8 +38,8 @@ This skill replies in the user's language. Moroccan users mix English, French, a
 | Frais professionnels | **35%** if gross ≤ MAD 6,500/month (cap MAD 2,500/mo) — **25%** if > MAD 6,500/month (cap MAD 2,916.67/mo) *(verify monthly thresholds vs annual MAD 78,000)* |
 | Family deduction | **MAD 50/month per dependent**, max **MAD 300/month** (6 dependents) |
 | CNSS ceiling | **MAD 6,000/month** gross for short-term + long-term branches |
-| CNSS + AMO + TFP — employer | **≈ 21.09%** total *(verify)* |
-| CNSS + AMO — employee | **≈ 6.74%** total *(verify)* |
+| CNSS + AMO + TFP — employer | **21.09%** total, confirmed against the CNSS 2026 rate table |
+| CNSS + AMO — employee | **6.74%** total, confirmed against the CNSS 2026 rate table |
 | TFP | **1.60% employer**, uncapped (taxe de formation professionnelle, collected by CNSS) |
 | Declaration — CNSS | **Damancom** (DNS / BDS), filed + paid by the **10th** of the following month |
 | Declaration — IR | **SIMPL-IR** (DGI portal), withheld IR paid by DGI deadline (typically by the end of the following month) *(verify exact date)* |
