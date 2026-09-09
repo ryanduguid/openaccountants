@@ -19,14 +19,26 @@ is a statute abbreviation, not money. Without both filters the output is
 unreadable: an earlier version made Australia's house currency `PCG` and
 Canada's `QTA`.
 
-Only ISO codes are read, so a folder that writes its money as a symbol
-throughout -- `Bs`, `R$`, `KSh`, `₦` -- is invisible here and needs a different
-check. Bolivia was an outlier until its pension cap stopped being quoted in
-US dollars; once the bolivianos went in, the folder no longer had enough
-ISO-coded amounts to have a house currency at all.
+Two passes, because the two notations fail differently. Pass A reads ISO codes
+(`EUR 12,000`); pass B reads symbols and local abbreviations (`€`, `R$`, `KSh`,
+`Bs`), which pass A cannot see at all -- Bolivia dropped out of pass A entirely
+once its pension cap stopped being quoted in US dollars, because everything left
+was written `Bs`.
 
-Run over `skills/` this reports 10 outliers in 314 jurisdictions and, read in
-context, every one is correct as written:
+Pass B needs a word boundary that pass A does not. Without one, Andorra's
+citations of `Llei 5/2014` -- Catalan for *law* -- matched `lei`, the Romanian
+leu, twelve times across four guides and made Andorra look like its money was
+Romanian. An ISO code is three capitals and never hides inside a word; a
+lowercase abbreviation does.
+
+Pass B reports 3 outliers in 258 jurisdictions, all correct as written and all
+one currency written two ways rather than the wrong currency: `india-einvoice`
+writes `Rs` where its folder writes `₹`, `singapore-tax-optimization` writes a
+bare `$` where its folder writes `S$`, and `uk-to-italy-flat-tax-relocation` is
+properly denominated in euro. Notation drift, not error.
+
+Pass A reports 10 outliers in 314 jurisdictions and, read in context, every one
+is correct as written:
 
   * cross-border guides -- `uk-to-uae-relocation-tax` in AED,
     `china-to-singapore-relocation-tax` and `india-to-uae-singapore-nri-tax`
@@ -95,5 +107,55 @@ def main(root):
     print('jurisdictions with a house currency: %d   outliers: %d' % (len(byjur), flags))
     return flags
 
+SYMS = ['R$', 'HK$', 'NT$', 'MOP$', 'A$', 'C$', 'NZ$', 'S$', 'US$', 'Z$', 'J$',
+        'TT$', 'B$', 'N$', 'RD$', 'KSh', 'TSh', 'USh', 'Ksh', 'Rs', 'Rp', 'RM',
+        'Bs', 'zł', 'Kč', 'Ft', 'lei', 'лв', 'грн', 'сум', '€', '£', '¥', '₹', '₽', '₦', '₩',
+        '₪', '₫', '₱', '฿', '₴', '₸', '₾', '₡', '₲', '₵', '₭', '៛', '₮', '₺', '₼', '﷼', '₨', '$']
+# longest-first so R$ beats R and HK$ beats $; the lookbehind keeps an
+# alphabetic abbreviation from matching the tail of a word (Llei -> lei).
+SYMPAT = re.compile('(?<![A-Za-z])(' + '|'.join(re.escape(x) for x in SYMS) + r')\s?\*{0,2}\d')
+
+
+def symbols(path):
+    c = collections.Counter()
+    for m in SYMPAT.finditer(open(path, encoding='utf-8', errors='replace').read()):
+        c[m.group(1)] += 1
+    return c
+
+
+def main_symbols(root):
+    byjur = collections.defaultdict(collections.Counter)
+    files = collections.defaultdict(dict)
+    for dp, _, fns in os.walk(root):
+        for fn in sorted(fns):
+            if not fn.endswith('.md'):
+                continue
+            p = os.path.join(dp, fn)
+            parts = p.split(os.sep)
+            if len(parts) < 3:
+                continue
+            u = symbols(p)
+            if u:
+                files[parts[2]][p] = u
+                byjur[parts[2]].update(u)
+
+    flags = 0
+    for jur in sorted(byjur):
+        modal, mn = byjur[jur].most_common(1)[0]
+        if mn < 8 or len(files[jur]) < 3:
+            continue
+        for p, u in sorted(files[jur].items()):
+            top, tn = u.most_common(1)[0]
+            if top != modal and tn >= 5 and u[modal] == 0:
+                print('%-24s house=%-5s %-60s uses %s x%d' % (jur, modal, p, top, tn))
+                flags += 1
+    print('jurisdictions with a house symbol: %d   outliers: %d' % (len(byjur), flags))
+    return flags
+
+
 if __name__ == '__main__':
-    main(sys.argv[1] if len(sys.argv) > 1 else 'skills')
+    root = sys.argv[1] if len(sys.argv) > 1 else 'skills'
+    print('== A. ISO codes used as units of account')
+    main(root)
+    print('\n== B. symbols and local abbreviations')
+    main_symbols(root)
