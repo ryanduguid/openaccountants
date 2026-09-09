@@ -59,7 +59,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Autoridade fiscal | Autoridade Tributária e Aduaneira (AT) |
 | Prazo de entrega | 1 de Abril – 30 de Junho do ano seguinte (Modelo 3 IRS) |
 | Taxa marginal máxima (pessoas singulares) | 48% + taxa adicional de solidariedade de 5% (acima de €250.000) = até 53% |
-| Taxa de IRC (sociedades) | 21% taxa normal; 17% sobre os primeiros €50.000 para PMEs |
+| Taxa de IRC (sociedades) | 19% taxa normal (2026); 15% sobre os primeiros €50.000 para PMEs |
 | Taxa normal de IVA | 23% (continente); 22% Madeira; 16% Açores |
 | Segurança social (trabalhador independente) | 21,4% sobre a base calculada |
 
@@ -88,7 +88,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 - **Regime simplificado** — rendimentos brutos ≤€200.000. Rendimento tributável = bruto × coeficiente (ex.: 0,75 para serviços profissionais listados no Art 151.º CIRS; 0,35 para outros serviços; 0,15 para venda de bens). Não pode deduzir despesas adicionais para além do coeficiente — é um pacote fechado. Tem de justificar 15% do bruto como despesas profissionais (facturas com NIF).  _(Art 151.º CIRS)_
 - **Contabilidade organizada** — obrigatória se rendimentos brutos >€200.000, opcional abaixo. Deduz despesas profissionais reais. Requer contabilista certificado (CC). Mais vantajosa quando as despesas reais excedem significativamente a dedução implícita no coeficiente.
-- **Sociedade (Sociedade Unipessoal por Quotas, Lda, ou SA)** — IRC a 21% (17% sobre os primeiros €50.000 para PMEs). Lucros distribuídos como dividendos tributados a 28% (taxa liberatória) ou incluídos no IRS por englobamento a taxas progressivas (exclusão de 50% para sócios residentes — tributação por englobamento). Carga administrativa superior.
+- **Sociedade (Sociedade Unipessoal por Quotas, Lda, ou SA)** — IRC a 19% em 2026 (15% sobre os primeiros €50.000 para PMEs). Lucros distribuídos como dividendos tributados a 28% (taxa liberatória) ou incluídos no IRS por englobamento a taxas progressivas (exclusão de 50% para sócios residentes — tributação por englobamento). Carga administrativa superior.
 - **Regra de decisão (quadro de comparação de regimes)** — Cat B simplificado: óptimo para freelancers com baixas despesas reais (o coeficiente já implica 25%+ de despesas automaticamente). Cat B organizada: mudar quando as despesas documentadas excedam a margem implícita do coeficiente. Lda (Sociedade): ponderar incorporação quando o lucro consistentemente excede ~€60.000–€80.000, pesando os custos adicionais de contabilidade, derrama, tributações autónomas e formalismos societários.
 
 ### Tributação Conjunta

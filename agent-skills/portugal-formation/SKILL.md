@@ -27,7 +27,7 @@ metadata:
 | Registo comercial | Instituto dos Registos e do Notariado (IRN) / Conservatória do Registo Comercial |
 | Legislação principal | Código das Sociedades Comerciais (CSC); DL 111/2005 (Empresa na Hora) |
 | Tempo típico de constituição | 1 hora (Empresa na Hora) até 2 semanas (tradicional/online) |
-| Taxa de IRC | 21% (taxa geral); 17% sobre os primeiros €50.000 para PME em regiões do interior |
+| Taxa de IRC | 19% (taxa geral, 2026); 15% sobre os primeiros €50.000 para PME |
 | Versão da skill | 1.1 |
 
 ---

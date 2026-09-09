@@ -1,6 +1,6 @@
 ---
 name: pt-corporate-tax
-description: "LER SEMPRE este skill antes de tratar fiscalidade de pessoas coletivas em Portugal. Utilizar sempre que seja pedida assistência com Imposto sobre o Rendimento das Pessoas Coletivas (IRC) para sociedades residentes em Portugal. Ativar com expressões como \"IRC Portugal\", \"Modelo 22\", \"derrama estadual\", \"derrama municipal\", \"tributação autónoma\", \"Imposto sobre o Rendimento das Pessoas Coletivas\", \"SIFIDE II\", \"RFAI\", \"Pilar Dois Portugal\", \"Madeira IBC\", \"SGPS\", \"prejuízos fiscais 12 anos\", \"pagamentos por conta\", \"pagamento especial por conta\", \"PEC\", \"CIRC\", \"AT Autoridade Tributária\", \"IES\", \"preços de transferência Portugal\", \"CFC Portugal\", \"participation exemption Portugal\". Ativar também em inglês: \"Portugal corporate tax\", \"Portugal IRC\", \"Portugal Modelo 22\", \"Portugal Pillar Two top-up\", \"Madeira IBC 5%\", \"Portugal R&D credit\", \"Portugal SGPS participation exemption\". Cobre a taxa nominal de 21% nos termos do art.º 87.º CIRC, a taxa reduzida de 17% para PMEs sobre os primeiros €50.000 de matéria coletável, o regime do Centro Internacional de Negócios da Madeira (CINM/IBC) a 5% até 31 dez 2027, a Derrama Estadual progressiva (1,5%/3%/5%/9%) nos termos do art.º 87.º-A, a Derrama Municipal (0-1,5%), a Tributação Autónoma do art.º 88.º (viaturas, despesas de representação, ajudas de custo, paraísos fiscais), o Modelo 22 e respetivos Anexos (A regime geral, B simplificado, C grupos, D incentivos, E preços de transferência), os Pagamentos por Conta do art.º 105.º CIRC (3 prestações: julho, setembro, dezembro) a 80% da coleta do ano anterior, o Pagamento Especial por Conta (PEC) eliminado para PMEs em 2018 mas mantido para grandes empresas, o reporte de prejuízos fiscais a 12 anos com limitação a 65% da matéria coletável (art.º 52.º CIRC), o crédito SIFIDE II (32,5% + 50% incremental, aprovação ANI), o RFAI (25% / 10% por região), o regime SGPS (participation exemption art.º 51.º e 51.º-C), o Pilar Dois (Lei 27/2024 transpondo a Diretiva UE 2022/2523, MNE > €750M), os preços de transferência (art.º 63.º CIRC, Master/Local File por Portaria 268/2021, CbCR), as CFC do art.º 66.º, as retenções na fonte e o cumprimento do IES até 15 julho. Fora de âmbito: regime simplificado de tributação para microentidades (separado), entidades sem fins lucrativos / IPSS, sector financeiro e segurador (regimes especiais), exploração de petróleo e gás, organismos de investimento coletivo (regime especial), fundos de capital de risco, instituições religiosas. Para IVA ver portugal-vat-return; para IRS dos sócios ver pt-income-tax; para contabilidade e SAF-T ver portugal-bookkeeping."
+description: "LER SEMPRE este skill antes de tratar fiscalidade de pessoas coletivas em Portugal. Utilizar sempre que seja pedida assistência com Imposto sobre o Rendimento das Pessoas Coletivas (IRC) para sociedades residentes em Portugal. Ativar com expressões como \"IRC Portugal\", \"Modelo 22\", \"derrama estadual\", \"derrama municipal\", \"tributação autónoma\", \"Imposto sobre o Rendimento das Pessoas Coletivas\", \"SIFIDE II\", \"RFAI\", \"Pilar Dois Portugal\", \"Madeira IBC\", \"SGPS\", \"prejuízos fiscais 12 anos\", \"pagamentos por conta\", \"pagamento especial por conta\", \"PEC\", \"CIRC\", \"AT Autoridade Tributária\", \"IES\", \"preços de transferência Portugal\", \"CFC Portugal\", \"participation exemption Portugal\". Ativar também em inglês: \"Portugal corporate tax\", \"Portugal IRC\", \"Portugal Modelo 22\", \"Portugal Pillar Two top-up\", \"Madeira IBC 5%\", \"Portugal R&D credit\", \"Portugal SGPS participation exemption\". Cobre a taxa nominal de 19% para períodos iniciados em 2026 nos termos do art.º 87.º CIRC, a taxa reduzida de 15% para PMEs sobre os primeiros €50.000 de matéria coletável, o regime do Centro Internacional de Negócios da Madeira (CINM/IBC) a 5% até 31 dez 2027, a Derrama Estadual progressiva (1,5%/3%/5%/9%) nos termos do art.º 87.º-A, a Derrama Municipal (0-1,5%), a Tributação Autónoma do art.º 88.º (viaturas, despesas de representação, ajudas de custo, paraísos fiscais), o Modelo 22 e respetivos Anexos (A regime geral, B simplificado, C grupos, D incentivos, E preços de transferência), os Pagamentos por Conta do art.º 105.º CIRC (3 prestações: julho, setembro, dezembro) a 80% da coleta do ano anterior, o Pagamento Especial por Conta (PEC) eliminado para PMEs em 2018 mas mantido para grandes empresas, o reporte de prejuízos fiscais a 12 anos com limitação a 65% da matéria coletável (art.º 52.º CIRC), o crédito SIFIDE II (32,5% + 50% incremental, aprovação ANI), o RFAI (25% / 10% por região), o regime SGPS (participation exemption art.º 51.º e 51.º-C), o Pilar Dois (Lei 27/2024 transpondo a Diretiva UE 2022/2523, MNE > €750M), os preços de transferência (art.º 63.º CIRC, Master/Local File por Portaria 268/2021, CbCR), as CFC do art.º 66.º, as retenções na fonte e o cumprimento do IES até 15 julho. Fora de âmbito: regime simplificado de tributação para microentidades (separado), entidades sem fins lucrativos / IPSS, sector financeiro e segurador (regimes especiais), exploração de petróleo e gás, organismos de investimento coletivo (regime especial), fundos de capital de risco, instituições religiosas. Para IVA ver portugal-vat-return; para IRS dos sócios ver pt-income-tax; para contabilidade e SAF-T ver portugal-bookkeeping."
 jurisdiction: PT
 tax_year: 2025
 last_updated: 2026-07-13
@@ -29,8 +29,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Período de tributação | Em regra, coincide com o ano civil (1 jan – 31 dez); art.º 8.º CIRC permite período diferente mediante comunicação à AT |
 | Legislação primária | **Código do IRC (CIRC)** aprovado pelo DL 442-B/88, de 30 de novembro, e alterações subsequentes; **Lei do Orçamento do Estado para 2025** (Lei 45-A/2024) |
 | Legislação complementar | Estatuto dos Benefícios Fiscais (EBF); Código Fiscal do Investimento (CFI, DL 162/2014); Lei 27/2024 (Pilar Dois); Portaria 268/2021 (preços de transferência); Portaria 220/2008 (Modelo 22) |
-| **Taxa IRC standard** | **21%** sobre a matéria coletável (art.º 87.º n.º 1 CIRC) |
-| **Taxa reduzida PMEs** | **17%** sobre os primeiros **€50.000** de matéria coletável; 21% sobre o remanescente (art.º 87.º n.º 2 CIRC, redação OE 2025) |
+| **Taxa IRC standard** | **19%** sobre a matéria coletável para períodos iniciados em 2026 (art.º 87.º n.º 1 CIRC, redação da Lei n.º 64/2025). Historico: 20% em 2025, 21% ate 2024. Desce para 18% em 2027 e 17% em 2028 |
+| **Taxa reduzida PMEs** | **15%** sobre os primeiros **€50.000** de matéria coletável em 2026; 19% sobre o remanescente (art.º 87.º n.º 2 CIRC). Historico: 16% em 2025, 17% ate 2024 |
 | **Madeira IBC (CINM)** | **5%** para entidades licenciadas no Centro Internacional de Negócios da Madeira até **31 dez 2027** (DL 165/86, alterado; aprovação UE Decisão SA.21259) |
 | **Derrama Estadual** | Escalões progressivos sobre lucro tributável: 1,5% (€1,5M – €7,5M), 3% (€7,5M – €35M), 5% (€35M – €200M), 9% (> €200M) — art.º 87.º-A CIRC |
 | **Derrama Municipal** | 0% a **1,5%** sobre lucro tributável, fixada por cada município (Lei 73/2013 – Lei das Finanças Locais). Lisboa e Porto: 1,5%; vários municípios do interior: 0% |
@@ -57,9 +57,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 | Ambiguidade | Default |
 | --- | --- |
-| Estatuto PME desconhecido | Aplicar 21% (não PME) até confirmação dos critérios da Recomendação UE 2003/361/CE |
+| Estatuto PME desconhecido | Aplicar 19% (não PME) até confirmação dos critérios da Recomendação UE 2003/361/CE |
 | Município desconhecido | Aplicar **1,5%** de derrama municipal (taxa máxima) até confirmação |
-| Madeira IBC sem licença confirmada | Aplicar 21% standard; flag para verificação da licença CINM |
+| Madeira IBC sem licença confirmada | Aplicar 19% standard; flag para verificação da licença CINM |
 | Tributação autónoma — viatura sem valor de aquisição claro | Assumir escalão mais alto (35%) |
 | Exercício de prejuízo fiscal | Adicionar **+10 p.p.** a todas as TA (art.º 88.º n.º 14) |
 | SIFIDE — incremental vs base | Confirmar média dos 2 anos anteriores; se incerto, aplicar só 32,5% (sem componente incremental) |
@@ -93,15 +93,15 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Secção 3 — Tier 1 — Taxa nominal IRC, regime PMEs e Madeira IBC
 
-### 3.1 Taxa nominal — 21%
+### 3.1 Taxa nominal — 19% (2026)
 
-- **Taxa de IRC geral** — 21% (taxa geral)
-- **Fórmula IRC standard** — IRC = 21% × Matéria Coletável  _(art.º 87.º n.º 1 CIRC)_
+- **Taxa de IRC geral** — 19% para períodos iniciados em 2026 (20% em 2025; 21% ate 2024)
+- **Fórmula IRC standard** — IRC = 19% × Matéria Coletável (períodos iniciados em 2026)  _(art.º 87.º n.º 1 CIRC)_
 
-### 3.2 Taxa reduzida para PMEs — 17%
+### 3.2 Taxa reduzida para PMEs — 15% (2026)
 
-- **Taxa reduzida PMEs** — 17% percent (sobre os primeiros €50.000 de matéria coletável; excedente a 21%)  _(art.º 87.º n.º 2 CIRC (redação dada pela Lei do OE 2025))_
-- **Fórmula PME** — Se matéria coletável ≤ €50.000: IRC = 17% × MC Se matéria coletável > €50.000: IRC = (17% × €50.000) + (21% × (MC − €50.000)) = €8.500 + 21% × (MC − €50.000)  _(art.º 87.º n.º 2 CIRC)_
+- **Taxa reduzida PMEs** — 15% percent (sobre os primeiros €50.000 de matéria coletável em 2026; excedente a 19%)  _(art.º 87.º n.º 2 CIRC (redação dada pela Lei do OE 2025))_
+- **Fórmula PME** — Se matéria coletável ≤ €50.000: IRC = 15% × MC Se matéria coletável > €50.000: IRC = (15% × €50.000) + (19% × (MC − €50.000)) = €7.500 + 19% × (MC − €50.000)  _(art.º 87.º n.º 2 CIRC)_
 
 O limite do escalão PME foi aumentado para €50.000 (vs €25.000 em anos anteriores). Verificar o texto da LOE 2025 publicada antes de aplicar.
 
@@ -130,7 +130,7 @@ O limite do escalão PME foi aumentado para €50.000 (vs €25.000 em anos ante
 | Plafonds | Tetos sobre matéria coletável beneficiada por nível de emprego |
 
 - **Tributação acima dos plafonds** — Acima dos plafonds aplicáveis, a matéria coletável é tributada à taxa standard (Açores: 14,7%; Madeira fora do CINM: 14,7% para PMEs e 18,9% para outras — verificar Decreto Legislativo Regional aplicável).
-- **Default conservador Madeira IBC** — Aplicar 21% standard até validação da licença CINM válida para o exercício e cumprimento dos requisitos de emprego/investimento.
+- **Default conservador Madeira IBC** — Aplicar 19% standard até validação da licença CINM válida para o exercício e cumprimento dos requisitos de emprego/investimento.
 
 ### 3.4 Regiões Autónomas — taxas regionais
 
@@ -138,7 +138,7 @@ O limite do escalão PME foi aumentado para €50.000 (vs €25.000 em anos ante
 
 | Região | Taxa standard | Taxa PMEs (primeiros €50.000) |
 | --- | --- | --- |
-| Continente | 21% | 17% |
+| Continente | 19% | 15% |
 | **Açores** (DLR específico) | 14,7% | 11,9% (verificar valor exato em DLR vigente) |
 | **Madeira** (fora CINM) | 14,7% | 11,9% (verificar valor exato em DLR vigente) |
 | **Madeira CINM/IBC** | 5% (até 31 dez 2027, com plafonds) | — |
@@ -344,7 +344,7 @@ Exemplo: Matéria coletável antes de dedução = €100.000; prejuízos report�
 | --- | --- |
 | **Participação mínima** | Detenção, direta ou indireta, de **≥10%** do capital social ou dos direitos de voto |
 | **Período de detenção** | **≥1 ano** ininterrupto (a contar até à data da distribuição) ou compromisso de manter pelo período mínimo |
-| **Sujeição da participada a imposto** | A participada está sujeita a IRC, IRS-PE ou imposto análogo a taxa nominal ≥ **60% da taxa IRC portuguesa** (ou seja, ≥12,6% face à taxa 21%); ou outras condições alternativas (art.º 51.º n.º 1 e n.º 6) |
+| **Sujeição da participada a imposto** | A participada está sujeita a IRC, IRS-PE ou imposto análogo a taxa nominal ≥ **60% da taxa IRC portuguesa** (ou seja, ≥11,4% face à taxa de 19% de 2026); ou outras condições alternativas (art.º 51.º n.º 1 e n.º 6) |
 | **Não residência em paraíso fiscal** | A participada não pode residir em jurisdição da lista de regimes fiscais claramente mais favoráveis (Portaria 150/2004 e 309-A/2020) |
 
 ### 12.2 Participation exemption (art.º 51.º-C CIRC) — Mais-valias
@@ -450,7 +450,7 @@ Exemplo: Matéria coletável antes de dedução = €100.000; prejuízos report�
 ### 17.4 Outros benefícios CINM
 
 - **Outros benefícios CINM** — Isenção de retenção sobre pagamento de dividendos a sócios não residentes (com condições). Isenção sobre prestações suplementares dos sócios. Imposto do Selo reduzido em certas operações.
-- **Default conservador Madeira IBC final** — Sem licença CINM válida confirmada, aplicar regime geral (IRC 14,7% Madeira ou 21% Continente, conforme sede). Pedir cópia da licença CINM e relatório de cumprimento de requisitos de emprego/investimento.
+- **Default conservador Madeira IBC final** — Sem licença CINM válida confirmada, aplicar regime geral (IRC 19% Continente em 2026; a taxa regional da Madeira e uma reducao sobre a taxa geral — confirmar o valor em vigor para o exercicio, conforme sede). Pedir cópia da licença CINM e relatório de cumprimento de requisitos de emprego/investimento.
 
 ## Secção 18 — Casos práticos
 
@@ -473,7 +473,7 @@ Exemplo: Matéria coletável antes de dedução = €100.000; prejuízos report�
 
 #### 18.1.2 IRC.
 
-- **IRC** — Pequena empresa — taxa reduzida nos primeiros €50.000. IRC sobre €50.000 a 17%   = €8.500 IRC sobre €80.000 a 21%   = €16.800 ───────────── IRC                       = €25.300
+- **IRC** — Pequena empresa — taxa reduzida nos primeiros €50.000. IRC sobre €50.000 a 15%   = €7.500 IRC sobre €80.000 a 19%   = €15.200 ───────────── IRC                       = €22.700
 
 #### 18.1.3 Derrama Estadual.
 
@@ -489,7 +489,7 @@ Exemplo: Matéria coletável antes de dedução = €100.000; prejuízos report�
 
 #### 18.1.6 Coleta total a pagar.
 
-- **Coleta total a pagar** — IRC                  €25.300 Derrama Estadual          €0 Derrama Municipal     €1.950 TA                    €4.900 ───────────── Total                €32.150
+- **Coleta total a pagar** — IRC                  €22.700 Derrama Estadual          €0 Derrama Municipal     €1.950 TA                    €4.900 ───────────── Total                €29.550
 
 #### 18.1.7 Acerto:
 
@@ -514,7 +514,7 @@ Exemplo: Matéria coletável antes de dedução = €100.000; prejuízos report�
 
 #### 18.2.3 IRC.
 
-- **IRC** — Holding Atlântico cumpre critérios PME (assumido). Matéria coletável €40.000 < €50.000: IRC = 17% × €40.000 = €6.800
+- **IRC** — Holding Atlântico cumpre critérios PME (assumido). Matéria coletável €40.000 < €50.000: IRC = 15% × €40.000 = €6.000
 
 #### 18.2.4 Derrama Estadual / Municipal.
 
@@ -538,7 +538,7 @@ Exemplo: Matéria coletável antes de dedução = €100.000; prejuízos report�
 
 #### 18.3.1 IRC sobre matéria coletável.
 
-- **IRC sobre matéria coletável** — Matéria coletável = Lucro tributável (sem dedução de prejuízos)   €200.000 IRC sobre primeiros €50.000 a 17%                                  €8.500 IRC sobre €150.000 a 21%                                          €31.500 ───────────── IRC bruto                                                         €40.000
+- **IRC sobre matéria coletável** — Matéria coletável = Lucro tributável (sem dedução de prejuízos)   €200.000 IRC sobre primeiros €50.000 a 15%                                  €7.500 IRC sobre €150.000 a 19%                                          €28.500 ───────────── IRC bruto                                                         €36.000
 
 #### 18.3.2 Crédito SIFIDE.
 
@@ -546,7 +546,7 @@ Exemplo: Matéria coletável antes de dedução = €100.000; prejuízos report�
 
 #### 18.3.3 Dedução à coleta.
 
-- **Dedução à coleta** — IRC bruto                                                         €40.000 − Crédito SIFIDE deduzido no exercício (limitado à coleta)      (€40.000) ───────────── IRC líquido                                                            €0 Crédito SIFIDE a reportar (8 anos)                                €43.750
+- **Dedução à coleta** — IRC bruto                                                         €36.000 − Crédito SIFIDE deduzido no exercício (limitado à coleta)      (€36.000) ───────────── IRC líquido                                                            €0 Crédito SIFIDE a reportar (8 anos)                                €47.750
 
 #### 18.3.4 Derrama Estadual:
 
