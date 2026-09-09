@@ -28,7 +28,7 @@ Tier 2 — research-verified. Sources: Administration des contributions directes
 | Currency | EUR |
 | Headline levers | Self-employed vs SARL/SARL-S; third-pillar pension deduction; interest & insurance deductions |
 | Personal income tax | Progressive, 23 brackets, **0%–42%** |
-| Corporate tax (2025) | CIT **14%** (base < €175,000) / **16%** (base > €200,000), plus municipal business tax + solidarity surtax |
+| Corporate tax | CIT **14%** (base < €175,000) / **16%** (base > €200,000), plus a 7% solidarity surcharge on the CIT and municipal business tax (6.75% in Luxembourg City). Aggregate in Luxembourg City: 16% x 1.07 + 6.75% = **23.87%** — quote the aggregate, not the 16%, when comparing against another country's headline rate |
 | SARL allowance | Automatic **€17,500** business allowance |
 | Self-employed pension (CNAP) | **24%** of net income, payable in full by the self-employed person |
 | Anti-avoidance | Substance; reasonable remuneration; ATAD GAAR |
