@@ -10,6 +10,13 @@ Same shape as list-vat-rates.py and list-filing-deadlines.py. This dumps the
 claim so it can be compared against a source outside the repository. It does not
 check anything, and a number here is a claim to verify rather than a defect.
 
+It keys on the phrase "registration threshold", so a jurisdiction that words it
+another way does not appear. Malta is the case to remember: its Article 11
+threshold of EUR 35,000 is in malta-vat-return, written as "the Article 11
+threshold" and never as a registration threshold, so Malta shows nothing here
+while stating the figure twice. The count below is jurisdictions using this
+wording, not jurisdictions with a threshold.
+
 Read the output with two things in mind. A jurisdiction can hold several real
 thresholds at once, and rows that disagree usually show that rather than an
 error: a lower one for services than for goods, a separate figure for
@@ -23,9 +30,25 @@ Usage: python3 scripts/list-registration-thresholds.py [--selftest]
 import os, re, sys, collections
 
 LABEL = re.compile(
-    r'\b(?:VAT|GST|BTW|IVA|TVA|consumption tax|sales tax|turnover)?\s*'
-    r'registration threshold\b|\bVAT threshold\b|\bGST threshold\b'
+    r'\bregistration threshold\b|\bVAT threshold\b|\bGST threshold\b'
     r'|\bthreshold for (?:VAT|GST) registration\b', re.I)
+
+# "Registration threshold" alone is not this field. Guatemala's employer IGSS
+# registration threshold is one worker, cited to "Acuerdo JD 1529", and the
+# column reported Guatemala as registering for VAT at 1,529 Jordanian dinars.
+#
+# Requiring an indirect-tax name on the line was tried and cost eight
+# jurisdictions. China states its threshold inside china-vat.md without
+# repeating the word, and Andorra's is an IGI threshold, IGI being Andorra's
+# VAT under a name this list would never have guessed. Enumerating every
+# country's word for its own indirect tax is a game you lose quietly.
+#
+# So the rule is the other way round: reject a social-security registration,
+# which is the thing that actually misfired, and let the rest through.
+SOCIAL = re.compile(r'\b(IGSS|INSS|IMSS|CNSS|NSSF|NAPSA|NSITF|SSC|PRSI|ZUS|INPS|'
+                    r'AVS|CPF|EPF|SOCSO|GOSI|NIS|social security|social insurance|'
+                    r'social contribution|employer registration|pension fund|'
+                    r'health insurance|workers|employees)\b', re.I)
 
 # The corpus writes money three ways: "ALL 10,000,000", "40,000 EUR", "$75,000".
 # The trailing group catches "NGN 25 million", which without it reads as NGN 25
@@ -101,9 +124,11 @@ def amounts_in(line):
     return uniq
 
 
-def threshold_in(line):
+def threshold_in(line, slug=''):
     """The amounts on a line that states a registration threshold, else None."""
     if not LABEL.search(line):
+        return None
+    if SOCIAL.search(line) or SOCIAL.search(slug.replace('-', ' ')):
         return None
     got = amounts_in(line)
     return got or None
@@ -120,8 +145,15 @@ def selftest():
         ('| GST registration threshold | $75,000 turnover ($150,000 for non-profits) |',
          ['$75,000', '$150,000']),
         ('| Registration threshold (general) | CNY 500,000/year (services); CNY 500,000/year '
-         '(goods) for voluntary registration |', ['CNY 500,000']),
+         '(goods) for voluntary registration |', ['CNY 500,000'], 'china-vat'),
     ]
+    # Malta's SSC registration threshold is a different field too
+    assert threshold_in('- **Registration threshold** - Self-employment income above EUR 910/year '
+                        'triggers SSC registration obligation.', 'malta-ssc') is None
+    # a social-security registration threshold is a different field, and its
+    # citation number is not a sum of money
+    assert threshold_in('- **T1-11 Employer IGSS registration threshold** - Employer IGSS '
+                        'registration threshold = 1 worker since 17 Jan 2023 (Acuerdo JD 1529)') is None
     # an ordinary English word is not a currency code. This is the real Ukraine
     # line, and under re.I it yielded GROUP 3 as a sum of money.
     assert threshold_in('| Key levers | (1) Regime choice - single tax (\u0454\u0434\u0438\u043d\u0438\u0439 '
@@ -137,7 +169,7 @@ def selftest():
         ('- **VAT registration threshold** - N25m taxable turnover in the trailing 12 months, '
          'per NGN 25M under the NTA 2025', ['NGN 25,000,000']),
         ('- **Registration threshold** - LKR 80M/year or LKR 20M/quarter (Mandatory registration)',
-         ['LKR 80,000,000', 'LKR 20,000,000']),
+         ['LKR 80,000,000', 'LKR 20,000,000'], 'sri-lanka-vat'),
         ('| **Phase 3** | Smaller taxpayers above the VAT registration threshold (NGN 25M to '
          'NGN 1B) | **2026** |', ['NGN 25,000,000', 'NGN 1,000,000,000']),
         # a bare M must not swallow the start of the next word
@@ -148,8 +180,10 @@ def selftest():
          'and is unrelated  _(VATA 1994)_', ['NGN 25,000,000']),
     ]
     cases = cases + scaled
-    for line, want in cases:
-        got = threshold_in(line)
+    for case in cases:
+        line, want = case[0], case[1]
+        slug = case[2] if len(case) > 2 else ''
+        got = threshold_in(line, slug)
         assert got == want, 'read %r from: %s' % (got, line[:70])
     # a line about something else is not a threshold, even with money on it
     assert threshold_in('Annual revenue BSD 30,000. Below VAT threshold.') is not None
@@ -170,7 +204,7 @@ def main():
             if not fn.endswith('.md'):
                 continue
             for line in open(os.path.join(dp, fn), encoding='utf-8', errors='replace'):
-                got = threshold_in(line)
+                got = threshold_in(line, fn[:-3])
                 if got:
                     for a in got:
                         out[jur][a] += 1
