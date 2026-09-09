@@ -4,6 +4,42 @@
 
 _Last updated: 2026-06-07 · source: production database (skills served via the MCP server)._
 
+> [!IMPORTANT]
+> **The tables below count the production database, not this checkout.** They are
+> a frozen upstream snapshot and they do not match this tree. Anything counting
+> files here should use the section immediately below, which is derived from
+> `index.json` and can be re-derived at any time.
+
+## This repository (derived from `index.json`)
+
+Regenerate with `python3 scripts/build-index.py`; the `counts` block at the top
+of `index.json` carries the first three rows.
+
+| Measure | This tree |
+|---|---|
+| Guide files indexed | **1,954** |
+| Distinct `jurisdiction` codes | **244** |
+| `tier: 1` (accountant-reviewed) | **171** |
+| `tier: 2` (source-cited draft) | **1,783** |
+| Distinct `reviewed_by` values | **32** (29 people — three are spelled two ways) |
+| Country directories under `skills/international/` | **189** |
+| US jurisdiction codes (`US` + 50 states + DC + `US-NY-NYC`) | **53** |
+| Generated bundles under `packages/` | **256** |
+
+US coverage is complete at state level: all 50 states plus DC are present.
+
+> **Two numbers below are contradicted by this tree, and a maintainer needs to
+> resolve which is right.** The table further down says Tier 1 lives on the
+> "MCP server only (not in this repo)" and counts 85 of them — but this
+> repository contains 171 guides carrying `tier: 1`, a named `reviewed_by` and
+> `review_status: current`, and README.md's "greppable honesty" table says an
+> accountant-reviewed Guide is identified by exactly that frontmatter. Either
+> those 171 are genuinely reviewed and the Tier 1 row is wrong, or they are
+> mislabelled. See also the 98 guides that carry a named `reviewed_by` while
+> marked `tier: 2` — permitted by the enforced contract, but 94 of them also
+> carry `review_status: current`, which means `tier: 1` everywhere else. See
+> [QUALITY-TIERS.md](QUALITY-TIERS.md).
+
 ## Headline (use these)
 
 | Claim | Number |
