@@ -3,7 +3,7 @@ name: pk-corporate-tax
 description: "ALWAYS read this skill before touching any Pakistan corporate income tax (CIT) work. Use this skill whenever asked about Pakistan corporate tax for a resident Pakistani company. Trigger on phrases like \"Pakistan CIT\", \"Pakistan company tax\", \"Pvt Ltd Pakistan\", \"super tax Pakistan\", \"small company Pakistan tax\", \"PSEB IT export\", \"Finance Act 2025 corporate\", \"Section 4C super tax\", \"Section 113 minimum tax\", \"Section 113C ACT\", \"Section 147 advance tax\", \"IRIS return Pakistan\", \"group taxation Pakistan\", \"Section 59AA\", \"Section 59B\". Covers the 29% standard CIT rate under the Income Tax Ordinance 2001 (ITO 2001) as amended by Finance Act 2024 and Finance Act 2025, the 39% banking-company rate, the 20% small-company rate (turnover ≤ Rs 250M plus the other Section 2(59A) conditions), Section 4C super tax progressive bands (1%–10%) on income above Rs 150M, Section 113 minimum tax on turnover at 1.25%, Section 113C Alternative Corporate Tax (higher of normal tax or 17% of accounting income), the PSEB-registered IT/ITeS exports concessional regime (1% final tax — flag any FA 2025 changes as TBC), Section 59AA group relief and Section 59B group taxation, Section 147 quarterly advance tax computation and payment, and annual return filing via IRIS by 31 December. Out of scope: AOPs and individuals (separate regime), permanent establishments / branches of non-residents, oil and gas exploration and production, insurance company life/non-life special regimes, modarabas, NPOs and trusts, the special economic zone (SEZ) regimes, mutual funds, REITs, and any sales tax / FED matter (see pakistan-sales-tax)."
 jurisdiction: PK
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-09
 reviewed_by: Ibrar Ali
 review_status: current
 tier: 1
@@ -467,7 +467,7 @@ Plus applicable super tax under Section 4C (banking-sector specific bands may ap
   - Seventh Schedule — banking (out of scope except 39% rate reference).
   - Second Schedule, Part I — exemptions (incl. IT exports clauses, historical Clause 133).
 - **Finance Act 2024** — amended rates, super tax bands, minimum tax, ACT settings.
-- **Finance Act 2025** — current-year amendments (verify gazetted text; **TBC** where uncertain).
+- **Finance Act 2025 and Finance Act 2026** — Finance Act 2025 was enacted 27 June 2025 with effect from 1 July 2025; **Finance Act 2026 was passed 23 June 2026, gazetted 26 June 2026 and took effect 1 July 2026**, and is the current-year law for TY 2026-27. Every "TBC — verify under Finance Act 2025" marker in this pack was written before either was gazetted, so check both texts before treating one as still open. Among the changes: FA 2026 **abolished** the high-income surcharge on individuals (see `pk-income-tax`).
 
 **Subordinate Legislation**
 
