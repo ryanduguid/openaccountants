@@ -225,11 +225,11 @@ This deduction is taken on **Form 8993** ("Section 250 Deduction for Foreign-Der
 
 ### 3.5 §960(d) GILTI foreign tax credit — IMPORTANT FEATURES
 
-A domestic C-corporation US Shareholder is treated under **§960(d)** as having paid **80%** of the foreign income taxes properly attributable to the GILTI inclusion (the "tested foreign income taxes" of each CFC, multiplied by the inclusion-percentage fraction).
+A domestic C-corporation US Shareholder is treated under **§960(d)** as having paid a fixed percentage of the foreign income taxes properly attributable to the inclusion (the "tested foreign income taxes" of each CFC, multiplied by the inclusion-percentage fraction): **80% for 2018–2025 GILTI**, and **90% for tax years beginning after 31 December 2025**, OBBBA §70321 having cut the §960(d)(1) reduction from 20% to 10%. Everything in this section is written on the 2025 (80%) figure unless it says otherwise; for a 2026 or later year substitute 90%.
 
 Three critical features:
 
-1. **80% haircut.** Only 80% of foreign taxes are creditable, not 100%. This is why even GILTI from a fully-foreign-taxed CFC at, say, 13.125% foreign rate is not perfectly offset — the 20% haircut leaves a residual US tax.
+1. **The haircut.** Not all foreign taxes are creditable — 20% is lost for 2018–2025 GILTI and 10% for post-2025 NCTI. This is why even GILTI from a fully-foreign-taxed CFC at, say, 13.125% foreign rate is not perfectly offset in 2025: the haircut leaves a residual US tax.
 2. **Separate basket.** GILTI sits in its **own §904 limitation basket** (the "GILTI basket"). It cannot be averaged with general-basket or passive-basket income to soak up excess credits there.
 3. **No carryback or carryforward.** Unlike the general and passive baskets (10-year carryforward, 1-year carryback), the GILTI basket has **no carrybacks and no carryforwards**. Excess GILTI FTCs are permanently lost in the year they arise.
 
@@ -239,21 +239,29 @@ The deemed-paid foreign tax is:
 Deemed-paid tax = Inclusion Percentage × Tested Foreign Income Taxes
 where
   Inclusion Percentage = (US Shareholder's GILTI inclusion / Aggregate Tested Income of all CFCs)
-Creditable amount = 80% × Deemed-paid tax  [§960(d)(1)]
+Creditable amount = 80% × Deemed-paid tax  [§960(d)(1), 2018-2025 GILTI]
+                  = 90% × Deemed-paid tax  [§960(d)(1) as amended by OBBBA, post-2025 NCTI]
 ```
 
 The deemed-paid tax is "grossed up" into the GILTI inclusion under **§78** (so the GILTI inclusion that hits Schedule J is the inclusion **plus** the deemed-paid tax, before the deduction and credit).
 
-> **Break-even foreign tax rate to fully offset US tax on GILTI (pre-2026):**  
+> **Break-even foreign tax rate to fully offset US tax on GILTI (2018–2025):**  
 > 21% × (1 − 50%) = 10.5% US tax.  
 > 80% × foreign rate must ≥ 10.5%, so foreign rate must ≥ **13.125%**.  
 > **If a CFC's effective foreign rate is at least 13.125%, US residual GILTI tax is zero** (subject to expense allocation against the GILTI basket — see below).
+>
+> **Break-even on post-2025 NCTI:**  
+> 21% × (1 − 40%) = 12.6% US tax.  
+> 90% × foreign rate must ≥ 12.6%, so foreign rate must ≥ **14%**.  
+> The bar rises even though the haircut shrinks, because the §250 deduction falls further than the haircut does.
+
+**§960(d)(4) — new PTEP disallowance.** OBBBA added §960(d)(4), which denies a credit for **10% of the foreign income taxes paid, accrued or deemed paid on distributions of §951A PTEP made after 28 June 2025**. That date is already past, so it bites on 2025 distributions as well as later ones and is separate from the §960(d)(1) haircut above.
 
 ### 3.6 Expense allocation against the GILTI basket (the trap)
 
 Under §861-§865 rules and Treas. Reg. §1.861-8, US Shareholder expenses (notably interest expense and stewardship/R&D expense) must be **apportioned** between baskets. Some of these expenses get apportioned to the GILTI basket, **reducing** the §904 limitation in that basket.
 
-The trap: a US C-corp parent with substantial debt at the US level may find that significant interest expense is allocated to GILTI, shrinking the GILTI §904 limitation **below** the GILTI inclusion. The deemed-paid foreign taxes are then capped, and because there's **no carryforward**, the unused FTC is gone forever. Net result: a residual US tax on GILTI even when the foreign effective rate well exceeds 13.125%.
+The trap: a US C-corp parent with substantial debt at the US level may find that significant interest expense is allocated to GILTI, shrinking the GILTI §904 limitation **below** the GILTI inclusion. The deemed-paid foreign taxes are then capped, and because there's **no carryforward**, the unused FTC is gone forever. Net result: a residual US tax on GILTI even when the foreign effective rate well exceeds the break-even (13.125% for 2018-2025, 14% for post-2025 NCTI).
 
 Mitigation strategies (each requires its own analysis):
 - §954(b)(4) high-tax exclusion election to exclude the high-taxed tested income from GILTI altogether
@@ -589,7 +597,7 @@ QDMTTs and IIRs went live in many jurisdictions (EU member states, UK, South Kor
 The United States has **not adopted** Pillar Two as domestic law:
 
 - No QDMTT
-- No IIR (the US position is that GILTI is a substitute, but GILTI does not meet the OECD's "qualified IIR" tests in several technical respects — notably the per-jurisdiction blending vs. global blending issue, and the 80% FTC haircut)
+- No IIR (the US position is that GILTI is a substitute, but GILTI does not meet the OECD's "qualified IIR" tests in several technical respects — notably the per-jurisdiction blending vs. global blending issue, and the FTC haircut — 20% pre-2026, 10% after)
 - No UTPR
 - **OBBBA 2025 did not change this.** The administration position (as of mid-2025) is to resist Pillar Two and oppose UTPR application to US groups, including threatening §891 retaliatory measures.
 
@@ -725,7 +733,7 @@ Under §951A(c), tested income is gross tested income less allocable deductions,
 > Inclusion Percentage = $1,254,000 / $1,320,000 = **95.0%**  
 > Tested Foreign Income Tax = $396,000  
 > Deemed-paid tax = 95.0% × $396,000 = **$376,200**  
-> Creditable amount (80% haircut) = 80% × $376,200 = **$300,960**  
+> Creditable amount (80% haircut, 2025 GILTI — 90% for post-2025 NCTI) = 80% × $376,200 = **$300,960**  
 > §78 gross-up adds the **deemed-paid tax** ($376,200) to the GILTI inclusion.
 
 > **GILTI included in TechCo Inc. taxable income** = $1,254,000 + $376,200 = **$1,630,200**
@@ -811,7 +819,7 @@ Under §951A(c), tested income is gross tested income less allocable deductions,
 Under §962, Sarah is taxed on the GILTI inclusion as if she were a domestic C-corp.
 
 - §78 gross-up: Inclusion percentage = $219,259 / $222,222 = 98.67%.  
-  Deemed-paid tax = 98.67% × $37,778 = **$37,275**. Creditable at 80% = **$29,820**.
+  Deemed-paid tax = 98.67% × $37,778 = **$37,275**. Creditable at 80% (2025 GILTI; 90% for post-2025 NCTI) = **$29,820**.
 - Grossed-up GILTI inclusion = $219,259 + $37,275 = **$256,534**.
 - §250 deduction = 50% × $256,534 = **$128,267**.
 - Tax base = $256,534 − $128,267 = **$128,267**.
@@ -1018,7 +1026,7 @@ Per `us-tax-workflow-base` conservative defaults principle:
 |---|---|---|
 | Computing QBAI under MACRS instead of ADS | Overstates QBAI, understates GILTI — IRS exam adjustment | Recompute under ADS straight-line over class life |
 | Treating §250 deduction as available to individuals without §962 election | Wrong return; client owes back-tax + penalties | Verify §962 statement was filed |
-| Forgetting the 20% FTC haircut on GILTI deemed-paid credit | Overstates FTC, understates US tax | Apply 80% factor |
+| Using the wrong §960(d) haircut | Overstates or understates FTC depending on the year | Apply 80% for 2018-2025 GILTI and 90% for post-2025 NCTI |
 | Carrying forward GILTI-basket excess FTC | Wrong — no carryforward allowed | Recognize permanent loss |
 | Claiming FDII without §1.250(b)-3 documentation | FDII disallowed on audit | Build documentation file before filing |
 | Missing a §958(b)(4)-downward-attribution CFC | $10K-50K penalty per missed Form 5471 | Run downward-attribution check for every US sub of a foreign-parented group |
