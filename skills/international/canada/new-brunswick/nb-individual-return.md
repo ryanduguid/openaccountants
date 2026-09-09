@@ -35,10 +35,10 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 | Taxable Income (CAD) | Rate |
 | --- | --- |
-| 0 -- 49,958 | 9.4% |
-| 49,959 -- 99,916 | 14% |
-| 99,917 -- 185,064 | 16% |
-| 185,065+ | 19.5% |
+| 0 -- 51,306 | 9.4% |
+| 51,307 -- 102,614 | 14% |
+| 102,615 -- 190,060 | 16% |
+| 190,061+ | 19.5% |
 
 ### Key New Brunswick Features
 
@@ -47,8 +47,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Feature | Detail |
 | --- | --- |
 | Harmonized sales tax (HST) | 15% (5% federal + 10% provincial) |
-| Basic personal amount (2025) | $13,044 |
-| Spousal/equivalent amount | $13,044 |
+| Basic personal amount (2025) | $13,396 |
+| Spousal/equivalent amount | $13,396 |
 | Age amount | $5,493 |
 | NB Low-Income Tax Reduction | Eliminates provincial tax for income below ~$22,000 (single) |
 | NB Child Tax Benefit | $250/child (income-tested) |
@@ -61,14 +61,14 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 | Taxable Income (CAD) | Combined Rate |
 | --- | --- |
-| 0 -- 49,958 | 24.4% |
-| 49,959 -- 57,375 | 29% |
-| 57,376 -- 99,916 | 34.5% |
-| 99,917 -- 114,750 | 36.5% |
-| 114,751 -- 158,468 | 42% |
-| 158,469 -- 185,064 | 45% |
-| 185,065 -- 220,000 | 48.5% |
-| 220,001+ | 52.5% |
+| 0 -- 51,306 | 23.9% |
+| 51,307 -- 57,375 | 28.5% |
+| 57,376 -- 102,614 | 34.5% |
+| 102,615 -- 114,750 | 36.5% |
+| 114,751 -- 177,882 | 42% |
+| 177,883 -- 190,060 | 45% |
+| 190,061 -- 253,414 | 48.5% |
+| 253,415+ | 52.5% |
 
 ### Conservative Defaults
 
@@ -97,8 +97,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 | Credit | Amount (2025) | Rate |
 | --- | --- | --- |
-| Basic personal amount | $13,044 | 9.4% |
-| Spousal / common-law partner | $13,044 | 9.4% |
+| Basic personal amount | $13,396 | 9.4% |
+| Spousal / common-law partner | $13,396 | 9.4% |
 | CPP/EI contributions | Actual | 9.4% |
 | Age amount | $5,493 | 9.4% |
 | Pension income | Up to $1,000 | 9.4% |
@@ -127,7 +127,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ### Step 2: Apply New Brunswick Bracket Rates
 
-- **Apply New Brunswick Bracket Rates** — First $49,958 × 9.4%; $49,959 to $99,916 × 14%; $99,917 to $185,064 × 16%; Above $185,064 × 19.5%
+- **Apply New Brunswick Bracket Rates** — First $51,306 × 9.4%; $51,307 to $102,614 × 14%; $102,615 to $190,060 × 16%; Above $190,060 × 19.5%
 
 ### Step 3: Subtract Non-Refundable Tax Credits
 
@@ -245,16 +245,16 @@ New Brunswick is Canada's only officially bilingual province. CRA services and a
 | Step | Calculation | Amount |
 | --- | --- | --- |
 | Taxable income |  | $70,000 |
-| NB tax on first $49,958 | $49,958 × 9.4% | $4,696 |
-| NB tax on $49,959 -- $70,000 | $20,042 × 14% | $2,806 |
-| Gross NB provincial tax |  | $7,502 |
-| Less: Basic personal credit | $13,044 × 9.4% | ($1,226) |
-| Less: CPP credit | ~$3,867 × 9.4% | ($364) |
-| Less: EI credit | ~$1,049 × 9.4% | ($99) |
-| Net NB provincial tax |  | $5,813 |
-| Federal tax (for reference) |  | $10,252 |
-| Total combined tax (approx.) |  | $16,065 |
-| Effective combined rate |  | ~22.9% |
+| NB tax on first $51,306 | $51,306 × 9.4% | $4,823 |
+| NB tax on $51,307 -- $70,000 | $18,694 × 14% | $2,617 |
+| Gross NB provincial tax |  | $7,440 |
+| Less: Basic personal credit | $13,396 × 9.4% | ($1,259) |
+| Less: CPP credit | $3,957 × 9.4% | ($372) |
+| Less: EI credit | $1,077 × 9.4% | ($101) |
+| Net NB provincial tax |  | $5,707 |
+| Federal tax (14.5% / 20.5%, net of the same three credits at 14.5%) |  | $7,839 |
+| Total combined tax (approx.) |  | $13,546 |
+| Effective combined rate |  | ~19.4% |
 
 ## Section 6 -- Prohibitions
 

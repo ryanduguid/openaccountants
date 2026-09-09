@@ -35,9 +35,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 | Taxable Income (CAD) | Rate |
 | --- | --- |
-| 0 -- 52,057 | 10.5% |
-| 52,058 -- 148,734 | 12.5% |
-| 148,735+ | 14.5% |
+| 0 -- 53,463 | 10.5% |
+| 53,464 -- 152,750 | 12.5% |
+| 152,751+ | 14.5% |
 
 ### Key Saskatchewan Features
 
@@ -47,8 +47,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | --- | --- |
 | Provincial sales tax (PST) | 6% |
 | GST | 5% federal (no HST -- GST + PST are separate) |
-| Basic personal amount (2025) | $17,661 |
-| Spousal/equivalent amount | $17,661 |
+| Basic personal amount (2025) | $19,491 |
+| Spousal/equivalent amount | $19,491 |
 | Age amount (65+) | $5,061 |
 | Senior supplementary amount | $1,622 (for those 65+ with income < $86,810) |
 | Saskatchewan Low-Income Tax Credit (SLITC) | Refundable; up to $388/adult + $150/child |
@@ -61,13 +61,13 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 | Taxable Income (CAD) | Combined Rate |
 | --- | --- |
-| 0 -- 52,057 | 25.5% |
-| 52,058 -- 57,375 | 25.5% |
-| 57,376 -- 114,750 | 31% |
-| 114,751 -- 148,734 | 38.5% |
-| 148,735 -- 158,468 | 40.5% |
-| 158,469 -- 220,000 | 43.5% |
-| 220,001+ | 47.5% |
+| 0 -- 53,463 | 25% |
+| 53,464 -- 57,375 | 27% |
+| 57,376 -- 114,750 | 33% |
+| 114,751 -- 152,750 | 38.5% |
+| 152,751 -- 177,882 | 40.5% |
+| 177,883 -- 253,414 | 43.5% |
+| 253,415+ | 47.5% |
 
 ### Conservative Defaults
 
@@ -97,8 +97,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 | Credit | Amount (2025) | Rate |
 | --- | --- | --- |
-| Basic personal amount | $17,661 | 10.5% |
-| Spousal / common-law partner | $17,661 | 10.5% |
+| Basic personal amount | $19,491 | 10.5% |
+| Spousal / common-law partner | $19,491 | 10.5% |
 | CPP/EI contributions | Actual | 10.5% |
 | Age amount | $5,061 | 10.5% |
 | Pension income amount | Up to $1,000 | 10.5% |
@@ -126,7 +126,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ### Step 2: Apply Saskatchewan Bracket Rates
 
-- **Apply Saskatchewan Bracket Rates** — First $52,057 × 10.5%; $52,058 to $148,734 × 12.5%; Above $148,734 × 14.5%
+- **Apply Saskatchewan Bracket Rates** — First $53,463 × 10.5%; $53,464 to $152,750 × 12.5%; Above $152,750 × 14.5%
 
 ### Step 3: Subtract Non-Refundable Tax Credits
 
@@ -222,16 +222,16 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Step | Calculation | Amount |
 | --- | --- | --- |
 | Taxable income |  | $85,000 |
-| SK tax on first $52,057 | $52,057 × 10.5% | $5,466 |
-| SK tax on $52,058 -- $85,000 | $32,943 × 12.5% | $4,118 |
-| Gross SK provincial tax |  | $9,584 |
-| Less: Basic personal credit | $17,661 × 10.5% | ($1,854) |
-| Less: CPP credit | ~$3,867 × 10.5% | ($406) |
-| Less: EI credit | ~$1,049 × 10.5% | ($110) |
-| Net SK provincial tax |  | $7,214 |
-| Federal tax (for reference) |  | $12,252 |
-| Total combined tax (approx.) |  | $19,466 |
-| Effective combined rate |  | ~22.9% |
+| SK tax on first $53,463 | $53,463 × 10.5% | $5,614 |
+| SK tax on $53,464 -- $85,000 | $31,537 × 12.5% | $3,942 |
+| Gross SK provincial tax |  | $9,556 |
+| Less: Basic personal credit | $19,491 × 10.5% | ($2,047) |
+| Less: CPP credit | $4,034 × 10.5% | ($424) |
+| Less: EI credit | $1,077 × 10.5% | ($113) |
+| Net SK provincial tax |  | $6,972 |
+| Federal tax (14.5% / 20.5%, net of the same three credits at 14.5%) |  | $10,903 |
+| Total combined tax (approx.) |  | $17,875 |
+| Effective combined rate |  | ~21.0% |
 
 ## Section 6 -- Prohibitions
 

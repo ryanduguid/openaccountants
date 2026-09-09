@@ -58,13 +58,15 @@ metadata:
 
 | Taxable Income (CAD) | Combined Rate |
 |---|---|
-| 0 -- 47,000 | 25.8% |
-| 47,001 -- 57,375 | 25.8% |
+| 0 -- 47,000 | 25.3% |
+| 47,001 -- 57,375 | 27.25% |
 | 57,376 -- 100,000 | 33.25% |
 | 100,001 -- 114,750 | 37.9% |
-| 114,751 -- 158,468 | 43.4% |
-| 158,469 -- 220,000 | 46.4% |
-| 220,001+ | 50.4% |
+| 114,751 -- 177,882 | 43.4% |
+| 177,883 -- 253,414 | 46.4% |
+| 253,415+ | 50.4% |
+
+Manitoba phases out its basic personal amount over net income of $200,000 to $400,000, which raises the effective marginal rate inside that range above the statutory figures shown.  _(TaxTips.ca, *Manitoba 2025 tax rates*)_
 
 ### Conservative Defaults
 

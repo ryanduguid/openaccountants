@@ -40,11 +40,13 @@ metadata:
 
 | Taxable Income (CAD) | Rate |
 |---|---|
-| 0 -- 57,375 | 15% |
+| 0 -- 57,375 | 14.5% |
 | 57,376 -- 114,750 | 20.5% |
-| 114,751 -- 158,468 | 26% |
-| 158,469 -- 220,000 | 29% |
-| 220,001+ | 33% |
+| 114,751 -- 177,882 | 26% |
+| 177,883 -- 253,414 | 29% |
+| 253,415+ | 33% |
+
+The lowest federal rate is **14.5% for 2025 only**: it was cut from 15% to 14% effective 1 July 2025, so the 2025 rate is the blended figure. It is 14% for 2026 onward. Non-refundable federal credits are valued at 14.5% for 2025.  _(CRA, *Federal income tax rates and brackets*)_
 
 **Provincial tax is additional.** Each province has its own brackets. This skill covers federal only. Combined marginal rates range from ~20% to ~54% depending on province.
 
