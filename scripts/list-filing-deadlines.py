@@ -74,7 +74,29 @@ Mauritius, Cambodia, Argentina and Nicaragua. Each reads as a jurisdiction
 stating two true things rather than contradicting itself, which is a reason not
 to chase the row, not evidence the date is current.
 
-Still open: 200 jurisdictions state a deadline and 8 have been checked.
+Second tranche, drawn at random from the 149 international jurisdictions with a
+row (seed 20260909), to get a rate the first eight could not give. Ten drawn,
+ZERO errors:
+
+  Afghanistan (3 months after a 20 March year-end), Bhutan 31 March, Burundi
+  31 March, Costa Rica 15 March (16 March in 2026, the 15th being a Sunday),
+  El Salvador 30 April, Indonesia 31 March for individuals and 30 April for
+  companies, Lesotho 30 June against a 31 March year-end, Sierra Leone
+  30 April on the 120-day rule, Tunisia 25 March for companies and 25 June for
+  individuals, and Andorra's IRPF window of 1 April to 30 September.
+
+So the field is in better shape than five in eight suggested, and the two
+numbers together are the useful result: picking odd-looking rows found five
+errors in eight, and drawing at random found none in ten. Chase the leads.
+
+Open, and not counted against either tranche: Andorra's corporate deadline.
+Both guides say "within 6 months of the close" and add "typically 31 July",
+which cannot both hold for a calendar-year company, and both already hedge with
+"(approx -- confirm exact statutory deadline)". Andorran sources repeat the same
+slippage, saying six months and then naming the end of July. Settling it needs
+Llei 95/2010 or the Departament de Tributs, so the hedge stays.
+
+Still open: 200 jurisdictions state a deadline and 18 have been checked.
 
 Usage: python3 scripts/list-filing-deadlines.py [--selftest]
 """
@@ -126,7 +148,9 @@ CITE = re.compile(r'_\([^)]*\)_\s*$')
 
 # "between 1 March and 30 June", "1 April - 30 June", "15 March to 15 July".
 _D = r'(?:\d{1,2}\s+(?:%s)|(?:%s)\s+\d{1,2})' % (MONTH, MONTH)
-WINDOW = re.compile(r'\b(?:between\s+)?(%s)\s*(?:and|to|[-\u2013\u2014])\s*(%s)\b' % (_D, _D), re.I)
+# The dash may be doubled: the house style writes "1 April -- 30 September",
+# and a single-character class read that as a bare "1 April" for Andorra.
+WINDOW = re.compile(r'\b(?:between\s+)?(%s)\s*(?:and|to|[-\u2013\u2014]+)\s*(%s)\b' % (_D, _D), re.I)
 
 PERSONAL = re.compile(r'\b(individual|personal|employee|self[- ]employed)\b', re.I)
 CORPORATE = re.compile(r'\b(corporate|company|companies|corporation|CIT|profits tax)\b', re.I)
@@ -220,6 +244,9 @@ def selftest():
     # a year-end inside the label is not the deadline
     assert deadline_in('- **CIT return filing deadline (30 June year-end)** - 15 November',
                        'mg-corporate-income-tax') == ('corporate', '15 November')
+    # the house style also writes the window with a doubled dash
+    assert deadline_in('| Filing deadline | 1 April -- 30 September of the following year |',
+                       'ad-income-tax') == ('unspecified', '30 September')
     # a window names its opening first; the deadline is the far end
     # "Annual CIT return deadline" reaches the reader through the bare label,
     # since LABEL spells out income/tax and not every acronym in between.

@@ -60,9 +60,9 @@ jurisdiction at a time. This section records how far that has got.
 |---|---|---|---|
 | Standard VAT / GST rate | 157 of 157 jurisdictions stating one | 6 | Fiji, India, Kazakhstan, Zimbabwe, Malawi, Maldives |
 | Headline corporate rate | ~135 jurisdictions | 3 | Lithuania, Cyprus, Portugal |
-| Annual return filing deadline | 8 of the 200 jurisdictions stating one | 5 | Italy, Greece, Armenia, Cyprus, Finland |
+| Annual return filing deadline | 18 of the 200 jurisdictions stating one | 5 | Italy, Greece, Armenia, Cyprus, Finland |
 
-The deadline pass has covered 8 jurisdictions of 200. Nobody has run an external
+The deadline pass has covered 18 jurisdictions of 200. Nobody has run an external
 pass over anything else. That leaves payroll rates and thresholds, registration
 and filing thresholds, penalty and interest rates, social-contribution bands,
 capital allowances, withholding rates, form names and statutory citations. All
@@ -70,10 +70,15 @@ of them move on the same annual cycle as the fields above.
 
 ### What the deadline pass has found so far
 
-Five of the first eight jurisdictions were wrong. That rate will not hold. A
-reader picked those eight because their rows looked odd, so the number measures
-the leads rather than the corpus. Choose the next tranche at random if you want
-a rate worth quoting.
+Five of the first eight jurisdictions were wrong, and a reader had picked those
+eight because their rows looked odd. The next ten came from a random draw over
+the 149 international jurisdictions with a row, and every one was right:
+Afghanistan, Bhutan, Burundi, Costa Rica, El Salvador, Indonesia, Lesotho,
+Sierra Leone, Tunisia, and Andorra's personal filing window.
+
+Five in eight and zero in ten are both worth keeping. The first says the leads
+were good. The second says the field is in better shape than the first number
+implied, and it is the one to quote.
 
 The errors divide in a way the rate hides. Italy and Greece named a real date
 belonging to a different obligation: Italy filed the Modello Redditi PF on
