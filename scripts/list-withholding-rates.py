@@ -46,7 +46,32 @@ rates (15% standard, 10% regularly distributed, 7% for WAEMU-listed companies),
 Chile withholds 4% on interest to foreign banks against 35% generally, Colombia
 20% on dividends from taxed earnings and 48% from untaxed, Vietnam 0% to
 corporate shareholders and 5% to individuals, Zimbabwe 5% on listed shares and
-10% on unlisted, Hong Kong 4.95% on royalties to unassociated non-residents.
+10% on unlisted, Hong Kong 4.95% on royalties to unassociated non-residents,
+Peru 4.99% on accredited unrelated-party loans against 30% generally, Mongolia
+5% on interest from bonds issued by Mongolian commercial banks against 20%,
+Rwanda 5% on listed securities against 15%, Bosnia 5% in FBiH and 10% in RS
+because withholding there is set by entity and not federally.
+
+That is all ten disagreeing rows triaged, and none of them was a wrong rate.
+The column has now earned the reading the paragraph above gives it: on this
+field a disagreement is the corpus carrying a real distinction, not a defect.
+
+But it is still worth chasing, because of what Bosnia turned up. The row
+disagreed because ba-corporate-income-tax.md splits the dividend rate three
+ways by entity, correctly and with both PwC and the Eurofast tax card behind
+it. The defect was in a file this script cannot see disagreeing with anything:
+bosnia-tax-optimization.md said "0% dividends" four times, unqualified, and
+built its Company Extraction section on it. The 0% is right for a resident
+individual -- dividends are exempt personal income in all three entities --
+and wrong for the foreign owner that section is written for, who is withheld
+5% or 10%. A guide that states one side of a distinction is invisible here;
+only the guide that states both shows up. So the row points at the guide that
+got it right, and the one to open is its neighbour that stayed silent.
+
+Its own consistency rule had the same hole. The guide's header and its
+Prohibition 4 both listed the three files it must agree with, and neither
+listed the corporate income tax guide -- the one file carrying the rates its
+extraction maths depends on. Both lists now include it.
 
   * Guatemala CORRECT, hedge resolved. 5% on dividends to non-residents and the
               same 5% to residents, a final tax withheld by the distributing

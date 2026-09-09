@@ -491,6 +491,44 @@ reason: it is 7.75% from 9 January 2026 on a Bank Rate of 3.75%. That line also
 gained the part that changes an answer, that the margin was 2.5 points before
 6 April 2025, so interest running across that date is charged at two margins.
 
+### The file that disagrees is usually the file that is right
+
+`list-withholding-rates.py` prints a `guides disagree` marker when two guides in
+one jurisdiction state different rates for the same payment. Ten jurisdictions
+carried the marker. All ten have now been read, and none of them was a wrong
+rate. Every one was a real distinction the corpus was carrying properly: Peru's
+4.99% on accredited unrelated-party loans against 30% generally, Mongolia's 5%
+on bank bond interest against 20%, Rwanda's 5% on listed securities against 15%,
+Bosnia's 5% in the Federation against 10% in Republika Srpska.
+
+The useful part is what chasing Bosnia found anyway. `ba-corporate-income-tax.md`
+splits the dividend rate three ways by entity — 5% FBiH, 10% RS, 0% Brcko — and
+both PwC and the Eurofast tax card confirm it line for line. The defect was in
+`bosnia-tax-optimization.md`, which disagreed with nothing because it stated only
+one side. It said "0% dividends" four times, unqualified, and built its Company
+Extraction section on it: *10% CIT on profit; 0% dividend tax on distribution → a
+very efficient extraction*. The 0% is right — dividends are exempt personal
+income in all three entities — for a **resident individual**. Section 4 is
+written for the owner of a d.o.o. deciding how to take profit out, and a foreign
+owner reading it would understate the cost of extraction by 5 points in the
+Federation and 10 in Republika Srpska.
+
+So the marker is not a defect report, and it is not noise either. It is a pointer
+to a jurisdiction where a distinction exists, and the file to open is not the one
+that flagged — it is the neighbour that never mentions the distinction at all. A
+guide stating one side of a split is invisible to every consistency check the
+repo has, because a check needs two claims to compare and a silent guide only
+offers one. That is the same shape as the pattern that keeps recurring here: the
+reference guide is current, and the guide an agent actually loads to do the work
+is the one that is wrong.
+
+The optimisation guide's own consistency rule had the hole in the same place. Its
+header and its Prohibition 4 both named the three files it must agree with, and
+neither named the corporate income tax guide — the single file carrying the rates
+its extraction arithmetic depends on. A rule that lists which siblings to check
+is worth reading as carefully as a rate, because a sibling missing from that list
+is a contradiction the guide is licensed to make.
+
 ### A guide that borrows another country's rates says so
 
 Liechtenstein's payroll guide gave AHV/IV as "approx 10.6% of gross salary,
