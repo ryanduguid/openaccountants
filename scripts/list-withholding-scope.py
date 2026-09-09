@@ -73,6 +73,42 @@ stale rate and six missing heads:
 That is the shape the queue is for. Kenya's three stated rates were two right
 and one stale, and the damage was mostly in what was not there.
 
+WHY 64 JURISDICTIONS LOOK THE SAME
+
+Turkey and Thailand were taken next, both from the classic-only list and both
+already worked on this branch for their rates. Neither guide was careless. PwC's
+`corporate/withholding-taxes` page -- the page both guides cite, and the page
+most of this corpus was built from -- carries, for these two countries,
+dividends, interest, royalties and a treaty matrix. Nothing else. The other
+heads are real and are somewhere else entirely.
+
+  * Turkey also withholds 20% on professional services (17% on certain
+    copyright work), 20% on commercial rent computed on the GROSS rent, and 5%
+    on progress payments to contractors on construction spanning more than one
+    calendar year, with 1% for certain long-term projects. Its 30% on payments
+    to harmful-tax-competition jurisdictions IS on the PwC page, and the guide
+    did not carry that either.
+  * Thailand also withholds 15% under Section 70 on service income,
+    professional services and rentals paid to a foreign company not carrying on
+    business there, and domestically 3% on professional and service fees, 5% on
+    rent, 2% on advertising and 1% on transport.
+
+So the classic-only shape is not sloppiness. It is faithful reproduction of a
+source that is itself three-headed for that country, and the corpus inherited
+its scope along with its numbers. Two things follow.
+
+First, this queue is systematically incomplete rather than randomly so, which
+makes it worth working all the way down rather than sampling.
+
+Second, and more useful: RE-READING THE PAGE THE GUIDE CITES WILL NEVER FIND
+THIS. Every other check on this branch was satisfied by going back to the
+authority the guide named. Here the guide named its source faithfully and the
+source does not answer the question. Coverage varies by country and cannot be
+assumed either way -- PwC's Kenya page does carry the full table, which is how
+Kenya's six missing heads were found in one fetch. When a jurisdiction appears
+below with three heads, the next step is a different page or the statute, not
+the one in the citation.
+
 A CAVEAT ABOUT THE THIN END
 
 Jurisdiction keys come from the third path segment, so `us`, `im`, `in` and `nc`
