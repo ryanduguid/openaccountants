@@ -48,12 +48,11 @@ The product is designed around this honesty: the AI produces a working paper and
 
 ## External verification status
 
-The checks in `scripts/` compare the corpus against **itself** — across the three
-trees, across siblings inside a jurisdiction, and against its own arithmetic.
-They cannot see a figure that every copy agrees on and that is simply wrong.
-Closing that gap means asking a source outside the repository, field by field and
-jurisdiction by jurisdiction. This records how far that has got, so it is not
-re-derived or over-claimed.
+The scripts in `scripts/` compare the corpus against itself: across the three
+trees, across sibling guides in one jurisdiction, and against its own arithmetic.
+None of them can see a figure that every copy agrees on and that is wrong. To
+close that gap you have to ask a source outside the repository, one field and one
+jurisdiction at a time. This section records how far that has got.
 
 ### Checked against an outside source
 
@@ -62,54 +61,53 @@ re-derived or over-claimed.
 | Standard VAT / GST rate | 157 of 157 jurisdictions stating one | 6 | Fiji, India, Kazakhstan, Zimbabwe, Malawi, Maldives |
 | Headline corporate rate | ~135 jurisdictions | 3 | Lithuania, Cyprus, Portugal |
 
-Everything else — payroll rates and thresholds, registration and filing
-thresholds, filing deadlines, penalty and interest rates, social-contribution
-bands, capital allowances, withholding rates, and every form name and statutory
-citation — has had **no** external verification pass. Those change on the same
-annual cycle as the rates above, and the rates above turned up nine errors.
+No one has run an external pass over anything else. That leaves payroll rates and
+thresholds, registration and filing thresholds, filing deadlines, penalty and
+interest rates, social-contribution bands, capital allowances, withholding rates,
+form names and statutory citations. All of them move on the same annual cycle as
+the two fields above, and those two produced nine errors.
 
 ### What the six VAT errors had in common
 
-Every one was a jurisdiction where an overview or income-tax guide carried the
-correct current rate while the **dedicated indirect-tax guide** — the file an
-agent loads to prepare a return — did not. Overviews get refreshed from summary
-sources; the deep guides do not. `scripts/check-superseded-rates.py` sweeps for
-that shape, but two of the six would still have escaped it: Malawi labelled the
-stale rate "(2025)" rather than asserting it bare, and Maldives' correct sibling
-was an income-tax guide, which its tax-family filter rejects. Both were found by
-reading. Treat a clean run as evidence about the checker as much as the corpus.
+In every case a jurisdiction's overview or income-tax guide carried the correct
+current rate, and its dedicated indirect-tax guide did not. That second file is
+the one an agent loads to prepare a return. Maintainers refresh overviews from
+summary sources and leave the deep guides alone.
+
+`scripts/check-superseded-rates.py` sweeps for that shape. Two of the six would
+still have escaped it. Malawi labelled its stale rate "(2025)" instead of
+asserting it bare, and Maldives kept the correct figure in an income-tax guide,
+which the script's tax-family filter throws out. A reader found both. So when
+that script reports zero, you have learned something about the script as well as
+about the corpus.
 
 ### What "verified" means here, and what it does not
 
-It means the corpus agrees with a reputable secondary source — usually PwC's
-Worldwide Tax Summaries. It does **not** mean a licensed practitioner in that
-jurisdiction has confirmed it, and the difference is not theoretical. Twice the
-corpus was right and the chart was stale:
+It means the corpus agrees with a reputable secondary source, usually PwC's
+Worldwide Tax Summaries. It does not mean a licensed practitioner in that
+jurisdiction has confirmed it. Six times the corpus was right and the chart was
+wrong:
 
 - **Eswatini** — PwC lists 27.5%. It is 25% for year-ends after 31 December 2024,
   which both Eswatini guides state, with the date.
 - **Nigeria** — PwC gives "30% (large companies)". `ng-cit` carries the whole
-  NTA 2025 regime including the abolition of the medium-company band, the 4%
-  development levy, and an AUDIT FLASH POINT on the NGN 50M / NGN 100M statutory
-  conflict.
-
-- **Fiji** — a chart gave 20%. It is 25% (15% for South Pacific Stock Exchange
-  listings), which is what the guide says.
-- **Tajikistan** — a chart gave 13% as the rate. 13% applies to
-  production-of-goods activities; the standard rate is 18%, and the guide carries
-  both with the distinction.
-- **Somalia** — a chart gave a flat 15%. It is progressive from 9% to a 30% top
-  rate above USD 30,000, cited to the Investment Promotion Office.
+  NTA 2025 regime: the abolition of the medium-company band, the 4% development
+  levy, and an AUDIT FLASH POINT on the NGN 50M / NGN 100M statutory conflict.
+- **Fiji** — a chart gave 20%. It is 25%, or 15% for South Pacific Stock Exchange
+  listings, which is what the guide says.
+- **Tajikistan** — a chart gave 13%. That rate applies to production-of-goods
+  activities; the standard rate is 18%. The guide carries both.
+- **Somalia** — a chart gave a flat 15%. The rate runs progressively from 9% to a
+  30% top rate above USD 30,000, cited to the Investment Promotion Office.
 - **Sudan** — a chart gave 35%. The guide has 15% standard with 30% for banks,
-  tobacco and petroleum, which matches neither half of the chart's figure.
+  tobacco and petroleum, matching neither half of that figure.
 
-The corporate pass makes the point sharper than the VAT pass did. Its last
-tranche of ~35 jurisdictions produced zero corpus errors and six cases where the
-aggregator was wrong. Beyond the well-covered jurisdictions, a chart comparison
-stops finding defects and starts manufacturing false ones, and each is a chance
-to "correct" a right answer into a wrong one. Every hit needs reading before it
-is acted on.
+Four of those six sit in the corporate pass, and its last tranche of about 35
+jurisdictions turned up no corpus errors at all. Past the well-covered
+jurisdictions, comparing against a chart stops finding defects and starts
+inventing them, and each invented one invites you to break a guide that was
+already right. Read the guide before you act on a hit.
 
-A chart comparison is a lead generator, not an assurance mechanism. Only the
-Tier 1 route — a named practitioner signing the guide — carries an assurance
-claim. Nothing in this section changes a guide's tier.
+Use a chart to generate leads. Only the Tier 1 route, where a named practitioner
+signs the guide, supports an assurance claim, and nothing in this section changes
+any guide's tier.
