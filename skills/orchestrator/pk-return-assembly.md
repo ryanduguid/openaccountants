@@ -454,7 +454,7 @@ All tax payments in Pakistan flow through the PSID → CPR mechanism.
 
 - File s.114 return by deadline → name appears in next ATL update (typically within 1–2 weeks)
 - File late but within grace period → may still appear, possibly with surcharge for ATL late inclusion (Rs 1,000 individual / Rs 10,000 AOP / Rs 20,000 company — verify current schedule)
-- ATL effective period: 1 March to 28/29 February of following year (e.g., ATL TY 2025 effective 1 March 2026 – 28/29 February 2027)
+- ATL effective period: 1 March to 28/29 February of the following year (e.g., ATL TY 2025 effective 1 March 2026 – 28 February 2027; 2027 is not a leap year, so the period ends on the 28th)
 
 ### 8.4 Action list item
 
