@@ -117,7 +117,7 @@ Sweden is unique: employees pay NO separate social security contributions. All s
 | Efterlevandepensionsavgift (survivors' pension) | 0.60% |
 | Arbetsmarknadsavgift (labour market/unemployment) | 2.64% |
 | Arbetsskadeavgift (occupational injury) | 0.20% |
-| Allmän löneavgift (general payroll tax) | 12.62% |
+| Allmän löneavgift (general payroll tax) | 11.62% |
 | **Total arbetsgivaravgifter** | **31.42%** |
 
 ### Reduced Rates
