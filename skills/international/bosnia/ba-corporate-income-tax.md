@@ -17,17 +17,11 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Tax base** — Accounting profit per financial statements, adjusted for non-deductible expenses and tax incentives  _(FBiH / RS Corporate Income Tax Laws)_
 - **Scope for residents** — Resident companies taxed on worldwide profit; non-residents taxed on profit attributable to a BiH permanent establishment / BiH-source income  _(FBiH / RS Corporate Income Tax Laws)_
 
-> **Bosnia and Herzegovina has three separate withholding regimes — FBiH,
-> Republika Srpska and Brčko District — and the only head they disagree on is
-> dividends.** FBiH charges 5%, RS charges 10%, Brčko charges nothing.
-> Everything else is **10% in all three**. Establish the entity before quoting
-> a dividend rate; for any other head the entity does not change the answer.
->
-> The wider point is that all three charge far more than dividends, interest
-> and royalties. **Services, entertainment and sport, insurance and reinsurance
-> premiums, telecommunications and property leases are all within the charge at
-> 10%**, in every entity. A guide naming only the classic three understates the
-> position on the heads a foreign supplier is most likely to invoice for.
+> **Identify the taxing entity before determining withholding.** The regimes
+> below generally charge 10% on covered non-dividend payments, but their scope
+> and treaty conditions differ. Dividend rates are 5% in FBiH, 10% in Republika
+> Srpska and 0% in Brčko District. Use the relevant entity's categories below;
+> do not extend one entity's service or property rule to the others.
 
 **Federation of Bosnia and Herzegovina (FBiH)**
 

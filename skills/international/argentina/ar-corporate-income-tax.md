@@ -19,9 +19,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Corporate rate — tier 3 (top)** — 35% applies to taxable income above the second-tier ceiling (ARS 1,016,795,752.62), plus a fixed base amount % ((approx — confirm the fixed base amount and exact top-tier threshold for FY2025))  _([Income Tax Law (Ley de Impuesto a las Ganancias, Ley 20.628), art. 73](https://taxsummaries.pwc.com/argentina/corporate/taxes-on-corporate-income))_
 - **Corporate bracket indexation** — The 25/30/35% bracket thresholds are indexed annually for inflation  _(Income Tax Law (Ley de Impuesto a las Ganancias, Ley 20.628), art. 73)_
 - **Tax base** — Worldwide net taxable income of resident companies, with adjustment for inflation (ajuste por inflación impositivo) where applicable  _(Income Tax Law (Ley de Impuesto a las Ganancias, Ley 20.628))_
-> **Argentina does not have three withholding rates. It has one rate — 35% —
-> and a schedule of presumed net-income margins that produce the effective
-> rates below.** The margin is set by *what the payment is for* and, for
+> **The non-resident payment regimes below generally apply 35% to presumed
+> net income. Dividends and branch remittances have a separate 7% charge.**
+> The presumed margin depends on what the payment is for and, for
 > technology payments, by *whether the agreement is registered*. Every head is
 > given its own line below so it can be found without reading the ones above
 > it; the effective rate in bold is what the withholding agent actually
