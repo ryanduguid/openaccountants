@@ -104,3 +104,35 @@ Notes:
 ## How to update this file
 
 When skills are published or jurisdictions added, re-run the counts against the production database and update the tables above **and** the "Last updated" date. Then reconcile the README headline, repo About, and website to match.
+
+## Where the defects actually were
+
+A branch-wide fact-check ran 37 independent classes of verification over this
+corpus. The finding worth carrying forward is not any single correction but
+where the errors clustered, because it tells a reviewer where to spend time.
+
+**Arithmetic and rate tables held up.** `check-arithmetic.py` evaluates 23,405
+asserted sums across the three trees; `check-quick-formula.py` recomputes every
+`tax = rate x income - deduction` constant; `check-band-continuity.py`,
+`check-bracket-tables.py`, `check-derived-columns.py` and `check-total-rows.py`
+each test a different structural property. Once the errors those found were
+corrected, the residue was small.
+
+**Identifiers, labels and citations did not.** Malta is the clearest case and
+worth reading as a worked example, because its numbers were never wrong:
+
+| What was checked | Result |
+|---|---|
+| Band tables (single / married / parent, 2025 and the 2026 child categories) | 10 tables, 0 broken boundaries. All 21 quick-formula constants exact to the cent; every cumulative-tax figure reconciles |
+| Form identity | `TA24` — the 15% rental final tax — was used as the name of the self-employed **income tax return** in five guides, 37 references |
+| Filing deadline | TA24 dated 30 June in two guides; it is **30 April**, and late filing costs 0.6%/month plus the 15% election |
+| Statutory basis | TA24 cited to ITA Art. 31E in eight places (it is **31D**); TA22 cited to Art. 4C in six (it is **90A** + Part-Time Work Rules S.L. 123.39) |
+
+Same pack, same authors, same sources: every number right, and the form name,
+the date and the statute wrong. A reviewer who checks only the figures in a
+guide like this will find nothing and conclude it is sound.
+
+**So when reviewing, check the nouns as carefully as the numbers** — which form,
+which article, which date, which jurisdiction. Those are what the numeric
+checkers structurally cannot see, and they are where what remains is most
+likely to be.
