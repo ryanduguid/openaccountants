@@ -17,7 +17,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Bulgaria Social Security & Health Insurance Contributions -- Skill v0.1
 
-> **Tier 2 (research-verified).** Figures below are sourced inline. Several depend on the 2026 State Social Security Budget Act (Закон за бюджета на държавното обществено осигуряване), which was pending/just-adopted as of early 2026; provisional figures are marked **[RESEARCH GAP — reviewer to confirm]**. This skill has NOT been signed off by a Bulgarian-licensed accountant.
+> **Tier 2 (research-verified).** Figures below are sourced inline. The 2026 State Social Security Budget Act (Закон за бюджета на държавното обществено осигуряване) **has now been adopted** — passed 22 July 2026, gazetted in State Gazette No. 68 of 28 July 2026 — and it moved the insurable-income figures from **1 August 2026**, part-way through the year. The 2026 figures here are the adopted ones, split by period; the draft's proposed ceiling of EUR 2,352 was not what passed. Other provisional figures remain marked **[RESEARCH GAP — reviewer to confirm]**. This skill has NOT been signed off by a Bulgarian-licensed accountant.
 
 ## Section 1 -- Quick reference
 
@@ -32,9 +32,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Total employee+employer contribution (Category III, born after 1959)** — 32.7%–33.4% of insurable income: employee 13.78%, employer 18.92%–19.62%  _(Ministry of Economy; PwC)_
 - **Self-insured persons (born after 1959)** — 27.8% (pension 14.8% + 2nd pillar 5% + health 8%); +3.5% if optionally insured for sickness/maternity  _(innovires; Ruskov & Kollegen; PwC)_
 - **Currency** — EUR from 1 Jan 2026; BGN through 31 Dec 2025; irrevocable fixed rate BGN 1.95583 = EUR 1  _(Ruskov & Kollegen)_
-- **Min monthly insurable income (employees)** — BGN 933 (1 Jan–31 Mar 2025); BGN 1,077 (1 Apr–31 Dec 2025); from 2026 follows the minimum wage EUR 620.20 (= BGN 1,213)  _(Ministry of Economy; PwC)_
-- **Min monthly insurable income (self-insured)** — BGN 1,077 (2025, = the minimum wage); EUR 550.66/month (= BGN 1,077, carried over for 2026 pending Budget Act)  _(PwC *Other taxes*; Ruskov & Kollegen)_
-- **Max monthly insurable income (ceiling, all)** — BGN 3,750 (1 Jan–31 Mar 2025); BGN 4,130 (1 Apr–31 Dec 2025); EUR 2,111.64 (= BGN 4,130, 2026 pending Budget Act)  _(Ministry of Economy; PwC *Other taxes*)_
+- **Min monthly insurable income (employees)** — BGN 933 (1 Jan–31 Mar 2025); BGN 1,077 (1 Apr–31 Dec 2025); for 2026 a **range set per economic activity and occupation group** in Annexes 1 and 1A to the Budget Act: EUR 550.66–901.41 (1 Jan–31 Jul 2026) and EUR 620.20–1,532.41 (1 Aug–31 Dec 2026) — not a single floor  _(Ministry of Economy; PwC; State Social Security Budget Act 2026, Annexes 1 and 1A, SG No. 68 of 28 July 2026)_
+- **Min monthly insurable income (self-insured)** — BGN 1,077 (2025, = the minimum wage); EUR 550.66/month (1 Jan–31 Jul 2026, = BGN 1,077 carried over); **EUR 620.20/month (from 1 Aug 2026)**. One figure for everybody, unlike the employee range  _(PwC *Other taxes*; Ruskov & Kollegen; State Social Security Budget Act 2026, SG No. 68 of 28 July 2026)_
+- **Max monthly insurable income (ceiling, all)** — BGN 3,750 (1 Jan–31 Mar 2025); BGN 4,130 (1 Apr–31 Dec 2025); EUR 2,111.64 (1 Jan–31 Jul 2026); **EUR 2,300 (from 1 Aug 2026)**  _(Ministry of Economy; PwC *Other taxes*; State Social Security Budget Act 2026, SG No. 68 of 28 July 2026)_
 - **Minimum monthly wage** — BGN 1,077 (1 Jan 2025, = EUR 550.66); BGN 1,213 = EUR 620.20 (1 Jan 2026, Council of Ministers Decree No. 243 of 13.11.2025)  _(Ministry of Economy; Ruskov & Kollegen)_
 - **Monthly compliance** — Declaration 1 + Declaration 6 filed electronically with the NRA; contributions paid; all by the 25th of the following month  _(activpayroll; Lano)_
 - **Annual return** — Годишна данъчна декларация (GDD) — by 30 April of the following year  _(innovires; PwC)_
@@ -56,9 +56,9 @@ Pending
 | Total employee+employer contribution (Category III, born after 1959) | 32.7%–33.4% of insurable income: employee 13.78%, employer 18.92%–19.62% (Ministry of Economy; PwC) |
 | Self-insured persons (born after 1959) | 27.8% (pension 14.8% + 2nd pillar 5% + health 8%); +3.5% if optionally insured for sickness/maternity (innovires; Ruskov & Kollegen; PwC) |
 | Currency | EUR from 1 Jan 2026; BGN through 31 Dec 2025; irrevocable fixed rate BGN 1.95583 = EUR 1 (Ruskov & Kollegen) |
-| Min monthly insurable income (employees) | BGN 933 (1 Jan–31 Mar 2025); BGN 1,077 (1 Apr–31 Dec 2025); from 2026 follows the minimum wage EUR 620.20 (= BGN 1,213) (Ministry of Economy; PwC) |
-| Min monthly insurable income (self-insured) | BGN 1,077 (2025, = the minimum wage); EUR 550.66/month (= BGN 1,077, carried over for 2026 pending Budget Act) (PwC *Other taxes*; Ruskov & Kollegen) |
-| Max monthly insurable income (ceiling, all) | BGN 3,750 (1 Jan–31 Mar 2025); BGN 4,130 (1 Apr–31 Dec 2025); EUR 2,111.64 (= BGN 4,130, 2026 pending Budget Act) (Ministry of Economy; PwC *Other taxes*) |
+| Min monthly insurable income (employees) | BGN 933 (1 Jan–31 Mar 2025); BGN 1,077 (1 Apr–31 Dec 2025); 2026 is a **range by activity and occupation** (Annexes 1 and 1A): EUR 550.66–901.41 to 31 Jul, EUR 620.20–1,532.41 from 1 Aug (Ministry of Economy; PwC; SSB Act 2026, SG No. 68 of 28 July 2026) |
+| Min monthly insurable income (self-insured) | BGN 1,077 (2025, = the minimum wage); EUR 550.66/month to 31 Jul 2026; **EUR 620.20/month from 1 Aug 2026** (PwC *Other taxes*; Ruskov & Kollegen; SSB Act 2026) |
+| Max monthly insurable income (ceiling, all) | BGN 3,750 (1 Jan–31 Mar 2025); BGN 4,130 (1 Apr–31 Dec 2025); EUR 2,111.64 to 31 Jul 2026; **EUR 2,300 from 1 Aug 2026** (Ministry of Economy; PwC *Other taxes*; SSB Act 2026) |
 | Minimum monthly wage | BGN 1,077 (1 Jan 2025, = EUR 550.66); BGN 1,213 = EUR 620.20 (1 Jan 2026, Council of Ministers Decree No. 243 of 13.11.2025) (Ministry of Economy; Ruskov & Kollegen) |
 | Monthly compliance | Declaration 1 + Declaration 6 filed electronically with the NRA; contributions paid; all by the 25th of the following month (activpayroll; Lano) |
 | Annual return | Годишна данъчна декларация (GDD) — by 30 April of the following year (innovires; PwC) |
@@ -102,7 +102,7 @@ Pending
 ### Refusal catalogue
 
 - **R-BG-SSC-1 -- Period/currency undetermined** — Trigger: the relevant date is not known, so the system cannot tell whether to apply 2025 BGN sub-period thresholds or 2026 EUR figures. Message: "Bulgaria adopted the euro on 1 Jan 2026 (fixed rate BGN 1.95583 = EUR 1) and raised the wage/insurable-income thresholds effective 1 Apr 2025. The applicable floors, ceilings and currency depend on the exact period. Provide the contribution month before computing."
-- **R-BG-SSC-2 -- 2026 floors/ceilings treated as final** — Trigger: a self-employed minimum (EUR 550.66) or ceiling (EUR 2,111.64) figure is needed for a 2026 date. Message: "The 2026 EUR floors/ceilings are 2025 amounts carried over at the fixed rate (self-employed min EUR 550.66 = BGN 1,077; ceiling EUR 2,111.64 = BGN 4,130). They remain in force only while the 2025 State Social Security Budget Act continues to apply (reported through 31 Mar 2026, per Ruskov & Kollegen). The draft 2026 State Social Security Budget Act proposes raising the self-employed minimum insurable income to EUR 620.20 and the ceiling to EUR 2,352, but this was NOT yet adopted as of early 2026. Treat the post-Budget figures as provisional and verify against the adopted Act. **[RESEARCH GAP — reviewer to confirm]**."
+- **R-BG-SSC-2 -- a single set of 2026 floors/ceilings applied across the whole year** — Trigger: a self-employed minimum or ceiling figure is needed for a 2026 date without the **month**. Message: "2026 has two sets of figures, not one. To **31 July 2026** the 2025 amounts continued at the fixed rate: self-employed minimum EUR 550.66 (= BGN 1,077), ceiling EUR 2,111.64 (= BGN 4,130). From **1 August 2026** the State Social Security Budget Act 2026, gazetted in State Gazette No. 68 of 28 July 2026, raised the self-employed minimum to **EUR 620.20** and the ceiling to **EUR 2,300**. Give me the month and I will apply the right pair." Note that the **draft** Act proposed a ceiling of EUR 2,352; the **adopted** ceiling is EUR 2,300. Never quote the draft figure.
 - **R-BG-SSC-3 -- Work-accident rate by activity** — Trigger: the precise Accident-at-Work rate is needed and the economic-activity / NACE code is unknown. Message: "The work-accident contribution (employer-only) is 0.4%–1.1% and is keyed to the company's economic activity in the annual Budget Act annex, which was not retrieved in full. Look up the activity-specific rate in the Budget Act annex before relying on a figure. **[RESEARCH GAP — reviewer to confirm]**."
 - **R-BG-SSC-4 -- Arrears, penalties, statutory interest** — Trigger: client has unpaid contributions and wants the penalty/interest quantified. Message: "Penalty amounts (reported EUR 250–500 late filing; BGN 500–10,000 general) come from secondary payroll guides, and the statutory interest formula (BNB base rate + 10 pts, per the Interest Act) was not re-confirmed from the authority. Do not quantify arrears without checking the Social Security Code administrative-penalty schedule and the Interest Act. Escalate to a Bulgarian-licensed accountant. **[RESEARCH GAP — reviewer to confirm]**."
 - **R-BG-SSC-5 -- Pre-1960 birth cohort** — Trigger: person born before 1 Jan 1960. Message: "Persons born before 1 Jan 1960 are NOT in the 2nd pillar; their state pension rate is 19.8% (employee 8.78% / employer 11.02%) instead of 14.8%. Confirm exact birth date and that the person is genuinely outside the Universal Pension Fund before applying the higher rate."
@@ -169,7 +169,7 @@ This is the deterministic pre-classifier for bank statement transactions related
 
 ## Section 4 -- Worked examples
 
-Six bank statement / payroll classifications for a hypothetical Bulgarian software company and a freelance consultant. All employees assumed born after 31 Dec 1959 (Category III). Where 2026 EUR figures are used, the ceiling is EUR 2,111.64 and the work-accident rate is taken at the low end (0.4%) unless stated.
+Six bank statement / payroll classifications for a hypothetical Bulgarian software company and a freelance consultant. All employees assumed born after 31 Dec 1959 (Category III). The 2026 examples are set **before 1 August 2026**, so the ceiling is EUR 2,111.64 and the self-insured floor EUR 550.66; from 1 August those become EUR 2,300 and EUR 620.20 and every capped figure below changes. The work-accident rate is taken at the low end (0.4%) unless stated.
 
 ### Example 1 -- Standard employee, gross within the band (2026, EUR)
 
@@ -249,9 +249,9 @@ These rules apply when the period, status and figures are clear and all required
 ### Rule 1 -- Insurable base is clamped
 
 - **Insurable base clamp formula** — insurable_base = clamp(gross_insurable_income, floor, ceiling)  _(Ministry of Economy; PwC)_
-- **floor (employees)** — BGN 933 (Jan–Mar 2025) / BGN 1,077 (Apr–Dec 2025) / minimum wage EUR 620.20 = BGN 1,213 (2026)  _(Ministry of Economy; PwC)_
-- **floor (self-insured)** — BGN 1,077 (2025) / EUR 550.66 = BGN 1,077 (2026, carried over pending Budget Act) **[RESEARCH GAP — reviewer to confirm 2026 final value; draft Budget proposes EUR 620.20]**  _(Ministry of Economy; PwC)_
-- **ceiling (all)** — BGN 3,750 (Jan–Mar 2025) / BGN 4,130 (Apr–Dec 2025) / EUR 2,111.64 = BGN 4,130 (2026, carried over pending Budget Act; draft proposes EUR 2,352)  _(Ministry of Economy; PwC)_
+- **floor (employees)** — BGN 933 (Jan–Mar 2025) / BGN 1,077 (Apr–Dec 2025) / 2026: the Annex 1 and 1A range for the employee's activity and occupation — EUR 550.66–901.41 to 31 Jul, EUR 620.20–1,532.41 from 1 Aug  _(Ministry of Economy; PwC; State Social Security Budget Act 2026, SG No. 68 of 28 July 2026)_
+- **floor (self-insured)** — BGN 1,077 (2025) / EUR 550.66 (1 Jan–31 Jul 2026, the 2025 figure carried over) / **EUR 620.20 (from 1 Aug 2026)**  _(Ministry of Economy; PwC; State Social Security Budget Act 2026, State Gazette No. 68 of 28 July 2026)_
+- **ceiling (all)** — BGN 3,750 (Jan–Mar 2025) / BGN 4,130 (Apr–Dec 2025) / EUR 2,111.64 (1 Jan–31 Jul 2026) / **EUR 2,300 (from 1 Aug 2026)**. The draft Act proposed EUR 2,352; the adopted figure is EUR 2,300  _(Ministry of Economy; PwC; State Social Security Budget Act 2026, State Gazette No. 68 of 28 July 2026)_
 - **Income above ceiling not contributory** — Income above the ceiling is NOT subject to social or health contributions.  _(Ministry of Economy; PwC)_
 
 ### Rule 2 -- Category III employee total (born after 31 Dec 1959)
@@ -311,7 +311,7 @@ When the period, status or figures are ambiguous, or the client circumstances ar
 
 ### T2-2 -- 2026 thresholds pending the Budget Act
 
-- **T2-2 full entry** — Trigger: a 2026 computation relying on the self-employed minimum (EUR 550.66) or ceiling (EUR 2,111.64). Issue: These are the 2025 amounts carried over at the fixed rate (EUR 550.66 = BGN 1,077; EUR 2,111.64 = BGN 4,130) while the 2025 State Social Security Budget Act still applies (reported through 31 Mar 2026). The draft 2026 State Social Security Budget Act proposes raising the self-employed minimum to EUR 620.20 and the ceiling to EUR 2,352, but this was NOT adopted as of early 2026. Action: Flag for reviewer. Verify the in-force figures against the adopted 2026 State Social Security Budget Act. **[RESEARCH GAP — reviewer to confirm]**
+- **T2-2 full entry** — Trigger: a 2026 computation relying on the self-employed minimum or the ceiling. Issue: the figures moved **mid-year**. EUR 550.66 (= BGN 1,077) and EUR 2,111.64 (= BGN 4,130) are the 2025 amounts carried over at the fixed rate, and they are correct only **to 31 July 2026**. The State Social Security Budget Act 2026 was gazetted on **28 July 2026** (State Gazette No. 68) and from **1 August 2026** the self-employed minimum is **EUR 620.20** and the ceiling **EUR 2,300**. Action: fix the month before the figures. A January-to-July computation and an August-onward one use different pairs, and a full-year self-insured computation needs both. The draft Act's proposed ceiling of EUR 2,352 was not adopted — do not use it.
 
 ### T2-3 -- Work-accident rate by economic activity
 
@@ -347,8 +347,12 @@ INPUT DATA
   Optional sickness cover (SOL):  [YES/NO]   (self-insured only, +3.5%)
 
 BASE CLAMP
-  Floor (period-specific):        [933 / 1,077 BGN 2025 | 2026: employee 620.20 EUR (=BGN 1,213) / self-insured 550.66 EUR (=BGN 1,077)]
-  Ceiling (period-specific):      [3,750 / 4,130 BGN | 2,111.64 EUR]
+  Floor (period-specific):        [2025: 933 BGN Jan-Mar / 1,077 BGN Apr-Dec
+                                   2026 employee: Annex 1/1A range for the activity+occupation
+                                     -- 550.66-901.41 EUR to 31 Jul / 620.20-1,532.41 EUR from 1 Aug
+                                   2026 self-insured: 550.66 EUR to 31 Jul / 620.20 EUR from 1 Aug]
+  Ceiling (period-specific):      [2025: 3,750 BGN Jan-Mar / 4,130 BGN Apr-Dec
+                                   2026: 2,111.64 EUR to 31 Jul / 2,300 EUR from 1 Aug]
   Insurable base (clamped):       [____]
 
 EMPLOYEE CONTRIBUTIONS (Category III, post-1959)
@@ -497,12 +501,20 @@ Self-check: 14.8 + 5 + 8 = 27.8; 27.8 + 3.5 = 31.3. Unemployment and work-accide
 
 | Item | 2025 (BGN) | 2026 (EUR) | Source |
 | --- | --- | --- | --- |
-| Min insurable income (employees, general) | 933 (Jan–Mar); 1,077 (Apr–Dec) | follows min wage 620.20 (= BGN 1,213) | Ministry of Economy; PwC |
-| Min insurable income (self-insured) | 1,077 (= the minimum wage) | 550.66 (= BGN 1,077, carried over pending Budget Act; draft proposes 620.20) **[RESEARCH GAP — reviewer to confirm]** | PwC *Other taxes*; Ruskov & Kollegen |
-| Max insurable income (ceiling, all) | 3,750 (Jan–Mar); 4,130 (Apr–Dec) | 2,111.64 (= BGN 4,130, carried over pending Budget Act; draft proposes 2,352) | Ministry of Economy; PwC *Other taxes* |
+| Min insurable income (employees, general) | 933 (Jan–Mar); 1,077 (Apr–Dec) | a range by activity/occupation: 550.66–901.41 (Jan–Jul); **620.20–1,532.41 (Aug–Dec)** | Ministry of Economy; PwC; SSB Act 2026, Annexes 1 and 1A |
+| Min insurable income (self-insured) | 1,077 (= the minimum wage) | 550.66 (Jan–Jul, = BGN 1,077 carried over); **620.20 (Aug–Dec)** | PwC *Other taxes*; Ruskov & Kollegen; State Social Security Budget Act 2026, SG No. 68 of 28 July 2026 |
+| Max insurable income (ceiling, all) | 3,750 (Jan–Mar); 4,130 (Apr–Dec) | 2,111.64 (Jan–Jul, = BGN 4,130 carried over); **2,300 (Aug–Dec)** — the draft's 2,352 was not adopted | Ministry of Economy; PwC *Other taxes*; State Social Security Budget Act 2026, SG No. 68 of 28 July 2026 |
 | Minimum monthly wage | 1,077 (from 1 Jan 2025, = EUR 550.66) | 620.20 (= BGN 1,213, from 1 Jan 2026; Council of Ministers Decree No. 243 of 13.11.2025) | Ministry of Economy; Ruskov & Kollegen |
 
-Euro conversions at the irrevocable fixed rate BGN 1.95583 = EUR 1. Note the two distinct 2026 floors: the **employee** floor is the 2026 minimum wage EUR 620.20 (= BGN 1,213 / 1.95583 = 620.20); the **self-insured** floor is EUR 550.66 (= the 2025 BGN 1,077 carried over: 1,077 / 1.95583 = 550.66). These are NOT the same BGN amount — BGN 1,077 ≠ BGN 1,213. Ceiling: BGN 4,130 / 1.95583 = 2,111.6355, i.e. EUR 2,111.64, which is the figure used everywhere else in this skill and the one PwC publishes.
+Euro conversions at the irrevocable fixed rate BGN 1.95583 = EUR 1. Arithmetic: BGN 1,077 / 1.95583 = 550.6567, i.e. EUR 550.66; BGN 1,213 / 1.95583 = 620.20; BGN 4,130 / 1.95583 = 2,111.6355, i.e. EUR 2,111.64.
+
+**Three things about the 2026 floors that are easy to get wrong.**
+
+1. **The employee floor is a range, the self-insured floor is a number.** For self-insured persons one minimum base applies to everybody. For employees the minimum insurable income is set per **economic activity and occupation group** in Annexes 1 and 1A to the Budget Act, running EUR 550.66–901.41 to 31 July 2026 and EUR 620.20–1,532.41 from 1 August. Contributing at the bottom of the range for an occupation the annex places higher under-declares the base. Read the annex row for the employer's NACE code and the employee's occupation class.
+
+2. **Both moved on 1 August 2026, not 1 January.** The Budget Act was not gazetted until 28 July 2026, so the 2025 amounts ran on for seven months. A full-year 2026 computation needs both halves.
+
+3. **The minimum wage and the annex floor diverged for seven months.** The 2026 minimum wage is EUR 620.20 from **1 January** 2026, while the annex floor stayed at EUR 550.66 until **31 July**. For January–July 2026 the statutory minimum wage therefore sat above the annex floor. A contribution base cannot be below actual remuneration, so for an employee on the minimum wage the practical base is EUR 620.20 throughout — but confirm the treatment with the NRA before running that period retrospectively. Two secondary sources also render the January–July employee range floor as EUR 550.60 rather than EUR 550.66; the six-cent difference will not change a tax answer but will fail a payroll reconciliation, so confirm it against Annex 1 of the gazetted text.
 
 ### Taxes (context)
 
@@ -546,7 +558,7 @@ Euro conversions at the irrevocable fixed rate BGN 1.95583 = EUR 1. Note the two
 
 ### Test suite
 
-All employees born after 31 Dec 1959 (Category III) unless stated; 2026 figures use ceiling EUR 2,111.64 and work-accident at the low end (0.4%).
+All employees born after 31 Dec 1959 (Category III) unless stated; the 2026 tests are set **before 1 August 2026**, so they use ceiling EUR 2,111.64 and self-insured floor EUR 550.66, with work-accident at the low end (0.4%). Re-run any of them against EUR 2,300 / EUR 620.20 for an August-onward date.
 
 Test 1: Employee, gross EUR 1,000/month, 2026. Within band. Employee SSC = 13.78% x 1,000 = EUR 137.80. PIT base = 1,000 - 137.80 = EUR 862.20. PIT = EUR 86.22. Net = 1,000 - 137.80 - 86.22 = EUR 775.98. Employer SSC (18.92%) = EUR 189.20.
 
@@ -560,7 +572,7 @@ Test 5: Self-insured person, declared income EUR 1,500/month, 2026, no optional 
 
 Test 6: Self-insured person, declared income EUR 1,500/month, 2026, WITH optional Disease & Maternity. Contributions = 31.3% x 1,500 = EUR 469.50.
 
-Test 7: Self-insured person, declared income below the EUR 550.66 floor → clamp UP to EUR 550.66. Contributions = 27.8% x 550.66 = EUR 153.08. **[RESEARCH GAP — reviewer to confirm 2026 final floor]**
+Test 7: Self-insured person, declared income below the floor → clamp UP to the floor. To 31 July 2026 the floor is EUR 550.66, so contributions = 27.8% x 550.66 = EUR 153.08. From 1 August 2026 the floor is EUR 620.20, so contributions = 27.8% x 620.20 = **EUR 172.42**. A full-year 2026 self-insured computation at the floor is therefore 7 x 153.08 + 5 x 172.42 = EUR 1,071.56 + EUR 862.10 = **EUR 1,933.66**, not 12 x either figure.
 
 Test 8: Employee, 2025 H2 (Apr–Dec), gross BGN 5,000/month → above ceiling BGN 4,130 → base BGN 4,130. Employee SSC = 13.78% x 4,130 = BGN 569.11. PIT base = 5,000 - 569.11 = BGN 4,430.89. PIT = BGN 443.09. Net = 5,000 - 569.11 - 443.09 = BGN 3,987.80.
 
