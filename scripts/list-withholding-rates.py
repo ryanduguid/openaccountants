@@ -85,8 +85,30 @@ Fiji is the shape to copy when a field cannot be settled. "Position uncertain"
 tells a reader nothing they can act on; naming both sources, both dates and
 which way to err tells them what to do this afternoon.
 
-Still open: 118 jurisdictions state a rate, 27 hedge at least one of their own,
-and 6 have been checked.
+  * Trinidad and Tobago  WRONG on two of three, and the guide had the dividend
+              rates transposed onto interest. It read dividends at a flat 10%
+              and interest at "10% to non-resident individuals; 8% to
+              non-resident companies". The Board of Inland Revenue's own guide
+              gives distributions at 3% to a non-resident parent company and 8%
+              to any other non-resident, and puts interest with royalties and
+              other payments at 15% for individuals and companies alike. So
+              interest was understated by 5 to 7 points and the payer carries
+              that.
+  * Turkey    CORRECT at 10% on interest to non-residents, and now says what
+              decides it: 10% where the loan runs more than two years, 15%
+              otherwise. Treaty rates are mostly equal to or above the domestic
+              rate, so a treaty rarely helps here.
+
+Trinidad is the case for going to the authority rather than to a chart. A first
+search returned 15% for interest, which is right, and 15% for royalties, which
+is also right, from a page summarising both. PwC's table renders the corporate
+distribution rate as "3/8%", which extraction turns into something that reads
+like three-eighths of one per cent and is really "3% or 8%". Neither reading
+settles anything. The IRD's own withholding guide settles all three in one
+page.
+
+Still open: 118 jurisdictions state a rate, 26 hedge at least one of their own,
+and 8 have been checked.
 
 Usage: python3 scripts/list-withholding-rates.py [--selftest]
 """
