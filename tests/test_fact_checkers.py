@@ -162,6 +162,31 @@ class FactCheckerTests(unittest.TestCase):
         })
         self.assertIn("no stated split (since 2025): 0 line(s)", output)
 
+    def test_statute_links_spare_recognised_publishers(self):
+        # The corpus convention is [Instrument name](where I read it), and
+        # naming the Act while citing a summary of it is honest — so a link to
+        # a recognised tax publisher is not reported. A link to an HR platform
+        # is: a reader clicking it has no signal they have left the law behind.
+        output = self.run_checker("list-statute-links.py", {
+            "trap/cit.md": (
+                "- **Rate** - 30% _([Code Général des Impôts (Bénin)]"
+                "(https://www.rivermate.com/guides/benin))_\n"
+            ),
+            "convention/cit.md": (
+                "- **Rate** - 30% _([Income Tax Act]"
+                "(https://taxsummaries.pwc.com/x/corporate))_\n"
+            ),
+            "right/cit.md": (
+                "- **Rate** - 30% _([Value Added Tax Act 1991]"
+                "(https://frcs.org.fj/vat))_\n"
+            ),
+        })
+        self.assertRegex(output, r"trap\s+1")
+        self.assertNotRegex(output, r"\bconvention\b")
+        self.assertNotRegex(output, r"\bright\b")
+        self.assertIn("across 1 jurisdictions", output)
+        self.assertIn("move the instrument name out of the anchor text", output)
+
     def test_solo_citations_rank_uncorroborated_instruments(self):
         # "lonely" leans on one instrument nobody else cites; "shared" cites an
         # instrument that appears in a second guide, so it is corroborated

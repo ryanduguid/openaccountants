@@ -13,7 +13,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Value Added Tax (TVA)
 
-- **VAT / GST — Value Added Tax (TVA) standard rate** — 18 percent (Yes — Value Added Tax (TVA) applies at a standard rate)  _([Code Général des Impôts (CGI) — Taxe sur la Valeur Ajoutée (TVA)](https://quaderno.io/guides/guinea-vat-guide/))_
+- **VAT / GST — Value Added Tax (TVA) standard rate** — 18 percent (Yes — Value Added Tax (TVA) applies at a standard rate)  _(Code Général des Impôts (CGI) — Taxe sur la Valeur Ajoutée (TVA) (as described at [quaderno.io](https://quaderno.io/guides/guinea-vat-guide/)))_
 - **Zero-rated supplies** — Exports of goods and services are zero-rated (0%) percent  _(Code Général des Impôts (CGI) — Taxe sur la Valeur Ajoutée (TVA) (https://quaderno.io/guides/guinea-vat-guide/))_
 - **Exempt supplies** — Certain essential goods and services are exempt (no VAT charged, no input recovery)  _(Code Général des Impôts (CGI) — Taxe sur la Valeur Ajoutée (TVA) (https://quaderno.io/guides/guinea-vat-guide/))_
 - **VAT registration threshold (turnover)** — GNF 1,000,000,000 annual turnover (businesses above this are subject to VAT) (approx — confirm) GNF  _(Code Général des Impôts (CGI) — Taxe sur la Valeur Ajoutée (TVA) (https://tradingeconomics.com/guinea/sales-tax-rate))_

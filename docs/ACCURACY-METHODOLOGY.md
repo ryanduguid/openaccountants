@@ -350,6 +350,34 @@ The checker ranks and never gates CI, because citing a summary is not a defect
 and an authority link does not prove the figures came from it. It measures
 exposure, not diligence.
 
+### A citation can name the right statute and still mislead
+
+`scripts/list-statute-links.py` looks at markdown links whose **clickable text**
+names an instrument. The corpus writes `[Instrument name](where I read about
+it)`, which is honest as far as it goes — 944 links do it — but it means the
+anchor text describes the law and the destination is something else entirely.
+
+Most of the time that is harmless: a reader who clicks `[Income Tax Act]` and
+lands on PwC can see immediately what they are looking at. The checker leaves
+those alone. What it reports is the sharp end — **358 links across 51
+jurisdictions** where the destination was neither a tax authority nor a
+recognised tax publisher. `[Code Général des Impôts (Bénin) — IRPP barème]`
+went to an HR platform's country page. `[OHADA Uniform Act on Commercial
+Companies]` went to a corporate-services firm. `[Civil Code of Curaçao, Book 2]`
+went to a law firm's marketing site.
+
+The figures beside them may be perfectly correct. The citation is still telling
+the reader something untrue about where it came from, and — like Portugal's
+wrong Portaria — it survives every check that compares numbers, because there
+is no number in it to compare.
+
+The fix is presentational and safe: move the instrument name out of the anchor
+so the link says where it goes. `[Code Général des Impôts (Bénin)](rivermate)`
+becomes `Code Général des Impôts (Bénin) (as described at [rivermate.com](…))`.
+Nothing about the tax changes; the reader stops being told they are clicking
+through to a statute. Three jurisdictions were converted this way as a worked
+example, taking the count to 280.
+
 ### Three ways a guide comes to name three heads, and what each costs to fix
 
 The withholding-scope queue turned out to hold three distinct defects wearing
