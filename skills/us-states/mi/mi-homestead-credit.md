@@ -66,7 +66,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Phase-out rate (regular claimants) | Credit reduced by **10%** for every **$1,000** (or part) of THR over $62,500 | TY 2025 MI-1040CR instructions |
 | Taxable value cap on homestead | **$165,400** | TY 2025 MI-1040CR instructions |
 | Property-tax-floor as % of THR (regular) | **3.2%** of THR | TY 2025 MI-1040CR Line 34 |
-| Rent treated as property tax (renters) | **23%** of rent paid `[VERIFY: 23% per AARP source; some legacy summaries say 20% — confirm against current TY 2025 instructions]` | AARP Property Tax-Aide MI page |
+| Rent treated as property tax (renters) | **23%** of rent paid (**10%** if service fee housing) | TY2025 MI-1040CR form and instructions, Michigan Treasury |
 | Senior alternate THR ceiling (100% of difference) | THR ≤ **$21,000** ⇒ 100% credit allowance `[VERIFY exact 2025 figure]` | MCL 206.522; TY 2025 instructions Table 2 |
 | Senior phase-out — THR over $21,000 | Credit % reduced 4% per $1,000 of THR over $21,000 `[VERIFY]` | TY 2025 instructions Table 2 |
 | Senior phase-out — THR $30,001–$60,000 | Credit = 60% of difference `[VERIFY]` | TY 2025 instructions Table 2 |
@@ -384,7 +384,7 @@ Credit = $1,140.
 | $62,500 phase-out floor + 10% / $1,000 | TY 2025 instructions | Confirmed |
 | $165,400 taxable value cap | TY 2025 instructions | Confirmed |
 | 3.2% floor of THR | TY 2025 form Line 34 | Confirmed |
-| 23% rent factor | AARP Property Tax-Aide MI page | `[VERIFY: cross-check against TY 2025 Treasury instructions; long-standing rate was 20% in older guidance — likely changed to 23% but reviewer must confirm]` |
+| 23% rent factor | TY2025 MI-1040CR form and instructions, Michigan Treasury | Confirmed: the form directs renters to multiply total rent paid by 23% (10% for service fee housing). The 20% figure in older summaries is superseded and must not be used. |
 | Senior Table 2 percentages | AARP / TaxSlayer summaries | `[VERIFY exact 2025 figures against Treasury PDF]` |
 | PA 4 of 2023 reform impact | Treasury press releases; House Bill 4001 (2023) | Confirmed at high level; specific dollar changes summarized in Section 2 |
 
