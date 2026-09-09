@@ -60,9 +60,9 @@ jurisdiction at a time. This section records how far that has got.
 |---|---|---|---|
 | Standard VAT / GST rate | 157 of 157 jurisdictions stating one | 6 | Fiji, India, Kazakhstan, Zimbabwe, Malawi, Maldives |
 | Headline corporate rate | ~135 jurisdictions | 3 | Lithuania, Cyprus, Portugal |
-| Annual return filing deadline | 19 of the 200 jurisdictions stating one | 6 | Italy, Greece, Armenia, Cyprus, Finland, Australia |
+| Annual return filing deadline | 20 of the 200 jurisdictions stating one | 7 | Italy, Greece, Armenia, Cyprus, Finland, Australia, Norway |
 
-The deadline pass has covered 19 jurisdictions of 200. Nobody has run an external
+The deadline pass has covered 20 jurisdictions of 200. Nobody has run an external
 pass over anything else. That leaves payroll rates and thresholds, registration
 and filing thresholds, penalty and interest rates, social-contribution bands,
 capital allowances, withholding rates, form names and statutory citations. All
@@ -79,6 +79,20 @@ Sierra Leone, Tunisia, and Andorra's personal filing window.
 Five in eight and zero in ten are both worth keeping. The first says the leads
 were good. The second says the field is in better shape than the first number
 implied, and it is the one to quote.
+
+A fourth lead turned one of these findings into a script.
+`scripts/check-deadline-rules.py` does the arithmetic that Greece and Andorra
+failed: a guide states the rule and then what the rule works out to for a
+calendar-year taxpayer, so the two halves can be compared. It found Norway,
+where the accounts are approved within six months and filed by a fixed
+31 July, and the six-month rule had been attached to the filing.
+
+Its first run returned 43 hits and about 40 were the same mistake on the
+checker's part: it assumed a 31 December year-end where the line named a
+different one. Ethiopia counts four months from 7 July, Australian trusts two
+months from 30 June, and Hong Kong's BIR60 is due a month after the return is
+issued rather than after any year-end. Gated on a stated calendar year, it
+returns two, and one of them is the open Andorra case.
 
 A third lead found the sixth error without comparing any column. Armenia and
 Finland had each frozen one filing season into a standing rule, so the next

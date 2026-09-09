@@ -111,7 +111,21 @@ citation years or worked examples that state their own dates.
                lodgment program: 31 October self-lodged, 15 May by an agent
                engaged before 31 October.
 
-Still open: 200 jurisdictions state a deadline and 19 have been checked.
+Fourth lead, and the first one a script found rather than a reader.
+scripts/check-deadline-rules.py does the arithmetic Greece and Andorra failed:
+a guide states the rule and what the rule works out to for a calendar-year
+taxpayer, so the two can be compared.
+
+  * Norway     WRONG rule, right date, and it had said so. no-company-formation
+               read "submitted to Regnskapsregisteret; deadline generally within
+               6 months of year-end (31 July for calendar-year companies)
+               ((confirm filing deadline))". Both dates are real and they belong
+               to different steps: the general meeting approves the accounts
+               within 6 months, so 30 June, and they must reach the register by
+               31 July under Regnskapsloven section 8-2. The six-month rule was
+               attached to the wrong step. Hedge resolved.
+
+Still open: 200 jurisdictions state a deadline and 20 have been checked.
 
 Usage: python3 scripts/list-filing-deadlines.py [--selftest]
 """
