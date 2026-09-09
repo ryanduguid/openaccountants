@@ -74,6 +74,8 @@ jurisdiction at a time. This section records how far that has got.
 | Statutory citations | Pakistan, Ireland (partial) | 0, one unverified | — |
 | Forthcoming rate steps | Ireland | 1 gap filled | Ireland |
 | Capital allowances | Australia | 1 | Australia |
+| Personal allowances and bands | Liechtenstein | 0 | — |
+| Social insurance rates | Liechtenstein | 3 | Liechtenstein |
 
 The deadline pass has covered 24 jurisdictions of 200. Nobody has run an external
 pass over anything else. That leaves payroll rates and thresholds, registration
@@ -142,6 +144,28 @@ current value". That date has passed, the change is in force, and a hedge
 written before a commencement date should be revisited after it rather than
 carried forward. Its prohibition now reads "do NOT state the threshold as
 EGP 500,000" rather than "do not present either figure as settled".
+
+### A guide that borrows another country's rates says so
+
+Liechtenstein's payroll guide gave AHV/IV as "approx 10.6% of gross salary,
+split equally employer/employee", and its own note explained where that came
+from: "figure follows Swiss model". It had no Liechtenstein source, so it used
+Switzerland's and said so.
+
+The real figures are 12.285% in total, split 7.385% employer against 4.900%
+employee, so the split is not equal and the employer share was understated by
+about two points. Its sources were an HR services blog rather than the
+AHV-IV-FAK contribution table, which is the other half of the same problem.
+
+The same pack's income tax figures, cited to PwC, are exactly right: bands at
+CHF 21,140 and CHF 211,401, allowances of CHF 15,855, CHF 31,710 and CHF 23,783.
+Five hedges resolved and three rates corrected, in one jurisdiction, from two
+sources.
+
+The lesson is in what the guide admitted. "Follows the Swiss model" is a
+confession, and a corpus that writes those down can be searched for them. It is
+a better lead than any disagreement, because it names both the doubt and its
+cause.
 
 ### An announcement is not a law, in either direction
 
