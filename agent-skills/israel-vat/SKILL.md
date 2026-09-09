@@ -25,7 +25,7 @@ metadata:
 | Country | Israel (מדינת ישראל) |
 | Tax | Ma'am (מס ערך מוסף — Value Added Tax) |
 | Currency | ILS (Israeli New Shekel — ₪) |
-| Standard rate | 17% (effective January 2025; was 17% restored after temporary 18% in 2024) |
+| Standard rate | **18%** — effective **1 January 2025**, raised from the 17% that had applied since October 2015. There was no "temporary 18% in 2024": the rise took effect at the start of 2025 and has not been reversed |
 | Reduced rate | 0% (exports, specific agricultural produce, tourism services to non-residents) |
 | Exempt | Financial services, insurance, residential rent (if not commercial), medical services |
 | Registration threshold | ILS 120,000 annual turnover (2025 threshold); below this — "Osek Patur" (exempt dealer) |
@@ -44,7 +44,7 @@ metadata:
 
 | Field | Meaning |
 |---|---|
-| Iska (עסקה) | Output tax base — taxable supplies at 17% |
+| Iska (עסקה) | Output tax base — taxable supplies at 18% |
 | Yetsia (יציאה) | Exports / zero-rated supplies |
 | Pator (פטור) | Exempt supplies |
 | Totchaot (תשומות) | Input tax on purchases |
@@ -56,11 +56,11 @@ metadata:
 
 | Ambiguity | Default |
 |---|---|
-| Unknown rate on a sale | 17% standard |
-| Unknown whether export documentation complete | Treat as domestic 17% |
+| Unknown rate on a sale | 18% standard |
+| Unknown whether export documentation complete | Treat as domestic 18% |
 | Unknown business-use % (vehicle, phone, home) | 0% input credit |
 | Unknown whether Heshbonit Mase issued | No input credit until confirmed |
-| Financial service vs professional service | Treat as professional — 17% |
+| Financial service vs professional service | Treat as professional — 18% |
 | Residential rent vs commercial | Treat as exempt until lease reviewed |
 | Foreign digital service (B2B) | Buyer self-assesses under reverse charge |
 
@@ -116,87 +116,87 @@ Refuse and escalate to a licensed CPA (רואה חשבון) for:
 | Bank Otsar HaHayal (אוצר החייל) | Military banking | Exempt | No |
 | Bit (ביט — Hapoalim app) | P2P payment transfer | Exempt | No |
 | PayBox (פייבוקס — Leumi) | P2P digital wallet | Exempt | No |
-| Pelecard / Creditguard | Payment processing | 17% | Yes |
-| Tranzila | E-commerce payment gateway | 17% | Yes |
+| Pelecard / Creditguard | Payment processing | 18% | Yes |
+| Tranzila | E-commerce payment gateway | 18% | Yes |
 
 ### 3.2 Electricity and utilities
 
 | Supplier | Typical description | Ma'am rate | Input credit |
 |---|---|---|---|
-| Israel Electric Corporation (חברת החשמל — IEC) | Electricity | 17% | Yes (business) |
-| Mekorot (מקורות) | Water supply wholesale | 17% | Yes |
-| Local municipality water (ועדה מקומית) | Water — municipal | 17% | Yes |
-| Paz Gas / Supergas | Gas — cooking/heating | 17% | Yes |
-| Cellcom Energy | Green electricity supply | 17% | Yes |
+| Israel Electric Corporation (חברת החשמל — IEC) | Electricity | 18% | Yes (business) |
+| Mekorot (מקורות) | Water supply wholesale | 18% | Yes |
+| Local municipality water (ועדה מקומית) | Water — municipal | 18% | Yes |
+| Paz Gas / Supergas | Gas — cooking/heating | 18% | Yes |
+| Cellcom Energy | Green electricity supply | 18% | Yes |
 
 ### 3.3 Telecommunications
 
 | Supplier | Typical description | Ma'am rate | Input credit |
 |---|---|---|---|
-| Cellcom (סלקום) | Mobile, broadband | 17% | Yes (business use) |
-| Partner Communications (פרטנר) | Mobile, fiber, TV | 17% | Yes (business use) |
-| Bezeq (בזק) | Fixed line, DSL internet | 17% | Yes (business use) |
-| HOT (הוט) | Cable TV, internet, phone | 17% | Yes (business use) |
-| 012 Mobile / 013 Netvision | MVNO, internet | 17% | Yes |
-| Golan Telecom (גולן טלקום) | Discount mobile | 17% | Yes |
+| Cellcom (סלקום) | Mobile, broadband | 18% | Yes (business use) |
+| Partner Communications (פרטנר) | Mobile, fiber, TV | 18% | Yes (business use) |
+| Bezeq (בזק) | Fixed line, DSL internet | 18% | Yes (business use) |
+| HOT (הוט) | Cable TV, internet, phone | 18% | Yes (business use) |
+| 012 Mobile / 013 Netvision | MVNO, internet | 18% | Yes |
+| Golan Telecom (גולן טלקום) | Discount mobile | 18% | Yes |
 
 ### 3.4 Transport and travel
 
 | Supplier | Typical description | Ma'am rate | Input credit |
 |---|---|---|---|
-| El Al (אל על) | Domestic flights (Eilat) | 17% | Yes |
+| El Al (אל על) | Domestic flights (Eilat) | 18% | Yes |
 | El Al | International flights | 0% | No input credit applicable |
-| Arkia | Domestic flights | 17% | Yes |
-| Israir | Domestic flights | 17% | Yes |
-| Israel Railways (רכבת ישראל) | Train tickets | 17% | Yes |
-| Egged (אגד) | Bus — intercity | 17% | Yes |
-| Dan (דן) | Bus — Tel Aviv metro | 17% | Yes |
-| Gett (גט) | Taxi app | 17% | Yes (business use) |
-| Yango | Ride-hailing | 17% | Yes (business use) |
+| Arkia | Domestic flights | 18% | Yes |
+| Israir | Domestic flights | 18% | Yes |
+| Israel Railways (רכבת ישראל) | Train tickets | 18% | Yes |
+| Egged (אגד) | Bus — intercity | 18% | Yes |
+| Dan (דן) | Bus — Tel Aviv metro | 18% | Yes |
+| Gett (גט) | Taxi app | 18% | Yes (business use) |
+| Yango | Ride-hailing | 18% | Yes (business use) |
 
 ### 3.5 Logistics and postal
 
 | Supplier | Typical description | Ma'am rate | Input credit |
 |---|---|---|---|
-| Israel Post (דואר ישראל) | Domestic mail, parcels | 17% | Yes |
-| DHL Israel | International courier | 0% (export) / 17% (domestic) | Yes |
-| UPS Israel | International courier | 0% / 17% | Yes |
-| FedEx Israel | International courier | 0% / 17% | Yes |
-| Ashot Logistics | Domestic delivery | 17% | Yes |
+| Israel Post (דואר ישראל) | Domestic mail, parcels | 18% | Yes |
+| DHL Israel | International courier | 0% (export) / 18% (domestic) | Yes |
+| UPS Israel | International courier | 0% / 18% | Yes |
+| FedEx Israel | International courier | 0% / 18% | Yes |
+| Ashot Logistics | Domestic delivery | 18% | Yes |
 
 ### 3.6 Retail and office supplies
 
 | Supplier | Typical description | Ma'am rate | Input credit |
 |---|---|---|---|
-| Shufersal (שופרסל) | Supermarket — food/non-food | 17% (food not zero-rated in IL) | Yes (business) |
-| Rami Levy (רמי לוי) | Discount supermarket | 17% | Yes |
-| Office Depot Israel | Office supplies | 17% | Yes |
-| KSP (כ.ס.פ) | Electronics | 17% | Yes |
-| SuperPharm | Pharmacy — medicines | 17% (medicines not zero-rated in IL) | Yes |
-| Factory 54 / Castro | Clothing | 17% | Yes |
+| Shufersal (שופרסל) | Supermarket — food/non-food | 18% (food not zero-rated in IL) | Yes (business) |
+| Rami Levy (רמי לוי) | Discount supermarket | 18% | Yes |
+| Office Depot Israel | Office supplies | 18% | Yes |
+| KSP (כ.ס.פ) | Electronics | 18% | Yes |
+| SuperPharm | Pharmacy — medicines | 18% (medicines not zero-rated in IL) | Yes |
+| Factory 54 / Castro | Clothing | 18% | Yes |
 
 ### 3.7 Software and digital services
 
 | Supplier | Typical description | Ma'am rate | Input credit |
 |---|---|---|---|
-| Priority Software (פריוריטי) | Israeli ERP | 17% | Yes |
-| Greeninvoice (חשבונית ירוקה) | Cloud invoicing platform | 17% | Yes |
-| Hashavshevet (חשבשבת) | Accounting software | 17% | Yes |
-| iCount | Cloud accounting | 17% | Yes |
-| Microsoft Israel (Azure, M365) | Cloud services — B2B | 17% (buyer reverse-charge) | Yes |
-| Google Workspace IL | Cloud — B2B | 17% (buyer reverse-charge) | Yes |
-| Salesforce Israel | CRM — B2B | 17% (buyer reverse-charge) | Yes |
-| AWS Israel | Cloud infrastructure — B2B | 17% (buyer reverse-charge) | Yes |
+| Priority Software (פריוריטי) | Israeli ERP | 18% | Yes |
+| Greeninvoice (חשבונית ירוקה) | Cloud invoicing platform | 18% | Yes |
+| Hashavshevet (חשבשבת) | Accounting software | 18% | Yes |
+| iCount | Cloud accounting | 18% | Yes |
+| Microsoft Israel (Azure, M365) | Cloud services — B2B | 18% (buyer reverse-charge) | Yes |
+| Google Workspace IL | Cloud — B2B | 18% (buyer reverse-charge) | Yes |
+| Salesforce Israel | CRM — B2B | 18% (buyer reverse-charge) | Yes |
+| AWS Israel | Cloud infrastructure — B2B | 18% (buyer reverse-charge) | Yes |
 
 ### 3.8 Professional services
 
 | Supplier | Typical description | Ma'am rate | Input credit |
 |---|---|---|---|
-| Roeh Heshbon (רואה חשבון — CPA) | Accounting, audit | 17% | Yes |
-| Orech Din (עורך דין — lawyer) | Legal services | 17% | Yes |
-| Munahel Ishur (מנהל אישור — notary equivalent) | Document certification | 17% | Yes |
-| Reklam / marketing agency | Advertising, PR | 17% | Yes |
-| Building contractor (קבלן) | Construction services | 17% | Yes |
+| Roeh Heshbon (רואה חשבון — CPA) | Accounting, audit | 18% | Yes |
+| Orech Din (עורך דין — lawyer) | Legal services | 18% | Yes |
+| Munahel Ishur (מנהל אישור — notary equivalent) | Document certification | 18% | Yes |
+| Reklam / marketing agency | Advertising, PR | 18% | Yes |
+| Building contractor (קבלן) | Construction services | 18% | Yes |
 
 ### 3.9 Insurance
 
@@ -233,7 +233,7 @@ Refuse and escalate to a licensed CPA (רואה חשבון) for:
 ```
 
 **Working:**
-- Heshbonit Mase: net ILS 200,000 + Ma'am 17% ILS 34,000 = ILS 234,000
+- Heshbonit Mase: net ILS 200,000 + Ma'am 18% ILS 36,000 = ILS 236,000
 - Return entry: Output Iska — ILS 200,000 | Output Ma'am: ILS 34,000
 
 ---
@@ -251,7 +251,7 @@ Refuse and escalate to a licensed CPA (רואה חשבון) for:
 ```
 
 **Working:**
-- Import customs document: CIF value ILS 400,000 + customs duty ILS 112,000 = ILS 512,000 × 17% = ILS 87,040 Ma'am
+- Import customs document: CIF value ILS 400,000 + customs duty ILS 112,000 = ILS 512,000 × 18% = ILS 92,160 Ma'am
 - Pay at port of entry — then claim as input tax in Doch Ma'am filing
 - Return entry: Input Totchaot — ILS 512,000; Input Ma'am: ILS 87,040
 
@@ -336,12 +336,12 @@ Refuse and escalate to a licensed CPA (רואה חשבון) for:
 ## Section 5 — Tier 1 rules (compressed)
 
 **Rate assignment:**
-- 17% standard: almost all goods and services (food, clothing, electronics, professional services — all at standard rate unlike EU VAT)
+- 18% standard: almost all goods and services (food, clothing, electronics, professional services — all at standard rate unlike EU VAT)
 - 0%: exports of goods with customs declaration, services exported to foreign residents used outside Israel, tourism services to non-residents with foreign currency payment
 - Exempt: financial services, insurance, residential rent (non-commercial), medical services by licensed practitioners, educational services
 
 **Input credit:**
-- Credit allowed on all 17% purchases for taxable business activities
+- Credit allowed on all 18% purchases for taxable business activities
 - Blocked: passenger vehicles (רכב פרטי) — Section 41 Ma'am Law
 - Blocked: personal expenses — entertainment with non-business purpose
 - Partially blocked: vehicles used partly for business — 2/3 credit allowed if mixed use claimed; needs documentation
@@ -364,7 +364,7 @@ Refuse and escalate to a licensed CPA (רואה חשבון) for:
 | Home office | Business % of home use unknown | "What % of your home is used exclusively for business?" |
 | Mobile phone | Business vs personal split | "Is this a dedicated business phone? Estimate business use %." |
 | Entertainment | Must prove business purpose | "List attendees and business purpose of each entertainment expense." |
-| Mixed residential/commercial property | Residential rent exempt, commercial 17% | "Is the lease for residential or commercial use? Provide lease agreement." |
+| Mixed residential/commercial property | Residential rent exempt, commercial 18% | "Is the lease for residential or commercial use? Provide lease agreement." |
 | Export documentation incomplete | Zero-rate only with valid export evidence | "Provide customs export declaration or foreign payment evidence." |
 | Osek Patur supplier | Unregistered supplier — no Heshbonit Mase available, no input credit | "Confirm supplier registration status — Osek Murshe or Osek Patur?" |
 
@@ -375,7 +375,7 @@ Refuse and escalate to a licensed CPA (רואה חשבון) for:
 **Columns:** Date | Supplier / Customer | Osek No. | Invoice No. | Net (ILS) | Ma'am Rate % | Ma'am (ILS) | In/Out | Zero-rated? | Exempt? | Tier 2 flag | Notes
 
 **Tab structure:**
-1. `Output_Sales` — all sales (domestic 17%, zero-rated exports, exempt)
+1. `Output_Sales` — all sales (domestic 18%, zero-rated exports, exempt)
 2. `Input_Purchases` — all purchases with Ma'am credit
 3. `ReverseCharge_Foreign` — foreign services self-assessed
 4. `MaamSummary` — bimonthly return totals
@@ -420,7 +420,7 @@ When client cannot provide Heshbonit Mase for all transactions:
 
 1. Use bank statement amounts as Ma'am-inclusive totals and back-calculate:
    - Net = Total ÷ 1.17 | Ma'am = Total − Net
-2. Apply conservative defaults: 17% output on all unverified sales; 0% input credit without valid Heshbonit Mase
+2. Apply conservative defaults: 18% output on all unverified sales; 0% input credit without valid Heshbonit Mase
 3. Flag all items without Heshbonit Mase in Tier2_Items tab
 4. Issue data request listing missing invoice references
 5. Warn client: ITA can disallow input credit claims without valid Heshbonit Mase from Osek Murshe supplier — risk of penalty
