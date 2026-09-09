@@ -41,7 +41,7 @@ This block is generated from verified `skill_facts` — edit the facts, not the 
 - **Wealth statement** — Mandatory for every resident individual filing a return  _(ITO 2001 §116)_
 - **Advance tax instalments** — Quarterly: 15 Sept, 15 Dec, 15 March, 15 June  _(ITO 2001 §147(5) & §147(5A))_
 - **Advance tax threshold** — Latest assessed taxable income > PKR 1,000,000 (TBC)  _(ITO 2001 §147)_
-- **§154A IT/ITeS export final tax (PSEB-registered)** — 0.25% of export proceeds via banking channel; excluded from bracket computation & from the PKR 10M surcharge test  _(ITO 2001 §154A)_
+- **§154A IT/ITeS export final tax (PSEB-registered)** — 0.25% of export proceeds via banking channel; excluded from the bracket computation. It was also excluded from the PKR 10M surcharge test, which matters only for TY 2025-26 and earlier — **Finance Act 2026 abolished that surcharge from 1 July 2026**, so there is no threshold test to exclude it from in TY 2026-27  _(ITO 2001 §154A; Finance Act 2026)_
 - **Non-PSEB IT export rate** — 1% (TBC)  _(ITO 2001 §154A)_
 - **§61 charitable donation credit** — Up to 30% of taxable income (individuals & AOPs) / 20% (Companies)  _(ITO 2001 §61)_
 - **§62 listed shares / sukuk credit** — Omitted  _(ITO 2001 §62)_
@@ -75,7 +75,7 @@ This block is generated from verified `skill_facts` — edit the facts, not the 
 | Validation date | Verified by Ibrar Ali (8907) on 2026-06-12 |
 | Skill version | 1.0 |
 
-### Salary Brackets (TY 2024-25 baseline — likely revised by Finance Act 2025; TBC under Finance Act 2025)
+### Salary Brackets — TY 2026-27 current, TY 2024-25 retained for prior-year returns
 
 **Salary Brackets Table**  _(ITO 2001 First Schedule, Part I, Division I)_
 
@@ -113,7 +113,7 @@ taxable salary of PKR 5,000,000 the superseded table gives 616,000 + 35% x
 
 **That TBC has been overtaken twice.** This paragraph read "TBC — verify under Finance Act 2025 final text ... treat the above as the TY 2024-25 baseline". Finance Act 2025 was enacted on 27 June 2025 with effect from 1 July 2025, and Finance Act 2026 was passed on 23 June 2026, gazetted on 26 June 2026 and took effect on 1 July 2026. The lower bands did stay at 1% and 11%; the upper bands moved. The TY 2026-27 table above is the current one. **The non-salary / AOP table below has not been re-verified against Finance Act 2026** — treat it as the earlier baseline and confirm it against the gazetted First Schedule before using it.
 
-### Non-Salary Brackets — Business, Profession, and AOP (TY 2024-25 baseline; TBC under Finance Act 2025)
+### Non-Salary Brackets — Business, Profession, and AOP (TY 2024-25 baseline; NOT re-verified against Finance Act 2025 or Finance Act 2026)
 
 **Non-Salary Brackets Table**  _(ITO 2001 First Schedule, Part I, Division I, second sub-table)_
 
@@ -152,7 +152,7 @@ taxable salary of PKR 5,000,000 the superseded table gives 616,000 + 35% x
 | --- | --- |
 | Salary vs non-salary classification borderline (~75%) | Apply non-salary brackets (higher tax) |
 | ATL status unknown | Treat as non-filer (higher withholding) |
-| Finance Act 2025 bracket revision uncertain | Use TY 2024-25 brackets and flag "TBC under Finance Act 2025" |
+| Which bracket table to use | Read it off the tax year. **TY 2026-27 uses the Finance Act 2026 salaried table**; TY 2024-25 and earlier use the superseded one. Do not default to the old table — it overstates tax by about 16% at PKR 5,000,000 |
 | Surcharge threshold computation (prior years only) | Applied on tax before withholding credits, not after. No surcharge arises for TY 2026-27 |
 | PSEB / IT export exemption claim without registration certificate | Disallow; flag for reviewer |
 | Foreign tax credit without official certificate | Disallow §103 credit |
@@ -232,7 +232,7 @@ Worked test:
 Practical impact for a freelance software developer:
 - If registered with PSEB and receiving USD via SWIFT through a Pakistani bank, the bank deducts 0.25% on remittance and that is the final tax on the export proceeds.
 - The bracket computation (salary / non-salary tables) applies only to other income heads (local services, interest, rent, etc.).
-- The 10% surcharge does not apply to income that has already borne final tax under §154A — final tax income is excluded from the "taxable income" used to test the PKR 10 million threshold. TBC — confirm exact treatment under Finance Act 2025.
+- **For TY 2026-27 there is no surcharge, so this interaction does not arise** — Finance Act 2026 abolished the high-income surcharge from 1 July 2026. For **prior years**, the surcharge did not apply to income that had already borne final tax under §154A: final-tax income was excluded from the "taxable income" used to test the PKR 10 million threshold. The TBC that stood here asked for confirmation under Finance Act 2025; the answer is that FA 2025 kept the surcharge (at 9% salaried / 10% otherwise) and FA 2026 removed it.
 
 ### 4.2 Tax credits — Sections 61–65 family
 
@@ -314,9 +314,9 @@ Salary share of total non-final income: PKR 0 / PKR 1,000,000 = 0% → non-salar
 | Less §153 withholding credit (filer rate, 3% × 1,000,000) | (30,000) |
 | Tax payable on local income | **Nil** |
 
-Step 3 — 10% surcharge test.
+Step 3 — surcharge test (prior years only).
 
-Taxable income for surcharge purposes: PKR 800,000 (final-tax income excluded). PKR 800,000 < PKR 10,000,000 → no surcharge applies.
+For **TY 2026-27 this step does not exist**: Finance Act 2026 abolished the surcharge from 1 July 2026. Worked here for a prior year: taxable income for surcharge purposes PKR 800,000 (final-tax income excluded), which is below PKR 10,000,000, so no surcharge applied. The answer is nil either way in this example, which is why the step is retained rather than deleted — it shows the exclusion mechanic.
 
 Step 4 — Overall result.
 
@@ -424,7 +424,7 @@ Specific penalty amounts are TBC under Finance Act 2025. Default surcharge rate 
 | Salary vs non-salary classification near the 75% boundary | Apply non-salary table | Higher top rate; cannot under-assess |
 | ATL status not verified | Assume non-filer; flag client to confirm | Avoid under-recognising withholding cost |
 | Finance Act 2025 bracket change uncertain | Use TY 2024-25 baseline; flag "TBC under Finance Act 2025" | Documented baseline, no speculation |
-| 10% surcharge threshold computation | Apply on bracket tax before withholding credits | Aligns with §4 / First Schedule reading |
+| Surcharge threshold computation | **No surcharge arises for TY 2026-27** — abolished by Finance Act 2026 from 1 July 2026. For prior years it applied on bracket tax before withholding credits | §4 / First Schedule reading; Finance Act 2026 |
 | PSEB / §154A claim — no registration certificate | Treat as ordinary business income; subject to bracket tax | Affirmative documentation required |
 | Foreign tax credit — no official certificate | Disallow §103 credit | §103 documentation requirement |
 | AOP member share of profit | Exempt under §92 in member's return | Statutory; do not double tax |
@@ -441,7 +441,8 @@ Specific penalty amounts are TBC under Finance Act 2025. Default surcharge rate 
 - Income Tax Ordinance 2001 (ITO 2001) — the principal tax statute, as amended by successive Finance Acts.
 - Income Tax Rules 2002 — procedural rules under ITO 2001.
 - Finance Act 2024 — amendments effective TY 2024-25 including the late-filer tier and surcharge changes.
-- Finance Act 2025 — amendments effective TY 2025-26. TBC — verify final gazetted text for rate tables, surcharge retention, and threshold changes.
+- Finance Act 2025 — enacted 27 June 2025, effective 1 July 2025 (TY 2025-26). Surcharge retention: **retained**, with the salaried rate cut from 10% to 9%.
+- Finance Act 2026 — passed 23 June 2026, gazetted 26 June 2026, effective 1 July 2026 (TY 2026-27). Revised the salaried bracket table and **abolished** the high-income surcharge.
 
 ### Key provisions referenced
 
@@ -497,7 +498,7 @@ Specific penalty amounts are TBC under Finance Act 2025. Default surcharge rate 
 - NEVER apply salary brackets to a taxpayer whose salary is 75% or less of taxable income — use the non-salary table.
 - NEVER assume ATL / filer status without verifying against the current weekly Active Taxpayers List.
 - NEVER claim §154A 0.25% concessional rate without a current PSEB registration certificate AND e-PRC documentation for every receipt.
-- NEVER include §154A final-tax export income in the bracket computation, and NEVER include it in the PKR 10 million surcharge threshold test (TBC under FA 2025).
+- NEVER include §154A final-tax export income in the bracket computation. The companion instruction about the PKR 10 million surcharge threshold test applies to **TY 2025-26 and earlier only** — Finance Act 2026 abolished the surcharge from 1 July 2026, so no such test exists for TY 2026-27.
 - NEVER re-tax an AOP member's share of profit at the member level — §92(1) exempts it.
 - NEVER allow foreign tax credit under §103 without an official foreign tax authority certificate.
 - NEVER carry forward foreign tax credit — excess foreign tax is lost.
