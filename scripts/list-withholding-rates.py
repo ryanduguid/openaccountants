@@ -303,6 +303,56 @@ the field with no checker. The pattern is not bad rates but bad SCOPE: who is
 caught, where the service must happen, which list the category belongs to. A
 rate can be verified against a chart; a scope has to be read.
 
+Five more, same selection rule, second pass:
+
+  * Bangladesh WRONG on two rates. A resident individual's dividend is 15%; the
+              line said "10% with e-TIN, 15% without", which is the pre-2023
+              Ordinance structure and no longer in the table the guide cites. A
+              non-resident that is not a company, fund or trust is 25%; the
+              line said 30%, which its own source does not carry. Added the
+              rule that separates the two halves of that block: withholding
+              from a non-resident with no PE IS the final tax and cannot be set
+              off, so an over-deduction there is not recovered on a return.
+  * Azerbaijan CORRECT at 10% for the residual head, and four categories short.
+              Rent of movable and immovable property is 14%, the same as
+              royalties; risk insurance and reinsurance 4%; telecommunications
+              and international transport 6%. And a direct OR INDIRECT payment
+              to a person in a country with a favourable tax regime is DEEMED
+              Azerbaijani-source income and withheld at 10%, which catches
+              payments that would otherwise be outside the charge entirely.
+  * Angola    CORRECT at 6.5%, and the hedge was asking the right question. The
+              answer is that the recipient's residence decides what the 6.5%
+              IS: for an Angolan taxpayer an advance creditable against the
+              year-end liability, for a non-resident company the final tax,
+              with no return to credit it against and no reclaim.
+  * North Macedonia CORRECT at 10%, listing three of eight categories. The same
+              10% reaches entertainment and sporting activities performed
+              there, management, consulting, financial and R&D-related
+              services, insurance and reinsurance premiums, telecommunications
+              between North Macedonia and abroad, and the lease of immovable
+              property there.
+  * Namibia   CORRECT at 10% on management and consultancy fees, and missing
+              the carve-out that matters: non-resident directors and foreign
+              entertainers are 25% with NO TREATY RELIEF available. A director's
+              fee reads like any other service payment, which is exactly why it
+              gets withheld at 10%. Royalty withholding is also due within 20
+              days of the month end, a clock the line did not carry.
+
+THE CATEGORY LIST IS THE DEFECT, NOT THE RATE
+
+Ten jurisdictions read across the two passes. Four were wrong; six were right on
+every rate they stated and materially incomplete. The recurring shape is a
+withholding section that lists dividends, interest and royalties and stops,
+while the statute charges six or eight heads. North Macedonia carried three of
+eight. Azerbaijan carried four of eight. Namibia carried the rate and not the
+exception to it.
+
+That shape is mechanically detectable, and nothing here detects it: a guide
+whose withholding section names the classic three and no service, rental,
+insurance, telecommunications, entertainment or director head is a candidate,
+not a clean result. Worth building before working more of this column by hand,
+because the hand pass keeps finding the same thing.
+
 Two recall limits the PR #16 review found, both still open and worth knowing
 before reading a zero in this output as an absence:
 

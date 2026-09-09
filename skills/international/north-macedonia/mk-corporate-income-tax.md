@@ -3,7 +3,7 @@ name: mk-corporate-income-tax
 description: "Source-cited draft: corporate income tax for North Macedonia (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
 jurisdiction: MK
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-09
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -23,7 +23,8 @@ Corporate profit (income) tax is levied at a flat 10% on the adjusted accounting
 - **Withholding tax on dividends (to non-residents)** — 10% (reduced/eliminated under applicable double tax treaties) rate  _([Law on Profit Tax](https://taxsummaries.pwc.com/north-macedonia/corporate/withholding-taxes))_
 - **Withholding tax on interest (to non-residents)** — 10% (reduced/eliminated under applicable double tax treaties; government bond interest exempt) rate  _([Law on Profit Tax](https://taxsummaries.pwc.com/north-macedonia/corporate/withholding-taxes))_
 - **Withholding tax on royalties (to non-residents)** — 10% (reduced/eliminated under applicable double tax treaties) rate  _([Law on Profit Tax](https://taxsummaries.pwc.com/north-macedonia/corporate/withholding-taxes))_
-- **Dividends between resident companies** — Dividends distributed between resident companies are generally not subject to withholding / profit tax in the hands of the resident recipient ((approx — confirm))  _(Law on Profit Tax)_
+- **The 10% withholding covers eight categories, not three** — Alongside dividends, interest and royalties, the same 10% applies to income payable abroad from: **entertainment or sporting activities** performed in North Macedonia; **management, consulting, financial services, and services related to research and development**; **insurance and reinsurance premiums**; **telecommunications services between North Macedonia and a foreign country**; and the **lease of immovable property** in North Macedonia. The service and consulting head is the one most often paid gross by mistake, because it reads as buying a service rather than as North Macedonian-source income of the recipient rate  _([Law on Profit Tax](https://taxsummaries.pwc.com/north-macedonia/corporate/withholding-taxes))_
+- **Dividends between resident companies** — Dividends distributed between resident companies are generally not subject to withholding / profit tax in the hands of the resident recipient. **Not settled by the source this guide cites:** PwC's withholding page covers only payments made towards a *foreign* legal person and so says nothing about the resident-to-resident case. Confirm against the Law on Profit Tax itself before relying on it  _(Law on Profit Tax)_
 - **Double tax treaty network** — North Macedonia has double taxation treaties with around 49 countries; treaty rates range 0%–15% and require prior tax authority approval to apply  _([Applicable Double Taxation Treaties](https://taxsummaries.pwc.com/north-macedonia/corporate/withholding-taxes))_
 - **Annual profit-tax return deadline** — By the end of February of the year following the tax year ((approx — confirm))  _([Law on Profit Tax](https://taxsummaries.pwc.com/north-macedonia/corporate/tax-administration))_
 - **Advance payments** — Corporate profit tax is paid in monthly advance instalments based on the prior year's liability, with a final settlement on the annual return  _(Law on Profit Tax)_

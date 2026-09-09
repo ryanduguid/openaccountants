@@ -3,7 +3,7 @@ name: na-corporate-income-tax
 description: "Source-cited draft: corporate income tax for Namibia (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
 jurisdiction: NA
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-09
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -21,8 +21,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Non-Resident Shareholders Tax (NRST) on dividends — corporate holder with >=25% shareholding** — 10 percent  _(Income Tax Act — https://taxsummaries.pwc.com/republic-of-namibia/corporate/withholding-taxes)_
 - **NRST on dividends — all other cases** — 20 percent  _(Income Tax Act — https://taxsummaries.pwc.com/republic-of-namibia/corporate/withholding-taxes)_
 - **Withholding tax on interest (to non-residents / from banks & unit trusts)** — 10 percent  _(Income Tax Act — https://taxsummaries.pwc.com/republic-of-namibia/corporate/withholding-taxes)_
-- **Withholding tax on royalties (to non-residents)** — 10 percent  _(Income Tax Act — https://taxsummaries.pwc.com/republic-of-namibia/corporate/withholding-taxes)_
-- **Withholding tax on management/consultancy/technical fees to non-residents** — 10 percent (approx — confirm)  _(Income Tax Act — https://taxsummaries.pwc.com/republic-of-namibia/corporate/withholding-taxes)_
+- **Withholding tax on royalties (to non-residents)** — 10 percent, **payable within 20 days after the end of the month in which the liability to pay arises** — a short clock that is easy to miss because the rate matches the interest and service-fee rates  _(Income Tax Act — https://taxsummaries.pwc.com/republic-of-namibia/corporate/withholding-taxes)_
+- **Withholding tax on management/consultancy/technical fees to non-residents** — **10%**. Any Namibian resident paying a management or consultancy fee to a non-resident must withhold at this rate percent  _(Income Tax Act — https://taxsummaries.pwc.com/republic-of-namibia/corporate/withholding-taxes)_
+- **Withholding tax on non-resident directors and foreign entertainers** — **25%**, and **no treaty relief is available** — the rate stands whatever the recipient's country of residence. This is the exception to the 10% above and the one most likely to be missed, because a director's fee or an appearance fee reads like any other service payment percent  _(Income Tax Act — https://taxsummaries.pwc.com/republic-of-namibia/corporate/withholding-taxes)_
 - **Annual company income tax return deadline** — Within 7 months of the company's financial year-end  _(Income Tax Act — https://taxsummaries.pwc.com/republic-of-namibia/corporate/tax-administration)_
 - **First provisional tax payment** — Within 6 months of the start of the financial year; at least 40% of the year's estimated tax  _(Income Tax Act — https://taxsummaries.pwc.com/republic-of-namibia/corporate/tax-administration)_
 - **Second provisional tax payment** — On/before the last day of the financial year; cumulatively at least 80% of the year's estimated tax  _(Income Tax Act — https://taxsummaries.pwc.com/republic-of-namibia/corporate/tax-administration)_
