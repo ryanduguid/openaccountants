@@ -76,6 +76,19 @@ Bhutan 5 (new GST from 1 Jan 2026).
              percent", so the headline figure was the superseded one. Fixed to
              lead with 17.5%.
 
+Fourth pass, the jurisdictions neither chart covers. Matching: Tajikistan 14
+(scheduled to fall to 13 from 1 Jan 2027), Sudan 17 standard (its 40% is the
+telecom special rate, 30% cigarettes), and the small-jurisdiction set where the
+guides are right to say there is no VAT at all -- Bermuda's 10.25% is payroll
+tax and San Marino's 17% is the imposta monofase, both correctly labelled.
+
+  * Maldives TGST 17% from 1 July 2025, raised from 16% by the 7th Amendment to
+             the GST Act (Law No. 10/2011), ratified 5 November 2024.
+             mv-income-tax had the whole thing right, statutory citation and
+             all. maldives-gst, the guide that prepares the return, was at 16%
+             in ten places including its worked example. Sixth instance of the
+             same pattern.
+
 Three of the remaining "guides disagree" flags are artefacts worth not chasing
 again: Iran is 9% VAT plus 1% municipal tax, and the guides correctly give 9%
 as the VAT rate and 10% as the combined rate; Taiwan's 15% is the proposed
