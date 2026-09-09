@@ -35,7 +35,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Employee contribution rate | 11.2% (9.5% social + 1.7% health) (PwC) |
 | Social-insurance base (2025) | Floor 40,000 ALL / ceiling 176,416 ALL per month (HLB Albania; rate guides) |
 | Health-insurance base | Full gross salary — no floor, no ceiling (PwC) |
-| Minimum wage (2025) | 40,000 ALL/month gross (HLB Albania; Karanovic & Partners) |
+| Minimum wage | **50,000 ALL/month** gross from 1 January 2026 (CoM Decision No. 776 of 19.12.2025); 40,000 ALL for 2025 |
 | Tax authority | General Directorate of Taxation — Drejtoria e Pergjithshme e Tatimeve (GDT/DPT), tatime.gov.al |
 | Social-insurance authority | Social Insurance Institute — Instituti i Sigurimeve Shoqerore (ISSH), issh.gov.al |
 | Collection | Contributions and PIT declared and paid **jointly** via the GDT e-filing portal |

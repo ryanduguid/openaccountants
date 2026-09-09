@@ -65,6 +65,8 @@ jurisdiction at a time. This section records how far that has got.
 | Withholding rate on dividends, interest, royalties | 10 of the 118 stating one | 4 | Ethiopia, Iceland, Trinidad and Tobago, Belize |
 | Payroll and social contribution rates | Morocco, Egypt | 0 | — |
 | Personal income tax bands and exemptions | Egypt | 0 | — |
+| Micro-regime threshold and dividend WHT | Romania | 2 | Romania |
+| Minimum wage feeding contribution bases | Albania | 1 | Albania |
 
 The deadline pass has covered 24 jurisdictions of 200. Nobody has run an external
 pass over anything else. That leaves payroll rates and thresholds, registration
@@ -133,6 +135,29 @@ current value". That date has passed, the change is in force, and a hedge
 written before a commencement date should be revisited after it rather than
 carried forward. Its prohibition now reads "do NOT state the threshold as
 EGP 500,000" rather than "do not present either figure as settled".
+
+### A hedge attached to a future date expires on that date
+
+Fourteen of the 900 hedged figures name a commencement date that has since
+arrived. That is a small category and it was worth measuring rather than
+assuming, but it produced three errors from the first four worked, because a
+guide written before a change takes effect states the old figure first and
+nothing brings it back afterwards.
+
+Romania gave the micro-enterprise ceiling as "EUR 250,000 for 2025; lowered to
+EUR 100,000 from 2026", dated correctly and led by the superseded half. Read in
+2026 it is simply wrong, and the same guide put the non-resident dividend
+withholding rate at "10% (2025)" where Law 141/2025 raised it to 16% for
+dividends distributed from 1 January 2026. Albania's payroll guide gave the
+minimum wage as "40,000 ALL (2025)" while its own income tax guide already
+carried the 50,000 that took effect on 1 January 2026, which matters because
+that figure is the floor for social contributions.
+
+The lesson is about how these guides are written rather than about any of the
+three. A figure labelled with its year is honest and ages badly, and every
+"lowered to X from 2026" written in 2025 becomes a wrong headline in 2026
+unless someone turns it around. Lead with the rule in force and keep the
+superseded figure behind it.
 
 ### The best lead in the corpus is the corpus's own doubt
 
