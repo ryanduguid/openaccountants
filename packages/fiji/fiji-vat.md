@@ -19,7 +19,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Field | Value |
 | --- | --- |
 | Country | Fiji (Republic of Fiji) |
-| Standard rate | 9% |
+| Standard rate | **12.5%** from 1 August 2025. Before that **15%** (1 Aug 2023 – 31 Jul 2025); the 9% rate ended on 31 July 2023 |
 | Zero rate | 0% (exports, basic food items, prescription medicine, education supplies) |
 | Exempt | Financial services, residential rent, medical, public transport |
 | Return form | VAT return (monthly or quarterly via TPOS) |
@@ -35,7 +35,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 | Ambiguity | Default |
 | --- | --- |
-| Unknown rate on a sale | 9% |
+| Unknown rate on a sale | Standard rate for the supply date — 12.5% from 1 Aug 2025, 15% for 1 Aug 2023 – 31 Jul 2025 |
 | Unknown VAT status of a purchase | Not deductible |
 | Unknown counterparty location | Domestic Fiji |
 | Unknown business-use proportion | 0% recovery |
@@ -88,9 +88,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 | Pattern | Treatment | Notes |
 | --- | --- | --- |
-| EFL, ENERGY FIJI | Domestic 9% | Electricity |
-| WAF, WATER AUTHORITY FIJI | Domestic 9% | Water (commercial) |
-| VODAFONE FIJI, DIGICEL FIJI | Domestic 9% | Telecoms |
+| EFL, ENERGY FIJI | Domestic standard rate | Electricity |
+| WAF, WATER AUTHORITY FIJI | Domestic standard rate | Water (commercial) |
+| VODAFONE FIJI, DIGICEL FIJI | Domestic standard rate | Telecoms |
 
 ### 3.4 Insurance (exempt — exclude)
 
@@ -106,8 +106,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 | Pattern | Treatment | Notes |
 | --- | --- | --- |
-| GOOGLE, MICROSOFT, META, AWS | Self-assess 9% | Non-resident digital service |
-| ZOOM, SLACK, CANVA, FIGMA | Self-assess 9% | Same |
+| GOOGLE, MICROSOFT, META, AWS | Self-assess at the standard rate | Non-resident digital service |
+| ZOOM, SLACK, CANVA, FIGMA | Self-assess at the standard rate | Same |
 
 ### 3.6 Payroll and exclusions
 
@@ -121,17 +121,17 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Section 4 — Worked examples
 
-### Example 1 — Standard domestic sale at 9%
+### Example 1 — Standard domestic sale at 12.5%
 
-**Input line:** `05.04.2026 ; PACIFIC TRADING LTD ; CREDIT ; Invoice FJ-041 ; FJD 1,090`
+**Input line:** `05.04.2026 ; PACIFIC TRADING LTD ; CREDIT ; Invoice FJ-041 ; FJD 1,125`
 
-**Reasoning:** Domestic sale. 9%. Net = FJD 1,000, VAT = FJD 90.
+**Reasoning:** Domestic sale on an April 2026 date, so the 12.5% rate applies. Net = FJD 1,000, VAT = FJD 125.
 
 **Example 1 table**
 
 | Date | Counterparty | Gross | Net | VAT | Rate | Field | Default? | Excluded? |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 05.04.2026 | PACIFIC TRADING LTD | +1,090 | +1,000 | 90 | 9% | Output | N | — |
+| 05.04.2026 | PACIFIC TRADING LTD | +1,125 | +1,000 | 125 | 12.5% | Output | N | — |
 
 ### Example 2 — Export, zero-rated
 
@@ -145,15 +145,15 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ### Example 3 — Non-resident digital service
 
-**Input line:** `18.04.2026 ; MICROSOFT ; DEBIT ; Azure April ; FJD -218`
+**Input line:** `18.04.2026 ; MICROSOFT ; DEBIT ; Azure April ; FJD -225`
 
-**Reasoning:** Non-resident. Self-assess 9%. Net = FJD 200, VAT = FJD 18.
+**Reasoning:** Non-resident. Self-assess at 12.5%. Net = FJD 200, VAT = FJD 25.
 
 **Example 3 table**
 
 | Date | Counterparty | Gross | Net | VAT | Rate | Field | Default? | Excluded? |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 18.04.2026 | MICROSOFT | -218 | -200 | 18 | 9% | Output + Input | N | — |
+| 18.04.2026 | MICROSOFT | -225 | -200 | 25 | 12.5% | Output + Input | N | — |
 
 ### Example 4 — Bank charges, excluded
 
@@ -167,9 +167,11 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Section 5 — Tier 1 classification rules (compressed)
 
-### 5.1 Standard rate 9% — Default for all taxable supplies.
+### 5.1 Standard rate — default for all taxable supplies
 
-- **Standard rate** — 9%
+- **Standard rate** — **12.5%** for supplies made on or after **1 August 2025**; **15%** for supplies made from 1 August 2023 to 31 July 2025. The **9%** rate that this skill previously carried throughout ended on **31 July 2023** and has not applied for any part of a 2024, 2025 or 2026 period.
+
+  > **A 2025 Fijian VAT year spans a rate change.** Fiji's tax year is the calendar year, and the cut from 15% to 12.5% took effect on 1 August 2025, so a full-year 2025 filer applies 15% to supplies to 31 July and 12.5% from 1 August. Determine the rate from the **supply date**, not the invoice or payment date, and expect the two halves of the year to reconcile at different rates.
 
 ### 5.2 Zero rate — Exports, basic foodstuffs (specified list), prescription medicines, educational materials.
 
@@ -187,13 +189,13 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 - **Blocked input** — Personal consumption, entertainment, passenger vehicles (unless taxi/rental).
 
-### 5.6 Imports — VAT at 9% on CIF plus duty. Paid at customs.
+### 5.6 Imports — VAT at the standard rate on CIF plus duty, paid at customs
 
-- **Imports** — VAT at 9% on CIF plus duty. Paid at customs.
+- **Imports** — VAT at the standard rate for the entry date (12.5% from 1 August 2025) on CIF plus duty. Paid at customs.
 
-### 5.7 Reverse charge — Non-resident services: self-assess 9%.
+### 5.7 Reverse charge — non-resident services: self-assess at the standard rate
 
-- **Reverse charge** — Non-resident services: self-assess 9%.
+- **Reverse charge** — Non-resident services: self-assess at the standard rate for the supply date (12.5% from 1 August 2025).
 
 ### 5.8 Credit notes — Reduce output/input in period issued.
 
@@ -209,9 +211,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 - **Entertainment** — Default: block. Question: "Business purpose documented?"
 
-### 6.3 SaaS entities — Default: self-assess 9%. Question: "Check invoice entity."
+### 6.3 SaaS entities — default: self-assess at the standard rate
 
-- **SaaS entities** — Default: self-assess 9%. Question: "Check invoice entity."
+- **SaaS entities** — Default: self-assess at the standard rate for the supply date. Question: "Check invoice entity."
 
 ### 6.4 Tourism mixed supplies — Default: flag for STT/ECAL. Question: "Hotel/resort operator?"
 
@@ -223,7 +225,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Section 7 — Excel working paper template
 
-Per vat-workflow-base Section 3, with Fiji fields: Output 9%, Zero-rated, Exempt, Input domestic, Input imports, Net VAT.
+Per vat-workflow-base Section 3, with Fiji fields: Output at the standard rate for the period (12.5% from 1 August 2025; 15% before that back to 1 August 2023), Zero-rated, Exempt, Input domestic, Input imports, Net VAT.
 
 ## Section 8 — Bank statement reading guide
 
