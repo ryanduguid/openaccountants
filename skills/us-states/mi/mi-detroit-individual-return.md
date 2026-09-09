@@ -113,7 +113,7 @@ Detroit's exemption is **not** indexed and has remained at $600 for many years. 
 | Threshold to require estimated payments | Expected city tax liability after withholding ≥ **$100** |
 | Estimated voucher | Form 5123 — City Estimated Individual Income Tax Voucher |
 | Quarterly due dates | April 15, June 15, September 15, January 15 |
-| Underpayment penalty form | Form 5338 (sometimes referenced as Form 5125 in older releases — `[VERIFY:]` confirm with Treasury 2025 instructions) |
+| Underpayment penalty form | **Form 5338**, City Underpayment of Estimated Income Tax — confirmed for TY2025 (Michigan Treasury). Form 5121 is the City of Detroit Schedule W withholding schedule, not the underpayment form; the "5125" reference in older summaries is wrong. Do not complete 5338 where the underpayment after withholding and partnership payments is under $100 — Treasury will compute and bill any penalty and interest instead |
 
 ### Penalty and interest
 
@@ -191,7 +191,7 @@ Detroit residency is determined **independently** from Michigan state residency.
 | Military pay (active duty) | **NOT TAXABLE** | **Not taxable** | Detroit Ordinance — military exclusion |
 | Worker's comp / disability | **NOT TAXABLE** | **Not taxable** | Detroit Ordinance |
 | State / federal income tax refunds | **NOT TAXABLE** (Detroit does not pick up federal AGI inclusion of state refunds) | **Not taxable** | Form 5118 subtraction line |
-| Gambling winnings | **Taxable** on full amount | **Taxable** if won at a Detroit-licensed casino (MotorCity, MGM Grand, Hollywood/Greektown) | MCL 141.613(g) [VERIFY] |
+| Gambling winnings | **Taxable** on full amount | `[VERIFY — DISPUTED, DO NOT FILE ON THIS LINE WITHOUT CHECKING]` The guide states these are taxable to a non-resident if won at a Detroit-licensed casino (MotorCity, MGM Grand, Hollywood/Greektown). Practitioner sources take the opposite view: a non-resident is taxed only on Detroit-source compensation and business net profits under MCL 141.611 and 141.613, and casino winnings fall outside that, even though the casino reports them as Detroit income. Read MCL 141.613 before taking either position — the two answers differ by the whole liability | MCL 141.613(g) |
 | Alimony received (pre-2019 decrees) | **Taxable** | **Not taxable** | Conforms to federal AGI definition |
 
 **Key takeaway:** Detroit is more generous than the Michigan state return for **retired** taxpayers — pensions, IRAs, Social Security, and 401(k) distributions are entirely outside the Detroit base. This means a retired Detroit resident with only investment income and pensions typically owes **zero** Detroit tax even though they may owe Michigan state tax.
