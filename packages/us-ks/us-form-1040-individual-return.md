@@ -4,7 +4,7 @@ description: Tier 2 US federal content skill for preparing Form 1040 — the sta
 jurisdiction: US
 tax_year: 2025
 last_updated: 2026-07-13
-reviewed_by: Christopher Aryee
+reviewed_by: Christopher Aryee, CPA
 review_status: current
 tier: 1
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
