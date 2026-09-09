@@ -286,15 +286,15 @@ If any upstream content skill fails to produce validated output, the assembly sk
 
 ## Client Action List
 
-### Immediate (before 31 October 2025 -- ITR lodgement deadline for self-lodgers):
+### Immediate (before the 31 October ITR lodgement deadline for self-lodgers):
 1. Review this return package with your registered tax agent
 2. Lodge ITR via myTax or through tax agent (tax agent clients have extended deadline)
 3. Pay balance due of $X to ATO (or receive refund of $X)
 4. Lodge any outstanding BAS quarters
 
 ### Note on lodgement deadlines:
-- Self-lodgers: 31 October 2025
-- Tax agent lodgement: extended deadlines apply (typically March-May 2026 depending on category)
+- Self-lodgers: 31 October following the 30 June year-end (31 October 2026 for the 2025-26 year)
+- Tax agent lodgement: extended deadlines apply, running to **15 May** following the self-lodge date (15 May 2027 for 2025-26); earlier categories from March
 
 ### Quarterly obligations for 2025-26:
 - BAS Q1 (Jul-Sep): lodge and pay by 28 October 2025

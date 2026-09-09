@@ -29,7 +29,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Supporting legislation | Tax Administration Act 1953; Medicare Levy Act 1986; Higher Education Support Act 2003 |
 | Tax authority | Australian Taxation Office (ATO) |
 | Filing portal | myTax (via myGov) or registered tax agent |
-| Filing deadline | 31 October 2025 (self-lodged); May 2026 (tax agent) |
+| Filing deadline | 31 October following the 30 June year-end if self-lodged, **15 May** following that if lodged by a registered tax agent engaged before 31 October. For the 2024-25 year this guide covers: 31 October 2025 and 15 May 2026 |
 | Contributor | Open Accountants Community |
 | Validated by | Pending -- Australian CPA/CA sign-off required |
 | Skill version | 2.0 |
@@ -287,7 +287,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 | Item | Value |
 | --- | --- |
-| Self-lodge deadline | 31 October 2025 |
+| Self-lodge deadline | 31 October following the year-end -- 31 October 2025 for the 2024-25 year this guide covers |
 | Tax agent deadline | Varies (typically March-May 2026) |
 | Failure to lodge on time | $313 per 28-day period, up to 5 periods ($1,565 max) |
 | Shortfall penalty (reasonable care not taken) | 25% of shortfall |

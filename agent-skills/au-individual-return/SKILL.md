@@ -30,7 +30,7 @@ metadata:
 | Supporting legislation | Tax Administration Act 1953; Medicare Levy Act 1986; Higher Education Support Act 2003 |
 | Tax authority | Australian Taxation Office (ATO) |
 | Filing portal | myTax (via myGov) or registered tax agent |
-| Filing deadline | 31 October 2025 (self-lodged); May 2026 (tax agent) |
+| Filing deadline | 31 October following the 30 June year-end if self-lodged; **15 May** following that if lodged by a registered tax agent engaged before 31 October. For the 2024-25 year: 31 October 2025 and 15 May 2026 |
 | Contributor | Open Accountants Community |
 | Validated by | Pending -- Australian CPA/CA sign-off required |
 | Skill version | 2.0 |
@@ -284,8 +284,8 @@ Repayment income = taxable income + reportable fringe benefits + net investment 
 
 | Item | Value |
 |---|---|
-| Self-lodge deadline | 31 October 2025 |
-| Tax agent deadline | Varies (typically March-May 2026) |
+| Self-lodge deadline | 31 October following the year-end (31 October 2025 for 2024-25) |
+| Tax agent deadline | Per the ATO lodgment program, running to **15 May** following the self-lodge date (15 May 2026 for 2024-25); earlier categories from March |
 | Failure to lodge on time | $313 per 28-day period, up to 5 periods ($1,565 max) |
 | Shortfall penalty (reasonable care not taken) | 25% of shortfall |
 | Shortfall penalty (recklessness) | 50% of shortfall |
