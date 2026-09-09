@@ -25,7 +25,7 @@ DOMAIN = re.compile(r'https?://([^/\s\)\]>"]+)')
 # irs.gov, gov.uk, gouv.fr, gob.mx, govt.nz, gc.ca, admin.ch, gv.at, europa.eu,
 # and the go.<cc> form used across east Africa and Japan.
 GOV = re.compile(
-    r'(?:^|\.)(?:gov|gouv|gob|govt|gub|gv)(?:\.|$)'
+    r'(?:^|\.)(?:gov|gouv|gob|govt|gub|gv|government|etat|public)(?:\.|$)'
     r'|(?:^|\.)(?:gc\.ca|admin\.ch|europa\.eu|gouv\.qc\.ca)$'
     r'|(?:^|\.)go\.[a-z]{2}$', re.I)
 
@@ -83,6 +83,25 @@ NON_GOV_AUTHORITY = frozenset((
     'ecb.europa.eu', 'bnr.rw', 'bnb.bg', 'bnro.ro', 'bportugal.pt',
     # Legislatures, cited for the statute itself
     'parliament.gov.pg', 'nass.gov.ng',
+    # Third pass, after widening the candidate finder to any country-code TLD
+    # rather than short labels only.
+    'financnasprava.sk',  # Financial Administration of the Slovak Republic
+    'slovensko.sk',       # Slovak government portal
+    'legislation.mt',     # Malta, official legislation
+    'irishstatutebook.ie',
+    'ministere-finances.dj',   # Djibouti Ministry of Finance
+    'skatteverket.se',    # Swedish Tax Agency
+    'skatteetaten.no',    # Norwegian Tax Administration
+    'belastingdienst.nl', # Netherlands Tax Administration
+    'finances.belgium.be',
+    'bmf-steuerrechner.de',    # German Federal Ministry of Finance calculator
+    'riksdagen.se', 'parliament.lk',
+    'cabinet.salyk.kz',   # Kazakhstan tax portal (salyk = tax)
+    'ciregistry.ky',      # Cayman Islands registry
+    'rdb.rw', 'org.rdb.rw', 'businessprocedures.rdb.rw',   # Rwanda Development Board
+    'en.caisses-sociales.mc',  # Monaco social funds
+    'socialsecurity.org.bz', 'pensionfund.sc', 'sozialfonds.li',
+    'mirovinsko.hr', 'pensionikeskus.ee', 'palgakalkulaator.ee',
     # Second pass over --unclassified. Tajikistan reached the zero-authority
     # list while citing andoz.tj, its own tax committee, for the same reason
     # Botswana did.
@@ -114,12 +133,32 @@ NOT_AUTHORITY = frozenset((
     'andina.pe',          # state news agency: reports law, does not make it
     'vfsc.vu',            # financial services regulator, not the tax authority
     'lndc.org.ls', 'msm.org.ls', 'koda.ee',
+    # Consultancies and law firms on country-code TLDs
+    'taxatlas.io', 'commenda.io', 'quaderno.io', 'bridgewest.eu', 'eurofast.eu',
+    'goldblum.ch', 'zmayetlaw.co.ls', 'saotomeexpert.pt', '1office.co',
+    'toccacelibronzetti.sm', 'aplusconsulting.com.kh', 'atlasconsulting.gr',
+    'saaccounting.me', 'caspianlegalcenter.az', 'en.legal-force.uz',
+    'tax-legal.uz', 'accounting.az', 'businessnorway.uk', 'impuestos.com.bo',
+    # News organisations and community wikis: they report law, they do not make
+    # it, and a paraphrase in a newspaper is a secondary source however official
+    # the outlet.
+    'thebhutanese.bt', 'elheraldo.hn', 'dailypost.vu', 'news.err.ee',
+    'cubadebate.cu', 'kolzchut.org.il',
+    'grantthornton.lv', 'grantthornton.com.cw', 'pkf.trunco.com.np',
 ))
 
-# A short label on a country-code TLD: the shape most tax authorities use.
-# Used only by --unclassified, to propose candidates for the list above.
-ACRONYM = re.compile(r'^[a-z]{2,7}\.(?:org|co|com|net)\.[a-z]{2}$|'
-                     r'^[a-z]{2,7}\.[a-z]{2}$')
+# Any domain on a country-code TLD. Used only by --unclassified, to propose
+# candidates for the lists above.
+#
+# The first version of this pattern required a label of at most seven
+# characters, on the theory that authorities use acronyms. Plenty do not:
+# financnasprava.sk is the Slovak Financial Administration, cited nine times and
+# never once proposed, which is why Slovakia stayed on the zero-authority list
+# after the review had corrected its minimum tax against that very site. So did
+# legislation.mt, belastingdienst.nl, skatteverket.se, skatteetaten.no and
+# guichet.public.lu. The tool built to make an omission visible had the same
+# shape of omission inside it.
+CC_TLD = re.compile(r'\.[a-z]{2}$')
 
 # Not sources at all: the CTA block every published guide ends with, and links
 # to this repository. Counting them would swamp the measurement -- they are
@@ -187,8 +226,18 @@ def selftest():
     assert classify('frcs.org.fj') == 'authority'        # Fiji revenue
     assert classify('sii.cl') == 'authority'             # Chile SII
     assert classify('mra.mu') == 'authority'             # Mauritius revenue
-    # and the shape-alike that is a law firm, not an authority
-    assert classify('kstlaw.gr') == 'secondary'
+    # long-named authorities the short-label candidate finder never proposed
+    assert classify('financnasprava.sk') == 'authority'   # Slovak Financial Admin
+    assert classify('belastingdienst.nl') == 'authority'
+    assert classify('skatteverket.se') == 'authority'
+    assert classify('legislation.mt') == 'authority'
+    assert classify('guichet.public.lu') == 'authority'   # via the GOV pattern
+    assert classify('mi.government.bg') == 'authority'    # via the GOV pattern
+    # and the shape-alikes that are not authorities
+    assert classify('kstlaw.gr') == 'secondary'           # law firm
+    assert classify('taxatlas.io') == 'secondary'         # consultancy
+    assert classify('thebhutanese.bt') == 'secondary'     # newspaper
+    assert classify('news.err.ee') == 'secondary'         # broadcaster
     assert classify('skatturinn.is') == 'authority'
     # boilerplate is not a source
     assert classify('www.openaccountants.com') is None
@@ -217,7 +266,8 @@ def unclassified(minimum=3):
     rows = []
     for d, n in seen.items():
         bare = d[4:] if d.startswith('www.') else d
-        if n >= minimum and classify(d) == 'secondary' and ACRONYM.match(bare):
+        if (n >= minimum and classify(d) == 'secondary'
+                and bare not in NOT_AUTHORITY and CC_TLD.search(bare)):
             rows.append((n, bare))
     for n, d in sorted(rows, reverse=True):
         print('  %4d  %s' % (n, d))
