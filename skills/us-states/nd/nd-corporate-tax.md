@@ -13,7 +13,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## North Dakota Corporate Income Tax
 
-North Dakota imposes a graduated corporate income tax under N.D.C.C. Chapter 57-38 (the Income Tax Act of 1981) at three statutory brackets: **1.41% on the first $25,000**, **3.55% on the next $25,000 (to $50,000)**, and **4.31% on income above $50,000** [VERIFY: NDCC § 57-38-30 for TY 2025 thresholds]. ND does **not** impose a separate corporate franchise tax (contrast NC, TX, DE) and does **not** currently offer a pass-through entity tax (PTET) election — leaving ND S-corp and partnership owners without a federal SALT-cap workaround. The corporation return is **Form 40**, due the 15th day of the 4th month after year-end. ND apportions corporate income using a **three-factor formula** (property, payroll, sales) with the **sales factor double-weighted** by default and an optional **single-sales-factor election** for qualifying taxpayers [VERIFY: NDCC § 57-38.1-09 / Form 40 instructions]. The Oil Extraction Tax (NDCC § 57-51.1) and Oil & Gas Gross Production Tax (NDCC § 57-51) are **severance taxes computed at the well** and are **not** part of the entity-level CIT — they are mentioned here only because new ND practitioners frequently confuse them with corporate income tax. Tax year 2025.
+North Dakota imposes a graduated corporate income tax under N.D.C.C. Chapter 57-38 (the Income Tax Act of 1981) at three statutory brackets: **1.41% on the first $25,000**, **3.55% on the next $25,000 (to $50,000)**, and **4.31% on income above $50,000** (N.D.C.C. § 57-38-30, confirmed against the current Century Code text; the section imposes exactly these three brackets and has not been amended since the 2015 session). ND does **not** impose a separate corporate franchise tax (contrast NC, TX, DE) and does **not** currently offer a pass-through entity tax (PTET) election — leaving ND S-corp and partnership owners without a federal SALT-cap workaround. The corporation return is **Form 40**, due the 15th day of the 4th month after year-end. ND apportions corporate income using an **equally weighted three-factor formula** — (property + payroll + sales) / 3 — as the statutory default under N.D.C.C. § 57-38.1-09(1), with an elective **100% weighted sales factor** (single sales factor) under § 57-38.1-09(4) for taxpayers that are not passthrough entities. ND is **not** a double-weighted-sales state: the (P + PR + 2S)/4 formula in § 57-38.1-09(2) was available only for the first two tax years beginning after 31 Dec 2015, and the (P + PR + 6S)/8 formula in § 57-38.1-09(3) only for the first tax year beginning after 31 Dec 2017. Both have lapsed. The Oil Extraction Tax (NDCC § 57-51.1) and Oil & Gas Gross Production Tax (NDCC § 57-51) are **severance taxes computed at the well** and are **not** part of the entity-level CIT — they are mentioned here only because new ND practitioners frequently confuse them with corporate income tax. Tax year 2025.
 
 ## 1. Scope
 
@@ -79,21 +79,21 @@ This skill covers North Dakota state-level entity-level income tax:
 | Corporate income tax — Bracket 1 | **1.41%** on first $25,000 of ND taxable income | NDCC § 57-38-30 — confirmed |
 | Corporate income tax — Bracket 2 | **3.55%** on next $25,000 (to $50,000) | NDCC § 57-38-30 — confirmed |
 | Corporate income tax — Bracket 3 | **4.31%** on income above $50,000 | NDCC § 57-38-30 — confirmed |
-| Water's edge surtax | Additional **3.5%** of ND taxable income for water's-edge electors | NDCC § 57-38.1-15 / Form 40 instructions |
-| Apportionment formula | Three-factor: property + payroll + sales (sales double-weighted) by default; **single-sales-factor election available** for qualifying taxpayers | NDCC § 57-38.1-09 [VERIFY weighting] |
-| Sourcing | Cost-of-performance for services (default); ND has **not** broadly adopted market-based sourcing as of 2025 [VERIFY] | NDCC § 57-38.1-16 |
-| NOL carryforward | **Follows the federal carryforward period for a loss of like character** (N.D. Admin. Code 81-03-05.1-07): losses arising in tax years before 2018 carry forward 20 years; losses arising in tax years after 2017 carry forward **indefinitely**, matching federal. No carryback. Do not apply a flat 20-year life to a current-year loss | NDCC § 57-38-01.4; N.D. Admin. Code 81-03-05.1-07 |
-| NOL 80% taxable-income limitation | ND conforms to federal § 172(a)(2)(B) **80% limit** for post-2017 NOLs [VERIFY conformity date] | NDCC § 57-38-01.4 + federal conformity |
+| Water's edge surtax | Additional **3.5%** of ND taxable income for water's-edge electors; election binds five consecutive tax years | NDCC § 57-38.4-02(3) (confirmed) / Form 40 instructions |
+| Apportionment formula | **Equally weighted** three-factor: (property + payroll + sales) / 3. A **100% weighted sales factor election** is available to non-passthrough taxpayers. Not a double-weighted-sales state | NDCC § 57-38.1-09(1) and (4); Form 40 instructions, "Apportionment factor in general" |
+| Sourcing | Cost-of-performance for sales other than tangible personal property; ND has **not** adopted market-based sourcing | NDCC § 57-38.1-17 (confirmed against the current chapter text) |
+| NOL carryforward | **Follows the federal carryforward period for a loss of like character** (N.D. Admin. Code 81-03-05.1-07(2)): losses arising in tax years before 2018 carry forward 20 years; losses arising in tax years after 2017 carry forward **indefinitely**, matching federal. No carryback for ND loss years beginning after 31 Dec 2002. Do not apply a flat 20-year life to a current-year loss | NDCC § 57-38-01.3(3) (**not** § 57-38-01.4, which is the subchapter S recognition section); N.D. Admin. Code 81-03-05.1-07 |
+| NOL 80% taxable-income limitation | **No.** ND does not apply the federal § 172(a)(2)(B) 80% limit. § 57-38-01.3(1)(g) adds back the whole federal NOL deduction and § 57-38-01.3(3) then allows the ND-source NOL with no percentage cap. Neither the statute, N.D. Admin. Code 81-03-05.1-07, nor the Form 40 instructions impose one | NDCC § 57-38-01.3(1)(g), (3) |
 | Filing form | Form 40 (Corporation Income Tax Return) | ND Tax Commissioner |
 | Due date (calendar-year filer) | **April 15** (15th day of 4th month after year-end) | NDCC § 57-38-34 |
 | Extension | Automatic 7-month extension if federal extension filed; Form 40-EXT for ND-only extension | Form 40 instructions |
-| Estimated-tax threshold | Required if both **prior-year and current-year liability exceed $5,000** | NDCC § 57-38-62 [VERIFY threshold] |
+| Estimated-tax threshold | Required if **both** the current year's estimated liability is expected to exceed $5,000 **and** the prior year's ND net tax liability exceeded $5,000 | NDCC § 57-38-62(2) (confirmed); Form 40 instructions, "Estimated Tax Payments" |
 | Estimated-tax form | Form 40-ES | ND Tax Commissioner |
 | Underpayment form | Form 40-UT | ND Tax Commissioner |
-| PTE election | **None — ND has NOT enacted a PTET** [VERIFY through 2025 legislative session] | n/a |
+| PTE election | **None — ND has NOT enacted a PTET.** Chapter 57-38 contains no entity-level election, and the Tax Commissioner's own legislative history for the 2025 (69th) session records only the new employer child care contribution credit (S.B. 2282) | NDCC Ch. 57-38; ND Tax Commissioner, *Corporate Income Tax History* |
 | Separate franchise tax? | **No.** ND has no general corporate franchise tax. | n/a |
 | Minimum tax? | **None.** No statutory minimum CIT (unlike NC's $200 franchise floor). | n/a |
-| S-corp at entity level? | No CIT; files informational Form 60 | NDCC § 57-38-01.4 (federal conformity) |
+| S-corp at entity level? | No CIT; files Form 60. **Exception:** an S corporation that was subject to the pre-2013 financial institution tax and elected under N.D.C.C. § 57-38-01.35 to be taxed as a C corporation files Form 40, on paper | NDCC §§ 57-38-01.4, 57-38-01.35 |
 | Partnership / LLC default at entity level? | No CIT; files informational Form 58 | NDCC Chapter 57-38 |
 
 ## 4. Who's Subject
@@ -124,7 +124,7 @@ This skill covers North Dakota state-level entity-level income tax:
 
 ### 4.3 Nexus
 
-- **ND nexus criteria** — ND asserts income tax nexus on corporations that: (a) are incorporated or organized in ND; (b) are qualified to do business in ND; (c) have property, payroll, or sales in ND exceeding bright-line thresholds analogous to MTC factor presence; or (d) derive ND-source income under NDCC § 57-38-08. Wayfair-style economic nexus for corporate income tax has not been formally codified by ND beyond general "doing business" language [VERIFY for 2025 — Commissioner may have issued guidelines].  _(NDCC § 57-38-08)_
+- **ND nexus criteria** — The tax is imposed "with respect to its North Dakota income ... received by every corporation **doing business in this state**" (N.D.C.C. § 57-38-11), and reaches "only that portion of a corporation's taxable income which is derived from or attributable to sources within this state" (Form 40 instructions, *Method of Corporation Taxation*). ND has **not** codified a bright-line factor-presence dollar threshold for corporate income tax — do not quote MTC factor-presence numbers as ND law. P.L. 86-272 immunity is recognised and worked through the apportionment rules (N.D. Admin. Code 81-03-09-26 et seq., which include immune-state sales in the denominator). Note that §§ 57-38-12 and 57-38-13, the old corporate allocation sections, were **repealed in 2003**; allocation and apportionment now run entirely through Ch. 57-38.1 by way of § 57-38-01.3(1)(e). N.D.C.C. § 57-38-08 is *Partnerships not subject to tax* and is not a corporate nexus provision.  _(N.D.C.C. § 57-38-11; Form 40 instructions)_
 
 ### 5.1 Graduated brackets — TY 2025
 
@@ -148,11 +148,11 @@ This skill covers North Dakota state-level entity-level income tax:
 | $1,000,000 | $42,185 | 4.22% |
 | $5,000,000 | $214,685 | 4.29% |
 
-The brackets are **not** indexed for inflation. The $25,000 and $50,000 thresholds have been stable since 2015 [VERIFY].
+The brackets are **not** indexed for inflation. The $25,000 and $50,000 thresholds and the 1.41% / 3.55% / 4.31% rates have been unchanged since the 2015 legislative session, when rates were cut by roughly 5% to the current range — confirmed against the ND Tax Commissioner's own *Corporate Income Tax History*, whose most recent entry (2025 session) records a new employer child care contribution credit and no rate or bracket change.
 
 ### 5.2 Water's-edge surtax (NDCC § 57-38.1-15)
 
-- **Water's-edge surtax** — A corporation that elects the water's edge method of apportioning income (i.e., excludes certain foreign affiliates from the unitary group) is subject to an additional 3.5% surtax on its ND taxable income. The election trades broader inclusion of foreign affiliates (worldwide) for a flat 3.5% surcharge. Most US-only ND filers do not need to think about this; it matters only for multinationals filing a unitary return.  _(NDCC § 57-38.1-15)_
+- **Water's-edge surtax** — A corporation otherwise required to file a worldwide unitary combined report may elect the water's edge method instead, on the return as **originally filed**, binding for **five consecutive tax years**. Every corporation covered by the election is then subject to an additional **3.5% surtax** on its ND taxable income (N.D.C.C. § 57-38.4-02(3)). The election trades broader inclusion of foreign affiliates for a flat 3.5% surcharge, so it only pays where the excluded foreign income exceeds the surtax on what remains. Electors must still include foreign dividends and 80/20-corporation income in the water's-edge group — for tax years beginning after 31 Dec 1994 every elector may use the **30%** inclusion for both (§ 57-38.4-02(2)(c)). A taxpayer and its affiliates are **presumed** unitary and their income presumed apportionable, and the taxpayer carries the burden of proof on membership of the water's-edge group (§ 57-38.4-04). Most US-only ND filers do not need to think about this; it matters only for groups with foreign affiliates. The surtax has no connection to the sales factor weighting election.  _(N.D.C.C. §§ 57-38.4-02, 57-38.4-04; Form 40 instructions, "Water's Edge Election")_
 
 ### 5.3 No minimum tax
 
@@ -164,23 +164,29 @@ The brackets are **not** indexed for inflation. The $25,000 and $50,000 threshol
 
 ### 6.1 Three-factor formula — default
 
-- **Three-factor apportionment formula** — Apportionment = (Property Factor + Payroll Factor + 2 × Sales Factor) / 4  _(N.D.C.C. § 57-38.1-09 [VERIFY current weighting])_
+- **Three-factor apportionment formula** — Apportionment = (Property Factor + Payroll Factor + Sales Factor) / 3. The three factors are **equally weighted**; ND is not a double-weighted-sales state. The Form 40 instructions state it directly: "In general, the apportionment factor is a product of a formula consisting of an equally weighted three-factor (property, payroll, and sales) apportionment." Where a factor's denominator is zero, that factor is excluded from the calculation, and a corporation holding an interest in a passthrough entity includes its proportionate share of that entity's factors. Ratios are carried to six decimal places.  _(N.D.C.C. § 57-38.1-09(1); N.D. Admin. Code 81-03-09-14; Form 40 instructions)_
 - **Factor definitions** — The sales factor is double-weighted by default — i.e., the denominator is 4 (one each for property, payroll, and two for sales). This is the standard UDITPA "modified" formula widely adopted by states that have not moved to single sales factor. Each factor is: - Property factor = ND tangible property (owned at original cost + rented × 8) ÷ everywhere tangible property. - Payroll factor = ND wages and salaries ÷ everywhere wages and salaries. - Sales factor = ND-sourced sales (gross receipts) ÷ everywhere sales.  _(N.D.C.C. § 57-38.1-09)_
 
 ### 6.2 Single-sales-factor election (optional)
 
-- **Single-sales-factor election** — ND permits qualifying taxpayers to elect a single-sales-factor apportionment under N.D.C.C. § 57-38.1-09(8) [VERIFY citation]. The election: - Is binding for a minimum of 5 years [VERIFY duration]. - Is made on Form 40 / Schedule SA in the year of election. - Cannot be revoked early without Commissioner consent. - Is generally beneficial for ND-headquartered manufacturers and oil/gas producers with substantial ND payroll and property but sales delivered nationally. The single-sales-factor option mirrors the broader national trend (NC, MI, IL, WI, CA all single-sales) but ND has preserved the three-factor default — a meaningful indicator that ND policymakers prioritize broad in-state-activity recognition over export-orientation incentives.  _(N.D.C.C. § 57-38.1-09(8) [VERIFY citation])_
+- **Sales factor weighting election (100% weighted sales factor)** — ND calls this the *sales factor weighting election*, not a "single sales factor election", and it lives at **N.D.C.C. § 57-38.1-09(4)** (tax years beginning after 31 Dec 2018), implemented by **N.D. Admin. Code Ch. 81-03-09.2**. Mechanics, all confirmed against the rule and the Form 40 instructions: - Available to a taxpayer that is **not a passthrough entity**; a passthrough entity may not make the election itself, though a corporate partner's election covers its share of the passthrough's factors. A sole proprietor apportioning under N.D.C.C. § 57-38-04(5) may elect by attaching a statement to the individual return. - Made by marking the box on **Schedule FACT, line 15a** (or Schedule CR, Part II, line 15a for a consolidated or combined filing) on an **original, timely filed** return, including extensions. - Applies to **every** company in the unitary group and to all companies on a consolidated ND return; an affiliate joining the group afterwards is treated as having consented. - **Binding for five consecutive tax years** starting with the election year. An election made on the sixth-year return is a fresh five-year election (years six through ten). If no new election is made for year six, the equally weighted three-factor formula must be used for **at least three tax years** before another election can be made. - **Rescinded automatically** — no Commissioner consent is involved — where more than 50% of the taxpayer's voting stock is acquired by a nonaffiliated entity, where a reorganisation or spinoff leaves it outside the unitary group, or on complete liquidation. A taxpayer whose election is rescinded may make a new election in the first tax year following the rescission. - The election is **unrelated to** the water's-edge election; making one says nothing about the other. - Generally beneficial for ND-headquartered manufacturers and oil/gas producers with substantial ND payroll and property but sales delivered nationally.  _(N.D.C.C. § 57-38.1-09(4); N.D. Admin. Code 81-03-09.2-02 to 81-03-09.2-04; Form 40 instructions, "Sales Factor Weighting Election")_
 
 ### 6.3 Special industries
 
-**Special industries apportionment table**  _(NDCC § 57-38.1)_
+**Special industries apportionment table**  _(N.D. Admin. Code Ch. 81-03-09, adopted under N.D.C.C. § 57-38.1-18)_
+
+ND's special-industry rules are the MTC-model ones and sit in the **administrative code**, not in Chapter 57-38.1 — that chapter is plain UDITPA and ends at § 57-38.1-21. Each rule **modifies the property, payroll and sales factors** within the standard three-factor formula; none of them replaces the formula with a bespoke single-factor method. Making a sales factor weighting election is not precluded by being in one of these industries.
 
 | Industry | Apportionment Method | Citation |
 | --- | --- | --- |
-| Railroads | Special factor formula | NDCC § 57-38.1 [VERIFY subsection] |
-| Motor carriers | Mileage-weighted | NDCC § 57-38.1 [VERIFY] |
-| Airlines | Departure / revenue-ton formula | NDCC § 57-38.1 [VERIFY] |
-| Financial institutions | Subject to separate privilege tax under NDCC Ch. 57-35.3, not CIT | n/a |
+| Railroads | Standard three factors with modified definitions (rented property at 8× net annual rent; car-day and track-mile style modifications) | N.D. Admin. Code 81-03-09-35 |
+| Trucking companies (motor common, contract and express carriers) | Standard three factors with mileage-based modifications to the property, payroll and sales factors | N.D. Admin. Code 81-03-09-37 |
+| Airlines | Standard three factors with modifications keyed to cost of aircraft by type, departures and revenue tons | N.D. Admin. Code 81-03-09-36 |
+| Television and radio broadcasting | Standard three factors with audience/subscriber-based sales-factor modification | N.D. Admin. Code 81-03-09-38 |
+| Publishing | Standard three factors with circulation-based sales-factor modification | N.D. Admin. Code 81-03-09-39 |
+| Financial institutions | **File Form 40 and pay CIT.** Special property and sales factor provisions apply, identical to those that applied under the repealed financial institution tax (Form 35, tax years before 2013). Loans and receivables go on the "Other assets" line of the property factor with a supporting schedule | N.D. Admin. Code Ch. 81-03-09.1 |
+
+> The separate financial institution privilege tax under N.D.C.C. Ch. 57-35.3 applied only to tax years **before 2013**. Do not tell a bank or credit union client that it is outside the corporate income tax on that basis.
 
 ### 6.4 NOL interaction with apportionment
 
@@ -196,7 +202,9 @@ The brackets are **not** indexed for inflation. The $25,000 and $50,000 threshol
 
 ### 7.2 Sales of services — cost of performance (with caveats)
 
-- **Cost-of-performance sourcing for services** — ND has not broadly adopted market-based sourcing for services as of 2025 [VERIFY]. Services receipts are generally sourced to ND if the income-producing activity is performed in ND, or if a greater proportion of the income-producing activity is performed in ND than in any other state (the "majority cost-of-performance" rule). This is the traditional UDITPA § 17 sourcing. This is a meaningful divergence from NC, CA, MA, IL, and 30+ other states that have moved to market-based sourcing. ND-headquartered service providers selling nationally currently benefit from cost-of-performance treatment because ND payroll / overhead generates ND-sourced receipts even when the customer is out-of-state. > ⚠️ **Audit flash point.** Whether ND has revised this rule for tax years 2024-2025 should be re-verified each filing season. Several Plains-region states (e.g., Iowa, Missouri) have moved to market-sourcing in recent biennia.  _(UDITPA § 17)_
+- **Cost-of-performance sourcing for services** — Confirmed against the current text of N.D.C.C. § 57-38.1-17: sales other than sales of tangible personal property are in ND if "the income-producing activity is performed in this state" or is performed both in and outside ND "and a greater proportion of the income-producing activity is performed in this state than in any other state, **based on costs of performance**." This is unmodified UDITPA § 17; ND has not adopted market-based sourcing. This is a meaningful divergence from NC, CA, MA, IL, and 30+ other states that have moved to market-based sourcing. ND-headquartered service providers selling nationally are **disadvantaged**, not helped, by cost-of-performance: ND payroll and overhead generate ND-sourced receipts even where the customer is out of state, which pushes the sales-factor numerator up. The planning point runs the other way — an out-of-state service provider selling *into* ND generally sources those receipts away from ND.
+
+  > ⚠️ **Audit flash point.** Re-read § 57-38.1-17 each filing season. Several Plains-region states (Iowa, Missouri) have moved to market sourcing, and a shift here would reverse the direction of the planning above.  _(N.D.C.C. § 57-38.1-17; UDITPA § 17)_
 
 ### 7.3 Oil and gas — extraction at the well, not income tax
 
@@ -204,15 +212,17 @@ The brackets are **not** indexed for inflation. The $25,000 and $50,000 threshol
 
 ### 7.4 Sourcing for SaaS and intangibles
 
-- **SaaS and intangibles sourcing** — For receipts from intangible property and SaaS, ND follows a use-location rule for licensed software and a commercial domicile rule for intangibles generally (NDCC § 57-38.1-16 read with Commissioner's guidelines). SaaS receipts are often sourced by analogy to services (cost-of-performance) absent a clear ND market-sourcing directive. This is an under-developed area in ND administrative guidance and is a frequent grey zone in practice [VERIFY current ND Commissioner guidelines].  _(NDCC § 57-38.1-16)_
+- **SaaS and intangibles sourcing** — ND has **no** statute or rule that speaks to SaaS by name. § 57-38.1-16 governs *local tangible personal property sales* and does not reach it; the operative provision is the residual rule in **§ 57-38.1-17**, so SaaS and licence receipts fall to be sourced by cost of performance like any other non-TPP sale, with § 57-38.1-18 (and N.D. Admin. Code 81-03-09-32 to 81-03-09-34) available to either party if that does not fairly represent ND activity. Non-business income from intangibles is *allocated* to the commercial domicile under §§ 57-38.1-07 and 57-38.1-08, which is a different question from apportioning business receipts and should not be conflated with it. This remains an under-developed area in ND guidance and is a frequent grey zone in practice.  _(N.D.C.C. §§ 57-38.1-07, 57-38.1-08, 57-38.1-17, 57-38.1-18)_
 
 ### 8.1 Regime
 
-- **NOL regime parameters** — ND adopts federal § 172 by reference under NDCC § 57-38-01.4 with ND modifications. Key parameters [all VERIFY against current statute]: - Carryforward period: 20 years [VERIFY — could be revised to indefinite to mirror federal post-TCJA]. - Carryback: Not permitted for ND purposes (consistent with federal post-TCJA). - 80% of taxable income limitation: ND conforms to the federal § 172(a)(2)(B) 80% limit for NOLs generated in tax years beginning after Dec 31, 2017 [VERIFY conformity date and any decoupling]. - Tracked in ND-apportioned dollars — i.e., the NOL number on the schedule is the post-apportionment ND figure, not the pre-apportionment federal NOL. - No discrete schedule equivalent to NC Schedule NOL — the NOL is computed on Form 40 / Schedule SB attachments [VERIFY current schedule designation].  _(NDCC § 57-38-01.4)_
+- **NOL regime parameters** — The ND corporate NOL is a **state-law creature**, not federal § 172 adopted by reference. § 57-38-01.3(1)(g) **adds back in full** the federal NOL deduction taken in arriving at federal taxable income (Schedule SA, line 1), and § 57-38-01.3(3) then allows a deduction for the ND-source NOL (Form 40, page 1, line 12). Confirmed parameters: - **Carryforward period:** the same period a federal loss of like character may be carried forward — 20 years for losses arising in tax years beginning before 2018, **indefinite** for losses arising after 2017. Do not apply a flat 20-year life to a current-year loss. - **Carryback:** not permitted for ND loss years beginning after **31 Dec 2002** — this predates TCJA by fifteen years and is not federal conformity. Capital losses must still be carried back and then forward. - **No 80% of taxable income limitation.** Neither § 57-38-01.3(3), nor N.D. Admin. Code 81-03-05.1-07, nor the Form 40 instructions imposes a percentage cap, and the federal § 172(a)(2)(B) limit does not travel to a deduction ND grants itself. The practical ceiling is simply ND income after exemptions on line 11. - **Computed after allocation and apportionment** — the ND NOL is a post-apportionment ND figure, not the pre-apportionment federal NOL. - **Belongs to the FEIN that incurred it.** An ND NOL may only be used by the corporation that incurred it, whatever its later ND activity or filing method. The ND NOL of the non-surviving corporation in a merger, liquidation or dissolution is **forfeited**, and a corporation that has elected to become a disregarded entity cannot transfer its NOL. - **No dedicated ND NOL schedule.** Attach a worksheet showing the accumulated ND loss by year less any previously deducted loss. Combined-report filers enter the carryforward for all corporations listed on Schedule CR.  _(N.D.C.C. §§ 57-38-01.3(1)(g), 57-38-01.3(3), 57-38-40(3); N.D. Admin. Code 81-03-05.1-07; Form 40 instructions, lines 11-12 and Schedule SA line 1)_
 
 ### 8.2 Ownership-change limitations (§ 382)
 
-- **§382 ownership change limitations** — ND follows federal § 382 by reference for ownership-change limitations on NOL utilization. The ND § 382 base is computed independently using ND values and apportionment. As with most states, ND has issued limited published guidance distinct from federal § 382; practitioners apply federal mechanics and adjust for ND apportionment.
+- **Ownership-change limitations — ND departs from the federal pattern** — Do not carry a federal § 382 analysis straight into ND. **N.D. Admin. Code 81-03-05.1-07(3)** provides that where a corporation does **not** file an ND consolidated return, its ND NOL "may be carried forward even if ... the ownership of the corporation in the loss year is not the same as the ownership in each of the years to which the loss is carried, e.g., the corporation is acquired by another corporation" — and even if the filing method changed (separate-entity in the loss year, combined in the carry year, or the reverse). An ND-only acquired corporation can therefore keep the full ND carryforward in circumstances where its federal NOL is § 382-limited. Two limits remain: for a corporation filing an **ND consolidated return**, subsection (4) requires the NOL to be computed corporation-by-corporation and used only against that corporation's own ND taxable income; and under subsection (6) and the Form 40 instructions, a corporation dissolved as a separate corporate entity loses the carryforward outright.
+
+  > ⚠️ **AUDIT FLASH POINT** — this cuts both ways. A practitioner who applies a federal § 382 limitation to the ND return overstates ND tax; one who assumes ND freely follows the loss into a consolidated group understates it.  _(N.D. Admin. Code 81-03-05.1-07(3), (4), (6))_
 
 ### 8.3 Interaction with rate stability
 
@@ -222,13 +232,13 @@ The brackets are **not** indexed for inflation. The $25,000 and $50,000 threshol
 
 ### 9.1 Current status (TY 2025)
 
-- **No PTET enacted** — North Dakota has NOT enacted a Pass-Through Entity Tax (PTET) election as of the 2025 tax year. This is confirmed by multiple practitioner surveys identifying ND (along with DE) as one of the few remaining states with a broad-based income tax that has not adopted a PTET workaround for the federal SALT cap [VERIFY through 68th and 69th Legislative Assembly sessions, 2023 and 2025].
+- **No PTET enacted** — North Dakota has NOT enacted a Pass-Through Entity Tax (PTET) election as of the 2025 tax year. Chapter 57-38 contains no entity-level election for S corporations or partnerships, and the ND Tax Commissioner's own *Corporate Income Tax History* records no such measure. ND remains in the small group of broad-based income tax states without a PTET workaround for the federal SALT cap; practitioner surveys generally list Delaware and Pennsylvania alongside it, though those peer lists move year to year and should not be quoted to a client as fixed.
 
 ### 9.2 Legislative history
 
 - The 67th Legislative Assembly (2021) did not enact a PTET despite the federal SALT-cap workaround trend.
 - The 68th Legislative Assembly (2023) considered tax reform broadly but did not enact a PTET.
-- The 69th Legislative Assembly (2025) has not enacted a PTET as of the most recent confirmed legislative calendar [VERIFY against final 2025 session bills].
+- The 69th Legislative Assembly (2025) adjourned sine die without enacting a PTET. The only corporate income tax measure the Tax Commissioner records for that session is **S.B. 2282**, creating an employer child care contribution income tax credit — 50% of the first $1,000 of child care contributions per employee, effective for tax years beginning in 2025 (N.D.C.C. § 57-38-01.42). Rates and brackets were untouched.
 
 ### 9.3 Practical consequences for ND pass-through owners
 
@@ -236,7 +246,7 @@ The brackets are **not** indexed for inflation. The $25,000 and $50,000 threshol
 
 ### 9.4 OBBBA (2025) interaction
 
-- **OBBBA SALT cap interaction** — The federal SALT cap was modified by the One Big Beautiful Bill Act (P.L. 119-21, July 4 2025) — relevant for years 2025 and onward [VERIFY OBBBA SALT-cap parameters in `us-tax-workflow-base`]. Even with whatever cap relief OBBBA provides, the absence of a ND PTET means ND owners cannot capture entity-level federal-deductible state-tax payments in the way that PTET-state owners can. This continues to be a competitive disadvantage for the ND professional-services and small-corporation sector.  _(P.L. 119-21)_
+- **OBBBA SALT cap interaction** — The federal SALT cap was modified by the One Big Beautiful Bill Act (P.L. 119-21, July 4 2025) — relevant for years 2025 and onward. OBBBA § 70120 raised the cap from $10,000 to **$40,000** for 2025 ($20,000 MFS), indexed by 1% a year through 2029 (**$40,400** for 2026), phasing down by 30% of MAGI above $500,000 ($505,000 for 2026) but never below $10,000, and reverting to $10,000 for tax years beginning after 2029. Even with that relief, the absence of a ND PTET means ND owners cannot capture entity-level federal-deductible state-tax payments in the way that PTET-state owners can. This continues to be a competitive disadvantage for the ND professional-services and small-corporation sector.  _(P.L. 119-21)_
 
 ### 9.5 Planning workaround alternative
 
@@ -252,8 +262,14 @@ The brackets are **not** indexed for inflation. The $25,000 and $50,000 threshol
 | Form 40-ES | All Form 40 filers above threshold | Quarterly estimated payment voucher |
 | Form 40-EXT | All Form 40 filers needing extension | Application for extension (if not relying on federal extension) |
 | Form 40-UT | All Form 40 filers underpaying | Underpayment of Estimated Income Tax |
-| Schedule SA | All Form 40 filers with multistate activity | Apportionment schedule (property, payroll, sales factors) |
-| Schedule FACT (or analog) | Form 40 filers with NOLs | NOL tracking schedule [VERIFY schedule designation] |
+| Schedule SA | All Form 40 filers | **Statutory adjustments** — additions to and subtractions from federal taxable income (line 1 adds back the federal NOL deduction) |
+| Schedule FACT | Form 40 filers apportioning income | **Apportionment factor** schedule (property, payroll, sales). The 100% weighted sales factor election is made by marking line 15a |
+| Schedule CR | Members of a unitary group filing a combined report | Combined report — Part II carries the group apportionment factor (election box at Part II, line 15a) |
+| Schedule TC | Filers claiming credits | Tax credits |
+| Schedule WE / WW | Water's-edge and worldwide filers | Water's-edge group and worldwide group income |
+| Form 40-QR | Corporations overpaying estimates by more than $500 | Quick refund of overpaid estimated tax (filed after year-end and before the 15th day of the 4th month) |
+| Form 40X | Any Form 40 filer amending | Amended Corporation Income Tax Return |
+| There is **no** ND schedule dedicated to NOL tracking | Form 40 filers with an NOL | Attach a worksheet showing the accumulated ND loss by year less any previously deducted loss; the deduction is taken on Form 40, page 1, line 12 |
 | Form 60 | S-corps (informational) | ND S-Corporation Income Tax Return |
 | Schedule K-1 (Form 60) | S-corps | Shareholder's share of ND income |
 | Form 58 | Partnerships and multi-member LLCs (informational) | ND Partnership Return |
@@ -265,7 +281,15 @@ The brackets are **not** indexed for inflation. The $25,000 and $50,000 threshol
 
 ### 10.3 Estimated payments — Form 40-ES
 
-- **Estimated payment requirement** — A corporation must make quarterly estimated payments if: - Its prior-year ND CIT liability exceeded $5,000, AND - Its current-year ND CIT liability is expected to exceed $5,000. [VERIFY threshold — practitioner sources report $5,000 but the statute may use a different figure for 2025.] Quarterly installments are due on the 15th day of the 4th, 6th, 9th, and 12th months of the tax year.  _(NDCC § 57-38-62 [VERIFY threshold])_
+- **Estimated payment requirement** — Under N.D.C.C. § 57-38-62(2) a corporation must make quarterly estimated payments if **both** of the following hold: - its estimated tax for the current year can reasonably be expected to exceed **$5,000**, **and** - its ND net tax liability for the immediately preceding year exceeded **$5,000**.
+
+  Fail either limb and no estimates are required — Form 40-UT says so twice on its face ("If $5,000 or less, do not complete form" against both the current-year and prior-year lines).
+
+  **Instalment due dates — the fourth one is not in the tax year.** Instalments are due on the 15th day of the **4th, 6th and 9th months of the taxable year, and the 15th day of the first month of the following taxable year** (N.D.C.C. § 57-38-63; Form 40-UT column headings). For a calendar-year filer that is **15 April, 15 June, 15 September and 15 January**. It is *not* the federal 4/6/9/12 corporate pattern, and treating the fourth instalment as due in December will not produce a wrong payment but will misstate the interest run for anyone reconstructing a late year.
+
+  **Safe harbour.** Each instalment is 25% of the *lesser* of 90% of the current year's net tax liability or 100% of the prior year's net tax liability (§ 57-38-62(2)(a)-(b); Form 40-UT line 4). No interest is due if the corporation instead uses the annualised income or adjusted seasonal instalment method under IRC § 6655(e), computed as for federal Form 2220, which must be attached (§ 57-38-62(3); Form 40-UT line 10).
+
+  **Overpayments** may be applied to the following year's estimates and, absent an election to a specific instalment, are applied to the first (§ 57-38-62(6)). A **quick refund** of overpaid estimates is available on **Form 40-QR** where the expected overpayment exceeds **$500**, filed after year-end and before the 15th day of the 4th month (§ 57-38-64).  _(N.D.C.C. §§ 57-38-62 to 57-38-64; Form 40 and Form 40-UT instructions)_
 
 **Quarterly installment schedule table**
 
@@ -282,11 +306,28 @@ The brackets are **not** indexed for inflation. The $25,000 and $50,000 threshol
 
 ### 10.5 Penalties and interest
 
-- **Penalties and interest schedule** — - Late filing: 5% per month, max 25% [VERIFY against NDCC § 57-38-45 for 2025 amounts]. - Late payment: 5% of unpaid tax + 1% per month [VERIFY]. - Underpayment of estimated tax: Computed on Form 40-UT using the statutory interest rate (revised semi-annually by the Tax Commissioner). - Negligence: 25% of underpayment. - Fraud: 75% of underpayment.  _(NDCC § 57-38-45 [VERIFY])_
+- **Penalties and interest schedule** — All of the following are confirmed against the current text of N.D.C.C. § 57-38-45 and the 2025 Form 40 instructions. **ND does not have federal-style accuracy penalties — there is no 20%/25% negligence penalty and no 75% civil fraud penalty in Chapter 57-38.** Do not quote IRC §§ 6662/6663 figures at an ND assessment.
+
+  - **Late filing:** 5% of the net tax liability or $5, whichever is greater, for the month the return is due, plus a further 5% for each additional month or fraction, capped at **25%** (§ 57-38-45(2)(b)).
+  - **Late payment:** 5% of the unpaid tax or $5, whichever is greater (§ 57-38-45(2)(a)), plus interest.
+  - **Interest on late tax:** 1% per month or fraction, excluding the month the tax became due (§ 57-38-45(1)(b)). Where an **extension** was obtained, interest runs at **12% per annum** through the later of the extended due date or the date paid, and at 1% per month thereafter (§ 57-38-45(1)(a)).
+  - **Underpayment of estimated tax:** interest only — the penalty provisions of § 57-38-45 are expressly **disapplied** to estimated tax by § 57-38-62(3). It is computed on **Form 40-UT** at a fixed statutory **12% per annum** from each instalment due date to the earlier of payment or the unextended due date of the return (Form 40-UT, line 8), and carried to Form 40, line 24b. The rate is fixed in the form and statute; it is **not** reset semi-annually by the Commissioner.
+  - **Intent to evade:** a civil penalty of not more than **$1,000**, recovered by the attorney general, plus a class A misdemeanour (§ 57-38-45(3)).
+  - **Refusal to file after notice:** the Commissioner may determine income from the best information available and assess tax at **not more than double** that amount, plus the usual interest and penalty (§ 57-38-45(6)).
+  - **Corporate failure to file after 30 days' notice:** up to **$500** per failure (§ 57-38-45(7)).
+  - The Commissioner **may waive** all or part of any civil penalty or interest for good cause (§ 57-38-45(5)).
+
+  Interest also runs **in the taxpayer's favour** at 1% per month on an overpayment, beginning 45 days after the later of the unextended due date or the date the return is filed and deemed complete.  _(N.D.C.C. §§ 57-38-45, 57-38-62(3); 2025 Form 40 and Form 40-UT instructions)_
 
 ### 10.6 Combined and unitary reporting
 
-- **Combined and unitary reporting requirement** — ND requires combined reporting for unitary businesses under NDCC § 57-38.1-19 [VERIFY]. A corporation that is part of a unitary business with other corporations must file a combined Form 40 reflecting the unitary group's combined income, with ND apportionment computed on the combined basis (Joyce / Finnigan election may apply — verify current ND rule). ND's combined-reporting requirement is meaningful: practitioners migrating from separate-return states (NC's default is separate-entity) must affirmatively analyze unitary status for any multistate ND filer. The water's-edge election (§ 5.2) is the principal mechanism to limit combined reporting to US-only affiliates.  _(NDCC § 57-38.1-19 [VERIFY])_
+- **Combined and unitary reporting requirement** — ND's default is **worldwide** unitary combined reporting. The Form 40 instructions put it flatly: "A corporation engaged in a unitary business with one or more corporations (**irrespective of the country or countries in which the corporations conduct business**) must file using the combined report method." N.D.C.C. § 57-38.4-02 then frames the water's-edge election as the alternative — "a corporation required to file a worldwide unitary combined report must do so unless it elects to apportion its income using the water's edge method."
+
+  **A unitary business** is a group of corporations transferring value among themselves through unities of ownership, operation and use. *Unity of ownership* means common control by a single corporation that is itself a group member, owning directly or indirectly **more than 50%** of the voting stock. Where unity of ownership exists, unity of operation and use are **presumed** if the activities are in the same general line of business, constitute different steps in a vertically structured enterprise, or the group is characterised by centralised management. The group files a combined report on **Schedule CR**, with each factor's denominator carrying the everywhere amounts for all corporations in the report, intercompany transactions and allocable-income amounts excluded.
+
+  Practitioners migrating from separate-return states (NC's default is separate-entity) must affirmatively analyse unitary status for any multistate ND filer — and, for any group with foreign affiliates, must reach the water's-edge question at § 5.2 rather than assuming a US-only group.
+
+  Note the citation: **§ 57-38.1-19 is not a combined-reporting provision** — it is the UDITPA construction clause ("This chapter must be so construed as to effectuate its general purpose to make uniform the law of those states which enact it"). The authorities are Ch. 57-38.4, N.D. Admin. Code 81-03-09-08, and the Form 40 instructions.  _(N.D.C.C. Ch. 57-38.4; N.D. Admin. Code 81-03-09-08; Form 40 instructions, "Method of Corporation Taxation")_
 
 ### 11.1 Example A — Small all-ND C-corp at the lowest bracket
 
@@ -425,7 +466,7 @@ $0 — S-corps are exempt from ND corporate income tax. File Form 60 (informatio
 
 **Step 2 — Shareholder-level ND PIT (Form ND-1, separate return):**
 
-The $400,000 of S-corp income flows through to the shareholder's federal Schedule K-1 and onto ND Form ND-1. The shareholder pays ND personal income tax at the 2025 rates (top bracket ~2.50% per `nd-income-tax.md`) [VERIFY current PIT rate]:
+The $400,000 of S-corp income flows through to the shareholder's federal Schedule K-1 and onto ND Form ND-1. The shareholder pays ND personal income tax at the 2025 rates (top bracket **2.50%**, confirmed against N.D.C.C. § 57-38-30.3, which sets a 0.00% / 1.95% / 2.50% schedule for every filing status; see `nd-income-tax.md` for the indexed thresholds):
 
 ```
 Approx. ND PIT (top bracket 2.50% on amount above ND PIT threshold):
@@ -513,19 +554,19 @@ Total entity-level ND tax              ~$5M+
 | ND CIT bracket 1 (up to $25,000) | 1.41% | 1.41% | 1.41% (confirmed, NDCC § 57-38-30) |
 | ND CIT bracket 2 ($25K–$50K) | 3.55% | 3.55% | 3.55% (confirmed, NDCC § 57-38-30) |
 | ND CIT bracket 3 (above $50K) | 4.31% | 4.31% | 4.31% (confirmed, NDCC § 57-38-30) |
-| Water's-edge surtax | 3.5% | 3.5% | 3.5% (confirmed, NDCC § 57-38.1-15; the election binds for five consecutive tax years) |
+| Water's-edge surtax | 3.5% | 3.5% | 3.5% (confirmed, **NDCC § 57-38.4-02(3)** — not § 57-38.1-15, which is the sales factor; the election binds for five consecutive tax years) |
 | Minimum tax | $0 | $0 | $0 |
 | Franchise tax | none | none | none |
-| Apportionment (default) | 3-factor, sales 2× | 3-factor, sales 2× | 3-factor, sales 2× [VERIFY] |
-| Single-sales-factor elect available? | Yes [VERIFY] | Yes [VERIFY] | Yes [VERIFY] |
-| Sourcing (services) | Cost-of-performance | Cost-of-performance | Cost-of-performance [VERIFY] |
-| NOL carryforward period | 20 yrs (pre-2018 losses) / indefinite (post-2017) | same | same — ND follows the federal period for a loss of like character |
-| NOL 80% TI limit (post-2017) | Yes | Yes | Yes |
-| PTE election | NONE | NONE | NONE [VERIFY 69th session] |
+| Apportionment (default) | 3-factor, **equally weighted** | 3-factor, **equally weighted** | 3-factor, **equally weighted** — (P+PR+S)/3 in all three years. ND is not a double-weighted-sales state: (P+PR+2S)/4 under NDCC § 57-38.1-09(2) was available only for tax years 2016-2017, and (P+PR+6S)/8 under § 57-38.1-09(3) only for 2018 |
+| Sales factor weighting (100% sales) election available? | Yes | Yes | Yes — NDCC § 57-38.1-09(4), N.D. Admin. Code Ch. 81-03-09.2, for tax years beginning after 31 Dec 2018; not available to passthrough entities; binds five consecutive tax years |
+| Sourcing (services) | Cost-of-performance | Cost-of-performance | Cost-of-performance — confirmed, NDCC § 57-38.1-17 |
+| NOL carryforward period | 20 yrs (pre-2018 losses) / indefinite (post-2017) | same | same — ND follows the federal period for a loss of like character (N.D. Admin. Code 81-03-05.1-07(2)). No ND carryback for loss years beginning after 31 Dec 2002 |
+| NOL 80% TI limit (post-2017) | **No** | **No** | **No** in every year — the ND NOL is granted by NDCC § 57-38-01.3(3) with no percentage cap, after the federal NOL deduction is added back in full under § 57-38-01.3(1)(g). The federal § 172(a)(2)(B) limit does not travel to it |
+| PTE election | NONE | NONE | NONE — confirmed through the 69th (2025) Assembly, which adjourned sine die without enacting one |
 | Filing form (C-corp) | Form 40 | Form 40 | Form 40 |
 | Filing form (S-corp) | Form 60 | Form 60 | Form 60 |
 | Filing form (partnership) | Form 58 | Form 58 | Form 58 |
-| Est. tax threshold | $5,000 | $5,000 | $5,000 — confirmed, and it is a TWO-part test: estimates are required only where the current year's liability is expected to exceed $5,000 AND the prior year's ND liability also exceeded $5,000 (Form 40-ES instructions) |
+| Est. tax threshold | $5,000 | $5,000 | $5,000 — confirmed, and it is a TWO-part test: estimates are required only where the current year's estimated tax is expected to exceed $5,000 AND the prior year's ND net tax liability also exceeded $5,000 (N.D.C.C. § 57-38-62(2); Form 40-UT, lines 1 and 3) |
 | Due date (calendar) | Apr 15 | Apr 15 | Apr 15 |
 | ND PIT rate (top, for context) | ~2.50% | ~2.50% | ~2.50% |
 
@@ -550,14 +591,14 @@ Total entity-level ND tax              ~$5M+
 ### 14.1 Primary statutory authority
 
 - **N.D.C.C. Chapter 57-38** — Income Tax Act of 1981 (corporate provisions).  _(N.D.C.C. Chapter 57-38)_
-- **N.D.C.C. § 57-38-30** — Corporate income tax rate brackets [VERIFY section number — practitioner guides also reference § 57-38-30.3].  _(N.D.C.C. § 57-38-30)_
+- **N.D.C.C. § 57-38-30** — Corporate income tax rate brackets. Section number confirmed against the current Century Code: § 57-38-30 imposes the three corporate brackets; **§ 57-38-30.3 is the individual, estate and trust rate section** and is not an alternative cite for corporate rates. (§ 57-38-30.1, the corporate new-industry credit, was repealed in 2017, and § 57-38-30.2, the surtax on income, in 1975.)  _(N.D.C.C. § 57-38-30)_
 - **N.D.C.C. § 57-38-01.4** — NOL conformity with federal § 172.  _(N.D.C.C. § 57-38-01.4)_
 - **N.D.C.C. § 57-38-08** — Sourcing rules and ND-source income.  _(N.D.C.C. § 57-38-08)_
 - **N.D.C.C. § 57-38-34** — Due dates for corporate returns.  _(N.D.C.C. § 57-38-34)_
 - **N.D.C.C. § 57-38-45** — Penalties.  _(N.D.C.C. § 57-38-45)_
 - **N.D.C.C. § 57-38-62** — Estimated-tax requirements for corporations.  _(N.D.C.C. § 57-38-62)_
 - **N.D.C.C. Chapter 57-38.1** — Apportionment (UDITPA-derived).  _(N.D.C.C. Chapter 57-38.1)_
-- **N.D.C.C. § 57-38.1-09** — Three-factor formula and single-sales-factor election [VERIFY subsection].  _(N.D.C.C. § 57-38.1-09)_
+- **N.D.C.C. § 57-38.1-09** — Apportionment of business income. Subsection (1) is the equally weighted three-factor default; (2) the lapsed 2016-2017 double-weighted-sales election; (3) the lapsed 2018-only (P+PR+6S)/8 election; **(4) the current 100% weighted sales factor election** for tax years beginning after 31 Dec 2018.  _(N.D.C.C. § 57-38.1-09)_
 - **N.D.C.C. § 57-38.1-15** — Water's-edge surtax.  _(N.D.C.C. § 57-38.1-15)_
 - **N.D.C.C. § 57-38.1-16** — Sales-factor sourcing.  _(N.D.C.C. § 57-38.1-16)_
 - **N.D.C.C. § 57-38.1-18** — Alternative apportionment.  _(N.D.C.C. § 57-38.1-18)_
@@ -574,9 +615,9 @@ Total entity-level ND tax              ~$5M+
 
 ### 14.3 Session laws (key reforms)
 
-- **2015 — Rate bracket stabilization** — The current 1.41% / 3.55% / 4.31% brackets have been stable since 2015 [VERIFY session law citation].  _([VERIFY session law citation])_
+- **2015 — Rate bracket stabilization** — The 2015 session cut corporate rates by roughly 5%, producing the current 1.41% / 3.55% / 4.31% range, which has not changed since. Confirmed against the ND Office of State Tax Commissioner's *Corporate Income Tax History*, which records rate cuts in the 2011 (1.68%-5.15%) and 2013 (1.48%-4.53%) sessions and no rate change in any session after 2015.  _(ND Office of State Tax Commissioner, Corporate Income Tax History)_
 - **2023 — 68th Legislative Assembly** — Considered tax reform; did not enact PTET.  _(68th Legislative Assembly)_
-- **2025 — 69th Legislative Assembly** — Confirmed status of CIT brackets and continued absence of PTET as of session conclusion [VERIFY].  _(69th Legislative Assembly [VERIFY])_
+- **2025 — 69th Legislative Assembly** — Adjourned sine die with no change to corporate rates or brackets and no PTET. Its one corporate income tax measure was **S.B. 2282**, the employer child care contribution income tax credit (N.D.C.C. § 57-38-01.42): 50% of the first $1,000 of child care contributions per employee, effective for tax years beginning in 2025.  _(69th Legislative Assembly, S.B. 2282; ND Tax Commissioner, Corporate Income Tax History)_
 
 ### 14.4 Administrative guidance
 
