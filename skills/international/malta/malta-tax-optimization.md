@@ -24,7 +24,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Field | Value |
 | --- | --- |
 | Country | Malta (Republic of Malta) |
-| Key optimization legislation | Income Tax Act (Cap. 123), Art. 14 (deductions), Art. 16 + 6th Schedule (capital allowances), Art. 4C (TA22 regime), Art. 14(1)(ha) (R&D 175% deduction); S.L. 123.204 (pension exemption); Micro Invest Guidelines (Malta Enterprise) |
+| Key optimization legislation | Income Tax Act (Cap. 123), Art. 14 (deductions), Art. 16 + 6th Schedule (capital allowances), Art. 90A (TA22 regime), Art. 14(1)(ha) (R&D 175% deduction); S.L. 123.204 (pension exemption); Micro Invest Guidelines (Malta Enterprise) |
 | Tax authority attitude to planning | The Commissioner for Revenue (CFR) accepts legitimate tax planning. Malta has no General Anti-Avoidance Rule (GAAR) in its domestic legislation. However, the EU Anti-Tax Avoidance Directive (ATAD) applies to corporate structures. Self-employed optimization via timing, structuring, and full use of allowances is accepted practice. |
 | Currency | EUR |
 | Tax year | Calendar year (1 Jan -- 31 Dec) |
@@ -32,14 +32,14 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Section 2 -- Income Splitting & Structuring
 
-### Ordinary income tax return vs the TA22 regime (Art. 4C, Cap. 123)
+### Ordinary income tax return vs the TA22 regime (Art. 90A, Cap. 123)
 
-**Ordinary return vs TA22 regime**  _(Art. 4C, Cap. 123)_
+**Ordinary return vs TA22 regime**  _(Art. 90A, Cap. 123; Part-Time Work Rules S.L. 123.39)_
 
 | Strategy | Detail | Enabling legislation |
 | --- | --- | --- |
-| TA22 part-time regime | If employed full-time with Class 1 SSC and net self-employment profit ≤ EUR 12,000, the flat rate is 10% on net profit. No additional Class 2 SSC. | ITA Art. 4C |
-| Income below EUR 12,000 | Keep net self-employment profit at or below EUR 12,000 to remain in TA22. Defer non-urgent invoicing to January if approaching threshold in December. | ITA Art. 4C |
+| TA22 part-time regime | If employed full-time with Class 1 SSC and net self-employment profit ≤ EUR 12,000, the flat rate is 10% on net profit. No additional Class 2 SSC. | ITA Art. 90A |
+| Income below EUR 12,000 | Keep net self-employment profit at or below EUR 12,000 to remain in TA22. Defer non-urgent invoicing to January if approaching threshold in December. | ITA Art. 90A |
 | Married joint computation | Married couples are assessed jointly by default. The 0% band is EUR 12,700 (vs EUR 9,100 single). If one spouse has low income, joint filing widens the 0% band. | ITA Art. 56, Rate Schedule |
 | Spouse employment | Employ a spouse in the business for genuine work. Salary is a deductible expense (Box 2) for the business owner and taxed in the spouse's hands at their marginal rate. Must be genuine, documented, and at market rate. | ITA Art. 14 |
 
@@ -148,7 +148,7 @@ On disposal: sale proceeds minus written-down value = balancing charge (taxable)
 | Strategy | Detail |
 | --- | --- |
 | SSC Class 2 deduction | SSC Class 2 is deductible in Box 20 of the Income Tax Return (not Box 2). Ensure all payments are claimed. |
-| TA22 eliminates Class 2 | Under Art. 4C, part-time self-employed with full-time employment pay Class 1 only (through employer). No additional Class 2 = saving of approximately EUR 4,362/year (2025 maximum). |
+| TA22 eliminates Class 2 | Under Art. 90A, part-time self-employed with full-time employment pay Class 1 only (through employer). No additional Class 2 = saving of approximately EUR 4,362/year (2025 maximum). |
 | Minimum vs actual Class 2 | Self-employed pay Class 2 based on net profit brackets. If profit is volatile, a lower-profit year reduces SSC. Consider timing of income recognition. |
 | Voluntary contributions | If below minimum contribution threshold in a given year, voluntary contributions protect State Pension entitlement without overpaying. |
 
