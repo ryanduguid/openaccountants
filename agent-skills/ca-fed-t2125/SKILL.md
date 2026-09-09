@@ -199,8 +199,9 @@ Half of CPP self-employed contributions is deductible on Line 22200.
 - Revenue: CAD 95,000
 - Expenses: 2,400 + 1,500 + 8,000 + 3,000 + 600 + 2,175 = CAD 17,675
 - Net business income: CAD 77,325
-- CPP: (77,325 - 3,500) x 11.9% = CAD 8,068.20 (hits maximum)
-- Half CPP deductible: CAD 4,034.10
+- CPP (base): capped at the YMPE, so (71,300 - 3,500) x 11.9% = CAD 8,068.20 — the 2025 maximum. Net income of 77,325 exceeds the 71,300 YMPE, so the base contribution is capped; do not apply 11.9% to the full 77,325.
+- CPP2: (77,325 - 71,300) x 8% = CAD 482.00 on earnings between the YMPE (71,300) and the YAMPE (81,200). Flag for reviewer — this example does not carry CPP2 through to the deduction below.
+- Half base CPP deductible: CAD 4,034.10 (base CPP only)
 
 ### Example 2 -- Vehicle (Km-Based Apportionment)
 

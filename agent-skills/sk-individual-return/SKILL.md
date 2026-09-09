@@ -169,8 +169,8 @@ Subtract applicable refundable credits.
 ### 5.3 Capital Gains
 
 Capital gains for Saskatchewan residents follow federal rules:
-- 50% inclusion rate for individuals (first $250,000 of net gains)
-- 66.67% inclusion for gains above $250,000 (effective June 2024)
+- 50% inclusion rate on ALL net capital gains, with no $250,000 threshold
+- The proposed 66.67% inclusion rate above $250,000 was cancelled on 21 March 2025 (confirmed in Budget 2025); no 2024 split-period calculation applies
 - Capital gains on qualified small business corporation shares eligible for Lifetime Capital Gains Exemption ($1,250,000 in 2025)
 
 ---

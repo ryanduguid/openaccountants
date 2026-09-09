@@ -24,9 +24,9 @@ metadata:
 | Social insurance fund | Acerta, Liantis, Xerius, UCM, etc. (client chooses one) |
 | Primary legislation | Koninklijk Besluit nr. 38 (Royal Decree No. 38 on self-employed social status) |
 | Supporting legislation | Wet betreffende het sociaal statuut der zelfstandigen; Programmawet; WIB |
-| Rate (hoofdberoep, bracket 1) | 20.50% on income up to EUR 73,947.40 |
-| Rate (hoofdberoep, bracket 2) | 14.16% on EUR 73,947.41 -- EUR 109,152.35 |
-| Rate above ceiling | 0% (no contributions above EUR 109,152.35) |
+| Rate (hoofdberoep, bracket 1) | 20.50% on income up to EUR 73,447.52 |
+| Rate (hoofdberoep, bracket 2) | 14.16% on EUR 73,447.52 -- EUR 108,238.40 |
+| Rate above ceiling | 0% (no contributions above EUR 108,238.40) |
 | Management fee | 3.05% on top of calculated contributions |
 | Minimum quarterly (hoofdberoep) | EUR 890.42 |
 | Bijberoep exemption threshold | EUR 1,865.44/year |
@@ -64,7 +64,7 @@ Before computing any social contribution figure, you MUST obtain:
 
 - NEVER compute contributions without knowing hoofdberoep vs bijberoep status
 - NEVER forget the 3.05% management fee -- it is always added by the social insurance fund
-- NEVER tell a client that social contributions have no upper limit -- there IS a ceiling at EUR 109,152.35
+- NEVER tell a client that social contributions have no upper limit -- there IS a ceiling at EUR 108,238.40
 - NEVER ignore the minimum contribution for hoofdberoep -- even with zero income, minimum applies
 - NEVER confuse VAPZ deductibility with regular business expense deduction -- they are separate mechanisms
 - NEVER apply bijberoep rates to a client whose employment is below 50% of full-time
@@ -99,9 +99,9 @@ This is the income from self-employment AFTER business expenses but BEFORE socia
 
 | Income bracket | Rate |
 |---|---|
-| EUR 0 -- EUR 73,947.40 | 20.50% |
-| EUR 73,947.41 -- EUR 109,152.35 | 14.16% |
-| Above EUR 109,152.35 | 0% |
+| EUR 0 -- EUR 73,447.52 | 20.50% |
+| EUR 73,447.52 -- EUR 108,238.40 | 14.16% |
+| Above EUR 108,238.40 | 0% |
 
 ### Bijberoep
 
@@ -147,12 +147,12 @@ ELSE:
 ### Step 5.2 -- Compute annual contributions (hoofdberoep)
 
 ```
-IF income <= 73,947.40:
+IF income <= 73,447.52:
     contributions = income x 20.50%
-ELIF income <= 109,152.35:
-    contributions = (73,947.40 x 20.50%) + ((income - 73,947.40) x 14.16%)
+ELIF income <= 108,238.40:
+    contributions = (73,447.52 x 20.50%) + ((income - 73,447.52) x 14.16%)
 ELSE:
-    contributions = (73,947.40 x 20.50%) + ((109,152.35 - 73,947.40) x 14.16%)
+    contributions = (73,447.52 x 20.50%) + ((108,238.40 - 73,447.52) x 14.16%)
 
 contributions = max(contributions, annual_minimum)
 management_fee = contributions x 3.05%
@@ -290,11 +290,11 @@ Action Required: Do not advise. Refer to qualified accountant. Document gap.
 
 ### Test 2 -- High income, both brackets
 **Input:** Net professional income EUR 90,000, hoofdberoep, established, age 45.
-**Expected output:** Bracket 1: EUR 73,947.40 x 20.50% = EUR 15,159.22. Bracket 2: (EUR 90,000 - EUR 73,947.40) x 14.16% = EUR 2,271.45. Total contributions: EUR 17,430.67. Management: EUR 531.64. Grand total: EUR 17,962.31. Quarterly: EUR 4,490.58.
+**Expected output:** Bracket 1: EUR 73,447.52 x 20.50% = EUR 15,056.74. Bracket 2: (EUR 90,000 - EUR 73,447.52) x 14.16% = EUR 2,343.83. Total contributions: EUR 17,400.57. Management: EUR 530.72. Grand total: EUR 17,931.29. Quarterly: EUR 4,482.82.
 
 ### Test 3 -- Above ceiling
 **Input:** Net professional income EUR 150,000, hoofdberoep, established, age 50.
-**Expected output:** Bracket 1: EUR 73,947.40 x 20.50% = EUR 15,159.22. Bracket 2: (EUR 109,152.35 - EUR 73,947.40) x 14.16% = EUR 4,983.42. No contribution above EUR 109,152.35. Total contributions: EUR 20,142.64. Management: EUR 614.35. Grand total: EUR 20,756.99.
+**Expected output:** Bracket 1: EUR 73,447.52 x 20.50% = EUR 15,056.74. Bracket 2: (EUR 108,238.40 - EUR 73,447.52) x 14.16% = EUR 4,926.39. No contribution above EUR 108,238.40. Total contributions: EUR 19,983.13. Management: EUR 609.49. Grand total: EUR 20,592.62. Quarterly: EUR 5,148.16.
 
 ### Test 4 -- Bijberoep below threshold
 **Input:** Net professional income EUR 1,500, bijberoep, age 32.
