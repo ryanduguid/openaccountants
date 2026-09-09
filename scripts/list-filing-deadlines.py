@@ -96,7 +96,22 @@ which cannot both hold for a calendar-year company, and both already hedge with
 slippage, saying six months and then naming the end of July. Settling it needs
 Llei 95/2010 or the Departament de Tributs, so the hedge stays.
 
-Still open: 200 jurisdictions state a deadline and 18 have been checked.
+Third lead, and a different instrument. Grep the deadline lines for one that
+names no year later than 2025, on the theory that Armenia and Finland had
+frozen a season. 91 lines across 44 jurisdictions match and nearly all are
+citation years or worked examples that state their own dates.
+
+  * Australia  WRONG in au-return-assembly, which declares tax_year 2025, dates
+               its BAS quarters correctly for the year ended 30 June 2026, and
+               then gives the ITR deadline as 31 October 2025 and the tax agent
+               window as March to May 2026. Both are a year early: 31 October
+               2026 and 15 May 2027. au-individual-return declares tax_year 2024
+               and its 31 October 2025 is right for that year, so it was given
+               the rule instead of losing the date. Confirmed against the ATO
+               lodgment program: 31 October self-lodged, 15 May by an agent
+               engaged before 31 October.
+
+Still open: 200 jurisdictions state a deadline and 19 have been checked.
 
 Usage: python3 scripts/list-filing-deadlines.py [--selftest]
 """

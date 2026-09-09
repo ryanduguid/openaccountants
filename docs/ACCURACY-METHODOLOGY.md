@@ -60,9 +60,9 @@ jurisdiction at a time. This section records how far that has got.
 |---|---|---|---|
 | Standard VAT / GST rate | 157 of 157 jurisdictions stating one | 6 | Fiji, India, Kazakhstan, Zimbabwe, Malawi, Maldives |
 | Headline corporate rate | ~135 jurisdictions | 3 | Lithuania, Cyprus, Portugal |
-| Annual return filing deadline | 18 of the 200 jurisdictions stating one | 5 | Italy, Greece, Armenia, Cyprus, Finland |
+| Annual return filing deadline | 19 of the 200 jurisdictions stating one | 6 | Italy, Greece, Armenia, Cyprus, Finland, Australia |
 
-The deadline pass has covered 18 jurisdictions of 200. Nobody has run an external
+The deadline pass has covered 19 jurisdictions of 200. Nobody has run an external
 pass over anything else. That leaves payroll rates and thresholds, registration
 and filing thresholds, penalty and interest rates, social-contribution bands,
 capital allowances, withholding rates, form names and statutory citations. All
@@ -79,6 +79,14 @@ Sierra Leone, Tunisia, and Andorra's personal filing window.
 Five in eight and zero in ten are both worth keeping. The first says the leads
 were good. The second says the field is in better shape than the first number
 implied, and it is the one to quote.
+
+A third lead found the sixth error without comparing any column. Armenia and
+Finland had each frozen one filing season into a standing rule, so the next
+step was to grep the deadline lines for any that name no year later than 2025.
+That caught Australia, where `au-return-assembly` declares tax year 2025, dates
+its BAS quarters correctly for the year ended 30 June 2026, and then gives the
+return lodgement date for 2024-25. Look for the shape of an error you have
+already found, not only for the field it appeared in.
 
 The errors divide in a way the rate hides. Italy and Greece named a real date
 belonging to a different obligation: Italy filed the Modello Redditi PF on
