@@ -139,7 +139,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Seattle | 10.55% from 1 Jan 2026 | DOR local tax change notice, Seattle LLEP Q1-26: local .0405 + state .0650. City 0.1% and King County 0.1% both took effect 1 Jan 2026 |
 | Tacoma | 10.40% from 1 Apr 2026 | DOR local tax change notice, Tacoma LLEP Q2-26: local .0390 + state .0650 (was 10.30%) |
 | Spokane | confirm via DOR lookup | last recorded 8.90%; not re-verified for 2026 |
-| Vancouver (Clark County) | confirm via DOR lookup | last recorded 8.60%; reported to have risen during 2026 |
+| Vancouver (Clark County) | 8.90% from 1 Apr 2026 | DOR notice Clark County HRS/LLEP Q2-26: local .0240 + state .0650. Clark County added 0.1% Housing and Related Services and 0.1% Local Law Enforcement on 1 Apr 2026 |
 | Olympia | confirm via DOR lookup | last recorded 9.00%; not re-verified for 2026 |
 | Unincorporated King County | confirm via DOR lookup | last recorded 10.10%; King County added 0.1% LLEP on 1 Jan 2026 |
 

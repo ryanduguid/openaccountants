@@ -728,12 +728,12 @@ Assuming relatively even payroll across the year and the wage base concentration
 | --- | --- | --- |
 | Total wages (Line 2) | $1,800,000 (illustrative) | Box 1 = $1,800,000 |
 | Federal income tax withheld (Line 3) | $360,000 | Box 2 = $360,000 |
-| SS wages (Line 5a Col 1) | $1,408,800 (Carol capped at $176,100 + 7 others at full wages) | Box 3 = $1,408,800 |
-| SS tax (Line 5a Col 2) | $174,691.20 | Box 4 = $87,345.60 (employee half only) |
+| SS wages (Line 5a Col 1) | $1,408,800 (Carol capped at $176,100; her actual wages are $567,300, so the 7 others total $1,232,700, each at or below the $176,100 wage base) | Box 3 = $1,408,800 |
+| SS tax (Line 5a Col 2) | $174,691.20 (12.4% x $1,408,800) | Box 4 = $87,345.60 (employee half only) |
 | Medicare wages (Line 5c Col 1) | $1,800,000 (uncapped) | Box 5 = $1,800,000 |
-| Medicare tax (Line 5c Col 2 + 5d Col 2) | $53,100 (Medicare) + $900 (Add'l Med) = $54,000 (employer + employee combined for Medicare; Add'l is employee only) | Box 6 = $27,000 (employee Medicare half) + $900 (employee Add'l Medicare) = $27,900 |
+| Medicare tax (Line 5c Col 2 + 5d Col 2) | Regular Medicare 2.9% x $1,800,000 = **$52,200**; Additional Medicare 0.9% x $367,300 (only Carol's wages over $200,000) = **$3,305.70**; total $55,505.70 | Box 6 = employee regular half $26,100 (1.45% x $1,800,000) + Additional Medicare $3,305.70 = **$29,405.70** |
 
-- **Note on Box 4 / Box 6 vs 941** — Box 4 and Box 6 on W-2/W-3 are the EMPLOYEE half only. Form 941 Lines 5a Col 2 and 5c Col 2 report the COMBINED employer + employee. Divide the 941 amount by 2 (for SS) and by 2 (for regular Medicare, then add the Additional Medicare which is 100% employee). If W-3 totals don't match the four 941s, the SSA sends a CAWR discrepancy notice. The employer typically has 45 days to respond with reconciliation.  _(Note on Box 4 / Box 6 vs 941)_
+- **Note on Box 4 / Box 6 vs 941** — Box 4 and Box 6 on W-2/W-3 are the EMPLOYEE half only. Form 941 Line 5a Col 2 (SS) and Line 5c Col 2 (regular Medicare) report the COMBINED employer + employee, so halve them for the W-2 boxes; Line 5d Col 2 (Additional Medicare) is 100% employee, so it is added to Box 6 in full, not halved. Additional Medicare applies only to the portion of an individual employee's wages above $200,000 — here only Carol crosses that threshold. If W-3 totals don't match the four 941s, the SSA sends a CAWR discrepancy notice. The employer typically has 45 days to respond with reconciliation.  _(Note on Box 4 / Box 6 vs 941)_
 
 ## 13. Self-Checks Before Reviewer Sign-Off
 

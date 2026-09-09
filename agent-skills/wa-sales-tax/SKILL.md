@@ -85,7 +85,7 @@ Local rates vary significantly. Washington has over 400 local tax jurisdictions.
 | Tacoma | 3.90% | 10.40% from 1 Apr 2026 | DOR notice Tacoma LLEP Q2-26 |
 | Bellevue | confirm | confirm via DOR lookup | last recorded 10.10%; King County added 0.1% LLEP on 1 Jan 2026 |
 | Spokane | confirm | confirm via DOR lookup | last recorded 8.90% |
-| Vancouver (Clark Co.) | confirm | confirm via DOR lookup | last recorded 8.50% |
+| Vancouver (Clark Co.) | 2.40% | 8.90% from 1 Apr 2026 | DOR notice Clark County HRS/LLEP Q2-26 |
 | Unincorporated King Co. | confirm | confirm via DOR lookup | last recorded 10.10%; King County added 0.1% LLEP on 1 Jan 2026 |
 
 **Critical:** Always use the DOR tax rate lookup tool (dor.wa.gov) to determine the exact rate for each delivery address. Rates change quarterly.
