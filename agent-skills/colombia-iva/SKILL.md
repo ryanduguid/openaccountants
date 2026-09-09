@@ -29,7 +29,7 @@ metadata:
 | Reduced rates | 5% (medicines, medical devices, agricultural inputs, passenger air transport, accommodation); 0% (basic foods — pan, arroz, leche, huevos, etc.) |
 | Zero rate | 0% (exports of goods, certain services exported to non-residents) |
 | Exempt | Financial services, insurance, education, healthcare, public utilities (residential), land transport, books, newspapers |
-| Registration threshold | Responsable de IVA: annual income ≥ COP 96,000,000 (UVT × 3,500 for 2025) or other conditions; below = No Responsable de IVA (formerly "Régimen Simplificado") |
+| Registration threshold | Responsable de IVA: annual income/covered contracts at or above 3,500 UVT (COP 174,296,500 for 2025, at the 2025 UVT of COP 49,799; commonly rounded to COP 174,297,000) or other conditions; below = No Responsable de IVA (formerly "Régimen Simplificado") |
 | Tax authority | DIAN (Dirección de Impuestos y Aduanas Nacionales) |
 | Filing portal | DIAN portal — https://www.dian.gov.co (MUISCA system) |
 | Return form | Declaración del Impuesto sobre las Ventas (Formulario 300) |

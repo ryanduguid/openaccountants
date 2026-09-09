@@ -123,8 +123,8 @@ All dollar thresholds, rates, and indexed figures in one place.
 
 | Figure | Value |
 |---|---|
-| Maximum earned income | $30,950 |
-| Maximum credit (3+ children) | ~$3,529 |
+| Maximum earned income | $32,900 |
+| Maximum credit (3+ children) | $3,756 |
 
 ### Young Child Tax Credit (YCTC) (verify 2025)
 
@@ -394,7 +394,7 @@ Apply credits in the following order (R&TC section 17039):
 
 **Resolution:**
 - CalEITC is available for self-employment income (net earnings from self-employment).
-- Must have earned income within CalEITC range (up to $30,950 for 2025, verify).
+- Must have earned income within the 2025 CalEITC range (up to $32,900).
 - ITIN filers qualify.
 - CalEITC is refundable -- taxpayer may owe zero CA tax and still receive the credit.
 - Also check eligibility for Young Child Tax Credit if taxpayer has a child under 6.
