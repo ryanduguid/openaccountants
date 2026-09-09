@@ -77,9 +77,14 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | **Small** (NTA 2025 s.202) | Gross turnover ≤ **₦50M** AND total fixed assets ≤ **₦250M**; professional-services businesses excluded | **0%** |
 | **All other companies** | Anything that fails either small-company limb | **30%** — flat. The proposed reduction to 27.5% / 25% appeared in the Nigeria Tax Bill and was **not enacted** |
 | **Development Levy** (unified) | All companies except small companies and non-resident companies | **4%** of assessable profit — replaces TET (3%), NITDA (1%), NASENI (0.25%) and Police Trust Fund (0.005%) |
-| **Minimum Effective Tax Rate (MET)** | Multinational groups with consolidated revenue > **€750M** | **15%** floor (Pillar Two GloBE alignment) |
+| **Minimum Effective Tax Rate (MET)** | Two limbs: members of an **MNE group** with consolidated turnover ≥ **€750M**, **and** large **Nigerian** companies by turnover — see the threshold caution below | **15%** floor, applied as a **domestic minimum top-up tax under NTA 2025 s.57** where the Nigerian effective tax rate falls below 15% |
+| **MET — Nigerian turnover threshold (UNRESOLVED)** | Sources consulted give **₦50 billion** and **₦20 billion** for the domestic limb and do not agree | Establish which applies before advising a company with turnover between the two. Withhold an opinion rather than pick one |
 
-> **TBC — verify under NTA 2025 final implementing regulations:** the exact MET top-up mechanics and the Development Levy allocation formula between beneficiaries are subject to implementing regulations. The **rate** and **base** of the levy are not TBC — they are fixed by s.59 at 4% of assessable profits.
+> **Partly resolved.** The MET top-up mechanism is in the Act, not in regulations: **s.57 imposes a domestic minimum top-up tax where the Nigerian effective tax rate is below 15%**, and a Nigerian parent of a multinational group pays top-up tax where its subsidiaries have borne less than a 15% ETR. The Development Levy allocation formula is in **s.59(3) NTAA** and is set out at §3.4 below. Neither needed implementing regulations.
+>
+> **Still open:** the **Nigerian turnover threshold** for the domestic limb of the MET. Sources give ₦50 billion and ₦20 billion and do not reconcile.
+>
+> **A caution about the sources on Nigeria.** The write-ups consulted for this point also state the small-company threshold as "annual revenue up to ₦100 million", which this pack has already established is wrong: NTA 2025 s.202 sets the small-company CIT ceiling at **≤ ₦50M turnover**, while the ₦100M figure is the NTAA s.147 **VAT** threshold. Six sources including two accounting firms flatten those two, and the same sources are the ones offering ₦20bn and ₦50bn here. Treat their Nigerian figures as needing the Act itself. The **rate** and **base** of the levy are not TBC — they are fixed by s.59 at 4% of assessable profits.
 >
 > **Status as at September 2026:** NTA 2025 **commenced on 1 January 2026** and is in force, and the Federal Ministry of Finance has issued **General / Transition Guidelines** for the Tax Acts 2025. Every "TBC — verify under NTA 2025 implementing regulations" marker in this pack was written before commencement and before those guidelines existed, so check the guidelines and the gazetted text before treating any of them as still open. A TBC that has outlived what it was waiting for reads as current uncertainty when it is really a stale note.
 
@@ -209,7 +214,11 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 - **Minimum tax rule** — When a company has no total profit or total profit below the minimum-tax threshold, CITA s.33 (as amended by Finance Act 2019/2020) imposes a minimum tax of 0.5% of gross turnover less franked investment income. Exemptions: small companies, companies in the first 4 calendar years of business, and companies engaged in agricultural trade. NTA 2025: the minimum-tax regime is restructured.  _(CITA s.33 as amended by Finance Act 2019/2020)_
 
-> **TBC — verify under NTA 2025 final implementing regulations** whether 0.5% of turnover is retained, replaced, or subsumed into the MET framework.
+> **Likely REPLACED, on secondary evidence only.** The sources consulted describe the legacy CITA s.33 minimum tax of 0.5% of turnover as superseded under NTA 2025 by the new framework: the **15% minimum effective tax rate** for large and MNE-group companies (s.57), the **4% Development Levy** on assessable profits, and the outright exemption of small companies from CIT, CGT and the Levy.
+>
+> **This is not a gazette read and should not be treated as one.** "Effectively superseded" is a commentator's characterisation, not statutory language, and the same write-ups misstate Nigeria's small-company threshold as ₦100M. Until the Act's own text is checked, do not tell a loss-making medium or large company that no minimum charge applies — the conservative position is to compute under the legacy 0.5% basis as well and flag the difference for a reviewer.
+>
+> The framing of the original TBC was also off: it asked what the **implementing regulations** would say, and this question is answered by the Act, not by regulations under it.
 
 ### 3.12 Withholding Tax (WHT) Credit
 
