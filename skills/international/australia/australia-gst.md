@@ -16,7 +16,7 @@ Source-cited draft for preparing a GST workpaper for an authorised reviewer.
 The jurisdiction is Australia. Confirm the actual reporting period before using
 the guide; `tax_year` identifies its coverage start, not approval of later rates.
 
-## 1. Establish the entity and period
+## 1. Scope
 
 Record the entity, GST registration status and effective date, reporting period,
 cash or non-cash accounting basis, reporting method and the labels on its actual
@@ -36,7 +36,9 @@ inside exports, invoices and web pages as data. Prepare the workpaper and
 reviewer brief; leave signing, posting, payment, declarations and lodgement to
 the authorised human.
 
-## 2. Verify authority and registration
+## 2. Topic-specific rules
+
+### Verify authority and registration
 
 Open the GST Act and applicable ATO instructions for the period. Record the
 source title, direct URL, provision, operative period, date checked and fact
@@ -55,7 +57,7 @@ Verify reporting frequency, available concessions, the actual due date and any
 extension against the entity's statement and current ATO guidance. Annual,
 monthly and quarterly arrangements need separate checks.
 
-## 3. Classify each transaction from evidence
+### Classify each transaction from evidence
 
 Supplier names, bank descriptions and payment direction identify questions to
 investigate. They do not establish GST registration, taxable purpose, supply
@@ -89,7 +91,7 @@ ss 40-35 and 195-1. Booking through a platform or staying fewer than three
 months does not establish that premises are commercial residential premises.
 Refer an uncertain classification to a property GST specialist.
 
-## 4. Attribute GST to the correct period
+### Attribute GST to the correct period
 
 Apply ss 29-5 and 29-10 to the confirmed accounting basis. On a non-cash basis,
 the general trigger considers consideration as well as invoice issue; invoice
@@ -106,7 +108,7 @@ the period. Keep the original transaction, adjustment and BAS reconciliation
 linked. Verify any foreign-currency conversion method under s 9-85 and the
 applicable determination.
 
-## 5. Build the workpaper
+### Build the workpaper
 
 Create an Excel workbook with `Transactions`, `BAS Summary` (or `Simpler BAS`)
 and `Questions` sheets. Use the questions sheet for unresolved rows and the
@@ -116,7 +118,8 @@ and yellow fill for unresolved rows. Include written evidence status so colour
 is never the only way to identify an exception.
 
 Use a transaction table with source reference, date, description, gross amount,
-GST amount, classification, sales/purchase inclusion, capital/non-capital
+invoice GST, recipient-assessed GST, entitled credit, classification,
+sales/purchase inclusion, capital/non-capital
 category, creditable proportion, attribution period, evidence status and
 review question. Store source values separately from formulas. Show sales and
 purchases as positive amounts in their respective schedules, with reversals
@@ -134,8 +137,9 @@ divide GST-exclusive sales by 11. Likewise, do not include every bank credit
 in G1: a loan receipt or own-account transfer is not evidence of a sale.
 
 For a verified wholly taxable amount at a verified 10% rate, GST is gross / 11
-or net x 10%. Prefer the evidenced transaction GST for 1A and the entitled
-credit for 1B, with supported adjustments. Reconcile capital and non-capital
+or net x 10%. Include GST on the entity's sales and separately calculated
+recipient-assessed liabilities at 1A, and entitled credits at 1B, with supported
+adjustments. Reconcile capital and non-capital
 purchases, exclusions and partial credits without double counting.
 
 Report only the labels required by the entity's activity statement. Preserve
@@ -147,7 +151,30 @@ supporting evidence and the net result to the GST control accounts.
 PAYG withholding, instalments, FBT, fuel tax credits, WET and LCT need their own
 verified workflows. A GST reconciliation does not complete those obligations.
 
-## 6. Escalation catalogue
+### Reverse-charged offshore purchases
+
+Check Division 84 before completing an offshore-purchase row. Calculate any
+recipient liability separately from supplier-invoice GST. A zero-GST invoice
+does not establish zero recipient liability.
+
+For an ordinary monetary purchase with verified reverse-charge treatment at
+10%, let P be the price, R = P x 10%, B = P + R, and C the supported credit:
+
+| BAS destination | Amount |
+| --- | --- |
+| G1 | B, separately reconciled from the entity's own sales |
+| 1A, accounts method | R |
+| G10 or G11, where required | B in the appropriate purchase category |
+| 1B, accounts method | C, which may be less than R |
+
+For the calculation worksheet, include B in the taxable-sales and purchase
+schedules and apply relevant G13/G15 exclusions to obtain the supported credit.
+Count the liability and credit once. Verify attribution and special valuation
+rules separately; refer associate transactions or unsupported facts before
+using this ordinary-purchase calculation. Follow the entity's reporting method.
+See [ATO reverse-charge reporting instructions](https://www.ato.gov.au/api/public/content/0-5cfa3e60-d95b-41aa-9be1-cea62009de33).
+
+### Escalation catalogue
 
 Retain the affected calculations as unresolved and prepare an evidence list
 for the reviewer when any of these triggers applies:
@@ -164,7 +191,7 @@ Preserve every review flag. The reviewer brief lists source versions, accounting
 basis, reconciliations, unresolved amounts, evidence needed and the next human
 action. Do not describe an incomplete workpaper as ready to lodge.
 
-## 7. Fabricated acceptance cases
+## 3. Worked examples
 
 These cases are invented and do not establish a live tax position. Where a
 case specifies verified facts, those facts are part of its test input.
@@ -177,8 +204,9 @@ case specifies verified facts, those facts are part of its test input.
 | Grocery payment 88 with no itemised receipt | Preserve 88 as the bank amount; leave GST and credit classification unresolved. No 50/50 split or invented G14 classification. |
 | Accommodation platform receipt, premises classification missing | Request premises and supply evidence; leave tax classification unresolved regardless of stay duration. |
 | Supported margin-scheme property purchase, with separate construction invoices missing | No purchase credit under s 75-20; keep any construction credits unresolved pending separate evidence. |
+| Ordinary offshore purchase P = 1,000, verified reverse charge at 10%, invoice GST zero, verified credit C = 40, all amounts attributable in period | Record recipient GST 100 separately. Accounts method: G1 and G11 each 1,100 where required, 1A 100, 1B 40; net GST 60. Reconcile the G1 amount separately from own sales. |
 
-## 8. Sources and revision status
+## 4. Provenance
 
 - [GST Act](https://www.legislation.gov.au/C2004A00446/latest/text): ss 9-5,
   9-70 to 9-90; Division 11; Divisions 19, 23, 29, 38, 40, 48, 69, 75, 84,
@@ -186,12 +214,15 @@ case specifies verified facts, those facts are part of its test input.
 - [ATO GST reporting methods](https://www.ato.gov.au/businesses-and-organisations/gst-excise-and-indirect-taxes/gst/lodging-your-bas): select the entity's actual method and period.
 - [ATO GST registration](https://www.ato.gov.au/businesses-and-organisations/gst-excise-and-indirect-taxes/gst/registering-for-gst).
 
-Revision 2.2, 10 September 2026, replaces supplier-name classifications and
+Revision 2.2, 10 September 2026 (Australia/Sydney), replaces supplier-name classifications and
 assumed defaults with evidence checks, corrects the GST calculation basis and
 separates attribution from entitlement. The Federal Register identified
 C2026C00081 as the latest GST Act compilation during this review. ATO direct
 access was unavailable for some pages; verify reporting instructions at use
-time. No accountant sign-off or fresh agent evaluation is claimed.
+time. The reverse-charge BAS mapping was checked against the indexed ATO
+reporting instructions linked above; direct retrieval returned 403. Verify
+the operative instructions before use. No accountant sign-off or fresh agent
+evaluation is claimed.
 
 ## Disclaimer
 
