@@ -35,7 +35,7 @@ For the following kinds of work:
 
 This skill does NOT cover:
 
-- Premium Tax Credit / APTC reconciliation (Form 3849 / federal Form 8962)
+- Premium Tax Credit / APTC reconciliation (federal Form 8962). Note that the **California** side of this no longer exists: FTB Form 3849, Premium Assistance Subsidy, is obsolete after tax year 2021. The American Rescue Plan Act's expansion of the federal Premium Tax Credit made the California premium assistance subsidy inoperative, so for 2025 there is no state subsidy to reconcile and no Form 3849 to file — reconcile the federal PTC on Form 8962 and stop there
 - Covered California enrollment assistance
 - Health insurance plan selection
 - Employer mandate (large employer reporting under ACA section 6056)
