@@ -73,6 +73,7 @@ jurisdiction at a time. This section records how far that has got.
 | Minimum corporate tax bands | Slovakia | 1 | Slovakia |
 | Statutory citations | Pakistan, Ireland (partial) | 0, one unverified | — |
 | Forthcoming rate steps | Ireland | 1 gap filled | Ireland |
+| Capital allowances | Australia | 1 | Australia |
 
 The deadline pass has covered 24 jurisdictions of 200. Nobody has run an external
 pass over anything else. That leaves payroll rates and thresholds, registration
@@ -141,6 +142,30 @@ current value". That date has passed, the change is in force, and a hedge
 written before a commencement date should be revisited after it rather than
 carried forward. Its prohibition now reads "do NOT state the threshold as
 EGP 500,000" rather than "do not present either figure as settled".
+
+### An announcement is not a law, in either direction
+
+Two errors this session are the same mistake pointing opposite ways, and a
+reader is misled by both.
+
+Taiwan called its 15% alternative minimum tax for large multinational groups
+"proposed" after it had been law for a year, and a reader does not apply a
+proposed rate. Australia's bookkeeping guide did the reverse: it listed the
+instant asset write-off as "Permanent (from 1 Jul 2026) — announced in 2026
+Budget — made permanent". The 2026-27 Budget of 12 May 2026 did announce it,
+the enabling legislation has not passed, and the standing legislated threshold
+for assets first used from 1 July 2026 is $1,000. A small business told it can
+immediately deduct a $15,000 asset would instead be pooling it at 15% and 30%.
+
+Both guides had the fact and the date right. What they got wrong was the
+status, and no rate check, arithmetic check or cross-tree comparison in
+`scripts/` can see that, because there is no wrong number to find.
+
+Australia is also the eighth instance of the pattern that runs through every
+field here. `au-rates-2026-27` states it exactly right, as "legislated to
+30 Jun 2026; permanence from 1 Jul 2026 announced, confirm enactment", and
+`au-rd-incentive` and `australia-tax-optimization` bound their claims to
+30 June 2026 too. The guide an agent loads to write up a set of books did not.
 
 ### A hedge attached to a future date expires on that date
 

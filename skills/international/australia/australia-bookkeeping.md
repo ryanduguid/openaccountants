@@ -272,7 +272,7 @@ Small businesses using simplified reporting typically recognise on delivery/comp
 | Period | Threshold | Eligibility |
 | --- | --- | --- |
 | 1 Jul 2023 – 30 Jun 2026 | < $20,000 per asset | Aggregated turnover < $10m, using simplified depreciation |
-| Permanent (from 1 Jul 2026) | < $20,000 per asset | Announced in 2026 Budget — made permanent |
+| From 1 Jul 2026 | **$1,000 per asset** as the law stands | The $20,000 threshold was announced as permanent in the 2026-27 Budget of 12 May 2026 and the enabling legislation has NOT passed. Until it does, assets first used or installed from 1 July 2026 get the standing legislated $1,000; anything above it goes to the small business pool at 15% then 30%. Do not promise a client an immediate deduction on the announcement |
 
 ### Small Business Pool (Simplified Depreciation)
 
