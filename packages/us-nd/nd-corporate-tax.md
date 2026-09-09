@@ -62,7 +62,7 @@ This skill covers North Dakota state-level entity-level income tax:
 
 ### Primary sources
 
-1. **N.D.C.C. § 57-38-30** — Corporate income tax rate brackets [VERIFY: section may have been renumbered to § 57-38-30 or remain at original location; some practitioner guides reference § 57-38-30.3].
+1. **N.D.C.C. § 57-38-30** — Corporate income tax rate brackets. Confirmed: § 57-38-30 is the operative rate section and states the three brackets as 1.41% on the first $25,000, 3.55% over $25,000 up to $50,000, and 4.31% over $50,000. § 57-38-30.3 is a different provision and is not the corporate rate section.
 2. **N.D.C.C. § 57-38-01.4** — NOL rules; ND adopts federal § 172 by reference subject to ND modifications.
 3. **N.D.C.C. Chapter 57-38.1** — Apportionment (UDITPA-derived; property + payroll + sales).
 4. **N.D.C.C. § 57-38-08** — Sourcing rules and what constitutes ND-source income.

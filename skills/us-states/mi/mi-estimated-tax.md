@@ -57,7 +57,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Estimated tax threshold | Expected tax > $500 after withholding and credits | MCL 206.301(1) |
 | Safe harbor — current year | 90% of current-year tax | MI-1040ES Instr. |
 | Safe harbor — prior year (standard) | 100% of prior-year tax (12-month return) | MI-1040ES Instr. |
-| Safe harbor — high-income (AGI > $150k) | 110% of prior-year tax | MI-1040ES Instr. `[VERIFY:]` see §5 |
+| Safe harbor — high-income (prior-year AGI > $150,000; $75,000 MFS) | 110% of prior-year tax | MI-1040ES instructions — confirmed |
 | Safe harbor — farmers/fishermen | 66⅔% of current-year tax | MCL 206.301(4) |
 | Q1 due date (TY 2026) | April 15, 2026 | MCL 206.301(1) |
 | Q2 due date | June 15, 2026 | MCL 206.301(1) |
@@ -497,7 +497,7 @@ For W-2 couples, increasing Michigan withholding via MI-W4 line 6 ("additional a
 | --- | --- | --- |
 | $500 threshold | MCL 206.301(1) | High |
 | Due dates Apr 15 / Jun 15 / Sep 15 / Jan 15 | MCL 206.301(1) | High |
-| 90% / 100% / 110% safe harbor | MI-1040ES 2026 instructions | High (`[VERIFY:]` 110% AGI threshold) |
+| 90% / 100% / 110% safe harbor | MI-1040ES instructions | Confirmed: 90% of current-year tax, 100% of prior-year tax, or 110% of prior-year tax where prior-year AGI exceeded $150,000 ($75,000 MFS) |
 | Farmer/fisherman 66⅔% | MCL 206.301(4) | High |
 | 4.25% flat rate | MCL 206.51 | High |
 | Personal exemption $5,800 | MCL 206.30; 2026 RAB | High |

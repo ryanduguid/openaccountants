@@ -30,7 +30,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Payment portal** — North Dakota Taxpayer Access Point (ND TAP)
 - **Statute** — N.D.C.C. §57-38-62  _(N.D.C.C. §57-38-62)_
 - **Regulation** — N.D. Admin Code 81-03-04-01 through 81-03-04-02  _(N.D. Admin Code 81-03-04-01 through 81-03-04-02)_
-- **Underpayment interest rate** — 12% per annum [VERIFY: confirm against current Tax Commissioner publication for TY 2025]
+- **Underpayment interest rate** — 12% per annum [VERIFY — UNRESOLVED AND POSSIBLY WRONG: this figure could not be confirmed against the Office of State Tax Commissioner's TY2025 publications, and at least one secondary source puts ND underpayment interest nearer 8-10% per annum. Do NOT rely on 12% until the rate is read off the 2025 Schedule ND-1UT instructions; every interest computation in this guide depends on it.]
 - **Threshold** — Net tax liability expected to exceed $1,000 [VERIFY]
 
 **Metadata table**
