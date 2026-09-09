@@ -30,7 +30,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Payment portal** — North Dakota Taxpayer Access Point (ND TAP)
 - **Statute** — N.D.C.C. §57-38-62  _(N.D.C.C. §57-38-62)_
 - **Regulation** — N.D. Admin Code 81-03-04-01 through 81-03-04-02  _(N.D. Admin Code 81-03-04-01 through 81-03-04-02)_
-- **Underpayment interest rate** — 12% per annum [VERIFY — UNRESOLVED AND POSSIBLY WRONG: this figure could not be confirmed against the Office of State Tax Commissioner's TY2025 publications, and at least one secondary source puts ND underpayment interest nearer 8-10% per annum. Do NOT rely on 12% until the rate is read off the 2025 Schedule ND-1UT instructions; every interest computation in this guide depends on it.]
+- **Underpayment interest rate** — 12% per annum (confirmed — 12% per annum (equivalently 1% per month), imposed via N.D.C.C. § 57-38-62, which applies the interest provisions of § 57-38-45 to underpaid estimated tax, and stated in the Schedule ND-1UT instructions)
 - **Threshold** — Net tax liability expected to exceed $1,000 [VERIFY]
 
 **Metadata table**
@@ -48,7 +48,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Payment portal | North Dakota Taxpayer Access Point (ND TAP) |
 | Statute | N.D.C.C. §57-38-62 |
 | Regulation | N.D. Admin Code 81-03-04-01 through 81-03-04-02 |
-| Underpayment interest rate | 12% per annum [VERIFY: confirm against current Tax Commissioner publication for TY 2025] |
+| Underpayment interest rate | 12% per annum — confirmed — 12% per annum (equivalently 1% per month), imposed via N.D.C.C. § 57-38-62, which applies the interest provisions of § 57-38-45 to underpaid estimated tax, and stated in the Schedule ND-1UT instructions |
 | Threshold | Net tax liability expected to exceed $1,000 [VERIFY] |
 
 **Sources:**
@@ -100,7 +100,7 @@ Same calendar as federal Form 1040-ES.
 
 | Period | Rate |
 | --- | --- |
-| TY 2025 | **12% per annum**, simple interest, computed from each installment due date to the earlier of the date paid or the original Form ND-1 due date (April 15, 2026) [VERIFY: confirm rate in 2025 Schedule ND-1UT instructions] |
+| TY 2025 | **12% per annum**, simple interest, computed from each installment due date to the earlier of the date paid or the original Form ND-1 due date (April 15, 2026) — confirmed |
 
 ### Payment methods
 
@@ -331,7 +331,7 @@ The ND quarterly calendar aligns exactly with the federal Form 1040-ES calendar:
 | NDES-T1-02 | Safe harbor = lesser of (a) 90% current year OR (b) 100% prior year | N.D. Admin Code 81-03-04-02 |
 | NDES-T1-03 | No 110% high-income variant — flat 100% prior-year test [VERIFY] | N.D. Admin Code 81-03-04-02 |
 | NDES-T1-04 | Four equal installments due April 15, June 15, September 15, January 15 | Form ND-1ES |
-| NDES-T1-05 | Underpayment interest rate = 12% per annum simple [VERIFY for TY 2025] | Schedule ND-1UT instructions |
+| NDES-T1-05 | Underpayment interest rate = 12% per annum simple — confirmed | Schedule ND-1UT instructions; N.D.C.C. §§ 57-38-62, 57-38-45 |
 | NDES-T1-06 | Withholding deemed paid evenly unless taxpayer elects otherwise | Schedule ND-1UT |
 | NDES-T1-07 | De minimis waiver if current-year tax exceeds withholding by < $500 | N.D. Admin Code 81-03-04-02(3)(d) |
 | NDES-T1-08 | Qualified farmer (>⅔ gross from farming) — single Jan 15 installment OR March 1 file + pay | N.D. Admin Code 81-03-04-02(3)(a),(b) |
