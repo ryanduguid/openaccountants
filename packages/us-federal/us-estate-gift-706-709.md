@@ -1,6 +1,6 @@
 ---
 name: us-estate-gift-706-709
-description: Tier 2 US federal content skill for the unified estate, gift, and generation-skipping transfer tax under §§ 2001 et seq., including Form 706 (estate), Form 709 (gift), and the GST regime. Covers tax year 2025 with the $13.99M per-individual basic exclusion amount, the 40% top rate, the $19,000 annual exclusion, §2513 gift splitting, §2010(c) portability and DSUE with the Rev. Proc. 2022-32 5-year late-election relief, §2503(e) unlimited medical/tuition direct payments, §529 5-year frontload election ($95k/donee), §2032 alternate valuation, §1014 stepped-up basis, the GST regime under § 2601, and the December 31, 2025 TCJA-doubling sunset to ~$7M with anti-clawback T.D. 9884.
+description: Tier 2 US federal content skill for the unified estate, gift, and generation-skipping transfer tax under §§ 2001 et seq., including Form 706 (estate), Form 709 (gift), and the GST regime. Covers tax year 2025 with the $13.99M per-individual basic exclusion amount, the 40% top rate, the $19,000 annual exclusion, §2513 gift splitting, §2010(c) portability and DSUE with the Rev. Proc. 2022-32 5-year late-election relief, §2503(e) unlimited medical/tuition direct payments, §529 5-year frontload election ($95k/donee), §2032 alternate valuation, §1014 stepped-up basis, the GST regime under § 2601, and the permanent $15,000,000 basic exclusion amount from 2026 under OBBBA (P.L. 119-21, § 70106), which replaced the scheduled December 31, 2025 sunset, with anti-clawback T.D. 9884.
 jurisdiction: US
 category: federal-tax
 tier: 2
@@ -759,7 +759,7 @@ DSUE  =  $13,990,000 (BEA) − $0 (taxable estate + adjusted taxable gifts) − 
        =  $13,990,000
 ```
 
-S's AEA after the election: $13,990,000 (S's own BEA in 2025) + $13,990,000 (DSUE) = **$27,980,000**. After the 2025 sunset, S's own BEA reverts to ~$7M, but the DSUE — locked in at $13,990,000 — remains.
+S's AEA after the election: $13,990,000 (S's own BEA in 2025) + $13,990,000 (DSUE) = **$27,980,000**. The scheduled 2025 sunset never took effect: under OBBBA § 70106 S's own BEA is $15,000,000 from 2026, and the DSUE — locked in at $13,990,000 — is additional.
 
 **Filing logistics:**
 
