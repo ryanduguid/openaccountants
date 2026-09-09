@@ -140,7 +140,7 @@ The One Big Beautiful Bill Act (P.L. 119-21), enacted July 4, 2025, dramatically
 | §1202(a) exclusion | 100% at 5 years for post-9/27/2010 stock acquired on or before 7/4/2025 | 50% at 3 years, 75% at 4 years, 100% at 5 years for stock acquired after 7/4/2025 |
 | §1202(b)(1) per-issuer cap | $10M / 10x basis | $15M / 10x basis, inflation-indexed after 2026, reduced by prior same-issuer eligible gains under §1202(b)(4)(B) |
 | §1202(d)(1) gross-asset cap | $50M | $75M for stock issued after 7/4/2025, inflation-indexed after 2026 |
-| §57(a)(7) AMT preference | Zero for post-9/27/2010 stock; 7% preference only for pre-9/27/2010 50%/75% stock | Zero §57(a)(7) preference for all post-applicable-date tiers |
+| §57(a)(7) AMT preference | Zero for post-9/27/2010 100% stock; 7% of excluded gain for pre-9/27/2010 50%/75% stock | **AUDIT FLASH POINT** — contested for the new 3-year 50% and 4-year 75% tiers. Only §1202(a)(4) carried the "paragraph (7) of section 57(a) shall not apply" language, and it is drafted around the 100% tier; whether it reaches the §1202(a)(5) partial tiers is read both ways by practitioners and is unresolved pending guidance. The 5-year 100% tier is AMT-clean either way. Do not assert a position without checking current guidance |
 | §1045 rollover | Available | Available, and less critical once the 3-year tier is met |
 
 ## 5. The §1202(c) Qualification Requirements

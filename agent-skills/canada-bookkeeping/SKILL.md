@@ -439,7 +439,7 @@ TOTAL LIABILITIES AND EQUITY                          xxx
 |---|---|---|
 | Quick Method (GST/HST) | Taxable revenue ≤ $400,000 | Remit flat percentage of revenue; keep the difference |
 | Instalment threshold | Tax owing < $3,000 (individuals) or < $3,000 (corporations) | No quarterly instalments required |
-| Simplified ITC claims | Annual taxable revenue ≤ $500,000 | Can claim ITCs without full documentation for purchases under $30 |
+| Simplified ITC claims | Worldwide taxable supplies <= $1,000,000 AND taxable purchases in Canada <= $4,000,000 | Simplified METHOD for calculating ITCs; separate documentary thresholds apply to receipts |
 | GIFI-Short | Revenue and assets each < $1 million | ~100 common codes instead of full GIFI list |
 | T2 Short Return | Various small corporation criteria | Reduced filing requirements |
 | Filing deadline | Sole prop: June 15 (return); April 30 (payment) | 2-month extension for filing but not paying |

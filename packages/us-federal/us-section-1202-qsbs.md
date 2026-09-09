@@ -164,7 +164,7 @@ These two pools are tested separately under §1202(b)(1), but the per-issuer cap
 | §1202(a) exclusion | 100% at 5 years (post-9/27/2010 stock) | 50% at 3 years, 75% at 4 years, 100% at 5 years |
 | §1202(b)(1) per-issuer cap | $10M / 10× basis | $15M / 10× basis (inflation-indexed 2027+) |
 | §1202(d)(1) gross-asset cap | $50M | $75M (inflation-indexed 2027+) |
-| §57(a)(7) AMT preference | Zero for 100% stock | Zero for 100% stock; tiered for 50%/75% stock (see Section 7) |
+| §57(a)(7) AMT preference | Zero for post-9/27/2010 100% stock; 7% of excluded gain for pre-9/27/2010 50%/75% stock | **AUDIT FLASH POINT** — contested for the new 3-year 50% and 4-year 75% tiers. Only §1202(a)(4) carried the "paragraph (7) of section 57(a) shall not apply" language, and it is drafted around the 100% tier; whether it reaches the §1202(a)(5) partial tiers is read both ways by practitioners and is unresolved pending guidance. The 5-year 100% tier is AMT-clean either way. Do not assert a position without checking current guidance |
 | §1045 rollover | Available | Available (and now less critical because of the 3-year tier) |
 
 ---

@@ -292,7 +292,7 @@ Each quarter: 20% x (cumulative net income year-to-date) - prior Modelo 130 paym
 | Late filing without AEAT request | 1% surcharge per month late (up to 12 months), then 15% + interest |
 | Late filing after AEAT request | 50%-150% of unpaid tax (depending on severity) |
 | Late payment | 5% (first month), 10% (3 months), 15% (6 months), 20% (12+ months) + interest |
-| Interest rate (interes de demora) | ~3.75% annually (varies by year) |
+| Interest rate (interes de demora) | 4.0625% annually for 2025 and currently 2026 until a new State Budget Law changes it |
 
 ---
 

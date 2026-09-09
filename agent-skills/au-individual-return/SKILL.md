@@ -289,7 +289,7 @@ Repayment income = taxable income + reportable fringe benefits + net investment 
 | Failure to lodge on time | $313 per 28-day period, up to 5 periods ($1,565 max) |
 | Shortfall penalty (reasonable care not taken) | 25% of shortfall |
 | Shortfall penalty (recklessness) | 50% of shortfall |
-| General Interest Charge (GIC) | ~11% annually (varies quarterly) |
+| General Interest Charge (GIC) | Varies quarterly; 2025 annual rates include 11.42%, 11.17%, 10.78%, and 10.61%; calculated daily and compounded. Not deductible for GIC incurred on or after 1 July 2025 |
 
 ---
 

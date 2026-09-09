@@ -561,37 +561,37 @@ D dies in 2025. D is survived by spouse S (US citizen) and three adult children.
 
 | Asset | Value |
 | --- | --- |
-| Primary residence (jointly held with S) | $3,000,000 |
+| Primary residence (spousal JTWROS, FMV $3,000,000) — only 1/2 includible under §2040(b) | $1,500,000 |
 | Brokerage account (D's separate) | $9,000,000 |
 | IRA (S is sole beneficiary) | $4,000,000 |
 | Life insurance (proceeds payable to D's estate) | $2,000,000 |
 | Personal effects, autos | $500,000 |
 | 50% interest in family LLC (closely held real estate) | $1,500,000 |
-| **Total gross estate** | **$20,000,000** |
+| **Total gross estate** | **$18,500,000** |
 
 **Analysis computation table**  _(Example 14.2)_
 
 | Line | Amount |
 | --- | --- |
-| Gross estate | $20,000,000 |
+| Gross estate (residence at the §2040(b) 1/2 = $1.5M) | $18,500,000 |
 | Schedule J — funeral & admin | ($200,000) |
 | Schedule K — debts (residential mortgage $400k) | ($400,000) |
-| Schedule M — marital deduction (residue + 1/2 JTWROS + IRA = $1.5M + $4M + remaining residue) | ($5,910,000) |
+| Schedule M — marital deduction (1/2 JTWROS residence $1.5M + IRA $4M + probate residue to S) | ($5,910,000) |
 | Schedule M — bypass trust is NOT marital because it terminates at S's death without QTIP | $0 |
-| Taxable estate | $13,490,000 |
+| Taxable estate | $11,990,000 |
 | Adjusted taxable gifts (post-1976 gifts not in gross estate) | $500,000 |
-| Tentative tax base | $13,990,000 |
-| Tentative tax (§2001(c) at 40% top rate) | $5,541,800 |
+| Tentative tax base | $12,490,000 |
+| Tentative tax (§2001(c): $345,800 + 40% x $11,490,000) | $4,941,800 |
 | Less gift tax payable on adjusted taxable gifts at DOD rates | $0 (within BEA) |
-| Net tentative tax | $5,541,800 |
-| Less applicable credit amount (AEA = BEA only, no DSUE) | ($5,541,800) |
+| Net tentative tax | $4,941,800 |
+| Less applicable credit amount (2025, AEA = BEA only, no DSUE) | ($5,541,800) |
 | **Net federal estate tax** | **$0** |
 
-D's BEA is fully consumed: $13,490,000 to the bypass trust at death + $500,000 prior gifts = $13,990,000. Exactly matches 2025 BEA. IRA passing to S qualifies for marital deduction even though it is IRD — S will pay income tax on distributions; estate tax avoidance is preserved. Life insurance payable to the estate is fully included under §2042 — note the planning miss; an ILIT would have kept the $2M outside the estate. The 50% LLC interest may qualify for valuation discounts (minority interest + lack of marketability) — typically 25-40% combined. Requires appraisal. Not reflected in this example.
+Under §2040(b) a qualified joint interest held with a US-citizen spouse is included at exactly one-half regardless of who contributed, so only $1,500,000 of the $3,000,000 residence is in D's gross estate; the survivor's half was never D's to tax. That includible half passes to S by survivorship and is the Schedule M item, so its net effect on the taxable estate is $0 — including the full $3M and then deducting only half double-counts it. The applicable exclusion is therefore NOT fully consumed: the $12,490,000 base is $1,500,000 below the 2025 BEA. Reviewer note: the "$13,990,000 to the credit-shelter trust" clause is an illustrative formula, and the probate assets available to fund it are less than that; the mortgage may also need proportioning to the half interest. IRA passing to S qualifies for marital deduction even though it is IRD — S will pay income tax on distributions; estate tax avoidance is preserved. Life insurance payable to the estate is fully included under §2042 — note the planning miss; an ILIT would have kept the $2M outside the estate. The 50% LLC interest may qualify for valuation discounts (minority interest + lack of marketability) — typically 25-40% combined. Requires appraisal. Not reflected in this example.
 
 The bypass trust has remainder beneficiaries who are children (not skip persons). No GST exemption need be allocated unless the trust permits skip-person distributions (e.g., to grandchildren). If the trust does permit skip-person distributions, the executor should allocate D's full GST exemption ($13,990,000) on Schedule R to obtain inclusion ratio zero.
 
-D used the full BEA — DSUE = $0. No portability benefit to S. However, S now holds substantial assets ($5.91M from D's estate + S's own pre-existing assets). S should engage in pre-sunset planning of his/her own — see Example 14.3.
+D did NOT use the full BEA: the tentative tax base of $12,490,000 is below the $13,990,000 BEA, so DSUE = $13,990,000 - $12,490,000 = $1,500,000 is portable to S if the executor files Form 706 and makes the portability election. S also holds substantial assets ($5.91M from D's estate + S's own pre-existing assets) and should do planning of their own — see Example 14.3.
 
 ### Example 14.3 — $30 million couple maxing out 2025 SLAT before sunset
 

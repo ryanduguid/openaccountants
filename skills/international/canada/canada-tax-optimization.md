@@ -46,7 +46,7 @@ This block is generated from verified `skill_facts` — edit the facts, not the 
 - **Class 50** — 55% — Computer hardware  _(ITR Schedule II Class 50)_
 - **Class 54** — Class 54 is NOT '0% (expensed)' — the rate is 30% declining balance for zero-emission passenger vehicles, with enhanced first-year deductions under AIIP/RIIP rules. The $61,000 cost cap is correct. The skill's '0% (expensed)' description is misleading.  _(ITR Schedule II Class 54; CRA — classes of depreciable property — canada.ca)_
 - **Child care** — $8,000/child under 7; $5,000/child 7–16  _(ITA s.63(3))_
-- **Medical expenses** — Medical expense credit rate for 2025 is 15% (NRTC). Threshold: amounts over the lesser of 3% of net income or $2,834(threshold for 2025)  _(ITA s.118.2; CRA — Medical expenses — canada.ca; Bill C-4 (14.5% credit rate for 2025))_
+- **Medical expenses** — Medical expense credit rate is 14.5% for 2025 and 14% from 2026 (the NRTC rate follows the lowest bracket rate, cut from 15% by Bill C-4). Threshold: amounts over the lesser of 3% of net income or $2,834 (2025); $2,890 (2026)  _(ITA s.118.2; CRA — Medical expenses — canada.ca; Bill C-4 (14.5% credit rate for 2025))_
 - **Moving expenses** — Must move ≥ 40 km closer to new work location  _(ITA s.62)_
 - **LCGE (QSBC shares)** — $1,250,000  _(ITA s.110.6(2); Budget 2024; CRA — LCGE — canada.ca)_
 - **GAAR** — ITA s.245  _(ITA s.245)_
@@ -127,7 +127,7 @@ Note: The lowest bracket rate was reduced to 14% (from 15%) effective 2026 via B
 | Home office expenses | s 8(1)(f), 8(1)(i), 18(12) | Employees: T2200 required. Self-employed: proportion of rent/mortgage interest, utilities, insurance, property tax |
 | Moving expenses | s 62 | Must move ≥40 km closer to new work/business location. Deduct against income at new location |
 | Carrying charges | s 20(1)(c) | Interest on money borrowed to earn investment income. Includes investment counsel fees |
-| Medical expenses | s 118.2 | Tax credit at 15% federal on expenses >3% of net income or $2,834 (lesser, 2025 threshold). Include premiums, dental, prescriptions, travel for treatment |
+| Medical expenses | s 118.2 | Tax credit at 14.5% federal for 2025 (14% from 2026) on expenses >3% of net income or $2,834 (2025) / $2,890 (2026), lesser. Include premiums, dental, prescriptions, travel for treatment |
 | Disability tax credit | s 118.3 | $9,872 federal credit (2026). Transferable to supporting person. Unlocks RDSP eligibility |
 | Northern residents deduction | s 110.7 | Residency deduction + travel benefits for prescribed zones |
 | Capital cost allowance (CCA) on rental property | s 20(1)(a), Sch II | Class 1 (4%), Class 8 (20%). Accelerated Investment Incentive (triple declining balance in year 1) |

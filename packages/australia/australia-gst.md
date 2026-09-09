@@ -644,7 +644,7 @@ Infer the client profile from the data first. Only ask questions the data could 
 ### Penalties
 
 - **Failure to lodge (FTL)** — 1 penalty unit per 28-day period for small entities (turnover < $1M), up to 5 periods. Penalty unit: $330 (2024-25, indexed annually).
-- **General Interest Charge (GIC)** — 90-day Bank Accepted Bill rate + 7% per annum. Calculated daily, compounded. Tax deductible.
+- **General Interest Charge (GIC)** — 90-day Bank Accepted Bill rate + 7% per annum. Calculated daily, compounded. NOT deductible for GIC (and SIC) incurred on or after 1 July 2025 -- add back any GIC/SIC in the ledger; it was deductible before that date.
 - **Shortfall penalties** — Reasonable care not taken: 25%. Recklessness: 50%. Intentional disregard: 75%. Reduced 20% for voluntary disclosure before audit.
 
 ### Registration thresholds
