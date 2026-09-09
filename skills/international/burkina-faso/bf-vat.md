@@ -66,7 +66,7 @@ TVA status follows the income-tax regime (turnover HT, all activities):
 | Réel Simplifié (RSI) | 15,000,000 to < 50,000,000 FCFA | Cannot invoice TVA |
 | Contribution des Micro-Entreprises (CME) | < 15,000,000 FCFA | Cannot invoice TVA |
 
-Only RNI taxpayers are habilités to invoice TVA. See [bf-income-tax](bf-income-tax) and [bf-tax-optimization](bf-tax-optimization).
+Only RNI taxpayers are habilités to invoice TVA. See [bf-income-tax](bf-income-tax.md) and [bf-tax-optimization](bf-tax-optimization.md).
 
 ## Section 5 -- Retenue à la source (VAT withholding)
 

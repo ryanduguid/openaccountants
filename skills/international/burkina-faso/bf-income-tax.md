@@ -62,7 +62,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Regime upgrade election** — Election to opt up (CME→RSI→RNI) is made before 1 February, irrevocable for 3 years  _([DGI Burkina Faso, Code général des impôts 2023, Arts. 530 and 535](https://dgi.bf/wp-content/uploads/2023/10/CODE-GENERAL-DES-IMPOTS-2023-A-JOUR-AVEC-LA-LOI-DE-FINANCE-2023.pdf))_
 - **Professions libérales excluded from CME** — Professions libérales are excluded from CME  _([DGI Burkina Faso, Code général des impôts 2023, Art. 534](https://dgi.bf/wp-content/uploads/2023/10/CODE-GENERAL-DES-IMPOTS-2023-A-JOUR-AVEC-LA-LOI-DE-FINANCE-2023.pdf))_
 
-See [bf-tax-optimization](bf-tax-optimization).
+See [bf-tax-optimization](bf-tax-optimization.md).
 
 ## Section 3 -- Brackets and minimum tax
 

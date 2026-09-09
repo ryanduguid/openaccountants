@@ -8,7 +8,7 @@ last_updated: 2026-07-13
 reviewed_by: Ariane Marrocos
 review_status: current
 depends_on:
-  - brazil-income-tax
+  - br-income-tax
 category: crypto
 tier: 1
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
