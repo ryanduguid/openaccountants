@@ -1,17 +1,18 @@
 ---
 name: id-income-tax
-description: "Idaho Individual Income Tax Return (Form 40) for sole proprietors and single-member LLCs. Covers the flat 5.3% rate (tax year 2025), Idaho taxable income computation from federal taxable income, standard deduction, and the initial exemption amount ($4,811 single / $9,622 MFJ). Trigger: taxpayer is an Idaho resident or has Idaho-source income exceeding $2,500."
+description: Use this skill whenever asked about Indonesian individual income tax — PPh Orang Pribadi. Trigger on phrases like "PPh OP", "pajak penghasilan orang pribadi", "how much income tax do I pay in Indonesia", "Indonesian tax brackets", "PTKP", "penghasilan tidak kena pajak", "NPWP", "non-NPWP surcharge", "SPT Tahunan 1770", "UU HPP", "IDR income tax", or any question about computing or filing personal income tax for an Indonesian resident or on Indonesia-source income. Covers the UU HPP Art. 17 progressive brackets (5% / 15% / 25% / 30% / 35%), PTKP by family status, the Art. 21(5a) non-NPWP surcharge, PKP rounding, and annual return filing. ALWAYS read this skill before touching any Indonesian personal income tax work.
 version: "0.1"
 jurisdiction: ID
 tax_year: 2025
 last_updated: 2026-07-13
 reviewed_by: RILIA PUTRI
 review_status: current
+category: international
 tier: 1
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# ID Income Tax
+# Indonesia Individual Income Tax (PPh Orang Pribadi)
 
 ## Indonesia Individual Income Tax — PPh Orang Pribadi Skill v1.0
 

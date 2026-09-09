@@ -1,7 +1,7 @@
 ---
-name: connecticut-sales-tax
-description: Use this skill whenever asked about Connecticut sales and use tax, luxury tax, DRS filings. Trigger on phrases like "Connecticut sales tax", "CT sales tax", "DRS", "luxury tax Connecticut". ALWAYS load us-sales-tax first.
-jurisdiction: US-CO
+name: maryland-sales-tax
+description: Use this skill whenever asked about Maryland sales and use tax. Trigger on phrases like "Maryland sales tax", "MD sales tax", "Maryland Comptroller", "digital advertising tax". ALWAYS load us-sales-tax first.
+jurisdiction: US-MD
 tax_year: 2025
 last_updated: 2026-07-13
 review_status: pending_review
@@ -9,55 +9,50 @@ tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Connecticut Sales Tax
+# Maryland Sales Tax
 
 ## Section 1 -- Quick reference
 
-**Quick reference**
+**Section 1 -- Quick reference**
 
 | Field | Value |
 | --- | --- |
-| Jurisdiction | Connecticut |
-| State rate | 6.35% (standard); 7.75% (luxury items over $5,000) |
-| Local taxes | None -- no local sales taxes |
-| Maximum rate | 7.75% |
+| Jurisdiction | Maryland |
+| State rate | 6.00% (flat -- no local sales tax) |
+| Local taxes | None |
+| Maximum combined rate | 6.00% |
 | Sourcing | Destination-based |
-| Economic nexus | $100,000 AND 200 transactions (AND test) |
-| Tax authority | Connecticut DRS |
-| Portal | https://portal.ct.gov/DRS |
+| Economic nexus | $100,000 OR 200 transactions |
+| Tax authority | Comptroller of Maryland |
+| Portal | https://www.marylandtaxes.gov |
 | SST member | No |
 | Skill version | 2.0 |
 
-**UNIQUE: Luxury rate 7.75% on vehicles, jewelry, clothing, handbags, luggage, footwear over $5,000. AND test for nexus like NY.**
-
 ## Section 3 -- Transaction pattern library
 
-**Transaction pattern library**
+**Section 3 -- Transaction pattern library**
 
 | Pattern | Taxable? | Notes |
 | --- | --- | --- |
-| General TPP | TAXABLE 6.35% |  |
-| Luxury items >$5,000 | TAXABLE 7.75% | Vehicles, jewelry, clothing, etc. |
-| Clothing under $50/item | EXEMPT |  |
-| Clothing $50-$999 | TAXABLE 6.35% |  |
-| Clothing $1,000+ | TAXABLE 7.75% | Luxury rate |
+| General TPP | TAXABLE 6% |  |
+| Clothing | TAXABLE | No exemption |
 | Grocery food | EXEMPT |  |
-| Prepared food/meals | TAXABLE 7.35% | Special restaurant rate |
-| SaaS | TAXABLE | Computer/data processing services |
-| Computer/data processing services | TAXABLE at 1% | Special reduced rate |
+| Prepared food | TAXABLE |  |
+| SaaS | TAXABLE | Maryland taxes SaaS and digital products |
+| Canned software | TAXABLE |  |
 | Digital goods | TAXABLE |  |
 | Professional services | NOT TAXABLE |  |
 | Manufacturing equipment | EXEMPT |  |
 | Prescription drugs | EXEMPT |  |
+| OTC drugs | EXEMPT |  |
 | Resale | EXEMPT |  |
+| Digital advertising (separate tax) | TAXABLE | Maryland Digital Advertising Gross Revenues Tax -- separate from sales tax |
 
 ## Section 10 -- Prohibitions
 
-- **Never forget luxury rate** — NEVER forget the 7.75% luxury rate on items over $5,000.
-- **Never forget clothing exemption** — NEVER forget the clothing exemption under $50.
-- **Never assume single-threshold nexus** — NEVER assume nexus with only one threshold -- CT requires BOTH $100K AND 200 transactions.
-- **Never ignore 1% rate** — NEVER ignore the 1% rate on computer/data processing services.
-- **Never compute numbers** — NEVER compute any number.
+- **Never add local taxes** — NEVER add local taxes -- Maryland has none.
+- **Never confuse Digital Advertising Tax with sales tax** — NEVER confuse the Digital Advertising Tax with sales tax -- they are separate.
+- **Never compute any number** — NEVER compute any number.
 
 ## Disclaimer
 
