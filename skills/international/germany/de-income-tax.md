@@ -45,7 +45,7 @@ verified_by: pending
 | 12,097 -- 17,443 | 14% -- 24% | Progressive zone 1 (linear-progressive) |
 | 17,444 -- 68,480 | 24% -- 42% | Progressive zone 2 (linear-progressive) |
 | 68,481 -- 277,825 | 42% | Proportionalzone (flat) |
-| 277,826+ | 45% | Reichensteuer (wealth tax surcharge) |
+| 277,826+ | 45% | Reichensteuer (top income tax bracket, §32a(1) no. 5 EStG) |
 
 **Germany uses a FORMULA-BASED progressive rate, not simple bracket multiplication. Each euro is taxed at its own marginal rate within zones 1 and 2. Do not compute manually -- pass to the deterministic engine.**
 
