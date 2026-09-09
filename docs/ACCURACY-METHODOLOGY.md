@@ -45,3 +45,54 @@ Accuracy improves in the open. When a skill produces something wrong:
 - Coverage of a jurisdiction does not imply coverage of every edge case within it.
 
 The product is designed around this honesty: the AI produces a working paper and routes you to a real accountant for sign-off via `request_accountant_review`.
+
+## External verification status
+
+The checks in `scripts/` compare the corpus against **itself** — across the three
+trees, across siblings inside a jurisdiction, and against its own arithmetic.
+They cannot see a figure that every copy agrees on and that is simply wrong.
+Closing that gap means asking a source outside the repository, field by field and
+jurisdiction by jurisdiction. This records how far that has got, so it is not
+re-derived or over-claimed.
+
+### Checked against an outside source
+
+| Field | Coverage | Errors found | Notes |
+|---|---|---|---|
+| Standard VAT / GST rate | 157 of 157 jurisdictions stating one | 6 | Fiji, India, Kazakhstan, Zimbabwe, Malawi, Maldives |
+| Headline corporate rate | first pass over ~100 jurisdictions | 3 | Lithuania, Cyprus, Portugal |
+
+Everything else — payroll rates and thresholds, registration and filing
+thresholds, filing deadlines, penalty and interest rates, social-contribution
+bands, capital allowances, withholding rates, and every form name and statutory
+citation — has had **no** external verification pass. Those change on the same
+annual cycle as the rates above, and the rates above turned up nine errors.
+
+### What the six VAT errors had in common
+
+Every one was a jurisdiction where an overview or income-tax guide carried the
+correct current rate while the **dedicated indirect-tax guide** — the file an
+agent loads to prepare a return — did not. Overviews get refreshed from summary
+sources; the deep guides do not. `scripts/check-superseded-rates.py` sweeps for
+that shape, but two of the six would still have escaped it: Malawi labelled the
+stale rate "(2025)" rather than asserting it bare, and Maldives' correct sibling
+was an income-tax guide, which its tax-family filter rejects. Both were found by
+reading. Treat a clean run as evidence about the checker as much as the corpus.
+
+### What "verified" means here, and what it does not
+
+It means the corpus agrees with a reputable secondary source — usually PwC's
+Worldwide Tax Summaries. It does **not** mean a licensed practitioner in that
+jurisdiction has confirmed it, and the difference is not theoretical. Twice the
+corpus was right and the chart was stale:
+
+- **Eswatini** — PwC lists 27.5%. It is 25% for year-ends after 31 December 2024,
+  which both Eswatini guides state, with the date.
+- **Nigeria** — PwC gives "30% (large companies)". `ng-cit` carries the whole
+  NTA 2025 regime including the abolition of the medium-company band, the 4%
+  development levy, and an AUDIT FLASH POINT on the NGN 50M / NGN 100M statutory
+  conflict.
+
+A chart comparison is a lead generator, not an assurance mechanism. Only the
+Tier 1 route — a named practitioner signing the guide — carries an assurance
+claim. Nothing in this section changes a guide's tier.
