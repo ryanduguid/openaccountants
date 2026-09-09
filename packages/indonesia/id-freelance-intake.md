@@ -94,7 +94,7 @@ All thresholds 2025-effective.
 
 ### 4.5 PKP / VAT gate — UU 42/2009 as amended by UU 7/2021; PMK 197/2013
 
-- **PKP mandatory threshold and VAT rates** — PKP mandatory if taxable turnover > Rp4.8B in any trailing-12 window. Voluntary below. VAT rate 11% from 1 April 2022. 12% luxury-goods rate from 1 January 2025 — verify (TBC — Perpres 201/2024, PMK 131/2024). PKP → route `indonesia-vat` + `id-einvoice-coretax`.  _(UU 42/2009 as amended by UU 7/2021; PMK 197/2013; Perpres 201/2024; PMK 131/2024)_
+- **PKP mandatory threshold and VAT rates** — PKP mandatory if taxable turnover > Rp4.8B in any trailing-12 window. Voluntary below. VAT rate 11% from 1 April 2022, and still effectively 11% for non-luxury supplies from 1 January 2025 — PMK 131/2024 raised the nominal rate to 12% but set the DPP at 11/12 of the price. The full 12% applies only to PPnBM-listed luxury goods (Perpres 201/2024, PMK 131/2024). PKP → route `indonesia-vat` + `id-einvoice-coretax`.  _(UU 42/2009 as amended by UU 7/2021; PMK 197/2013; Perpres 201/2024; PMK 131/2024)_
 
 ### 4.6 Employer gate — UU 36/2008 art. 21; PP 58/2023; PMK 168/2023
 
@@ -313,7 +313,7 @@ Downstream skills (via id-return-assembly):
 - `id-pph-final-umkm` — PP 55/2022 0.5% final, Rp500m OP band, clock.
 - `id-income-tax` — progressive PPh OP (UU 36/2008 art. 17 + UU 7/2021); PTKP; NPPN if elected.
 - `id-corporate-tax` — PPh Badan for PT / PT Perorangan / CV / Firma at 22% (UU 36/2008 art. 17(2a) + UU 7/2021).
-- `indonesia-vat` — PPN 11% (12% luxury 2025 — TBC) per UU 42/2009 + UU 7/2021.
+- `indonesia-vat` — PPN effective 11% for non-luxury supplies; 12% on PPnBM-listed luxury goods from 2025 (PMK 131/2024) per UU 42/2009 + UU 7/2021.
 - `id-einvoice-coretax` — e-Faktur via Coretax DJP.
 - `id-payroll-pph21` — monthly PPh 21 + BPJS using TER (PP 58/2023, PMK 168/2023).
 - `id-withholding` — PPh 23 / 4(2) / 26.
