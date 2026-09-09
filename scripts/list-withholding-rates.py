@@ -186,6 +186,59 @@ page.
               July 2025, which cannot support it; the citation now names the
               Gazette.
 
+  * Argentina  RIGHT MECHANISM, WRONG BANDS. Dividends at 7% are correct and
+              the 35%-on-a-presumed-margin machinery is correctly described.
+              The hedged royalty line then said "~31.5% software, ~28%
+              trademark/technical assistance, reducible to ~21% in certain
+              cases". PwC's 28% band is "cessation of rights or licences for
+              invention patents exploitation and technical assistance
+              obtainable in Argentina" -- patents, not trademarks; PwC does not
+              enumerate trademarks at all. The 21% is not a reduction anyone
+              applies for, it is the rate for technical assistance, technology
+              and engineering NOT obtainable in Argentina under a registered
+              agreement, and registration is the condition the line never
+              mentioned. The enumerated scale was missing entirely: copyright
+              12.25%, motion picture, video and sound 17.5%, real estate rental
+              21%, other Argentine-source income 31.5%, unregistered agreements
+              31.5% or 35%. Software was asserted at 31.5% with no reasoning;
+              31.5% is the residual, and a copyright characterisation would put
+              it at 12.25%, a nineteen-point spread the guide closed by fiat.
+              The interest line was the larger exposure: it gave "commonly
+              15.05% (or 35% in some cases)" without either condition. 15.05%
+              needs a local bank debtor, or a foreign creditor that is a
+              supervised financial institution in a non-low-tax country with
+              information exchange and no bank secrecy -- cumulative. Everyone
+              else is at 35%. Assuming the exception under-deducts by twenty
+              points.
+  * Malawi    THE SPLIT WAS BACKWARDS. The line read "20% (non-resident);
+              resident royalties also subject to WHT (approx -- confirm
+              resident vs non-resident split)". It is 20% for RESIDENTS, as an
+              advance tax, and 15% for non-residents, as a final tax under the
+              general rule that Malawi-source income paid to a non-resident
+              bears a final 15% of the gross. Same inversion on interest, where
+              the guide's hedge "commonly cited around 20% on bank interest"
+              had the right figure attached to the wrong payee. The structure
+              explains itself once stated: the resident rate is higher because
+              it is an advance against a later assessment, while the
+              non-resident rate is the whole tax. MRA's own Fourteenth Schedule
+              page would not render on either attempt, so this rests on
+              secondary sources and says so in the guide.
+  * Seychelles CORRECT on all three, hedges replaced rather than deleted. 15%
+              on dividends, on interest from a non-banking company and on
+              royalties for rights used in Seychelles. SRC's page was
+              unreachable twice, so the guide now states the rates and records
+              that they rest on secondary reporting -- which is more useful
+              than the bare "(approx -- confirm)" it replaced, and more honest
+              than deleting the hedge.
+
+Seychelles also produced the mistake worth writing down. Working from the three
+lines this script prints, I drafted a bullet saying the guide "lists only the
+classic three" and omits service fees and the BAS remittance mechanism. Both
+were already in the file, three and five bullets further down, one still hedged.
+The rule above -- read the guide, and read what it cites, before you change a
+number -- has a sibling: read the whole guide before you claim it omits
+something. This script prints lines, not files, and a line is not a guide.
+
 Zimbabwe and Romania are the same shape as Bosnia from the other direction. In
 Bosnia a guide stated one side of a split. Here each stated a correct headline
 rate and stopped before the transitional rule, the exemption and the penalty,
@@ -193,10 +246,16 @@ which are the parts that change what a reader does this week. A rate is the
 cheapest thing on the line to get right and the least of what the line owes.
 
 Still open: 124 jurisdictions state a rate, 25 hedge at least one of their own,
-and 14 have been checked. Four were wrong outright and every one of those four
-had hedged itself, which is the argument for working this column by its own
-doubts rather than by a random draw. Four more were right at the headline and
+and 17 have been checked. Six were wrong outright and every one of the six had
+hedged itself, which is the argument for working this column by its own doubts
+rather than by a random draw. Five more were right at the headline and
 incomplete underneath, which no hedge flags at all.
+
+Two of the six wrong ones -- Trinidad and Malawi -- were wrong the same way: a
+correct pair of rates with the resident and non-resident labels swapped. That is
+worth looking for directly. It survives every check the repo has, because both
+numbers are real, both appear in the authority's own table, and nothing in the
+line contradicts anything else in the corpus. Only reading the source settles it.
 
 Two recall limits the PR #16 review found, both still open and worth knowing
 before reading a zero in this output as an absence:
