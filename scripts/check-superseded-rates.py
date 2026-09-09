@@ -72,8 +72,13 @@ CHANGE_WORD = re.compile(r'\b(rise[sn]?|rises|rising|increase[sd]?|raised|raise|
 YEAR = re.compile(r'\b20(?:2[3-9]|[3-9]\d)\b')
 PCT = re.compile(r'(\d{1,2}(?:\.\d+)?)\s?%')
 # "<verb> ... to N%" -- N is the NEW rate
-TO_NEW = re.compile(r'\b(?:rise[sn]?|rises|increase[sd]?|raised|rose|reduce[sd]?|cut|'
-                    r'lowered|falls|fell|changed|moves?|moved)\b[^.\n]{0,40}?\bto\b\s*\**(\d{1,2}(?:\.\d+)?)\s?%', re.I)
+# The -ing forms matter and were missed at first: Zimbabwe's overview says "rising to
+# 15.5% from 1 January 2026" and the whole jurisdiction slipped through because this
+# pattern knew "rise", "rises" and "risen" but not "rising". Keep the stems loose.
+TO_NEW = re.compile(r'\b(?:ris(?:e|es|en|ing)|increas(?:e|es|ed|ing)|rais(?:e|es|ed|ing)|rose|'
+                    r'reduc(?:e|es|ed|ing)|cut|cutting|lower(?:s|ed|ing)?|fall(?:s|ing)?|fell|'
+                    r'chang(?:e|es|ed|ing)|mov(?:e|es|ed|ing)|go(?:es|ing)?\s+up|'
+                    r'go(?:es|ing)?\s+down|set)\b[^.\n]{0,40}?\bto\b\s*\**(\d{1,2}(?:\.\d+)?)\s?%', re.I)
 # "from X% to Y%" -- X old, Y new
 FROM_TO = re.compile(r'\bfrom\b\s*\**(\d{1,2}(?:\.\d+)?)\s?%\s*\**\s*\bto\b\s*\**(\d{1,2}(?:\.\d+)?)\s?%', re.I)
 # "was N%" / "previously N%" / "Before that N%" -- N is OLD

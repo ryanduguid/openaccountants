@@ -1,6 +1,6 @@
 ---
 name: zimbabwe-vat
-description: "Use this skill whenever asked to prepare, review, or classify transactions for a Zimbabwe VAT return. Standard rate 15%. Mandatory fiscalised electronic devices. Multi-currency regime (ZiG/USD). ALWAYS read before handling Zimbabwe VAT work."
+description: "Use this skill whenever asked to prepare, review, or classify transactions for a Zimbabwe VAT return. Standard rate 15.5% from 1 January 2026. Mandatory fiscalised electronic devices. Multi-currency regime (ZiG/USD). ALWAYS read before handling Zimbabwe VAT work."
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 metadata:
   source: openaccountants
@@ -20,7 +20,7 @@ metadata:
 | Field | Value |
 |---|---|
 | Country | Zimbabwe |
-| Standard rate | 15% |
+| Standard rate | 15.5% from 1 January 2026 (was 15%). Finance Act 2025 (Act No. 7 of 2025). Apply the rate in force at the time of supply |
 | Zero rate | 0% (exports, basic foodstuffs, farming inputs, medical, fuel) |
 | Filing portal | https://efiling.zimra.co.zw |
 | Authority | ZIMRA |
@@ -33,6 +33,13 @@ metadata:
 | Contributor | Open Accounting Skills Registry |
 | Validated by | Pending |
 | Last research update | April 2026 |
+
+**Rate change, 1 January 2026.** The standard rate rose from 15% to 15.5% under the
+Finance Act 2025 (Act No. 7 of 2025). Apply the rate in force at the time of supply,
+not the date of the return. ZIMRA Public Notice 07 of 2026 sets the transition for the
+combined December 2025 / January 2026 return: Category A operators apply 15% to
+December 2025 supplies and 15.5% to January 2026 supplies on the one return;
+Categories B, C and D apply 15.5%.
 
 ---
 
@@ -52,10 +59,10 @@ metadata:
 | ZIMRA | EXCLUDE | Tax payment |
 | CUSTOMS | Check for import VAT | |
 | NSSA | EXCLUDE | Social security |
-| ZESA, ZETDC | Domestic 15% | Electricity |
-| ZINWA | Domestic 15% | Water |
-| ECONET, NETONE, TELECEL | Domestic 15% | Telecoms |
-| GOOGLE, MICROSOFT, AWS | Reverse charge 15% | Non-resident |
+| ZESA, ZETDC | Domestic 15.5% | Electricity |
+| ZINWA | Domestic 15.5% | Water |
+| ECONET, NETONE, TELECEL | Domestic 15.5% | Telecoms |
+| GOOGLE, MICROSOFT, AWS | Reverse charge 15.5% | Non-resident |
 
 ---
 
@@ -67,13 +74,13 @@ VAT-registered supplier issues handwritten invoice (no fiscal device). Input VAT
 
 ### Example 2 -- Deemed supply on gift
 
-Company gives client gifts USD 200. Exceeds USD 25 threshold. Deemed supply. Output VAT = USD 30 (15%).
+Company gives client gifts USD 200. Exceeds USD 25 threshold. Deemed supply. Output VAT = USD 31 (15.5%).
 
 ---
 
 ## Section 5 -- Classification rules
 
-15% standard. 0% exports, basic foodstuffs (maize meal, bread, milk, sugar, cooking oil, salt, fruits/vegetables), farming inputs, medical supplies, fuel (separate levy), domestic electricity. Exempt: financial, medical services, education, residential rental, public transport, postal, water.
+15.5% standard. 0% exports, basic foodstuffs (maize meal, bread, milk, sugar, cooking oil, salt, fruits/vegetables), farming inputs, medical supplies, fuel (separate levy), domestic electricity. Exempt: financial, medical services, education, residential rental, public transport, postal, water.
 
 Fiscalised device: mandatory. Non-fiscalised invoices cannot support input claims.
 
@@ -87,7 +94,7 @@ Output: Boxes 1-8. Input: Boxes 9-16 (must have fiscal invoice). Net: Boxes 17-1
 
 ## Section 7 -- Reverse charge and fiscalisation
 
-Non-resident services: self-assess 15%. Net zero. VAT Act s.13.
+Non-resident services: self-assess 15.5%. Net zero. VAT Act s.13.
 
 All sales must go through fiscalised device connected to ZIMRA. Criminal offence for non-compliance.
 
@@ -111,13 +118,13 @@ Bi-monthly periods: Jan-Feb, Mar-Apr, etc. Deadline: 25th of following month. La
 
 ## Section 10 -- Edge cases, test suite, and escalation
 
-**EC1 -- SaaS.** Reverse charge 15%. Net zero.
+**EC1 -- SaaS.** Reverse charge 15.5%. Net zero.
 **EC2 -- Non-fiscalised invoice.** Input NOT recoverable.
 **EC3 -- Tobacco export.** Zero-rated. Input recoverable.
 **EC4 -- Motor vehicle blocked.**
 **EC5 -- USD/ZiG conversion.** Reviewer flag.
 **EC6 -- Farming inputs.** Zero-rated.
-**EC7 -- Deemed supply cessation.** 15% on market value.
+**EC7 -- Deemed supply cessation.** 15.5% on market value.
 **EC8 -- Mining refund.** Escalate.
 
 **Test 1** -- USD 10K sale. Output USD 1,500.

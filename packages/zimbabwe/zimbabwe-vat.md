@@ -1,6 +1,6 @@
 ---
 name: zimbabwe-vat
-description: Use this skill whenever asked to prepare, review, or classify transactions for a Zimbabwe VAT return. Standard rate 15%. Mandatory fiscalised electronic devices. Multi-currency regime (ZiG/USD). ALWAYS read before handling Zimbabwe VAT work.
+description: Use this skill whenever asked to prepare, review, or classify transactions for a Zimbabwe VAT return. Standard rate 15.5% from 1 January 2026. Mandatory fiscalised electronic devices. Multi-currency regime (ZiG/USD). ALWAYS read before handling Zimbabwe VAT work.
 version: 2.0
 jurisdiction: ZW
 tax_year: 2025
@@ -19,7 +19,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Field | Value |
 | --- | --- |
 | Country | Zimbabwe |
-| Standard rate | 15% |
+| Standard rate | 15.5% from 1 January 2026 (was 15%). Finance Act 2025 (Act No. 7 of 2025). Apply the rate in force at the time of supply |
 | Zero rate | 0% (exports, basic foodstuffs, farming inputs, medical, fuel) |
 | Filing portal | https://efiling.zimra.co.zw |
 | Authority | ZIMRA |
@@ -33,7 +33,14 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Validated by | Pending |
 | Last research update | April 2026 |
 
-- **Standard rate** — 15%
+**Rate change, 1 January 2026.** The standard rate rose from 15% to 15.5% under the
+Finance Act 2025 (Act No. 7 of 2025). Apply the rate in force at the time of supply,
+not the date of the return. ZIMRA Public Notice 07 of 2026 sets the transition for the
+combined December 2025 / January 2026 return: Category A operators apply 15% to
+December 2025 supplies and 15.5% to January 2026 supplies on the one return;
+Categories B, C and D apply 15.5%.
+
+- **Standard rate** — 15.5% from 1 January 2026 (was 15%)  _(Finance Act 2025 (Act No. 7 of 2025); ZIMRA Public Notice 07 of 2026)_
 - **Zero rate** — 0% (exports, basic foodstuffs, farming inputs, medical, fuel)
 - **Filing portal** — https://efiling.zimra.co.zw
 - **Authority** — ZIMRA
@@ -63,10 +70,10 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | ZIMRA | EXCLUDE | Tax payment |
 | CUSTOMS | Check for import VAT |  |
 | NSSA | EXCLUDE | Social security |
-| ZESA, ZETDC | Domestic 15% | Electricity |
-| ZINWA | Domestic 15% | Water |
-| ECONET, NETONE, TELECEL | Domestic 15% | Telecoms |
-| GOOGLE, MICROSOFT, AWS | Reverse charge 15% | Non-resident |
+| ZESA, ZETDC | Domestic 15.5% | Electricity |
+| ZINWA | Domestic 15.5% | Water |
+| ECONET, NETONE, TELECEL | Domestic 15.5% | Telecoms |
+| GOOGLE, MICROSOFT, AWS | Reverse charge 15.5% | Non-resident |
 
 ## Section 4 -- Worked examples
 
@@ -76,11 +83,11 @@ VAT-registered supplier issues handwritten invoice (no fiscal device). Input VAT
 
 ### Example 2 -- Deemed supply on gift
 
-Company gives client gifts USD 200. Exceeds USD 25 threshold. Deemed supply. Output VAT = USD 30 (15%).
+Company gives client gifts USD 200. Exceeds USD 25 threshold. Deemed supply. Output VAT = USD 31 (15.5%).
 
 ## Section 5 -- Classification rules
 
-- **Standard rate classification** — 15% standard.
+- **Standard rate classification** — 15.5% standard.
 - **Zero-rated items** — 0% exports, basic foodstuffs (maize meal, bread, milk, sugar, cooking oil, salt, fruits/vegetables), farming inputs, medical supplies, fuel (separate levy), domestic electricity.
 - **Exempt supplies** — Exempt: financial, medical services, education, residential rental, public transport, postal, water.
 - **Fiscalised device requirement** — Fiscalised device: mandatory. Non-fiscalised invoices cannot support input claims.
@@ -91,7 +98,7 @@ Company gives client gifts USD 200. Exceeds USD 25 threshold. Deemed supply. Out
 
 ## Section 7 -- Reverse charge and fiscalisation
 
-- **Reverse charge non-resident services** — Non-resident services: self-assess 15%. Net zero.  _(VAT Act s.13)_
+- **Reverse charge non-resident services** — Non-resident services: self-assess 15.5%. Net zero.  _(VAT Act s.13)_
 - **Fiscalisation requirement** — All sales must go through fiscalised device connected to ZIMRA. Criminal offence for non-compliance.
 
 ## Section 8 -- Deductibility and blocked input
@@ -110,7 +117,7 @@ Company gives client gifts USD 200. Exceeds USD 25 threshold. Deemed supply. Out
 
 ## Section 10 -- Edge cases, test suite, and escalation
 
-Reverse charge 15%. Net zero.
+Reverse charge 15.5%. Net zero.
 
 Input NOT recoverable.
 
@@ -120,7 +127,7 @@ Reviewer flag.
 
 Zero-rated.
 
-15% on market value.
+15.5% on market value.
 
 Escalate.
 
