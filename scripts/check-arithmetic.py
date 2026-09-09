@@ -73,6 +73,7 @@ are European, and Croatia's line self-verifies. That is the standard to meet
 before calling one an artefact.
 
 Usage:
+    python3 scripts/check-arithmetic.py            # defaults to skills/
     python3 scripts/check-arithmetic.py skills
     python3 scripts/check-arithmetic.py skills packages agent-skills
 
@@ -144,7 +145,12 @@ def close(a,b):
     return abs(a-b)<=max(0.51,m*0.011)
 
 bad=[];checked=0
-for root in sys.argv[1:]:
+# Run bare, this used to walk nothing and print "expressions evaluated: 0,
+# mismatches: 0", which reads exactly like a clean pass. The file above warns
+# that a filter silently discarding input reports a run it has not earned, and
+# an empty argv was doing that to the whole script. Defaults to skills/ now,
+# as every other check-*.py here does.
+for root in (sys.argv[1:] or ['skills']):
     for dp,dn,fn in os.walk(root):
         if '.git' in dp: continue
         for f in sorted(fn):

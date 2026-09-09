@@ -83,6 +83,7 @@ jurisdiction at a time. This section records how far that has got.
 | High-income surcharge | Pakistan | 0, self-contradiction fixed | — |
 | Loss carryforward caps | Dominican Republic | 0 | — |
 | Indexation units (MCI, minimum wage) | Kazakhstan | 1 | Kazakhstan |
+| Indexation units (UIT, IAS) | Peru, Portugal | 2 | Peru, Portugal |
 
 The deadline pass has covered 24 jurisdictions of 200. Nobody has run an external
 pass over anything else. That leaves payroll rates and thresholds, registration
@@ -153,6 +154,29 @@ carried forward. Its prohibition now reads "do NOT state the threshold as
 EGP 500,000" rather than "do not present either figure as settled".
 
 ### One stale unit moves everything denominated in it
+
+Searching for the Kazakh shape across the corpus found it in three more places.
+A guide that converts an indexation unit to currency and stores the result is
+correct on the day and wrong the following January, and 36 lines in six
+jurisdictions do that conversion.
+
+  * Peru. The UIT is S/ 5,500 for 2026, up from S/ 5,350, under Supreme Decree
+    301-2025-EF. peru-income-tax knew both values and still expressed all five
+    income tax bands at the 2025 rate, so the 45-UIT top band read S/ 240,750
+    where it is S/ 247,500.
+  * Portugal. The IAS is EUR 537.13 for 2026, up from EUR 522.50.
+    portugal-tax-optimization labelled the old value as the new one, reading
+    "IAS 2026 = EUR 522,50", and pt-social-contributions expressed the 4-IAS
+    exemption as EUR 2,090 where it is EUR 2,148.52.
+  * Kazakhstan. A second guide, kz-income-tax, had banked the standard personal
+    deduction as 14 MCI = KZT 55,048 at the 2025 index. It is KZT 60,550.
+
+Every one of those guides names the unit correctly. What ages is the currency
+figure beside it, and the arithmetic that produced it was right. Where a
+jurisdiction indexes, keep the unit and recompute; that instruction is now in
+each of the lines.
+
+
 
 Kazakhstan states many of its thresholds in MCI, the monthly calculation index,
 which the budget law resets each year. It went from KZT 3,932 for 2025 to

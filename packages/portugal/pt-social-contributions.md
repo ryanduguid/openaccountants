@@ -30,7 +30,7 @@ This block is generated from verified `skill_facts` — edit the facts, not the 
 - **Base mínima mensal (IAS)** — €522,50  _(Portaria n.º 6-B/2025/1, de 6 de janeiro)_
 - **Base máxima mensal (12×IAS)** — €6.270,00  _(Código Contributivo Art.º 163º, nº 5)_
 - **Primeiros 12 meses** — Isento de contribuições  _(Código Contributivo)_
-- **Emprego concorrente (< 4×IAS)** — Isento se rendimento relevante < 4 x IAS/mês (em 2025 4 x 522,50 = €2.090)  _(Código Contributivo Art.º 157º, nº 1, a))_
+- **Emprego concorrente (< 4×IAS)** — Isento se rendimento relevante < 4 x IAS/mês, ou seja **€2.148,52 em 2026** com o IAS a €537,13 (em 2025 eram 4 x €522,50 = €2.090). O limite é fixado em IAS, por isso recalcule todos os anos em vez de guardar o valor em euros  _(Código Contributivo Art.º 157º, nº 1, a))_
 - **Declaração trimestral** — Janeiro (out-dez), abril (jan-mar), julho (abr-jun), outubro (jul-set)  _(Código Contributivo)_
 - **Pagamento mensal** — Entre 10 e 20 do mês  _(Código Contributivo)_
 - **Dedutibilidade fiscal** — SIM — dedutíveis do IRS  _(CIRS)_
