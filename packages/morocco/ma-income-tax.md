@@ -263,7 +263,7 @@ Karim (RNR) makes a **loss**; turnover **MAD 1,200,000**.
 Nadia, an architect (profession libérale, RNR), nets **MAD 90,000**; fees turnover
 **MAD 600,000**.
 
-- Scale IR: 90,000 in the **30%** bracket → `(90,000 × 30%) − 18,000 = 27,000 −
+- Scale IR: 90,000 in the **30%** bracket → `90,000 × 30% = 27,000`, then `27,000 −
   18,000 = ` **MAD 9,000**.
 - Cotisation minimale for **liberal professions at 4%** *(verify)*: 600,000 × 4% =
   **MAD 24,000** — **higher than** the scale IR.
