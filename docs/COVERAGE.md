@@ -132,6 +132,25 @@ Same pack, same authors, same sources: every number right, and the form name,
 the date and the statute wrong. A reviewer who checks only the figures in a
 guide like this will find nothing and conclude it is sound.
 
+### A pack that came back clean
+
+Malta's concentration of defects raised the question of whether every dense pack
+is like that. California — 7 guides, heavy cross-referencing, several forms — is
+not. Every structural checker returns zero: arithmetic (37 expressions), band
+continuity, bracket tables, derived columns, total rows, quick-formula
+constants, statute citations, amount conflicts and declared-vs-worked tax year.
+Its one filing-deadline row is the documented short-period false positive
+(Form 568 for 1–31 December beside its correct 15 March deadline), and the
+obsolete Form 3849 is correctly marked as no longer applicable.
+
+Spot-checking four substantive figures agreed too: SDI at 1.2% uncapped for 2025
+under SB 951, the LLC fee tiers ($0 / $900 / $2,500 / $6,000 / $11,790), the
+12.3% top bracket, and 13.3% once the 1% Mental Health Services Tax is added.
+
+That is a structural pass plus four figures, not a full review — but it is
+evidence that the Malta pattern is not universal, and that a reviewer's time is
+better spent on packs that show a signal than spread evenly across all 244.
+
 **So when reviewing, check the nouns as carefully as the numbers** — which form,
 which article, which date, which jurisdiction. Those are what the numeric
 checkers structurally cannot see, and they are where what remains is most
