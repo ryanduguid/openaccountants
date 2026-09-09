@@ -289,6 +289,8 @@ ND's special-industry rules are the MTC-model ones and sit in the **administrati
 
   **Safe harbour.** Each instalment is 25% of the *lesser* of 90% of the current year's net tax liability or 100% of the prior year's net tax liability (§ 57-38-62(2)(a)-(b); Form 40-UT line 4). No interest is due if the corporation instead uses the annualised income or adjusted seasonal instalment method under IRC § 6655(e), computed as for federal Form 2220, which must be attached (§ 57-38-62(3); Form 40-UT line 10).
 
+  **Two rules from the administrative code that the statute does not carry.** Under N.D. Admin. Code 81-03-04-01(6) a corporation may, as an alternative to four instalments, **pay the entire estimated amount on the 15th day of the 4th month** of the tax year. And under 81-03-04-01(10) interest applies only where a quarterly payment was late **or** the quarterly payments were underpaid by more than **10%** of the actual current-year liability divided by four — with no interest at all where each quarterly payment equalled the previous year's total tax divided by four. That 10% tolerance is not in § 57-38-62 and is easy to miss.
+
   **Overpayments** may be applied to the following year's estimates and, absent an election to a specific instalment, are applied to the first (§ 57-38-62(6)). A **quick refund** of overpaid estimates is available on **Form 40-QR** where the expected overpayment exceeds **$500**, filed after year-end and before the 15th day of the 4th month (§ 57-38-64).  _(N.D.C.C. §§ 57-38-62 to 57-38-64; Form 40 and Form 40-UT instructions)_
 
 **Quarterly installment schedule table**
