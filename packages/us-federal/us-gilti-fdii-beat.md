@@ -279,12 +279,12 @@ So an individual sitting on top of a CFC in, say, Singapore (17% statutory) can 
 |---|---|
 | 37% top rate + 3.8% NIIT | 21% corporate rate (no NIIT because §962 income is treated as corporate) |
 | No §250 deduction | 50% §250 deduction available (effective 10.5%; 40% deduction / 12.6% effective from 2026 under OBBBA) |
-| No §960 deemed-paid FTC | §960(d) deemed-paid FTC available (80% creditable) |
+| No §960 deemed-paid FTC | §960(d) deemed-paid FTC available — 80% creditable for 2018-2025 GILTI; for post-2025 NCTI the haircut falls from 20% to 10%, so **90% is creditable** (OBBBA P.L. 119-21) |
 
 **Catch:** Distributions from the CFC that come from §962 PTEP (previously taxed earnings and profits) are **NOT** tax-free under §959 to the extent of the §962 tax paid. Specifically, the actual distribution of the underlying earnings to the individual is taxable as a **qualified dividend** (potentially) under the regular dividend rules to the extent it exceeds the original §962 tax paid. Under Smith v. Commissioner, T.C. Memo. 2018-127 (and subsequent guidance — see Rev. Rul. 62-165 and the 2019 proposed regs), the post-§962 distribution is generally taxed as a dividend but the underlying §962 tax paid creates a basis offset for the portion previously taxed.
 
 The §962 election is therefore **most valuable** when:
-- The CFC pays significant foreign income tax (so the 80% deemed-paid credit substantially offsets the 21% rate);
+- The CFC pays significant foreign income tax (so the deemed-paid credit — 80% for 2018-2025, 90% for post-2025 NCTI — substantially offsets the 21% rate);
 - The individual does not expect to take large dividend distributions in the near term;
 - The CFC is in a moderately-taxed jurisdiction.
 

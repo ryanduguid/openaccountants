@@ -41,8 +41,8 @@ metadata:
 |---|---|
 | 0 -- 12,096 | 0% (Grundfreibetrag) |
 | 12,097 -- 17,443 | 14% -- 24% (progressive zone 1) |
-| 17,444 -- 66,760 | 24% -- 42% (progressive zone 2) |
-| 66,761 -- 277,825 | 42% |
+| 17,444 -- 68,480 | 24% -- 42% (progressive zone 2) |
+| 68,481 -- 277,825 | 42% |
 | 277,826+ | 45% (Reichensteuer) |
 
 Plus Solidaritätszuschlag (5.5% of income tax, with Freigrenze of EUR 18,130 tax for singles / EUR 36,260 for married filing jointly) and Kirchensteuer (8% or 9% of income tax if applicable).

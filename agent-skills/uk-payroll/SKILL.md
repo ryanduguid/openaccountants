@@ -255,7 +255,7 @@ Employers with annual pay bill > £3 million pay 0.5% of total pay bill, offset 
 
 Gross salary £3,500/month. Tax code 1257L.
 
-1. PAYE: (£3,500 × 12 - £12,570) × 20% ÷ 12 = £595.50/month (cumulative calc)
+1. PAYE: (£3,500 × 12 - £12,570) × 20% ÷ 12 = £490.50/month (cumulative calc; £42,000 is inside the basic rate band, which ends at £50,270)
 2. Employee NIC: (£3,500 - £1,048) × 8% = £196.16/month
 3. Employer NIC: (£3,500 - £417) × 15% = £462.45/month
 4. Auto-enrolment pension (employee): (£3,500 - £520) × 5% = £149.00
