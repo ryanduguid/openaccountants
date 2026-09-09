@@ -15,6 +15,7 @@ It ranks, it does not accuse: a secondary source is often right, and an
 authority citation does not prove the figures came from it. Always exits 0.
 
 Usage: python3 scripts/list-source-mix.py [--selftest] [--jurisdiction NAME]
+       python3 scripts/list-source-mix.py --unclassified   # allowlist candidates
 """
 import os, re, sys, collections
 
@@ -33,18 +34,92 @@ GOV = re.compile(
 # secondary. NCCPL is the case that prompted the list -- it is the entity that
 # computes and deducts Pakistan's securities CGT, and its notification is more
 # authoritative for that tax than any summary of it, but it is a .com.
-NON_GOV_AUTHORITY = (
-    'nccpl.com.pk',       # Pakistan securities CGT: computes and collects it
-    'mufap.com.pk',       # Pakistan mutual funds association, publishes the schedule
-    'psx.com.pk',
+# The list below was built by measurement, not by guessing: every entry is a
+# domain this corpus actually cites at least three times. The first version of
+# this script had only a handful and consequently reported that 76% of citations
+# were secondary and that 41 jurisdictions cited no authority at all. Both were
+# wrong. Botswana was top of that list while citing burs.org.bw, its own revenue
+# service; Estonia's tax board (emta.ee) is the corpus's most-cited authority
+# after the IRS and scored as secondary. Run --unclassified to re-derive
+# candidates when guides are added; this list will always be incomplete, which
+# is a reason to read it as a floor on authority citations, never a ceiling.
+NON_GOV_AUTHORITY = frozenset((
+    # Revenue and tax administrations
+    'emta.ee',            # Estonian Tax and Customs Board
+    'frcs.org.fj',        # Fiji Revenue and Customs Service
+    'rsl.org.ls',         # Revenue Services Lesotho
+    'gra.gm',             # Gambia Revenue Authority
+    'mra.mu',             # Mauritius Revenue Authority
+    'mra.mw',             # Malawi Revenue Authority
+    'dgi.bf',             # Burkina Faso, Direction Generale des Impots
+    'impots.cm',          # Cameroon, Direction Generale des Impots
+    'sii.cl',             # Chile, Servicio de Impuestos Internos
     'zimra.co.zw',        # Zimbabwe Revenue Authority
-    'bnr.rw', 'bnb.bg', 'bnro.ro', 'bportugal.pt',   # central banks
-    'ecb.europa.eu', 'nssi.bg', 'nra.bg',
+    'ers.org.sz',         # Eswatini Revenue Service
+    'namra.org.na',       # Namibia Revenue Agency
+    'zra.org.zm',         # Zambia Revenue Authority
+    'burs.org.bw',        # Botswana Unified Revenue Service
+    'vero.fi',            # Finnish Tax Administration
+    'skat.dk',            # Danish tax administration
     'skatturinn.is',      # Iceland Revenue and Customs
-    'nssi.bg',
-    'parliament.gov.pg',
-    'nass.gov.ng',
-)
+    'aade.gr',            # Greek Independent Authority for Public Revenue
+    'anaf.ro',            # Romanian National Agency for Fiscal Administration
+    'vmi.lt',             # Lithuanian State Tax Inspectorate
+    'rs.ge',              # Georgia Revenue Service
+    'ros.ie',             # Irish Revenue Online Service
+    'altinn.no',          # Norwegian government reporting portal
+    'canada.ca',          # Government of Canada
+    'eesti.ee', 'gub.uy', 'impo.com.uy',   # state portals and official gazette
+    # Collection agents: not the tax authority, but the body that computes and
+    # deducts the tax, whose notification outranks any summary of it.
+    'nccpl.com.pk', 'mufap.com.pk', 'psx.com.pk',
+    # Statutory social-security and pension bodies. The corpus cites these for
+    # contribution rates, which they set and publish.
+    'sodra.lt', 'nssi.bg', 'nra.bg', 'cnps.cm', 'nssa.org.zw',
+    'myfnpf.com.fj', 'nis.org.gy', 'epf.lk', 'etfb.lk', 'vnpf.com.vu',
+    'nppf.org.bt', 'sshfc.gm', 'nassit.org.sl', 'ssnit.org.gh', 'npf.ws',
+    'bipa.na', 'cleiss.fr',
+    # Central banks, cited for official conversion rates
+    'ecb.europa.eu', 'bnr.rw', 'bnb.bg', 'bnro.ro', 'bportugal.pt',
+    # Legislatures, cited for the statute itself
+    'parliament.gov.pg', 'nass.gov.ng',
+    # Second pass over --unclassified. Tajikistan reached the zero-authority
+    # list while citing andoz.tj, its own tax committee, for the same reason
+    # Botswana did.
+    'andoz.tj',           # Tajikistan, Tax Committee (andoz = tax)
+    'manao.mg',           # Madagascar tax portal
+    'revenue.ie',         # Irish Revenue Commissioners
+    'ontario.ca',         # Government of Ontario
+    'enpf.co.sz',         # Eswatini National Provident Fund
+    'cnps.ci',            # Cote d'Ivoire social security
+    'pacra.org.zm',       # Zambia companies registry
+    'cipa.co.bw',         # Botswana Companies and IP Authority
+    'camcom.sm',          # San Marino chamber of commerce (business registry)
+    'nrbf.to',            # Tonga National Retirement Benefits Fund
+    'boi.org.il',         # Bank of Israel
+    'moj.gm',             # Gambia Ministry of Justice
+    'startup.sm',         # San Marino government startup portal
+    'lmis.gm',            # Gambia labour market information (government)
+))
+
+# Domains that look like an authority by shape but are not: professional firms,
+# and bodies that regulate something other than what the guide cites them for.
+NOT_AUTHORITY = frozenset((
+    # Professional firms and commercial publishers whose domain shape looks
+    # like an authority's. pwc.co.za and pwc.com.cy are the same publisher as
+    # taxsummaries.pwc.com wearing a country-code TLD.
+    'pwc.co.za', 'pwc.com.cy', 'kstlaw.gr', 'hlb.al', 'misha.pe', 'qhrm.io',
+    'nexus.ua',
+    'nevo.co.il',         # commercial Israeli legal database
+    'andina.pe',          # state news agency: reports law, does not make it
+    'vfsc.vu',            # financial services regulator, not the tax authority
+    'lndc.org.ls', 'msm.org.ls', 'koda.ee',
+))
+
+# A short label on a country-code TLD: the shape most tax authorities use.
+# Used only by --unclassified, to propose candidates for the list above.
+ACRONYM = re.compile(r'^[a-z]{2,7}\.(?:org|co|com|net)\.[a-z]{2}$|'
+                     r'^[a-z]{2,7}\.[a-z]{2}$')
 
 # Not sources at all: the CTA block every published guide ends with, and links
 # to this repository. Counting them would swamp the measurement -- they are
@@ -62,6 +137,8 @@ def classify(domain):
         d = d[4:]
     if any(b in d for b in BOILERPLATE):
         return None
+    if d in NOT_AUTHORITY:
+        return 'secondary'
     if d in NON_GOV_AUTHORITY or GOV.search(d):
         return 'authority'
     return 'secondary'
@@ -100,8 +177,18 @@ def selftest():
     assert classify('taxsummaries.pwc.com') == 'secondary'
     assert classify('ey.com') == 'secondary'
     assert classify('rivermate.com') == 'secondary'
-    # the case the allowlist exists for: a real collection agent on a .com
-    assert classify('www.nccpl.com.pk') == 'authority'
+    # the cases the allowlist exists for: authorities that are not on a
+    # government domain. The first version of this script scored all of these
+    # as secondary, which is how Botswana reached the top of the
+    # zero-authority list while citing its own revenue service.
+    assert classify('www.nccpl.com.pk') == 'authority'   # collection agent
+    assert classify('burs.org.bw') == 'authority'        # Botswana revenue
+    assert classify('emta.ee') == 'authority'            # Estonian tax board
+    assert classify('frcs.org.fj') == 'authority'        # Fiji revenue
+    assert classify('sii.cl') == 'authority'             # Chile SII
+    assert classify('mra.mu') == 'authority'             # Mauritius revenue
+    # and the shape-alike that is a law firm, not an authority
+    assert classify('kstlaw.gr') == 'secondary'
     assert classify('skatturinn.is') == 'authority'
     # boilerplate is not a source
     assert classify('www.openaccountants.com') is None
@@ -114,6 +201,31 @@ def selftest():
     # measure of exposure, not of diligence.
     assert classify('ato.gov.au') == 'authority'
     print('selftest: domain classification passes (1 documented limit)')
+
+
+def unclassified(minimum=3):
+    """Propose allowlist candidates: authority-shaped domains scored secondary.
+
+    The allowlist can only ever be as complete as the last time someone ran
+    this. Printing the candidates makes it maintainable from evidence instead
+    of from memory, and makes the omission visible rather than silent.
+    """
+    _, domains = scan()
+    seen = collections.Counter()
+    for per_jur in domains.values():
+        seen.update(per_jur)
+    rows = []
+    for d, n in seen.items():
+        bare = d[4:] if d.startswith('www.') else d
+        if n >= minimum and classify(d) == 'secondary' and ACRONYM.match(bare):
+            rows.append((n, bare))
+    for n, d in sorted(rows, reverse=True):
+        print('  %4d  %s' % (n, d))
+    print()
+    print('authority-shaped domains currently counted as secondary:', len(rows))
+    print('Check each: a revenue authority belongs in NON_GOV_AUTHORITY, a '
+          'firm or unrelated regulator in NOT_AUTHORITY.')
+    return 0
 
 
 def main(only=None):
@@ -148,6 +260,8 @@ def main(only=None):
 if __name__ == '__main__':
     if '--selftest' in sys.argv:
         selftest()
+    elif '--unclassified' in sys.argv:
+        sys.exit(unclassified())
     else:
         j = None
         if '--jurisdiction' in sys.argv:

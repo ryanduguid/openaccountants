@@ -280,19 +280,37 @@ oddly beside one naming eight, and that the difference is worth an hour.
 at a tax authority or at a secondary source, ignoring the CTA block each guide
 ends with. The measurement:
 
-- **76% of citations are secondary** — 5,638 against 1,733 authority links.
+- **69% of citations are secondary** — 5,077 against 2,294 authority links.
 - One publisher, PwC's Worldwide Tax Summaries, carries about a third of all
   external citations on its own. No authority comes close; the next largest is
-  the IRS at 140.
-- **41 of 189 jurisdictions cite no authority domain at all.** Every figure they
+  the IRS at 140, then Estonia's tax board at 82.
+- **28 of 189 jurisdictions cite no authority domain at all.** Every figure they
   carry rests on a summary.
 
-That list is not a coincidence. Iceland, Slovakia, Mauritius, Laos and Libya are
-all on it, and all five produced defects on this branch that only an authority
-settled: Iceland's non-resident interest rate (Skatturinn says 12%, and 13% was
-a 2024-only figure), Slovakia's minimum-tax band (the Financial Administration
-says EUR 960 on taxable *revenues*, not EUR 940 on taxable income), Mauritius
-naming three of eleven withholding heads, Laos three of six.
+> **The first version of this measurement was wrong, and the way it was wrong is
+> the point.** It reported 76% secondary and 41 zero-authority jurisdictions,
+> because its authority test was a government-domain pattern and a great many
+> revenue authorities are not on government domains. Botswana headed the
+> zero-authority list while citing `burs.org.bw`, its own revenue service.
+> Estonia's tax board, the corpus's most-cited authority after the IRS, scored
+> as secondary. The allowlist is now built from measurement — every entry is a
+> domain the corpus actually cites — and `--unclassified` prints the remaining
+> authority-shaped candidates so the omission stays visible rather than silent.
+> Read the authority count as a **floor**, never a ceiling.
+
+The list still earns its place. **Slovakia, Laos and Libya** are on it, and all
+three produced defects on this branch: Slovakia's minimum-tax band (the
+Financial Administration says EUR 960 on taxable *revenues*, not EUR 940 on
+taxable income), Laos naming three of six withholding heads, Libya's three
+hedged near-denials where its source states plainly that the country levies no
+withholding at all.
+
+**Iceland and Mauritius were on the list and are no longer**, which is the
+measurement working as intended: Iceland's guide now cites Skatturinn because
+correcting its interest rate meant going there (12%, against a 13% that was a
+2024-only figure), and Mauritius's now cites the MRA because that is where the
+missing eight withholding heads were found. Fixing a jurisdiction by reading its
+authority takes it off this list.
 
 Two distinct failure modes sit behind this, both found on this branch:
 
