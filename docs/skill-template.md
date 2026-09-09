@@ -2,17 +2,24 @@
 
 **This section is THE frontmatter spec for every skill/Guide file in this repo.** Other docs (`CLAUDE.md`, `CONTRIBUTING.md`) link here rather than restating it. CI enforces it: `scripts/validate-guides.py` hard-fails on malformed frontmatter, a missing `name`/`description`, a non-integer `tax_year`, a missing or invalid `tier` (must be 1 or 2), a missing or malformed `last_updated` (YYYY-MM-DD), and a missing `jurisdiction` (except in a small allowlist of jurisdiction-agnostic directories, where it warns).
 
-## Required keys
+## Required keys — CI fails without these
 
 | Key | Format | Notes |
 |-----|--------|-------|
 | `name` | slug, `[country-or-topic]-[domain]` | e.g. `malta-income-tax` |
 | `description` | 80-100 words | What it covers, entity types, jurisdiction, tax year, plus trigger phrases the AI should match |
-| `jurisdiction` | ISO code | `MT`, `GB`, `DE`, `US`, `US-CA`, `GLOBAL`, `INTL`, `EU-27`. Required even when the folder path implies it. Quote `"NO"` because YAML 1.1 otherwise reads Norway's code as boolean `false` |
-| `category` | one of the vocabulary below | Domain the skill covers |
-| `tax_year` | **bare integer**, e.g. `2025` | The **coverage start year**. Ranges, fiscal calendars, and qualifiers ("2025-26", "YA 2026", "2567 (2024)") go in `tax_year_notes`, never here. CI errors on anything that is not an integer 2015-2035 |
+| `jurisdiction` | ISO code | `MT`, `GB`, `DE`, `US`, `US-CA`, `GLOBAL`, `INTL`, `EU-27`. Required even when the folder path implies it. Quote `"NO"` because YAML 1.1 otherwise reads Norway's code as boolean `false`. A **warning**, not an error, inside the small allowlist of jurisdiction-agnostic directories |
 | `tier` | `1` or `2` | `1` = **accountant-reviewed** (a named licensed accountant fully reviewed and signed off); `2` = **source-cited draft** (drafted from primary sources, awaiting review). These are the only two quality states |
 | `last_updated` | `YYYY-MM-DD` | Date the content was last checked/edited. It must never move backwards |
+
+## Expected, but not enforced
+
+These two were previously listed as required. They are not: `scripts/validate-guides.py` does not test for their presence, and much of the corpus omits them. Write them on anything new, but do not treat their absence in an existing file as a validation failure — and do not bulk-add them to close a gap that CI never asserted.
+
+| Key | Format | Notes |
+|-----|--------|-------|
+| `category` | one of the vocabulary below | Domain the skill covers. **Not checked by CI at all**, and absent from roughly two-thirds of the corpus (1,219 of 1,926 guides), so a join on it silently drops most files |
+| `tax_year` | **bare integer**, e.g. `2025` | The **coverage start year**. CI checks the *format* when the key is present and errors on anything that is not an integer 2015-2035, but does not require the key — 72 guides omit it, mostly workflow bases that are genuinely year-agnostic. Ranges, fiscal calendars, and qualifiers ("2025-26", "YA 2026", "2567 (2024)") go in `tax_year_notes`, never here |
 
 ## Optional keys
 

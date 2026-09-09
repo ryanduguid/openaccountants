@@ -82,12 +82,15 @@ This is a Tier 2 content skill for computing Washington's Business and Occupatio
 | Retailing | 0.471% | RCW 82.04.250 |
 | Wholesaling | 0.484% | RCW 82.04.270 |
 | Manufacturing | 0.484% | RCW 82.04.240 |
-| Service and Other Activities | 1.5% if prior-year taxable income < $1M; 1.75% if $1M–$4,999,999.99; 2.1% if $5M+ | RCW 82.04.290(2) |
+| Service and Other Activities | 1.5% if prior-year gross income in this classification < $1M; 1.75% if $1M-$4,999,999.99; 2.1% if $5M+ (tiering effective 1 Oct 2025, HB 2081) | RCW 82.04.290(2) |
 | Printing/publishing | 0.484% | RCW 82.04.260 |
 | Travel agents, insurance agents | 0.275% | RCW 82.04.260 |
-| Real estate brokers | 1.50% | RCW 82.04.290(2) |
-| Royalty income | 1.50% | RCW 82.04.290(2) |
+| Real estate brokers | Same tiers as Service and Other Activities | RCW 82.04.290(2) |
+| Royalty income | Same tiers as Service and Other Activities | RCW 82.04.290(2) |
 | International services (qualifying) | 0.275% | RCW 82.04.261 |
+
+> **Two HB 2081 changes to carry.** From **1 October 2025** the Service and Other Activities rate is tiered on the **prior calendar year's** gross income in that classification — 1.5% below $1M, 1.75% from $1M to $4,999,999.99, and **2.1% at $5M or more**, measured across affiliated groups. Everything taxed under RCW 82.04.290(2) follows those tiers, including real estate brokers and royalty income. Separately, from **1 January 2027** the 0.471% retailing and 0.484% wholesaling/manufacturing/printing rates all rise to **0.5%**. The financial-institution surcharge rose from 1.2% to 1.5% on 1 October 2025.  _(Washington DOR, *Service and Other Activities rate changes*; HB 2081, signed 20 May 2025)_
+
 
 ### Small Business Credit (SBC)
 
