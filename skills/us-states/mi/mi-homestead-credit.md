@@ -74,7 +74,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Filing deadline | Same as MI-1040 (April 15, 2026 for TY 2025) | MI-1040 Book |
 | Statute of limitations on credit claim | **4 years** from original due date | MCL 205.27a |
 
-> Every dollar figure above is sourced to the published TY 2025 instructions or the underlying statute. Any figure marked `[VERIFY]` was confirmed in the AARP / TaxSlayer summaries but the preparer should cross-check against the official Treasury PDF before relying on it.
+> Every dollar figure above is sourced to the published TY 2025 instructions or the underlying statute. **Confirmed against the TY2025 MI-1040CR:** the $1,900 maximum credit, the $71,500 THR ceiling, the $62,500 phase-out floor and the 10%-per-$1,000 phase-out rate, plus the 23% renter factor (10% for service fee housing). **Still unconfirmed:** the senior Table 2 percentages ($21,000 / 4% per $1,000 / 60%), which are carried from AARP and TaxSlayer summaries rather than the Treasury table. Read Table 2 out of the MI-1040CR instructions before relying on a senior computation.
 
 ## Section 3: Total Household Resources (THR) — the Michigan-only concept
 
@@ -208,7 +208,7 @@ A claimant should generally have a PRE in place on the same homestead for which 
 
 ## Section 6: The computation — renters
 
-- **Renter formula** — Step 1.  Property tax equivalent = 23% × rent paid for the year [VERIFY 23%]. Step 2.  Floor = 3.2% × THR. Step 3-6. Same as owners (60% factor, $62,500 phase-out, $1,900 cap).  _(TY 2025 MI-1040CR instructions)_
+- **Renter formula** — Step 1.  Property tax equivalent = 23% × rent paid for the year (10% if service fee housing) — confirmed against the TY2025 MI-1040CR. Step 2.  Floor = 3.2% × THR. Step 3-6. Same as owners (60% factor, $62,500 phase-out, $1,900 cap).  _(TY 2025 MI-1040CR instructions)_
 - **Senior renter alternate test** — If THR ≤ $30,000 and rent paid exceeds 40% of THR, an alternate computation may produce a larger credit. The taxpayer takes the higher of the two. This is specifically the relief mechanism for the "house poor senior renter" archetype.  _(TY 2025 instructions)_
 
 ### What rent qualifies
@@ -277,7 +277,7 @@ Credit = $1,464.
 
 ```
 Rent paid:                                $18,000
-Property tax equivalent: 23% × $18,000:    $4,140   [VERIFY 23%]
+Property tax equivalent: 23% × $18,000:    $4,140
 Floor: 3.2% × $42,000:                     $1,344
 Difference:                                $2,796
 Allowance factor: 60%                  ×    0.60
@@ -351,7 +351,7 @@ Credit = $1,140.
 | --- | --- | --- |
 | Filer information | 1–7 | Name, SSN, address, filing status, school district code |
 | Homestead information | 8–9 | Address; mark owner / renter; taxable value (owners); date moved in / out |
-| Property tax / rent | 10 | Property tax paid (owners), or rent paid × 23% (renters) `[VERIFY]` |
+| Property tax / rent | 10 | Property tax paid (owners), or rent paid × 23% (renters; 10% for service fee housing) — confirmed, TY2025 MI-1040CR |
 | Move-related | 11–14 | Proration for mid-year moves |
 | Tentative credit | 15–17 | Sum of property tax / rent equivalent |
 | THR — wage and business | 18–25 | Wages, business income, interest/dividends, capital gains |
@@ -385,7 +385,7 @@ Credit = $1,140.
 | $165,400 taxable value cap | TY 2025 instructions | Confirmed |
 | 3.2% floor of THR | TY 2025 form Line 34 | Confirmed |
 | 23% rent factor | TY2025 MI-1040CR form and instructions, Michigan Treasury | Confirmed: the form directs renters to multiply total rent paid by 23% (10% for service fee housing). The 20% figure in older summaries is superseded and must not be used. |
-| Senior Table 2 percentages | AARP / TaxSlayer summaries | `[VERIFY exact 2025 figures against Treasury PDF]` |
+| Senior Table 2 percentages | AARP / TaxSlayer summaries — NOT the Treasury table | `[VERIFY exact 2025 figures against the MI-1040CR instructions Table 2; the surrounding credit parameters were confirmed but these were not]` |
 | PA 4 of 2023 reform impact | Treasury press releases; House Bill 4001 (2023) | Confirmed at high level; specific dollar changes summarized in Section 2 |
 
 ### Known uncertainties for verifier
