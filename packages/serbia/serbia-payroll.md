@@ -513,7 +513,7 @@ Each test states inputs and the recomputed expected output. Reviewers should rer
 ### Test 7 -- Supplementary annual PIT [T2]
 
 **Input:** 2024 total income RSD 11,000,000, taxpayer over 40, 1 dependent.
-**Expected:** Allowances 725,213 + 271,955 = 893,659 (< 50% cap). Taxable base 10,106,341. Band 2 = 487,450.80; Band 3 = 53,598.75. **Annual PIT ≈ 541,049.55** (flag base-ordering [T2]/[RESEARCH GAP]).
+**Expected:** Allowances 725,213 + 271,955 = **997,168** (< 50% cap). [RESEARCH GAP — the taxable base and band figures below were derived from an incorrect allowance sum of 893,659 and have NOT been recomputed: the base-ordering question flagged for this test (whether the 3x-average non-taxable amount of 5,439,096 comes off before the allowances) has to be settled first, and it moves the answer far more than the addition does. Do not rely on the following figures until a reviewer resolves the ordering.] Previously stated: taxable base 10,106,341; Band 2 = 487,450.80; Band 3 = 53,598.75; Annual PIT ~ 541,049.55. [T2]
 
 ### Test 8 -- Below filing threshold, no annual PIT
 

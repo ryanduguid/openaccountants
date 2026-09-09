@@ -24,7 +24,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Primary legislation | Koninklijk Besluit nr. 38 (Royal Decree No. 38 on self-employed social status) |
 | Supporting legislation | Wet betreffende het sociaal statuut der zelfstandigen; Programmawet; WIB |
 | Rate (hoofdberoep, bracket 1) | 20.50% on income up to EUR 73,447.52 |
-| Rate (hoofdberoep, bracket 2) | 14.16% on EUR 73,947.41 -- EUR 108,238.40 |
+| Rate (hoofdberoep, bracket 2) | 14.16% on EUR 73,447.52 -- EUR 108,238.40 |
 | Rate above ceiling | 0% (no contributions above EUR 108,238.40) |
 | Management fee | 3.05% on top of calculated contributions |
 | Minimum quarterly (hoofdberoep) | EUR 871.71 |
@@ -62,7 +62,7 @@ Legislation: KB nr. 38, art. 12; RSVZ published rates
 | Income bracket | Rate |
 | --- | --- |
 | EUR 0 -- EUR 73,447.52 | 20.50% |
-| EUR 73,947.41 -- EUR 108,238.40 | 14.16% |
+| EUR 73,447.52 -- EUR 108,238.40 | 14.16% |
 | Above EUR 108,238.40 | 0% |
 
 ### Bijberoep
@@ -217,12 +217,12 @@ Expected output: Contributions = EUR 45,000 x 20.50% = EUR 9,225.00. Management 
 ### Test 2 -- High income, both brackets
 
 Input: Net professional income EUR 90,000, hoofdberoep, established, age 45.
-Expected output: Bracket 1: EUR 73,447.52 x 20.50% = EUR 15,159.22. Bracket 2: (EUR 90,000 - EUR 73,447.52) x 14.16% = EUR 2,271.45. Total contributions: EUR 17,430.67. Management: EUR 531.64. Grand total: EUR 17,962.31. Quarterly: EUR 4,490.58.
+Expected output: Bracket 1: EUR 73,447.52 x 20.50% = EUR 15,056.74. Bracket 2: (EUR 90,000 - EUR 73,447.52) x 14.16% = EUR 2,343.83. Total contributions: EUR 17,400.57. Management: EUR 530.72. Grand total: EUR 17,931.29. Quarterly: EUR 4,482.82.
 
 ### Test 3 -- Above ceiling
 
 Input: Net professional income EUR 150,000, hoofdberoep, established, age 50.
-Expected output: Bracket 1: EUR 73,447.52 x 20.50% = EUR 15,159.22. Bracket 2: (EUR 108,238.40 - EUR 73,447.52) x 14.16% = EUR 4,983.42. No contribution above EUR 108,238.40. Total contributions: EUR 20,142.64. Management: EUR 614.35. Grand total: EUR 20,756.99.
+Expected output: Bracket 1: EUR 73,447.52 x 20.50% = EUR 15,056.74. Bracket 2: (EUR 108,238.40 - EUR 73,447.52) x 14.16% = EUR 4,926.39. No contribution above EUR 108,238.40. Total contributions: EUR 19,983.13. Management: EUR 609.49. Grand total: EUR 20,592.62. Quarterly: EUR 5,148.16.
 
 ### Test 4 -- Bijberoep below threshold
 
