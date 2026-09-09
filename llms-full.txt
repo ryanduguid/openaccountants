@@ -2195,11 +2195,11 @@ Key rules:
 | `us-schedule-c-and-se-computation` | US Federal | Pending publication of practitioner registry |
 | `us-ca-freelance-intake` | US-CA | Pending publication of practitioner registry |
 
-This list is derived from each skill's explicit `tier: 1` plus its reviewer name (`reviewed_by`, or the legacy `verified_by` — a stored identifier that keeps its spelling). To add a new accountant-reviewed skill, set **both** `tier: 1` and the reviewer's name and credential, then regenerate the canonical inventory with `python3 scripts/build-index.py` — the tier and verifier land in `index.json`. Setting a reviewer name without flipping `tier` to `1` is a validation error: `tier: 2` must not claim accountant verification. Every accountant-reviewed skill carries the reviewer's name and license number on the skill page at openaccountants.com.
+This list is derived from each skill's explicit `tier: 1` plus its reviewer name (`reviewed_by`, or the legacy `verified_by` — a stored identifier that keeps its spelling). To add a new accountant-reviewed skill, set **both** `tier: 1` and the reviewer's name and credential, then regenerate the canonical inventory with `python3 scripts/build-index.py` — the tier and verifier land in `index.json`. The enforced rule is field-specific: `tier: 2` must not carry a real `verified_by` — that combination is a validation error. A real `reviewed_by` on a `tier: 2` guide is *not* rejected (see `check_quality_metadata` in `scripts/validate-guides.py` and its test), because `reviewed_by` is also used as a plain authorship/attribution field on the hand-authored `packages/us-federal/` guides. Note that 98 guides currently sit in that permitted-but-ambiguous state — a named `reviewed_by` with `tier: 2`, 94 of them also `review_status: current`, which is the exact combination that means `tier: 1` everywhere else. A reader cannot tell from the frontmatter alone whether those were reviewed. Deciding which of the two meanings applies to each of them is a maintainer call. Every accountant-reviewed skill carries the reviewer's name and license number on the skill page at openaccountants.com.
 
 ### Source-cited drafts (Tier 2)
 
-Everything else in this repo. ~700+ skills covering 134 countries and 51 US states. Each one's frontmatter shows the research date and the authoritative sources cross-checked.
+Everything else in this repo — 1,783 of the 1,954 indexed guides, covering 189 country directories plus all 50 US states and DC. Each one's frontmatter shows the research date and the authoritative sources cross-checked. (Counts derived from `index.json`; see [COVERAGE.md](COVERAGE.md).)
 
 ---
 
