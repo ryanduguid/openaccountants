@@ -238,13 +238,14 @@ The minimum wage in the same law did not move, staying at KZT 85,000 for both
 years, which is worth stating beside the MCI so a reader does not assume
 everything indexes together.
 
-### Three corrections that were the opposite of corrections
+### Four corrections that were the opposite of corrections
 
 A code review on the pull request read the diff against outside sources and
 found that three of the changes on this branch had made a correct guide wrong.
 All three failed the same way, and it is the way this document already warns
 about: I took a secondary source over the authority, on a field where the
-authority is one page away.
+authority is one page away. A fourth turned up later, from the other direction:
+the right source, read off the wrong column.
 
 **Egypt.** The guide said the VAT registration threshold is EGP 500,000 and
 hedged it. Advisory write-ups say in chorus that "Resolution No. 281 of 2025
@@ -276,20 +277,54 @@ limits without a Legislative Yuan amendment, so "announced and effective" and
 Fiji treatment, naming both positions and which way to err, not for asserting
 one of them.
 
-The pattern across all three: each began as a hedged line, and a hedged line is
+**Turkey.** This one the review did not catch, and it is the worst of the four.
+The guide on main read: 10% on interest paid to non-residents under domestic law
+*(varies by instrument; treaty rates may reduce)*, hedged *(approx — rate varies
+by interest type; confirm)*. Vague, and right. I replaced it with a confident
+specific — "the instrument decides it: 10% where the loan or debt claim runs
+more than two years, **15%** otherwise" — and added that "treaty rates are
+mostly equal to or above the domestic rate, so a treaty rarely reduces this
+one". The two-year split is real, and it is a footnote in PwC's **treaty**
+table, hanging off Austria, Luxembourg, Portugal and Korea. It is not domestic
+law. So the sentence asserted a treaty rule as domestic law and then, in its
+next clause, told the reader treaties do not matter here. A Turkish payer
+following it would deduct 15% from a lender under any of the other treaties and
+over-deduct by five points.
+
+The mechanism is different from the first three and worth separating. Egypt,
+Iceland and Taiwan came from preferring a chorus of secondary sources to the
+authority. Turkey came from the right source — the page the guide itself cites —
+read off the wrong column. A rate table with a treaty matrix beside it will hand
+you a number that is accurate about something you did not ask. So checking that
+the source is authoritative is not the whole check; you also have to establish
+which question the number answers. And the damage was larger here than in the
+other three, because the line I overwrote was already correctly hedged: I traded
+a true vague statement for a false precise one, which is the only trade in this
+work that is strictly negative.
+
+The pattern across all four: each began as a hedged line, and a hedged line is
 where this branch has found most of its real errors. That made me quick to
 resolve one, and resolving a hedge in the wrong direction is worse than leaving
 it, because the hedge told the reader to check and the resolution tells them not
-to. The rule that would have caught all three is already in `scripts/
+to. The rule that would have caught all four is already in `scripts/
 list-withholding-rates.py`: read the guide, and read what it cites, before you
 change a number. I wrote that after nearly breaking Barbados. Then I broke
 Egypt.
 
-Worth recording the mechanism as well as the lesson. All three survived my own
-verification because I checked them the way I had found errors — search, read
+Worth recording the mechanism as well as the lesson. The first three survived my
+own verification because I checked them the way I had found errors — search, read
 the consensus of secondary sources, act — rather than the way the corpus is
 supposed to be checked, which is to open the authority's page. Consensus among
-advisory write-ups is not corroboration; they copy each other.
+advisory write-ups is not corroboration; they copy each other. Turkey survived
+because opening the authority's page felt like the whole job, and it is only
+half: a source can be the right one and still be answering a different question
+than the one in front of you.
+
+There is a defensive habit in all of this that costs nothing. Before changing a
+hedged line, read what the line says on `main`. If the version you are replacing
+is vaguer than yours but not wrong, you are not correcting it — you are betting
+that your new precision is right, against a line that could not be wrong because
+it did not commit. That bet has now lost once out of four.
 
 ### Three ways the Bolivia and Uruguay pass nearly went wrong
 

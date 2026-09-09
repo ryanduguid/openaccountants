@@ -119,10 +119,32 @@ which way to err tells them what to do this afternoon.
               other payments at 15% for individuals and companies alike. So
               interest was understated by 5 to 7 points and the payer carries
               that.
-  * Turkey    CORRECT at 10% on interest to non-residents, and now says what
-              decides it: 10% where the loan runs more than two years, 15%
-              otherwise. Treaty rates are mostly equal to or above the domestic
-              rate, so a treaty rarely helps here.
+  * Turkey    A CORRECTION THAT MADE THE GUIDE WORSE, now reversed. The entry
+              that stood here said the guide was "CORRECT at 10% on interest to
+              non-residents, and now says what decides it: 10% where the loan
+              runs more than two years, 15% otherwise". The 10% is right. The
+              rest was read off the wrong column. That two-year split is a
+              footnote in PwC's TREATY table, hanging off Austria, Luxembourg,
+              Portugal and Korea; it is not domestic law, and a payer applying
+              15% to a lender outside those four treaties over-deducts by five
+              points. The same entry then wrote that "treaty rates are mostly
+              equal to or above the domestic rate, so a treaty rarely helps
+              here", which inverts the very rule it had just quoted. What main
+              had said was "10% ... (varies by instrument; treaty rates may
+              reduce) (approx -- confirm)": vague, hedged and right. The guide
+              now states the 10%, says the two-year split is a treaty rule,
+              warns that Turkish rates live in Presidential Decrees and change
+              often, and carries the 0% for licensed non-resident banks under
+              Decree 2009/14593 art. 1/5-a as a rate to confirm per lender
+              rather than to assume.
+  * Andorra   CORRECT, hedge resolved. Royalties to non-residents are withheld
+              at 5% under Llei 94/2010, and dividends and interest at 0%. The
+              hedge said "confirm treaty rates", which is not something a guide
+              can settle once for every counterparty. What was missing is the
+              frame: 5% is a REDUCED rate against a general IRNR rate of 10%,
+              so a payment that is not a royalty does not get it. Andorra's
+              treaty network is small enough that the guide now says to check
+              whether a treaty exists rather than to assume one does.
 
 Trinidad is the case for going to the authority rather than to a chart. A first
 search returned 15% for interest, which is right, and 15% for royalties, which
