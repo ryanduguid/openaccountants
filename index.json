@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-09T12:03:39+00:00",
+ "generated_at": "2026-09-09T12:09:12+00:00",
  "counts": {
   "guides": 1953,
   "jurisdictions": 244,
@@ -974,7 +974,7 @@
    "category": null,
    "tier": 1,
    "verified_by": null,
-   "reviewed_by": "Christopher Aryee",
+   "reviewed_by": "Christopher Aryee, CPA",
    "tax_year": "2025",
    "last_updated": "2026-07-13"
   },
@@ -986,7 +986,7 @@
    "category": null,
    "tier": 1,
    "verified_by": null,
-   "reviewed_by": "Christopher Aryee",
+   "reviewed_by": "Christopher Aryee, CPA",
    "tax_year": "2025",
    "last_updated": "2026-07-13"
   },
@@ -1022,7 +1022,7 @@
    "category": null,
    "tier": 1,
    "verified_by": null,
-   "reviewed_by": "Christopher Aryee",
+   "reviewed_by": "Christopher Aryee, CPA",
    "tax_year": "2025",
    "last_updated": "2026-07-13"
   },
@@ -1094,7 +1094,7 @@
    "category": null,
    "tier": 1,
    "verified_by": null,
-   "reviewed_by": "Christopher Aryee",
+   "reviewed_by": "Christopher Aryee, CPA",
    "tax_year": "2025",
    "last_updated": "2026-07-13"
   },
@@ -1106,7 +1106,7 @@
    "category": null,
    "tier": 1,
    "verified_by": null,
-   "reviewed_by": "Christopher Aryee",
+   "reviewed_by": "Christopher Aryee, CPA",
    "tax_year": "2025",
    "last_updated": "2026-07-13"
   },
@@ -1118,7 +1118,7 @@
    "category": null,
    "tier": 1,
    "verified_by": null,
-   "reviewed_by": "Christopher Aryee",
+   "reviewed_by": "Christopher Aryee, CPA",
    "tax_year": "2025",
    "last_updated": "2026-07-13"
   },
@@ -1130,7 +1130,7 @@
    "category": null,
    "tier": 1,
    "verified_by": null,
-   "reviewed_by": "Christopher Aryee",
+   "reviewed_by": "Christopher Aryee, CPA",
    "tax_year": "2025",
    "last_updated": "2026-07-13"
   },
@@ -1142,7 +1142,7 @@
    "category": null,
    "tier": 1,
    "verified_by": null,
-   "reviewed_by": "Christopher Aryee",
+   "reviewed_by": "Christopher Aryee, CPA",
    "tax_year": "2025",
    "last_updated": "2026-07-13"
   },
@@ -1154,7 +1154,7 @@
    "category": null,
    "tier": 1,
    "verified_by": null,
-   "reviewed_by": "Christopher Aryee",
+   "reviewed_by": "Christopher Aryee, CPA",
    "tax_year": "2025",
    "last_updated": "2026-07-13"
   },
@@ -8342,7 +8342,7 @@
    "category": null,
    "tier": 2,
    "verified_by": null,
-   "reviewed_by": "Gvantsa Amiridze",
+   "reviewed_by": "Gvantsa Amiridze, ACCA",
    "tax_year": "2025",
    "last_updated": "2026-07-13"
   },
@@ -8354,7 +8354,7 @@
    "category": null,
    "tier": 2,
    "verified_by": null,
-   "reviewed_by": "Gvantsa Amiridze",
+   "reviewed_by": "Gvantsa Amiridze, ACCA",
    "tax_year": "2025",
    "last_updated": "2026-07-13"
   },
@@ -8366,7 +8366,7 @@
    "category": null,
    "tier": 2,
    "verified_by": null,
-   "reviewed_by": "Gvantsa Amiridze",
+   "reviewed_by": "Gvantsa Amiridze, ACCA",
    "tax_year": "2025",
    "last_updated": "2026-07-13"
   },
@@ -8390,7 +8390,7 @@
    "category": "payroll",
    "tier": 2,
    "verified_by": null,
-   "reviewed_by": "Gvantsa Amiridze",
+   "reviewed_by": "Gvantsa Amiridze, ACCA",
    "tax_year": "2025",
    "last_updated": "2026-07-13"
   },
@@ -8402,7 +8402,7 @@
    "category": "international",
    "tier": 2,
    "verified_by": null,
-   "reviewed_by": "Gvantsa Amiridze",
+   "reviewed_by": "Gvantsa Amiridze, ACCA",
    "tax_year": "2025",
    "last_updated": "2026-07-13"
   },
@@ -12350,7 +12350,7 @@
    "category": "invoicing",
    "tier": 2,
    "verified_by": null,
-   "reviewed_by": "MUHAMMAD HANIS MAT HUSSIN",
+   "reviewed_by": "MUHAMMAD HANIS MAT HUSSIN, CA-53636",
    "tax_year": "2025",
    "last_updated": "2026-07-13"
   },
@@ -12362,7 +12362,7 @@
    "category": null,
    "tier": 2,
    "verified_by": null,
-   "reviewed_by": "MUHAMMAD HANIS MAT HUSSIN",
+   "reviewed_by": "MUHAMMAD HANIS MAT HUSSIN, CA-53636",
    "tax_year": "2025",
    "last_updated": "2026-07-13"
   },
@@ -12374,7 +12374,7 @@
    "category": null,
    "tier": 2,
    "verified_by": null,
-   "reviewed_by": "MUHAMMAD HANIS MAT HUSSIN",
+   "reviewed_by": "MUHAMMAD HANIS MAT HUSSIN, CA-53636",
    "tax_year": "2025",
    "last_updated": "2026-07-13"
   },
@@ -12398,7 +12398,7 @@
    "category": "international",
    "tier": 2,
    "verified_by": null,
-   "reviewed_by": "MUHAMMAD HANIS MAT HUSSIN",
+   "reviewed_by": "MUHAMMAD HANIS MAT HUSSIN, CA-53636",
    "tax_year": "2025",
    "last_updated": "2026-07-13"
   },
@@ -12410,7 +12410,7 @@
    "category": "international",
    "tier": 2,
    "verified_by": null,
-   "reviewed_by": "MUHAMMAD HANIS MAT HUSSIN",
+   "reviewed_by": "MUHAMMAD HANIS MAT HUSSIN, CA-53636",
    "tax_year": "2025",
    "last_updated": "2026-07-13"
   },
@@ -12422,7 +12422,7 @@
    "category": "international",
    "tier": 2,
    "verified_by": null,
-   "reviewed_by": "MUHAMMAD HANIS MAT HUSSIN",
+   "reviewed_by": "MUHAMMAD HANIS MAT HUSSIN, CA-53636",
    "tax_year": "2025",
    "last_updated": "2026-07-13"
   },
@@ -12434,7 +12434,7 @@
    "category": null,
    "tier": 2,
    "verified_by": null,
-   "reviewed_by": "MUHAMMAD HANIS MAT HUSSIN",
+   "reviewed_by": "MUHAMMAD HANIS MAT HUSSIN, CA-53636",
    "tax_year": "2025",
    "last_updated": "2026-07-13"
   },

@@ -5,7 +5,7 @@ version: 0.1
 jurisdiction: GE
 tax_year: 2025
 last_updated: 2026-07-13
-reviewed_by: Gvantsa Amiridze
+reviewed_by: Gvantsa Amiridze, ACCA
 review_status: current
 depends_on:
   - social-contributions-workflow-base
