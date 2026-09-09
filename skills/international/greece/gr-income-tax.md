@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Greek income tax for self-emplo
 version: 2.0
 jurisdiction: GR
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-10
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base

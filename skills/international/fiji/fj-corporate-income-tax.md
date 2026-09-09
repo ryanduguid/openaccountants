@@ -3,7 +3,7 @@ name: fj-corporate-income-tax
 description: "Source-cited draft: corporate income tax for Fiji (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
 jurisdiction: FJ
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-10
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -23,7 +23,7 @@ Fiji taxes resident and non-resident companies on Fiji-source income, with a num
 ## Tax base and withholding taxes
 
 - **Corporate tax base** — Net assessable income (gross income less allowable deductions) on a Fiji-source basis for non-residents and worldwide for residents  _(Income Tax Act 2015)_
-- **Withholding tax on dividends to non-residents** — **Unresolved, and checked: the conflict is real.** Fiji removed taxation of dividends with effect from 1 August 2017, and the Income Tax Act still carries a 15% non-resident dividend withholding tax. Neither source retracts the other. **Default to withholding 15% and ask FRCS before paying gross**, because an under-deduction is the payer's liability while an over-deduction is the recipient's to reclaim  _(Income Tax Act 2015; FRCS withholding tax guidance; 2017 dividend exemption)_  _(Income Tax Act 2015 (https://taxsummaries.pwc.com/quick-charts/withholding-tax-wht-rates))_
+- **Withholding tax on dividends to non-residents** - 0% for exempt dividends paid from 1 August 2017. Part 5 of the Income Tax (Exempt Income) Regulations 2016 exempts dividends, and section 115 of the Income Tax Act 2015 excludes exempt income from withholding. Do not apply a historical 15% rate as a precaution. Check the payment date and classification before applying the exemption. _([FRCS Practice Statement 39/2017, paragraphs 6 and 8](https://www.frcs.org.fj/wp-content/uploads/2017/01/PS-39-Dividend-2017.pdf); [section 115](https://laws.gov.fj/Acts/ViewSection/66942))_
 - **Withholding tax on interest to non-residents** — 10% ((approx — reduced under applicable double tax treaties))  _(Income Tax Act 2015 (https://taxsummaries.pwc.com/quick-charts/withholding-tax-wht-rates))_
 - **Withholding tax on royalties to non-residents** — 15% ((approx — reduced under applicable double tax treaties))  _(Income Tax Act 2015 (https://taxsummaries.pwc.com/quick-charts/withholding-tax-wht-rates))_
 - **Withholding tax on management/professional/know-how fees to non-residents** — Generally 5%–15% depending on the nature of the payment and the treaty position ((approx — confirm specific rate per payment type))  _(Income Tax Act 2015 (https://frcs.org.fj/our-services/taxation/business/withholding-tax/))_

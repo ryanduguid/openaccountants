@@ -5,7 +5,7 @@ version: 0.1
 jurisdiction: PY
 tax_year: 2025
 tax_year_notes: "2025 (minimum-wage floor also stated at the 1 July 2026 level of PYG 3,044,000)"
-last_updated: 2026-09-09
+last_updated: 2026-09-10
 review_status: pending_review
 depends_on:
   - social-contributions-workflow-base
@@ -397,9 +397,9 @@ Employer 16.5% breakdown: **14% to IPS proper + 2.5%** earmarked for public-heal
 | --- | --- |
 | Monthly minimum wage (diurnal, general activities) | ₲ 3.044.000 (from 1 Jul 2026, +5%, Decreto N° 6225 / MTESS Resolución N° 670/2026); ₲ 2.899.048 (from 1 Jul 2025, +3,6%, MTESS Resolución N° 677/2025) |
 | Daily jornal | ₲ 117.077 from 1 Jul 2026; ₲ 111.502 from 1 Jul 2025 to 30 Jun 2026 |
-| Part-time diurnal hour | ₲ 13.937 |
+| Part-time diurnal hour | The prior table quoted ₲ 13.937 for 2025-26. Confirm the separate part-time hourly row in MTESS Resolution 670/2026 before using a rate from July 2026 |
 
-**[RESEARCH GAP — reviewer to confirm]** A new tripartite minimum-wage adjustment was reportedly under discussion for ~mid-2026; verify the current figure before reliance.
+The July 2026 monthly and daily adjustment is published in MTESS Resolution 670/2026. The part-time hourly row remains to be checked against that resolution.
 
 ### Filing & payment
 

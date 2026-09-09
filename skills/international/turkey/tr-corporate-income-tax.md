@@ -3,7 +3,7 @@ name: tr-corporate-income-tax
 description: "Source-cited draft: corporate income tax for Turkey (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
 jurisdiction: TR
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-10
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -22,7 +22,7 @@ Turkish corporate income tax applies a flat 25% rate (30% for banks and certain 
 - **Tax base** — Net accounting profit adjusted for non-deductible expenses, exemptions, deductions and prior-year loss carryforwards  _(Corporate Tax Law No. 5520 (https://taxsummaries.pwc.com/turkey/corporate/taxes-on-corporate-income))_
 - **Loss carryforward** — Tax losses may be carried forward up to 5 years; no carryback  _(Corporate Tax Law No. 5520 (https://taxsummaries.pwc.com/turkey/corporate/deductions))_
 - **Withholding tax — dividends** — 15% on dividends paid to resident/non-resident individuals and non-resident companies (raised from 10% by Presidential Decree No. 9286, 22 Dec 2024) %  _(Corporate Tax Law No. 5520; Presidential Decree No. 9286 (https://taxsummaries.pwc.com/turkey/corporate/withholding-taxes))_
-- **Withholding tax — interest** — **10%** on interest paid to non-residents under domestic law, and the instrument decides it: 10% where the loan or debt claim runs more than two years, **15%** otherwise. Treaty rates are mostly equal to or above the domestic rate, so a treaty rarely reduces this one % (approx — rate varies by interest type; confirm)  _(Corporate Tax Law No. 5520 (https://taxsummaries.pwc.com/turkey/corporate/withholding-taxes))_
+- **Withholding tax - interest** - For loans to a Turkish company, qualifying foreign-bank and other qualifying lender interest can receive 0%; other loan interest generally attracts 10%, subject to treaty relief. Bonds, deposits and other instruments need their own rules. Do not apply a general two-year 10%/15% split. _([GIB ruling on Corporate Tax Law section 30 and Decision 2009/14593](https://gib.gov.tr/mevzuat/kanun/436/ozelge/28372))_
 - **Withholding tax — royalties** — 20% on royalties paid to non-residents (treaty rates may reduce) %  _(Corporate Tax Law No. 5520 (https://taxsummaries.pwc.com/turkey/corporate/withholding-taxes))_
 - **Inter-company dividends (resident to resident)** — Dividends between resident companies are generally exempt (participation exemption); no dividend WHT on distributions to resident corporations  _(Corporate Tax Law No. 5520 (https://taxsummaries.pwc.com/turkey/corporate/withholding-taxes))_
 - **Quarterly advance (provisional) tax** — Advance corporate tax declared and paid quarterly by the 17th of the second month following each quarter; credited against annual liability  _(Corporate Tax Law No. 5520 (https://taxsummaries.pwc.com/turkey/corporate/tax-administration))_

@@ -5,7 +5,7 @@ version: 2.1
 jurisdiction: GB
 tax_year: 2025
 tax_year_notes: "2024-25, 2025-26 and 2026-27; 2026-27 reconciled to Finance Act 2026 (c. 11)"
-last_updated: 2026-09-09
+last_updated: 2026-09-10
 reviewed_by: James Power
 review_status: current
 depends_on:
@@ -169,7 +169,7 @@ Set at the Scottish Budget delivered on 13 January 2026. The six rates are
 unchanged; the starter and basic band limits rose 7.4% and the higher, advanced
 and top thresholds are frozen.
 
-| Band | Taxable income (after personal allowance) | Rate |
+| Band | Income with the standard GBP 12,570 personal allowance | Rate |
 | --- | --- | --- |
 | Starter rate | GBP 12,571 -- 16,537 | 19% |
 | Basic rate | GBP 16,538 -- 29,526 | 20% |

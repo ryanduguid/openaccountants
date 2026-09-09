@@ -4,7 +4,7 @@ description: Use this skill whenever asked about South African income tax for se
 version: 2.0
 jurisdiction: ZA
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-10
 reviewed_by: Werner Britz
 review_status: current
 tier: 1

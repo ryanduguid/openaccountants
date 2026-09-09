@@ -11,7 +11,7 @@ version: 1.0
 jurisdiction: KZ
 tax_year: 2026
 tier: 2
-last_updated: 2026-06-12
+last_updated: 2026-09-10
 category: international
 depends_on:
   - social-contributions-workflow-base

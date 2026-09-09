@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Peru income tax (Impuesto a la 
 version: 0.1
 jurisdiction: PE
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-10
 reviewed_by: Maria Clemencia Valverde Rios
 review_status: current
 depends_on:

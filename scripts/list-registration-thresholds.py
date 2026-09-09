@@ -1,93 +1,9 @@
-"""List each jurisdiction's stated VAT/GST registration threshold.
+"""List stated VAT/GST registration thresholds for manual source verification.
 
-The third field to get an outside pass, after the standard rate and the annual
-return deadline. It is worth doing early because it decides whether a business
-registers at all: a threshold stated too high tells a trader who must register
-that they need not, and the penalty for late registration usually runs from the
-date they crossed the real one, not from the date they found out.
-
-Same shape as list-vat-rates.py and list-filing-deadlines.py. This dumps the
-claim so it can be compared against a source outside the repository. It does not
-check anything, and a number here is a claim to verify rather than a defect.
-
-It keys on the phrase "registration threshold", so a jurisdiction that words it
-another way does not appear. Malta is the case to remember: its Article 11
-threshold of EUR 35,000 is in malta-vat-return, written as "the Article 11
-threshold" and never as a registration threshold, so Malta shows nothing here
-while stating the figure twice. The count below is jurisdictions using this
-wording, not jurisdictions with a threshold.
-
-Read the output with two things in mind. A jurisdiction can hold several real
-thresholds at once, and rows that disagree usually show that rather than an
-error: a lower one for services than for goods, a separate figure for
-non-residents supplying digital services, a voluntary-registration floor beneath
-the compulsory ceiling, and in the EU a domestic threshold beside the 100,000
-EUR cross-border SME figure. And a threshold that is moving gets stated twice on
-purpose, with dates, which is the guide doing its job.
-
-Checked against an outside source so far. Two errors in eleven jurisdictions.
-
-  * Egypt     WRONG, found by reading the column. Resolution No. 281 of 2025
-              halved the threshold from EGP 500,000 to EGP 250,000 with effect
-              from 1 January 2026, registration due by 31 March 2026 for anyone
-              over it on 2025 revenue. eg-formation and eg-bookkeeping had the
-              new figure; egypt-vat and eg-sme-tax did not.
-  * Albania   WRONG by a factor of two. albania-tax-optimization gave the VAT
-              threshold as ALL 5,000,000 (~EUR 40k) in four places, one of them
-              a prohibition reading "NEVER ignore the ALL 5m VAT threshold".
-              It is ALL 10,000,000, about EUR 96,200, with 15 days to apply.
-              albania-income-tax had it right.
-
-Random tranche of ten, drawn seed 20260909 from the 97 jurisdictions with a row.
-Albania was the only error in it. Correct: Barbados BBD 200,000 (its BBD
-16,666.67 is the same figure per month), Bosnia BAM 100,000 raised from 50,000
-on 2 December 2023, Cameroon FCFA 100M for the regime reel and 50-100M for the
-simplifie, Colombia 3,500 UVT stated as COP 174,296,500 and dated to 2025,
-Ireland EUR 42,500 for services and EUR 85,000 for goods, Nepal NPR 5,000,000
-for goods and 3,000,000 for services raised from 2,000,000 on 16 July 2024,
-Tajikistan TJS 1,000,000, Tonga TOP 100,000.
-
-Paraguay was in the draw and is not this field. Its row comes from
-paraguay-payroll and is the PYG 80M IRP registration threshold, an income tax.
-The guide is right; the column is reading past its own subject.
-
-EU tranche, all eight that state one under this wording, against a single table
-of member-state thresholds. Every one correct: Bulgaria BGN 100,000 (~EUR
-51,000), Croatia EUR 60,000, Cyprus EUR 15,600, Estonia EUR 40,000, Ireland
-EUR 42,500 and 85,000, Latvia EUR 50,000, Luxembourg EUR 50,000, Slovenia
-EUR 60,000.
-
-The interesting part was the EU states NOT in the column, because several state
-a threshold under their own name for it.
-
-  * France    WRONG, in 14 places across skills, agent-skills and the
-              orchestrator. Franchise en base under art. 293 B CGI was given as
-              EUR 36,800 for services (tolerance 39,100) and EUR 91,900 for
-              goods (tolerance 101,000). Those are the pre-2025 figures. It is
-              EUR 37,500 (tolerance 41,250) and EUR 85,000 (tolerance 93,500).
-              Every worked example still holds at the new figures.
-  * Germany   CORRECT. Kleinunternehmer under section 19 UStG at EUR 25,000
-              prior year and EUR 100,000 current year.
-  * Netherlands CORRECT. KOR at EUR 20,000.
-  * Italy and Spain have no domestic VAT registration threshold, so their
-    absence from the column is right. Italy's EUR 85,000 is the regime
-    forfettario, a different thing.
-
-France is the case for not trusting this column's coverage number. It states
-its threshold in four files and none of them says "registration threshold", so
-a reader watching only this output would have called France unstated rather
-than wrong.
-
-Still open: 102 jurisdictions use this wording, and 20 jurisdictions have now
-been checked.
-
-One known false positive, left in deliberately. The walk treats the third path
-component as a jurisdiction and does not restrict itself to indirect-tax
-material, so Oregon's corporate activity tax registration obligation matches the
-generic threshold label and is reported under "or". It is a registration
-threshold, just not a VAT or GST one. Filtering by slug would also drop real
-sales-tax guides that do not say "vat" anywhere, so the reader is told instead:
-a US-state row here is a registration threshold of some kind, and needs reading.
+Matches registration-threshold labels and excludes identifiable social-security
+and direct-tax thresholds. Other indirect-tax names are retained. Missing labels,
+unrecognised currency formats and ambiguous tax context limit coverage; an absent
+jurisdiction does not establish that it has no registration threshold.
 
 Usage: python3 scripts/list-registration-thresholds.py [--selftest]
 """
@@ -221,6 +137,10 @@ def threshold_in(line, slug=''):
     if not LABEL.search(line):
         return None
     if SOCIAL.search(line) or SOCIAL.search(slug.replace('-', ' ')):
+        return None
+    if not re.search(r'\b(?:VAT|GST)\b', line, re.I) and re.search(
+            r'\b(?:CAT|IRP|corporate activity tax|income tax)\b',
+            line + ' ' + slug.replace('-', ' '), re.I):
         return None
     got = amounts_in(line)
     return got or None

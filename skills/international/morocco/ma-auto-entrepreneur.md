@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Morocco's auto-entrepreneur reg
 version: 1.0
 jurisdiction: MA
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-10
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base

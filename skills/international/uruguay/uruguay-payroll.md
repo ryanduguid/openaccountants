@@ -5,7 +5,7 @@ version: 0.1
 jurisdiction: UY
 tax_year: 2025
 tax_year_notes: "2025 (full 2026 scale and BPS constants stated alongside, at BPC 6,864)"
-last_updated: 2026-09-09
+last_updated: 2026-09-10
 review_status: pending_review
 depends_on:
   - payroll-workflow-base
@@ -15,6 +15,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
 # Uruguay Payroll Skill v0.1 (Tier 2 — research-verified, reviewer sign-off pending)
+
+> **2026 retirement ceiling requires period verification.** The UYU 288,836 figure is reported for February 2026 onward. Its January application has not been established here. Confirm the BPS ceiling and pension regime for the pay month before using any retirement calculation or template below; do not assume that the BPC and retirement ceiling change on the same date.
 
 ## Uruguay Payroll Skill v0.1 (Tier 2 — research-verified, reviewer sign-off pending)
 
@@ -271,7 +273,7 @@ Uruguay's mandatory social-security scheme is BPS (Banco de Previsión Social). 
 
 **Minimum wage 2025 table**  _(Decreto N° 369/024 (IMPO))_
 
-| Item | 2025 value | Source |
+| Item | Value by effective date | Source |
 | --- | --- | --- |
 | Monthly national minimum wage | **UYU 25,383** from 1 Jul 2026; **UYU 24,572** from 1 Jan 2026; **UYU 23,604** from 1 Jan 2025 | Decreto N° 319/025 (26 Dec 2025); Decreto N° 369/024 (IMPO) |
 

@@ -566,7 +566,7 @@ When a refusal fires:
 
 **Check IN12 -- TVA regime was established.** Franchise en base vs réel simplifié vs réel normal was confirmed before inference, as it changes how every transaction is classified.
 
-**Check IN13 -- Franchise en base threshold was verified.** If micro-entrepreneur CA exceeds €37,500 (services) or €85,000 (goods), the franchise en base is lost and TVA registration is mandatory. This must be flagged.
+- **Check IN13 - Franchise en base** - For ordinary services/goods, the basic thresholds are EUR 37,500/85,000 and the tolerance thresholds are EUR 41,250/93,500. Exceeding only the basic threshold ends the exemption the following year; exceeding the tolerance threshold ends it on the date of exceedance. Confirm the activity, prior-year turnover and crossing date. _([DGFiP](https://www.impots.gouv.fr/professionnel/les-regimes-dimposition-la-tva))_
 
 ---
 

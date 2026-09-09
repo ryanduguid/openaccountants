@@ -3,13 +3,15 @@ name: uy-tax-overview
 description: "Source-cited draft: tax overview for Uruguay (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
 jurisdiction: UY
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-10
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
 # Uruguay Tax Overview
+
+> **2026 retirement ceiling requires period verification.** The UYU 288,836 figure is reported for February 2026 onward. Its January application has not been established here. Confirm the BPS ceiling and pension regime for the pay month before using any retirement calculation or template below; do not assume that the BPC and retirement ceiling change on the same date.
 
 ## Uruguayan tax system at a glance
 

@@ -4,7 +4,7 @@ description: Use this skill whenever asked to prepare, review, or classify trans
 version: 2.0
 jurisdiction: FR
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-10
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -104,7 +104,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 These refusals apply on top of the EU-wide refusals in `eu-vat-directive` Section 13 (R-EU-1 through R-EU-12). If any trigger fires, stop, output the refusal message verbatim, end the conversation.
 
-- **R-FR-1 — Micro-entreprise / franchise en base de TVA** — Trigger: client is under the franchise en base (turnover below €37,500 services / €85,000 goods for 2025/2026) and has not opted for VAT. Message: "Micro-entrepreneurs under the franchise en base de TVA are exempt from charging and collecting VAT. They do not file a CA3 or CA12. This skill cannot prepare a return for a franchise en base client. If you have opted for VAT (option pour la TVA), please confirm and provide your FR TVA number."  _(R-FR-1)_
+- **R-FR-1 — Micro-entreprise / franchise en base de TVA** — Trigger: client is under the franchise en base (eligibility established using the basic and tolerance thresholds for the activity and year) and has not opted for VAT. Message: "Micro-entrepreneurs under the franchise en base de TVA are exempt from charging and collecting VAT. They do not file a CA3 or CA12. This skill cannot prepare a return for a franchise en base client. If you have opted for VAT (option pour la TVA), please confirm and provide your FR TVA number."  _(R-FR-1)_
 - **R-FR-2 — Partial exemption (prorata de déduction)** — Trigger: client makes both taxable supplies and exempt-without-credit supplies (financial, medical, educational, insurance) and the exempt proportion is not de minimis. Message: "You make both taxable and exempt supplies. Your input VAT must be apportioned under the coefficient de déduction / prorata rules (Articles 206 to 214 of Annexe II to the CGI). Please use a qualified expert-comptable to determine the prorata before input VAT is claimed."  _(R-FR-2, Articles 206 to 214 of Annexe II to the CGI)_
 - **R-FR-3 — Margin scheme (régime de la marge)** — Trigger: client deals in second-hand goods, art, antiques, or collectables under the margin scheme. Message: "Margin scheme transactions (TVA sur la marge) require transaction-level margin computation. Out of scope for this skill."  _(R-FR-3)_
 - **R-FR-4 — Real estate (TVA immobilière)** — Trigger: client deals in new construction, building land, or property transactions subject to TVA immobilière. Message: "Real estate VAT (TVA immobilière) is complex and fact-specific. Out of scope for this skill. Please consult an expert-comptable."  _(R-FR-4)_

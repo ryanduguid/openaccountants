@@ -4,7 +4,7 @@ description: Final orchestrator skill that assembles the complete Australian fil
 version: 0.2
 jurisdiction: AU
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-10
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -251,15 +251,15 @@ This skill coordinates execution of the content skills, verifies cross-skill con
 
 ## Client Action List
 
-### Immediate (before 31 October 2026 -- ITR lodgement deadline for self-lodgers):
+### Immediate actions for the 2024-25 return (self-lodgment due 31 October 2025):
 1. Review this return package with your registered tax agent
 2. Lodge ITR via myTax or through tax agent (tax agent clients have extended deadline)
 3. Pay balance due of $X to ATO (or receive refund of $X)
 4. Lodge any outstanding BAS quarters
 
 ### Note on lodgement deadlines:
-- Self-lodgers: **31 October 2026** for the 2025-26 year. The rule is 31 October following the 30 June year-end, so read the year off this guide's `tax_year`, not off this line
-- Tax agent lodgement: extended deadlines apply, running to **15 May 2027** for 2025-26 clients registered with the agent before 31 October 2026 (earlier categories from March)
+- Self-lodgers: 31 October 2025 for the 2024-25 year covered by this package.
+- Tax agent lodgement: confirm the client-specific ATO date. Eligible 2024-25 clients not required earlier generally have 15 May 2026; engagement before 31 October does not guarantee that date.
 
 ### Quarterly obligations for 2025-26:
 - BAS Q1 (Jul-Sep): lodge and pay by 28 October 2025

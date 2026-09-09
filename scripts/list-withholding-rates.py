@@ -1,144 +1,9 @@
-"""List each jurisdiction's stated withholding rate on dividends, interest and royalties.
+"""List stated dividend, interest and royalty withholding rates for review.
 
-The fourth field opened to an outside pass, after the standard VAT rate, the
-annual return deadline and the registration threshold. Withholding is a good
-one to take early: it is three small numbers per jurisdiction, PwC publishes
-them per country in one table, and getting one wrong means a payer under-
-deducts on a cross-border payment and carries the shortfall themselves.
-
-Same shape as the other list-*.py scripts. It dumps the claim so a human can
-compare it against a source outside the repository. A number here is a claim to
-verify, not a defect found.
-
-Rows that disagree usually show the corpus doing its job rather than failing.
-A jurisdiction sets different rates for residents and non-residents, for listed
-and unlisted companies, for individuals and companies, and for treaty and
-non-treaty payees, and the guides carry all of them. The residence split is
-kept apart below for that reason; the rest you have to read.
-
-The hedges are the leads. Many of these lines already end in "(approx --
-confirm)" or say the position is uncertain, and those are the rows where an
-outside source settles something rather than confirming it.
-
-Checked against an outside source so far. Two jurisdictions, both hedged by
-their own guides, and both settled.
-
-  * Ethiopia  Right numbers, wrong reason. The guide read "5% to 10% depending
-              on residency/context (approx -- confirm split between
-              resident/non-resident)". The split is by the KIND of royalty, not
-              the residency of the payee: 5% for art and culture, 10% for
-              everything else, both raised from a flat 5% by the Income Tax
-              (Amendment) Proclamation No. 1395/2025. A non-resident gets 10%
-              with no art-and-culture reduction. Its dividend rate of 15% and
-              interest rate of 10% were already correct under the same
-              proclamation, so only the reason was wrong, which is the class
-              this corpus keeps producing.
-  * Iceland   Understated. The guide led with 12% on interest to non-residents
-              while its own hedge said "PwC cites 13% gross, statutory 12%".
-              PwC publishes 13% for corporate and individual recipients alike.
-              The two have not been reconciled, so the guide now deducts at 13%
-              on the methodology's own rule of taking the higher-tax position
-              where a rate is unsettled. An under-deduction is the payer's
-              liability, which is why this field defaults upward.
-
-Read and found correct, so not chased again: Benin states three real dividend
-rates (15% standard, 10% regularly distributed, 7% for WAEMU-listed companies),
-Chile withholds 4% on interest to foreign banks against 35% generally, Colombia
-20% on dividends from taxed earnings and 48% from untaxed, Vietnam 0% to
-corporate shareholders and 5% to individuals, Zimbabwe 5% on listed shares and
-10% on unlisted, Hong Kong 4.95% on royalties to unassociated non-residents.
-
-  * Guatemala CORRECT, hedge resolved. 5% on dividends to non-residents and the
-              same 5% to residents, a final tax withheld by the distributing
-              company under Decreto 10-2012. The guide had said "some guides
-              cite up to 10% -- confirm". They do, and 10% is not the dividend
-              rate.
-  * Barbados  CORRECT, and it nearly was not. A first search gave 15% on
-              royalties to non-residents and the guide says 0%, which looked
-              like a clear error. PwC, the source the guide cites, publishes 0%
-              for royalties and interest and 0% or 5% for dividends. The 15%
-              appears in older summaries and predates the 2019 convergence of
-              the domestic and international regimes. The rate stays at 0% and
-              the vague hedge is replaced by the specific conflict and a
-              warning, because the payer carries an under-deduction.
-
-That is the sixth time in this pass that an outside source disagreed and the
-corpus turned out right. Read the guide, and read what it cites, before you
-change a number.
-
-  * Monaco    CORRECT on all three, hedges resolved. Monaco levies no
-              withholding tax on outbound dividends, interest or royalties.
-              Worth stating the limit as well, which the guide did not: a zero
-              rate in Monaco is not a zero rate on the payment, because income
-              arriving from abroad is still withheld at source.
-  * Fiji      GENUINELY UNRESOLVED, and now says so precisely. The guide read
-              "position uncertain: some sources cite 0% (dividend WHT removed
-              effective 1 August 2017), others cite 15%". Checked, and the
-              conflict is real: dividends were exempted from 1 August 2017 and
-              the Income Tax Act still carries a 15% non-resident dividend
-              withholding tax, with neither source retracting the other. The
-              guide now defaults to withholding 15% and says to ask FRCS before
-              paying gross, because an under-deduction is the payer's liability
-              while an over-deduction is the recipient's to reclaim.
-
-Fiji is the shape to copy when a field cannot be settled. "Position uncertain"
-tells a reader nothing they can act on; naming both sources, both dates and
-which way to err tells them what to do this afternoon.
-
-  * Trinidad and Tobago  WRONG on two of three, and the guide had the dividend
-              rates transposed onto interest. It read dividends at a flat 10%
-              and interest at "10% to non-resident individuals; 8% to
-              non-resident companies". The Board of Inland Revenue's own guide
-              gives distributions at 3% to a non-resident parent company and 8%
-              to any other non-resident, and puts interest with royalties and
-              other payments at 15% for individuals and companies alike. So
-              interest was understated by 5 to 7 points and the payer carries
-              that.
-  * Turkey    CORRECT at 10% on interest to non-residents, and now says what
-              decides it: 10% where the loan runs more than two years, 15%
-              otherwise. Treaty rates are mostly equal to or above the domestic
-              rate, so a treaty rarely helps here.
-
-Trinidad is the case for going to the authority rather than to a chart. A first
-search returned 15% for interest, which is right, and 15% for royalties, which
-is also right, from a page summarising both. PwC's table renders the corporate
-distribution rate as "3/8%", which extraction turns into something that reads
-like three-eighths of one per cent and is really "3% or 8%". Neither reading
-settles anything. The IRD's own withholding guide settles all three in one
-page.
-
-  * Belize    WRONG on two of three, understated by ten points each. The guide
-              gave 15% for all three and hedged interest and royalties with
-              "sources vary 15%/25%, confirm". Interest and royalties to
-              non-residents are 25%, as are fees for services such as
-              consultancy; only dividends are 15%. Grandfathered international
-              business companies are exempt from withholding on payments to
-              non-residents.
-  * Zimbabwe  CORRECT, hedge resolved. The 15% non-residents' tax on interest
-              was reintroduced by the 2026 national budget presented on
-              27 November 2025 and is payable in US dollars, so interest paid
-              before 1 January 2026 falls outside it and the payment date has
-              to be checked before the rate is applied.
-
-Still open: 124 jurisdictions state a rate, 25 hedge at least one of their own,
-and 10 have been checked. Four of the ten were wrong and every one of the four
-had hedged itself, which is the argument for working this column by its own
-doubts rather than by a random draw.
-
-Two recall limits the PR #16 review found, both still open and worth knowing
-before reading a zero in this output as an absence:
-
-  * A table whose HEADING establishes the withholding context, with plain row
-    labels like "Dividends", "Interest", "Royalties", is skipped entirely,
-    because the label test runs per row. Nigeria's quick-look WHT table is the
-    example, and every rate in it is discarded.
-  * A line that gives one rate for all three payment types is recorded only
-    under the first. The Bahamas states a single zero for dividends, interest
-    and royalties and appears here as dividends alone.
-
-Both need the reader, not the parser, so they are documented rather than
-guessed at. A jurisdiction missing from this list has not been shown to be
-silent.
+Reads labelled facts and tables in withholding sections. A shared rate is listed
+for each named payment type. Multi-rate shared labels are omitted; single-type
+facts retain the first stated rate. Residence comes from the label or section.
+Treat these as claims to verify, not a complete rate schedule or legal findings.
 
 Usage: python3 scripts/list-withholding-rates.py [--selftest]
 """
@@ -162,13 +27,6 @@ RESIDENT = re.compile(r'\bresidents?\b', re.I)
 HEDGE = re.compile(r'approx\b|confirm\b|uncertain\b|not uniformly published', re.I)
 
 
-def kind_of(text):
-    for name, pat in KIND:
-        if re.search(pat, text, re.I):
-            return name
-    return None
-
-
 # Facts live in a labelled bullet or a table row. Free prose was tried first
 # and the column filled with rates belonging to other taxes: Bahrain appeared to
 # withhold 46% on dividends, from a sentence reading "a 46% tax on oil, gas and
@@ -179,27 +37,30 @@ BULL = re.compile(r'^\s*-\s+\*\*([^*]{4,90}?)\*\*\s*[\u2014-]+\s*(.+)$')
 ROW = re.compile(r'^\s*\|\s*([^|]{4,90}?)\s*\|\s*([^|]+?)\s*\|')
 
 
-def withholding_in(line):
-    """Return (kind, residence, rate, hedged) for a WHT line, else None."""
+def withholding_in(line, context=''):
+    """Return (kind, residence, rate, hedged) records for a labelled WHT fact."""
     m = BULL.match(line) or ROW.match(line)
     if not m:
         return None
     label, value = m.group(1), m.group(2)
-    if not LABEL.search(label):
+    if not LABEL.search(label) and not (ROW.match(line) and context):
         return None
-    kind = kind_of(label)
-    if not kind:
+    kinds = [name for name, pat in KIND if re.search(pat, label, re.I)]
+    if not kinds:
         return None
     p = PCT.search(value)
     if not p:
         return None
-    if NONRES.search(label):
+    if len(kinds) > 1 and len(set(PCT.findall(value))) > 1:
+        return None  # Different rates need a human to assign payment types.
+    residence = label if NONRES.search(label) or RESIDENT.search(label) else context
+    if NONRES.search(residence):
         res = 'non-resident'
-    elif RESIDENT.search(label):
+    elif RESIDENT.search(residence):
         res = 'resident'
     else:
         res = 'unspecified'
-    return kind, res, p.group(1), bool(HEDGE.search(line))
+    return [(kind, res, p.group(1), bool(HEDGE.search(line))) for kind in kinds]
 
 
 def selftest():
@@ -221,7 +82,7 @@ def selftest():
     ]
     for line, want in cases:
         got = withholding_in(line)
-        assert got == want, 'read %r from: %s' % (got, line[:70])
+        assert got == [want], 'read %r from: %s' % (got, line[:70])
     # prose is not a labelled fact, whatever words it contains
     assert withholding_in('Bahrain has no general corporate income tax. Only two regimes impose '
                           'direct tax: a 46% tax on oil, gas and petroleum, and withholding on '
@@ -245,14 +106,21 @@ def main():
         for fn in sorted(fns):
             if not fn.endswith('.md'):
                 continue
+            context = ''
             for line in open(os.path.join(dp, fn), encoding='utf-8', errors='replace'):
-                got = withholding_in(line)
+                if line.lstrip().startswith('#'):
+                    context = line if (
+                        re.search(r'\b(?:WHT|withholding)\b', line, re.I)
+                        or (re.search(r'(?:wht|withholding)', fn, re.I)
+                            and re.search(r'\brates\b', line, re.I))
+                    ) else ''
+                got = withholding_in(line, context)
                 if not got:
                     continue
-                kind, res, rate, hedge = got
-                out[jur]['%s/%s' % (kind, res)][rate + '%'] += 1
-                if hedge:
-                    hedged[jur].add(kind)
+                for kind, res, rate, hedge in got:
+                    out[jur]['%s/%s' % (kind, res)][rate + '%'] += 1
+                    if hedge:
+                        hedged[jur].add(kind)
 
     for jur in sorted(out):
         for key in sorted(out[jur]):

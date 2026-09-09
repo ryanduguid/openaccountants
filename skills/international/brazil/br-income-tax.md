@@ -4,7 +4,7 @@ description: "Use esta skill sempre que for solicitado sobre o imposto de renda 
 version: 2.0
 jurisdiction: BR
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-10
 reviewed_by: Ariane Marrocos
 review_status: current
 tier: 1

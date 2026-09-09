@@ -30,7 +30,7 @@ metadata:
 | Supporting legislation | Tax Administration Act 1953; Medicare Levy Act 1986; Higher Education Support Act 2003 |
 | Tax authority | Australian Taxation Office (ATO) |
 | Filing portal | myTax (via myGov) or registered tax agent |
-| Filing deadline | 31 October following the 30 June year-end if self-lodged; **15 May** following that if lodged by a registered tax agent engaged before 31 October. For the 2024-25 year: 31 October 2025 and 15 May 2026 |
+| Filing deadline | Self-lodged: 31 October following the 30 June year-end. Tax-agent dates depend on the client: 15 May is the general date for eligible clients not required earlier, and engagement before 31 October does not guarantee it. For 2024-25, confirm the assigned date in the ATO lodgment program; self-lodgment was due 31 October 2025 |
 | Contributor | Open Accountants Community |
 | Validated by | Pending -- Australian CPA/CA sign-off required |
 | Skill version | 2.0 |
@@ -261,7 +261,7 @@ A deduction for any loss or outgoing to the extent it is incurred in gaining or 
 
 Small business entity (turnover < $10M): can use simplified depreciation -- pool all assets over $20,000 at 15% first year, 30% thereafter.
 
-**Instant asset write-off:** Assets costing less than $20,000 (2024-25) can be immediately deducted by small business entities. This threshold may change each year -- confirm for current year.
+- **Instant asset write-off** - Eligible small business entities can deduct assets costing less than $20,000 for 2024-25, the year covered here. For assets first used or installed ready for taxable use from 1 July 2026, Schedule 2 of the Treasury Laws Amendment (Tax Reform No. 2) Act 2026 legislates a permanent $20,000 threshold. The Act received assent on 26 August 2026; Schedule 2 commences on 1 October 2026 and applies to those assets from 1 July 2026. As at 10 September, the amendment is enacted but has not commenced. Apply the relevant year and commencement provisions. _([Act, section 2 and Schedule 2 item 15](https://www.legislation.gov.au/C2026A00071/asmade/text))_
 
 ### 5.4 Superannuation [T1]
 

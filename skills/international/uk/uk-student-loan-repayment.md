@@ -5,7 +5,7 @@ version: 2.1
 jurisdiction: GB
 tax_year: 2025
 tax_year_notes: "2025-26 primary; 2024-25 and 2026-27 thresholds also tabulated (2026-27 column filled from GOV.UK, outside the recorded accountant review)"
-last_updated: 2026-09-09
+last_updated: 2026-09-10
 reviewed_by: James Power
 review_status: current
 depends_on:

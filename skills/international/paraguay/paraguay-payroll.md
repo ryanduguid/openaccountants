@@ -5,7 +5,7 @@ version: 0.1
 jurisdiction: PY
 tax_year: 2025
 tax_year_notes: "2025 (minimum-wage floor also stated at the 1 July 2026 level of PYG 3,044,000)"
-last_updated: 2026-09-09
+last_updated: 2026-09-10
 review_status: pending_review
 depends_on:
   - payroll-workflow-base
@@ -170,7 +170,7 @@ Paraguay's mandatory social-security scheme is **IPS (Instituto de Previsión So
 | Hourly rate (mensualizados) | PYG 12,683 from 1 Jul 2026; PYG 12,080 before | MTESS Res. 670/2026; Res. 677/2025 |
 | Night-shift monthly (with +30%) | PYG 3,957,200 from 1 Jul 2026; PYG 3,768,763 before | Derived: minimum wage x 1.30 |
 
-**Authority:** MTESS. Current: **Resolución MTESS N° 677/2025**, effective **1 July 2025** (+3.6% adjustment).
+**Authority:** MTESS. Resolución N° 670/2026 applies from 1 July 2026; Resolución N° 677/2025 applies from 1 July 2025 to 30 June 2026.
 
 - The minimum wage also functions as the **IPS contribution floor** (Section 3).
 

@@ -143,6 +143,21 @@ instance took.
 |---|---|
 | `Form PD` | `hr-company-formation`, `hr-corporate-income-tax`, `hr-tax-overview` |
 
+## cross-border
+
+| Form | Guides |
+|---|---|
+| `DAC2` | `README`, `dac6-mdr-reportable-arrangements`, `fatca-crs-automatic-exchange` |
+| `DAC6` | `README`, `dac6-mdr-reportable-arrangements`, `eu-directives-cross-border`, `fatca-crs-automatic-exchange` |
+| `DAC7` | `dac6-mdr-reportable-arrangements`, `digital-services-tax-matrix`, `eu-directives-cross-border` |
+| `DAC8` | `README`, `dac6-mdr-reportable-arrangements`, `eu-directives-cross-border`, `fatca-crs-automatic-exchange` |
+| `EU-27` | `cbam-carbon-border-adjustment`, `eu-directives-cross-border`, `eu-social-security-coordination` |
+| `Form 1116` | `cross-border-tax-workflow-base`, `withholding-tax-matrix` |
+| `Form 8833` | `cross-border-tax-router`, `cross-border-tax-workflow-base`, `tax-controversy-map-apa` |
+| `Form 8938` | `fatca-crs-automatic-exchange`, `forex-controls` |
+| `Form W-8BEN` | `fatca-crs-automatic-exchange`, `withholding-tax-matrix` |
+| `VE30` | `eu-reverse-charge`, `non-eu-export-services` |
+
 ## ct
 
 | Form | Guides |
@@ -218,6 +233,99 @@ instance took.
 | `Form TSD` | `ee-company-formation`, `ee-corporate-income-tax`, `ee-tax-overview`, `estonia-income-tax`, `estonia-payroll`, `estonia-social-contributions` |
 | `TELE2` | `estonia-income-tax`, `estonia-vat-return` |
 
+## federal
+
+| Form | Guides |
+|---|---|
+| `CP2000` | `us-1099-k-and-payment-processors`, `us-education-credits-8863`, `us-form-1040-individual-return`, `us-irs-collections-and-controversy` |
+| `Form 05-102` | `us-state-bonus-depreciation-conformity-matrix`, `us-state-formation-matrix` |
+| `Form 1040` | `us-1099-k-and-payment-processors`, `us-citizen-moving-abroad-tax`, `us-crypto-reporting`, `us-crypto-tax`, `us-education-credits-8863`, `us-estate-gift-706-709`, `us-fbar-and-fatca-8938`, `us-foreign-earned-income-2555`, `us-foreign-tax-credit-1116`, `us-form-1040-individual-return`, `us-form-1041-trust-and-estate-income`, `us-form-1065-partnership`, `us-form-5471-cfc-information`, `us-form-5472-foreign-owned-us`, `us-form-941-940-payroll`, `us-gilti-fdii-beat`, `us-irs-collections-and-controversy`, `us-multi-state-residency-and-allocation`, `us-pte-state-matrix`, `us-qbi-deduction`, `us-quarterly-estimated-tax`, `us-r-and-d-section-174-and-41`, `us-schedule-c-and-se-computation`, `us-section-1031-like-kind-exchange`, `us-secure-2-and-retirement-updates`, `us-self-employed-health-insurance`, `us-sole-prop-bookkeeping`, `us-state-bonus-depreciation-conformity-matrix`, `us-state-formation-matrix` |
+| `Form 1040-ES` | `us-foreign-earned-income-2555`, `us-form-941-940-payroll`, `us-quarterly-estimated-tax`, `us-state-estimated-tax-safe-harbors-matrix` |
+| `Form 1040-NR` | `us-foreign-tax-credit-1116`, `us-form-1040-individual-return` |
+| `Form 1040-X` | `us-foreign-tax-credit-1116`, `us-form-1040-individual-return` |
+| `Form 1041` | `us-estate-gift-706-709`, `us-form-1041-trust-and-estate-income`, `us-sole-prop-bookkeeping` |
+| `Form 1042` | `us-form-5472-foreign-owned-us`, `us-form-941-940-payroll`, `us-gilti-fdii-beat` |
+| `Form 1065` | `us-form-1041-trust-and-estate-income`, `us-form-1065-partnership`, `us-form-1120-c-corp`, `us-form-5471-cfc-information`, `us-pte-state-matrix`, `us-sole-prop-bookkeeping`, `us-state-formation-matrix` |
+| `Form 1095-A/B/C` | `us-self-employed-health-insurance`, `us-sole-prop-bookkeeping` |
+| `Form 1098-T` | `us-education-credits-8863`, `us-form-1040-individual-return` |
+| `Form 1099-DA` | `us-1099-k-and-payment-processors`, `us-crypto-reporting`, `us-crypto-tax`, `us-nft-tax` |
+| `Form 1099-INT` | `us-1099-nec-issuance`, `us-foreign-tax-credit-1116` |
+| `Form 1099-K` | `us-1099-k-and-payment-processors`, `us-1099-nec-issuance` |
+| `Form 1099-MISC` | `us-1099-nec-issuance`, `us-crypto-tax` |
+| `Form 1099-NEC` | `us-1099-k-and-payment-processors`, `us-1099-nec-issuance`, `us-form-941-940-payroll`, `us-pte-state-matrix`, `us-sole-prop-bookkeeping` |
+| `Form 1116` | `us-citizen-moving-abroad-tax`, `us-foreign-earned-income-2555`, `us-foreign-tax-credit-1116`, `us-form-1040-individual-return`, `us-form-1065-partnership`, `us-form-5471-cfc-information`, `us-gilti-fdii-beat` |
+| `Form 1118` | `us-foreign-tax-credit-1116`, `us-form-1120-c-corp`, `us-form-5471-cfc-information`, `us-gilti-fdii-beat` |
+| `Form 1120` | `us-form-1065-partnership`, `us-form-1120-c-corp`, `us-form-5471-cfc-information`, `us-form-5472-foreign-owned-us`, `us-gilti-fdii-beat`, `us-r-and-d-section-174-and-41`, `us-section-1202-qsbs`, `us-sole-prop-bookkeeping`, `us-state-formation-matrix` |
+| `Form 1120-F` | `us-form-1120-c-corp`, `us-form-5472-foreign-owned-us` |
+| `Form 1120-S` | `us-form-1065-partnership`, `us-form-1120-c-corp`, `us-form-5471-cfc-information`, `us-s-corp-election-decision`, `us-section-1202-qsbs`, `us-sole-prop-bookkeeping` |
+| `Form 1120-W` | `us-form-1120-c-corp`, `us-state-estimated-tax-safe-harbors-matrix` |
+| `Form 1128` | `us-form-1041-trust-and-estate-income`, `us-form-1120-c-corp` |
+| `Form 114` | `us-crypto-reporting`, `us-crypto-tax`, `us-fbar-and-fatca-8938`, `us-foreign-earned-income-2555` |
+| `Form 2106` | `us-form-1040-individual-return`, `us-sole-prop-bookkeeping` |
+| `Form 2210` | `us-form-1040-individual-return`, `us-quarterly-estimated-tax`, `us-secure-2-and-retirement-updates`, `us-state-estimated-tax-safe-harbors-matrix` |
+| `Form 2220` | `us-form-1120-c-corp`, `us-state-estimated-tax-safe-harbors-matrix` |
+| `Form 2350` | `us-fbar-and-fatca-8938`, `us-foreign-earned-income-2555` |
+| `Form 2441` | `us-form-1040-individual-return`, `us-sole-prop-bookkeeping` |
+| `Form 2553` | `us-form-1065-partnership`, `us-s-corp-election-decision`, `us-section-1202-qsbs`, `us-sole-prop-bookkeeping` |
+| `Form 2555` | `us-citizen-moving-abroad-tax`, `us-foreign-earned-income-2555`, `us-foreign-tax-credit-1116`, `us-form-1040-individual-return`, `us-sole-prop-bookkeeping` |
+| `Form 3115` | `us-federal-cost-segregation`, `us-r-and-d-section-174-and-41` |
+| `Form 3520` | `us-fbar-and-fatca-8938`, `us-form-5471-cfc-information`, `us-secure-2-and-retirement-updates` |
+| `Form 3520-A` | `us-fbar-and-fatca-8938`, `us-form-1041-trust-and-estate-income` |
+| `Form 3520/3520-A` | `us-citizen-moving-abroad-tax`, `us-fbar-and-fatca-8938`, `us-foreign-earned-income-2555` |
+| `Form 3800` | `us-form-1040-individual-return`, `us-form-1120-c-corp` |
+| `Form 3840` | `us-federal-section-1031-like-kind-exchange`, `us-section-1031-like-kind-exchange` |
+| `Form 4562` | `us-form-1120-c-corp`, `us-qbi-deduction`, `us-sole-prop-bookkeeping` |
+| `Form 4797` | `us-federal-section-1031-like-kind-exchange`, `us-form-1040-individual-return`, `us-form-1120-c-corp`, `us-section-1031-like-kind-exchange` |
+| `Form 4868` | `us-estate-gift-706-709`, `us-fbar-and-fatca-8938`, `us-federal-section-1031-like-kind-exchange`, `us-foreign-earned-income-2555`, `us-form-1040-individual-return`, `us-form-5471-cfc-information`, `us-section-1031-like-kind-exchange` |
+| `Form 5329` | `us-form-1040-individual-return`, `us-secure-2-and-retirement-updates` |
+| `Form 540` | `us-section-1031-like-kind-exchange`, `us-state-bonus-depreciation-conformity-matrix`, `us-state-formation-matrix` |
+| `Form 5471` | `us-citizen-moving-abroad-tax`, `us-fbar-and-fatca-8938`, `us-foreign-earned-income-2555`, `us-foreign-tax-credit-1116`, `us-form-1120-c-corp`, `us-form-5471-cfc-information`, `us-form-5472-foreign-owned-us`, `us-gilti-fdii-beat` |
+| `Form 5472` | `us-form-1120-c-corp`, `us-form-5471-cfc-information`, `us-form-5472-foreign-owned-us`, `us-gilti-fdii-beat` |
+| `Form 5500` | `us-form-941-940-payroll`, `us-self-employed-retirement` |
+| `Form 5500-EZ` | `us-secure-2-and-retirement-updates`, `us-self-employed-retirement` |
+| `Form 6198` | `us-form-1065-partnership`, `us-schedule-c-and-se-computation` |
+| `Form 6251` | `us-foreign-tax-credit-1116`, `us-form-1040-individual-return` |
+| `Form 6765` | `us-form-1120-c-corp`, `us-r-and-d-section-174-and-41` |
+| `Form 7004` | `us-form-1041-trust-and-estate-income`, `us-form-1065-partnership`, `us-form-1120-c-corp`, `us-form-5471-cfc-information`, `us-form-5472-foreign-owned-us` |
+| `Form 706` | `us-estate-gift-706-709`, `us-form-1040-individual-return`, `us-form-1041-trust-and-estate-income` |
+| `Form 709` | `us-crypto-reporting`, `us-crypto-tax`, `us-education-credits-8863`, `us-estate-gift-706-709`, `us-form-1041-trust-and-estate-income`, `us-section-1202-qsbs` |
+| `Form 8283` | `us-crypto-reporting`, `us-crypto-tax`, `us-form-1040-individual-return`, `us-nft-tax` |
+| `Form 8606` | `us-form-1040-individual-return`, `us-secure-2-and-retirement-updates`, `us-self-employed-retirement` |
+| `Form 8621` | `us-citizen-moving-abroad-tax`, `us-fbar-and-fatca-8938`, `us-foreign-earned-income-2555`, `us-foreign-tax-credit-1116`, `us-form-5471-cfc-information` |
+| `Form 8824` | `us-federal-section-1031-like-kind-exchange`, `us-section-1031-like-kind-exchange` |
+| `Form 8829` | `us-qbi-deduction`, `us-schedule-c-and-se-computation`, `us-sole-prop-bookkeeping` |
+| `Form 8832` | `us-form-1065-partnership`, `us-form-1120-c-corp`, `us-s-corp-election-decision`, `us-section-1202-qsbs` |
+| `Form 8833` | `us-foreign-earned-income-2555`, `us-foreign-tax-credit-1116` |
+| `Form 8854` | `us-citizen-moving-abroad-tax`, `us-foreign-earned-income-2555` |
+| `Form 8857` | `us-form-1040-individual-return`, `us-irs-collections-and-controversy` |
+| `Form 8858` | `us-fbar-and-fatca-8938`, `us-foreign-tax-credit-1116`, `us-form-5471-cfc-information`, `us-form-5472-foreign-owned-us`, `us-gilti-fdii-beat` |
+| `Form 8863` | `us-education-credits-8863`, `us-form-1040-individual-return` |
+| `Form 8865` | `us-fbar-and-fatca-8938`, `us-foreign-tax-credit-1116`, `us-form-1065-partnership`, `us-form-5471-cfc-information`, `us-form-5472-foreign-owned-us`, `us-gilti-fdii-beat` |
+| `Form 8938` | `us-citizen-moving-abroad-tax`, `us-crypto-reporting`, `us-crypto-tax`, `us-fbar-and-fatca-8938`, `us-foreign-earned-income-2555`, `us-form-1040-individual-return`, `us-form-5471-cfc-information`, `us-form-5472-foreign-owned-us`, `us-gilti-fdii-beat`, `us-secure-2-and-retirement-updates`, `us-sole-prop-bookkeeping` |
+| `Form 8949` | `us-1099-k-and-payment-processors`, `us-crypto-reporting`, `us-crypto-tax`, `us-form-1040-individual-return`, `us-section-1202-qsbs`, `us-sole-prop-bookkeeping` |
+| `Form 8959` | `us-form-1040-individual-return`, `us-form-941-940-payroll`, `us-schedule-c-and-se-computation` |
+| `Form 8960` | `us-form-1040-individual-return`, `us-form-941-940-payroll` |
+| `Form 8962` | `us-form-1040-individual-return`, `us-secure-2-and-retirement-updates`, `us-self-employed-health-insurance` |
+| `Form 8974` | `us-form-941-940-payroll`, `us-r-and-d-section-174-and-41` |
+| `Form 8975` | `us-form-1120-c-corp`, `us-form-5471-cfc-information`, `us-gilti-fdii-beat` |
+| `Form 8991` | `us-form-1120-c-corp`, `us-gilti-fdii-beat` |
+| `Form 8992` | `us-foreign-earned-income-2555`, `us-form-5471-cfc-information`, `us-gilti-fdii-beat` |
+| `Form 8993` | `us-form-1120-c-corp`, `us-gilti-fdii-beat` |
+| `Form 8995` | `us-form-1065-partnership`, `us-qbi-deduction` |
+| `Form 8995-A` | `us-form-1065-partnership`, `us-qbi-deduction` |
+| `Form 940` | `us-form-941-940-payroll`, `us-s-corp-election-decision`, `us-sole-prop-bookkeeping` |
+| `Form 941` | `us-form-941-940-payroll`, `us-irs-collections-and-controversy`, `us-r-and-d-section-174-and-41`, `us-sole-prop-bookkeeping` |
+| `Form 945` | `us-1099-nec-issuance`, `us-form-941-940-payroll` |
+| `Form 990` | `990-returns`, `us-form-1120-c-corp` |
+| `Form DE` | `us-state-new-hire-reporting-matrix`, `us-state-payroll-matrix` |
+| `Form FTB` | `us-pte-state-matrix`, `us-r-and-d-section-174-and-41` |
+| `Form SS-4` | `us-form-1041-trust-and-estate-income`, `us-form-1120-c-corp`, `us-form-5472-foreign-owned-us`, `us-section-1202-qsbs` |
+| `Form W-2` | `us-form-1040-individual-return`, `us-form-941-940-payroll`, `us-multi-state-residency-and-allocation`, `us-state-new-hire-reporting-matrix` |
+| `Form W-2c` | `us-form-1040-individual-return`, `us-form-941-940-payroll` |
+| `Form W-3` | `us-form-941-940-payroll`, `us-state-payroll-matrix` |
+| `Form W-4` | `us-form-941-940-payroll`, `us-quarterly-estimated-tax`, `us-state-new-hire-reporting-matrix` |
+| `SSA-1099` | `us-form-1040-individual-return`, `us-irs-collections-and-controversy` |
+
 ## fl
 
 | Form | Guides |
@@ -232,6 +340,13 @@ instance took.
 | `Form DR-15EZ` | `fl-sales-tax`, `fl-sales-use-tax` |
 | `Form DR-700016` | `fl-sales-tax`, `fl-sales-use-tax` |
 | `Form F-1120` | `fl-annual-report`, `fl-corporate-income-tax` |
+
+## foundation
+
+| Form | Guides |
+|---|---|
+| `DAC6` | `corporate-income-tax-workflow-base`, `cross-border-workflow-base`, `wealth-estate-tax-workflow-base` |
+| `Form 8938` | `crypto-tax-workflow-base`, `us-tax-workflow-base` |
 
 ## france
 
@@ -368,6 +483,20 @@ instance took.
 | `PMK-48` | `id-einvoice-coretax`, `indonesia-vat` |
 | `PPH21` | `id-payroll-pph21`, `references` |
 | `SE-17` | `id-einvoice-coretax`, `indonesia-vat` |
+
+## integrations
+
+| Form | Guides |
+|---|---|
+| `MT940` | `revolut-business-integration`, `wise-integration` |
+| `PO-8891` | `wise-integration`, `xero-integration` |
+
+## intelligence
+
+| Form | Guides |
+|---|---|
+| `ITR-4` | `deadline-engine`, `threshold-alerts` |
+| `SA100` | `deadline-engine`, `optimisation-advisor` |
 
 ## ireland
 
@@ -746,6 +875,90 @@ instance took.
 | `Form OR-40` | `README`, `or-cat`, `or-income-tax` |
 | `OR-40` | `or-cat`, `or-income-tax` |
 
+## orchestrator
+
+| Form | Guides |
+|---|---|
+| `CA12` | `ca-return-assembly`, `fr-freelance-intake`, `fr-return-assembly` |
+| `CA3` | `ca-return-assembly`, `fr-freelance-intake`, `fr-return-assembly` |
+| `CPP2` | `ca-freelance-intake`, `ca-return-assembly` |
+| `CT-3` | `ny-corporate-franchise-article-9a`, `ny-pte-tax-ptet`, `us-ny-freelance-intake` |
+| `Form 05-102` | `tx-margin-tax`, `us-tx-freelance-intake`, `us-tx-return-assembly` |
+| `Form 05-169` | `tx-margin-tax`, `us-tx-freelance-intake`, `us-tx-return-assembly` |
+| `Form 100` | `ca-llc-fee-and-tax`, `ca-pte-elective-tax` |
+| `Form 100S` | `ca-llc-fee-and-tax`, `ca-pte-elective-tax` |
+| `Form 1040` | `ca-540-individual-return`, `ny-it-201-resident-return`, `us-ca-return-assembly`, `us-federal-return-assembly`, `us-ny-return-assembly`, `us-tx-return-assembly` |
+| `Form 1040-ES` | `ny-pte-tax-ptet`, `us-ca-return-assembly`, `us-federal-return-assembly`, `us-ny-return-assembly`, `us-tx-return-assembly` |
+| `Form 1065` | `ca-llc-fee-and-tax`, `ca-pte-elective-tax`, `ny-pte-tax-ptet`, `tx-margin-tax`, `us-ca-freelance-intake`, `us-ny-freelance-intake`, `us-tx-freelance-intake` |
+| `Form 1120` | `ca-llc-fee-and-tax`, `ca-pte-elective-tax`, `ny-corporate-franchise-article-9a`, `ny-llc-filing-fee-it-204-ll`, `tx-margin-tax`, `us-ca-freelance-intake` |
+| `Form 1120-S` | `ca-pte-elective-tax`, `ny-pte-tax-ptet`, `tx-margin-tax`, `us-ca-freelance-intake` |
+| `Form 16A` | `in-freelance-intake`, `in-return-assembly` |
+| `Form 2210` | `us-ca-freelance-intake`, `us-ca-return-assembly`, `us-federal-return-assembly`, `us-ny-return-assembly`, `us-tx-return-assembly` |
+| `Form 2553` | `ca-llc-fee-and-tax`, `ca-pte-elective-tax`, `ny-llc-filing-fee-it-204-ll`, `us-ca-freelance-intake`, `us-ny-freelance-intake`, `us-tx-freelance-intake` |
+| `Form 26AS` | `in-freelance-intake`, `in-return-assembly` |
+| `Form 3522` | `ca-estimated-tax-540es`, `ca-llc-fee-and-tax`, `ca-pte-elective-tax`, `us-ca-return-assembly` |
+| `Form 3536` | `ca-estimated-tax-540es`, `ca-llc-fee-and-tax`, `us-ca-freelance-intake`, `us-ca-return-assembly` |
+| `Form 3853` | `ca-540-individual-return`, `ny-it-201-resident-return`, `us-ca-return-assembly` |
+| `Form 4562` | `us-ca-return-assembly`, `us-federal-return-assembly` |
+| `Form 540` | `ca-540-individual-return`, `ca-llc-fee-and-tax`, `ca-pte-elective-tax`, `california-sales-tax`, `us-ca-return-assembly` |
+| `Form 540-ES` | `ca-estimated-tax-540es`, `ca-llc-fee-and-tax`, `ca-pte-elective-tax`, `us-ca-return-assembly` |
+| `Form 540NR` | `ca-540-individual-return`, `ca-pte-elective-tax`, `us-ca-freelance-intake` |
+| `Form 568` | `ca-540-individual-return`, `ca-llc-fee-and-tax`, `ca-pte-elective-tax`, `global-router`, `us-ca-return-assembly` |
+| `Form 5805` | `ca-estimated-tax-540es`, `us-ca-freelance-intake`, `us-ca-return-assembly` |
+| `Form 7206` | `us-ca-return-assembly`, `us-federal-return-assembly` |
+| `Form 8829` | `us-ca-return-assembly`, `us-federal-return-assembly` |
+| `Form 8832` | `ca-llc-fee-and-tax`, `ny-llc-filing-fee-it-204-ll` |
+| `Form 8949` | `global-router`, `us-ca-freelance-intake` |
+| `Form 8962` | `us-ca-return-assembly`, `us-federal-return-assembly` |
+| `Form 8995` | `ca-540-individual-return`, `us-ca-return-assembly`, `us-federal-return-assembly`, `us-ny-return-assembly`, `us-tx-return-assembly` |
+| `Form 8995-A` | `us-ca-freelance-intake`, `us-ca-return-assembly`, `us-federal-return-assembly` |
+| `Form CT-3` | `ny-corporate-franchise-article-9a`, `ny-llc-filing-fee-it-204-ll` |
+| `Form CT-3-S` | `ny-llc-filing-fee-it-204-ll`, `ny-pte-tax-ptet` |
+| `Form IT-201` | `ny-it-201-resident-return`, `ny-llc-filing-fee-it-204-ll`, `ny-payroll`, `ny-pte-tax-ptet`, `us-ny-freelance-intake` |
+| `Form IT-203` | `ny-it-201-resident-return`, `ny-llc-filing-fee-it-204-ll`, `ny-payroll`, `ny-pte-tax-ptet`, `us-ny-freelance-intake` |
+| `Form IT-203-A` | `ny-it-201-resident-return`, `ny-llc-filing-fee-it-204-ll` |
+| `Form IT-204` | `ny-llc-filing-fee-it-204-ll`, `ny-pte-tax-ptet` |
+| `Form IT-204-LL` | `ny-it-201-resident-return`, `ny-llc-filing-fee-it-204-ll` |
+| `Form IT-2105` | `ny-it-201-resident-return`, `us-ny-freelance-intake`, `us-ny-return-assembly` |
+| `Form IT-225` | `ny-it-201-resident-return`, `ny-pte-tax-ptet` |
+| `Form MTA-6` | `ny-payroll`, `us-ny-freelance-intake`, `us-ny-return-assembly` |
+| `Form NYC-202` | `ny-it-201-resident-return`, `ny-llc-filing-fee-it-204-ll`, `us-ny-freelance-intake`, `us-ny-return-assembly` |
+| `Form W-2` | `ny-payroll`, `tx-margin-tax` |
+| `GST34` | `ca-freelance-intake`, `ca-return-assembly` |
+| `GSTR-1` | `in-freelance-intake`, `in-return-assembly` |
+| `GSTR-3B` | `global-router`, `in-freelance-intake`, `in-return-assembly` |
+| `IN1` | `au-freelance-intake`, `br-freelance-intake`, `ca-freelance-intake`, `de-freelance-intake`, `es-freelance-intake`, `fr-freelance-intake`, `in-freelance-intake`, `jp-freelance-intake`, `mt-freelance-intake`, `nl-freelance-intake`, `uk-freelance-intake`, `us-ca-freelance-intake` |
+| `IN10` | `au-freelance-intake`, `br-freelance-intake`, `ca-freelance-intake`, `de-freelance-intake`, `es-freelance-intake`, `fr-freelance-intake`, `in-freelance-intake`, `jp-freelance-intake`, `mt-freelance-intake`, `nl-freelance-intake`, `uk-freelance-intake`, `us-ca-freelance-intake` |
+| `IN11` | `au-freelance-intake`, `br-freelance-intake`, `ca-freelance-intake`, `de-freelance-intake`, `es-freelance-intake`, `fr-freelance-intake`, `in-freelance-intake`, `jp-freelance-intake`, `mt-freelance-intake`, `nl-freelance-intake`, `uk-freelance-intake`, `us-ca-freelance-intake` |
+| `IN12` | `au-freelance-intake`, `br-freelance-intake`, `ca-freelance-intake`, `de-freelance-intake`, `es-freelance-intake`, `fr-freelance-intake`, `in-freelance-intake`, `jp-freelance-intake`, `mt-freelance-intake`, `nl-freelance-intake`, `uk-freelance-intake`, `us-ca-freelance-intake` |
+| `IN13` | `br-freelance-intake`, `ca-freelance-intake`, `de-freelance-intake`, `fr-freelance-intake`, `jp-freelance-intake`, `uk-freelance-intake` |
+| `IN2` | `au-freelance-intake`, `br-freelance-intake`, `ca-freelance-intake`, `de-freelance-intake`, `es-freelance-intake`, `fr-freelance-intake`, `in-freelance-intake`, `jp-freelance-intake`, `mt-freelance-intake`, `nl-freelance-intake`, `uk-freelance-intake`, `us-ca-freelance-intake` |
+| `IN3` | `au-freelance-intake`, `br-freelance-intake`, `ca-freelance-intake`, `de-freelance-intake`, `es-freelance-intake`, `fr-freelance-intake`, `in-freelance-intake`, `jp-freelance-intake`, `mt-freelance-intake`, `nl-freelance-intake`, `uk-freelance-intake`, `us-ca-freelance-intake` |
+| `IN4` | `au-freelance-intake`, `br-freelance-intake`, `ca-freelance-intake`, `de-freelance-intake`, `es-freelance-intake`, `fr-freelance-intake`, `in-freelance-intake`, `jp-freelance-intake`, `mt-freelance-intake`, `nl-freelance-intake`, `uk-freelance-intake`, `us-ca-freelance-intake` |
+| `IN5` | `au-freelance-intake`, `br-freelance-intake`, `ca-freelance-intake`, `de-freelance-intake`, `es-freelance-intake`, `fr-freelance-intake`, `in-freelance-intake`, `jp-freelance-intake`, `mt-freelance-intake`, `nl-freelance-intake`, `uk-freelance-intake`, `us-ca-freelance-intake` |
+| `IN6` | `au-freelance-intake`, `br-freelance-intake`, `ca-freelance-intake`, `de-freelance-intake`, `es-freelance-intake`, `fr-freelance-intake`, `in-freelance-intake`, `jp-freelance-intake`, `mt-freelance-intake`, `nl-freelance-intake`, `uk-freelance-intake`, `us-ca-freelance-intake` |
+| `IN7` | `au-freelance-intake`, `br-freelance-intake`, `ca-freelance-intake`, `de-freelance-intake`, `es-freelance-intake`, `fr-freelance-intake`, `in-freelance-intake`, `jp-freelance-intake`, `mt-freelance-intake`, `nl-freelance-intake`, `uk-freelance-intake`, `us-ca-freelance-intake` |
+| `IN8` | `au-freelance-intake`, `br-freelance-intake`, `ca-freelance-intake`, `de-freelance-intake`, `es-freelance-intake`, `fr-freelance-intake`, `in-freelance-intake`, `jp-freelance-intake`, `mt-freelance-intake`, `nl-freelance-intake`, `uk-freelance-intake`, `us-ca-freelance-intake` |
+| `IN9` | `au-freelance-intake`, `br-freelance-intake`, `ca-freelance-intake`, `de-freelance-intake`, `es-freelance-intake`, `fr-freelance-intake`, `in-freelance-intake`, `jp-freelance-intake`, `mt-freelance-intake`, `nl-freelance-intake`, `uk-freelance-intake`, `us-ca-freelance-intake` |
+| `IT-201` | `global-router`, `ny-it-201-resident-return`, `ny-llc-filing-fee-it-204-ll`, `ny-payroll`, `us-ny-freelance-intake`, `us-ny-return-assembly` |
+| `IT-203` | `ny-it-201-resident-return`, `ny-payroll`, `ny-pte-tax-ptet`, `us-ny-freelance-intake`, `us-ny-return-assembly` |
+| `IT-204` | `ny-it-201-resident-return`, `ny-llc-filing-fee-it-204-ll`, `ny-pte-tax-ptet` |
+| `IT-2105` | `ny-it-201-resident-return`, `us-ny-return-assembly` |
+| `IT-225` | `ny-it-201-resident-return`, `ny-pte-tax-ptet`, `us-ny-return-assembly` |
+| `ITR-3` | `global-router`, `in-freelance-intake`, `in-return-assembly` |
+| `ITR-4` | `in-freelance-intake`, `in-return-assembly` |
+| `NYC-202` | `ny-it-201-resident-return`, `us-ny-freelance-intake`, `us-ny-return-assembly` |
+| `NYC-202S` | `ny-it-201-resident-return`, `ny-llc-filing-fee-it-204-ll` |
+| `NYS-50` | `ny-it-201-resident-return`, `ny-payroll` |
+| `SA100` | `global-router`, `uk-freelance-intake`, `uk-return-assembly` |
+| `SA102` | `uk-freelance-intake`, `uk-return-assembly` |
+| `SA103` | `global-router`, `uk-freelance-intake`, `uk-return-assembly` |
+| `SA302` | `uk-freelance-intake`, `uk-return-assembly` |
+| `TA22` | `mt-freelance-intake`, `mt-return-assembly` |
+| `TA24` | `global-router`, `mt-freelance-intake`, `mt-return-assembly` |
+| `TP-1` | `ca-freelance-intake`, `ca-return-assembly` |
+| `VAT100` | `uk-freelance-intake`, `uk-return-assembly` |
+
 ## pa
 
 | Form | Guides |
@@ -757,6 +970,12 @@ instance took.
 | `PA-3` | `pa-sales-tax`, `pennsylvania-sales-tax` |
 | `PA-40` | `pa-income-tax`, `pa-local-eit` |
 | `REV-1220` | `pa-sales-tax`, `pennsylvania-sales-tax` |
+
+## patterns
+
+| Form | Guides |
+|---|---|
+| `ITR-3` | `global-home-office`, `global-vehicle-expenses` |
 
 ## philippines
 
@@ -869,6 +1088,23 @@ instance took.
 | `FA2025` | `tanzania-income-tax`, `tanzania-tax-optimization`, `tanzania-withholding-tax` |
 | `Form ITX` | `tanzania-income-tax`, `tanzania-social-contributions` |
 
+## templates
+
+| Form | Guides |
+|---|---|
+| `EC-1` | `crypto-digital-assets-template`, `dividend-investment-income-template`, `employer-payroll-template`, `estimated-provisional-tax-template`, `rental-property-income-template` |
+| `EC-10` | `crypto-digital-assets-template`, `dividend-investment-income-template`, `employer-payroll-template`, `estimated-provisional-tax-template`, `rental-property-income-template` |
+| `EC-2` | `crypto-digital-assets-template`, `dividend-investment-income-template`, `employer-payroll-template`, `estimated-provisional-tax-template`, `rental-property-income-template` |
+| `EC-3` | `crypto-digital-assets-template`, `dividend-investment-income-template`, `employer-payroll-template`, `estimated-provisional-tax-template`, `rental-property-income-template` |
+| `EC-4` | `crypto-digital-assets-template`, `dividend-investment-income-template`, `employer-payroll-template`, `estimated-provisional-tax-template`, `rental-property-income-template` |
+| `EC-5` | `crypto-digital-assets-template`, `dividend-investment-income-template`, `employer-payroll-template`, `estimated-provisional-tax-template`, `rental-property-income-template` |
+| `EC-6` | `crypto-digital-assets-template`, `dividend-investment-income-template`, `employer-payroll-template`, `estimated-provisional-tax-template`, `rental-property-income-template` |
+| `EC-7` | `crypto-digital-assets-template`, `dividend-investment-income-template`, `employer-payroll-template`, `estimated-provisional-tax-template`, `rental-property-income-template` |
+| `EC-8` | `crypto-digital-assets-template`, `dividend-investment-income-template`, `employer-payroll-template`, `estimated-provisional-tax-template`, `rental-property-income-template` |
+| `EC-9` | `crypto-digital-assets-template`, `dividend-investment-income-template`, `employer-payroll-template`, `estimated-provisional-tax-template`, `rental-property-income-template` |
+| `Form 8949` | `crypto-digital-assets-template`, `rental-property-income-template` |
+| `SA108` | `crypto-digital-assets-template`, `dividend-investment-income-template` |
+
 ## thailand
 
 | Form | Guides |
@@ -951,6 +1187,12 @@ instance took.
 | `Form 760` | `README`, `va-corporate-tax-and-bpol`, `va-income-tax`, `va-payroll`, `va-sales-tax` |
 | `Form 763` | `va-corporate-tax-and-bpol`, `va-income-tax`, `va-payroll` |
 
+## verticals
+
+| Form | Guides |
+|---|---|
+| `IR35` | `construction-sector`, `freelance-developer` |
+
 ## vt
 
 | Form | Guides |
@@ -980,4 +1222,4 @@ instance took.
 
 ---
 
-106 jurisdictions, 435 shared form identifiers.
+115 jurisdictions, 632 shared form identifiers.

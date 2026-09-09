@@ -4,7 +4,7 @@ description: Use this skill whenever asked about UK property income or rental in
 version: 1.1
 jurisdiction: GB
 tax_year: 2025
-last_updated: 2026-09-09
+last_updated: 2026-09-10
 reviewed_by: James Power
 review_status: current
 depends_on:

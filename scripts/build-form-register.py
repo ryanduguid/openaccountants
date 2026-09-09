@@ -1,33 +1,12 @@
-"""Build a per-jurisdiction register of form identifiers for human review.
+"""Build a per-jurisdiction register of form identifiers shared by guides.
 
-`docs/COVERAGE.md` records why silent misuse of a form name cannot be caught by
-consistency checking: the misusing guide never defines the term, so there is no
-second claim to contradict. Malta's `mt-estimated-tax` used `TA24` -- the rental
-final-tax form -- twenty-four times as its name for the self-employed income tax
-return, agreed with itself throughout, and passed every structural check here.
+Single-guide identifiers, currencies and known non-form tokens are excluded.
+Federal guides share one group; international and US-state guides group by folder.
+Review the resulting list manually: a shared identifier is not proof of misuse.
 
-Tooling cannot close that. What tooling can do is make the human pass cheap.
-This lists every form identifier used in more than one guide in a jurisdiction,
-with the guides that use it, so a reviewer who knows the jurisdiction can scan a
-page instead of reading a pack. The Malta defect is obvious in this shape --
-a rental form appearing in a provisional-tax guide -- and takes a second to see
-once the guides are listed beside the token.
-
-Written to `docs/FORM-REGISTER.md`. Regenerate with:
-    python3 scripts/build-form-register.py
-
-Single-guide forms are omitted: a form named once cannot be inconsistent with a
-sibling, and including them buried the register. Currency codes are excluded --
-`USD 700` is not a form, and an early version of this listed several.
+Usage: python3 scripts/build-form-register.py [--selftest]
+Output: docs/FORM-REGISTER.md
 """
-# Known gap, from the PR #16 review. The group key is the third path component,
-# which for skills/federal/<guide>.md is the FILENAME rather than a jurisdiction.
-# So no two federal guides can ever share a group, and a form used by both --
-# Form 1099-NEC appears in us-1099-nec-issuance and us-1099-k-and-payment-
-# processors -- never registers as shared. The register's federal section is
-# therefore absent rather than empty, and the published total under-counts.
-# Normalising those paths to a single "federal" group is the fix; it moves the
-# count in docs/COVERAGE.md, so it belongs in its own change rather than here.
 import os, re, collections
 
 # The lookbehind rejects a preceding hyphen as well as a letter or digit, and
@@ -81,7 +60,8 @@ def main():
                 tok = re.sub(r'\s+', ' ', m.group(1)).strip()
                 if CUR.match(tok) or NOTFORM.match(tok):
                     continue
-                jur[parts[2]][tok].add(os.path.basename(p)[:-3])
+                jurisdiction = parts[2] if len(parts) >= 4 else parts[1]
+                jur[jurisdiction][tok].add(os.path.basename(p)[:-3])
 
     rows = tokens = 0
     out = ['# Form register',

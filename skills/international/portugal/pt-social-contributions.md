@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Portuguese self-employed social
 version: 2.0
 jurisdiction: PT
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-10
 reviewed_by: Mário Jorge da costa Vale
 review_status: current
 tier: 1

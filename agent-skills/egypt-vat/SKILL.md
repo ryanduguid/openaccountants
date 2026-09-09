@@ -29,7 +29,7 @@ metadata:
 | Reduced rate | 5% (selected equipment, machinery, some agricultural inputs) |
 | Zero rate | 0% (exports of goods and services, international transport, diplomatic supplies) |
 | Exempt | Financial services, insurance, medical services, educational services, residential rent, utilities (in certain cases) |
-| Registration threshold | **EGP 500,000** of annual turnover, under VAT Law No. 67 of 2016 and as published by ETA. The EGP 250,000 figure that circulates widely belongs to the e-receipt rollout (ETA Decision No. 281 of 2025), not to VAT registration |
+| Registration threshold | **EGP 500,000** of annual turnover, under VAT Law No. 67 of 2016 and as published by ETA. ETA Decision No. 281 of 2025 concerns a named-taxpayer e-receipt rollout; it does not establish a general EGP 250,000 VAT threshold |
 | Tax authority | Egyptian Tax Authority (ETA — مصلحة الضرائب المصرية) |
 | Filing portal | ETA e-Invoice portal — https://invoicing.eta.gov.eg |
 | Return form | VAT Return (إقرار ضريبة القيمة المضافة) |

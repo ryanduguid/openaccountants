@@ -293,8 +293,8 @@ If any upstream content skill fails to produce validated output, the assembly sk
 4. Lodge any outstanding BAS quarters
 
 ### Note on lodgement deadlines:
-- Self-lodgers: 31 October following the 30 June year-end (31 October 2026 for the 2025-26 year)
-- Tax agent lodgement: extended deadlines apply, running to **15 May** following the self-lodge date (15 May 2027 for 2025-26); earlier categories from March
+- Self-lodgers: 31 October 2025 for the 2024-25 year covered by this package.
+- Tax agent lodgement: confirm the client-specific ATO date. Eligible 2024-25 clients not required earlier generally have 15 May 2026; engagement before 31 October does not guarantee that date.
 
 ### Quarterly obligations for 2025-26:
 - BAS Q1 (Jul-Sep): lodge and pay by 28 October 2025

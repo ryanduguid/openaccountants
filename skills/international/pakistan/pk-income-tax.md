@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Pakistan personal income tax fo
 version: 1.0
 jurisdiction: PK
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-10
 reviewed_by: Ibrar Ali
 review_status: current
 depends_on:

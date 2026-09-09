@@ -4,7 +4,7 @@ description: French tax audit procedures, penalties, and taxpayer rights (contr√
 version: 1.0
 jurisdiction: FR
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-10
 review_status: pending_review
 category: international
 tier: 2

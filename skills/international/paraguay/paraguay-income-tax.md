@@ -5,7 +5,7 @@ version: 0.1
 jurisdiction: PY
 tax_year: 2025
 tax_year_notes: "2025 (minimum-wage table also stated at the 1 July 2026 level of PYG 3,044,000)"
-last_updated: 2026-09-09
+last_updated: 2026-09-10
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -259,7 +259,7 @@ Supermarket / private living expense. Not directly related to the taxed activity
 ### Example 4 -- IPS Employee Contribution at Minimum Wage
 
 **Input line:**
-`10/01/2025 ; ITAU DEBITO ; IPS APORTE OBRERO ; ENERO 2025 ; -260,914 ; PYG`
+`10/01/2026 ; ITAU DEBITO ; IPS APORTE OBRERO ; ENERO 2026 ; -260,914 ; PYG`
 
 **Reasoning:**
 Employee IPS contribution (aporte obrero) of 9.0% on the legal minimum wage. This example is a pay period in the year to 30 June 2026, when the minimum wage was ₲2,899,048: 2,899,048 × 9.0% = ₲260,914.32 → ₲260,914. From 1 July 2026 the floor is ₲3,044,000 and the same 9% is ₲273,960. [PwC other-taxes; MTESS Res. 677/2025 and 670/2026] IPS is social security, recorded separately from the IRP deduction analysis; it is not a Box-style IRP expense line.

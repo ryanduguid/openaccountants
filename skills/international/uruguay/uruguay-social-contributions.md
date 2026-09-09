@@ -5,7 +5,7 @@ version: 0.1
 jurisdiction: UY
 tax_year: 2025
 tax_year_notes: "2025 (2026 BPC, FONASA split, retirement ceiling and minimum wage stated alongside)"
-last_updated: 2026-09-09
+last_updated: 2026-09-10
 review_status: pending_review
 depends_on:
   - social-contributions-workflow-base
@@ -15,6 +15,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
 # Uruguay Social Contributions (BPS) Skill v0.1 (Tier 2 — research-verified, reviewer sign-off pending)
+
+> **2026 retirement ceiling requires period verification.** The UYU 288,836 figure is reported for February 2026 onward. Its January application has not been established here. Confirm the BPS ceiling and pension regime for the pay month before using any retirement calculation or template below; do not assume that the BPC and retirement ceiling change on the same date.
 
 ## Uruguay Social Contributions (BPS) Skill v0.1 (Tier 2 — research-verified, reviewer sign-off pending)
 

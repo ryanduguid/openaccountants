@@ -1,56 +1,9 @@
 #!/usr/bin/env python3
-"""Find guides that still describe as forthcoming something that has already happened.
+"""Find dated statements that may still describe a past event as forthcoming.
 
-A tax corpus ages in a particular way. A rate written before it took effect is
-phrased in the future — "commences 1 July 2026", "TBC pending Royal Assent",
-"expected to rise" — and once that date passes the sentence becomes false while
-every number in it stays right. No rate check sees this, because there is no
-wrong rate: the defect is the tense.
-
-Two real errors were found this way:
-
-  * au-super-guarantee (agent-skills) said payday super "commences 1 July 2026"
-    and gave quarterly deadlines and an 11.5% SG rate. We are past that date:
-    payday super is in force, the rate is 12%, and the ATO Small Business Super
-    Clearing House it pointed at has closed.
-  * uk-income-tax-sa100 held the 2026-27 savings and property rates open as "TBC
-    pending Finance Bill enactment" in four places while its own rate table two
-    sections earlier already carried the settled answer — the file contradicted
-    itself. The agent-skills copy also had the additional rate as 45%, not 47%.
-
-**Two gaps that let a real error through, found by hitting it by hand.** Taiwan
-called its 15% alternative minimum tax for large multinational groups "proposed
-... from 2025" in two guides. It was announced in August 2024, took effect on
-1 January 2025 and first appeared in returns filed in 2026, so the rate and the
-date were both right and the word "proposed" was the error. This checker could
-not see it twice over:
-
-  * "proposed" was not anticipatory language here. Nor were "proposal",
-    "planned", "slated" or "scheduled to". All are now.
-  * The date pattern required a month name, so "from 2025" was invisible while
-    "from January 2025" was not. A bare year after from/effective/as of/starting
-    is now read as 1 January of that year.
-
-Both are in the selftest, because a vocabulary gap is silent and this one hid a
-rate a reader would decline to apply.
-
-Precision is low by design: it flags roughly 100 lines to surface a handful.
-Two false-positive classes are excluded. Provenance is one — "current as of
-April 2026", "v2.0, rewritten April 2026. Awaiting validation" — and it is the
-larger. The other was introduced by the bare-year change and had to be closed
-straight away: a line naming a past enactment and a future commencement, like
-"Royal Assent 26 June 2026 is LAW: from 1 July 2027 the CGT discount is
-reduced". That line is anticipating 2027, and flagging the assent date says it
-is stale when it is exactly current. Any line carrying a date still ahead is
-skipped for that reason.
-
-Together those took the corpus from 79 hits to 107: 24 of the original 79 were
-provenance or prospective statements now correctly suppressed, and 52 new
-candidates appeared. Every one of the 24 was read before being suppressed and
-none was an error.
-Read each hit; a date in the past is not by itself an error.
-
-Set the comparison date with --today YYYY-MM-DD (default: today).
+Matches anticipatory wording with named dates or bare commencement years.
+Skips provenance and lines with future dates. A past proposed start date does
+not establish enactment; every hit needs source review.
 
 Usage: python3 scripts/check-stale-futures.py [--today YYYY-MM-DD] [dir ...]
 Exit status is always 0: this is a review aid, not a gate.
@@ -79,9 +32,7 @@ FUTURE = re.compile(
     r'|commences?\b|is\s+expected|are\s+expected|expected\s+to|upcoming\b|forthcoming\b'
     r'|pending\b|not\s+yet\b|awaiting\b|once\s+enacted|when\s+enacted|until\s+Royal\s+Assent'
     r'|to\s+be\s+confirmed|TBC\b|due\s+to\s+(?:commence|start|take\s+effect)'
-    # A rate called "proposed" after it took effect is the same defect with no
-    # number wrong. Taiwan's 15% MNE rate was law from 1 January 2025 and two
-    # guides still called it a proposal; a reader does not apply a proposed rate.
+    # Proposals with past intended dates need review; they may remain proposals.
     r'|proposed\b|proposal\b|planned\b|slated\b|scheduled\s+to'
     r'|set\s+to\s+(?:rise|increase|change|apply|take))', re.I)
 

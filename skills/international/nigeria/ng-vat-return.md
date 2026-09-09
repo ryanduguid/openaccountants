@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Nigerian VAT returns for self-e
 version: 2.0
 jurisdiction: NG
 tax_year: 2025
-last_updated: 2026-09-09
+last_updated: 2026-09-10
 reviewed_by: Omolola Fasasi 
 review_status: current
 depends_on:

@@ -5,7 +5,7 @@ version: 0.1
 jurisdiction: BO
 tax_year: 2025
 tax_year_notes: "2025 (SMN-derived thresholds also stated at the 2026 SMN of Bs 3,300, DS 5516)"
-last_updated: 2026-09-09
+last_updated: 2026-09-10
 review_status: pending_review
 depends_on:
   - payroll-workflow-base

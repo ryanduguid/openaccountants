@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Egypt's simplified or SME tax r
 version: 1.0
 jurisdiction: EG
 tax_year: 2026
-last_updated: 2026-07-13
+last_updated: 2026-09-10
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -142,7 +142,7 @@ The regime simplifies filing cadence, not the existence of the taxes.
 
 ### Key VAT points
 
-- **VAT registration still applies** — VAT registration still applies at the general turnover threshold (**EGP 250,000** from 1 January 2026, halved from EGP 500,000 by Resolution No. 281 of 2025). Law 6/2025 changes how often you file, not whether you must register.  _(VAT Law No. 67 of 2016)_
+- **VAT registration still applies** - The general annual turnover threshold is EGP 500,000. Law 6/2025 changes filing frequency, not the registration threshold. ETA Decision 281/2025 concerns named taxpayers in an e-receipt rollout phase. _([Egyptian Tax Authority](https://www.eta.gov.eg/ar/node/1379); VAT Law No. 67 of 2016)_
 - **Standard VAT rate** — 14% % (verify current; certain goods/services have special rates such as the 5% machinery rate or the schedule/table-tax items)  _(VAT Law No. 67 of 2016)_
 - **E-invoicing/e-receipt precondition** — E-invoicing / e-receipt integration is a precondition for staying in the regime — non-compliance can forfeit the incentives.  _(Law No. 6 of 2025)_
 

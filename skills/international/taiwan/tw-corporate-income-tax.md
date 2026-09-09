@@ -3,7 +3,7 @@ name: tw-corporate-income-tax
 description: "Source-cited draft: corporate income tax for Taiwan (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
 jurisdiction: TW
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-10
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -18,7 +18,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Small-profit threshold** — Enterprises with annual taxable income of TWD 120,000 or less are exempt; a tapering cap limits tax just above this threshold TWD  _(Income Tax Act (https://taxsummaries.pwc.com/taiwan/corporate/taxes-on-corporate-income))_
 - **Tax base** — Resident enterprises: worldwide net income (with foreign tax credit). Non-resident enterprises: Taiwan-source income only  _(Income Tax Act (https://taxsummaries.pwc.com/taiwan/corporate/income-determination))_
 - **Surtax on undistributed earnings** — Additional 5% on current-year earnings not distributed by the end of the following year (does not apply to Taiwan branches of foreign companies) percent  _(Income Tax Act (https://taxsummaries.pwc.com/taiwan/corporate/taxes-on-corporate-income))_
-- **Corporate Income Basic Tax (AMT)** — 12% standard rate. A **15%** rate for in-scope MNE groups -- those with consolidated group revenue of EUR 750m or more in at least two of the four preceding fiscal years -- was announced by the Ministry of Finance on 28 August 2024 to take effect from 1 January 2025, and the Executive Yuan can set the IBT rate within statutory limits without a Legislative Yuan amendment. **Its status is genuinely unsettled and this guide does not assert either way**: PwC and the MoF's own announcement still describe the 15% as a draft proposal. Compute at 15% for an in-scope group and flag it, since understating an AMT is the taxpayer's exposure, but do not tell a client the rate is settled law -- confirm the current position with the MoF before filing. Note it is not a Qualified Domestic Minimum Top-up Tax for Pillar Two purposes percent  _(Income Basic Tax Act; PwC Taiwan corporate taxes-on-corporate-income; MoF announcement of 28 Aug 2024)_
+- **Corporate Income Basic Tax (AMT)** — 12% standard rate. A **15%** rate for in-scope MNE groups -- those with consolidated group revenue of EUR 750m or more in at least two of the four preceding fiscal years -- was announced by the Ministry of Finance on 28 August 2024 to take effect from 1 January 2025, and the Executive Yuan can set the IBT rate within statutory limits without a Legislative Yuan amendment. **Its status is genuinely unsettled and this guide does not assert either way**: PwC and the MoF's own announcement still describe the 15% as a draft proposal. Confirm the current MoF instrument before calculating a liability for an in-scope group. A 15% sensitivity calculation must be labelled as a scenario, not as tax due. Note it is not a Qualified Domestic Minimum Top-up Tax for Pillar Two purposes percent  _(Income Basic Tax Act; PwC Taiwan corporate taxes-on-corporate-income; MoF announcement of 28 Aug 2024)_
 
 ## Withholding tax on outbound payments
 

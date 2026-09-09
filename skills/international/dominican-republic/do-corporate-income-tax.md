@@ -3,7 +3,7 @@ name: do-corporate-income-tax
 description: "Source-cited draft: corporate income tax for Dominican Republic (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
 jurisdiction: DO
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-10
 reviewed_by: Miguel Lantigua
 review_status: current
 tier: 2

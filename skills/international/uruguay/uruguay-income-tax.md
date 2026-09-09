@@ -5,7 +5,7 @@ version: 0.1
 jurisdiction: UY
 tax_year: 2025
 tax_year_notes: "2025 (2026 scale, BPC and filing calendar stated alongside)"
-last_updated: 2026-09-09
+last_updated: 2026-09-10
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -15,6 +15,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
 # Uruguay Income Tax (IRPF) -- Resident Individual
+
+> **2026 retirement ceiling requires period verification.** The UYU 288,836 figure is reported for February 2026 onward. Its January application has not been established here. Confirm the BPS ceiling and pension regime for the pay month before using any retirement calculation or template below; do not assume that the BPC and retirement ceiling change on the same date.
 
 ## Uruguay Income Tax (IRPF) -- Resident Individual Skill v0.1
 
@@ -246,7 +248,7 @@ These are NOT income tax but are deductible items feeding the IRPF deduction cre
 | > 2.5 BPC | with spouse, with children | 8% |
 
 - **Employer FONASA rate** — 5% (plus Complemento de Cuota Mutual where applicable)  _(BPS, Tasas FONASA (bps.gub.uy/10314/tasas-fonasa.html).)_
-- **2.5 BPC monthly threshold value** — UYU 17,160/month in 2026 (at BPC 6,864) and UYU 16,440/month in 2025 (at BPC 6,576) UYU  _(BPS, Tasas FONASA (bps.gub.uy/10314/tasas-fonasa.html); Decreto N° 11/026 for the 2026 BPC.)_
+- **2.5 BPC monthly threshold value** — UYU 17,160/month in 2026 (at BPC 6,864) and UYU 16,440/month in 2025 (at BPC 6,576) UYU  _(BPS, Tasas FONASA (bps.gub.uy/10314/tasas-fonasa.html); Decreto N° 11/026 for the 2040 BPC.)_
 
 ### 4.3 Other BPS Funds
 
@@ -277,7 +279,7 @@ Employee total range arithmetic: minimum = 15 + 3 + 0.10 = 18.10%; maximum = 15 
 | Item | Value |
 | --- | --- |
 | Max nominal monthly income subject to jubilatorio | UYU 288,836/month in 2026; UYU 272,564/month in 2025 |
-| Max personal jubilatorio contribution | UYU 40,885/month |
+| Max personal jubilatorio contribution | 15% of the applicable monthly ceiling: UYU 43,325.40 at 288,836; UYU 40,884.60 at 272,564. Confirm the ceiling for the pay period before use |
 
 The ceiling is not a BPC multiple — BPS sets it separately and it rose 5.97% for 2026, against 4.38% for the BPC — so it cannot be derived and has to be read off the BPS table each year. [RESEARCH GAP — reviewer to confirm both figures against the BPS "topes de cotización" table. The 2025 value (UYU 272,564 income / UYU 40,885 contribution) was found only in a secondary calculator (misalario.uy); the 2026 value of UYU 288,836 is corroborated by two independent Uruguayan payroll sources but was likewise not read off a BPS page.]
 
@@ -323,12 +325,12 @@ The rates are **14%** at or below 15 BPC/month (180 BPC a year, excluding aguina
 | --- | --- |
 | Personal BPS jubilatorio contribution | Actual (15%) |
 | FONASA + FRL personal contributions | Actual |
-| Fictitious deduction per dependent child | 13 BPC/year (UYU 89,232 at BPC 6,864 for 2026; UYU 85,488 at BPC 6,576 for 2025) |
-| Fictitious deduction per disabled child | 26 BPC/year (UYU 178,464 at BPC 6,864 for 2026; UYU 170,976 at BPC 6,576 for 2025) |
+| Fictitious deduction per dependent child | 20 BPC/year (UYU 137,280 at BPC 6,864 for 2026; UYU 131,520 at BPC 6,576 for 2025) |
+| Fictitious deduction per disabled child | 40 BPC/year (UYU 274,560 at BPC 6,864 for 2026; UYU 263,040 at BPC 6,576 for 2025) |
 | Housing rent | 6% of rent paid |
 | Mortgage interest | Capped (see DGI cap) |
 
-Peso conversions for 2026 are 13 BPC × 6,864 = 89,232 and 26 BPC × 6,864 = 178,464; for 2025, 13 × 6,576 = 85,488 and 26 × 6,576 = 170,976. [RESEARCH GAP — reviewer to confirm the mortgage-interest cap amount against DGI.]
+[DGI confirms deductions of 20 BPC per minor child and 40 BPC per child with disability](https://www.gub.uy/direccion-general-impositiva/comunicacion/publicaciones/deducciones-admitidas-liquidacion-del-irpf). Peso conversions for 2026 are 20 BPC × 6,864 = 137,280 and 40 BPC × 6,864 = 274,560; for 2025, 20 × 6,576 = 131,520 and 40 × 6,576 = 263,040. [RESEARCH GAP — reviewer to confirm the mortgage-interest cap amount against DGI.]
 
 ### 5.5 Self-Employed / Independent Regimes
 
@@ -340,7 +342,7 @@ Peso conversions for 2026 are 13 BPC × 6,864 = 89,232 and 26 BPC × 6,864 = 178
 | Unipersonal owner without employees | Minimum fictitious base (ficto) = 11 BPC |
 | Monotributo (micro-business simplified) | Replaces most national taxes; e.g. 8% on 1 BPC without medical coverage; replaces IRPF/IVA below revenue caps |
 
-[RESEARCH GAP — reviewer to confirm the unipersonal ficto minimum peso value; the source's UYU 12,094 figure appears to use a prior BPC. 11 BPC = UYU 75,504/year at the 2026 BPC and UYU 72,336/year at the 2025 BPC, but the monthly ficto base differs — re-verify against BPS aportes mínimos.]
+[RESEARCH GAP — reviewer to confirm the unipersonal ficto minimum peso value; the source's UYU 12,094 figure appears to use a prior BPC. 11 BPC = UYU 75,504/year at the 2040 BPC and UYU 72,336/year at the 2025 BPC, but the monthly ficto base differs — re-verify against BPS aportes mínimos.]
 
 ### 5.6 Non-Resident Income (IRNR) -- Reference Only
 
@@ -392,7 +394,7 @@ Peso conversions for 2026 are 13 BPC × 6,864 = 89,232 and 26 BPC × 6,864 = 178
 
 ### 6.4 Dependent-Child Fictitious Deduction
 
-- 13 BPC/child/year (26 BPC if disabled), splittable between parents.
+- 20 BPC/child/year (40 BPC if disabled), splittable between parents.
 - **Flag for reviewer:** confirm number of children, disability status, and any split with the other parent.
 
 ### 6.5 Servicios Personales vs Monotributo vs IRPF
@@ -435,7 +437,7 @@ C. GROSS CATEGORY II TAX (pass to deterministic engine, Section 5.1)
 D. DEDUCTION CREDIT (Section 5.3)
   D1. Personal BPS jubilatorio (15%)              ___________
   D2. FONASA + FRL personal                        ___________
-  D3. Fictitious child deduction (13/26 BPC each)  ___________
+  D3. Fictitious child deduction (13/40 BPC each)  ___________
   D4. 6% of housing rent                           ___________
   D5. Mortgage interest (capped)                   ___________
   D6. SUM of deductions (D1..D5)                   ___________
@@ -548,9 +550,8 @@ ONBOARDING QUESTIONS -- URUGUAY IRPF
 | 2024 | 6,177 | Secondary (misalario.uy / datosUruguay) |
 | 2025 | 6,576 | Decreto N° 5/025 (primary) |
 | 2026 | 6,864 | Decreto N° 11/026; +4.38%, from 1 Jan 2026 |
-| 2026 | 6,864 | Secondary (misalario.uy / datosUruguay) |
 
-Only the 2025 value is decree-confirmed; 2024 and 2026 are secondary citations.
+The 2025 and 2026 values are decree-confirmed. [Decreto 11/026](https://www.impo.com.uy/bases/decretos/11-2026) sets the 2040 BPC at UYU 6,864 from 1 January. The 2024 row retains its secondary citation.
 
 ### Forthcoming Changes (NOT 2025-effective)
 

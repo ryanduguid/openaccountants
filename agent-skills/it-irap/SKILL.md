@@ -226,7 +226,7 @@ If prior-year IRAP <= EUR 51.65: no advance payments required.
 | Obligation | Detail |
 |------------|--------|
 | Form | Dichiarazione IRAP (filed with income tax return) |
-| Deadline | Same as Redditi PF/SP: **31 October** of the following year (2 November 2026, as 31 October is a Saturday) |
+| Deadline | Follows the filer's income-tax return, and the two rules differ. **Individuals and partnerships (Redditi PF/SP):** 31 October of the following year, so 2 November 2026 for FY2025 because 31 October is a Saturday. **Companies (Redditi SC):** the last day of the **10th month** after the tax period closes, which lands on the same 31 October only for a calendar-year company. A company with a non-calendar period counts ten months from its own close |
 | Filing | Telematic (via Entratel or Fisconline) |
 
 ---

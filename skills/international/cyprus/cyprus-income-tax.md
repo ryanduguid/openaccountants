@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Cyprus personal income tax for 
 version: 0.1
 jurisdiction: CY
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-10
 reviewed_by: Christos Thoma
 review_status: current
 depends_on:

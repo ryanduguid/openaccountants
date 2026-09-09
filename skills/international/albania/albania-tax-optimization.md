@@ -4,7 +4,7 @@ description: Use this skill whenever asked about reducing tax in Albania, tax pl
 version: 0.1
 jurisdiction: AL
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-10
 review_status: pending_review
 depends_on: []
 category: tax-optimization

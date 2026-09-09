@@ -190,7 +190,7 @@ def expired(line, today=None, context=None):
     horizon = _horizon(near) or (_horizon(context) if context else [])
     if not horizon:
         return None              # no date to judge it by
-    if any(d > today for d in horizon):
+    if any(d >= today for d in horizon):
         return None              # still waiting for something that has not come
     return max(horizon).year
 
@@ -214,6 +214,10 @@ def selftest():
     # month precision: the named month is not over, so it is still waiting
     assert expired('The next adjustment is expected September 2026; not yet published.',
                    today) is None, 'a named month is not expired until it ends'
+    assert expired('The next adjustment is expected September 2026; not yet published.',
+                   datetime.date(2026, 9, 30)) is None, 'the last day is still in the named month'
+    assert expired('The next adjustment is expected September 2026; not yet published.',
+                   datetime.date(2026, 10, 1)) == 2026, 'the following day is expired'
     assert expired('The next adjustment was expected August 2026; not yet published.',
                    today) == 2026, 'the month before is expired'
     # a TBC cell that says "verify" rather than "publishes" is still a waiting rule

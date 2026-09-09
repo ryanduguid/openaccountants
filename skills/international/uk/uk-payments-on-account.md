@@ -4,7 +4,7 @@ description: Use this skill whenever asked about UK Payments on Account (POA) fo
 version: 3.0
 jurisdiction: GB
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-10
 reviewed_by: James Power
 review_status: current
 depends_on:
@@ -71,7 +71,7 @@ The POA structural rules (threshold, 50%-of-prior-year formula, two-instalment s
 | 1st POA due | 31 January 2025 | 31 January 2026 | 31 January 2027 |
 | 2nd POA due | 31 July 2025 | 31 July 2026 | 31 July 2027 |
 | Balancing payment due | 31 January 2026 | 31 January 2027 | 31 January 2028 |
-| Late payment interest rate | Bank Rate + 4 pp throughout, so the rate depends on **when** each amount was overdue, not on the tax year. A 2024-25 liability can span several Bank Rate changes across 2025 and 2026 -- its 31 Jan 2025 and 31 Jul 2025 instalments accrue at the rates then in force, and 7.75% (Bank Rate 3.75%) applies only from 9 January 2026. Compute interest by date range, never at a single rate | Bank Rate + 4 pp (track Bank Rate movements) | Bank Rate + 4 pp (track Bank Rate movements) |
+| Late payment interest rate | Bank Rate + 2.5 pp through 5 April 2025 and + 4 pp from 6 April 2025, so the rate depends on **when** each amount was overdue, not on the tax year. A 2024-25 liability can span several Bank Rate changes across 2025 and 2026 -- its 31 Jan 2025 and 31 Jul 2025 instalments accrue at the rates then in force, and 7.75% (Bank Rate 3.75%) applies only from 9 January 2026. Compute interest by date range, never at a single rate | Bank Rate + 4 pp (track Bank Rate movements) | Bank Rate + 4 pp (track Bank Rate movements) |
 | SA303 (claim to reduce) | Available; standard process | Available; standard process | Available; standard process |
 | MTD ITSA quarterly reporting | Not in scope (most clients) | Not in scope (most clients) | MANDATORY from 6 April 2026 for qualifying SE/property income (does NOT replace POA) |
 | Annual reconciliation | SA tax return | SA tax return | SA tax return / Final Declaration under MTD ITSA |

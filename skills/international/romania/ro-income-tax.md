@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Romanian income tax for self-em
 version: 2.0
 jurisdiction: RO
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-10
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base

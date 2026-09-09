@@ -4,7 +4,7 @@ description: ALWAYS USE THIS SKILL when a user asks for help preparing their Fre
 version: 1.0
 jurisdiction: FR
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-10
 review_status: pending_review
 category: orchestrator
 tier: 2
@@ -520,7 +520,7 @@ When a refusal fires:
 **Check IN11 -- Total user-facing turn count is low.** Target: 8 turns or fewer from start to handoff for a prepared user (1 refusal batch + 1 upload + 1 confirmation + 1-3 gap fills + 1 handoff). More than 12 turns for a normal intake is a check failure.
 
 - **Check IN12 -- TVA regime established** — Franchise en base vs réel simplifié vs réel normal was confirmed before inference, as it changes how every transaction is classified.
-- **Check IN13 -- Franchise en base threshold verified** — Two thresholds, not one: the **basic** seuil is €37,500 (services) / €85,000 (goods) and the **tolerance** (majoré) seuil is €41,250 / €93,500. Crossing the basic seuil without crossing the tolerance seuil does **not** end the franchise in the year of crossing; TVA becomes due from the following year. Crossing the tolerance seuil ends it immediately, from the first day of the month in which it is crossed. Do not tell a business between €85,000 and €93,500 to register at once EUR (Flag the year of crossing and which seuil was crossed; the transition rule, not the amount alone, decides.)
+- **Check IN13 - Franchise en base** - For ordinary services/goods, the basic thresholds are EUR 37,500/85,000 and the tolerance thresholds are EUR 41,250/93,500. Exceeding only the basic threshold ends the exemption the following year; exceeding the tolerance threshold ends it on the date of exceedance. Confirm the activity, prior-year turnover and crossing date. _([DGFiP](https://www.impots.gouv.fr/professionnel/les-regimes-dimposition-la-tva))_
 
 ## Section 11 -- Performance targets
 
