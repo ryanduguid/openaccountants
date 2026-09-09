@@ -4,7 +4,7 @@ description: Use this skill whenever asked to prepare, review, or classify trans
 version: 2.0
 jurisdiction: NG
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-09
 review_status: pending_review
 depends_on:
   - vat-workflow-base
@@ -28,7 +28,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Zero rate | 0% (exports of goods and services, goods purchased by diplomats, humanitarian donor organisations) |
 | Exempt | Basic food items (unprocessed agricultural products), medical/pharmaceutical products, baby products, newspapers, educational materials, financial services, natural gas, exported services |
 | Registration threshold | NGN 25,000,000 annual turnover (from 2020); below this — no obligation to register |
-| Tax authority | Federal Inland Revenue Service (FIRS) |
+| Tax authority | **Nigeria Revenue Service (NRS)** — the Federal Inland Revenue Service (FIRS) was renamed and re-established as the NRS by the Nigeria Revenue Service (Establishment) Act 2025, with effect from **1 January 2026** |
 | Filing portal | FIRS TaxPro Max — https://taxpromax.firs.gov.ng |
 | Return form | VAT Form 002 (monthly return) |
 | Filing frequency | Monthly |

@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-09T17:50:57+00:00",
+ "generated_at": "2026-09-09T17:57:25+00:00",
  "counts": {
   "guides": 1953,
   "jurisdictions": 244,
@@ -14272,7 +14272,7 @@
    "verified_by": null,
    "reviewed_by": "Omolola Fasasi",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-09"
   },
   {
    "slug": "ng-cit",
@@ -14284,7 +14284,7 @@
    "verified_by": null,
    "reviewed_by": "Omolola Fasasi",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-09"
   },
   {
    "slug": "ng-formation",
@@ -14296,7 +14296,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-09"
   },
   {
    "slug": "ng-freelance-intake",
@@ -14368,7 +14368,7 @@
    "verified_by": null,
    "reviewed_by": "Omolola Fasasi",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-09"
   },
   {
    "slug": "ng-vat",
@@ -14380,7 +14380,7 @@
    "verified_by": null,
    "reviewed_by": "Omolola Fasasi",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-09"
   },
   {
    "slug": "ng-wht",
@@ -14404,7 +14404,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-09"
   },
   {
    "slug": "references",
@@ -14728,7 +14728,7 @@
    "verified_by": null,
    "reviewed_by": "Ibrar Ali",
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-09"
   },
   {
    "slug": "pk-corporate-tax",

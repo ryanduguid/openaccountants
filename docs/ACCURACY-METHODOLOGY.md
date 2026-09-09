@@ -310,6 +310,56 @@ top thresholds. On the example's GBP 50,000 that makes the Scottish tax GBP
 lower, not higher, which is the direction a "working estimate" is least likely
 to guess.
 
+### Nigeria: two Acts, two thresholds, and the majority of sources wrong
+
+The best find on this branch came from checking a number the corpus already
+disagreed with itself about, and it is the seventh time an outside source
+contradicted the corpus and the corpus turned out right — this time against
+almost every outside source.
+
+`ng-return-assembly` put the Nigeria Tax Act 2025 small-company threshold for 0%
+companies income tax at turnover of ₦50M with fixed assets under ₦250M.
+`ng-formation` put it at ₦100M, and built a worked example on it. A first search
+returned ₦100M from six sources including two accounting firms, which made
+`ng-return-assembly` look like the error.
+
+It is not. The 2025 reform enacted two Acts that define overlapping terms
+differently and has not reconciled them:
+
+  * **NTA 2025 s.202** — "small company": turnover ≤ **₦50M** and fixed assets
+    ≤ ₦250M, professional services excluded. This drives the 0% CIT rate at
+    s.56(a), and the education-tax and development-levy exemptions.
+  * **NTAA 2025 s.147** — "small business": turnover ≤ **₦100M**. This is a VAT
+    and withholding test.
+
+Between ₦50M and ₦100M the two labels come apart: a company can be a small
+*business* for VAT and a medium *company* paying 20% CIT at the same time. Most
+secondary coverage flattens both to "₦100 million", which is how six sources
+agreed on the wrong answer for CIT. A Nigerian law firm and a Nigerian
+publication both name the sections and the conflict.
+
+What it cost. `ng-formation`'s worked example put a Lagos software developer on
+₦60M turnover into the 0% band and concluded that incorporating "wins decisively"
+against a business name. On the correct test she is a medium company: 20% CIT on
+₦45M assessable profit is ₦9,000,000, against the guide's own indicative
+₦9,280,000 of personal income tax as a sole trader. The recommendation was not
+just mis-costed by ₦9M; the reason for it evaporated. The example now says the
+tax case is roughly neutral and that the case for incorporating is structural,
+and names ₦50M as where the 0% band actually bites.
+
+Two smaller things in the same pack, both nouns rather than numbers. The Federal
+Inland Revenue Service was renamed and re-established as the **Nigeria Revenue
+Service** on 1 January 2026 under its own Act; two guides in the pack knew, and
+five still named FIRS flatly as the tax authority. And four guides held figures
+open pending implementing regulations "late 2025 / early 2026" that the Federal
+Ministry of Finance published on 18 June 2026 — with the sting that "the
+regulations are pending" had become a reason to fall back on a repealed statute
+for a period the new one governs.
+
+The rule this reinforces, for the seventh time: read the guide, and read what it
+cites, before you change a number. A count of agreeing sources is not evidence
+when they are all copying the same simplification.
+
 ### Work the queue by who reads it, not by who hedges most
 
 The hedge queue sorted by count puts Central African Republic first with 27 and
