@@ -93,5 +93,5 @@ print(f'labels whose value differs between the two copies: {len(div)}\n')
 by=collections.Counter(a for a,_,_,_,_ in div)
 for f,c in by.most_common(30): print(f'  {c:3}  {f}')
 print()
-for a,b,lab,sa,sb in div[:60]:
+for a,b,lab,sa,sb in div:
     print(f'--- {lab}\n    {a}: {sa}\n    {b}: {sb}')
