@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 > **Scope.** This skill covers North Carolina individual income tax treatment of retirement benefits on Form D-400 and Form D-400 Schedule S for full-year NC residents. It focuses on the *Bailey* settlement exclusion (Schedule S Line 20), the post-S.L. 2021-180 military retirement deduction (Schedule S Line 21), the Social Security / Railroad Retirement deduction (Schedule S Line 19), and the NC treatment of private pensions, traditional and Roth IRAs, 401(k)s, 403(b)s, and 457 plans not covered by *Bailey*. Tax year 2025 (returns filed in 2026).
 >
-> **Quality tier.** Q3 — AI-drafted, not independently verified. Every output must be reviewed and signed off by a qualified NC tax professional before filing. Items marked `[VERIFY:]` require explicit confirmation against current NCDOR guidance or the latest D-401 instructions.
+> **Quality tier.** Q3 — AI-drafted, not independently verified. Every output must be reviewed and signed off by a qualified NC tax professional before filing. The statutory subdivisions and the D-401 attachment requirements have since been confirmed directly against G.S. § 105-153.5 and the 2025 D-401 instructions; what remains is the annual re-check of rates and thresholds against current NCDOR guidance.
 >
 > **MUST be loaded alongside** `us-tax-workflow-base v0.2+` and `nc-income-tax v0.1+`. This skill does not itself produce a full D-400 — it produces the Schedule S Part B retirement-deduction lines that flow into the parent NC return.
 

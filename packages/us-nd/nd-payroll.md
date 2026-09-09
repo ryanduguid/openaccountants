@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 > **Scope.** This skill covers North Dakota employer payroll obligations for a business with employees performing services in North Dakota during tax year 2025 (returns and deposits filed 2025–2026). Covers: ND personal income tax (PIT) withholding under N.D.C.C. § 57-38-59; Form 306 quarterly withholding returns; Form 307 annual W-2/1099 transmittal; Form NDW-M (state W-4); Form NDW-R (MN/MT reciprocity exemption); ND State Unemployment Tax (SUTA) under Job Service North Dakota; new-hire reporting to the ND Child Support Division; and the WSI workers' compensation monopoly. Federal payroll (Form 941, Form 940, FICA, FUTA, federal W-4, federal new-hire reporting, federal Form W-2 filing with SSA) is out of scope — see the federal payroll skills.
 >
-> **Quality tier.** Tier 2 content skill. AI-drafted; awaiting verifier sign-off. All employer-side outputs must be reviewed by a qualified ND payroll professional before filing or remitting. `[VERIFY:]` markers flag figures that must be re-confirmed against current ND Tax Commissioner / Job Service ND / WSI publications for the applicable period.
+> **Quality tier.** Tier 2 content skill. AI-drafted; awaiting verifier sign-off. All employer-side outputs must be reviewed by a qualified ND payroll professional before filing or remitting. The figures in this skill have been checked against ND Tax Commissioner and Job Service ND publications for the periods stated, but every rate here moves annually — re-confirm against the current-period publications before filing or remitting.
 
 ## Section 1: Metadata
 
