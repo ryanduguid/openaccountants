@@ -72,8 +72,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | NDW-R employer copy filing | Mail to Tax Commissioner by March 31 |
 | SUTA wage base 2025 | $45,100 |
 | SUTA wage base 2024 (reference) | $43,800 |
-| SUTA experience-rated range | ~0.08% to ~9.97% [VERIFY: 2025 schedule] |
-| SUTA new-employer rate | 1.02% non-construction; up to ~6.09% construction industry [VERIFY: 2025 schedule] |
+| SUTA experience-rated range (2025) | Positive-balance 0.08% – 1.14%; negative-balance 6.09% – 9.69% — confirmed, Job Service North Dakota, 2025 Unemployment Insurance Tax Rate Schedules |
+| SUTA new-employer rate (2025) | Non-construction 1.03% (positive balance) or 6.09% (negative balance); **construction 9.69% regardless of account balance** — confirmed, Job Service North Dakota, 2025 Unemployment Insurance Tax Rate Schedules |
 | New-hire deadline | Within 20 days of hire |
 | Workers' comp insurer | WSI — monopolistic. Private comp insurance is unlawful |
 | Final paycheck (involuntary) | Next regular payday, per N.D.C.C. § 34-14-03 |
@@ -264,19 +264,19 @@ The bracket thresholds are indexed annually. Practitioners must re-verify the br
 
 ### 9.3 Rate structure (2025)
 
-- **Positive-balance experience rates** — 0.08% – 1.85% (Schedule 1)  _([VERIFY: 2025 Tax Rate Schedules from JSND])_
+- **Positive-balance experience rates (2025)** — 0.08% – 1.14%  _(Job Service North Dakota, 2025 Unemployment Insurance Tax Rate Schedules)_
 
 ### 9.3 Rate structure (2025)
 
-- **Negative-balance rates** — up to ~9.97%  _([VERIFY: 2025 Tax Rate Schedules from JSND])_
+- **Negative-balance experience rates (2025)** — 6.09% – 9.69%  _(Job Service North Dakota, 2025 Unemployment Insurance Tax Rate Schedules)_
 
 ### 9.3 Rate structure (2025)
 
-- **New employer (non-construction) rate** — 1.02% on rate Schedule [VERIFY]  _([VERIFY: 2025 Tax Rate Schedules from JSND])_
+- **New employer, non-construction (2025)** — 1.03% for a positive-balance account; 6.09% for a negative-balance account  _(Job Service North Dakota, 2025 Unemployment Insurance Tax Rate Schedules)_
 
 ### 9.3 Rate structure (2025)
 
-- **New employer (construction) rate** — 6.09% [VERIFY]  _([VERIFY: 2025 Tax Rate Schedules from JSND])_
+- **New employer, construction (2025)** — **9.69%, regardless of account balance.** Do not apply the 6.09% non-construction negative-balance rate to a construction employer — that understates the first-year cost by 3.6 percentage points of the $45,100 wage base, about $1,624 per employee  _(Job Service North Dakota, 2025 Unemployment Insurance Tax Rate Schedules)_
 
 ### 9.3 Rate structure (2025)
 

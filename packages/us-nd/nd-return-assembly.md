@@ -295,7 +295,7 @@ Every line below is a hard equality. Tolerance is $1 unless noted otherwise. A f
 | --- | --- |
 | E-1 | 2026 federal Q1 voucher = `us-quarterly-estimated-tax` Q1 output |
 | E-2 | 2026 ND-1ES Q1 voucher = `nd-estimated-tax` Q1 output |
-| E-3 | ND safe harbor: lesser of 100% of prior-year ND tax OR 90% of current-year ND tax (no 110% step at the ND level) `[VERIFY:]` N.D.C.C. §57-38-62 |
+| E-3 | ND safe harbor: the lesser of 90% of current-year ND net tax liability or 100% of the prior year's — **confirmed, with no 110% high-income step** (N.D.C.C. § 57-38-62). ND genuinely departs from the federal pattern here, and from MI and NC, both of which do apply 110% above $150,000 AGI. No estimates are required at all where the prior year's net tax liability was under $1,000 |
 | E-4 | Q1 federal + Q1 ND together do not exceed taxpayer's stated cash availability flag (if intake captured one) |
 | E-5 | If current-year ND underpayment interest exposure (Schedule ND-1UT) exists, surface for reviewer |
 | E-6 | 2025 ND estimated payments actually made = ND TAP records / cancelled checks reconcile to ND-1 Line 18 |
