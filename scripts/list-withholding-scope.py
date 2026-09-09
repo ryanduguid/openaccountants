@@ -386,8 +386,40 @@ def heads_in(line):
     return found or None
 
 
+URL = re.compile(r'https?://\S+')
+
+
+def strip_urls(text):
+    """Remove citation URLs before matching head words against prose.
+
+    San Marino sat on the triage list because its payroll guide cites
+    `remotepeople.com/countries/san-marino/hire-employees/payroll-tax/` and the
+    rent pattern matches the word "hire". A slug in a citation is not a head of
+    charge, and every guide in this corpus carries citation URLs, so that was
+    noise available to every jurisdiction rather than a fact about San Marino.
+
+    Worth noting what fixing it did to the numbers, because it is the opposite
+    of what removing a false positive usually does. San Marino and Guinea were
+    in the cheap `triage` column *because* of the URL match. With it gone they
+    have nothing anywhere, so they moved into the real queue: triage 11 -> 9,
+    queue 18 -> 20. The artefact was not inflating the workload, it was hiding
+    two entries from it. A checker's false positive can make a problem look
+    smaller as easily as larger.
+    """
+    return URL.sub(' ', text)
+
+
 def body_heads_in(line):
     """Heads named in a withholding line's BODY rather than its label.
+
+    URLs are stripped first -- see strip_urls.
+
+    One false positive is left visible rather than patched: "National Insurance
+    Scheme" reads as the insurance head, which is how Barbados reached the
+    triage list from a payroll guide about NIS contributions. Social insurance
+    is not withholding on insurance premiums, but no pattern separates them
+    without also losing a real "insurance premiums" head. Triage means read the
+    line.
 
     Weaker evidence than heads_in and reported separately for that reason. A
     body is prose: "insurance" turns up in a sentence about premiums that is
@@ -403,7 +435,7 @@ def body_heads_in(line):
     if not LABEL.search(label):
         return None
     found = {name for name, pat in HEADS
-             if name not in CLASSIC and re.search(pat, value, re.I)}
+             if name not in CLASSIC and re.search(pat, strip_urls(value), re.I)}
     return found or None
 
 
@@ -473,6 +505,24 @@ def selftest():
     # prose, whatever words it contains
     assert heads_in('Withholding taxes apply to dividends, interest and royalties, '
                     'subject to EU directives and tax treaties.') is None
+
+    # a citation URL is not a head of charge (San Marino's "hire-employees" slug)
+    assert body_heads_in(
+        '- **Payroll income-tax withholding** - Employers withhold IGR at source '
+        '_([Law 166/2013](https://remotepeople.com/countries/san-marino/'
+        'hire-employees/payroll-tax/))_') is None
+    # but the same word in the prose itself still counts
+    assert body_heads_in(
+        '- **Withholding on payments** - 15%, including hire of movable '
+        'property') == {'rent'}
+
+    # KNOWN FALSE POSITIVE, documented on body_heads_in: social insurance reads
+    # as the insurance head. Left visible because no pattern separates it from a
+    # real insurance-premium head.
+    assert body_heads_in(
+        '- **Employer PAYE and NIS withholding overview** - Employers withhold '
+        'income tax under PAYE and deduct National Insurance Scheme (NIS) '
+        'contributions') == {'insurance'}
 
     # zero detection, including the phrasings the hand pass wrote into the guides
     assert is_zero('**0% -- Libya levies no withholding tax on dividends**')
