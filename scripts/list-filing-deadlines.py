@@ -29,6 +29,53 @@ and the Italy correction produced exactly that until the sentence was reworded.
 A row that disagrees with itself may be a guide arguing with a date rather than
 stating one, so read the line before you act on it.
 
+Checked against an outside source so far (do not re-derive these from the
+corpus). Eight jurisdictions, five wrong. Read that rate with care: these eight
+were picked because their rows looked wrong, not at random, so it says the
+leads were good, not that five in eight of the corpus is wrong.
+
+  * Italy      WRONG on four counts. it-income-tax filed the Modello Redditi PF
+               on 30 June, which is the payment date, and the Modello 730 on
+               30 November, which is the second acconto. Filing is 31 October
+               and 30 September. italy-formation dated the corporate Redditi SC
+               to 30 November against a 9-month rule, italy-tax-optimization
+               paid IRPEF on 16 June (that is IMU), and italy-crypto-tax
+               deferred to 31 July where the surcharge date is 30 July.
+               it-inps-contributions had 31 October right throughout.
+  * Greece     WRONG. gr-income-tax filed individuals on 30 June; Greece files
+               by 15 July on AADE's annual decision, extended to 24 July 2026
+               for tax year 2025. The corporate guides stated a rule ("last
+               working day of the sixth month") that yields 30 June and a
+               worked date of 15 July in the same sentence.
+  * Armenia    WRONG as a standing rule. am-tax-overview gave 1 November flat.
+               That is the transitional window for tax year 2025; from tax year
+               2026 it closes 1 July. armenia-income-tax had both.
+  * Cyprus     WRONG, and not a date. cyprus-income-tax put the audited-accounts
+               threshold at EUR 70,000 in one place and EUR 120,000 in another,
+               both "from tax year 2026". Reform law N. 243(I)/2025 raised it to
+               120,000. The 31 January deadline both places gave is right.
+  * Finland    WRONG as a standing rule. fi-income-tax gave employees "mid-April
+               (dates vary: 15, 22, or 29 April)", which is the previous
+               season's set. The Tax Administration assigns one of four dates
+               per taxpayer: 1, 14, 21 or 28 April 2026 for tax year 2025.
+  * Bulgaria   CORRECT. "Between 1 March and 30 June" matches; the lister read
+               the opening date until it was taught about windows.
+  * Laos       CORRECT, and no longer hedged. 20 January for the profit tax
+               return, 31 March for the financial statements, confirmed at PwC.
+  * Monaco     CORRECT. "Within 3 months of the financial year-end". The
+               19 March in its row came from the ordinance it cites, dated 1964.
+
+Read but NOT checked outside the repo, and so not verified: Japan (15 March
+income tax against 31 March consumption tax), the Netherlands (1 May, extending
+to 1 September), India (31 July without an audit, 31 October with one), Saudi
+Arabia (120 days), Madagascar, Nigeria, Kenya, Egypt, Macau, Lebanon, Papua New
+Guinea, Namibia, Uganda, Kazakhstan, Ghana, Mongolia, Mexico, Vietnam, Qatar,
+Mauritius, Cambodia, Argentina and Nicaragua. Each reads as a jurisdiction
+stating two true things rather than contradicting itself, which is a reason not
+to chase the row, not evidence the date is current.
+
+Still open: 200 jurisdictions state a deadline and 8 have been checked.
+
 Usage: python3 scripts/list-filing-deadlines.py [--selftest]
 """
 import os, re, sys, collections

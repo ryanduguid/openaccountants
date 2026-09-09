@@ -60,12 +60,33 @@ jurisdiction at a time. This section records how far that has got.
 |---|---|---|---|
 | Standard VAT / GST rate | 157 of 157 jurisdictions stating one | 6 | Fiji, India, Kazakhstan, Zimbabwe, Malawi, Maldives |
 | Headline corporate rate | ~135 jurisdictions | 3 | Lithuania, Cyprus, Portugal |
+| Annual return filing deadline | 8 of the 200 jurisdictions stating one | 5 | Italy, Greece, Armenia, Cyprus, Finland |
 
-No one has run an external pass over anything else. That leaves payroll rates and
-thresholds, registration and filing thresholds, filing deadlines, penalty and
-interest rates, social-contribution bands, capital allowances, withholding rates,
-form names and statutory citations. All of them move on the same annual cycle as
-the two fields above, and those two produced nine errors.
+The deadline pass has covered 8 jurisdictions of 200. Nobody has run an external
+pass over anything else. That leaves payroll rates and thresholds, registration
+and filing thresholds, penalty and interest rates, social-contribution bands,
+capital allowances, withholding rates, form names and statutory citations. All
+of them move on the same annual cycle as the fields above.
+
+### What the deadline pass has found so far
+
+Five of the first eight jurisdictions were wrong. That rate will not hold. A
+reader picked those eight because their rows looked odd, so the number measures
+the leads rather than the corpus. Choose the next tranche at random if you want
+a rate worth quoting.
+
+The errors divide in a way the rate hides. Italy and Greece named a real date
+belonging to a different obligation: Italy filed the Modello Redditi PF on
+30 June, which is when IRPEF is paid, and gave the Modello 730 the second
+acconto's date. Armenia and Finland froze one filing season into a standing
+rule, so both read correctly this year and go wrong next year. Cyprus was not a
+date at all, but a threshold stated two ways in one file.
+
+Only the first kind is visible to a reader who knows the jurisdiction. The
+second kind looks right until the calendar turns, and no check in `scripts/`
+can see it, because a date that is correct for one year and presented without
+one is not a contradiction. Prefer a guide that states the rule and gives this
+year as an example.
 
 ### What the six VAT errors had in common
 
