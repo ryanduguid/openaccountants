@@ -76,13 +76,13 @@ This skill covers North Dakota state-level entity-level income tax:
 
 | Item | Value | Authority |
 | --- | --- | --- |
-| Corporate income tax — Bracket 1 | **1.41%** on first $25,000 of ND taxable income | NDCC § 57-38-30 [VERIFY] |
-| Corporate income tax — Bracket 2 | **3.55%** on next $25,000 (to $50,000) | NDCC § 57-38-30 [VERIFY] |
-| Corporate income tax — Bracket 3 | **4.31%** on income above $50,000 | NDCC § 57-38-30 [VERIFY] |
+| Corporate income tax — Bracket 1 | **1.41%** on first $25,000 of ND taxable income | NDCC § 57-38-30 — confirmed |
+| Corporate income tax — Bracket 2 | **3.55%** on next $25,000 (to $50,000) | NDCC § 57-38-30 — confirmed |
+| Corporate income tax — Bracket 3 | **4.31%** on income above $50,000 | NDCC § 57-38-30 — confirmed |
 | Water's edge surtax | Additional **3.5%** of ND taxable income for water's-edge electors | NDCC § 57-38.1-15 / Form 40 instructions |
 | Apportionment formula | Three-factor: property + payroll + sales (sales double-weighted) by default; **single-sales-factor election available** for qualifying taxpayers | NDCC § 57-38.1-09 [VERIFY weighting] |
 | Sourcing | Cost-of-performance for services (default); ND has **not** broadly adopted market-based sourcing as of 2025 [VERIFY] | NDCC § 57-38.1-16 |
-| NOL carryforward | **20 years** [VERIFY against current statute]; no carryback | NDCC § 57-38-01.4 |
+| NOL carryforward | **Follows the federal carryforward period for a loss of like character** (N.D. Admin. Code 81-03-05.1-07): losses arising in tax years before 2018 carry forward 20 years; losses arising in tax years after 2017 carry forward **indefinitely**, matching federal. No carryback. Do not apply a flat 20-year life to a current-year loss | NDCC § 57-38-01.4; N.D. Admin. Code 81-03-05.1-07 |
 | NOL 80% taxable-income limitation | ND conforms to federal § 172(a)(2)(B) **80% limit** for post-2017 NOLs [VERIFY conformity date] | NDCC § 57-38-01.4 + federal conformity |
 | Filing form | Form 40 (Corporation Income Tax Return) | ND Tax Commissioner |
 | Due date (calendar-year filer) | **April 15** (15th day of 4th month after year-end) | NDCC § 57-38-34 |
@@ -510,22 +510,22 @@ Total entity-level ND tax              ~$5M+
 
 | Item | 2024 | 2025 | 2026 (planning) |
 | --- | --- | --- | --- |
-| ND CIT bracket 1 (up to $25,000) | 1.41% | 1.41% | 1.41% [VERIFY] |
-| ND CIT bracket 2 ($25K–$50K) | 3.55% | 3.55% | 3.55% [VERIFY] |
-| ND CIT bracket 3 (above $50K) | 4.31% | 4.31% | 4.31% [VERIFY] |
-| Water's-edge surtax | 3.5% | 3.5% | 3.5% [VERIFY] |
+| ND CIT bracket 1 (up to $25,000) | 1.41% | 1.41% | 1.41% (confirmed, NDCC § 57-38-30) |
+| ND CIT bracket 2 ($25K–$50K) | 3.55% | 3.55% | 3.55% (confirmed, NDCC § 57-38-30) |
+| ND CIT bracket 3 (above $50K) | 4.31% | 4.31% | 4.31% (confirmed, NDCC § 57-38-30) |
+| Water's-edge surtax | 3.5% | 3.5% | 3.5% (confirmed, NDCC § 57-38.1-15; the election binds for five consecutive tax years) |
 | Minimum tax | $0 | $0 | $0 |
 | Franchise tax | none | none | none |
 | Apportionment (default) | 3-factor, sales 2× | 3-factor, sales 2× | 3-factor, sales 2× [VERIFY] |
 | Single-sales-factor elect available? | Yes [VERIFY] | Yes [VERIFY] | Yes [VERIFY] |
 | Sourcing (services) | Cost-of-performance | Cost-of-performance | Cost-of-performance [VERIFY] |
-| NOL carryforward period | 20 years [VERIFY] | 20 years [VERIFY] | 20 years [VERIFY] |
+| NOL carryforward period | 20 yrs (pre-2018 losses) / indefinite (post-2017) | same | same — ND follows the federal period for a loss of like character |
 | NOL 80% TI limit (post-2017) | Yes | Yes | Yes |
 | PTE election | NONE | NONE | NONE [VERIFY 69th session] |
 | Filing form (C-corp) | Form 40 | Form 40 | Form 40 |
 | Filing form (S-corp) | Form 60 | Form 60 | Form 60 |
 | Filing form (partnership) | Form 58 | Form 58 | Form 58 |
-| Est. tax threshold | $5,000 [VERIFY] | $5,000 [VERIFY] | $5,000 [VERIFY] |
+| Est. tax threshold | $5,000 | $5,000 | $5,000 — confirmed, and it is a TWO-part test: estimates are required only where the current year's liability is expected to exceed $5,000 AND the prior year's ND liability also exceeded $5,000 (Form 40-ES instructions) |
 | Due date (calendar) | Apr 15 | Apr 15 | Apr 15 |
 | ND PIT rate (top, for context) | ~2.50% | ~2.50% | ~2.50% |
 
@@ -581,7 +581,7 @@ Total entity-level ND tax              ~$5M+
 ### 14.4 Administrative guidance
 
 - **Form 40 Corporation Income Tax Booklet (2025)** — ND Office of State Tax Commissioner. Source of bracket confirmation, due-date confirmation, water's-edge surtax mechanics, and Schedule SA apportionment instructions.  _(Form 40 Corporation Income Tax Booklet (2025))_
-- **Form 40-ES instructions** — estimated-tax mechanics and $5,000 threshold [VERIFY].  _(Form 40-ES instructions)_
+- **Form 40-ES instructions** — estimated-tax mechanics and the $5,000 threshold, confirmed as a two-part test (current-year expectation AND prior-year liability both above $5,000).  _(Form 40-ES instructions)_
 - **Form 40-UT instructions** — underpayment penalty computation.  _(Form 40-UT instructions)_
 - **Form 60 instructions** — ND S-corporation filing.  _(Form 60 instructions)_
 - **Form 58 instructions** — ND partnership filing.  _(Form 58 instructions)_
@@ -608,7 +608,7 @@ entire skill (rate brackets, apportionment weighting, sourcing rules, NOL parame
 1. Confirm 2025 bracket thresholds ($25,000 / $50,000) and rates (1.41% / 3.55% / 4.31%) in current NDCC § 57-38-30.
 2. Confirm three-factor formula weighting (sales 2×) and that single-sales-factor election is still available under § 57-38.1-09.
 3. Confirm ND has not adopted broad market-based sourcing as of TY 2025.
-4. Confirm NOL carryforward period (20 years) and conformity with federal 80% TI limit.
+4. NOL carryforward period confirmed: federal period for a loss of like character — 20 years for pre-2018 losses, indefinite for post-2017. Still confirm conformity with the federal 80% taxable-income limit.
 5. Confirm $5,000 estimated-tax threshold under § 57-38-62.
 6. Confirm absence of PTET through the 69th Legislative Assembly (2025).
 7. Confirm water's-edge surtax remains at 3.5%.
