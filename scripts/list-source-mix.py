@@ -121,6 +121,13 @@ NON_GOV_AUTHORITY = frozenset((
     'lmis.gm',            # Gambia labour market information (government)
 ))
 
+# Whole domains where every subdomain is the same authority. chinhphu.vn is the
+# Government of Vietnam's portal and its subdomains carry the gazette
+# (congbao), the consolidated legislation (vanban) and the policy explainers
+# (xaydungchinhsach) -- listing them one by one would go stale on the next
+# guide that cites a fourth.
+AUTHORITY_SUFFIX = ('chinhphu.vn', 'quochoi.vn')
+
 # Domains that look like an authority by shape but are not: professional firms,
 # and bodies that regulate something other than what the guide cites them for.
 NOT_AUTHORITY = frozenset((
@@ -178,7 +185,8 @@ def classify(domain):
         return None
     if d in NOT_AUTHORITY:
         return 'secondary'
-    if d in NON_GOV_AUTHORITY or GOV.search(d):
+    if (d in NON_GOV_AUTHORITY or GOV.search(d)
+            or any(d == a or d.endswith('.' + a) for a in AUTHORITY_SUFFIX)):
         return 'authority'
     return 'secondary'
 
@@ -233,6 +241,12 @@ def selftest():
     assert classify('legislation.mt') == 'authority'
     assert classify('guichet.public.lu') == 'authority'   # via the GOV pattern
     assert classify('mi.government.bg') == 'authority'    # via the GOV pattern
+    # every subdomain of the Vietnamese government portal, not just the ones
+    # that happen to be cited today
+    assert classify('chinhphu.vn') == 'authority'
+    assert classify('xaydungchinhsach.chinhphu.vn') == 'authority'
+    assert classify('congbao.chinhphu.vn') == 'authority'
+    assert classify('notchinhphu.vn') == 'secondary'      # suffix, not substring
     # and the shape-alikes that are not authorities
     assert classify('kstlaw.gr') == 'secondary'           # law firm
     assert classify('taxatlas.io') == 'secondary'         # consultancy

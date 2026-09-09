@@ -280,11 +280,11 @@ oddly beside one naming eight, and that the difference is worth an hour.
 at a tax authority or at a secondary source, ignoring the CTA block each guide
 ends with. The measurement:
 
-- **67% of citations are secondary** — 4,923 against 2,448 authority links.
+- **67% of citations are secondary** — 4,920 against 2,453 authority links.
 - One publisher, PwC's Worldwide Tax Summaries, carries about a third of all
   external citations on its own. No authority comes close; the next largest is
   the IRS at 140, then Estonia's tax board at 82.
-- **24 of 189 jurisdictions cite no authority domain at all.** Every figure they
+- **23 of 189 jurisdictions cite no authority domain at all.** Every figure they
   carry rests on a summary.
 
 > **The first version of this measurement was wrong, and the way it was wrong is
