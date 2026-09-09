@@ -31,7 +31,7 @@ This file is a content skill that loads on top of `us-tax-workflow-base` v0.1. I
 
 This is a decision skill, not a computation skill. Unlike the bookkeeping and computation skills in the pipeline, this skill produces a decision brief for the reviewer, not a tax return position. The decision brief presents the SE tax savings estimate, the incremental costs, the QBI interaction, state-specific issues, and a recommendation with confidence level.
 
-Tax year coverage. This skill is current for tax year 2025 as of its currency date (April 2026). It reflects the One Big Beautiful Bill Act (Public Law 119-21, signed July 4, 2025), including the permanent QBI deduction and the rate increase to 23% for 2026+.
+Tax year coverage. This skill is current for tax year 2025 as of its currency date (April 2026). It reflects the One Big Beautiful Bill Act (Public Law 119-21, signed July 4, 2025), including the §199A QBI deduction made permanent at 20% — the 23% rate in the House-passed bill was not enacted.
 
 The reviewer is the customer of this output. The skill produces a decision analysis, not a filing. The reviewing Enrolled Agent, CPA, or attorney makes the final recommendation to the client.
 
@@ -77,7 +77,7 @@ Currency date: April 2026.
 Legislation reflected:
 - Internal Revenue Code as in force for tax year 2025
 - One Big Beautiful Bill Act (OBBBA), Public Law 119-21, signed July 4, 2025
-- IRC §199A as made permanent by OBBBA (20% for 2025, rising to 23% for 2026+)
+- IRC §199A as made permanent by OBBBA at 20% for 2025 and later (the proposed 23% rate was not enacted)
 - Rev. Proc. 2013-30 (late S-corp election relief)
 - Rev. Proc. 2024-40 (2025 inflation adjustments)
 
@@ -119,7 +119,7 @@ Legislation reflected:
 | Figure | Value for TY2025 | Primary source |
 | --- | --- | --- |
 | QBI deduction rate (2025) | 20% | IRC §199A(a); OBBBA made permanent |
-| QBI deduction rate (2026 onward) | 23% | OBBBA P.L. 119-21; IRC §199A as amended |
+| QBI deduction rate (2026 onward) | 20% | OBBBA P.L. 119-21 §70105; IRC §199A as amended |
 | QBI threshold (single) | $197,300 | Rev. Proc. 2024-40 |
 | QBI threshold (MFJ) | $394,600 | Rev. Proc. 2024-40 |
 | QBI phase-in range top (single) | $247,300 | $197,300 + $50,000 |
@@ -285,7 +285,7 @@ Conclusion: At $120K net SE income with a $65K salary, the S-corp saves roughly 
 
 ### The basic QBI framework (2025)
 
-- **Basic QBI framework** — Under IRC §199A, sole proprietors and S-corp shareholders can deduct 20% of qualified business income (rising to 23% for 2026+ under OBBBA). For taxpayers below the income threshold ($197,300 single / $394,600 MFJ for 2025), the deduction is simply 20% of QBI with no limitations.  _(IRC §199A)_
+- **Basic QBI framework** — Under IRC §199A, sole proprietors and S-corp shareholders can deduct 20% of qualified business income (OBBBA made the 20% rate permanent; the proposed 23% rate was not enacted). For taxpayers below the income threshold ($197,300 single / $394,600 MFJ for 2025), the deduction is simply 20% of QBI with no limitations.  _(IRC §199A)_
 
 ### When QBI interacts with the S-corp decision
 

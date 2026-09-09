@@ -97,9 +97,9 @@ Commit message format:
 Update US federal rates for 2026 (Rev. Proc. 2025-XX)
 
 - All 2026 indexed amounts pulled from official sources
-- §250 GILTI deduction drops to 37.5%, FDII to 21.875% (OBBBA)
-- BEAT rate rises to 12.5% (OBBBA)
-- QBI rate rises to 23% (OBBBA)
+- §250 deduction: 40% on NCTI, 33.34% on FDDEI (OBBBA §70321)
+- BEAT rate rises to 10.5% (OBBBA)
+- QBI rate stays 20% — OBBBA made §199A permanent and did not enact 23%
 - 401(k) deferral $24,500 [confirm with Notice 2025-XX]
 - SS wage base $XXX,XXX
 ```

@@ -369,7 +369,7 @@ Structured markdown. Required sections in this order:
 9. **Reviewer Attention Flags** — Aggregated from all upstream skills.
 10. **Refusals Triggered** — Aggregated from all upstream skills.
 11. **Positions Taken** — Tax positions requiring judgment, with citations (N.C.G.S. §, IRC §, D-401 page references, Bailey case cite).
-12. **Planning Notes for 2026** — NC rate watch (Session Law 2023-134 rate-step-down schedule continues; `[VERIFY:]` 2026 rate is expected ~3.99%), federal QBI 20% → 23% under OBBBA, federal 1099 threshold change, NC child deduction phase-out tier monitoring, Bailey income continuity.
+12. **Planning Notes for 2026** — NC rate watch (Session Law 2023-134 rate-step-down schedule continues; `[VERIFY:]` 2026 rate is expected ~3.99%), federal §199A QBI rate unchanged at 20% under OBBBA (widened phase-in ranges and a $400 minimum deduction from 2026), federal 1099 threshold change, NC child deduction phase-out tier monitoring, Bailey income continuity.
 13. **Taxpayer Action List** — Embedded copy of File 3.
 
 ### 7C — File 3: `taxpayer_action_list.md`
@@ -520,7 +520,7 @@ The brief follows this fixed structure:
 - NC rate step-down (Session Law 2023-134): 4.25% in 2025 →
   ~3.99% in 2026 `[VERIFY:]`; long-term schedule down to ~2.49% by
   2030 absent further legislation
-- Federal QBI 20% → 23% under OBBBA (P.L. 119-21)
+- Federal §199A QBI rate unchanged at 20% under OBBBA (P.L. 119-21); from 2026 the phase-in ranges widen to $75,000/$150,000 and a $400 minimum deduction applies
 - NC child deduction phase-out tier monitoring
 - Bailey-eligible pension continuity (no rollovers to non-Bailey IRAs)
 - Estimated-tax safe harbor positioning (NC uses 100% of prior year)
@@ -733,9 +733,9 @@ The brief follows this fixed structure:
 - NC rate step-down per Session Law 2023-134: 4.25% in 2025 →
   ~3.99% in 2026 `[VERIFY:]`; long-term schedule down to ~2.49%
   by 2030 absent further legislation.
-- Federal QBI rate rises 20% → 23% under OBBBA (P.L. 119-21,
-  July 2025); James's QBI deduction grows materially if income
-  stays at $150K.
+- Federal §199A QBI rate stays at 20% under OBBBA (P.L. 119-21,
+  July 2025) — the 23% rate in the House-passed bill was not
+  enacted. From 2026 the phase-in ranges widen to $75,000/$150,000.
 - Bailey-protected CSRS pension continues at $40K — no rollovers
   planned; verify continuity.
 - James should set up federal + NC estimated payments to avoid

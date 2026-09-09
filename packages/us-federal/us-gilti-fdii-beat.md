@@ -1,6 +1,6 @@
 ---
 name: us-gilti-fdii-beat
-description: Tier 2 US federal international tax content skill for the TCJA-era provisions §951A GILTI, §250 FDII, §59A BEAT, plus surviving Subpart F. Covers tax year 2025 including the 50% §250 GILTI deduction (effective 10.5% rate for C-corps; sunsets to 37.5% in 2026), the 37.5% FDII deduction (effective 13.125%; sunsets to 21.875%), the BEAT 10% rate on modified taxable income for corps with >$500M average gross receipts and >3% base erosion percentage (rises to 12.5% in 2026), the §962 election for individual US shareholders of CFCs, Form 5471 / 8992 / 8993 / 8991 compliance, the §965 transition-tax final installments through 2025, and the Pillar Two GloBE non-adoption with UTPR exposure.
+description: Tier 2 US federal international tax content skill for the TCJA-era provisions §951A GILTI, §250 FDII, §59A BEAT, plus surviving Subpart F. Covers tax year 2025 including the 50% §250 GILTI deduction (effective 10.5% rate for C-corps; 40% from 2026 under OBBBA, effective 12.6%), the 37.5% FDII deduction (effective 13.125%; 33.34% from 2026 under OBBBA, effective ~14%), the BEAT 10% rate on modified taxable income for corps with >$500M average gross receipts and >3% base erosion percentage (10.5% from 2026 under OBBBA), the §962 election for individual US shareholders of CFCs, Form 5471 / 8992 / 8993 / 8991 compliance, the §965 transition-tax final installments through 2025, and the Pillar Two GloBE non-adoption with UTPR exposure.
 jurisdiction: US
 category: federal-tax
 tier: 2
@@ -53,9 +53,9 @@ This skill provides the technical content for the three flagship TCJA internatio
 
 The One Big Beautiful Bill Act (P.L. 119-21, enacted July 4, 2025) made selective changes to TCJA international provisions. As of the `last_updated` date on this skill, the following items are the consensus understanding but **MUST be verified against current IRS guidance and the final statute text** before issuing advice:
 
-- OBBBA did **not** repeal the scheduled §250 deduction rate reductions for tax years beginning after Dec 31, 2025 (GILTI 50% → 37.5%; FDII 37.5% → 21.875%). The 2026 sunset to the lower deduction rates remains in effect for 2026.
+- OBBBA **replaced** the pre-OBBBA §250 sunset for tax years beginning after Dec 31, 2025. It did not enact the scheduled 37.5% / 21.875% percentages: §70321 sets the §250 deduction at **40% on NCTI** (the renamed GILTI; effective rate 12.6% before the FTC haircut) and **33.34% on FDDEI** (the renamed FDII; effective rate ~14%). Both are permanent.
 - OBBBA did **not** adopt Pillar Two / GloBE domestically. US remains a non-adopter.
-- BEAT rate scheduled increase to 12.5% for tax years beginning after Dec 31, 2025 remains in effect.
+- BEAT rate for tax years beginning after Dec 31, 2025 is **10.5%**, set permanently by OBBBA. The pre-OBBBA scheduled increase to 12.5% was not enacted.
 - BEAT credit ordering under §59A(b)(1)(B) for R&D and §38 GBC: pre-OBBBA the 80% usability rule for GBC credits (other than R&D) was scheduled to sunset; **verify whether OBBBA addressed this**. If a current-year BEAT computation depends on this point, **stop and require human reviewer input**.
 
 > **Reviewer must verify all rate/effective-date claims in §§2.4, 3.4, 4.3, and 4.7 of this document against the operative version of the IRC and final Treasury regulations before relying on them for a 2025 return.**
@@ -217,7 +217,7 @@ A **domestic C-corporation** US Shareholder gets a deduction under **§250(a)(1)
 | Tax year beginning | GILTI deduction % | Effective rate (21% × (1 − %)) |
 |---|---|---|
 | 2018–2025 | **50%** | **10.5%** |
-| **2026 onward (TCJA sunset)** | **37.5%** | **13.125%** |
+| **2026 onward (OBBBA / NCTI)** | **40%** | **12.6%** |
 
 This deduction is taken on **Form 8993** ("Section 250 Deduction for Foreign-Derived Intangible Income (FDII) and Global Intangible Low-Taxed Income (GILTI)").
 
@@ -278,7 +278,7 @@ So an individual sitting on top of a CFC in, say, Singapore (17% statutory) can 
 | Without §962 | With §962 |
 |---|---|
 | 37% top rate + 3.8% NIIT | 21% corporate rate (no NIIT because §962 income is treated as corporate) |
-| No §250 deduction | 50% §250 deduction available (effective 10.5%, sunsets to 13.125% in 2026) |
+| No §250 deduction | 50% §250 deduction available (effective 10.5%; 40% deduction / 12.6% effective from 2026 under OBBBA) |
 | No §960 deemed-paid FTC | §960(d) deemed-paid FTC available (80% creditable) |
 
 **Catch:** Distributions from the CFC that come from §962 PTEP (previously taxed earnings and profits) are **NOT** tax-free under §959 to the extent of the §962 tax paid. Specifically, the actual distribution of the underlying earnings to the individual is taxable as a **qualified dividend** (potentially) under the regular dividend rules to the extent it exceeds the original §962 tax paid. Under Smith v. Commissioner, T.C. Memo. 2018-127 (and subsequent guidance — see Rev. Rul. 62-165 and the 2019 proposed regs), the post-§962 distribution is generally taxed as a dividend but the underlying §962 tax paid creates a basis offset for the portion previously taxed.
@@ -338,7 +338,7 @@ Step 4: FDII
 
 Step 5: §250(a)(1)(A) deduction
   FDII deduction = 37.5% × FDII  [2018–2025]
-                 = 21.875% × FDII  [2026 onward — TCJA sunset]
+                 = 33.34% × FDDEI [2026 onward — OBBBA §70321]
 ```
 
 The **effective rate** on FDII-qualifying income for a 21% corporation:
@@ -346,7 +346,7 @@ The **effective rate** on FDII-qualifying income for a 21% corporation:
 | Tax year beginning | FDII deduction % | Effective rate |
 |---|---|---|
 | 2018–2025 | **37.5%** | **13.125%** |
-| **2026 onward** | **21.875%** | **16.406%** |
+| **2026 onward (OBBBA / FDDEI)** | **33.34%** | **approximately 14%** |
 
 > Combined §250 deduction (GILTI + FDII) is taken on **Form 8993**.
 
@@ -462,7 +462,7 @@ BEAT liability = max(0, BEAT MTA)
 |---|---|
 | 2018 | 5% |
 | 2019–2025 | **10%** |
-| **2026 onward (TCJA sunset)** | **12.5%** |
+| **2026 onward (OBBBA, permanent)** | **10.5%** |
 
 (Banks and registered securities dealers are subject to a +1 percentage point on each rate above.)
 
@@ -949,24 +949,24 @@ Total federal tax:                 $50.51M
 **Step 5: 2026 projection (illustrative).**
 
 If MegaCorp's 2026 facts are similar but:
-- BEAT rate increases to 12.5%
+- BEAT rate increases to 10.5% (OBBBA, permanent)
 - R&D credit is added back to the BEAT regular-tax comparison
 - 100% of other GBC credits are added back
 
 ```
-10% × MTI scenario (2026 rate)     = 12.5% × $535.1M = $66.89M
+BEAT rate × MTI (2026 rate)        = 10.5% × $535.1M = $56.19M
 "Regular tax" for BEAT (2026):
   Regular tax before credits        = $63.00M
   (No R&D credit usability)        = $0M offset
   (No GBC credit usability)        = $0M offset
   "Regular tax" for BEAT            = $63.00M
 
-BEAT Minimum Tax Amount = max(0, $66.89M − $63.00M) = $3.89M
+BEAT Minimum Tax Amount = max(0, $56.19M − $63.00M) = $0.00M
 Plus regular tax after credits:    $28.00M
-Total federal tax:                 $31.89M
+Total federal tax:                 $28.00M
 ```
 
-> Counterintuitively, the 2026 BEAT add-on **decreases** in this fact pattern despite the higher rate, because the credit add-back raises the regular-tax floor. The 2026 result is sensitive: **a different MTI/credit mix could produce the opposite outcome.** Always re-run the BEAT model for each year.
+> The 2026 BEAT add-on falls to zero in this fact pattern: the credit add-back raises the regular-tax floor above 10.5% of MTI. This projection still assumes the pre-OBBBA full credit add-back from 2026 — see the reviewer flag in §2 on whether OBBBA changed BEAT credit usability; if credits stay usable the floor drops and BEAT can reappear. The 2026 result is sensitive: **a different MTI/credit mix could produce the opposite outcome.** Always re-run the BEAT model for each year.
 
 **What goes on the forms:**
 - **Form 8991**, with Schedule A listing each base erosion payment by counterparty + payment type, Schedule B for MTI, Schedule C for the BEAT computation.

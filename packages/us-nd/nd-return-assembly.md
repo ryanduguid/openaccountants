@@ -385,7 +385,7 @@ Structured markdown. Required sections in this order:
 10. Reviewer Attention Flags — Aggregated from all upstream skills.
 11. Refusals Triggered — Aggregated from all upstream skills.
 12. Positions Taken — Tax positions requiring judgment, with citations (N.D.C.C. §, IRC §, ND-1 booklet page references).
-13. Planning Notes for 2026 — ND rate stability watch (any legislative changes from the 69th Legislative Assembly), federal QBI 20% → 23% under OBBBA, federal 1099 threshold change, Renaissance Zone project end dates if applicable, military retirement continuity.
+13. Planning Notes for 2026 — ND rate stability watch (any legislative changes from the 69th Legislative Assembly), federal §199A QBI rate unchanged at 20% under OBBBA (widened phase-in ranges and a $400 minimum deduction from 2026), federal 1099 threshold change, Renaissance Zone project end dates if applicable, military retirement continuity.
 14. Taxpayer Action List — Embedded copy of File 3.
 
 ### 7C — File 3: `taxpayer_action_list.md`
@@ -544,7 +544,7 @@ treatment; else N/A]
 ## Planning Notes for 2026
 - ND rate stability watch — `[VERIFY:]` any 69th Legislative
   Assembly changes to N.D.C.C. §57-38-30.3
-- Federal QBI 20% → 23% under OBBBA (P.L. 119-21) — flows through
+- Federal §199A QBI rate unchanged at 20% under OBBBA (P.L. 119-21) — flows through
   to ND because ND starts at federal taxable income
 - 1099 threshold change to $2,000 in 2026 under OBBBA
 - Renaissance Zone project end dates (if applicable)
@@ -766,9 +766,9 @@ treatment; else N/A]
 ## Planning Notes for 2026
 - ND rate stability: 0%/1.95%/2.50% schedule projected to continue
   in 2026 absent 69th Legislative Assembly action `[VERIFY:]`.
-- Federal QBI rate rises 20% → 23% under OBBBA (P.L. 119-21);
-  Sarah's QBI deduction grows materially, reducing both federal
-  taxable income and (because Line 15 = ND Line 1) ND tax.
+- Federal §199A QBI rate stays at 20% under OBBBA (P.L. 119-21) —
+  the 23% rate in the House-passed bill was not enacted. From 2026
+  the phase-in ranges widen to $75,000/$150,000.
 - Sarah should switch to even quarterly ND-1ES to avoid another
   year of ND-1UT interest.
 - If Sarah loses MN W-2 income in 2026, the reciprocity tracking

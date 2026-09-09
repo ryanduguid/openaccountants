@@ -72,7 +72,7 @@ The structural mechanic:
 
 OBBBA made three changes relevant to PTET planning:
 1. SALT cap raised to $40,000 (2025-2029) with phase-down above $500k MAGI.
-2. §199A QBI made permanent at 20%, rising to 23% in 2026. PTET reduces QBI (because PTET reduces ordinary income flowing through K-1 Line 1), so the QBI deduction is reduced by 20% (or 23% in 2026) of the PTET deduction — netting the PTET federal benefit.
+2. §199A QBI made permanent at 20% — OBBBA did not enact the 23% rate that appeared in the House-passed bill. PTET reduces QBI (because PTET reduces ordinary income flowing through K-1 Line 1), so the QBI deduction is reduced by 20% of the PTET deduction — netting the PTET federal benefit.
 3. No direct PTET changes — Treasury has not retracted Notice 2020-75, and OBBBA did not codify or restrict the workaround. PTET remains an administrative blessing, not a statutory one.
 
 ---

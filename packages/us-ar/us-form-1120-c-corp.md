@@ -711,7 +711,7 @@ Reduces the line 31 tax via Schedule J, computed on Form 1118. (Refer to FTC ski
 - Plus Forms 5471 (Ireland), 8993, 1118 (FTC), Schedule UTP if applicable (assets ≥ $10M likely).
 - Schedule M-3 likely required (assets ≥ $10M).
 
-For 2026, the §250 deduction percentages drop to 37.5% / 21.875% (see §11). If GlobalTech's GILTI inclusion were the same in 2026, the §250 deduction on GILTI alone would drop from $2.1M to $1.575M, increasing 2026 tax by $110,250. Flag for tax planning.
+For tax years beginning after December 31, 2025, OBBBA (P.L. 119-21 §70321) sets the §250 deduction at 40% for NCTI (the renamed GILTI) and 33.34% for FDDEI (the renamed FDII) — it did not implement the pre-OBBBA 37.5% / 21.875% sunset (see §11). If GlobalTech's inclusion were the same in 2026, the §250 deduction on NCTI alone would fall from $2.1M (50%) to $1.68M (40%), increasing 2026 tax by $88,200. Flag for tax planning.
 
 ### 19.3 Example C — CAMT-triggered large corp
 
