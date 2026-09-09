@@ -16,7 +16,7 @@ last_updated: 2026-06-12
 
 **This file contains workflow architecture only.** It defines how Claude should approach an e-invoicing compliance task: the order of operations, what to validate, how to report findings, what to check before delivering. It contains no country-specific mandate thresholds, no national schema definitions, no penalty regimes, no transmission endpoint details, no local field requirements beyond the universal baseline.
 
-**This file must always be loaded with a country-specific e-invoicing skill** that provides the mandate applicability rules, required format standard, country-specific mandatory fields, transmission method, and penalty regime (e.g., `it-fatturapa`, `mx-cfdi`, `in-einvoice-irn`, `my-myinvois`, `pl-ksef`). This file alone cannot validate an invoice or produce a compliance report. Loading it without a companion is a configuration error and Claude must refuse to proceed.
+**This file must always be loaded with a country-specific e-invoicing skill** that provides the mandate applicability rules, required format standard, country-specific mandatory fields, transmission method, and penalty regime (e.g., `it-fatturapa`, `mx-cfdi`, `india-einvoice`, `my-myinvois`, `pl-ksef`). This file alone cannot validate an invoice or produce a compliance report. Loading it without a companion is a configuration error and Claude must refuse to proceed.
 
 **This file is the contract.** When a country e-invoicing skill says it conforms to v1.0 of this base, it means: it fills the country slots specified in Section 6, it participates in the workflow in Section 1, and its validation results can be verified by the self-checks in Section 5.
 

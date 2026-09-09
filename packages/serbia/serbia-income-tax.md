@@ -6,7 +6,8 @@ jurisdiction: RS
 tax_year: 2025
 last_updated: 2026-07-13
 review_status: pending_review
-depends_on: - income-tax-workflow-base
+depends_on:
+  - income-tax-workflow-base
 category: international
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -56,13 +57,21 @@ Applies only if total net income exceeds **3x the average annual salary = RSD 5,
 
 **Annual Supplementary Tax bands table**  _(KPMG Feb 2026)_
 
-| Band | Net income (RSD) | Rate | Cumulative supplementary tax at top of band | Source |
+The rates are **not** applied to gross income. Build the base in this order, then band it:
+
+1. Total net income for the year.
+2. **Less** the non-taxable amount, RSD 5,439,096 (3× the average annual salary). If income does not exceed it, there is no annual tax and no return.
+3. **Less** the personal deduction (RSD 725,213) and any per-dependent deductions (RSD 271,955 each), together capped at 50% of the amount from step 2.
+4. Band the result — this is the *income for taxation*.
+
+| Band | Income for taxation, i.e. base after steps 2–3 (RSD) | Rate | Cumulative supplementary tax at top of band | Source |
 | --- | --- | --- | --- | --- |
-| Below threshold | 0 -- 5,439,096 | 0% (not subject to annual tax) | RSD 0 | KPMG Feb 2026 |
-| Band 1 | 5,439,096 -- 10,878,192 | 10% | RSD 543,909.60 | KPMG Feb 2026 |
+| Band 1 | 0 -- 10,878,192 | 10% | RSD 1,087,819.20 | KPMG Feb 2026 |
 | Band 2 | above 10,878,192 | 15% | -- | KPMG Feb 2026 |
 
-Band 1 width = 10,878,192 − 5,439,096 = RSD 5,439,096; at 10% that is RSD 543,909.60 of tax accumulated by the top of Band 1. PwC expresses Band 2 as "10% then +15% = effective 25% on the top band"; both descriptions are the same marginal 15% supplement layered on the 10% (PwC; KPMG Feb 2026). Personal/dependent deductions and youth relief (Section 1 below and Section 5.10) reduce the base before bands apply.
+The RSD 10,878,192 break (6× the average annual salary) is measured on the **base**, not on gross income, so a taxpayer does not reach the 15% rate until total income is roughly 5,439,096 + 725,213 + 10,878,192 ≈ RSD 17.0m. KPMG's worked example follows exactly this order (income → less 5,439,096 → less 725,213 → 10% on the first 10,878,192 of the remainder, 15% above), as does taxadvisorserbia.com.
+
+PwC states the top band loosely as "the previous 10% with an additional 15%", which reads as 25% on the top slice. That is *not* the same as the marginal 15% in KPMG's example, and this guide follows KPMG's worked arithmetic. Where a figure is material, confirm against the KPMG alert rather than the PwC prose (PwC; KPMG Feb 2026).
 
 ### Annual Tax Deductions (2025 income)
 
@@ -307,14 +316,14 @@ Check: 12,157.70 + 29,850.00 = 42,007.70; 150,000 − 42,007.70 = 107,992.30 ✓
 
 **Reasoning (KPMG Feb 2026):**
 - Threshold = RSD 5,439,096 (3x avg annual salary). Income exceeds it, so the annual tax applies.
-- Personal deduction RSD 725,213 (cannot exceed 50% of taxable income; 725,213 < 6,000,000, so allowed in full). Taxable income for the annual tax = 12,000,000 − 725,213 = 11,274,787.
-- Band 1 (5,439,096 → 10,878,192): width 5,439,096 × 10% = **RSD 543,909.60**.
-- Band 2 (above 10,878,192): 11,274,787 − 10,878,192 = 396,595 × 15% = **RSD 59,489.25**.
-- Annual supplementary tax = 543,909.60 + 59,489.25 = **RSD 603,398.85**.
+- Less the non-taxable amount: 12,000,000 − 5,439,096 = 6,560,904.
+- Personal deduction RSD 725,213. Cap = 50% × 6,560,904 = 3,280,452; 725,213 is below the cap, so allowed in full.
+- Income for taxation = 6,560,904 − 725,213 = **5,835,691**.
+- The base is below the RSD 10,878,192 break, so all of it is taxed at 10%: 5,835,691 × 10% = **RSD 583,569.10**. The 15% band is not reached.
 
-Check: 543,909.60 + 59,489.25 = 603,398.85 ✓
+Check: 5,835,691 × 0.10 = 583,569.10 ✓
 
-**Classification:** File Form PP GPDG by 15 May 2026; supplementary tax due RSD 603,398.85 (in addition to tax already withheld during the year).
+**Classification:** File Form PP GPDG by 15 May 2026; supplementary tax due RSD 583,569.10 (in addition to tax already withheld during the year).
 
 ## Section 5 -- Tier 1 Rules (When Data Is Clear)
 
@@ -363,7 +372,7 @@ Check: 543,909.60 + 59,489.25 = 603,398.85 ✓
 
 ### 5.10 Annual Supplementary Tax
 
-- **Annual supplementary tax rule** — For 2025 income, the annual tax applies only if total net income exceeds RSD 5,439,096 (3x avg annual salary of RSD 1,813,032). Band 1: 10% on income from 3x to 6x (5,439,096 → 10,878,192). Band 2: 15% on income above 6x (10,878,192). Personal deduction RSD 725,213 and per-dependent deduction RSD 271,955 (combined deductions capped at 50% of taxable income). Youth relief: taxpayers under 40 on the last day of the year get an additional RSD 5,439,096 reduction against employment/self-employment/IP income.  _(KPMG Feb 2026)_
+- **Annual supplementary tax rule** — For 2025 income, the annual tax applies only if total net income exceeds RSD 5,439,096 (3x avg annual salary of RSD 1,813,032). Build the base as income − 5,439,096 − deductions, then band it: 10% on the first RSD 10,878,192 of that base, 15% above. The 6x break is measured on the base, never on gross income. Personal deduction RSD 725,213 and per-dependent deduction RSD 271,955 (combined deductions capped at 50% of income after the non-taxable amount). Youth relief: taxpayers under 40 on the last day of the year get an additional RSD 5,439,096 reduction against employment/self-employment/IP income.  _(KPMG Feb 2026; taxadvisorserbia.com)_
 
 ### 5.11 Filing, Forms and Deadlines
 
@@ -617,7 +626,7 @@ Expected: Taxable 60,000 (75%); tax = RSD 12,000 (20%); effective 15%.
 ### Test 6 -- Annual supplementary tax (2025).
 
 Input: Total net income RSD 12,000,000; age 45; personal deduction only; no dependents.
-Expected: Taxable base = 11,274,787; Band 1 = RSD 543,909.60; Band 2 = RSD 59,489.25; annual tax = RSD 603,398.85.
+Expected: 12,000,000 − non-taxable amount 5,439,096 = 6,560,904; less personal deduction 725,213 (cap 50% × 6,560,904 = 3,280,452, not binding) → income for taxation = RSD 5,835,691, which is under the RSD 10,878,192 break → annual tax = 5,835,691 × 10% = RSD 583,569.10.
 
 ### Test 7 -- Below annual-tax threshold.
 

@@ -6,7 +6,8 @@ jurisdiction: GLOBAL
 tax_year: 2025
 last_updated: 2026-07-13
 review_status: pending_review
-depends_on: - cross-border-workflow-base
+depends_on:
+  - cross-border-workflow-base
 category: cross-border
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -171,8 +172,8 @@ The UAE has ~45 free zones plus three financial center zones (DIFC, ADGM, QFC). 
 | **Malta** | Standard 35% CIT but 6/7 refund mechanism reduces effective rate to 5% for non-Malta shareholders. Pillar Two: 15% top-up subject to QDMTT for in-scope groups. |
 | **Luxembourg** | Standard 17% CIT + ~7% municipal. SOPARFI holding regime. IP box at 80%. Pillar Two: QDMTT in force. |
 | **Ireland (IFSC legacy / Section 110)** | Standard 12.5% CIT; Section 110 securitisation SPVs; KDB IP regime. Pillar Two: Ireland in-force from 2024. |
-| **Isle of Man** | 0% CIT (standard) with 10% for banking and large retailers, 20% for property rental income. Pillar Two: 15% DMTT proposed for 2025. |
-| **Jersey / Guernsey** | 0% CIT (standard); 10% for financial services; 20% for utilities. Pillar Two: 15% IIR / QDMTT proposed for 2025. |
+| **Isle of Man** | 0% CIT (standard) with 10% for banking and large retailers, 20% for property rental income. Pillar Two: **in force** — both an income inclusion rule and a qualified domestic minimum top-up tax apply to fiscal years beginning on or after 1 January 2025, and the IIR has been granted transitional qualified status. |
+| **Jersey / Guernsey** | 0% CIT (standard); 10% for financial services; 20% for utilities. Pillar Two: **in force from 1 January 2025 in both, but not by the same route.** Guernsey brought in an IIR *and* a QDMTT by regulation. **Jersey did not adopt a QDMTT** — the Multinational Corporate Income Tax (Jersey) Law 2025 pairs an IIR with a domestic **Multinational Corporate Income Tax at 15%**, a deliberate departure from the model QDMTT. Do not treat the two islands as a single line item for a group with entities in both. |
 | **Monaco** | 33.33% CIT but only on activities outside Monaco or > 25% non-Monaco turnover; residents (individuals) generally exempt from personal income tax |
 | **Andorra** | 10% CIT |
 | **San Marino** | 17% CIT; reduced rates for new enterprises |

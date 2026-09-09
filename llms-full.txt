@@ -21,7 +21,7 @@ Always tell users to have AI-generated output reviewed by a qualified profession
 
 These named practitioners have reviewed Guides for their jurisdictions. The accountant-reviewed version of their jurisdictions' Guides is signed under their name:
 
-- **South Africa (ZA):** Werner Britz CA(SA), 5 skills — [openaccountants.com/network/28a3ec1b-d699-4c5d-bb60-3114eedc59d0](https://www.openaccountants.com/network/28a3ec1b-d699-4c5d-bb60-3114eedc59d0)
+- **South Africa (ZA):** Werner Britz CA(SA), 7 skills — [openaccountants.com/network/28a3ec1b-d699-4c5d-bb60-3114eedc59d0](https://www.openaccountants.com/network/28a3ec1b-d699-4c5d-bb60-3114eedc59d0)
 - **Malta (MT):** Michael Cutajar CPA (Malta), 5 skills — [openaccountants.com/network](https://www.openaccountants.com/network)
 - **Brazil (BR):** Ariane Marrocos CRC/SP, 9 skills — [openaccountants.com/network/366f5c0f-1afb-4332-b87b-9b6f912821aa](https://www.openaccountants.com/network/366f5c0f-1afb-4332-b87b-9b6f912821aa)
 - **United Kingdom (GB):** James Power, 15 skills — [openaccountants.com/network/30b2f478-3a97-40c4-b435-0678829b487e](https://www.openaccountants.com/network/30b2f478-3a97-40c4-b435-0678829b487e)
@@ -29,8 +29,8 @@ These named practitioners have reviewed Guides for their jurisdictions. The acco
 - **Indonesia (ID):** Rilia Putri CA, 10 skills — [openaccountants.com/network/ec70d43e-18c0-4b4e-b92c-4f8a22e10152](https://www.openaccountants.com/network/ec70d43e-18c0-4b4e-b92c-4f8a22e10152)
 - **Nepal (NP):** Ashish Bista CA, 5 skills — [openaccountants.com/network/78ab67db-8f29-4746-8102-7b52d17309aa](https://www.openaccountants.com/network/78ab67db-8f29-4746-8102-7b52d17309aa)
 - **Portugal (PT):** Mário Vale CA, 9 skills — [openaccountants.com/network/a26a63b7-343c-451b-8266-bb9d28bd7089](https://www.openaccountants.com/network/a26a63b7-343c-451b-8266-bb9d28bd7089)
-- **Saudi Arabia (SA):** Mehran Habib, 9 skills — [openaccountants.com/network/f9dbab51-2b89-451b-98f2-414b48fb4599](https://www.openaccountants.com/network/f9dbab51-2b89-451b-98f2-414b48fb4599)
-- **United States (US/US-IL):** Amir Pelinkovic CPA (Citrin Cooperman), 16 skills — [openaccountants.com/network/752ee18a-3843-434d-8426-457d3fa9706f](https://www.openaccountants.com/network/752ee18a-3843-434d-8426-457d3fa9706f)
+- **Saudi Arabia (SA):** Mehran Habib, 13 skills — [openaccountants.com/network/f9dbab51-2b89-451b-98f2-414b48fb4599](https://www.openaccountants.com/network/f9dbab51-2b89-451b-98f2-414b48fb4599)
+- **United States (US/US-IL):** Amir Pelinkovic CPA (Citrin Cooperman), 14 skills (attributed in the guides as "a licensed accountant (name withheld at their request)") — [openaccountants.com/network/752ee18a-3843-434d-8426-457d3fa9706f](https://www.openaccountants.com/network/752ee18a-3843-434d-8426-457d3fa9706f)
 - **United States (US federal):** Christopher Aryee, CPA — US federal form guides in `packages/us-federal/`, including the OBBBA corrections review (2026)
 - **Germany, Australia, Canada**: Source-cited drafts — accountant review in progress.
 
@@ -130,7 +130,7 @@ https://www.openaccountants.com
 
 ========================================================================
 
-## Guide inventory (1954 guides, 244 jurisdictions, 171 accountant-reviewed)
+## Guide inventory (1953 guides, 244 jurisdictions, 171 accountant-reviewed)
 
 - us-1099-k-and-payment-processors | US | tier 2 | reviewed_by -
 - us-education-credits-8863 | US | tier 2 | reviewed_by -
@@ -212,22 +212,22 @@ https://www.openaccountants.com
 - us-1099-k-and-payment-processors | US | tier 2 | reviewed_by James Wallach
 - us-1099-nec-issuance | US | tier 1 | reviewed_by A licensed accountant (name withheld at their request)
 - us-citizen-moving-abroad-tax | US | tier 2 | reviewed_by -
-- us-crypto-income-events | US | tier 1 | reviewed_by Christopher Aryee
-- us-crypto-reporting | US | tier 1 | reviewed_by Christopher Aryee
+- us-crypto-income-events | US | tier 1 | reviewed_by Christopher Aryee, CPA
+- us-crypto-reporting | US | tier 1 | reviewed_by Christopher Aryee, CPA
 - us-crypto-tax | US | tier 1 | reviewed_by James Wallach
 - us-education-credits-8863 | US | tier 2 | reviewed_by James Wallach
-- us-estate-gift-706-709 | US | tier 1 | reviewed_by Christopher Aryee
+- us-estate-gift-706-709 | US | tier 1 | reviewed_by Christopher Aryee, CPA
 - us-fbar-and-fatca-8938 | US | tier 2 | reviewed_by James Wallach
 - us-federal-cost-segregation | US | tier 2 | reviewed_by James Wallach
 - us-federal-section-1031-like-kind-exchange | US | tier 2 | reviewed_by James Wallach
 - us-foreign-earned-income-2555 | US | tier 2 | reviewed_by James Wallach
 - us-foreign-tax-credit-1116 | US | tier 2 | reviewed_by James Wallach
-- us-form-1040-individual-return | US | tier 1 | reviewed_by Christopher Aryee
-- us-form-1041-trust-and-estate-income | US | tier 1 | reviewed_by Christopher Aryee
-- us-form-1065-partnership | US | tier 1 | reviewed_by Christopher Aryee
-- us-form-1120-c-corp | US | tier 1 | reviewed_by Christopher Aryee
-- us-form-5471-cfc-information | US | tier 1 | reviewed_by Christopher Aryee
-- us-form-5472-foreign-owned-us | US | tier 1 | reviewed_by Christopher Aryee
+- us-form-1040-individual-return | US | tier 1 | reviewed_by Christopher Aryee, CPA
+- us-form-1041-trust-and-estate-income | US | tier 1 | reviewed_by Christopher Aryee, CPA
+- us-form-1065-partnership | US | tier 1 | reviewed_by Christopher Aryee, CPA
+- us-form-1120-c-corp | US | tier 1 | reviewed_by Christopher Aryee, CPA
+- us-form-5471-cfc-information | US | tier 1 | reviewed_by Christopher Aryee, CPA
+- us-form-5472-foreign-owned-us | US | tier 1 | reviewed_by Christopher Aryee, CPA
 - us-form-941-940-payroll | US | tier 2 | reviewed_by James Wallach
 - us-gilti-fdii-beat | US | tier 2 | reviewed_by James Wallach
 - us-irs-collections-and-controversy | US | tier 2 | reviewed_by James Wallach
@@ -826,12 +826,12 @@ https://www.openaccountants.com
 - gm-payroll-social | GM | tier 2 | reviewed_by -
 - gm-tax-overview | GM | tier 2 | reviewed_by -
 - gm-vat-gst | GM | tier 2 | reviewed_by -
-- ge-company-formation | GE | tier 2 | reviewed_by Gvantsa Amiridze
-- ge-corporate-income-tax | GE | tier 2 | reviewed_by Gvantsa Amiridze
-- ge-tax-overview | GE | tier 2 | reviewed_by Gvantsa Amiridze
+- ge-company-formation | GE | tier 2 | reviewed_by Gvantsa Amiridze, ACCA
+- ge-corporate-income-tax | GE | tier 2 | reviewed_by Gvantsa Amiridze, ACCA
+- ge-tax-overview | GE | tier 2 | reviewed_by Gvantsa Amiridze, ACCA
 - georgia-income-tax | GE | tier 2 | reviewed_by Gvantsa Amiridze, ACCA
-- georgia-payroll | GE | tier 2 | reviewed_by Gvantsa Amiridze
-- georgia-social-contributions | GE | tier 2 | reviewed_by Gvantsa Amiridze
+- georgia-payroll | GE | tier 2 | reviewed_by Gvantsa Amiridze, ACCA
+- georgia-social-contributions | GE | tier 2 | reviewed_by Gvantsa Amiridze, ACCA
 - georgia-tax-optimization | GE | tier 2 | reviewed_by Gvantsa Amiridze, ACCA
 - georgia-vat | GE | tier 2 | reviewed_by Gvantsa Amiridze, ACCA
 - de-capital-gains | DE | tier 2 | reviewed_by -
@@ -948,6 +948,7 @@ https://www.openaccountants.com
 - id-einvoice-coretax | ID | tier 1 | reviewed_by RILIA PUTRI
 - id-formation | ID | tier 2 | reviewed_by RILIA PUTRI
 - id-freelance-intake | ID | tier 2 | reviewed_by -
+- id-income-tax | ID | tier 1 | reviewed_by RILIA PUTRI
 - id-payroll-pph21 | ID | tier 1 | reviewed_by RILIA PUTRI
 - id-pph-final-umkm | ID | tier 1 | reviewed_by RILIA PUTRI
 - id-return-assembly | ID | tier 2 | reviewed_by -
@@ -1159,14 +1160,14 @@ https://www.openaccountants.com
 - mw-payroll-social | MW | tier 2 | reviewed_by -
 - mw-tax-overview | MW | tier 2 | reviewed_by -
 - mw-vat-gst | MW | tier 2 | reviewed_by -
-- malaysia-einvoice | MY | tier 2 | reviewed_by MUHAMMAD HANIS MAT HUSSIN
-- malaysia-sst | MY | tier 2 | reviewed_by MUHAMMAD HANIS MAT HUSSIN
-- my-company-formation | MY | tier 2 | reviewed_by MUHAMMAD HANIS MAT HUSSIN
+- malaysia-einvoice | MY | tier 2 | reviewed_by MUHAMMAD HANIS MAT HUSSIN, CA-53636
+- malaysia-sst | MY | tier 2 | reviewed_by MUHAMMAD HANIS MAT HUSSIN, CA-53636
+- my-company-formation | MY | tier 2 | reviewed_by MUHAMMAD HANIS MAT HUSSIN, CA-53636
 - my-corporate-income-tax | MY | tier 2 | reviewed_by MUHAMMAD HANIS MAT HUSSIN, CA-53636
-- my-epf-socso | MY | tier 2 | reviewed_by MUHAMMAD HANIS MAT HUSSIN
-- my-income-tax | MY | tier 2 | reviewed_by MUHAMMAD HANIS MAT HUSSIN
-- my-pcb | MY | tier 2 | reviewed_by MUHAMMAD HANIS MAT HUSSIN
-- my-tax-overview | MY | tier 2 | reviewed_by MUHAMMAD HANIS MAT HUSSIN
+- my-epf-socso | MY | tier 2 | reviewed_by MUHAMMAD HANIS MAT HUSSIN, CA-53636
+- my-income-tax | MY | tier 2 | reviewed_by MUHAMMAD HANIS MAT HUSSIN, CA-53636
+- my-pcb | MY | tier 2 | reviewed_by MUHAMMAD HANIS MAT HUSSIN, CA-53636
+- my-tax-overview | MY | tier 2 | reviewed_by MUHAMMAD HANIS MAT HUSSIN, CA-53636
 - maldives-gst | MV | tier 2 | reviewed_by -
 - mv-company-formation | MV | tier 2 | reviewed_by -
 - mv-corporate-income-tax | MV | tier 2 | reviewed_by -
@@ -1254,7 +1255,6 @@ https://www.openaccountants.com
 - ma-financial-statements | MA | tier 2 | reviewed_by -
 - ma-formation | MA | tier 2 | reviewed_by -
 - ma-income-tax | MA | tier 2 | reviewed_by -
-- ma-payroll | US-MA | tier 2 | reviewed_by -
 - ma-social-contributions | MA | tier 2 | reviewed_by -
 - ma-tax-optimization | MA | tier 2 | reviewed_by -
 - morocco-income-tax | MA | tier 2 | reviewed_by -
@@ -1881,8 +1881,8 @@ https://www.openaccountants.com
 - alabama-sales-tax | US-AL | tier 2 | reviewed_by -
 - ar-income-tax | US-AR | tier 2 | reviewed_by -
 - ar-sales-tax | US-AR | tier 2 | reviewed_by -
-- arizona-sales-tax | US-AR | tier 2 | reviewed_by -
 - arkansas-sales-tax | US-AR | tier 2 | reviewed_by -
+- arizona-sales-tax | US-AZ | tier 2 | reviewed_by -
 - az-income-tax | US-AZ | tier 2 | reviewed_by -
 - az-payroll | US-AZ | tier 2 | reviewed_by -
 - az-sales-tax | US-AZ | tier 2 | reviewed_by -
@@ -1899,7 +1899,7 @@ https://www.openaccountants.com
 - co-retail-delivery-and-suts | US-CO | tier 2 | reviewed_by -
 - co-sales-tax | US-CO | tier 2 | reviewed_by -
 - colorado-sales-tax | US-CO | tier 2 | reviewed_by -
-- connecticut-sales-tax | US-CO | tier 2 | reviewed_by -
+- connecticut-sales-tax | US-CT | tier 2 | reviewed_by -
 - ct-income-tax | US-CT | tier 2 | reviewed_by -
 - ct-payroll | US-CT | tier 2 | reviewed_by -
 - ct-sales-tax | US-CT | tier 2 | reviewed_by -
@@ -1929,7 +1929,6 @@ https://www.openaccountants.com
 - hi-sales-tax | US-HI | tier 2 | reviewed_by -
 - ia-income-tax | US-IA | tier 2 | reviewed_by -
 - ia-sales-tax | US-IA | tier 2 | reviewed_by -
-- id-income-tax | ID | tier 1 | reviewed_by RILIA PUTRI
 - id-sales-tax | US-ID | tier 2 | reviewed_by -
 - idaho-sales-tax | US-ID | tier 2 | reviewed_by -
 - il-estimated-tax | US-IL | tier 1 | reviewed_by A licensed accountant (name withheld at their request)
@@ -1938,7 +1937,6 @@ https://www.openaccountants.com
 - il-pprt | US-IL | tier 2 | reviewed_by -
 - il-sales-tax | US-IL | tier 1 | reviewed_by A licensed accountant (name withheld at their request)
 - illinois-sales-tax | US-IL | tier 2 | reviewed_by -
-- in-income-tax | IN | tier 2 | reviewed_by -
 - in-payroll | US-IN | tier 2 | reviewed_by -
 - in-sales-tax | US-IN | tier 2 | reviewed_by -
 - indiana-sales-tax | US-IN | tier 2 | reviewed_by -
@@ -1951,13 +1949,14 @@ https://www.openaccountants.com
 - la-sales-tax | US-LA | tier 2 | reviewed_by -
 - ma-corporate-excise | US-MA | tier 2 | reviewed_by -
 - ma-income-tax | US-MA | tier 2 | reviewed_by -
+- ma-payroll | US-MA | tier 2 | reviewed_by -
 - ma-sales-tax | US-MA | tier 2 | reviewed_by -
-- maine-sales-tax | US-MA | tier 2 | reviewed_by -
-- maryland-sales-tax | US-MA | tier 2 | reviewed_by -
 - massachusetts-sales-tax | US-MA | tier 2 | reviewed_by -
+- maryland-sales-tax | US-MD | tier 2 | reviewed_by -
 - md-income-tax | US-MD | tier 2 | reviewed_by -
 - md-payroll | US-MD | tier 2 | reviewed_by -
 - md-sales-tax | US-MD | tier 2 | reviewed_by -
+- maine-sales-tax | US-ME | tier 2 | reviewed_by -
 - me-income-tax | US-ME | tier 2 | reviewed_by -
 - me-sales-tax | US-ME | tier 2 | reviewed_by -
 - mi-corporate-income-tax | US-MI | tier 2 | reviewed_by -
@@ -2195,11 +2194,11 @@ Key rules:
 | `us-schedule-c-and-se-computation` | US Federal | Pending publication of practitioner registry |
 | `us-ca-freelance-intake` | US-CA | Pending publication of practitioner registry |
 
-This list is derived from each skill's explicit `tier: 1` plus its reviewer name (`reviewed_by`, or the legacy `verified_by` — a stored identifier that keeps its spelling). To add a new accountant-reviewed skill, set **both** `tier: 1` and the reviewer's name and credential, then regenerate the canonical inventory with `python3 scripts/build-index.py` — the tier and verifier land in `index.json`. Setting a reviewer name without flipping `tier` to `1` is a validation error: `tier: 2` must not claim accountant verification. Every accountant-reviewed skill carries the reviewer's name and license number on the skill page at openaccountants.com.
+This list is derived from each skill's explicit `tier: 1` plus its reviewer name (`reviewed_by`, or the legacy `verified_by` — a stored identifier that keeps its spelling). To add a new accountant-reviewed skill, set **both** `tier: 1` and the reviewer's name and credential, then regenerate the canonical inventory with `python3 scripts/build-index.py` — the tier and verifier land in `index.json`. The enforced rule is field-specific: `tier: 2` must not carry a real `verified_by` — that combination is a validation error. A real `reviewed_by` on a `tier: 2` guide is *not* rejected (see `check_quality_metadata` in `scripts/validate-guides.py` and its test), because `reviewed_by` is also used as a plain authorship/attribution field on the hand-authored `packages/us-federal/` guides. Note that 98 guides currently sit in that permitted-but-ambiguous state — a named `reviewed_by` with `tier: 2`, 94 of them also `review_status: current`, which is the exact combination that means `tier: 1` everywhere else. A reader cannot tell from the frontmatter alone whether those were reviewed. Deciding which of the two meanings applies to each of them is a maintainer call. Every accountant-reviewed skill carries the reviewer's name and license number on the skill page at openaccountants.com.
 
 ### Source-cited drafts (Tier 2)
 
-Everything else in this repo. ~700+ skills covering 134 countries and 51 US states. Each one's frontmatter shows the research date and the authoritative sources cross-checked.
+Everything else in this repo — 1,783 of the 1,954 indexed guides, covering 189 country directories plus all 50 US states and DC. Each one's frontmatter shows the research date and the authoritative sources cross-checked. (Counts derived from `index.json`; see [COVERAGE.md](COVERAGE.md).)
 
 ---
 

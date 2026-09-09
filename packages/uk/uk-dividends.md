@@ -7,7 +7,8 @@ tax_year: 2025
 last_updated: 2026-07-13
 reviewed_by: James Power
 review_status: current
-depends_on: - uk-income-tax-sa100
+depends_on:
+  - uk-income-tax-sa100
 category: international
 tier: 1
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -157,40 +158,40 @@ Announced at Autumn Budget 2025 and enacted via Finance (No. 2) Bill 2024-26. Ba
 
 | Payment type | Corporation Tax | Employee NIC | Employer NIC | Income Tax | Net in pocket |
 | --- | --- | --- | --- | --- | --- |
-| Salary | Deductible (reduces CT) | 8% (above £12,570) + 2% (above £50,270) | 13.8% (above £9,100) | 20%/40%/45% | Lower gross, but CT saved |
+| Salary | Deductible (reduces CT) | 8% (above £12,570) + 2% (above £50,270) | 15% (above £5,000) for 2025-26; 13.8% (above £9,100) for 2024-25 | 20%/40%/45% | Lower gross, but CT saved |
 | Dividend | NOT deductible (paid from post-CT profits) | None | None | 8.75%/33.75%/39.35% | No NIC, but CT already paid |
 
-### 3.2 Optimal Strategy (2024-25, Single Director-Shareholder)
+### 3.2 Optimal Strategy (2025-26, Single Director-Shareholder)
 
-**Optimal Strategy (2024-25, Single Director-Shareholder)**
+**Optimal Strategy (2025-26, Single Director-Shareholder)**
 
 | Component | Amount | Rationale |
 | --- | --- | --- |
-| Salary | £12,570 (PA level) | Tax-free; employer NIC: 13.8% × (£12,570 - £9,100) = £479; CT deduction saves 25% × £12,570 = £3,143 |
+| Salary | £12,570 (PA level) | Tax-free; employer NIC: 15% × (£12,570 - £5,000) = £1,136; CT deduction saves 25% × £12,570 = £3,143 |
 | Dividends | Remainder of profits | 0% on first £500; 8.75% on remainder within basic rate band |
-| NIC threshold salary alternative | £9,100 (Secondary Threshold) | Zero employer NIC; small sacrifice of personal allowance |
+| NIC threshold salary alternative | £5,000 (Secondary Threshold, 2025-26) | Zero employer NIC; larger sacrifice of personal allowance than under the old £9,100 threshold |
 
-Optimal for most single directors: Salary at £12,570, dividends for the rest up to the basic rate band limit. Beyond basic rate, the combined CT + dividend tax rate increases. The strategy above is calibrated to the 2024-25 tax year (rates unchanged for 2025-26).
+Optimal for most single directors: Salary at £12,570, dividends for the rest up to the basic rate band limit. Beyond basic rate, the combined CT + dividend tax rate increases. The strategy above is calibrated to the 2025-26 tax year. Employer NIC did **not** carry over unchanged from 2024-25: from 6 April 2025 the secondary Class 1 rate rose from 13.8% to 15% and the Secondary Threshold fell from £9,100 to £5,000, so the employer NIC cost of a £12,570 salary rose from £479 to £1,136. Employment Allowance also rose from £5,000 to £10,500 and its £100,000 prior-year liability cap was removed, which covers this cost entirely for employers eligible to claim — single-director companies with no other employee on the payroll are not.
 
-2026-27 impact: The Autumn Budget 2025 dividend hike (basic 8.75% → 10.75%; higher 33.75% → 35.75%) narrows the dividend advantage over salary, particularly for higher-rate director-shareholders. The combined CT + higher-rate dividend cost rises from ~50.28% to ~51.78%, eroding most of the gap against the salary route. Single directors should still favour salary at the Primary Threshold plus dividends, but the savings vs. a pure-salary extraction will be materially smaller from 6 April 2026 — re-run the comparison annually.
+2026-27 impact: The Autumn Budget 2025 dividend hike (basic 8.75% → 10.75%; higher 33.75% → 35.75%) narrows the dividend advantage over salary, particularly for higher-rate director-shareholders. The combined CT + higher-rate dividend cost rises from ~50.31% to ~51.81%, eroding most of the gap against the salary route. Single directors should still favour salary at the Primary Threshold plus dividends, but the savings vs. a pure-salary extraction will be materially smaller from 6 April 2026 — re-run the comparison annually.
 
-### 3.3 Combined Effective Rates (2024-25)
+### 3.3 Combined Effective Rates (2025-26)
 
-**Combined Effective Rates (2024-25)**
+**Combined Effective Rates (2025-26)**
 
 | Income band | Salary effective rate | Dividend effective rate |
 | --- | --- | --- |
 | Up to PA (£12,570) | NIC only (employer) | 0% (within PA + allowance) |
-| Basic rate | 20% IT + 8% NIC + 13.8% ER NIC = ~34.25% (offset by CT deduction) | 25% CT + 8.75% on remainder = ~32.19% combined |
-| Higher rate | 40% IT + 2% NIC + 13.8% ER NIC = ~49.03% (offset by CT deduction) | 25% CT + 33.75% on remainder = ~50.28% combined |
-| Additional rate | 45% IT + 2% NIC + 13.8% ER NIC = ~53.43% (offset by CT deduction) | 25% CT + 39.35% on remainder = ~54.51% combined |
+| Basic rate | 20% IT + 8% NIC + 15% ER NIC = ~37.39% (offset by CT deduction) | 25% CT + 8.75% on remainder = ~31.56% combined |
+| Higher rate | 40% IT + 2% NIC + 15% ER NIC = ~49.57% (offset by CT deduction) | 25% CT + 33.75% on remainder = ~50.31% combined |
+| Additional rate | 45% IT + 2% NIC + 15% ER NIC = ~53.91% (offset by CT deduction) | 25% CT + 39.35% on remainder = ~54.51% combined |
 
 ### 3.4 Important Caveats
 
 - **Salary commercial justification** — Salary must be commercially justifiable (not artificially low to avoid NIC)
 - **HMRC challenge** — HMRC can challenge under employment intermediaries legislation
 - **Employment contract** — Director must draw a proper employment contract
-- **Lower Earnings Limit** — Salary below the Lower Earnings Limit (£6,396 for 2024-25) means no qualifying year for State Pension — consider paying at least this level
+- **Lower Earnings Limit** — Salary below the Lower Earnings Limit (£6,500 for 2025-26; £6,396 for 2024-25) means no qualifying year for State Pension — consider paying at least this level
 - **Distributable profits** — Dividends require distributable profits — cannot pay dividends from a loss-making company
 
 ## Section 4 -- Foreign Dividends
@@ -328,21 +329,24 @@ Computation:
 Company:
   Profit: £60,000
   Salary: £12,570 (deductible)
-  Employer NIC: 13.8% × (£12,570 - £9,100) = £479 (deductible)
-  Taxable profit: £60,000 - £12,570 - £479 = £46,951
-  Corporation Tax: £46,951 × 25% = £11,738
-  Available for dividends: £46,951 - £11,738 = £35,213
+  Employer NIC: 15% × (£12,570 - £5,000) = £1,136 (deductible)
+  Taxable profit: £60,000 - £12,570 - £1,136 = £46,294
+  Corporation Tax: £46,294 × 25% = £11,574
+  Available for dividends: £46,294 - £11,574 = £34,720
 
 Director:
   Salary: £12,570 (covered by PA = £0 IT)
   Employee NIC: 8% × (£12,570 - £12,570) = £0
-  Dividends: £35,213
+  Dividends: £34,720
     First £500: 0%
-    Next £37,200 remaining basic rate band: 8.75% on £34,713 = £3,037.39
+    Next £37,200 remaining basic rate band: 8.75% on £34,220 = £2,994.25
 
-Total tax paid (company + personal): £11,738 + £479 + £3,037.39 = £15,254.39
-Total extracted: £12,570 + £35,213 = £47,783
-Effective combined rate: 24.2%
+Total tax paid (company + personal): £11,574 + £1,136 + £2,994.25 = £15,704.25
+Total extracted: £12,570 + £34,720 = £47,290
+Effective combined rate on the £60,000 company profit: 26.2%
+  (Tax + extraction sums to the £60,000 profit: the dividend tax is paid
+   out of the £34,720 already counted as extracted, so it must not be
+   added to the extraction figure when computing this rate.)
 
 ### Example 4 -- Foreign Dividends with DTR
 

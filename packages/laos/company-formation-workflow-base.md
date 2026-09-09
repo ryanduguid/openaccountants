@@ -16,7 +16,7 @@ last_updated: 2026-06-12
 
 **This file contains workflow architecture only.** It defines how Claude should approach a company formation advisory task: the order of operations, how to compare entity types, how to build a registration checklist, how to identify ongoing compliance obligations, what to produce as output, what to check before delivering. It contains no entity type names, no registration fees, no share capital requirements, no filing portals, no notary fee schedules, no specific tax rates.
 
-**This file must always be loaded with a country-specific formation skill** that provides the available entity types, registration authorities, capital requirements, and local compliance rules (e.g., `uk-formation`, `au-formation`, `de-formation`). This file alone cannot produce an entity comparison, a registration checklist, or a compliance calendar. Loading it without a companion is a configuration error and Claude must refuse to proceed.
+**This file must always be loaded with a country-specific formation skill** that provides the available entity types, registration authorities, capital requirements, and local compliance rules (e.g., `uk-formation`, `australia-formation`, `de-formation`). This file alone cannot produce an entity comparison, a registration checklist, or a compliance calendar. Loading it without a companion is a configuration error and Claude must refuse to proceed.
 
 **This file is the contract.** When a country formation skill says it conforms to v1.0 of this base, it means: it fills the country slots specified in Section 5, it produces outputs in the format specified in Section 3, its recommendations can be validated by the self-checks in Section 4, and it participates in the workflow in Section 1.
 

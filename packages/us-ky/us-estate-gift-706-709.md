@@ -1,10 +1,10 @@
 ---
 name: us-estate-gift-706-709
-description: Tier 2 US federal content skill for the unified estate, gift, and generation-skipping transfer tax under §§ 2001 et seq., including Form 706 (estate), Form 709 (gift), and the GST regime. Covers tax year 2025 with the $13.99M per-individual basic exclusion amount, the 40% top rate, the $19,000 annual exclusion, §2513 gift splitting, §2010(c) portability and DSUE with the Rev. Proc. 2022-32 5-year late-election relief, §2503(e) unlimited medical/tuition direct payments, §529 5-year frontload election ($95k/donee), §2032 alternate valuation, §1014 stepped-up basis, the GST regime under § 2601, and the December 31, 2025 TCJA-doubling sunset to ~$7M with anti-clawback T.D. 9884.
+description: Tier 2 US federal content skill for the unified estate, gift, and generation-skipping transfer tax under §§ 2001 et seq., including Form 706 (estate), Form 709 (gift), and the GST regime. Covers tax year 2025 with the $13.99M per-individual basic exclusion amount, the 40% top rate, the $19,000 annual exclusion, §2513 gift splitting, §2010(c) portability and DSUE with the Rev. Proc. 2022-32 5-year late-election relief, §2503(e) unlimited medical/tuition direct payments, §529 5-year frontload election ($95k/donee), §2032 alternate valuation, §1014 stepped-up basis, the GST regime under § 2601, and the permanent $15,000,000 basic exclusion amount from 2026 under OBBBA (P.L. 119-21, § 70106), which replaced the scheduled December 31, 2025 sunset, with anti-clawback T.D. 9884.
 jurisdiction: US
 tax_year: 2025
 last_updated: 2026-07-13
-reviewed_by: Christopher Aryee
+reviewed_by: Christopher Aryee, CPA
 review_status: current
 tier: 1
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -29,7 +29,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ### 1.2 Out of scope
 
-- **Form 1041 fiduciary income tax** — Form 1041 — Income tax of the estate or trust. Fiduciary income tax is a separate regime under Subchapter J; addressed by `us-form-1041-fiduciary-income` (not yet released).  _(Subchapter J)_
+- **Form 1041 fiduciary income tax** — Form 1041 — Income tax of the estate or trust. Fiduciary income tax is a separate regime under Subchapter J; addressed by `us-form-1041-trust-and-estate-income` (not yet released).  _(Subchapter J)_
 - **State estate, inheritance, and gift taxes** — Covered at overview level only (see Section 12); each affected state requires its own Tier 2 skill for filing.
 - **Non-resident alien decedent returns on Form 706-NA** — Mentioned in Section 13 but not produced under this skill; the §60,000 NRA exemption and treaty modifications are sufficiently jurisdiction-specific to warrant dedicated review.  _(§60,000 NRA exemption)_
 - **QDOT regulations under §2056A** — Qualified domestic trust (QDOT) regulations under §2056A for non-citizen surviving spouses. Mentioned in Section 7.5; technical QDOT drafting and Schedule M election require a trust and estate attorney.  _(§2056A)_
@@ -87,7 +87,7 @@ For all practical purposes, the working rate is 40%. Every reviewer brief should
 ### 2.3 The applicable credit amount
 
 - **AEA formula** — AEA = BEA + DSUE + Restored exclusion amount (rarely applicable)  _(§2010(c)(2))_
-- **2025 applicable credit amount** — For a single decedent or unmarried donor in 2025, AEA = BEA = $13,990,000, producing an applicable credit amount of $5,389,800 (the tentative tax on $13,990,000 under §2001(c)).  _(§2010(c)(2); §2001(c))_
+- **2025 applicable credit amount** — For a single decedent or unmarried donor in 2025, AEA = BEA = $13,990,000, producing an applicable credit amount of $5,541,800 (the tentative tax on $13,990,000 under §2001(c): $345,800 on the first $1,000,000 plus 40% of the remaining $12,990,000 = $5,196,000). $5,389,800 is the *2024* credit, on the 2024 BEA of $13,610,000 — do not carry it into 2025. For 2026 the BEA is $15,000,000 and the credit is $5,945,800 ($345,800 + 40% x $14,000,000).  _(§2010(c)(2); §2001(c))_
 
 ### 2.4 The "Form 706 Method" — interaction of lifetime gifts and the estate
 
@@ -449,7 +449,7 @@ For high-basis assets or assets unlikely to appreciate significantly, the trade-
 
 - **Top of the stack mechanic** — The protection applies only to the portion of cumulative lifetime gifts that exceeds the BEA at death. Mechanically: 1. Determine total post-1976 taxable gifts. 2. Determine BEA at death. 3. If total post-1976 gifts ≤ BEA at death: no anti-clawback protection needed (gifts are within the BEA anyway). 4. If total post-1976 gifts > BEA at death: the excess is protected — the estate tax computation uses an AEA equal to total post-1976 gifts (not BEA at death) for purposes of §2001(b)(2).  _(§2001(b)(2))_
 
-Practical example: donor uses $13M of BEA in 2025 (when BEA = $13.99M); donor dies in 2027 when BEA has reverted to ~$7M. Protected gift portion = $13M − $7M = $6M; the $7M post-sunset BEA is also available to shelter the estate; total protection = $7M (BEA at death) + $6M (anti-clawback) = $13M of total transfers shielded.
+Practical example (hypothetical — no reversion exists under current law, since OBBBA § 70106 fixed the BEA at $15,000,000 from 2026): were a future statute to cut the BEA to $7M, a donor who used $13M of BEA when the BEA was $13.99M and then died under the lower amount would keep a protected gift portion of $13M − $7M = $6M, with the $7M BEA at death also available; total protection $13M.
 
 ### 11.3 The 2022 anti-abuse amendment
 
@@ -547,7 +547,7 @@ Form 706 is not required by the threshold test because the gross estate plus adj
 
 - **DSUE computation** — DSUE = $13,990,000 (BEA) − $0 (taxable estate + adjusted taxable gifts) − $0 (gift tax paid) = $13,990,000  _(Example 14.1)_
 
-S's AEA after the election: $13,990,000 (S's own BEA in 2025) + $13,990,000 (DSUE) = $27,980,000. After the 2025 sunset, S's own BEA reverts to ~$7M, but the DSUE — locked in at $13,990,000 — remains.
+S's AEA after the election: $13,990,000 (S's own BEA in 2025) + $13,990,000 (DSUE) = $27,980,000. The scheduled 2025 sunset never took effect: under OBBBA § 70106 S's own BEA is $15,000,000 from 2026, and the DSUE — locked in at $13,990,000 — is additional.
 
 1. Use simplified valuation under §20.2010-2(a)(7)(ii) for marital-deduction property. 2. File Form 706 within 9 months of death + 6-month extension under Form 4768. If missed, file under Rev. Proc. 2022-32 within 5 years of death. 3. At top of return: write "FILED PURSUANT TO REV. PROC. 2022-32 TO ELECT PORTABILITY UNDER §2010(c)(5)(A)" if filing under the late-relief procedure.
 
@@ -561,37 +561,37 @@ D dies in 2025. D is survived by spouse S (US citizen) and three adult children.
 
 | Asset | Value |
 | --- | --- |
-| Primary residence (jointly held with S) | $3,000,000 |
+| Primary residence (spousal JTWROS, FMV $3,000,000) — only 1/2 includible under §2040(b) | $1,500,000 |
 | Brokerage account (D's separate) | $9,000,000 |
 | IRA (S is sole beneficiary) | $4,000,000 |
 | Life insurance (proceeds payable to D's estate) | $2,000,000 |
 | Personal effects, autos | $500,000 |
 | 50% interest in family LLC (closely held real estate) | $1,500,000 |
-| **Total gross estate** | **$20,000,000** |
+| **Total gross estate** | **$18,500,000** |
 
 **Analysis computation table**  _(Example 14.2)_
 
 | Line | Amount |
 | --- | --- |
-| Gross estate | $20,000,000 |
+| Gross estate (residence at the §2040(b) 1/2 = $1.5M) | $18,500,000 |
 | Schedule J — funeral & admin | ($200,000) |
 | Schedule K — debts (residential mortgage $400k) | ($400,000) |
-| Schedule M — marital deduction (residue + 1/2 JTWROS + IRA = $1.5M + $4M + remaining residue) | ($5,910,000) |
+| Schedule M — marital deduction (1/2 JTWROS residence $1.5M + IRA $4M + probate residue to S) | ($5,910,000) |
 | Schedule M — bypass trust is NOT marital because it terminates at S's death without QTIP | $0 |
-| Taxable estate | $13,490,000 |
+| Taxable estate | $11,990,000 |
 | Adjusted taxable gifts (post-1976 gifts not in gross estate) | $500,000 |
-| Tentative tax base | $13,990,000 |
-| Tentative tax (§2001(c) at 40% top rate) | $5,389,800 |
+| Tentative tax base | $12,490,000 |
+| Tentative tax (§2001(c): $345,800 + 40% x $11,490,000) | $4,941,800 |
 | Less gift tax payable on adjusted taxable gifts at DOD rates | $0 (within BEA) |
-| Net tentative tax | $5,389,800 |
-| Less applicable credit amount (AEA = BEA only, no DSUE) | ($5,389,800) |
+| Net tentative tax | $4,941,800 |
+| Less applicable credit amount (2025, AEA = BEA only, no DSUE) | ($5,541,800) |
 | **Net federal estate tax** | **$0** |
 
-D's BEA is fully consumed: $13,490,000 to the bypass trust at death + $500,000 prior gifts = $13,990,000. Exactly matches 2025 BEA. IRA passing to S qualifies for marital deduction even though it is IRD — S will pay income tax on distributions; estate tax avoidance is preserved. Life insurance payable to the estate is fully included under §2042 — note the planning miss; an ILIT would have kept the $2M outside the estate. The 50% LLC interest may qualify for valuation discounts (minority interest + lack of marketability) — typically 25-40% combined. Requires appraisal. Not reflected in this example.
+Under §2040(b) a qualified joint interest held with a US-citizen spouse is included at exactly one-half regardless of who contributed, so only $1,500,000 of the $3,000,000 residence is in D's gross estate; the survivor's half was never D's to tax. That includible half passes to S by survivorship and is the Schedule M item, so its net effect on the taxable estate is $0 — including the full $3M and then deducting only half double-counts it. The applicable exclusion is therefore NOT fully consumed: the $12,490,000 base is $1,500,000 below the 2025 BEA. Reviewer note: the "$13,990,000 to the credit-shelter trust" clause is an illustrative formula, and the probate assets available to fund it are less than that; the mortgage may also need proportioning to the half interest. IRA passing to S qualifies for marital deduction even though it is IRD — S will pay income tax on distributions; estate tax avoidance is preserved. Life insurance payable to the estate is fully included under §2042 — note the planning miss; an ILIT would have kept the $2M outside the estate. The 50% LLC interest may qualify for valuation discounts (minority interest + lack of marketability) — typically 25-40% combined. Requires appraisal. Not reflected in this example.
 
 The bypass trust has remainder beneficiaries who are children (not skip persons). No GST exemption need be allocated unless the trust permits skip-person distributions (e.g., to grandchildren). If the trust does permit skip-person distributions, the executor should allocate D's full GST exemption ($13,990,000) on Schedule R to obtain inclusion ratio zero.
 
-D used the full BEA — DSUE = $0. No portability benefit to S. However, S now holds substantial assets ($5.91M from D's estate + S's own pre-existing assets). S should engage in pre-sunset planning of his/her own — see Example 14.3.
+D did NOT use the full BEA: the tentative tax base of $12,490,000 is below the $13,990,000 BEA, so DSUE = $13,990,000 - $12,490,000 = $1,500,000 is portable to S if the executor files Form 706 and makes the portability election. S also holds substantial assets ($5.91M from D's estate + S's own pre-existing assets) and should do planning of their own — see Example 14.3.
 
 ### Example 14.3 — $30 million couple maxing out 2025 SLAT before sunset
 
@@ -613,7 +613,7 @@ Different trustees; Different dispositive provisions (e.g., SLAT-1 is HEMS-only 
 | Cumulative prior gifts | $0 |
 | Cumulative gifts | $13,000,000 |
 | Applicable credit on $13,000,000 | $4,989,800 (tax on $13M at the §2001(c) rates) |
-| Applicable credit available (2025 = $5,389,800) | $5,389,800 |
+| Applicable credit available (2025 = $5,541,800) | $5,541,800 |
 | Net gift tax due | $0 |
 
 Each spouse uses $13,000,000 of the $13,990,000 BEA. Remaining BEA per spouse for end-of-2025 = $990,000.

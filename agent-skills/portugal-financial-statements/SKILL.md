@@ -95,7 +95,7 @@ Não pode ultrapassar **2 dos 3** limiares. Avaliação no primeiro exercício, 
 | 3 | Acréscimos e diferimentos | Princípio rigoroso da periodização económica (especialização dos exercícios) |
 | 4 | Imparidade de dívidas a receber | NCRF 27; avaliação individual e por carteira |
 | 5 | Inventários | NCRF 18; menor entre custo (FIFO/CMP) e valor realizável líquido (VRL) |
-| 6 | Impostos diferidos | NCRF 25; diferenças temporárias; taxa de IRC de 21% + derrama |
+| 6 | Impostos diferidos | NCRF 25; diferenças temporárias; taxa de IRC de 19% (2026) + derrama |
 | 7 | Operações em moeda estrangeira | NCRF 23; itens monetários à taxa de fecho |
 | 8 | Locações | NCRF 9; classificação como locação financeira ou operacional |
 | 9 | Benefícios dos empregados | NCRF 28; provisão para férias, subsídio de férias e subsídio de Natal |

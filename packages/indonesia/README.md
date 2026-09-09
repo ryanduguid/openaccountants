@@ -12,17 +12,18 @@
 5. `id-einvoice-coretax.md`
 6. `id-formation.md`
 7. `id-freelance-intake.md`
-8. `id-payroll-pph21.md`
-9. `id-pph-final-umkm.md`
-10. `id-return-assembly.md`
-11. `id-tax-optimization.md`
-12. `id-withholding.md`
-13. `indonesia-vat.md`
-14. `references.md`
-15. `bookkeeping-workflow-base.md`
-16. `einvoice-workflow-base.md`
-17. `payroll-workflow-base.md`
-18. `company-formation-workflow-base.md`
+8. `id-income-tax.md`
+9. `id-payroll-pph21.md`
+10. `id-pph-final-umkm.md`
+11. `id-return-assembly.md`
+12. `id-tax-optimization.md`
+13. `id-withholding.md`
+14. `indonesia-vat.md`
+15. `references.md`
+16. `bookkeeping-workflow-base.md`
+17. `einvoice-workflow-base.md`
+18. `payroll-workflow-base.md`
+19. `company-formation-workflow-base.md`
 
 ## Also known as
 

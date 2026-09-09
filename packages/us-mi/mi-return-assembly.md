@@ -84,11 +84,11 @@ When invoked, the agent executes the following steps in order. No step is option
 
 ### Step 3 — Confirm Michigan skills ran
 
-- **Michigan skill verification sequence** — Execute in order: 1. `mi-income-tax` — MI-1040, Schedule 1 (MI), Schedule W. Produces Michigan AGI, Michigan taxable income, Michigan tax at 4.25%, credits, refund or balance due. 2. `mi-pension-retirement-subtraction` — Form 4884, if any taxpayer or spouse is born before 1953 or has pension / IRA / 401(k) distributions reported on federal Form 1099-R. Skip if N/A but record the skip. 3. `mi-estimated-tax` (if a separate skill exists) OR derive next-year MI-1040ES vouchers from `mi-income-tax` Section 4. Produces a 4-payment schedule for 2026 if expected liability exceeds $500. 4. `mi-homestead-credit` (MI-1040CR) — If taxpayer is homeowner or renter and household resources are within the credit threshold. Skip if N/A. 5. `mi-home-heating-credit` (MI-1040CR-7) — If household resources qualify and home heating costs are documented. Skip if N/A. If any required skill failed or its self-check failed, refuse with **R-MI-FINAL-1** or **R-MI-FINAL-2**.  _(R-MI-FINAL-1 / R-MI-FINAL-2)_
+- **Michigan skill verification sequence** — Execute in order: 1. `mi-income-tax` — MI-1040, Schedule 1 (MI), Schedule W. Produces Michigan AGI, Michigan taxable income, Michigan tax at 4.25%, credits, refund or balance due. 2. `mi-pension-retirement-subtraction` — Form 4884, if any taxpayer or spouse is born before 1953 or has pension / IRA / 401(k) distributions reported on federal Form 1099-R. Skip if N/A but record the skip. 3. `mi-estimated-tax` (if a separate skill exists) OR derive next-year MI-1040ES vouchers from `mi-income-tax` Section 4. Produces a 4-payment schedule for 2026 if expected liability exceeds $500. 4. `mi-homestead-credit` (MI-1040CR) — If taxpayer is homeowner or renter and household resources are within the credit threshold. Skip if N/A. 5. the Michigan Home Heating Credit, Form MI-1040CR-7 (**not present in this repository** — claim it directly on the form; it is not the homestead credit in `mi-homestead-credit`) (MI-1040CR-7) — If household resources qualify and home heating costs are documented. Skip if N/A. If any required skill failed or its self-check failed, refuse with **R-MI-FINAL-1** or **R-MI-FINAL-2**.  _(R-MI-FINAL-1 / R-MI-FINAL-2)_
 
 ### Step 4 — Confirm city-level skill ran if Detroit nexus exists
 
-- **City nexus handling** — If intake flagged Detroit residence OR Detroit work nexus: - Detroit resident → `mi-detroit-individual-return` produces Form 5118 + Form 5121 (City Schedule W). Resident rate 2.4%. - Detroit non-resident worker → refuse with **R-MI-FINAL-7**; non-resident city returns are out of scope for this orchestrator. - Grand Rapids resident → currently refused (no `mi-grand-rapids-return` skill in the stack). Refuse with **R-MI-FINAL-8**. - Other 22 taxing cities → refused with **R-MI-FINAL-9**.  _(R-MI-FINAL-7 / R-MI-FINAL-8 / R-MI-FINAL-9)_
+- **City nexus handling** — If intake flagged Detroit residence OR Detroit work nexus: - Detroit resident → `mi-detroit-individual-return` produces Form 5118 + Form 5121 (City Schedule W). Resident rate 2.4%. - Detroit non-resident worker → refuse with **R-MI-FINAL-7**; non-resident city returns are out of scope for this orchestrator. - Grand Rapids resident → currently refused (no a Grand Rapids city return guide (**not present in this repository** — the city return must be prepared outside these guides) skill in the stack). Refuse with **R-MI-FINAL-8**. - Other 22 taxing cities → refused with **R-MI-FINAL-9**.  _(R-MI-FINAL-7 / R-MI-FINAL-8 / R-MI-FINAL-9)_
 
 ### Step 5 — Run the verification matrix
 
@@ -293,7 +293,7 @@ Structured markdown. Required sections in this order:
 8. **Reviewer Attention Flags** — Aggregated from all upstream skills.
 9. **Refusals Triggered** — Aggregated from all upstream skills.
 10. **Positions Taken** — Tax positions requiring judgment, with citations (MCL §, IRC §, MI-1040 Book page references).
-11. **Planning Notes for 2026** — MI rate stability watch (4.25% is the statutory rate but is subject to MCL 206.51 "trigger" mechanism), QBI 20% → 23% under OBBBA, federal 1099 threshold change, Form 4884 tier progression as birth years roll forward, Detroit move-in/move-out risk.
+11. **Planning Notes for 2026** — MI rate stability watch (4.25% is the statutory rate but is subject to MCL 206.51 "trigger" mechanism), §199A QBI rate unchanged at 20% under OBBBA (widened phase-in ranges and a $400 minimum deduction from 2026), federal 1099 threshold change, Form 4884 tier progression as birth years roll forward, Detroit move-in/move-out risk.
 12. **Taxpayer Action List** — Embedded copy of File 3.
 
 ### 7C — File 3: `taxpayer_action_list.md`
@@ -430,7 +430,7 @@ The brief follows this fixed structure:
 
 ## Planning Notes for 2026
 - Michigan rate watch (MCL 206.51 trigger mechanism)
-- Federal QBI 20% → 23% under OBBBA (P.L. 119-21)
+- Federal §199A QBI rate unchanged at 20% under OBBBA (P.L. 119-21); from 2026 the phase-in ranges widen to $75,000/$150,000 and a $400 minimum deduction applies
 - Form 4884 tier progression (taxpayers born 1953+)
 - Estimated-tax safe harbor positioning
 - Detroit nexus monitoring (move in/out impact)
@@ -621,8 +621,10 @@ The brief follows this fixed structure:
 - MI conforms to §168(k) and §179: see MI Treasury 2025 IIT FAQ.
 
 ## Planning Notes for 2026
-- Federal QBI rate rises 20% → 23% under OBBBA (P.L. 119-21, July 2025);
-  Maria's QBI deduction grows materially if income stays at $180K.
+- Federal §199A QBI rate stays at 20% under OBBBA (P.L. 119-21, July
+  2025) — the 23% rate in the House-passed bill was not enacted. From
+  2026 the phase-in ranges widen to $75,000/$150,000, which matters only
+  if Maria's taxable income enters the phase-in band.
 - MI rate stays at 4.25% for 2026 per Treasury Notice (MCL 206.51
   trigger did not fire for 2026).
 - Detroit resident rate stays at 2.4% for 2026.

@@ -32,8 +32,8 @@ This skill handles **employer payroll compliance in the State of Michigan** for 
 
 ### 1.2 What this skill does NOT cover
 
-- **Federal payroll** (Forms 941, 940, W-2 federal, FUTA, FICA) — defer to `us-federal-payroll`
-- **Multi-state apportionment of withholding for telecommuting employees** outside Michigan — defer to `us-multistate-payroll`
+- **Federal payroll** (Forms 941, 940, W-2 federal, FUTA, FICA) — defer to `us-form-941-940-payroll`
+- **Multi-state apportionment of withholding for telecommuting employees** outside Michigan — defer to `us-state-payroll-matrix`
 - **Workers' compensation** under the Michigan Workers' Disability Compensation Act — separate workflow
 - **Michigan Earned Sick Time Act (ESTA)** — see Section 8.4; ESTA replaced the Paid Medical Leave Act effective 21 February 2025 but a subsequent legislative compromise (HB 4001/HB 4002, signed 21 February 2025) materially amended it. Read Section 8 carefully — this is the most volatile area of Michigan payroll law in 2025
 - **Detroit business taxes** other than employer withholding (corporate income tax, utility users tax)
@@ -44,7 +44,7 @@ This skill handles **employer payroll compliance in the State of Michigan** for 
 
 This skill MUST be loaded alongside:
 - `us-tax-workflow-base` v0.2 or later (workflow architecture)
-- `us-federal-payroll` (federal payroll provides the wage base from which Michigan withholding is computed)
+- `us-form-941-940-payroll` (federal payroll provides the wage base from which Michigan withholding is computed)
 
 ### 1.4 Conservative defaults
 
@@ -154,7 +154,7 @@ Lansing MI 48909
 
 **Form 5080/5081 due dates**
 
-| Period | Form 5080 due date |
+| Period | Form due date |
 | --- | --- |
 | January (monthly) | 20 February |
 | Q1 (Jan-Mar) | 20 April |

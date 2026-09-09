@@ -20,7 +20,7 @@ metadata:
 | Field | Value |
 |---|---|
 | Jurisdiction | Maine |
-| State rate | 5.50% (general); 8.00% (short-term auto rental); 9.00% (lodging/prepared food) |
+| State rate | 5.50% (general); 8.00% (prepared food); 9.00% (lodging); 10.00% (short-term auto rental) |
 | Local taxes | None |
 | Sourcing | Destination-based |
 | Economic nexus | $100,000 OR 200 transactions |
@@ -36,9 +36,9 @@ metadata:
 | General TPP | TAXABLE 5.50% | |
 | Clothing | TAXABLE | No exemption |
 | Grocery food | EXEMPT | |
-| Prepared food | TAXABLE 9.00% | Higher rate |
+| Prepared food | TAXABLE 8.00% | Higher rate |
 | Lodging | TAXABLE 9.00% | Higher rate |
-| Short-term auto rental | TAXABLE 8.00% | |
+| Short-term auto rental | TAXABLE 10.00% | |
 | SaaS | NOT TAXABLE | Maine does not tax SaaS |
 | Canned software (download) | TAXABLE | |
 | Professional services | NOT TAXABLE | |
@@ -49,7 +49,7 @@ metadata:
 ## Section 10 -- Prohibitions
 
 - NEVER use the 5.50% rate for prepared food or lodging -- they have higher rates (9%).
-- NEVER forget the 8% short-term auto rental rate.
+- NEVER forget the 10% short-term auto rental rate.
 - NEVER compute any number.
 
 ## Disclaimer

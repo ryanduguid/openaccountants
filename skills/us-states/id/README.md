@@ -13,8 +13,8 @@
 ## Files in this folder
 | File | What it covers |
 |---|---|
-| `id-income-tax.md` | Individual income tax (Form 40) — flat 5.3% (2025), self-employed focus |
 | `id-sales-tax.md` | Sales and use tax obligations (6% state rate) |
+| `idaho-sales-tax.md` | Idaho sales and use tax |
 
 ## What's NOT covered
 - Corporate income tax

@@ -242,7 +242,7 @@ See `us-pte-state-matrix.md` for the comprehensive PTE-by-state schedule.
 
 **Facts.** Sole proprietor in Los Angeles, CA. 2024 California tax liability $42,000 on California AGI of $260,000 (above the $150k threshold). 2025 projected income lumpy: $30k Q1, $50k Q2, $20k Q3, $200k Q4 (year-end consulting project). Projected 2025 CA tax ≈ $48,000.
 
-**Federal safe harbor (for reference).** 110 % × prior-year federal tax. Pay 4 × 25 % = 25 % of safe harbor each quarter.
+**Federal safe harbor (for reference).** 110 % × prior-year federal tax. Pay **25 % of that safe harbor each quarter**, i.e. four equal instalments totalling 100 %.
 
 **California safe harbor.** Because 2024 California AGI > $150,000, the prior-year safe harbor is 110 % × $42,000 = $46,200. Lower of $46,200 (110 % prior) or 90 % × $48,000 = $43,200 (90 % current) — required annual payment = $43,200.
 

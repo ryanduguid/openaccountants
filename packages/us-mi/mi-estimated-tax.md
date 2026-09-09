@@ -57,8 +57,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Estimated tax threshold | Expected tax > $500 after withholding and credits | MCL 206.301(1) |
 | Safe harbor — current year | 90% of current-year tax | MI-1040ES Instr. |
 | Safe harbor — prior year (standard) | 100% of prior-year tax (12-month return) | MI-1040ES Instr. |
-| Safe harbor — high-income (AGI > $150k) | 110% of prior-year tax | MI-1040ES Instr. `[VERIFY:]` see §5 |
-| Safe harbor — farmers/fishermen | 66⅔% of current-year tax | MCL 206.301(4) |
+| Safe harbor — high-income (prior-year AGI > $150,000; $75,000 MFS) | 110% of prior-year tax | MCL 206.301(11) adopting IRC § 6654(d)(1)(C); MI-1040ES instructions — confirmed |
+| Safe harbor — farmers/fishermen | The federal alternative schedule, adopted by reference: a farmer or fisherman who elects to file and pay federal tax under IRC § 6654's alternative schedule may do the same for Michigan | MCL 206.301(**6**) — not (4), which is the credit provision |
 | Q1 due date (TY 2026) | April 15, 2026 | MCL 206.301(1) |
 | Q2 due date | June 15, 2026 | MCL 206.301(1) |
 | Q3 due date | September 15, 2026 | MCL 206.301(1) |
@@ -101,7 +101,7 @@ Step 5: If remainder > $500 → MUST make estimates.
 
 ## Section 3: Threshold determination — when MUST you make estimates
 
-`[VERIFY:]` MCL 206.301 uses the singular "person" — joint filers compute the threshold on the combined liability shown on the joint MI-1040. Confirm with 2026 MI-1040ES instructions.
+MCL 206.301(1) uses the singular "person", but joint filers test the threshold on the **combined** liability shown on the joint MI-1040. That follows from the return itself rather than from § 206.301: spouses filing jointly file one return as one taxpayer under MCL 206.311, so there is a single "annual tax" and a single amount "withheld under section 351" to measure the $500 excess against. Note the threshold is a **net** figure and is "more than $500.00" — expected annual tax less amounts expected to be withheld and less credits allowed under Part 1. Exactly $500 does not trigger it.
 
 ## Section 4: Safe-harbor calculation
 
@@ -119,13 +119,17 @@ Step 5: If remainder > $500 → MUST make estimates.
 
 - **High-income prior-year safe harbor** — If TY 2025 federal AGI exceeded $150,000 ($75,000 if MFS), the prior-year safe harbor is 110% of TY 2025 Michigan tax — not 100%.  _(MI-1040ES Instr.)_
 
-### Safe harbor 3 — High-income prior-year 110%
+### Safe harbor 3 — why the 110% variant does apply in Michigan
 
-`[VERIFY:]` Michigan's MI-1040ES 2026 instructions reference the federal §6654(d)(1)(C) higher-income test. The MI safe harbor is presented as "100% (or 110% if AGI > $150k)" by Michigan Treasury and by the official MI-1040ES instructions. Confirm that the AGI threshold language continues to apply at $150,000 for TY 2026 — the figure has not been indexed and mirrors the federal threshold under §6654(d)(1)(C).
+The statutory route is **MCL 206.301(11)**: "Except as provided in subsection (1), the amount of an estimated tax installment shall be computed, payment of estimated tax shall be credited, and a period of underpayment shall be determined **in the same manner as provided in the internal revenue code**." That is a general incorporation of the IRC computation, and the IRC computation of the required annual payment is IRC § 6654(d)(1) — including subparagraph (C), the 110% step-up for prior-year AGI above $150,000 ($75,000 MFS). Michigan does not carve it out. The $150,000 threshold is not indexed, federally or in Michigan.
 
-### Safe harbor 4 — Farmers, fishermen, seafarers (MCL 206.301(4))
+> **Contrast North Carolina, which is in this corpus and does the opposite.** G.S. § 105-163.15(d)(2) writes its own flat 100% prior-year prong and adopts § 6654 only selectively — at subsection (f), for the de minimis amount. A practitioner carrying the Michigan answer into a NC return overstates every instalment; carrying the NC answer into a Michigan return understates them. The difference is entirely in how each state's statute picks up the federal computation, so check the incorporation clause before assuming either way. See `nc-estimated-tax`.
 
-- **Farmer/fisherman/seafarer safe harbor** — If at least two-thirds of expected AGI is from farming, fishing, or seafaring, taxpayer may pay 66⅔% of current-year tax in a single installment by January 15, OR file and pay full balance by March 1 of the following year.  _(MCL 206.301(4))_
+### Safe harbor 4 — Farmers and fishermen (MCL 206.301(6))
+
+- **Farmer/fisherman safe harbor** — MCL 206.301(6) does not write its own schedule; it adopts the federal one: "A farmer or fisherman who elects to file and pay his or her federal income tax under an alternative schedule provided in section 6654 of the internal revenue code may file and pay the tax imposed by this part in the same manner." So the mechanics come from IRC § 6654(i) — at least two-thirds of gross income from farming or fishing, then either 66⅔% of current-year tax in a single instalment by 15 January, or file and pay the full balance by 1 March of the following year. The election is not free-standing: it is available only where the taxpayer **has made the federal election**, so a taxpayer who paid federal estimates on the ordinary schedule cannot take the Michigan alternative.  _(MCL 206.301(6); IRC § 6654(i))_
+
+  > The statute says "farmer or fisherman". Michigan Treasury guidance groups **seafarers** with them, and Michigan does have a separate seafarer provision in the income tax act, but § 206.301(6) itself does not name them — confirm against the MI-1040ES instructions before relying on the alternative schedule for a seafarer.
 
 ### Lower-of test
 
@@ -246,7 +250,7 @@ When required estimates are not paid (or are paid late or short), MI-2210 calcul
 
 ### Interest component (MCL 205.23(2))
 
-`[VERIFY:]` Rates for 2027 will be issued in RAB 2026-13 (December 2026) and RAB 2027-5 (June 2027). Check michigan.gov/taxes/interest-rate before finalizing any MI-2210.
+**Maintenance note (not a verification gap).** Michigan sets the rate semi-annually by Revenue Administrative Bulletin under MCL 205.23(2), so the 2027 rates will only exist once RAB 2026-13 (December 2026) and RAB 2027-5 (June 2027) issue. Check michigan.gov/taxes/interest-rate before finalising any MI-2210 for a period they cover.
 
 ### MI-2210 form structure
 
@@ -327,7 +331,7 @@ Through MTO a taxpayer can schedule all four quarterly debits in advance on the 
 | T1-02 | Four installments due April 15, June 15, September 15, January 15 |
 | T1-03 | Each installment = ¼ of required annual payment (RAP) less expected withholding ÷ 4 |
 | T1-04 | RAP = lower of (a) 90% current year or (b) 100% (110% if AGI > $150k) prior year |
-| T1-05 | Farmer/fisherman alternative = 66⅔% by Jan 15 OR full payment by Mar 1 (MCL 206.301(4)) |
+| T1-05 | Farmer/fisherman alternative = 66⅔% by Jan 15 OR full payment by Mar 1, available only where the federal election under IRC § 6654(i) has been made (MCL 206.301(**6**)) |
 | T1-06 | Late/under penalty = 10% of shortfall, $10 min per quarter |
 | T1-07 | Failure to file estimate = 25% penalty, $25 min per quarter |
 | T1-08 | Interest rate = Treasury-set semi-annual rate under MCL 205.23 |
@@ -407,7 +411,7 @@ Schedule four ACH debits via MTO at sign-up; no further action required.
 
 The annualized method front-loads cash to Q3 when the income actually arrived. No MI-2210 penalty accrues because each cumulative payment meets the cumulative safe-harbor percentage.
 
-`[VERIFY:]` Annualization factors mirror federal Schedule AI; confirm the MI-2210 (2026 revision) replicates the federal 4 / 2.4 / 1.5 / 1 sequence.
+The annualization factors mirror federal Schedule AI — 12/3 = 4, 12/5 = 2.4, 12/8 = 1.5, 12/12 = 1 — and they do so as a matter of law, not coincidence: MCL 206.301(11) computes the instalment and determines the period of underpayment "in the same manner as provided in the internal revenue code". A Michigan revision of MI-2210 that departed from the federal sequence would be departing from the statute.
 
 ### Example 3 — High-income W-2 earner with withholding shortfall
 
@@ -451,7 +455,7 @@ For W-2 couples, increasing Michigan withholding via MI-W4 line 6 ("additional a
 | ID | Situation | Action |
 | --- | --- | --- |
 | MI-EST-R-01 | Estate or trust estimated payments (MI-1041ES) | Refuse — separate fiduciary skill required |
-| MI-EST-R-02 | S-corp / partnership PTET estimated payments (MCL 206.813) | Refuse — load `mi-ptet-estimated-tax` (separate skill, pending) |
+| MI-EST-R-02 | S-corp / partnership PTET estimated payments (MCL 206.813) | Refuse — load Michigan flow-through entity tax estimates (**not present in this repository**) (separate skill, pending) |
 | MI-EST-R-03 | Corporate Income Tax estimates (Form 4913) | Refuse — load `mi-corporate-income-tax` |
 | MI-EST-R-04 | Multistate apportionment with Michigan as one of several states | Refuse — flag for professional review |
 | MI-EST-R-05 | Part-year or non-resident estimates (Schedule NR) | Refuse — out of scope |
@@ -497,14 +501,14 @@ For W-2 couples, increasing Michigan withholding via MI-W4 line 6 ("additional a
 | --- | --- | --- |
 | $500 threshold | MCL 206.301(1) | High |
 | Due dates Apr 15 / Jun 15 / Sep 15 / Jan 15 | MCL 206.301(1) | High |
-| 90% / 100% / 110% safe harbor | MI-1040ES 2026 instructions | High (`[VERIFY:]` 110% AGI threshold) |
-| Farmer/fisherman 66⅔% | MCL 206.301(4) | High |
+| 90% / 100% / 110% safe harbor | MI-1040ES instructions | Confirmed: 90% of current-year tax, 100% of prior-year tax, or 110% of prior-year tax where prior-year AGI exceeded $150,000 ($75,000 MFS) |
+| Farmer/fisherman 66⅔% | MCL 206.301(6) adopting IRC § 6654(i) | High |
 | 4.25% flat rate | MCL 206.51 | High |
 | Personal exemption $5,800 | MCL 206.30; 2026 RAB | High |
 | 10% / 25% penalty | MCL 205.24 | High |
 | Interest rate 8.48% (H1 2026) | RAB 2026-1 | High |
 | Interest rate 7.85% (H2 2026) | RAB 2026-5 | High |
-| Annualization factors 4 / 2.4 / 1.5 / 1 | MI-2210 Part 3 (2025 form) | Medium — `[VERIFY:]` 2026 form |
+| Annualization factors 4 / 2.4 / 1.5 / 1 | MI-2210 Part 3; MCL 206.301(11) adopts the IRC manner of computation | High |
 | Joint filer single voucher allowance | MCL 206.311 | High |
 | Reasonable cause waiver grounds | MCL 205.24(4) | High |
 | MTO payment portal mechanics | mto.treasury.michigan.gov walkthrough | Medium |

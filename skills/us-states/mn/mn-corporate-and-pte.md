@@ -236,7 +236,7 @@ The Minnesota tax haven inclusion has been challenged on Commerce Clause grounds
 
 ### 8.2 FDII
 
-- **FDII Minnesota treatment** — Foreign-Derived Intangible Income (FDII) under §250(a)(1)(A) gets a federal 37.5% deduction for 2018-2025 (scheduled to drop to 21.875% in 2026 under pre-OBBBA law). Minnesota: Follows the federal §250 FDII deduction (it flows through FTI); Provides no additional MN subtraction for FDII beyond the federal §250; Net effect: FDII is taxed in MN at 9.8% on the post-§250 amount, apportioned.  _(§250(a)(1)(A))_
+- **FDII Minnesota treatment** — Foreign-Derived Intangible Income (FDII) under §250(a)(1)(A) gets a federal 37.5% deduction for 2018-2025 (OBBBA P.L. 119-21 §70321 replaced the pre-OBBBA 21.875% sunset with a 33.34% deduction on FDDEI for tax years beginning after December 31, 2025). Minnesota: Follows the federal §250 FDII deduction (it flows through FTI); Provides no additional MN subtraction for FDII beyond the federal §250; Net effect: FDII is taxed in MN at 9.8% on the post-§250 amount, apportioned.  _(§250(a)(1)(A))_
 
 ### 8.3 Subpart F
 
@@ -515,7 +515,7 @@ The §965 deemed repatriation transition tax (one-time, for tax year 2017 / 2018
 - `us-federal-return-assembly` — federal 1040/1120 assembly
 - `us-qbi-deduction` — federal §199A (Minnesota does not allow QBI for individuals — note the M1M add-back; covered conceptually here only by reference)
 - `us-quarterly-estimated-tax` — federal quarterlies (Minnesota state quarterlies are computed in parallel)
-- `us-ca-return-assembly` and `us-federal-tx-return-assembly` — parallel state assembly patterns to model the MN return assembly on
+- `us-ca-return-assembly` and `us-tx-return-assembly` — parallel state assembly patterns to model the MN return assembly on
 
 ### Reviewer signoff requirements
 

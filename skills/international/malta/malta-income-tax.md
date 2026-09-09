@@ -7,13 +7,14 @@ tax_year: 2025
 last_updated: 2026-07-13
 reviewed_by: Michael Cutajar, CPA (Malta)
 review_status: current
-depends_on: - income-tax-workflow-base
+depends_on:
+  - income-tax-workflow-base
 category: international
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Malta Income Tax
+# Maltan Income Tax
 
 ## malta-income-tax
 
@@ -461,6 +462,7 @@ The PT benchmark is based on the latest self-assessment (last filed return), as 
 ### 5.11 TA24 -- What It Actually Is (Out of Computation Scope)
 
 - **TA24 explanation** — TA24 is the prescribed form for the OPTIONAL 15% final tax on **gross rental income** under ITA Art. 31D, payable by 30 April of the following year. No deductions are allowed against the gross rent; the tax is final (no set-off or refund); income taxed this way is excluded from the return. If the option is not exercised, rental income is declared in the return at progressive rates (with limited deductions). Choosing between the two is a reviewer decision -- raise R-MT-7.  _([ITA Art. 31D](https://legislation.mt/eli/cap/123/eng))_
+- **TA24 is not the self-employed return** — TA24 covers rental income only. The self-employed annual return is the **Personal Income Tax Return** (self-assessment via myTax, due 30 June), and it is that return -- not TA24 -- that carries Box 2, Box 20 (SSC Class 2 deduction) and Box 36 (provisional tax credits), and that sets the provisional tax benchmark. Guides across this pack once used "TA24" for the return; if you see it used that way again, it is the error, not a synonym.  _(ITA Art. 31D; ITMA Cap. 372)_
 
 ## Section 6 -- Tier 2 Catalogue (Reviewer Judgement Required)
 

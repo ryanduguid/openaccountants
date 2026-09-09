@@ -10,7 +10,7 @@ tier: 1
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Tanzania Income Tax -- Personal / Self-Employed
+# Tanzanian Income Tax -- Personal / Self-Employed
 
 ## Scope note
 

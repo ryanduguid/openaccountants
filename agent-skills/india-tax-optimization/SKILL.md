@@ -32,7 +32,7 @@ metadata:
 | Individual top rate | 30% + 4% health & education cess = 31.2% (old regime); surcharge up to 25% on high incomes |
 | Corporate tax (domestic, new manufacturing) | 15% + cess (s 115BAB) |
 | Corporate tax (domestic, general) | 22% + cess (s 115BAA) or 25%/30% under regular provisions |
-| GST rates | 0%, 5%, 12%, 18%, 28% |
+| GST rates | 0%, 5%, 18%, and 40% for sin/luxury goods (two-slab structure from 22 September 2025; the former 12% and 28% slabs were abolished). Special rates remain for a few items, e.g. 3% on gold |
 
 ### New Regime Tax Slabs (Default from FY 2025-26 onwards)
 

@@ -221,7 +221,7 @@ The Colorado state sales-tax rate is 2.9%, the lowest state-level sales-tax rate
 
 ### 7.4 Brief refer-out to Colorado income tax
 
-- **Colorado income tax rate referral** — Colorado individual income tax is a flat 4.4% for tax year 2024 (declining from 4.55% in 2022 and 4.40% in 2024-2025 under Proposition 121 and subsequent TABOR refunds). 2025 is also expected to be at or near 4.4% pending TABOR-driven temporary reductions. This skill does not cover income tax computation. Refer to a Colorado individual income-tax skill for Form 104 preparation, addbacks for federal QBI, the SALT cap, retirement subtractions, and the Colorado-specific credits.  _(Proposition 121)_
+- **Colorado income tax rate referral** — Colorado individual income tax is a single flat rate. The **statutory** rate is **4.40%**, cut from 4.55% by Proposition 121 (2022). On top of that sits a TABOR surplus mechanism that can reduce the rate temporarily for a single year: it bit for **tax year 2024, which was 4.25%**, and did not bite for **tax year 2025, which is back at 4.40%**. The mechanism is live for tax years 2025 through 2035, so the rate has to be checked for each year rather than assumed — do not carry 4.40% into a 2024 computation or 4.25% into a 2025 one. This skill does not cover income tax computation. Refer to a Colorado individual income-tax skill for Form 104 preparation, addbacks for federal QBI, the SALT cap, retirement subtractions, and the Colorado-specific credits.  _(Proposition 121)_
 
 ## 8. Worked Examples
 

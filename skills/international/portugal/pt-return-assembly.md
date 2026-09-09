@@ -314,7 +314,7 @@ O revisor é um **Contabilista Certificado** membro da **OCC — Ordem dos Conta
 - Lucro tributável
 - Prejuízos fiscais reportáveis (CIRC Art.º 52º — 5 anos / 12 anos PME até 2023 / 5 anos a partir de 2024)
 - Matéria coletável
-- Coleta IRC (21% taxa geral; 17% sobre primeiros €50.000 PME — CIRC Art.º 87º)
+- Coleta IRC (19% taxa geral em 2026; 15% sobre primeiros €50.000 PME — CIRC Art.º 87º)
 - Derrama municipal (até 1,5% conforme município)
 - Derrama estadual (escalões 3%/5%/9% acima €1,5M)
 - Tributações autónomas (Quadro 13)
@@ -845,7 +845,7 @@ A capstone produz uma secção prospetiva para que o contribuinte chegue à pró
 
 | Área | OE 2025 (atual) | OE 2026 (projetado / em discussão) | Ação |
 | --- | --- | --- | --- |
-| Taxa geral IRC | 21% (CIRC Art.º 87º) | Possível redução adicional para 19% (PSD/governo propõe trajetória de descida) | Reforecast pós-OE 2026 |
+| Taxa geral IRC | 19% para períodos iniciados em 2026 (CIRC Art.º 87º, redação da Lei n.º 64/2025) | Trajetória legislada: 18% em 2027, 17% em 2028 | Confirmar por exercício |
 | Taxa reduzida IRC PME (primeiros €50.000) | 17% | Possível redução para 15% | Reforecast |
 | Adicional de solidariedade IRS — limiar | €80.000 | Manutenção esperada | Sem alteração |
 | Escalões IRS | Atualização mínima esperada (~2-3%) | Atualização anual com inflação | Aplicar a partir de 1 jan 2026 |
@@ -1091,7 +1091,7 @@ Se a execução esgotar o contexto a meio da construção, completar primeiro o 
 | Fonte | Referência |
 | --- | --- |
 | Código do IRS (CIRS) — Decreto-Lei nº 442-A/88, de 30 novembro, com sucessivas alterações | Tributação singular; Art.º 22º (englobamento), 31º (regime simplificado), 59º (substituição), 60º (prazo Modelo 3), 68º (taxas gerais), 78º (deduções à coleta), 81º (CDT), 102º (PPC), 119º (DMR) |
-| Código do IRC (CIRC) — Decreto-Lei nº 442-B/88, de 30 novembro, com sucessivas alterações | Tributação societária; Art.º 6º (transparência fiscal), 8º (período de tributação), 18º (regime de acréscimo), 23º-A (despesas não dedutíveis / paraísos fiscais), 28º a 39º-A (provisões e ajustamentos), 51º (participation exemption), 52º (prejuízos fiscais), 63º (preços de transferência), 67º (limitação dedução de juros), 73º (neutralidade fusões), 86º-A e seguintes (regime simplificado IRC), 87º (taxa geral 21%, taxa PME 17%), 87º-A (derrama estadual), 88º (tributações autónomas), 91º (CDT), 105º (PPC), 117º (intervenção do CC), 120º (prazo Modelo 22), 121º (IES), 122º (substituição) |
+| Código do IRC (CIRC) — Decreto-Lei nº 442-B/88, de 30 novembro, com sucessivas alterações | Tributação societária; Art.º 6º (transparência fiscal), 8º (período de tributação), 18º (regime de acréscimo), 23º-A (despesas não dedutíveis / paraísos fiscais), 28º a 39º-A (provisões e ajustamentos), 51º (participation exemption), 52º (prejuízos fiscais), 63º (preços de transferência), 67º (limitação dedução de juros), 73º (neutralidade fusões), 86º-A e seguintes (regime simplificado IRC), 87º (taxa geral 19% em 2026, taxa PME 15%), 87º-A (derrama estadual), 88º (tributações autónomas), 91º (CDT), 105º (PPC), 117º (intervenção do CC), 120º (prazo Modelo 22), 121º (IES), 122º (substituição) |
 | Código do IVA (CIVA) — Decreto-Lei nº 394-B/84, de 26 dezembro, com sucessivas alterações | IVA; Art.º 9º (isenções), 23º (pro-rata), 24º (regularização ativos fixos), 53º (regime de isenção pequenos sujeitos passivos), 60º (regime forfetário), 41º a 44º (declarações periódicas) |
 | Lei Geral Tributária (LGT) — Decreto-Lei nº 398/98, de 17 dezembro | Caducidade (Art.º 45º — 4 anos / 12 anos prejuízos), prescrição, juros compensatórios (Art.º 35º), conservação de documentos (Art.º 123º) |
 | Regime Geral das Infrações Tributárias (RGIT) — Lei nº 15/2001 | Coimas: Art.º 114º (falta de pagamento), 116º (falta declaração), 117º (atraso DMR / SAF-T), 29º (atenuação por regularização espontânea) |

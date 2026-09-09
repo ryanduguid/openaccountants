@@ -19,7 +19,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Field | Value |
 | --- | --- |
 | Jurisdiction | Maine |
-| State rate | 5.50% (general); 8.00% (short-term auto rental); 9.00% (lodging/prepared food) |
+| State rate | 5.50% (general); 8.00% (prepared food); 9.00% (lodging); 10.00% (short-term auto rental) |
 | Local taxes | None |
 | Sourcing | Destination-based |
 | Economic nexus | $100,000 OR 200 transactions |
@@ -50,7 +50,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ## Section 10 -- Prohibitions
 
 - **Prohibition on using 5.50% for prepared food or lodging** — NEVER use the 5.50% rate for prepared food or lodging -- they have higher rates (9%).  _(Section 10 -- Prohibitions)_
-- **Prohibition on forgetting short-term auto rental rate** — NEVER forget the 8% short-term auto rental rate.  _(Section 10 -- Prohibitions)_
+- **Prohibition on forgetting short-term auto rental rate** — NEVER forget the 10% short-term auto rental rate.  _(Section 10 -- Prohibitions)_
 - **Prohibition on computing numbers** — NEVER compute any number.  _(Section 10 -- Prohibitions)_
 
 ## Disclaimer

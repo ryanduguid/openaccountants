@@ -16,13 +16,15 @@
 |---|---|
 | `mn-income-tax.md` | Individual income tax for self-employed / sole proprietors (Form M1) |
 | `mn-sales-tax.md` | Sales and use tax obligations and rates |
+| `minnesota-sales-tax.md` | Minnesota sales and use tax |
+| `mn-corporate-and-pte.md` | Minnesota Corporate Franchise Tax and Pass-Through Entity Tax |
+| `mn-payroll.md` | Minnesota Payroll Compliance Skill (Tax Year 2025) |
 
 ## What's NOT covered
 
 - Corporate franchise tax (Form M4)
 - Estate tax (Form M706)
 - Part-year and non-resident returns (Schedule M1NR)
-- Partnership / S-corp pass-through (Schedule KPI / KS)
 - MinnesotaCare tax (health care provider tax)
 - Property tax (administered at county level)
 

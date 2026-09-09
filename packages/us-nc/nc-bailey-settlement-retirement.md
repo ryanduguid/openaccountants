@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 > **Scope.** This skill covers North Carolina individual income tax treatment of retirement benefits on Form D-400 and Form D-400 Schedule S for full-year NC residents. It focuses on the *Bailey* settlement exclusion (Schedule S Line 20), the post-S.L. 2021-180 military retirement deduction (Schedule S Line 21), the Social Security / Railroad Retirement deduction (Schedule S Line 19), and the NC treatment of private pensions, traditional and Roth IRAs, 401(k)s, 403(b)s, and 457 plans not covered by *Bailey*. Tax year 2025 (returns filed in 2026).
 >
-> **Quality tier.** Q3 — AI-drafted, not independently verified. Every output must be reviewed and signed off by a qualified NC tax professional before filing. Items marked `[VERIFY:]` require explicit confirmation against current NCDOR guidance or the latest D-401 instructions.
+> **Quality tier.** Q3 — AI-drafted, not independently verified. Every output must be reviewed and signed off by a qualified NC tax professional before filing. The statutory subdivisions and the D-401 attachment requirements have since been confirmed directly against G.S. § 105-153.5 and the 2025 D-401 instructions; what remains is the annual re-check of rates and thresholds against current NCDOR guidance.
 >
 > **MUST be loaded alongside** `us-tax-workflow-base v0.2+` and `nc-income-tax v0.1+`. This skill does not itself produce a full D-400 — it produces the Schedule S Part B retirement-deduction lines that flow into the parent NC return.
 
@@ -30,7 +30,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Tax year | 2025 (filed 2026) |
 | Primary form | Form D-400 (line 9 deduction total) |
 | Supporting schedule | Form D-400 Schedule S, Part B, Lines 19 / 20 / 21 |
-| Tax structure | Flat 4.25% rate (TY 2025); 3.99% (TY 2026) [VERIFY: S.L. 2023-134 schedule has been adjusted in subsequent sessions — confirm against NCDOR Tax Rate Schedules before relying] |
+| Tax structure | Flat 4.25% rate (TY 2025); 3.99% (TY 2026), legislated by S.L. 2023-134 (G.S. 105-153.7 as amended by S.L. 2023-134; NCDOR Tax Rate Schedules). A further cut to 3.49% for TY 2027 is contingent on the FY 2025-26 revenue trigger of $33,042,000,000 under G.S. § 105-153.7(a1). The mechanism is confirmed: if total General Fund revenue for the fiscal year exceeds its trigger, the rate for the indicated year and all later years becomes the greater of the prior year's rate less 0.50 percentage points or 2.49%. Whether a given year's trigger was met is settled by the Office of State Controller's final accounting of General Fund Reverting Net Tax and Non-Tax Revenues, published in the August after the fiscal year ends — check that, or NCDOR's published rate schedule, rather than assuming the cut |
 | Filing deadline | April 15, 2026 |
 | Extension deadline | October 15, 2026 |
 | Tax authority | North Carolina Department of Revenue (NCDOR) |
@@ -104,7 +104,7 @@ The Consent Order provides that qualifying retirees and their surviving benefici
 
 ### 3.4 The statutory codification
 
-- **§ 105-153.5(b)(5) paraphrase** — The amount received during the taxable year from one or more State, local, or federal government retirement plans to the extent the amount is exempt from tax under this Part pursuant to a court order in settlement of the following cases: *Bailey v. State of North Carolina*, *Emory v. State of North Carolina*, and *Patton v. State of North Carolina*. `[VERIFY: § 105-153.5(b) subdivision numbering may have shifted with subsequent legislative renumbering. Confirm against the most recent codification before citing in a return position.]`  _(N.C. Gen. Stat. § 105-153.5(b)(5) (current language, paraphrased — verify against most recent codification))_
+- **§ 105-153.5(b)(5) paraphrase** — The amount received during the taxable year from one or more State, local, or federal government retirement plans to the extent the amount is exempt from tax under this Part pursuant to a court order in settlement of the following cases: *Bailey v. State of North Carolina*, *Emory v. State of North Carolina*, and *Patton v. State of North Carolina*. Confirmed against the current statute — subdivision (5), naming *Bailey v. State*, 92 cvs 10221, 94 cvs 6904, 95 cvs 6625, 95 cvs 8230; *Emory v. State*, 98 CVS 0738; and *Patton v. State*, 95 CVS 04346. Note the neighbouring subdivision (5a), which deducts uniformed-services retirement pay and expressly provides that amounts deducted under it "may not also be deducted under subdivision (5)". Confirm against the most recent codification before citing in a return position.]`  _(N.C. Gen. Stat. § 105-153.5(b)(5) (current language, paraphrased — verify against most recent codification))_
 
 ### 4.1 NC TSERS (Teachers' and State Employees' Retirement System)
 
@@ -172,7 +172,7 @@ This is the full picture of how NC treats each type of retirement income — Bai
 | Tier 2 Railroad Retirement | **Fully exempt** (treated as RR retirement under federal law and excluded by NC) | Line 19 |
 | SSI | Not in federal AGI; no NC adjustment | n/a |
 
-- **Mechanism for SS/RR subtraction** — The mechanism: federal Form 1040 includes the taxable portion of Social Security in AGI per IRC § 86 (up to 85%). NC backs that taxable portion out on D-400 Schedule S, Part B, **Line 19**, effective per N.C. Gen. Stat. § 105-153.5(b)(5)/(b)(6) `[VERIFY: subdivision letter for the Social Security subtraction — historical guidance refers to (b)(5), (b)(6), or (b)(8) depending on year]`.  _(N.C. Gen. Stat. § 105-153.5(b)(5)/(b)(6))_
+- **Mechanism for SS/RR subtraction** — The mechanism: federal Form 1040 includes the taxable portion of Social Security in AGI per IRC § 86 (up to 85%). NC backs that taxable portion out on D-400 Schedule S, Part B, **Line 19**, effective per **N.C. Gen. Stat. § 105-153.5(b)(3)** — confirmed against the current statute, which deducts "benefits received under Title II of the Social Security Act and amounts received from retirement annuities or pensions paid under the provisions of the Railroad Retirement Act of 1937". It is **not** (b)(5), which is the Bailey settlement deduction, nor (b)(6) or (b)(8). The 2025 D-401 instructions for Line 19 match: "Enter any Title 2 Social Security benefits received under the Social Security Act and any Tier 1 or Tier 2 railroad retirement benefits received under the Railroad Retirement Act that were included in federal [adjusted gross income]".  _(N.C. Gen. Stat. § 105-153.5(b)(3); 2025 D-401, Line 19)_
 
 ### 5.2 Military retirement — fully exempt for qualifying retirees
 
@@ -220,7 +220,7 @@ This is the full picture of how NC treats each type of retirement income — Bai
 | Rollover statements (if any) | Receiving custodian | Documents preservation or loss of Bailey character |
 | Survivor's documentation (if applicable) | Death certificate + plan administrator survivor designation | For beneficiary returns |
 
-- **1099-R insufficiency and attachment requirement** — **Form 1099-R alone is not sufficient** to support the Line 20 deduction. NCDOR has audited returns where the only support was a 1099-R from TSERS, and disallowed the deduction for lack of documentary vesting evidence. The Bailey letter (or equivalent OPM/DFAS service-history confirmation) is the operative document. The 2025 D-401 instructions require attaching a copy of the Form 1099-R or Form W-2 to the return supporting any Line 20 / Line 21 deduction. `[VERIFY: instruction wording — confirm the attachment requirement language in the most current D-401 issued by NCDOR.]`  _(2025 D-401 instructions [VERIFY])_
+- **1099-R insufficiency and attachment requirement** — **Form 1099-R alone is not sufficient** to support the Line 20 deduction. NCDOR has audited returns where the only support was a 1099-R from TSERS, and disallowed the deduction for lack of documentary vesting evidence. The Bailey letter (or equivalent OPM/DFAS service-history confirmation) is the operative document. The 2025 D-401 instructions state the Line 20 requirement in terms: "A copy of Form 1099-R **or Form W-2** received from the payer must be attached to the return to support the deduction." For Line 21 the filing checklist asks for something different and stronger — "Federal forms DD-214, 1099-R, or similar official document **showing proof of service**" — which is consistent with the point above: the payer form establishes the payment, not the entitlement. What the instructions do not do is prescribe how vesting as of 12 August 1989 is evidenced, which is why the Bailey letter or an OPM/DFAS service history remains the operative document in an audit.  _(2025 D-401 instructions, filing checklist and Line 20/21 instructions)_
 
 ## Section 7: Tier 1 — deterministic rules
 
@@ -237,10 +237,10 @@ This is the full picture of how NC treats each type of retirement income — Bai
 | NC-BAILEY-T1-07 | Direct trustee-to-trustee rollover from a Bailey plan to an IRA **destroys Bailey character** for subsequent distributions | NCDOR Directive PD-00-1; NCDOR Bailey page |
 | NC-BAILEY-T1-08 | Direct trustee-to-trustee rollover into another Bailey-qualifying plan in which the participant was **also vested by 8/12/1989** preserves Bailey character | NCDOR Directive PD-00-1 |
 | NC-BAILEY-T1-09 | The Bailey exclusion extends to **surviving beneficiaries** of a vested member | *Bailey* Consent Order; NCDOR Directive PD-99-1 |
-| NC-BAILEY-T1-10 | A Form 1099-R must be attached to Form D-400 supporting any Line 20 or Line 21 deduction | NCDOR 2025 D-401 instructions [VERIFY exact wording] |
+| NC-BAILEY-T1-10 | Attachments differ by line. **Line 20 (Bailey):** "A copy of Form 1099-R **or Form W-2** received from the payer must be attached to the return to support the deduction." **Line 21 (uniformed services):** the filing checklist calls for "Federal forms DD-214, 1099-R, or similar official document **showing proof of service**". A 1099 on which no NC tax was withheld normally need not be attached — claiming either deduction is the exception | 2025 D-401 instructions, filing checklist and Line 20/21 instructions — exact wording confirmed |
 | NC-BAILEY-T1-11 | Private pensions, IRAs (other than rolled-from-Bailey traceable), and 401(k)s **are fully taxable** to NC | N.C. Gen. Stat. § 105-153.5 (no general retirement deduction) |
-| NC-BAILEY-T1-12 | NC standard deduction TY 2025: $12,750 single / $25,500 MFJ / $12,750 MFS / $19,125 HoH `[VERIFY: confirm against TY 2025 D-401]` | N.C. Gen. Stat. § 105-153.5(a)(1) |
-| NC-BAILEY-T1-13 | NC flat rate TY 2025 = 4.25%; TY 2026 = 3.99% `[VERIFY against most recent rate schedule]` | Session Law 2023-134 |
+| NC-BAILEY-T1-12 | NC standard deduction TY 2025: $12,750 single / $25,500 MFJ / $12,750 MFS / $19,125 HoH — confirmed (NCDOR, unchanged from TY2024; it rises only by legislation) | N.C. Gen. Stat. § 105-153.5(a)(1) |
+| NC-BAILEY-T1-13 | NC flat rate TY 2025 = 4.25%; TY 2026 = 3.99% — confirmed (G.S. 105-153.7 as amended by S.L. 2023-134; NCDOR Tax Rate Schedules) | Session Law 2023-134 |
 
 ## Section 8: Tier 2 — judgment rules
 
@@ -384,7 +384,11 @@ After the MFJ standard deduction of $25,500, NC taxable income = $6,500. NC tax 
 
 ## Section 11: Form mapping — D-400 Schedule S Part B (TY 2025)
 
-> **Filing reminder.** A Form 1099-R supporting any Line 20 or Line 21 deduction must be attached to the D-400 when filed. The 2025 D-401 instructions state this attachment is required to substantiate the deduction. `[VERIFY exact wording in current D-401.]`
+> **Filing reminder.** The 2025 D-401 instructions require, in terms, that "a copy of Form 1099-R or Form W-2 received from the payer must be attached to the return to support the deduction" on Line 20, and the filing checklist separately calls for "Federal forms DD-214, 1099-R, or similar official document showing proof of service" for a Line 21 uniformed-service deduction. Two further points from the same instructions that bear on whether the deduction is available at all:
+>
+> - The Bailey exclusion turns on **five or more years of creditable service as of 12 August 1989** in one of the named defined benefit plans (TSERS, LGERS, the NC Consolidated Judicial Retirement System, FERS, or CSRS), or on having contributed or contracted to contribute to the **state's** §401(k) or §457 plan before that date. It does **not** apply to **local government §457 plans** or to **§403(b) annuities**, and it does not apply to retirees of other states' systems.
+> - **Filing is still required** where the gross income thresholds are met, even if every dollar of retirement income is excludable.
+> - A uniformed-services retiree who deducted retirement income on Line 20 under Bailey **may not deduct the same income again on Line 21**, and Line 21 does not reach severance paid on separation under 10 U.S.C. Chapter 61.
 
 > **Filing-threshold reminder.** Even if 100% of a taxpayer's retirement income is excluded under Bailey (so NC taxable income from pensions is $0), the taxpayer may still be required to file a NC return if gross income meets the filing threshold. The Bailey exclusion is a *taxable-income* exclusion, not a *filing requirement* exclusion. See parent skill `nc-income-tax` for filing-threshold detail.
 
@@ -394,7 +398,7 @@ After the MFJ standard deduction of $25,500, NC taxable income = $6,500. NC tax 
 
 | Version | Date | Author | Changes |
 | --- | --- | --- | --- |
-| 0.1 | 2026-05-28 | AI-drafted (Q3, pending verification) | Initial draft. All TY 2025 figures verified against NCDOR 2025 D-400 Schedule S (Web-Fill 9-25). Statutory subdivision letters for § 105-153.5(b) marked `[VERIFY:]` where current codification numbering not directly confirmed against ncleg.net (403 on automated fetch). Recent military-retirement expansion confirmed against S.L. 2021-180 and NCDOR Important Notice. |
+| 0.1 | 2026-05-28 | AI-drafted (Q3, pending verification) | Initial draft. All TY 2025 figures verified against NCDOR 2025 D-400 Schedule S (Web-Fill 9-25). Statutory subdivision letters for § 105-153.5(b) have since been confirmed directly against the General Assembly's published text of the section: (b)(3) Social Security and Railroad Retirement, (b)(4) refunds of state, local and foreign income taxes, (b)(5) the Bailey / Emory / Patton settlement deduction, (b)(5a) uniformed-services retirement pay. Recent military-retirement expansion confirmed against S.L. 2021-180 and NCDOR Important Notice. |
 
 ## Section 12: Provenance & version history
 

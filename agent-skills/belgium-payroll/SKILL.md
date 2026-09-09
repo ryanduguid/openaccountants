@@ -42,12 +42,14 @@ metadata:
 
 ### Annual Income Tax Brackets (Income Year 2026, AY 2027)
 
-| Taxable Income (EUR) | Marginal Rate |
-|---|---|
-| 0 -- 16,720 | 25% |
-| 16,721 -- 29,510 | 40% |
-| 29,511 -- 51,070 | 45% |
-| 51,071+ | 50% |
+| Taxable Income (EUR) | Marginal Rate | Income year 2025 (AJ 2026) | Income year 2026 (AJ 2027) |
+|---|---|---|---|
+| Band 1 | 25% | 0 -- 16,320 | 0 -- 16,720 |
+| Band 2 | 40% | 16,321 -- 28,800 | 16,721 -- 29,510 |
+| Band 3 | 45% | 28,801 -- 49,840 | 29,511 -- 51,070 |
+| Band 4 | 50% | Above 49,840 | Above 51,070 |
+
+The figures previously given here without a year label -- 16,720 / 29,510 / 51,070 -- are the **income year 2026** thresholds. This skill is `tax_year: 2025`, so a 2025 payroll uses the left-hand column. The tax-free allowance is EUR 10,910 for 2025 and EUR 11,180 for 2026.
 
 ### Withholding Tax Mechanism
 

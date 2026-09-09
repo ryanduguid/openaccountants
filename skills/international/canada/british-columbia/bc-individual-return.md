@@ -6,7 +6,8 @@ jurisdiction: CA
 tax_year: 2025
 last_updated: 2026-07-13
 review_status: pending_review
-depends_on: - income-tax-workflow-base
+depends_on:
+  - income-tax-workflow-base
 category: international
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -40,13 +41,13 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 | Taxable Income (CAD) | Marginal Rate | Cumulative Tax |
 | --- | --- | --- |
-| 0 -- 47,937 | 5.06% | 2,426 |
-| 47,938 -- 95,875 | 7.70% | 6,117 |
-| 95,876 -- 110,076 | 10.50% | 7,608 |
-| 110,077 -- 133,664 | 12.29% | 10,508 |
-| 133,665 -- 181,232 | 14.70% | 17,500 |
-| 181,233 -- 252,752 | 16.80% | 29,515 |
-| 252,753+ | 20.50% | 29,515+ |
+| 0 -- 49,279 | 5.06% | 2,494 |
+| 49,280 -- 98,560 | 7.70% | 6,288 |
+| 98,561 -- 113,158 | 10.50% | 7,821 |
+| 113,159 -- 137,407 | 12.29% | 10,801 |
+| 137,408 -- 186,306 | 14.70% | 17,989 |
+| 186,307 -- 259,829 | 16.80% | 30,341 |
+| 259,830+ | 20.50% | 30,341+ |
 
 ### Key BC Credits (2025)
 
@@ -54,12 +55,12 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 | Credit | Amount | Tax Value (x 5.06%) |
 | --- | --- | --- |
-| Basic personal amount | $12,580 | $636 |
-| Spousal amount | $12,580 minus spouse income | up to $636 |
+| Basic personal amount | $12,932 | $654 |
+| Spousal amount | $12,932 minus spouse income | up to $654 |
 
 ### BC Tax Reduction (Low Income)
 
-- **BC Tax Reduction (Low Income)** — Maximum reduction: $521 + $152 per dependant. Reduced by 3.56% of net income. Eliminated at ~$14,635 net income (single).
+- **BC Tax Reduction (Low Income)** — Maximum reduction **$562** for 2025, reduced by **3.56% of net income in excess of $25,020**, fully eliminated at **$40,807**. It is reduced by the excess over the threshold, not by 3.56% of the whole of net income, and there is **no per-dependant addition**.  _(Province of British Columbia, *B.C. basic personal income tax credits*)_
 
 ### Climate Action Tax Credit (Refundable)
 
@@ -100,32 +101,32 @@ Input: Taxable income $25,000. Net income $25,000. Single, no dependants.
 
 Computation:
 - Gross BC tax: $25,000 x 5.06% = $1,265.00
-- BC basic personal credit: $12,580 x 5.06% = $636.55
-- BC basic tax: $1,265.00 - $636.55 = $628.45
-- BC tax reduction: $521 - (3.56% x $25,000) = $521 - $890 = $0 (eliminated)
-- Net BC tax: $628.45
+- BC basic personal credit: $12,932 x 5.06% = $654.36
+- BC basic tax: $1,265.00 - $654.36 = $610.64
+- BC tax reduction: net income $25,000 is below the $25,020 threshold, so the full $562 applies
+- Net BC tax: $610.64 - $562.00 = $48.64
 
 ### Example 2 -- Mid-Range Income
 
 Input: Taxable income $80,000. Single.
 
 Computation:
-- First $47,937 at 5.06% = $2,425.61
-- $32,063 at 7.70% = $2,468.85
-- Gross BC tax: $4,894.46
-- Credit: $636.55
-- Net BC tax: $4,257.91
+- First $49,279 at 5.06% = $2,493.52
+- $30,721 at 7.70% = $2,365.52
+- Gross BC tax: $4,859.03
+- Credit: $654.36
+- Net BC tax: $4,204.68
 
 ### Example 3 -- High Income, Top Bracket
 
 Input: Taxable income $300,000. Married, spouse income $0.
 
 Computation:
-- Tax through $252,752 = $29,515
-- $47,248 at 20.50% = $9,685.84
-- Gross BC tax: $39,200.84
-- Credits: basic $636.55 + spousal $636.55 = $1,273.10
-- Net BC tax: $37,927.74
+- Tax through $259,829 = $30,341.16
+- $40,171 at 20.50% = $8,235.06
+- Gross BC tax: $38,576.22
+- Credits: basic $654.36 + spousal $654.36 = $1,308.72
+- Net BC tax: $37,267.50
 
 ### Example 4 -- Below Basic Personal Amount
 
@@ -144,7 +145,7 @@ Computation:
 
 ### 5.2 BC Tax Reduction
 
-- **BC Tax Reduction** — Maximum $521 + $152/dependant. Credit percentage: 3.56% of net income. Reduction = maximum - credit percentage. Cannot go below zero.  _(BC ITA, s. 4.62)_
+- **BC Tax Reduction** — Maximum $562 (2025). Reduction = $562 − 3.56% × (net income − $25,020), floored at zero and capped at the BC tax otherwise payable. Below $25,020 of net income the full $562 applies. No per-dependant addition.  _(BC ITA, s. 4.62)_
 
 ### 5.3 Political Contribution Credit
 

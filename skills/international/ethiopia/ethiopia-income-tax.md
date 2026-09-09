@@ -6,13 +6,14 @@ jurisdiction: ET
 tax_year: 2025
 last_updated: 2026-07-13
 review_status: pending_review
-depends_on: - income-tax-workflow-base
+depends_on:
+  - income-tax-workflow-base
 category: international
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Ethiopia Income Tax -- Employment & Self-Employed
+# Ethiopian Income Tax -- Employment & Self-Employed
 
 ## Section 1 -- Quick Reference
 
@@ -53,11 +54,12 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 > **[RESEARCH GAP — reviewer to confirm]** The quick-calc deduction column (300 / 500 / 850 / 1,350 / 2,050) is **derived by computation** from the published cumulative-tax figures (0 / 300 / 900 / 1,650 / 2,850), using the standard progressive identity. The math reconciles exactly, but the deduction constants were **not found stated verbatim** in an authoritative source. The brackets and marginal rates themselves ARE authoritative. The OLD pre-2025 deductions (60 / 142.50 / 302.50 / 565 / 955 / 1,500) are obsolete — do not use them.
 
 - **Changes vs prior law** — tax-free threshold raised ETB 600 → ETB 2,000/month; lowest positive rate raised 10% → 15%; brackets cut 7 → 6; the 35% top rate now applies above ETB 14,000 (previously above 10,900).  _(MyWorkpay; PaySpace)_
+- **Schedule B/C top rate — conflicting secondary sources** — Some commentary (YSA Law Office) reports 1395/2025 as cutting the Schedule B and C top rate from 35% to 30% above ETB 168,000. EY and TaxDev/IFS both publish the full schedules with a **35%** top band above ETB 168,000, matching the employment schedule. The 30% figure is the flat rate that applies to **companies** on rental and business income, which is a separate rule (see below); it is not the individual top marginal rate. This skill follows EY/TaxDev. **[RESEARCH GAP — reviewer to confirm against the Amharic text of Proclamation 1395/2025.]**
 - **Residence/scope** — Residents are taxed on worldwide income; non-residents on Ethiopian-source income; the same rate schedule applies.  _(PwC, *Taxes on personal income*)_
 
 ### Business / Self-Employed (Schedule C) — Annual Progressive Rates
 
-**Business Schedule C Annual Progressive Rates**  _(Source: YSA Law Office (Proclamation 1395/2025 overview); PwC *Significant developments*. Annual thresholds = monthly employment bands × 12.)_
+**Business Schedule C Annual Progressive Rates**  _(Source: EY Global tax alert, *Ethiopia issues a new Income Tax Proclamation*; TaxDev/IFS *Ethiopia's revised income tax explained*. Annual thresholds = monthly employment bands × 12.)_
 
 | Annual taxable business income (ETB) | Rate |
 | --- | --- |
@@ -66,11 +68,11 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | 48,001 – 84,000 | 20% |
 | 84,001 – 120,000 | 25% |
 | 120,001 – 168,000 | 30% |
-| Over 168,000 | 30% (REDUCED from 35% by 1395/2025) |
+| Over 168,000 | 35% |
 
 ### Rental Income (Schedule B) — Annual Progressive Rates
 
-**Rental Income Schedule B Annual Progressive Rates**  _(Source: EY tax alert 2025-2542; YSA Law Office.)_
+**Rental Income Schedule B Annual Progressive Rates**  _(Source: EY Global tax alert, *Ethiopia issues a new Income Tax Proclamation*; TaxDev/IFS *Ethiopia's revised income tax explained*.)_
 
 | Annual taxable rental income (ETB) | Rate |
 | --- | --- |
@@ -79,7 +81,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | 48,001 – 84,000 | 20% |
 | 84,001 – 120,000 | 25% |
 | 120,001 – 168,000 | 30% |
-| Over 168,000 | 30% (reduced from 35%) |
+| Over 168,000 | 35% |
 
 ### Category B — Turnover / Gross-Sales Tax (presumptive)
 
@@ -308,14 +310,14 @@ Net pay = 2,000 − 0 − 140 = **1,860**.
 **Input:** Category A individual consultant, annual taxable business income ETB 200,000 (turnover ETB 600,000).
 
 **Reasoning:**
-Schedule C is progressive on annual taxable income. Over 168,000 → top rate 30% (reduced from 35%).
+Schedule C is progressive on annual taxable income. Over 168,000 → top rate 35%.
 Tax via the same progressive identity, top band: 200,000 falls over 168,000.
 Cumulative tax to 168,000 = (24k@0) + (24k@15%=3,600) + (36k@20%=7,200) + (36k@25%=9,000) + (48k@30%=14,400) = 34,200.
-Excess 200,000 − 168,000 = 32,000 × 30% = 9,600.
-Income tax = 34,200 + 9,600 = **43,800**.
-MAT check: 2.5% × turnover 600,000 = 15,000. Income tax 43,800 > 15,000, so MAT does not bite.
+Excess 200,000 − 168,000 = 32,000 × 35% = 11,200.
+Income tax = 34,200 + 11,200 = **45,400**.
+MAT check: 2.5% × turnover 600,000 = 15,000. Income tax 45,400 > 15,000, so MAT does not bite.
 
-**Classification:** Schedule C income tax = 43,800 (MAT not triggered).
+**Classification:** Schedule C income tax = 45,400 (MAT not triggered).
 
 > Cumulative-tax arithmetic verified: 3,600 + 7,200 + 9,000 + 14,400 = 34,200 at ETB 168,000. ✓
 

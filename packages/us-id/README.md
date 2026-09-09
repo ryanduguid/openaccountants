@@ -57,9 +57,8 @@ This package contains **federal** tax skills (which apply to all US states) plus
 47. `us-state-payroll-matrix.md`
 48. `us-federal-return-assembly.md`
 49. `global-router.md`
-50. `id-income-tax.md`
-51. `id-sales-tax.md`
-52. `idaho-sales-tax.md`
+50. `id-sales-tax.md`
+51. `idaho-sales-tax.md`
 
 ## How to use
 

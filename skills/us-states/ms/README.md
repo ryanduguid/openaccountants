@@ -16,6 +16,7 @@
 |---|---|
 | `ms-income-tax.md` | Individual income tax for self-employed / sole proprietors (Form 80-105) |
 | `ms-sales-tax.md` | Sales and use tax obligations and rates |
+| `mississippi-sales-tax.md` | Mississippi sales and use tax |
 
 ## What's NOT covered
 

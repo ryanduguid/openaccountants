@@ -7,7 +7,8 @@ tax_year: 2025
 last_updated: 2026-07-13
 reviewed_by: Christos Thoma
 review_status: current
-depends_on: - income-tax-workflow-base
+depends_on:
+  - income-tax-workflow-base
 category: international
 tier: 1
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -242,7 +243,7 @@ Refusal if minimum is missing -- SOFT WARN. No bank statement at all = hard stop
 ### Refusal Catalogue
 
 - **R-CY-1** — Residency unknown. "Cyprus tax residents are taxed on worldwide income; non-residents only on Cyprus-source income. This skill cannot proceed without confirming residency under the 183-day rule or the 60-day rule. Please confirm before proceeding."
-- **R-CY-2** — Companies and partnerships. "This skill covers individuals and sole-trader self-employed only. Companies (corporate income tax 12.5%) and partnerships file separate returns. Escalate to a Cyprus-licensed accountant."
+- **R-CY-2** — Companies and partnerships. "This skill covers individuals and sole-trader self-employed only. Companies (corporate income tax 15% from 1 January 2026; 12.5% up to 31 December 2025) and partnerships file separate returns. Escalate to a Cyprus-licensed accountant."
 - **R-CY-3** — Non-resident / dual-resident income. "Non-resident and dual-resident taxation, and double-tax-treaty relief, have different rules. Out of scope. Escalate to a Cyprus-licensed accountant."
 - **R-CY-4** — Capital gains / property disposals. "Cyprus Capital Gains Tax on disposals of immovable property situated in Cyprus (and related shares) is a separate tax. Out of scope. Escalate to a Cyprus-licensed accountant."
 - **R-CY-5** — Arrears / enforcement. "Client has outstanding tax or Social Insurance arrears or is subject to Tax Department / Social Insurance Services enforcement. Late-payment charges and Social Insurance surcharges (up to 27%) are severe. Do not advise. Escalate to a Cyprus-licensed accountant immediately."

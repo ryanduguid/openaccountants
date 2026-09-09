@@ -1,6 +1,6 @@
 ---
 name: us-gilti-fdii-beat
-description: Tier 2 US federal international tax content skill for the TCJA-era provisions §951A GILTI, §250 FDII, §59A BEAT, plus surviving Subpart F. Covers tax year 2025 including the 50% §250 GILTI deduction (effective 10.5% rate for C-corps; sunsets to 37.5% in 2026), the 37.5% FDII deduction (effective 13.125%; sunsets to 21.875%), the BEAT 10% rate on modified taxable income for corps with >$500M average gross receipts and >3% base erosion percentage (rises to 12.5% in 2026), the §962 election for individual US shareholders of CFCs, Form 5471 / 8992 / 8993 / 8991 compliance, the §965 transition-tax final installments through 2025, and the Pillar Two GloBE non-adoption with UTPR exposure.
+description: Tier 2 US federal international tax content skill for the TCJA-era provisions §951A GILTI, §250 FDII, §59A BEAT, plus surviving Subpart F. Covers tax year 2025 including the 50% §250 GILTI deduction (effective 10.5% rate for C-corps; 40% from 2026 under OBBBA, effective 12.6%), the 37.5% FDII deduction (effective 13.125%; 33.34% from 2026 under OBBBA, effective ~14%), the BEAT 10% rate on modified taxable income for corps with >$500M average gross receipts and >3% base erosion percentage (10.5% from 2026 under OBBBA), the §962 election for individual US shareholders of CFCs, Form 5471 / 8992 / 8993 / 8991 compliance, the §965 transition-tax final installments through 2025, and the Pillar Two GloBE non-adoption with UTPR exposure.
 jurisdiction: US
 category: federal-tax
 tier: 2
@@ -53,9 +53,9 @@ This skill provides the technical content for the three flagship TCJA internatio
 
 The One Big Beautiful Bill Act (P.L. 119-21, enacted July 4, 2025) made selective changes to TCJA international provisions. As of the `last_updated` date on this skill, the following items are the consensus understanding but **MUST be verified against current IRS guidance and the final statute text** before issuing advice:
 
-- OBBBA did **not** repeal the scheduled §250 deduction rate reductions for tax years beginning after Dec 31, 2025 (GILTI 50% → 37.5%; FDII 37.5% → 21.875%). The 2026 sunset to the lower deduction rates remains in effect for 2026.
+- OBBBA **replaced** the pre-OBBBA §250 sunset for tax years beginning after Dec 31, 2025. It did not enact the scheduled 37.5% / 21.875% percentages: §70321 sets the §250 deduction at **40% on NCTI** (the renamed GILTI; effective rate 12.6% before the FTC haircut) and **33.34% on FDDEI** (the renamed FDII; effective rate ~14%). Both are permanent.
 - OBBBA did **not** adopt Pillar Two / GloBE domestically. US remains a non-adopter.
-- BEAT rate scheduled increase to 12.5% for tax years beginning after Dec 31, 2025 remains in effect.
+- BEAT rate for tax years beginning after Dec 31, 2025 is **10.5%**, set permanently by OBBBA. The pre-OBBBA scheduled increase to 12.5% was not enacted.
 - BEAT credit ordering under §59A(b)(1)(B) for R&D and §38 GBC: pre-OBBBA the 80% usability rule for GBC credits (other than R&D) was scheduled to sunset; **verify whether OBBBA addressed this**. If a current-year BEAT computation depends on this point, **stop and require human reviewer input**.
 
 > **Reviewer must verify all rate/effective-date claims in §§2.4, 3.4, 4.3, and 4.7 of this document against the operative version of the IRC and final Treasury regulations before relying on them for a 2025 return.**
@@ -217,7 +217,7 @@ A **domestic C-corporation** US Shareholder gets a deduction under **§250(a)(1)
 | Tax year beginning | GILTI deduction % | Effective rate (21% × (1 − %)) |
 |---|---|---|
 | 2018–2025 | **50%** | **10.5%** |
-| **2026 onward (TCJA sunset)** | **37.5%** | **13.125%** |
+| **2026 onward (OBBBA / NCTI)** | **40%** | **12.6%** |
 
 This deduction is taken on **Form 8993** ("Section 250 Deduction for Foreign-Derived Intangible Income (FDII) and Global Intangible Low-Taxed Income (GILTI)").
 
@@ -225,11 +225,11 @@ This deduction is taken on **Form 8993** ("Section 250 Deduction for Foreign-Der
 
 ### 3.5 §960(d) GILTI foreign tax credit — IMPORTANT FEATURES
 
-A domestic C-corporation US Shareholder is treated under **§960(d)** as having paid **80%** of the foreign income taxes properly attributable to the GILTI inclusion (the "tested foreign income taxes" of each CFC, multiplied by the inclusion-percentage fraction).
+A domestic C-corporation US Shareholder is treated under **§960(d)** as having paid a fixed percentage of the foreign income taxes properly attributable to the inclusion (the "tested foreign income taxes" of each CFC, multiplied by the inclusion-percentage fraction): **80% for 2018–2025 GILTI**, and **90% for tax years beginning after 31 December 2025**, OBBBA §70321 having cut the §960(d)(1) reduction from 20% to 10%. Everything in this section is written on the 2025 (80%) figure unless it says otherwise; for a 2026 or later year substitute 90%.
 
 Three critical features:
 
-1. **80% haircut.** Only 80% of foreign taxes are creditable, not 100%. This is why even GILTI from a fully-foreign-taxed CFC at, say, 13.125% foreign rate is not perfectly offset — the 20% haircut leaves a residual US tax.
+1. **The haircut.** Not all foreign taxes are creditable — 20% is lost for 2018–2025 GILTI and 10% for post-2025 NCTI. This is why even GILTI from a fully-foreign-taxed CFC at, say, 13.125% foreign rate is not perfectly offset in 2025: the haircut leaves a residual US tax.
 2. **Separate basket.** GILTI sits in its **own §904 limitation basket** (the "GILTI basket"). It cannot be averaged with general-basket or passive-basket income to soak up excess credits there.
 3. **No carryback or carryforward.** Unlike the general and passive baskets (10-year carryforward, 1-year carryback), the GILTI basket has **no carrybacks and no carryforwards**. Excess GILTI FTCs are permanently lost in the year they arise.
 
@@ -239,21 +239,29 @@ The deemed-paid foreign tax is:
 Deemed-paid tax = Inclusion Percentage × Tested Foreign Income Taxes
 where
   Inclusion Percentage = (US Shareholder's GILTI inclusion / Aggregate Tested Income of all CFCs)
-Creditable amount = 80% × Deemed-paid tax  [§960(d)(1)]
+Creditable amount = 80% × Deemed-paid tax  [§960(d)(1), 2018-2025 GILTI]
+                  = 90% × Deemed-paid tax  [§960(d)(1) as amended by OBBBA, post-2025 NCTI]
 ```
 
 The deemed-paid tax is "grossed up" into the GILTI inclusion under **§78** (so the GILTI inclusion that hits Schedule J is the inclusion **plus** the deemed-paid tax, before the deduction and credit).
 
-> **Break-even foreign tax rate to fully offset US tax on GILTI (pre-2026):**  
+> **Break-even foreign tax rate to fully offset US tax on GILTI (2018–2025):**  
 > 21% × (1 − 50%) = 10.5% US tax.  
 > 80% × foreign rate must ≥ 10.5%, so foreign rate must ≥ **13.125%**.  
 > **If a CFC's effective foreign rate is at least 13.125%, US residual GILTI tax is zero** (subject to expense allocation against the GILTI basket — see below).
+>
+> **Break-even on post-2025 NCTI:**  
+> 21% × (1 − 40%) = 12.6% US tax.  
+> 90% × foreign rate must ≥ 12.6%, so foreign rate must ≥ **14%**.  
+> The bar rises even though the haircut shrinks, because the §250 deduction falls further than the haircut does.
+
+**§960(d)(4) — new PTEP disallowance.** OBBBA added §960(d)(4), which denies a credit for **10% of the foreign income taxes paid, accrued or deemed paid on distributions of §951A PTEP made after 28 June 2025**. That date is already past, so it bites on 2025 distributions as well as later ones and is separate from the §960(d)(1) haircut above.
 
 ### 3.6 Expense allocation against the GILTI basket (the trap)
 
 Under §861-§865 rules and Treas. Reg. §1.861-8, US Shareholder expenses (notably interest expense and stewardship/R&D expense) must be **apportioned** between baskets. Some of these expenses get apportioned to the GILTI basket, **reducing** the §904 limitation in that basket.
 
-The trap: a US C-corp parent with substantial debt at the US level may find that significant interest expense is allocated to GILTI, shrinking the GILTI §904 limitation **below** the GILTI inclusion. The deemed-paid foreign taxes are then capped, and because there's **no carryforward**, the unused FTC is gone forever. Net result: a residual US tax on GILTI even when the foreign effective rate well exceeds 13.125%.
+The trap: a US C-corp parent with substantial debt at the US level may find that significant interest expense is allocated to GILTI, shrinking the GILTI §904 limitation **below** the GILTI inclusion. The deemed-paid foreign taxes are then capped, and because there's **no carryforward**, the unused FTC is gone forever. Net result: a residual US tax on GILTI even when the foreign effective rate well exceeds the break-even (13.125% for 2018-2025, 14% for post-2025 NCTI).
 
 Mitigation strategies (each requires its own analysis):
 - §954(b)(4) high-tax exclusion election to exclude the high-taxed tested income from GILTI altogether
@@ -278,13 +286,13 @@ So an individual sitting on top of a CFC in, say, Singapore (17% statutory) can 
 | Without §962 | With §962 |
 |---|---|
 | 37% top rate + 3.8% NIIT | 21% corporate rate (no NIIT because §962 income is treated as corporate) |
-| No §250 deduction | 50% §250 deduction available (effective 10.5%, sunsets to 13.125% in 2026) |
-| No §960 deemed-paid FTC | §960(d) deemed-paid FTC available (80% creditable) |
+| No §250 deduction | 50% §250 deduction available (effective 10.5%; 40% deduction / 12.6% effective from 2026 under OBBBA) |
+| No §960 deemed-paid FTC | §960(d) deemed-paid FTC available — 80% creditable for 2018-2025 GILTI; for post-2025 NCTI the haircut falls from 20% to 10%, so **90% is creditable** (OBBBA P.L. 119-21) |
 
 **Catch:** Distributions from the CFC that come from §962 PTEP (previously taxed earnings and profits) are **NOT** tax-free under §959 to the extent of the §962 tax paid. Specifically, the actual distribution of the underlying earnings to the individual is taxable as a **qualified dividend** (potentially) under the regular dividend rules to the extent it exceeds the original §962 tax paid. Under Smith v. Commissioner, T.C. Memo. 2018-127 (and subsequent guidance — see Rev. Rul. 62-165 and the 2019 proposed regs), the post-§962 distribution is generally taxed as a dividend but the underlying §962 tax paid creates a basis offset for the portion previously taxed.
 
 The §962 election is therefore **most valuable** when:
-- The CFC pays significant foreign income tax (so the 80% deemed-paid credit substantially offsets the 21% rate);
+- The CFC pays significant foreign income tax (so the deemed-paid credit — 80% for 2018-2025, 90% for post-2025 NCTI — substantially offsets the 21% rate);
 - The individual does not expect to take large dividend distributions in the near term;
 - The CFC is in a moderately-taxed jurisdiction.
 
@@ -338,7 +346,7 @@ Step 4: FDII
 
 Step 5: §250(a)(1)(A) deduction
   FDII deduction = 37.5% × FDII  [2018–2025]
-                 = 21.875% × FDII  [2026 onward — TCJA sunset]
+                 = 33.34% × FDDEI [2026 onward — OBBBA §70321]
 ```
 
 The **effective rate** on FDII-qualifying income for a 21% corporation:
@@ -346,7 +354,7 @@ The **effective rate** on FDII-qualifying income for a 21% corporation:
 | Tax year beginning | FDII deduction % | Effective rate |
 |---|---|---|
 | 2018–2025 | **37.5%** | **13.125%** |
-| **2026 onward** | **21.875%** | **16.406%** |
+| **2026 onward (OBBBA / FDDEI)** | **33.34%** | **approximately 14%** |
 
 > Combined §250 deduction (GILTI + FDII) is taken on **Form 8993**.
 
@@ -462,7 +470,7 @@ BEAT liability = max(0, BEAT MTA)
 |---|---|
 | 2018 | 5% |
 | 2019–2025 | **10%** |
-| **2026 onward (TCJA sunset)** | **12.5%** |
+| **2026 onward (OBBBA, permanent)** | **10.5%** |
 
 (Banks and registered securities dealers are subject to a +1 percentage point on each rate above.)
 
@@ -589,7 +597,7 @@ QDMTTs and IIRs went live in many jurisdictions (EU member states, UK, South Kor
 The United States has **not adopted** Pillar Two as domestic law:
 
 - No QDMTT
-- No IIR (the US position is that GILTI is a substitute, but GILTI does not meet the OECD's "qualified IIR" tests in several technical respects — notably the per-jurisdiction blending vs. global blending issue, and the 80% FTC haircut)
+- No IIR (the US position is that GILTI is a substitute, but GILTI does not meet the OECD's "qualified IIR" tests in several technical respects — notably the per-jurisdiction blending vs. global blending issue, and the FTC haircut — 20% pre-2026, 10% after)
 - No UTPR
 - **OBBBA 2025 did not change this.** The administration position (as of mid-2025) is to resist Pillar Two and oppose UTPR application to US groups, including threatening §891 retaliatory measures.
 
@@ -725,7 +733,7 @@ Under §951A(c), tested income is gross tested income less allocable deductions,
 > Inclusion Percentage = $1,254,000 / $1,320,000 = **95.0%**  
 > Tested Foreign Income Tax = $396,000  
 > Deemed-paid tax = 95.0% × $396,000 = **$376,200**  
-> Creditable amount (80% haircut) = 80% × $376,200 = **$300,960**  
+> Creditable amount (80% haircut, 2025 GILTI — 90% for post-2025 NCTI) = 80% × $376,200 = **$300,960**  
 > §78 gross-up adds the **deemed-paid tax** ($376,200) to the GILTI inclusion.
 
 > **GILTI included in TechCo Inc. taxable income** = $1,254,000 + $376,200 = **$1,630,200**
@@ -811,7 +819,7 @@ Under §951A(c), tested income is gross tested income less allocable deductions,
 Under §962, Sarah is taxed on the GILTI inclusion as if she were a domestic C-corp.
 
 - §78 gross-up: Inclusion percentage = $219,259 / $222,222 = 98.67%.  
-  Deemed-paid tax = 98.67% × $37,778 = **$37,275**. Creditable at 80% = **$29,820**.
+  Deemed-paid tax = 98.67% × $37,778 = **$37,275**. Creditable at 80% (2025 GILTI; 90% for post-2025 NCTI) = **$29,820**.
 - Grossed-up GILTI inclusion = $219,259 + $37,275 = **$256,534**.
 - §250 deduction = 50% × $256,534 = **$128,267**.
 - Tax base = $256,534 − $128,267 = **$128,267**.
@@ -949,24 +957,24 @@ Total federal tax:                 $50.51M
 **Step 5: 2026 projection (illustrative).**
 
 If MegaCorp's 2026 facts are similar but:
-- BEAT rate increases to 12.5%
+- BEAT rate increases to 10.5% (OBBBA, permanent)
 - R&D credit is added back to the BEAT regular-tax comparison
 - 100% of other GBC credits are added back
 
 ```
-10% × MTI scenario (2026 rate)     = 12.5% × $535.1M = $66.89M
+BEAT rate × MTI (2026 rate)        = 10.5% × $535.1M = $56.19M
 "Regular tax" for BEAT (2026):
   Regular tax before credits        = $63.00M
   (No R&D credit usability)        = $0M offset
   (No GBC credit usability)        = $0M offset
   "Regular tax" for BEAT            = $63.00M
 
-BEAT Minimum Tax Amount = max(0, $66.89M − $63.00M) = $3.89M
+BEAT Minimum Tax Amount = max(0, $56.19M − $63.00M) = $0.00M
 Plus regular tax after credits:    $28.00M
-Total federal tax:                 $31.89M
+Total federal tax:                 $28.00M
 ```
 
-> Counterintuitively, the 2026 BEAT add-on **decreases** in this fact pattern despite the higher rate, because the credit add-back raises the regular-tax floor. The 2026 result is sensitive: **a different MTI/credit mix could produce the opposite outcome.** Always re-run the BEAT model for each year.
+> The 2026 BEAT add-on falls to zero in this fact pattern: the credit add-back raises the regular-tax floor above 10.5% of MTI. This projection still assumes the pre-OBBBA full credit add-back from 2026 — see the reviewer flag in §2 on whether OBBBA changed BEAT credit usability; if credits stay usable the floor drops and BEAT can reappear. The 2026 result is sensitive: **a different MTI/credit mix could produce the opposite outcome.** Always re-run the BEAT model for each year.
 
 **What goes on the forms:**
 - **Form 8991**, with Schedule A listing each base erosion payment by counterparty + payment type, Schedule B for MTI, Schedule C for the BEAT computation.
@@ -1018,7 +1026,7 @@ Per `us-tax-workflow-base` conservative defaults principle:
 |---|---|---|
 | Computing QBAI under MACRS instead of ADS | Overstates QBAI, understates GILTI — IRS exam adjustment | Recompute under ADS straight-line over class life |
 | Treating §250 deduction as available to individuals without §962 election | Wrong return; client owes back-tax + penalties | Verify §962 statement was filed |
-| Forgetting the 20% FTC haircut on GILTI deemed-paid credit | Overstates FTC, understates US tax | Apply 80% factor |
+| Using the wrong §960(d) haircut | Overstates or understates FTC depending on the year | Apply 80% for 2018-2025 GILTI and 90% for post-2025 NCTI |
 | Carrying forward GILTI-basket excess FTC | Wrong — no carryforward allowed | Recognize permanent loss |
 | Claiming FDII without §1.250(b)-3 documentation | FDII disallowed on audit | Build documentation file before filing |
 | Missing a §958(b)(4)-downward-attribution CFC | $10K-50K penalty per missed Form 5471 | Run downward-attribution check for every US sub of a foreign-parented group |

@@ -16,9 +16,11 @@
 |---|---|
 | `az-income-tax.md` | Individual income tax for self-employed / sole proprietors (Form 140) |
 | `az-sales-tax.md` | Transaction Privilege Tax (TPT) — Arizona's sales tax equivalent |
+| `arizona-sales-tax.md` | Arizona sales tax, Arizona Transaction Privilege Tax (TPT), Arizona use tax, Arizona tax nexus, or any... |
+| `az-payroll.md` | Arizona content skill for employer payroll compliance covering tax year 2025 |
+| `az-transaction-privilege-tax.md` | Source-cited tax guide for US-AZ: az transaction privilege tax |
 
 ## What's NOT covered
-- Payroll / employer withholding taxes
 - Property tax (administered at county level)
 - Corporate income tax
 - Estate / inheritance tax (Arizona has none)

@@ -2,7 +2,8 @@
 name: nepal-income-tax
 description: Use this skill whenever asked about Nepal income tax for natural persons (individuals and the self-employed). Trigger on phrases like "how much tax do I pay in Nepal", "Nepal income tax slabs", "D-01 return", "PAN income tax", "SSF contribution", "Social Security Fund", "presumptive tax Nepal", "turnover tax", "tax rate FY 2082/83", "natural person tax", "income tax return Nepal", "TDS Nepal", or any question about filing or computing income tax for a resident natural person, sole proprietor, or small business in Nepal. Also trigger when preparing or reviewing a D-01 return, computing the 1% Social Security Tax slab, applying the female-taxpayer rebate, or advising on advance/installment tax. This skill covers natural-person slabs (single/couple), the SST mechanism, SSF contributions, presumptive and turnover-based small-business regimes, deductions/rebates, filing deadlines, and penalties under the Income Tax Act, 2058. ALWAYS read this skill before touching any Nepal income tax work.
 jurisdiction: NP
-tax_year: 2025
+tax_year: 2026
+tax_year_notes: "FY 2083/84 (2026-27) current; FY 2082/83 slabs retained for prior-year work"
 last_updated: 2026-07-13
 reviewed_by: Ashish Bista
 review_status: current
@@ -78,7 +79,27 @@ The **first-band rate of 1% is the Social Security Tax (SST)** — a flat, final
 
 **Single (individual)** — cumulative tax assumes the 1% SST applies (non-SSF taxpayer).
 
-**Single (individual) slab table**  _(PKF Trunco "Tax Rates for FY 2082-83 (2025-26)"; notarynepal; fewalaw; taxadvisornepal.)_
+> **Which year applies.** The Finance Act 2083 replaced this structure with
+> effect from FY 2083/84 (2026-27). The two tables in this subsection are the
+> **FY 2082/83 (2025-26)** slabs, kept for prior-year returns and amendments.
+> For the current year use the unified table immediately below — the same
+> figures as the accountant-verified block at the top of this skill.
+
+**Unified slab table — FY 2083/84 (2026-27), all resident natural persons**  _(Finance Act 2083, amending Schedule 1 s.1 of the Income Tax Act 2058)_
+
+| Taxable income band (NPR) | Width | Rate | Tax on band | Cumulative tax at top |
+| --- | --- | --- | --- | --- |
+| 0 -- 1,000,000 | 1,000,000 | 1% (SST) | 10,000 | 10,000 |
+| 1,000,001 -- 1,500,000 | 500,000 | 10% | 50,000 | 60,000 |
+| 1,500,001 -- 2,500,000 | 1,000,000 | 20% | 200,000 | 260,000 |
+| 2,500,001 -- 4,000,000 | 1,500,000 | 27% | 405,000 | 665,000 |
+| 4,000,001+ | — | 29% (27% + 2% surcharge) | — | — |
+
+The separate married-couple schedule was abolished from FY 2083/84 — marital
+status no longer changes the bands. The 1% SST band still does not apply to
+sole proprietors, pension income, or SSF contributors.
+
+**Single (individual) slab table — FY 2082/83 (2025-26)**  _(PKF Trunco "Tax Rates for FY 2082-83 (2025-26)"; notarynepal; fewalaw; taxadvisornepal.)_
 
 | Taxable income band (NPR) | Width | Rate | Tax on band | Cumulative tax at top |
 | --- | --- | --- | --- | --- |
@@ -89,7 +110,7 @@ The **first-band rate of 1% is the Social Security Tax (SST)** — a flat, final
 | 2,000,001 -- 5,000,000 | 3,000,000 | 36% | 1,080,000 | 1,465,000 |
 | 5,000,001+ | — | 39% | — | — |
 
-**Married couple (electing couple assessment) slab table**  _(PKF Trunco "Tax Rates for FY 2082-83 (2025-26)"; notarynepal; fewalaw; taxadvisornepal.)_
+**Married couple (electing couple assessment) slab table — FY 2082/83 (2025-26)**  _(PKF Trunco "Tax Rates for FY 2082-83 (2025-26)"; notarynepal; fewalaw; taxadvisornepal.)_
 
 | Taxable income band (NPR) | Width | Rate | Tax on band | Cumulative tax at top |
 | --- | --- | --- | --- | --- |

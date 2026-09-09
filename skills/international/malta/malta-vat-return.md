@@ -133,7 +133,7 @@ These refusals apply on top of the EU-wide refusals in `eu-vat-directive` Sectio
 - **R-MT-5 — Margin scheme** — *Trigger:* client deals in second-hand goods, art, antiques, or collectables under the margin scheme. *Message:* "Margin scheme transactions require transaction-level margin computation. Out of scope for this skill."
 - **R-MT-6 — VAT group (Article 5(2))** — *Trigger:* client is part of a VAT group or asks about group registration. *Message:* "VAT groups under Article 5(2) require consolidation across the group. Out of scope."  _([Article 5(2)](https://legislation.mt/eli/cap/406/eng))_
 - **R-MT-7 — Fiscal representative** — *Trigger:* non-resident supplier or client with a fiscal representative in Malta. *Message:* "Non-resident registrations with fiscal representatives have specific obligations beyond this skill. Please use a warranted accountant."
-- **R-MT-8 — Annual return (TA24 income tax) instead of Malta VAT** — *Trigger:* user asks about annual income tax return, not the VAT return. *Message:* "This skill only handles Malta VAT returns (Article 10 periodic and Article 11). For Malta income tax (TA24), use the malta-income-tax skill."
+- **R-MT-8 — Annual income tax return instead of Malta VAT** — *Trigger:* user asks about the annual income tax return, not the VAT return. *Message:* "This skill only handles Malta VAT returns (Article 10 periodic and Article 11). For Malta income tax, use the malta-income-tax skill. Note TA24 is the 15% final tax on gross rental income (ITA Art. 31D), not the income tax return — see mt-rental-income."
 
 ## Section 3 — Supplier pattern library (the lookup table)
 

@@ -19,7 +19,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 Read this whole section before classifying anything. The workflow runbook is in `vat-workflow-base` Section 1.
 
 - **Country** — Estonia (Eesti)
-- **Standard rate** — 22%
+- **Standard rate** — 24% (permanent, from 1 July 2025). Historic: 22% from 1 January 2024 to 30 June 2025; 20% before that. Apply the rate in force at the time of supply.
 - **Reduced rates** — 13% (accommodation), 9% (books, pharmaceuticals, periodicals, medical devices)
 - **Zero rate** — 0% (exports, intra-EU B2B supplies, international transport)
 - **Return form** — KMD (Kaibemaksudeklaratsioon)
@@ -39,7 +39,7 @@ Read this whole section before classifying anything. The workflow runbook is in 
 
 | Line | Meaning |
 | --- | --- |
-| 1 | Taxable supplies at 22% — base |
+| 1 | Taxable supplies at 24% — base |
 | 1.1 | Taxable supplies at 13% — base |
 | 1.2 | Taxable supplies at 9% — base |
 | 2 | Total output KM (calculated) |
@@ -71,10 +71,10 @@ Read this whole section before classifying anything. The workflow runbook is in 
 
 | Ambiguity | Default |
 | --- | --- |
-| Unknown rate on a sale | 22% |
+| Unknown rate on a sale | 24% |
 | Unknown VAT status of a purchase | Not deductible |
 | Unknown counterparty country | Domestic Estonia |
-| Unknown B2B vs B2C for EU customer | B2C, charge 22% |
+| Unknown B2B vs B2C for EU customer | B2C, charge 24% |
 | Unknown business-use proportion (vehicle) | 50% recovery (statutory default for cars) |
 | Unknown SaaS billing entity | Reverse charge from non-EU |
 | Unknown blocked-input status | Blocked |
@@ -138,12 +138,12 @@ Ideal — complete register, KMD INF annex data (transaction-level reporting for
 
 | Pattern | Treatment | Line | Notes |
 | --- | --- | --- | --- |
-| EESTI ENERGIA, ENEFIT | Domestic 22% | 9.1 | Electricity |
-| ALEXELA | Domestic 22% | 9.1 | Gas/electricity |
-| TALLINNA VESI | Domestic 22% | 9.1 | Water |
-| TELIA EESTI | Domestic 22% | 9.1 | Telecoms |
-| ELISA EESTI | Domestic 22% | 9.1 | Telecoms |
-| TELE2 EESTI | Domestic 22% | 9.1 | Telecoms |
+| EESTI ENERGIA, ENEFIT | Domestic 24% | 9.1 | Electricity |
+| ALEXELA | Domestic 24% | 9.1 | Gas/electricity |
+| TALLINNA VESI | Domestic 24% | 9.1 | Water |
+| TELIA EESTI | Domestic 24% | 9.1 | Telecoms |
+| ELISA EESTI | Domestic 24% | 9.1 | Telecoms |
+| TELE2 EESTI | Domestic 24% | 9.1 | Telecoms |
 
 ### 3.4 Insurance (exempt — exclude)
 
@@ -162,9 +162,9 @@ Ideal — complete register, KMD INF annex data (transaction-level reporting for
 
 | Pattern | Treatment | Notes |
 | --- | --- | --- |
-| OMNIVA, EESTI POST | EXCLUDE for standard post; 22% for parcel | Universal exempt; parcel taxable |
-| DPD EESTI | Domestic 22% | Courier |
-| ITELLA, SMARTPOST | Domestic 22% | Parcel terminal |
+| OMNIVA, EESTI POST | EXCLUDE for standard post; 24% for parcel | Universal exempt; parcel taxable |
+| DPD EESTI | Domestic 24% | Courier |
+| ITELLA, SMARTPOST | Domestic 24% | Parcel terminal |
 | DHL INTERNATIONAL | EU reverse charge | Check entity |
 
 ### 3.6 SaaS — EU suppliers (reverse charge, Line 6 + 9.2)
@@ -212,9 +212,9 @@ Ideal — complete register, KMD INF annex data (transaction-level reporting for
 
 | Pattern | Treatment | Notes |
 | --- | --- | --- |
-| NOTAR, NOTARY | Domestic 22% | Legal |
-| RAAMATUPIDAJA, ACCOUNTANT | Domestic 22% | Accounting |
-| ADVOKAAT, LAWYER | Domestic 22% | Legal |
+| NOTAR, NOTARY | Domestic 24% | Legal |
+| RAAMATUPIDAJA, ACCOUNTANT | Domestic 24% | Accounting |
+| ADVOKAAT, LAWYER | Domestic 24% | Legal |
 
 ### 3.10 Payroll (exclude)
 
@@ -240,18 +240,18 @@ Ideal — complete register, KMD INF annex data (transaction-level reporting for
 ### Example 1 — Non-EU SaaS reverse charge (Notion)
 
 Input: `03.04.2026 ; NOTION LABS INC ; -14.68 EUR`
-Treatment: Non-EU RC. Output KM self-assessed at 22%. Line 7 (base). Input in Line 9.4.
+Treatment: Non-EU RC. Output KM self-assessed at 24%. Line 7 (base). Input in Line 9.4.
 
 **Example 1 worked table**  _(N)_
 
 | Date | Counterparty | Net | KM | Rate | Line (input) | Line (output) | Default? |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| 03.04.2026 | NOTION LABS INC | -14.68 | 3.23 | 22% | 9.4 | 7 | N |
+| 03.04.2026 | NOTION LABS INC | -14.68 | 3.52 | 24% | 9.4 | 7 | N |
 
 ### Example 2 — EU service reverse charge (Google Ads)
 
 Input: `10.04.2026 ; GOOGLE IRELAND LIMITED ; -850.00 EUR`
-Treatment: EU RC. Line 6 (base). Output KM at 22%. Input in Line 9.2.
+Treatment: EU RC. Line 6 (base). Output KM at 24%. Input in Line 9.2.
 
 ### Example 3 — Entertainment
 
@@ -267,7 +267,7 @@ Treatment: Passenger car fuel. Estonia has statutory 50% input KM restriction on
 
 | Date | Counterparty | Net | KM | Rate | Line | Default? | Question? |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| 28.04.2026 | CIRCLE K EESTI | -50.85 | -5.59 | 22% (50%) | 5.3 | Y | "100% business use documented?" |
+| 28.04.2026 | CIRCLE K EESTI | -48.39 | -5.81 | 24% (50%) | 5.3 | Y | "100% business use documented?" |
 
 ### Example 5 — EU B2B service sale
 
@@ -277,11 +277,11 @@ Treatment: B2B to DE. Line 3.2. 0%. Verify USt-IdNr.
 ### Example 6 — Capital goods
 
 Input: `18.04.2026 ; EURONICS EESTI ; Laptop ; -1,595.00 EUR`
-Treatment: Business equipment. Input KM at 22% in Line 9.1. No specific capital goods monetary threshold in Estonian KMD — track for adjustment period.
+Treatment: Business equipment. Input KM at 24% in Line 9.1. No specific capital goods monetary threshold in Estonian KMD — track for adjustment period.
 
-### 5.1 Standard 22% (KMS Section 15(1))
+### 5.1 Standard 24% (KMS Section 15(1))
 
-- **Standard 22%** — Default. Sales: Line 1. Input: Line 9.1.  _(KMS Section 15(1))_
+- **Standard 24%** — Default. Sales: Line 1. Input: Line 9.1.  _(KMS Section 15(1))_
 
 ### 5.2 Reduced 13% (KMS Section 15(2))
 
@@ -331,13 +331,13 @@ Treatment: Business equipment. Input KM at 22% in Line 9.1. No specific capital 
 
 - **Owner transfers** — Default: exclude.
 
-### 6.5 Individual incoming — *Default:* 22% domestic.
+### 6.5 Individual incoming — *Default:* 24% domestic.
 
-- **Individual incoming** — Default: 22% domestic.
+- **Individual incoming** — Default: 24% domestic.
 
-### 6.6 Foreign incoming — *Default:* 22%.
+### 6.6 Foreign incoming — *Default:* 24%.
 
-- **Foreign incoming** — Default: 22%.
+- **Foreign incoming** — Default: 24%.
 
 ### 6.7 Large purchases — *Default:* deductible; flag capital.
 

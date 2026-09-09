@@ -13,7 +13,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # ZA Income Tax
 
-## South Africa Income Tax -- Self-Employed Skill v2.0
+## South African Income Tax -- Self-Employed Skill v2.0
 
 ## Verified rates & thresholds (accountant-reviewed)
 

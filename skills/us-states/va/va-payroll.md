@@ -17,7 +17,7 @@ This skill covers Virginia-specific employer payroll compliance for tax year 202
 
 **In scope:**
 - Virginia personal income tax (VA PIT) withholding from wages paid to Virginia residents and non-residents performing services in Virginia
-- VA-4 (Employee's Virginia Income Tax Withholding Exemption Certificate)
+- VA-4 (Employee's Virginian Income Tax Withholding Exemption Certificate)
 - VA-5 (Monthly) and VA-15 (Quarterly) withholding returns — and the Semi-Weekly accelerated regime
 - VA-6 / VA-16 annual reconciliation and wage report
 - Virginia State Unemployment Insurance (SUI) administered by the Virginia Employment Commission (VEC)
@@ -137,12 +137,12 @@ Virginia assigns employers to a withholding-deposit frequency based on average m
 
 ### 4.5 Penalties and interest
 
-- **Late filing penalty** — 6% per month or fraction (max 30%) of tax due on the return  _(Va. Code §58.1-635(A))_
-- **Late payment penalty** — same 6%/month penalty stacks with late-filing penalty if both apply  _(Va. Code §58.1-635(A))_
-- **Underpayment (semi-weekly) penalty** — separate 6% penalty on each underdeposited installment  _(4.5 Penalties and interest)_
-- **Interest rate** — 8% annualized for most of 2025 (federal underpayment rate, accruing from the original due date)  _(4.5 Penalties and interest)_
-- **Negligence penalty** — 25% (where evidence of intent)  _(Va. Code §58.1-308)_
-- **Fraud penalty** — 100% (plus criminal exposure)  _(4.5 Penalties and interest)_
+- **Failure to withhold, file or remit** — 6% of the amount that should have been withheld and paid over if the failure is for not more than one month, plus a further 6% for each additional month or fraction, **capped at 30% in aggregate**. The penalty is **never less than $10**, and that minimum applies whether or not any tax is due for the period. Note the statute: it is § 58.1-475, in the withholding article — **not** § 58.1-635, which is the retail sales and use tax penalty and carries a coincidentally identical 6%/30% structure.  _(Va. Code § 58.1-475)_
+- **Employee's own payment does not cure it** — an employer stays liable for the penalty even where the wage recipient has paid their Virginia income tax in full.  _(Va. Code § 58.1-475)_
+- **Interest rate** — the rate under IRC § 6621 **plus 2%**, recalculated quarterly, accruing from the original due date. The federal underpayment rate for individuals held at 7% through all four quarters of 2025, so the Virginia rate for 2025 is **9%**.  _(Va. Code § 58.1-15; Rev. Rul. 2025-18)_
+- **Fraud** — where an understatement is false or fraudulent with intent to evade the tax, a penalty of **100%** is added, with interest, plus criminal exposure.  _(Va. Code § 58.1-308)_
+
+> **There is no Virginia negligence penalty.** § 58.1-308 says the opposite of one: where "the return was made in good faith and the understatement of the amount in the return was not due to any fault of the taxpayer, there shall be no penalty on the additional tax." The only percentage in that section is the 100% for fraud. Do not quote a 25% negligence penalty at a Virginia assessment — that is the federal IRC § 6662 shape (and even there it is 20%).
 
 ### 4.6 Zero returns
 
@@ -478,7 +478,9 @@ Before producing a reviewer-facing Virginia payroll work product, confirm:
 **Statutes:**
 - Va. Code §58.1-320 — graduated income tax rates
 - Va. Code §58.1-460 et seq. — employer withholding
-- Va. Code §58.1-635 — late filing/payment penalties
+- Va. Code §58.1-475 — penalty for failure to withhold, file or remit (6%/month, max 30%, $10 minimum)
+- Va. Code §58.1-15 — interest rate (IRC §6621 rate plus 2%)
+- Va. Code §58.1-308 — 100% fraud penalty on a false or fraudulent understatement; no negligence penalty
 - Va. Code §60.2-210 — SUI coverage
 - Va. Code §60.2-212 — multistate services / ABC test
 - Va. Code §60.2-516 — new-employer rate

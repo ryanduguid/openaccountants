@@ -2,21 +2,25 @@
 
 This file is the public roster of licensed accountants who review OpenAccountants Tax Guides. Every Partner here has had their credential verified, and their reviews are public. **This roster is the product.** Agents can do the math; these are the people who stand behind the answers.
 
-**Scoreboard: 10 of 193 jurisdictions have a Partner. The other 183 are open.**
+**Scoreboard: 11 of 244 jurisdictions have a Partner. The other 233 are open.**
 
 | Jurisdiction | Partner | Credential | Guides | On record since | Proof |
 |---|---|---|---|---|---|
-| United States (federal forms) | Christopher Aryee | CPA | 4 | 2026-07 | [33 OBBBA corrections, full diff](https://github.com/openaccountants/openaccountants/pull/45/files) |
-| United States | Amir Pelinkovic | CPA | 16 | 2026 | [profile](https://www.openaccountants.com/network/752ee18a-3843-434d-8426-457d3fa9706f) |
+| United States (federal forms) | Christopher Aryee | CPA | 13 | 2026-07 | [33 OBBBA corrections, full diff](https://github.com/openaccountants/openaccountants/pull/45/files) |
+| United States | Amir Pelinkovic | CPA | 14 | 2026 | [profile](https://www.openaccountants.com/network/752ee18a-3843-434d-8426-457d3fa9706f) |
 | United Kingdom | James Power | — | 15 | 2026 | [profile](https://www.openaccountants.com/network/30b2f478-3a97-40c4-b435-0678829b487e) |
 | India | Mayur Deokar | CA | 13 | 2026 | [profile](https://www.openaccountants.com/network/f4cb8476-a86d-4fd9-b536-9217e82ccf99) |
 | Indonesia | Rilia Putri | CA | 10 | 2026 | [profile](https://www.openaccountants.com/network/ec70d43e-18c0-4b4e-b92c-4f8a22e10152) |
 | Brazil | Ariane Marrocos | CRC/SP | 9 | 2026 | [profile](https://www.openaccountants.com/network/366f5c0f-1afb-4332-b87b-9b6f912821aa) |
 | Portugal | Mário Vale | CA | 9 | 2026 | [profile](https://www.openaccountants.com/network/a26a63b7-343c-451b-8266-bb9d28bd7089) |
-| Saudi Arabia | Mehran Habib | — | 9 | 2026 | [profile](https://www.openaccountants.com/network/f9dbab51-2b89-451b-98f2-414b48fb4599) |
-| South Africa | Werner Britz | CA(SA) | 5 | 2026 | [profile](https://www.openaccountants.com/network/28a3ec1b-d699-4c5d-bb60-3114eedc59d0) |
+| Saudi Arabia | Mehran Habib | — | 13 | 2026 | [profile](https://www.openaccountants.com/network/f9dbab51-2b89-451b-98f2-414b48fb4599) |
+| South Africa | Werner Britz | CA(SA) | 7 | 2026 | [profile](https://www.openaccountants.com/network/28a3ec1b-d699-4c5d-bb60-3114eedc59d0) |
 | Malta | Michael Cutajar | CPA (Malta) | 5 | 2025 | [profile](https://www.openaccountants.com/network) |
 | Nepal | Ashish Bista | CA | 5 | 2026 | [profile](https://www.openaccountants.com/network/78ab67db-8f29-4746-8102-7b52d17309aa) |
+
+> **How the Guides column is derived.** It is the number of guides whose frontmatter carries that Partner's name in `reviewed_by` or `verified_by`, so it can be checked against the corpus with `scripts/check-reviewer-roster.py`.
+>
+> One row is deliberately unverifiable from the frontmatter: **Amir Pelinkovic**'s 14 guides — the US federal and Illinois set — are attributed in the files as *"a licensed accountant (name withheld at their request)"*. The count is right; the name is withheld in the guides at the reviewer's own request, and the roster entry stands because the public profile link is his. Do not "correct" the frontmatter to name him.
 
 ## The reviewer badge
 

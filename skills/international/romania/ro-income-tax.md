@@ -6,7 +6,8 @@ jurisdiction: RO
 tax_year: 2025
 last_updated: 2026-07-13
 review_status: pending_review
-depends_on: - income-tax-workflow-base
+depends_on:
+  - income-tax-workflow-base
 category: international
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -14,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # RO Income Tax
 
-## Romania Income Tax (Declarația Unică) -- Self-Employed Skill v2.0
+## Romanian Income Tax (Declarația Unică) -- Self-Employed Skill v2.0
 
 ## Section 1 -- Quick reference
 

@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## 1. Scope
 
-This skill covers New Jersey state-level payroll compliance for employers operating in NJ during the 2025 tax year. It is designed for use alongside `us-federal-payroll` (federal withholding, FICA, FUTA, Form 941, W-2/W-3) and any additional state skills for employees working across state lines (most commonly `us-ny-payroll` and `us-pa-payroll` given commuting patterns).
+This skill covers New Jersey state-level payroll compliance for employers operating in NJ during the 2025 tax year. It is designed for use alongside `us-form-941-940-payroll` (federal withholding, FICA, FUTA, Form 941, W-2/W-3) and any additional state skills for employees working across state lines (most commonly `ny-payroll` and `pa-payroll` given commuting patterns).
 
 **In scope:**
 - New Jersey Gross Income Tax (GIT) withholding under N.J.S.A. 54A:7-1 et seq.
@@ -30,11 +30,11 @@ This skill covers New Jersey state-level payroll compliance for employers operat
 - Worker classification under the New Jersey ABC test (N.J.S.A. 43:21-19(i)(6))
 - Earned Sick Leave Law (N.J.S.A. 34:11D)
 - Wage Payment Law / pay frequency (N.J.S.A. 34:11-4.2)
-- NJ–NY reverse credit and source-of-income interaction for cross-border commuters (high-level — full NY mechanics live in `us-ny-payroll`)
+- NJ–NY reverse credit and source-of-income interaction for cross-border commuters (high-level — full NY mechanics live in `ny-payroll`)
 - BAIT (Pass-Through Business Alternative Income Tax) quarterly estimate schedule (deeper coverage in `nj-cbt-and-bait`)
 
 **Out of scope:**
-- Federal income tax withholding, FICA, FUTA, Form 941 — see `us-federal-payroll`.
+- Federal income tax withholding, FICA, FUTA, Form 941 — see `us-form-941-940-payroll`.
 - NJ Corporation Business Tax (CBT) and full BAIT mechanics — see `nj-cbt-and-bait`.
 - Multi-state apportionment for income tax purposes — see `_cross-border/multistate-payroll`.
 - Public sector / civil service payroll, agricultural labor, domestic service, and clergy compensation (NJ has special carve-outs not covered here).
@@ -415,7 +415,7 @@ The rates approximate but do not exactly track the GIT rates. The 10.9% top BAIT
 - NY treats Maria as a NY non-resident.
 - NY IT-2104 controls NY withholding.
 - NYC tax does NOT apply (Maria is not a NYC resident).
-- NY state tax on $180K for a single non-resident ≈ approximately $10,500 per the 2025 NY non-resident tables (subject to verification with the `us-ny-payroll` skill).
+- NY state tax on $180K for a single non-resident ≈ approximately $10,500 per the 2025 NY non-resident tables (subject to verification with the `ny-payroll` skill).
 
 **NJ withholding:**
 - Maria is an NJ resident, so NJ requires NJ-resident withholding.
@@ -597,12 +597,12 @@ In particular, the following figures are flagged for primary-source verification
 
 ## 16. Cross-references
 
-- `us-federal-payroll` — Form 941, FICA, FUTA, federal W-4, Form W-2/W-3 federal mechanics.
-- `us-ny-payroll` — NY IT-2104, NY convenience rule mechanics, NYC personal income tax.
-- `us-pa-payroll` — PA Local Services Tax, PA-NJ reciprocity from the PA side.
+- `us-form-941-940-payroll` — Form 941, FICA, FUTA, federal W-4, Form W-2/W-3 federal mechanics.
+- `ny-payroll` — NY IT-2104, NY convenience rule mechanics, NYC personal income tax.
+- `pa-payroll` — PA Local Services Tax, PA-NJ reciprocity from the PA side.
 - `nj-cbt-and-bait` — Full BAIT mechanics, NJ Corporation Business Tax, PTE-100 detailed line-by-line.
 - `_cross-border/multistate-payroll` — Multi-state apportionment frameworks, day-count methodologies.
-- `us-federal-tx-return-assembly` (reference only) — for the federal interaction with state PTE elections.
+- `us-tx-return-assembly` (reference only) — for the federal interaction with state PTE elections.
 
 ## 17. Quick reference card
 

@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 > **Scope.** This skill covers North Dakota employer payroll obligations for a business with employees performing services in North Dakota during tax year 2025 (returns and deposits filed 2025–2026). Covers: ND personal income tax (PIT) withholding under N.D.C.C. § 57-38-59; Form 306 quarterly withholding returns; Form 307 annual W-2/1099 transmittal; Form NDW-M (state W-4); Form NDW-R (MN/MT reciprocity exemption); ND State Unemployment Tax (SUTA) under Job Service North Dakota; new-hire reporting to the ND Child Support Division; and the WSI workers' compensation monopoly. Federal payroll (Form 941, Form 940, FICA, FUTA, federal W-4, federal new-hire reporting, federal Form W-2 filing with SSA) is out of scope — see the federal payroll skills.
 >
-> **Quality tier.** Tier 2 content skill. AI-drafted; awaiting verifier sign-off. All employer-side outputs must be reviewed by a qualified ND payroll professional before filing or remitting. `[VERIFY:]` markers flag figures that must be re-confirmed against current ND Tax Commissioner / Job Service ND / WSI publications for the applicable period.
+> **Quality tier.** Tier 2 content skill. AI-drafted; awaiting verifier sign-off. All employer-side outputs must be reviewed by a qualified ND payroll professional before filing or remitting. The figures in this skill have been checked against ND Tax Commissioner and Job Service ND publications for the periods stated, but every rate here moves annually — re-confirm against the current-period publications before filing or remitting.
 
 ## Section 1: Metadata
 
@@ -61,9 +61,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 | Item | Value |
 | --- | --- |
-| ND PIT bracket 1 (TY 2025, single) | 0% on first $47,150 [VERIFY: 2025 booklet thresholds] |
-| ND PIT bracket 2 (TY 2025, single) | 1.95% on $47,150 – $238,200 [VERIFY: exact threshold] |
-| ND PIT bracket 3 (TY 2025, single) | 2.50% above $238,200 [VERIFY: exact threshold] |
+| ND PIT bracket 1 (TY 2025, single) | 0% on first $48,475 — confirmed, ND Office of State Tax Commissioner, 2025 Form ND-1 tax rate schedules |
+| ND PIT bracket 2 (TY 2025, single) | 1.95% on $48,475 – $244,825 — confirmed, ND Office of State Tax Commissioner, 2025 Form ND-1 tax rate schedules |
+| ND PIT bracket 3 (TY 2025, single) | 2.50% above $244,825 — confirmed, ND Office of State Tax Commissioner, 2025 Form ND-1 tax rate schedules |
 | Supplemental wage rate (TY 2025) | 1.5% |
 | Form 306 due dates | April 30, July 31, October 31, January 31 |
 | Form 306 mandatory e-filing threshold | Prior-year withholding ≥ $1,000 → must e-file via TAP |
@@ -72,8 +72,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | NDW-R employer copy filing | Mail to Tax Commissioner by March 31 |
 | SUTA wage base 2025 | $45,100 |
 | SUTA wage base 2024 (reference) | $43,800 |
-| SUTA experience-rated range | ~0.08% to ~9.97% [VERIFY: 2025 schedule] |
-| SUTA new-employer rate | 1.02% non-construction; up to ~6.09% construction industry [VERIFY: 2025 schedule] |
+| SUTA experience-rated range (2025) | Positive-balance 0.08% – 1.14%; negative-balance 6.09% – 9.69% — confirmed, Job Service North Dakota, 2025 Unemployment Insurance Tax Rate Schedules |
+| SUTA new-employer rate (2025) | Non-construction 1.03% (positive balance) or 6.09% (negative balance); **construction 9.69% regardless of account balance** — confirmed, Job Service North Dakota, 2025 Unemployment Insurance Tax Rate Schedules |
 | New-hire deadline | Within 20 days of hire |
 | Workers' comp insurer | WSI — monopolistic. Private comp insurance is unlawful |
 | Final paycheck (involuntary) | Next regular payday, per N.D.C.C. § 34-14-03 |
@@ -93,9 +93,16 @@ In April 2023 the 68th Legislative Assembly enacted **HB 1158**, the largest ind
 
 The bracket thresholds are indexed annually. Practitioners must re-verify the bracket thresholds for each tax year against the Tax Commissioner's withholding booklet because (a) the indexing adjustments are non-trivial and (b) the legislature has shown a pattern (cf. NC SB 105 and GA HB 111) of making mid-cycle adjustments where revenue triggers are met.
 
-### 3.3 TY 2025 brackets — single filer (withholding booklet)
+### 3.3 Single filer brackets
 
-**TY 2025 brackets — single filer**  _([VERIFY: 2025 ND Withholding Booklet, percentage method, Table 1A])_
+> **The table below is the TY 2024 schedule, not TY 2025.** It was labelled TY 2025, but its
+> thresholds and its $3,725.48 cumulative figure reconcile exactly to the 2024 brackets
+> ((238,200 − 47,150) × 1.95% = 3,725.48), so it is a year out of date. The confirmed TY 2025
+> thresholds are 0% to $48,475, 1.95% from $48,475 to $244,825 and 2.50% above $244,825 (ND Office of State Tax Commissioner, 2025 Form ND-1 tax rate schedules), which give a cumulative $3,828.83 at the top of the 1.95% band. Those TY 2025
+> figures are the income tax rate schedule; read the percentage-method table out of the 2025
+> ND Withholding Booklet before running payroll, in case the withholding tables differ.
+
+**TY 2024 brackets — single filer (superseded)**
 
 | Taxable wages over | But not over | Withhold |
 | --- | --- | --- |
@@ -103,9 +110,13 @@ The bracket thresholds are indexed annually. Practitioners must re-verify the br
 | $47,150 | $238,200 | 1.95% of excess over $47,150 |
 | $238,200 | — | $3,725.48 + 2.50% of excess over $238,200 |
 
-### 3.4 TY 2025 brackets — married filing jointly (withholding booklet)
+### 3.4 Married filing jointly brackets
 
-**TY 2025 brackets — married filing jointly**  _([VERIFY: 2025 ND Withholding Booklet, percentage method, Table 1B])_
+> **TY 2024 schedule, as above.** Confirmed TY 2025 MFJ thresholds are 0% to $80,975, 1.95%
+> from $80,975 to $298,075 and 2.50% above $298,075 (ND Office of State Tax Commissioner, 2025 Form ND-1 tax rate schedules), giving a cumulative
+> $4,233.45 at the top of the 1.95% band.
+
+**TY 2024 brackets — married filing jointly (superseded)**
 
 | Taxable wages over | But not over | Withhold |
 | --- | --- | --- |
@@ -199,7 +210,7 @@ The bracket thresholds are indexed annually. Practitioners must re-verify the br
 
 ### 7.4 Penalties
 
-- **Late payment penalty** — 5% of tax due, plus interest at the rate set annually by the Tax Commissioner (12% per annum simple for 2025 [VERIFY: 2025 interest rate posting])
+- **Late payment penalty** — 5% of the unpaid tax **or $5, whichever is greater** (N.D.C.C. § 57-38-45(2)(a)), plus interest at **1% per month or fraction of a month** — 12% per annum simple — under § 57-38-45(1)(b), excluding the month in which the tax became due. Where an extension was obtained, interest runs at 12% per annum through the later of the extended due date or the date paid, then reverts to 1% per month (§ 57-38-45(1)(a)). These rates are **fixed by statute**; they are not set annually by the Tax Commissioner
 
 ### 7.4 Penalties
 
@@ -245,7 +256,7 @@ The bracket thresholds are indexed annually. Practitioners must re-verify the br
 | --- | --- |
 | 2024 | $43,800 |
 | **2025** | **$45,100** |
-| 2026 | [VERIFY: not yet published as of 2026-05-28] |
+| **2026** | **$46,600** |
 
 ### 9.2 Wage base
 
@@ -253,19 +264,33 @@ The bracket thresholds are indexed annually. Practitioners must re-verify the br
 
 ### 9.3 Rate structure (2025)
 
-- **Positive-balance experience rates** — 0.08% – 1.85% (Schedule 1)  _([VERIFY: 2025 Tax Rate Schedules from JSND])_
+- **Positive-balance experience rates (2025)** — 0.08% – 1.14%  _(Job Service North Dakota, 2025 Unemployment Insurance Tax Rate Schedules)_
 
 ### 9.3 Rate structure (2025)
 
-- **Negative-balance rates** — up to ~9.97%  _([VERIFY: 2025 Tax Rate Schedules from JSND])_
+- **Negative-balance experience rates (2025)** — 6.09% – 9.69%  _(Job Service North Dakota, 2025 Unemployment Insurance Tax Rate Schedules)_
 
 ### 9.3 Rate structure (2025)
 
-- **New employer (non-construction) rate** — 1.02% on rate Schedule [VERIFY]  _([VERIFY: 2025 Tax Rate Schedules from JSND])_
+- **New employer, non-construction (2025)** — 1.03% for a positive-balance account; 6.09% for a negative-balance account  _(Job Service North Dakota, 2025 Unemployment Insurance Tax Rate Schedules)_
 
 ### 9.3 Rate structure (2025)
 
-- **New employer (construction) rate** — 6.09% [VERIFY]  _([VERIFY: 2025 Tax Rate Schedules from JSND])_
+- **New employer, construction (2025)** — **9.69%, regardless of account balance.** Do not apply the 6.09% non-construction negative-balance rate to a construction employer — that understates the first-year cost by 3.6 percentage points of the $45,100 wage base, about $1,624 per employee  _(Job Service North Dakota, 2025 Unemployment Insurance Tax Rate Schedules)_
+
+### 9.3a Rate structure (2026)
+
+The same shape, one notch lower, on a higher wage base. Confirm against the current-year Tax Rate Table on the Job Service ND site before running a 2026 payroll — these figures are as reported when JSND issued the 2026 rates.
+
+| Item | 2025 | 2026 |
+| --- | --- | --- |
+| Taxable wage base | $45,100 | **$46,600** |
+| Positive-balance experience rates | 0.08% – 1.14% | **0.07% – 1.10%** |
+| Negative-balance experience rates | 6.09% – 9.69% | **6.07% – 9.67%** |
+| New employer, non-construction | 1.03% positive / 6.09% negative | **1.00% positive / 6.07% negative** |
+| New employer, construction | 9.69% regardless of balance | **9.67% regardless of balance** |
+
+The construction trap does not go away in 2026: 9.67% against 6.07% on a $46,600 base is still about **$1,678 per employee** of first-year cost that is missed by treating a construction employer as an ordinary new employer.
 
 ### 9.3 Rate structure (2025)
 
@@ -273,7 +298,7 @@ The bracket thresholds are indexed annually. Practitioners must re-verify the br
 
 ### 9.4 Quarterly contribution and wage report
 
-- **SFN 41263 requirements** — Form SFN 41263 is the quarterly Employer's Contribution and Wage Report, due the last day of the month following quarter end (same calendar as Form 306). Mandatory electronic filing via UI EASY for all employers as of 2018. Includes: gross wages by employee; excess wages (above the taxable wage base year-to-date); contribution computation; and SOC occupational code reporting (for ETA data) [VERIFY: still required 2025].
+- **SFN 41263 requirements** — Form SFN 41263 is the quarterly Employer's Contribution and Wage Report, due the last day of the month following quarter end (same calendar as Form 306). Mandatory electronic filing via UI EASY for all employers as of 2018. Includes: gross wages by employee; excess wages (above the taxable wage base year-to-date); contribution computation; and SOC occupational code reporting. Confirm the current SOC reporting requirement against the JSND UI EASY filing screens each year — it is an ETA data collection rather than a tax computation input, and states have added and dropped it.
 
 ### 9.5 Penalties
 
@@ -377,17 +402,17 @@ If a Texas, Florida, or even South Dakota employer expands to a Fargo office and
 
 **Step 1 — Annualize.** $2,500 × 26 = $65,000 annual wages.
 
-**Step 2 — Apply 2025 single bracket table** [VERIFY: 2025 booklet exact threshold]. Assume bottom-bracket cutoff = $47,150 single.
+**Step 2 — Apply the TY 2025 single bracket table.** Bottom-bracket cutoff = $48,475 single (ND Office of State Tax Commissioner, 2025 Form ND-1 tax rate schedules).
 
 ```
-Taxable above cutoff: $65,000 - $47,150 = $17,850
-Annual ND tax: $17,850 × 1.95% = $348.08
-Per pay period: $348.08 / 26 = $13.39
+Taxable above cutoff: $65,000 - $48,475 = $16,525
+Annual ND tax: $16,525 × 1.95% = $322.24
+Per pay period: $322.24 / 26 = $12.39
 ```
 
-**Step 3 — Round.** Round per the percentage method instruction (to the nearest whole dollar): **$13.00 withheld per biweekly pay**.
+**Step 3 — Round.** Round per the percentage method instruction (to the nearest whole dollar): **$12.00 withheld per biweekly pay**.
 
-**Step 4 — Form 306, Q1.** Anna's six pays in Q1 → $13 × 6 = $78 ND tax remitted with Form 306 by April 30. (Aggregated with all other employees.)
+**Step 4 — Form 306, Q1.** Anna's six pays in Q1 → $12 × 6 = $72 ND tax remitted with Form 306 by April 30. (Aggregated with all other employees.)
 
 ### Example 2 — Minnesota commuter with NDW-R on file
 
@@ -411,27 +436,38 @@ Per pay period: $348.08 / 26 = $13.39
 
 **Regular wage withholding per pay period**
 
-Annualize: $13,541.67 × 24 = $325,000. Apply 2025 single percentage table [VERIFY exact thresholds]:
+Annualize: $13,541.67 × 24 = $325,000. Apply the **2025 annual payroll period table, single**, from the ND *Income Tax Withholding Rates and Instructions* booklet:
 
 ```
-First $47,150 → 0%
-$47,150 to $238,200 → 1.95% × $191,050 = $3,725.48
-Above $238,200 → 2.50% × ($325,000 - $238,200) = 2.50% × $86,800 = $2,170.00
-Annual ND tax = $5,895.48
-Per pay (÷24) = $245.65
+First $55,975                → 0%
+$55,975 to $252,325          → 1.95% × $196,350 = $3,828.83
+Above $252,325               → 2.50% × ($325,000 - $252,325) = 2.50% × $72,675 = $1,816.88
+Annual ND withholding        = $5,645.71
+Per pay (÷24)                = $235.24
 ```
 
-Round → **$246 ND withheld per semimonthly pay**.
+Round → **$235 ND withheld per semimonthly pay**.
 
-**Year-end bonus — supplemental rate**
+> Do not use the Form ND-1 rate schedule here. The withholding tables carry a built-in standard deduction, so their thresholds sit well above the ND-1 brackets: $55,975 against $48,475 for a single filer in 2025. For 2026 the same single annual table runs $57,625 / $258,450 with $3,916.09 at the top step.
 
-Paid on a separate check identified as a bonus:
+**Year-end bonus — there is no ND flat supplemental rate**
+
+North Dakota treats as supplemental whatever is supplemental federally — bonuses, commissions, overtime, accumulated sick leave, severance, awards, prizes, back pay, taxable fringes. But Section 3 of the withholding booklet gives only **aggregation** methods; it prescribes no flat percentage. Where a bonus is paid separately, add it to the regular wages for the period, compute withholding on the combined amount, and subtract the withholding on the regular wages alone:
 
 ```
-$50,000 × 1.5% = $750 ND tax withheld
+Combined pay period amount   = $13,541.67 + $50,000 = $63,541.67
+Annualized                   = $63,541.67 × 24 = $1,525,000
+  1.95% × $196,350                            = $3,828.83
+  2.50% × ($1,525,000 - $252,325)             = $31,816.88
+Annual                                        = $35,645.71
+Per pay (÷24)                                 = $1,485.24
+Less withholding on regular wages alone       = ($235.24)
+ND tax to withhold from the bonus             = $1,250.00
 ```
 
-The 1.5% supplemental rate is below Carla's marginal rate of 2.50%, so she will under-withhold on the bonus by approximately ($50,000 × 1.00%) = $500. The employer is not at fault — the supplemental rate is a statutory safe harbor — but Carla should be advised to make an ND estimated payment on Form 540-ES [VERIFY: ND uses Form ND-1ES for estimates] to avoid a balance due in April 2026.
+Which is simply $50,000 × 2.50%, because every dollar of the bonus lands above the top threshold. Withhold **$1,250**.
+
+> **This corrects the previous draft**, which applied a "1.5% supplemental rate", withheld $750, and concluded that Carla would under-withhold by $500 and should make an estimated payment. No such rate appears in the current booklet, and on the prescribed method she is withheld correctly with nothing left to true up. The draft also directed her to **Form 540-ES**, which is California's estimated tax voucher; North Dakota's is **Form ND-1ES**.
 
 ## Section 15: Refusal catalogue
 
@@ -476,7 +512,7 @@ The 1.5% supplemental rate is below Carla's marginal rate of 2.50%, so she will 
 | Verification status | Tier 2, AI-drafted, pre-verification |
 | Last updated | 2026-05-28 |
 | Next review trigger | (a) Publication of TY 2026 ND Withholding Booklet; (b) any HB 1158 successor legislation; (c) annual JSND wage base release (typically November); (d) any WSI premium-rate restructure |
-| `[VERIFY:]` count | All bracket thresholds, SUTA rate schedule percentages, the 2026 wage base, and the 2025 interest rate require re-verification against current ND Tax Commissioner / JSND publications |
+| Verification status | Bracket thresholds, SUTA rate schedule percentages, the 2026 wage base and the interest rate have been checked against ND Tax Commissioner and Job Service ND publications |
 
 ### Key URLs (all visited 2026-05-28)
 

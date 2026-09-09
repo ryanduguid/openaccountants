@@ -216,8 +216,8 @@ Florida has resisted the trend toward market-based sourcing for over a decade de
 - **Failure to file penalty** — 10% of the tax due per month or fraction thereof, up to 50%.
 - **Failure to pay penalty** — 10% of the unpaid tax. Statutory floor of $10 even if the percentage is less.
 - **Interest rate** — Variable rate, adjusted semiannually by the FL DOR. Currently around 9% per annum (verify the current rate from TIP issued each January and July).
-- **Fraud penalty** — 100% penalty.  _(s. 220.803, F.S.)_
-- **Negligence penalty** — 25% penalty.  _(s. 220.803, F.S.)_
+- **Negligence penalty** — **10%** of the deficiency where any part of it is due to negligence or intentional disregard of the rules, but without intent to defraud.  _(s. 220.803(1), F.S.)_
+- **Fraud penalty** — 100% of the deficiency where any part of it is due to fraud. This is imposed **in lieu of** the negligence penalty, not in addition to it.  _(s. 220.803(2), F.S.)_
 
 ## 8. Estimated Tax (s. 220.222 and 220.34, F.S.)
 

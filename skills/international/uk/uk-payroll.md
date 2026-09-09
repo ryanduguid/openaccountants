@@ -7,7 +7,8 @@ tax_year: 2025
 last_updated: 2026-07-13
 reviewed_by: James Power
 review_status: current
-depends_on: - payroll-workflow-base
+depends_on:
+  - payroll-workflow-base
 category: payroll
 tier: 1
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -304,7 +305,7 @@ PAYE (Pay As You Earn) is a cumulative withholding system. The employer applies 
 
 ### Pattern 1 -- Standard Monthly Employee (Category A)
 
-- **Pattern 1 -- Standard Monthly Employee (Category A)** — Gross salary £3,500/month. Tax code 1257L. 1. PAYE: (£3,500 × 12 - £12,570) × 20% ÷ 12 = £595.50/month (cumulative calc) 2. Employee NIC: (£3,500 - £1,048) × 8% = £196.16/month 3. Employer NIC: (£3,500 - £417) × 15% = £462.45/month 4. Auto-enrolment pension (employee): (£3,500 - £520) × 5% = £149.00 5. Auto-enrolment pension (employer): (£3,500 - £520) × 3% = £89.40
+- **Pattern 1 -- Standard Monthly Employee (Category A)** — Gross salary £3,500/month. Tax code 1257L. 1. PAYE: (£3,500 × 12 - £12,570) × 20% ÷ 12 = £490.50/month (cumulative calc; £42,000 is inside the basic rate band, which ends at £50,270) 2. Employee NIC: (£3,500 - £1,048) × 8% = £196.16/month 3. Employer NIC: (£3,500 - £417) × 15% = £462.45/month 4. Auto-enrolment pension (employee): (£3,500 - £520) × 5% = £149.00 5. Auto-enrolment pension (employer): (£3,500 - £520) × 3% = £89.40
 
 ### Pattern 2 -- Director NIC Calculation
 

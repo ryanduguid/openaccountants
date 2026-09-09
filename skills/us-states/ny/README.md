@@ -19,6 +19,9 @@
 | `ny-sales-tax.md` | State and local sales & use tax compliance |
 | `ny-llc-filing-fee.md` | Annual LLC filing fee |
 | `nyc-ubt.md` | New York City Unincorporated Business Tax |
+| `new-york-sales-tax.md` | New York sales and use tax, NYS DTF filings, NYC sales tax, New York exemptions, New York clothing... |
+| `ny-formation.md` | New York content skill for entity formation covering tax year 2025 |
+| `ny-mctmt.md` | The NY Metropolitan Commuter Transportation Mobility Tax (MCTMT, Tax Law Article 23) is a... |
 
 ## What's NOT covered
 - Payroll / employer withholding taxes

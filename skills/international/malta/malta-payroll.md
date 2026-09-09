@@ -6,7 +6,8 @@ jurisdiction: MT
 tax_year: 2026
 last_updated: 2026-07-13
 review_status: pending_review
-depends_on: - payroll-workflow-base
+depends_on:
+  - payroll-workflow-base
 category: payroll
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -67,7 +68,7 @@ The employer withholds income tax monthly under the Final Settlement System (FSS
 
 | Chargeable Income (EUR) | Rate | Subtract (EUR) |
 | --- | --- | --- |
-| 0 -- 15,500 | 0% | 0 |
+| 0 -- 15,000 | 0% | 0 |
 | 15,001 -- 23,000 | 15% | 2,250 |
 | 23,001 -- 60,000 | 25% | 4,550 |
 | 60,001+ | 35% | 10,550 |
@@ -332,7 +333,7 @@ Malta's Itemised Payslip Regulations (LN 274 of 2018 under EIRA Cap. 452) mandat
 | Scenario | Skill to Use |
 | --- | --- |
 | Employee payroll (FSS + SSC) | **This skill (malta-payroll.md)** |
-| Self-employed income tax (TA24/TA22) | malta-income-tax.md |
+| Self-employed income tax (ordinary return / TA22 part-time) | malta-income-tax.md |
 | Self-employed SSC (Class 2) | malta-ssc.md |
 | Malta VAT returns | malta-vat-return.md |
 | Malta bookkeeping | malta-bookkeeping.md |
@@ -341,7 +342,7 @@ Malta's Itemised Payslip Regulations (LN 274 of 2018 under EIRA Cap. 452) mandat
 ### Key Handoff Points
 
 - **Payroll → Bookkeeping:** Gross wages, employer SSC, and Maternity Fund are expenses; FSS tax and employee SSC are liabilities until remitted.
-- **Payroll → Income Tax:** The FS3 annual statement feeds into the employee's personal TA24 return. Employment income goes to Box 4 if the employee is also self-employed.
+- **Payroll → Income Tax:** The FS3 annual statement feeds into the employee's personal Income Tax Return. Employment income goes to Box 4 if the employee is also self-employed.
 - **Payroll → SSC:** Class 1 contributions paid through payroll count toward the employee's pension entitlement. Separate from Class 2 (self-employed).
 
 ## PROHIBITIONS

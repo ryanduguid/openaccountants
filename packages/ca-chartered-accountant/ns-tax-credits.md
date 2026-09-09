@@ -91,7 +91,7 @@ The skill is structured around the personal credits flowing through Form NS428 a
 
 ### Statutory authority
 
-- **ALTC statutory authority** — Nova Scotia Income Tax Act s. 49; administered by CRA on behalf of NS under the tax collection agreement. Paid quarterly with the federal GST/HST credit cycle (July, October, January, April).  _(NS ITA s. 49)_
+- **ALTC statutory authority** — Nova Scotian Income Tax Act s. 49; administered by CRA on behalf of NS under the tax collection agreement. Paid quarterly with the federal GST/HST credit cycle (July, October, January, April).  _(NS ITA s. 49)_
 
 ### 2025 amounts (per benefit year July 2025 – June 2026, based on 2024 net income)
 
@@ -387,7 +387,7 @@ This household is above all the low-income relief thresholds and benefits only f
 
 ## 13. Sources
 
-- **Nova Scotia Income Tax Act**, RSNS 1989, c. 217, as amended — primary authority for all NS personal and corporate credits. Sections cited: s. 10 (basic personal), s. 11 (spousal), s. 13 (age amount and supplement), s. 37A (LITR), s. 37C (volunteer firefighter / S&R), s. 40 (Equity Tax Credit), s. 47 (Innovation Equity Tax Credit), s. 47A–B (NSDMTC), s. 47C (NSCITC), s. 49 (Affordable Living Tax Credit).
+- **Nova Scotian Income Tax Act**, RSNS 1989, c. 217, as amended — primary authority for all NS personal and corporate credits. Sections cited: s. 10 (basic personal), s. 11 (spousal), s. 13 (age amount and supplement), s. 37A (LITR), s. 37C (volunteer firefighter / S&R), s. 40 (Equity Tax Credit), s. 47 (Innovation Equity Tax Credit), s. 47A–B (NSDMTC), s. 47C (NSCITC), s. 49 (Affordable Living Tax Credit).
 - **Digital Media Tax Credit Regulations**, NS Reg. under the NS Income Tax Act — definitions of eligible product, eligible labour, certification process.
 - **Capital Investment Tax Credit Regulations**, NS Reg. under the NS Income Tax Act — definitions of qualifying property, prescribed activity.
 - **Nova Scotia Department of Finance and Treasury Board** — annual Tax Measures bulletins, especially the 2024-25 and 2025-26 Budget bulletins for current-year amount confirmations and indexation status.

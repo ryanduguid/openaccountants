@@ -248,7 +248,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | PT Perorangan | PPh Badan | 22% | 0.5% final on turnover up to IDR 4.8B; 3-year window | SPT Tahunan PPh Badan (1771) |
 | PMA | PPh Badan | 22%; potential tax holiday/allowance for pioneer sectors | Not normally applicable (capital and turnover exceed MSME thresholds by design) | SPT Tahunan PPh Badan (1771) |
 
-- **VAT rate and PKP registration** — VAT (PPN) is currently **12%** from 1 January 2025 (UU 7/2021 / HPP Law; the previous 11% rate applied from 1 April 2022 to 31 December 2024). VAT registration (PKP) is mandatory when turnover exceeds IDR 4,800,000,000.  _(UU 7/2021 / HPP Law)_
+- **VAT rate and PKP registration** — The nominal PPN rate is **12%** from 1 January 2025 (UU 7/2021 / HPP Law), but PMK 131/2024 sets the tax base (DPP nilai lain) for non-luxury goods and services at 11/12 of the selling price, so the **effective rate stays 11%**. The full 12% applies only to PPnBM-listed luxury goods, on the full base from 1 February 2025. The 11% rate applied to everything from 1 April 2022 to 31 December 2024. VAT registration (PKP) is mandatory when turnover exceeds IDR 4,800,000,000.  _(UU 7/2021 / HPP Law)_
 - **Withholding obligations** — Withholding obligations under PPh 21 (employment), PPh 23 (services), PPh 26 (cross-border), and PPh 4(2) (final) apply across entity types.
 
 ## Section 10 -- Registration via OSS RBA (Online Single Submission Risk-Based Approach)
@@ -300,7 +300,7 @@ Since 2021, business licensing is centralised through **OSS RBA** at **oss.go.id
 - **UU 40/2007** -- Perseroan Terbatas (Company Law).
 - **UU 25/2007** -- Penanaman Modal (Investment Law).
 - **UU 11/2020** -- Cipta Kerja (Job Creation Law).
-- **UU 7/2021** -- Harmonisasi Peraturan Perpajakan (HPP); PPh Badan 22%, PPh OP brackets, VAT to 12% from 2025.
+- **UU 7/2021** -- Harmonisasi Peraturan Perpajakan (HPP); PPh Badan 22%, PPh OP brackets, nominal VAT to 12% from 2025 (effective 11% for non-luxury supplies via PMK 131/2024).
 - **PP 8/2021** -- PT Perorangan implementing regulation.
 - **PP 7/2021** -- MSME thresholds (Koperasi dan UMKM).
 - **PP 5/2021** -- OSS RBA (Risk-Based Business Licensing).

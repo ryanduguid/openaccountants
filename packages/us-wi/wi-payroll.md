@@ -13,7 +13,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## 1. Scope
 
-This Tier 2 content skill covers Wisconsin (WI) state payroll obligations for tax year 2025 for employers maintaining a worksite, remote employees, or assigned workers in Wisconsin. It is designed to be loaded alongside `us-tax-workflow-base` (Tier 1) and `us-federal-payroll` (Tier 2) when payroll runs include Wisconsin-source wages.
+This Tier 2 content skill covers Wisconsin (WI) state payroll obligations for tax year 2025 for employers maintaining a worksite, remote employees, or assigned workers in Wisconsin. It is designed to be loaded alongside `us-tax-workflow-base` (Tier 1) and `us-form-941-940-payroll` (Tier 2) when payroll runs include Wisconsin-source wages.
 
 In scope:
 
@@ -30,7 +30,7 @@ Out of scope:
 
 - Wisconsin corporate franchise/income tax (delegated to a separate corporate-tax skill).
 - Wisconsin sales/use tax.
-- Federal employment taxes (FICA, FUTA, federal income tax withholding) — see `us-federal-payroll`.
+- Federal employment taxes (FICA, FUTA, federal income tax withholding) — see `us-form-941-940-payroll`.
 - Multistate apportionment beyond the four reciprocal border states.
 - Public-sector or tribal employer payroll.
 
@@ -434,7 +434,7 @@ This skill produces draft work product for review by a Circular 230-credentialed
 - The Milwaukee paid sick leave ordinance is subject to ongoing litigation and legislative challenge. Confirm enforcement status as of the date of filing.
 - Worker classification opinions in worked examples are illustrative. Individual classification depends on full facts and may require IRS Form SS-8, DWD UC-160 determination request, or counsel review.
 - This skill does not advise on multistate apportionment beyond the four reciprocal border states (IL, IN, KY, MI). For Minnesota-Wisconsin, Iowa-Wisconsin, or Wisconsin-out-of-state remote workforce questions outside the reciprocal framework, escalate to a multistate-tax specialist.
-- Federal employment tax compliance (FICA, FUTA, federal income tax) is delegated to `us-federal-payroll` and is out of scope here.
+- Federal employment tax compliance (FICA, FUTA, federal income tax) is delegated to `us-form-941-940-payroll` and is out of scope here.
 - This skill does not address ERISA, COBRA, ACA, or fringe-benefit taxation. Those are handled by separate skills.
 
 **Conservative defaults:** Where Wisconsin rules and federal rules diverge, this skill applies the stricter test (e.g., Wisconsin 9-factor for UI even where federal common-law would treat the worker as a contractor). Where 2025 figures are uncertain because of pending indexing, this skill uses the most recently published DOR figure and flags the uncertainty in the reviewer brief.

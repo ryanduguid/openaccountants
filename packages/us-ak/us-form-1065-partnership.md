@@ -4,7 +4,7 @@ description: US federal content skill for preparing Form 1065 — the US partner
 jurisdiction: US
 tax_year: 2025
 last_updated: 2026-07-13
-reviewed_by: Christopher Aryee
+reviewed_by: Christopher Aryee, CPA
 review_status: current
 tier: 1
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -656,7 +656,7 @@ However: if the FLP also had a side business of "property management services" c
 - IRC §§704, 707, 752 (allocation, capital accounts, liabilities)
 - IRC §§465, 469, 461(l) (loss limits)
 - IRC §1402 (self-employment tax); §1402(a)(13) (limited partner exclusion)
-- IRC §199A (QBI deduction); made made permanent at 20% (2025) / 23% (2026+) by OBBBA P.L. 119-21 §70105
+- IRC §199A (QBI deduction); made permanent at 20% for 2025 and later by OBBBA P.L. 119-21 §70105 (the proposed 23% rate was not enacted)
 - IRC §§6221–6241 (Centralized Partnership Audit Regime / BBA)
 - Treas. Reg. §301.7701-1 through -3 (entity classification)
 - Treas. Reg. §1.704-1, -2, -3 (substantial economic effect; §704(c) methods)
@@ -687,7 +687,7 @@ However: if the FLP also had a side business of "property management services" c
 
 ### 21.4 Statutory changes from OBBBA (P.L. 119-21, July 4, 2025) potentially affecting this skill
 
-- §199A made permanent at 20% (2025) / 23% (2026+) — confirmed
+- §199A made permanent at 20% for 2025 and later; the proposed 23% rate was not enacted — confirmed
 - §461(l) excess business loss limit made permanent
 - §163(j) interest limitation — small business exemption threshold (gross receipts) — verify Rev. Proc. 2024-40 for 2025 threshold
 - §6698 penalty amount — verify 2025 indexed figure

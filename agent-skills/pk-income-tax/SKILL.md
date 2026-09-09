@@ -384,7 +384,7 @@ Failure to pay advance tax triggers default surcharge under §205.
 
 | Breach | Sanction |
 |---|---|
-| Late filing of return (§182) | Higher of (a) 0.1% of tax payable per day, capped at 200% of tax payable, or (b) prescribed minimum penalty; **AND** removal from ATL until next list refresh after compliance |
+| Late filing of return (§182) | 0.1% of tax payable per day of default, capped at 50% of tax payable, subject to a minimum of PKR 40,000 (PKR 5,000 for salaried individuals with income below PKR 5 million) -- the minimum applies even where no tax is payable; **AND** removal from ATL until next list refresh after compliance |
 | Late payment / short payment (§205) | Default surcharge at 12% per annum (TBC) simple, calculated daily |
 | Failure to file wealth statement (§182A) | Separate penalty in addition to return-filing penalty |
 | Concealment / wilful default (§192 / §192A) | Tax evasion penalties; potential prosecution |

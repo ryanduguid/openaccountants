@@ -32,7 +32,7 @@ This skill covers California employer payroll compliance for the 2025 tax year, 
 
 **Out of scope (refuse or refer out):**
 
-- Federal employment tax filing (Forms 941, 940, 943, 944, W-2/W-3 transmittal) — see `us-federal-payroll` (separate skill) or refer to credentialed payroll provider
+- Federal employment tax filing (Forms 941, 940, 943, 944, W-2/W-3 transmittal) — see `us-form-941-940-payroll` (separate skill) or refer to credentialed payroll provider
 - Multi-state nexus apportionment of payroll (employee working partly in another state) — refer to credentialed payroll professional
 - Public-sector / governmental employer payroll (special rates, special funds)
 - Agricultural employers under the Agricultural Labor Relations Act (separate rules)
@@ -56,7 +56,7 @@ This skill covers California employer payroll compliance for the 2025 tax year, 
 | **SUI (UI)** | Employer | New employer 3.4% for first 2-3 years; experience-rated 1.5%-6.2% thereafter | $7,000 per employee per year | UI Trust Fund; CA fund is currently in deficit and FUTA credit-reduction state in 2024 (carryover risk for 2025) |
 | **ETT (Employment Training Tax)** | Employer | 0.1% (positive-reserve employers only; negative-reserve employers are exempt) | $7,000 per employee per year | Funds workforce training |
 
-In addition, the employer must also withhold and remit federal taxes (FIT, FICA Social Security 6.2% to $176,100 in 2025, Medicare 1.45% + 0.9% additional, FUTA 6.0% with 5.4% credit on first $7,000) and observe federal Form 941 / 940 / W-2 obligations. Those are covered in `us-federal-payroll` (separate skill); this skill stays in the California lane.
+In addition, the employer must also withhold and remit federal taxes (FIT, FICA Social Security 6.2% to $176,100 in 2025, Medicare 1.45% + 0.9% additional, FUTA 6.0% with 5.4% credit on first $7,000) and observe federal Form 941 / 940 / W-2 obligations. Those are covered in `us-form-941-940-payroll` (separate skill); this skill stays in the California lane.
 
 **Key 2025 mnemonic:** "PIT and SDI come out of the employee's pocket; SUI and ETT come out of the employer's pocket." The two employer taxes share the same $7,000 wage base. SDI lost its cap in 2024 and remains uncapped in 2025.
 
@@ -488,7 +488,7 @@ The bulk is PIT withholding; SDI is the second-largest line item due to the unca
 
 This skill outputs feed into:
 
-- `us-federal-payroll` (separate skill, if loaded) — for Form 941, 940, W-2 federal mechanics
+- `us-form-941-940-payroll` (separate skill, if loaded) — for Form 941, 940, W-2 federal mechanics
 - `ca-540-individual-return` — Form 540 line 71 (CA withholding) is sourced from W-2 Box 17, which this skill governs at issuance
 - `ca-540-es-estimated-tax` — employees with under-withheld supplemental wages (§3.5 flash point) feed into Q4 estimated-payment planning
 - `us-s-corp-election-decision` — founders modeling S-corp election need accurate CA payroll cost estimates (SUI, ETT, SDI on the salary leg, CalSavers if no qualified plan) for the break-even analysis

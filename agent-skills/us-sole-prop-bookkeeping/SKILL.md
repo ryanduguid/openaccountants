@@ -90,7 +90,7 @@ metadata:
 | 1099-NEC filing threshold | $600 | IRC §6041A(a) |
 | Social Security wage base | $176,100 | SSA; IRC §1402(b) |
 | QBI deduction rate (2025) | 20% | IRC §199A(a); OBBBA made permanent |
-| QBI deduction rate (2026 onward) | 23% | OBBBA; IRC §199A as amended |
+| QBI deduction rate (2026 onward) | 20% | OBBBA P.L. 119-21 §70105; IRC §199A as amended |
 | §471(c) small business gross receipts threshold | $31,000,000 | IRC §471(c); IRC §448(c)(1) |
 
 **OBBBA depreciation note:** The 100% restaurant meal deduction is NOT available in 2025. The temporary 100% deduction under CAA 2021 §210 expired December 31, 2022. OBBBA did NOT reinstate it. The simplified home office rate remains $5/sq ft, NOT $6/sq ft.
@@ -770,7 +770,7 @@ The workflow in `us-tax-workflow-base` mandates inferring the client profile fro
 ### Primary legislation
 
 1. **Internal Revenue Code** (Title 26 USC) — all sections cited throughout this skill
-2. **One Big Beautiful Bill Act (OBBBA)** — Public Law 119-21, signed July 4, 2025. Key provisions: §179 limit increase to $2.5M/$4M, 100% bonus depreciation restoration for property acquired after Jan 19, 2025, permanent QBI deduction at 20% (rising to 23% in 2026), new tip/overtime/auto loan interest deductions on Schedule 1-A
+2. **One Big Beautiful Bill Act (OBBBA)** — Public Law 119-21, signed July 4, 2025. Key provisions: §179 limit increase to $2.5M/$4M, 100% bonus depreciation restoration for property acquired after Jan 19, 2025, permanent QBI deduction at 20% (the 23% rate in the House-passed bill was not enacted), new tip/overtime/auto loan interest deductions on Schedule 1-A
 
 ### Treasury Regulations (26 CFR)
 

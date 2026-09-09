@@ -59,8 +59,7 @@ This package contains **federal** tax skills (which apply to all US states) plus
 49. `global-router.md`
 50. `ar-income-tax.md`
 51. `ar-sales-tax.md`
-52. `arizona-sales-tax.md`
-53. `arkansas-sales-tax.md`
+52. `arkansas-sales-tax.md`
 
 ## How to use
 

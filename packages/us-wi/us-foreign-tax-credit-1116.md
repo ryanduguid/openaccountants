@@ -352,8 +352,8 @@ Reason: no UAE tax to credit on the wages → §911 is the only way to reduce US
 **Form 1116 — General basket (one form with two columns, Germany and Brazil):**
 - Part I line 1a column A (Germany): $60,000; column B (Brazil): $31,500; total $90,000
 - Part I line 2: Schedule C expenses definitely related to the foreign work — assume $9,000 (the foreign-work share of total $27,000 of Schedule C expenses, allocated by gross income ratio: $90k/$180k × $27k = $13,500; refine if any expense is definitely US or definitely foreign). Use $13,500.
-- Part I line 3a: standard deduction apportioned: $15,750 × ($90,000 / $180,000) = $7,500
-- Part I line 6: $90,000 − $13,500 − $7,500 = $69,000 foreign-source taxable income
+- Part I line 3a: standard deduction apportioned: $15,750 × ($90,000 / $180,000) = $7,875
+- Part I line 6: $90,000 − $13,500 − $7,875 = $68,625 foreign-source taxable income
 - Part II line 8: $18,000 (Germany) + $7,500 (Brazil) = $25,500 foreign tax paid
 - Part III line 18: total taxable income from Form 1040 line 15: $180,000 − $13,500 SE-deduction half − $13,500 Schedule C expenses already in line 1a − adjust for the half-SE tax deduction (~$12,700) and QBI deduction (~$33,000 if non-SSTB, see `us-qbi-deduction`) and standard deduction ($15,750) → call it $105,000 for illustration (worked out by `us-schedule-c-and-se-computation` + `us-qbi-deduction`).
 - Part III line 19: $69,000 / $105,000 = 0.6571

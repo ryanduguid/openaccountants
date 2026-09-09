@@ -7,7 +7,8 @@ tax_year: 2025
 last_updated: 2026-07-13
 reviewed_by: Mayur Deokar
 review_status: current
-depends_on: - bookkeeping-workflow-base
+depends_on:
+  - bookkeeping-workflow-base
 category: tax-optimization
 tier: 1
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -64,7 +65,7 @@ Reviewed against the cited tax authorities by Mayur Deokar on 2026-06-06. Items 
 | Individual top rate | 30% + 4% health & education cess = 31.2% (old regime); surcharge up to 25% on high incomes |
 | Corporate tax (domestic, new manufacturing) | 15% + cess (s 115BAB) |
 | Corporate tax (domestic, general) | 22% + cess (s 115BAA) or 25%/30% under regular provisions |
-| GST rates | 0%, 5%, 12%, 18%, 28% |
+| GST rates | 0%, 5%, 18%, and 40% for sin/luxury goods (two-slab structure from 22 September 2025; the former 12% and 28% slabs were abolished). Special rates remain for a few items, e.g. 3% on gold |
 
 ### New Regime Tax Slabs (Default from FY 2025-26 onwards)
 

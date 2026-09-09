@@ -57,8 +57,8 @@ metadata:
 |---|---|
 | 0 -- 12,096 | 0% (Grundfreibetrag) |
 | 12,097 -- 17,443 | 14% -- 23.97% (progressive zone 1) |
-| 17,444 -- 66,760 | 23.97% -- 42% (progressive zone 2) |
-| 66,761 -- 277,825 | 42% |
+| 17,444 -- 68,480 | 23.97% -- 42% (progressive zone 2) |
+| 68,481 -- 277,825 | 42% |
 | 277,826+ | 45% (Reichensteuer) |
 
 Plus: Solidaritätszuschlag 5.5% on income tax (if tax > Freigrenze of €18,130/€36,260)

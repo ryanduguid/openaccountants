@@ -14,6 +14,16 @@ metadata:
 
 # Australia Superannuation Guarantee (SG) -- Sole Trader & Employer Skill v2.0
 
+> **This copy is a year behind and describes a superseded regime.**
+> The Superannuation Guarantee rate has been **12%** since 1 July 2025, not 11.5%, and
+> **payday super** replaced quarterly SG on 1 July 2026: contributions must be *received*
+> by the employee's fund within 7 business days of each payday, the quarterly maximum
+> contribution base is replaced by an annual one, and the ATO Small Business Super
+> Clearing House closed permanently. The quarterly mechanics described below apply only
+> to earnings paid before 1 July 2026. Use `au-super-guarantee` in `skills/` for a
+> current period.
+
+
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 ## Section 1 -- Quick reference
@@ -26,17 +36,17 @@ metadata:
 | Primary Legislation | Superannuation Guarantee (Administration) Act 1992 (SGAA 1992) |
 | Supporting Legislation | SIS Act 1993; ITAA 1997 Div 290-293; Co-contribution Act 2003 |
 | Tax Authority | Australian Taxation Office (ATO) |
-| Tax Year | 2024-25 (1 July 2024 -- 30 June 2025) |
+| Tax Year | This copy documents **2024-25** and the pre-payday-super quarterly regime. See the warning below before using it for a current period |
 | Currency | AUD only |
-| SG rate (2024-25) | 11.5% (12% from 1 July 2025) |
-| Maximum contribution base (quarterly) | $65,070 |
+| SG rate | **12%** — the terminal rate, in force since 1 July 2025. 11.5% applies only to 2024-25 periods |
+| Maximum contribution base (quarterly) | $65,070 for 2024-25. The **quarterly** cap is abolished for earnings paid from 1 July 2026 and replaced by an annual cap |
 | Concessional cap (2024-25) | $30,000 |
 | Non-concessional cap (2024-25) | $120,000 ($360,000 bring-forward) |
 | General transfer balance cap | $1,900,000 |
 | Division 293 threshold | $250,000 |
-| SG quarterly deadlines | 28 Oct, 28 Jan, 28 Apr, 28 Jul |
+| SG quarterly deadlines | 28 Oct, 28 Jan, 28 Apr, 28 Jul — **only for earnings paid before 1 July 2026**. From that date SG must be RECEIVED by the fund within 7 business days of each payday |
 | Sole trader SG to self | NO obligation -- voluntary only |
-| Payday Super | Commences 1 July 2026 |
+| Payday Super | **In force since 1 July 2026.** The ATO Small Business Super Clearing House closed permanently on the same date |
 | Contributor | Open Accountants |
 | Validated by | Pending |
 | Validation date | April 2026 |
@@ -47,7 +57,7 @@ metadata:
 |---|---|
 | Unknown entity structure | Ask -- sole trader vs company affects SG obligation |
 | Unknown whether sole trader has employees | Ask -- determines SG requirement |
-| Unknown SG rate year | 2024-25 = 11.5%; 2025-26 = 12% |
+| Unknown SG rate year | 2024-25 = 11.5%; 2025-26 onwards = 12% |
 | Unknown TSB for carry-forward | Assume >= $500,000 (no carry-forward); ask client |
 | Unknown s 290-150 notice status | Assume NOT lodged; warn about deadline |
 | Unknown contractor vs employee | Flag for reviewer -- multi-factor test |
@@ -397,8 +407,8 @@ If the client provides only a bank statement:
 | Bring-forward (3 years) | $360,000 |
 | Div 293 threshold | $250,000 |
 | Co-contribution max | $500 |
-| Co-contribution lower threshold | $45,400 |
-| Co-contribution upper threshold | $60,400 |
+| Co-contribution lower threshold | $49,293 |
+| Co-contribution upper threshold | $64,293 |
 | LISTO threshold | $37,000 |
 | Spouse offset max | $540 |
 | Transfer balance cap | $1,900,000 |

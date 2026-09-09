@@ -539,7 +539,7 @@ The contractor must apply for a license in each county. Maryland's tax (if any) 
 - Federal AGI: $225,000 - $12,750 = $212,250
 - (Federal income tax not computed here)
 
-- **Step 3: Virginia individual income tax** — Single-member LLC is disregarded — Sarah reports the Schedule C income directly on her Virginia Form 760. Federal AGI                                   $212,250 Virginia additions (e.g., other-state munis)      $- Virginia subtractions                             $- (BPOL tax — not deductible against VA PIT; deductible on federal Sch C as a tax expense, so already in federal AGI as expense) Virginia AGI                                  $212,250 Less: Virginia standard deduction            ($  8,500) Virginia taxable income                       $203,750 Virginia tax (2025 brackets): First $3,000           × 2.0%       = $    60 Next $2,000  (to $5k)  × 3.0%       = $    60 Next $12,000 (to $17k) × 5.0%       = $   600 Above $17,000          × 5.75%      = $10,733  (on $186,750) -------- Total Virginia tax                  = $11,453
+- **Step 3: Virginia individual income tax** — Single-member LLC is disregarded — Sarah reports the Schedule C income directly on her Virginia Form 760. Federal AGI                                   $212,250 Virginia additions (e.g., other-state munis)      $- Virginia subtractions                             $- (BPOL tax — not deductible against VA PIT; deductible on federal Sch C as a tax expense, so already in federal AGI as expense) Virginia AGI                                  $212,250 Less: Virginia standard deduction            ($  8,500) Virginia taxable income                       $203,750 Virginia tax (2025 brackets): First $3,000           × 2.0%       = $    60 Next $2,000  (to $5k)  × 3.0%       = $    60 Next $12,000 (to $17k) × 5.0%       = $   600 Above $17,000          × 5.75%      = $10,738  (on $186,750) -------- Total Virginia tax                  = $11,458
 - **Step 4: PTE election available?** — No — single-member LLCs disregarded for federal tax cannot elect PTE under §58.1-390.3. Sarah pays Virginia PIT at the individual level.  _(§58.1-390.3)_
 
 **Step 5: Total Virginia + BPOL burden (Fairfax)**
@@ -713,9 +713,9 @@ The following items in this skill should be flagged for reviewer confirmation:
 
 - Federal Schedule C, Schedule SE — see `us-sole-prop-bookkeeping` and `us-schedule-c-and-se-computation`
 - Federal Form 1120S — see federal S-corp skill (pending)
-- Virginia individual income tax computation — see `va-individual-income-tax` (pending)
-- Virginia sales and use tax — see `va-sales-use-tax` (pending)
-- Virginia M&T and personal property — see `va-local-property-taxes` (pending)
+- Virginia individual income tax computation — see `va-income-tax` (pending)
+- Virginia sales and use tax — see `va-sales-tax` (pending)
+- Virginia M&T and personal property — see Virginia local property taxes (**not present in this repository**) (pending)
 
 ## End of skill
 

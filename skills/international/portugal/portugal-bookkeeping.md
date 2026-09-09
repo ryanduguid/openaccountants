@@ -6,7 +6,8 @@ jurisdiction: PT
 tax_year: 2025
 last_updated: 2026-07-13
 review_status: pending_review
-depends_on: - bookkeeping-workflow-base
+depends_on:
+  - bookkeeping-workflow-base
 category: bookkeeping
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -529,7 +530,7 @@ Para o tratamento do regime de Residente Não Habitual (RNH) e do Incentivo Fisc
 - **IES integra dados contabilísticos e fiscais** — A submissão da IES integra os dados contabilísticos e fiscais num único relato anual
 - **Resultado fiscal e Quadro 07** — O resultado fiscal parte do resultado contabilístico (conta 81) com correcções fiscais no Quadro 07 da Modelo 22
 - **Principais correcções fiscais** — Principais correcções: tributação autónoma, gastos não dedutíveis, benefícios fiscais (SIFIDE, RFAI, DLRR)
-- **Taxa de IRC geral** — 21% (taxa geral)
+- **Taxa de IRC geral** — 19% para períodos iniciados em 2026 (20% em 2025; 21% ate 2024)
 - **Taxa reduzida PME primeiros 50.000 EUR** — 17% (sobre os primeiros 50.000 EUR para PME; derrama estadual sobre lucros superiores a 1.500.000 EUR)
 
 Utilize a skill pt-income-tax para o apuramento detalhado

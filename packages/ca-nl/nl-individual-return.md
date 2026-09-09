@@ -35,14 +35,14 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 | Taxable Income (CAD) | Rate |
 | --- | --- |
-| 0 -- 43,198 | 8.7% |
-| 43,199 -- 86,395 | 14.5% |
-| 86,396 -- 154,244 | 15.8% |
-| 154,245 -- 215,943 | 17.3% |
-| 215,944 -- 275,870 | 18.3% |
-| 275,871 -- 551,739 | 19.8% |
-| 551,740 -- 1,103,478 | 20.8% |
-| 1,103,479+ | 21.3% |
+| 0 -- 44,192 | 8.7% |
+| 44,193 -- 88,382 | 14.5% |
+| 88,383 -- 157,792 | 15.8% |
+| 157,793 -- 220,910 | 17.8% |
+| 220,911 -- 282,214 | 19.8% |
+| 282,215 -- 564,429 | 20.8% |
+| 564,430 -- 1,128,858 | 21.3% |
+| 1,128,859+ | 21.8% |
 
 ### Key NL Features
 
@@ -51,8 +51,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Feature | Detail |
 | --- | --- |
 | Harmonized sales tax (HST) | 15% (5% federal + 10% provincial) |
-| Basic personal amount (2025) | $10,818 |
-| Spousal/equivalent amount | $10,818 |
+| Basic personal amount (2025) | $11,067 |
+| Spousal/equivalent amount | $11,067 |
 | Age amount | $4,037 |
 | NL Low-Income Tax Reduction | Eliminates provincial tax below ~$22,000 |
 | NL Seniors' Benefit | Up to $1,516/year (income-tested) |
@@ -65,18 +65,18 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 | Taxable Income (CAD) | Combined Rate |
 | --- | --- |
-| 0 -- 43,198 | 23.7% |
-| 43,199 -- 57,375 | 29.5% |
-| 57,376 -- 86,395 | 35% |
-| 86,396 -- 114,750 | 36.3% |
-| 114,751 -- 154,244 | 41.8% |
-| 154,245 -- 158,468 | 43.3% |
-| 158,469 -- 215,943 | 46.3% |
-| 215,944 -- 220,000 | 47.3% |
-| 220,001 -- 275,870 | 51.3% |
-| 275,871 -- 551,739 | 52.8% |
-| 551,740 -- 1,103,478 | 53.8% |
-| 1,103,479+ | 54.3% |
+| 0 -- 44,192 | 23.2% |
+| 44,193 -- 57,375 | 29% |
+| 57,376 -- 88,382 | 35% |
+| 88,383 -- 114,750 | 36.3% |
+| 114,751 -- 157,792 | 41.8% |
+| 157,793 -- 177,882 | 43.8% |
+| 177,883 -- 220,910 | 46.8% |
+| 220,911 -- 253,414 | 48.8% |
+| 253,415 -- 282,214 | 52.8% |
+| 282,215 -- 564,429 | 53.8% |
+| 564,430 -- 1,128,858 | 54.3% |
+| 1,128,859+ | 54.8% |
 
 ### Conservative Defaults
 
@@ -105,8 +105,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 | Credit | Amount (2025) | Rate |
 | --- | --- | --- |
-| Basic personal amount | $10,818 | 8.7% |
-| Spousal / common-law partner | $10,818 | 8.7% |
+| Basic personal amount | $11,067 | 8.7% |
+| Spousal / common-law partner | $11,067 | 8.7% |
 | CPP/EI contributions | Actual | 8.7% |
 | Age amount | $4,037 | 8.7% |
 | Pension income | Up to $1,000 | 8.7% |

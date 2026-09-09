@@ -80,19 +80,22 @@ Nigeria — Personal Income Tax (PIT) — Skill v1.0
 
 ### Progressive Tax Rates — NTA 2025 (effective FY 2026 onward — forward-planning only)
 
-**Progressive Tax Rates — NTA 2025 (effective FY 2026 onward — forward-planning only)**
+**Progressive Tax Rates — NTA 2025, Fourth Schedule (in force from 1 January 2026)**
 
-| Chargeable income (NGN) — TBC | Indicative rate — TBC |
+| Chargeable income (NGN) | Rate |
 | --- | --- |
-| First ~800,000 (effectively tax-free via CRA + first-band 0%) | 0% |
-| Next band | 15% |
-| Next band | 18% |
-| Next band | 21% |
-| Top band (high-income surcharge) | 25% |
+| First 800,000 | 0% |
+| 800,001 – 3,000,000 | 15% |
+| 3,000,001 – 12,000,000 | 18% |
+| 12,000,001 – 25,000,000 | 21% |
+| 25,000,001 – 50,000,000 | 23% |
+| Above 50,000,000 | 25% |
 
-The Nigeria Tax Act 2025 consolidates and re-bands the PIT structure and **substantially raises the tax-free threshold** for low earners. Indicative structure per the First Schedule to NTA 2025 (TBC under NTA 2025 implementing regulations; verify final gazetted figures before applying):
+Six bands, not five: an earlier draft of this table omitted the **23%** band between 25m and 50m and described the 25% as a "high-income surcharge". It is an ordinary top band.
 
-**Do not apply NTA 2025 brackets to FY 2025 returns.** They are presented for client planning and for the FY 2026 changeover only. The precise gazetted figures must be confirmed before use.
+The Nigeria Tax Act 2025 consolidates and re-bands the PIT structure and substantially raises the tax-free threshold: the first **NGN 800,000** of chargeable income is taxed at 0% outright, rather than being sheltered by the Consolidated Relief Allowance as under PITA. Rent relief replaces part of the old relief structure at **20% of annual rent paid, capped at NGN 500,000**.
+
+**Do not apply NTA 2025 brackets to FY 2025 returns**, which remain under PITA — but the Act commenced on 1 January 2026 and these are the operative rates for FY 2026 onward, not planning figures.
 
 ### Consolidated Relief Allowance (CRA) — FY 2025
 
@@ -187,7 +190,7 @@ Under NTA 2025 (FY 2026 onward), CRA is replaced by a higher tax-free threshold 
 - **R-NG-PIT-7** — VAT (consumption tax) return requested. "This skill covers PIT only. For Nigerian VAT use `ng-vat-return` or `nigeria-vat`."
 - **R-NG-PIT-8** — Audit / tax-investigation / objection in progress. "Active enforcement (Notice of Assessment objection, Tax Appeal Tribunal proceedings, EFCC tax-fraud referral) requires representation by a CITN member with right of audience. Do not advise. Escalate immediately."
 - **R-NG-PIT-9** — Pre-2020 deduction system requested. "The old personal allowance + children's allowance + dependent-relative allowance system was repealed by Finance Act 2020 with effect from year of assessment 2020. Do not apply pre-2020 reliefs to FY 2025."
-- **R-NG-PIT-10** — NTA 2025 applied to FY 2025. "Nigeria Tax Act 2025 commences 1 January 2026. Do not apply NTA 2025 brackets or tax-free thresholds to FY 2025 returns. Use PITA Sixth Schedule for FY 2025."
+- **R-NG-PIT-10** — NTA 2025 applied to FY 2025. "The Nigeria Tax Act 2025 commenced on 1 January 2026 and does not reach back. Do not apply NTA 2025 brackets or tax-free thresholds to FY 2025 returns. Use PITA Sixth Schedule for FY 2025. For FY 2026 onward the position reverses: NTA 2025 applies and PITA does not."
 
 ## Section 3 — Tier 1 Rules: Computation Flow
 
@@ -421,7 +424,7 @@ NTA 2025 restructures FIRS into the Nigeria Revenue Service (NRS) and reaffirms 
 | Life insurance premium for a non-spouse (e.g. adult child) | Disallow | Statute permits own-life and spouse-life only |
 | Pension to an unlicensed scheme | Disallow | Pension Reform Act 2014 requires licensed PFA |
 | Foreign tax credit without official certificate | Disallow | Documentation requirement |
-| FY 2025 client asks about NTA 2025 bracket impact | Compute under PITA for FY 2025; provide NTA 2025 numbers only as "TBC for FY 2026 planning" | Statutory commencement is 1 January 2026 |
+| FY 2025 client asks about NTA 2025 bracket impact | Compute under PITA for FY 2025; the NTA 2025 bands above are gazetted and may be quoted as firm figures for FY 2026, not as estimates | Statutory commencement was 1 January 2026 |
 | Refund position (WHT > tax) | Submit refund claim only with complete certificate pack; warn client of audit likelihood | LIRS / FIRS refund process triggers verification |
 | Minimum tax appears to apply | Always show both computations on the working paper | Transparency to reviewer |
 | Multiple states of operation | Apply residency snapshot for filing; flag T2-NG-PIT-6 | Avoid double-state filing |
@@ -440,9 +443,9 @@ NTA 2025 restructures FIRS into the Nigeria Revenue Service (NRS) and reaffirms 
 - **National Housing Fund Act** — NHF contribution rate and deductibility.
 - **National Health Insurance Authority Act 2022** — NHIS / health insurance framework.
 
-### Successor legislation (FY 2026 onward — forward planning only)
+### Successor legislation (FY 2026 onward — in force)
 
-- **Nigeria Tax Act 2025 (NTA 2025)** — assented mid-2025; commences 1 January 2026. Consolidates PITA, CITA, VATA, CGTA, and stamp duty into a unified statute. All figures herein flagged "TBC under NTA 2025 implementing regulations" pending final commencement orders.
+- **Nigeria Tax Act 2025 (NTA 2025)** — assented 26 June 2025; **commenced 1 January 2026**. Consolidates PITA, CITA, VATA, CGTA, and stamp duty into a unified statute. The Fourth Schedule PIT bands are gazetted and set out above; this skill remains scoped to FY 2025 under PITA, so a FY 2026 engagement needs the NTA 2025 rules in full, not just the rate table.
 - **Nigeria Tax Administration Act 2025** — companion administrative statute.
 - **Nigeria Revenue Service (Establishment) Act 2025** — restructures FIRS as the Nigeria Revenue Service (NRS).
 

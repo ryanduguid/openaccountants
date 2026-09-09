@@ -6,7 +6,8 @@ jurisdiction: ET
 tax_year: 2025
 last_updated: 2026-07-13
 review_status: pending_review
-depends_on: - social-contributions-workflow-base
+depends_on:
+  - social-contributions-workflow-base
 category: international
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -199,14 +200,14 @@ Five bank-statement / payroll classifications for a hypothetical private-sector 
 `30 Hamle 2017 ; CBE ; SALARY RUN ; ABEBE T. BASIC 12,000 ; ETB`
 
 **Reasoning (basic salary = 12,000 ETB, Ethiopian citizen):**
-- PAYE band = 10,001–14,000 → 30%, deduction 1,350 (derived). PAYE = 12,000 × 30% − 1,350 = 3,600 − 1,350 = **2,550 ETB**.
+- PAYE band = 10,001–14,000 → 30%, deduction 1,350 (derived). PAYE = 12,000 × 30% − 1,350 = 3,600 − 1,350 = **2,250 ETB**.
 - Employee pension = 12,000 × 7% = **840 ETB**.
 - Employer pension = 12,000 × 11% = **1,320 ETB**.
-- Net pay to employee = 12,000 − 2,550 (PAYE) − 840 (pension) = **8,610 ETB**.
+- Net pay to employee = 12,000 − 2,250 (PAYE) − 840 (pension) = **8,910 ETB**.
 - Total employer cost = 12,000 + 1,320 = **13,320 ETB**.
 - Total pension remitted to POESSA = 840 + 1,320 = **2,160 ETB** (= 12,000 × 18%). ✓
 
-**Classification:** Salary debit EXCLUDE from VAT (payroll). PAYE 2,550 remitted to MoR; pension 2,160 remitted to POESSA. Deadlines per Section 6.
+**Classification:** Salary debit EXCLUDE from VAT (payroll). PAYE 2,250 remitted to MoR; pension 2,160 remitted to POESSA. Deadlines per Section 6.
 
 ### Example 2 -- POESSA pension remittance debit
 
@@ -221,10 +222,10 @@ Matches "POESSA" (pattern 4.1). Amount 2,160 ETB = 18% of a 12,000 ETB basic sal
 ### Example 3 -- Ministry of Revenue PAYE remittance debit
 
 **Input line:**
-`28 Nehase 2017 ; DASHEN BANK ; DEBIT ; MINISTRY OF REVENUE PAYE HAMLE ; -2,550.00 ; ETB`
+`28 Nehase 2017 ; DASHEN BANK ; DEBIT ; MINISTRY OF REVENUE PAYE HAMLE ; -2,250.00 ; ETB`
 
 **Reasoning:**
-Matches "MINISTRY OF REVENUE" / "PAYE" (pattern 4.2). Amount 2,550 ETB reconciles to the PAYE withheld in Example 1 (12,000 × 30% − 1,350). This is the monthly PAYE remittance, NOT a pension payment.
+Matches "MINISTRY OF REVENUE" / "PAYE" (pattern 4.2). Amount 2,250 ETB reconciles to the PAYE withheld in Example 1 (12,000 × 30% − 1,350). This is the monthly PAYE remittance, NOT a pension payment.
 
 **Classification:** EXCLUDE from VAT — PAYE remittance to MoR. Do not classify as pension.
 
@@ -450,7 +451,7 @@ If the client provides only a bank statement and no other information:
 
 ### Test suite
 
-**Test 1:** Citizen, basic 12,000 ETB. → PAYE = 12,000×30% − 1,350 = **2,550**. Employee 7% = **840**. Employer 11% = **1,320**. Pension total = **2,160**. Net = **8,610**.
+**Test 1:** Citizen, basic 12,000 ETB. → PAYE = 12,000×30% − 1,350 = **2,250**. Employee 7% = **840**. Employer 11% = **1,320**. Pension total = **2,160**. Net = **8,910**.
 
 **Test 2:** Citizen, basic 2,000 ETB. → PAYE = **0** (exempt band). Employee 7% = **140**. Employer 11% = **220**. Net = **1,860**.
 

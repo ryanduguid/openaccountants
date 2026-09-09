@@ -6,7 +6,8 @@ jurisdiction: AU
 tax_year: 2025
 last_updated: 2026-07-13
 review_status: pending_review
-depends_on: - income-tax-workflow-base
+depends_on:
+  - income-tax-workflow-base
 category: international
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -126,7 +127,7 @@ Two methods available for sole traders:
 
 #### Method 2 — Logbook
 
-- **Logbook method** — Maintain a logbook for a continuous 12-week period (valid for 5 years unless circumstances change). Calculate business-use percentage from logbook. Apply that percentage to total car expenses: fuel, insurance, registration, repairs, lease payments, depreciation. Depreciation of the car is capped at the car limit ($68,108 for 2024-25, ATO car limit determination).  _(ATO car limit determination)_
+- **Logbook method** — Maintain a logbook for a continuous 12-week period (valid for 5 years unless circumstances change). Calculate business-use percentage from logbook. Apply that percentage to total car expenses: fuel, insurance, registration, repairs, lease payments, depreciation. Depreciation of the car is capped at the car limit ($69,674 for 2024-25 and 2025-26; $69,883 for 2026-27 — ATO car limit determination).  _(ATO car limit determination)_
 
 ### 4.5 Depreciation
 

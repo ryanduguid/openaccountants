@@ -6,7 +6,8 @@ jurisdiction: MX
 tax_year: 2025
 last_updated: 2026-07-13
 review_status: pending_review
-depends_on: - mx-return-assembly
+depends_on:
+  - mx-return-assembly
 category: orchestrator
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -289,7 +290,7 @@ START
 | UMA 2025 | $113.14/day (updated February 2025 by INEGI) |
 | UMA mensual 2025 | $3,439.46 |
 | UMA anual 2025 | $41,273.52 |
-| Cuota fija (Modalidad 40) | Approximately 10.075% of declared base (varies by branch) |
+| Cuota fija (Modalidad 40) | Approximately 13.347% of declared base for 2025, rising annually to 2030 (the CEAV employer portion is tiered; see `mx-imss`) |
 | Deductibility (AEP) | Cuotas IMSS voluntarias = personal deduction (Art. 151 fracción V) |
 | Deductibility (RESICO) | NOT deductible -- RESICO has zero deductions |
 

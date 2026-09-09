@@ -62,7 +62,6 @@ This package contains **federal** tax skills (which apply to all US states) plus
 52. `co-retail-delivery-and-suts.md`
 53. `co-sales-tax.md`
 54. `colorado-sales-tax.md`
-55. `connecticut-sales-tax.md`
 
 ## How to use
 

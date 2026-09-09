@@ -49,8 +49,6 @@ PAYG withholding is calculated per pay period using ATO tax tables (Schedule 1 -
 
 ### Resident Individual Tax Rates (2026--27)
 
-**Resident Individual Tax Rates (2025--26)**
-
 | Taxable Income (AUD) | Rate | Tax on This Income |
 | --- | --- | --- |
 | 0 -- 18,200 | 0% | Nil |

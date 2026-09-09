@@ -14,8 +14,8 @@
 
 | File | What it covers |
 |---|---|
-| vt-sales-tax.md | Vermont sales and use tax — 6% state rate, local option tax, filing mechanics |
-| vt-income-tax.md | Vermont individual income tax — graduated rates 3.35%–8.75%, Form IN-111, self-employed rules |
+| `vt-income-tax.md` | Vermont individual income tax, Vermont Form IN-111, Vermont graduated tax rates, Vermont self-employment... |
+| `vt-sales-tax.md` | Vermont sales tax, Vermont use tax, Vermont Tax Dept sales tax filing, Vermont local option tax, Vermont... |
 
 ## What's NOT covered
 

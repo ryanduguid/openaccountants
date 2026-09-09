@@ -6,15 +6,16 @@ jurisdiction: CR
 tax_year: 2026
 last_updated: 2026-07-13
 review_status: pending_review
-depends_on: - income-tax-workflow-base
+depends_on:
+  - income-tax-workflow-base
 category: international
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Costa Rica Income Tax -- Self-Employed
+# Costa Rican Income Tax -- Self-Employed
 
-## Costa Rica Income Tax -- Self-Employed Skill v0.1
+## Costa Rican Income Tax -- Self-Employed Skill v0.1
 
 > **Tier 2 (research-verified).** Figures below are drawn from Big-4 / law-firm summaries (PwC, BDO, García & Bodán, EY, ICS), reputable payroll guides, the CCSS contribution scale, and reporting of the 2026 decrees. Several rates trace to secondary reporting of Decreto Ejecutivo 45333-H and the CCSS scale rather than a directly-fetched primary government page. Every figure with weak provenance or a known reconciliation issue carries an explicit **[RESEARCH GAP — reviewer to confirm]** marker. A licensed Costa Rican contador público autorizado (CPA) must sign off before filing.
 

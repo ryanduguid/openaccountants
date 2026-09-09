@@ -29,7 +29,7 @@ metadata:
 | Anti-avoidance | GAAR (s 245 ITA); TOSI (s 120.4) |
 | Tax authority | Canada Revenue Agency (CRA) |
 | Filing deadline | 30 April (employees); 15 June (self-employed, but tax owing still due 30 April) |
-| Individual top federal rate | 33% (on income >$253,414) |
+| Individual top federal rate | 33% (on income >$258,482) |
 | Combined top rate (varies by province) | ~50–54% |
 | CCPC small business rate (federal) | 9% on first $500,000 active business income |
 | General corporate rate (federal) | 15% |
@@ -40,11 +40,11 @@ metadata:
 
 | Taxable Income (CAD) | Rate |
 |---|---|
-| 0 – 57,375 | 14% |
-| 57,376 – 114,750 | 20.5% |
-| 114,751 – 158,468 | 26% |
-| 158,469 – 220,000 | 29% |
-| 220,001 – 253,414 | 33% |
+| 0 – 58,523 | 14% |
+| 58,524 – 117,045 | 20.5% |
+| 117,046 – 181,440 | 26% |
+| 181,441 – 258,482 | 29% |
+| 258,483+ | 33% |
 
 Note: The lowest bracket rate was reduced to 14% (from 15%) effective 2026 via Bill C-4.
 
@@ -90,7 +90,7 @@ Income paid to family members (spouse, children) from a related business is subj
 | Home office expenses | s 8(1)(f), 8(1)(i), 18(12) | Employees: T2200 required. Self-employed: proportion of rent/mortgage interest, utilities, insurance, property tax |
 | Moving expenses | s 62 | Must move ≥40 km closer to new work/business location. Deduct against income at new location |
 | Carrying charges | s 20(1)(c) | Interest on money borrowed to earn investment income. Includes investment counsel fees |
-| Medical expenses | s 118.2 | Tax credit at 15% federal on expenses >3% of net income or $2,759 (lesser). Include premiums, dental, prescriptions, travel for treatment |
+| Medical expenses | s 118.2 | Tax credit at 14.5% federal for 2025 (14% from 2026) on expenses >3% of net income or $2,834 (2025) / $2,890 (2026), lesser. Include premiums, dental, prescriptions, travel for treatment |
 | Disability tax credit | s 118.3 | $9,872 federal credit (2026). Transferable to supporting person. Unlocks RDSP eligibility |
 | Northern residents deduction | s 110.7 | Residency deduction + travel benefits for prescribed zones |
 | Capital cost allowance (CCA) on rental property | s 20(1)(a), Sch II | Class 1 (4%), Class 8 (20%). Accelerated Investment Incentive (triple declining balance in year 1) |

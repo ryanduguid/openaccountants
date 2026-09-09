@@ -198,12 +198,12 @@ Virginia is generally an **origin-based** sourcing state for intrastate sales.
 
 | Violation | Penalty | Authority |
 | --- | --- | --- |
-| Late filing | 6% of tax due per month, up to 30% | Va. Code Section 58.1-635 |
-| Late payment | 6% of tax due per month, up to 30% | Va. Code Section 58.1-635 |
-| Failure to file | $10 minimum penalty per return | Va. Code Section 58.1-635 |
-| Underpayment (negligence) | Additional 6% | Va. Code Section 58.1-635 |
-| Fraud | 100% of tax deficiency | Va. Code Section 58.1-635 |
-| Interest | Federal underpayment rate + 2% | Va. Code Section 58.1-15 |
+| Failure to file, or to pay the full tax due | 6% of the tax due if the failure is for not more than one month, plus a further 6% for each additional month or fraction, **not to exceed 30% in aggregate** | Va. Code § 58.1-635 |
+| Minimum penalty | **$10**, whether or not any tax is due for the period | Va. Code § 58.1-635 |
+| False or fraudulent return, or wilful failure to file, with intent to defraud | **50%** of the proper tax — a specific penalty in place of the monthly one, not on top of it | Va. Code § 58.1-635 |
+| Interest | IRC § 6621 rate + 2%, recalculated quarterly (**9%** for 2025, the federal underpayment rate having held at 7% all four quarters) | Va. Code § 58.1-15 |
+
+> The fraud penalty here is **50%**, not 100%. The 100% figure belongs to § 58.1-308, which applies to a fraudulent understatement of **income** tax. Virginia has no negligence penalty in either section.
 
 ### 3.6 Prepayment Requirement [T1]
 

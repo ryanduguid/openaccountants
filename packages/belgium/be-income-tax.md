@@ -6,7 +6,8 @@ jurisdiction: BE
 tax_year: 2025
 last_updated: 2026-07-13
 review_status: pending_review
-depends_on: - income-tax-workflow-base
+depends_on:
+  - income-tax-workflow-base
 category: international
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -43,8 +44,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Taxable Income (EUR) | Marginal Rate |
 | --- | --- |
 | 0 -- 16,320 | 25% |
-| 16,721 -- 28,800 | 40% |
-| 29,511 -- 49,840 | 45% |
+| 16,321 -- 28,800 | 40% |
+| 28,801 -- 49,840 | 45% |
 | Above 49,840 | 50% |
 
 ### Belastingvrij Minimum (Tax-Free Allowance)

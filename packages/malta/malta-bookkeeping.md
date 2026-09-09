@@ -6,7 +6,8 @@ jurisdiction: MT
 tax_year: 2025
 last_updated: 2026-07-13
 review_status: pending_review
-depends_on: - bookkeeping-workflow-base
+depends_on:
+  - bookkeeping-workflow-base
 category: bookkeeping
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -132,7 +133,7 @@ Malta does not mandate a standard chart of accounts. The following is a recommen
 | 6050 | Repairs and maintenance |  |
 | 6100 | Salaries and wages |  |
 | 6110 | Employer SSC (Class 1) |  |
-| 6120 | SSC Class 2 (self-employed) | Maps to TA24 Box 20 |
+| 6120 | SSC Class 2 (self-employed) | Maps to Income Tax Return Box 20 |
 | 6200 | Accountancy fees |  |
 | 6210 | Legal and professional fees |  |
 | 6220 | Bank charges |  |
@@ -184,7 +185,7 @@ Malta does not mandate a standard chart of accounts. The following is a recommen
 | Scenario | Treatment |
 | --- | --- |
 | **Default under GAPSME** | Accruals basis — revenue recognised when earned, not when cash received |
-| **Sole traders (TA24)** | Tax return uses accruals basis; however CFR accepts cash basis for very small operations if consistently applied |
+| **Sole traders (Income Tax Return)** | Tax return uses accruals basis; however CFR accepts cash basis for very small operations if consistently applied |
 | **Article 10 VAT-registered** | Record revenue net of 18% VAT; VAT goes to 2140 |
 | **Article 11 (exempt)** | Record revenue gross — no VAT component |
 | **Advance payments received** | Credit to 2130 (Accruals) until service delivered, then transfer to 4000 |
@@ -205,7 +206,7 @@ Malta does not mandate a standard chart of accounts. The following is a recommen
 | Professional fees | 6200/6210 | Fully deductible | Accountant, lawyer (business) |
 | Travel (business) | 6310/6320 | Fully deductible | Wholly business purpose |
 | Training and CPD | 6420 | Fully deductible | Must relate to current business |
-| SSC Class 2 | 6120 | Deductible (Box 20) | NOT in Box 2 of TA24 |
+| SSC Class 2 | 6120 | Deductible (Box 20) | NOT in Box 2 of Income Tax Return |
 | Fines and penalties | — | NOT deductible | Do not record as business expense |
 | Personal drawings | 3300 | NOT deductible | Equity movement, not expense |
 
@@ -371,7 +372,7 @@ Small entities: balance sheet, income statement, and simplified notes only. Medi
 | Audit | Exempt if small private company | Required |
 | Filing with Registry | Abbreviated balance sheet; income statement may be withheld | Full filing |
 
-Sole traders filing TA24 are not required to prepare GAPSME financial statements, but must maintain adequate books and records for CFR inspection.
+Sole traders filing the Income Tax Return are not required to prepare GAPSME financial statements, but must maintain adequate books and records for CFR inspection.
 
 ## Section 10 -- Interaction with Tax Skills
 
@@ -379,10 +380,10 @@ Sole traders filing TA24 are not required to prepare GAPSME financial statements
 
 | Tax Skill | How Bookkeeping Connects |
 | --- | --- |
-| **malta-income-tax** | P&L profit feeds TA24 Box 3 (net profit). Depreciation per 6th Schedule goes to Box 15. SSC Class 2 goes to Box 20 (not operating expenses for tax). Entertainment in 6700 must be added back. |
+| **malta-income-tax** | P&L profit feeds Income Tax Return Box 3 (net profit). Depreciation per 6th Schedule goes to Box 15. SSC Class 2 goes to Box 20 (not operating expenses for tax). Entertainment in 6700 must be added back. |
 | **malta-vat-return** | VAT accounts (1240, 2140, 2150) feed the VAT return. Article 10 entities: output VAT (Box 1) from 2140; input VAT (Box 6) from 1240. Reconcile VAT control (2150) quarterly. |
-| **malta-ssc** | SSC Class 2 payments recorded in 6120 feed TA24 Box 20. Employer Class 1 contributions in 6110 are a deductible operating expense in Box 2. |
-| **mt-estimated-tax** | Provisional tax payments recorded in 8020 feed TA24 Box 36 as credits against the final tax liability. |
+| **malta-ssc** | SSC Class 2 payments recorded in 6120 feed Income Tax Return Box 20. Employer Class 1 contributions in 6110 are a deductible operating expense in Box 2. |
+| **mt-estimated-tax** | Provisional tax payments recorded in 8020 feed Income Tax Return Box 36 as credits against the final tax liability. |
 
 ## Disclaimer
 

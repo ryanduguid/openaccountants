@@ -20,7 +20,7 @@ metadata:
 | Field | Value |
 |---|---|
 | Country | Maldives (Republic of Maldives) |
-| Tourism sector rate | 16% (tourism goods and services) |
+| Tourism sector rate | 17% (tourism goods and services) from 1 July 2025; 16% before that |
 | General sector rate | 8% (non-tourism goods and services) |
 | Zero rate | 0% (exports) |
 | Exempt | Financial services, residential rent, healthcare, education |
@@ -37,7 +37,7 @@ metadata:
 
 | Ambiguity | Default |
 |---|---|
-| Unknown rate (tourism context) | 16% |
+| Unknown rate (tourism context) | 17% |
 | Unknown rate (general context) | 8% |
 | Unknown VAT status of a purchase | Not deductible |
 | Unknown counterparty location | Domestic Maldives |
@@ -97,8 +97,8 @@ metadata:
 
 | Pattern | Treatment | Notes |
 |---|---|---|
-| BOOKING.COM, EXPEDIA, AGODA | Platform fee at 16% (tourism) | Verify billing entity |
-| TRIPADVISOR | Marketing cost at 16% if tourism | Same |
+| BOOKING.COM, EXPEDIA, AGODA | Platform fee at 17% (tourism) | Verify billing entity |
+| TRIPADVISOR | Marketing cost at 17% if tourism | Same |
 
 ### 3.6 Payroll and exclusions
 
@@ -112,15 +112,15 @@ metadata:
 
 ## Section 4 — Worked examples
 
-### Example 1 — Tourism service at 16%
+### Example 1 — Tourism service at 17%
 
 **Input line:** `05.04.2026 ; RESORT GUEST ; CREDIT ; Room revenue ; USD 1,160`
 
-**Reasoning:** Tourism supply. 16%. Net = USD 1,000, GST = USD 160.
+**Reasoning:** Tourism supply. 17%. Net = USD 1,000, GST = USD 170.
 
 | Date | Counterparty | Gross | Net | GST | Rate | Field | Default? | Excluded? |
 |---|---|---|---|---|---|---|---|---|
-| 05.04.2026 | RESORT GUEST | +1,160 | +1,000 | 160 | 16% | Output (tourism) | N | — |
+| 05.04.2026 | RESORT GUEST | +1,170 | +1,000 | 170 | 17% | Output (tourism) | N | — |
 
 ### Example 2 — General service at 8%
 
@@ -152,7 +152,7 @@ metadata:
 
 ## Section 5 — Tier 1 classification rules (compressed)
 
-### 5.1 Tourism rate 16% — Tourism goods and services (resort accommodation, diving, excursions, etc.).
+### 5.1 Tourism rate 17% — Tourism goods and services (resort accommodation, diving, excursions, etc.). 17% from 1 July 2025 (7th Amendment to the GST Act, Law No. 10/2011, ratified 5 November 2024); 16% for supplies before that date.
 ### 5.2 General rate 8% — All other taxable supplies not in tourism sector.
 ### 5.3 Zero rate — Exports.
 ### 5.4 Exempt — Financial services, residential rent, healthcare, education.
@@ -173,7 +173,7 @@ metadata:
 
 ## Section 7 — Excel working paper template
 
-Per vat-workflow-base Section 3, with Maldives fields: Output tourism 16%, Output general 8%, Zero-rated, Exempt, Input domestic, Input imports, Net GST.
+Per vat-workflow-base Section 3, with Maldives fields: Output tourism 17%, Output general 8%, Zero-rated, Exempt, Input domestic, Input imports, Net GST.
 
 ---
 

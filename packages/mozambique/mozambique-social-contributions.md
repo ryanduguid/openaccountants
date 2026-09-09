@@ -6,7 +6,8 @@ jurisdiction: MZ
 tax_year: 2025
 last_updated: 2026-07-13
 review_status: pending_review
-depends_on: - social-contributions-workflow-base
+depends_on:
+  - social-contributions-workflow-base
 category: international
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -244,6 +245,8 @@ Apply exactly as written when pay data is clear and inputs are complete.
 | Over 1,512,000 | 32% | 141,540 |
 
 - **IRPS formula** — IRPS = income x marginal rate - parcela a abater. Monthly PAYE runs 0%--32%.  _(PwC; DLA Piper)_
+
+*Continuity note.* The first three bands tie out exactly under the subtract method — at 42,000, 10% x 42,000 = 15% x 42,000 - 2,100 = **4,200**; at 168,000, 15% x 168,000 - 2,100 = 20% x 168,000 - 10,500 = **23,100**. The last two do not: strict continuity at 504,000 would need a parcela of **35,700** rather than 37,500, and at 1,512,000 it would need **143,340** rather than 141,540. The published figures are what PwC and the AT print and are used here as authoritative, so the schedule is very slightly discontinuous by design at those two boundaries. Do not "correct" 37,500 or 141,540 to make the arithmetic close. **[RESEARCH GAP — reviewer to confirm against the official CIRPS schedule.]** The same note appears in `mozambique-income-tax` and `mozambique-payroll`, which carry the same table.
 
 ### Rule 6 -- Non-resident flat withholding
 

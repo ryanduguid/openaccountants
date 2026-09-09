@@ -76,8 +76,11 @@ The practical implications for a freelancer or small business operating in Washi
 | Retailing — RCW 82.04.250 | **0.471%** | Sales of tangible personal property to consumers; certain enumerated services to consumers. |
 | Wholesaling — RCW 82.04.270 | **0.484%** | Sales for resale; requires reseller permit from the buyer. |
 | Manufacturing — RCW 82.04.240 | **0.484%** | Manufacturing activity in Washington; measured by value of products manufactured. |
-| Service & Other Activities — RCW 82.04.290 | **1.5%** baseline | Catch-all for personal and professional services, royalties, and items not otherwise classified. |
-| Service & Other Activities — receipts > $1,000,000 | **1.75%** | Workforce-Education-Investment-era step-up; applies to gross income in the tier above $1M. |
+| Service & Other Activities — RCW 82.04.290 | **1.5%** where prior-year gross income in this classification is under $1M | Catch-all for personal and professional services, royalties, and items not otherwise classified. |
+| Service & Other Activities — prior-year gross income $1M-$4,999,999.99 | **1.75%** | Workforce-Education-Investment-era step-up. |
+| Service & Other Activities — prior-year gross income $5M or more | **2.1%** | Added by HB 2081, effective 1 Oct 2025; measured across affiliated groups. |
+
+> **From 1 January 2027** the 0.471% retailing and 0.484% wholesaling/manufacturing/printing rates all rise to **0.5%** (HB 2081). The financial-institution surcharge rose from 1.2% to 1.5% on 1 October 2025.  _(Washington DOR, *Service and Other Activities rate changes*)_
 | Specified financial institutions | **~2.1%** | Surcharge tier for the largest financial-services taxpayers; verify final rate against current DOR table. |
 
 - **Narrower classifications and conservative default** — In addition there are many narrower classifications with their own rates — extracting, processing for hire, printing and publishing, warehousing, gambling contests, travel agents, insurance producers, royalties, child care, and dozens more. When a client's activity does not obviously fit one of the four primaries, look it up in WAC 458-20 (the DOR's "ETA" series and rules) before assigning a rate. **Conservative default:** when an activity could plausibly be Service & Other Activities at 1.5% / 1.75% or a lower-rate specialty classification, the reviewer must verify the specialty applies before the lower rate is used. The DOR's audit posture is that Service is the residual catch-all.  _(WAC 458-20)_

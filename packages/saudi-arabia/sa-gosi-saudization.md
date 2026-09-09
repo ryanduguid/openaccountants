@@ -16,7 +16,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 > **Scope note:** This skill is the **end-to-end employer compliance orchestrator** for private-sector establishments in the Kingdom of Saudi Arabia (KSA). Saudi Arabia does **not levy personal income tax** on employment income for either Saudis or expatriates, so there is no PAYE-style withholding to compute. The employer's monthly obligations are therefore: (a) GOSI contributions, (b) Saudization compliance under Nitaqat, and (c) Wage Protection System (WPS) filing via Mudad. This skill does NOT cover Zakat, corporate income tax, VAT, or e-invoicing — those live in their respective Saudi Arabia skills.
 >
-> **Tax year 2025 note:** Contribution rates below reflect the structure in force following the GOSI reforms phased in from 2024 onward. The **9%/9% annuity split** is the pre-reform baseline for existing Saudi insured workers; newly insured Saudis (first GOSI registration on or after 3 July 2024) are subject to a phased increase under the Civil Pension and Social Insurance Schemes reform — verify current rate for any Saudi employee first registered after that date. **SANED unemployment insurance** has applied to Saudi nationals since 2014. **Wage base cap** of SAR 45,000/month is the long-standing ceiling — verify against the current GOSI portal before filing. **Saudization quotas were tightened across multiple sectors in 2024–2025** (engineering, accounting, dentistry, pharmacy, retail outlets, telecom retail, real estate brokerage, project management, customer service, etc.) — always flag "verify current sector quota against the latest MHRSD notification" before relying on a percentage.
+> **Tax year 2025 note:** Contribution rates below reflect the structure in force following the GOSI reforms phased in from 2024 onward. The **9%/9% annuity split** is the pre-reform baseline for existing Saudi insured workers; newly insured Saudis (first GOSI registration on or after 3 July 2024) are subject to a phased increase under the Civil Pension and Social Insurance Schemes reform: the annuity rate went to 9.5% each from July 2025 and rises 0.5 points each July to 11% each by 2028. Establish the cohort for every Saudi employee before computing — see the two-cohort table in §1.1. **SANED unemployment insurance** has applied to Saudi nationals since 2014. **Wage base cap** of SAR 45,000/month is the long-standing ceiling — verify against the current GOSI portal before filing. **Saudization quotas were tightened across multiple sectors in 2024–2025** (engineering, accounting, dentistry, pharmacy, retail outlets, telecom retail, real estate brokerage, project management, customer service, etc.) — always flag "verify current sector quota against the latest MHRSD notification" before relying on a percentage.
 
 ## Verified rates & thresholds (accountant-reviewed)
 
@@ -53,9 +53,21 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | --- | --- | --- | --- | --- | --- |
 | **Annuity (retirement)** | 9% | 9% | — | — | Contributory wage (basic + housing), capped at SAR 45,000/month |
 | **Occupational Hazards** | 2% | — | 2% | — | Same contributory wage cap |
-| **SANED (unemployment)** | 1.5% | 1.5% | — | — | Same contributory wage cap, Saudis only since 2014 |
-| **TOTAL — Saudi national** | **12.5%** | **10.5%** | — | — | Combined 23% |
+| **SANED (unemployment)** | 0.75% | 0.75% | — | — | Same contributory wage cap, Saudis only since 2014 |
+| **TOTAL — Saudi national** | **11.75%** | **9.75%** | — | — | Combined **21.5%** |
 | **TOTAL — Expatriate** | — | — | **2%** | **0%** | Occupational Hazards only |
+
+> ⚠️ **Two cohorts from July 2025.** The 9% / 9% annuity split above is the rate for a Saudi whose **first** GOSI subscription was **before 3 July 2024**. A Saudi first subscribing on or after that date is in the reformed scheme, where the annuity rate rose to **9.5%** each from July 2025 and increases by 0.5 percentage points each July until it reaches **11%** each in 2028. Occupational hazards (2%, employer) and SANED (0.75% each) are unchanged for both cohorts, so the totals run:
+>
+> | Annuity rate applies from | Annuity each | **Employer total** | **Employee total** |
+> | --- | --- | --- | --- |
+> | Existing subscribers (pre-3 July 2024) | 9% | **11.75%** | **9.75%** |
+> | New subscribers, July 2025 | 9.5% | **12.25%** | **10.25%** |
+> | New subscribers, July 2026 | 10% | **12.75%** | **10.75%** |
+> | New subscribers, July 2027 | 10.5% | **13.25%** | **11.25%** |
+> | New subscribers, July 2028 onward | 11% | **13.75%** | **11.75%** |
+>
+> Establish the cohort per employee before computing. A payroll run that applies one rate to the whole Saudi headcount will be wrong for any first-time subscriber hired since July 2024.
 
 The order of GOSI branches matters because **only Saudi nationals are subject to all three branches** (Annuity, Occupational Hazards, SANED), while **expatriates are subject only to Occupational Hazards**. Calculate per-employee, then aggregate per establishment for the monthly remittance.
 
@@ -140,7 +152,7 @@ The Nitaqat program classifies every private-sector establishment into a colour-
 
 ### 3.2 Computation order
 
-- **Computation order** — For each employee, in order: 1. Determine nationality bucket: Saudi (including GCC nationals treated as Saudis), or expatriate. 2. Determine contributory wage: basic salary + housing allowance, capped at SAR 45,000/month. 3. Determine first-registration cohort (Saudis only): if first GOSI registration is on or after 3 July 2024, flag for verification of phased reform rate; otherwise apply the 9%/9% baseline used in this skill. 4. Compute employer contribution: 12.5% (Saudi) or 2% (expat) of contributory wage. 5. Compute employee deduction: 10.5% (Saudi) or 0% (expat) of contributory wage. 6. Aggregate per establishment: sum all employer contributions + all employee deductions = the GOSI monthly remittance. 7. Cross-check against Mudad/WPS payroll file: GOSI base × headcount should reconcile to WPS contractual salary aggregate (after stripping out the SAR 45,000 cap effect).
+- **Computation order** — For each employee, in order: 1. Determine nationality bucket: Saudi (including GCC nationals treated as Saudis), or expatriate. 2. Determine contributory wage: basic salary + housing allowance, capped at SAR 45,000/month. 3. Determine first-registration cohort (Saudis only): first GOSI registration before 3 July 2024 uses the 9%/9% annuity baseline; on or after that date use the reformed annuity rate for the year (9.5% each from July 2025, rising 0.5 points each July to 11% by 2028). 4. Compute employer contribution: 11.75% (Saudi, existing subscriber), 12.25% (Saudi, reformed cohort on the July 2025 rate) or 2% (expat) of contributory wage. 5. Compute employee deduction: 9.75% (Saudi, existing subscriber), 10.25% (Saudi, reformed cohort on the July 2025 rate) or 0% (expat) of contributory wage. 6. Aggregate per establishment: sum all employer contributions + all employee deductions = the GOSI monthly remittance. 7. Cross-check against Mudad/WPS payroll file: GOSI base × headcount should reconcile to WPS contractual salary aggregate (after stripping out the SAR 45,000 cap effect).
 
 ### 3.3 Wage base — what's in, what's out
 
@@ -257,12 +269,13 @@ For each employee, per month:
 
 | Group | Per-employee contributory wage | Employer rate | Employee rate | Per-employee employer | Per-employee employee | Headcount | Employer total | Employee total |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Saudis | SAR 10,000 | 12.5% | 10.5% | SAR 1,250 | SAR 1,050 | 10 | **SAR 12,500** | **SAR 10,500** |
+| Saudis (existing subscribers) | SAR 10,000 | 11.75% | 9.75% | SAR 1,175 | SAR 975 | 10 | **SAR 11,750** | **SAR 9,750** |
 | Expats | SAR 15,000 | 2% | 0% | SAR 300 | SAR 0 | 5 | **SAR 1,500** | **SAR 0** |
-| **TOTAL** |  |  |  |  |  | **15** | **SAR 14,000** | **SAR 10,500** |
+| **TOTAL** |  |  |  |  |  | **15** | **SAR 13,250** | **SAR 9,750** |
 
-- **GOSI monthly remittance from establishment to GOSI:** SAR 14,000 (employer portion) + SAR 10,500 (employee portion withheld from Saudi salaries) = **SAR 24,500**.
-- **Employer cost of employment per month:** 10 × (SAR 10,000 + SAR 1,250) + 5 × (SAR 15,000 + SAR 300) = SAR 112,500 + SAR 76,500 = **SAR 189,000** (before any other allowances or end-of-service accrual).
+- **GOSI monthly remittance from establishment to GOSI:** SAR 13,250 (employer portion) + SAR 9,750 (employee portion withheld from Saudi salaries) = **SAR 23,000**.
+- **Employer cost of employment per month:** 10 × (SAR 10,000 + SAR 1,175) + 5 × (SAR 15,000 + SAR 300) = SAR 111,750 + SAR 76,500 = **SAR 188,250** (before any other allowances or end-of-service accrual).
+- If any of the ten Saudis first subscribed to GOSI on or after 3 July 2024, that employee is on the 12.25% / 10.25% July-2025 rates instead — SAR 1,225 employer and SAR 1,025 employee at this wage.
 
 **Nitaqat status (IT consultancy, Small size band 10–49):**
 - Saudi headcount 10 ÷ total 15 = **66.7% Saudization**.
@@ -279,8 +292,8 @@ For each employee, per month:
 If a Saudi senior manager earns contractual basic SAR 50,000 + housing SAR 12,000 = contributory wage SAR 62,000/month:
 
 - Capped at SAR 45,000 for GOSI.
-- Employer 12.5% × SAR 45,000 = **SAR 5,625/month**.
-- Employee 10.5% × SAR 45,000 = **SAR 4,725/month**.
+- Employer 11.75% × SAR 45,000 = **SAR 5,287.50/month** (12.25% = SAR 5,512.50 for a post-July-2024 first-time subscriber on the July 2025 rates).
+- Employee 9.75% × SAR 45,000 = **SAR 4,387.50/month** (10.25% = SAR 4,612.50 on the same basis).
 - The SAR 17,000 above the cap (SAR 62,000 − SAR 45,000) is **not subject to GOSI**.
 - However, WPS reports the full contractual SAR 62,000 because WPS verifies the actual contractual salary is paid, not the GOSI base.
 

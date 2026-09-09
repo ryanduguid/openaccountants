@@ -6,7 +6,8 @@ jurisdiction: FR
 tax_year: 2025
 last_updated: 2026-07-13
 review_status: pending_review
-depends_on: - income-tax-workflow-base
+depends_on:
+  - income-tax-workflow-base
 category: international
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -40,8 +41,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | --- | --- |
 | 0 -- 11,497 | 0% |
 | 11,498 -- 29,315 | 11% |
-| 26,232 -- 83,823 | 30% |
-| 74,546 -- 180,294 | 41% |
+| 29,316 -- 83,823 | 30% |
+| 83,824 -- 180,294 | 41% |
 | Above 180,294 | 45% |
 
 - **Quotient familial system** — France uses a family quotient system (quotient familial). Rates apply per "part" (share). A single person = 1 part; a married couple = 2 parts; each child = 0.5 additional part. Taxable income is divided by number of parts, rates applied, then multiplied back.

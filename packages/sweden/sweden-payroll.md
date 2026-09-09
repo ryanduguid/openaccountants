@@ -6,7 +6,8 @@ jurisdiction: SE
 tax_year: 2025
 last_updated: 2026-07-13
 review_status: pending_review
-depends_on: - payroll-workflow-base
+depends_on:
+  - payroll-workflow-base
 category: payroll
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -126,7 +127,7 @@ Sweden is unique: employees pay NO separate social security contributions. All s
 | Efterlevandepensionsavgift (survivors' pension) | 0.60% |
 | Arbetsmarknadsavgift (labour market/unemployment) | 2.64% |
 | Arbetsskadeavgift (occupational injury) | 0.20% |
-| Allmän löneavgift (general payroll tax) | 12.62% |
+| Allmän löneavgift (general payroll tax) | 11.62% |
 | **Total arbetsgivaravgifter** | **31.42%** |
 
 ### Reduced Rates

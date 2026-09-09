@@ -1,6 +1,6 @@
 ---
 name: pe-individual-return
-description: Use this skill whenever asked about Prince Edward Island provincial individual income tax. Trigger on phrases like "PEI tax", "Prince Edward Island tax", "PE provincial tax", "PEI T1", "PEI brackets", "HST PEI", "PEI surtax", "PEI credits", or any question about computing PEI provincial tax for an individual return. This skill covers PEI's four-bracket tax system with surtax, HST at 15%, provincial credits, and filing requirements. ALWAYS read this skill before touching any PEI individual tax return work.
+description: Use this skill whenever asked about Prince Edward Island provincial individual income tax. Trigger on phrases like "PEI tax", "Prince Edward Island tax", "PE provincial tax", "PEI T1", "PEI brackets", "HST PEI", "PEI credits", or any question about computing PEI provincial tax for an individual return. This skill covers PEI's five-bracket tax system (the surtax was abolished for 2024), HST at 15%, provincial credits, and filing requirements. ALWAYS read this skill before touching any PEI individual tax return work.
 version: "1.0"
 jurisdiction: CA
 tax_year: 2025
@@ -37,18 +37,13 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 | Taxable Income (CAD) | Rate |
 | --- | --- |
-| 0 -- 32,656 | 9.65% |
-| 32,657 -- 64,313 | 13.63% |
-| 64,314 -- 105,000 | 16.65% |
-| 105,001+ | 18% |
+| 0 -- 33,328 | 9.5% |
+| 33,329 -- 64,656 | 13.47% |
+| 64,657 -- 105,000 | 16.6% |
+| 105,001 -- 140,000 | 17.62% |
+| 140,001+ | 19% |
 
-### PEI Surtax
-
-**PEI Surtax**
-
-| Provincial Tax Threshold | Surtax Rate |
-| --- | --- |
-| Provincial basic tax > $12,500 | 10% of provincial tax exceeding $12,500 |
+PEI **abolished its 10% surtax** on provincial tax over $12,500, effective for the 2024 tax year. The three-bracket-plus-surtax structure was replaced with the five-bracket scale above. Do not apply a PEI surtax for 2024 or any later year.  _(EY Tax Alert 2023 no. 22, *Prince Edward Island budget 2023-24*)_
 
 ### Key PEI Features
 
@@ -57,8 +52,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Feature | Detail |
 | --- | --- |
 | Harmonized sales tax (HST) | 15% (5% federal + 10% provincial) |
-| Basic personal amount (2025) | $13,500 |
-| Spousal/equivalent amount | $13,500 |
+| Basic personal amount (2025) | $14,650 |
+| Spousal/equivalent amount | $14,650 |
 | Age amount | $4,959 |
 | PEI Low-Income Tax Reduction | Reduces/eliminates tax for low-income residents |
 | PEI Sales Tax Credit | $110/adult; income-tested |
@@ -70,18 +65,17 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 | Taxable Income (CAD) | Combined Rate |
 | --- | --- |
-| 0 -- 32,656 | 24.65% |
-| 32,657 -- 57,375 | 28.63% |
-| 57,376 -- 64,313 | 34.13% |
-| 64,314 -- 105,000 | 37.15% |
-| 105,001 -- 114,750 | 38.5% |
-| 114,751 -- 158,468 | 44% |
-| 158,469 -- 220,000 | 47% |
-| 220,001+ | 51% |
+| 0 -- 33,328 | 24% |
+| 33,329 -- 57,375 | 27.97% |
+| 57,376 -- 64,656 | 33.97% |
+| 64,657 -- 105,000 | 37.1% |
+| 105,001 -- 114,750 | 38.12% |
+| 114,751 -- 140,000 | 43.62% |
+| 140,001 -- 177,882 | 45% |
+| 177,883 -- 253,414 | 48% |
+| 253,415+ | 52% |
 
 ### Combined Federal + PEI Marginal Rates (2025)
-
-Note: rates above do not include surtax effect. With surtax, effective top rate increases by approximately 1.8%.
 
 ### Conservative Defaults
 
@@ -110,20 +104,16 @@ Note: rates above do not include surtax effect. With surtax, effective top rate 
 
 | Credit | Amount (2025) | Rate |
 | --- | --- | --- |
-| Basic personal amount | $13,500 | 9.65% |
-| Spousal / common-law partner | $13,500 | 9.65% |
-| CPP/EI contributions | Actual | 9.65% |
-| Age amount | $4,959 | 9.65% |
-| Pension income | Up to $1,000 | 9.65% |
-| Disability | $8,777 | 9.65% |
-| Tuition | Actual | 9.65% |
-| Medical expenses | Excess over 3% of net income | 9.65% |
-| Donations | First $200 at 9.65%; excess at 18% | Non-refundable |
-| Volunteer firefighter | $500 | 9.65% |
-
-### 2.3 PEI Surtax Calculation
-
-- **PEI Surtax Calculation** — Surtax = (Basic provincial tax − $12,500) × 10% CAD (Applies when basic provincial tax exceeds $12,500; typically affects taxable incomes above approximately $140,000.)
+| Basic personal amount | $14,650 | 9.5% |
+| Spousal / common-law partner | $14,650 | 9.5% |
+| CPP/EI contributions | Actual | 9.5% |
+| Age amount | $4,959 | 9.5% |
+| Pension income | Up to $1,000 | 9.5% |
+| Disability | $8,777 | 9.5% |
+| Tuition | Actual | 9.5% |
+| Medical expenses | Excess over 3% of net income | 9.5% |
+| Donations | First $200 at 9.5%; excess at 19% | Non-refundable |
+| Volunteer firefighter | $500 | 9.5% |
 
 ### 2.4 PEI Refundable Credits (Form PE479)
 
@@ -144,25 +134,21 @@ Note: rates above do not include surtax effect. With surtax, effective top rate 
 
 ### Step 2: Apply PEI Bracket Rates
 
-- **Apply PEI Bracket Rates** — First $32,656 × 9.65%; $32,657 to $64,313 × 13.63%; $64,314 to $105,000 × 16.65%; Above $105,000 × 18%
+- **Apply PEI Bracket Rates** — First $33,328 × 9.5%; $33,329 to $64,656 × 13.47%; $64,657 to $105,000 × 16.6%; $105,001 to $140,000 × 17.62%; Above $140,000 × 19%
 
 ### Step 3: Subtract Non-Refundable Tax Credits
 
-- **Subtract Non-Refundable Tax Credits** — Total credit amounts × 9.65% (lowest bracket rate).
+- **Subtract Non-Refundable Tax Credits** — Total credit amounts × 9.5% (lowest bracket rate).
 
-### Step 4: Calculate Surtax
-
-- **Calculate Surtax** — If basic provincial tax > $12,500: add 10% of excess.
-
-### Step 5: Apply Low-Income Tax Reduction
+### Step 4: Apply Low-Income Tax Reduction
 
 - **Apply Low-Income Tax Reduction** — Reduces or eliminates tax for low-income earners.
 
-### Step 6: Net Provincial Tax
+### Step 5: Net Provincial Tax
 
-- **Net Provincial Tax** — After surtax addition and credit reductions.
+- **Net Provincial Tax** — After credit reductions. There is no surtax step: PEI abolished its surtax for 2024 and later years.
 
-### Step 7: Apply Refundable Credits
+### Step 6: Apply Refundable Credits
 
 - **Apply Refundable Credits** — Subtract Sales Tax Credit and other refundable amounts.
 
@@ -208,20 +194,11 @@ Note: rates above do not include surtax effect. With surtax, effective top rate 
 
 ## Section 6 -- Edge Cases
 
-### 6.1 PEI Surtax Impact
+### 6.1 Returns for 2023 and Earlier -- the Repealed Surtax
 
-The surtax is unique to PEI among Atlantic provinces. It effectively creates a higher marginal rate for high-income earners:
+PEI levied a 10% surtax on basic provincial tax over $12,500 up to and including the **2023** tax year. It was repealed as part of the 2023-24 budget, which replaced the three-bracket-plus-surtax structure with the current five-bracket scale from 2024 onward.
 
-### 6.1 PEI Surtax Impact
-
-**PEI Surtax Impact**
-
-| Basic Provincial Tax | Effective Surtax | Total Effective Top Rate |
-| --- | --- | --- |
-| $12,500 or less | None | 18% (top bracket only) |
-| $15,000 | ($15,000 - $12,500) × 10% = $250 | ~18.2% effective |
-| $20,000 | ($20,000 - $12,500) × 10% = $750 | ~18.5% effective |
-| $30,000+ | Significant | ~19.8% effective on top bracket |
+Apply the surtax **only** when preparing or amending a return for 2023 or an earlier year, using that year's brackets. For 2024 and later, there is no surtax.  _(EY Tax Alert 2023 no. 22, *Prince Edward Island budget 2023-24*)_
 
 ### 6.2 Seasonal Workers
 
@@ -259,9 +236,8 @@ Workers commuting to Nova Scotia or New Brunswick for employment are taxed as PE
 
 - **NEVER apply other provincial rates to a PEI resident** — NEVER apply other provincial rates to a PEI resident
 - **NEVER separate HST into components for filing** — NEVER separate HST into components for filing -- PEI uses harmonized HST
-- **NEVER ignore the surtax calculation** — NEVER ignore the surtax calculation for higher-income earners
 - **NEVER claim PEI credits without confirming residency** — NEVER claim PEI credits without confirming PEI residency on December 31
-- **NEVER omit the surtax from the computation** — NEVER omit the surtax from the computation -- it applies in addition to bracket rates
+- **NEVER add a PEI surtax for 2024 or later** — NEVER add a PEI surtax to a 2024-or-later computation; it was repealed. It applies only to 2023 and earlier returns.
 - **Prohibition 6** — NEVER present tax calculations as definitive -- always label as estimated
 
 ## Disclaimer

@@ -6,15 +6,16 @@ jurisdiction: BO
 tax_year: 2025
 last_updated: 2026-07-13
 review_status: pending_review
-depends_on: - income-tax-workflow-base
+depends_on:
+  - income-tax-workflow-base
 category: international
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Bolivia Income Tax (RC-IVA) -- Self-Employed and Individuals
+# Bolivian Income Tax (RC-IVA) -- Self-Employed and Individuals
 
-## Bolivia Income Tax (RC-IVA) -- Self-Employed and Individuals Skill v0.1
+## Bolivian Income Tax (RC-IVA) -- Self-Employed and Individuals Skill v0.1
 
 Tier 2 (research-verified). Figures below are drawn from PwC Worldwide Tax Summaries, the official SIN/SIAT site, the LexiVox text of DS 5383, and Bolivian professional sources. They have NOT yet been signed off by a Bolivian-licensed accountant (Contador Público Autorizado / auditor). Treat every output as a draft for professional review. Items marked **[RESEARCH GAP -- reviewer to confirm]** require verification against primary statute before filing.
 
@@ -336,7 +337,7 @@ Arithmetic check: 10 + 1.71 + 0.5 + 0.5 = 12.71%. ✓
 
 - **Solidarity bands applied to excess** — These are applied to the excess in each band, in addition to the 12.71%.  _(rigobertoparedes.com/es; brackets per Ley 065)_
 
-[RESEARCH GAP -- reviewer to confirm.] Ley 1582 (2024) revised the solidarity-fund parameters; one source cites an effective recalculated burden of ~1.15% / 5.74% / 11.48%. The precise current statutory percentages should be confirmed against the consolidated Ley 065 text. A pension-contribution salary ceiling (commonly cited as 60 SMN) could not be confirmed from an authoritative source -- confirm whether a ceiling applies.
+[RESEARCH GAP -- reviewer to confirm.] Ley 1582 (2024) revised the solidarity-fund parameters; one source cites an effective recalculated burden of ~1.15% / 5.74% / 11.48%. The precise current statutory percentages should be confirmed against the consolidated Ley 065 text. A pension-contribution salary ceiling of 60 SMN is cited by PwC and carried by `bolivia-payroll` and `bolivia-social-contributions`; on that multiplier it is Bs 165,000/month for 2025 (60 x Bs 2,750) and Bs 198,000/month for 2026 (60 x Bs 3,300). The 60-SMN multiplier itself rests on PwC and has not been confirmed against an APS/Gestora circular; that, and which contribution branches sit under the cap, are the open questions.
 
 **Employer social security table**  _(planifica.com.bo)_
 

@@ -7,7 +7,8 @@ tax_year: 2025
 last_updated: 2026-07-13
 reviewed_by: Mário Jorge da costa Vale
 review_status: current
-depends_on: - company-formation-workflow-base
+depends_on:
+  - company-formation-workflow-base
 category: formation
 tier: 1
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -38,7 +39,7 @@ This block is generated from verified `skill_facts` — edit the facts, not the 
 - **RCBE (beneficiário efetivo)** — Na constituição + confirmação anual  _(IRN)_
 - **Declaração início atividade** — 15 dias  _(AT)_
 - **Contabilista Certificado** — Obrigatório (responsabilidade legal)  _(DL 158/2009)_
-- **Taxa normal** — 2025: 21% ; 2026: 19%  _(Código IRC)_
+- **Taxa normal** — 2025: 20% ; 2026: 19%  _(Código IRC)_
 - **PME — primeiros €50.000** — 2025: 16% ; 2026: 15%  _(Código IRC)_
 
 ## Secção 1 -- Referência Rápida
@@ -52,7 +53,7 @@ This block is generated from verified `skill_facts` — edit the facts, not the 
 | Registo comercial | Instituto dos Registos e do Notariado (IRN) / Conservatória do Registo Comercial |
 | Legislação principal | Código das Sociedades Comerciais (CSC); DL 111/2005 (Empresa na Hora) |
 | Tempo típico de constituição | 1 hora (Empresa na Hora) até 2 semanas (tradicional/online) |
-| Taxa de IRC | 21% (taxa geral); 17% sobre os primeiros €50.000 para PME em regiões do interior |
+| Taxa de IRC | 19% (taxa geral, 2026); 15% sobre os primeiros €50.000 para PME |
 | Versão da skill | 1.1 |
 
 ## Secção 2 -- Comparação de Tipos de Entidade

@@ -42,13 +42,13 @@ metadata:
 |---|---|---|---|
 | Personal allowance | £12,570 | £12,570 (frozen) | £12,570 (frozen) |
 | Basic rate band | £12,571 -- £50,270 | £12,571 -- £50,270 (frozen) | £12,571 -- £50,270 (frozen) |
-| Basic rate on property income | 20% | 20% | **TBC — Autumn Budget 2025 announced increase to property income tax from April 2026; specific rates to be confirmed when Finance (No. 2) Bill 2024-26 enacted** (expected basic +2pp ≈ 22%) |
-| Higher rate on property income | 40% | 40% | **TBC — see above** (expected higher +2pp ≈ 42%) |
-| Additional rate on property income | 45% | 45% | **TBC — pending Finance (No. 2) Bill 2024-26 enactment** |
+| Basic rate on property income | 20% | 20% | **20%** — the new property rates start in **2027-28**, not 2026-27 |
+| Higher rate on property income | 40% | 40% | **40%** — see the 2027-28 note below |
+| Additional rate on property income | 45% | 45% | **45%** — see the 2027-28 note below |
 | Property income allowance | £1,000 | £1,000 (frozen since 2017-18) | £1,000 (frozen) |
 | Rent-a-Room threshold | £7,500 | £7,500 (frozen) | £7,500 (frozen) |
 | FHL regime | In force (last year) | **Abolished from 6 April 2025** (transitional rules) | Abolished (transitional rules continue) |
-| Section 24 mortgage interest restriction | Full restriction — 20% basic rate tax reducer | Same | Same (tax reducer rate may follow new basic rate — TBC) |
+| Section 24 mortgage interest restriction | Full restriction — 20% basic rate tax reducer | Same | Same. The reducer follows the **basic rate of income tax**, which the Budget did not change, so it stays at 20% even after the separate property rates begin in 2027-28 |
 | MTD ITSA for landlords | Not in scope | Not in scope | **Phase 1 from 6 April 2026 — gross income > £50,000** |
 | MTD ITSA Phase 2 | n/a | n/a | Phase 2 from April 2027 — gross income > £30,000 |
 
@@ -96,20 +96,20 @@ Note: Box layout for 2026-27 is expected to be substantially similar but TBC —
 
 Property income is added to all other income and taxed at the marginal rate.
 
-### Income Tax Rates on Property Income — 2026-27 (From 6 April 2026)
+### Income Tax Rates on Property Income — 2026-27 and 2027-28
 
-**STATUS: TBC — Autumn Budget 2025 announced increase to property income tax from April 2026; specific rates to be confirmed when Finance (No. 2) Bill 2024-26 enacted.**
+**2026-27 is unchanged: 20% / 40% / 45%.** The Autumn Budget 2025 did announce a separate set of property income rates — **22% / 42% / 47%** — but they apply **from April 2027**, not April 2026. The rates are specific, not "expected", and there is nothing to hold a 2026-27 computation open for.
 
-The Autumn Budget 2025 announced that property income will be taxed at differential (dividend-style) rates from 6 April 2026, with the basic rate expected to rise by 2pp and the higher rate by 2pp relative to current employment-income rates.
+| Band | Taxable property income | 2026-27 | 2027-28 onward |
+|---|---|---|---|
+| Personal allowance | Up to £12,570 | 0% | 0% |
+| Basic rate (property) | £12,571 -- £50,270 | **20%** | **22%** |
+| Higher rate (property) | £50,271 -- £125,140 | **40%** | **42%** |
+| Additional rate (property) | Over £125,140 | **45%** | **47%** |
 
-| Band | Taxable property income | Rate (expected — TBC) |
-|---|---|---|
-| Personal allowance | Up to £12,570 | 0% |
-| Basic rate (property) | £12,571 -- £50,270 | ~22% (TBC) |
-| Higher rate (property) | £50,271 -- £125,140 | ~42% (TBC) |
-| Additional rate (property) | Over £125,140 | TBC |
+> **The separate property rates begin in 2027-28, not 2026-27.** Computing a 2026-27 return at 22/42/47 overstates the liability at every band.
 
-DO NOT use the expected rates above for any client computation until Finance (No. 2) Bill 2024-26 receives Royal Assent and HMRC publishes the confirmed rates. Until then, treat all 2026-27 property income tax computations as ESTIMATED and clearly flag them as TBC.
+> The same Budget raised **savings** income rates to 22 / 42 / 47 from April 2027, and **dividend** rates by two percentage points from **2026-27** — basic 10.75%, higher 35.75%, additional unchanged at 39.35%. The dividend change is a year earlier than the property and savings ones; do not synchronise them.
 
 ### Conservative Defaults
 
@@ -120,7 +120,7 @@ DO NOT use the expected rates above for any client computation until Finance (No
 | Unknown residency status | STOP — NRLS rules differ |
 | Unknown repair vs improvement | Treat as improvement (not deductible) |
 | Unknown private use percentage | 100% private (no deduction) |
-| Unknown 2026-27 rates | Flag as TBC pending Finance (No. 2) Bill 2024-26 enactment; do not finalise figures |
+| 2026-27 property income rates | 20% / 40% / 45% — unchanged. The 22/42/47 property rates begin in 2027-28 |
 
 ---
 
@@ -170,7 +170,7 @@ From 2020-21, finance costs for residential property are **fully restricted**:
 |---|---|---|
 | Mortgage interest | NOT deductible as an expense | NOT deductible as an expense (unchanged) |
 | Arrangement fees (revenue portion) | NOT deductible as an expense | NOT deductible as an expense (unchanged) |
-| Tax credit | 20% of the lower of: (a) finance costs, (b) property profits, (c) adjusted total income | Rate may follow new basic rate — TBC pending Finance (No. 2) Bill 2024-26 |
+| Tax credit | 20% of the lower of: (a) finance costs, (b) property profits, (c) adjusted total income | Still 20% — the reducer follows the basic rate of income tax, which the Budget did not change, not the new property rate |
 
 The restriction applies to:
 - Individual landlords (not companies)
@@ -249,7 +249,7 @@ Confirm any residual FHL transitional position with the taxpayer's prior account
 | HMRC approval | Non-resident can apply to receive rent gross (form NRL1) if tax affairs are up to date |
 | Annual return | Non-resident must still file SA100 + SA105 (or SA700 for companies) |
 | Expenses | Same rules apply — agent may deduct allowable expenses before withholding |
-| 2026-27 note | Withholding rate may change if 2026-27 basic rate on property income is enacted — TBC |
+| 2026-27 note | No change for 2026-27; the separate property rates begin in 2027-28 |
 
 ---
 
@@ -270,7 +270,7 @@ Confirm any residual FHL transitional position with the taxpayer's prior account
 
 | Pattern | SA105 Box | Notes |
 |---|---|---|
-| MORTGAGE, NATIONWIDE, BARCLAYS MORTGAGE | Box 26 (finance costs) | Subject to Section 24 restriction — 20% credit only (2026-27 rate TBC) |
+| MORTGAGE, NATIONWIDE, BARCLAYS MORTGAGE | Box 26 (finance costs) | Subject to Section 24 restriction — 20% credit only, in 2026-27 and after |
 | BUILDINGS INSURANCE, LANDLORD INSURANCE | Box 24 | Fully deductible |
 | LETTING AGENT FEE, MANAGEMENT FEE | Box 27 | Fully deductible |
 | PLUMBER, ELECTRICIAN, BUILDER [repair] | Box 25 | Deductible if repair; capital if improvement |
@@ -329,21 +329,30 @@ Net tax on property income: £1,140
 
 If the property was previously an FHL (pre-6-April-2025), confirm any brought-forward FHL loss in Box 39 and that capital allowances pools have been correctly transitioned.
 
-### Example 3 -- Same Buy-to-Let (2026-27 — From 6 April 2026, TBC)
+### Example 3 -- Same Buy-to-Let, 2026-27 and 2027-28 compared
 
 **Input:** As Example 1. Basic rate taxpayer.
 
-**Computation (PRELIMINARY — flagged TBC):**
+**2026-27 — unchanged from 2025-26:**
 ```
 Property profit: £9,700
-Tax at expected ~22% (basic rate on property income — TBC pending Finance (No. 2) Bill 2024-26): ~£2,134
-Finance cost tax credit: expected ~22% × £4,000 = ~£880 (rate of credit TBC)
-Net tax on property income: ~£1,254 (TBC)
-
-Estimated additional tax versus 2025-26: ~£114 (≈ 10% increase in tax on this rental profit)
+Tax at 20%: £9,700 × 20% = £1,940
+Finance cost tax credit: £4,000 × 20% = £800
+Net tax on property income: £1,940 − £800 = £1,140
 ```
 
-**STATUS: TBC — Autumn Budget 2025 announced increase to property income tax from April 2026; specific rates to be confirmed when Finance (No. 2) Bill 2024-26 enacted.** Do not present these figures as final. Re-run once Royal Assent confirms the exact rates and the credit rate for Section 24.
+**2027-28 — the new property rates begin:**
+```
+Property profit: £9,700
+Tax at 22% (property basic rate from April 2027): £9,700 × 22% = £2,134
+Finance cost tax credit: £4,000 × 20% = £800
+  (the reducer follows the basic rate of income tax, which is unchanged — not the new property rate)
+Net tax on property income: £2,134 − £800 = £1,334
+```
+
+**Additional tax in 2027-28 versus 2026-27: £1,334 − £1,140 = £194.**
+
+Note where the increase comes from. Two percentage points on the profit is £194, and none of it is offset, because the Section 24 reducer does not rise with the property rate. Modelling the credit at 22% would understate the increase by £80 and is the easy mistake here.
 
 ### Example 4 -- Rent-a-Room (Under Threshold)
 
@@ -367,7 +376,7 @@ If actual expenses are £4,000: profit = £10,000 - £4,000 = £6,000
 ```
 Option A (£2,500 taxable) is better than Option B (£6,000 taxable).
 
-For 2026-27, the calculation is identical; the only change is the tax rate applied to the taxable amount (TBC).
+For 2026-27, the calculation and the rates are both unchanged. The separate property rates begin in 2027-28.
 
 ### Example 6 -- Higher Rate Taxpayer with Section 24 Restriction (2025-26)
 
@@ -385,7 +394,7 @@ Without Section 24: tax would be (£15,000 - £3,000 - £8,000) × 40% = £1,600
 Section 24 cost to this taxpayer: £1,600 extra
 ```
 
-For 2026-27, the higher rate on property income is expected to rise (~42% TBC), increasing the net tax — flag for taxpayer planning.
+The higher rate on property income rises to 42% in **2027-28**, not 2026-27 — flag for taxpayer planning in that year.
 
 ---
 
@@ -430,13 +439,13 @@ This section consolidates upcoming changes affecting UK property income that pra
 
 ### 10.1 Property Income Rate Change (Autumn Budget 2025)
 
-**STATUS: TBC — Autumn Budget 2025 announced increase to property income tax from April 2026; specific rates to be confirmed when Finance (No. 2) Bill 2024-26 enacted.**
+**The separate property income rates (22% / 42% / 47%) take effect from April 2027, i.e. 2027-28. 2026-27 is unchanged at 20% / 40% / 45%.**
 
-- HM Treasury announced at Autumn Budget 2025 that property income will be taxed at differential (dividend-style) rates from 6 April 2026.
-- Expected direction: basic rate +2pp (≈22%), higher rate +2pp (≈42%). Additional rate TBC.
-- Expected impact: ~10% increase in net tax on a typical basic-rate buy-to-let profit; larger impact at higher rate.
-- Section 24 finance cost tax reducer rate (currently 20%) may follow the new basic rate — TBC.
-- Action: do NOT finalise any 2026-27 client projection until Royal Assent. Caveat all 2026-27 projections as estimated.
+- HM Treasury announced at Autumn Budget 2025 that property income will be taxed at differential (dividend-style) rates. They begin **6 April 2027**, not 2026.
+- The rates are specific, not expected: basic 22%, higher 42%, additional 47%.
+- The Section 24 finance cost reducer stays at **20%**. It follows the basic rate of income tax, which the Budget did not change, so the whole of the two-point rise falls on the taxpayer unoffset.
+- The same Budget raised **savings** rates to 22 / 42 / 47 from April 2027 and **dividend** rates by two points from **2026-27**. The dividend change is a year earlier; do not synchronise them.
+- Action: compute 2026-27 at 20 / 40 / 45. There is nothing to hold open.
 
 ### 10.2 Frozen Allowances and Thresholds
 
@@ -480,7 +489,7 @@ FHL regime was abolished from 6 April 2025 by Finance Act 2025. The abolition co
 
 ### 10.5 Section 24 Finance Cost Restriction — Continues
 
-Section 24 mortgage interest restriction remains fully in force. The 20% basic rate tax reducer continues, though the rate at which the reducer applies in 2026-27 may follow any new basic rate on property income (TBC).
+Section 24 mortgage interest restriction remains fully in force. The 20% basic rate tax reducer continues at 20% in 2026-27 and after: it follows the basic rate of income tax, not the separate property rates that begin in 2027-28.
 
 ---
 
@@ -493,8 +502,8 @@ Section 24 mortgage interest restriction remains fully in force. The 20% basic r
 - NEVER ignore the non-resident landlord scheme for overseas landlords
 - NEVER pool UK and overseas property into one computation — they are separate property businesses
 - NEVER apply FHL rules for 2025-26 onwards — the regime is abolished
-- NEVER present 2026-27 property income tax figures as final until Finance (No. 2) Bill 2024-26 receives Royal Assent — always label as TBC
-- NEVER assume the Section 24 tax reducer rate for 2026-27 is 20% without checking the enacted rate
+- NEVER compute 2026-27 property income at 22 / 42 / 47 — those rates begin in 2027-28 and using them overstates the liability at every band
+- NEVER raise the Section 24 tax reducer above 20% — it follows the basic rate of income tax, which is unchanged, in 2027-28 as well
 - NEVER present property income computations as definitive — always label as estimated
 
 ---

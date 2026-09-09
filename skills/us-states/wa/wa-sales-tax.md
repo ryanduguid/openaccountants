@@ -6,7 +6,8 @@ jurisdiction: US-WA
 tax_year: 2025
 last_updated: 2026-07-13
 review_status: pending_review
-depends_on: - us-tax-workflow-base
+depends_on:
+  - us-tax-workflow-base
 category: state
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -25,7 +26,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Tax type | Sales and Use Tax + Business and Occupation (B&O) Tax (separate) |
 | State sales tax rate | 6.5% |
 | Local add-on range | 0.5% -- 4.0% |
-| Maximum combined rate | ~10.25% (parts of Seattle and Tacoma) |
+| Maximum combined rate | Do not hardcode; use the DOR Tax Rate Lookup. Seattle reached 10.55% on 1 Jan 2026 and Tacoma 10.40% on 1 Apr 2026 |
 | Sourcing | Destination-based for ALL sales (SST rules) |
 | Economic nexus | $100,000 in gross receipts (revenue only) |
 | Primary legislation | RCW Chapter 82.08 (Sales); 82.12 (Use); 82.04 (B&O) |
@@ -133,14 +134,18 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 **Key combined rates**
 
-| Jurisdiction | Combined rate |
-| --- | --- |
-| Seattle | ~10.25% |
-| Tacoma | ~10.20% |
-| Spokane | ~8.90% |
-| Vancouver (Clark County) | ~8.60% |
-| Olympia | ~9.00% |
-| Unincorporated King County | ~10.10% |
+| Jurisdiction | Combined rate | Basis |
+| --- | --- | --- |
+| Seattle | 10.55% from 1 Jan 2026 | DOR local tax change notice, Seattle LLEP Q1-26: local .0405 + state .0650. City 0.1% and King County 0.1% both took effect 1 Jan 2026 |
+| Tacoma | 10.40% from 1 Apr 2026 | DOR local tax change notice, Tacoma LLEP Q2-26: local .0390 + state .0650 (was 10.30%) |
+| Spokane | confirm via DOR lookup | last recorded 8.90%; not re-verified for 2026 |
+| Vancouver (Clark County) | 8.90% from 1 Apr 2026 | DOR notice Clark County HRS/LLEP Q2-26: local .0240 + state .0650. Clark County added 0.1% Housing and Related Services and 0.1% Local Law Enforcement on 1 Apr 2026 |
+| Olympia | confirm via DOR lookup | last recorded 9.00%; not re-verified for 2026 |
+| Unincorporated King County | confirm via DOR lookup | last recorded 10.10%; King County added 0.1% LLEP on 1 Jan 2026 |
+
+Rates change quarterly and several changed during 2026. Only the two rows with a
+DOR notice cited above are verified; use the DOR Tax Rate Lookup
+(dor.wa.gov/TaxRateLookup) for the delivery address and transaction date.
 
 ### 4.2 Sourcing
 
@@ -239,8 +244,8 @@ Filed through **My DOR** (online portal).
 
 ### EC1 -- B&O plus sales tax
 
-**Situation:** $1,000 sale in Seattle.
-**Resolution:** Collect ~$102.50 sales tax from customer. ALSO pay B&O ($1,000 x 0.471% = $4.71). B&O is retailer's own obligation.
+**Situation:** $1,000 sale in Seattle (rate 10.55% from 1 Jan 2026).
+**Resolution:** Collect $105.50 sales tax from customer. ALSO pay B&O ($1,000 x 0.471% = $4.71). B&O is retailer's own obligation.
 
 ### EC2 -- SaaS (digital automated service)
 
@@ -265,7 +270,7 @@ Filed through **My DOR** (online portal).
 ### Test 1 -- Basic sale in Seattle
 
 **Input:** $1,000 laptop. Rate: 10.25%.
-**Expected:** Tax = $102.50.
+**Expected:** Tax = $105.50 (Seattle 10.55% from 1 Jan 2026).
 
 ### Test 2 -- Grocery exempt
 

@@ -53,7 +53,7 @@ metadata:
 | B2B (issuance -- Phase 1) | Businesses with prior-year turnover > EUR 800,000 must issue e-invoices for domestic B2B from 1 January 2027 |
 | B2B (issuance -- Phase 2) | All remaining businesses must issue from 1 January 2028 |
 | B2C | Not mandated -- consumer invoices may continue as paper or PDF |
-| Exemptions (B2B) | Small-amount invoices under EUR 250 (§33 UStDV); passenger transport tickets; tax-free supplies under §4 Nr. 8--29 UStG; businesses under §19 UStG (Kleinunternehmer, annual turnover ≤ EUR 22,000) |
+| Exemptions (B2B) | Small-amount invoices under EUR 250 (§33 UStDV); passenger transport tickets; tax-free supplies under §4 Nr. 8--29 UStG; businesses under §19 UStG (Kleinunternehmer — from 1 January 2025 the limits are EUR 25,000 prior-year and EUR 100,000 current-year turnover, up from EUR 22,000 / EUR 50,000) |
 
 ### Transitional Rules (2025--2027)
 

@@ -1,12 +1,13 @@
 ---
 name: mt-rental-income
-description: Use this skill whenever asked about Malta rental income taxation. Trigger on phrases like "rental income Malta", "letting property Malta", "15% final withholding tax", "Article 31E", "TA24 rental", "property letting", "kiri", "rent received", "landlord tax Malta", "Airbnb Malta tax", "short-term rental Malta", "non-resident landlord Malta", "rental declaration CFR", "FWS rental", or any question about computing, filing, or optimising tax on rental income from Maltese immovable property. Covers both the Final Withholding System (15% flat) and the normal progressive system, non-resident landlords, short-term letting, VAT interaction, and property transfer tax. ALWAYS read this skill before touching any Malta rental income work.
+description: Use this skill whenever asked about Malta rental income taxation. Trigger on phrases like "rental income Malta", "letting property Malta", "15% final withholding tax", "Article 31D", "TA24 rental", "property letting", "kiri", "rent received", "landlord tax Malta", "Airbnb Malta tax", "short-term rental Malta", "non-resident landlord Malta", "rental declaration CFR", "FWS rental", or any question about computing, filing, or optimising tax on rental income from Maltese immovable property. Covers both the Final Withholding System (15% flat) and the normal progressive system, non-resident landlords, short-term letting, VAT interaction, and property transfer tax. ALWAYS read this skill before touching any Malta rental income work.
 version: 1.0
 jurisdiction: MT
 tax_year: 2025
 last_updated: 2026-07-13
 review_status: pending_review
-depends_on: - malta-income-tax
+depends_on:
+  - malta-income-tax
 category: international
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -24,7 +25,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Tax | Income Tax on Rental Income (Immovable Property) |
 | Currency | EUR only |
 | Tax year | Calendar year (1 January -- 31 December) |
-| Primary legislation | Income Tax Act, Chapter 123, Article 31E |
+| Primary legislation | Income Tax Act, Chapter 123, Article 31D |
 | Supporting legislation | ITA Articles 4, 5, 27; Income Tax Management Act (Chapter 372); Legal Notice 99 of 2014 (residential); Legal Notice 158 of 2017 (commercial) |
 | Tax authority | Commissioner for Revenue (CFR) / MTCA |
 | Filing portal | CFR e-Services (mytax.cfr.gov.mt) |
@@ -75,20 +76,20 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ### Refusal Catalogue
 
 - **R-MTR-1 -- System election unknown** — The client must confirm whether they elect the 15% Final Withholding System or the normal progressive system. This affects all calculations. Cannot proceed without this election.  _(R-MTR-1)_
-- **R-MTR-2 -- Related-party letting** — Rental income from related parties (as defined in Article 31E) cannot benefit from the 15% FWS. If the letting is between related parties, the normal progressive system must be used. Confirm relationship before proceeding.  _(R-MTR-2; Article 31E)_
+- **R-MTR-2 -- Related-party letting** — Rental income from related parties (as defined in Article 31D) cannot benefit from the 15% FWS. If the letting is between related parties, the normal progressive system must be used. Confirm relationship before proceeding.  _(R-MTR-2; Article 31D)_
 - **R-MTR-3 -- Property transfers / capital gains** — Property disposals and transfer tax computations are outside the scope of this skill. Escalate to a warranted accountant.  _(R-MTR-3)_
 - **R-MTR-4 -- Complex non-resident structures** — Non-resident landlords with complex holding structures, trusts, or nominee arrangements require specialist advice. Escalate to a warranted accountant.  _(R-MTR-4)_
 - **R-MTR-5 -- Mixed election attempted** — A taxpayer cannot elect FWS for part of their rental income and the normal system for another part. All rental income must be under one system for any given year.  _(R-MTR-5)_
 
 ## Section 3 -- Final Withholding System (FWS) -- Computation Rules
 
-### 3.1 Core Rules (Article 31E)
+### 3.1 Core Rules (Article 31D)
 
-- **FWS core rules** — 1. The tax is 15% of **gross rental income received** in the basis year 2. Gross means gross — no deductions of any kind (repairs, insurance, management fees, mortgage interest, depreciation — NOTHING) 3. The tax is **final** — no refunds, no set-offs, no credits against other tax, no carry-forward of losses 4. Available to both residents and non-residents 5. Available to both individuals and bodies corporate 6. **NOT available** for rental income from related parties  _(Article 31E)_
+- **FWS core rules** — 1. The tax is 15% of **gross rental income received** in the basis year 2. Gross means gross — no deductions of any kind (repairs, insurance, management fees, mortgage interest, depreciation — NOTHING) 3. The tax is **final** — no refunds, no set-offs, no credits against other tax, no carry-forward of losses 4. Available to both residents and non-residents 5. Available to both individuals and bodies corporate 6. **NOT available** for rental income from related parties  _(Article 31D)_
 
 ### 3.2 Calculation
 
-- **FWS tax calculation** — Tax = Gross rental income × 15% There is no exempt band, no personal allowance applicable, and no threshold below which FWS is unavailable.  _(Article 31E)_
+- **FWS tax calculation** — Tax = Gross rental income × 15% There is no exempt band, no personal allowance applicable, and no threshold below which FWS is unavailable.  _(Article 31D)_
 
 ### 3.3 Filing and Payment
 
@@ -342,7 +343,7 @@ ALWAYS compute both options and present to reviewer for confirmation.
 
 | Topic | Reference |
 | --- | --- |
-| Final Withholding System | ITA Article 31E |
+| Final Withholding System | ITA Article 31D |
 | Residential property FWS | Legal Notice 99 of 2014 |
 | Commercial property FWS | Legal Notice 158 of 2017 |
 | Allowable deductions | ITA Article 14 |

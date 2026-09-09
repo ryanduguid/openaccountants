@@ -13,7 +13,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## 1. Scope
 
-This skill covers Minnesota state-level payroll tax and labor-law compliance for employers with one or more workers performing services in Minnesota during tax year 2025, with forward-looking guidance for the 2026 transition to the Minnesota Paid Leave program. It is designed to be loaded alongside `us-federal-payroll` (FICA, FUTA, federal withholding, Form 941, Form 940, W-2/W-3 federal copy) and any sibling state skills where the employer operates in more than one jurisdiction.
+This skill covers Minnesota state-level payroll tax and labor-law compliance for employers with one or more workers performing services in Minnesota during tax year 2025, with forward-looking guidance for the 2026 transition to the Minnesota Paid Leave program. It is designed to be loaded alongside `us-form-941-940-payroll` (FICA, FUTA, federal withholding, Form 941, Form 940, W-2/W-3 federal copy) and any sibling state skills where the employer operates in more than one jurisdiction.
 
 In scope:
 
@@ -30,9 +30,9 @@ In scope:
 
 Out of scope (handled by other skills or expressly excluded):
 
-- Federal income tax withholding, FICA, FUTA, ACA reporting → see `us-federal-payroll`.
-- Minnesota corporate income tax (M4) and pass-through entity tax → see `us-mn-business-tax`.
-- Minnesota sales and use tax → see `us-mn-sales-tax`.
+- Federal income tax withholding, FICA, FUTA, ACA reporting → see `us-form-941-940-payroll`.
+- Minnesota corporate income tax (M4) and pass-through entity tax → see `mn-corporate-and-pte`.
+- Minnesota sales and use tax → see `mn-sales-tax`.
 - Local-level employment ordinances (e.g., Minneapolis and Saint Paul earned sick and safe time ordinances, Minneapolis minimum wage ordinance, Saint Paul minimum wage ordinance, the Minneapolis Wage Theft Prevention Ordinance). These local rules layer on top of the state ESST and WTPA and are addressed in the companion local-ordinance addendum (`us-mn-local-ordinances`), not here.
 - Workers' compensation insurance procurement (mandatory in Minnesota; handled by `us-mn-workers-comp`).
 - Multi-state apportionment of wages where the employee performs services in more than one state — refer to Minnesota Revenue Notice 03-12 and the reciprocity discussion below, and consult a credentialed multi-state payroll specialist.
@@ -57,7 +57,7 @@ Reviewer assumption: every output of this skill is reviewed and signed off by a 
 - **Bracket 2 rate** — 6.80%
 - **Bracket 3 rate** — 7.85%
 - **Bracket 4 rate** — 9.85%
-- **Rate stability** — The 5.35% floor and the 9.85% ceiling have been stable since 2014. The exact 2025 dollar thresholds at which each marginal rate begins differ by filing status (Single, Married Filing Jointly, Married Filing Separately, Head of Household) and are published annually in the Minnesota Income Tax Withholding Instruction Booklet and Tax Tables (the 'Minnesota Withholding Tax Tables') issued by the Minnesota DOR in December. The booklet provides both percentage-method tables and wage-bracket tables; employers may use either method consistently for a given employee.
+- **Rate stability** — The 5.35% floor and the 9.85% ceiling have been stable since 2014. The exact 2025 dollar thresholds at which each marginal rate begins differ by filing status (Single, Married Filing Jointly, Married Filing Separately, Head of Household) and are published annually in the Minnesotan Income Tax Withholding Instruction Booklet and Tax Tables (the 'Minnesota Withholding Tax Tables') issued by the Minnesota DOR in December. The booklet provides both percentage-method tables and wage-bracket tables; employers may use either method consistently for a given employee.
 - **Practical withholding inputs** — For practical withholding computation in 2025, the relevant inputs are: Annualized wages (gross pay × number of pay periods per year); W-4MN allowances (Minnesota allowances, which may differ from federal W-4 entries; see §4 below); Filing status as elected on W-4MN.
 - **Percentage method calculation skeleton** — 1. Annualize the gross wage for the pay period. 2. Subtract the Minnesota allowance value × number of allowances claimed on W-4MN. The per-allowance value is published annually in the withholding booklet; for 2025 it tracks the federal personal exemption baseline as adjusted under §290.0671 / §290.06. 3. Apply the bracket table for the elected filing status to get annual Minnesota tax. 4. Divide by the number of pay periods to get the per-period withholding amount.  _(§290.0671 / §290.06)_
 - **W-4 vs W-4MN divergence risk** — Step (2) is where Minnesota diverges sharply from the federal 'post-TCJA' Form W-4, which eliminated allowances. Minnesota retained allowances on W-4MN precisely because the state withholding tables remained allowance-based. **An employer that simply mirrors the federal W-4 onto Minnesota withholding will systematically under-withhold or over-withhold and will likely fail a DOR audit on the W-4MN requirement.** See §4.
@@ -240,10 +240,10 @@ This is the operative statutory split as of the 2024 amendments. (Earlier 2023 c
 
 ### 7.3 Taxable wage base
 
-- **Paid Leave taxable wage base (2025 SS wage base)** — $176,100 USD (for 2025; the 2026 figure will be published by SSA in October 2025; Paid Leave premium applies to wages up to the Social Security wage base)
+- **Paid Leave taxable wage base (Social Security wage base)** — **$184,500** for 2026; $176,100 for 2025. The SSA published the 2026 figure in October 2025 and it is carried in `packages/us-federal/rates.2026.json`. Paid Leave premium applies to wages up to the Social Security wage base, so this figure moves every year — take it from the rates file rather than hard-coding it.
 - **Wage base comparison to UI** — This is materially higher than the UI wage base of $43,000 — meaning Paid Leave premium continues to accrue on the same wages long after UI has capped out.
 
-For an employee earning $176,100 or more in 2026, the maximum annual Paid Leave premium is approximately: Employer: $176,100 × 0.44% ≈ $774.84. Employee: $176,100 × 0.44% ≈ $774.84. Combined: ≈ $1,549.68 per high-earner per year. For a $60,000 employee: Employer: $264; Employee: $264; Combined: $528.
+For an employee earning $184,500 or more in 2026, the maximum annual Paid Leave premium is approximately: Employer: $184,500 × 0.44% ≈ $811.80. Employee: $184,500 × 0.44% ≈ $811.80. Combined: ≈ $1,623.60 per high-earner per year. For a $60,000 employee: Employer: $264; Employee: $264; Combined: $528.
 
 ### 7.4 Small-employer relief
 
@@ -439,7 +439,7 @@ Multi-state: GoodSoft has 3 remote employees outside Minnesota (1 in WI, 1 in ND
 
 ## 14. Citations
 
-- Minnesota Statutes Chapter 290 (income tax). - Minnesota Statutes Chapter 268 (unemployment insurance). - Minnesota Statutes Chapter 268B (paid leave), as enacted by 2023 Laws Ch. 59 and amended by 2024 Laws Ch. 127. - Minnesota Statutes §181.032 (earnings statements; WTPA). - Minnesota Statutes §181.101 (final wages; WTPA). - Minnesota Statutes §181.13, §181.14 (separation pay timing). - Minnesota Statutes §181.722, §181.723 (worker misclassification; construction industry). - Minnesota Statutes §181.9445 – §181.9448 (Earned Sick and Safe Time). - Minnesota Statutes §326B (construction-industry licensing and DLI authority). - Minnesota Statutes §177.41 et seq. (Minnesota Prevailing Wage Act). - Minnesota DOR, Minnesota Income Tax Withholding Instruction Booklet and Tax Tables (annual; 2025 edition). - Minnesota DEED, UI Employer Handbook (2025). - Minnesota DEED, Family and Medical Benefits Insurance Division publications (2024–2025 readiness materials). - Minnesota DLI, ESST employer guidance (2024, updated 2025). - Minnesota DLI, construction-industry independent-contractor registration portal.
+- Minnesota Statutes Chapter 290 (income tax). - Minnesota Statutes Chapter 268 (unemployment insurance). - Minnesota Statutes Chapter 268B (paid leave), as enacted by 2023 Laws Ch. 59 and amended by 2024 Laws Ch. 127. - Minnesota Statutes §181.032 (earnings statements; WTPA). - Minnesota Statutes §181.101 (final wages; WTPA). - Minnesota Statutes §181.13, §181.14 (separation pay timing). - Minnesota Statutes §181.722, §181.723 (worker misclassification; construction industry). - Minnesota Statutes §181.9445 – §181.9448 (Earned Sick and Safe Time). - Minnesota Statutes §326B (construction-industry licensing and DLI authority). - Minnesota Statutes §177.41 et seq. (Minnesota Prevailing Wage Act). - Minnesota DOR, Minnesotan Income Tax Withholding Instruction Booklet and Tax Tables (annual; 2025 edition). - Minnesota DEED, UI Employer Handbook (2025). - Minnesota DEED, Family and Medical Benefits Insurance Division publications (2024–2025 readiness materials). - Minnesota DLI, ESST employer guidance (2024, updated 2025). - Minnesota DLI, construction-industry independent-contractor registration portal.
 
 ## 12. Practitioner Quick Reference
 

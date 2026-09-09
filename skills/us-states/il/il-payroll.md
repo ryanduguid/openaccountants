@@ -14,7 +14,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Illinois Payroll Compliance — Tax Year 2025
 
-This skill covers employer payroll obligations under Illinois law for tax year 2025. It complements `us-federal-payroll` (federal withholding, FICA, FUTA, Form 941, W-2) and assumes the federal layer has already been resolved. Illinois imposes a flat personal income tax, a separate unemployment insurance system administered by IDES, a state-mandated retirement program (Secure Choice), and a layered set of labor standards including the One Day Rest in Seven Act and, in Chicago and Cook County, predictive scheduling and paid sick leave ordinances. The reviewer must hold an Illinois-relevant credential (CPA, EA with state experience, or licensed payroll specialist) and sign off before any return or filing is submitted.
+This skill covers employer payroll obligations under Illinois law for tax year 2025. It complements `us-form-941-940-payroll` (federal withholding, FICA, FUTA, Form 941, W-2) and assumes the federal layer has already been resolved. Illinois imposes a flat personal income tax, a separate unemployment insurance system administered by IDES, a state-mandated retirement program (Secure Choice), and a layered set of labor standards including the One Day Rest in Seven Act and, in Chicago and Cook County, predictive scheduling and paid sick leave ordinances. The reviewer must hold an Illinois-relevant credential (CPA, EA with state experience, or licensed payroll specialist) and sign off before any return or filing is submitted.
 
 The reviewer-oriented output for this skill is a payroll memo identifying every Illinois-specific obligation triggered by the employer's headcount, location, industry, and worker classification, with the dollar amounts and filing deadlines for each obligation in the 2025 plan year.
 
@@ -71,8 +71,8 @@ The reviewer-oriented output for this skill is a payroll memo identifying every 
 
 ### 1.2 Out of scope
 
-- Federal income tax withholding, FICA, FUTA, Form 941, Form 940, W-2, W-3 — see `us-federal-payroll`.
-- Illinois corporate income tax (1.5% personal property replacement tax for partnerships and S-corps; 7% plus 2.5% PPRT for C-corps) — see `il-corporate-income-tax`.
+- Federal income tax withholding, FICA, FUTA, Form 941, Form 940, W-2, W-3 — see `us-form-941-940-payroll`.
+- Illinois corporate income tax (1.5% personal property replacement tax for partnerships and S-corps; 7% plus 2.5% PPRT for C-corps) — see Illinois corporate income tax (**not present in this repository** — `il-income-tax` covers individuals only).
 - Workers' compensation insurance under the Illinois Workers' Compensation Act — separate insurance product, not payroll tax.
 - Multi-state nexus determination for income tax withholding apportionment beyond Illinois/Indiana reciprocity issues — see `_cross-border/multi-state-payroll-nexus`.
 - City of Chicago Personal Property Lease Transaction Tax, Amusement Tax, and other Chicago non-payroll taxes.

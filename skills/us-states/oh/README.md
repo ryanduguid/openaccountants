@@ -17,9 +17,11 @@
 | `oh-income-tax.md` | Individual income tax for self-employed / sole proprietors (Form IT 1040) |
 | `oh-sales-tax.md` | State and local sales & use tax compliance |
 | `oh-cat-tax.md` | Commercial Activity Tax (CAT) — gross receipts tax on business activity |
+| `oh-cat.md` | Ohio Commercial Activity Tax (CAT) — ORC Chapter 5751 |
+| `oh-payroll.md` | Ohio content skill for employer payroll compliance covering tax year 2025 |
+| `ohio-sales-tax.md` | Ohio sales and use tax, ODT filings, Ohio CAT, Ohio exemptions, Ohio nexus, or any request involving Ohio... |
 
 ## What's NOT covered
-- Payroll / employer withholding taxes
 - Municipal income taxes (administered locally by 600+ cities — separate from state income tax)
 - School district income taxes (200+ districts)
 - Property tax (administered at county level)

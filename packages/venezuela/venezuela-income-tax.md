@@ -7,15 +7,16 @@ tax_year: 2025
 last_updated: 2026-07-13
 reviewed_by: Jose Padilla
 review_status: current
-depends_on: - income-tax-workflow-base
+depends_on:
+  - income-tax-workflow-base
 category: international
 tier: 1
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Venezuela Income Tax (ISLR) — Individual
+# Venezuelan Income Tax (ISLR) — Individual
 
-## Venezuela Income Tax (ISLR) — Individual Skill v0.1
+## Venezuelan Income Tax (ISLR) — Individual Skill v0.1
 
 ## Verified rates & thresholds (accountant-reviewed)
 

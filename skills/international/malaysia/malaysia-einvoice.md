@@ -5,9 +5,10 @@ version: 1.0
 jurisdiction: MY
 tax_year: 2025
 last_updated: 2026-07-13
-reviewed_by: MUHAMMAD HANIS MAT HUSSIN
+reviewed_by: MUHAMMAD HANIS MAT HUSSIN, CA-53636
 review_status: current
-depends_on: - einvoice-workflow-base
+depends_on:
+  - einvoice-workflow-base
 category: invoicing
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)

@@ -21,7 +21,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Top marginal personal income tax rate** — 40 percent (before 3% AIDS levy on tax)  _(Finance Act, 2025)_
 - **Standard corporate income tax rate** — 25 percent (before 3% AIDS levy on tax)  _(Finance Act, 2025, https://www.zimra.co.zw/domestic-taxes/corporate/tax-rates)_
 - **AIDS levy** — 3 percent (of the income tax chargeable (applied to both individuals and companies))  _(Finance Act (Chapter 23:04))_
-- **Does VAT exist** — Yes — Value Added Tax applies, standard rate 15% in 2025 (rising to 15.5% from 1 January 2026) ((approx — 15% in 2025 per VAT Act; confirm 2025 vs 2026 rate))  _(Value Added Tax Act (Chapter 23:12))_
+- **Does VAT exist** — Yes — Value Added Tax applies. Standard rate 15.5% from 1 January 2026 (15% before that), raised by the Finance Act 2025 (Act No. 7 of 2025)  _(Value Added Tax Act (Chapter 23:12); Finance Act 2025; ZIMRA Public Notice 07 of 2026)_
 - **PAYE remittance deadline** — By the 10th of the month following the month of deduction  _(Income Tax Act (Chapter 23:06))_
 - **Annual corporate income tax return deadline** — Return (ITF12C) due 30 April following the tax year; QPDs paid quarterly during the year ((approx — confirm filing date for the year of assessment))  _(Income Tax Act (Chapter 23:06))_
 

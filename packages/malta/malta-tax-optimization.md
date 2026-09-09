@@ -24,7 +24,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Field | Value |
 | --- | --- |
 | Country | Malta (Republic of Malta) |
-| Key optimization legislation | Income Tax Act (Cap. 123), Art. 14 (deductions), Art. 16 + 6th Schedule (capital allowances), Art. 4C (TA22 regime), Art. 14(1)(ha) (R&D 175% deduction); S.L. 123.204 (pension exemption); Micro Invest Guidelines (Malta Enterprise) |
+| Key optimization legislation | Income Tax Act (Cap. 123), Art. 14 (deductions), Art. 16 + 6th Schedule (capital allowances), Art. 90A (TA22 regime), Art. 14(1)(ha) (R&D 175% deduction); S.L. 123.204 (pension exemption); Micro Invest Guidelines (Malta Enterprise) |
 | Tax authority attitude to planning | The Commissioner for Revenue (CFR) accepts legitimate tax planning. Malta has no General Anti-Avoidance Rule (GAAR) in its domestic legislation. However, the EU Anti-Tax Avoidance Directive (ATAD) applies to corporate structures. Self-employed optimization via timing, structuring, and full use of allowances is accepted practice. |
 | Currency | EUR |
 | Tax year | Calendar year (1 Jan -- 31 Dec) |
@@ -32,14 +32,14 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Section 2 -- Income Splitting & Structuring
 
-### TA24 vs TA22 Regime (Art. 4C, Cap. 123)
+### Ordinary income tax return vs the TA22 regime (Art. 90A, Cap. 123)
 
-**TA24 vs TA22 Regime**  _(Art. 4C, Cap. 123)_
+**Ordinary return vs TA22 regime**  _(Art. 90A, Cap. 123; Part-Time Work Rules S.L. 123.39)_
 
 | Strategy | Detail | Enabling legislation |
 | --- | --- | --- |
-| TA22 part-time regime | If employed full-time with Class 1 SSC and net self-employment profit ≤ EUR 12,000, the flat rate is 10% on net profit. No additional Class 2 SSC. | ITA Art. 4C |
-| Income below EUR 12,000 | Keep net self-employment profit at or below EUR 12,000 to remain in TA22. Defer non-urgent invoicing to January if approaching threshold in December. | ITA Art. 4C |
+| TA22 part-time regime | If employed full-time with Class 1 SSC and net self-employment profit ≤ EUR 12,000, the flat rate is 10% on net profit. No additional Class 2 SSC. | ITA Art. 90A |
+| Income below EUR 12,000 | Keep net self-employment profit at or below EUR 12,000 to remain in TA22. Defer non-urgent invoicing to January if approaching threshold in December. | ITA Art. 90A |
 | Married joint computation | Married couples are assessed jointly by default. The 0% band is EUR 12,700 (vs EUR 9,100 single). If one spouse has low income, joint filing widens the 0% band. | ITA Art. 56, Rate Schedule |
 | Spouse employment | Employ a spouse in the business for genuine work. Salary is a deductible expense (Box 2) for the business owner and taxed in the spouse's hands at their marginal rate. Must be genuine, documented, and at market rate. | ITA Art. 14 |
 
@@ -47,7 +47,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 **Sole Trader vs Company**
 
-| Factor | Sole trader (TA24) | Company (Ltd) |
+| Factor | Sole trader (Income Tax Return) | Company (Ltd) |
 | --- | --- | --- |
 | Top marginal rate | 35% (over EUR 60,000) | 35% corporate, but 6/7ths refund to shareholders = effective 5% |
 | When to consider incorporation | When net profits consistently exceed EUR 60,000 and can be retained or distributed efficiently | Requires compliance costs, annual audit, corporate returns |
@@ -147,8 +147,8 @@ On disposal: sale proceeds minus written-down value = balancing charge (taxable)
 
 | Strategy | Detail |
 | --- | --- |
-| SSC Class 2 deduction | SSC Class 2 is deductible in Box 20 of the TA24 (not Box 2). Ensure all payments are claimed. |
-| TA22 eliminates Class 2 | Under Art. 4C, part-time self-employed with full-time employment pay Class 1 only (through employer). No additional Class 2 = saving of approximately EUR 4,362/year (2025 maximum). |
+| SSC Class 2 deduction | SSC Class 2 is deductible in Box 20 of the Income Tax Return (not Box 2). Ensure all payments are claimed. |
+| TA22 eliminates Class 2 | Under Art. 90A, part-time self-employed with full-time employment pay Class 1 only (through employer). No additional Class 2 = saving of approximately EUR 4,362/year (2025 maximum). |
 | Minimum vs actual Class 2 | Self-employed pay Class 2 based on net profit brackets. If profit is volatile, a lower-profit year reduces SSC. Consider timing of income recognition. |
 | Voluntary contributions | If below minimum contribution threshold in a given year, voluntary contributions protect State Pension entitlement without overpaying. |
 
@@ -201,11 +201,11 @@ Expenditure on research, development, and innovation can be deducted at 175% of 
 | Month | Action |
 | --- | --- |
 | January | Review prior year's provisional tax. Issue final invoices for prior year (or defer to this year if TA22 threshold management applies). |
-| February | Gather all receipts and bank statements for prior year. Begin TA24 preparation. |
+| February | Gather all receipts and bank statements for prior year. Begin income tax return preparation. |
 | March | Apply for Micro Invest tax credits (deadline typically late March). |
 | April | **30 April** -- 1st provisional tax instalment (20% of prior year's final liability). Review if overpaying. |
 | May | Mid-year review: estimate current-year profit. Consider accelerating deductions if profit is high. |
-| June | **30 June** -- TA24/TA22 filing deadline. File on time to avoid EUR 50 + EUR 10/month penalty. |
+| June | **30 June** -- personal income tax return deadline (MTCA routinely extends online filing by notice). Note **Income Tax Return** (rental 15% final tax) and **TA22** (part-time) both fell due on **30 April** -- they are not June forms; late Income Tax Return attracts 0.6%/month interest and can forfeit the 15% election. |
 | July | Review SSC Class 2 payments -- ensure all quarters are paid and recorded for Box 20. |
 | August | **31 August** -- 2nd provisional tax instalment (30%). |
 | September | Review capital asset needs. Plan purchases before December. |
@@ -215,14 +215,14 @@ Expenditure on research, development, and innovation can be deducted at 175% of 
 
 ## Section 12 -- Cash Impact Examples
 
-### Example 1 -- TA22 vs TA24 (Single, Net Profit EUR 10,000)
+### Example 1 -- TA22 vs the ordinary return (Single, Net Profit EUR 10,000)
 
-**Example 1 -- TA22 vs TA24 (Single, Net Profit EUR 10,000)**
+**Example 1 -- TA22 vs the ordinary return (Single, Net Profit EUR 10,000)**
 
 | Scenario | Tax | SSC | Total |
 | --- | --- | --- | --- |
 | TA22 (part-time, employed FT) | EUR 1,000 (10% flat) | EUR 0 (Class 1 via employer) | **EUR 1,000** |
-| TA24 (fully self-employed) | EUR 135 (progressive rates) | EUR 2,181 (Class 2 min) | **EUR 2,316** |
+| Ordinary income tax return (fully self-employed) | EUR 135 (progressive rates) | EUR 2,181 (Class 2 min) | **EUR 2,316** |
 | **Saving with TA22** |  |  | **EUR 1,316/year** |
 
 ### Example 2 -- Home Office Deduction (Single, Net Profit EUR 40,000)

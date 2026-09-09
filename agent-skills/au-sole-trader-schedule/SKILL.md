@@ -132,7 +132,7 @@ Two methods available for sole traders:
 - Maintain a logbook for a continuous 12-week period (valid for 5 years unless circumstances change).
 - Calculate business-use percentage from logbook.
 - Apply that percentage to total car expenses: fuel, insurance, registration, repairs, lease payments, depreciation.
-- Depreciation of the car is capped at the car limit ($68,108 for 2024-25, ATO car limit determination).
+- Depreciation of the car is capped at the car limit ($69,674 for 2024-25 and 2025-26; $69,883 for 2026-27 — ATO car limit determination).
 
 ### 4.5 Depreciation
 

@@ -6,15 +6,16 @@ jurisdiction: NI
 tax_year: 2025
 last_updated: 2026-07-13
 review_status: pending_review
-depends_on: - income-tax-workflow-base
+depends_on:
+  - income-tax-workflow-base
 category: international
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Nicaragua Income Tax -- Rentas del Trabajo
+# Nicaraguan Income Tax -- Rentas del Trabajo
 
-## Nicaragua Income Tax -- Rentas del Trabajo Skill v0.1
+## Nicaraguan Income Tax -- Rentas del Trabajo Skill v0.1
 
 > **DISAMBIGUATION:** "NI" in this skill means **NICARAGUA**, the Central American republic. It does **NOT** mean Northern Ireland or UK National Insurance. There is no HMRC, no pound sterling, and no UK content anywhere in this skill. Currency is the **córdoba (C$ / NIO)**. The tax authority is the **DGI (Dirección General de Ingresos)**. Social security is administered by **INSS (Instituto Nicaragüense de Seguridad Social)**.
 

@@ -11,7 +11,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # papua-new-guinea-income-tax
 
-## Papua New Guinea Income Tax -- Employee & Self-Employed Skill v0.1
+## Papua New Guinean Income Tax -- Employee & Self-Employed Skill v0.1
 
 ## REGIME-CHANGE WARNING -- two regimes in play
 

@@ -40,11 +40,13 @@ metadata:
 
 | Taxable Income (CAD) | Rate |
 |---|---|
-| 0 -- 57,375 | 15% |
+| 0 -- 57,375 | 14.5% |
 | 57,376 -- 114,750 | 20.5% |
-| 114,751 -- 158,468 | 26% |
-| 158,469 -- 220,000 | 29% |
-| 220,001+ | 33% |
+| 114,751 -- 177,882 | 26% |
+| 177,883 -- 253,414 | 29% |
+| 253,415+ | 33% |
+
+The lowest federal rate is **14.5% for 2025 only**: it was cut from 15% to 14% effective 1 July 2025, so the 2025 rate is the blended figure. It is 14% for 2026 onward. Non-refundable federal credits are valued at 14.5% for 2025.  _(CRA, *Federal income tax rates and brackets*)_
 
 **Provincial tax is additional.** Each province has its own brackets. This skill covers federal only. Combined marginal rates range from ~20% to ~54% depending on province.
 
@@ -199,8 +201,9 @@ Half of CPP self-employed contributions is deductible on Line 22200.
 - Revenue: CAD 95,000
 - Expenses: 2,400 + 1,500 + 8,000 + 3,000 + 600 + 2,175 = CAD 17,675
 - Net business income: CAD 77,325
-- CPP: (77,325 - 3,500) x 11.9% = CAD 8,068.20 (hits maximum)
-- Half CPP deductible: CAD 4,034.10
+- CPP (base): capped at the YMPE, so (71,300 - 3,500) x 11.9% = CAD 8,068.20 — the 2025 maximum. Net income of 77,325 exceeds the 71,300 YMPE, so the base contribution is capped; do not apply 11.9% to the full 77,325.
+- CPP2: (77,325 - 71,300) x 8% = CAD 482.00 on earnings between the YMPE (71,300) and the YAMPE (81,200). Flag for reviewer — this example does not carry CPP2 through to the deduction below.
+- Half base CPP deductible: CAD 4,034.10 (base CPP only)
 
 ### Example 2 -- Vehicle (Km-Based Apportionment)
 

@@ -6,15 +6,16 @@ jurisdiction: BA
 tax_year: 2025
 last_updated: 2026-07-13
 review_status: pending_review
-depends_on: - income-tax-workflow-base
+depends_on:
+  - income-tax-workflow-base
 category: international
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Bosnia and Herzegovina Income Tax -- Personal/Self-Employed
+# Bosnia and Herzegovinan Income Tax -- Personal/Self-Employed
 
-## Bosnia and Herzegovina Income Tax -- Personal/Self-Employed Skill v0.1
+## Bosnia and Herzegovinan Income Tax -- Personal/Self-Employed Skill v0.1
 
 > **Tier 2 (research-verified).** Confidence: medium. Figures are sourced from PwC Worldwide Tax Summaries (2025), the FBiH Official Gazette / Orbitax / Unija legislative summaries, WageIndicator, and the Indirect Taxation Authority (UINO). Several figures carry explicit `[RESEARCH GAP — reviewer to confirm]` markers and MUST be confirmed against the entity-level statutes before filing.
 

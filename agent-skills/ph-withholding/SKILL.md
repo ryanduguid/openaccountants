@@ -213,8 +213,8 @@ Final withholding tax is withheld at source and constitutes the full tax on the 
 
 | Offence | Penalty |
 |---|---|
-| Failure to withhold | Withholding agent liable for the amount not withheld + 25% surcharge + 20% interest |
-| Failure to remit | 25% surcharge + 20% interest per annum |
+| Failure to withhold | Withholding agent liable for the amount not withheld + 25% surcharge + 12% interest per annum (NIRC s.249 as amended by TRAIN RA 10963, per RR 21-2018 — the old 20% has not applied since 2018) |
+| Failure to remit | 25% surcharge + 12% interest per annum (NIRC s.249 as amended by TRAIN; RR 21-2018 — the old 20% has not applied since 2018) |
 | Failure to issue Form 2307 | Fine ₱1,000 per failure |
 | Failure to file Form 1601-EQ / 1604-E | ₱1,000 per return + 25% surcharge |
 | Late filing | 25% surcharge on tax due |

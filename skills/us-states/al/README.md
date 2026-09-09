@@ -16,6 +16,8 @@
 |---|---|
 | `al-income-tax.md` | Individual income tax for self-employed / sole proprietors (Form 40) |
 | `al-sales-tax.md` | State and local sales & use tax compliance |
+| `alabama-income-tax.md` | Alabama Form 40 (full-year resident): how I do it |
+| `alabama-sales-tax.md` | Alabama sales tax, Alabama use tax, Alabama sales tax nexus, ADOR sales tax filing, self-administered city... |
 
 ## What's NOT covered
 - Payroll / employer withholding taxes

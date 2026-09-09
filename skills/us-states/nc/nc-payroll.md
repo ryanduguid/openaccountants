@@ -147,7 +147,7 @@ For tax year 2025 only, the rate is firmly 4.5% and is not contingent.
 | Violation | Penalty | Authority |
 | --- | --- | --- |
 | Failure to file NC-5 / NC-5Q / NC-3 by due date | 5% per month, max 25% | NCGS §105-236(a)(3) |
-| Failure to pay withheld tax by due date | 10% of unpaid tax | NCGS §105-236(a)(4) |
+| Failure to pay withheld tax by due date | **5%** of the unpaid tax — a single penalty, not monthly. (It was 10% before the 2023 reduction; a graduated 2%/month capped at 10% applies only to tax assessed on or after 1 July 2027) | NCGS §105-236(a)(4) |
 | Failure to remit by EFT when required | 5% of payment | NCGS §105-236(a)(1f) |
 | Negligence or fraud | 25% to 50% | NCGS §105-236(a)(5)(b)–(c) |
 | Underpayment interest | NCDOR-set rate, currently 8% APR (2025) | NCGS §105-241.21 |

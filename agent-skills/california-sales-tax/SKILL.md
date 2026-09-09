@@ -24,7 +24,7 @@ metadata:
 | Tax type | Sales and Use Tax + District Taxes |
 | State base rate | 7.25% (minimum statewide) |
 | Local add-on range | 0.10% -- 3.25% district taxes |
-| Maximum combined rate | ~10.25% -- 10.75% (parts of Los Angeles, Alameda) |
+| Maximum combined rate | Do not hardcode; use CDTFA address lookup. Some 2025 locations exceeded 10.75% (for example Lancaster/Palmdale at 11.250%) |
 | Sourcing | Destination-based (district taxes by ship-to address) |
 | Economic nexus | $500,000 in total sales (revenue only, no transaction count) |
 | Nexus test type | Revenue only -- highest threshold tied with Texas |
@@ -171,15 +171,15 @@ This is the deterministic taxability lookup. When a transaction matches a patter
 
 ### 4.2 Key combined rates
 
-| Jurisdiction | Combined rate | Breakdown |
+| Jurisdiction | Combined rate | Note |
 |---|---|---|
-| Los Angeles (City) | ~10.25% | 7.25% + 2.25% + 0.75% district |
-| San Francisco | ~8.625% | 7.25% + 1.375% district |
-| San Jose | ~9.375% | 7.25% + 2.125% district |
-| San Diego (City) | ~7.75% | 7.25% + 0.50% district |
-| Sacramento (City) | ~8.75% | 7.25% + 1.50% district |
-| Oakland | ~10.25% | 7.25% + 3.00% district |
-| Fresno | ~8.975% | 7.25% + 1.725% district |
+| Los Angeles (City) | 9.750% | 7.25% state + 2.50% county. Measure A replaced Measure H on 1 April 2025 (9.50% -> 9.75%). Other LA County cities levy their own district tax and reach 10.25%+; do not read those onto the City |
+| San Francisco | 8.625% | Address lookup controls |
+| San Jose | 9.375% | Address lookup controls; later quarterly tables may differ |
+| San Diego (City) | 7.750% | Address lookup controls |
+| Sacramento (City) | 8.750% | Address lookup controls |
+| Oakland | 10.250% July-Sept. 2025 / 10.750% Oct-Dec. 2025 | Rate changed during 2025; use address lookup for the transaction date |
+| Fresno | 8.350% | 7.975% Fresno County + 0.375% city. Nearby Fresno County cities differ |
 
 ### 4.3 District tax sourcing
 
@@ -355,8 +355,8 @@ California imposes sales tax on the retail sale of tangible personal property un
 
 ### Test 1 -- Basic taxable sale in Los Angeles
 
-**Input:** Retailer sells a $1,000 TV in Los Angeles. Combined rate: 10.25%.
-**Expected:** Tax = $102.50. Total = $1,102.50.
+**Input:** Retailer sells a $1,000 TV in the City of Los Angeles. Combined rate: 9.75%.
+**Expected:** Tax = $97.50. Total = $1,097.50.
 
 ### Test 2 -- Grocery food exempt
 
