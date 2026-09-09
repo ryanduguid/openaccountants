@@ -239,7 +239,7 @@ This is the full picture of how NC treats each type of retirement income — Bai
 | NC-BAILEY-T1-09 | The Bailey exclusion extends to **surviving beneficiaries** of a vested member | *Bailey* Consent Order; NCDOR Directive PD-99-1 |
 | NC-BAILEY-T1-10 | A Form 1099-R must be attached to Form D-400 supporting any Line 20 or Line 21 deduction | NCDOR 2025 D-401 instructions [VERIFY exact wording] |
 | NC-BAILEY-T1-11 | Private pensions, IRAs (other than rolled-from-Bailey traceable), and 401(k)s **are fully taxable** to NC | N.C. Gen. Stat. § 105-153.5 (no general retirement deduction) |
-| NC-BAILEY-T1-12 | NC standard deduction TY 2025: $12,750 single / $25,500 MFJ / $12,750 MFS / $19,125 HoH `[VERIFY: confirm against TY 2025 D-401]` | N.C. Gen. Stat. § 105-153.5(a)(1) |
+| NC-BAILEY-T1-12 | NC standard deduction TY 2025: $12,750 single / $25,500 MFJ / $12,750 MFS / $19,125 HoH — confirmed (NCDOR, unchanged from TY2024; it rises only by legislation) | N.C. Gen. Stat. § 105-153.5(a)(1) |
 | NC-BAILEY-T1-13 | NC flat rate TY 2025 = 4.25%; TY 2026 = 3.99% — confirmed (G.S. 105-153.7 as amended by S.L. 2023-134; NCDOR Tax Rate Schedules) | Session Law 2023-134 |
 
 ## Section 8: Tier 2 — judgment rules

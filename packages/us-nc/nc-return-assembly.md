@@ -97,7 +97,7 @@ Verify the intake skill has produced:
 - Date of birth for taxpayer and spouse (drives senior-deduction considerations and Bailey settlement vesting eligibility)
 - Dependents list with SSNs (drives NC child deduction)
 - Business structure (sole prop or SMLLC disregarded)
-- Bailey-vested pension flag (taxpayer was vested in a qualifying NC state, local, or federal government retirement plan on or before August 12, 1989 — `[VERIFY:]` vesting cutoff date)
+- Bailey-vested pension flag — confirmed: the taxpayer must have been **vested as of 12 August 1989**, which for most systems means **five or more years of creditable service** in a qualifying NC state, local or federal retirement system as of that date. For the State's §401(k) and §457 plans the test is instead having contributed, or contracted to contribute, before 12 August 1989. (NCDOR, Bailey Decision Concerning Federal, State and Local Retirement Benefits; G.S. § 105-153.5(b)(5).) Asking only "were you vested?" without the five-year service test is the usual intake error
 - Health coverage history (federal Form 1095-A / B / C)
 - W-2s, 1099-NECs, 1099-Rs received
 
