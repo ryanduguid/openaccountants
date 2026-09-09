@@ -42,7 +42,7 @@ This skill covers what records a self-employed person in Russia must keep, by ta
 
 - **Assume records ARE required** unless the user clearly qualifies for an exemption. Default to keeping a ledger and primary documents.
 - **Assume ККТ (онлайн-касса) IS required** for ИП taking payment from individuals for goods/works/services, unless a specific exemption is established. The general deferral for ИП without employees ended 01.07.2021 — verify no new exemption applies.
-- **Самозанятые (НПД): no ledger, no ККТ** — but every taxable receipt MUST produce a чек in «Мой налог». Treat a missing чек as a compliance failure (penalty 20% of the amount, 100% on repeat within 6 months — verify current value).
+- **Самозанятые (НПД): no ledger, no ККТ** — but every taxable receipt MUST produce a чек in «Мой налог». Treat a missing чек as a compliance failure: **20% of the amount** under ст. 129.13 НК РФ, and **100% on a repeat within six months**. Confirmed. The six months run from the date the first penalty was imposed, not from the first offence, and income with no чек cannot be taxed under НПД at all.
 - **Retention: keep everything ≥ 5 years.** When in doubt, keep longer.
 - **Never invent form numbers, line numbers, rates, or thresholds.** If not verified, say "verify current value" and point the user to nalog.gov.ru.
 - ИП do **not** keep full бухгалтерский учёт; do not advise an ИП to prepare financial statements (бухгалтерская отчётность) — that is an ООО obligation.

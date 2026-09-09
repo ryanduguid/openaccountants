@@ -76,6 +76,8 @@ jurisdiction at a time. This section records how far that has got.
 | Capital allowances | Australia | 1 | Australia |
 | Personal allowances and bands | Liechtenstein | 0 | — |
 | Social insurance rates | Liechtenstein | 3 | Liechtenstein |
+| Self-employed contribution caps | Russia | 0 | — |
+| Penalty rates | Russia | 0 | — |
 
 The deadline pass has covered 24 jurisdictions of 200. Nobody has run an external
 pass over anything else. That leaves payroll rates and thresholds, registration
