@@ -20,6 +20,14 @@ Single-guide forms are omitted: a form named once cannot be inconsistent with a
 sibling, and including them buried the register. Currency codes are excluded --
 `USD 700` is not a form, and an early version of this listed several.
 """
+# Known gap, from the PR #16 review. The group key is the third path component,
+# which for skills/federal/<guide>.md is the FILENAME rather than a jurisdiction.
+# So no two federal guides can ever share a group, and a form used by both --
+# Form 1099-NEC appears in us-1099-nec-issuance and us-1099-k-and-payment-
+# processors -- never registers as shared. The register's federal section is
+# therefore absent rather than empty, and the published total under-counts.
+# Normalising those paths to a single "federal" group is the fix; it moves the
+# count in docs/COVERAGE.md, so it belongs in its own change rather than here.
 import os, re, collections
 
 # The lookbehind rejects a preceding hyphen as well as a letter or digit, and

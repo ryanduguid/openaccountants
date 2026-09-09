@@ -126,7 +126,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Obligation | Deadline | Authority |
 | --- | --- | --- |
 | Bilancio (annual accounts) | Approve within 120 days of year-end; file within 30 days of approval | Registro delle Imprese |
-| IRES/IRAP return (Modello Redditi SC) | Last day of the **9th month** after the tax period ends -- 31 October for calendar-year companies (2 November 2026, as 31 October is a Saturday) | Agenzia delle Entrate |
+| IRES/IRAP return (Modello Redditi SC) | Last day of the **10th month** after the tax period ends -- 31 October for calendar-year companies, so 2 November 2026 for FY2025 because 31 October falls on a Saturday. The 31 October date is only a coincidence of the calendar year; a company with a non-calendar period counts ten months from its own close | Agenzia delle Entrate (IRAP 2026 istruzioni) |
 | IVA declarations | Monthly or quarterly | Agenzia delle Entrate |
 | Diritto annuale | 30 June (with tax return deadline) | Camera di Commercio |
 | Titolare effettivo (UBO register) | Within 30 days of any change | Camera di Commercio |

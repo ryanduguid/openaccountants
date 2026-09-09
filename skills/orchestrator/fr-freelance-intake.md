@@ -520,7 +520,7 @@ When a refusal fires:
 **Check IN11 -- Total user-facing turn count is low.** Target: 8 turns or fewer from start to handoff for a prepared user (1 refusal batch + 1 upload + 1 confirmation + 1-3 gap fills + 1 handoff). More than 12 turns for a normal intake is a check failure.
 
 - **Check IN12 -- TVA regime established** — Franchise en base vs réel simplifié vs réel normal was confirmed before inference, as it changes how every transaction is classified.
-- **Check IN13 -- Franchise en base threshold verified** — €37,500 (services) or €85,000 (goods) EUR (If micro-entrepreneur CA exceeds these amounts, the franchise en base is lost and TVA registration is mandatory. This must be flagged.)
+- **Check IN13 -- Franchise en base threshold verified** — Two thresholds, not one: the **basic** seuil is €37,500 (services) / €85,000 (goods) and the **tolerance** (majoré) seuil is €41,250 / €93,500. Crossing the basic seuil without crossing the tolerance seuil does **not** end the franchise in the year of crossing; TVA becomes due from the following year. Crossing the tolerance seuil ends it immediately, from the first day of the month in which it is crossed. Do not tell a business between €85,000 and €93,500 to register at once EUR (Flag the year of crossing and which seuil was crossed; the transition rule, not the amount alone, decides.)
 
 ## Section 11 -- Performance targets
 

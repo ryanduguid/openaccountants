@@ -120,10 +120,25 @@ page.
               before 1 January 2026 falls outside it and the payment date has
               to be checked before the rate is applied.
 
-Still open: 118 jurisdictions state a rate, 24 hedge at least one of their own,
+Still open: 124 jurisdictions state a rate, 25 hedge at least one of their own,
 and 10 have been checked. Four of the ten were wrong and every one of the four
 had hedged itself, which is the argument for working this column by its own
 doubts rather than by a random draw.
+
+Two recall limits the PR #16 review found, both still open and worth knowing
+before reading a zero in this output as an absence:
+
+  * A table whose HEADING establishes the withholding context, with plain row
+    labels like "Dividends", "Interest", "Royalties", is skipped entirely,
+    because the label test runs per row. Nigeria's quick-look WHT table is the
+    example, and every rate in it is discarded.
+  * A line that gives one rate for all three payment types is recorded only
+    under the first. The Bahamas states a single zero for dividends, interest
+    and royalties and appears here as dividends alone.
+
+Both need the reader, not the parser, so they are documented rather than
+guessed at. A jurisdiction missing from this list has not been shown to be
+silent.
 
 Usage: python3 scripts/list-withholding-rates.py [--selftest]
 """
@@ -137,7 +152,10 @@ KIND = (('dividends', r'dividend'),
 # "- **Withholding tax on dividends** - 10% percent"
 LABEL = re.compile(r'\b(?:WHT|withholding(?:\s+tax)?)\b[^|\n]{0,40}?'
                    r'\b(dividend|interest|royalt)', re.I)
-PCT = re.compile(r'(\d{1,2}(?:\.\d+)?)\s?%')
+# Same spelling problem as the hedged-claim lister: Peru writes its dividend,
+# interest and royalty rates as "5 percent", and requiring "%" discarded all
+# three.
+PCT = re.compile(r'(\d{1,2}(?:\.\d+)?)\s?(?:%|per\s?cent\b|percent\b)', re.I)
 NONRES = re.compile(r'\bnon[- ]?residents?\b|\babroad\b|\bforeign\b', re.I)
 RESIDENT = re.compile(r'\bresidents?\b', re.I)
 # A hedge the guide has put on itself.

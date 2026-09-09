@@ -25,7 +25,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Key legislation | Companies and Allied Matters Act (CAMA) 2020; Finance Acts 2019–2023; Nigeria Tax Act 2025 (NTA 2025); Investments and Securities Act 2025; Nigeria Data Protection Act 2023 |
 | Registration portal | pre.cac.gov.ng (CAC public portal) |
 | Typical formation time | 3–7 working days for BN; 5–14 working days for Ltd (RC); 4–8 weeks for Plc; 6–12 weeks for Incorporated Trustee |
-| Standard corporate tax rate (CIT) | 30% large companies; 20% medium companies (turnover > ₦50M and ≤ ₦50B); 0% small companies (turnover ≤ **₦50M** and fixed assets ≤ ₦250M) under NTA 2025 s.202. **Do not use the ₦100M figure here** — that is the NTAA s.147 "small business" VAT threshold, a different test in a different Act (see the note at the head of Section 12) |
+| Standard corporate tax rate (CIT) | **30% for every company that is not small**; 0% small companies (turnover ≤ **₦50M** and fixed assets ≤ ₦250M) under NTA 2025 s.202. **Do not use the ₦100M figure here** — that is the NTAA s.147 "small business" VAT threshold, a different test in a different Act (see the note at the head of Section 12) |
 | VAT rate | 7.5% (NTA 2025 retains the rate; broader base) |
 | Skill version | 1.0 |
 
@@ -42,7 +42,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Foreign ownership | Practically restricted (must be resident sole proprietor or partners) | 100% permitted | 100% permitted | 100% permitted | Subject to objects and security vetting |
 | Min. share capital / capital | None | ₦100,000 (minimum issued share capital under CAMA 2020 for private companies); sectoral floors override | None statutory | ₦2,000,000 minimum issued share capital under CAMA 2020 | Not share capital based |
 | Minimum capital for companies with foreign participation | n/a | ₦100,000,000 minimum issued share capital required for NIPC business permit (foreign-owned companies) | Same NIPC requirement applies | Same NIPC requirement applies | n/a |
-| Tax treatment | Personal Income Tax (PIT) at progressive rates | Companies Income Tax (CIT) — 0% / 20% / 30% per NTA 2025 | Pass-through where partners are taxed (state PIT) unless elected; CIT if treated as company | CIT 30% (typically large company) | Tax-exempt for non-trading income; CIT on trading profits not applied to objects |
+| Tax treatment | Personal Income Tax (PIT) at progressive rates | Companies Income Tax (CIT) — 0% or 30% per NTA 2025 (two bands only) | Pass-through where partners are taxed (state PIT) unless elected; CIT if treated as company | CIT 30% (typically large company) | Tax-exempt for non-trading income; CIT on trading profits not applied to objects |
 | Annual filing with CAC | Annual return (Form CAC/BN/7) | Annual return + audited financial statements (small companies exempt from audit under CAMA s.402) | Annual return + statement of accounts | Annual return + audited financial statements | Annual return + statement of affairs |
 | Suffix on name | none (use "Enterprises", "Ventures", etc.) | "Limited" or "Ltd" | "Limited Liability Partnership" or "LLP" | "Public Limited Company" or "Plc" | "Incorporated Trustees of …" |
 | Admin burden | Low | Medium | Medium | High | Medium–High |
@@ -122,7 +122,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ### Tax
 
 - **CIT — small company** — 0% percent (turnover ≤ ₦50,000,000 **and** fixed assets ≤ ₦250,000,000; professional-services companies excluded)  _(NTA 2025 s.202; 0% rate at s.56(a))_
-- **CIT — medium company** — 20% percent (turnover > ₦50M and ≤ ₦50B)  _(NTA 2025)_
+- **CIT — every company that is not small** — **30%**, plus the 4% development levy. NTA 2025 s.56 has **two bands only**: small companies at 0% and everything else at 30%. There is no medium-company 20% band from 1 January 2026; that was the Finance Act 2019/2020 structure and it is superseded percent  _(NTA 2025 s.56; s.202; `ng-cit` states the same)_
 - **CIT — large company** — 30% percent (turnover > ₦50B)  _(NTA 2025)_
 - **Other Ltd tax obligations** — - Education tax (Tertiary Education Tax) under NTA 2025 — small companies exempt; medium and large pay TET at the prescribed rate (3% of assessable profits under the consolidated NTA 2025 schedule — confirm against the gazetted rate). - Development levy (consolidated) under NTA 2025 — small companies exempt. - VAT 7.5% on taxable supplies; small companies (turnover ≤ ₦100M) are VAT-exempt under NTA 2025. - WHT on services and certain transactions per the WHT Regulations 2024. - Capital Gains Tax 30% on gains realised by companies (aligned to CIT under NTA 2025). - Annual returns and audited financial statements within 42 days of the AGM (or 9 months after FY end if no AGM held — for small companies that dispense with AGM).  _(NTA 2025; WHT Regulations 2024)_
 
@@ -295,9 +295,9 @@ CAC registration is necessary but not sufficient for regulated activities. Commo
 >   fixed assets under ₦250,000,000. This is a **VAT and withholding** test.
 >
 > So a company turning over ₦75,000,000 is a small **business** (VAT-exempt) and
-> a medium **company** (20% CIT) at the same time. Between ₦50M and ₦100M the two
+> a **non-small company** (30% CIT) at the same time. Between ₦50M and ₦100M the two
 > labels come apart, and quoting the ₦100M figure for CIT tells a founder they
-> owe nothing when they owe 20%.
+> owe nothing when they owe 30% plus the 4% development levy.
 >
 > Most secondary coverage flattens this to "₦100 million for everything", which
 > is why it is worth stating with section numbers. Nigerian commentators have
@@ -311,7 +311,7 @@ CAC registration is necessary but not sufficient for regulated activities. Commo
 | --- | --- | --- | --- | --- |
 | BN (sole proprietor) | PIT (state IRS) | Progressive 0% / 15% / 18% / 21% / 23% / 25% per NTA 2025 PIT schedule | First ₦800,000 of total income exempt | Annual Form A (state IRS) |
 | BN (partnership) | PIT pass-through to each partner | Progressive PIT bands | Same as sole proprietor | Each partner files Form A; partnership statement of accounts |
-| Ltd / RC | Companies Income Tax | 0% / 20% / 30% per NTA 2025 bands | 0% for small companies (turnover ≤ **₦50M** and fixed assets ≤ ₦250M, NTA s.202); VAT-exempt at turnover ≤ ₦100M (NTAA s.147 — a **wider** test); education tax exempt; development levy exempt | Annual CIT return (FIRS) 6 months after FY end |
+| Ltd / RC | Companies Income Tax | 0% or 30% per NTA 2025 (two bands; no 20% medium band) | 0% for small companies (turnover ≤ **₦50M** and fixed assets ≤ ₦250M, NTA s.202); VAT-exempt at turnover ≤ ₦100M (NTAA s.147 — a **wider** test); education tax exempt; development levy exempt | Annual CIT return (FIRS) 6 months after FY end |
 | LLP | Likely PIT pass-through; subject to FIRS treatment under NTA 2025 implementing regs | Same as PIT bands for partners | Same as BN partnership in conservative view | Annual statement of accounts to CAC; partners file PIT |
 | Plc | CIT | 30% (typically large company) | Generally outside small-company band by scale | Annual audited accounts + CIT return; quarterly reporting if listed |
 | Incorporated Trustee | Exempt on income applied to objects; CIT on unrelated trading income | 0% on objects-related income; 30% on trading | n/a | Annual return + statement of affairs |
@@ -382,17 +382,16 @@ Q7: Micro turnover; single Nigerian-resident founder; accept unlimited liability
 - Stamp duty on share capital: 0.75% × ₦1,000,000 = ₦7,500.
 - CAC fees plus professional fees: ~₦80,000–₦150,000 all-in.
 - TIN automatic; register on TaxPro Max.
-- Tax: CIT under NTA 2025 — turnover ₦60M **exceeds** the ₦50M small-company ceiling in NTA s.202, so Chioma Tech Solutions Ltd is a **medium company**: **20% CIT**. On the same ₦45M assessable profit that is **₦9,000,000**.
+- Tax: CIT under NTA 2025 — turnover ₦60M **exceeds** the ₦50M small-company ceiling in NTA s.202, so Chioma Tech Solutions Ltd falls in the only other band there is: **30% CIT**. NTA 2025 s.56 has no medium-company 20% rate. On the same ₦45M assessable profit that is **₦13,500,000**.
 - VAT: **exempt**, because ₦60M is at or below the ₦100M "small business" threshold in NTAA s.147. This is the case that shows the two tests are not the same test — the company is a small business for VAT and a medium company for income tax at the same time.
-- Education tax: the small-company exemption does not apply at this turnover.
-- Development levy: 4%, and the small-company exemption does not apply. [RESEARCH GAP — reviewer to confirm the levy base (assessable profits is the commonly cited base) before quoting a figure.]
+- Development levy: **4%**, and the small-company exemption does not apply. NTA 2025 s.59 consolidates the former tertiary education tax and the other earmarked levies into this single charge, so do not add education tax alongside it. On ₦45M assessable profits that is **₦1,800,000**. [RESEARCH GAP — reviewer to confirm the levy base; assessable profits is the commonly cited base.]
 - Chioma can pay herself a director's salary subject to PAYE through LIRS; remaining retained profit accumulates in the company.
 - Annual return to CAC; statement of accounts (audit not mandatory for small companies under CAMA s.402(3) provided the company meets the small-company criteria).
-- **Indicative total federal CIT: ₦9,000,000**, plus the 4% development levy, plus PAYE on salary.
+- **Indicative total federal CIT: ₦13,500,000**, plus the 4% development levy of about ₦1,800,000, plus PAYE on salary — roughly **₦15,300,000** federally.
 
 ### Recommendation
 
-- **The tax case is roughly neutral at this turnover; the case for the Ltd is structural.** On the same ₦45M assessable profit the Ltd bears CIT of about ₦9,000,000 plus the development levy, against indicative PIT of about ₦9,280,000 for the BN. Both are VAT-exempt. So the Ltd does **not** win on tax here, and an earlier version of this example said it did — it had applied the ₦100M VAT threshold to the CIT test and reported ₦0 CIT. What the Ltd still buys is limited liability, a separable asset, the ability to retain profit at 20% rather than at her marginal PIT rate, and a structure investors can take shares in.
+- **The BN wins on tax at this turnover, and by a wide margin.** On the same ₦45M assessable profit the Ltd bears CIT of about ₦13,500,000 plus a development levy of about ₦1,800,000 — roughly ₦15,300,000 — against indicative PIT of about ₦9,280,000 for the BN. Both are VAT-exempt. The case for the Ltd here is structural, not fiscal. Two earlier versions of this example got it wrong in opposite directions: the first applied the ₦100M VAT threshold to the CIT test and reported ₦0 CIT. What the Ltd still buys is limited liability, a separable asset, the ability to retain profit at 20% rather than at her marginal PIT rate, and a structure investors can take shares in.
 - **Where the 0% band actually bites**: below ₦50M turnover. A founder at ₦45M turnover gets 0% CIT, VAT exemption, no education tax and no development levy, and there the Ltd wins decisively. Between ₦50M and ₦100M is the awkward band this example sits in.
 - Chioma should **incorporate the Ltd**, register on TaxPro Max, register with LIRS for PAYE on her own director's salary (sized to fund living expenses), and budget for **NDPA 2023 registration with the NDPC** because she processes client personal data.
 
@@ -403,7 +402,7 @@ Q7: Micro turnover; single Nigerian-resident founder; accept unlimited liability
 ## Section 16 — Sources
 
 - **Companies and Allied Matters Act 2020** (CAMA 2020) — Parts B (companies), C (LLPs), E (Business Names), F (Incorporated Trustees).
-- **Nigeria Tax Act 2025** (NTA 2025) — consolidated tax statute introducing the 0% / 20% / 30% CIT bands, small-company VAT exemption, development levy, and education tax restructuring; restructures FIRS as the Nigeria Revenue Service.
+- **Nigeria Tax Act 2025** (NTA 2025) — consolidated tax statute introducing the two CIT bands (0% small, 30% otherwise), small-company VAT exemption, development levy, and education tax restructuring; restructures FIRS as the Nigeria Revenue Service.
 - **Companies Income Tax Act** (CITA) — as amended by Finance Acts 2019, 2020, 2021, 2023 and superseded in parts by NTA 2025.
 - **Personal Income Tax Act** (PITA) — as amended.
 - **Value Added Tax Act** — as amended.

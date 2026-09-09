@@ -122,11 +122,31 @@ def readme_headline():
 
     data = json.load(open('index.json'))
     guides = data['guides']
-    t1 = [g for g in guides if str(g.get('tier')) == '1' and g.get('reviewed_by')]
+
+    # Match build-index.py exactly. Counting only a truthy `reviewed_by` was
+    # wrong twice over: it ignored the legacy `verified_by` field, and it
+    # accepted sentinels like "pending", so this check could disagree with the
+    # accountant_reviewed count in the very file it reads.
+    unreviewed = {'pending', 'none', 'no', 'false', '-', 'n/a', 'tbd'}
+
+    def reviewer_of(g):
+        if str(g.get('tier') or '').strip() != '1':
+            return None
+        for key in ('reviewed_by', 'verified_by'):
+            v = g.get(key)
+            if v and str(v).strip().lower() not in unreviewed:
+                return str(v).strip()
+        return None
+
+    reviewers = {reviewer_of(g) for g in guides}
+    reviewers.discard(None)
+    # One reviewer asked not to be named, so they are reviewed but not *named*.
+    named = {r for r in reviewers if 'name withheld' not in r.lower()}
     want = [('Guides', len(guides)),
             ('jurisdictions', len({g['jurisdiction'] for g in guides if g.get('jurisdiction')})),
-            ('accountant-reviewed', len(t1)),
-            ('named accountants', len({g['reviewed_by'] for g in t1}))]
+            ('accountant-reviewed', data.get('counts', {}).get(
+                'accountant_reviewed', sum(1 for g in guides if reviewer_of(g)))),
+            ('named accountants', len(named))]
     bad = 0
     for label, n in want:
         # the headline bolds the number and its label together: **1,953 Guides**

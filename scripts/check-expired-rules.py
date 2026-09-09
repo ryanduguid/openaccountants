@@ -46,7 +46,7 @@ corpus's own maintenance. Bermuda's tax assurance runs "until 2035", Albania's
 0% band "until 2029", North Carolina's graduated penalty takes effect in 2027.
 Those are the facts, correctly dated, and a future date suppresses the hit.
 
-What a full run returns now that those four are fixed: 37 lines, and they are
+What a full run returns now that those four are fixed: 51 lines, and they are
 leads rather than defects. Most are genuinely pending -- Nigeria waiting on the
 NTA 2025 implementing regulations, Morocco on the e-invoicing decree, Pakistan
 on several 2026 items -- and each needs someone to go and look rather than a
@@ -59,12 +59,20 @@ same threshold table two hundred lines further down, still reading TBC in all
 five cells, plus a refusal code and a sensitivity test built on the same
 placeholder. The first fix had been to the table a reader sees first.
 
+A code review on PR #16 found two more gaps and both are fixed here. A named
+month was treated as expiring on its first day, so a rule waiting on "September
+2026" read as expired from 2 September. And a cell reading "TBC -- verify
+Finance Bill 2026" was not matched at all, because the TBC alternative required
+a publication verb and "verify" was not in the list; adding it took the queue
+from 37 to 51 and surfaced the UK savings-allowance cells this branch then
+resolved.
+
 Exit status is 1 when anything is reported, so this can gate CI once the
 standing queue is worked down.
 
 Usage: python3 scripts/check-expired-rules.py [--selftest] [path ...]
 """
-import os, re, sys, datetime
+import os, re, sys, datetime, calendar
 
 TODAY = datetime.date.today()
 
@@ -100,8 +108,8 @@ TODAY = datetime.date.today()
 # line in it.
 WAITING = re.compile(
     r'not yet (?:been |\w+ )?(?:published|announced|confirmed|released|set|issued)|'
-    r'\bTBC\b[^.|\n]{0,40}?\b(?:publish|announce|confirm|pending|await)|'
-    r'\b(?:publish|announce|confirm|pending|await)\w*[^.|\n]{0,40}?\bTBC\b|'
+    r'\bTBC\b[^.|\n]{0,40}?\b(?:publish|announce|confirm|pending|await|verify)|'
+    r'\b(?:publish|announce|confirm|pending|await|verify)\w*[^.|\n]{0,40}?\bTBC\b|'
     r'until\b[^.|\n]{0,60}?\b(?:published|announced|available|released|issued)\b|'
     r'pending (?:HMRC|IRS|FTB|SLC|MTESS|BPS|DGI|SIN|ATO|publication|announcement|confirmation)|'
     r'(?:expected|anticipated)\b[^.|\n]{0,50}?'
@@ -128,18 +136,36 @@ SKIP_PREFIX = ('description:', 'name:', 'tax_year_notes:')
 
 
 def _dates(line):
-    """Every date the line commits to, as (date, is_month_precise)."""
+    """Every date the line commits to, as the last day it is still waiting.
+
+    The two precisions are treated differently, deliberately.
+
+    A **named month** runs to its last day. "The adjustment is expected July
+    2026" is not expired on 2 July. Returning the first of the month was the
+    original bug and it made every month-precise rule look expired from the
+    second day of the month it was waiting for.
+
+    A **bare year** is taken as 1 January of that year, not 31 December. In
+    these rules a bare year names the year the awaited thing arrives in -- "use
+    FY2025 values until 2026 values are published", and the 2026 BPC decree
+    landed on 20 January. Reading it as year-end would mean the check could
+    never report anything during the current year, which is exactly when a rule
+    like that is doing damage. The cost is the opposite error: a rule waiting on
+    something genuinely due late in the current year reads as expired early.
+    That is the safer direction for a lead-generator a human reads.
+    """
     out = []
     for m in MONTH_YEAR.finditer(line):
-        out.append((datetime.date(int(m.group(2)), MONTHS.index(m.group(1).title()) + 1, 1), True))
+        y, mo = int(m.group(2)), MONTHS.index(m.group(1).title()) + 1
+        out.append(datetime.date(y, mo, calendar.monthrange(y, mo)[1]))
     for m in YEAR.finditer(line):
-        out.append((datetime.date(int(m.group(1)), 1, 1), False))
+        out.append(datetime.date(int(m.group(1)), 1, 1))
     return out
 
 
 def _horizon(text):
-    """Every date `text` commits to."""
-    return [d for d, _ in _dates(text)]
+    """Every date `text` commits to, each as the last day it is still waiting."""
+    return _dates(text)
 
 
 def expired(line, today=None, context=None):
@@ -185,6 +211,14 @@ def selftest():
         ('- **R-UK-SL-4 -- 2026-27 thresholds not yet published** - Trigger: a 2026-27 '
          'computation requires a threshold HMRC has not yet announced.', 2026),
     ]
+    # month precision: the named month is not over, so it is still waiting
+    assert expired('The next adjustment is expected September 2026; not yet published.',
+                   today) is None, 'a named month is not expired until it ends'
+    assert expired('The next adjustment was expected August 2026; not yet published.',
+                   today) == 2026, 'the month before is expired'
+    # a TBC cell that says "verify" rather than "publishes" is still a waiting rule
+    assert expired('| Dividend allowance | GBP 500 | GBP 500 (TBC -- verify Finance Bill 2026) |',
+                   today) == 2026
     header = '| Plan | Rate | 2024-25 Threshold | 2025-26 Threshold | 2026-27 Threshold |'
     for line, year in hits:
         got = expired(line, today, context=header)

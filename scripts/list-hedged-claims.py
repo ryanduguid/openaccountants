@@ -15,7 +15,10 @@ Scope. The corpus carries about 3,500 self-hedged lines. Most are prose, and a
 hedge on prose is a maintainer's note rather than a figure a reader will act on.
 This keeps the ones that carry a number AND sit on a labelled fact, a bullet or
 a table row, which is where this corpus states things an agent will use. That is
-roughly 900 lines across 180 jurisdictions.
+862 lines across 176 jurisdictions. That is up from 829 across 175: a code review
+on PR #16 pointed out that the figure pattern required a literal "%" and so
+dropped every rate written as "8 percent", which is how Tajikistan and others
+write theirs.
 
 Reading the output. Volume is not severity. Central African Republic tops the
 list because its pack was drafted from thin sources and says so on nearly every
@@ -70,7 +73,11 @@ HEDGE = re.compile(r'\(\(?\s*approx[^)]*\)|verify current value|confirm current|
                    r'sources conflict|sources vary|--\s*confirm(?!ed)\b|'
                    r'—\s*confirm(?!ed)\b', re.I)
 # A figure a reader would act on: a rate, or an amount with thousands separators.
-FIGURE = re.compile(r'\d{1,3}(?:\.\d+)?\s?%|\b\d{1,3}(?:[,\.]\d{3})+\b')
+# Rates are written both "8%" and "8 percent" in this corpus. Requiring the
+# symbol dropped Tajikistan's hedged 8 and 25 percent facts from the queue
+# this script exists to build.
+FIGURE = re.compile(r'\d{1,3}(?:\.\d+)?\s?(?:%|per\s?cent\b|percent\b)|'
+                    r'\b\d{1,3}(?:[,\.]\d{3})+\b', re.I)
 # Where this corpus states facts, as opposed to explaining them.
 LABELLED = re.compile(r'^\s*-\s+\*\*([^*]{4,90})\*\*|^\s*\|\s*([^|]{4,90}?)\s*\|')
 

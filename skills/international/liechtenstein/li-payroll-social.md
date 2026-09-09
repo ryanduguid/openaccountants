@@ -3,6 +3,7 @@ name: li-payroll-social
 description: "Source-cited draft: payroll & social contributions for Liechtenstein (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
 jurisdiction: LI
 tax_year: 2025
+tax_year_notes: "2025, with the AHV/IV/FAK contribution table effective 1 January 2026 stated where it has been confirmed; other contribution figures remain 2025 estimates and are marked as such"
 last_updated: 2026-07-13
 review_status: pending_review
 tier: 2
@@ -19,7 +20,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **AHV/IV/FAK employee share** — **4.900%**, being AHV 4.025% + IV 0.675% + FAK 0.200%, with no ceiling. The 0.200% FAK employee contribution is new from 1 January 2026. Unemployment (ALV) is a separate 0.500%, capped at CHF 126,000 of annual salary  _(Liechtensteinische AHV-IV-FAK contribution table effective 1 January 2026)_  _([Old-Age and Survivors' Insurance Act (AHVG)](https://rivermate.com/guides/liechtenstein/taxes))_
 - **Unemployment insurance (ALV) total** — Approx 2.2% (employer 1.1% / employee 1.1%) % (approx — confirm 2025 figure and wage cap)  _([Unemployment Insurance Act (ALVG)](https://rivermate.com/guides/liechtenstein/taxes))_
 - **ALV wage cap (indicative, Swiss-aligned)** — Approx CHF 148,200 per year (CHF 12,350/month) CHF (approx — confirm 2025 LI figure)  _([Unemployment Insurance Act (ALVG)](https://rivermate.com/guides/liechtenstein/taxes))_
-- **Family allowance fund (FAK)** — Approx 1.9% of gross salary, employer-only % (approx — confirm 2025 figure)  _([Family Allowances Act (FZG)](https://rivermate.com/guides/liechtenstein/taxes))_
+- **Family allowance fund (FAK)** — Approx 1.9% of gross salary, employer-only. **Note the mixed years in this guide:** the AHV/IV/FAK rates above are the table effective 1 January 2026, while this FAK figure and the ALV figures below are unconfirmed 2025 estimates. Do not present the set as a single year's rates % (approx — confirm the 2026 figure)  _([Family Allowances Act (FZG)](https://rivermate.com/guides/liechtenstein/taxes))_
 - **Occupational pension (2nd pillar, BVG)** — Mandatory; contribution depends on age, salary and pension plan, shared employer/employee (employer pays at least half) (approx — confirm plan-specific rates)  _([Occupational Pensions Act (BPVG)](https://www.usemultiplier.com/liechtenstein/payroll))_
 - **Accident insurance (UVG)** — Occupational accident insurance is employer-paid; rate varies by industry/risk. Non-occupational accident premium is typically employee-borne (approx — confirm rate)  _([Accident Insurance Act (UVersG)](https://rivermate.com/guides/liechtenstein/taxes))_
 - **Wage tax withholding (Quellensteuer / Lohnsteuerabzug)** — Employers withhold income tax at source for cross-border commuters and certain non-resident employees; resident employees generally pay via assessment (approx — confirm)  _([Tax Act (Steuergesetz, SteG)](https://taxsummaries.pwc.com/liechtenstein/individual/tax-administration))_

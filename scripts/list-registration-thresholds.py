@@ -81,6 +81,14 @@ than wrong.
 Still open: 102 jurisdictions use this wording, and 20 jurisdictions have now
 been checked.
 
+One known false positive, left in deliberately. The walk treats the third path
+component as a jurisdiction and does not restrict itself to indirect-tax
+material, so Oregon's corporate activity tax registration obligation matches the
+generic threshold label and is reported under "or". It is a registration
+threshold, just not a VAT or GST one. Filtering by slug would also drop real
+sales-tax guides that do not say "vat" anywhere, so the reader is told instead:
+a US-state row here is a registration threshold of some kind, and needs reading.
+
 Usage: python3 scripts/list-registration-thresholds.py [--selftest]
 """
 import os, re, sys, collections
@@ -122,6 +130,20 @@ SCALE = (r'(?:\s*\**\s*([Mm]illion|MILLION|[Mm]illions|[Mm]n|[Bb]n|[Bb]illion|'
          r'[Tt]housand|[Ll]akh|[Cc]rore|[MmBbKk])\b)?')
 CODE_FIRST = re.compile(r'\b([A-Z]{2,5})\s?([\d][\d,]*(?:\.\d+)?)' + SCALE)
 CODE_AFTER = re.compile(r'\b([\d][\d,]*(?:\.\d+)?)' + SCALE + r'\s?([A-Z]{2,5})\b')
+# Slovakia writes its VAT limits "50 000 eur" and "62 500 eur": a space for the
+# thousands separator and a lowercase code. Both rows matched the threshold
+# label and yielded no amount, so Slovakia was simply absent from the output.
+#
+# The obvious fix is re.I on CODE_AFTER, and it is the wrong one -- the comment
+# above records what that cost the first time, when [A-Z]{2,5} started matching
+# ordinary words and the column filled with ANY 12 and THE 21. So the lowercase
+# form gets its own pattern with an explicit list of codes instead of a
+# character class, which cannot match a word by accident.
+LOWER_CODES = ('eur|usd|gbp|chf|sek|nok|dkk|pln|czk|huf|ron|bgn|hrk|isk|try|rub|uah|'
+               'inr|cny|jpy|krw|sgd|myr|thb|php|idr|vnd|aud|nzd|cad|zar|ngn|kes|ghs|'
+               'mad|egp|aed|sar|qar|ils|brl|mxn|ars|clp|cop|pen|uyu')
+CODE_AFTER_LOWER = re.compile(
+    r'\b([\d][\d  ,]*(?:\.\d+)?)' + SCALE + r'\s?(' + LOWER_CODES + r')\b')
 # Ukraine's threshold is written ₴1,000,000 and the first symbol class had no
 # hryvnia, so the line yielded nothing at all rather than a wrong number.
 SYMBOL = re.compile(r'([€£$₹₽¥₦₩₴₺₪₫฿₼₾៛])\s?([\d][\d,]*(?:\.\d+)?)' + SCALE)
@@ -136,7 +158,16 @@ MULT = {'million': 10**6, 'millions': 10**6, 'mn': 10**6, 'm': 10**6,
 NOT_MONEY = {'VAT', 'GST', 'BTW', 'IVA', 'TVA', 'SME', 'EU', 'PWC', 'ETA', 'NO',
              'CGT', 'PIT', 'CIT', 'SBE', 'ABN', 'TIN', 'VATA', 'NTA', 'STA',
              'FRS', 'FA', 'FY', 'SDL', 'FOP', 'CAT', 'NSIF', 'ITA', 'PAYE',
-             'TY', 'AY', 'IRA', 'MTD', 'OECD', 'IFRS', 'NIC', 'UTR', 'AND'}
+             'TY', 'AY', 'IRA', 'MTD', 'OECD', 'IFRS', 'NIC', 'UTR', 'AND',
+             # Ordinary words that are all-caps in a heading or an emphasised
+             # cell. They only reach here when the source shouts, which is why
+             # the earlier re.I experiment filled the column with them.
+             # ALL is deliberately NOT here: it is the Albanian lek, and adding
+             # it removed Albania's VAT threshold -- a figure corrected on this
+             # same branch. The selftest caught it because that line is a
+             # fixture. Check any word added here against the ISO 4217 list.
+             'ANY', 'THE', 'FROM', 'BOX', 'GROUP', 'OVER', 'PER',
+             'NOTE', 'SEE', 'FOR', 'WITH'}
 
 YEARISH = re.compile(r'^(19|20)\d\d$')
 
@@ -162,6 +193,11 @@ def amounts_in(line):
         if code in NOT_MONEY or YEARISH.match(m.group(2)) or _rate_not_money(line, m.end(2)):
             continue
         out.append('%s %s' % (code, _size(m.group(2), m.group(3))))
+    for m in CODE_AFTER_LOWER.finditer(line):
+        digits = m.group(1).replace(' ', '').replace('\u00a0', '').replace('\u202f', '')
+        if YEARISH.match(digits) or _rate_not_money(line, m.end(1)):
+            continue
+        out.append('%s %s' % (m.group(3).upper(), _size(digits, m.group(2))))
     for m in CODE_AFTER.finditer(line):
         code = m.group(3).upper()
         if code in NOT_MONEY or YEARISH.match(m.group(1)) or _rate_not_money(line, m.end(1)):
@@ -246,6 +282,12 @@ def selftest():
     assert threshold_in('| Filing deadline | 31 October of the following year |') is None
     # "20% VAT" is a rate, not an amount, and must not be read as money
     assert threshold_in('| VAT registration threshold | none; every trader registers |') is None
+    # Slovakia writes it "50 000 eur": space separator, lowercase code. Both
+    # rows matched the label and returned nothing until this was added.
+    assert amounts_in('| Mandatory VAT registration | 50 000 eur of turnover |') == ['EUR 50,000']
+    assert amounts_in('| Voluntary registration | 62 500 eur |') == ['EUR 62,500']
+    # and ALL stays a currency code, not the ordinary word
+    assert amounts_in('| VAT registration threshold | Turnover > ALL 10,000,000 |') == ['ALL 10,000,000']
     print('selftest: %d cases pass' % len(cases))
 
 
