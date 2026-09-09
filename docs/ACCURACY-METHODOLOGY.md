@@ -60,7 +60,7 @@ re-derived or over-claimed.
 | Field | Coverage | Errors found | Notes |
 |---|---|---|---|
 | Standard VAT / GST rate | 157 of 157 jurisdictions stating one | 6 | Fiji, India, Kazakhstan, Zimbabwe, Malawi, Maldives |
-| Headline corporate rate | first pass over ~100 jurisdictions | 3 | Lithuania, Cyprus, Portugal |
+| Headline corporate rate | ~135 jurisdictions | 3 | Lithuania, Cyprus, Portugal |
 
 Everything else — payroll rates and thresholds, registration and filing
 thresholds, filing deadlines, penalty and interest rates, social-contribution
@@ -92,6 +92,23 @@ corpus was right and the chart was stale:
   NTA 2025 regime including the abolition of the medium-company band, the 4%
   development levy, and an AUDIT FLASH POINT on the NGN 50M / NGN 100M statutory
   conflict.
+
+- **Fiji** — a chart gave 20%. It is 25% (15% for South Pacific Stock Exchange
+  listings), which is what the guide says.
+- **Tajikistan** — a chart gave 13% as the rate. 13% applies to
+  production-of-goods activities; the standard rate is 18%, and the guide carries
+  both with the distinction.
+- **Somalia** — a chart gave a flat 15%. It is progressive from 9% to a 30% top
+  rate above USD 30,000, cited to the Investment Promotion Office.
+- **Sudan** — a chart gave 35%. The guide has 15% standard with 30% for banks,
+  tobacco and petroleum, which matches neither half of the chart's figure.
+
+The corporate pass makes the point sharper than the VAT pass did. Its last
+tranche of ~35 jurisdictions produced zero corpus errors and six cases where the
+aggregator was wrong. Beyond the well-covered jurisdictions, a chart comparison
+stops finding defects and starts manufacturing false ones, and each is a chance
+to "correct" a right answer into a wrong one. Every hit needs reading before it
+is acted on.
 
 A chart comparison is a lead generator, not an assurance mechanism. Only the
 Tier 1 route — a named practitioner signing the guide — carries an assurance
