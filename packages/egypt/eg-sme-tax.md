@@ -60,7 +60,7 @@ The income tax is a flat percentage of **annual turnover** (إجمالي رقم 
 
 - **Default to general income-tax system unless opted in** — Default to the general income-tax system unless the user confirms they have formally applied to and been accepted into the Law 6/2025 regime. The regime is opt-in by request — it is not automatic.  _(Conservative defaults)_
 - **Default to higher band near boundary** — Default to the higher band if turnover is near a band boundary.  _(Conservative defaults)_
-- **Assume VAT registration required** — Assume VAT registration is still required at the standard EGP 500,000 registration threshold — Law 6/2025 simplifies VAT filing frequency, it does not abolish VAT.  _(Conservative defaults)_
+- **Assume VAT registration required** — Assume VAT registration is still required at the standard **EGP 250,000** registration threshold, halved from EGP 500,000 with effect from 1 January 2026 by Resolution No. 281 of 2025 — Law 6/2025 simplifies VAT filing frequency, it does not abolish VAT.  _(Conservative defaults)_
 - **Assume e-invoicing mandatory** — Assume e-invoicing / e-receipt compliance is mandatory to keep the incentives.  _(Conservative defaults)_
 - **Assume 5-year lock-in applies** — Assume the 5-year lock-in applies once enrolled — do not advise the user they can freely exit.  _(Conservative defaults)_
 - **Never compute final liability without sign-off** — Never compute a final liability without a credentialed Egyptian accountant sign-off. This skill is research-verified, not authority-certified.  _(Conservative defaults)_
@@ -142,7 +142,7 @@ The regime simplifies filing cadence, not the existence of the taxes.
 
 ### Key VAT points
 
-- **VAT registration still applies** — VAT registration still applies at the general turnover threshold (EGP 500,000 — verify current value). Law 6/2025 changes how often you file, not whether you must register.  _(VAT Law No. 67 of 2016)_
+- **VAT registration still applies** — VAT registration still applies at the general turnover threshold (**EGP 250,000** from 1 January 2026, halved from EGP 500,000 by Resolution No. 281 of 2025). Law 6/2025 changes how often you file, not whether you must register.  _(VAT Law No. 67 of 2016)_
 - **Standard VAT rate** — 14% % (verify current; certain goods/services have special rates such as the 5% machinery rate or the schedule/table-tax items)  _(VAT Law No. 67 of 2016)_
 - **E-invoicing/e-receipt precondition** — E-invoicing / e-receipt integration is a precondition for staying in the regime — non-compliance can forfeit the incentives.  _(Law No. 6 of 2025)_
 
