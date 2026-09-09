@@ -129,6 +129,39 @@ class FactCheckerTests(unittest.TestCase):
         self.assertIn("citing no authority domain at all: 0", output)
         self.assertIn("citations: 1 authority, 0 secondary", output)
 
+    def test_midyear_changes_uses_each_jurisdictions_own_tax_year(self):
+        # 1 August is mid-year for a calendar-year country and gets reported;
+        # 1 July is the first day of Australia's year and does not. Without the
+        # per-jurisdiction year start the second line is a false positive.
+        output = self.run_checker("list-midyear-changes.py", {
+            "cal/vat.md": (
+                "| Tax year | Calendar year (1 January -- 31 December) |\n"
+                "- **VAT standard rate** - **21%** from 1 August 2025\n"
+            ),
+            "aus/cit.md": (
+                "| Tax year | 1 July 2025 - 30 June 2026 |\n"
+                "- **Company rate** - **25%** from 1 July 2025\n"
+            ),
+        })
+        self.assertRegex(output, r"cal\s+\(year starts 1/1\)")
+        self.assertNotRegex(output, r"aus\s+\(year starts")
+        self.assertIn("no stated split (since", output)
+
+    def test_midyear_changes_accepts_a_split_stated_elsewhere_in_the_file(self):
+        # Romania's shape: the rate row is terse and the return-mapping table
+        # further down carries "21% from Aug 2025 / 19% before". Testing the
+        # line alone reported four Romanian lines that were all fine.
+        output = self.run_checker("list-midyear-changes.py", {
+            "ro/vat.md": (
+                "| Tax year | Calendar year |\n"
+                "| 11% | Reduced (from 1 August 2025) replacing the former 9% "
+                "and 5% categories | Fiscal Code |\n"
+                "| Row 2 | Domestic supplies at reduced rate (11% from Aug 2025 "
+                "/ 9% before) | 11%/9% |\n"
+            ),
+        })
+        self.assertIn("no stated split (since 2025): 0 line(s)", output)
+
     def test_solo_citations_rank_uncorroborated_instruments(self):
         # "lonely" leans on one instrument nobody else cites; "shared" cites an
         # instrument that appears in a second guide, so it is corroborated
