@@ -4,8 +4,8 @@ description: Use this skill whenever asked about UK Student Loan repayment for s
 version: 2.1
 jurisdiction: GB
 tax_year: 2025
-tax_year_notes: "2025-26 primary; 2024-25 and 2026-27 thresholds also tabulated"
-last_updated: 2026-07-13
+tax_year_notes: "2025-26 primary; 2024-25 and 2026-27 thresholds also tabulated (2026-27 column filled from GOV.UK, outside the recorded accountant review)"
+last_updated: 2026-09-09
 reviewed_by: James Power
 review_status: current
 depends_on:
@@ -61,13 +61,23 @@ This block is generated from verified `skill_facts` — edit the facts, not the 
 
 | Plan | Rate | 2024-25 Threshold | 2025-26 Threshold | 2026-27 Threshold |
 | --- | --- | --- | --- | --- |
-| Plan 1 | 9% | £24,990 | £26,065 | TBC -- HMRC publishes annually |
-| Plan 2 | 9% | £27,295 | £28,470 | TBC -- HMRC publishes annually |
-| Plan 4 | 9% | £31,395 | £32,745 | TBC -- HMRC publishes annually |
-| Plan 5 | 9% | £25,000 | £25,000 (frozen by SLC) | TBC -- HMRC publishes annually |
-| Postgraduate Loan | 6% | £21,000 | £21,000 | TBC -- HMRC publishes annually |
+| Plan 1 | 9% | £24,990 | £26,065 | £26,900 |
+| Plan 2 | 9% | £27,295 | £28,470 | £29,385 |
+| Plan 4 | 9% | £31,395 | £32,745 | £33,795 |
+| Plan 5 | 9% | £25,000 | £25,000 (frozen by SLC) | £25,000 (fixed to April 2027) |
+| Postgraduate Loan | 6% | £21,000 | £21,000 | £21,000 (still frozen) |
 
-**Reviewer note on 2026-27:** Verify the 2026-27 thresholds when HMRC announces them (typically published in the year preceding the tax year via SLC and HMRC guidance). Do not commit to figures until officially published.
+**Note on the 2026-27 column.** It was carried as "TBC -- HMRC publishes annually"
+until this update. The 2026-27 year began on 6 April 2026 and the thresholds are
+published on GOV.UK, so the placeholder had outlived its purpose. The figures
+above are read off GOV.UK "Repaying your student loan -- what you pay", which
+shows the thresholds currently in force. **The accountant review recorded at the
+top of this file covers the 2024-25 and 2025-26 columns; the 2026-27 column has
+not been through that review.**
+
+Plan 5's £25,000 is fixed to April 2027 and rises with RPI after that. The
+Postgraduate threshold has now been held at £21,000 for a third consecutive
+year, so a guide that assumes it moves with the others will be wrong.
 
 - **Plan 1 eligibility** — pre-2012 England/Wales undergrads; Northern Ireland students (all years); Scotland/NI undergrads pre-2024.
 - **Plan 2 eligibility** — England/Wales 2012-2023 undergrads.
@@ -84,7 +94,7 @@ This block is generated from verified `skill_facts` — edit the facts, not the 
 | Unknown PAYE deductions | Ask -- PAYE offset affects SA balance |
 | Unknown unearned income | Ask if total unearned > £2,000 (below £2,000 = excluded) |
 | Unknown overseas status | Flag for reviewer -- SLC applies country-specific thresholds |
-| 2026-27 threshold unknown | Flag "verify when HMRC announces" |
+| 2027-28 threshold unknown | Flag "verify when HMRC announces"; do not carry the 2026-27 figure forward silently |
 
 ## Section 2 -- Required inputs and refusal catalogue
 
@@ -101,7 +111,7 @@ This block is generated from verified `skill_facts` — edit the facts, not the 
 - **R-UK-SL-1 -- Plan type unknown** — Trigger: client does not know plan type. Message: "Do not guess the plan type. Direct the client to check at repaymentplan.studentloanrepayment.co.uk or call SLC directly."
 - **R-UK-SL-2 -- Overseas borrower** — Trigger: client lives outside the UK for 3+ months. Message: "SLC conducts an overseas income assessment with country-specific thresholds. Do not use UK thresholds. Escalate to SLC directly."
 - **R-UK-SL-3 -- Loan cancellation or SLC error** — Trigger: client disputes loan balance or believes SLC has made an error. Message: "Loan balance disputes and administrative errors must be resolved directly with SLC. Out of scope."
-- **R-UK-SL-4 -- 2026-27 thresholds not yet published** — Trigger: a 2026-27 computation requires a specific threshold that HMRC has not yet announced. Message: "The 2026-27 thresholds are published annually by HMRC and may not yet be confirmed. Flag for reviewer and verify before finalising any computation."
+- **R-UK-SL-4 -- threshold for a year not yet published** — Trigger: a computation needs a threshold for a tax year HMRC has not yet announced (2027-28 onward at the time of writing). Message: "Thresholds are published annually by HMRC and the year you are asking about is not yet confirmed. Flag for reviewer and verify before finalising any computation." This refusal does **not** apply to 2026-27, whose thresholds are published and tabulated in Section 1.1.
 
 ## Section 3 -- Payment pattern library
 
@@ -209,7 +219,7 @@ Matches "ERUDIO STUDENT LOANS" (pattern 3.2). This is a pre-1998 mortgage-style 
 
 ## Section 4A -- Three-year worked example: Plan 2 + PGL SA filer
 
-Hypothetical: a self-employed UK consultant with both a Plan 2 undergraduate loan and a Postgraduate Loan. Trading profits are the only relevant income (no employment, no unearned income above £2,000). Demonstrates how the SA deduction shifts as thresholds rise (2026-27 figures pending HMRC confirmation).
+Hypothetical: a self-employed UK consultant with both a Plan 2 undergraduate loan and a Postgraduate Loan. Trading profits are the only relevant income (no employment, no unearned income above £2,000). Demonstrates how the SA deduction shifts as thresholds rise.
 
 Assume trading profits of **£42,000** in each of the three years (held constant to isolate the threshold effect).
 
@@ -237,15 +247,22 @@ Change from 2024-25: **down £105.75** (Plan 2 threshold rose by £1,175 -> £1,
 
 ### Year 3 -- 2026-27
 
-Plan 2 threshold: **TBC -- HMRC publishes annually.**
-PGL threshold: **TBC -- HMRC publishes annually** (frozen at £21,000 for two consecutive years; reviewer should verify whether the freeze continues).
+**Year 3 calculation table**
 
-**Provisional behaviour (do not finalise until thresholds published):**
-- If Plan 2 threshold rises again, the Plan 2 component falls further.
-- If PGL threshold is unfrozen and rises, the PGL component falls; if it stays at £21,000, PGL repayment remains £1,260.00.
-- Flag in working paper: "2026-27 thresholds pending HMRC announcement -- verify before filing."
+| Component | Threshold | Income above | Rate | Repayment |
+| --- | --- | --- | --- | --- |
+| Plan 2 | £29,385 | £12,615 | 9% | £1,135.35 |
+| PGL | £21,000 | £21,000 | 6% | £1,260.00 |
+| **Total via SA** |  |  |  | **£2,395.35** |
 
-**Key takeaway:** With constant profits of £42,000, the SA deduction shifts modestly year-on-year as Plan 2 thresholds rise. The PGL component is currently insensitive to threshold movement because PGL is frozen. The 2026-27 figures cannot be finalised until HMRC publishes them.
+Change from 2025-26: **down £82.35** (Plan 2 threshold rose by £915 -> £915 x 9% = £82.35 less on Plan 2; PGL threshold unchanged for a third year).
+
+**Key takeaway:** With constant profits of £42,000, the SA deduction falls a
+little each year as the Plan 2 threshold rises -- £2,583.45, then £2,477.70, then
+£2,395.35. The PGL component has not moved at all across the three years,
+because £21,000 has been frozen throughout. That is the point of the example:
+the two loans behave differently, and a client with both cannot reason about
+the total from one plan's movement.
 
 ## Section 5 -- Tier 1 rules
 
@@ -340,9 +357,9 @@ PGL threshold: **TBC -- HMRC publishes annually** (frozen at £21,000 for two co
 
 - **T2-5** — Trigger: Client asks whether to make voluntary overpayments. Action: Flag for reviewer. Consider interest rates, write-off proximity, and opportunity cost.
 
-### T2-6 -- 2026-27 threshold not yet published
+### T2-6 -- threshold for a year HMRC has not yet announced
 
-- **T2-6** — Trigger: Computation requires a 2026-27 threshold that HMRC has not announced. Action: Use the 2025-26 figure as a placeholder, clearly label "PROVISIONAL -- 2026-27 threshold pending HMRC announcement", and flag for reviewer to revisit once HMRC publishes.
+- **T2-6** — Trigger: Computation requires a threshold for a tax year HMRC has not announced (2027-28 onward at the time of writing). Action: Use the latest published figure as a placeholder, clearly label "PROVISIONAL -- threshold pending HMRC announcement", and flag for reviewer to revisit once HMRC publishes. This does **not** apply to 2026-27, whose thresholds are published (Section 1.1).
 
 ## Section 7 -- Excel working paper template
 
@@ -422,11 +439,14 @@ If the client provides only a bank statement:
 
 | Plan | Rate | 2024-25 | 2025-26 | 2026-27 |
 | --- | --- | --- | --- | --- |
-| Plan 1 | 9% | £24,990 | £26,065 | TBC -- HMRC publishes annually |
-| Plan 2 | 9% | £27,295 | £28,470 | TBC -- HMRC publishes annually |
-| Plan 4 | 9% | £31,395 | £32,745 | TBC -- HMRC publishes annually |
-| Plan 5 | 9% | £25,000 | £25,000 (frozen) | TBC -- HMRC publishes annually |
-| Postgraduate Loan | 6% | £21,000 | £21,000 | TBC -- HMRC publishes annually |
+| Plan 1 | 9% | £24,990 | £26,065 | £26,900 |
+| Plan 2 | 9% | £27,295 | £28,470 | £29,385 |
+| Plan 4 | 9% | £31,395 | £32,745 | £33,795 |
+| Plan 5 | 9% | £25,000 | £25,000 (frozen) | £25,000 (fixed to Apr 2027) |
+| Postgraduate Loan | 6% | £21,000 | £21,000 | £21,000 (still frozen) |
+
+This repeats Section 1.1. Keep the two in step: they were out of step until this
+update, when the 2026-27 column was filled in Section 1.1 and left as TBC here.
 
 ### Test suite (2025-26 figures unless stated)
 
@@ -449,7 +469,7 @@ If the client provides only a bank statement:
 **Test 9 (3-year sensitivity):** Plan 2 + PGL, profits £42,000 each year.
 - 2024-25: Plan 2 £1,323.45 + PGL £1,260.00 = £2,583.45.
 - 2025-26: Plan 2 £1,217.70 + PGL £1,260.00 = £2,477.70.
-- 2026-27: Provisional pending HMRC publication of thresholds.
+- 2026-27: Plan 2 £1,135.35 + PGL £1,260.00 = £2,395.35.
 
 ### Prohibitions
 

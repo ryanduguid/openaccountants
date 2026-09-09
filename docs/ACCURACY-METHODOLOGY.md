@@ -394,9 +394,43 @@ the two. The rows now point forward — "pay period in 2027 or later: apply the
 rather than into a wrong answer.
 
 The general form: any guidance conditioned on "until X is published" needs a
-check that fires when X is published. Grepping the corpus for "until", "not yet
-published", "when available" and "pending publication" beside a year is the
-search that finds them, and it is not yet a script.
+check that fires when X is published. That search is now
+`scripts/check-expired-rules.py`, and writing it was more instructive than
+running it.
+
+The first pattern returned 286 hits, the second 63, the third 45. None of those
+numbers was about the corpus. "TBC" is the Transfer Balance Cap through the
+whole Australian pack. "As of May 2026" is Morocco dating a research position
+honestly, which is the behaviour this repo wants rather than a defect. "Until
+2035" is Bermuda's tax assurance and "until 2029" Albania's zero band, both
+statements of law. Latvia's "do NOT use the 2026 figure for a 2025 computation"
+is the *opposite* of the defect. Reading a whole line for a date let "ITAA 1997"
+supply the year for unrelated text, so one rule was reported as waiting on 1997.
+
+Tightening cost recall, and the docstring says where. Uruguay's conservative
+default -- "apply FY2025 values and flag; do not invent 2026 figures" -- is a
+real expired rule that the finished check does not catch, because every phrasing
+that would catch it also catches Latvia. The file still surfaces on a different
+line, which is the right way to read the output: a hit points at a file worth
+reading, not at the only bad line in it.
+
+Two things the check found immediately. Paraguay's minimum wage had moved on
+1 July 2026 (Decreto 6225, +5% to PYG 3,044,000) under a guide still saying the
+July-2026 adjustment was expected but unconfirmed, and the minimum wage is the
+IPS contribution floor, so the rule understated contributions on every wage at
+or near it. And the UK student loan guide's 2026-27 threshold column was still
+five cells of "TBC -- HMRC publishes annually" five months into the 2026-27 tax
+year, in a tier 1 guide whose recorded accountant review is dated 3 June 2026 --
+two months after that year began. A human sign-off passed over it, which is the
+argument for checking this by date rather than by reading.
+
+Then it caught a fix of mine. Run against the UK guide immediately after that
+guide was corrected, it found a second copy of the same threshold table two
+hundred lines further down, still TBC in all five cells, plus a refusal code and
+a three-year sensitivity test built on the same placeholder. The first fix had
+been to the table a reader sees first. That is the ninth time on this branch
+that a checker has been evidence about the checker, and the first time one has
+been evidence about me.
 
 ### The best lead in the corpus is the corpus's own doubt
 
