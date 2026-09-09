@@ -58,8 +58,16 @@ RULE = re.compile(r'\b(\d{1,2})(?:st|nd|rd|th)?\s+(day|month|days|months)\b'
 # Ireland and Canada altogether.
 BARE = re.compile(r'\b(filing deadline|lodgment deadline|lodgement deadline|'
                   r'filing due date|self-lodge deadline|return deadline)\b', re.I)
-SLUG = re.compile(r'(individual|personal|income-tax|corporate-tax|company-tax|'
-                  r'corporate-income-tax|tax-return|return)', re.I)
+# Which files may use a bare label. An allowlist of slugs was tried first and
+# silently lost jurisdictions: mexico-crypto-tax and vietnam-pit both state
+# "| Filing deadline | ... |" and matched none of individual/personal/income-tax,
+# so Mexico and Vietnam had no deadline in the column at all. The list below
+# names the guides that file a DIFFERENT return, and everything else is let
+# through.
+SLUG_BLOCK = re.compile(r'(vat|gst|sales-tax|payroll|withholding|paye|social|'
+                        r'contribution|invoice|bookkeeping|estimated|instal|'
+                        r'property|customs|excise|stamp|transfer-pricing|'
+                        r'formation|financial-statement)', re.I)
 
 # A parenthetical naming the year-end, which qualifies the label rather than
 # giving the deadline. Madagascar files "(30 June year-end) -- 15 November" and
@@ -105,7 +113,7 @@ def deadline_in(line, slug=''):
     # 1964" and was reported as filing on 19 March.
     line = YEAREND.sub(' ', CITE.sub(' ', line))
     m = LABEL.search(line)
-    if not m and slug and SLUG.search(slug):
+    if not m and slug and not SLUG_BLOCK.search(slug):
         m = BARE.search(line)
     if not m:
         return None
@@ -200,6 +208,10 @@ def main():
             # is one too, and taking parts[2] blindly filed it under its own
             # filename. `us-pte-state-matrix.md` appeared as a country.
             jur = parts[2] if len(parts) >= 4 else parts[1]
+            # These folders carry many jurisdictions' dates on purpose, so they
+            # always disagree with themselves and never mean anything by it.
+            if jur in ('orchestrator', 'cross-border', 'verticals', 'integrations'):
+                continue
             for line in open(p, encoding='utf-8', errors='replace'):
                 got = deadline_in(line, fn[:-3])
                 if got:
