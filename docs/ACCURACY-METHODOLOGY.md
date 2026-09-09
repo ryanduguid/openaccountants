@@ -360,6 +360,46 @@ The rule this reinforces, for the seventh time: read the guide, and read what it
 cites, before you change a number. A count of agreeing sources is not evidence
 when they are all copying the same simplification.
 
+### Morocco: the guide was right, and that was not the end of the job
+
+Two Moroccan leads came out of the expired-rule queue and neither produced a
+correction. Both produced an improvement, which is worth separating.
+
+The e-invoicing decree under CGI art. 145-IX was still unpublished when
+re-checked in September 2026 — the draft sits with the Secrétariat Général du
+Gouvernement and nothing has reached the Bulletin Officiel. Law 42.25 on
+crypto-assets is still an avant-projet, dated 5 August 2025 and made public that
+November, not adopted; Bank Al-Maghrib's governor said in July 2026 only that
+adoption was in progress, so the widely-reported "mid-2026 adoption" did not
+happen. The guides said both positions were unsettled and they were right.
+
+So the finding is not that anything was wrong. It is that "the decree is
+pending" was doing less work than it looked like it was doing.
+
+Search for Moroccan e-invoicing and you get a detailed calendar from a dozen
+advisory sites and vendors: 1 January 2026 for large IS taxpayers, 1 July 2026
+for medium enterprises, 1 January 2027 for PME/TPE, sometimes a MAD 200M
+threshold for the first wave. None of it comes from a published DGI document.
+One of the firms publishing a calendar says so on its own page. And the calendar
+fails two internal checks: a mandate said to have started on 1 January 2026
+cannot be squared with the Directeur Général des Impôts saying in April 2026
+that launch was planned for later in the year, and the first date has now passed
+with no decree, so anyone who followed it was told to comply with a rule that
+does not exist.
+
+An agent reading "the decree is pending" and then searching will find that
+calendar and believe it, because it is specific, confident and repeated. The
+guide now names the calendar, says where it does not come from, and says why it
+does not hold together. That is the Fiji treatment applied to a pending rule
+rather than to a conflicting rate: naming both positions and which way to err
+beats recording that the position is uncertain.
+
+Both files also now carry the date they were re-checked rather than the date
+they were written. "As of April 2026" in a September file tells a reader the
+position is five months old and nothing else. "Re-checked September 2026 and
+unchanged" tells them somebody looked. It is the same sentence's worth of
+characters and a different amount of information.
+
 ### Work the queue by who reads it, not by who hedges most
 
 The hedge queue sorted by count puts Central African Republic first with 27 and

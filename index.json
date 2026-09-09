@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-09T17:57:25+00:00",
+ "generated_at": "2026-09-09T18:00:26+00:00",
  "counts": {
   "guides": 1953,
   "jurisdictions": 244,
@@ -13408,7 +13408,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2025",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-09"
   },
   {
    "slug": "ma-cpu",
@@ -13432,7 +13432,7 @@
    "verified_by": null,
    "reviewed_by": null,
    "tax_year": "2026",
-   "last_updated": "2026-07-13"
+   "last_updated": "2026-09-09"
   },
   {
    "slug": "ma-einvoice",

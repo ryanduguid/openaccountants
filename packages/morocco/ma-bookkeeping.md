@@ -4,7 +4,7 @@ description: Use this skill whenever asked about record-keeping, bookkeeping, or
 version: 1.0
 jurisdiction: MA
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-09
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -45,7 +45,7 @@ This skill replies in the user's language. Moroccan users mix English, French, a
 | Trigger to full accounts | Turnover exceeds the CPU/RNS ceiling for **2 consecutive years**, or option for RNR/RNS, or company form *(verify thresholds below)* |
 | Mandatory invoice ID | **ICE** — Identifiant Commun de l'Entreprise, **15 digits** *(verify length 9+4+2)* |
 | Invoice legal basis | **CGI Art. 145** (mandatory mentions) *(verify article)* |
-| E-invoicing (facturation électronique) | Legal basis **CGI Art. 145-IX**; **CTC / pre-clearance** model via DGI platform; **implementing decree not yet published as of April 2026 — dates and thresholds pending** *(verify on publication)* |
+| E-invoicing (facturation électronique) | Legal basis **CGI Art. 145-IX**; **CTC / pre-clearance** model via DGI platform; **implementing decree still not published as of September 2026** — re-checked, the draft is with the Secrétariat Général du Gouvernement and nothing has appeared in the Bulletin Officiel. Dates and thresholds remain undefined. **Ignore the calendars circulating online — see Section 4** |
 | Free e-invoice tool (small businesses) | `fatourati.gov.ma` *(verify)* |
 | Teleservices | **SIMPL** (SIMPL-IR, SIMPL-TVA, SIMPL-IS) on tax.gov.ma; e-filing/e-payment mandatory since **1 Jan 2017** *(verify)* |
 | Retention period | **10 years** — accounting records & supporting documents (CGI Art. 211) *(verify)* |
@@ -118,7 +118,25 @@ Auto-entrepreneurs and CPU taxpayers who are outside VAT still issue invoices bu
 - **E-invoicing model** — Model — a clearance / CTC (Continuous Transaction Controls) system: invoices are pre-validated by the DGI platform before they reach the client *(verify)*.
 - **E-invoicing formats** — Formats — structured XML (UBL 2.1 and CII); a plain PDF is not sufficient *(verify)*.
 - **E-invoicing phasing** — Phasing — expected to start with large enterprises (B2B), then extend to SMEs / TPEs and finally B2C.
-- **Critical status of decree** — As of April 2026 the implementing decree was not yet published — so the exact go-live dates, the category calendar, and the turnover thresholds are NOT confirmed. Do not state a firm date for any taxpayer category. Tell the user the decree is pending and to verify with the DGI *(verify on publication of the décret / Loi de Finances texts)*.
+- **Critical status of decree** — Re-checked in **September 2026**: the implementing decree is **still not published**. The draft sits with the Secrétariat Général du Gouvernement and nothing has appeared in the Bulletin Officiel. The go-live dates, the category calendar and the turnover thresholds are therefore still undefined. Do not state a firm date for any taxpayer category. The Directeur Général des Impôts has said publicly that e-invoicing will come into force during 2026, beginning with large enterprises in B2B, and that is the most that can be asserted.
+
+> **A warning about the calendars you will find if you search.** Numerous
+> Moroccan advisory sites and e-invoicing vendors publish a detailed calendar —
+> commonly 1 January 2026 for large IS taxpayers, 1 July 2026 for medium
+> enterprises, 1 January 2027 for PME/TPE under MAD 10M and auto-entrepreneurs
+> over MAD 500,000, sometimes with a MAD 200M threshold for the first wave.
+> **None of it comes from a published DGI document or from the Bulletin
+> Officiel.** One of the firms publishing a calendar says so on the same page.
+>
+> Two things give it away. The dates are inconsistent with the DGI's own
+> position: a mandate said to have begun on 1 January 2026 cannot be squared
+> with the Directeur Général saying in April 2026 that launch is planned for
+> later in the year. And the first date has now passed with no decree, so a
+> client told to comply by 1 January 2026 was told to comply with a rule that
+> does not exist.
+>
+> Treat these calendars as vendor planning assumptions. They may well turn out
+> close to right, and that is not the same as being the law.
 
 ### 4.1 Document retention — 10 years
 
@@ -189,7 +207,7 @@ Escalate to the human expert-comptable / comptable agréé (do not auto-decide):
 
 ## PROHIBITIONS
 
-- **Prohibitions list** — - Do NOT state a firm e-invoicing go-live date or category threshold — the implementing decree was unpublished as of April 2026; say it is pending and direct the user to the DGI. - Do NOT tell an RNS/RNR taxpayer they may skip CGNC double-entry accounting. - Do NOT tell an auto-entrepreneur they must keep CGNC books, a balance sheet, or a purchase ledger for tax — the AE keeps a register of receipts only. - Do NOT confirm an invoice as compliant if the ICE (seller, or B2B client) is missing or invalid. - Do NOT advise retention shorter than 10 years. - Do NOT quote ICE structure, invoice-mention lists, penalty amounts, or thresholds as settled — present items marked (verify) as provisional pending reviewer confirmation against the current CGI / Loi de Finances 2026. - Do NOT compute the tax itself here — defer to ma-auto-entrepreneur, ma-cpu, ma-income-tax, and morocco-vat. - Do NOT replace a licensed Moroccan expert-comptable / comptable agréé.
+- **Prohibitions list** — - Do NOT state a firm e-invoicing go-live date or category threshold — the implementing decree was still unpublished when re-checked in September 2026, and the calendars circulating online are not official (Section 4); say it is pending and direct the user to the DGI. - Do NOT tell an RNS/RNR taxpayer they may skip CGNC double-entry accounting. - Do NOT tell an auto-entrepreneur they must keep CGNC books, a balance sheet, or a purchase ledger for tax — the AE keeps a register of receipts only. - Do NOT confirm an invoice as compliant if the ICE (seller, or B2B client) is missing or invalid. - Do NOT advise retention shorter than 10 years. - Do NOT quote ICE structure, invoice-mention lists, penalty amounts, or thresholds as settled — present items marked (verify) as provisional pending reviewer confirmation against the current CGI / Loi de Finances 2026. - Do NOT compute the tax itself here — defer to ma-auto-entrepreneur, ma-cpu, ma-income-tax, and morocco-vat. - Do NOT replace a licensed Moroccan expert-comptable / comptable agréé.
 
 ## Disclaimer
 
