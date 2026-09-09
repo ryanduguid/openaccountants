@@ -1,10 +1,11 @@
 ---
 name: au-gst-bas
 description: Australian Business Activity Statement (BAS) — non-GST sections. Covers PAYG withholding (labels W1-W5), PAYG income tax instalments (labels T1-T9), FBT instalments (label F1), and PAYG withholding reconciliation. Complements australia-gst.md which covers GST labels (1A-9).
-version: 1.2
+version: 1.3
 jurisdiction: AU
 tax_year: 2025
-last_updated: 2026-08-11
+tax_year_notes: "2025–26"
+last_updated: 2026-09-10
 review_status: pending_review
 category: international
 tier: 2
@@ -15,7 +16,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## AU GST Bas
 
-## Australia BAS — Non-GST Sections v1.1
+## Australia BAS: Non-GST Sections v1.3
 
 ## What this file is
 
@@ -25,7 +26,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 This file covers the non-GST sections of the Business Activity Statement. For GST labels (1A through 9), see `australia-gst.md` in this directory.
 
-**Tax year coverage.** This skill targets the **2024-25 income year** (1 July 2024 to 30 June 2025).
+**Tax year coverage.** This skill targets the **2025–26 income year** (1 July 2025 to 30 June 2026).
 
 **The reviewer is the customer of this output.** This skill assumes a credentialed reviewer reviews and signs the return. The skill produces working papers and a brief, not a return.
 
@@ -59,8 +60,8 @@ This skill does NOT cover:
 
 | Situation | BAS frequency | Source |
 | --- | --- | --- |
-| GST turnover < $10M, no monthly election | Quarterly | TAA 1953 Sch 1 s 31-5 |
-| GST turnover >= $10M | Monthly | TAA 1953 Sch 1 s 31-5 |
+| GST turnover < $20M, no monthly election | Quarterly | TAA 1953 Sch 1 s 31-5 |
+| GST turnover >= $20M | Monthly | TAA 1953 Sch 1 s 31-5 |
 | Voluntary monthly reporter | Monthly | ATO election |
 | PAYG withholding-only (no GST) | Quarterly | TAA 1953 Sch 1 Div 16 |
 
@@ -98,7 +99,7 @@ This skill does NOT cover:
 | --- | --- | --- |
 | Automatic entry — individuals (including sole traders) | The ATO uses the latest tax return. Automatic entry requires all of: instalment income of $4,000 or more; tax payable on the latest notice of assessment of $1,000 or more; and estimated (notional) tax of $500 or more. | [ATO — Starting PAYG instalments](https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/payg-instalments/starting-payg-instalments) |
 | Instalment rate | As notified by the ATO (varies per taxpayer) | ATO instalment rate notice |
-| GDP-adjusted rate | ATO may adjust the instalment rate annually by a GDP uplift factor | TAA 1953 Sch 1 s 45-405 |
+| GDP-adjusted amount | GDP adjustment is part of the notified instalment-amount calculation, not an automatic increase in T2 | [ATO PAYG variation instructions](https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/payg-instalments/how-to-vary-your-payg-instalments) |
 | GDP uplift factor 2024-25 | 6% | [ATO — GDP adjustment for 2024-25 GST and PAYG instalments](https://softwaredevelopers.ato.gov.au/gdp-adjustment-2024-25-gst-and-payg-instalments) |
 | Voluntary entry | A person new to business, or expecting business and investment income over the threshold, can request voluntary entry to PAYG instalments. | [ATO — Starting PAYG instalments](https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/payg-instalments/starting-payg-instalments) |
 
@@ -124,12 +125,14 @@ Two methods are available:
 
 #### Method A — Instalment amount method (label T7)
 
-- **Instalment amount method steps** — **Step 1.** ATO notifies the instalment amount on the pre-filled BAS. **Step 2.** The taxpayer reports the notified amount at T7 (or varies it). **Step 3.** If varying, the taxpayer calculates estimated tax for the year divided by the number of remaining quarters and reports at T7 with a reason for variation at T3.  _(TAA 1953 Sch 1 s 45-5)_
+- **Instalment amount method steps:** Use the notified T7 amount unless varying. For a standard quarterly amount variation, enter estimated annual tax at T8; calculate the cumulative 25%, 50%, 75% or 100% share for the quarter, subtracting earlier instalments and applying the form’s treatment of earlier credits; enter the varied amount at T9, reason at T4 and payable amount at 5A. A zero or negative result needs the ATO credit instructions, including 5B where applicable. Do not divide annual tax by the remaining quarters. [ATO PAYG variation instructions](https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/payg-instalments/how-to-vary-your-payg-instalments).
+
+Example: at the third standard quarterly instalment, an annual estimate of $8,000 gives a cumulative $6,000 target (75%). If earlier instalments total $3,000 and there are no earlier credits, the current varied amount is $3,000. This is not $8,000 divided by two remaining quarters. Follow the ATO variation instructions above.
 
 #### Method B — Instalment rate method (labels T1-T2)
 
-- **Instalment rate method steps** — **Step 1.** Calculate instalment income for the quarter (T1). Instalment income = gross business and investment income. It does NOT include salary/wages (already subject to PAYG withholding), GST, or capital gains. **Step 2.** Multiply T1 by the ATO-notified instalment rate (T2). **Step 3.** Result = T1 x T2 = instalment amount payable (T9). **Step 4.** The taxpayer may vary the rate (enter new rate at T2) if they believe the notified rate will result in over-payment. A general interest charge (GIC) applies if the varied amount is less than 85% of the correct amount.  _(TAA 1953 Sch 1 s 45-120)_
-- **Instalment amount formula** — T1 x T2 = instalment amount payable (T9)  _(TAA 1953 Sch 1 s 45-120)_
+- **Instalment rate method steps:** Establish instalment income at T1 and the notified rate at T2. If varying, enter the new rate at T3 and reason at T4. Multiply T1 by the applicable rate and enter the result at T11 and 5A as instructed. Exclude salary, GST and capital gains from T1. Check the variation shortfall and GIC rules. [ATO PAYG variation instructions](https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/payg-instalments/how-to-vary-your-payg-instalments).
+- **Rate-method formula:** T11 = T1 × applicable percentage rate, using T3 if validly varied, otherwise T2. Follow the issued statement for 5A. [ATO PAYG variation instructions](https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/payg-instalments/how-to-vary-your-payg-instalments).
 
 ### 4.3 FBT instalment (label F1)
 
@@ -137,13 +140,13 @@ Two methods are available:
 
 ### 4.4 Net BAS payable / refundable
 
-- **Net BAS payable formula** — Total BAS payable = GST payable (from australia-gst.md labels) + W5 + T9 (or T7) + F1 - any credits.  _(australia-gst.md)_
+- **Net BAS payable:** Sum the completed payment labels, including 1A, 4, 5A and 6A as applicable; subtract credit labels including 1B, 5B and 6B. Use the statement’s total labels and exclude amounts, such as large-withholder payments, paid separately. Do not treat an annual estimate at T8 as a tax payment.
 
 ## Section 5 — Edge cases and special rules
 
 ### 5.1 Variation of PAYG instalments
 
-- **PAYG instalment variation and GIC exposure** — A taxpayer may vary their instalment amount or rate downward if they expect lower income. **GIC exposure:** If the varied amount is less than 85% of the correct instalment, a general interest charge applies on the shortfall. The GIC rate is updated quarterly by the ATO (base rate = 90-day bank bill rate + 7%). **Variation uplift factor:** If the taxpayer varies for two or more consecutive quarters, the ATO may apply a higher GDP uplift factor in the following year.  _(TAA 1953 Sch 1 s 45-205)_
+- **PAYG instalment variation and GIC:** Apply the ATO’s method-specific 85% shortfall test to a variation using expected full-year income and tax. Document the estimate and review it as circumstances change. Repeated variations do not themselves change the published GDP adjustment factor. [ATO PAYG variation instructions](https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/payg-instalments/how-to-vary-your-payg-instalments).
 
 ### 5.2 First year of business
 
@@ -167,11 +170,11 @@ Before delivering output, verify:
 
 - [ ] Applicable PAYG withholding labels agree with payroll records, STP data and any ATO pre-fill
 - [ ] PAYG instalment income (T1) excludes salary, GST, and capital gains
-- [ ] The instalment rate (T2) matches the ATO notification or is validly varied
+- [ ] T2 matches the notification; any varied rate is at T3, with T4 reason and T11 result
 - [ ] FBT instalment (F1) is 25% of prior year FBT liability or validly varied
 - [ ] Lodgement due date has been correctly identified (including any tax agent extensions)
 - [ ] GST section cross-references to australia-gst.md output
-- [ ] Rates and thresholds match the 2024-25 income year
+- [ ] Rates and thresholds match the 2025–26 income year; the historical GDP row is not a current-year rate
 - [ ] Output format matches the base skill spec
 
 ## Section 7 — Disclaimer
