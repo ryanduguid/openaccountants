@@ -274,6 +274,51 @@ rather than trying to detect what it should. Nothing in this repo knows what a
 given statute charges. What it can know is that a guide naming three heads sits
 oddly beside one naming eight, and that the difference is worth an hour.
 
+### Three quarters of the corpus's citations are secondary, and it shows
+
+`scripts/list-source-mix.py` classifies every external link by whether it points
+at a tax authority or at a secondary source, ignoring the CTA block each guide
+ends with. The measurement:
+
+- **76% of citations are secondary** — 5,638 against 1,733 authority links.
+- One publisher, PwC's Worldwide Tax Summaries, carries about a third of all
+  external citations on its own. No authority comes close; the next largest is
+  the IRS at 140.
+- **41 of 189 jurisdictions cite no authority domain at all.** Every figure they
+  carry rests on a summary.
+
+That list is not a coincidence. Iceland, Slovakia, Mauritius, Laos and Libya are
+all on it, and all five produced defects on this branch that only an authority
+settled: Iceland's non-resident interest rate (Skatturinn says 12%, and 13% was
+a 2024-only figure), Slovakia's minimum-tax band (the Financial Administration
+says EUR 960 on taxable *revenues*, not EUR 940 on taxable income), Mauritius
+naming three of eleven withholding heads, Laos three of six.
+
+Two distinct failure modes sit behind this, both found on this branch:
+
+- **The summary's scope becomes the corpus's scope.** PwC's withholding page for
+  Turkey, Thailand and Austria is three-headed, so guides built from it are
+  three-headed, however faithfully they cite it. Austria's entire §99 EStG
+  charge — consultancy, hiring-out of labour, supervisory fees, performers, all
+  at 20% — is absent from the page.
+- **The summary's prose is not the collection agent's table.** Pakistan's
+  securities CGT is computed and deducted by NCCPL, whose TY 2026 notification
+  gives non-ATL rates as exactly double the ATL rates below 1 July 2025 and
+  equal to them above it. PwC describes a "not less than 15%" floor and KPMG a
+  normal-slab/29% treatment. Both describe the statute; neither is what gets
+  deducted. Three successive versions of that table in this repo were wrong,
+  two of them written during this very pass.
+
+The rule that follows is narrow enough to apply: **for a tax collected at
+source, read the collection agent's own notification before any summary of it.**
+NCCPL, ZIMRA's REV 5 remittance return and Trinidad's Board of Inland Revenue
+guide all publish the table they actually operate, and in each case it carried
+something no summary did.
+
+The checker ranks and never gates CI, because citing a summary is not a defect
+and an authority link does not prove the figures came from it. It measures
+exposure, not diligence.
+
 ### Three ways a guide comes to name three heads, and what each costs to fix
 
 The withholding-scope queue turned out to hold three distinct defects wearing

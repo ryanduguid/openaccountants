@@ -96,6 +96,39 @@ class FactCheckerTests(unittest.TestCase):
         self.assertNotRegex(output, r"queue:\s+broad\b")
         self.assertRegex(output, r"\bbroad\s+dividends, rent, services")
 
+    def test_source_mix_flags_jurisdictions_with_no_authority_citation(self):
+        # "onlypwc" rests entirely on a secondary summary; "mixed" also cites
+        # the authority. Only the first is listed. The CTA block every guide
+        # ends with must not count as a source either way.
+        cta = ("\n\n[openaccountants.com](https://www.openaccountants.com) "
+               "and https://calendly.com/oa/intro\n")
+        output = self.run_checker("list-source-mix.py", {
+            "onlypwc/cit.md": (
+                "- **Rate** - 20% _(https://taxsummaries.pwc.com/x/corporate)_\n"
+                "- **WHT** - 10% _(https://rivermate.com/guides/x)_\n" + cta
+            ),
+            "mixed/cit.md": (
+                "- **Rate** - 20% _(https://taxsummaries.pwc.com/y/corporate)_\n"
+                "- **WHT** - 10% _(https://www.irs.gov/pub/notice)_\n" + cta
+            ),
+        })
+        self.assertRegex(output, r"2 secondary, 0 authority\s+onlypwc")
+        self.assertNotRegex(output, r"\bmixed\b")
+        self.assertIn("citing no authority domain at all: 1", output)
+        self.assertIn("citations: 1 authority, 3 secondary", output)
+        # it ranks, it does not accuse
+        self.assertIn("ranks exposure, not diligence", output)
+
+    def test_source_mix_counts_a_collection_agent_as_an_authority(self):
+        # NCCPL computes and deducts Pakistan's securities CGT, so its
+        # notification outranks any summary of it — but it is a .com, so a
+        # bare government-domain test would score it as secondary.
+        output = self.run_checker("list-source-mix.py", {
+            "pk/cgt.md": "- **CGT** - 15% _(https://www.nccpl.com.pk/notice)_\n",
+        })
+        self.assertIn("citing no authority domain at all: 0", output)
+        self.assertIn("citations: 1 authority, 0 secondary", output)
+
     def test_solo_citations_rank_uncorroborated_instruments(self):
         # "lonely" leans on one instrument nobody else cites; "shared" cites an
         # instrument that appears in a second guide, so it is corroborated
