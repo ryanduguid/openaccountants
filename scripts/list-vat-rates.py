@@ -29,7 +29,46 @@ Checked externally so far (do not re-derive these from the corpus):
                        11/12 for non-luxury supplies, so 11% effective. CORRECT, and
                        stated with that nuance.
 
-Six of the nine were already right, which is the point of writing the check down:
+Second pass, against the PwC Worldwide Tax Summaries VAT rate chart, which covers
+about 150 territories in one page and is far cheaper than one lookup per country.
+All of these matched the corpus:
+
+  Peru 18, Ecuador 15, Bolivia 13, Dominican Republic 18, Costa Rica 13,
+  Guatemala 12, Honduras 15, El Salvador 13, Nicaragua 15, Mexico 16, Chile 19,
+  Argentina 21, Colombia 19, Barbados 17.5, Jamaica 15, Trinidad and Tobago 12.5,
+  Bahamas 10, Iceland 24, Albania 20, Serbia 20, Moldova 20, Ukraine 20,
+  North Macedonia 18, Bosnia 17, Kosovo 18, Montenegro 21, Georgia 18,
+  Armenia 20, Azerbaijan 18, Bangladesh 15, Cambodia 10, Laos 10, Mongolia 10,
+  Myanmar 5 (commercial tax, not VAT), Saudi Arabia 15, UAE 5, Bahrain 10,
+  Oman 5, Jordan 16, Lebanon 11, Morocco 20, Angola 14, Cameroon 19.25,
+  Senegal 18, Ivory Coast 18, Mozambique 16, Namibia 15, Mauritius 15,
+  Madagascar 20, Kenya 16, Egypt 14, Nigeria 7.5, Tunisia 19, Uruguay 22,
+  Venezuela 16, Israel 18, Greece 24, Pakistan 18 federal goods (15 provincial
+  services -- two different taxes), Ghana 15 headline / 20 effective.
+
+Wrong, and fixed:
+
+  * Fiji       12.5% from 1 Aug 2025. fj-income-tax said "15% (from 1 Aug 2024)",
+               wrong on rate and date, two changes stale.
+  * India      the 12% and 28% GST slabs were abolished 22 Sep 2025. india-gst
+               listed them as current in its rate table while its own body
+               recorded the abolition.
+  * Kazakhstan 16% from 1 Jan 2026. kazakhstan-vat said 12% in twenty places and
+               dated its worked examples April 2026.
+  * Zimbabwe   15.5% from 1 Jan 2026. zimbabwe-vat said 15% in twelve places
+               while zw-tax-overview knew about the rise.
+
+Open: Botswana. A rise to 14% -> 15% was proposed for 1 April 2025 and cannot be
+confirmed as enacted; PwC's 2026 chart still shows 14% and BURS serves a bot
+check instead of its rate page. The guides state 14% and say so.
+
+Note the shape of the four errors: every one is a jurisdiction where the overview
+guide had the right rate and the dedicated VAT guide -- the one an agent loads to
+do the work -- did not. That axis is what scripts/check-superseded-rates.py exists
+to sweep.
+
+Six of the nine in the first pass were already right, which is the point of
+writing the check down:
 "the corpus disagrees with itself" and "the corpus is wrong" are different
 questions, and a rate flagged here is a claim to verify, not a defect found.
 
