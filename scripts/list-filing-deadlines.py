@@ -61,6 +61,11 @@ BARE = re.compile(r'\b(filing deadline|lodgment deadline|lodgement deadline|'
 SLUG = re.compile(r'(individual|personal|income-tax|corporate-tax|company-tax|'
                   r'corporate-income-tax|tax-return|return)', re.I)
 
+# A parenthetical naming the year-end, which qualifies the label rather than
+# giving the deadline. Madagascar files "(30 June year-end) -- 15 November" and
+# was reported as filing on 30 June.
+YEAREND = re.compile(r'\([^()]*year[- ]end[^()]*\)', re.I)
+
 # A trailing source citation in the house _( ... )_ form.
 CITE = re.compile(r'_\([^)]*\)_\s*$')
 
@@ -98,7 +103,7 @@ def deadline_in(line, slug=''):
     # The house style ends a bullet with its source in _( ... )_, and those
     # carry dates. Monaco cites "Sovereign Ordinance no. 3.152 of 19 March
     # 1964" and was reported as filing on 19 March.
-    line = CITE.sub(' ', line)
+    line = YEAREND.sub(' ', CITE.sub(' ', line))
     m = LABEL.search(line)
     if not m and slug and SLUG.search(slug):
         m = BARE.search(line)
@@ -157,6 +162,9 @@ def selftest():
         else:
             assert not DATE.search(stated), (
                 'expected a rule, got a calendar date %r from: %s' % (stated, line))
+    # a year-end inside the label is not the deadline
+    assert deadline_in('- **CIT return filing deadline (30 June year-end)** - 15 November',
+                       'mg-corporate-income-tax') == ('corporate', '15 November')
     # a window names its opening first; the deadline is the far end
     # "Annual CIT return deadline" reaches the reader through the bare label,
     # since LABEL spells out income/tax and not every acronym in between.
