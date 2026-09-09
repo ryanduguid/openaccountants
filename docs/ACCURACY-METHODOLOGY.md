@@ -98,6 +98,34 @@ France all state one under their own name for it, and France's was four years
 out of date in fourteen places. A coverage number counts the phrasing a script
 knows, and the gap between that and the field is where this error was sitting.
 
+### The best lead in the corpus is the corpus's own doubt
+
+Ten withholding rates were checked against outside sources and four were wrong.
+Every one of the four sat on a line where the guide had already written
+"approx — confirm" or "sources vary". Belize said "sources vary 15%/25%" and
+they vary because interest and royalties are 25%. Trinidad and Tobago hedged
+its interest rate and had the dividend rates transposed onto it. Iceland led
+with 12% while its own hedge said PwC cites 13%. Ethiopia hedged the royalty
+split as residency when the split is by kind of royalty.
+
+A guide that doubts itself beats two guides that disagree, because someone has
+already done the work of noticing, and until now nothing acted on it.
+`scripts/list-hedged-claims.py` turns that into a queue. The corpus carries
+about 3,500 self-hedged lines; 907 of them attach a figure to a labelled fact,
+across 180 jurisdictions, and those are the ones a reader will act on.
+
+Volume there is not severity. Central African Republic tops the list because
+its pack was drafted from thin sources and says so on nearly every line, which
+is the guide behaving correctly. One hedge on a headline rate in a
+well-covered jurisdiction is worth more than twenty in a pack that hedges
+everything.
+
+Some will not settle, and Fiji shows what that should look like. Its dividend
+rate is 0% under a 2017 exemption and 15% under the Income Tax Act, with
+neither source retracting the other. The guide now names both, dates both, and
+says which way to err, because an under-deduction is the payer's liability
+while an over-deduction is the recipient's to reclaim.
+
 ### What the deadline pass has found so far
 
 Five of the first eight jurisdictions were wrong, and a reader had picked those
