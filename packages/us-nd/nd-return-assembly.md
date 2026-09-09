@@ -254,12 +254,12 @@ Every line below is a hard equality. Tolerance is $1 unless noted otherwise. A f
 | C-6 | Federal SE tax deduction (½ SE tax, Schedule 1 Line 15) is reflected in federal AGI and therefore federal taxable income; no ND add-back |
 | C-7 | Federal QBI deduction (§199A) IS effectively recognized at ND because ND starts at federal taxable income (post-QBI). No ND adjustment. Verify no double-deduction on ND-1SA. |
 | C-8 | Federal SE health insurance (§162(l)) is in federal AGI; no ND add-back |
-| C-9 | Federal taxable Social Security (Form 1040 Line 6b) → ND Schedule ND-1SA subtraction (ND fully exempts Social Security per `[VERIFY:]` N.D.C.C. §57-38-30) |
+| C-9 | Federal taxable Social Security (Form 1040 Line 6b) → ND Schedule ND-1SA subtraction. ND has fully exempted Social Security benefits from state income tax since 2021, at every income level — confirmed |
 | C-10 | U.S. government bond interest in federal Schedule B → ND-1SA subtraction |
 | C-11 | Non-ND state/muni bond interest in federal Schedule B → ND-1SA addition |
 | C-12 | Federal standard deduction (or federal itemized, whichever taken) is ALREADY embedded in Form 1040 Line 15 — ND does NOT add or take another deduction. Verify no duplication. |
 | C-13 | Federal age-65 additional standard deduction is embedded in Line 15 — flows through to ND with no separate ND senior deduction |
-| C-14 | Military retirement pay (1099-R coded for military retirement) → ND-1SA subtraction per `[VERIFY:]` N.D.C.C. §57-38-30(5); confirm only the military retirement portion is subtracted, not other 1099-R amounts |
+| C-14 | Military retirement pay (1099-R coded for military retirement) → ND-1SA subtraction. ND fully exempts military retirement pay: the subtraction equals the taxable amount of the benefits reported on the federal return, for retired US armed forces, Reserve and National Guard members and their surviving spouses — confirmed (ND Office of State Tax Commissioner, Income Tax: Military Service Members guideline). Subtract only the military retirement portion, not other 1099-R amounts |
 | C-15 | Job Service ND unemployment benefits taxable federally on Schedule 1 → ND-1SA subtraction `[VERIFY:]` 2025 schedule line and statutory authority |
 | C-16 | Renaissance Zone income: federal reporting unchanged; ND-1SA subtraction only for documented qualifying RZ income with project certification |
 | C-17 | Tribal reservation income (enrolled member): federal reporting unchanged; ND-1SA subtraction only with enrollment documentation and on-reservation sourcing |
@@ -567,8 +567,8 @@ treatment; else N/A]
 | ND-ASM-T1-04 | ND has no city or local individual income tax. Skip any city-return step. |
 | ND-ASM-T1-05 | The April 15, 2026 filing deadline applies. ND grants automatic 6-month extension when a federal Form 4868 is filed — no separate ND extension form required. |
 | ND-ASM-T1-06 | Extension to file is NOT extension to pay. Any ND balance due is still due April 15. |
-| ND-ASM-T1-07 | ND fully subtracts taxable Social Security benefits (ND-1SA) per `[VERIFY:]` N.D.C.C. §57-38-30. |
-| ND-ASM-T1-08 | ND fully subtracts military retirement pay per `[VERIFY:]` N.D.C.C. §57-38-30(5). |
+| ND-ASM-T1-07 | ND fully subtracts taxable Social Security benefits (ND-1SA). ND has fully exempted Social Security benefits from state income tax since 2021, at every income level — confirmed. |
+| ND-ASM-T1-08 | ND fully subtracts military retirement pay (ND-1SA), equal to the taxable amount reported federally — confirmed. |
 | ND-ASM-T1-09 | ND-1ES estimated payments are required if expected ND net tax liability is $1,000 or more (N.D.C.C. §57-38-62). |
 | ND-ASM-T1-10 | ND safe harbor: lesser of 100% of prior-year ND tax OR 90% of current-year ND tax. No 110%-of-AGI step. `[VERIFY:]` |
 | ND-ASM-T1-11 | ND conforms to federal §168(k) bonus depreciation — no add-back required. |
@@ -617,7 +617,7 @@ treatment; else N/A]
 - ND withholding: $360 (from MN W-2 employer who withheld ND under reciprocity)
 - ND estimated payments: $200 Q1, $200 Q2, $0 Q3, $0 Q4 → ND Schedule ND-1UT interest exposure
 - No dependents
-- Federal standard deduction (single, TY 2025): $15,750 `[VERIFY:]` OBBBA-updated
+- Federal standard deduction (single, TY 2025): $15,750 — confirmed (OBBBA-updated; the 2026 figure is $16,100)
 - No Renaissance Zone, no tribal, no military retirement, no farm averaging
 - No ND sales-tax registration
 
@@ -654,7 +654,7 @@ treatment; else N/A]
 - W-2 wages (MN employer): $12,000
 - Form 1040 Line 11 (AGI): $114,404 (after retirement, ½ SE tax,
   §162(l), and adding W-2 wages)
-- Form 1040 Line 12 (standard deduction, single): $15,750 `[VERIFY:]`
+- Form 1040 Line 12 (standard deduction, single): $15,750 — confirmed for TY 2025
 - Form 8995 QBI deduction: ~$8,050 (non-SSTB software dev; 20% of
   qualified business income subject to limits)
 - Form 1040 Line 13 (QBI): $8,050
