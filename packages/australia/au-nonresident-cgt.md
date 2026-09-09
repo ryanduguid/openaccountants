@@ -23,7 +23,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Applies to | Non-residents of Australia disposing of Australian assets |
 | CGT rate (non-resident) | **30% flat rate** on net gain (no 50% discount available) |
 | Key test | Taxable Australian Property (TAP) test |
-| Withholding | 12.5% of gross proceeds on TAP transactions > AUD $750,000 |
+| Withholding | 15% of gross proceeds on all TAP transactions, no minimum value (contracts entered into on or after 1 January 2025). Contracts before that date: 12.5% on property valued at AUD $750,000 or more |
 | Primary legislation | ITAA 1997 Div 855; TAA 1953 Sch 1 Subdiv 14-D |
 | Tax authority | ATO (ato.gov.au) |
 | Verified by | Pending — Australian CPA/CA sign-off required |
@@ -63,22 +63,22 @@ Non-residents are only subject to Australian CGT on **Taxable Australian Propert
 
 ## Section 5 — Foreign Resident Capital Gains Withholding (FRCGW)
 
-- **FRCGW obligation** — When a non-resident sells TAP with gross proceeds ≥ AUD $750,000, the buyer is required to withhold 12.5% of the gross proceeds and remit to the ATO.
+- **FRCGW obligation** — When a non-resident sells TAP, the buyer is required to withhold and remit to the ATO. For contracts entered into on or after 1 January 2025 the rate is 15% of gross proceeds and the AUD $750,000 threshold is removed, so it applies to every disposal regardless of value. For contracts entered into between 1 July 2017 and 31 December 2024, the rate is 12.5% and applies only where the property is valued at AUD $750,000 or more.
 - **FRCGW nature** — This is a payment on account (not a final tax). Actual tax liability is computed in the non-resident's Australian tax return.
 
 **FRCGW threshold table**
 
-| FRCGW threshold | AUD $750,000 |
+| FRCGW threshold | None for contracts from 1 January 2025 (was AUD $750,000 for contracts to 31 December 2024) |
 | --- | --- |
-| Withholding rate | 12.5% of gross proceeds |
+| Withholding rate | 15% of gross proceeds from 1 January 2025 (12.5% for contracts to 31 December 2024) |
 | Who withholds | The buyer (purchaser) |
 | Remittance deadline | Day of settlement |
 
-**Example**: Non-resident sells shares (TAP) for AUD $10M. Buyer withholds AUD $1.25M (12.5%). Net gain is, say, AUD $8M. Australian tax at 30% = AUD $2.4M. The $1.25M already withheld is applied — balance payable AUD $1.15M via Australian tax return.
+**Example**: Non-resident sells shares (TAP) for AUD $10M under a contract entered into after 1 January 2025. Buyer withholds AUD $1.5M (15%). Net gain is, say, AUD $8M. Australian tax at 30% = AUD $2.4M. The $1.5M already withheld is applied — balance payable AUD $0.9M via Australian tax return.
 
 ## Section 6 — Clearance Certificate
 
-- **Clearance certificate for resident sellers** — If the seller is an Australian resident (not a foreign resident), the seller can apply for a clearance certificate from the ATO to confirm residency, relieving the buyer of the withholding obligation.
+- **Clearance certificate for resident sellers** — If the seller is an Australian resident (not a foreign resident), the seller can apply for a clearance certificate from the ATO to confirm residency, relieving the buyer of the withholding obligation. Because the $750,000 threshold was removed from 1 January 2025, an Australian resident vendor now needs a clearance certificate for every property contract, whatever the price.
 - **Variation for non-resident sellers** — If the seller IS a non-resident but believes no tax is payable (e.g. asset is not TAP, or gain is nil due to losses), the seller can apply for a variation to reduce the withholding amount.
 
 Applications: via ATO online portal (myGov / Tax Agent portal). Processing time: 14-28 days typically.

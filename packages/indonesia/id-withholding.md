@@ -110,7 +110,7 @@ This block is generated from verified `skill_facts` — edit the facts, not the 
 | Recipient legal name and tax residence | Determines PPh 23 (resident) vs PPh 26 (non-resident); also whether DGT Form is required |
 | Recipient NPWP (if resident) | Determines whether PPh 23 doubles to 4% / 30% |
 | Nature of payment (jasa, sewa, royalti, bunga, dividen, etc.) | Determines article and whether final or creditable |
-| Gross contract value, VAT-exclusive | Base excludes PPN; if invoice is gross-of-VAT, strip the 12% PPN first |
+| Gross contract value, VAT-exclusive | Base excludes PPN; if invoice is gross-of-VAT, strip the PPN first — effective 11% for non-luxury supplies under PMK 131/2024, 12% only for PPnBM-listed luxury goods |
 | Date of payment OR accrual, whichever is earlier | Tax point under Pasal 23 ayat (4) |
 | For PPh 26 treaty: original Form DGT-1/DGT-2 signed by foreign tax authority, dated before payment | Treaty relief denied if DGT Form not held at tax point |
 | For construction services: SBU qualification class | Determines 1.75% / 2.65% / 4% rate under PP 9/2022 |
@@ -164,7 +164,7 @@ Refuse to compute withholding tax without ALL of the following:
 
 ### 3.4 Tax base
 
-- **Withholding base calculation** — The withholding base is the gross amount excluding PPN. If the invoice shows IDR 110,000,000 inclusive of 12% PPN, the PPh 23 base is IDR 110,000,000 / 1.12 = IDR 98,214,286, not IDR 110,000,000.
+- **Withholding base calculation** — The withholding base is the gross amount excluding PPN. If the invoice shows IDR 110,000,000 inclusive of PPN on a non-luxury service (effective 11% under PMK 131/2024), the PPh 23 base is IDR 110,000,000 / 1.11 = IDR 99,099,099, not IDR 110,000,000.
 - **Reimbursements treatment** — For reimbursements (reimbursable expenses), if the reimbursement is supported by third-party invoices in the name of the payer, it is excluded from the withholding base per SE-53/PJ/2009. If it is in the name of the service provider, it is included.  _(SE-53/PJ/2009)_
 
 ### 3.5 Exemptions
@@ -173,7 +173,7 @@ Refuse to compute withholding tax without ALL of the following:
 
 ### 3.6 Worked mini-example — PPh 23 on technical services
 
-PT ABC engages PT XYZ (resident, NPWP valid) for technical engineering. Invoice IDR 220,000,000 incl. 12% PPN. PPN component IDR 23,571,429 (220M × 12/112); tax base IDR 196,428,571; PPh 23 at 2% = IDR 3,928,571; net to PT XYZ IDR 216,071,429. PT ABC deposits IDR 3,928,571 by the 10th of the next month and issues Bupot PPh 23. Without NPWP: 4% = IDR 7,857,143.
+PT ABC engages PT XYZ (resident, NPWP valid) for technical engineering. Invoice IDR 220,000,000 incl. PPN at the effective 11% (non-luxury service). PPN component IDR 21,801,802 (220M × 11/111); tax base IDR 198,198,198; PPh 23 at 2% = IDR 3,963,964; net to PT XYZ IDR 216,036,036. PT ABC deposits IDR 3,963,964 by the 10th of the next month and issues Bupot PPh 23. Without NPWP: 4% = IDR 7,927,928.
 
 ## Section 4 — PPh 26 (Pajak Penghasilan Pasal 26)
 
@@ -312,21 +312,21 @@ Hadiah penjualan to consumers (25%, PP 132/2000); pengalihan saham mitra modal v
 
 ### 8.1 Consultant invoice (PPh 23, with NPWP)
 
-PT Klien Indonesia receives an invoice from CV Konsultan Hukum dated 15 March 2025 for legal advisory services — fee IDR 50,000,000 plus PPN 12% IDR 6,000,000, invoice total IDR 56,000,000. CV Konsultan Hukum is a registered resident PKP with a valid NPWP.
+PT Klien Indonesia receives an invoice from CV Konsultan Hukum dated 15 March 2025 for legal advisory services — fee IDR 50,000,000 plus PPN at the effective 11% IDR 5,500,000, invoice total IDR 55,500,000. CV Konsultan Hukum is a registered resident PKP with a valid NPWP.
 
 - Article: PPh 23, object code 24-104-08 (jasa konsultan hukum)
 - Tax base: IDR 50,000,000 (excluding PPN); Rate: 2%
 - PPh 23 to withhold: IDR 1,000,000
-- Net payment to CV Konsultan Hukum: IDR 55,000,000; PPN of IDR 6,000,000 paid to CV Konsultan Hukum (who remits via its own PPN return — the buyer claims input VAT).
+- Net payment to CV Konsultan Hukum: IDR 54,500,000; PPN of IDR 5,500,000 paid to CV Konsultan Hukum (who remits via its own PPN return — the buyer claims input VAT).
 - Timeline: tax point 15 March; deposit PPh 23 by 10 April via kode billing in Coretax; issue Bupot PPh 23; file SPT Masa Unifikasi for March 2025 by 20 April.
 
 ### 8.2 Rental of office space (PPh 4(2) Final)
 
-PT Klien Indonesia rents an office floor from PT Properti Sentosa at IDR 90,000,000 per quarter, plus PPN 12% IDR 10,800,000 — invoice total IDR 100,800,000.
+PT Klien Indonesia rents an office floor from PT Properti Sentosa at IDR 90,000,000 per quarter, plus PPN at the effective 11% IDR 9,900,000 — invoice total IDR 99,900,000.
 
 - Article: PPh 4(2), object code 28-403-01 (sewa tanah dan/atau bangunan)
 - Tax base: IDR 90,000,000 (excluding PPN); Rate: 10% final per PMK 34/PMK.010/2017
-- PPh 4(2) to withhold: IDR 9,000,000; Net payment: IDR 91,800,000
+- PPh 4(2) to withhold: IDR 9,000,000; Net payment: IDR 90,900,000
 - Final — PT Properti does not aggregate this rental income in its annual SPT Tahunan (subject to the substance test in 5.1).
 - If the tenant were an individual not appointed under KEP-50/PJ/1994, the landlord self-deposits the 10% (see R-ID-WHT-5).
 
@@ -334,7 +334,7 @@ PT Klien Indonesia rents an office floor from PT Properti Sentosa at IDR 90,000,
 
 PT Klien Indonesia subscribes to a SaaS platform from Acme Inc., a US-resident company with no Indonesian PE — annual licence USD 24,000, invoiced 1 February 2025, KMK rate IDR 16,200/USD (use the actual KMK rate). Gross: IDR 388,800,000.
 
-**Scenario A — no DGT Form on file.** Article PPh 26 (object 27-100-09 royalti luar negeri — software), rate 20% per Pasal 26 ayat (1) huruf c → PPh 26 IDR 77,760,000; net remitted IDR 311,040,000 (USD 19,200). PPN PMSE (12% on IDR 388,800,000 = IDR 46,656,000) collected separately under PMK 60/PMK.03/2022.
+**Scenario A — no DGT Form on file.** Article PPh 26 (object 27-100-09 royalti luar negeri — software), rate 20% per Pasal 26 ayat (1) huruf c → PPh 26 IDR 77,760,000; net remitted IDR 311,040,000 (USD 19,200). PPN PMSE (effective 11% on IDR 388,800,000 = IDR 42,768,000) collected separately under PMK 60/PMK.03/2022.
 
 **Scenario B — valid Form DGT-1 from IRS on file dated before 1 February 2025.** US–Indonesia P3B (1988) Article 13 royalty rate is 10% (incl. software) → PPh 26 IDR 38,880,000; net remitted IDR 349,920,000 (USD 21,600). DGT-1 number and date recorded on the Bupot PPh 26.
 

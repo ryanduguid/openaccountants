@@ -200,8 +200,8 @@ Applies to the structural elements (building itself, fixed improvements).
 | --- | --- |
 | Applies to | Non-resident landlords receiving Australian rental income |
 | Rate | Payer (tenant/agent) must withhold amounts as directed by ATO |
-| FRCGW (foreign resident CGT withholding) | 12.5% of sale price if property value ≥ $750,000 (buyer withholds) |
-| Clearance certificate | Resident vendor obtains to avoid FRCGW at settlement |
+| FRCGW (foreign resident CGT withholding) | 15% of sale price, no minimum value, for contracts entered into on or after 1 January 2025 (buyer withholds). Contracts to 31 December 2024: 12.5% where property value ≥ $750,000 |
+| Clearance certificate | Resident vendor obtains to avoid FRCGW at settlement — required for every contract from 1 January 2025, regardless of price |
 
 ## Section 3 -- Transaction Pattern Library
 
