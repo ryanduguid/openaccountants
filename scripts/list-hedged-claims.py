@@ -33,6 +33,18 @@ What settling one looks like, from the four that were wrong:
   * Ethiopia hedged the royalty split as resident against non-resident. The
     split is by kind of royalty: 5% art and culture, 10% otherwise.
 
+One sub-class was searched for and turned out to have a single member. A guide
+that borrows another jurisdiction's figures sometimes says so, and Liechtenstein
+did: "approx 10.6% of gross salary, split equally employer/employee (approx --
+confirm 2025 LI rate; figure follows Swiss model)". It is 7.385% employer and
+4.900% employee, so both the total and the equal split were Switzerland's rather
+than Liechtenstein's. Searching the corpus for borrow language beside a hedge --
+"follows the X model", "based on the X rates", "by analogy", "proxy for",
+"assumed to follow" -- now returns nothing, because that was the only one. The
+bare phrases without a hedge return 46 lines and almost all are statements of
+law: Alberta really does mirror the federal grind, Georgia's estimated tax
+really does follow the federal pattern.
+
 And what an honest unresolved one looks like, since some will not settle: Fiji's
 dividend rate is 0% under a 2017 exemption and 15% under the Income Tax Act,
 with neither source retracting the other. The guide now names both, dates both,
