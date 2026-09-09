@@ -3,7 +3,7 @@ name: us-estate-gift-706-709
 description: Tier 2 US federal content skill for the unified estate, gift, and generation-skipping transfer tax under §§ 2001 et seq., including Form 706 (estate), Form 709 (gift), and the GST regime. Covers tax year 2025 with the $13.99M per-individual basic exclusion amount, the 40% top rate, the $19,000 annual exclusion, §2513 gift splitting, §2010(c) portability and DSUE with the Rev. Proc. 2022-32 5-year late-election relief, §2503(e) unlimited medical/tuition direct payments, §529 5-year frontload election ($95k/donee), §2032 alternate valuation, §1014 stepped-up basis, the GST regime under § 2601, and the permanent $15,000,000 basic exclusion amount from 2026 under OBBBA (P.L. 119-21, § 70106), which replaced the scheduled December 31, 2025 sunset, with anti-clawback T.D. 9884.
 jurisdiction: US
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-09
 reviewed_by: Christopher Aryee, CPA
 review_status: current
 tier: 1
@@ -49,21 +49,29 @@ The intended consumer is a Circular 230 practitioner (EA, CPA, or estate-and-tru
 
 - **Unified transfer tax system definition** — The estate tax (§§ 2001–2058), the gift tax (§§ 2501–2524), and the GST tax (§§ 2601–2664) operate as a single unified transfer tax system. A single lifetime exemption — the basic exclusion amount (BEA) under §2010(c)(3) — applies to cumulative taxable gifts during life and to the taxable estate at death.  _(§2010(c)(3))_
 
-**2025 BEA and related figures**  _(Rev. Proc. 2024-40; IRS news release of October 22, 2024)_
+**BEA and related figures**  _(Rev. Proc. 2024-40 for 2025; Rev. Proc. 2025-32 of 27 October 2025 for 2026)_
 
-| Item | 2024 | **2025** |
-| --- | --- | --- |
-| Basic exclusion amount per individual | $13,610,000 | **$13,990,000** |
-| Effective exemption per married couple (with portability) | $27,220,000 | **$27,980,000** |
-| Annual gift exclusion per donee under §2503(b) | $18,000 | **$19,000** |
-| Annual exclusion for gifts to non-citizen spouse under §2523(i)(2) | $185,000 | **$190,000** |
-| Section 6166 2% portion ceiling for closely held businesses | $1,850,000 | **$1,900,000** |
+| Item | 2024 | 2025 | **2026** |
+| --- | --- | --- | --- |
+| Basic exclusion amount per individual | $13,610,000 | $13,990,000 | **$15,000,000** |
+| Effective exemption per married couple (with portability) | $27,220,000 | $27,980,000 | **$30,000,000** |
+| GST exemption per taxpayer | $13,610,000 | $13,990,000 | **$15,000,000** |
+| Annual gift exclusion per donee under §2503(b) | $18,000 | $19,000 | **$19,000** (unchanged) |
+| Annual exclusion for gifts to non-citizen spouse under §2523(i)(2) | $185,000 | $190,000 | **$194,000** |
+| Section 6166 2% portion ceiling for closely held businesses | $1,850,000 | $1,900,000 | *confirm in Rev. Proc. 2025-32* |
+
+This table previously stopped at 2025 and was headed "2025 BEA and related
+figures", while §1 of this same guide already carried the permanent $15,000,000
+BEA from 2026 under OBBBA. The narrative was current and the table a reader
+computes from was a year behind — using it for a 2026 gift or estate understates
+the exclusion by $1,010,000. The 2026 BEA is set by OBBBA (P.L. 119-21, §70106)
+amending §2010(c)(3) and is indexed for years after 2026 rather than sunsetting.
 
 - **Rounding rule** — All figures other than the §2523(i) and §6166 amounts continue to be rounded to the nearest $10,000 under §2010(c)(3)(B)(ii).  _(§2010(c)(3)(B)(ii))_
 
 ### 2.2 The tax rate table — §2001(c)
 
-- **Effective rate note** — The tax is computed on a graduated table running from 18% on the first $10,000 of taxable transfers to 40% on amounts in excess of $1,000,000. Because the unified credit shelters the full BEA, the graduated brackets between 18% and 40% are subsumed within the credit and only the 40% top bracket has economic effect for any taxable estate or taxable gift in 2025.  _(§2001(c))_
+- **Effective rate note** — The tax is computed on a graduated table running from 18% on the first $10,000 of taxable transfers to 40% on amounts in excess of $1,000,000. Because the unified credit shelters the full BEA, the graduated brackets between 18% and 40% are subsumed within the credit and only the 40% top bracket has economic effect for any taxable estate or taxable gift, in 2026 as in prior years.  _(§2001(c))_
 
 **§2001(c) rate table**  _(§2001(c))_
 
@@ -727,7 +735,7 @@ Rev. Proc. 2024-40 (2025 inflation-adjusted amounts); Rev. Proc. 2022-32 (5-year
 
 ### 18.4 Forms and instructions
 
-Form 706 (Rev. September 2024) and instructions; Form 709 (2024 revision, used for calendar year 2024 gifts; 2025 revision expected late 2025) and instructions; Form 706-GS(D), 706-GS(D-1), 706-GS(T); Form 706-NA (NRA estate tax — referenced but not produced); Form 4768 (extension); Form 8892 (gift tax extension); Form 4422 (release of estate tax lien); Form 712 (life insurance statement); Form 8971 (consistent basis reporting — §1014(f) and §6035)
+Form 706 and instructions; Form 709 and instructions — **check IRS.gov for the current revision before filing**. This entry read "Form 706 (Rev. September 2024) ... Form 709 (2024 revision, used for calendar year 2024 gifts; 2025 revision expected late 2025)"; that expectation is now two revision cycles old and the specific revision dates are not verified here. Form 706-GS(D), 706-GS(D-1), 706-GS(T); Form 706-GS(D), 706-GS(D-1), 706-GS(T); Form 706-NA (NRA estate tax — referenced but not produced); Form 4768 (extension); Form 8892 (gift tax extension); Form 4422 (release of estate tax lien); Form 712 (life insurance statement); Form 8971 (consistent basis reporting — §1014(f) and §6035)
 
 ### 18.5 Legislative
 
