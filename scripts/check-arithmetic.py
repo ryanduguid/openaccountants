@@ -51,6 +51,15 @@ def norm(tok, euro=False):
     if re.fullmatch(r'\d+,\d{1,2}',s):        return s.replace(',','.') if euro else s.replace(',','')
     return s.replace(',','')
 
+# Known blind spot, left deliberately. A running computation written across
+# punctuation and prose — "$368,000 - $199,200 = $168,800; minus $15,750 SD =
+# $154,200" — is not evaluated: the span extractor stops at the semicolon and
+# the "SD" label, and the second step is never checked. Relaxing the extractor
+# to reach across them was tried and cost 13 new false positives in skills/
+# without catching the case, so it stays out. That class is covered instead by
+# comparing the two federal trees against each other, which is how the example
+# above was actually found.
+
 EURO=[False]
 def to_py(side):
     s=side

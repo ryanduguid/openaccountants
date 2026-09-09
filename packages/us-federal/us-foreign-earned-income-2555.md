@@ -548,8 +548,8 @@ US citizens abroad still owe quarterly estimated taxes (Form 1040-ES) under §66
 **§911 path**:
 - FEIE: $130,000.
 - Schedule C taxable in US after FEIE: $50,000.
-- §911(f) stacked tax on $50,000 — $15,750 SD = $34,250: roughly $3,900.
-- FTC on the $50,000 (Portuguese tax allocated: $36,000 × 50/180 = $10,000): FTC = MIN($10,000, $3,900) = $3,900. Net US income tax = $0.
+- §911(f) stacked tax: the $50,000 of non-excluded profit is taxed at the rates that would apply if the $130,000 exclusion were still in the base, so compute it as the difference between two tax figures rather than as tax on the residual alone. Taxable income is $50,000 − $15,750 SD = $34,250, and the stacked computation is tax on ($34,250 + $130,000) = $164,250, which is $32,267, less tax on $130,000, which is $24,047 → **$8,220**. (Tax on $34,250 standing alone would be about $3,900; using that figure is the commonest §911 error and understates the liability here by more than half.)
+- FTC on the $50,000 (Portuguese tax allocated: $36,000 × 50/180 = $10,000): FTC = MIN($10,000, $8,220) = $8,220. Net US income tax = $0.
 - SE tax: Portugal IS on totalization list. If David has a Certificate of Coverage from Portuguese Segurança Social, SE tax = $0. Otherwise SE tax = $180,000 × 0.9235 × 0.153 = ~$25,447.
 
 **FTC-only path**:
@@ -557,7 +557,7 @@ US citizens abroad still owe quarterly estimated taxes (Form 1040-ES) under §66
 - Taxable: $180,000 − $15,750 = $164,250.
 - Tax ≈ $32,300.
 - FTC = MIN($36,000, $32,300) = $32,300. Net US income tax = $0.
-- Excess FTC carryforward: $3,700 (10 years).
+- Excess FTC carryforward: $36,000 − $32,300 = $3,700 (10 years).
 - SE tax: same as above; not affected by FTC vs §911.
 
 **Recommendation**: For David, FTC-only is slightly better because (a) generates $3,700 of carryforward, (b) preserves Roth IRA / IRA contribution eligibility (compensation is not reduced by §911 exclusion), (c) keeps QBI deduction available on full $180,000 Schedule C net profit (§911 would exclude $130,000 from QBI base), (d) avoids the §911 election lockout if David ever wants to relocate to a high-cost city in the future.
@@ -595,7 +595,7 @@ US citizens abroad still owe quarterly estimated taxes (Form 1040-ES) under §66
 
 **SE tax**: $0 (W-2 employee).
 
-**Decision**: §911 + high-cost housing exclusion + partial FTC is the right combination. Pure FTC would not absorb US tax fully because Singapore's effective rate is low; FTC = $31,000 vs full US tax on $368,000 of approximately $92,800. Net US tax under FTC-only ≈ $61,800 — worse than §911 + FTC carve-out by $20,800.
+**Decision**: §911 + high-cost housing exclusion + partial FTC is the right combination. Pure FTC would not absorb US tax fully because Singapore's effective rate is low. On an FTC-only footing the same $368,000 less the $15,750 standard deduction is taxed in full, giving approximately $92,800 of US tax, against which the $31,000 of Singapore tax leaves $92,800 − $31,000 = $61,800. That is worse than the §911 + FTC combination by $61,800 − $40,992 = $20,808.
 
 ## 16. Self-Checks (Run Before Reviewer Brief)
 
