@@ -1,6 +1,6 @@
 ---
 name: malta-ssc
-description: Use this skill whenever asked about Malta Social Security Contributions (SSC) for self-employed or self-occupied individuals. Trigger on phrases like "how much SSC do I pay", "Class 2 contributions", "social security self-employed", "SSC calculation", "SSC arrears", "do I need to pay SSC", "SSC and income tax", "DSS payment", "Class 2 quarterly debit", or any question about Malta SSC obligations for a self-employed client. Also trigger when classifying bank statement transactions that relate to DSS debits, SSC direct debits, or government social security payments from BOV, HSBC, or other Maltese banks. Also trigger when preparing a TA24 income tax return where SSC deductibility (Box 20) is relevant. This skill covers Class 2 rates, min/max caps, payment schedule, registration, penalties, interaction with income tax, TA22 part-time regime, bank statement classification patterns, and edge cases. ALWAYS read this skill before touching any SSC-related work.
+description: Use this skill whenever asked about Malta Social Security Contributions (SSC) for self-employed or self-occupied individuals. Trigger on phrases like "how much SSC do I pay", "Class 2 contributions", "social security self-employed", "SSC calculation", "SSC arrears", "do I need to pay SSC", "SSC and income tax", "DSS payment", "Class 2 quarterly debit", or any question about Malta SSC obligations for a self-employed client. Also trigger when classifying bank statement transactions that relate to DSS debits, SSC direct debits, or government social security payments from BOV, HSBC, or other Maltese banks. Also trigger when preparing a Income Tax Return income tax return where SSC deductibility (Box 20) is relevant. This skill covers Class 2 rates, min/max caps, payment schedule, registration, penalties, interaction with income tax, TA22 part-time regime, bank statement classification patterns, and edge cases. ALWAYS read this skill before touching any SSC-related work.
 version: 2.0
 jurisdiction: MT
 tax_year: 2025
@@ -55,7 +55,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Unknown birth year | STOP -- do not compute SSC without birth year |
 | Unknown employment status | Assume Class 2 applies (self-employed) |
 | Unknown prior year net income | Apply SA minimum (EUR 1,844.96) |
-| First year or no TA24 filed | SA minimum applies |
+| First year or no Income Tax Return filed | SA minimum applies |
 | Unknown whether full-time employed | Ask -- do not assume Class 1 exemption |
 | Unknown whether DSS debit is SSC or penalty | Classify as SSC; flag for reviewer |
 
@@ -65,9 +65,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 **Minimum viable** -- birth year and employment status. Without birth year, STOP. Do not compute SSC.
 
-**Recommended** -- prior year net self-employment income (from filed TA24), number of years of self-employment, and whether a TA24 has been filed for the prior year.
+**Recommended** -- prior year net self-employment income (from filed Income Tax Return), number of years of self-employment, and whether a Income Tax Return has been filed for the prior year.
 
-**Ideal** -- DSS annual statement, bank statements showing quarterly SSC debits, prior year TA24 with Box 20 SSC deduction.
+**Ideal** -- DSS annual statement, bank statements showing quarterly SSC debits, prior year Income Tax Return with Box 20 SSC deduction.
 
 ### Refusal catalogue
 
@@ -145,9 +145,9 @@ Six bank statement classifications showing SSC-related transactions from a hypot
 `30.04.2025 ; DEPT OF SOCIAL SECURITY ; DEBIT ; Q1 2025 CLASS 2 ; -461.24 ; EUR`
 
 **Reasoning:**
-Matches "DEPT OF SOCIAL SECURITY" (pattern 3.1). Amount EUR 461.24 = SA minimum quarterly (EUR 1,844.96 / 4). This is the Q1 2025 Class 2 contribution. Exclude from VAT classification. Record as SSC expense deductible in Box 20 of TA24.
+Matches "DEPT OF SOCIAL SECURITY" (pattern 3.1). Amount EUR 461.24 = SA minimum quarterly (EUR 1,844.96 / 4). This is the Q1 2025 Class 2 contribution. Exclude from VAT classification. Record as SSC expense deductible in Box 20 of Income Tax Return.
 
-**Classification:** EXCLUDE -- SSC payment. Deductible in TA24 Box 20.
+**Classification:** EXCLUDE -- SSC payment. Deductible in Income Tax Return Box 20.
 
 ### Example 2 -- Mid-range SSC quarterly debit (HSBC)
 
@@ -157,7 +157,7 @@ Matches "DEPT OF SOCIAL SECURITY" (pattern 3.1). Amount EUR 461.24 = SA minimum 
 **Reasoning:**
 Matches "DSS D/D" (pattern 3.2, HSBC). Amount EUR 750.00 = quarterly payment for SB category (EUR 3,000 annual / 4 = EUR 750). Implies prior year net income of EUR 20,000 (15% x EUR 20,000 = EUR 3,000). Exclude from VAT.
 
-**Classification:** EXCLUDE -- SSC payment. Deductible in TA24 Box 20.
+**Classification:** EXCLUDE -- SSC payment. Deductible in Income Tax Return Box 20.
 
 ### Example 3 -- CFR tax payment (NOT SSC)
 
@@ -185,7 +185,7 @@ Matches "PAGA" / salary pattern (3.4). This is a wage payment to an employee, no
 `05.05.2025 ; DSS PENSION ; CREDIT ; OLD AGE PENSION MAY ; +680.00 ; EUR`
 
 **Reasoning:**
-Matches "DSS PENSION" (pattern 3.5). This is a pension benefit RECEIVED, not a contribution paid. Do not confuse inbound DSS credits with outbound SSC debits. Exclude from VAT. This is taxable income on the TA24, not a Box 20 deduction.
+Matches "DSS PENSION" (pattern 3.5). This is a pension benefit RECEIVED, not a contribution paid. Do not confuse inbound DSS credits with outbound SSC debits. Exclude from VAT. This is taxable income on the Income Tax Return, not a Box 20 deduction.
 
 **Classification:** EXCLUDE from VAT. Taxable income (not an SSC deduction).
 
@@ -197,7 +197,7 @@ Matches "DSS PENSION" (pattern 3.5). This is a pension benefit RECEIVED, not a c
 **Reasoning:**
 Matches "DEPARTMENT OF SOCIAL SECURITY" (pattern 3.1) but the amount is irregular and reference says "ARREARS PAYMENT." This could include penalties (1% per month) compounded on top of unpaid contributions. Cannot separate principal from penalty without a DSS statement. Flag for reviewer.
 
-**Classification:** EXCLUDE from VAT. Flag for reviewer -- request DSS breakdown to split contribution principal (deductible in TA24 Box 20) from penalty (not deductible).
+**Classification:** EXCLUDE from VAT. Flag for reviewer -- request DSS breakdown to split contribution principal (deductible in Income Tax Return Box 20) from penalty (not deductible).
 
 ## Section 5 -- Tier 1 rules
 
@@ -213,11 +213,11 @@ These rules apply when bank statement data is clear and all required inputs are 
 
 ### Rule 3 -- SSC is based on PRIOR year net income
 
-- **SSC is based on PRIOR year net income** — 2025 SSC = based on 2024 net income from filed TA24. Not current year estimates.
+- **SSC is based on PRIOR year net income** — 2025 SSC = based on 2024 net income from filed Income Tax Return. Not current year estimates.
 
-### Rule 4 -- First year or no TA24 filed = SA minimum
+### Rule 4 -- First year or no Income Tax Return filed = SA minimum
 
-- **First year or no TA24 filed = SA minimum** — First year of self-employment: SA minimum applies as a legislative provision, not just a default. No prior year TA24 filed: SA minimum applies until DSS assessment is made.
+- **First year or no Income Tax Return filed = SA minimum** — First year of self-employment: SA minimum applies as a legislative provision, not just a default. No prior year Income Tax Return filed: SA minimum applies until DSS assessment is made.
 
 ### Rule 5 -- Minimum always applies
 
@@ -227,9 +227,9 @@ These rules apply when bank statement data is clear and all required inputs are 
 
 - **Full-time employed (Class 1) exempts from Class 2** — If the client is a full-time employee paying Class 1 NIC, no Class 2 is due on side income. Class 1 covers everything.
 
-### Rule 7 -- SSC is deductible in TA24 Box 20
+### Rule 7 -- SSC is deductible in Income Tax Return Box 20
 
-- **SSC is deductible in TA24 Box 20** — SSC paid in Year X is deducted from income in Year X's TA24 (Box 20). This reduces taxable income before tax rate application.
+- **SSC is deductible in Income Tax Return Box 20** — SSC paid in Year X is deducted from income in Year X's Income Tax Return (Box 20). This reduces taxable income before tax rate application.
 
 ### Rule 8 -- Payment schedule
 
@@ -274,7 +274,7 @@ When bank statement data is ambiguous or client circumstances are unclear, flag 
 
 **Trigger:** Client was self-employed before, stopped for several years, now restarting.
 
-**Issue:** SA minimum does NOT automatically apply to returners. SA applies only to genuine first-timers. If no prior year TA24 for self-employment exists, SA applies until assessment.
+**Issue:** SA minimum does NOT automatically apply to returners. SA applies only to genuine first-timers. If no prior year Income Tax Return for self-employment exists, SA applies until assessment.
 
 **Action:** Flag for reviewer to confirm with DSS.
 
@@ -317,8 +317,8 @@ INPUT DATA
   Born on/after 1 Jan 1962:     [YES/NO]
   Employment status:             [Self-occupied / Self-employed / Dual]
   First year of self-employment: [YES/NO]
-  Prior year net income (TA24):  EUR [____]
-  TA24 filed for prior year:     [YES/NO]
+  Prior year net income (Income Tax Return):  EUR [____]
+  Income Tax Return filed for prior year:     [YES/NO]
 
 COMPUTATION
   Rate:                          15%
@@ -335,9 +335,9 @@ PAYMENT SCHEDULE
   Q3 (due 31 Oct):              EUR [____]
   Q4 (due 31 Jan):              EUR [____]
 
-TA24 INTERACTION
+INCOME TAX RETURN INTERACTION
   SSC paid in [year]:           EUR [____]
-  Entered in TA24 Box 20:       EUR [____]
+  Entered in Income Tax Return Box 20:       EUR [____]
 
 REVIEWER FLAGS
   [List any Tier 2 flags here]
@@ -382,7 +382,7 @@ If the client provides only a bank statement and no other information:
    - If total between EUR 1,844.96 and EUR 3,525.08 -> SB (15% rate band)
    - If total approximately EUR 3,525.08 -> SC pre-1962 maximum
    - If total approximately EUR 4,245.28 -> SC post-1962 maximum
-4. **Flag for reviewer:** "SSC classification derived from bank statement amounts only. Birth year and prior year income have not been independently verified. Reviewer must confirm before filing TA24 with Box 20 deduction."
+4. **Flag for reviewer:** "SSC classification derived from bank statement amounts only. Birth year and prior year income have not been independently verified. Reviewer must confirm before filing the Income Tax Return with Box 20 deduction."
 
 ## Section 10 -- Reference material
 
@@ -426,13 +426,13 @@ If the client provides only a bank statement and no other information:
 
 **Test 4:** Born 1990, prior year net income EUR 5,000, not first year. -> SA. Annual = EUR 1,844.96. Quarterly = EUR 461.24.
 
-**Test 5:** Born 1988, first year, no prior TA24. -> SA (first year). Annual = EUR 1,844.96. Quarterly = EUR 461.24.
+**Test 5:** Born 1988, first year, no prior Income Tax Return. -> SA (first year). Annual = EUR 1,844.96. Quarterly = EUR 461.24.
 
 **Test 6:** Full-time employee paying Class 1, side income EUR 8,000. -> NO Class 2 due. Class 1 covers all.
 
 **Test 7:** Born 1992, registered self-employed, net income EUR 0. -> SA. Annual = EUR 1,844.96.
 
-**Test 8:** Client paid EUR 3,000 SSC in 2025, preparing 2025 TA24. -> EUR 3,000 in Box 20.
+**Test 8:** Client paid EUR 3,000 SSC in 2025, preparing 2025 Income Tax Return. -> EUR 3,000 in Box 20.
 
 ### Prohibitions
 

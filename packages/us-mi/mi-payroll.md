@@ -154,7 +154,7 @@ Lansing MI 48909
 
 **Form 5080/5081 due dates**
 
-| Period | Form 5080 due date |
+| Period | Form due date |
 | --- | --- |
 | January (monthly) | 20 February |
 | Q1 (Jan-Mar) | 20 April |

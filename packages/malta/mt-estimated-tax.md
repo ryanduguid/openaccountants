@@ -1,6 +1,6 @@
 ---
 name: mt-estimated-tax
-description: Use this skill whenever asked about Malta provisional tax (estimated tax) for self-employed or self-occupied individuals. Trigger on phrases like "provisional tax Malta", "estimated tax", "PT instalments", "how much provisional tax do I pay", "20% 30% 50%", "April instalment", "August instalment", "December instalment", "TA24 overpayment", "refund of provisional tax", "Chapter 372", "ITA provisional tax", or any question about Malta's advance income tax payment obligations. Covers the three-instalment schedule (20/30/50), basis of computation (prior year assessment), first-year rules, minimum provisional tax, penalties for late payment, and interaction with the TA24 final assessment. ALWAYS read this skill before touching any Malta provisional tax work.
+description: Use this skill whenever asked about Malta provisional tax (estimated tax) for self-employed or self-occupied individuals. Trigger on phrases like "provisional tax Malta", "estimated tax", "PT instalments", "how much provisional tax do I pay", "20% 30% 50%", "April instalment", "August instalment", "December instalment", "provisional tax overpayment", "refund of provisional tax", "Chapter 372", "ITA provisional tax", or any question about Malta's advance income tax payment obligations. Covers the three-instalment schedule (20/30/50), basis of computation (prior year assessment), first-year rules, minimum provisional tax, penalties for late payment, and interaction with the final income tax assessment. ALWAYS read this skill before touching any Malta provisional tax work.
 version: 2.0
 jurisdiction: MT
 tax_year: 2025
@@ -32,7 +32,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Portal | https://cfr.gov.mt (CFR Online Services) |
 | Currency | EUR only |
 | Payment schedule | Three instalments: 20% by 30 April, 30% by 31 August, 50% by 21 December |
-| Computation basis | 100% of prior year assessed tax liability (from most recent TA24) |
+| Computation basis | 100% of prior year assessed tax liability (from the most recent income tax return) |
 | Minimum threshold | CFR-determined administrative minimum for new businesses with no prior assessment |
 | Contributor | Open Accountants Community |
 | Validated by | Pending -- requires sign-off by a Malta-warranted CPA |
@@ -50,7 +50,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 | Ambiguity | Default |
 | --- | --- |
-| No prior year TA24 available | STOP -- request latest TA24 assessment or CFR PT notice |
+| No prior year income tax return available | STOP -- request the latest return assessment or CFR PT notice |
 | First year, no penultimate year | Flag for reviewer -- minimum PT per CFR applies |
 | Income expected to drop | Pay per notice -- do NOT reduce without CFR approval |
 | Rental income in prior year tax | Exclude rental income taxed at 15% final WHT from PT basis |
@@ -60,13 +60,13 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ### Required inputs
 
-**Minimum viable** -- the prior year TA24 assessed tax liability (the net tax payable after credits) OR the CFR-issued PT notice (Vorauszahlungsbescheid equivalent). One of these is mandatory.
+**Minimum viable** -- the prior year assessed tax liability from the income tax return (the net tax payable after credits) OR the CFR-issued PT notice (Vorauszahlungsbescheid equivalent). One of these is mandatory.
 
 **Recommended** -- current year of assessment, any PAYE or withholding tax deducted at source in the current year, the client's TIN.
 
-**Ideal** -- full TA24 from the prior year, any CFR PT notice received, bank statements showing prior PT payments, any correspondence about PT reductions.
+**Ideal** -- the full prior-year income tax return, any CFR PT notice received, bank statements showing prior PT payments, any correspondence about PT reductions.
 
-**Refusal policy if minimum is missing -- HARD STOP.** Without the prior year TA24 tax liability or a CFR PT notice, provisional tax cannot be computed. Do not estimate from income figures.
+**Refusal policy if minimum is missing -- HARD STOP.** Without the prior year income tax return liability or a CFR PT notice, provisional tax cannot be computed. Do not estimate from income figures.
 
 ### Refusal catalogue
 
@@ -136,13 +136,13 @@ This is the deterministic pre-classifier for bank statement transactions. When a
 
 ### Example 2 -- Reconciliation with final assessment (underpayment)
 
-**Input:** Total PT paid = EUR 8,000. Final TA24 tax liability = EUR 11,500.
+**Input:** Total PT paid = EUR 8,000. Final income tax return liability = EUR 11,500.
 
-**Output:** Balance due = EUR 11,500 - EUR 8,000 = EUR 3,500. Due with TA24 filing by 30 June following the year of assessment.
+**Output:** Balance due = EUR 11,500 - EUR 8,000 = EUR 3,500. Due with the income tax return by 30 June following the year of assessment.
 
 ### Example 3 -- Reconciliation with final assessment (overpayment)
 
-**Input:** Total PT paid = EUR 10,000. Final TA24 tax liability = EUR 7,200.
+**Input:** Total PT paid = EUR 10,000. Final income tax return liability = EUR 7,200.
 
 **Output:** Overpayment = EUR 2,800. Client may request refund (written application to CFR, 6-12 months processing) or accept credit against next year's PT.
 
@@ -172,15 +172,15 @@ This is the deterministic pre-classifier for bank statement transactions. When a
 
 ### 5.1 Standard computation (prior-year basis)
 
-- **Standard computation (prior-year basis)** — The computation basis is always the prior year assessed tax liability from the most recent TA24, after credits, minus any tax deducted at source. ``` prior_year_tax = TA24_assessed_tax - tax_credits - WHT_at_source PT_instalment_1 = prior_year_tax x 20% PT_instalment_2 = prior_year_tax x 30% PT_instalment_3 = prior_year_tax x 50% total_PT = prior_year_tax x 100% ``` Do NOT divide by three equally. The split is always 20/30/50.  _(Section 5.1)_
+- **Standard computation (prior-year basis)** — The computation basis is always the prior year assessed tax liability from the most recent income tax return, after credits, minus any tax deducted at source. ``` prior_year_tax = return_assessed_tax - tax_credits - WHT_at_source PT_instalment_1 = prior_year_tax x 20% PT_instalment_2 = prior_year_tax x 30% PT_instalment_3 = prior_year_tax x 50% total_PT = prior_year_tax x 100% ``` Do NOT divide by three equally. The split is always 20/30/50.  _(Section 5.1)_
 
 ### 5.2 Year-end reconciliation
 
-- **Year-end reconciliation** — ``` balance_due = final_tax_liability - total_PT_paid - WHT_at_source if balance_due > 0: additional payment required with TA24 (by 30 June) if balance_due < 0: overpayment -- refund or credit ```  _(Section 5.2)_
+- **Year-end reconciliation** — ``` balance_due = final_tax_liability - total_PT_paid - WHT_at_source if balance_due > 0: additional payment required with the income tax return (by 30 June) if balance_due < 0: overpayment -- refund or credit ```  _(Section 5.2)_
 
 ### 5.3 Special rules for first year and new businesses
 
-- **Special rules for first year and new businesses** — For the first year of self-employment with no prior TA24: PT is based on the penultimate year's tax. If no penultimate year assessment exists, the CFR sets a minimum PT amount administratively. Flag for reviewer.  _(Section 5.3)_
+- **Special rules for first year and new businesses** — For the first year of self-employment with no prior income tax return: PT is based on the penultimate year's tax. If no penultimate year assessment exists, the CFR sets a minimum PT amount administratively. Flag for reviewer.  _(Section 5.3)_
 
 ### 5.4 Excluded income
 
@@ -209,7 +209,7 @@ This is the deterministic pre-classifier for bank statement transactions. When a
 
 ## Section 8 -- Edge cases
 
-**EC1 -- No prior year TA24 assessment available.** Client has been self-employed for 3 years but never filed a TA24. CFR may issue estimated assessments. PT should be based on the latest CFR-issued assessment. If none exists, CFR minimum applies. Flag for reviewer -- client must regularise filing history urgently.
+**EC1 -- No prior year return assessment available.** Client has been self-employed for 3 years but never filed an income tax return. CFR may issue estimated assessments. PT should be based on the latest CFR-issued assessment. If none exists, CFR minimum applies. Flag for reviewer -- client must regularise filing history urgently.
 
 **EC2 -- Prior year resulted in zero tax.** Tax liability = EUR 0. PT = EUR 0. No instalments required. However, if current year income is expected to exceed the personal allowance, voluntary PT payments are prudent.
 
@@ -219,19 +219,19 @@ This is the deterministic pre-classifier for bank statement transactions. When a
 
 **EC5 -- Overpayment carried forward but client wants refund.** Client must submit written request to CFR. Processing time 6-12 months. Flag for reviewer for cash flow advice.
 
-**EC6 -- Client ceases self-employment mid-year.** Apply to CFR to cancel remaining PT instalments. Final TA24 reconciles actual liability.
+**EC6 -- Client ceases self-employment mid-year.** Apply to CFR to cancel remaining PT instalments. The final income tax return reconciles actual liability.
 
 **EC7 -- CFR PT notice differs from client calculation.** The CFR notice prevails unless the client appeals. Pay the CFR-stated amount and query separately. Paying less triggers penalties on the shortfall.
 
-**EC8 -- Foreign source income with DTR.** PT is based on the NET tax from the prior TA24, which already factors in double taxation relief. Flag for reviewer to confirm DTR availability in the current year.
+**EC8 -- Foreign source income with DTR.** PT is based on the NET tax from the prior income tax return, which already factors in double taxation relief. Flag for reviewer to confirm DTR availability in the current year.
 
-**EC9 -- Late filing of prior year TA24.** Use the latest available assessed year as the basis. File the overdue TA24 urgently. CFR may issue revised PT notices once processed.
+**EC9 -- Late filing of the prior year income tax return.** Use the latest available assessed year as the basis. File the overdue return urgently. CFR may issue revised PT notices once processed.
 
 ## Section 9 -- Self-checks
 
 Before delivering output, verify:
 
-- [ ] Prior year TA24 tax liability confirmed (or CFR PT notice obtained)
+- [ ] Prior year income tax return liability confirmed (or CFR PT notice obtained)
 - [ ] 20/30/50 split applied (NOT equal thirds)
 - [ ] Rental income at final WHT excluded from PT basis
 - [ ] All three instalment due dates stated (30 Apr, 31 Aug, 21 Dec)
@@ -246,22 +246,22 @@ Before delivering output, verify:
 
 ### Test 1 -- Standard three-instalment computation
 
-**Input:** Prior year TA24 tax liability = EUR 9,000.
+**Input:** Prior year income tax return liability = EUR 9,000.
 **Expected:** 1st = EUR 1,800 (30 Apr). 2nd = EUR 2,700 (31 Aug). 3rd = EUR 4,500 (21 Dec). Total = EUR 9,000.
 
 ### Test 2 -- Zero prior year tax
 
-**Input:** Prior year TA24 tax liability = EUR 0.
+**Input:** Prior year income tax return liability = EUR 0.
 **Expected:** PT = EUR 0. No instalments due. Flag: advise voluntary payments if current year income expected to exceed threshold.
 
 ### Test 3 -- Underpayment reconciliation
 
-**Input:** Total PT paid = EUR 8,000. Final TA24 = EUR 11,500.
-**Expected:** Balance due = EUR 3,500. Due with TA24 filing by 30 June.
+**Input:** Total PT paid = EUR 8,000. Final income tax return liability = EUR 11,500.
+**Expected:** Balance due = EUR 3,500. Due with the income tax return by 30 June.
 
 ### Test 4 -- Overpayment reconciliation
 
-**Input:** Total PT paid = EUR 10,000. Final TA24 = EUR 7,200.
+**Input:** Total PT paid = EUR 10,000. Final income tax return liability = EUR 7,200.
 **Expected:** Overpayment = EUR 2,800. Client may request refund or credit.
 
 ### Test 5 -- Late payment penalty
@@ -271,7 +271,7 @@ Before delivering output, verify:
 
 ### Test 6 -- First year, no prior assessment
 
-**Input:** First year of self-employment. No prior TA24.
+**Input:** First year of self-employment. No prior income tax return.
 **Expected:** Flag for reviewer. Minimum PT per CFR administrative determination. Request CFR notice.
 
 ### Test 7 -- Rental income excluded
@@ -281,7 +281,7 @@ Before delivering output, verify:
 
 ## Prohibitions
 
-- NEVER compute PT without the prior year TA24 tax liability or a CFR PT notice
+- NEVER compute PT without the prior year income tax return liability or a CFR PT notice
 - NEVER use current year estimated income as the basis -- PT is always prior year
 - NEVER advise skipping PT payments because income is expected to drop -- must apply to CFR
 - NEVER divide by three equally -- the split is always 20/30/50
