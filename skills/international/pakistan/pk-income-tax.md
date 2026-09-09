@@ -5,7 +5,7 @@ version: 1.0
 jurisdiction: PK
 tax_year: 2025
 tax_year_notes: "2025 (salaried bracket table and surcharge restated for TY 2026-27 under Finance Act 2026, gazetted 26 June 2026)"
-last_updated: 2026-09-10
+last_updated: 2026-09-09
 reviewed_by: Ibrar Ali
 review_status: current
 depends_on:
@@ -18,6 +18,31 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 # PK Income Tax
 
 ## Pakistan — Personal Income Tax (Individuals & AOP) — Skill v1.0
+
+> **How to read every "TBC — verify against Finance Act 2025" marker in this
+> guide: as naming the wrong Act.**
+>
+> Those markers were written while the Finance Act 2025 was still pending. Both
+> it and the Finance Act 2026 are now enacted, so an instruction to "verify
+> against FA 2025" is two Acts behind for anyone computing a current year.
+> Pakistan's tax year runs 1 July to 30 June, and the Act that governs it is the
+> one enacted immediately before it starts:
+>
+> | Tax year | Period | Governing Finance Act |
+> | --- | --- | --- |
+> | TY 2024-25 | 1 Jul 2024 – 30 Jun 2025 | Finance Act 2024 |
+> | TY 2025-26 | 1 Jul 2025 – 30 Jun 2026 | Finance Act 2025 |
+> | TY 2026-27 | 1 Jul 2026 – 30 Jun 2027 | **Finance Act 2026** (gazetted 26 June 2026) |
+>
+> So read each TBC as **"verify against the Finance Act in force for the tax
+> year being computed"**. The markers still do their job — they say a figure was
+> not confirmed — but they do not tell you which Act to open, and for a 2026-27
+> computation the answer is FA 2026, not FA 2025.
+>
+> The same wording appears in this guide's `agent-skills/` counterpart, which is
+> a separate hand-maintained tree rather than a generated copy, and has not been
+> updated here.
+
 
 ## Verified rates & thresholds (accountant-reviewed)
 
