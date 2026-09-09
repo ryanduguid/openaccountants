@@ -17,40 +17,7 @@ instance took.
 
 | Form | Guides |
 |---|---|
-| `AL-1` | `al-sales-tax`, `alabama-sales-tax` |
 | `Form 40` | `README`, `al-income-tax`, `alabama-income-tax` |
-
-## albania
-
-| Form | Guides |
-|---|---|
-| `AL-1` | `albania-income-tax`, `albania-vat` |
-| `AL-2` | `albania-income-tax`, `albania-vat` |
-| `AL-3` | `albania-income-tax`, `albania-vat` |
-| `AL-4` | `albania-income-tax`, `albania-vat` |
-| `AL-5` | `albania-income-tax`, `albania-vat` |
-| `AL-6` | `albania-income-tax`, `albania-vat` |
-
-## algeria
-
-| Form | Guides |
-|---|---|
-| `DZ-1` | `algeria-income-tax`, `algeria-vat` |
-| `DZ-2` | `algeria-income-tax`, `algeria-vat` |
-| `DZ-3` | `algeria-income-tax`, `algeria-vat` |
-| `DZ-4` | `algeria-income-tax`, `algeria-vat` |
-| `DZ-5` | `algeria-income-tax`, `algeria-vat` |
-| `DZ-6` | `algeria-income-tax`, `algeria-vat` |
-
-## andorra
-
-| Form | Guides |
-|---|---|
-| `AD-1` | `ad-income-tax`, `andorra-igi` |
-| `AD-2` | `ad-income-tax`, `andorra-igi` |
-| `AD-3` | `ad-income-tax`, `andorra-igi` |
-| `AD-4` | `ad-income-tax`, `andorra-igi` |
-| `AD-5` | `ad-income-tax`, `andorra-igi` |
 
 ## ar
 
@@ -58,84 +25,23 @@ instance took.
 |---|---|
 | `Form AR1000F` | `README`, `ar-income-tax` |
 
-## argentina
-
-| Form | Guides |
-|---|---|
-| `AR-1` | `ar-income-tax`, `ar-monotributo` |
-| `AR-2` | `ar-income-tax`, `ar-monotributo` |
-| `AR-3` | `ar-income-tax`, `ar-monotributo` |
-| `AR-4` | `ar-income-tax`, `ar-monotributo` |
-
 ## armenia
 
 | Form | Guides |
 |---|---|
-| `AM-1` | `armenia-income-tax`, `armenia-vat` |
-| `AM-2` | `armenia-income-tax`, `armenia-vat` |
-| `AM-3` | `armenia-income-tax`, `armenia-vat` |
-| `AM-4` | `armenia-income-tax`, `armenia-vat` |
-| `AM-5` | `armenia-income-tax`, `armenia-vat` |
-| `AM-6` | `armenia-income-tax`, `armenia-vat` |
 | `HO-165` | `armenia-income-tax`, `armenia-payroll` |
-
-## australia
-
-| Form | Guides |
-|---|---|
-| `AU-1` | `au-gst-property`, `au-individual-return`, `australia-gst` |
-| `AU-2` | `au-individual-return`, `australia-gst` |
-| `AU-3` | `au-gst-property`, `au-individual-return`, `australia-gst` |
-| `AU-4` | `au-gst-property`, `au-individual-return`, `australia-gst` |
-| `AU-5` | `au-gst-property`, `au-individual-return`, `australia-gst` |
-| `FBT-1` | `au-fbt`, `au-fbt-year` |
-| `FBT-3` | `au-fbt`, `au-fbt-year` |
 
 ## austria
 
 | Form | Guides |
 |---|---|
-| `AT-1` | `at-income-tax`, `at-vat-return`, `austria-vat-return` |
-| `AT-2` | `at-income-tax`, `at-vat-return`, `austria-vat-return` |
 | `AT-2026` | `at-vat-return`, `austria-vat-return` |
-| `AT-3` | `at-income-tax`, `at-vat-return`, `austria-vat-return` |
-| `AT-4` | `at-income-tax`, `at-vat-return`, `austria-vat-return` |
-| `AT-5` | `at-income-tax`, `at-vat-return`, `austria-vat-return` |
-| `AT-6` | `at-vat-return`, `austria-vat-return` |
-| `AT-7` | `at-vat-return`, `austria-vat-return` |
-| `AT-8` | `at-vat-return`, `austria-vat-return` |
 
 ## az
 
 | Form | Guides |
 |---|---|
-| `AZ-1` | `arizona-sales-tax`, `az-sales-tax` |
 | `Form 140` | `README`, `az-income-tax`, `az-transaction-privilege-tax` |
-
-## azerbaijan
-
-| Form | Guides |
-|---|---|
-| `AZ-1` | `azerbaijan-income-tax`, `azerbaijan-vat` |
-| `AZ-2` | `azerbaijan-income-tax`, `azerbaijan-vat` |
-| `AZ-3` | `azerbaijan-income-tax`, `azerbaijan-vat` |
-| `AZ-4` | `azerbaijan-income-tax`, `azerbaijan-vat` |
-| `AZ-5` | `azerbaijan-income-tax`, `azerbaijan-vat` |
-
-## bahamas
-
-| Form | Guides |
-|---|---|
-| `BS-1` | `bahamas-vat`, `bs-income-tax` |
-| `BS-2` | `bahamas-vat`, `bs-income-tax` |
-
-## bahrain
-
-| Form | Guides |
-|---|---|
-| `BH-1` | `bahrain-vat`, `bh-income-tax` |
-| `BH-2` | `bahrain-vat`, `bh-income-tax` |
-| `BH-3` | `bahrain-vat`, `bh-income-tax` |
 
 ## bangladesh
 
@@ -143,38 +49,17 @@ instance took.
 |---|---|
 | `MPL-2` | `bangladesh-pit`, `references` |
 
-## barbados
-
-| Form | Guides |
-|---|---|
-| `BB-1` | `barbados-vat`, `bb-income-tax` |
-| `BB-2` | `barbados-vat`, `bb-income-tax` |
-
 ## belarus
 
 | Form | Guides |
 |---|---|
-| `BY-1` | `belarus-income-tax`, `belarus-vat` |
-| `BY-2` | `belarus-income-tax`, `belarus-vat` |
-| `BY-3` | `belarus-income-tax`, `belarus-vat` |
-| `BY-4` | `belarus-income-tax`, `belarus-vat` |
-| `BY-5` | `belarus-income-tax`, `belarus-vat` |
-| `BY-6` | `belarus-income-tax`, `belarus-vat` |
 | `Form 4-fund` | `belarus-payroll`, `belarus-social-contributions` |
 
 ## belgium
 
 | Form | Guides |
 |---|---|
-| `BE-1` | `be-income-tax`, `be-vat-return`, `belgium-vat-return` |
-| `BE-2` | `be-income-tax`, `be-vat-return`, `belgium-vat-return` |
 | `BE-2026` | `be-vat-return`, `belgium-vat-return` |
-| `BE-3` | `be-income-tax`, `be-vat-return`, `belgium-vat-return` |
-| `BE-4` | `be-income-tax`, `be-vat-return`, `belgium-vat-return` |
-| `BE-5` | `be-vat-return`, `belgium-vat-return` |
-| `BE-6` | `be-vat-return`, `belgium-vat-return` |
-| `BE-7` | `be-vat-return`, `belgium-vat-return` |
-| `BE-8` | `be-vat-return`, `belgium-vat-return` |
 
 ## belize
 
@@ -186,9 +71,6 @@ instance took.
 
 | Form | Guides |
 |---|---|
-| `BO-1` | `bolivia-income-tax`, `bolivia-iva` |
-| `BO-2` | `bolivia-income-tax`, `bolivia-iva` |
-| `BO-3` | `bolivia-income-tax`, `bolivia-iva` |
 | `Form 110` | `bolivia-income-tax`, `bolivia-payroll`, `bolivia-social-contributions` |
 | `Form 200` | `bolivia-iva`, `bolivia-social-contributions` |
 | `Form 608` | `bolivia-payroll`, `bolivia-social-contributions` |
@@ -198,34 +80,13 @@ instance took.
 
 | Form | Guides |
 |---|---|
-| `BA-1` | `bosnia-income-tax`, `bosnia-vat` |
-| `BA-2` | `bosnia-income-tax`, `bosnia-vat` |
-| `BA-3` | `bosnia-income-tax`, `bosnia-vat` |
-| `BA-4` | `bosnia-income-tax`, `bosnia-vat` |
 | `MIP-1023` | `bosnia-income-tax`, `bosnia-payroll` |
 
 ## brazil
 
 | Form | Guides |
 |---|---|
-| `BR-1` | `br-income-tax`, `br-indirect-tax`, `brazil-vat` |
-| `BR-2` | `br-income-tax`, `br-indirect-tax`, `brazil-vat` |
-| `BR-3` | `br-income-tax`, `br-indirect-tax`, `brazil-vat` |
-| `BR-4` | `br-income-tax`, `br-indirect-tax`, `brazil-vat` |
-| `BR-5` | `br-income-tax`, `brazil-vat` |
-| `BR-6` | `br-income-tax`, `brazil-vat` |
 | `RBT12` | `br-indirect-tax`, `br-simples-nacional`, `brazil-vat` |
-
-## bulgaria
-
-| Form | Guides |
-|---|---|
-| `BG-1` | `bulgaria-income-tax`, `bulgaria-vat-return` |
-| `BG-2` | `bulgaria-income-tax`, `bulgaria-vat-return` |
-| `BG-3` | `bulgaria-income-tax`, `bulgaria-vat-return` |
-| `BG-4` | `bulgaria-income-tax`, `bulgaria-vat-return` |
-| `BG-5` | `bulgaria-income-tax`, `bulgaria-vat-return` |
-| `BG-6` | `bulgaria-income-tax`, `bulgaria-vat-return` |
 
 ## ca
 
@@ -249,56 +110,19 @@ instance took.
 
 | Form | Guides |
 |---|---|
-| `EHT-1` | `bc-eht`, `on-eht` |
-| `EHT-2` | `bc-eht`, `on-eht` |
-| `EHT-3` | `bc-eht`, `on-eht` |
-| `EHT-4` | `bc-eht`, `on-eht` |
-| `EHT-5` | `bc-eht`, `on-eht` |
-| `EHT-6` | `bc-eht`, `on-eht` |
 | `Form T2` | `ns-tax-credits`, `nu-tax-credits` |
 | `PD7A` | `nt-payroll-tax`, `qc-employer-contributions` |
-
-## cambodia
-
-| Form | Guides |
-|---|---|
-| `KH-1` | `cambodia-vat`, `kh-income-tax` |
-| `KH-2` | `cambodia-vat`, `kh-income-tax` |
-| `KH-3` | `cambodia-vat`, `kh-income-tax` |
-
-## cameroon
-
-| Form | Guides |
-|---|---|
-| `CM-1` | `cameroon-income-tax`, `cameroon-vat` |
-| `CM-2` | `cameroon-income-tax`, `cameroon-vat` |
 
 ## canada
 
 | Form | Guides |
 |---|---|
-| `CA-1` | `ca-fed-t2125`, `canada-gst-hst` |
-| `CA-2` | `ca-fed-t2125`, `canada-gst-hst` |
-| `CA-3` | `ca-fed-t2125`, `canada-gst-hst` |
-| `CA-4` | `ca-fed-t2125`, `canada-gst-hst` |
-| `CA-5` | `ca-fed-t2125`, `canada-gst-hst` |
 | `CPP1` | `ca-fed-cpp-ei`, `canada-tax-optimization` |
 | `CPP2` | `ab-individual-return`, `ca-fed-cpp-ei`, `ca-fed-t1-return`, `ca-fed-t2125`, `canada-bookkeeping`, `canada-payroll`, `canada-tax-optimization` |
 | `Form T1` | `ca-nonresident-cgt`, `ca-tax-residency` |
 | `QPP2` | `ca-fed-cpp-ei`, `ca-fed-t1-return`, `qc-individual-return` |
 | `RL-1` | `canada-payroll`, `qc-individual-return` |
 | `TP-1` | `qc-corporate-tax-co17`, `qc-individual-return` |
-
-## china
-
-| Form | Guides |
-|---|---|
-| `CN-1` | `china-vat`, `cn-vat` |
-| `CN-2` | `china-vat`, `cn-vat` |
-| `CN-3` | `china-vat`, `cn-vat` |
-| `CN-4` | `china-vat`, `cn-vat` |
-| `CN-5` | `china-vat`, `cn-vat` |
-| `CN-6` | `china-vat`, `cn-vat` |
 
 ## co
 
@@ -318,12 +142,6 @@ instance took.
 | Form | Guides |
 |---|---|
 | `Form PD` | `hr-company-formation`, `hr-corporate-income-tax`, `hr-tax-overview` |
-| `HR-1` | `croatia-income-tax`, `croatia-vat-return` |
-| `HR-2` | `croatia-income-tax`, `croatia-vat-return` |
-| `HR-3` | `croatia-income-tax`, `croatia-vat-return` |
-| `HR-4` | `croatia-income-tax`, `croatia-vat-return` |
-| `HR-5` | `croatia-income-tax`, `croatia-vat-return` |
-| `HR-6` | `croatia-income-tax`, `croatia-vat-return` |
 
 ## ct
 
@@ -336,24 +154,8 @@ instance took.
 
 | Form | Guides |
 |---|---|
-| `CY-1` | `cyprus-income-tax`, `cyprus-vat-return` |
-| `CY-2` | `cyprus-income-tax`, `cyprus-vat-return` |
-| `CY-3` | `cyprus-income-tax`, `cyprus-vat-return` |
-| `CY-4` | `cyprus-income-tax`, `cyprus-vat-return` |
-| `CY-5` | `cyprus-income-tax`, `cyprus-vat-return` |
-| `CY-6` | `cyprus-income-tax`, `cyprus-vat-return` |
 | `TD1` | `cyprus-income-tax`, `cyprus-payroll`, `cyprus-social-contributions` |
 | `TD63` | `cyprus-income-tax`, `cyprus-payroll` |
-
-## czech-republic
-
-| Form | Guides |
-|---|---|
-| `CZ-1` | `cz-income-tax`, `cz-vat-return`, `czech-republic-vat-return` |
-| `CZ-2` | `cz-income-tax`, `cz-vat-return`, `czech-republic-vat-return` |
-| `CZ-3` | `cz-income-tax`, `cz-vat-return`, `czech-republic-vat-return` |
-| `CZ-4` | `cz-income-tax`, `cz-vat-return`, `czech-republic-vat-return` |
-| `CZ-5` | `cz-vat-return`, `czech-republic-vat-return` |
 
 ## dc
 
@@ -368,37 +170,19 @@ instance took.
 |---|---|
 | `Form 1120` | `de-formation`, `de-franchise-tax-and-llc` |
 | `Form PIT-RES` | `README`, `de-income-tax` |
-| `GRT-01` | `de-gross-receipts-tax`, `de-income-tax` |
-| `GRT-02` | `de-gross-receipts-tax`, `de-income-tax` |
-| `GRT-03` | `de-gross-receipts-tax`, `de-income-tax` |
-| `GRT-04` | `de-gross-receipts-tax`, `de-income-tax` |
-| `GRT-05` | `de-gross-receipts-tax`, `de-income-tax` |
-| `GRT-1` | `de-gross-receipts-tax`, `de-income-tax` |
-| `GRT-2` | `de-gross-receipts-tax`, `de-income-tax` |
 
 ## denmark
 
 | Form | Guides |
 |---|---|
-| `DK-1` | `denmark-vat-return`, `dk-income-tax`, `dk-vat-return` |
-| `DK-2` | `denmark-vat-return`, `dk-income-tax`, `dk-vat-return` |
 | `DK-2026` | `denmark-vat-return`, `dk-vat-return` |
-| `DK-3` | `denmark-vat-return`, `dk-income-tax`, `dk-vat-return` |
-| `DK-4` | `denmark-vat-return`, `dk-income-tax`, `dk-vat-return` |
-| `DK-5` | `denmark-vat-return`, `dk-vat-return` |
-| `DK-6` | `denmark-vat-return`, `dk-vat-return` |
-| `DK-7` | `denmark-vat-return`, `dk-vat-return` |
 | `DK2026` | `denmark-vat-return`, `dk-vat-return` |
-| `EU-12` | `denmark-vat-return`, `dk-vat-return` |
 | `HI3G` | `denmark-vat-return`, `dk-vat-return` |
 
 ## dominican-republic
 
 | Form | Guides |
 |---|---|
-| `AR1` | `do-real-estate-tax`, `do-simplified-regimes`, `do-transfer-pricing` |
-| `DO-1` | `dominican-republic-income-tax`, `dominican-republic-itbis` |
-| `DO-2` | `dominican-republic-income-tax`, `dominican-republic-itbis` |
 | `Form IR-1` | `do-tax-overview`, `dominican-republic-income-tax` |
 | `Form IR-2` | `do-corporate-income-tax`, `do-tax-overview` |
 | `Form IT-1` | `do-tax-overview`, `dominican-republic-income-tax`, `dominican-republic-itbis` |
@@ -412,82 +196,27 @@ instance took.
 
 | Form | Guides |
 |---|---|
-| `EC-1` | `ecuador-income-tax`, `ecuador-iva` |
-| `EC-2` | `ecuador-income-tax`, `ecuador-iva` |
-| `EC-3` | `ecuador-income-tax`, `ecuador-iva` |
-| `EC-4` | `ecuador-income-tax`, `ecuador-iva` |
 | `Form SRI-GP` | `ecuador-payroll`, `ecuador-tax-optimization` |
 | `MDT-2025` | `ecuador-income-tax`, `ecuador-social-contributions` |
-
-## egypt
-
-| Form | Guides |
-|---|---|
-| `EG-1` | `eg-income-tax`, `eg-sme-tax` |
-| `EG-2` | `eg-income-tax`, `eg-sme-tax` |
-| `EG-3` | `eg-income-tax`, `eg-sme-tax` |
-| `EG-4` | `eg-income-tax`, `eg-sme-tax` |
-| `EG-5` | `eg-income-tax`, `eg-sme-tax` |
-| `EG-6` | `eg-income-tax`, `eg-sme-tax` |
-| `EG-7` | `eg-income-tax`, `eg-sme-tax` |
-| `EG-8` | `eg-income-tax`, `eg-sme-tax` |
 
 ## el-salvador
 
 | Form | Guides |
 |---|---|
 | `Form F-11` | `el-salvador-payroll`, `el-salvador-social-contributions` |
-| `SV-1` | `el-salvador-income-tax`, `el-salvador-iva` |
-| `SV-2` | `el-salvador-income-tax`, `el-salvador-iva` |
-| `SV-3` | `el-salvador-income-tax`, `el-salvador-iva` |
 
 ## equatorial-guinea
 
 | Form | Guides |
 |---|---|
 | `CEMAC-028` | `gq-tax-overview`, `gq-vat-gst` |
-| `CM-03` | `gq-tax-overview`, `gq-vat-gst` |
 
 ## estonia
 
 | Form | Guides |
 |---|---|
-| `EE-1` | `estonia-income-tax`, `estonia-vat-return` |
-| `EE-2` | `estonia-income-tax`, `estonia-vat-return` |
-| `EE-3` | `estonia-income-tax`, `estonia-vat-return` |
-| `EE-4` | `estonia-income-tax`, `estonia-vat-return` |
 | `Form TSD` | `ee-company-formation`, `ee-corporate-income-tax`, `ee-tax-overview`, `estonia-income-tax`, `estonia-payroll`, `estonia-social-contributions` |
 | `TELE2` | `estonia-income-tax`, `estonia-vat-return` |
-
-## ethiopia
-
-| Form | Guides |
-|---|---|
-| `ET-1` | `ethiopia-income-tax`, `ethiopia-social-contributions`, `ethiopia-vat` |
-| `ET-2` | `ethiopia-income-tax`, `ethiopia-social-contributions` |
-| `ET-3` | `ethiopia-income-tax`, `ethiopia-social-contributions` |
-| `ET-4` | `ethiopia-income-tax`, `ethiopia-social-contributions` |
-| `ET-5` | `ethiopia-income-tax`, `ethiopia-social-contributions` |
-
-## fiji
-
-| Form | Guides |
-|---|---|
-| `FJ-1` | `fiji-vat`, `fj-income-tax`, `fj-payroll-social` |
-| `FJ-2` | `fiji-vat`, `fj-income-tax`, `fj-payroll-social` |
-| `FJ-3` | `fj-income-tax`, `fj-payroll-social` |
-| `FJ-4` | `fj-income-tax`, `fj-payroll-social` |
-| `FJ-5` | `fj-income-tax`, `fj-payroll-social` |
-| `FJ-6` | `fj-income-tax`, `fj-payroll-social` |
-
-## finland
-
-| Form | Guides |
-|---|---|
-| `FI-1` | `fi-income-tax`, `finland-vat-return` |
-| `FI-2` | `fi-income-tax`, `finland-vat-return` |
-| `FI-3` | `fi-income-tax`, `finland-vat-return` |
-| `FI-4` | `fi-income-tax`, `finland-vat-return` |
 
 ## fl
 
@@ -510,11 +239,6 @@ instance took.
 |---|---|
 | `CA12` | `fr-business-accounting`, `fr-income-tax`, `fr-tax-audit`, `france-bookkeeping`, `france-vat-return` |
 | `CA3` | `fr-business-accounting`, `fr-income-tax`, `fr-tax-audit`, `france-bookkeeping`, `france-einvoice`, `france-vat-return` |
-| `FR-1` | `fr-income-tax`, `france-vat-return` |
-| `FR-2` | `fr-income-tax`, `france-vat-return` |
-| `FR-3` | `fr-income-tax`, `france-vat-return` |
-| `FR-4` | `fr-income-tax`, `france-vat-return` |
-| `FR-5` | `fr-income-tax`, `france-vat-return` |
 
 ## ga
 
@@ -534,27 +258,10 @@ instance took.
 | `Form 7004` | `ga-corporate-and-ptet`, `ga-net-worth-tax` |
 | `Form IT-303` | `ga-corporate-and-ptet`, `ga-income-tax`, `ga-net-worth-tax` |
 
-## georgia
-
-| Form | Guides |
-|---|---|
-| `GE-1` | `georgia-income-tax`, `georgia-vat` |
-| `GE-2` | `georgia-income-tax`, `georgia-vat` |
-| `GE-3` | `georgia-income-tax`, `georgia-vat` |
-| `GE-4` | `georgia-income-tax`, `georgia-vat` |
-| `GE-5` | `georgia-income-tax`, `georgia-vat` |
-| `GE-6` | `georgia-income-tax`, `georgia-vat` |
-| `GE-7` | `georgia-income-tax`, `georgia-vat` |
-
 ## germany
 
 | Form | Guides |
 |---|---|
-| `DE-1` | `de-income-tax`, `germany-vat-return` |
-| `DE-2` | `de-income-tax`, `germany-vat-return` |
-| `DE-3` | `de-income-tax`, `germany-vat-return` |
-| `DE-4` | `de-income-tax`, `germany-vat-return` |
-| `DE-5` | `de-income-tax`, `germany-vat-return` |
 | `MST5` | `de-payroll`, `germany-payroll` |
 | `MT940` | `de-income-tax`, `germany-bookkeeping` |
 | `UPTAB25` | `de-payroll`, `references` |
@@ -563,15 +270,7 @@ instance took.
 
 | Form | Guides |
 |---|---|
-| `GR-1` | `gr-income-tax`, `gr-vat-return`, `greece-vat-return` |
-| `GR-2` | `gr-income-tax`, `gr-vat-return`, `greece-vat-return` |
 | `GR-2026` | `gr-vat-return`, `greece-vat-return` |
-| `GR-3` | `gr-income-tax`, `gr-vat-return`, `greece-vat-return` |
-| `GR-4` | `gr-vat-return`, `greece-vat-return` |
-| `GR-5` | `gr-vat-return`, `greece-vat-return` |
-| `GR-6` | `gr-vat-return`, `greece-vat-return` |
-| `GR-7` | `gr-vat-return`, `greece-vat-return` |
-| `GR-8` | `gr-vat-return`, `greece-vat-return` |
 
 ## guatemala
 
@@ -579,11 +278,6 @@ instance took.
 |---|---|
 | `CE1` | `guatemala-income-tax`, `guatemala-payroll` |
 | `CE2` | `guatemala-income-tax`, `guatemala-payroll` |
-| `GT-1` | `guatemala-income-tax`, `guatemala-iva`, `guatemala-social-contributions` |
-| `GT-2` | `guatemala-income-tax`, `guatemala-iva`, `guatemala-social-contributions` |
-| `GT-3` | `guatemala-income-tax`, `guatemala-iva`, `guatemala-social-contributions` |
-| `GT-4` | `guatemala-income-tax`, `guatemala-social-contributions` |
-| `GT-5` | `guatemala-income-tax`, `guatemala-social-contributions` |
 | `SAT-1431` | `guatemala-income-tax`, `guatemala-payroll`, `guatemala-social-contributions` |
 
 ## hi
@@ -599,11 +293,6 @@ instance took.
 | Form | Guides |
 |---|---|
 | `Form 102` | `honduras-income-tax`, `honduras-payroll`, `honduras-social-contributions` |
-| `HN-1` | `honduras-income-tax`, `honduras-social-contributions` |
-| `HN-2` | `honduras-income-tax`, `honduras-social-contributions` |
-| `HN-3` | `honduras-income-tax`, `honduras-social-contributions` |
-| `HN-4` | `honduras-income-tax`, `honduras-social-contributions` |
-| `HN-5` | `honduras-income-tax`, `honduras-social-contributions` |
 
 ## hong-kong
 
@@ -616,26 +305,12 @@ instance took.
 | Form | Guides |
 |---|---|
 | `Form 2565` | `hu-vat-return`, `hungary-vat-return` |
-| `HU-1` | `hu-income-tax`, `hu-vat-return`, `hungary-vat-return` |
-| `HU-2` | `hu-income-tax`, `hu-vat-return`, `hungary-vat-return` |
-| `HU-3` | `hu-income-tax`, `hu-vat-return`, `hungary-vat-return` |
-| `HU-4` | `hu-vat-return`, `hungary-vat-return` |
-| `HU-5` | `hu-vat-return`, `hungary-vat-return` |
 
 ## ia
 
 | Form | Guides |
 |---|---|
 | `Form IA` | `README`, `ia-income-tax` |
-
-## iceland
-
-| Form | Guides |
-|---|---|
-| `IS-1` | `iceland-income-tax`, `iceland-vat` |
-| `IS-2` | `iceland-income-tax`, `iceland-vat` |
-| `IS-3` | `iceland-income-tax`, `iceland-vat` |
-| `IS-4` | `iceland-income-tax`, `iceland-vat` |
 
 ## il
 
@@ -665,11 +340,6 @@ instance took.
 | `GSTR-4` | `in-gst-return`, `india-gst` |
 | `GSTR-8` | `in-gst-return`, `india-gst` |
 | `GSTR-9` | `in-gst-return`, `india-einvoice`, `india-gst` |
-| `IN-1` | `in-gst-return`, `in-income-tax`, `india-gst` |
-| `IN-2` | `in-gst-return`, `in-income-tax`, `india-gst` |
-| `IN-3` | `in-gst-return`, `in-income-tax`, `india-gst` |
-| `IN-4` | `in-gst-return`, `in-income-tax`, `india-gst` |
-| `IN-5` | `in-gst-return`, `in-income-tax`, `india-gst` |
 | `ITR-1` | `in-income-tax`, `in-professional-tax` |
 | `ITR-3` | `in-income-tax`, `india-crypto-tax` |
 | `ONE97` | `in-gst-return`, `india-gst` |
@@ -681,20 +351,9 @@ instance took.
 
 | Form | Guides |
 |---|---|
-| `CT-1` | `id-corporate-tax`, `id-einvoice-coretax` |
-| `CT-2` | `id-corporate-tax`, `id-einvoice-coretax` |
-| `CT-3` | `id-corporate-tax`, `id-einvoice-coretax` |
-| `CT-4` | `id-corporate-tax`, `id-einvoice-coretax` |
-| `CT-5` | `id-corporate-tax`, `id-einvoice-coretax` |
-| `CT-6` | `id-corporate-tax`, `id-einvoice-coretax` |
 | `Form 1721` | `id-return-assembly`, `id-tax-optimization` |
 | `Form 1770` | `id-income-tax`, `id-return-assembly`, `id-tax-optimization` |
 | `Form 1771` | `id-corporate-tax`, `id-formation`, `id-return-assembly`, `id-tax-optimization` |
-| `ID-1` | `id-bookkeeping`, `indonesia-vat` |
-| `ID-2` | `id-bookkeeping`, `indonesia-vat` |
-| `ID-3` | `id-bookkeeping`, `indonesia-vat` |
-| `ID-4` | `id-bookkeeping`, `indonesia-vat` |
-| `ID-5` | `id-bookkeeping`, `indonesia-vat` |
 | `KEP-536` | `id-bookkeeping`, `id-income-tax` |
 | `PER-04` | `id-einvoice-coretax`, `id-withholding` |
 | `PER-11` | `id-einvoice-coretax`, `id-income-tax`, `indonesia-vat` |
@@ -725,15 +384,7 @@ instance took.
 | `Form CT1` | `ie-corporation-tax`, `ie-formation`, `ie-income-tax-form11` |
 | `Form TR1` | `ie-formation`, `ie-freelance-intake`, `ie-prsi-class-s` |
 | `Form TR2` | `ie-formation`, `ie-freelance-intake` |
-| `IE-1` | `ie-income-tax-form11`, `ie-vat-return`, `ireland-vat-return` |
-| `IE-2` | `ie-income-tax-form11`, `ie-vat-return`, `ireland-vat-return` |
 | `IE-2026` | `ie-vat-return`, `ireland-vat-return` |
-| `IE-3` | `ie-income-tax-form11`, `ie-vat-return`, `ireland-vat-return` |
-| `IE-4` | `ie-income-tax-form11`, `ie-vat-return`, `ireland-vat-return` |
-| `IE-5` | `ie-income-tax-form11`, `ie-vat-return`, `ireland-vat-return` |
-| `IE-6` | `ie-vat-return`, `ireland-vat-return` |
-| `IE-7` | `ie-vat-return`, `ireland-vat-return` |
-| `IE-8` | `ie-vat-return`, `ireland-vat-return` |
 | `IT38` | `ie-cat`, `ie-return-assembly` |
 | `TR1` | `ie-formation`, `ie-freelance-intake`, `ie-return-assembly` |
 | `TR2` | `ie-formation`, `ie-freelance-intake` |
@@ -748,42 +399,6 @@ instance took.
 | `Form 1325` | `il-crypto-tax`, `references` |
 | `Form 135` | `il-employee-tax-refund`, `il-income-tax-returns` |
 | `Form 856` | `il-corporate-tax`, `il-income-tax-returns`, `il-tax-withholding` |
-
-## italy
-
-| Form | Guides |
-|---|---|
-| `IT-1` | `it-income-tax`, `italy-vat-return` |
-| `IT-2` | `it-income-tax`, `italy-vat-return` |
-| `IT-3` | `it-income-tax`, `italy-vat-return` |
-| `IT-4` | `it-income-tax`, `italy-vat-return` |
-| `IT-5` | `it-income-tax`, `italy-vat-return` |
-
-## ivory-coast
-
-| Form | Guides |
-|---|---|
-| `CI-1` | `ivory-coast-income-tax`, `ivory-coast-vat` |
-
-## jamaica
-
-| Form | Guides |
-|---|---|
-| `JM-1` | `jamaica-gct`, `jm-income-tax` |
-| `JM-2` | `jamaica-gct`, `jm-income-tax` |
-| `JM-3` | `jamaica-gct`, `jm-income-tax` |
-| `JM-4` | `jamaica-gct`, `jm-income-tax` |
-| `JM-5` | `jamaica-gct`, `jm-income-tax` |
-
-## japan
-
-| Form | Guides |
-|---|---|
-| `JP-1` | `japan-consumption-tax`, `jp-income-tax` |
-| `JP-2` | `japan-consumption-tax`, `jp-income-tax` |
-| `JP-3` | `japan-consumption-tax`, `jp-income-tax` |
-| `JP-4` | `japan-consumption-tax`, `jp-income-tax` |
-| `JP-5` | `japan-consumption-tax`, `jp-income-tax` |
 
 ## kazakhstan
 
@@ -800,20 +415,6 @@ instance took.
 | `CR1` | `ke-company-formation`, `set-up-your-company-in-kenya-we-handle-it-from-abroad` |
 | `CR2` | `ke-company-formation`, `set-up-your-company-in-kenya-we-handle-it-from-abroad` |
 | `CR8` | `ke-company-formation`, `set-up-your-company-in-kenya-we-handle-it-from-abroad` |
-| `KE-1` | `ke-income-tax`, `kenya-vat` |
-| `KE-2` | `ke-income-tax`, `kenya-vat` |
-| `KE-3` | `ke-income-tax`, `kenya-vat` |
-| `KE-4` | `ke-income-tax`, `kenya-vat` |
-
-## kosovo
-
-| Form | Guides |
-|---|---|
-| `XK-1` | `kosovo-income-tax`, `kosovo-social-contributions`, `kosovo-vat` |
-| `XK-2` | `kosovo-income-tax`, `kosovo-social-contributions`, `kosovo-vat` |
-| `XK-3` | `kosovo-income-tax`, `kosovo-social-contributions`, `kosovo-vat` |
-| `XK-4` | `kosovo-income-tax`, `kosovo-social-contributions` |
-| `XK-5` | `kosovo-income-tax`, `kosovo-social-contributions` |
 
 ## ks
 
@@ -843,18 +444,7 @@ instance took.
 
 | Form | Guides |
 |---|---|
-| `LV-1` | `latvia-income-tax`, `latvia-vat-return` |
-| `LV-2` | `latvia-income-tax`, `latvia-vat-return` |
-| `LV-3` | `latvia-income-tax`, `latvia-vat-return` |
 | `TELE2` | `latvia-income-tax`, `latvia-vat-return` |
-
-## luxembourg
-
-| Form | Guides |
-|---|---|
-| `LU-1` | `luxembourg-income-tax`, `luxembourg-vat-return` |
-| `LU-2` | `luxembourg-income-tax`, `luxembourg-vat-return` |
-| `LU-3` | `luxembourg-income-tax`, `luxembourg-vat-return` |
 
 ## ma
 
@@ -873,10 +463,6 @@ instance took.
 |---|---|
 | `CP500` | `my-income-tax`, `my-pcb` |
 | `Form BE` | `my-income-tax`, `my-tax-overview` |
-| `MY-1` | `malaysia-sst`, `my-income-tax` |
-| `MY-2` | `malaysia-sst`, `my-income-tax` |
-| `MY-3` | `malaysia-sst`, `my-income-tax` |
-| `MY-4` | `malaysia-sst`, `my-income-tax` |
 | `RM1` | `malaysia-einvoice`, `my-company-formation`, `my-epf-socso`, `my-income-tax`, `my-pcb` |
 | `RM10` | `malaysia-einvoice`, `my-epf-socso`, `my-pcb` |
 | `RM100` | `malaysia-einvoice`, `my-epf-socso`, `my-income-tax`, `my-pcb` |
@@ -892,25 +478,11 @@ instance took.
 | `RM8` | `my-epf-socso`, `my-pcb` |
 | `SST-02` | `malaysia-einvoice`, `malaysia-sst` |
 
-## maldives
-
-| Form | Guides |
-|---|---|
-| `MV-1` | `maldives-gst`, `mv-income-tax` |
-| `MV-2` | `maldives-gst`, `mv-income-tax` |
-
 ## malta
 
 | Form | Guides |
 |---|---|
 | `FS3` | `malta-payroll`, `malta-vat-return` |
-| `MT-1` | `malta-income-tax`, `malta-vat-return` |
-| `MT-2` | `malta-income-tax`, `malta-vat-return` |
-| `MT-3` | `malta-income-tax`, `malta-vat-return` |
-| `MT-4` | `malta-income-tax`, `malta-vat-return` |
-| `MT-5` | `malta-income-tax`, `malta-vat-return` |
-| `MT-6` | `malta-income-tax`, `malta-vat-return` |
-| `MT-7` | `malta-income-tax`, `malta-vat-return` |
 | `TA22` | `malta-income-tax`, `malta-payroll`, `malta-ssc`, `malta-tax-optimization` |
 | `TA24` | `malta-income-tax`, `malta-vat-return`, `mt-rental-income` |
 
@@ -935,13 +507,7 @@ instance took.
 | Form | Guides |
 |---|---|
 | `FE-2026` | `mexico-iva`, `mx-vat-return` |
-| `MX-1` | `mexico-iva`, `mx-imss`, `mx-income-tax`, `mx-vat-return` |
-| `MX-2` | `mexico-iva`, `mx-imss`, `mx-income-tax`, `mx-vat-return` |
 | `MX-2026` | `mexico-iva`, `mx-vat-return` |
-| `MX-3` | `mexico-iva`, `mx-imss`, `mx-income-tax`, `mx-vat-return` |
-| `MX-4` | `mexico-iva`, `mx-imss`, `mx-income-tax`, `mx-vat-return` |
-| `MX-5` | `mexico-iva`, `mx-income-tax`, `mx-vat-return` |
-| `MX-6` | `mexico-iva`, `mx-income-tax`, `mx-vat-return` |
 
 ## mi
 
@@ -970,7 +536,6 @@ instance took.
 | `Form MI-2210` | `mi-detroit-individual-return`, `mi-estimated-tax` |
 | `Form W-4` | `mi-estimated-tax`, `mi-payroll` |
 | `MI-1040` | `mi-detroit-individual-return`, `mi-estimated-tax`, `mi-homestead-credit`, `mi-income-tax`, `mi-payroll`, `mi-pension-retirement-subtraction`, `mi-return-assembly` |
-| `PA-0004` | `mi-homestead-credit`, `mi-pension-retirement-subtraction` |
 
 ## mn
 
@@ -997,42 +562,12 @@ instance took.
 | `CET18` | `moldova-income-tax`, `moldova-payroll`, `moldova-social-contributions` |
 | `Form IPC21` | `moldova-payroll`, `moldova-social-contributions` |
 | `IPC21` | `moldova-payroll`, `moldova-social-contributions` |
-| `MD-1` | `moldova-income-tax`, `moldova-vat` |
-| `MD-2` | `moldova-income-tax`, `moldova-vat` |
-| `MD-3` | `moldova-income-tax`, `moldova-vat` |
-| `MD-4` | `moldova-income-tax`, `moldova-vat` |
 
 ## monaco
 
 | Form | Guides |
 |---|---|
 | `CA3` | `mc-company-formation`, `monaco-vat` |
-
-## montenegro
-
-| Form | Guides |
-|---|---|
-| `ME-1` | `montenegro-income-tax`, `montenegro-vat` |
-| `ME-2` | `montenegro-income-tax`, `montenegro-vat` |
-| `ME-3` | `montenegro-income-tax`, `montenegro-vat` |
-
-## morocco
-
-| Form | Guides |
-|---|---|
-| `MA-1` | `ma-income-tax`, `morocco-income-tax`, `morocco-vat` |
-| `MA-2` | `ma-income-tax`, `morocco-income-tax` |
-| `MA-3` | `ma-income-tax`, `morocco-income-tax` |
-| `MA-4` | `ma-income-tax`, `morocco-income-tax` |
-| `MA-5` | `ma-income-tax`, `morocco-income-tax` |
-| `MA-6` | `ma-income-tax`, `morocco-income-tax` |
-| `MA-7` | `ma-income-tax`, `morocco-income-tax` |
-
-## mozambique
-
-| Form | Guides |
-|---|---|
-| `MZ-1` | `mozambique-income-tax`, `mozambique-vat` |
 
 ## ms
 
@@ -1096,13 +631,6 @@ instance took.
 | `Form 1040N` | `README`, `ne-income-tax` |
 | `Form 1120N` | `README`, `ne-income-tax` |
 
-## nepal
-
-| Form | Guides |
-|---|---|
-| `NP-1` | `nepal-income-tax`, `nepal-vat` |
-| `NP-2` | `nepal-income-tax`, `nepal-vat` |
-
 ## netherlands
 
 | Form | Guides |
@@ -1110,15 +638,7 @@ instance took.
 | `BW2` | `netherlands-bookkeeping`, `netherlands-financial-statements` |
 | `DEL2026` | `netherlands-vat-return`, `nl-vat-return` |
 | `MT940` | `netherlands-bookkeeping`, `nl-income-tax` |
-| `NL-1` | `netherlands-vat-return`, `nl-income-tax`, `nl-vat-return` |
-| `NL-2` | `netherlands-vat-return`, `nl-income-tax`, `nl-vat-return` |
 | `NL-2026` | `netherlands-vat-return`, `nl-vat-return` |
-| `NL-3` | `netherlands-vat-return`, `nl-income-tax`, `nl-vat-return` |
-| `NL-4` | `netherlands-vat-return`, `nl-income-tax`, `nl-vat-return` |
-| `NL-5` | `netherlands-vat-return`, `nl-income-tax`, `nl-vat-return` |
-| `NL-6` | `netherlands-vat-return`, `nl-vat-return` |
-| `NL-7` | `netherlands-vat-return`, `nl-vat-return` |
-| `NL-8` | `netherlands-vat-return`, `nl-vat-return` |
 
 ## new-zealand
 
@@ -1126,11 +646,6 @@ instance took.
 |---|---|
 | `GST101A` | `new-zealand-gst`, `nz-gst-return` |
 | `IR3` | `new-zealand-crypto-tax`, `nz-acc-levies`, `nz-income-tax-ir3`, `nz-provisional-tax` |
-| `NZ-1` | `new-zealand-gst`, `nz-gst-return`, `nz-income-tax-ir3` |
-| `NZ-2` | `new-zealand-gst`, `nz-gst-return`, `nz-income-tax-ir3` |
-| `NZ-3` | `new-zealand-gst`, `nz-gst-return`, `nz-income-tax-ir3` |
-| `NZ-4` | `new-zealand-gst`, `nz-gst-return`, `nz-income-tax-ir3` |
-| `NZ-5` | `new-zealand-gst`, `nz-income-tax-ir3` |
 
 ## nicaragua
 
@@ -1140,24 +655,14 @@ instance took.
 | `Form IR-122` | `nicaragua-income-tax`, `nicaragua-payroll`, `nicaragua-social-contributions` |
 | `IR-106` | `nicaragua-income-tax`, `nicaragua-payroll`, `nicaragua-social-contributions` |
 | `IR-122` | `nicaragua-income-tax`, `nicaragua-payroll`, `nicaragua-social-contributions` |
-| `NI-1` | `nicaragua-income-tax`, `nicaragua-iva` |
-| `NI-2` | `nicaragua-income-tax`, `nicaragua-iva` |
-| `NI-3` | `nicaragua-income-tax`, `nicaragua-iva` |
 
 ## nigeria
 
 | Form | Guides |
 |---|---|
-| `AGR-2025` | `ng-vat`, `nigeria-vat` |
 | `Form 002` | `ng-return-assembly`, `ng-vat`, `nigeria-vat` |
 | `Form CIT` | `ng-cit`, `ng-wht` |
 | `Form H1` | `ng-freelance-intake`, `ng-payroll`, `ng-return-assembly` |
-| `NG-1` | `ng-income-tax`, `ng-vat`, `ng-vat-return` |
-| `NG-2` | `ng-income-tax`, `ng-vat`, `ng-vat-return` |
-| `NG-3` | `ng-income-tax`, `ng-vat`, `ng-vat-return` |
-| `NG-4` | `ng-income-tax`, `ng-vat` |
-| `NG-5` | `ng-income-tax`, `ng-vat` |
-| `NG-6` | `ng-income-tax`, `ng-vat` |
 
 ## nj
 
@@ -1175,23 +680,11 @@ instance took.
 |---|---|
 | `Form PIT-1` | `README`, `nm-income-tax` |
 
-## north-macedonia
-
-| Form | Guides |
-|---|---|
-| `MK-1` | `north-macedonia-income-tax`, `north-macedonia-vat` |
-| `MK-2` | `north-macedonia-income-tax`, `north-macedonia-vat` |
-| `MK-3` | `north-macedonia-income-tax`, `north-macedonia-vat` |
-
 ## norway
 
 | Form | Guides |
 |---|---|
 | `LOV-2009` | `no-vat-return`, `norway-mva` |
-| `NO-1` | `no-income-tax`, `no-vat-return`, `norway-mva` |
-| `NO-2` | `no-income-tax`, `no-vat-return`, `norway-mva` |
-| `NO-3` | `no-income-tax`, `no-vat-return`, `norway-mva` |
-| `NO-4` | `no-income-tax`, `no-vat-return`, `norway-mva` |
 
 ## nv
 
@@ -1222,8 +715,6 @@ instance took.
 | `IT-204` | `ny-formation`, `ny-income-tax`, `ny-llc-filing-fee` |
 | `IT-2105` | `ny-estimated-tax`, `ny-income-tax`, `ny-mctmt` |
 | `IT-219` | `ny-estimated-tax`, `ny-income-tax`, `nyc-ubt` |
-| `NY-1` | `new-york-sales-tax`, `ny-sales-tax` |
-| `NY-2` | `new-york-sales-tax`, `ny-sales-tax` |
 | `NYC-202` | `ny-formation`, `ny-income-tax`, `nyc-ubt` |
 | `NYC-202S` | `ny-income-tax`, `ny-llc-filing-fee`, `nyc-ubt` |
 | `ST-100` | `new-york-sales-tax`, `ny-sales-tax` |
@@ -1240,9 +731,6 @@ instance took.
 | `Form CAT` | `oh-cat`, `oh-cat-tax` |
 | `Form IT` | `README`, `oh-income-tax`, `oh-payroll` |
 | `IT-1040` | `oh-sales-tax`, `ohio-sales-tax` |
-| `OH-1` | `oh-income-tax`, `oh-sales-tax`, `ohio-sales-tax` |
-| `OH-2` | `oh-income-tax`, `oh-sales-tax`, `ohio-sales-tax` |
-| `OH-3` | `oh-income-tax`, `oh-sales-tax`, `ohio-sales-tax` |
 | `UST-1` | `oh-sales-tax`, `ohio-sales-tax` |
 
 ## ok
@@ -1266,21 +754,9 @@ instance took.
 | `Form 941` | `pa-local-eit`, `pa-payroll` |
 | `Form CLGS-32-6` | `pa-local-eit`, `pa-payroll` |
 | `Form PA-40` | `README`, `pa-income-tax`, `pa-payroll` |
-| `PA-1` | `pa-income-tax`, `pa-sales-tax`, `pennsylvania-sales-tax` |
-| `PA-2` | `pa-income-tax`, `pa-sales-tax`, `pennsylvania-sales-tax` |
-| `PA-3` | `pa-income-tax`, `pa-sales-tax`, `pennsylvania-sales-tax` |
+| `PA-3` | `pa-sales-tax`, `pennsylvania-sales-tax` |
 | `PA-40` | `pa-income-tax`, `pa-local-eit` |
 | `REV-1220` | `pa-sales-tax`, `pennsylvania-sales-tax` |
-
-## peru
-
-| Form | Guides |
-|---|---|
-| `PE-1` | `peru-income-tax`, `peru-social-contributions` |
-| `PE-2` | `peru-income-tax`, `peru-social-contributions` |
-| `PE-3` | `peru-income-tax`, `peru-social-contributions` |
-| `PE-4` | `peru-income-tax`, `peru-social-contributions` |
-| `PE-5` | `peru-income-tax`, `peru-social-contributions` |
 
 ## philippines
 
@@ -1293,10 +769,6 @@ instance took.
 | `Form 2307` | `ph-income-tax`, `ph-withholding` |
 | `Form 2550Q` | `ph-income-tax`, `philippines-vat` |
 | `Form 2551Q` | `ph-income-tax`, `philippines-vat` |
-| `PH-1` | `ph-income-tax`, `philippines-vat` |
-| `PH-2` | `ph-income-tax`, `philippines-vat` |
-| `PH-3` | `ph-income-tax`, `philippines-vat` |
-| `PH-4` | `ph-income-tax`, `philippines-vat` |
 
 ## poland
 
@@ -1307,15 +779,7 @@ instance took.
 | `PIT-36L` | `pl-income-tax`, `pl-zus-contributions`, `poland-einvoice` |
 | `PIT-38` | `pl-capital-gains`, `references` |
 | `PIT-4R` | `pl-vat-return`, `poland-vat-return` |
-| `PL-1` | `pl-income-tax`, `pl-vat-return`, `poland-vat-return` |
-| `PL-2` | `pl-income-tax`, `pl-vat-return`, `poland-vat-return` |
 | `PL-2026` | `pl-vat-return`, `poland-vat-return` |
-| `PL-3` | `pl-income-tax`, `pl-vat-return`, `poland-vat-return` |
-| `PL-4` | `pl-income-tax`, `pl-vat-return`, `poland-vat-return` |
-| `PL-5` | `pl-vat-return`, `poland-vat-return` |
-| `PL-6` | `pl-vat-return`, `poland-vat-return` |
-| `PL-7` | `pl-vat-return`, `poland-vat-return` |
-| `PL-8` | `pl-vat-return`, `poland-vat-return` |
 | `VAT-26` | `pl-vat-return`, `poland-vat-return` |
 
 ## portugal
@@ -1323,15 +787,7 @@ instance took.
 | Form | Guides |
 |---|---|
 | `DAC8` | `portugal-crypto-tax`, `pt-return-assembly` |
-| `PT-1` | `portugal-vat-return`, `pt-income-tax`, `pt-vat-return` |
-| `PT-2` | `portugal-vat-return`, `pt-income-tax`, `pt-vat-return` |
 | `PT-2026` | `portugal-vat-return`, `pt-vat-return` |
-| `PT-3` | `portugal-vat-return`, `pt-income-tax`, `pt-vat-return` |
-| `PT-4` | `portugal-vat-return`, `pt-income-tax`, `pt-vat-return` |
-| `PT-5` | `portugal-vat-return`, `pt-income-tax`, `pt-vat-return` |
-| `PT-6` | `portugal-vat-return`, `pt-income-tax`, `pt-vat-return` |
-| `PT-7` | `portugal-vat-return`, `pt-income-tax`, `pt-vat-return` |
-| `PT-8` | `portugal-vat-return`, `pt-income-tax`, `pt-vat-return` |
 
 ## ri
 
@@ -1346,30 +802,6 @@ instance took.
 | `Form 101` | `ro-corporate-income-tax`, `ro-tax-overview` |
 | `Form 112` | `ro-company-formation`, `ro-payroll-social` |
 
-## russia
-
-| Form | Guides |
-|---|---|
-| `RU-1` | `ru-income-tax`, `ru-self-employed-npd`, `ru-usn` |
-| `RU-2` | `ru-income-tax`, `ru-self-employed-npd`, `ru-usn` |
-| `RU-3` | `ru-income-tax`, `ru-self-employed-npd`, `ru-usn` |
-| `RU-4` | `ru-income-tax`, `ru-self-employed-npd`, `ru-usn` |
-| `RU-5` | `ru-income-tax`, `ru-self-employed-npd`, `ru-usn` |
-| `RU-6` | `ru-income-tax`, `ru-self-employed-npd`, `ru-usn` |
-| `RU-7` | `ru-income-tax`, `ru-self-employed-npd`, `ru-usn` |
-| `RU-8` | `ru-self-employed-npd`, `ru-usn` |
-
-## rwanda
-
-| Form | Guides |
-|---|---|
-| `RW-1` | `rw-income-tax`, `rwanda-income-tax`, `rwanda-social-contributions` |
-| `RW-2` | `rw-income-tax`, `rwanda-income-tax`, `rwanda-social-contributions` |
-| `RW-3` | `rw-income-tax`, `rwanda-income-tax`, `rwanda-social-contributions` |
-| `RW-4` | `rw-income-tax`, `rwanda-income-tax`, `rwanda-social-contributions` |
-| `RW-5` | `rw-income-tax`, `rwanda-income-tax`, `rwanda-social-contributions` |
-| `RW-6` | `rw-income-tax`, `rwanda-income-tax` |
-
 ## sc
 
 | Form | Guides |
@@ -1382,13 +814,7 @@ instance took.
 |---|---|
 | `CT-2026` | `sg-gst-return`, `singapore-gst` |
 | `Form B1` | `sg-income-tax`, `singapore-crypto-tax` |
-| `SG-1` | `sg-gst-return`, `sg-income-tax`, `singapore-gst` |
-| `SG-2` | `sg-gst-return`, `sg-income-tax`, `singapore-gst` |
 | `SG-2026` | `sg-gst-return`, `singapore-gst` |
-| `SG-3` | `sg-gst-return`, `sg-income-tax`, `singapore-gst` |
-| `SG-4` | `sg-gst-return`, `sg-income-tax`, `singapore-gst` |
-| `SG-5` | `sg-gst-return`, `sg-income-tax`, `singapore-gst` |
-| `SG-6` | `sg-gst-return`, `singapore-gst` |
 
 ## slovenia
 
@@ -1414,73 +840,27 @@ instance took.
 | `ITR14` | `south-africa-transfer-pricing`, `za-income-tax` |
 | `VAT201` | `south-africa-vat`, `za-vat-return` |
 | `VAT215` | `south-africa-vat`, `za-vat-return` |
-| `ZA-1` | `south-africa-vat`, `za-income-tax`, `za-vat-return` |
-| `ZA-2` | `south-africa-vat`, `za-income-tax`, `za-vat-return` |
-| `ZA-3` | `south-africa-vat`, `za-income-tax`, `za-vat-return` |
-| `ZA-4` | `south-africa-vat`, `za-income-tax`, `za-vat-return` |
-
-## south-korea
-
-| Form | Guides |
-|---|---|
-| `KR-1` | `kr-income-tax`, `south-korea-vat` |
-| `KR-2` | `kr-income-tax`, `south-korea-vat` |
-| `KR-3` | `kr-income-tax`, `south-korea-vat` |
-| `KR-4` | `kr-income-tax`, `south-korea-vat` |
-| `KR-5` | `kr-income-tax`, `south-korea-vat` |
 
 ## spain
 
 | Form | Guides |
 |---|---|
-| `ES-1` | `es-income-tax`, `es-vat-return`, `spain-vat-return` |
-| `ES-2` | `es-income-tax`, `es-vat-return`, `spain-vat-return` |
 | `ES-2026` | `es-vat-return`, `spain-vat-return` |
-| `ES-3` | `es-income-tax`, `es-vat-return`, `spain-vat-return` |
-| `ES-4` | `es-income-tax`, `es-vat-return`, `spain-vat-return` |
-| `ES-5` | `es-income-tax`, `es-vat-return`, `spain-vat-return` |
-| `ES-6` | `es-vat-return`, `spain-vat-return` |
-| `ES-7` | `es-vat-return`, `spain-vat-return` |
-| `ES-8` | `es-vat-return`, `spain-vat-return` |
-| `EU-12` | `es-vat-return`, `spain-vat-return` |
 | `TC1` | `es-social-contributions`, `spain-payroll` |
 | `TC2` | `es-social-contributions`, `spain-payroll` |
-
-## sri-lanka
-
-| Form | Guides |
-|---|---|
-| `LK-1` | `sri-lanka-income-tax`, `sri-lanka-vat` |
-| `LK-2` | `sri-lanka-income-tax`, `sri-lanka-vat` |
-| `LK-3` | `sri-lanka-income-tax`, `sri-lanka-vat` |
 
 ## sweden
 
 | Form | Guides |
 |---|---|
 | `OKQ8` | `se-income-tax`, `se-vat-return`, `sweden-vat-return` |
-| `SE-1` | `se-income-tax`, `se-vat-return`, `sweden-vat-return` |
-| `SE-2` | `se-income-tax`, `se-vat-return`, `sweden-vat-return` |
 | `SE-2026` | `se-vat-return`, `sweden-vat-return` |
-| `SE-3` | `se-income-tax`, `se-vat-return`, `sweden-vat-return` |
-| `SE-4` | `se-income-tax`, `se-vat-return`, `sweden-vat-return` |
-| `SE-5` | `se-vat-return`, `sweden-vat-return` |
-| `SE-6` | `se-vat-return`, `sweden-vat-return` |
-| `SE-7` | `se-vat-return`, `sweden-vat-return` |
 
 ## switzerland
 
 | Form | Guides |
 |---|---|
-| `CH-1` | `ch-cantonal-tax`, `ch-federal-income-tax`, `ch-vat-return`, `switzerland-vat` |
-| `CH-2` | `ch-cantonal-tax`, `ch-federal-income-tax`, `ch-vat-return`, `switzerland-vat` |
 | `CH-2026` | `ch-vat-return`, `switzerland-vat` |
-| `CH-3` | `ch-cantonal-tax`, `ch-federal-income-tax`, `ch-vat-return`, `switzerland-vat` |
-| `CH-4` | `ch-cantonal-tax`, `ch-federal-income-tax`, `ch-vat-return`, `switzerland-vat` |
-| `CH-5` | `ch-cantonal-tax`, `ch-federal-income-tax`, `ch-vat-return`, `switzerland-vat` |
-| `CH-6` | `ch-cantonal-tax`, `ch-vat-return`, `switzerland-vat` |
-| `CH-7` | `ch-vat-return`, `switzerland-vat` |
-| `CH-8` | `ch-vat-return`, `switzerland-vat` |
 
 ## tanzania
 
@@ -1488,12 +868,6 @@ instance took.
 |---|---|
 | `FA2025` | `tanzania-income-tax`, `tanzania-tax-optimization`, `tanzania-withholding-tax` |
 | `Form ITX` | `tanzania-income-tax`, `tanzania-social-contributions` |
-| `TZ-1` | `tanzania-income-tax`, `tanzania-tax-optimization`, `tanzania-vat`, `tanzania-withholding-tax` |
-| `TZ-2` | `tanzania-income-tax`, `tanzania-tax-optimization`, `tanzania-withholding-tax` |
-| `TZ-3` | `tanzania-income-tax`, `tanzania-tax-optimization`, `tanzania-withholding-tax` |
-| `TZ-4` | `tanzania-income-tax`, `tanzania-tax-optimization`, `tanzania-withholding-tax` |
-| `TZ-5` | `tanzania-income-tax`, `tanzania-tax-optimization`, `tanzania-withholding-tax` |
-| `TZ-6` | `tanzania-income-tax`, `tanzania-tax-optimization`, `tanzania-withholding-tax` |
 
 ## thailand
 
@@ -1521,18 +895,6 @@ instance took.
 | `Form 05-169` | `tx-formation`, `tx-franchise-tax` |
 | `Form 14-117` | `tx-sales-tax`, `tx-sales-use-tax` |
 
-## uae
-
-| Form | Guides |
-|---|---|
-| `AE-1` | `ae-corporate-tax`, `uae-vat` |
-| `AE-2` | `ae-corporate-tax`, `uae-vat` |
-| `AE-3` | `ae-corporate-tax`, `uae-vat` |
-| `AE-4` | `ae-corporate-tax`, `uae-vat` |
-| `AE-5` | `ae-corporate-tax`, `uae-vat` |
-| `AE-6` | `ae-corporate-tax`, `uae-vat` |
-| `AE-7` | `ae-corporate-tax`, `uae-vat` |
-
 ## uk
 
 | Form | Guides |
@@ -1552,29 +914,11 @@ instance took.
 | `SA302` | `uk-income-tax-sa100`, `uk-national-insurance`, `uk-payments-on-account`, `uk-student-loan-repayment` |
 | `SA303` | `uk-income-tax-sa100`, `uk-payments-on-account`, `uk-tax-optimization` |
 
-## ukraine
-
-| Form | Guides |
-|---|---|
-| `UA-1` | `ua-income-tax`, `ua-payroll`, `ua-single-tax` |
-| `UA-2` | `ua-income-tax`, `ua-payroll`, `ua-single-tax` |
-| `UA-3` | `ua-income-tax`, `ua-payroll`, `ua-single-tax` |
-| `UA-4` | `ua-income-tax`, `ua-payroll`, `ua-single-tax` |
-| `UA-5` | `ua-income-tax`, `ua-payroll` |
-| `UA-6` | `ua-income-tax`, `ua-payroll` |
-
 ## uruguay
 
 | Form | Guides |
 |---|---|
 | `Form 1102/1103` | `uruguay-payroll`, `uruguay-social-contributions` |
-| `UY-1` | `uruguay-income-tax`, `uruguay-iva`, `uruguay-social-contributions` |
-| `UY-2` | `uruguay-income-tax`, `uruguay-iva`, `uruguay-social-contributions` |
-| `UY-3` | `uruguay-income-tax`, `uruguay-iva`, `uruguay-social-contributions` |
-| `UY-4` | `uruguay-income-tax`, `uruguay-iva`, `uruguay-social-contributions` |
-| `UY-5` | `uruguay-income-tax`, `uruguay-social-contributions` |
-| `UY-6` | `uruguay-income-tax`, `uruguay-social-contributions` |
-| `UY-7` | `uruguay-income-tax`, `uruguay-social-contributions` |
 
 ## us
 
@@ -1599,15 +943,6 @@ instance took.
 | `Form TC-40` | `README`, `ut-income-tax` |
 | `TC-62S` | `ut-sales-tax`, `utah-sales-tax` |
 
-## uzbekistan
-
-| Form | Guides |
-|---|---|
-| `UZ-1` | `uzbekistan-income-tax`, `uzbekistan-vat` |
-| `UZ-2` | `uzbekistan-income-tax`, `uzbekistan-vat` |
-| `UZ-3` | `uzbekistan-income-tax`, `uzbekistan-vat` |
-| `UZ-4` | `uzbekistan-income-tax`, `uzbekistan-vat` |
-
 ## va
 
 | Form | Guides |
@@ -1615,22 +950,6 @@ instance took.
 | `Form 500` | `va-corporate-tax-and-bpol`, `va-income-tax` |
 | `Form 760` | `README`, `va-corporate-tax-and-bpol`, `va-income-tax`, `va-payroll`, `va-sales-tax` |
 | `Form 763` | `va-corporate-tax-and-bpol`, `va-income-tax`, `va-payroll` |
-| `VA-1` | `va-income-tax`, `va-payroll` |
-| `VA-2` | `va-income-tax`, `va-payroll` |
-| `VA-3` | `va-income-tax`, `va-payroll` |
-| `VA-4` | `va-income-tax`, `va-payroll` |
-| `VA-5` | `va-income-tax`, `va-payroll` |
-| `VA-6` | `va-income-tax`, `va-payroll` |
-| `VA-7` | `va-income-tax`, `va-payroll` |
-
-## venezuela
-
-| Form | Guides |
-|---|---|
-| `VE-1` | `venezuela-income-tax`, `venezuela-iva` |
-| `VE-2` | `venezuela-income-tax`, `venezuela-iva` |
-| `VE-3` | `venezuela-income-tax`, `venezuela-iva` |
-| `VE-4` | `venezuela-income-tax`, `venezuela-iva` |
 
 ## vt
 
@@ -1638,14 +957,6 @@ instance took.
 |---|---|
 | `Form CO-411` | `README`, `vt-income-tax` |
 | `Form IN-111` | `README`, `vt-income-tax` |
-
-## wa
-
-| Form | Guides |
-|---|---|
-| `WA-1` | `wa-sales-tax`, `washington-sales-tax` |
-| `WA-2` | `wa-sales-tax`, `washington-sales-tax` |
-| `WA-3` | `wa-sales-tax`, `washington-sales-tax` |
 
 ## wi
 
@@ -1669,4 +980,4 @@ instance took.
 
 ---
 
-148 jurisdictions, 914 shared form identifiers.
+106 jurisdictions, 435 shared form identifiers.
