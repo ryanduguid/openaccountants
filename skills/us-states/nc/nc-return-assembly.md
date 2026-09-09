@@ -288,7 +288,7 @@ Every line below is a hard equality. Tolerance is $1 unless noted otherwise. A f
 | --- | --- |
 | E-1 | 2026 federal Q1 voucher = `us-quarterly-estimated-tax` Q1 output |
 | E-2 | 2026 NC-40 Q1 voucher = `nc-estimated-tax` Q1 output |
-| E-3 | NC safe harbor: 100% of 2025 NC tax OR 90% of current-year — `[VERIFY:]` 110% rule does NOT generally apply at NC level the way it does federally; NC uses 100% of prior year regardless of AGI |
+| E-3 | NC safe harbor: 100% of 2025 NC tax OR 90% of current-year. Confirmed against G.S. § 105-163.15(d)(2): the prior-year prong is a flat 100% and the federal 110% high-income step-up at IRC § 6654(d)(1)(C) does NOT apply at NC level, at any AGI, the way it does federally; NC uses 100% of prior year regardless of AGI |
 | E-4 | Q1 federal + Q1 NC together do not exceed taxpayer's stated cash availability flag (if intake captured one) |
 | E-5 | If NC underpayment interest exposure (D-422) exists in current year, surface for reviewer |
 
@@ -544,7 +544,7 @@ The brief follows this fixed structure:
 | NC-ASM-T1-07 | Bailey subtraction (Schedule S Part B) is allowed ONLY if the taxpayer was vested in the qualifying NC state, local, or federal government retirement plan on or before August 12, 1989. |
 | NC-ASM-T1-08 | NC fully exempts Social Security benefits (Schedule S Part B). Federal taxable SS (Line 6b) must be subtracted in full. |
 | NC-ASM-T1-09 | NC estimated-tax payments are required if expected NC tax after withholding and credits is $1,000 or more — confirmed. |
-| NC-ASM-T1-10 | NC safe harbor: 100% of prior-year NC tax OR 90% of current-year. No 110%-AGI step. `[VERIFY:]` |
+| NC-ASM-T1-10 | NC safe harbor: 100% of prior-year NC tax OR 90% of current-year. No 110%-AGI step — confirmed, G.S. § 105-163.15(d)(2) |
 | NC-ASM-T1-11 | NC partially decouples from federal §168(k) bonus depreciation — 85% add-back in Year 1 with 20%-per-year deductible reversal over 5 years on Schedule S Part A `[VERIFY:]` 2025 schedule. |
 | NC-ASM-T1-12 | NC does NOT recognize the federal §199A QBI deduction in any NC adjustment. NC starts at federal AGI, BEFORE QBI, so QBI never touches NC computation. |
 | NC-ASM-T1-13 | NC standard deduction TY 2025: $25,500 MFJ/QSS, $19,125 HoH, $12,750 Single, $12,750 MFS — confirmed (NCDOR, North Carolina Standard Deduction — TY2025). |

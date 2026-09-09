@@ -66,15 +66,15 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ### Threshold to require quarterly estimates
 
-- **Threshold requiring NC estimates** — $1,000 USD (Tax shown due on return, reduced by NC withholding and allowable tax credits, is $1,000 or more; applies regardless of how much income is non-wage.)  _(NCDOR NC-40 Instructions; G.S. § 105-163.15(a))_
+- **Threshold requiring NC estimates** — $1,000 USD (Tax shown due on return, reduced by NC withholding and allowable tax credits, is $1,000 or more; applies regardless of how much income is non-wage.) NC does not set this figure itself: G.S. § 105-163.15(f) disapplies the interest where the tax less withholding is "less than the amount set in section 6654(e) of the Code", so the threshold moves with the federal one.  _(G.S. § 105-163.15(f), (g); IRC § 6654(e); NCDOR NC-40 instructions)_
 
 Confirmed: a NC resident individual must make estimated payments where expected NC tax less expected withholding and allowable credits is $1,000 or more. NCDOR guidance for 2025 and 2026 uses $1,000; commentary suggesting a lower transitional threshold is not supported.
 
 ### Safe harbor (no underpayment interest)
 
-- **Safe harbor calculation** — Combined withholding plus timely estimated payments must equal at least the smaller of: 1. 90% of current-year tax, OR 2. 100% of prior-year tax (prior year must cover a full 12 months), OR 3. 110% of prior-year tax if prior-year NC AGI > $150,000 ($75,000 if MFS).  _(NCDOR NC-40 Instructions; G.S. § 105-163.15(c))_
+- **Safe harbor calculation** — Each required instalment is 25% of the "required annual payment", which G.S. § 105-163.15(d) defines as the **lesser** of: 1. **90%** of the tax shown on the return for the taxable year (or 90% of the tax for that year if no return is filed); or 2. **100%** of the tax shown on the prior year's return, if the prior year was a 12-month year and a return was filed.  _(G.S. § 105-163.15(d))_
 
-`[VERIFY:]` Confirm the 110% high-income variant remains in effect for TY 2025 — NCDOR mirrors the federal § 6654 structure, and the LegalClarity summary explicitly confirms the $150,000/$75,000 thresholds, but the statute text should be read alongside any annual NCDOR memo.
+> **North Carolina has no 110% high-income variant.** This was flagged for verification and the statute settles it: § 105-163.15(d)(2) reads "one hundred percent (100%) of the tax shown on the return of the individual for the preceding taxable year", full stop. There is no AGI threshold and no $150,000 / $75,000 language anywhere in the section. Practitioner summaries that report a 110% step-up are importing IRC § 6654(d)(1)(C), which NC did not adopt — the section adopts § 6654 selectively, by reference, and only at subsection (f) for the de minimis amount. Applying 110% to a high-AGI NC client overstates the required payment by a tenth of the prior-year tax.
 
 ### Flat tax rates (use for projecting current-year liability)
 
@@ -85,8 +85,19 @@ Confirmed: a NC resident individual must make estimated payments where expected 
 | 2024 | 4.50% | Session Law 2023-134 |
 | 2025 | 4.25% | Session Law 2023-134 |
 | 2026 | 3.99% | Session Law 2023-134 |
-| 2027 | 3.49% (triggered) | Session Law 2023-134; revenue trigger expected to be met |
-| 2028+ | Scheduled to 2.99% then ultimately 2.49% by 2030 | `[VERIFY:]` confirm final-year phase-down legislation |
+| After 2025 | **3.99%** — the statutory baseline for every year after 2025, not just 2026 | G.S. § 105-153.7(a) |
+| 2027 onward | Contingent. Under the **rate reduction trigger** at G.S. § 105-153.7(a1), if total General Fund revenue for a listed fiscal year exceeds its trigger amount, the rate for the indicated tax year and all later years becomes the **greater of** (i) the prior year's rate less **0.50 percentage points** or (ii) **2.49%** | G.S. § 105-153.7(a1) |
+
+**Rate reduction trigger table** — each step needs its own fiscal year to clear its own threshold; they are not scheduled cuts.
+
+| Fiscal year | Trigger amount | First affected tax year | Rate if triggered |
+| --- | --- | --- | --- |
+| FY 2025-26 | $33,042,000,000 | 2027 | 3.49% |
+| FY 2026-27 | $34,100,000,000 | 2028 | 2.99% |
+| FY 2027-28 | $34,760,000,000 | 2029 | 2.49% (floor reached) |
+| FY 2028-29 through FY 2032-33 | $35.75bn rising to $39.00bn | 2030 through 2034 | 2.49% — the floor binds, so later triggers cannot cut further |
+
+Note what this corrects: the floor of 2.49% can be reached as early as **tax year 2029** if the first three triggers are met, not "by 2030", and 2028 is 2.99% rather than a step on the way to it. Revenue is measured as the final accounting of total General Fund Reverting Net Tax and Non-Tax Revenues reported by the Office of State Controller in the August after each fiscal year ends, so each year's rate is knowable well before the return is filed.
 
 ### Current underpayment interest rate
 
@@ -126,17 +137,17 @@ Step 2: Subtract projected NC withholding (W-2 Box 17, 1099-NEC NC withhold)
 Step 3: Subtract projected NC credits (D-400TC)
 
 Step 4: Is result ≥ $1,000?
-        - NO  → No estimates required. Underpayment penalty cannot apply (G.S. § 105-163.15(e)).
+        - NO  → No estimates required. Underpayment interest cannot apply (G.S. § 105-163.15(f)).
         - YES → Continue to Step 5.
 
-Step 5: Does prior-year withholding alone ≥ prior-year tax (× 110% if AGI > $150k)?
+Step 5: Does prior-year withholding alone ≥ 100% of prior-year tax? (No 110% step-up in NC.)
         - YES → No estimates required; safe harbor met by withholding alone.
         - NO  → Estimates required. Compute required annual payment (Section 5).
 ```
 
 ### First-year filers
 
-- **First-year filer carve-out** — A taxpayer with no NC return for the immediately preceding tax year (e.g., new NC resident, recent graduate) cannot use the prior-year safe harbor — only the 90% current-year safe harbor is available.  _(`[VERIFY:]` Confirm NC's first-year carve-out language tracks federal § 6654(d)(1)(B); the LegalClarity summary characterizes this as a "one-year grace period" but the statutory effect is that no penalty can compute without a prior-year benchmark.)_
+- **First-year filer carve-out** — Two separate things, and the guide previously ran them together. **(1)** The prior-year safe harbour at § 105-163.15(d)(2) is simply unavailable where the preceding year was not a 12-month year or no return was filed, leaving only the 90% current-year test. **(2)** Separately and more powerfully, § 105-163.15(f) provides that **no interest shall be imposed at all** where "the individual did not have any liability for tax under Part 2 of Article 4 for the preceding taxable year". A new NC resident with no prior-year NC liability is therefore fully outside the interest charge — not merely restricted to the 90% test. Note the condition is *no liability*, not *no return*: someone who filed a prior-year NC return showing tax due cannot use it.  _(G.S. § 105-163.15(d)(2), (f))_
 
 ### Income types that commonly trigger the threshold
 
@@ -153,19 +164,18 @@ Step 5: Does prior-year withholding alone ≥ prior-year tax (× 110% if AGI > $
 
 NC's safe harbor mirrors federal § 6654 in structure but uses NC tax figures throughout.
 
-### The three-prong test (taxpayer satisfies ANY one)
+### The two-prong test (taxpayer satisfies EITHER)
 
-**Three-prong test table**
+**Two-prong test table**
 
 | Prong | Calculation | Applies to |
 | --- | --- | --- |
 | **A** | Withholding + estimates ≥ 90% × current-year NC tax | All taxpayers |
-| **B** | Withholding + estimates ≥ 100% × prior-year NC tax | Prior-year NC AGI ≤ $150,000 (or ≤ $75,000 MFS) |
-| **C** | Withholding + estimates ≥ 110% × prior-year NC tax | Prior-year NC AGI > $150,000 (or > $75,000 MFS) |
+| **B** | Withholding + estimates ≥ 100% × prior-year NC tax | All taxpayers, provided the prior year was a 12-month year and a return was filed. **No AGI condition, and no 110% variant at any income level** |
 
 ### Required annual payment (RAP)
 
-- **RAP formula** — RAP = smaller of: (a) 90% × current-year NC tax (Form D-400, Line 17 after credits, before payments); (b) 100% × prior-year NC tax [or 110% if AGI threshold exceeded]. This RAP figure feeds Form D-422 Part I, Line 8 as the "required annual payment."  _(Form D-422 Part I, Line 8)_
+- **RAP formula** — RAP = smaller of: (a) 90% × current-year NC tax (Form D-400, Line 17 after credits, before payments); (b) 100% × prior-year NC tax. This RAP figure feeds Form D-422 Part I, Line 8 as the "required annual payment."  _(G.S. § 105-163.15(d); Form D-422 Part I, Line 8)_
 
 ### Worked safe-harbor calc — moderate income
 
@@ -180,12 +190,12 @@ NC's safe harbor mirrors federal § 6654 in structure but uses NC tax figures th
 | A — 90% current year | $9,000 × 0.90 | $8,100 |
 | B — 100% prior year | $7,200 × 1.00 | $7,200 |
 
-110% high-income variant does not apply ($108k ≤ $150k threshold). RAP = lower of $8,100 or $7,200 = $7,200. Each quarterly installment under the regular method = $7,200 / 4 = $1,800.
+RAP = lower of $8,100 or $7,200 = $7,200 — and it would be $7,200 at any AGI, because NC's prior-year prong is a flat 100%. Each quarterly installment under the regular method = $7,200 / 4 = $1,800.
 
-### Worked safe-harbor calc — high-income
+### Worked safe-harbor calc — high income, and how NC differs from federal
 
 > Taxpayer: NC resident, MFJ. Prior-year (2024) NC tax: $18,400.
-> Prior-year NC AGI: $312,000 (> $150,000 threshold → 110% applies).
+> Prior-year NC AGI: $312,000.
 > Current-year (2025) projected NC tax: $22,000.
 
 **High-income prong table**
@@ -193,11 +203,13 @@ NC's safe harbor mirrors federal § 6654 in structure but uses NC tax figures th
 | Prong | Calculation | Amount |
 | --- | --- | --- |
 | A — 90% current year | $22,000 × 0.90 | $19,800 |
-| C — 110% prior year | $18,400 × 1.10 | $20,240 |
+| B — 100% prior year | $18,400 × 1.00 | **$18,400** |
 
-RAP = lower of $19,800 or $20,240 = $19,800. Each quarterly installment = $19,800 / 4 = $4,950.
+RAP = lower of $19,800 or $18,400 = **$18,400**. Each quarterly installment = $18,400 / 4 = **$4,600**.
 
-> **Practical tip.** When the 110% rule applies and current-year income is projected to drop, choosing the 90% current-year prong avoids over-payment. When current-year income is projected to spike, locking in the 110% prior-year prong avoids penalty exposure on growth.
+> **This is where NC and federal part company.** Federally, prior-year AGI above $150,000 pushes the prior-year prong to 110% under IRC § 6654(d)(1)(C), which here would be $20,240 and would make the 90% current-year prong the binding one at $19,800. North Carolina did not adopt that subparagraph: G.S. § 105-163.15(d)(2) is a flat 100%. So the NC prior-year prong stays at $18,400 and becomes the *lower* of the two — $1,400 a year less than federal reasoning would produce, or $350 an instalment. Running the federal figure on a NC return overstates every instalment for a high-AGI client.
+
+> **Practical tip.** With a flat 100% prior-year prong, the prior-year figure is attractive whenever current-year income is rising, and the 90% current-year prong only when income is falling far enough that 90% of it drops below last year's tax.
 
 ## Section 5: Quarterly installment amounts — regular method
 
@@ -317,7 +329,7 @@ Form D-422 computes interest on underpayments installment by installment. It is 
 | 1 | Current-year NC tax (D-400 Line 17 after credits) |
 | 2 | 90% × Line 1 |
 | 3 | Prior-year NC tax (full 12 months) |
-| 4 | 100% (or 110% if AGI > $150k / $75k MFS) × Line 3 |
+| 4 | 100% × Line 3 (flat — no 110% variant in NC) |
 | 5 | Smaller of Line 2 or Line 4 |
 | 6 | NC withholding (W-2 + 1099 + pension) |
 | 7 | Line 5 − Line 6 |
@@ -343,11 +355,12 @@ Form D-422 computes interest on underpayments installment by installment. It is 
 
 - **Total interest carryover** — Total interest = sum of Line 19 across all four columns → carry to D-400 Line 27 (or equivalent line on current-year return) as "Interest on the underpayment of estimated income tax."
 
-### The "7-day rule" — period-by-period netting
+### How a late payment is applied — and what it does not cure
 
-- **No netting across quarters** — Interest does NOT net across quarters the way most taxpayers expect. An overpayment in Q3 does NOT retroactively cure an underpayment in Q1 — it only stops Q3's clock prospectively. The taxpayer can owe interest on a Q1 shortfall even if the year-end total paid in equals or exceeds the RAP.
+- **Payments are credited to the earliest unpaid instalment first** — G.S. § 105-163.15(b) is explicit: "A payment of estimated tax shall be credited against unpaid required installments in the order in which such installments are required to be paid." So a Q3 payment **does** go against an unpaid Q1 instalment before it goes against Q3. What it cannot do is undo the interest that already ran: under (b) the period of underpayment runs from the instalment due date to the earlier of the 15th day of the fourth month after year-end or the date that portion is paid. A taxpayer who pays the full year's requirement late still owes interest for the months each instalment sat unpaid, even where the year-end total equals or exceeds the required annual payment.
+- **Withholding is spread, not dated** — under § 105-163.15(g), withholding for the year is treated as estimated tax paid **in equal parts on each due date**, unless the taxpayer establishes the dates on which amounts were actually withheld. Establishing actual dates helps a taxpayer whose withholding was back-loaded only if the earlier instalments were covered another way; it hurts one whose withholding was front-loaded.
 
-> `[VERIFY:]` Some practitioner guides describe a 7-day "grace" rule derived from the date-counting convention in the D-422 instructions (i.e., a payment received within ~7 days of the next installment due date is sometimes treated as paid on the next due date for interest-tolling purposes). Confirm against the current-year D-422 instructions before claiming any such grace in a return.
+> There is no 7-day grace rule. The previous draft flagged a "7-day 'grace' rule" said to be derived from a date-counting convention in the D-422 instructions. Nothing in § 105-163.15 creates one, and the crediting rule in (b) is the mechanism those summaries appear to be describing. Do not claim a grace period on a return.
 
 ### Penalty waiver / reasonable cause
 
@@ -382,7 +395,7 @@ NC quarterly due dates mirror federal Form 1040-ES exactly — April 15, June 15
 | Step | Federal | North Carolina |
 | --- | --- | --- |
 | Project current-year tax | Federal 1040 + Schedule SE | NC D-400 (using federal AGI as start) |
-| Compute safe harbor | 90% / 100% (110% > $150k) | 90% / 100% (110% > $150k) |
+| Compute safe harbor | 90% / 100% (**110% if prior AGI > $150k**) | 90% / 100% — **flat, no 110% step-up** |
 | Divide RAP | ÷ 4 (regular method) | ÷ 4 (regular method) |
 | File voucher | Form 1040-ES voucher | Form NC-40 voucher |
 | Pay | IRS Direct Pay / EFTPS | NCDOR e-Services |
@@ -413,9 +426,9 @@ When a taxpayer files MFJ federally and MFJ NC, send one combined quarterly work
 | --- | --- | --- |
 | NC-EST-T1-01 | Estimated tax required if expected NC tax less withholding & credits ≥ $1,000 | G.S. § 105-163.15(a) |
 | NC-EST-T1-02 | Four installments due 4/15, 6/15, 9/15, 1/15 (following year) | G.S. § 105-163.15(b) |
-| NC-EST-T1-03 | Jan 15 installment may be skipped if return filed and balance paid by Jan 31 | G.S. § 105-163.15(d) |
-| NC-EST-T1-04 | Safe harbor = lower of 90% current-year or 100% prior-year NC tax | G.S. § 105-163.15(c) |
-| NC-EST-T1-05 | Prior-year safe harbor = 110% if prior-year NC AGI > $150,000 ($75,000 MFS) — confirmed | G.S. § 105-163.15 |
+| NC-EST-T1-03 | Jan 15 installment may be skipped if return filed and balance paid by Jan 31 | G.S. § 105-163.15(h) |
+| NC-EST-T1-04 | Safe harbor = lower of 90% current-year or 100% prior-year NC tax | G.S. § 105-163.15(d) |
+| NC-EST-T1-05 | **No 110% high-income variant.** The prior-year prong is a flat 100% at every income level; IRC § 6654(d)(1)(C) was not adopted | G.S. § 105-163.15(d)(2) |
 | NC-EST-T1-06 | Underpayment interest rate set by Secretary, between 5% and 16% | G.S. § 105-241.21(a) |
 | NC-EST-T1-07 | Current rate (Jul 2025 – Jun 2026) = 7% annual | NCDOR Interest Rate Memos |
 | NC-EST-T1-08 | If annualized method used for any installment, must use for all four | Form D-422A instructions |
@@ -454,7 +467,7 @@ When a taxpayer files MFJ federally and MFJ NC, send one combined quarterly work
 
 **Step 2 — Safe harbor:**
 - 90% current year = $5,833 × 0.90 = $5,250
-- 100% prior year = $5,800 (110% rule does not apply — prior AGI $138k ≤ $150k)
+- 100% prior year = $5,800 (flat 100% — NC has no 110% variant at any AGI)
 - **RAP = lower = $5,250**
 
 **Step 3 — Test threshold:** $5,833 expected tax, zero withholding, shortfall $5,833 ≥ $1,000 → estimates required.
@@ -500,7 +513,7 @@ When a taxpayer files MFJ federally and MFJ NC, send one combined quarterly work
 
 ### Example 3 — High-income MFJ with W-2 withholding shortfall
 
-> **Taxpayer:** MFJ, both spouses NC residents. Spouse A: W-2 salary $180,000, NC withholding $7,200. Spouse B: freelance income $130,000, no withholding. Prior-year (2024) NC AGI: $295,000 (>$150,000 → 110% rule applies). Prior-year NC tax: $13,800.
+> **Taxpayer:** MFJ, both spouses NC residents. Spouse A: W-2 salary $180,000, NC withholding $7,200. Spouse B: freelance income $130,000, no withholding. Prior-year (2024) NC AGI: $295,000. Prior-year NC tax: $13,800. (Prior-year AGI is recorded only to show that it does **not** change the NC computation.)
 
 **Projected 2025 NC tax:**
 - NC AGI ≈ $310,000 − $25,500 MFJ std ded = $284,500
@@ -508,7 +521,7 @@ When a taxpayer files MFJ federally and MFJ NC, send one combined quarterly work
 
 **Safe harbor:**
 - 90% current year = $12,091 × 0.90 = $10,882
-- 110% prior year = $13,800 × 1.10 = $15,180
+- 100% prior year = $13,800 × 1.00 = $13,800 (flat — federally this prong would be 110% × $13,800 = $15,180, but NC did not adopt IRC § 6654(d)(1)(C))
 - **RAP = lower = $10,882**
 
 **Test threshold:**
@@ -600,13 +613,13 @@ When a taxpayer files MFJ federally and MFJ NC, send one combined quarterly work
 
 **Items flagged for verification table**
 
-| `[VERIFY:]` item | Reason |
+| Former `[VERIFY:]` item | Outcome |
 | --- | --- |
-| 110% prior-year safe harbor for AGI > $150,000 (MFS > $75,000) | Mirrors federal § 6654(d); confirmed by practitioner summaries but read NCDOR's annual NC-40 instructions for explicit codification |
-| 2028+ rate schedule (final phase-down to 2.49% by 2030) | Subject to legislative change; revenue triggers may delay |
-| 7-day grace rule on installment payments | Practitioner convention; confirm against current D-422 instructions |
-| Specific D-422 line numbers and exact column placement | Confirmed by structure (Part I 1–8, Part II 9–14, Part III installment columns) but verify against current-year PDF before populating |
-| First-year filer carve-out | Mirrors federal § 6654(d)(1)(B); confirm NCDOR statutory text |
+| 110% prior-year safe harbor for AGI > $150,000 (MFS > $75,000) | **Wrong — removed.** G.S. § 105-163.15(d)(2) is a flat 100% with no AGI threshold. The practitioner summaries relied on were importing IRC § 6654(d)(1)(C), which NC did not adopt |
+| 2028+ rate schedule | **Corrected.** G.S. § 105-153.7(a1) cuts by 0.50 points per triggered year with a 2.49% floor, so the floor can be reached in tax year 2029, and each step depends on its own fiscal-year revenue trigger rather than being scheduled |
+| 7-day grace rule on installment payments | **Does not exist — removed.** § 105-163.15(b) credits payments to the earliest unpaid instalment; that is the rule those summaries were approximating |
+| First-year filer carve-out | **Resolved and strengthened.** § 105-163.15(f) removes the interest charge entirely where there was no prior-year NC liability, which is broader than losing the prior-year safe harbour |
+| Specific D-422 line numbers and exact column placement | Still to check against the current-year PDF before populating a return. The statutory structure behind them is confirmed: four instalments at 25% (§ 105-163.15(c)-(d)) and annualised percentages of 22.5% / 45% / 67.5% / 90% (§ 105-163.15(e)) |
 
 ## Disclaimer
 
