@@ -196,6 +196,30 @@ The lesson is narrower than it looks and worth keeping: a checker's blind spot
 is measurable, and measuring it before working its output is cheaper than
 working the output. Thirty per cent of this queue was the tool, not the corpus.
 
+ELEVEN OF THE QUEUE WITHHELD NOTHING AT ALL
+
+The second measured blind spot, found the same way as the first. A jurisdiction
+that levies no withholding tax names no service, rent or insurance head because
+there is nothing to name, so it is indistinguishable here from a guide that
+forgot them. Eleven were sitting on the queue for that reason: the British
+Virgin Islands, Cayman, Bermuda, the Bahamas, Vanuatu, Bahrain, Monaco, Macau,
+Curacao, the Isle of Man and Liechtenstein.
+
+All eleven already state their zeros plainly -- "0% (no withholding tax on
+dividends)", "None" -- which is exactly the habit recommended above, and it is
+what makes them mechanically separable. `is_zero` reads the rate out of the
+value: if every rate a jurisdiction states is zero, or the value says none or
+nil, the guide is complete rather than thin and it is reported as `zero-wht`
+instead of queued.
+
+That is 11 removed on top of the 15 the body-mention split removed. Between
+them the queue has gone from 64 to 24 without a single statute being opened,
+because both were the tool describing itself rather than the corpus. It is
+worth stating the ratio plainly: of the 64 entries this script originally
+produced, roughly 40% were artefacts of how it measures. A checker that has not
+been measured against its own blind spots is reporting its shape as much as the
+corpus's.
+
 A CAVEAT ABOUT THE THIN END
 
 Jurisdiction keys come from the third path segment, so `us`, `im`, `in` and `nc`
@@ -247,6 +271,24 @@ LABEL = re.compile(r'\b(?:WHT|withholding(?:\s+tax)?|NRST|'
 # A head is only a head if the label commits to a rate or an exemption. "See
 # the withholding section" is a cross-reference, not a charge.
 VALUE = re.compile(r'\d|\bexempt\b|\bnil\b|\bno\b|\bzero\b', re.I)
+PCT = re.compile(r'(\d{1,3}(?:\.\d+)?)\s?(?:%|per\s?cent\b|percent\b)', re.I)
+NIL = re.compile(r'^\W*(none|nil|not applicable|n/?a)\b|\bno withholding\b|'
+                 r'\bimposes no\b|\blevies no\b', re.I)
+
+
+def is_zero(value):
+    """True where a withholding line commits to nothing being withheld.
+
+    A jurisdiction that charges no withholding at all names no service, rent or
+    insurance head because there is nothing to name, so it looks identical to a
+    thin guide. The British Virgin Islands, Cayman, Bermuda, the Bahamas,
+    Vanuatu and Bahrain were all sitting on the queue for that reason, and all
+    six already state their zeros plainly. Reading the rate separates them.
+    """
+    rates = PCT.findall(value)
+    if rates:
+        return all(float(r) == 0 for r in rates)
+    return bool(NIL.search(value))
 
 SKIP_DIRS = ('orchestrator', 'cross-border', 'verticals', 'integrations')
 
@@ -287,9 +329,10 @@ def body_heads_in(line):
 
 
 def scan(root='skills'):
-    """Return {jurisdiction: (label_heads, body_only_extra_heads)}."""
+    """Return {jurisdiction: (label_heads, body_only_extras, all_rates_zero)}."""
     labels = collections.defaultdict(set)
     bodies = collections.defaultdict(set)
+    nonzero = collections.defaultdict(bool)
     for dp, _, fns in os.walk(root):
         parts = dp.split(os.sep)
         jur = parts[2] if len(parts) >= 3 else ''
@@ -303,10 +346,13 @@ def scan(root='skills'):
                     got = heads_in(line)
                     if got:
                         labels[jur] |= got
+                        m = BULL.match(line) or ROW.match(line)
+                        if not is_zero(m.group(2)):
+                            nonzero[jur] = True
                     got = body_heads_in(line)
                     if got:
                         bodies[jur] |= got
-    return {j: (labels[j], bodies[j] - labels[j]) for j in labels}
+    return {j: (labels[j], bodies[j] - labels[j], not nonzero[j]) for j in labels}
 
 
 def selftest():
@@ -396,19 +442,22 @@ def show(jur, root='skills'):
 def main(classic_only=False):
     found = scan()
     rows = []
-    for jur, (heads, body) in found.items():
+    for jur, (heads, body, zero) in found.items():
         extras = sorted(heads - set(CLASSIC))
-        rows.append((len(heads), jur, sorted(heads), extras, sorted(body)))
+        rows.append((len(heads), jur, sorted(heads), extras, sorted(body), zero))
     rows.sort(key=lambda r: (r[0], r[1]))
 
-    classic = [r for r in rows if not r[3]]
-    # Split the queue: an entry whose bullets MENTION an extra head in prose
+    # A jurisdiction that withholds nothing names no extra head because there is
+    # nothing to name. That is a complete guide, not a thin one.
+    zero_rated = [r for r in rows if r[5] and not r[3]]
+    classic = [r for r in rows if not r[3] and not r[5]]
+    # Split what remains: an entry whose bullets MENTION an extra head in prose
     # is likely already half-covered, and is cheaper to triage than to research.
     bare = [r for r in classic if not r[4]]
     mentions = [r for r in classic if r[4]]
 
     if classic_only:
-        for _, jur, heads, _, body in classic:
+        for _, jur, heads, _, body, _z in classic:
             note = ('  (body mentions: %s)' % ', '.join(body)) if body else ''
             print('%-26s %s%s' % (jur, ', '.join(heads), note))
         print('\n%d of %d jurisdictions name only dividends, interest and/or '
@@ -417,19 +466,22 @@ def main(classic_only=False):
               'bullet body.' % (len(bare), len(mentions)))
         return 1 if bare else 0
 
-    for n, jur, heads, _, _ in rows:
+    for n, jur, heads, _, _, _z in rows:
         print('%2d  %-26s %s' % (n, jur, ', '.join(heads)))
     print()
     print('jurisdictions naming a withholding head:', len(rows))
+    print('withholding nothing at all (complete, not thin):', len(zero_rated))
+    for _, jur, heads, _, _, _z in zero_rated:
+        print('   zero-wht: %-24s %s' % (jur, ', '.join(heads)))
     print('naming only classic heads:', len(classic))
     print('  of those, nothing else anywhere (the queue):', len(bare))
-    for _, jur, heads, _, _ in bare:
+    for _, jur, heads, _, _, _z in bare:
         print('   queue:  %-24s %s' % (jur, ', '.join(heads)))
     print('  of those, an extra head appears in a bullet body (triage first):',
           len(mentions))
-    for _, jur, _, _, body in mentions:
+    for _, jur, _, _, body, _z in mentions:
         print('   triage: %-24s body mentions %s' % (jur, ', '.join(body)))
-    spread = collections.Counter(n for n, _, _, _, _ in rows)
+    spread = collections.Counter(n for n, _, _, _, _, _ in rows)
     print('heads named per jurisdiction:', ', '.join(
         '%d:%d' % (k, spread[k]) for k in sorted(spread)))
     return 1 if bare else 0

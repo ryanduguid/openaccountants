@@ -65,6 +65,28 @@ class FactCheckerTests(unittest.TestCase):
         self.assertNotRegex(output, r"queue:\s+broad\b")
         self.assertRegex(output, r"\bbroad\s+dividends, rent, services")
 
+    def test_withholding_scope_excludes_zero_rate_jurisdictions(self):
+        # "nowht" charges nothing, so it names no service or rent head because
+        # there is nothing to name. That is a complete guide, not a thin one,
+        # and it must not sit in the same queue as "thin", which charges 10%
+        # on royalties and says nothing about anything else.
+        output = self.run_checker("list-withholding-scope.py", {
+            "nowht/cit.md": (
+                "- **Withholding tax on dividends** - 0% (no withholding tax "
+                "on dividends)\n"
+                "- **Withholding tax on interest and royalties** - None\n"
+            ),
+            "thin/cit.md": (
+                "- **Withholding tax on dividends** - 0%\n"
+                "- **Withholding tax on royalties** - 10%\n"
+            ),
+        }, expect_code=1)
+        self.assertIn("withholding nothing at all (complete, not thin): 1", output)
+        self.assertRegex(output, r"zero-wht:\s+nowht\b")
+        self.assertIn("nothing else anywhere (the queue): 1", output)
+        self.assertRegex(output, r"queue:\s+thin\b")
+        self.assertNotRegex(output, r"queue:\s+nowht\b")
+
     def test_withholding_scope_separates_body_mentions_from_bare_entries(self):
         # "bare" names only the classic three and nothing else anywhere.
         # "mentions" also names only classic heads in its labels, but a bullet
