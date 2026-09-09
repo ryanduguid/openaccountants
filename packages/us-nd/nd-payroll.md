@@ -61,9 +61,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 | Item | Value |
 | --- | --- |
-| ND PIT bracket 1 (TY 2025, single) | 0% on first $47,150 [VERIFY: 2025 booklet thresholds] |
-| ND PIT bracket 2 (TY 2025, single) | 1.95% on $47,150 – $238,200 [VERIFY: exact threshold] |
-| ND PIT bracket 3 (TY 2025, single) | 2.50% above $238,200 [VERIFY: exact threshold] |
+| ND PIT bracket 1 (TY 2025, single) | 0% on first $48,475 — confirmed, ND Office of State Tax Commissioner, 2025 Form ND-1 tax rate schedules |
+| ND PIT bracket 2 (TY 2025, single) | 1.95% on $48,475 – $244,825 — confirmed, ND Office of State Tax Commissioner, 2025 Form ND-1 tax rate schedules |
+| ND PIT bracket 3 (TY 2025, single) | 2.50% above $244,825 — confirmed, ND Office of State Tax Commissioner, 2025 Form ND-1 tax rate schedules |
 | Supplemental wage rate (TY 2025) | 1.5% |
 | Form 306 due dates | April 30, July 31, October 31, January 31 |
 | Form 306 mandatory e-filing threshold | Prior-year withholding ≥ $1,000 → must e-file via TAP |
@@ -93,9 +93,16 @@ In April 2023 the 68th Legislative Assembly enacted **HB 1158**, the largest ind
 
 The bracket thresholds are indexed annually. Practitioners must re-verify the bracket thresholds for each tax year against the Tax Commissioner's withholding booklet because (a) the indexing adjustments are non-trivial and (b) the legislature has shown a pattern (cf. NC SB 105 and GA HB 111) of making mid-cycle adjustments where revenue triggers are met.
 
-### 3.3 TY 2025 brackets — single filer (withholding booklet)
+### 3.3 Single filer brackets
 
-**TY 2025 brackets — single filer**  _([VERIFY: 2025 ND Withholding Booklet, percentage method, Table 1A])_
+> **The table below is the TY 2024 schedule, not TY 2025.** It was labelled TY 2025, but its
+> thresholds and its $3,725.48 cumulative figure reconcile exactly to the 2024 brackets
+> ((238,200 − 47,150) × 1.95% = 3,725.48), so it is a year out of date. The confirmed TY 2025
+> thresholds are 0% to $48,475, 1.95% from $48,475 to $244,825 and 2.50% above $244,825 (ND Office of State Tax Commissioner, 2025 Form ND-1 tax rate schedules), which give a cumulative $3,828.83 at the top of the 1.95% band. Those TY 2025
+> figures are the income tax rate schedule; read the percentage-method table out of the 2025
+> ND Withholding Booklet before running payroll, in case the withholding tables differ.
+
+**TY 2024 brackets — single filer (superseded)**
 
 | Taxable wages over | But not over | Withhold |
 | --- | --- | --- |
@@ -103,9 +110,13 @@ The bracket thresholds are indexed annually. Practitioners must re-verify the br
 | $47,150 | $238,200 | 1.95% of excess over $47,150 |
 | $238,200 | — | $3,725.48 + 2.50% of excess over $238,200 |
 
-### 3.4 TY 2025 brackets — married filing jointly (withholding booklet)
+### 3.4 Married filing jointly brackets
 
-**TY 2025 brackets — married filing jointly**  _([VERIFY: 2025 ND Withholding Booklet, percentage method, Table 1B])_
+> **TY 2024 schedule, as above.** Confirmed TY 2025 MFJ thresholds are 0% to $80,975, 1.95%
+> from $80,975 to $298,075 and 2.50% above $298,075 (ND Office of State Tax Commissioner, 2025 Form ND-1 tax rate schedules), giving a cumulative
+> $4,233.45 at the top of the 1.95% band.
+
+**TY 2024 brackets — married filing jointly (superseded)**
 
 | Taxable wages over | But not over | Withhold |
 | --- | --- | --- |
@@ -377,17 +388,17 @@ If a Texas, Florida, or even South Dakota employer expands to a Fargo office and
 
 **Step 1 — Annualize.** $2,500 × 26 = $65,000 annual wages.
 
-**Step 2 — Apply 2025 single bracket table** [VERIFY: 2025 booklet exact threshold]. Assume bottom-bracket cutoff = $47,150 single.
+**Step 2 — Apply the TY 2025 single bracket table.** Bottom-bracket cutoff = $48,475 single (ND Office of State Tax Commissioner, 2025 Form ND-1 tax rate schedules).
 
 ```
-Taxable above cutoff: $65,000 - $47,150 = $17,850
-Annual ND tax: $17,850 × 1.95% = $348.08
-Per pay period: $348.08 / 26 = $13.39
+Taxable above cutoff: $65,000 - $48,475 = $16,525
+Annual ND tax: $16,525 × 1.95% = $322.24
+Per pay period: $322.24 / 26 = $12.39
 ```
 
-**Step 3 — Round.** Round per the percentage method instruction (to the nearest whole dollar): **$13.00 withheld per biweekly pay**.
+**Step 3 — Round.** Round per the percentage method instruction (to the nearest whole dollar): **$12.00 withheld per biweekly pay**.
 
-**Step 4 — Form 306, Q1.** Anna's six pays in Q1 → $13 × 6 = $78 ND tax remitted with Form 306 by April 30. (Aggregated with all other employees.)
+**Step 4 — Form 306, Q1.** Anna's six pays in Q1 → $12 × 6 = $72 ND tax remitted with Form 306 by April 30. (Aggregated with all other employees.)
 
 ### Example 2 — Minnesota commuter with NDW-R on file
 
