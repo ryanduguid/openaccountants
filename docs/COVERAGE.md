@@ -136,3 +136,28 @@ guide like this will find nothing and conclude it is sound.
 which article, which date, which jurisdiction. Those are what the numeric
 checkers structurally cannot see, and they are where what remains is most
 likely to be.
+
+### Why a checker cannot close this gap
+
+The obvious next step is to automate it: flag any form identifier that two
+guides in one jurisdiction define as different things. That was built, and
+tested against the Malta pack **as it stood before the fix**, where the answer
+was known. It found nothing.
+
+The reason is the point. `mt-estimated-tax` never *defined* TA24. It only used
+it — "the prior year TA24 assessed tax liability", "No prior year TA24 available
+→ STOP". There was no competing definition to contradict `malta-income-tax`'s
+correct one, so there was no internal inconsistency to detect. Consistency
+checking needs two claims that disagree; silent misuse makes only one.
+
+What actually exposed it was a *downstream* signal: the filing deadline attached
+to the misused name did not match the deadline for the real TA24. The error was
+found by `check-filing-deadlines.py`, which was not looking for it.
+
+So the residual risk here is not merely "unchecked". A guide can use the wrong
+name for a form consistently, never define it, agree with itself everywhere, and
+pass every structural check in `scripts/`. Catching that needs either an
+external register of what each form actually is, or a reader who knows the
+jurisdiction. It is the strongest argument in this repository for accountant
+review rather than more tooling, and it is why the Tier 1 / Tier 2 distinction
+carries real weight.
