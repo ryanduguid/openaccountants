@@ -3,7 +3,7 @@ name: pk-cgt
 description: Use this skill whenever asked about Pakistan Capital Gains Tax. Trigger on phrases like "Pakistan CGT", "capital gains tax Pakistan", "PSX shares gain Pakistan", "property gain Pakistan", "Section 37A Pakistan", "Section 37 ITO 2001", "immovable property CGT Pakistan", "NCCPL capital gains", "filer vs non-filer CGT Pakistan", "crypto CGT Pakistan", "FBR capital gains", or any question about computing, filing, or reporting capital gains under the Income Tax Ordinance 2001. Scope covers CGT on securities (Section 37A) including PSX-listed shares, modaraba certificates and redeemable capital; CGT on immovable property (Section 37) including the holding-period scale and FBR valuation tables; CGT on other capital assets under Section 37; filer vs non-filer rate differentials; NCCPL collection at source for securities; bank/registrar collection for property; loss set-off and carry-forward; and the uncertain crypto position. ALWAYS read this skill before touching Pakistan CGT work.
 jurisdiction: PK
 tax_year: 2025
-last_updated: 2026-09-10
+last_updated: 2026-09-09
 reviewed_by: Ibrar Ali
 review_status: current
 tier: 1
@@ -23,11 +23,14 @@ This block is generated from verified `skill_facts` — edit the facts, not the 
 ### pk-cgt
 
 - **Securities §37A — the cohort is set by acquisition date** —
-- **PSX-listed shares acquired on or after 1 July 2024 — filer** — 15% flat, no holding-period taper  _(ITO 2001 §37A)_
-- **PSX-listed shares acquired 1 Jul 2022 – 30 Jun 2024 — filer** — Taper by holding period: 15% (<1y), 12.5% (1-2y), 10% (2-3y), 7.5% (3-4y), 5% (4-5y), 2.5% (5-6y), 0% (>6y)  _(ITO 2001 §37A)_
+- **PSX-listed shares acquired on or after 1 July 2025** — 15% for ATL and 15% for non-ATL — the same rate  _(NCCPL notice NCCPL/CM/AUGUST-25/02, 5 Aug 2025)_
+- **PSX-listed shares acquired 1 Jul 2024 – 30 Jun 2025** — 15% (ATL) / 30% (non-ATL), flat, no holding-period taper  _(NCCPL notice NCCPL/CM/AUGUST-25/02)_
+- **PSX-listed shares acquired 1 Jul 2022 – 30 Jun 2024 — ATL** — Regressive by holding period: 12.5% (>1-2y), 10% (>2-3y), 7.5% (>3-4y), 5% (>4-5y), 2.5% (>5-6y), 0% (>6y). NCCPL's TY 2026 table carries no ≤1-year row for this cohort because it cannot arise  _(NCCPL notice NCCPL/CM/AUGUST-25/02)_
 - **PSX-listed shares acquired 1 Jul 2013 – 30 Jun 2022 — filer** — 12.5% flat, irrespective of holding period  _(ITO 2001 §37A)_
 - **PSX-listed shares acquired before 1 July 2013** — 0%, filer and non-filer alike  _(ITO 2001 §37A)_
-- **PSX-listed shares — non-filer** — Individuals and AOPs: normal slab rates (up to 45%), but not less than 15%. Companies: the corporate rate  _(ITO 2001 §37A)_
+- **PSX-listed shares — non-ATL, cohorts before 1 July 2025** — Exactly **double** the ATL rate at every step (25/20/15/10/5/0 on the 2022-24 ladder; 30% on the 2024-25 cohort; 25% on the 2013-22 cohort). NCCPL deducts this; the statutory liability is reconciled in the annual return  _(NCCPL notice NCCPL/CM/AUGUST-25/02)_
+- **Commodity futures (PMEX)** — 5% (ATL) / 10% (non-ATL) to 30 Jun 2025; 5% / 5% from 1 Jul 2025  _(NCCPL notice NCCPL/CM/AUGUST-25/02)_
+- **Mutual funds (MUFAP) — other funds held by a company** — 25% (ATL) / 50% (non-ATL) to 30 Jun 2025; 25% / 25% from 1 Jul 2025. The one place a company pays more than an individual  _(NCCPL notice NCCPL/CM/AUGUST-25/02)_
 - **Modaraba certs / redeemable capital / listed debt** — Same §37A cohorts and rates as PSX-listed shares  _(ITO 2001 §37A)_
 - **Collection** — At source by NCCPL on settled trades; investor reconciles in annual return  _(§37A / NCCPL)_
 - **Immovable property §37 — acquired on or after 1 July 2024** — 15% flat for filers, no holding-period taper  _(ITO 2001 §37)_
@@ -69,11 +72,17 @@ This block is generated from verified `skill_facts` — edit the facts, not the 
 
 | Asset class | Filer rate | Non-filer rate | Notes |
 | --- | --- | --- | --- |
-| Securities — PSX-listed shares (Section 37A), **acquired on or after 1 July 2024** | **15% flat**, whatever the holding period | Individuals and AOPs: normal slab rates, **but not less than 15%**. Companies: the corporate rate (29%) | Collected at source by NCCPL; investor reconciles in the annual return. ATL status is tested at **both** acquisition and disposal |
-| Securities — acquired 1 July 2022 to 30 June 2024 | Holding-period ladder: **15% / 12.5% / 10% / 7.5% / 5% / 2.5% / 0%** across <1, 1-2, 2-3, 3-4, 4-5, 5-6 and >6 years | Same ladder, then the non-ATL uplift for the year of disposal | The taper still runs for this cohort; do not charge it at the flat 15% |
-| Securities — acquired 1 July 2013 to 30 June 2022 | **12.5% flat**, irrespective of holding period | As above | A single rate, not a ladder |
-| Securities — acquired before 1 July 2013 | **0%** | **0%** | Grandfathered out of the regime entirely |
-| Securities — modaraba certificates, redeemable capital, listed debt | Same Section 37A cohorts as above | Same | The acquisition date, not the disposal date, selects the cohort — read it off the CDC/NCCPL record rather than assuming |
+| **PSX securities** — acquired **on or after 1 July 2025** | **15%** | **15%** — the same | From this cohort on, being off the ATL costs nothing on PSX capital gains |
+| **PSX securities** — acquired 1 Jul 2024 to 30 Jun 2025 | **15%** | **30%** | Flat, no holding-period taper |
+| **PSX securities** — acquired 1 Jul 2022 to 30 Jun 2024 (regressive ladder) | >1-2 yrs **12.5%**; >2-3 **10%**; >3-4 **7.5%**; >4-5 **5%**; >5-6 **2.5%**; >6 yrs **0%** | Exactly double at each step: **25% / 20% / 15% / 10% / 5% / 0%** | NCCPL's TY 2026 table omits a ≤1-year row for this cohort because it cannot arise: a security bought by 30 June 2024 and sold in TY 2026 has been held over a year |
+| **PSX securities** — acquired 1 Jul 2013 to 30 Jun 2022 | **12.5%** | **25%** | Flat, irrespective of holding period |
+| **PSX securities** — acquired before 1 July 2013 | **0%** | **0%** | Grandfathered out of the regime entirely |
+| **PMEX** (commodity futures) — acquired on or after 1 Jul 2025 | **5%** | **5%** | A different market, a different schedule |
+| **PMEX** — acquired to 30 Jun 2025 | **5%** | **10%** | |
+| **Mutual funds (MUFAP), stock funds** — individual, AOP or company | **15%** (both cohorts) | **30%** to 30 Jun 2025; **15%** from 1 Jul 2025 | |
+| **Mutual funds, other funds** — individual or AOP | **15%** (both cohorts) | **30%** to 30 Jun 2025; **15%** from 1 Jul 2025 | |
+| **Mutual funds, other funds** — **company** | **25%** (both cohorts) | **50%** to 30 Jun 2025; **25%** from 1 Jul 2025 | The one place a company is charged more than an individual — check the unit-holder type before quoting 15% |
+| **Mutual funds** — acquired on or before 30 Jun 2024 and held **more than six years** | **0%** | **0%** | |
 | Immovable property (Section 37) — **acquired on or after 1 July 2024** | **15% flat**, whatever the holding period | Individuals and AOPs: normal slab rates (up to 45%), **but not less than 15%**. Companies: the corporate rate | The holding-period taper was abolished for this cohort. FBR valuation tables apply |
 | Immovable property — **acquired on or before 30 June 2024**, open plots | 15% / 12.5% / 10% / 7.5% / 5% / 2.5% / **0% beyond 6 years** across the seven annual bands | Slab rates, floor 15% | Three separate ladders — the asset type changes the rate at the same holding period |
 | Immovable property — **acquired on or before 30 June 2024**, constructed property | 15% / 10% / 7.5% / 5% / **0% beyond 4 years** | Slab rates, floor 15% | Reaches zero two years earlier than open plots |
@@ -81,37 +90,74 @@ This block is generated from verified `skill_facts` — edit the facts, not the 
 | Other capital assets (Section 37 — non-property, non-security) | Normal income slab rates | Normal income slab rates | Treated as income under Section 18 / Section 37 general |
 | Crypto / virtual assets | Treated as capital asset under Section 37 (FBR position since 2023) | Same | **Regulatory framework uncertain — flag for client and reviewer** |
 
-**The one thing to get right: the acquisition date selects the regime.**
+**The one thing to get right: the acquisition date selects the regime, and
+securities have TWO boundaries — 1 July 2024 and 1 July 2025.**
 
-Both Section 37A securities and Section 37 immovable property were cut in two on
-**1 July 2024**. Assets acquired on or after that date lost the holding-period
-taper entirely and are charged at a flat 15% for persons on the Active
-Taxpayers List. Assets acquired on or before 30 June 2024 keep the ladder they
-were bought under, and it runs all the way to 0%. Charging the flat 15% on a
-long-held plot bought in 2019 overstates the tax by the whole of it.
+The securities rows above are taken from the schedule the collection agent
+actually deducts under: **NCCPL notice NCCPL/CM/AUGUST-25/02 of 5 August 2025**,
+"Market Wise applicable Capital Gains Tax Rates effective from July 1, 2025",
+which is the Tax Year 2026 table. Read the cohort off the CDC/NCCPL record; the
+acquisition date decides it, not the disposal date.
 
-For persons **not** on the ATL, both regimes apply the normal slab rates to
-individuals and AOPs subject to a **floor of 15%**, and the corporate rate to
-companies. The floor is the point: a non-filer never pays less than a filer, and
-the slab can take an individual well above 15%.
+Two features of that schedule are worth stating plainly because they are easy to
+assume away:
 
-**A correction to an earlier pass on this file.** A previous revision on this
-branch moved the securities boundary to 1 July 2025, invented a "15%/30%"
-cohort for July 2024–June 2025, and deleted the "not less than 15%" non-ATL
-floor as an error — it was not an error, it is the statute. The mechanism was
-assuming that because the Finance Act 2025 was the operative Act for the tax
-year, the cohort it governs must start in July 2025. **The year of the Act is
-not the year of the cohort.** FA 2024 set the 1 July 2024 boundary; FA 2025 left
-it where it was. Read the boundary date out of the rate schedule, never off the
-Act's own name.
+1. **Below 1 July 2025, the non-ATL rate is exactly double the ATL rate** —
+   25/20/15/10/5/0 against 12.5/10/7.5/5/2.5/0, and 30% against 15%. It is not a
+   slab and not a floor; it is a doubling, and it stops at 0% where the ATL rate
+   is 0%.
+2. **From 1 July 2025 the doubling stops.** For that cohort ATL and non-ATL both
+   pay 15% on PSX. Being off the ATL costs nothing on those gains. Anyone still
+   quoting a non-filer penalty on the newest cohort is a year behind.
+
+**Where the secondary sources disagree with the collection agent, and how to
+read that.** PwC states that for non-ATL persons the personal income tax rates
+apply "provided that the rate of tax shall not be less than 15%". KPMG states
+normal slab rates for individuals and AOPs and the 29% corporate rate for
+companies. Neither matches NCCPL's flat published rates. The reconciliation is
+that they describe different stages: **NCCPL deducts at source at the notified
+rate above, and the taxpayer reconciles the statutory liability in the annual
+return.** So use the table for what will be withheld, and expect the return to
+settle any difference. Do not treat the deduction as the final tax for a
+non-ATL person without checking the return position.
+
+**Two earlier passes on this file got this wrong in opposite directions, and
+both are corrected above.** The first moved the boundary to 1 July 2025 and
+described non-ATL treatment as normal-slab/29%. The second moved it back to
+1 July 2024 and restored a "not less than 15%" floor, calling the first an
+error. The schedule has **both** boundaries, and the non-ATL treatment is
+neither a slab nor a floor. The lesson is narrow and worth keeping: **for a tax
+collected at source, read the collection agent's own notification before any
+secondary summary.** NCCPL publishes the table it deducts under; PwC and KPMG
+describe the statute in prose, and the two are not the same document.
+
+**Super tax under §4C is collected by NCCPL too, on the same gains.** It is a
+separate charge on top of the CGT rate, not part of it, and NCCPL computes and
+deducts it under Division IIB of Part I of the First Schedule. The Tax Year 2026
+bands, on income under §4C:
+
+| Income under §4C | Rate |
+| --- | --- |
+| Up to Rs. 150 million | 0% |
+| Over 150m, up to 200m | 1% |
+| Over 200m, up to 250m | 1.5% |
+| Over 250m, up to 300m | 2.5% |
+| Over 300m, up to 350m | 3.5% |
+| Over 350m, up to 400m | 5.5% |
+| Over 400m, up to 500m | 7.5% |
+| Over 500 million | 10% |
+
+NCCPL's notice adds a rule worth quoting because it defeats the obvious
+shortcut: *"Entire capital gains/losses irrespective of applicable tax rates
+shall be considered for computation of Capital Gains Tax and Super Tax."* A loss
+in a 0% cohort still enters the computation — do not drop cohorts from the
+aggregate because their rate is nil.
 
 **Still to be confirmed:** whether the Finance Act 2026 moved anything for TY
-2026-27. The rows above are the position as implemented by NCCPL and reported by
-PwC for securities and property acquired under the 1 July 2024 split. Super tax
-under §4C (1%–10%) can apply on top where total income exceeds the statutory
-threshold; it is a separate charge, not part of the CGT rate. Where the
-practitioner cannot confirm the current-year rate, apply the conservative
-default (see §7).
+2026-27. The securities rows are NCCPL's TY 2026 schedule; the property rows
+below are PwC's reading of the 1 July 2024 split and have not been checked
+against an FBR notification. Where the practitioner cannot confirm the
+current-year rate, apply the conservative default (see §7).
 
 ## Section 2 — Required inputs & refusal catalogue
 
@@ -149,7 +195,7 @@ Before computing any Pakistan CGT position, obtain:
 
 - **Scope** — Section 37A applies to "securities" as defined, which includes: - Shares of a **public company** listed on the Pakistan Stock Exchange (PSX). - Vouchers of Pakistan Telecommunication Corporation, modaraba certificates, instruments of redeemable capital. - Debt securities (corporate debt instruments listed in Pakistan), Term Finance Certificates, Sukuks. - Units of an open-end mutual fund and units of an exchange-traded fund (where so prescribed).
 - **Computation** — Chargeable gain = Disposal proceeds − Acquisition cost − Incidental costs of acquisition − Incidental costs of disposal CGT payable = Chargeable gain × applicable Section 37A rate (see §1 rate table — verify against current Finance Act).
-- **Rate structure** — Section 37A operates **four acquisition-date cohorts, not one rate**. Securities acquired before 1 July 2013 are at 0%. Those acquired 1 July 2013 – 30 June 2022 are at a flat 12.5% irrespective of holding period. Those acquired 1 July 2022 – 30 June 2024 run the sliding scale 15% / 12.5% / 10% / 7.5% / 5% / 2.5% / 0% as the holding period lengthens past one, two, three, four, five and six years. The **Finance Act 2024** removed the taper for securities acquired **on or after 1 July 2024**, charging those at a flat **15%** for persons on the ATL whatever the holding period. For persons not on the ATL, the normal slab rates apply to individuals and AOPs **subject to a floor of 15%**, and the corporate rate applies to companies. The Finance Act 2025 did not move the 1 July 2024 boundary.
+- **Rate structure** — Section 37A operates **five acquisition-date cohorts on PSX, not one rate**, and each market (PSX, PMEX, mutual funds) has its own schedule. Before 1 July 2013: 0%. 1 July 2013 – 30 June 2022: 12.5% flat. 1 July 2022 – 30 June 2024: the regressive ladder 12.5% / 10% / 7.5% / 5% / 2.5% / 0% as the holding period passes two, three, four, five and six years. 1 July 2024 – 30 June 2025: flat 15%, no taper. On or after 1 July 2025: flat 15%. **For every cohort before 1 July 2025 the non-ATL rate is exactly double the ATL rate; from 1 July 2025 the two are equal.** Rates are NCCPL's Tax Year 2026 notified schedule, which is what is deducted at source; the statutory liability is reconciled in the annual return  _(NCCPL notice NCCPL/CM/AUGUST-25/02, 5 August 2025)_
 - **Collection at source — NCCPL** — The National Clearing Company of Pakistan Limited operates the CGT collection mechanism for PSX trades: - NCCPL calculates the gain/loss on each settled trade based on the trade book and reference acquisition data. - CGT is deducted at source from the proceeds and remitted to FBR. - NCCPL issues an **annual CGT certificate** to the investor. - The investor reconciles the NCCPL-collected CGT against the position on the annual return; any over-collection is refundable, any under-collection (e.g. off-market trades) is payable on filing.
 - **Filer vs non-filer** — ATL status at the date of each disposal determines the rate. A taxpayer who becomes a filer mid-year cannot retrospectively reduce the rate on earlier non-filer disposals.
 
@@ -241,12 +287,12 @@ Mr. Ahmed, a Karachi-resident filer, sold listed shares on the PSX through his b
 | Co. X — gain (4,500,000 − 3,000,000 − 22,500) | 1,477,500 |
 | Co. Y — gain (2,200,000 − 1,800,000 − 11,000) | 389,000 |
 | **Aggregate Section 37A chargeable gain** | **1,866,500** |
-| Co. X — acquired Aug 2024, so the post-1 July 2024 cohort: 1,477,500 at **15%** | 221,625 |
-| Co. Y — acquired Jan 2023, so the 2022-24 cohort, held > 2 ≤ 3 years: 389,000 at **10%** | 38,900 |
+| Co. X — acquired Aug 2024, so the 1 Jul 2024 – 30 Jun 2025 cohort, ATL: 1,477,500 at **15%** | 221,625 |
+| Co. Y — acquired Jan 2023, so the 2022-24 ladder, held > 2 ≤ 3 years, ATL: 389,000 at **10%** | 38,900 |
 | **Total CGT** | **260,525** |
 
 **Why the two lots are not both at 15%.** The aggregate gain is a single figure
-but it is not charged at a single rate. Co. X was bought after the 1 July 2024
+but it is not charged at a single rate. Co. X was bought inside the 1 July 2024 to 30 June 2025 cohort, after the
 boundary, so the taper does not exist for it and 15% applies whatever the
 holding period. Co. Y was bought in January 2023, under the previous regime,
 and keeps that regime's taper: at just over two years the rate is 10%, not 15%.
@@ -355,7 +401,7 @@ Mr. Iqbal, a resident filer, acquired BTC in 2023 for Rs. 2,000,000 (equivalent 
 
 1. **Income Tax Ordinance 2001 (ITO 2001)** — primary statute; Sections 37 and 37A.
 2. **Income Tax Rules 2002** — procedural and computational rules.
-3. **Finance Act 2024** — set the **1 July 2024** acquisition-date boundary for both Section 37A securities and Section 37 immovable property: assets acquired on or after that date lose the holding-period taper and are charged at a flat 15% for persons on the ATL, with normal slab rates subject to a 15% floor for non-ATL individuals and AOPs and the corporate rate for non-ATL companies. Assets acquired on or before 30 June 2024 keep the taper. The Finance Act 2025 left the boundary in place.
+3. **Finance Act 2024 and Finance Act 2025** — FA 2024 set the **1 July 2024** boundary for both Section 37A securities and Section 37 immovable property, removing the holding-period taper for assets acquired on or after that date. FA 2025 then set a **second** securities boundary at **1 July 2025**, from which the non-ATL rate stops being double the ATL rate and the two become equal at 15% on PSX. The operative securities schedule is **NCCPL notice NCCPL/CM/AUGUST-25/02 of 5 August 2025**, the Tax Year 2026 market-wise table. Assets acquired on or before 30 June 2024 keep the taper.
 4. **Finance Act 2025** — annual amendments to Sections 37 and 37A rates and brackets (**confirm exact figures before applying**).
 5. **NCCPL Capital Gains Tax mechanism** — National Clearing Company of Pakistan Limited rules for collection at source on PSX-settled trades.
 6. **FBR Circulars and SROs** — including FBR-notified valuation tables for immovable property (locality-specific SROs) and FBR Circulars on Section 37A operation.
