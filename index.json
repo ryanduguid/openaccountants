@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-08-22T05:06:40+00:00",
+ "generated_at": "2026-09-09T07:11:41+00:00",
  "counts": {
   "guides": 1954,
   "jurisdictions": 244,
@@ -2763,7 +2763,7 @@
    "tier": 2,
    "verified_by": null,
    "reviewed_by": null,
-   "tax_year": "2024",
+   "tax_year": "2026",
    "last_updated": "2026-08-02"
   },
   {
@@ -19203,7 +19203,7 @@
    "tier": 1,
    "verified_by": null,
    "reviewed_by": "James Power",
-   "tax_year": "2024",
+   "tax_year": "2025",
    "last_updated": "2026-07-13"
   },
   {
