@@ -78,6 +78,8 @@ jurisdiction at a time. This section records how far that has got.
 | Social insurance rates | Liechtenstein | 3 | Liechtenstein |
 | Self-employed contribution caps | Russia | 0 | — |
 | Penalty rates | Russia | 0 | — |
+| Medicare levy surcharge thresholds | Australia | 1 | Australia |
+| Late payment interest | UK | 0, restated | — |
 
 The deadline pass has covered 24 jurisdictions of 200. Nobody has run an external
 pass over anything else. That leaves payroll rates and thresholds, registration
@@ -146,6 +148,29 @@ current value". That date has passed, the change is in force, and a hedge
 written before a commencement date should be revisited after it rather than
 carried forward. Its prohibition now reads "do NOT state the threshold as
 EGP 500,000" rather than "do not present either figure as settled".
+
+### Work the queue by who reads it, not by who hedges most
+
+The hedge queue sorted by count puts Central African Republic first with 27 and
+Australia nowhere. Sorted by pack size it puts Australia first with 37 guides
+and 3 hedges. The second ordering found an error in the file whose whole job is
+to be right.
+
+`au-rates-2026-27` gave the Medicare levy surcharge base tier as $101,000
+single and $202,000 family. Those are the 2025-26 figures; for 2026-27 they are
+$105,000 and $210,000, with the family threshold rising $1,500 for each MLS
+dependent child after the first. A guide named for a year, carrying the
+previous year's numbers, is the worst version of this error, because the name
+is the reason a reader trusts it.
+
+Three hedges in the same five packs came back correct and were restated rather
+than removed. Australia's private hospital excess of $750 single and $1,500
+family has been unchanged since 1 April 2019. The UK's late payment interest is
+Bank Rate plus 4 points, which happens to be the 7.75% the guide already showed,
+though the guide dated it to 2024 and the number is right for a different
+reason: it is 7.75% from 9 January 2026 on a Bank Rate of 3.75%. That line also
+gained the part that changes an answer, that the margin was 2.5 points before
+6 April 2025, so interest running across that date is charged at two margins.
 
 ### A guide that borrows another country's rates says so
 
