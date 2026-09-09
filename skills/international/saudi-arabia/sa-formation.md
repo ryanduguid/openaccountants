@@ -513,10 +513,10 @@ The Zakat, Tax and Customs Authority (ZATCA) — formed in 2021 by the merger of
 | Component | Employer | Employee | Applies to |
 | --- | --- | --- | --- |
 | **Old-age, disability, death (OADI)** | **9%** | **9%** | Saudi / GCC employees |
-| **Unemployment insurance (SANED)** | **1.5%** | **1.5%** | Saudi employees only |
+| **Unemployment insurance (SANED)** | **0.75%** | **0.75%** | Saudi employees only |
 | **Occupational hazards (work-injury)** | **2%** | 0% | All employees regardless of nationality |
-| **Total — Saudi employee** | **12.5%** | **10.5%** |  |
-| **Total — GCC employee** | **11%** | **9%** |  |
+| **Total — Saudi employee** | **11.75%** | **9.75%** | Existing subscribers (first GOSI subscription before 3 July 2024). A Saudi first subscribing on or after that date is on the reformed annuity rate — 9.5% each from July 2025, rising 0.5 points each July to 11% by 2028, so 12.25% / 10.25% for 2025. See `sa-gosi-saudization` |
+| **Total — GCC employee** | **11%** | **9%** | OADI + occupational hazards; SANED does not apply |
 | **Total — Non-Saudi / non-GCC employee** | **2%** | 0% |  |
 
 - **Contribution base cap** — Contribution base: gross wage (basic + housing allowance) capped at SAR 45,000/month (verify against current ceiling).
@@ -654,8 +654,8 @@ Why not RHQ? Acme Cloud's regional management remains in Dubai. The substance te
 - **WHT on payments to US parent — technical/consulting fees and royalties on intercompany IP licence** — 5% % (with treaty consideration — Saudi Arabia and the US do not currently have a bilateral DTT in force; verify, as treaties are evolving)
 - **WHT on dividends to US parent** — 5% %
 - **Royalties WHT** — 15% % (subject to treaty if applicable)
-- **GOSI employer contribution (Saudi employees)** — 12.5% %
-- **GOSI employee contribution (Saudi employees)** — 10.5% %
+- **GOSI employer contribution (Saudi employees)** — 11.75% % (existing subscribers; 12.25% for a first-time subscriber from 3 July 2024 on the July 2025 rates)
+- **GOSI employee contribution (Saudi employees)** — 9.75% % (existing subscribers; 10.25% on the same basis)
 - **GOSI employer contribution (non-Saudi employees)** — 2% % (occupational hazards only)
 - **Saudization** — Sector benchmark applies; first 6–12 months grace; thereafter Nitaqat tier tracking. Aim for Medium Green or higher to preserve work-visa privileges.
 - **Transfer pricing — Local File / Master File threshold** — SAR 200M SAR (Local File / Master File obligations if Saudi LLC revenue ≥ SAR 200M)
