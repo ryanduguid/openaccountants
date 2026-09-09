@@ -1,6 +1,6 @@
 ---
 name: nyc-unincorporated-business-tax
-description: "NYC Unincorporated Business Tax (UBT) for sole proprietors and SMLLCs operating in the five boroughs. Covers the 4% tax rate, $95,000 exemption with phase-out, Form NYC-202, Form NYC-202S (simplified), the IT-219 credit against NYC resident income tax, and estimated UBT payments. Primary source: NYC Admin Code Title 11, Chapter 5."
+description: "NYC Unincorporated Business Tax (UBT) for sole proprietors and SMLLCs operating in the five boroughs. Covers the 4% tax rate, the $5,000 specific exemption and the §11-503(b) business tax credit, Form NYC-202, Form NYC-202S (simplified), the IT-219 credit against NYC resident income tax, and estimated UBT payments. Primary source: NYC Admin Code Title 11, Chapter 5."
 jurisdiction: US-NY-NYC
 tax_year: 2025
 last_updated: 2026-07-13
@@ -31,7 +31,7 @@ This is a Tier 2 content skill for computing and preparing the NYC Unincorporate
 - Form IT-219 (Credit for NYC UBT against NYC resident income tax on Form IT-201)
 - Sole proprietors operating in NYC
 - Single-member LLCs operating in NYC
-- The $95,000 exemption and its phase-out
+- The $5,000 specific exemption and the §11-503(b) business tax credit
 - UBT estimated tax payments
 
 **Out of scope (refused):**
@@ -76,33 +76,44 @@ This is a Tier 2 content skill for computing and preparing the NYC Unincorporate
 | Item | Amount | Source |
 | --- | --- | --- |
 | UBT rate | 4.0% of unincorporated business taxable income | NYC Admin Code §11-503(a) |
-| Exemption | $5,000 specific exemption against net income | NYC Admin Code §11-510(a) |
-| Exemption phase-out start | Line 17 tax > $3,400 | NYC Admin Code §11-510(a) |
-| Exemption phase-out rate | Partial credit applies for line 17 tax over $3,400 and under $5,400 | NYC Admin Code §11-510(a) |
-| Exemption fully phased out | Taxable income line 17 tax >= $5,400 | Computed: $95,000 + (2 x $95,000) |
+| Specific exemption | $5,000 against unincorporated business taxable income | NYC Admin Code §11-510 |
+| Business tax credit -- full | Tax of $3,400 or less: credit equals the entire tax, so no UBT is due | NYC Admin Code §11-503(b)(A) |
+| Business tax credit -- partial | Tax over $3,400 and under $5,400: credit = tax x ($5,400 - tax) / $2,000 | NYC Admin Code §11-503(b)(B) |
+| Business tax credit -- none | Tax of $5,400 or more: no credit | NYC Admin Code §11-503(b)(C) |
+| Filing threshold | File Form NYC-202 where gross income exceeds $95,000, or where there is any UBT liability | NYC-202 instructions |
 | IT-219 credit | 100% of UBT paid, limited to NYC personal income tax liability | NY Tax Law §1310(e); Form IT-219 |
 | Estimated tax threshold | $3,400 expected annual UBT liability | NYC-202EIN instructions |
 
 - **UBT rate** — 4.0% of unincorporated business taxable income  _(NYC Admin Code §11-503(a))_
-- **Exemption** — $5,000 specific exemption against net income  _(NYC Admin Code §11-510(a))_
-- **Exemption phase-out start** — Line 17 tax > $3,400  _(NYC Admin Code §11-510(a))_
-- **Exemption phase-out rate** — Partial credit applies for line 17 tax over $3,400 and under $5,400  _(NYC Admin Code §11-510(a))_
-- **Exemption fully phased out** — Taxable income line 17 tax >= $5,400  _(Computed: $95,000 + (2 x $95,000))_
+- **Specific exemption** — $5,000 against unincorporated business taxable income  _(NYC Admin Code §11-510)_
+- **Business tax credit — full** — Tax of $3,400 or less: credit equals the entire tax, so no UBT is due  _(NYC Admin Code §11-503(b)(A))_
+- **Business tax credit — partial** — Tax over $3,400 and under $5,400: credit = tax x ($5,400 - tax) / $2,000  _(NYC Admin Code §11-503(b)(B))_
+- **Business tax credit — none** — Tax of $5,400 or more: no credit  _(NYC Admin Code §11-503(b)(C))_
+- **Filing threshold** — File Form NYC-202 where gross income exceeds $95,000, or where there is any UBT liability  _(NYC-202 instructions)_
 - **IT-219 credit** — 100% of UBT paid, limited to NYC personal income tax liability  _(NY Tax Law §1310(e); Form IT-219)_
 - **Estimated tax threshold** — $3,400 expected annual UBT liability  _(NYC-202EIN instructions)_
 
-### Exemption phase-out computation
+### Specific exemption and the business tax credit
 
-**Exemption phase-out computation**  _(NYC Admin Code §11-510(a))_
+There is no $95,000 exemption and no exemption phase-out. $95,000 is a gross income
+FILING threshold. Two separate reliefs apply:
 
-| Taxable income | Exemption | Tax |
+1. A **$5,000 specific exemption** (§11-510) is subtracted from unincorporated business
+   taxable income before the 4% rate.
+2. A **business tax credit** (§11-503(b)) is then applied against the tax itself.
+
+| Tax before credit | Credit | UBT payable |
 | --- | --- | --- |
-| $95,000 or less | $95,000 (full) | $0 |
-| $120,000 | $95,000 - ($25,000 / 2) = $82,500 | ($120,000 - $82,500) x 4% = $1,500 |
-| $150,000 | $95,000 - ($55,000 / 2) = $67,500 | ($150,000 - $67,500) x 4% = $3,300 |
-| $190,000 or more | $0 (fully phased out) | Taxable income x 4% |
+| $3,400 or less | entire tax | $0 |
+| over $3,400, under $5,400 | tax x ($5,400 - tax) / $2,000 | tax less the credit |
+| $5,400 or more | none | full tax |
 
-- **Phase-out mechanism** — The $95,000 exemption is reduced by $1 for every $2 of taxable income exceeding $95,000.  _(NYC Admin Code §11-510(a))_
+Worked: taxable income $150,000. Less $5,000 exemption = $145,000. Tax = $145,000 x 4%
+= $5,800, which is $5,400 or more, so no credit; UBT payable $5,800.
+
+Worked: taxable income $110,000. Less $5,000 exemption = $105,000. Tax = $105,000 x 4%
+= $4,200, between $3,400 and $5,400, so credit = $4,200 x ($5,400 - $4,200) / $2,000
+= $2,520. UBT payable = $1,680.
 
 ## Section 4 -- Computation rules (Step format)
 
@@ -201,7 +212,7 @@ This is a Tier 2 content skill for computing and preparing the NYC Unincorporate
 ### Test 5: Simplified return eligibility
 
 **Input:** Freelancer with $100,000 gross income. No employees, no vehicle, no depreciation.
-**Expected:** Eligible for NYC-202S. Must still compute exemption phase-out.
+**Expected:** Eligible for NYC-202S. Must still apply the $5,000 exemption and the §11-503(b) credit.
 
 ## Section 7 -- Prohibitions
 
@@ -218,7 +229,7 @@ Before delivering output, verify:
 
 - [ ] Business activity is in NYC (not just clients in NYC)
 - [ ] Gross income exceeds $95,000 filing threshold
-- [ ] Exemption phase-out computed correctly using $1-for-$2 formula
+- [ ] $5,000 specific exemption applied, then the §11-503(b) credit against the tax
 - [ ] Owner's salary/draws NOT deducted from UBT income
 - [ ] Income taxes NOT deducted from UBT income
 - [ ] IT-219 credit correctly limited to NYC personal income tax liability
