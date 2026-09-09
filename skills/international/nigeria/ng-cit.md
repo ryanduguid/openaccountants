@@ -148,7 +148,13 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 - **Development Levy consolidation** — NTA 2025 consolidates four legacy levies — Tertiary Education Tax (TET, 3%), NITDA levy (1%), NASENI levy (0.25%), and Police Trust Fund levy (0.005%) — into a single **4%** Development Levy on assessable profits, charged on every company except small companies and non-resident companies. The Levy is administered by FIRS and reported on the CIT return. Note the direction of travel: the four legacy levies together came to **4.255%** for a company caught by all of them, so consolidation is a small saving for that company — but a company that paid only TET and the Police Trust Fund levy was at roughly **3.005%** and now pays 4%.  _(NTA 2025 s.59)_
 
-> **TBC — verify under NTA 2025 final implementing regulations:** the precise allocation formula between TETFund, NITDA, NASENI, Defence Security Trust Fund, Police Trust Fund, and other beneficiaries; and the transition treatment for accounting years straddling 1 January 2026.
+> **RESOLVED — the allocation formula is in the Act, not in regulations.** Section 59(3) NTAA distributes the Development Levy as: **50% TETFund**, **15%** Nigerian Education Loan Fund (NELFUND), **10%** Defence and Security Infrastructure Fund, **8%** National Information Technology Development Fund (NITDA), **8%** NASENI, **5%** National Cybersecurity Fund and **4%** National Board for Technological Incubation. Those sum to 100%.
+>
+> Two corrections to the question this TBC asked. The **Police Trust Fund is not a beneficiary** — its levy is one of the four the Development Levy *replaces*, listed in the bullet above, so it takes no share. And **NELFUND and the Cybersecurity and Technological Incubation funds are beneficiaries**, which the question did not anticipate; between them they take 24% of the levy.
+>
+> Allocation does not change what a company pays. It is 4% of assessable profits either way, and the split matters for reconciling a levy assessment or advising a beneficiary body rather than for computing the charge.
+>
+> **Still open:** the transition treatment for accounting years straddling 1 January 2026. Check the Federal Ministry of Finance Transition Guidelines for the Tax Acts 2025, which cover transactions spanning both regimes.
 
 ### 3.5 Pillar Two — Minimum Effective Tax Rate (MET)
 
