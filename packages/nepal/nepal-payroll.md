@@ -67,6 +67,13 @@ The employer annualises the employee's taxable salary, applies the progressive s
 - **Resident** — Present in Nepal for 183 days or more in a 365-day period, or whose normal place of abode is Nepal. Residents are taxed on the progressive slabs below.  _(Income Tax Act 2058; PKF FY 2082/83 booklet.)_
 - **Non-resident** — Anyone else; taxed at a flat rate on Nepal-source income (see Section 4).  _(Income Tax Act 2058; PKF FY 2082/83 booklet.)_
 
+> **FY 2083/84 (2026-27) note.** The Finance Act 2083 replaced the slabs below
+> with a single table for all resident natural persons — 1% to NPR 1,000,000,
+> 10% to 1,500,000, 20% to 2,500,000, 27% to 4,000,000 and 29% above that
+> (27% plus a 2% surcharge) — and abolished the separate couple schedule. Use
+> `nepal-income-tax` for the current-year table; the slabs below remain correct
+> for FY 2082/83 and FY 2081/82 payroll.
+
 ### Resident slabs — SINGLE individual (FY 2082/83, also FY 2081/82)
 
 **Resident slabs — SINGLE individual (FY 2082/83, also FY 2081/82)**  _(PKF FY 2082/83 booklet p.2)_
