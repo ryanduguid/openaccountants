@@ -375,7 +375,7 @@ Filed via FIRS Tax Pro-Max (https://taxpromax.firs.gov.ng). Tax Pro-Max generate
 | **E. Total Profit (Taxable Profit)** | 18 | Line 11 − Line 16 − Line 17 | Computed |
 | **F. Tax Charge** | 19 | CIT rate applied: **0%** (small company — turnover ≤ ₦25M); **20%** (medium — ₦25M < turnover ≤ ₦100M); **30%** (large — turnover > ₦100M) per CITA Section 40 as amended by Finance Act 2019/2020 | ng-cit |
 |  | 20 | CIT liability | Line 18 × rate |
-|  | 21 | **Tertiary Education Tax (TET)** at **3%** of assessable profit (TET Act as amended by Finance Act 2023 — rate increased from 2.5% to 2.5% then to 3.0% under Finance Act 2023; confirm rate effective for FY 2025) | ng-cit |
+|  | 21 | **Tertiary Education Tax (TET)** at **3%** of assessable profit (TETFund Act s.1(2) as amended — 2% under the Education Tax Act 1993, raised to 2.5% by Finance Act 2021 from 1 January 2022, then to 3% by Finance Act 2023 from September 2023; 3% is the rate for FY 2025) | ng-cit |
 |  | 22 | **Development Levy** (NTA 2025) — not applicable for FY 2025; effective FY 2026 onward at 4% of assessable profit consolidating TET, NITDA, NASENI levies | n/a for 2025 |
 |  | 23 | NITDA Levy 1% (companies with turnover ≥ ₦100M, IT-related sectors) | ng-cit |
 |  | 24 | NASENI Levy 0.25% (specified sectors) | ng-cit |
@@ -413,8 +413,8 @@ Filed via FIRS Tax Pro-Max (https://taxpromax.firs.gov.ng). Tax Pro-Max generate
 The Nigeria Tax Act 2025 (effective 1 January 2026) introduces sweeping changes that do NOT apply to FY 2025 but must be flagged for FY 2026:
 
 - Development Levy at 4% consolidating TET (3%), NITDA (1%), and NASENI (0.25%) into a single levy
-- Small company threshold raised to ₦100M annual turnover (currently ₦25M)
-- CIT rate reduced to 25% for large companies (down from 30%)
+- Small company threshold for the 0% CIT rate raised to ₦50M turnover **and** ≤ ₦250M fixed assets (NTA s.202; currently ₦25M turnover). The ₦100M figure widely quoted is the "small business" VAT test in NTAA s.147 — see the flash point in `ng-cit`
+- CIT rate **unchanged at 30%** for companies that are not small; the medium-company 20% band is abolished. The Bill's proposed 27.5% / 25% was not enacted
 - Minimum Effective Tax Rate (MEFR) of 15% for multinational groups with ≥ €750M consolidated revenue (Pillar Two adoption)
 - VAT rate to remain at 7.5% in 2026 (NTA 2025 left the rate untouched after political pushback on proposed increase)
 - Nigeria Revenue Service (NRS) replaces FIRS as the federal tax authority
@@ -826,8 +826,8 @@ The capstone produces a forward-looking section so the taxpayer arrives at the n
 
 | Area | FY 2025 (current) | FY 2026 (NTA 2025) | Action |
 | --- | --- | --- | --- |
-| CIT large-company rate | 30% | **25%** | Re-forecast tax in 2026 budget |
-| Small company threshold | Turnover ≤ ₦25M | **Turnover ≤ ₦100M** | Many medium companies move into small-company exemption (0% CIT) |
+| CIT rate, companies that are not small | 30% (large) / 20% (medium) | **30% flat — medium band abolished** | Companies previously in the 20% band face a 10-point rise; the Bill's 25% was not enacted |
+| Small company threshold (0% CIT) | Turnover ≤ ₦25M | **Turnover ≤ ₦50M AND fixed assets ≤ ₦250M** (NTA s.202) | Companies between ₦50M and ₦100M are VAT-exempt as a "small business" under NTAA s.147 but are **not** small companies for CIT |
 | TET + NITDA + NASENI | 3% + 1% + 0.25% separate levies | Consolidated **Development Levy of 4%** | Single line in 2026 computation |
 | Minimum tax (companies) | Section 33 CITA: 0.5% turnover | **MEFR 15%** for MNE groups ≥ €750M consolidated revenue (Pillar Two) | Pillar Two diagnostic for MNE clients |
 | PIT structure | Graduated 7–24%, CRA, Sixth Schedule reliefs | New brackets 0–25%; ₦800K tax-free threshold; rent relief ₦200K | Update payroll PAYE calculations from 1 Jan 2026 |
@@ -1056,7 +1056,7 @@ If execution runs out of context mid-build, complete the computation work first 
 | Finance Act 2020 | VAT reforms; SEP rules; EDT narrowing; CRA enhancement |
 | Finance Act 2021 | Capital gains on shares; further VAT amendments |
 | Finance Act 2023 | TET rate to 3%; further refinements |
-| **Nigeria Tax Act 2025 (NTA 2025)** — assented June 2025, key provisions effective 1 January 2026 | New CIT rate (25% large), new small-company threshold (₦100M), Development Levy (4% consolidating TET/NITDA/NASENI), new PIT brackets and ₦800K threshold, unified TIN, NRS rebrand, MEFR 15% for MNEs (Pillar Two) — **prospective only; does NOT apply to FY 2025** |
+| **Nigeria Tax Act 2025 (NTA 2025)** — assented 26 June 2025, key provisions effective 1 January 2026 | CIT rate held at 30% with the 20% medium band abolished, small-company threshold at ₦50M turnover / ₦250M assets (NTA s.202), Development Levy (4% consolidating TET/NITDA/NASENI/PTF), new PIT brackets and ₦800K threshold, unified TIN, NRS rebrand, MEFR 15% for MNEs (Pillar Two) — **prospective only; does NOT apply to FY 2025** |
 | FIRS Tax Pro-Max | https://taxpromax.firs.gov.ng |
 | Remita | https://www.remita.net |
 | Lagos State Internal Revenue Service (LIRS) eTax | https://etax.lirs.net |
@@ -1083,7 +1083,7 @@ If execution runs out of context mid-build, complete the computation work first 
 - **VAT reforms; SEP rules; EDT narrowing; CRA enhancement** — VAT reforms; SEP rules; EDT narrowing; CRA enhancement  _(Finance Act 2020)_
 - **Capital gains on shares; further VAT amendments** — Capital gains on shares; further VAT amendments  _(Finance Act 2021)_
 - **Finance Act 2023** — TET rate to 3%; further refinements
-- **New CIT rate (25% large), new small-company threshold (₦100M), Development Levy (4% consolidating TET/NITDA/NASENI), new PIT brackets and ₦800K threshold, unified TIN, NRS rebrand, MEFR 15% for MNEs (Pillar Two) — **prospective only; does NOT apply to FY 2025**** — New CIT rate (25% large), new small-company threshold (₦100M), Development Levy (4% consolidating TET/NITDA/NASENI), new PIT brackets and ₦800K threshold, unified TIN, NRS rebrand, MEFR 15% for MNEs (Pillar Two) — **prospective only; does NOT apply to FY 2025**  _(**Nigeria Tax Act 2025 (NTA 2025)** — assented June 2025, key provisions effective 1 January 2026)_
+- **CIT held at 30% with the medium band abolished, small-company threshold at ₦50M turnover / ₦250M assets, Development Levy at 4%, new PIT brackets and ₦800K threshold, unified TIN, NRS rebrand, MEFR 15% for MNEs (Pillar Two) — prospective only; does NOT apply to FY 2025** — The Bill's proposed 25% CIT rate was not enacted, and the ₦100M threshold widely quoted is the "small business" VAT test in NTAA s.147, not the NTA s.202 small-company test that drives the 0% CIT rate.  _(**Nigeria Tax Act 2025 (NTA 2025)** — assented 26 June 2025, key provisions effective 1 January 2026)_
 - **https://taxpromax.firs.gov.ng** — https://taxpromax.firs.gov.ng  _(FIRS Tax Pro-Max)_
 - **https://www.remita.net** — https://www.remita.net  _(Remita)_
 - **https://etax.lirs.net** — https://etax.lirs.net  _(Lagos State Internal Revenue Service (LIRS) eTax)_

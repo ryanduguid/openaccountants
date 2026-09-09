@@ -37,9 +37,9 @@ Entity?
                |     -> CIT 0% (NTA 2025 s.56)  [pre-2026 threshold = N25m under FA 2019]
                |
                +-- N100m – N1bn  (NTA 2025 "medium company")
-               |     -> CIT 20%
+               |     -> CIT 30% + 4% Development Levy (NTA 2025)
                |
-               +-- > N1bn  (NTA 2025 "large company")
+               +-- > N1bn
                      -> CIT 30% + 4% Development Levy (NTA 2025)
 ```
 
@@ -107,7 +107,7 @@ The "small company" definition has shifted twice. Use the rule in force for the 
 | --- | --- | --- | --- | --- | --- |
 | Pre-FA 2019 | n/a | 30% flat | 30% | 30% | CITA s.40 |
 | FA 2019 → FY 2025 | Turnover ≤ N25m | 0% | 20% (turnover N25m–N100m) | 30% (> N100m) | FA 2019 s.16 |
-| NTA 2025 (FY starting on/after 1 Jan 2026) | Turnover ≤ N100m AND fixed assets ≤ N250m | 0% | 20% (N100m–N1bn) | 30% + 4% Development Levy (> N1bn) | NTA 2025 |
+| NTA 2025 (FY starting on/after 1 Jan 2026) | Turnover ≤ **N50m** AND fixed assets ≤ N250m (NTA s.202; professional services excluded) | 0% | **no medium band — abolished** | 30% + 4% Development Levy on every company that is not small | NTA 2025 ss.56, 59, 202 |
 
 - **Pre-FA 2019** — n/a  _(CITA s.40)_
 - **FA 2019 → FY 2025** — Turnover ≤ N25m  _(FA 2019 s.16)_
@@ -182,9 +182,9 @@ Use `ask_user_input_v0`. Batch where independent.
 | Q3 FY starting on/after 1 Jan 2026 | NTA 2025 stack |
 | Q3 multiple periods | run each period through the appropriate stack |
 | Q4 ≤ N25m | small company (FA 2019) OR below VAT threshold for sole/BN |
-| Q4 N25m–N100m | pre-NTA: medium (CIT 20%); NTA 2025: still small (CIT 0%) — period flag critical |
-| Q4 N100m–N1bn | pre-NTA: large (CIT 30%); NTA 2025: medium (CIT 20%) |
-| Q4 > N1bn | large in both regimes (CIT 30%); NTA 2025 adds 4% Development Levy |
+| Q4 N25m–N50m | pre-NTA: medium (CIT 20%); NTA 2025: small (CIT 0%) — period flag critical |
+| Q4 N50m–N100m | pre-NTA: medium (CIT 20%); NTA 2025: **not small** on NTA s.202 (CIT 30% + 4% levy) although small for VAT under NTAA s.147 — see the ₦50M/₦100M flash point in `ng-cit` |
+| Q4 > N100m | CIT 30% in both regimes; NTA 2025 adds the 4% Development Levy and drops the medium band |
 | Q4 not sure | defer to inference |
 | Q5 Lagos | PIT filings via LIRS eTax |
 | Q5 FCT | PIT filings via FCT-IRS |
@@ -324,9 +324,9 @@ The Nigeria Tax Act 2025 is effective for financial years beginning on or after 
 | Small co. threshold | Turnover ≤ N25m (FA 2019) | Turnover ≤ N100m AND fixed assets ≤ N250m |
 | Small co. CIT | 0% | 0% |
 | Medium co. band | N25m–N100m | N100m–N1bn |
-| Medium co. CIT | 20% | 20% |
-| Large co. CIT | 30% | 30% |
-| Development Levy | n/a (Tertiary Education Tax / NITDA / NASENI / police levy as separate items) | 4% consolidated levy on large companies |
+| Medium co. CIT | 20% | band abolished — 30% |
+| Large co. CIT | 30% | 30% (the proposed 25% was not enacted) |
+| Development Levy | n/a (Tertiary Education Tax / NITDA / NASENI / police levy as separate items) | 4% consolidated levy on every company that is not a small company |
 | Minimum tax | 0.5% of turnover where applicable | NTA 2025 simplifies; reviewer to confirm |
 | WHT rates | WHT Regulations 1997 + FA amendments | NTA 2025 simplifies and exempts small companies |
 | VAT | VATA + FA 2019 (7.5%) | NTA 2025 carries 7.5% forward (subject to amendment) |
