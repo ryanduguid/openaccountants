@@ -1,32 +1,143 @@
 {
   "tax_year": 2026,
-  "valid_as_of": null,
-  "_TODO_valid_as_of": "Set to date of final review once Rev. Proc. 2025-XX (annual inflation adjustments for 2026), IRS Notice 2025-XX (retirement plan limits 2026), SSA Annual Fact Sheet 2026, and Q1 2026 underpayment-interest Rev. Rul. are all published. Typical window: late Oct 2025 (Rev Proc) → mid-Nov 2025 (SSA) → mid-Dec 2025 (final notices).",
-  "legislative_basis": null,
-  "_TODO_legislative_basis": "Should read: 'OBBBA P.L. 119-21 (with 2026 phase-in provisions); Rev. Proc. 2025-XX; IRS Notice 2025-XX; SSA Annual Fact Sheet 2026'. Add any new 2026 legislation if enacted.",
+  "valid_as_of": "2026-09-09",
+  "legislative_basis": "OBBBA P.L. 119-21 (2026 phase-ins); Rev. Proc. 2025-32; IRS Notice 2025-67; SSA Annual Fact Sheet 2026; IRS 2026 standard mileage announcement",
   "last_updated_by": "openaccountants",
-  "source_documents": [],
-  "_TODO_source_documents": "Populate with: Rev. Proc. 2025-XX (annual inflation adjustments for 2026); IRS Notice 2025-XX (retirement plan limits 2026); SSA Fact Sheet 2026; Notice 2025-XX (2026 standard mileage rates, typically released December); Rev. Rul. 2025-XX for Q1 2026 underpayment interest.",
+  "source_documents": [
+    "Rev. Proc. 2025-32 (annual inflation adjustments for 2026)",
+    "IRS newsroom: tax inflation adjustments for tax year 2026, including amendments from the One, Big, Beautiful Bill",
+    "IRS Notice 2025-67 / IR-2025-111 (retirement plan limits 2026)",
+    "SSA Fact Sheet 2026 (OASDI wage base $184,500)",
+    "IRS: 2026 business standard mileage rate 72.5 cents",
+    "OBBBA P.L. 119-21 (One Big Beautiful Bill Act, enacted July 4 2025)"
+  ],
   "rates_individual": {
     "ordinary_income_brackets": {
-      "single": null,
-      "mfj": null,
+      "single": [
+        {
+          "rate": 0.1,
+          "from": 0,
+          "to": 12400
+        },
+        {
+          "rate": 0.12,
+          "from": 12400,
+          "to": 50400
+        },
+        {
+          "rate": 0.22,
+          "from": 50400,
+          "to": 105700
+        },
+        {
+          "rate": 0.24,
+          "from": 105700,
+          "to": 201775
+        },
+        {
+          "rate": 0.32,
+          "from": 201775,
+          "to": 256225
+        },
+        {
+          "rate": 0.35,
+          "from": 256225,
+          "to": 640600
+        },
+        {
+          "rate": 0.37,
+          "from": 640600,
+          "to": null
+        }
+      ],
+      "mfj": [
+        {
+          "rate": 0.1,
+          "from": 0,
+          "to": 24800
+        },
+        {
+          "rate": 0.12,
+          "from": 24800,
+          "to": 100800
+        },
+        {
+          "rate": 0.22,
+          "from": 100800,
+          "to": 211400
+        },
+        {
+          "rate": 0.24,
+          "from": 211400,
+          "to": 403550
+        },
+        {
+          "rate": 0.32,
+          "from": 403550,
+          "to": 512450
+        },
+        {
+          "rate": 0.35,
+          "from": 512450,
+          "to": 768700
+        },
+        {
+          "rate": 0.37,
+          "from": 768700,
+          "to": null
+        }
+      ],
       "mfs": null,
       "hoh": null,
-      "_TODO": "Rev. Proc. 2025-XX (typically released by IRS in late October 2025). Bracket thresholds adjust by chained-CPI-U from prior September. Rate schedule (10/12/22/24/32/35/37) made permanent by OBBBA, so only thresholds change."
+      "_TODO": "mfs and hoh schedules still to be transcribed from Rev. Proc. 2025-32 sec. 2.01 - do NOT derive them by halving mfj, the hoh schedule is not proportional. single/mfj above are from the IRS 2026 inflation-adjustment release."
     },
     "standard_deduction": {
-      "single": null,
-      "mfj": null,
-      "mfs": null,
-      "hoh": null,
-      "additional_age_or_blind_single": null,
-      "additional_age_or_blind_mfj": null,
-      "_TODO": "Rev. Proc. 2025-XX. OBBBA made the higher TCJA standard deduction permanent. Historical YoY growth ~3-4%. Senior bonus deduction ($6,000) continues through 2028.",
+      "single": 16100,
+      "mfj": 32200,
+      "mfs": 16100,
+      "hoh": 24150,
+      "additional_age_or_blind_single": 2050,
+      "additional_age_or_blind_mfj": 1650,
+      "_TODO": "Rev. Proc. 2025-32 (2026 inflation adjustments); OBBBA made the higher TCJA standard deduction permanent. Additional age/blind amount is per qualifying condition and stacks (65+ and blind = two).",
       "_TODO_senior_bonus": "OBBBA temporary $6,000 senior bonus (age 65+) remains in effect 2025-2028 with phaseout $75k single / $150k MFJ"
     },
-    "capital_gains_brackets": null,
-    "_TODO_capital_gains": "Rev. Proc. 2025-XX. 0/15/20 rate structure permanent; thresholds index by chained-CPI-U.",
+    "capital_gains_brackets": {
+      "single": [
+        {
+          "rate": 0.0,
+          "from": 0,
+          "to": 49450
+        },
+        {
+          "rate": 0.15,
+          "from": 49450,
+          "to": 545500
+        },
+        {
+          "rate": 0.2,
+          "from": 545500,
+          "to": null
+        }
+      ],
+      "mfj": [
+        {
+          "rate": 0.0,
+          "from": 0,
+          "to": 98900
+        },
+        {
+          "rate": 0.15,
+          "from": 98900,
+          "to": 613700
+        },
+        {
+          "rate": 0.2,
+          "from": 613700,
+          "to": null
+        }
+      ],
+      "_TODO": "mfs and hoh thresholds still to be transcribed from Rev. Proc. 2025-32 (2026 inflation adjustments)"
+    },
     "niit": {
       "rate": 0.038,
       "threshold_single": 200000,
@@ -35,12 +146,21 @@
       "threshold_hoh": 200000,
       "_note": "NIIT thresholds are NOT indexed for inflation — fixed in statute since 2013"
     },
-    "amt_exemption": null,
-    "_TODO_amt": "Rev. Proc. 2025-XX. Exemption amounts and phaseout thresholds index annually. OBBBA made TCJA AMT parameters permanent.",
-    "qbi_deduction_rate": 0.20,
+    "amt_exemption": {
+      "single": 90100,
+      "mfj": 140200,
+      "phaseout_start_single": 500000,
+      "phaseout_start_mfj": 1000000,
+      "_source": "Rev. Proc. 2025-32 (2026 inflation adjustments)"
+    },
+    "qbi_deduction_rate": 0.2,
     "_note_qbi_rate_2026": "OBBBA (P.L. 119-21 §70105) made §199A permanent at 20%. The 23% rate appeared only in the House-passed H.R. 1 and was NOT enacted — the rate is 20% for 2025, 2026 and later. From 2026 §70105 widens the phase-in ranges to $75,000 (non-joint) / $150,000 (joint) and adds a §199A(i) minimum deduction of $400 for taxpayers with at least $1,000 of aggregate active QBI.",
-    "qbi_threshold": null,
-    "_TODO_qbi_threshold": "Rev. Proc. 2025-XX. OBBBA made §199A permanent; thresholds continue to index.",
+    "qbi_threshold": {
+      "single": 201775,
+      "mfj": 403550,
+      "_note": "Phase-in start. The single figure 201,775 is confirmed; the mfj figure follows the 32% bracket boundary (403,550) as it has in prior years, but one secondary source prints 403,500 - confirm against Rev. Proc. 2025-32 before relying on it.",
+      "_note_obbba": "OBBBA widens the phase-in RANGE from 2026: $75,000 non-joint / $150,000 joint, and adds the §199A(i) minimum deduction of $400 where aggregate active QBI is at least $1,000."
+    },
     "salt_cap": 40400,
     "_TODO_salt_cap": "OBBBA SALT cap indexes by 1% per year through 2029 — verify exact 2026 figure with Rev. Proc. 2025-XX. Phaseout above $500k MAGI also applies. Then reverts to $10,000 in 2030.",
     "personal_exemption": 0,
@@ -48,7 +168,7 @@
     "section_179_phaseout_start": null,
     "_TODO_section_179": "Rev. Proc. 2025-XX. OBBBA raised §179 caps; 2026 figures index.",
     "section_168k_bonus_depreciation": {
-      "rate": 1.00,
+      "rate": 1.0,
       "_note_obbba": "OBBBA restored 100% bonus depreciation permanently; remains 100% in 2026"
     },
     "section_174_rd": {
@@ -65,19 +185,19 @@
     "camt_threshold_afsi_3yr_avg": 1000000000,
     "beat_rate": 0.105,
     "_note_beat_rate_2026": "OBBBA sets the §59A BEAT rate permanently at 10.5% for tax years beginning after Dec 31, 2025. The pre-OBBBA scheduled increase to 12.5% was not enacted.",
-    "section_250_gilti_deduction": 0.40,
+    "section_250_gilti_deduction": 0.4,
     "_note_gilti_2026": "OBBBA (§70321) sets the §250 deduction on NCTI (GILTI renamed \"net CFC tested income\") at 40% for tax years beginning after Dec 31, 2025 — effective rate 12.6% before the FTC haircut, which itself falls from 20% to 10%. The pre-OBBBA 37.5% sunset (13.125% effective) was not enacted.",
     "section_250_fdii_deduction": 0.3334,
     "_note_fdii_2026": "OBBBA (§70321) sets the §250 deduction on FDDEI (FDII renamed \"foreign-derived deduction eligible income\") at 33.34% for tax years beginning after Dec 31, 2025 — effective rate approximately 14%. The pre-OBBBA 21.875% sunset (16.406% effective) was not enacted; the DTIR/QBAI routine-return construct is also removed.",
-    "section_163j_ati_limit": 0.30,
+    "section_163j_ati_limit": 0.3,
     "section_163j_ebitda_addback": true,
     "_note_obbba_163j": "OBBBA made EBITDA-based ATI permanent",
-    "accumulated_earnings_tax_rate": 0.20,
-    "personal_holding_company_rate": 0.20
+    "accumulated_earnings_tax_rate": 0.2,
+    "personal_holding_company_rate": 0.2
   },
   "payroll_and_se": {
-    "social_security_wage_base": null,
-    "_TODO_social_security_wage_base": "Wait for SSA Annual Fact Sheet (typically October 2025); historical pattern +~3-4% YoY from $176,100 → projected ~$181,000-$184,000",
+    "social_security_wage_base": 184500,
+    "_TODO_social_security_wage_base": "SSA Annual Fact Sheet 2026. Max employee OASDI = 184,500 x 6.2% = 11,439.00.",
     "social_security_rate_employee": 0.062,
     "social_security_rate_employer": 0.062,
     "medicare_rate": 0.0145,
@@ -101,56 +221,56 @@
     "_TODO_household_threshold": "SSA Fact Sheet; indexed annually"
   },
   "retirement_2026": {
-    "401k_employee_deferral": null,
+    "401k_employee_deferral": 24500,
     "_TODO_401k": "Wait for IRS Notice 2025-XX (typically late October / early November 2025). 2025 was $23,500; historical pattern +$500 per year.",
-    "401k_catch_up_50": null,
+    "401k_catch_up_50": 8000,
     "_TODO_catch_up": "IRS Notice 2025-XX",
-    "401k_super_catch_up_60_to_63": null,
+    "401k_super_catch_up_60_to_63": 11250,
     "_TODO_super_catch_up": "IRS Notice 2025-XX. SECURE 2.0 Roth-only mandate for high earners (>$145k indexed prior-year wages) phases in starting 2026 — verify with final IRS regs.",
-    "401k_total_415c_limit": null,
+    "401k_total_415c_limit": 72000,
     "401k_compensation_cap_401a17": null,
-    "ira_contribution": null,
+    "ira_contribution": 7500,
     "ira_catch_up_50": null,
     "sep_ira_max": null,
     "sep_ira_compensation_cap": null,
     "solo_401k_max": null,
     "simple_ira_employee": null,
     "simple_ira_catch_up_50": null,
-    "_TODO_all_retirement": "Populate from IRS Notice 2025-XX (annual cost-of-living retirement plan adjustments). Typically released late October to mid-November.",
-    "hsa_self": null,
-    "hsa_family": null,
+    "_TODO_all_retirement": "Populated from IRS Notice 2025-67 / IR-2025-111: deferral 24,500; age-50 catch-up 8,000; SECURE 2.0 age 60-63 super catch-up 11,250; 415(c) 72,000; IRA 7,500. HSA 4,400/8,750 and health FSA 3,400 (carryover 680) from the 2026 IRS releases. STILL NULL and needed: ira_catch_up_50, 401a17 compensation cap, SEP/solo-401k/SIMPLE limits, HDHP deductible and out-of-pocket limits, qualified transportation.",
+    "hsa_self": 4400,
+    "hsa_family": 8750,
     "hsa_catch_up_55": 1000,
     "hdhp_min_deductible_self": null,
     "hdhp_min_deductible_family": null,
     "hdhp_max_oop_self": null,
     "hdhp_max_oop_family": null,
     "_TODO_hsa_hdhp": "Wait for Rev. Proc. 2025-XX (HSA/HDHP for 2026, typically released May 2025 — likely already available by December review).",
-    "fsa_health_contribution_limit": null,
-    "fsa_health_carryover": null,
+    "fsa_health_contribution_limit": 3400,
+    "fsa_health_carryover": 680,
     "dependent_care_fsa_limit": 5000,
     "_note_dcap": "Dependent Care FSA limit not indexed (statutory $5,000)",
     "qualified_transportation_monthly": null,
     "rmd_age": 73
   },
   "international": {
-    "feie_cap": null,
-    "_TODO_feie": "Rev. Proc. 2025-XX. 2025 was $130,000.",
+    "feie_cap": 132900,
+    "_TODO_feie": "Rev. Proc. 2025-32. Housing base/cap still to be transcribed (base is 16% of the FEIE cap; location caps come from the annual Notice).",
     "housing_exclusion_base": null,
     "housing_exclusion_cap": null,
     "_TODO_housing": "Rev. Proc. 2025-XX. Housing base is 16% of FEIE; cap is typically 30%.",
     "physical_presence_days": 330
   },
   "transfer_taxes": {
-    "annual_gift_exclusion": null,
-    "_TODO_gift_exclusion": "Rev. Proc. 2025-XX. 2025 was $19,000; rounded down to nearest $1,000.",
+    "annual_gift_exclusion": 19000,
+    "_TODO_gift_exclusion": "Rev. Proc. 2025-32: annual gift exclusion stays 19,000 for 2026. GST exemption equals the basic exclusion amount (IRC 2631(c)) = 15,000,000.",
     "annual_gift_exclusion_nc_spouse": null,
     "_TODO_nc_spouse": "Rev. Proc. 2025-XX",
     "estate_basic_exclusion": 15000000,
     "_note_estate_exclusion": "OBBBA §70106 amended IRC §2010(c)(3) to set the basic exclusion amount at a flat $15,000,000 per person for decedents dying and gifts made after Dec 31, 2025, indexed for inflation after 2026. It is NOT the 2025 $13,990,000 figure carried forward and indexed — do not project ~$14.4M. The GST exemption under §2631(c) equals the basic exclusion amount, so it is also $15,000,000. The previously scheduled 2026 sunset to ~$7M is obsolete post-OBBBA.",
-    "estate_top_rate": 0.40,
-    "gst_exemption": null,
+    "estate_top_rate": 0.4,
+    "gst_exemption": 15000000,
     "_TODO_gst": "Tracks estate exemption — Rev. Proc. 2025-XX",
-    "gst_rate": 0.40
+    "gst_rate": 0.4
   },
   "reporting_thresholds": {
     "form_1099_k_threshold": 20000,
@@ -168,7 +288,7 @@
     "_TODO_boi": "Monitor litigation and Treasury rulemaking — current March 2025 interim final rule excludes domestic reporting companies; status may change."
   },
   "credits": {
-    "ctc_per_child": null,
+    "ctc_per_child": 2200,
     "_TODO_ctc": "OBBBA raised CTC to $2,200 starting 2025 with annual indexing thereafter — Rev. Proc. 2025-XX",
     "ctc_refundable_per_child": null,
     "_TODO_ctc_refundable": "Indexed under OBBBA — Rev. Proc. 2025-XX",
@@ -176,7 +296,7 @@
     "ctc_phaseout_start_mfj": 400000,
     "_note_ctc_phaseout": "Phaseout thresholds not indexed",
     "credit_other_dependents": 500,
-    "eitc_max_3_kids": null,
+    "eitc_max_3_kids": 8231,
     "_TODO_eitc": "Rev. Proc. 2025-XX",
     "aotc_max": 2500,
     "llc_max": 2000,
@@ -186,10 +306,11 @@
     "_TODO_ptc_2026": "CRITICAL: ARPA-enhanced PTC subsidies expire end of 2025; 2026 reverts to pre-ARPA structure (400% FPL cliff, no $0 premium for low-income) UNLESS extended by 2025 legislation. Monitor reconciliation bills."
   },
   "mileage": {
-    "business": null,
-    "medical_or_moving": null,
+    "business": 0.725,
+    "medical_or_moving": 0.205,
     "charitable": 0.14,
-    "_TODO_mileage": "IRS Notice 2025-XX (annual standard mileage rates, typically released mid-December for following year). Charitable rate is statutory and unchanged."
+    "_TODO_mileage": "IRS Notice 2025-XX (annual standard mileage rates, typically released mid-December for following year). Charitable rate is statutory and unchanged.",
+    "_source": "IRS: 2026 business standard mileage rate 72.5 cents; medical/moving 20.5 cents; charitable fixed by statute at 14 cents."
   },
   "vehicle_depreciation_caps_280f": null,
   "_TODO_vehicle_caps": "Rev. Proc. 2025-XX. With 100% bonus permanent under OBBBA, Year-1 with-bonus cap will continue to apply.",
@@ -209,9 +330,9 @@
     "estimated_tax_2027_q1": "2027-04-15"
   },
   "estimated_tax_safe_harbor": {
-    "current_year_pct": 0.90,
-    "prior_year_pct_agi_le_150k": 1.00,
-    "prior_year_pct_agi_gt_150k": 1.10,
+    "current_year_pct": 0.9,
+    "prior_year_pct_agi_le_150k": 1.0,
+    "prior_year_pct_agi_gt_150k": 1.1,
     "minimum_balance_due_no_penalty": 1000
   },
   "_OBBBA_KNOWN_2026_CHANGES_SUMMARY": [
@@ -227,5 +348,6 @@
     "1099-K threshold confirmed at $20,000 / 200 transactions",
     "ARPA-enhanced PTC subsidies expire — reverts to pre-ARPA cliff unless extended",
     "SECURE 2.0 Roth-only catch-up for high earners (>$145k) becomes mandatory"
-  ]
+  ],
+  "_valid_as_of_note": "Indexed figures compiled from the published 2026 releases listed in source_documents. NOT yet through the accountant review that ANNUAL-UPDATE-RUNBOOK.md requires: treat as source-cited draft (tier 2) until a Partner signs off. Fields still null are those not confirmed against a primary release."
 }
