@@ -200,6 +200,137 @@ jurisdictions, comparing against a chart stops finding defects and starts
 inventing them, and each invented one invites you to break a guide that was
 already right. Read the guide before you act on a hit.
 
+### A "last verified" date is a falsifiable claim
+
+`emerging-market-corridors` — the cross-border guide and its `agent-skills/`
+mirror — stamped its Turkey → Germany block **Last verified: May 2026** and said
+underneath it that "Turkey domestic WHT on dividends is 10% (recently increased
+from 7.5%)". Turkey's dividend withholding went to **15%** on 22 December 2024,
+by Presidential Decree No. 9286, which reversed the cut from 15% to 10% made on
+22 December 2021. So the block understated the rate by five points, had the
+direction of the last change backwards, and carried a verification date sixteen
+months after the change it missed.
+
+That combination is checkable without knowing any tax law. A guide asserting it
+was verified on a date, while stating a value that a different guide in the same
+corpus says was superseded before that date, has told you the verification did
+not cover that field. `tr-corporate-income-tax` had "15% ... raised from 10% by
+Presidential Decree No. 9286, 22 Dec 2024" the whole time, in the same
+repository, four directories away. The corpus contained its own refutation.
+
+Two smaller habits follow from it. A file-level "Last Verified" row above
+per-section verification dates is the oldest of them, not the newest, and should
+say so, or a reader takes the header as covering the section. And a verification
+note is worth more when it says what was checked: this pass re-verified Turkey's
+domestic rates and did not re-check the German side or the treaty articles, so
+the block now says exactly that rather than restamping the whole thing.
+
+The correction also moved the advice, which is the part a summary would lose. At
+10% domestic the Turkey-Germany treaty's 15% portfolio dividend rate was worse
+than domestic law. At 15% it merely matches, so a portfolio shareholder gets
+nothing from the treaty and only the 5% substantial-holding rate is worth
+claiming. A stale rate does not just misstate a number; it can invert whether
+claiming treaty relief is worth doing at all.
+
+### A guide can cite its source faithfully and still be incomplete
+
+Every other correction on this branch was found by going back to the authority
+the guide named. Egypt, Iceland, Taiwan, Turkey's interest rate, Bosnia, Kenya —
+in each case the guide's own citation contained the answer, and the failure was
+that nobody had opened it, or had opened it and read the wrong column.
+
+The withholding-scope pass found the case where that method cannot work.
+
+`list-withholding-scope.py` reports which heads of withholding each
+jurisdiction's guides actually name. Sixty-four of 142 named only dividends,
+interest and royalties. Turkey and Thailand were taken from that list, both
+already worked on this branch for their rates. Neither guide was careless. PwC's
+`corporate/withholding-taxes` page — the page both cite, and the page much of
+this corpus was built from — carries, for those two countries, dividends,
+interest, royalties and a treaty matrix, and nothing else.
+
+The other heads are real and substantial. Turkey withholds 20% on professional
+services, 20% on commercial rent computed on the gross, and 5% on progress
+payments to contractors on multi-year construction. Thailand withholds 15% under
+Section 70 on services, professional fees and rentals paid abroad, and
+domestically 3% on professional fees, 5% on rent, 2% on advertising and 1% on
+transport. None of it was on the cited page.
+
+So the classic-only shape is not sloppiness. It is faithful reproduction of a
+source that is itself three-headed for that country. The corpus inherited its
+scope along with its numbers, and a guide built that way looks complete, cites
+correctly, and verifies clean against its own source forever.
+
+The rule this adds is narrow and worth stating on its own: **checking a figure
+against the source the guide cites cannot tell you about a figure the guide does
+not state.** Absence has no citation to check. The only defence is to ask what
+the statute charges rather than what the page lists — and coverage varies, so it
+cannot be assumed either way. PwC's Kenya page does carry the full withholding
+table, which is how Kenya's six missing heads and one stale rate came out of a
+single fetch. Its Turkey and Thailand pages do not.
+
+That is also why the scope checker prints what each jurisdiction *does* name
+rather than trying to detect what it should. Nothing in this repo knows what a
+given statute charges. What it can know is that a guide naming three heads sits
+oddly beside one naming eight, and that the difference is worth an hour.
+
+### Fixing a figure once is not fixing it
+
+The most reliable way to introduce a contradiction into this corpus is to
+correct something. A guide states the same figure in the frontmatter
+description, a quick-reference table, a narrative section, a worked example, a
+prohibition and a provenance note. The table is the part you are looking at when
+you decide the figure is wrong. The other five are not.
+
+Three cases on this branch, in order of discovery.
+
+Pakistan's income tax guide had the wrong top salaried rate. Correcting the
+table left **nine** other places saying the old thing, three of them operative,
+including the section heading directly above the corrected table.
+
+`pk-cgt` was then rewritten for the Section 37A cohorts, and four satellites
+kept the superseded non-filer wording. Worse, the rewrite itself was wrong: it
+moved the acquisition-date boundary from 1 July 2024 to 1 July 2025, invented a
+cohort that does not exist, and deleted the statutory "not less than 15%"
+non-ATL floor as an error. The mechanism is worth naming because it is not
+carelessness and it will recur — **the year of the Act is not the year of the
+cohort.** The Finance Act 2025 governed the tax year, so the cohort it governs
+was assumed to start in July 2025. FA 2024 set the boundary; FA 2025 left it
+alone. Read a boundary date out of the rate schedule, never off the Act's name.
+
+Three Bulgaria guides described the 2026 State Social Security Budget Act as an
+unadopted draft in fourteen places, quoting a proposed ceiling of EUR 2,352 that
+never passed, while the prohibitions section of one of those same files already
+recorded the Act as gazetted on 28 July 2026 with a ceiling of EUR 2,300. The
+file contradicted itself, and the stale half was the half an agent computing
+contributions would reach first.
+
+That last shape is the dangerous one. A guide with an old figure is wrong. A
+guide with a corrected table and an uncorrected satellite is wrong *and* looks
+authoritative on both sides, with nothing to tell a reader which is current.
+
+`scripts/list-incomplete-fixes.py` catches it mechanically. It reads your own
+diff, collects the values you removed and did not re-add, and looks for them in
+the parts of the file you did not touch. Unlike everything else in `scripts/`,
+it is an author's pre-push check rather than a corpus check, and like
+`list-solo-citations.py` it ranks rather than accuses and never gates CI.
+
+It has to rank, because three legitimate shapes look identical to it. A **dated
+worked example** keeps its own year's figures — Bolivia's Form 610 example is
+computed at the 2025 minimum wage of Bs 2,750 and says so, and re-rating it at
+2026 figures would make a correct example wrong. The **other side of a
+supersession** survives legitimately — the UK guide's GBP 9,013.80 belongs in
+the 2025-26 computation it was computed for, even though a speculative 2026-27
+projection that had copied it was deleted. And a figure can be **right in one
+cohort and wrong in another**: Pakistan charges 45% at the top of the
+non-salaried slab and 35% at the top of the salaried one, so removing 45% from
+one row says nothing about the row below.
+
+One thing it cannot see, recorded in its own selftest as a known miss: a value
+restated in different **units**. Removing "BGN 4,130" while the file still says
+"EUR 2,111.64" is the same figure at the fixed conversion rate. Bulgaria needed
+that caught and it was caught by hand.
+
 ### One defect that needs no script
 
 `australia-payroll` once carried two headings over a single table, "### Resident

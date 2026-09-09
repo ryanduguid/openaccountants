@@ -3,7 +3,7 @@ name: lr-payroll-social
 description: "Source-cited draft: payroll & social contributions for Liberia (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
 jurisdiction: LR
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-10
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -20,8 +20,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Employer employment-injury portion** — 2% of gross salary (employment injury scheme) percent  _(NASSCORP Act)_
 - **Expatriate coverage** — Expatriate employees are generally not exempt from NASSCORP contributions  _(NASSCORP Act — https://taxsummaries.pwc.com/republic-of-liberia/corporate/other-taxes)_
 - **Payroll income tax withholding (PAYE)** — Employer withholds personal income tax on salaries using the resident progressive bands (or 20% for non-residents)  _(Liberia Revenue Code)_
-- **PAYE remittance deadline** — By the 10th day of the month following payment of wages (approx — confirm) (approx — confirm)  _(Liberia Revenue Code)_
-- **NASSCORP remittance deadline** — Monthly remittance to NASSCORP, generally by the 10th of the following month (approx — confirm) (approx — confirm)  _(NASSCORP Act)_
+- **PAYE remittance deadline** — By the 10th day of the month following payment of wages (approx — confirm)  _(Liberia Revenue Code)_
+- **NASSCORP remittance deadline** — Monthly remittance to NASSCORP, generally by the 10th of the following month (approx — confirm)  _(NASSCORP Act)_
 
 <!-- openaccountants-cta-block -->
 

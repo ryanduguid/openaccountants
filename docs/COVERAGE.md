@@ -183,7 +183,7 @@ carries real weight.
 
 What tooling *can* do is make the human pass cheap.
 [FORM-REGISTER.md](FORM-REGISTER.md) lists every form identifier used by more
-than one guide in a jurisdiction, beside the guides that use it — 632
+than one guide in a jurisdiction, beside the guides that use it — 633
 identifiers across 115 jurisdictions. Scan for a form appearing in a guide whose
 subject it does not belong to. That view found a sixth Malta guide still using
 `TA24` for the income tax return, in `malta-vat-return`'s refusal rule, after

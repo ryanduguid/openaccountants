@@ -3,7 +3,7 @@ name: ao-income-tax
 description: "Source-cited draft: personal income tax for Angola (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
 jurisdiction: AO
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-10
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -26,8 +26,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **IRT band AOA 2,500,000 to 5,000,000 (monthly)** — AOA 517,249 + 24% on excess over 2,500,000  _(Codigo do Imposto sobre os Rendimentos do Trabalho (IRT) - https://taxsummaries.pwc.com/angola/individual/taxes-on-personal-income)_
 - **IRT band AOA 5,000,000 to 10,000,000 (monthly)** — AOA 1,117,249 + 24.5% on excess over 5,000,000  _(Codigo do Imposto sobre os Rendimentos do Trabalho (IRT) - https://taxsummaries.pwc.com/angola/individual/taxes-on-personal-income)_
 - **IRT band over AOA 10,000,000 (monthly)** — AOA 2,342,248 + 25% on excess over 10,000,000  _(Codigo do Imposto sobre os Rendimentos do Trabalho (IRT) - https://taxsummaries.pwc.com/angola/individual/taxes-on-personal-income)_
-- **Individual residence basis** — IRT applies to income from work performed in Angola; residents and non-residents are taxed on Angola-source employment income (approx — confirm) (approx — confirm)  _(Codigo do Imposto sobre os Rendimentos do Trabalho (IRT) - https://taxsummaries.pwc.com/angola/individual/taxes-on-personal-income)_
-- **Self-employment / independent services (Group B)** — Taxed under IRT Group B; subject to withholding on services with progressive/effective rates up to 25% (approx — confirm) (approx — confirm)  _(Codigo do Imposto sobre os Rendimentos do Trabalho (IRT) - https://taxsummaries.pwc.com/angola/individual/taxes-on-personal-income)_
+- **Individual residence basis** — IRT applies to income from work performed in Angola; residents and non-residents are taxed on Angola-source employment income (approx — confirm)  _(Codigo do Imposto sobre os Rendimentos do Trabalho (IRT) - https://taxsummaries.pwc.com/angola/individual/taxes-on-personal-income)_
+- **Self-employment / independent services (Group B)** — Taxed under IRT Group B; subject to withholding on services with progressive/effective rates up to 25% (approx — confirm)  _(Codigo do Imposto sobre os Rendimentos do Trabalho (IRT) - https://taxsummaries.pwc.com/angola/individual/taxes-on-personal-income)_
 - **Filing requirement for employees** — Employees with only employment income are not required to file; IRT is withheld monthly by the employer  _(Codigo do Imposto sobre os Rendimentos do Trabalho (IRT) - https://taxsummaries.pwc.com/angola/individual/taxes-on-personal-income)_
 
 <!-- openaccountants-cta-block -->

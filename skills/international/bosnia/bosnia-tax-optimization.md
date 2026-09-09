@@ -1,10 +1,10 @@
 ---
 name: bosnia-tax-optimization
-description: Use this skill whenever asked about reducing tax in Bosnia and Herzegovina, tax planning, or legal strategies to minimise tax for a self-employed person or small company. Trigger on phrases like "reduce tax Bosnia", "flat 10% tax Bosnia", "small entrepreneur 2%", "FBiH vs RS tax", "sole proprietor vs doo Bosnia", "0% dividend Bosnia", "save tax Bosnia", "tax planning Bosnia". This skill covers the flat PIT (10% FBiH / 8% RS), the small-entrepreneur 2%-of-revenue option, the entity/region choice, the 0% dividend + 10% CIT extraction, and the disguised-employment red line. ALWAYS read this skill before advising on any Bosnia & Herzegovina tax optimisation.
+description: Use this skill whenever asked about reducing tax in Bosnia and Herzegovina, tax planning, or legal strategies to minimise tax for a self-employed person or small company. Trigger on phrases like "reduce tax Bosnia", "flat 10% tax Bosnia", "small entrepreneur 2%", "FBiH vs RS tax", "sole proprietor vs doo Bosnia", "0% dividend Bosnia", "save tax Bosnia", "tax planning Bosnia". This skill covers the flat PIT (10% FBiH / 8% RS), the small-entrepreneur 2%-of-revenue option, the entity/region choice, the dividend + 10% CIT extraction (0% to a resident individual, 5% FBiH / 10% RS withheld to a non-resident), and the disguised-employment red line. ALWAYS read this skill before advising on any Bosnia & Herzegovina tax optimisation.
 version: 0.1
 jurisdiction: BA
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-09
 review_status: pending_review
 depends_on: []
 category: tax-optimization
@@ -16,7 +16,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Bosnia and Herzegovina Tax Optimization Skill v0.1
 
-**Tier 2 — research-verified. Sources: PwC Bosnia, Eurofast Tax Card 2025, IMF. Figures must agree with `bosnia-income-tax.md` / `bosnia-social-contributions.md` / `bosnia-payroll.md`. NOT yet signed off by a Bosnian tax adviser. Aggressive positions are never advised; every suggestion must be reviewed.**
+**Tier 2 — research-verified. Sources: PwC Bosnia, Eurofast Tax Card 2025, IMF. Figures must agree with `bosnia-income-tax.md` / `bosnia-social-contributions.md` / `bosnia-payroll.md` / `ba-corporate-income-tax.md` (the last carries the withholding rates this guide's extraction maths depends on). NOT yet signed off by a Bosnian tax adviser. Aggressive positions are never advised; every suggestion must be reviewed.**
 
 ## Section 1 -- Quick Reference
 
@@ -26,13 +26,14 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | --- | --- |
 | Country | Bosnia and Herzegovina (two entities: FBiH & RS) |
 | Currency | BAM (convertible mark) |
-| Headline levers | Flat low PIT; small-entrepreneur **2% of revenue** option; **0% dividends**; entity/region choice |
+| Headline levers | Flat low PIT; small-entrepreneur **2% of revenue** option; **0% dividends to a resident individual**; entity/region choice |
 | PIT | **10% (FBiH)** / **8% (RS)** flat |
 | Corporate tax | 10% (both entities) |
-| Dividends | **0%** |
+| Dividends — resident individual shareholder | **0%** (dividends are exempt personal income in FBiH, RS and Brcko) |
+| Dividends — non-resident shareholder | **5% (FBiH)** / **10% (RS)** / **0% (Brcko)** withholding — see `ba-corporate-income-tax.md` |
 | Personal allowance | FBiH BAM 300/mo; RS BAM 500/mo |
 
-> **One of Europe's simplest, lowest systems:** flat **10%/8%** PIT, **10%** CIT, and **0% dividend tax**. The optimisation is mostly about regime choice (2%-of-revenue small entrepreneur) and the FBiH-vs-RS entity/region differences.
+> **One of Europe's simplest, lowest systems:** flat **10%/8%** PIT, **10%** CIT, and **no dividend tax on a resident individual shareholder**. The 0% is a resident position and does not travel: a distribution to a **non-resident** shareholder is withheld at **5% (FBiH)** or **10% (RS)**, and only Brcko District is genuinely 0%. The optimisation is mostly about regime choice (2%-of-revenue small entrepreneur) and the FBiH-vs-RS entity/region differences.
 
 ## Section 2 -- Regime Choice (sole proprietor)
 
@@ -53,8 +54,9 @@ When real margins are high, the **2%-of-revenue** option is usually far cheaper.
 
 ## Section 4 -- Company Extraction (doo)
 
-- **CIT and dividend extraction** — 10% CIT on profit; 0% dividend tax on distribution → a very efficient extraction once profit justifies a company.
-- **Salary vs dividends balance** — Owner balances a (contribution-bearing) salary against tax-free dividends — salary must be genuine.
+- **CIT and dividend extraction — resident owner** — 10% CIT on profit, then 0% on the distribution because dividends are exempt personal income → a very efficient extraction once profit justifies a company.  _(Eurofast BiH Tax Card, PIT exempt income: dividends)_
+- **CIT and dividend extraction — non-resident owner** — The 0% does not travel with the shareholder. A distribution to a **non-resident** is withheld at **5% in FBiH** and **10% in RS**; only **Brcko District** withholds nothing. On BAM 100 of pre-tax profit that is a total burden of **14.5% (FBiH)** or **19% (RS)** against 10% for a resident, before treaty relief. Establish the shareholder's residence before quoting the 0%.  _([PwC — BiH withholding taxes](https://taxsummaries.pwc.com/bosnia-and-herzegovina/corporate/withholding-taxes); Eurofast BiH Tax Card §2.3; `ba-corporate-income-tax.md`)_
+- **Salary vs dividends balance** — Owner balances a (contribution-bearing) salary against dividends that are tax-free only in the resident case — salary must be genuine.
 
 ## Section 5 -- Red Lines (do not cross)
 
@@ -67,7 +69,8 @@ When real margins are high, the **2%-of-revenue** option is usually far cheaper.
 - **Prohibition 1** — NEVER combine the 2%-of-revenue regime with real-expense deductions.
 - **Prohibition 2** — NEVER register in RS/FBiH purely for the rate without genuine presence.
 - **Prohibition 3** — NEVER present single-client work as safe self-employment.
-- **Prohibition 4** — NEVER contradict the rates in bosnia-income-tax.md / bosnia-social-contributions.md / bosnia-payroll.md (RS employee total 32.8%; FBiH 1 Jul 2025 reform).  _(bosnia-income-tax.md; bosnia-social-contributions.md; bosnia-payroll.md)_
+- **Prohibition 4** — NEVER contradict the rates in bosnia-income-tax.md / bosnia-social-contributions.md / bosnia-payroll.md / ba-corporate-income-tax.md (RS employee total 32.8%; FBiH 1 Jul 2025 reform; dividend WHT 5% FBiH / 10% RS / 0% Brcko).  _(bosnia-income-tax.md; bosnia-social-contributions.md; bosnia-payroll.md; ba-corporate-income-tax.md)_
+- **Prohibition 6** — NEVER quote the 0% dividend rate without establishing the shareholder's residence. It is the resident-individual position; a non-resident is withheld at 5% (FBiH) or 10% (RS).
 - **Prohibition 5** — NEVER present [RESEARCH GAP] figures as confirmed, nor optimisation as definitive advice — route to a licensed Bosnian tax adviser.
 
 ## Disclaimer

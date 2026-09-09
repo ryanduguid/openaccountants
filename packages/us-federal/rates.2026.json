@@ -263,13 +263,13 @@
   "transfer_taxes": {
     "annual_gift_exclusion": 19000,
     "_TODO_gift_exclusion": "Rev. Proc. 2025-32: annual gift exclusion stays 19,000 for 2026. GST exemption equals the basic exclusion amount (IRC 2631(c)) = 15,000,000.",
-    "annual_gift_exclusion_nc_spouse": null,
-    "_TODO_nc_spouse": "Rev. Proc. 2025-XX",
+    "annual_gift_exclusion_nc_spouse": 194000,
+    "_note_nc_spouse": "Rev. Proc. 2025-32: the IRC 2523(i)(2) annual exclusion for gifts to a non-citizen spouse rises to 194,000 for 2026, up 4,000 from 190,000 in 2025. Was null pending the revenue procedure.",
     "estate_basic_exclusion": 15000000,
     "_note_estate_exclusion": "OBBBA §70106 amended IRC §2010(c)(3) to set the basic exclusion amount at a flat $15,000,000 per person for decedents dying and gifts made after Dec 31, 2025, indexed for inflation after 2026. It is NOT the 2025 $13,990,000 figure carried forward and indexed — do not project ~$14.4M. The GST exemption under §2631(c) equals the basic exclusion amount, so it is also $15,000,000. The previously scheduled 2026 sunset to ~$7M is obsolete post-OBBBA.",
     "estate_top_rate": 0.4,
     "gst_exemption": 15000000,
-    "_TODO_gst": "Tracks estate exemption — Rev. Proc. 2025-XX",
+    "_note_gst": "Tracks the estate exemption under IRC 2631(c); confirmed at 15,000,000 for 2026 by Rev. Proc. 2025-32 (27 October 2025). The placeholder citation Rev. Proc. 2025-XX is now resolved.",
     "gst_rate": 0.4
   },
   "reporting_thresholds": {

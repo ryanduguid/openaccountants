@@ -46,8 +46,70 @@ corpus's own maintenance. Bermuda's tax assurance runs "until 2035", Albania's
 0% band "until 2029", North Carolina's graduated penalty takes effect in 2027.
 Those are the facts, correctly dated, and a future date suppresses the hit.
 
-What a full run returns now that those four are fixed: 51 lines, and they are
-leads rather than defects. Most are genuinely pending -- Nigeria waiting on the
+MEASURED AGAINST ITSELF, SEPTEMBER 2026
+
+The queue reached 51, then 46 as leads were worked. Before working more of it,
+it was worth asking how many were real -- the same question that removed 40% of
+the withholding-scope queue as tool artefacts. Here it removed 13 of 46.
+
+Every lead dated before 2024 was a STATUTE YEAR read as a deadline: Part 4A TCA
+1997, amendments to ITO 2001, the Federal Excise Act 2005, PMK 136/2023,
+Perpres 49/2021. A rule citing a 1997 Act appeared 29 years overdue. Cited
+years older than last year are now suppressed, and the cutoff is by age rather
+than blanket, because "Finance Act 2025 ... TBC, confirm gazetted text" waits
+on a year that also sits in a statute name.
+
+Two false-positive classes survive and are documented rather than patched,
+because every phrasing that would suppress them also suppresses real hits:
+
+  * A HISTORICAL EFFECTIVE DATE inside a waiting line. "Since 1 July 2024 (PMK
+    136/2023) the NIK functions as the NPWP ... TBC" reports on the 2024, which
+    is when the rule started rather than a deadline it missed.
+  * A WAITING PHRASE ABOUT THE CLIENT'S OWN PAPERWORK. Saudi RETT's
+    "inheritance certificate not yet issued -- STOP, wait for the Sharia court
+    certificate" is an instruction about one estate's documents, and the US
+    estate pack's "refer to state-specific Tier 2 skill (not yet released)" is
+    about this repo's roadmap. Neither waits on a publication.
+
+A THIRD BLIND SPOT, AND THIS ONE THE CHECK CREATED ITSELF
+
+Working the queue produced corrections that say, in substance, "this used to
+wait on X, and X has happened". Each necessarily names the instrument and its
+date, so each came straight back as a fresh lead: "NTA 2025 commenced on 1
+January 2026 and is in force", "Finance Act 2026 abolished the surcharge",
+"that TBC has been overtaken twice". Three of thirty-seven hits were this check
+reporting its own fixes, and the share would have grown with every fix made --
+a queue refilling with its own annotations faster than it drains.
+
+A resolution is recognisable because it is past tense about the event, which a
+rule still waiting cannot be. RESOLVED now suppresses the line where it says
+the instrument commenced, was enacted or gazetted, has been abolished or
+overtaken, is in force, or that a deadline has passed or a window closed.
+
+WHAT THE REMAINING QUEUE IS MADE OF
+
+Classified by hand at 34 lines, because a count is not a work estimate:
+
+  * About eight are GENUINE open TBCs on specific technical points -- Nigeria's
+    MET top-up mechanics and Development Levy allocation formula, Pakistan's
+    late-filer tier and ACT characterisation. These need someone to read a
+    gazette.
+  * About seven are PERMANENT INSTRUCTIONS that happen to name a year: "where a
+    threshold is uncertain, mark TBC and verify against the current Finance Act
+    text". Those are correct forever and are not defects. They are reported
+    because the year sits inside the instruction, and no phrasing separates them
+    from a real wait without losing real waits.
+  * The rest are the documented false-positive classes: a historical effective
+    date, a waiting phrase about a client's own paperwork, and a worked
+    example's fact pattern ("ZATCA has not yet published a standard price for
+    this exact SKU" is a premise of a scenario, not a rule).
+
+So the working figure is closer to eight than to thirty-four, and anyone
+draining this queue should expect to close most of it by reading rather than by
+editing.
+
+What a full run returns after all of that: 34 lines, and they are leads rather
+than defects. Most are genuinely pending -- Nigeria waiting on the
 NTA 2025 implementing regulations, Morocco on the e-invoicing decree, Pakistan
 on several 2026 items -- and each needs someone to go and look rather than a
 recompute. Two UK guides are waiting on a Scottish Budget and on Finance Bill
@@ -121,8 +183,64 @@ WAITING = re.compile(
 # How far from the waiting phrase a date has to be to be about it.
 WINDOW = 60
 
+# A line that RESOLVES a wait is not a line that is waiting.
+#
+# This check created its own noise. Working its queue produced corrections that
+# say, in substance, "this used to wait on X, and X has happened" -- "NTA 2025
+# commenced on 1 January 2026 and is in force", "Finance Act 2026 abolished the
+# surcharge", "that TBC has been overtaken twice". Each of those sentences
+# necessarily names the thing waited on and its date, so each came straight back
+# as a fresh lead. Three of thirty-seven hits were the check reporting its own
+# fixes, and the share would grow with every fix made.
+#
+# A resolution is recognisable because it is in the past tense about the event:
+# the instrument commenced, was enacted, was gazetted, has been abolished, is in
+# force, has fired, is now confirmed, has been overtaken, is RESOLVED. A rule
+# still waiting cannot say any of those about the thing it waits for.
+#
+# This suppresses the whole LINE rather than the date, deliberately. A line that
+# both records a resolution and raises a genuinely new wait is rare, and the
+# cost of missing one is smaller than the cost of a queue that refills with its
+# own annotations faster than it drains.
+RESOLVED = re.compile(
+    r'\b(?:commenced|entered into force|came into force|took effect|'
+    r'was (?:enacted|gazetted|published|issued|passed|signed)|'
+    r'(?:has|have) (?:been )?(?:abolished|repealed|overtaken|fired|resolved|'
+    r'superseded|since been|now been)|'
+    r'is (?:now )?in force|is now confirmed|now confirmed|'
+    r'RESOLVED|RESOLVIDO|no longer (?:pending|open)|'
+    r'that (?:TBC|hedge|rule) has|deadline has passed|window has closed)\b',
+    re.I)
+
 # The date the rule is waiting on.
 YEAR = re.compile(r'\b((?:19|20)\d{2})\b')
+# A year inside a statute's NAME is usually not a date anything is waiting for.
+# Nine of the 46 leads this check produced were of that shape: "Part 4A TCA
+# 1997", "amendments to ITO 2001", "Federal Excise Act 2005", "PMK 136/2023",
+# "Perpres 49/2021". Reading those as deadlines made a rule citing a 1997 Act
+# look 29 years overdue, which costs a reader the same attention as a real
+# finding. Two ways a year can sit in a citation:
+#   * it follows an instrument word within a short span -- Act 2005, TCA 1997;
+#   * it sits in a reference number -- 136/2023, 49/2021, 56/2025.
+#
+# But a citation year is NOT always inert, and the first version of this fix got
+# that wrong. "Finance Act 2025 -- annual amendments to ITO 2001 ... (TBC,
+# confirm gazetted text)" is a rule waiting on the Finance Act 2025, and that
+# year sits in a statute name too. Suppressing every cited year lost the hit.
+#
+# The distinguisher is age. A rule written now cannot be waiting on an Act from
+# 1997 or 2005, and can plausibly be waiting on one from last year. So a cited
+# year is suppressed only when it is older than LAST year. That is a heuristic
+# and it has a cost worth naming: a rule genuinely waiting on a long-overdue
+# instrument from 2023 or earlier will be missed. That trade is deliberate --
+# 13 false positives removed against a class of miss that has not yet appeared
+# in this corpus -- and it is the reason the cutoff is stated here rather than
+# buried in the regex.
+CITATION_YEAR = re.compile(
+    r'(?:\b(?:act|ordinance|law|decree|regulation|code|rules?|'
+    r'tca|ito|sta|pmk|perpres|pp|uu|rd|cap|schedule|s|art|article|no)\b'
+    r'[^\w\n]{0,12}(?:\d{1,4}[^\w\n]{0,3})?|/)'
+    r'((?:19|20)\d{2})\b', re.I)
 MONTHS = ('January February March April May June July August September October '
           'November December').split()
 MONTH_YEAR = re.compile(r'\b(%s)\s+((?:19|20)\d{2})\b' % '|'.join(MONTHS), re.I)
@@ -158,7 +276,11 @@ def _dates(line):
     for m in MONTH_YEAR.finditer(line):
         y, mo = int(m.group(2)), MONTHS.index(m.group(1).title()) + 1
         out.append(datetime.date(y, mo, calendar.monthrange(y, mo)[1]))
+    stale_citation = {m.start(1) for m in CITATION_YEAR.finditer(line)
+                      if int(m.group(1)) < TODAY.year - 1}
     for m in YEAR.finditer(line):
+        if m.start(1) in stale_citation:
+            continue  # an old statute's name, not a date being waited on
         out.append(datetime.date(int(m.group(1)), 1, 1))
     return out
 
@@ -186,6 +308,8 @@ def expired(line, today=None, context=None):
     m = WAITING.search(line)
     if not m:
         return None
+    if RESOLVED.search(line):
+        return None              # a correction recording that the wait ended
     near = line[max(0, m.start() - WINDOW):m.end() + WINDOW]
     horizon = _horizon(near) or (_horizon(context) if context else [])
     if not horizon:
@@ -230,6 +354,53 @@ def selftest():
     # the same cell with no header to lean on is unjudgeable, not a hit
     assert expired('| Plan 1 | 9% | 24,990 | 26,065 | TBC -- HMRC publishes annually |',
                    today) is None
+    # a correction recording that the wait ended is not itself a waiting rule
+    assert expired('> **Status as at September 2026:** NTA 2025 **commenced on 1 January 2026** '
+                   'and is in force. Every "TBC -- verify under NTA 2025 implementing '
+                   'regulations" marker in this pack predates commencement.', today) is None, \
+        'a status note recording commencement is not a pending rule'
+    assert expired('- **Surcharge on high income** - Finance Act 2026 abolished the surcharge '
+                   'from 1 July 2026. This entry previously stated the 9%/10% split as the live '
+                   'position, pending confirmation.', today) is None, \
+        'a correction recording an abolition is not a pending rule'
+    # but the uncorrected form of the same rule still reports
+    assert expired('- **Surcharge on high income** - 9% salaried / 10% non-salaried; TBC, '
+                   'confirm retention under Finance Act 2025.', today) == 2025, \
+        'the rule before correction still reports'
+
+    # a year inside a statute's name is not a date anything waits for
+    assert expired('- **Pillar Two rules** - QDMTT, IIR and UTPR under Part 4A TCA 1997 '
+                   '(Finance (No. 2) Act 2023) - filing requirements per Revenue guidance, '
+                   'TBC; verify on revenue.ie before filing.', today) is None, \
+        'TCA 1997 is a statute name, not a 1997 deadline'
+    # A KNOWN MISS, kept as a test so it stays known. This line waits on the
+    # Finance Act 2025 being gazetted, which happened in June 2025, so it is a
+    # genuine expired rule. It is not reported: the only years within WINDOW of
+    # the "TBC - confirm" phrase are 2001 and 2005, both suppressed as old
+    # statute names, and the 2025 sits about ninety characters away at the head
+    # of the line. Widening WINDOW to reach it would pull in unrelated years
+    # from the same row, so the recall cost is accepted here and written down.
+    assert expired('- **Finance Act 2025** - annual amendments to ITO 2001, STA 1990 and the '
+                   'Federal Excise Act 2005 (TBC - confirm gazetted text).', today) is None, \
+        'known miss: the year waited on is outside WINDOW'
+    # the same rule with the Act next to the waiting phrase IS reported
+    assert expired('- Annual amendments under ITO 2001 - TBC, confirm the Finance Act 2025 '
+                   'gazetted text.', today) == 2025, \
+        'a recent Act beside the waiting phrase is the thing waited on'
+    assert expired('Verify against the current BKPM regulation and the Perpres 49/2021 annex; '
+                   'mark as TBC where uncertain.', today) is None, \
+        'a reference number like 49/2021 is not a deadline'
+    # This one IS reported, and not because of the 2023 in the regulation
+    # number -- that is suppressed. It is reported because "1 July 2024" is a
+    # real month-year inside the window. That is a separate false-positive
+    # class this check does not solve: a HISTORICAL EFFECTIVE DATE read as a
+    # deadline. The docstring notes the same shape for "until". Left standing
+    # rather than patched, because the phrasings that would suppress it also
+    # suppress genuine "expected July 2026" hits.
+    assert expired('Since 1 July 2024 (PMK 136/2023) the NIK functions as the NPWP; confirm '
+                   'the kode billing position - TBC.', today) == 2024, \
+        'reported on the 2024 effective date, not on the regulation number'
+
     clean = [
         # a future date means the rule is still doing its job
         '| Pay period in 2027 or later | Apply the 2026 constants and flag that they are last '

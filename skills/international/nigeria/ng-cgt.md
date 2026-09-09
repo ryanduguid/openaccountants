@@ -215,7 +215,7 @@ The CGT is reported with the 2025 PIT return. If Mrs Okonkwo had reinvested ≥ 
 | Unknown whether reinvestment in Nigerian shares occurred within the tax year | Assume no reinvestment → tax the residual |
 | Unknown whether parties are connected | Treat as connected → apply market value rule |
 | Routine repair vs enhancement expenditure ambiguous | Treat as routine repair → NOT deductible |
-| Disposal post NTA 2025 commencement, regulations pending | Compute under CGTA framework; flag for review under NTA implementing regulations |
+| Disposal on or after 1 January 2026, a detail turning on an unissued regulation | Compute under NTA 2025 — it is in force — and flag only the uncertain detail. Do NOT revert the computation to the repealed CGTA framework |
 | Cross-border disposal with possible treaty relief | STOP — refer to specialist treaty review |
 | PPR claimed but property was let or had non-residential use | Restrict PPR proportionally; conservative default → no PPR |
 | Non-resident disposal where withholding obligation unclear | Assume withholding applies; remit 10% to FIRS pending clarification |
