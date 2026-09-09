@@ -35,14 +35,20 @@ GOV = re.compile(
 # computes and deducts Pakistan's securities CGT, and its notification is more
 # authoritative for that tax than any summary of it, but it is a .com.
 # The list below was built by measurement, not by guessing: every entry is a
-# domain this corpus actually cites at least three times. The first version of
-# this script had only a handful and consequently reported that 76% of citations
-# were secondary and that 41 jurisdictions cited no authority at all. Both were
-# wrong. Botswana was top of that list while citing burs.org.bw, its own revenue
-# service; Estonia's tax board (emta.ee) is the corpus's most-cited authority
-# after the IRS and scored as secondary. Run --unclassified to re-derive
-# candidates when guides are added; this list will always be incomplete, which
-# is a reason to read it as a floor on authority citations, never a ceiling.
+# domain this corpus actually cites, and each was verified before being added.
+# The first version of this script had only a handful and consequently reported
+# that 76% of citations were secondary and that 41 jurisdictions cited no
+# authority at all. Both were wrong. Botswana was top of that list while citing
+# burs.org.bw, its own revenue service; Estonia's tax board (emta.ee) is the
+# corpus's most-cited authority after the IRS and scored as secondary.
+#
+# The measurement has been corrected five times since, always in the same
+# direction -- the corpus cites more authority than the checker could see.
+# Andorra and Kosovo were still on the zero-authority list while citing
+# impostos.ad and atk-ks.org, their own tax administrations, and Armenia while
+# citing src.am. Run --unclassified to re-derive candidates when guides are
+# added; this list will always be incomplete, which is why the authority count
+# is a floor, never a ceiling.
 NON_GOV_AUTHORITY = frozenset((
     # Revenue and tax administrations
     'emta.ee',            # Estonian Tax and Customs Board
@@ -98,6 +104,19 @@ NON_GOV_AUTHORITY = frozenset((
     'tonga.tradeportal.org',     # hosts the Laws of Tonga: the Consumption Tax
                                  # Act CAP. 26.02 s.5(3)(a) is the 15% the
                                  # guide cites, in full, as a PDF.
+    # Armenia. The guides were already citing the revenue committee and the
+    # central bank while the jurisdiction sat on the zero-authority list.
+    'arlis.am',           # ARLIS, the official legal information system
+    'src.am',             # State Revenue Committee
+    'e-register.am',      # state business register
+    'cba.am',             # Central Bank of Armenia
+    # Andorra and Kosovo, both on the zero-authority list while citing their
+    # own tax administrations -- found by listing what those jurisdictions
+    # actually cite rather than by filtering on domain shape.
+    'impostos.ad',        # Andorra, Departament de Tributs i Fronteres
+    'e-govern.ad',        # Andorran government portal
+    'atk-ks.org',         # Administrata Tatimore e Kosoves (and etax. portal)
+    'bqk-kos.org',        # Central Bank of the Republic of Kosovo
     # Central banks, cited for official conversion rates
     'ecb.europa.eu', 'bnr.rw', 'bnb.bg', 'bnro.ro', 'bportugal.pt',
     # Legislatures, cited for the statute itself
@@ -205,7 +224,11 @@ def classify(domain):
         return None
     if d in NOT_AUTHORITY:
         return 'secondary'
-    if (d in NON_GOV_AUTHORITY or GOV.search(d)
+    # Suffix, not equality: etax.atk-ks.org is the Kosovo tax administration's
+    # own filing portal and info.altinn.no is Norway's reporting portal, and an
+    # exact-match test scored both as commercial sites.
+    if (GOV.search(d)
+            or any(d == a or d.endswith('.' + a) for a in NON_GOV_AUTHORITY)
             or any(d == a or d.endswith('.' + a) for a in AUTHORITY_SUFFIX)):
         return 'authority'
     return 'secondary'
@@ -293,8 +316,19 @@ def unclassified(minimum=3):
     The allowlist can only ever be as complete as the last time someone ran
     this. Printing the candidates makes it maintainable from evidence instead
     of from memory, and makes the omission visible rather than silent.
+
+    Two filters keep the general list readable -- at least `minimum` citations,
+    and a two-letter country TLD -- and both have hidden real authorities.
+    Armenia cited src.am and cba.am once each and stayed on the zero-authority
+    list; nibtt.net, svbcur.org, nib-bahamas.com and tonga.tradeportal.org were
+    all found by reading a different queue, never by this one, because none of
+    them ends in a country TLD. So the filters are skipped entirely for any
+    jurisdiction the script is claiming cites no authority at all. That is the
+    only place where a missed authority changes the answer, it is where the
+    claim is strongest, and 20 jurisdictions' worth of domains is a queue
+    somebody will actually read.
     """
-    _, domains = scan()
+    counts, domains = scan()
     seen = collections.Counter()
     for per_jur in domains.values():
         seen.update(per_jur)
@@ -310,6 +344,20 @@ def unclassified(minimum=3):
     print('authority-shaped domains currently counted as secondary:', len(rows))
     print('Check each: a revenue authority belongs in NON_GOV_AUTHORITY, a '
           'firm or unrelated regulator in NOT_AUTHORITY.')
+
+    zero = sorted(j for j, c in counts.items()
+                  if c['secondary'] and not c['authority'])
+    print()
+    print('Every domain cited by a jurisdiction this script calls '
+          'zero-authority (%d of them). No minimum, no TLD filter: one '
+          'recognised domain here moves a jurisdiction off that list.'
+          % len(zero))
+    for j in zero:
+        ds = sorted(((n, d[4:] if d.startswith('www.') else d)
+                     for d, n in domains[j].items()
+                     if classify(d) == 'secondary'), reverse=True)
+        print('  %s' % j)
+        print('     ' + ', '.join('%s (%d)' % (d, n) for n, d in ds))
     return 0
 
 

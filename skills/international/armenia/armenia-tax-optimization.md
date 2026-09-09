@@ -41,7 +41,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Threshold | Annual sales **< AMD 115,000,000** (~USD 291k) |
 | Replaces | Profit tax **and** VAT — a single tax on revenue |
 | Trade rate | **10%** (raised from 5% in 2025); since 2025 you can deduct **9.5% of documented purchase costs**, with a **1%-of-turnover minimum** effective floor |
-| Other activities | Different turnover-tax rates apply by activity. **[RESEARCH GAP — reviewer to confirm the rate for the specific activity.]** |
+| Other activities | Art. 258(1) in full: trading 10%, listed secondary raw materials 5%, newspaper sales by editorial offices 1.5%, production 7%, rent/interest/royalties 10%, public catering 12%, other income of a catering-registered payer 20%, listed high-technology activities 1%, disposal of other assets including immovable property 10%, other activity 10%. Each of production, catering and "other" has its own expense deduction and floor (5%/3%, 9%/3.5%, 6%/4.5%) — [arlis.am](https://www.arlis.am/hy/acts/219122) |
 
 ## Section 3 -- Micro-Business (0%)
 
@@ -53,7 +53,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 | Item | Rate |
 | --- | --- |
-| Sole proprietor (PE) profit tax | 23% |
+| Sole proprietor (registered IE) profit tax | 23% — art. 125(3.1), confirmed against the Tax Code. This is **profit** tax on business income, not the 20% income tax; an IE inside the turnover-tax system instead pays a flat AMD 5,000 a month under art. 125(3) |
 | LLC corporate tax | 18% |
 | Dividends | 5% withholding |
 | PIT (employment) | 20% flat (per `armenia-income-tax.md`) |

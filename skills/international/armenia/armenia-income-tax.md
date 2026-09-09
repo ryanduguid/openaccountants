@@ -17,7 +17,11 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Armenia Personal Income Tax -- Self-Employed & Individuals Skill v0.1
 
-> **Tier 2 -- research-verified.** Figures below were cross-checked mainly via PwC Worldwide Tax Summaries (last reviewed 5 Feb 2026) and Vardanyan & Partners (a local Armenian law firm). Numeric schedules were not directly extracted from the State Revenue Committee (src.am) or the ARLIS Tax Code text in this research session. A reviewer must confirm against src.am and the Tax Code of the Republic of Armenia directly. Items flagged **[RESEARCH GAP -- reviewer to confirm]** are explicitly uncertain.
+> **Tier 2 -- research-verified.** Most figures below were cross-checked via PwC Worldwide Tax Summaries (last reviewed 5 Feb 2026) and Vardanyan & Partners (a local Armenian law firm), and are attributed as such.
+>
+> **Read against the Tax Code itself** (consolidated text at [arlis.am](https://www.arlis.am/hy/acts/219122), Armenia's official legal information system) and corrected where they diverged: the individual entrepreneur's rate (art. 125(3.1) — 23% profit tax, not the 20% income tax this guide previously applied to business income), the turnover-tax rate table and its expense deductions (art. 258), the turnover and micro-enterprise thresholds (arts. 254, 267), what the micro regime actually exempts (art. 269), the flat income tax rate and its phase-down (art. 150(1)), and the minimum monthly wage (AMD 75,000 from 1 January 2023, Law on Minimum Monthly Salary, [arlis.am](https://www.arlis.am/hy/acts/172160)).
+>
+> Everything still marked _(PwC)_ has **not** been read against the Code. Items flagged **[RESEARCH GAP -- reviewer to confirm]** are explicitly uncertain.
 
 ## Section 1 -- Quick Reference
 
@@ -40,7 +44,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ### Headline rate (2025)
 
-- **Flat PIT rate** — Armenia levies a single FLAT personal income tax of 20% on employment income, self-employment/business income, and most "other" income. Residents are taxed on worldwide income; non-residents on Armenian-source income only. There are no personal allowances and no progressive brackets under the flat regime -- PIT is simply 20% of gross taxable income.  _(PwC Worldwide Tax Summaries -- Taxes on personal income)_
+- **Flat PIT rate** — Armenia levies a single FLAT personal income tax of 20% on employment income and most "other" income of an individual. Residents are taxed on worldwide income; non-residents on Armenian-source income only. There are no personal allowances and no progressive brackets under the flat regime -- PIT is simply 20% of gross taxable income.  _(Tax Code of the Republic of Armenia, art. 150(1) (consolidated text at [arlis.am](https://www.arlis.am/hy/acts/219122)))_
+- **The 20% does not reach a registered individual entrepreneur's business income** — Art. 104(1)(1) makes a registered IE (անհատ ձեռնարկատեր) a resident **profit** taxpayer on business income, expressly excluding their personal income, and art. 125(3.1) sets that profit tax at **23%** for IEs on the general system. An unregistered individual earning occasional self-employment income is still in the 20% income tax; a registered IE trading under the general system is not. Establish which one the client is before quoting a rate  _(Tax Code of the Republic of Armenia, arts. 104(1)(1) and 125(3.1) (consolidated text at [arlis.am](https://www.arlis.am/hy/acts/219122)))_
 
 ### PIT Rate Schedule (2025)
 
@@ -49,7 +54,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Income type | Rate | Notes | Source |
 | --- | --- | --- | --- |
 | Employment income (general) | 20% (flat) | Single flat rate since 1 Jan 2023 (phased reduction from 23% completed). Withheld monthly by employer. | PwC |
-| Business / self-employment income (general regime) | 20% (flat) | Applies absent a valid special-regime election. | PwC |
+| Business income of a **registered individual entrepreneur** (general regime) | **23% profit tax** | Not income tax. Art. 104(1)(1) + art. 125(3.1). Applies absent a valid special-regime election. | Tax Code — [arlis.am](https://www.arlis.am/hy/acts/219122) |
+| Self-employment income of an individual who is **not** a registered IE | 20% (flat) | Ordinary income tax under art. 150(1). | Tax Code — [arlis.am](https://www.arlis.am/hy/acts/219122) |
 | Other income (general) | 20% (flat) | Residents worldwide; non-residents Armenian-source. | PwC |
 | Dividends | 5% | Withheld at source; refundable if reinvested in the same resident entity in the same tax year. Non-resident treaty rates may differ (5%/10%). | PwC |
 | Interest income | 20% | Effective from 1 Jan 2023. | PwC |
@@ -67,9 +73,11 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 | Regime | Eligibility ceiling | Rate(s) | Source |
 | --- | --- | --- | --- |
-| General PIT regime | (default) | 20% flat on net income | PwC |
-| Turnover tax | Prior-year sales turnover ≤ AMD 115,000,000 | 5% secondary raw-materials trade / 7% production / 10% trading & other / 1% high-tech / 10% rental, interest, royalties | PwC -- Corporate Other taxes |
-| Micro-business (microenterprise) | Annual turnover ≤ AMD 24,000,000 | Broadly EXEMPT from main taxes; fixed reduced employee salary tax ~AMD 5,000/employee/month **[RESEARCH GAP -- reviewer to confirm exact current amount and post-July-2025 scope]** | Vardanyan & Partners |
+| General regime — **individual entrepreneur's business income** | (default) | **Profit tax at 23%**, not income tax. Art. 104(1)(1) makes a registered IE a resident *profit* taxpayer on business income (their personal income is excluded and stays in income tax); art. 125(3.1) sets 23% for IEs on the general system | Tax Code arts. 104(1)(1), 125(3.1) — [arlis.am](https://www.arlis.am/hy/acts/219122) |
+| General regime — an individual's own income (employment, and the IE's personal income) | (default) | 20% flat income tax | Tax Code art. 150(1) — [arlis.am](https://www.arlis.am/hy/acts/219122) |
+| Turnover tax | Prior-year sales turnover ≤ AMD 115,000,000 | Art. 258(1): trading 10% / listed secondary raw materials 5% / newspaper sales by editorial offices 1.5% / production 7% / rent, interest, royalties 10% / public catering 12% / other income of a catering-registered payer 20% / listed high-tech 1% / disposal of other assets incl. immovable property 10% / other activity 10%. **The headline rate is not the tax** — art. 258(2)–(5) then deducts a percentage of documented expenses subject to a floor (see below) | Tax Code arts. 254, 258 — [arlis.am](https://www.arlis.am/hy/acts/219122) |
+| Turnover tax — expense deduction (from 1 Jan 2025) | applies within the turnover regime | Deduct from the computed tax: trading 9.5% of documented expenses, floor 1% of base / production 5%, floor 3% / public catering 9%, floor 3.5% / other activity 6%, floor 4.5% | Tax Code art. 258(2)–(6) — [arlis.am](https://www.arlis.am/hy/acts/219122) |
+| Micro-business (microenterprise) | Prior-year turnover across all activities ≤ AMD 24,000,000 | Art. 269(1): exempt from computing and paying **all** state taxes on the micro activity, including the tax-agent withholding obligation and profit-tax advances. Art. 269(2) keeps four things: import taxes, **income tax on amounts paid to individuals who are not IEs or notaries** (so wages are withheld under the ordinary rules), and excise, environmental and road tax. There is no per-employee flat charge in the current Code — the AMD 5,000/month figure is the *individual entrepreneur's own* profit tax under the **turnover-tax** system (art. 125(3)), not a micro-business salary tax | Tax Code arts. 267–269, 125(3) — [arlis.am](https://www.arlis.am/hy/acts/219122) |
 
 ### Conservative Defaults
 
@@ -78,7 +86,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Ambiguity | Default |
 | --- | --- |
 | Unknown residency status | Treat as **Armenian tax resident** (worldwide income) -- the broader, more conservative base |
-| Unknown regime (general vs turnover vs micro) | **General 20% PIT regime** -- special regimes require a valid, timely election |
+| Unknown regime (general vs turnover vs micro) | **General regime** -- special regimes require a valid, timely election. Then ask whether the client is a registered IE: business income 23% profit tax, an individual's own income 20% income tax |
 | Unknown employee date of birth | Assume born **on/after 1 Jan 1974** -- mandatory funded pension applies |
 | Unknown whether stamp duty / health insurance applies | **Include them** in net-pay computations (statutory deductions) |
 | Unknown income type | Treat as general income at **20%** |
@@ -112,10 +120,10 @@ This is the deterministic pre-classifier. When a bank statement transaction matc
 
 | Pattern | Income type | Treatment | Notes |
 | --- | --- | --- | --- |
-| Client name + TRANSFER, VARCUM, ՎՃԱՐՈՒՄ, PAYMENT | Business / self-employment | 20% general PIT (or turnover tax if elected) | Match to invoices; net of VAT if VAT-registered |
-| GANDZ, FEES, CONSULTING, ԾԱՌԱՅՈՒԹՅՈՒՆ | Business / self-employment | 20% general PIT | Professional service fees |
+| Client name + TRANSFER, VARCUM, ՎՃԱՐՈՒՄ, PAYMENT | Business / self-employment | Registered IE on the general system: **profit tax 23%** (art. 125(3.1)); turnover tax if elected | Match to invoices; net of VAT if VAT-registered |
+| GANDZ, FEES, CONSULTING, ԾԱՌԱՅՈՒԹՅՈՒՆ | Business / self-employment | Registered IE on the general system: **profit tax 23%** (art. 125(3.1)) | Professional service fees |
 | ASHKHATAVARDZ, SALARY, ASHKHATAVARД (ԱՇԽԱՏԱՎԱՐՁ) | Employment income | 20% PIT withheld by employer | Already net if employer withheld -- verify |
-| STRIPE PAYOUT, PAYPAL, WISE, UPWORK, FIVERR | Business / self-employment | 20% general PIT | Platform payout -- match to underlying income |
+| STRIPE PAYOUT, PAYPAL, WISE, UPWORK, FIVERR | Business / self-employment | Registered IE on the general system: **profit tax 23%** (art. 125(3.1)) | Platform payout -- match to underlying income |
 | DIVIDEND, SHAHUTABAZHIN (ՇԱՀՈՒԹԱԲԱԺԻՆ) | Dividends | 5% (refundable if reinvested same year, same entity) | Withheld at source |
 | TOKOS, INTEREST, ՏՈԿՈՍ | Interest income | 20% | Effective from 1 Jan 2023 |
 | ROYALTY, ARTONAGIN (ԱՐՏՈՆԱԳԻՆ) | Royalties | 10% |  |
@@ -140,7 +148,7 @@ This is the deterministic pre-classifier. When a bank statement transaction matc
 
 ### 3.2 Expense / Deduction Patterns (Debits) -- relevant to IE / self-employed under general regime
 
-> **Important:** Under the **turnover-tax** and **micro-business** regimes, tax is computed on **gross turnover**, NOT on net profit -- expense deductions in 3.2 are largely irrelevant there. Only the general 20% regime is profit-based.
+> **Important:** Under the **turnover-tax** and **micro-business** regimes the tax *base* is **gross turnover**, NOT net profit, so the profit-based deductions in 3.2 do not reduce the base. Do not read that as "expenses do not matter" under the turnover tax. Since 1 January 2025, art. 258(2)–(5) reduces the *computed tax* by a percentage of documented expenses — 9.5% for trading, 5% production, 9% public catering, 6% other — subject to a floor of 1%, 3%, 3.5% and 4.5% of the base respectively. A trading payer with real documented purchases can land near the 1% floor instead of the 10% headline, so the expense records still have to be collected. Only the general 20% regime is profit-based in the ordinary sense.
 
 ### 3.3 Statutory Payroll Deductions (Debits / withholdings) -- NOT business expenses
 
@@ -225,13 +233,13 @@ This is the deterministic pre-classifier. When a bank statement transaction matc
 
 ### Example 4 -- Individual Entrepreneur, general regime, annual income AMD 10,000,000
 
-**Input:** IE NOT under a special regime (e.g. excluded professional service), annual gross income AMD 10,000,000.
+**Input:** Registered IE NOT under a special regime (e.g. excluded professional service), annual gross business income AMD 10,000,000.
 
 **Reasoning (annual):**
-- General PIT: 20% × 10,000,000 = **AMD 2,000,000** _(applied to taxable income; assume no allowable deductions here for illustration)_
+- Profit tax, not income tax: art. 125(3.1) sets 23% for an IE on the general system. 23% × 10,000,000 = **AMD 2,300,000** _(applied to the tax base; assume no allowable deductions here for illustration)_
 - Funded pension (IE): income > 6,000,000 → 10% × 10,000,000 − 300,000 = 1,000,000 − 300,000 = **AMD 700,000**
 - Health insurance (IE): income > 2,400,001 → flat **AMD 129,600**
-- Net after statutory levies = 10,000,000 − 2,000,000 − 700,000 − 129,600 = **AMD 7,170,400**
+- Net after statutory levies = 10,000,000 − 2,300,000 − 700,000 − 129,600 = **AMD 6,870,400**
 
 **Classification:** General-regime IE; pension 10%-minus-300,000 tier; IE health-insurance flat charge applies.
 
@@ -240,11 +248,14 @@ This is the deterministic pre-classifier. When a bank statement transaction matc
 **Input:** IE under turnover-tax regime (prior-year sales ≤ AMD 115,000,000), trading activity, quarterly turnover AMD 5,000,000.
 
 **Reasoning:**
-- Turnover tax (trading & other): 10% × 5,000,000 = **AMD 500,000** for the quarter
-- Computed on gross turnover -- no expense deductions
+- Turnover tax at the art. 258(1) trading rate: 10% × 5,000,000 = AMD 500,000
+- **That is not the tax.** Art. 258(2) reduces it by 9.5% of documented expenses for the period, and the reduction is capped so the tax never falls below 1% of the trading base (here AMD 50,000).
+- Documented purchases of AMD 4,000,000 → reduction 9.5% × 4,000,000 = AMD 380,000 → tax **AMD 120,000** (above the floor, so the full reduction is allowed)
+- Documented purchases of AMD 5,000,000 → reduction would be AMD 475,000, leaving AMD 25,000, which is under the floor → the reduction is trimmed and the tax is **AMD 50,000**
+- No documented expenses → the full **AMD 500,000** stands
 - Quarterly filing; pay within 20 days of period end
 
-**Classification:** Turnover tax 10% trading rate. Note funded-pension and (where applicable) IE health-insurance contributions still apply separately per Section 5.
+**Classification:** Turnover tax, trading. The answer turns on documented expenses, not the rate alone — always ask for them. Funded-pension and (where applicable) IE health-insurance contributions still apply separately per Section 5.
 
 ### Example 6 -- Dividend received
 
@@ -270,7 +281,7 @@ This is the deterministic pre-classifier. When a bank statement transaction matc
 
 ### 5.1 The Flat PIT Rate
 
-- **Flat PIT rate 20%** — PIT is a single flat 20% on employment income, self-employment/business income (general regime), and most other income. There are no personal allowances and no progressive brackets. Residents are taxed on worldwide income; non-residents on Armenian-source income only.  _(Tax Code of Armenia (HO-165-N); PwC)_
+- **Flat PIT rate 20%** — PIT is a single flat 20% on employment income and most other income of an individual. There are no personal allowances and no progressive brackets. Residents are taxed on worldwide income; non-residents on Armenian-source income only. A **registered individual entrepreneur's business income is outside this rate** — it is profit tax at 23% under art. 125(3.1) (see Section 1)  _(Tax Code of the Republic of Armenia (HO-165-N), arts. 150(1) and 125(3.1) (consolidated text at [arlis.am](https://www.arlis.am/hy/acts/219122)))_
 
 ### 5.2 Residency Tests
 
@@ -355,7 +366,7 @@ This is the deterministic pre-classifier. When a bank statement transaction matc
 
 ### 5.9 Turnover Tax Regime (Small Business / Self-Employed)
 
-- **Computation and filing** — Computed on gross turnover (no profit deductions). Quarterly filing; pay within 20 days of period end. Crossing AMD 115,000,000 moves the taxpayer into the general VAT regime (the VAT registration threshold is the same AMD 115,000,000).  _(PwC)_
+- **Computation and filing** — The base is gross turnover, with no profit computation; the tax computed on it is then reduced under art. 258(2)–(5) by a percentage of documented expenses, subject to a floor (trading 9.5% / 1%, production 5% / 3%, public catering 9% / 3.5%, other activity 6% / 4.5%). Quarterly filing; pay within 20 days of period end. Crossing AMD 115,000,000 moves the taxpayer into the general VAT regime (the VAT registration threshold is the same AMD 115,000,000).  _(Tax Code of the Republic of Armenia, arts. 254 and 258 (consolidated text at [arlis.am](https://www.arlis.am/hy/acts/219122)))_
 
 ### 5.10 Micro-Business (Microenterprise) Regime
 
@@ -565,11 +576,11 @@ Expected: PIT 120,000; pension 35,000 (10% − 25,000); stamp 1,000; health 10,8
 **Test 3 -- Employee, gross AMD 1,200,000/month (pension cap).**
 Expected: PIT 240,000; pension 87,500 (capped); stamp 15,000; health 10,800; **net AMD 846,700**.
 
-**Test 4 -- IE general, annual income AMD 10,000,000 (no deductions).**
-Expected: PIT 2,000,000; pension 700,000 (10% − 300,000); IE health 129,600; **net after levies AMD 7,170,400**.
+**Test 4 -- registered IE, general system, annual business income AMD 10,000,000 (no deductions).**
+Expected: profit tax at 23% (art. 125(3.1)) = 2,300,000 — an answer of 2,000,000 means the 20% income tax was applied to business income and is a fail; pension 700,000 (10% − 300,000); IE health 129,600; **net after levies AMD 6,870,400**.
 
 **Test 5 -- Turnover-tax IE, trading, quarterly turnover AMD 5,000,000.**
-Expected: turnover tax 10% = **AMD 500,000** (on gross, no deductions).
+Expected: the answer must ask for documented expenses before giving a figure. 10% × 5,000,000 = AMD 500,000 computed, then art. 258(2): documented purchases of AMD 4,000,000 give a reduction of AMD 380,000 and tax of **AMD 120,000**; purchases of AMD 5,000,000 hit the 1%-of-base floor and give **AMD 50,000**; no documented expenses leaves the full **AMD 500,000**. An answer of AMD 500,000 with no question asked is a fail.
 
 **Test 6 -- Dividend AMD 1,000,000.**
 Expected: 5% = **AMD 50,000** withheld; refundable if reinvested same entity, same year.
@@ -579,7 +590,7 @@ Expected: **EXEMPT** -- AMD 0 PIT. (Sale to a tax agent would be 10% / 20%.)
 
 ## PROHIBITIONS
 
-- **Prohibitions list** — NEVER apply progressive brackets or a personal allowance -- Armenia uses a single flat 20% PIT with no allowance NEVER omit the funded-pension contribution for an employee born on/after 1 Jan 1974 NEVER use the 5% pension tier above AMD 500,000 gross -- switch to 10% minus AMD 25,000, capped at AMD 87,500/month NEVER apply an employer social security contribution -- private-sector employers pay none NEVER tax a property sale between private individuals -- it is EXEMPT NEVER apply turnover-tax or micro-business rates without a confirmed, timely regime election NEVER treat turnover-tax / micro-business as profit-based -- they are computed on gross turnover NEVER allow income tax itself, VAT, drawings, or loan principal as deductions NEVER omit stamp duty or (from 2026) the health-insurance contribution from net-pay computations NEVER present an unflagged figure that is marked [RESEARCH GAP] as final -- escalate to a reviewer NEVER present tax calculations as definitive -- always label as estimated
+- **Prohibitions list** — NEVER quote 20% for a registered individual entrepreneur's business income -- that is profit tax at 23% under art. 125(3.1) NEVER apply progressive brackets or a personal allowance -- Armenia uses a single flat 20% PIT with no allowance NEVER omit the funded-pension contribution for an employee born on/after 1 Jan 1974 NEVER use the 5% pension tier above AMD 500,000 gross -- switch to 10% minus AMD 25,000, capped at AMD 87,500/month NEVER apply an employer social security contribution -- private-sector employers pay none NEVER tax a property sale between private individuals -- it is EXEMPT NEVER apply turnover-tax or micro-business rates without a confirmed, timely regime election NEVER treat turnover-tax / micro-business as profit-based -- they are computed on gross turnover NEVER allow income tax itself, VAT, drawings, or loan principal as deductions NEVER omit stamp duty or (from 2026) the health-insurance contribution from net-pay computations NEVER present an unflagged figure that is marked [RESEARCH GAP] as final -- escalate to a reviewer NEVER present tax calculations as definitive -- always label as estimated
 
 ## Disclaimer
 

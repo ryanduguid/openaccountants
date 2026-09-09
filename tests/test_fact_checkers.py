@@ -9,7 +9,8 @@ SCRIPTS = Path(__file__).resolve().parents[1] / "scripts"
 
 
 class FactCheckerTests(unittest.TestCase):
-    def run_checker(self, script, guides, expect_code=0, root="international"):
+    def run_checker(self, script, guides, expect_code=0, root="international",
+                    extra_args=()):
         with tempfile.TemporaryDirectory() as directory:
             Path(directory, "docs").mkdir()
             for name, text in guides.items():
@@ -17,7 +18,7 @@ class FactCheckerTests(unittest.TestCase):
                 path.parent.mkdir(parents=True, exist_ok=True)
                 path.write_text(text, encoding="utf-8")
             result = subprocess.run(
-                [sys.executable, "-X", "utf8", str(SCRIPTS / script)],
+                [sys.executable, "-X", "utf8", str(SCRIPTS / script), *extra_args],
                 cwd=directory, capture_output=True, text=True, encoding="utf-8",
                 timeout=30,
             )
@@ -128,6 +129,29 @@ class FactCheckerTests(unittest.TestCase):
         })
         self.assertIn("citing no authority domain at all: 0", output)
         self.assertIn("citations: 1 authority, 0 secondary", output)
+
+    def test_source_mix_matches_subdomains_of_known_authorities(self):
+        # etax.atk-ks.org is the Kosovo tax administration's own filing portal
+        # and info.altinn.no is Norway's reporting portal. An exact-match test
+        # scored both as commercial sites, which is how Kosovo stayed on the
+        # zero-authority list while citing its own revenue service.
+        output = self.run_checker("list-source-mix.py", {
+            "xk/vat.md": "- **VAT** - 18% _(https://etax.atk-ks.org/filing)_\n",
+        })
+        self.assertIn("citing no authority domain at all: 0", output)
+        self.assertIn("citations: 1 authority, 0 secondary", output)
+
+    def test_unclassified_lists_what_a_zero_authority_jurisdiction_cites(self):
+        # The candidate filters — three citations, a two-letter TLD — hid every
+        # authority found this session. So for a jurisdiction the script is
+        # claiming cites no authority, the filters are skipped entirely: one
+        # cited domain there is the difference between the claim and its
+        # opposite, however rarely it appears.
+        output = self.run_checker("list-source-mix.py", {
+            "ad/vat.md": "- **IGI** - 4.5% _(https://www.impostos-example.ad/x)_\n",
+        }, extra_args=["--unclassified"])
+        self.assertIn("zero-authority", output)
+        self.assertIn("impostos-example.ad (1)", output)
 
     def test_midyear_changes_uses_each_jurisdictions_own_tax_year(self):
         # 1 August is mid-year for a calendar-year country and gets reported;
