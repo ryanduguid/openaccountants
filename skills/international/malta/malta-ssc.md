@@ -26,7 +26,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | --- | --- |
 | Country | Malta (Republic of Malta) |
 | Primary Legislation | Social Security Act, Chapter 318 |
-| Supporting Legislation | Income Tax Act Article 14 (SSC deductibility); Income Tax Act Article 4C (TA22 regime) |
+| Supporting Legislation | Income Tax Act Article 14 (SSC deductibility); Income Tax Act Article 90A + Part-Time Work Rules S.L. 123.39 (TA22 regime) |
 | Tax Authority | Department of Social Security (DSS), Malta |
 | Rate Publisher | MTCA (publishes annual rate tables) |
 | Self-employed rate | 15% of prior year net income (clamped to min/max) |
