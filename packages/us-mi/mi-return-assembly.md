@@ -293,7 +293,7 @@ Structured markdown. Required sections in this order:
 8. **Reviewer Attention Flags** — Aggregated from all upstream skills.
 9. **Refusals Triggered** — Aggregated from all upstream skills.
 10. **Positions Taken** — Tax positions requiring judgment, with citations (MCL §, IRC §, MI-1040 Book page references).
-11. **Planning Notes for 2026** — MI rate stability watch (4.25% is the statutory rate but is subject to MCL 206.51 "trigger" mechanism), QBI 20% → 23% under OBBBA, federal 1099 threshold change, Form 4884 tier progression as birth years roll forward, Detroit move-in/move-out risk.
+11. **Planning Notes for 2026** — MI rate stability watch (4.25% is the statutory rate but is subject to MCL 206.51 "trigger" mechanism), §199A QBI rate unchanged at 20% under OBBBA (widened phase-in ranges and a $400 minimum deduction from 2026), federal 1099 threshold change, Form 4884 tier progression as birth years roll forward, Detroit move-in/move-out risk.
 12. **Taxpayer Action List** — Embedded copy of File 3.
 
 ### 7C — File 3: `taxpayer_action_list.md`
@@ -430,7 +430,7 @@ The brief follows this fixed structure:
 
 ## Planning Notes for 2026
 - Michigan rate watch (MCL 206.51 trigger mechanism)
-- Federal QBI 20% → 23% under OBBBA (P.L. 119-21)
+- Federal §199A QBI rate unchanged at 20% under OBBBA (P.L. 119-21); from 2026 the phase-in ranges widen to $75,000/$150,000 and a $400 minimum deduction applies
 - Form 4884 tier progression (taxpayers born 1953+)
 - Estimated-tax safe harbor positioning
 - Detroit nexus monitoring (move in/out impact)
@@ -621,8 +621,10 @@ The brief follows this fixed structure:
 - MI conforms to §168(k) and §179: see MI Treasury 2025 IIT FAQ.
 
 ## Planning Notes for 2026
-- Federal QBI rate rises 20% → 23% under OBBBA (P.L. 119-21, July 2025);
-  Maria's QBI deduction grows materially if income stays at $180K.
+- Federal §199A QBI rate stays at 20% under OBBBA (P.L. 119-21, July
+  2025) — the 23% rate in the House-passed bill was not enacted. From
+  2026 the phase-in ranges widen to $75,000/$150,000, which matters only
+  if Maria's taxable income enters the phase-in band.
 - MI rate stays at 4.25% for 2026 per Treasury Notice (MCL 206.51
   trigger did not fire for 2026).
 - Detroit resident rate stays at 2.4% for 2026.

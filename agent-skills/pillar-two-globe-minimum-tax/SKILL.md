@@ -306,7 +306,7 @@ Following the OECD Administrative Guidance of February 2023, US GILTI is treated
 
 **[T2] For US-parented groups:** the allocation methodology is mechanical but data-intensive. Confirm GILTI inclusion percentages, foreign tax credit positions, and BEAT exposure with US counsel before allocating.
 
-**[T3] Post-2025 GILTI changes (OBBBA P.L. 119-21).** The OBBBA reduced the GILTI deduction from 50% to 40% (effective rate ~13.125% → ~15.75%) and the §250 FDII deduction commensurately. This affects whether GILTI exceeds the 15% threshold without further top-up at the CFC level. Escalate to US international tax specialist.
+**[T3] Post-2025 GILTI changes (OBBBA P.L. 119-21).** The OBBBA reduced the §250 deduction on NCTI (the renamed GILTI) from 50% to 40% (effective rate 10.5% → 12.6%, before the FTC haircut) and cut the FDII/FDDEI deduction from 37.5% to 33.34% (effective rate 13.125% → ~14%). This affects whether GILTI exceeds the 15% threshold without further top-up at the CFC level. Escalate to US international tax specialist.
 
 ### 5.9 Interaction with EU Member State implementations
 

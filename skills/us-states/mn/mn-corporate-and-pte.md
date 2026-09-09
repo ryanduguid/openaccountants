@@ -236,7 +236,7 @@ The Minnesota tax haven inclusion has been challenged on Commerce Clause grounds
 
 ### 8.2 FDII
 
-- **FDII Minnesota treatment** — Foreign-Derived Intangible Income (FDII) under §250(a)(1)(A) gets a federal 37.5% deduction for 2018-2025 (scheduled to drop to 21.875% in 2026 under pre-OBBBA law). Minnesota: Follows the federal §250 FDII deduction (it flows through FTI); Provides no additional MN subtraction for FDII beyond the federal §250; Net effect: FDII is taxed in MN at 9.8% on the post-§250 amount, apportioned.  _(§250(a)(1)(A))_
+- **FDII Minnesota treatment** — Foreign-Derived Intangible Income (FDII) under §250(a)(1)(A) gets a federal 37.5% deduction for 2018-2025 (OBBBA P.L. 119-21 §70321 replaced the pre-OBBBA 21.875% sunset with a 33.34% deduction on FDDEI for tax years beginning after December 31, 2025). Minnesota: Follows the federal §250 FDII deduction (it flows through FTI); Provides no additional MN subtraction for FDII beyond the federal §250; Net effect: FDII is taxed in MN at 9.8% on the post-§250 amount, apportioned.  _(§250(a)(1)(A))_
 
 ### 8.3 Subpart F
 

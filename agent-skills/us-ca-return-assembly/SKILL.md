@@ -200,7 +200,7 @@ The skill runs a comprehensive verification pass across all upstream outputs:
 - Federal estimated tax schedule
 - California estimated tax schedule
 - S-corp election consideration (if applicable)
-- 2026 rate changes (QBI 20% → 23%, 1099 threshold $600 → $2,000)
+- 2026 changes (§199A QBI rate unchanged at 20%; phase-in ranges widen to $75,000/$150,000 and a $400 minimum deduction is added; 1099-NEC/MISC threshold $600 → $2,000)
 - Expanded PTC expiration after 2025
 - Retirement contribution planning
 - W-9 collection for contractors
