@@ -20,7 +20,27 @@ arithmetic, because a false positive costs a reviewer more than a miss:
 
 Residual false positives are mostly parentheticals that hold the product
 (`(1,728,000 - 1,325,127) x 46.29% (186,489.91) = ...`), cumulative running
-totals, and units the parser drops (CNY 万). Triage before editing.
+totals, and units the parser drops (CNY 万).
+
+**Triage by reading the guide around the line, never the line alone.** Two
+flags in `skills/` were dismissed as artefacts on the shape of the line and
+were real:
+
+  * `bc-individual-return` -- "521 - (3.56% x $25,000) = $521 - $890 = $0" was
+    filed as a credit-sign convention. It was the B.C. tax reduction computed
+    against the whole of net income instead of the excess over the threshold,
+    on a base that was $41 stale, and it told a taxpayer entitled to $562 that
+    they got nothing.
+  * `bs-income-tax` -- "3 x 4.333" looked like a fragment of a longer span. It
+    was not; the example around it produced three mutually inconsistent
+    monthly totals.
+
+Every remaining flag in `skills/` has since been read in context and each one
+holds: the FEIE example's $56,503 is the correct 2025 tax on $248,250, Iceland's
+three terms sum exactly, Virginia's line states its own multiplicand
+("on $186,750"), China's arithmetic is in 万, Brazil's and Portugal's decimals
+are European, and Croatia's line self-verifies. That is the standard to meet
+before calling one an artefact.
 
 Usage:
     python3 scripts/check-arithmetic.py skills
