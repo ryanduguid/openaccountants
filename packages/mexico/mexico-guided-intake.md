@@ -290,7 +290,7 @@ START
 | UMA 2025 | $113.14/day (updated February 2025 by INEGI) |
 | UMA mensual 2025 | $3,439.46 |
 | UMA anual 2025 | $41,273.52 |
-| Cuota fija (Modalidad 40) | Approximately 10.075% of declared base (varies by branch) |
+| Cuota fija (Modalidad 40) | Approximately 13.347% of declared base for 2025, rising annually to 2030 (the CEAV employer portion is tiered; see `mx-imss`) |
 | Deductibility (AEP) | Cuotas IMSS voluntarias = personal deduction (Art. 151 fracción V) |
 | Deductibility (RESICO) | NOT deductible -- RESICO has zero deductions |
 

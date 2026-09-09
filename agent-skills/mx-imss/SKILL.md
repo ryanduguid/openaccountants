@@ -58,7 +58,7 @@ metadata:
 |---|---|---|---|
 | IVRO (Art. 13) | Self-employed, freelancers | All 5 branches | Total contribution approx. 31-33% of chosen base |
 | Seguro de Salud para la Familia (Art. 240) | Any non-covered person | Health only | Fixed annual cost by age bracket; NO pension |
-| Modalidad 40 (Art. 218) | Former employees with 52+ prior weeks | Pension only (Invalidez y Vida + Retiro) | Total approx. 10.075% of chosen base; max 25 UMA |
+| Modalidad 40 (Art. 218) | Former employees with 52+ prior weeks | Pension only (Retiro, CEAV, Invalidez y Vida, plus Gastos Medicos para Pensionados) | Total approx. 13.347% of chosen base for 2025 (rising annually to 2030); max 25 UMA |
 
 ### Conservative Defaults
 
@@ -133,7 +133,7 @@ IVRO at 1 UMA daily (approx. MXN 113.14/day). Monthly base approx. MXN 3,439.46.
 **Input:** Former employee with 200 weeks prior contributions. Left employment 2 years ago. Chose base of 10 UMA daily.
 
 **Reasoning:**
-Eligible for Modalidad 40 (has 52+ weeks, within 5-year window). Daily base: approx. MXN 1,131.40. Monthly base: approx. MXN 34,394.60. Rate: approx. 10.075%. Monthly cost: approx. MXN 3,465. Covers pension only -- NO health coverage.
+Eligible for Modalidad 40 (has 52+ weeks, within 5-year window). Daily base: approx. MXN 1,131.40. Monthly base: approx. MXN 34,394.60. Rate: approx. 13.347% (2025). Monthly cost: approx. MXN 4,591. Covers pension only -- NO health coverage.
 
 **Classification:** Modalidad 40 contribution MXN 3,465/month. Deductible for ISR. Client needs separate health coverage.
 
@@ -151,7 +151,7 @@ Annual cost per person based on age brackets. Adults (19-39): approx. 7.5% of an
 **Input:** High earner wanting maximum pension. 500 weeks prior contributions. Chose 25 UMA daily.
 
 **Reasoning:**
-Maximum Modalidad 40 base: 25 UMA daily = approx. MXN 2,828.50/day = approx. MXN 85,987/month. Monthly cost: approx. 10.075% = MXN 8,663. Maximum pension accumulation strategy.
+Maximum Modalidad 40 base: 25 UMA daily = approx. MXN 2,828.50/day = approx. MXN 85,987/month. Monthly cost: approx. 13.347% = MXN 11,477. Maximum pension accumulation strategy.
 
 **Classification:** Modalidad 40 contribution MXN 8,663/month. Maximum pension strategy. Flag for reviewer to assess long-term pension impact.
 
@@ -179,10 +179,11 @@ For IVRO, the self-employed person pays BOTH employer and employee portions:
 
 | Component | Rate |
 |---|---|
-| Invalidez y Vida | approx. 2.375% |
-| Retiro | 2.00% |
-| Cesantia y Vejez | approx. 4.375% |
-| **Total** | **approx. 10.075%** |
+| Retiro | 2.000% |
+| Cesantia en Edad Avanzada y Vejez (CEAV) | 7.547% at 4.01+ UMA (employer 6.422% + employee 1.125%); the employer portion is tiered from 5.307% and rises annually to 2030 under the 2020 pension reform |
+| Invalidez y Vida | 2.375% |
+| Gastos Medicos para Pensionados | 1.425% |
+| **Total** | **approx. 13.347%** (2025, at the top CEAV tier) |
 
 Maximum base: 25 UMA daily.
 
