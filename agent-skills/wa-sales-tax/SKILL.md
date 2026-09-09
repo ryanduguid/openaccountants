@@ -75,18 +75,18 @@ Filing frequency aligns with the same thresholds used for B&O tax (the Combined 
 | State retail sales tax | 6.5% | RCW 82.08.020 |
 | State use tax | 6.5% | RCW 82.12.020 |
 
-### Local rate examples (2025)
+### Local rate examples (2026)
 
 Local rates vary significantly. Washington has over 400 local tax jurisdictions. Selected examples:
 
 | Location | Local rate | Combined rate | Source |
 |----------|-----------|---------------|--------|
-| Seattle | 3.60% | 10.10% | DOR tax rate lookup |
-| Tacoma | 3.80% | 10.30% | DOR tax rate lookup |
-| Bellevue | 3.60% | 10.10% | DOR tax rate lookup |
-| Spokane | 2.40% | 8.90% | DOR tax rate lookup |
-| Vancouver (Clark Co.) | 2.00% | 8.50% | DOR tax rate lookup |
-| Unincorporated King Co. | 3.60% | 10.10% | DOR tax rate lookup |
+| Seattle | 4.05% | 10.55% from 1 Jan 2026 | DOR notice Seattle LLEP Q1-26 |
+| Tacoma | 3.90% | 10.40% from 1 Apr 2026 | DOR notice Tacoma LLEP Q2-26 |
+| Bellevue | confirm | confirm via DOR lookup | last recorded 10.10%; King County added 0.1% LLEP on 1 Jan 2026 |
+| Spokane | confirm | confirm via DOR lookup | last recorded 8.90% |
+| Vancouver (Clark Co.) | confirm | confirm via DOR lookup | last recorded 8.50% |
+| Unincorporated King Co. | confirm | confirm via DOR lookup | last recorded 10.10%; King County added 0.1% LLEP on 1 Jan 2026 |
 
 **Critical:** Always use the DOR tax rate lookup tool (dor.wa.gov) to determine the exact rate for each delivery address. Rates change quarterly.
 

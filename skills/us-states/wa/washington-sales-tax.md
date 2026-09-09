@@ -22,7 +22,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Tax type | Sales and Use Tax + Business and Occupation (B&O) Tax (separate) |
 | State sales tax rate | 6.5% |
 | Local add-on range | 0.5% -- 4.0% |
-| Maximum combined rate | ~10.25% (parts of Seattle and Tacoma) |
+| Maximum combined rate | Do not hardcode; use the DOR Tax Rate Lookup. Seattle reached 10.55% on 1 Jan 2026 and Tacoma 10.40% on 1 Apr 2026 |
 | Sourcing | Destination-based for ALL sales (SST rules) |
 | Economic nexus | $100,000 in gross receipts (revenue only) |
 | Primary legislation | RCW Chapter 82.08 (Sales); 82.12 (Use); 82.04 (B&O) |
@@ -132,8 +132,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 | Jurisdiction | Combined rate |
 | --- | --- |
-| Seattle | ~10.25% |
-| Tacoma | ~10.20% |
+| Seattle | 10.55% from 1 Jan 2026 (DOR notice Seattle LLEP Q1-26) |
+| Tacoma | 10.40% from 1 Apr 2026 (DOR notice Tacoma LLEP Q2-26) |
 | Spokane | ~8.90% |
 | Vancouver (Clark County) | ~8.60% |
 | Olympia | ~9.00% |
@@ -237,7 +237,7 @@ Filed through **My DOR** (online portal).
 ### EC1 -- B&O plus sales tax
 
 **Situation:** $1,000 sale in Seattle.
-**Resolution:** Collect ~$102.50 sales tax from customer. ALSO pay B&O ($1,000 x 0.471% = $4.71). B&O is retailer's own obligation.
+**Resolution:** Collect $105.50 sales tax from customer (Seattle 10.55% from 1 Jan 2026). ALSO pay B&O ($1,000 x 0.471% = $4.71). B&O is retailer's own obligation.
 
 ### EC2 -- SaaS (digital automated service)
 
@@ -262,7 +262,7 @@ Filed through **My DOR** (online portal).
 ### Test 1 -- Basic sale in Seattle
 
 **Input:** $1,000 laptop. Rate: 10.25%.
-**Expected:** Tax = $102.50.
+**Expected:** Tax = $105.50 (Seattle 10.55% from 1 Jan 2026).
 
 ### Test 2 -- Grocery exempt
 

@@ -27,7 +27,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Rate (hoofdberoep, bracket 2) | 14.16% on EUR 75,024.54 -- EUR 110,562.42 |
 | Rate above ceiling | 0% (no contributions above EUR 110,562.42) |
 | Management fee | 3.05% on top of calculated contributions |
-| Minimum quarterly (hoofdberoep) | EUR 890.42 |
+| Minimum quarterly (hoofdberoep) | EUR 890.42 (primostarter EUR 459.82) |
 | Bijberoep exemption threshold | EUR 1,922.16/year |
 | Payment frequency | Quarterly |
 | Due dates | 31 Mar, 30 Jun, 30 Sep, 31 Dec |
@@ -79,7 +79,7 @@ Legislation: KB nr. 38, art. 12; RSVZ published rates
 
 **Minimum contributions -- hoofdberoep**  _(KB nr. 38, art. 12; RSVZ published rates)_
 
-| Category | Quarterly minimum (2025) | Annual minimum |
+| Category | Quarterly minimum (2026) | Annual minimum |
 | --- | --- | --- |
 | Established (4+ years) | EUR 890.42 | EUR 3,561.68 |
 | Starter (years 1-3) | EUR 890.42 | EUR 3,561.68 |
@@ -88,14 +88,14 @@ Legislation: KB nr. 38, art. 12; RSVZ published rates
 
 ### VAPZ / PLCI supplementary pension
 
-Legislation: Wet van 24 december 2002 (VAPZ); Programmawet 2003
+Legislation: Wet van 24 december 2002 (VAPZ); Programmawet 2003. Maxima per Circulaire 2026/C/53 (the 8.5%/9.78% rates announced for 2026 require a 2026 vote and are not yet law; 8.17%/9.40% still apply).
 
 **VAPZ / PLCI supplementary pension**  _(Wet van 24 december 2002 (VAPZ); Programmawet 2003)_
 
 | Type | Maximum | Tax treatment |
 | --- | --- | --- |
-| Ordinary VAPZ | 8.17% of reference income (max ~EUR 4,000.44) | Deductible as social contribution |
-| Social VAPZ | 9.40% of reference income (max ~EUR 4,602.71) | Same + additional solidarity coverage |
+| Ordinary VAPZ | 8.17% of reference income (max EUR 4,000.44 for 2025; EUR 4,086.34 for 2026) | Deductible as social contribution |
+| Social VAPZ | 9.40% of reference income (max EUR 4,602.71 for 2025; EUR 4,701.54 for 2026) | Same + additional solidarity coverage |
 
 - **Reference income (VAPZ)** — Reference income = income from N-3 (same base as social contributions). Must be affiliated with social insurance fund and in order with contribution payments.  _(Wet van 24 december 2002 (VAPZ); Programmawet 2003)_
 
