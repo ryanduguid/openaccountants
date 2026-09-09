@@ -11,11 +11,19 @@ band, a comparison table one column per year, a payroll guide one ceiling per
 filing status -- and reporting those buried the signal: 46 rows same-file
 against 1 cross-file.
 
-Result on `skills/`: **1 row, and it is correct.** Morocco's CPU regime caps
-commercial/industrial/artisanal turnover at MAD 2,000,000 while the
-auto-entrepreneur regime caps the same category at MAD 500,000. Two regimes,
-one label, both right, and both already carrying a "verify current value" flag.
-Two different regimes sharing a label is the standing false-positive class.
+Result on `skills/`: **3 rows, and all three are correct.** One label covering
+two different things is the standing false-positive class, and each row is a
+different flavour of it.
+
+  * Morocco. The CPU regime caps commercial/industrial/artisanal turnover at
+    MAD 2,000,000 and the auto-entrepreneur regime caps the same category at
+    MAD 500,000. Two regimes, one label, both already flagged "verify current
+    value".
+  * South Korea. 기본공제 is KRW 1,500,000 per person against income tax, and
+    the crypto guide's KRW 2,500,000 is the separate annual deduction for
+    virtual asset income. Two taxes, one label.
+  * The Canadian folder. BC registers for PST at CAD 10,000 and Saskatchewan at
+    CAD 30,000. Two provinces in one folder, one label.
 
 **The checker's own blind spot, recorded because it produced the only other
 hit and the hit was wrong.** The row pattern matched `| label | value |`
@@ -32,13 +40,44 @@ rather than caution -- `check-arithmetic.py` dropped every bolded answer,
 that silently discards input reports a clean run it has not earned, so prefer
 one that is noisy and read the noise.
 
+**What it structurally cannot see, established by a case it missed.** Labels
+are matched exactly after normalising, so one fact written under two names is
+two facts to this checker. Albania stated its VAT registration threshold as
+ALL 10,000,000 in `albania-income-tax` under the label "VAT registration
+threshold" and as ALL 5,000,000 in `albania-tax-optimization` under "VAT
+threshold". Five million apart, in one pack, and this reported nothing, because
+"vat threshold" and "vat registration threshold" normalise to different keys.
+`scripts/list-registration-thresholds.py` found it at once, because it keys on
+the field rather than on the words the guide happened to use. Where a field
+matters, list the field; a label-matching checker is a cheaper net with a
+hole in it.
+
+The minimum label length was three words and is now two, which is what made
+"vat threshold" eligible at all. It costs four extra rows corpus-wide and all
+four were read and are correct.
+
 Usage: python3 scripts/check-amount-conflicts.py [skills]
+       python3 scripts/check-amount-conflicts.py --selftest
 """
 import os, re, collections, sys
 
 ROW = re.compile(r'^\s*\|\s*([^|]{6,70}?)\s*\|\s*([^|]{1,70}?)\s*\|\s*$')
 BULL = re.compile(r'^\s*-\s+\*\*([^*]{6,70}?)\*\*\s*[—-]+\s*(.{1,70})')
 AMT = re.compile(r'(?<![\d.,])(\d{1,3}(?:[,\.]\d{3})+(?:\.\d+)?|\d{4,})(?![\d.,%])')
+YEAR = re.compile(r'^(19|20)\d\d$')
+
+
+def amounts(val):
+    """Money on the line, with bare years dropped.
+
+    A four-digit run with no thousands separator is usually a year, and the
+    checker was reporting Nigeria as disagreeing with itself over a
+    registration threshold of "2019" against "2020" (those are Finance Act
+    years) and the UK over a dividend allowance of "2007" against "2025".
+    A genuine amount of exactly 2,025 units would be missed; a citation year
+    beside a threshold is far commoner.
+    """
+    return [a for a in AMT.findall(val) if not YEAR.match(a)]
 KEY = re.compile(r'\b(threshold|cap|ceiling|allowance|limit|exemption|'
                  r'minimum wage|deduction|band|bracket|base|floor)\b', re.I)
 
@@ -74,9 +113,9 @@ def main(root):
                 if not KEY.search(lab):
                     continue
                 l = norm(lab)
-                if len(l.split()) < 3:
+                if len(l.split()) < 2:
                     continue
-                amts = AMT.findall(val)
+                amts = amounts(val)
                 if len(amts) != 1:          # one amount, no ambiguity
                     continue
                 facts[parts[2]][l].add((canon(amts[0]), p))
@@ -98,5 +137,20 @@ def main(root):
     return hits
 
 
+def selftest():
+    """The cases that shaped the filters, including the one still missed."""
+    assert amounts('EGP 500,000 annual turnover') == ['500,000']
+    # a citation year beside a threshold is not the threshold
+    assert amounts('N25,000,000 under FA 2019') == ['25,000,000']
+    assert amounts('rates unchanged since 2007') == []
+    # two words is now enough of a label
+    assert len(norm('| VAT threshold |'.strip('| ')).split()) == 2
+    assert canon('7200.00') == canon('7,200')
+    print('selftest: 5 cases pass')
+
+
 if __name__ == '__main__':
-    main(sys.argv[1] if len(sys.argv) > 1 else 'skills')
+    if '--selftest' in sys.argv:
+        selftest()
+    else:
+        main(sys.argv[1] if len(sys.argv) > 1 else 'skills')
