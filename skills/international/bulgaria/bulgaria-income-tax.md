@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Bulgaria personal income tax (�
 version: 0.1
 jurisdiction: BG
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-09
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -348,11 +348,11 @@ Child relief for two children reduces the annual taxable base by **BGN 12,000**.
 | Band (2025) | 1 Jan -- 31 Mar | 1 Apr -- 31 Dec | Source |
 | --- | --- | --- | --- |
 | Minimum monthly insurable income (employees) | BGN 933 (EUR 477.04) | BGN 1,077 (EUR 550.66) | Eurofast |
-| Maximum monthly insurable income (cap) | BGN 3,750 (EUR 1,917.34) | BGN 4,130 (EUR 2,111.64) | PwC, *Other taxes* |
-| Self-employed minimum base | -- | BGN 1,077 (EUR 550.66) | PwC, *Other taxes* |
-| Self-employed maximum base | -- | BGN 4,130 (EUR 2,111.64) | PwC, *Other taxes* |
+| Maximum monthly insurable income (cap) | BGN 3,750 (EUR 1,917.34) | EUR 2,111.64 to 31 Jul 2026, then **EUR 2,300 from 1 Aug 2026** | State Social Security Budget Act 2026, State Gazette No. 68 of 28 July 2026 |
+| Self-employed minimum base | -- | EUR 550.66 to 31 Jul 2026, then **EUR 620.20 from 1 Aug 2026** | State Social Security Budget Act 2026, State Gazette No. 68 of 28 July 2026 |
+| Self-employed maximum base | -- | EUR 2,111.64 to 31 Jul 2026, then **EUR 2,300 from 1 Aug 2026** | State Social Security Budget Act 2026, State Gazette No. 68 of 28 July 2026 |
 
-- **2026 insurable-income figures** — maximum monthly insurable income EUR 2,111.64; self-employed minimum EUR 550.66  _(PwC, *Other taxes*)_
+- **2026 insurable-income figures — split on 1 August 2026** — To **31 July 2026**: maximum monthly insurable income **EUR 2,111.64**, self-employed minimum **EUR 550.66**. From **1 August 2026**: maximum **EUR 2,300**, self-employed minimum **EUR 620.20**. The State Social Security Budget Act for 2026 was gazetted on 28 July 2026 and moved both mid-year, so a 2026 computation needs the month, not just the year  _(State Social Security Budget Act 2026, State Gazette No. 68 of 28 July 2026)_
 
 ### 5.6 Dividends
 
@@ -581,8 +581,8 @@ ONBOARDING QUESTIONS -- BULGARIA INCOME TAX
 | --- | --- | --- |
 | Euro adoption | From 1 Jan 2026, EUR replaces BGN at 1 EUR = 1.95583 BGN | PwC, *Other taxes*; BTA |
 | Minimum wage 2026 | BGN 1,213 / **EUR 620.20** per month; minimum hourly EUR 3.74 (~12.6% increase) | BTA |
-| Maximum insurable income 2026 | EUR 2,111.64/month | PwC, *Other taxes* |
-| Self-employed minimum base 2026 | EUR 550.66/month | PwC, *Other taxes* |
+| Maximum insurable income 2026 | EUR 2,111.64/month to 31 Jul; **EUR 2,300/month from 1 Aug 2026** | State Social Security Budget Act 2026, State Gazette No. 68 of 28 July 2026 |
+| Self-employed minimum base 2026 | EUR 550.66/month to 31 Jul; **EUR 620.20/month from 1 Aug 2026** | State Social Security Budget Act 2026, State Gazette No. 68 of 28 July 2026 |
 | Late-payment interest formula | ECB rate + 8 pp (replaces BNB + 10 pp) | Penkov, Markov & Partners |
 
 > **[RESEARCH GAP -- reviewer to confirm]** NRA/NSSI primary-source pages (nra.bg, nssi.bg) were not directly fetched; figures rely on PwC Worldwide Tax Summaries and official Ministry of Economy/Finance pages (authoritative and mutually consistent). The exact 2026 insurable-income bands beyond those published in EUR should be re-verified against the finalised 2026 Public Social Insurance Budget Act. Late-payment interest fluctuates with the BNB/ECB base rate each half-year.

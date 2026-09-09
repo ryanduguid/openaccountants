@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Bulgaria social security and he
 version: 0.1
 jurisdiction: BG
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-09
 review_status: pending_review
 depends_on:
   - social-contributions-workflow-base
@@ -572,7 +572,7 @@ Arithmetic self-check (Test 8): 4,130 x 0.1378 = 569.114 → BGN 569.11; 5,000 -
 - **2nd pillar only for post-1959 births** — NEVER apply the 2nd pillar (5%) to a person born before 1 Jan 1960 — they pay the higher 19.8% state pension and are outside the Universal Pension Fund.  _(Prohibitions section)_
 - **Disease & Maternity optional for self-insured** — NEVER add the 3.5% Disease & Maternity to a self-insured person's rate unless they have voluntarily elected that cover.  _(Prohibitions section)_
 - **No unemployment/work-accident for self-insured** — NEVER apply unemployment or work-accident contributions to a self-insured person — those funds do not apply.  _(Prohibitions section)_
-- **2026 EUR floors/ceilings pending confirmation** — NEVER treat the 2026 EUR floors/ceilings (EUR 550.66 / EUR 2,111.64) as final after ~Aug 2026 — they are pending the Budget Act; flag and verify.  _(Prohibitions section)_
+- **2026 EUR floors/ceilings — now confirmed, and they moved mid-year** — This rule read "NEVER treat the 2026 EUR floors/ceilings (EUR 550.66 / EUR 2,111.64) as final after ~Aug 2026 — they are pending the Budget Act". It was right and it has fired. The State Social Security Budget Act for 2026 was gazetted on **28 July 2026** and changed both figures from **1 August 2026**: the self-insured minimum monthly insurable income went **EUR 550.66 → EUR 620.20**, and the maximum monthly insurable income went **EUR 2,111.64 → EUR 2,300**. So NEVER apply a single set of 2026 figures across the whole year — fix the month first. The old pair is correct to 31 July 2026 and wrong from 1 August.  _(State Social Security Budget Act 2026, State Gazette No. 68 of 28 July 2026)_
 - **Work-accident rate needs NACE code** — NEVER pick a single work-accident rate inside 0.4%–1.1% without the NACE/economic-activity code — flag the gap.  _(Prohibitions section)_
 - **PIT base calculation** — NEVER compute the PIT base on gross alone — it is gross MINUS the employee's mandatory social/health contributions, then x 10%.  _(Prohibitions section)_
 - **Ceiling clamp for contributions** — NEVER omit the ceiling clamp — contributions stop at the maximum insurable income even though PIT continues on the full base.  _(Prohibitions section)_
