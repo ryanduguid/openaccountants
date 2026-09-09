@@ -109,6 +109,38 @@ Kenya's six missing heads were found in one fetch. When a jurisdiction appears
 below with three heads, the next step is a different page or the statute, not
 the one in the citation.
 
+TWO TRUE NEGATIVES, AND THE RULE THEY SUGGEST
+
+Ukraine and Kazakhstan came off the queue next and were both thin -- Ukraine
+missing engineering, agency and brokerage, freight at 6%, real-estate and
+securities disposals, Eurobond and government-bond treatment and deemed
+dividends; Kazakhstan missing services at 20%, the 20% residual, insurance at
+15%, reinsurance and international transport at 5% and constructive dividends,
+and attributing its reduced 5% dividend rate to a holding-period test when the
+real test is a 230,000 MCI distribution ceiling.
+
+Switzerland and Hong Kong were then checked expecting the same, and both were
+entirely correct. Switzerland charges 35% on dividends and on interest from
+bonds and bank deposits, nothing on ordinary loan interest, and nothing at all
+on royalties. Hong Kong charges nothing on dividends or interest and taxes
+royalties through deemed assessable profits, 4.95% to an unassociated
+non-resident and up to 16.5% to an associate. Three heads each, because three
+heads is what those two jurisdictions have.
+
+So the queue has real true negatives, and the two of them share the property
+that makes them verifiable in a minute rather than an hour: THEY STATE THE ZERO.
+Switzerland's guide says "0% -- Switzerland levies no withholding tax on royalty
+payments". Hong Kong's says "0% (no withholding tax on dividends)". Neither
+leaves the reader inferring an absence from a silence.
+
+That is the cheap resolution for much of this queue. A guide that omits a head
+is indistinguishable from a jurisdiction that does not charge it, and the
+distinction cannot be recovered from the guide -- which is why 64 entries needed
+a statute lookup each. A guide that writes the zero down converts itself from a
+question into an answer, and the next reader spends no time on it at all. Where
+a jurisdiction genuinely charges nothing on services or rent, saying so is worth
+as much as a rate.
+
 A CAVEAT ABOUT THE THIN END
 
 Jurisdiction keys come from the third path segment, so `us`, `im`, `in` and `nc`
