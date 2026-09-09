@@ -88,7 +88,9 @@ PA 4 of 2023 (the Lowering MI Costs Plan) was signed by Governor Whitmer on Marc
 | 2025 | 75% | 1946 – 1966 | $65,897 / $131,794 | $49,423 / $98,846 |
 | 2026 | 100% | All retirees (1946+) | $67,610 / $135,220 | $67,610 / $135,220 |
 
-**[VERIFY:** the 2026 base cap of $67,610 / $135,220 was reported in the Treasury's RAB 2026-1 summary; the published RAB PDF should be re-fetched at the time of TY-2026 filing to confirm the indexed figure before any 2026 return is signed.**]**
+> **The TY 2025 row is confirmed**: $65,897 / $131,794 appear in the MI-1040 instruction book, both in the Form 4884 material and on Worksheets 3.1 and 3.2 ("Enter $65,897 if single or $131,794 if filing jointly"). The statutory base these index from is $42,240 / $84,480, set for 2007 and adjusted annually since 2008 under MCL 206.30(1)(f)(iv).
+>
+> **The TY 2026 row is a planning figure.** $67,610 / $135,220 comes from Treasury's RAB 2026-1 summary and sits where indexation would put it ($67,610 / $65,897 = 1.026, against 1.029 the year before), but file from the TY 2026 Form 4884 when it publishes rather than from this table.
 
 ### 2.4 The all-income Michigan Standard Deduction at age 67+
 
@@ -103,9 +105,15 @@ PA 4 of 2023 (the Lowering MI Costs Plan) was signed by Governor Whitmer on Marc
 | Additional add-on if **either** spouse received SSA-exempt retirement (Schedule 1 box 24C) | + $15,000 |
 | Additional add-on if **both** spouses received SSA-exempt retirement (boxes 24C **and** 24G) | + $30,000 |
 
-- **PA 24 of 2025 Tier 3 SS offset relief** — For TY 2026 through TY 2028, Public Act 24 of 2025 removes the requirement that Tier 3 taxpayers reduce their $20,000/$40,000 Michigan Standard Deduction by the amount of Social Security benefits separately deducted on Schedule 1, line 14. This is a Tier-3-only fix; the offset remains in place for Tier 2.  _(Public Act 24 of 2025)_
+- **PA 24 of 2025 Tier 3 SS offset relief** — For TY 2026 through TY 2028, Public Act 24 of 2025 removes the requirement that Tier 3 taxpayers give up the Social Security deduction in order to take the $20,000/$40,000 Michigan Standard Deduction. This is a Tier-3-only fix; the offset remains in place for Tier 2. The Social Security amount sits on **Schedule 1, line 11** (line 14 is military pay).  _(MCL 206.30(9)(e) as amended by Public Act 24 of 2025)_
 
-**[VERIFY:** the precise scope of the PA 24 of 2025 offset relief — whether it also waives the offset for railroad retirement and military pay, or only Social Security — should be re-confirmed against the published RAB 2026-1 before relying on it for a Tier 3 return.**]**
+  **Scope, read off the amended statute rather than inferred.** MCL 206.30(9)(e) provides that "for tax years that begin before January 1, 2026 and after December 31, 2028", a Tier 3 person taking the $20,000/$40,000 deduction "shall not take the deduction under subsection (1)(f)(**iii**) and shall not take the personal exemption under subsection (2)". Subsection (1)(f)(iii) is **Social Security benefits as defined in section 86 of the internal revenue code** — nothing else. So:
+
+  - The relief is **Social Security only**. It cannot reach railroad or military retirement, because for a Tier 3 person subdivision (9)(e) already provides that the deductions under (1)(f)(i), (ii) and (iv) "do not apply" at all — there is nothing else in that list to give up.
+  - **The personal exemption is still forfeited in TY 2026-2028.** The statute lifts only the (1)(f)(iii) prohibition; a separate sentence provides that "for tax years that begin on and after January 1, 2029" — read with the enacted text, on and after 1 January 2026 and before 1 January 2029 — a person taking the $20,000/$40,000 deduction "shall not take the personal exemption under subsection (2)". Do not model TY 2026 as though both the Social Security deduction and the exemption come back.
+  - **There is a statutory election in the closed years.** For tax years before 2026 and after 2028, the person "may elect not to take the deduction of $20,000.00 for a single return and $40,000.00 for a joint return and elect to take the deduction under subsection (1)(f)(iii) and the personal exemption under subsection (2) **if that election would reduce that person's tax liability**". That is a named election, not merely the general "claim the most beneficial" instruction on the Form 4884 questionnaire — compute it both ways for every Tier 3 client in a closed year.
+
+  What remains genuinely open is narrower than the guide previously suggested: whether Treasury's **Worksheet 2** will continue to reduce a Tier 3 claimant's standard deduction by military and railroad amounts reported on Schedule 1 line 11 in TY 2026, given that the statute never barred those for Tier 3. That is a question for the TY 2026 form, which has not been published.
 
 ### 2.5 Social Security, military, railroad — always fully exempt
 
@@ -130,7 +138,7 @@ Three reasons the tiers continue to matter even at full restoration:
 
 1. **Public vs. private retirement income still differs for Tier 1.** A Tier 1 taxpayer with $200,000 of public Michigan state pension income subtracts the entire $200,000 (because public pensions for pre-1946 retirees are unlimited under MCL 206.30(1)(f)(i)) and may still claim private retirement subtraction up to the cap, but only to the extent the cap is not already exhausted by public pension income (Worksheet 3.1 / 3.2 lines 3–7; the form deducts public benefits from the cap before measuring private benefits).
 2. **The all-income $20,000/$40,000 standard deduction at age 67+ is still on the menu** as an alternative to the phased pension subtraction. For a Tier 2 or Tier 3 taxpayer with substantial non-retirement income (e.g., Schedule C self-employment, large investment income), the all-income deduction may be more valuable than even the 100% phased pension subtraction. The taxpayer must compute both and "claim the most beneficial" (Form 4884 questionnaire, page 22 of instructions, footnote †).
-3. **The Tier 3 Social-Security-offset relief under PA 24 of 2025** is only available for Tier 3 (born after 1952) and only for TY 2026 through TY 2028. Tier 2 taxpayers using the $20,000/$40,000 standard deduction must still offset by Social Security benefits separately deducted on Schedule 1 line 14.
+3. **The Tier 3 Social-Security-offset relief under PA 24 of 2025** is only available for Tier 3 (born after 1952) and only for TY 2026 through TY 2028 — confirmed against the amended MCL 206.30(9)(e), whose restriction is expressed as applying "for tax years that begin before January 1, 2026 and after December 31, 2028". Tier 2 taxpayers using the $20,000/$40,000 standard deduction must still offset by Social Security benefits deducted on Schedule 1 **line 11**. And the relief does not restore the personal exemption: a Tier 3 claimant taking the $20,000/$40,000 deduction in TY 2026-2028 still forfeits it.
 
 ## Section 4: Tier 1 deterministic rules
 
@@ -233,7 +241,7 @@ Step 2 — Tier determination. Older spouse born 1948 → Tier 2 → "Did the ke
 
 Section D subtraction = $84,000. All three retirement amounts are qualifying private benefits (Frank's GM pension is not a Michigan public source; IRA distributions after 59½ qualify; matched-contribution 401(k) qualifies).
 
-Step 3b — Worksheet 2 (all-income Michigan Standard Deduction). MFJ, both spouses 67+ → $40,000 standard deduction. Less Social Security offset of $30,000 (Tier 2 must offset under MCL 206.30(9), and PA 24 of 2025 relief does not apply to Tier 2) → net standard deduction = $10,000. [VERIFY: the precise mechanics of the Social Security offset calculation in Worksheet 2 for TY 2025 should be re-confirmed line-by-line before filing.]
+Step 3b — Worksheet 2 (all-income Michigan Standard Deduction). MFJ, both spouses 67+ → $40,000 standard deduction. Less Social Security offset of $30,000 (Tier 2 must offset, and the PA 24 of 2025 relief is Tier 3 only) → net standard deduction = $10,000. The offset mechanic is stated in the MI-1040 instructions for the Tier 2 and Tier 3 standard deduction: it "is reduced by any amounts reported on line 11 and any military pay included on line 14" — Schedule 1 line 11 carries Social Security, military retirement and railroad retirement, so all three reduce it, not Social Security alone.
 
 Step 4 — Choose most beneficial. $84,000 (Section D) >> $10,000 (Worksheet 2). Use Section D, enter $84,000 on Form 4884 line 19 → Schedule 1 line 27.
 
@@ -267,7 +275,7 @@ Step 2 — Tier determination. Born 1956, age 69 in 2025. "Did key person reach 
 Section D subtraction = $49,423.
 
 Step 3b — Worksheet 2 (all-income Michigan Standard Deduction). Single, age 67+ → $20,000 standard deduction.
-- Less Social Security offset: For Tier 3, PA 24 of 2025 (effective TY 2026–2028) removes the Social Security offset against the standard deduction. In 2025, however, the offset still applies — so the $22,100 Social Security must reduce the $20,000 deduction → net Worksheet 2 = $0. [VERIFY: confirm whether PA 24 of 2025's effective-date language reaches back into TY 2025 or only begins at TY 2026. The most likely reading is TY 2026 onward, in which case TY 2025 Tier 3 returns still face the offset. RAB 2026-1 should clarify on publication.]
+- Less Social Security offset: For Tier 3, PA 24 of 2025 removes the Social Security offset against the standard deduction for TY 2026 through TY 2028 — the amended MCL 206.30(9)(e) applies the restriction "for tax years that begin before January 1, 2026 and after December 31, 2028", so **TY 2025 still faces the offset**. The $22,100 Social Security reduces the $20,000 deduction → net Worksheet 2 = $0. Note the statutory election available in TY 2025: this taxpayer may instead elect to forgo the $20,000 deduction and take the Social Security deduction and the personal exemption, if that reduces liability. Here it does not change the answer, because Section D wins on either footing.
 
 Step 4 — Choose most beneficial. $49,423 (Section D) > $0 (Worksheet 2). Use Section D. Enter $49,423 on Form 4884 line 19 → Schedule 1 line 27.
 
@@ -275,7 +283,7 @@ Step 5 — Michigan AGI. $132,100 − $22,100 − $49,423 = $60,577. Less person
 
 TY 2026 contrast. Same facts in TY 2026 with full 100% restoration (cap $67,610 single):
 - Section D subtraction = min($67,610, $75,000) = $67,610.
-- Worksheet 2 = $20,000 standard deduction with no Social Security offset under PA 24 of 2025 (Tier 3 only, TY 2026–2028) = $20,000.
+- Worksheet 2 = $20,000 standard deduction with no Social Security offset under PA 24 of 2025 (Tier 3 only, TY 2026–2028) = $20,000. Taking it still costs the personal exemption in TY 2026, which the statute does not restore.
 - Section D still wins: $67,610 > $20,000.
 - Michigan AGI = $132,100 − $22,100 − $67,610 = $42,390. Tax at 4.25% (assuming rate unchanged) = roughly $1,557 — a roughly $770 tax saving versus 2025 from the phase-in moving from 75% to 100%.
 
@@ -363,19 +371,19 @@ Worksheet 2 is not Form 4884 — it is filed on Schedule 1 directly (the $20,000
 | MI-PEN-R-08 | TY other than 2025 or 2026 | **Refuse** — caps and phase-in percentages change annually; use the year-specific Form 4884 instructions |
 | MI-PEN-R-09 | Michigan city income tax on retirement benefits | **Refuse** — most Michigan cities (Detroit, Grand Rapids, etc.) **exclude** retirement income from city tax base, but each city's rules differ. Out of scope; refer to mi-income-tax MI-R-03 |
 | MI-PEN-R-10 | Mid-year change in residency where retirement payments straddle | **Refuse** — Schedule NR analysis required; out of scope |
-| MI-PEN-R-11 | Public Act 24 of 2025 fact patterns where the Social Security offset interaction with the standard deduction is dispositive | **Computational caution** — RAB 2026-1 must be confirmed against the actual published text before relying on the Tier 3 offset relief; flag with [VERIFY:] for human verifier |
+| MI-PEN-R-11 | Public Act 24 of 2025 fact patterns where the Social Security offset interaction with the standard deduction is dispositive | **Proceed with the statute in hand.** The scope, the tax years and the surviving personal-exemption forfeiture are settled by the amended MCL 206.30(9)(e) and are set out in §2.3. What is still unpublished is Treasury's TY 2026 Worksheet 2, so flag any case that turns on whether military or railroad amounts continue to offset a Tier 3 standard deduction |
 | MI-PEN-R-12 | Distributions from Michigan-source pension to non-resident — Michigan source-rule analysis | **Refuse** — non-resident return out of scope |
 
 ## Section 9: Provenance
 
 ### 9.1 Primary statutory and form authorities
 
-- **MCL 206.30(1)(f)** — The general retirement subtraction language, including the public/private distinction and the phased restoration language added by PA 4 of 2023. The (1)(f)(i) clause is the legacy Tier 1 rule; (1)(f)(ii) is the PA 4 phased restoration.  _(MCL 206.30(1)(f))_
+- **MCL 206.30(1)(f)** — The general retirement subtraction language. Read the subparagraphs as the statute has them, not as tiers: **(i)** benefits from a federal public retirement system or a public retirement system of or created by Michigan or its political subdivisions; **(ii)** benefits from *another state's* public retirement system, but only where that state grants a similar or reciprocal exemption; **(iii)** Social Security benefits as defined in IRC § 86; **(iv)** other retirement or pension benefits, and retirement annuity policies paying for life to a senior citizen, capped at a base **$42,240 single / $84,480 joint** indexed annually since 2008 — which is where the TY 2025 figures of $65,897 / $131,794 come from. The phased restoration added by PA 4 of 2023 lives in subsection (9), not in (1)(f)(ii).  _(MCL 206.30(1)(f))_
 - **MCL 206.30(9)** — The Michigan Standard Deduction at age 67+ ($20,000 / $40,000), the box 24C/24G SSA-exempt add-ons, and the offset mechanics. PA 24 of 2025 amended subsection (9) to remove the offset for Tier 3 taxpayers for TY 2026–2028.  _(MCL 206.30(9))_
 - **MCL 206.30(10)** — Definitional cross-references for retirement-benefit types (qualifying private vs. public, surviving-spouse rules).  _(MCL 206.30(10))_
 - **MCL 206.30(11)** — Qualified Fire/Police/County Corrections officer unlimited-election clause, added by PA 4 of 2023.  _(MCL 206.30(11))_
 - **PA 4 of 2023 (Lowering MI Costs Plan)** — Signed 7 March 2023; effective 13 February 2024. Established the four-year phase-in (25% → 50% → 75% → 100%) and the public-safety-officer election.  _(PA 4 of 2023)_
-- **PA 24 of 2025** — Signed 7 October 2025. Amended MCL 206.30(9) to remove the Social Security offset against the Tier 3 Michigan Standard Deduction for TY 2026 through TY 2028.  _(PA 24 of 2025)_
+- **PA 24 of 2025 (House Bill 4961)** — Signed 7 October 2025. An omnibus budget act: it advances Michigan's Internal Revenue Code conformity date from 1 January 2018 to **1 January 2025** and decouples from several OBBBA provisions (IRC § 168(k) bonus depreciation, § 168(n) qualified production property, § 179), **and separately** amends MCL 206.30(9)(e) to lift the Social Security trade-off against the Tier 3 Michigan Standard Deduction for TY 2026 through TY 2028. It amends MCL 206.12, 206.30, 206.36, 206.607, 206.695 and 206.805. Do not assume from the decoupling headlines that the act has nothing to do with retirement, and do not assume from the retirement change that it has nothing to do with depreciation — it does both.  _(2025 PA 24; MCL 206.30(9)(e))_
 - **Form 4884 (TY 2025) and Instructions** — The official form and 30-page instructions package. The Worksheets 2, 3.1, 3.2, 3.3 and the "Which Section of Form 4884 Should I Complete?" page-22 questionnaire are the operational core of this skill.  _(Form 4884 (TY 2025) and Instructions)_
 - **Revenue Administrative Bulletin 2023-22** — Treasury's official interpretation of PA 4 of 2023, referenced from the 2025 Form 4884 instructions (page 21).  _(Revenue Administrative Bulletin 2023-22)_
 - **Revenue Administrative Bulletin 2026-1** — Treasury's published guidance on TY 2026 caps and the PA 24 of 2025 amendments. The TY 2026 cap of $67,610 / $135,220 used in this skill traces to this bulletin.  _(Revenue Administrative Bulletin 2026-1)_
@@ -391,11 +399,17 @@ Worksheet 2 is not Form 4884 — it is filed on Schedule 1 directly (the $20,000
 
 ### 9.3 Verification notes
 
-Items marked [VERIFY:] inline in Section 2.3, Section 2.4, Section 6.2, and Section 6.3 require the human verifier to re-confirm against the published RAB 2026-1 and the TY 2025 Form 4884 instructions (URLs above) before any return is signed. Specifically:
+Resolved against primary sources:
 
-- The TY 2026 indexed cap of $67,610 / $135,220 — confirm from RAB 2026-1 published text once the PDF is released.
-- The PA 24 of 2025 effective date — confirm whether the Tier 3 Social Security offset relief begins in TY 2025 (October 2025 effective date) or TY 2026 (most likely reading).
-- The scope of PA 24 of 2025 — confirm whether the offset relief applies only to Social Security or also to railroad / military / National Guard retirement offsets in Worksheet 2.
+- **The TY 2025 caps of $65,897 / $131,794 are confirmed** — they appear in the MI-1040 instruction book in the Form 4884 material and in Worksheets 3.1 and 3.2 ("Enter $65,897 if single or $131,794 if filing jointly").
+- **The PA 24 of 2025 effective date is TY 2026 through TY 2028.** The amended MCL 206.30(9)(e) expresses the restriction as applying "for tax years that begin before January 1, 2026 and after December 31, 2028", so it does not reach back into TY 2025.
+- **The scope is Social Security only** — subsection (1)(f)(iii). It cannot extend to railroad or military retirement, because (9)(e) already disapplies (1)(f)(i), (ii) and (iv) to Tier 3 entirely.
+- **The personal exemption is not restored** by the relief, and that was missing from the guide.
+
+Still forward-looking rather than unverified:
+
+- **The TY 2026 indexed cap of $67,610 / $135,220** is a planning figure taken from Treasury's RAB 2026-1 summary. It sits where indexation would put it — $67,610 / $65,897 = 1.026, against $65,897 / $64,040 = 1.029 the year before — but the TY 2026 Form 4884 is the figure to file from.
+- **Treasury's TY 2026 Worksheet 2** has not been published, so whether it continues to reduce a Tier 3 claimant's standard deduction by military and railroad amounts on Schedule 1 line 11 is not yet answerable from a form.
 
 ## Disclaimer
 
