@@ -18,7 +18,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Small-profit threshold** — Enterprises with annual taxable income of TWD 120,000 or less are exempt; a tapering cap limits tax just above this threshold TWD  _(Income Tax Act (https://taxsummaries.pwc.com/taiwan/corporate/taxes-on-corporate-income))_
 - **Tax base** — Resident enterprises: worldwide net income (with foreign tax credit). Non-resident enterprises: Taiwan-source income only  _(Income Tax Act (https://taxsummaries.pwc.com/taiwan/corporate/income-determination))_
 - **Surtax on undistributed earnings** — Additional 5% on current-year earnings not distributed by the end of the following year (does not apply to Taiwan branches of foreign companies) percent  _(Income Tax Act (https://taxsummaries.pwc.com/taiwan/corporate/taxes-on-corporate-income))_
-- **Corporate Income Basic Tax (AMT)** — 12% standard rate (a 15% rate is proposed for in-scope MNE groups under the OECD global minimum tax from 2025 — confirm) (approx — confirm 15% MNE rate status) percent  _(Income Basic Tax Act (https://taxsummaries.pwc.com/taiwan/corporate/taxes-on-corporate-income))_
+- **Corporate Income Basic Tax (AMT)** — 12% standard rate, and **15% in force since 1 January 2025** for in-scope MNE groups, meaning those with consolidated group revenue of EUR 750m or more in at least two of the four preceding fiscal years. Not a proposal: it was announced in August 2024 and first affected returns filed in 2026. Note it is not a Qualified Domestic Minimum Top-up Tax for Pillar Two purposes percent  _(Income Basic Tax Act (https://taxsummaries.pwc.com/taiwan/corporate/taxes-on-corporate-income))_
 
 ## Withholding tax on outbound payments
 

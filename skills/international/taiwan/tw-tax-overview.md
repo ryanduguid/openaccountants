@@ -24,7 +24,7 @@ Taiwan (Republic of China) taxes individuals and profit-seeking enterprises on a
 - **Does VAT/GST exist?** — Yes — a 5% value-added type business tax (VAT) applies to most goods and services percent  _([Value-added and Non-value-added Business Tax Act](https://taxsummaries.pwc.com/taiwan/corporate/other-taxes))_
 - **Annual individual income tax filing deadline** — 1 May – 31 May of the year following the tax year  _([Income Tax Act](https://taxsummaries.pwc.com/taiwan/individual/tax-administration))_
 - **Annual corporate income tax filing deadline** — By 31 May following the fiscal year-end (last day of the fifth month after year-end for non-calendar years)  _([Income Tax Act](https://taxsummaries.pwc.com/taiwan/corporate/tax-administration))_
-- **Income Basic Tax (Alternative Minimum Tax)** — Individuals 20%; enterprises 12% (a 15% rate is proposed for in-scope multinational groups under the global minimum tax from 2025 — confirm) percent ((approx — confirm 15% MNE rate status))  _([Income Basic Tax Act](https://taxsummaries.pwc.com/taiwan/corporate/taxes-on-corporate-income))_
+- **Income Basic Tax (Alternative Minimum Tax)** — Individuals 20%; enterprises 12%, and **15% in force since 1 January 2025** for multinational groups with consolidated revenue of EUR 750m or more. In force, not proposed percent  _([Income Basic Tax Act](https://taxsummaries.pwc.com/taiwan/corporate/taxes-on-corporate-income))_
 
 <!-- openaccountants-cta-block -->
 

@@ -67,6 +67,8 @@ jurisdiction at a time. This section records how far that has got.
 | Personal income tax bands and exemptions | Egypt | 0 | — |
 | Micro-regime threshold and dividend WHT | Romania | 2 | Romania |
 | Minimum wage feeding contribution bases | Albania | 1 | Albania |
+| Social contribution ceilings | Slovakia | 1 | Slovakia |
+| Alternative minimum tax status | Taiwan | 1 | Taiwan |
 
 The deadline pass has covered 24 jurisdictions of 200. Nobody has run an external
 pass over anything else. That leaves payroll rates and thresholds, registration
@@ -153,8 +155,20 @@ minimum wage as "40,000 ALL (2025)" while its own income tax guide already
 carried the 50,000 that took effect on 1 January 2026, which matters because
 that figure is the floor for social contributions.
 
+Slovakia and Taiwan then made it five of six. Slovakia's maximum monthly
+employee social contribution was EUR 1,478.62, derived from the 2025 assessment
+base of EUR 15,730 and labelled as derived. The 2026 base is EUR 16,764, so the
+ceiling is EUR 1,575.82 and a figure carried over understates it by about
+EUR 97 a month. Taiwan called the 15% alternative minimum tax rate for large
+multinational groups "proposed"; it was announced in August 2024, took effect
+on 1 January 2025 and first showed up in returns filed in 2026.
+
+Taiwan is the variant worth watching for. Nothing there is a number: the rate
+and the date were both right, and the word "proposed" was the error. A reader
+told a rate is proposed does not apply it.
+
 The lesson is about how these guides are written rather than about any of the
-three. A figure labelled with its year is honest and ages badly, and every
+six. A figure labelled with its year is honest and ages badly, and every
 "lowered to X from 2026" written in 2025 becomes a wrong headline in 2026
 unless someone turns it around. Lead with the rule in force and keep the
 superseded figure behind it.
