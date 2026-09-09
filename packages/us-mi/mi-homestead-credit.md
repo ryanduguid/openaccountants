@@ -67,14 +67,24 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Taxable value cap on homestead | **$165,400** | TY 2025 MI-1040CR instructions |
 | Property-tax-floor as % of THR (regular) | **3.2%** of THR | TY 2025 MI-1040CR Line 34 |
 | Rent treated as property tax (renters) | **23%** of rent paid (**10%** if service fee housing) | TY2025 MI-1040CR form and instructions, Michigan Treasury |
-| Senior alternate THR ceiling (100% of difference) | THR ≤ **$21,000** ⇒ 100% credit allowance `[VERIFY exact 2025 figure]` | MCL 206.522; TY 2025 instructions Table 2 |
-| Senior phase-out — THR over $21,000 | Credit % reduced 4% per $1,000 of THR over $21,000 `[VERIFY]` | TY 2025 instructions Table 2 |
-| Senior phase-out — THR $30,001–$60,000 | Credit = 60% of difference `[VERIFY]` | TY 2025 instructions Table 2 |
+| Senior allowance (**Table A**, line 37) | THR ≤ **$21,000** ⇒ **100%**; then **4 percentage points less per $1,000** band, to **60%** from **$30,001** and flat at 60% through **$71,500** | TY 2025 MI-1040CR instructions, **Table A: Senior Credit Reduction** |
+| Percent of taxes **not** refundable (**Table 2**, line 34) | General claimants: **3.2%** across $0–$71,500. "Other claimants" (seniors; paraplegic, hemiplegic, quadriplegic, deaf, or totally and permanently disabled; unremarried spouse of an individual 65 or older): 0% up to $3,000, then 1% / 2% / 3% by $1,000 band, and 3.2% above $6,000 | TY 2025 MI-1040CR instructions, **Table 2: Percent of Taxes Not Refundable** |
+| Credit phase-out (**Table B**, line 43) | 100% at THR ≤ $62,500, then 10 percentage points less per $1,000 or part, reaching 0% at $71,501 | TY 2025 MI-1040CR instructions, **Table B** |
 | Senior renter alternate test | Rent > 40% of THR triggers alternate computation | TY 2025 instructions |
 | Filing deadline | Same as MI-1040 (April 15, 2026 for TY 2025) | MI-1040 Book |
 | Statute of limitations on credit claim | **4 years** from original due date | MCL 205.27a |
 
-> Every dollar figure above is sourced to the published TY 2025 instructions or the underlying statute. **Confirmed against the TY2025 MI-1040CR:** the $1,900 maximum credit, the $71,500 THR ceiling, the $62,500 phase-out floor and the 10%-per-$1,000 phase-out rate, plus the 23% renter factor (10% for service fee housing). **Still unconfirmed:** the senior Table 2 percentages ($21,000 / 4% per $1,000 / 60%), which are carried from AARP and TaxSlayer summaries rather than the Treasury table. Read Table 2 out of the MI-1040CR instructions before relying on a senior computation.
+> Every dollar figure above is now read out of the published TY 2025 MI-1040CR and its instructions in the MI-1040 book: the $1,900 maximum credit, the $71,500 THR ceiling (line 33 stops the form above it), the $165,400 taxable value ceiling, the $62,500 phase-out floor and the 10%-per-$1,000 rate, the 3.2% property-tax floor at line 34, the 23% renter factor (10% for service fee housing), and all three tables in full.
+>
+> **Three tables, and the guide previously ran two of them together.** The form uses them at different lines and they do different jobs:
+>
+> | Table | Line | What it does |
+> | --- | --- | --- |
+> | **Table 2** | 34 | The percent of THR subtracted from property taxes — the part of the tax that is *not* refundable. 3.2% for general claimants; a lower graduated figure for seniors and disabled claimants with THR at or below $6,000 |
+> | **Table A** | 37 | Senior credit reduction — the percentage of the line 35 difference a senior claimant may take, 100% down to 60% |
+> | **Table B** | 43 | The income phase-out applied to every claimant's computed credit, 100% down to 0% |
+>
+> The senior percentages the earlier draft attributed to "Table 2" are **Table A**. The correction that matters for a computation is the upper bound: Table A's 60% band runs to **$71,500**, not to $60,000. And Table 2 has content the draft did not have at all — a senior or disabled claimant with THR of $6,000 or less subtracts **less than 3.2%** at line 34, which increases the credit.
 
 ## Section 3: Total Household Resources (THR) — the Michigan-only concept
 
@@ -170,7 +180,7 @@ A claimant must clear **all four** of these tests to claim the regular MI-1040CR
 
 ### 4.6 — Mobile / manufactured home rules
 
-- **Mobile-home owner renting lot** — If the claimant owns the mobile home and rents the lot/pad: include the $3 per month specific tax paid to the local unit ($36/year) as property tax, plus 23% of the lot rent paid `[VERIFY 23%]` as the rent portion. The mobile-home owner pays the $3/month specific tax under MCL 125.1041, in lieu of ad valorem property tax on the unit.  _(MCL 125.1041)_
+- **Mobile-home owner renting lot** — Confirmed against the TY 2025 MI-1040CR instructions: a mobile home park resident claims the **$3 per month specific property tax on line 10** ($36 a year) and the **balance of the rent on line 11**. Note the word *balance* — the instructions direct the claimant to "subtract the $3 per month specific property tax from the monthly rent amount" and claim only what is left as rent, so the $3 is not counted twice. The 23% renter factor then applies to that reduced rent. The mobile-home owner pays the $3/month specific tax under MCL 125.1041 in lieu of ad valorem property tax on the unit.  _(MCL 125.1041; TY 2025 MI-1040CR instructions, lines 10-11 and 52-53)_
 - **Mobile-home owner owning lot** — If the claimant owns both the home and the lot: standard owner computation using actual property tax on the parcel.
 
 ## Section 5: The computation — owners
@@ -181,7 +191,29 @@ A claimant must clear **all four** of these tests to claim the regular MI-1040CR
 
 ### Senior owners (age 65 or older)
 
-- **Senior Table 2 computation** — Seniors use Table 2 in the MI-1040CR instructions rather than the flat 60% factor: - THR ≤ $21,000 ⇒ allowance is 100% of (property tax − 3.2% of THR). - THR $21,001 – $30,000 ⇒ allowance reduced 4 percentage points per $1,000 (or part) above $21,000. So at THR $25,500 the allowance is 100% − (5 × 4%) = 80% `[VERIFY exact bracket cutoffs against TY 2025 instructions]`. - THR $30,001 – $60,000 ⇒ allowance is 60% of the difference. - Above $60,000 (and certainly above $62,500), the regular 10% per $1,000 phase-out applies until THR exceeds $71,500. - Senior renters with rent > 40% of THR may take an alternate computation that compares rent paid to 40% of THR, which can yield a larger credit. The taxpayer takes the larger of the two.  _(MCL 206.522; TY 2025 instructions Table 2)_
+- **Senior computation — MI-1040CR Section A and Table A** — A claimant who checked only box 5a (age 65 or older) completes **Section A**, not the flat 60% in Section C. Line 37 takes the percentage from **Table A** that applies to the THR on line 33, and line 38 multiplies the line 35 difference by it, capped at **$1,900**:
+
+  | Total household resources | Table A percentage |
+  | --- | --- |
+  | $21,000 or less | 100% |
+  | $21,001 – $22,000 | 96% |
+  | $22,001 – $23,000 | 92% |
+  | $23,001 – $24,000 | 88% |
+  | $24,001 – $25,000 | 84% |
+  | $25,001 – $26,000 | 80% |
+  | $26,001 – $27,000 | 76% |
+  | $27,001 – $28,000 | 72% |
+  | $28,001 – $29,000 | 68% |
+  | $29,001 – $30,000 | 64% |
+  | **$30,001 – $71,500** | **60%** |
+
+  So the reduction is four percentage points per $1,000 band above $21,000, and the 60% floor is reached at $30,001 and holds all the way to the $71,500 THR ceiling. At THR $25,500 the percentage is 80%.
+
+  Then **Table B applies on top**, at line 43, to the amount from line 38 — the credit is reduced ten percentage points for every $1,000 or part by which THR exceeds $62,500, reaching 0% at $71,501. Seniors are not exempt from that phase-out; it runs after Table A, not instead of it.
+
+  A senior filing a **part-year** credit must annualise total household resources to find the Table A percentage.
+
+  Senior renters with rent above 40% of THR may take an alternate computation comparing rent paid to 40% of THR, and take the larger of the two. Seniors who pay rent — including rent to an adult care facility — complete **Worksheet 5** in the MI-1040 book and carry the result to line 44, capped at $1,900.  _(MCL 206.522; TY 2025 MI-1040CR lines 36-38 and 43, Tables A and B)_
 
 ### Property tax PAID — timing and qualifying amounts
 
@@ -385,7 +417,7 @@ Credit = $1,140.
 | $165,400 taxable value cap | TY 2025 instructions | Confirmed |
 | 3.2% floor of THR | TY 2025 form Line 34 | Confirmed |
 | 23% rent factor | TY2025 MI-1040CR form and instructions, Michigan Treasury | Confirmed: the form directs renters to multiply total rent paid by 23% (10% for service fee housing). The 20% figure in older summaries is superseded and must not be used. |
-| Senior Table 2 percentages | AARP / TaxSlayer summaries — NOT the Treasury table | `[VERIFY exact 2025 figures against the MI-1040CR instructions Table 2; the surrounding credit parameters were confirmed but these were not]` |
+| Senior allowance percentages | **Now read from the Treasury tables themselves** (TY 2025 MI-1040CR instructions, MI-1040 book) rather than from AARP / TaxSlayer summaries. The summaries had them under the wrong table name and stopped the 60% band at $60,000 instead of $71,500 | Resolved |
 | PA 4 of 2023 reform impact | Treasury press releases; House Bill 4001 (2023) | Confirmed at high level; specific dollar changes summarized in Section 2 |
 
 ### Known uncertainties for verifier
