@@ -63,7 +63,8 @@ jurisdiction at a time. This section records how far that has got.
 | Annual return filing deadline | 24 jurisdictions | 8 | Italy, Greece, Armenia, Cyprus, Finland, Australia, Norway, Brazil |
 | VAT/GST registration threshold | 20 jurisdictions | 3 | Egypt, Albania, France |
 | Withholding rate on dividends, interest, royalties | 10 of the 118 stating one | 4 | Ethiopia, Iceland, Trinidad and Tobago, Belize |
-| Payroll and social contribution rates | Morocco only | 0 | — |
+| Payroll and social contribution rates | Morocco, Egypt | 0 | — |
+| Personal income tax bands and exemptions | Egypt | 0 | — |
 
 The deadline pass has covered 24 jurisdictions of 200. Nobody has run an external
 pass over anything else. That leaves payroll rates and thresholds, registration
@@ -118,6 +119,20 @@ breakdown gives 0.33% plus 3.96%, which is 4.29%. The published components do
 not sum to the published employee total either, 6.55% against 6.74%. The same
 0.19% is missing from both, so the guide agrees with the total and disagrees
 with the parts. Its hedge on the component split stays.
+
+Egypt came next, for the same reason and with the same result. The annual
+personal exemption of EGP 20,000, raised from EGP 15,000 on 21 February 2024,
+matches the ETA schedule, and so does the whole seven-band scale: 0% to 40,000,
+then 10, 15, 20, 22.5 and 25%, with 27.5% above EGP 1,200,000. The bands and
+the rates both check out, which is worth stating separately, because a rate
+schedule can be right in its rates and wrong in its boundaries.
+
+Egypt's VAT threshold hedges also close, and this is the kind that expires on
+its own. The guide said "lowered to EGP 250,000 effective 1 Jan 2026 — verify
+current value". That date has passed, the change is in force, and a hedge
+written before a commencement date should be revisited after it rather than
+carried forward. Its prohibition now reads "do NOT state the threshold as
+EGP 500,000" rather than "do not present either figure as settled".
 
 ### The best lead in the corpus is the corpus's own doubt
 

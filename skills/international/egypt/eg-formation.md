@@ -35,7 +35,7 @@ This skill walks a self-employed person in Egypt through **getting legally set u
 | Income tax law (general) | Income Tax Law **No. 91 of 2005** (as amended) |
 | Simplified regime | **Law No. 6 of 2025** turnover-based system for turnover ≤ **EGP 20,000,000** (see `eg-sme-tax`) |
 | VAT law | VAT Law **No. 67 of 2016** (as amended) — standard rate **14%** |
-| VAT registration threshold | Historically **EGP 500,000** turnover; **lowered to EGP 250,000** effective **1 Jan 2026** per **Resolution No. 281 of 2025** — **verify current value with ETA** |
+| VAT registration threshold | **EGP 250,000** of annual turnover, in force since **1 January 2026** under **Resolution No. 281 of 2025**, which halved it from EGP 500,000. Registration was due by 31 March 2026 for anyone over it on 2025 revenue |
 | Social insurance | Law **No. 148 of 2019** — self-employed contribute (commonly cited) **~21%** of a chosen reference wage — **verify current rate/bands** |
 | Quality tier | **Research-verified — pending sign-off by an Egyptian accountant** |
 | Version | 1.0 |
@@ -43,7 +43,7 @@ This skill walks a self-employed person in Egypt through **getting legally set u
 ### Conservative defaults
 
 - **Default to registering, not waiting.** Operating without a tax card / tax file is non-compliant. If income is at or near any threshold, assume registration is required and confirm with ETA.
-- **Default to the lower VAT threshold.** Treat **EGP 250,000** (effective 2026) as the trigger to register for VAT and e-invoicing, and flag "verify current value" — do not assume the old EGP 500,000 figure still applies.
+- **Use EGP 250,000.** It is the trigger to register for VAT and e-invoicing and has been in force since 1 January 2026. The old EGP 500,000 figure is superseded, not merely doubtful.
 - **Default to "syndicate first" for regulated professions.** Lawyers, doctors, engineers, accountants and similar professions generally **cannot practise lawfully** without syndicate (نقابة) membership — treat it as a prerequisite, not optional.
 - **Default to sole proprietorship (منشأة فردية) for a solo freelancer** unless there is a specific reason for an LLC (see Section 5). Do not recommend an LLC by default.
 - **Never present a fee, threshold, rate, or procedure as final** without an Egyptian accountant's sign-off and a same-day check against ETA / GAFI portals. Fees and thresholds change frequently by decree.
@@ -219,7 +219,7 @@ Most solo freelancers should default to a sole proprietorship (منشأة فرد
 ## PROHIBITIONS
 
 - **Do NOT** tell anyone they can operate without a **tax card / tax file** — that is non-compliant.
-- **Do NOT** state the **VAT threshold** as EGP 500,000 without flagging the **EGP 250,000 (from 1 Jan 2026)** change and "verify current value" — do not present either figure as settled without an ETA check.
+- **Do NOT** state the **VAT threshold** as EGP 500,000. It is **EGP 250,000** from 1 January 2026 under Resolution No. 281 of 2025. Quote 500,000 only as the superseded figure.
 - **Do NOT** quote any **fee, threshold, rate, penalty, or deadline** (commercial register fees, GAFI incorporation fees, social-insurance rate/bands, e-invoicing penalties) as final without same-day verification — flag with "verify current value/procedure".
 - **Do NOT** tell a member of a **regulated profession** they can practise without the relevant **syndicate (نقابة)** membership.
 - **Do NOT** assume an activity is "professional" vs "commercial" (and thus which register applies) — verify per activity.

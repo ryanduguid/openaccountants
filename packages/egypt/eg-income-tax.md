@@ -37,7 +37,7 @@ This skill covers Egyptian personal income tax (ضريبة الدخل على ا�
 | Portal | eta.gov.eg |
 | Filing deadline | **31 March** of the year following the tax year (individuals / sole proprietors) |
 | Top marginal rate | 27.5% on income over EGP 1,200,000 |
-| Annual personal exemption | EGP 20,000 (raised from EGP 15,000 effective 21 Feb 2024) — *verify current value* |
+| Annual personal exemption | **EGP 20,000** (raised from EGP 15,000 effective 21 Feb 2024), confirmed against the ETA schedule. Residents and non-residents alike |
 | Simplified SME alternative | Law No. 6 of 2025 turnover-based regime for businesses up to EGP 20m — see `eg-sme-tax` |
 | Contributor | Open Accountants Community |
 | Quality tier | Research-verified — pending sign-off by a qualified Egyptian accountant (محاسب قانوني) |
@@ -204,8 +204,8 @@ Non-resident consultant earns EGP 100,000 of Egyptian-source professional fees. 
 ### Tier 1 — settled rules with citations
 
 - **T1-1** — Tax base is annual net profit for both commercial/industrial and non-commercial (professional) activity.  _(Income Tax Law No. 91 of 2005, as amended)_
-- **T1-2** — Progressive scale 0% / 10% / 15% / 20% / 22.5% / 25% / 27.5%, top band over EGP 1,200,000 (current schedule per ETA / PwC, TY2026). *Verify current value.*  _(T1-2)_
-- **T1-3** — Annual personal exemption EGP 20,000 (raised from EGP 15,000 effective 21 Feb 2024). *Verify current value.*  _(T1-3)_
+- **T1-2** — Progressive scale 0% / 10% / 15% / 20% / 22.5% / 25% / 27.5%, with bands at 40,000 / 55,000 / 70,000 / 200,000 / 400,000 / 1,200,000 and the top band over EGP 1,200,000. Confirmed against the ETA schedule for TY2026  _(T1-2)_
+- **T1-3** — Annual personal exemption EGP 20,000 (raised from EGP 15,000 effective 21 Feb 2024). Confirmed  _(T1-3)_
 - **T1-4** — 0% first band available only to residents with annual income ≤ EGP 1,200,000; high-earner bracket-elimination applies above that — *verify the step schedule.*  _(T1-4)_
 - **T1-5** — Insurance/pension premiums + private fund contributions deductible up to the lower of 15% of net revenue or EGP 10,000.  _(T1-5)_
 - **T1-6** — Deductible expenses must be connected to the activity and supported by electronic invoices/receipts; personal expenses, fines, and income tax itself are non-deductible.  _(T1-6)_
