@@ -1,6 +1,6 @@
 ---
 name: ca-capital-gains
-description: "Canada capital gains tax: inclusion rate (50% / 2/3 above $250k from 2024), lifetime capital gains exemption (LCGE), principal residence exemption, adjusted cost base. Trigger on: \"Canada capital gains tax\", \"CRA capital gains\", \"inclusion rate Canada\", \"sell shares Canada\", \"T5008\", \"adjusted cost base Canada\", \"LCGE Canada\", \"principal residence exemption Canada\", \"capital gains inclusion rate 2/3\", \"sell small business shares Canada\". For non-residents see ca-nonresident-cgt."
+description: "Canada capital gains tax: inclusion rate (50% for all gains — the proposed 2/3 rate above $250k was cancelled on 21 March 2025), lifetime capital gains exemption (LCGE), principal residence exemption, adjusted cost base. Trigger on: \"Canada capital gains tax\", \"CRA capital gains\", \"inclusion rate Canada\", \"sell shares Canada\", \"T5008\", \"adjusted cost base Canada\", \"LCGE Canada\", \"principal residence exemption Canada\", \"capital gains inclusion rate 2/3\", \"sell small business shares Canada\". For non-residents see ca-nonresident-cgt."
 version: 1.0
 jurisdiction: CA
 tax_year: 2025
@@ -60,7 +60,7 @@ Track ACB meticulously — errors are common and CRA audits ACB claims.
 
 ## State-equivalent: provincial tax
 
-- **Combined federal + provincial rates on included gain** — Capital gains are included in income and taxed at combined federal + provincial rates. Top combined rates on the 2/3 portion (above $250k): approximately 26%–27% federal + 13%–17% provincial = ~39%–44% combined effective rate on the included 2/3.
+- **Combined federal + provincial rates on included gain** — Capital gains are included in income and taxed at combined federal + provincial rates. With the 50% inclusion rate, the top combined effective rate on the whole gain runs at roughly 24%–27% depending on province (half the top combined marginal rate of about 48%–54%). There is no separate 2/3 tier: The proposed increase to a 66.67% inclusion rate was cancelled on 21 March 2025 (confirmed in Budget 2025); the 50% rate applies to all capital gains, with no $250,000 threshold and no 2024 split-period calculation.
 
 ## Sources
 
@@ -68,7 +68,7 @@ Track ACB meticulously — errors are common and CRA audits ACB claims.
 - CRA: canada.ca/en/revenue-agency/services/tax/individuals/topics/about-your-tax-return/tax-return/completing-a-tax-return/personal-income/line-12700-capital-gains.html
 - Schedule 3, Form T2091
 
-> Working paper only. The 2024 inclusion rate change requires split-period calculations for the 2024 tax year. LCGE eligibility requires detailed analysis of the QSBC conditions. Have a qualified Canadian CPA review before filing.
+> Working paper only. No split-period calculation is required for 2024 — The proposed increase to a 66.67% inclusion rate was cancelled on 21 March 2025 (confirmed in Budget 2025); the 50% rate applies to all capital gains, with no $250,000 threshold and no 2024 split-period calculation. Returns filed on the split-period basis before the cancellation may need review. LCGE eligibility requires detailed analysis of the QSBC conditions. Have a qualified Canadian CPA review before filing.
 
 <!-- openaccountants-cta-block -->
 
