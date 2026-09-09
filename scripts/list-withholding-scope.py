@@ -169,6 +169,33 @@ So the order of search for a queue entry is: the authority's remittance or
 declaration form first, its rate schedule second, a summary page third. The
 form is the only one of the three that is structurally obliged to be complete.
 
+THE QUEUE OVER-REPORTED BY 30%, AND NOW SPLITS ITSELF
+
+After ten jurisdictions had been worked off the list by hand it was worth
+asking how many of the rest were real. This script indexes the heads named in a
+bullet's LABEL, because labels are where the corpus states facts and bodies are
+prose. That is the right primary signal and it has a predictable blind spot: a
+guide that names five heads inside one bullet's body reads here as naming none
+of them.
+
+Measured, 15 of the 50 classic-only entries name an extra head in a body. Some
+are real coverage the label does not advertise; some are a word like "insurance"
+appearing in a sentence about something else; and a few are this branch's own
+work, where a fix was written as one headline bullet rather than one bullet per
+head. All three cases share the useful property that they are cheaper to triage
+by eye than to research from a statute.
+
+So the output now splits. `queue` is the 35 that name nothing beyond the classic
+three anywhere -- those need the statute. `triage` is the 15 whose bodies mention
+a service, rent, insurance or similar head -- read those first, and most will
+either already be covered or need only restructuring so the head sits in a label
+where it can be found. The exit code follows `queue`, not the total, so a run
+that leaves only triage entries is a clean run.
+
+The lesson is narrower than it looks and worth keeping: a checker's blind spot
+is measurable, and measuring it before working its output is cheaper than
+working the output. Thirty per cent of this queue was the tool, not the corpus.
+
 A CAVEAT ABOUT THE THIN END
 
 Jurisdiction keys come from the third path segment, so `us`, `im`, `in` and `nc`
@@ -232,8 +259,31 @@ def heads_in(line):
     return found or None
 
 
+def body_heads_in(line):
+    """Heads named in a withholding line's BODY rather than its label.
+
+    Weaker evidence than heads_in and reported separately for that reason. A
+    body is prose: "insurance" turns up in a sentence about premiums that is
+    really about something else, and a guide can mention a head in passing
+    without stating a rate for it. It is still worth having, because 15 of the
+    50 jurisdictions on the queue name an extra head this way, and working them
+    as if nothing were there wastes the lookup.
+    """
+    m = BULL.match(line) or ROW.match(line)
+    if not m:
+        return None
+    label, value = m.group(1), m.group(2)
+    if not LABEL.search(label):
+        return None
+    found = {name for name, pat in HEADS
+             if name not in CLASSIC and re.search(pat, value, re.I)}
+    return found or None
+
+
 def scan(root='skills'):
-    out = collections.defaultdict(set)
+    """Return {jurisdiction: (label_heads, body_only_extra_heads)}."""
+    labels = collections.defaultdict(set)
+    bodies = collections.defaultdict(set)
     for dp, _, fns in os.walk(root):
         parts = dp.split(os.sep)
         jur = parts[2] if len(parts) >= 3 else ''
@@ -246,8 +296,11 @@ def scan(root='skills'):
                 for line in fh:
                     got = heads_in(line)
                     if got:
-                        out[jur] |= got
-    return out
+                        labels[jur] |= got
+                    got = body_heads_in(line)
+                    if got:
+                        bodies[jur] |= got
+    return {j: (labels[j], bodies[j] - labels[j]) for j in labels}
 
 
 def selftest():
@@ -290,30 +343,43 @@ def selftest():
 def main(classic_only=False):
     found = scan()
     rows = []
-    for jur, heads in found.items():
+    for jur, (heads, body) in found.items():
         extras = sorted(heads - set(CLASSIC))
-        rows.append((len(heads), jur, sorted(heads), extras))
+        rows.append((len(heads), jur, sorted(heads), extras, sorted(body)))
     rows.sort(key=lambda r: (r[0], r[1]))
 
     classic = [r for r in rows if not r[3]]
+    # Split the queue: an entry whose bullets MENTION an extra head in prose
+    # is likely already half-covered, and is cheaper to triage than to research.
+    bare = [r for r in classic if not r[4]]
+    mentions = [r for r in classic if r[4]]
+
     if classic_only:
-        for _, jur, heads, _ in classic:
-            print('%-26s %s' % (jur, ', '.join(heads)))
+        for _, jur, heads, _, body in classic:
+            note = ('  (body mentions: %s)' % ', '.join(body)) if body else ''
+            print('%-26s %s%s' % (jur, ', '.join(heads), note))
         print('\n%d of %d jurisdictions name only dividends, interest and/or '
               'royalties.' % (len(classic), len(rows)))
-        return 1 if classic else 0
+        print('%d name nothing else anywhere; %d mention an extra head in a '
+              'bullet body.' % (len(bare), len(mentions)))
+        return 1 if bare else 0
 
-    for n, jur, heads, _ in rows:
+    for n, jur, heads, _, _ in rows:
         print('%2d  %-26s %s' % (n, jur, ', '.join(heads)))
     print()
     print('jurisdictions naming a withholding head:', len(rows))
-    print('naming only classic heads (the queue):', len(classic))
-    for _, jur, heads, _ in classic:
-        print('   classic-only: %-24s %s' % (jur, ', '.join(heads)))
-    spread = collections.Counter(n for n, _, _, _ in rows)
+    print('naming only classic heads:', len(classic))
+    print('  of those, nothing else anywhere (the queue):', len(bare))
+    for _, jur, heads, _, _ in bare:
+        print('   queue:  %-24s %s' % (jur, ', '.join(heads)))
+    print('  of those, an extra head appears in a bullet body (triage first):',
+          len(mentions))
+    for _, jur, _, _, body in mentions:
+        print('   triage: %-24s body mentions %s' % (jur, ', '.join(body)))
+    spread = collections.Counter(n for n, _, _, _, _ in rows)
     print('heads named per jurisdiction:', ', '.join(
         '%d:%d' % (k, spread[k]) for k in sorted(spread)))
-    return 1 if classic else 0
+    return 1 if bare else 0
 
 
 if __name__ == '__main__':

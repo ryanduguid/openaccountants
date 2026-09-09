@@ -59,10 +59,33 @@ class FactCheckerTests(unittest.TestCase):
                 "- **Withholding tax on rent paid to non-residents** - 30%\n"
             ),
         }, expect_code=1)
-        self.assertIn("naming only classic heads (the queue): 1", output)
-        self.assertRegex(output, r"classic-only:\s+thin\b")
-        self.assertNotRegex(output, r"classic-only:\s+broad\b")
+        self.assertIn("naming only classic heads: 1", output)
+        self.assertIn("nothing else anywhere (the queue): 1", output)
+        self.assertRegex(output, r"queue:\s+thin\b")
+        self.assertNotRegex(output, r"queue:\s+broad\b")
         self.assertRegex(output, r"\bbroad\s+dividends, rent, services")
+
+    def test_withholding_scope_separates_body_mentions_from_bare_entries(self):
+        # "bare" names only the classic three and nothing else anywhere.
+        # "mentions" also names only classic heads in its labels, but a bullet
+        # body names a service head, so it is cheaper to triage than research
+        # and is counted separately rather than sitting in the same queue.
+        output = self.run_checker("list-withholding-scope.py", {
+            "bare/cit.md": (
+                "- **Withholding tax on dividends** - 10%\n"
+                "- **Withholding tax on royalties** - 10%\n"
+            ),
+            "mentions/cit.md": (
+                "- **Withholding tax on dividends** - 10%\n"
+                "- **Withholding tax on royalties** - 10%, and management "
+                "service fees are dealt with separately\n"
+            ),
+        }, expect_code=1)
+        self.assertIn("naming only classic heads: 2", output)
+        self.assertIn("nothing else anywhere (the queue): 1", output)
+        self.assertIn("bullet body (triage first): 1", output)
+        self.assertRegex(output, r"queue:\s+bare\b")
+        self.assertRegex(output, r"triage:\s+mentions\s+body mentions services")
 
     def test_withholding_scope_ignores_prose_and_cross_references(self):
         # Prose naming every head is not a charge, and a withholding label that
@@ -75,7 +98,7 @@ class FactCheckerTests(unittest.TestCase):
                 "- **Withholding tax on insurance premiums** - 4%\n"
             ),
         })
-        self.assertIn("naming only classic heads (the queue): 0", output)
+        self.assertIn("naming only classic heads: 0", output)
         # only the two labelled bullets that commit to a rate are counted, so
         # the interest and royalties named in the prose do not appear
         self.assertRegex(output, r"\bbroad\s+dividends, insurance\b")
