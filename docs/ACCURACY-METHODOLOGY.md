@@ -61,12 +61,18 @@ jurisdiction at a time. This section records how far that has got.
 | Standard VAT / GST rate | 157 of 157 jurisdictions stating one | 6 | Fiji, India, Kazakhstan, Zimbabwe, Malawi, Maldives |
 | Headline corporate rate | ~135 jurisdictions | 3 | Lithuania, Cyprus, Portugal |
 | Annual return filing deadline | 20 of the 200 jurisdictions stating one | 7 | Italy, Greece, Armenia, Cyprus, Finland, Australia, Norway |
+| VAT/GST registration threshold | 11 of the 102 stating one | 2 | Egypt, Albania |
 
 The deadline pass has covered 20 jurisdictions of 200. Nobody has run an external
 pass over anything else. That leaves payroll rates and thresholds, registration
 and filing thresholds, penalty and interest rates, social-contribution bands,
 capital allowances, withholding rates, form names and statutory citations. All
 of them move on the same annual cycle as the fields above.
+
+The threshold column is the newest and has the same split as the deadline one.
+Reading it for odd rows found Egypt and Albania; a random draw of ten found only
+Albania. Both errors were a guide stating a figure the jurisdiction had already
+changed, and in both a sibling guide in the same pack had it right.
 
 ### What the deadline pass has found so far
 

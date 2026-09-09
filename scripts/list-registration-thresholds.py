@@ -25,6 +25,34 @@ the compulsory ceiling, and in the EU a domestic threshold beside the 100,000
 EUR cross-border SME figure. And a threshold that is moving gets stated twice on
 purpose, with dates, which is the guide doing its job.
 
+Checked against an outside source so far. Two errors in eleven jurisdictions.
+
+  * Egypt     WRONG, found by reading the column. Resolution No. 281 of 2025
+              halved the threshold from EGP 500,000 to EGP 250,000 with effect
+              from 1 January 2026, registration due by 31 March 2026 for anyone
+              over it on 2025 revenue. eg-formation and eg-bookkeeping had the
+              new figure; egypt-vat and eg-sme-tax did not.
+  * Albania   WRONG by a factor of two. albania-tax-optimization gave the VAT
+              threshold as ALL 5,000,000 (~EUR 40k) in four places, one of them
+              a prohibition reading "NEVER ignore the ALL 5m VAT threshold".
+              It is ALL 10,000,000, about EUR 96,200, with 15 days to apply.
+              albania-income-tax had it right.
+
+Random tranche of ten, drawn seed 20260909 from the 97 jurisdictions with a row.
+Albania was the only error in it. Correct: Barbados BBD 200,000 (its BBD
+16,666.67 is the same figure per month), Bosnia BAM 100,000 raised from 50,000
+on 2 December 2023, Cameroon FCFA 100M for the regime reel and 50-100M for the
+simplifie, Colombia 3,500 UVT stated as COP 174,296,500 and dated to 2025,
+Ireland EUR 42,500 for services and EUR 85,000 for goods, Nepal NPR 5,000,000
+for goods and 3,000,000 for services raised from 2,000,000 on 16 July 2024,
+Tajikistan TJS 1,000,000, Tonga TOP 100,000.
+
+Paraguay was in the draw and is not this field. Its row comes from
+paraguay-payroll and is the PYG 80M IRP registration threshold, an income tax.
+The guide is right; the column is reading past its own subject.
+
+Still open: 102 jurisdictions use this wording and 11 have been checked.
+
 Usage: python3 scripts/list-registration-thresholds.py [--selftest]
 """
 import os, re, sys, collections

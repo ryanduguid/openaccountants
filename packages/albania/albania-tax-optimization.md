@@ -29,7 +29,7 @@ Albania Tax Optimization Skill v0.1
 | Country | Republic of Albania |
 | Currency | ALL (lek) |
 | Headline lever | **0% PIT** for self-employed / small business with gross income ≤ **ALL 14,000,000** — until 31 Dec 2029 |
-| VAT threshold | ALL 5,000,000 (~€40k) |
+| VAT threshold | **ALL 10,000,000** (~EUR 96,200); register within 15 days of crossing it |
 | Self-employed contributions | ~24.4% combined |
 | Anti-avoidance | Freelancer single-client reclassification rule |
 
@@ -41,7 +41,7 @@ Albania Tax Optimization Skill v0.1
 - **Simplified profit tax for small business** — 0% percent (small business turnover ≤ ALL 8,000,000)  _(Tatime)_
 - **Above ALL 14m threshold** — Above ALL 14m: standard rates apply (progressive PIT 13%/23% bands; corporate income tax). [RESEARCH GAP — reviewer to confirm the exact above-threshold PIT/CIT rates against `albania-income-tax.md`.]  _(albania-income-tax.md)_
 
-This makes Albania extremely efficient for profitable solo/micro service businesses under the cap — but social contributions (~24.4%) and VAT (above ALL 5m) still apply.
+This makes Albania extremely efficient for profitable solo/micro service businesses under the cap — but social contributions (~24.4%) and VAT (above **ALL 10m**) still apply.
 
 ## Section 3 -- The Freelancer Single-Client Rule (key constraint)
 
@@ -54,7 +54,7 @@ This makes Albania extremely efficient for profitable solo/micro service busines
 ## Section 4 -- Red Lines (do not cross)
 
 - **Single-client / few-client reclassification** — Single-client / few-client reclassification (Section 3) — the main risk.
-- **Mandatory VAT registration** — VAT registration is mandatory above ALL 5m turnover — don't ignore it.
+- **Mandatory VAT registration** — VAT registration is mandatory above **ALL 10m** of rolling 12-month turnover, and the application is due within 15 days of crossing it.
 - **Time-limited regime** — The 0% regime is time-limited (to 2029) and income-capped — model the cliff at ALL 14m and the 2030 reversion.
 - **No fragmentation without substance** — Don't fragment one business across entities to stay under the cap without substance.
 
@@ -62,7 +62,7 @@ This makes Albania extremely efficient for profitable solo/micro service busines
 
 - **Prohibition 1** — NEVER present the 0% regime without the ALL 14m cap and the 2029 sunset.
 - **Prohibition 2** — NEVER present single-client freelancing as safe self-employment (unless the non-resident exception genuinely applies).
-- **Prohibition 3** — NEVER ignore the ALL 5m VAT threshold or the ~24.4% contributions.
+- **Prohibition 3** — NEVER ignore the **ALL 10m** VAT threshold or the ~24.4% contributions.
 - **Prohibition 4** — NEVER contradict the rates in `albania-income-tax.md` / `albania-social-contributions.md`.
 - **Prohibition 5** — NEVER present [RESEARCH GAP] figures as confirmed, nor optimisation as definitive advice — route to a licensed Albanian tax adviser.
 
