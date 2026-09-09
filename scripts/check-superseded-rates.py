@@ -107,6 +107,14 @@ def superseded_in(line):
         others = [x for x in PCT.findall(line) if x != new]
         if len(set(others)) == 1:
             out[others[0]] = new
+    # "12.5% from 1 August 2025. Before that 15%" names the old rate but no verb,
+    # so nothing above sets the new one and the report says "(abolished)". Take the
+    # single other percentage in the line instead.
+    for o, n in list(out.items()):
+        if n is None:
+            others = {x for x in PCT.findall(line) if x != o}
+            if len(others) == 1:
+                out[o] = others.pop()
     return {o: n for o, n in out.items() if o != n}
 
 
@@ -139,6 +147,34 @@ def jurisdiction_of(path):
     if len(parts) > 2 and parts[0] == 'skills' and parts[1] == 'us-states':
         return 'us-' + parts[2]
     return None
+
+
+
+def selftest():
+    """Assert the detector still finds the four rate changes it was built from.
+
+    An earlier version reported zero leads corpus-wide and that looked like good
+    news. One pattern captured the new rate but had no group for the old one, so
+    every match was discarded in silence. A later version knew "rise", "rises"
+    and "risen" but not "rising", and Zimbabwe fell through the missing letters.
+    Both times the script was clean and the corpus was not. Run this before
+    trusting a zero.
+    """
+    cases = [
+        ("standard VAT rate is 12% in 2025 (rises to 16% from 1 January 2026)", "12", "16"),
+        ("Value Added Tax applies, standard rate 15% in 2025 (rising to 15.5% from 1 January 2026)", "15", "15.5"),
+        ("| Standard rate | **12.5%** from 1 August 2025. Before that **15%** (1 Aug 2023 - 31 Jul 2025) |", "15", "12.5"),
+        ("Former 12% and 28% slabs abolished 22 Sep 2025. Items moved to 5% or 18% respectively.", "12", None),
+        ("raised the standard rate from 17% to 18% on 1 July 2024", "17", "18"),
+    ]
+    for line, old, new in cases:
+        got = superseded_in(line)
+        assert old in got, 'missed the superseded rate in: %s' % line
+        if new is not None:
+            assert got[old] == new, 'wrong replacement for %s in %r: got %r' % (old, line, got[old])
+    # a sector rate change must not supersede the standard rate
+    assert SECTOR.search("residential electricity GCT reduced from 15% to 7% (May 2025)")
+    print('selftest: %d cases pass' % len(cases))
 
 
 def main():
@@ -190,4 +226,7 @@ def main():
     print('\nsuperseded-rate leads: %d' % hits)
 
 
-main()
+if '--selftest' in sys.argv:
+    selftest()
+else:
+    main()
