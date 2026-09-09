@@ -169,7 +169,7 @@ Before computing, you MUST know:
 | Obligation | Detail |
 | --- | --- |
 | Form | Dichiarazione IRAP (filed with income tax return) |
-| Deadline | Same as Redditi PF/SP: **31 October** of the following year (2 November 2026, as 31 October is a Saturday) |
+| Deadline | Same as Redditi PF/SP: **30 November** of the following year |
 | Filing | Telematic (via Entratel or Fisconline) |
 
 ## Step 7: Tax Deductibility of IRAP [T1]

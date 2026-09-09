@@ -20,7 +20,7 @@ Uruguay operates a territorial-source tax system administered by the Direccion G
 - **National tax authority** — Direccion General Impositiva (DGI)  _([[Direccion General Impositiva](https://www.gub.uy/direccion-general-impositiva)](https://www.gub.uy/direccion-general-impositiva))_
 - **Social security authority** — Banco de Prevision Social (BPS)  _([[Banco de Prevision Social](https://www.bps.gub.uy)](https://www.bps.gub.uy))_
 - **Basis of taxation** — Territorial / source-based — Uruguay-source income is taxed; most foreign-source income is exempt (with limited exceptions, e.g. certain foreign capital income of resident individuals)  _(Titulo 7 Texto Ordenado 1996 (IRPF))_
-- **Base de Prestaciones y Contribuciones (BPC) — indexing unit** — UYU 6,864 per month for 2026 (+4.38%, from 1 January); UYU 6,576 for 2025. Nearly every Uruguayan threshold is a BPC multiple, so all of them move on 1 January UYU  _(Decreto N° 11/026 (BPC 2026); Decreto N° 5/025 (BPC 2025))_
+- **Base de Prestaciones y Contribuciones (BPC) — indexing unit** — UYU 6,576 per month for 2025 (UYU 6,864 for 2026) UYU  _(Decreto del Poder Ejecutivo - valor de la BPC 2025)_
 - **Headline personal income tax (IRPF) top rate** — 36% on the top labour-income band; capital income generally a flat 12% %  _(Titulo 7 Texto Ordenado 1996 (IRPF))_
 - **Headline corporate income tax (IRAE) rate** — 25% %  _(Titulo 4 Texto Ordenado 1996 (IRAE))_
 - **Does Uruguay have a VAT/GST?** — Yes — Impuesto al Valor Agregado (IVA), standard rate 22% %  _(Titulo 10 Texto Ordenado 1996 (IVA))_

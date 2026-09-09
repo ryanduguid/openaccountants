@@ -4,8 +4,7 @@ description: Use this skill whenever asked about Uruguay personal income tax (IR
 version: 0.1
 jurisdiction: UY
 tax_year: 2025
-tax_year_notes: "2025 (2026 scale, BPC and filing calendar stated alongside)"
-last_updated: 2026-09-09
+last_updated: 2026-07-13
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -28,40 +27,21 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Tax | IRPF -- Impuesto a la Renta de las Personas Físicas |
 | Currency | UYU (Uruguayan peso, $U) only |
 | Tax year | Calendar year (1 January -- 31 December) |
-| Reference unit | BPC (Base de Prestaciones y Contribuciones) = **UYU 6,576/month for 2025** (Decreto N° 5/025, 10 Jan 2025) and **UYU 6,864/month for 2026** (+4.38%, from 1 Jan 2026, Decreto N° 11/026). Every peso figure in this skill is a BPC multiple — take it from the BPC of the year being taxed |
+| Reference unit | BPC (Base de Prestaciones y Contribuciones) = UYU 6,576/month for 2025 (Decreto N° 5/025, 10 Jan 2025) |
 | Tax authority (income tax) | DGI -- Dirección General Impositiva |
 | Social security authority | BPS -- Banco de Previsión Social |
 | Basis of taxation | Quasi-territorial -- Uruguayan-source income; limited foreign capital income for residents (PwC Tax Summaries, TY2025) |
 | System | Dual / scheduler -- Category I (capital) and Category II (labour) taxed separately |
 | Filing portal | DGI servicios en línea |
 | Annual return forms | Formulario 1102 (individual); Formulario 1103 (núcleo familiar) (EY UY, May 2025) |
-| Filing window (FY2025 filed 2026) | 29 June -- 31 August 2026, one range for every taxpayer: DGI dropped the last-digit staggering for the 2026 campaign; refunds from 28 July 2026. (FY2024 filed 2025 ran 7 July -- 28 August 2025, staggered by RUT/CI ending.) (DGI, "Calendario de la Campaña 2026 de IRPF"; EY UY) |
+| Filing window (FY2024 filed 2025) | 7 July -- 28 August 2025, staggered by RUT/CI ending (EY UY; DGI vencimientos 2025) |
 | Validated by | Pending -- requires sign-off by a Uruguayan contador público |
 | Validation date | Pending |
 | Skill version | 0.1 |
 
 ### IRPF Category II -- Labour Income (Rentas del Trabajo) -- Resident, Individual Filing
 
-**The band widths are fixed in BPC and only the BPC moves.** The multiples
-84/120/180/360/600/900/1,380 and the rates 0/10/15/24/25/27/31/36 are unchanged
-for 2026; the peso columns below are those multiples times the BPC of the year.
-Both years are live in the second half of 2026: the FY2025 return is filed on
-the 2025 scale, and current-year withholding runs on the 2026 scale.
-
-**Category II resident individual progressive scale -- 2026 (BPC = UYU 6,864)**
-
-| Annual taxable income (UYU) | BPC multiple | Rate | Cumulative tax at top of band (UYU) |
-| --- | --- | --- | --- |
-| 0 -- 576,576 | 0 -- 84 | 0% | 0.00 |
-| 576,576 -- 823,680 | 84 -- 120 | 10% | 24,710.40 |
-| 823,680 -- 1,235,520 | 120 -- 180 | 15% | 86,486.40 |
-| 1,235,520 -- 2,471,040 | 180 -- 360 | 24% | 383,011.20 |
-| 2,471,040 -- 4,118,400 | 360 -- 600 | 25% | 794,851.20 |
-| 4,118,400 -- 6,177,600 | 600 -- 900 | 27% | 1,350,835.20 |
-| 6,177,600 -- 9,472,320 | 900 -- 1,380 | 31% | 2,372,198.40 |
-| Over 9,472,320 | > 1,380 | 36% | -- |
-
-**Category II resident individual progressive scale -- 2025 (BPC = UYU 6,576)**  _(PwC Tax Summaries (Uruguay, individual taxes, TY2025); brackets are BPC multiples (84/120/180/360/600/900/1,380 BPC) confirmed against BPC = UYU 6,576 and corroborated by BPS Comunicado R 2/2025.)_
+**Category II resident individual progressive scale**  _(PwC Tax Summaries (Uruguay, individual taxes, TY2025); brackets are BPC multiples (84/120/180/360/600/900/1,380 BPC) confirmed against BPC = UYU 6,576 and corroborated by BPS Comunicado R 2/2025.)_
 
 | Annual taxable income (UYU) | BPC multiple | Rate | Cumulative tax at top of band (UYU) |
 | --- | --- | --- | --- |
@@ -74,29 +54,21 @@ the 2025 scale, and current-year withholding runs on the 2026 scale.
 | 5,918,400 -- 9,074,880 | 900 -- 1,380 | 31% | 2,272,665.60 |
 | Over 9,074,880 | > 1,380 | 36% | -- |
 
-Progressive scale, 8 brackets, 0%–36%, in both years. Cumulative figures recomputed band-by-band from the BPC multiples (see Section 5.1); each 2026 figure is the 2025 figure times 6,864/6,576.
-
-> **A warning about secondary tables for 2026.** At least one Uruguayan advisory
-> site publishes a 2026 Category II scale with nine bands and new 20% and 22%
-> rates at boundaries of 24, 36, 54 and 80 BPC. That structure could not be
-> traced to any statute, the Ley de Presupuesto Nacional 2025-2029 (Ley 20.446)
-> made no change to the labour-income scale, and its own peso columns do not
-> reconcile to its own BPC multiples. DGI-sourced tables for 2026 carry the eight
-> bands above. Do not adopt the nine-band scale.
+Progressive scale, 8 brackets, 0%–36%. Figures = annual UYU, TY2025 (BPC = UYU 6,576). Source: PwC Tax Summaries (Uruguay, individual taxes, TY2025); brackets are BPC multiples (84/120/180/360/600/900/1,380 BPC) confirmed against BPC = UYU 6,576 and corroborated by BPS Comunicado R 2/2025. Cumulative figures recomputed band-by-band (see Section 5.1).
 
 ### IRPF Category II -- Núcleo Familiar (Family-Unit Filing)
 
 **Núcleo familiar progressive scale**  _(PwC Tax Summaries (Uruguay, individual).)_
 
-| BPC multiple | Rate | Annual taxable income, 2026 (BPC 6,864) | Annual taxable income, 2025 (BPC 6,576) |
-| --- | --- | --- | --- |
-| 0 -- 168 | 0% | 0 -- 1,153,152 | 0 -- 1,104,768 |
-| 168 -- 180 | 15% | 1,153,152 -- 1,235,520 | 1,104,768 -- 1,183,680 |
-| 180 -- 360 | 24% | 1,235,520 -- 2,471,040 | 1,183,680 -- 2,367,360 |
-| 360 -- 600 | 25% | 2,471,040 -- 4,118,400 | 2,367,360 -- 3,945,600 |
-| 600 -- 900 | 27% | 4,118,400 -- 6,177,600 | 3,945,600 -- 5,918,400 |
-| 900 -- 1,380 | 31% | 6,177,600 -- 9,472,320 | 5,918,400 -- 9,074,880 |
-| > 1,380 | 36% | Over 9,472,320 | Over 9,074,880 |
+| Annual taxable income (UYU) | BPC multiple | Rate |
+| --- | --- | --- |
+| 0 -- 1,104,768 | 0 -- 168 | 0% |
+| 1,104,768 -- 1,183,680 | 168 -- 180 | 15% |
+| 1,183,680 -- 2,367,360 | 180 -- 360 | 24% |
+| 2,367,360 -- 3,945,600 | 360 -- 600 | 25% |
+| 3,945,600 -- 5,918,400 | 600 -- 900 | 27% |
+| 5,918,400 -- 9,074,880 | 900 -- 1,380 | 31% |
+| Over 9,074,880 | > 1,380 | 36% |
 
 Optional when all members earn ≥ 12 minimum salaries; the lowest non-taxable band roughly doubles. Note: the 10% band is collapsed in family-unit filing; income above the 0% band enters at 15% then follows the same 24%–36% scale.
 
@@ -171,7 +143,7 @@ This is the deterministic pre-classifier. When a bank statement transaction matc
 
 ### 3.2 Deductible / Credit Items (Debits feeding the deduction credit)
 
-The Uruguayan IRPF does NOT subtract deductions from the base; allowable deductions are summed and multiplied by the deduction rate (14% or 8%), and that credit reduces gross tax (Section 5.3). Capture these for the credit calculation, not as base reductions.
+The Uruguayan IRPF does NOT subtract deductions from the base; allowable deductions are summed and multiplied by the deduction rate (8% or 10%), and that credit reduces gross tax (Section 5.3). Capture these for the credit calculation, not as base reductions.
 
 **Deductible/credit items table**
 
@@ -246,7 +218,7 @@ These are NOT income tax but are deductible items feeding the IRPF deduction cre
 | > 2.5 BPC | with spouse, with children | 8% |
 
 - **Employer FONASA rate** — 5% (plus Complemento de Cuota Mutual where applicable)  _(BPS, Tasas FONASA (bps.gub.uy/10314/tasas-fonasa.html).)_
-- **2.5 BPC monthly threshold value** — UYU 17,160/month in 2026 (at BPC 6,864) and UYU 16,440/month in 2025 (at BPC 6,576) UYU  _(BPS, Tasas FONASA (bps.gub.uy/10314/tasas-fonasa.html); Decreto N° 11/026 for the 2026 BPC.)_
+- **2.5 BPC monthly threshold value** — UYU 16,440/month UYU (at BPC 6,576)  _(BPS, Tasas FONASA (bps.gub.uy/10314/tasas-fonasa.html).)_
 
 ### 4.3 Other BPS Funds
 
@@ -276,14 +248,14 @@ Employee total range arithmetic: minimum = 15 + 3 + 0.10 = 18.10%; maximum = 15 
 
 | Item | Value |
 | --- | --- |
-| Max nominal monthly income subject to jubilatorio | UYU 288,836/month in 2026; UYU 272,564/month in 2025 |
+| Max nominal monthly income subject to jubilatorio | UYU 272,564/month |
 | Max personal jubilatorio contribution | UYU 40,885/month |
 
-The ceiling is not a BPC multiple — BPS sets it separately and it rose 5.97% for 2026, against 4.38% for the BPC — so it cannot be derived and has to be read off the BPS table each year. [RESEARCH GAP — reviewer to confirm both figures against the BPS "topes de cotización" table. The 2025 value (UYU 272,564 income / UYU 40,885 contribution) was found only in a secondary calculator (misalario.uy); the 2026 value of UYU 288,836 is corroborated by two independent Uruguayan payroll sources but was likewise not read off a BPS page.]
+[RESEARCH GAP — reviewer to confirm the 2025 tope jubilatorio (UYU 272,564 income / UYU 40,885 contribution) against the BPS official ceiling table; this figure was found only in a secondary calculator (misalario.uy) and must be re-verified before reliance.]
 
 ### 4.6 Minimum Wage
 
-- **Salario Mínimo Nacional** — UYU 23,604/month from 1 Jan 2025 (+6%); UYU 24,572/month from 1 Jan 2026 (+4.1%) and UYU 25,383/month from 1 Jul 2026 (+3.3%), a 7.54% rise decreed in two steps. Used as the reference for the '12 minimum salaries' núcleo-familiar eligibility test, so the test moves mid-year in 2026 UYU  _(MTSS, "Salario Mínimo Nacional: $ 24.572 desde el 1.º de enero de 2026"; Decreto N° 319/025 of 26 Dec 2025)_
+- **Salario Mínimo Nacional 2025** — UYU 23,604/month UYU (effective 1 Jan 2025 (+6%); used as reference for the '12 minimum salaries' núcleo-familiar eligibility test)  _(MTSS (gub.uy/ministerio-trabajo-seguridad-social))_
 
 ### 5.1 Category II Progressive Tax -- Cumulative Computation
 
@@ -308,10 +280,8 @@ The ceiling is not a BPC multiple — BPS sets it separately and it rose 5.97% f
 
 ### 5.3 The Deduction Credit Mechanic (Key Uruguayan Specificity)
 
-- **Deduction credit mechanic** — Uruguayan IRPF does NOT subtract deductions from the taxable base. Instead: 1. Sum all allowable deductions (personal BPS, FONASA, FRL, fictitious child deduction, 6% of housing rent, capped mortgage interest). 2. Multiply that sum by the deduction rate: **14%** if annual labour income is at or below the 15 BPC/month equivalent (180 BPC a year, excluding aguinaldo and salario vacacional); **8%** above that threshold. 3. Subtract the resulting credit from the gross Category II tax (from Section 5.1).  _(BPS Comunicado R 2/2025; etti.edu.uy. This guide previously stated 10% for the lower band — see the note below.)_
-
-> **Corrected: the low-income deduction rate is 14%, not 10%.** Earlier versions of this file put the lower rate at 10%, against 14% in `uruguay-payroll` and `uruguay-social-contributions`, which cite the BPS comunicado. Outside sources give 14% and 8%, and the source this file cited as corroboration (etti.edu.uy) itself says "8% o 14%". A 10% rate understates the credit by four points of the deduction sum and so overstates the tax.
-- **15 BPC/month equivalent threshold** — UYU 102,960/month in 2026 (at BPC 6,864) and UYU 98,640/month in 2025 (at BPC 6,576) UYU  _(certificadodeingresos.uy (unipersonal guide 2025); corroborated by etti.edu.uy.)_
+- **Deduction credit mechanic** — Uruguayan IRPF does NOT subtract deductions from the taxable base. Instead: 1. Sum all allowable deductions (personal BPS, FONASA, FRL, fictitious child deduction, 6% of housing rent, capped mortgage interest). 2. Multiply that sum by the deduction rate: 10% if annual labour income ≤ the 15 BPC/month equivalent; 8% if income above that threshold. 3. Subtract the resulting credit from the gross Category II tax (from Section 5.1).  _(certificadodeingresos.uy (unipersonal guide 2025); corroborated by etti.edu.uy.)_
+- **15 BPC/month equivalent threshold** — UYU 98,640/month UYU (at BPC 6,576)  _(certificadodeingresos.uy (unipersonal guide 2025); corroborated by etti.edu.uy.)_
 
 [RESEARCH GAP — reviewer to confirm the 8%/10% threshold and the exact annual mechanic against DGI; some 2025 payroll guides phrase the monthly mechanic as 14%/8%.]
 
@@ -323,12 +293,12 @@ The ceiling is not a BPC multiple — BPS sets it separately and it rose 5.97% f
 | --- | --- |
 | Personal BPS jubilatorio contribution | Actual (15%) |
 | FONASA + FRL personal contributions | Actual |
-| Fictitious deduction per dependent child | 13 BPC/year (UYU 89,232 at BPC 6,864 for 2026; UYU 85,488 at BPC 6,576 for 2025) |
-| Fictitious deduction per disabled child | 26 BPC/year (UYU 178,464 at BPC 6,864 for 2026; UYU 170,976 at BPC 6,576 for 2025) |
+| Fictitious deduction per dependent child | 13 BPC/year (UYU 85,488 at BPC 6,576) |
+| Fictitious deduction per disabled child | 26 BPC/year (UYU 170,976 at BPC 6,576) |
 | Housing rent | 6% of rent paid |
 | Mortgage interest | Capped (see DGI cap) |
 
-Peso conversions for 2026 are 13 BPC × 6,864 = 89,232 and 26 BPC × 6,864 = 178,464; for 2025, 13 × 6,576 = 85,488 and 26 × 6,576 = 170,976. [RESEARCH GAP — reviewer to confirm the mortgage-interest cap amount against DGI.]
+Peso conversions are 13 BPC × 6,576 = 85,488 and 26 BPC × 6,576 = 170,976. [RESEARCH GAP — reviewer to confirm the mortgage-interest cap amount against DGI.]
 
 ### 5.5 Self-Employed / Independent Regimes
 
@@ -340,7 +310,7 @@ Peso conversions for 2026 are 13 BPC × 6,864 = 89,232 and 26 BPC × 6,864 = 178
 | Unipersonal owner without employees | Minimum fictitious base (ficto) = 11 BPC |
 | Monotributo (micro-business simplified) | Replaces most national taxes; e.g. 8% on 1 BPC without medical coverage; replaces IRPF/IVA below revenue caps |
 
-[RESEARCH GAP — reviewer to confirm the unipersonal ficto minimum peso value; the source's UYU 12,094 figure appears to use a prior BPC. 11 BPC = UYU 75,504/year at the 2026 BPC and UYU 72,336/year at the 2025 BPC, but the monthly ficto base differs — re-verify against BPS aportes mínimos.]
+[RESEARCH GAP — reviewer to confirm the unipersonal ficto minimum peso value; the source's UYU 12,094 figure appears to use a prior BPC. At BPC 6,576, 11 BPC = UYU 72,336/year, but the monthly ficto base differs — re-verify against BPS aportes mínimos.]
 
 ### 5.6 Non-Resident Income (IRNR) -- Reference Only
 
@@ -353,7 +323,7 @@ Peso conversions for 2026 are 13 BPC × 6,864 = 89,232 and 26 BPC × 6,864 = 178
 | Item | Detail |
 | --- | --- |
 | Forms | Formulario 1102 (individual); Formulario 1103 (núcleo familiar) |
-| Filing window (FY2025 / 2026) | 29 June -- 31 August 2026, unstaggered (FY2024 / 2025 ran 7 July -- 28 August 2025, staggered by RUT/CI ending) |
+| Filing window (FY2024 / 2025) | 7 July -- 28 August 2025, staggered by RUT/CI ending |
 | Balance payment | Up to 5 equal monthly instalments; 1st on 29 Aug 2025, 5th by 30 Dec 2025 |
 | Pure-wage single-employer earners | Generally NOT required to file -- employer withholds; automatic devolution |
 
@@ -414,8 +384,7 @@ Peso conversions for 2026 are 13 BPC × 6,864 = 89,232 and 26 BPC × 6,864 = 178
 ## Section 7 -- Excel Working Paper Template
 
 URUGUAY IRPF -- WORKING PAPER
-Tax Year: ______  Fill the BPC from the year being taxed:
-  2026 (BPC = UYU 6,864/month)   2025 (BPC = UYU 6,576/month)
+Tax Year: 2025  (BPC = UYU 6,576/month)
 Client: ___________________________
 Filing unit: Individual (F.1102) / Núcleo Familiar (F.1103)
 
@@ -547,7 +516,6 @@ ONBOARDING QUESTIONS -- URUGUAY IRPF
 | --- | --- | --- |
 | 2024 | 6,177 | Secondary (misalario.uy / datosUruguay) |
 | 2025 | 6,576 | Decreto N° 5/025 (primary) |
-| 2026 | 6,864 | Decreto N° 11/026; +4.38%, from 1 Jan 2026 |
 | 2026 | 6,864 | Secondary (misalario.uy / datosUruguay) |
 
 Only the 2025 value is decree-confirmed; 2024 and 2026 are secondary citations.
@@ -587,7 +555,7 @@ Expected: 7.5% + 5% + 0.10% + 0.025% = 12.625%.
 - NEVER apply the resident IRPF scale without confirming tax residency
 - NEVER pool Category I (capital) and Category II (labour) income -- they are taxed separately
 - NEVER subtract deductions from the IRPF base -- deductions feed a credit (sum × 8% or 10%) against gross tax
-- NEVER assume the 14% deduction rate -- default to 8% until the income is confirmed to be at or below the 15 BPC/month equivalent
+- NEVER assume the 10% deduction rate -- default to 8% until the income threshold is confirmed
 - NEVER apply a FONASA rate above 3% without confirming income level and family situation
 - NEVER apply monotributo without confirming revenue-cap eligibility
 - NEVER treat IRNR (non-resident) or IRAE (corporate) income with this skill -- escalate

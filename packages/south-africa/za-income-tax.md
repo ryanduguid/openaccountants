@@ -30,7 +30,6 @@ Reviewed against the cited tax authorities by Werner Britz on 2026-06-12. Items 
 - **Currency** — ZAR only
 - **Tax year** — 1 March - 28 February  _(Income Tax Act s 1, definition)_
 - **Return form** — ITR12
-- **Filing season** — Set by SARS each year and published before it opens. For the 2026 year of assessment (1 March 2025 to 28 February 2026): auto-assessment notices 1 to 12 July 2026, manual filing opens 13 July, and the **non-provisional deadline is 23 October 2026**. Provisional taxpayers and trusts have until **22 January 2027**. Disagreeing with an auto-assessment does not extend either date: the corrected ITR12 is due on the same deadline  _(SARS Filing Season 2026 notice)_
 - **Provisional tax** — IRP6 (1st: 31 Aug, 2nd: last day Feb, 3rd voluntary: 30 Sep)  _(Income Tax Act Fourth Schedule)_
 - **Primary rebate** — 2026/27 year of assessment: R17,820. 2025/26 was R17,235 but we are now in YOA 2027 from 1 March 2026. All rebates and thresholds in the skill need to be updated to 2026/27.  _(SARS Budget 2026 Tax Guide)_
 - **Secondary rebate (65+)** — 2026/27: R9,768.  _(SARS Budget 2026 Tax Guide)_

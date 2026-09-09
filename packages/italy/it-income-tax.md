@@ -28,7 +28,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Primary legislation | DPR 917/1986 (TUIR -- Testo Unico delle Imposte sui Redditi) |
 | Tax authority | Agenzia delle Entrate (AdE) |
 | Filing portal | Fisconline / Entratel (dichiarazioni.agenziaentrate.it) |
-| Filing deadline | 31 October (online Modello Redditi PF; 2 November 2026 as 31 October is a Saturday); 30 September (Modello 730). 30 June is the **payment** date, not a filing date |
+| Filing deadline | 30 June (online Modello Redditi PF); 30 November (Modello 730 via sostituto) |
 | Contributor | Open Accountants Community |
 | Validated by | Pending -- requires sign-off by a qualified Italian Commercialista |
 | Skill version | 2.0 |
@@ -298,23 +298,10 @@ Roberto is an architect enrolled in Inarcassa. Gestione Separata does NOT apply.
 
 | Item | Deadline |
 | --- | --- |
-| Modello Redditi PF (online) | **31 October** of the following year (2 November 2026, because 31 October 2026 is a Saturday) |
-| Modello 730 (Agenzia telematic, sostituto, CAF or professional) | **30 September** of the following year |
+| Modello Redditi PF (online) | 30 June of following year |
 | IRPEF saldo + 1st acconto (40%) | 30 June |
 | 2nd acconto IRPEF (60%) | 30 November |
-
-**30 June is a payment date.** The balance and first instalment fall due then;
-it is not when the return goes in, and this guide previously carried it in the
-Modello Redditi PF row. The Redditi PF submission date moved to 31 October from
-the 2024 season, and 30 November was the date before that.
-
-**The 30 September 730 deadline is absolute.** After it the 730 cannot be
-filed at all, and a taxpayer who misses it must fall back to the Modello
-Redditi PF by 31 October. Do not reassure a client that a late 730 can still
-go in.
-
-_(Agenzia delle Entrate, "Quando e come presentare il 730" and "When and how to
-submit a Redditi PF form")_
+| Modello 730 (via sostituto) | 30 November |
 
 ### 5.11 Penalties
 

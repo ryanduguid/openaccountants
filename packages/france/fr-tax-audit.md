@@ -144,7 +144,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 | Check | Detail |
 | --- | --- |
-| Threshold monitoring | Services: EUR 37,500 (tolerance EUR 41,250). Annualise if short year |
+| Threshold monitoring | Services: EUR 36,800 (tolerance EUR 39,100). Annualise if short year |
 | Invoice mention | "TVA non applicable, art. 293 B du CGI" |
 | Asset disposals | Subject to TVA or exempt? |
 | Intra-EU / extra-EU services | Autoliquidation (art. 283-2 CGI)? |

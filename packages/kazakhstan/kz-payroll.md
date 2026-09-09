@@ -32,7 +32,7 @@ depends_on:
 | Mandatory medical — employee (ВОСМС) | Employee | 2% |
 | Mandatory medical — employer (ОСМС) | Employer | 3% |
 | Social tax (СН) | Employer | ~9.5%, reduced by СО paid (verify) |
-| Currency / indexation | — | KZT; MRP (МРП) ₸4,325 and min wage (МЗП) ₸85,000 for 2026, both set by Law No. 239-VIII of 8 December 2025. Confirmed |
+| Currency / indexation | — | KZT; MRP (МРП) ₸4,325, min wage (МЗП) ₸85,000 for 2026 (verify) |
 
 | Field | Value |
 |---|---|

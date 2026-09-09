@@ -29,7 +29,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Supporting legislation | Tax Administration Act 1953; Medicare Levy Act 1986; Higher Education Support Act 2003 |
 | Tax authority | Australian Taxation Office (ATO) |
 | Filing portal | myTax (via myGov) or registered tax agent |
-| Filing deadline | 31 October following the 30 June year-end if self-lodged, **15 May** following that if lodged by a registered tax agent engaged before 31 October. For the 2024-25 year this guide covers: 31 October 2025 and 15 May 2026 |
+| Filing deadline | 31 October 2025 (self-lodged); May 2026 (tax agent) |
 | Contributor | Open Accountants Community |
 | Validated by | Pending -- Australian CPA/CA sign-off required |
 | Skill version | 2.0 |
@@ -260,7 +260,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Diminishing value** — Base value x (days held / 365) x (200% / effective life)  _(ITAA 1997 Div 40)_
 - **Prime cost (straight line)** — Cost x (days held / 365) x (100% / effective life)  _(ITAA 1997 Div 40)_
 - **Small business entity simplified depreciation** — Small business entity (turnover < $10M): can use simplified depreciation -- pool all assets over $20,000 at 15% first year, 30% thereafter.  _(ITAA 1997 Div 40)_
-- **Instant asset write-off** — Assets costing less than $20,000 can be immediately deducted by small business entities for **2024-25, the year this guide covers**. The threshold has moved almost every year and is not a constant: for assets first used from 1 July 2026 the standing legislated figure is **$1,000**, with a $20,000 permanence announced in the 2026-27 Budget and not yet enacted. Read the threshold off the year the asset was first used.  _(ITAA 1997 Div 40)_
+- **Instant asset write-off** — Assets costing less than $20,000 (2024-25) can be immediately deducted by small business entities. This threshold may change each year -- confirm for current year.  _(ITAA 1997 Div 40)_
 
 ### 5.4 Superannuation [T1]
 
@@ -287,7 +287,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 | Item | Value |
 | --- | --- |
-| Self-lodge deadline | 31 October following the year-end -- 31 October 2025 for the 2024-25 year this guide covers |
+| Self-lodge deadline | 31 October 2025 |
 | Tax agent deadline | Varies (typically March-May 2026) |
 | Failure to lodge on time | $313 per 28-day period, up to 5 periods ($1,565 max) |
 | Shortfall penalty (reasonable care not taken) | 25% of shortfall |

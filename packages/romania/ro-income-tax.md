@@ -334,7 +334,7 @@ Branches by method: sistem real or norma de venit. Includes CAS/CASS tier determ
 - NEVER forget to prorate for part-year
 - NEVER advise on crypto, international income, or transfer pricing
 - NEVER present calculations as definitive
-- NEVER use the EUR 250,000 micro threshold: it is EUR 100,000 from 1 January 2026
+- NEVER assume micro EUR 250,000 threshold is stable (drops to EUR 100,000 in 2026)
 
 ### Sources
 

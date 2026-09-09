@@ -3,7 +3,7 @@ name: ng-cit
 description: "Use this skill whenever asked about Nigerian Companies Income Tax (CIT) for a resident Nigerian company. Trigger on phrases like \"Nigeria CIT\", \"Companies Income Tax Nigeria\", \"FIRS CIT\", \"Nigeria Tax Act 2025 corporate\", \"NTA 2025\", \"CITA\", \"small company CIT Nigeria\", \"medium company tax Nigeria\", \"large company tax Nigeria\", \"Nigeria minimum tax\", \"development levy Nigeria\", \"TET Nigeria\", \"Pillar Two Nigeria\", \"Tax Pro-Max\", \"Nigeria capital allowances\", or \"Nigeria CIT return\". Covers the transitional 2025 regime under the legacy Companies Income Tax Act (CITA, Cap. C21 LFN 2004 as amended) AND the new Nigeria Tax Act 2025 (NTA 2025) regime taking effect 1 January 2026, including the small-company 0% rate (turnover ≤ ₦50M and asset base ≤ ₦250M under NTA s.202, professional services excluded), the flat 30% rate on every other company with the medium-company 20% band abolished, the unified 4% Development Levy replacing TET/NITDA/NASENI/Police Trust Fund, the 15% Minimum Effective Tax Rate for multinationals with consolidated revenue > €750M (Pillar Two), capital allowances under the Sixth Schedule, indefinite loss carry-forward, monthly minimum tax interaction, the 6-month annual filing deadline via FIRS Tax Pro-Max, and TIN registration. Out of scope: personal income tax (use ng-income-tax), VAT (use ng-vat-return / nigeria-vat), petroleum profits tax / hydrocarbon tax, upstream oil & gas under PIA 2021, banking and insurance sector returns, capital gains on share disposals beyond ordinary CIT scope, free trade zone enterprises, NEPZA / OGFZA regimes, transfer pricing controversy, and pioneer status / industrial development income tax relief processing. ALWAYS read this skill before touching any Nigerian corporate income tax work."
 jurisdiction: NG
 tax_year: 2025
-last_updated: 2026-09-09
+last_updated: 2026-07-13
 reviewed_by: Omolola Fasasi 
 review_status: current
 tier: 1
@@ -48,7 +48,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Tax year | Accounting year of the company (any 12-month period; first/final years may be shorter) |
 | Primary legislation (2025) | Companies Income Tax Act, Cap. C21 LFN 2004, as amended by Finance Acts 2019–2023 |
 | Primary legislation (2026+) | **Nigeria Tax Act 2025 (NTA 2025)** — signed by President Tinubu 26 June 2025; effective **1 January 2026** |
-| Tax authority | **Nigeria Revenue Service (NRS)** — the Federal Inland Revenue Service (FIRS) was renamed and re-established as the NRS by the Nigeria Revenue Service (Establishment) Act 2025, with effect from **1 January 2026**. Documents, circulars and assessments issued before that date keep the FIRS name and remain valid |
+| Tax authority | **FIRS** — Federal Inland Revenue Service |
 | Filing portal | **FIRS Tax Pro-Max** (taxpromax.firs.gov.ng) |
 | Annual return deadline | **6 months** after accounting year-end (Section 55 CITA / equivalent NTA 2025) |
 | Payment | With return, or in instalments up to filing deadline (FIRS approval) |
@@ -412,7 +412,7 @@ A valid **Taxpayer Identification Number (TIN)** issued by the Joint Tax Board /
 | Expense WREN test unclear | Disallow |
 | WHT credit certificate missing | Disallow until certificate produced |
 | Filing portal access uncertain | Confirm Tax Pro-Max enrolment before promising file dates |
-| NTA 2025 figure not covered by the published guidance | Label "verify against the Act and the Ministry of Finance General Guidelines (18 June 2026)"; do not carry a pre-2026 CITA figure forward silently |
+| NTA 2025 figure not yet published | Label "TBC — verify under NTA 2025 final implementing regulations" |
 
 ## Section 8 — Cross-References
 
@@ -452,7 +452,7 @@ When a topic spans skills (e.g., employee BIK with CIT deductibility and PAYE co
 
 - **Income Tax (Transfer Pricing) Regulations 2018** — TP documentation, declarations, CbCR.
 - **Companies Income Tax (Significant Economic Presence) Order 2020** — non-resident digital scope (out of scope here).
-- **General Guidelines for the implementation of the Tax Acts 2025** — published by the Federal Ministry of Finance on **18 June 2026**. They set the transition rule: liabilities, assessments, audits and disputes for periods before 1 January 2026 stay under the repealed laws, and returns for periods ending on or after that date run under the new framework. Subject-specific regulations beyond these guidelines should be checked against NRS publications before relying on a figure.
+- **NTA 2025 Implementing Regulations** — pending publication by FIRS / Ministry of Finance late 2025 / early 2026.
 
 **Administrative Guidance**
 
@@ -477,7 +477,7 @@ When a topic spans skills (e.g., employee BIK with CIT deductibility and PAYE co
 - NEVER apply a 25% or 27.5% CIT rate to any period. Those rates were proposed in the Nigeria Tax Bill and were not enacted.
 - NEVER skip TIN verification before filing.
 - NEVER advise late filing or late payment as a strategy — 10% penalty + interest applies.
-- NEVER present an NTA 2025 figure as definitive without cross-checking the Act itself and the Ministry of Finance General Guidelines of 18 June 2026 — and never treat "the regulations are pending" as a reason to fall back on a repealed CITA figure for a period from 1 January 2026.
+- NEVER present any NTA 2025 figure as definitive until cross-checked against published implementing regulations — label uncertain figures "TBC — verify under NTA 2025 final implementing regulations".
 - NEVER conflate CIT with PAYE — PAYE is monthly under PITA and is a separate skill (`ng-income-tax`).
 
 ## Disclaimer

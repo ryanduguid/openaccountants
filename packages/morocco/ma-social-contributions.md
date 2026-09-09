@@ -51,7 +51,7 @@ in the user's chosen language.
 | SMIG (reference) | **16.29 MAD/hour ≈ MAD 3,111.39/month** (Jan 2024 figure) *(verify current SMIG)* |
 | Auto-entrepreneur base | **50% of turnover (services)** / **20% of turnover (commercial)** *(verify)* |
 | Auto-entrepreneur minimum | **~MAD 300 / quarter (≈ MAD 1,200/year)**, even at zero turnover; annual range cited **MAD 1,200–14,400** *(verify)* |
-| Employee CNSS (total) | **27.83%** of gross — employer **21.09%** / employee **6.74%**, confirmed against the CNSS 2026 rate table |
+| Employee CNSS (total) | **~27.83%** of gross — employer **~21.09%** / employee **~6.74%** *(verify)* |
 | Employee CNSS ceiling | **MAD 6,000 / month** for capped (short/long-term) branches *(verify)* |
 | Uncapped employee branches | AMO, allocations familiales, taxe de formation professionnelle (whole salary) *(verify)* |
 | Filing & payment (TNS / AE) | **Quarterly**, online via cnss.ma / ae.gov.ma *(verify exact dates)* |

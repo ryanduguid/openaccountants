@@ -4,8 +4,7 @@ description: Use this skill whenever asked about Paraguay personal income tax (I
 version: 0.1
 jurisdiction: PY
 tax_year: 2025
-tax_year_notes: "2025 (minimum-wage table also stated at the 1 July 2026 level of PYG 3,044,000)"
-last_updated: 2026-09-09
+last_updated: 2026-07-13
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -262,7 +261,7 @@ Supermarket / private living expense. Not directly related to the taxed activity
 `10/01/2025 ; ITAU DEBITO ; IPS APORTE OBRERO ; ENERO 2025 ; -260,914 ; PYG`
 
 **Reasoning:**
-Employee IPS contribution (aporte obrero) of 9.0% on the legal minimum wage. This example is a pay period in the year to 30 June 2026, when the minimum wage was ₲2,899,048: 2,899,048 × 9.0% = ₲260,914.32 → ₲260,914. From 1 July 2026 the floor is ₲3,044,000 and the same 9% is ₲273,960. [PwC other-taxes; MTESS Res. 677/2025 and 670/2026] IPS is social security, recorded separately from the IRP deduction analysis; it is not a Box-style IRP expense line.
+Employee IPS contribution (aporte obrero) of 9.0% on the legal minimum wage of ₲2,899,048. Check: 2,899,048 × 9.0% = ₲260,914.32 → ₲260,914. [PwC other-taxes; MTESS Res. 677/2025] IPS is social security, recorded separately from the IRP deduction analysis; it is not a Box-style IRP expense line.
 
 **Classification:** IPS aporte obrero = ₲260,914. Record under social security, not as an IRP business deduction.
 
@@ -353,14 +352,13 @@ Transfer between the taxpayer's own accounts. Neither income nor expense. Exclud
 
 | Item | Amount (PYG) |
 | --- | --- |
-| Monthly minimum wage (Salario Mínimo Legal) | ₲3,044,000 from 1 Jul 2026 (+5%, Decreto N° 6225; MTESS Res. N° 670/2026); ₲2,899,048 from 1 Jul 2025 (MTESS Res. N° 677/2025). The adjustment falls in **July**, so a calendar year spans two floors |
-| Daily wage -- jornaleros (day-rate) | ₲117,077 from 1 Jul 2026; ₲111,502 before that |
-| Daily wage -- mensualizados | ₲101,467 from 1 Jul 2026; ₲96,635 before that |
-| Hourly wage -- mensualizados | ₲12,683 from 1 Jul 2026; ₲12,080 before that |
-| Night-shift monthly minimum (+30%, Labour Code) | ₲3,957,200 from 1 Jul 2026; ₲3,768,763 before that |
+| Monthly minimum wage (Salario Mínimo Legal) | ₲2,899,048 |
+| Daily wage -- jornaleros (day-rate) | ₲111,502 |
+| Daily wage -- mensualizados | ₲96,635 |
+| Hourly wage -- mensualizados | ₲12,080 |
+| Night-shift monthly minimum (+30%, Labour Code) | ₲3,768,763 |
 
-- **Night-shift check** — 3,044,000 × 1.30 = ₲3,957,200 for 2026-27; 2,899,048 × 1.30 = ₲3,768,762.40 → ₲3,768,763 for 2025-26. ✓
-- **The mid-2026 adjustment happened.** Decreto N° 6225 of 17 June 2026 raised the minimum wage 5% from 1 July 2026 and MTESS Resolución N° 670/2026 published the regulated table above. The rise ties out on every row: 2,899,048 × 1.05 = 3,044,000, and each derived rate is its predecessor × 1.05. Because Paraguay adjusts in July, the **month** of the pay period decides the floor, not the year.  _(Decreto N° 6225; MTESS Resolución N° 670/2026)_
+- **Night-shift check** — 2,899,048 × 1.30 = ₲3,768,762.40 → ₲3,768,763 (rounded). ✓ [RESEARCH GAP -- a further mid-2026 minimum-wage adjustment is typical but unconfirmed as of this research; use ₲2,899,048 until updated.]
 
 ### 5.9 Filing and Payment
 

@@ -200,7 +200,7 @@ peça sempre NIF em todas as compras profissionais. A diferença entre €4.587,
 
 - **Taxa** — 21,4% sobre o rendimento relevante
 - **Cálculo do rendimento relevante** — trimestral, com base nos rendimentos brutos do trimestre anterior × coeficiente (tipicamente 70% para serviços, 20% para venda de bens)
-- **Limite máximo anual** — 12 × IAS (Indexante dos Apoios Sociais). **IAS 2026 = €537,13** (€522,50 era o valor de 2025) → limite €6.445,56 ~€75.240/ano
+- **Limite máximo anual** — 12 × IAS (Indexante dos Apoios Sociais). IAS 2026 = €522,50 → limite ~€75.240/ano
 - **Pagamentos trimestrais** — Janeiro, Abril, Julho, Outubro
 
 ### Isenções e Reduções

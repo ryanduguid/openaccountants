@@ -60,7 +60,7 @@ e-invoice), ИС ЭСФ (information system for ЭСФ), ККМ (контрол�
 | Authority | State Revenue Committee (Комитет государственных доходов, **КГД**), Ministry of Finance — kgd.gov.kz |
 | Legislation | New Tax Code of the RK (adopted 18.07.2025, effective 01.01.2026); MoF orders on ЭСФ issuance rules (2026), ККМ application & receipt content (e.g. MoF Order on ККМ effective 01.01.2026), goods-traceability mechanism rules (effective 01.01.2026), and СНТ — **verify exact order numbers/dates** |
 | Portals | ИС ЭСФ (esf.gov.kz / esf.kgd.gov.kz); e-Salyq / Кабинет налогоплательщика (cabinet.salyk.kz); egov.kz; e-Salyq Business / e-Salyq Azamat apps |
-| Unit of account | МРП (MCI). For 2026, 1 МРП = **KZT 4,325**, set by Law No. 239-VIII of 8 December 2025. It was KZT 3,932 for 2025, so every MCI-denominated threshold in this pack rises about 10% for 2026 |
+| Unit of account | МРП (MCI). For 2026, 1 МРП = **verify current value** (widely reported ~4,325 KZT — confirm against the 2026 budget law) |
 | Retention | Generally **5 years** for tax records and primary documents — verify under the new Tax Code |
 | Contributor | Open Accountants Community |
 | Quality tier | Research-verified — pending sign-off by a Kazakhstan accountant |

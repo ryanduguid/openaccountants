@@ -3,7 +3,7 @@ name: pk-cgt
 description: Use this skill whenever asked about Pakistan Capital Gains Tax. Trigger on phrases like "Pakistan CGT", "capital gains tax Pakistan", "PSX shares gain Pakistan", "property gain Pakistan", "Section 37A Pakistan", "Section 37 ITO 2001", "immovable property CGT Pakistan", "NCCPL capital gains", "filer vs non-filer CGT Pakistan", "crypto CGT Pakistan", "FBR capital gains", or any question about computing, filing, or reporting capital gains under the Income Tax Ordinance 2001. Scope covers CGT on securities (Section 37A) including PSX-listed shares, modaraba certificates and redeemable capital; CGT on immovable property (Section 37) including the holding-period scale and FBR valuation tables; CGT on other capital assets under Section 37; filer vs non-filer rate differentials; NCCPL collection at source for securities; bank/registrar collection for property; loss set-off and carry-forward; and the uncertain crypto position. ALWAYS read this skill before touching Pakistan CGT work.
 jurisdiction: PK
 tax_year: 2025
-last_updated: 2026-09-09
+last_updated: 2026-07-13
 reviewed_by: Ibrar Ali
 review_status: current
 tier: 1
@@ -68,9 +68,8 @@ This block is generated from verified `skill_facts` — edit the facts, not the 
 
 | Asset class | Filer rate | Non-filer rate | Notes |
 | --- | --- | --- | --- |
-| Securities — PSX-listed shares (Section 37A), **acquired on or after 1 July 2025** | **15% flat**, whatever the holding period | **Individuals and AOPs: normal slab rates. Companies: the 29% corporate rate** | Confirmed against the Finance Act 2025 changes as implemented by NCCPL from 1 July 2025. Collected at source by NCCPL; investor reconciles in the annual return |
-| Securities — PSX-listed shares (Section 37A), **acquired before 1 July 2025** | The older graduated scale by acquisition date and holding period, from 0% to 15%; securities acquired before 1 July 2013 remain at 0% | as above | The acquisition date, not the disposal date, selects the regime — get it from the CDC/NCCPL record rather than assuming |
-| Securities — modaraba certificates, redeemable capital, listed debt | Same Section 37A regime as above | Same | Same 1 July 2025 split |
+| Securities — PSX-listed shares (Section 37A) | **15% flat** (TBC — FA 2024 set 15%; FA 2025 figure to confirm) | **Normal slab rates (up to 45%), with a minimum of 15%** (TBC) | Collected at source by NCCPL; investor reconciles in annual return |
+| Securities — modaraba certificates, redeemable capital, listed debt | 15% flat (TBC) | Normal slab rates up to 45% with a 15% minimum (TBC) | Same Section 37A regime |
 | Immovable property — holding ≤ 1 year (Section 37) | **15%** (TBC) | higher slab (TBC) | Full rate band; FBR valuation tables apply |
 | Immovable property — holding > 1 year, ≤ 2 years | scaled-down rate (TBC) | higher slab (TBC) | Holding-period scale |
 | Immovable property — holding > 2 years | further scaled-down (TBC) | higher slab (TBC) | Continues to scale toward 0% over the statutory ladder |
@@ -78,31 +77,7 @@ This block is generated from verified `skill_facts` — edit the facts, not the 
 | Other capital assets (Section 37 — non-property, non-security) | Normal income slab rates | Normal income slab rates | Treated as income under Section 18 / Section 37 general |
 | Crypto / virtual assets | Treated as capital asset under Section 37 (FBR position since 2023) | Same | **Regulatory framework uncertain — flag for client and reviewer** |
 
-**What is settled and what is not.**
-
-The **securities** rows are settled. The Finance Act 2025 applies a flat **15%**
-to gains on securities acquired on or after **1 July 2025** for persons on the
-Active Taxpayers List, regardless of holding period, and for persons not on the
-ATL applies the normal slab rates to individuals and AOPs and the **29%**
-corporate rate to companies. NCCPL implemented this from 1 July 2025. Securities
-acquired before that date stay on the older graduated scale.
-
-Two things this file previously got wrong and are corrected above. It described
-the non-filer treatment as "normal slab rates with a minimum of 15%" in the
-table while its own note said FA 2024 charged non-filers a flat 30% — the two
-statements contradicted each other, and neither is the FA 2025 position. And it
-had no acquisition-date split at all, so a disposal of long-held stock would
-have been charged at 15% when the older scale, and possibly 0%, applies.
-
-**TBC still means to be confirmed** on the **immovable property** rows below.
-Those have not been checked against the Finance Act 2025 text and the
-holding-period ladder may have moved. Do not read the confirmation of the
-securities rows as covering them. Where the practitioner cannot confirm the
-current-year property rate, apply the conservative default (see §7).
-
-Super tax under §4C (1%–10%) can apply on top of these rates where total income
-exceeds the statutory threshold; it is a separate charge, not part of the CGT
-rate.
+**TBC = to be confirmed against the Finance Act 2025 text.** FA 2024 introduced a flat 15% on PSX securities for filers and 30% for non-filers. The FA 2025 figures must be verified against the published Act before use. Where the practitioner cannot confirm the current-year rate, apply the conservative default (see §7).
 
 ## Section 2 — Required inputs & refusal catalogue
 

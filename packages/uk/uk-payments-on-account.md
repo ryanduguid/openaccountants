@@ -71,7 +71,7 @@ The POA structural rules (threshold, 50%-of-prior-year formula, two-instalment s
 | 1st POA due | 31 January 2025 | 31 January 2026 | 31 January 2027 |
 | 2nd POA due | 31 July 2025 | 31 July 2026 | 31 July 2027 |
 | Balancing payment due | 31 January 2026 | 31 January 2027 | 31 January 2028 |
-| Late payment interest rate | Bank Rate + 4 pp, so **7.75% from 9 January 2026** on a Bank Rate of 3.75% | Bank Rate + 4 pp (track Bank Rate movements) | Bank Rate + 4 pp (track Bank Rate movements) |
+| Late payment interest rate | HMRC Bank Rate + 4 pp (approx. 7.75% late 2024 / 2025) | HMRC Bank Rate + 4 pp (track Bank Rate movements) | HMRC Bank Rate + 4 pp (track Bank Rate movements) |
 | SA303 (claim to reduce) | Available; standard process | Available; standard process | Available; standard process |
 | MTD ITSA quarterly reporting | Not in scope (most clients) | Not in scope (most clients) | MANDATORY from 6 April 2026 for qualifying SE/property income (does NOT replace POA) |
 | Annual reconciliation | SA tax return | SA tax return | SA tax return / Final Declaration under MTD ITSA |
@@ -320,7 +320,7 @@ The four quarterly updates are reporting events only -- they do NOT generate new
 
 | Element | Rule |
 | --- | --- |
-| Rate | Bank Rate + 4 percentage points, which is **7.75% from 9 January 2026** on a Bank Rate of 3.75%. The margin was + 2.5 pp on or before 5 April 2025 and + 4 pp from 6 April 2025 under Finance (No. 2) Act 2024, so interest running across that date is charged at two different margins. HMRC restates the rate within a few weeks of each Bank Rate decision. |
+| Rate | HMRC Bank Rate + 4 percentage points (per Finance (No. 2) Act 2024 from 31 January late onwards). Approx. 7.75% as at late 2025 -- confirm current Bank Rate. |
 | Runs from | Due date of the POA (31 Jan or 31 Jul) |
 | Runs until | Date of payment |
 | Compounding | Simple interest (not compound) |

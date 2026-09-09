@@ -33,11 +33,11 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Tax year** — Calendar year (1 January — 31 December)
 - **Annual return form** — Formulario Virtual N° 709 — Renta Anual — Persona Natural
 - **TY2025 filing deadline (staggered by last RUC digit)** — 27 May 2026 — 10 June 2026  _(Res. Sup. N° 386-2025/SUNAT)_
-- **Progressive scale tramo 1 — up to 5 UIT (renta neta de trabajo)** — Up to **S/ 27,500** for 2026 at a UIT of S/ 5,500 (S/ 26,750 for 2025 at S/ 5,350) — 8%  _(SUNAT Orientación — Tasas del impuesto rentas de trabajo)_
-- **Progressive scale tramo 2 — over 5 to 20 UIT** — **S/ 27,501 to S/ 110,000** for 2026 (S/ 26,751 to S/ 107,000 for 2025) — 14%  _(TUO LIR Art. 53)_
-- **Progressive scale tramo 3 — over 20 to 35 UIT** — **S/ 110,001 to S/ 192,500** for 2026 (S/ 107,001 to S/ 187,250 for 2025) — 17%  _(TUO LIR Art. 53)_
-- **Progressive scale tramo 4 — over 35 to 45 UIT** — **S/ 192,501 to S/ 247,500** for 2026 (S/ 187,251 to S/ 240,750 for 2025) — 20%  _(TUO LIR Art. 53)_
-- **Progressive scale tramo 5 — over 45 UIT** — Over **S/ 247,500** for 2026 (over S/ 240,750 for 2025) — 30%. Every band is set in UIT, so recompute the soles figures each year rather than carrying them forward  _(SUNAT Orientación — Tasas del impuesto rentas de trabajo)_
+- **Progressive scale tramo 1 — up to 5 UIT (renta neta de trabajo)** — Up to S/ 26,750 — 8%  _(SUNAT Orientación — Tasas del impuesto rentas de trabajo)_
+- **Progressive scale tramo 2 — over 5 to 20 UIT** — S/ 26 751 — S/ 107 000 — 14%  _(TUO LIR Art. 53)_
+- **Progressive scale tramo 3 — over 20 to 35 UIT** — S/ 107 001 — S/ 187 250 — 17%  _(TUO LIR Art. 53)_
+- **Progressive scale tramo 4 — over 35 to 45 UIT** — S/ 187,251 — S/ 240,750 — 20%  _(TUO LIR Art. 53)_
+- **Progressive scale tramo 5 — over 45 UIT** — Over S/ 240,750 — 30%  _(SUNAT Orientación — Tasas del impuesto rentas de trabajo)_
 - **Cumulative tax at 5 UIT boundary (UIT 2025)** — S/ 2,140.00 at S/ 26,750
 - **Cumulative tax at 20 UIT boundary (UIT 2025)** — S/ 13,375.00 at S/ 107,000  _(TUO LIR Art. 53)_
 - **Cumulative tax at 35 UIT boundary (UIT 2025)** — S/ 27,017.50 at S/ 187,250  _(TUO LIR Art. 53)_

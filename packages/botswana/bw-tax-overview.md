@@ -27,7 +27,7 @@ Personal income tax is progressive to a 25% top rate; the standard company tax r
 - **Personal income tax top marginal rate (residents)** — 25% %  _(Income Tax Act (Cap. 52:01), Second Schedule — https://taxsummaries.pwc.com/botswana/individual/taxes-on-personal-income)_
 - **Personal tax-free threshold (residents)** — BWP 48,000 per year BWP  _(Income Tax Act (Cap. 52:01), Second Schedule — https://taxsummaries.pwc.com/botswana/individual/taxes-on-personal-income)_
 - **Standard company tax rate** — 22% % (2025/2026 budget proposed 23.5% — (approx — confirm))  _(Income Tax Act (Cap. 52:01) — https://taxsummaries.pwc.com/botswana/corporate/taxes-on-corporate-income)_
-- **VAT** — Yes — VAT applies, standard rate **14%** % (the rise to 15% proposed for 1 April 2025 appears never to have taken effect: PwC's 2026 chart and a BURS notice under the VAT Act both give 14% eighteen months on)  _(Value Added Tax Act (Cap. 50:03) — https://taxsummaries.pwc.com/botswana/corporate/other-taxes)_
+- **VAT** — Yes — VAT applies, standard rate 14% % (the proposed rise to 15% from 1 April 2025 is not confirmed as enacted; PwC's 2026 VAT chart still shows 14% — confirm with BURS for periods after 1 April 2025)  _(Value Added Tax Act (Cap. 50:03) — https://taxsummaries.pwc.com/botswana/corporate/other-taxes)_
 
 ## Main annual filing deadlines
 

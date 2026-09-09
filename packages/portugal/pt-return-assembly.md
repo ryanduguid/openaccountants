@@ -850,7 +850,7 @@ A capstone produz uma secção prospetiva para que o contribuinte chegue à pró
 | Adicional de solidariedade IRS — limiar | €80.000 | Manutenção esperada | Sem alteração |
 | Escalões IRS | Atualização mínima esperada (~2-3%) | Atualização anual com inflação | Aplicar a partir de 1 jan 2026 |
 | Dedução específica Categoria A | €4.350,24 (4,1× IAS) | Atualização anual | Atualizar payroll |
-| IAS (Indexante dos Apoios Sociais) 2026 | **€537,13** (€522,50 em 2025) | Confirmado, +2,8% | Atualizar contribuições e benefícios |
+| IAS (Indexante dos Apoios Sociais) 2026 | €522,50 em 2025 | Subir conforme atualização anual | Atualizar contribuições e benefícios |
 | Tributação autónoma — viaturas | Tabela 2025 | Possíveis revisões para incentivar viaturas elétricas | Verificar tabelas 2026 |
 | Benefícios fiscais — RFAI / SIFIDE | Em vigor | Possível prorrogação / revisão das percentagens | Monitorizar |
 

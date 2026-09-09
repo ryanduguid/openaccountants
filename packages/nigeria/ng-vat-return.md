@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Nigerian VAT returns for self-e
 version: 2.0
 jurisdiction: NG
 tax_year: 2025
-last_updated: 2026-09-09
+last_updated: 2026-07-13
 reviewed_by: Omolola Fasasi 
 review_status: current
 depends_on:
@@ -71,7 +71,7 @@ This block is generated from verified `skill_facts` — edit the facts, not the 
 | Currency | NGN only |
 | Primary legislation | Value Added Tax Act (VATA), Cap V1 LFN 2004, as amended by Finance Act 2020 |
 | Supporting legislation | Finance Act 2021, 2023; FIRS Regulations |
-| Tax authority | **Nigeria Revenue Service (NRS)** — the Federal Inland Revenue Service (FIRS) was renamed and re-established as the NRS by the Nigeria Revenue Service (Establishment) Act 2025, with effect from **1 January 2026** |
+| Tax authority | Federal Inland Revenue Service (FIRS) |
 | Filing portal | TaxPro Max (taxpromax.firs.gov.ng) |
 | Filing frequency | Monthly |
 | Filing deadline | 21st of the following month |

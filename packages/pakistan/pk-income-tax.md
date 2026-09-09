@@ -108,7 +108,7 @@ This block is generated from verified `skill_facts` — edit the facts, not the 
 
 ### 10% Surcharge on High Income (Finance Act 2024 / retained Finance Act 2025)
 
-- **Surcharge on high income: 9% or 10%** — A surcharge applies on the income tax payable where the individual's taxable income exceeds PKR 10,000,000 in the tax year. It is **9% for salaried individuals** and **10% for non-salaried individuals and AOPs**, computed on the tax charged before withholding credits. The Finance Act 2025 cut the salaried rate from 10% to 9% with effect from 1 July 2025; the non-salaried rate is unchanged from the Finance Act 2024. Confirmed retention and exact base.  _(Finance Act 2024 / Finance Act 2025)_
+- **10% surcharge on high income** — A 10% surcharge applies on the income tax payable where the individual's taxable income exceeds PKR 10,000,000 in the tax year. The surcharge is computed as 10% of the tax charged under the non-salary brackets (or 9% for salaried individuals) above (before withholding credits). TBC — confirm Finance Act 2025 retention and exact base.  _(Finance Act 2024 / Finance Act 2025)_
 
 ### Filer vs Non-Filer (ATL)
 

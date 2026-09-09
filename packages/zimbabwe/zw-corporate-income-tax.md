@@ -24,7 +24,7 @@ Companies are taxed on Zimbabwe-source income at a standard rate of 25% from 1 J
 - **Withholding tax on dividends (unlisted / to non-resident)** — 15% non-resident shareholders' tax on dividends from unlisted companies percent  _(Income Tax Act (Chapter 23:06))_
 - **Withholding tax on dividends (VFEX-listed)** — 5% on dividends from Victoria Falls Stock Exchange-listed securities percent  _(Income Tax Act (Chapter 23:06))_
 - **Withholding tax on royalties to non-residents** — 15%, payable within 10 days of the date of payment percent  _(Income Tax Act (Chapter 23:06))_
-- **Withholding tax on interest to non-residents** — **15%** non-residents' tax on interest, confirmed. Reintroduced by the 2026 national budget presented on 27 November 2025 and payable in US dollars. Interest paid before 1 January 2026 falls outside it, so check the payment date before applying this rate  _(Finance Act, 2025; 2026 national budget statement)_
+- **Withholding tax on interest to non-residents** — 15% non-residents' tax on interest (reintroduced effective 1 January 2026; confirm 2025 treatment) percent ((approx — confirm 2025 vs 2026 effective date))  _(Finance Act, 2025)_
 - **Double tax treaty relief** — Reduced WHT rates (often 10% or less) under Zimbabwe's DTAs; relief must be claimed, it is not automatic  _(Income Tax Act (Chapter 23:06))_
 - **Annual return filing** — Self-assessment return (ITF12C) due 30 April after year-end ((approx — confirm filing date))  _(Income Tax Act (Chapter 23:06))_
 - **Provisional tax (QPDs)** — Quarterly Payment Dates: 25 March (10%), 25 June (25%), 25 September (30%), 20 December (35%) ((approx — confirm QPD percentages/dates))  _(Income Tax Act (Chapter 23:06))_
