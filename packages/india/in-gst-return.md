@@ -23,8 +23,8 @@ This block is generated from verified `skill_facts` — edit the facts, not the 
 
 - **Standard rate** — 18% (CGST 9% + SGST 9% / IGST 18%)  _(https://gstcouncil.gov.in/sites/default/files/2025-09/press_release_press_information_bureau_0.pdf)_
 - **Lower rate** — 5% (CGST 2.5% + SGST 2.5% / IGST 5%)  _(Notification 1/2017-CT(Rate))_
-- **12% rate** — 12% (CGST 6% + SGST 6% / IGST 12%)  _(Notification 1/2017-CT(Rate))_
-- **Demerit rate** — 28% (CGST 14% + SGST 14% / IGST 28%)  _(CGST Act)_
+- **Demerit rate** — 40% (CGST 20% + SGST 20% / IGST 40%) — sin and luxury goods only  _(56th GST Council, notified by CBIC 09/2025-CTR to 17/2025-CTR)_
+- **Abolished slabs** — The 12% and 28% slabs were removed with effect from 22 September 2025; their items moved to 5% and 18% respectively. Do NOT apply 12% or 28% to a supply on or after that date; for earlier supplies apply the rate in force at the time of supply.  _(56th GST Council, 3-4 September 2025)_
 - **Nil/exempt** — 0% — fresh food, healthcare, education  _(Notification 12/2017-CT(Rate))_
 - **Zero-rated** — 0% — exports, SEZ (with ITC refund)  _(IGST Act s 16)_
 - **Key rule** — IGST rate = CGST rate + SGST rate, always  _(IGST Act)_
