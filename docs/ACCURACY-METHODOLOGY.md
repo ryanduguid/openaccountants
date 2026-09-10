@@ -2423,3 +2423,80 @@ Corpus effect: authority citations 2,893 → **2,915**, secondary 4,694 → **4,
 the single-source queue 25 → **24**. The jurisdiction grep caught one leak —
 `cayman-tax.md` said "Pension: 10% split equally" and "aged 18-65" — now corrected
 and cited to the Act.
+
+## Qatar — the block was the renderer, not the authority
+
+`qa-payroll-social.md` rested seven of its nine facts on one law firm's news page.
+Qatar had been set down earlier in this same session as blocked: GRSIA
+(`grsia.gov.qa`, also served as `daman.gov.qa`) resolves 200 and classifies as an
+authority, but every content page renders in JavaScript, its SharePoint REST
+endpoints (`/_api/web/lists`, `/_api/search/query`, `/_vti_bin/ListData.svc`) all
+return 403 anonymously, and `sitemap.xml` and `robots.txt` 404 into a SharePoint
+error page. `curl` on the Laws & Legislations page returned a 696 KB shell with
+**zero** document links.
+
+The same page, opened in the browser installed for the Cayman work, rendered a
+register of **twenty-five instruments** with their PDF hrefs — including *Law No.
+(1) of 2022 regarding social insurance* and *Cabinet Resolution No. (3) of 2025
+issuing the executive regulations*. **The obstacle was never access; it was
+rendering.** Two conclusions worth carrying: a 200 with a large body is not
+evidence that a page has content, and "authority unreadable" should record which
+of the two failed.
+
+### Reading the Arabic
+
+pdfminer emits Arabic in visual order, so every extracted line arrives reversed.
+Reversing each line and then re-reversing the digit runs inside it produced
+readable text with intact numerals — enough to locate and quote the operative
+articles, each pinned by its own article-number marker rather than by proximity.
+
+### Every rate confirmed, and five rules found
+
+Article 11 confirms the whole of the previous version's arithmetic: contribution
+computed on contribution salary **not exceeding QAR 100,000**, total **21%**,
+being **7%** deducted from the insured person and **14%** paid by the employer,
+remitted *"within a period not exceeding the fifth of the month following"*. The
+art. 1 definition confirms contribution salary as **basic salary plus the social
+allowance and the housing allowance**.
+
+What the guide did not have:
+
+- **The self-employed are in the scheme.** Art. 1 defines the insured person as
+  every Qatari in government employment, **a private-sector worker, or a
+  self-employed person**, who pays for himself.
+- **The State can pay part of the employer's share.** The last paragraph of art.
+  11 lets the public treasury, with Cabinet approval, bear a proportion of the
+  contribution due from a **private-sector** employer.
+- **Late payment costs 2% a month** (art. 21), running from the due date to the
+  payment date.
+- **Contributing on understated salaries is treated as not contributing at all** —
+  art. 22 adds **10%** of the real contributions payable where an employer failed
+  to register, or paid on other than real salaries.
+- **One job only** — art. 10 limits an insured person working for several covered
+  employers to a single contribution.
+
+### The GCC claim pointed at the wrong law
+
+The previous version said the scheme "applies to Qatari (and GCC) national
+employees" and cited Law No. 1 of 2022 for both. The Qatari half is right. **GCC
+coverage is not in that Law**: it comes from Law No. 4 of 2007 as amended by Law
+No. 5 of 2021, which GRSIA lists as separate instruments. Those two were not read,
+and the guide says so rather than describing them. **A citation that is right
+about one half of a sentence is unfalsifiable about the other half** — the same
+defect this workstream documented in San Marino's monofase rates and in
+Bangladesh's ss.392B–392C link.
+
+### One figure deliberately not repeated
+
+The previous version noted that enrolments above the ceiling "may be
+grandfathered". No transitional provision to that effect appears in the Law. It
+may sit in the executive regulations, which were downloaded but not read in full.
+The guide records it as unverified instead of carrying it forward or deleting it.
+
+And one trap is flagged: **QAR 100,000 appears twice in the Law for different
+purposes** — art. 11's contribution-salary ceiling, and art. 57's cap on the
+aggregate where a person combines more than one pension, or a pension and a
+salary. Identical figures serving unrelated rules are exactly what gets conflated.
+
+Corpus effect: authority citations 2,915 → **2,928**, secondary 4,687 → **4,680**,
+the single-source queue 24 → **23**.
