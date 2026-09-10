@@ -3,7 +3,7 @@ name: sm-payroll-social
 description: "Source-cited draft: payroll & social contributions for San Marino (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
 jurisdiction: SM
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-10
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -12,6 +12,25 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 # San Marino Payroll & Social Contributions
 
 ## Social security (ISS) and payroll withholding
+
+> **The stated totals do not equal their own components.** No external source is
+> needed to see this, only addition:
+>
+> - **Employer:** 16.6 + 2.0 + 1.9 + 4.0 + 1.0 = **25.5%**, against a stated
+>   **27.4%**. The 1.9-point gap is exactly the unemployment-insurance figure, so
+>   either a branch is missing from the list below or one is counted twice in the
+>   total.
+> - **Employee:** 5.9 + 2.0 + 0.5 = **8.4%**, against a stated **8.3%**. Small
+>   enough to be rounding of the published components, but it is still the file
+>   disagreeing with itself.
+>
+> Every figure here is cited to a single HR-platform page and none has been
+> checked against the Istituto per la Sicurezza Sociale. Attempting it: `iss.sm`
+> resolves and is genuinely the ISS ("Istituto per la Sicurezza Sociale di San
+> Marino, Repubblica di San Marino"), but publishes health services rather than
+> a contribution schedule. **Do not reconcile these by adjusting a component to
+> make the arithmetic work** — get the current ISS schedule and replace the
+> block. Which of the two numbers is wrong is not determinable from this file.
 
 - **Total employer social-security contribution** — Approximately 27.4% of gross wages % (approx — confirm against current ISS schedule)  _([Istituto per la Sicurezza Sociale (ISS) contribution regulations](https://remotepeople.com/countries/san-marino/hire-employees/payroll-tax/))_
 - **Employer — pension (first pillar)** — 16.6% % (approx — confirm)  _([Istituto per la Sicurezza Sociale (ISS) contribution regulations](https://remotepeople.com/countries/san-marino/hire-employees/payroll-tax/))_

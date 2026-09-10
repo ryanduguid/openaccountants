@@ -8,22 +8,37 @@ from pathlib import Path
 SCRIPTS = Path(__file__).resolve().parents[1] / "scripts"
 
 
-class FactCheckerTests(unittest.TestCase):
+def run_script(script, guides, root="international", extra_args=()):
+    """Run a checker against a throwaway corpus. (returncode, stdout, stderr)."""
+    with tempfile.TemporaryDirectory() as directory:
+        Path(directory, "docs").mkdir()
+        for name, text in guides.items():
+            path = Path(directory, "skills", root, name)
+            path.parent.mkdir(parents=True, exist_ok=True)
+            path.write_text(text, encoding="utf-8")
+        result = subprocess.run(
+            [sys.executable, "-X", "utf8", str(SCRIPTS / script), *extra_args],
+            cwd=directory, capture_output=True, text=True, encoding="utf-8",
+            timeout=30,
+        )
+    return result.returncode, result.stdout, result.stderr
+
+
+class CheckerCase(unittest.TestCase):
+    """Base for tests that drive a checker over a throwaway corpus.
+
+    Kept separate from FactCheckerTests: subclassing THAT re-runs all of its
+    tests inside every subclass, which quietly turned a 5-test addition into 33.
+    """
+
     def run_checker(self, script, guides, expect_code=0, root="international",
                     extra_args=()):
-        with tempfile.TemporaryDirectory() as directory:
-            Path(directory, "docs").mkdir()
-            for name, text in guides.items():
-                path = Path(directory, "skills", root, name)
-                path.parent.mkdir(parents=True, exist_ok=True)
-                path.write_text(text, encoding="utf-8")
-            result = subprocess.run(
-                [sys.executable, "-X", "utf8", str(SCRIPTS / script), *extra_args],
-                cwd=directory, capture_output=True, text=True, encoding="utf-8",
-                timeout=30,
-            )
-        self.assertEqual(result.returncode, expect_code, result.stderr)
-        return result.stdout
+        code, out, err = run_script(script, guides, root, extra_args)
+        self.assertEqual(code, expect_code, err)
+        return out
+
+
+class FactCheckerTests(CheckerCase):
 
     def test_percentage_conflicts_include_tables_and_bullets(self):
         output = self.run_checker("check-fact-conflicts.py", {
@@ -513,6 +528,83 @@ def _load(script):
     module = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(module)
     return module
+
+
+class BulletTotalTests(CheckerCase):
+    """check-total-rows.py reads tables; the fact blocks are bullets.
+
+    Same double assertion, no pipe character anywhere in it, so it was invisible.
+    """
+
+    def test_a_bullet_total_is_checked_against_the_bullets_below_it(self):
+        # sm-payroll-social states an employer total 1.9 points above its parts.
+        # Note the order is reversed from the table convention: the total LEADS.
+        output = self.run_checker("check-total-rows.py", {
+            "sm/payroll.md": (
+                "- **Total employer social-security contribution** - 27.4%\n"
+                "- **Employer - pension (first pillar)** - 16.6%\n"
+                "- **Employer - Fondiss** - 2.0%\n"
+                "- **Employer - unemployment insurance** - 1.9%\n"
+                "- **Employer - health and accident** - 4.0%\n"
+                "- **Employer - Social Services Fund** - 1.0%\n"
+            ),
+        })
+        self.assertIn("components sum to 25.50%", output)
+        self.assertIn("bullet totals checked: 1", output)
+
+    def test_a_total_that_adds_up_is_not_reported(self):
+        output = self.run_checker("check-total-rows.py", {
+            "ga/payroll.md": (
+                "- **Total employer social contribution rate** - 20.1%\n"
+                "- **Employer - family allowances** - 8%\n"
+                "- **Employer - work injuries** - 3%\n"
+                "- **Employer - retirement pensions** - 9.1%\n"
+            ),
+        })
+        self.assertIn("bullet totals checked: 1 ; not equal to their components: 0",
+                      output)
+
+    def test_the_other_side_of_the_payroll_is_not_a_component(self):
+        # tg-payroll-social is internally consistent: employer 12.5+3+2 = 17.5.
+        # Letting the 4% employee row join made it "21.5 vs 17.5" -- a false
+        # positive manufactured by the checker, not a defect in the guide.
+        output = self.run_checker("check-total-rows.py", {
+            "tg/payroll.md": (
+                "- **Employer CNSS contribution (total)** - 17.5%\n"
+                "- **Employer - old-age pension** - 12.5%\n"
+                "- **Employer - family benefits** - 3%\n"
+                "- **Employer - occupational risk** - 2%\n"
+                "- **Employee CNSS contribution** - 4%\n"
+            ),
+        })
+        self.assertIn("not equal to their components: 0", output)
+
+    def test_a_component_with_several_percentages_abandons_the_group(self):
+        # ga-payroll-social writes a branch as "4.1% total (0.6% + 2% + 1.5%)".
+        # Stopping short at it reported 16% against a total of 20.1% that is
+        # exactly right. Reporting a partial sum is worse than reporting nothing.
+        output = self.run_checker("check-total-rows.py", {
+            "ga/payroll.md": (
+                "- **Total employer social contribution rate** - 20.1%\n"
+                "- **Employer - family allowances** - 8%\n"
+                "- **Employer - work injuries** - 3%\n"
+                "- **Employer - retirement pensions** - 5%\n"
+                "- **Employer - CNAMGS health** - 4.1% total (0.6% + 2% + 1.5%)\n"
+            ),
+        })
+        self.assertIn("bullet totals checked: 0", output)
+
+    def test_components_that_restate_the_total_are_not_a_partition_of_it(self):
+        # bz-payroll-social: "Larger share of the 10% total" and "Smaller share
+        # of the 10% total" both carry the total's own figure, summing to double.
+        output = self.run_checker("check-total-rows.py", {
+            "bz/payroll.md": (
+                "- **Total SSB contribution rate** - 10% of insurable earnings\n"
+                "- **Employer SSB share** - Larger share of the 10% total\n"
+                "- **Employee SSB share** - Smaller share of the 10% total\n"
+            ),
+        })
+        self.assertIn("bullet totals checked: 0", output)
 
 
 class SingleSourceTests(unittest.TestCase):

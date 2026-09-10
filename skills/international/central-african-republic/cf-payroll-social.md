@@ -3,7 +3,7 @@ name: cf-payroll-social
 description: "Source-cited draft: payroll & social contributions for Central African Republic (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
 jurisdiction: CF
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-10
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -16,7 +16,14 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 Employers and employees contribute to the Caisse Nationale de Sécurité Sociale (CNSS), covering pensions, family allowances and work-injury. Employers also withhold IRPP from salaries (PAYE-equivalent). Contribution rates and the wage ceiling below are a source-cited draft to confirm with CNSS/DGID, as sources differ on the split.
 
 - **Social security institution** — Caisse Nationale de Sécurité Sociale (CNSS)  _(Code de la Sécurité Sociale (CAR))_
-- **Employer total social security contribution** — Approximately 19% of gross salary (pensions + family allowances + work-injury combined) percent (approx — confirm)  _(Code de la Sécurité Sociale (CAR); CNSS (as described at [remotepeople.com](https://remotepeople.com/countries/central-african-republic/employer-of-record/payroll-tax/)))_
+> **The employer total does not equal its own components.** The bullet below
+> names its parts as pensions + family allowances + work-injury, and those three
+> are listed as 4% + 11% + 2% = **17%**, against a stated **19%**. Neither figure
+> has been checked against the CNSS, so which one is wrong cannot be settled from
+> this file. Do not adjust a branch to make the addition work — get the CNSS
+> schedule and replace the block.
+
+- **Employer total social security contribution** — Approximately 19% of gross salary (pensions + family allowances + work-injury combined) percent (approx — confirm; see the note above, this does not equal its listed branches)  _(Code de la Sécurité Sociale (CAR); CNSS (as described at [remotepeople.com](https://remotepeople.com/countries/central-african-republic/employer-of-record/payroll-tax/)))_
 - **Employer — old-age / pension branch** — Approximately 4% of gross salary (employer share) percent (approx — confirm)  _([Code de la Sécurité Sociale (CAR); CNSS](https://www.ssa.gov/policy/docs/progdesc/ssptw/2018-2019/africa/central-african-republic.html))_
 - **Employer — family allowances branch** — Approximately 11% of gross salary percent (approx — confirm)  _([Code de la Sécurité Sociale (CAR); CNSS](https://www.ssa.gov/policy/docs/progdesc/ssptw/2018-2019/africa/central-african-republic.html))_
 - **Employer — work-injury branch** — Approximately 2% of gross salary percent (approx — confirm)  _([Code de la Sécurité Sociale (CAR); CNSS](https://www.ssa.gov/policy/docs/progdesc/ssptw/2018-2019/africa/central-african-republic.html))_
