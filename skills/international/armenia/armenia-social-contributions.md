@@ -209,7 +209,8 @@ These rules apply when payroll data is clear and all required inputs are availab
 
 ### Rule 1 -- Personal income tax is a flat 20%
 
-- **Personal income tax rate** — 20% percent (Flat on gross, no personal allowance, no brackets, effective 1 Jan 2023. Employer is tax agent and applies final monthly withholding.)  _(PwC)_
+- **Personal income tax rate** — 20% percent (Flat on gross, no personal allowance, no brackets, effective 1 Jan 2023. Employer is tax agent and applies final monthly withholding.) **Confirmed against the Tax Code**: art. 150(1) sets out the phase-down in a table — 23% from 1 January 2020, 22% from 2021, 21% from 2022 and **20% from 1 January 2023**  _(Tax Code (ՀՕ-165-Ն), art. 150(1) — https://www.arlis.am/en/acts/230455/latest)_
+- **But "no brackets" is not "one rate for everyone" — there is a 10% rate for high-tech R&D staff** — art. 150(1.1) requires the tax agent to withhold at **10%** on salary and equivalent payments to personnel engaged in scientific research and experimental development work (including for the employer's own needs) in occupations on the Government's list of high-technology professional work, where the employer meets the Government's criteria and holds a **positive opinion of the professional commission** under art. 121(2)(4). **Foreign citizens and stateless persons without a right of residence in Armenia are excluded** and stay at 20%. If the positive opinion is later revoked, tax liabilities are **recalculated** under the general rules. Withholding 20% for qualifying R&D staff over-withholds by 100%  _(Tax Code, art. 150(1.1) — https://www.arlis.am/en/acts/230455/latest)_
 
 ### Rule 2 -- No separate employer social tax
 
