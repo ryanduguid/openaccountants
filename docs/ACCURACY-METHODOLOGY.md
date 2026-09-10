@@ -2511,3 +2511,102 @@ salary. Identical figures serving unrelated rules are exactly what gets conflate
 
 Corpus effect: authority citations 2,915 → **2,928**, secondary 4,687 → **4,680**,
 the single-source queue 24 → **23**.
+
+## Burundi — an authority that was never down, and a statute no machine could read
+
+Burundi held **four** entries on the single-source queue, the largest cluster on
+it, and had been recorded as blocked because **`obr.bi` answered HTTP 200 with a
+182-byte PHP fatal error** — *"Application Instantiation Error: Failed to start the
+session because headers have already been sent"*. `bi-income-tax.md` carried an
+explicit warning that nothing in it had been put in front of a primary source.
+
+**Opened in a real browser the site works normally.** The failure was in whatever
+`curl` triggers, not in the site. Its *Lois et règlements* page carries the income
+tax law, the 2020 amendment, the VAT law, its 2020 amendment and the **Loi de
+Finances 2026/2027** — a complete legislative set for every guide in the
+jurisdiction.
+
+### Then the real obstacle appeared
+
+Every one of those documents is a **scanned image with no text layer**. `pdfminer`
+returns the 267-page Finance Act as 267 page-breaks and nothing else — 267
+characters for a 7.7 MB file. This is the case the earlier Vietnam and San Marino
+entries recorded as terminal ("no OCR is available here").
+
+It is not terminal any more: `pymupdf` renders pages and
+`rapidocr-onnxruntime` reads them, both pip-installable with no system packages.
+Quality on this French legal text ran 0.95–1.00 confidence.
+
+### The rule adopted for OCR'd figures
+
+**OCR output is not the same evidential quality as a text layer**, and a misread
+digit in a tax rate is precisely the failure this workstream exists to prevent. The
+rule applied throughout: **accept a figure only where the statute states it in
+words and digits together.** French legal drafting does this as a matter of course
+— *"trente pour cent (30%)"*, *"vingt-cinq millions de francs burundais
+(25 000 000 BIF)"* — and that redundancy is what makes an OCR'd numeral safe.
+
+It earned its keep immediately. Article 103's corporate rate scans as ***"(So%)"***
+and is readable as 30% only because *"trente pour cent"* sits beside it; elsewhere
+"(10%)" scanned as "(1o%)". **Every figure in the Burundi guides has that
+redundancy behind it, and figures that lack it — the VAT penalty ladder — are
+deliberately not restated.**
+
+A second, independent check fell out of the statute itself. The minimum tax is
+**1% of turnover**, triggered when net income falls below **turnover ÷ 30**. At a
+**30%** rate, tax on turnover ÷ 30 is exactly 1% of turnover. The three numbers
+only interlock if all three were read correctly, which corroborates the 30% that
+had scanned as "So%".
+
+### What the reading found
+
+- **The VAT registration threshold was out by a factor of four.** `bi-vat-gst.md`
+  said BIF 100,000,000; art. 271 of the Finance Act 2026/2027 says **BIF
+  25,000,000**. The old figure had nothing behind it structurally: **art. 37 of the
+  VAT law contains no threshold at all**, delegating it to ministerial instrument.
+  A threshold cited to "the VAT Law" is cited to a text that does not contain one.
+- **Two liability tests that ignore turnover.** Art. 271 also makes a taxpayer
+  automatically liable where **local purchases and/or imports**, or **stock on
+  hand**, exceed **BIF 50,000,000** — and forces them into the medium or large
+  taxpayer category. Neither appeared anywhere in the corpus.
+- **The progressive scale does not reach business income.** `bi-income-tax.md` said
+  Burundi applies its 0/20/30 scale to "employment, **business** and rental income".
+  Art. 21 applies it to **employment and rental** income; a natural person's
+  **business income is a flat 30%**, and for 2026/2027 a natural person under **BIF
+  25,000,000** of turnover is outside both, filing **quarterly at 1% of turnover**
+  under Finance Act art. 190.
+- **A company's rental income is not taxed at the corporate rate either.** Art. 103
+  excepts it and sends it to the art. 21 scale.
+- **"Minimum tax for loss-making years" understated it twice over.** It applies
+  *"quels qu'en soient ses résultats"*, expressly **including investment-code
+  beneficiaries**, with a **ten-year free-zone exception**.
+- **Electronic-communications services left VAT altogether** — a 20% specific tax
+  replaces it for 2026/2027 (Finance Act art. 187).
+
+### Two article headings that OCR would not give up
+
+Finance Act art. 190's *subject* — the words "les personnes physiques qui" — was
+dropped at 200 dpi. Re-running that single page at 320 dpi recovered it. Without
+the re-read the regime would have been described without knowing **who it applies
+to**.
+
+The quarterly-instalment article in the income tax law was worse: its heading is
+dropped at **both** 200 and 320 dpi, while the body of the rule scans cleanly. The
+surrounding sequence makes "130" the obvious inference, and the guide **does not
+make it** — the provision is cited as *Section 2, Paragraphe 1*, which is what
+could actually be read. **An inferred article number is indistinguishable from a
+verified one on the page**, which is the same defect as Bangladesh's invented Roman
+clause letters.
+
+### What is left, and why
+
+`bi-payroll-social.md` stays on the queue at 89%. The OBR publishes revenue law;
+**INSS is a different body and its social-security code is not on the OBR site**.
+The PAYE line is now cited to art. 21, a duplicated health-insurance bullet was
+removed, and the guide now says plainly that every INSS contribution figure is
+unverified rather than merely imprecise. **Naming the missing source is the
+deliverable when the source cannot be found.**
+
+Corpus effect across the Burundi work: authority citations 2,928 → **2,976**,
+secondary 4,680 → **4,657**, the single-source queue 23 → **20**, and Burundi from
+**four** entries to **one**.

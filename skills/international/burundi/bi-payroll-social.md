@@ -13,14 +13,23 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Payroll and social security (INSS)
 
-Employers operate PAYE-style withholding on salaries and pay social-security contributions to the Institut National de Sécurité Sociale (INSS) plus health insurance. Reported rates differ between sources, so the figures below should be confirmed against current INSS and OBR schedules.
+Employers operate PAYE-style withholding on salaries and pay social-security contributions to the Institut National de Sécurité Sociale (INSS) plus health insurance.
 
-- **Payroll income tax withholding** — Employers withhold income tax on salaries at the progressive 0% / 20% / 30% scale (PAYE-equivalent)  _(Law No. 1/02 of 24 January 2013 (income tax law) (as described at [remotepeople.com](https://remotepeople.com/countries/burundi/hire-employees/payroll-tax/)))_
+> **The PAYE line is now cited to the statute; every INSS figure below is not.**
+> The Office Burundais des Recettes publishes the income tax law, so the
+> withholding scale in the first bullet could be read from art. 21 directly. **INSS
+> is a different body and the OBR site does not carry the social-security code**,
+> so the contribution rates, the caps and the two "approximate total" lines remain
+> where they were: on one HR platform, with sources that disagree with each other.
+> They are marked "(approx — confirm)" for that reason and a reviewer should treat
+> them as unverified, not as merely imprecise. [RESEARCH GAP — an INSS-published
+> Code de la sécurité sociale or contribution schedule is the missing source.]
+
+- **Payroll income tax withholding** — Employers withhold income tax on salaries on the progressive scale in art. 21: **0%** to BIF 1,800,000 a year, **20%** of the part above 1,800,000 up to 3,600,000, and **30%** of the part above 3,600,000, with taxable income rounded to the nearest thousand BIF. Those annual figures are BIF 150,000 and 300,000 a month for someone paid evenly across twelve months. **The same scale applies to non-residents** on Burundi-source employment income. See `bi-income-tax`  _(Loi n° 1/02 du 24 janvier 2013 relative aux impôts sur les revenus, art. 21, as amended by loi n° 1/14 du 24 décembre 2020 — https://www.obr.bi/images/LOI_N1_14_DU_24_DECEMBRE_2020_PORTANT_MODIFICATION_DE_LA_LOI_N1_02_DU_24_JANVIER_2013_RELATIVE_AUX_IMPOTS_SUR_LES_REVENUS_1.pdf)_
 - **Employer INSS old-age/pension contribution** — 6% of gross wages % (approx — confirm; sources conflict)  _(Code de la sécurité sociale (INSS) (as described at [remotepeople.com](https://remotepeople.com/countries/burundi/hire-employees/payroll-tax/)))_
 - **Employee INSS old-age/pension contribution** — 4% of gross wages % (approx — confirm; sources conflict)  _(Code de la sécurité sociale (INSS) (as described at [remotepeople.com](https://remotepeople.com/countries/burundi/hire-employees/payroll-tax/)))_
 - **Monthly earnings cap for INSS pension contributions** — BIF 450,000 per month BIF (approx — confirm)  _(Code de la sécurité sociale (INSS) (as described at [remotepeople.com](https://remotepeople.com/countries/burundi/hire-employees/payroll-tax/)))_
 - **Employer occupational risk / work injury contribution** — 3% (capped at BIF 80,000 per month) % (approx — confirm)  _(Code de la sécurité sociale (INSS) (as described at [remotepeople.com](https://remotepeople.com/countries/burundi/hire-employees/payroll-tax/)))_
-- **Employee national health insurance contribution** — 3% of gross wages % (approx — confirm)  _([Régime d'assurance maladie (national health insurance)](https://remotepeople.com/countries/burundi/hire-employees/payroll-tax/))_
 - **Employee national health insurance contribution** — 3% of gross wages % (approx — confirm)  _([Régime d'assurance maladie (national health insurance)](https://remotepeople.com/countries/burundi/hire-employees/payroll-tax/))_
 - **Employer employment / vocational training levy** — 1% of gross wages % (approx — confirm)  _(Code de la sécurité sociale (INSS) (as described at [remotepeople.com](https://remotepeople.com/countries/burundi/hire-employees/payroll-tax/)))_
 - **Approximate total employer social contributions** — About 13% of gross wages (pension + health + work injury + training, subject to caps) % (approx — confirm; sources conflict)  _(Code de la sécurité sociale (INSS) (as described at [remotepeople.com](https://remotepeople.com/countries/burundi/hire-employees/payroll-tax/)))_
