@@ -1,10 +1,10 @@
 ---
 name: au-crypto-tax
 description: Use this skill whenever asked about Australian cryptocurrency taxation. Trigger on phrases like "crypto tax Australia", "Bitcoin CGT", "ATO crypto", "crypto capital gains", "personal use asset crypto", "staking income", "airdrop tax", "DeFi tax Australia", "crypto cost base", "crypto trading tax", "Coinbase tax", "Swyftx tax", "CoinSpot tax", "NFT tax Australia", or any question about how cryptocurrency is taxed by the ATO. This skill covers CGT treatment of crypto assets, the personal use asset exemption, trading vs investing distinction, staking and airdrop income, DeFi events, record-keeping requirements, and exchange-specific transaction patterns. ALWAYS read this skill before touching any Australian crypto tax work.
-version: "1.1"
+version: "1.2"
 jurisdiction: AU
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-10
 review_status: pending_review
 category: international
 tier: 2
@@ -13,7 +13,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # AU Crypto Tax
 
-## Australia Crypto Tax -- CGT & Income Skill v1.0
+## Australia Crypto Tax -- CGT & Income Skill v1.2
 
 ## Section 1 -- Quick Reference
 
@@ -32,7 +32,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Tax authority | Australian Taxation Office (ATO) |
 | Filing portal | myTax / tax agent lodgement |
 | Filing deadline | 31 October (self-lodgement); agent-managed deadlines vary |
-| Skill version | 1.0 |
+| Skill version | 1.2 |
 
 ### Core Principle
 
@@ -111,7 +111,7 @@ A CGT event occurs when you:
 Available if:
 - The asset was held for at least 12 months (acquisition to disposal)
 - The taxpayer is an individual or trust (not a company or super fund at 1/3 discount)
-- The taxpayer is an Australian tax resident at the time of the CGT event
+- Establish the acquisition date and residency history. Foreign residents can retain an apportioned discount for qualifying resident periods and entitlement under the separate pre-8 May 2012 rules; see `au-nonresident-cgt.md`.
 
 ### 2.4 Personal Use Asset Exemption
 
@@ -313,7 +313,7 @@ The ATO requires the following records for each transaction:
 
 ## Section 7 -- Prohibitions
 
-- **Prohibitions** — NEVER claim the personal use asset exemption for crypto held on an exchange for extended periods; NEVER apply the 50% CGT discount without verifying 12+ months holding period; NEVER apply the 50% CGT discount for companies or non-residents; NEVER offset capital losses against ordinary income (only against capital gains); NEVER apply capital losses before gross gains (apply losses first, THEN discount); NEVER ignore crypto-to-crypto swaps as non-events -- each swap is a disposal; NEVER assume DeFi events are non-taxable -- conservative approach is to treat as disposals; NEVER omit staking/airdrop income -- it is ordinary income when received; NEVER present tax calculations as definitive -- always label as estimated
+- **Prohibitions** — NEVER claim the personal use asset exemption for crypto held on an exchange for extended periods; NEVER apply the 50% CGT discount without verifying 12+ months holding period; NEVER apply the individual 50% CGT discount to companies; calculate any retained foreign-resident discount from the full residency history; NEVER offset capital losses against ordinary income (only against capital gains); NEVER apply capital losses before gross gains (apply losses first, THEN discount); NEVER ignore crypto-to-crypto swaps as non-events -- each swap is a disposal; NEVER assume DeFi events are non-taxable -- conservative approach is to treat as disposals; NEVER omit staking/airdrop income -- it is ordinary income when received; NEVER present tax calculations as definitive -- always label as estimated
 
 ## Disclaimer
 

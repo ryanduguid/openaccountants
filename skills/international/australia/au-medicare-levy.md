@@ -1,10 +1,10 @@
 ---
 name: au-medicare-levy
 description: Use this skill whenever asked about the Australian Medicare Levy, Medicare Levy Surcharge (MLS), low-income reduction thresholds, family thresholds, surcharge tiers, private health insurance (PHI) rebate interaction, or Medicare levy exemptions. Trigger on phrases like "Medicare levy", "Medicare surcharge", "MLS", "do I pay Medicare levy", "low income Medicare", "Medicare levy reduction", "Medicare levy exemption", "private health insurance rebate", "PHI rebate", "M1", "M2", or any question about Medicare-related levies on an Australian tax return. ALWAYS read this skill before touching any Medicare levy work.
-version: 2.1
+version: "2.2"
 jurisdiction: AU
 tax_year: 2024
-last_updated: 2026-07-13
+last_updated: 2026-09-10
 review_status: pending_review
 category: international
 tier: 2
@@ -13,7 +13,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # AU Medicare Levy
 
-## Australia Medicare Levy and Medicare Levy Surcharge Skill v2.0
+## Australia Medicare Levy and Medicare Levy Surcharge Skill v2.2
 
 ## Section 1 -- Quick reference
 
@@ -161,7 +161,7 @@ This is the deterministic pre-classifier for bank statement entries related to M
 ### 4.4 Medicare Levy Surcharge (Tier 1)
 
 - **MLS overview** — The MLS is a separate levy on top of the standard 2% Medicare levy. It applies to taxpayers who do NOT hold appropriate private patient hospital cover and whose income exceeds the MLS threshold.  _(ITAA 1997 s 8C-8G)_
-- **Income for MLS purposes** — Income for MLS purposes = taxable income + reportable fringe benefits total + total net investment loss (including net financial investment loss and net rental property loss) + super lump sum (taxed element, untaxed element) - child support paid.  _(ITAA 1997 s 8C-8G)_
+- **Income for MLS purposes:** Start with taxable income, reportable fringe benefits, reportable super contributions and total net investment losses. Apply the specific exclusions, including assessable First Home Super Saver released amounts. Do not deduct child support as a general MLS adjustment or add taxable super lump sums a second time. Check special lump-sum treatment with the reviewer. (Library, Superannuation/Contributions to Superannuation Funds and RSAs, income definitions.)
 - **MLS pro-ration and appropriate cover definition** — MLS is pro-rated for each day the client (and/or dependants) do not have appropriate private hospital cover. Appropriate cover means private patient hospital cover with an excess of no more than $750 for singles or $1,500 for families/couples.  _(ITAA 1997 s 8C-8G)_
 - **Family threshold applies regardless of spouse income** — If married/de facto, the family threshold applies regardless of whether the spouse earns income.  _(ITAA 1997 s 8C-8G)_
 

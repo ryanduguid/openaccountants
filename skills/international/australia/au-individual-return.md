@@ -1,7 +1,7 @@
 ---
 name: au-individual-return
 description: Use this skill whenever asked about Australian individual income tax for sole traders. Trigger on phrases like "how much tax do I pay in Australia", "Australian tax return", "sole trader tax", "ABN tax", "Medicare levy", "LITO", "PAYG", "tax brackets Australia", "BAS", "instant asset write-off", "home office deduction", "HELP repayment", "HECS debt", "small business income tax offset", "motor vehicle deduction", or any question about filing or computing income tax for an Australian sole trader. Covers 2024-25 Stage 3 tax rates, Medicare levy and surcharge, LITO, business income computation, allowable deductions, depreciation, instant asset write-off, small business income tax offset, HELP/HECS repayments, and final tax computation. ALWAYS read this skill before touching any Australian income tax work.
-version: 2.1
+version: "2.2"
 jurisdiction: AU
 tax_year: 2024
 last_updated: 2026-09-10
@@ -32,7 +32,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Filing deadline | Self-lodged: 31 October following the 30 June year-end. Tax-agent dates depend on the client: 15 May is the general date for eligible clients not required earlier, and engagement before 31 October does not guarantee it. For 2024-25, confirm the assigned date in the ATO lodgment program; self-lodgment was due 31 October 2025 |
 | Contributor | Open Accountants Community |
 | Validated by | Pending -- Australian CPA/CA sign-off required |
-| Skill version | 2.0 |
+| Skill version | 2.2 |
 
 ### Tax Rates -- Resident Individual (2024-25, Stage 3) [T1]
 
@@ -55,7 +55,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Rate | 2% of taxable income |
 | Low-income threshold (single) | $27,222 (no levy below; phase-in $27,223-$34,027) |
 | Low-income threshold (family) | $45,907 + $4,216 per dependent child |
-| Surcharge (no private hospital cover) | Additional 1%-1.5% if income over $93,000 (single) |
+| Surcharge (no private hospital cover) | Additional 1%-1.5% if income over $97,000 (single) |
 
 ### Low Income Tax Offset (LITO) [T1]
 
@@ -63,8 +63,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 | Taxable Income (AUD) | LITO |
 | --- | --- |
-| Up to $45,000 | $700 |
-| $45,001 -- $66,667 | Reduces by 5c per $1 over $45,000 |
+| Up to $37,500 | $700 |
+| $37,501 -- $45,000 | $700 less 5c per $1 over $37,500 |
+| $45,001 -- $66,667 | $325 less 1.5c per $1 over $45,000, minimum $0 |
 | $66,668+ | $0 |
 
 ### Small Business Income Tax Offset (SBITO) [T1]
@@ -77,13 +78,15 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Cap | $1,000 |
 | Eligibility | Aggregated turnover under $5 million (individuals and trusts only) |
 
+The Library establishes the 70c home-office rate for 2025-26 only. For this guide's 2024-25 return, record the fixed rate as unverified and leave that calculation pending until a source for that year is supplied. The separately labelled 2025-26 illustrations do not establish a 2024-25 rate.
+
 ### Key Deduction Rate Lookups
 
 **Key Deduction Rate Lookups**
 
 | Item | Rate/threshold | Claim handling |
 | --- | --- | --- |
-| Home office -- fixed rate method | 70 cents per hour (2024-25 and 2025-26) | T2 -- method choice, hours, and records/substantiation required |
+| Home office -- fixed rate method | 2024-25: rate requires verification; 2025-26: 70 cents per hour | T2 -- method choice, hours, and records/substantiation required |
 | Motor vehicle -- cents per km method | 88 cents per km (max 5,000 km) | T2 -- method choice and business-km support required |
 | Instant asset write-off (small business) | $20,000 threshold (assets under $20,000 immediately deductible) | T1 if small-business eligibility and asset cost are clear; otherwise escalate |
 | Superannuation (deductible personal contribution) | Up to $30,000 concessional cap | T1 rate-cap lookup; notice of intent must be lodged before claiming |
@@ -149,7 +152,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Pattern | Deduction Category | Tier | Treatment |
 | --- | --- | --- | --- |
 | RENT, OFFICE RENT, SERVICED OFFICE | Business expense -- occupancy | T1 | Fully deductible if dedicated business premises |
-| HOME OFFICE, WORK FROM HOME | Home office deduction (D5) | T2 | Fixed rate 70c/hr (2024-25 and 2025-26) OR actual cost method. See Tier 2. |
+| HOME OFFICE, WORK FROM HOME | Home office deduction (D5) | T2 | Fixed rate for the verified return year (70c/hr for 2025-26) OR actual cost method. See Tier 2. |
 | PETROL, FUEL, CALTEX, BP, SHELL, AMPOL | Motor vehicle (D1) | T2 | Cents/km (88c, max 5,000 km) OR logbook method |
 | CAR INSURANCE, REGO, SERVICE | Motor vehicle | T2 | Only under logbook method (not cents/km) |
 | TOLL, CITYLINK, LINKT | Motor vehicle or travel | T1 | Business travel tolls: deductible under either method |
@@ -201,7 +204,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Section 4 -- Worked Examples
 
-### Example 1 -- Standard Sole Trader (Graphic Designer)
+### Example 1 -- Standard Sole Trader (Graphic Designer, 2025-26 rate illustration)
 
 **Input:** ABN income AUD 92,000. Business expenses: software AUD 3,600, advertising AUD 1,200, accounting AUD 1,100, office supplies AUD 800. Home office 1,200 hours at 70c/hr. Car 4,000 business km at 88c/km. No other income. No HELP debt. Has PHI.
 
@@ -234,7 +237,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - Logbook method is significantly more beneficial. But requires a valid logbook kept for a continuous 12-week period.
 - [T2] Flag: confirm logbook exists and is valid.
 
-### Example 4 -- Home Office (Fixed Rate vs Actual)
+### Example 4 -- Home Office (Fixed Rate vs Actual, 2025-26)
 
 **Input:** Works from home 1,600 hours/year. Dedicated office in 3-bedroom house (1/4 area). Electricity AUD 2,400, internet AUD 1,200, phone AUD 960 (80% business), depreciation on furniture AUD 400.
 
@@ -302,7 +305,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 | Method | What It Covers | Additional Claims |
 | --- | --- | --- |
-| Fixed rate (70c/hr, 2024-25 and 2025-26) | Electricity, gas, phone, internet, stationery, computer consumables | Separately claim: technology depreciation (computer, monitor), occupancy costs (if dedicated room), cleaning |
+| Fixed rate (verify the return year; 70c/hr for 2025-26) | Electricity, gas, phone, internet, stationery, computer consumables | Separately claim: technology depreciation (computer, monitor), occupancy costs (if dedicated room), cleaning |
 | Actual cost | Each expense claimed individually at actual business % | No fixed rate component |
 
 - **Home office record keeping and occupancy expenses** — Under either method: must have records of hours worked from home. Fixed rate: can use any reasonable record. Actual: need receipts and usage records. Occupancy expenses (rent, mortgage interest, rates, home insurance, land tax) are ONLY deductible if you have a dedicated area set aside exclusively as a place of business. These are separate from running expenses.
@@ -324,15 +327,15 @@ Confirm method and km/logbook records.
 
 ### 6.3 Private Health Insurance (Medicare Levy Surcharge) [T2]
 
-- **MLS applicability** — If income over $93,000 (single) and no appropriate private hospital cover, Medicare levy surcharge applies:
+- **MLS applicability** — If income over $97,000 (single) and no appropriate private hospital cover, Medicare levy surcharge applies:
 
 **MLS Rate table**
 
 | Income | MLS Rate |
 | --- | --- |
-| $93,001 -- $108,000 | 1% |
-| $108,001 -- $144,000 | 1.25% |
-| $144,001+ | 1.5% |
+| $97,001 -- $113,000 | 1% |
+| $113,001 -- $151,000 | 1.25% |
+| $151,001+ | 1.5% |
 
 - **PHI rebate** — PHI rebate: income-tested offset that reduces PHI premiums. Claimed via reduced premiums or tax offset.
 
@@ -361,7 +364,7 @@ A. INCOME
 
 B. DEDUCTIONS
   B1. Business expenses (direct)                   ___________
-  B2. Home office (70c/hr or actual)               ___________
+  B2. Home office (verified rate or actual)               ___________
   B3. Motor vehicle (88c/km or logbook)            ___________
   B4. Travel (flights, accommodation)              ___________
   B5. Self-education                               ___________
@@ -436,7 +439,7 @@ ONBOARDING QUESTIONS -- AUSTRALIA INDIVIDUAL RETURN
 2. Do you have an active ABN and TFN?
 3. Are you registered for GST?
 4. What is your aggregated turnover? (for small business concessions)
-5. Do you work from home? How many hours per year? Method preference (70c or actual)?
+5. Do you work from home? How many hours per year? Method preference (verified fixed rate or actual)?
 6. Do you use a vehicle for business? Method preference (cents/km or logbook)?
 7. Any assets purchased this year? Cost?
 8. Do you have private health insurance? Full year?

@@ -1,10 +1,10 @@
 ---
 name: au-sole-trader-schedule
-description: Australian sole trader business schedule (Business and Professional Items Schedule for Individuals). Covers assessable business income, allowable deductions, home office (fixed rate 67c/hour or actual), motor vehicle (logbook or cents per km at 85c/km), depreciation (instant asset write-off, simplified pooling, general pooling), prepaid expenses, and trading stock.
-version: 1.0
+description: Australian sole trader business schedule (Business and Professional Items Schedule for Individuals). Covers assessable business income, allowable deductions, home office (fixed rate verified rate for the return year or actual), motor vehicle (logbook or cents per km at 88c/km), depreciation (instant asset write-off, simplified pooling, general pooling), prepaid expenses, and trading stock.
+version: "1.1"
 jurisdiction: AU
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-10
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # AU Sole Trader Schedule
 
-## Australia Sole Trader Business Schedule v1.0
+## Australia Sole Trader Business Schedule v1.1
 
 ## What this file is
 
@@ -71,17 +71,17 @@ This skill does NOT cover:
 | --- | --- | --- |
 | Instant asset write-off threshold | $20,000 per asset (for small business entities with aggregated turnover < $10M) for assets first used or installed ready for use between 1 July 2024 and 30 June 2025 | ITAA 1997 s 328-180 (extended by Treasury Laws Amendment) |
 | Small business entity threshold | Aggregated turnover < $10M | ITAA 1997 s 328-110 |
-| Cents per km rate (motor vehicle) | 85 cents per km | ATO determination TD 2024/4 |
+| Cents per km rate (motor vehicle) | 88 cents per km | ATO determination TD 2024/4 |
 | Cents per km cap | 5,000 business km per car per year | ITAA 1997 s 28-25 |
-| Home office fixed rate | 67 cents per hour | ATO PCG 2023/1 (revised method from 1 July 2022) |
+| Home office fixed rate | Rate for 2024-25 requires verification | ATO PCG 2023/1 (revised method from 1 July 2022) |
 | Trading stock threshold (change in value) | $5,000 — if the difference between opening and closing stock is < $5,000, the taxpayer can elect not to do a stocktake | ITAA 1997 s 70-35 |
 | Prepaid expenses (SBE) | Immediately deductible if the service period is 12 months or less and ends on or before 30 June of the following year | ITAA 1997 s 328-225 |
 
 - **Instant asset write-off threshold** — $20,000 per asset (for small business entities with aggregated turnover < $10M) for assets first used or installed ready for use between 1 July 2024 and 30 June 2025  _(ITAA 1997 s 328-180 (extended by Treasury Laws Amendment))_
 - **Small business entity threshold** — Aggregated turnover < $10M  _(ITAA 1997 s 328-110)_
-- **Cents per km rate (motor vehicle)** — 85 cents per km  _(ATO determination TD 2024/4)_
+- **Cents per km rate (motor vehicle)** — 88 cents per km  _(ATO determination TD 2024/4)_
 - **Cents per km cap** — 5,000 business km per car per year  _(ITAA 1997 s 28-25)_
-- **Home office fixed rate** — 67 cents per hour  _(ATO PCG 2023/1 (revised method from 1 July 2022))_
+- **Home office fixed rate** — Rate for 2024-25 requires verification  _(ATO PCG 2023/1 (revised method from 1 July 2022))_
 - **Trading stock threshold (change in value)** — $5,000 — if the difference between opening and closing stock is < $5,000, the taxpayer can elect not to do a stocktake  _(ITAA 1997 s 70-35)_
 - **Prepaid expenses (SBE)** — Immediately deductible if the service period is 12 months or less and ends on or before 30 June of the following year  _(ITAA 1997 s 328-225)_
 
@@ -123,7 +123,7 @@ Two methods available for sole traders:
 
 #### Method 1 — Cents per kilometre
 
-- **Cents per kilometre method** — Claim 85c per business km, up to 5,000 km per car per year. Maximum claim = 5,000 x $0.85 = $4,250 per car. No logbook or written evidence of individual trips required, but must be able to show how the estimate was calculated.  _(ATO determination TD 2024/4; ITAA 1997 s 28-25)_
+- **Cents per kilometre method** — Claim 88c per business km, up to 5,000 km per car per year. Maximum claim = 5,000 x $0.88 = $4,400 per car. No logbook or written evidence of individual trips required, but must be able to show how the estimate was calculated.  _(ATO determination TD 2024/4; ITAA 1997 s 28-25)_
 
 #### Method 2 — Logbook
 
@@ -141,9 +141,11 @@ Two methods available for sole traders:
 
 ### 4.6 Home office expenses
 
-#### Fixed rate method (67c per hour) — PCG 2023/1
+The Library supports 70c/hour for 2025-26 only. This guide targets 2024-25: leave the fixed-rate calculation pending until a source for that year is supplied. Record actual hours and expenses in the meantime.
 
-- **Fixed rate method** — Covers energy expenses (electricity, gas), phone, internet, stationery, computer consumables. Must keep a record of actual hours worked from home (e.g., timesheets, diary, roster). Separately claim occupancy expenses (rent, mortgage interest, rates, insurance) only if the home is a place of business (rare for sole traders without a dedicated area). Cannot separately claim expenses already covered by the 67c rate.  _(ATO PCG 2023/1)_
+#### Fixed rate method (verify the return year) — PCG 2023/1
+
+- **Fixed rate method** — Covers energy expenses (electricity, gas), phone, internet, stationery, computer consumables. Must keep a record of actual hours worked from home (e.g., timesheets, diary, roster). Separately claim occupancy expenses (rent, mortgage interest, rates, insurance) only if the home is a place of business (rare for sole traders without a dedicated area). Cannot separately claim expenses already covered by the fixed rate.  _(ATO PCG 2023/1)_
 
 #### Actual cost method
 
@@ -151,13 +153,13 @@ Two methods available for sole traders:
 
 ### 4.7 Net business income or loss (P20)
 
-- **Net business income or loss (P20)** — Step 1. P20 = P8 (income) - total deductions (P9 through P14 plus any other deductions). Step 2. If P20 is a loss, check the non-commercial business loss rules (ITAA 1997 Div 35): The loss can only be offset against other income if one of four tests is met: assessable income test ($20,000), profits test (3 of last 5 years), real property test ($500,000), or other assets test ($100,000). If no test is met, the loss is deferred to future years (quarantined). Step 3. P20 feeds into the individual tax return at "Business income or loss."  _(ITAA 1997 Div 35)_
+- **Net business income or loss (P20):** Calculate business income less allowable deductions. If this is a loss, apply Division 35 before carrying it into the individual return. For the four-test route, income for Division 35 must be less than $250,000 AND at least one test must pass: activity assessable income of at least $20,000; a profit in 3 of 5 years including the current year; qualifying real property of at least $500,000; or qualifying other assets of at least $100,000. Apply the asset exclusions. The income measure includes taxable income calculated before the business loss, reportable fringe benefits, reportable super contributions and total net investment losses. Otherwise defer the loss unless an exception or the Commissioner's discretion applies. Primary production and professional arts have an exception where assessable income from other sources, excluding net capital gains, is less than $40,000. (ITAA 1997 Division 35; Library, Tax/Assessable Income.)
 
 ## Section 5 — Edge cases and special rules
 
 ### 5.1 Personal services income (PSI)
 
-- **Personal services income (PSI)** — If more than 80% of the sole trader's income from a contract is for their personal effort or skills, and no PSI determination has been obtained, the income may be PSI. PSI rules deny certain deductions (home office, entertainment, some car expenses). **Flag for reviewer.**  _(ITAA 1997 Div 84-87)_
+- **Personal services income (PSI):** Income mainly (more than 50%) for an individual's personal effort or skills is PSI. The separate 80% test concerns PSI from one client and its associates and limits which personal services business tests can be self-assessed. Work through the results test, other available tests and any determination in `au-psi.md` before applying attribution or deduction restrictions. Flag unresolved facts for the reviewer. (ITAA 1997 Divisions 84-87.)
 
 ### 5.2 Mixed-use assets
 

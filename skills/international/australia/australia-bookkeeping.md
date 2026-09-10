@@ -1,7 +1,7 @@
 ---
 name: australia-bookkeeping
 description: Use this skill whenever asked about Australian bookkeeping for sole traders, partnerships, or small companies. Trigger on phrases like "chart of accounts", "BAS", "GST codes", "bookkeeping", "profit and loss", "balance sheet", "AASB", "simplified disclosures", "Tier 2", "bank reconciliation", "expense categories", "revenue recognition", "depreciation", "instant asset write-off", "small business pool", "ABN", "ATO reporting", "activity statement", "accrual basis", "cash basis", "general ledger", or any question about day-to-day transaction recording, financial statement preparation, or account coding for an Australian business.
-version: 1.0
+version: "1.1"
 jurisdiction: AU
 tax_year: 2025
 last_updated: 2026-09-10
@@ -147,7 +147,7 @@ Australian software (Xero, MYOB, QuickBooks) typically uses 3–4 digit codes. T
 | 6040 | Insurance — Business | Expense |
 | 6050 | Repairs and Maintenance | Expense |
 | 6100 | Wages and Salaries | Expense |
-| 6110 | Superannuation Guarantee (11.5% from Jul 2025) | Expense |
+| 6110 | Superannuation Guarantee (12% from Jul 2025) | Expense |
 | 6120 | Workers' Compensation Insurance | Expense |
 | 6130 | Payroll Tax (state-based) | Expense |
 | 6140 | Staff Training | Expense |
@@ -261,7 +261,7 @@ Small businesses using simplified reporting typically recognise on delivery/comp
 | GST-Free | Food (basic), medical, education, exports | G1 (no 1A) |
 | Input Taxed | Financial supplies, residential rent | G1 (no credit) |
 | BAS Excluded | Wages, drawings, loan principal, private | Not reported |
-| No ABN Withholding | Payments to suppliers without ABN (49% w/h) | Separate |
+| No ABN Withholding | Payments to suppliers without ABN (47% w/h, subject to exceptions) | Separate |
 
 ## Section 5 -- Asset vs Expense Thresholds
 
@@ -293,19 +293,21 @@ Small businesses using simplified reporting typically recognise on delivery/comp
 | Diminishing value | rate = days held ÷ 365 × (200% ÷ effective life) |
 | Prime cost (straight-line) | rate = days held ÷ 365 × (100% ÷ effective life) |
 
-### Common Effective Lives (ATO TR 2025/1 basis)
+### Common Effective Lives
 
-**Common Effective Lives (ATO TR 2025/1 basis)**  _(ATO TR 2025/1)_
+Use the Income Tax Assessment (Effective Life of Depreciating Assets) Determination 2025 for Commissioner-determined Div 40 lives, or a supportable self-assessed life. Div 43 uses its own construction-date, use and rate rules; 4% applies only to an eligible category.
+
+**Common Effective Lives**
 
 | Asset | Effective Life | DV Rate | PC Rate |
 | --- | --- | --- | --- |
 | Desktop computers | 4 years | 50% | 25% |
-| Laptops | 4 years | 50% | 25% |
+| Laptops | 2 years | 100% | 50% |
 | Printers/Scanners | 5 years | 40% | 20% |
 | Office furniture | 10 years | 20% | 10% |
 | Motor vehicles | 8 years | 25% | 12.5% |
 | Air conditioning | 10 years | 20% | 10% |
-| Buildings (general) | 40 years | 5% | 2.5% |
+| Eligible capital works (Div 43, 2.5% category) | 40 years | Not applicable | 2.5% of eligible construction expenditure; separate from Div 40 |
 
 ### Car Limit
 
@@ -511,7 +513,7 @@ TOTAL EQUITY                                          xxx
 
 ### Superannuation Guarantee
 
-- Rate: 11.5% of ordinary time earnings (from 1 Jul 2025); rising to 12% from 1 Jul 2026
+- Rate: 11.5% of ordinary time earnings for 2024-25; 12% from 1 Jul 2025
 - Due: 28 days after end of quarter
 - Nominal: 6110 (expense) / 2110 (payable)
 - SG Charge: if late, lose deduction and pay additional penalties

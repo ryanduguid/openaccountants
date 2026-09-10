@@ -2,18 +2,18 @@
 name: au-partnerships
 description: >
   Use this skill whenever asked about Australian partnership taxation -- partnership tax returns (form P), how section 90 net income or partnership losses flow through to partners under section 92, partner salaries and drawings, non-commercial loss deferral for partner shares, CGT on fractional partnership interests, admitting or retiring partners, reconstitution versus dissolution, GST registration for partnerships, family or husband-and-wife partnerships, income splitting, Everett assignments, or professional firm profit allocation under PCG 2021/4. Trigger on phrases like "partnership return", "partner salary", "partnership loss", "profit share", "admit a partner", "family partnership", or "Everett". ALWAYS read this skill before touching any partnership work.
-version: 1.0
+version: "1.1"
 jurisdiction: AU
 tax_year: 2026
 tax_year_notes: "2026-27"
-last_updated: 2026-08-20
+last_updated: 2026-09-10
 review_status: pending_review
 category: international
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Australia Partnerships -- Division 5 Flow-Through Taxation Skill v1.0
+# Australia Partnerships -- Division 5 Flow-Through Taxation Skill v1.1
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
@@ -104,7 +104,7 @@ Partnership work starts with the P&L and the capital accounts, not the profit sp
 
 Ana and Ben run a cafe in equal partnership (no written agreement -- equal sharing by default). 2026-27: accounting profit $86,000 AFTER crediting each partner $2,000 "interest on capital". Both amounts are appropriations of profit, so s 90 net income = $86,000 + $4,000 = **$90,000**. Each partner's s 92(1) share = **$45,000** -- assessable whether or not drawn (Ana drew only $20,000 cash; she is still assessed on $45,000).
 
-Ana has no other income. 2026-27 resident rates: tax = 15% x ($45,000 - $18,201) = 15% x $26,799 = **$4,019.85**, plus Medicare levy 2% x $45,000 = $900, less offsets: the small business income tax offset (turnover < $5m) is 16% x $4,019.85 = $643 (under the $1,000 cap), plus any LITO. The partnership itself pays nothing and remits nothing for the partners.
+Ana has no other income. 2026-27 resident rates: tax = 15% x ($45,000 - $18,200) = 15% x $26,800 = **$4,020**, plus Medicare levy 2% x $45,000 = $900, less offsets: the small business income tax offset (turnover < $5m) is 16% x $4,020 = $643.20 (under the $1,000 cap), plus any LITO. The partnership itself pays nothing and remits nothing for the partners.
 
 ### Example 2 -- Partner salary recharacterised where it would create a loss
 
@@ -118,14 +118,14 @@ The written agreement (signed before 1 July -- *Galland* timing satisfied) gives
 
 Sam (salary $185,000) and his spouse run a small olive grove in equal partnership; both are individuals. 2026-27: partnership assessable income $12,000, partnership loss $18,000 -- Sam's s 92(2) share is a $9,000 deduction, IF Div 35 lets him use it.
 
-- Income requirement: Sam's income for Div 35 (taxable income adding back the business loss, plus reportable fringe benefits, reportable super and net investment losses) is about $194,000 < $250,000 -- **met**, so the four tests are available.
+- Income requirement: Sam's income for Div 35 (taxable income adding back the business loss, plus reportable fringe benefits, reportable super and net investment losses) is $185,000 < $250,000, assuming no other components -- **met**, so the four tests are available.
 - Assessable income test: whole-partnership income $12,000 < $20,000 -- **fail**.
 - Profits test: losses every year since planting -- **fail** (needs profits in 3 of the last 5 years including the current year).
 - Real property test: grove land worth $380,000 < $500,000 -- **fail**.
 - Other assets test: plant and stock $60,000 < $100,000 -- **fail**.
 - Commissioner's discretion: no flood/drought special circumstances; olives are past their lead time -- **not sought**.
 
-Result: Sam's $9,000 share is **deferred**, quarantined against future profits of the same activity. The primary production exception cannot save him: it needs other income (excluding net primary production income) under $40,000, and Sam's salary alone is $185,000. His spouse (no other income) meets the income requirement too but fails the same four tests -- also deferred; had she earned nothing else, the $40,000 primary production exception would have let her claim her share immediately. Same partnership, different outcomes per partner.
+Result: Sam's $9,000 share is deferred against future profits of the activity. His salary exceeds the primary-production exception's $40,000 limit on assessable income from other sources, excluding net capital gains. His spouse has no other income and qualifies for that exception, so her $9,000 share is not deferred under Division 35 even though the four tests fail. Any resulting individual tax loss follows its separate rules. (Library, Tax/Assessable Income.)
 
 ### Example 4 -- Fractional CGT on admitting a partner
 
@@ -188,13 +188,13 @@ Interest credited to a partner on capital contributed is, like salary, an approp
 
 Unlike a trust (where losses are trapped in the trust), a partnership loss flows to the partners in the loss year under s 92(2). For an INDIVIDUAL partner whose share is from a non-commercial business activity, Division 35 ITAA 1997 then decides whether the share is usable now or deferred:
 
-1. **Income requirement:** the partner's taxable income (adding back the business loss), reportable fringe benefits, reportable super contributions and total net investment losses must be **under $250,000**. Fail this and only the Commissioner's discretion can help.
+1. **Income requirement for the four-test route:** the partner's taxable income calculated before the business loss, reportable fringe benefits, reportable super contributions and total net investment losses must be under $250,000. Check exceptions and the Commissioner's discretion separately.
 2. If met, ONE of the four tests must pass -- with partnership modifications (TR 2003/3):
    - **Assessable income test:** activity income >= $20,000 -- measured across the WHOLE partnership where all partners are individuals; EXCLUDE shares of corporate/trust partners; a partner's own non-partnership income from the same activity counts for that partner only.
    - **Profits test:** THE PARTNER's income from the activity (partnership share plus own-right amounts) exceeded their deductions in at least 3 of the past 5 years including the current year -- partner-level interest costs can fail one partner while another passes.
    - **Real property test:** real property used in the activity >= $500,000 -- whole-partnership value, excluding corporate/trust partners' shares and property partners own personally, EXCEPT the tested partner may add their own property used continuously in the business.
    - **Other assets test:** other assets >= $100,000 -- same whole-partnership/exclusion pattern.
-3. **Exceptions/discretion:** primary production or professional arts businesses are exempt where the individual's other income (excluding net PP income) is under $40,000; the Commissioner may exercise discretion for special circumstances (flood, drought, illness) or lead-time activities.
+3. **Exceptions/discretion:** primary production or professional arts businesses have an exception where the individual's assessable income from other sources, excluding net capital gains, is under $40,000. The Commissioner may exercise discretion for special circumstances or qualifying lead-time activities.
 4. **Deferral:** a gated loss share is deferred and quarantined -- deductible against future income of the SAME activity (or when a test is later passed). It never becomes a partnership-level attribute.
 
 Company and trust partners are outside Div 35 -- their shares follow their own loss regimes.

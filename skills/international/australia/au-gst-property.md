@@ -9,18 +9,18 @@ description: >
   on "GST withholding", "GST at settlement", "margin scheme", "going concern", "new residential
   premises", "subdivision GST". Covers classification, withholding mechanics, worked arithmetic
   and escalation lines. ALWAYS read this skill before touching any property GST work.
-version: 1.0
+version: "1.1"
 jurisdiction: AU
 tax_year: 2026
 tax_year_notes: "2026-27"
-last_updated: 2026-08-20
+last_updated: 2026-09-10
 review_status: pending_review
 category: international
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Australia GST and Real Property Skill v1.0
+# Australia GST and Real Property Skill v1.1
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, or contracts. Do not rely on it to file, pay, settle, or take a tax position without review by a qualified professional.
 
@@ -42,7 +42,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | New residential premises | s 40-75(1): not previously sold as residential premises / no previous long-term lease (50+ years); or created by substantial renovations; or built to replace demolished premises |
 | 5-year rule | s 40-75(2): premises stop being "new" after at least 5 years used ONLY for input-taxed residential rent (para 40-35(1)(a)) |
 | Margin scheme agreement | In writing, on or before making the supply (settlement) -- s 75-5(1A); Commissioner may allow further period (PS LA 2005/16) |
-| Div 129 adjustment periods | Non-business-finance acquisitions: 2 (<= $5,000), 5 (> $5,000 and < $500,000), 10 (>= $500,000) -- s 129-20(3) |
+| Div 129 adjustment periods | Non-business-finance acquisitions: No general Div 129 adjustment at <= $1,000 GST-exclusive; 2 (> $1,000 and <= $5,000), 5 (> $5,000 and < $500,000), 10 (>= $500,000) -- s 129-20(3) |
 | Div 135 clawback | Increasing adjustment = 1/10 x supply price x proportion of non-creditable use (s 135-5) |
 | Penalty unit | $364 (from 1 July 2026) |
 | FRCGW (separate regime) | Foreign resident capital gains withholding: 15%, NO price threshold, from 1 January 2025. Income tax withholding, not GST -- different forms; both can apply to one settlement |
@@ -158,7 +158,7 @@ Increasing adjustment = 1/10 x supply price x proportion of non-creditable use
 
 The **build-to-sell-then-rent trap**: a developer claims full ITCs during construction (intended 100% taxable sales), then the market softens and unsold apartments are rented out. Renting is input taxed, so the extent of creditable purpose has changed -- Div 129 requires **increasing adjustments**.
 
-- **Adjustment periods (s 129-20):** the first is the tax period ending on or nearest 30 June starting at least 12 months after the acquisition's tax period; thereafter annually. Number of periods for non-business-finance acquisitions: **2** where the GST-exclusive value is $5,000 or less; **5** where more than $5,000 but under $500,000; **10** where $500,000 or more. Apartment-scale construction acquisitions are almost always in the 10-period band -- a decade of annual true-ups.
+- **Adjustment periods (s 129-20):** the first is the tax period ending on or nearest 30 June starting at least 12 months after the acquisition's tax period; thereafter annually. Number of periods for non-business-finance acquisitions: First exclude acquisitions with GST-exclusive value of $1,000 or less from this general Div 129 adjustment. For remaining acquisitions: **2** where the value is more than $1,000 and at most $5,000; **5** where more than $5,000 but under $500,000; **10** where $500,000 or more. Apartment-scale construction acquisitions are almost always in the 10-period band -- a decade of annual true-ups.
 - **Mechanic:** at each adjustment period, compare the ITC actually claimed (intended application) with the ITC that reflects **actual application** to date. Actual application below intended -> increasing adjustment (label 1A side); a later taxable sale within the adjustment periods lifts actual application and can produce decreasing adjustments.
 - **Dual concurrent use:** while a rented apartment is still genuinely held for sale, the application is split between taxable-sale purpose and input-taxed renting. GSTR 2009/4 accepts fair and reasonable methods (e.g. expected sale proceeds vs total expected consideration, or time-based weighting). Method choice is judgement-heavy -- compute a sketch, flag the method, and escalate sign-off.
 - **Interaction with the 5-year rule:** if the developer stops marketing and rents solely, the 5-year clock starts; once premises stop being new, the eventual sale is input taxed and adjustments trend the credits toward nil. Selling while still new keeps the sale taxable (and RW applies).
@@ -210,6 +210,8 @@ Increasing adjustment = 4 x $55,000 x (100% - 80%) = $44,000
 ```
 
 Repeated (recomputed on cumulative actual use) at each of the remaining adjustment periods. If an apartment sells as new residential premises in 2029, that sale is taxable (RW applies) and later periods can throw off decreasing adjustments; if BuildCo instead delists and rents solely for 5+ years, the premises stop being new, the sale becomes input taxed, and the credits unwind toward nil. Method selection and the register need tax agent sign-off -- sketch, flag, escalate.
+
+A $660 GST-inclusive desk is below the $1,000 GST-exclusive exclusion, so a change from wholly business use to half private use does not create a general Div 129 adjustment. A separate $4,400 GST-inclusive computer falls in the two-period band. Apply the threshold per acquisition and check other adjustment provisions separately. (Library, GST/GST Adjustments.)
 
 ### Example 5 -- Subdivision enterprise assessment
 

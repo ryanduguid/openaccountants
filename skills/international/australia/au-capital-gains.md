@@ -1,10 +1,10 @@
 ---
 name: au-capital-gains
 description: "Use this skill for any Australian resident's capital gains tax question. Trigger on: \"CGT Australia\", \"capital gains Australia\", \"sell shares Australia\", \"50% CGT discount\", \"cost base Australia\", \"small business CGT concessions\", \"SBCGT\", \"active asset test\", \"15-year exemption\", \"retirement exemption CGT\", \"CGT rollover\", \"CGT event A1\", \"main residence exemption\", \"Australian CGT\", \"sell my Australian company\", \"dispose of property Australia\". Covers CGT events, cost base, 50% discount, SBCGT concessions, main residence exemption. For non-residents selling Australian assets see au-nonresident-cgt."
-version: 1.1
+version: "1.2"
 jurisdiction: AU
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-10
 review_status: pending_review
 depends_on:
   - au-individual-return
@@ -24,7 +24,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Country | Australia |
 | Tax year | 1 July 2024 – 30 June 2025 |
 | CGT rate | No separate rate — net capital gain added to taxable income, taxed at marginal rate |
-| Effective max rate | ~23.25% (47% marginal × 50% discount, for assets held >12 months) |
+| Effective max rate | 23.5% (47% marginal × 50% discount, for assets held >12 months) |
 | 50% general discount | Yes — assets held >12 months by individuals and trusts |
 | Annual exemption | None (unlike UK) |
 | Primary legislation | ITAA 1997, Parts 3-1 and 3-3 |
@@ -53,8 +53,8 @@ CGT applies when a **CGT event** occurs. The most common:
 ## Section 3 — Capital Gain Calculation
 
 - **Capital gain formula** — Capital gain = Capital proceeds − Cost base
-- **Cost base (5 elements)** — 1. Original acquisition cost 2. Incidental acquisition costs (stamp duty, legal fees, brokerage) 3. Non-deductible ownership costs (e.g. rates, insurance on investment property) 4. Capital expenditure to increase/preserve value 5. Incidental disposal costs (agent fees, legal fees)
-- **Reduced cost base** — used to calculate capital losses = elements 1, 2, 4, 5 only (not 3)
+- **Cost base (5 elements):** 1. Acquisition money and property value; 2. Eligible incidental acquisition and disposal costs, including stamp duty, legal fees, brokerage and agent fees; 3. Eligible non-deductible ownership costs; 4. Eligible capital expenditure to increase or preserve value; 5. Capital expenditure to establish, preserve or defend title or rights. Apply exclusions and prevent double counting. (ITAA 1997 s 110-25.)
+- **Reduced cost base:** Use the separate reduced-cost-base rules to calculate a capital loss. Non-deductible ownership costs in the third cost-base element are excluded; eligible acquisition, incidental disposal and title-defence costs remain subject to their respective rules. (ITAA 1997 s 110-55.)
 - **Capital loss treatment** — Capital loss: if proceeds < reduced cost base. Losses can only be offset against capital gains (not other income). Unused losses carry forward indefinitely.
 
 ## Section 4 — The 50% General Discount
@@ -65,7 +65,7 @@ CGT applies when a **CGT event** occurs. The most common:
 - **Discount mechanics** — The discount reduces the gain, not the tax rate
 - **Order of application** — Discount is applied AFTER offsetting capital losses
 - **Companies exclusion** — Does NOT apply to companies (companies pay 30% or 25% on full gain)
-- **Non-residents exclusion** — Does NOT apply to non-residents (since 8 May 2012)
+- **Foreign-resident discount:** Calculate any retained entitlement for qualifying Australian-resident periods and the separate pre-8 May 2012 rules. Residency at disposal alone does not make the discount nil. See `au-nonresident-cgt.md`.
 
 ## Section 5 — Small Business CGT Concessions (SBCGT)
 

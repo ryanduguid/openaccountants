@@ -2,18 +2,18 @@
 name: au-smsf
 description: >
   Use this skill whenever asked about Australian self-managed superannuation funds -- SMSF accounting, the SMSF annual return (SAR), supervisory levy, fund tax at 15%, exempt current pension income (ECPI), actuarial certificates, non-arm's length income or expenses (NALI/NALE), contribution caps and acceptance rules, minimum pension drawdowns, transfer balance cap and TBAR reporting, SMSF audits, in-house assets, LRBA safe harbour rates, or Division 296. Trigger on phrases like "SMSF", "self-managed super", "SAR", "supervisory levy", "actuarial certificate", "ECPI", "NALI", "TBAR", "minimum pension", "bare trust", or "SMSF audit". ALWAYS read this skill before touching any SMSF work.
-version: 1.0
+version: "1.1"
 jurisdiction: AU
 tax_year: 2026
 tax_year_notes: "2026-27"
-last_updated: 2026-08-20
+last_updated: 2026-09-10
 review_status: pending_review
 category: international
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Australia Self-Managed Super Funds (SMSF) -- Accounting, Tax & Compliance Skill v1.0
+# Australia Self-Managed Super Funds (SMSF) -- Accounting, Tax & Compliance Skill v1.1
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
@@ -151,7 +151,7 @@ Franking credits offset fund tax and are refundable. Capital losses offset only 
 
 ### 4.3 NALI and NALE -- **AUDIT FLASH POINT**
 
-Income is NALI (s 295-550, taxed at 45%) where it exceeds an arm's-length amount from a non-arm's-length scheme, where a private company dividend or non-fixed trust distribution is involved, or -- since 1 July 2018 -- where the fund incurred **non-arm's-length expenditure** (NALE: expenses lower than arm's length, including nil).
+Income is NALI (s 295-550, taxed at 45%) where it exceeds an arm's-length amount from a non-arm's-length scheme, where the non-fixed trust distribution rule applies, or where the applicable non-arm's-length expenditure (NALE) rules apply. A private-company dividend is NALI unless its amount is consistent with an arm's-length dealing. Assess the statutory factors, including share value, cost, dividend rate and other relevant circumstances. In a complying accumulation fund, a $10,000 unfranked dividend satisfying that exception is ordinarily taxed at 15% ($1,500), before other deductions or offsets, rather than 45% ($4,500). (s 295-550(2)-(3); Library, Taxation of Superannuation Funds, ADFs and PSTs.)
 
 Post the 2024 Act (Treasury Laws Amendment (Support for Small Business and Charities and Other Measures) Act 2024, applied from 2018-19):
 

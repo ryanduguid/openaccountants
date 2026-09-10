@@ -1,10 +1,10 @@
 ---
 name: au-freelance-intake
 description: ALWAYS USE THIS SKILL when a user asks for help preparing their Australian tax returns AND mentions freelancing, self-employment, contracting, sole trading, or ABN-based work. Trigger on phrases like "help me do my taxes", "prepare my ITR", "I'm a sole trader in Australia", "I'm a freelancer in Australia", "do my taxes as a contractor", "prepare my BAS and income tax", or any similar phrasing where the user is an Australian-resident self-employed individual needing tax return preparation. This is the REQUIRED entry point for the Australian self-employed tax workflow -- every other skill in the stack (australia-gst, au-individual-return, au-super-guarantee, au-medicare-levy, au-payg-instalments, au-return-assembly) depends on this skill running first to produce a structured intake package. Uses upload-first workflow -- the user dumps all their documents and the skill infers as much as possible before asking questions. Uses ask_user_input_v0 for structured questions instead of one-at-a-time prose. Built for speed. Australian full-year residents only; sole traders only.
-version: 0.1
+version: "0.2"
 jurisdiction: AU
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-10
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -12,7 +12,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # AU Freelance Intake
 
-## Australia Sole Trader Intake Skill v0.1
+## Australia Sole Trader Intake Skill v0.2
 
 ## What this file is
 
@@ -298,7 +298,7 @@ After the user confirms the summary (or corrects it), ask about things that cann
 ```
 Q: "Home office claim method?"
    Options: [
-     "Fixed rate method (67c/hr) -- I track hours worked from home",
+     "Fixed rate method (rate for the return year to be verified) -- I track hours worked from home",
      "Actual cost method -- I have records of running expenses and floor area",
      "I work from a separate business premises (not home)",
      "I don't work from home",
@@ -306,15 +306,15 @@ Q: "Home office claim method?"
    ]
 ```
 
-- **Home office option handling** — If option 1 -> ask for total hours worked from home during 2024-25 (text input). If option 2 -> flag as complex: actual cost method requires detailed records of electricity, gas, internet, phone, depreciation of furniture. Ask for floor area percentage of dedicated workspace. If option 3 -> rent is already captured in expenses. No home office calculation needed. If option 4 -> skip home office entirely. If option 5 -> recommend fixed rate method (67c/hr) as simpler. Ask for hours.
-- **Fixed rate home office method rate** — 67 cents/hour (2024-25 rate, revised rate effective 1 July 2022, replaces old 52c/hr method)
+- **Home office option handling** — If option 1 -> ask for total hours worked from home during 2024-25 (text input). If option 2 -> flag as complex: actual cost method requires detailed records of electricity, gas, internet, phone, depreciation of furniture. Ask for floor area percentage of dedicated workspace. If option 3 -> rent is already captured in expenses. No home office calculation needed. If option 4 -> skip home office entirely. If option 5 -> explain both methods and record the preference; verify the return-year rate before calculating a fixed-rate claim. Ask for hours.
+- **Fixed rate home office method:** The Library establishes 70 cents/hour for 2025-26 only. For this 2024-25 intake, keep `rate_per_hour` null and the calculation pending until a source for that year is supplied. Collect hours and substantiation now.
 
 **Motor vehicle gap-filling question**
 
 ```
 Q: "Motor vehicle method?"
    Options: [
-     "Cents-per-km (85c/km, max 5,000 business km)",
+     "Cents-per-km (88c/km, max 5,000 business km)",
      "Logbook method (I kept a logbook for 12+ weeks)",
      "No vehicle used for business"
    ]
@@ -446,13 +446,13 @@ The downstream skill (`au-return-assembly`) consumes a JSON structure. It is int
   "home_office": {
     "method": "fixed_rate | actual_cost | none",
     "hours_worked_from_home": 0,
-    "rate_per_hour": 0.67,
+    "rate_per_hour": null,
     "floor_area_pct": 0
   },
   "motor_vehicle": {
     "method": "cents_per_km | logbook | none",
     "business_km": 0,
-    "rate_per_km": 0.85,
+    "rate_per_km": 0.88,
     "logbook_business_pct": 0,
     "total_car_expenses": 0
   },
@@ -553,7 +553,7 @@ For an unprepared user (has to go fetch documents):
 
 - **v0.1 (April 2026):** Initial draft. Upload-first, inference-then-confirm pattern modelled on mt-freelance-intake v0.1.
 
-## End of Intake Skill v0.1
+## End of Intake Skill v0.2
 
 ## Disclaimer
 
