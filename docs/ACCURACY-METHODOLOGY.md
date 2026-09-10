@@ -1508,3 +1508,95 @@ is why it is now in it.
 
 The replacement-value rule in the box above is the one mechanical piece worth
 carrying into any third attempt. It is not enough on its own.
+
+---
+
+## Guinea-Bissau: a guide filed under a tax the country does not have
+
+`gw-income-tax.md` sat at the very top of the single-source queue — **10 of 10**
+numeric facts on one HR blog, every band marked "(approx — confirm)". It was
+titled "Personal income tax (IRPS)" and cited an "Imposto sobre o Rendimento das
+Pessoas Singulares (IRPS) statute" nine times.
+
+Guinea-Bissau has no IRPS. The word appears **nowhere** in the tax authority's
+own consolidated legislation. Income from work is taxed by the **Imposto
+Profissional**, Código approved by Decreto nº 23/83 de 6 de Agosto; business
+profit by the **Contribuição Industrial**; sales by the **IGV**. IRPS is the
+Cabo Verde, Mozambique and São Tomé name, applied here by analogy — the same
+shape as Kosovo citing its accreditation statute as its income tax law, and
+harder to see, because the invented name is a real tax somewhere else.
+
+### The bands were right, and almost nothing around them was
+
+The nine bands and their rates — 1 / 6 / 8 / 10 / 12 / 14 / 16 / 18 / 20 per
+cent — match art. 27º nº 1 exactly, as worded by Lei nº 1/2021 art. 10º. The
+commercial source got them right, which is worth stating plainly: concentration
+is exposure, not error. What it did not carry:
+
+- **That the rates are marginal.** Art. 27º nº 3 says the percentages
+  *"representam **taxas marginais**"* and art. 28º repeats it. The guide gave
+  nine bare bands and no application rule. Applying 20% to a whole salary
+  overstates the tax several times over.
+- **A second schedule entirely.** Art. 27º nº 2 puts the self-employed and
+  holders of copyright income on three bands — 10 / 20 / 25 — starting at 10%
+  where an employee starts at 1%. The guide presented the employee table as *the*
+  personal income tax.
+- Occasional income at 10% (nº 4); pensions of XOF 200,000/month or less exempt;
+  employer remittance within **10 days** of month end (art. 29º), where the guide
+  gave no remittance deadline at all; the XOF 2,000 de minimis on assessment.
+
+And the hedge the guide flagged against itself — *"some sources cite a 0% first
+band"* — is settled: there is no 0% band, 1% applies from the first franc.
+
+### Nine article numbers were wrong before they were checked
+
+The first draft of the rewrite cited arts. 4º, 22º, 25º-A, 26º and 32º from
+context — the shape of where such provisions usually sit. Resolving each against
+the nearest preceding heading in the consolidated text gave arts. **1º, 2º, 13º,
+31º-A and 37º**. Only art. 18º was right by guess. This is the Togo lesson
+arriving in a new costume: there, two books bound in one PDF each numbered from
+1; here, plausible article numbers written from habit. **A citation is a claim,
+and the cost of checking it is one search.**
+
+### The arithmetic found a defect in the statute
+
+The schedule ships a *parcela a abater* — the amount subtracted from rate ×
+income, the standard lusophone shortcut for a marginal computation. Testing it
+at all eight band boundaries, it reproduces the marginal result exactly at seven.
+At the fifth-to-sixth it does not:
+
+| | monthly | annual |
+| --- | ---: | ---: |
+| band 5 at its top (12%, parcela 13,917 / 167,004) | 34,143 | 409,716 |
+| band 6 at its start at the **current 14%** (parcela 37,947 / 455,364) | **18,123** | **217,478** |
+| band 6 at its start at the **superseded 18%** | 34,143 | 409,718 |
+
+The parcela is continuous **at 18%** — the rate the band carried under Lei nº
+8/2020 — and not at the 14% substituted by Lei nº 1/2021. On its face the rate
+was cut and the parcela derived for the old rate was left behind, so applying
+the published figure literally makes tax **fall by 16,020 a month** as income
+rises through XOF 400,501.
+
+That is the Côte d'Ivoire lesson generalised. There, arithmetic settled which
+column was which when a table extracted scrambled. Here it found something no
+reading would: **the schedule is internally consistent everywhere except at the
+one boundary an amending law moved.** It is recorded as a research gap naming
+both methods, not "corrected" to the 21,927 that continuity would require —
+that is a value the arithmetic implies, not one the statute states, and writing
+it in would be inventing law to make a sum close.
+
+### The classifier gap, predicted and then observed
+
+The comment beside `dgbf.ci` in `list-source-mix.py` ended: *"the next one will
+arrive the same way."* It did, on the next jurisdiction opened. `mef.gw`,
+`dgci.mef.gw` and `kontaktu.mef.gw` — a finance ministry, its tax directorate,
+and the portal serving the consolidated codes with superseded wording struck
+through — all classified as commercial. Bare ccTLD, no `gov` label.
+
+One thing was different this time, and it is the point of writing predictions
+down: the allowlist entry went in **with** the citation change rather than after
+it. Togo and Côte d'Ivoire each pushed the corpus's secondary count *up* by
+citing their own revenue authority, and the fix trailed the finding by a commit.
+Guinea-Bissau did not: authority citations rose 2,705 → 2,724 and secondary fell
+4,767 → 4,757 in the same change. The shape is a bare ccTLD, not a language —
+Togo and Côte d'Ivoire were francophone, this one is lusophone.

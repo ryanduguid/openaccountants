@@ -228,6 +228,18 @@ NON_GOV_AUTHORITY = frozenset((
                           # francophone African ministry on a bare ccTLD is a
                           # shape this pattern cannot see, and the next one will
                           # arrive the same way.
+    'mef.gw',             # Ministerio da Economia e Financas, Guinea-Bissau,
+                          # and with it dgci.mef.gw (Direccao Geral das
+                          # Contribuicoes e Impostos, the tax authority) and
+                          # kontaktu.mef.gw (its portal, which serves the
+                          # CONSOLIDATED tax codes with superseded wording struck
+                          # through and each amending law named in-line). The
+                          # prediction written beside dgbf.ci above -- "the next
+                          # one will arrive the same way" -- came true on the
+                          # next jurisdiction opened, and it was a lusophone
+                          # ministry rather than a francophone one, so the shape
+                          # is a bare ccTLD, not a language. Subdomains are
+                          # matched, so all three count from this one entry.
 ))
 
 # Removed from the list above after a code review, and kept here so the same
@@ -405,6 +417,9 @@ def selftest():
     # revenue authorities on a bare ccTLD, which the GOV pattern cannot see
     assert classify('www.otr.tg') == 'authority'          # Togo, OTR
     assert classify('www.dgbf.ci') == 'authority'         # Cote d'Ivoire, DGBF
+    assert classify('mef.gw') == 'authority'              # Guinea-Bissau, MEF
+    assert classify('dgci.mef.gw') == 'authority'         # its tax directorate
+    assert classify('kontaktu.mef.gw') == 'authority'     # its legislation portal
     assert classify('belastingdienst.sr') == 'authority'  # Suriname
     assert classify('andoz.tj') == 'authority'            # Tajikistan
     # boilerplate is not a source
