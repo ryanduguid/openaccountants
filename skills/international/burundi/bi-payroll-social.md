@@ -3,8 +3,8 @@ name: bi-payroll-social
 description: "Source-cited draft: payroll & social contributions for Burundi (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
 jurisdiction: BI
 tax_year: 2025
-version: 0.1
-last_updated: 2026-09-10
+version: 0.2
+last_updated: 2026-09-11
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)

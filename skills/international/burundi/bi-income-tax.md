@@ -5,8 +5,8 @@ jurisdiction: BI
 category: international
 tax_year: 2026
 tax_year_notes: "The scale in §1 is article 21 of loi n° 1/02 du 24 janvier 2013 as amended by loi n° 1/14 du 24 décembre 2020. The small-trader regime in §2 is article 190 of the Loi de Finances 2026/2027 (loi n° 1/10 du 30 juin 2026), expressed to apply 'au titre de la gestion budgétaire 2026/2027': it is year-specific and must be re-checked against each Finance Act. Burundi's budget year runs 1 July to 30 June."
-version: 0.1
-last_updated: 2026-09-10
+version: 0.2
+last_updated: 2026-09-11
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -46,12 +46,7 @@ _(Loi n° 1/02 du 24 janvier 2013 relative aux impôts sur les revenus, art. 21,
   applies to non-residents for first-schedule income, but **only two categories
   count**: Burundi-source employment income within arts. 6 and 7, and **rental
   income**  _(art. 21: https://www.obr.bi/images/LOI_N1_14_DU_24_DECEMBRE_2020_PORTANT_MODIFICATION_DE_LA_LOI_N1_02_DU_24_JANVIER_2013_RELATIVE_AUX_IMPOTS_SUR_LES_REVENUS_1.pdf)_
-- **For a non-resident without a permanent establishment the withholding is
-  final.** Article 22 provides that for Burundi-source income of non-residents
-  *"qui ne sont pas attribuables à un établissement stable au Burundi"*, the
-  withholding under arts. 119 and 120 has a *caractère **libératoire*** — it
-  discharges the liability, so no return follows and the scale above never
-  applies. Article 22 also preserves arts. 119–121 against art. 21 al. 2  _(art. 22: https://www.obr.bi/images/LOI_N1_14_DU_24_DECEMBRE_2020_PORTANT_MODIFICATION_DE_LA_LOI_N1_02_DU_24_JANVIER_2013_RELATIVE_AUX_IMPOTS_SUR_LES_REVENUS_1.pdf)_
+- **Final withholding is income-specific.** Under article 22, withholding under articles 119 and 120 is final for a non-resident's Burundi-source income that is not attributable to a permanent establishment in Burundi. Article 22 preserves articles 119–121 against article 21(2). Ordinary employment and rental income still follow the applicable rules in article 21; a person's lack of a permanent establishment does not remove those categories from the scale. Check the income type and withholding provision before treating tax as final. [Income tax law, arts. 21–22](https://www.obr.bi/images/LOI_N1_14_DU_24_DECEMBRE_2020_PORTANT_MODIFICATION_DE_LA_LOI_N1_02_DU_24_JANVIER_2013_RELATIVE_AUX_IMPOTS_SUR_LES_REVENUS_1.pdf).
 
 ## 2. Business income of a natural person is not on that scale
 
@@ -91,22 +86,18 @@ _(Loi de Finances 2026/2027 (loi n° 1/10 du 30 juin 2026), art. 190: https://ww
 
 ## 3. Filing
 
-- **The annual return is due the last day of the third month after the accounting
-  year closes.** Article 24 requires *"toute personne physique percevant un
-  revenu"* — any natural person receiving income — to prepare an annual return in
-  the form the Commissioner General specifies and file it *"au plus tard le
-  dernier jour du troisième mois après la clôture de l'exercice comptable"*  _(art. 24: https://www.obr.bi/images/LOI_N1_14_DU_24_DECEMBRE_2020_PORTANT_MODIFICATION_DE_LA_LOI_N1_02_DU_24_JANVIER_2013_RELATIVE_AUX_IMPOTS_SUR_LES_REVENUS_1.pdf)_
-- **The employer's annual recapitulative is expressly carved out of that
-  deadline** — art. 24 excepts *"la déclaration récapitulative annuelle prévue par
-  l'article 115"*, which art. 115 puts at **30 days** after the last day of the
-  accounting year. The two annual filings are not on the same clock. See
-  `bi-payroll-social`  _(arts. 24 and 115: https://www.obr.bi/images/LOI_N1_14_DU_24_DECEMBRE_2020_PORTANT_MODIFICATION_DE_LA_LOI_N1_02_DU_24_JANVIER_2013_RELATIVE_AUX_IMPOTS_SUR_LES_REVENUS_1.pdf)_
-- **Where the employer is not obliged to withhold, the obligation moves to the
-  employee** — art. 116 requires the employee, *"sous peine de sanction"*, to file
-  monthly and pay the tax due, *"au plus tard le quinze (15) du mois suivant celui
-  au cours duquel le revenu a été versé"*. Note this is the **15th of the following
-  month**, not art. 115's *fifteen calendar days after month end* — a different
-  formulation for a different taxpayer  _(art. 116: https://www.obr.bi/images/LOI_N1_14_DU_24_DECEMBRE_2020_PORTANT_MODIFICATION_DE_LA_LOI_N1_02_DU_24_JANVIER_2013_RELATIVE_AUX_IMPOTS_SUR_LES_REVENUS_1.pdf)_
+- **Annual deadline:** where an annual individual return is required, article 24 sets the deadline at the last day of the third month after the accounting year closes. Apply the small-trader rules in Section 2 where relevant. [Income tax law, art. 24](https://www.obr.bi/images/LOI_N1_14_DU_24_DECEMBRE_2020_PORTANT_MODIFICATION_DE_LA_LOI_N1_02_DU_24_JANVIER_2013_RELATIVE_AUX_IMPOTS_SUR_LES_REVENUS_1.pdf).
+- **Exemption for income already withheld:** article 25 exempts a person receiving only employment income withheld under article 113, income withheld under articles 119 and 120, or both categories. Article 26 permits an exempt person to file voluntarily, including to claim an overpayment. A person with only correctly withheld salary therefore does not have a mandatory annual return under article 24. Other income requires a separate filing assessment. [Income tax law, arts. 25–26](https://www.obr.bi/images/LOI_N1_14_DU_24_DECEMBRE_2020_PORTANT_MODIFICATION_DE_LA_LOI_N1_02_DU_24_JANVIER_2013_RELATIVE_AUX_IMPOTS_SUR_LES_REVENUS_1.pdf).
+- **Employer annual recapitulative:** article 24 excludes this employer filing from the individual deadline. Article 115 requires it within 30 days after the accounting year ends. See `bi-payroll-social`. [Income tax law, arts. 24 and 115](https://www.obr.bi/images/LOI_N1_14_DU_24_DECEMBRE_2020_PORTANT_MODIFICATION_DE_LA_LOI_N1_02_DU_24_JANVIER_2013_RELATIVE_AUX_IMPOTS_SUR_LES_REVENUS_1.pdf).
+- **Employee monthly filing:** where the employer is not obliged to withhold, article 116 requires the employee to file and pay by the 15th of the month following payment. [Income tax law, art. 116](https://www.obr.bi/images/LOI_N1_14_DU_24_DECEMBRE_2020_PORTANT_MODIFICATION_DE_LA_LOI_N1_02_DU_24_JANVIER_2013_RELATIVE_AUX_IMPOTS_SUR_LES_REVENUS_1.pdf).
+
+### Worked scope checks
+
+- A non-resident employee without a business establishment receives ordinary Burundi-source salary from their principal employer. The employer applies article 117's monthly employment scale; the absence of an establishment does not make this salary an article 119 or 120 payment.
+- A person receives only salary correctly withheld under article 113. Article 25 exempts the annual individual return; article 26 still allows a voluntary return to seek a refund.
+- A non-resident receives income withheld under article 119 or 120 that is not attributable to a Burundi permanent establishment. Article 22 makes that withholding final. Check article 25 against the person's other income before concluding that no annual return is required.
+
+[Income tax law, arts. 21–26 and 117–120](https://www.obr.bi/images/LOI_N1_14_DU_24_DECEMBRE_2020_PORTANT_MODIFICATION_DE_LA_LOI_N1_02_DU_24_JANVIER_2013_RELATIVE_AUX_IMPOTS_SUR_LES_REVENUS_1.pdf).
 
 ## Sources and review limits
 
