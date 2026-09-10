@@ -28,9 +28,17 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 > legislation is published in consolidated form by the Direcção Geral das Contribuições e
 > Impostos at `kontaktu.mef.gw`, and that is where the Imposto Profissional rules above come
 > from. INPS is a separate institution and carries its own legislation; no INPS host resolved
-> from this network. The 14% / 8% / 22% split, the absence of a ceiling, the work-accident
-> surcharge band and the reporting deadlines therefore still rest on one commercial source and
-> are marked accordingly. They are not asserted as checked.
+> from this network. The 14% / 8% / 22% split, the work-accident surcharge band and the
+> reporting deadlines therefore still rest on one commercial source and are marked
+> accordingly. They are not asserted as checked.
+>
+> The contribution-ceiling line is the one exception, and it is no better off. It cites the
+> US Social Security Administration's *Social Security Programs Throughout the World*, which
+> is a government publication rather than a commercial one — but `ssa.gov` returns **403 at
+> its edge** to this network, on both a plain request and a browser user-agent, so that
+> citation could not be opened either. It is a government source that happens to be
+> unreachable, not a checked one. [RESEARCH GAP — reviewer to confirm whether any minimum or
+> maximum earnings apply, against INPS or the SSA volume from a network that can reach it.]
 
 Social security in Guinea-Bissau is administered by the Instituto Nacional de Previdência Social (INPS). Employers withhold both the employee INPS contribution and the Imposto Profissional (PAYE-equivalent) from wages and remit them, together with the employer contribution, on a monthly basis.
 
