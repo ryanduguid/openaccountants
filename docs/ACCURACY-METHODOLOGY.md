@@ -2801,6 +2801,19 @@ own per-jurisdiction reporting does exactly that. The "jurisdictions with any
 external citation" and "citing no authority domain at all" figures are computed
 per directory, so those four are each counted twice.
 
+**The real Argentine content was never lost, and I did not look for it.** It
+survived intact in `agent-skills/argentina-references/` — the hand-maintained tree
+CLAUDE.md describes as inheriting nothing from `skills/`. That description was read
+as "the trees are independent, so a fix here will not propagate there", and the
+converse went unconsidered: **a tree that does not receive corrections also does
+not receive corruptions.** When one copy of a file is wrong, the parallel tree is
+the first place to look, not an afterthought. The Argentine entry there lists
+**pyafipws** (LGPL-3.0, the definitive AFIP e-invoicing library) and **PyARCA**,
+whose own scope line reads *"Monotributo (ARCA/ex-AFIP)"* — corroborating the
+authority's rename from a source independent of the authority. Those projects are
+now restored to `skills/` rather than replaced with a thinner file written from
+scratch, which is what happened on the first pass.
+
 **And the fifth was a real error.** `argentina/references.md` carried
 `jurisdiction: VN` and, under the heading *"Vietnam — Related Open-Source
 Projects"*, listed two Vietnamese personal-income-tax repositories and cited *Luật

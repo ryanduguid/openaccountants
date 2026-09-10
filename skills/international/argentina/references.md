@@ -14,16 +14,20 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # References
 
-> **This file previously contained Vietnam's references, in full.** Under an
+> **This file previously contained Vietnam's references, in full.** Under a
 > `jurisdiction: VN` frontmatter, in the Argentina directory, it listed two
 > Vietnamese personal-income-tax repositories and cited *Luật số 109/2025/QH15*,
-> *Luật Thuế TNCN No. 04/2007/QH12* and *Thông tư 111/2013/TT-BTC* as the key
-> legislative sources — under the heading *"Vietnam — Related Open-Source
-> Projects"*. It was a stray copy of `vietnam/references.md`, which still exists
-> and is unaffected. **Argentina had no references file; it had Vietnam's.**
+> *Luật Thuế TNCN No. 04/2007/QH12* and *Thông tư 111/2013/TT-BTC* — under the
+> heading *"Vietnam — Related Open-Source Projects"*. All 32 other `references.md`
+> files carry the jurisdiction code of the directory they sit in; this was the only
+> mismatch.
 >
-> All 32 other `references.md` files in the corpus carry the jurisdiction code of
-> the directory they sit in. This was the only mismatch.
+> **The real Argentine content was never lost.** It survived in
+> `agent-skills/argentina-references/`, the hand-maintained tree that CLAUDE.md
+> describes as inheriting nothing from `skills/`. Independence cuts both ways: a
+> tree that does not receive corrections also does not receive corruptions, so when
+> one copy is wrong **the parallel tree is the first place to look**. The projects
+> below are restored from it rather than rewritten.
 
 ## National tax authority
 
@@ -31,6 +35,19 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
   customs authority, created by Decreto 953/2024 in place of AFIP. Its portal
   identifies itself as ARCA throughout and the former `afip.gob.ar` domain now
   resolves to the same site  _(ARCA, portal principal — https://www.arca.gob.ar/landing/default.asp)_
+
+## Related open-source projects
+
+OpenAccountants is AGPL-3.0. AGPL-3.0 and LGPL-3.0 are compatible licences.
+Projects below can be incorporated with attribution.
+
+### pyafipws
+
+- **reingart/pyafipws** — Repository: https://github.com/reingart/pyafipws. Licence: LGPL-3.0. Language: Python. Scope: *Factura Electrónica AFIP y otros servicios web* — interfaces, tools and apps for Argentina's government web services (SOAP, COM/DLL, PDF, DBF, XML, JSON). The definitive open-source Argentine e-invoicing library. Integration: LGPL-3.0, compatible — web-service integration patterns, e-invoice generation and authentication flows are directly reusable for Argentine tax-compliance automation  _(https://github.com/reingart/pyafipws)_
+
+### PyARCA
+
+- **GeraCollante/PyARCA** — Repository: https://github.com/GeraCollante/PyARCA. Licence: LGPL-3.0. Language: Python. Scope: *CLI para facturación electrónica Monotributo (ARCA/ex-AFIP)*, a fork of pyafipws focused on Monotributo invoicing. Integration: LGPL-3.0, compatible — reference for Monotributo-specific invoicing workflows and ARCA interactions. **Its own scope line names the authority as "ARCA/ex-AFIP"**, which corroborates the rename above from a source independent of the authority itself  _(https://github.com/GeraCollante/PyARCA)_
 
 ## Key legislative sources
 
