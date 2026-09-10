@@ -24,7 +24,7 @@ Suriname introduced VAT (Belasting over de Toegevoegde Waarde, BTW) on 1 January
 > charging 8% under this guide would have under-collected by two points.
 >  _(Belastingdienst Suriname — BTW — https://belastingdienst.sr/belastingen/btw/)_
 
-- **Standard VAT rate on goods and services** — 10% percent (the general rate; the authority applies it to the supply and import of goods and to the provision of services alike)  _(Belastingdienst Suriname — BTW — https://belastingdienst.sr/belastingen/btw/)_  _(Value Added Tax Act 2022 (Wet BTW 2022))_
+- **Standard VAT rate on goods and services** — 10% percent (the general rate; the authority applies it to the supply and import of goods and to the provision of services alike)  _(Value Added Tax Act 2022 (Wet BTW 2022), as stated by the Belastingdienst — https://belastingdienst.sr/belastingen/btw/)_
 - **Reduced VAT rate** — 5% on water, electricity, cooking gas and domestic transport percent  _(Value Added Tax Act 2022 (Wet BTW 2022))_
 - **Luxury VAT rate** — 25% on luxury goods percent  _(Value Added Tax Act 2022 (Wet BTW 2022))_
 - **Zero rate** — 0% on exports of goods percent  _(Value Added Tax Act 2022 (Wet BTW 2022))_

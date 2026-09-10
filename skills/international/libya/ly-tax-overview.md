@@ -3,7 +3,7 @@ name: ly-tax-overview
 description: "Source-cited draft: tax overview for Libya (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
 jurisdiction: LY
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-10
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -16,7 +16,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Overview of Libyan tax system** — Libya operates a source-based tax system administered by the Tax Department under the Ministry of Finance. Personal income tax applies only to employment income arising in Libya, while corporate income tax is levied on worldwide profits of resident entities. There is no VAT.
 - **Standard tax year** — Calendar year (1 January to 31 December); a company may use its own year-end with prior Tax Department approval  _(Income Tax Law No. 7 of 2010 (https://taxsummaries.pwc.com/libya/corporate/tax-administration))_
 - **Currency** — Libyan dinar (LYD)  _(Income Tax Law No. 7 of 2010)_
-- **Tax authority** — Tax Department (Libyan Tax Authority), Ministry of Finance  _(Income Tax Law No. 7 of 2010 (https://taxsummaries.pwc.com/libya))_
+- **Tax authority** — مصلحة الضرائب الليبية, the Libyan Tax Authority, under the Ministry of Finance. It publishes its legislation (التشريعات), tax laws (قوانين الضرائب), regulations (اللوائح), executive and administrative instructions and circulars, and runs an electronic tax portal (بوابة الضرائب الإلكترونية), at `tax.gov.ly`  _(مصلحة الضرائب ليبيا — https://tax.gov.ly/)_
+- **The Authority was reorganised in 2024** — Council of Ministers Decision **No. 405 of 2024** (قرار مجلس الوزراء رقم 405 لسنة 2024) concerns the reorganisation of the Tax Authority (بشأن إعادة تنظيم مصلحة الضرائب). The Authority lists it among its governing decisions; its contents were not retrieved here, so what it changed is not established  _(مصلحة الضرائب ليبيا — القرارات — https://tax.gov.ly/)_
 - **Personal income tax basis** — Source-based — Libyan and foreign nationals are taxed only on income derived from employment exercised in Libya  _(Income Tax Law No. 7 of 2010 (https://taxsummaries.pwc.com/libya/individual/taxes-on-personal-income))_
 - **Corporate income tax basis** — Worldwide income (income arising both in Libya and abroad) is assessable for resident companies  _(Income Tax Law No. 7 of 2010 (https://taxsummaries.pwc.com/libya/corporate/taxes-on-corporate-income))_
 - **Headline personal income tax rate** — 5% to 10% (progressive on employment income) percent  _(Income Tax Law No. 7 of 2010 (https://taxsummaries.pwc.com/libya/individual/taxes-on-personal-income))_
