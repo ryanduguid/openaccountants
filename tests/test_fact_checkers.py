@@ -503,3 +503,85 @@ class FactCheckerTests(unittest.TestCase):
         # the interest and royalties named in the prose do not appear
         self.assertRegex(output, r"\bbroad\s+dividends, insurance\b")
         self.assertIn("heads named per jurisdiction: 2:1", output)
+
+
+def _load(script):
+    """Import a scripts/*.py module by path, for checkers with no CLI-only API."""
+    import importlib.util
+    spec = importlib.util.spec_from_file_location(
+        script.replace("-", "_").removesuffix(".py"), SCRIPTS / script)
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
+
+
+class CitationRotTests(unittest.TestCase):
+    """Offline tests for list-citation-rot.py.
+
+    The script fetches the network, so the CLI is not exercised here; `judge`
+    is the part that decides what a response means and it is pure.
+    """
+
+    def setUp(self):
+        self.rot = _load("list-citation-rot.py")
+
+    def test_a_live_domain_can_stop_being_the_ministry(self):
+        # Benin cited its tax year to a PDF on finances.bj, the Ministry of
+        # Finance's domain. It answers 200 and serves an Indonesian casino site.
+        # A status-code check passes it, which is why the body is read.
+        kind, evidence = self.rot.judge(
+            200, "PRIMATOTO Akses Resmi Toto Slot Togel Situs Toto 4D BANDAR SLOT")
+        self.assertEqual(kind, "rot")
+        self.assertIn("togel", evidence.lower())
+
+    def test_a_waf_turning_a_script_away_is_not_a_dead_citation(self):
+        # impots.finances.gouv.bj -- Benin's real, live tax authority -- answers
+        # curl with 406, and onrc.ro with a rejection page. Calling those dead
+        # would bury the real findings under healthy sites.
+        for code in (401, 403, 405, 406, 429, 451):
+            with self.subTest(code=code):
+                self.assertEqual(self.rot.judge(code, "Request Rejected")[0],
+                                 "blocked")
+
+    def test_an_institutional_page_is_demoted_not_dropped(self):
+        # This is the test that matters most. The first draft SUPPRESSED a
+        # squatter match when the page also read institutional, on the theory
+        # that a gaming regulator legitimately uses those words. On the very
+        # first real run that rule would have silently hidden the sharpest
+        # finding in the corpus: Benin's own tax authority is serving injected
+        # casino spam. Demoting to a printed bucket keeps it visible.
+        kind, evidence = self.rot.judge(
+            200, "Direction Générale des Impots BENIN -- Melbet Jordan Mol "
+                 "Casino Online Casino Maldives ronybet Tomi Club Maldives")
+        self.assertEqual(kind, "check")
+        self.assertIn("casino", evidence.lower())
+
+    def test_a_parked_domain_reports_and_an_ordinary_page_does_not(self):
+        self.assertEqual(self.rot.judge(200, "Buy this domain today.")[0], "rot")
+        self.assertEqual(
+            self.rot.judge(200, "Fiji Revenue and Customs Service VAT")[0], "ok")
+
+    def test_nothing_answering_is_dead(self):
+        for status in (None, 404, 410, 503):
+            with self.subTest(status=status):
+                self.assertEqual(self.rot.judge(status, "")[0], "dead")
+
+    def test_the_corpus_own_site_is_not_a_citation_to_check(self):
+        # Every guide ends with a CTA block linking openaccountants.com and a
+        # Calendly booking page: thousands of citations, three hosts, nothing to
+        # learn, and fetching them on every run is pure noise.
+        import os
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory, "skills", "international", "x", "a.md")
+            path.parent.mkdir(parents=True, exist_ok=True)
+            path.write_text(
+                "- **Rate** - 20%  _(Act — https://revenue.example.gov/x)_\n"
+                "See [us](https://www.openaccountants.com/connect) or book at\n"
+                "https://calendly.com/openaccountants/30min\n", encoding="utf-8")
+            cwd = os.getcwd()
+            try:
+                os.chdir(directory)
+                found = self.rot.cited_hosts()
+            finally:
+                os.chdir(cwd)
+        self.assertEqual(sorted(found), ["revenue.example.gov"])
