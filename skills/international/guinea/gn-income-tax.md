@@ -11,6 +11,28 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Guinea Personal Income Tax
 
+> **The authority was reached, and it does not publish the instrument this guide
+> needs.** Every figure below still rests on one commercial source, but the reason
+> is now established rather than assumed. `dgi.gov.gn` sits behind a bot challenge
+> that defeats a plain HTTP client; opened in a browser it renders, and its
+> *Bibliothèque de documents* was read in full. **The library contains no Code
+> Général des Impôts** — its "Loi et règlements" section holds finance laws for
+> 2016–2021 and 2025, arrêtés, décisions and reports, and nothing else.
+>
+> The most recent of those, **Loi ordinaire L/2024/023/CNT portant loi de finances
+> pour l'année 2025**, was downloaded (5.2 MB, 22 pages, scanned) and read by OCR.
+> It is a **budget appropriation law**: revenue estimates, the budget balance and
+> allocations across 37 articles, closing with the standard repeal-and-publication
+> clause. **It contains no IRPP scale**, so it cannot confirm or contradict a single
+> row below.
+>
+> The bands therefore stay marked "(approx — confirm)". [RESEARCH GAP — the Code
+> Général des Impôts de Guinée is the missing document; it is not on the DGI site,
+> and a reviewer with the paper code or the Journal Officiel should check every
+> band, threshold and deadline below.]
+>
+> _(Direction Générale des Impôts, Bibliothèque de documents — https://dgi.gov.gn/bibliotheque-de-documents/; Loi ordinaire L/2024/023/CNT portant loi de finances pour l'année 2025 — https://dgi.gov.gn/wp-content/uploads/2025/01/LOI-DE-FINANCES-INITIALE-2025_compressed.pdf)_
+
 ## Personal income tax (IRPP) bands and rates
 
 - **IRPP band 1 (tax-free)** — 0% on income from GNF 0 to 5,000,000 percent ((approx — confirm))  _(Code Général des Impôts (CGI) — Impôt sur le Revenu des Personnes Physiques (IRPP) (as described at [taxatlas.io](https://taxatlas.io/country/guinea)))_
