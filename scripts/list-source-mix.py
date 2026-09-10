@@ -217,6 +217,17 @@ NON_GOV_AUTHORITY = frozenset((
                           # publishes the consolidated Code General des Impots
                           # et Livre des Procedures Fiscales. Bare .tg, no "gov"
                           # label, so GOV cannot see it.
+    'dgbf.ci',            # Direction generale du Budget et des Finances,
+                          # Ministere des Finances et du Budget, Cote d'Ivoire:
+                          # publishes the enacted annexe fiscale to each loi de
+                          # finances -- the official text of the amending law.
+                          # Found the same way otr.tg was, one commit later:
+                          # citing it moved Cote d'Ivoire's guides OFF the
+                          # single-source queue and the corpus's secondary share
+                          # UP. Twice in one session is not a coincidence; a
+                          # francophone African ministry on a bare ccTLD is a
+                          # shape this pattern cannot see, and the next one will
+                          # arrive the same way.
 ))
 
 # Removed from the list above after a code review, and kept here so the same
@@ -393,6 +404,7 @@ def selftest():
     assert classify('skatturinn.is') == 'authority'
     # revenue authorities on a bare ccTLD, which the GOV pattern cannot see
     assert classify('www.otr.tg') == 'authority'          # Togo, OTR
+    assert classify('www.dgbf.ci') == 'authority'         # Cote d'Ivoire, DGBF
     assert classify('belastingdienst.sr') == 'authority'  # Suriname
     assert classify('andoz.tj') == 'authority'            # Tajikistan
     # boilerplate is not a source

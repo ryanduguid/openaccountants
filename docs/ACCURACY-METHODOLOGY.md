@@ -1258,3 +1258,109 @@ form. A missing allowlist entry over-reports risk, and the artefact it leaves �
 a jurisdiction sitting on a queue somebody reads — is what eventually gets it
 fixed. This one took a rewrite of five guides to surface. The entries that are
 wrong in the other direction leave no artefact at all.
+
+### The reader that said a document was empty when it had not read it
+
+Chasing the same single-source queue into Cote d'Ivoire, `scripts/read-tax-pdf.py`
+was pointed at the *annexe fiscale* to the 2025 budget law. It printed one blank
+line and exited 0.
+
+That is not "the document contains no text". Every page in that file declares
+its content as `/Contents [672 0 R]` -- a one-element **array** -- and the
+reader's regex matched only the bare `/Contents 672 0 R` form. It found 150
+pages, extracted none of them, and reported the result as though it had looked.
+An hour later the same output would have read as evidence that Cote d'Ivoire
+publishes nothing useful.
+
+Three fixes, and the second matters more than the first:
+
+1. Accept the array form, joining the parts before tokenising (a split
+   `/Contents` is one stream cut at an arbitrary byte, so the pieces cannot be
+   tokenised separately).
+2. **Exit non-zero with a diagnostic when no page yields content**, naming how
+   many objects were seen and how many were marked `/Type /Page`, and saying in
+   terms that the document was not read. A tool that cannot read something must
+   say so rather than return nothing.
+3. Report the observed `/MediaBox` width when it disagrees with the
+   `PAGE_WIDTH` argument. Passing the wrong width silently drops everything
+   past the first column band -- another way to get a confident empty answer.
+
+The Togo extraction is byte-identical after the change, which is the only
+evidence that the fix is a fix and not a rewrite.
+
+Two limits stay, and both are now visible rather than silent. Pages come out in
+object order, not reading order, so the 2025 annexe interleaves pages 33-39;
+the page footers make the true order recoverable. And the annexe's subset fonts
+carry no usable `/ToUnicode`, so accented Latin letters map wrongly
+(`p`->`e-acute`, `j`->`a-grave`, `r`->`e-circumflex`). **Digits, punctuation and
+article numbers come through intact**, which is what made the figures below
+quotable; the French prose around them had to be read through the substitution.
+
+### Cote d'Ivoire: the same levy, counted at two levels of the same tax
+
+`ivory-coast-payroll.md` is one of the better-built guides in this corpus. It
+computes cumulative tax at each band, marks ten open research gaps by section,
+and carries a step-by-step computation order. Its step 7 charges the employer
+2.8% (local) or 12% (expatriate) of gross. Its step 8 then charges 1.6% for the
+FDFP training levies -- 0.4% apprenticeship plus 1.2% continuing training.
+
+Article 16 of the *annexe fiscale* to Loi de Finances n deg 2024-1109 du 18
+decembre 2024 re-presents the table at CGI art. 146 as four components:
+
+| Component | Local | Expatriate |
+|---|---|---|
+| Contribution employeur proprement dite | -- | 9.2% |
+| Contribution nationale pour le developpement economique, culturel et social | 1.2% | 1.2% |
+| Taxe d'apprentissage | 0.4% | 0.4% |
+| Taxe additionnelle pour la formation professionnelle continue | 1.2% | 1.2% |
+| **Total** | **2.8%** | **12%** |
+
+1.2 + 0.4 + 1.2 = 2.8. 9.2 + 1.2 + 0.4 + 1.2 = 12.0. Both columns close
+exactly, which is what settles it: there is no room inside 2.8% for a further
+1.6%. The guide charged a local employer 4.4% where the statute charges 2.8% --
+**a 57% overstatement**, carried into all six worked examples, the spreadsheet
+template, and a Tier 1 rule that told the reader never to omit the second
+charge.
+
+The arithmetic mattered here for a second reason. The table extracted with its
+columns scrambled: the header row read "Personnel expatrie | Budget
+beneficiaire | Personnel local" while the data rows ran the other way. Rather
+than trust the header, the assignment was settled by which column each set of
+components sums to. That is the guard the reader's own docstring asks for,
+applied to a case where the layout was actively misleading.
+
+**Why the error was invisible.** Nothing in the guide contradicted anything else
+in it, and no checker in this repo could see it: the two figures are correct
+individually, sit in different sections, and cite different sources -- PwC for
+the 2.8%/12%, the FDFP's own site for the 1.6%. Both sources are right about
+their half. PwC describes the employer contribution and does not mention the
+training levies; the FDFP says it *manages* the two levies and does not say who
+collects them or inside what. Neither is wrong. The error lives in the join,
+and only the statute shows the join.
+
+That is the general shape: **a summary describes one level of a tax, and
+another summary describes a component of it, and adding them double-counts.**
+It survives cross-checking two sources against each other, because each is
+faithful to what it covers.
+
+**Three more findings from the same document**, all things the guide either
+hedged or lacked:
+
+- **The 20% professional abatement is abolished.** The guide assumed this from
+  PwC and marked it an open research gap. Art. 16 says it in terms: Ordonnance
+  n deg 2023-719 *supprime* it and the base is now gross taxable income. Gap
+  closed against the statute -- and the same article explains why the employer
+  totals did not move: the component rates were re-set so that 2.8% and 12%
+  are maintained on the now-unabated base.
+- **Dockers and transit dockers pay a flat 1.5%**, off the progressive scale
+  entirely (new CGI art. 120 bis). Applying the barème to a docker overstates
+  the tax.
+- **CGI art. 263 is repealed** and the taxe d'apprentissage was cut from 0.50%
+  to 0.40% (CGI art. 143). The guide's 0.4% was right, sourced to a portal.
+
+And the classifier repeated its Togo trick one commit later: citing `dgbf.ci`,
+the Ivorian Ministry of Finance directorate that publishes the enacted annexe,
+moved Cote d'Ivoire off the single-source queue and the corpus's secondary
+count **up** by seven. Bare ccTLD, no `gov` label, invisible to the pattern.
+Twice in one session, both francophone African ministries: added, with the
+comment saying so, because the next one will arrive the same way.
