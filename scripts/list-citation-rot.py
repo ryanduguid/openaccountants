@@ -82,6 +82,21 @@ BLOCKED = frozenset((401, 403, 405, 406, 429, 451))
 GAMBLING = re.compile(r'\b(?:togel|toto\s*4d|slot\s*(?:gacor|online|resmi)|judi|'
                       r'bandar\s*(?:slot|togel)|taruhan|situs\s*(?:slot|toto)|'
                       r'casino\s*online|agen\s*(?:slot|judi))\b', re.I)
+# A site that is up and serving a crash. obr.bi -- Burundi's Revenue Office, and
+# an entry on the authority allowlist -- answers 200 with a Joomla fatal:
+# "Application Instantiation Error: Failed to start the session because headers
+# have already been sent by /home/obr/public_html/index.php at line 6". Status
+# 200, no squatter words, so it scored `ok` until this existed. For a corpus
+# that leans on authority citations, an authority whose site is broken is
+# exactly the thing worth knowing, and nothing else here can see it.
+BROKEN = re.compile(r'application\s+instantiation\s+error|'
+                    r'error\s+displaying\s+the\s+error\s+page|'
+                    r'\bfatal\s+error\b|\bparse\s+error\b|'
+                    r'traceback\s+\(most\s+recent\s+call\s+last\)|'
+                    r'whoops,\s+looks\s+like\s+something\s+went\s+wrong|'
+                    r'database\s+connection\s+(?:error|failed)|'
+                    r'error\s+establishing\s+a\s+database\s+connection|'
+                    r'\bwarning:\s+\w+\(\)|\bnotice:\s+undefined\b', re.I)
 PARKED = re.compile(r'\b(?:this\s+domain\s+(?:is|may\s+be)\s+for\s+sale|'
                     r'buy\s+this\s+domain|domain\s+for\s+sale|'
                     r'the\s+domain\s+has\s+expired|renew\s+(?:your|this)\s+domain|'
@@ -118,6 +133,10 @@ def judge(status, text):
         return 'dead', 'HTTP %d' % status
     if status >= 400:
         return 'dead', 'HTTP %d' % status
+    m = BROKEN.search(text)
+    if m:
+        i = max(0, m.start() - 60)
+        return 'broken', 'crash: ...%s...' % text[i:m.end() + 160].strip()
     for name, pat in (('gambling', GAMBLING), ('parked', PARKED)):
         m = pat.search(text)
         if not m:
@@ -136,7 +155,7 @@ def judge(status, text):
     return 'ok', 'HTTP %d' % status
 
 
-def fetch(host):
+def fetch(host, timeout=20):
     """(status, stripped body) for a host, or (None, '') if nothing answered.
 
     A 5xx is not taken as the answer. finances.bj serves the casino page over
@@ -150,7 +169,7 @@ def fetch(host):
                                      headers={'User-Agent': UA,
                                               'Accept': 'text/html,*/*'})
         try:
-            with urllib.request.urlopen(req, timeout=20) as r:
+            with urllib.request.urlopen(req, timeout=timeout) as r:
                 return r.status, strip_html(
                     r.read(200000).decode('utf-8', 'replace'))
         except urllib.error.HTTPError as e:
@@ -221,13 +240,22 @@ def selftest():
     assert judge(200, 'Gaming Authority: casino online licence duty is set by '
                       'the Ministry of Finance')[0] == 'check'
 
+    # a site that is up and serving a crash. obr.bi, Burundi's Revenue Office and
+    # an authority-allowlist entry, answers 200 with a Joomla fatal -- no squatter
+    # words anywhere, so it scored `ok` until BROKEN existed.
+    kind, ev = judge(200, 'Error displaying the error page: Application '
+                          'Instantiation Error: Failed to start the session')
+    assert kind == 'broken', (kind, ev)
+    assert judge(200, 'Error establishing a database connection')[0] == 'broken'
+    assert judge(200, 'Fiji Revenue and Customs Service VAT')[0] == 'ok'
+
     # a parked domain, which is the other way a citation quietly stops being one
     assert judge(200, 'This domain is for sale. Buy this domain today.')[0] == 'rot'
 
     # ...and a ministry page saying a service is coming soon is the same demotion
     assert judge(200, 'Ministry of Finance -- e-services website coming soon')[0] == 'check'
 
-    print('selftest: 10 cases pass')
+    print('selftest: 13 cases pass')
 
 
 def main(argv):
@@ -260,8 +288,14 @@ def main(argv):
     if suspects:
         sys.stderr.write('re-checking %d suspected-dead hosts serially...\n'
                          % len(suspects))
+        # Shorter timeout than the first pass, deliberately. The slow hosts here
+        # are not the dead ones -- DNS failure returns immediately -- but the
+        # ones that accept a connection and never answer. A host that does that
+        # twice, minutes apart, is not serving citations to anybody either way,
+        # and waiting 20s twice for each of 151 of them put the first run over
+        # an hour and it was killed before it printed anything.
         for n, host in enumerate(suspects, 1):
-            results[host] = judge(*fetch(host))
+            results[host] = judge(*fetch(host, timeout=8))
             if n % 25 == 0:
                 sys.stderr.write('  %d/%d\n' % (n, len(suspects)))
         cleared = sum(1 for h in suspects if results[h][0] != 'dead')
@@ -275,6 +309,7 @@ def main(argv):
     for kind, heading in (
             ('rot', 'ANSWERING, BUT NO LONGER WHAT THE CITATION SAYS IT IS'),
             ('check', 'MATCHED A SQUATTER PATTERN BUT STILL READS INSTITUTIONAL'),
+            ('broken', 'ANSWERING 200 WITH A CRASH INSTEAD OF CONTENT'),
             ('dead', 'NOTHING USABLE ANSWERS')):
         rows = sorted(buckets[kind], key=lambda r: -len(where[r[0]]))
         if not rows:
@@ -293,7 +328,7 @@ def main(argv):
                 print('   ... and %d more' % (len(cites) - 4))
 
     print('\n== SUMMARY ==')
-    for kind in ('rot', 'check', 'dead', 'blocked', 'ok'):
+    for kind in ('rot', 'check', 'broken', 'dead', 'blocked', 'ok'):
         n = len(buckets[kind])
         cites = sum(len(where[h]) for h, _ in buckets[kind])
         print('  %-8s %4d hosts  %5d citations' % (kind, n, cites))

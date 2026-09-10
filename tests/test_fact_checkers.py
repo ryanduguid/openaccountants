@@ -556,6 +556,21 @@ class CitationRotTests(unittest.TestCase):
         self.assertEqual(kind, "check")
         self.assertIn("casino", evidence.lower())
 
+    def test_an_authority_serving_a_crash_is_not_ok(self):
+        # obr.bi is Burundi's Revenue Office AND an entry on the authority
+        # allowlist, and it answers HTTP 200 with a Joomla fatal. Status fine,
+        # no squatter words, so every other rule here scored it `ok` -- a false
+        # negative on exactly the kind of host this corpus most relies on.
+        kind, evidence = self.rot.judge(
+            200, 'Error displaying the error page: Application Instantiation '
+                 'Error: Failed to start the session because headers have '
+                 'already been sent by /home/obr/public_html/index.php')
+        self.assertEqual(kind, 'broken')
+        self.assertIn('instantiation', evidence.lower())
+        self.assertEqual(
+            self.rot.judge(200, 'Error establishing a database connection')[0],
+            'broken')
+
     def test_a_parked_domain_reports_and_an_ordinary_page_does_not(self):
         self.assertEqual(self.rot.judge(200, "Buy this domain today.")[0], "rot")
         self.assertEqual(
