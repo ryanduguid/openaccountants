@@ -64,6 +64,10 @@ GOV = re.compile(
 # --unclassified to re-derive candidates when guides are added. This list will
 # always be incomplete, which is why the authority count is a floor.
 NON_GOV_AUTHORITY = frozenset((
+    # Official gazette publishers and legal-information services. State bodies
+    # that publish the law itself, on a domain that carries no government
+    # suffix — the same blind spot the revenue authorities below sat in.
+    'incv.cv',            # Imprensa Nacional de Cabo Verde (Boletim Oficial)
     # Revenue and tax administrations
     'emta.ee',            # Estonian Tax and Customs Board
     'frcs.org.fj',        # Fiji Revenue and Customs Service
@@ -409,6 +413,9 @@ def selftest():
     assert classify('belastingdienst.nl') == 'authority'
     assert classify('skatteverket.se') == 'authority'
     assert classify('legislation.mt') == 'authority'
+    # a state gazette publisher on a bare national domain
+    assert classify('incv.cv') == 'authority'            # Imprensa Nacional CV
+    assert classify('digesto.asamblea.gob.ni') == 'authority'  # via the GOB pattern
     assert classify('lex.uz') == 'authority'             # official legislation
     assert classify('guichet.public.lu') == 'authority'   # via the GOV pattern
     assert classify('mi.government.bg') == 'authority'    # via the GOV pattern

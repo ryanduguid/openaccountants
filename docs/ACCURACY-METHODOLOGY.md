@@ -2623,3 +2623,65 @@ and whose documents are addressed as `shownorms.php?idnorm=<base64 of a numeric
 id>`. `ni-company-formation.md` therefore stays on its commercial source for now,
 but the gap is narrowed to **locating one code inside a working official database**
 rather than finding an authority at all.
+
+### Nicaragua — five layers to the text, and the Code contradicts the guide
+
+The Digesto entry above said the database was live and the code was not yet
+located. It is now, and the route is worth writing down because none of the five
+steps was guessable from the one before it.
+
+1. The search is a **POST to `/consultas/util/ws/proxy.php`** with
+   `hddQueryType=getJuridicNorms` and the serialised form, returning JSON. The
+   visible form offers only a norm number and date ranges — there is **no title
+   field** — so the way in is a **date range**: the Código de Comercio is 1916 law,
+   and 1914–1918 returns 1,219 records, among them *Código de Comercio de
+   Nicaragua*, `registro` **"Vigente"**, published 20/10/1916.
+2. Each record carries an `iunpid`, base64 of a numeric id — `MjkyOTI=` is 29292.
+3. `shownorms.php?idnorm=…` renders the record: *Código N°. s/n*, materia *Empresa,
+   Industria y Comercio*. It shows a TEXTO panel and a Download button.
+4. **Both are empty.** `hasfileNorm` returns **false** for every `valordominio`,
+   and `getVersionHtmlAccordion` returns nothing. The Digesto catalogues this code
+   without attaching its text. **A record is not a document**, and stopping here
+   would have produced a perfectly defensible "the database has it but does not
+   serve it".
+5. The text is in the **documentary collection**, reached by a different query —
+   `getRddsByIunp` — which returns an `rddid` and a starting page, and
+   `pdf.php?type=rdd&rdd=…` then serves **13.7 MB, 323 pages** with an OCR text
+   layer. The Code begins at page 35.
+
+### What the Code says that the guide did not
+
+`ni-company-formation.md` was **4 of 5** on one commercial host. Reading arts.
+201–207 confirmed one claim and contradicted another.
+
+- **Two founders is right** — art. 202, *"puede constituirse por dos o más
+  personas"*. Confirmed, and now cited to the Code.
+- **"Capital need not be deposited at incorporation" is wrong where it matters.**
+  Article 206: *"Ninguna compañía anónima podrá comenzar sus operaciones mientras no
+  tuviere suscrita siquiera **la mitad del capital social**, y en dinero efectivo, el
+  **10%** del capital que consista en numerario."* The Code does not gate
+  incorporation on paying capital; it gates **commencing operations** — which is
+  what a founder is actually asking about. **A claim can be technically defensible
+  and still answer the wrong question.**
+- **Three rules were simply absent**: art. 204, no legal personality until the
+  escritura and Estatutos are registered, and both must then be **published**;
+  art. 205, five grounds on which a judge **refuses** registration; art. 203, the
+  prescribed content of the Estatutos.
+- **And one of those grounds qualifies a headline claim.** The guide said
+  "Foreigners may fully own a Nicaraguan company". Art. 205's first ground refuses
+  registration where the founders are not *"naturales del país o extranjeros
+  **domiciliados en el mismo**"*. Ownership after formation and eligibility to be a
+  founder are different questions. **This is 1916 law** and later investment
+  legislation may displace it, so it is **flagged, not resolved** — the guide now
+  puts the two side by side and says which is unsettled.
+
+Article 206 was read from the **page image** at 300 dpi rather than the OCR layer,
+which renders the surrounding text as *"R sus habitantes"* and *"dctretan"*. The
+figures survive the words-and-digits rule only on the image: *"la mitad"* is words,
+*"el 10%"* is digits alone, and the image is what confirms it.
+
+`incv.cv` was added to the `list-source-mix.py` allowlist in the same commit — the
+Imprensa Nacional de Cabo Verde publishes the Boletim Oficial and was scoring as
+secondary, the same blind spot that once had Botswana citing its own revenue
+service and counting as unsourced. `digesto.asamblea.gob.ni` already scored as
+authority through the `gob` pattern; a selftest now pins both.
