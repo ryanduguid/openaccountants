@@ -258,7 +258,40 @@ class FactCheckerTests(unittest.TestCase):
         self.assertNotRegex(output, r"\bconvention\b")
         self.assertNotRegex(output, r"\bright\b")
         self.assertIn("across 1 jurisdictions", output)
-        self.assertIn("move the instrument name out of the anchor text", output)
+        self.assertIn("as described at", output)
+
+    def test_statute_links_see_the_trailer_shape_not_only_markdown(self):
+        # The generated fact blocks cite as `_(Instrument — https://host/path)_`
+        # with no markdown link in it. Scanning only `[...](...)` missed that
+        # shape entirely: the queue read 1 while 528 citations across 78
+        # jurisdictions made the same misdirection. Madagascar names the Code
+        # Général des Impôts 65 times and none of them was visible.
+        output = self.run_checker("list-statute-links.py", {
+            "mg/vat.md": (
+                "- **VAT filing** - monthly  _(Code Général des Impôts "
+                "(Madagascar) — TVA — https://manao.mg/fr/tva)_\n"
+            ),
+            "ok/vat.md": (
+                "- **VAT rate** - 20%  _(Code Général des Impôts — "
+                "https://taxsummaries.pwc.com/x)_\n"
+            ),
+        })
+        self.assertRegex(output, r"mg\s+1")
+        self.assertNotRegex(output, r"\bok\b")
+        self.assertIn("across 1 jurisdictions", output)
+
+    def test_a_trailer_around_a_markdown_link_is_one_citation(self):
+        # Both patterns see the same line. The bare-URL pattern must not
+        # re-match a URL that is already a markdown link target, or every
+        # existing citation would be counted twice and the fix would look
+        # like it had doubled the problem it measured.
+        output = self.run_checker("list-statute-links.py", {
+            "bj/cit.md": (
+                "- **Rate** - 30% _([Code Général des Impôts (Bénin)]"
+                "(https://www.rivermate.com/guides/benin))_\n"
+            ),
+        })
+        self.assertIn("recognised tax publisher: 1 across 1 jurisdictions", output)
 
     def test_statute_links_see_past_a_plain_link_on_the_same_line(self):
         # The checker once stopped scanning a line at the first link that named
