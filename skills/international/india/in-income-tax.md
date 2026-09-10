@@ -1,13 +1,13 @@
 ---
 name: in-income-tax
 description: >
-  Use this skill whenever asked about Indian income tax for self-employed professionals, freelancers, or sole proprietors. Trigger on phrases like "how much tax do I pay in India", "ITR-4", "ITR-3", "Sugam", "Section 44ADA", "Section 44AD", "presumptive taxation", "new tax regime", "old tax regime", "advance tax India", "TDS credit", "PAN", "80C", "80D", "income tax return India", "surcharge", "health and education cess", "UPI income", "Razorpay payout", "Paytm business", or any question about filing or computing income tax for a self-employed individual in India. This skill covers new regime vs old regime rate tables, presumptive taxation (44ADA for professionals, 44AD for business), regular computation (ITR-3), surcharge, cess, standard deduction, Section 80C/80D deductions, advance tax schedule, TDS credits, PAN requirements, and ITR-4 (Sugam) structure. ALWAYS read this skill before touching any Indian income tax work.
+  Use this skill whenever asked about Indian income tax for self-employed professionals, freelancers, or sole proprietors. Trigger on phrases like "how much tax do I pay in India", "ITR-4", "ITR-3", "Sugam", "Section 44ADA", "Section 44AD", "presumptive taxation", "new tax regime", "old tax regime", "advance tax India", "TDS credit", "PAN", "80C", "80D", "income tax return India", "surcharge", "health and education cess", "UPI income", "Razorpay payout", "Paytm business", or any question about filing or computing income tax for a self-employed individual in India. This skill covers new regime vs old regime rate tables, presumptive taxation (44ADA for professionals, 44AD for business), regular computation (ITR-3), surcharge, cess, standard deduction, Section 80C/80D deductions, advance tax schedule, TDS credits, PAN requirements, and ITR-4 (Sugam) structure. It is written for FY 2025-26 (AY 2026-27) under the Income-tax Act, 1961, the last year that Act governed; the Income-tax Act, 2025 (30 of 2025) came into force on 1 April 2026 and governs FY 2026-27 onwards, carrying the same seven new-regime bands forward as section 202(1) but renumbering most other provisions. ALWAYS read this skill before touching any Indian income tax work.
 version: 2.0
 jurisdiction: IN
 tax_year: 2025
 tax_year_notes: "2025-26"
 tier: 2
-last_updated: 2026-07-04
+last_updated: 2026-09-11
 category: international
 depends_on:
   - income-tax-workflow-base
@@ -16,6 +16,43 @@ depends_on:
 # Indian Income Tax (आयकर) -- Self-Employed Skill v2.0
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
+
+> **The governing statute changed on 1 April 2026 and this guide does not say so.**
+> The **Income-tax Act, 2025 (30 of 2025)** commenced on **1 April 2026** by its own
+> section 1(3) and has since been amended by the Finance Act, 2026. This file
+> describes **FY 2025-26 (AY 2026-27)** under the Income-tax Act, 1961 — the year
+> whose non-audit return fell due on 31 July 2026 — and everything below is
+> attributed to the 1961 Act with no mention of its successor. **The current
+> financial year, FY 2026-27, is governed by the 2025 Act.**
+>
+> What carries over unchanged, from the Act itself:
+>
+> - **The new-regime rate table is identical.** Section 202(1) charges an
+>   individual, HUF, AOP, BOI or artificial juridical person at Nil to ₹4,00,000,
+>   then 5%, 10%, 15%, 20%, 25% and 30% at ₹4/8/12/16/20/24 lakh — the same seven
+>   bands as the table below.
+> - **The new regime is still the default and the old regime is still an option.**
+>   Section 202(1) applies *"unless the person exercises the option in the manner
+>   provided under sub-section (4)"*.
+>
+> What the guide is missing, and would still have been missing under the 1961 Act:
+>
+> - **The rebate has a cap and a marginal relief.** Section 156(2)(a) allows 100% of
+>   the tax payable **or ₹60,000, whichever is less**, where income does not exceed
+>   ₹12 lakh — the cap binds exactly at ₹12 lakh. Section 156(2)(b) then gives
+>   **marginal relief above ₹12 lakh**: where tax on the total income exceeds the
+>   amount by which income exceeds ₹12 lakh, the excess is rebated. Without it the
+>   note below reads as a cliff at ₹12,00,000, which it is not. The old-regime
+>   rebate — ₹12,500 at total income up to ₹5,00,000 — is s. 156(1).
+>
+> **Section numbers moved**, even where the rules did not. Presumptive taxation,
+> advance tax and TDS are all renumbered; sibling guides in this pack give ss.
+> 423–426 for advance tax and s. 393 for TDS. Convert any reference with the Income
+> Tax Department's
+> [1961-vis-à-vis-2025 utility](https://www.incometaxindia.gov.in/utility-to-check-provisions-of-income-tax-act-1961-vis-a-vis-income-tax-act-2025)
+> rather than assuming a number carried over.
+>
+> _(Income-tax Act, 2025 [30 of 2025] as amended by Finance Act, 2026, ss. 1, 156, 202 — https://www.incometaxindia.gov.in/documents/d/guest/income_tax_act_2025_as_amended_by_fa_act_2026-pdf)_
 
 ---
 
@@ -27,11 +64,11 @@ depends_on:
 | Tax | Income Tax + Health & Education Cess (4%) + Surcharge (if applicable) |
 | Currency | INR only |
 | Tax year | Financial Year (FY): 1 April -- 31 March |
-| Current year | FY 2025-26 (Assessment Year 2026-27) |
-| Primary legislation | Income Tax Act, 1961 (as amended by Finance Act, 2025) |
+| Current year | **This guide covers FY 2025-26 (AY 2026-27)** — the last year under the Income-tax Act, 1961. The current financial year, FY 2026-27, is governed by the Income-tax Act, 2025. |
+| Primary legislation | Income-tax Act, 1961 (as amended by Finance Act, 2025) **for FY 2025-26**. From FY 2026-27: **Income-tax Act, 2025 (30 of 2025)**, in force 1 April 2026, as amended by Finance Act, 2026 |
 | Tax authority | Central Board of Direct Taxes (CBDT) / Income Tax Department |
 | Filing portal | incometax.gov.in |
-| Filing deadline | 31 July 2026 (non-audit cases) |
+| Filing deadline | 31 July 2026 (non-audit cases, AY 2026-27) — now past; check the notified date for AY 2027-28 |
 | Contributor | Open Accountants Community |
 | Validated by | Pending -- requires sign-off by a Chartered Accountant (India) |
 | Skill version | 2.0 |
@@ -48,7 +85,7 @@ depends_on:
 | 20,00,001 -- 24,00,000 | 25% |
 | Above 24,00,000 | 30% |
 
-**Section 87A Rebate (New Regime):** If taxable income ≤ Rs. 12,00,000, tax is fully rebated (zero tax). For salaried persons with Rs. 75,000 standard deduction, effective zero-tax threshold is Rs. 12,75,000.
+**Section 87A Rebate (New Regime):** If taxable income ≤ Rs. 12,00,000, tax is fully rebated (zero tax). For salaried persons with Rs. 75,000 standard deduction, effective zero-tax threshold is Rs. 12,75,000. **This is not a cliff.** The rebate is capped at the lower of the tax payable and Rs. 60,000, and above Rs. 12,00,000 marginal relief rebates the amount by which the tax exceeds the income in excess of Rs. 12,00,000 — so tax phases in rather than jumping. Under the Income-tax Act, 2025 these are s. 156(2)(a) and s. 156(2)(b).
 
 **Cess:** Add 4% Health & Education Cess on all income tax computed (after rebate).
 
