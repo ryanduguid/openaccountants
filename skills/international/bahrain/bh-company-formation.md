@@ -3,7 +3,7 @@ name: bh-company-formation
 description: "Source-cited draft: company formation & entity choice for Bahrain (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
 jurisdiction: BH
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-10
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 Companies register with the Ministry of Industry and Commerce (MOIC) through the Sijilat online portal. The With Limited Liability company (W.L.L.) is the most common vehicle; the former Single Person Company was folded into a single-shareholder W.L.L. under Decree-Law No. 28 of 2020. Many sectors permit 100% foreign ownership.
 
-- **Most common entity type** — With Limited Liability company (W.L.L.) - allows a single shareholder of any nationality (subject to activity restrictions)  _([Commercial Companies Law (Decree-Law No. 21 of 2001), as amended by Decree-Law No. 28 of 2020](https://www.healyconsultants.com/bahrain-company-registration/setup-llc/))_
+- **Most common entity type** — With Limited Liability company (W.L.L.) - allows a single shareholder of any nationality (subject to activity restrictions)  _(Commercial Companies Law (Decree-Law No. 21 of 2001), as amended by Decree-Law No. 28 of 2020 (as described at [healyconsultants.com](https://www.healyconsultants.com/bahrain-company-registration/setup-llc/)))_
 - **Single Person Company (SPC)** — Discontinued - converted into a single-shareholder W.L.L. under Decree-Law No. 28 of 2020  _(Commercial Companies Law amendment (Decree-Law No. 28 of 2020))_
 - **Other entity types** — Bahrain Shareholding Company (B.S.C. - closed and public), partnership, branch of a foreign company, and representative office  _(Commercial Companies Law (Decree-Law No. 21 of 2001))_
 - **Minimum capital - fully Bahraini-owned W.L.L.** — No statutory minimum (often cited as nominal, e.g. around BHD 50) BHD ((approx - confirm current MOIC requirement)) BHD (approx - confirm current MOIC requirement)  _(Commercial Companies Law (Decree-Law No. 21 of 2001), as amended)_

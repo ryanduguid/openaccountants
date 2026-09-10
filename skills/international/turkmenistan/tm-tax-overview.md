@@ -3,7 +3,7 @@ name: tm-tax-overview
 description: "Source-cited draft: tax overview for Turkmenistan (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
 jurisdiction: TM
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-10
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -19,12 +19,12 @@ Turkmenistan operates a low-rate, source-and-residence based tax system administ
 - **Currency** — Turkmen manat (TMT)  _(Central Bank of Turkmenistan)_
 - **Tax authority** — Main State Tax Service of Turkmenistan (State Tax Service)  _(Tax Code of Turkmenistan)_
 - **Basis of taxation** — Residents are taxed on worldwide income; non-residents are taxed on Turkmenistan-source income only  _(Tax Code of Turkmenistan)_
-- **Headline personal income tax rate** — 10% percent (flat)  _([Tax Code of Turkmenistan](https://gsl.org/en/taxes/turkmenistan/))_
-- **Headline corporate profits tax rate (ordinary Turkmen entities)** — 8% percent  _([Tax Code of Turkmenistan](https://gsl.org/en/taxes/turkmenistan/))_
+- **Headline personal income tax rate** — 10% percent (flat)  _(Tax Code of Turkmenistan (as described at [gsl.org](https://gsl.org/en/taxes/turkmenistan/)))_
+- **Headline corporate profits tax rate (ordinary Turkmen entities)** — 8% percent  _(Tax Code of Turkmenistan (as described at [gsl.org](https://gsl.org/en/taxes/turkmenistan/)))_
 - **Corporate profits tax rate (state-owned >50% and foreign legal entities/branches)** — 20% percent  _(Tax Code of Turkmenistan)_
 - **Value-added tax** — Yes — VAT applies at a standard rate of 15% percent  _(Tax Code of Turkmenistan)_
-- **Annual tax declaration deadline (individuals and entities)** — On or about 31 March following the end of the tax year ((approx — confirm))  _([Tax Code of Turkmenistan](https://rivermate.com/guides/turkmenistan/taxes))_
-- **Double tax treaty network** — Approximately 30 double taxation treaties in force ((approx — confirm))  _([Tax Code of Turkmenistan](https://gsl.org/en/taxes/turkmenistan/))_
+- **Annual tax declaration deadline (individuals and entities)** — On or about 31 March following the end of the tax year ((approx — confirm))  _(Tax Code of Turkmenistan (as described at [rivermate.com](https://rivermate.com/guides/turkmenistan/taxes)))_
+- **Double tax treaty network** — Approximately 30 double taxation treaties in force ((approx — confirm))  _(Tax Code of Turkmenistan (as described at [gsl.org](https://gsl.org/en/taxes/turkmenistan/)))_
 - **Exchange controls** — Yes — currency exchange controls apply  _(Law of Turkmenistan on Currency Regulation)_
 
 <!-- openaccountants-cta-block -->

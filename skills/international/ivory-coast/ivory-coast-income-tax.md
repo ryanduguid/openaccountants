@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Côte d'Ivoire (Ivory Coast) pe
 version: 0.1
 jurisdiction: CI
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-10
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -322,14 +322,19 @@ All amounts in **FCFA (XOF)**. ITS scale and RICF per Section 1.
 
 ### 5.3 Employer payroll tax (taxe sur salaires, employer-borne)
 
-**Employer payroll tax rates**  _(Source: PwC (corporate & individual, other taxes).)_
+**Employer payroll tax rates**  _(Annexe fiscale à la Loi de Finances n° 2024-1109 du 18 décembre 2024, art. 16 (CGI art. 146) — https://www.dgbf.ci/wp-content/uploads/2025/01/Annexe1-Annexe-Fiscale.pdf; PwC (corporate & individual, other taxes))_
 
-| Workforce | Rate on total taxable remuneration |
-| --- | --- |
-| Local employees | **2.8%** |
-| Expatriate employees | **12%** |
+| Component | Local staff | Expatriate staff |
+| --- | --- | --- |
+| Contribution employeur proprement dite | — | 9.2% |
+| Contribution nationale pour le développement économique, culturel et social | 1.2% | 1.2% |
+| Taxe d'apprentissage | 0.4% | 0.4% |
+| Taxe additionnelle pour la formation professionnelle continue | 1.2% | 1.2% |
+| **Total on total taxable remuneration** | **2.8%** | **12%** |
 
-- **Former reduction eliminated / employer cost note** — Former 20% reduction eliminated. This is an employer cost — not withheld from the employee.  _(PwC (corporate & individual, other taxes))_
+- **The total is inclusive — do not add FDFP on top** — The taxe d'apprentissage and the taxe additionnelle formation professionnelle continue are components of the 2.8% / 12%, not further charges. Adding a separate 1.6% FDFP levy overstates a local employer's tax cost by 57%. The two columns sum exactly (1.2 + 0.4 + 1.2 = 2.8; 9.2 + 1.2 + 0.4 + 1.2 = 12.0)  _(Annexe fiscale à la Loi de Finances n° 2024-1109, art. 16 — CGI art. 146)_
+- **Taxe d'apprentissage cut for 2025** — Art. 16(2) of the annexe replaces "0,50%" with "0,40%" in the second paragraph of CGI art. 143; a 0.5% figure is the pre-2025 rate  _(Annexe fiscale à la Loi de Finances n° 2024-1109, art. 16(2))_
+- **Former reduction eliminated / employer cost note** — The 20% abatement was abolished by Ordonnance n° 2023-719 and the base is gross taxable remuneration; art. 16 of the 2025 annexe re-set the component rates so that the customary 2.8% and 12% totals are maintained on that unabated base. This is an employer cost — not withheld from the employee.  _(Annexe fiscale à la Loi de Finances n° 2024-1109, art. 16; PwC (corporate & individual, other taxes))_
 
 ### 5.4 CNPS social security
 

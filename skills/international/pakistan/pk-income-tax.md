@@ -1,23 +1,51 @@
 ---
 name: pk-income-tax
 description: Use this skill whenever asked about Pakistan personal income tax for resident individuals, self-employed professionals, freelancers, sole proprietors, and Associations of Persons (AOP) filing an annual return with the Federal Board of Revenue (FBR). Trigger on phrases like "Pakistan income tax", "ITO 2001", "Income Tax Ordinance 2001", "FBR IRIS", "filer ATL Pakistan", "non-filer surcharge", "salary brackets Pakistan", "non-salary brackets Pakistan", "Finance Act 2025", "Finance Act 2026", "self-employed Pakistan tax", "AOP Pakistan", "freelance tax Pakistan", "PSEB IT export exemption", "Section 65 Pakistan", "10% surcharge Pakistan", or "annual return Pakistan". Covers the Income Tax Ordinance 2001 as amended by Finance Act 2024, Finance Act 2025 and Finance Act 2026, salary vs non-salary progressive brackets, the Active Taxpayers List (ATL) filer-vs-non-filer differential withholding, AOP separate-entity taxation, Section 65 / PSEB IT export final-tax exemption, the high-income surcharge and its salaried exemption from 1 July 2026, foreign income credits, and IRIS portal mechanics. Out of scope — company (corporate) returns, Tax Year July-June for super tax above thresholds, capital gains on listed securities (NCCPL), property gain regimes, NTN registration mechanics, and provincial sales tax on services. ALWAYS read this skill before touching any Pakistan personal income tax work.
-version: 1.0
+version: 1.1
 jurisdiction: PK
 tax_year: 2025
 tax_year_notes: "2025 (salaried bracket table and surcharge restated for TY 2026-27 under Finance Act 2026, gazetted 26 June 2026)"
 last_updated: 2026-09-10
 reviewed_by: Ibrar Ali
-review_status: current
+review_status: pending_review
 depends_on:
   - income-tax-workflow-base
 category: international
-tier: 1
+tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
+> This revision includes changes made after the recorded accountant review and awaits a new review.
+
 # PK Income Tax
 
-## Pakistan — Personal Income Tax (Individuals & AOP) — Skill v1.0
+## Pakistan — Personal Income Tax (Individuals & AOP) — Skill v1.1
+
+> **How to read every "TBC — verify against Finance Act 2025" marker in this
+> guide: as naming the wrong Act.**
+>
+> Those markers were written while the Finance Act 2025 was still pending. Both
+> it and the Finance Act 2026 are now enacted, so an instruction to "verify
+> against FA 2025" is two Acts behind for anyone computing a current year.
+> Pakistan's tax year runs 1 July to 30 June, and the Act that governs it is the
+> one enacted immediately before it starts:
+>
+> | Tax year | Period | Governing Finance Act |
+> | --- | --- | --- |
+> | TY 2024-25 | 1 Jul 2024 – 30 Jun 2025 | Finance Act 2024 |
+> | TY 2025-26 | 1 Jul 2025 – 30 Jun 2026 | Finance Act 2025 |
+> | TY 2026-27 | 1 Jul 2026 – 30 Jun 2027 | **Finance Act 2026** (gazetted 26 June 2026) |
+>
+> So read each TBC as **"verify against the Finance Act in force for the tax
+> year being computed"**. The markers still do their job — they say a figure was
+> not confirmed — but they do not tell you which Act to open, and for a 2026-27
+> computation the answer is FA 2026, not FA 2025.
+>
+> The same wording appears in this guide's `agent-skills/pk-income-tax/`
+> counterpart, which is a separate hand-maintained tree rather than a generated
+> copy — so it inherits nothing from this file. The notice above is repeated
+> there verbatim. When either is revised, check the other.
+
 
 ## Verified rates & thresholds (accountant-reviewed)
 

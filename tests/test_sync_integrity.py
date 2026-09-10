@@ -145,6 +145,29 @@ class GuideComparisonTests(unittest.TestCase):
         findings = self.compare(guide(), guide(body="Same-day export."), mode="sync")
         self.assertIn("unversioned-body-change", codes(findings, "error"))
 
+    def test_first_numeric_version_records_a_same_day_edit(self) -> None:
+        before = guide(version=None, heading_version=None)
+        for mode in ("audit", "sync"):
+            with self.subTest(mode=mode):
+                findings = sync_integrity.compare_existing_guides(
+                    self.path,
+                    before,
+                    guide(version="0.1", heading_version=None, body="Updated body."),
+                    mode,
+                    strict_metadata=True,
+                )
+                self.assertEqual([], findings)
+
+    def test_unordered_version_cannot_record_a_same_day_edit(self) -> None:
+        for before_version, after_version in ((None, "draft"), ("draft", "0.1")):
+            with self.subTest(before=before_version, after=after_version):
+                findings = self.compare(
+                    guide(version=before_version, heading_version=None),
+                    guide(version=after_version, heading_version=None, body="Changed."),
+                    mode="sync",
+                )
+                self.assertIn("unversioned-body-change", codes(findings, "error"))
+
     def test_line_endings_and_trailing_whitespace_are_ignored(self) -> None:
         before = guide(body="First line.\nSecond line.")
         after = before.replace("First line.", "First line.   ").replace("\n", "\r\n")

@@ -3,7 +3,7 @@ name: vg-corporate-income-tax
 description: "Source-cited draft: corporate income tax for British Virgin Islands (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
 jurisdiction: VG
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-10
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -22,8 +22,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Corporate tax base** — None — no profits tax base exists; BVI companies are not taxed on income or gains  _(Income Tax Act)_
 - **Annual government fee — companies with up to 50,000 authorised shares** — US$550 per year USD  _(BVI Business Companies Act, 2004)_
 - **Annual government fee — companies with more than 50,000 authorised shares** — US$1,350 per year USD  _(BVI Business Companies Act, 2004)_
-- **Annual financial return filing deadline** — File with the registered agent within 9 months after the end of the company's financial year  _([BVI Business Companies Act (As Revised) and Business Companies (Financial Return) Order, 2023](https://maples.com/knowledge/bvi-annual-returns-and-economic-substance-filing-deadlines))_
-- **Economic substance report deadline** — Report prescribed information to the registered agent within 6 months after the end of the relevant financial period  _([Economic Substance (Companies and Limited Partnerships) Act, 2018](https://www.harneys.com/our-blogs/regulatory/bvi-economic-substance-reporting-changes-and-deadlines/))_
+- **Annual financial return filing deadline** — File with the registered agent within 9 months after the end of the company's financial year  _(BVI Business Companies Act (As Revised) and Business Companies (Financial Return) Order, 2023 (as described at [maples.com](https://maples.com/knowledge/bvi-annual-returns-and-economic-substance-filing-deadlines)))_
+- **Economic substance report deadline** — Report prescribed information to the registered agent within 6 months after the end of the relevant financial period  _(Economic Substance (Companies and Limited Partnerships) Act, 2018 (as described at [harneys.com](https://www.harneys.com/our-blogs/regulatory/bvi-economic-substance-reporting-changes-and-deadlines/)))_
 - **Global minimum tax (Pillar Two)** — In-scope multinational groups (consolidated revenue ≥ EUR 750m) may face a 15% global minimum top-up tax percent ((approx — confirm BVI implementation status))  _(OECD/G20 GloBE Model Rules (Pillar Two))_
 - **Annual fee due dates** — Companies incorporated Jan–Jun: by 31 May; Jul–Dec: by 30 November ((approx — confirm))  _(BVI Business Companies Act, 2004)_
 

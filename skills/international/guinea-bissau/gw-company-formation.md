@@ -3,7 +3,7 @@ name: gw-company-formation
 description: "Source-cited draft: company formation & entity choice for Guinea-Bissau (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
 jurisdiction: GW
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-10
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -24,8 +24,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Typical incorporation timeline** — Roughly 1–3 weeks via the CFE one-stop shop ((approx — confirm))  _(CFE registration procedure)_
 - **Indicative incorporation cost** — Government/registration fees commonly in the low hundreds of thousands of XOF, plus notary and publication fees ((approx — confirm current fees))  _(CFE registration fee schedule)_
 - **Annual financial statements (OHADA)** — Companies must prepare annual financial statements under the OHADA SYSCOHADA accounting framework  _(OHADA Uniform Act on Accounting Law (SYSCOHADA))_
-- **Annual corporate tax / declaration** — File the annual corporate income tax return by 31 March of the following year ((approx — confirm))  _([Código Geral Tributário (General Tax Code) — https://taxatlas.io/country/guinea-bissau](https://taxatlas.io/country/guinea-bissau))_
-- **Ongoing periodic compliance** — Monthly VAT returns (if registered), monthly INPS and withheld-IRPS remittance, and maintenance of a valid NIF  _([Código do IVA; INPS rules; DGCI NIF rules — https://remotesolutionsafrica.com/payroll-compliance-in-guinea-bissau-understanding-iur-irps-inps-and-nif-requirements/](https://remotesolutionsafrica.com/payroll-compliance-in-guinea-bissau-understanding-iur-irps-inps-and-nif-requirements/))_
+- **Annual corporate tax / declaration** — File the annual corporate income tax return by 31 March of the following year ((approx — confirm))  _(Código Geral Tributário (General Tax Code) (as described at [taxatlas.io](https://taxatlas.io/country/guinea-bissau)))_
+- **Ongoing periodic compliance** — Monthly VAT returns (if registered), monthly INPS remittance and remittance of the withheld **Imposto Profissional** within 10 days of month end (art. 29.º of its Código; the tax is not an "IRPS"), and maintenance of a valid NIF  _([Código do IVA; INPS rules; DGCI NIF rules — https://remotesolutionsafrica.com/payroll-compliance-in-guinea-bissau-understanding-iur-irps-inps-and-nif-requirements/](https://remotesolutionsafrica.com/payroll-compliance-in-guinea-bissau-understanding-iur-irps-inps-and-nif-requirements/))_
 
 <!-- openaccountants-cta-block -->
 

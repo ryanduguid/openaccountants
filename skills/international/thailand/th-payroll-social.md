@@ -3,7 +3,7 @@ name: th-payroll-social
 description: "Source-cited draft: payroll & social contributions for Thailand (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
 jurisdiction: TH
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-10
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -19,7 +19,7 @@ Employers must withhold personal income tax from salaries (PAYE-equivalent) and 
 - **Employer social security contribution rate** — 5% of monthly wages (matching employee) percent  _([Social Security Act B.E. 2533 (1990), Section 33](https://taxsummaries.pwc.com/thailand/individual/other-taxes))_
 - **Monthly wage base cap (2025)** — THB 15,000 per month THB  _([Social Security Act B.E. 2533 (1990)](https://taxsummaries.pwc.com/thailand/individual/other-taxes))_
 - **Maximum monthly contribution per party (2025)** — THB 750 per month (5% of THB 15,000) THB  _([Social Security Act B.E. 2533 (1990)](https://taxsummaries.pwc.com/thailand/individual/other-taxes))_
-- **Monthly wage base cap (from Jan 2026)** — THB 17,500 per month (max contribution THB 875), phase 1 of 2026–2028 increases THB ((future change — confirm))  _([Royal Decree under Social Security Act B.E. 2568 (2025)](https://thailand.acclime.com/news/new-social-security-contribution-rates-benefits/))_
+- **Monthly wage base cap (from Jan 2026)** — THB 17,500 per month (max contribution THB 875), phase 1 of 2026–2028 increases THB ((future change — confirm))  _(Royal Decree under Social Security Act B.E. 2568 (2025) (as described at [thailand.acclime.com](https://thailand.acclime.com/news/new-social-security-contribution-rates-benefits/)))_
 - **Government contribution** — Government also contributes to the Social Security Fund (rate varies, around 2.75%) percent ((approx — confirm))  _([Social Security Act B.E. 2533 (1990)](https://taxsummaries.pwc.com/thailand/individual/other-taxes))_
 - **Social security remittance deadline** — By the 15th of the following month to the Social Security Office  _([Social Security Act B.E. 2533 (1990)](https://taxsummaries.pwc.com/thailand/individual/other-taxes))_
 - **Payroll withholding (PAYE equivalent)** — Employer withholds PIT from salary each month based on estimated annual tax  _([Thai Revenue Code, Section 50; Form PND.1](https://taxsummaries.pwc.com/thailand/individual/tax-administration))_

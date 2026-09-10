@@ -3,7 +3,7 @@ name: bi-tax-overview
 description: "Source-cited draft: tax overview for Burundi (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
 jurisdiction: BI
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-10
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -19,12 +19,12 @@ Burundi taxes are administered by the Office Burundais des Recettes (OBR). The f
 - **Currency** — Burundian Franc (BIF)  _(Banque de la République du Burundi)_
 - **Tax year** — Calendar year (1 January to 31 December) ((approx — confirm))  _(Law No. 1/02 of 24 January 2013 (income tax law))_
 - **Basis of taxation** — Residents taxed on worldwide income; non-residents taxed only on Burundi-source income  _(Law No. 1/02 of 24 January 2013 (income tax law))_
-- **Top personal income tax rate** — 30% %  _([Law No. 1/02 of 24 January 2013 (income tax law)](https://remotepeople.com/countries/burundi/hire-employees/payroll-tax/))_
-- **Standard corporate income tax rate** — 30% %  _([Law No. 1/02 of 24 January 2013 (income tax law)](https://remotepeople.com/countries/burundi/hire-employees/payroll-tax/))_
-- **Does Burundi levy VAT?** — Yes — VAT (Taxe sur la Valeur Ajoutée, TVA) at a standard rate of 18%  _([Loi relative à la Taxe sur la Valeur Ajoutée (VAT Law)](https://www.eac.int/financial/eac-tax-matrices/value-added-tax))_
+- **Top personal income tax rate** — 30% %  _(Law No. 1/02 of 24 January 2013 (income tax law) (as described at [remotepeople.com](https://remotepeople.com/countries/burundi/hire-employees/payroll-tax/)))_
+- **Standard corporate income tax rate** — 30% %  _(Law No. 1/02 of 24 January 2013 (income tax law) (as described at [remotepeople.com](https://remotepeople.com/countries/burundi/hire-employees/payroll-tax/)))_
+- **Does Burundi levy VAT?** — Yes — VAT (Taxe sur la Valeur Ajoutée, TVA) at a standard rate of 18%  _(Loi relative à la Taxe sur la Valeur Ajoutée (VAT Law) (as described at [eac.int](https://www.eac.int/financial/eac-tax-matrices/value-added-tax)))_
 - **Standard VAT rate** — 18% %  _(Loi relative à la Taxe sur la Valeur Ajoutée (VAT Law))_
-- **Withholding tax on dividends** — 15% %  _([Law No. 1/02 of 24 January 2013 (income tax law)](https://remotepeople.com/countries/burundi/hire-employees/payroll-tax/))_
-- **Monthly payroll/VAT remittance deadline** — 15th of the month following the taxable period  _([OBR filing rules under the General Tax Code](https://remotepeople.com/countries/burundi/hire-employees/payroll-tax/))_
+- **Withholding tax on dividends** — 15% %  _(Law No. 1/02 of 24 January 2013 (income tax law) (as described at [remotepeople.com](https://remotepeople.com/countries/burundi/hire-employees/payroll-tax/)))_
+- **Monthly payroll/VAT remittance deadline** — 15th of the month following the taxable period  _(OBR filing rules under the General Tax Code (as described at [remotepeople.com](https://remotepeople.com/countries/burundi/hire-employees/payroll-tax/)))_
 
 <!-- openaccountants-cta-block -->
 

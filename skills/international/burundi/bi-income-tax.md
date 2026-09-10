@@ -3,7 +3,7 @@ name: bi-income-tax
 description: "Source-cited draft: personal income tax for Burundi (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
 jurisdiction: BI
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-10
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -16,6 +16,24 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ## Personal income tax (Impôt sur les revenus)
 
 - **Progressive scale overview** — Burundi applies a progressive scale to individual income (employment, business and rental income) administered by the OBR. The monthly bands below are widely cited for 2025; an accountant should confirm exact thresholds against the current General Tax Code.
+
+> **Source warning — the whole band table below rests on one HR platform, and
+> the authority cannot be reached to check it.** Every rate and threshold here
+> is cited to a single page on `remotepeople.com`. An attempt to check them
+> against the Office Burundais des Recettes failed: **obr.bi answers HTTP 200
+> with a fatal application error** ("Application Instantiation Error: Failed to
+> start the session because headers have already been sent by
+> /home/obr/public_html/index.php at line 6") rather than any content, on both
+> `obr.bi` and `www.obr.bi`. Burundi's National Assembly and Presidency sites
+> did not respond either. So nothing in this table has been put in front of a
+> primary source.
+>
+> **A specific question for the reviewer, not a correction:** these bullets cite
+> **Law No. 1/02 of 24 January 2013** as the operative income tax law. Whether
+> it still is has not been established here either way — no primary text could
+> be retrieved. Confirm which instrument governs *before* relying on the bands.
+> A citation gives no sign of the difference: a superseded law and a current one
+> look identical in one.
 - **Monthly taxable income up to BIF 150,000** — 0% %  _(Law No. 1/02 of 24 January 2013 (income tax law) — https://remotepeople.com/countries/burundi/hire-employees/payroll-tax/)_
 - **Monthly taxable income BIF 150,001 to 300,000** — 20% %  _(Law No. 1/02 of 24 January 2013 (income tax law) — https://remotepeople.com/countries/burundi/hire-employees/payroll-tax/)_
 - **Monthly taxable income over BIF 300,000** — 30% %  _(Law No. 1/02 of 24 January 2013 (income tax law) — https://remotepeople.com/countries/burundi/hire-employees/payroll-tax/)_

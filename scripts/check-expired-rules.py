@@ -209,7 +209,14 @@ RESOLVED = re.compile(
     r'superseded|since been|now been)|'
     r'is (?:now )?in force|is now confirmed|now confirmed|'
     r'RESOLVED|RESOLVIDO|no longer (?:pending|open)|'
-    r'that (?:TBC|hedge|rule) has|deadline has passed|window has closed)\b',
+    r'that (?:TBC|hedge|rule) has|deadline has passed|window has closed|'
+    # A line that EXPLAINS a stale marker quotes it, so it looks exactly like
+    # one. Four Pakistan guides gained a block headed 'How to read every
+    # "TBC -- verify against Finance Act 2025" marker in this guide: as naming
+    # the wrong Act', which is the fix for those markers and was reported as
+    # four more of them. Second time this checker has reported its own repairs.
+    r'how to read|naming the wrong|Acts? behind|are now enacted|'
+    r'both .{0,40}enacted)\b',
     re.I)
 
 # The date the rule is waiting on.

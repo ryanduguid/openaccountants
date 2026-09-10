@@ -3,7 +3,7 @@ name: vn-corporate-income-tax
 description: "Source-cited draft: corporate income tax for Vietnam (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
 jurisdiction: VN
 tax_year: 2025
-last_updated: 2026-09-09
+last_updated: 2026-09-10
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -14,12 +14,14 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ## Corporate income tax rates
 
 - **Standard CIT rate** — 20% percent  _(Law on Corporate Income Tax (https://taxsummaries.pwc.com/vietnam/corporate/taxes-on-corporate-income))_
-- **Reduced rate - revenue not exceeding VND 3 billion** — 15% percent  _(Law on Corporate Income Tax (2025) (https://www.ey.com/en_gl/technical/tax-alerts/vietnam-passes-new-corporate-income-tax-law))_
-- **Reduced rate - revenue over VND 3 billion to VND 50 billion** — 17% percent  _(Law on Corporate Income Tax (2025) (https://www.ey.com/en_gl/technical/tax-alerts/vietnam-passes-new-corporate-income-tax-law))_
-- **Special rate - oil and gas / certain extractive activities** — 25% to 50% depending on the project/contract percent ((approx - confirm by project))  _(Law on Corporate Income Tax (https://taxsummaries.pwc.com/vietnam/corporate/taxes-on-corporate-income))_
+- **Reduced rate - revenue not exceeding VND 3 billion** — 15% percent  _(Law No. 67/2025/QH15; [Vietnamese Government, policy portal](https://xaydungchinhsach.chinhphu.vn/thue-suat-thue-thu-nhap-doanh-nghiep-moi-ap-dung-tu-1-10-2025-119250730082233732.htm))_
+- **Reduced rate - revenue over VND 3 billion to VND 50 billion** — 17% percent  _(Law No. 67/2025/QH15; [Vietnamese Government, policy portal](https://xaydungchinhsach.chinhphu.vn/thue-suat-thue-thu-nhap-doanh-nghiep-moi-ap-dung-tu-1-10-2025-119250730082233732.htm))_
+- **Which year's revenue decides the band** — The **immediately preceding** tax period's total revenue, not the current year's. The statute reads *"Doanh thu làm căn cứ xác định doanh nghiệp thuộc đối tượng được áp dụng thuế suất 15% và 17% ... là tổng doanh thu của kỳ tính thuế thu nhập doanh nghiệp trước liền kề"* -- the revenue used to determine eligibility for the 15% and 17% rates is the total revenue of the immediately preceding corporate income tax period. A company that grew past VND 3 billion this year is still on last year's band this year. The Government is to issue detailed regulations on how revenue is determined; the treatment of a **newly established** enterprise with no preceding period is not settled on that page, so confirm it before applying a reduced rate in a first year  _(Law No. 67/2025/QH15; [Vietnamese Government, policy portal](https://xaydungchinhsach.chinhphu.vn/thue-suat-thue-thu-nhap-doanh-nghiep-moi-ap-dung-tu-1-10-2025-119250730082233732.htm))_
+- **Special rate - oil and gas** — 25% to 50% depending on the project/contract percent ((approx - confirm by project))  _(Law No. 67/2025/QH15; [Vietnamese Government, policy portal](https://xaydungchinhsach.chinhphu.vn/thue-suat-thue-thu-nhap-doanh-nghiep-moi-ap-dung-tu-1-10-2025-119250730082233732.htm))_
+- **Special rate - rare mineral extraction** — **50%**, reduced to **40%** where the mine lies in an area of difficult socio-economic conditions percent  _(Law No. 67/2025/QH15; [Vietnamese Government, policy portal](https://xaydungchinhsach.chinhphu.vn/thue-suat-thue-thu-nhap-doanh-nghiep-moi-ap-dung-tu-1-10-2025-119250730082233732.htm))_
 - **Tax base** — Assessable income = taxable revenue less deductible expenses, plus other income; taxed on worldwide income for resident companies  _(Law on Corporate Income Tax (https://taxsummaries.pwc.com/vietnam/corporate/income-determination))_
 
-The standard CIT rate is 20%. A new Corporate Income Tax Law effective 1 October 2025 introduced reduced rates for micro and small enterprises based on annual revenue. Oil, gas and certain mineral activities are taxed at higher special rates.
+The standard CIT rate is 20%. **Law No. 67/2025/QH15**, passed 14 June 2025, took effect on **1 October 2025 and applies to the 2025 tax period onward** -- not merely from October. It repealed Law No. 14/2008/QH12. It introduced reduced rates for micro and small enterprises based on annual revenue, and the revenue that decides the band is the **immediately preceding** tax period's, not the current one. Oil, gas and certain mineral activities are taxed at higher special rates.
 
 ## Withholding taxes and filing deadlines
 

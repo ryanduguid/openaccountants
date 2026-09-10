@@ -3,6 +3,7 @@ name: bw-vat-gst
 description: "Source-cited draft: vat / gst for Botswana (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
 jurisdiction: BW
 tax_year: 2025
+version: 0.1
 last_updated: 2026-09-10
 review_status: pending_review
 tier: 2
@@ -22,7 +23,7 @@ Botswana levies VAT under the Value Added Tax Act. The standard rate is **14%**;
 ## Registration
 
 - **Compulsory registration threshold** — 1,000,000 BWP (of annual taxable turnover)  _(Value Added Tax Act (Cap. 50:03) — https://taxsummaries.pwc.com/botswana/corporate/other-taxes)_
-- **Voluntary registration** — Permitted below the BWP 1,000,000 threshold BWP  _(Value Added Tax Act (Cap. 50:03) — https://www.doingbusiness.co.bw/registering-for-vat)_
+- **Voluntary registration** — Permitted below the BWP 1,000,000 threshold BWP (source replaced, claim not re-verified: this was cited to a `doingbusiness.co.bw` page that now returns "Under Construction" and a shopping cart. The Botswana Unified Revenue Service publishes the domestic-tax legislation and its rulings and directives; confirm the provision there)  _(Value Added Tax Act (Cap. 50:03) — Botswana Unified Revenue Service, https://www.burs.org.bw/)_
 - **Non-resident remote-services registration** — 500,000 BWP (of taxable supplies over 12 months (remote/electronic services); Introduced via the 2025 VAT amendment for digital services — confirm commencement date)  _(Value Added Tax (Amendment) Act, 2025 — https://bw.andersen.com/botswanas-value-added-tax-amendment-bill-2025-modernising-the-vat-landscape/)_
 
 Compulsory VAT registration applies once taxable turnover crosses the threshold; smaller businesses may register voluntarily.

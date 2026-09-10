@@ -3,7 +3,7 @@ name: bw-payroll-social
 description: "Source-cited draft: payroll & social contributions for Botswana (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
 jurisdiction: BW
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-10
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 Employers operate PAYE — withholding income tax from employee remuneration using the individual tax tables — and remit monthly to BURS.
 
-- **PAYE** — Employers withhold income tax from salary, wages and taxable benefits using the resident/non-resident individual tax tables  _([Income Tax Act (Cap. 52:01)](https://headoffice.app/botswana/blog/botswana-payroll-tax))_
+- **PAYE** — Employers withhold income tax from salary, wages and taxable benefits using the resident/non-resident individual tax tables  _(Income Tax Act (Cap. 52:01) (as described at [headoffice.app](https://headoffice.app/botswana/blog/botswana-payroll-tax)))_
 - **PAYE applies above** — BWP 48,000 per year (resident tax-free threshold) BWP  _([Income Tax Act (Cap. 52:01), Second Schedule](https://taxsummaries.pwc.com/botswana/individual/taxes-on-personal-income))_
 
 ## Social security / pensions
@@ -36,9 +36,9 @@ A separate employer/turnover levy funds vocational training; it is not a payroll
 
 Employers remit PAYE monthly and file annual reconciliations and employee tax certificates after the 30 June year-end.
 
-- **Monthly PAYE remittance** — By the 15th of the month following the deduction, with a monthly PAYE return  _([Income Tax Act (Cap. 52:01)](https://headoffice.app/botswana/blog/botswana-payroll-tax))_
-- **Annual PAYE reconciliation (Form ITW10)** — Due by 31 July following the 30 June tax year-end ((approx — confirm current form/date)) (approx — confirm current form/date)  _([Income Tax Act (Cap. 52:01)](https://headoffice.app/botswana/blog/botswana-payroll-tax))_
-- **Employee tax certificate (Form ITW8)** — Issued to each employee by 31 March following the tax year-end ((approx — confirm current form/date)) (approx — confirm current form/date)  _([Income Tax Act (Cap. 52:01)](https://headoffice.app/botswana/blog/botswana-payroll-tax))_
+- **Monthly PAYE remittance** — By the 15th of the month following the deduction, with a monthly PAYE return  _(Income Tax Act (Cap. 52:01) (as described at [headoffice.app](https://headoffice.app/botswana/blog/botswana-payroll-tax)))_
+- **Annual PAYE reconciliation (Form ITW10)** — Due by 31 July following the 30 June tax year-end ((approx — confirm current form/date)) (approx — confirm current form/date)  _(Income Tax Act (Cap. 52:01) (as described at [headoffice.app](https://headoffice.app/botswana/blog/botswana-payroll-tax)))_
+- **Employee tax certificate (Form ITW8)** — Issued to each employee by 31 March following the tax year-end ((approx — confirm current form/date)) (approx — confirm current form/date)  _(Income Tax Act (Cap. 52:01) (as described at [headoffice.app](https://headoffice.app/botswana/blog/botswana-payroll-tax)))_
 
 <!-- openaccountants-cta-block -->
 

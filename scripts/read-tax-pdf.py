@@ -170,15 +170,53 @@ def res_map(body):
             out[name.decode()] = font.get(int(onum), ({}, 1))
     return out
 
+def contents_of(b):
+    """Content-stream object numbers for one page, in order.
+
+    A page's /Contents is either one indirect reference or an ARRAY of them --
+    a legal split that producers use freely, and the array form is what Cote
+    d'Ivoire's annexe fiscale ships. Matching only the single-reference form
+    skipped every page of that file and printed one blank line, exit 0: the
+    reader reported "this document says nothing" when it had not read it.
+    """
+    m = re.search(rb'/Contents\s*\[([^\]]*)\]', b)
+    if m:
+        return [int(x) for x in re.findall(rb'(\d+)\s+\d+\s+R', m.group(1))]
+    m = re.search(rb'/Contents\s+(\d+)\s+0\s+R', b)
+    return [int(m.group(1))] if m else []
+
+
+N0 = rb'[-+]?[\d.]+'
+boxes = []
 pages = []
 for n, b in objs.items():
     if re.search(rb'/Type\s*/Page\b', b):
-        cm = re.search(rb'/Contents\s+(\d+)\s+0\s+R', b)
+        cnums = contents_of(b)
         rm = re.search(rb'/Resources\s+(\d+)\s+0\s+R', b)
-        if cm:
-            pages.append((n, int(cm.group(1)),
+        mb = re.search(rb'/MediaBox\s*\[\s*(' + N0 + rb')\s+(' + N0 + rb')\s+(' + N0
+                       + rb')\s+(' + N0 + rb')\s*\]', b)
+        if mb:
+            boxes.append(round(float(mb.group(3)) - float(mb.group(1)), 2))
+        if cnums:
+            pages.append((n, cnums,
                           res_map(objs.get(int(rm.group(1)), b'')) if rm else res_map(b)))
 pages.sort()
+
+if not pages:
+    sys.exit('read-tax-pdf: no page content found in %s -- %d objects, %d marked '
+             '/Type /Page. The document was NOT read; do not treat empty output '
+             'as an absence of text.' % (path, len(objs),
+                                         sum(1 for v in objs.values()
+                                             if re.search(rb'/Type\s*/Page\b', v))))
+
+# The page width decides the column bands, and passing the wrong one silently
+# drops everything past the first band. Report what the file actually says.
+if boxes:
+    common = max(set(boxes), key=boxes.count)
+    if abs(common - PW) > 1:
+        print('read-tax-pdf: pages are %g wide but PAGE_WIDTH=%g was given; '
+              'pass %g for correct column splitting.' % (common, PW, common),
+              file=sys.stderr)
 
 N = r'[-+]?[\d.]+'
 TOK = re.compile((
@@ -206,10 +244,12 @@ def show(tok, cmap, nb):
     return ''.join(parts)
 
 out = []
-for _, cnum, rmap in pages:
+for _, cnums, rmap in pages:
     items = []; cmap, nb = {}, 1; TL = 0.0
     a = d = 1.0; b = c = e = f = 0.0
-    for t in TOK.finditer(stream_of(cnum)):
+    # A split /Contents array is one content stream cut at an arbitrary byte,
+    # so the parts are joined before tokenising, not tokenised separately.
+    for t in TOK.finditer(b'\n'.join(stream_of(cn) for cn in cnums)):
         g = t.group(0)
         if t.group(1):
             cmap, nb = rmap.get(t.group(1).decode(), ({}, 1))

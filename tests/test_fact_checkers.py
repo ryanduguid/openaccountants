@@ -8,21 +8,37 @@ from pathlib import Path
 SCRIPTS = Path(__file__).resolve().parents[1] / "scripts"
 
 
-class FactCheckerTests(unittest.TestCase):
-    def run_checker(self, script, guides, expect_code=0, root="international"):
-        with tempfile.TemporaryDirectory() as directory:
-            Path(directory, "docs").mkdir()
-            for name, text in guides.items():
-                path = Path(directory, "skills", root, name)
-                path.parent.mkdir(parents=True, exist_ok=True)
-                path.write_text(text, encoding="utf-8")
-            result = subprocess.run(
-                [sys.executable, "-X", "utf8", str(SCRIPTS / script)],
-                cwd=directory, capture_output=True, text=True, encoding="utf-8",
-                timeout=30,
-            )
-        self.assertEqual(result.returncode, expect_code, result.stderr)
-        return result.stdout
+def run_script(script, guides, root="international", extra_args=()):
+    """Run a checker against a throwaway corpus. (returncode, stdout, stderr)."""
+    with tempfile.TemporaryDirectory() as directory:
+        Path(directory, "docs").mkdir()
+        for name, text in guides.items():
+            path = Path(directory, "skills", root, name)
+            path.parent.mkdir(parents=True, exist_ok=True)
+            path.write_text(text, encoding="utf-8")
+        result = subprocess.run(
+            [sys.executable, "-X", "utf8", str(SCRIPTS / script), *extra_args],
+            cwd=directory, capture_output=True, text=True, encoding="utf-8",
+            timeout=30,
+        )
+    return result.returncode, result.stdout, result.stderr
+
+
+class CheckerCase(unittest.TestCase):
+    """Base for tests that drive a checker over a throwaway corpus.
+
+    Kept separate from FactCheckerTests: subclassing THAT re-runs all of its
+    tests inside every subclass, which quietly turned a 5-test addition into 33.
+    """
+
+    def run_checker(self, script, guides, expect_code=0, root="international",
+                    extra_args=()):
+        code, out, err = run_script(script, guides, root, extra_args)
+        self.assertEqual(code, expect_code, err)
+        return out
+
+
+class FactCheckerTests(CheckerCase):
 
     def test_percentage_conflicts_include_tables_and_bullets(self):
         output = self.run_checker("check-fact-conflicts.py", {
@@ -95,6 +111,245 @@ class FactCheckerTests(unittest.TestCase):
         self.assertRegex(output, r"queue:\s+thin\b")
         self.assertNotRegex(output, r"queue:\s+broad\b")
         self.assertRegex(output, r"\bbroad\s+dividends, rent, services")
+
+    def test_source_mix_flags_jurisdictions_with_no_authority_citation(self):
+        # "onlypwc" rests entirely on a secondary summary; "mixed" also cites
+        # the authority. Only the first is listed. The CTA block every guide
+        # ends with must not count as a source either way.
+        cta = ("\n\n[openaccountants.com](https://www.openaccountants.com) "
+               "and https://calendly.com/oa/intro\n")
+        output = self.run_checker("list-source-mix.py", {
+            "onlypwc/cit.md": (
+                "- **Rate** - 20% _(https://taxsummaries.pwc.com/x/corporate)_\n"
+                "- **WHT** - 10% _(https://rivermate.com/guides/x)_\n" + cta
+            ),
+            "mixed/cit.md": (
+                "- **Rate** - 20% _(https://taxsummaries.pwc.com/y/corporate)_\n"
+                "- **WHT** - 10% _(https://www.irs.gov/pub/notice)_\n" + cta
+            ),
+        })
+        self.assertRegex(output, r"2 secondary, 0 authority\s+onlypwc")
+        self.assertNotRegex(output, r"\bmixed\b")
+        self.assertIn("citing no authority domain at all: 1", output)
+        self.assertIn("citations: 1 authority, 3 secondary", output)
+        # it ranks, it does not accuse
+        self.assertIn("ranks exposure, not diligence", output)
+
+    def test_source_mix_counts_a_collection_agent_as_an_authority(self):
+        # NCCPL computes and deducts Pakistan's securities CGT, so its
+        # notification outranks any summary of it — but it is a .com, so a
+        # bare government-domain test would score it as secondary.
+        output = self.run_checker("list-source-mix.py", {
+            "pk/cgt.md": "- **CGT** - 15% _(https://www.nccpl.com.pk/notice)_\n",
+        })
+        self.assertIn("citing no authority domain at all: 0", output)
+        self.assertIn("citations: 1 authority, 0 secondary", output)
+
+    def test_source_mix_matches_subdomains_of_known_authorities(self):
+        # etax.atk-ks.org is the Kosovo tax administration's own filing portal
+        # and info.altinn.no is Norway's reporting portal. An exact-match test
+        # scored both as commercial sites, which is how Kosovo stayed on the
+        # zero-authority list while citing its own revenue service.
+        output = self.run_checker("list-source-mix.py", {
+            "xk/vat.md": "- **VAT** - 18% _(https://etax.atk-ks.org/filing)_\n",
+        })
+        self.assertIn("citing no authority domain at all: 0", output)
+        self.assertIn("citations: 1 authority, 0 secondary", output)
+
+    def test_unclassified_lists_what_a_zero_authority_jurisdiction_cites(self):
+        # The candidate filters — three citations, a two-letter TLD — hid every
+        # authority found this session. So for a jurisdiction the script is
+        # claiming cites no authority, the filters are skipped entirely: one
+        # cited domain there is the difference between the claim and its
+        # opposite, however rarely it appears.
+        output = self.run_checker("list-source-mix.py", {
+            "ad/vat.md": "- **IGI** - 4.5% _(https://www.impostos-example.ad/x)_\n",
+        }, extra_args=["--unclassified"])
+        self.assertIn("zero-authority", output)
+        self.assertIn("impostos-example.ad (1)", output)
+
+    def test_a_site_about_a_countrys_tax_is_not_that_countrys_authority(self):
+        # manao.mg went on the allowlist as a "Madagascar tax portal", from its
+        # name. Manao sells accounting software. It was the only domain scoring
+        # as an authority for Madagascar, so one unchecked entry removed a
+        # jurisdiction from the queue this script exists to produce — the
+        # failure the allowlist can cause and never report.
+        output = self.run_checker("list-source-mix.py", {
+            "mg/vat.md": "- **TVA** - 20% _(https://manao.mg/fr/tva)_\n",
+        })
+        self.assertIn("citations: 0 authority, 1 secondary", output)
+        self.assertIn("citing no authority domain at all: 1", output)
+
+    def test_load_bearing_names_the_entry_a_jurisdiction_rests_on(self):
+        # A missing allowlist entry over-reports risk and someone notices. A
+        # wrong one under-reports it silently. --load-bearing ranks the entries
+        # by what they are holding up, so the expensive mistakes get reviewed.
+        output = self.run_checker("list-source-mix.py", {
+            "bi/cit.md": (
+                "- **CIT** - 30% _(https://www.obr.bi/rates)_\n"
+                "- **VAT** - 18% _(https://taxatlas.io/burundi)_\n"
+            ),
+            "ee/pit.md": (
+                "- **PIT** - 22% _(https://www.emta.ee/rates)_\n"
+                "- **Filing** - March _(https://www.eesti.ee/filing)_\n"
+            ),
+        }, extra_args=["--load-bearing"])
+        self.assertIn("obr.bi", output)
+        self.assertRegex(output, r"bi\s+cited 1 time;")
+        # Estonia cites two authorities, so neither is load-bearing alone.
+        self.assertNotIn("emta.ee", output)
+
+    def test_show_prints_the_rows_the_scan_counts(self):
+        # heads_in() learned that a dedicated withholding guide does not repeat
+        # the word in every row label; show() kept the old label-only test, so
+        # `--show` dropped the entire rate table it was meant to display. A
+        # diagnostic that under-reports against its own checker reads as proof
+        # the rows are absent.
+        guide = (
+            "| Payment type | Default rate | Section |\n"
+            "| Services -- individuals | 30% | 164 |\n"
+            "| Rent -- commercial | 35% | 170 |\n"
+        )
+        output = self.run_checker("list-withholding-scope.py", {
+            "il/il-tax-withholding.md": guide,
+        }, extra_args=["--show", "il"])
+        self.assertIn("Services -- individuals", output)
+        self.assertIn("Rent -- commercial", output)
+        self.assertIn("2 withholding-labelled line(s) in il", output)
+
+    def test_midyear_changes_uses_each_jurisdictions_own_tax_year(self):
+        # 1 August is mid-year for a calendar-year country and gets reported;
+        # 1 July is the first day of Australia's year and does not. Without the
+        # per-jurisdiction year start the second line is a false positive.
+        output = self.run_checker("list-midyear-changes.py", {
+            "cal/vat.md": (
+                "| Tax year | Calendar year (1 January -- 31 December) |\n"
+                "- **VAT standard rate** - **21%** from 1 August 2025\n"
+            ),
+            "aus/cit.md": (
+                "| Tax year | 1 July 2025 - 30 June 2026 |\n"
+                "- **Company rate** - **25%** from 1 July 2025\n"
+            ),
+        })
+        self.assertRegex(output, r"cal\s+\(year starts 1/1\)")
+        self.assertNotRegex(output, r"aus\s+\(year starts")
+        self.assertIn("no stated split (since", output)
+
+    def test_midyear_changes_accepts_a_split_stated_elsewhere_in_the_file(self):
+        # Romania's shape: the rate row is terse and the return-mapping table
+        # further down carries "21% from Aug 2025 / 19% before". Testing the
+        # line alone reported four Romanian lines that were all fine.
+        output = self.run_checker("list-midyear-changes.py", {
+            "ro/vat.md": (
+                "| Tax year | Calendar year |\n"
+                "| 11% | Reduced (from 1 August 2025) replacing the former 9% "
+                "and 5% categories | Fiscal Code |\n"
+                "| Row 2 | Domestic supplies at reduced rate (11% from Aug 2025 "
+                "/ 9% before) | 11%/9% |\n"
+            ),
+        })
+        self.assertIn("no stated split (since 2025): 0 line(s)", output)
+
+    def test_statute_links_spare_recognised_publishers(self):
+        # The corpus convention is [Instrument name](where I read it), and
+        # naming the Act while citing a summary of it is honest — so a link to
+        # a recognised tax publisher is not reported. A link to an HR platform
+        # is: a reader clicking it has no signal they have left the law behind.
+        output = self.run_checker("list-statute-links.py", {
+            "trap/cit.md": (
+                "- **Rate** - 30% _([Code Général des Impôts (Bénin)]"
+                "(https://www.rivermate.com/guides/benin))_\n"
+            ),
+            "convention/cit.md": (
+                "- **Rate** - 30% _([Income Tax Act]"
+                "(https://taxsummaries.pwc.com/x/corporate))_\n"
+            ),
+            "right/cit.md": (
+                "- **Rate** - 30% _([Value Added Tax Act 1991]"
+                "(https://frcs.org.fj/vat))_\n"
+            ),
+        })
+        self.assertRegex(output, r"trap\s+1")
+        self.assertNotRegex(output, r"\bconvention\b")
+        self.assertNotRegex(output, r"\bright\b")
+        self.assertIn("across 1 jurisdictions", output)
+        self.assertIn("as described at", output)
+
+    def test_statute_links_see_the_trailer_shape_not_only_markdown(self):
+        # The generated fact blocks cite as `_(Instrument — https://host/path)_`
+        # with no markdown link in it. Scanning only `[...](...)` missed that
+        # shape entirely: the queue read 1 while 528 citations across 78
+        # jurisdictions made the same misdirection. Madagascar names the Code
+        # Général des Impôts 65 times and none of them was visible.
+        output = self.run_checker("list-statute-links.py", {
+            "mg/vat.md": (
+                "- **VAT filing** - monthly  _(Code Général des Impôts "
+                "(Madagascar) — TVA — https://manao.mg/fr/tva)_\n"
+            ),
+            "ok/vat.md": (
+                "- **VAT rate** - 20%  _(Code Général des Impôts — "
+                "https://taxsummaries.pwc.com/x)_\n"
+            ),
+        })
+        self.assertRegex(output, r"mg\s+1")
+        self.assertNotRegex(output, r"\bok\b")
+        self.assertIn("across 1 jurisdictions", output)
+
+    def test_a_trailer_around_a_markdown_link_is_one_citation(self):
+        # Both patterns see the same line. The bare-URL pattern must not
+        # re-match a URL that is already a markdown link target, or every
+        # existing citation would be counted twice and the fix would look
+        # like it had doubled the problem it measured.
+        output = self.run_checker("list-statute-links.py", {
+            "bj/cit.md": (
+                "- **Rate** - 30% _([Code Général des Impôts (Bénin)]"
+                "(https://www.rivermate.com/guides/benin))_\n"
+            ),
+        })
+        self.assertIn("recognised tax publisher: 1 across 1 jurisdictions", output)
+
+    def test_statute_links_see_past_a_plain_link_on_the_same_line(self):
+        # The checker once stopped scanning a line at the first link that named
+        # no instrument. 39 lines in the corpus open with a plain link, so every
+        # statute link behind one was invisible — a false negative, which is the
+        # kind that survives because the checker keeps looking clean.
+        output = self.run_checker("list-statute-links.py", {
+            "behind/cit.md": (
+                "- See the [country guide](https://www.rivermate.com/benin) and "
+                "_([Code Général des Impôts](https://www.rivermate.com/guides/benin))_\n"
+            ),
+        })
+        self.assertRegex(output, r"behind\s+1")
+
+    def test_statute_links_know_instruments_outside_common_law(self):
+        # Ethiopia and Eritrea legislate by Proclamation and nothing else. A
+        # vocabulary of Act/Code/Law/Decree silently exempts them: 18 of
+        # Eritrea's citations were out of scope for no reason but wording.
+        output = self.run_checker("list-statute-links.py", {
+            "horn/cit.md": (
+                "- **Rate** - 30% _([Income Tax Proclamation No. 24/2011]"
+                "(https://taxatlas.io/country/eritrea))_\n"
+            ),
+            "lusophone/cit.md": (
+                "- **Rate** - 25% _([Lei das Contribuições](https://remotepeople.com/x))_\n"
+            ),
+        })
+        self.assertRegex(output, r"horn\s+1")
+        self.assertRegex(output, r"lusophone\s+1")
+
+    def test_a_scheme_publishing_its_own_ceiling_is_an_authority(self):
+        # vinhi.vg is the BVI National Health Insurance scheme, not a marketing
+        # site: its own bulletin sets the ceiling the guide quotes. Same class
+        # as NCCPL and FRCS — the body that collects the charge, publishing the
+        # table it collects under. Reporting it would condemn a good citation.
+        output = self.run_checker("list-statute-links.py", {
+            "vg/social.md": (
+                "- **NHI ceiling** - US$102,000 _([National Health Insurance "
+                "Regulations](https://www.vinhi.vg/nhi-contribution-breakdown/))_\n"
+            ),
+        })
+        self.assertNotRegex(output, r"\bvg\b")
+        self.assertIn("across 0 jurisdictions", output)
 
     def test_solo_citations_rank_uncorroborated_instruments(self):
         # "lonely" leans on one instrument nobody else cites; "shared" cites an
@@ -263,3 +518,258 @@ class FactCheckerTests(unittest.TestCase):
         # the interest and royalties named in the prose do not appear
         self.assertRegex(output, r"\bbroad\s+dividends, insurance\b")
         self.assertIn("heads named per jurisdiction: 2:1", output)
+
+
+def _load(script):
+    """Import a scripts/*.py module by path, for checkers with no CLI-only API."""
+    import importlib.util
+    spec = importlib.util.spec_from_file_location(
+        script.replace("-", "_").removesuffix(".py"), SCRIPTS / script)
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
+
+
+class BulletTotalTests(CheckerCase):
+    """check-total-rows.py reads tables; the fact blocks are bullets.
+
+    Same double assertion, no pipe character anywhere in it, so it was invisible.
+    """
+
+    def test_a_bullet_total_is_checked_against_the_bullets_below_it(self):
+        # sm-payroll-social states an employer total 1.9 points above its parts.
+        # Note the order is reversed from the table convention: the total LEADS.
+        output = self.run_checker("check-total-rows.py", {
+            "sm/payroll.md": (
+                "- **Total employer social-security contribution** - 27.4%\n"
+                "- **Employer - pension (first pillar)** - 16.6%\n"
+                "- **Employer - Fondiss** - 2.0%\n"
+                "- **Employer - unemployment insurance** - 1.9%\n"
+                "- **Employer - health and accident** - 4.0%\n"
+                "- **Employer - Social Services Fund** - 1.0%\n"
+            ),
+        })
+        self.assertIn("components sum to 25.50%", output)
+        self.assertIn("bullet totals checked: 1", output)
+
+    def test_a_total_that_adds_up_is_not_reported(self):
+        output = self.run_checker("check-total-rows.py", {
+            "ga/payroll.md": (
+                "- **Total employer social contribution rate** - 20.1%\n"
+                "- **Employer - family allowances** - 8%\n"
+                "- **Employer - work injuries** - 3%\n"
+                "- **Employer - retirement pensions** - 9.1%\n"
+            ),
+        })
+        self.assertIn("bullet totals checked: 1 ; not equal to their components: 0",
+                      output)
+
+    def test_the_other_side_of_the_payroll_is_not_a_component(self):
+        # tg-payroll-social is internally consistent: employer 12.5+3+2 = 17.5.
+        # Letting the 4% employee row join made it "21.5 vs 17.5" -- a false
+        # positive manufactured by the checker, not a defect in the guide.
+        output = self.run_checker("check-total-rows.py", {
+            "tg/payroll.md": (
+                "- **Employer CNSS contribution (total)** - 17.5%\n"
+                "- **Employer - old-age pension** - 12.5%\n"
+                "- **Employer - family benefits** - 3%\n"
+                "- **Employer - occupational risk** - 2%\n"
+                "- **Employee CNSS contribution** - 4%\n"
+            ),
+        })
+        self.assertIn("not equal to their components: 0", output)
+
+    def test_a_component_with_several_percentages_abandons_the_group(self):
+        # ga-payroll-social writes a branch as "4.1% total (0.6% + 2% + 1.5%)".
+        # Stopping short at it reported 16% against a total of 20.1% that is
+        # exactly right. Reporting a partial sum is worse than reporting nothing.
+        output = self.run_checker("check-total-rows.py", {
+            "ga/payroll.md": (
+                "- **Total employer social contribution rate** - 20.1%\n"
+                "- **Employer - family allowances** - 8%\n"
+                "- **Employer - work injuries** - 3%\n"
+                "- **Employer - retirement pensions** - 5%\n"
+                "- **Employer - CNAMGS health** - 4.1% total (0.6% + 2% + 1.5%)\n"
+            ),
+        })
+        self.assertIn("bullet totals checked: 0", output)
+
+    def test_components_that_restate_the_total_are_not_a_partition_of_it(self):
+        # bz-payroll-social: "Larger share of the 10% total" and "Smaller share
+        # of the 10% total" both carry the total's own figure, summing to double.
+        output = self.run_checker("check-total-rows.py", {
+            "bz/payroll.md": (
+                "- **Total SSB contribution rate** - 10% of insurable earnings\n"
+                "- **Employer SSB share** - Larger share of the 10% total\n"
+                "- **Employee SSB share** - Smaller share of the 10% total\n"
+            ),
+        })
+        self.assertIn("bullet totals checked: 0", output)
+
+
+class SingleSourceTests(unittest.TestCase):
+    """Offline tests for list-single-source-blocks.py."""
+
+    def setUp(self):
+        self.ss = _load("list-single-source-blocks.py")
+
+    def test_the_benin_shape_is_what_this_measures(self):
+        # Every IRPP band boundary cited to one HR platform. All five were
+        # wrong. The shared source is what a reader could have noticed without
+        # knowing any Beninese tax law, and it is the only thing measurable here.
+        total, hosts = self.ss.concentration([
+            "- **Band 1** - 0% up to 60,000  _(Code - https://rivermate.com/x)_\n",
+            "- **Band 2** - 10% to 150,000  _(Code - https://rivermate.com/x)_\n",
+            "- **Band 3** - 15% to 250,000  _(Code - https://rivermate.com/x)_\n",
+            "- **Top** - 30% above 500,000  _(Code - https://rivermate.com/x)_\n",
+        ])
+        self.assertEqual(total, 4)
+        self.assertEqual(hosts["rivermate.com"], 4)
+        self.assertEqual(self.ss.classify_host("rivermate.com"), "other")
+
+    def test_concentration_on_an_authority_is_the_good_case(self):
+        # A guide citing its own revenue service for all its figures is a guide
+        # doing it right, and must not sit in the same list as the HR platforms.
+        self.assertEqual(self.ss.classify_host("frcs.org.fj"), "authority")
+        self.assertEqual(self.ss.classify_host("taxsummaries.pwc.com"), "publisher")
+
+    def test_cornell_publishes_the_section_not_a_summary_of_it(self):
+        # us-section-1202-qsbs cites law.cornell.edu 52 times, which put it top
+        # of this queue. But `[§1202](law.cornell.edu/uscode/text/26/1202)` lands
+        # the reader on 26 U.S.C. §1202 itself. Cornell's LII is a republisher,
+        # not the official OLRC text -- but it republishes the statute, so
+        # reporting it here would be the false positive.
+        self.assertEqual(self.ss.classify_host("www.law.cornell.edu"), "publisher")
+
+    def test_one_bullet_is_one_fact_however_often_its_source_repeats(self):
+        # Otherwise a bullet naming the same page twice counts as two
+        # independent corroborations of itself.
+        _, hosts = self.ss.concentration(
+            ["- **Rate** - 20%  _(https://x.com/a and https://x.com/b)_\n"])
+        self.assertEqual(hosts["x.com"], 1)
+        # two genuinely different hosts on one bullet IS corroboration
+        _, hosts = self.ss.concentration(
+            ["- **Rate** - 20%  _(https://x.com/a; https://y.com/b)_\n"])
+        self.assertEqual([hosts["x.com"], hosts["y.com"]], [1, 1])
+
+    def test_prose_uncited_bullets_and_the_cta_block_are_not_facts(self):
+        total, _ = self.ss.concentration([
+            "Benin levies tax under the CGI, with 5 headline taxes.\n",
+            "- **A rate** - 20%  _(no citation here)_\n",
+            "- **Authority** - the DGI  _(https://x.com/a)_\n",
+            "- Use it in your AI: https://www.openaccountants.com/connect 100\n",
+            "- **B rate** - 30%  _(https://frcs.org.fj/x)_\n",
+        ])
+        self.assertEqual(total, 1)
+
+
+class CitationRotTests(unittest.TestCase):
+    """Offline tests for list-citation-rot.py.
+
+    The script fetches the network, so the CLI is not exercised here; `judge`
+    is the part that decides what a response means and it is pure.
+    """
+
+    def setUp(self):
+        self.rot = _load("list-citation-rot.py")
+
+    def test_a_live_domain_can_stop_being_the_ministry(self):
+        # Benin cited its tax year to a PDF on finances.bj, the Ministry of
+        # Finance's domain. It answers 200 and serves an Indonesian casino site.
+        # A status-code check passes it, which is why the body is read.
+        kind, evidence = self.rot.judge(
+            200, "PRIMATOTO Akses Resmi Toto Slot Togel Situs Toto 4D BANDAR SLOT")
+        self.assertEqual(kind, "rot")
+        self.assertIn("togel", evidence.lower())
+
+    def test_a_waf_turning_a_script_away_is_not_a_dead_citation(self):
+        # impots.finances.gouv.bj -- Benin's real, live tax authority -- answers
+        # curl with 406, and onrc.ro with a rejection page. Calling those dead
+        # would bury the real findings under healthy sites.
+        for code in (401, 403, 405, 406, 429, 451):
+            with self.subTest(code=code):
+                self.assertEqual(self.rot.judge(code, "Request Rejected")[0],
+                                 "blocked")
+
+    def test_an_institutional_page_is_demoted_not_dropped(self):
+        # This is the test that matters most. The first draft SUPPRESSED a
+        # squatter match when the page also read institutional, on the theory
+        # that a gaming regulator legitimately uses those words. On the very
+        # first real run that rule would have silently hidden the sharpest
+        # finding in the corpus: Benin's own tax authority is serving injected
+        # casino spam. Demoting to a printed bucket keeps it visible.
+        kind, evidence = self.rot.judge(
+            200, "Direction Générale des Impots BENIN -- Melbet Jordan Mol "
+                 "Casino Online Casino Maldives ronybet Tomi Club Maldives")
+        self.assertEqual(kind, "check")
+        self.assertIn("casino", evidence.lower())
+
+    def test_an_authority_serving_a_crash_is_not_ok(self):
+        # obr.bi is Burundi's Revenue Office AND an entry on the authority
+        # allowlist, and it answers HTTP 200 with a Joomla fatal. Status fine,
+        # no squatter words, so every other rule here scored it `ok` -- a false
+        # negative on exactly the kind of host this corpus most relies on.
+        kind, evidence = self.rot.judge(
+            200, 'Error displaying the error page: Application Instantiation '
+                 'Error: Failed to start the session because headers have '
+                 'already been sent by /home/obr/public_html/index.php')
+        self.assertEqual(kind, 'broken')
+        self.assertIn('instantiation', evidence.lower())
+        self.assertEqual(
+            self.rot.judge(200, 'Error establishing a database connection')[0],
+            'broken')
+
+    def test_a_parked_domain_reports_and_an_ordinary_page_does_not(self):
+        self.assertEqual(self.rot.judge(200, "Buy this domain today.")[0], "rot")
+        self.assertEqual(
+            self.rot.judge(200, "Fiji Revenue and Customs Service VAT")[0], "ok")
+
+    def test_nothing_answering_is_dead(self):
+        for status in (None, 404, 410, 503):
+            with self.subTest(status=status):
+                self.assertEqual(self.rot.judge(status, "")[0], "dead")
+
+    def test_the_corpus_own_site_is_not_a_citation_to_check(self):
+        # Every guide ends with a CTA block linking openaccountants.com and a
+        # Calendly booking page: thousands of citations, three hosts, nothing to
+        # learn, and fetching them on every run is pure noise.
+        import os
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory, "skills", "international", "x", "a.md")
+            path.parent.mkdir(parents=True, exist_ok=True)
+            path.write_text(
+                "- **Rate** - 20%  _(Act — https://revenue.example.gov/x)_\n"
+                "See [us](https://www.openaccountants.com/connect) or book at\n"
+                "https://calendly.com/openaccountants/30min\n", encoding="utf-8")
+            cwd = os.getcwd()
+            try:
+                os.chdir(directory)
+                found = self.rot.cited_hosts()
+            finally:
+                os.chdir(cwd)
+        self.assertEqual(sorted(found), ["revenue.example.gov"])
+
+
+class ControlProbeTests(unittest.TestCase):
+    """The dead bucket must be gated on the fetcher proving it works."""
+
+    def setUp(self):
+        self.rot = _load("list-citation-rot.py")
+
+    def test_controls_are_hosts_that_are_not_down(self):
+        # If these do not answer, the script is not measuring the web but
+        # whatever sits between it and the web. Two sweeps put github.com at the
+        # top of the dead list with 169 citations -- the first blamed on
+        # concurrency, wrongly; the actual cause was the egress proxy, which
+        # answers 400 for it while curl reaches it fine.
+        self.assertIn("github.com", self.rot.CONTROLS)
+        self.assertGreaterEqual(len(self.rot.CONTROLS), 2)
+
+    def test_a_policy_denial_is_indistinguishable_from_a_dead_domain(self):
+        # This is the fact the control probe exists to work around, and it is
+        # worth asserting so nobody "fixes" judge() into guessing. A proxy
+        # refusing to connect and a domain that no longer exists arrive here as
+        # the same thing, and judge() is right to call both dead -- the caller
+        # is what must decide whether to believe it.
+        self.assertEqual(self.rot.judge(None, "")[0], "dead")
+        self.assertEqual(self.rot.judge(502, "")[0], "dead")

@@ -17,6 +17,26 @@ metadata:
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
+> **How to read every "TBC — verify against Finance Act 2025" marker in this
+> guide: as naming the wrong Act.**
+>
+> Those markers were written while the Finance Act 2025 was still pending. Both
+> it and the Finance Act 2026 are now enacted, so an instruction to "verify
+> against FA 2025" is two Acts behind for anyone computing a current year.
+> Pakistan's tax year runs 1 July to 30 June, and the Act that governs it is the
+> one enacted immediately before it starts:
+>
+> | Tax year | Period | Governing Finance Act |
+> | --- | --- | --- |
+> | TY 2024-25 | 1 Jul 2024 – 30 Jun 2025 | Finance Act 2024 |
+> | TY 2025-26 | 1 Jul 2025 – 30 Jun 2026 | Finance Act 2025 |
+> | TY 2026-27 | 1 Jul 2026 – 30 Jun 2027 | **Finance Act 2026** (gazetted 26 June 2026) |
+>
+> So read each TBC as **"verify against the Finance Act in force for the tax
+> year being computed"**. The markers still do their job — they say a figure was
+> not confirmed — but they do not tell you which Act to open, and for a 2026-27
+> computation the answer is FA 2026, not FA 2025.
+
 ## CRITICAL EXECUTION DIRECTIVE — READ FIRST
 
 **When this skill is invoked, the user has already passed through intake and the relevant content skills. They want their finished IRIS working paper. Execute all steps without pausing for permission.**

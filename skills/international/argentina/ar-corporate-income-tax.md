@@ -3,7 +3,7 @@ name: ar-corporate-income-tax
 description: "Source-cited draft: corporate income tax for Argentina (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
 jurisdiction: AR
 tax_year: 2025
-last_updated: 2026-09-09
+last_updated: 2026-09-10
 reviewed_by: Maria Valeria Benvenuti
 review_status: current
 tier: 2
@@ -51,7 +51,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 > contract, not by a default. Get local advice rather than taking the residual
 > because it is listed last.
 - **Tax treaties** — Argentina has a network of 20+ double tax treaties that may reduce dividend, interest and royalty withholding rates  _(Double Taxation Agreements (Convenios para evitar la doble imposición))_
-- **CIT filing & payment deadline** — Annual return generally due in the fifth/sixth month after fiscal year-end; extended to June of the following year for calendar-year companies under recent resolutions ((approx — confirm exact CUIT-based dates))  _([ARCA General Resolution (e.g. RG 5648/2025)](https://www.commenda.io/argentina/corporate-tax-rates))_
+- **CIT filing & payment deadline** — Annual return generally due in the fifth/sixth month after fiscal year-end; extended to June of the following year for calendar-year companies under recent resolutions ((approx — confirm exact CUIT-based dates))  _(ARCA General Resolution (e.g. RG 5648/2025) (as described at [commenda.io](https://www.commenda.io/argentina/corporate-tax-rates)))_
 - **Advance payments** — Companies make monthly/periodic advance income-tax payments (anticipos) during the year toward the annual liability  _(ARCA General Resolution on income-tax advances (anticipos))_
 
 <!-- openaccountants-cta-block -->

@@ -3,6 +3,7 @@ name: gr-corporate-income-tax
 description: "Source-cited draft: corporate income tax for Greece (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
 jurisdiction: GR
 tax_year: 2025
+version: 0.1
 last_updated: 2026-09-10
 review_status: pending_review
 tier: 2
@@ -16,7 +17,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 Resident companies are taxed on worldwide profits; non-resident companies on Greek-source profits, including those of a Greek permanent establishment. The standard rate for 2025 is 22%.
 
 - **Standard corporate income tax rate** — 22% percent  _([Greek Income Tax Code (Law 4172/2013)](https://taxsummaries.pwc.com/greece/corporate/taxes-on-corporate-income))_
-- **Credit institutions / financial entities rate** — 29% percent (for credit institutions taxed under sector-specific provisions)  _([Greek Income Tax Code (Law 4172/2013)](https://www.flick.network/en-gr/corporate-tax-in-greece))_
+- **Credit institutions / financial entities rate** — 29% percent (for credit institutions taxed under sector-specific provisions)  _(Greek Income Tax Code (Law 4172/2013) (as described at [flick.network](https://www.flick.network/en-gr/corporate-tax-in-greece)))_
 - **Tax base** — Accounting profit adjusted for tax (non-deductible expenses, tax depreciation, etc.); residents taxed on worldwide income, non-residents on Greek-source income  _([Greek Income Tax Code (Law 4172/2013)](https://taxsummaries.pwc.com/greece/corporate/income-determination))_
 - **Corporate tax residence** — A company is Greek tax resident if incorporated in Greece, has its registered seat in Greece, or its place of effective management is in Greece  _([Greek Income Tax Code (Law 4172/2013)](https://taxsummaries.pwc.com/greece/corporate/corporate-residence))_
 - **Advance corporate tax prepayment** — 80% percent (of current-year corporate tax is prepaid with the annual return (approx — confirm rate for 2025))  _([Greek Income Tax Code (Law 4172/2013)](https://taxsummaries.pwc.com/greece/corporate/tax-administration))_

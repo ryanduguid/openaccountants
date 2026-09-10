@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Côte d'Ivoire (Ivory Coast) pa
 version: 0.1
 jurisdiction: CI
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-10
 review_status: pending_review
 depends_on:
   - payroll-workflow-base
@@ -34,7 +34,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Tax authority | Direction Générale des Impôts (DGI) — [e-impots.gouv.ci](https://e-impots.gouv.ci/) |
 | Social security authority | Caisse Nationale de Prévoyance Sociale (CNPS) — [cnps.ci](https://www.cnps.ci/) |
 | Training-levy authority | Fonds de Développement de la Formation Professionnelle (FDFP) |
-| Key legislation | Code Général des Impôts (CGI) Art. 119 bis (ITS scale), Art. 120 (RICF), Art. 138 (payment); Ordonnance n° 2023-719 of 13 Sept 2023 (ITS reform, effective 1 Jan 2024) |
+| Key legislation | Code Général des Impôts (CGI) Art. 119 bis (ITS scale), Art. 120 (RICF), Art. 120 bis (dockers), Art. 138 (payment), Art. 143 (taxe d'apprentissage), Art. 146 (employer contribution table); Ordonnance n° 2023-719 of 13 Sept 2023 (ITS reform, effective 1 Jan 2024); [Annexe fiscale à la Loi de Finances n° 2024-1109 du 18 décembre 2024](https://www.dgbf.ci/wp-content/uploads/2025/01/Annexe1-Annexe-Fiscale.pdf), art. 16 |
 | Minimum wage (SMIG) | 75,000 XOF/month (Decree n° 2022-986, in force since 1 Jan 2023) |
 | Validated by | Pending — requires sign-off by an Ivorian expert-comptable |
 | Skill version | 0.1 |
@@ -66,7 +66,7 @@ The 0% floor of 75,000 XOF coincides exactly with the SMIG.
 - 2,400,000 → 144,000 + 24% × 1,600,000 = 528,000
 - 8,000,000 → 528,000 + 28% × 5,600,000 = 2,096,000
 
-> `[RESEARCH GAP — reviewer to confirm]` **Professional abatement.** The pre-reform regime applied a 20% professional abatement before the old scale. Under the unified ITS, PwC presents the scale as applied to **gross** taxable salary, and this skill follows that (no standalone abatement). A separate abatement percentage under the new law could **not** be confirmed from a primary source (the DGI/Deloitte rate images did not render to text). Reviewer must confirm whether any abatement still applies before signing off.
+**Professional abatement: abolished — confirmed from the statute.** The pre-reform regime applied a 20% professional abatement before the old scale. Article 16 of the *annexe fiscale* to Loi de Finances n° 2024-1109 du 18 décembre 2024 states it plainly: Ordonnance n° 2023-719 *« a supprimé l'abattement de 20 % prévu pour la détermination de la base imposable en matière d'impôts sur les traitements et salaires retenus aux salariés. Ainsi, cette base est désormais constituée par le revenu brut imposable. »* Apply the scale to **gross** taxable salary; there is no standalone abatement. PwC says the same for the employer side. This closes what was an open research gap in v0.1.  _(Annexe fiscale à la Loi de Finances n° 2024-1109 du 18 décembre 2024, art. 16 — https://www.dgbf.ci/wp-content/uploads/2025/01/Annexe1-Annexe-Fiscale.pdf)_
 
 ### 2.2 Family-Charge Reduction — RICF, CGI Article 120
 
@@ -92,7 +92,11 @@ The 0% floor of 75,000 XOF coincides exactly with the SMIG.
 
 - **Net ITS formula** — Net ITS = gross ITS (from §2.1 scale) − RICF reduction (from §2.2 table), floored at 0.  _(CGI Art. 120)_
 
-### 2.3 ITS Filing & Payment
+### 2.3 Dockers and transit dockers — a flat 1.5%, off the scale
+
+- **Dockers are not on the §2.1 scale at all** — CGI Art. 120 bis, created by art. 16(1) of the 2025 *annexe fiscale*, reads: *« Pour le calcul de l'impôt dû par les dockers et dockers transit, il est fait application d'un taux de 1,5 % au total des rémunérations tel que défini à l'article 118 précédent. »* A flat **1.5%** of total remuneration, with no progressive scale and no RICF. The measure exists because the merger of the three cédulaire taxes would otherwise have brought this occupation into IGR and CN for the first time. Applying the progressive scale to a docker overstates the tax  _(Annexe fiscale à la Loi de Finances n° 2024-1109 du 18 décembre 2024, art. 16(1) — CGI art. 120 bis — https://www.dgbf.ci/wp-content/uploads/2025/01/Annexe1-Annexe-Fiscale.pdf)_
+
+### 2.4 ITS Filing & Payment
 
 **ITS Filing & Payment table**
 
@@ -142,27 +146,45 @@ CNPS contributions are split across five branches. Two distinct monthly base cei
 | Late penalty (contributions) | **5%** surcharge for the first month, then **1%** per additional month | CLEISS |
 | DISA non-filing penalty | **10%** of total monthly contributions due | CNPS / CLEISS |
 
-## Section 4 — Employer Payroll Tax (Contribution Employeur / Taxe sur Salaires)
+## Section 4 — Contribution à la Charge des Employeurs (CGI Art. 146)
 
-**Employer payroll tax table**  _(PwC Ivory Coast — Corporate — Other taxes (https://taxsummaries.pwc.com/ivory-coast/corporate/other-taxes); confirmed on PwC individual/other-taxes)_
+> **The 2.8% and 12% totals already contain the FDFP training levies. Do not add 1.6% on top — that is the single most expensive mistake available on Ivorian payroll.** Article 16 of the *annexe fiscale* to Loi de Finances n° 2024-1109 du 18 décembre 2024 re-presents the table at CGI art. 146 as four components, and the taxe d'apprentissage and the taxe additionnelle pour la formation professionnelle continue are two of them. See §5.
 
-| Category | Rate |
-| --- | --- |
-| Local employees | 2.8% |
-| Expatriate employees | 12% |
+**Contribution à la charge des employeurs — CGI Art. 146, as re-presented for 2025**  _(Annexe fiscale à la Loi de Finances n° 2024-1109 du 18 décembre 2024, art. 16 — https://www.dgbf.ci/wp-content/uploads/2025/01/Annexe1-Annexe-Fiscale.pdf)_
 
+| Component | Local staff | Expatriate staff | Proceeds to |
+| --- | --- | --- | --- |
+| Contribution employeur proprement dite | — | 9.2% | State budget, 100% |
+| Contribution nationale pour le développement économique, culturel et social de la nation | 1.2% | 1.2% | State budget, 100% |
+| Taxe d'apprentissage | 0.4% | 0.4% | Fonds BNI (FDFP) |
+| Taxe additionnelle pour la formation professionnelle continue | 1.2% | 1.2% | Fonds BNI (FDFP) |
+| **Total** | **2.8%** | **12%** | |
+
+- 1.2 + 0.4 + 1.2 = **2.8** (local)
+- 9.2 + 1.2 + 0.4 + 1.2 = **12.0** (expatriate)
+
+Both columns close exactly, which is what settles that the totals are inclusive: there is no room in 2.8% for a further 1.6%.
+
+- **Base is gross, with no abatement** — Ordonnance n° 2023-719 du 13 septembre 2023 abolished the 20% professional abatement, so the base is gross taxable remuneration (cash, benefits and benefits in kind). Because that reform left the employer rates untouched, computing them on an unabated base would have raised the employer's charge; art. 16 of the 2025 annexe re-set the component rates specifically **so that the customary 2.8% and 12% are maintained**. PwC states the same: "With the removal of the 20% reduction on gross remuneration paid, as part of the salary tax reform, the above-mentioned usage rates are directly applied to the gross base for the calculation of the employer contribution."  _(Annexe fiscale à la Loi de Finances n° 2024-1109, art. 16; PwC Ivory Coast — Corporate — Other taxes (https://taxsummaries.pwc.com/ivory-coast/corporate/other-taxes))_
 - **Expatriate definition** — "Expatriate" status follows from an expatriate employment contract approved by the Agence Emploi Jeune (AEJ) — it is determined by contract type, not strictly nationality. Confirm the contract classification before applying the 12% rate.  _(PwC Ivory Coast — Corporate — Other taxes)_
+- **What the 9.2% is** — The *contribution employeur proprement dite* is charged on expatriate staff only. The whole of the 9.2 point gap between the local and expatriate totals is this one component; the other three are identical in both columns.  _(Annexe fiscale à la Loi de Finances n° 2024-1109, art. 16 — CGI art. 146)_
+- **Article 263 is repealed** — The IGR reduction for an employee whose first main home as owner came from an approved construction programme no longer exists. Because the reform merged the three cédulaire taxes (impôt sur salaire, contribution nationale, IGR) into one levy, the IGR reduction no longer applies to any employee, and neither do IGR exemptions granted by agreement.  _(Annexe fiscale à la Loi de Finances n° 2024-1109, art. 16(4) — https://www.dgbf.ci/wp-content/uploads/2025/01/Annexe1-Annexe-Fiscale.pdf)_
 
-## Section 5 — FDFP Training Levies (employer-borne, on total payroll / masse salariale)
+## Section 5 — FDFP Training Levies: inside the Section 4 total, not on top of it
 
-**FDFP Training Levies table**  _(FDFP via eRegulations CI (https://cotedivoire.eregulations.org/media/taxe%20fdfp.pdf); FDFP (https://fdfp.ci/presentation-du-fdfp/))_
+**These are the third and fourth rows of the CGI art. 146 table above.** The FDFP describes itself as *managing* the taxe d'apprentissage and the taxe additionnelle à la formation professionnelle continue, not as levying them separately; the DGI collects them within the employer contribution and the proceeds are routed to the Fonds BNI. Listing them again as a separate 1.6% charges the same money twice.
 
-| Levy | Rate |
-| --- | --- |
-| Taxe d'apprentissage (apprenticeship tax) | 0.4% of payroll |
-| Taxe additionnelle à la formation professionnelle continue (continuing vocational training) | 1.2% of payroll |
+**FDFP Training Levies table**  _(Annexe fiscale à la Loi de Finances n° 2024-1109 du 18 décembre 2024, art. 16 (CGI art. 146) and art. 16(2) (CGI art. 143); FDFP (https://fdfp.ci/presentation-du-fdfp/))_
 
-- **Combined FDFP employer cost** — 1.6% of payroll (0.4% + 1.2%)  _(FDFP via eRegulations CI)_
+| Levy | Rate | Charged how |
+| --- | --- | --- |
+| Taxe d'apprentissage | 0.4% of payroll | inside the 2.8% / 12% |
+| Taxe additionnelle à la formation professionnelle continue | 1.2% of payroll | inside the 2.8% / 12% |
+
+- **Taxe d'apprentissage was cut for 2025** — Art. 16(2) of the annexe replaces "0,50%" with "0,40%" in the second paragraph of CGI art. 143. A 0.5% figure is the pre-2025 rate.  _(Annexe fiscale à la Loi de Finances n° 2024-1109, art. 16(2) — https://www.dgbf.ci/wp-content/uploads/2025/01/Annexe1-Annexe-Fiscale.pdf)_
+- **Combined FDFP component** — 1.6% of payroll (0.4% + 1.2%), **already counted** in the Section 4 total. Employer tax cost is 2.8% (local) or 12% (expatriate) of gross, full stop.  _(Annexe fiscale à la Loi de Finances n° 2024-1109, art. 16 — CGI art. 146)_
+
+> `[RESEARCH GAP — reviewer to confirm]` **Read the consolidated CGI art. 146 itself before sign-off.** The finding above rests on the enacted *annexe fiscale* (which amends the article) plus arithmetic, not on the consolidated article as printed. PwC states the 2.8%/12% rates and the removal of the abatement but is silent on whether the training levies sit inside them. A reviewer with the consolidated CGI should confirm the table and, if a separate FDFP declaration exists administratively, say how it reconciles.
 
 ## Section 6 — Minimum Wage (SMIG / SMAG)
 
@@ -226,7 +248,7 @@ Map gross pay through statutory deductions and employer charges in this fixed or
 
 ### 9.1 Computation order (deterministic)
 
-- **Computation order** — 1. Determine **gross taxable salary** (cash + benefits in kind), in XOF. 2. **Gross ITS** = apply §2.1 progressive scale to gross taxable salary. 3. **Net ITS** = gross ITS − §2.2 RICF reduction (floor 0). 4. **Employee CNPS** = 6.30% × min(gross, 3,375,000) + 500 XOF/person CMU. 5. **Net pay** = gross − net ITS − employee CNPS share. 6. **Employer CNPS** = 7.70% × min(gross, 3,375,000) + 5.75% × min(gross, 70,000) + AT/MP% × min(gross, 70,000) + 500 XOF/person CMU. 7. **Employer payroll tax** = 2.8% (local) or 12% (expatriate) × gross taxable remuneration. 8. **FDFP** = 1.6% × payroll (0.4% apprenticeship + 1.2% continuing training).
+- **Computation order** — 1. Determine **gross taxable salary** (cash + benefits in kind), in XOF. 2. **Gross ITS** = apply §2.1 progressive scale to gross taxable salary. 3. **Net ITS** = gross ITS − §2.2 RICF reduction (floor 0). 4. **Employee CNPS** = 6.30% × min(gross, 3,375,000) + 500 XOF/person CMU. 5. **Net pay** = gross − net ITS − employee CNPS share. 6. **Employer CNPS** = 7.70% × min(gross, 3,375,000) + 5.75% × min(gross, 70,000) + AT/MP% × min(gross, 70,000) + 500 XOF/person CMU. 7. **Contribution a la charge des employeurs** = 2.8% (local) or 12% (expatriate) x gross taxable remuneration. **There is no step 8.** The taxe d'apprentissage (0.4%) and the taxe additionnelle formation professionnelle continue (1.2%) are components of that 2.8% / 12%, not a further charge -- see SS4-5.
 
 ### 9.2 Bookkeeping classification
 
@@ -235,7 +257,7 @@ Map gross pay through statutory deductions and employer charges in this fixed or
 | Item | Account treatment |
 | --- | --- |
 | Gross salary | Expense (charges de personnel) |
-| Employer CNPS, employer payroll tax, FDFP | Expense (charges sociales / charges fiscales) |
+| Employer CNPS, contribution a la charge des employeurs (2.8% / 12%, FDFP components included) | Expense (charges sociales / charges fiscales) |
 | Net ITS withheld | Liability to DGI until remitted (by the 15th) |
 | Employee CNPS + CMU withheld | Liability to CNPS until remitted |
 | Net pay | Liability to employee until paid; then cash out |
@@ -252,7 +274,7 @@ Map gross pay through statutory deductions and employer charges in this fixed or
 - Employee CNPS retirement: 6.30% × 75,000 = 4,725. CMU: 500. Employee deductions = **5,225**.
 - **Net pay = 75,000 − 0 − 5,225 = 69,775 XOF.**
 - Employer CNPS: 7.70% × 75,000 = 5,775 (retirement); family+maternity 5.75% × 70,000 (capped) = 4,025; AT/MP 3% × 70,000 = 2,100; CMU 500 → employer CNPS = **12,400**.
-- Employer payroll tax (local 2.8%): 2,100. FDFP 1.6%: 1,200.
+- Employer contribution (local 2.8%): 2,100 -- of which 300 taxe d'apprentissage and 900 formation continue. No separate FDFP charge.
 - **Total employer cost = 75,000 + 12,400 + 2,100 + 1,200 = 90,700 XOF.**
 
 ### Example 2 — Single employee, 500,000 XOF, 1 part
@@ -262,7 +284,7 @@ Map gross pay through statutory deductions and employer charges in this fixed or
 - Employee CNPS: 6.30% × 500,000 = 31,500 + CMU 500 = **32,000**.
 - **Net pay = 500,000 − 81,000 − 32,000 = 387,000 XOF.**
 - Employer CNPS: 7.70% × 500,000 = 38,500 + 5.75% × 70,000 = 4,025 + 3% × 70,000 = 2,100 + CMU 500 = **45,125**.
-- Employer payroll tax (2.8%): 14,000. FDFP (1.6%): 8,000.
+- Employer contribution (local 2.8%): 14,000, FDFP components included. No separate FDFP charge.
 - **Total employer cost = 500,000 + 45,125 + 14,000 + 8,000 = 567,125 XOF.**
 
 ### Example 3 — Married employee, 2 children (3 parts), 500,000 XOF
@@ -271,7 +293,7 @@ Map gross pay through statutory deductions and employer charges in this fixed or
 - RICF (3 parts): 22,000. **Net ITS = 81,000 − 22,000 = 59,000.**
 - Employee CNPS: 31,500 + CMU (assume 1 person) 500 = **32,000**.
 - **Net pay = 500,000 − 59,000 − 32,000 = 409,000 XOF.**
-- Employer side identical to Example 2: employer CNPS 45,125, payroll tax 14,000, FDFP 8,000.
+- Employer side identical to Example 2: employer CNPS 45,125, employer contribution 14,000 (FDFP components included).
 - **Total employer cost = 567,125 XOF** (unchanged; RICF affects only employee ITS).
 
 ### Example 4 — Senior local employee, 1,000,000 XOF, 1 part
@@ -281,7 +303,7 @@ Map gross pay through statutory deductions and employer charges in this fixed or
 - Employee CNPS: 6.30% × 1,000,000 = 63,000 + CMU 500 = **63,500**.
 - **Net pay = 1,000,000 − 192,000 − 63,500 = 744,500 XOF.**
 - Employer CNPS: 7.70% × 1,000,000 = 77,000 + 5.75% × 70,000 = 4,025 + 3% × 70,000 = 2,100 + CMU 500 = **83,625**.
-- Employer payroll tax (2.8%): 28,000. FDFP (1.6%): 16,000.
+- Employer contribution (local 2.8%): 28,000, FDFP components included.
 - **Total employer cost = 1,000,000 + 83,625 + 28,000 + 16,000 = 1,127,625 XOF.**
 
 ### Example 5 — Expatriate executive, 4,000,000 XOF, 1 part
@@ -291,7 +313,7 @@ Map gross pay through statutory deductions and employer charges in this fixed or
 - Employee CNPS retirement is capped at base 3,375,000: 6.30% × 3,375,000 = 212,625 + CMU 500 = **213,125**.
 - **Net pay = 4,000,000 − 976,000 − 213,125 = 2,810,875 XOF.**
 - Employer CNPS: retirement 7.70% × 3,375,000 (capped) = 259,875 + family/maternity 5.75% × 70,000 = 4,025 + AT/MP 3% × 70,000 = 2,100 + CMU 500 = **266,500**.
-- Employer payroll tax (**expatriate 12%**): 12% × 4,000,000 = 480,000. FDFP (1.6%): 64,000.
+- Employer contribution (**expatriate 12%**): 12% x 4,000,000 = 480,000 -- of which 368,000 contribution employeur proprement dite, 48,000 contribution nationale, 16,000 taxe d'apprentissage and 48,000 formation continue. No separate FDFP charge.
 - **Total employer cost = 4,000,000 + 266,500 + 480,000 + 64,000 = 4,810,500 XOF.**
 
 ### Example 6 — High earner above the top band, 10,000,000 XOF, 1 part
@@ -301,24 +323,26 @@ Map gross pay through statutory deductions and employer charges in this fixed or
 - Employee CNPS: capped — 6.30% × 3,375,000 = 212,625 + CMU 500 = **213,125**.
 - **Net pay = 10,000,000 − 2,736,000 − 213,125 = 7,050,875 XOF.**
 - Employer CNPS: 7.70% × 3,375,000 = 259,875 + 5.75% × 70,000 = 4,025 + 3% × 70,000 = 2,100 + CMU 500 = **266,500**.
-- Employer payroll tax (local 2.8%): 280,000. FDFP (1.6%): 160,000.
+- Employer contribution (local 2.8%): 280,000, FDFP components included.
 - **Total employer cost = 10,000,000 + 266,500 + 280,000 + 160,000 = 10,706,500 XOF.**
 
 ## Section 11 — Tier 1 Rules (always apply — no judgement)
 
-- **Tier 1 Rules** — 1. **Currency is XOF/FCFA.** Refuse any other currency. 2. **Use the unified ITS scale (CGI Art. 119 bis), not the pre-2024 IGR/CN/IS stack.** 3. **Apply the progressive scale to gross taxable salary** (cash + benefits in kind), per §2.1. 4. **Subtract RICF (CGI Art. 120) after computing gross ITS**, never before; floor net ITS at 0. 5. **Employee CNPS = 6.30% retirement only** (plus flat CMU). The employee does NOT pay family allowances, maternity, AT/MP, or the employer payroll tax. 6. **Cap retirement contributions** on a monthly base of 3,375,000 XOF; **cap family/maternity/AT-MP** on 70,000 XOF. 7. **Employer payroll tax: 2.8% local / 12% expatriate** — apply 12% only with AEJ contract evidence. 8. **FDFP = 1.6%** of payroll (0.4% + 1.2%), employer-borne. 9. **ITS remitted to DGI by the 15th** of the following month; CNPS by the 15th (monthly if ≥20 staff, quarterly if <20). 10. **Never present output as final** — Tier 2 estimate pending accountant sign-off.
+- **Tier 1 Rules** — 1. **Currency is XOF/FCFA.** Refuse any other currency. 2. **Use the unified ITS scale (CGI Art. 119 bis), not the pre-2024 IGR/CN/IS stack.** 3. **Apply the progressive scale to gross taxable salary** (cash + benefits in kind), per §2.1. 4. **Subtract RICF (CGI Art. 120) after computing gross ITS**, never before; floor net ITS at 0. 5. **Employee CNPS = 6.30% retirement only** (plus flat CMU). The employee does NOT pay family allowances, maternity, AT/MP, or the employer payroll tax. 6. **Cap retirement contributions** on a monthly base of 3,375,000 XOF; **cap family/maternity/AT-MP** on 70,000 XOF. 7. **Contribution a la charge des employeurs: 2.8% local / 12% expatriate** of gross -- apply 12% only with AEJ contract evidence. 8. **Never add the FDFP 1.6% on top of that.** The taxe d'apprentissage (0.4%) and formation professionnelle continue (1.2%) are inside the 2.8% / 12% at CGI art. 146; charging them again overstates a local employer's tax cost by 57%. 9. **ITS remitted to DGI by the 15th** of the following month; CNPS by the 15th (monthly if ≥20 staff, quarterly if <20). 10. **Never present output as final** — Tier 2 estimate pending accountant sign-off.
 
 ## Section 12 — Tier 2 Catalogue (reviewer judgement required)
 
 These items require an Ivorian expert-comptable to confirm before sign-off:
 
-1. **Professional abatement** under the unified ITS — confirm none applies (or supply the rate). [§2.1 gap]
+1. ~~**Professional abatement** under the unified ITS.~~ **CLOSED** — Ordonnance n° 2023-719 abolished the 20% abatement and the base is now gross taxable income, stated in terms in art. 16 of the annexe fiscale to Loi de Finances n° 2024-1109. No abatement applies. [§2.1]
 2. **RICF derivation of parts** — confirm how marital configuration + children map to 1–5 parts and the half-part increments for the specific household.
 3. **RICF 5-part annual value** (528,000 vs the "328,000" extraction glitch). [§2.2 gap]
 4. **AT/MP risk-class rate** for the employer (2%–5%). [§3.1 gap]
-5. **Benefits-in-kind valuation** rules for the ITS and employer-payroll-tax bases.
+5. **Benefits-in-kind valuation** rules for the ITS and employer-contribution bases.
+11. **CGI art. 146 as consolidated** — confirm from the printed article that the taxe d'apprentissage and the taxe additionnelle formation professionnelle continue sit inside the 2.8% / 12% totals, and say how any separate FDFP declaration reconciles with it. [§4-5 gap]
+12. **Dockers and transit dockers** — confirm the 1.5% at CGI art. 120 bis is still in force for the current year and how the occupation is evidenced on a payslip. [§2.3]
 6. **Expatriate classification** under the AEJ contract regime.
-7. **ITS deadline by taxpayer regime** (DGE vs CME). [§2.3 gap]
+7. **ITS deadline by taxpayer regime** (DGE vs CME). [§2.4 gap]
 8. **SMIG/SMAG** confirmation against the official Decree n° 2022-986. [§6 gap]
 9. **CMU counting** — number of covered persons per employee.
 10. **Small-withholding semi-annual option** eligibility (CGI Art. 138).
@@ -343,10 +367,10 @@ These items require an Ivorian expert-comptable to confirm before sign-off:
 | L | Employer AT/MP | =rate% × MIN(B, 70,000) |
 | M | CMU (employer) | =500 × persons |
 | N | Employer payroll tax | =IF(expat, 12%, 2.8%) × B |
-| O | FDFP | =1.6% × B |
+| O | FDFP components (memo only -- already inside N) | =1.6% x B |
 | P | Total employer cost | =B + J + K + L + M + N + O |
 
-Control totals: sum of F → DGI liability; sum of (G+H+J+K+L+M) → CNPS liability; sum of N → employer payroll-tax liability; sum of O → FDFP liability.
+Control totals: sum of F -> DGI liability; sum of (G+H+J+K+L+M) -> CNPS liability; sum of N -> employer contribution liability. **Column O is a memo of the FDFP share already inside N; never add it to N.**
 
 ## Section 14 — Bank Statement / Terminology Reading Guide
 
@@ -413,7 +437,7 @@ Statements and payroll documents are typically in **French**. Common terms and p
 | CNPS late penalty | 5% first month, then 1%/month | CLEISS |
 | DISA | due 31 March; 10% non-filing penalty | CNPS |
 | Employer payroll tax | 2.8% local / 12% expat | PwC |
-| FDFP | 0.4% + 1.2% = 1.6% | FDFP / eRegulations CI |
+| FDFP components (inside the 2.8% / 12%) | 0.4% + 1.2% = 1.6% | Annexe fiscale a la LF n° 2024-1109, art. 16 (CGI art. 146) |
 | SMIG / SMAG | 75,000 / 39,960 XOF | Decree n° 2022-986 `[RESEARCH GAP — secondary]` |
 | VAT (context only) | 18% standard | PwC |
 
@@ -429,7 +453,7 @@ Statements and payroll documents are typically in **French**. Common terms and p
 - **CNPS late penalty** — 5% first month, then 1%/month  _(CLEISS)_
 - **DISA** — due 31 March; 10% non-filing penalty  _(CNPS)_
 - **Employer payroll tax** — 2.8% local / 12% expat  _(PwC)_
-- **FDFP** — 0.4% + 1.2% = 1.6%  _(FDFP / eRegulations CI)_
+- **FDFP components, inside the employer contribution** — 0.4% + 1.2% = 1.6%, counted within the 2.8% (local) or 12% (expatriate) total, not on top of it  _(Annexe fiscale a la Loi de Finances n° 2024-1109 du 18 decembre 2024, art. 16 (CGI art. 146) — https://www.dgbf.ci/wp-content/uploads/2025/01/Annexe1-Annexe-Fiscale.pdf)_
 - **SMIG / SMAG** — 75,000 / 39,960 XOF  _(Decree n° 2022-986 `[RESEARCH GAP — secondary]`)_
 - **VAT (context only)** — 18% standard  _(PwC)_
 
@@ -463,10 +487,10 @@ Each test recomputed end-to-end; AT/MP placeholder 3%, CMU 1 person.
 - NEVER process payroll in any currency other than XOF/FCFA.
 - NEVER use the pre-2024 IGR + CN + IS method — it was abolished by Ordonnance n° 2023-719 (effective 1 Jan 2024).
 - NEVER apply the RICF reduction before computing gross ITS, and never let net ITS go below 0.
-- NEVER charge the employee for family allowances, maternity, AT/MP, FDFP, or the employer payroll tax — those are employer-borne.
+- NEVER charge the employee for family allowances, maternity, AT/MP, or the employer contribution — those are employer-borne.
 - NEVER apply the 12% expatriate payroll-tax rate without AEJ contract evidence.
 - NEVER ignore the CNPS contribution ceilings (3,375,000 retirement; 70,000 family/maternity/AT-MP).
-- NEVER omit the FDFP 1.6% levy or the flat CMU contribution.
+- NEVER add the FDFP 1.6% on top of the 2.8% / 12% employer contribution — it is already inside it. NEVER omit the flat CMU contribution.
 - NEVER assume the AT/MP rate — confirm the employer's CNPS risk class (2%–5%).
 - NEVER miss the 15th-of-following-month DGI/CNPS deadline.
 - NEVER present any `[RESEARCH GAP]` figure as confirmed, and NEVER present payroll computations as definitive — always label as estimated (Tier 2) and direct to a licensed Ivorian accountant.

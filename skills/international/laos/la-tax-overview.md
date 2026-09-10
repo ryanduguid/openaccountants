@@ -3,6 +3,7 @@ name: la-tax-overview
 description: "Source-cited draft: tax overview for Laos (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
 jurisdiction: LA
 tax_year: 2025
+version: 0.1
 last_updated: 2026-09-10
 review_status: pending_review
 tier: 2
@@ -18,7 +19,7 @@ Lao PDR taxes income, profits and consumption under a codified Tax Law framework
 - **Standard tax year** — Calendar year (1 January to 31 December)  _([Law on Income Tax (Law No. 67/NA, 2019)](https://taxsummaries.pwc.com/lao-pdr/corporate/taxes-on-corporate-income))_
 - **National currency** — Lao kip (LAK)  _(Law on Income Tax (Law No. 67/NA, 2019))_
 - **Tax authority** — Tax Department, Ministry of Finance (Lao PDR)  _([Tax Administration Law (Lao PDR)](https://taxsummaries.pwc.com/lao-pdr))_
-- **Social security administrator** — Lao Social Security Organisation (LSSO / NSSFO)  _([Law on Social Security (Lao PDR)](https://laos.acclime.com/guides/social-security-obligations/))_
+- **Social security administrator** — Lao Social Security Organisation (LSSO / NSSFO)  _(Law on Social Security (Lao PDR) (as described at [laos.acclime.com](https://laos.acclime.com/guides/social-security-obligations/)))_
 - **Individual residence test** — Present in Lao PDR 183 days or more in a 12-month period  _([Law on Income Tax (Law No. 67/NA, 2019)](https://taxsummaries.pwc.com/lao-pdr/individual/taxes-on-personal-income))_
 - **Corporate tax basis** — Worldwide income for domestic companies; territorial (Lao-source) for foreign companies  _([Law on Income Tax (Law No. 67/NA, 2019)](https://taxsummaries.pwc.com/lao-pdr/corporate/taxes-on-corporate-income))_
 - **Top personal income tax rate (salary)** — 25% percent  _([Law on Income Tax (Law No. 67/NA, 2019)](https://taxsummaries.pwc.com/lao-pdr/individual/taxes-on-personal-income))_
