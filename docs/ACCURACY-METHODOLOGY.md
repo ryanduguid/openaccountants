@@ -2037,3 +2037,104 @@ Corpus effect, re-measured: authority citations 2,797 → **2,811**, secondary
 4,722 → **4,715**. San Marino ends the pass at **25 authority citations against
 50 secondary**, having started at zero, and **both** its guides are off the
 single-source queue — which is now at **28**.
+
+## Bangladesh: a whole company form was missing, and its absence made a true sentence false
+
+`bd-company-formation.md` sat at **9 of 11** on one law firm's page. Bangladesh's
+Ministry of Law publishes the Companies Act 1994 section by section at
+`bdlaws.minlaw.gov.bd`, with a footnote against each amended section naming the
+amending act — so the authority is not just reachable, it shows its own history.
+
+The guide listed five entity types and omitted the sixth. **Part X-A, twelve
+sections (ss.392A–392L), inserted by s.9 of the Companies (Second Amendment) Act
+2020, creates the one-person company.** It has a mandatory nominee named in the
+memorandum with written consent; a rule that a natural person may form **only
+one**; the sole shareholder as director; one board meeting per half calendar
+year; and financial statements filed **within 180 days** of year end.
+
+The omission is what made another statement false. The guide said there is **"no
+statutory minimum paid-up capital (effectively as low as BDT 1)"**. That is true
+of a private or public company. For an OPC, s.392C sets paid-up capital at **not
+less than BDT 2,500,000 and not more than BDT 50,000,000**, plus a prior-year
+turnover band of **BDT 10,000,000 to 500,000,000**. A blanket claim about a
+jurisdiction is only as good as the list of forms it was checked against.
+
+Two further statements were right and incomplete in ways that change the answer.
+The fifty-member cap **excludes persons in the company's employment**, and
+**joint holders count as a single member** — so a company that looks over the
+line may not be. And "minimum 2 directors" holds only for an ordinary private
+company: s.90(1) requires **three** in a private company that is a **subsidiary
+of a public company**, which is the ordinary shape of a foreign group's
+Bangladeshi subsidiary. s.90(3) adds that only a **natural person** may be a
+director, so there are no corporate directors and the parent cannot sit on the
+board itself.
+
+### Two mistakes caught before committing, both about reading
+
+**A negative grep in an unfamiliar script is not evidence of absence.** Searching
+the consolidated Act for `একক ব্যক্তি` returned six hits, every one meaning
+"individual" in the definition of managing director. The conclusion drawn from
+that — *the Ministry of Law's database does not carry the 2020 amendment* — was
+written down and was wrong. The Act calls it **`এক ব্যক্তি কোম্পানী`**, without
+the doubled consonant, and searching the section index for that phrase returned
+**twelve** sections immediately. The failure was in the search string, not the
+database, and the wrong conclusion was about the *authority's completeness* —
+the kind of claim that, published, sends the next reader somewhere worse.
+
+**A proviso is not the rule.** The draft asserted that the Act's financial year
+is the calendar year, quoting *"অর্থ-বৎসর বলিতে পঞ্জিকা বৎসরকে বুঝাইবে"* from
+s.2. The quotation is real. It is the **proviso**, and it applies to **insurance
+companies only**. The clause itself defines a financial year, for a body
+corporate, as the period *"whether or not it is a full year"* for which the
+profit-and-loss account is laid before the annual general meeting. What exposed
+it was re-fetching the section and noticing that the opening words did not match
+the window quoted from — the first extraction had started mid-clause, at the
+proviso, and read it as the definition.
+
+That is the Armenian near-miss in a third costume. Twice there, the general rate
+article was not the end of the article; here, the start of the quotation was not
+the start of the clause. **The rule is the same each time: read from the
+beginning of the provision to the end of it, and check that what you quote
+begins where the provision begins.**
+
+### And the clause letters were not transliterated
+
+The Act is published in Bengali only — `?lang=en` returns the same Bengali page.
+The draft cited the private-company definition as `s.2(t)(iii)`, mapping `ট` to
+"t" by its sound. In an ordered list `ট` is the eleventh consonant, so the
+Roman-alphabet equivalent would be `(k)`, not `(t)`. Rather than guess which
+convention the Ministry uses, every clause is now cited by the definition it
+contains and the Bengali letter as printed — *"s.2(1), definition of
+'প্রাইভেট কোম্পানী' (clause ট)"*. **A citation a reader can follow beats a
+citation that looks more familiar**, and inventing a Roman letter for a clause
+nobody has published in Roman is how an unfalsifiable citation gets made.
+
+The lakh and crore figures were converted and then checked against an
+independent English statement of the same amounts before being written down —
+the Myanmar rule, applied to a second numbering system where a misread order of
+magnitude is a hundred-fold error inspection will not catch.
+
+### The leak grep found a second guide, and the second tree behind it
+
+Bangladesh has **two** formation guides: `bd-company-formation.md` and
+`bd-formation.md`, the latter a freelancer-facing guide whose entity table
+offered sole proprietor, partnership and private limited. It stated no
+contradicting number, so no checker here would ever flag it — but it presented a
+three-way choice in which the one-person company, the form built for a single
+owner, was absent. Both it **and** its hand-maintained `agent-skills/bd-formation`
+counterpart now carry the OPC column and a note saying plainly why a starting
+freelancer cannot use it: the BDT 10,000,000 prior-year turnover floor. Written
+twice, by hand, because `agent-skills/` inherits nothing.
+
+Corpus effect, re-measured: authority citations 2,811 → **2,830**, secondary
+4,715 → **4,713**. Bangladesh goes to **27 authority citations against 40**, and
+the single-source queue is at **27**.
+
+> **Those two numbers were re-run after the base changed underneath them.** PR
+> [#18](https://github.com/ryanduguid/openaccountants/pull/18) merged while this
+> section was being written, and `main` picked up two other pull requests'
+> Australian work at the same time, so the corpus the counts describe is not the
+> corpus they were first measured against. Re-running both sides on the new base
+> gives the same pair — 2,811 before, 2,830 after — which is a confirmation and
+> not a reason to skip the re-run. **The point of re-measuring is that you cannot
+> tell in advance which time it will have moved.**

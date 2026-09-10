@@ -49,12 +49,24 @@ depends_on:
 6. **File the annual e-Return** to stay a filer (lower TDS, access to services).
 
 ## Section 3 — Sole proprietor vs partnership vs company
-| Factor | Sole proprietor | Partnership | Private Ltd (RJSC) |
-|---|---|---|---|
-| Setup | Trade licence + TIN | Partnership deed | RJSC incorporation |
-| Liability | Personal | Shared | Limited |
-| Reporting | Tax return only | Tax return | RJSC financial statements + audit |
-| Best for | Solo freelancer | Partners | Scaling/investors |
+| Factor | Sole proprietor | Partnership | Private Ltd (RJSC) | One person company (OPC) |
+|---|---|---|---|---|
+| Setup | Trade licence + TIN | Partnership deed | RJSC incorporation | RJSC incorporation (private-company procedure) |
+| Liability | Personal | Shared | Limited | Limited |
+| Reporting | Tax return only | Tax return | RJSC financial statements + audit | Financial statements within **180 days** of year end + audit |
+| Best for | Solo freelancer | Partners | Scaling/investors | An established single owner, **not** a starting freelancer |
+
+> **There *is* a one-person limited company in Bangladesh, and most freelancers
+> cannot use it.** Part X-A of the Companies Act 1994, inserted by s.9 of the
+> Companies (Second Amendment) Act 2020, lets one natural person form a limited
+> company — but s.392C sets a **paid-up capital floor of BDT 2,500,000** and
+> requires **prior-year turnover of at least BDT 10,000,000**, with a ceiling on
+> each. A freelancer starting out meets neither, which is why the sole
+> proprietorship remains the default above. A person may form **only one** OPC
+> (s.392B(2)), and the memorandum must name a **nominee** who takes the shares on
+> the owner's death or incapacity (s.392B(3)). See `bd-company-formation` for the
+> full Part X-A treatment.
+> _(Companies Act 1994, ss.392B–392C — http://bdlaws.minlaw.gov.bd/act-788/section-50103.html)_
 
 ## Section 10 — Prohibitions
 - NEVER skip the trade licence for a registered business activity.
