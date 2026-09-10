@@ -2555,3 +2555,63 @@ statutory floor is unusual enough that the claim should not be relied on without
 an article number. **Noticing that a figure is implausible is not the same as
 knowing it is wrong** — it is flagged, not corrected, because the code that would
 settle it could not be opened.
+
+### Two ways to manufacture a false "unreachable", both hit in one sitting
+
+The register above is only worth having if its verdicts are about the sites rather
+than about this environment's configuration. Two faults found immediately after
+publishing it would each have produced convincing, entirely false entries. Both
+are recorded because **a tooling failure and a dead host look identical from the
+outside** — an empty page and a note saying it could not be loaded.
+
+**1. The proxy port moved and the drivers hardcoded the old one.** The container
+restarted; the egress proxy came back on a different port. Every browser driver
+carried the previous port as a literal, so each fetch returned *"Problem loading
+page"* — the exact signature recorded for Gabon, Eritrea and Myanmar's registry.
+Nicaragua's National Assembly was written off on that basis and is, in fact, fine.
+
+The tell was a **contradiction between two tools**: `curl` reached the host and
+returned a Cloudflare challenge while the browser could not reach it at all. That
+is backwards — the browser is the more capable client. **When the weaker tool
+succeeds where the stronger one fails, suspect the stronger one's configuration
+before you conclude anything about the host.** Every driver now reads
+`process.env.HTTPS_PROXY` instead of a literal.
+
+The register's own entries survive this, because those tests ran **before** the
+restart, on the port that was then correct. That is a fact about timing rather
+than a defence of the method: had the restart come an hour earlier, three
+jurisdictions would have been recorded as dead on the strength of a stale port.
+
+**2. The proxy tunnels HTTPS only, and government sites still link `http://`.**
+`digesto.asamblea.gob.ni` returned **405 with a 465-byte body** through the
+browser. The body is not from the site — it is the proxy saying *"this proxy only
+accepts HTTPS CONNECT tunnels."* Every link to the Digesto on the Assembly's own
+home page is `http://`, so following the site's own navigation produces a
+plausible-looking failure at the first hop. **The same URL over `https://` returns
+200 and 46 KB.**
+
+So a scheme the site itself publishes is enough to make a live authority look
+dead. **Rewrite `http://` to `https://` before recording any failure**, and read
+the error body rather than the status code — a 405 that explains itself is not a
+site rejecting you.
+
+### Nicaragua — the legal database is live, and it is not the one the links point at
+
+Correcting the register entry above: the useful Nicaraguan authority is not the
+tax administration but the **Digesto Jurídico Nicaragüense**
+(`https://digesto.asamblea.gob.ni/`), the official consolidated legal digest,
+which answers **200** and offers *Normas Jurídicas*, *Digestos Jurídicos* and a
+documentary collection running from 1821.
+
+`legislacion.asamblea.gob.ni` looks like the database and is not one. Over `http`
+its `normaweb.nsf` is a Lotus Domino stub whose entire body is
+`onload="window.location.href='http://www.asamblea.gob.ni'"` — a redirect with no
+content; over `https` the connection resets. **A URL that looks like a database
+endpoint can be a redirect with a database's name on it.**
+
+The norms themselves sit behind `/consultas/normas/`, whose search is
+JavaScript-driven — the static form exposes only a norm number and date ranges —
+and whose documents are addressed as `shownorms.php?idnorm=<base64 of a numeric
+id>`. `ni-company-formation.md` therefore stays on its commercial source for now,
+but the gap is narrowed to **locating one code inside a working official database**
+rather than finding an authority at all.
