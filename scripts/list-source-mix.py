@@ -206,6 +206,17 @@ NON_GOV_AUTHORITY = frozenset((
                           # for the Netherlands; the Surinamese one sits on a
                           # bare .sr with no "gov" label, and was the only
                           # external citation the whole jurisdiction had.
+    # Sixth pass. Found by the SINGLE-SOURCE queue rather than --unclassified:
+    # after the Togo guides were rewritten against the statute, that queue
+    # reported all five of them as resting on "neither an authority nor a
+    # recognised publisher" -- naming the revenue authority itself. A checker
+    # that calls the Office Togolais des Recettes a commercial host will do the
+    # same to the next jurisdiction whose authority sits on a bare ccTLD.
+    'otr.tg',             # Office Togolais des Recettes: Togo's revenue
+                          # authority, which assesses and collects the taxes and
+                          # publishes the consolidated Code General des Impots
+                          # et Livre des Procedures Fiscales. Bare .tg, no "gov"
+                          # label, so GOV cannot see it.
 ))
 
 # Removed from the list above after a code review, and kept here so the same
@@ -380,6 +391,10 @@ def selftest():
     assert classify('thebhutanese.bt') == 'secondary'     # newspaper
     assert classify('news.err.ee') == 'secondary'         # broadcaster
     assert classify('skatturinn.is') == 'authority'
+    # revenue authorities on a bare ccTLD, which the GOV pattern cannot see
+    assert classify('www.otr.tg') == 'authority'          # Togo, OTR
+    assert classify('belastingdienst.sr') == 'authority'  # Suriname
+    assert classify('andoz.tj') == 'authority'            # Tajikistan
     # boilerplate is not a source
     assert classify('www.openaccountants.com') is None
     assert classify('calendly.com') is None
