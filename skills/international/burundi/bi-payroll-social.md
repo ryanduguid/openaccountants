@@ -30,6 +30,24 @@ totals. Confirm them against an INSS contribution schedule before calculating.
   retirement and specified end-of-career payments a separate marginal scale:
   5% on the first BIF 10,000,000, 10% on the next BIF 20,000,000 and 15%
   above BIF 30,000,000. [Income tax law, arts. 117–119](https://www.obr.bi/images/LOI_N1_14_DU_24_DECEMBRE_2020_PORTANT_MODIFICATION_DE_LA_LOI_N1_02_DU_24_JANVIER_2013_RELATIVE_AUX_IMPOTS_SUR_LES_REVENUS_1.pdf).
+- **Failing to withhold does not move the cost to the employee.** Article 113 puts
+  both the deduction and the transfer on the persons named in arts. 117, 118 and
+  119, and provides that where the tax is not withheld at source *"l'employeur est
+  obligé de payer l'impôt non retenu ainsi que les amendes et pénalités y
+  afférentes"* — the employer pays the unwithheld tax **plus the fines and
+  penalties on it**. Article 114 confirms the converse: exempt income is not
+  subject to withholding at all  _(arts. 113–114: https://www.obr.bi/images/LOI_N1_14_DU_24_DECEMBRE_2020_PORTANT_MODIFICATION_DE_LA_LOI_N1_02_DU_24_JANVIER_2013_RELATIVE_AUX_IMPOTS_SUR_LES_REVENUS_1.pdf)_
+- **Political and public office-holders are on the same monthly scale**, as are
+  recipients of end-of-mandate allowances (*indemnités de fin de mandat*) — art.
+  117 says so expressly, so the office-holder case does not need to be reasoned
+  from the employment definition  _(art. 117: https://www.obr.bi/images/LOI_N1_14_DU_24_DECEMBRE_2020_PORTANT_MODIFICATION_DE_LA_LOI_N1_02_DU_24_JANVIER_2013_RELATIVE_AUX_IMPOTS_SUR_LES_REVENUS_1.pdf)_
+- **Where the employer is not required to withhold, the employee files monthly** —
+  art. 116, *"sous peine de sanction"*, by the **15th of the month following** the
+  month of payment. That is a different formulation from art. 115's *fifteen
+  calendar days after the end of each month*, which governs the employer  _(art. 116: https://www.obr.bi/images/LOI_N1_14_DU_24_DECEMBRE_2020_PORTANT_MODIFICATION_DE_LA_LOI_N1_02_DU_24_JANVIER_2013_RELATIVE_AUX_IMPOTS_SUR_LES_REVENUS_1.pdf)_
+- **Article 115 also requires a payslip**, kept by the employer, showing the
+  employee's name and forename, the constituent elements of the salary, and the
+  amount of tax withheld at source  _(art. 115: https://www.obr.bi/images/LOI_N1_14_DU_24_DECEMBRE_2020_PORTANT_MODIFICATION_DE_LA_LOI_N1_02_DU_24_JANVIER_2013_RELATIVE_AUX_IMPOTS_SUR_LES_REVENUS_1.pdf)_
 - **Employer INSS old-age/pension contribution** — 6% of gross wages % (approx — confirm; sources conflict)  _(Code de la sécurité sociale (INSS) (as described at [remotepeople.com](https://remotepeople.com/countries/burundi/hire-employees/payroll-tax/)))_
 - **Employee INSS old-age/pension contribution** — 4% of gross wages % (approx — confirm; sources conflict)  _(Code de la sécurité sociale (INSS) (as described at [remotepeople.com](https://remotepeople.com/countries/burundi/hire-employees/payroll-tax/)))_
 - **Monthly earnings cap for INSS pension contributions** — BIF 450,000 per month BIF (approx — confirm)  _(Code de la sécurité sociale (INSS) (as described at [remotepeople.com](https://remotepeople.com/countries/burundi/hire-employees/payroll-tax/)))_

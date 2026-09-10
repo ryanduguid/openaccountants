@@ -2115,6 +2115,32 @@ and 25% respectively. The page images confirm that this is not caused by text
 extraction. Coordinates from the Act's table must not be presented as evidence
 about the separate guidance PDF.
 
+That correction was right, and the coordinates have since been re-run against the
+guidance PDF itself. On its **page 2** the rate column sits at x=304.2 against
+four row labels: *export of manufactured goods outside* SACU at y=242.9 → **25%**;
+*manufacturing activity or enterprise* at y=187.2 → **25%**; *farming* at y=131.5
+→ **25%**; *Other Income* at y=103.3 → **10%**. On **page 3** the notes read
+*"Corporate tax rate of 10% is levied on income from exporting manufactured
+goods"* and *"A corporate tax rate of 25% is imposed on profits of a resident
+non-manufacturing"* company.
+
+So the conflict is wider than first recorded on either side. It is not one
+inverted row: **the 10/25 pairing is inverted on every row of the page-2 table**,
+which gives ordinary manufacturing and farming 25% where the Act gives 10%, and
+Other Income 10% where the Act gives 25%. The earlier write-up also placed the
+table and the notes on the same page; they are a page apart, which is part of why
+the inversion survives into a published guide — **nothing puts the two readings in
+the same eyeful**.
+
+The original error is worth naming exactly, because the numbers looked like
+corroboration. The four rates first cited with coordinates — 10%, 0%, 10%, 25% —
+are the **Act's Third Schedule items 1 to 4**, not the guidance table at all. They
+were offered as proof that the guidance PDF really printed what it appeared to
+print, and they proved something about a different document. **Layout coordinates
+answer "did this document say it"; they are only evidence about the document they
+were extracted from**, and a plausible set of numbers is the easiest place to stop
+checking which file the extractor was pointed at.
+
 The operational guides now mark the 0% provision as historical and unresolved.
 Legislation governs as amended, but a 2012 consolidation cannot settle a current
 conflict without checking intervening amendments. RSL guidance independently
@@ -2226,6 +2252,50 @@ and [Finance Act 2026/2027](https://www.obr.bi/images/LOI_DE_FINANCES_2026-2027_
 INSS contribution rates and caps, the ministerial VAT lists and the detailed
 penalty ladder remain unverified. The payroll guide retains explicit warnings
 for conflicting secondary-source social-contribution figures.
+
+#### Re-reading the withholding chapter at page-image quality
+
+The article 117 correction above was checked rather than accepted, and it holds:
+the article sits under the heading *"Du taux mensuel de la retenue à la source sur
+les revenus d'emploi"* and sets its own monthly table. The earlier claim that the
+monthly figures were a derivation from article 21 valid only for **even pay across
+twelve months** was wrong twice over — the bands are statutory in their own right,
+and article 117 expressly extends them to *"les paiements exceptionnels"*, which is
+precisely the uneven case the caveat said they could not reach.
+
+Verifying it meant reading the surrounding pages at 300 dpi instead of by OCR, and
+that turned up five provisions no version of these guides carried:
+
+- **Article 113** — where tax is not withheld, *"l'employeur est obligé de payer
+  l'impôt non retenu ainsi que les amendes et pénalités y afférentes"*. The failure
+  to operate PAYE lands on the employer **with the penalties**, not on the employee.
+- **Article 116** — where the employer is not obliged to withhold, the employee
+  must file monthly *"sous peine de sanction"*. Its deadline is the **15th of the
+  following month**, where article 115 gives the employer **fifteen calendar days
+  after the end of each month**. Two deadlines, two taxpayers, one number.
+- **Article 117, second table** — *indemnités de licenciement, de perte d'emploi,
+  de fin de carrière, de départ à la retraite ou de résiliation du contrat* are on
+  a separate progressive scale of **5% / 10% / 15%** at BIF 10,000,000 and
+  30,000,000. Severance was being answered off a scale topping out at 30%.
+- **Article 117 also names political and public office-holders** and recipients of
+  *indemnités de fin de mandat*, so that case is settled expressly rather than
+  argued from the definition of employment.
+- **Article 22** — for Burundi-source income of a non-resident *"qui ne sont pas
+  attribuables à un établissement stable"*, the withholding is *libératoire*. The
+  guide discussed non-residents at length while omitting the rule that, for the
+  ones without a permanent establishment, the scale it was describing never applies.
+
+Article 24's annual deadline — the last day of the third month after the accounting
+year closes, expressly excepting article 115's recapitulative — was also absent, so
+the personal income tax guide had no filing date in it at all.
+
+One correction here ran the other way. Article 115 was doubted on the strength of
+an OCR fragment reading *"au plus tard le quinze (15) du mois suivant"*, which
+looked like the wrong formulation for the article cited. The page image showed the
+fragment belonged to **article 116** and that article 115 says exactly what the
+review claimed. **The check that disconfirms your objection is worth as much as the
+one that confirms your finding**, and the OCR line that provoked it was sitting
+four paragraphs above the article it seemed to be about.
 
 ## Sierra Leone concurrent update and review
 

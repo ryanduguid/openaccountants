@@ -37,10 +37,21 @@ _(Loi n° 1/02 du 24 janvier 2013 relative aux impôts sur les revenus, art. 21,
 - **These are marginal bands, not slab rates**: the statute says *"20% de la part
   qui dépasse 1.800.000"* and *"30% de la part qui dépasse 3.600.000"*. Only the
   excess over each threshold is taxed at the higher rate  _(art. 21: https://www.obr.bi/images/LOI_N1_14_DU_24_DECEMBRE_2020_PORTANT_MODIFICATION_DE_LA_LOI_N1_02_DU_24_JANVIER_2013_RELATIVE_AUX_IMPOTS_SUR_LES_REVENUS_1.pdf)_
+- **The BIF 360,000 in the table is computed, not quoted.** The statute's own cell
+  reads only *"30% de la part qui dépasse 3.600.000"*. The table above states the
+  **total tax due**, so it carries forward the second band's tax — 20% × (3,600,000
+  − 1,800,000) = **BIF 360,000** — which the statutory cell leaves implicit. Read
+  the cells as rates for their own band and you must add it yourself  _(art. 21: https://www.obr.bi/images/LOI_N1_14_DU_24_DECEMBRE_2020_PORTANT_MODIFICATION_DE_LA_LOI_N1_02_DU_24_JANVIER_2013_RELATIVE_AUX_IMPOTS_SUR_LES_REVENUS_1.pdf)_
 - **Non-residents use the same scale, on a narrower base**: the same *barème*
   applies to non-residents for first-schedule income, but **only two categories
   count**: Burundi-source employment income within arts. 6 and 7, and **rental
-  income**. The previous version said nothing about non-residents  _(art. 21: https://www.obr.bi/images/LOI_N1_14_DU_24_DECEMBRE_2020_PORTANT_MODIFICATION_DE_LA_LOI_N1_02_DU_24_JANVIER_2013_RELATIVE_AUX_IMPOTS_SUR_LES_REVENUS_1.pdf)_
+  income**  _(art. 21: https://www.obr.bi/images/LOI_N1_14_DU_24_DECEMBRE_2020_PORTANT_MODIFICATION_DE_LA_LOI_N1_02_DU_24_JANVIER_2013_RELATIVE_AUX_IMPOTS_SUR_LES_REVENUS_1.pdf)_
+- **For a non-resident without a permanent establishment the withholding is
+  final.** Article 22 provides that for Burundi-source income of non-residents
+  *"qui ne sont pas attribuables à un établissement stable au Burundi"*, the
+  withholding under arts. 119 and 120 has a *caractère **libératoire*** — it
+  discharges the liability, so no return follows and the scale above never
+  applies. Article 22 also preserves arts. 119–121 against art. 21 al. 2  _(art. 22: https://www.obr.bi/images/LOI_N1_14_DU_24_DECEMBRE_2020_PORTANT_MODIFICATION_DE_LA_LOI_N1_02_DU_24_JANVIER_2013_RELATIVE_AUX_IMPOTS_SUR_LES_REVENUS_1.pdf)_
 
 ## 2. Business income of a natural person is not on that scale
 
@@ -77,6 +88,25 @@ _(Loi de Finances 2026/2027 (loi n° 1/10 du 30 juin 2026), art. 190: https://ww
   threshold. VAT tests taxable turnover and also has independent purchases,
   imports and stock tests. See `bi-vat-gst`.
   [Finance Act 2026/2027, arts. 190 and 271](https://www.obr.bi/images/LOI_DE_FINANCES_2026-2027_PROMULGUEE_compressed.pdf).
+
+## 3. Filing
+
+- **The annual return is due the last day of the third month after the accounting
+  year closes.** Article 24 requires *"toute personne physique percevant un
+  revenu"* — any natural person receiving income — to prepare an annual return in
+  the form the Commissioner General specifies and file it *"au plus tard le
+  dernier jour du troisième mois après la clôture de l'exercice comptable"*  _(art. 24: https://www.obr.bi/images/LOI_N1_14_DU_24_DECEMBRE_2020_PORTANT_MODIFICATION_DE_LA_LOI_N1_02_DU_24_JANVIER_2013_RELATIVE_AUX_IMPOTS_SUR_LES_REVENUS_1.pdf)_
+- **The employer's annual recapitulative is expressly carved out of that
+  deadline** — art. 24 excepts *"la déclaration récapitulative annuelle prévue par
+  l'article 115"*, which art. 115 puts at **30 days** after the last day of the
+  accounting year. The two annual filings are not on the same clock. See
+  `bi-payroll-social`  _(arts. 24 and 115: https://www.obr.bi/images/LOI_N1_14_DU_24_DECEMBRE_2020_PORTANT_MODIFICATION_DE_LA_LOI_N1_02_DU_24_JANVIER_2013_RELATIVE_AUX_IMPOTS_SUR_LES_REVENUS_1.pdf)_
+- **Where the employer is not obliged to withhold, the obligation moves to the
+  employee** — art. 116 requires the employee, *"sous peine de sanction"*, to file
+  monthly and pay the tax due, *"au plus tard le quinze (15) du mois suivant celui
+  au cours duquel le revenu a été versé"*. Note this is the **15th of the following
+  month**, not art. 115's *fifteen calendar days after month end* — a different
+  formulation for a different taxpayer  _(art. 116: https://www.obr.bi/images/LOI_N1_14_DU_24_DECEMBRE_2020_PORTANT_MODIFICATION_DE_LA_LOI_N1_02_DU_24_JANVIER_2013_RELATIVE_AUX_IMPOTS_SUR_LES_REVENUS_1.pdf)_
 
 ## Sources and review limits
 
