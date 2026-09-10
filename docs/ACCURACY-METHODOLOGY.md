@@ -2335,6 +2335,17 @@ error page. The Ministry of Justice's Al-Meezan legal portal (`almeezan.qa`) doe
 not resolve from this network, and `hukoomi.gov.qa` returns 403. **A reachable
 authority is not a readable one**, and the queue entry stands.
 
+> **Superseded later in the same session — see "Qatar — the block was the
+> renderer, not the authority" below.** Every diagnosis in the paragraph above is
+> accurate and the conclusion drawn from it was wrong: the pages render in
+> JavaScript, so a *renderer* was the missing piece, not access. Opened in a real
+> browser the same page lists twenty-five instruments. This entry is left standing
+> rather than edited away, because the mistake it records — **treating "curl
+> returned no content" as "the authority has no reachable content"** — is the
+> point. The rule it yields: when a page 200s with a large body and no data,
+> establish whether the failure is *access* or *rendering* before recording a
+> block.
+
 ## Cayman Islands — a browser that solves proof-of-work, and five right numbers with wrong mechanics
 
 `ky-payroll-social.md` rested **all five** of its numeric facts on one commercial
