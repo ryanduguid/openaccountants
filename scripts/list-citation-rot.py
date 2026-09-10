@@ -34,20 +34,38 @@ or 406 -- impots.finances.gouv.bj itself does, and onrc.ro and registrucentras.l
 do -- and calling those dead would fill the queue with sites that are perfectly
 fine. They are counted as `blocked` and listed separately, unjudged.
 
-ONE FAILURE IS NOT DEATH, AND THE FIRST RUN PROVED IT
+THE DEAD BUCKET, AND TWO WRONG DIAGNOSES OF IT
 
 The first full sweep put **github.com at the top of the dead list, with 169
 citations**, and canada.ca just below it. Neither is dead. The selftest covers
 `judge()`, which decides what a response means, and could not cover `fetch()`,
 which decides what response you get -- so the classifier was measured and the
-fetcher was not, and a whole bucket came back unvalidated. Under fourteen-way
-concurrency a busy host times out, and a timeout looked exactly like a domain
-that no longer exists.
+fetcher was not, and a whole bucket came back unvalidated.
 
-So nothing is reported dead on a single failure. Anything the concurrent pass
-would call dead is re-checked serially, with no contention, before it is
-printed. That the loudest false positive was github.com is luck: a false
-positive that obvious gets fixed, while a quiet one would have been believed.
+FIRST DIAGNOSIS, WRONG: concurrency. Under fourteen-way concurrency a busy host
+times out, and a timeout looks exactly like a domain that no longer exists. So a
+serial re-check was added: anything the concurrent pass would call dead is tried
+again, minutes later, with no contention.
+
+The next sweep put github.com at the top of the dead list again. Three of 171
+hosts cleared. The fix had addressed a hypothesis that was never tested.
+
+SECOND DIAGNOSIS, AND THE ACTUAL ONE: the environment. This runs behind a
+policy-enforcing egress proxy. It answers 400 for github.com over both schemes
+while curl reaches it fine, and its own status endpoint reports "gateway
+answered 502 to CONNECT (policy denial or upstream failure)" for host after host
+sitting in the dead list. **From inside, a policy denial and a dead domain are
+the same event.** 592 citations were reported dead on the strength of neither.
+
+So the script now proves it can reach the network before it is allowed to say
+anything is unreachable. CONTROLS are fetched first; if any fails, the dead
+bucket is not printed at all and the summary says why. The serial re-check
+stays -- it is cheap and contention is real -- but it is no longer mistaken for
+a fix.
+
+Twice now the loudest false positive was github.com, which is luck. A false
+positive that obvious gets fixed. Had the same flaw produced a plausible list of
+small foreign tax authorities, it would have been believed both times.
 
 It ranks, it does not accuse. Every hit prints the snippet that triggered it so
 a reader can see exactly what the script saw and disagree. A gaming regulator
@@ -113,6 +131,20 @@ INSTITUTIONAL = re.compile(r'\b(?:ministry|minist[eè]re|ministerio|government|'
                            r'parliament|legislation|gazette|statutory)\b', re.I)
 
 SKIP_TREES = ('templates',)
+
+# Hosts that are not down. If these do not answer, the fetcher is not measuring
+# the web -- it is measuring whatever sits between this process and the web --
+# and the `dead` bucket must not be reported at all.
+#
+# This exists because the second full sweep still put github.com at the top of
+# the dead list with 169 citations, AFTER a serial re-check added specifically
+# to fix that. The re-check tested a hypothesis (concurrency contention) that
+# had never been checked. The real cause was the sandbox's egress proxy, which
+# answers 400 for some hosts and whose own status endpoint reports
+# "gateway answered 502 to CONNECT (policy denial or upstream failure)" for
+# many others. A policy denial and a dead domain are indistinguishable from
+# inside, so 592 citations were reported dead on the strength of neither.
+CONTROLS = ('github.com', 'www.google.com', 'example.com')
 
 
 def strip_html(body):
@@ -265,6 +297,14 @@ def main(argv):
     limit = int(argv[argv.index('--limit') + 1]) if '--limit' in argv else None
     jobs = int(argv[argv.index('--jobs') + 1]) if '--jobs' in argv else 8
 
+    # Prove the fetcher can reach the network before trusting anything it says
+    # is unreachable. See CONTROLS.
+    sys.stderr.write('control probe...\n')
+    control = {h: judge(*fetch(h, timeout=15))[0] for h in CONTROLS}
+    trust_dead = all(k != 'dead' for k in control.values())
+    if not trust_dead:
+        sys.stderr.write('  CONTROL FAILED: %s\n' % control)
+
     where = cited_hosts(only)
     hosts = sorted(where, key=lambda h: -len(where[h]))
     if '--hosts' in argv:
@@ -285,7 +325,7 @@ def main(argv):
     # second pass is serial on purpose -- no contention, and a host that fails
     # here too has failed twice, minutes apart.
     suspects = [h for h, (k, _) in results.items() if k == 'dead']
-    if suspects:
+    if suspects and trust_dead:
         sys.stderr.write('re-checking %d suspected-dead hosts serially...\n'
                          % len(suspects))
         # Shorter timeout than the first pass, deliberately. The slow hosts here
@@ -311,6 +351,8 @@ def main(argv):
             ('check', 'MATCHED A SQUATTER PATTERN BUT STILL READS INSTITUTIONAL'),
             ('broken', 'ANSWERING 200 WITH A CRASH INSTEAD OF CONTENT'),
             ('dead', 'NOTHING USABLE ANSWERS')):
+        if kind == 'dead' and not trust_dead:
+            continue
         rows = sorted(buckets[kind], key=lambda r: -len(where[r[0]]))
         if not rows:
             continue
@@ -328,6 +370,15 @@ def main(argv):
                 print('   ... and %d more' % (len(cites) - 4))
 
     print('\n== SUMMARY ==')
+    if not trust_dead:
+        print('  !! THE DEAD BUCKET IS NOT REPORTED AND ITS COUNT IS NOT')
+        print('     EVIDENCE. Control hosts that are certainly up did not')
+        print('     answer either: %s' % control)
+        print('     Something between this process and the web is refusing')
+        print('     connections -- an egress proxy, a policy denial, a DNS')
+        print('     block -- and from in here that is indistinguishable from')
+        print('     a domain that no longer exists. Re-run somewhere with')
+        print('     unrestricted egress before believing any of it.')
     for kind in ('rot', 'check', 'broken', 'dead', 'blocked', 'ok'):
         n = len(buckets[kind])
         cites = sum(len(where[h]) for h, _ in buckets[kind])

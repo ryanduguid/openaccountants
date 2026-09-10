@@ -748,3 +748,28 @@ class CitationRotTests(unittest.TestCase):
             finally:
                 os.chdir(cwd)
         self.assertEqual(sorted(found), ["revenue.example.gov"])
+
+
+class ControlProbeTests(unittest.TestCase):
+    """The dead bucket must be gated on the fetcher proving it works."""
+
+    def setUp(self):
+        self.rot = _load("list-citation-rot.py")
+
+    def test_controls_are_hosts_that_are_not_down(self):
+        # If these do not answer, the script is not measuring the web but
+        # whatever sits between it and the web. Two sweeps put github.com at the
+        # top of the dead list with 169 citations -- the first blamed on
+        # concurrency, wrongly; the actual cause was the egress proxy, which
+        # answers 400 for it while curl reaches it fine.
+        self.assertIn("github.com", self.rot.CONTROLS)
+        self.assertGreaterEqual(len(self.rot.CONTROLS), 2)
+
+    def test_a_policy_denial_is_indistinguishable_from_a_dead_domain(self):
+        # This is the fact the control probe exists to work around, and it is
+        # worth asserting so nobody "fixes" judge() into guessing. A proxy
+        # refusing to connect and a domain that no longer exists arrive here as
+        # the same thing, and judge() is right to call both dead -- the caller
+        # is what must decide whether to believe it.
+        self.assertEqual(self.rot.judge(None, "")[0], "dead")
+        self.assertEqual(self.rot.judge(502, "")[0], "dead")

@@ -31,6 +31,18 @@ as its own contact address — but it has since been lost, and it now answers wi
 an online-casino page rather than the CGI. Citations here point at the DGI's
 current host instead.
 
+> **The DGI's own site is compromised, and this guide sends you there 39 times.**
+> `www.impots.finances.gouv.bj` is the correct authority and the citations below
+> are correct citations — but the site is serving injected search-engine spam for
+> online casinos ("Melbet Jordan", "Mol Casino", "ronybet", "Tomi Club"), the
+> signature of a compromised WordPress install. The tax content is still there
+> and is what was read for this guide; the spam sits alongside it.
+>
+> This is the DGI's to fix and nothing in this repository can fix it. It is
+> flagged because a reader following a government citation should not be
+> surprised by what loads, and because the alternative — citing a summary
+> instead — would be worse.
+
 - **Tax year** — Calendar year: tax is assessed each year on the previous year's profits, and taxpayers must close their accounts at 31 December, except on transfer or cessation of business during the year  _(Code Général des Impôts (Bénin) 2021, art. 20 — https://www.impots.finances.gouv.bj/code-general-des-impots/)_
 - **First accounting period of a new company** — A company formed **before 30 June** must close its first accounting period at 31 December of the same year. One formed **after 30 June** may run its first period to 31 December of the *following* year — an opening period of up to 18 months — and is taxed on the profits of that whole period  _(Code Général des Impôts (Bénin) 2021, art. 20 — https://www.impots.finances.gouv.bj/code-general-des-impots/)_
 - **Currency** — West African CFA franc (XOF / FCFA)  _(WAEMU (UEMOA) monetary union framework)_
