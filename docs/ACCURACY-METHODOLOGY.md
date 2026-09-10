@@ -286,19 +286,34 @@ Run it rather than trusting the numbers below:
 python3 scripts/list-source-mix.py
 ```
 
-**As at 10 September 2026: 66% of citations were secondary — 4,844 against 2,540
-authority links, with 18 of 189 jurisdictions citing no authority domain at
+**As at 10 September 2026: 65% of citations were secondary — 4,804 against 2,608
+authority links, with 14 of 189 jurisdictions citing no authority domain at
 all.** One publisher, PwC's Worldwide Tax Summaries, carries about a third of
 all external citations on its own; the next largest is the IRS at 140, then
 Estonia's tax board at 82.
 
+That last figure moved from 18 to 14 in a single afternoon, and none of the four
+gained a verified rate. Iraq, DR Congo, Suriname and Libya each had a live,
+reachable revenue authority the corpus had simply never linked to: Iraq cited
+PwC 55 times and an incorporation firm 14 times while `tax.mof.gov.iq` published
+guides to income, property, corporate and withholding tax. Three of the four
+needed no allowlist entry at all — their domains already matched the government
+pattern. The only thing missing was a link.
+
+Which is worth stating plainly, because the queue is easy to misread: leaving
+the zero-authority list means *a citation now points at the authority*, not that
+anything it says has been checked against it.
+
 Those counts are a dated snapshot and are quoted for the argument, not as a
-current figure. They drifted **six times** while this section was being
+current figure. They drifted **eleven times** while this section was being
 written — adding `lex.uz` to the classifier moved the zero-authority count by
 one, correcting Uzbekistan moved the citation totals, auditing the statute-link
 queue found nine more revenue authorities and statutory funds the classifier
-had been calling marketing sites, and then a code review found four domains on
-the allowlist that were not authorities at all. That is the same defect
+had been calling marketing sites, then a code review found four domains on
+the allowlist that were not authorities at all, then reading the statute-link
+queue's *destinations* found four more (`u.ae`, `nssfug.org`, EswatiniLII,
+NamibLII), then `belastingdienst.sr`, and then four jurisdictions were linked to
+authorities that had been reachable the whole time. That is the same defect
 `scripts/check-coverage-claims.py` exists to catch in `COVERAGE.md`: a derived
 number copied into prose is stale the moment the thing it describes changes.
 The command is the durable statement; the numbers are an illustration of it.
