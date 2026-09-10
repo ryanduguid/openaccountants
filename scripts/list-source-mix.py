@@ -68,6 +68,12 @@ NON_GOV_AUTHORITY = frozenset((
     # that publish the law itself, on a domain that carries no government
     # suffix — the same blind spot the revenue authorities below sat in.
     'incv.cv',            # Imprensa Nacional de Cabo Verde (Boletim Oficial)
+    'ohada.org',          # OHADA itself — the Journal Officiel and the digital
+                          # library that carries it. Supranational rather than
+                          # national, so no country suffix to recognise it by;
+                          # its uniform acts ARE the company law of seventeen
+                          # member states. Note ohada.com is a different body
+                          # (the UNIDA association) and is deliberately absent.
     # Revenue and tax administrations
     'emta.ee',            # Estonian Tax and Customs Board
     'frcs.org.fj',        # Fiji Revenue and Customs Service
@@ -415,6 +421,9 @@ def selftest():
     assert classify('legislation.mt') == 'authority'
     # a state gazette publisher on a bare national domain
     assert classify('incv.cv') == 'authority'            # Imprensa Nacional CV
+    assert classify('boe.incv.cv') == 'authority'        # and its gazette subdomain
+    assert classify('biblio.ohada.org') == 'authority'   # OHADA's own library
+    assert classify('ohada.com') != 'authority'          # a different body (UNIDA)
     assert classify('digesto.asamblea.gob.ni') == 'authority'  # via the GOB pattern
     assert classify('lex.uz') == 'authority'             # official legislation
     assert classify('guichet.public.lu') == 'authority'   # via the GOV pattern
