@@ -2789,3 +2789,46 @@ against the régime's own register, and the corpus leans on several: OHADA,
 CEMAC, UEMOA, the EAC, the GCC, the EU. Any guide that names one is asserting a
 membership fact, and that fact is cheap to test — **two false claims out of sixteen,
 found in a single pass, none of which any figure-level checker could ever see**.
+
+### The membership check, run against every other régime — and what it turned up instead
+
+The OHADA result made the check worth generalising, so every supranational régime
+this corpus names was tested the same way: list the jurisdictions citing it, compare
+against the régime's membership.
+
+**Four came back clean.** CEMAC is cited by exactly its six members; UEMOA and its
+English name WAEMU are cited, between them, by exactly the eight; SACU by Lesotho
+and South Africa; CARICOM by Jamaica and Trinidad and Tobago. The UK's single "GCC"
+hit is a UAE-relocation day-count test, not a membership claim. **A check that finds
+nothing is still worth running once** — it is the difference between "no other
+régime is misattributed" and "nobody looked".
+
+Two things fell out of the scan that it was not looking for.
+
+**A jurisdiction's own name is a weaker key than it looks.** Five jurisdiction codes
+map to more than one directory: `AE` (`uae`, `united-arab-emirates`), `CA`
+(`canada`, `ca-chartered-accountant`), `IM` (`im`, `isle-of-man`), `VG` (`bvi`,
+`british-virgin-islands`) and `VN`. The first four are a naming split, not an error —
+`ca-chartered-accountant` holds sixteen **Canadian provincial** guides, all correctly
+tagged `CA`, behind a directory name that suggests a profession. But **anything that
+groups by directory sees eight jurisdictions where there are four**, and this repo's
+own per-jurisdiction reporting does exactly that. The "jurisdictions with any
+external citation" and "citing no authority domain at all" figures are computed
+per directory, so those four are each counted twice.
+
+**And the fifth was a real error.** `argentina/references.md` carried
+`jurisdiction: VN` and, under the heading *"Vietnam — Related Open-Source
+Projects"*, listed two Vietnamese personal-income-tax repositories and cited *Luật
+số 109/2025/QH15*, *Luật Thuế TNCN No. 04/2007/QH12* and *Thông tư
+111/2013/TT-BTC*. It was a stray copy of `vietnam/references.md`. **Argentina did
+not have a thin references file; it had Vietnam's.** All 32 other `references.md`
+files match their directory. The file is now an Argentine one, naming **ARCA** —
+verified from the authority's own portal, which uses that name throughout and none
+of "AFIP" — with the legislative list left as a marked gap rather than invented.
+
+**The Argentina pack was already right about the thing that looked wrong.** ARCA
+replaced AFIP under Decreto 953/2024, and 70 "AFIP" mentions across seven files
+looked like stale naming until they were read: the guides say *"ARCA (formerly
+AFIP)"* and cite the decree. **Confirming that a suspicion is unfounded is part of
+the check, not a wasted step** — and the alternative, a bulk rename of a term the
+corpus was using correctly and deliberately, would have destroyed real information.
