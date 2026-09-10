@@ -2582,6 +2582,14 @@ restart, on the port that was then correct. That is a fact about timing rather
 than a defence of the method: had the restart come an hour earlier, three
 jurisdictions would have been recorded as dead on the strength of a stale port.
 
+**So they were re-tested rather than left resting on that.** With the corrected
+proxy and `https://` throughout: Gabon `dgi.ga` and Myanmar's `dica.gov.mm` still
+never load; Eritrea's `mof.gov.er` still returns *"Problem loading page"*; and São
+Tomé's `mf.gov.st` still answers **202** with *"Under construction - Awesome site
+in the making!"* and 91 characters of body. Every entry holds. **Publishing a
+claim, finding two ways it could have been wrong, and then re-running it is the
+cheap half of the work** — the expensive half was noticing the tools disagreed.
+
 **2. The proxy tunnels HTTPS only, and government sites still link `http://`.**
 `digesto.asamblea.gob.ni` returned **405 with a 465-byte body** through the
 browser. The body is not from the site — it is the proxy saying *"this proxy only
