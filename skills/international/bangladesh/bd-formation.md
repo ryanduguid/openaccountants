@@ -66,7 +66,7 @@ depends_on:
 > (s.392B(2)), and the memorandum must name a **nominee** who takes the shares on
 > the owner's death or incapacity (s.392B(3)). See `bd-company-formation` for the
 > full Part X-A treatment.
-> _(Companies Act 1994, ss.392B–392C — http://bdlaws.minlaw.gov.bd/act-788/section-50103.html)_
+> _(Companies Act 1994, s.392B (one company; nominee) — http://bdlaws.minlaw.gov.bd/act-788/section-50102.html; s.392C (capital; turnover) — http://bdlaws.minlaw.gov.bd/act-788/section-50103.html)_
 
 ## Section 10 — Prohibitions
 - NEVER skip the trade licence for a registered business activity.

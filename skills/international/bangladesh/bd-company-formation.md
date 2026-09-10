@@ -1,7 +1,8 @@
 ---
 name: bd-company-formation
-description: "Source-cited draft: company formation & entity choice for Bangladesh (tax year 2025) — entity types, the one-person company, share capital and directors, read from the Companies Act 1994 as published by the Ministry of Law. Unverified; pending local-accountant review."
+description: "Source-cited draft: company formation and entity choice for Bangladesh, tax year 2025. Covers private and public limited companies, the one-person company (OPC) created by the Companies (Second Amendment) Act 2020, branch and liaison offices, partnerships and sole proprietorships; member and director minimums, the fifty-member cap and its employee and joint-holder exclusions, paid-up capital, the OPC capital and turnover bands, the mandatory nominee, RJSC registration and annual filing. Trigger on \"register a company in Bangladesh\", \"RJSC incorporation\", \"one person company Bangladesh\", \"OPC paid-up capital\", \"minimum directors private limited\", \"Companies Act 1994\". Read from the Ministry of Law; unverified, pending local-accountant review."
 jurisdiction: BD
+category: formation
 tax_year: 2025
 tax_year_notes: "The Companies Act 1994 defines a financial year as the period, whether or not a full year, for which the profit-and-loss account is laid before the annual general meeting; only for insurance companies is it the calendar year. The one-person company provisions were inserted by the Companies (Second Amendment) Act 2020 (Act No. 24 of 2020), s.9."
 last_updated: 2026-09-10
@@ -101,7 +102,7 @@ transfer, the balance sheet, audit, borrowing and voluntary winding up.
   director**  _(Companies Act 1994, s.392I — http://bdlaws.minlaw.gov.bd/act-788/section-50109.html)_
 - **Registration and audit follow the private-company rules** — The registration
   procedure for a private limited company applies *"with necessary adaptations"*,
-  and so do the Act's provisions on appointing an auditor and on the audit report  _(Companies Act 1994, ss.392D and 392J — http://bdlaws.minlaw.gov.bd/act-788/section-50104.html)_
+  and so do the Act's provisions on appointing an auditor and on the audit report  _(Companies Act 1994, s.392D — http://bdlaws.minlaw.gov.bd/act-788/section-50104.html; s.392J — http://bdlaws.minlaw.gov.bd/act-788/section-50110.html)_
 
 ## 4. Capital, and the claim that needs qualifying
 
@@ -146,7 +147,7 @@ transfer, the balance sheet, audit, borrowing and voluntary winding up.
 | Entity types: private, public, branch, partnership, sole proprietorship | Missing the **one-person company** — twelve sections, Part X-A, in force since 2020 |
 | "**No statutory minimum** paid-up capital (effectively as low as BDT 1)" | True for a private or public company. **False for an OPC**: BDT 2,500,000 floor **and** a BDT 50,000,000 ceiling — s.392C(1)(a) |
 | *nothing* | An OPC also needs prior-year turnover of **BDT 10,000,000 to 500,000,000** — s.392C(1)(b) |
-| "Minimum 2, maximum 50 shareholders" | 50 **excluding employees**, and **joint holders count as one member** — s.2(t)(iii) and proviso |
+| "Minimum 2, maximum 50 shareholders" | 50 **excluding employees**, and **joint holders count as one member** — s.2(1), definition of "প্রাইভেট কোম্পানী" (clause ট), limb (ই) and the proviso |
 | "Minimum 2 directors" | Two — **unless the private company is a subsidiary of a public company, and then three** — s.90(1)–(2) |
 | *nothing* | **Only a natural person may be a director** — no corporate directors — s.90(3) |
 | Public limited company listed without a number | **Seven or more** persons — s.5 |
