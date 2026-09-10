@@ -3,7 +3,7 @@ name: cd-tax-overview
 description: "Source-cited draft: tax overview for DR Congo (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
 jurisdiction: CD
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-10
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -15,7 +15,23 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 The Democratic Republic of the Congo levies tax on a territorial (source) basis, administered by the Direction Générale des Impôts (DGI). This section is an unverified source-cited draft for tax year 2025 and must be reviewed by a licensed DRC accountant.
 
-- **National tax authority** — Direction Générale des Impôts (DGI)  _([Code Général des Impôts (RDC)](https://taxsummaries.pwc.com/democratic-republic-of-the-congo))_
+> **A direct-tax reform this guide does not describe.** The DGI's own site
+> presents its taxes as **Impôt sur les sociétés (IS)**, **Impôt sur le Revenu
+> des Personnes Physiques (IRPP)**, **IPR/IERE**, **Impôt sur les bénéfices et
+> profits (IBP)**, Impôt mobilier and **TVA**, and carries a page under
+> "Réformes en cours" titled **"Réforme de la Fiscalité directe IS-IRPP"**. This
+> guide is written entirely around **IBP and IPR** and does not mention IS or
+> IRPP anywhere.
+>
+> What is verified here is only what the DGI's navigation states: that IS and
+> IRPP exist alongside IBP and IPR, and that a direct-tax reform is in progress.
+> **Whether IS and IRPP have replaced IBP and IPR, from when, and at what rates
+> is not established** — the DGI's per-tax pages render their content in
+> JavaScript and returned navigation only. A reviewer must settle which regime
+> applies to the period before relying on the rates below.
+>  _(Direction Générale des Impôts (RDC) — https://dgi.gouv.cd/)_
+
+- **National tax authority** — Direction Générale des Impôts (DGI), contactable at `direction.descom@dgirdc.cd`, publishing the Code des Impôts and its arrêtés, décrets and lois at `dgi.gouv.cd`  _(Direction Générale des Impôts (RDC) — https://dgi.gouv.cd/code-des-impots/)_  _([Code Général des Impôts (RDC)](https://taxsummaries.pwc.com/democratic-republic-of-the-congo))_
 - **Currency** — Congolese franc (CDF)  _(Code Général des Impôts (RDC))_
 - **Tax year** — Calendar year, 1 January to 31 December  _([Code Général des Impôts (RDC)](https://taxsummaries.pwc.com/democratic-republic-of-the-congo/corporate/tax-administration))_
 - **Basis of taxation** — Territorial — income is taxed where it is sourced; foreign-source profits are generally not taxed in the DRC  _([Code Général des Impôts (RDC)](https://taxsummaries.pwc.com/democratic-republic-of-the-congo/individual/taxes-on-personal-income))_
