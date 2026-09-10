@@ -1011,3 +1011,119 @@ URL to guard against it; Azerbaijan's State Tax Service prints "Official website
 of the Republic of Azerbaijan end with .gov.az" beside a list of trusted sites.
 Both are the Benin problem seen from the other side, by the institutions it
 happens to.
+
+### When every number in a guide comes from one place
+
+Three jurisdictions failed the same way, and it was the same shape each time: an
+entire table of rates and thresholds resting on a single non-authority page.
+
+| Jurisdiction | Source carrying the table | What was wrong |
+|---|---|---|
+| Benin | one HR-platform page | every IRPP band boundary, and band 4's rate |
+| Zambia | one page on `zambiaprice.com` | unknowable — the domain now serves gambling SEO |
+| Burundi | one HR-platform page | unknowable — `obr.bi` answers with a crash |
+
+Benin is the one that makes the case. Those figures were not hedged and not
+marked uncertain. They were simply wrong, and the shared source is the thing a
+reader could have noticed *without knowing any Beninese tax law*.
+
+`scripts/list-single-source-blocks.py` measures it: of the bullets in a guide
+that state a number **and** carry a citation, what share point at one host.
+
+The split matters more than the count. Concentration on a revenue service is a
+guide doing it right. Concentration on PwC is weaker but honest, and is how much
+of this corpus is necessarily built — see the section above on authorities that
+cannot be read. Reported first is the Benin case, where the one host is neither.
+
+```
+other  38 guides    publisher  181    authority  79      (of 515 with 4+ facts)
+```
+
+`remotepeople.com` carries four of those 38 outright, `taxatlas.io` three,
+`remotesolutionsafrica.com` two. The Benin fix shows up where it should: its two
+guides moved out of `other` and into `authority`.
+
+This is not a defect detector and never gates CI. A single-sourced guide is not
+a wrong guide; it is one with no internal corroboration, which is a statement
+about what a mistake would cost, not evidence that one was made.
+
+### A total and its parts, asserted twice, in the shape nothing was reading
+
+`check-total-rows.py` had found real errors — Sweden's 31.42%, Mexico's IMSS
+Modalidad 40 understated by a quarter — by checking a table's Total row against
+the rows above it. It read **tables**. The corpus's generated fact blocks are
+bullet lists making exactly the same double assertion:
+
+```
+- **Total employer social-security contribution** - 27.4%
+- **Employer - pension (first pillar)** - 16.6%
+- **Employer - Fondiss** - 2.0%   ...
+```
+
+25.5% against a stated 27.4%, invisible because no pipe character appears
+anywhere in it. Note the order is reversed from the table convention: the total
+**leads** its components rather than closing them.
+
+Thirteen bullet totals check out. Four do not, and all four are real: San Marino
+(employer 27.4 vs 25.5 — the 1.9-point gap is exactly the unemployment figure, so
+a branch is missing or double-counted; and employee 8.3 vs 8.4), the Central
+African Republic (19% against the 4+11+2 its own bullet names as its parts) and
+Mauritania (15% against 5+4+5+2).
+
+None is resolvable from outside. `iss.sm` is genuinely the ISS and publishes
+health services, not a contribution schedule. So each guide states the
+contradiction and says explicitly **not** to adjust a branch to make the addition
+work — which side is wrong is not determinable from the file.
+
+#### Three false starts, which is the point
+
+The first grouping rule flagged **45 of 61** groups, with "totals" of 100% and
+86%. That is not a finding that the corpus is 74% wrong; it is the measuring
+instrument failing. Requiring a shared topic word between the total and each
+component cut it to 34 groups and 16 flags. Then two of those 16 were the
+checker's own fault, and one was a shape it had no rule for:
+
+- **Togo and Djibouti** are internally consistent (17.5 = 12.5+3+2). They were
+  flagged only because the *employee* row was being summed into an *employer*
+  total. A component naming the opposite side of the payroll now ends the group.
+- **Gabon** sums exactly right and was flagged at 16% against 20.1%, because one
+  branch reads `4.1% total (0.6% + 2% + 1.5%)`. Several percentages, so the run
+  stopped short and reported the partial sum. A component whose value is not a
+  single percentage now abandons the group outright: reporting nothing beats
+  reporting a partial sum.
+- **Belize's** two components each restate the 10% total rather than partition
+  it, summing to double. Components that all equal the total are not a partition.
+
+Final: 13 checked, 4 flagged, no false positives. Every step of that tightening
+*removed* findings, and every removal was correct — which is the opposite of the
+usual direction in this document and worth noticing.
+
+#### The annotation that hid the defect it documented
+
+The first version of the CAR and Mauritania notes put the explanation **inside**
+the total bullet — "…listed below as 4% + 11% + 2% = 17%, not 19%". That added
+more percentages to the bullet's value, so it stopped parsing as a total, and the
+checker's own count fell silently from 4 to 2.
+
+An annotation that documents a defect must not also hide it from the check that
+found it. Both are blockquotes above the bullet now, and all four still report.
+
+### A blind spot fixed, that turned out to be empty
+
+`list-statute-links.py` required `skills/<tree>/<jurisdiction>/file.md` and so
+never opened the **168 files that sit directly in a tree** — every US federal
+guide, every cross-border guide, all the orchestrators. Same shape as the
+trailer bug: for those files the queue was not low, it was uncomputed.
+
+Fixed, and the honest result is that it found **nothing**. Zero rows in all 168.
+The federal guides cite `[§1202](law.cornell.edu/uscode/text/26/1202)`, which
+lands the reader on 26 U.S.C. §1202 itself — a citation doing its job.
+
+Recording a fix that found nothing, because the alternative is leaving an
+impression that it found something. It did surface one real false positive:
+`law.cornell.edu` was top of the single-source queue at 52/62. Cornell's LII is
+a Cornell Law School programme, not the official publisher — the OLRC publishes
+the US Code — so it is a republisher, in ZambiaLII's position. But it
+republishes the *section* rather than a summary of it, so it belongs with the
+recognised publishers in both checkers, and flagging it would have been the
+error.
