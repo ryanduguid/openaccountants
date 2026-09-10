@@ -274,7 +274,7 @@ rather than trying to detect what it should. Nothing in this repo knows what a
 given statute charges. What it can know is that a guide naming three heads sits
 oddly beside one naming eight, and that the difference is worth an hour.
 
-### Three quarters of the corpus's citations are secondary, and it shows
+### Most of the corpus's citations are secondary, and it shows
 
 `scripts/list-source-mix.py` classifies every external link by whether it points
 at a tax authority or at a secondary source, ignoring the CTA block each guide
@@ -286,21 +286,25 @@ Run it rather than trusting the numbers below:
 python3 scripts/list-source-mix.py
 ```
 
-**As at 9 September 2026: 66% of citations were secondary — 4,863 against 2,503
-authority links, with 20 of 189 jurisdictions citing no authority domain at
+**As at 10 September 2026: 66% of citations were secondary — 4,844 against 2,540
+authority links, with 18 of 189 jurisdictions citing no authority domain at
 all.** One publisher, PwC's Worldwide Tax Summaries, carries about a third of
 all external citations on its own; the next largest is the IRS at 140, then
 Estonia's tax board at 82.
 
 Those counts are a dated snapshot and are quoted for the argument, not as a
-current figure. They drifted **four times** while this section was being
+current figure. They drifted **six times** while this section was being
 written — adding `lex.uz` to the classifier moved the zero-authority count by
-one, correcting Uzbekistan moved the citation totals, and then auditing the
-statute-link queue found nine more revenue authorities and statutory funds the
-classifier had been calling marketing sites. That is the same defect
+one, correcting Uzbekistan moved the citation totals, auditing the statute-link
+queue found nine more revenue authorities and statutory funds the classifier
+had been calling marketing sites, and then a code review found four domains on
+the allowlist that were not authorities at all. That is the same defect
 `scripts/check-coverage-claims.py` exists to catch in `COVERAGE.md`: a derived
 number copied into prose is stale the moment the thing it describes changes.
 The command is the durable statement; the numbers are an illustration of it.
+The heading above used to say "three quarters", which was true of the first
+measurement and of no measurement since; a fraction in a heading is prose that
+nobody re-runs.
 
 > **The first version of this measurement was wrong, and the way it was wrong is
 > the point.** It reported 76% secondary and 41 zero-authority jurisdictions,
@@ -311,7 +315,8 @@ The command is the durable statement; the numbers are an illustration of it.
 > as secondary. The allowlist is now built from measurement — every entry is a
 > domain the corpus actually cites — and `--unclassified` prints the remaining
 > authority-shaped candidates so the omission stays visible rather than silent.
-> Read the authority count as a **floor**, never a ceiling.
+> Read the authority count as a **floor**, never a ceiling — with the caveat in
+> the next section, which is that an allowlist can also be wrong upwards.
 
 The list still earns its place. **Slovakia, Laos and Libya** are on it, and all
 three produced defects on this branch: Slovakia's minimum-tax band (the
@@ -351,6 +356,63 @@ something no summary did.
 The checker ranks and never gates CI, because citing a summary is not a defect
 and an authority link does not prove the figures came from it. It measures
 exposure, not diligence.
+
+### An allowlist can be wrong upwards, and that error never reports itself
+
+Every correction recorded above ran one way: the checker could not see authority
+the corpus was citing, someone noticed, the count went up. Six passes, always
+the same direction. A code review on the pull request found the opposite, and it
+is the more dangerous shape.
+
+`manao.mg` was on the allowlist, commented "Madagascar tax portal". Manao sells
+accounting and payroll software. It went on the list from its name, in a batch
+where the surrounding entries were revenue authorities, and nothing afterwards
+looked at it again. It was the **only** domain scoring as an authority for
+Madagascar, so one unchecked entry took a jurisdiction off the zero-authority
+queue — the queue this script exists to produce. Three more went the same way:
+`startup.sm` ("© San Marino Management Srl"), `camcom.sm` (a *società a capitale
+misto pubblico-privato*, an economic development agency and not the Ufficio
+Tributario) and `palgakalkulaator.ee`, a salary calculator naming no publisher,
+cited as the source for Estonia's statutory minimum wage.
+
+The two errors are not symmetric, and the asymmetry is the whole lesson:
+
+- A **missing** entry over-reports risk. The jurisdiction stays on a list
+  somebody reads, and the next person to read it removes it. That is how six of
+  these corrections happened.
+- A **wrong** entry under-reports risk, silently, with no artefact left behind.
+  The jurisdiction leaves the queue and nothing ever looks at it again. There is
+  no output anywhere that says "Madagascar's entire score rests on one domain
+  nobody checked."
+
+So the allowlist now states its test — *the domain belongs to the body that
+makes, administers or collects the charge, or publishes the official text of the
+law* — and `--load-bearing` prints the entries a jurisdiction's whole authority
+score depends on:
+
+```
+python3 scripts/list-source-mix.py --load-bearing
+```
+
+Eleven entries currently hold a jurisdiction off the queue on their own. Those
+are the ones to check hardest, because those are the ones where a mistake is
+invisible. The removals put Madagascar back on the list and moved the secondary
+share from 65% to 66%; San Marino stayed off it, correctly, because it cites
+`gov.sm` once.
+
+The same review found the matching bug in `scripts/list-withholding-scope.py`.
+Its `--show` mode exists precisely so that nobody writes "this guide omits X"
+without reading every line; its docstring says so. When `heads_in()` learned
+that a dedicated withholding guide does not repeat the word in every row label,
+`--show` kept the old label-only test. `--show israel` printed **7** lines where
+the scan counted **44**, dropping the entire rate table — services, rent,
+royalties, interest, dividends — that the fix had been written to surface. A
+diagnostic that under-reports against its own checker is worse than no
+diagnostic: it reads as proof the rows are absent.
+
+Both are the same defect in different clothes. **Anything that removes an item
+from a review queue needs more scrutiny than anything that adds one**, because
+only one of those two mistakes leaves something behind for a person to find.
 
 ### A citation can name the right statute and still mislead
 
@@ -440,7 +502,7 @@ claim.** Checking what the domain actually is does test it, and costs one
 fetch.
 
 The queue is now empty. That is not a claim that every citation in the corpus
-points somewhere good — 65% of them still point at commentary, and the checker
+points somewhere good — 66% of them still point at commentary, and the checker
 only ever measured the sharp end.
 
 ### Reading the statute changes the answer, and twice it nearly changed it wrongly
@@ -492,6 +554,28 @@ statute. The answer is that Kosovo has three thresholds in three laws: EUR
 corporate small-taxpayer flat tax (06/L-105, which *reduced* it from 50,000 in
 2019), and EUR 30,000 for VAT registration (05/L-037). The old corporate figure
 and the current personal one are the same number, which is how they merge.
+
+**Ethiopia: the citation named the right Proclamation and the wrong subject.**
+`et-tax-overview.md` gave the VAT return deadline as "the 21st day (per local
+practice; some sources cite end of the following month)", hedged "approx —
+confirm", and cited VAT Proclamation No. 1341/2024 *as described at* an article
+about VAT **registration** obligations. The article says nothing about filing.
+Meanwhile `ethiopia-vat.md`, in the same repository, gave the last day of the
+following month — so the corpus held both answers and pointed at neither.
+
+Art. 58(1) of the Proclamation settles it: "A registered person shall file a VAT
+return for each accounting period **on or before the last day of the calendar
+month following the end of the period**." There is no 21st-day rule. Art. 58(2)
+requires the return whether or not net VAT is payable, and art. 59(1) makes
+payment due on the same date.
+
+Reading art. 2 for the definition of the period then produced something neither
+guide had: *"'Accounting Period' means each calendar month. The months of August
+and Pagumen shall be aggregated and treated as One calendar month."* Pagumen is
+the 5- or 6-day thirteenth month of the Ethiopian calendar, so the VAT year has
+**twelve** filing periods, not thirteen. Nothing flagged that, because nothing
+was wrong — the guides simply said "monthly" and stopped. **A hedge marks the
+figures somebody doubted; it cannot mark the ones nobody thought to ask about.**
 
 ### Three ways a guide comes to name three heads, and what each costs to fix
 
@@ -599,6 +683,31 @@ One thing it cannot see, recorded in its own selftest as a known miss: a value
 restated in different **units**. Removing "BGN 4,130" while the file still says
 "EUR 2,111.64" is the same figure at the fixed conversion rate. Bulgaria needed
 that caught and it was caught by hand.
+
+A second blind spot, found by the code review on the pull request and worth
+stating because it is easy to walk into. The script works from **values you
+removed**. A correction written *beside* the old claim rather than replacing it
+removes nothing, so it is invisible.
+
+Armenia's guide is the case. A research gap in §5.10 said "salaries paid to
+employees still bear a fixed reduced income tax of ~AMD 5,000/employee/month".
+Reading the Tax Code showed the micro regime does no such thing — art. 269(2)(2)
+puts employee wages back under ordinary income tax withholding, and the AMD
+5,000 belongs to art. 125(3), which charges an *individual entrepreneur in the
+turnover-tax system* AMD 5,000 a month as their own final profit tax. That
+correction went into the special-regime rate map as a new row. §5.10 was left
+standing. The guide then asserted both, forty lines apart, and the checker had
+nothing to report because nothing had been deleted.
+
+So the rule the script cannot enforce: **when a correction contradicts something
+the guide already says, the old sentence has to go, not merely be outvoted.**
+Search the file for the number before writing the new row, and again after.
+
+Reading the same article also turned up something the guide had been silent on
+in both directions: art. 125(3) makes the AMD 5,000 a month a liability the
+turnover tax does **not** absorb, so the turnover-tax worked example — which
+computed the tax three ways against the art. 258(2) expense deduction — was
+understating a quarter by AMD 15,000 the whole time.
 
 ### One defect that needs no script
 
