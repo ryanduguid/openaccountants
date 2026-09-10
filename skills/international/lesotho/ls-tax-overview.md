@@ -3,7 +3,8 @@ name: ls-tax-overview
 description: "Source-cited draft: tax overview for Lesotho (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
 jurisdiction: LS
 tax_year: 2025
-last_updated: 2026-07-13
+version: 0.1
+last_updated: 2026-09-10
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -20,8 +21,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Basis of taxation** — Residents are taxed on worldwide income; non-residents on Lesotho-source income only  _(Income Tax Act (https://taxsummaries.pwc.com/lesotho))_
 - **Headline personal income tax rates** — 20% and 30% (progressive, two-band) percent  _(Income Tax Act (https://www.rsl.org.ls/personal-income-tax))_
 - **Standard corporate income tax rate** — 25% percent  _(Income Tax Act (https://www.rsl.org.ls/corporate-income-tax))_
-- **Concessional CIT rate (manufacturing & commercial farming)** — 10% percent  _(Income Tax Act 1993, Third Schedule items 1 and 3 (manufacturing) and Fourth Schedule item 2 (commercial farming) — https://www.rsl.org.ls/sites/default/files/2024-05/Income%20Tax%20Act%201993%20%20Updated%20up%20to%201%20April%202012_0.pdf)_
-- **Zero-rated CIT band (manufacturing for export outside SACU)** — 0% on manufacturing income from activities relating **exclusively** to exports to a country outside the Southern African Customs Union. See `ls-corporate-income-tax`, which records that RSL's own corporate-tax guide contradicts the Act on this row  _(Income Tax Act 1993, Third Schedule item 2 — https://www.rsl.org.ls/sites/default/files/2024-05/Income%20Tax%20Act%201993%20%20Updated%20up%20to%201%20April%202012_0.pdf)_
+- **Concessional CIT rate (manufacturing & commercial farming)**: 10% percent  _(Income Tax Act 1993, Third Schedule items 1 and 3 (manufacturing) and Fourth Schedule item 2 (commercial farming): https://www.rsl.org.ls/sites/default/files/2024-05/Income%20Tax%20Act%201993%20%20Updated%20up%20to%201%20April%202012_0.pdf)_
+- **Export-manufacturing rate needs verification**: the 2012 consolidation prints 0% for manufacturing exclusively for export outside SACU, while RSL's 2025 corporate-tax notes state 10%. Post-2012 amendments have not been reconciled. Do not use 0% as a current operating rate; see `ls-corporate-income-tax` and its linked sources.
 - **Does VAT/GST exist?** — Yes — VAT, standard rate 15%  _(Value Added Tax Act 2001 (https://www.rsl.org.ls/value-added-tax-vat))_
 - **Annual income tax return deadline** — 30 June following the end of the tax year  _(Income Tax Act (https://www.rsl.org.ls/personal-income-tax))_
 - **VAT return / payment deadline** — 20th of the month following the tax period  _(Value Added Tax Act 2001 (https://www.rsl.org.ls/value-added-tax-vat))_

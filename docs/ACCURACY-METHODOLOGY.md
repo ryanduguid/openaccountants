@@ -2038,655 +2038,228 @@ Corpus effect, re-measured: authority citations 2,797 → **2,811**, secondary
 50 secondary**, having started at zero, and **both** its guides are off the
 single-source queue — which is now at **28**.
 
-## Bangladesh: a whole company form was missing, and its absence made a true sentence false
-
-`bd-company-formation.md` sat at **9 of 11** on one law firm's page. Bangladesh's
-Ministry of Law publishes the Companies Act 1994 section by section at
-`bdlaws.minlaw.gov.bd`, with a footnote against each amended section naming the
-amending act — so the authority is not just reachable, it shows its own history.
-
-The guide listed five entity types and omitted the sixth. **Part X-A, twelve
-sections (ss.392A–392L), inserted by s.9 of the Companies (Second Amendment) Act
-2020, creates the one-person company.** It has a mandatory nominee named in the
-memorandum with written consent; a rule that a natural person may form **only
-one**; the sole shareholder as director; one board meeting per half calendar
-year; and financial statements filed **within 180 days** of year end.
-
-The omission is what made another statement false. The guide said there is **"no
-statutory minimum paid-up capital (effectively as low as BDT 1)"**. That is true
-of a private or public company. For an OPC, s.392C sets paid-up capital at **not
-less than BDT 2,500,000 and not more than BDT 50,000,000**, plus a prior-year
-turnover band of **BDT 10,000,000 to 500,000,000**. A blanket claim about a
-jurisdiction is only as good as the list of forms it was checked against.
-
-Two further statements were right and incomplete in ways that change the answer.
-The fifty-member cap **excludes persons in the company's employment**, and
-**joint holders count as a single member** — so a company that looks over the
-line may not be. And "minimum 2 directors" holds only for an ordinary private
-company: s.90(1) requires **three** in a private company that is a **subsidiary
-of a public company**, which is the ordinary shape of a foreign group's
-Bangladeshi subsidiary. s.90(3) adds that only a **natural person** may be a
-director, so there are no corporate directors and the parent cannot sit on the
-board itself.
-
-### Two mistakes caught before committing, both about reading
-
-**A negative grep in an unfamiliar script is not evidence of absence.** Searching
-the consolidated Act for `একক ব্যক্তি` returned six hits, every one meaning
-"individual" in the definition of managing director. The conclusion drawn from
-that — *the Ministry of Law's database does not carry the 2020 amendment* — was
-written down and was wrong. The Act calls it **`এক ব্যক্তি কোম্পানী`**, without
-the doubled consonant, and searching the section index for that phrase returned
-**twelve** sections immediately. The failure was in the search string, not the
-database, and the wrong conclusion was about the *authority's completeness* —
-the kind of claim that, published, sends the next reader somewhere worse.
-
-**A proviso is not the rule.** The draft asserted that the Act's financial year
-is the calendar year, quoting *"অর্থ-বৎসর বলিতে পঞ্জিকা বৎসরকে বুঝাইবে"* from
-s.2. The quotation is real. It is the **proviso**, and it applies to **insurance
-companies only**. The clause itself defines a financial year, for a body
-corporate, as the period *"whether or not it is a full year"* for which the
-profit-and-loss account is laid before the annual general meeting. What exposed
-it was re-fetching the section and noticing that the opening words did not match
-the window quoted from — the first extraction had started mid-clause, at the
-proviso, and read it as the definition.
-
-That is the Armenian near-miss in a third costume. Twice there, the general rate
-article was not the end of the article; here, the start of the quotation was not
-the start of the clause. **The rule is the same each time: read from the
-beginning of the provision to the end of it, and check that what you quote
-begins where the provision begins.**
-
-### And the clause letters were not transliterated
-
-The Act is published in Bengali only — `?lang=en` returns the same Bengali page.
-The draft cited the private-company definition as `s.2(t)(iii)`, mapping `ট` to
-"t" by its sound. In an ordered list `ট` is the eleventh consonant, so the
-Roman-alphabet equivalent would be `(k)`, not `(t)`. Rather than guess which
-convention the Ministry uses, every clause is now cited by the definition it
-contains and the Bengali letter as printed — *"s.2(1), definition of
-'প্রাইভেট কোম্পানী' (clause ট)"*. **A citation a reader can follow beats a
-citation that looks more familiar**, and inventing a Roman letter for a clause
-nobody has published in Roman is how an unfalsifiable citation gets made.
-
-The lakh and crore figures were converted and then checked against an
-independent English statement of the same amounts before being written down —
-the Myanmar rule, applied to a second numbering system where a misread order of
-magnitude is a hundred-fold error inspection will not catch.
-
-### The leak grep found a second guide, and the second tree behind it
-
-Bangladesh has **two** formation guides: `bd-company-formation.md` and
-`bd-formation.md`, the latter a freelancer-facing guide whose entity table
-offered sole proprietor, partnership and private limited. It stated no
-contradicting number, so no checker here would ever flag it — but it presented a
-three-way choice in which the one-person company, the form built for a single
-owner, was absent. Both it **and** its hand-maintained `agent-skills/bd-formation`
-counterpart now carry the OPC column and a note saying plainly why a starting
-freelancer cannot use it: the BDT 10,000,000 prior-year turnover floor. Written
-twice, by hand, because `agent-skills/` inherits nothing.
-
-Corpus effect, re-measured: authority citations 2,811 → **2,830**, secondary
-4,715 → **4,713**. Bangladesh goes to **27 authority citations against 40**, and
-the single-source queue is at **27**.
-
-> **Those two numbers were re-run after the base changed underneath them.** PR
-> [#18](https://github.com/ryanduguid/openaccountants/pull/18) merged while this
-> section was being written, and `main` picked up two other pull requests'
-> Australian work at the same time, so the corpus the counts describe is not the
-> corpus they were first measured against. Re-running both sides on the new base
-> gives the same pair — 2,811 before, 2,830 after — which is a confirmation and
-> not a reason to skip the re-run. **The point of re-measuring is that you cannot
-> tell in advance which time it will have moved.**
-
-## DR Congo — the reduced VAT rate was wrong by a factor of eight
-
-`cd-vat-gst.md` carried seven citations. **Six pointed at the same commercial
-advisory blog post**, and it was the queue's ranking of that concentration that
-picked the file, not any figure looking wrong. Reading the statute found a number
-that was out by 8×.
-
-### What the statute says
-
-The DGI publishes its consolidated *Code des Impôts* (2023 edition) as a PDF on
-`dgi.gouv.cd`. Article 35 of Ordonnance-Loi n° 10/001, as amended by L.F. n°
-21/029 of 31 December 2021 and n° 22/071 of 28 December 2022, sets the rates:
-*"taux normal : 16% … taux réduit : **8%** … taux 0%, applicable aux exportations
-et opérations assimilées"*. The guide said the reduced rate was **1%**.
-
-The 8% band is not a description but a **schedule of customs tariff positions**
-printed in the article itself — 02.01 through 02.07 for meats and offal,
-0303.23.00 for frozen tilapia, 1006.20.00 and 1006.30.00 for husked and milled
-rice, and so on — followed by a limb that has nothing to do with food: *"à la
-vente des billets d'avion sur le trafic aérien national"*. Domestic air tickets
-were absent from the guide altogether.
-
-### The corroboration was found second, not first
-
-The DGI's own August 2025 taxpayer leaflet, *La Taxe sur la Valeur Ajoutée —
-Notions essentielles à retenir*, states the same three rates at §VI including the
-air-ticket limb. It is worth being clear about the order: **the leaflet was read
-after the Code, and would not have been sufficient on its own** — a leaflet is a
-summary, and the next finding is exactly what happens when you trust one.
-
-### An authority contradicting itself, recorded as a gap rather than resolved
-
-The same leaflet says at §II that members of the **liberal professions** are
-subject to VAT *"sans considération de leur chiffre d'affaires"*. That rule is
-art. 44 of Décret n° 011/42, and the DGI's own consolidated Code prints it inside
-square brackets marked ***"(Disposition désuète conformément à la L.F. n° 15/021
-du 31 décembre 2015)"*** — text the Code flags as spent.
-
-So the authority's current leaflet asserts a rule the authority's consolidated
-code marks as superseded. **The guide states neither version.** It records the
-conflict, names both documents, and leaves the question to a reviewer. Picking
-the leaflet because it is newer, or the Code because it is the legal text, would
-have produced a confident sentence with a coin-flip behind it. **A documented
-contradiction between two arms of the same authority is a finding; silently
-choosing one of them is not.**
-
-### Three smaller corrections the statute forced
-
-- **"Exceeding" versus "equal to or greater than."** The guide put the
-  registration threshold at turnover *exceeding* CDF 80,000,000. Art. 14 reads
-  *"chiffre d'affaires annuel **égal ou supérieur à** 80.000.000"*. A business at
-  exactly the threshold is inside the tax, and the guide put it outside. The same
-  article also carries a **two-year lock-in** on voluntary registration and a
-  **two-year tail** after turnover falls below the threshold, neither of which the
-  guide mentioned.
-- **Not a reverse charge.** The guide described imported services as
-  reverse-charged by the recipient "(approx — confirm)". Art. 23 requires the
-  non-resident to appoint an **approved resident representative, jointly and
-  severally liable**; the customer pays *"en cas de non désignation d'un
-  représentant"* — a default remedy, not the mechanism.
-- **Not a rollout.** The guide called e-invoicing a 2025 modernisation plan
-  "(approx — confirm)". Art. 58 has required a *facture normalisée produite par
-  les dispositifs électroniques fiscaux* since the 2022 Finance Law, and art. 38
-  makes it a **condition of deducting input tax**.
-
-### A mislabelled citation, caught by re-reading before writing
-
-Working notes had the carry-forward and no-refund rule at "décret arts. 140–141".
-Re-running the search before drafting put the primary rule at **art. 63 of the
-Ordonnance-Loi** — *"Le crédit d'impôt ne peut pas faire l'objet d'un
-remboursement au profit de l'assujetti et ne peut être cédé"* — with décret art.
-140 repeating it. Both exist and both say it; the *statute* is the citation, and
-a note written earlier in the session had reached for the implementing decree.
-**Notes taken during research are not citations until re-verified against the
-text at the moment of writing.**
-
-### And a category invented rather than looked up
-
-The rewrite was first written with `category: vat`. That value does not exist:
-`docs/skill-template.md` lists the vocabulary, and country-level VAT belongs under
-`international`. A grep confirmed `vat` appeared in exactly one file in the
-corpus — the one just written. **The vocabulary was two commands away and got
-guessed instead**, the same failure mode as the invented Bengali clause letter one
-section above, in a repo where nothing enforces `category` at all.
-
-Corpus effect: authority citations 2,830 → **2,867**, secondary 4,713 → **4,704**.
-`cd-tax-overview.md` carried the same VAT rate and filing deadline on commercial
-citations and was re-pointed to arts. 35 and 60 in the same commit — the
-jurisdiction-wide grep, which is what found it.
-
-## Lesotho — the numbers were right and three whole rules were missing
-
-`ls-corporate-income-tax.md` rested six of its seven numeric facts on one law
-firm's page. Reading the Income Tax Act 1993 as published by Revenue Services
-Lesotho **confirmed every rate the guide stated** — and found that confirming the
-stated numbers is not the same as the guide being right.
-
-### What was absent
-
-- **A rate band.** The Third Schedule has four rows, not two. Item 2 —
-  manufacturing income from activities relating *"exclusively to exports to any
-  country other than a country within the Southern African Customs Union"* — is at
-  **0%**. The guide described a two-rate system.
-- **A whole tax.** Section 87 imposes **advance corporation tax** on a resident
-  company paying a dividend, at `A × 100/(100−A)` where A is the non-manufacturing
-  Third Schedule rate — **33.33%** of the gross dividend — with a return due within
-  **seven days** of payment. The guide did not mention it.
-- **A withholding section.** Section 157 requires **5%** withholding on payments to
-  a resident contractor — construction, transport, plant hire, plumbing, roofing,
-  landscaping and more — subject to a monthly M3,000 test, a principal-residence
-  carve-out and exemption certificates. Any business paying a Lesotho builder
-  operates it. The guide listed five withholding rates and not this one.
-
-**A guide can be fully verified and still mislead by omission.** Every checker in
-this repo compares stated figures against sources; none of them can see a rule
-that is simply not there. The single-source queue found this file because of who
-was cited, not because anything it said was wrong.
-
-### The authority contradicts itself, and the contradiction is on one page
-
-RSL's *Guide on Corporate Tax* (June 2025) prints a rate table whose Rate column is
-**inverted relative to the explanatory notes directly beneath it**. The table puts
-manufacturing-for-export at 25% and "Other Income" at 10%; note (a) on the same
-page says 10% for manufacturing exports and note (b) says 25% for non-manufacturing
-companies. The Act and RSL's own website agree with the notes.
-
-This was checked rather than assumed to be an extraction artefact. Re-extracting
-the page with pdfminer's layout analysis and printing each text line with its `y`
-and `x` coordinates showed each rate positionally aligned with its own row: 10% at
-y=309.1, 0% at y=240.1, 10% at y=212.6, 25% at y=185.0, all at x=431.0 against four
-distinct row labels. **The document really does say it.** The guide follows the
-Act, states the conflict in a table of its own, and does not paper over it.
-
-### A public ruling that is right about structure and dated about rates
-
-RSL's *Withholding Tax Public Ruling* is the only RSL document that tabulates
-withholding rates — and it is dated **April 2010** and works its example at **14%
-VAT**, a rate Lesotho has since moved. Its account of *structure* is used (which
-section catches which payment, that "gross amount" means before VAT, that goods
-supplied incidentally to a service are swept in). Its **rates** are taken from the
-Act instead.
-
-That mattered. The ruling gives the 15% manufacturing-linked withholding for
-**royalties only**. Section 107(3), as substituted by s.9 of Act No. 2 of 1994,
-gives it for **interest, royalties and management charges** — three limbs. Had the
-ruling been treated as authoritative because it came from the authority, the guide
-would have narrowed a statutory relief by two thirds. **An authority's summary is
-a secondary source about its own statute.**
-
-### Two places where RSL's guidance is simpler than the law
-
-- **The provisional-tax instalment.** RSL's *Guide on Provisional Tax* says each
-  instalment is "30% of the Client's income tax liability for the preceding year".
-  Section 150(1) says **30% × (A − B)**, where B is so much of the preceding year's
-  liability as was already paid by **amounts withheld at source**. For a company
-  with substantial withholding credits those are materially different numbers.
-- **The branch rate.** 25% on branch profits is right, but it is the ordinary
-  corporate rate on the branch's income, **not a remittance tax** — and s.10(2)
-  denies a Lesotho branch of a non-resident company the manufacturing concession
-  altogether.
-
-### A worked example in an authority document that does not compute
-
-RSL's *Advanced Corporation Tax Guide* takes chargeable income of M100,000, states
-the resulting liability as M16,667 (25% of M100,000 is M25,000), then divides it by
-three to reach "M5,000 per quarter" (a third of M16,667 is M5,555.67). Neither step
-follows. The **rule** in that guide matches s.87 and is used; its **arithmetic** is
-flagged in the guide so a reader working through the example does not assume the
-error is theirs.
-
-### What could not be read, and is marked as such
-
-The most recent consolidation RSL publishes is the Act **updated to 1 April 2012**.
-RSL also lists *Income Tax (Amendment) Regulations No. 24 of 2026* — published as a
-**scanned image with no extractable text**, and no OCR is available in this
-environment. So the 25% and 10% figures are separately confirmed by RSL's current
-website, and **the 0% export band is not**. The guide carries a currency note
-saying exactly that, rather than presenting a 2012 schedule as current law.
-
-Corpus effect: authority citations 2,867 → **2,893**, secondary 4,704 → **4,694**,
-the single-source queue 26 → **25**. The jurisdiction-wide grep also re-pointed the
-non-resident rate and the fringe-benefits rate in `ls-income-tax.md` to the Act —
-the latter revealing that the 40% is applied to a **grossed-up** base under s.117,
-`A × 1/(1−B)`, not to the benefit's face value.
-
-### Qatar, attempted and deferred
-
-`qa-payroll-social.md` was taken first and set down. Qatar's GRSIA
-(`grsia.gov.qa`, also served as `daman.gov.qa`) resolves 200 and classifies as an
-authority, but its SharePoint site renders every content page in JavaScript and
-returns **403 on `/_api/web/lists`, `/_api/search/query` and `/_vti_bin/ListData.svc`**
-for anonymous callers; `sitemap.xml` and `robots.txt` both 404 into a SharePoint
-error page. The Ministry of Justice's Al-Meezan legal portal (`almeezan.qa`) does
-not resolve from this network, and `hukoomi.gov.qa` returns 403. **A reachable
-authority is not a readable one**, and the queue entry stands.
-
-> **Superseded later in the same session — see "Qatar — the block was the
-> renderer, not the authority" below.** Every diagnosis in the paragraph above is
-> accurate and the conclusion drawn from it was wrong: the pages render in
-> JavaScript, so a *renderer* was the missing piece, not access. Opened in a real
-> browser the same page lists twenty-five instruments. This entry is left standing
-> rather than edited away, because the mistake it records — **treating "curl
-> returned no content" as "the authority has no reachable content"** — is the
-> point. The rule it yields: when a page 200s with a large body and no data,
-> establish whether the failure is *access* or *rendering* before recording a
-> block.
-
-## Cayman Islands — a browser that solves proof-of-work, and five right numbers with wrong mechanics
-
-`ky-payroll-social.md` rested **all five** of its numeric facts on one commercial
-residents' site. The Cayman Islands Legislation portal
-(`legislation.gov.ky`) publishes every Act as a consolidated PDF — and sits behind
-a **Sucuri `sgcaptcha` interstitial** that answers `curl` with a 202 and a
-185-byte meta-refresh stub. The jurisdiction had been recorded as blocked.
-
-### How the block was cleared
-
-The interstitial turned out **not** to be a human CAPTCHA. Reading the stub showed
-no reCAPTCHA, hCaptcha or Turnstile, no form, and an inline script computing a
-hash in a Web Worker before posting to `sgsubmit_url` — a **proof-of-work
-challenge that any real browser solves unattended**. What was needed was a real
-browser, not a solver.
-
-`camofox-browser` (a REST wrapper around Camoufox, a Firefox fork) was installed
-for this. Three environment-specific obstacles had to be cleared, each worth
-recording because they will recur:
-
-1. **`api.github.com` returns 403 through the egress proxy**, so `camoufox fetch`
-   could not discover its own releases. The **release asset itself**, on
-   `github.com/.../releases/download/`, is reachable and honours byte ranges — the
-   680 MB browser was fetched directly and unpacked into the cache layout the
-   project's Dockerfile builds, with the archive's exact `content-length` checked
-   against the file on disk.
-2. **GeoIP is hardcoded on whenever a proxy is set.** Camoufox tries to derive
-   locale and timezone from the proxy's exit IP via public IP APIs, which the
-   policy proxy blocks — `"Failed to get a public proxy IP address from any API
-   endpoint."` A one-line local patch made it respect `CAMOFOX_GEOIP=0`.
-3. **Firefox could not reach anything, with `NS_ERROR_NET_RESET`**, while `curl`
-   succeeded from the same container. The fix was the browser's own protocol
-   negotiation: disabling **HTTP/2, HTTP/3 and Encrypted Client Hello**
-   (`network.http.http2.enabled`, `network.http.http3.enable`,
-   `network.dns.echconfig.enabled`) and routing through the agent proxy. The proxy
-   CA was installed via Firefox's `distribution/policies.json` `Certificates.Install`.
-
-With that, the challenge solved itself in under ten seconds, the resulting cookie
-was persisted to a storage-state file, and four consolidated Acts were downloaded
-through the same authenticated context. **A gate that looks like a CAPTCHA is
-worth reading before it is recorded as a block.**
-
-### Every stated figure was right; almost every mechanism was wrong
-
-This is the second guide in this session (after Lesotho) where verification
-confirmed the numbers and the reading found the real defects elsewhere.
-
-- **The pension split is not 50/50.** The guide said "generally split 5% employer
-  / 5% employee". The Act sets a **10% total** (s.47(3)(c)), a **5% employer
-  floor** (s.47(3)(b)) and a **5% member ceiling** (s.47(3)(a)) — an employer
-  paying more than 5% reduces the member's share, and the total stays 10%.
-- **The health-insurance "50% share" is a right of recovery, not a split.** Under
-  s.7 the employer is liable to the insurer for the **total cost** and may recover
-  *"not exceeding fifty per cent"* from the employee. For a **high-risk** employee
-  it may recover only the difference from a standard premium — the loading falls
-  on the employer. For **dependants** (s.8) it pays in full and may recover **all**
-  of it. The guide mentioned none of this and marked the employer share
-  "(approx — confirm)".
-- **Two exclusions were missing.** The nine-month relief applies only to someone
-  who is **neither Caymanian nor a permanent resident**; and **household
-  domestics** are excluded regardless of service length (s.25(2)(b)). An employee
-  with **two employers** generates contributions from each (s.25(4)).
-
-### An amendment on the statute book and not in force
-
-The Act's own footnote against s.25(2)(a) records that s.18(2)(i) of the **National
-Pensions (Amendment) Act, 2016**, which would cut the nine-month period to six,
-***"has not yet commenced"***. A source describing Cayman as a six-month rule is
-describing law that was enacted and never brought into force. **Enactment is not
-commencement**, and a consolidated text that flags the difference is doing the
-reader a service worth passing on.
-
-### A citation that would have been spent on arrival
-
-The **National Pensions (Maximum Pensionable Earnings) Order, 2022** looks exactly
-like the source of the guide's CI$87,000 cap. It is not. It prorated the maximum
-to **CI$21,750** for 1 October to 31 December 2022 and **expired on 31 December
-2022**, providing that the figure be read *"as if it had never been amended"*.
-The working hypothesis while reading it was that the guide's cap was a lapsed
-temporary measure — **and that was wrong**: s.3 of the Act carries CI$87,000 as the
-standing definition, with the Order as a temporary override. Checking the parent
-Act rather than stopping at the instrument settled it in both directions: it
-confirmed the figure **and** identified the citation that must not be used for it.
-
-Corpus effect: authority citations 2,893 → **2,915**, secondary 4,694 → **4,687**,
-the single-source queue 25 → **24**. The jurisdiction grep caught one leak —
-`cayman-tax.md` said "Pension: 10% split equally" and "aged 18-65" — now corrected
-and cited to the Act.
-
-## Qatar — the block was the renderer, not the authority
-
-`qa-payroll-social.md` rested seven of its nine facts on one law firm's news page.
-Qatar had been set down earlier in this same session as blocked: GRSIA
-(`grsia.gov.qa`, also served as `daman.gov.qa`) resolves 200 and classifies as an
-authority, but every content page renders in JavaScript, its SharePoint REST
-endpoints (`/_api/web/lists`, `/_api/search/query`, `/_vti_bin/ListData.svc`) all
-return 403 anonymously, and `sitemap.xml` and `robots.txt` 404 into a SharePoint
-error page. `curl` on the Laws & Legislations page returned a 696 KB shell with
-**zero** document links.
-
-The same page, opened in the browser installed for the Cayman work, rendered a
-register of **twenty-five instruments** with their PDF hrefs — including *Law No.
-(1) of 2022 regarding social insurance* and *Cabinet Resolution No. (3) of 2025
-issuing the executive regulations*. **The obstacle was never access; it was
-rendering.** Two conclusions worth carrying: a 200 with a large body is not
-evidence that a page has content, and "authority unreadable" should record which
-of the two failed.
-
-### Reading the Arabic
-
-pdfminer emits Arabic in visual order, so every extracted line arrives reversed.
-Reversing each line and then re-reversing the digit runs inside it produced
-readable text with intact numerals — enough to locate and quote the operative
-articles, each pinned by its own article-number marker rather than by proximity.
-
-### Every rate confirmed, and five rules found
-
-Article 11 confirms the whole of the previous version's arithmetic: contribution
-computed on contribution salary **not exceeding QAR 100,000**, total **21%**,
-being **7%** deducted from the insured person and **14%** paid by the employer,
-remitted *"within a period not exceeding the fifth of the month following"*. The
-art. 1 definition confirms contribution salary as **basic salary plus the social
-allowance and the housing allowance**.
-
-What the guide did not have:
-
-- **The self-employed are in the scheme.** Art. 1 defines the insured person as
-  every Qatari in government employment, **a private-sector worker, or a
-  self-employed person**, who pays for himself.
-- **The State can pay part of the employer's share.** The last paragraph of art.
-  11 lets the public treasury, with Cabinet approval, bear a proportion of the
-  contribution due from a **private-sector** employer.
-- **Late payment costs 2% a month** (art. 21), running from the due date to the
-  payment date.
-- **Contributing on understated salaries is treated as not contributing at all** —
-  art. 22 adds **10%** of the real contributions payable where an employer failed
-  to register, or paid on other than real salaries.
-- **One job only** — art. 10 limits an insured person working for several covered
-  employers to a single contribution.
-
-### The GCC claim pointed at the wrong law
-
-The previous version said the scheme "applies to Qatari (and GCC) national
-employees" and cited Law No. 1 of 2022 for both. The Qatari half is right. **GCC
-coverage is not in that Law**: it comes from Law No. 4 of 2007 as amended by Law
-No. 5 of 2021, which GRSIA lists as separate instruments. Those two were not read,
-and the guide says so rather than describing them. **A citation that is right
-about one half of a sentence is unfalsifiable about the other half** — the same
-defect this workstream documented in San Marino's monofase rates and in
-Bangladesh's ss.392B–392C link.
-
-### One figure deliberately not repeated
-
-The previous version noted that enrolments above the ceiling "may be
-grandfathered". No transitional provision to that effect appears in the Law. It
-may sit in the executive regulations, which were downloaded but not read in full.
-The guide records it as unverified instead of carrying it forward or deleting it.
-
-And one trap is flagged: **QAR 100,000 appears twice in the Law for different
-purposes** — art. 11's contribution-salary ceiling, and art. 57's cap on the
-aggregate where a person combines more than one pension, or a pension and a
-salary. Identical figures serving unrelated rules are exactly what gets conflated.
-
-Corpus effect: authority citations 2,915 → **2,928**, secondary 4,687 → **4,680**,
-the single-source queue 24 → **23**.
-
-## Burundi — an authority that was never down, and a statute no machine could read
-
-Burundi held **four** entries on the single-source queue, the largest cluster on
-it, and had been recorded as blocked because **`obr.bi` answered HTTP 200 with a
-182-byte PHP fatal error** — *"Application Instantiation Error: Failed to start the
-session because headers have already been sent"*. `bi-income-tax.md` carried an
-explicit warning that nothing in it had been put in front of a primary source.
-
-**Opened in a real browser the site works normally.** The failure was in whatever
-`curl` triggers, not in the site. Its *Lois et règlements* page carries the income
-tax law, the 2020 amendment, the VAT law, its 2020 amendment and the **Loi de
-Finances 2026/2027** — a complete legislative set for every guide in the
-jurisdiction.
-
-### Then the real obstacle appeared
-
-Every one of those documents is a **scanned image with no text layer**. `pdfminer`
-returns the 267-page Finance Act as 267 page-breaks and nothing else — 267
-characters for a 7.7 MB file. This is the case the earlier Vietnam and San Marino
-entries recorded as terminal ("no OCR is available here").
-
-It is not terminal any more: `pymupdf` renders pages and
-`rapidocr-onnxruntime` reads them, both pip-installable with no system packages.
-Quality on this French legal text ran 0.95–1.00 confidence.
-
-### The rule adopted for OCR'd figures
-
-**OCR output is not the same evidential quality as a text layer**, and a misread
-digit in a tax rate is precisely the failure this workstream exists to prevent. The
-rule applied throughout: **accept a figure only where the statute states it in
-words and digits together.** French legal drafting does this as a matter of course
-— *"trente pour cent (30%)"*, *"vingt-cinq millions de francs burundais
-(25 000 000 BIF)"* — and that redundancy is what makes an OCR'd numeral safe.
-
-It earned its keep immediately. Article 103's corporate rate scans as ***"(So%)"***
-and is readable as 30% only because *"trente pour cent"* sits beside it; elsewhere
-"(10%)" scanned as "(1o%)". **Every figure in the Burundi guides has that
-redundancy behind it, and figures that lack it — the VAT penalty ladder — are
-deliberately not restated.**
-
-A second, independent check fell out of the statute itself. The minimum tax is
-**1% of turnover**, triggered when net income falls below **turnover ÷ 30**. At a
-**30%** rate, tax on turnover ÷ 30 is exactly 1% of turnover. The three numbers
-only interlock if all three were read correctly, which corroborates the 30% that
-had scanned as "So%".
-
-### What the reading found
-
-- **The VAT registration threshold was out by a factor of four.** `bi-vat-gst.md`
-  said BIF 100,000,000; art. 271 of the Finance Act 2026/2027 says **BIF
-  25,000,000**. The old figure had nothing behind it structurally: **art. 37 of the
-  VAT law contains no threshold at all**, delegating it to ministerial instrument.
-  A threshold cited to "the VAT Law" is cited to a text that does not contain one.
-- **Two liability tests that ignore turnover.** Art. 271 also makes a taxpayer
-  automatically liable where **local purchases and/or imports**, or **stock on
-  hand**, exceed **BIF 50,000,000** — and forces them into the medium or large
-  taxpayer category. Neither appeared anywhere in the corpus.
-- **The progressive scale does not reach business income.** `bi-income-tax.md` said
-  Burundi applies its 0/20/30 scale to "employment, **business** and rental income".
-  Art. 21 applies it to **employment and rental** income; a natural person's
-  **business income is a flat 30%**, and for 2026/2027 a natural person under **BIF
-  25,000,000** of turnover is outside both, filing **quarterly at 1% of turnover**
-  under Finance Act art. 190.
-- **A company's rental income is not taxed at the corporate rate either.** Art. 103
-  excepts it and sends it to the art. 21 scale.
-- **"Minimum tax for loss-making years" understated it twice over.** It applies
-  *"quels qu'en soient ses résultats"*, expressly **including investment-code
-  beneficiaries**, with a **ten-year free-zone exception**.
-- **Electronic-communications services left VAT altogether** — a 20% specific tax
-  replaces it for 2026/2027 (Finance Act art. 187).
-
-### Two article headings that OCR would not give up
-
-Finance Act art. 190's *subject* — the words "les personnes physiques qui" — was
-dropped at 200 dpi. Re-running that single page at 320 dpi recovered it. Without
-the re-read the regime would have been described without knowing **who it applies
-to**.
-
-The quarterly-instalment article in the income tax law was worse: its heading is
-dropped at **both** 200 and 320 dpi, while the body of the rule scans cleanly. The
-surrounding sequence makes "130" the obvious inference, and the guide **does not
-make it** — the provision is cited as *Section 2, Paragraphe 1*, which is what
-could actually be read. **An inferred article number is indistinguishable from a
-verified one on the page**, which is the same defect as Bangladesh's invented Roman
-clause letters.
-
-### What is left, and why
-
-`bi-payroll-social.md` stays on the queue at 89%. The OBR publishes revenue law;
-**INSS is a different body and its social-security code is not on the OBR site**.
-The PAYE line is now cited to art. 21, a duplicated health-insurance bullet was
-removed, and the guide now says plainly that every INSS contribution figure is
-unverified rather than merely imprecise. **Naming the missing source is the
-deliverable when the source cannot be found.**
-
-Corpus effect across the Burundi work: authority citations 2,928 → **2,976**,
-secondary 4,680 → **4,657**, the single-source queue 23 → **20**, and Burundi from
-**four** entries to **one**.
-
-## Sierra Leone — a rate that was right for the wrong year, and wrong for half its taxpayers
-
-`sl-corporate-income-tax.md` rested six of its seven numeric facts on one law firm's
-page, and cited the seventh — the headline rate — to the Income Tax Act via
-**`mail.nra.gov.sl`**, a mail subdomain. The NRA's real site was recorded as
-unreachable (`curl` returned 000); in a browser it serves a complete legislative
-library.
-
-### The finding the queue exists to catch
-
-The guide stated **30%** and was labelled **tax year 2025**. For 2025 the resident
-company rate was **25%**. The Finance Act 2026 s.13(a) says so in terms: *"Part III
-by **repealing the 25%** relating to the rate of tax applicable to resident
-companies … and replacing it with 30%"*, applying to the financial year beginning
-2026.
-
-The 25% is attested twice more, independently: both the Finance Act 2023 and the
-Finance Act 2024 insert paragraphs *"immediately after the line relating to the
-**25% rate of tax for companies**"*. Three separate instruments agree the rate was
-25% before 2026.
-
-**And non-resident companies never moved.** The Finance Act 2026 amends the Second
-Schedule **Part II** (withholding) and leaves **Part I** — *"Rates of tax on
-chargeable income of non-resident … 25%"* — untouched. The guide put non-residents
-at 30% as well. **One amendment, read as though it applied to everyone.**
-
-### Why the citation could not have revealed any of it
-
-**The NRA publishes no consolidation later than 2017.** Every rate after that date
-has to be assembled from the individual Finance Acts, which the NRA posts separately.
-So a figure cited to "the Income Tax Act 2000" is cited to a text that is nine years
-stale on rates, and gives no sign of it. The guide now names the **amending Act
-beside each figure** rather than the principal Act alone.
-
-Reading them in sequence also showed the withholding schedules had been **repealed
-and replaced wholesale** in 2024, and four non-resident lines raised to 20% in 2026.
-The guide's contractor rates — **6.5%** resident and **11.5%** non-resident — appear
-in no instrument read: the schedules say **5%**, and **10%** rising to **20%**.
-
-### Two corrections that came from reading the operative section, not the schedule
-
-The minimum tax is **2%**, not "around 3%". More importantly, its **scope changed in
-2026**: under the Finance Act 2024, s.7A(1) caught a company only *"where a company
-… **makes an allowable loss** under section 32A"*; the Finance Act 2026 replaced that
-subsection with a plain **"the higher of"** test and no loss condition. **A
-consistently profitable company with thin margins is now inside a charge it was
-previously outside.**
-
-The Part III **rate line still says** *"applicable to companies **reporting losses
-the previous year**"* — the 2024 wording, which the 2026 Act did not touch when it
-rewrote the charging section. **The charging section and the rate line now describe
-different populations**, and the guide says so rather than picking silently.
-
-### A footnote that nearly supplied a stale rule
-
-The 120-day filing deadline first turned up inside a **footnote** recording the text
-of s.97 *as it read before the Finance Act 2017 substituted it*. Quoting from there
-would have been quoting a repealed provision that happens to sit in the same
-document. The operative s.97(1) in the body of the Act was read separately and does
-say 120 days — but **the deadline is confirmed because the current section was read,
-not because the footnote agreed**. That is the Bangladesh proviso lesson in a new
-costume: a real quotation from a real statute can still be the wrong text.
-
-### And one figure deliberately not converted
-
-**Sierra Leone redenominated the leone in 2022, dropping three zeros**, and the
-instruments do not share a convention: the Finance Act 2024 uses old `Le` 111 times
-against a single `NLe`, while the Finance Acts 2025 and 2026 are written in `NLe`.
-**The same nominal figure means a thousandfold different amount depending on which
-instrument it came from.** The guide therefore states **no leone threshold as a
-number** — the audited-accounts threshold is given by description — and the previous
-version's "NLe 500" contractor threshold, which matched no provision found, is not
-repeated. **A converted figure looks exactly as authoritative as a read one.**
-
-Corpus effect: authority citations 2,976 → **2,994**, secondary 4,657 → **4,650**,
-the single-source queue 20 → **19**. The jurisdiction grep also re-pointed
-`sl-tax-overview.md`, which stated the 30% flatly, and `sl-income-tax.md`, whose
-non-resident employment rate is now cited to Second Schedule Part II — one of the
-few non-resident lines the 2026 Act left alone.
+## Six-jurisdiction source review, September 2026
+
+This pass replaces secondary citations with primary provisions in Bangladesh,
+DR Congo, Lesotho, Cayman Islands, Qatar and Burundi. Source access and statutory
+interpretation were checked separately. All affected guides remain drafts pending
+local-accountant review; a reachable authority website does not establish that
+every rule in its documents is current.
+
+### Bangladesh company formation
+
+The Ministry of Law publishes the Companies Act 1994 section by section.
+Part X-A, inserted in 2020, provides for a one-person company. Sections 392B–392J
+cover its single natural-person owner, nominee, capital and prior-year turnover
+bands, director, meetings, accounts and audit. The ordinary private-company
+capital statement cannot be applied to an OPC.
+
+The private-company member limit excludes employees and counts joint holders
+once. Section 90 requires three directors for a public company and a private
+subsidiary of a public company, and two for other private companies. The Act's
+domestic definition does not, by itself, settle a foreign parent's classification.
+The financial-year definition permits a period shorter than a full year; the
+calendar-year proviso concerns insurance companies.
+
+Two reading errors informed the review. Searching for the wrong Bengali spelling
+missed the OPC provisions, and extracting only a proviso misrepresented the
+financial-year definition. Citations retain the Bengali definition names and
+clause letters instead of inventing Roman equivalents. Lakh and crore amounts
+were converted explicitly: 25 lakh is BDT 2,500,000 and five crore is BDT 50,000,000.
+The OPC conditions and filing references were also added to the existing
+freelancer formation guide and its hand-maintained agent skill.
+
+Sources: [section 2](http://bdlaws.minlaw.gov.bd/act-788/section-32006.html),
+[section 90](http://bdlaws.minlaw.gov.bd/act-788/section-32914.html),
+[section 392B](http://bdlaws.minlaw.gov.bd/act-788/section-50102.html),
+[section 392C](http://bdlaws.minlaw.gov.bd/act-788/section-50103.html),
+[section 392I](http://bdlaws.minlaw.gov.bd/act-788/section-50109.html) and
+[section 392J](http://bdlaws.minlaw.gov.bd/act-788/section-50110.html).
+
+RJSC administrative deadlines, BIDA conditions, fees and a new venture's treatment
+under the prior-year turnover requirement still need confirmation.
+
+### DR Congo VAT
+
+Article 35 of Ordonnance-Loi n° 10/001 sets an 8% reduced rate for the listed
+tariff positions and domestic air tickets. The previous guide gave 1%. Article 14
+includes turnover exactly equal to CDF 80,000,000, permits a two-year registration
+option below the threshold and retains registration for the two years following
+a turnover decline. Article 23 requires an approved representative for a
+non-established supplier and makes the customer liable if none is appointed.
+
+The review corrected three further distinctions. Article 59 makes an issuer
+liable for VAT stated on an invoice; its denial of recipient deductions concerns
+fictitious supplies or prices not actually payable, rather than all VAT invoices.
+Article 62 provides separate treatment for mining-company imports other than
+petroleum products. The 2022 normalised-invoice amendment did not establish its
+operational rollout date: DGI's November 2025 announcement specifies 1 December
+2025. Earlier transactions need the applicable transitional directions.
+
+Sources: [DGI Code des Impôts, 2023 edition](https://dgi.gouv.cd/wp-content/uploads/2025/10/CODE-DES-IMPOTS-2023.pdf),
+[DGI August 2025 VAT leaflet](https://dgi.gouv.cd/wp-content/uploads/2025/10/TVA-CORRIGE.pdf)
+and [DGI rollout announcement](https://dgi.gouv.cd/carnaval-de-sensibilisation-sur-lexigence-et-lemission-obligatoire-de-la-facture-normalisee-a-partir-du-1er-decembre-2025/).
+
+The leaflet imposes VAT on liberal professions regardless of turnover, while the
+2023 Code marks the corresponding implementing-decree provision as spent. That
+conflict remains unresolved. Later ministerial changes to the threshold also need
+confirmation before use.
+
+### Lesotho income tax
+
+The RSL consolidation ends at 1 April 2012. Its Third Schedule prints a 0%
+export-manufacturing rate, while the 2025 corporate-tax guide's explanatory notes
+give 10%. The guide also contains an internal rate-table conflict: PDF page 2
+shows export manufacturing at 25% and other income at 10%; page 3 states 10%
+and 25% respectively. The page images confirm that this is not caused by text
+extraction. Coordinates from the Act's table must not be presented as evidence
+about the separate guidance PDF.
+
+The operational guides now mark the 0% provision as historical and unresolved.
+Legislation governs as amended, but a 2012 consolidation cannot settle a current
+conflict without checking intervening amendments. RSL guidance independently
+supports the ordinary 25% company rate and 10% manufacturing and farming rates.
+
+Sections 85 and 87 establish advance corporation tax on distributions outside
+qualified income, at 25/75 of the taxable dividend when the standard rate is 25%.
+That is exactly one-third, rather than a rounded 33.33% computation. The seven-day
+return period runs from dividend payment. Sections 107–109 distinguish gross
+withholding from an elective net assessment; choosing the latter requires a
+calculation using actual deductible expenses. Section 150 instalments use
+30% × (A − B), accounting for prior-year withholding.
+
+Sources: [Income Tax Act, consolidation to April 2012](https://www.rsl.org.ls/sites/default/files/2024-05/Income%20Tax%20Act%201993%20%20Updated%20up%20to%201%20April%202012_0.pdf),
+[corporate-tax guide](https://www.rsl.org.ls/sites/default/files/2025-06/Guide%20on%20Corporate%20Tax.pdf),
+[ACT guide](https://www.rsl.org.ls/sites/default/files/2024-07/Advanced%20Corporation%20Tax%20Guide.pdf)
+and [provisional-tax guide](https://www.rsl.org.ls/sites/default/files/2025-06/Guide%20of%20Provisional%20Tax.pdf).
+
+Post-2012 amendments, the export rate and the prescribed penalty rates remain
+review gaps. The different penalty percentages in RSL guides are not sufficient
+to reconcile their application.
+
+### Cayman pension and health insurance
+
+The legislation portal returned documents in a browser after direct requests had
+failed. That access failure did not establish that the authority was unavailable.
+The National Pensions Act separates the required defined-contribution total from
+the employer floor and the employee limit without express consent. Additional
+voluntary contributions are allowed. Defined-benefit funding has separate
+actuarial requirements. Household-domestic exclusions carry a status condition;
+they do not exclude every domestic worker.
+
+Health Insurance Act section 7 makes the employer liable for the premium and
+permits recovery from the employee. For standard cover, recovery cannot exceed
+50%. For a high-risk employee, section 7(ii) uses the difference between the
+actual premium and the employer's liability under a standard contract if the
+employee were not high risk. It does not establish that the employer bears the
+whole loading. Section 8 separately permits recovery of the total dependant
+premium for cover effected under section 5(2).
+
+Sources: [National Pensions Act, 2024 Revision](https://legislation.gov.ky/cms/images/LEGISLATION/PRINCIPAL/1996/1996-0010/1996-0010_2024%20Revision.pdf)
+and [Health Insurance Act, 2021 Revision](https://legislation.gov.ky/cms/images/LEGISLATION/PRINCIPAL/1997/1997-0015/1997-0015_2021%20Revision.pdf).
+
+The 2024 consolidation marks the six-month pension amendment as uncommenced.
+Later commencement orders, current health premium amounts and work-permit fee
+scales were not exhaustively verified.
+
+### Qatar social insurance
+
+Law No. 1 of 2022 confirms the 21% total contribution, split 7% employee and
+14% employer, with a general QAR 100,000 contribution-salary ceiling. Article 12
+adds a QAR 6,000 monthly cap on the housing allowance included in that salary.
+Article 13 expressly preserves existing contribution salaries above the general
+ceiling until actual termination of service. A claim that grandfathering could
+not be found in the law was incorrect.
+
+Article 4 makes self-employed participation optional and provides for income
+bands and full payment by the participant. Employee eligibility under articles
+2–3 and exclusions under article 5 must be checked separately. GCC coverage
+rests on Law No. 4 of 2007 as amended by Law No. 5 of 2021. It prevents a blanket
+statement that every non-Qatari employee has no social-insurance obligation.
+
+The Gazette header identifies issue 7 dated 3 July 2022. The issuing law's
+article 4 provides commencement six months after publication, with specified
+exceptions. Article 11 authorises a Cabinet-approved State contribution towards
+private-sector employer costs; no implemented subsidy was verified.
+
+Source: [GRSIA, Law No. 1 of 2022](https://www.grsia.gov.qa/Regulations%20and%20Policies/Law-1-2022.pdf).
+The GCC system, detailed housing settlements, executive regulations and
+expatriate end-of-service treatment still require further review.
+
+### Burundi income tax and VAT
+
+The OBR website and legislation register returned in the browser. Its tax laws
+are scans, so OCR helped locate passages and page images supplied the check.
+Agreement between words and digits can expose an OCR error, but does not prove
+that a rate applies to the right taxpayer. Arithmetic checks cannot establish
+the legal scope either.
+
+The review found that article 23's 15% capital-income rate belongs to individuals.
+Company capital income and gains fall within article 98 and the article 103
+company rules, subject to their exceptions. Article 102 governs final corporate
+non-resident withholding under articles 122–125. Article 130, legible on PDF
+page 42, provides three 25% provisional instalments with withholding credits.
+
+Article 21 contains annual employment and rental-income bands. Article 117
+expressly sets monthly payroll bands, including exceptional payments. The monthly
+thresholds are not conditional on equal pay across twelve months. Articles 118
+and 119 address non-principal and occasional employers separately. The upper-band
+calculation must include the tax from the preceding band.
+
+Finance Act 2026/2027 article 190 applies quarterly 1% turnover tax to qualifying
+natural persons with annual turnover up to BIF 25,000,000. Article 271 makes VAT
+registration compulsory at taxable turnover of BIF 25,000,000 or more and has
+separate purchases, imports and stock tests. At the exact threshold the income-tax
+and VAT regimes may overlap; they do not switch together. The guides label these
+Finance Act provisions as 2026/2027 rules rather than applying them to 2025.
+
+The VAT law sets ordinary, intermediate and zero rates of 18%, 10% and 0%.
+Specified categories depend on ministerial lists. Articles 52 and 54 govern
+monthly filing and payment, and article 67 addresses deregistration. The
+100% and 200% penalties in articles 55–56 concern specified electronic-invoicing
+breaches and must not be presented as a universal VAT penalty.
+
+Sources: [income tax law amended in December 2020](https://www.obr.bi/images/LOI_N1_14_DU_24_DECEMBRE_2020_PORTANT_MODIFICATION_DE_LA_LOI_N1_02_DU_24_JANVIER_2013_RELATIVE_AUX_IMPOTS_SUR_LES_REVENUS_1.pdf),
+[VAT law amended in November 2020](https://www.obr.bi/images/LOI_N1_10_DU_16_NOVEMBRE_2020_PORTANT_MODIFICATION_DE_LA_LOI_N1_12_DU_29_JUILLET_2013_PORTANT_REVISION_DE_LA_LOI_N1_02_DU_17_FEVRIER_2009_PORTANT_INSTITUTION_DE_LA_TAXE_SUR_LA_VALEUR_AJOUTEE_TVA_.pdf)
+and [Finance Act 2026/2027](https://www.obr.bi/images/LOI_DE_FINANCES_2026-2027_PROMULGUEE_compressed.pdf).
+
+INSS contribution rates and caps, the ministerial VAT lists and the detailed
+penalty ladder remain unverified. The payroll guide retains explicit warnings
+for conflicting secondary-source social-contribution figures.
+
+## Sierra Leone concurrent update and review
+
+A concurrent commit added Sierra Leone while this review was underway. It was
+preserved and reviewed against the NRA's Finance Acts. Finance Act 2026 section
+13 changes the resident company rate from 25% to 30%, effective 1 January 2026.
+Section 14 raises the non-resident contractor, dividend, interest and
+management/professional fee withholding rates to 20%. These changes must remain
+separate from the 2025 columns and the non-resident ordinary income rate.
+
+The concurrent draft said the section 97 amendment could not be read. It is
+printed on page 7, on the right of the PDF spread whose left side is page 42.
+Section 8 replaces section 97(3) with prescribed return requirements and adds
+section 97(6)(d) for related-party files. The 2017 certified-accounts provision
+must not be presented as the current subsection. Section 97(1)'s 120-day rule
+is not amended by section 8.
+
+The master file is due within one month after filing in the parent's residence
+country, the local file within two months after the annual return, and the
+country-by-country report within one year after the relevant tax year ends.
+Applicable Gazette directions and reporting scope still need confirmation.
+
+The draft also inferred currency units from counts of `Le` and `NLe`. Those
+labels do not establish that every 2024 amount is in old leones. Monetary
+thresholds remain unconverted until their units are verified.
+
+Source: [NRA Finance Act 2026](http://webtestcms.nra.gov.sl/uploads/The_Finance_Act_2026_121df05d9b.pdf),
+sections 1, 8 and 12–14. The three Sierra Leone guides remain pending review.
+
+The minimum-tax review also checked the provisions left in force. Finance Act
+2025 section 8 preserves initial incorporation and liquidation exemptions and
+protection for existing investment agreements until expiry or review. Finance
+Act 2024 section 8 supplies turnover exclusions and non-refundable credits for
+the following ten years. Removing the loss condition in 2026 does not remove
+those other provisions.
+[Finance Act 2024](http://webtestcms.nra.gov.sl/uploads/The_Finance_Act_2024_0d6d83e684.pdf),
+[Finance Act 2025](http://webtestcms.nra.gov.sl/uploads/The_Finance_Act_2025_beb680faed.pdf).
