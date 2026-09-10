@@ -16,6 +16,7 @@ authority citation does not prove the figures came from it. Always exits 0.
 
 Usage: python3 scripts/list-source-mix.py [--selftest] [--jurisdiction NAME]
        python3 scripts/list-source-mix.py --unclassified   # allowlist candidates
+       python3 scripts/list-source-mix.py --load-bearing   # entries to check first
 """
 import os, re, sys, collections
 
@@ -34,21 +35,34 @@ GOV = re.compile(
 # secondary. NCCPL is the case that prompted the list -- it is the entity that
 # computes and deducts Pakistan's securities CGT, and its notification is more
 # authoritative for that tax than any summary of it, but it is a .com.
-# The list below was built by measurement, not by guessing: every entry is a
-# domain this corpus actually cites, and each was verified before being added.
-# The first version of this script had only a handful and consequently reported
-# that 76% of citations were secondary and that 41 jurisdictions cited no
-# authority at all. Both were wrong. Botswana was top of that list while citing
-# burs.org.bw, its own revenue service; Estonia's tax board (emta.ee) is the
-# corpus's most-cited authority after the IRS and scored as secondary.
+# The test for an entry: the domain belongs to the body that MAKES,
+# ADMINISTERS or COLLECTS the charge the guide cites it for, or publishes the
+# official text of the law. Not "the site is about tax in that country".
 #
-# The measurement has been corrected five times since, always in the same
-# direction -- the corpus cites more authority than the checker could see.
-# Andorra and Kosovo were still on the zero-authority list while citing
-# impostos.ad and atk-ks.org, their own tax administrations, and Armenia while
-# citing src.am. Run --unclassified to re-derive candidates when guides are
-# added; this list will always be incomplete, which is why the authority count
-# is a floor, never a ceiling.
+# The first version of this script had only a handful of entries and
+# consequently reported that 76% of citations were secondary and that 41
+# jurisdictions cited no authority at all. Both were wrong. Botswana was top of
+# that list while citing burs.org.bw, its own revenue service; Estonia's tax
+# board (emta.ee) is the corpus's most-cited authority after the IRS and scored
+# as secondary. Andorra and Kosovo were still on the list while citing
+# impostos.ad and atk-ks.org.
+#
+# Every correction went the same way -- the corpus cites more authority than the
+# checker could see -- until a code review found manao.mg on this list, added
+# from its name as a "Madagascar tax portal". Manao sells management software.
+# It was Madagascar's ONLY scored authority, so one wrong entry took a
+# jurisdiction off the queue this script exists to produce. Three more went the
+# same way: startup.sm (San Marino Management Srl), camcom.sm (a mixed
+# public-private S.p.A.) and palgakalkulaator.ee, a salary calculator with no
+# stated publisher, cited as the source for Estonia's statutory minimum wage.
+#
+# So the error runs in both directions, and they are not symmetric. A missing
+# entry over-reports risk and someone eventually notices; a wrong entry silently
+# removes a jurisdiction from the queue, and nothing ever looks at it again.
+# Run --load-bearing to see which entries a jurisdiction's whole score rests on:
+# check those hardest, because those are the ones a mistake hides. Run
+# --unclassified to re-derive candidates when guides are added. This list will
+# always be incomplete, which is why the authority count is a floor.
 NON_GOV_AUTHORITY = frozenset((
     # Revenue and tax administrations
     'emta.ee',            # Estonian Tax and Customs Board
@@ -149,25 +163,40 @@ NON_GOV_AUTHORITY = frozenset((
     'rdb.rw', 'org.rdb.rw', 'businessprocedures.rdb.rw',   # Rwanda Development Board
     'en.caisses-sociales.mc',  # Monaco social funds
     'socialsecurity.org.bz', 'pensionfund.sc', 'sozialfonds.li',
-    'mirovinsko.hr', 'pensionikeskus.ee', 'palgakalkulaator.ee',
+    'mirovinsko.hr',
+    'pensionikeskus.ee',  # AS Pensionikeskus is a private company, but it is
+                          # the statutory registrar of the II pillar and where
+                          # the employee's 2/4/6% election is made, so it
+                          # administers the charge the guides cite it for.
     # Second pass over --unclassified. Tajikistan reached the zero-authority
     # list while citing andoz.tj, its own tax committee, for the same reason
     # Botswana did.
     'andoz.tj',           # Tajikistan, Tax Committee (andoz = tax)
-    'manao.mg',           # Madagascar tax portal
     'revenue.ie',         # Irish Revenue Commissioners
     'ontario.ca',         # Government of Ontario
     'enpf.co.sz',         # Eswatini National Provident Fund
     'cnps.ci',            # Cote d'Ivoire social security
     'pacra.org.zm',       # Zambia companies registry
     'cipa.co.bw',         # Botswana Companies and IP Authority
-    'camcom.sm',          # San Marino chamber of commerce (business registry)
     'nrbf.to',            # Tonga National Retirement Benefits Fund
     'boi.org.il',         # Bank of Israel
     'moj.gm',             # Gambia Ministry of Justice
-    'startup.sm',         # San Marino government startup portal
-    'lmis.gm',            # Gambia labour market information (government)
+    'lmis.gm',            # Gambia Labour Market Information System, run by the
+                          # Ministry of Trade, Industry, Employment and Regional
+                          # Integration with GBoS, the NTA and the SSHFC.
 ))
+
+# Removed from the list above after a code review, and kept here so the same
+# names are not re-proposed from their shape. Each was scored as an authority
+# and is not one; the first two were the only thing keeping their jurisdiction
+# off the zero-authority queue.
+#
+#   manao.mg            Manao sells accounting and payroll software (Madagascar)
+#   startup.sm          "(c) San Marino Management Srl", a private company
+#   camcom.sm           "societa a capitale misto pubblico-privato" -- an
+#                       economic development agency, not the Ufficio Tributario
+#   palgakalkulaator.ee a salary calculator naming no publisher, cited as the
+#                       source for Estonia's statutory minimum wage
 
 # Whole domains where every subdomain is the same authority. chinhphu.vn is the
 # Government of Vietnam's portal and its subdomains carry the gazette
@@ -316,6 +345,14 @@ def selftest():
     # as well as one that read the authority's rate table. The count is a
     # measure of exposure, not of diligence.
     assert classify('ato.gov.au') == 'authority'
+
+    # A site being about tax in a country does not make it that country's
+    # authority. Each of these was on the allowlist and was removed; the first
+    # two were the only thing keeping their jurisdiction off the queue.
+    assert classify('manao.mg') == 'secondary'            # sells software
+    assert classify('www.startup.sm') == 'secondary'      # a private Srl
+    assert classify('www.camcom.sm') == 'secondary'       # development agency
+    assert classify('www.palgakalkulaator.ee') == 'secondary'   # no publisher
     print('selftest: domain classification passes (1 documented limit)')
 
 
@@ -370,6 +407,48 @@ def unclassified(minimum=3):
     return 0
 
 
+def load_bearing():
+    """List allowlist entries a jurisdiction's entire authority score rests on.
+
+    manao.mg is why this exists. It was added from its name, it is a software
+    vendor, and it was the ONLY domain scoring as an authority for Madagascar --
+    so one unchecked entry removed a jurisdiction from the zero-authority queue
+    and nothing in the tool could say so. The same was true of startup.sm and
+    camcom.sm for San Marino.
+
+    The asymmetry is the point. A missing entry over-reports risk, and the
+    jurisdiction stays on a list somebody reads. A wrong entry under-reports it,
+    silently, forever. Sorting the allowlist by what it is holding up says where
+    a mistake is expensive, so review effort goes there first.
+    """
+    counts, domains = scan()
+    holds = collections.defaultdict(list)
+    for jur, per_jur in domains.items():
+        auth = [(d, n) for d, n in per_jur.items() if classify(d) == 'authority']
+        if len(auth) != 1:
+            continue
+        d, n = auth[0]
+        bare = d[4:] if d.startswith('www.') else d
+        if GOV.search(bare):
+            continue          # a .gov domain is not an allowlist judgement
+        entry = next((a for a in sorted(NON_GOV_AUTHORITY) + list(AUTHORITY_SUFFIX)
+                      if bare == a or bare.endswith('.' + a)), bare)
+        holds[entry].append((jur, n, len(per_jur)))
+    print('Allowlist entries holding a jurisdiction off the zero-authority '
+          'queue on their own (%d):' % len(holds))
+    print()
+    for entry in sorted(holds, key=lambda e: (-len(holds[e]), e)):
+        print('  %s' % entry)
+        for jur, n, total in sorted(holds[entry]):
+            print('      %-28s cited %d time%s; %d domains cited in all'
+                  % (jur, n, '' if n == 1 else 's', total))
+    print()
+    print('Verify each against the test at the top of this file: does the '
+          'domain belong to the body that makes, administers or collects the '
+          'charge? If not, remove it -- the jurisdiction belongs on the queue.')
+    return 0
+
+
 def main(only=None):
     counts, domains = scan()
     if only:
@@ -404,6 +483,8 @@ if __name__ == '__main__':
         selftest()
     elif '--unclassified' in sys.argv:
         sys.exit(unclassified())
+    elif '--load-bearing' in sys.argv:
+        sys.exit(load_bearing())
     else:
         j = None
         if '--jurisdiction' in sys.argv:

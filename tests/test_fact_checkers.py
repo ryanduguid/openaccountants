@@ -153,6 +153,55 @@ class FactCheckerTests(unittest.TestCase):
         self.assertIn("zero-authority", output)
         self.assertIn("impostos-example.ad (1)", output)
 
+    def test_a_site_about_a_countrys_tax_is_not_that_countrys_authority(self):
+        # manao.mg went on the allowlist as a "Madagascar tax portal", from its
+        # name. Manao sells accounting software. It was the only domain scoring
+        # as an authority for Madagascar, so one unchecked entry removed a
+        # jurisdiction from the queue this script exists to produce — the
+        # failure the allowlist can cause and never report.
+        output = self.run_checker("list-source-mix.py", {
+            "mg/vat.md": "- **TVA** - 20% _(https://manao.mg/fr/tva)_\n",
+        })
+        self.assertIn("citations: 0 authority, 1 secondary", output)
+        self.assertIn("citing no authority domain at all: 1", output)
+
+    def test_load_bearing_names_the_entry_a_jurisdiction_rests_on(self):
+        # A missing allowlist entry over-reports risk and someone notices. A
+        # wrong one under-reports it silently. --load-bearing ranks the entries
+        # by what they are holding up, so the expensive mistakes get reviewed.
+        output = self.run_checker("list-source-mix.py", {
+            "bi/cit.md": (
+                "- **CIT** - 30% _(https://www.obr.bi/rates)_\n"
+                "- **VAT** - 18% _(https://taxatlas.io/burundi)_\n"
+            ),
+            "ee/pit.md": (
+                "- **PIT** - 22% _(https://www.emta.ee/rates)_\n"
+                "- **Filing** - March _(https://www.eesti.ee/filing)_\n"
+            ),
+        }, extra_args=["--load-bearing"])
+        self.assertIn("obr.bi", output)
+        self.assertRegex(output, r"bi\s+cited 1 time;")
+        # Estonia cites two authorities, so neither is load-bearing alone.
+        self.assertNotIn("emta.ee", output)
+
+    def test_show_prints_the_rows_the_scan_counts(self):
+        # heads_in() learned that a dedicated withholding guide does not repeat
+        # the word in every row label; show() kept the old label-only test, so
+        # `--show` dropped the entire rate table it was meant to display. A
+        # diagnostic that under-reports against its own checker reads as proof
+        # the rows are absent.
+        guide = (
+            "| Payment type | Default rate | Section |\n"
+            "| Services -- individuals | 30% | 164 |\n"
+            "| Rent -- commercial | 35% | 170 |\n"
+        )
+        output = self.run_checker("list-withholding-scope.py", {
+            "il/il-tax-withholding.md": guide,
+        }, extra_args=["--show", "il"])
+        self.assertIn("Services -- individuals", output)
+        self.assertIn("Rent -- commercial", output)
+        self.assertIn("2 withholding-labelled line(s) in il", output)
+
     def test_midyear_changes_uses_each_jurisdictions_own_tax_year(self):
         # 1 August is mid-year for a calendar-year country and gets reported;
         # 1 July is the first day of Australia's year and does not. Without the

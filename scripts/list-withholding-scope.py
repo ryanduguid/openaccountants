@@ -317,6 +317,14 @@ def show(jur, root='skills'):
     A resolution to read more carefully has now failed twice, so this is the
     mechanism instead: run --show before editing, read every line it prints,
     and only then write about what a guide omits.
+
+    So it has to show at least what scan() counts. It did not: when heads_in()
+    learned that a dedicated withholding guide need not repeat the word in every
+    row label, this function kept the old label-only test, and `--show israel`
+    silently dropped the whole rate table -- services, rent, royalties, interest,
+    dividends -- that the summary was counting. A diagnostic that under-reports
+    relative to the checker it explains is worse than none: it reads as proof
+    the rows are absent. The same guide-level flag applies here.
     """
     seen = 0
     for dp, _, fns in sorted(os.walk(root)):
@@ -326,11 +334,19 @@ def show(jur, root='skills'):
         for fn in sorted(fns):
             if not fn.endswith('.md'):
                 continue
+            in_wht_guide = bool(WHT_FILE.search(fn))
             path = os.path.join(dp, fn)
             with open(path, encoding='utf-8', errors='replace') as fh:
                 for n, line in enumerate(fh, 1):
                     m = BULL.match(line) or ROW.match(line)
-                    if not m or not LABEL.search(m.group(1)):
+                    if not m:
+                        continue
+                    # A label that says "withholding" always qualifies, even
+                    # when it commits to no rate -- a cross-reference is worth
+                    # reading. Inside a dedicated guide, a row that commits to a
+                    # rate qualifies on that alone, which is what scan() counts.
+                    if not (LABEL.search(m.group(1))
+                            or (in_wht_guide and VALUE.search(m.group(2)))):
                         continue
                     heads = {name for name, pat in HEADS
                              if re.search(pat, m.group(1), re.I)}
