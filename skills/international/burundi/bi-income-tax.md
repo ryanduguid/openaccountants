@@ -91,6 +91,29 @@ _(Loi de Finances 2026/2027 (loi n° 1/10 du 30 juin 2026), art. 190: https://ww
 - **Employer annual recapitulative:** article 24 excludes this employer filing from the individual deadline. Article 115 requires it within 30 days after the accounting year ends. See `bi-payroll-social`. [Income tax law, arts. 24 and 115](https://www.obr.bi/images/LOI_N1_14_DU_24_DECEMBRE_2020_PORTANT_MODIFICATION_DE_LA_LOI_N1_02_DU_24_JANVIER_2013_RELATIVE_AUX_IMPOTS_SUR_LES_REVENUS_1.pdf).
 - **Employee monthly filing:** where the employer is not obliged to withhold, article 116 requires the employee to file and pay by the 15th of the month following payment. [Income tax law, art. 116](https://www.obr.bi/images/LOI_N1_14_DU_24_DECEMBRE_2020_PORTANT_MODIFICATION_DE_LA_LOI_N1_02_DU_24_JANVIER_2013_RELATIVE_AUX_IMPOTS_SUR_LES_REVENUS_1.pdf).
 
+- **Employment income tax is a monthly obligation, not an annual one.** The closing
+  paragraphs of article 24 provide that for employment income the declaration and
+  payment are made *"par période imposable qui est … fixée à un mois"*, without
+  prejudice to the article 115 annual recapitulative, with the deadline *"au
+  quinzième jour du mois qui suit celui de la réalisation du revenu d'emploi"* —
+  the **15th of the month following** the month the income arose. [Income tax law, art. 24](https://www.obr.bi/images/LOI_N1_14_DU_24_DECEMBRE_2020_PORTANT_MODIFICATION_DE_LA_LOI_N1_02_DU_24_JANVIER_2013_RELATIVE_AUX_IMPOTS_SUR_LES_REVENUS_1.pdf).
+- **A second quarterly threshold sits in article 24, and it is not the Finance Act
+  one.** Natural persons with turnover *"inférieur ou égal à cent millions
+  (100.000.000) francs burundais"* declare and pay **quarterly**. That is a
+  **filing-frequency** rule at **BIF 100,000,000**, distinct from the Finance Act
+  art. 190 regime in Section 2, which taxes turnover at 1% quarterly up to **BIF
+  25,000,000**. **Two quarterly tests, two thresholds, two purposes** — a taxpayer
+  between the two figures files quarterly without being on the 1% regime. [Income tax law, art. 24](https://www.obr.bi/images/LOI_N1_14_DU_24_DECEMBRE_2020_PORTANT_MODIFICATION_DE_LA_LOI_N1_02_DU_24_JANVIER_2013_RELATIVE_AUX_IMPOTS_SUR_LES_REVENUS_1.pdf).
+- **Medium and large taxpayers need their return certified.** Article 27 requires
+  natural persons with business income taxed under article 21(1) to file an annual
+  return, and provides that those classed as **medium and large taxpayers** must
+  have the declaration **and each annex** certified by a professional approved by
+  the **Ordre des Professionnels Comptables**. [Income tax law, art. 27](https://www.obr.bi/images/LOI_N1_14_DU_24_DECEMBRE_2020_PORTANT_MODIFICATION_DE_LA_LOI_N1_02_DU_24_JANVIER_2013_RELATIVE_AUX_IMPOTS_SUR_LES_REVENUS_1.pdf).
+- **What the annual liability is reduced by.** Article 28 computes the tax on the
+  annual return and then deducts withholding under **articles 112 to 116**,
+  withholding under **articles 119 and 120**, and the **quarterly provisional
+  instalments** made during the year under article 126. [Income tax law, art. 28](https://www.obr.bi/images/LOI_N1_14_DU_24_DECEMBRE_2020_PORTANT_MODIFICATION_DE_LA_LOI_N1_02_DU_24_JANVIER_2013_RELATIVE_AUX_IMPOTS_SUR_LES_REVENUS_1.pdf).
+
 ### Worked scope checks
 
 - A non-resident employee without a business establishment receives ordinary Burundi-source salary from their principal employer. The employer applies article 117's monthly employment scale; the absence of an establishment does not make this salary an article 119 or 120 payment.
@@ -105,8 +128,8 @@ Article 23 taxes individual capital income and capital gains at 15%, including
 the asset-sale proceeds specified in article 37(2). This provision belongs to
 the individual-income chapter. [Income tax law, art. 23](https://www.obr.bi/images/LOI_N1_14_DU_24_DECEMBRE_2020_PORTANT_MODIFICATION_DE_LA_LOI_N1_02_DU_24_JANVIER_2013_RELATIVE_AUX_IMPOTS_SUR_LES_REVENUS_1.pdf).
 
-The OBR sources are scans. Article 21, article 117 and Finance Act article 190
-were checked against the page images. Local-accountant review is pending.
+The OBR sources are scans. Articles 21, 24 to 28, 117 and Finance Act article 190 were checked against the
+page images at 300 dpi rather than the OCR layer. Local-accountant review is pending.
 
 <!-- openaccountants-cta-block -->
 
