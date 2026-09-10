@@ -1,16 +1,40 @@
 ---
 name: ng-income-tax
-description: Use this skill whenever asked about Nigerian personal income tax for self-employed individuals (sole proprietors / freelancers). Trigger on phrases like "Nigeria income tax", "PITA", "FIRS", "self-assessment Nigeria", "progressive tax Nigeria", "minimum tax Nigeria", "consolidated relief", "CRA Nigeria", "TIN Nigeria", "WHT Nigeria", "income tax Lagos", "income tax Abuja", "state IRS", or any question about computing or filing income tax for a self-employed person in Nigeria. This skill covers progressive rates (7-24%), minimum tax (1% of gross income), consolidated relief allowance, capital allowances, withholding tax credits, self-assessment filing, and FIRS/state IRS requirements. ALWAYS read this skill before touching any Nigerian income tax work.
+description: "Use this skill whenever asked about Nigerian personal income tax for self-employed individuals (sole proprietors / freelancers). Trigger on phrases like \"Nigeria income tax\", \"PITA\", \"FIRS\", \"self-assessment Nigeria\", \"progressive tax Nigeria\", \"minimum tax Nigeria\", \"consolidated relief\", \"CRA Nigeria\", \"TIN Nigeria\", \"WHT Nigeria\", \"income tax Lagos\", \"income tax Abuja\", \"state IRS\", or any question about computing or filing income tax for a self-employed person in Nigeria. SUPERSEDED FOR TAX RULES — read ng-personal-income-tax.md instead, which is the canonical Nigerian personal income tax guide and treats this one as deprecated. This skill covers the repealed PITA regime that governed periods ending before 1 January 2026: progressive rates (7-24%), minimum tax (1% of gross income), consolidated relief allowance, capital allowances, withholding tax credits, self-assessment filing, and FIRS/state IRS requirements. From 1 January 2026 the Nigeria Tax Act 2025 applies instead, with a different band structure, no consolidated relief allowance and no minimum tax. Load this skill only for a period ending before 1 January 2026, or for its Nigerian bank-statement narration and transaction-pattern library, which remain valid."
 version: 2.0
 jurisdiction: NG
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-11
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
 # NG Income Tax
+
+> **Superseded for tax rules. Use `ng-personal-income-tax.md`.** That guide states
+> it is the canonical Nigerian personal income tax reference and that this file is
+> *"deprecated for tax-rule purposes"*, to be loaded only for its bank-narration
+> patterns. **That notice was recorded only there, and this file did not carry it** —
+> so a model matching on "Nigeria income tax", "PITA" or "self-assessment Nigeria"
+> could load this one instead and never learn it had been superseded.
+>
+> **The rates below are the repealed ones.** PITA's 7%–24% scale, its Consolidated
+> Relief Allowance and its 1% minimum tax governed periods ending before **1 January
+> 2026**. From that date the **Nigeria Tax Act 2025** applies, and its Fourth
+> Schedule (section 58) charges an individual's taxable income at **0% on the first
+> ₦800,000, 15% on the next ₦2,200,000, 18% on the next ₦9,000,000, 21% on the next
+> ₦13,000,000, 23% on the next ₦25,000,000 and 25% above ₦50,000,000** — with an
+> individual earning the National Minimum Wage outside the schedule altogether.
+> The CRA formula is gone and the minimum tax is abolished. Applying the table below
+> to a 2026 period overstates tax on low incomes by taxing from ₦300,000 instead of
+> ₦800,000, and understates it at the top by capping at 24% instead of 25%.
+>
+> Which law applies is a date test on the period, not on the filing date. Read this
+> file for periods ending before 1 January 2026, and for its Nigerian
+> bank-statement narration patterns, which are unaffected.
+>
+> _(Nigeria Tax Act 2025, s. 58 and Fourth Schedule, Official Gazette No. 117 of 26 June 2025 — https://nass.gov.ng/documents/download/11249)_
 
 ## Nigerian Personal Income Tax — Self-Employed / Sole Proprietor (PITA) v2.0
 

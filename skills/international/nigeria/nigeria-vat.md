@@ -4,7 +4,7 @@ description: Use this skill whenever asked to prepare, review, or classify trans
 version: 2.0
 jurisdiction: NG
 tax_year: 2025
-last_updated: 2026-09-10
+last_updated: 2026-09-11
 review_status: pending_review
 depends_on:
   - vat-workflow-base
@@ -14,6 +14,26 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
 # Nigeria VAT
+
+> **Merged into `ng-vat.md`. Read that guide for anything from 2026 onwards.**
+> `ng-vat.md` v2.0 records that it is a *"consolidated rewrite merging
+> ng-vat-return.md (filing mechanics) and nigeria-vat.md (supplier libraries and
+> worked examples); refreshed for the Nigeria Tax Act 2025 framework effective 1
+> January 2026"*. **That note was recorded only in the consolidated file**, so this
+> one carried no sign that it had been merged away.
+>
+> This file predates the Nigeria Tax Act 2025 and never mentions it. The **7.5%
+> standard rate survives** — NTA 2025 s.147 charges VAT on the value of all taxable
+> supplies at 7.5% — but the **registration position below is the old law**. For
+> periods from 1 January 2026 the monthly-return obligation in Nigeria Tax
+> Administration Act 2025 s.22(1) simply does not apply to a **small business**:
+> gross turnover ≤ **NGN 100,000,000** *and* fixed assets ≤ **NGN 250,000,000**,
+> **with a business providing professional services expressly excluded from that
+> definition and therefore never exempt at any turnover**. The NGN 25,000,000 figure
+> below is the Finance Act 2019 test and applies only to periods ending before 1
+> January 2026.
+>
+> _(Nigeria Tax Act 2025, s. 147 — https://nass.gov.ng/documents/download/11249; Nigeria Tax Administration Act 2025, s. 22 and definitions — https://tat.gov.ng/Nigeria-Tax-Act-2025.pdf)_
 
 ## Section 1 — Quick reference
 
@@ -27,7 +47,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Standard rate | 7.5% (effective February 2020; previously 5%) |
 | Zero rate | 0% (exports of goods and services, goods purchased by diplomats, humanitarian donor organisations) |
 | Exempt | Basic food items (unprocessed agricultural products), medical/pharmaceutical products, baby products, newspapers, educational materials, financial services, natural gas, exported services |
-| Registration threshold | NGN 25,000,000 annual turnover (from 2020); below this — no obligation to register |
+| Registration threshold | **Periods before 1 January 2026 only** — NGN 25,000,000 annual turnover (from 2020); below this, no obligation to register. From 1 January 2026 see the banner above and `ng-vat.md`. |
 | Tax authority | **Nigeria Revenue Service (NRS)** — the Federal Inland Revenue Service (FIRS) was renamed and re-established as the NRS by the Nigeria Revenue Service (Establishment) Act 2025, with effect from **1 January 2026** |
 | Filing portal | FIRS TaxPro Max — https://taxpromax.firs.gov.ng |
 | Return form | VAT Form 002 (monthly return) |

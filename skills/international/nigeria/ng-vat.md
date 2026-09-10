@@ -1,9 +1,9 @@
 ---
 name: ng-vat
-description: "Use this skill whenever asked to prepare, review, classify transactions for, or advise on Nigerian VAT (Value Added Tax) for self-employed individuals, sole traders, partnerships, or small companies operating in Nigeria. Trigger on phrases like \"Nigeria VAT\", \"FIRS VAT\", \"VAT Nigeria 7.5%\", \"VAT return Nigeria\", \"VAT Form 002\", \"TaxPro Max\", \"e-invoicing FIRS\", \"Merchant Buyer System\", \"MBS Nigeria\", \"VAT Act Nigeria\", \"NTA 2025 VAT\", \"Nigeria Tax Act 2025\", \"Section 10 VAT Act\", \"non-resident digital services Nigeria\", \"reverse charge Nigeria\", \"WHT-VAT Nigeria\", or any request involving Nigerian VAT registration, computation, classification, filing, or compliance. Covers the 7.5% standard rate under the VAT Act (as amended by Finance Acts 2019/2020/2021/2023) and the consolidation under the Nigeria Tax Act 2025 framework effective 1 January 2026, the NGN 25 million registration threshold, monthly Form VAT 002 filing to FIRS by the 21st of the following month via TaxPro Max, the FIRS Merchant Buyer Solution (MBS) phased e-invoicing mandate (large taxpayers from Q3 2024, medium taxpayers through 2025-2026), non-resident digital service registration under Section 10A, reverse-charge self-accounting on imported services, and WHT-VAT interaction on government and large-taxpayer contracts. Out of scope (refusal catalogue): excise duties, Petroleum Profit Tax, Companies Income Tax, transfer pricing, refund litigation, free trade zone (FTZ) treatment, state-level consumption taxes, real estate VAT, and VAT grouping. ALWAYS read this skill before touching any Nigerian VAT work."
+description: "Use this skill whenever asked to prepare, review, classify transactions for, or advise on Nigerian VAT (Value Added Tax) for self-employed individuals, sole traders, partnerships, or small companies operating in Nigeria. Trigger on phrases like \"Nigeria VAT\", \"FIRS VAT\", \"VAT Nigeria 7.5%\", \"VAT return Nigeria\", \"VAT Form 002\", \"TaxPro Max\", \"e-invoicing FIRS\", \"Merchant Buyer System\", \"MBS Nigeria\", \"VAT Act Nigeria\", \"NTA 2025 VAT\", \"Nigeria Tax Act 2025\", \"Section 10 VAT Act\", \"non-resident digital services Nigeria\", \"reverse charge Nigeria\", \"WHT-VAT Nigeria\", or any request involving Nigerian VAT registration, computation, classification, filing, or compliance. Covers the 7.5% standard rate under the VAT Act (as amended by Finance Acts 2019/2020/2021/2023) and the consolidation under the Nigeria Tax Act 2025 framework effective 1 January 2026, the NGN 25 million registration threshold for periods before 2026, the small-business exemption from monthly returns for periods from 1 January 2026 (NGN 100 million turnover and NGN 250 million fixed assets under Nigeria Tax Administration Act 2025 s.22) and the proviso that a business providing professional services is never a small business and is therefore never exempt, monthly Form VAT 002 filing to FIRS by the 21st of the following month via TaxPro Max, the FIRS Merchant Buyer Solution (MBS) phased e-invoicing mandate (large taxpayers from Q3 2024, medium taxpayers through 2025-2026), non-resident digital service registration under Section 10A, reverse-charge self-accounting on imported services, and WHT-VAT interaction on government and large-taxpayer contracts. Out of scope (refusal catalogue): excise duties, Petroleum Profit Tax, Companies Income Tax, transfer pricing, refund litigation, free trade zone (FTZ) treatment, state-level consumption taxes, real estate VAT, and VAT grouping. ALWAYS read this skill before touching any Nigerian VAT work."
 jurisdiction: NG
 tax_year: 2025
-last_updated: 2026-09-10
+last_updated: 2026-09-11
 reviewed_by: Omolola Fasasi
 review_status: current
 tier: 2
@@ -55,6 +55,40 @@ This block is generated from verified `skill_facts` — edit the facts, not the 
 - **Filing portal** — taxpayer self service (NSS) portal  _(Nigeria Tax Act (NTA) 2025)_
 - **e-Invoice system** — Operated by the Nigeria Revenue Service (NRS)  _(Nigeria Tax Act (NTA) 2025)_
 
+> **The registration threshold above is stated twice, at two different figures,
+> and both citations are wrong about where the rule lives.** The block gives NGN
+> 25,000,000 (Finance Act 2019) and NGN 100m (NTA 2025) as though both were
+> current. Read the following instead; it is taken from the two Acts as printed in
+> Official Gazette No. 117 of 26 June 2025.
+>
+> - **The exemption is not a turnover threshold in the VAT charge.** The Nigeria
+>   Tax Act 2025 imposes VAT at 7.5% on the value of *all* taxable supplies (s.147)
+>   and its exempt list (s.185) contains no turnover limb at all. The relief is in
+>   the **Nigeria Tax Administration Act 2025, s.22(4)**: the monthly-return
+>   obligation in s.22(1) *"shall not apply to a small business"*. A small business
+>   may opt out of that exemption — registration, charging VAT and filing — by
+>   written notice under s.22(5), and must begin filing monthly on ceasing to be
+>   one (s.22(6)).
+> - **"Small Business" is defined in the Administration Act**, not the Tax Act:
+>   gross turnover of **NGN 100,000,000 or less** per annum **and** total fixed
+>   assets **not more than NGN 250,000,000**. In testing the turnover limb, exclude
+>   the supply of a capital asset and any supply made solely because the person is
+>   selling the whole or part of the business or permanently ceasing to trade
+>   (s.22(7)).
+> - **A business providing professional services is never a small business.** The
+>   definition carries the express proviso *"provided that any business providing
+>   professional services shall not be classified as a small business"*. **This
+>   pack's own audience is largely inside that proviso** — freelance consultants,
+>   accountants, lawyers, engineers, designers and other professionals are outside
+>   the exemption at any turnover, and the ₦100m figure does nothing for them.
+> - **Do not carry the proviso across to corporate income tax.** The Nigeria Tax
+>   Act's own "small company" — same ₦100,000,000 turnover and ₦250,000,000 fixed
+>   assets, and the gateway to the 0% rate in s.56 — has **no professional-services
+>   proviso**. Two Acts, one gazette, one day, and the same two limbs mean different
+>   things depending on which tax is in issue.
+>
+> _(Nigeria Tax Act 2025, ss. 56, 147, 185 and definitions — https://nass.gov.ng/documents/download/11249; Nigeria Tax Administration Act 2025, s. 22 and definitions — https://tat.gov.ng/Nigeria-Tax-Act-2025.pdf)_
+
 ## Section 1 — Quick reference
 
 **Read this section in full before classifying any transaction. Nigeria operates a single federal Value Added Tax administered by FIRS. State and local governments do NOT levy VAT (Lagos and Rivers have attempted but the federal position holds pending Supreme Court resolution). Excise duties, Petroleum Profit Tax, Companies Income Tax (CIT), Capital Gains Tax, Stamp Duty, Withholding Tax and Education Tax are all separate regimes and are out of scope.**
@@ -69,7 +103,7 @@ This block is generated from verified `skill_facts` — edit the facts, not the 
 | Standard rate | **7.5%** (raised from 5% by Finance Act 2019, effective 1 February 2020) |
 | Zero rate | 0% on exports of goods and services, supplies to diplomatic missions, goods purchased by humanitarian donor organisations (Finance Act 2021) |
 | Exempt | Basic food items (unprocessed agricultural produce), medical/pharmaceutical products (NAFDAC-registered), pharmaceutical raw materials, baby products, newspapers and educational materials, financial services (banking fees, insurance premiums), natural gas (domestic), residential rent, public transport, locally-produced agricultural equipment, fertilizers, plant and machinery for use in EPZs |
-| Registration threshold | **NGN 25,000,000** annual turnover (Finance Act 2019, effective 2020). Below threshold — no obligation to register. Voluntary registration permitted. |
+| Registration threshold | **Periods from 1 January 2026** — there is no threshold in the VAT charge. Monthly returns do not apply to a **small business**: gross turnover ≤ **NGN 100,000,000** *and* fixed assets ≤ **NGN 250,000,000** (NTAA 2025 s.22(4), (7) and definitions), **but a business providing professional services is excluded from that definition and is never exempt**. Opt-out into the regime by written notice (s.22(5)). **Periods before 1 January 2026** — NGN 25,000,000 annual turnover (Finance Act 2019, effective 2020); below it, no obligation to register, voluntary registration permitted. |
 | Tax authority | **Nigeria Revenue Service (NRS)** — the Federal Inland Revenue Service (FIRS) was renamed and re-established as the NRS by the Nigeria Revenue Service (Establishment) Act 2025, with effect from **1 January 2026** |
 | Filing portal | FIRS TaxPro Max — https://taxpromax.firs.gov.ng |
 | Return form | **VAT Form 002** (monthly return) |
@@ -152,7 +186,7 @@ This block is generated from verified `skill_facts` — edit the facts, not the 
 
 ### Refusal catalogue — Nigeria-specific
 
-- **R-NG-1 — Below registration threshold** — Businesses with annual turnover of NGN 25 million or less are exempt from VAT registration and filing obligations under Finance Act 2019 (effective 2020). Confirm turnover. If the business has voluntarily registered, treat as normal taxpayer; otherwise stop. (Trigger: business with annual turnover ≤ NGN 25,000,000 (Finance Act 2019/2020).)
+- **R-NG-1 — Small business outside the monthly-return obligation** — **Establish the period first.** For periods from **1 January 2026**, ask three questions in this order and stop only if all three are satisfied: (1) does the business provide **professional services**? If yes, it is **not** a small business and the exemption never applies, whatever the turnover — continue the return; (2) is gross turnover **≤ NGN 100,000,000** per annum, excluding the supply of a capital asset and any supply made solely on selling the whole or part of the business or ceasing to trade? (3) are total fixed assets **≤ NGN 250,000,000**? If the business has opted out under NTAA s.22(5), or has ceased to be a small business, treat it as a normal taxpayer and file monthly. For periods **before 1 January 2026**, the old test applies: turnover of NGN 25 million or less is exempt under Finance Act 2019, subject to voluntary registration. (Trigger: any business that may be below the filing obligation — do not apply the ₦25m figure to a 2026 or later period, and do not apply the ₦100m figure to a professional-services business at all.)
 - **R-NG-2 — VAT refund claims and litigation** — FIRS refund processes are lengthy (90+ days in practice), evidence-intensive, and frequently litigated. Out of scope. Escalate to a CITN-licensed tax practitioner; in the meantime carry the excess forward on Line 7. (Trigger: taxpayer asks for a cash refund from FIRS.)
 - **R-NG-3 — Petroleum Profit Tax (PPT), Companies Income Tax (CIT), Education Tax** — This skill covers VAT only. PPT, CIT, EDT and other federal direct taxes are separate regimes under the Nigeria Tax Act 2025. Escalate. (Trigger: taxpayer asks about PPT, CIT, EDT, NITDA levy, NASENI levy, or police trust fund levy.)
 - **R-NG-4 — Real estate VAT (land vs buildings)** — VAT on real estate involves complex exemption rules — land is exempt; buildings are taxable in some cases but exempt in others; commercial leases vs residential leases differ. Out of scope. Escalate to a CITN practitioner. (Trigger: taxpayer sells, buys or leases real estate.)
