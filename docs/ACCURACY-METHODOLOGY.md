@@ -2527,7 +2527,10 @@ because it went four layers deep and still failed:
 - `casadocidadao.cv` — the operator's own domain — answers **200 with a 17-byte
   body**. Live, and empty.
 - There is **no `boe.cv` or `bo.cv`**, despite INCV describing an electronic
-  Boletim Oficial as a free and universal public service.
+  Boletim Oficial as a free and universal public service. *(This bullet was a
+  false negative produced by guessing at hostnames. The gazette is at
+  **`boe.incv.cv`** and is open, complete and free. See "Cape Verde, resolved"
+  below.)*
 - INCV's Boletim Oficial page **displays its own feed error**: *"SSL certificate …
   has expired"*. The publisher cannot reach its own gazette feed.
 - `legis-palop.org`, the Portuguese-speaking African countries' legal database, is
@@ -2539,7 +2542,8 @@ as a Sociedade por Quotas**. A public limited company sharing a private one's
 statutory floor is unusual enough that the claim should not be relied on without
 an article number. **Noticing that a figure is implausible is not the same as
 knowing it is wrong** — it is flagged, not corrected, because the code that would
-settle it could not be opened.
+settle it could not be opened. *(It was opened later, and the flag was right for
+the wrong reason — see "Cape Verde, resolved" below.)*
 
 ### Two ways to manufacture a false "unreachable", both hit in one sitting
 
@@ -2948,3 +2952,92 @@ floored at a minimum share of turnover under article 260 — so the guide overst
 the tax for any business with costs. The exclusions in article 254(3) and the
 related-party tests in article 30 were missing too. **A rate table read out of its
 chapter is a plausible-looking answer with the mechanism removed.**
+
+### Cape Verde, resolved — the missing document was a repealed one
+
+The Cape Verde entry above recorded a four-layer dead end and left the
+implausible CVE 1 minimum capital flagged rather than fixed. Both halves were
+wrong, and the way they were wrong is the transferable part.
+
+**The gazette was never missing.** The register bullet said there is "no `boe.cv`
+or `bo.cv`". Those were guesses at a hostname. The Cape Verdean electronic gazette
+is **`boe.incv.cv`** — open, free, no login, with a full-text search over every
+Boletim Oficial and a `/Bulletins/Download/<id>` endpoint that returns the
+complete signed PDF. **A hostname guess that fails is not evidence that a service
+does not exist**, and writing one into a register turns a failed guess into a
+recorded fact. The rule the register already had — *resolves-but-refuses is not
+the same as no DNS* — needs a third case in front of it: **never-asked**.
+
+**The code was not unreachable; it was repealed.** Every search was for the
+*Código das Empresas Comerciais*, because that is what the guide cited. That code
+— Decreto-Legislativo n.º 3/99, de 29 de março — had its Books II and III revoked
+in 2019. The current instrument is the **Código das Sociedades Comerciais**,
+Decreto-Legislativo n.º 2/2019, in Boletim Oficial n.º 80, I Série, de 23 de julho
+de 2019, alongside a new Código Comercial in the same bulletin. Searching for the
+*subject* found it immediately; searching for the *code by name* could only ever
+have found a dead document.
+
+This is a check the corpus was not making at all. Every figure-level checker asks
+*is this number right?*; none asks *is the instrument this number is attributed to
+still in force?* A repealed code fails silently, because the citation stays
+well-formed and the figures stay plausible.
+
+**And the flag was right for the wrong reason.** "CVE 1 statutory minimum" for a
+Sociedade Anónima was suspicious because a public company should not share a
+private one's floor. The real answer is that **neither has a statutory floor**:
+article 172(2) and article 237(1) both fix capital freely in the articles, and the
+same enacting decree that approved the code expressly revoked **Portaria n.º
+17/2013, "que fixa os montantes mínimos do capital social"** — the instrument that
+set minimum amounts. The floors that do exist are indirect and were absent from
+the guide entirely: a quota may not have a nominal value below CVE 100, a share
+below CVE 1,000, an SA formed by public subscription needs CVE 2,500,000 fully
+paid, and an SA may not distribute a single escudo of profit until its legal
+reserve reaches CVE 2,500,000. **The guide's one suspicious number was less
+misleading than the four real constraints it omitted.**
+
+The pay-up split it could not verify — 50% for an Lda, 30% for an SA — turned out
+to be right, from articles 176(2) and 238(2). A commercial source being unverified
+is not a reason to expect it to be wrong.
+
+### The gazette can be wrong, and the digits-and-words rule caught it first
+
+Cape Verde also produced the cleanest possible vindication of the rule that a
+figure is only accepted where **digits and words state it together**.
+
+The Código das Sociedades Comerciais "saiu de forma inexata" and was formally
+corrected by **Retificação n.º 133/2019** (Boletim Oficial n.º 101, 1.º
+Suplemento, I Série, de 30 de setembro de 2019). Five articles were corrected, two
+by an order of magnitude:
+
+- **Article 222(2)** — the audit trigger for an Lda with no supervisory body. The
+  gazette printed **CVE 10,000,000 "e/ou"** more than **ten** employees. The
+  correction reads **CVE 100,000,000 "ou"** more than **fifty**. Both figures and
+  the conjunction were wrong: a factor of ten, a factor of five, and *and/or*
+  narrowed to *or*.
+- **Article 342(5)** — the large-SA test. The gazette printed **"200.000$00
+  (duzentos milhões de escudos)"**. The digits say two hundred thousand; the words
+  say two hundred million. **A self-contradicting figure, in the official text.**
+  The correction resolves it in favour of the words — CVE 200,000,000 — and lifts
+  the net-asset limb from CVE 15,000,000 to CVE 150,000,000.
+
+The lesson runs the other way from the usual one. The digits-and-words rule was
+adopted to defend against **OCR**, on the theory that the document is right and
+the reading of it may be wrong. Article 342(5) is a case where **the document is
+wrong and the rule catches it anyway** — because a figure whose two statements of
+itself disagree is unusable whatever the cause, and the only safe response is to
+go looking for why. Here, looking found a rectification.
+
+Two smaller habits earned their keep on the same page:
+
+- **Treat structural anomalies in extracted text as signal.** Articles 253 and 254
+  begin at paragraph 2 and article 255 at subparagraph b), with no paragraph 1 or
+  subparagraph a). The first assumption was a text-extraction artefact. Rendering
+  the page at 200 dpi and reading the image showed the printed gazette does this
+  too. It is not in the rectification, so it stands: **cite article 254(2), and
+  expect no article 254(1) to exist.**
+- **A rectification is a separate document with its own gazette entry.** Nothing
+  in the 130-page bulletin points forward to it. It was found by searching the
+  gazette for the code's name and reading the summaries, and the search returned it
+  above the code itself. **After finding a primary text, search the gazette again
+  for later acts naming it** — that same search is what confirmed there have been
+  no amendments since.
