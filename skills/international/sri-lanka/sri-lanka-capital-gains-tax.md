@@ -4,12 +4,14 @@ description: Sri Lanka Capital Gains Tax on realisation of investment assets —
 jurisdiction: LK
 tax_year: 2025
 tax_year_notes: "Rates in this guide span the IRA (Amendment) Act No. 11 of 2026, enacted 3 June 2026. The date of realisation, not the year of assessment, selects the rate: 10% before 3 June 2026, and 15% / 30% by class of taxpayer on or after it."
-last_updated: 2026-07-13
+last_updated: 2026-09-10
 reviewed_by: Lal kumarasiri
-review_status: current
-tier: 1
+review_status: pending_review
+tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
+
+> This revision includes changes made after the recorded accountant review and awaits a new review.
 
 # Sri Lanka Capital Gains Tax (CGT)
 

@@ -4,6 +4,7 @@ description: "Source-cited draft: payroll & social contributions for Liechtenste
 jurisdiction: LI
 tax_year: 2025
 tax_year_notes: "2025, with the AHV/IV/FAK contribution table effective 1 January 2026 stated where it has been confirmed; ALV is also stated for 2026; other unconfirmed contribution figures must be checked for the required period"
+version: 0.1
 last_updated: 2026-09-10
 review_status: pending_review
 tier: 2

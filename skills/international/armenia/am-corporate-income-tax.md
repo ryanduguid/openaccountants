@@ -3,7 +3,7 @@ name: am-corporate-income-tax
 description: "Source-cited draft: corporate income tax for Armenia (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
 jurisdiction: AM
 tax_year: 2025
-last_updated: 2026-09-09
+last_updated: 2026-09-10
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)

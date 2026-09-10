@@ -426,9 +426,11 @@ def compare_existing_guides(
         and after.last_updated > before.last_updated
     )
     version_advanced = (
-        before.version is not None
-        and after.version is not None
-        and after.version > before.version
+        after.version is not None
+        and (
+            before.version_text is None
+            or (before.version is not None and after.version > before.version)
+        )
     )
     if body_changed and not date_advanced and not version_advanced:
         severity = "error" if mode == "sync" or strict_metadata else "warning"

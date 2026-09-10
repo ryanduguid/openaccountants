@@ -4,15 +4,17 @@ description: "Use this skill whenever asked about forming, incorporating, or reg
 version: 1.0
 jurisdiction: PK
 tax_year: 2025
-last_updated: 2026-09-09
+last_updated: 2026-09-10
 reviewed_by: Ibrar Ali
-review_status: current
+review_status: pending_review
 depends_on:
   - income-tax-workflow-base
 category: international
-tier: 1
+tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
+
+> This revision includes changes made after the recorded accountant review and awaits a new review.
 
 # PK Formation
 
