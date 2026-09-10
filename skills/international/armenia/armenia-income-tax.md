@@ -253,9 +253,10 @@ This is the deterministic pre-classifier. When a bank statement transaction matc
 - Documented purchases of AMD 4,000,000 → reduction 9.5% × 4,000,000 = AMD 380,000 → tax **AMD 120,000** (above the floor, so the full reduction is allowed)
 - Documented purchases of AMD 5,000,000 → reduction would be AMD 475,000, leaving AMD 25,000, which is under the floor → the reduction is trimmed and the tax is **AMD 50,000**
 - No documented expenses → the full **AMD 500,000** stands
+- **Plus a separate profit tax the turnover tax does not absorb.** Art. 125(3) charges an IE in the turnover-tax system profit tax of **AMD 5,000 per month**, whatever the number of activity types, and declares it that IE's *final* profit-tax liability for those activities. For this quarter that is 3 × 5,000 = **AMD 15,000**, on top of the turnover tax computed above
 - Quarterly filing; pay within 20 days of period end
 
-**Classification:** Turnover tax, trading. The answer turns on documented expenses, not the rate alone — always ask for them. Funded-pension and (where applicable) IE health-insurance contributions still apply separately per Section 5.
+**Classification:** Turnover tax, trading. The answer turns on documented expenses, not the rate alone — always ask for them. The art. 125(3) AMD 5,000/month profit tax runs alongside it. Funded-pension and (where applicable) IE health-insurance contributions still apply separately per Section 5.
 
 ### Example 6 -- Dividend received
 
@@ -370,7 +371,8 @@ This is the deterministic pre-classifier. When a bank statement transaction matc
 
 ### 5.10 Micro-Business (Microenterprise) Regime
 
-- **Eligibility and treatment** — Eligibility: annual turnover ≤ AMD 24,000,000. Broadly EXEMPT from main taxes. Salaries paid to employees still bear a fixed reduced income tax of ~AMD 5,000/employee/month [RESEARCH GAP -- reviewer to confirm exact current amount and whether it still applies after the July 2025 exclusions]. Many professional / B2B services (consulting, IT, legal, accounting, advertising, medicine) have been EXCLUDED since July 2025. Election by 20 February of the tax year (existing businesses); within 20 days of registration (new businesses).  _(Vardanyan & Partners)_
+- **Eligibility and treatment** — Eligibility: prior-year turnover across all activities ≤ AMD 24,000,000. Art. 269(1) exempts the subject from computing and paying **all** state taxes on the micro activity — including the tax-agent obligation to withhold and remit, and the art. 135 profit-tax advances. Art. 269(2) then names the four things the exemption does **not** reach: taxes on imported goods (including from EAEU states); **income tax on taxable amounts paid to individuals who are not individual entrepreneurs or notaries**; and excise, environmental and road tax. Many professional / B2B services (consulting, IT, legal, accounting, advertising, medicine) have been EXCLUDED since July 2025. Election by 20 February of the tax year (existing businesses); within 20 days of registration (new businesses).  _(Tax Code of the Republic of Armenia, arts. 267–270 (consolidated text at [arlis.am](https://www.arlis.am/hy/acts/219122)); exclusions per Vardanyan & Partners)_
+- **There is no AMD 5,000 per-employee salary tax — the wages are withheld under the ordinary rules** — This guide previously carried "salaries paid to employees still bear a fixed reduced income tax of ~AMD 5,000/employee/month", tagged as a research gap. Read against the Code, it is wrong twice over. Art. 269(2)(2) puts employee wages back under the ordinary income tax "in the manner established by the Code", and art. 150 sets no special rate for a micro-business employee. The AMD 5,000 is real but belongs to a different taxpayer and a different tax: **art. 125(3)** charges an *individual entrepreneur in the turnover-tax system* profit tax of AMD 5,000 per month — their own final liability, not a charge per employee, and not part of the micro regime at all. A micro-business paying three staff withholds 20% income tax on each wage, not AMD 15,000.  _(Tax Code of the Republic of Armenia, arts. 269(2)(2), 150, 125(3) (consolidated text at [arlis.am](https://www.arlis.am/hy/acts/219122)))_
 
 ### 5.11 PIT Withholding and Remittance
 
@@ -468,7 +470,7 @@ REVIEWER FLAGS:
   [ ] Property sale: buyer private vs tax agent?
   [ ] Dividend reinvestment refund eligibility?
   [ ] Rental surcharge over 60m confirmed?
-  [ ] Micro-business employee salary tax amount confirmed?
+  [ ] Micro-business wages: ordinary 20% withholding per art. 269(2)(2)?
 ```
 
 ### Armenian Bank Statement Formats
@@ -580,7 +582,7 @@ Expected: PIT 240,000; pension 87,500 (capped); stamp 15,000; health 10,800; **n
 Expected: profit tax at 23% (art. 125(3.1)) = 2,300,000 — an answer of 2,000,000 means the 20% income tax was applied to business income and is a fail; pension 700,000 (10% − 300,000); IE health 129,600; **net after levies AMD 6,870,400**.
 
 **Test 5 -- Turnover-tax IE, trading, quarterly turnover AMD 5,000,000.**
-Expected: the answer must ask for documented expenses before giving a figure. 10% × 5,000,000 = AMD 500,000 computed, then art. 258(2): documented purchases of AMD 4,000,000 give a reduction of AMD 380,000 and tax of **AMD 120,000**; purchases of AMD 5,000,000 hit the 1%-of-base floor and give **AMD 50,000**; no documented expenses leaves the full **AMD 500,000**. An answer of AMD 500,000 with no question asked is a fail.
+Expected: the answer must ask for documented expenses before giving a figure. 10% × 5,000,000 = AMD 500,000 computed, then art. 258(2): documented purchases of AMD 4,000,000 give a reduction of AMD 380,000 and tax of **AMD 120,000**; purchases of AMD 5,000,000 hit the 1%-of-base floor and give **AMD 50,000**; no documented expenses leaves the full **AMD 500,000**. An answer of AMD 500,000 with no question asked is a fail. The answer must also add the art. 125(3) profit tax of AMD 5,000/month — **AMD 15,000** for the quarter — which the turnover tax does not absorb.
 
 **Test 6 -- Dividend AMD 1,000,000.**
 Expected: 5% = **AMD 50,000** withheld; refundable if reinvested same entity, same year.
@@ -590,7 +592,7 @@ Expected: **EXEMPT** -- AMD 0 PIT. (Sale to a tax agent would be 10% / 20%.)
 
 ## PROHIBITIONS
 
-- **Prohibitions list** — NEVER quote 20% for a registered individual entrepreneur's business income -- that is profit tax at 23% under art. 125(3.1) NEVER apply progressive brackets or a personal allowance -- Armenia uses a single flat 20% PIT with no allowance NEVER omit the funded-pension contribution for an employee born on/after 1 Jan 1974 NEVER use the 5% pension tier above AMD 500,000 gross -- switch to 10% minus AMD 25,000, capped at AMD 87,500/month NEVER apply an employer social security contribution -- private-sector employers pay none NEVER tax a property sale between private individuals -- it is EXEMPT NEVER apply turnover-tax or micro-business rates without a confirmed, timely regime election NEVER treat turnover-tax / micro-business as profit-based -- they are computed on gross turnover NEVER allow income tax itself, VAT, drawings, or loan principal as deductions NEVER omit stamp duty or (from 2026) the health-insurance contribution from net-pay computations NEVER present an unflagged figure that is marked [RESEARCH GAP] as final -- escalate to a reviewer NEVER present tax calculations as definitive -- always label as estimated
+- **Prohibitions list** — NEVER quote 20% for a registered individual entrepreneur's business income -- it is profit tax, at 23% on the general system (art. 125(3.1)) or AMD 5,000/month for an IE in the turnover-tax system (art. 125(3)) NEVER apply progressive brackets or a personal allowance -- Armenia uses a single flat 20% PIT with no allowance NEVER omit the funded-pension contribution for an employee born on/after 1 Jan 1974 NEVER use the 5% pension tier above AMD 500,000 gross -- switch to 10% minus AMD 25,000, capped at AMD 87,500/month NEVER apply an employer social security contribution -- private-sector employers pay none NEVER tax a property sale between private individuals -- it is EXEMPT NEVER apply turnover-tax or micro-business rates without a confirmed, timely regime election NEVER charge a micro-business AMD 5,000 per employee -- art. 269(2)(2) keeps employee wages under ordinary income tax withholding NEVER treat turnover-tax / micro-business as profit-based -- they are computed on gross turnover NEVER allow income tax itself, VAT, drawings, or loan principal as deductions NEVER omit stamp duty or (from 2026) the health-insurance contribution from net-pay computations NEVER present an unflagged figure that is marked [RESEARCH GAP] as final -- escalate to a reviewer NEVER present tax calculations as definitive -- always label as estimated
 
 ## Disclaimer
 
