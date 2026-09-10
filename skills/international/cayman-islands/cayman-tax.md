@@ -154,7 +154,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ### 5.3 Pension and Health Insurance
 
-- **Pension and health insurance mandatory** — Mandatory for all employees aged 18-65. Pension: 10% split equally. Health insurance: employer must provide compliant plan.
+- **Pension and health insurance mandatory** — Enrolment runs from age 18 to the normal age of pension entitlement (65, with an opt-down to 60). Pension contributions total **10%** of earnings up to **CI$87,000**: 5% is an employer *floor* and a member *ceiling*, not a fixed 50/50 split — an employer paying more than 5% reduces the member's share correspondingly. Employees who are neither Caymanian nor permanent residents are excluded while working nine months or less, and household domestics are excluded outright. Health insurance: the employer is liable for the **whole** premium and may recover **up to 50%** from the employee (100% for dependants' cover). See `ky-payroll-social` for the full treatment  _(National Pensions Act (2024 Revision), ss.3, 25 and 47 — https://legislation.gov.ky/cms/images/LEGISLATION/PRINCIPAL/1996/1996-0010/1996-0010_2024%20Revision.pdf; Health Insurance Act (2021 Revision), ss.7–8 — https://legislation.gov.ky/cms/images/LEGISLATION/PRINCIPAL/1997/1997-0015/1997-0015_2021%20Revision.pdf)_
 
 ## Section 6 -- Tier 2 Catalogue (Reviewer Judgement Required)
 
