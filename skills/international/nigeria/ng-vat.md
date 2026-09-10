@@ -6,6 +6,7 @@ tax_year: 2025
 last_updated: 2026-09-11
 reviewed_by: Omolola Fasasi
 review_status: current
+category: international
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
