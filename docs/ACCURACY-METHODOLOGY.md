@@ -1600,3 +1600,63 @@ citing their own revenue authority, and the fix trailed the finding by a commit.
 Guinea-Bissau did not: authority citations rose 2,705 → 2,724 and secondary fell
 4,767 → 4,757 in the same change. The shape is a bare ccTLD, not a language —
 Togo and Côte d'Ivoire were francophone, this one is lusophone.
+
+### The same jurisdiction's VAT guide: every figure right, and the tax half-described
+
+`gw-vat-gst.md` was the next guide on the queue — **9 of 9** facts on one
+commercial host. Unlike the income-tax guide, its framing was correct and so was
+every number: 19% standard, 10% reduced, 0% exports, thresholds of FCFA
+40,000,000 and 10,000,000. All confirmed against arts. 18.º, 37.º and 38.º of the
+Código do IVA (Lei nº 4/2022, Boletim Oficial nº 8, 4th supplement, 25 February
+2022). **Concentration is exposure, not error**, and this is the second guide in
+one jurisdiction to prove it.
+
+What a rate table cannot tell you is how the tax operates, and that is what was
+missing:
+
+- **The simplified regime is a turnover tax, not a reduced VAT.** 5% of the value
+  of supplies with **no input deduction at all**, and its invoices give the buyer
+  **no right of deduction**, which the invoice must say (arts. 38.º nos 2–3,
+  39.º). The guide called it "a simplified VAT scheme".
+- **A domestic withholding with no trace in the guide.** A normal-regime buyer
+  must withhold **the entire IVA** charged on an invoice from a simplified-regime
+  supplier, or from a normal-regime supplier the director-general has designated
+  a *contribuinte de risco* (art. 7.º nº 3). A buyer who pays such an invoice
+  gross has underpaid the state.
+- **Non-residents must appoint a fiscal representative**, who is the debtor for
+  the tax and must be named to the counterparty *before* the operation, with the
+  represented person jointly and severally liable (art. 33.º).
+- **Filing**: normal regime monthly by the **15th**, nil returns mandatory
+  (art. 31.º); simplified regime **quarterly**, last working day of April, July,
+  October and January (art. 42.º). The guide had "monthly ((approx — confirm))"
+  and nothing at all for the simplified regime — right for one regime, silent for
+  the other.
+- **A 30% flat surcharge** on imports by anyone on the monthly list of IVA
+  non-declarants (Lei nº 4/2022 art. 6.º).
+- Below FCFA 10,000,000 a person is exempt from IVA **and** subject to a single
+  small-taxpayer tax *"em termos a fixar por lei"* (art. 45.º) — not simply
+  outside the system.
+
+Two smaller things the reading settled. The IGV it replaced also stood at 19%, so
+the guide's "replaced the former 19% general sales tax" was right — but the IGV
+carried a **15% band on electricity and water** that the IVA does not, so it is
+not a like-for-like swap. And the Code's own art. 37.º nº 6 points to *"o regime
+de pequenos contribuintes previstos no artigo 46º"* when that regime is art. 45.º
+and art. 46.º is *Garantias* — recorded as a gap against the Boletim Oficial
+text rather than silently renumbered.
+
+**The citation discipline held better the second time, and still not well
+enough.** Writing the guide, seven article numbers were again put down from
+context; resolving each against the nearest heading corrected **three** — the
+partial-deduction rule is art. 23.º not 27.º, taxpayer-initiated payment is
+art. 25.º not 29.º, administration-initiated payment art. 26.º not 30.º — and one
+number I could not confirm was softened rather than asserted. Three wrong out of
+seven, against eight out of nine an hour earlier, because this time some headings
+had been read directly rather than inferred. The rule that works is not "be more
+careful"; it is **resolve every article number mechanically before writing it
+down**.
+
+Guinea-Bissau's secondary share moved the corpus across a boundary: authority
+citations 2,724 → **2,746**, secondary 4,757 → **4,750**, and the corpus's
+secondary share from 64% to **63%**. Only `gw-payroll-social.md` is left on the
+single-source queue for this jurisdiction.
