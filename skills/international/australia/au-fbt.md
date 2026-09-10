@@ -4,16 +4,15 @@ description: >
   Use this skill whenever asked about Australian Fringe Benefits Tax -- identifying fringe benefits in a general ledger, car fringe benefits (statutory formula or operating cost), the electric vehicle exemption, meal entertainment, minor benefits, expense payments and the otherwise-deductible rule, LAFHA, loan benefits, employee contributions, reportable fringe benefits amounts (RFBA), FBT gross-up and return preparation. Trigger on phrases like "FBT", "fringe benefits tax", "car fringe benefit", "novated lease FBT", "EV FBT exemption", "entertainment FBT", "minor benefit", "50/50 method", "LAFHA", "living away from home", "gross-up", "Type 1 Type 2", "RFBA", "reportable fringe benefits", or when sweeping a GL for FBT exposure. The FBT year runs 1 April to 31 March. ALWAYS read this skill before touching any FBT work.
 version: 1.1
 jurisdiction: AU
-tax_year: 2026
-tax_year_notes: "FBT year 1 April 2026 to 31 March 2027"
-last_updated: 2026-09-10
+tax_year: 2025
+last_updated: 2026-08-02
 review_status: pending_review
 category: international
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Australia Fringe Benefits Tax (FBT) -- Employer Skill v1.1
+# Australia Fringe Benefits Tax (FBT) -- Employer Skill v1.0
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
@@ -178,7 +177,7 @@ A car parking benefit needs, on the same day: parking > 4 hours between 7am-7pm 
 
 ### Rule 7 -- Minor benefits (s 58P)
 
-Notional taxable value < $300 (not indexed; per benefit, per occasion) AND unreasonable to treat as a fringe benefit having regard to infrequency/irregularity and the other s 58P(1)(f) criteria (TR 2007/12: no fixed number of occasions). Assess all s 58P factors for the actual benefits and associated benefits. Frequency is a screening input, not a quarterly safe harbour; document the conclusion under TR 2007/12. Exempt entertainment gets no deduction and no GST credit.
+Notional taxable value < $300 (not indexed; per benefit, per occasion) AND unreasonable to treat as a fringe benefit having regard to infrequency/irregularity and the other s 58P(1)(f) criteria (TR 2007/12: no fixed number of occasions). Screening heuristic: quarterly or less frequent = presumptively infrequent; monthly or more = flag for review. Exempt entertainment gets no deduction and no GST credit.
 
 ### Rule 8 -- Meal entertainment methods
 

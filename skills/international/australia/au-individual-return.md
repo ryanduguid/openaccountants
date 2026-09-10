@@ -3,9 +3,8 @@ name: au-individual-return
 description: Use this skill whenever asked about Australian individual income tax for sole traders. Trigger on phrases like "how much tax do I pay in Australia", "Australian tax return", "sole trader tax", "ABN tax", "Medicare levy", "LITO", "PAYG", "tax brackets Australia", "BAS", "instant asset write-off", "home office deduction", "HELP repayment", "HECS debt", "small business income tax offset", "motor vehicle deduction", or any question about filing or computing income tax for an Australian sole trader. Covers 2025–26 Stage 3 tax rates, Medicare levy and surcharge, LITO, business income computation, allowable deductions, depreciation, instant asset write-off, small business income tax offset, HELP/HECS repayments, and final tax computation. ALWAYS read this skill before touching any Australian income tax work.
 version: 2.2
 jurisdiction: AU
-tax_year: 2025
-tax_year_notes: "2025–26"
-last_updated: 2026-09-10
+tax_year: 2024
+last_updated: 2026-09-02
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -17,10 +16,6 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 # AU Individual Return
 
 ## AU Individual Return
-
-## Asset-threshold currency
-
-For 2025–26, eligible small business entities using simplified depreciation can deduct assets costing less than $20,000 when first used or installed ready for taxable use. The permanent threshold was enacted on 26 August 2026; schedule 2 commences on 1 October 2026 and applies to specified first use or installation from 1 July 2026. [Tax Reform No. 2 Act 2026, schedules 1–2](https://www.legislation.gov.au/C2026A00071/asmade/text). The acquisition date alone does not establish the first-use year or a second deduction. Check prior claims and business use.
 
 ## Section 1 -- Quick Reference
 
@@ -36,7 +31,7 @@ For 2025–26, eligible small business entities using simplified depreciation ca
 | Supporting legislation | Tax Administration Act 1953; Medicare Levy Act 1986; Higher Education Support Act 2003 |
 | Tax authority | Australian Taxation Office (ATO) |
 | Filing portal | myTax (via myGov) or registered tax agent |
-| Filing deadline | 2 November 2026 for standard self-lodgement (31 October is Saturday); tax-agent dates depend on the applicable programme |
+| Filing deadline | 31 October 2026 (self-lodged); May 2027 (tax agent) |
 | Contributor | Open Accountants Community |
 | Validated by | Pending -- Australian CPA/CA sign-off required |
 | Skill version | 2.2 |
@@ -181,7 +176,7 @@ For 2025–26, eligible small business entities using simplified depreciation ca
 | GST PAYMENT, BAS PAYMENT | EXCLUDE from income tax | T1 | GST is separate. Report net of GST if registered. |
 | PRIVATE HEALTH, MEDIBANK, BUPA, NIB, HCF | NOT a deduction (but affects MLS) | T1 | Private health insurance is NOT tax deductible. But having it avoids Medicare Levy Surcharge. PHI rebate claimed separately. |
 | PERSONAL, GROCERY, ENTERTAINMENT | EXCLUDE | Not deductible | Personal expenses |
-| DONATION, CHARITY, DGR | Deduction (Item D9) | T1 | Deductible if to a deductible gift recipient (DGR). Must be $2+ and genuinely a gift. |
+| DONATION, CHARITY, DGR | Tax offset (Item D9) | T1 | Deductible if to a deductible gift recipient (DGR). Must be $2+ and genuinely a gift. |
 
 ### 3.3 SaaS Subscriptions
 
@@ -230,7 +225,7 @@ For 2025–26, eligible small business entities using simplified depreciation ca
 
 **Input:** Small business entity (turnover < $10M). Purchases laptop AUD 2,800 and monitor AUD 950. Both under $20,000.
 
-**Classification:** Both items are immediately deductible under the instant asset write-off. Assuming both assets were first used for business in 2025–26, are wholly business-use, qualify for simplified depreciation and were not previously deducted, the total deduction is AUD 3,750. Record the first-use date and prior-claim check in the asset register.
+**Classification:** Both items are immediately deductible under the instant asset write-off. Total deduction: AUD 3,750 in the year of purchase. No depreciation schedule needed.
 
 ### Example 3 -- Motor Vehicle (Logbook vs Cents/Km)
 
@@ -268,7 +263,7 @@ For 2025–26, eligible small business entities using simplified depreciation ca
 - **Diminishing value** — Base value x (days held / 365) x (200% / effective life)  _(ITAA 1997 Div 40)_
 - **Prime cost (straight line)** — Cost x (days held / 365) x (100% / effective life)  _(ITAA 1997 Div 40)_
 - **Small business entity simplified depreciation** — Small business entity (turnover < $10M): can use simplified depreciation -- pool all assets over $20,000 at 15% first year, 30% thereafter.  _(ITAA 1997 Div 40)_
-- **Instant asset write-off**: Assets costing less than $20,000 (assets first used or installed ready for use 1 July 2023 to 30 June 2026; extension made law by the Treasury Laws Amendment (Strengthening Financial Systems and Other Measures) Act 2025) can be immediately deducted by small business entities. For later first use, apply the enacted permanent threshold and commencement details in Asset-threshold currency above.  _(ITAA 1997 s 328-180)_
+- **Instant asset write-off** — Assets costing less than $20,000 (assets first used or installed ready for use 1 July 2023 to 30 June 2026; extension made law by the Treasury Laws Amendment (Strengthening Financial Systems and Other Measures) Act 2025) can be immediately deducted by small business entities. Confirm the limit for later years.  _(ITAA 1997 s 328-180)_
 
 ### 5.4 Superannuation [T1]
 
@@ -278,7 +273,7 @@ For 2025–26, eligible small business entities using simplified depreciation ca
 
 **5.5 HELP/HECS Repayment [T1]**
 
-Use the 2025–26 thresholds below for this return workflow. Use the separately labelled 2026–27 bands only for that requested year. Both years are marginal: nil at or below the minimum threshold; 15c then 17c on the excess; the top band is 10% of **total** repayment income. Do not use the old 1%--10% of whole-of-income rates.
+Use the 2026-27 bands unless the return year is 2025-26. Both years are marginal: nil at or below the minimum threshold; 15c then 17c on the excess; the top band is 10% of **total** repayment income. Do not use the old 1%--10% of whole-of-income rates.
 
 | Repayment income (2026-27) | Repayment |
 | --- | --- |
@@ -298,9 +293,9 @@ Use the 2025–26 thresholds below for this return workflow. Use the separately 
 
 | Item | Value |
 | --- | --- |
-| Self-lodge deadline | 2 November 2026 (31 October is Saturday; check extensions) |
+| Self-lodge deadline | 31 October 2026 |
 | Tax agent deadline | Varies (typically March-May 2027) |
-| Failure to lodge on time | $364 per 28-day period or part, up to five base units ($1,820) for the applicable period from 1 July 2026; apply relevant multipliers and remission rules. [Crimes (Amount of a Penalty Unit) Instrument 2026](https://www.legislation.gov.au/F2026N00424/asmade/text) |
+| Failure to lodge on time | $330 per 28-day period, up to 5 periods ($1,650 max) |
 | Shortfall penalty (reasonable care not taken) | 25% of shortfall |
 | Shortfall penalty (recklessness) | 50% of shortfall |
 | General Interest Charge (GIC) | Rate set quarterly and published on the ATO website; calculated daily and compounded |
@@ -327,7 +322,7 @@ Use the 2025–26 thresholds below for this return workflow. Use the separately 
 | Cents per km (88c) | Max 5,000 business km. No receipts needed. | Reasonable estimate of business km |
 | Logbook | Business % of actual costs including depreciation | 12-week continuous logbook, valid for 5 years |
 
-- **Cannot claim both methods**: Cannot claim both. Eligible business parking and tolls can be separate deductions. Roadside assistance is a car operating expense covered by the cents-per-kilometre rate; do not claim it again under that method. Confirm method and km/logbook records.
+- **Cannot claim both methods** — Cannot claim both. Parking, tolls, and roadside assistance are separate and deductible under either method for business trips. Confirm method and km/logbook records.
 
 ### 6.3 Private Health Insurance (Medicare Levy Surcharge) [T2]
 

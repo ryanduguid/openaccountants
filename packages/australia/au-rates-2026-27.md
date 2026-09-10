@@ -1,7 +1,7 @@
 ---
 name: au-rates-2026-27
 description: Use this skill whenever you need a current Australian tax rate, threshold, cap or due date for the 2026-27 or 2025-26 income year -- individual brackets, HELP repayment, Medicare levy and surcharge, super guarantee and contribution caps, Division 296, company rates, Div 7A benchmark, FBT, CGT caps and concessions, GST, PAYG instalment uplift, cents-per-km, car limits, penalty units, payroll tax, minimum wage or ASIC fees. Single-page rates card; every figure carries its source. Trigger on "what is the current rate", "2026-27 threshold", "how much is the cap", or any AU figure lookup. Load alongside the topic guide.
-version: "1.0"
+version: 1.1
 jurisdiction: AU
 tax_year: 2025
 last_updated: 2026-09-02

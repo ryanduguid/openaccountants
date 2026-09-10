@@ -4,8 +4,7 @@ description: Use this skill whenever asked about Australia transfer pricing rule
 version: 1.2
 jurisdiction: AU
 tax_year: 2025
-tax_year_notes: "2025–26"
-last_updated: 2026-09-10
+last_updated: 2026-08-28
 review_status: pending_review
 depends_on:
   - transfer-pricing-workflow-base
@@ -16,9 +15,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Australia Transfer Pricing
 
-## Australia Transfer Pricing Skill v1.2
+## Australia Transfer Pricing Skill v1.1
 
-Australia Transfer Pricing Skill v1.2
+Australia Transfer Pricing Skill v1.1
 
 ## Section 1 -- Quick Reference
 
@@ -29,13 +28,13 @@ Australia Transfer Pricing Skill v1.2
 | Country | Australia (Commonwealth of Australia) |
 | Tax authority | Australian Taxation Office (ATO) |
 | Key TP legislation | Subdivision 815-B, Income Tax Assessment Act 1997 (ITAA 1997) |
-| Documentation | Subdivision 284-E, Schedule 1, Taxation Administration Act 1953 (TAA 1953) |
-| CbCR legislation | Subdivision 815-E ITAA 1997 |
+| Documentation | Subdivision 815-D ITAA 1997; Division 284-E, Schedule 1, Tax Administration Act 1953 (TAA 1953) |
+| CbCR legislation | Division 815-E ITAA 1997 |
 | OECD member? | Yes |
 | BEPS signatory? | Yes |
 | Currency | AUD |
 | Documentation language | English |
-| Skill version | 1.2 |
+| Skill version | 1.1 |
 
 ## Section 2 -- Documentation Requirements
 
@@ -49,9 +48,9 @@ Australia Transfer Pricing Skill v1.2
 | Timing | Contemporaneous -- prepared before lodging income tax return |
 | Penalty relevance | Without contemporaneous documentation, cannot establish "reasonably arguable position" (RAP) |
 
-### 2.2 Three-Tier Documentation (Country-by-Country Reporting Entities)
+### 2.2 Three-Tier Documentation (Significant Global Entities)
 
-**Three-Tier Documentation (Country-by-Country Reporting Entities)**
+**Three-Tier Documentation (Significant Global Entities)**
 
 | Document | Detail |
 | --- | --- |
@@ -61,7 +60,7 @@ Australia Transfer Pricing Skill v1.2
 | Filing deadline | Within 12 months of end of income year |
 | Filing method | Electronic lodgment with ATO |
 
-- **CbC reporting scope:** Establish whether the entity is a CbC reporting entity for the relevant period under s 815-370, including group-income and accounting-consolidation rules, exclusions and any reporting exemption. SGE status alone does not settle CbC obligations. [ITAA 1997 s 815-370](https://www.ato.gov.au/law/view/document?docid=PAC/19970038/815-370).
+- **Significant Global Entity threshold** — Applies to entities in groups with consolidated annual global income ≥ AUD 1 billion AUD
 
 ### 2.3 International Dealings Schedule (IDS)
 
@@ -75,7 +74,7 @@ Australia Transfer Pricing Skill v1.2
 
 ### 2.4 Short Form Local File
 
-- **Short Form Local File:** Determine CbC reporting-entity status and apply the reporting-period ATO local-file instructions to identify which parts are required. Do not infer a reduced filing obligation from revenue or a general low-risk description alone. [ATO CbC reporting](https://www.ato.gov.au/businesses-and-organisations/international-tax-for-business/in-detail/transfer-pricing/country-by-country-reporting).
+- **Short Form Local File availability** — Available for entities with lower-risk or less material international related-party dealings that still meet the AUD 1 billion threshold.
 
 ## Section 3 -- Arm's Length Standard
 
@@ -111,9 +110,9 @@ Australia Transfer Pricing Skill v1.2
 | Obligation | Detail |
 | --- | --- |
 | International Dealings Schedule (IDS) | Filed with income tax return |
-| Master File (CbC reporting entities) | Electronic lodgment within 12 months of year-end |
-| Local File (CbC reporting entities) | Electronic lodgment within 12 months of year-end |
-| CbC Report (CbC reporting entities) | Electronic lodgment within 12 months of year-end |
+| Master File (SGEs) | Electronic lodgment within 12 months of year-end |
+| Local File (SGEs) | Electronic lodgment within 12 months of year-end |
+| CbC Report (SGEs) | Electronic lodgment within 12 months of year-end |
 | Reportable Tax Position (RTP) | Large taxpayers must disclose TP positions |
 | Income tax return | Annual self-assessment |
 
@@ -124,9 +123,9 @@ Australia Transfer Pricing Skill v1.2
 | Item | Deadline |
 | --- | --- |
 | TP documentation preparation | Before lodging income tax return |
-| IDS filing | With income tax return (use the entity’s actual return due date) |
+| IDS filing | With income tax return (varies by entity type; generally 15 January for large) |
 | Master/Local/CbC Report | 12 months after end of income year |
-| Income tax return (companies) | Use the ATO lodgement programme for the entity, agent status and compliance history; no universal 15 January date |
+| Income tax return (companies) | Generally due by 15 January following year (for 30 June year-end) with extensions |
 
 ## Section 6 -- Penalties
 
@@ -136,14 +135,11 @@ Australia Transfer Pricing Skill v1.2
 
 | Scenario | Penalty Rate |
 | --- | --- |
-| RAP established, no dominant tax purpose | 10% of scheme shortfall, before applicable adjustments |
-| RAP established, dominant tax purpose | 25% of scheme shortfall, before applicable adjustments |
+| Reasonably arguable position (RAP) established | No penalty |
 | No RAP, no dominant tax purpose | 25% of tax shortfall |
 | No RAP, dominant tax purpose | 50% of tax shortfall |
 | Uplift for repeat behaviour | Additional 20% |
-| SGE adjustments | Apply the relevant statutory penalty provision; do not automatically double every transfer-pricing scheme-shortfall rate |
-
-[ATO PS LA 2014/2](https://www.ato.gov.au/law/view/document?docid=PSR/PS20142/NAT/ATO/00001) explains transfer-pricing scheme-shortfall penalties. Contemporaneous documents are necessary for the statutory RAP treatment but do not guarantee a RAP or nil liability.
+| SGE multiplier | Doubled penalties for SGEs |
 
 ### 6.2 Documentation Impact
 
@@ -155,18 +151,18 @@ Australia Transfer Pricing Skill v1.2
 
 | Offence | Penalty |
 | --- | --- |
-| Failure to lodge Local File, Master File, or CbC Report | Up to $910,000 at the $364 penalty-unit value from 1 July 2026 where the five-unit, 500-times SGE rule applies; check dates, obligation and remission. [Crimes (Amount of a Penalty Unit) Instrument 2026](https://www.legislation.gov.au/F2026N00424/asmade/text) |
+| Failure to lodge Local File, Master File, or CbC Report | Up to AUD 825,000 per failure |
 | Shortfall interest charge | Applies on underpaid tax |
 
 ## Section 7 -- Advance Pricing Agreements (APA)
 
-**Advance Pricing Agreements (APA)**  _(PS LA 2015/4)_
+**Advance Pricing Agreements (APA)**  _(TR 95/23; PCG 2019/1)_
 
 | Item | Detail |
 | --- | --- |
 | Availability | Yes (well-established program) |
 | Types | Unilateral, Bilateral, Multilateral |
-| Governing guidance | [PS LA 2015/4](https://www.ato.gov.au/law/view/document?docid=PSR/PS20154/NAT/ATO/00001) |
+| Governing guidance | TR 95/23; Practical Compliance Guideline PCG 2019/1 |
 | Application | To ATO; Expression of Interest followed by formal application |
 | Duration | Typically 3-5 years prospective; rollback possible |
 | Fees | No formal fee |
@@ -196,7 +192,7 @@ ATO publishes Practical Compliance Guidelines indicating risk zones for various 
 | --- | --- |
 | 2024-2025 | Updated Local File instructions (Part A and Part B) |
 | 2024 | Enhanced ATO compliance focus on intangibles and financial transactions |
-| 2024 | Australian global and domestic minimum-tax legislation enacted; use the separate minimum-tax rules and application dates |
+| 2023 | Pillar Two (GloBE) legislation enacted |
 | 2022 | Multinational Tax Integrity Package -- increased penalties for SGEs |
 | Ongoing | ATO PCGs on profit allocation to permanent establishments |
 | Ongoing | OECD Amount B: Australia participating in design; implementation timeline TBC |

@@ -1,7 +1,7 @@
 ---
 name: au-sole-trader-schedule
-description: Australian sole trader business schedule (Business and Professional Items Schedule for Individuals). Covers assessable business income, allowable deductions, home office (fixed rate 67c/hour or actual), motor vehicle (logbook or cents per km at 85c/km), depreciation (instant asset write-off, simplified pooling, general pooling), prepaid expenses, and trading stock.
-version: 1.0
+description: Australian sole trader business schedule (Business and Professional Items Schedule for Individuals). Covers assessable business income, allowable deductions, home office (fixed rate 70c/hour or actual), motor vehicle (logbook or cents per km at 88c/km), depreciation (instant asset write-off, simplified pooling, general pooling), prepaid expenses, and trading stock.
+version: 1.2
 jurisdiction: AU
 tax_year: 2025
 last_updated: 2026-08-28

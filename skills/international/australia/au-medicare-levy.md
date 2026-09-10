@@ -3,9 +3,8 @@ name: au-medicare-levy
 description: Use this skill whenever asked about the Australian Medicare Levy, Medicare Levy Surcharge (MLS), low-income reduction thresholds, family thresholds, surcharge tiers, private health insurance (PHI) rebate interaction, or Medicare levy exemptions. Trigger on phrases like "Medicare levy", "Medicare surcharge", "MLS", "do I pay Medicare levy", "low income Medicare", "Medicare levy reduction", "Medicare levy exemption", "private health insurance rebate", "PHI rebate", "M1", "M2", or any question about Medicare-related levies on an Australian tax return. ALWAYS read this skill before touching any Medicare levy work.
 version: 2.3
 jurisdiction: AU
-tax_year: 2025
-tax_year_notes: "2025–26"
-last_updated: 2026-09-10
+tax_year: 2024
+last_updated: 2026-08-28
 review_status: pending_review
 category: international
 tier: 2
@@ -16,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## AU Medicare Levy
 
-## Australia Medicare Levy and Medicare Levy Surcharge Skill v2.3
+## Australia Medicare Levy and Medicare Levy Surcharge Skill v2.2
 
 ## Section 1 -- Quick reference
 
@@ -29,7 +28,7 @@ Read this whole section before computing anything.
 | Country | Australia |
 | Jurisdiction Code | AU |
 | Primary Legislation | Medicare Levy Act 1986 (MLA 1986); A New Tax System (Medicare Levy Surcharge -- Fringe Benefits) Act 1999 |
-| Supporting Legislation | ITAA 1936 Part VIIB (Medicare levy); Medicare Levy Act 1986 ss 8B–8G (MLS); Health Insurance Act 1973; Private Health Insurance Act 2007 |
+| Supporting Legislation | ITAA 1997 Div 61 (Medicare levy); ITAA 1997 s 8C-8G (MLS); Health Insurance Act 1973; Private Health Insurance Act 2007 |
 | Tax Authority | Australian Taxation Office (ATO) |
 | Tax Year | 2025-26 (1 July 2025 -- 30 June 2026) |
 | Standard Medicare Levy Rate | 2% of taxable income |
@@ -38,7 +37,7 @@ Read this whole section before computing anything.
 | Currency | AUD only |
 | Contributor | Open Accountants |
 | Validation Date | August 2026 |
-| Skill version | 2.3 |
+| Skill Version | 2.2 |
 | Confidence Coverage | Tier 1: standard levy, low-income reduction, surcharge tiers, family thresholds. Tier 2: half-year exemptions, part-year residents, PHI rebate tier selection. Tier 3: Norfolk Island transitional, diplomatic exemptions, prescribed overseas forces. |
 
 **Low-income reduction thresholds (2025-26)**
@@ -98,7 +97,7 @@ The rebate adjustment factor applies each 1 April (a percentage of the CPI incre
 | Unknown marital status | Single (use individual thresholds) |
 | Unknown PHI status | No appropriate cover (MLS applies if income exceeds threshold) |
 | Unknown SAPTO entitlement | Not entitled (use general thresholds) |
-| Unknown MLS income components | Obtain the missing amounts; do not treat unknown reportable super, fringe benefits or losses as zero |
+| Unknown MLS income components | Include only confirmed taxable income |
 
 ## Section 2 -- Required inputs and refusal catalogue
 
@@ -171,18 +170,14 @@ This is the deterministic pre-classifier for bank statement entries related to M
 - **SAPTO family threshold formula** — For SAPTO-entitled families: Family threshold = $61,623 + ($4,338 x number_of_dependent_children)
 - **Family upper threshold (full levy)** — The reduction phases out entirely at the upper family income threshold: $59,047 (+ $5,423 per dependent child), or $77,028 (+ $5,423 per child) when SAPTO-entitled. Above it the full 2% levy applies.  _(Medicare Levy Act 1986 s 8)_
 - **Family threshold effect** — Family income at or below the family threshold: no Medicare levy payable for either spouse. Family income above the family threshold: each spouse pays their individual share, subject to individual reduction rules.  _(Medicare Levy Act 1986 s 8)_
-- **Family income for ordinary Medicare levy:** Start with the spouses’ combined taxable incomes, applying the statutory adjustments for this calculation. Do not add reportable super contributions or net investment losses merely because they enter the MLS threshold calculation. Calculate each person’s levy reduction under s 8. [Medicare Levy Act 1986 s 8](https://www.legislation.gov.au/C2004A03351/latest/text).
-
-### MLS computation base
-
-Select the tier using income for surcharge purposes, including the relevant family threshold. Compute each person’s surcharge on their statutory base: taxable income, reportable fringe benefits and relevant family-trust distribution amounts, subject to applicable exclusions. Do not add reportable super or net investment losses to that base merely because they affect the tier. Apply the individual low-income exemption and covered/exempt days: base × rate × liable days / days in year. [ATO MLS income and rates](https://www.ato.gov.au/individuals-and-families/medicare-and-private-health-insurance/medicare-levy-surcharge/medicare-levy-surcharge-income-thresholds-and-rates).
+- **Family income for Medicare levy purposes** — Family income for Medicare levy purposes = combined taxable income of both spouses + any exempt foreign employment income + any net financial investment loss + reportable super contributions.  _(Medicare Levy Act 1986 s 8)_
 
 ### 4.4 Medicare Levy Surcharge (Tier 1)
 
-- **MLS overview**: The MLS is a separate levy on top of the standard 2% Medicare levy. It applies to taxpayers who do NOT hold appropriate private patient hospital cover and whose income exceeds the MLS threshold.  _(Medicare Levy Act 1986 ss 8B–8G)_
-- **Income for MLS threshold purposes:** Start with taxable income and add reportable fringe benefits, reportable super contributions, total net financial-investment and rental losses, and relevant family-trust distribution amounts. Apply the statutory exclusions, including relevant super lump-sum and FHSS amounts, without counting taxable amounts twice. Child support paid is not a general deduction from this measure. Establish each spouse’s figures and family circumstances. [ATO MLS income and rates](https://www.ato.gov.au/individuals-and-families/medicare-and-private-health-insurance/medicare-levy-surcharge/medicare-levy-surcharge-income-thresholds-and-rates).
-- **MLS pro-ration and appropriate cover definition**: MLS is pro-rated for each day the client (and/or dependants) do not have appropriate private hospital cover. Appropriate cover means private patient hospital cover with an excess of no more than $750 for singles or $1,500 for families/couples.  _(Medicare Levy Act 1986 ss 8B–8G)_
-- **Family threshold applies regardless of spouse income**: If married/de facto, the family threshold applies regardless of whether the spouse earns income.  _(Medicare Levy Act 1986 ss 8B–8G)_
+- **MLS overview** — The MLS is a separate levy on top of the standard 2% Medicare levy. It applies to taxpayers who do NOT hold appropriate private patient hospital cover and whose income exceeds the MLS threshold.  _(ITAA 1997 s 8C-8G)_
+- **Income for MLS purposes** — Income for MLS purposes = taxable income + reportable fringe benefits total + total net investment loss (including net financial investment loss and net rental property loss) + super lump sum (taxed element, untaxed element) - child support paid.  _(ITAA 1997 s 8C-8G)_
+- **MLS pro-ration and appropriate cover definition** — MLS is pro-rated for each day the client (and/or dependants) do not have appropriate private hospital cover. Appropriate cover means private patient hospital cover with an excess of no more than $750 for singles or $1,500 for families/couples.  _(ITAA 1997 s 8C-8G)_
+- **Family threshold applies regardless of spouse income** — If married/de facto, the family threshold applies regardless of whether the spouse earns income.  _(ITAA 1997 s 8C-8G)_
 
 ### 4.5 PHI rebate interaction (Tier 1)
 
@@ -199,7 +194,7 @@ Planning note: For clients in Tier 1 or Tier 2 MLS, holding private hospital cov
 | Category | Exemption |
 | --- | --- |
 | Foreign residents (for the full year) | Full exemption from Medicare levy for the entire year |
-| Temporary residents not entitled to Medicare | Obtain the Medicare Entitlement Statement for the dates claimed and apply dependent/full/half exemption conditions; a visa and non-enrolment alone do not establish entitlement |
+| Temporary residents not eligible for Medicare | Full exemption (must hold valid visa and not be enrolled in Medicare) |
 
 ### 5.2 Half or partial exemption categories (Tier 2)
 
@@ -208,13 +203,13 @@ Planning note: For clients in Tier 1 or Tier 2 MLS, holding private hospital cov
 | Category | Exemption |
 | --- | --- |
 | Part-year residents | Pro-rata exemption for non-resident days. Flag for reviewer. |
-| Medical exemption category | Verify the prescribed condition and dependent rules before determining full or half exemption; blindness alone does not settle every family case |
+| Specific medical conditions (Category 1) | Blind persons -- full exemption. Complete Medicare Levy Exemption Statement. |
 | Specific medical conditions (Category 2) | Persons in specified care -- partial or full exemption depending on circumstances. Flag for reviewer. |
 
 ### 5.3 Reciprocal Health Care Agreements (Tier 2)
 
 - **Reciprocal health care agreements** — Australia has reciprocal health care agreements with several countries (UK, Ireland, New Zealand, Sweden, Netherlands, Belgium, Finland, Italy, Norway, Slovenia, Malta). Residents of these countries visiting Australia may be entitled to Medicare and therefore NOT exempt from the levy. Flag for reviewer to confirm coverage.
-- **Foreign-resident exemption and M1:** Establish tax residency and the exempt days under the applicable category. Reciprocal-agreement status or enrolment is not an extra condition on the full-year foreign-resident tax exemption. Complete M1 and relevant spouse/dependent details using the year’s instructions.
+- **Non-reciprocal foreign residents exemption and M1** — Foreign residents who are NOT covered by a reciprocal agreement and NOT enrolled in Medicare are exempt from the Medicare levy. They must complete item M1 on the tax return.
 
 ## Section 6 -- Completing the tax return
 
@@ -224,15 +219,7 @@ Planning note: For clients in Tier 1 or Tier 2 MLS, holding private hospital cov
 
 ### 6.2 Item M2 -- Medicare levy surcharge
 
-- **When to complete M2:** Complete the compulsory question, including the full-year hospital-cover answer and required days, even if the surcharge is nil. Verify the taxpayer’s and dependants’ appropriate cover. [ATO M2 instructions](https://www.ato.gov.au/api/public/content/0-ef4bc48e-e33e-428b-887f-4d45fc752456).
-
-### Calculation checks for distinct MLS income measures
-
-- Single, full-year liable, no appropriate cover: taxable income $100,000 plus $10,000 reportable super gives threshold income $110,000 but a $100,000 surcharge base. At the 2025–26 1% tier, MLS is $1,000.
-- Single, full-year liable, no cover: taxable income $110,000 plus $15,000 reportable super gives threshold income $125,000 and base $110,000. The 1.25% tier gives $1,375.
-- A combined family threshold income alone does not determine the family’s dollar liability. Calculate each spouse separately using their base, exemption and liable days.
-
-[ATO MLS income and rates](https://www.ato.gov.au/individuals-and-families/medicare-and-private-health-insurance/medicare-levy-surcharge/medicare-levy-surcharge-income-thresholds-and-rates).
+- **When to complete M2** — Complete M2 if: you (or your spouse/dependants) did not have appropriate private hospital cover for any day during the year; your income for MLS purposes exceeds the relevant threshold ($101,000 singles / $202,000 families for 2025-26). If the client held appropriate cover for the full year, M2 does not need to be completed (no MLS is payable).
 
 ## Section 7 -- Edge case registry
 
@@ -268,7 +255,7 @@ Resolution: Family threshold = $47,238 + ($4,338 x 4) = $64,590. Family income o
 
 ### EC7 -- MLS with private hospital cover held for part of year (Tier 2)
 
-Situation: Client held appropriate PHI for 200 days of the year, no cover for 165 days. Single, taxable income, threshold income and surcharge base each $120,000; no other adjustments or exemptions.
+Situation: Client held appropriate PHI for 200 days of the year, no cover for 165 days. Single, income for MLS purposes $120,000.
 Resolution: MLS is pro-rated for the 165 uncovered days. MLS = $120,000 x 1.25% x (165/365) = $678.08 (approximately). Flag for reviewer -- confirm exact uncovered days.
 
 ## Section 8 -- Reviewer escalation protocol
@@ -316,12 +303,12 @@ Expected output: Medicare levy = $0. Below $28,011 lower threshold.
 
 ### Test 4 -- MLS Tier 1 (single, no PHI)
 
-Input: Single, taxable income, threshold income and surcharge base each $105,000. No private hospital cover for the full year; no other adjustments or exemptions.
+Input: Single, income for MLS purposes $105,000. No private hospital cover.
 Expected output: Medicare levy = $105,000 x 2% = $2,100.00. MLS = $105,000 x 1.0% = $1,050.00. Total Medicare-related charges = $3,150.00.
 
 ### Test 5 -- MLS Tier 3 (single, no PHI)
 
-Input: Single, taxable income, threshold income and surcharge base each $200,000. No private hospital cover for the full year; no other adjustments or exemptions.
+Input: Single, income for MLS purposes $200,000. No private hospital cover.
 Expected output: Medicare levy = $200,000 x 2% = $4,000.00. MLS = $200,000 x 1.5% = $3,000.00. Total = $7,000.00.
 
 ### Test 6 -- Family below family threshold
@@ -336,14 +323,14 @@ Expected output: Full Medicare levy exemption. Levy = $0. Must complete item M1.
 
 ### Test 8 -- MLS family threshold with children
 
-Input: Married couple with 3 dependent children. Each spouse has taxable income, threshold income and surcharge base of $105,000. Both lack appropriate cover all year, with no other adjustments or exemptions. Combined threshold income is $210,000.
-Expected output: Family MLS threshold = $202,000 + ($1,500 x 2 children after the first) = $205,000. Income $210,000 > $205,000. MLS Tier 1 = 1.0% applies, so each spouse pays $105,000 x 1.0% = $1,050, for a combined $2,100. This result depends on the stated separate bases and liability conditions.
+Input: Family, 3 children, combined income for MLS purposes $210,000. No PHI.
+Expected output: Family MLS threshold = $202,000 + ($1,500 x 2 children after the first) = $205,000. Income $210,000 > $205,000. MLS Tier 1 = 1.0% applies, so MLS = $210,000 x 1.0% = $2,100.
 
 ## Section 10 -- Prohibitions and disclaimer
 
 ### Prohibitions
 
-- **Prohibitions list**: - NEVER apply the Medicare levy to a confirmed full-year foreign resident - NEVER ignore the MLS income definition -- it is NOT the same as taxable income (includes reportable fringe benefits and net investment losses) - NEVER tell a client they avoid MLS simply because their taxable income is below $101,000 -- check income for MLS purposes - NEVER apply the general low-income threshold ($28,011) to a SAPTO-entitled senior -- use the SAPTO thresholds ($44,268 / $55,335) - NEVER assume PHI eliminates MLS unless the cover is "appropriate" (private patient hospital cover with excess no more than $750 singles / $1,500 families) - NEVER present Medicare levy figures as definitive -- always label as estimated and direct client to their ATO assessment for confirmation - NEVER advise on diplomatic or prescribed overseas forces exemptions -- escalate - NEVER confuse the Medicare levy (2% on taxable income) with the Medicare Levy Surcharge (1%–1.5% on the statutory surcharge base, with the tier selected using income for MLS purposes) -- they are separate charges
+- **Prohibitions list** — - NEVER apply the Medicare levy to a confirmed full-year foreign resident who is not enrolled in Medicare - NEVER ignore the MLS income definition -- it is NOT the same as taxable income (includes reportable fringe benefits and net investment losses) - NEVER tell a client they avoid MLS simply because their taxable income is below $101,000 -- check income for MLS purposes - NEVER apply the general low-income threshold ($28,011) to a SAPTO-entitled senior -- use the SAPTO thresholds ($44,268 / $55,335) - NEVER assume PHI eliminates MLS unless the cover is "appropriate" (private patient hospital cover with excess no more than $750 singles / $1,500 families) - NEVER present Medicare levy figures as definitive -- always label as estimated and direct client to their ATO assessment for confirmation - NEVER advise on diplomatic or prescribed overseas forces exemptions -- escalate - NEVER confuse the Medicare levy (2% on taxable income) with the Medicare Levy Surcharge (1%-1.5% on MLS income for those without PHI) -- they are separate charges
 
 ### Disclaimer
 
