@@ -2228,3 +2228,109 @@ Corpus effect: authority citations 2,830 → **2,867**, secondary 4,713 → **4,
 `cd-tax-overview.md` carried the same VAT rate and filing deadline on commercial
 citations and was re-pointed to arts. 35 and 60 in the same commit — the
 jurisdiction-wide grep, which is what found it.
+
+## Lesotho — the numbers were right and three whole rules were missing
+
+`ls-corporate-income-tax.md` rested six of its seven numeric facts on one law
+firm's page. Reading the Income Tax Act 1993 as published by Revenue Services
+Lesotho **confirmed every rate the guide stated** — and found that confirming the
+stated numbers is not the same as the guide being right.
+
+### What was absent
+
+- **A rate band.** The Third Schedule has four rows, not two. Item 2 —
+  manufacturing income from activities relating *"exclusively to exports to any
+  country other than a country within the Southern African Customs Union"* — is at
+  **0%**. The guide described a two-rate system.
+- **A whole tax.** Section 87 imposes **advance corporation tax** on a resident
+  company paying a dividend, at `A × 100/(100−A)` where A is the non-manufacturing
+  Third Schedule rate — **33.33%** of the gross dividend — with a return due within
+  **seven days** of payment. The guide did not mention it.
+- **A withholding section.** Section 157 requires **5%** withholding on payments to
+  a resident contractor — construction, transport, plant hire, plumbing, roofing,
+  landscaping and more — subject to a monthly M3,000 test, a principal-residence
+  carve-out and exemption certificates. Any business paying a Lesotho builder
+  operates it. The guide listed five withholding rates and not this one.
+
+**A guide can be fully verified and still mislead by omission.** Every checker in
+this repo compares stated figures against sources; none of them can see a rule
+that is simply not there. The single-source queue found this file because of who
+was cited, not because anything it said was wrong.
+
+### The authority contradicts itself, and the contradiction is on one page
+
+RSL's *Guide on Corporate Tax* (June 2025) prints a rate table whose Rate column is
+**inverted relative to the explanatory notes directly beneath it**. The table puts
+manufacturing-for-export at 25% and "Other Income" at 10%; note (a) on the same
+page says 10% for manufacturing exports and note (b) says 25% for non-manufacturing
+companies. The Act and RSL's own website agree with the notes.
+
+This was checked rather than assumed to be an extraction artefact. Re-extracting
+the page with pdfminer's layout analysis and printing each text line with its `y`
+and `x` coordinates showed each rate positionally aligned with its own row: 10% at
+y=309.1, 0% at y=240.1, 10% at y=212.6, 25% at y=185.0, all at x=431.0 against four
+distinct row labels. **The document really does say it.** The guide follows the
+Act, states the conflict in a table of its own, and does not paper over it.
+
+### A public ruling that is right about structure and dated about rates
+
+RSL's *Withholding Tax Public Ruling* is the only RSL document that tabulates
+withholding rates — and it is dated **April 2010** and works its example at **14%
+VAT**, a rate Lesotho has since moved. Its account of *structure* is used (which
+section catches which payment, that "gross amount" means before VAT, that goods
+supplied incidentally to a service are swept in). Its **rates** are taken from the
+Act instead.
+
+That mattered. The ruling gives the 15% manufacturing-linked withholding for
+**royalties only**. Section 107(3), as substituted by s.9 of Act No. 2 of 1994,
+gives it for **interest, royalties and management charges** — three limbs. Had the
+ruling been treated as authoritative because it came from the authority, the guide
+would have narrowed a statutory relief by two thirds. **An authority's summary is
+a secondary source about its own statute.**
+
+### Two places where RSL's guidance is simpler than the law
+
+- **The provisional-tax instalment.** RSL's *Guide on Provisional Tax* says each
+  instalment is "30% of the Client's income tax liability for the preceding year".
+  Section 150(1) says **30% × (A − B)**, where B is so much of the preceding year's
+  liability as was already paid by **amounts withheld at source**. For a company
+  with substantial withholding credits those are materially different numbers.
+- **The branch rate.** 25% on branch profits is right, but it is the ordinary
+  corporate rate on the branch's income, **not a remittance tax** — and s.10(2)
+  denies a Lesotho branch of a non-resident company the manufacturing concession
+  altogether.
+
+### A worked example in an authority document that does not compute
+
+RSL's *Advanced Corporation Tax Guide* takes chargeable income of M100,000, states
+the resulting liability as M16,667 (25% of M100,000 is M25,000), then divides it by
+three to reach "M5,000 per quarter" (a third of M16,667 is M5,555.67). Neither step
+follows. The **rule** in that guide matches s.87 and is used; its **arithmetic** is
+flagged in the guide so a reader working through the example does not assume the
+error is theirs.
+
+### What could not be read, and is marked as such
+
+The most recent consolidation RSL publishes is the Act **updated to 1 April 2012**.
+RSL also lists *Income Tax (Amendment) Regulations No. 24 of 2026* — published as a
+**scanned image with no extractable text**, and no OCR is available in this
+environment. So the 25% and 10% figures are separately confirmed by RSL's current
+website, and **the 0% export band is not**. The guide carries a currency note
+saying exactly that, rather than presenting a 2012 schedule as current law.
+
+Corpus effect: authority citations 2,867 → **2,893**, secondary 4,704 → **4,694**,
+the single-source queue 26 → **25**. The jurisdiction-wide grep also re-pointed the
+non-resident rate and the fringe-benefits rate in `ls-income-tax.md` to the Act —
+the latter revealing that the 40% is applied to a **grossed-up** base under s.117,
+`A × 1/(1−B)`, not to the benefit's face value.
+
+### Qatar, attempted and deferred
+
+`qa-payroll-social.md` was taken first and set down. Qatar's GRSIA
+(`grsia.gov.qa`, also served as `daman.gov.qa`) resolves 200 and classifies as an
+authority, but its SharePoint site renders every content page in JavaScript and
+returns **403 on `/_api/web/lists`, `/_api/search/query` and `/_vti_bin/ListData.svc`**
+for anonymous callers; `sitemap.xml` and `robots.txt` both 404 into a SharePoint
+error page. The Ministry of Justice's Al-Meezan legal portal (`almeezan.qa`) does
+not resolve from this network, and `hukoomi.gov.qa` returns 403. **A reachable
+authority is not a readable one**, and the queue entry stands.
