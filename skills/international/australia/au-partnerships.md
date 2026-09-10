@@ -2,7 +2,7 @@
 name: au-partnerships
 description: >
   Use this skill whenever asked about Australian partnership taxation -- partnership tax returns (form P), how section 90 net income or partnership losses flow through to partners under section 92, partner salaries and drawings, non-commercial loss deferral for partner shares, CGT on fractional partnership interests, admitting or retiring partners, reconstitution versus dissolution, GST registration for partnerships, family or husband-and-wife partnerships, income splitting, Everett assignments, or professional firm profit allocation under PCG 2021/4. Trigger on phrases like "partnership return", "partner salary", "partnership loss", "profit share", "admit a partner", "family partnership", or "Everett". ALWAYS read this skill before touching any partnership work.
-version: "1.1"
+version: 1.1
 jurisdiction: AU
 tax_year: 2026
 tax_year_notes: "2026-27"

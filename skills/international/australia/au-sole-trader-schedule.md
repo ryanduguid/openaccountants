@@ -1,7 +1,7 @@
 ---
 name: au-sole-trader-schedule
 description: Australian sole trader business schedule (Business and Professional Items Schedule for Individuals). Covers assessable business income, allowable deductions, home office (fixed rate verified rate for the return year or actual), motor vehicle (logbook or cents per km at 88c/km), depreciation (instant asset write-off, simplified pooling, general pooling), prepaid expenses, and trading stock.
-version: "1.1"
+version: 1.2
 jurisdiction: AU
 tax_year: 2025
 last_updated: 2026-09-10
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # AU Sole Trader Schedule
 
-## Australia Sole Trader Business Schedule v1.1
+## Australia Sole Trader Business Schedule v1.2
 
 ## What this file is
 
@@ -71,7 +71,7 @@ This skill does NOT cover:
 | --- | --- | --- |
 | Instant asset write-off threshold | $20,000 per asset (for small business entities with aggregated turnover < $10M) for assets first used or installed ready for use between 1 July 2024 and 30 June 2025 | ITAA 1997 s 328-180 (extended by Treasury Laws Amendment) |
 | Small business entity threshold | Aggregated turnover < $10M | ITAA 1997 s 328-110 |
-| Cents per km rate (motor vehicle) | 88 cents per km | ATO determination TD 2024/4 |
+| Cents per km rate (motor vehicle) | 88 cents per km | Library, Tax/Deductions, para 4-020 |
 | Cents per km cap | 5,000 business km per car per year | ITAA 1997 s 28-25 |
 | Home office fixed rate | Rate for 2024-25 requires verification | ATO PCG 2023/1 (revised method from 1 July 2022) |
 | Trading stock threshold (change in value) | $5,000 — if the difference between opening and closing stock is < $5,000, the taxpayer can elect not to do a stocktake | ITAA 1997 s 70-35 |
@@ -79,7 +79,7 @@ This skill does NOT cover:
 
 - **Instant asset write-off threshold** — $20,000 per asset (for small business entities with aggregated turnover < $10M) for assets first used or installed ready for use between 1 July 2024 and 30 June 2025  _(ITAA 1997 s 328-180 (extended by Treasury Laws Amendment))_
 - **Small business entity threshold** — Aggregated turnover < $10M  _(ITAA 1997 s 328-110)_
-- **Cents per km rate (motor vehicle)** — 88 cents per km  _(ATO determination TD 2024/4)_
+- **Cents per km rate (motor vehicle)** — 88 cents per km  _(Library, Tax/Deductions, para 4-020)_
 - **Cents per km cap** — 5,000 business km per car per year  _(ITAA 1997 s 28-25)_
 - **Home office fixed rate** — Rate for 2024-25 requires verification  _(ATO PCG 2023/1 (revised method from 1 July 2022))_
 - **Trading stock threshold (change in value)** — $5,000 — if the difference between opening and closing stock is < $5,000, the taxpayer can elect not to do a stocktake  _(ITAA 1997 s 70-35)_
@@ -123,7 +123,7 @@ Two methods available for sole traders:
 
 #### Method 1 — Cents per kilometre
 
-- **Cents per kilometre method** — Claim 88c per business km, up to 5,000 km per car per year. Maximum claim = 5,000 x $0.88 = $4,400 per car. No logbook or written evidence of individual trips required, but must be able to show how the estimate was calculated.  _(ATO determination TD 2024/4; ITAA 1997 s 28-25)_
+- **Cents per kilometre method** — Claim 88c per business km, up to 5,000 km per car per year. Maximum claim = 5,000 x $0.88 = $4,400 per car. No logbook or written evidence of individual trips required, but must be able to show how the estimate was calculated.  _(Library, Tax/Deductions, para 4-020; ITAA 1997 s 28-25)_
 
 #### Method 2 — Logbook
 

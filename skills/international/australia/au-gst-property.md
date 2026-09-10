@@ -9,7 +9,7 @@ description: >
   on "GST withholding", "GST at settlement", "margin scheme", "going concern", "new residential
   premises", "subdivision GST". Covers classification, withholding mechanics, worked arithmetic
   and escalation lines. ALWAYS read this skill before touching any property GST work.
-version: "1.1"
+version: 1.1
 jurisdiction: AU
 tax_year: 2026
 tax_year_notes: "2026-27"
