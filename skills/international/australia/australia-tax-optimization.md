@@ -1,10 +1,10 @@
 ---
 name: australia-tax-optimization
 description: Use this skill when advising on LEGAL tax minimization strategies for Australian taxpayers — individuals, sole traders, and small business owners. Trigger on phrases like "reduce my tax", "tax planning Australia", "salary vs dividends", "negative gearing", "instant asset write-off", "superannuation strategy", "CGT discount", "trust distribution", "income splitting", "GAAR", "Part IVA", or any question about structuring affairs to legally minimize Australian tax. Covers entity selection, deduction optimization, capital allowances, loss utilization, timing strategies, GST planning, superannuation, and red lines. ALWAYS read this skill before giving Australian tax optimization advice.
-version: 1.1
+version: "1.2"
 jurisdiction: AU
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-10
 review_status: pending_review
 depends_on:
   - bookkeeping-workflow-base
@@ -69,7 +69,7 @@ Discretionary (family) trusts allow income distribution to adult family members 
 
 - **Section 100A reimbursement agreements** — trust distributions to low-income beneficiaries who redirect funds back to the primary earner are void.  _(Section 100A (ITAA 1936))_
 - **Family Trust Election (FTE)** — required to access franking credits and carry forward losses.
-- **Minor beneficiaries penalty rates** — Minor beneficiaries (under 18) taxed at penalty rates on unearned income (Division 6AA) — effectively 66% on amounts above $416.  _(Division 6AA)_
+- **Minor beneficiaries:** For a resident prescribed person under Division 6AA, eligible income up to $416 is tax-free; $417-$1,307 is taxed at 66% of the excess over $416; $1,308 or more is taxed at 45% of the whole eligible amount. Check excepted-person and excepted-income rules separately. (Division 6AA; Library, Tax/Trusts.)
 
 ### Superannuation as Income Splitting
 
@@ -82,8 +82,8 @@ Discretionary (family) trusts allow income distribution to adult family members 
 
 | Deduction | Legislation | Notes |
 | --- | --- | --- |
-| Home office running expenses | s 8-1 ITAA 1997 | Fixed rate 67c/hour (revised method from 1 July 2022) or actual cost. Must keep contemporaneous records (timesheets, diary) |
-| Self-education expenses | s 8-1 | Must have sufficient connection to current employment/business. First $250 non-deductible for employees (not self-employed) |
+| Home office running expenses | s 8-1 ITAA 1997 | Fixed rate 70c/hour for 2025-26 or actual cost. Must keep contemporaneous records (timesheets, diary) |
+| Self-education expenses | s 8-1 | Must have sufficient connection to current employment/business. The former $250 reduction was removed from 2022-23 |
 | Phone and internet | s 8-1 | Apportion business use %. ATO accepts a representative 4-week diary |
 | Income protection insurance | s 8-1 | Premiums for policies replacing lost income are deductible |
 | Professional memberships and subscriptions | s 8-1 | CPA Australia, CA ANZ, industry bodies |
@@ -115,14 +115,14 @@ Discretionary (family) trusts allow income distribution to adult family members 
 ### Motor Vehicles
 
 - **Car cost limit for depreciation (2025–26)** — $69,674 AUD (Only the business-use portion of this amount can be depreciated)
-- **Business-use substantiation** — Business-use percentage must be substantiated via logbook (minimum continuous 12-week period, valid for 5 years) or cents-per-km method (85c/km, max 5,000 business km = $4,250).
+- **Business-use substantiation** — Business-use percentage must be substantiated via logbook (minimum continuous 12-week period, valid for 5 years) or cents-per-km method (88c/km, max 5,000 business km = $4,400).
 
 ## Section 5 — Loss Utilization
 
 ### Individual/Sole Trader Losses
 
 - **Loss carry forward** — Tax losses carry forward indefinitely (s 36-15 ITAA 1997). No carry-back for individuals.  _(s 36-15 ITAA 1997)_
-- **Non-commercial loss rules (Division 35) — four tests** — business losses can only offset non-business income if one of four tests is met: 1. Assessable income ≥$20,000 from the activity; 2. Profit in 3 of the last 5 years (including current year); 3. Real property used ≥$500,000; 4. Other assets used ≥$100,000. If no test is met AND adjusted taxable income >$250,000, loss is quarantined. Commissioner discretion may apply.  _(Division 35)_
+- **Non-commercial loss rules:** For the four-test route, income for Division 35 must be less than $250,000 AND at least one test must pass: activity assessable income of at least $20,000; a profit in 3 of 5 years including the current year; qualifying real property of at least $500,000; or qualifying other assets of at least $100,000. Apply the asset exclusions. The income measure includes taxable income calculated before the business loss, reportable fringe benefits, reportable super contributions and total net investment losses. Otherwise defer the loss unless an exception or the Commissioner's discretion applies. Primary production and professional arts have an exception where assessable income from other sources, excluding net capital gains, is less than $40,000. (ITAA 1997 Division 35; Library, Tax/Assessable Income.)
 
 ### Company Losses
 
@@ -206,7 +206,7 @@ Discretionary (family) trusts allow income distribution to adult family members 
 | --- | --- |
 | Trust distributions to low-income beneficiaries with reimbursement agreements | s 100A — voided, trustee taxed at top rate |
 | Division 7A non-complying loans | Deemed unfranked dividend |
-| Non-commercial losses claimed without meeting 4 tests | Loss quarantined, amended assessment |
+| Non-commercial losses claimed without the required income gate and a test, exception or discretion | Review Division 35 deferral and amend if necessary |
 | Large work-related deductions vs income | Risk of audit |
 | Wash sales around 30 June | CGT loss disallowed |
 | Artificial income splitting via interposed entities | Part IVA application |
@@ -242,9 +242,9 @@ Discretionary (family) trusts allow income distribution to adult family members 
 
 ### Example 1 — Sole Trader Incorporates
 
-**Before:** Sole trader, $180,000 net profit. Tax: ~$51,067 + $3,600 Medicare = $54,667.
+**Before:** Sole trader, $180,000 taxable income. Under the 2025-26 resident bands, tax before offsets is $4,288 + $90,000 x 30% + $45,000 x 37% = $47,938, plus $3,600 Medicare = $51,538.
 
-**After:** Pty Ltd, pays $80,000 salary + $12,000 super. Retains $88,000 in company at 25% = $22,000 company tax. Personal tax on $80,000 salary: ~$16,788 + $1,600 Medicare = $18,388. **Total tax: $40,388. Saving: ~$14,279.**
+**After:** Assume the company qualifies for the 25% rate, deducts an $80,000 salary and $12,000 super contribution, and has $88,000 taxable profit. Company tax is $22,000. Personal tax before offsets on the salary is $14,788 plus $1,600 Medicare. Combined company and personal income tax is $38,388, a $13,150 difference before offsets, contributions tax, administration costs and any later tax on extracting retained profits. This is a retained-profit illustration; it does not establish a final saving from incorporation.
 
 ### Example 2 — Maximising Super Contributions
 

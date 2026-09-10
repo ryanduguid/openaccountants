@@ -11,11 +11,11 @@ description: >
   land tax, aggregation, thresholds and rates by state, surcharges, trusts,
   companies, exemptions, objections, GL treatment, and deductibility.
   ALWAYS read this skill before advising on Australian land tax.
-version: 1.0
+version: "1.1"
 jurisdiction: AU
 tax_year: 2026
 tax_year_notes: "2026 land tax year (1 Jan 2026 or 30 Jun 2025 ownership date per state)"
-last_updated: 2026-08-20
+last_updated: 2026-09-10
 review_status: pending_review
 category: international
 tier: 2
@@ -24,7 +24,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # AU Land Tax
 
-## Australia -- State & Territory Land Tax Skill v1.0
+## Australia -- State & Territory Land Tax Skill v1.1
 
 ## Section 1 -- Quick Reference
 
@@ -41,7 +41,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Valuation authority | Valuer-General of each state/territory |
 | Assessment basis | Unimproved value (NSW, WA) or site value (VIC, SA, TAS) or average unimproved value (ACT) of freehold land |
 | Filing portal | State revenue office online portals |
-| Skill version | 1.0 |
+| Skill version | 1.1 |
 
 ### 2025-26 Land Tax Thresholds & Base Rates (Summary)
 
@@ -146,6 +146,8 @@ The cycle: Valuer-General determines land value (annual); revenue office issues 
 ### 4.4 South Australia (SA)
 
 **SA Land Tax General Rates (2025-26 land tax year -- assessed 30 Jun 2025)**
+
+This table is unverified: its bands overlap and the supplied Library does not establish replacement rates for this period. Leave SA calculations pending until a consistent, period-specific source is supplied. The figures below are retained to identify the conflict.
 
 | Total Taxable Site Value | Amount of Tax |
 | --- | --- |

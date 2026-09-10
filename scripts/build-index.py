@@ -136,7 +136,7 @@ def build_index():
             tier = int(tier)
 
         guides.append({
-            "slug": os.path.splitext(os.path.basename(rel_path))[0],
+            "slug": fields["name"] or os.path.splitext(os.path.basename(rel_path))[0],
             "path": rel_path,
             "name": fields["name"],
             "jurisdiction": jurisdiction,

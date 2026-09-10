@@ -1,10 +1,10 @@
 ---
 name: au-payg-instalments
 description: Use this skill whenever asked about Australian PAYG Instalments for sole traders. Trigger on phrases like "PAYG instalments", "BAS T1 T2 T7 T9", "instalment rate", "instalment amount", "ATO instalment", "GDP uplift", "GIC", "variation of instalments", or any question about income tax prepayments through the Business Activity Statement. Covers entry/exit thresholds, instalment rate method (T1/T2), instalment amount method (T7), GDP uplift factor, voluntary variation, GIC exposure on under-estimation, and quarterly/annual election. ALWAYS read this skill before touching any PAYG instalment work for Australia.
-version: 2.1
+version: "2.2"
 jurisdiction: AU
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-10
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -27,7 +27,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Authority | Australian Taxation Office (ATO) |
 | Portal | ATO Business Portal / myGov |
 | Currency | AUD only |
-| Entry thresholds | Instalment income >= $4,000 AND notional tax >= $1,000 |
+| Entry thresholds | Resident individual: instalment income >= $4,000, latest assessed tax >= $1,000, estimated current-year tax >= $500, subject to the SAPTO exclusion and ATO notification |
 | Exit threshold | Notional tax < $500 |
 | Methods | Instalment rate (T1/T2/T9) or instalment amount (T7) |
 | GDP uplift factor | 6% (2024-25, subject to annual determination) |
@@ -159,7 +159,7 @@ Classification: Combined BAS payment (GST + PAYG). PAYG instalment component = T
 
 ### 5.1 Entry into PAYG instalment system
 
-- **Automatic entry conditions** — Automatic entry if most recent assessment shows: Instalment income >= $4,000, AND Notional tax >= $1,000. Voluntary entry available below thresholds.
+- **Resident individual entry:** The Library gives three thresholds: instalment income of at least $4,000, tax payable on the latest notice of assessment of at least $1,000, and estimated current-year tax of at least $500, with the SAPTO qualification. Confirm the ATO notification before treating instalments as payable. A resident with $10,000 instalment income, $1,200 assessed tax, $750 estimated tax and no SAPTO meets these thresholds. Voluntary entry is available below them. (Library, Tax/Administration and Assessment.)
 
 ### 5.2 Instalment rate method (T1/T2/T9)
 

@@ -95,6 +95,30 @@ class _ValidatorCase(unittest.TestCase):
         return errors
 
 
+class BuildIndexSlugTests(_ValidatorCase):
+    def test_index_uses_canonical_names_for_same_named_country_files(self):
+        root = self._tree({
+            "skills/international/australia/references.md": GOOD.replace(
+                "synthetic-guide", "australia-references"
+            ).replace("jurisdiction: MT", "jurisdiction: AU"),
+            "skills/international/malta/references.md": GOOD.replace(
+                "synthetic-guide", "malta-references"
+            ),
+        })
+        with mock.patch.object(build_index, "REPO_ROOT", str(root)):
+            guides = build_index.build_index()["guides"]
+        self.assertEqual(
+            {(guide["slug"], guide["jurisdiction"]) for guide in guides},
+            {("australia-references", "AU"), ("malta-references", "MT")},
+        )
+
+    def test_index_keeps_filename_fallback_for_unnamed_legacy_guides(self):
+        root = self._tree({"skills/legacy.md": GOOD.replace("name: synthetic-guide\n", "")})
+        with mock.patch.object(build_index, "REPO_ROOT", str(root)):
+            guide = build_index.build_index()["guides"][0]
+        self.assertEqual(guide["slug"], "legacy")
+
+
 class StrictFrontmatterTests(_ValidatorCase):
     """The strict loader in check_guides had no test at all, so deleting it
     left `unittest discover` green while the primary validator reverted to the

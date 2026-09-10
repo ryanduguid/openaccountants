@@ -1,10 +1,10 @@
 ---
 name: au-rental-property
 description: Use this skill whenever asked about Australian rental property income and deductions. Trigger on phrases like "rental income Australia", "negative gearing", "rental deductions", "investment property tax", "Division 40", "Division 43", "capital works deduction", "depreciation schedule", "rental property CGT", "rental withholding", "body corporate fees", "strata levy deduction", "repairs vs improvements", "TR 97/23", or any question about completing the rental property schedule in an Australian individual tax return. This skill covers rental income reporting, deductible expenses, depreciation (Div 40 plant and Div 43 building), negative gearing, CGT on disposal, non-resident withholding, and common transaction classifications. ALWAYS read this skill before touching any Australian rental property work.
-version: "1.1"
+version: "1.2"
 jurisdiction: AU
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-10
 review_status: pending_review
 category: international
 tier: 2
@@ -13,7 +13,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # AU Rental Property
 
-## Australia Rental Property -- Income & Deductions Skill v1.0
+## Australia Rental Property -- Income & Deductions Skill v1.2
 
 ## Section 1 -- Quick Reference
 
@@ -30,7 +30,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Tax authority | Australian Taxation Office (ATO) |
 | Filing portal | myTax / tax agent lodgement (Online Services for Agents) |
 | Filing deadline | 31 October (self-lodgement); agent-managed deadlines vary |
-| Skill version | 1.0 |
+| Skill version | 1.2 |
 
 ### Key Thresholds (2024-25)
 
@@ -40,7 +40,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | --- | --- |
 | Tax-free threshold | $18,200 |
 | Medicare levy | 2% of taxable income |
-| Medicare levy surcharge (no PHI) | 1% -- 1.5% above $93,000 (single) |
+| Medicare levy surcharge (no PHI) | 1% -- 1.5% above $97,000 (single) |
 | CGT discount (individuals, 12+ months) | 50% |
 | Div 43 rate (post-Sep 1987 residential) | 2.5% of construction cost |
 | Div 43 rate (post-Feb 1992 short-term traveller) | 4% |
@@ -119,11 +119,13 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Restores to original condition | Yes | No |
 | Replaces with substantially same materials | Yes | No -- better quality/different character |
 | Initial repair on acquisition | NOT deductible (capital) | Capital -- add to cost base |
-| Replaces entire structure (e.g. full roof) | Capital (replacement) | Capital |
+| Replaces a whole roof | Can be a repair where the building is the entirety and the replacement restores the roof's character | Initial repairs or improvements remain capital; assess the facts |
 | Example: patching cracked tiles | Repair | -- |
 | Example: replacing all tiles with stone | -- | Improvement |
 | Example: replacing broken tap with same model | Repair | -- |
 | Example: full kitchen renovation | -- | Improvement |
+
+A roof is a part of the building. In the Library storm-damage example, restoring the roof gives a $32,000 repair deduction; added insulation and air conditioning of $7,400 are capital. A full-roof replacement alone does not determine the result. (Library, Tax/Deductions, repairs example.)
 
 ### 2.5 Division 40 -- Plant & Equipment Depreciation
 
@@ -131,16 +133,19 @@ Applies to removable/mechanical assets within the property.
 
 **Division 40 Effective Lives**
 
+These are Commissioner-determined lives in the 2025 Effective Life Determination's residential property operators table. Confirm the determination applicable when the asset starts use; a supportable self-assessed life is a separate choice.
+
 | Asset | Effective Life (ATO) | Decline Method |
 | --- | --- | --- |
 | Hot water system | 12 years | Diminishing value or prime cost |
 | Carpet | 8 years | Either |
-| Blinds / curtains | 8 years | Either |
+| Internal window blinds | 10 years | Either |
+| Window curtains | 6 years | Either |
 | Oven / cooktop | 12 years | Either |
 | Air conditioning (split system) | 10 years | Either |
 | Dishwasher | 8 years | Either |
 | Smoke alarm | 6 years | Either |
-| Ceiling fan | 10 years | Either |
+| Ceiling fan | 5 years | Either |
 
 - **Diminishing value rate** — 200% ÷ effective life
 - **Prime cost rate** — 100% ÷ effective life
@@ -160,7 +165,7 @@ Applies to the structural elements (building itself, fixed improvements).
 | After 15 Sep 1987 (short-term traveller) | 4% | Certain accommodation |
 
 - **Base** — Original construction cost (obtain from quantity surveyor report or builder records). NOT the purchase price of the property.
-- **Undeducted construction cost** — Undeducted construction cost passes to new owner on sale -- the new owner continues the 2.5% deduction on the remaining undeducted amount.
+- **Undeducted construction cost:** A new owner continues the annual deduction using the original eligible construction expenditure and remaining deduction period, subject to qualifying use and the remaining expenditure cap. For $400,000 of eligible 2.5% construction after ten full years, $300,000 remains and the full-year deduction continues at $10,000 for the remaining 30 years. (ITAA 1997 Div 43; Library, Tax/Depreciation.)
 
 ### 2.7 Interest Deductibility
 
@@ -190,7 +195,7 @@ Applies to the structural elements (building itself, fixed improvements).
 | 50% CGT discount | Available if held 12+ months (individuals/trusts only) |
 | Main residence exemption (partial) | Available if property was main residence for part of ownership period |
 | 6-year absence rule | Treat as main residence for up to 6 years of absence if no other main residence claimed |
-| Non-residents | No 50% discount (from 8 May 2012 for gains accruing after that date) |
+| Non-residents | Work out preserved discount entitlement for qualifying resident periods and any pre-8 May 2012 rules; see au-nonresident-cgt |
 
 ### 2.9 Non-Resident Rental Withholding
 
@@ -322,7 +327,7 @@ Applies to the structural elements (building itself, fixed improvements).
 
 ## Section 7 -- Prohibitions
 
-- **Prohibitions** — NEVER claim travel to a residential rental property as a deduction (removed from 1 July 2017 for non-business landlords); NEVER claim Div 40 plant depreciation for a subsequent owner of residential property (post-2017 rule) unless the asset was newly installed by that owner; NEVER claim Div 43 without evidence of construction cost (quantity surveyor report or original builder records); NEVER deduct loan principal repayments; NEVER deduct expenses relating to periods of genuine private use without apportionment; NEVER claim the CGT 50% discount for a non-resident individual; NEVER omit prior Div 43 deductions from the cost base on disposal (reduces cost base); NEVER present tax calculations as definitive -- always label as estimated
+- **Prohibitions** — NEVER claim travel to a residential rental property as a deduction (removed from 1 July 2017 for non-business landlords); NEVER claim Div 40 plant depreciation for a subsequent owner of residential property (post-2017 rule) unless the asset was newly installed by that owner; NEVER claim Div 43 without evidence of construction cost (quantity surveyor report or original builder records); NEVER deduct loan principal repayments; NEVER deduct expenses relating to periods of genuine private use without apportionment; Calculate a foreign resident's retained CGT discount entitlement from residency and acquisition history; NEVER omit prior Div 43 deductions from the cost base on disposal (reduces cost base); NEVER present tax calculations as definitive -- always label as estimated
 
 ## Disclaimer
 

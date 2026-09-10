@@ -1,10 +1,10 @@
 ---
 name: au-nonresident-cgt
-description: "Use this skill for any non-resident selling Australian assets. Trigger on: \"non-resident CGT Australia\", \"TAP test Australia\", \"taxable Australian property\", \"FRCGW\", \"foreign resident capital gains withholding\", \"15% withholding Australia\", \"12.5% withholding Australia\", \"clearance certificate ATO\", \"sell Australian shares non-resident\", \"sell Australian property non-resident\", \"Australian CGT non-resident seller\", \"no CGT discount non-resident Australia\". Covers the TAP test, 30% flat rate, FRCGW withholding (15%, no threshold, from 1 January 2025), clearance certificates. For Australian residents see au-capital-gains."
-version: 1.1
+description: "Use this skill for any non-resident selling Australian assets. Trigger on: \"non-resident CGT Australia\", \"TAP test Australia\", \"taxable Australian property\", \"FRCGW\", \"foreign resident capital gains withholding\", \"15% withholding Australia\", \"12.5% withholding Australia\", \"clearance certificate ATO\", \"sell Australian shares non-resident\", \"sell Australian property non-resident\", \"Australian CGT non-resident seller\", \"no CGT discount non-resident Australia\". Covers the TAP test, individual marginal rates, FRCGW withholding (15%, no threshold, from 1 January 2025), clearance certificates. For Australian residents see au-capital-gains."
+version: "1.2"
 jurisdiction: AU
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-10
 review_status: pending_review
 category: international
 tier: 2
@@ -21,7 +21,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | --- | --- |
 | Country | Australia |
 | Applies to | Non-residents of Australia disposing of Australian assets |
-| CGT rate (non-resident) | **30% flat rate** on net gain (no 50% discount available) |
+| CGT rate (non-resident individual) | Net capital gain enters taxable income; apply graduated non-resident individual rates |
 | Key test | Taxable Australian Property (TAP) test |
 | Withholding | 15% of gross proceeds on all TAP transactions, no minimum value (contracts entered into on or after 1 January 2025). Contracts before that date: 12.5% on property valued at AUD $750,000 or more |
 | Primary legislation | ITAA 1997 Div 855; TAA 1953 Sch 1 Subdiv 14-D |
@@ -40,14 +40,14 @@ Non-residents are only subject to Australian CGT on **Taxable Australian Propert
 | --- | --- |
 | Australian real property (land, buildings) | **Always TAP** |
 | Mining, quarrying, prospecting rights in Australia | **Always TAP** |
-| Shares in a company where >50% of market value derives from Australian real property interests | **TAP (indirect interest)** |
-| Units in a trust where >50% of MV derives from Australian real property interests | **TAP (indirect interest)** |
+| Shares in a company | Indirect real property interest only if both the principal asset test and non-portfolio interest test pass |
+| Units in a trust | Indirect real property interest only if both the principal asset test and non-portfolio interest test pass |
 | Options/rights to acquire any of the above | TAP |
 | Assets used in Australian permanent establishment of a non-resident | TAP |
 | Shares in an Australian company where assets are predominantly operating business, IP, goodwill, cash | **NOT TAP** |
-| Portfolio shares (<10% interest in a listed company) | Generally NOT TAP regardless of asset composition |
+| Portfolio interests (listed or unlisted) | Generally not indirect real property interests if the non-portfolio test fails; check associates, holding history and other TAP categories |
 
-- **Critical question for company shares** — Look through to the company's balance sheet. If >50% of the market value of the company's assets consists of Australian real property interests → TAP. If the company is an operating business with IP, goodwill, equipment, receivables → likely NOT TAP.
+- **Indirect Australian real property interests:** Both tests must pass. The principal asset test compares Australian real property assets with other assets by market value. The non-portfolio test requires at least 10% direct interests including associates, at the event or throughout a 12-month period in the preceding 24 months. Check both tests for company shares and trust interests, listed or unlisted. A 5% unlisted holding with no associate interests, no qualifying earlier holding and no other TAP basis fails this route. (ITAA 1997 ss 855-25, 855-30; Library, Tax/Capital Gains Tax (CGT).)
 
 ## Section 4 — CGT Rate for Non-Residents
 
@@ -55,11 +55,13 @@ Non-residents are only subject to Australian CGT on **Taxable Australian Propert
 
 | Item | Non-resident treatment |
 | --- | --- |
-| CGT rate | 30% (top individual rate, not graduated) |
-| 50% general discount | **NOT available** to non-residents (removed 8 May 2012) |
+| CGT rate | For a full-year prescribed non-resident individual from 1 July 2024: 30% on income to $135,000; 37% on the next $55,000; 45% above $190,000. Companies use their applicable company rate |
+| General discount | Preserve qualifying resident-period entitlement and apply the separate pre-8 May 2012 rules; obtain the full acquisition and residency history |
 | SBCGT concessions | Available if all basic conditions met (including active asset test) |
 | Main residence exemption | Generally not available to non-residents (unless Australian citizen/PR in specific circumstances) |
 | Cost base calculation | Same as residents |
+
+The Library's Michael example states a 42.67% discount alongside 50% x 884/1,036 qualifying days. Its stated percentage gives a $106,675 discount and $143,325 net gain on $250,000. The displayed fraction does not round to 42.67%, so confirm the day-count calculation before applying it to a return. Preserve the qualifying resident-period entitlement. (Library, Tax/Capital Gains Tax (CGT), discount apportionment.)
 
 ## Section 5 — Foreign Resident Capital Gains Withholding (FRCGW)
 
@@ -74,7 +76,7 @@ Non-residents are only subject to Australian CGT on **Taxable Australian Propert
 | Who withholds | The buyer (purchaser) |
 | Remittance deadline | Day of settlement |
 
-**Example**: Non-resident sells shares (TAP) for AUD $10M under a contract entered into after 1 January 2025. Buyer withholds AUD $1.5M (15%). Net gain is, say, AUD $8M. Australian tax at 30% = AUD $2.4M. The $1.5M already withheld is applied — balance payable AUD $0.9M via Australian tax return.
+**Example:** A full-year prescribed non-resident individual sells a TAP interest for AUD $10 million after 1 January 2025. Assume the transaction attracts 15% withholding, the final net capital gain after losses and any available discount is $8 million, there is no other taxable income, and no offsets apply. Tax = $135,000 x 30% + $55,000 x 37% + $7,810,000 x 45% = $3,575,350. After the $1.5 million withholding credit, the balance is $2,075,350. At $200,000 taxable income, the same rate table gives $65,350.
 
 ## Section 6 — Clearance Certificate
 

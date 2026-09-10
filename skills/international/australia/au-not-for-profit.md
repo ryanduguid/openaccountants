@@ -2,18 +2,18 @@
 name: au-not-for-profit
 description: >
   Use this skill whenever asked about Australian not-for-profit (NFP) tax compliance -- income tax exemption self-assessment, the annual NFP self-review return, ACNC charity registration and ATO endorsement, the mutuality principle for licensed clubs and member associations, taxable NFP shade-in rates, deductible gift recipient (DGR) endorsement and gift/contribution deductibility, FBT rebate and exemption caps for NFP employers, GST concessions for NFPs, PAYG withholding for NFP employees, or NFP salary packaging. Trigger on phrases like "NFP tax", "charity tax concession", "DGR", "deductible gift", "mutuality", "self-review return", "FBT rebate", "club taxable income". ALWAYS read this skill before touching any NFP tax work.
-version: 1.0
+version: "1.1"
 jurisdiction: AU
 tax_year: 2026
 tax_year_notes: "2026-27 (NFP self-review return season: by 31 Oct 2026)"
-last_updated: 2026-08-20
+last_updated: 2026-09-10
 review_status: pending_review
 category: international
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Australia Not-for-Profit -- NFP/DGR Tax Compliance Skill v1.0
+# Australia Not-for-Profit -- NFP/DGR Tax Compliance Skill v1.1
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
@@ -82,7 +82,7 @@ Signs an NFP's books need attention before any compliance position is taken.
 | Member subscriptions and bar sales in one revenue account | Mutuality not separated | Split member vs non-member revenue before computing taxable income |
 | "Donations" received for event tickets, auction items, raffle entries | Contributions, not gifts -- minor benefit rules apply | Apply 20%/$150 test per contribution; only excess is deductible to the donor |
 | FBT rebate claimed on all benefits including amounts over $30,000 grossed-up | Rebate cap breach | Recompute: rebate = 47% x FBT on first $30,000 grossed-up per employee only |
-| Salary-packaged meal entertainment in NFP employer books | Separate cap treatment -- counts toward $30,000 exemption/rebate cap | Flag; check aggregate against cap; entertainment facility leasing expenses also flagged |
+| Salary-packaged meal entertainment in NFP employer books | Separate $5,000 grossed-up cap for meal entertainment and entertainment facility leasing | Add only the excess to other benefits when testing the applicable general exemption or rebate cap |
 | Employee wages with no PAYG withholding | NFP status wrongly assumed to exempt PAYG | Withholding applies from first dollar; register for PAYG withholding; check super guarantee too |
 | Volunteer reimbursements with GST credits claimed | GST credit rules for volunteers differ | Only endorsed charities/gift-deductible entities claim GST credits on volunteer reimbursements |
 | Fundraising event income with no GST treatment choice recorded | Fundraising input-taxed election not documented | Election must be made and recorded BEFORE supplies take place |
@@ -238,7 +238,7 @@ Two regimes, never mixed:
 
 **FBT rebate (s 65J FBTAA):** rebatable employers -- charity institutions (not PBIs), religious institutions, certain scientific and public educational institutions, trade unions, employer associations, and NFPs established for community service, cultural, sporting, or resource-development purposes. Rebate = 47% of gross FBT payable, but only on the first $30,000 grossed-up per employee; excess attracts full FBT with no rebate. The rebate is claimed in the FBT return; the employer still lodges an FBT return and pays the net amount.
 
-**Capping exclusions (both regimes):** car parking fringe benefits, meal entertainment NOT provided under a salary packaging arrangement, and entertainment facility leasing expenses do NOT count toward the $30,000 cap. Salary-packaged meal entertainment DOES count toward the cap (separately grossed-up). FBT year is 1 April - 31 March. NFP status does NOT exempt an employer from FBT registration where benefits are provided -- register, compute, claim the concession in the return.
+**Capping:** Check the exclusions for car parking and entertainment outside salary packaging separately. Salary-packaged meal entertainment and entertainment facility leasing share a separate $5,000 grossed-up cap. Only the excess is added to other benefits for the applicable general exemption or rebate cap. For an eligible hospital employee, $17,000 of other grossed-up benefits plus $4,000 of these packaged entertainment benefits fits within the two caps and creates no FBT excess. The FBT year is 1 April to 31 March. Register, calculate and claim the applicable concession in the FBT return. (Library, Tax/Fringe Benefits Tax (FBT), NFP capping rules.)
 
 ### Rule 7 -- GST concessions for NFPs
 
@@ -250,7 +250,7 @@ NFP status -- exempt, endorsed, or taxable -- does NOT relieve an employer of PA
 
 ### Rule 9 -- Salary packaging in the NFP sector
 
-NFP employees can salary-package benefits up to the employer's cap ($30,000 grossed-up for PBI/HPC-exempt employers or rebatable employers; $17,000 for hospitals) with the FBT concession absorbing the cost that a for-profit employer would pay. Common packaged items: living expenses (mortgage, rent, general purchases up to the cap), meal entertainment (separate rules; salary-packaged meal entertainment counts toward the cap), and venue hire. Novated leases and remote-area benefits follow the standard FBT rules. Amounts packaged beyond the cap attract full FBT (for exempt employers) or unrebated FBT (for rebatable employers) -- model the employee's package against the cap before committing. Reportable fringe benefits (RFBA) still appear on the employee's income statement where the grossed-up taxable value exceeds $2,000, affecting HELP repayments, Medicare levy surcharge, and some offsets even though the employer paid no FBT.
+NFP employees can salary-package benefits up to the employer's cap ($30,000 grossed-up for PBI/HPC-exempt employers or rebatable employers; $17,000 for hospitals) with the FBT concession absorbing the cost that a for-profit employer would pay. Common packaged items: living expenses (mortgage, rent, general purchases up to the cap), meal entertainment and venue hire (apply the separate $5,000 grossed-up salary-packaged entertainment cap, then add only its excess to the general cap). Novated leases and remote-area benefits follow the standard FBT rules. Amounts packaged beyond the cap attract full FBT (for exempt employers) or unrebated FBT (for rebatable employers) -- model the employee's package against the cap before committing. Reportable fringe benefits (RFBA) still appear on the employee's income statement where the underlying individual fringe benefits amount exceeds $2,000, after considering excluded benefits; then report the relevant grossed-up amount, affecting HELP repayments, Medicare levy surcharge, and some offsets even though the employer paid no FBT.
 
 ### Rule 10 -- State concessions (flag only)
 
@@ -377,7 +377,7 @@ If the client provides only financial statements and an ABN:
 | GST registration threshold (NFP) | $150,000 | $150,000 |
 | DGR gift minimum | $2 (removed from 1 Jul 2026, backdated to 1 Jul 2024) | none |
 | Contribution minor benefit test | > $150 contribution; benefit < lesser of 20% and $150 | same |
-| Super guarantee rate (see au-super-guarantee) | 11.5% | 12% |
+| Super guarantee rate (see au-super-guarantee) | 12% | 12% |
 
 ### Primary sources (verified 20 August 2026)
 

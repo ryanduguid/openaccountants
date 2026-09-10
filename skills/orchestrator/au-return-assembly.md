@@ -1,7 +1,7 @@
 ---
 name: au-return-assembly
 description: Final orchestrator skill that assembles the complete Australian filing package for Australian-resident sole traders. Consumes outputs from all Australian content skills (australia-gst for BAS, au-individual-return for ITR, au-super-guarantee for voluntary contributions, au-medicare-levy for levy and surcharge, au-payg-instalments for instalment schedule) to produce a single unified reviewer package containing every worksheet, every form, every brief section, all cross-skill reconciliations, and the final action list with payment instructions, filing instructions, and next-year planning. This is the capstone skill that runs last and produces the final deliverable. MUST be loaded alongside all Australian content skills listed above. Australian full-year residents only. Sole traders only.
-version: 0.2
+version: "0.3"
 jurisdiction: AU
 tax_year: 2025
 last_updated: 2026-09-10
@@ -12,7 +12,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # AU Return Assembly
 
-## Australia Return Assembly Skill v0.1
+## Australia Return Assembly Skill v0.3
 
 ## CRITICAL EXECUTION DIRECTIVE -- READ FIRST
 
@@ -60,13 +60,13 @@ This skill coordinates execution of the content skills, verifies cross-skill con
 
 | BAS Output | ITR Input | Rule |
 | --- | --- | --- |
-| BAS 1A total GST on sales (annual) | Implied from ITR business income x 10% | Must reconcile |
-| BAS G1 total sales (ex-GST, annual sum) | ITR business income label | Must match within $1 |
+| BAS 1A total GST on sales (annual) | GST on taxable supplies, with attribution and adjustment differences | Reconcile to the taxable-sales ledger; GST-free and input-taxed income do not produce 10% GST |
+| BAS G1 total sales (annual sum) | Bridge to ITR business income | Establish whether G1 includes GST, then reconcile GST, income classification, accounting basis and timing differences; explain each difference |
 | Non-GST registered: gross receipts | ITR business income label | Direct match (no GST separation) |
 
 ### Cross-check 2: Super contributions within concessional cap ($30,000)
 
-**If excess:** Flag for reviewer. Excess concessional contributions are included in assessable income and taxed at marginal rate (plus excess concessional contributions charge). Division 293 tax applies if income + super > $250,000.
+**If excess:** Flag for reviewer. Excess concessional contributions are included in assessable income and taxed at the marginal rate, with the applicable 15% tax offset. The excess concessional contributions charge ceased from 2021-22. Division 293 requires its separate income and contributions calculation against $250,000.
 
 **Cross-check 2 table**  _(Cross-check 2: Super contributions within concessional cap ($30,000))_
 
@@ -87,7 +87,7 @@ This skill coordinates execution of the content skills, verifies cross-skill con
 | --- | --- | --- |
 | Income for MLS purposes | ITR taxable income + reportable fringe benefits + total net investment loss + reportable super | Combined figure |
 | PHI status | Insurer statement | If adequate hospital cover for full year, no MLS |
-| MLS thresholds (2024-25) | Single: $93,000; Family: $186,000 | Below threshold = no MLS regardless of PHI |
+| MLS thresholds (2024-25) | Single: $97,000; Family: $194,000 (add $1,500 per dependent child after the first) | Below threshold = no MLS regardless of PHI |
 | MLS rates | Tier 1: 1%; Tier 2: 1.25%; Tier 3: 1.5% | Applied to taxable income |
 
 ### Cross-check 4: PAYG instalments credit against final tax
@@ -236,8 +236,8 @@ This skill coordinates execution of the content skills, verifies cross-skill con
 
 ## Positions Taken
 [List with legislation citations]
-- e.g., "Home office deduction claimed at 67c/hr for X hours -- Practical Compliance Guideline PCG 2023/1"
-- e.g., "Motor vehicle cents-per-km at 85c/km for X km -- s28-25 ITAA 1997, TD 2024/3"
+- e.g., "Home office deduction claimed using the verified rate for the return year and X supported hours -- Practical Compliance Guideline PCG 2023/1"
+- e.g., "Motor vehicle cents-per-km at 88c/km for X km -- s28-25 ITAA 1997, TD 2024/3"
 - e.g., "MacBook Pro instant asset write-off -- s328-180 ITAA 1997, Temporary Full Expensing extended"
 - e.g., "Personal super contribution deduction -- s290-150 ITAA 1997, s290-170 notice lodged"
 

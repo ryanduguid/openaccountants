@@ -1,10 +1,10 @@
 ---
 name: au-gst-bas
 description: Australian Business Activity Statement (BAS) — non-GST sections. Covers PAYG withholding (labels W1-W5), PAYG income tax instalments (labels T1-T9), FBT instalments (label F1), and PAYG withholding reconciliation. Complements australia-gst.md which covers GST labels (1A-9).
-version: 1.2
+version: "1.3"
 jurisdiction: AU
 tax_year: 2025
-last_updated: 2026-08-11
+last_updated: 2026-09-10
 review_status: pending_review
 category: international
 tier: 2
@@ -59,8 +59,8 @@ This skill does NOT cover:
 
 | Situation | BAS frequency | Source |
 | --- | --- | --- |
-| GST turnover < $10M, no monthly election | Quarterly | TAA 1953 Sch 1 s 31-5 |
-| GST turnover >= $10M | Monthly | TAA 1953 Sch 1 s 31-5 |
+| GST turnover < $20M, no monthly election | Quarterly | TAA 1953 Sch 1 s 31-5 |
+| GST turnover >= $20M | Monthly | TAA 1953 Sch 1 s 31-5 |
 | Voluntary monthly reporter | Monthly | ATO election |
 | PAYG withholding-only (no GST) | Quarterly | TAA 1953 Sch 1 Div 16 |
 
