@@ -1,10 +1,11 @@
 ---
 name: au-freelance-intake
 description: ALWAYS USE THIS SKILL when a user asks for help preparing their Australian tax returns AND mentions freelancing, self-employment, contracting, sole trading, or ABN-based work. Trigger on phrases like "help me do my taxes", "prepare my ITR", "I'm a sole trader in Australia", "I'm a freelancer in Australia", "do my taxes as a contractor", "prepare my BAS and income tax", or any similar phrasing where the user is an Australian-resident self-employed individual needing tax return preparation. This is the REQUIRED entry point for the Australian self-employed tax workflow -- every other skill in the stack (australia-gst, au-individual-return, au-super-guarantee, au-medicare-levy, au-payg-instalments, au-return-assembly) depends on this skill running first to produce a structured intake package. Uses upload-first workflow -- the user dumps all their documents and the skill infers as much as possible before asking questions. Uses ask_user_input_v0 for structured questions instead of one-at-a-time prose. Built for speed. Australian full-year residents only; sole traders only.
-version: 0.1
+version: 0.3
 jurisdiction: AU
 tax_year: 2025
-last_updated: 2026-08-28
+tax_year_notes: "2025–26"
+last_updated: 2026-09-10
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -12,7 +13,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # AU Freelance Intake
 
-## Australia Sole Trader Intake Skill v0.2
+## Australia Sole Trader Intake Skill v0.3
 
 ## What this file is
 
@@ -47,6 +48,10 @@ Target: intake completes in 5 minutes for a prepared user, 15 minutes for a user
 **Be terse but complete.** No hedging, no "let me know if you have questions," no "I hope this helps."
 
 **Exception for blocking decisions.** If a single question determines whether the user is in-scope or out-of-scope, ask it standalone.
+
+## Income-year handoff
+
+This intake prepares 2025–26. Include `tax_year: "2025-26"` in every handoff. Each receiving guide must confirm that year before using its rates. A guide covering only 2026–27 cannot supply historical rates. Keep missing-year support as an unresolved calculation requirement and withhold final totals until resolved.
 
 ## Section 1 -- The opening
 
@@ -86,7 +91,7 @@ Q3: "Do you have an ABN?"
 
 - **Q1 evaluation** — Q1 = Full year -> continue. Q1 = Part year or did not live in Australia -> stop. "I'm set up for full-year Australian residents only. Part-year or non-residents have different rules around foreign income and dual residency. You need a registered tax agent who handles non-resident returns."
 - **Q2 evaluation** — Q2 = Sole trader -> continue. Q2 = Partnership -> stop. "Partnerships lodge a separate partnership return and distribute income to partners. The australia-company-trust workflow (workflows/australia-company-trust.md) covers partnership, company and trust engagements end to end; if it is not available, you need a registered tax agent familiar with partnership returns." Q2 = Company (Pty Ltd) -> stop. "Company returns follow different rules. The australia-company-trust workflow covers them; if it is not available, you need a registered tax agent." Q2 = Trust -> stop. "Trust returns have separate distribution and reporting requirements. The australia-company-trust workflow covers them; if it is not available, you need a registered tax agent familiar with trust returns." Q2 = Not sure -> ask one follow-up: "Do you operate under your own name (or a registered business name) with an individual ABN? Or do you have a registered company with ASIC? If you invoice under your own ABN, you're a sole trader. If you have an ACN and Pty Ltd, you're a company."
-- **Q3 evaluation** — Q3 = Yes -> continue. Q3 = No -> stop. "You need an ABN to operate as a sole trader. Apply at abr.gov.au. Once you have your ABN, come back and we can prepare your returns." Q3 = Applied but not yet received -> continue with a flag: ABN pending, will need to confirm before lodging.
+- **Q3 evaluation:** Record the ABN or application status and confirm entitlement. An ABN is not universally compulsory to conduct a business. Check GST registration and no-ABN withholding separately; do not reject an otherwise valid income-tax engagement solely because no ABN is quoted. [ABR eligibility](https://www.abr.gov.au/business-super-funds-charities/applying-abn/abn-entitlement).
 
 **Second batch of scope questions**
 
@@ -102,7 +107,7 @@ Q6: "Industry?"
 ```
 
 - **GST registration turnover threshold** — 75000 AUD (turnover above which GST registration required or voluntary registration applies)
-- **Q4 evaluation** — Yes -> continue. Standard quarterly BAS lodgement. No -> continue. No BAS required unless turnover crosses $75K threshold. Will check after inference. Not sure -> ask one follow-up: "Do you charge GST on your invoices (i.e., your prices include a 10% GST component)? If yes, you're registered. If your invoices say 'no GST' or you've never dealt with BAS, you're likely not registered. Check your ABN registration at abr.gov.au."
+- **Q4 evaluation:** Verify GST registration and effective dates on the ABR, supported by the ATO account where available. Charging GST on an invoice does not establish registration. Determine the GST reporting cycle from the issued statement. Separately check PAYG instalments and withholding even when the client is not GST-registered. [ATO registration](https://www.ato.gov.au/businesses-and-organisations/gst-excise-and-indirect-taxes/gst/registering-for-gst).
 - **Q5 evaluation** — All options -> note for Medicare levy surcharge and tax offset calculations. Continue.
 - **Q6 evaluation** — All options -> note for expense classification context. Continue.
 
@@ -119,7 +124,7 @@ Once the refusal sweep passes, immediately ask for the document dump. Single mes
 > - Business bank statement(s) for all of 2025-26 (1 July 2025 - 30 June 2026) (CSV or PDF)
 > - Sales invoices issued in 2025-26
 > - Purchase invoices / receipts for business expenses
-> - Prior year tax return (2023-24 ITR, or at least last year's notice of assessment)
+> - Prior year tax return (2024-25 ITR, or at least last year's notice of assessment)
 > - PAYG payment summary / income statement from any employer (if also employed)
 > - Private health insurance statement (from your insurer)
 > - HELP/HECS statement (if applicable)
@@ -248,7 +253,7 @@ After inference, present a single compact summary message. Use a structured form
 > - Accounting fees: $1,500
 > - Phone / internet: $1,800 (TBD -- need business use %)
 > - Motor vehicle: $4,200 fuel + maintenance (TBD -- method and business use %)
-> - Equipment: MacBook Pro $3,200 (Nov 2024) -- instant asset write-off eligible (under $20K)
+> - Equipment: MacBook Pro $3,200 (Nov 2024). Confirm first-use date, business use and prior deductions. If first used in 2024–25, do not claim its cost again in 2025–26. Record any available decline in value or pool treatment.
 > - GST credits on purchases: ~$1,100 (claimable)
 >
 > **Super Contributions (from super statement)**
@@ -264,7 +269,7 @@ After inference, present a single compact summary message. Use a structured form
 >
 > **Private Health Insurance (from insurer statement)**
 > - Combined hospital + extras, full year cover
-> - Rebate tier: Base tier (under 65, income under $97K single -- TBD after final taxable income)
+> - Rebate tier: Base tier (under 65, income under $101K single -- TBD after final taxable income)
 > - Rebate claimed as premium reduction
 >
 > **HELP Debt**
@@ -274,7 +279,7 @@ After inference, present a single compact summary message. Use a structured form
 > **Flags I already see:**
 > 1. Phone / internet -- need business use percentage
 > 2. Motor vehicle -- need method (cents-per-km or logbook) and business use %
-> 3. MacBook Pro $3,200 -- eligible for instant asset write-off under $20K threshold
+> 3. MacBook Pro $3,200: deduction pending first-use and prior-claim evidence; no automatic current-year write-off.
 > 4. Super contributions well within $30K concessional cap -- no excess issue
 > 5. PHI rebate tier may shift depending on final taxable income
 > 6. HELP compulsory repayment to be calculated from repayment income
@@ -446,13 +451,13 @@ The downstream skill (`au-return-assembly`) consumes a JSON structure. It is int
   "home_office": {
     "method": "fixed_rate | actual_cost | none",
     "hours_worked_from_home": 0,
-    "rate_per_hour": 0.67,
+    "rate_per_hour": 0.70,
     "floor_area_pct": 0
   },
   "motor_vehicle": {
     "method": "cents_per_km | logbook | none",
     "business_km": 0,
-    "rate_per_km": 0.85,
+    "rate_per_km": 0.88,
     "logbook_business_pct": 0,
     "total_car_expenses": 0
   },
@@ -553,7 +558,7 @@ For an unprepared user (has to go fetch documents):
 
 - **v0.1 (April 2026):** Initial draft. Upload-first, inference-then-confirm pattern modelled on mt-freelance-intake v0.1.
 
-## End of Intake Skill v0.2
+## End of Intake Skill v0.3
 
 ## Disclaimer
 

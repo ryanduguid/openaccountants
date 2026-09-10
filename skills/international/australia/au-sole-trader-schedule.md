@@ -1,10 +1,11 @@
 ---
 name: au-sole-trader-schedule
-description: Australian sole trader business schedule (Business and Professional Items Schedule for Individuals). Covers assessable business income, allowable deductions, home office (fixed rate 67c/hour or actual), motor vehicle (logbook or cents per km at 85c/km), depreciation (instant asset write-off, simplified pooling, general pooling), prepaid expenses, and trading stock.
-version: 1.0
+description: Australian sole trader business schedule (Business and Professional Items Schedule for Individuals). Covers assessable business income, allowable deductions, home office (fixed rate 70c/hour or actual), motor vehicle (logbook or cents per km at 88c/km), depreciation (instant asset write-off, simplified pooling, general pooling), prepaid expenses, and trading stock.
+version: 1.2
 jurisdiction: AU
 tax_year: 2025
-last_updated: 2026-08-28
+tax_year_notes: "2025–26"
+last_updated: 2026-09-10
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -17,7 +18,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## AU Sole Trader Schedule
 
-## Australia Sole Trader Business Schedule v1.1
+## Australia Sole Trader Business Schedule v1.2
 
 ## What this file is
 
@@ -27,7 +28,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 This file covers the Business and Professional Items (BPI) schedule that sole traders attach to their individual income tax return. The BPI schedule feeds into the individual return at "Business income or loss" items.
 
-**Tax year coverage.** This skill targets the **2024-25 income year** (1 July 2024 to 30 June 2025).
+**Tax year coverage:** This skill targets the 2025–26 income year (1 July 2025 to 30 June 2026). Match the intake and assembly year before calculating.
 
 **The reviewer is the customer of this output.** This skill assumes a credentialed reviewer reviews and signs the return. The skill produces working papers and a brief, not a return.
 
@@ -58,12 +59,12 @@ This skill does NOT cover:
 
 | Lodgement type | Due date |
 | --- | --- |
-| Self-lodgers | 31 October 2025 |
-| Tax agent lodgement | Per the ATO tax agent lodgement programme (typically March-May 2026 depending on client category) |
+| Self-lodgers | 2 November 2026 (31 October falls on Saturday; check applicable extensions) |
+| Tax agent lodgement | Per the ATO tax agent lodgement programme (2026–27 programme, depending on client category) |
 
 ### 2.3 ABN requirement
 
-- **ABN requirement** — A sole trader carrying on a business must have an ABN. If they do not have one, they cannot issue valid tax invoices and may face 47% withholding from payers.  _(A New Tax System (Australian Business Number) Act 1999)_
+- **ABN requirement:** Check ABN entitlement, GST registration and withholding consequences separately. An ABN is not compulsory for every business activity. A tax invoice must meet GST requirements, and eligible payments without an ABN can attract 47% withholding subject to exceptions. [ABR](https://www.abr.gov.au/business-super-funds-charities/applying-abn/abn-entitlement).
 
 ## Section 3 — Rates and thresholds
 
@@ -71,21 +72,21 @@ This skill does NOT cover:
 
 | Item | Amount / Rate | Source |
 | --- | --- | --- |
-| Instant asset write-off threshold | $20,000 per asset (small business entities, aggregated turnover < $10M). Legislated for assets first used or installed ready for use to 30 June 2026; the 2026-27 Budget announced permanence from 1 July 2026 -- confirm enactment before relying on it for 2026-27 | ITAA 1997 Div 328; ATO QC 103578 |
+| Instant asset write-off threshold | For 2025–26, eligible small business entities using simplified depreciation can deduct assets costing less than $20,000 when first used or installed ready for taxable use. The permanent threshold was enacted on 26 August 2026; schedule 2 commences on 1 October 2026 and applies to specified first use or installation from 1 July 2026. [Tax Reform No. 2 Act 2026, schedules 1–2](https://www.legislation.gov.au/C2026A00071/asmade/text). | ITAA 1997 Subdivision 328-D |
 | Small business entity threshold | Aggregated turnover < $10M | ITAA 1997 s 328-110 |
 | Cents per km rate (motor vehicle) | 88 cents per km (2024-25 and 2025-26); 91 cents (2026-27) | ATO cents per kilometre method |
 | Cents per km cap | 5,000 business km per car per year | ITAA 1997 s 28-25 |
 | Home office fixed rate | 70 cents per hour (2024-25 through 2026-27; 67c applied 2022-23 and 2023-24) | ATO PCG 2023/1 |
-| Trading stock threshold (change in value) | $5,000 — if the difference between opening and closing stock is < $5,000, the taxpayer can elect not to do a stocktake | ITAA 1997 s 70-35 |
-| Prepaid expenses (SBE) | Immediately deductible if the service period is 12 months or less and ends on or before 30 June of the following year | ITAA 1997 s 328-225 |
+| Trading stock threshold (change in value) | $5,000: if an eligible small business entity reasonably estimates that the difference between opening and closing stock is $5,000 or less, the taxpayer can elect not to do a stocktake | ITAA 1997 s 328-285 |
+| Prepaid expenses (SBE) | Immediately deductible if the service period is 12 months or less and ends on or before 30 June of the following year | ITAA 1936 ss 82KZL and 82KZM |
 
-- **Instant asset write-off threshold** — $20,000 per asset (small business entities, aggregated turnover < $10M), legislated for assets first used or installed ready for use to 30 June 2026. The 2026-27 Budget announced permanence from 1 July 2026 -- confirm enactment before relying on it for 2026-27.  _(ITAA 1997 Div 328; ATO QC 103578)_
+- **Instant asset write-off threshold:** For 2025–26, eligible small business entities using simplified depreciation can deduct assets costing less than $20,000 when first used or installed ready for taxable use. The permanent threshold was enacted on 26 August 2026; schedule 2 commences on 1 October 2026 and applies to specified first use or installation from 1 July 2026. [Tax Reform No. 2 Act 2026, schedules 1–2](https://www.legislation.gov.au/C2026A00071/asmade/text).
 - **Small business entity threshold** — Aggregated turnover < $10M  _(ITAA 1997 s 328-110)_
 - **Cents per km rate (motor vehicle)** — 88 cents per km for 2024-25 and 2025-26; 91 cents per km from 2026-27  _(ATO cents per kilometre method)_
 - **Cents per km cap** — 5,000 business km per car per year  _(ITAA 1997 s 28-25)_
 - **Home office fixed rate** — 70 cents per hour for 2024-25 through 2026-27 (67c applied for 2022-23 and 2023-24)  _(ATO PCG 2023/1)_
-- **Trading stock threshold (change in value)** — $5,000 — if the difference between opening and closing stock is < $5,000, the taxpayer can elect not to do a stocktake  _(ITAA 1997 s 70-35)_
-- **Prepaid expenses (SBE)** — Immediately deductible if the service period is 12 months or less and ends on or before 30 June of the following year  _(ITAA 1997 s 328-225)_
+- **Trading stock threshold (change in value)**: $5,000: if an eligible small business entity reasonably estimates that the difference between opening and closing stock is $5,000 or less, the taxpayer can elect not to do a stocktake  _(ITAA 1997 s 328-285)_
+- **Prepaid expenses (SBE)**: Immediately deductible if the service period is 12 months or less and ends on or before 30 June of the following year  _(ITAA 1936 ss 82KZL and 82KZM)_
 
 ## Section 4 — Computation rules
 
@@ -95,7 +96,7 @@ This skill does NOT cover:
 
 ### 4.2 Cost of sales / Cost of goods sold
 
-- **Cost of goods sold** — Step 1. Opening stock + Purchases - Closing stock = Cost of goods sold. Step 2. Trading stock can be valued at cost, market selling value, or replacement value (ITAA 1997 s 70-45). The method can differ item by item. Step 3. If the total value of trading stock at year-end differs from opening stock by less than $5,000, the taxpayer can elect to use the same value as opening stock (no stocktake required).  _(ITAA 1997 s 70-45)_
+- **Cost of goods sold**: Step 1. Opening stock + Purchases - Closing stock = Cost of goods sold. Step 2. Trading stock can be valued at cost, market selling value, or replacement value (ITAA 1997 s 70-45). The method can differ item by item. Step 3. If an eligible small business entity reasonably estimates that year-end trading stock differs from opening stock by $5,000 or less (s 328-285), the taxpayer can elect to use the same value as opening stock (no stocktake required).  _(ITAA 1997 s 70-45)_
 
 ### 4.3 Allowable deductions
 
@@ -103,14 +104,16 @@ This skill does NOT cover:
 
 **Key deduction categories on the schedule**
 
-| Label | Category | Notes |
+| Schedule area | Category | Notes |
 | --- | --- | --- |
-| P9 | Motor vehicle expenses | See 4.4 below |
-| P10 | Depreciation expenses | See 4.5 below |
-| P11 | Repairs and maintenance | Must be revenue not capital |
-| P12 | Interest (business portion) | Pro-rate if mixed-use loan |
-| P13 | Rent on business premises | Not home office (see P14) |
-| P14 | Other business expenses | Includes home office, travel, subscriptions, professional fees |
+| P8 expenses | Motor vehicle expenses | Use the year-specific expense label and method |
+| P8 expenses | Depreciation | Reconcile to the depreciation schedule |
+| P8 expenses | Repairs and maintenance | Distinguish capital expenditure |
+| P8 expenses | Interest | Use the correct domestic/overseas label and business portion |
+| P8 expenses | Rent | Business premises; assess home occupancy separately |
+| P8 expenses | Other expenses | Classify into specific P8 expense labels where available |
+
+P9 records business loss activity details, not motor expenses. P10 and later items request separate business information, not a sequence of ordinary expense categories. Use the issued year’s form. [ATO 2025 business schedule instructions](https://www.ato.gov.au/api/public/content/5861f7f47efa45d5b76332ef12919ace?v=a0a2f777) establish this P8/P9 distinction. Verify the issued 2026 form before transferring labels.
 
 ### 4.4 Motor vehicle expenses
 
@@ -132,7 +135,7 @@ Two methods available for sole traders:
 
 #### General depreciation (non-SBE or election out of simplified)
 
-- **General depreciation** — Use the effective life determined by the ATO (TR 2024/3) or a self-assessed effective life. Choose diminishing value (rate = 200% / effective life) or prime cost (rate = 100% / effective life). Apply from the date the asset is first used or installed ready for use.  _(ATO TR 2024/3)_
+- **General depreciation**: Use the effective life determined by the ATO (Income Tax Assessment (Effective Life of Depreciating Assets) Determination 2025) or a self-assessed effective life. Choose diminishing value (rate = 200% / effective life) or prime cost (rate = 100% / effective life). Apply from the date the asset is first used or installed ready for use.  _(ATO Income Tax Assessment (Effective Life of Depreciating Assets) Determination 2025)_
 
 ### 4.6 Home office expenses
 
@@ -144,15 +147,15 @@ Two methods available for sole traders:
 
 - **Actual cost method** — Calculate the actual costs of running the home office. Apportion based on floor area of the dedicated work area as a percentage of total home area, and the proportion of the year the area is used for work. Keep receipts and records for every expense claimed.
 
-### 4.7 Net business income or loss (P20)
+### 4.7 Net business income or loss (P8)
 
-- **Net business income or loss (P20)** — Step 1. P20 = P8 (income) - total deductions (P9 through P14 plus any other deductions). Step 2. If P20 is a loss, check the non-commercial business loss rules (ITAA 1997 Div 35): The loss can only be offset against other income if one of four tests is met: assessable income test ($20,000), profits test (3 of last 5 years), real property test ($500,000), or other assets test ($100,000). If no test is met, the loss is deferred to future years (quarantined). Step 3. P20 feeds into the individual tax return at "Business income or loss."  _(ITAA 1997 Div 35)_
+- **Net business income or loss (P8):** Sum the P8 income and deductible expenses using the applicable accounting method and tax adjustments. The established mapping is P8 label Z to supplementary return question 15 label C for non-primary-production net income or loss; confirm those labels against the issued 2026 form. [ATO transfer instructions](https://www.ato.gov.au/api/public/content/0-58fc149a-82af-406a-a4e0-252beb58a86b). If there is a loss, complete P9 and test Division 35: the adjusted-income requirement must be less than $250,000 before relying on the assessable-income, profits, real-property or other-assets tests. Assess statutory exceptions and Commissioner discretion separately. Otherwise defer the loss. [ITAA 1997 s 35-10](https://www.ato.gov.au/law/view/document?docid=PAC/19970038/35-10).
 
 ## Section 5 — Edge cases and special rules
 
 ### 5.1 Personal services income (PSI)
 
-- **Personal services income (PSI)** — If more than 80% of the sole trader's income from a contract is for their personal effort or skills, and no PSI determination has been obtained, the income may be PSI. PSI rules deny certain deductions (home office, entertainment, some car expenses). **Flag for reviewer.**  _(ITAA 1997 Div 84-87)_
+- **Personal services income (PSI):** Screen each amount for whether it is mainly, ordinarily more than half, a reward for personal effort or skills. Then apply the separate personal services business tests. The 80% source-concentration rule is not the definition of PSI; consider the results test and other tests/determination rules in their proper order. Refer uncertain cases for review. [ITAA 1997 s 84-5 and TR 2022/3](https://www.ato.gov.au/law/view/document?docid=TXR/TR20223/NAT/ATO/00001).
 
 ### 5.2 Mixed-use assets
 
@@ -160,7 +163,7 @@ Two methods available for sole traders:
 
 ### 5.3 Prepaid expenses (SBE)
 
-- **Prepaid expenses (SBE)** — Small business entities can immediately deduct prepaid expenses if the service period is 12 months or less and ends by 30 June of the following income year. Example: 12-month insurance premium paid in May 2025 covering May 2025 to April 2026 — fully deductible in 2024-25.
+- **Prepaid expenses (SBE)**: Small business entities can immediately deduct prepaid expenses if the service period is 12 months or less and ends by 30 June of the following income year. Example: 12-month insurance premium paid in May 2026 covering May 2026 to April 2027: deductible in 2025–26 if the statutory conditions are met.
 
 ### 5.4 Capital vs revenue
 
@@ -183,7 +186,7 @@ Before delivering output, verify:
 - [ ] Non-commercial loss rules checked if a loss is reported
 - [ ] PSI risk flagged if applicable
 - [ ] Trading stock valuation method is documented
-- [ ] Rates and thresholds match the 2024-25 income year
+- [ ] Rates and thresholds match the 2025–26 income year
 - [ ] Output format matches the base skill spec
 
 ## Section 7 — Disclaimer

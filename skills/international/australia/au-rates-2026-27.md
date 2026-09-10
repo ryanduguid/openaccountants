@@ -1,23 +1,28 @@
 ---
 name: au-rates-2026-27
 description: Use this skill whenever you need a current Australian tax rate, threshold, cap or due date for the 2026-27 or 2025-26 income year -- individual brackets, HELP repayment, Medicare levy and surcharge, super guarantee and contribution caps, Division 296, company rates, Div 7A benchmark, FBT, CGT caps and concessions, GST, PAYG instalment uplift, cents-per-km, car limits, penalty units, payroll tax, minimum wage or ASIC fees. Single-page rates card; every figure carries its source. Trigger on "what is the current rate", "2026-27 threshold", "how much is the cap", or any AU figure lookup. Load alongside the topic guide.
-version: "1.0"
+version: 1.1
 jurisdiction: AU
-tax_year: 2025
-last_updated: 2026-09-02
+tax_year: 2026
+tax_year_notes: "2026–27"
+last_updated: 2026-09-10
 review_status: pending_review
 category: international
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Australia Rates Card 2026-27 (with 2025-26) v1.0
+# Australia Rates Card 2026-27 (with 2025-26) v1.1
 
-## Australia Rates Card 2026-27 (with 2025-26) v1.0
+## Australia Rates Card 2026-27 (with 2025-26) v1.1
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 Single-page lookup for the figures every other Australian guide relies on. Each row names its primary source. Verified against those sources on 20 August 2026. Deeper rules live in the topic guides named in each section; this card never overrides them.
+
+## Enacted asset and loss relief
+
+For 2025–26, eligible small business entities using simplified depreciation can deduct assets costing less than $20,000 when first used or installed ready for taxable use. The permanent threshold was enacted on 26 August 2026; schedule 2 commences on 1 October 2026 and applies to specified first use or installation from 1 July 2026. [Tax Reform No. 2 Act 2026, schedules 1–2](https://www.legislation.gov.au/C2026A00071/asmade/text). The new corporate loss carry-back rules were enacted in the same Act; distinguish the October commencement from their income-year application.
 
 ## Individual income tax
 
@@ -54,7 +59,7 @@ Tax on full bands: 2025-26 -- $4,288 at $45,000, $31,288 at $135,000, $51,638 at
 
 Repayment income = taxable income + reportable fringe benefits + reportable super + exempt foreign income + net investment losses.
 
-**Marginal repayment rates**  _(Education and Other Legislation Amendment (VET Fee Protection and Other Measures) Act 2025; ATO QC 103927)_
+**Marginal repayment rates**  _(Universities Accord (Cutting Student Debt by 20 per cent) Act 2025; ATO QC 103927)_
 
 | Repayment income (2025-26) | Marginal repayment rate |
 | --- | --- |
@@ -63,7 +68,7 @@ Repayment income = taxable income + reportable fringe benefits + reportable supe
 | $125,001 -- $179,285 | $8,700 + 17% of excess over $125,000 |
 | $179,286+ | 10% of repayment income (cap rule) |
 
-One-off 20% debt reduction applied before 1 June 2026 indexation; thresholds index for 2026-27 (confirm current-year bands at ATO study loan repayment thresholds before computing). _(Education and Other Legislation Amendment (VET Fee Protection and Other Measures) Act 2025; ATO QC 103927)_
+The one-off 20% reduction concerns eligible student-loan debts at 1 June 2025, with the associated 2025 indexation adjustment. It is not a new reduction at 1 June 2026. Use the current repayment-year thresholds separately. [Department of Education](https://www.education.gov.au/higher-education-provider-updates/higher-education-provider-updates-december-2025).
 
 ## Medicare
 
@@ -107,7 +112,7 @@ One-off 20% debt reduction applied before 1 June 2026 indexation; thresholds ind
 | BRE rate | 25% (turnover < $50m AND <= 80% BREPI) | ITRA 1986 ss 23AA-23AB |
 | Standard rate | 30% | ITRA 1986 |
 | Franking | At 25%: credit = distribution / 3. At 30%: x 3/7 | au-company-tax |
-| Loss carry-back | ENDED (2019-20 to 2022-23 claim years only) | former Div 160 |
+| Loss carry-back | New enacted rules apply to income years starting on or after 1 July 2026 for eligible corporate tax entities; test SGE status, earlier tax liabilities, franking balance and other conditions | [Tax Reform No. 2 Act 2026, schedules 1–2](https://www.legislation.gov.au/C2026A00071/asmade/text); commencement 1 October 2026 |
 | Div 7A benchmark | 8.37% (2025-26); **8.77% (2026-27)** | ATO Div 7A rates |
 | PAYG GDP uplift | 4% (2025-26); **5% (2026-27)** | ATO GDP adjustment |
 | Amendment period (SMB) | 4 years for 2024-25+ assessments | ATO amendment periods |
@@ -143,8 +148,8 @@ One-off 20% debt reduction applied before 1 June 2026 indexation; thresholds ind
 
 | Item | Value | Source |
 | --- | --- | --- |
-| Rate / registration | 10% / $75,000 ($150,000 NFP; $1 taxi-rideshare) | GST Act |
-| Instant asset write-off | $20,000 per asset (turnover < $10m) legislated to 30 Jun 2026; permanence from 1 Jul 2026 announced, confirm enactment | ATO QC 103578 |
+| Rate / registration | 10% / $75,000 ($150,000 NFP; taxi/ride-sourcing regardless of turnover) | GST Act |
+| Instant asset write-off | For 2025–26, eligible small business entities using simplified depreciation can deduct assets costing less than $20,000 when first used or installed ready for taxable use. The permanent threshold was enacted on 26 August 2026; schedule 2 commences on 1 October 2026 and applies to specified first use or installation from 1 July 2026. [Tax Reform No. 2 Act 2026, schedules 1–2](https://www.legislation.gov.au/C2026A00071/asmade/text). | ITAA 1997 Subdivision 328-D |
 | Penalty unit | $330 (7 Nov 2024 -- 30 Jun 2026); **$364 from 1 Jul 2026** | ATO QC 71196 |
 | GIC | **Not deductible from 1 Jul 2025** (SIC likewise) | Tax Incentives and Integrity Act 2025; QC 73746 |
 
