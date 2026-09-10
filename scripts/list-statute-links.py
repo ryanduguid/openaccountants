@@ -73,12 +73,22 @@ STATUTE = re.compile(r'\b(?:Act|Code|Law|Ordinance|Decree|Uniform Act|Loi|'
                      r'Statutory Instrument|S\.I\. No)\b')
 HOST = re.compile(r'https?://([^/\s)\]>"]+)')
 
-# Publishers whose pages a reader can recognise as commentary. Landing on one of
-# these from a statute-named link is a convention, not a trap.
+# Destinations a reader can recognise for what they are. Two kinds, and the
+# distinction is worth keeping in mind even though both are spared:
+#
+#   commentary  PwC, KPMG, Chambers, Lexology. You land on tax analysis, and
+#               you can see that is what it is.
+#   primary text  law.cornell.edu. Cornell's LII is a Cornell Law School
+#               programme, not the official publisher -- the US Code is
+#               published by the OLRC -- so it is a republisher, in the same
+#               position as ZambiaLII. But it republishes the SECTION, not a
+#               summary of it: `[§1202](law.cornell.edu/uscode/text/26/1202)`
+#               lands the reader on 26 U.S.C. §1202 itself. That is a citation
+#               doing its job, and flagging it would be the false positive.
 PUBLISHER = re.compile(r'pwc|kpmg|deloitte|ey\.com|bakermckenzie|chambers|'
                        r'grantthornton|pkf|bdo|crowe|mazars|lexology|ibfd|'
                        r'orbitax|taxsummaries|practiceguides|legal500|'
-                       r'bloombergtax', re.I)
+                       r'bloombergtax|law\.cornell\.edu', re.I)
 
 SKIP_TREES = ('us-states', 'foundation', 'templates', 'patterns')
 
@@ -163,9 +173,15 @@ def main(only=None):
     hits = collections.defaultdict(list)
     for dp, _, fns in os.walk('skills'):
         parts = dp.split(os.sep)
-        if len(parts) < 3 or parts[1] in SKIP_TREES:
+        # Depth 2 is skills/<tree>/file.md, depth 3 skills/<tree>/<jur>/file.md.
+        # Requiring depth 3 hid 168 files that are not in a jurisdiction folder
+        # -- every US federal guide, every cross-border guide, the orchestrators
+        # -- and the queue was reported clean for a region never looked at. Same
+        # shape as the trailer bug: the number was not low, it was uncomputed.
+        if len(parts) < 2 or parts[1] in SKIP_TREES:
             continue
-        if only and parts[2] != only:
+        label = parts[2] if len(parts) > 2 else parts[1]
+        if only and label != only:
             continue
         for fn in sorted(fns):
             if not fn.endswith('.md'):
@@ -174,7 +190,7 @@ def main(only=None):
             with open(path, encoding='utf-8', errors='replace') as fh:
                 for n, line in enumerate(fh, 1):
                     for anchor, host in misleading(line):
-                        hits[parts[2]].append((path, n, anchor, host))
+                        hits[label].append((path, n, anchor, host))
     for jur, rows in sorted(hits.items(), key=lambda kv: -len(kv[1])):
         print('%-26s %d' % (jur, len(rows)))
         if only:

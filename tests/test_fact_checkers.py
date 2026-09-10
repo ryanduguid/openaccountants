@@ -515,6 +515,62 @@ def _load(script):
     return module
 
 
+class SingleSourceTests(unittest.TestCase):
+    """Offline tests for list-single-source-blocks.py."""
+
+    def setUp(self):
+        self.ss = _load("list-single-source-blocks.py")
+
+    def test_the_benin_shape_is_what_this_measures(self):
+        # Every IRPP band boundary cited to one HR platform. All five were
+        # wrong. The shared source is what a reader could have noticed without
+        # knowing any Beninese tax law, and it is the only thing measurable here.
+        total, hosts = self.ss.concentration([
+            "- **Band 1** - 0% up to 60,000  _(Code - https://rivermate.com/x)_\n",
+            "- **Band 2** - 10% to 150,000  _(Code - https://rivermate.com/x)_\n",
+            "- **Band 3** - 15% to 250,000  _(Code - https://rivermate.com/x)_\n",
+            "- **Top** - 30% above 500,000  _(Code - https://rivermate.com/x)_\n",
+        ])
+        self.assertEqual(total, 4)
+        self.assertEqual(hosts["rivermate.com"], 4)
+        self.assertEqual(self.ss.classify_host("rivermate.com"), "other")
+
+    def test_concentration_on_an_authority_is_the_good_case(self):
+        # A guide citing its own revenue service for all its figures is a guide
+        # doing it right, and must not sit in the same list as the HR platforms.
+        self.assertEqual(self.ss.classify_host("frcs.org.fj"), "authority")
+        self.assertEqual(self.ss.classify_host("taxsummaries.pwc.com"), "publisher")
+
+    def test_cornell_publishes_the_section_not_a_summary_of_it(self):
+        # us-section-1202-qsbs cites law.cornell.edu 52 times, which put it top
+        # of this queue. But `[§1202](law.cornell.edu/uscode/text/26/1202)` lands
+        # the reader on 26 U.S.C. §1202 itself. Cornell's LII is a republisher,
+        # not the official OLRC text -- but it republishes the statute, so
+        # reporting it here would be the false positive.
+        self.assertEqual(self.ss.classify_host("www.law.cornell.edu"), "publisher")
+
+    def test_one_bullet_is_one_fact_however_often_its_source_repeats(self):
+        # Otherwise a bullet naming the same page twice counts as two
+        # independent corroborations of itself.
+        _, hosts = self.ss.concentration(
+            ["- **Rate** - 20%  _(https://x.com/a and https://x.com/b)_\n"])
+        self.assertEqual(hosts["x.com"], 1)
+        # two genuinely different hosts on one bullet IS corroboration
+        _, hosts = self.ss.concentration(
+            ["- **Rate** - 20%  _(https://x.com/a; https://y.com/b)_\n"])
+        self.assertEqual([hosts["x.com"], hosts["y.com"]], [1, 1])
+
+    def test_prose_uncited_bullets_and_the_cta_block_are_not_facts(self):
+        total, _ = self.ss.concentration([
+            "Benin levies tax under the CGI, with 5 headline taxes.\n",
+            "- **A rate** - 20%  _(no citation here)_\n",
+            "- **Authority** - the DGI  _(https://x.com/a)_\n",
+            "- Use it in your AI: https://www.openaccountants.com/connect 100\n",
+            "- **B rate** - 30%  _(https://frcs.org.fj/x)_\n",
+        ])
+        self.assertEqual(total, 1)
+
+
 class CitationRotTests(unittest.TestCase):
     """Offline tests for list-citation-rot.py.
 
