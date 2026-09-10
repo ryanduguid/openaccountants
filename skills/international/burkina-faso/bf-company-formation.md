@@ -13,6 +13,36 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Entity types and incorporation
 
+> **Two guides, one uniform law, two different answers.** Burkina Faso and Gabon
+> are both **OHADA** member states, so their company law is not national law at
+> all: it is the same *Acte uniforme relatif au droit des sociétés commerciales et
+> du groupement d'intérêt économique* (AUSCGIE). Yet `bf-company-formation` cites
+> the AUSCGIE for a SARL minimum capital *"freely set by the partners but at least
+> the par value of one share (5,000 FCFA)"*, and `ga-company-formation` cites the
+> **same instrument** for **XAF 1,000,000**. **A single uniform text cannot say
+> both**, so at least one attribution is wrong.
+>
+> The likely explanation — **stated as a hypothesis, because the Act itself could
+> not be read** — is that both are misattributed. The **2014 revision** of the
+> AUSCGIE is understood to have left the SARL's minimum capital to each member
+> state, so two states may legitimately differ while neither figure belongs to the
+> uniform act. On that reading, Burkina Faso's *"5,000 FCFA par value"* is a
+> **pre-2014** rule the revision removed — the same shape as a rate that is right
+> for the wrong year.
+>
+> The two guides **agree** that the SA minimum is 10,000,000, which is the figure
+> usually attributed to the AUSCGIE itself, and that agreement is the only part of
+> this that corroborates.
+>
+> **Why it is not resolved here.** `ohada.org` is live, but its *Actes uniformes*
+> and *Droit des sociétés commerciales et du GIE* pages carry **no PDF and no
+> inline text** — zero occurrences of "Article N" — and the pages fail in a
+> browser while answering `curl`. `droit-afrique.com`, the usual mirror, returns a
+> hard **403 Forbidden** to both. [RESEARCH GAP — the AUSCGIE as revised 30 January
+> 2014 is the missing document. A reviewer with it should settle the SARL minimum
+> for each state, whether the 5,000 par value survives, and re-attribute both rows
+> to national law if that is where the rule now sits.]
+
 - **Governing company law** — OHADA Uniform Act on Commercial Companies and Economic Interest Groups (AUSCGIE)  _(OHADA Uniform Act on Commercial Companies (AUSCGIE) (as described at [expanship.com](https://www.expanship.com/bf/blog/incorporation-requirements-in-burkina-faso)))_
 - **SARL (Société à Responsabilité Limitée)** — Private limited liability company; most common form for SMEs  _(OHADA Uniform Act on Commercial Companies (AUSCGIE) (as described at [expanship.com](https://www.expanship.com/bf/blog/incorporation-requirements-in-burkina-faso)))_
 - **SA (Société Anonyme)** — Public limited company / joint-stock company, used for larger ventures  _(OHADA Uniform Act on Commercial Companies (AUSCGIE) (as described at [expanship.com](https://www.expanship.com/bf/blog/incorporation-requirements-in-burkina-faso)))_

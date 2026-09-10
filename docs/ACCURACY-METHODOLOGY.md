@@ -2685,3 +2685,56 @@ Imprensa Nacional de Cabo Verde publishes the Boletim Oficial and was scoring as
 secondary, the same blind spot that once had Botswana citing its own revenue
 service and counting as unsourced. `digesto.asamblea.gob.ni` already scored as
 authority through the `gob` pattern; a selftest now pins both.
+
+### OHADA — the queue was treating one law as two problems, and they disagree
+
+Burkina Faso and Gabon sit on the queue as separate entries. They are not separate
+problems: both are **OHADA** member states, so their company law is not national
+law but the same *Acte uniforme relatif au droit des sociétés commerciales et du
+groupement d'intérêt économique*, shared across seventeen countries. Noticing that
+was the whole finding, because it puts two guides that never reference each other
+into direct comparison.
+
+**They disagree, while citing the same instrument.** `bf-company-formation` gives
+the SARL minimum capital as *"freely set by the partners but at least the par value
+of one share (5,000 FCFA)"*, cited to the AUSCGIE. `ga-company-formation` gives
+**XAF 1,000,000**, cited to the AUSCGIE. **A single uniform text cannot say both.**
+At least one attribution is wrong, and the corpus contained the contradiction with
+nothing to surface it: no checker compares two jurisdictions' citations of a shared
+supranational instrument, because nothing knows the instrument is shared.
+
+The likely resolution, **flagged as a hypothesis rather than asserted**: the 2014
+revision left the SARL minimum to each member state, so both states may genuinely
+differ while **neither figure belongs to the uniform act**. On that reading Burkina
+Faso's 5,000 FCFA par value is **pre-2014** — a rule right for the wrong year, the
+Sierra Leone shape again. The two guides *agree* that the SA minimum is 10,000,000,
+which is the figure usually attributed to the Act, and that agreement is the only
+corroborating part.
+
+It stays a hypothesis because **the Act could not be read**. `ohada.org` answers
+`curl` with 200 and 408 KB, but its *Actes uniformes* and *Droit des sociétés
+commerciales et du GIE* pages carry **no PDF link and no inline text** — zero
+matches for "Article N" — and both fail in the browser while succeeding under
+`curl`, the reverse pattern that earlier exposed the stale proxy port and this time
+did not. `droit-afrique.com`, the usual mirror, returns a hard **403 Forbidden** to
+`curl` and browser alike: 260 bytes, a real refusal rather than a challenge.
+
+**A shared legal instrument is a checkable cross-jurisdiction invariant**, and this
+corpus has more of them than the queue can see: OHADA covers seventeen states, and
+the same logic applies to CEMAC, UEMOA, the EAC and the GCC. Where two guides cite
+one supranational text for the same rule and give different numbers, one of them is
+wrong **without anyone needing to open the text**.
+
+### Myanmar — three sources, all dead, so the entry is closed rather than open
+
+`mm-company-formation.md` is the largest non-Iraq entry on the queue at 8 of 10.
+Its authority is the companies registry, and the register already recorded
+`dica.gov.mm` as resolving but never serving. Two further routes were tried with
+the corrected proxy and `https://` throughout: the **Myanmar Law Information
+System** (`mlis.gov.mm`) and the **Myanmar Law Library**
+(`myanmar-law-library.org`). Both resolve; **both fail in the browser as well as
+`curl`**.
+
+So the split noted earlier holds and is now complete: Myanmar's **tax** authority
+answers and **every route to its company law does not**. The entry stays on the
+queue, but as a documented dead end rather than an unexplored one.
