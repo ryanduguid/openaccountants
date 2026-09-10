@@ -1,7 +1,7 @@
 ---
 name: au-return-assembly
 description: Final orchestrator skill that assembles the complete Australian filing package for Australian-resident sole traders. Consumes outputs from all Australian content skills (australia-gst for BAS, au-individual-return for ITR, au-super-guarantee for voluntary contributions, au-medicare-levy for levy and surcharge, au-payg-instalments for instalment schedule) to produce a single unified reviewer package containing every worksheet, every form, every brief section, all cross-skill reconciliations, and the final action list with payment instructions, filing instructions, and next-year planning. This is the capstone skill that runs last and produces the final deliverable. MUST be loaded alongside all Australian content skills listed above. Australian full-year residents only. Sole traders only.
-version: "0.3"
+version: 0.4
 jurisdiction: AU
 tax_year: 2025
 last_updated: 2026-09-10
@@ -12,7 +12,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # AU Return Assembly
 
-## Australia Return Assembly Skill v0.3
+## Australia Return Assembly Skill v0.4
 
 ## CRITICAL EXECUTION DIRECTIVE -- READ FIRST
 
@@ -237,7 +237,7 @@ This skill coordinates execution of the content skills, verifies cross-skill con
 ## Positions Taken
 [List with legislation citations]
 - e.g., "Home office deduction claimed using the verified rate for the return year and X supported hours -- Practical Compliance Guideline PCG 2023/1"
-- e.g., "Motor vehicle cents-per-km at 88c/km for X km -- s28-25 ITAA 1997, TD 2024/3"
+- e.g., "Motor vehicle cents-per-km at 88c/km for X km -- s28-25 ITAA 1997, Library, Tax/Deductions, para 4-020"
 - e.g., "MacBook Pro instant asset write-off -- s328-180 ITAA 1997, Temporary Full Expensing extended"
 - e.g., "Personal super contribution deduction -- s290-150 ITAA 1997, s290-170 notice lodged"
 

@@ -2,7 +2,7 @@
 name: au-not-for-profit
 description: >
   Use this skill whenever asked about Australian not-for-profit (NFP) tax compliance -- income tax exemption self-assessment, the annual NFP self-review return, ACNC charity registration and ATO endorsement, the mutuality principle for licensed clubs and member associations, taxable NFP shade-in rates, deductible gift recipient (DGR) endorsement and gift/contribution deductibility, FBT rebate and exemption caps for NFP employers, GST concessions for NFPs, PAYG withholding for NFP employees, or NFP salary packaging. Trigger on phrases like "NFP tax", "charity tax concession", "DGR", "deductible gift", "mutuality", "self-review return", "FBT rebate", "club taxable income". ALWAYS read this skill before touching any NFP tax work.
-version: "1.1"
+version: 1.2
 jurisdiction: AU
 tax_year: 2026
 tax_year_notes: "2026-27 (NFP self-review return season: by 31 Oct 2026)"
@@ -13,7 +13,7 @@ tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Australia Not-for-Profit -- NFP/DGR Tax Compliance Skill v1.1
+# Australia Not-for-Profit -- NFP/DGR Tax Compliance Skill v1.2
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
@@ -54,7 +54,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | DGR endorsement unknown | Check ABN Lookup DGR listing before telling any donor their gift is deductible |
 | FBT status unknown (rebate vs exemption vs none) | Assume NO concession until endorsement type confirmed on ABN Lookup |
 | Governing documents not sighted | Assume NFP character NOT established; mutuality and exemption both unavailable |
-| Entertainment benefits salary packaged by NFP employer | Flag separately -- salary-packaged meal entertainment counts toward caps; non-salary-packaged does not count toward the rebate cap |
+| Entertainment benefits salary packaged by NFP employer | Track packaged meal entertainment and entertainment facility leasing against their separate $5,000 grossed-up cap; add only the excess to the applicable general cap |
 
 ## Section 2 -- Refusal catalogue
 
@@ -282,7 +282,7 @@ The ACNC registers charities, determines charity subtypes (including PBI), maint
 
 ### T2-5 -- FBT cap tracking across benefit types
 
-**Trigger:** salary-packaged meal entertainment plus living-expense benefits for the same employee. **Issue:** packaged meal entertainment counts toward the $30,000 cap alongside other benefits; non-packaged meal entertainment does not. **Action:** track the grossed-up aggregate per employee per FBT year; model before packaging more.
+**Trigger:** salary-packaged meal entertainment plus living-expense benefits for the same employee. **Issue:** packaged meal entertainment and entertainment facility leasing share a separate $5,000 grossed-up cap. Only the excess uses the applicable general cap alongside other benefits. **Action:** calculate the packaged-entertainment excess first, then test the general cap for each employee and FBT year; model before packaging more.
 
 ### T2-6 -- NFP trading subsidiary
 
@@ -319,7 +319,8 @@ DGR / GIFTS
 
 FBT (year ended 31 March [__])
   Status: [exempt PBI/HPC $30k / exempt hospital $17k / rebatable 47% $30k / none]
-  Per-employee grossed-up over cap? [list]   Packaged meal entertainment in cap: [Y/N]
+  Packaged entertainment grossed-up: [____]   Excess over $5,000: [____]
+  Other grossed-up benefits plus packaged excess: [____]   General cap exceeded: [Y/N]
   FBT return lodged; rebate/exemption claimed: [Y/N]
 
 GST
@@ -329,7 +330,7 @@ GST
 
 PAYROLL
   PAYG withholding registered and withheld: [Y/N]   STP current: [Y/N]
-  Super guarantee 12% (from 1 Jul 2026): [Y/N]
+  Super guarantee 12% (from 1 Jul 2025): [Y/N]
   State payroll tax exemption claimed: [Y/N -- state: ____]
 
 FLAGS
@@ -344,7 +345,7 @@ FLAGS
 2. Charities cannot self-assess: all-charitable purposes plus no ACNC registration means taxable, no matter how worthy the purposes look.
 3. The self-review return is annual and cheap; the cost of not lodging is a taxable year plus penalties. Diarise 31 October.
 4. Mutuality only helps taxable NFPs. Exempt organisations do not need it; "other taxable companies" cannot use it.
-5. FBT: exemption (PBI/HPC) and rebate (everyone else) are mutually exclusive, both capped at $30,000 grossed-up per employee; salary-packaged meal entertainment counts toward the cap, non-packaged does not.
+5. FBT: establish eligibility for exemption or rebate. The general grossed-up cap is $30,000 for PBIs/HPCs and rebatable employers, or $17,000 for eligible hospitals and ambulance services. Apply the separate $5,000 packaged-entertainment cap first and add only its excess to the applicable general cap. Check exclusions for non-packaged entertainment separately.
 6. Gifts and contributions are different animals: a ticket, dinner or auction win is a contribution needing the 20%/$150 minor benefit test, and only the excess over the benefit is deductible.
 
 ---

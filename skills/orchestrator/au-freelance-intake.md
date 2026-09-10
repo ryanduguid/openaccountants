@@ -1,7 +1,7 @@
 ---
 name: au-freelance-intake
 description: ALWAYS USE THIS SKILL when a user asks for help preparing their Australian tax returns AND mentions freelancing, self-employment, contracting, sole trading, or ABN-based work. Trigger on phrases like "help me do my taxes", "prepare my ITR", "I'm a sole trader in Australia", "I'm a freelancer in Australia", "do my taxes as a contractor", "prepare my BAS and income tax", or any similar phrasing where the user is an Australian-resident self-employed individual needing tax return preparation. This is the REQUIRED entry point for the Australian self-employed tax workflow -- every other skill in the stack (australia-gst, au-individual-return, au-super-guarantee, au-medicare-levy, au-payg-instalments, au-return-assembly) depends on this skill running first to produce a structured intake package. Uses upload-first workflow -- the user dumps all their documents and the skill infers as much as possible before asking questions. Uses ask_user_input_v0 for structured questions instead of one-at-a-time prose. Built for speed. Australian full-year residents only; sole traders only.
-version: "0.2"
+version: 0.3
 jurisdiction: AU
 tax_year: 2025
 last_updated: 2026-09-10
@@ -12,7 +12,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # AU Freelance Intake
 
-## Australia Sole Trader Intake Skill v0.2
+## Australia Sole Trader Intake Skill v0.3
 
 ## What this file is
 
@@ -320,8 +320,8 @@ Q: "Motor vehicle method?"
    ]
 ```
 
-- **Cents-per-km motor vehicle rate 2024-25** — 85 cents/km (maximum 5,000 business km)
-- **Motor vehicle option handling** — If option 1 -> ask for estimated business kilometres driven in 2024-25 (max 5,000). Rate is 85 cents/km for 2024-25. If option 2 -> ask for logbook business-use percentage and total car expenses. If option 3 -> skip vehicle entirely. Flag all private-use percentages as T2 -- registered tax agent must confirm the percentage is reasonable and documented.
+- **Cents-per-km motor vehicle rate 2024-25** — 88 cents/km (maximum 5,000 business km)
+- **Motor vehicle option handling** — If option 1 -> ask for estimated business kilometres driven in 2024-25 (max 5,000). Rate is 88 cents/km for 2024-25. If option 2 -> ask for logbook business-use percentage and total car expenses. If option 3 -> skip vehicle entirely. Flag all private-use percentages as T2 -- registered tax agent must confirm the percentage is reasonable and documented.
 
 **Other income question**
 
@@ -553,7 +553,7 @@ For an unprepared user (has to go fetch documents):
 
 - **v0.1 (April 2026):** Initial draft. Upload-first, inference-then-confirm pattern modelled on mt-freelance-intake v0.1.
 
-## End of Intake Skill v0.2
+## End of Intake Skill v0.3
 
 ## Disclaimer
 

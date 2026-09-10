@@ -11,7 +11,7 @@ description: >
   land tax, aggregation, thresholds and rates by state, surcharges, trusts,
   companies, exemptions, objections, GL treatment, and deductibility.
   ALWAYS read this skill before advising on Australian land tax.
-version: "1.1"
+version: 1.1
 jurisdiction: AU
 tax_year: 2026
 tax_year_notes: "2026 land tax year (1 Jan 2026 or 30 Jun 2025 ownership date per state)"
