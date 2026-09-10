@@ -2138,3 +2138,93 @@ the single-source queue is at **27**.
 > gives the same pair — 2,811 before, 2,830 after — which is a confirmation and
 > not a reason to skip the re-run. **The point of re-measuring is that you cannot
 > tell in advance which time it will have moved.**
+
+## DR Congo — the reduced VAT rate was wrong by a factor of eight
+
+`cd-vat-gst.md` carried seven citations. **Six pointed at the same commercial
+advisory blog post**, and it was the queue's ranking of that concentration that
+picked the file, not any figure looking wrong. Reading the statute found a number
+that was out by 8×.
+
+### What the statute says
+
+The DGI publishes its consolidated *Code des Impôts* (2023 edition) as a PDF on
+`dgi.gouv.cd`. Article 35 of Ordonnance-Loi n° 10/001, as amended by L.F. n°
+21/029 of 31 December 2021 and n° 22/071 of 28 December 2022, sets the rates:
+*"taux normal : 16% … taux réduit : **8%** … taux 0%, applicable aux exportations
+et opérations assimilées"*. The guide said the reduced rate was **1%**.
+
+The 8% band is not a description but a **schedule of customs tariff positions**
+printed in the article itself — 02.01 through 02.07 for meats and offal,
+0303.23.00 for frozen tilapia, 1006.20.00 and 1006.30.00 for husked and milled
+rice, and so on — followed by a limb that has nothing to do with food: *"à la
+vente des billets d'avion sur le trafic aérien national"*. Domestic air tickets
+were absent from the guide altogether.
+
+### The corroboration was found second, not first
+
+The DGI's own August 2025 taxpayer leaflet, *La Taxe sur la Valeur Ajoutée —
+Notions essentielles à retenir*, states the same three rates at §VI including the
+air-ticket limb. It is worth being clear about the order: **the leaflet was read
+after the Code, and would not have been sufficient on its own** — a leaflet is a
+summary, and the next finding is exactly what happens when you trust one.
+
+### An authority contradicting itself, recorded as a gap rather than resolved
+
+The same leaflet says at §II that members of the **liberal professions** are
+subject to VAT *"sans considération de leur chiffre d'affaires"*. That rule is
+art. 44 of Décret n° 011/42, and the DGI's own consolidated Code prints it inside
+square brackets marked ***"(Disposition désuète conformément à la L.F. n° 15/021
+du 31 décembre 2015)"*** — text the Code flags as spent.
+
+So the authority's current leaflet asserts a rule the authority's consolidated
+code marks as superseded. **The guide states neither version.** It records the
+conflict, names both documents, and leaves the question to a reviewer. Picking
+the leaflet because it is newer, or the Code because it is the legal text, would
+have produced a confident sentence with a coin-flip behind it. **A documented
+contradiction between two arms of the same authority is a finding; silently
+choosing one of them is not.**
+
+### Three smaller corrections the statute forced
+
+- **"Exceeding" versus "equal to or greater than."** The guide put the
+  registration threshold at turnover *exceeding* CDF 80,000,000. Art. 14 reads
+  *"chiffre d'affaires annuel **égal ou supérieur à** 80.000.000"*. A business at
+  exactly the threshold is inside the tax, and the guide put it outside. The same
+  article also carries a **two-year lock-in** on voluntary registration and a
+  **two-year tail** after turnover falls below the threshold, neither of which the
+  guide mentioned.
+- **Not a reverse charge.** The guide described imported services as
+  reverse-charged by the recipient "(approx — confirm)". Art. 23 requires the
+  non-resident to appoint an **approved resident representative, jointly and
+  severally liable**; the customer pays *"en cas de non désignation d'un
+  représentant"* — a default remedy, not the mechanism.
+- **Not a rollout.** The guide called e-invoicing a 2025 modernisation plan
+  "(approx — confirm)". Art. 58 has required a *facture normalisée produite par
+  les dispositifs électroniques fiscaux* since the 2022 Finance Law, and art. 38
+  makes it a **condition of deducting input tax**.
+
+### A mislabelled citation, caught by re-reading before writing
+
+Working notes had the carry-forward and no-refund rule at "décret arts. 140–141".
+Re-running the search before drafting put the primary rule at **art. 63 of the
+Ordonnance-Loi** — *"Le crédit d'impôt ne peut pas faire l'objet d'un
+remboursement au profit de l'assujetti et ne peut être cédé"* — with décret art.
+140 repeating it. Both exist and both say it; the *statute* is the citation, and
+a note written earlier in the session had reached for the implementing decree.
+**Notes taken during research are not citations until re-verified against the
+text at the moment of writing.**
+
+### And a category invented rather than looked up
+
+The rewrite was first written with `category: vat`. That value does not exist:
+`docs/skill-template.md` lists the vocabulary, and country-level VAT belongs under
+`international`. A grep confirmed `vat` appeared in exactly one file in the
+corpus — the one just written. **The vocabulary was two commands away and got
+guessed instead**, the same failure mode as the invented Bengali clause letter one
+section above, in a repo where nothing enforces `category` at all.
+
+Corpus effect: authority citations 2,830 → **2,867**, secondary 4,713 → **4,704**.
+`cd-tax-overview.md` carried the same VAT rate and filing deadline on commercial
+citations and was re-pointed to arts. 35 and 60 in the same commit — the
+jurisdiction-wide grep, which is what found it.
