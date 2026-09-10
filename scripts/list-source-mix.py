@@ -184,6 +184,21 @@ NON_GOV_AUTHORITY = frozenset((
     'lmis.gm',            # Gambia Labour Market Information System, run by the
                           # Ministry of Trade, Industry, Employment and Regional
                           # Integration with GBoS, the NTA and the SSHFC.
+    # Fifth pass. These came out of the STATUTE-LINK queue rather than from
+    # --unclassified: that checker reports "names a statute, lands somewhere
+    # that is not an authority", so reading its destinations is a way of asking
+    # this list what it is missing. Each was fetched and read before adding.
+    'u.ae',               # "The Official Platform of the UAE Government", run
+                          # by UAE mGovernment. Sits directly on the national
+                          # TLD with no "gov" label, so GOV cannot see it.
+    'nssfug.org',         # Uganda National Social Security Fund: the statutory
+                          # fund that collects the contribution, publishing the
+                          # NSSF Act Cap 230 and its regulations on its own site.
+    # Legal information institutes are NOT a class -- the network is mixed, and
+    # the test splits it. These two are run by state bodies:
+    'eswatinilii.org',    # "operated by the Judiciary of eSwatini"
+    'namiblii.org',       # "a project of the Law Reform and Development
+                          # Commission", Namibia's statutory law-reform body.
 ))
 
 # Removed from the list above after a code review, and kept here so the same
@@ -197,6 +212,29 @@ NON_GOV_AUTHORITY = frozenset((
 #                       economic development agency, not the Ufficio Tributario
 #   palgakalkulaator.ee a salary calculator naming no publisher, cited as the
 #                       source for Estonia's statutory minimum wage
+#
+# Considered in the fifth pass and NOT added, each for a stated reason, so the
+# same names are not proposed again from their shape:
+#
+#   zambialii.org       The LII network is not homogeneous. EswatiniLII is run
+#                       by the Judiciary and NamibLII by a statutory commission,
+#                       so both are on the list above; ZambiaLII is "hosted by
+#                       the Southern African Institute for Policy and Research
+#                       (SAIPAR), an independent, educational and development
+#                       oriented research centre" and "collects cases indirectly
+#                       from the Zambian judiciary". An excellent republisher,
+#                       but not the official publisher of the law.
+#   dlb.az              Reads as an Azerbaijani state body; it is "DLB
+#                       Consulting", selling corporate services.
+#   nasfund.com.pg      A licensed PNG superannuation fund with shareholders and
+#                       its own Deed -- one fund among several, not the body
+#                       that imposes the charge. Contrast nrbf.to above.
+#   onrc.ro,            Romania's trade register and Lithuania's Centre of
+#   registrucentras.lt  Registers, both almost certainly authorities -- but one
+#                       answers with a WAF rejection and the other with a
+#                       Cloudflare challenge, so neither could be read. Left off
+#                       deliberately: adding a domain because its name and
+#                       reputation fit is exactly how manao.mg got here.
 
 # Whole domains where every subdomain is the same authority. chinhphu.vn is the
 # Government of Vietnam's portal and its subdomains carry the gazette
