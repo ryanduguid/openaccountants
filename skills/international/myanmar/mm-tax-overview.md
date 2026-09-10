@@ -18,11 +18,11 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Currency** — Myanmar kyat (MMK)  _(Central Bank of Myanmar Law, https://taxsummaries.pwc.com/myanmar)_
 - **National tax authority** — Internal Revenue Department (IRD), Ministry of Planning and Finance  _(Internal Revenue Department, https://taxsummaries.pwc.com/myanmar)_
 - **Basis of taxation** — Residents taxed on worldwide income; non-residents taxed on Myanmar-sourced income only  _(Income Tax Law (Myanmar), https://taxsummaries.pwc.com/myanmar/individual/residence)_
-- **Headline personal income tax rate** — Progressive 0% to 25% %  _(Union Taxation Law 2025, https://taxsummaries.pwc.com/myanmar/individual/taxes-on-personal-income)_
+- **Headline personal income tax rate** — Progressive **0% to 25%** in six bands, the top rate from MMK 70,000,001. "0% to 25%" is not the whole scale, though: **rental income is charged separately at 10%** after reliefs, **capital gains at 10%**, and income whose source cannot be shown runs on its **own 3%–30% scale** — see `mm-income-tax`  _(2025 Union Taxation Law, ss.19(c), 25 and 27(b) — https://www.ird.gov.mm/tax-knowledge/taxes/individual)_
 - **Headline corporate income tax rate** — 22% %  _(Union Taxation Law 2025, https://taxsummaries.pwc.com/myanmar/corporate/taxes-on-corporate-income)_
 - **VAT / GST** — Myanmar has no VAT or GST; a turnover-based commercial tax applies instead (generally 5%)  _(Commercial Tax Law, https://taxsummaries.pwc.com/myanmar/corporate/other-taxes)_
 - **Commercial tax standard rate** — 5% %  _(Commercial Tax Law, https://taxsummaries.pwc.com/myanmar/corporate/other-taxes)_
-- **Capital gains tax (non-oil & gas)** — 10% %  _(Income Tax Law (Myanmar), https://taxsummaries.pwc.com/myanmar)_
+- **Capital gains tax (non-oil & gas)** — **10%**, and **exempt where the total does not exceed MMK 10,000,000**. A non-resident foreigner pays in the currency the proceeds were received in, and the return is due within 30 days of the sale  _(2025 Union Taxation Law, ss.27(b) and 28 — https://www.ird.gov.mm/tax-knowledge/taxes/individual)_
 - **Annual income tax return deadline** — Within three months from the end of the financial year (i.e. by 30 June)  _(Income Tax Law (Myanmar), https://taxsummaries.pwc.com/myanmar)_
 
 <!-- openaccountants-cta-block -->
