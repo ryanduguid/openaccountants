@@ -199,6 +199,13 @@ NON_GOV_AUTHORITY = frozenset((
     'eswatinilii.org',    # "operated by the Judiciary of eSwatini"
     'namiblii.org',       # "a project of the Law Reform and Development
                           # Commission", Namibia's statutory law-reform body.
+    'belastingdienst.sr', # "Belasting Dienst - Suriname": the national tax
+                          # service, publishing BTW, Loonbelasting and
+                          # Inkomstenbelasting guidance, the Wetten and its
+                          # Beschikkingen. belastingdienst.nl was already here
+                          # for the Netherlands; the Surinamese one sits on a
+                          # bare .sr with no "gov" label, and was the only
+                          # external citation the whole jurisdiction had.
 ))
 
 # Removed from the list above after a code review, and kept here so the same
