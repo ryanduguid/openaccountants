@@ -3,7 +3,7 @@ name: pk-cgt
 description: Use this skill whenever asked about Pakistan Capital Gains Tax. Trigger on phrases like "Pakistan CGT", "capital gains tax Pakistan", "PSX shares gain Pakistan", "property gain Pakistan", "Section 37A Pakistan", "Section 37 ITO 2001", "immovable property CGT Pakistan", "NCCPL capital gains", "filer vs non-filer CGT Pakistan", "crypto CGT Pakistan", "FBR capital gains", or any question about computing, filing, or reporting capital gains under the Income Tax Ordinance 2001. Scope covers CGT on securities (Section 37A) including PSX-listed shares, modaraba certificates and redeemable capital; CGT on immovable property (Section 37) including the holding-period scale and FBR valuation tables; CGT on other capital assets under Section 37; filer vs non-filer rate differentials; NCCPL collection at source for securities; bank/registrar collection for property; loss set-off and carry-forward; and the uncertain crypto position. ALWAYS read this skill before touching Pakistan CGT work.
 jurisdiction: PK
 tax_year: 2025
-last_updated: 2026-09-09
+last_updated: 2026-09-10
 reviewed_by: Ibrar Ali
 review_status: current
 tier: 1
@@ -31,6 +31,7 @@ This block is generated from verified `skill_facts` — edit the facts, not the 
 - **PSX-listed shares — non-ATL, cohorts before 1 July 2025** — Exactly **double** the ATL rate at every step (25/20/15/10/5/0 on the 2022-24 ladder; 30% on the 2024-25 cohort; 25% on the 2013-22 cohort). NCCPL deducts this; the statutory liability is reconciled in the annual return  _(NCCPL notice NCCPL/CM/AUGUST-25/02)_
 - **Commodity futures (PMEX)** — 5% (ATL) / 10% (non-ATL) to 30 Jun 2025; 5% / 5% from 1 Jul 2025  _(NCCPL notice NCCPL/CM/AUGUST-25/02)_
 - **Mutual funds (MUFAP) — other funds held by a company** — 25% (ATL) / 50% (non-ATL) to 30 Jun 2025; 25% / 25% from 1 Jul 2025. The one place a company pays more than an individual  _(NCCPL notice NCCPL/CM/AUGUST-25/02)_
+- **Mutual funds — acquired on or before 30 Jun 2024 and held more than six years** — 0%, ATL and non-ATL alike. Test this before any mutual-fund rate above: a unit bought in 2018 and sold in TY 2025-26 meets this rule *and* the general rows, and this one governs  _(NCCPL notice NCCPL/CM/AUGUST-25/02)_
 - **Modaraba certs / redeemable capital / listed debt** — Same §37A cohorts and rates as PSX-listed shares  _(ITO 2001 §37A)_
 - **Collection** — At source by NCCPL on settled trades; investor reconciles in annual return  _(§37A / NCCPL)_
 - **Immovable property §37 — acquired on or after 1 July 2024** — 15% flat for filers, no holding-period taper  _(ITO 2001 §37)_
@@ -79,10 +80,10 @@ This block is generated from verified `skill_facts` — edit the facts, not the 
 | **PSX securities** — acquired before 1 July 2013 | **0%** | **0%** | Grandfathered out of the regime entirely |
 | **PMEX** (commodity futures) — acquired on or after 1 Jul 2025 | **5%** | **5%** | A different market, a different schedule |
 | **PMEX** — acquired to 30 Jun 2025 | **5%** | **10%** | |
-| **Mutual funds (MUFAP), stock funds** — individual, AOP or company | **15%** (both cohorts) | **30%** to 30 Jun 2025; **15%** from 1 Jul 2025 | |
-| **Mutual funds, other funds** — individual or AOP | **15%** (both cohorts) | **30%** to 30 Jun 2025; **15%** from 1 Jul 2025 | |
-| **Mutual funds, other funds** — **company** | **25%** (both cohorts) | **50%** to 30 Jun 2025; **25%** from 1 Jul 2025 | The one place a company is charged more than an individual — check the unit-holder type before quoting 15% |
-| **Mutual funds** — acquired on or before 30 Jun 2024 and held **more than six years** | **0%** | **0%** | |
+| **Mutual funds (MUFAP), stock funds** — individual, AOP or company | **15%** (both cohorts) | **30%** to 30 Jun 2025; **15%** from 1 Jul 2025 | Unless the six-year row below applies |
+| **Mutual funds, other funds** — individual or AOP | **15%** (both cohorts) | **30%** to 30 Jun 2025; **15%** from 1 Jul 2025 | Unless the six-year row below applies |
+| **Mutual funds, other funds** — **company** | **25%** (both cohorts) | **50%** to 30 Jun 2025; **25%** from 1 Jul 2025 | The one place a company is charged more than an individual — check the unit-holder type before quoting 15%. Unless the six-year row below applies |
+| **Mutual funds** — acquired on or before 30 Jun 2024 and held **more than six years** | **0%** | **0%** | **This row wins.** It is an exception to the three rows above, not a fourth alternative to them: test it first. A holding bought in 2018 and sold in TY 2025-26 satisfies both it and the general rows, and the answer is 0%, not 15% or 25% |
 | Immovable property (Section 37) — **acquired on or after 1 July 2024** | **15% flat**, whatever the holding period | Individuals and AOPs: normal slab rates (up to 45%), **but not less than 15%**. Companies: the corporate rate | The holding-period taper was abolished for this cohort. FBR valuation tables apply |
 | Immovable property — **acquired on or before 30 June 2024**, open plots | 15% / 12.5% / 10% / 7.5% / 5% / 2.5% / **0% beyond 6 years** across the seven annual bands | Slab rates, floor 15% | Three separate ladders — the asset type changes the rate at the same holding period |
 | Immovable property — **acquired on or before 30 June 2024**, constructed property | 15% / 10% / 7.5% / 5% / **0% beyond 4 years** | Slab rates, floor 15% | Reaches zero two years earlier than open plots |

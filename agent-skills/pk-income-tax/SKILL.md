@@ -16,6 +16,30 @@ metadata:
 
 ## Pakistan — Personal Income Tax (Individuals & AOP) — Skill v1.0
 
+> **How to read every "TBC — verify against Finance Act 2025" marker in this
+> guide: as naming the wrong Act.**
+>
+> Those markers were written while the Finance Act 2025 was still pending. Both
+> it and the Finance Act 2026 are now enacted, so an instruction to "verify
+> against FA 2025" is two Acts behind for anyone computing a current year.
+> Pakistan's tax year runs 1 July to 30 June, and the Act that governs it is the
+> one enacted immediately before it starts:
+>
+> | Tax year | Period | Governing Finance Act |
+> | --- | --- | --- |
+> | TY 2024-25 | 1 Jul 2024 – 30 Jun 2025 | Finance Act 2024 |
+> | TY 2025-26 | 1 Jul 2025 – 30 Jun 2026 | Finance Act 2025 |
+> | TY 2026-27 | 1 Jul 2026 – 30 Jun 2027 | **Finance Act 2026** (gazetted 26 June 2026) |
+>
+> So read each TBC as **"verify against the Finance Act in force for the tax
+> year being computed"**. The markers still do their job — they say a figure was
+> not confirmed — but they do not tell you which Act to open, and for a 2026-27
+> computation the answer is FA 2026, not FA 2025.
+>
+> This tree is hand-maintained rather than generated, so it does not inherit
+> corrections to `skills/international/pakistan/pk-income-tax.md`. That guide
+> carries the same notice; when either is revised, check the other.
+
 ## Verified rates & thresholds (accountant-reviewed)
 
 Reviewed against the cited tax authorities by **Ibrar Ali** on 2026-06-12.

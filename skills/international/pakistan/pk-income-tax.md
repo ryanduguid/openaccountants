@@ -5,7 +5,7 @@ version: 1.0
 jurisdiction: PK
 tax_year: 2025
 tax_year_notes: "2025 (salaried bracket table and surcharge restated for TY 2026-27 under Finance Act 2026, gazetted 26 June 2026)"
-last_updated: 2026-09-09
+last_updated: 2026-09-10
 reviewed_by: Ibrar Ali
 review_status: current
 depends_on:
@@ -39,9 +39,10 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 > not confirmed — but they do not tell you which Act to open, and for a 2026-27
 > computation the answer is FA 2026, not FA 2025.
 >
-> The same wording appears in this guide's `agent-skills/` counterpart, which is
-> a separate hand-maintained tree rather than a generated copy, and has not been
-> updated here.
+> The same wording appears in this guide's `agent-skills/pk-income-tax/`
+> counterpart, which is a separate hand-maintained tree rather than a generated
+> copy — so it inherits nothing from this file. The notice above is repeated
+> there verbatim. When either is revised, check the other.
 
 
 ## Verified rates & thresholds (accountant-reviewed)
