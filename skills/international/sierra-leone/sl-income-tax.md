@@ -19,7 +19,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Fourth band (monthly)** — Next NLe 600 (NLe 1,801–2,400) taxed at 25% percent  _(Income Tax Act 2000)_
 - **Top band (monthly)** — Income above NLe 2,400 per month taxed at 30% percent  _(Income Tax Act 2000)_
 - **Annual tax-free threshold** — First NLe 7,200 per year taxed at 0% ((approx — confirm)) NLe  _(Income Tax Act 2000)_
-- **Non-resident employment income** — Taxed at a flat 25% (withheld at source) percent  _(Income Tax Act 2000 (as described at [gordonassociates-sl.com](https://gordonassociates-sl.com/withholding-taxes-in-sierra-leone/)))_
+- **Non-resident employment income** — **25%**, withheld at source. This is the Second Schedule Part II line for employment income under s.116, and it is one of the few non-resident rates the Finance Act 2026 left alone — contractors, dividends, interest and management fees all went to 20%  _(Income Tax Act 2000, Second Schedule Part II, as replaced by Finance Act 2024, s.12(b) — https://www.nra.gov.sl/tax-laws)_
 - **Residence test for individuals** — An individual is resident if present in Sierra Leone for 183 days or more in the tax year, or is a government official posted abroad ((approx — confirm))  _(Income Tax Act 2000)_
 - **Tax-free allowances cap** — Allowances exceeding NLe 500 per month are included in taxable income and subject to PAYE NLe  _(Income Tax Act 2000 (as described at [thebettsfirmsl.com](https://thebettsfirmsl.com/blog/pay-as-you-earn-paye-compliance-management-in-sierra-leone)))_
 - **NASSIT relief** — Employee NASSIT contributions (5%) are deductible before computing PAYE ((approx — confirm))  _(National Social Security and Insurance Trust Act 2001)_

@@ -13,14 +13,14 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## The Sierra Leone tax system at a glance
 
-Sierra Leone operates a residence-based direct tax system administered by the National Revenue Authority (NRA) under the Income Tax Act 2000 (as amended). The headline taxes are personal income tax (PAYE), 30% corporate income tax, a 15% Goods and Services Tax (GST), and NASSIT social-security contributions.
+Sierra Leone operates a residence-based direct tax system administered by the National Revenue Authority (NRA) under the Income Tax Act 2000 (as amended). The headline taxes are personal income tax (PAYE), corporate income tax (**25%** to the 2025 year of assessment, **30%** for residents from the Finance Act 2026, with non-residents remaining at **25%**), a 15% Goods and Services Tax (GST), and NASSIT social-security contributions.
 
 - **Tax authority** — National Revenue Authority (NRA)  _([National Revenue Authority Act 2002](https://www.nra.gov.sl/))_
 - **Currency** — New Leone (SLE / NLe); redenominated from old Leone in 2021 by removing three zeros ((approx — confirm))  _(Bank of Sierra Leone redenomination)_
 - **Tax year** — Calendar year, 1 January to 31 December  _(Income Tax Act 2000)_
 - **Basis of taxation** — Residence-based; residents taxed on worldwide income, non-residents on Sierra Leone-source income  _(Income Tax Act 2000)_
 - **Top personal income tax rate** — 30 percent  _([Income Tax Act 2000](https://mail.nra.gov.sl/businesses-and-organisations/pay-you-earn-paye))_
-- **Standard corporate income tax rate** — 30 percent  _([Income Tax Act 2000](https://mail.nra.gov.sl/businesses-and-organisations/corporation-tax))_
+- **Standard corporate income tax rate** — **25%** to the 2025 year of assessment; **30%** for **resident** companies from the Finance Act 2026. **Non-resident** companies stay at **25%** (Second Schedule Part I, unamended). See `sl-corporate-income-tax`  _(Finance Act 2026, s.13(a) — http://webtestcms.nra.gov.sl/uploads/The_Finance_Act_2026_121df05d9b.pdf)_
 - **Consumption tax — Goods and Services Tax (GST)** — 15 percent (standard rate)  _([Goods and Services Tax Act 2009](https://www.pwc.co.za/en/publications/vat-in-africa/sierra-leone-overview.html))_
 - **Social security — NASSIT contributions** — 15 percent of basic salary (10% employer, 5% employee)  _(National Social Security and Insurance Trust Act 2001)_
 - **Annual corporate return deadline** — Within 120 days after the end of the accounting year (by 30 April for a calendar-year taxpayer) ((approx — confirm))  _(Income Tax Act 2000)_

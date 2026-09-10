@@ -2610,3 +2610,83 @@ deliverable when the source cannot be found.**
 Corpus effect across the Burundi work: authority citations 2,928 → **2,976**,
 secondary 4,680 → **4,657**, the single-source queue 23 → **20**, and Burundi from
 **four** entries to **one**.
+
+## Sierra Leone — a rate that was right for the wrong year, and wrong for half its taxpayers
+
+`sl-corporate-income-tax.md` rested six of its seven numeric facts on one law firm's
+page, and cited the seventh — the headline rate — to the Income Tax Act via
+**`mail.nra.gov.sl`**, a mail subdomain. The NRA's real site was recorded as
+unreachable (`curl` returned 000); in a browser it serves a complete legislative
+library.
+
+### The finding the queue exists to catch
+
+The guide stated **30%** and was labelled **tax year 2025**. For 2025 the resident
+company rate was **25%**. The Finance Act 2026 s.13(a) says so in terms: *"Part III
+by **repealing the 25%** relating to the rate of tax applicable to resident
+companies … and replacing it with 30%"*, applying to the financial year beginning
+2026.
+
+The 25% is attested twice more, independently: both the Finance Act 2023 and the
+Finance Act 2024 insert paragraphs *"immediately after the line relating to the
+**25% rate of tax for companies**"*. Three separate instruments agree the rate was
+25% before 2026.
+
+**And non-resident companies never moved.** The Finance Act 2026 amends the Second
+Schedule **Part II** (withholding) and leaves **Part I** — *"Rates of tax on
+chargeable income of non-resident … 25%"* — untouched. The guide put non-residents
+at 30% as well. **One amendment, read as though it applied to everyone.**
+
+### Why the citation could not have revealed any of it
+
+**The NRA publishes no consolidation later than 2017.** Every rate after that date
+has to be assembled from the individual Finance Acts, which the NRA posts separately.
+So a figure cited to "the Income Tax Act 2000" is cited to a text that is nine years
+stale on rates, and gives no sign of it. The guide now names the **amending Act
+beside each figure** rather than the principal Act alone.
+
+Reading them in sequence also showed the withholding schedules had been **repealed
+and replaced wholesale** in 2024, and four non-resident lines raised to 20% in 2026.
+The guide's contractor rates — **6.5%** resident and **11.5%** non-resident — appear
+in no instrument read: the schedules say **5%**, and **10%** rising to **20%**.
+
+### Two corrections that came from reading the operative section, not the schedule
+
+The minimum tax is **2%**, not "around 3%". More importantly, its **scope changed in
+2026**: under the Finance Act 2024, s.7A(1) caught a company only *"where a company
+… **makes an allowable loss** under section 32A"*; the Finance Act 2026 replaced that
+subsection with a plain **"the higher of"** test and no loss condition. **A
+consistently profitable company with thin margins is now inside a charge it was
+previously outside.**
+
+The Part III **rate line still says** *"applicable to companies **reporting losses
+the previous year**"* — the 2024 wording, which the 2026 Act did not touch when it
+rewrote the charging section. **The charging section and the rate line now describe
+different populations**, and the guide says so rather than picking silently.
+
+### A footnote that nearly supplied a stale rule
+
+The 120-day filing deadline first turned up inside a **footnote** recording the text
+of s.97 *as it read before the Finance Act 2017 substituted it*. Quoting from there
+would have been quoting a repealed provision that happens to sit in the same
+document. The operative s.97(1) in the body of the Act was read separately and does
+say 120 days — but **the deadline is confirmed because the current section was read,
+not because the footnote agreed**. That is the Bangladesh proviso lesson in a new
+costume: a real quotation from a real statute can still be the wrong text.
+
+### And one figure deliberately not converted
+
+**Sierra Leone redenominated the leone in 2022, dropping three zeros**, and the
+instruments do not share a convention: the Finance Act 2024 uses old `Le` 111 times
+against a single `NLe`, while the Finance Acts 2025 and 2026 are written in `NLe`.
+**The same nominal figure means a thousandfold different amount depending on which
+instrument it came from.** The guide therefore states **no leone threshold as a
+number** — the audited-accounts threshold is given by description — and the previous
+version's "NLe 500" contractor threshold, which matched no provision found, is not
+repeated. **A converted figure looks exactly as authoritative as a read one.**
+
+Corpus effect: authority citations 2,976 → **2,994**, secondary 4,657 → **4,650**,
+the single-source queue 20 → **19**. The jurisdiction grep also re-pointed
+`sl-tax-overview.md`, which stated the 30% flatly, and `sl-income-tax.md`, whose
+non-resident employment rate is now cited to Second Schedule Part II — one of the
+few non-resident lines the 2026 Act left alone.
