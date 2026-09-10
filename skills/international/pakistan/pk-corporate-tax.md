@@ -35,8 +35,10 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 > computation the answer is FA 2026, not FA 2025.
 >
 > The same wording appears in this guide's `agent-skills/` counterpart, which is
-> a separate hand-maintained tree rather than a generated copy, and has not been
-> updated here.
+> a separate hand-maintained tree rather than a generated copy. That copy now
+> carries this block too. It does not inherit it — nothing in `agent-skills/` is
+> generated from `skills/` — so the correction had to be written there by hand,
+> and an earlier revision of this note recorded that it had not been.
 
 
 > **Produced by OpenAccountants (openaccountants.com)**

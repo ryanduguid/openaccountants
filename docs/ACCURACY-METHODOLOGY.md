@@ -1722,6 +1722,79 @@ and given what the headline hides — that "0% to 25%" is not the whole scale, a
 that the 10% gain is exempt below MMK 10,000,000. Two commits earlier that would
 have been found a day later by an outside reviewer.
 
-Corpus effect: authority citations 2,750 → **2,763**, secondary 4,747 →
-**4,735**. `mm-income-tax.md` is off the single-source queue;
-`mm-company-formation.md` (8/10 on a law firm) and `mm-tax-overview.md` remain.
+Corpus effect: authority citations 2,750 → **2,765**, secondary 4,747 →
+**4,733**. Both `mm-income-tax.md` and `mm-tax-overview.md` are off the
+single-source queue; `mm-company-formation.md` (8/10 on a law firm) remains.
+
+> **Two corrections to the paragraph above, and both are the defect this
+> document is about.** It first read "2,763 / 4,735" and "`mm-tax-overview.md`
+> remains" — the citation pair carried forward from the previous measurement
+> rather than re-run, and the queue membership asserted from memory of what had
+> been on it rather than from the listing. Re-running `list-source-mix.py` gives
+> 2,765 / 4,733, three times in a row; re-running `list-single-source-blocks.py`
+> shows Myanmar's overview gone from the queue, because repointing its two
+> headline figures at the statute is exactly what takes a guide off it. **Two
+> citations and one filename is not a material error. Needing the re-run to find
+> out is the point** — a derived number written into prose is a copy, and this
+> file's whole argument is that copies go stale silently.
+
+## Armenia, again: the second reviewer finding that was wrong
+
+An outside review of PR #18 raised ten findings. Eight were already fixed at
+head. One was a real leak (below). One was **wrong, and its recommended fix
+would have broken a correct rule** — the second time in this branch that has
+happened, and on the very article the near-miss section above is about.
+
+The finding said the micro-business regime charges **AMD 5,000 of income tax per
+employee**, not ordinary withholding, citing a law firm's page that says exactly
+that. The guide says the opposite. The guide is right:
+
+- **Art. 269(2)(2)** — the micro exemption does not reach "the obligation to
+  compute and pay income tax **in the manner established by the Code**
+  (*Օրենսգրքով սահմանված կարգով*) on taxable amounts paid to individuals who are
+  not individual entrepreneurs or notaries". *In the manner established by the
+  Code* is the ordinary rule. It names no rate and no per-head amount.
+- **Art. 125(3)** — where the AMD 5,000 actually lives — charges individual
+  entrepreneurs **in the turnover-tax system** (Chapter 55, not the micro
+  chapter) **profit tax** (*շահութահարկ*, not *եկամտային հարկ*) of "five
+  thousand drams per month, **regardless of the number of activity types**",
+  and makes it their **final** profit-tax liability. Per entrepreneur, per
+  month, for their own profit tax. Not per employee, not income tax, not micro.
+- **Art. 270(2)** has micro-business subjects file the ordinary art. 156(1)
+  income-tax calculation monthly — which is what ordinary withholding requires.
+- **Art. 271**, "Payment of taxes and fees by micro-business subjects", is
+  **repealed** (ՀՕ-450-Ն, 24 November 2022). Searching the Code for any amount
+  attached to the micro provisions returns nothing.
+
+So the secondary source is describing a regime that was repealed at the end of
+2022, and the two AMD 5,000 charges — one real, one abolished — are close enough
+to swap without anyone noticing. That is the same shape as the art. 125(3.1)
+near-miss recorded above, where 18% was right for the article's first part and
+23% for a subparagraph three down. **Both times the guide was already correct and
+the proposed fix would have broken it.** Both times what settled it was opening
+the Code and reading the whole article, including which tax the article is about.
+
+One further note on that finding's evidence. It also said the guide contradicted
+itself — that §5.10 still carried the per-employee treatment. At the commit it
+reviewed that may have held; at head it does not. §5.10, the rate table, the
+reviewer checklist and the prohibitions list all say the same thing. **A review
+runs against a commit, not against your branch**, and a finding whose evidence is
+an in-file contradiction is the kind most likely to have been overtaken.
+
+### And one that was right, where the reviewer named one file and three were wrong
+
+The same review found that Pakistan's Finance Act correction — read every "verify
+against FA 2025" marker as naming the Act in force for the year being computed —
+had been written into four `skills/` guides and into `agent-skills/pk-income-tax`,
+but not into `agent-skills/pk-freelance-intake`. It was right, and the source
+guide **said so in its own text**: a trailing note recorded that the counterpart
+"has not been updated here". Writing down that a correction has not propagated is
+not the same as propagating it.
+
+Grepping the tree for the stale markers rather than fixing the file named found
+**three**, not one: `pk-freelance-intake`, `pk-formation` and `pk-return-assembly`
+all still told a reader to verify a current-year computation against FA 2025. All
+three now carry the block. `agent-skills/` inherits nothing from `skills/` — it is
+hand-maintained — so every correction that touches a jurisdiction with an
+`agent-skills/` counterpart has to be written twice, and the grep is the only
+thing that catches the second one.
