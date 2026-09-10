@@ -829,6 +829,145 @@ grep -Pzo '(?m)^#{1,6} +([^\n]*?\b20\d\d\b[^\n]*)\n\n?\*\*([^\n]*?\b20\d\d\b[^\n
 An 83-line checker for this used to live in `scripts/`. It was deleted: one
 instance, already fixed, and a grep reproduces it.
 
+### A cited domain can stop being what the citation says it is
+
+Benin's tax overview cited its tax year to
+`https://finances.bj/wp-content/uploads/2025/01/Benin-Code-General-des-Impots-2025.pdf`.
+That was the Ministry of Finance. The domain is now an Indonesian online-casino
+site. The Direction Générale des Impôts has moved to
+`www.impots.finances.gouv.bj` and still lists `cdgi@finances.bj` as its own
+contact address, which is how you can tell the domain was theirs and was lost
+rather than never having been theirs.
+
+**A status code would not have found it.** `finances.bj` answers HTTP 200. Not
+down, not a 404, not a redirect. Every check that asks "does this link resolve"
+passes it. The domain is alive and answering; it just is not the ministry any
+more. So `scripts/list-citation-rot.py` reads the body, not only the code.
+
+The harm is sharper than a misdescribed source. A citation that names a statute
+and lands on tax commentary sends a reader to tax commentary. This sends a
+reader who is following a government citation to a gambling site, from a file
+that names a Ministry of Finance beside the link.
+
+Two hosts across 1,256 checked:
+
+| Host | Citations | Jurisdiction | What it serves now |
+|---|---|---|---|
+| `zambiaprice.com` | 7 | Zambia | Indonesian slot-gambling SEO |
+| `finances.bj` | 1 | Benin | an online casino, or a 500 |
+
+Zambia's is the worse of the two by consequence: those seven citations are the
+*entire* NAPSA and NHIMA contribution table — both rates, both splits and the
+monthly ceiling. Every figure in that block rested on one page that no longer
+exists.
+
+There is a third case that is not link rot at all. `www.impots.finances.gouv.bj`
+— Benin's real, live, correct tax authority — is itself serving injected casino
+spam ("Melbet Jordan", "Mol Casino", "ronybet"), the signature of a compromised
+WordPress install. The citation is right and the authority is right; the
+authority's site is hacked. Nothing the corpus can fix, and worth knowing.
+
+#### The exemption that would have hidden it
+
+The first draft of the checker **suppressed** a squatter match when the page
+also read institutional — on the reasonable theory that a gaming regulator
+cited for betting duty legitimately uses those words. That rule was replaced,
+before the first real run, with a demotion: such a page goes to its own printed
+bucket instead of disappearing. The reasoning was the one this document keeps
+arriving at — *a wrong exemption is the error that never reports itself.*
+
+On the first real run that decision paid for itself immediately. Benin's DGI is
+institutional **and** compromised. The suppressing version would have shown
+nothing.
+
+#### And the bucket that was not measured at all
+
+The same run put **github.com at the top of the dead list, with 169 citations**,
+and `canada.ca` just below it. Neither is dead.
+
+The selftest covers `judge()`, which decides what a response *means*. It could
+not cover `fetch()`, which decides what response you *get*. So the classifier
+was measured and the fetcher was not, and one whole bucket of 186 hosts and 654
+citations came back unvalidated — reported with the same confidence as the two
+real findings. Under fourteen-way concurrency a busy host times out, and a
+timeout is indistinguishable from a domain that no longer exists.
+
+Nothing is now reported dead on a single failure: anything the concurrent pass
+would call dead is re-checked serially, minutes later, with no contention.
+
+That the loudest false positive was github.com is luck, and worth being explicit
+about. A false positive that obvious gets fixed within the hour. Had the same
+flaw produced a plausible-looking list of small foreign tax authorities, it
+would have been believed, and a batch of working citations would have been
+"fixed" away from sources that were fine.
+
+#### What it cannot see
+
+Hosts, not documents. A ministry whose site is healthy but whose 2019 PDF has
+been reorganised away passes here, and that is the commoner kind of link rot by
+a wide margin. Host-level is what catches the class above — and that is the
+class that misleads rather than merely disappoints.
+
+It also does not judge WAF rejections. A live authority behind a firewall
+answers a script with 403 or 406 — `impots.finances.gouv.bj` itself does, and so
+do `onrc.ro` and `registrucentras.lt` — and calling those dead would bury two
+real findings under 364 citations to sites that are perfectly fine.
+
+### Legal information institutes are not a class
+
+Reading the statute-link queue's destinations turned out to be a way of asking
+the authority allowlist what it was missing, and it named four: `u.ae` ("The
+Official Platform of the UAE Government"), `nssfug.org` (Uganda's NSSF, the
+statutory fund that collects the charge), `eswatinilii.org` and `namiblii.org`.
+
+The last two are the interesting ones, because the obvious move — treat LIIs as
+a class — is wrong in both directions. The test this repo uses is whether the
+domain belongs to the body that makes, administers or collects the charge, *or
+publishes the official text of the law*. Applied to three LIIs:
+
+| Site | Run by | On the list? |
+|---|---|---|
+| EswatiniLII | "the Judiciary of eSwatini" | yes |
+| NamibLII | "the Law Reform and Development Commission" | yes |
+| ZambiaLII | SAIPAR, "an independent, educational and development oriented research centre", collecting cases "indirectly from the Zambian judiciary" | **no** |
+
+Three sites, near-identical front pages, same software, same movement — and the
+test splits them. Adding them wholesale would have credited a research centre's
+republication as the official law; skipping them wholesale would have kept two
+state publishers scored as marketing sites.
+
+`onrc.ro` and `registrucentras.lt` are almost certainly authorities too. Both
+were left off, because both answer a script with a rejection and neither could
+actually be read. Adding a domain because its name and reputation fit is exactly
+how `manao.mg` got onto this list in the first place.
+
+### The article you find first may not be the article that governs
+
+Benin states a top personal rate of 30%. Art. 136 of its Code Général des Impôts
+sets a progressive barème topping out at **40%**. That looks like a clean
+correction, and it is wrong.
+
+Art. 137 gives the game away: its minimum tax applies to taxpayers with
+"revenus industriels, commerciaux et non commerciaux, artisanaux et agricoles".
+Art. 136 is the *business* scale. Salaries run on their own scale under art. 142
+— 0/10/15/20/30% in monthly slices — and art. 181(3) makes the salary
+withholding *libératoire*, final, so salary income never reaches art. 136 at all.
+
+Both figures are right. Neither is the whole answer, and the guide's unqualified
+"30 percent" was half of it. This is the third time on this branch that reading
+further has stopped a correct figure from being "corrected" — after Armenia's
+art. 125 and Ethiopia's accounting periods — and the first time where the trap
+was not a later paragraph of the same article but *a different article
+altogether*.
+
+The same page produced a smaller version of the same lesson. Benin's employer
+payroll tax is 4%, and the surrounding text made arts. 211–212 look like the
+citation. Checking rather than inferring: 211 is the charge, 212 the exemptions,
+**214** the rate — which also carries a 2% reduced rate for private schools that
+no summary of it mentioned.
+
+---
+
 Use a chart to generate leads. Only the Tier 1 route, where a named practitioner
 signs the guide, supports an assurance claim, and nothing in this section changes
 any guide's tier.
