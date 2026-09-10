@@ -123,7 +123,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 - **CIT — small company** — 0% percent (turnover ≤ ₦100,000,000 **and** fixed assets ≤ ₦250,000,000)  _(NTA 2025 s.202; 0% rate at s.56(a))_
 - **CIT — every company that is not small** — **30%**, plus the 4% development levy. NTA 2025 s.56 has **two bands only**: small companies at 0% and everything else at 30%. There is no medium-company 20% band from 1 January 2026; that was the Finance Act 2019/2020 structure and it is superseded  _(NTA 2025 s.56; s.202; `ng-cit` states the same)_
-- **CIT — large company** — 30% percent (turnover > ₦50B)  _(NTA 2025)_
+- **There is no "large company" CIT band, and ₦50 billion is not a rate threshold** — NTA 2025 s.56 charges one rate above the small-company line, so a company is small or it is not; there is no third band to reach. The ₦50 billion figure that circulates for Nigeria is real but belongs to a different charge: it is the **domestic turnover limb of the 15% Minimum Effective Tax Rate** in s.57(2)(b), which tops a company's effective rate up to 15% rather than setting its CIT rate. Screening a company against it tells you whether the MET applies, never which CIT band it falls in  _(NTA 2025 ss.56 and 57(2)(b); `ng-cit` §MET carries the scope tests and the currency caveat on the MNE limb)_
 - **Other Ltd tax obligations** — - Development levy under NTA 2025 s.59: 4% of assessable profits, with small companies and non-resident companies exempt. It replaces the former earmarked levies; do not add 3% tertiary education tax. - VAT 7.5% on taxable supplies; small companies (turnover ≤ ₦100M) are VAT-exempt under NTA 2025. - WHT on services and certain transactions per the WHT Regulations 2024. - Capital Gains Tax 30% on gains realised by companies (aligned to CIT under NTA 2025). - Annual returns and audited financial statements within 42 days of the AGM (or 9 months after FY end if no AGM held — for small companies that dispense with AGM).  _(NTA 2025; WHT Regulations 2024)_
 
 ### When to use
@@ -188,7 +188,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ### Tax
 
 - **Plc CIT rate** — 30% percent (typically falls in the large-company band under NTA 2025)  _(NTA 2025)_
-- **Other Plc tax obligations** — Education tax, development levy, withholding obligations as for other companies. Special tax considerations for listed companies (e.g., reduced CGT on quoted-share disposals — confirm against current NTA 2025 schedule).  _(NTA 2025)_
+- **Other Plc tax obligations** — The **4% development levy** and withholding obligations as for other companies. Do **not** add tertiary education tax on top: NTA 2025 s.59 consolidated TET (3%), the NITDA levy (1%), the NASENI levy (0.25%) and the Police Trust Fund levy (0.005%) into that single 4% charge from 1 January 2026, so a Plc that is charged both is charged roughly 3 points twice. Special tax considerations for listed companies (e.g., reduced CGT on quoted-share disposals — confirm against current NTA 2025 schedule).  _(NTA 2025 s.59)_
 
 ### When to use
 
@@ -239,7 +239,7 @@ CAC registration is now fully electronic through the public portal at pre.cac.go
 
 ### Federal Inland Revenue Service / Nigeria Revenue Service
 
-- **FIRS/NRS registration and filings** — - TIN issuance is automatic at CAC registration (post-CAMA 2020). No separate paper application required for routine cases. - The taxpayer can activate the TIN on the FIRS TaxPro Max portal (taxpromax.firs.gov.ng) to file returns electronically. - Mandatory filings (companies): CIT annual return — 6 months after FY end (s.55 CITA / NTA 2025); VAT monthly return — by the 21st day of the following month; WHT monthly schedule — by the 21st day; Education tax with CIT; Transfer pricing declaration and disclosure forms for related-party transactions (FIRS TP Regulations 2018).  _(s.55 CITA; NTA 2025; FIRS TP Regulations 2018)_
+- **FIRS/NRS registration and filings** — - TIN issuance is automatic at CAC registration (post-CAMA 2020). No separate paper application required for routine cases. - The taxpayer can activate the TIN on the FIRS TaxPro Max portal (taxpromax.firs.gov.ng) to file returns electronically. - Mandatory filings (companies): CIT annual return — 6 months after FY end (s.55 CITA / NTA 2025); VAT monthly return — by the 21st day of the following month; WHT monthly schedule — by the 21st day; development levy with the CIT return (there is no separate education tax return from 1 January 2026 — s.59 folded TET into the levy); Transfer pricing declaration and disclosure forms for related-party transactions (FIRS TP Regulations 2018).  _(s.55 CITA; NTA 2025; FIRS TP Regulations 2018)_
 
 ### State IRS (e.g., LIRS, FCT-IRS, OYIRS, RIRS)
 
@@ -287,9 +287,9 @@ CAC registration is necessary but not sufficient for regulated activities. Commo
 | --- | --- | --- | --- | --- |
 | BN (sole proprietor) | PIT (state IRS) | Progressive 0% / 15% / 18% / 21% / 23% / 25% per NTA 2025 PIT schedule | First ₦800,000 of total income exempt | Annual Form A (state IRS) |
 | BN (partnership) | PIT pass-through to each partner | Progressive PIT bands | Same as sole proprietor | Each partner files Form A; partnership statement of accounts |
-| Ltd / RC | Companies Income Tax | 0% or 30% per NTA 2025 (two bands; no 20% medium band) | 0% for small companies (turnover ≤ **₦100M** and fixed assets ≤ ₦250M, NTA s.202); VAT-exempt at turnover ≤ ₦100M (NTAA s.147); education tax exempt; development levy exempt | Annual CIT return (FIRS) 6 months after FY end |
+| Ltd / RC | Companies Income Tax | 0% or 30% per NTA 2025 (two bands; no 20% medium band) | 0% for small companies (turnover ≤ **₦100M** and fixed assets ≤ ₦250M, NTA s.202); VAT-exempt at turnover ≤ ₦100M (NTAA s.147); development levy exempt (s.59 — and TET is inside that levy, not a separate exemption to claim) | Annual CIT return (FIRS) 6 months after FY end |
 | LLP | Likely PIT pass-through; subject to FIRS treatment under NTA 2025 implementing regs | Same as PIT bands for partners | Same as BN partnership in conservative view | Annual statement of accounts to CAC; partners file PIT |
-| Plc | CIT | 30% (typically large company) | Generally outside small-company band by scale | Annual audited accounts + CIT return; quarterly reporting if listed |
+| Plc | CIT | 30% — the same rate as any other non-small company; "large company" is not a band under NTA 2025 | Generally outside the small-company tests by scale | Annual audited accounts + CIT return; quarterly reporting if listed |
 | Incorporated Trustee | Exempt on income applied to objects; CIT on unrelated trading income | 0% on objects-related income; 30% on trading | n/a | Annual return + statement of affairs |
 
 - **Notes on tax treatment comparison** — - NTA 2025 small-company definition (s.202): turnover ≤ **₦100,000,000** AND fixed assets ≤ ₦250,000,000. Both conditions must be met. - VAT registration threshold under NTA 2025: small companies are exempt; entities above ₦100,000,000 turnover must register and charge VAT at 7.5%. - WHT regime updated by the Deduction of Tax at Source (Withholding) Regulations 2024, effective 1 January 2025 (with deferred application for some transactions to 1 July 2025). - Capital allowances and Pioneer Status incentives remain available under NTA 2025 for qualifying companies in priority sectors.  _(NTA 2025; Deduction of Tax at Source (Withholding) Regulations 2024)_
@@ -376,7 +376,7 @@ The company qualifies for 0% CIT on the stated 2026 facts. Compare salary and di
 ## Section 16 — Sources
 
 - **Companies and Allied Matters Act 2020** (CAMA 2020) — Parts B (companies), C (LLPs), E (Business Names), F (Incorporated Trustees).
-- **Nigeria Tax Act 2025** (NTA 2025) — consolidated tax statute introducing the two CIT bands (0% small, 30% otherwise), small-company VAT exemption, development levy, and education tax restructuring; restructures FIRS as the Nigeria Revenue Service.
+- **Nigeria Tax Act 2025** (NTA 2025) — consolidated tax statute introducing the two CIT bands (0% small, 30% otherwise), small-company VAT exemption, and the single 4% development levy that consolidates the tertiary education tax with the NITDA, NASENI and Police Trust Fund levies (s.59); restructures FIRS as the Nigeria Revenue Service.
 - **Companies Income Tax Act** (CITA) — as amended by Finance Acts 2019, 2020, 2021, 2023 and superseded in parts by NTA 2025.
 - **Personal Income Tax Act** (PITA) — as amended.
 - **Value Added Tax Act** — as amended.

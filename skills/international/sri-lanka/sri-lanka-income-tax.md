@@ -61,7 +61,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 | Income type | Rate | Source |
 | --- | --- | --- |
-| Gains on realisation of investment assets (capital gains) | 10% | IRD tax chart 2025/2026 |
+| Gains on realisation of investment assets (capital gains) | **15%** for an individual or partnership realising on or after **3 June 2026**; 10% for a realisation completed before that date. The date of realisation selects the rate, not the year of assessment | IRD tax chart 2025/2026; IRA (Amendment) Act No. 11 of 2026; see `sri-lanka-capital-gains-tax` |
 | Foreign-source income remitted through a bank | max 15% | IRD tax chart 2025/2026 |
 | Service income earned in / remitted via foreign currency through a bank (relevant to IT/freelance exporters) | max 15% | IRD tax chart 2025/2026 |
 | Income from betting & gaming, liquor, tobacco | 45% | IRD tax chart 2025/2026 |
@@ -106,7 +106,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 - **R-LK-1** — Residence status unknown. "Residence status determines whether the Rs. 1,800,000 personal relief applies and which rates are used. A non-citizen non-resident does not get the relief; a non-resident citizen does. This skill cannot compute tax without it. Please confirm."
 - **R-LK-2** — Companies / partnerships filing. "This skill covers individuals and sole proprietors. Partnership-level returns and company income tax (corporate rates) are out of scope -- escalate to a Sri Lankan tax professional."
-- **R-LK-3** — Investment-asset (capital) gains. "Gains on realisation of investment assets are taxed at 10% and the personal relief does NOT apply to them. The base computation requires asset cost, proceeds, and dates. Escalate to a reviewer for capital gains."
+- **R-LK-3** — Investment-asset (capital) gains. "Gains on realisation of investment assets are taxed separately and the personal relief does NOT apply to them. For an individual or partnership the rate is **15%** where realisation falls on or after 3 June 2026 and 10% where it was completed before that date, so the base computation requires asset cost, proceeds, and — decisively — the date of realisation. Escalate to a reviewer for capital gains."
 - **R-LK-4** — Foreign-source / foreign-currency concessions. "The max-15% concessions for foreign-source income or foreign-currency service income remitted through a bank depend on remittance evidence and bank routing. Flag and escalate -- do not apply the 15% cap without confirmation."
 - **R-LK-5** — Arrears / enforcement / penalties. "Client has outstanding tax, EPF/ETF arrears, or is subject to IRD enforcement. Escalating surcharges (EPF/ETF up to 50%) and income-tax penalties/interest apply. Escalate to a Sri Lankan tax professional immediately."
 - **R-LK-6** — VAT / SSCL return requested. "This skill covers personal income tax only. VAT and the Social Security Contribution Levy (SSCL) are separate turnover taxes -- see Section 10 for thresholds, then use the relevant indirect-tax skill."

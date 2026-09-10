@@ -1364,3 +1364,121 @@ moved Cote d'Ivoire off the single-source queue and the corpus's secondary
 count **up** by seven. Bare ccTLD, no `gov` label, invisible to the pattern.
 Twice in one session, both francophone African ministries: added, with the
 comment saying so, because the next one will arrive the same way.
+
+---
+
+## An outside reviewer found five of one thing, and six checkers found none
+
+A Qodo review of PR #16 returned fourteen bugs. What matters is not the count
+but that **five of them were the same defect**, and that the class was invisible
+to every contradiction checker in `scripts/`:
+
+- **Paraguay** recorded that the July 2026 minimum wage had been decreed at PYG
+  3,044,000, while the prohibitions section two hundred lines down still called
+  the adjustment unconfirmed and forbade applying it.
+- **UK** computed a 2026-27 Scottish example at the enacted starter and basic
+  limits while Section 1.4 still said the Budget was not enacted and to use the
+  2025-26 bands.
+- **Uruguay** corrected the low-income deduction credit to 14% and wrote a note
+  saying so; the working paper and reviewer checklist still offered 10%.
+- **Liechtenstein** landed 2026-effective contribution rates in a guide whose
+  metadata and siblings were still 2025.
+- **Nigeria** corrected its rate bullets to the NTA 2025 two-band structure, and
+  the Plc obligations, the filings list and the comparison table went on
+  charging tertiary education tax beside the 4% levy that had replaced it.
+
+One shape: **a figure was updated in one place and the document's other
+statements about the same figure were left behind.**
+
+### Why nothing here could see it
+
+Every contradiction checker in the repo compares **across files** —
+`check-fact-conflicts` and `check-amount-conflicts` between sibling guides,
+`check-research-gap-conflicts` between a gap and a sibling's fact,
+`check-superseded-rates` between a rate change and a stale sibling,
+`detect-contradictions` across four jurisdictions, `check-tree-divergence`
+across the three trees. And `check-amount-conflicts` states the reason it stops
+at the file boundary: *"Inside a single guide one label routinely carries
+several amounts by design — a band table has one row per band, a comparison
+table one column per year."* That is true, and it is why a within-file checker
+cannot work by comparing labels to values.
+
+`list-incomplete-fixes.py` does look inside one file and asks exactly the right
+question. But it **reads your diff**. It can speak only while the edit is still
+in the working tree. All five defects were introduced by an edit, merged, and
+became invisible at the moment of merge.
+
+So the axis was not under-covered, it was **uncovered**, and it took an outside
+reviewer reading whole files to notice.
+
+### The seed that makes it checkable
+
+`scripts/check-stale-corrections.py` recovers the author's intent from the
+committed text. This corpus writes its retirements down — *"this guide
+previously stated 10%"*, *"the earlier figure of about 10.6%"*, *"the old EGP
+500,000 figure is superseded"*, *"is 14%, not 10%"*. That note is the seed
+`check-amount-conflicts` lacked: it distinguishes a band table legitimately
+carrying six values from a file carrying a value its own prose calls wrong.
+
+Four things it got wrong first, each caught by measuring rather than assuming:
+
+- **The window has three directions, not one.** "is 14%, not 10%" puts the
+  retired value after the trigger; "no 20% band … it is superseded" puts it
+  before; "the old EGP 500,000 figure" puts it inside. Assuming *after* failed
+  two of the real cases.
+- **Distance is the wrong ranking, and backwards.** The first version scored a
+  survivor strong if it sat under the same heading as the note. Run against the
+  pre-fix Uruguay guide, that promoted the IRPF bracket rows where 10% is
+  simply a bracket, and buried the working-paper copies that were the actual
+  defect. **A stale copy is missed precisely because it is far from the note**,
+  so proximity cannot be the evidence. Shared subject is.
+- **Rarity has to be measured per file, not from a stopword list.** A note and
+  a bracket row in `uruguay-income-tax.md` sharing "band" and "income" is no
+  evidence at all; "deduction" and "medium-company" are. Document frequency
+  inside the one file separates them; no hand-written list would have.
+- **It ranked a false positive first.** "replacing the former four-band
+  0%/4%/8%/10% schedule" matched on `band` inside the compound *four-band*, and
+  retired three rates Kosovo's current schedule still uses — 25 false hits, at
+  the top of the output, which is the worst place for one.
+
+It also **drops the `raised from X` family on purpose**. Carrying it produced
+most of the first live run's false positives, and that family is
+`check-superseded-rates`' subject, handled there with filters for exactly those
+cases. Two checkers doing one job badly is worse than one doing it well.
+
+Validated the way `check-superseded-rates` demands — *a checker for a defect
+class you have already fixed is worth nothing until you have watched it fail on
+the unfixed version*. Run against `ng-formation.md` at the pre-fix commit it
+reports line 385, Qodo's exact finding, keyed on the rare term
+`medium-company`. Run against the Uruguay guide at a commit where the defect
+was already repaired, it stays quiet.
+
+### What it then found on its own
+
+**Sri Lanka's capital gains guide — Tier 1, accountant-reviewed, marked
+current — put its headline rate at 10% when no taxpayer it names pays 10%.**
+The 2026 amendment (Act No. 11 of 2026, enacted 3 June 2026) is recorded three
+bullets below: individuals and partnerships 15%, trusts and unit trusts and
+mutual funds and NGOs 30%, companies 30% at the CIT rate. Every class is
+covered and none is left at 10%. An agent reading the first rate bullet and
+answering "Sri Lanka CGT is 10%" understates an individual by a third and a
+trust by two thirds.
+
+The same file also said the CSE withholding was 10% in the filing bullet and
+"now 15% post-amendment" in the listed-share section. That one is **not**
+settleable from the file, because a withholding rate need not track the final
+rate it collects against, so it is recorded as a research gap naming both
+readings rather than resolved by picking one. Two stale copies in
+`sri-lanka-income-tax.md` were carried along and corrected with it.
+
+The lesson is not that the reviewer was careless. It is that **a correction and
+its consequences are separated by hundreds of lines, and reviewing is done a
+section at a time.** That is a job for a machine, and until now no machine here
+was doing it.
+
+### And the checker's own defect, stated rather than discovered later
+
+It reads one line at a time, so a correction note wrapped across two lines is
+invisible to it. Every one of the five real cases happens to write its note on a
+single line — which is exactly the sort of luck that hides a gap. It is asserted
+as a KNOWN-MISS in the selftest so it stays measured instead of forgotten.
