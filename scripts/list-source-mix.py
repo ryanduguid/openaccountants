@@ -102,6 +102,13 @@ NON_GOV_AUTHORITY = frozenset((
     'vinhi.vg',           # BVI National Health Insurance: its own bulletin of
                           # 12 Sep 2024 sets the ceiling the guide cites
                           # (US$102,000 a year, 3.75% + 3.75%).
+    'iss.sm',             # San Marino, Istituto per la Sicurezza Sociale: the
+                          # body that collects the contributions and publishes
+                          # the annual "redditi minimi ed aliquote contributive"
+                          # circular. Not to be confused with startup.sm and
+                          # camcom.sm, both removed from this list as commercial
+                          # or mixed-capital bodies -- a .sm domain is not the
+                          # test, being the collector is.
     # Fourth pass, over the destinations the statute-link checker was calling
     # marketing sites. Each of these is the body that computes and collects the
     # charge the guide quotes, publishing its own contribution page.
@@ -157,6 +164,9 @@ NON_GOV_AUTHORITY = frozenset((
     'finances.belgium.be',
     'bmf-steuerrechner.de',    # German Federal Ministry of Finance calculator
     'riksdagen.se', 'parliament.lk',
+    'consigliograndeegenerale.sm',  # San Marino's parliament, publishing the
+                          # text of the laws it enacts in its own archive
+    'bollettinoufficiale.sm',       # San Marino's Official Bulletin
     'lex.uz',             # Uzbekistan, official national legislation database
     'cabinet.salyk.kz',   # Kazakhstan tax portal (salyk = tax)
     'ciregistry.ky',      # Cayman Islands registry
@@ -420,6 +430,18 @@ def selftest():
     assert classify('mef.gw') == 'authority'              # Guinea-Bissau, MEF
     assert classify('dgci.mef.gw') == 'authority'         # its tax directorate
     assert classify('kontaktu.mef.gw') == 'authority'     # its legislation portal
+    # San Marino: three bare .sm ccTLDs with no "gov" label, the same shape that
+    # made otr.tg, dgbf.ci and mef.gw read as commercial. gov.sm already passes
+    # on the label; these three do not, and all three are cited by sm-payroll-social.
+    assert classify('iss.sm') == 'authority'              # collects the contributions
+    assert classify('www.iss.sm') == 'authority'          # and with the www. prefix
+    assert classify('consigliograndeegenerale.sm') == 'authority'   # enacts the law
+    assert classify('bollettinoufficiale.sm') == 'authority'        # publishes it
+    assert classify('gov.sm') == 'authority'              # already passed on "gov"
+    # but the .sm domains an earlier pass removed must stay out: the test is
+    # being the collector or the publisher, not the country-code TLD.
+    assert classify('startup.sm') == 'secondary'          # "San Marino Management Srl"
+    assert classify('camcom.sm') == 'secondary'           # mixed public-private capital
     assert classify('belastingdienst.sr') == 'authority'  # Suriname
     assert classify('andoz.tj') == 'authority'            # Tajikistan
     # boilerplate is not a source
