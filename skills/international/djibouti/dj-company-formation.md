@@ -3,7 +3,7 @@ name: dj-company-formation
 description: "Source-cited draft: company formation & entity choice for Djibouti (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
 jurisdiction: DJ
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-10
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -13,7 +13,27 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Entity types and incorporation in Djibouti
 
-Company law in Djibouti follows the OHADA Uniform Act on Commercial Companies. The SARL (limited liability company) is the most common form; the SA (public limited company) suits larger ventures. Formation runs through the Centre de Formalites des Entreprises (CFE) and the commercial register (RCCM).
+> **Djibouti is not an OHADA member state, and this guide was built as though it
+> were.** OHADA's own register of *Les Etats membres de l'OHADA* lists seventeen:
+> Bénin, Burkina Faso, Cameroun, Centrafrique, Comores, Congo, Côte d'Ivoire,
+> Gabon, Guinée, Guinée Bissau, Guinée Équatoriale, Mali, Niger, RDC, Sénégal,
+> Tchad and Togo. **Djibouti is not on it.**
+>
+> Every row below that cites the *Acte uniforme relatif au droit des sociétés
+> commerciales et du GIE* is therefore citing an instrument that **does not apply
+> in Djibouti**. The entity names (SARL, SA, RCCM) are shared across francophone
+> civil-law systems and may well be right; what is wrong is the **authority given
+> for them**. A figure can survive its citation being wrong, and none of these has
+> been checked against a source that governs Djibouti.
+>
+> [RESEARCH GAP — Djibouti's own **Code de commerce** is the missing document.
+> Until it is read, treat every capital amount, shareholder limit and registration
+> rule below as unsourced rather than as OHADA law.]
+>
+> _(OHADA, Les Etats membres de l'OHADA — https://www.ohada.org/les-etats-membres-de-lohada/)_
+
+
+Company law in Djibouti is **national law, not OHADA law** — see the note below. The SARL (limited liability company) is the most common form; the SA (public limited company) suits larger ventures. Formation runs through the Centre de Formalites des Entreprises (CFE) and the commercial register (RCCM).
 
 - **Limited liability company** — Societe a Responsabilite Limitee (SARL) — most common; 1 to 50 partners; limited liability  _(OHADA Uniform Act on Commercial Companies and Economic Interest Groups (https://www.expanship.com/dj/blog/types-of-companies-in-djibouti.html))_
 - **Public limited company** — Societe Anonyme (SA) — for larger businesses, higher capital and governance requirements  _(OHADA Uniform Act on Commercial Companies and Economic Interest Groups (https://www.expanship.com/dj/blog/types-of-companies-in-djibouti.html))_

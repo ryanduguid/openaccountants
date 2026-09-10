@@ -13,7 +13,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## The Djibouti tax system at a glance
 
-Djibouti taxes income on a broadly territorial basis, administered by the Direction Generale des Impots (DGI) under the Ministry of Economy and Finance. The Code General des Impots is the principal source of tax law; OHADA accounting rules govern the books.
+Djibouti taxes income on a broadly territorial basis, administered by the Direction Generale des Impots (DGI) under the Ministry of Economy and Finance. The Code General des Impots is the principal source of tax law. **The previous version said "OHADA accounting rules govern the books" — Djibouti is not an OHADA member state** (see the row below), so the accounting framework needs to be established from a Djiboutian source.
 
 - **National tax authority** — Direction Generale des Impots (DGI), Ministry of Economy and Finance ((approx — confirm))  _(Code General des Impots (Djibouti))_
 - **Currency** — Djiboutian Franc (DJF), pegged to the US dollar  _(Code General des Impots (Djibouti))_
@@ -25,7 +25,7 @@ Djibouti taxes income on a broadly territorial basis, administered by the Direct
 - **Minimum lump-sum tax (impot minimum forfaitaire)** — 1% of turnover excluding VAT, with a floor of DJF 120,000 ((approx — confirm))  _(Code General des Impots (Djibouti) — impot minimum forfaitaire (as described at [lawgratis.com](https://www.lawgratis.com/blog-detail/tax-laws-djibouti)))_
 - **Main annual corporate filing deadline** — 31 March of the year following the tax year ((approx — confirm))  _(Code General des Impots (Djibouti) (as described at [rivermate.com](https://rivermate.com/guides/djibouti/taxes)))_
 - **Main monthly payroll/withholding deadline** — 15th day of the month following the period (ITS and CNSS)  _([Code General des Impots (Djibouti); CNSS regulations](https://www.ministere-finances.dj/ITS%20IMPOTS%20DIRECT.html))_
-- **Commercial / company law framework** — OHADA Uniform Acts apply (Djibouti is an OHADA member state) ((approx — confirm))  _(OHADA Uniform Act on Commercial Companies and Economic Interest Groups)_
+- **Commercial / company law framework** — **The previous version said "Djibouti is an OHADA member state". It is not.** OHADA's own register lists seventeen member states and Djibouti is not among them, so the OHADA Uniform Acts do not apply here and cannot be the authority for Djibouti company law. Djibouti's own Code de commerce governs. See `dj-company-formation`, where the same misattribution runs through nine citations  _(OHADA, Les Etats membres de l'OHADA — https://www.ohada.org/les-etats-membres-de-lohada/)_
 
 <!-- openaccountants-cta-block -->
 
