@@ -1367,118 +1367,144 @@ comment saying so, because the next one will arrive the same way.
 
 ---
 
-## An outside reviewer found five of one thing, and six checkers found none
+## The same checker, tried a second time, discarded a second time
 
-A Qodo review of PR #16 returned fourteen bugs. What matters is not the count
-but that **five of them were the same defect**, and that the class was invisible
-to every contradiction checker in `scripts/`:
+An outside review of PR #16 returned fourteen bugs, and **five were one defect**:
+a figure corrected in one place and left standing in another. Paraguay's decreed
+minimum wage against a prohibitions section still calling it unconfirmed; the
+UK's enacted Scottish bands against a section still saying to use last year's;
+Uruguay's 14% deduction credit against a working paper still offering 10%;
+Liechtenstein's 2026 rates in a 2025 guide; Nigeria's education tax charged
+beside the levy that replaced it.
 
-- **Paraguay** recorded that the July 2026 minimum wage had been decreed at PYG
-  3,044,000, while the prohibitions section two hundred lines down still called
-  the adjustment unconfirmed and forbade applying it.
-- **UK** computed a 2026-27 Scottish example at the enacted starter and basic
-  limits while Section 1.4 still said the Budget was not enacted and to use the
-  2025-26 bands.
-- **Uruguay** corrected the low-income deduction credit to 14% and wrote a note
-  saying so; the working paper and reviewer checklist still offered 10%.
-- **Liechtenstein** landed 2026-effective contribution rates in a guide whose
-  metadata and siblings were still 2025.
-- **Nigeria** corrected its rate bullets to the NTA 2025 two-band structure, and
-  the Plc obligations, the filings list and the comparison table went on
-  charging tertiary education tax beside the 4% levy that had replaced it.
+This is the defect class the section above records a discarded checker for. The
+review is independent evidence that the class is real, common, and not caught by
+anything here.
 
-One shape: **a figure was updated in one place and the document's other
-statements about the same figure were left behind.**
+### Reviewing for the defect, and committing it
 
-### Why nothing here could see it
+Six of the seven were already fixed. The seventh, Nigeria, was recorded in a
+pull-request comment as **"Fixed. 'There is no medium-company 20% band from 1
+January 2026'"** — and it was not. That quotation is real and the rate bullet
+was correct. What the check missed is that the correction's *consequences* were
+still standing three sections away:
 
-Every contradiction checker in the repo compares **across files** —
-`check-fact-conflicts` and `check-amount-conflicts` between sibling guides,
-`check-research-gap-conflicts` between a gap and a sibling's fact,
-`check-superseded-rates` between a rate change and a stale sibling,
-`detect-contradictions` across four jurisdictions, `check-tree-divergence`
-across the three trees. And `check-amount-conflicts` states the reason it stops
-at the file boundary: *"Inside a single guide one label routinely carries
-several amounts by design — a band table has one row per band, a comparison
-table one column per year."* That is true, and it is why a within-file checker
-cannot work by comparing labels to values.
+- a `CIT — large company` band at turnover > NGN 50B, in the bullet **directly
+  after** the one saying NTA 2025 has two bands and no third;
+- Plc obligations and the mandatory-filings list both charging tertiary
+  education tax beside the 4% development levy that replaced it under s.59 —
+  ten lines below a bullet already saying "do not add 3% tertiary education
+  tax";
+- a comparison table offering small companies an "education tax exempt" that is
+  not a separate exemption to claim.
 
-`list-incomplete-fixes.py` does look inside one file and asks exactly the right
-question. But it **reads your diff**. It can speak only while the edit is still
-in the working tree. All five defects were introduced by an edit, merged, and
-became invisible at the moment of merge.
+The check asked *did someone write the correction* and answered yes. The defect
+is *did the correction reach everything it contradicts*. **Reviewing for this
+class while committing it** is the most direct evidence available that it is
+hard for a person, which is what makes automating it attractive — and the rest
+of this section is why that remains unearned.
 
-So the axis was not under-covered, it was **uncovered**, and it took an outside
-reviewer reading whole files to notice.
+NGN 50 billion is real, and belongs to a different charge: the domestic turnover
+limb of the 15% Minimum Effective Tax Rate in s.57(2)(b), which tops an
+effective rate up rather than setting a CIT rate. Togo's XOF 60,000,000 again —
+a real number filed under the wrong tax survives a spot-check, because anyone
+searching for the number finds it.
 
-### The seed that makes it checkable
+### The second attempt, and what was new about it
 
-`scripts/check-stale-corrections.py` recovers the author's intent from the
-committed text. This corpus writes its retirements down — *"this guide
-previously stated 10%"*, *"the earlier figure of about 10.6%"*, *"the old EGP
-500,000 figure is superseded"*, *"is 14%, not 10%"*. That note is the seed
-`check-amount-conflicts` lacked: it distinguishes a band table legitimately
-carrying six values from a file carrying a value its own prose calls wrong.
+The first attempt seeded from **denial sentences**. This one seeded from
+**authorial retirement notes** — "previously stated 10%", "the earlier figure of
+about 10.6%", "the old EGP 500,000 figure is superseded" — a narrower class,
+because a denial is something a guide writes constantly and a retirement note is
+something an author writes deliberately.
 
-Four things it got wrong first, each caught by measuring rather than assuming:
+It also had a discriminator the first attempt lacked, and this one is worth
+keeping even though the script is not:
 
-- **The window has three directions, not one.** "is 14%, not 10%" puts the
-  retired value after the trigger; "no 20% band … it is superseded" puts it
-  before; "the old EGP 500,000 figure" puts it inside. Assuming *after* failed
-  two of the real cases.
-- **Distance is the wrong ranking, and backwards.** The first version scored a
-  survivor strong if it sat under the same heading as the note. Run against the
-  pre-fix Uruguay guide, that promoted the IRPF bracket rows where 10% is
-  simply a bracket, and buried the working-paper copies that were the actual
-  defect. **A stale copy is missed precisely because it is far from the note**,
-  so proximity cannot be the evidence. Shared subject is.
-- **Rarity has to be measured per file, not from a stopword list.** A note and
-  a bracket row in `uruguay-income-tax.md` sharing "band" and "income" is no
-  evidence at all; "deduction" and "medium-company" are. Document frequency
-  inside the one file separates them; no hand-written list would have.
-- **It ranked a false positive first.** "replacing the former four-band
-  0%/4%/8%/10% schedule" matched on `band` inside the compound *four-band*, and
-  retired three rates Kosovo's current schedule still uses — 25 false hits, at
-  the top of the output, which is the worst place for one.
+> **A line carrying both the retired value and its replacement is a before/after
+> statement, not a stale copy.** "The pension rate doubled from 6% to 12%",
+> "EUR 550.66/month to 31 Jul; EUR 620.20 from 1 Aug". A genuinely stale copy
+> carries the old value **alone** — that is what makes it stale.
 
-It also **drops the `raised from X` family on purpose**. Carrying it produced
-most of the first live run's false positives, and that family is
-`check-superseded-rates`' subject, handled there with filters for exactly those
-cases. Two checkers doing one job badly is worse than one doing it well.
+That single rule removed Rwanda, Bulgaria and the US 1099-K guide from the top
+of the output, where all three had filled it with lines that state their change
+correctly.
 
-Validated the way `check-superseded-rates` demands — *a checker for a defect
-class you have already fixed is worth nothing until you have watched it fail on
-the unfixed version*. Run against `ng-formation.md` at the pre-fix commit it
-reports line 385, Qodo's exact finding, keyed on the rare term
-`medium-company`. Run against the Uruguay guide at a commit where the defect
-was already repaired, it stays quiet.
+### It found two real defects
 
-### What it then found on its own
+**Sri Lanka's capital gains guide** — Tier 1, accountant-reviewed, marked
+current — put its headline rate at 10% when no taxpayer it names pays 10%. Act
+No. 11 of 2026, enacted 3 June 2026, is recorded three bullets below:
+individuals and partnerships 15%, trusts and unit trusts and mutual funds and
+NGOs 30%, companies 30% at the CIT rate. Every class covered, none left at 10%.
+Reading the first rate bullet understates an individual by a third and a trust
+by two thirds. The same file called the CSE withholding 10% in one bullet and
+"now 15% post-amendment" in another — not settleable from the file, since a
+withholding rate need not track the final rate it collects against, so it is
+recorded as a gap naming both readings.
 
-**Sri Lanka's capital gains guide — Tier 1, accountant-reviewed, marked
-current — put its headline rate at 10% when no taxpayer it names pays 10%.**
-The 2026 amendment (Act No. 11 of 2026, enacted 3 June 2026) is recorded three
-bullets below: individuals and partnerships 15%, trusts and unit trusts and
-mutual funds and NGOs 30%, companies 30% at the CIT rate. Every class is
-covered and none is left at 10%. An agent reading the first rate bullet and
-answering "Sri Lanka CGT is 10%" understates an individual by a third and a
-trust by two thirds.
+And Nigeria, above. Both fixes stand on their own evidence — the statute, and
+the file's own other bullets — not on the script.
 
-The same file also said the CSE withholding was 10% in the filing bullet and
-"now 15% post-amendment" in the listed-share section. That one is **not**
-settleable from the file, because a withholding rate need not track the final
-rate it collects against, so it is recorded as a research gap naming both
-readings rather than resolved by picking one. Two stale copies in
-`sri-lanka-income-tax.md` were carried along and corrected with it.
+### And it was discarded anyway
 
-The lesson is not that the reviewer was careless. It is that **a correction and
-its consequences are separated by hundreds of lines, and reviewing is done a
-section at a time.** That is a job for a machine, and until now no machine here
-was doing it.
+Three tokeniser and regex defects, each found only by reading the output:
 
-### And the checker's own defect, stated rather than discovered later
+| defect | what it did |
+| --- | --- |
+| `band` matched inside the compound *four-band* | retired 0%, 8% and 10% from Kosovo's **current** schedule — 25 false hits, ranked first |
+| the adjective-to-noun gap crossed a comma | bound "the **prior** year, the **floor**" and retired $1,000 and 50%, California's correct prepayment rule |
+| any three-letter uppercase prefix read as a currency | **`ASC 805` became an amount**, and the US GAAP business-combinations guide arrived at the top with 53 false hits, because the standard's own number is on every line of it |
 
-It reads one line at a time, so a correction note wrapped across two lines is
-invisible to it. Every one of the five real cases happens to write its note on a
-single line — which is exactly the sort of luck that hides a gap. It is asserted
-as a KNOWN-MISS in the selftest so it stays measured instead of forgotten.
+And three mutually incompatible rankings in one sitting, volume swinging
+**60 → 29 → 94** files as each replaced the last. The middle one halved the
+output and killed a true positive. Each new ranking broke a selftest written to
+pin the previous one — which is the honest signal that the design was being
+changed faster than it was being understood.
+
+**Precision was never measured on a random sample.** Under every ranking that
+was sampled, the top of the corpus-wide output was dominated by false positives
+of a new kind. That is the bar the first attempt was discarded against —
+*each tightening cut the volume and none of them improved precision* — and
+applying a softer bar to the second attempt because it is newer would be the
+double standard the rest of this document exists to avoid.
+
+### Two lessons that cost more than they should have
+
+**The sub-lesson recorded above was rediscovered, not remembered.** This
+document already said, in the first attempt's write-up, that *a denial
+sentence's figures split by which side of the marker they sit on*. The second
+attempt assumed the retired value always **follows** the trigger, failed two
+real cases, and relearned the rule from a failing selftest. It was written down,
+in prose, in the right file — and prose in a methodology document did not stop
+it being re-derived the hard way. A lesson lives where it executes: in a
+selftest, not in a paragraph.
+
+**A claim was published from a case that had already been fixed.** The second
+attempt replaced distance-based ranking with subject-based ranking, and the
+change was written up — in this document and in a pull-request description — as
+a measured lesson: *"a stale copy is missed BECAUSE it is far from the note, so
+proximity cannot be the evidence."* It is not supported. The Uruguay guide it
+was measured against had already been repaired at the commit examined, so the
+"false positives" it was tuned away from were the only thing left in the file.
+Distance ranking is what surfaced Sri Lanka's stale headline; subject ranking
+demoted it and promoted the two **correct** bullets in its place, because they
+share "amendment" and "enactment" with the note and the stale line shares
+nothing. **A stale copy is stale precisely because nobody rewrote it to match
+the note, so requiring it to echo the note's wording selects against the thing
+being looked for.**
+
+Both errors have the same root as the defect class itself: something was
+established in one place and its consequences were not carried to the others.
+
+### What is actually left
+
+The human control, unchanged and now twice-earned: **when a correction
+contradicts something the guide already says, search the file for the number
+before writing the new row, and again after** — and then check what the
+corrected figure *implies* elsewhere, not merely whether the correction is
+present. The Nigeria review above failed the second half of that sentence, which
+is why it is now in it.
+
+The replacement-value rule in the box above is the one mechanical piece worth
+carrying into any third attempt. It is not enough on its own.
