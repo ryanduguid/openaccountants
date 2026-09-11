@@ -1,6 +1,6 @@
 ---
 name: dj-payroll-social
-description: "Source-cited draft: payroll and social contributions for Djibouti — the five ITS bands, the short-engagement 15% minimum, benefits-in-kind valuation and the article 287 remittance rule, read from the ministry's Code General des Impots 2011 (and flagged as fifteen years old). CNSS rates remain unverified. Pending local-accountant review."
+description: "Source-cited draft: payroll and social contributions for Djibouti — the five ITS bands, the short-engagement 15% minimum and the article 287 remittance rule from the ministry's Code General des Impots 2011, plus the CNSS contribution rates read from the CNSS itself: 21.7% in three regimes, an employer share of 15.7% rather than the 10.7% this pack carried, a healthcare regime that was missing entirely, and a contribution floor where the guide asked about a ceiling. Pending local-accountant review."
 jurisdiction: DJ
 tax_year: 2025
 last_updated: 2026-09-11
@@ -33,17 +33,28 @@ Employers and employees contribute to the CNSS, which covers pensions, work inju
 > short-engagement rule, the quarterly payment option and the joint liability rule, none
 > of which the guide had.
 >
-> **The six CNSS rows are untouched by this.** Contribution rates are CNSS regulations,
-> not the Code; article 6 of the Code only makes CNSS deductions deductible from ITS pay.
-> They remain unverified.
+> **The CNSS rows are no longer unverified — and an entire contribution regime was missing.**
+> Contribution rates are CNSS regulations, not the Code; article 6 of the Code only makes
+> CNSS deductions deductible from ITS pay. **The CNSS publishes the rates itself**, on its
+> *Déclaration et versement des cotisations* page at
+> [cnss.dj](https://cnss.dj/declaration-et-versement-des-cotisations/) — note the host
+> answers **without** `www.`; `www.cnss.dj` returns 404.
+>
+> **Every individual employer rate this guide carried was right. Both of its totals were
+> wrong**, because the ***régime de soins*** — the healthcare contribution, 7% of payroll
+> split 5% employer and 2% employee — appeared nowhere in the pack.
 
-- **Total employer CNSS contribution rate** — 10.7% of gross salary percent ((approx — confirm))  _([CNSS regulations (Caisse Nationale de Securite Sociale)](https://rivermate.com/guides/djibouti/taxes))_
-- **Employer pension contribution** — 4% of gross salary percent ((approx — confirm))  _([CNSS regulations (Caisse Nationale de Securite Sociale)](https://rivermate.com/guides/djibouti/taxes))_
-- **Employer work injury contribution** — 1.2% of gross salary percent ((approx — confirm))  _([CNSS regulations (Caisse Nationale de Securite Sociale)](https://rivermate.com/guides/djibouti/taxes))_
-- **Employer family allowances contribution** — 5.5% of gross salary percent ((approx — confirm))  _([CNSS regulations (Caisse Nationale de Securite Sociale)](https://rivermate.com/guides/djibouti/taxes))_
-- **Employee CNSS (pension) contribution** — 4% of gross salary percent ((approx — confirm))  _([CNSS regulations (Caisse Nationale de Securite Sociale)](https://rivermate.com/guides/djibouti/taxes))_
-- **Combined employer + employee CNSS rate** — 14.7% of gross salary percent ((approx — confirm))  _([CNSS regulations (Caisse Nationale de Securite Sociale)](https://rivermate.com/guides/djibouti/taxes))_
-- **Pension contribution ceiling** — A wage ceiling applies to pension contributions, adjusted annually ((approx — confirm current ceiling amount))  _([CNSS regulations (Caisse Nationale de Securite Sociale)](https://rivermate.com/guides/djibouti/taxes))_
+- **Total contributions — 21.7% of total remuneration, in three regimes** — The CNSS states it directly: *"Les cotisations sociales représentent **21.7%** des rémunérations totales versées"*, being **5.5%** for *prestations familiales*, **8.2%** for *soins et accident de travail*, and **8%** for *retraite*. The three add to 21.7% exactly percent  _([CNSS, Déclaration et versement des cotisations](https://cnss.dj/declaration-et-versement-des-cotisations/))_
+- **⚠ Total employer CNSS contribution — 15.7%, not 10.7%** — This row gave **10.7%**, which is 4% pension + 1.2% work injury + 5.5% family allowances and **omits the employer's 5% healthcare share**. The employer bears family allowances (5.5%), work injury (1.2%), the **healthcare employer share (5%)** and its half of the pension (4%) — **15.7% of gross**. A payroll run built on 10.7% under-remits by five points of payroll percent  _([CNSS, Déclaration et versement des cotisations](https://cnss.dj/declaration-et-versement-des-cotisations/))_
+- **⚠ Combined employer + employee — 21.7%, not 14.7%** — The row gave **14.7%**; the CNSS gives **21.7%**, a gap of **seven percentage points**, and the whole gap is the healthcare regime percent  _([CNSS, Déclaration et versement des cotisations](https://cnss.dj/declaration-et-versement-des-cotisations/))_
+- **Employer pension contribution — 4% confirmed** — *"Les cotisations du régime de retraite sont à la charge conjointe de l'employeur (4%) et du salarié (4%)"* percent  _([CNSS, Déclaration et versement des cotisations](https://cnss.dj/declaration-et-versement-des-cotisations/))_
+- **Employer family allowances contribution — 5.5% confirmed**, and borne by the employer alone percent  _([CNSS, Déclaration et versement des cotisations](https://cnss.dj/declaration-et-versement-des-cotisations/))_
+- **Employer work injury contribution — 1.2%, corroborated by arithmetic rather than stated** — The CNSS gives *soins et accident de travail* as a **combined 8.2%** and separately splits the **soins** element **5% employer / 2% salarié**. **8.2 − 5 − 2 = 1.2**, which matches this guide's work-injury figure exactly. **The 1.2% is therefore a residual, not a quoted rate** — the page never states it on its own. Treat it as corroborated, not as published percent  _([CNSS, Déclaration et versement des cotisations](https://cnss.dj/declaration-et-versement-des-cotisations/))_
+- **⚠ NEW — Employer healthcare (*régime de soins*) contribution — 5%** — Absent from this pack entirely. *"Pour l[e] régime des soins, les cotisations sont respectivement **5% pour l'employeur** et de **2% pour le salarié**"* percent  _([CNSS, Déclaration et versement des cotisations](https://cnss.dj/declaration-et-versement-des-cotisations/))_
+- **⚠ Employee CNSS contribution — 6%, not 4%** — The employee pays **4% pension *and* 2% healthcare**. A net-pay calculation deducting only 4% overstates take-home by two points of gross percent  _([CNSS, Déclaration et versement des cotisations](https://cnss.dj/declaration-et-versement-des-cotisations/))_
+- **⚠ The CNSS page contradicts itself on who bears the healthcare contribution** — One sentence says *"Les cotisations des prestations familiales, accident de travail **et soins** sont à la charge **exclusive de l'employeur**"*; the next but one splits *soins* **5% / 2%** between employer and employee. **The specific split is taken as operative here**, because it is the more particular statement and because it reconciles the arithmetic — 5 + 2 + 1.2 = 8.2, and 5.5 + 8.2 + 8 = 21.7. If instead the employer bore all 8.2%, the employer total would be 17.7% and the employee 4%. **A reviewer should settle this**; it moves 2% of payroll between the parties  _([CNSS, Déclaration et versement des cotisations](https://cnss.dj/declaration-et-versement-des-cotisations/))_
+- **⚠ There is a contribution FLOOR, and this guide asked about a ceiling** — The row here previously said *"a wage **ceiling** applies to pension contributions, adjusted annually (approx — confirm current ceiling amount)"*. The CNSS's contributions page describes the opposite mechanism: *"Le **plancher** des salaires à prendre en compte pour le calcul des cotisations est fixé à **15.850 FD** pour les employeurs de gens de maison et **20 000 FD** pour les employeurs professionnels."* A **floor** raises the base for the low-paid; a **ceiling** caps it for the high-paid. **No ceiling appears anywhere on that page** — which is not proof none exists elsewhere, but the guide's ceiling row has no support from the authority's own statement of the contribution base. Compare Vanuatu's VT 3,000 VNPF floor, the same mechanism in a different jurisdiction  _([CNSS, Assiette des cotisations](https://cnss.dj/declaration-et-versement-des-cotisations/))_
+- **Contribution base** — Employer contributions are assessed on **all direct and indirect remuneration**: salaries and earnings, paid-leave allowances, indemnities, bonuses, gratuities and all other cash benefits, and **the cash equivalent of benefits in kind** provided for by regulation, collective agreement or individual contract  _([CNSS, Assiette des cotisations](https://cnss.dj/declaration-et-versement-des-cotisations/))_
 - **Payroll income tax withholding (PAYE-equivalent)** — Employer withholds ITS from each employee's monthly salary. The Code establishes ITS **monthly**, on remuneration paid in the same month, collected by employer withholding (art. 9)  _([CGI 2011, art. 9](http://www.ministere-finances.dj/TVA/CGI%20%202010.pdf))_
 
 ### The ITS scale as the 2011 Code states it — five bands, not "2% to 30%"
