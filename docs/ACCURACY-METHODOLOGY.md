@@ -5152,3 +5152,35 @@ reliable tell is the **title reading `Loading <url>`** — that result must be d
 not read. Eritrea is therefore **still untested**, and is recorded that way rather than
 as either alive or dead. A tool that silently returns the wrong document is worse than
 one that errors, and this one is now on the list of things to check before believing.
+
+### Closing out the single-source queue's dead ends
+
+With Turkmenistan opened, the rest of the queue was re-tested the same way — through a
+real browser, against the authority's own hostname rather than a guessed one, testing
+both bare and `www.` forms. Each was fetched **alone**, after the contamination above.
+
+| Jurisdiction | Host | Result |
+|---|---|---|
+| **Turkmenistan** | `tax.gov.tm` | **HTTP 200, the full Tax Code.** Corrected — see above |
+| **Eritrea** | `mof.gov.er` | resolves (196.200.102.238), serves a **39-byte empty document** |
+| **Cuba** | `www.onat.gob.cu` | resolves (181.225.233.215), **39-byte empty document** |
+| **Cuba** | `www.gacetaoficial.gob.cu` | resolves (190.92.115.173), **39-byte empty document** |
+| **São Tomé** | `www.mf.gov.st` | HTTP 202, *"Under construction — Awesome site in the making!"* |
+| **São Tomé** | `minfinancas.gov.st` | **HTTP 403 — *"Account disabled by server administrator"***, from an ISPmanager control panel |
+| **Iraq** | — | untouched; its Cloudflare WAF deny is a control the site owner chose to apply |
+
+**The 39-byte empty document is now a recognised signature**, not a puzzle. It is the
+same response Kuwait's `fatwa.gov.kw` and `mof.gov.kw` give, and it means the name
+resolves and something answers on port 443 while no document is served. Reporting it as
+"no DNS" would be wrong, and reporting it as "the authority is reachable" would be
+worse.
+
+São Tomé's is the most precise negative result on this branch: not a firewall, not a
+redirect, not a timeout — **the hosting account has been switched off**, and the control
+panel says so in as many words. There is nothing behind it to retry into.
+
+**So one jurisdiction in the group had a live authority and five did not**, and the one
+that did had been recorded as a dead end for the same reason Guinea was: nobody had
+tried the right hostname through a browser. That is the argument for re-testing a
+"dead" register periodically, and equally the argument against assuming the next retry
+will open. Five of six stayed shut.
