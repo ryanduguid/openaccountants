@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Spanish corporate income tax (I
 version: 1.0
 jurisdiction: ES
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-11
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -29,7 +29,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Tax | Impuesto sobre Sociedades (IS) |
 | Currency | EUR only |
 | Fiscal year | Generally calendar year (can differ) |
-| Primary legislation | Ley 27/2014 (LIS); Ley 7/2024 (reform) |
+| Primary legislation | Ley 27/2014 (LIS); Ley 7/2024 — **not only an IS reform: it also creates the Impuesto Complementario**, a separate Pillar Two charge, see Section 2A |
 | Supporting legislation | RDL 4/2024 (microempresa); Art. 25-26 LIS (reserves/BINs) |
 | Tax authority | AEAT (common territory); Haciendas Forales (Basque/Navarra) |
 | Filing form | Modelo 200 (annual) |
@@ -38,6 +38,81 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Modelo 202 deadlines | 1-20 April, 1-20 October, 1-20 December |
 
 ## Section 2 -- Tax Rates (Tipos de Gravamen) 2025
+
+> **This guide cites Ley 7/2024 twice below, and took only one thing from it.**
+> The same Act that changed the microempresa and ERD rates also created a second
+> Spanish corporate tax — the **Impuesto Complementario**, Spain's Pillar Two
+> charge — and this guide was silent on it. The statute was already in hand.
+> Set out in *Section 2A* immediately below, read from the consolidated text at
+> [BOE-A-2024-26694](https://www.boe.es/buscar/act.php?id=BOE-A-2024-26694).
+>
+> It does **not** replace the Impuesto sobre Sociedades. The two run alongside
+> each other, so every rate in this section still governs the ordinary charge.
+
+### Section 2A -- Impuesto Complementario (Ley 7/2024, Pillar Two)
+
+*Ley 7/2024, de 20 de diciembre*, BOE 307 of 21 December 2024, ELI
+[boe.es/eli/es/l/2024/12/20/7/con](https://www.boe.es/eli/es/l/2024/12/20/7/con).
+Its full title establishes three taxes at once, of which this is the first:
+*«un Impuesto Complementario para garantizar un nivel mínimo global de imposición
+para los grupos multinacionales y los grupos nacionales de gran magnitud, un
+Impuesto sobre el margen de intereses y comisiones de determinadas entidades
+financieras y un Impuesto sobre los líquidos para cigarrillos electrónicos…»*
+
+**The commencement date is not the date it takes effect from — check both**
+
+| | Date | Source |
+| --- | --- | --- |
+| Entrada en vigor | **22 December 2024** | BOE record, BOE-A-2024-26694 |
+| Takes effect for tax periods beginning on or after | **31 December 2023** | Disposición final 22ª |
+| …except the *regla de beneficios insuficientemente gravados* (UTPR), for periods beginning on or after | **31 December 2024** | Disposición final 22ª |
+
+- **So the Act reaches back behind its own entry into force.** A period beginning
+  in, say, January 2024 closed before Ley 7/2024 was in force and is still within
+  scope. Reading only the *entrada en vigor* date gives the wrong answer  _(Ley 7/2024, disp. final 22ª)_
+
+**Scope and rate**
+
+- **Who** — *grupos multinacionales* **and *grupos nacionales de gran magnitud***.
+  A wholly Spanish group of sufficient size is in scope; this is not a
+  multinational-only charge  _(Ley 7/2024, título I)_
+- **Threshold** — consolidated net turnover (*importe neto de la cifra de negocios
+  consolidado*) of **EUR 750 million or more**  _(Ley 7/2024, preámbulo and ámbito de aplicación)_
+- **Rate** — the top-up for a jurisdiction is the **positive difference between the
+  15% minimum rate and the effective rate computed at jurisdictional level**. It is
+  not a flat 15% charge on profit: *«la diferencia positiva entre el tipo impositivo
+  mínimo del 15 por ciento y el tipo impositivo efectivo calculado a nivel
+  jurisdiccional»*  _(Ley 7/2024, título VIII, caps. I–II)_
+
+**Three modalities — and the first is the one that reaches a Spanish entity**
+
+The Act itself explains the architecture: *«La configuración del Impuesto
+Complementario se sustenta sobre tres modalidades, las dos primeras responden a la
+regla de inclusión de rentas y la tercera a la regla de beneficios
+insuficientemente gravados.»*
+
+| Modality | Rule | Reaches |
+| --- | --- | --- |
+| **Complementario nacional** | Income inclusion rule | Income of constituent entities of in-scope groups **that are located in Spanish territory** |
+| **Complementario primario** | Income inclusion rule | Income of constituent entities outside Spain, charged to the Spanish parent |
+| **Complementario secundario** | Undertaxed profits rule (UTPR) | The residual, and only from periods beginning on or after 31 Dec 2024 |
+
+- **Do not reduce this to "Spain transposed the IIR".** The *nacional* modality is
+  what reaches a Spanish subsidiary of a foreign-parented group, and it turns on the
+  entity being located in Spain — not on where the parent sits.
+
+**Foral territories have their own instruments — the table below does not cover them**
+
+The Foral Territories rate table in this section is about the *Impuesto sobre
+Sociedades* only. The Impuesto Complementario has separate foral norms, including
+**Ley Foral 18/2025, de 22 de diciembre** (Navarra, BOE-A-2026-3911). A foral-domiciled
+group needs its own territory's instrument, not Ley 7/2024.
+
+**Not read for this guide** — the **Reglamento**, approved by *Real Decreto 252/2025,
+de 1 de abril* (BOE-A-2025-6598), and the foral norms. Filing, reporting and the
+detailed safe-harbour conditions are in those, not here. The consolidated Ley was
+last updated 25 July 2025 and has been modified twice since enactment, so read the
+consolidated text rather than the version published on 21 December 2024.
 
 ### Common Territory (Territorio Común) -- Ley 7/2024
 
