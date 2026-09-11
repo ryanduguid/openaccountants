@@ -42,7 +42,16 @@ Employers in Turkmenistan fund the state pension/social insurance system through
 > **So the instrument this guide already cites is the right one** — that much is now
 > corroborated from a primary source rather than assumed. The Law *"On State Pension
 > Insurance"* is **not** among the acts published on the Tax Directorate's legal-acts
-> page, so the 20%, 3.5% and 2% figures keep their "(approx — confirm)" marks. The
+> page — and that is now an **enumerated** absence rather than a failed search: the page
+> at [tax.gov.tm/hukuknamalar/türkmenistanyň-kanunlary](https://tax.gov.tm/hukuknamalar/t%C3%BCrkmenistany%C5%88-kanunlary)
+> lists exactly **twelve** acts, and they are the Constitution, the *Bitewi Kanun* on
+> taxes (dated **05.12.2022**), the Hydrocarbon Resources Law, a taxpayer-registration
+> methodology, the Law on Enterprises, the SME state-support Law, the Entrepreneurial
+> Activity Law, the Budget Code, the Social Protection Code, the Administrative Offences
+> Code, the Law on Ownership, and the Free Economic Zones Law. **Neither the State Pension
+> Insurance Law nor the Law on Joint-Stock Companies is among them**, so both remain
+> unreachable from this authority — a reviewer needs a different publisher, not a better
+> search. The 20%, 3.5% and 2% figures keep their "(approx — confirm)" marks. The
 > distinction between the **compulsory** and the **compulsory professional** streams,
 > which the Code draws in terms, matches the guide's split between the main contribution
 > and the hazardous-work supplement. [RESEARCH GAP — a reviewer should check the rates,

@@ -6111,3 +6111,66 @@ the high-paid. This is the same defect shape as Vanuatu's VT 3,000 VNPF floor, a
 the same family as Morocco's MAD 500,000 read backwards — **the right kind of number, pointing
 the wrong way**. The guide does not claim no ceiling exists; it says the ceiling row has no
 support from the authority's own statement of the base.
+
+## Turkmenistan: the gate on a rate lives in a different statute
+
+`tm-corporate-income-tax` already had the 2% SME rate right, and had the harder half right too
+— that article 171(6) computes its base **without deductions**, so it is a low rate on a
+near-gross figure. What it could not say was **who qualifies**, because article 172(4) defines
+the class by reference out: *"subjects of small and medium entrepreneurship under the Law 'On
+state support of small and medium entrepreneurship'"*.
+
+**The Tax Directorate publishes that Law as well.** Its article 5(1) sets a test that is
+**purely headcount** — no revenue threshold, no asset threshold — and splits by sector:
+
+| | industry, power, construction, gas & water | all other sectors |
+| --- | --- | --- |
+| micro | up to 15 | ≤ 10 |
+| small | 16–50 | 11–25 |
+| medium | 51–200 | 26–100 |
+
+### The exclusion that decides most real questions
+
+**Article 3** puts four categories outside the Law altogether: state enterprises, **enterprises
+with foreign investment**, and those carrying on banking, insurance or gambling.
+
+Because the Tax Law borrows this Law's definition, **a foreign-invested company cannot reach the
+2% rate however small it is.** That is the gate most likely to matter to anyone consulting an
+English-language guide about Turkmenistan — and it is nowhere near the rate provision. A reader
+could read articles 170, 171 and 172 end to end, correctly, and still get this wrong.
+
+**This is a new shape for the log: the defect is not in the cited article, it is in the article
+the cited article points at.** A guide that reads every provision of the tax statute is still
+incomplete where the statute defines a class by cross-reference to another Act. Croatia's safe
+harbours (art. 34 → an agreement on a ministry website) and North Macedonia's computation
+(ordinance art. 2 → OECD model rules) are the same move; here the destination was reachable and
+the answer was retrieved.
+
+### An operational rule worth more than the definition
+
+**Article 5(3)** is the kind of provision that only appears if you read past the definition:
+exceeding the headcount over the calendar year terminates the reliefs **from 1 April of the year
+following the reporting year** — a delayed, fixed cliff, not an immediate loss — and once lost,
+the right ***"dikeldilip bilner"***, may be **restored only after a year has passed**. A company
+that over-hires briefly loses the 2% on a date months later and then cannot requalify for a
+further year.
+
+### Ten numbers, one render
+
+The SME Law has a clean Latin-script text layer with correct Turkmen diacritics, so the
+digits-and-words rule (written for scanned instruments) did not strictly bite. The page was
+rendered at 180 dpi anyway and checked against the extraction, because the edit was about to
+state **ten numbers that gate a tax rate**. They matched. The check cost one render; asserting a
+transposed band would have cost a reader the rate.
+
+### A negative that is now enumerated rather than assumed
+
+The branch had recorded that the Law *"On State Pension Insurance"* — which the Social
+Protection Code names as governing contribution rates — is not published by the Tax Directorate.
+That rested on not finding it. The legal-acts page in fact lists **exactly twelve acts**, and the
+guide now names all twelve. **Neither the Pension Insurance Law nor the Law on Joint-Stock
+Companies is among them.**
+
+"I searched and did not find it" and "the publisher lists twelve things and this is not one of
+them" are different claims, and only the second tells a reviewer to go looking elsewhere rather
+than to search harder.
