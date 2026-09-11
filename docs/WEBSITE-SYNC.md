@@ -5,10 +5,15 @@ website guide content. This repository is its public projection, and merged
 external changes to `skills/**` must be ingested back into the platform before
 the next outbound export.
 
-> **Current limitation:** automated repository-to-platform ingestion has not
-> shipped. A maintainer must run and verify the private platform ingest after
-> every merge that changes `skills/**`. Public GitHub Actions run after a push;
-> they can detect a stale export but cannot undo or prevent one.
+The `ingest-to-platform.yml` workflow notifies the private platform after a human
+guide change reaches `main`, when its repository secret is configured. It reads
+changed files from the paginated Commits API because Actions push payloads omit
+file lists. A successful notification still requires verified ingestion and
+export; the public workflow cannot confirm the platform's stored guide state.
+
+Earlier runs that reported `No human-edited guide files in this push.` while
+guides changed need maintainer backfill. This includes the three Australian
+guides merged in PR 157 at `e48c2f96909cb9ddd5e90324dc19fdf553ef6326`.
 
 ## Outbound (platform → repo), daily
 
@@ -36,7 +41,8 @@ attribution. A substantive edit supersedes any professional review of the
 previous text and therefore sets the guide back to `pending_review` until it is
 reviewed again.
 
-Until automated ingestion ships, the maintainer sequence is:
+If notification or ingestion fails, or a prior merge needs backfill, the
+maintainer sequence is:
 
 1. Identify every changed `skills/**` path in the merge commit.
 2. Pause outbound writes for those paths.

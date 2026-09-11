@@ -36,7 +36,7 @@ Every skill in `skills/` that should appear on [openaccountants.com](https://www
 1. Live in a **recognized country folder** (`skills/international/<country>/`, `skills/federal/`, `skills/us-states/<code>/`), **or**
 2. Include **`jurisdiction:` in YAML frontmatter** (e.g. `MT`, `GB`, `US`, `US-CA`, `GLOBAL`, `INTL`)
 
-Guide changes made on openaccountants.com land here through the scheduled sync, committed under the responsible accountant's name. A merged pull request must be ingested and verified in the platform before the next outbound export; until automated inbound ingestion ships, a maintainer performs that step manually. The exporter must fail closed if its stored Git blob does not match the current source guide. Frontmatter uses `reviewed_by` + `review_status` (the legacy `verified_by` key is being retired automatically). Want your platform edits credited to your GitHub account? Set your GitHub username in your accountant profile on openaccountants.com.
+Guide changes made on openaccountants.com land here through the scheduled sync, committed under the responsible accountant's name. A merged pull request must be ingested and verified in the platform before the next outbound export. The ingestion workflow notifies the platform when configured; a maintainer handles failed notifications and backfills. The exporter must fail closed if its stored Git blob does not match the current source guide. Frontmatter uses `reviewed_by` + `review_status` (the legacy `verified_by` key is being retired automatically). Want your platform edits credited to your GitHub account? Set your GitHub username in your accountant profile on openaccountants.com.
 
 Full details: [docs/WEBSITE-SYNC.md](docs/WEBSITE-SYNC.md)
 

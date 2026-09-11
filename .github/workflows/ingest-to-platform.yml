@@ -15,6 +15,9 @@ on:
     paths:
       - "skills/**"
 
+permissions:
+  contents: read
+
 jobs:
   ring:
     runs-on: ubuntu-latest
@@ -25,18 +28,26 @@ jobs:
           SECRET: ${{ secrets.PLATFORM_INGEST_SECRET }}
           PAYLOAD: ${{ toJson(github.event.commits) }}
           HEAD_SHA: ${{ github.sha }}
+          GH_TOKEN: ${{ github.token }}
         run: |
           set -euo pipefail
           if [ -z "$SECRET" ]; then
             echo "PLATFORM_INGEST_SECRET not set — doorbell inert."; exit 0
           fi
-          BODY=$(jq -cn --arg sha "$HEAD_SHA" --argjson commits "$PAYLOAD" '
+          # Actions omits file lists from push commits. Fetch each human
+          # commit's paginated files before preparing the ingestion request.
+          PATHS=$(
+            jq -r '.[] | select(.author.email != "sync@openaccountants.com") | .id' <<< "$PAYLOAD" |
+            while IFS= read -r commit; do
+              gh api --paginate "repos/$GITHUB_REPOSITORY/commits/$commit" \
+                --jq '[.files[] | select(.status != "removed") | .filename]' || exit 1
+            done |
+            jq -sc 'add // [] | map(select(startswith("skills/") and endswith(".md"))) | unique'
+          )
+          BODY=$(jq -cn --arg sha "$HEAD_SHA" --argjson commits "$PAYLOAD" --argjson paths "$PATHS" '
             {
               headSha: $sha,
-              paths: ([ $commits[] | select(.author.email != "sync@openaccountants.com")
-                        | ((.added // []) + (.modified // []))[] ]
-                      | map(select(startswith("skills/") and endswith(".md")))
-                      | unique),
+              paths: $paths,
               authors: ([ $commits[] | {name: .author.name, email: .author.email,
                                         login: (.author.username // null)} ]
                         | unique)
