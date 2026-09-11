@@ -2,21 +2,18 @@
 name: au-super-guarantee
 description: >
   Use this skill whenever asked about Australian Superannuation Guarantee (SG) obligations, payday super deadlines, voluntary super contributions, concessional and non-concessional caps, Division 293 tax, Division 296 large-balance tax, government co-contribution, spouse contribution tax offset, carry-forward rules, or any question about super for sole traders or employers. Trigger on phrases like "how much super do I pay", "SG rate", "super guarantee", "payday super", "7 business days super", "SG shortfall", "concessional cap", "Division 293", "Division 296", "$3 million super tax", "salary sacrifice super", "personal super contribution deduction", "co-contribution", "BPAY super", "super clearing house", "super fund contribution", or any question about Australian superannuation. Also trigger when classifying bank statement transactions showing super fund payments, BPAY super debits, or clearing house payments. ALWAYS read this skill before touching any SG-related work.
-version: 3.2
+version: 3.3
 jurisdiction: AU
-tax_year: 2024
-last_updated: 2026-09-10
+tax_year: 2026
+tax_year_notes: "2026-27"
+last_updated: 2026-09-11
 review_status: pending_review
 category: international
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Australia Superannuation Guarantee (SG) -- Sole Trader & Employer Skill v3.2
-
-## Australia Superannuation Guarantee (SG) -- Sole Trader & Employer Skill v3.2
-
-## Australia Superannuation Guarantee (SG) -- Sole Trader & Employer Skill v3.2
+# Australia Superannuation Guarantee (SG) -- Sole Trader & Employer Skill v3.3
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
@@ -73,9 +70,9 @@ The remaining payday calculations and indexed figures below concern 2026–27. [
 
 ### Required inputs
 
-**Minimum viable** -- entity structure (sole trader / company / trust / partnership), whether client has employees, pay frequency and payday dates, qualifying earnings per payday (for employers), and voluntary contribution intent (for sole traders).
+**Minimum viable** -- entity structure (sole trader / company / trust / partnership), worker eligibility under Rule 1 (including age and actual weekly hours), pay frequency and payday dates, qualifying earnings per payday (for employers), and voluntary contribution intent (for sole traders).
 
-**Recommended** -- bank statements showing super fund debits, payroll register with per-payday qualifying earnings and YTD totals, TSB at 30 June prior year, taxable income for Division 293.
+**Recommended** -- bank statements showing super fund debits, payroll register with per-payday qualifying earnings and YTD totals, TSB at 30 June prior year, and the Rule 10 income components and fund-reported contributions for Division 293. Taxable income alone is insufficient.
 
 **Ideal** -- complete STP reporting data, super fund member statements showing receipt dates, s 290-170 notice copies, ATO online account showing contribution caps.
 
@@ -163,9 +160,9 @@ Six classifications for a hypothetical Australian employer with 2 employees, for
 `24.07.2026 ; AUSTRALIAN SUPER ; DEBIT ; SUPER PPE 17/07 EMPLOYEE A ; -480.00 ; AUD`
 
 **Reasoning:**
-Matches "AUSTRALIAN SUPER" (pattern 3.1). Payday was Friday 17 July 2026; $480.00 = $4,000 qualifying earnings x 12%. Fund receipt on 24 July is 5 business days after payday -- inside the 7-business-day window. Tax-deductible for the employer.
+Matches "AUSTRALIAN SUPER" (pattern 3.1), so this is a candidate employee super contribution. The bank debit proves neither fund receipt nor the actual payday: "PPE 17/07" may identify the pay period end. Although $480 equals 12% of $4,000, the amount does not establish qualifying earnings. Obtain the payroll record, employee eligibility, actual payday and fund receipt confirmation, then apply the relevant Rule 3 deadline. Confirm the contribution's purpose and receipt before determining the employer's deduction and its income year.
 
-**Classification:** EXCLUDE -- SG contribution for employee, on time under payday super. Tax-deductible business expense.
+**Classification:** EXCLUDE -- candidate employee super contribution. Amount, timeliness and deductibility remain unverified from this bank line alone.
 
 ### Example 2 -- Personal voluntary super contribution (sole trader)
 
@@ -183,9 +180,9 @@ Matches "BPAY" + "HOSTPLUS" (pattern 3.2). Sole trader making a personal super c
 `21.08.2026 ; SUPERCHOICE CLEARING ; DEBIT ; SUPER PPE 14/08 ALL EMPLOYEES ; -960.00 ; AUD`
 
 **Reasoning:**
-Commercial clearing house debit covering both employees for the 14 August payday (pattern 3.3). The ATO Small Business Super Clearing House closed permanently on 1 July 2026, so any post-June-2026 clearing house payment is a commercial provider or payroll-software-integrated service. On-time test = fund receipt within 7 business days of the 14 August payday, NOT the clearing house debit date -- flag if fund receipt confirmation is unavailable.
+Matches the commercial clearing house pattern (3.3). "PPE 14/08" suggests a pay period end; obtain payroll records to identify the actual payday, employees and qualifying earnings. Apply the Rule 3 deadline to confirmed fund receipt. The clearing house debit alone cannot establish timeliness or the employer's deduction and its income year.
 
-**Classification:** EXCLUDE -- SG contributions via commercial clearing house. Tax-deductible. Flag fund-receipt timing for confirmation.
+**Classification:** EXCLUDE -- candidate employee super contributions via a commercial clearing house. Confirm payroll allocation, fund receipt and deductibility.
 
 ### Example 4 -- Annual maximum contribution base reached
 
@@ -221,7 +218,14 @@ Matches "ATO" + "IAS" (pattern 3.6). This is an Instalment Activity Statement (P
 
 ### Rule 1 -- SG formula (payday super)
 
-- **SG formula (payday super)** — remaining_base = max(0, $270,830 - YTD_qualifying_earnings_before_this_payday) SG per payday = 12% x min(Qualifying_earnings_paid_this_payday, remaining_base). SG applies only to the first $270,830 of qualifying earnings paid in the financial year -- the payday that crosses the base attracts SG only on the portion beneath it, and later paydays attract none. Annual maximum SG per employee: exactly $32,499.60. No $450/month threshold (removed 1 July 2022). Test employment eligibility separately. The removal of the $450 monthly threshold did not remove exclusions, including employees under 18 who do not work more than 30 hours in a week and the separate private/domestic work exclusion where hours do not exceed 30 in a week.  _(SGAA 1992 ss 27–29 (https://www.ato.gov.au/law/view/document?docid=PAC/19920111/27))_
+Establish SG eligibility before calculating. The $450 monthly earnings threshold ended on 1 July 2022, but employee exclusions still apply. An employee under 18 must work **more than 30 actual hours in the week**: exactly 30 does not qualify. Assess each week, including within a fortnightly pay cycle. Some contractors are employees for SG purposes, including qualifying labour contracts under SGAA s 12(3); refer uncertain cases to T2-1. Work wholly or principally of a domestic or private nature for 30 hours or less a week is excluded under s 12(11). Check any separate award or agreement obligation. See [business.gov.au: superannuation](https://business.gov.au/finance/superannuation) and [SGAA s 12](https://www.ato.gov.au/law/view/print?DocID=PAC%2F19920111%2F12&PiT=99991231235958).
+
+```
+remaining_base = max(0, $270,830 - YTD_qualifying_earnings_before_this_payday)
+SG per payday  = 12% x min(Qualifying_earnings_paid_this_payday, remaining_base)
+```
+
+SG applies only to the first $270,830 of qualifying earnings paid in the financial year -- the payday that crosses the base attracts SG only on the portion beneath it, and later paydays attract none. Annual maximum SG per employee: exactly $32,499.60.
 
 ### Rule 2 -- SG rate
 
@@ -257,7 +261,20 @@ Matches "ATO" + "IAS" (pattern 3.6). This is an Instalment Activity Statement (P
 
 ### Rule 10 -- Division 293 (additional 15% for high earners)
 
-- **Division 293** — Division 293 income is income for surcharge purposes excluding reportable super contributions, plus applicable low-tax contributions. Include the relevant reportable fringe benefits and net investment losses; apply statutory exclusions, including assessable FHSS released amounts. Tax is 15% of the lesser of low-tax contributions and the positive excess over $250,000. Exclude excess concessional contributions from low-tax contributions. Example: taxable income $230,000, reportable fringe benefits $20,000 and applicable low-tax contributions $25,000, with no other adjustments, give $275,000 for the threshold test. Division 293 tax is 15% of $25,000 = $3,750.  _(ITAA 1997 ss 293-20 and 293-25 (https://www.ato.gov.au/law/view/document?docid=PAC/19970038/293-20))_
+Use the tax return and fund-reported amounts:
+
+1. Division 293 income is taxable income plus reportable fringe benefits, net financial investment loss, net rental property loss and the net amount subject to family trust distribution tax. Subtract taxed super lump sum elements subject to a zero tax rate and assessable First Home Super Saver released amounts. Do not add reportable super contributions to this income subtotal.
+2. Low-tax contributions generally comprise concessional contributions, including SG, salary sacrifice and deductible personal contributions, less excess concessional contributions. Contributions covered by carried-forward caps still count. Apply the special roll-over rules where relevant; defined benefit and constitutionally protected funds remain outside scope. ATO discretion to disregard or reallocate excess contributions does not remove those contributions from Division 293.
+3. Calculate:
+
+```
+threshold_excess = max(0, Division_293_income + low_tax_contributions - $250,000)
+Division_293_tax = 15% x min(low_tax_contributions, threshold_excess)
+```
+
+For $210,000 taxable income, $20,000 reportable fringe benefits, $30,000 low-tax contributions and no other adjustments, the combined amount is $260,000. Tax is 15% x $10,000 = **$1,500**.
+
+Sources: [ATO: Division 293](https://www.ato.gov.au/individuals-and-families/super-for-individuals-and-families/super/growing-and-keeping-track-of-your-super/caps-limits-and-tax-on-super-contributions/division-293-tax-on-concessional-contributions-by-high-income-earners), ITAA 1997 ss 293-20 to 293-30. Threshold: $250,000, not indexed.
 
 ### Rule 11 -- Redesigned SGC (QE days from 1 July 2026)
 
@@ -283,6 +300,7 @@ ENTITY AND STRUCTURE
 
 EMPLOYER SG (PER EMPLOYEE PER PAYDAY)
   Employee name:                  [____]
+  SG eligibility / age / weekly hours: [____]  (Rule 1)
   Payday (QE day):                [____]
   Qualifying earnings this payday: AUD [____]
   YTD qualifying earnings:        AUD [____]  (SG only on QE up to $270,830 YTD; prorate the crossing payday per Rule 1)
@@ -308,8 +326,11 @@ CONTRIBUTION CAP CHECK
 
 DIVISION 293
   Taxable income:                 AUD [____]
-  Concessional contributions:     AUD [____]
-  Div 293 income:                 AUD [____]
+  Income additions (Rule 10):     AUD [____]  (itemise each component)
+  Income subtractions (Rule 10):  AUD [____]  (itemise each component)
+  Div 293 income subtotal:        AUD [____]
+  Low-tax contributions:          AUD [____]  (Rule 10; reconcile to fund reports)
+  Combined amount above $250,000: AUD [____]  (minimum zero)
   Div 293 tax (if applicable):    AUD [____]
 
 REVIEWER FLAGS
@@ -406,7 +427,7 @@ If the client provides only a bank statement:
 
 **Test 3:** Sole trader contributes $25,000, lodges s 290-150. TSB $200,000. -> $25,000 concessional. Deduction $25,000. Within $32,500 cap.
 
-Taxable income $260,000, concessional $30,000. -> Div 293 income $290,000. Div 293 tax = 15% x $30,000 = $4,500.
+**Test 4:** Taxable income $260,000, low-tax contributions $30,000, no other income adjustments. -> Combined amount $290,000. Div 293 tax = 15% x $30,000 = $4,500. With $210,000 taxable income, $20,000 reportable fringe benefits and the same contributions, tax is $1,500 (Rule 10).
 
 **Test 5:** TSB $400,000. Unused cap: $5,000 (2023-24) + $10,000 (2024-25) + $15,000 (2025-26). -> Available 2026-27 cap = $32,500 + $30,000 = $62,500.
 
@@ -419,6 +440,10 @@ Sole trader asks about SG to self. -> $0. No obligation. Advise voluntary contri
 **Test 9:** Payday Friday 4 Sep 2026; contribution received by fund Wednesday 16 Sep 2026 (8 business days). -> LATE. ATO-assessed SGC per Rule 11; new-regime SGC deductible.
 
 **Test 10:** New employee starts, first payday 10 Jul 2026, no fund details yet. -> First contribution due within 20 business days of the QE day; subsequent paydays revert to 7.
+
+**Test 11:** Employee aged 17 works exactly 30 hours in one week and 31 in the next. -> The first week fails the SG hours test; the second meets it. Check separate award or agreement obligations and the qualifying earnings attributable to each week.
+
+**Test 12:** Only the bank debit in Example 1 is available. -> Candidate super contribution; actual payday, qualifying earnings, fund receipt, timeliness and deduction remain unverified.
 
 ### Prohibitions
 
