@@ -4,7 +4,7 @@ description: Use this skill whenever asked to prepare, review, or classify trans
 version: 2.0
 jurisdiction: MM
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-11
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -20,6 +20,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | --- | --- |
 | Country | Myanmar (Republic of the Union of Myanmar) |
 | Standard rate | 5% (commercial tax on most goods and services) |
+| **Lower rates** | **3% on proceeds from constructing and selling buildings; 1% on proceeds from selling gold jewellery** — read from the IRD's own Companies page, and absent from this guide until September 2026 |
 | Higher rates | 8%-100% on specified goods (alcohol, tobacco, gems, vehicles, fuel) |
 | Zero rate | 0% (exports) |
 | Exempt | Basic foodstuffs, agricultural products, education, healthcare |
@@ -38,7 +39,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 | Ambiguity | Default |
 | --- | --- |
-| Unknown rate on a sale | 5% |
+| Unknown rate on a sale | 5% — **but check for construction (3%) and gold jewellery (1%) first.** Defaulting a construction sale to 5% over-charges it by two thirds |
 | Unknown input credit eligibility | No credit (single-stage for most) |
 | Unknown counterparty location | Domestic Myanmar |
 
@@ -157,6 +158,15 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 - **Higher rates** — 8% (select processed goods), 25%-100% (alcohol, tobacco, gems, vehicles, fuel).  _(5.2 Higher rates — 8% (select processed goods), 25%-100% (alcohol, tobacco, gems, vehicles, fuel).)_
 
+### 5.2a Lower rates — two of them, and this guide had neither
+
+The Internal Revenue Department publishes the rates on its own site, in Burmese. This
+section is read from that page rather than from a summary.
+
+- **Building construction and sale — 3%** — *"အဆောက်အအုံများ ဆောက်လုပ် ရောင်းချခြင်းမှ ရောင်းရငွေများအပေါ်တွင် ကုန်သွယ်လုပ်ငန်းခွန် ၃ ရာခိုင်နှုန်း ကျသင့်ပါမည်။"* — commercial tax of **3 per cent** is payable on proceeds from constructing and selling buildings. This guide defaulted an unknown sale to 5%, which over-charges a construction sale by two thirds  _([IRD — Companies](https://www.ird.gov.mm/tax-knowledge/taxes/companies))_
+- **Gold jewellery — 1%** — *"ရွှေထည်လက်ဝတ်ရတနာများရောင်းချရငွေအပေါ်တွင် ကုန်သွယ်လုပ်ငန်းခွန် ၁ ရာခိုင်နှုန်း ကျသင့်ပါမည်။"* — commercial tax of **1 per cent** on proceeds from selling gold jewellery. Note the interaction with this guide's own "higher rates" row, which lists **gems** among the specific goods: **gold jewellery is at 1%, not in the gems band**, and a classifier that sees "jewellery" and reaches for the gems rate is wrong by a wide margin  _([IRD — Companies](https://www.ird.gov.mm/tax-knowledge/taxes/companies))_
+- **⚠ For specific goods the CT base includes the specific goods tax** — *"အထူးကုန်စည်များ ဖြစ်ပါက အထူးကုန်စည်ခွန် အပါအဝင်ဖြစ်သော ရောင်းရငွေအပေါ်တွင် ကုန်သွယ်လုပ်ငန်းခွန် ကျသင့်မည် ဖြစ်ပါသည်။"* — where the goods are specific goods, commercial tax is charged on sale proceeds **inclusive of** the specific goods tax. CT sits on top of SGT, not beside it  _([IRD — Companies](https://www.ird.gov.mm/tax-knowledge/taxes/companies))_
+
 ### 5.3 Zero rate — Exports.
 
 - **Zero rate** — Exports.  _(5.3 Zero rate — Exports.)_
@@ -229,7 +239,7 @@ Ask if applicable.
 
 ### Sources
 
-1. Myanmar Commercial Tax Law (as amended). 2. IRD guidelines. 3. Union Tax Law (annual rates).
+1. Myanmar Commercial Tax Law (as amended). 2. IRD guidelines — the rates in section 5.2a are read from the Internal Revenue Department's own Companies page, https://www.ird.gov.mm/tax-knowledge/taxes/companies, in Burmese. 3. Union Tax Law (annual rates).
 
 ### Known gaps
 
