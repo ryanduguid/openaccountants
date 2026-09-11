@@ -5308,3 +5308,29 @@ it is the only thing that works. Recording it here so the next pass does not reb
 scan that looked obvious and measured nothing — which is the fourth detector on this
 branch to produce confident noise, after the citation-density scan, the Pillar Two
 detector, and the cited-hosts checker's first cut.
+
+### Turkmenistan, second pass: the deadlines were guessed and the Code has them
+
+The first Turkmenistan pass took the rates. A second pass through the same Tax Code
+took the filing and payment provisions, which every guide had marked
+*"(approx — confirm)"* or stated as a bare "31 March".
+
+| Guide row | Was | Bitewi Kanun says |
+|---|---|---|
+| overview, annual declaration | "on or about **31 March**" for individuals **and** entities | **wrong twice** — art. 176(1) ties the entity return to the **financial-statement deadline** and names no date; art. 197(1) gives individuals **the 25th of the month after the reporting period**, and **1 April** for foreign citizens |
+| CIT, advance payments | "periodic (monthly or quarterly)… (approx — confirm frequency)" | art. 175(1): **monthly advances on the 25th**, plus settlements at quarter, half-year, nine months and year-end, each **five days after** its declaration is due |
+| VAT, frequency | "Monthly" | art. 104: monthly for **legal persons**; **half-yearly** (1 Jan–30 Jun, 1 Jul–31 Dec) for **private entrepreneurs** |
+| VAT, filing/payment | "due in the month following… (approx — confirm exact day)" | art. 111: **file by the 20th, pay by the 25th** — five days apart, not one date |
+| PIT, reporting period | implied monthly | art. 191: tax period is the **tax year**; reporting period is the **first half-year and the tax year** |
+
+**Two of these are the same defect shape as North Macedonia's article 39(1).** A guide
+states a confident calendar date and cites the tax code; the tax code fixes no date at
+all and defers to another regime. The reader gets a date *and* a citation, and neither
+is load-bearing. Turkmenistan's entity deadline and North Macedonia's are both of this
+kind, found four commits apart in unrelated jurisdictions — which suggests it is common
+rather than exceptional, and that "cites the tax code" should never be read as "the tax
+code says it".
+
+**The sole-trader VAT period is the find worth flagging to a practitioner.** A guide
+that says "Monthly" full stop is wrong for every private entrepreneur in the country,
+and wrong in the direction that creates filings which were never due.
