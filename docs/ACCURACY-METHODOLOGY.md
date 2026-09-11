@@ -5992,6 +5992,9 @@ for turned out to be a non-event.
 
 ## Oman: a deadline with no support, and an authority that cannot answer its own question
 
+> Superseded in part by [the 12 September amendment check](#oman-amendment-check-12-september-2026). The four-month deadline is current, ordinary provisional returns were replaced, and the old filing exemption was repealed. The text below records the earlier investigation and its errors.
+
+
 `om-corporate-income-tax:35` said the annual return and payment were due *"within 4 months of
 the accounting year-end (approx — confirm; some guides cite up to 6 months — verify against
 current Executive Regulations)"*, on a commercial citation.
@@ -6203,6 +6206,9 @@ and a registration requirement that no amount of re-reading the tax statute woul
 
 ## Oman, second pass: a row this branch wrote was already over-general
 
+> Superseded in part by [the 12 September amendment check](#oman-amendment-check-12-september-2026). The four-month deadline is current, ordinary provisional returns were replaced, and the old filing exemption was repealed. The text below records the earlier investigation and its errors.
+
+
 An hour after writing it, the Oman deadline row — *"a provisional return within three months
 (art. 139) and a final return within six months (art. 140)"* — turned out to be **true only for
 ordinary taxpayers**.
@@ -6248,6 +6254,9 @@ than a refutation: it may live in the Executive Regulation or the SME authority'
 
 ### Oman, third pass: what the Executive Regulation actually held
 
+> Superseded in part by [the 12 September amendment check](#oman-amendment-check-12-september-2026). The four-month deadline is current, ordinary provisional returns were replaced, and the old filing exemption was repealed. The text below records the earlier investigation and its errors.
+
+
 The branch's open list said Oman's Executive Regulation had not been read. **Ministerial
 Decision No. 30/2012** — the *Executive Regulation of the Income Tax Law* — is published in
 English by the Tax Authority with a clean text layer, and it holds two things the pack needed.
@@ -6290,6 +6299,9 @@ notes that MD 30/2012 is itself amended by the unread Arabic **MD 14/2019**. **W
 two instruments that share a generic name, saying which is which is part of the citation.**
 
 ## Oman, fourth pass: the correction was made in one guide and the error was still in the other
+
+> Superseded in part by [the 12 September amendment check](#oman-amendment-check-12-september-2026). The four-month deadline is current, ordinary provisional returns were replaced, and the old filing exemption was repealed. The text below records the earlier investigation and its errors.
+
 
 The Oman deadline was corrected in `om-corporate-income-tax` — *"there is no four-month deadline
 anywhere in the Income Tax Law"*, arts. 139/140 for ordinary taxpayers and arts. 159 bis 17/18 for
@@ -6453,3 +6465,655 @@ This is a failure mode specific to pattern-matching skills: **a superseded insti
 merely a stale fact in them, it is a hole in the matcher**. Both files now carry the SPF
 narration (with Arabic) as the current payee and keep the PASI row explicitly labelled as
 legacy, because historical statements still say PASI.
+
+## Oman amendment check, 12 September 2026
+
+This continuation started from 76c2f6c4, eight commits after the pasted handoff's
+ec26165c. The intervening Oman corrections relied on an older English Law and
+MD 30/2012. Reading their Arabic amendments reverses several of those findings.
+The affected guides remain tier 2 and pending review.
+
+### Four months was correct
+
+The Tax Authority publishes the Arabic RD 118/2020 on the Arabic version of its
+[Income Tax Law page](https://tms.taxoman.gov.om/portal/ar/income-tax-law-regulations).
+The downloaded decree has ten pages, 295,139 bytes and SHA-256
+`e5d2997217dec95c868555af344820f8e145e7e6a699afc0193b36422d1ddfcc`.
+The text layer is damaged. Individual pages 1, 5 and 6 were read at 200 dpi.
+
+The attached amendments' article II replaces Income Tax Law article 140 with a
+four-month deadline. The page gives four as both `(٤)` and `أربعة`. Measure from
+the earlier of the tax-year end and the relevant accounting-period end, using
+the final accounting period where there is more than one. Decree article IV
+applies that article to tax years starting on or after 1 January 2020.
+
+The same amendment replaces articles 138 and 139. Article 138 now covers an
+electronic amended return within 30 days after discovering an error or omission;
+article 139 concerns the penalty treatment of an unintentional error corrected
+under article 138. Article I replaces the provisional/final terminology with
+an income return. Amended article 150 makes tax payable at the return deadline.
+The branch's statements that four months was unsupported and that ordinary
+taxpayers still need a separate provisional return were incorrect.
+
+The small-enterprise deadline remains three months under article 159 bis 18,
+with payment under article 159 bis 22. The Arabic consolidated Law, PDF pp. 66–67,
+and the [Authority's FAQ, question 2](https://tms.taxoman.gov.om/portal/income-tax-faqs)
+confirm this. The two guides now distinguish the ordinary and enterprise cases.
+
+### The filing exemption had been repealed
+
+The English MD 30/2012 PDF does contain the OMR 20,000 capital, OMR 100,000 income
+and eight-employee filing exemption at articles 134–136. That reading of the old
+text was accurate. It was an error to add the exemption as a current rule.
+
+The Arabic MD 14/2019, attached amendments article IV(3), repeals sections two
+and three of chapter one, part seven: the exemption from filing returns and
+the exemption from attaching accounts. PDF p. 22 was read individually at
+200 dpi and compared with the English Regulation's section headings and
+articles on pp. 39–40. The Arabic amendment has 29 pages, 576,034 bytes and
+SHA-256 `e7b5aaff54145d1196ac8dfe453e38c84925367be8c77c130c112c14a7bbdb33`.
+
+### The SME limits and tax exemption can be read directly
+
+Arabic consolidated Law p. 62 and the current English Law p. 87 both state the
+article 159 bis basic limits: OMR 50,000 registered capital, OMR 100,000 gross
+income and 15 average employees, subject to the activity and entity conditions.
+The previous claim that the enterprise chapter states no such figures was wrong.
+
+Law article 159 bis 5 and Regulation article 164 allow continued application
+within a 20% capital increase, 50% income increase or ten extra average employees.
+These give OMR 60,000, OMR 150,000 and 25. The Authority's FAQ gives the larger
+figures as a general eligibility test, while the Regulation is worded as
+continuation. The guide records that distinction and leaves initial eligibility
+between the basic and enlarged limits for confirmation.
+
+The Arabic Law clearly labels the 3% provision as article 159 bis 15. Its
+exclusion is a tax exemption. Regulation articles 159–163 specify the alternative
+conditions: a full-time managing owner or partner without another employment,
+or at least two permanent Omani employees serving for six months in the tax year.
+They also govern the choice between several owner-managed enterprises and the
+evidence required with the return. Relevant Arabic Law pp. 62, 65–66 and
+Regulation pp. 19–22 were read at 200 dpi. The industrial exemption also requires
+article 118's five-year period and article 119's exemption decision; it is not a
+permanent consequence of industrial status.
+
+### A newer English consolidation has a separate omission
+
+The English Law retrieved on 12 September 2026 has 120 PDF pages and expressly
+identifies RD 118/2020 on p. 3. It is not the 102-page version described in the
+handoff. Its hash is
+`f7442e8364116a309744a2274b543e910c86b03bcb3e405f17df021f1726c3e0`.
+It includes the SME limits and the amended enterprise-return provision.
+
+However, physical PDF pages 77–78, also numbered 76–77 in print, jump from
+article 133 to article 143. Text searches did not find article 140; inspection
+at 200 dpi confirmed that the return provisions are missing from those pages,
+rather than hidden in a picture. The Arabic decree supplies the operative text.
+A document labelled as amended still needs a completeness check.
+
+### Scope and checks
+
+Updated `om-corporate-income-tax.md` and `om-tax-overview.md`, including their
+descriptions and dates. Searched editable source guides for the rejected
+four-month wording, provisional-return assertions and old exemption thresholds.
+The historical passages above are retained with supersession notices.
+No generated files were edited. The separate Top-up Tax Executive Regulation
+remains unread. Only the relevant MD 14/2019 provisions were examined; the
+remaining provisions and annexes are not represented as fully reviewed.
+
+## Turkmenistan pension, deduction and company-law follow-up, 12 September 2026
+
+Parliament publishes the State Pension Insurance Law and Joint-Stock Companies Law.
+The earlier inventory of the Tax Directorate's page was accurate for that page, but
+did not establish that those statutes were unavailable from another official publisher.
+The current Parliament publications also expose stale readings in this PR.
+
+### Pension contributions and payroll
+
+The [Pension Insurance Law](https://mejlis.gov.tm/single-law/218?lang=ru), articles
+6–7 and 19–23, confirms 20% for covered employers and an additional 3.5% for the
+professional pension stream. Article 20(4) sets a minimum 2% for voluntary pension
+participation. The figures were right; describing the employee stream as
+voluntary/mandatory was wrong. Article 19 specifies remuneration and exclusions
+and has no upper wage ceiling for ordinary employees. Different insured categories
+have different bases, so this does not support an uncapped rule for everybody.
+
+Article 23(3) requires ordinary employer pension payment by the bank cash-withdrawal
+or wage-transfer day. Article 21(2) separately requires the monthly declaration by
+the 20th of the following month. The combined guessed 15th/20th deadline was removed.
+Article 7(1) expressly addresses permanently resident foreign citizens and stateless
+persons. Tax residency alone cannot establish pension coverage for every foreign hire.
+
+### Personal deduction and income-tax collection
+
+The [Tax Code](https://mejlis.gov.tm/single-code/10?lang=ru), article 188(1)(a), sets
+the monthly personal deduction at one statutory base value for calculating taxes
+and fees. Its current monetary value has not been verified. TMT 1,280 was removed
+from both editable guides, without guessing a replacement. The handoff placed this
+deduction with pension-law questions; its governing provision is in the Tax Code.
+Searches for the operative base-value instrument did not establish a current amount.
+
+Article 188(2) permits deductions for voluntary pension and medical insurance
+contributions. Article 195(3) restricts employer-applied article 188 deductions to
+the main employment and excludes its first incomplete month. Article 195(5) makes
+withholding payable by the bank cash-withdrawal or income-transfer day, or the next
+day for income in kind. Annual information is due by 20 January under article
+195(9). These replaced the speculative following-month payment and monthly tax
+reporting statements.
+
+Article 187(5) also gives eligible young graduates entering employment a 50%
+reduction of calculated tax for 12 months and 25% for the next 24 months. Article
+192(1), amended in 2023, separately provides first/second/third-tax-year relief for
+qualifying youth entrepreneurs with at least 75% of workers under 35. These are
+conditional reliefs, not a progressive scale or a general lower rate.
+
+The existing gambling correction labelled the activity as winnings while describing
+charges per gaming machine, table and premises. Article 192(2) addresses individuals'
+income from operating gambling activities. The heading now reflects that business
+mechanism. The underlying daily amounts were retained from the earlier statutory check.
+
+### Company capital: another correction withdrawn
+
+The [current Law on Enterprises](https://mejlis.gov.tm/single-law/301?lang=ru), articles
+26(5) and 29(4), uses 25 and 100 times the statutory tax base value. The earlier PR
+correction used the minimum wage from an older Tax Directorate publication. That
+formula is withdrawn. Fixed TMT 5,000/USD 20,000 capital claims still present below
+the correction were also removed. Article 24's co-operative enterprise had been
+translated as a partnership; the description now follows the Parliament text.
+
+The [Joint-Stock Companies Law](https://mejlis.gov.tm/single-law/308?lang=ru), article
+12, requires at least 200 times the statutory tax base value, half paid at registration
+and full payment within 12 months. Initial shares go to founders, with no public
+subscription at formation. The final review also read Law on Enterprises article
+47: it requires at least 50% of founders' contributions after signing the founding
+documents and before applying for registration, with the balance within one year
+after registration. The first draft unnecessarily left this enterprise schedule
+unverified. It also duplicated the 100-times capital row; the reviewed guide now
+distinguishes the sole enterprise's 25-times base from the economic company's
+100-times base.
+
+Scope: read the pension contribution provisions, Tax Code articles 187(5), 188, 192
+and 195, enterprise-form/capital provisions including article 47, and joint-stock capital provisions in the
+Parliament HTML publications. This was not a full reread of every article of those
+laws. Unrelated corporate tax and individual declaration findings were preserved.
+The current statutory tax base value and the remaining consultancy-based formation
+steps remain open. No generated packages were changed.
+
+Source captures (12 September 2026; SHA-256):
+
+- [tm-pension-law](https://mejlis.gov.tm/single-law/218?lang=ru): 204,871 bytes, `1b8df016d260ca01948f10f940314f2be70f171ca263eeab68d6609a776e7e7f`.
+- [tm-tax-code](https://mejlis.gov.tm/single-code/10?lang=ru): 1,084,696 bytes, `17c0e65798f865818a82cab2b1c93b4b1af642e9ba829df58331bc1bccfcc3a4`.
+- [tm-enterprises-law](https://mejlis.gov.tm/single-law/301?lang=ru): 162,012 bytes, `cef94c3439975fcac78a1426d499613c5d923c5cb7797f73873fd1f943d193dc`.
+- [tm-jsc-law](https://mejlis.gov.tm/single-law/308?lang=ru): 239,263 bytes, `d425c92ee61aeb5c3b0831d599141cfbedf8bfef42e08f34ec147283beeaf0cc`.
+
+## Angola, Burundi and Djibouti statutory follow-up, 12 September 2026
+
+This pass checks the outstanding IRT and social-contribution questions. It does
+not certify later amendment coverage, the countries' complete guides or the corpus.
+
+### Angola: Group C article 9(2), monthly scope and Group B rates
+
+- Read the gazette reproduction of Lei n.º 28/20, PDF pages 3–4, with PyMuPDF text
+  extraction and individual pages at 200 dpi. Article 9(2) is retained unchanged;
+  article 10(1) expressly makes Group A calculation monthly; article 16(2) sets
+  Group B/C withholding at 6.5% and article 16(3) sets 25% on the taxable base not
+  subject to withholding. The earlier Group B description as progressive withholding
+  up to 25% was wrong. The earlier warning that the monthly period lacked statutory
+  support is withdrawn. The annex's silence was insufficient evidence of a legal gap.
+- Read the original article 9(2) in Lex.AO's transcription of Lei n.º 18/14. Its
+  four-times-invoicing test substitutes non-withheld annual sales of goods and
+  services as the Group C base. The original gazette download returned HTTP 403;
+  no retry or alternative route around that denial was used. The wording is
+  transcription-backed; a scan cross-check remains open.
+- Retained the already-read Lei n.º 18/24 article 35(2) suspension of efficacy and
+  the 2025 article 20 Group C rules. A suspension does not establish repeal or the
+  rule for 2026. Retained the enacted 2025 table rather than substituting the older
+  2020 annex. The twelve figures were not re-audited in this follow-up.
+- Corpus search found the unsupported Group B description and article 9(2) gap in
+  ao-income-tax only. The sibling payroll guide already described monthly IRT;
+  no change was needed there. Residence and employee-return statements remain
+  secondary-source claims, outside this specific statutory check.
+
+### Burundi: schedule verified, original Code read, amendments still open
+
+- INSS publishes at inss.gov.bi. Its Calcul des cotisations page confirms ordinary
+  pension contributions of 6% employer and 4% employee, with monthly contributory
+  earnings capped at BIF 450,000 per employee. The 3% employer occupational-risk
+  charge uses a separate BIF 80,000 earnings cap. The previous wording could be
+  read as a BIF 80,000 contribution cap; the maximum charge is BIF 2,400.
+- The same schedule separately gives difficult-work pension rates of 8.8% employer
+  and 5.8% employee, including military and police examples. Its remuneration base
+  includes allowances and bonuses, excludes expense reimbursements and has a SMIG
+  floor. The affiliation page independently corroborates ordinary rates and the
+  pension cap. Commercial 6%/4%, 450,000 and 3%/80,000 figures were supported.
+- Read the 2020 Code scan, PDF pages 1 and 30–32 at 200 dpi after confirming that
+  all 49 pages have no extractable text. Contact sheets only located the provisions.
+  The title page gives Loi n°1/12 du 12 mai 2020 in handwriting. Article 134 allows
+  regime-specific caps; article 135 delegates rates to ordinances and allocates
+  occupational-risk contributions entirely to employers. Article 139 sets payment
+  monthly or quarterly as applicable, by the following month's 15th; article 141
+  sets the matching declaration cycle. Article 145 leaves the employer liable for
+  an employee share omitted when remuneration was paid.
+- The Code does not itself supply the schedule's numerical rates and caps. A Code
+  citation attached to a secondary rate was therefore inadequate even where the
+  rate was right. The health 3% and training 1% claims remain unverified, with their
+  regime and legal basis explicitly open; absence from this INSS schedule does not
+  prove that no such levy exists.
+- Laws 1/09 of 14 March 2022 and 1/05 of 30 April 2026 remain unread. The presidency's
+  2026 page returned 404; the assembly's 2022 index timed out. Refworld's PDF access
+  returned 403 and was not retried. P4H independently hosts the original public
+  Code scan used here. Current INSS web guidance supports its published schedule,
+  but this is not a completed check of the amendments or every public-sector regime.
+- The earlier claim that rates could not be sourced because inss.bi failed is
+  withdrawn. A failed assumed host did not establish the institution's availability.
+  The already-read 2026/2027 Finance Act findings and their tax-year caveat remain.
+
+### Djibouti: statutory healthcare split, ceiling and payment deadline
+
+- Read Loi n°24/AN/14/7ème L article 16, PDF page 3, individually at 170 dpi after
+  text extraction: 7% healthcare is split 5% employer and 2% employee. Read the
+  2015 amendment, PDF pages 2–3 at 200 dpi: Law 109 changes articles 17 and 37,
+  leaving article 16 untouched. This resolves the CNSS page's contradictory
+  blanket assignment of healthcare to the employer. It does not require choosing
+  between two inconsistent sentences by arithmetic alone.
+- Read Arrêté n°2015-605 article 1, PDF page 1 at 200 dpi. Pensions have no ceiling;
+  other regimes have an FDJ 400,000 monthly earnings ceiling. The previous pass
+  correctly rejected a pension ceiling but missed the other-regime ceiling.
+  Its correction to 21.7% combined and 15.7% employer on all remuneration was
+  itself incomplete. The guide now applies uncapped 4% pension shares separately
+  from the capped 11.7% employer and 2% employee non-pension shares.
+- The family rate and pension split are published by CNSS. Work injury at 1.2%
+  remains an explicitly identified arithmetic inference: combined healthcare and
+  injury 8.2%, less the statutory 7% healthcare. No claim is made that the webpage
+  separately quotes the 1.2% rate. The published floors of FDJ 15,850 and 20,000
+  coexist with the non-pension ceiling; the earlier floor-versus-ceiling framing
+  concealed that possibility.
+- The CNSS employer page states monthly payment within the first ten days of the
+  following month and a declaration at each period end even without payment. It
+  cites the 1969 regulation as amended in 1989. The guide's unverified monthly
+  15th was replaced. A dated fourth-quarter 2021 payment notice does not establish
+  the general current monthly deadline. The original 1989 text and employer-specific
+  quarterly coverage remain unverified.
+- Read all five operative articles of Law 111/2015 on recovery, PDF page 2 at
+  200 dpi. Its 15-day period follows a formal default notice; it does not set the
+  ordinary monthly remittance deadline. This was a false lead, not corroboration
+  of the old payroll row. The ITS article 287 deadline and 2011-Code currency gap
+  remain separate and unchanged.
+
+### Retrieval evidence
+
+The following files were retrieved over ordinary verified HTTPS on 12 September
+2026. Hashes identify the exact source bytes read; they do not establish currency.
+
+| Source | Bytes | SHA-256 |
+|---|---:|---|
+| [ao-irt-2020.pdf](https://www.bancoeconomico.ao/media/3172/lei28-20-22dejulhoalteracoescirt.pdf) | 626803 | `e4bb587ee3738a34b76965974b3737f04b3b678614ee54cef543a04a59548353` |
+| [bi-inss-contributions.html](https://inss.gov.bi/comment-un-travailleur-est-il-affilie-a-linss/) | 179899 | `5f54c6598d674239db56789bff55fbeed74759e676b45788ae1ff9343ece59c7` |
+| [bi-inss-calculation.html](https://inss.gov.bi/calcul-des-cotisations/) | 176875 | `c7425a7f3f5141bd628ca71ef4bd610b0c9261182ae5889771362fb4a4bed985` |
+| [bi-social-code2020.pdf](https://p4h.world/app/uploads/2023/02/CODE20de2020Protection20Sociale20du20Burundi.x24228.pdf) | 20765493 | `efd5045dc3848881b07a59b52c892c1cd834ffb4d39fd56f7fade6396b6756c2` |
+| [dj-amu-2014.pdf](https://cnss.dj/storage/2016/10/Loi_n24AN147eme_L_Portant_creation_de_lamu.pdf) | 247533 | `2fa2d54c497872bd77dc4d5660a2a5af1760e9f28c9cf87451832fbaf773caaa` |
+| [dj-cnss-base2015.pdf](https://cnss.dj/storage/2016/10/ARR_N_2015_605_PR_MTRA.pdf) | 406085 | `7e990d56d35206d9e205f682d09f9faa0323cc5d52272440cec9ef0c98fd0e8d` |
+| [dj-amu-amend2015.pdf](https://cnss.dj/storage/2016/10/LOI_N_109_AN_2015_7_EME_LOI.pdf) | 172511 | `282a117cc13b72d3d0507127b97ee6b905619a6773ca8877e2a1c95672ab5dfe` |
+| [dj-cnss-employer.html](https://cnss.dj/espace-employeur/) | 197678 | `4745e9410c1ca33bc3aaba392f91bea7cf16505712634d179169b8d73c176298` |
+| [dj-cnss-collection2015.pdf](https://cnss.dj/storage/2016/10/LOI_N_111_AN_2015_7EME_L.pdf) | 136256 | `e4274e70140b2ea52bbd4f312f9319de96351c760895d8427dbe6485b9e85b9a` |
+
+
+## 12 September 2026: CAR Finance Acts and North Macedonian return forms
+
+### CAR: bounded review of the post-2023 Finance Acts
+
+The Ministry's five source PDFs below were downloaded in full. PyMuPDF text
+extraction was attempted before rendering; the operative pages are image-only.
+Contact sheets located the tax provisions. Individual pages were read at 200 dpi
+(the initial opening pages at 170 dpi). Budget annexes were not audited.
+
+| Instrument | Individual PDF pages read | Result for cf-income-tax |
+|---|---|---|
+| Finance Act 2024 | 3–4, 35, 46–47, 79–82, 88–94, 99 | Article 9 changes CGI 135 bis 1; article 10 starts the VAT rewrite; article 11 creates the procedures code. LPF 53 refers filing deadlines to the tax laws; LPF 54 permits a conditional extension. Article 43's State salary reduction is not an IRPP allowance. |
+| Amending Finance Act 2024 | 3–6, 9 | Forestry charges and budget provisions; no amendment to the guide's IRPP scale or annual filing date identified in these provisions. |
+| Finance Act 2025 | 3–17, 20 | CGI 135 bis 4/5, VAT 249/275 bis, registration 344 and LPF 4, 71, 88, 171, 226, 243 amendments; customs and budget provisions. No amendment to the guide's IRPP scale or annual filing date identified. |
+| Amending Finance Act 2025 | 2–6, 10 | CGI 393 tax-clearance requirements and LPF 28 bis tax-regularity certificate, plus administrative fees. These do not supply a replacement employee tax scale. |
+| Finance Act 2026 | 3–8, 12 | CGI 135 bis reporting/visa changes, customs provisions and budget. No amendment to the guide's IRPP scale or annual filing date identified. |
+
+- LPF 53 covers taxpayers, withholding agents and beneficiaries of fiscal
+  advantages, using the prescribed declaration and statutory deadline. LPF 54
+  requires a written extension request at least seven days before the deadline;
+  the administration has three days to respond, with silence treated as acceptance.
+  One extension of up to 30 days is available for exceptional circumstances, without
+  stopping late-payment interest. The guide retains CGI 87's ordinary 30 April date.
+- False candidate: Finance Act 2024 article 43 is headed salary abatements but
+  changes a reduction of gross remuneration funded by the State budget. The old
+  table had 5% and 10% bands; the replacement has 5% from XAF 900,001, from January
+  2024. That is not a new dependant relief or professional-expenses allowance for
+  employees generally. No IRPP allowance was inserted on that evidence.
+- The closing provisions expressly continue earlier Finance Act provisions not
+  repealed: annual 2024 article 61, amending 2024 article 35, annual 2025 article 46,
+  amending 2025 article 23 and annual 2026 article 30. Their commencement/signature
+  provisions were read alongside them. The annual 2024 signature is 28 December
+  2023; the others are 25 October 2024, 30 December 2024, 20 June 2025 and
+  23 December 2025 respectively. These clauses do not prove that no other instrument
+  changed an IRPP provision.
+- The earlier blanket statement that no post-2023 Finance Act had been read is
+  replaced with the coverage above. The full VAT rewrite, all 245 LPF articles,
+  intervening implementation instruments and the budget annexes were not read
+  line by line. No exhaustive currency claim is made. CGI residence and small-trader
+  regime gaps remain open. The published income-tax figures were not changed merely
+  because newer Finance Acts exist.
+- Retrieval/reading correction: the initial locator note misidentified the 2024
+  article 9 target as 135 bis 4. The individual page says 135 bis 1. No guide used
+  the incorrect locator note. Contact-sheet labels do not support an article citation.
+
+### North Macedonia: forms read and two earlier claims withdrawn
+
+The UJP's three-page corrected rulebook refers to annexes but does not contain
+the annex pages. Its form register separately supplies КДДД/П (three pages) and
+ДДД/П (two pages). Read all five pages, text first and individual 200 dpi images
+second, including every field, bilingual instruction and footer. Both forms cite
+Gazette 270/25 and application from 1 January 2026. No original-versus-corrigendum
+gazette comparison was performed; that earlier gap remains.
+
+| Field or group | КДДД/П | ДДД/П | Check |
+|---|---|---|---|
+| Fiscal year | Present | Present | Identical purpose in both instructions |
+| Ultimate parent name and tax ID | Two fields | Two fields | Both explained |
+| Lead entity name and tax ID | Two fields | Absent | Name is on the domestic form even though its instructions focus on tax ID |
+| Entities 2 and 3 | Name and tax ID for each | Absent | Instructions refer to each constituent entity; paper slots do not cap group size |
+| Intermediate parent | Absent | Name and tax ID | Both explained |
+| Decisions, exclusions, safe harbours | Present | Absent | Domestic instructions also require validity period |
+| a | Qualified net income | Same | Instructions cite Act 17–21 and OECD commentary section 3 |
+| b | Adjusted covered taxes | Same | Instructions cite Act 22–26 and commentary section 4 |
+| c | ETR, b/a | Same | Formula and instructions agree; zero denominator is not addressed by the short form |
+| d | Preprinted 15% | Same | Instructions cite Act 4(15) |
+| e | QDMTT percentage, d-c | Other top-up percentage, d-c | Read with Act 29(2)'s positive-difference condition |
+| f | SBIE | Same | Instructions cite Act 30 and OECD commentary article 5.3 |
+| g | QDMTT payable, printed (a-f)*e | Excess profit, a-f | Domestic instruction conflicts with printed formula, described below |
+| h | Additional top-up tax | Same | Instructions cite Act 31 and commentary article 5.4 |
+| i | Absent | QDMTT paid at local jurisdiction level | Instruction wording recorded; no broader credit rule inferred |
+| j | Absent | Top-up payable, g*e+h-i | Printed formula and both languages agree |
+| Domestic entity detail page | Three panels, each a–g plus responsible person and telephone | Absent | Panel order 1, 2, 3 confirmed visually; extraction returned 2, 3, 1 |
+
+- The domestic form's aggregate g prints `(a-f)*e`, with additional tax separately
+  at h. Both languages of its g instruction say to add additional top-up tax but
+  refer to the addition as field g. Entity panels omit h. This is a source
+  inconsistency, not a licence to invent an official corrected formula. The guide
+  flags the treatment for UJP confirmation where additional tax arises.
+- The form instructions led back to the Act. Its definition is article 4(15),
+  not article 1(15) as the guide previously stated. The 15% rate was correct.
+  Article 1 describes subject matter; article 4 contains definitions. Corrected
+  the pinpoint without changing the rate.
+- Read Act 29, PDF pages 34–35, from the clean text. It expressly states the
+  top-up percentage, excess-profit, jurisdictional and entity-allocation formulas.
+  It limits the relevant differences to positive amounts. The guide's earlier
+  claim that computation mechanics were not in Macedonian law at all was false,
+  despite the rulebook's real OECD reference. Withdrawn. The forms' references to
+  other Act articles are transcribed evidence, not a new complete review of all
+  those underlying provisions or OECD administrative guidance.
+- No client return, e-filing acceptance, nil/negative case or multi-entity expansion
+  was tested. The exercise verifies the published forms' content and identifies
+  their limits; it does not certify an executable tax calculation.
+
+### Source fingerprints
+
+| Source | Bytes | SHA-256 |
+|---|---:|---|
+| [cf-fa2024.pdf](https://www.finances.gouv.cf/sites/default/files/2024-03/Loi%20de%20Finances%202024.pdf) | 187103780 | `738aafbbc084ace0a25989f0b02fb7a7751bc08128090873026bcf0a2f16f223` |
+| [cf-fa2024-rect.pdf](https://www.finances.gouv.cf/sites/default/files/2024-11/COLLECTIF%202024.pdf) | 163693881 | `39fdd1171dd83e881eb8c8c9cfb2dba1a625e72e82250e90df81799ef67829f8` |
+| [cf-fa2025.pdf](https://www.finances.gouv.cf/sites/default/files/2025-01/Loi%20de%20Finances%202025.pdf) | 155079881 | `0ca701b9387528cd7695a3e6fa622034e1b4c8151cdd91d241070d1aac594bee` |
+| [cf-fa2025-rect.pdf](https://www.finances.gouv.cf/sites/default/files/2025-07/COLLECTIF%202025.pdf) | 171563074 | `a9515ee6a8d1dadc6d122481eb19aeee974ea64069a8054a314ee13656ac4f78` |
+| [cf-fa2026.pdf](https://www.finances.gouv.cf/sites/default/files/2025-12/LOI%202026%20OK_0.pdf) | 137204726 | `35708d46b1dcb30ef40880fa02de9fe94760585e464e5a21ec9d9ad4de41341f` |
+| [mk-topup-reg.pdf](https://ujp.gov.mk/files/attachment/0000/1612/_________________________________________________________________.pdf) | 220278 | `7688a591b2b1fe342b4ae5ea2d89e93b8e25a1ac632c78e4f597b23769fc9091` |
+| [mk-kddd.pdf](https://www.ujp.gov.mk/files/attachment/0000/1611/KDDD-P.pdf) | 88609 | `69424ac61ae5cdd055bd6ea9fb1d368e1deaa2a39b42a48b5b11d505c42863c8` |
+| [mk-ddd.pdf](https://ujp.gov.mk/files/attachment/0000/1610/DDD-P.pdf) | 72894 | `4e2e2e5a36ae7011d1943a305bf3a04129d8800e948391a6ec167db7a60606d7` |
+| [mk-min-tax-law.pdf](https://ujp.gov.mk/files/attachment/0000/1565/____________________________________________.pdf) | 477813 | `3a8019135093f4c11ef4d4296dc28b9bd6ecbe7479d20c204308a4a41602aa96` |
+
+
+## 12 September 2026: Andorra form 900 and correction of the earlier IGI correction
+
+The government IGI portal links form 900. Web retrieval of the government's
+three-page PDF exposes its complete numbered text. The missing domestic 0%
+output pair is **9 (base) and 10 (tax)**; domestic 0% input is 37/38. The form
+uses numerical fields 1–64. The guides' old A/B/C map, including B5/B6 for fixed
+assets and C1/C2/C5 for settlement, did not describe this published form.
+
+Source: [government form 900](https://www.govern.ad/documents/1898932/2636954/9002016.pdf/859a97d4-bf7c-9920-a4a4-40c965232ec2?download=true&t=1743750068213&version=2.0),
+also published at [the canonical document path](https://www.govern.ad/documents/d/guest/9002016?download=true).
+The local government host returned a DNS failure. No local PDF bytes, hash,
+PyMuPDF extraction or rendered page reading were obtained for this form. Web
+PDF text was available; attempted web screenshots did not return viewable image
+content. The mapping is supported by that text, with visual confirmation and
+comparison to the authenticated electronic return still outstanding. The older
+printed legal references are not proof that the form reflects every later law
+amendment. No access control or TLS setting was bypassed.
+
+All numbered fields were compared with both editable IGI guides. Output 1–20,
+import deduction 21–28, domestic deduction 29–44 and settlement 45–64 are now
+mapped. The ordinary balance is box 20 minus boxes 28 and 44; prior credit is 46.
+Reverse charge uses 11/12 and, if deductible, 39/40. Import and banking examples
+now use 21/22 and 29/30. A qualifying healthcare example explicitly uses 9/10.
+The paper export refund section is conditional on negative box 49; it is not a
+general export-sales field. Box 56 prints abs(49 - 55), which conflicts with a
+simple subtraction of a positive refund from the available credit. The guides
+flag the sign convention for authority confirmation and do not automate it.
+The general electronic export field remains unverified.
+
+The BOPA full 2019 consolidation includes articles omitted from the previously
+read fragment. It changes the earlier legal conclusion:
+
+- Article 14 expressly exempts qualifying goods exports and related operations.
+  Article 42(2)(a) locates transported goods where transport begins. The previous
+  correction that described exports generally as outside the territory and
+  suggested the law contained only import exemptions was wrong and is withdrawn.
+- Article 6(10) excludes specified interest and non-commission financial
+  operations from the charge; article 6(11) excludes insurance and its specified
+  intermediation. Searching only rate articles 57–60 could not settle that issue.
+- Articles 57, 58, 59, 60 and 60 bis confirm rates of 4.5%, 1%, 0%, 9.5% and 2.5%.
+  Public or qualifying non-profit cultural supplies can fall under article 59;
+  article 60 bis covers its listed cultural supplies outside those conditions.
+  Healthcare under article 59(2) needs the provider, patient and reimbursement
+  conditions. The rates were right; several classifications and pinpoints were wrong.
+- Input eligibility is in articles 61–65. Article 63 contains the relevant
+  vehicle presumptions; article 64 contains exclusions and exceptions; article
+  65 requires documentary support for every claim. The old article 60 citation,
+  blanket vehicle denial and EUR 500 invoice threshold were unsupported.
+- Article 78 confirms turnover-based filing frequency, part-year annualisation
+  and quarterly startup filing, subject to the simplified-regime exception.
+  The portal's form 940 is specific to the financial sector; it does not support
+  an annual return for every IGI taxpayer.
+
+The source guide and agent guide now agree on these points. Supplier names and
+bank descriptions remain classification clues requiring documentary checks.
+Customs amounts in the worked import example are explicit assumptions. Later
+amendments to the 2019 consolidation, specialist refunds and the current
+electronic field layout have not been fully verified.
+
+Local primary-source retrieval records:
+
+- https://bopadocuments.blob.core.windows.net/bopa-documents/031055/html/GD20190614_13_50_37.html: 359,444 bytes; SHA-256 `fbc64694435d41bee9174aa9b65b1fe0877534f613899c6e7a5673c150522006`.
+
+- https://bopadocuments.blob.core.windows.net/bopa-documents/031055/html/1_GD20190614_13_50_37.html: 128,006 bytes; SHA-256 `c9daeb82d24f402fad3020932284a9954158a045a7c19f2abd186af77c6c88ec`.
+
+- https://bopadocuments.blob.core.windows.net/bopa-documents/031055/html/2_GD20190614_13_50_37.html: 103,448 bytes; SHA-256 `c34c0381afce7cd3221c36ae1dd640a0cd6479813ba67c1a9f5a21afdeb55a33`.
+
+- https://www.e-tramits.ad/tramits/impostos/igi: 138,546 bytes; SHA-256 `5b810ea7ee87ebd16acc11c94f8e1b35fe14c9d2b29314d6fa12f0b82374a5ae`.
+
+The unprefixed BOPA HTML contains the full consolidation. The `1_` and `2_`
+documents overlap portions of it and begin or end within articles. They are not
+individually complete statutes. The UTF-16 decoding succeeded. A corpus search
+found the detailed rate/frequency table in `ad-income-tax.md` already consistent
+on those figures and conditions; no duplicate numerical correction was needed.
+
+
+## 12 September 2026: Pakistan, UK and Ireland repeal and transition checks
+
+This is a bounded check of the provisions listed below, with corpus searches
+for the affected claims. It is not an exhaustive repeal concordance across all
+Finance Acts, historical versions, schedules, concessions and commencement
+orders. Unread provisions remain unverified.
+
+### Pakistan: actual omissions and two rejected numerical findings
+
+The FBR's final Finance Act 2025 is Act XIX of 2025, assented to on 27 June and
+published on 29 June. Section 1(2) generally commences it on 1 July 2025, subject
+to specific provisions. Section 10 amends the Income Tax Ordinance. PyMuPDF
+extraction returned readable gazette headers but almost none of the operative
+text. A zero-result repeal search on that extraction was therefore unusable.
+Contact sheets located provisions; individual PDF pages 2, 56, 68–69, 85–86,
+92, 104–107 and 113–114 were read at 200 dpi. The remaining customs tariff,
+sales-tax and excise amendments were not exhaustively reviewed.
+
+- Section 10(22) omits ITO section 126A. Sections 10(23) and 10(25) permit the
+  specified direct ATIR route, subject to their conditions; section 10(26)
+  amends the High Court reference rule. The corporate guide's mandatory linear
+  appeal chain was incomplete and is corrected. No monetary-threshold figure
+  was invented or inserted.
+- Section 10(51)(a)(ii)(A) removes serial 1 of the third-proviso table in Tenth
+  Schedule rule 1. FBR Circular 01/2025–26 paragraph 26 identifies it as the old
+  35% non-ATL profit-on-debt exception. The guide already used doubling, so that
+  suspected rate defect was rejected. The new Division IA distinguishes bank
+  and financial-institution deposits, specified government-security profit to
+  non-individuals, and other cases. The guide's simple bank/other split omitted
+  the second category. It now states 20% / 20% / 15% and the ordinary multiplier.
+  The yield-threshold note also separates section 7B annual assessment from
+  section 151 withholding; the guide no longer implies that the withholding
+  rate increases solely when yield exceeds Rs 5m. Its section 149 row confused
+  salary and non-salary scales, so those categories are now stated separately.
+- Pages 104–106 expressly omit Second Schedule Part I clause 152, Part II
+  clauses 9AC and 24CA, and Part IV clauses 12F, 12G and 12J. Their former full
+  text and every possible functional equivalent in the corpus were not traced.
+  They are recorded as outstanding mapping work, not claimed as harmless repeals.
+- The same pages insert Part III clause 3A for qualifying teachers/researchers:
+  25% of tax on salary, with the medical-practice exclusion, deemed effective
+  from 1 July 2022 and ceasing after tax year 2025. A statement that the rebate
+  was simply reintroduced for future years would be wrong. Pages 104 and 107
+  also contain specific sunset and audit-selection changes; these were read,
+  but their full corpus mapping remains open.
+- The circular's extracted text appeared to show salary constants of 345,000
+  and 615,000. Reading its page 4 and the Act's pages 85–86 showed 346,000 and
+  616,000. Those constants already in the guide agree with the Act and the
+  arithmetic. The apparent source conflict was an extraction error, not an FBR
+  legislative discrepancy. No salary-table correction was made on that basis.
+
+The withholding guide retains the recorded accountant's name and now marks the
+revision pending review, with an explicit post-review-change notice. No renewed
+professional sign-off is claimed. The unrelated Pakistan 2026 Finance Act and
+all other withholding categories were not fully revalidated in this pass.
+
+### United Kingdom: repeal does not remove all transitional rights
+
+Finance Act 2025 section 25 and Schedule 5 remove FHL treatment. Paragraphs
+12–20 were checked for commencement and savings, alongside the operative
+omission provisions. The two rental guides already knew about abolition and
+capital-allowance runoff. Their blanket denial of BADR on all later disposals
+contradicted paragraph 19's saved cases. The revised text preserves the
+conditions, distinguishes corresponding UK/overseas loss pools, and records
+paragraph 14's anti-forestalling rule. Abolition itself does not establish a new
+overlap-relief entitlement. Unrelated SA105 boxes were not revalidated.
+
+The non-dom guide had more than a stale repeal reference. Sections 37–39 and
+Schedules 8–11 establish:
+
+- Separate foreign-income and foreign-gain claims; relief is not automatic.
+  Employment income needs its own election and relief claim.
+- A first qualifying residence year after ten non-resident years, followed by
+  three years. The law expressly recognises qualifying starts in 2022–23,
+  2023–24 and 2024–25, contradicting the guide's post-April-2025-arrival rule.
+- Personal-allowance and CGT-exemption loss, and restrictions on relevant foreign
+  losses, when the specified claims/election apply.
+- Ordinary employment relief limited by the lower of 30% and GBP 300,000, with
+  separate rules for deferred earnings and transitional earlier arrivals.
+- TRF rates of 12%, 12% and 15% based on designation year. Those rates were
+  already correct. Schedule 10 paragraphs 10 and 12 preserve the relevant
+  remittance protection in subsequent years; a blanket post-2028 cutoff is wrong.
+- Schedule 11 rebasing at 5 April 2017, subject to its asset, location, domicile
+  and historical-claim conditions. The guide's 2019 date, pre-2017-only claim
+  requirement and general foreign-real-estate exclusion were unsupported.
+
+The historical charge windows were checked against
+[HMRC RDRM32330](https://www.gov.uk/hmrc-internal-manuals/residence-domicile-and-remittance-basis/rdrm32330).
+The statute's clean text was read at the relevant provisions; it did not need OCR.
+This pass did not reconstruct all trust, mixed-fund or inheritance-tax rules.
+
+### United Kingdom: another earlier correction withdrawn
+
+While tracing FHL claims across both editable versions, the rental guide still
+claimed that residential finance-cost relief stayed at 20% in 2027–28. That was
+an earlier PR correction, repeated in the SA100 guide and agent version.
+Finance Act 2026 Schedule 1 paragraph 40 expressly replaces the basic rate with
+the property basic rate in ITTOIA sections 274AA(5) and 274C(2). Section 6(8)
+commences those amendments in 2027–28; section 7 sets that year's rate at 22%.
+The previous unchanged-20% correction is withdrawn in all four editable guides.
+The worked rental example is GBP 2,134 less GBP 880 = GBP 1,254, an increase of
+GBP 114 over GBP 1,140. The old GBP 194 increase overstated the change by GBP 80.
+The older April-2026 property-rate and pending-Bill wording in the rental
+descriptions and prohibitions is also corrected. Ordinary 2026–27 calculations
+remain unchanged. This targeted 2026 Act check is not a full repeal audit of it.
+
+### Ireland: express repeals, replacement provisions and KDB
+
+The full Finance Act 2025 HTML was searched for repeal language. The following
+five operative cases, including their adjacent replacement and commencement
+provisions, were read:
+
+| Provision | What the enacted text does | Corpus result |
+| --- | --- | --- |
+| Sections 15 and 17 | Repeal Finance Act 2024 sections 14 and 15; sections 16 and 18 supply automatic-enrolment tax provisions | No matching automatic-enrolment claim found in the Irish guides; this does not abolish the pension system |
+| Section 63 | Repeals Finance Act 1992 Part II Chapter III, subject to a ministerial commencement order | No amusement-machine licence-duty claim found; commencement order not verified |
+| Section 80(a) | Repeals Stamp Duties Consolidation Act section 110A | No direct section 110A claim found; every functional equivalent not traced |
+| Section 82 | Repeals section 86A and inserts section 86B's market-capitalisation exemption; commences 1 January 2026 | No direct section 86A claim found; new exemption not assumed to cover every share transfer |
+
+Section 107(8)'s default for Part 1 is 1 January 2026, unless expressly otherwise
+provided. Reading a repeal without the neighbouring replacement would have
+produced a false claim about pension reform. These no-match results are evidence
+for the searched claims only. The 2024 section 15 page and the government KDB
+press-release page returned web 403 responses; no retry or bypass was attempted.
+
+The related rate search found live KDB claims of 6.25% and a 50% deduction in
+`ie-formation`, `ie-corporation-tax` and both IP/patent-box matrix versions.
+Finance Act 2022 section 40 replaces 50% with 20% and extends the period to
+accounting periods commencing before 1 January 2027. Revenue confirms the rate
+change commenced on 1 October 2023. The four files now state a 20% deduction and
+10% effective rate. The 2027 start-date cutoff was already correct; some sources
+misattributed its extension to Finance Act 2024. This is a replacement-rule
+correction, not a repeal of KDB. The exact commencement-order instrument was not
+independently retrieved. Other countries in the matrix were not re-audited.
+
+### Source retention
+
+- https://download1.fbr.gov.pk/Docs/2025629106147620FInanceAct2025.pdf: 59,449,068 bytes; SHA-256 `a17a0c7d20828d2564ce976dcb78637d9b58604e0ac8ba78ebb96436897bf728`.
+
+- https://download1.fbr.gov.pk/Docs/2025841183918948CircularNo01of2025-26IncomeTax.pdf: 4,474,498 bytes; SHA-256 `dc001603c16d56d7eed7954f1f745d9a2988f2c528947c533291d0f02b88a89a`.
+
+- https://www.legislation.gov.uk/ukpga/2025/8/pdfs/ukpga_20250008_en.pdf: 3,320,095 bytes; SHA-256 `09e3310a18d3699e2b8c8691fce3fbda823f44d554b863dccbe56ffb1ff63b60`.
+
+- https://www.legislation.gov.uk/ukpga/2026/11/pdfs/ukpga_20260011_en.pdf: 5,886,002 bytes; SHA-256 `8249da71e64a12fad071fb76d77b5104ab0604ae02623728058bc83c88927918`.
+
+- https://www.irishstatutebook.ie/eli/2025/act/18/enacted/en/print.html: 847,145 bytes; SHA-256 `7ab5da25413686d0052dc3dc041f9dbcd5608002fff795da37c5e87cb22ffc18`.
+
+- https://www.irishstatutebook.ie/eli/2022/act/44/enacted/en/print: 1,377,207 bytes; SHA-256 `b538be6424251fd338c3f45a51e5abc9d28499ecc2c90172c3a775dcc3c5c0bc`.
+
+- https://www.revenue.ie/en/companies-and-charities/reliefs-and-exemptions/knowledge-development-box-kdb/index.aspx: 63,852 bytes; SHA-256 `d805aa65c28c7d3c4e77821f1b475b526801e02c64d052218b42e8b90515809b`.
+
+The FBR Finance Act index decoded as ISO-8859-1, as declared in its HTML; an
+initial UTF-8 decoding attempt failed after the bytes had downloaded. Reading
+those existing bytes with the declared encoding exposed the final Act and
+circular links. The Finance Bill was not substituted for the enacted Act.
+
+### Final review and retained gaps
+
+The corpus searches rejected unrelated 1,280 and 6.25% matches in other
+jurisdictions and historical explanations. They found one remaining UK agent
+row claiming 20% finance-cost relief after 2026–27; it now follows the 22%
+statutory change. The two signed UK source guides retain James Power's name
+and explicitly await renewed review. No new accountant sign-off is claimed.
+
+The Guinea salary-scale question remains blocked by the previously observed
+SiteGround CAPTCHA. The [DGI salary-tax PDF](https://dgi.gov.gn/wp-content/uploads/2021/03/TAXES-SUR-LES-SALAIRES.pdf)
+was not requested again and no workaround was attempted. Its 20%-versus-35%
+scale conflict remains unresolved. Both PR questions about punctuation and
+duplicate signed guides remain unanswered and unacted upon.
+
+No AI Slop's eval was applied to the new prose. Ponytail full was applied to
+the correction scope: this batch changes guides and this log, with no application
+code, design, dependency or generated-file changes. Source and agent mirrors were
+checked for the corrected claims. Published form conflicts and unread amendments
+remain explicit; repository tests cannot establish the accuracy of tax law.

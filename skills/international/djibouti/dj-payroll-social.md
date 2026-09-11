@@ -1,9 +1,9 @@
 ---
 name: dj-payroll-social
-description: "Source-cited draft: payroll and social contributions for Djibouti — the five ITS bands, the short-engagement 15% minimum and the article 287 remittance rule from the ministry's Code General des Impots 2011, plus the CNSS contribution rates read from the CNSS itself: 21.7% in three regimes, an employer share of 15.7% rather than the 10.7% this pack carried, a healthcare regime that was missing entirely, and a contribution floor where the guide asked about a ceiling. Pending local-accountant review."
+description: "Source-cited draft for Djibouti payroll and social contributions. Covers the ITS bands and remittance provisions in the ministry's 2011 Tax Code, whose later amendments remain unchecked. Separately sets out the CNSS pension, family, work-injury and healthcare contributions, the uncapped pension base and the FDJ 400,000 monthly ceiling for other regimes in Arrêté n°2015-605. The healthcare split is supported by the AMU law, and monthly payment timing comes from current CNSS guidance. Work-injury attribution remains an arithmetic inference from that guidance. Pending local-accountant review."
 jurisdiction: DJ
 tax_year: 2025
-last_updated: 2026-09-11
+last_updated: 2026-09-12
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -13,7 +13,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Payroll and social security — Caisse Nationale de Securite Sociale (CNSS)
 
-Employers and employees contribute to the CNSS, which covers pensions, work injury and family allowances. Employers also withhold the ITS salary tax. Contributions and tax are remitted monthly.
+Employers and employees contribute to the CNSS for pensions, healthcare, work injury and family allowances. Employers also withhold ITS salary tax. Check the separate payment rules below for each obligation.
 
 > **⚠ The authority is reachable, and everything it publishes stops in 2011. Read the ITS
 > rows below with that in front of you.** The register in this repo listed Djibouti under
@@ -33,28 +33,54 @@ Employers and employees contribute to the CNSS, which covers pensions, work inju
 > short-engagement rule, the quarterly payment option and the joint liability rule, none
 > of which the guide had.
 >
-> **The CNSS rows are no longer unverified — and an entire contribution regime was missing.**
-> Contribution rates are CNSS regulations, not the Code; article 6 of the Code only makes
-> CNSS deductions deductible from ITS pay. **The CNSS publishes the rates itself**, on its
-> *Déclaration et versement des cotisations* page at
-> [cnss.dj](https://cnss.dj/declaration-et-versement-des-cotisations/) — note the host
-> answers **without** `www.`; `www.cnss.dj` returns 404.
->
-> **Every individual employer rate this guide carried was right. Both of its totals were
-> wrong**, because the ***régime de soins*** — the healthcare contribution, 7% of payroll
-> split 5% employer and 2% employee — appeared nowhere in the pack.
+### CNSS contribution rates and bases
 
-- **Total contributions — 21.7% of total remuneration, in three regimes** — The CNSS states it directly: *"Les cotisations sociales représentent **21.7%** des rémunérations totales versées"*, being **5.5%** for *prestations familiales*, **8.2%** for *soins et accident de travail*, and **8%** for *retraite*. The three add to 21.7% exactly percent  _([CNSS, Déclaration et versement des cotisations](https://cnss.dj/declaration-et-versement-des-cotisations/))_
-- **⚠ Total employer CNSS contribution — 15.7%, not 10.7%** — This row gave **10.7%**, which is 4% pension + 1.2% work injury + 5.5% family allowances and **omits the employer's 5% healthcare share**. The employer bears family allowances (5.5%), work injury (1.2%), the **healthcare employer share (5%)** and its half of the pension (4%) — **15.7% of gross**. A payroll run built on 10.7% under-remits by five points of payroll percent  _([CNSS, Déclaration et versement des cotisations](https://cnss.dj/declaration-et-versement-des-cotisations/))_
-- **⚠ Combined employer + employee — 21.7%, not 14.7%** — The row gave **14.7%**; the CNSS gives **21.7%**, a gap of **seven percentage points**, and the whole gap is the healthcare regime percent  _([CNSS, Déclaration et versement des cotisations](https://cnss.dj/declaration-et-versement-des-cotisations/))_
-- **Employer pension contribution — 4% confirmed** — *"Les cotisations du régime de retraite sont à la charge conjointe de l'employeur (4%) et du salarié (4%)"* percent  _([CNSS, Déclaration et versement des cotisations](https://cnss.dj/declaration-et-versement-des-cotisations/))_
-- **Employer family allowances contribution — 5.5% confirmed**, and borne by the employer alone percent  _([CNSS, Déclaration et versement des cotisations](https://cnss.dj/declaration-et-versement-des-cotisations/))_
-- **Employer work injury contribution — 1.2%, corroborated by arithmetic rather than stated** — The CNSS gives *soins et accident de travail* as a **combined 8.2%** and separately splits the **soins** element **5% employer / 2% salarié**. **8.2 − 5 − 2 = 1.2**, which matches this guide's work-injury figure exactly. **The 1.2% is therefore a residual, not a quoted rate** — the page never states it on its own. Treat it as corroborated, not as published percent  _([CNSS, Déclaration et versement des cotisations](https://cnss.dj/declaration-et-versement-des-cotisations/))_
-- **⚠ NEW — Employer healthcare (*régime de soins*) contribution — 5%** — Absent from this pack entirely. *"Pour l[e] régime des soins, les cotisations sont respectivement **5% pour l'employeur** et de **2% pour le salarié**"* percent  _([CNSS, Déclaration et versement des cotisations](https://cnss.dj/declaration-et-versement-des-cotisations/))_
-- **⚠ Employee CNSS contribution — 6%, not 4%** — The employee pays **4% pension *and* 2% healthcare**. A net-pay calculation deducting only 4% overstates take-home by two points of gross percent  _([CNSS, Déclaration et versement des cotisations](https://cnss.dj/declaration-et-versement-des-cotisations/))_
-- **⚠ The CNSS page contradicts itself on who bears the healthcare contribution** — One sentence says *"Les cotisations des prestations familiales, accident de travail **et soins** sont à la charge **exclusive de l'employeur**"*; the next but one splits *soins* **5% / 2%** between employer and employee. **The specific split is taken as operative here**, because it is the more particular statement and because it reconciles the arithmetic — 5 + 2 + 1.2 = 8.2, and 5.5 + 8.2 + 8 = 21.7. If instead the employer bore all 8.2%, the employer total would be 17.7% and the employee 4%. **A reviewer should settle this**; it moves 2% of payroll between the parties  _([CNSS, Déclaration et versement des cotisations](https://cnss.dj/declaration-et-versement-des-cotisations/))_
-- **⚠ There is a contribution FLOOR, and this guide asked about a ceiling** — The row here previously said *"a wage **ceiling** applies to pension contributions, adjusted annually (approx — confirm current ceiling amount)"*. The CNSS's contributions page describes the opposite mechanism: *"Le **plancher** des salaires à prendre en compte pour le calcul des cotisations est fixé à **15.850 FD** pour les employeurs de gens de maison et **20 000 FD** pour les employeurs professionnels."* A **floor** raises the base for the low-paid; a **ceiling** caps it for the high-paid. **No ceiling appears anywhere on that page** — which is not proof none exists elsewhere, but the guide's ceiling row has no support from the authority's own statement of the contribution base. Compare Vanuatu's VT 3,000 VNPF floor, the same mechanism in a different jurisdiction  _([CNSS, Assiette des cotisations](https://cnss.dj/declaration-et-versement-des-cotisations/))_
-- **Contribution base** — Employer contributions are assessed on **all direct and indirect remuneration**: salaries and earnings, paid-leave allowances, indemnities, bonuses, gratuities and all other cash benefits, and **the cash equivalent of benefits in kind** provided for by regulation, collective agreement or individual contract  _([CNSS, Assiette des cotisations](https://cnss.dj/declaration-et-versement-des-cotisations/))_
+The CNSS schedule publishes a nominal combined rate of 21.7%. Arrêté n°2015-605,
+article 1, leaves pensions uncapped and caps the monthly base for the other regimes
+at FDJ 400,000. Apply each rate to its own base.
+[CNSS contribution schedule](https://cnss.dj/declaration-et-versement-des-cotisations/),
+[Arrêté n°2015-605, art. 1](https://cnss.dj/storage/2016/10/ARR_N_2015_605_PR_MTRA.pdf).
+
+| Regime | Employer | Employee | Monthly earnings base |
+|---|---:|---:|---|
+| Pension | 4% | 4% | Uncapped |
+| Family allowances | 5.5% | Nil | Capped at FDJ 400,000 |
+| Work injury | 1.2% | Nil | Capped at FDJ 400,000 |
+| Healthcare | 5% | 2% | Capped at FDJ 400,000 |
+
+The 1.2% work-injury rate is inferred from the schedule's combined 8.2% for
+healthcare and work injury, less 7% healthcare. The schedule does not quote 1.2%
+separately. The pension and family rates are stated directly.
+[CNSS contribution schedule](https://cnss.dj/declaration-et-versement-des-cotisations/).
+
+Article 16 of Loi n°24/AN/14/7ème L sets healthcare at 5% employer and 2% employee.
+This resolves the schedule's contradictory general sentence assigning healthcare
+entirely to the employer. Loi n°109/AN/2015/7ème L amends articles 17 and 37 of the
+AMU law; it does not amend the employee/employer split in article 16.
+[AMU law, art. 16](https://cnss.dj/storage/2016/10/Loi_n24AN147eme_L_Portant_creation_de_lamu.pdf),
+[2015 amendment, arts. 1–2](https://cnss.dj/storage/2016/10/LOI_N_109_AN_2015_7_EME_LOI.pdf).
+
+For monthly contributory remuneration R, after applying the relevant minimum base:
+
+- Employer contribution = 4% × R + 11.7% × min(R, FDJ 400,000).
+- Employee contribution = 4% × R + 2% × min(R, FDJ 400,000).
+
+Thus 15.7% employer, 6% employee and 21.7% combined apply while R does not exceed
+the ceiling. Applying those totals to all higher remuneration overstates the
+contribution. The previous correction had restored the missing healthcare charge
+but omitted this ceiling.
+[CNSS schedule](https://cnss.dj/declaration-et-versement-des-cotisations/),
+[Arrêté n°2015-605, art. 1](https://cnss.dj/storage/2016/10/ARR_N_2015_605_PR_MTRA.pdf).
+
+- **Minimum base**: CNSS publishes FDJ 15,850 for domestic workers and FDJ 20,000
+  for professional employers. These floors coexist with the ceiling for non-pension
+  regimes. [CNSS, Assiette des cotisations](https://cnss.dj/declaration-et-versement-des-cotisations/).
+- **Remuneration base**: CNSS includes direct and indirect remuneration, paid-leave
+  allowances, indemnities, bonuses, gratuities and the cash value of benefits in
+  kind. Use the contribution valuation rules for those benefits, which need not
+  equal the ITS valuations below. [CNSS, Assiette des cotisations](https://cnss.dj/declaration-et-versement-des-cotisations/),
+  [Arrêté n°2015-605, art. 2](https://cnss.dj/storage/2016/10/ARR_N_2015_605_PR_MTRA.pdf).
+
 - **Payroll income tax withholding (PAYE-equivalent)** — Employer withholds ITS from each employee's monthly salary. The Code establishes ITS **monthly**, on remuneration paid in the same month, collected by employer withholding (art. 9)  _([CGI 2011, art. 9](http://www.ministere-finances.dj/TVA/CGI%20%202010.pdf))_
 
 ### The ITS scale as the 2011 Code states it — five bands, not "2% to 30%"
@@ -79,8 +105,8 @@ Employers and employees contribute to the CNSS, which covers pensions, work inju
 - **⚠ Employees are jointly and severally liable with the employer** — Withholding is under the employer's responsibility, and **any withholding made, even irregularly, is owed to the Treasury**. But employees are **jointly and severally liable with their employer** for ITS, up to the tax corresponding to their own salaries. That is the opposite of Burundi's rule, where the employer alone bears unwithheld tax, and it is the kind of difference a reader will assume away  _([CGI 2011, art. 286](http://www.ministere-finances.dj/TVA/CGI%20%202010.pdf))_
 - **Each payment carries a declaration, and records are kept ten years** — Article 289: every payment is accompanied by a declaration serving as a payment slip, in duplicate, dated and signed by the payer. Employers must record the date, nature and amount of payments and the withholdings made, and **keep those records until the end of the tenth year** following the year of withholding; payslips must show the tax withheld  _([CGI 2011, arts. 286 and 289](http://www.ministere-finances.dj/TVA/CGI%20%202010.pdf))_
 - **Cessation and death accelerate the payment** — Article 288: on transfer or cessation of the business the tax must be paid **immediately, whatever the amount**; on the employer's death, heirs, successors or liquidators must pay **within the first fifteen days of the month following the death**  _([CGI 2011, art. 288](http://www.ministere-finances.dj/TVA/CGI%20%202010.pdf))_
-- **Monthly remittance deadline (CNSS)** — 15th day of the following month. **The ITS half of this row is now sourced to article 287 above; the CNSS half is not**  _(CNSS regulations (as described at [rivermate.com](https://rivermate.com/guides/djibouti/taxes)))_
-- **Filing requirement** — Employers file monthly ITS and CNSS declarations  _(CNSS regulations; Code General des Impots (Djibouti) (as described at [rivermate.com](https://rivermate.com/guides/djibouti/taxes)))_
+- **Monthly CNSS payment**: CNSS instructs employers to pay within the first ten days of the following month. It cites article 134 of Arrêté n°69-1883, as amended by article 3 of Arrêté n°89-1264. This differs from the ITS deadline above. The underlying 1989 text and any employer-specific quarterly cycle have not been checked here. [CNSS, Espace employeur](https://cnss.dj/espace-employeur/).
+- **CNSS declaration**: the employer submits its declaration when each period expires, even if it cannot pay the contributions. The CNSS guidance cites article 135 for this obligation. [CNSS, Espace employeur](https://cnss.dj/espace-employeur/).
 
 <!-- openaccountants-cta-block -->
 

@@ -12,7 +12,7 @@ metadata:
   obligation: IPBOX
 ---
 
-# IP / Patent Box Regimes Matrix v0.1
+# IP / Patent Box Regimes Matrix v0.2
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
@@ -102,7 +102,7 @@ Product-family tracking is allowed where IP-by-IP is "exceptionally difficult". 
 | Country | Statutory rate | Effective IP rate | Mechanism | Scope |
 |---|---|---|---|---|
 | **Cyprus** | 12.5% CIT | ~2.5% | 80% deduction of qualifying profits | Patents, copyrighted software, other-IP-equivalent-to-patent. Strict nexus tracking. |
-| **Ireland — KDB** | 12.5% CIT | 6.25% | 50% deduction (income halved) | Patents, copyrighted software. The IDA's Knowledge Development Box certified for use in family-by-family tracking. |
+| **Ireland: KDB** | 12.5% CIT | 10% from 1 October 2023 | 20% deduction of qualifying profits | Patents, copyrighted software and other qualifying assets, subject to nexus and eligibility rules. Accounting periods must commence before 1 January 2027. See [Revenue KDB guidance](https://www.revenue.ie/en/companies-and-charities/reliefs-and-exemptions/knowledge-development-box-kdb/index.aspx). |
 | **United Kingdom — Patent Box** | 25% CIT | 10% | Reduced rate of 10% on qualifying patent profits | Patents granted by UKIPO, EPO, EEA states. Strict MNA tracking. Streaming or formulary apportionment for income identification. |
 | **Netherlands — Innovation Box** | 25.8% CIT (2025) | 9% | Reduced rate of 9% (was 7% pre-2021) | Patents, plant breeder rights, copyrighted software, R&D-WBSO certificates. |
 | **Luxembourg — IP Regime (Article 50ter)** | 17% CIT + municipal | ~5.2% (Luxembourg City) | 80% exemption of qualifying net income (i.e., 20% taxed) | Patents, utility models, supplementary protection certificates, copyrighted software. |

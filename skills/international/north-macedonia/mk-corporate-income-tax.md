@@ -1,9 +1,9 @@
 ---
 name: mk-corporate-income-tax
-description: "Source-cited draft: corporate income tax for North Macedonia, tax year 2025 — the 10% profit tax, ten withholding heads, loss relief and the simplified regime read from the Zakon za danokot na dobivka, plus the minimum global profit tax and its article 13(9) ordinance. Pending local-accountant review."
+description: "Use this draft for questions about North Macedonian corporate profit tax, withholding, loss relief, the simplified regime and minimum global profit tax for tax year 2025. It cites the Public Revenue Office's Profit Tax Law, minimum-tax Act and corrected article 13(9) rulebook. The published domestic and other top-up returns have been examined field by field, including their formulas and instructions. The domestic form contains an unresolved additional-tax inconsistency, so its printed arithmetic must not be treated as a complete filing algorithm. Pending local-accountant review."
 jurisdiction: MK
 tax_year: 2025
-last_updated: 2026-09-11
+last_updated: 2026-09-12
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -73,8 +73,8 @@ by the Public Revenue Office itself, and everything below is read from that text
   immediately preceding** the tested fiscal year, **including** the revenue of excluded
   entities under article 5(3). Where any of those years is longer or shorter than
   twelve months, the threshold is adjusted proportionally  _(art. 5(1)–(2))_
-- **Minimum tax rate** — Article 1(15) defines *„Минимална даночна стапка"* as a rate of
-  **петнаесет проценти (15 %)** — fifteen per cent, given in words and digits together  _(art. 1(15))_
+- **Minimum tax rate**: Article 4(15) defines *„Минимална даночна стапка"* as a rate of
+  **петнаесет проценти (15 %)**, fifteen per cent, given in words and digits together  _(art. 4(15))_
 - **All three charges are present** — the Act works with a *квалификуван домашен
   дополнителен данок* (qualified domestic top-up tax), the *правило за вклучување на
   добивката* (income inclusion rule) and the *правило за помалку оданочена добивка*
@@ -103,11 +103,13 @@ by the Public Revenue Office itself, and everything below is read from that text
   **one is designated** to file and makes a combined computation covering all of them
   (art. 3). The designation is notified to the Public Revenue Office electronically
   (art. 7)  _([Правилник, arts. 3 and 7](https://ujp.gov.mk/mk/regulativa/opis/441))_
-- **The computation is delegated to the OECD model rules by reference** — Article 2: the
-  top-up tax is calculated **on the basis of the adopted OECD models and rules** relating
-  to article 5(5) of the Act. The mechanics are therefore not in Macedonian law at all;
-  a reader who reads the Act and the ordinance end to end still has to go to the OECD
-  texts to compute anything  _([Правилник, art. 2](https://ujp.gov.mk/mk/regulativa/opis/441))_
+- **Computation uses the Act and the OECD references**: Rulebook article 2 refers to
+  adopted OECD models and rules. The Act also contains computation rules: article 29
+  gives the top-up percentage, excess-profit and jurisdictional-tax formulas. Its
+  positive-amount conditions must be applied when using the short formulas printed
+  on the returns. The earlier assertion that no mechanics appear in Macedonian law
+  was wrong. [Rulebook article 2](https://ujp.gov.mk/mk/regulativa/opis/441);
+  [Act article 29](https://ujp.gov.mk/mk/regulativa/opis/437).
 - **Two computational rules worth having exactly, and they apply to *both* returns** —
   Effective tax rate and top-up percentages are **rounded to four decimal places**. Amounts
   computed in foreign currency are converted to denars at the **middle rate published by the
@@ -151,8 +153,44 @@ by the Public Revenue Office itself, and everything below is read from that text
 > above is the operative one. It matters only to someone reconciling against a copy taken
 > between 31 December 2025 and 5 January 2026.
 >
-> **Still not read:** the two annexed forms (Прилог 1 and Прилог 2) have not been examined
-> field by field.
+### Published return fields checked on 12 September 2026
+
+The three-page consolidated rulebook refers to Прилог 1 and Прилог 2 but does not
+include their pages. The Public Revenue Office separately publishes the corresponding
+[КДДД/П domestic return](https://www.ujp.gov.mk/files/attachment/0000/1611/KDDD-P.pdf)
+and [ДДД/П other top-up return](https://ujp.gov.mk/files/attachment/0000/1610/DDD-P.pdf).
+All three and two pages respectively, including their bilingual instructions, were
+read from extracted text and individual 200 dpi images. Both state that the forms
+apply from 1 January 2026. This is a review of those published forms, without a
+byte-for-byte comparison with the original gazette annexes.
+
+| Field | КДДД/П, jurisdiction calculation | ДДД/П |
+|---|---|---|
+| a | Qualified net income | Qualified net income |
+| b | Adjusted covered taxes | Adjusted covered taxes |
+| c | Effective rate, printed as `b/a` | Effective rate, printed as `b/a` |
+| d | Minimum rate, preprinted 15% | Minimum rate, preprinted 15% |
+| e | Top-up percentage, printed as `d-c` | Top-up percentage, printed as `d-c` |
+| f | Substance-based income exclusion | Substance-based income exclusion |
+| g | Domestic tax payable, printed as `(a-f)*e` | Excess profit, printed as `a-f` |
+| h | Additional top-up tax | Additional top-up tax |
+| i | No field | Domestic top-up tax paid at local jurisdiction level |
+| j | No field | Top-up tax payable, printed as `g*e+h-i` |
+
+КДДД/П also asks for the fiscal year, ultimate parent's name and tax ID, lead
+entity's name and tax ID, the names and tax IDs of entities 2 and 3, and decisions,
+exclusions and safe harbours with their validity periods. Page 2 repeats fields
+a–g for the lead entity and entities 2 and 3, each with responsible-person and
+telephone fields. The paper layout does not establish a three-entity group limit.
+ДДД/П asks for the fiscal year and the names and tax IDs of the ultimate and
+intermediate parents.
+
+**Unresolved form conflict:** КДДД/П page 1 prints `g=(a-f)*e` and separately lists
+additional top-up tax at h. Page 3 says to increase g by additional top-up tax, but
+both languages refer to that addition as field g. Page 2 has no h field. Confirm
+the required treatment with the Public Revenue Office before preparing a return
+with additional top-up tax; this guide does not silently repair the official form.
+The field-by-field evidence and statutory cross-references are in the methodology.
 
 ---
 

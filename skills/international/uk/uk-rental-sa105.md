@@ -1,12 +1,12 @@
 ---
 name: uk-rental-sa105
-description: Use this skill whenever asked about UK property income or rental income for individuals. Trigger on phrases like "SA105", "rental income UK", "property income", "buy-to-let", "letting income", "landlord tax UK", "rent-a-room", "mortgage interest relief", "Section 24", "property allowance", "non-resident landlord scheme", "NRLS", "furnished holiday let", "FHL abolished", "FHL abolition", "repairs deduction", "letting agent fees", "property expenses", "UK property pages", "April 2026 property tax", "property income hike", "MTD ITSA landlord", or any question about computing, filing, or reporting UK property income on a Self Assessment tax return. Covers SA105 form structure, allowable expenses, mortgage interest restriction, Rent-a-Room relief, property income allowance, non-resident landlord scheme, the abolition of FHL rules, and the April 2026 property income rate change announced at Autumn Budget 2025. ALWAYS read this skill before touching any UK rental income work.
-version: 1.1
+description: "Use this guide when preparing or reviewing UK property income for an individual, including SA105, rental expenses, residential finance costs, Rent-a-Room relief and the property allowance. It covers the non-resident landlord scheme, the abolition of furnished holiday letting treatment and the reliefs preserved by its transitional rules. Check the tax year before applying rates: the separate property rates and revised finance-cost reducer begin in 2027–28. Confirm the applicable return form and any MTD requirements, and obtain professional review of unresolved facts, elections or historical relief claims before filing."
+version: 1.2
 jurisdiction: GB
 tax_year: 2025
-last_updated: 2026-09-10
+last_updated: 2026-09-12
 reviewed_by: James Power
-review_status: current
+review_status: pending_review
 depends_on:
   - uk-income-tax-sa100
 category: international
@@ -14,11 +14,13 @@ tier: 1
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
+> This revision includes changes made after the recorded accountant review and awaits a new review.
+
 # UK Rental Sa105
 
-## UK Property Income (SA105) Skill v1.1
+## UK Property Income (SA105) Skill v1.2
 
-## Verified rates & thresholds (accountant-reviewed)
+## Rates and thresholds: review pending
 
 > Reviewed against the cited tax authorities by **James Power** on 2026-06-03.
 > Items flagged for further clarification are tracked separately and excluded here.
@@ -28,7 +30,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 - **Property income allowance** — £1,000  _(ITTOIA 2005)_
 - **Rent-a-Room threshold** — £7,500/year (£3,750 if joint)  _(ITTOIA ss.784-802)_
-- **Mortgage interest deductible as expense?** — NO — tax credit at 20% of finance costs  _(ITA 2007 ss.274A-274D)_
+- **Mortgage interest deductible as expense?** — NO — tax credit at 20% of finance costs  _(ITTOIA 2005 ss.274A-274C)_
 - **FHL status from 2025-26** — Abolished — treated as normal property income  _(Finance Act 2025)_
 
 ## Section 1 -- Quick Reference
@@ -42,7 +44,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Currency | GBP only |
 | Tax year | 6 April to 5 April (2025-26: 6 April 2025 -- 5 April 2026) |
 | Primary legislation | Income Tax (Trading and Other Income) Act 2005 (ITTOIA), Part 3 |
-| Supporting legislation | Income Tax Act 2007, ss. 274A-274D (mortgage interest restriction); ITTOIA ss. 784-802 (Rent-a-Room); Finance Act 2025 (FHL abolition); Finance (No. 2) Bill 2024-26 (April 2026 property income rate change — pending enactment) |
+| Supporting legislation | ITTOIA 2005, ss. 274A-274C (mortgage interest restriction); ITTOIA ss. 784-802 (Rent-a-Room); Finance Act 2025 (FHL abolition); Finance Act 2026 (property rates from April 2027) |
 | Tax authority | HM Revenue and Customs (HMRC) |
 | Filing portal | HMRC Self Assessment Online |
 | Filing deadline (online) | 31 January following the tax year |
@@ -65,7 +67,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Property income allowance | £1,000 | £1,000 (frozen since 2017-18) | £1,000 (frozen) |
 | Rent-a-Room threshold | £7,500 | £7,500 (frozen) | £7,500 (frozen) |
 | FHL regime | In force (last year) | **Abolished from 6 April 2025** (transitional rules) | Abolished (transitional rules continue) |
-| Section 24 mortgage interest restriction | Full restriction — 20% basic rate tax reducer | Same | Same. The reducer follows the **basic rate of income tax**, which the Budget did not change, so it stays at 20% even after the separate property rates begin in 2027-28 |
+| Section 24 mortgage interest restriction | Full restriction — 20% basic rate tax reducer | Same | 20% in 2026–27; the property basic rate of 22% applies from 2027–28 |
 | MTD ITSA for landlords | Not in scope | Not in scope | **Phase 1 from 6 April 2026 — gross income > £50,000** |
 | MTD ITSA Phase 2 | n/a | n/a | Phase 2 from April 2027 — gross income > £30,000 |
 
@@ -203,7 +205,7 @@ From 2020-21, finance costs for residential property are **fully restricted**:
 | --- | --- | --- |
 | Mortgage interest | NOT deductible as an expense | NOT deductible as an expense (unchanged) |
 | Arrangement fees (revenue portion) | NOT deductible as an expense | NOT deductible as an expense (unchanged) |
-| Tax credit | 20% of the lower of: (a) finance costs, (b) property profits, (c) adjusted total income | Unchanged at 20%. The reducer is set by reference to the **basic rate of income tax**, which the Budget did not alter — the 22% figure is a new *property* rate for 2027-28 and does not carry the reducer with it. Confirm against the Finance Act text before applying a different rate for 2027-28 |
+| Tax credit | 20% of the lower of eligible finance costs, property profits and adjusted total income | 20% in 2026–27; the property basic rate of 22% applies from 2027–28 |
 
 - **Restriction applies to** — Individual landlords (not companies); Residential property lettings only; Partnerships of individuals
 - **Restriction does NOT apply to** — Companies (corporate landlords can still deduct interest); Commercial property lettings; Previously Furnished Holiday Lets — but FHL regime is abolished from April 2025
@@ -227,25 +229,31 @@ From 2020-21, finance costs for residential property are **fully restricted**:
 | Cannot combine with | Property income allowance (choose one or the other) |
 | Does NOT apply to | Unfurnished rooms, separate self-contained flats, non-main-residence |
 
-## Section 4 -- Furnished Holiday Lets (FHL) -- Abolished from 6 April 2025
+## Section 4: Furnished holiday letting abolition and savings
 
-### Pre-April 2025 (2024-25 — Prior Year)
+Finance Act 2025 section 25 and Schedule 5 abolish FHL treatment from 6 April
+2025 for income tax and CGT, and from 1 April 2025 for corporation tax. Former
+FHL income enters the corresponding ordinary UK or overseas property business.
+New expenditure no longer qualifies for allowances solely through FHL status.
 
-- **FHL status requirements** — FHL status required meeting ALL of: Available for letting ≥210 days per year; Actually let ≥105 days per year; Not let to the same person for >31 consecutive days (total such lets <155 days)
+The transitional provisions preserve specific rights:
 
-FHL benefits included: full mortgage interest deduction, capital allowances on furniture, CGT reliefs (Entrepreneurs'/BADR, rollover), pension-relevant earnings.
+- Paragraphs 16–17 carry eligible unrelieved FHL losses into the corresponding
+  property business. They do not generally turn overseas losses into UK losses.
+- Paragraph 18 preserves qualifying capital-allowance pools and their subsequent
+  allowances or charges. Abolition alone does not trigger cessation of the activity.
+- Paragraph 19 preserves BADR treatment for specified later disposals relating
+  to pre-commencement businesses, including assets of a business that ceased
+  before 6 April 2025. Check the remaining TCGA conditions and disposal time limit.
+- Paragraph 14 addresses certain contracts made on or after 6 March 2024 but
+  completed after abolition. Review its anti-forestalling rule before relying on
+  the earlier contract date for CGT relief.
 
-### From 6 April 2025 (2025-26 — Current Year)
+These rules can affect later returns. Abolition does not itself create overlap
+relief; verify any historical entitlement separately. Ordinary property treatment
+does not establish eligibility for trading CGT reliefs or pension-relevant earnings.
 
-- **FHL regime abolished** — The FHL regime is **abolished** by Finance Act 2025: All former FHLs are treated as standard residential property; Mortgage interest restriction (Section 24) applies; No capital allowances on furniture (replacement of domestic items relief instead); CGT: no BADR, no rollover relief (standard residential CGT rates apply); Not pension-relevant earnings  _(Finance Act 2025)_
-
-**Transitional provisions (2025-26):** Overlap relief and brought-forward FHL losses remain available in 2025-26.
-
-### From 6 April 2026 (2026-27 — Future Year)
-
-- **FHL transitional rules continuing effects** — FHL transitional rules continue to affect 2026-27 returns where: Brought-forward FHL losses pre-6-April-2025 are still being utilised against UK property business profits; Capital allowances pools established under the FHL regime continue to run off; CGT computations on disposal of former FHL properties still reference pre-abolition base costs
-
-Confirm any residual FHL transitional position with the taxpayer's prior accountant or prior-year computations before finalising 2026-27 figures.
+Source: [Finance Act 2025, Schedule 5](https://www.legislation.gov.uk/ukpga/2025/8/pdfs/ukpga_20250008_en.pdf).
 
 ## Section 5 -- Non-Resident Landlord Scheme (NRLS)
 
@@ -281,7 +289,7 @@ Confirm any residual FHL transitional position with the taxpayer's prior account
 
 | Pattern | SA105 Box | Notes |
 | --- | --- | --- |
-| MORTGAGE, NATIONWIDE, BARCLAYS MORTGAGE | Box 26 (finance costs) | Subject to Section 24 restriction — 20% credit only; the reducer follows the basic rate of income tax and is unchanged for 2026-27 and 2027-28 |
+| MORTGAGE, NATIONWIDE, BARCLAYS MORTGAGE | Box 26 (finance costs) | Residential finance-cost restriction: 20% reducer through 2026–27, then the 22% property basic rate from 2027–28 |
 | BUILDINGS INSURANCE, LANDLORD INSURANCE | Box 24 | Fully deductible |
 | LETTING AGENT FEE, MANAGEMENT FEE | Box 27 | Fully deductible |
 | PLUMBER, ELECTRICIAN, BUILDER [repair] | Box 25 | Deductible if repair; capital if improvement |
@@ -340,30 +348,20 @@ Net tax on property income: £1,140
 
 If the property was previously an FHL (pre-6-April-2025), confirm any brought-forward FHL loss in Box 39 and that capital allowances pools have been correctly transitioned.
 
-### Example 3 -- Same Buy-to-Let, 2026-27 and 2027-28 compared
+### Example 3: Same buy-to-let, 2026–27 and 2027–28
 
-**Input:** As Example 1. Basic rate taxpayer.
+Assume property profit of GBP 9,700, eligible finance costs of GBP 4,000, sufficient
+income to use the reducer, and that the whole profit falls in the basic-rate band
+after allowances. Keep other income and allowances fixed for this comparison.
 
-**2026-27 — unchanged from 2025-26:**
-```
-Property profit: £9,700
-Tax at 20%: £9,700 × 20% = £1,940
-Finance cost tax credit: £4,000 × 20% = £800
-Net tax on property income: £1,940 − £800 = £1,140
-```
+| Computation | 2026–27 | 2027–28 |
+| --- | --- | --- |
+| Tax on GBP 9,700 profit | 20% = GBP 1,940 | 22% = GBP 2,134 |
+| Reducer on GBP 4,000 finance costs | 20% = GBP 800 | 22% = GBP 880 |
+| Net tax attributable to this income | GBP 1,140 | GBP 1,254 |
 
-**2027-28 — the new property rates begin:**
-```
-Property profit: £9,700
-Tax at 22% (property basic rate from April 2027): £9,700 × 22% = £2,134
-Finance cost tax credit: £4,000 × 20% = £800
-  (the reducer follows the basic rate of income tax, which is unchanged — not the new property rate)
-Net tax on property income: £2,134 − £800 = £1,334
-```
-
-**Additional tax in 2027-28 versus 2026-27: £1,334 − £1,140 = £194.**
-
-Note where the increase comes from. Two percentage points on the profit is £194, and none of it is offset, because the Section 24 reducer does not rise with the property rate. Modelling the credit at 22% would understate the increase by £80 and is the easy mistake here.
+The increase is GBP 114. Source: [Finance Act 2026,
+sections 6(8), 7 and Schedule 1 paragraph 40](https://www.legislation.gov.uk/ukpga/2026/11/pdfs/ukpga_20260011_en.pdf).
 
 ### Example 4 -- Rent-a-Room (Under Threshold)
 
@@ -466,9 +464,10 @@ This section consolidates upcoming changes affecting UK property income that pra
 
 Fiscal drag will continue to pull more landlords into higher and additional rate bands in 2026-27.
 
-### 10.3 FHL Abolition — Continuing Transitional Impact
+### 10.3 FHL transitional claims
 
-- **FHL abolition continuing impact** — FHL regime was abolished from 6 April 2025 by Finance Act 2025. The abolition continues to affect 2025-26 and 2026-27 returns through: Brought-forward FHL losses absorbed into the UK property business; Capital allowances pools running off (writing-down allowances continue on existing pools); CGT consequences on disposal of former FHL properties — no BADR, no rollover from 2025-26 disposals onwards; No new claims for FHL pension-relevant earnings
+Review the preserved losses, capital-allowance pools and qualifying BADR disposals
+in Section 4. Record the business cessation date and relevant prior computations.
 
 ### 10.4 Making Tax Digital for Income Tax Self Assessment (MTD ITSA)
 
@@ -480,13 +479,15 @@ Fiscal drag will continue to pull more landlords into higher and additional rate
 - Discuss MTD-compatible software selection (HMRC publishes a list of approved providers)
 - Plan quarterly update cadence and record-keeping changes (digital records required)
 
-### 10.5 Section 24 Finance Cost Restriction — Continues
+### 10.5 Residential finance costs
 
-- **Section 24 continuation** — Section 24 mortgage interest restriction remains fully in force, and the 20% basic rate tax reducer continues unchanged in both 2026-27 and 2027-28. The reducer is set by reference to the **basic rate of income tax**, which the Autumn Budget 2025 did not alter; the 22% figure is a new *property* rate and does not carry the reducer up with it. That asymmetry is the whole cost of the 2027-28 change to a geared landlord — the rate on the profit rises and the relief on the interest does not.
+The tax reducer remains 20% for 2025–26 and 2026–27. From 2027–28 it uses the
+property basic rate, 22%. The qualifying-cost and income limits still apply.
+Source: [Finance Act 2026 sections 6(8) and 7, Schedule 1 paragraph 40](https://www.legislation.gov.uk/ukpga/2026/11/pdfs/ukpga_20260011_en.pdf).
 
 ## PROHIBITIONS
 
-- **Prohibition list** — NEVER deduct mortgage interest as an expense for residential property — it is a basic rate tax credit only (Section 24); NEVER allow the initial purchase cost of domestic items — only replacements qualify under Box 36; NEVER combine Rent-a-Room relief with the property income allowance; NEVER allow improvement costs as revenue deductions — these are capital; NEVER ignore the non-resident landlord scheme for overseas landlords; NEVER pool UK and overseas property into one computation — they are separate property businesses; NEVER apply FHL rules for 2025-26 onwards — the regime is abolished; NEVER present 2026-27 property income tax figures as final until Finance (No. 2) Bill 2024-26 receives Royal Assent — always label as TBC; NEVER assume the Section 24 tax reducer rate for 2026-27 is 20% without checking the enacted rate; NEVER present property income computations as definitive — always label as estimated
+- **Prohibition list** — NEVER deduct mortgage interest as an expense for residential property — it is a basic rate tax credit only (Section 24); NEVER allow the initial purchase cost of domestic items — only replacements qualify under Box 36; NEVER combine Rent-a-Room relief with the property income allowance; NEVER allow improvement costs as revenue deductions — these are capital; NEVER ignore the non-resident landlord scheme for overseas landlords; NEVER pool UK and overseas property into one computation — they are separate property businesses; Apply ordinary property rules after FHL abolition while checking the preserved transitional rights; Use Finance Act 2026 as enacted and distinguish the 2026–27 and 2027–28 commencement dates; Use the 20% residential finance-cost reducer in 2026–27 and 22% from 2027–28; NEVER present property income computations as definitive — always label as estimated
 
 ## Disclaimer
 

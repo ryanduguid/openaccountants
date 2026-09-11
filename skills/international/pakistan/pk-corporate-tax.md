@@ -3,7 +3,7 @@ name: pk-corporate-tax
 description: "ALWAYS read this skill before touching any Pakistan corporate income tax (CIT) work. Use this skill whenever asked about Pakistan corporate tax for a resident Pakistani company. Trigger on phrases like \"Pakistan CIT\", \"Pakistan company tax\", \"Pvt Ltd Pakistan\", \"super tax Pakistan\", \"small company Pakistan tax\", \"PSEB IT export\", \"Finance Act 2025 corporate\", \"Section 4C super tax\", \"Section 113 minimum tax\", \"Section 113C ACT\", \"Section 147 advance tax\", \"IRIS return Pakistan\", \"group taxation Pakistan\", \"Section 59AA\", \"Section 59B\". Covers the 29% standard CIT rate under the Income Tax Ordinance 2001 (ITO 2001) as amended by Finance Act 2024 and Finance Act 2025, the 39% banking-company rate, the 20% small-company rate (turnover ≤ Rs 250M plus the other Section 2(59A) conditions), Section 4C super tax progressive bands (1%–10%) on income above Rs 150M, Section 113 minimum tax on turnover at 1.25%, Section 113C Alternative Corporate Tax (higher of normal tax or 17% of accounting income), the PSEB-registered IT/ITeS exports concessional regime (1% final tax — flag any FA 2025 changes as TBC), Section 59AA group relief and Section 59B group taxation, Section 147 quarterly advance tax computation and payment, and annual return filing via IRIS by 31 December. Out of scope: AOPs and individuals (separate regime), permanent establishments / branches of non-residents, oil and gas exploration and production, insurance company life/non-life special regimes, modarabas, NPOs and trusts, the special economic zone (SEZ) regimes, mutual funds, REITs, and any sales tax / FED matter (see pakistan-sales-tax)."
 jurisdiction: PK
 tax_year: 2025
-last_updated: 2026-09-10
+last_updated: 2026-09-12
 reviewed_by: Ibrar Ali
 review_status: pending_review
 tier: 2
@@ -423,7 +423,7 @@ Plus applicable super tax under Section 4C (banking-sector specific bands may ap
 - **Self-assessment** under Section 120 — return as filed becomes the assessment unless selected for audit.
 - **Audit selection** under Section 177 / 214C — Commissioner may select; risk-based or parametric.
 - **Amendment of assessment** under Section 122 — up to **5 years** from end of the financial year in which the original assessment was made (extendable in cases of concealment).
-- **Appeals** — Commissioner (Appeals) → Appellate Tribunal Inland Revenue (ATIR) → High Court reference → Supreme Court appeal.
+- **Appeals**: Finance Act 2025 section 10(22) omits ITO section 126A's monetary-threshold route. Sections 10(23) and 10(25) amend sections 127 and 131 so an eligible taxpayer can surrender the Commissioner (Appeals) stage and appeal directly to ATIR. State-owned enterprises have separate restrictions. Section 10(26) changes the High Court reference period to sixty days and removes mixed questions of law and fact. Obtain specialist advice on the applicable order, route and time limit. Source: [Finance Act 2025](https://download1.fbr.gov.pk/Docs/2025629106147620FInanceAct2025.pdf) (PDF pages 68–69).
 
 ### 6.6 Common Penalty Headings (Section 182 and others)
 

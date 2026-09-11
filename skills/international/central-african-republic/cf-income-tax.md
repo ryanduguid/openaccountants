@@ -1,9 +1,9 @@
 ---
 name: cf-income-tax
-description: "Source-cited draft: personal income tax (IRPP) for Central African Republic, tax year 2025 — the five bands, the 30% professional abatement they apply after, benefits-in-kind valuation, capital gains and the 30 April deadline, read from the Code Général des Impôts published by the Ministry of Finance. Pending local-accountant review."
+description: "Use this draft for questions about Central African Republic personal income tax, salary deductions, benefits in kind, capital gains and annual declarations for tax year 2025. It explains the five employee bands, the 30% professional-expenses allowance, the net-income base and the 30 April annual return deadline in the Ministry of Finance's 2023 Code. Selected provisions of the 2024, 2025 and 2026 Finance Acts and the 2024 and 2025 amending Acts have been checked. Residence, small-business regimes and a full procedural review remain open. Pending local-accountant review."
 jurisdiction: CF
 tax_year: 2025
-last_updated: 2026-09-11
+last_updated: 2026-09-12
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -53,13 +53,33 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **A separate foreign-asset declaration is due on the same date** — Article 88 (L.F. 2018): anyone domiciled or habitually resident in the Central African Republic who keeps movable property **outside** the country must file, within the article 87 deadline, a detailed return stating the nature and value of that property and the income from it  _([CGI art. 88](https://finances.gouv.cf/sites/default/files/2023-05/CGI%20RCA%202017%20mise%20%C3%A0%20jour%202023.pdf))_
 - **Individual residence test** — Generally tax-resident if domiciled or with principal place of abode/economic interests in CAR (French-code criteria) ((approx — confirm)). **Still unverified:** the Code's own liability article was not read, so this row remains as it stood  _(Code Général des Impôts (CAR))_
 
-> **What was not read.** Article 3 and the *personnes imposables* sub-section; the
-> *impôt global unique* regime for small traders; the simplified and normal real-profit
-> regimes (arts. 60–61, thresholds XAF 30m and XAF 100m); and **any loi de finances after
-> the 2023 update**. The Ministry publishes finance acts from 2000 to 2024 plus a
-> *Collectif 2024* on its [Lois de Finances page](https://finances.gouv.cf/finances/les-lois-de-finances-ldf);
-> **none of them has been checked against the figures above**, so a band or deadline
-> amended after the 2023 consolidation would not show up here.
+### Finance Act follow-up, 12 September 2026
+
+Selected operative provisions of the Ministry's 2024, 2025 and 2026 Finance Acts,
+and the 2024 and 2025 amending Acts, have now been checked. No amendment to the
+employee scale, professional allowance or article 87 annual deadline was identified
+in those provisions. The page-by-page coverage and remaining limits are recorded
+in `docs/ACCURACY-METHODOLOGY.md`. This does not establish that every subsequent
+instrument or every page of the Acts has been reviewed.
+
+The 2024 Act, article 11, creates a *Livre des Procédures Fiscales*. Its article 53
+requires declarations within the deadlines set by the tax laws. Article 54 permits
+an exceptional filing extension on a written request made at least seven days
+before the deadline: the administration has three days to respond, silence counts
+as acceptance, and only one extension of up to 30 days may be granted. An extension
+does not stop late-payment interest. These provisions do not replace the ordinary
+30 April date above. [Finance Act 2024, PDF pages 35 and 46–47](https://www.finances.gouv.cf/sites/default/files/2024-03/Loi%20de%20Finances%202024.pdf).
+
+The 2024 Act's article 43, headed *Des abattements sur salaires*, concerns a
+reduction of remuneration charged to the State budget. It does not establish a
+general IRPP dependant allowance or replace the professional-expenses deduction.
+The later Acts retain earlier Finance Act provisions unless expressly repealed.
+[Ministry Finance Act register](https://finances.gouv.cf/finances/les-lois-de-finances-ldf).
+
+> **Still unverified:** article 3 and the *personnes imposables* sub-section; the
+> *impôt global unique* regime; the simplified and normal real-profit regimes
+> in articles 60–61; and a complete review of the new procedures code, implementing
+> instruments and amendments outside the provisions recorded in the methodology.
 
 Individuals are subject to the Impôt sur le Revenu des Personnes Physiques (IRPP) on a progressive scale applied to net global income.
 

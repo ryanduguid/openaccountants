@@ -1,9 +1,9 @@
 ---
 name: ao-income-tax
-description: "Source-cited draft: personal income tax (IRT) for Angola, tax year 2025 — the twelve escalões, the AOA 100,000 exemption and the Group C rates, read from Anexo I and article 20 of Lei n.º 18/24 in the Diário da República. Pending local-accountant review."
+description: "Source-cited draft for Angola personal income tax in tax year 2025. Covers the twelve monthly Group A bands, the AOA 100,000 exemption and the Group C rules in Lei n.º 18/24. Explains the Group B withholding rate and the suspension of the Group C four-times-invoicing test, with article references to the IRT Code and its 2020 amendment. The original article 9(2) is available here through a legal transcription whose gazette scan was inaccessible. Later tax years and remaining residence and filing claims need separate verification. Pending local-accountant review."
 jurisdiction: AO
 tax_year: 2025
-last_updated: 2026-09-11
+last_updated: 2026-09-12
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -11,7 +11,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Angola Personal Income Tax
 
-## Personal income tax (IRT) bands and rates
+## Group A employment income: monthly IRT bands and rates
 
 > **The twelve bands below are verified against Angola's official gazette.** Every
 > figure in this section was previously sourced only to a commercial tax summary. The
@@ -43,8 +43,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 > characters across eighteen pages, eighteen images on the first page. Every figure above
 > was read from pages rendered at 170–200 dpi.*
 
-- **IRT general charge** — Personal income tax (Imposto sobre os Rendimentos do Trabalho, IRT) runs on twelve progressive escalões. The first escalão bears no rate and the twelfth bears 25%. The **first AOA 100,000 is exempt** — article 20(3) of Lei n.º 18/24 states the limit in figures and words together, *Kz: 100.000,00 (cem mil Kwanzas)* — and the second escalão then charges **13% on the excess, with a nil parcela fixa**. Income in the AOA 100,000–150,000 slice is **not** shielded; it is taxed at 13% on the part above the exemption  _([Lei n.º 18/24, art. 20(3) and Anexo I — DR I Série N.º 247](https://www.ucm.minfin.gov.ao/cs/groups/public/documents/document/aw41/mdm1/~edisp/minfin5035043.pdf))_
-- **The annex does not state the period; the "monthly" basis below is not gazette-sourced** — Anexo I heads its bands only *"GRUPOS DE RENDIMENTO"*. That IRT is assessed and withheld monthly comes from the commercial summary this guide previously relied on, and from the magnitudes involved, not from the annex. Confirm against the IRT Code before relying on the period  _(Codigo do Imposto sobre os Rendimentos do Trabalho (IRT) - https://taxsummaries.pwc.com/angola/individual/taxes-on-personal-income)_
+- **Group A employment income**: the monthly scale has twelve progressive escalões, ending at 25%. The first AOA 100,000 is exempt; the next slice bears 13% with no fixed amount. Article 10(1) of the IRT Code applies the article 16(1) table to monthly Group A income after the article 7(2) deductions. [Lei n.º 28/20, arts. 10(1) and 16](https://www.bancoeconomico.ao/media/3172/lei28-20-22dejulhoalteracoescirt.pdf), [Lei n.º 18/24, art. 20(3) and Anexo I](https://www.ucm.minfin.gov.ao/cs/groups/public/documents/document/aw41/mdm1/~edisp/minfin5035043.pdf).
+- **Monthly basis**: the annex alone does not name the period. Article 10(1) of the IRT Code expressly requires the payer to calculate Group A tax monthly. The earlier warning that this period lacked statutory support is withdrawn. [Lei n.º 28/20, art. 10(1)](https://www.bancoeconomico.ao/media/3172/lei28-20-22dejulhoalteracoescirt.pdf).
 - **Tax-exempt income** — Up to AOA 100,000 is exempt (1.º Escalão, *Até 100 000*, no rate) AOA  _([Lei n.º 18/24, art. 20(3) and Anexo I](https://www.ucm.minfin.gov.ao/cs/groups/public/documents/document/aw41/mdm1/~edisp/minfin5035043.pdf))_
 - **IRT band AOA 100,001 to 150,000** — parcela fixa nil + 13% on the excess over 100,001 percent  _([Lei n.º 18/24, Anexo I, 2.º Escalão](https://www.ucm.minfin.gov.ao/cs/groups/public/documents/document/aw41/mdm1/~edisp/minfin5035043.pdf))_
 - **IRT band AOA 150,001 to 200,000** — AOA 12,500 + 16% on the excess over 150,001  _([Lei n.º 18/24, Anexo I, 3.º Escalão](https://www.ucm.minfin.gov.ao/cs/groups/public/documents/document/aw41/mdm1/~edisp/minfin5035043.pdf))_
@@ -58,7 +58,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **IRT band AOA 5,000,001 to 10,000,000** — AOA 1,117,249 + 24.5% on the excess over 5,000,001  _([Lei n.º 18/24, Anexo I, 11.º Escalão](https://www.ucm.minfin.gov.ao/cs/groups/public/documents/document/aw41/mdm1/~edisp/minfin5035043.pdf))_
 - **IRT band above AOA 10,000,000** — AOA 2,342,248 + 25% on the excess over 10,000,001 (12.º Escalão, *Acima 10 000 001*)  _([Lei n.º 18/24, Anexo I, 12.º Escalão](https://www.ucm.minfin.gov.ao/cs/groups/public/documents/document/aw41/mdm1/~edisp/minfin5035043.pdf))_
 - **Individual residence basis** — IRT applies to income from work performed in Angola; residents and non-residents are taxed on Angola-source employment income (approx — confirm)  _(Codigo do Imposto sobre os Rendimentos do Trabalho (IRT) - https://taxsummaries.pwc.com/angola/individual/taxes-on-personal-income)_
-- **Self-employment / independent services (Group B)** — Taxed under IRT Group B; subject to withholding on services with progressive/effective rates up to 25% (approx — confirm). **Not settled by Anexo I:** the annex prints one table for IRT without allocating it between groups, so which groups the escalões reach is a question for the IRT Code, not for the Budget annex  _(Codigo do Imposto sobre os Rendimentos do Trabalho (IRT) - https://taxsummaries.pwc.com/angola/individual/taxes-on-personal-income)_
+- **Independent services (Group B)**: article 16(2) applies 6.5% where tax is withheld at source. Article 16(3) applies 25% to the taxable base not subject to withholding. These are separate mechanisms; the monthly Group A bands do not provide the Group B withholding scale. Incidental services have a separate cross-reference to Industrial Tax rules in article 16(4). [Lei n.º 28/20, art. 16](https://www.bancoeconomico.ao/media/3172/lei28-20-22dejulhoalteracoescirt.pdf).
 - **Filing requirement for employees** — Employees with only employment income are not required to file; IRT is withheld monthly by the employer  _(Codigo do Imposto sobre os Rendimentos do Trabalho (IRT) - https://taxsummaries.pwc.com/angola/individual/taxes-on-personal-income)_
 
 ## Group C — the third IRT group this guide had omitted entirely
@@ -75,7 +75,7 @@ guide, and the 2025 Budget legislates it directly. All four rules below are in a
 
 ## What the 2025 Budget switched off
 
-- **⚠ Article 9(2) of the IRT Code is suspended** — Article 35(2) of Lei n.º 18/24: *"É suspensa a eficácia do n.º 2 do artigo 9.º do Código do Imposto sobre os Rendimentos do Trabalho, aprovado pela Lei n.º 18/14, de 22 de Outubro."* The suspension is of **efficacy**, not a repeal. **What article 9(2) provides has not been established here.** The IRT Code is not published on the AGT portal: its *Legislação Fiscal* (17 documents), *Tributação Especial* (4) and *Instrutivos* (8) pages were all checked and none carries Lei n.º 18/14. So what the suspension changes is open. Flagged because this guide is about that Code  _([Lei n.º 18/24, art. 35(2)](https://www.ucm.minfin.gov.ao/cs/groups/public/documents/document/aw41/mdm1/~edisp/minfin5035043.pdf))_
+- **Article 9(2) of the IRT Code is suspended for the 2025 Budget period**: article 35(2) of Lei n.º 18/24 suspends its effect. The original provision substitutes annual sales of goods and services not subject to withholding as the Group C base when the four-times-invoicing test against the activity's maximum in the Minimum Profits Table is met. The 2020 amendment leaves paragraph 2 unchanged. Apply the 2025 Group C rules above; do not treat the suspended paragraph as an additional current turnover charge. The original wording was checked in a legal transcription; its gazette PDF returned HTTP 403 and was not retried. [Lei n.º 18/14, art. 9(2), reproduced by Lex.AO](https://lex.ao/docs/assembleia-nacional/2014/lei-n-o-18-14-de-22-de-outubro/), [Lei n.º 28/20, art. 9](https://www.bancoeconomico.ao/media/3172/lei28-20-22dejulhoalteracoescirt.pdf), [Lei n.º 18/24, art. 35(2)](https://www.ucm.minfin.gov.ao/cs/groups/public/documents/document/aw41/mdm1/~edisp/minfin5035043.pdf).
 - **Article 503 of the Customs Code is repealed** — Article 35(1) repeals article 503 of the Código Aduaneiro (Decreto-Lei n.º 5/06 of 4 October) outright. Outside this guide's scope, recorded because it sits in the same provision  _([Lei n.º 18/24, art. 35(1)](https://www.ucm.minfin.gov.ao/cs/groups/public/documents/document/aw41/mdm1/~edisp/minfin5035043.pdf))_
 - **Commencement** — Article 37: the Law enters into force on **1 January 2025**. Approved by the Assembleia Nacional on 12 December 2024, promulgated 24 December 2024, published 30 December 2024  _([Lei n.º 18/24, art. 37](https://www.ucm.minfin.gov.ao/cs/groups/public/documents/document/aw41/mdm1/~edisp/minfin5035043.pdf))_
 
