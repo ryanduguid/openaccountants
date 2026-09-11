@@ -5776,3 +5776,89 @@ because absence from Llei 95/2010 is what was established, not absence from Ando
 superseding Decret 120/2022. Its commencement and transitional rules were not read. A change of
 accounting framework moves the starting point of the tax computation, so this is flagged as a
 gap in the guide rather than left for a reader to discover.
+
+### Andorra, third pass: the IGI, and three commercial hosts that were right
+
+`ad-income-tax`'s IGI rows carried **`loyalbusinessconsulting.com; andorra-solutions.com;
+gestoriabonconsellandorra.com`** on every figure. Against Llei 11/2012 (consolidated by the
+Decret legislatiu del 5-6-2019) and the Reglament (Decret del 2-7-2014):
+
+**Everything numeric was right.** EUR 40,000 and EUR 150,000 (Reglament art. 1); EUR 250,000,
+EUR 3,600,000 and the months July/January, April/July/October/January, monthly (Law art. 78);
+EUR 100,000 for the simplified regime (art. 74); and all five rates — 0 / 1 / 2.5 / 4.5 / 9.5%
+(arts. 57–60 bis). Three commercial hosts, twelve figures, no numeric error. That result is
+worth recording precisely because this branch has spent so much of its length showing the
+opposite: a commercial source is not evidence, but it is not a presumption of error either,
+and a pass that only ever reports commercial sources as wrong is not measuring them.
+
+**What was wrong was never a number.**
+
+- The 0% row read *"Medical, education, **financial**, postal services"*. **Financial services
+  are at 9.5%** (art. 60) — and the table's own last line said so. The file **contradicted
+  itself two rows apart** and no checker saw it, because one row is prose and the other is a
+  table cell.
+- *"Postal services"* is not art. 59 either. Art. 59(12) zero-rates **stamps and stamped
+  effects supplied at no more than face value** — the paper, not the delivery.
+- The 0% row omitted **letting of dwellings** (art. 59(9)), which is the head a reader is
+  likeliest to arrive asking about.
+- *"Transport"* at 2.5% omits art. 60 bis(1)'s ***excepte el transport per cable***. In a
+  country whose passenger transport is substantially ski lifts, that carve-out is not a detail.
+- *"Food, books, newspapers"* at 1% omits that art. 58 **excludes alcoholic drinks** and applies
+  to publications only where they are not mainly advertising — with a **75%-of-publisher-revenue**
+  test the guide never mentions.
+
+### The threshold that is a trap rather than a line
+
+The guide treats IGI registration as a state: above EUR 40,000 you are registered, below it you
+are not, and the IRPF basis follows. **Reglament art. 1(4)** makes crossing it **retroactive to
+1 January**: in the liquidation period where the threshold is passed, the taxpayer regularises
+**the whole calendar year**. And **art. 1(3)** makes the test **joint across every activity** —
+exceed it on the non-farm side and you are a trader for all of them.
+
+Because this guide defines the IRPF basis by reference to IGI collected, the retroactivity
+reaches the income tax too: its rule *"not IGI-registered → full invoice amount = IRPF income"*
+stops holding for a year that began under the threshold and ended over it. **A rule that is
+correct at both ends and wrong in between** — and the guide had no way to express that, because
+it had modelled a switch where the statute has a look-back.
+
+### The same wrong figure, twice, hedged once
+
+The 5% start-up rate that `ad-corporate-income-tax` carried as *"historically … confirm still in
+force"* also sat in `ad-income-tax`'s summary table as a **flat assertion with no hedge at all**:
+*"10% flat; 5% for new companies with net income ≤ EUR 50,000"*. Correcting the hedged instance
+and leaving the confident one would have left the corpus stating the error more strongly than
+before the pass. **Grep for the figure, not for the row you found it in** — the same discipline
+the Guinea 31 March / 30 April split should have taught, arriving a second time in a different
+jurisdiction.
+
+### The agent-skill had 0% and "exempt" the wrong way round
+
+`agent-skills/andorra-igi` is a **return-preparation** skill: it classifies transactions into
+boxes. Its header table listed
+
+> *"Exempt supplies | Medical, education, insurance, residential rental, social welfare, burial"*
+> *"Zero rate | 0% (exports, international transport, gold to Andorran financial institutions)"*
+
+Medical, education, social welfare and residential letting are **not exempt**. They are heads of
+the **0% *superreduït* rate at article 59** — a rate band, so the supply is **taxable** and input
+tax attributable to it is recoverable. Exports are not a 0% band either: they fall outside the
+territorial scope, with recovery preserved by **article 63**, and the exemptions the Law actually
+spells out (arts. 39–41) are **import** exemptions.
+
+**The two rows were swapped, and the swap costs money in one direction only.** A preparer
+following this skill treats a clinic's or a landlord's output as exempt and **denies the client
+input recovery the Law allows**. Both rows contain true-sounding lists of the right subject
+matter; nothing about them reads as wrong. This is the sharpest instance in the branch of the
+branch's recurring shape — **right facts, wrong mechanism** — and it is the first one where the
+mechanism is the entire point of the document.
+
+Also in the same table: *"Return form | Declaracio de l'IGI (**quarterly**)"*, flatly, when
+article 78 makes it **semi-annual, quarterly or monthly** on turnover; *"cultural events"* at 1%
+when article 60 bis puts performances and exhibitions at 2.5%; and *"para-pharmaceutical,
+optical products"* at 2.5%, which is not in article 60 bis at all.
+
+**One thing was named rather than fixed.** The skill's box map runs A1–A8 for 4.5 / 1 / 2.5 /
+9.5% and has **no box for a 0% supply** — so an article 59 supply has nowhere to go in its model.
+Patching that would mean inventing a box number on a real return form. The hole is flagged with
+a research gap instead, on the same principle as Guinea's unmerged RTS scale: **a fabricated
+answer with a citation beside it is worse than a stated gap.**

@@ -23,15 +23,44 @@ metadata:
 |---|---|
 | Country | Principality of Andorra |
 | Tax name | IGI (Impost General Indirecte) — NOT VAT |
-| Standard rate | 4.5% |
-| Reduced rate | 1% (food, water, books, cultural events) |
-| Intermediate rate | 2.5% (transport, para-pharmaceutical, optical products) |
-| Increased rate | 9.5% (banking and financial services) |
-| Zero rate | 0% (exports, international transport, gold to Andorran financial institutions) |
-| Exempt supplies | Medical, education, insurance, residential rental, social welfare, burial |
-| Return form | Declaracio de l'IGI (quarterly) |
+| Standard rate | 4.5% — art. 57, the residual rate |
+| Reduced rate | 1% — art. 58: food (**excluding alcoholic drinks**), water, books/newspapers/magazines not mainly advertising. **⚠ "cultural events" was listed here and belongs at 2.5%** |
+| Intermediate rate | 2.5% — art. 60 bis: passenger transport **except by cable**, libraries and archives, museum/monument/zoo visits, **theatrical, musical, choreographic, audiovisual and cinematographic performances**, educational and cultural exhibitions, and works of art, collectors' items and antiques. **⚠ "para-pharmaceutical, optical products" was listed here and is not in art. 60 bis** |
+| Increased rate | 9.5% — art. 60: banking and financial services |
+| Zero rate (*superreduït*) | 0% — art. 59, **thirteen domestic heads**: hospital and health services by public/para-public bodies; care by health professionals with a current **CASS agreement**; social assistance; **education** and childcare; private lessons; sport; ambulance transport; **letting of buildings used exclusively as dwellings**; **medicines reimbursable by CASS**; stamps at no more than face value; and reparcelling transmissions |
+| Exempt supplies | **⚠ See the correction below before using this row.** Arts. 39–41 exempt certain **imports**; supplies outside the territory are handled by the place-of-supply rules with input recovery preserved by art. 63 |
+| Return form | Declaracio de l'IGI. **⚠ Not always quarterly** — art. 78 sets the frequency on the prior year's turnover: **July and January** under EUR 250,000; **April, July, October and January** under EUR 3,600,000; **monthly** at EUR 3,600,000 or more |
 | Filing portal | https://www.impostos.ad (redirects to the Govern d'Andorra *Impostos, taxes i duana* section). ⚠ The `www.e-govern.ad` address previously given here **does not resolve** |
 | Authority | Departament de Tributs i de Fronteres |
+
+> **⚠ The 0% and "exempt" rows were the wrong way round, and the difference is input tax.**
+> This skill listed *"Medical, education, insurance, residential rental, social welfare,
+> burial"* as **exempt supplies**, and *"exports, international transport, gold to Andorran
+> financial institutions"* as the **zero rate**. Against the consolidated *Llei 11/2012*:
+>
+> - **Medical, education, social welfare and residential letting are not exempt — they are
+>   heads of the 0% *superreduït* rate at article 59.** A supply within a rate band is a
+>   **taxable supply**, so input tax attributable to it is recoverable in the ordinary way;
+>   an exempt supply is not. Treating a clinic's or a landlord's output as exempt **denies
+>   input recovery the Law allows**, and the error runs the expensive way for the client.
+> - **Exports are not a 0% band.** Supplies outside the territorial scope are dealt with by
+>   the place-of-supply rules, and **article 63** preserves the right to deduct input tax on
+>   activity carried on outside the territory that would have been deductible inside it. The
+>   exemptions the Law does spell out (arts. 39–41) are **import** exemptions.
+> - *"Insurance"*, *"burial"*, *"gold to Andorran financial institutions"*, *"international
+>   transport"*, *"para-pharmaceutical"* and *"optical products"* **could not be located in
+>   articles 57–60 bis**. They are not asserted wrong here — only unsourced. Do not classify
+>   a transaction on them without checking.
+>
+> **The box table below has no box for supplies at 0%** (it runs A1–A8 for 4.5 / 1 / 2.5 /
+> 9.5%), so an article 59 supply currently has nowhere to go in this skill's model. That is a
+> structural gap, not a wording one, and it is flagged rather than patched: inventing a box
+> number for a real return form would be worse than naming the hole.
+>
+> [RESEARCH GAP — a reviewer with the current *Declaració de l'IGI* form should map the 0%
+> band to its box and confirm the insurance and funeral treatment.]
+>
+> _([Llei 11/2012 IGI, text refós (Decret legislatiu del 5-6-2019), arts. 39–41, 57–60 bis, 63, 78](https://bopadocuments.blob.core.windows.net/bopa-documents/031055/html/1_GD20190614_13_50_37.html))_
 | Currency | EUR (used de facto, formal agreement since 2011) |
 | Filing frequency | Quarterly (standard); annual summary by 31 March |
 | Deadline | Last day of month following quarter end (Q1 by 30 Apr, Q2 by 31 Jul, Q3 by 31 Oct, Q4 by 31 Jan) |
@@ -105,7 +134,9 @@ metadata:
 
 ### Andorra-specific refusal catalogue
 
-**R-AD-1 — Below registration threshold.** *Trigger:* client has turnover below EUR 40,000 and is not voluntarily registered. *Message:* "Below the mandatory IGI registration threshold. If not voluntarily registered, no IGI return is required."
+**R-AD-1 — Below registration threshold.** *Trigger:* client has turnover below EUR 40,000 and is not voluntarily registered. *Message:* "Below the mandatory IGI registration threshold. If not voluntarily registered, no IGI return is required." **EUR 40,000 is confirmed at article 1(1) of the *Reglament de l'IGI*; for agricultural ***and livestock*** activities the figure is EUR 150,000 (art. 1(2)).**
+
+**R-AD-1b — Threshold crossed during the year.** *Trigger:* turnover passes EUR 40,000 (or EUR 150,000 including farming) at any point in the calendar year. *Message:* "**Article 1(4) of the Reglament requires the tax treatment of the operations of the WHOLE calendar year to be regularised** in the liquidation period in which the threshold is crossed. This is retroactive to 1 January — do not treat registration as starting from the month of crossing. Flag for reviewer." **Article 1(3) applies the threshold jointly across every activity the person carries on**, so a client under the limit on each activity separately may still be over it in total.  _([Reglament de l'IGI, art. 1](https://bopadocuments.blob.core.windows.net/bopa-documents/026040/html/ga26040038.html))_
 
 **R-AD-2 — Financial services at 9.5%.** *Trigger:* complex financial services classification needed. *Message:* "Banking and financial services at 9.5% require specialist analysis to distinguish from exempt financial operations. Flag for reviewer."
 
