@@ -29,7 +29,7 @@ metadata:
 | Primary legislation | Payroll Tax Act 1995 (as amended); Customs Tariff Act 1970 |
 | Supporting legislation | Companies Act 1981; Land Tax Act 1967; Stamp Duties Act 1976 |
 | Tax authority | Office of the Tax Commissioner |
-| Filing portal | https://www.tax.gov.bm |
+| Filing portal | https://www.gov.bm (Government of Bermuda). ⚠ The `www.tax.gov.bm` address previously given here **does not resolve** |
 | Filing deadline | Payroll tax quarterly (Apr 15, Jul 15, Oct 15, Jan 15); annual reconciliation March 15 |
 | Contributor | Open Accountants Community |
 | Validated by | Pending -- requires sign-off by a licensed Bermuda practitioner |
@@ -192,7 +192,7 @@ Bermuda has no personal income tax, no corporate income tax, no capital gains ta
 
 ### 5.2 Payroll Tax Filing
 
-Filing frequency: quarterly. Q1 deadline: April 15. Q2: July 15. Q3: October 15. Q4: January 15. Annual reconciliation: March 15 following year-end. Method: electronic via tax.gov.bm.
+Filing frequency: quarterly. Q1 deadline: April 15. Q2: July 15. Q3: October 15. Q4: January 15. Annual reconciliation: March 15 following year-end. Method: electronic. ⚠ **Not via `tax.gov.bm`** — that host does not resolve; start from https://www.gov.bm.
 
 ### 5.3 Land Tax
 

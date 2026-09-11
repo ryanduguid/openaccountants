@@ -27,7 +27,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Zero rate | 0% (exports, international transport, gold to Andorran financial institutions) |
 | Exempt supplies | Medical, education, insurance, residential rental, social welfare, burial |
 | Return form | Declaracio de l'IGI (quarterly) |
-| Filing portal | https://www.e-govern.ad |
+| Filing portal | https://www.impostos.ad (redirects to the Govern d'Andorra *Impostos, taxes i duana* section). ⚠ The `www.e-govern.ad` address previously given here **does not resolve** |
 | Authority | Departament de Tributs i de Fronteres |
 | Currency | EUR (used de facto, formal agreement since 2011) |
 | Filing frequency | Quarterly (standard); annual summary by 31 March |
