@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Netherlands transfer pricing ru
 version: 1.0
 jurisdiction: NL
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-11
 review_status: pending_review
 depends_on:
   - transfer-pricing-workflow-base
@@ -193,7 +193,7 @@ The Netherlands does not have formal statutory safe harbour rules.
 | Date | Development |
 | --- | --- |
 | 2024-2025 | Clarifications on TP mismatch provisions (Art. 8bb-8bd) |
-| 2024 | Pillar Two (GloBE) implemented via Wet minimumbelasting 2024 |
+| 2023 | Pillar Two (GloBE) implemented via Wet minimumbelasting 2024 — **in force 31 December 2023** despite the "2024" in its title, first applying to reporting years beginning on or after that date (art. 17.1(1)); the UTPR arm is deferred to 31 December 2024 (art. 17.1(2)). See `nl-corporate-tax` Section 7 |
 | 2024 | Public CbCR implementation (EU Directive) |
 | 2024 | OECD Amount B: Netherlands actively participating in implementation |
 | 2022 | TP mismatch legislation (Art. 8bb, 8bc, 8bd) entered into force |

@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Dutch corporate income tax (ven
 version: 1.0
 jurisdiction: NL
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-11
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -19,6 +19,18 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 > **Based on work by [John in 't Hout (@johnhout)](https://github.com/johnhout/knowledge-work-belastingzaken)**, licensed under MIT. Adapted for the OpenAccountants format.
 
+> **A second Dutch corporate tax has been in force since 31 December 2023, and
+> this guide did not mention it.** The `description` above says *"ALWAYS read this
+> skill before touching any Dutch corporate tax work"*, and until now the skill
+> covered only the Wet Vpb 1969. An in-scope group working from it alone will
+> compute VPB and stop, missing a separate charge under a separate Act with its
+> own liability rules. Set out in *Section 7 — Wet minimumbelasting 2024* below,
+> read from the consolidated text on `wetten.overheid.nl`.
+>
+> It does **not** replace the VPB. The two run alongside each other: the minimum
+> tax tops up to a 15% effective rate, so the Wet Vpb 1969 rates in Section 1
+> still govern the ordinary charge.
+
 ## Section 1 — Quick Reference
 
 **Quick Reference**
@@ -29,7 +41,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Tax | Vennootschapsbelasting (VPB) — corporate income tax |
 | Currency | EUR only |
 | Tax year | Financial year (typically calendar year; alternative book years allowed) |
-| Primary legislation | Wet op de vennootschapsbelasting 1969 (Wet Vpb 1969) |
+| Primary legislation | Wet op de vennootschapsbelasting 1969 (Wet Vpb 1969) — **and, separately, the Wet minimumbelasting 2024** for in-scope groups, see Section 7 |
 | Tax authority | Belastingdienst |
 | Filing portal | Mijn Belastingdienst / Aangifte vennootschapsbelasting |
 | Filing deadline | 5 months after end of financial year (1 June for calendar year); extension possible up to 5 additional months |
@@ -299,6 +311,75 @@ Escalate to a qualified belastingadviseur when:
 - Mergers, demergers, or share transactions
 - International dividend/royalty flows (withholding tax implications)
 - Entity is part of a multinational group (Country-by-Country Reporting obligations)
+
+## Section 7 — Wet minimumbelasting 2024 (Pillar Two minimum tax)
+
+A separate Act from the Wet Vpb 1969, with its own scope, its own liability rules
+and its own return. Read from the consolidated text at
+[wetten.overheid.nl/BWBR0049111](https://wetten.overheid.nl/BWBR0049111/2026-04-11).
+
+### Commencement
+
+- **In force 31 December 2023**, first applying to reporting years (*verslagjaren*)
+  beginning on or after **31 December 2023**  _(Wet minimumbelasting 2024, art. 17.1(1))_
+- **Articles 15.1 and 15.2(A) are deferred to 31 December 2024.** Article 15.1 amends
+  article 5.1 — the *onderbelastewinstbijheffing* — so the UTPR arm starts a year
+  after the other two  _(art. 17.1(2))_
+
+### Scope — and note it is not multinational-only
+
+- **Threshold** — Applies to group entities of a *multinationale groep* **or a
+  *binnenlandse groep*** — a purely domestic Dutch group is in scope too — where,
+  per the ultimate parent entity's consolidated accounts, revenue is at least
+  **EUR 750,000,000** per reporting year in **at least two of the four** reporting
+  years immediately preceding, or of however many fewer years have preceded it  _(art. 2.1(1))_
+- **The EUR 750,000,000 is computed inclusive** of the revenue of *uitgesloten
+  entiteiten* (excluded entities under art. 2.2) as recorded in the ultimate parent's
+  consolidated accounts, and is increased or reduced proportionally for a reporting
+  year longer or shorter than twelve months  _(art. 2.1(2))_
+- **Rate** — *minimumbelastingtarief:* **15%**  _(art. 1.2, definitions)_
+
+### Three charges, three chapters — check all three
+
+| Chapter | Charge | Who is liable |
+| --- | --- | --- |
+| 3 (arts. 3.1–3.2) | *Binnenlandse bijheffing* — domestic top-up | A group entity **established in the Netherlands** that is a **low-taxed group entity**. Where several in the same group qualify, the charge is levied **as if they were one taxpayer** _(art. 3.1(1)–(2))_ |
+| 4 (arts. 4.1–4.3) | *Inkomen-inclusiebijheffing* — Income Inclusion Rule | A Netherlands-established group entity that is an **ultimate parent entity**, or an **intermediate parent entity** held by an ultimate parent in a third state _(art. 4.1(1))_ |
+| 5 (arts. 5.1–5.2) | *Onderbelastewinstbijheffing* — UTPR | A Netherlands-established group entity, **not** an investment entity, in a multinational group containing low-taxed entities whose ultimate parent is excluded or in a third state _(art. 5.1(1))_ |
+
+- **Do not reduce this to "the Netherlands has an IIR".** The domestic top-up in
+  chapter 3 turns on the entity's own establishment in the Netherlands and on its
+  being low-taxed — not on where the group's parent sits. It is the charge that
+  reaches a Dutch subsidiary of a foreign-parented group, and such an entity is
+  not reached by the IIR at all.
+
+### Transitional CbCR safe harbour — the rate moves every year
+
+- **Transitional rate (*overgangstarief*) for the reporting year** — reporting years
+  beginning in **2023 or 2024: 15%**; **2025: 16%**; **2026: 17%**. A figure copied
+  from an older note will be wrong for the current year  _(Wet minimumbelasting 2024, transitional safe-harbour provisions, art. 8.8)_
+
+### The Act has been amended twice — check the consolidated text, not the original
+
+Searching the title on `wetten.overheid.nl` returns five instruments, not one:
+
+| Instrument | BWB | Consolidated to |
+| --- | --- | --- |
+| **Wet minimumbelasting 2024** | BWBR0049111 | 2026-04-11 |
+| Wet aanpassing Wet minimumbelasting 2024 | BWBR0050585 | 2024-12-31 |
+| **Tweede** wet aanpassing Wet minimumbelasting 2024 | BWBR0052033 | 2025-12-31 |
+| Uitvoeringsbesluit minimumbelasting 2024 | BWBR0050584 | 2026-01-01 |
+| Wet implementatie EU-richtlijn gegevensuitwisseling minimumbelasting | BWBR0052128 | 2026-04-11 |
+
+Everything above is read from the **consolidated** BWBR0049111 as at 2026-04-11, which
+already incorporates both amending Acts. The *Uitvoeringsbesluit* and the
+information-exchange Act **have not been read for this guide** — filing and reporting
+obligations in particular are not covered here.
+
+> **Not covered, and material to a real engagement:** return and notification
+> deadlines, the *Uitvoeringsbesluit*, the DAC9 information-exchange obligations, and
+> the detailed safe-harbour conditions. Section 7 establishes *whether a group is in
+> scope and which of the three charges reaches it*, not how to compute or file.
 
 ## Disclaimer
 
