@@ -3,7 +3,7 @@ name: ao-income-tax
 description: "Source-cited draft: personal income tax for Angola (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
 jurisdiction: AO
 tax_year: 2025
-last_updated: 2026-09-10
+last_updated: 2026-09-11
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -12,6 +12,37 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 # Angola Personal Income Tax
 
 ## Personal income tax (IRT) bands and rates
+
+> **The twelve bands below have been checked against Angola's official gazette, and
+> all twelve match.** Every figure in this section was previously sourced only to a
+> commercial tax summary. The **Administração Geral Tributária** publishes the
+> *Diário da República* on its own legislation portal
+> ([agt.minfin.gov.ao → Legislação Fiscal](https://agt.minfin.gov.ao/#!/legislacao/fiscal)),
+> and **I Série, N.º 247 of 30 December 2024** carries **Lei n.º 18/24**, the State
+> Budget for 2025. Its **Anexo I**, referred to by article 20(3), sets out a
+> *Tabela do IRT* whose twelve escalões, fixed amounts and rates correspond to the
+> rows below **exactly** — including the six unrounded *parcelas fixas*
+> (187,249 / 292,249 / 402,249 / 517,249 / 1,117,249 / 2,342,248). Six specific
+> unrounded amounts agreeing is not coincidence; the summary and the gazette are
+> describing one table.
+>
+> **This is corroboration, and deliberately not stated as verification.** The annex is
+> headed *"TABELA DO IRT (**Proposta**)"*, and **article 20(3), which the annex serves,
+> has not been read.** Whether "Proposta" is a drafting label left on an enacted annex
+> or signals something requiring separate enactment cannot be settled from the annex
+> alone, so the row citations below are unchanged. Reading article 20(3) is the next
+> step, and it is a small one.
+>
+> **Two further things the same gazette page records, both unchecked here.** Lei n.º
+> 18/24 **revokes article 503 of the Código Aduaneiro** (Decreto-Lei n.º 5/06 of
+> 4 October) and **suspends the effect of article 9(2) of the Código do Imposto sobre
+> os Rendimentos do Trabalho** (Lei n.º 18/14 of 22 October). What article 9(2)
+> provides, and therefore what its suspension changes, has **not** been established —
+> flagged because this guide is about that Code.
+>
+> *Reading note: the gazette PDFs are scans with no text layer at all — zero extractable
+> characters across eighteen pages, eighteen images on the first page. Every figure above
+> was read from pages rendered at 170–200 dpi.*
 
 - **IRT general charge** — Personal income tax (Imposto sobre os Rendimentos do Trabalho, IRT) is charged on a monthly basis under progressive bands from 0% to 25% for employment (Group A) income. The first AOA 100,000 of monthly income is exempt; income between AOA 100,000 and 150,000 is effectively shielded and tax begins at 13% on the excess over AOA 100,000.
 - **Monthly tax-exempt income** — Up to AOA 100,000 per month is exempt AOA/month  _(Codigo do Imposto sobre os Rendimentos do Trabalho (IRT) - https://taxsummaries.pwc.com/angola/individual/taxes-on-personal-income)_
