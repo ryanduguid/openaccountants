@@ -5681,3 +5681,66 @@ rows are now read against the replacing Law; the 6% / 5.5% / LAK 4,500,000 contr
 rows are **not**, because they rest on the *Law on Social Security* — a different
 instrument this pass never opened. The banner now says which half moved. A banner that
 quietly narrows to match the work done, without saying so, is worse than no banner.
+
+## Andorra: the half that was wrong, and the statute that never held the answer
+
+Two guides said the IS return is due ***"within 6 months"*** of the year end and then glossed
+that as ***"31 July"*** / ***"July"***. Six months after 31 December is 30 June. An earlier pass
+recorded the contradiction, **substituted neither date**, and wrote that *"reading the sentence
+gives no way to tell which"* half was wrong. That hold was right, and it is now discharged.
+
+### July is right; "within 6 months" is the misreading
+
+**Article 35(1) of the *Reglament de l'impost sobre societats***, as replaced by **Decret
+207/2021 art. 2**:
+
+> *"Els obligats tributaris han de presentar i subscriure la declaració per aquest impost **el
+> mes següent als sis mesos posteriors a la conclusió del període impositiu**…"*
+
+The month **following** the six months. For a 31 December year-end the six months run to 30
+June and the return is filed **during July**. So it is not a six-month rule, not a
+seven-month rule of thumb, and not a deadline at all in the usual sense — it is a **one-month
+window**, keyed to the taxpayer's own period rather than to a calendar month.
+
+The two halves were never a coin flip. One was the rule and the other was a paraphrase that
+dropped the word doing the work.
+
+### The bigger finding: the Law does not contain the deadline
+
+**Article 57** of the consolidated Llei 95/2010 says only that taxpayers file *"en el lloc, **el
+termini** i la forma que **es determini reglamentàriament**"*. Article 58 does the same for
+self-assessment and payment. **The statute fixes no date and no window.** Every deadline row in
+these guides cited the Llei — an instrument that has never held the answer. This is the
+Turkmenistan art. 95 shape again (no turnover threshold in the article the guide pointed at)
+and the North Macedonia shape (the return deadline is not in the Profit Tax Law): the guide
+poses a question the cited instrument does not answer, and a reviewer who checks the citation
+and finds nothing concludes they have missed it rather than that it is absent.
+
+### What else the reading bought
+
+- **Article 45 of the Law and article 33 of the Reglament** confirm the payment on account at
+  **50%** of the prior year's assessed liability, *"durant el novè mes posterior a l'inici del
+  període impositiu"*. The guide's *"around 50%"* is exact; its *"typically in September"* is
+  true only of a calendar-year company, because the rule is keyed to the period.
+- **Reglament art. 33(3): no payment on account in the first year of activity** — a carve-out
+  absent from the guide.
+- **"Model 202" is unsourced.** Neither the Law, the Reglament nor Decret 207/2021 names any
+  numbered form; the 2021 decree leaves it to *"els formularis … que estableixi el ministeri"*.
+  202 is the number of the **Spanish** *pago fraccionado* form. Flagged, not asserted wrong —
+  the point is that it does not come from the instruments, not that Andorra cannot use it.
+- **Decret 207/2021's transitional provision** moved the return for periods ending in December
+  2020 to **31 August 2021**. July is the standing rule, not an immovable one.
+
+### The earlier note pointed a reviewer at a page that cannot be read
+
+That note told a reviewer to settle the question at `bopa.ad/Legislacio`. **The portal is the
+same shape as `impostos.ad`** — it renders client-side and ignores query strings, so it serves
+an identical shell whatever you ask it for. The advice was not wrong about where the law lives;
+it was wrong about that URL being usable, and it is corrected in the guide.
+
+What works is the portal's own unauthenticated search API, and the documents it returns, which
+sit on public blob storage. **Those documents are UTF-16.** Decoded as UTF-8 they come back as
+mojibake and a naive tag-strip finds zero occurrences of `declaraci` in a 240 KB tax statute —
+a result that reads exactly like "the site serves nothing useful". That is a new entry in the
+same family as the 39-byte conflation: **an encoding artefact impersonating an absence of
+content.** The guide now records the encoding so the next person does not re-derive it.
