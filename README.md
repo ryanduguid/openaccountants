@@ -77,6 +77,28 @@ The current roster: **[VERIFIERS.md](VERIFIERS.md)** (generated nightly from the
 
 ---
 
+## How it stays accurate
+
+A tax library is only as good as its worst stale number, so machines re-check this one
+every night:
+
+- **The maths check** re-reads every guide and flags sums that do not add up, tax bands
+  with gaps, totals that do not total, and years that disagree.
+- **The source watch** visits the official pages the figures came from and raises a hand
+  when a page changes.
+- **The refresh engine** re-derives the stalest guides from official sources on a fixed
+  monthly budget, refusing to publish any figure without a link.
+- **The nightly exam** tests whether AIs actually said what the guides say that day, or
+  improvised. Improvisation gets caught, counted and fixed at the source.
+
+The sync runs both ways: platform edits land here as commits under the author's own name,
+and merged PRs here flow back into what every AI serves, credited to you. A guide with an
+accountant's byline never changes without that accountant's one-click approval.
+
+The whole story, in plain words: [openaccountants.com/how-it-works](https://www.openaccountants.com/how-it-works)
+
+---
+
 ## Contributing
 
 Edit **`skills/**` only** — everything else regenerates automatically:
