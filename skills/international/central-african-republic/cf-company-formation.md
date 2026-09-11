@@ -30,11 +30,12 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 > - **SARL pay-up — article 311-1.** Parts subscribed in full; those for
 >   contributions in kind paid up in full; those for cash paid up on subscription to
 >   **at least half**, balance within **two years** of RCCM registration.
-> - **SA capital — articles 387–389.** Minimum **10,000,000**, with **no**
->   national-derogation clause; nominal value of shares freely fixed by the
->   statutes; capital **entirely subscribed before the statutes are signed**; cash
->   shares paid up **at least one quarter** on subscription, balance within **three
->   years** of RCCM registration.
+> - **SA capital — articles 387–389.** The **ordinary** minimum is **10,000,000**;
+>   public offerings and regulated activities require separate capital checks, and
+>   article 311's derogation wording does not appear here. Nominal value of shares
+>   freely fixed by the statutes; capital **entirely subscribed before the statutes
+>   are signed**; cash shares paid up **at least one quarter** on subscription,
+>   balance within **three years** of RCCM registration.
 > - **Listed or public-offering companies — article 824.** Minimum **100,000,000**
 >   where the securities are listed on a member state's exchange **or** offered
 >   publicly for placement in one or more member states. Any interested party may
@@ -42,6 +43,14 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 > - **One member is enough.** A SARL may be instituted by a single natural or legal
 >   person (art. 309) and *"la société anonyme peut ne comprendre qu'un seul
 >   actionnaire"* (art. 385).
+>
+>
+> **This is not a theoretical gap.** Burkina Faso has exercised the derogation:
+> article 1 of *Décret n°2016-314 of 3 May 2016* replaces article 3 of *Décret
+> n°2014-462* with a rule letting members fix SARL capital freely in the articles,
+> so the uniform 1,000,000 is **not** Burkina Faso's national minimum. Assume
+> nothing about any other member state without checking its own law —
+> [the decree](https://police.gov.bf/index.php/infos-utiles/textes-officiels/category/3-decrets?download=26:decret-capital-minimum).
 >
 > [RESEARCH GAP — what is not settled is whether **the Central African Republic** has enacted contrary
 > national provisions under article 311. The uniform default is stated below as the
@@ -56,7 +65,7 @@ Companies in the Central African Republic are formed under OHADA company law and
 - **Common entity — limited liability company** — Société à Responsabilité Limitée (SARL)  _(OHADA Uniform Act on Commercial Companies and Economic Interest Groups)_
 - **Common entity — public limited company** — Société Anonyme (SA)  _(OHADA Uniform Act on Commercial Companies and Economic Interest Groups)_
 - **Minimum share capital — SARL** — **1,000,000**, subject to contrary national provisions (art. 311). **It is not "fully paid up at incorporation":** article 311-1 requires the parts to be subscribed in full, those for contributions in kind paid up in full, and those for **cash paid up to at least half on subscription** with the balance within **two years** of RCCM registration XAF  _(AUSCGIE 2014, arts. 311 and 311-1 — https://biblio.ohada.org/doc_num.php?explnum_id=3974)_
-- **Minimum share capital — SA** — **10,000,000**, with no derogation clause (art. 387). The quarter is right: cash shares are paid up **at least one quarter** on subscription, and the capital must be **entirely subscribed before the statutes are signed**, with the balance due within **three years** of RCCM registration. **100,000,000** where the securities are listed or publicly offered (art. 824) XAF  _(AUSCGIE 2014, arts. 387–389 and 824 — https://biblio.ohada.org/doc_num.php?explnum_id=3974)_
+- **Minimum share capital — SA** — **10,000,000** for an ordinary SA (art. 387), with regulated activities requiring their own capital check. The quarter is right: cash shares are paid up **at least one quarter** on subscription, and the capital must be **entirely subscribed before the statutes are signed**, with the balance due within **three years** of RCCM registration. **100,000,000** where the securities are listed or publicly offered (art. 824) XAF  _(AUSCGIE 2014, arts. 387–389 and 824 — https://biblio.ohada.org/doc_num.php?explnum_id=3974)_
 - **Company registry** — Registre du Commerce et du Crédit Mobilier (RCCM), via the Greffe du Tribunal de Commerce  _(OHADA Uniform Act on Commercial Companies and Economic Interest Groups — https://www.expanship.com/cf/blog/incorporation-requirements-in-central-african-republic)_
 - **Tax identification number** — NIF (Numéro d'Identification Fiscale), issued by the DGID ((approx — confirm)) (approx — confirm)  _(Code Général des Impôts (CAR) — https://maxishr.com/en/central-african-republic/company-registration)_
 - **Core incorporation steps** — Notarised statutes, capital deposit in a local bank, registration with RCCM, NIF/tax registration, CNSS employer registration ((approx — confirm)) (approx — confirm)  _(OHADA Uniform Act on Commercial Companies and Economic Interest Groups; Code Général des Impôts (CAR))_
