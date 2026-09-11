@@ -11,25 +11,17 @@ description: >
   "activity statement", "annual leave", "long service leave",
   "minimum wage Australia", or any question about running payroll in Australia.
   ALWAYS read this skill before processing any Australian payroll work.
-version: 2.3
+version: 2.4
 jurisdiction: AU
 tax_year: 2025
-last_updated: 2026-09-10
+last_updated: 2026-09-11
 review_status: pending_review
 category: payroll
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Australia — Payroll Skill v2.3
-
-## Australia -- Payroll Skill v2.3
-
-## Australia -- Payroll Skill v2.3
-
-## Australia -- Payroll Skill v2.3
-
-## Australia -- Payroll Skill v2.3
+# Australia -- Payroll Skill v2.4
 
 ## Section 1 -- Quick Reference
 
@@ -47,7 +39,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Pay frequency | Weekly, fortnightly, monthly (fortnightly most common) |
 | Employer registration | ABN + PAYG withholding registration via ATO |
 | Validated by | Pending -- requires sign-off by an Australian CPA, CA, or registered tax agent |
-| Skill version | 2.3 |
+| Skill version | 2.4 |
 
 ## Section 2 -- Income Tax Withholding (PAYG)
 
@@ -105,6 +97,8 @@ Australia does not have a separate employee social security contribution. The Me
 There is no employee-paid social insurance premium equivalent to NIC (UK) or social security tax (US).
 
 ## Section 4 -- Employer contributions
+
+An under-18 employee must work more than 30 actual hours in the week to qualify for SG; exactly 30 does not qualify. Apply the hours test each week, including within a fortnightly pay cycle. Some labour contractors qualify for SG; domestic/private work and other statutory exclusions need separate assessment. Check award or agreement obligations too. See Rule 1 in [au-super-guarantee](au-super-guarantee.md) and [business.gov.au: superannuation](https://business.gov.au/finance/superannuation).
 
 **Superannuation Guarantee summary**
 
