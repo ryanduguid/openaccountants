@@ -4157,3 +4157,28 @@ ministry could not serve. That is now a standing first move rather than a fallba
 exposure, not diligence."* The corollary this adds: **a zero in that column is a question,
 not an answer.** It says no authority link is present. It does not say why, and the four
 whys here are not alike.
+
+**Mauritania, qualified — the site is reachable and its content stops in 2020.** Having
+established that `https://impots.gov.mr/DGI/` serves, the next question is what it
+serves. Its downloads page carries dozens of official declaration forms in PDF and
+Excel — IS (including a separate mining-company return), IRF, ITS, TVA, TOF, TSA,
+patente, and an annual transfer-pricing declaration. Its news section carries the
+*Code Général des Impôts 2020*, the Lois de finances for 2019 and 2020, and
+*Arrêté Ministériel n°39/2020*.
+
+**Every dated filename on that page is 2019 or 2020, and the only year appearing in its
+text is 2020.** So the correct entry is narrower than "the authority works":
+
+> `impots.gov.mr/DGI/` — **reachable, and authoritative for what it holds.** Good for
+> **form existence, form structure and the 2020-vintage CGI**. Poor for **current rates
+> and thresholds**, because nothing published there appears to postdate 2020. A 2025
+> guide cannot be sourced to it for a rate without establishing that the rate has not
+> moved in five years — which is a separate piece of work, not an inference.
+> One caution: a link on that page points at `dgi.gtishow.com`, a contractor's host,
+> which suggests parts of the site still resolve outside the government domain.
+
+This is a correction to the entry written a few paragraphs above, made within the same
+sitting. "Reachable" and "usable for the figure I need" are different findings, and the
+first was recorded before the second was checked. **The gap between them is exactly where
+an over-claim would have gone** — a note saying Mauritania's fifty-four secondary
+citations can now be upgraded, when what is actually available is a set of 2020 forms.
