@@ -6200,3 +6200,48 @@ participant**, and so does not by itself reach a ten-year exemption from profits
 a relief whose eligibility is settled somewhere it never opens?* That question is now worth
 asking of every relief in the corpus, not just Turkmenistan's — it found a foreign-ownership bar
 and a registration requirement that no amount of re-reading the tax statute would have produced.
+
+## Oman, second pass: a row this branch wrote was already over-general
+
+An hour after writing it, the Oman deadline row — *"a provisional return within three months
+(art. 139) and a final return within six months (art. 140)"* — turned out to be **true only for
+ordinary taxpayers**.
+
+The Law carries a separate small-business chapter, the **Article 159 bis** series, which inverts
+both halves:
+
+- **art. 159 bis 17**: *"The enterprise shall **not** be obliged to submit the provisional return
+  of income"* — the return the new row told readers they had been missing does not apply here;
+- **art. 159 bis 18**: the final return is due **before the lapse of three months**, not six;
+- **art. 159 bis 22**: the tax is payable within the same limit.
+
+So a correction written this session was itself incomplete, and the guide now carries an explicit
+cross-warning on the row rather than two provisions a reader must reconcile alone.
+
+**And it vindicated a row the pass had been about to overwrite.** The old guide said the
+two-stage filing *"has been streamlined under recent practice — confirm current requirement"*.
+That is wrong as stated — nothing was streamlined — but it was **gesturing at something real**,
+the 159 bis carve-out. The row now says so: right intuition, wrong scope. Vague rows are not
+automatically empty, and finding what one was reaching for is worth more than deleting it.
+
+### Two things deliberately not asserted
+
+**The 3% rate's exclusion reads backwards.** The chapter says the 3% applies, then that
+*"enterprises managed by their owners or one of their partners on a full-time basis and
+enterprises which employ at least two Omani persons shall be **excluded from the provisions of
+this Article**"* — which is the opposite of how a small-business regime usually treats
+owner-managed businesses that employ locals. The Authority's English is *"intended for general
+guidance"* with the **Arabic prevailing**. **Neither reading is asserted.** It may exclude them
+from the 3%, or from this Article because they are dealt with elsewhere; it decides whether the
+commonest kind of Omani small business gets the rate at all, and it is flagged for the Arabic.
+
+**No article number is given for the 3%.** Oman's published Law prints marginal numbers in a
+block *after* the bodies they label. For arts. 139/140 and 159 bis 17/18 the Law's own
+cross-references pinned them. For the 3% provision **there is no cross-reference**, and the
+marker block spans six numbers across fewer visible bodies. The chapter is cited; the article is
+not. **A plausible-looking article number is a fabricated citation**, and a citation is the part
+a reader checks least.
+
+The row's old hedge — *"registered with the authority for SME development; capital and turnover
+limits apply"* — finds **no support in the Law as read**. That is recorded as an absence rather
+than a refutation: it may live in the Executive Regulation or the SME authority's own rules.
