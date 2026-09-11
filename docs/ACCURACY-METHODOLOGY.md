@@ -5455,3 +5455,61 @@ nominal value at all**, so a minimum is not unset but absent by design.
   on pain of a **750,000 kyat** fine on every director knowingly involved. With the 35%
   test reaching indirect and aggregated interests, an ordinary share sale can flip that
   status and start the clock — a consequence no part of the guide previously joined up.
+
+---
+
+## Correction: the "39-byte empty document" was two different numbers, and I merged them
+
+Earlier entries in this file record a recognised dead-host signature — *"resolves but
+never serves, returning a **39-byte empty document**"* — and one of them goes further:
+*"the proxy log confirms the 39 bytes come from the server."*
+
+**That last claim is wrong, and the diagnosis built on it was over-specified.**
+
+There are two 39s and they are unrelated:
+
+1. **`html=39` from the fetcher** is the length of an **empty DOM**.
+   `<html><head></head><body></body></html>` is **exactly 39 characters**. It means the
+   browser holds a blank document — the navigation never committed. The accompanying
+   title, `Loading <url>`, says the same thing.
+2. **`39 B received` in the proxy log** is a count of **bytes on the TLS tunnel**.
+
+Reading them as one number turned "the page did not load" into "the server answered and
+served nothing", which is a claim about the far end that the evidence does not support.
+
+### What the proxy log actually shows
+
+Fetching `www.minjus.gob.cu` and `www.parlamento.st` produced six identical failures each:
+
+> `ws_closed_mid_exchange | tunnel closed (code 1006, Connection ended) after 12s;
+> 517 B sent, 39 B received, client reading`
+
+517 bytes out is a TLS **client hello**. Thirty-nine bytes back, then the tunnel closes
+about twelve seconds later. **The TLS exchange does not complete.** That is consistent
+with the host being down, with filtering in the path, or with geo-blocking — and the log
+does not distinguish them.
+
+So the corrected reading is narrow: **`html=39` + `Loading <url>` means the navigation
+failed, and nothing more.** It is still a useful signature — it reliably separates "did
+not load" from "loaded something" — but it diagnoses the *fetch*, not the *server*.
+
+### It is also not country-specific, which is how the error surfaced
+
+The signature had been recorded against Eritrea, two Cuban hosts and Kuwait's ministry,
+which made a per-country story easy to believe. Extending the Myanmar move — *when the
+ministry is dead, try the registry or gazette* — produced two more: **`www.minjus.gob.cu`**
+(Cuba's Ministry of Justice, publisher of the *Gaceta Oficial*) and
+**`www.parlamento.st`** (São Tomé's National Assembly). Two countries, same failure. That
+killed the "Cuba is blocked" reading and prompted opening the proxy log instead of
+inferring from the fetcher alone.
+
+**Six hosts now share it, across four countries.** Each affected note has been narrowed
+from *"serves a 39-byte empty document"* to *"does not complete a TLS handshake from
+here"*, with the cause left open.
+
+### The Myanmar move still works, and both new attempts failed
+
+`myco.dica.gov.mm` succeeded where `www.dica.gov.mm` fails, so a ministry's silence is not
+a jurisdiction's. But applying that to Cuba and São Tomé returned nothing: their justice
+ministry and parliament fail exactly as their finance ministries do. **A heuristic that
+pays once is not a method** — it is worth trying and worth reporting when it does not.

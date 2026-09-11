@@ -22,9 +22,11 @@ Companies are incorporated under the Myanmar Companies Law 2017 and registered o
 > **The Companies Law has been read.** DICA's own registry, **Myanmar Companies Online
 > (MyCO)**, publishes the ***Myanmar Companies Law 2017*** in English — 188 pages, clean
 > text — alongside the Regulations 2018 and DICA Notifications 56–60/2018. Every row
-> below was sourced to a law firm's blog. **`www.dica.gov.mm` itself serves a 39-byte
-> empty document**, which is why earlier passes recorded Myanmar formation as
-> unreachable; the registry subdomain is the live one.
+> below was sourced to a law firm's blog. **`www.dica.gov.mm` itself never completes a
+> TLS handshake** from here — the tunnel closes about twelve seconds after the client
+> hello — which is why earlier passes recorded Myanmar formation as unreachable. Whether
+> that is the host being down, filtering, or geo-blocking is not established. The
+> registry subdomain is on different infrastructure and is the live one.
 >
 > _([Myanmar Companies Law 2017](https://myco.dica.gov.mm/documentation/mm/MCL.en-US.pdf), published at [myco.dica.gov.mm](https://myco.dica.gov.mm/))_
 
