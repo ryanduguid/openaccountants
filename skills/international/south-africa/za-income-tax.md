@@ -26,7 +26,7 @@ Reviewed against the cited tax authorities by Werner Britz on 2026-06-12. Items 
 - **Primary legislation** — Income Tax Act 58 of 1962
 - **Supporting legislation** — Tax Administration Act 28 of 2011; Sixth Schedule (Turnover Tax); Fourth Schedule (Provisional Tax)
 - **Tax authority** — SARS
-- **Filing portal** — Correct portal but URL is sarsefiling.gov.za / efiling.sars.gov.za. The www.sarsefiling.co.za address is the older registered domain that redirects, but for documentation use https://www.sarsefiling.gov.za or https://www.sars.gov.za.  _(SARS website)_
+- **Filing portal** — ⚠ **This row previously had it backwards and sent readers to a hostname that does not exist.** It directed documentation to `https://www.sarsefiling.gov.za` and called `www.sarsefiling.co.za` *"the older registered domain that redirects"*. **Neither `www.sarsefiling.gov.za` nor `efiling.sars.gov.za` resolves in DNS at all.** `https://www.sarsefiling.co.za` answers 200, redirects to `https://secure.sarsefiling.co.za/landing` and serves a page titled **"SARS eFiling"** — it is the live portal, and the redirect is the ordinary hop to a login landing, not evidence of retirement. Use **https://www.sarsefiling.co.za** for eFiling and **https://www.sars.gov.za** for the authority site  _(checked by DNS resolution and HTTP fetch, 11 September 2026)_
 - **Currency** — ZAR only
 - **Tax year** — 1 March - 28 February  _(Income Tax Act s 1, definition)_
 - **Return form** — ITR12
@@ -354,7 +354,7 @@ All tests use 2025/26 rates and the R350k RA cap. Re-run on 2026/27 basis to val
 
 ### SARS eFiling URL
 
-Current canonical URLs: https://www.sarsefiling.gov.za or https://www.sars.gov.za.
+Current canonical URLs: **https://www.sarsefiling.co.za** (eFiling; redirects to `secure.sarsefiling.co.za/landing`) and **https://www.sars.gov.za** (authority site). The `sarsefiling.gov.za` and `efiling.sars.gov.za` forms this file previously gave **do not resolve**.
 
 ### Disclaimer
 

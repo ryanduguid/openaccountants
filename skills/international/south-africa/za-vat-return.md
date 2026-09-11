@@ -30,7 +30,7 @@ Reviewed against the cited tax authorities by Werner Britz on 2026-06-12. Items 
 - **Primary legislation** — Value-Added Tax Act 89 of 1991 (VAT Act)
 - **Supporting legislation** — Tax Administration Act 28 of 2011 (TAA); SARS interpretation notes
 - **Tax authority** — South African Revenue Service (SARS)
-- **Filing portal** — SARS eFiling (efiling.sars.gov.za)
+- **Filing portal** — SARS eFiling (www.sarsefiling.co.za). The `efiling.sars.gov.za` form previously given here **does not resolve**
 - **Default filing frequency** — Bimonthly (Category A)  _(VAT Act s 27(2))_
 - **Filing deadline** — Last business day of month following period end (eFiling)  _(VAT Act s 28; SARS VAT 404 Guide)_
 
@@ -176,7 +176,7 @@ Always label as estimated; direct to SARS-registered tax practitioner
 | Primary legislation | Value-Added Tax Act 89 of 1991 (VAT Act) |
 | Supporting legislation | Tax Administration Act 28 of 2011 (TAA); SARS interpretation notes |
 | Tax authority | South African Revenue Service (SARS) |
-| Filing portal | SARS eFiling (efiling.sars.gov.za) |
+| Filing portal | SARS eFiling (www.sarsefiling.co.za) — `efiling.sars.gov.za` does not resolve |
 | Default filing frequency | Bimonthly (Category A) |
 | Filing deadline | Last business day of month following period end (eFiling) |
 | Contributor | Open Accountants Community |
