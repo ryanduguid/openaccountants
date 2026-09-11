@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 - **Standard tax year** — Calendar year (1 January to 31 December) ((approx — confirm; companies may adopt a different financial year))  _(Llei 5/2014 de l'impost sobre la renda de les persones fisiques (IRPF))_
 - **Currency** — Euro (EUR)  _(Acord monetari entre el Principat d'Andorra i la Unio Europea (2011))_
-- **Tax authority** — Departament de Tributs i de Fronteres (Ministeri de Finances)  _([[Departament de Tributs i de Fronteres](https://www.impostos.ad)](https://www.impostos.ad))_
+- **Tax authority** — Departament de Tributs i de Fronteres (Ministeri de Finances)  _([Departament de Tributs i de Fronteres](https://www.impostos.ad))_
 - **Basis of taxation for residents** — Tax residents are taxed on worldwide income; non-residents only on Andorra-source income  _(Llei 5/2014 IRPF / Llei 94/2010 de l'impost sobre la renda dels no residents fiscals (IRNR))_
 - **Headline personal income tax rate** — 10% maximum (0% up to EUR 24,000; effective ~5% on EUR 24,001-40,000; 10% above EUR 40,000) %  _(Llei 5/2014 IRPF)_
 - **Headline corporate income tax rate** — 10% (Impost sobre Societats) %  _(Llei 95/2010 de l'impost sobre societats (IS))_

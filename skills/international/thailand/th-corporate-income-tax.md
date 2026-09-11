@@ -3,7 +3,7 @@ name: th-corporate-income-tax
 description: "Source-cited draft: corporate income tax for Thailand (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
 jurisdiction: TH
 tax_year: 2025
-last_updated: 2026-09-09
+last_updated: 2026-09-11
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -33,6 +33,44 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Where these rates come from, and what to confirm** — The dividend, interest and royalty lines above are PwC-sourced. The six domestic and Section 70 heads are not: PwC's Thailand withholding page covers only those three plus a treaty matrix, so the rest were taken from Thai practitioner sources. They are consistent across those sources and should still be confirmed against the Revenue Code and the Revenue Department's withholding orders before a payment is made percent  _(Thai Revenue Code; Revenue Department)_
 - **Annual CIT return deadline (PND.50)** — Within 150 days of accounting period end  _(Thai Revenue Code, Section 68; Form PND.50 — https://taxsummaries.pwc.com/thailand/corporate/tax-administration)_
 - **Half-year CIT return (PND.51)** — Within 2 months of the end of the first 6 months of the accounting period  _(Thai Revenue Code, Section 67 bis; Form PND.51 — https://taxsummaries.pwc.com/thailand/corporate/tax-administration)_
+
+## Top-up tax — a second charge, in force since accounting periods beginning 1 January 2025
+
+`th-tax-overview.md` carried this and the file a reader opens for Thai corporate
+tax did not. The facts below come from the **Revenue Department's own English
+news releases**, not from a commercial summary.
+
+- **The instrument** — *Emergency Decree on Top-up Tax, B.E. 2567 (2024)*. The
+  Revenue Department proposed it through the Ministry of Finance; the Cabinet
+  approved it on **11 December 2024** and it was **promulgated in the Royal Gazette
+  on 26 December 2024**  _(Revenue Department, News No. 6/2025, 27 December 2024 — https://www.rd.go.th/fileadmin/user_upload/news/2567eng/englishnews_6_2025.pdf)_
+- **Who it applies to** — Large multinational enterprise (MNE) groups with
+  **consolidated financial statement revenues of at least EUR 750 million**  _(Revenue Department, News No. 6/2025)_
+- **From when** — **Accounting periods commencing on or after 1 January 2025**  _(Revenue Department, News No. 6/2025; confirmed again in News No. 5/2026)_
+- **Filing** — Through a **fully electronic system**. The Revenue Department's
+  enquiry address for the charge is `topuptax@rd.go.th`  _(Revenue Department, News No. 6/2025)_
+- **The detailed scope rules were still in draft a year after the charge began** —
+  On **30 December 2025** the Cabinet approved **in principle** four draft
+  instruments of secondary legislation under the Emergency Decree, prescribing the
+  rules for **determining which MNE groups are subject to the Top-up Tax** and for
+  **adjusting income, expenses and covered taxes** in computing it. They are drawn
+  from the OECD GloBE Model Rules, Commentary and Administrative Guidance. So the
+  charge has applied since 1 January 2025 while the instruments fixing its precise
+  scope and computation were still draft — **check their current status before
+  relying on any scope conclusion**  _(Revenue Department, News No. 5/2026, 30 December 2025 — https://www.rd.go.th/fileadmin/user_upload/news/2568eng/englishnews_5_2026.pdf)_
+
+> **What has not been read, and why.** The text of the Emergency Decree itself has
+> **not** been read for this guide. Everything above is the Revenue Department's own
+> English account of it. The Royal Gazette (`ratchakitcha.soc.go.th`) sits behind a
+> Cloudflare interstitial that does **not** clear even for a browser that waits the
+> challenge out, and `krisdika.go.th` — the Council of State's law database — serves
+> a **self-signed certificate**, so neither was fetched with verification left on.
+>
+> **Deliberately not stated:** Oman, Kuwait and the Netherlands each express the
+> EUR 750 million threshold as *at least two of the four immediately preceding*
+> periods. The Revenue Department's release states the threshold **without** that
+> qualification, and the decree has not been read, so the two-of-four wording is
+> **not** asserted for Thailand. It is the first thing to check in the decree.
 
 <!-- openaccountants-cta-block -->
 
