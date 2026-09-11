@@ -3884,7 +3884,7 @@ Six leads, six outcomes, and the tally is the honest measure of the detector:
 | Spain | Guide cited Ley 7/2024 three times and never mentioned the tax that Act creates |
 | Thailand | Scope rules still draft a year after the charge began; citation was a malformed nested link |
 | North Macedonia | Citation named no instrument; effective date wrong by a year |
-| Croatia | **Logged unverified.** Detector matched a pension table, not a tax rule. Probably a real gap, not a real hit |
+| Croatia | **Logged unverified.** Detector matched a pension table, not a tax rule. Probably a real gap, not a real hit — **later confirmed a real gap on its own evidence**; see "Croatia — the guess was right and the detector still gets no credit" below |
 
 Five real defects from six leads — after the first pass returned **46**, of which forty
 were homonyms. The useful number is not the hit rate but the ratio between them: **the
@@ -4299,3 +4299,96 @@ URL now cited in the guide is the document that was actually read. Twenty-one au
 citations replaced the commercial summary; the four PwC citations that remain are each
 attached to a statement the annex does **not** settle — the monthly period, the residence
 basis, Group B, and employee filing — and each says so.
+
+### Croatia — the guess was right and the detector still gets no credit
+
+Croatia was the last of the six Pillar Two survivors, and the only one logged
+**unverified** rather than confirmed. The reasoning at the time: the detector matched
+`Pillar II` inside `croatia-payroll.md`'s **pension** table — I. stup / II. stup, the
+state and funded pillars — so the hit said nothing about tax. Croatia is an EU member
+state, so the Minimum Tax Directive reaches it and the silence was *probably* a real gap.
+Counting it would have repeated the Cape Verde CVE 1 mistake: right for the wrong reason.
+
+**The gap is real. It was established from Croatia's gazette, not from the inference.**
+`narodne-novine.nn.hr` answers a plain query and its search returns exactly three
+documents for *"minimalnom globalnom porezu"*:
+
+| Instrument | Gazette | Date |
+|---|---|---|
+| *Zakon o minimalnom globalnom porezu na dobit* | NN 155/2023, no. 2362 | 22 December 2023 |
+| *Zakon o izmjenama i dopunama…* | NN 151/2025, no. 2260 | 15 December 2025 |
+| *Pravilnik o minimalnom globalnom porezu na dobit* | NN 53/2026, no. 665 | 22 May 2026 |
+
+`hr-corporate-income-tax.md` had **none** of it, and every one of its citations pointed at
+one commercial summary. What the three instruments gave, all read in Croatian:
+
+- **Article 2 names the Directive it transposes** — Council Directive (EU) 2022/2523 of
+  14 December 2022 — so the inference that drew attention here is stated in the Act
+  itself. That is the difference between a guess and a finding.
+- **Two commencement dates.** Article 61(1): fiscal years from **31 December 2023**.
+  Article 61(2): the undertaxed profits rule in arts. 14–16 only from **31 December
+  2024**. The same split as the Netherlands and North Macedonia, and a guide that gives
+  one "effective from" date is wrong for one limb whichever it picks.
+- **Two of four, again.** EUR 750,000,000.00 in at least two of the four immediately
+  preceding fiscal years (art. 5(1)). That is now confirmed in **six** jurisdictions from
+  their own statutes — Oman, Kuwait, Netherlands, North Macedonia, and now Croatia, with
+  Spain and Thailand still deliberately unasserted.
+- **15% in words and digits together** — *petnaest posto (15 %)*, art. 4(1) point 15.
+- **⚠ The top-up tax is not deductible against corporate profit tax.** The 2025 amending
+  Act inserted art. 5(7): *"Porezna obveza … ne može umanjiti osnovicu poreza na dobit."*
+  This is the row most likely to be modelled wrongly, because a new charge reads
+  naturally as a deductible cost. **And the insertion renumbered the rest of article 5**
+  — the old 5(7) is now 5(8) — so a paragraph reference to article 5 means different
+  things in the 2023 text and the text in force. Anyone citing the 2023 gazette, as this
+  work did before reading the amendment, has to check.
+- **Penalties: EUR 3,000.00 to EUR 100,000.00** (amending Act art. 8, replacing art. 52).
+- **The ordinance was about four and a half months late.** Art. 62(1) required it by
+  **31 December 2025**; it was signed 15 May 2026 and published 22 May 2026. So for the
+  first two charged years the forms and payment mechanics did not exist in delegated
+  form. North Macedonia's art. 60 sets the *same* 31 December 2025 deadline for the
+  *same* art. 13(9) ordinance and is still recorded as unchecked — the two Acts transpose
+  a common model, which is a lead, not an answer.
+
+**What this does and does not say about the detector.** It found six real hits out of 46
+and Croatia is the sixth to be confirmed, so the survivors were 6/6. That is a good
+result for the *survivors* and says nothing about the detector, which pointed at Croatia
+because of a pension table. The correct accounting is unchanged: the detector produced a
+list to read, the reading produced the findings, and a hit whose stated reason is wrong
+earns no credit even when the answer it happened to point at is right. Had Croatia turned
+out to have no such law, the log would have said so with the same confidence.
+
+**Three drafting defects in the enacted Croatian text**, recorded in the guide because a
+reader meets them: the 2023 Chapter II heading reads *"PRENISKO OPREZIVANOJ"* (a missing
+syllable, which art. 2 of the 2025 Act exists partly to fix); art. 49 of the 2023 Act is
+headed *"Članka 49."*; and the amending Act cites the Act it amends as **155/23** in its
+article 1 and **156/23** in its article 11(2). Four independent references say 155/23, so
+156/23 looks like a slip — it is in the enacted text and is **left unresolved** rather
+than quietly corrected.
+
+**Not read, and said so in the guide:** the safe harbours (arts. 33–34), the
+substance-based income exclusion, the effective-tax-rate computation in Chapters III–V,
+and the ordinance's *Podskupina RH* sub-group mechanics.
+
+### Madagascar — the Angola move, tried and failed, which is also a result
+
+Angola's lesson was that "needs a browser" is an unopened door. Madagascar is the largest
+remaining zero-authority pack — **65 secondary citations, no authority** — so it got the
+same treatment. It did not open, and the detail is worth keeping:
+
+- **`impots.mg` has no DNS at all.** The earlier record says "503 on every attempt, two
+  days apart", which was measured against a hostname that does not resolve. **`www.impots.mg`
+  does** resolve, to 41.188.38.190 — so the earlier probe was partly testing the wrong name.
+- It makes no difference to the answer. `https://www.impots.mg/` resets the connection;
+  `http://www.impots.mg/` returns **503 with a 48-byte body**. The origin is down, not
+  hiding behind JavaScript, and the 503 finding stands.
+- **`mef.gov.mg` answers 200 — and is a Zimbra webmail login**, not a content site. It
+  was not pursued past the front page.
+- **`www.douanes.gov.mg` is live** (200, 72 KB) with a real `/textes/` legislation page.
+  It is the **customs** authority; Madagascar's guides are income tax and VAT under the
+  *Code Général des Impôts*, so it is the wrong tree, and its document list is rendered
+  client-side in any case.
+
+Recorded because the Angola result makes the opposite error tempting: one jurisdiction
+opening with a browser is not evidence that the rest will. Madagascar is still genuinely
+unreachable on the route its guides need, and the corrected detail — bare name NXDOMAIN,
+`www` resolves, origin 503 — is what a future attempt should start from.
