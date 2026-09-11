@@ -3890,3 +3890,56 @@ Five real defects from six leads — after the first pass returned **46**, of wh
 were homonyms. The useful number is not the hit rate but the ratio between them: **the
 detector was 13% precise until every hit was read, and 83% precise afterwards.** Nothing
 about the detector changed in between.
+
+### The detector, pointed somewhere else — and the guard that came from reading
+
+With the Pillar Two sweep closed, the same detector was pointed at other
+high-consequence concepts: e-invoicing mandates, country-by-country reporting,
+beneficial-ownership registers, DAC8/CARF crypto reporting, digital services taxes.
+The first pass returned **103 candidate packs**.
+
+**The same greedy-filter mistake was in it, and this time it was caught before the
+count was quoted.** The "main guide" filter was one-size-fits-all, so it asked whether
+a *corporate income tax* guide mentioned e-invoicing. An e-invoicing mandate is a VAT
+compliance obligation; its home is the pack's **VAT** guide, and CbCR's is transfer
+pricing. Narrowing e-invoicing to VAT guides took the concept's share from 47 to 19.
+
+**Then reading the hits produced a guard the Pillar Two sweep never needed.**
+`kenya/ke-vat-return.md` looked like a 44-line VAT guide silent on eTIMS while
+`kenya-vat.md` says input tax credit *requires* a compliant ETR or e-invoice. Opening
+it: its `description` reads *"This skill has been consolidated. See kenya-vat.md in
+this directory"*, and its body says it exists for backward compatibility with the skill
+manifest. **It is a deliberate tombstone, correctly structured, and not a defect at
+all.** A `TOMB` guard now excludes consolidation redirects; it caught Kenya and
+`nigeria/ng-vat-return.md`.
+
+That is the third distinct false-positive class this document has had to record — after
+the homonym (`Pillar II` as a pension pillar) and the greedy filter. All three were
+invisible until a human-equivalent read of the actual file.
+
+### 24 VAT guides give no signal that their jurisdiction has an e-invoicing regime
+
+The surviving question was sharper than "is it mentioned": most of these packs carry a
+**dedicated `*-einvoice.md` guide**, so a VAT guide not duplicating it is sound
+structure. The defect is only where the VAT guide gives the reader **no pointer at all**.
+
+Measured across every pack that has both: **24 of 35 VAT guides, in 15 jurisdictions,
+never mention e-invoicing in any form.** Seven packs already do it properly — China,
+India, Indonesia, Mexico, Poland, Romania, Saudi Arabia — which is what makes the other
+fifteen a defect rather than a design choice. **The repository already has the
+convention; it is applied to a third of the packs that need it.**
+
+The fifteen include Italy (SdI), Hungary (RTIR), Poland, Portugal, Spain, France,
+Belgium, Greece and Germany — jurisdictions with hard mandates and penalties attached.
+
+**What was fixed, and the line that was deliberately not crossed.** A pointer was added
+to all 24, and it is *only* a pointer: it names the pack's own e-invoicing guide, says
+this guide does not cover the subject, and states in terms that **no claim about that
+jurisdiction's regime is made**. Writing fifteen jurisdiction-specific mandate
+descriptions from one sitting would repeat precisely the error the Kuwait review caught
+— carrying a clause into many files on the strength of a pattern rather than a reading.
+The pointer is true in all 24 cases because it asserts only what the repository's own
+file tree already shows.
+
+Each carries an `<!-- einvoice-xref -->` marker so a later pass is idempotent — and,
+per the CTA lesson recorded above, that marker is only good from the moment it exists.

@@ -11,6 +11,14 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # German UStVA (VAT Return)
 
+<!-- einvoice-xref -->
+> **This pack has a separate e-invoicing guide: `germany-einvoice`.** This guide does not
+> cover it. Where a jurisdiction operates a mandatory electronic-invoicing or
+> real-time-reporting regime, the obligations and any consequences for input-tax
+> recovery sit in that guide — read it alongside this one before filing or advising.
+> **No claim about that jurisdiction's regime is made here**; this is a pointer only.
+
+
 ## Overview
 
 This skill covers germany tax rules for the DE jurisdiction.

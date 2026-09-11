@@ -12,6 +12,14 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # PK Sales Tax Federal
 
+<!-- einvoice-xref -->
+> **This pack has a separate e-invoicing guide: `pk-einvoice`.** This guide does not
+> cover it. Where a jurisdiction operates a mandatory electronic-invoicing or
+> real-time-reporting regime, the obligations and any consequences for input-tax
+> recovery sit in that guide — read it alongside this one before filing or advising.
+> **No claim about that jurisdiction's regime is made here**; this is a pointer only.
+
+
 ## Pakistan — Federal Sales Tax on Goods (FBR) — Skill v2.0
 
 > **Scope.** This skill covers the **federal sales tax on goods** administered by the Federal Board of Revenue (FBR) under the Sales Tax Act 1990 (STA 1990) as amended by the Finance Act 2024 and the Finance Act 2025. It applies to manufacturers, importers, wholesalers, distributors, retailers (including Tier-1 retailers with mandatory POS integration), and other persons making **taxable supplies of goods** in or to Pakistan.

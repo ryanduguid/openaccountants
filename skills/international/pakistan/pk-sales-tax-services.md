@@ -12,6 +12,14 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # PK Sales Tax Services
 
+<!-- einvoice-xref -->
+> **This pack has a separate e-invoicing guide: `pk-einvoice`.** This guide does not
+> cover it. Where a jurisdiction operates a mandatory electronic-invoicing or
+> real-time-reporting regime, the obligations and any consequences for input-tax
+> recovery sit in that guide — read it alongside this one before filing or advising.
+> **No claim about that jurisdiction's regime is made here**; this is a pointer only.
+
+
 ## Pakistan — Provincial Sales Tax on Services — Skill v1.0
 
 ALWAYS READ THIS SKILL IN FULL before touching any Pakistan provincial sales tax on services work. Sales tax on services in Pakistan is NOT a single federal regime — it is administered by five separate revenue authorities under five separate statutes, each with its own portal, rate, return form, due date, and penalty regime. Federal FBR sales tax (Sales Tax Act 1990) covers GOODS only; services are provincial. Confusing the two is the single most common error.
