@@ -3,7 +3,7 @@ name: ad-corporate-income-tax
 description: "Source-cited draft: corporate income tax for Andorra (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
 jurisdiction: AD
 tax_year: 2025
-last_updated: 2026-09-09
+last_updated: 2026-09-11
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -22,7 +22,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Withholding tax on dividends to non-residents** — 0% — no withholding tax on dividends paid by Andorran companies to non-residents %  _(Llei 94/2010 IRNR)_
 - **Withholding tax on interest to non-residents** — 0% — no withholding tax on interest paid to non-residents %  _(Llei 94/2010 IRNR)_
 - **Withholding tax on royalties to non-residents** — **5%**. This is a reduced rate: the general IRNR rate on Andorran-source income of a non-resident without a permanent establishment is **10%**, so a payment that is not a royalty does not get the 5%. The domestic 5% is settled; what varies is treaty relief, and Andorra's treaty network is small enough that the counterparty's country should be checked for a treaty rather than assumed to have one %  _(Llei 94/2010 IRNR)_
-- **IS filing deadline** — Within 6 months of the close of the financial year (commonly filed in July for calendar-year companies via Model 200) (approx — confirm exact statutory deadline)  _(Llei 95/2010 IS)_
+- **⚠ IS filing deadline — this row contradicts itself** — It states the rule as ***within 6 months*** of the close of the financial year and then glosses that as *"commonly filed in July for calendar-year companies"*. **Six months after 31 December is 30 June, not July.** One of the two halves is wrong and reading the sentence gives no way to tell which: the rule may be six months (→ 30 June) or the practice may be seven (→ 31 July), and the guide asserts both. The same slip appears in `ad-tax-overview`. **Neither date is restated as fact here**, because the statute was not read. The instrument is **Llei 95/2010 de l'impost sobre societats**; its consolidated text is on the **BOPA *Legislació* portal**, which is live and searchable at [bopa.ad/Legislacio](https://www.bopa.ad/Legislacio) — that is where a reviewer should settle it. `www.impostos.ad` also answers, but serves an identical JavaScript shell for every path and yields no article text (approx — the statutory window is unresolved, not merely unconfirmed)  _(Llei 95/2010 IS — [BOPA Legislació](https://www.bopa.ad/Legislacio))_
 - **Advance / instalment payment** — A payment on account (Model 202) of around 50% of the prior year's liability is due during the year, typically in September (approx — confirm rate and date)  _(Llei 95/2010 IS)_
 
 <!-- openaccountants-cta-block -->

@@ -5334,3 +5334,38 @@ code says it".
 **The sole-trader VAT period is the find worth flagging to a practitioner.** A guide
 that says "Monthly" full stop is wrong for every private entrepreneur in the country,
 and wrong in the direction that creates filings which were never due.
+
+### Andorra: the one checker finding on this branch that was not a homonym
+
+`check-deadline-rules` flagged `ad-tax-overview:24` — *"rule implies end of June, guide says
+31 July"*. Unlike the amount-conflict and filing-deadline hits, **this one was real**, and
+arithmetic settles it without reaching any authority: the row states the rule as ***within
+6 months*** of the close of the tax year and then glosses it as *"typically by 31 July for
+calendar-year filers"*. **Six months after 31 December is 30 June.**
+
+The same slip sits in `ad-corporate-income-tax:25` — *"within 6 months … commonly filed in
+July"* — which the checker did not flag, so the defect was one file wider than the report.
+That it appears twice in the same shape makes it a **shared gloss**, not two independent
+errors and not a disagreement between the guides.
+
+**Neither date was substituted.** The rule may be six months (→ 30 June) or the practice
+may really be seven (→ 31 July) under a provision the guides paraphrase badly; the sentence
+gives no way to tell, and **Llei 95/2010 was not read**. Both rows now state the
+contradiction, name the instrument, and say the window is *unresolved* rather than merely
+unconfirmed. Writing "30 June" would have been the arithmetic answer to a question the
+statute has not been asked.
+
+**What the attempt did establish**, and is worth recording for the next pass:
+
+- **`bopa.ad` is live** and its ***Legislació*** portal at `/Legislacio` is a searchable
+  consolidated-legislation database — the right place to settle this.
+- **`impostos.ad` is live but useless for text**: it returns an **identical 4,756-character
+  JavaScript shell for `/` and for `/ca/impost-sobre-les-societats`**. A site that answers
+  200 with real-looking length for every path is a third dead-site signature, alongside the
+  39-byte empty document and the "Under construction" placeholder. Identical byte counts
+  across unrelated paths are the tell — the same measurement that exposed the fetcher
+  contamination earlier.
+- The corpus's `www.e-govern.ad` citations were **already corrected** in an earlier pass of
+  this branch and point at `impostos.ad`, which does resolve. That check cost one DNS
+  lookup and confirmed prior work rather than finding new damage, which is the outcome to
+  hope for.
