@@ -6245,3 +6245,46 @@ a reader checks least.
 The row's old hedge — *"registered with the authority for SME development; capital and turnover
 limits apply"* — finds **no support in the Law as read**. That is recorded as an absence rather
 than a refutation: it may live in the Executive Regulation or the SME authority's own rules.
+
+### Oman, third pass: what the Executive Regulation actually held
+
+The branch's open list said Oman's Executive Regulation had not been read. **Ministerial
+Decision No. 30/2012** — the *Executive Regulation of the Income Tax Law* — is published in
+English by the Tax Authority with a clean text layer, and it holds two things the pack needed.
+
+**A filing exemption nobody had.** Article 134 excuses an Omani establishment or company from
+**submitting the return** where **all three** hold: capital of no more than **RO 20,000**, gross
+income of no more than **RO 100,000**, and an average of no more than **8 employees**, counting
+all workers *"whether occasionally or temporarily recruited"*. And the conditions must hold **in
+that period and in the two accounting periods before it** — a three-year look-back. Article 136
+makes it operate **only by decision of the Secretary General on application**, revocable for
+error; article 135 denies it outright where the article 17 notification was not filed.
+
+**Which explains where a stray hedge came from.** The 3% SME row hedged *"capital and turnover
+limits apply"*. Those limits **exist** — RO 20,000 and RO 100,000 — but they gate **article
+134's filing exemption**, not the 3% rate, which is in the Law's Article 159 bis chapter and
+states no such figures. The guide now says so and warns against importing one into the other.
+
+**This is a new false-positive shape worth naming.** The hedge was not invented and not wrong
+about the corpus of Omani law; it was **attached to the wrong provision**. A reviewer chasing it
+would have found RO 20,000 and RO 100,000, matched them to the words "capital and turnover", and
+confirmed a claim that is false — the hedge would have been *closed* by the very document that
+disproves it.
+
+### And a limb missing from a deadline
+
+Article 53 confirms the **fourteen days** the guide carried, but the trigger is *"paid **or
+credited** … **whichever is earlier**"*. The row said *"the month in which the payment was
+made"*, omitting the credit limb — **a book entry crediting a foreign person's account starts
+the clock with no cash moving**. Article 53 also requires a statement in the prescribed form
+(Regulation art. 133 names it **Income Tax Form No. 18**) and **a copy sent to the payee**, and
+extends the duty to ministries and public authorities.
+
+### Two instruments, one name
+
+The Oman guide already said *"that Regulation has not been read"* — meaning the **Top-up Tax**
+Executive Regulation, issued by the Chairman of the Tax Authority. Having now cited **MD
+30/2012** by article in the same file, the two were one careless reading away from looking like
+the same document and the gap looking closed. The file now distinguishes them explicitly and
+notes that MD 30/2012 is itself amended by the unread Arabic **MD 14/2019**. **When a file cites
+two instruments that share a generic name, saying which is which is part of the citation.**
