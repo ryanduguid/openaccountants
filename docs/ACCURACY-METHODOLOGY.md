@@ -6174,3 +6174,29 @@ Companies is among them.**
 "I searched and did not find it" and "the publisher lists twelve things and this is not one of
 them" are different claims, and only the second tells a reviewer to go looking elsewhere rather
 than to search harder.
+
+### The same move again, and this time it cut the other way
+
+The SME finding was: a rate whose eligibility is defined by cross-reference to another Act. The
+Turkmenistan pack had a second one in the same guide — article 170(1) exempts **participants of
+a free economic zone for their first ten years** — and the **Law "On free economic zones"** sits
+on the same published list.
+
+**Article 8(1)** admits Turkmen legal persons ***"regardless of their form of ownership and
+organisational-legal form"***, **foreign legal persons operating through branches and
+representative offices**, and private entrepreneurs.
+
+So within one guide, two reliefs point in **opposite directions on foreign participation**: the
+2% SME rate excludes enterprises with foreign investment outright, and the ten-year FEZ exemption
+expressly admits foreign legal persons. A reader who learns the SME exclusion and generalises it
+— reasonably — gets the FEZ answer backwards.
+
+**Article 8(2)** adds the gate that is easiest to assume away: participants are recognised
+**only after the Committee enters them in a register on the basis of a contract**, with a
+certificate within five working days. **Being physically inside a zone does not make a company a
+participant**, and so does not by itself reach a ten-year exemption from profits tax.
+
+**Two cross-reference gaps in a single guide, found by the same question**: *does the guide state
+a relief whose eligibility is settled somewhere it never opens?* That question is now worth
+asking of every relief in the corpus, not just Turkmenistan's — it found a foreign-ownership bar
+and a registration requirement that no amount of re-reading the tax statute would have produced.
