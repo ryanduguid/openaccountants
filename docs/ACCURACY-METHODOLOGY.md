@@ -5369,3 +5369,39 @@ statute has not been asked.
   this branch and point at `impostos.ad`, which does resolve. That check cost one DNS
   lookup and confirmed prior work rather than finding new damage, which is the outcome to
   hope for.
+
+### Deep-link dead hosts: two candidates, one fix, and the difference between them
+
+The host checker now reports **31 of 1,256** cited hostnames not resolving cleanly (from
+34 of 1,254 — the denominator moved because this branch added working authority hosts).
+Most of the remainder are **deep links**: a portal subdomain with no DNS record whose
+*parent domain* still resolves — `excise.wyo.gov`, `fiscalis.minfi.cm`,
+`taxpayersportal.ghana.gov.gh`, `virtual.sar.gob.hn` and the like. Replacing those means
+**inventing a path on the parent**, which is the unsafe fix, so they stay flagged.
+
+Two were a different shape: the checker reported that **the same hostname with a `www.`
+prefix resolves**. That is not a guess about where a service moved — it is the same name.
+Both were opened rather than trusted:
+
+| Host | `www.` form | Verdict |
+|---|---|---|
+| `ictax.admin.ch` | **HTTP 200**, title *"ICTax - Income & Capital Taxes"* | **fixed** — the Swiss Federal Tax Administration's own valuation service |
+| `etax.gov.bc.ca` | resolves (142.34.208.225), **HTTP 404 "Not Found"** | **not fixed** — flagged instead |
+
+**Two hosts, the same DNS evidence, opposite outcomes.** Had the `www.` prefix been
+applied as a mechanical fix to both — which is exactly what the checker's output invites —
+one citation would have been repaired and the other would have been changed from a name
+that does not resolve to a name that resolves and 404s. The second is *worse*, because a
+dead name fails visibly while a 404 under a plausible hostname looks like a working
+citation until someone clicks it.
+
+**The BC file was already inconsistent with itself** and nobody had noticed: the quick
+reference and its table both gave the bare `etax.gov.bc.ca`, while the resources section
+gave `www.etax.gov.bc.ca`. Two spellings of one portal, in one file, neither serving. The
+warning has been placed at **all three** points rather than only in the resources section,
+because a reader who takes the URL from the quick-reference table never reaches the
+caveat.
+
+This is rule 7 — *DNS success is not verification* — producing a different answer for each
+of two hosts that looked identical in the report. The checker earns its keep by narrowing
+1,256 names to 31; it earns nothing by being followed.
