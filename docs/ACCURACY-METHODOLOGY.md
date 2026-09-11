@@ -4122,3 +4122,38 @@ from the **171** the committed `index.json` still advertises. Two independent me
 counting frontmatter directly and one running the repository's own build script, agree on
 164. That is as close to confirmation as this repository can give on its own that the
 seven tier-1 badges reported earlier are false, and that the correct answer is 164.
+
+### The seven jurisdictions citing no authority — four of them had never been tried
+
+`scripts/list-source-mix.py` reports **seven jurisdictions with no authority citation at
+all**: Madagascar (65 secondary citations), Angola (63), Mauritania (54), Laos (52),
+São Tomé and Príncipe (39), Turkmenistan (36), Eritrea (29).
+
+Three were already documented dead ends — `mf.gov.st` serves 91 characters,
+`minfin.gov.tm` has no DNS, `mof.gov.er` resolves and never serves. **The other four had
+no register entry at all.** A jurisdiction resting 50-odd citations entirely on
+commercial summaries is a recorded exposure; a jurisdiction where nobody has *checked
+whether the authority answers* is not the same thing, and the two were indistinguishable
+in the count. Tested:
+
+| Jurisdiction | Result | What it means |
+|---|---|---|
+| **Mauritania** | **`https://impots.gov.mr/DGI/` → 200, 82 KB.** Title *"Direction générale des impôts"*, with NIF and receipt verification services and press releases | **Reachable, and unused.** Two traps on the way: `www.impots.gov.mr` serves a **JavaScript redirect to a plain `http://` URL**, which an HTTPS-only proxy cannot follow; and the bare `/DGI` path 302s — the **trailing slash** is what returns the site |
+| **Laos** | `www.mof.gov.la` → 200, 219 KB, live Ministry of Finance site (ກະຊວງການເງິນ, ສປປ ລາວ) with a **ກົດໝາຍ ແລະ ນິຕິກຳ** — "Laws and Legislation" — item in its own navigation | **Ministry live, its own laws link broken.** `https://www.mof.gov.la/laws&legal` returns a bare Apache **404**, to `curl` and to a real browser alike. The homepage is usable as an authority; the legislation section it advertises is not |
+| **Angola** | `agt.minfin.gov.ao` → 301 to `/PortalAGT/`, 200 but **3 KB of markup and 5 characters of text** | A JavaScript shell. Not a dead host — needs a rendering browser, and has not been pursued further here |
+| **Madagascar** | `impots.mg` and `www.impots.mg` → `curl: (60) unable to get local issuer certificate`, **and `--cacert /root/.ccr/ca-bundle.crt` does not fix it** | An origin serving an incomplete chain the bundle does not cover. Not fetched; verification left on |
+
+**Four jurisdictions, four different situations, four different next steps** — and only
+one of them ("the authority does not serve") is the thing the bare count implied. The
+most useful of the four is Mauritania: a working national tax authority that fifty-four
+citations have gone around, and the only reasons it looked unreachable were a
+plain-`http` redirect target and a missing trailing slash.
+
+**Madagascar is the third missing-intermediate wall today**, after `mjla.gov.om` and
+`slvesnik.com.mk`. In both earlier cases the revenue authority carried the text the
+ministry could not serve. That is now a standing first move rather than a fallback.
+
+`list-source-mix.py` already prints the right caveat on its own output — *"This ranks
+exposure, not diligence."* The corollary this adds: **a zero in that column is a question,
+not an answer.** It says no authority link is present. It does not say why, and the four
+whys here are not alike.
