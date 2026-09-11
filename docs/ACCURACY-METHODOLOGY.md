@@ -5563,3 +5563,55 @@ authority nor a recognised publisher carries ≥75% of the numbers — down from
 **Every one is blocked by reachability, not by effort.** That is the honest end state for
 this queue: not "all jurisdictions are now sourced", but "the ones that can be opened from
 here have been, and here is precisely how each of the rest fails".
+
+### Laos, second pass: reading the replacing Law's rate articles
+
+The first Laos pass established the repeal and deliberately **did not** rewrite the rates,
+on the ground that hastily-read figures from a 34-page Lao-script scan would be worse than
+carefully-sourced stale ones. That hold was right to make and right to lift once the work
+could be done properly: a contact sheet located the rate provisions, and **articles 15 and
+16 were then rendered at 200 dpi and read**.
+
+Every figure appears in the Lao text in **words and digits together** — *ຊາວສ່ວນຮ້ອຍ (20%)*,
+*ສິບຫ້າສ່ວນຮ້ອຍ (15%)*, *ຊາວສອງສ່ວນຮ້ອຍ (22%)*, *ສາມສິບສ່ວນຮ້ອຍ (30%)*, *ສາມສິບຫ້າສ່ວນຮ້ອຍ
+(35%)*, *ຫ້າສ່ວນຮ້ອຍ (5%)*, *ເຈັດສ່ວນຮ້ອຍ (7%)* — clearing the digits-and-words rule.
+
+**Most of the guide's rates survived the repeal.** That is worth stating plainly, because
+the repeal banner alone implies the opposite:
+
+| Guide row | Verdict against the replacing Law |
+|---|---|
+| standard 20% | **confirmed** (art. 15) |
+| tobacco 22% incl. 2% to the control fund | **confirmed** (art. 16(1.1)) |
+| mining 35% *(approx — confirm)* | **confirmed**, and wider — it reaches **mineral exporters**, not only concessions (art. 16(1.4)) |
+| green tech 7% *(approx — confirm)* | **confirmed**, but **time-limited** to the investment-promotion incentive period (art. 16(2.2)) |
+| "education / training & research centres 5%" | **too narrow** — art. 16(2.1) covers innovation, modern schools **and hospitals**, production factories, education equipment, and urban production and greening, **and is time-limited** |
+| listed companies 13% for 4 years | **not in article 16 at all** — flagged, not deleted |
+
+**Two rates were missing outright**: **22% on alcoholic beverages** (art. 16(1.2), with 2%
+to the health-promotion fund) and **30% on casino business** (art. 16(1.3)).
+
+### The finding that was not being looked for
+
+**Article 15's second paragraph is a domestic minimum top-up tax.** Where a legal entity in
+a group that is a member of a **multinational company** has an **effective rate actually
+paid below fifteen percent (15%)** under international rules, it must pay additional
+domestic minimum profit tax to make up the shortfall.
+
+This branch ran a deliberate **Pillar Two sweep** across Oman, the Netherlands, Spain,
+Thailand, North Macedonia, Croatia and Kuwait. **Laos was never a candidate** — it came up
+only because a repeal check sent someone to read the rate article. The detector built for
+the purpose found Laos not at all; an unrelated errand did.
+
+The guide states the charge and **states what it does not know**: scope, any revenue
+threshold, commencement and safe harbours are in *"separate regulations"* which the Law
+names and which were not read. Naming a mechanism is a factual claim — the Oman lesson —
+so the row says a top-up tax exists and stops there.
+
+### What the time limits cost a reader
+
+The 5% and 7% rates both run *"until the end of the profit-tax incentive period fixed by
+the Law on Investment Promotion"*. The guide gave both as standing sector rates. A reader
+told "green technology companies pay 7%" and not told it expires has the right number
+attached to the wrong duration — the same defect shape as a right rate on the wrong base,
+and equally invisible to a rate-level check.
