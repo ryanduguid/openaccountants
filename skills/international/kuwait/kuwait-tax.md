@@ -125,7 +125,7 @@ No VAT input recovery. Foreign VAT is irrecoverable cost.
 
 ### Edge cases
 
-**EC1 -- GCC national.** Saudi-owned business in Kuwait: **not** treated as foreign for CIT. A company wholly owned by GCC nationals is outside the 15% charge and bears the profit-based contributions instead; where ownership is mixed, CIT reaches only the **non-GCC** foreign share. (This example previously said the opposite. **Separately, check the DMTT**: a Pillar Two top-up is keyed to the group's consolidated revenue, not to anyone's nationality, so a large GCC-owned group can be inside it while outside CIT.)
+**EC1 -- GCC national.** Saudi-owned business in Kuwait: **not** treated as foreign for CIT. A company wholly owned by GCC nationals is outside the 15% charge; where ownership is mixed, CIT reaches only the **non-GCC** foreign share. (This example previously said the opposite.) **Being outside CIT does not put it inside Zakat, NLST or KFAS** — each has its own scope, keyed to legal form and listing, not to ownership: Zakat and KFAS reach Kuwaiti *shareholding* companies, NLST only *listed* ones. A Saudi-owned WLL is within none of the four. **Check the DMTT separately**: a Pillar Two top-up is keyed to the group's consolidated revenue — EUR 750m or more in at least two of the four preceding financial years — not to anyone's nationality, so a large GCC-owned group can be inside it while outside CIT.
 
 **EC2 -- Mixed ownership.** CIT on foreign share only. ZAKAT on Kuwaiti share (if listed).
 
@@ -154,7 +154,9 @@ No VAT input recovery. Foreign VAT is irrecoverable cost.
 - NEVER state Kuwait has VAT
 - NEVER apply CIT to 100% Kuwaiti entities
 - NEVER apply ZAKAT to foreign entities
-- NEVER assume GCC ownership is foreign ownership for CIT — the 15% charge reaches the **non-GCC** foreign share, and a wholly GCC-owned company bears the profit-based contributions instead. Confirm the DMTT separately: it turns on group revenue, not nationality
+- NEVER assume GCC ownership is foreign ownership for CIT — the 15% charge reaches the **non-GCC** foreign share
+- NEVER infer a Zakat, NLST or KFAS liability from the fact that a company is outside CIT — each has its own scope, keyed to legal form and listing rather than ownership, and a GCC-owned or Kuwaiti-owned WLL may be within none of them
+- NEVER apply the DMTT threshold to a single year — it is EUR 750m or more in at least **two of the four** preceding financial years, and it turns on group revenue, not nationality
 - NEVER compute numbers -- engine handles arithmetic
 
 ## Disclaimer
