@@ -5513,3 +5513,53 @@ here"*, with the cause left open.
 a jurisdiction's. But applying that to Cuba and São Tomé returned nothing: their justice
 ministry and parliament fail exactly as their finance ministries do. **A heuristic that
 pays once is not a method** — it is worth trying and worth reporting when it does not.
+
+### Myanmar, second pass: what the other 180 pages held
+
+The first Myanmar pass took the foreign-company test, the director rules and the annual
+return. A second pass through the same 188 pages took the rest of what the guide had on a
+blog.
+
+**The entity-types row was wrong in both directions at once.** It listed *"Private company
+limited by shares; public company limited by shares; branch/overseas corporation; **sole
+proprietorship; partnership**"*. Section 2 provides for a company limited by shares
+(private or public), a **company limited by guarantee**, and an **unlimited company**;
+section 3 adds business associations and overseas corporations. So the guide **omits two
+statutory forms** and **lists two things that are not companies under this Law at all**.
+It also misses the hard cap in section 2: a **private company is limited to 50 members**,
+employees excluded.
+
+**The audit row was unqualified and is wrong for most companies.** It read *"Companies must
+prepare annual financial statements; audited accounts are filed…"*. **Section 257(c):**
+
+> *"Sections 260 to 268 (inclusive) and 279(b) do not apply to a small company"*
+
+— the core of Division 24 (Financial Reports and Audit) — unless the constitution applies
+them, the members pass an ordinary resolution, or the Registrar so determines. **Section
+146** (the AGM provisions and the auditor's attendance) is switched off on the same three
+conditions. And a *"small company"* under **s. 1(xxxviii)** is one with **≤30 employees**
+and **<50,000,000 kyats** aggregate prior-year revenue, neither a public company nor a
+subsidiary of one. That is a large share of Myanmar companies, and the guide told every one
+of them the opposite.
+
+**Section 257(b) adds a conflict rule the guide could not have inferred:** where Division 24
+and the **Myanmar Accountancy Council Law** conflict, the Accountancy Council Law prevails.
+A reader working only from the Companies Law can reach the wrong answer on reporting and
+never know it.
+
+### The single-source list is now exhausted of tractable entries
+
+`list-single-source-blocks.py` reports **7** guides where one host that is neither an
+authority nor a recognised publisher carries ≥75% of the numbers — down from 8, and from
+14 when this branch began. What remains is:
+
+| Guide | Why it stays |
+|---|---|
+| `iq-company-formation` | Iraq's Cloudflare WAF deny — a control the site owner chose, left alone |
+| `er-income-tax` | Eritrea — no host completes a TLS handshake from here |
+| `cu-vat-gst`, `cu-payroll-social` | Cuba — four hosts tried across finance, tax, gazette and justice |
+| `st-corporate-income-tax`, `st-vat-gst`, `st-income-tax` | São Tomé — finance ministry hosting account disabled; parliament does not complete a handshake |
+
+**Every one is blocked by reachability, not by effort.** That is the honest end state for
+this queue: not "all jurisdictions are now sourced", but "the ones that can be opened from
+here have been, and here is precisely how each of the rest fails".
