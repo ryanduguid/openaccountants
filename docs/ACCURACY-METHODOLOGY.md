@@ -5951,3 +5951,41 @@ In all three, the domestic instrument is a **procedural shell around arithmetic 
 else**. A guide that promises to state "the Pillar Two rules" of such a jurisdiction from its
 own statute is promising something the statute does not contain — and the honest output is to
 say where the arithmetic actually lives, which is what these three guides now do.
+
+### Correcting a flag this branch raised an hour earlier
+
+The Andorra CIT guide had just been given a warning, by this branch, that *"the accounting
+standard underneath the tax base was replaced in December 2025"* and that the starting point of
+the tax computation had therefore moved. Reading **Decret 479/2025** itself shows the preamble
+says the opposite:
+
+> *"Per raons de seguretat jurídica, el Govern d'Andorra **deroga el Decret 120/2022** … i
+> **torna a aprovar íntegrament el Pla general de comptabilitat**"*
+
+**A re-enactment for legal certainty**, not a new framework. The flag was raised from a gazette
+*summary line* — "pel qual s'aprova el **nou** Pla general de comptabilitat" — and the word
+*nou* in a summary did the work that reading the instrument undid.
+
+The corrected row says what the decree says and then marks the residue honestly: "re-approved in
+its entirety" is a statement about the **form of the instrument**, not a guarantee that the text
+is word-for-word the 2022 one. That is a smaller, true claim in place of a larger, unsupported
+one.
+
+**This is the branch's own pattern turned on itself.** Every other entry here is about a guide
+that stated more than its source supported; this one is about a *warning* that did. A flag is a
+factual claim too, and "⚠ this may have changed" is not self-justifying — it inherits the same
+burden as the row it warns about. It was live in the repository for about an hour.
+
+**What the reading bought instead**, which is worth more than the flag was:
+
+- From the financial year beginning **1 January 2026**, the exemption from depositing annual
+  accounts survives for autónomos **only if they have elected the *règim de determinació
+  objectiva*** under article 17 of the IRPF Law. The EUR 150,000 income test, extended for 2024
+  and 2025 by Llei 4/2025, **stops carrying it on its own**. A dated narrowing of a live
+  obligation, in a pack that had no note of it.
+- Accounts for years beginning before 1 January 2025 that were never deposited **can still be
+  filed** under the old rules, unless the Llei 21/2014 limitation period has run on the
+  corresponding tax return — in which case the filing moves to the Servei de Tràmits.
+
+Both were recited in the decree's preamble while the substantive question the decree was opened
+for turned out to be a non-event.
