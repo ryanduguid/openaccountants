@@ -5910,3 +5910,44 @@ artefact that presents as content rather than as failure.** The UTF-16 case at l
 visible mojibake; this one produces clean, fluent, complete-looking Croatian with the operative
 provision silently deleted. Recorded in the guide itself, because the next reader to extract this
 Act will hit it and have no reason to suspect anything is missing.
+
+## North Macedonia: a gap that was bibliographic, not substantive
+
+The open list carried *"the corrigendum at Службен весник бр. 2/2026 has not been read, so what
+it corrects is unknown"*. The Official Gazette (`slvesnik.com.mk`) fails certificate
+verification — a missing intermediate, not a policy control — and verification was not disabled
+to get past it.
+
+The Public Revenue Office's own register serves the ordinance as a PDF, and **its masthead says
+it is the consolidated text as corrected**: *"бр.270/2025 од 31.12.2025 **и исправка** во …
+бр. 2/2026"*. So every article the guide already stated was **already the corrected wording**.
+The gap was never substantive; the guide had simply not noticed which version it was holding.
+
+**That distinction is worth keeping straight.** "The corrigendum is unread" and "the text I read
+already incorporates the corrigendum" produce the same article text and completely different
+confidence. The note now says the corrected text has been read in full and that the **delta** is
+still unidentified — which matters only to someone reconciling a copy taken in the five days
+between publication and correction.
+
+Three additions came out of re-reading it:
+
+- Article 1 announces **four** subject matters; articles 11–12 collapse the fourth onto the
+  first, so the domestic top-up tax uses **the same КДДД/П form**. A reader working from
+  article 1 hunts a fourth form that does not exist.
+- The four-decimal rounding and the NBRSM last-month conversion rule appear **twice**, at
+  articles 5 and 10 — the guide cited only article 10, which read as if the rule were specific
+  to one return.
+- Article 6's closing paragraph relieves the **information return** where a parent or designated
+  filer discharges it in a qualifying-agreement jurisdiction — but **not** the КДДД/П and ДДД/П
+  returns, which stay local and stay due at nil.
+
+### A pattern across three Pillar Two jurisdictions
+
+North Macedonia's ordinance article 2 delegates the computation to *"the adopted OECD models and
+rules"*. Croatia's article 34 delegates the safe harbours to an agreement published on a
+ministry website. Croatia's articles 28–29 publish the ETR and top-up formulas **as JPEGs**.
+
+In all three, the domestic instrument is a **procedural shell around arithmetic held somewhere
+else**. A guide that promises to state "the Pillar Two rules" of such a jurisdiction from its
+own statute is promising something the statute does not contain — and the honest output is to
+say where the arithmetic actually lives, which is what these three guides now do.

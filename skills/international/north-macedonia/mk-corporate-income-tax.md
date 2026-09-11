@@ -108,11 +108,26 @@ by the Public Revenue Office itself, and everything below is read from that text
   to article 5(5) of the Act. The mechanics are therefore not in Macedonian law at all;
   a reader who reads the Act and the ordinance end to end still has to go to the OECD
   texts to compute anything  _([Правилник, art. 2](https://ujp.gov.mk/mk/regulativa/opis/441))_
-- **Two computational rules worth having exactly** — Effective tax rate and top-up
-  percentages are **rounded to four decimal places**. Amounts computed in foreign currency
-  are converted to denars at the **middle rate published by the National Bank of the
-  Republic of North Macedonia for the last month of the fiscal year** the return covers —
-  not the year-end spot rate and not an average for the year  _([Правилник, art. 10](https://ujp.gov.mk/mk/regulativa/opis/441))_
+- **Two computational rules worth having exactly, and they apply to *both* returns** —
+  Effective tax rate and top-up percentages are **rounded to four decimal places**. Amounts
+  computed in foreign currency are converted to denars at the **middle rate published by the
+  National Bank of the Republic of North Macedonia for the last month of the fiscal year**
+  the return covers — not the year-end spot rate and not an average for the year. The rule
+  appears **twice in identical terms**: article 5 for the КДДД/П return and article 10 for
+  the ДДД/П return, so it is not specific to either  _([Правилник, arts. 5 and 10](https://ujp.gov.mk/mk/regulativa/opis/441))_
+- **⚠ Article 1 lists four subject matters but there are only two forms** — Article 1
+  announces rules for the qualified domestic top-up tax, the information return, the
+  top-up tax return **and** the *домашен дополнителен данок* (domestic top-up tax) as a
+  fourth head. **Articles 11 and 12 then collapse the fourth onto the first**: the return
+  for the domestic top-up tax is filed **on the same образец „КДДД/П"** prescribed by
+  article 3, and payment is made in the manner set out in articles 3, 4 and 5. A reader
+  working from article 1 will look for a fourth form that does not exist  _([Правилник, arts. 1, 11 and 12](https://ujp.gov.mk/mk/regulativa/opis/441))_
+- **The information return can be discharged abroad** — The closing paragraph of article 6
+  relieves a local constituent entity of filing the *Пријава на информации* where the
+  return has been filed by the **ultimate parent** or by a designated filing entity located
+  in a jurisdiction with which North Macedonia has concluded a **qualifying competent
+  authority agreement**. Note what this does *not* reach: articles 3 and 8 still require the
+  **КДДД/П and ДДД/П returns** to be filed locally, and both are due **even at nil**  _([Правилник, arts. 3, 6 and 8](https://ujp.gov.mk/mk/regulativa/opis/441))_
 
 > **Sources.** The Act (60 pages) and the article 13(9) *Правилник* (3 pages) were both
 > read from the PDFs the Public Revenue Office publishes on its own regulation register at
@@ -122,9 +137,22 @@ by the Public Revenue Office itself, and everything below is read from that text
 > passing the CA bundle does not fix it, so it was not fetched with verification disabled.
 > The tax authority carried both texts anyway.
 >
-> **Not read:** the corrigendum at Службен весник бр. 2/2026 of 5 January 2026 is recorded
-> by the register but its content has not been seen, so **what it corrects is unknown**.
-> The two annexed forms (Прилог 1 and Прилог 2) have not been examined field by field.
+> **The corrigendum is incorporated in the text above.** An earlier pass recorded the
+> corrigendum at Службен весник бр. 2/2026 of 5 January 2026 as unread. The PDF the Public
+> Revenue Office serves **is the consolidated text as corrected** — its own masthead reads
+> *"Службен весник на РСМ, бр.270/2025 од 31.12.2025 **и исправка** во Службен весник на
+> РСМ, бр. 2/2026 од 5.01.2026 година"* — so every article stated above is the corrected
+> wording, not the 31 December original.
+>
+> **What is still not established is the *delta*.** The consolidated text does not mark what
+> changed, and the original бр. 270/2025 text was not obtained for comparison, so this guide
+> can say the corrected text has been read in full but **cannot say what the corrigendum
+> altered**. For a reader applying the ordinance that distinction does not matter — the text
+> above is the operative one. It matters only to someone reconciling against a copy taken
+> between 31 December 2025 and 5 January 2026.
+>
+> **Still not read:** the two annexed forms (Прилог 1 and Прилог 2) have not been examined
+> field by field.
 
 ---
 
