@@ -1,9 +1,9 @@
 ---
 name: tm-income-tax
-description: "Source-cited draft: personal income tax for Turkmenistan (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
+description: "Source-cited draft: personal income tax for Turkmenistan — the flat 10% rate confirmed at art. 192(1) of the Unified Law 'On Taxes', with gambling income charged by fixed daily amounts under art. 172(3). Monthly deduction still unverified. Pending local-accountant review."
 jurisdiction: TM
 tax_year: 2025
-last_updated: 2026-09-10
+last_updated: 2026-09-11
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -13,7 +13,18 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Personal income tax rates and residence
 
-- **Personal income tax rate — residents** — 10% (flat) percent  _(Tax Code of Turkmenistan (as described at [gsl.org](https://gsl.org/en/taxes/turkmenistan/)))_
+> **The Tax Code has been read, and the flat rate is confirmed.** The Tax Directorate
+> of the Ministry of Finance and Economy publishes the
+> ***«Salgytlar hakynda» Türkmenistanyň bitewi Kanuny*** (Unified Law of Turkmenistan
+> "On Taxes") at [tax.gov.tm](https://tax.gov.tm/hukuknamalar). **Article 192(1)**
+> settles the headline rate. **The TMT 1,280 monthly deduction below was not located in
+> the Code** and keeps its "(approx — confirm)" mark — an amount of that kind is
+> typically fixed by a separate annual instrument, which was not read. [RESEARCH GAP]
+>
+> _([«Salgytlar hakynda» Türkmenistanyň bitewi Kanuny, arts. 172(3), 192](https://tax.gov.tm/pdf/ckeditor_assets/attachments/10/2.pdf))_
+
+- **Personal income tax rate — residents** — **10% flat**. Article 192(1): *"Şu Bitewi kanunda başgaça bellenilmedik bolsa, salgyt möçberi 10 göterim derejede bellenýär"* — unless otherwise established in this Unified Law, the rate is set at 10 percent percent  _([Bitewi Kanun, art. 192(1)](https://tax.gov.tm/pdf/ckeditor_assets/attachments/10/2.pdf))_
+- **⚠ Gambling winnings are not taxed at 10%** — Article 192(2) takes individuals' income from gambling activity **out of the flat rate** and charges it at the **fixed daily amounts in article 172(3)** — TMT 30 per gaming machine, TMT 370 per gaming table, TMT 7 per seat, TMT 3 per square metre of premises or TMT 38 per cash desk, per day, with the highest-yielding measure applying where more than one could. This is the *"unless otherwise established"* limb of article 192(1) in operation, and it was absent from this guide  _([Bitewi Kanun, arts. 172(3) and 192(2)](https://tax.gov.tm/pdf/ckeditor_assets/attachments/10/2.pdf))_
 - **Personal income tax rate — non-residents** — 10% on Turkmenistan-source income percent ((approx — confirm))  _(Tax Code of Turkmenistan)_
 - **Tax bands** — None — Turkmenistan applies a single flat rate, not progressive brackets  _(Tax Code of Turkmenistan)_
 - **Standard monthly personal deduction** — 1,280 TMT per month, deducted before applying the 10% rate TMT ((approx — confirm current amount))  _(Tax Code of Turkmenistan (as described at [rivermate.com](https://rivermate.com/guides/turkmenistan/taxes)))_
