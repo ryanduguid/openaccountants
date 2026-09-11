@@ -1,47 +1,30 @@
 ---
 name: ng-vat-return
-description: Use this skill whenever asked about Nigerian VAT returns for self-employed individuals or small businesses. Trigger on phrases like "Nigeria VAT", "FIRS VAT", "7.5% VAT", "VAT return Nigeria", "value added tax Nigeria", "TaxPro Max", or any question about VAT computation or filing for businesses in Nigeria. Covers the 7.5% standard rate, exempt supplies, the NGN 25M registration threshold for periods ending before 1 January 2026, the Nigeria Tax Administration Act 2025 s.22 small-business exemption from 1 January 2026 (NGN 100M turnover and NGN 250M fixed assets, with professional-services businesses excluded and therefore never exempt), monthly filing to FIRS, and input/output VAT computation. Merged into ng-vat.md, which is the consolidated current-period guide. ALWAYS read this skill before touching any Nigerian VAT work.
-version: 2.0
+description: "Archived Nigerian VAT guide retained for historical comparison and bank-narration examples. For Nigerian VAT registration, classification, input deductions, imported services, monthly returns or payment deadlines from 1 January 2026, read ng-vat.md. The old body contains superseded or incorrect thresholds, tax treatments and penalties, so do not execute its filing or calculation instructions. It is not a verified guide to an earlier period either; check the law for that period separately. Use this file only to trace an earlier working paper or review source examples after confirming treatment in the applicable current guide."
+version: 2.1
 jurisdiction: NG
 tax_year: 2025
 last_updated: 2026-09-11
-reviewed_by: Omolola Fasasi 
-review_status: current
+review_status: pending_review
 depends_on:
   - vat-workflow-base
 category: international
-tier: 1
+tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
 # NG VAT Return
 
-> **The NGN 25,000,000 exemption in this file is cited to the Nigeria Tax Act 2025
-> and is not in it.** The reviewed block below records *"VAT registration exemption
-> threshold (annual turnover) — NGN 25,000,000 or less (NIGERIAN TAX ACT 2025)"*.
-> NTA 2025 charges VAT at 7.5% on the value of **all** taxable supplies (s.147) and
-> its exempt list (s.185) has no turnover limb. ₦25,000,000 is the Finance Act
-> 2019/2020 test, and it governs periods ending before **1 January 2026**.
->
-> For periods from 1 January 2026 the exemption is in the **Nigeria Tax
-> Administration Act 2025, s.22**. The monthly-return obligation in s.22(1) does not
-> apply to a **small business**, and s.22(5) describes that exemption as covering
-> *"registration, charging of tax on its taxable supplies and filing of returns"*. A
-> small business is one with gross turnover ≤ **NGN 100,000,000** *and* fixed assets
-> ≤ **NGN 250,000,000** — **except that "any business providing professional
-> services shall not be classified as a small business"**. A freelance consultant,
-> accountant, lawyer, engineer or designer is therefore outside the exemption **at
-> any turnover**, and the standing instruction later in this file never to require
-> registration below ₦25 million must not be applied to one in a 2026 or later
-> period.
->
-> This file was also merged into `ng-vat.md` v2.0, which describes itself as a
-> consolidated rewrite of this guide and `nigeria-vat.md`. Prefer `ng-vat.md` for
-> current-period work.
->
-> _(Nigeria Tax Act 2025, ss. 147 and 185 — https://nass.gov.ng/documents/download/11249; Nigeria Tax Administration Act 2025, s. 22 and definitions — https://tat.gov.ng/Nigeria-Tax-Act-2025.pdf)_
+> Archived guide. Use [ng-vat.md](ng-vat.md) for periods from 1 January 2026.
+> Do not execute the old calculation, classification, registration, penalty or
+> filing instructions below. They contain errors and superseded rules, including
+> the NGN 25 million threshold and the treatment of zero-rated supplies as exempt.
+> Historical bank examples may help identify transactions, but cannot establish
+> their VAT treatment. Any generated review block is retained unchanged as a
+> historical record and does not sign off current use. Amend its source
+> `skill_facts` before regenerating it.
 
-## Nigeria VAT Return -- Self-Employed Skill v2.0
+## Nigeria VAT Return -- Archived Self-Employed Skill v2.1
 
 ## Verified rates & thresholds (accountant-reviewed)
 

@@ -5,7 +5,7 @@ jurisdiction: BI
 category: international
 tax_year: 2026
 tax_year_notes: "The scale in §1 is article 21 of loi n° 1/02 du 24 janvier 2013 as amended by loi n° 1/14 du 24 décembre 2020. The small-trader regime in §2 is article 190 of the Loi de Finances 2026/2027 (loi n° 1/10 du 30 juin 2026), expressed to apply 'au titre de la gestion budgétaire 2026/2027': it is year-specific and must be re-checked against each Finance Act. Burundi's budget year runs 1 July to 30 June."
-version: 0.2
+version: 0.3
 last_updated: 2026-09-11
 review_status: pending_review
 tier: 2
@@ -97,13 +97,16 @@ _(Loi de Finances 2026/2027 (loi n° 1/10 du 30 juin 2026), art. 190: https://ww
   prejudice to the article 115 annual recapitulative, with the deadline *"au
   quinzième jour du mois qui suit celui de la réalisation du revenu d'emploi"* —
   the **15th of the month following** the month the income arose. [Income tax law, art. 24](https://www.obr.bi/images/LOI_N1_14_DU_24_DECEMBRE_2020_PORTANT_MODIFICATION_DE_LA_LOI_N1_02_DU_24_JANVIER_2013_RELATIVE_AUX_IMPOTS_SUR_LES_REVENUS_1.pdf).
-- **A second quarterly threshold sits in article 24, and it is not the Finance Act
-  one.** Natural persons with turnover *"inférieur ou égal à cent millions
-  (100.000.000) francs burundais"* declare and pay **quarterly**. That is a
-  **filing-frequency** rule at **BIF 100,000,000**, distinct from the Finance Act
-  art. 190 regime in Section 2, which taxes turnover at 1% quarterly up to **BIF
-  25,000,000**. **Two quarterly tests, two thresholds, two purposes** — a taxpayer
-  between the two figures files quarterly without being on the 1% regime. [Income tax law, art. 24](https://www.obr.bi/images/LOI_N1_14_DU_24_DECEMBRE_2020_PORTANT_MODIFICATION_DE_LA_LOI_N1_02_DU_24_JANVIER_2013_RELATIVE_AUX_IMPOTS_SUR_LES_REVENUS_1.pdf).
+- **Use the 2026/2027 filing rule before the older threshold.** Article 24 of the
+  2020 law mentions quarterly declarations and payments for natural persons with
+  turnover up to BIF 100,000,000. Finance Act 2026/2027 article 190 expressly
+  requires an annual income-tax return above BIF 25,000,000. A taxpayer between
+  those amounts must therefore retain the annual-return obligation in Section 2.
+  The cited texts do not establish here whether additional quarterly declarations
+  remain due. Confirm that interaction with OBR before preparing a filing calendar;
+  article 126 provisional instalments are a separate question.
+  [Finance Act, art. 190](https://www.obr.bi/images/LOI_DE_FINANCES_2026-2027_PROMULGUEE_compressed.pdf);
+  [Income tax law, arts. 24 and 126](https://www.obr.bi/images/LOI_N1_14_DU_24_DECEMBRE_2020_PORTANT_MODIFICATION_DE_LA_LOI_N1_02_DU_24_JANVIER_2013_RELATIVE_AUX_IMPOTS_SUR_LES_REVENUS_1.pdf).
 - **Medium and large taxpayers need their return certified.** Article 27 requires
   natural persons with business income taxed under article 21(1) to file an annual
   return, and provides that those classed as **medium and large taxpayers** must

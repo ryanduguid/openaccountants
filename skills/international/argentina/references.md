@@ -1,10 +1,10 @@
 ---
 name: references
-description: Primary source references and related open-source projects for Argentina.
-version: 1.1
+description: "Reference entry for Argentine tax research and electronic invoicing. Identifies ARCA as the federal tax and customs authority and lists pyafipws and PyARCA as external software references for government web services and Monotributo invoicing. Use when locating Argentine source material, checking an AFIP-to-ARCA reference or assessing an invoicing integration. The consolidated legislative texts and resolution numbers remain a documented research gap. Consult each tax guide and the authority before relying on a rule. Check the actual upstream licence and OpenAccountants licensing policy before copying or distributing third-party material."
+version: 1.2
 jurisdiction: AR
 tax_year: 2025
-last_updated: 2026-09-10
+last_updated: 2026-09-11
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -13,21 +13,6 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 # References
-
-> **This file previously contained Vietnam's references, in full.** Under a
-> `jurisdiction: VN` frontmatter, in the Argentina directory, it listed two
-> Vietnamese personal-income-tax repositories and cited *Luật số 109/2025/QH15*,
-> *Luật Thuế TNCN No. 04/2007/QH12* and *Thông tư 111/2013/TT-BTC* — under the
-> heading *"Vietnam — Related Open-Source Projects"*. All 32 other `references.md`
-> files carry the jurisdiction code of the directory they sit in; this was the only
-> mismatch.
->
-> **The real Argentine content was never lost.** It survived in
-> `agent-skills/argentina-references/`, the hand-maintained tree that CLAUDE.md
-> describes as inheriting nothing from `skills/`. Independence cuts both ways: a
-> tree that does not receive corrections also does not receive corruptions, so when
-> one copy is wrong **the parallel tree is the first place to look**. The projects
-> below are restored from it rather than rewritten.
 
 ## National tax authority
 
@@ -38,16 +23,19 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Related open-source projects
 
-OpenAccountants is AGPL-3.0. AGPL-3.0 and LGPL-3.0 are compatible licences.
-Projects below can be incorporated with attribution.
+OpenAccountants uses separate licences for software and Guides. See
+[LICENSING.md](../../../LICENSING.md). These projects are references, not blanket
+permission to copy their code or documentation. Check the upstream licence for
+the material and intended use; attribution alone does not satisfy every licence
+condition.
 
 ### pyafipws
 
-- **reingart/pyafipws** — Repository: https://github.com/reingart/pyafipws. Licence: LGPL-3.0. Language: Python. Scope: *Factura Electrónica AFIP y otros servicios web* — interfaces, tools and apps for Argentina's government web services (SOAP, COM/DLL, PDF, DBF, XML, JSON). The definitive open-source Argentine e-invoicing library. Integration: LGPL-3.0, compatible — web-service integration patterns, e-invoice generation and authentication flows are directly reusable for Argentine tax-compliance automation  _(https://github.com/reingart/pyafipws)_
+- **reingart/pyafipws**: Repository: https://github.com/reingart/pyafipws. Licence: LGPL-3.0. Language: Python. Scope: *Factura Electrónica AFIP y otros servicios web*: interfaces, tools and apps for Argentina's government web services (SOAP, COM/DLL, PDF, DBF, XML, JSON). Reference for web-service integration, e-invoice generation and authentication flows; assess reuse against the upstream licence  _(https://github.com/reingart/pyafipws)_
 
 ### PyARCA
 
-- **GeraCollante/PyARCA** — Repository: https://github.com/GeraCollante/PyARCA. Licence: LGPL-3.0. Language: Python. Scope: *CLI para facturación electrónica Monotributo (ARCA/ex-AFIP)*, a fork of pyafipws focused on Monotributo invoicing. Integration: LGPL-3.0, compatible — reference for Monotributo-specific invoicing workflows and ARCA interactions. **Its own scope line names the authority as "ARCA/ex-AFIP"**, which corroborates the rename above from a source independent of the authority itself  _(https://github.com/GeraCollante/PyARCA)_
+- **GeraCollante/PyARCA**: Repository: https://github.com/GeraCollante/PyARCA. Licence: LGPL-3.0. Language: Python. Scope: *CLI para facturación electrónica Monotributo (ARCA/ex-AFIP)*, a fork of pyafipws focused on Monotributo invoicing. Reference for Monotributo-specific invoicing workflows and ARCA interactions; assess reuse against the upstream licence  _(https://github.com/GeraCollante/PyARCA)_
 
 ## Key legislative sources
 

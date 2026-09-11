@@ -2675,44 +2675,26 @@ secondary, the same blind spot that once had Botswana citing its own revenue
 service and counting as unsourced. `digesto.asamblea.gob.ni` already scored as
 authority through the `gob` pattern; a selftest now pins both.
 
-### OHADA — the queue was treating one law as two problems, and they disagree
+### OHADA capital rules require the national provisions too
 
-Burkina Faso and Gabon sit on the queue as separate entries. They are not separate
-problems: both are **OHADA** member states, so their company law is not national
-law but the same *Acte uniforme relatif au droit des sociétés commerciales et du
-groupement d'intérêt économique*, shared across seventeen countries. Noticing that
-was the whole finding, because it puts two guides that never reference each other
-into direct comparison.
+Burkina Faso and Gabon both apply the AUSCGIE, but different capital figures do
+not by themselves prove either guide wrong. Article 311 sets the SARL default
+at CFA 1,000,000 and permits contrary national provisions. Its CFA 5,000 minimum
+nominal share value is a separate rule.
 
-**They disagree, while citing the same instrument.** `bf-company-formation` gives
-the SARL minimum capital as *"freely set by the partners but at least the par value
-of one share (5,000 FCFA)"*, cited to the AUSCGIE. `ga-company-formation` gives
-**XAF 1,000,000**, cited to the AUSCGIE. **A single uniform text cannot say both.**
-At least one attribution is wrong, and the corpus contained the contradiction with
-nothing to surface it: no checker compares two jurisdictions' citations of a shared
-supranational instrument, because nothing knows the instrument is shared.
+Burkina Faso exercised the national power. Article 1 of Décret n°2016-314 of
+3 May 2016 replaces article 3 of Décret n°2014-462 with freely fixed SARL capital.
+The guide's previous FCFA 5,000 example can therefore be valid, though it needs
+both the national decree and the uniform share-value rule as sources. Restoring
+the uniform default as Burkina Faso's minimum would create an error. Gabon's
+national position remains a separate research gap.
 
-The likely resolution, **flagged as a hypothesis rather than asserted**: the 2014
-revision left the SARL minimum to each member state, so both states may genuinely
-differ while **neither figure belongs to the uniform act**. On that reading Burkina
-Faso's 5,000 FCFA par value is **pre-2014** — a rule right for the wrong year, the
-Sierra Leone shape again. The two guides *agree* that the SA minimum is 10,000,000,
-which is the figure usually attributed to the Act, and that agreement is the only
-corroborating part.
+[AUSCGIE, art. 311](https://biblio.ohada.org/doc_num.php?explnum_id=3974);
+[Burkina Faso decree, arts. 1–2](https://police.gov.bf/index.php/infos-utiles/textes-officiels/category/3-decrets?download=26:decret-capital-minimum).
 
-It stays a hypothesis because **the Act could not be read**. `ohada.org` answers
-`curl` with 200 and 408 KB, but its *Actes uniformes* and *Droit des sociétés
-commerciales et du GIE* pages carry **no PDF link and no inline text** — zero
-matches for "Article N" — and both fail in the browser while succeeding under
-`curl`, the reverse pattern that earlier exposed the stale proxy port and this time
-did not. `droit-afrique.com`, the usual mirror, returns a hard **403 Forbidden** to
-`curl` and browser alike: 260 bytes, a real refusal rather than a challenge.
-
-**A shared legal instrument is a checkable cross-jurisdiction invariant**, and this
-corpus has more of them than the queue can see: OHADA covers seventeen states, and
-the same logic applies to CEMAC, UEMOA, the EAC and the GCC. Where two guides cite
-one supranational text for the same rule and give different numbers, one of them is
-wrong **without anyone needing to open the text**.
+A cross-jurisdiction comparison can flag a question. Resolve it by checking
+membership, effective dates, national options and the precise scope of each rule
+before changing a figure.
 
 ### Myanmar — three sources, all dead, so the entry is closed rather than open
 
@@ -2932,12 +2914,11 @@ version so far:
 - **Employment income tax is monthly**, not annual — the tail of article 24 fixes
   the taxable period at one month and the deadline at the **15th of the following
   month**, without prejudice to the article 115 recapitulative.
-- **A second quarterly threshold**, also in article 24: natural persons with
-  turnover **≤ BIF 100,000,000** declare and pay quarterly. That is a
-  *filing-frequency* rule, and it is not the Finance Act's **BIF 25,000,000**
-  quarterly 1%-of-turnover regime. **Two quarterly tests, two thresholds, two
-  purposes** — and a taxpayer between the figures files quarterly without being on
-  the 1% regime.
+- **Article 24's older BIF 100,000,000 quarterly threshold needs a current-law
+  check.** Finance Act 2026/2027 article 190 requires annual returns above
+  BIF 25,000,000. The guide must retain that annual obligation. Whether additional
+  quarterly declarations remain due under article 24 requires OBR confirmation;
+  the two thresholds alone do not resolve the interaction.
 - **Article 27**: medium and large taxpayers must have the annual declaration
   **and each annex** certified by a professional approved by the Ordre des
   Professionnels Comptables.
@@ -3199,33 +3180,17 @@ Two access notes, since both matter for repeating this:
 
 ### OHADA — one uniform act, fourteen guides, six mutually exclusive answers
 
-The single-source queue's two OHADA entries — Burkina Faso and Gabon, both company
-formation — were left open earlier with a recorded contradiction: the two guides
-cited the **same** *Acte uniforme relatif au droit des sociétés commerciales et du
-groupement d'intérêt économique* for two different SARL minimum capitals, 5,000
-FCFA and 1,000,000 FCFA. A single uniform text cannot say both.
+The OHADA comparison must distinguish the uniform default from national rules.
+Article 311 sets CFA 1,000,000 as the SARL default, subject to contrary national
+provisions, and CFA 5,000 as the minimum nominal share value. Burkina Faso's
+Décret n°2016-314 permits freely fixed capital, so its earlier FCFA 5,000 example
+was not disproved by reading article 311 alone. See the national decree cited in
+the corrected discussion above.
 
-**It says both.** Article 311, as published in the Journal Officiel de l'OHADA,
-numéro spécial du 4 février 2014:
-
-> *"**Sauf dispositions nationales contraires**, le capital social doit être d'un
-> million (1.000.000) de francs CFA au moins. Il est divisé en parts sociales
-> égales dont la valeur nominale ne peut être inférieure à cinq mille (5.000)
-> francs CFA."*
-
-The minimum **capital** is 1,000,000. The 5,000 is the minimum nominal value of a
-single *part sociale* — a floor on the denomination of the units. Burkina Faso's
-guide had taken a real figure from the right article and attached it to the wrong
-concept. **A number can be correct, correctly sourced, and still wrong, because
-what it measures is part of the fact.**
-
-**The earlier hypothesis was wrong and is corrected in place.** It said the 2014
-revision "left the SARL's minimum capital to each member state", so that neither
-figure belonged to the uniform act. Both do. What the revision added is the opening
-**"sauf dispositions nationales contraires"** — a derogation clause letting a state
-displace the default. Article 387's SA minimum of 10,000,000 has **no such clause**
-and is not displaceable, and article 824 raises it to 100,000,000 for securities
-listed on a member state's exchange or publicly offered there.
+Article 387 sets an ordinary SA minimum of CFA 10,000,000. Article 824 sets
+CFA 100,000,000 for the listed or publicly offered securities within its scope.
+Keep the default, national provisions, entity form and public-offering rules
+separate when comparing countries.
 
 #### What one document was worth
 
@@ -3238,7 +3203,7 @@ instrument:
   minimum was "abolished" or "removed by OHADA". It was not. Where a state has in
   fact displaced it, that is **national law using article 311's derogation**, and it
   belongs to a citation of that law.
-- **The 5,000/1,000,000 conflation** — Mali, alongside Burkina Faso.
+- **Capital versus nominal share value**: Mali's national provisions still need verification. Burkina Faso's national decree permits its lower capital example.
 - **"Fully paid up at incorporation"** — Central African Republic. Article 311-1
   requires cash parts paid up to **half** on subscription, balance in two years.
 - **The SARL deadline applied to an SA** — Chad gave two years for the SA balance
@@ -3290,3 +3255,28 @@ confirmed by rendering the pages at 200 dpi and reading the images, which is als
 how *"la société anonyme peut ne comprendre qu'un seul actionnaire"* was recovered.
 **The rule that OCR is not a text layer has a corollary: a bad text layer is not one
 either, and it fails silently by deletion rather than by garbling.**
+
+### PR 21 review corrections, 11 September 2026
+
+The Nigeria VAT notice corrected one threshold but left conflicting operative
+instructions. The revised `ng-vat` body applies NTA sections 150, 154–155 and
+185–186, and NTAA sections 22 and 100–107: it distinguishes zero-rated from exempt
+supplies, separates VAT withheld from input deductions, states the 14th-day
+remittance rule and corrects late-return penalties. The two legacy VAT guides
+now route current work to it. Generated fact blocks remain unchanged and carry
+an explicit warning pending corrections in `skill_facts`; the frontmatter does
+not attribute these amendments to the historical reviewer.
+
+India's income-tax calculation now applies the rebate and marginal relief before
+cess. Its presumptive-tax instructions include the 5% cash conditions, activity
+and return-form eligibility, and the 15 March advance-tax rule. AY 2026-27
+filing dates now reflect the Department's current guidance, including the
+31 August ITR-4 deadline and 31 March revised-return deadline. The residency
+guide separately tests where income is received under section 5, so a foreign
+asset does not automatically mean untaxed income for an RNOR or non-resident.
+
+The Burkina Faso capital correction and Burundi filing qualification above
+replace conclusions that had omitted a national provision or later Finance Act.
+Delaware remains an explicitly versioned coverage gap. Argentina's reference
+entry points to the repository's mixed-licence policy without suggesting that
+attribution alone permits reuse.

@@ -1,7 +1,7 @@
 ---
 name: nigeria-vat
-description: Use this skill whenever asked to prepare, review, or classify transactions for a Nigeria VAT return or advise on Nigerian VAT registration, filing, and compliance. Trigger on phrases like "prepare Nigeria VAT return", "Nigerian VAT", "FIRS VAT", "Form 002", or any Nigeria VAT request. ALWAYS read this skill before touching any Nigeria VAT work.
-version: 2.0
+description: "Archived Nigerian VAT guide retained for historical comparison and bank-narration examples. For Nigerian VAT registration, classification, input deductions, imported services, monthly returns or payment deadlines from 1 January 2026, read ng-vat.md. The old body contains superseded or incorrect thresholds, tax treatments and penalties, so do not execute its filing or calculation instructions. It is not a verified guide to an earlier period either; check the law for that period separately. Use this file only to trace an earlier working paper or review source examples after confirming treatment in the applicable current guide."
+version: 2.1
 jurisdiction: NG
 tax_year: 2025
 last_updated: 2026-09-11
@@ -15,25 +15,14 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Nigeria VAT
 
-> **Merged into `ng-vat.md`. Read that guide for anything from 2026 onwards.**
-> `ng-vat.md` v2.0 records that it is a *"consolidated rewrite merging
-> ng-vat-return.md (filing mechanics) and nigeria-vat.md (supplier libraries and
-> worked examples); refreshed for the Nigeria Tax Act 2025 framework effective 1
-> January 2026"*. **That note was recorded only in the consolidated file**, so this
-> one carried no sign that it had been merged away.
->
-> This file predates the Nigeria Tax Act 2025 and never mentions it. The **7.5%
-> standard rate survives** — NTA 2025 s.147 charges VAT on the value of all taxable
-> supplies at 7.5% — but the **registration position below is the old law**. For
-> periods from 1 January 2026 the monthly-return obligation in Nigeria Tax
-> Administration Act 2025 s.22(1) simply does not apply to a **small business**:
-> gross turnover ≤ **NGN 100,000,000** *and* fixed assets ≤ **NGN 250,000,000**,
-> **with a business providing professional services expressly excluded from that
-> definition and therefore never exempt at any turnover**. The NGN 25,000,000 figure
-> below is the Finance Act 2019 test and applies only to periods ending before 1
-> January 2026.
->
-> _(Nigeria Tax Act 2025, s. 147 — https://nass.gov.ng/documents/download/11249; Nigeria Tax Administration Act 2025, s. 22 and definitions — https://tat.gov.ng/Nigeria-Tax-Act-2025.pdf)_
+> Archived guide. Use [ng-vat.md](ng-vat.md) for periods from 1 January 2026.
+> Do not execute the old calculation, classification, registration, penalty or
+> filing instructions below. They contain errors and superseded rules, including
+> the NGN 25 million threshold and the treatment of zero-rated supplies as exempt.
+> Historical bank examples may help identify transactions, but cannot establish
+> their VAT treatment. Any generated review block is retained unchanged as a
+> historical record and does not sign off current use. Amend its source
+> `skill_facts` before regenerating it.
 
 ## Section 1 — Quick reference
 
