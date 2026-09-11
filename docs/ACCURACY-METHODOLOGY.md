@@ -5184,3 +5184,85 @@ that did had been recorded as a dead end for the same reason Guinea was: nobody 
 tried the right hostname through a browser. That is the argument for re-testing a
 "dead" register periodically, and equally the argument against assuming the next retry
 will open. Five of six stayed shut.
+
+---
+
+## Laos: five guides built on a law that was repealed part-way through their tax year
+
+Laos was the last untried entry among the zero-authority jurisdictions — **52 secondary
+citations, no authority domain**. `tax.gov.la` does not resolve, but
+**`laoofficialgazette.gov.la` does**, and it is not a landing page: it is a full
+legislative database indexed by instrument type and by issuing agency, with the PDFs
+served directly.
+
+The Ministry of Finance register (`agencies_id=2`) lists, first and current:
+
+> **ກົດໝາຍວ່າດ້ວຍ ອາກອນລາຍໄດ້ (ສະບັບປັບປຸງ)** — Law on Income Tax **(Revised)**,
+> 25-06-2025, status **ປັດຈຸບັນ (current)**.
+
+The five Laos guides cite ***Law No. 67/NA*** — the 2019 Income Tax Law — **27 times**.
+
+### Article 74 settles it in one sentence
+
+The decree pages establish the chain: National Assembly resolution **No. 164/NA of 25
+June 2025** adopting the revised Law, promulgated by **Presidential Decree No. 145/PO of
+6 August 2025**, signed by the President of the National Assembly. Then **article 74
+(ປັບປຸງ)**:
+
+> ກົດໝາຍສະບັບນີ້ ມີຜົນສັກສິດ ນັບແຕ່ວັນທີ **1 ກັນຍາ 2025** … ກົດໝາຍສະບັບນີ້
+> **ປ່ຽນແທນ** ກົດໝາຍວ່າດ້ວຍອາກອນລາຍໄດ້ ສະບັບເລກທີ **67/ສພຊ, ລົງວັນທີ 18 ມິຖຸນາ
+> 2019** ແລະ ໝວດທີ III ຂອງ … ສະບັບເລກທີ **01/ສພຊ, ລົງວັນທີ 7 ສິງຫາ 2021**.
+
+Effective **1 September 2025**, and ***ປ່ຽນແທນ*** — **replaces** — Law No. 67/NA of 18
+June 2019, along with Chapter III of Law No. 01/NA of 7 August 2021.
+
+**This is the defect the whole exercise exists to find.** Not a wrong rate — a complete
+guide set resting on a repealed instrument, in guides marked `tax_year: 2025`, for a law
+replaced inside that very year. No rate-level check, bracket checker or cross-guide
+conflict detector can see it, because every figure is internally consistent with the law
+it came from. Only asking *"is this instrument still in force?"* finds it.
+
+### What was deliberately **not** done
+
+The rates were **not** extracted from the revised Law and the old ones were **not**
+overwritten. The revised text runs to 74 articles across 34 scanned pages with **no text
+layer**, in Lao script. Substituting hastily-read figures for carefully-sourced stale
+ones would trade a *dated* error for an *undated* one — and the citation would make it
+credible, which is the trap this branch has now hit five times.
+
+Instead each affected guide carries a banner naming the replacing instrument with its
+full identifiers and stating plainly that **every rate, threshold and deadline below
+refers to a repealed law until a reviewer checks it**. The revised Law's articles carry
+individual **(ປັບປຸງ)** markers showing which were amended, so some figures may survive
+untouched and others may not — and the guide says it cannot tell which.
+
+### Two dates that do not sit together, reported rather than reconciled
+
+Article 74 conditions commencement on promulgation **and** publication in the Official
+Gazette, and names **1 September 2025**. The Gazette's own register records the
+publication date as **19 June 2026** — nine months *after* the date the Law names.
+
+Which governs for a given period is a question of Lao law, not of reading. Both dates
+are recorded and neither is resolved. Picking one would be inventing an answer to a
+question the documents pose but do not settle.
+
+### The VAT law confirmed a figure instead of overturning one
+
+The same register carries the ***Law on Value Added Tax (Revised), No. 60/NA of 28 June
+2024***. `laos-vat` had **no instrument cited at all** and gave "10% (effective 2024;
+previously 7%)".
+
+**Article 17 (ປັບປຸງ)** gives *ອັດຕາ ສິບສ່ວນຮ້ອຍ (10%)* — ten percent in words and
+digits together, clearing the digits-and-words rule — on imports, on domestic taxable
+supplies, and on **purchases from foreign legal entities not established in Lao PDR**,
+so the reverse charge runs at the same 10%. The guide's rate was right and is now
+sourced.
+
+**Its zero-rate row was not.** The guide said *"0% (exports)"*. Article 17(2) zero-rates
+exports **and** goods entering **special economic zones and specific economic zones**,
+**including finished mineral products** — two limbs that matter a great deal in a country
+with active SEZs and a mining sector. A correct headline figure sitting beside an
+under-stated scope is the ordinary shape of the defects in this corpus.
+
+Read at 195 dpi after a contact sheet located the article. The sheet was used to find
+article 17 and **not** to quote it, which is the standing rule.
