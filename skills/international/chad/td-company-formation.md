@@ -3,8 +3,9 @@ name: td-company-formation
 description: "Source-cited draft: company formation & entity choice for Chad (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
 jurisdiction: TD
 tax_year: 2025
-last_updated: 2026-09-10
+last_updated: 2026-09-11
 review_status: pending_review
+category: formation
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
@@ -13,14 +14,51 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Entity types and incorporation in Chad
 
+> **The uniform act has been read, and this guide did not match it.** Chad is
+> an **OHADA** member state, so its company law is the *Acte uniforme relatif au
+> droit des sociétés commerciales et du groupement d'intérêt économique* (AUSCGIE),
+> adopted at Ouagadougou on **30 January 2014** and published in the **Journal
+> Officiel de l'OHADA, numéro spécial du 4 février 2014**. What the Act actually
+> provides:
+>
+> - **SARL capital — article 311.** *"**Sauf dispositions nationales contraires**,
+>   le capital social doit être d'un million (1.000.000) de francs CFA au moins. Il
+>   est divisé en parts sociales égales dont la valeur nominale ne peut être
+>   inférieure à cinq mille (5.000) francs CFA."* So the uniform minimum **is**
+>   1,000,000, the **5,000 is the minimum nominal value of one part sociale**, and
+>   this is the **only** capital figure a member state may displace by its own law.
+> - **SARL pay-up — article 311-1.** Parts subscribed in full; those for
+>   contributions in kind paid up in full; those for cash paid up on subscription to
+>   **at least half**, balance within **two years** of RCCM registration.
+> - **SA capital — articles 387–389.** Minimum **10,000,000**, with **no**
+>   national-derogation clause; nominal value of shares freely fixed by the
+>   statutes; capital **entirely subscribed before the statutes are signed**; cash
+>   shares paid up **at least one quarter** on subscription, balance within **three
+>   years** of RCCM registration.
+> - **Listed or public-offering companies — article 824.** Minimum **100,000,000**
+>   where the securities are listed on a member state's exchange **or** offered
+>   publicly for placement in one or more member states. Any interested party may
+>   seek dissolution if it is not met.
+> - **One member is enough.** A SARL may be instituted by a single natural or legal
+>   person (art. 309) and *"la société anonyme peut ne comprendre qu'un seul
+>   actionnaire"* (art. 385).
+>
+> [RESEARCH GAP — what is not settled is whether **Chad** has enacted contrary
+> national provisions under article 311. The uniform default is stated below as the
+> default it is; a reviewer with the national company legislation should confirm
+> whether it displaces the 1,000,000 figure.]
+>
+> _(Acte uniforme relatif au droit des sociétés commerciales et du GIE, adopté le 30 janvier 2014 — Journal Officiel de l'OHADA, n° spécial du 4 février 2014: https://biblio.ohada.org/doc_num.php?explnum_id=3974)_
+
+
 Chad applies the OHADA Uniform Act on Commercial Companies (Acte Uniforme sur les Sociétés Commerciales). The most common forms are the SARL (limited liability company) and SA (public limited company). Details below are a source-cited draft for 2025.
 
 - **Société à Responsabilité Limitée (SARL)** — Limited liability company; 1 to 50 partners, liability limited to contributions  _(OHADA Uniform Act on Commercial Companies and Economic Interest Groups (as described at [expanship.com](https://www.expanship.com/td/blog/incorporation-requirements-in-chad)))_
 - **Société Anonyme (SA)** — Public limited company; used for larger ventures and where capital exceeds the SARL ceiling  _(OHADA Uniform Act on Commercial Companies and Economic Interest Groups)_
 - **Other forms** — SAS (simplified joint-stock), SNC (general partnership), and branch/representative office of a foreign company  _(OHADA Uniform Act on Commercial Companies and Economic Interest Groups)_
-- **SARL minimum share capital** — XAF 1,000,000 XAF ((approx — OHADA default; confirm whether Chad has lowered it)) XAF  _(OHADA Uniform Act on Commercial Companies and Economic Interest Groups)_
-- **SA minimum share capital** — XAF 10,000,000 XAF XAF  _(OHADA Uniform Act on Commercial Companies and Economic Interest Groups (as described at [expanship.com](https://www.expanship.com/td/blog/incorporation-requirements-in-chad)))_
-- **SA capital payment** — Unpaid portion of subscribed SA capital must be called up and paid within 2 years of incorporation  _(OHADA Uniform Act on Commercial Companies and Economic Interest Groups (as described at [expanship.com](https://www.expanship.com/td/blog/incorporation-requirements-in-chad)))_
+- **SARL minimum share capital** — **1,000,000** (art. 311). The existing caveat was the right one: this is the uniform default and article 311 lets national law displace it, so confirm whether Chad has. Each part sociale must be denominated at **5,000 or more** XAF  _(AUSCGIE 2014, art. 311 — https://biblio.ohada.org/doc_num.php?explnum_id=3974)_
+- **SA minimum share capital** — **10,000,000**, with no national-derogation clause (art. 387); **100,000,000** where the securities are listed or publicly offered in a member state (art. 824) XAF  _(AUSCGIE 2014, arts. 387 and 824 — https://biblio.ohada.org/doc_num.php?explnum_id=3974)_
+- **SA capital payment** — **Three years, not two.** Cash shares are paid up **at least one quarter** of nominal value on subscription and the balance falls due within a period not exceeding **three (3) years** from RCCM registration (art. 389). Two years is the **SARL** rule (art. 311-1), and the two were swapped  _(AUSCGIE 2014, arts. 389 and 311-1 — https://biblio.ohada.org/doc_num.php?explnum_id=3974)_
 - **Commercial registration** — Company is registered with the Registre du Commerce et du Crédit Mobilier (RCCM), commonly via the Guichet Unique (one-stop shop)  _(OHADA Uniform Act / Chad business registration rules)_
 - **Core incorporation steps** — Notarised articles of association, deposit of capital, registration at RCCM, tax identification (NIF), and CNPS registration as employer ((approx — confirm current Guichet Unique procedure))  _(OHADA Uniform Act / Chad business registration rules)_
 - **Incorporation timeline** — Roughly 2 to 8 weeks via the Guichet Unique ((approx — confirm))  _(Chad business registration practice)_

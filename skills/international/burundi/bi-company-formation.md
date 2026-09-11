@@ -3,7 +3,7 @@ name: bi-company-formation
 description: "Source-cited draft: company formation & entity choice for Burundi (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
 jurisdiction: BI
 tax_year: 2025
-last_updated: 2026-09-10
+last_updated: 2026-09-11
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -13,7 +13,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Company formation and compliance
 
-Business registration in Burundi is centralised through the Agence de Promotion des Investissements (API) one-stop shop, with company law based on the OHADA-style commercial framework. The SARL (limited liability company) is the most common vehicle for small and medium businesses.
+Business registration in Burundi is centralised through the Agence de Promotion des Investissements (API) one-stop shop, with company law **of its own**. **Burundi is not an OHADA member state** — OHADA's register lists seventeen and Burundi is not among them — so "OHADA-style" should not be read as meaning the Uniform Acts apply. [RESEARCH GAP — Burundi's own company law is the source this guide needs.] _(OHADA, Les Etats membres de l'OHADA — https://www.ohada.org/les-etats-membres-de-lohada/)_ The SARL (limited liability company) is the most common vehicle for small and medium businesses.
 
 - **Most common entity type** — Société à Responsabilité Limitée (SARL) — private limited liability company  _(Code des sociétés privées et à participation publique (Burundi company law) (as described at [expanship.com](https://www.expanship.com/bi/blog/types-of-companies-in-burundi.html)))_
 - **Public/larger company type** — Société Anonyme (SA) — public limited company, used for larger ventures  _(Code des sociétés privées et à participation publique (Burundi company law))_

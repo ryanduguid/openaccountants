@@ -1,10 +1,10 @@
 ---
 name: armenia-social-contributions
-description: Use this skill whenever asked about Armenia payroll social contributions and personal income tax for employees, individual entrepreneurs, or expatriates. Trigger on phrases like "Armenia payroll tax", "Armenian pension contribution", "funded pension 5% 10%", "military stamp duty Armenia", "Insurance Foundation for Servicemen", "Armenia social security", "how much PIT do I withhold in Armenia", "Armenian employer social tax", "mandatory health insurance Armenia", "SRC monthly payroll return", "net pay calculation Armenia", or any question about Armenian payroll withholding obligations. Also trigger when classifying bank statement transactions that relate to SRC tax payments, pension contributions, military stamp duty, or salary payments from Armenian banks (Ameriabank, Ardshinbank, Acba Bank, Inecobank, Converse Bank). This skill covers the flat 20% PIT, mandatory funded pension contribution, military stamp duty, the new mandatory health insurance contribution (effective Dec 2025/Jan 2026), the fact that the private sector has NO separate employer social tax, monthly filing deadlines, penalties, bank statement classification patterns, and edge cases. ALWAYS read this skill before touching any Armenian payroll or social-contribution work.
-version: 0.1
+description: "Source-cited draft covering Armenian employee payroll withholding and social contributions from 2025. Explains the general 20% salary income tax rate, the conditional 10% rate for qualifying high-technology research and development staff, funded pension contributions, military stamp payments and health-insurance deductions. Use for Armenia payroll tax, salary withholding, net pay, pension caps, SRC remittances or payroll bank-statement classification. Includes eligibility evidence, required inputs, calculation rules, worked examples and a working-paper template. Individual-entrepreneur contributions and unresolved commencement or citizenship questions require separate review. Pending sign-off by an Armenian accountant."
+version: 0.2
 jurisdiction: AM
 tax_year: 2025
-last_updated: 2026-09-09
+last_updated: 2026-09-11
 review_status: pending_review
 depends_on:
   - social-contributions-workflow-base
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Armenia Social Contributions & Payroll Withholding
 
-## Armenia Social Contributions & Payroll Withholding Skill v0.1
+## Armenia Social Contributions & Payroll Withholding Skill v0.2
 
 ## Section 1 -- Quick reference
 
@@ -30,7 +30,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Supporting Legislation | Law on Funded Pensions; Law on the Insurance Foundation for Servicemen (military stamp duty); Law on Universal/Mandatory Health Insurance |
 | Tax Authority | State Revenue Committee of the Republic of Armenia (SRC) — e-filing at src.am |
 | Currency | AMD only |
-| Personal income tax | Flat 20% on gross employment income, no allowance, no brackets (effective 1 Jan 2023) — PwC |
+| Personal income tax | General 20% from 1 January 2023; qualifying R&D salary 10%, subject to Rule 1. [Tax Code, art. 150(1) and (1.1)](https://www.arlis.am/en/acts/230455/latest). |
 | Employer separate social tax | NONE — private sector has no employer-paid social security contribution; employer withholds employee amounts only — PwC / Vardanyan & Partners |
 | Funded pension (employee) | 5% of gross if gross < AMD 500,000; else 10% of gross − AMD 25,000, capped — PwC |
 | Funded pension max contribution | AMD 87,500/month (base capped at AMD 1,125,000 = 15× min wage) — PwC |
@@ -49,7 +49,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 | Item | Payer | Rate / amount | Authority |
 | --- | --- | --- | --- |
-| Personal income tax (PIT) | Employee (withheld) | 20% flat of gross | PwC |
+| Personal income tax (PIT) | Employee (withheld) | Gross × the verified Rule 1 rate, 20% or 10% | [Tax Code, art. 150(1) and (1.1)](https://www.arlis.am/en/acts/230455/latest) |
 | Funded pension contribution | Employee (withheld) | 5% (< 500k) or 10% − 25,000 (≥ 500k), capped 87,500 | PwC |
 | Military stamp duty | Employee (withheld) | AMD 1,000 (≤ 1,000,000) or AMD 15,000 (> 1,000,000) | PwC / Vardanyan |
 | Mandatory health insurance | Employee (withheld) | AMD 0 / 4,800 / 10,800 by band | PwC |
@@ -59,6 +59,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 | Ambiguity | Default |
 | --- | --- |
+| Unknown PIT rate or R&D eligibility | STOP the PIT and net-pay calculation until the Rule 1 evidence is confirmed |
 | Unknown birth year | STOP — funded pension depends on birth date (on/after 1 Jan 1974). Do not compute pension without it |
 | Unknown period (pre/post Dec 2025) | Assume the current two-tier military stamp + new health contribution apply only from Dec 2025/Jan 2026; flag pre-Dec-2025 periods for reviewer |
 | Unknown employment status | Treat as an employee under an employment contract; individual-entrepreneur rules differ — flag |
@@ -69,11 +70,13 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ### Required inputs
 
-- **Minimum viable** — Monthly gross employment income (AMD) and the employee's birth year (or confirmation born on/after 1 Jan 1974). Without birth year, STOP on the pension line. Do not compute the funded pension contribution.
+- **Minimum viable:** monthly gross employment income in AMD, employee birth year, and the applicable PIT rate confirmed under Rule 1. Unknown birth year prevents the pension calculation; unresolved PIT eligibility prevents the PIT and net-pay calculation.
 - **Recommended** — The payroll period (month/year, to determine whether the Dec 2025/Jan 2026 changes apply), Armenian citizenship status (for health insurance), and whether the worker is an employee or an individual entrepreneur.
 - **Ideal** — The SRC monthly unified payroll report, the employment contract, and bank statements showing salary credits and SRC remittances.
 
 ### Refusal catalogue
+
+- **R-AM-SC-6:** PIT rate or R&D eligibility unresolved. Stop the PIT and net-pay calculation. Confirm the occupation, qualifying work, commission opinion and its period, and residence conditions under Rule 1.
 
 - **R-AM-SC-1** — Trigger: employee birth year/decade not provided. Message: "Birth year is mandatory to compute the funded pension contribution. The mandatory funded pension applies only to employees born on or after 1 January 1974; those born earlier are exempt. Cannot compute the pension line without this information."  _(R-AM-SC-1)_
 - **R-AM-SC-2** — Trigger: the payroll period is before December 2025, or it is ambiguous whether the new military-stamp two-tier schedule and the new health insurance contribution apply. Message: "The two-tier military stamp duty (AMD 1,000 / 15,000) and the mandatory health insurance contribution take effect from December 2025 / January 2026. Earlier periods used a different (multi-tier) military stamp schedule and had no health contribution. Escalate the exact go-live date to a reviewer before computing pre-2026 periods. [RESEARCH GAP — reviewer to confirm exact effective date]"  _(R-AM-SC-2)_
@@ -94,7 +97,7 @@ This is the deterministic pre-classifier for bank statement transactions related
 | Pattern | Treatment | Notes |
 | --- | --- | --- |
 | ՊԵԿ, SRC, STATE REVENUE COMMITTEE | EXCLUDE — SRC remittance | Monthly remittance of withheld PIT + contributions |
-| ԵԿԱՄՏԱՀԱՐԿ, INCOME TAX, PIT, IIT | EXCLUDE — withheld 20% PIT | Final monthly withholding |
+| ԵԿԱՄՏԱՀԱՐԿ, INCOME TAX, PIT, IIT | EXCLUDE: salary PIT withheld at the applicable rate | Final monthly withholding |
 | ԿԵՆՍԱԹՈՇԱԿ, PENSION, FUNDED PENSION | EXCLUDE — funded pension contribution | Employee withholding |
 | ԴՐՈՇՄԱՆԻՇ, MILITARY STAMP, STAMP DUTY | EXCLUDE — military stamp duty | Insurance Foundation for Servicemen |
 | ԱՌՈՂՋԱՊԱՀՈՒԹՅՈՒՆ, HEALTH INSURANCE | EXCLUDE — mandatory health contribution | From Dec 2025 |
@@ -141,7 +144,7 @@ This is the deterministic pre-classifier for bank statement transactions related
 
 ## Section 4 -- Worked examples
 
-Six bank-statement / payroll classifications for a hypothetical Armenian software company and its employees, all assuming a period from December 2025 onward (new health contribution and two-tier military stamp in force). All employees assumed born on/after 1 Jan 1974 (pension applies) and Armenian citizens, unless stated.
+These six examples cover a hypothetical Armenian software company and its employees. Unless stated otherwise, each worker is confirmed to use the general 20% PIT rate, is an Armenian citizen and was born on or after 1 January 1974. The examples assume a period when the new health contribution and two-band military stamp apply; confirm the commencement dates as described in the research gaps.
 
 ### Example 1 -- Standard mid-range salary, gross AMD 300,000
 
@@ -207,9 +210,13 @@ Matches "STATE REVENUE COMMITTEE" / "ՊԵԿ" (pattern 3.1). This is the employer
 
 These rules apply when payroll data is clear and all required inputs are available. Apply exactly as written. All figures per PwC Worldwide Tax Summaries (Armenia) and Vardanyan & Partners unless marked otherwise.
 
-### Rule 1 -- Personal income tax is a flat 20%
+### Rule 1 -- Select the salary PIT rate
 
-- **Personal income tax rate** — 20% percent (Flat on gross, no personal allowance, no brackets, effective 1 Jan 2023. Employer is tax agent and applies final monthly withholding.)  _(PwC)_
+The general rate is **20% from 1 January 2023**, with no personal allowance or progressive bands. [Tax Code, art. 150(1) and (1.1)](https://www.arlis.am/en/acts/230455/latest).
+
+Use **10%** for salary and equivalent payments to staff in Government-listed high-technology occupations engaged in scientific research or experimental development, including work for the employer's own needs, where that work meets the Government's criteria and has a positive opinion from the professional commission under article 121(2)(4). Foreign citizens and stateless persons without Armenian residence rights are excluded. Confirm the occupation, qualifying work, opinion and residence status for the payment period. If the opinion is revoked, recalculate under the general rules. [Tax Code, art. 150(1) and (1.1)](https://www.arlis.am/en/acts/230455/latest).
+
+Set `pit_rate = 0.10` for a salary payment meeting all of those conditions, or `pit_rate = 0.20` for one confirmed to use the general rule. Record the evidence and period. If eligibility is unresolved, stop the PIT and net-pay calculation for review. Identify separately any payments with different treatment before calculating.
 
 ### Rule 2 -- No separate employer social tax
 
@@ -233,7 +240,7 @@ These rules apply when payroll data is clear and all required inputs are availab
 
 ### Rule 7 -- Net pay formula (private-sector employee)
 
-- **Net pay formula** — net_pay = gross − PIT − funded_pension − military_stamp − health_insurance PIT = 0.20 × gross
+- **Net pay formula:** `PIT = gross × pit_rate`, using the verified Rule 1 rate. Then `net_pay = gross − PIT − funded_pension − military_stamp − health_insurance`. Do not compute a final net amount while `pit_rate` is unresolved.
 
 ### Rule 8 -- Monthly filing and remittance deadline
 
@@ -296,9 +303,12 @@ INPUT DATA
   Born on/after 1 Jan 1974:          [YES/NO]   -> pension applies?
   Armenian citizen:                  [YES/NO]   -> health insurance applies?
   Employee or Individual Entrepreneur: [EMP / IE]
+  Verified PIT rate:                 [0.10 / 0.20 / UNRESOLVED]
+  Rule 1 evidence and period:        [occupation, work, opinion, residence]
+  Stop PIT and net pay if the rate is UNRESOLVED.
 
 COMPUTATION (private-sector employee)
-  PIT (20% × gross):                 AMD [____]
+  PIT (verified pit_rate × gross):   AMD [____]
   Funded pension:
     if gross < 500,000:  5% × gross  AMD [____]
     if gross >= 500,000: 10% × min(gross,1,125,000) − 25,000 (max 87,500)  AMD [____]
@@ -354,10 +364,10 @@ If the client provides only a bank statement and no other information:
 
 1. **Scan for salary credits** — identify net pay amounts and the employer.
 2. **Scan for SRC remittances** — identify outgoing payments matching Section 3.1/3.2 patterns around the 20th of each month.
-3. **Reverse-engineer gross from net (employee, born ≥ 1974, Armenian citizen, Dec 2025+):** for a net figure, test the bracket — net AMD 219,200 implies gross AMD 300,000 (Example 1); net AMD 433,200 implies gross AMD 600,000 (Example 2). The mapping is not always unique, so confirm against the payslip.
+3. **Reverse-engineer gross from net (employee, born ≥ 1974, Armenian citizen, Dec 2025+):** first confirm the Rule 1 PIT rate; the following examples assume 20%. For a net figure, test the bracket — net AMD 219,200 implies gross AMD 300,000 (Example 1); net AMD 433,200 implies gross AMD 600,000 (Example 2). The mapping is not always unique, so confirm against the payslip.
 4. **Flag for reviewer:** "Gross/withholding figures derived from bank-statement net amounts only. Birth year, citizenship, and period (pre/post Dec 2025) have not been independently verified. Reviewer must confirm before relying on the computation."
 
-### Calculation examples (Dec 2025+, employee born ≥ 1974, Armenian citizen)
+### Calculation examples (general 20% PIT, Dec 2025+, employee born ≥ 1974, Armenian citizen)
 
 **Calculation examples (Dec 2025+, employee born ≥ 1974, Armenian citizen)**  _(PwC Worldwide Tax Summaries (Armenia) and Vardanyan & Partners)_
 
@@ -378,7 +388,7 @@ Source for all rates/thresholds: PwC Worldwide Tax Summaries (Armenia) and Varda
 
 | Item | Value | Source |
 | --- | --- | --- |
-| PIT flat rate | 20% of gross | PwC |
+| Salary PIT rate | General 20%; qualifying R&D salary 10%, subject to Rule 1 | [Tax Code, art. 150(1) and (1.1)](https://www.arlis.am/en/acts/230455/latest) |
 | Pension 5%→10% threshold | AMD 500,000/month gross | PwC |
 | Pension base ceiling | AMD 1,125,000/month (15 × AMD 75,000) | PwC |
 | Pension fixed deduction (10% formula) | AMD 25,000 | PwC |
@@ -417,6 +427,8 @@ Source for all rates/thresholds: PwC Worldwide Tax Summaries (Armenia) and Varda
 
 ### Test suite
 
+Unless specified otherwise, each employee is confirmed to use the general 20% PIT rate.
+
 **Test 1:** Gross AMD 300,000, born 1990, Armenian citizen, Dec 2025+. → PIT 60,000; pension 15,000; military 1,000; health 4,800; total 80,800; **net 219,200**.
 
 **Test 2:** Gross AMD 600,000, born 1985. → PIT 120,000; pension (10%×600,000−25,000) 35,000; military 1,000; health 10,800; total 166,800; **net 433,200**.
@@ -433,7 +445,13 @@ Source for all rates/thresholds: PwC Worldwide Tax Summaries (Armenia) and Varda
 
 **Test 8:** Private-sector employer remittance for one AMD 300,000 employee (born 1990). → Employer social tax **0**; remits PIT 60,000 + pension 15,000 + military 1,000 + health 4,800 = AMD 80,800 to SRC by the 20th of the following month.
 
+**Test 9:** Gross AMD 600,000, all Rule 1 R&D conditions verified, including the opinion and residence requirements. PIT **60,000**. With the same contribution assumptions as Test 2: pension 35,000, military 1,000, health 10,800, total **106,800**, net **493,200**.
+
+**Test 10:** Same gross, but a foreign citizen without Armenian residence rights. The R&D exclusion applies: use 20%, PIT **120,000**. If the opinion or its coverage period is unresolved instead, stop the PIT and net-pay calculation for review.
+
 ### Prohibitions
+
+- **PIT eligibility:** do not use 10% without the Rule 1 evidence or silently assume 20% when eligibility is unresolved.
 
 - **No employer separate social-tax line for private-sector employers** — NEVER add an employer separate social-tax line for private-sector employers — Armenia has none.  _(unsure)_
 - **Pension requires birth year knowledge** — NEVER compute the funded pension without knowing the employee's birth year (eligibility hinges on birth on/after 1 Jan 1974).  _(unsure)_

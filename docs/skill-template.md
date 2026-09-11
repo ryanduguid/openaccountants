@@ -18,7 +18,7 @@ These two were previously listed as required. They are not: `scripts/validate-gu
 
 | Key | Format | Notes |
 |-----|--------|-------|
-| `category` | one of the vocabulary below | Domain the skill covers. **Not checked by CI at all**, and absent from roughly two-thirds of the corpus (1,219 of 1,926 guides), so a join on it silently drops most files |
+| `category` | one of the vocabulary below | Domain the skill covers. **Not checked by CI at all**, and absent from roughly two-thirds of the corpus (1,210 of 1,926 guides as at 2026-09-10), so a join on it silently drops most files. The count drifts as guides are edited — nothing keeps it honest, so re-measure before quoting it |
 | `tax_year` | **bare integer**, e.g. `2025` | The **coverage start year**. CI checks the *format* when the key is present and errors on anything that is not an integer 2015-2035, but does not require the key — 72 guides omit it, mostly workflow bases that are genuinely year-agnostic. Ranges, fiscal calendars, and qualifiers ("2025-26", "YA 2026", "2567 (2024)") go in `tax_year_notes`, never here |
 
 ## Optional keys

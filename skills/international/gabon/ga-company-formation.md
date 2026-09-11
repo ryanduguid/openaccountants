@@ -1,10 +1,12 @@
 ---
 name: ga-company-formation
-description: "Source-cited draft: company formation & entity choice for Gabon (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
+description: "Draft covering Gabon company formation and entity choice. Explains the SARL, the SA and the SAS under the OHADA uniform act read from the Journal Officiel: single-member formation, the 1,000,000 CFA franc SARL capital default and the national-derogation clause that can displace it, the 5,000 minimum nominal value of a part sociale, the ordinary 10,000,000 SA minimum, subscription and pay-up fractions, deferral periods, the contributions-in-kind valuer threshold and where funds must be deposited. Use for incorporating in Gabon, choosing an entity, ANPI-Gabon registration or OHADA capital questions. Costs, timelines and the patente still rest on commercial sources. Pending local-accountant review."
 jurisdiction: GA
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-11
+version: 1.1
 review_status: pending_review
+category: formation
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
@@ -13,15 +15,28 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Entity types, capital and incorporation
 
-- **Company law framework** — Company law in Gabon follows the OHADA Uniform Act on Commercial Companies, with formation handled through the ANPI-Gabon one-stop shop. Capital figures, costs and timelines below are a 2025 draft pending accountant verification.
-- **Limited liability company** — SARL (Société à Responsabilité Limitée) — common for SMEs; can be single-member (SARLU)  _(OHADA Uniform Act on Commercial Companies and Economic Interest Groups (AUSCGIE) — https://www.kreston.com/doing-business-in/gabon/)_
-- **Public/joint-stock company** — SA (Société Anonyme) — for larger ventures and regulated activities  _(OHADA Uniform Act on Commercial Companies (AUSCGIE) — https://www.kreston.com/doing-business-in/gabon/)_
+The OHADA AUSCGIE sets a SARL capital default of XAF 1,000,000 under article
+311, subject to contrary national provisions. Confirm Gabon's applicable
+national rules before using that default for an incorporation. The minimum
+nominal value of each SARL share is XAF 5,000.
+
+Burkina Faso's different capital rule does not establish an error in either
+country: its Décret n°2016-314 allows members to fix SARL capital freely.
+National provisions must be checked separately for each member state.
+[AUSCGIE, art. 311](https://biblio.ohada.org/doc_num.php?explnum_id=3974);
+[Burkina Faso decree, art. 1](https://police.gov.bf/index.php/infos-utiles/textes-officiels/category/3-decrets?download=26:decret-capital-minimum).
+
+- **Company law framework** — The **OHADA Uniform Act on Commercial Companies and Economic Interest Groups (AUSCGIE)** of 30 January 2014 applies directly in Gabon; formation is handled through the ANPI-Gabon one-stop shop. The capital and pay-up rows below come from the Act itself; the cost, timeline and patente rows remain a 2025 draft on commercial sources  _(AUSCGIE 2014 — https://biblio.ohada.org/doc_num.php?explnum_id=3974)_
+- **Limited liability company** — **SARL** (Société à Responsabilité Limitée): the members answer for the company's debts only up to their contributions and their rights are represented by *parts sociales*. **It may be instituted by a single natural or legal person** (the SARLU in local usage), or between two or more. The name must carry *"société à responsabilité limitée"* or *"S.A.R.L."*  _(AUSCGIE 2014, arts. 309–310 — https://biblio.ohada.org/doc_num.php?explnum_id=3974)_
+- **Public/joint-stock company** — **SA** (Société Anonyme): shareholders liable only up to their contributions, rights represented by shares, and ***"La société anonyme peut ne comprendre qu'un seul actionnaire."*** The name must carry *"société anonyme"* or *"S.A."* **and the mode of administration** under article 414  _(AUSCGIE 2014, arts. 385–386 — https://biblio.ohada.org/doc_num.php?explnum_id=3974)_
 - **Simplified joint-stock company** — SAS (Société par Actions Simplifiée) — flexible governance, available under OHADA  _(OHADA Uniform Act on Commercial Companies (AUSCGIE))_
-- **SARL minimum share capital** — XAF 1,000,000 (some OHADA states allow as low as XAF 100,000 by statute) XAF ((approx — confirm Gabon-specific minimum)) XAF (approx — confirm Gabon-specific minimum)  _(OHADA Uniform Act on Commercial Companies (AUSCGIE) — https://www.expanship.com/ga/blog/incorporation-requirements-in-gabon.html)_
-- **SA minimum share capital** — XAF 10,000,000 XAF  _(OHADA Uniform Act on Commercial Companies (AUSCGIE) — https://www.expanship.com/ga/blog/incorporation-requirements-in-gabon.html)_
-- **SARL minimum participants** — One or more shareholders and at least one director (may be the same person) ((approx — confirm)) (approx — confirm)  _(OHADA Uniform Act on Commercial Companies (AUSCGIE) — https://www.expanship.com/ga/blog/incorporation-requirements-in-gabon.html)_
+- **SARL minimum share capital**: **1,000,000** in CFA francs, subject to contrary national provisions: article 311 opens *"sauf dispositions nationales contraires"*. Check Gabonese legislation before relying on it XAF  _(AUSCGIE 2014, art. 311: https://biblio.ohada.org/doc_num.php?explnum_id=3974)_
+- **Minimum nominal value of a part sociale (SARL)** — **5,000** in CFA francs. The capital is divided into **equal** parts sociales and none may be denominated below this — a floor on the units, not on the capital XAF  _(AUSCGIE 2014, art. 311 — https://biblio.ohada.org/doc_num.php?explnum_id=3974)_
+- **SARL pay-up on formation** — Parts sociales must be **subscribed in full**; those for contributions in kind **paid up in full**; those for cash paid up on subscription to **at least half** of nominal value, balance within **two years** of RCCM registration. A ***commissaire aux apports*** is compulsory once a contribution in kind, or all of them together, exceeds **5,000,000**  _(AUSCGIE 2014, arts. 311-1 and 312 — https://biblio.ohada.org/doc_num.php?explnum_id=3974)_
+- **SA minimum share capital**: **10,000,000** in CFA francs. This is the ordinary SA minimum under article 387; public offerings and regulated activities require separate capital checks. The nominal amount of the shares is **freely fixed by the statutes** and must be a whole number XAF  _(AUSCGIE 2014, art. 387: https://biblio.ohada.org/doc_num.php?explnum_id=3974)_
+- **SA subscription and pay-up** — The capital must be **entirely subscribed before the date the statutes are signed**; cash shares are paid up on subscription to **at least one quarter** of nominal value, the balance within a period not exceeding **three years** from RCCM registration  _(AUSCGIE 2014, arts. 388–389 — https://biblio.ohada.org/doc_num.php?explnum_id=3974)_
 - **Registered office requirement** — A physical registered office in Gabon is mandatory  _(OHADA Uniform Act on Commercial Companies (AUSCGIE) — https://www.expanship.com/ga/blog/incorporation-requirements-in-gabon.html)_
-- **Share capital deposit** — Capital must be deposited in a Gabonese bank account before notarisation; bank issues a deposit certificate required for registration  _(OHADA Uniform Act on Commercial Companies (AUSCGIE) — https://www.expanship.com/ga/blog/incorporation-requirements-in-gabon.html)_
+- **Share capital deposit** — The uniform act requires the founder to deposit the paid-up funds **immediately**, against receipt, with a bank or any other duly approved credit or **microfinance** institution, into an account in the name of the company in formation, **or with a notary**. Unless national provisions say otherwise, payment and deposit are recorded by a notary of the registered-office district in a *déclaration notariée de souscription et de versement*, and the funds are **blocked until RCCM registration**. The commercial description of "a Gabonese bank account before notarisation, with a bank deposit certificate" is one way of satisfying this, not the only one the Act allows  _(AUSCGIE 2014, arts. 313–314 — https://biblio.ohada.org/doc_num.php?explnum_id=3974)_
 - **Incorporation process** — Draft/notarise articles, deposit capital, then register via ANPI-Gabon one-stop shop (RCCM + tax registration handled together)  _(ANPI-Gabon (Agence Nationale de Promotion des Investissements) — https://www.expanship.com/ga/blog/incorporation-requirements-in-gabon.html)_
 - **Incorporation timeline** — Typically 1–2 weeks via ANPI-Gabon ((approx — confirm)) (approx — confirm)  _(ANPI-Gabon — https://www.expanship.com/ga/blog/incorporation-requirements-in-gabon.html)_
 - **Indicative administrative formation cost** — Roughly XAF 200,000–500,000 in administrative costs (plus notary/registration fees) XAF ((approx — confirm)) XAF (approx — confirm)  _(ANPI-Gabon — https://www.expanship.com/ga/blog/incorporation-requirements-in-gabon.html)_

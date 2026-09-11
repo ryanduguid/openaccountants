@@ -2037,3 +2037,1246 @@ Corpus effect, re-measured: authority citations 2,797 → **2,811**, secondary
 4,722 → **4,715**. San Marino ends the pass at **25 authority citations against
 50 secondary**, having started at zero, and **both** its guides are off the
 single-source queue — which is now at **28**.
+
+## Six-jurisdiction source review, September 2026
+
+This pass replaces secondary citations with primary provisions in Bangladesh,
+DR Congo, Lesotho, Cayman Islands, Qatar and Burundi. Source access and statutory
+interpretation were checked separately. All affected guides remain drafts pending
+local-accountant review; a reachable authority website does not establish that
+every rule in its documents is current.
+
+### Bangladesh company formation
+
+The Ministry of Law publishes the Companies Act 1994 section by section.
+Part X-A, inserted in 2020, provides for a one-person company. Sections 392B–392J
+cover its single natural-person owner, nominee, capital and prior-year turnover
+bands, director, meetings, accounts and audit. The ordinary private-company
+capital statement cannot be applied to an OPC.
+
+The private-company member limit excludes employees and counts joint holders
+once. Section 90 requires three directors for a public company and a private
+subsidiary of a public company, and two for other private companies. The Act's
+domestic definition does not, by itself, settle a foreign parent's classification.
+The financial-year definition permits a period shorter than a full year; the
+calendar-year proviso concerns insurance companies.
+
+Two reading errors informed the review. Searching for the wrong Bengali spelling
+missed the OPC provisions, and extracting only a proviso misrepresented the
+financial-year definition. Citations retain the Bengali definition names and
+clause letters instead of inventing Roman equivalents. Lakh and crore amounts
+were converted explicitly: 25 lakh is BDT 2,500,000 and five crore is BDT 50,000,000.
+The OPC conditions and filing references were also added to the existing
+freelancer formation guide and its hand-maintained agent skill.
+
+Sources: [section 2](http://bdlaws.minlaw.gov.bd/act-788/section-32006.html),
+[section 90](http://bdlaws.minlaw.gov.bd/act-788/section-32914.html),
+[section 392B](http://bdlaws.minlaw.gov.bd/act-788/section-50102.html),
+[section 392C](http://bdlaws.minlaw.gov.bd/act-788/section-50103.html),
+[section 392I](http://bdlaws.minlaw.gov.bd/act-788/section-50109.html) and
+[section 392J](http://bdlaws.minlaw.gov.bd/act-788/section-50110.html).
+
+RJSC administrative deadlines, BIDA conditions, fees and a new venture's treatment
+under the prior-year turnover requirement still need confirmation.
+
+### DR Congo VAT
+
+Article 35 of Ordonnance-Loi n° 10/001 sets an 8% reduced rate for the listed
+tariff positions and domestic air tickets. The previous guide gave 1%. Article 14
+includes turnover exactly equal to CDF 80,000,000, permits a two-year registration
+option below the threshold and retains registration for the two years following
+a turnover decline. Article 23 requires an approved representative for a
+non-established supplier and makes the customer liable if none is appointed.
+
+The review corrected three further distinctions. Article 59 makes an issuer
+liable for VAT stated on an invoice; its denial of recipient deductions concerns
+fictitious supplies or prices not actually payable, rather than all VAT invoices.
+Article 62 provides separate treatment for mining-company imports other than
+petroleum products. The 2022 normalised-invoice amendment did not establish its
+operational rollout date: DGI's November 2025 announcement specifies 1 December
+2025. Earlier transactions need the applicable transitional directions.
+
+Sources: [DGI Code des Impôts, 2023 edition](https://dgi.gouv.cd/wp-content/uploads/2025/10/CODE-DES-IMPOTS-2023.pdf),
+[DGI August 2025 VAT leaflet](https://dgi.gouv.cd/wp-content/uploads/2025/10/TVA-CORRIGE.pdf)
+and [DGI rollout announcement](https://dgi.gouv.cd/carnaval-de-sensibilisation-sur-lexigence-et-lemission-obligatoire-de-la-facture-normalisee-a-partir-du-1er-decembre-2025/).
+
+The leaflet imposes VAT on liberal professions regardless of turnover, while the
+2023 Code marks the corresponding implementing-decree provision as spent. That
+conflict remains unresolved. Later ministerial changes to the threshold also need
+confirmation before use.
+
+### Lesotho income tax
+
+The RSL consolidation ends at 1 April 2012. Its Third Schedule prints a 0%
+export-manufacturing rate, while the 2025 corporate-tax guide's explanatory notes
+give 10%. The guide also contains an internal rate-table conflict: PDF page 2
+shows export manufacturing at 25% and other income at 10%; page 3 states 10%
+and 25% respectively. The page images confirm that this is not caused by text
+extraction. Coordinates from the Act's table must not be presented as evidence
+about the separate guidance PDF.
+
+That correction was right, and the coordinates have since been re-run against the
+guidance PDF itself. On its **page 2** the rate column sits at x=304.2 against
+four row labels: *export of manufactured goods outside* SACU at y=242.9 → **25%**;
+*manufacturing activity or enterprise* at y=187.2 → **25%**; *farming* at y=131.5
+→ **25%**; *Other Income* at y=103.3 → **10%**. On **page 3** the notes read
+*"Corporate tax rate of 10% is levied on income from exporting manufactured
+goods"* and *"A corporate tax rate of 25% is imposed on profits of a resident
+non-manufacturing"* company.
+
+So the conflict is wider than first recorded on either side. It is not one
+inverted row: **the 10/25 pairing is inverted on every row of the page-2 table**,
+which gives ordinary manufacturing and farming 25% where the Act gives 10%, and
+Other Income 10% where the Act gives 25%. The earlier write-up also placed the
+table and the notes on the same page; they are a page apart, which is part of why
+the inversion survives into a published guide — **nothing puts the two readings in
+the same eyeful**.
+
+The original error is worth naming exactly, because the numbers looked like
+corroboration. The four rates first cited with coordinates — 10%, 0%, 10%, 25% —
+are the **Act's Third Schedule items 1 to 4**, not the guidance table at all. They
+were offered as proof that the guidance PDF really printed what it appeared to
+print, and they proved something about a different document. **Layout coordinates
+answer "did this document say it"; they are only evidence about the document they
+were extracted from**, and a plausible set of numbers is the easiest place to stop
+checking which file the extractor was pointed at.
+
+The operational guides now mark the 0% provision as historical and unresolved.
+Legislation governs as amended, but a 2012 consolidation cannot settle a current
+conflict without checking intervening amendments. RSL guidance independently
+supports the ordinary 25% company rate and 10% manufacturing and farming rates.
+
+Sections 85 and 87 establish advance corporation tax on distributions outside
+qualified income, at 25/75 of the taxable dividend when the standard rate is 25%.
+That is exactly one-third, rather than a rounded 33.33% computation. The seven-day
+return period runs from dividend payment. Sections 107–109 distinguish gross
+withholding from an elective net assessment; choosing the latter requires a
+calculation using actual deductible expenses. Section 150 instalments use
+30% × (A − B), accounting for prior-year withholding.
+
+Sources: [Income Tax Act, consolidation to April 2012](https://www.rsl.org.ls/sites/default/files/2024-05/Income%20Tax%20Act%201993%20%20Updated%20up%20to%201%20April%202012_0.pdf),
+[corporate-tax guide](https://www.rsl.org.ls/sites/default/files/2025-06/Guide%20on%20Corporate%20Tax.pdf),
+[ACT guide](https://www.rsl.org.ls/sites/default/files/2024-07/Advanced%20Corporation%20Tax%20Guide.pdf)
+and [provisional-tax guide](https://www.rsl.org.ls/sites/default/files/2025-06/Guide%20of%20Provisional%20Tax.pdf).
+
+Post-2012 amendments, the export rate and the prescribed penalty rates remain
+review gaps. The different penalty percentages in RSL guides are not sufficient
+to reconcile their application.
+
+### Cayman pension and health insurance
+
+The legislation portal returned documents in a browser after direct requests had
+failed. That access failure did not establish that the authority was unavailable.
+The National Pensions Act separates the required defined-contribution total from
+the employer floor and the employee limit without express consent. Additional
+voluntary contributions are allowed. Defined-benefit funding has separate
+actuarial requirements. Household-domestic exclusions carry a status condition;
+they do not exclude every domestic worker.
+
+Health Insurance Act section 7 makes the employer liable for the premium and
+permits recovery from the employee. For standard cover, recovery cannot exceed
+50%. For a high-risk employee, section 7(ii) uses the difference between the
+actual premium and the employer's liability under a standard contract if the
+employee were not high risk. It does not establish that the employer bears the
+whole loading. Section 8 separately permits recovery of the total dependant
+premium for cover effected under section 5(2).
+
+Sources: [National Pensions Act, 2024 Revision](https://legislation.gov.ky/cms/images/LEGISLATION/PRINCIPAL/1996/1996-0010/1996-0010_2024%20Revision.pdf)
+and [Health Insurance Act, 2021 Revision](https://legislation.gov.ky/cms/images/LEGISLATION/PRINCIPAL/1997/1997-0015/1997-0015_2021%20Revision.pdf).
+
+The 2024 consolidation marks the six-month pension amendment as uncommenced.
+Later commencement orders, current health premium amounts and work-permit fee
+scales were not exhaustively verified.
+
+### Qatar social insurance
+
+Law No. 1 of 2022 confirms the 21% total contribution, split 7% employee and
+14% employer, with a general QAR 100,000 contribution-salary ceiling. Article 12
+adds a QAR 6,000 monthly cap on the housing allowance included in that salary.
+Article 13 expressly preserves existing contribution salaries above the general
+ceiling until actual termination of service. A claim that grandfathering could
+not be found in the law was incorrect.
+
+Article 4 makes self-employed participation optional and provides for income
+bands and full payment by the participant. Employee eligibility under articles
+2–3 and exclusions under article 5 must be checked separately. GCC coverage
+rests on Law No. 4 of 2007 as amended by Law No. 5 of 2021. It prevents a blanket
+statement that every non-Qatari employee has no social-insurance obligation.
+
+The Gazette header identifies issue 7 dated 3 July 2022. The issuing law's
+article 4 provides commencement six months after publication, with specified
+exceptions. Article 11 authorises a Cabinet-approved State contribution towards
+private-sector employer costs; no implemented subsidy was verified.
+
+Source: [GRSIA, Law No. 1 of 2022](https://www.grsia.gov.qa/Regulations%20and%20Policies/Law-1-2022.pdf).
+The GCC system, detailed housing settlements, executive regulations and
+expatriate end-of-service treatment still require further review.
+
+### Burundi income tax and VAT
+
+The OBR website and legislation register returned in the browser. Its tax laws
+are scans, so OCR helped locate passages and page images supplied the check.
+Agreement between words and digits can expose an OCR error, but does not prove
+that a rate applies to the right taxpayer. Arithmetic checks cannot establish
+the legal scope either.
+
+The review found that article 23's 15% capital-income rate belongs to individuals.
+Company capital income and gains fall within article 98 and the article 103
+company rules, subject to their exceptions. Article 102 governs final corporate
+non-resident withholding under articles 122–125. Article 130, legible on PDF
+page 42, provides three 25% provisional instalments with withholding credits.
+
+Article 21 contains annual employment and rental-income bands. Article 117
+expressly sets monthly payroll bands, including exceptional payments. The monthly
+thresholds are not conditional on equal pay across twelve months. Articles 118
+and 119 address non-principal and occasional employers separately. The upper-band
+calculation must include the tax from the preceding band.
+
+Finance Act 2026/2027 article 190 applies quarterly 1% turnover tax to qualifying
+natural persons with annual turnover up to BIF 25,000,000. Article 271 makes VAT
+registration compulsory at taxable turnover of BIF 25,000,000 or more and has
+separate purchases, imports and stock tests. At the exact threshold the income-tax
+and VAT regimes may overlap; they do not switch together. The guides label these
+Finance Act provisions as 2026/2027 rules rather than applying them to 2025.
+
+The VAT law sets ordinary, intermediate and zero rates of 18%, 10% and 0%.
+Specified categories depend on ministerial lists. Articles 52 and 54 govern
+monthly filing and payment, and article 67 addresses deregistration. The
+100% and 200% penalties in articles 55–56 concern specified electronic-invoicing
+breaches and must not be presented as a universal VAT penalty.
+
+Sources: [income tax law amended in December 2020](https://www.obr.bi/images/LOI_N1_14_DU_24_DECEMBRE_2020_PORTANT_MODIFICATION_DE_LA_LOI_N1_02_DU_24_JANVIER_2013_RELATIVE_AUX_IMPOTS_SUR_LES_REVENUS_1.pdf),
+[VAT law amended in November 2020](https://www.obr.bi/images/LOI_N1_10_DU_16_NOVEMBRE_2020_PORTANT_MODIFICATION_DE_LA_LOI_N1_12_DU_29_JUILLET_2013_PORTANT_REVISION_DE_LA_LOI_N1_02_DU_17_FEVRIER_2009_PORTANT_INSTITUTION_DE_LA_TAXE_SUR_LA_VALEUR_AJOUTEE_TVA_.pdf)
+and [Finance Act 2026/2027](https://www.obr.bi/images/LOI_DE_FINANCES_2026-2027_PROMULGUEE_compressed.pdf).
+
+INSS contribution rates and caps, the ministerial VAT lists and the detailed
+penalty ladder remain unverified. The payroll guide retains explicit warnings
+for conflicting secondary-source social-contribution figures.
+
+#### Re-reading the withholding chapter at page-image quality
+
+The article 117 correction above was checked rather than accepted, and it holds:
+the article sits under the heading *"Du taux mensuel de la retenue à la source sur
+les revenus d'emploi"* and sets its own monthly table. The earlier claim that the
+monthly figures were a derivation from article 21 valid only for **even pay across
+twelve months** was wrong twice over — the bands are statutory in their own right,
+and article 117 expressly extends them to *"les paiements exceptionnels"*, which is
+precisely the uneven case the caveat said they could not reach.
+
+Verifying it meant reading the surrounding pages at 300 dpi instead of by OCR, and
+that turned up five provisions no version of these guides carried:
+
+- **Article 113** — where tax is not withheld, *"l'employeur est obligé de payer
+  l'impôt non retenu ainsi que les amendes et pénalités y afférentes"*. The failure
+  to operate PAYE lands on the employer **with the penalties**, not on the employee.
+- **Article 116** — where the employer is not obliged to withhold, the employee
+  must file monthly *"sous peine de sanction"*. Its deadline is the **15th of the
+  following month**, where article 115 gives the employer **fifteen calendar days
+  after the end of each month**. Two deadlines, two taxpayers, one number.
+- **Article 117, second table** — *indemnités de licenciement, de perte d'emploi,
+  de fin de carrière, de départ à la retraite ou de résiliation du contrat* are on
+  a separate progressive scale of **5% / 10% / 15%** at BIF 10,000,000 and
+  30,000,000. Severance was being answered off a scale topping out at 30%.
+- **Article 117 also names political and public office-holders** and recipients of
+  *indemnités de fin de mandat*, so that case is settled expressly rather than
+  argued from the definition of employment.
+- **Article 22:** withholding under articles 119 and 120 is final for non-residents' Burundi-source income not attributable to a Burundi permanent establishment. This conclusion is limited to those withholding provisions. Ordinary employment and rental income remain subject to article 21's rules. [Income tax law, arts. 21–22](https://www.obr.bi/images/LOI_N1_14_DU_24_DECEMBRE_2020_PORTANT_MODIFICATION_DE_LA_LOI_N1_02_DU_24_JANVIER_2013_RELATIVE_AUX_IMPOTS_SUR_LES_REVENUS_1.pdf).
+
+Article 24 sets the annual individual deadline at the end of the third month after the accounting year closes, excluding the employer's article 115 recapitulative. Article 25 exempts people receiving only salary withheld under article 113, income withheld under articles 119–120, or both. Article 26 permits voluntary filing, including for refunds. The guide now includes those conditions. [Income tax law, arts. 24–26](https://www.obr.bi/images/LOI_N1_14_DU_24_DECEMBRE_2020_PORTANT_MODIFICATION_DE_LA_LOI_N1_02_DU_24_JANVIER_2013_RELATIVE_AUX_IMPOTS_SUR_LES_REVENUS_1.pdf).
+
+One correction here ran the other way. Article 115 was doubted on the strength of
+an OCR fragment reading *"au plus tard le quinze (15) du mois suivant"*, which
+looked like the wrong formulation for the article cited. The page image showed the
+fragment belonged to **article 116** and that article 115 says exactly what the
+review claimed. The OCR line belonged to the adjacent article. The page image resolved the attribution.
+
+## Sierra Leone concurrent update and review
+
+A concurrent commit added Sierra Leone while this review was underway. It was
+preserved and reviewed against the NRA's Finance Acts. Finance Act 2026 section
+13 changes the resident company rate from 25% to 30%, effective 1 January 2026.
+Section 14 raises the non-resident contractor, dividend, interest and
+management/professional fee withholding rates to 20%. These changes must remain
+separate from the 2025 columns and the non-resident ordinary income rate.
+
+The concurrent draft said the section 97 amendment could not be read. It is
+printed on page 7, on the right of the PDF spread whose left side is page 42.
+Section 8 replaces section 97(3) with prescribed return requirements and adds
+section 97(6)(d) for related-party files. The 2017 certified-accounts provision
+must not be presented as the current subsection. Section 97(1)'s 120-day rule
+is not amended by section 8.
+
+The master file is due within one month after filing in the parent's residence
+country, the local file within two months after the annual return, and the
+country-by-country report within one year after the relevant tax year ends.
+Applicable Gazette directions and reporting scope still need confirmation.
+
+The draft also inferred currency units from counts of `Le` and `NLe`. Those
+labels do not establish that every 2024 amount is in old leones. Monetary
+thresholds remain unconverted until their units are verified.
+
+Source: [NRA Finance Act 2026](http://webtestcms.nra.gov.sl/uploads/The_Finance_Act_2026_121df05d9b.pdf),
+sections 1, 8 and 12–14. The three Sierra Leone guides remain pending review.
+
+The minimum-tax review also checked the provisions left in force. Finance Act
+2025 section 8 preserves initial incorporation and liquidation exemptions and
+protection for existing investment agreements until expiry or review. Finance
+Act 2024 section 8 supplies turnover exclusions and non-refundable credits for
+the following ten years. Removing the loss condition in 2026 does not remove
+those other provisions.
+[Finance Act 2024](http://webtestcms.nra.gov.sl/uploads/The_Finance_Act_2024_0d6d83e684.pdf),
+[Finance Act 2025](http://webtestcms.nra.gov.sl/uploads/The_Finance_Act_2025_beb680faed.pdf).
+
+## Armenia — the authority was one form submission away
+
+`am-company-formation.md` sat at **5 of 5** on `armenian-lawyer.com`. The queue had
+carried a note that `arlis.am` "returns 200", which is the weakest possible reason
+to leave a jurisdiction on commercial sources: a 200 says the server answered, not
+that anything was read.
+
+Opened in a browser, `arlis.am` is the Ministry of Justice's legal information
+system and it publishes **the consolidated Tax Code and the LLC Law in full text**
+— 1.45 million characters for the Tax Code alone, current consolidation, status
+*Գործում է*. Nothing about it was hard except finding the search box.
+
+**The search is a POST form whose text input has no `name` attribute.** A GET with
+a query string silently returns the home page — same byte length, HTTP 200, no
+error — so the obvious first attempt looks like a working request that finds
+nothing. The field had to be addressed by its placeholder text and the form
+submitted in the page. **A site is not "unsearchable" until you have looked at how
+its search actually posts**, and the failure mode here was a 200 with plausible
+content, the same trap the DR Congo leaflet set.
+
+### What the Tax Code said
+
+Two of the guide's numbers were right and thinly sourced, and now carry the
+statute: **profit tax 18%** (art. 125(1)) and **VAT 20%** (art. 63(1)). Three were
+approximations that the statute states exactly, and three whole mechanisms were
+missing:
+
+- **"Within about 20 days of incorporation"** is, precisely, *by the 20th day
+  following the day of state registration, inclusive* — arts. 254(1)(2) and
+  267(1)(2). An existing company elects by **20 February**.
+- **"Turnover tax" is not a rate.** Article 258(1) prints a ten-row schedule from
+  **1%** (Government-listed high technology) to **20%**, under an **AMD
+  115,000,000** previous-year ceiling (art. 254(2)). Eligibility also depends on the activity, related-party and contractual exclusions in article 254(3). The guide now includes the expense reductions and floors in article 258(2)–(7): trading 9.5% of qualifying expenses with a 1% turnover floor; production 5% with a 3% floor; catering 9% with a 3.5% floor; other activity 6% with a 4.5% floor. Unused reductions carry forward by activity. [Tax Code, arts. 258 and 260](https://www.arlis.am/en/acts/230455/latest).
+- **Micro-business** has an **AMD 24,000,000** ceiling (art. 267(3)) and an
+  exemption whose exceptions are the operative part: a micro-business is still
+  liable for import taxes, excise, environmental and road tax, and **still
+  withholds income tax on employees** (art. 269). The article 267(5) exclusions must be checked before electing; accounting and advisory activities are excluded even below the ceiling.
+- **The 16.67% embedded-VAT rate** (art. 63(2)) applies in four invoicing-failure
+  cases and appears nowhere in the corpus.
+- **Charter capital**: art. 28(1) sets no minimum — and its *next sentence* lets
+  other laws set minimums by sector, which the flat "no statutory minimum" claim
+  concealed.
+- **Approving annual results** must happen *"ոչ շուտ, քան 2 ամիս և ոչ ուշ, քան 6
+  ամիս"* after year end — **not earlier than two months** and not later than six.
+  The guide gave the ceiling and dropped the floor. **A one-sided window reads as
+  complete**, which is why the omission survives review.
+
+### One check paid for four files
+
+The flat **20% personal income tax** appears across `armenia-payroll.md`,
+`armenia-social-contributions.md` and their triggers, cited to PwC throughout.
+Article 150(1) confirms it and shows the phase-down that produced it — 23% from
+2020, 22%, 21%, then 20% from 1 January 2023. `armenia-payroll.md` said the rate
+"reached 20% from **1 July 2023**"; the statute says **1 January**.
+
+Article 150(1.1) sets a 10% rate for qualifying R&D salary, subject to the Government-listed occupation, qualifying work, commission opinion and residence conditions. Those conditions now feed the required inputs, calculation rules and templates in both payroll guides. A verified AMD 600,000 R&D salary produces AMD 60,000 PIT; the general rate produces AMD 120,000. Unresolved eligibility stops the final calculation. If the commission opinion is revoked, the general rules govern recalculation. [Tax Code, art. 150](https://www.arlis.am/en/acts/230455/latest).
+
+Corpus effect: authority citations 3,010 → measured after commit; Armenia moves off
+zero authority citations. The registration fee, incorporation timeline and
+e-invoicing mandate stay on commercial sources and are marked as such — the Law on
+State Registration of Legal Entities and the Law on State Duty are both on
+`arlis.am` and would settle them.
+
+## Guinea — reaching the authority and finding it does not publish the law
+
+`gn-income-tax.md` was **6 of 6** on `taxatlas.io`, every row marked "(approx —
+confirm)". The outcome here is not a correction: it is a **negative result,
+established rather than assumed**, and it is worth recording because "we used a
+commercial source" and "the authority does not publish this" are very different
+statements to leave in front of a reviewer.
+
+### Clearing a bot challenge, and why the obvious fix fails
+
+`dgi.gov.gn` answers a plain HTTP client with **202 and a 169-byte body** — an
+interstitial challenge, not a page. In a browser the home page renders normally.
+
+The trap is one layer down. A browser automation library gives you two ways to
+fetch: navigate a **page**, which runs JavaScript, or call the context's
+**request** API, which does not. Binary downloads naturally reach for the request
+API — and it **cannot clear a JavaScript challenge**, so it returns the same
+248-byte interstitial while the browser sitting next to it loads the site fine.
+Two download strategies failed this way before the shape of the problem was clear.
+
+What works is to **warm the context with a real page navigation first**, let the
+challenge resolve, and only then call the request API — the clearance cookie is
+set on the context, so the subsequent fetch inherits it. One further detail
+mattered: the warm-up must **wait for the network to settle** before its title is
+checked. Checking at `domcontentloaded` read an empty title, concluded the page had
+not rendered, and skipped the wait, so no cookie was ever obtained. With a
+`networkidle` wait and a short settle, the same code returned **5,214,544 bytes of
+`application/pdf`**.
+
+**A challenge is cleared per browsing context, not per request**, and the fix is
+ordering rather than cleverness.
+
+### And then the document was the wrong kind of document
+
+The DGI's *Bibliothèque de documents* was read in full. Its "Loi et règlements"
+section lists finance laws for 2016–2021 and 2025, arrêtés, décisions, taxpayer
+charter and mission reports. **There is no Code Général des Impôts on the site at
+all.**
+
+The newest instrument, **Loi ordinaire L/2024/023/CNT portant loi de finances pour
+l'année 2025**, is a 22-page scan with no text layer. OCR shows what it is: a
+**budget appropriation law** — total revenue estimated at GNF 35,176,145,730,740,
+split between the general budget and special-allocation budgets, then allocations,
+closing at article 37 with the standard repeal-and-publication clause. **No IRPP
+scale appears in it**, so it cannot confirm or contradict any row of the guide.
+
+**A finance law is not always a tax law.** In several jurisdictions already worked
+here — Burundi, Sierra Leone — the annual finance act is where the operative rates
+and thresholds live, and that pattern invites the assumption that reaching a
+finance act means reaching the rates. Guinea's is a pure appropriation act. The
+guide's bands stay marked, the research gap now names the exact missing document,
+and the reviewer is told where the search already went so they do not repeat it.
+
+### A source-availability register for the rest of the queue
+
+Having built a browser that clears bot challenges, the sensible next step was to
+point it at every remaining queue jurisdiction at once rather than discover the
+same dead ends one file at a time. The results below are **evidence about this
+environment on 2026-09-10**, not a verdict on the sites themselves — a host that
+does not answer here may be geo-restricted, may be blocking the egress proxy, or
+may simply have been down. Recorded so the next person does not repeat the search.
+
+**Live, and the authority publishes usable law**
+
+- **Armenia** — `arlis.am` serves the consolidated Tax Code and the LLC Law in
+  full text. Worked through above; the guide is rewritten on it.
+
+**Live, but not the document the guide needs**
+
+- **Guinea** — `dgi.gov.gn` clears its challenge in a browser and its library was
+  read in full. It publishes finance laws, arrêtés and reports; **no Code Général
+  des Impôts**. Covered above.
+- **Nicaragua** (`dgi.gob.ni`), **Myanmar IRD** (`ird.gov.mm`), **Cape Verde
+  Finance Ministry** (`mf.gov.cv`) — all answer HTTP 200 with real pages. Each is
+  a *tax* authority, and each jurisdiction's queue entry is a **company formation**
+  guide, whose authority is a companies registry or a commercial code. **Reaching
+  an authority is not the same as reaching the right authority**, and these three
+  are the best remaining leads precisely because the obstacle is now knowing which
+  instrument to ask for rather than whether anyone will answer.
+
+**Reached, and empty**
+
+- **São Tomé and Príncipe** — `mf.gov.st` answers, with the title *"Under
+  construction - Awesome site in the making!"* and **91 characters of body text**.
+  Three guides sit on the queue behind a ministry site that has not been built.
+  `impostos.st`, `minfinancas.st`, `mpf.gov.st` and `impostos.gov.st` have no DNS.
+
+**Resolve but never serve — the browser failed too, so this is not a challenge**
+
+- **Gabon** `dgi.ga` → 197.231.72.25; **Eritrea** `mof.gov.er` → 196.200.102.238;
+  **Myanmar DICA** `dica.gov.mm` → 103.89.50.27. Each resolves, each refuses the
+  connection to both a plain client and the browser. Note the split in Myanmar:
+  the **tax** authority answers and the **companies registry** does not, and the
+  registry is the one the formation guide needs.
+
+**No DNS at all**
+
+- Cuba `onat.gob.cu`; Djibouti `impots.dj` and `impots.gouv.dj`; Vanuatu
+  `customsinlandrevenue.gov.vu`; Central African Republic `impots.cf`;
+  Turkmenistan `minfin.gov.tm`.
+
+**Deliberately not pursued**
+
+- **Iraq** — a Cloudflare WAF deny, which is a firewall rule someone configured on
+  purpose. It is left alone. The guide stays marked, and 13 of its 14 citations
+  stay on one commercial host, because the alternative is evading a control the
+  site owner chose to apply.
+
+The distinction worth keeping is between the three states above: **no DNS** is a
+dead address, **resolves-but-refuses** is a live address behind something, and
+**answers-with-a-placeholder** is a live site with nothing in it. Only the first
+is safely permanent; the other two are worth retrying from a different network
+before a guide is written off, and none of the three is a reason to present a
+commercial figure as though it were checked.
+
+### Cape Verde — the operator contradicts the summary, and the code stays out of reach
+
+Following the register's own advice — go to the legal gazette, not the tax
+authority, when the guide is about company formation — Cape Verde produced one
+correction and one well-mapped dead end.
+
+**The Imprensa Nacional de Cabo Verde**, the state gazette publisher, describes
+*Empresa no Dia* itself: incorporation of Sociedades Anónimas and Sociedades por
+Quotas *"de forma imediata, no próprio dia"* at a staffed Casa do Cidadão counter,
+with **eight separate interactions with the administration** — legal, fiscal,
+social and labour — collapsed into one. The guide said the timeline was
+"approximately 1 to 2 weeks (faster via the one-stop shop)", on a commercial host.
+**The body that runs the service says same day.** The row now cites INCV and says
+so, with the caveat that a longer estimate may be describing steps outside the
+service rather than the incorporation.
+
+The *Código das Empresas Comerciais* is another matter, and the search is recorded
+because it went four layers deep and still failed:
+
+- `casadocidadao.cv` — the operator's own domain — answers **200 with a 17-byte
+  body**. Live, and empty.
+- There is **no `boe.cv` or `bo.cv`**, despite INCV describing an electronic
+  Boletim Oficial as a free and universal public service. *(This bullet was a
+  false negative produced by guessing at hostnames. The gazette is at
+  **`boe.incv.cv`** and is open, complete and free. See "Cape Verde, resolved"
+  below.)*
+- INCV's Boletim Oficial page **displays its own feed error**: *"SSL certificate …
+  has expired"*. The publisher cannot reach its own gazette feed.
+- `legis-palop.org`, the Portuguese-speaking African countries' legal database, is
+  live but serves through an opaque `?load=NNNNN` application loader.
+
+So the capital figures stay marked, with one addition a reviewer can act on
+immediately: **the guide gives a Sociedade Anónima the same CVE 1 minimum capital
+as a Sociedade por Quotas**. A public limited company sharing a private one's
+statutory floor is unusual enough that the claim should not be relied on without
+an article number. **Noticing that a figure is implausible is not the same as
+knowing it is wrong** — it is flagged, not corrected, because the code that would
+settle it could not be opened. *(It was opened later, and the flag was right for
+the wrong reason — see "Cape Verde, resolved" below.)*
+
+### Two ways to manufacture a false "unreachable", both hit in one sitting
+
+The register above is only worth having if its verdicts are about the sites rather
+than about this environment's configuration. Two faults found immediately after
+publishing it would each have produced convincing, entirely false entries. Both
+are recorded because **a tooling failure and a dead host look identical from the
+outside** — an empty page and a note saying it could not be loaded.
+
+**1. The proxy port moved and the drivers hardcoded the old one.** The container
+restarted; the egress proxy came back on a different port. Every browser driver
+carried the previous port as a literal, so each fetch returned *"Problem loading
+page"* — the exact signature recorded for Gabon, Eritrea and Myanmar's registry.
+Nicaragua's National Assembly was written off on that basis and is, in fact, fine.
+
+The tell was a **contradiction between two tools**: `curl` reached the host and
+returned a Cloudflare challenge while the browser could not reach it at all. That
+is backwards — the browser is the more capable client. **When the weaker tool
+succeeds where the stronger one fails, suspect the stronger one's configuration
+before you conclude anything about the host.** Every driver now reads
+`process.env.HTTPS_PROXY` instead of a literal.
+
+The register's own entries survive this, because those tests ran **before** the
+restart, on the port that was then correct. That is a fact about timing rather
+than a defence of the method: had the restart come an hour earlier, three
+jurisdictions would have been recorded as dead on the strength of a stale port.
+
+**So they were re-tested rather than left resting on that.** With the corrected
+proxy and `https://` throughout: Gabon `dgi.ga` and Myanmar's `dica.gov.mm` still
+never load; Eritrea's `mof.gov.er` still returns *"Problem loading page"*; and São
+Tomé's `mf.gov.st` still answers **202** with *"Under construction - Awesome site
+in the making!"* and 91 characters of body. Every entry holds. **Publishing a
+claim, finding two ways it could have been wrong, and then re-running it is the
+cheap half of the work** — the expensive half was noticing the tools disagreed.
+
+**2. The proxy tunnels HTTPS only, and government sites still link `http://`.**
+`digesto.asamblea.gob.ni` returned **405 with a 465-byte body** through the
+browser. The body is not from the site — it is the proxy saying *"this proxy only
+accepts HTTPS CONNECT tunnels."* Every link to the Digesto on the Assembly's own
+home page is `http://`, so following the site's own navigation produces a
+plausible-looking failure at the first hop. **The same URL over `https://` returns
+200 and 46 KB.**
+
+So a scheme the site itself publishes is enough to make a live authority look
+dead. **Rewrite `http://` to `https://` before recording any failure**, and read
+the error body rather than the status code — a 405 that explains itself is not a
+site rejecting you.
+
+### Nicaragua — the legal database is live, and it is not the one the links point at
+
+Correcting the register entry above: the useful Nicaraguan authority is not the
+tax administration but the **Digesto Jurídico Nicaragüense**
+(`https://digesto.asamblea.gob.ni/`), the official consolidated legal digest,
+which answers **200** and offers *Normas Jurídicas*, *Digestos Jurídicos* and a
+documentary collection running from 1821.
+
+`legislacion.asamblea.gob.ni` looks like the database and is not one. Over `http`
+its `normaweb.nsf` is a Lotus Domino stub whose entire body is
+`onload="window.location.href='http://www.asamblea.gob.ni'"` — a redirect with no
+content; over `https` the connection resets. **A URL that looks like a database
+endpoint can be a redirect with a database's name on it.**
+
+The norms themselves sit behind `/consultas/normas/`, whose search is
+JavaScript-driven — the static form exposes only a norm number and date ranges —
+and whose documents are addressed as `shownorms.php?idnorm=<base64 of a numeric
+id>`. `ni-company-formation.md` therefore stays on its commercial source for now,
+but the gap is narrowed to **locating one code inside a working official database**
+rather than finding an authority at all.
+
+### Nicaragua — five layers to the text, and the Code contradicts the guide
+
+The Digesto entry above said the database was live and the code was not yet
+located. It is now, and the route is worth writing down because none of the five
+steps was guessable from the one before it.
+
+1. The search is a **POST to `/consultas/util/ws/proxy.php`** with
+   `hddQueryType=getJuridicNorms` and the serialised form, returning JSON. The
+   visible form offers only a norm number and date ranges — there is **no title
+   field** — so the way in is a **date range**: the Código de Comercio is 1916 law,
+   and 1914–1918 returns 1,219 records, among them *Código de Comercio de
+   Nicaragua*, `registro` **"Vigente"**, published 20/10/1916.
+2. Each record carries an `iunpid`, base64 of a numeric id — `MjkyOTI=` is 29292.
+3. `shownorms.php?idnorm=…` renders the record: *Código N°. s/n*, materia *Empresa,
+   Industria y Comercio*. It shows a TEXTO panel and a Download button.
+4. **Both are empty.** `hasfileNorm` returns **false** for every `valordominio`,
+   and `getVersionHtmlAccordion` returns nothing. The Digesto catalogues this code
+   without attaching its text. **A record is not a document**, and stopping here
+   would have produced a perfectly defensible "the database has it but does not
+   serve it".
+5. The text is in the **documentary collection**, reached by a different query —
+   `getRddsByIunp` — which returns an `rddid` and a starting page, and
+   `pdf.php?type=rdd&rdd=…` then serves **13.7 MB, 323 pages** with an OCR text
+   layer. The Code begins at page 35.
+
+### What the Code says that the guide did not
+
+`ni-company-formation.md` was **4 of 5** on one commercial host. Reading arts.
+201–207 confirmed one claim and contradicted another.
+
+- **Two founders is right** — art. 202, *"puede constituirse por dos o más
+  personas"*. Confirmed, and now cited to the Code.
+- **"Capital need not be deposited at incorporation" is wrong where it matters.**
+  Article 206: *"Ninguna compañía anónima podrá comenzar sus operaciones mientras no
+  tuviere suscrita siquiera **la mitad del capital social**, y en dinero efectivo, el
+  **10%** del capital que consista en numerario."* The Code does not gate
+  incorporation on paying capital; it gates **commencing operations** — which is
+  what a founder is actually asking about. **A claim can be technically defensible
+  and still answer the wrong question.**
+- **Three rules were simply absent**: art. 204, no legal personality until the
+  escritura and Estatutos are registered, and both must then be **published**;
+  art. 205, five grounds on which a judge **refuses** registration; art. 203, the
+  prescribed content of the Estatutos.
+- **And one of those grounds qualifies a headline claim.** The guide said
+  "Foreigners may fully own a Nicaraguan company". Art. 205's first ground refuses
+  registration where the founders are not *"naturales del país o extranjeros
+  **domiciliados en el mismo**"*. Ownership after formation and eligibility to be a
+  founder are different questions. **This is 1916 law** and later investment
+  legislation may displace it, so it is **flagged, not resolved** — the guide now
+  puts the two side by side and says which is unsettled.
+
+Article 206 was read from the **page image** at 300 dpi rather than the OCR layer,
+which renders the surrounding text as *"R sus habitantes"* and *"dctretan"*. The
+figures survive the words-and-digits rule only on the image: *"la mitad"* is words,
+*"el 10%"* is digits alone, and the image is what confirms it.
+
+`incv.cv` was added to the `list-source-mix.py` allowlist in the same commit — the
+Imprensa Nacional de Cabo Verde publishes the Boletim Oficial and was scoring as
+secondary, the same blind spot that once had Botswana citing its own revenue
+service and counting as unsourced. `digesto.asamblea.gob.ni` already scored as
+authority through the `gob` pattern; a selftest now pins both.
+
+### OHADA capital rules require the national provisions too
+
+Burkina Faso and Gabon both apply the AUSCGIE, but different capital figures do
+not by themselves prove either guide wrong. Article 311 sets the SARL default
+at CFA 1,000,000 and permits contrary national provisions. Its CFA 5,000 minimum
+nominal share value is a separate rule.
+
+Burkina Faso exercised the national power. Article 1 of Décret n°2016-314 of
+3 May 2016 replaces article 3 of Décret n°2014-462 with freely fixed SARL capital.
+The guide's previous FCFA 5,000 example can therefore be valid, though it needs
+both the national decree and the uniform share-value rule as sources. Restoring
+the uniform default as Burkina Faso's minimum would create an error. Gabon's
+national position remains a separate research gap.
+
+[AUSCGIE, art. 311](https://biblio.ohada.org/doc_num.php?explnum_id=3974);
+[Burkina Faso decree, arts. 1–2](https://police.gov.bf/index.php/infos-utiles/textes-officiels/category/3-decrets?download=26:decret-capital-minimum).
+
+A cross-jurisdiction comparison can flag a question. Resolve it by checking
+membership, effective dates, national options and the precise scope of each rule
+before changing a figure.
+
+### Myanmar — three sources, all dead, so the entry is closed rather than open
+
+`mm-company-formation.md` is the largest non-Iraq entry on the queue at 8 of 10.
+Its authority is the companies registry, and the register already recorded
+`dica.gov.mm` as resolving but never serving. Two further routes were tried with
+the corrected proxy and `https://` throughout: the **Myanmar Law Information
+System** (`mlis.gov.mm`) and the **Myanmar Law Library**
+(`myanmar-law-library.org`). Both resolve; **both fail in the browser as well as
+`curl`**.
+
+So the split noted earlier holds and is now complete: Myanmar's **tax** authority
+answers and **every route to its company law does not**. The entry stays on the
+queue, but as a documented dead end rather than an unexplored one.
+
+### Two countries were being governed by a treaty they never joined
+
+The OHADA comparison above suggested a check nothing in this repo performs: for a
+**supranational instrument**, membership is a fact with an authoritative register,
+and every guide citing the instrument can be tested against it in one pass.
+
+Sixteen jurisdictions in this corpus cite OHADA or the AUSCGIE. OHADA's own page,
+*Les Etats membres de l'OHADA*, lists **seventeen**: Bénin, Burkina Faso, Cameroun,
+Centrafrique, Comores, Congo, Côte d'Ivoire, Gabon, Guinée, Guinée Bissau, Guinée
+Équatoriale, Mali, Niger, RDC, Sénégal, Tchad, Togo.
+
+**Two of the sixteen are not on it: Djibouti and Burundi.**
+
+Djibouti is the serious one. `dj-company-formation.md` opened with *"Company law in
+Djibouti follows the OHADA Uniform Act on Commercial Companies"* and cited the
+AUSCGIE **nine times** — for entity types, minimum capital, the 1-to-50 shareholder
+range, the RCCM and the registration steps. `dj-tax-overview.md` stated it outright:
+*"OHADA Uniform Acts apply **(Djibouti is an OHADA member state)**"*, and added that
+*"OHADA accounting rules govern the books"*; `dj-corporate-income-tax.md` had the tax
+base *"prepared under OHADA accounting"*. **Three guides, resting on a premise that
+is false.**
+
+The row asserting membership was already marked **"(approx — confirm)"**. The
+confirmation was a single page on the treaty organisation's own site. **A marker is
+not a substitute for the check it asks for**, and this one sat unread while nine
+citations were built on what it flagged.
+
+Burundi's is the gentler version: *"company law based on the OHADA-style commercial
+framework"*. The hedge **"-style"** makes it not quite a false statement, which is
+exactly why it survived — but a reader takes from it that the Uniform Acts apply,
+and they do not.
+
+**What was and was not fixed.** The false attributions are corrected and the guides
+now cite OHADA's member register for the correction. **The figures underneath were
+not replaced**, because nothing was found to replace them with: the entity names
+(SARL, SA, RCCM) are shared across francophone civil-law systems and may well be
+right for Djibouti. **A figure can survive its citation being wrong.** What is now
+recorded is that they are **unsourced** rather than OHADA law, with Djibouti's own
+*Code de commerce* named as the missing document.
+
+The mirror-image gap exists too and is milder: **Cameroon is an OHADA member whose
+four guides never mention OHADA at all.** Under-citing the instrument that governs
+you is a smaller fault than citing one that does not, but it comes from the same
+blind spot.
+
+**This check generalises.** Membership of a supranational régime is verifiable
+against the régime's own register, and the corpus leans on several: OHADA,
+CEMAC, UEMOA, the EAC, the GCC, the EU. Any guide that names one is asserting a
+membership fact, and that fact is cheap to test — **two false claims out of sixteen,
+found in a single pass, none of which any figure-level checker could ever see**.
+
+### The membership check, run against every other régime — and what it turned up instead
+
+The OHADA result made the check worth generalising, so every supranational régime
+this corpus names was tested the same way: list the jurisdictions citing it, compare
+against the régime's membership.
+
+**Four came back clean.** CEMAC is cited by exactly its six members; UEMOA and its
+English name WAEMU are cited, between them, by exactly the eight; SACU by Lesotho
+and South Africa; CARICOM by Jamaica and Trinidad and Tobago. The UK's single "GCC"
+hit is a UAE-relocation day-count test, not a membership claim. **A check that finds
+nothing is still worth running once** — it is the difference between "no other
+régime is misattributed" and "nobody looked".
+
+Two things fell out of the scan that it was not looking for.
+
+**A jurisdiction's own name is a weaker key than it looks.** Five jurisdiction codes
+map to more than one directory: `AE` (`uae`, `united-arab-emirates`), `CA`
+(`canada`, `ca-chartered-accountant`), `IM` (`im`, `isle-of-man`), `VG` (`bvi`,
+`british-virgin-islands`) and `VN`. The first four are a naming split, not an error —
+`ca-chartered-accountant` holds sixteen **Canadian provincial** guides, all correctly
+tagged `CA`, behind a directory name that suggests a profession. But **anything that
+groups by directory sees eight jurisdictions where there are four**, and this repo's
+own per-jurisdiction reporting does exactly that. The "jurisdictions with any
+external citation" and "citing no authority domain at all" figures are computed
+per directory, so those four are each counted twice.
+
+**The real Argentine content was never lost, and I did not look for it.** It
+survived intact in `agent-skills/argentina-references/` — the hand-maintained tree
+CLAUDE.md describes as inheriting nothing from `skills/`. That description was read
+as "the trees are independent, so a fix here will not propagate there", and the
+converse went unconsidered: **a tree that does not receive corrections also does
+not receive corruptions.** When one copy of a file is wrong, the parallel tree is
+the first place to look, not an afterthought. The Argentine entry there lists
+**pyafipws** (LGPL-3.0, the definitive AFIP e-invoicing library) and **PyARCA**,
+whose own scope line reads *"Monotributo (ARCA/ex-AFIP)"* — corroborating the
+authority's rename from a source independent of the authority. Those projects are
+now restored to `skills/` rather than replaced with a thinner file written from
+scratch, which is what happened on the first pass.
+
+**And the fifth was a real error.** `argentina/references.md` carried
+`jurisdiction: VN` and, under the heading *"Vietnam — Related Open-Source
+Projects"*, listed two Vietnamese personal-income-tax repositories and cited *Luật
+số 109/2025/QH15*, *Luật Thuế TNCN No. 04/2007/QH12* and *Thông tư
+111/2013/TT-BTC*. It was a stray copy of `vietnam/references.md`. **Argentina did
+not have a thin references file; it had Vietnam's.** All 32 other `references.md`
+files match their directory. The file is now an Argentine one, naming **ARCA** —
+verified from the authority's own portal, which uses that name throughout and none
+of "AFIP" — with the legislative list left as a marked gap rather than invented.
+
+**The Argentina pack was already right about the thing that looked wrong.** ARCA
+replaced AFIP under Decreto 953/2024, and 70 "AFIP" mentions across seven files
+looked like stale naming until they were read: the guides say *"ARCA (formerly
+AFIP)"* and cite the decree. **Confirming that a suspicion is unfounded is part of
+the check, not a wasted step** — and the alternative, a bulk rename of a term the
+corpus was using correctly and deliberately, would have destroyed real information.
+
+### The corpus contains its VAT guides twice, and three of the copies disagree about who reviewed them
+
+Chasing the Argentina misfiling turned up a cheaper detector than the frontmatter
+scan that found it: **compare a file's `name:` against the `# H1` in its body.**
+It needs no external source, runs in a second, and the signal is strong because a
+duplicated file usually keeps the original's heading.
+
+It returned **41 files**. Most are benign in themselves — `se-vat-return.md` with
+the H1 `sweden-vat-return`, `dk-vat-return.md` with `denmark-vat-return` — but the
+pattern they reveal is not.
+
+**Nearly every jurisdiction's VAT or GST return guide exists twice**, under two
+naming conventions: an ISO-prefixed `xx-vat-return.md` and a country-named
+`country-vat-return.md` / `-iva` / `-mva` / `-gst`. A body-similarity scan over
+1,373 substantial guides found **33 near-duplicate pairs, 20 of them byte-identical
+below the frontmatter** — Spain, Netherlands, Poland, Portugal, Romania, Sweden,
+Denmark, Greece, Hungary, Ireland, Norway, Mexico, Colombia, Chile, Switzerland,
+Singapore, India, Japan, Czechia, the UAE and the EU base file among them.
+
+**A correction applied to one copy does not reach the other**, and nothing in either
+file says a twin exists. That is the `agent-skills/` problem — a tree that inherits
+nothing — reproduced inside `skills/` where nobody has flagged it.
+
+**Three pairs are worse than a maintenance hazard.** The two copies carry different
+tiers and different reviewers:
+
+| Jurisdiction | Tier 1, reviewed | Tier 2, unreviewed |
+| --- | --- | --- |
+| **UAE** | `uae/uae-vat.md` — **Mehran Habib** | `united-arab-emirates/ae-vat-return.md` |
+| **Portugal** | `portugal/portugal-vat-return.md` — **Mário Jorge da costa Vale** | `portugal/pt-vat-return.md` |
+| **India** | `india/india-gst.md` — **Mayur Deokar** | `india/in-gst-return.md` |
+
+The bodies are identical and **the trigger descriptions are identical word for
+word**, so a model selecting a skill by description can load either. Which copy it
+happens to load decides whether the answer is presented as accountant-reviewed and
+signed by a named Partner, or as an unreviewed draft. **The review attaches to a
+file, and the content it reviewed exists in two.** That is a question about what a
+Partner's name is warranting, and it is the maintainers' to answer, not this
+branch's — the pairs are recorded, not merged.
+
+### Delaware's income tax guide was the gross receipts guide
+
+One of the 41 was not a naming artefact. **`us-states/de/de-income-tax.md` had a
+body byte-identical to `de-gross-receipts-tax.md`** — same H1, same headings,
+throughout. Its frontmatter described something else entirely: the Delaware
+individual income tax return on Form PIT-RES, seven graduated brackets, the state
+standard deduction, modifications to federal AGI, personal credits.
+
+**A guide that does not exist gets written; a guide that reads as coverage does
+not.** Nothing inside the file contradicted its description, because the
+frontmatter was the only part that mentioned income tax. Anyone asking about
+Delaware income tax — a person skimming the inventory or a model matching on the
+description — would have been handed rules for a different tax under a heading
+naming that different tax.
+
+The file is now a stub that says so. **The income tax content was not written from
+memory**: the bracket table, thresholds, deduction and credits named in the old
+description were never in the corpus, and inventing them to fill the hole would
+have repeated the original fault in a more confident voice. `de-gross-receipts-tax`
+is correct and unaffected.
+
+**When a file's body names a different subject than its frontmatter, the body is
+usually telling the truth** — it is the part that was copied, and the frontmatter is
+the part someone edited and did not finish.
+
+### Reading article 24 without articles 25 to 28
+
+A review pass corrected two things in the Burundi filing section, and both were
+mine. They are recorded because they are the same fault in two costumes.
+
+**Article 22 was over-read.** The claim was that for a non-resident with no
+permanent establishment the withholding is final, so "the scale above never
+applies". Article 22 makes final the withholding under **articles 119 and 120** —
+which are the *occasional employee* rate and the *public-procurement* deduction.
+**Ordinary salary from a principal employer is article 117**, and nothing about
+lacking an establishment converts it into an article 119 or 120 payment. A
+non-resident on ordinary salary is still on the monthly scale.
+
+**Article 24 was quoted without article 25.** The guide said article 24 requires
+*"toute personne physique percevant un revenu"* to file annually. Article 25
+**dispenses** with that return for a taxpayer receiving only employment income
+withheld under article 113, only income withheld under articles 119 and 120, or
+both — which is most employees. Article 26 then lets those taxpayers file
+voluntarily to reclaim an overpayment under article 29. Stating the general rule
+without the exemption told every Burundian employee to file a return they do not
+owe.
+
+**Both errors are the same error**: reading a provision without the ones next to
+it. Articles 21 to 24 were read carefully and 25 onwards were not opened, and the
+page break is the only reason.
+
+Re-reading that page at 300 dpi produced four more provisions absent from every
+version so far:
+
+- **Employment income tax is monthly**, not annual — the tail of article 24 fixes
+  the taxable period at one month and the deadline at the **15th of the following
+  month**, without prejudice to the article 115 recapitulative.
+- **Article 24's older BIF 100,000,000 quarterly threshold needs a current-law
+  check.** Finance Act 2026/2027 article 190 requires annual returns above
+  BIF 25,000,000. The guide must retain that annual obligation. Whether additional
+  quarterly declarations remain due under article 24 requires OBR confirmation;
+  the two thresholds alone do not resolve the interaction.
+- **Article 27**: medium and large taxpayers must have the annual declaration
+  **and each annex** certified by a professional approved by the Ordre des
+  Professionnels Comptables.
+- **Article 28**: the annual liability is reduced by withholding under articles
+  112–116 and 119–120, and by the quarterly provisional instalments under article
+  126.
+
+The same review also corrected Armenia, more consequentially. The turnover-tax
+table here presented **article 258(1)'s rates as the tax payable**. They are gross
+rates, reduced by a documented-expense allowance under article 258(2)–(7) and
+floored at a minimum share of turnover under article 260 — so the guide overstated
+the tax for any business with costs. The exclusions in article 254(3) and the
+related-party tests in article 30 were missing too. **A rate table read out of its
+chapter is a plausible-looking answer with the mechanism removed.**
+
+### Cape Verde, resolved — the missing document was a repealed one
+
+The Cape Verde entry above recorded a four-layer dead end and left the
+implausible CVE 1 minimum capital flagged rather than fixed. Both halves were
+wrong, and the way they were wrong is the transferable part.
+
+**The gazette was never missing.** The register bullet said there is "no `boe.cv`
+or `bo.cv`". Those were guesses at a hostname. The Cape Verdean electronic gazette
+is **`boe.incv.cv`** — open, free, no login, with a full-text search over every
+Boletim Oficial and a `/Bulletins/Download/<id>` endpoint that returns the
+complete signed PDF. **A hostname guess that fails is not evidence that a service
+does not exist**, and writing one into a register turns a failed guess into a
+recorded fact. The rule the register already had — *resolves-but-refuses is not
+the same as no DNS* — needs a third case in front of it: **never-asked**.
+
+**The code was not unreachable; it was repealed.** Every search was for the
+*Código das Empresas Comerciais*, because that is what the guide cited. That code
+— Decreto-Legislativo n.º 3/99, de 29 de março — had its Books II and III revoked
+in 2019. The current instrument is the **Código das Sociedades Comerciais**,
+Decreto-Legislativo n.º 2/2019, in Boletim Oficial n.º 80, I Série, de 23 de julho
+de 2019, alongside a new Código Comercial in the same bulletin. Searching for the
+*subject* found it immediately; searching for the *code by name* could only ever
+have found a dead document.
+
+This is a check the corpus was not making at all. Every figure-level checker asks
+*is this number right?*; none asks *is the instrument this number is attributed to
+still in force?* A repealed code fails silently, because the citation stays
+well-formed and the figures stay plausible.
+
+**And the flag was right for the wrong reason.** "CVE 1 statutory minimum" for a
+Sociedade Anónima was suspicious because a public company should not share a
+private one's floor. The real answer is that **neither has a statutory floor**:
+article 172(2) and article 237(1) both fix capital freely in the articles, and the
+same enacting decree that approved the code expressly revoked **Portaria n.º
+17/2013, "que fixa os montantes mínimos do capital social"** — the instrument that
+set minimum amounts. The floors that do exist are indirect and were absent from
+the guide entirely: a quota may not have a nominal value below CVE 100, a share
+below CVE 1,000, an SA formed by public subscription needs CVE 2,500,000 fully
+paid, and an SA may not distribute a single escudo of profit until its legal
+reserve reaches CVE 2,500,000. **The guide's one suspicious number was less
+misleading than the four real constraints it omitted.**
+
+The pay-up split it could not verify — 50% for an Lda, 30% for an SA — turned out
+to be right, from articles 176(2) and 238(2). A commercial source being unverified
+is not a reason to expect it to be wrong.
+
+### The gazette can be wrong, and the digits-and-words rule caught it first
+
+Cape Verde also produced the cleanest possible vindication of the rule that a
+figure is only accepted where **digits and words state it together**.
+
+The Código das Sociedades Comerciais "saiu de forma inexata" and was formally
+corrected by **Retificação n.º 133/2019** (Boletim Oficial n.º 101, 1.º
+Suplemento, I Série, de 30 de setembro de 2019). Five articles were corrected, two
+by an order of magnitude:
+
+- **Article 222(2)** — the audit trigger for an Lda with no supervisory body. The
+  gazette printed **CVE 10,000,000 "e/ou"** more than **ten** employees. The
+  correction reads **CVE 100,000,000 "ou"** more than **fifty**. Both figures and
+  the conjunction were wrong: a factor of ten, a factor of five, and *and/or*
+  narrowed to *or*.
+- **Article 342(5)** — the large-SA test. The gazette printed **"200.000$00
+  (duzentos milhões de escudos)"**. The digits say two hundred thousand; the words
+  say two hundred million. **A self-contradicting figure, in the official text.**
+  The correction resolves it in favour of the words — CVE 200,000,000 — and lifts
+  the net-asset limb from CVE 15,000,000 to CVE 150,000,000.
+
+The lesson runs the other way from the usual one. The digits-and-words rule was
+adopted to defend against **OCR**, on the theory that the document is right and
+the reading of it may be wrong. Article 342(5) is a case where **the document is
+wrong and the rule catches it anyway** — because a figure whose two statements of
+itself disagree is unusable whatever the cause, and the only safe response is to
+go looking for why. Here, looking found a rectification.
+
+Two smaller habits earned their keep on the same page:
+
+- **Treat structural anomalies in extracted text as signal.** Articles 253 and 254
+  begin at paragraph 2 and article 255 at subparagraph b), with no paragraph 1 or
+  subparagraph a). The first assumption was a text-extraction artefact. Rendering
+  the page at 200 dpi and reading the image showed the printed gazette does this
+  too. It is not in the rectification, so it stands: **cite article 254(2), and
+  expect no article 254(1) to exist.**
+- **A rectification is a separate document with its own gazette entry.** Nothing
+  in the 130-page bulletin points forward to it. It was found by searching the
+  gazette for the code's name and reading the summaries, and the search returned it
+  above the code itself. **After finding a primary text, search the gazette again
+  for later acts naming it** — that same search is what confirmed there have been
+  no amendments since.
+
+### The repeal check, generalised — and what it found in Nigeria
+
+Cape Verde raised the question the corpus was not asking: *is the instrument this
+figure is attributed to still in force?* Asking it across the corpus produced 265
+distinct citations of pre-2015 instruments, most of them perfectly current —
+Ireland's TCA 1997, Singapore's ITA 1947, Australia's Medicare Levy Act 1986. Age
+is not the signal. The signal is a **known wholesale replacement**, and two large
+packs had one: India's Income-tax Act, 2025 (in force from 1 April 2026) and
+Nigeria's Nigeria Tax Act 2025 (in force from 1 January 2026).
+
+Both packs already knew. That turned out to be the problem.
+
+#### One-way supersession notices
+
+`ng-personal-income-tax.md` states that `ng-income-tax.md` should be *"treated as
+deprecated for tax-rule purposes"* and loaded only for its bank-narration patterns.
+`ng-vat.md` v2.0 states that it is a *"consolidated rewrite merging
+ng-vat-return.md … and nigeria-vat.md"*, refreshed for NTA 2025. **In all three
+cases the notice appears only in the file doing the superseding.** The superseded
+files carried no sign of it, and two of them still opened with *"ALWAYS read this
+skill before touching any Nigerian income tax work"* and the equivalent for VAT.
+
+Selection is by description. A model matching "Nigeria income tax", "PITA" or
+"self-assessment Nigeria" reaches the deprecated file as readily as the canonical
+one, and nothing inside it says to stop. `ng-income-tax.md` was still teaching
+PITA's 7%–24% scale, the Consolidated Relief Allowance and the 1% minimum tax —
+all three superseded from 1 January 2026 by the Fourth Schedule to the Nigeria Tax
+Act 2025 (0% to ₦800,000, then 15/18/21/23/25%), which abolishes the minimum tax
+and replaces the CRA.
+
+**A deprecation notice belongs in the deprecated file.** Written anywhere else it
+is a note to maintainers, not a guard. The corpus-wide scan for this pattern found
+fifteen files naming another guide in a supersession-flavoured sentence; twelve
+were ordinary cross-references in READMEs and "see also" lines, and the three that
+mattered were all in Nigeria.
+
+#### Two Acts, one gazette, one day, and the same words meaning different things
+
+Chasing the Nigerian VAT threshold produced a sharper finding than a stale figure.
+`ng-vat.md`'s reviewed block carried the registration threshold **twice, at two
+figures** — NGN 25,000,000 (Finance Act 2019) and NGN 100m (NTA 2025) — while its
+body applied only the first, including in a refusal rule instructing the agent to
+stop work below ₦25 million. Reading both 2025 Acts from Official Gazette No. 117
+of 26 June 2025 showed that neither citation locates the rule correctly:
+
+- **The Nigeria Tax Act 2025 has no turnover threshold for VAT at all.** Section
+  147 charges 7.5% on the value of all taxable supplies, and the exempt list in
+  section 185 has no turnover limb.
+- **The relief is in the Nigeria Tax Administration Act 2025, section 22.** The
+  monthly-return obligation in s.22(1) *"shall not apply to a small business"*, and
+  s.22(5) describes that exemption as covering *"registration, charging of tax on
+  its taxable supplies and filing of returns"*.
+- **"Small Business" is defined in the Administration Act** as gross turnover of
+  ₦100,000,000 or less with total fixed assets not more than ₦250,000,000 —
+  **"provided that any business providing professional services shall not be
+  classified as a small business"**.
+- **The Tax Act's own "small company"** — the same two limbs, and the gateway to
+  the 0% corporate rate in s.56 — **carries no such proviso.**
+
+So the same two numbers mean different things depending on which tax is in issue,
+and the proviso that decides it appears in one Act and not the other. Every Nigeria
+guide in this corpus is written for *"self-employed individuals, sole traders,
+partnerships or small companies"* — a population largely inside the
+professional-services proviso, and therefore outside the VAT exemption at any
+turnover. **The single most important qualifier for the pack's own audience was in
+none of its files.**
+
+Three habits follow:
+
+- **Find the rule, not the number.** A threshold recorded without its operative
+  provision cannot be checked when the law moves, and cannot be applied to a
+  taxpayer the provision excludes.
+- **A charging Act and an administration Act are two documents.** When a
+  jurisdiction splits them, an obligation cited to the charging Act should be
+  treated as unverified until it is found there.
+- **A definition shared by two statutes is not one definition.** Where the same
+  term is defined twice, read both before carrying a conclusion from one tax to
+  another.
+
+#### A reviewed fact can carry a citation the Act does not support
+
+`ng-vat-return.md` is tier 1, reviewed and signed. Its generated block records *"VAT
+registration exemption threshold (annual turnover) — NGN 25,000,000 or less
+(NIGERIAN TAX ACT 2025)"*. The figure is real — it is the Finance Act 2019 test —
+but **it is not in the Act cited**, and the file's standing instruction *"NEVER
+require VAT registration for businesses below NGN 25,000,000"* is wrong for any
+2026 period and wrong at every turnover for a professional-services business.
+
+The reviewer's name attaches to the figures they checked, which were the figures of
+the year they checked them. **A signature is not a subscription**: it does not
+follow the law forward, and it does not make a re-attributed citation true. Where a
+generated block is wrong about where a rule lives, the durable fix is upstream in
+the facts; what a guide can do meanwhile is say so, in the file, above the block.
+
+### India — the same check, and two errors that predate the new Act
+
+India was the other pack with a wholesale replacement: the **Income-tax Act, 2025
+(30 of 2025)**, which provides by its own section 1(3) that *"it shall come into
+force on the 1st April, 2026"* and has since been amended by the Finance Act, 2026.
+Seven of the pack's seventeen files knew. The two that carry the residence rules
+and the core self-employed computation did not, and one of them opens with *"ALWAYS
+read this skill before touching any Indian income tax work"*.
+
+Reading the Act rather than writing a banner from the corpus's own statements paid
+for itself twice, because **both files contained substantive errors that were wrong
+under the 1961 Act too**:
+
+- **Two different provisions had been welded into one row.** The residency guide
+  described "an Indian citizen whose income from Indian sources exceeds ₹15 lakhs
+  and who is NOT liable to tax in any other country → deemed Indian resident even
+  if not physically present for 182 days (Test B modified: 120-day threshold
+  instead of 60-day)". That is two rules. Section 6(5) modifies the sixty-day limb
+  to one hundred and twenty days for a **visiting** citizen or PIO over the ₹15
+  lakh measure — the 365-day limb still applies and tax liability elsewhere is
+  irrelevant. Section 6(7) deems an Indian citizen **not liable to tax anywhere**
+  and over the same measure to be resident **with no day count at all**. Merged,
+  they describe a person who exists in neither provision.
+- **"Otherwise ROR" was wrong.** The guide gave two routes into *not ordinarily
+  resident*; section 6(13) has four. The two it omitted — the 120-day resident in
+  s. 6(13)(b) and the deemed resident in s. 6(13)(c) — are exactly the cases the
+  ₹15 lakh rules create, so the guide sent precisely the taxpayers it was written
+  for down the wrong branch.
+- **The measure itself was misstated.** It is *total income excluding income from
+  foreign sources*, and s. 6(14) defines income from foreign sources to **exclude**
+  income derived from a business controlled in or a profession set up in India.
+  That is not "income from Indian sources".
+- **A capital gains rate was a full regime out of date.** "LTCG on other assets
+  (property, unlisted shares) — 20% with indexation" is s. 197(1)(b) at **12.5%**.
+  The 20% indexed computation survives only as relief under s. 197(3) for a
+  *resident* individual or HUF disposing of land or a building acquired before 23
+  July 2024, who effectively pays the lower of the two.
+- **A rebate was described as a cliff.** The income-tax guide said tax is fully
+  rebated at ₹12,00,000 and stopped there. Section 156(2)(a) caps the rebate at the
+  lower of the tax and **₹60,000**, and s. 156(2)(b) gives **marginal relief** above
+  ₹12 lakh. Without it a reader infers a step change that the statute is written to
+  prevent.
+
+The new-regime rate table, by contrast, carried over exactly: section 202(1)
+reproduces the same seven bands, and the old regime survives as the s. 202(4)
+option. **Checking a replacement Act is not only about what changed.** Confirming
+that a table did *not* change is worth as much, and it is the part that lets a
+guide keep its content instead of hedging it.
+
+Two access notes, since both matter for repeating this:
+
+- **incometaxindia.gov.in returns 403 to every plain HTTP client** — an Akamai edge
+  deny, not the egress proxy. A real browser is served normally, and warming a
+  browser context on the Act's landing page before requesting the PDF returns the
+  full 686-page consolidated text. That is using the intended client, not evading a
+  control; the distinction is whether an ordinary browser is refused too.
+- **The department publishes its own 1961-vis-à-vis-2025 mapping utility.** Where a
+  jurisdiction renumbers a code wholesale, look for the authority's own concordance
+  before assuming a section number survived. Sections 5 and 6 did survive; most
+  did not.
+
+### OHADA — one uniform act, fourteen guides, six mutually exclusive answers
+
+The OHADA comparison must distinguish the uniform default from national rules.
+Article 311 sets CFA 1,000,000 as the SARL default, subject to contrary national
+provisions, and CFA 5,000 as the minimum nominal share value. Burkina Faso's
+Décret n°2016-314 permits freely fixed capital, so its earlier FCFA 5,000 example
+was not disproved by reading article 311 alone. See the national decree cited in
+the corrected discussion above.
+
+Article 387 sets an ordinary SA minimum of CFA 10,000,000. Article 824 sets
+CFA 100,000,000 for the listed or publicly offered securities within its scope.
+Keep the default, national provisions, entity form and public-offering rules
+separate when comparing countries.
+
+#### What one document was worth
+
+Fourteen guides in this corpus cite the AUSCGIE. Checking them against it found the
+same rule stated **six** mutually exclusive ways, nearly all attributed to the same
+instrument:
+
+- **"OHADA sets no statutory minimum for a SARL"** — Benin, DR Congo, Guinea-Bissau,
+  Guinea, Niger, Senegal and Togo, in seven variations, several adding that the
+  minimum was "abolished" or "removed by OHADA". It was not. Where a state has in
+  fact displaced it, that is **national law using article 311's derogation**, and it
+  belongs to a citation of that law.
+- **Capital versus nominal share value**: Mali's national provisions still need verification. Burkina Faso's national decree permits its lower capital example.
+- **"Fully paid up at incorporation"** — Central African Republic. Article 311-1
+  requires cash parts paid up to **half** on subscription, balance in two years.
+- **The SARL deadline applied to an SA** — Chad gave two years for the SA balance
+  and DR Congo gave the SARL's half-and-two-years as the general rule. An SA is a
+  **quarter and three years** (arts. 388–389).
+- **A rule not in the Act at all** — Equatorial Guinea's "SA shares of at least XAF
+  10,000 each". Article 387 leaves SA share nominal value *"librement fixé par les
+  statuts"*.
+- **The CFA figure relabelled in another currency** — Guinea (GNF) and DR Congo
+  (CDF) are OHADA members that do not use the CFA franc, and both guides carried
+  the Act's numbers with the local currency code substituted. That is not a
+  conversion; it changes the requirement by an order of magnitude, and **the Act
+  contains no clause converting its amounts for non-CFA member states**. Guinea's
+  guide made the inconsistency visible by keeping the CFA amount's dollar
+  equivalent — "GNF 10,000,000 … approx. USD 14,000" — beside the GNF figure. The
+  two cannot both be right.
+
+**Supranational law is where a single reading pays fourteen times, and where a
+single misreading costs fourteen times.** The corpus already had a check for
+*membership* of a régime, which caught two false claims. It had none for whether the
+guides of the member states agree about what the régime says.
+
+Djibouti belongs in the same paragraph for the opposite reason. Its guide was
+corrected earlier for claiming OHADA membership it does not have — but **every row
+in it still cited the OHADA uniform act** underneath a banner saying OHADA does not
+apply, including a "DJF 1,000,000" that is article 311's CFA figure with the
+currency code swapped. **Correcting a claim is not the same as correcting what
+rests on it.**
+
+#### Finding the Act, and reading it twice
+
+Two routes failed in ways worth recording. **ohada.com** lists every uniform act as
+a downloadable PDF and every download redirects to a login form — a registration
+wall, not a technical obstacle, and not something to work around.
+**droit-afrique.com**, the usual mirror, returns **403 to a plain client and to a
+real browser alike**: a deliberate deny, recorded and left alone, like Iraq.
+
+The route that worked was OHADA's own **`biblio.ohada.org`**, reached through its
+POST search form, then the periodical record for the *Journal Officiel de l'OHADA*,
+then the list of bulletins. The 4 February 2014 special issue appears there
+**twice**: one record holds it **on paper only**, at ERSUMA in Porto-Novo, "exclu du
+prêt"; the other carries the 240-page signed PDF. **A catalogue can hold the same
+issue in two records with different holdings, and the first one found may be the
+paper one.**
+
+The scan's text layer is damaged — accents stripped, words run together, and in one
+place **an entire sentence of article 385 missing**. Both capital figures were
+confirmed by rendering the pages at 200 dpi and reading the images, which is also
+how *"la société anonyme peut ne comprendre qu'un seul actionnaire"* was recovered.
+**The rule that OCR is not a text layer has a corollary: a bad text layer is not one
+either, and it fails silently by deletion rather than by garbling.**
+
+### PR 21 review corrections, 11 September 2026
+
+The Nigeria VAT notice corrected one threshold but left conflicting operative
+instructions. The revised `ng-vat` body applies NTA sections 150, 154–155 and
+185–186, and NTAA sections 22 and 100–107: it distinguishes zero-rated from exempt
+supplies, separates VAT withheld from input deductions, states the 14th-day
+remittance rule and corrects late-return penalties. The two legacy VAT guides
+now route current work to it. Generated fact blocks remain unchanged and carry
+an explicit warning pending corrections in `skill_facts`; the frontmatter does
+not attribute these amendments to the historical reviewer.
+
+India's income-tax calculation now applies the rebate and marginal relief before
+cess. Its presumptive-tax instructions include the 5% cash conditions, activity
+and return-form eligibility, and the 15 March advance-tax rule. AY 2026-27
+filing dates now reflect the Department's current guidance, including the
+31 August ITR-4 deadline and 31 March revised-return deadline. The residency
+guide separately tests where income is received under section 5, so a foreign
+asset does not automatically mean untaxed income for an RNOR or non-resident.
+
+The Burkina Faso capital correction and Burundi filing qualification above
+replace conclusions that had omitted a national provision or later Finance Act.
+Delaware remains an explicitly versioned coverage gap. Argentina's reference
+entry points to the repository's mixed-licence policy without suggesting that
+attribution alone permits reuse.

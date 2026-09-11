@@ -1,22 +1,30 @@
 ---
 name: ng-vat-return
-description: Use this skill whenever asked about Nigerian VAT returns for self-employed individuals or small businesses. Trigger on phrases like "Nigeria VAT", "FIRS VAT", "7.5% VAT", "VAT return Nigeria", "value added tax Nigeria", "TaxPro Max", or any question about VAT computation or filing for businesses in Nigeria. Covers the 7.5% standard rate, exempt supplies, registration threshold (NGN 25M), monthly filing to FIRS, and input/output VAT computation. ALWAYS read this skill before touching any Nigerian VAT work.
-version: 2.0
+description: "Archived Nigerian VAT guide retained for historical comparison and bank-narration examples. For Nigerian VAT registration, classification, input deductions, imported services, monthly returns or payment deadlines from 1 January 2026, read ng-vat.md. The old body contains superseded or incorrect thresholds, tax treatments and penalties, so do not execute its filing or calculation instructions. It is not a verified guide to an earlier period either; check the law for that period separately. Use this file only to trace an earlier working paper or review source examples after confirming treatment in the applicable current guide."
+version: 2.1
 jurisdiction: NG
 tax_year: 2025
-last_updated: 2026-09-10
-reviewed_by: Omolola Fasasi 
-review_status: current
+last_updated: 2026-09-11
+review_status: pending_review
 depends_on:
   - vat-workflow-base
 category: international
-tier: 1
+tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
 # NG VAT Return
 
-## Nigeria VAT Return -- Self-Employed Skill v2.0
+> Archived guide. Use [ng-vat.md](ng-vat.md) for periods from 1 January 2026.
+> Do not execute the old calculation, classification, registration, penalty or
+> filing instructions below. They contain errors and superseded rules, including
+> the NGN 25 million threshold and the treatment of zero-rated supplies as exempt.
+> Historical bank examples may help identify transactions, but cannot establish
+> their VAT treatment. Any generated review block is retained unchanged as a
+> historical record and does not sign off current use. Amend its source
+> `skill_facts` before regenerating it.
+
+## Nigeria VAT Return -- Archived Self-Employed Skill v2.1
 
 ## Verified rates & thresholds (accountant-reviewed)
 
@@ -95,7 +103,7 @@ This block is generated from verified `skill_facts` — edit the facts, not the 
 
 | Item | Amount |
 | --- | --- |
-| VAT registration exemption | Annual turnover NGN 25,000,000 or less (Finance Act 2020) |
+| VAT registration exemption | **Before 1 January 2026** — annual turnover NGN 25,000,000 or less (Finance Act 2020). **From 1 January 2026** — small business only: turnover ≤ NGN 100,000,000 and fixed assets ≤ NGN 250,000,000, professional-services businesses excluded (NTAA 2025 s.22) |
 | Filing frequency | Monthly for all registered persons |
 | Nil returns | Required even with no transactions |
 
@@ -122,7 +130,7 @@ This block is generated from verified `skill_facts` — edit the facts, not the 
 
 ### Refusal Catalogue
 
-- **R-NG-1 -- Below threshold** — Businesses with annual turnover of NGN 25,000,000 or less are exempt from VAT registration and filing. Stop.
+- **R-NG-1 -- Below threshold** — **Check the period and the activity first.** For periods ending before 1 January 2026, businesses with annual turnover of NGN 25,000,000 or less are exempt from VAT registration and filing — stop. For periods from 1 January 2026, the exemption applies only to a **small business** under NTAA 2025 s.22: turnover ≤ NGN 100,000,000 **and** fixed assets ≤ NGN 250,000,000, and **never** to a business providing professional services. If the business is professional-services, do not stop — continue the return whatever its turnover.
 - **R-NG-2 -- International VAT recovery** — Cross-border VAT recovery and transfer pricing implications are outside this skill scope. Escalate.
 - **R-NG-3 -- Corporate tax** — Companies Income Tax (CIT) is a separate obligation outside this skill scope.
 
@@ -351,7 +359,7 @@ Present these questions:
 ```
 ONBOARDING QUESTIONS -- NIGERIA VAT
 1. Are you registered for VAT with FIRS? What is your TIN?
-2. What is your annual turnover (above or below NGN 25 million)?
+2. What is your annual turnover, and does the business provide professional services? (Before 2026 the test is NGN 25 million; from 2026 it is NGN 100 million of turnover with fixed assets under NGN 250 million, and professional-services businesses are excluded from the exemption entirely)
 3. What types of goods or services do you sell?
 4. Do you make any exempt supplies (basic food, medical, education)?
 5. Do you sell to government entities?
@@ -369,7 +377,7 @@ ONBOARDING QUESTIONS -- NIGERIA VAT
 | Topic | Reference |
 | --- | --- |
 | VAT imposition | VATA s 2 |
-| Registration threshold | VATA s 8 (Finance Act 2020) |
+| Registration threshold | VATA s 8 (Finance Act 2020) for periods before 2026; NTAA 2025 s 22 and its "Small Business" definition from 1 January 2026 |
 | Exempt supplies | VATA First Schedule |
 | VAT invoice | VATA s 10 |
 | Non-resident digital services | VATA s 10A |
@@ -395,7 +403,7 @@ ONBOARDING QUESTIONS -- NIGERIA VAT
 ### Self-Check
 
 - [ ] Registration and TIN confirmed?
-- [ ] Turnover above NGN 25M threshold?
+- [ ] Turnover above the threshold for the period? (NGN 25M before 2026; NGN 100M with fixed assets under NGN 250M from 2026, and no exemption at all for professional services)
 - [ ] All input claims supported by valid VAT invoices?
 - [ ] Exempt supplies identified and excluded from output VAT?
 - [ ] Nil return filed if no activity?
@@ -405,7 +413,7 @@ ONBOARDING QUESTIONS -- NIGERIA VAT
 
 - NEVER charge VAT on exempt supplies (basic food, medical, education, residential rent)
 - NEVER claim input VAT without a valid VAT invoice
-- NEVER require VAT registration for businesses below NGN 25,000,000 annual turnover
+- NEVER require VAT registration for businesses below NGN 25,000,000 annual turnover **in a period ending before 1 January 2026**. From that date the test is the NTAA 2025 s.22 small-business definition, and a professional-services business is never exempt at any turnover
 - NEVER apply a VAT rate other than 7.5% (the pre-2020 rate of 5% is no longer applicable)
 - NEVER miss the 21st monthly filing deadline -- nil returns are still required
 - NEVER claim input VAT on purchases used for exempt supplies
