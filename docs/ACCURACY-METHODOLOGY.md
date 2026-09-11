@@ -5266,3 +5266,45 @@ under-stated scope is the ordinary shape of the defects in this corpus.
 
 Read at 195 dpi after a contact sheet located the article. The sheet was used to find
 article 17 and **not** to quote it, which is the standing rule.
+
+### The obvious way to generalise the Laos finding does not work
+
+Laos raised the question immediately: **how many other guides cite a repealed
+instrument?** The obvious scan is cheap — compare each guide's declared `tax_year`
+against the newest year appearing in its law citations, and flag the ones with a large
+gap. It was written and run over `skills/**`.
+
+**281 guides flagged, and the top of the list is entirely correct law.**
+
+| Flagged | Instrument | Status |
+|---|---|---|
+| `au-fbt-year` | *Fringe Benefits Tax Assessment Act* **1986** | in force, the operative FBT statute |
+| `nz-gst-return` | *Goods and Services Tax Act* **1985** | in force |
+| `at-income-tax` | *Einkommensteuergesetz* **1988** | in force |
+| `belgium-payroll` | income tax code **1992** | in force |
+| `fi-income-tax`, `fi-corporate-income-tax` | **1995–1996** acts | in force |
+
+A gap between a statute's year of enactment and the current tax year **is the normal
+state of tax law**, not evidence of anything. Long-lived consolidated statutes are cited
+by their original year on purpose, and doing so is correct practice, not staleness. The
+scan measures the age of a name.
+
+**Nothing was edited and the scan was not kept.**
+
+### What actually found Laos, and why it does not generalise cheaply
+
+The signal was never the age of Law No. 67/NA. It was that **the authority's own
+register listed a newer instrument of the same name, marked ປັດຈຸບັນ (current)**, whose
+article 74 then named 67/NA and repealed it.
+
+That signal exists **only in the authority's register**. It is not recoverable from the
+corpus at any price, because a guide built on a repealed law is internally consistent
+with the law it came from — every rate agrees with every other rate, every bracket is
+continuous, every citation is well formed. **Repeal is invisible from the inside.**
+
+So there is no shortcut: establishing that a guide's instrument is still in force means
+opening that jurisdiction's register, one jurisdiction at a time. That is expensive, and
+it is the only thing that works. Recording it here so the next pass does not rebuild the
+scan that looked obvious and measured nothing — which is the fourth detector on this
+branch to produce confident noise, after the citation-density scan, the Pillar Two
+detector, and the cited-hosts checker's first cut.
