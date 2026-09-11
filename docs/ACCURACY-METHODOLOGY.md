@@ -4876,6 +4876,13 @@ and not just the rate.
 ၁ is 1, ၂၂ is 22 — so every figure here was transliterated before being believed. The same
 page gives corporate income tax at **၂၂% (22%)** on net profit, company capital gains at
 **၁၀% (10%)**, and an oil-and-gas capital-gains scale of **40 / 45 / 50 per cent** across
-three bands at MMK 100,000 million and 150,000 million. Those are recorded here as read but
-**not yet written into the corporate guides** — they belong to `mm-income-tax` and
-`mm-tax-overview`, which have not been re-checked against this page in this pass.
+three bands at MMK 100,000 million and 150,000 million. Those are **now written into
+`mm-tax-overview.md`**, where the corporate rate and the commercial-tax rate had been
+cited to a commercial summary and are now cited to the IRD.
+
+**The oil-and-gas scale is the one that matters.** The overview gave capital gains as a
+flat **10%** with an MMK 10,000,000 exemption. For companies in the **oil and natural gas
+sector** the IRD gives a three-band scale — **40%** up to MMK 100,000 million, **45%** to
+150,000 million, **50%** above — payable in the currency received. That is five times the
+rate the overview carried, in the sector where a Myanmar asset sale is most likely to be
+large enough for anyone to ask. The row now says both, and says which is which.
