@@ -59,11 +59,27 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 > replacing a possibly-annual IRPP scale with a possibly-monthly RTS one would
 > trade an unsourced error for a sourced one.
 >
-> [RESEARCH GAP — a reviewer should establish whether Guinea's employment income
-> bears RTS, a general IRPP scale, or both; whether the article 63 bands are
-> monthly or annual; and which scale the rows below are trying to state. Until
-> then **no figure below should be relied on**, and `gn-payroll-social` carries the
-> article 63 scale for payroll withholding.]
+> **The document that settles this has been identified and could not be retrieved.**
+> The DNI publishes a CGI chapter reproduction titled ***Taxes sur les salaires*** at
+> `https://dgi.gov.gn/wp-content/uploads/2021/03/TAXES-SUR-LES-SALAIRES.pdf`,
+> alongside chapters on *Impôt sur les sociétés*, *Contribution foncière unique* and
+> *Contribution des patentes et licences*. That chapter is where the RTS-versus-IRPP
+> question is answered. **From here the host's PDF paths return a SiteGround captcha
+> interstitial** — an HTTP 202 whose body is a meta-refresh to
+> `/.well-known/sgcaptcha/` — while the site's HTML pages load normally. That is a
+> bot-protection control the site operator chose, and **no attempt was made to work
+> around it**. A reviewer opening the link in an ordinary browser will get the file.
+>
+> [RESEARCH GAP — open **Taxes sur les salaires** (URL above) and establish: whether
+> Guinea's employment income bears RTS, a general IRPP scale, or both; whether the
+> article 63 bands are **monthly or annual**; and which scale the rows below are
+> trying to state. Until then **no figure below should be relied on**, and
+> `gn-payroll-social` carries the article 63 scale for payroll withholding.]
+>
+> **Note for anyone following this guide's other Guinean citations:** they point at
+> PDFs on the same host, including *Système Fiscal Guinéen au 31 mars 2021*. Those
+> links are correct and were read before the captcha appeared on this path; a reader
+> hitting the interstitial should not conclude the citation is dead.
 >
 > _([Système Fiscal Guinéen au 31 mars 2021, row 4 — art. 63 CGI (LF 2019)](https://dgi.gov.gn/wp-content/uploads/2021/04/Syst%C3%A8me-Fiscal-Guin%C3%A9en-mars-2021.pdf))_
 
