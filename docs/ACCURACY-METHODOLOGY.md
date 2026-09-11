@@ -3385,3 +3385,124 @@ sweep was working to: *a cross-jurisdiction comparison can flag a question; reso
 it by checking membership, effective dates, national options and the precise scope
 of each rule before changing a figure.* Four of those five were checked. **National
 options were not, and that is exactly where the error landed.**
+
+### Generalising the Kuwait defect into a detector, and what it cost to make honest
+
+The Kuwait finding — the pack knew about the Domestic Minimum Top-up Tax and the
+corporate income tax guide did not — is the fourth of its shape, after Nigeria
+(×3) and India (×2). A defect that recurs is worth a detector rather than another
+reading, so this one was written: **within a jurisdiction directory, find a
+concept that some files carry and the file that will actually be read does not.**
+
+Pointed at the global minimum tax, the first run returned **46 packs**. That
+number was worthless, and the two reasons it was worthless are the lesson.
+
+**The file filter was too greedy.** `-tax\.md$` matches `au-crypto-tax.md`,
+`jp-consumption-tax.md`, `mn-sales-tax.md`. A crypto guide has no business
+discussing Pillar Two, so its silence is not a gap. Restricting the filter to
+files that genuinely *are* the jurisdiction's corporate income tax guide took 46
+to 12.
+
+**The search term was a homonym.** Of those 12, Croatia, Estonia and Lithuania
+matched on *pension* Pillar II — `Pillar II (5%) applies to insured persons
+enrolled in the mandatory second pillar`. Philippines and Zambia matched
+`\bGloBE\b` case-insensitively against **GLOBE TELECOM** and
+**EMPLOYER GLOBE LTD** in worked examples. Six survived: Netherlands,
+North Macedonia, Oman, Spain, Thailand, and Croatia-for-the-wrong-reason.
+
+Croatia deserves its own note. It *is* an EU member state, so the Minimum Tax
+Directive does reach it, and `hr-corporate-income-tax.md` being silent is very
+probably a real gap. **The detector did not find that.** It found the word
+"pillar" in a pension table. Recording it as a hit would repeat the Cape Verde
+CVE 1 mistake — a flag that was right for a reason that was wrong — so it is
+recorded here as unverified and excluded from the count.
+
+**A detector is only as good as its false-positive rate, and the only way to
+learn that rate is to read every hit.** Forty-six would have been reported as
+forty-six findings by anything that did not.
+
+### Oman — the mechanism was named, and the name was the wrong one
+
+`om-tax-overview.md` said: *"Oman introduced a top-up tax (Income Inclusion Rule)
+effective 1 January 2025 for in-scope multinational groups (approx — confirm
+scope thresholds)"*, cited to `Top-up Tax (Royal Decree No. 70/2024)` with no
+link. `om-corporate-income-tax.md` said nothing at all.
+
+The decree turned out to be published by the Oman Tax Authority **on its own
+site**, on the Income Tax Law & Regulations page, listed in English as
+*"Royal Decree 70/2024 The Top-up Tax Law on Entities of Multinational Groups"*.
+Finding it needed a browser: the portal is a JavaScript application and returns
+107 KB of markup with no readable content to `curl`. The PDF itself then
+downloaded over plain `curl` with a referer, no challenge involved.
+
+Reading the gazette (issue 1578):
+
+- **Article 5 imposes the tax on three classes of payer, and the guide named the
+  wrong one.** Limb (1) is *the constituent entity located in Oman* — a domestic
+  charge that turns on the entity's own location and owes nothing to where the
+  parent sits. Limbs (2) and (3) are the Income Inclusion Rule, for an Omani
+  ultimate or intermediate parent, and **article 8 confines them to a low-taxed
+  constituent entity not located in Oman**. Article 6 stands limb (2) down where a
+  qualified IIR applies elsewhere; article 7 charges a partially-owned Omani
+  parent its allocable share.
+- So the common case — an Omani subsidiary of a foreign-parented group — is caught
+  by limb (1) and **is not reached by the IIR at all**. A reader told the mechanism
+  is "the Income Inclusion Rule" goes looking for a parent that need not exist.
+- **The threshold was not approximate.** Article 2: EUR 750,000,000 on the ultimate
+  parent's consolidated statements in at least **two of the four** preceding
+  financial years, prorated for a year that is not twelve months. The guide marked
+  this *(approx — confirm)* while the statute gave it exactly.
+- **Article 9 delegates the computation mechanism, the safe harbours and the
+  permanent-establishment rules to an Executive Regulation.** That Regulation has
+  not been read. The guide now says so rather than implying the Law is complete.
+
+This is the **treatment-versus-rate** lesson from Kuwait in a second form. There,
+three files agreed on 15% and disagreed about *who* was reached. Here, one file had
+the rate, the date and the decree number all correct, and still pointed the reader
+at the wrong charging provision. **Naming a mechanism is a factual claim, and it
+fails silently: the rate is right, the date is right, the citation is well formed,
+and the answer is still wrong for the taxpayer most likely to ask.**
+
+A separate defect in the same file, found only by reading it: the standard
+withholding-tax bullet appeared **four times, identically**. A generation fault,
+harmless to the answer, invisible to every check that looks at figures.
+
+### Source-availability register — Oman
+
+| Host | Result |
+|------|--------|
+| `tms.taxoman.gov.om` | **Live and authoritative.** JavaScript application: `curl` returns markup with no readable content, so the laws index needs a rendering browser. Linked PDFs then fetch fine over `curl` with a referer. Carries the Income Tax Law, its Executive Regulation, the Top-up Tax Law (RD 70/2024), Chairman Decisions, and the superseded 1981/1989/2009 laws |
+| `mjla.gov.om`, `www.mjla.gov.om` | **TLS chain incomplete.** `curl` fails with "unable to get local issuer certificate", and passing `--cacert /root/.ccr/ca-bundle.crt` does not fix it, so the origin is serving an incomplete chain the bundle does not cover. Not worked around — verification stays on. The Tax Authority carried the text anyway, so nothing was lost |
+
+The general point: **the gazette is not the only authoritative publisher.** The
+first attempt here went to the Ministry of Legal Affairs because that is where a
+gazette lives, hit a certificate wall, and the answer was sitting on the tax
+authority's own website the whole time. Search for the subject, not the publisher
+you expect to hold it.
+
+### `category` — the spec requires it, CI does not check it, and the docs already say so
+
+Reviewing a Bangladesh guide, an automated reviewer reported a missing `category`
+key as a violation of a rule requiring it. `CLAUDE.md` and `docs/skill-template.md`
+do both list `category` as required, and `CLAUDE.md` says *"CI enforces the spec
+via `scripts/validate-guides.py`"*.
+
+Measured: **1,188 of 1,926 guides carry no `category` key**, and
+`scripts/validate-guides.py` does not contain the string `category` at all.
+
+But `docs/skill-template.md` line 21 already records this, in terms:
+*"**Not checked by CI at all**, and absent from roughly two-thirds of the corpus
+(1,210 of 1,926 guides as at 2026-09-10) … The count drifts as guides are edited —
+nothing keeps it honest, so re-measure before quoting it."*
+
+So this is **not a new finding** — it is a known, documented gap, and the fresh
+measurement (1,188, against 1,210 a day earlier) is just the drift the note
+predicted. Two conclusions worth keeping:
+
+1. **The reviewer's framing was the wrong one.** Reported as a per-file rule
+   violation, it invites 1,188 single-file patches. The actual decision — enforce
+   the key in CI and backfill, or relax the spec — is one decision about the
+   corpus, and it belongs to the maintainer.
+2. **A documented known gap must be checked for before it is reported as a
+   discovery.** The measurement was worth running; presenting it as new would not
+   have been.
