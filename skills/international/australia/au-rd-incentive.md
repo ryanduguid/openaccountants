@@ -2,18 +2,18 @@
 name: au-rd-incentive
 description: >
   Use this skill whenever asked about the Australian R&D Tax Incentive (R&DTI) -- the Division 355 tax offset for eligible research and development, who can claim (incorporated R&D entities only), the refundable offset for companies under $20m aggregated turnover, the non-refundable offset with intensity tiers for larger companies, core vs supporting R&D activities, excluded activities, registration with AusIndustry/DISR within 10 months of year end, the $20,000 expenditure threshold, the $150 million cap, feedstock and clawback adjustments, aggregated turnover grouping, and record-keeping. Trigger on phrases like "R&D tax incentive", "R&DTI", "R&D offset", "research and development tax", "43.5% offset", "refundable R&D", "Division 355", "AusIndustry registration", "core R&D activities", "feedstock adjustment", or "R&D intensity". ALWAYS read this skill before touching any R&D tax offset work.
-version: 1.0
+version: 1.1
 jurisdiction: AU
 tax_year: 2026
 tax_year_notes: "2026-27"
-last_updated: 2026-08-20
+last_updated: 2026-09-11
 review_status: pending_review
 category: international
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Australia R&D Tax Incentive Skill v1.0
+# Australia R&D Tax Incentive Skill v1.1
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
@@ -38,7 +38,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Non-refundable offset | Aggregated turnover >= $20m OR exempt-controlled: company tax rate + 8.5% premium (R&D up to 2% intensity); company tax rate + 16.5% premium (R&D above 2% intensity) |
 | Expenditure cap | $150m notional deductions per year; offset rate drops to the bare company tax rate above it |
 | Minimum spend | $20,000 notional deductions, UNLESS via a registered Research Service Provider (RSP) or CRC contribution |
-| Registration deadline | With DISR, every income year, within 10 months of year end, BEFORE claiming in the return |
+| Registration deadline | With DISR each income year, normally within 10 months of year end; extensions under Rule 7. Valid registration required before claiming |
 | Amendment window | 4 years (generally), tied to DISR findings |
 | Contributor | Open Accountants |
 | Validated by | Pending |
@@ -72,7 +72,7 @@ R&DTI work starts with the general ledger and the project/time records, not the 
 | GL pattern | Likely issue | Action |
 |---|---|---|
 | R&D expense / "R&D project" cost centres | Candidate notional deduction | Map each account to a registered DISR activity; confirm it is core or supporting, not BAU |
-| Project codes / job codes linked to a DISR registration number | Expenditure linked to registered activities | Trace to the registration (IISA number) for the correct income year; confirm 10-month deadline met |
+| Project codes / job codes linked to a DISR registration number | Expenditure linked to registered activities | Trace to the registration (IISA number) for the correct income year; confirm the statutory or approved extended deadline was met |
 | Payroll allocations / timesheet-coded wages to R&D projects | Salary notional deduction | Substantiate time via timesheets/job cards; apportion between R&D and non-R&D on a reasonable, documented basis |
 | Contractor / RSP invoices for R&D | External R&D expenditure | Confirm the RSP is registered with DISR; if under $20k total, the RSP pathway is what preserves eligibility |
 | Depreciation on assets used in R&D | Asset cost is NOT notionally deductible | Use decline-in-value notional deductions instead; do not claim the asset's acquisition cost |
@@ -199,7 +199,11 @@ The following CANNOT be core R&D activities (though some may qualify as supporti
 
 ### Rule 7 -- Registration and the 10-month deadline
 
-Activities must be registered with DISR **for every income year**, **within 10 months of the end of the income year** (e.g. 30 April 2027 for a 30 June 2026 year end), and **before** the offset is claimed in the return. The DISR IISA registration number must appear on the R&D schedule and match the income year. Failure to register in time is fatal to the claim -- there is no discretion to backdate. Registration is self-assessment: the number does not certify eligibility.
+Register activities with DISR for each income year before claiming the offset. The normal deadline is 10 months after year end, for example 30 April 2027 for a 30 June 2026 year end. The IISA registration number on the R&D schedule must match the income year. Registration does not certify activity eligibility.
+
+If the deadline cannot be met or has passed, refer the entity to DISR or its R&D adviser to request an extension through the R&DTI customer portal, with reasons and supporting evidence. Approval is discretionary. Extensions generally cannot exceed 92 days after the statutory deadline; a related pending decision is the exception. Confirm valid registration within the statutory or approved extended period before claiming. A late application alone does not establish entitlement.
+
+DISR cannot extend the application deadline for an advance or overseas finding or accept those applications late. See [DISR: request an extension or variation](https://business.gov.au/grants-and-programs/research-and-development-tax-incentive/request-an-extension-or-variation) and Part 3 of the Industry Research and Development Decision-making Principles 2022.
 
 ### Rule 8 -- The $20,000 threshold and the RSP exception
 
@@ -256,7 +260,7 @@ These are deliberate refusal-and-escalate zones. Do NOT answer them from this sk
 | Code | Trigger | Message |
 |---|---|---|
 | R-AU-RD-1 | Whether a specific activity qualifies as a core or supporting R&D activity | "Whether an activity is R&D is a technical/engineering judgement about scientific uncertainty and the knowledge threshold under s 355-25, not an accounting judgement. This needs a competent professional in the field and, for certainty, an AusIndustry/DISR advance finding. I can help organise the project documentation but cannot classify the activity." |
-| R-AU-RD-2 | Preparing or lodging the DISR registration application | "Registration is a self-assessed application to AusIndustry/DISR describing the activities against the legislative criteria. I can't draft or lodge it. Refer to AusIndustry (13 28 46) or a registered R&D tax adviser; the registration must be lodged within 10 months of year end." |
+| R-AU-RD-2 | Preparing or lodging the DISR registration application | "Registration is a self-assessed application to AusIndustry/DISR describing the activities against the legislative criteria. I can't draft or lodge it. Refer to AusIndustry (13 28 46) or a registered R&D tax adviser. The normal deadline is 10 months after year end; assess the Rule 7 extension route if late." |
 | R-AU-RD-3 | Advance findings, overseas findings, or binding certainty on eligibility | "Only DISR can make an advance finding (activity eligibility) or an overseas finding (s 28D IR&D Act). These are binding decisions for your specific facts. Refer to AusIndustry; I can help assemble the supporting records." |
 | R-AU-RD-4 | Overseas R&D activities | "Activities conducted overseas are claimable only with a positive DISR overseas finding, and only where conducted for the claimant (not a foreign related entity). This needs the finding in place before claiming. Refer to AusIndustry." |
 | R-AU-RD-5 | Aggregated expenditure/turnover across connected or affiliated groups | "Aggregated turnover across connected and affiliated entities (including foreign ones) determines refundable vs non-refundable, and group structuring can attract Part IVA. Compute the group position with the client's adviser; I can prepare the underlying turnover figures per entity." |
@@ -265,7 +269,7 @@ These are deliberate refusal-and-escalate zones. Do NOT answer them from this sk
 
 ## Section 8 -- Reading guide
 
-1. Registration first: no valid, in-time DISR registration for the income year means no claim, regardless of how good the R&D is.
+1. Registration first: confirm valid DISR registration for the income year within the statutory or approved extended period (Rule 7) before claiming.
 2. Entity test second: only a corporation (R&D entity) can claim. A sole trader or trust "doing R&D" has no R&DTI pathway.
 3. Activity test third: core activities must clear all three limbs (unknowable outcome, systematic progression, new knowledge) -- and that is a technical judgement this skill refuses to make.
 4. Rate test fourth: aggregated turnover and exempt-entity control choose refundable vs non-refundable; intensity tiers set the non-refundable premium.
@@ -297,7 +301,7 @@ If the client provides only financial statements:
 | R&D intensity | Notional R&D deductions / total expenditure for the year |
 | Expenditure cap | $150m notional deductions; offset drops to bare company tax rate above it |
 | Minimum notional deduction | $20,000 (waived for registered RSP / CRC) |
-| Registration deadline | Within 10 months of income year end, before claiming, every year |
+| Registration deadline | Normally 10 months after income year end, each year; Rule 7 covers extensions. Register before claiming |
 | Amendment period | Generally 4 years; special rules give effect to DISR findings |
 | Tobacco/gambling | Ineligible for income years from 1 July 2025 unless sole-purpose harm minimisation |
 
@@ -313,6 +317,7 @@ If the client provides only financial statements:
 | Clawback/feedstock | ato.gov.au -- Clawback of R&D tax incentive offset (QC 70876, 70889); TR 2013/3 (feedstock); TR 2021/5 (at-risk rule) |
 | Compliance | ato.gov.au -- Helping you get R&D claims right (QC 70873); TA 2017/3 (ordinary business activities); TA 2023/4 (associates) |
 | Amendments | ato.gov.au -- Correcting mistakes and disputing decisions (QC 70877) |
+| Registration extensions (checked 11 September 2026) | [DISR: request an extension or variation](https://business.gov.au/grants-and-programs/research-and-development-tax-incentive/request-an-extension-or-variation); Industry Research and Development Decision-making Principles 2022, Part 3 |
 
 ### Test suite
 
@@ -328,7 +333,7 @@ If the client provides only financial statements:
 
 **Test 6:** Software built to run the claimant's own payroll. -> Internal-administration software; excluded from core R&D activities.
 
-**Test 7:** Registration lodged 11 months after year end. -> Late; claim fails for that year (no backdating).
+**Test 7:** Registration lodged 11 months after year end without an approved extension. -> Late under the normal deadline. Refer for an extension request with reasons and evidence; keep the claim pending until valid registration is confirmed. Approval is not automatic. Apply the 92-day limit and related-pending-decision exception in Rule 7. A late advance or overseas finding application has no extension route.
 
 **Test 8:** Feedstock revenue $9,000, feedstock expenditure $10,000, 43.5% offset, 25% CTR. -> $6,660 added to assessable income (Example 5).
 
@@ -342,7 +347,7 @@ If the client provides only financial statements:
 - NEVER classify an activity as core/supporting R&D -- that is a technical/engineering judgement (R-AU-RD-1); escalate
 - NEVER prepare or lodge the DISR registration application -- refer to AusIndustry (R-AU-RD-2)
 - NEVER advise on advance or overseas findings -- DISR only (R-AU-RD-3, R-AU-RD-4)
-- NEVER compute the offset without first confirming a valid, in-time DISR registration for the income year
+- NEVER compute the offset without confirming valid DISR registration for the income year within the statutory or approved extended period
 - NEVER choose refundable vs non-refundable without computing aggregated turnover across connected/affiliated entities (R-AU-RD-5)
 - NEVER claim amounts incurred to an associate before they are paid
 - NEVER claim the cost of a depreciating asset -- use decline-in-value notional deductions
