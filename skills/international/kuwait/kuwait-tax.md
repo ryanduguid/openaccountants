@@ -4,8 +4,9 @@ description: Use this skill whenever asked about Kuwait taxation, corporate inco
 version: 2.0
 jurisdiction: KW
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-11
 review_status: pending_review
+category: international
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
@@ -79,7 +80,7 @@ Company 70% Kuwaiti, 30% US-owned. Profits KWD 200,000. CIT on 30% foreign share
 
 ### 5.2 CIT (foreign entities only)
 
-- **CIT foreign entities only** — 15% flat on foreign-owned share. Kuwaiti-owned exempt from CIT. GCC nationals treated as foreign.
+- **CIT foreign entities only** — 15% flat on the **non-GCC** foreign-owned share. Kuwaiti-owned exempt from CIT. **"GCC nationals treated as foreign" was wrong and is corrected here.** Both sibling guides state the opposite and cite it: `kw-corporate-income-tax` has *"a flat 15% applies only to foreign (non-GCC) corporate bodies"* and *"companies wholly owned by Kuwaiti or GCC nationals are exempt from CIT"*, and `kw-tax-overview` has *"locally owned and GCC-owned companies instead bear a set of profit-based contributions"*. This file's contrary claim carried no citation at all.
 
 ### 5.3 ZAKAT (Kuwaiti listed companies)
 
@@ -124,7 +125,7 @@ No VAT input recovery. Foreign VAT is irrecoverable cost.
 
 ### Edge cases
 
-**EC1 -- GCC national.** Saudi-owned business in Kuwait: treated as foreign, CIT 15%.
+**EC1 -- GCC national.** Saudi-owned business in Kuwait: **not** treated as foreign for CIT. A company wholly owned by GCC nationals is outside the 15% charge and bears the profit-based contributions instead; where ownership is mixed, CIT reaches only the **non-GCC** foreign share. (This example previously said the opposite. **Separately, check the DMTT**: a Pillar Two top-up is keyed to the group's consolidated revenue, not to anyone's nationality, so a large GCC-owned group can be inside it while outside CIT.)
 
 **EC2 -- Mixed ownership.** CIT on foreign share only. ZAKAT on Kuwaiti share (if listed).
 
@@ -153,7 +154,7 @@ No VAT input recovery. Foreign VAT is irrecoverable cost.
 - NEVER state Kuwait has VAT
 - NEVER apply CIT to 100% Kuwaiti entities
 - NEVER apply ZAKAT to foreign entities
-- NEVER treat GCC nationals as Kuwaiti for CIT
+- NEVER assume GCC ownership is foreign ownership for CIT — the 15% charge reaches the **non-GCC** foreign share, and a wholly GCC-owned company bears the profit-based contributions instead. Confirm the DMTT separately: it turns on group revenue, not nationality
 - NEVER compute numbers -- engine handles arithmetic
 
 ## Disclaimer
