@@ -4,7 +4,7 @@ description: Use this skill whenever asked to prepare, review, or classify trans
 version: 0.1
 jurisdiction: SD
 tax_year: 2025
-last_updated: 2026-07-22
+last_updated: 2026-09-10
 review_status: pending_review
 depends_on:
   - vat-workflow-base

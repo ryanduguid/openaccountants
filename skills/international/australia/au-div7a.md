@@ -5,14 +5,16 @@ description: >
 version: 1.1
 jurisdiction: AU
 tax_year: 2025
-last_updated: 2026-08-02
+last_updated: 2026-09-10
 review_status: pending_review
 category: international
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Australia Division 7A -- Private Company Loans Skill v1.0
+# Australia Division 7A -- Private Company Loans Skill v1.1
+
+## Australia Division 7A -- Private Company Loans Skill v1.1
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
@@ -22,8 +24,10 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 **Read this whole section before computing or classifying anything.**
 
+**Quick reference**
+
 | Field | Value |
-|---|---|
+| --- | --- |
 | Country | Australia |
 | Primary Legislation | ITAA 1936 Part III Division 7A (ss 109B-109ZE) |
 | Tax Authority | Australian Taxation Office (ATO) |
@@ -37,10 +41,10 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Contributor | Open Accountants |
 | Validated by | Pending |
 
-**Conservative defaults:**
+**Conservative defaults**
 
 | Ambiguity | Default |
-|---|---|
+| --- | --- |
 | Unknown lodgment day | Assume the EARLIER plausible date -- the deadline for agreements and repayments |
 | Unknown loan agreement status | Assume NO written agreement; flag urgently (fixable only before lodgment day) |
 | Debit balance in shareholder/director account | Treat as a Div 7A loan candidate until characterised |
@@ -51,10 +55,10 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ## Section 3 -- GL sweep library
 
-Div 7A work starts with the balance sheet, not the loan register the client says exists.
+**GL sweep library**
 
 | GL pattern | Likely issue | Action |
-|---|---|---|
+| --- | --- | --- |
 | Debit balance -- shareholder / director loan account | s 109D loan candidate | Loan register (Section 7); agreement status; MYR check |
 | Drawings account not cleared to salary/dividend | Payments (s 109C) or loan | Characterise before lodgment day -- fixable until then |
 | "Loan -- related trust" (asset side) | Actual loan back from company to trust | Div 7A loan -- Bendel does NOT help actual loans |
@@ -63,7 +67,9 @@ Div 7A work starts with the balance sheet, not the loan register the client says
 | Journal writing off a related-party receivable | s 109F forgiveness | Deemed dividend at year end, subject to surplus |
 | Interest income at exactly the benchmark rate | Existing complying loan | Verify MYR actually paid, not just interest accrued |
 
----
+## Section 3 -- GL sweep library
+
+Div 7A work starts with the balance sheet, not the loan register the client says exists.
 
 ## Section 4 -- Worked examples
 
@@ -106,74 +112,55 @@ s 109CA payment = arm's-length value less consideration = $1,600 -> deemed divid
 
 Shareholder repays $20,000 on 25 June 2027, redraws $25,000 on 15 July 2027. A reasonable person concludes the repayment was intended to be re-borrowed: s 109R disregards the $20,000 for MYR purposes. Exception that DOES work: setting off a declared dividend or salary (assessable to the shareholder) against the loan -- s 109R(3) preserves set-offs of assessable amounts.
 
----
-
 ## Section 5 -- Tier 1 rules
 
 ### Rule 1 -- The three trigger events
 
-Payments (s 109C, including s 109CA asset use), loans (s 109D), and debt forgiveness (s 109F) by a private company to a shareholder or associate (current or former, on the reasonable-person test) are deemed unfranked dividends at the end of the company's income year -- each capped by distributable surplus (Rule 8). Franking exceptions: the s 109RB discretion can allow franking, and s 109RC family-breakdown dividends (marriage/relationship breakdown obligations) are frankable without any discretion.
-
-**Associate** (s 318 ITAA 1936, summarised): relatives of the shareholder; partners and their spouses and children; trustees of trusts under which the shareholder or an associate benefits; and companies the shareholder or associates control. Directors are caught only as shareholders or associates of shareholders -- confirm status when a debit director account is not held by a shareholder.
+- **The three trigger events** — Payments (s 109C, including s 109CA asset use), loans (s 109D), and debt forgiveness (s 109F) by a private company to a shareholder or associate (current or former, on the reasonable-person test) are deemed unfranked dividends at the end of the company's income year -- each capped by distributable surplus (Rule 8). Franking exceptions: the s 109RB discretion can allow franking, and s 109RC family-breakdown dividends (marriage/relationship breakdown obligations) are frankable without any discretion.  _(s 109C, s 109CA, s 109D, s 109F; s 109RB; s 109RC)_
+- **Associate** — **Associate** (s 318 ITAA 1936, summarised): relatives of the shareholder; partners and their spouses and children; trustees of trusts under which the shareholder or an associate benefits; and companies the shareholder or associates control. Directors are caught only as shareholders or associates of shareholders -- confirm status when a debit director account is not held by a shareholder.  _(s 318 ITAA 1936)_
 
 ### Rule 2 -- Loans and the lodgment-day escape
 
-A loan is a deemed dividend unless, before the LODGMENT DAY (earlier of the return's due date and actual lodgment -- s 109D(6)): it is fully repaid, or a complying s 109N agreement is in place. Loan is defined widely: advances, provision of credit or any other form of financial accommodation (s 109D(3)).
+- **Loans and the lodgment-day escape** — A loan is a deemed dividend unless, before the LODGMENT DAY (earlier of the return's due date and actual lodgment -- s 109D(6)): it is fully repaid, or a complying s 109N agreement is in place. Loan is defined widely: advances, provision of credit or any other form of financial accommodation (s 109D(3)).  _(s 109D(6); s 109N; s 109D(3))_
 
 ### Rule 3 -- Complying loan criteria (s 109N)
 
-All three, before lodgment day: written agreement; interest for each year after the loan year at or above that year's benchmark rate; term within the maximum -- 7 years unsecured, or 25 years where 100% of the loan is secured by a registered mortgage over real property whose market value (net of prior-ranking secured liabilities) is at least 110% of the loan when first made.
+- **Complying loan criteria** — All three, before lodgment day: written agreement; interest for each year after the loan year at or above that year's benchmark rate; term within the maximum -- 7 years unsecured, or 25 years where 100% of the loan is secured by a registered mortgage over real property whose market value (net of prior-ranking secured liabilities) is at least 110% of the loan when first made.  _(s 109N)_
 
 ### Rule 4 -- Benchmark interest rate
 
-Statutory source: the RBA Indicator Lending Rates -- bank variable housing loans rate last published before the start of the income year (s 109N(2)). 2026-27: **8.77%**. 2025-26: 8.37%. 2024-25: 8.77%. Always match the rate to the year being computed.
+- **Benchmark interest rate 2026-27** — 8.77% (2025-26: 8.37%; 2024-25: 8.77%) % (RBA Indicator Lending Rates -- bank variable housing loans rate last published before the start of the income year; always match the rate to the year being computed)  _(s 109N(2))_
 
 ### Rule 5 -- Amalgamated loans and minimum yearly repayments (s 109E)
 
-Constituent loans to one entity in a year, unrepaid at lodgment day, saved by s 109N, sharing a maximum term, amalgamate. From the income year AFTER the loan year, each year's MYR is:
-
-```
-MYR = P x I / (1 - (1/(1+I))^T)
-P = amount unrepaid at the end of the previous income year
-I = CURRENT year's benchmark rate
-T = remaining term = longest constituent term - years elapsed between the end
-    of the loan year and the end of the prior income year; the resulting
-    DIFFERENCE is rounded UP to the next whole number if not already whole
-    (s 109E(7) rounds the remaining term itself, never the elapsed years)
-```
-
-Shortfall between amounts paid and the MYR = deemed dividend at year end (subject to surplus).
+- **Minimum yearly repayment (MYR)** — Constituent loans to one entity in a year, unrepaid at lodgment day, saved by s 109N, sharing a maximum term, amalgamate. From the income year AFTER the loan year, each year's MYR is: ``` MYR = P x I / (1 - (1/(1+I))^T) P = amount unrepaid at the end of the previous income year I = CURRENT year's benchmark rate T = remaining term = longest constituent term - years elapsed between the end of the loan year and the end of the prior income year; the resulting DIFFERENCE is rounded UP to the next whole number if not already whole (s 109E(7) rounds the remaining term itself, never the elapsed years) ``` Shortfall between amounts paid and the MYR = deemed dividend at year end (subject to surplus).  _(s 109E; s 109E(7))_
 
 ### Rule 6 -- Payments and asset use (ss 109C, 109CA)
 
-Payment = amounts paid/credited/transferred to, on behalf of, or for the benefit of the entity; property transfers valued at arm's length less consideration. A loan is not a payment. Use of a company asset (including under lease/licence) is a payment: first use, then re-tested at the start of each later income year; value = arm's-length amount for the use less consideration given. Carve-outs: minor use (< $300 notional value, s 58P criteria), otherwise-deductible use, certain dwellings, and NIL where an arm's-length licence fee is paid.
+- **Payments and asset use** — Payment = amounts paid/credited/transferred to, on behalf of, or for the benefit of the entity; property transfers valued at arm's length less consideration. A loan is not a payment. Use of a company asset (including under lease/licence) is a payment: first use, then re-tested at the start of each later income year; value = arm's-length amount for the use less consideration given. Carve-outs: minor use (< $300 notional value, s 58P criteria), otherwise-deductible use, certain dwellings, and NIL where an arm's-length licence fee is paid.  _(ss 109C, 109CA; s 58P)_
 
 ### Rule 7 -- Debt forgiveness (ss 109F, 109G)
 
-Forgiveness (including debt parking and reasonable-person "won't insist" conclusions) = deemed dividend of the amount forgiven. Death does NOT automatically forgive a shareholder's loan -- no statutory death exception exists; ATO ID 2012/77 deems a dividend to the legal personal representative where forgiveness occurs during estate administration; escalate estate cases. Exclusions: debts owed by other companies (non-trustee), bankruptcy, loans already deemed dividends (full s 109D exclusion; dollar-for-dollar s 109E reduction), Commissioner's undue-hardship discretion.
+- **Debt forgiveness** — Forgiveness (including debt parking and reasonable-person "won't insist" conclusions) = deemed dividend of the amount forgiven. Death does NOT automatically forgive a shareholder's loan -- no statutory death exception exists; ATO ID 2012/77 deems a dividend to the legal personal representative where forgiveness occurs during estate administration; escalate estate cases. Exclusions: debts owed by other companies (non-trustee), bankruptcy, loans already deemed dividends (full s 109D exclusion; dollar-for-dollar s 109E reduction), Commissioner's undue-hardship discretion.  _(ss 109F, 109G; ATO ID 2012/77)_
 
 ### Rule 8 -- Distributable surplus (s 109Y)
 
-```
-Distributable surplus = Net assets + Division 7A amounts
-                        - Non-commercial loans - Paid-up share value
-                        - Repayments of non-commercial loans
-```
-
-Net assets per the accounting records (less present legal obligations and specified provisions; Commissioner may substitute values for significant under/overvaluation). "Division 7A amounts" = current-year s 109C and s 109F dividends only. Where total provisional dividends exceed the surplus, each is reduced proportionally and the company must give recipients written statements.
+- **Distributable surplus** — ``` Distributable surplus = Net assets + Division 7A amounts - Non-commercial loans - Paid-up share value - Repayments of non-commercial loans ``` Net assets per the accounting records (less present legal obligations and specified provisions; Commissioner may substitute values for significant under/overvaluation). "Division 7A amounts" = current-year s 109C and s 109F dividends only. Where total provisional dividends exceed the surplus, each is reduced proportionally and the company must give recipients written statements.  _(s 109Y)_
 
 ### Rule 9 -- Anti-avoidance on repayments (s 109R)
 
-Repayments are disregarded where a reasonable person concludes the entity intended to re-borrow a similar or larger amount, or borrowed from the company to fund the repayment. PRESERVED: set-offs of dividends, salary/wages or other assessable withholding-covered amounts, and arm's-length property-transfer balances (s 109R(3)-(4)).
+- **Anti-avoidance on repayments** — Repayments are disregarded where a reasonable person concludes the entity intended to re-borrow a similar or larger amount, or borrowed from the company to fund the repayment. PRESERVED: set-offs of dividends, salary/wages or other assessable withholding-covered amounts, and arm's-length property-transfer balances (s 109R(3)-(4)).  _(s 109R; s 109R(3)-(4))_
 
 ### Rule 10 -- Exclusions and the discretion
 
-s 109K: payments/loans to other companies (not as trustee) excluded. s 109L: amounts otherwise assessable or made non-assessable elsewhere. s 109M: loans in the ordinary course of business on usual arm's-length terms. s 109RB: the Commissioner may disregard a deemed dividend (or allow franking) for honest mistakes/inadvertent omissions -- factors include corrective action and speed, prior history; escalate applications (R-AU-D7A-3).
+- **Exclusions and the discretion** — s 109K: payments/loans to other companies (not as trustee) excluded. s 109L: amounts otherwise assessable or made non-assessable elsewhere. s 109M: loans in the ordinary course of business on usual arm's-length terms. s 109RB: the Commissioner may disregard a deemed dividend (or allow franking) for honest mistakes/inadvertent omissions -- factors include corrective action and speed, prior history; escalate applications (R-AU-D7A-3).  _(ss 109K, 109L, 109M, 109RB)_
 
 ### Rule 11 -- UPEs after Bendel: guidance status (as at 1 August 2026)
 
+**UPEs after Bendel: guidance status (as at 1 August 2026)**
+
 | Item | Status |
-|---|---|
+| --- | --- |
 | *Bendel* [2026] HCA 18 (10 June 2026, 5:2) | Passive UPE to corporate beneficiary is not a s 109D loan |
 | ATO decision impact statement | Issued 26 June 2026; accepts the decision; comments closed 24 July 2026 |
 | TD 2022/11 | Announced-to-withdraw (DIS para 43); still technically in force with under-review banner |
@@ -183,37 +170,35 @@ s 109K: payments/loans to other companies (not as trustee) excluded. s 109L: amo
 | Withdrawn-ruling protection | s 358-20(3) Sch 1 TAA: favourable withdrawn rulings keep applying to pre-withdrawal arrangements |
 | Legislative response | 2018-19 Budget UPE measure still unenacted (prospective from Royal Assent); 2026-27 Budget: 30% minimum tax on discretionary trusts from 1 July 2028 with corporate beneficiaries denied the offset -- consultation closed 31 July 2026, not yet law |
 
-Practical position for 2026-27: a passive UPE creates no Div 7A consequence; actual loans company-to-trust remain Div 7A loans; converted UPEs stay loans; s 100A and Subdiv EA screens always run.
+### Rule 11 -- UPEs after Bendel: guidance status (as at 1 August 2026)
 
----
+Practical position for 2026-27: a passive UPE creates no Div 7A consequence; actual loans company-to-trust remain Div 7A loans; converted UPEs stay loans; s 100A and Subdiv EA screens always run.
 
 ## Section 6 -- Tier 2 catalogue
 
 ### T2-1 -- s 100A screen
 
-**Trigger:** UPE + benefits flowing to someone other than the presently entitled beneficiary, or distribution patterns outside ordinary family/commercial dealing. **Action:** refuse analysis (R-AU-D7A-1); document the pattern; escalate.
+- **s 100A screen** — **Trigger:** UPE + benefits flowing to someone other than the presently entitled beneficiary, or distribution patterns outside ordinary family/commercial dealing. **Action:** refuse analysis (R-AU-D7A-1); document the pattern; escalate.  _(s 100A)_
 
 ### T2-2 -- Subdivision EA/EB
 
-**Trigger:** the trust owing the UPE makes payments or loans to the company's shareholders/associates. **Action:** map flows; escalate (R-AU-D7A-2).
+- **Subdivision EA/EB** — **Trigger:** the trust owing the UPE makes payments or loans to the company's shareholders/associates. **Action:** map flows; escalate (R-AU-D7A-2).  _(Subdivision EA/EB)_
 
 ### T2-3 -- 25-year loan security adequacy
 
-**Trigger:** secured loan claimed; valuation or registration unverified. **Issue:** 110% net-of-prior-ranking test applies AT the time the loan is first made. **Action:** sight the registered mortgage and contemporaneous valuation; flag gaps.
+- **25-year loan security adequacy** — **Trigger:** secured loan claimed; valuation or registration unverified. **Issue:** 110% net-of-prior-ranking test applies AT the time the loan is first made. **Action:** sight the registered mortgage and contemporaneous valuation; flag gaps.
 
 ### T2-4 -- Distributable surplus valuation
 
-**Trigger:** net assets in the accounts look under/overstated (e.g. assets at historical cost, unrecorded liabilities). **Issue:** Commissioner's substitution power. **Action:** flag; do not self-adjust values.
+- **Distributable surplus valuation** — **Trigger:** net assets in the accounts look under/overstated (e.g. assets at historical cost, unrecorded liabilities). **Issue:** Commissioner's substitution power. **Action:** flag; do not self-adjust values.
 
 ### T2-5 -- Trust minimum tax horizon (announced, not law)
 
-**Trigger:** structuring decisions for bucket companies extending past 1 July 2028. **Issue:** 2026-27 Budget announced 30% minimum tax on discretionary trusts (corporate beneficiaries denied the offset) from 1 July 2028, with restructure rollover relief from 1 July 2027 -- consultation only, not enacted. **Action:** note on any advice touching 2028+; escalate planning.
+- **Trust minimum tax horizon (announced, not law)** — **Trigger:** structuring decisions for bucket companies extending past 1 July 2028. **Issue:** 2026-27 Budget announced 30% minimum tax on discretionary trusts (corporate beneficiaries denied the offset) from 1 July 2028, with restructure rollover relief from 1 July 2027 -- consultation only, not enacted. **Action:** note on any advice touching 2028+; escalate planning.  _(2026-27 Budget)_
 
 ### T2-6 -- Loans that are really wages
 
-**Trigger:** regular round-amount "loans" matching a pay cycle. **Issue:** may be salary/wages (PAYG withholding, super) rather than Div 7A loans -- different regime entirely. **Action:** characterise with the client; flag both exposures.
-
----
+- **Loans that are really wages** — **Trigger:** regular round-amount "loans" matching a pay cycle. **Issue:** may be salary/wages (PAYG withholding, super) rather than Div 7A loans -- different regime entirely. **Action:** characterise with the client; flag both exposures.
 
 ## Section 7 -- Excel working paper template
 
@@ -256,8 +241,6 @@ REVIEWER FLAGS
   [List any Tier 2 flags]
 ```
 
----
-
 ## Section 8 -- Reading guide
 
 1. Balance sheet first: every related-party debit balance is a candidate until characterised.
@@ -265,8 +248,6 @@ REVIEWER FLAGS
 3. MYR uses the CURRENT year's benchmark against the PRIOR year-end balance -- the two most common errors are wrong-year rates and computing from the current balance.
 4. Interest accrued is not repayment: the MYR must actually be paid (or validly set off).
 5. UPEs: check the trust's books, not just the company's -- the company's balance sheet may not show the entitlement.
-
----
 
 ## Section 9 -- Onboarding fallback
 
@@ -278,14 +259,14 @@ If the client provides only financial statements:
 4. Compute distributable surplus from the accounts as given
 5. **Flag:** "Register built from financial statements only. Agreements, security documents, repayment evidence and trust distribution minutes not sighted. Lodgment day unconfirmed. Reviewer must confirm before any position is taken."
 
----
-
 ## Section 10 -- Reference material
 
 ### Key figures
 
+**Key figures**
+
 | Item | Value |
-|---|---|
+| --- | --- |
 | Benchmark rate 2026-27 / 2025-26 / 2024-25 | 8.77% / 8.37% / 8.77% |
 | Maximum terms | 7 years unsecured; 25 years secured (110% net-value test at inception) |
 | First MYR | Income year after the loan year |
@@ -294,8 +275,10 @@ If the client provides only financial statements:
 
 ### Primary sources (verified 1 August 2026)
 
+**Primary sources**
+
 | Topic | Source |
-|---|---|
+| --- | --- |
 | Benchmark rates | ato.gov.au -- Division 7A benchmark interest rate (QC 17928, updated 1 July 2026) |
 | Statute | ITAA 1936 Compilation No. 192 (C2026C00333, 1 July 2026): ss 109C-109Y |
 | MYR formula and steps | s 109E(6); ato.gov.au Division 7A loans (QC 17341, updated 2 July 2026) |
@@ -336,13 +319,13 @@ If the client provides only financial statements:
 - NEVER advise forgiveness, refinancing, or restructures -- compute exposure, escalate strategy
 - NEVER present figures as definitive
 
----
-
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, CA, tax agent, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
 
 The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://www.openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
+
+> Contributed by Ryan Duguid.
 
 > Contributed by Ryan Duguid.
 

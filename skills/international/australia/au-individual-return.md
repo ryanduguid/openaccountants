@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Australian individual income ta
 version: 2.2
 jurisdiction: AU
 tax_year: 2024
-last_updated: 2026-09-02
+last_updated: 2026-09-10
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -16,6 +16,12 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 # AU Individual Return
 
 ## AU Individual Return
+
+## AU Individual Return
+
+## Asset-threshold currency
+
+- **Asset-threshold currency** — For 2025–26, eligible small business entities using simplified depreciation can deduct assets costing less than $20,000 when first used or installed ready for taxable use. The permanent threshold was enacted on 26 August 2026; schedule 2 commences on 1 October 2026 and applies to specified first use or installation from 1 July 2026. The acquisition date alone does not establish the first-use year or a second deduction. Check prior claims and business use.  _([Tax Reform No. 2 Act 2026, schedules 1–2](https://www.legislation.gov.au/C2026A00071/asmade/text))_
 
 ## Section 1 -- Quick Reference
 
@@ -31,7 +37,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Supporting legislation | Tax Administration Act 1953; Medicare Levy Act 1986; Higher Education Support Act 2003 |
 | Tax authority | Australian Taxation Office (ATO) |
 | Filing portal | myTax (via myGov) or registered tax agent |
-| Filing deadline | 31 October 2026 (self-lodged); May 2027 (tax agent) |
+| Filing deadline | 2 November 2026 for standard self-lodgement (31 October is Saturday); tax-agent dates depend on the applicable programme |
 | Contributor | Open Accountants Community |
 | Validated by | Pending -- Australian CPA/CA sign-off required |
 | Skill version | 2.2 |
@@ -118,11 +124,11 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ### Refusal Catalogue
 
-- **R-AU-1 -- Companies and trusts** — Companies lodge company tax returns. Trusts lodge trust returns. This skill covers individual sole traders only.
-- **R-AU-2 -- Non-residents** — Non-resident tax rates and rules differ significantly. Out of scope.
-- **R-AU-3 -- Capital gains tax events** — CGT events require specialised computation (cost base, discounts, exemptions). Out of scope.
-- **R-AU-4 -- Complex depreciation (effective life disputes)** — Where the ATO effective life is contested or the asset has no published rate, escalate.
-- **R-AU-5 -- Partnership or PSI (Personal Services Income)** — PSI rules and partnership allocations require separate analysis. Escalate.
+- **R-AU-1 -- Companies and trusts** — Companies lodge company tax returns. Trusts lodge trust returns. This skill covers individual sole traders only.  _(R-AU-1)_
+- **R-AU-2 -- Non-residents** — Non-resident tax rates and rules differ significantly. Out of scope.  _(R-AU-2)_
+- **R-AU-3 -- Capital gains tax events** — CGT events require specialised computation (cost base, discounts, exemptions). Out of scope.  _(R-AU-3)_
+- **R-AU-4 -- Complex depreciation (effective life disputes)** — Where the ATO effective life is contested or the asset has no published rate, escalate.  _(R-AU-4)_
+- **R-AU-5 -- Partnership or PSI (Personal Services Income)** — PSI rules and partnership allocations require separate analysis. Escalate.  _(R-AU-5)_
 
 ## Section 3 -- Transaction Pattern Library
 
@@ -176,7 +182,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | GST PAYMENT, BAS PAYMENT | EXCLUDE from income tax | T1 | GST is separate. Report net of GST if registered. |
 | PRIVATE HEALTH, MEDIBANK, BUPA, NIB, HCF | NOT a deduction (but affects MLS) | T1 | Private health insurance is NOT tax deductible. But having it avoids Medicare Levy Surcharge. PHI rebate claimed separately. |
 | PERSONAL, GROCERY, ENTERTAINMENT | EXCLUDE | Not deductible | Personal expenses |
-| DONATION, CHARITY, DGR | Tax offset (Item D9) | T1 | Deductible if to a deductible gift recipient (DGR). Must be $2+ and genuinely a gift. |
+| DONATION, CHARITY, DGR | Deduction (Item D9) | T1 | Deductible if to a deductible gift recipient (DGR). Must be $2+ and genuinely a gift. |
 
 ### 3.3 SaaS Subscriptions
 
@@ -225,7 +231,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 **Input:** Small business entity (turnover < $10M). Purchases laptop AUD 2,800 and monitor AUD 950. Both under $20,000.
 
-**Classification:** Both items are immediately deductible under the instant asset write-off. Total deduction: AUD 3,750 in the year of purchase. No depreciation schedule needed.
+**Classification:** Both items are immediately deductible under the instant asset write-off. Assuming both assets were first used for business in 2025–26, are wholly business-use, qualify for simplified depreciation and were not previously deducted, the total deduction is AUD 3,750. Record the first-use date and prior-claim check in the asset register.
 
 ### Example 3 -- Motor Vehicle (Logbook vs Cents/Km)
 
@@ -263,7 +269,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **Diminishing value** — Base value x (days held / 365) x (200% / effective life)  _(ITAA 1997 Div 40)_
 - **Prime cost (straight line)** — Cost x (days held / 365) x (100% / effective life)  _(ITAA 1997 Div 40)_
 - **Small business entity simplified depreciation** — Small business entity (turnover < $10M): can use simplified depreciation -- pool all assets over $20,000 at 15% first year, 30% thereafter.  _(ITAA 1997 Div 40)_
-- **Instant asset write-off** — Assets costing less than $20,000 (assets first used or installed ready for use 1 July 2023 to 30 June 2026; extension made law by the Treasury Laws Amendment (Strengthening Financial Systems and Other Measures) Act 2025) can be immediately deducted by small business entities. Confirm the limit for later years.  _(ITAA 1997 s 328-180)_
+- **Instant asset write-off** — Assets costing less than $20,000 (assets first used or installed ready for use 1 July 2023 to 30 June 2026; extension made law by the Treasury Laws Amendment (Strengthening Financial Systems and Other Measures) Act 2025) can be immediately deducted by small business entities. For later first use, apply the enacted permanent threshold and commencement details in Asset-threshold currency above.  _(ITAA 1997 s 328-180)_
 
 ### 5.4 Superannuation [T1]
 
@@ -271,9 +277,11 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ### 5.5 HELP/HECS Repayment [T1]
 
-**5.5 HELP/HECS Repayment [T1]**
+Use the 2025–26 thresholds below for this return workflow. Use the separately labelled 2026–27 bands only for that requested year. Both years are marginal: nil at or below the minimum threshold; 15c then 17c on the excess; the top band is 10% of **total** repayment income. Do not use the old 1%--10% of whole-of-income rates.
 
-Use the 2026-27 bands unless the return year is 2025-26. Both years are marginal: nil at or below the minimum threshold; 15c then 17c on the excess; the top band is 10% of **total** repayment income. Do not use the old 1%--10% of whole-of-income rates.
+### 5.5 HELP/HECS Repayment [T1]
+
+**5.5 HELP/HECS Repayment [T1]**  _(ATO QC 16176)_
 
 | Repayment income (2026-27) | Repayment |
 | --- | --- |
@@ -282,8 +290,7 @@ Use the 2026-27 bands unless the return year is 2025-26. Both years are marginal
 | $129,718 -- $186,050 | $9,028 + 17c for each $1 over $129,717 |
 | $186,051+ | 10% of total repayment income |
 
-2025-26: nil to $67,000; 15c over $67,000 to $125,000; $8,700 + 17c over $125,000 to $179,285; 10% of total repayment income from $179,286. _(ATO QC 16176)_
-
+- **2025-26 HELP repayment bands** — 2025-26: nil to $67,000; 15c over $67,000 to $125,000; $8,700 + 17c over $125,000 to $179,285; 10% of total repayment income from $179,286.  _(ATO QC 16176)_
 - **Marginal basis (from 2025-26)** — From 2025-26 compulsory repayments are calculated on a marginal basis (only the income above the minimum repayment threshold), substituted by the Universities Accord (Cutting Student Debt by 20 Per Cent) Act 2025.  _(Universities Accord (Cutting Student Debt by 20 Per Cent) Act 2025)_
 - **Repayment income** — Repayment income = taxable income + reportable fringe benefits + net investment losses + reportable super. HELP repayments are NOT deductible.  _(Higher Education Support Act 2003)_
 
@@ -293,9 +300,9 @@ Use the 2026-27 bands unless the return year is 2025-26. Both years are marginal
 
 | Item | Value |
 | --- | --- |
-| Self-lodge deadline | 31 October 2026 |
+| Self-lodge deadline | 2 November 2026 (31 October is Saturday; check extensions) |
 | Tax agent deadline | Varies (typically March-May 2027) |
-| Failure to lodge on time | $330 per 28-day period, up to 5 periods ($1,650 max) |
+| Failure to lodge on time | $364 per 28-day period or part, up to five base units ($1,820) for the applicable period from 1 July 2026; apply relevant multipliers and remission rules. [Crimes (Amount of a Penalty Unit) Instrument 2026](https://www.legislation.gov.au/F2026N00424/asmade/text) |
 | Shortfall penalty (reasonable care not taken) | 25% of shortfall |
 | Shortfall penalty (recklessness) | 50% of shortfall |
 | General Interest Charge (GIC) | Rate set quarterly and published on the ATO website; calculated daily and compounded |
@@ -322,7 +329,7 @@ Use the 2026-27 bands unless the return year is 2025-26. Both years are marginal
 | Cents per km (88c) | Max 5,000 business km. No receipts needed. | Reasonable estimate of business km |
 | Logbook | Business % of actual costs including depreciation | 12-week continuous logbook, valid for 5 years |
 
-- **Cannot claim both methods** — Cannot claim both. Parking, tolls, and roadside assistance are separate and deductible under either method for business trips. Confirm method and km/logbook records.
+- **Cannot claim both methods** — Cannot claim both. Eligible business parking and tolls can be separate deductions. Roadside assistance is a car operating expense covered by the cents-per-kilometre rate; do not claim it again under that method. Confirm method and km/logbook records.
 
 ### 6.3 Private Health Insurance (Medicare Levy Surcharge) [T2]
 
@@ -496,6 +503,8 @@ ONBOARDING QUESTIONS -- AUSTRALIA INDIVIDUAL RETURN
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, CA, or registered tax agent in your jurisdiction) before filing or acting upon.
 
 The most up-to-date, verified version of this skill is maintained at [openaccountants.com](https://openaccountants.com). Log in to access the latest version, request a professional review from a licensed accountant, and track updates as tax law changes.
+
+> Contributed by Ryan Duguid.
 
 > Contributed by Ryan Duguid.
 

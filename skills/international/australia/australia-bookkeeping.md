@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Australian bookkeeping for sole
 version: 1.1
 jurisdiction: AU
 tax_year: 2025
-last_updated: 2026-08-28
+last_updated: 2026-09-10
 review_status: pending_review
 depends_on:
   - bookkeeping-workflow-base
@@ -147,7 +147,7 @@ Australian software (Xero, MYOB, QuickBooks) typically uses 3–4 digit codes. T
 | 6040 | Insurance — Business | Expense |
 | 6050 | Repairs and Maintenance | Expense |
 | 6100 | Wages and Salaries | Expense |
-| 6110 | Superannuation Guarantee (11.5% from Jul 2025) | Expense |
+| 6110 | Superannuation Guarantee (12% from Jul 2025) | Expense |
 | 6120 | Workers' Compensation Insurance | Expense |
 | 6130 | Payroll Tax (state-based) | Expense |
 | 6140 | Staff Training | Expense |
@@ -160,7 +160,7 @@ Australian software (Xero, MYOB, QuickBooks) typically uses 3–4 digit codes. T
 | 6320 | Motor Vehicle — Repairs | Expense |
 | 6330 | Travel — Domestic | Expense |
 | 6340 | Travel — International | Expense |
-| 6350 | Meals and Entertainment (50% deductible FBT) | Expense |
+| 6350 | Meals and Entertainment (review FBT election and deductibility) | Expense |
 | 6400 | Accounting and Tax Agent Fees | Expense |
 | 6410 | Legal Fees | Expense |
 | 6420 | Bank Charges | Expense |
@@ -205,11 +205,11 @@ Australian software (Xero, MYOB, QuickBooks) typically uses 3–4 digit codes. T
 
 | Criterion | Cash Basis (Sole Traders / Small Business) | Accruals Basis |
 | --- | --- | --- |
-| Eligibility | Aggregated turnover < $10m (small business entity) | All entities; mandatory for reporting entities |
+| Eligibility | For income tax, use the method that correctly reflects income under TR 98/1; small-business status alone does not establish a receipts basis | Apply the appropriate income-tax method and separate financial-reporting requirements |
 | Income recognised | When cash received | When earned (invoice raised or goods delivered) |
 | Expenses recognised | When cash paid | When incurred (liability arises) |
-| Trading stock | Simplified: exempt from stock-take if change < $5,000 | Required: opening/closing stock adjustments |
-| Prepaid expenses | Immediate deduction if < 12 months and under $1,000 or business turnover < $10m | Spread over benefit period |
+| Trading stock | Eligible small business entities can use s 328-285 where the reasonably estimated stock-value change is $5,000 or less | Otherwise apply the required stock adjustments; this is separate from GST cash accounting |
+| Prepaid expenses | Test the 12-month rule and other exceptions under ITAA 1936 ss 82KZL and 82KZM | Apply the relevant tax apportionment and financial-reporting rules separately |
 
 ### AASB 15 Revenue from Contracts with Customers
 
@@ -261,7 +261,7 @@ Small businesses using simplified reporting typically recognise on delivery/comp
 | GST-Free | Food (basic), medical, education, exports | G1 (no 1A) |
 | Input Taxed | Financial supplies, residential rent | G1 (no credit) |
 | BAS Excluded | Wages, drawings, loan principal, private | Not reported |
-| No ABN Withholding | Payments to suppliers without ABN (49% w/h) | Separate |
+| No ABN Withholding | Payments to suppliers without ABN (47% w/h) | Separate |
 
 ## Section 5 -- Asset vs Expense Thresholds
 
@@ -272,7 +272,7 @@ Small businesses using simplified reporting typically recognise on delivery/comp
 | Period | Threshold | Eligibility |
 | --- | --- | --- |
 | 1 Jul 2023 – 30 Jun 2026 | < $20,000 per asset | Aggregated turnover < $10m, using simplified depreciation |
-| Permanent (from 1 Jul 2026) | < $20,000 per asset | Announced in 2026 Budget — made permanent |
+| From 1 Jul 2026 application date | Less than $20,000 per eligible asset | Enacted 26 August 2026; schedule 2 commences 1 October 2026. [Tax Reform No. 2 Act 2026, schedules 1–2](https://www.legislation.gov.au/C2026A00071/asmade/text) |
 
 ### Small Business Pool (Simplified Depreciation)
 
@@ -293,19 +293,20 @@ Small businesses using simplified reporting typically recognise on delivery/comp
 | Diminishing value | rate = days held ÷ 365 × (200% ÷ effective life) |
 | Prime cost (straight-line) | rate = days held ÷ 365 × (100% ÷ effective life) |
 
-### Common Effective Lives (ATO TR 2025/1 basis)
+### Common effective lives (2025 determination, asset-specific)
 
-**Common Effective Lives (ATO TR 2025/1 basis)**  _(ATO TR 2025/1)_
+**Common effective lives (2025 determination, asset-specific)**  ([Income Tax Assessment (Effective Life of Depreciating Assets) Determination 2025, Table B](https://www.legislation.gov.au/F2025L01097/asmade/text)). Choose the determination applicable under s 40-95; the 2025 instrument commenced on 16 September 2025.
 
 | Asset | Effective Life | DV Rate | PC Rate |
 | --- | --- | --- | --- |
 | Desktop computers | 4 years | 50% | 25% |
-| Laptops | 4 years | 50% | 25% |
+| Laptops | 2 years | 100% | 50% |
 | Printers/Scanners | 5 years | 40% | 20% |
-| Office furniture | 10 years | 20% | 10% |
+| Office chairs | 10 years | 20% | 10% |
+| Office desks | 20 years | 10% | 5% |
 | Motor vehicles | 8 years | 25% | 12.5% |
 | Air conditioning | 10 years | 20% | 10% |
-| Buildings (general) | 40 years | 5% | 2.5% |
+| Eligible building capital works | Division 43, subject to use and construction dates | No generic diminishing-value deduction | Commonly 2.5%; verify eligibility and applicable statutory rate |
 
 ### Car Limit
 
@@ -464,7 +465,7 @@ TOTAL EQUITY                                          xxx
 | --- | --- |
 | Simplified depreciation | Instant write-off < $20,000; pool balance at 15%/30% |
 | Simplified trading stock | No stock-take if estimate change ≤ $5,000 |
-| Prepaid expenses | Immediate deduction if < 12 months and service period ends before next year |
+| Prepaid expenses | Test the 12-month rule and other exceptions under ITAA 1936 ss 82KZL and 82KZM |
 | Simpler BAS | Report only G1, 1A, 1B (no G2, G3, G10, G11) |
 | Two-year amendment period | ATO can only amend assessments within 2 years (not 4) |
 | Cash accounting for GST | Report GST when paid/received, not invoiced |
@@ -476,9 +477,9 @@ TOTAL EQUITY                                          xxx
 
 | Tier | Who | Standards | Required Statements |
 | --- | --- | --- | --- |
-| Tier 1 (Full AASB / IFRS) | Large proprietary companies, public companies, registered schemes | Full recognition + full disclosure | All 5 statements + notes |
+| Tier 1 (Full AASB / IFRS) | Entities with public accountability or another Tier 1 requirement | Full recognition and disclosure | Determine requirements under AASB 1053; size alone does not force Tier 1 |
 | Tier 2 (AASB 1060 Simplified) | Non-publicly accountable entities electing Tier 2 | Full recognition, reduced disclosure | All 5 statements + reduced notes |
-| Special Purpose (legacy) | Non-reporting entities (winding down) | Flexible | Varies (being phased out by 30 Jun 2023 for large) |
+| Special purpose | Assess the entity and reporting obligation | The AASB 2020-2 changes apply from periods beginning on or after 1 July 2021 to specified for-profit entities | Use australia-financial-statements-2 and current AASB/ASIC requirements |
 | No statutory reporting | Sole traders, small partnerships (non-company) | None mandated | Prepare for ATO/tax purposes only |
 
 ### Large Proprietary Thresholds (must be reporting entity)
@@ -511,21 +512,23 @@ TOTAL EQUITY                                          xxx
 
 ### Superannuation Guarantee
 
-- Rate: 11.5% of ordinary time earnings (from 1 Jul 2025); rising to 12% from 1 Jul 2026
-- Due: 28 days after end of quarter
+- Rate: 12% from 1 July 2025; 11.5% applied in 2024–25. Use the earnings definition, contribution base and deadline for the pay date. From July 2026 use the payday regime in au-super-guarantee; earlier periods retain the quarterly regime. [ATO super guarantee rates](https://www.ato.gov.au/tax-rates-and-codes/key-superannuation-rates-and-thresholds/super-guarantee).
+- Due for 2025–26: quarterly deadlines. Use the separately cited payday rules for earnings paid from 1 July 2026.
 - Nominal: 6110 (expense) / 2110 (payable)
-- SG Charge: if late, lose deduction and pay additional penalties
+- SG Charge for quarters before 1 July 2026: non-deductible. Apply the separate redesigned rules to later earnings.
 
 ### Fringe Benefits Tax (FBT)
 
 - FBT year: 1 April – 31 March
 - Rate: 47% (top marginal + Medicare levy)
 - Common items: car fringe benefit, entertainment, loan fringe benefit
-- Meals/entertainment: 50/50 method available — 50% deductible for income tax, 50% subject to FBT
+- Meals/entertainment: establish whether an available 50/50 valuation election was made and its scope before applying it. Otherwise use the applicable actual-benefit and deduction rules. Do not default every meal to a 50% deduction. [ATO FBT entertainment](https://www.ato.gov.au/law/view/document?docid=SAV/FBTGEMP/00001).
 
 ## Disclaimer
 
 This skill and its outputs are provided for informational and computational purposes only and do not constitute tax, legal, or financial advice. Open Accountants and its contributors accept no liability for any errors, omissions, or outcomes arising from the use of this skill. All outputs must be reviewed and signed off by a qualified professional (such as a CPA, CA, registered tax agent, or equivalent licensed practitioner in your jurisdiction) before filing or acting upon.
+
+> Contributed by Ryan Duguid.
 
 > Contributed by Ryan Duguid.
 
