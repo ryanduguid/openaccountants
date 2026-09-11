@@ -4,24 +4,28 @@ description: Use this skill whenever you need a current Australian tax rate, thr
 version: 1.1
 jurisdiction: AU
 tax_year: 2025
-last_updated: 2026-09-02
+last_updated: 2026-09-10
 review_status: pending_review
 category: international
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
-# Australia Rates Card 2026-27 (with 2025-26) v1.0
+# Australia Rates Card 2026-27 (with 2025-26) v1.1
 
-## Australia Rates Card 2026-27 (with 2025-26) v1.0
+## Australia Rates Card 2026-27 (with 2025-26) v1.1
+
+## Australia Rates Card 2026-27 (with 2025-26) v1.1
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
 Single-page lookup for the figures every other Australian guide relies on. Each row names its primary source. Verified against those sources on 20 August 2026. Deeper rules live in the topic guides named in each section; this card never overrides them.
 
-## Individual income tax
+## Enacted asset and loss relief
 
-**Resident brackets**
+- **Enacted asset and loss relief** — For 2025–26, eligible small business entities using simplified depreciation can deduct assets costing less than $20,000 when first used or installed ready for taxable use. The permanent threshold was enacted on 26 August 2026; schedule 2 commences on 1 October 2026 and applies to specified first use or installation from 1 July 2026. The new corporate loss carry-back rules were enacted in the same Act; distinguish the October commencement from their income-year application.  _([Tax Reform No. 2 Act 2026, schedules 1–2](https://www.legislation.gov.au/C2026A00071/asmade/text))_
+
+## Individual income tax
 
 **Resident brackets**  _(ATO QC 73320; Treasury Laws Amendment (More Cost of Living Relief) Act 2025)_
 
@@ -33,11 +37,8 @@ Single-page lookup for the figures every other Australian guide relies on. Each 
 | $135,001 -- $190,000 | 37% | 37% |
 | $190,001+ | 45% | 45% |
 
-Tax on full bands: 2025-26 -- $4,288 at $45,000, $31,288 at $135,000, $51,638 at $190,000. 2026-27 -- $4,020 / $31,020 / $51,370. The 15% rate falls to **14% from 1 July 2027**. _(ATO QC 73320; Treasury Laws Amendment (More Cost of Living Relief) Act 2025)_
-
-**Non-residents:** no tax-free threshold; 30% from $0 to $135,000 (2026-27), then resident bands. No Medicare levy.
-
-**Offsets and deductions**
+- **Tax on full bands and rate change** — Tax on full bands: 2025-26 -- $4,288 at $45,000, $31,288 at $135,000, $51,638 at $190,000. 2026-27 -- $4,020 / $31,020 / $51,370. The 15% rate falls to **14% from 1 July 2027**.  _(ATO QC 73320; Treasury Laws Amendment (More Cost of Living Relief) Act 2025)_
+- **Non-residents** — **Non-residents:** no tax-free threshold; 30% from $0 to $135,000 (2026-27), then resident bands. No Medicare levy.  _(ATO QC 73320)_
 
 **Offsets and deductions**  _(ATO Low income tax offset; ITAA 1997 Subdiv 328-F; Tax Reform No. 1 Act 2026 Sch 4; QC 107405; PCG 2023/1; ATO cents-per-km rates; ATO car thresholds)_
 
@@ -52,9 +53,9 @@ Tax on full bands: 2025-26 -- $4,288 at $45,000, $31,288 at $135,000, $51,638 at
 
 ## HELP/study loans (2025-26 onwards: marginal system)
 
-Repayment income = taxable income + reportable fringe benefits + reportable super + exempt foreign income + net investment losses.
+- **Repayment income definition** — Repayment income = taxable income + reportable fringe benefits + reportable super + exempt foreign income + net investment losses.  _(Universities Accord (Cutting Student Debt by 20 per cent) Act 2025; ATO QC 103927)_
 
-**Marginal repayment rates**  _(Education and Other Legislation Amendment (VET Fee Protection and Other Measures) Act 2025; ATO QC 103927)_
+**Marginal repayment rates**  _(Universities Accord (Cutting Student Debt by 20 per cent) Act 2025; ATO QC 103927)_
 
 | Repayment income (2025-26) | Marginal repayment rate |
 | --- | --- |
@@ -63,7 +64,7 @@ Repayment income = taxable income + reportable fringe benefits + reportable supe
 | $125,001 -- $179,285 | $8,700 + 17% of excess over $125,000 |
 | $179,286+ | 10% of repayment income (cap rule) |
 
-One-off 20% debt reduction applied before 1 June 2026 indexation; thresholds index for 2026-27 (confirm current-year bands at ATO study loan repayment thresholds before computing). _(Education and Other Legislation Amendment (VET Fee Protection and Other Measures) Act 2025; ATO QC 103927)_
+- **One-off 20% reduction** — The one-off 20% reduction concerns eligible student-loan debts at 1 June 2025, with the associated 2025 indexation adjustment. It is not a new reduction at 1 June 2026. Use the current repayment-year thresholds separately.  _([Department of Education](https://www.education.gov.au/higher-education-provider-updates/higher-education-provider-updates-december-2025))_
 
 ## Medicare
 
@@ -78,7 +79,7 @@ One-off 20% debt reduction applied before 1 June 2026 indexation; thresholds ind
 | MLS base tier | Single $101,000 / family $202,000 (then 1% / 1.25% / 1.5%) | ATO MLS thresholds |
 | PHI rebate (base, under 65) | 24.288% to 31 Mar 2026; 24.118% from 1 Apr 2026 | PHI Circular 12/26 |
 
-2026-27 Medicare low-income thresholds index with CPI; confirm at ATO QC 27031 when lodging 2026-27.
+- **2026-27 indexation note** — 2026-27 Medicare low-income thresholds index with CPI; confirm at ATO QC 27031 when lodging 2026-27.  _(ATO QC 27031)_
 
 ## Superannuation
 
@@ -107,7 +108,7 @@ One-off 20% debt reduction applied before 1 June 2026 indexation; thresholds ind
 | BRE rate | 25% (turnover < $50m AND <= 80% BREPI) | ITRA 1986 ss 23AA-23AB |
 | Standard rate | 30% | ITRA 1986 |
 | Franking | At 25%: credit = distribution / 3. At 30%: x 3/7 | au-company-tax |
-| Loss carry-back | ENDED (2019-20 to 2022-23 claim years only) | former Div 160 |
+| Loss carry-back | New enacted rules apply to income years starting on or after 1 July 2026 for eligible corporate tax entities; test SGE status, earlier tax liabilities, franking balance and other conditions | [Tax Reform No. 2 Act 2026, schedules 1–2](https://www.legislation.gov.au/C2026A00071/asmade/text); commencement 1 October 2026 |
 | Div 7A benchmark | 8.37% (2025-26); **8.77% (2026-27)** | ATO Div 7A rates |
 | PAYG GDP uplift | 4% (2025-26); **5% (2026-27)** | ATO GDP adjustment |
 | Amendment period (SMB) | 4 years for 2024-25+ assessments | ATO amendment periods |
@@ -143,8 +144,8 @@ One-off 20% debt reduction applied before 1 June 2026 indexation; thresholds ind
 
 | Item | Value | Source |
 | --- | --- | --- |
-| Rate / registration | 10% / $75,000 ($150,000 NFP; $1 taxi-rideshare) | GST Act |
-| Instant asset write-off | $20,000 per asset (turnover < $10m) legislated to 30 Jun 2026; permanence from 1 Jul 2026 announced, confirm enactment | ATO QC 103578 |
+| Rate / registration | 10% / $75,000 ($150,000 NFP; taxi/ride-sourcing regardless of turnover) | GST Act |
+| Instant asset write-off | For 2025–26, eligible small business entities using simplified depreciation can deduct assets costing less than $20,000 when first used or installed ready for taxable use. The permanent threshold was enacted on 26 August 2026; schedule 2 commences on 1 October 2026 and applies to specified first use or installation from 1 July 2026. [Tax Reform No. 2 Act 2026, schedules 1–2](https://www.legislation.gov.au/C2026A00071/asmade/text). | ITAA 1997 Subdivision 328-D |
 | Penalty unit | $330 (7 Nov 2024 -- 30 Jun 2026); **$364 from 1 Jul 2026** | ATO QC 71196 |
 | GIC | **Not deductible from 1 Jul 2025** (SIC likewise) | Tax Incentives and Integrity Act 2025; QC 73746 |
 
@@ -168,6 +169,8 @@ This card is the single place indexed figures live outside their topic guides. W
 ## Provenance
 
 All figures verified 20 August 2026 directly against: ato.gov.au rate pages (QC 73320, 27031, 71196, 73746, 103578, 103927, contributions caps, key super rates, car thresholds, Div 7A rates, GDP adjustment), Department of Health PHI Circular 12/26, Revenue NSW / SRO Vic / QRO current-rates pages, FWC Annual Wage Review 2025-26 decision, ASIC fee indexation page (1 July 2026), and the amending Acts named inline.
+
+> Contributed by Ryan Duguid.
 
 > Contributed by Ryan Duguid.
 
