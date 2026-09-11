@@ -5744,3 +5744,35 @@ mojibake and a naive tag-strip finds zero occurrences of `declaraci` in a 240 KB
 a result that reads exactly like "the site serves nothing useful". That is a new entry in the
 same family as the 39-byte conflation: **an encoding artefact impersonating an absence of
 content.** The guide now records the encoding so the next person does not re-derive it.
+
+### Andorra, second pass: what one downloaded statute paid for
+
+The consolidated Law was already on disk from the deadline question, so four more rows cost
+nothing but reading:
+
+| Row | Was | Article 41 / 23 / 38 |
+|---|---|---|
+| standard rate | 10% | 10% confirmed — **and art. 41(2) adds 0% for collective investment undertakings**, expressly *not* their management companies. A second headline rate, absent from the guide |
+| 5% for new companies | *"historically … confirm still in force for 2025"* | **not in the Law.** Art. 41 has two rates and no others, no *bonificació* for new companies appears anywhere, and the **first transitional provision is marked *(derogada)*** |
+| holding regime | *"qualifying **foreign**-shareholding income … near 0%"* | outcome right, **every gate missing** — SA/SL only, **exclusive object**, must **apply**, **nominative shares**, and a non-resident participated company must bear a similar tax at **≥40% of the Andorran general rate**. And it covers **resident** participations too, so "foreign" is wrong |
+| IP regime | *"a reduced effective rate (around 2%)"* | an **80% base reduction**, not a rate — 2% is what 80% off 10% produces. Closed list (patents, utility models, copyright-protected software), an OECD nexus fraction with a 30% uplift and a 25% foreign-subcontracting cap, three cumulative conditions, per-asset computation and a loss-recapture rule |
+
+**"Around 2%" is the instructive one.** The number is arithmetically correct and every reader
+who acts on it is wrong in the same direction: they will treat it as a rate available to
+qualifying income, when it is the *product* of a base reduction that the nexus fraction cuts
+down for anyone with acquired IP or foreign related-party development. A right number attached
+to the wrong mechanism — the Morocco and Oman shape again, and again invisible to any check
+that compares figures.
+
+**The 5% row also shows what a hedge cannot do.** It carried *"(approx — confirm this incentive
+is still in force for 2025)"*, which reads as diligence. But the hedge asks the reader to
+confirm a thing, and the thing is not in the instrument the row cites; confirming it would mean
+proving a negative against a statute the reader has no reason to open. The row is now the
+answer rather than the question, and it says plainly that relief may exist **elsewhere** —
+because absence from Llei 95/2010 is what was established, not absence from Andorran law.
+
+**One live risk recorded rather than resolved.** The IS base is the accounting result, and
+**Decret 479/2025 of 23 December 2025 approved a new *Pla general de comptabilitat***,
+superseding Decret 120/2022. Its commencement and transitional rules were not read. A change of
+accounting framework moves the starting point of the tax computation, so this is flagged as a
+gap in the guide rather than left for a reader to discover.
