@@ -3,7 +3,7 @@ name: mk-tax-overview
 description: "Source-cited draft: tax overview for North Macedonia (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
 jurisdiction: MK
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-11
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -22,8 +22,11 @@ North Macedonia operates a low, flat-rate tax system administered by the Public 
 - **Headline personal income tax rate** — 10% percent (flat)  _([Law on Personal Income Tax](https://taxsummaries.pwc.com/north-macedonia/individual/taxes-on-personal-income))_
 - **Headline corporate income tax rate** — 10% percent (flat)  _([Law on Profit Tax](https://taxsummaries.pwc.com/north-macedonia/corporate/taxes-on-corporate-income))_
 - **Does VAT exist** — Yes — standard VAT rate of 18%, with reduced rates of 10% and 5%  _(Law on Value Added Tax)_
-- **Pillar Two / top-up tax for large MNEs** — Qualified Domestic Minimum Top-up Tax (15% effective floor) applies to in-scope large multinational groups ((approx — confirm)) percent  _(OECD Pillar Two / domestic implementing legislation)_
-- **Annual corporate profit-tax return deadline** — By the end of February following the tax year (electronic balance sheet / DB form) ((approx — confirm))  _(Law on Profit Tax)_
+- **Minimum global profit tax — the instrument** — *Закон за минимален глобален данок на добивка* (Law on the Minimum Global Profit Tax), published in the **Official Gazette of RNM No. 3 of 3 January 2025** and in force on the day of publication (art. 61). The previous citation here read "OECD Pillar Two / domestic implementing legislation", which names no instrument  _([Public Revenue Office register](https://ujp.gov.mk/mk/regulativa/opis/437))_
+- **Minimum global profit tax — scope and rate** — **15%** minimum rate, stated in the Act as *петнаесет проценти (15 %)* (art. 1(15)). Applies to constituent entities of an MNE group **or a large domestic group** with consolidated revenue of **EUR 750,000,000 or more in at least two of the four fiscal years** immediately preceding the tested year, prorated for years that are not twelve months (art. 5(1)–(2)) percent  _(Law on the Minimum Global Profit Tax, arts. 1(15) and 5)_
+- **Minimum global profit tax — it reaches back to fiscal 2024** — The Act applies to fiscal years beginning **1 January 2024**, a year before it was published (art. 59(1)); only the undertaxed profits rule in arts. 14–16 starts from fiscal years beginning 1 January 2025 (art. 59(2)). See `mk-corporate-income-tax` for the full treatment  _(Law on the Minimum Global Profit Tax, art. 59)_
+- **Annual corporate profit-tax return** — Form **„ДБ — даночен биланс за оданочување на добивка"**. ⚠ **The Profit Tax Law fixes no calendar date for it**: article 39(1) ties the return to the deadline for filing the annual accounts under the Companies Act and the accounting regulations. This row previously read "by the end of February… (approx — confirm)" and cited the Profit Tax Law, which does not say that. The date must be sourced to the Companies Act and accounting rules, which have not been read  _([Закон за данокот на добивка, чл. 39(1)](https://ujp.gov.mk/mk/regulativa/opis/295))_
+- **Corporate profit tax rate — from the statute** — **10%**, article 2 of the Profit Tax Law: *"Стапката на данокот на добивка изнесува 10%."* The consolidated text is published by the Public Revenue Office itself; the row above citing a commercial summary is superseded by this one percent  _([Закон за данокот на добивка, чл. 2](https://ujp.gov.mk/mk/regulativa/opis/295))_
 - **Annual personal income tax return deadline** — Pre-filled annual return finalized via the e-PDD system; corrections due by the statutory spring deadline ((approx — confirm))  _(Law on Personal Income Tax)_
 
 <!-- openaccountants-cta-block -->

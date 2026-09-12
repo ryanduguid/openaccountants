@@ -389,7 +389,7 @@ Not run through this payslip — computed annually on profit-before-tax in the c
 | Employees' Old-Age Benefits Act 1976 | EOBI |
 | EOBI portal | https://eobi.gov.pk |
 | Provincial Employees' Social Security Ordinance 1965 (as adapted by Sindh, Punjab, KP, Balochistan) | Provincial gazettes |
-| Sindh Employees Social Security Institution (SESSI) | https://sessi.gos.pk |
+| Sindh Employees Social Security Institution (SESSI) | https://sessi.gov.pk — the `sessi.gos.pk` form previously given here is a typo (`gos` for `gov`) and does not resolve |
 | Punjab Employees Social Security Institution (PESSI) | https://pessi.punjab.gov.pk |
 | Khyber Pakhtunkhwa Employees Social Security Institution (KPESSI) | KP provincial portal |
 | Balochistan Employees Social Security Institution (BESSI) | Balochistan provincial portal |

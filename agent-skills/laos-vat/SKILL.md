@@ -43,6 +43,38 @@ metadata:
 
 ---
 
+> **The VAT Law has been read, and the rate is confirmed from statute.** The Lao
+> Official Gazette publishes the ***Law on Value Added Tax (Revised)*** — ກົດໝາຍ
+> ວ່າດ້ວຍອາກອນມູນຄ່າເພີ່ມ (ສະບັບປັບປຸງ) — **No. 60/NA, Vientiane Capital, dated 28
+> June 2024**, gazetted 11 March 2025, status **ປັດຈຸບັນ (current)**. This guide
+> previously cited no instrument at all.
+>
+> **Article 17 (ປັບປຸງ) — ອັດຕາອາກອນມູນຄ່າເພີ່ມ** gives two rates, each in words and
+> digits together:
+>
+> - ***ອັດຕາ ສິບສ່ວນຮ້ອຍ (10%)*** — **ten percent**, on (1.1) the **import of
+>   goods**; (1.2) the **supply of goods and services subject to VAT in Lao PDR**;
+>   and (1.3) the **purchase of goods and services from foreign legal entities not
+>   established as enterprises in Lao PDR** — so the reverse charge on imported
+>   services runs at the same 10%.
+> - ***ອັດຕາ ສູນສ່ວນຮ້ອຍ (0%)*** — **zero percent**, for the **export of goods
+>   abroad**, for goods entering **special economic zones and specific economic
+>   zones**, and **including finished mineral products**.
+>
+> **⚠ The zero rate is wider than "exports".** This guide's quick-reference row says
+> *"0% (exports)"*. Article 17(2) also zero-rates supplies **into Lao special and
+> specific economic zones** and names **finished mineral products** expressly — two
+> limbs that matter in a country with active SEZs and a mining sector, and both
+> absent here.
+>
+> **Article 18 (ປັບປຸງ)** fixes the time of collection: on **import**, at customs
+> declaration; on **domestic supply**, at the time of supply — and for goods and
+> services **exchanged, given away or self-consumed**, at the time of actual use or
+> of transfer.
+>
+> _([Law on Value Added Tax (Revised) No. 60/NA of 28 June 2024, arts. 17–18](https://laoofficialgazette.gov.la/kcfinder/upload/files/%2060.28.6.2024.pdf); [Lao Official Gazette, Ministry of Finance register](https://laoofficialgazette.gov.la/index.php?r=site/listlegistioncp&agencies_id=2&old=0))_
+
+
 ## Section 2 — Required inputs and refusal catalogue
 
 ### Required inputs

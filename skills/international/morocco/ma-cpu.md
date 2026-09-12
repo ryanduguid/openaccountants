@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Morocco's Contribution Professi
 version: 1.0
 jurisdiction: MA
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-11
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -59,6 +59,21 @@ complémentaire) and explain them in the user's chosen language.
 | Currency | MAD (dirham marocain, DH) |
 | Turnover ceiling — commercial / industrial / artisanal | **MAD 2,000,000 / year (VAT included)** *(verify current value)* |
 | Turnover ceiling — services / liberal professions | **MAD 500,000 / year (VAT included)** *(verify current value)* |
+
+> **⚠ Do not read these ceilings across from `ma-auto-entrepreneur`.** Morocco runs two
+> separate small-business regimes and their ceilings differ, with one figure appearing in
+> both under different headings:
+>
+> | | Commercial / industrial / artisanal | Services / liberal |
+> |---|---|---|
+> | **CPU** (this guide) | MAD **2,000,000** | MAD **500,000** |
+> | **Auto-entrepreneur** (`ma-auto-entrepreneur`) | MAD **500,000** | MAD **200,000** |
+>
+> **MAD 500,000 is the CPU services ceiling and the AE commercial ceiling.** A reader who
+> carries that number between the two guides lands on the wrong regime's limit — and
+> `scripts/check-amount-conflicts.py` flags the 2,000,000-versus-500,000 pair across these
+> files for the same reason. That flag is a **false positive**: the figures belong to
+> different regimes, and neither is wrong.
 | Tax base | **Turnover × profession coefficient** (coefficient per the table annexed to **Art. 40-I CGI**) |
 | Liberatory IR rate (1st component) | **10%** of the base → CPU IR = turnover × coefficient × 10% *(verify current value)* |
 | 2nd component | **Droit complémentaire** (AMO health cover), banded by the annual CPU IR amount — **MAD 1,200 → 14,400 / year** (8 bands) *(verify table)* |

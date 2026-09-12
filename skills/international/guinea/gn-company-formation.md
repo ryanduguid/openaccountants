@@ -30,11 +30,12 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 > - **SARL pay-up — article 311-1.** Parts subscribed in full; those for
 >   contributions in kind paid up in full; those for cash paid up on subscription to
 >   **at least half**, balance within **two years** of RCCM registration.
-> - **SA capital — articles 387–389.** Minimum **10,000,000**, with **no**
->   national-derogation clause; nominal value of shares freely fixed by the
->   statutes; capital **entirely subscribed before the statutes are signed**; cash
->   shares paid up **at least one quarter** on subscription, balance within **three
->   years** of RCCM registration.
+> - **SA capital — articles 387–389.** The **ordinary** minimum is **10,000,000**;
+>   public offerings and regulated activities require separate capital checks, and
+>   article 311's derogation wording does not appear here. Nominal value of shares
+>   freely fixed by the statutes; capital **entirely subscribed before the statutes
+>   are signed**; cash shares paid up **at least one quarter** on subscription,
+>   balance within **three years** of RCCM registration.
 > - **Listed or public-offering companies — article 824.** Minimum **100,000,000**
 >   where the securities are listed on a member state's exchange **or** offered
 >   publicly for placement in one or more member states. Any interested party may

@@ -324,7 +324,7 @@ For each cryptocurrency held on 31 December:
 
 ### 7.4 ESTV Kursliste Access
 
-- Available at: [ictax.admin.ch](https://ictax.admin.ch)
+- Available at: [www.ictax.admin.ch](https://www.ictax.admin.ch) — ⚠ the bare `ictax.admin.ch` **has no DNS record**; only the `www.` form resolves, and it answers **200** as *"ICTax - Income & Capital Taxes"*. Verified by opening it, not by DNS alone
 - Published annually after year-end
 - Covers major cryptocurrencies (BTC, ETH, and many others)
 - Updated annually; check for the relevant tax year

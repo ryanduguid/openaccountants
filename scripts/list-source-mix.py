@@ -68,6 +68,16 @@ NON_GOV_AUTHORITY = frozenset((
     # that publish the law itself, on a domain that carries no government
     # suffix — the same blind spot the revenue authorities below sat in.
     'incv.cv',            # Imprensa Nacional de Cabo Verde (Boletim Oficial)
+    'overheid.nl',        # The Dutch government's own publishing platform.
+                          # wetten.overheid.nl carries the CONSOLIDATED text of
+                          # every Dutch act, and zoek.officielebekendmakingen.nl
+                          # the Staatsblad. There is no .gov.nl or .go.nl — the
+                          # Netherlands publishes its law on a bare .nl, so the
+                          # suffix rules below cannot see it.
+    'boe.es',             # Boletin Oficial del Estado — Spain's official
+                          # gazette and the publisher of its consolidated
+                          # legislation. Again a bare national domain: Spain
+                          # has no .gob.es requirement for the BOE itself.
     'ohada.org',          # OHADA itself — the Journal Officiel and the digital
                           # library that carries it. Supranational rather than
                           # national, so no country suffix to recognise it by;
@@ -460,6 +470,23 @@ def selftest():
     assert classify('camcom.sm') == 'secondary'           # mixed public-private capital
     assert classify('belastingdienst.sr') == 'authority'  # Suriname
     assert classify('andoz.tj') == 'authority'            # Tajikistan
+    # Western European law publishers on a bare national domain. Both were
+    # scoring 'secondary' while serving the consolidated statute itself, which
+    # understated authority coverage for every Dutch and Spanish citation.
+    assert classify('wetten.overheid.nl') == 'authority'   # consolidated Dutch law
+    assert classify('www.boe.es') == 'authority'           # Spain's official gazette
+    assert classify('boe.es') == 'authority'
+    # and the near-miss that must NOT be swept in with them
+    assert classify('overheid.example.nl') == 'secondary'  # not the .nl platform
+    # DELIBERATELY ABSENT: zoek.officielebekendmakingen.nl, which carries the
+    # Staatsblad and is plainly the same Dutch government platform — its own
+    # pages are titled "Overheid.nl > Officiele bekendmakingen". It is a
+    # separate registrable domain, so the overheid.nl entry does not reach it,
+    # and no document was successfully retrieved from it here: one request
+    # 404'd and one returned 500. A domain that has not served a document is
+    # not recorded as an authority on the strength of its name.
+    assert classify('zoek.officielebekendmakingen.nl') == 'secondary'
+
     # boilerplate is not a source
     assert classify('www.openaccountants.com') is None
     assert classify('calendly.com') is None

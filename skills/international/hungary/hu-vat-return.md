@@ -11,6 +11,14 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # hungary-vat-return
 
+<!-- einvoice-xref -->
+> **This pack has a separate e-invoicing guide: `hungary-einvoice`.** This guide does not
+> cover it. Where a jurisdiction operates a mandatory electronic-invoicing or
+> real-time-reporting regime, the obligations and any consequences for input-tax
+> recovery sit in that guide — read it alongside this one before filing or advising.
+> **No claim about that jurisdiction's regime is made here**; this is a pointer only.
+
+
 ## Section 1 — Quick reference
 
 Read this whole section before classifying anything. The workflow runbook is in `vat-workflow-base` Section 1.

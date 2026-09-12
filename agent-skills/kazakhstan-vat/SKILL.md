@@ -25,7 +25,7 @@ metadata:
 | Reduced rates | None (single standard rate for domestic) |
 | Zero rate | 0% (exports, international transport, certain agricultural) |
 | Return form | Form 300.00 (quarterly NDS declaration) |
-| Filing portal | https://cabinet.salyk.kz |
+| Filing portal | https://cabinet.salyk.kz — ⚠ **this host does not resolve from outside Kazakhstan** (checked 11 September 2026; no `www`/bare variant and no `salyk.kz` parent resolves either). The authority that does resolve and answer is the State Revenue Committee at **https://kgd.gov.kz**. `cabinet.salyk.kz` is named across twelve files in this pack as the Taxpayer Cabinet; those references are **left as they stand** because a portal that is unreachable here may still be the correct one for a taxpayer inside Kazakhstan, and replacing twenty-six references on DNS evidence alone is how a citation gets moved to a worse address |
 | Authority | Committee of State Revenue (KGD) under Ministry of Finance |
 | Currency | KZT (Kazakhstani Tenge) only |
 | Filing frequency | Quarterly |

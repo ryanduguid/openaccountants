@@ -1,10 +1,10 @@
 ---
 name: bi-payroll-social
-description: "Source-cited draft: payroll & social contributions for Burundi (tax year 2025) — rates, thresholds and rules with primary-source citations. Unverified; pending local-accountant review."
+description: "Source-cited draft for Burundi payroll and social contributions. Covers the employment withholding scales and separately labels the employment-income changes in the 2026/2027 Finance Act. Sets out the ordinary INSS pension rates, occupational-risk rate and separate monthly earnings caps published by INSS. Explains contribution payment and declaration provisions read from the 2020 Social Protection Code. The 2022 and 2026 amendments have been identified but not read, so their effect on those Code provisions remains open. Health-insurance and training-levy figures still need regime-specific authority. Pending local-accountant review."
 jurisdiction: BI
 tax_year: 2025
-version: 0.2
-last_updated: 2026-09-11
+version: 0.4
+last_updated: 2026-09-12
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -16,9 +16,39 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 Employers operate PAYE-style withholding on salaries and pay social-security contributions to the Institut National de Sécurité Sociale (INSS) plus health insurance.
 
-The payroll tax rules below were checked against the income tax law. The INSS
-rates and caps remain unverified secondary-source figures with conflicting
-totals. Confirm them against an INSS contribution schedule before calculating.
+The ordinary INSS rates and caps below match the institution's published schedule.
+The 2020 Social Protection Code supplies the general payment and declaration rules.
+Its 2022 and 2026 amendments remain unread, so this is not a verification of every
+current regime or of the complete amendment chain.
+
+> **The current Finance Act was read, and it changes two things in this guide's scope.**
+> **Loi n°1/10 du 30 juin 2026 portant fixation du budget général de l'État pour
+> l'exercice 2026/2027** is published by the Office Burundais des Recettes as a 267-page
+> scan. Its **article 155 rewrites the definition of employment income** (article 30 of
+> the income tax law) and its **article 154 rewrites the computation and filing rule**
+> (article 28). Both are set out below. The Act also creates a household health-card
+> obligation collected by the OBR (article 153).
+>
+> **The withholding scales in articles 117–119 are not amended by it.** The Act's
+> derogations from the income tax law that were found target articles 28, 30, 37, 81, 85
+> and 122; **none touches 117, 118 or 119**, and articles 119 and 120 are referred to in
+> article 154 as continuing to operate. *Method and its limit:* the Act has **no text
+> layer at all** — zero extractable characters across 267 pages — so its whole operative
+> part (printed pages 22–68, Titres III to VI) was surveyed as rendered images at a
+> resolution that makes article numbers and opening lines legible, and the four articles
+> quoted here were then read at 165 dpi. That is a survey, not a certification: a
+> derogation could have been missed.
+>
+> **The period this Act governs is not the period in this guide's frontmatter.** It was
+> promulgated **30 June 2026** for *l'exercice 2026/2027*, and the guide is marked
+> `tax_year: 2025`. The commencement article was not located, so exactly which dates the
+> exercice spans is **not** asserted here.
+>
+> *Reading note: the law's number and the day of the month — "N°1/**10**" and "DU **30**
+> JUIN 2026" — are **handwritten** into blanks on the printed title page. The month, the
+> year and "EXERCICE 2026/2027" are printed, and every page header reads "Loi de finances
+> 2026/2027". The number and day are therefore read from handwriting, which is weaker
+> evidence than print.*
 
 - **Payroll income tax withholding**: article 117 sets monthly bands for
   ordinary pay from the principal employer, including exceptional payments:
@@ -48,15 +78,30 @@ totals. Confirm them against an INSS contribution schedule before calculating.
 - **Article 115 also requires a payslip**, kept by the employer, showing the
   employee's name and forename, the constituent elements of the salary, and the
   amount of tax withheld at source  _(art. 115: https://www.obr.bi/images/LOI_N1_14_DU_24_DECEMBRE_2020_PORTANT_MODIFICATION_DE_LA_LOI_N1_02_DU_24_JANVIER_2013_RELATIVE_AUX_IMPOTS_SUR_LES_REVENUS_1.pdf)_
-- **Employer INSS old-age/pension contribution** — 6% of gross wages % (approx — confirm; sources conflict)  _(Code de la sécurité sociale (INSS) (as described at [remotepeople.com](https://remotepeople.com/countries/burundi/hire-employees/payroll-tax/)))_
-- **Employee INSS old-age/pension contribution** — 4% of gross wages % (approx — confirm; sources conflict)  _(Code de la sécurité sociale (INSS) (as described at [remotepeople.com](https://remotepeople.com/countries/burundi/hire-employees/payroll-tax/)))_
-- **Monthly earnings cap for INSS pension contributions** — BIF 450,000 per month BIF (approx — confirm)  _(Code de la sécurité sociale (INSS) (as described at [remotepeople.com](https://remotepeople.com/countries/burundi/hire-employees/payroll-tax/)))_
-- **Employer occupational risk / work injury contribution** — 3% (capped at BIF 80,000 per month) % (approx — confirm)  _(Code de la sécurité sociale (INSS) (as described at [remotepeople.com](https://remotepeople.com/countries/burundi/hire-employees/payroll-tax/)))_
-- **Employee national health insurance contribution** — 3% of gross wages % (approx — confirm)  _([Régime d'assurance maladie (national health insurance)](https://remotepeople.com/countries/burundi/hire-employees/payroll-tax/))_
-- **Employer employment / vocational training levy** — 1% of gross wages % (approx — confirm)  _(Code de la sécurité sociale (INSS) (as described at [remotepeople.com](https://remotepeople.com/countries/burundi/hire-employees/payroll-tax/)))_
+
+## What counts as employment income — rewritten for 2026/2027
+
+- **Eight categories, and four of them are the ones payroll gets wrong** — Article 155 of the Finance Act replaces article 30 of the income tax law. Employment income is: (1) salaries, wages, indemnities and allowances **of every kind**, **jetons de présence and tantièmes**, bonuses and various remuneration; (2) payment discharging or reimbursing expenses incurred by the employee **or a person connected with them** where **unrelated to the employer's business**; (3) payments for the employee's **acceptance of certain working conditions**; (4) **redundancy, job-loss or contract-termination indemnities, except death benefits**; (5) **end-of-career, end-of-mandate or retirement indemnities**; (6) **pensions, annuities or indemnities from qualified pension funds, State social security funds and supplementary social security bodies on retirement**; (7) any ***paiement occulte*** or other benefit the employee receives **from a third party**; (8) any other payment or benefit under current, past or future employment not falling within articles 32 to 34. Directors' attendance fees, a third party's benefit and a reimbursement of private expenses are each employment income here  _([Loi n°1/10 du 30 juin 2026, art. 155](https://www.obr.bi/images/LOI_DE_FINANCES_2026-2027_PROMULGUEE_compressed.pdf))_
+- **Death benefits are the single carve-out in the termination list** — Category (4) taxes redundancy, loss-of-office and termination indemnities and excepts only *indemnités de décès*. Read with article 117's separate marginal scale for termination and retirement payments, the position is that those payments are taxable but scaled, not exempt  _([Loi n°1/10 du 30 juin 2026, art. 155](https://www.obr.bi/images/LOI_DE_FINANCES_2026-2027_PROMULGUEE_compressed.pdf))_
+- **A three-month advance notification, worded oddly and recorded as worded** — Article 155 closes: *"L'administration fiscale doit être informée de la non existence des redevables de l'impôt sur le revenu d'emploi dans un délai de trois (3) mois avant la rupture du contrat ou cessation d'activités."* On its face the tax administration must be told **three months before** a contract ends or activity ceases that there will be no employment-income taxpayers. The drafting is awkward and **no attempt is made here to read it down**  _([Loi n°1/10 du 30 juin 2026, art. 155](https://www.obr.bi/images/LOI_DE_FINANCES_2026-2027_PROMULGUEE_compressed.pdf))_
+- **How the annual liability is reduced, and the two deadlines** — Article 154 replaces article 28. Income tax on the annual return is reduced by: withholdings under **arts. 119 and 120**; provisional **quarterly** instalments under art. 126; the foreign tax credit under art. 14; tax paid on the sale of any asset used in the business under art. 37 al. 2; and any other withholding that is an instalment of income tax. Tax is declared and paid by the filing deadline, which is **the fifteenth day of the month following the month the income is realised** for monthly returns and **the last day of the third month after the accounting year closes** for annual returns, **except** for the annual recapitulative declaration under article 115  _([Loi n°1/10 du 30 juin 2026, art. 154](https://www.obr.bi/images/LOI_DE_FINANCES_2026-2027_PROMULGUEE_compressed.pdf))_
+
+## Health and social contributions
+
+- **Social Protection Code and amendment gap**: the governing title is Loi n°1/12 du 12 mai 2020 portant Code de la Protection Sociale au Burundi. The contribution provisions in articles 134–147 were read from a scan of that Code. The 2026/2027 Finance Act names amendments by Loi n°1/09 du 14 mars 2022 and Loi n°1/05 du 30 avril 2026. Their texts have not been read, so changes they make to these provisions remain unverified. [2020 Code, reproduced by P4H](https://p4h.world/app/uploads/2023/02/CODE20de2020Protection20Sociale20du20Burundi.x24228.pdf), [2026/2027 Finance Act, recitals](https://www.obr.bi/images/LOI_DE_FINANCES_2026-2027_PROMULGUEE_compressed.pdf).
+- **INSS publishes its schedule at inss.gov.bi**: its contribution-calculation page gives ordinary and difficult-work pension rates, separate pension and occupational-risk earnings caps, and the contribution base. The earlier unsuccessful requests to inss.bi did not establish that the institution's published rates were unavailable. [INSS, Calcul des cotisations](https://inss.gov.bi/calcul-des-cotisations/).
+- **Carte d'Assistance Maladie — BIF 3,000, and it is a tax collected by the OBR** — Article 153: acquiring a *Carte d'Assistance Maladie* is **compulsory for any household not affiliated to any other health mutual**, and the obligation extends to **every household member who has turned eighteen (18)**. The card is valid **twelve (12) months** and costs **trois mille francs burundais (3 000 BIF)** — words and digits together. It must be acquired **by 31 March each year**. Proceeds go to **State taxation managed by the Office Burundais des Recettes**, not to a health fund, which is why it appears in a Finance Act at all. A joint finance-and-health ministerial ordinance sets the modalities  _([Loi n°1/10 du 30 juin 2026, art. 153](https://www.obr.bi/images/LOI_DE_FINANCES_2026-2027_PROMULGUEE_compressed.pdf))_
+- **Insurance companies: 1.5% of prior-year gross premiums, non-deductible, due 31 March** — Article 152: insurance companies pay an **annual** contribution of **1.5%** of turnover, being total **gross premiums of the previous year net of cancellations**. It is **not deductible** from taxable income, and is declared and paid **no later than 31 March following the taxable period**, with late-filing and understatement penalties under the tax procedures law. Included here because it is a payroll-adjacent employer levy that this pack carried nowhere  _([Loi n°1/10 du 30 juin 2026, art. 152](https://www.obr.bi/images/LOI_DE_FINANCES_2026-2027_PROMULGUEE_compressed.pdf))_
+- **Ordinary pension contributions**: 6% employer and 4% employee, on monthly contributory earnings capped at BIF 450,000 per employee. The ordinary combined pension rate is 10%. [INSS, Calcul des cotisations](https://inss.gov.bi/calcul-des-cotisations/).
+- **Difficult-work pension category**: INSS separately publishes 8.8% employer and 5.8% employee for workers in arduous conditions, giving military and police personnel as examples. Check the employee's regime before applying the ordinary rates. [INSS, Calcul des cotisations](https://inss.gov.bi/calcul-des-cotisations/).
+- **Contribution base**: INSS includes remuneration, housing allowances, bonuses and indemnities, excludes expense reimbursements and states a minimum base equal to the SMIG. The Code's article 134 permits different caps by regime; article 135 delegates rate-setting to an ordinance. The Code itself does not supply the schedule's numerical rates and caps. [INSS, Calcul des cotisations](https://inss.gov.bi/calcul-des-cotisations/), [2020 Code, arts. 134–135](https://p4h.world/app/uploads/2023/02/CODE20de2020Protection20Sociale20du20Burundi.x24228.pdf).
+- **Occupational risk**: the employer pays 3% on monthly contributory earnings capped at BIF 80,000 per employee. BIF 80,000 is the earnings cap; the maximum monthly contribution is BIF 2,400. The employee pays no share. [INSS, Calcul des cotisations](https://inss.gov.bi/calcul-des-cotisations/).
+- **Health-insurance rate remains unverified**: the previous secondary source gives an employee rate of 3%. The INSS pension and risk schedule does not establish that rate or the health scheme to which it belongs. Obtain the applicable scheme's authority before deducting it. [Previous secondary source](https://remotepeople.com/countries/burundi/hire-employees/payroll-tax/).
+- **Training levy remains unverified**: the previous secondary source gives an employer levy of 1%. The INSS schedule and the Code provisions read here do not establish that charge. Its legal basis and employer coverage remain open. [Previous secondary source](https://remotepeople.com/countries/burundi/hire-employees/payroll-tax/).
 - **Payroll tax remittance** is due within 15 days after the month end under
-  article 115. The INSS deadline remains unverified against an INSS source.
+  article 115.
   [Income tax law, art. 115](https://www.obr.bi/images/LOI_N1_14_DU_24_DECEMBRE_2020_PORTANT_MODIFICATION_DE_LA_LOI_N1_02_DU_24_JANVIER_2013_RELATIVE_AUX_IMPOTS_SUR_LES_REVENUS_1.pdf).
+- **INSS payment and declaration under the 2020 Code**: article 139 requires the employer to pay both shares monthly or quarterly, as applicable, by the 15th of the following month. Article 141 requires the earnings and work-duration declaration on the same cycle and deadline. Article 145 makes the employer liable for an employee share it failed to deduct when paying remuneration. The effect of the unread 2022 and 2026 amendments and the employer's applicable filing cycle still need confirmation. [2020 Code, arts. 139, 141 and 145](https://p4h.world/app/uploads/2023/02/CODE20de2020Protection20Sociale20du20Burundi.x24228.pdf).
 - **Annual employer declaration**: article 115 requires the annual summary
   within 30 days after year end. [Income tax law, art. 115](https://www.obr.bi/images/LOI_N1_14_DU_24_DECEMBRE_2020_PORTANT_MODIFICATION_DE_LA_LOI_N1_02_DU_24_JANVIER_2013_RELATIVE_AUX_IMPOTS_SUR_LES_REVENUS_1.pdf).
 

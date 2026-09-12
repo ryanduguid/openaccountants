@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Morocco's auto-entrepreneur reg
 version: 1.0
 jurisdiction: MA
 tax_year: 2025
-last_updated: 2026-09-10
+last_updated: 2026-09-11
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -32,6 +32,13 @@ This skill replies in the user's language. Moroccan users mix English, French, a
 | Currency | MAD (dirham marocain, DH) |
 | Turnover ceiling — commercial / industrial / artisanal | **MAD 500,000 / year**, confirmed |
 | Turnover ceiling — services (prestations de services) | **MAD 200,000 / year**, confirmed |
+
+> **⚠ These are the auto-entrepreneur ceilings, not the CPU ceilings.** The Contribution
+> Professionnelle Unique in `ma-cpu` runs on **MAD 2,000,000** (commercial / industrial /
+> artisanal) and **MAD 500,000** (services). So **MAD 500,000 is this regime's commercial
+> ceiling and the CPU's services ceiling** — the same number meaning two different things
+> one guide apart. Breaching an AE ceiling routes to CPU, where the limit is higher, so
+> getting this backwards sends a taxpayer out of a regime they are still inside.
 | IR rate — commercial / industrial / artisanal | **0.5% of collected turnover**, confirmed |
 | IR rate — services | **1% of collected turnover**, confirmed. Service income above MAD 80,000 collected from ONE client is withheld at **30%** instead, which is the disguised-employment rule and not an exception a reader can waive |
 | Single-client anti-disguised-salary rule | Amounts > **MAD 80,000 / year** from one client (services) → client withholds **30%** at source on the excess, liberatory *(verify rate)* |

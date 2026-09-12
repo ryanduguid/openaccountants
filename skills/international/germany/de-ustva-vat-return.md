@@ -3,13 +3,27 @@ name: de-ustva-vat-return
 description: Prepares the Umsatzsteuervoranmeldung including Vorsteuer deductions, reverse charge for EU services, and Kleinunternehmerregelung threshold.
 jurisdiction: DE
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-11
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
 # German UStVA (VAT Return)
+
+<!-- einvoice-xref -->
+> **Germany's B2B e-invoicing obligation is live, and the reception side binds now.**
+> Since **1 January 2025** every domestic business must be able to **receive** an
+> EN 16931-compliant structured e-invoice. There is no transition for receiving:
+> §27 Abs. 38 UStG relieves only what may be *transmitted*, and §14 Abs. 1 UStG removes
+> the recipient-consent requirement wherever the §14 Abs. 2 Satz 2 Nr. 1 obligation
+> applies. Issuance is phased — paper remains permissible until **31 December 2026**,
+> and until **31 December 2027** for an issuer whose prior-year turnover was
+> **EUR 800,000 or less** (§27 Abs. 38 Nr. 1–2 UStG).
+>
+> Full treatment, verified against the consolidated statute, is in `germany-einvoice`.
+> This guide does not cover e-invoicing.
+
 
 ## Overview
 

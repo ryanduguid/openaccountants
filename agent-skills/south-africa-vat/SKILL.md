@@ -33,7 +33,7 @@ metadata:
 | Registration threshold | ZAR 2,300,000 in any consecutive 12-month period (from 1 April 2026). Voluntary registration: ZAR 120,000. |
 | Tax authority | SARS (South African Revenue Service) |
 | Return form | VAT201 (eFiling) |
-| Filing portal | SARS eFiling (https://efiling.sars.gov.za) |
+| Filing portal | SARS eFiling (https://www.sarsefiling.co.za) — the `efiling.sars.gov.za` form does not resolve |
 | Filing frequencies | Category A bimonthly (default); Category B monthly (>R30m); Category C six-monthly (farming <R1.5m); Category D annual (connected-party farming/rental); Category E annual (connected-party rental); Category F four-monthly (micro businesses on turnover tax) |
 | Filing deadline | Last business day of month following tax period (eFiling); 25th for paper (not recommended) |
 | Tax invoice | VAT-compliant invoice — required for input tax |

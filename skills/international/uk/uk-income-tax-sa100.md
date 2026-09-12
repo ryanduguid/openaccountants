@@ -1,13 +1,13 @@
 ---
 name: uk-income-tax-sa100
 description: Use this skill whenever asked about UK income tax for individuals filing SA100 Self Assessment. Trigger on phrases like "income tax UK", "SA100", "personal allowance", "tax bands", "tax computation", "marriage allowance", "savings allowance", "dividend allowance", "Scottish tax rates", "payments on account", "tax reducers", "tax relief", "April 2026", "2026-27", "Autumn Budget 2025", "income tax bands frozen 2027-28", or any question about computing a UK individual's income tax liability. Covers personal allowance (including taper), income tax bands for rUK and Scotland, marriage allowance, savings and dividend allowances, tax reducers, the final tax computation, payments on account, and the Autumn Budget 2025 changes from April 2026. ALWAYS read this skill before touching any UK income tax return work.
-version: 2.1
+version: 2.2
 jurisdiction: GB
 tax_year: 2025
 tax_year_notes: "2024-25, 2025-26 and 2026-27; 2026-27 reconciled to Finance Act 2026 (c. 11)"
-last_updated: 2026-09-10
+last_updated: 2026-09-12
 reviewed_by: James Power
-review_status: current
+review_status: pending_review
 depends_on:
   - income-tax-workflow-base
 category: international
@@ -15,9 +15,11 @@ tier: 1
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
+> This revision includes changes made after the recorded accountant review and awaits a new review.
+
 # UK Income Tax Sa100
 
-## UK Income Tax (SA100) -- Individual Tax Computation Skill v2.1
+## UK Income Tax (SA100) -- Individual Tax Computation Skill v2.2
 
 This skill covers **three tax years in parallel**:
 
@@ -27,7 +29,7 @@ This skill covers **three tax years in parallel**:
 
 All headline income tax rates and thresholds are **frozen through 2027-28**. The Autumn Budget 2025 announced targeted rate increases on investment income, but they do **not** all start together: **dividends** rise from 6 April 2026, while **savings** and **property** income rise from 6 April **2027** -- see Section 1.5.
 
-## Verified rates & thresholds (accountant-reviewed)
+## Rates and thresholds: review pending
 
 > Reviewed against the cited tax authorities by **James Power** on 2026-06-03.
 > Items flagged for further clarification are tracked separately and excluded here.
@@ -79,7 +81,7 @@ All headline income tax rates and thresholds are **frozen through 2027-28**. The
 | Filing deadline (online) 2026-27 | 31 January 2028 |
 | Contributor | Open Accountants Community |
 | Validated by | Verified by James Power on 2026-06-03 |
-| Skill version | 2.1 |
+| Skill version | 2.2 |
 
 ### 1.0 Three-Year Comparison -- Headline rUK Bands (FROZEN through 2027-28) [T1]
 
@@ -271,7 +273,7 @@ See companion skill `uk-dividends` for full dividend-specific guidance, includin
 - **R-UK-IT-3** — Income from trusts (SA107) has specific rules. Out of scope. (Trust income)
 - **R-UK-IT-4** — Tapered annual allowance, money purchase annual allowance, and carry-forward calculations beyond basic require specialist review. Escalate. (Complex pension annual allowance)
 - **R-UK-IT-5** — Capital gains are computed separately on SA108. This skill covers income tax only. (Capital gains)
-- **R-UK-IT-6** — Savings and property income for **2027-28 onward**, where the return spans the 22 / 42 / 47 rates that begin 6 April 2027 and their interaction with the Section 24 reducer, which stays at the basic rate of 20%. Flag for reviewer. A **2026-27** return needs no such flag: those rates are unchanged at 20 / 40 / 45.
+- **R-UK-IT-6** — Savings and property income for **2027-28 onward**, where the return spans the 22 / 42 / 47 rates that begin 6 April 2027 and their interaction with the residential finance-cost reducer, which rises to the property basic rate of 22% from 2027–28. Flag for reviewer. A **2026-27** return needs no such flag: those rates are unchanged at 20 / 40 / 45.
 
 ## Section 3 -- Transaction Pattern Library
 
@@ -475,7 +477,7 @@ When savings and dividends push income across rate band boundaries, the interact
 
 ### 6.6 2026-27 Savings and Property Income Rate Confirmation [T2]
 
-The Autumn Budget 2025 rates for savings and property income are **22% / 42% / 47%** and they apply **from 6 April 2027**, not 6 April 2026 — a year after the dividend change. For **2026-27** both streams stay at the ordinary **20% / 40% / 45%**, so a 2026-27 return can be finalised: there is nothing to hold open. Note the additional rate does move, to 47%. The Section 24 finance-cost reducer stays at 20% throughout: it follows the basic rate of income tax, which the Budget did not change.
+The Autumn Budget 2025 rates for savings and property income are **22% / 42% / 47%** and they apply **from 6 April 2027**, not 6 April 2026 — a year after the dividend change. For **2026-27** both streams stay at the ordinary **20% / 40% / 45%**, so a 2026-27 return can be finalised: there is nothing to hold open. Note the additional rate does move, to 47%. The residential finance-cost reducer remains 20% through 2026–27 and rises to the property basic rate of 22% from 2027–28. See [Finance Act 2026 sections 6(8) and 7, Schedule 1 paragraph 40](https://www.legislation.gov.uk/ukpga/2026/11/pdfs/ukpga_20260011_en.pdf).
 
 ## Section 7 -- Excel Working Paper Template
 

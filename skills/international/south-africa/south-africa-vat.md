@@ -36,7 +36,7 @@ This block is generated from verified `skill_facts` — edit the facts, not the 
 - **Registration threshold** — R2,300,000 from 1 April 2026 (compulsory). R120,000 (voluntary).  _(VAT Act s 23; SARS Register for VAT page)_
 - **Tax authority** — SARS (South African Revenue Service)
 - **Return form** — VAT201 (eFiling)
-- **Filing portal** — SARS eFiling (https://efiling.sars.gov.za)
+- **Filing portal** — SARS eFiling (https://www.sarsefiling.co.za). The `efiling.sars.gov.za` form previously given here **does not resolve**
 - **Filing frequencies** — No quarterly category exists. See "Tax year" row above for the full list.  _(VAT Act s 27)_
 - **Filing deadline** — Last business day of month following tax period (eFiling); 25th for paper (not recommended)  _(VAT Act s 28)_
 - **Tax invoice** — Add the required content (see Section 5.4 below): full invoice over R5,000 incl VAT, abridged R50-R5,000, no invoice required for R50 or less but a till slip is needed.  _(VAT Act s 16(2) and s 20)_
@@ -219,7 +219,7 @@ Note: skill has the disclaimer duplicated at end of file (sections 514-516 and 5
 | Registration threshold | ZAR 2,300,000 in any consecutive 12-month period (from 1 April 2026). Voluntary registration: ZAR 120,000. |
 | Tax authority | SARS (South African Revenue Service) |
 | Return form | VAT201 (eFiling) |
-| Filing portal | SARS eFiling (https://efiling.sars.gov.za) |
+| Filing portal | SARS eFiling (https://www.sarsefiling.co.za) — the `efiling.sars.gov.za` form does not resolve |
 | Filing frequencies | Category A bimonthly (default); Category B monthly (>R30m); Category C six-monthly (farming <R1.5m); Category D annual (connected-party farming/rental); Category E annual (connected-party rental); Category F four-monthly (micro businesses on turnover tax) |
 | Filing deadline | Last business day of month following tax period (eFiling); 25th for paper (not recommended) |
 | Tax invoice | VAT-compliant invoice — required for input tax |

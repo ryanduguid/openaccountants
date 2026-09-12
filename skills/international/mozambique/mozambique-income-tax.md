@@ -53,6 +53,28 @@ Regime note. The 2025 tax year and earlier follow the long-standing CIRPS. Law N
 
 [RESEARCH GAP — reviewer to confirm] The published deductible amounts for the 25% bracket (MZN 37,500) and 32% bracket (MZN 141,540) do not produce perfectly continuous brackets (strict continuity would require 35,700 and 143,340 respectively). The published "parcela a abater" values are the figures AT applies and are used in this skill as authoritative; reviewer to verify against the official CIRPS schedule. The cumulative-tax column above is computed using the published deductible amounts.
 
+> **⚠ Do not "fix" the 340,500 in the table above — it is correct, and this repo's own
+> checker disagrees with it.** `scripts/check-derived-columns.py` reports the 25% row as a
+> mismatch: *"bands give 342,300.00, column says 340,500.00"*. Both figures are right for
+> different formulas, and the difference is exactly the discontinuity described above.
+>
+> - **Accumulating the marginal bands**: 4,200 + 18,900 + 67,200 + (1,008,000 × 25%) =
+>   **342,300**. This is what the checker computes, because it assumes a continuous schedule.
+> - **The formula AT actually applies**, stated in the row below the table: income × bracket
+>   rate − parcela a abater = 1,512,000 × 25% − 37,500 = **340,500**. This is what the
+>   column states.
+>
+> The two agree only where the parcela is the continuity-preserving value (35,700), and
+> Mozambique's published one is not. So the checker's assumption fails here rather than the
+> table being wrong, and changing the column to 342,300 would introduce an error while
+> silencing the warning.
+>
+> **The authority still cannot be reached.** The citation above records a TLS error from an
+> earlier attempt; retried on **11 September 2026**, `www.at.gov.mz` now **resets the
+> connection** — both the site root and the IRPS rates page — so the failure mode has
+> changed but the result has not. The parcelas remain corroborated only by a commercial
+> summary, and the research gap stands.
+
 - **Non-residents withholding rate** — 20% percent (flat withholding on Mozambique-source income (including employment))  _(PwC — https://taxsummaries.pwc.com/mozambique/individual/taxes-on-personal-income)_
 
 ### INSS Social Security Contributions

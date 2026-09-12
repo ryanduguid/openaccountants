@@ -84,7 +84,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | --- | --- | --- |
 | OTA, OMAN TAX AUTHORITY | EXCLUDE | Tax payment |
 | CUSTOMS, ROYAL OMAN POLICE | EXCLUDE | Government levy (check for import VAT separately) |
-| PASI, PUBLIC AUTHORITY FOR SOCIAL INSURANCE | EXCLUDE | Social insurance |
+| SPF, SOCIAL PROTECTION FUND, صندوق الحماية الاجتماعية | EXCLUDE | Social insurance — the current payee since 1 January 2024 |
+| PASI, PUBLIC AUTHORITY FOR SOCIAL INSURANCE | EXCLUDE | Social insurance — legacy narration; PASI was superseded by the SPF, so expect this only on pre-2024 statements |
 | MINISTRY | EXCLUDE | Government fee |
 
 ### 3.3 Utilities
@@ -277,9 +278,9 @@ REVIEWER FLAG / ESCALATION REQUIRED
 
 ### Out of scope -- direct tax
 
-- Corporate Income Tax: 15% (standard)
-- Personal Income Tax: None
-- Social insurance (PASI): employer 11.5%, employee 7%
+- Corporate Income Tax: 15% (standard) — Income Tax Law, art. 112
+- Personal Income Tax: None in force; 5% above OMR 42,000 from 1 January 2028 (RD 56/2025)
+- Social insurance (Social Protection Fund, **not PASI** — PASI's pension provisions were repealed by RD 52/2023 art. IV): employer **14.5%**, employee **8%** for Omanis, across five branches; the RO 3,000/month ceiling covers only two of them. Non-Omanis: employer **9%** of basic wage to the savings system, replacing end-of-service gratuity. See `om-payroll-social`
 - Excise tax: tobacco 100%, energy drinks 100%, carbonated 50%, alcohol 100%, pork 100%
 
 ### Prohibitions

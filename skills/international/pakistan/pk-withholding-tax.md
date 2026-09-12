@@ -3,18 +3,20 @@ name: pk-withholding-tax
 description: "ALWAYS read this skill before touching any Pakistan Withholding Tax (WHT) work. Use this skill whenever asked to compute, classify, withhold, deposit, or reconcile Pakistan Withholding Tax obligations under the Income Tax Ordinance 2001 (ITO 2001) as amended by Finance Acts 2024 and 2025. Trigger on phrases like \"Pakistan WHT\", \"Pakistan withholding\", \"FBR WHT rates\", \"Section 153 Pakistan\", \"filer vs non-filer rates\", \"ATL rates\", \"advance tax Pakistan\", \"WHT services Pakistan\", \"Section 149 salary withholding\", \"Section 150 dividend WHT\", \"Section 151 profit on debt\", \"Section 152 non-resident WHT\", \"Section 153 services goods contracts\", \"Section 155 rent WHT\", \"Section 156 prizes winnings\", \"Section 165 statement\", \"PSID payment slip\", \"CPR Pakistan\", \"IRIS withholding\", \"WHT credit Pakistan\", \"exemption certificate Section 159\", \"reduced rate certificate Pakistan\", \"treaty WHT Pakistan\", \"DTA Pakistan withholding\". Pakistan WHT is the largest single source of federal tax revenue in Pakistan and operates across dozens of sections of the ITO 2001 covering imports, salary, dividends, profit on debt, payments to non-residents, payments for goods/services/contracts, rent, prizes, brokerage and commission, sale by auction, motor vehicles, electricity, telephone, banking transactions, and many sector-specific levies. Rates are published in the First Schedule and Division provisions of the ITO 2001 and are amended every year by the Finance Act — always verify against the current year text on the FBR website before relying on a figure. The Active Taxpayers List (ATL) regime under Tenth Schedule applies penal rates (typically 2x to 3x) to recipients not appearing on the weekly ATL published by FBR. ALWAYS read this skill before quoting a Pakistan WHT rate, drafting a withholding letter, computing a deposit, or advising on WHT credit claims. Out of scope: provincial sales tax on services WHT (separate from federal income WHT — covered by pakistan-sales-tax skill), Workers Welfare Fund and Workers Profit Participation Fund, Federal Excise Duty mechanics, customs duty on imports beyond Section 148, bespoke SRO-based exemptions (request the actual SRO before applying), and individual income tax return assembly (refer to a Pakistan tax practitioner)."
 jurisdiction: PK
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-12
 reviewed_by: Ibrar Ali
-review_status: current
+review_status: pending_review
 tier: 1
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 ---
 
+> This revision includes changes made after the recorded accountant review and awaits a new review.
+
 # PK Withholding Tax
 
-## Pakistan — Withholding Tax — Skill v1.0
+## Pakistan — Withholding Tax — Skill v1.1
 
-## Verified rates & thresholds (accountant-reviewed)
+## Rates and thresholds: review pending
 
 Reviewed against the cited tax authorities by **Ibrar Ali** on 2026-06-12.
 Items flagged for further clarification are tracked separately and excluded here.
@@ -26,7 +28,7 @@ This block is generated from verified `skill_facts` — edit the facts, not the 
 - **§148 Imports — industrial own-use raw materials** — 6% for Part III, 3.5% for Part II (double for non-filer)  _(ITO 2001 §148)_
 - **§150 Dividends — general** — Filer 15% / non-filer 30%  _(ITO 2001 §150)_
 - **§150 Dividends — IPP / mutual fund / REIT** — 7.5%–25% for filers (15%–50% for non-filers)  _(ITO 2001 §150)_
-- **§151 Profit on debt** — Filer 20% for bank profit / 15% for others (double for non-filers)  _(ITO 2001 §151)_
+- **§151 Profit on debt** — Finance Act 2025: 20% on bank/financial-institution deposits and specified government-security profit paid to non-individuals; 15% in other cases; ordinary non-ATL rates double  _(ITO 2001 §151)_
 - **§152(1) Royalty / fee for technical services** — 15% (treaty cap may apply) — final  _(ITO 2001 §152(1))_
 - **§152(1A) Non-resident contract** — 7% (no non-filer surcharge applies)  _(ITO 2001 §152(1A))_
 - **§152(1AA) Insurance / reinsurance premium** — 5% (no non-filer surcharge applies)  _(ITO 2001 §152(1AA))_
@@ -85,10 +87,10 @@ This block is generated from verified `skill_facts` — edit the facts, not the 
 | --- | --- | --- | --- | --- |
 | **148** | Imports (commercial importer) | 5.5% (general goods, value-based) | 11% | Adjustable for most goods; minimum tax for some categories |
 | **148** | Imports (industrial undertaking — raw materials for own use) | 6% (Part III) / 3.5% (Part II) | 2x | Adjustable |
-| **149** | Salary | Progressive slab (0% to **35%** for income above Rs 4.1m for non-salaried; salaried slabs separate) | n/a (employer withholds per slabs) | Adjustable against annual tax |
+| **149** | Salary | Use the salary scale for the relevant tax year; the FA 2025 scale reaches 35% above Rs 4.1m | n/a (employer withholds per slabs) | Adjustable against annual tax |
 | **150** | Dividends — general | **15%** | 30% | **Final** for most recipients |
 | **150** | Dividends — IPP / mutual fund / REIT (special categories) | 7.5% – 25% (filers) | 15% – 50% (non-filers) | Final |
-| **151** | Profit on debt (bank deposits, savings certificates, bonds) | **20% (bank profit) / 15% (others)** (where yield exceeds Rs 5m, higher rates apply) | 2x | **Final** for individuals up to threshold; adjustable for companies |
+| **151** | Profit on debt (bank deposits, savings certificates, bonds) | **20%** on bank/financial-institution deposits and government-security profit under §151(1)(c) paid to non-individuals; **15%** in other cases. Separate §7B liability rules from withholding | 2x | **Final** for individuals up to threshold; adjustable for companies |
 | **152(1)** | Royalty / fee for technical services to non-resident | 15% (treaty cap may apply) | 15% | Final (subject to treaty) |
 | **152(1A)** | Non-resident contract execution (construction, assembly, services in PK) | 7% (PE-attributable) | no non-filer surcharge applies | Final / minimum tax depending on election |
 | **152(2)** | Other payments to non-residents (general) | 10% – 20% per nature | no non-filer surcharge applies | Generally final |
@@ -180,7 +182,7 @@ Capture the GD number, the H.S. code, the assessed import value, customs duty, F
 - **Trigger** — Any payment of salary by an employer to an employee resident or non-resident, where the salary is sourced in Pakistan.  _(Section 149)_
 - **Estimated annual liability withholding** — Employer must compute the **estimated annual tax liability** of the employee at the start of the tax year (or on joining), divide by 12, and withhold a 1/12 share each month.  _(Section 149)_
 - **Salary slabs TY 2025-26** — Salaried slabs run from 0% (income up to Rs 600k) through progressive bands up to a top marginal rate of 35% (salaried) on income above the topmost threshold. (per FA 2025 — verify)  _(FA 2025)_
-- **Non-salaried slabs** — Non-salaried (business / AOP / individual professional) slabs are different and reach 35% above the top threshold.  _(Section 149)_
+- **Non-salaried slabs** — Use the separate non-salary scale in the income-tax guide for the applicable year. Section 149 does not supply a non-salary tax table.
 - **In-year adjustment** — The employer adjusts during the year if salary, allowances, bonuses, or tax credits change.  _(Section 149)_
 - **Tax credits against Section 149 withholding** — Section 60C — interest on house loan; Section 61 — donations to approved institutions; Section 63 — voluntary pension fund contributions; Section 62 — investment in shares / mutual funds / Sukuks (capped). Employee must inform employer in writing.  _(Sections 60C, 61, 62, 63)_
 - **Adjustability** — Salary WHT is **adjustable** — credited against the employee's annual return liability.  _(Section 149)_
@@ -198,9 +200,15 @@ Capture the GD number, the H.S. code, the assessed import value, customs duty, F
 
 ### 3.4 Section 151 — Profit on debt
 
+Finance Act 2025 replaces First Schedule Part III Division IA and removes the
+specific profit-on-debt entry from the third proviso to Tenth Schedule rule 1.
+The former 35% non-ATL exception no longer applies; the ordinary doubling rule
+produces 40% or 30%, according to the applicable base rate. Verify later
+amendments for a later tax year. Source: [Finance Act 2025](https://download1.fbr.gov.pk/Docs/2025629106147620FInanceAct2025.pdf) (PDF pages 92 and 113–114).
+
 - **Trigger** — Payment of interest / profit on debt by a Pakistan-resident payer (bank, NBFC, government, company, individual) on bank deposits, savings certificates, government bonds, sukuks, term finance certificates, or general lending.  _(Section 151)_
-- **Standard rate** — 20% for bank profit / 15% for others (filer); double for non-filers on the gross profit on debt  _(Section 151)_
-- **Yield threshold** — For individual recipients where yield exceeds Rs 5m in a tax year, higher rates may apply per First Schedule.  _(First Schedule)_
+- **Standard rate** — For Finance Act 2025, 20% on bank/financial-institution deposits and government-security profit under §151(1)(c) paid to a person other than an individual; 15% in other cases. Apply the ordinary 100% non-ATL increase where required  _(Section 151)_
+- **Annual assessment**: Check section 7B and the relevant year’s First Schedule separately for the recipient’s annual liability. The section 151 withholding table does not impose a higher rate solely because annual yield exceeds Rs 5m.
 - **Individual/AOP treatment** — For most individual / AOP recipients, profit on debt WHT is final tax on amounts up to the threshold; beyond it, treatment shifts to normal regime in some cases — confirm per current FA.  _(Section 151)_
 - **Company treatment** — For company recipients, it is adjustable against CIT.  _(Section 151)_
 - **Deduction point** — Banks withhold automatically at the time of credit to the depositor's account.  _(Section 151)_
