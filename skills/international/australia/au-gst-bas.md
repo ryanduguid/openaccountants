@@ -4,7 +4,7 @@ description: Australian Business Activity Statement (BAS) — non-GST sections. 
 version: 1.3
 jurisdiction: AU
 tax_year: 2025
-last_updated: 2026-09-10
+last_updated: 2026-09-14
 review_status: pending_review
 category: international
 tier: 2
@@ -34,7 +34,7 @@ This file covers the non-GST sections of the Business Activity Statement. For GS
 This skill covers:
 
 - **PAYG withholding labels** (W1 through W5) — amounts withheld from payments to employees and contractors
-- **PAYG income tax instalment labels** (T1 through T9) — quarterly pre-payments of income tax
+- **PAYG income tax instalment labels** (T1 through T11, 5A and 5B): quarterly pre-payments of income tax
 - **FBT instalment label** (F1) — fringe benefits tax quarterly instalments
 - **Fuel tax credits** (7C, 7D) — overview only
 - **BAS lodgement and payment deadlines**
@@ -118,18 +118,18 @@ This skill does NOT cover:
 
 - **PAYG withholding computation steps** — **Step 1.** Identify the payments and withholding labels that apply during the period: - W1 — total salary, wages and other payments subject to withholding, where W1 must be completed; - W2 — amounts withheld from the payments shown at W1; - W3 — other amounts withheld; - W4 — amounts withheld where an ABN was not quoted; and - W5 — total amounts withheld: W2 + W3 + W4. **Step 2.** Reconcile the labels that the entity must report on its issued activity statement with payroll records, STP data and any ATO pre-fill. A small or medium withholder reporting through STP does not need to separately report W1; complete W2, W3, W4 and W5 where applicable. A large withholder that does not report through STP completes only W1; a large withholder reporting through STP does not report PAYG withholding on its activity statement. Large withholders do not complete W2, W3, W4, W5 or label 4 and must pay withheld amounts electronically on the applicable large-withholder schedule. **Step 3.** Where W2 applies, cross-check it against ATO PAYG withholding tax tables for each employee's earnings level. **Step 4.** If the entity makes payments to a supplier without an ABN, withhold 47% and account for that amount under the reporting and payment rules for the entity's withholding class. **Step 5.** Where W5 applies, report the W2 + W3 + W4 total and pay the amount due by the applicable due date.  _([ATO — PAYG withholding](https://www.ato.gov.au/businesses-and-organisations/preparing-lodging-and-paying/business-activity-statements-bas/pay-as-you-go-payg-withholding); [ATO — PAYG withholding pre-fill for activity statements](https://www.ato.gov.au/businesses-and-organisations/hiring-and-paying-your-workers/single-touch-payroll/stp-and-activity-statements/ato-payg-withholding-pre-fill-for-activity-statements); [ATO — changes to PAYG withholding cycles](https://www.ato.gov.au/api/public/content/0-a1d50fe2-efe7-4866-9d51-855fd171ac74))_
 
-### 4.2 PAYG income tax instalments (labels T1-T9)
+### 4.2 PAYG income tax instalments (T labels, 5A and 5B)
 
 Two methods are available:
 
 #### Method A — Instalment amount method (label T7)
 
-- **Instalment amount method steps** — **Step 1.** ATO notifies the instalment amount on the pre-filled BAS. **Step 2.** The taxpayer reports the notified amount at T7 (or varies it). **Step 3.** If varying, the taxpayer calculates estimated tax for the year divided by the number of remaining quarters and reports at T7 with a reason for variation at T3.  _(TAA 1953 Sch 1 s 45-5)_
+- **Instalment amount method:** The notice shows the amount at T7; if unchanged, report it at 5A. For a variation, estimate annual benchmark tax at T8. For four quarterly instalments, apply 25%, 50%, 75% or 100% for the relevant quarter, subtract earlier instalments and add applicable earlier credits. Report the varied amount at T9 and 5A, and the reason at T4. If the result is nil or negative, enter zero at T9/5A; an eligible credit may be claimed as a positive amount at 5B. For Q3, $12,000 annual estimated tax less $8,000 earlier instalments, with no earlier credits, gives $12,000 x 75% - $8,000 = $1,000. (Library, Tax/Administration and Assessment; [ATO variation instructions](https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/payg-instalments/how-to-vary-your-payg-instalments).)
 
 #### Method B — Instalment rate method (labels T1-T2)
 
-- **Instalment rate method steps** — **Step 1.** Calculate instalment income for the quarter (T1). Instalment income = gross business and investment income. It does NOT include salary/wages (already subject to PAYG withholding), GST, or capital gains. **Step 2.** Multiply T1 by the ATO-notified instalment rate (T2). **Step 3.** Result = T1 x T2 = instalment amount payable (T9). **Step 4.** The taxpayer may vary the rate (enter new rate at T2) if they believe the notified rate will result in over-payment. A general interest charge (GIC) applies if the varied amount is less than 85% of the correct amount.  _(TAA 1953 Sch 1 s 45-120)_
-- **Instalment amount formula** — T1 x T2 = instalment amount payable (T9)  _(TAA 1953 Sch 1 s 45-120)_
+- **Instalment rate method:** Calculate quarterly instalment income at T1, excluding salary and wages, GST and capital gains. Multiply by the notified percentage rate at T2 and report the amount at T11 and 5A. To vary, enter the new percentage at T3 and the reason at T4; multiply T1 by T3 for T11 and 5A. Any eligible credit claimed for earlier instalments goes at 5B. Assess variation interest against benchmark tax; below 85% may attract GIC. Benchmark tax is distinct from total assessed tax. (Taxation Administration Act 1953 (Cth) sch 1 div 45; ATO variation instructions above.)
+- **Rate-method amount:** T1 x T2, or T1 x varied T3, gives the amount at T11 and 5A.
 
 ### 4.3 FBT instalment (label F1)
 
@@ -137,7 +137,7 @@ Two methods are available:
 
 ### 4.4 Net BAS payable / refundable
 
-- **Net BAS payable formula** — Total BAS payable = GST payable (from australia-gst.md labels) + W5 + T9 (or T7) + F1 - any credits.  _(australia-gst.md)_
+- **Net BAS payable formula:** Total BAS payable = GST payable (from australia-gst.md labels) + W5 + PAYG instalment at 5A + F1 - any credits, including an eligible PAYG variation credit at 5B.  _(australia-gst.md)_
 
 ## Section 5 — Edge cases and special rules
 
@@ -167,7 +167,8 @@ Before delivering output, verify:
 
 - [ ] Applicable PAYG withholding labels agree with payroll records, STP data and any ATO pre-fill
 - [ ] PAYG instalment income (T1) excludes salary, GST, and capital gains
-- [ ] The instalment rate (T2) matches the ATO notification or is validly varied
+- [ ] The notified rate remains at T2; any varied rate is at T3, the reason at T4 and the rate-method amount at T11/5A
+- [ ] An amount variation uses T8/T9 and the cumulative quarterly calculation
 - [ ] FBT instalment (F1) is 25% of prior year FBT liability or validly varied
 - [ ] Lodgement due date has been correctly identified (including any tax agent extensions)
 - [ ] GST section cross-references to australia-gst.md output

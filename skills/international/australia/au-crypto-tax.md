@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Australian cryptocurrency taxat
 version: "1.2"
 jurisdiction: AU
 tax_year: 2025
-last_updated: 2026-09-10
+last_updated: 2026-09-14
 review_status: pending_review
 category: international
 tier: 2
@@ -28,7 +28,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Currency | AUD (all gains/income must be reported in AUD) |
 | Tax year | 1 July 2024 -- 30 June 2025 |
 | Primary legislation | Income Tax Assessment Act 1997, Div 104 (CGT events), Div 118 (exemptions) |
-| Supporting guidance | ATO Cryptocurrency guidance (updated 2024); TD 2014/26 (Bitcoin as CGT asset); PCG 2023/1 (DeFi) |
+| Supporting guidance | TD 2014/26 (Bitcoin as CGT asset); ATO [staking rewards and airdrops](https://www.ato.gov.au/individuals-and-families/investments-and-assets/crypto-asset-investments/transactions-acquiring-and-disposing-of-crypto-assets/staking-rewards-and-airdrops) and [DeFi and wrapping crypto](https://www.ato.gov.au/individuals-and-families/investments-and-assets/crypto-asset-investments/decentralised-finance-and-wrapping-crypto) (updated 19 August 2026) |
 | Tax authority | Australian Taxation Office (ATO) |
 | Filing portal | myTax / tax agent lodgement |
 | Filing deadline | 31 October (self-lodgement); agent-managed deadlines vary |
@@ -56,7 +56,7 @@ The ATO treats cryptocurrency (including Bitcoin, Ethereum, stablecoins, NFTs, a
 
 | Item | Value |
 | --- | --- |
-| Personal use asset exemption | Acquisition cost < $10,000 |
+| Personal use asset exemption | First cost-base element $10,000 or less, with personal-use conditions met |
 | CGT discount (held 12+ months) | 50% for individuals and trusts |
 | CGT discount -- companies | Not available |
 | Capital loss carry forward | Indefinite (offset against future capital gains only) |
@@ -120,12 +120,12 @@ Available if:
 | Condition | All Must Be Met |
 | --- | --- |
 | Acquired for personal use (e.g., to purchase goods) | Yes |
-| Acquisition cost < $10,000 | Yes |
+| First cost-base element $10,000 or less, with personal-use conditions met | Yes |
 | Used within a short time of acquisition | Yes |
 | NOT held as an investment | Yes |
 | NOT held for exchange/trading purposes | Yes |
 
-- **Exemption failure conditions** — If ANY acquisition cost ≥ $10,000, the personal use asset exemption does NOT apply. If crypto is kept on an exchange or held for extended periods, the ATO considers it an investment -- NOT personal use.
+- **Exemption failure conditions** — A first cost-base element above $10,000 fails the amount test; exactly $10,000 passes that test only. Crypto acquired, kept or used as an investment, in a profit-making scheme or in a business is not a personal-use asset, regardless of cost. Assess purpose, use and holding history; a low cost alone does not establish exemption.
 
 ### 2.5 Trading vs Investing
 
@@ -139,7 +139,9 @@ Available if:
 | Organisation | Casual / part-time | Business-like, significant time commitment |
 | Capital employed | Personal savings | Significant working capital |
 | Tax treatment | Capital gains (50% discount available) | Ordinary income (no CGT discount, no capital loss restrictions) |
-| Losses | Capital losses only | Business losses (offset all income) |
+| Losses | Capital losses only | Individual business losses require the Division 35 non-commercial-loss screen before offset against other income |
+
+For an individual, the four-test route requires Division 35 income below $250,000 and at least one qualifying test: activity income of at least $20,000, profit in 3 of 5 years, qualifying real property of at least $500,000, or qualifying other assets of at least $100,000. Apply the asset exclusions and statutory income measure in `au-sole-trader-schedule.md`. Otherwise defer the loss unless an exception or Commissioner discretion permits an offset. A $5,000 crypto-business loss failing all tests cannot automatically reduce salary income. (Library, Tax/Individuals, non-commercial losses.)
 
 ### 2.6 Staking Rewards
 
@@ -156,16 +158,23 @@ Available if:
 
 **Airdrops**
 
+Classify the activity and reason for receipt before deciding income treatment. A claim transaction or an established token value alone does not make an airdrop ordinary income. The ATO page updated 19 August 2026 refers to **draft TR 2026/D1**; retain that draft status. For an earlier return year, confirm the guidance's applicable period before changing a historical position.
+
 | Type | Treatment |
 | --- | --- |
-| Airdrop with no action required | Ordinary income at market value on receipt (if established market value exists) |
-| Airdrop requiring action (e.g., claim transaction) | Ordinary income when claimed |
-| Airdrop of worthless/no-market token | $0 income; cost base = $0 |
-| Subsequent disposal | CGT event -- cost base is value at receipt |
+| Reward for goods, services or another income-producing activity | Apply ordinary-income treatment to market value on receipt where applicable; assess business receipts under the business rules |
+| Unsolicited receipt, gift or windfall outside a business or income-producing activity | No ordinary income merely on receipt; first cost-base element is market value when received |
+| Receipt from a hobby or entertainment activity | No ordinary income on receipt; no deduction for the hobby costs |
+| No or negligible value when received | First cost-base element is generally nil. An unavailable quote alone does not establish nil value |
+| Subsequent disposal on capital account | Work out the capital gain or loss using the recorded receipt-date cost base |
+
+An unsolicited receipt of 10,000 tokens worth $0.05 each, outside a business or income-producing activity, has no ordinary income on receipt and a $500 first cost-base element. A $500 services reward instead produces $500 ordinary income and the same receipt-date cost base. Keep evidence of the activity, receipt and valuation.
 
 ### 2.8 DeFi Specific Events
 
 **DeFi Specific Events**
+
+Use the ATO [DeFi and wrapping guidance](https://www.ato.gov.au/individuals-and-families/investments-and-assets/crypto-asset-investments/decentralised-finance-and-wrapping-crypto) for lending and beneficial ownership, liquidity-pool deposits/withdrawals, periodic rewards and smart-contract wrapping/unwrapping. Its wrapping discussion refers to draft TD 2026/D2, not a final determination. Use the [staking and airdrop guidance](https://www.ato.gov.au/individuals-and-families/investments-and-assets/crypto-asset-investments/transactions-acquiring-and-disposing-of-crypto-assets/staking-rewards-and-airdrops) for those receipts. Match each protocol's terms and actual operation to the relevant source; the home-office guideline PCG 2023/1 supplies no DeFi treatment.
 
 | DeFi Action | Tax Treatment |
 | --- | --- |
@@ -219,10 +228,10 @@ Treated identically to other crypto assets. Purchase = acquisition (CGT asset). 
 | --- | --- | --- |
 | MARKET BUY | Acquisition | Cost = AUD paid + 0.1% fee |
 | MARKET SELL | Disposal (CGT event) | Proceeds = AUD received (net of 0.1% fee) |
-| SWAP | Disposal + acquisition | Two CGT events |
+| SWAP | Disposal + acquisition | For an ordinary swap of one investment asset, calculate one disposal and record the received asset's cost base |
 | AFFILIATE PAYMENT | Ordinary income |  |
 | REFERRAL REWARD | Ordinary income | Market value at receipt |
-| AIRDROP | Ordinary income (if value > $0) |  |
+| AIRDROP | Classify under section 2.7 | Receipt value alone does not establish ordinary income |
 | SEND TO EXTERNAL WALLET | Not a CGT event | Own-wallet transfer |
 
 ### 3.4 On-Chain Patterns
@@ -231,10 +240,10 @@ Treated identically to other crypto assets. Purchase = acquisition (CGT asset). 
 
 | Pattern | Treatment | Notes |
 | --- | --- | --- |
-| UNISWAP / SUSHISWAP SWAP | Disposal + acquisition | Two CGT events at market value |
+| UNISWAP / SUSHISWAP SWAP | Disposal + acquisition | Calculate the disposed asset's gain/loss at market value; record the acquired asset's cost base. Acquisition is not another disposal |
 | LP DEPOSIT (ADD LIQUIDITY) | Disposal of tokens, acquisition of LP token |  |
 | LP WITHDRAWAL (REMOVE LIQUIDITY) | Disposal of LP token, acquisition of tokens |  |
-| CLAIM REWARDS | Ordinary income | Market value at time of claim |
+| CLAIM REWARDS | Classify the reward under sections 2.6 and 2.7 | A claim transaction alone does not determine income character |
 | BRIDGE [TOKEN] TO [CHAIN] | Conservative: disposal + acquisition |  |
 | MINT NFT | Acquisition | Cost base = mint price + gas |
 | APPROVE / REVOKE (no transfer) | Not a CGT event | Gas fee adds to cost of next related transaction |
@@ -259,7 +268,7 @@ Treated identically to other crypto assets. Purchase = acquisition (CGT asset). 
 
 ### Step 5: Add Ordinary Income
 
-- **Add Ordinary Income** — Staking rewards + airdrops + mining income reported as other income (not in CGT schedule).
+- **Add Ordinary Income** — Report assessable staking rewards, qualifying airdrop receipts and mining income in the appropriate income fields. Classify airdrops under section 2.7 first; exclude non-income receipts from this step and retain their cost bases for later disposals.
 
 ### Step 6: Report on Tax Return
 
@@ -313,7 +322,7 @@ The ATO requires the following records for each transaction:
 
 ## Section 7 -- Prohibitions
 
-- **Prohibitions** — NEVER claim the personal use asset exemption for crypto held on an exchange for extended periods; NEVER apply the 50% CGT discount without verifying 12+ months holding period; NEVER apply the individual 50% CGT discount to companies; calculate any retained foreign-resident discount from the full residency history; NEVER offset capital losses against ordinary income (only against capital gains); NEVER apply capital losses before gross gains (apply losses first, THEN discount); NEVER ignore crypto-to-crypto swaps as non-events -- each swap is a disposal; NEVER assume DeFi events are non-taxable -- conservative approach is to treat as disposals; NEVER omit staking/airdrop income -- it is ordinary income when received; NEVER present tax calculations as definitive -- always label as estimated
+- **Prohibitions** — NEVER claim the personal use asset exemption for investment, profit-making or business crypto; NEVER apply the 50% CGT discount without verifying 12+ months holding period; NEVER apply the individual 50% CGT discount to companies; calculate any retained foreign-resident discount from the full residency history; NEVER offset capital losses against ordinary income (only against capital gains); NEVER apply capital losses before gross gains (apply losses first, THEN discount); NEVER ignore crypto-to-crypto swaps as non-events -- each swap is a disposal; NEVER assume DeFi events are non-taxable -- conservative approach is to treat as disposals; NEVER omit assessable staking rewards or qualifying airdrop income; classify airdrops by activity and receipt character before deciding whether ordinary income arises; NEVER present tax calculations as definitive -- always label as estimated
 
 ## Disclaimer
 

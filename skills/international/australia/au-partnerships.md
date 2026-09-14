@@ -6,7 +6,7 @@ version: 1.1
 jurisdiction: AU
 tax_year: 2026
 tax_year_notes: "2026-27"
-last_updated: 2026-09-10
+last_updated: 2026-09-14
 review_status: pending_review
 category: international
 tier: 2
@@ -17,7 +17,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
-> **Law-change context.** Treasury Laws Amendment (Tax Reform No. 1) Act 2026 (Royal Assent 26 June 2026) is LAW: from 1 July 2027 the 50% CGT discount for individuals, trusts and partnerships is replaced by cost base indexation plus a 30% minimum rate on capital gains accruing after that date -- partners' fractional-interest gains (Rule 7) are computed under current rules for 2025-26 and 2026-27 only. The $20,000 small business instant asset write-off is legislated for 2025-26; permanence from 1 July 2026 is ANNOUNCED, not yet law. Verify both before relying.
+> **Law-change context.** Treasury Laws Amendment (Tax Reform No. 1) Act 2026 (Royal Assent 26 June 2026) is LAW: from 1 July 2027 the 50% CGT discount for individuals, trusts and partnerships is replaced by cost base indexation plus a 30% minimum rate on capital gains accruing after that date -- partners' fractional-interest gains (Rule 7) are computed under current rules for 2025-26 and 2026-27 only. The permanent $20,000 small business instant asset write-off was enacted by the Treasury Laws Amendment (Tax Reform No. 2) Act 2026, assented to on 26 August 2026. Schedule 2 commences on 1 October 2026 and applies to qualifying first use or installation ready for taxable use from 1 July 2026. At both the prior 10 September review and this 14 September 2026 update, enactment is complete and commencement is pending. Verify the applicable period and conditions before relying.
 
 ## Section 1 -- Quick reference
 
@@ -268,7 +268,7 @@ For individual professional practitioners (IPPs) in law, accounting, engineering
 
 ### T2-5 -- 2026-27 reform horizon
 
-**Trigger:** planning that spans 1 July 2027, or asset write-off assumptions past 30 June 2026. **Issue:** LAW: from 1 July 2027 partners' capital gains move to indexation plus a 30% minimum rate (discount abolished for gains accruing after that date). ANNOUNCED only: permanent $20,000 instant asset write-off from 1 July 2026. **Action:** label every projection LAW vs ANNOUNCED; never model announced measures as enacted.
+**Trigger:** planning that spans 1 July 2027, or asset write-off assumptions past 30 June 2026. **Issue:** LAW: from 1 July 2027 partners' capital gains move to indexation plus a 30% minimum rate (discount abolished for gains accruing after that date). ENACTED, COMMENCEMENT PENDING at 14 September 2026: permanent $20,000 instant asset write-off. Schedule 2 of the Treasury Laws Amendment (Tax Reform No. 2) Act 2026 commences on 1 October 2026 and applies to qualifying first use or installation from 1 July 2026. **Action:** record assent, commencement and application dates separately for each measure.
 
 ---
 

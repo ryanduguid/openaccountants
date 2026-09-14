@@ -245,7 +245,7 @@ Small businesses using simplified reporting typically recognise on delivery/comp
 | GST-Free | Food (basic), medical, education, exports | G1 (no 1A) |
 | Input Taxed | Financial supplies, residential rent | G1 (no credit) |
 | BAS Excluded | Wages, drawings, loan principal, private | Not reported |
-| No ABN Withholding | Payments to suppliers without ABN (49% w/h) | Separate |
+| No ABN Withholding | Payments to suppliers without ABN (47% w/h, subject to exceptions) | Separate |
 
 ---
 
@@ -273,12 +273,14 @@ Small businesses using simplified reporting typically recognise on delivery/comp
 | Diminishing value | rate = days held ÷ 365 × (200% ÷ effective life) |
 | Prime cost (straight-line) | rate = days held ÷ 365 × (100% ÷ effective life) |
 
-### Common Effective Lives (ATO TR 2025/1 basis)
+### Common Effective Lives
+
+The laptop row follows the canonical guide's reference to the Income Tax Assessment (Effective Life of Depreciating Assets) Determination 2025. Retain that determination period when using the row.
 
 | Asset | Effective Life | DV Rate | PC Rate |
 |---|---|---|---|
 | Desktop computers | 4 years | 50% | 25% |
-| Laptops | 4 years | 50% | 25% |
+| Laptops | 2 years | 100% | 50% |
 | Printers/Scanners | 5 years | 40% | 20% |
 | Office furniture | 10 years | 20% | 10% |
 | Motor vehicles | 8 years | 25% | 12.5% |
@@ -485,7 +487,8 @@ Meet 2 of 3: Revenue ≥ $50m, assets ≥ $25m, employees ≥ 100.
 | W1 | Total salary/wages and other payments | 6100 |
 | W2 | Amounts withheld from payments (PAYG-W) | 2100 |
 | T1 | PAYG instalment income | 4000–4500 |
-| T2 | PAYG instalment raised | 2140 |
+| T2 | PAYG instalment rate | Percentage; no nominal account |
+| 5A | PAYG instalment payable (from T7, varied T9 or rate-method T11) | 2140 |
 
 ### Superannuation Guarantee
 

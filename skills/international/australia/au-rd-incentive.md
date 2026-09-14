@@ -6,7 +6,7 @@ version: 1.1
 jurisdiction: AU
 tax_year: 2026
 tax_year_notes: "2026-27"
-last_updated: 2026-09-11
+last_updated: 2026-09-14
 review_status: pending_review
 category: international
 tier: 2
@@ -37,7 +37,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Refundable offset | Aggregated turnover < $20m AND not controlled by exempt entities: company tax rate + 18.5% premium (= 43.5% for a 25% base-rate entity) |
 | Non-refundable offset | Aggregated turnover >= $20m OR exempt-controlled: company tax rate + 8.5% premium (R&D up to 2% intensity); company tax rate + 16.5% premium (R&D above 2% intensity) |
 | Expenditure cap | $150m notional deductions per year; offset rate drops to the bare company tax rate above it |
-| Minimum spend | $20,000 notional deductions, UNLESS via a registered Research Service Provider (RSP) or CRC contribution |
+| Minimum spend | At least $20,000 notional deductions; only qualifying non-associate RSP expenditure or monetary CRC contributions escape that threshold (Rule 8) |
 | Registration deadline | With DISR each income year, normally within 10 months of year end; extensions under Rule 7. Valid registration required before claiming |
 | Amendment window | 4 years (generally), tied to DISR findings |
 | Contributor | Open Accountants |
@@ -54,11 +54,13 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Business-as-usual / routine activity claimed | Treat as ineligible ordinary business activity until shown to involve scientific uncertainty and the scientific method (TA 2017/3) |
 | Feedstock output sold or used | Assume a feedstock adjustment is triggered; quantify |
 | Overseas R&D activity | Assume NOT claimable unless a positive DISR overseas finding (s 28D IR&D Act) is in place |
-| Expenditure incurred to an associate | Notionally deductible only when PAID, not merely incurred |
+| Expenditure incurred to an associate | Notionally deductible only when paid; check the ordinary-deduction choice for unpaid amounts in Rule 10 |
 
 ## Section 2 -- What it is and who can claim
 
-The R&DTI is a tax offset claimed through the company tax return. It is **not a grant**: there is no application for funding, no competitive round, and no payment independent of the tax system. The benefit is delivered as an offset against tax, and for small companies the excess over tax liability is **paid out in cash**. Eligible expenditure MUST be claimed under the R&DTI -- if you choose not to claim it under the R&DTI, you cannot deduct it elsewhere in the return (unlike the former R&D tax concession).
+The R&DTI is a tax offset claimed through the company tax return. It is **not a grant**: there is no application for funding, no competitive round, and no payment independent of the tax system. The benefit is delivered as an offset against tax, and for small companies the excess over tax liability is **paid out in cash**.
+
+Eligible expenditure generally must be claimed under the R&DTI rather than another deduction provision. Unpaid associate expenditure has a specific ordinary-deduction choice under Rule 10; that choice prevents a later notional R&D deduction for the same expenditure.
 
 **The offset rate and refundability depend primarily on aggregated turnover and exempt-entity control, NOT on the size of the R&D spend.**
 
@@ -79,7 +81,7 @@ R&DTI work starts with the general ledger and the project/time records, not the 
 | Government grant income (recoupment) for R&D | Clawback adjustment | A recoupment for claimed R&D triggers a clawback (assessable income), not a reduction of the grant |
 | "R&D" account holding rent, marketing, admin overhead | Ineligible / apportionment risk | Remove general operations and marketing; apply a reasonable, documented apportionment methodology only where there is a direct link |
 | Software development capitalised/expensed | Internal-administration exclusion risk | Test dominant purpose; internal admin software for the entity/connected/affiliate is excluded from core |
-| Intercompany charges to associates for R&D | Notional deduction only when PAID | Claim in the year paid, not incurred; check TA 2023/4 (R&D delivered by associates) |
+| Intercompany charges to associates for R&D | Notional deduction requires payment and no prior ordinary deduction | Check the unpaid-expenditure choice in Rule 10 and TA 2023/4 (R&D delivered by associates) |
 | Materials/feedstock consumed in trials | Feedstock adjustment on sale/own use of output | Track feedstock inputs and outputs; quantify the adjustment in the trigger year |
 
 ## Section 4 -- Worked examples
@@ -201,13 +203,19 @@ The following CANNOT be core R&D activities (though some may qualify as supporti
 
 Register activities with DISR for each income year before claiming the offset. The normal deadline is 10 months after year end, for example 30 April 2027 for a 30 June 2026 year end. The IISA registration number on the R&D schedule must match the income year. Registration does not certify activity eligibility.
 
-If the deadline cannot be met or has passed, refer the entity to DISR or its R&D adviser to request an extension through the R&DTI customer portal, with reasons and supporting evidence. Approval is discretionary. Extensions generally cannot exceed 92 days after the statutory deadline; a related pending decision is the exception. Confirm valid registration within the statutory or approved extended period before claiming. A late application alone does not establish entitlement.
+If the deadline cannot be met or has passed, refer the entity to DISR or its R&D adviser to request an extension through the R&DTI customer portal, with reasons and supporting evidence.
+
+DISR states that a request for 14 days or less made before the statutory deadline will be approved; the application must explain why extra time is needed and why that period is sufficient. Longer requests, or requests made after the deadline, are considered case by case with supporting reasons and evidence. An application remains required.
+
+Extensions generally cannot exceed 92 days after the statutory deadline; a related pending decision is the exception. Confirm valid registration within the statutory or approved extended period before claiming. A late application alone does not establish entitlement.
 
 DISR cannot extend the application deadline for an advance or overseas finding or accept those applications late. See [DISR: request an extension or variation](https://business.gov.au/grants-and-programs/research-and-development-tax-incentive/request-an-extension-or-variation) and Part 3 of the Industry Research and Development Decision-making Principles 2022.
 
 ### Rule 8 -- The $20,000 threshold and the RSP exception
 
-Notional deductions for the year must total at least $20,000. This threshold does NOT apply where the R&D is conducted by a registered Research Service Provider (RSP) on the entity's behalf, or the entity contributes to the Cooperative Research Centres (CRC) program. RSPs must themselves register annually with DISR.
+Notional deductions for the year must total at least $20,000. Below that amount, the exception covers only contracted expenditure for services within the registered field of a research service provider (RSP) that is not an associate, or monetary contributions under the Cooperative Research Centres (CRC) program. It does not make other expenditure eligible merely because some work uses an RSP. Check the provider's registration for the relevant period. See [ATO R&D eligibility](https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/incentives-and-concessions/research-and-development-tax-incentive/eligibility-for-the-r-d-tax-incentive).
+
+For example, $18,000 paid to an associated RSP cannot use this exception. At an assumed 43.5% rate, the $7,830 offset is unavailable where the threshold and all other exception routes fail.
 
 ### Rule 9 -- Aggregated turnover grouping
 
@@ -215,7 +223,9 @@ Aggregated turnover = the entity's annual turnover + the annual turnover of ever
 
 ### Rule 10 -- Notional deductions: what can and can't be claimed
 
-Eligible expenditure on registered activities is claimed as a notional deduction in the year incurred. Exceptions: amounts incurred to an associate are claimable only when PAID; prepayment rules apply to services spanning years. **Cannot** be notionally deducted: interest expenditure; expenditure not "at risk" (TR 2021/5); core technology expenditure; expenditure included in the cost of a depreciating asset (decline-in-value notional deductions may apply instead); and expenditure to acquire/construct/improve a building. Eligible R&D expenditure must be claimed under the R&DTI or not at all.
+Eligible expenditure on registered activities is claimed as a notional deduction in the year incurred. Exceptions: amounts incurred to an associate are notionally deductible only when paid; prepayment rules apply to services spanning years. **Cannot** be notionally deducted: interest expenditure; expenditure not "at risk" (TR 2021/5); core technology expenditure; expenditure included in the cost of a depreciating asset (decline-in-value notional deductions may apply instead); and expenditure to acquire/construct/improve a building.
+
+For expenditure incurred to an associate but paid in a later year, choose between an otherwise available ordinary deduction in the year incurred and a notional R&D deduction in the payment year, subject to all eligibility conditions. A later R&D claim requires that the amount has not already been deducted under the ordinary provisions by lodgement of the return for the most recent year before payment. An ordinary deduction choice cannot be reversed by amendment to obtain the incentive later. Never claim both. See [ATO expenditure guidance, payment to associates](https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/incentives-and-concessions/research-and-development-tax-incentive/amounts-you-can-claim/expenditure-you-can-claim).
 
 ### Rule 11 -- Clawback: feedstock, recoupments, balancing adjustments
 
@@ -300,7 +310,7 @@ If the client provides only financial statements:
 | Non-refundable offset | Company tax rate + 8.5% (R&D <= 2% intensity); + 16.5% (R&D > 2% intensity) |
 | R&D intensity | Notional R&D deductions / total expenditure for the year |
 | Expenditure cap | $150m notional deductions; offset drops to bare company tax rate above it |
-| Minimum notional deduction | $20,000 (waived for registered RSP / CRC) |
+| Minimum notional deduction | At least $20,000, with the expenditure-specific RSP/monetary CRC exceptions in Rule 8 |
 | Registration deadline | Normally 10 months after income year end, each year; Rule 7 covers extensions. Register before claiming |
 | Amendment period | Generally 4 years; special rules give effect to DISR findings |
 | Tobacco/gambling | Ineligible for income years from 1 July 2025 unless sole-purpose harm minimisation |
@@ -337,7 +347,7 @@ If the client provides only financial statements:
 
 **Test 8:** Feedstock revenue $9,000, feedstock expenditure $10,000, 43.5% offset, 25% CTR. -> $6,660 added to assessable income (Example 5).
 
-**Test 9:** $100,000 incurred to an associate for R&D, unpaid at year end. -> Not notionally deductible until paid.
+**Test 9:** $100,000 incurred to an associate for R&D, unpaid at year end. No notional R&D deduction until payment. If an ordinary deduction is otherwise available and chosen now, sufficient taxable income at 25% gives a $25,000 current tax reduction. That choice prevents a later R&D claim for the same amount and cannot be reversed to obtain the incentive.
 
 **Test 10:** Company receives a $50,000 government grant recouping claimed R&D expenditure. -> Clawback: the premium component on the recouped amount is added to assessable income; the grant is not netted off.
 
@@ -349,7 +359,7 @@ If the client provides only financial statements:
 - NEVER advise on advance or overseas findings -- DISR only (R-AU-RD-3, R-AU-RD-4)
 - NEVER compute the offset without confirming valid DISR registration for the income year within the statutory or approved extended period
 - NEVER choose refundable vs non-refundable without computing aggregated turnover across connected/affiliated entities (R-AU-RD-5)
-- NEVER claim amounts incurred to an associate before they are paid
+- NEVER claim a notional R&D deduction for an associate amount before payment, or after taking the ordinary-deduction choice for that amount
 - NEVER claim the cost of a depreciating asset -- use decline-in-value notional deductions
 - NEVER ignore a feedstock, recoupment or balancing-adjustment clawback
 - NEVER present figures as definitive

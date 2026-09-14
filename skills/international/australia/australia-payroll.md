@@ -14,7 +14,7 @@ description: >
 version: 2.2
 jurisdiction: AU
 tax_year: 2025
-last_updated: 2026-09-11
+last_updated: 2026-09-14
 review_status: pending_review
 category: payroll
 tier: 2
@@ -72,7 +72,7 @@ These rates **exclude** the Medicare levy (2%). From 1 July 2026 the rate on $18
 
 ### Tax File Number (TFN) Declaration
 
-- **TFN declaration requirement** — Every new employee must complete a TFN declaration. If no TFN is provided, withhold at the top marginal rate (45% + Medicare levy = 47%) from the first dollar.
+- **TFN declaration requirement:** Every new employee must complete a TFN declaration. Check the declaration before using no-TFN withholding. A payee who declares a TFN application or enquiry has 28 days to provide the TFN; an exemption may also apply. If no TFN is quoted, no exemption is claimed and no application or enquiry is declared, use 47% for a resident or 45% for a foreign resident, ignoring cents. After the 28-day period, use that rate unless the ATO directs otherwise. Do not add tax offsets, Medicare adjustments or an STSL component to no-TFN withholding. See [ATO: payee declarations](https://www.ato.gov.au/tax-rates-and-codes/payg-withholding-schedule-1-statement-of-formulas-for-calculating-amounts-to-be-withheld/payee-declarations).
 
 ### Study and Training Support Loans (STSL)
 
@@ -89,7 +89,7 @@ Australia does not have a separate employee social security contribution. The Me
 | Deduction | Rate | Ceiling | Notes |
 | --- | --- | --- | --- |
 | PAYG income tax | Progressive (see above) | No ceiling | Includes Medicare levy in tax tables |
-| STSL repayment | 1%--10% (income-based) | No ceiling | Only if employee has HELP/STSL debt |
+| STSL component | Apply the pay-date Schedule 8 formula and declaration scale | No ceiling | Payroll withholding is reconciled with the annual repayment-income assessment |
 | Salary sacrifice (super) | Voluntary | Concessional cap $32,500/year (2026-27) | Pre-tax; reduces PAYG withholding base |
 
 There is no employee-paid social insurance premium equivalent to NIC (UK) or social security tax (US).
@@ -129,16 +129,18 @@ The redesigned SGC **is tax-deductible** (GIC on late SGC and the late payment p
 
 | State/Territory | Threshold (Annual) | Rate |
 | --- | --- | --- |
-| NSW | $1,200,000 | 4.85% |
-| VIC | $900,000 | 4.85% |
-| QLD | $1,300,000 | 4.75% |
+| NSW, 2024-25 to 2026-27 | $1,200,000 | 5.45%; apportion the threshold for interstate wages and part-year employment, with one threshold per group |
+| VIC, from 1 July 2025 | $1,000,000 ($900,000 in 2024-25) | 4.85%, or 1.2125% for qualifying regional employers; deduction phases out between $3m and $5m Australian wages. Combined surcharges of 1% above $10m and 2% above $100m national wages apply to the Victorian share above those thresholds |
+| QLD, current at 14 September 2026 | $1,300,000 | 4.75% where Australian taxable wages are at most $6.5m; 4.95% above $6.5m. Check grouping, deduction reduction, regional discount and mental health levy separately |
 | WA | $1,000,000 | 5.50% |
 | SA | $1,500,000 | Varies (0%--4.95%) |
-| TAS | $1,250,000 | 4.00% |
-| ACT | $2,000,000 | 6.85% |
-| NT | $1,500,000 | 5.50% |
+| TAS, 2026-27 | $1,250,000 | 4% for the $1.25m to $2m wage band; 6.1% above $2m. Use the state calculation for the applicable wage and deduction amounts |
+| ACT, 2025-26 | $2,000,000 | 6.85% base plus a 0.5% surcharge for Australian wages over $50m to $100m and 1% above $100m. From January 2026, wages over $150m instead use 8.75% with no additional surcharge |
+| ACT, 2026-27 | $1,750,000 | Australian wages: up to $20m, 6.75%; over $20m to $50m, 6.85%; over $50m to $100m, 7.35%; over $100m to $150m, 7.85%; over $150m, 8.75%. Eligible universities have a 6.85% cap |
+| NT, 2025-26 | $2,500,000 ($1,500,000 in 2024-25) | 5.5% |
+| NT, 2026-27 | $2,500,000 | 6.5% for employers or groups with Australia-wide wages of at least $100m; 5.5% otherwise |
 
-- **Payroll tax nature** — Payroll tax is a state/territory tax on total Australian wages above the threshold. Interstate employers must register in each jurisdiction where they have employees.
+- **Payroll tax nature:** Payroll tax is a state/territory tax on total Australian wages above the threshold. Check registration, grouping, wage nexus, deductions and period apportionment separately in each relevant jurisdiction. The six dated schedules above were checked against [Revenue NSW](https://www.revenue.nsw.gov.au/taxes-duties-levies-royalties/payroll-tax/lodge-and-pay-returns/thresholds-and-rates), [Victoria SRO](https://www.sro.vic.gov.au/about-us/rates-and-statistics/current-rates/payroll-tax-current-rates), [Queensland Revenue Office](https://qro.qld.gov.au/payroll-tax/calculate/rates-thresholds/), [Tasmania SRO](https://www.sro.tas.gov.au/payroll-tax/rates-thresholds), [ACT Revenue](https://www.revenue.act.gov.au/business-taxes-and-levies/payroll-tax/about-payroll-tax) and [NT Treasury](https://treasury.nt.gov.au/dtf/territory-revenue-office/payroll-tax/payroll-tax-rates-and-thresholds). The retained WA and SA summaries are undated and require the applicable official schedule before use. For full-year NSW-only taxable wages of $2m with the full $1.2m deduction, payroll tax is $800,000 x 5.45% = $43,600.
 
 ## Section 5 -- Minimum Wage and Overtime
 
@@ -253,8 +255,8 @@ Not strictly required on payslips but must be provided to employees on request. 
 | Reporting frequency | Each pay event (each time employees are paid) |
 | Method | STP-enabled payroll software submits to ATO |
 | Content | Gross payments, PAYG withheld, super liability, employee details, income types, country codes |
-| Finalisation deadline | 14 July following end of financial year |
-| Closely held payees | May report quarterly; finalise by 14 July |
+| Finalisation deadline | 14 July for arm's length employees, subject to an approved deferral |
+| Closely held payees | Generally finalise by 30 September. For employers with 19 or fewer employees and only closely held payees, use each payee's tax return due date. Quarterly reporting concessions have separate conditions; employers with 20 or more employees report each payday. See the [ATO finalisation rules](https://www.ato.gov.au/businesses-and-organisations/hiring-and-paying-your-workers/single-touch-payroll/start-reporting/end-of-year-finalisation-through-stp) |
 
 ### PAYG Withholding Remittance
 
@@ -262,9 +264,11 @@ Not strictly required on payslips but must be provided to employees on request. 
 
 | Employer Size | Reporting | Payment Due |
 | --- | --- | --- |
-| Small withholders (< $25,000 annual PAYG) | Quarterly BAS | 28 days after quarter end |
-| Medium withholders ($25,000--$1M) | Monthly IAS | 21st of following month |
-| Large withholders (> $1M) | Monthly IAS + may need to pay more frequently | 21st of following month |
+| Small withholders | Quarterly payment; confirm withholding class | Non-deferred BAS payer: 21st after quarter end. Deferred BAS payer: 28th, or 28 February for the December quarter |
+| Medium withholders | Monthly payment; confirm withholding class | Normally 21st of the following month. A qualifying deferred BAS payer may use the 28th in a month with the relevant quarterly BAS obligation, or 28 February for December withholding |
+| Large withholders | Electronic payment by weekday schedule | Saturday/Sunday withholding: second Monday afterwards; Monday/Tuesday: first Monday afterwards; Wednesday: second Thursday afterwards; Thursday/Friday: first Thursday afterwards |
+
+Confirm the ATO withholding class, including any determination varying it. The deferral does not cover an entity choosing or required to pay GST monthly. If a due date is a weekend or public holiday, use the next business day. For example, a large withholder deducting on Monday 7 September 2026 pays by Monday 14 September 2026. (Library, Superannuation/Tax Administration, PAYG, TFNs, lines 774 to 853.)
 
 ### Superannuation Remittance
 
@@ -328,7 +332,9 @@ Annual salary $120,000. Sacrifices $10,000/year to super.
 
 ### Pattern 4 -- STSL Repayment
 
-Employee earning $65,000 with HELP debt. STSL repayment rate from Schedule 8 tables: approximately 4.5%. Annual repayment: $65,000 × 4.5% = $2,925, withheld progressively via PAYG.
+For 2026-27, assume a resident employee has a HELP debt, claims the tax-free threshold and earns $65,000 evenly over 52 weekly pays, with no allowances, bonuses or other repayment-income components. Weekly earnings are $1,250; Schedule 8 uses x = $1,250.99. This is below $1,337, so a = 0 and b = 0: the weekly STSL component is zero. Apply the correct pay frequency, declaration scale and pay-date schedule; ordinary PAYG withholding still applies.
+
+The final compulsory repayment is a separate annual calculation. Repayment income of $65,000 is below $67,000 for 2025-26 and $69,528 for 2026-27, giving nil. For 2024-25, the annual 2% rate gives $1,300, not $2,925. Additional repayment-income components can change the annual result. Sources: [ATO Schedule 8 from 1 July 2026](https://www.ato.gov.au/tax-rates-and-codes/schedule-8-statement-of-formulas-for-calculating-study-and-training-support-loans-components) and [ATO repayment thresholds](https://www.ato.gov.au/tax-rates-and-codes/study-and-training-support-loans-rates-and-repayment-thresholds).
 
 ## Section 10 -- Interaction with Other Skills
 

@@ -13,7 +13,7 @@ version: 1.0
 jurisdiction: AU
 tax_year: 2026
 tax_year_notes: "FBT year ending 31 March 2027"
-last_updated: 2026-08-20
+last_updated: 2026-09-14
 review_status: pending_review
 category: international
 tier: 2
@@ -68,7 +68,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 The FBT year is **1 April to 31 March** (s 136(1) FBTAA, definition of "year of tax"). It is NOT the income year. Consequences bookkeepers hit every cycle:
 
-1. **GL exports.** A standard 1 July -- 30 June ledger export captures only 9 of the 12 FBT months. Export **1 April to 31 March exactly** for FBT work. April--June 2026 belongs to the FBT year ending 31 March 2027 even though it sits in the 2026-27 income year.
+1. **GL exports.** A standard 1 July -- 30 June ledger export captures only 9 of the 12 FBT months. Export **1 April to 31 March exactly** for FBT work. April--June 2026 belongs to the FBT year ending 31 March 2027 even though it sits in the 2025-26 income year.
 2. **Two tax years on every desk.** In May/June you are simultaneously closing the FBT year just ended (31 March) and the income year about to end (30 June). They are different populations of transactions.
 3. **Declarations and logbooks** are framed by FBT year. A declaration dated for "the year ended 30 June" is the wrong period; employer declarations must be held before the declaration date for the FBT year (see au-fbt Rule 10 for the approved-form/alternative-records position from 1 April 2024).
 4. **RFBA crosses the boundary.** FBT is computed to 31 March but reported to the employee through STP against the income year that ends straight after (30 June) -- see Section 6.
@@ -138,7 +138,7 @@ At the annual return, instalments paid offset the actual liability: shortfall pa
 
 ## Section 5 -- What goes in the return
 
-Computation of each benefit's taxable value belongs to **au-fbt**. The return assembles those values:
+Computation of each benefit's taxable value belongs to **au-fbt**. The return assembles those values. Apply the form's whole-dollar precision at items 14A, 14B and 15 before calculating tax at item 16. Keep cents in the tax and balance fields:
 
 | Return item | Content |
 |---|---|
@@ -150,7 +150,8 @@ Computation of each benefit's taxable value belongs to **au-fbt**. The return as
 | Items 17/18 | Rebatable employers only -- aggregate non-rebatable amount / rebate (out of scope here: R-AU-FY-3) |
 | Item 19 | Sub-total |
 | Item 20 | Less instalment amounts reported on activity statements |
-| Item 21 | Payment due (may round down to nearest 5c) |
+| Item 21 | Payment due when item 19 exceeds item 20: item 19 minus item 20 (may round down to the nearest 5c) |
+| Item 22 | Credit when item 20 exceeds item 19: item 20 minus item 19. It may be offset against other tax debts before a refund |
 
 **Employee contributions** reduce the taxable value of THAT benefit only (after-tax; no cross-application; assessable income to the employer with GST consequences -- au-fbt Rule 9). **Otherwise-deductible rule** reductions sit in column (c) and need the declaration in the approved form held before the declaration date, or adequate alternative records under the Commissioner's instruments (from 1 April 2024; logbooks and odometer records still need the approved form) -- au-fbt Rule 10.
 
@@ -174,7 +175,7 @@ Individual reportable fringe benefits taxable value > **$2,000** (strictly great
 
 - **In-year voluntary reporting:** YTD RFBA may be provided through a pay event (if available in payroll) or an update event at any time up to the finalisation due date. Once reported, keep carrying the YTD amount in later events.
 - **Annual April pattern (small employers):** because the RFBA can't be finalised until the FBT year closes on 31 March, small employers commonly compute RFBA in April as part of FBT year-end work and push it through a single STP update event soon after -- well before the 14 July finalisation declaration. There is no separate "election" form; the obligation is simply discharged by reporting through STP before finalisation. (If you can't or don't report through STP, you must give the employee a payment summary and lodge a payment summary annual report -- and that summary must exclude anything already reported through STP.)
-- **Finalisation:** arm's-length employees -- declaration by **14 July**; employers with 20+ employees reporting closely held payees -- 30 September for those payees; small employers (19 or fewer) with ONLY closely held payees -- the payee's tax return due date.
+- **Finalisation:** arm's-length employees -- declaration by **14 July**; closely held payees generally -- **30 September**; small employers (19 or fewer) with ONLY closely held payees -- the payee's tax return due date.
 
 ### 6.4 The April--June leaver rule
 
@@ -193,7 +194,8 @@ An employee who leaves between 1 April and 30 June with reportable benefits over
 | Car leases -- operating/finance lease payments on employee cars | Statutory vs operating cost method per car per year | Items 23A/23B |
 | Novated lease payments (payroll clearing + lease invoices) | Post-1-April-2025 PHEV? EV exemption conditions? RFBA notional TV for exempt EVs | Items 23A/23B or exempt + RFBA; structuring itself is R-AU-FY-2 |
 | Parking -- leased spaces, commercial car park invoices, reimbursements | Employer-premises parking benefit (threshold $11.48/day) vs reportable expense-payment reimbursement | Parking benefit NOT in RFBA; reimbursement IS |
-| Employee reimbursements, round-dollar allowances | Expense payment benefits; otherwise-deductible declarations held? | Item 23E with reductions |
+| Reimbursement of an employee's actual expense | Check expense payment FBT and otherwise-deductible declarations | Item 23E where applicable, with supported reductions |
+| Ordinary fixed cash allowances | Employee assessable income; check PAYG withholding and STP. Classify LAFHA and kilometre-based car reimbursements separately | Payroll treatment for ordinary allowances; do not route them to item 23E |
 | Staff gifts, welfare, amenities | <$300 and infrequent per occasion? | Exempt (s 58P) or residual/property categories |
 | Loans to employees / directors' debit loans | Benchmark 8.27% vs rate charged; Div 7A first for shareholders (au-fbt T2-6) | Item 23 (loans) |
 | FBT instalments paid (BAS clearing account) | Reconcile to ATO activity statement account BEFORE the return | Item 20 |
@@ -226,16 +228,17 @@ Legacy pattern: shoebox of receipts, spreadsheet car register, paper FBT return 
 GST-registered employer, FBT year ended 31 March 2026. Type 1 taxable values $11,000 (car $10,000 statutory + $1,000 meal entertainment), Type 2 taxable values $9,000 (expense payments). Instalments paid via BAS: $16,000.
 
 ```
-14A: $11,000 x 2.0802 = $22,882.20
-14B: $9,000  x 1.8868 = $16,981.20
-15:  $39,863.40
-16:  47% x $39,863.40 = $18,735.80 (ATO example rounds to $18,735.61 on their inputs)
-19:  $18,735.80
+14A: $11,000 x 2.0802 = $22,882.20; whole-dollar field $22,882
+14B: $9,000  x 1.8868 = $16,981.20; whole-dollar field $16,981
+15:  $22,882 + $16,981 = $39,863
+16:  47% x $39,863 = $18,735.61
+19:  $18,735.61
 20:  less instalments $16,000
-21:  payment due $2,735.80 -- lodge and pay by 21 May 2026 (self-lodger)
+21:  payment due $2,735.61 (or $2,735.60 using the permitted 5c rounding)
+22:  no credit; lodge and pay by 21 May 2026 (self-lodger)
 ```
 
-(Arithmetic mirrors the ATO FBT return 2026 instructions, Items 14--21.)
+(The inputs and field precision match the illustrated ATO FBT return 2026 instructions, items 14 to 22.)
 
 ### Example 2 -- Varying an instalment in the December quarter
 
@@ -297,10 +300,10 @@ Also still live from au-fbt: NFP capping regimes (R-AU-FBT-1), car parking valua
 | Instalment trigger | Prior-year FBT payable >= $3,000 |
 | Variation penalty threshold | Instalments/estimates < 90% of actual liability |
 | Variation reason codes | 22 / 30 / 31 / 32 |
-| Return items | 14A x2.0802; 14B x1.8868; 16 = 47% x 15; 20 instalments; 21 payment due |
+| Return items | Whole dollars at 14A (x2.0802), 14B (x1.8868) and 15; 16 = 47% x 15; 20 instalments; 21 payment due or 22 credit |
 | RFBA trigger / factor | > $2,000 / x1.8868 whole dollars |
 | RFBA income-year allocation | Income year ending straight after the FBT year |
-| STP finalisation | 14 July (arm's length); 30 Sep closely held (20+ employees); payee's return due date (small, closely-held-only) |
+| STP finalisation | 14 July (arm's length); 30 September closely held generally; payee's return due date (19 or fewer employees, closely-held-only) |
 | Penalty unit | $364 from 1 July 2026 |
 
 ### Primary sources (verified 20 August 2026)
@@ -328,7 +331,7 @@ Also still live from au-fbt: NFP capping regimes (R-AU-FBT-1), car parking valua
 
 **Test 4:** F2 estimate $20,000 varied in the March quarter; prior instalments $13,500, no credits. -> F3 = ($20,000 x 100%) - $13,500 = $6,500 at F3/6A.
 
-**Test 5:** Type 1 $6,000, Type 2 $2,500, instalments $9,000. -> 14A $12,481.20; 14B $4,717.00; 15 $17,198.20; 16 = 47% x $17,198.20 = $8,083.15; 21 = $8,083.15 - $9,000 = refund $916.85 after lodgment (and after all BAS lodged).
+**Test 5:** Type 1 $6,000, Type 2 $2,500, instalments $9,000. -> Whole-dollar fields: 14A $12,481; 14B $4,717; 15 $17,198. Item 16 and item 19 = 47% x $17,198 = $8,083.06. Item 22 credit = $9,000 - $8,083.06 = $916.94; no payment at item 21. Lodge all BAS before the FBT return; the credit may offset other tax debts before a refund.
 
 **Test 6:** Individual reportable TV exactly $2,000. -> No RFBA (must exceed). $2,000.01 -> RFBA $3,773 (ATO rates page example).
 

@@ -15,7 +15,7 @@ version: 1.1
 jurisdiction: AU
 tax_year: 2026
 tax_year_notes: "2026 land tax year (1 Jan 2026 or 30 Jun 2025 ownership date per state)"
-last_updated: 2026-09-10
+last_updated: 2026-09-14
 review_status: pending_review
 category: international
 tier: 2
@@ -39,7 +39,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Primary legislation | State Land Tax Acts (e.g. Land Tax Act 1956 (NSW), Land Tax Act 2005 (VIC)) |
 | Tax authorities | Revenue NSW; SRO Victoria; QRO Queensland; RevenueSA; RevenueWA; SRO Tasmania; ACT Revenue Office |
 | Valuation authority | Valuer-General of each state/territory |
-| Assessment basis | Unimproved value (NSW, WA) or site value (VIC, SA, TAS) or average unimproved value (ACT) of freehold land |
+| Assessment basis | Unimproved value (NSW, WA) or site value (VIC, SA, TAS) or average unimproved value (ACT) of taxable land, including leasehold interests treated as ownership under local law |
 | Filing portal | State revenue office online portals |
 | Skill version | 1.1 |
 
@@ -64,9 +64,11 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ### 2.1 What Land Tax Is
 
-- **Land tax** — An annual state/territory tax on the ownership of freehold land. It is levied on the unimproved value (or site value) of land, not the improved value (i.e. the value of buildings and structures is excluded).
+- **Land tax**: An annual state/territory tax on land ownership, including leasehold interests deemed to be ownership under local law. It is levied on the unimproved value (or site value) of land, not the improved value (i.e. the value of buildings and structures is excluded).
 - **Assessment date** — Liability is determined by ownership at a fixed date each year (31 December for NSW/VIC; 30 June for QLD/SA/WA; 1 July for TAS; quarterly for ACT).
 - **No federal land tax** — The Commonwealth does not levy land tax. It is purely a state/territory revenue measure.
+
+**Public leasehold interests**: NSW generally treats Crown and council lessees as owners under section 21C(2), subject to exceptions. These include leases shorter than 12 months and specified public-authority and older-lease cases. WA also treats lessees of government, local-government and other public-authority land as owners. Check the lease and statutory exceptions before excluding leasehold land. See [Revenue NSW Crown lessees](https://www.revenue.nsw.gov.au/taxes-duties-levies-royalties/land-tax/understanding-land-tax/types-of-landowners/lessees-of-crown-land) and [RevenueWA assessment rules](https://www.wa.gov.au/organisation/department-of-treasury-and-finance/land-tax-assessment).
 
 ### 2.2 Land Tax vs Stamp Duty vs Council Rates
 
@@ -102,10 +104,10 @@ The cycle: Valuer-General determines land value (annual); revenue office issues 
 | --- | --- |
 | Up to $1,075,000 | Nil |
 | $1,075,001 to $6,571,000 | $100 + 1.6% of value above $1,075,000 |
-| Above $6,571,000 | $87,070 + 2.0% of value above $6,571,000 |
+| Above $6,571,000 | $88,036 + 2.0% of value above $6,571,000 |
 
 - **Foreign owner surcharge** — 5% of unimproved value for foreign persons owning residential land. Charged in addition to general land tax.
-- **Trusts** — Trustees are assessed at general rates but receive no tax-free threshold unless the trust is a fixed trust with a principal place of residence exemption.
+- **Trusts**: Qualifying fixed trusts and complying superannuation trusts receive the general threshold. Special trusts, including ordinary discretionary trusts, do not. Threshold eligibility is separate from any principal place of residence exemption. Confirm the trust classification using [Revenue NSW trust rules](https://www.revenue.nsw.gov.au/taxes-duties-levies-royalties/land-tax/understanding-land-tax/types-of-landowners/trusts).
 
 ### 4.2 Victoria (VIC)
 
@@ -134,7 +136,8 @@ The cycle: Valuer-General determines land value (annual); revenue office issues 
 | Total Taxable Value | Rate |
 | --- | --- |
 | $600,000 to $999,999 | $500 + 1c per $1 above $600,000 |
-| $1,000,000 to $4,999,999 | $4,500 + 1.65c per $1 above $1,000,000 |
+| $1,000,000 to $2,999,999 | $4,500 + 1.65c per $1 above $1,000,000 |
+| $3,000,000 to $4,999,999 | $37,500 + 1.25c per $1 above $3,000,000 |
 | $5,000,000 to $9,999,999 | $62,500 + 1.75c per $1 above $5,000,000 |
 | $10,000,000 or more | $150,000 + 2.25c per $1 above $10,000,000 |
 
@@ -171,9 +174,13 @@ This table is unverified: its bands overlap and the supplied Library does not es
 | $0 to $300,000 | Nil |
 | $300,001 to $420,000 | $300 |
 | $420,001 to $1,000,000 | $300 + 0.25c per $1 above $420,000 |
-| $1,000,001 to $5,000,000 | $1,750 + 0.65c per $1 above $1,000,000 |
-| $5,000,001 to $11,000,000 | $28,000 + 1.8c per $1 above $5,000,000 |
+| $1,000,001 to $1,800,000 | $1,750 + 0.9c per $1 above $1,000,000 |
+| $1,800,001 to $5,000,000 | $8,950 + 1.8c per $1 above $1,800,000 |
+| $5,000,001 to $11,000,000 | $66,550 + 2.0c per $1 above $5,000,000 |
 | $11,000,001 and over | $186,550 + 2.67c per $1 above $11,000,000 |
+
+These rates exclude any separately applicable Metropolitan Region Improvement Tax (MRIT).
+
 - **Foreign surcharge** — WA does not levy a foreign owner land tax surcharge.
 
 ### 4.6 Tasmania (TAS)
@@ -195,7 +202,7 @@ This table is unverified: its bands overlap and the supplied Library does not es
 
 | Component | Detail |
 | --- | --- |
-| Fixed charge | $1,778 (from 1 Jul 2026) |
+| Fixed charge | $1,778 per taxable property (from 1 Jul 2026) |
 | Variable charge | Rating factor applied to Average Unimproved Value (AUV) |
 
 **ACT AUV Rating Factors** -- 0.54% up to $150,000; $810 + 0.64% above $150,000 to $275,000; $1,610 + 1.24% above $275,000 to $1,000,000; $10,600 + 1.25% above $1,000,000 to $2,000,000; $23,100 + 1.26% above $2,000,000.
@@ -209,15 +216,15 @@ This table is unverified: its bands overlap and the supplied Library does not es
 
 ## Section 5 -- Aggregation Rules
 
-- **Aggregation** — All land owned by the same entity (individual, company, trust) within a state is aggregated. The threshold applies to the total taxable value of all land holdings, not per property.
-- **Joint ownership** — Each joint owner is assessed on their proportional share of the land value.
+- **Aggregation**: Apply each jurisdiction's ownership, capacity and grouping rules. NSW generally aggregates land held by the same owner. WA aggregates holdings with the same owners in the same capacity, but assesses separate trusts separately. ACT calculates residential land tax per property, including a separate fixed charge. For ACT units, apply the rating factors to the residential AUV of the whole complex, then multiply by the unit entitlement. See [ACT calculation rules](https://www.revenue.act.gov.au/rates-and-property-charges/land-tax/how-land-tax-is-calculated).
+- **Joint ownership**: NSW first assesses the joint owners together. An individual may also receive an assessment for their share plus other holdings, with a secondary deduction against double taxation. WA separately assesses land held by each combination of joint owners at its full taxable value. Queensland generally includes an individual's proportionate share. Do not apply one approach nationally. See [NSW joint-owner assessments](https://www.revenue.nsw.gov.au/taxes-duties-levies-royalties/land-tax/understanding-land-tax/types-of-landowners/individuals-and-joint-owners) and [WA aggregation rules](https://www.wa.gov.au/organisation/department-of-treasury-and-finance/land-tax-assessment).
 - **Cross-border holdings** — Land tax is state-based. A NSW resident owning property in QLD is assessed separately in each state. There is no national aggregation.
 
 ## Section 6 -- Trusts, Companies, and Individuals
 
 - **Individuals** — Full threshold, general rates, PPR exemption available.
-- **Companies** — Reduced or no threshold, company/trust rates, no PPR exemption.
-- **Trusts** — Reduced threshold (VIC/SA $25,000; QLD $350,000; NSW/WA none unless fixed trust with PPR). Trust surcharge rates apply in VIC and SA. Special disability trusts use individual threshold in QLD.
+- **Companies**: Thresholds depend on jurisdiction and grouping. A standalone NSW company can receive the $1,075,000 general threshold. Related-company rules distinguish concessional companies that receive the threshold from non-concessional companies that do not. Check [NSW company rules](https://www.revenue.nsw.gov.au/taxes-duties-levies-royalties/land-tax/understanding-land-tax/types-of-landowners/companies); company status alone does not remove the threshold. Apply separate local PPR eligibility rules.
+- **Trusts**: Reduced thresholds apply in VIC/SA ($25,000) and QLD ($350,000). NSW uses the trust classification in section 4.1. WA applies ordinary rates, including the $300,000 threshold, separately to each trust and capacity. A PPR exemption is not a condition of those NSW or WA thresholds. Trust surcharge rates apply in VIC and SA. Special disability trusts use the individual threshold in QLD.
 
 ## Section 7 -- Exemptions
 
@@ -244,10 +251,10 @@ Other exemptions include: residential tenancy/build-to-rent concessions (VIC, QL
 
 ## Section 9 -- Land Tax as a Deductible Expense
 
-- **Deductibility** — Land tax paid on investment properties is fully deductible against rental income in the year it is paid. This applies to all states and territories.
+- **Deductibility**: Claim land tax to the extent it relates to earning assessable rental income, subject to private-use apportionment and deduction restrictions. Vacant-land holding costs can be denied by section 26-102, including land tax; check the taxpayer, land use and exceptions in `au-rental-property`.
 - **Cross-reference** — See `au-rental-property` for the full rental property deduction schedule. Land tax is listed as a deductible expense under Section 2.3 of that skill.
 - **PPR portion** — Land tax on a principal place of residence is NOT deductible (no income-producing purpose).
-- **Timing** — Deduct when paid, not when assessed. If a payment plan is used, deduct each instalment in the year paid.
+- **Timing**: Deduct eligible land tax in the income year to which the liability relates. An instalment plan or later payment does not move the deduction into the payment year. For arrears relating to an earlier year, amend that year's return, subject to amendment rules. For example, eligible 2025-26 land tax paid in September 2026 belongs in the 2025-26 return. See [ATO rental property expenses](https://www.ato.gov.au/individuals-and-families/investments-and-assets/property-and-land/residential-rental-properties/rental-expenses/common-property-expenses).
 
 ## Section 10 -- GL Sweep Table
 
@@ -296,6 +303,17 @@ Without primary production exemption (2026-27 threshold $936,000): 0.5% x ($950,
 
 First tier ($125,000 to $499,999.99): $50 + 0.45% x $375,000 = $1,737.50. Second tier: $1,737.50 + 1.5% x $120,000 = **$3,537.50**. The trust aggregates both properties.
 
+### Example 6: Rate and ownership checks
+
+For the assessment periods in section 4, before exemptions and separate surcharges:
+
+- NSW taxable value of $7 million gives $88,036 + 2% × $429,000 = **$96,616**.
+- A Queensland individual with $4 million taxable value pays $37,500 + 1.25% × $1 million = **$50,000**.
+- WA taxable value of $3 million gives $8,950 + 1.8% × $1.2 million = **$30,550**, excluding MRIT. At $6 million, ordinary land tax is **$86,550**.
+- A qualifying NSW fixed trust or standalone company with $800,000 taxable value is below the general threshold. An ordinary WA trust with $200,000 taxable value is below its threshold. These results do not require a PPR exemption.
+- NSW joint owners with $1.2 million combined taxable value incur a **$2,100** joint assessment. Dividing the land into two $600,000 shares first would miss it. WA joint owners with $400,000 combined taxable value incur **$300**, before MRIT.
+- Two separately assessed ACT houses, each with $100,000 AUV for the full 2026-27 year, incur 2 × ($1,778 + $540) = **$4,636**. Combining them into one $200,000 assessment would incorrectly produce $2,908.
+
 ## Section 12 -- Refusal Catalogue
 
 **Refusal Catalogue**
@@ -336,7 +354,7 @@ First tier ($125,000 to $499,999.99): $50 + 0.45% x $375,000 = $1,737.50. Second
 
 ## Section 14 -- Prohibitions
 
-- **Prohibitions** — NEVER advise on land tax without verifying the current threshold and rate from the state revenue office; NEVER confuse land tax with stamp duty or council rates; NEVER assume the PPR exemption applies without verifying occupancy at the assessment date; NEVER advise on trust land tax without confirming the trust type and threshold rules; NEVER calculate land tax per property -- always aggregate; NEVER advise foreign owners without checking FIRB status and surcharge rules; NEVER present land tax calculations as definitive -- always label as estimated and recommend verification against the revenue office calculator.
+- **Prohibitions** — NEVER advise on land tax without verifying the current threshold and rate from the state revenue office; NEVER confuse land tax with stamp duty or council rates; NEVER assume the PPR exemption applies without verifying occupancy at the assessment date; NEVER advise on trust land tax without confirming the trust type and threshold rules; apply the jurisdiction's aggregation and ownership rules, including ACT per-property assessment and NSW joint-owner assessment; NEVER advise foreign owners without checking FIRB status and surcharge rules; NEVER present land tax calculations as definitive -- always label as estimated and recommend verification against the revenue office calculator.
 
 ## Disclaimer
 

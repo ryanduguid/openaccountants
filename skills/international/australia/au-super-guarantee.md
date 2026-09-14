@@ -6,7 +6,7 @@ version: 3.2
 jurisdiction: AU
 tax_year: 2026
 tax_year_notes: "2026-27"
-last_updated: 2026-09-11
+last_updated: 2026-09-14
 review_status: pending_review
 category: international
 tier: 2
@@ -57,7 +57,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Unknown SG rate year | 2024-25 = 11.5%; 2025-26 onwards = 12% |
 | Unknown YTD qualifying earnings vs $270,830 | Assume below cap; flag to confirm before stopping SG |
 | Unknown TSB for carry-forward | Assume >= $500,000 (no carry-forward); ask client |
-| Unknown s 290-150 notice status | Assume NOT lodged; warn about deadline |
+| Unknown s 290-170 notice status | Assume NOT lodged; warn about deadline |
 | Unknown contractor vs employee | Flag for reviewer -- multi-factor test |
 
 ## Section 2 -- Required inputs and refusal catalogue
@@ -68,7 +68,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 **Recommended** -- bank statements showing super fund debits, payroll register with per-payday qualifying earnings and YTD totals, TSB at 30 June prior year, and the Rule 10 income components and fund-reported contributions for Division 293. Taxable income alone is insufficient.
 
-**Ideal** -- complete STP reporting data, super fund member statements showing receipt dates, s 290-150 notice copies, ATO online account showing contribution caps.
+**Ideal** -- complete STP reporting data, super fund member statements showing receipt dates, s 290-170 notice copies, ATO online account showing contribution caps.
 
 ### Refusal catalogue
 
@@ -163,9 +163,9 @@ Matches "AUSTRALIAN SUPER" (pattern 3.1), so this is a candidate employee super 
 `15.05.2027 ; BPAY HOSTPLUS ; DEBIT ; PERSONAL CONTRIBUTION ; -10,000.00 ; AUD`
 
 **Reasoning:**
-Matches "BPAY" + "HOSTPLUS" (pattern 3.2). Sole trader making a personal super contribution. Whether this is concessional (deductible) depends on whether the s 290-150 notice is lodged and acknowledged. If notice lodged: $10,000 concessional contribution, tax-deductible, taxed at 15% in the fund, counts toward the $32,500 cap. If no notice: non-concessional, no deduction.
+Matches "BPAY" + "HOSTPLUS" (pattern 3.2). Sole trader making a personal super contribution. Whether this is concessional (deductible) depends on whether a valid s 290-170 notice is given on time and acknowledged. If a valid, timely notice is acknowledged and other deduction conditions are met: $10,000 concessional contribution, tax-deductible, taxed at 15% in the fund, counts toward the $32,500 cap. If no notice: non-concessional, no deduction.
 
-**Classification:** EXCLUDE -- personal super contribution. Deductibility depends on s 290-150 notice status. Flag: "Has the Notice of Intent to Claim a Deduction been lodged with the fund?"
+**Classification:** EXCLUDE -- personal super contribution. Deductibility depends on s 290-170 notice status. Flag: "Has the Notice of Intent to Claim a Deduction been lodged with the fund?"
 
 ### Example 3 -- Commercial clearing house payment (SBSCH is gone)
 
@@ -246,7 +246,7 @@ $270,830 of qualifying earnings for 2026-27 (formula: concessional cap x 100 / 1
 
 ### Rule 6 -- Concessional contributions cap
 
-$32,500 (2026-27; indexed up from $30,000 on 1 July 2026). Includes employer SG + salary sacrifice + personal deductible contributions (with s 290-150 notice). Excess included in assessable income at marginal rate (with 15% offset).
+$32,500 (2026-27; indexed up from $30,000 on 1 July 2026). Includes employer SG + salary sacrifice + personal deductible contributions (with s 290-170 notice). Excess included in assessable income at marginal rate (with 15% offset).
 
 ### Rule 7 -- Carry-forward unused concessional cap
 
@@ -256,9 +256,9 @@ Up to 5 prior years' unused cap, IF TSB < $500,000 at 30 June prior year (thresh
 
 $130,000 (2026-27; 4 x concessional cap). Bring-forward tiers by TSB at 30 June 2026: < $1.84m -> $390,000 over 3 years; $1.84m to < $1.97m -> $260,000 over 2 years; $1.97m to < $2.1m -> $130,000 (no bring-forward); >= $2.1m -> nil.
 
-### Rule 9 -- s 290-150 notice (personal contribution deduction)
+### Rule 9 -- s 290-170 notice (personal contribution deduction)
 
-- **s 290-150 notice requirement** — Must lodge Notice of Intent to Claim a Deduction with the super fund AND receive acknowledgement BEFORE the earlier of: lodging the tax return, or end of following financial year. If not lodged: contribution stays non-concessional, NO deduction.  _(Rule 8)_
+- **Notice requirement (s 290-170):** Give a valid notice of intent to the fund by the earlier of the day the relevant return is lodged or the end of the following financial year. Separately, receive the fund's acknowledgement before claiming the deduction. The notice deadline does not also require acknowledgement by 30 June. A timely notice acknowledged in July before a later return is lodged can satisfy these requirements. Check all validity conditions, including fund membership, retained contributions, income-stream commencement and contribution splitting; other deduction conditions still apply. Without a valid notice and acknowledgement, no deduction is available. (Library, Superannuation/Contributions to Superannuation Funds and RSAs.)
 
 ### Rule 10 -- Division 293 (additional 15% for high earners)
 
@@ -312,7 +312,7 @@ Payment due the day the assessment is made. Unpaid 28 days after assessment -> N
 
 - **T2-4** — Trigger: TSB close to $500,000 threshold. Issue: Carry-forward availability depends on exact TSB at 30 June. Action: Flag for reviewer to confirm TSB.
 
-### T2-5 -- s 290-150 notice deadline approaching
+### T2-5 -- s 290-170 notice deadline approaching
 
 **Trigger:** Client made personal contributions but has not lodged notice.
 **Issue:** Missing the deadline is irreversible -- contribution stays non-concessional.
@@ -359,7 +359,7 @@ EMPLOYER SG (PER EMPLOYEE PER PAYDAY)
 
 PERSONAL CONTRIBUTIONS (SOLE TRADER)
   Personal contribution:          AUD [____]
-  s 290-150 notice lodged:        [YES/NO]
+  Valid s 290-170 notice given by deadline: [YES/NO]
   Acknowledged by fund:           [YES/NO]
   Classification:                 [Concessional / Non-concessional]
   Tax deduction claimed:          AUD [____]
@@ -421,7 +421,7 @@ If the client provides only a bank statement:
 2. **Identify SG vs personal contributions** -- payday-aligned amounts = likely SG; ad hoc amounts = likely personal
 3. **Check debit cadence against pay cycle** -- SG debits should follow every payday from July 2026
 4. **Sum SG debits per employee** -- compare against expected qualifying earnings x 12% YTD to verify completeness
-5. **Flag:** "Super contribution classification derived from bank statement patterns. Fund receipt dates, qualifying earnings, s 290-150 notice status, and TSB have not been independently verified. Reviewer must confirm before tax return lodgement."
+5. **Flag:** "Super contribution classification derived from bank statement patterns. Fund receipt dates, qualifying earnings, s 290-170 notice status, and TSB have not been independently verified. Reviewer must confirm before tax return lodgement."
 
 ## Section 10 -- Reference material
 
@@ -473,7 +473,7 @@ Max $540 (18% of $3,000). Full offset if spouse income <= $37,000; nil from $40,
 
 **Test 2:** Employee YTD qualifying earnings $268,000 before a $10,000 payday in March 2027. -> Crossing payday SG = 12% x min($10,000, $270,830 - $268,000) = 12% x $2,830 = $339.60. All later 2026-27 paydays: $0. Year SG total = exactly $32,499.60.
 
-**Test 3:** Sole trader contributes $25,000, lodges s 290-150. TSB $200,000. -> $25,000 concessional. Deduction $25,000. Within $32,500 cap.
+**Test 3:** Sole trader contributes $25,000, gives a valid s 290-170 notice on time and receives acknowledgement. TSB $200,000. -> $25,000 concessional. Deduction $25,000. Within $32,500 cap.
 
 **Test 4:** Taxable income $260,000, low-tax contributions $30,000, no other income adjustments. -> Combined amount $290,000. Div 293 tax = 15% x $30,000 = $4,500. With $210,000 taxable income, $20,000 reportable fringe benefits and the same contributions, tax is $1,500 (Rule 10).
 
@@ -501,7 +501,7 @@ Sole trader asks about SG to self. -> $0. No obligation. Advise voluntary contri
 - NEVER apply the quarterly maximum contribution base to 2026-27 earnings (annual $270,830 YTD basis applies)
 - NEVER reference the ATO SBSCH as an available payment channel (closed permanently 1 July 2026)
 - NEVER call the new-regime SGC non-deductible (that rule died with the quarterly regime; old-regime SGC stays non-deductible)
-- NEVER allow deduction claim without confirmed s 290-150 notice
+- Require a valid, timely s 290-170 notice and the fund's acknowledgement before allowing a deduction claim
 - NEVER apply carry-forward if TSB >= $500,000
 - NEVER present figures as definitive
 - NEVER compute SGC amounts without escalating
