@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Australian rental property inco
 version: "1.2"
 jurisdiction: AU
 tax_year: 2025
-last_updated: 2026-09-10
+last_updated: 2026-09-14
 review_status: pending_review
 category: international
 tier: 2
@@ -100,7 +100,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Interest on investment loan | Deductible | Must trace loan purpose to rental property |
 | Council rates | Deductible | Apportioned if part-private |
 | Water rates / charges | Deductible |  |
-| Body corporate / strata fees | Deductible | Includes admin fund and sinking fund contributions |
+| Body corporate / strata fees | Regular administration and general maintenance fees may be immediately deductible | Special levies for capital improvements are not immediately deductible, including those paid into a general sinking fund. Eligible capital-works deductions may arise once work is completed and the cost charged |
 | Land tax | Deductible |  |
 | Property management fees | Deductible | Agent commissions, letting fees |
 | Insurance (landlord, building, contents) | Deductible |  |
@@ -159,10 +159,11 @@ Applies to the structural elements (building itself, fixed improvements).
 
 | Construction Date | Rate | Notes |
 | --- | --- | --- |
-| Before 18 July 1985 | 0% | No deduction available |
-| 18 Jul 1985 -- 15 Sep 1987 | 4% | Residential/non-residential |
-| After 15 Sep 1987 (residential) | 2.5% | 40-year write-off |
-| After 15 Sep 1987 (short-term traveller) | 4% | Certain accommodation |
+| Ordinary residential works begun before 18 July 1985 | 0% | Outside the ordinary residential commencement category |
+| Ordinary residential works begun 18 July 1985 to 15 September 1987 | 4% | Subject to qualifying use and remaining expenditure |
+| Ordinary residential works begun after 15 September 1987 | 2.5% | Subject to qualifying use and remaining expenditure |
+| Qualifying traveller-accommodation works begun before 27 February 1992 | 4% if begun after 21 August 1984 and before 16 September 1987; otherwise 2.5% | Apply the eligible-work and current-use conditions. A 1990 start does not receive 4% merely for traveller use |
+| Qualifying works begun after 26 February 1992 | Basic 2.5%; 4% for qualifying uses under s 43-145 | Traveller accommodation must satisfy the relevant use conditions |
 
 - **Base** — Original construction cost (obtain from quantity surveyor report or builder records). NOT the purchase price of the property.
 - **Undeducted construction cost:** A new owner continues the annual deduction using the original eligible construction expenditure and remaining deduction period, subject to qualifying use and the remaining expenditure cap. For $400,000 of eligible 2.5% construction after ten full years, $300,000 remains and the full-year deduction continues at $10,000 for the remaining 30 years. (ITAA 1997 Div 43; Library, Tax/Depreciation.)
@@ -181,7 +182,8 @@ Applies to the structural elements (building itself, fixed improvements).
 | Loan redrawn for personal use | No -- apportioned |
 | Line of credit (mixed purpose) | Must trace each drawdown |
 | Interest on loan while property vacant (available for rent) | Yes |
-| Interest during construction period | Deductible from date available for rent (or capitalised to cost base) |
+| Interest directly attributable to constructing an intended rental property | May be currently deductible under s 8-1 before rental availability where the income-producing intention and other deduction conditions are met |
+| Interest on land acquisition during construction | Check s 26-102 vacant-land restrictions and exclusions separately. Trace and apportion combined loans. Consider cost base only for amounts denied a deduction and otherwise eligible |
 
 ### 2.8 CGT on Disposal
 
@@ -229,7 +231,7 @@ Applies to the structural elements (building itself, fixed improvements).
 | --- | --- | --- |
 | [COUNCIL NAME] RATES, COUNCIL RATES | Council rates | Fully deductible |
 | WATER CORP, SA WATER, SYDNEY WATER | Water rates | Fully deductible |
-| BODY CORPORATE, STRATA LEVY, OWNERS CORP | Body corporate fees | Fully deductible (admin + sinking fund) |
+| BODY CORPORATE, STRATA LEVY, OWNERS CORP | Body corporate fees | Separate regular administration/maintenance fees from special capital levies. No immediate deduction for a capital levy; check capital works after completion and charging |
 | [STATE] LAND TAX, REVENUE NSW, SRO VIC | Land tax | Fully deductible |
 | [AGENT NAME] MANAGEMENT FEE, LETTING FEE | Property management | Fully deductible |
 | [INSURER] LANDLORD INSURANCE, BUILDING INS | Insurance | Fully deductible |

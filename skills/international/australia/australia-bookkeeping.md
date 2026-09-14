@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Australian bookkeeping for sole
 version: 1.1
 jurisdiction: AU
 tax_year: 2025
-last_updated: 2026-09-10
+last_updated: 2026-09-14
 review_status: pending_review
 depends_on:
   - bookkeeping-workflow-base
@@ -24,7 +24,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Country | Australia (Commonwealth of Australia) |
 | Currency | AUD ($) only |
 | Financial year | 1 July – 30 June (standard); substituted accounting period available for companies |
-| Accounting standards | AASB (full IFRS-based); AASB 1060 Simplified Disclosures (Tier 2); Special Purpose for non-reporting entities |
+| Accounting standards | AASB Tier 1 or Tier 2 according to public accountability and regulator requirements; special-purpose reporting only where permitted (Section 9) |
 | Governing body | Australian Accounting Standards Board (AASB) |
 | Tax authority | Australian Taxation Office (ATO) |
 | Key legislation | Corporations Act 2001 (financial reporting Ch.2M); Income Tax Assessment Act 1936/1997; A New Tax System (GST) Act 1999 |
@@ -81,7 +81,7 @@ Australian software (Xero, MYOB, QuickBooks) typically uses 3–4 digit codes. T
 | 2100 | PAYG Withholding Payable | Current liability |
 | 2110 | Superannuation Payable | Current liability |
 | 2120 | Provision for Annual Leave | Current liability |
-| 2130 | Provision for Long Service Leave | Current liability |
+| 2130 | Provision for Long Service Leave | Split current and non-current under AASB 1060 paragraphs 40 and 41 |
 | 2140 | Provision for Income Tax | Current liability |
 | 2200 | Credit Card | Current liability |
 | 2300 | Short-Term Loan (< 12 months) | Current liability |
@@ -185,7 +185,9 @@ Australian software (Xero, MYOB, QuickBooks) typically uses 3–4 digit codes. T
 | 7000 | Gain on Sale of Assets | Other income |
 | 7010 | Loss on Sale of Assets | Other expense |
 | 7020 | Foreign Exchange Gain/Loss | Other income/expense |
-| 7100 | Extraordinary Items | Other expense |
+| 7100 | Other Material Expenses | Classify by nature or function; describe the item in the statements or notes |
+
+AASB 1060 paragraph 57 prohibits presenting income or expenses as extraordinary items in financial statements or notes. An unusual transaction still needs a description of its nature.
 
 ### Tax (8000–8999)
 
@@ -203,13 +205,16 @@ Australian software (Xero, MYOB, QuickBooks) typically uses 3–4 digit codes. T
 
 **Cash vs Accrual Rules**
 
-| Criterion | Cash Basis (Sole Traders / Small Business) | Accruals Basis |
-| --- | --- | --- |
-| Eligibility | Aggregated turnover < $10m (small business entity) | All entities; mandatory for reporting entities |
-| Income recognised | When cash received | When earned (invoice raised or goods delivered) |
-| Expenses recognised | When cash paid | When incurred (liability arises) |
-| Trading stock | Simplified: exempt from stock-take if change < $5,000 | Required: opening/closing stock adjustments |
-| Prepaid expenses | Immediate deduction if < 12 months and under $1,000 or business turnover < $10m | Spread over benefit period |
+Determine income-tax derivation, GST attribution and financial reporting separately. Turnover below $10 million does not itself permit the receipts method for income tax.
+
+| Purpose | Rule |
+| --- | --- |
+| Ordinary income for income tax | Use the method giving a substantially correct reflection of income under TR 98/1. The receipts method can suit a sole professional's personal skill; an earnings method may be needed where staff or equipment produce income. Assess the business circumstances. |
+| Statutory income and deductions | Apply the specific tax rules, including when a deductible liability is incurred, capital exclusions and prepayment spreading. A cash receipt basis does not make every cash payment deductible. |
+| GST | Test eligibility for cash attribution separately under GST Act s 29-40, including the small-business concession. Cash GST attribution can coexist with accrual financial accounts. |
+| AASB financial reporting | Apply the relevant recognition and measurement standards, including AASB 15 below; a GST election does not change them. |
+| Trading stock | An eligible business may choose simplified treatment if the reasonably estimated stock-value change is $5,000 or less; otherwise apply the opening/closing stock rules. |
+| Prepaid expenses | Test deductibility first. For eligible small or medium businesses, the s 82KZM rule allows a service period of 12 months or less ending by the end of the following income year. Separately, otherwise deductible expenditure below $1,000 is excluded from spreading under s 82KZL, after allowing for input tax credit entitlement. Otherwise apply the relevant spreading rules. |
 
 ### AASB 15 Revenue from Contracts with Customers
 
@@ -228,19 +233,21 @@ Small businesses using simplified reporting typically recognise on delivery/comp
 
 **ATO Individual Tax Return Categories (Sole Trader — Business Schedule)**
 
-| Item | Category | Nominal Codes |
+| 2025 BPI label | Category | Nominal Codes |
 | --- | --- | --- |
-| A | All other business income | 4000–4500 |
-| B | Cost of sales | 5000–5200 |
-| C | Contractors and commission | 5040 |
-| D | Superannuation | 6110 |
-| E | Bad debts | 6700 |
-| F | Lease expense (plant/equipment) | 6000 |
-| G | Interest expense — Australia | 6440 |
-| H | Depreciation (excluding SB pool) | 6600–6630 |
-| I | Motor vehicle expenses | 6300–6320 |
-| J | Repairs and maintenance | 6050 |
-| K | All other expenses | 6000–6800 (remainder) |
+| P8 I / J (income section) | Other business income, primary / non-primary production | 4000–4500 |
+| P8 Cost of sales | Cost of sales | 5000–5200 |
+| P8 F | Contractors and commission | 5040 |
+| P8 G | Superannuation | 6110 |
+| P8 I (expenses section) | Bad debts | 6700 |
+| P8 J (expenses section) | Lease expense (plant/equipment) | 6000 |
+| P8 Q | Interest expense within Australia | 6440 |
+| P8 M | Depreciation; complete simplified-depreciation details and reconciliation where required | 6600–6630 |
+| P8 N | Motor vehicle expenses | 6300–6320 |
+| P8 O | Repairs and maintenance | 6050 |
+| P8 P | All other expenses | 6000–6800 (remainder) |
+
+These labels follow the [ATO 2025 BPI expenses instructions](https://www.ato.gov.au/forms-and-instructions/business-and-professional-items-schedule-2025-instructions/instructions-to-complete-the-bpi-schedule-2025/business-income-and-expenses-p8/expenses-p8). Keep the income and expenses sections separate where letters repeat, and check the applicable form for another year.
 
 ### Non-Deductible Expenses (ATO)
 
@@ -304,10 +311,14 @@ Use the Income Tax Assessment (Effective Life of Depreciating Assets) Determinat
 | Desktop computers | 4 years | 50% | 25% |
 | Laptops | 2 years | 100% | 50% |
 | Printers/Scanners | 5 years | 40% | 20% |
-| Office furniture | 10 years | 20% | 10% |
+| Freestanding office chairs and general tables | 10 years | 20% | 10% |
+| Freestanding office desks and workstations | 20 years | 10% | 5% |
 | Motor vehicles | 8 years | 25% | 12.5% |
-| Air conditioning | 10 years | 20% | 10% |
+| Air-conditioning room units and mini split systems up to 20 kW | 10 years | 20% | 10% |
+| Packaged air-conditioning units | 15 years | 13.33% (rounded) | 6.67% (rounded) |
 | Eligible capital works (Div 43, 2.5% category) | 40 years | Not applicable | 2.5% of eligible construction expenditure; separate from Div 40 |
+
+These are selected Table B asset classes in the 2025 determination. Match the actual asset and applicable industry entry before using a Commissioner-determined life; other furniture and air-conditioning components have different lives. Calculate rates from the life without rounding intermediate deductions. A $10,000 freestanding office desk has a $500 prime-cost deduction for a full year of qualifying business use at 20 years, assuming no immediate-write-off concession.
 
 ### Car Limit
 
@@ -368,6 +379,8 @@ NET INCOME OR LOSS FROM BUSINESS              xxx
 
 ## Section 7 -- Balance Sheet Format
 
+Long service leave is current if settlement is expected in the normal operating cycle, it is held for trading, it is due within 12 months, or the entity lacks a right at the reporting date to defer settlement for at least 12 months. Classify other portions as non-current. A vested entitlement can be current even if payment is expected later. Apply AASB 1060 paragraphs 40 and 41 consistently to account 2130 and the statement.
+
 ### Statement of Financial Position (Vertical — AASB Tier 2)
 
 ```
@@ -395,14 +408,14 @@ TOTAL ASSETS                                          xxx
 CURRENT LIABILITIES
   Trade and other payables                            xxx
   Current tax liabilities                             xxx
-  Provisions (annual leave, etc.)                     xxx
+  Provisions (including current leave obligations)    xxx
   Short-term borrowings                               xxx
                                                      ────
 Total current liabilities                             xxx
 
 NON-CURRENT LIABILITIES
   Long-term borrowings                                xxx
-  Provisions (long service leave)                     xxx
+  Provisions meeting non-current criteria             xxx
                                                      ────
 Total non-current liabilities                         xxx
                                                      ────
@@ -465,10 +478,10 @@ TOTAL EQUITY                                          xxx
 | Concession | Detail |
 | --- | --- |
 | Simplified depreciation | Instant write-off < $20,000; pool balance at 15%/30% |
-| Simplified trading stock | No stock-take if estimate change ≤ $5,000 |
-| Prepaid expenses | Immediate deduction if < 12 months and service period ends before next year |
+| Simplified trading stock | Eligible business may choose no stocktake if the reasonably estimated change is $5,000 or less |
+| Prepaid expenses | Otherwise deductible expenditure: service period of 12 months or less, ending by the end of the following income year (ITAA 1936 s 82KZM). The separate under-$1,000 exclusion also applies; see Section 3. |
 | Simpler BAS | Report only G1, 1A, 1B (no G2, G3, G10, G11) |
-| Two-year amendment period | ATO can only amend assessments within 2 years (not 4) |
+| Amendment period | Usually 2 years from notice of assessment for eligible taxpayers with simple affairs; 4-year cases, unlimited fraud/evasion amendments and other s 170 exceptions apply. An amended particular can have a refreshed period under s 170(3); unrelated particulars do not automatically reopen. |
 | Cash accounting for GST | Report GST when paid/received, not invoiced |
 | PAYG instalments | Option to pay quarterly amount the ATO calculates |
 
@@ -478,12 +491,19 @@ TOTAL EQUITY                                          xxx
 
 | Tier | Who | Standards | Required Statements |
 | --- | --- | --- | --- |
-| Tier 1 (Full AASB / IFRS) | Large proprietary companies, public companies, registered schemes | Full recognition + full disclosure | All 5 statements + notes |
-| Tier 2 (AASB 1060 Simplified) | Non-publicly accountable entities electing Tier 2 | Full recognition, reduced disclosure | All 5 statements + reduced notes |
-| Special Purpose (legacy) | Non-reporting entities (winding down) | Flexible | Varies (being phased out by 30 Jun 2023 for large) |
+| Tier 1 (Full AASB / IFRS) | For-profit private entities with public accountability and a legislative standards obligation; also where a regulator requires Tier 1 | Full recognition + full disclosure | Applicable complete statement set + notes |
+| Tier 2 (AASB 1060 Simplified) | Eligible entities without public accountability, including large proprietary companies, subject to regulator requirements; may elect Tier 1 | Full recognition, reduced disclosure | Applicable complete statement set + reduced notes |
+| Special Purpose | Entities permitted to use this basis after checking legislation, constituting documents and other reporting obligations | Applicable requirements for that entity | Scope depends on the reporting obligation |
 | No statutory reporting | Sole traders, small partnerships (non-company) | None mandated | Prepare for ATO/tax purposes only |
 
-### Large Proprietary Thresholds (must be reporting entity)
+AASB 1053 paragraphs 11, 13 and 15 govern the tiers above. For periods beginning on or after 1 July 2021, the special-purpose change covered specified for-profit private entities (AASB 1057 paragraph 5):
+
+- those required by legislation to comply with Australian Accounting Standards or accounting standards
+- those required only by a constituting or other document to comply with Australian Accounting Standards, where the document was created or amended on or after 1 July 2021.
+
+Check the reporting obligation and the compilation applicable to the period; size alone does not establish eligibility for special-purpose reporting.
+
+### Large proprietary thresholds (reporting obligation, not tier selection)
 
 - **Large Proprietary Thresholds** — Meet 2 of 3: Revenue ≥ $50m, assets ≥ $25m, employees ≥ 100.
 
@@ -509,7 +529,8 @@ TOTAL EQUITY                                          xxx
 | W1 | Total salary/wages and other payments | 6100 |
 | W2 | Amounts withheld from payments (PAYG-W) | 2100 |
 | T1 | PAYG instalment income | 4000–4500 |
-| T2 | PAYG instalment raised | 2140 |
+| T2 | PAYG instalment rate | Percentage; no nominal account |
+| 5A | PAYG instalment payable (from T7, varied T9 or rate-method T11) | 2140 |
 
 ### Superannuation Guarantee
 

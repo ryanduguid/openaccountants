@@ -4,7 +4,7 @@ description: "Use this skill for any Australian resident's capital gains tax que
 version: 1.2
 jurisdiction: AU
 tax_year: 2025
-last_updated: 2026-09-10
+last_updated: 2026-09-14
 review_status: pending_review
 depends_on:
   - au-individual-return
@@ -96,7 +96,7 @@ The four concessions (can be combined):
 
 - **Worldwide gains taxed** — Australian tax residents are taxed on worldwide capital gains, including gains on: - Foreign shares - Foreign real property - Foreign businesses
 - **Foreign tax credits** — Foreign tax credits available for foreign CGT paid on the same gain (Form IT 1205 / Schedule 25A).
-- **Exit CGT** — When you cease to be an Australian tax resident, you are treated as having disposed of most CGT assets at market value on the day before you stop being a resident. Exception: taxable Australian property (TAP) — no deemed disposal, but AU retains taxing rights when actually sold.
+- **Exit CGT:** CGT event I1 occurs at cessation of Australian tax residency for assets owned just before that time, using market value at cessation. TAP is generally excluded, but that exception does not exclude indirect Australian real property interests or options or rights to acquire them. Disregard gains or losses on pre-20 September 1985 assets. An individual can choose under s 104-165 to disregard all covered gains and losses; the assets then remain TAP until the earlier of a subsequent CGT event or resuming residency. Cessation on 1 July 2026 is an event in 2026-27.
 
 ## Section 8 — Sources
 

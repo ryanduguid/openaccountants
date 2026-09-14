@@ -6,7 +6,7 @@ version: 1.1
 jurisdiction: AU
 tax_year: 2026
 tax_year_notes: "2026-27"
-last_updated: 2026-09-10
+last_updated: 2026-09-14
 review_status: pending_review
 category: international
 tier: 2
@@ -33,7 +33,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Discounted capital gains | 1/3 discount if held 12+ months -> 10% effective |
 | ECPI (retirement-phase earnings) | 0% -- segregated or proportionate (actuarial certificate) method |
 | NALI / non-complying fund | 45% |
-| No-TFN contributions | Extra 32% on mandated employer contributions (complying fund) |
+| No-TFN contributions | Extra 32% on qualifying no-TFN contributions income (complying fund); pre-1 July 2007 interest exception in Section 5.1 |
 | Supervisory levy | $259/year (unchanged since 2014-15), paid a year IN ADVANCE with the SAR; new fund's first SAR: $518 |
 | SAR due dates | Self-lodgers: new/overdue 31 Oct (pay 1 Dec), others 28 Feb. Tax agent: first year 28 Feb (31 Oct if ATO-reviewed at registration); ongoing per agent program (generally 15 May) |
 | Audit | ASIC-registered approved SMSF auditor, appointed >= 45 days before SAR due; audit finalised BEFORE lodgment |
@@ -135,7 +135,7 @@ At the 2026-27 penalty unit of $364, a 60-penalty-unit breach (lending, borrowin
 | ECPI (retirement-phase earnings) | 0% | Section 4.2 -- method and minimum-payment conditions apply |
 | NALI / NALC | 45% | Section 4.3 |
 | Non-complying fund | 45% | On income AND (in the first non-complying year) an amount reflecting fund assets |
-| No-TFN contributions | +32% | Refundable via offset if TFN quoted within 3 years |
+| No-TFN contributions | +32%, subject to the legacy-interest exception in Section 5.1 | Refundable via offset if TFN quoted within 3 years |
 
 Franking credits offset fund tax and are refundable. Capital losses offset only capital gains (carry forward; losses on segregated pension assets are disregarded entirely).
 
@@ -155,7 +155,7 @@ Income is NALI (s 295-550, taxed at 45%) where it exceeds an arm's-length amount
 
 Post the 2024 Act (Treasury Laws Amendment (Support for Small Business and Charities and Other Measures) Act 2024, applied from 2018-19):
 
-- **Specific expense** (tied to a particular asset, e.g. cut-price property maintenance by a related builder): ALL income from that asset is NALI -- including the eventual capital gain.
+- **Specific expense:** identify its nexus with the relevant income (s 295-550; LCR 2021/2 paragraphs 18 and 21). Non-arm's-length acquisition expenditure, including associated financing costs, can affect all asset income and the eventual capital gain even after refinancing. A recurring non-acquisition expense, such as maintenance tied only to a particular year's income, does not automatically make later income or a later sale gain NALI after the arrangement ends. Test each income stream and period.
 - **General expense** (e.g. accounting or admin fees): NALI is capped at **2 x (arm's-length expense − actual expense)** -- the "twice the shortfall" rule for SMSFs and small APRA funds.
 - Large APRA-regulated funds are carved out of NALE entirely.
 - The overall non-arm's-length component cannot exceed the fund's assessable income less deductions, excluding assessable contributions and their deductions.
@@ -169,7 +169,9 @@ Post the 2024 Act (Treasury Laws Amendment (Support for Small Business and Chari
 |---|---|
 | Under 75 | All contribution types -- no work test for acceptance |
 | 75+ (from 28 days after the end of the month of the 75th birthday) | Mandated employer (SG) and downsizer ONLY |
-| Any age, no TFN quoted | Member contributions must NOT be accepted; employer contributions cop +32% |
+| Any age, no TFN quoted | Member contributions must NOT be accepted. Employer contributions may attract additional no-TFN tax, subject to the legacy-interest exception below. |
+
+For a complying fund, additional no-TFN tax is 32%. An amount is excluded where the member's superannuation interest existed before 1 July 2007 and the total contributions relating to that interest included in assessable income for the year do not exceed $1,000 (s 295-610(2)). Thus an eligible $1,000 employer contribution attracts ordinary 15% tax of $150 and no additional $320. This tax exception does not permit acceptance of member contributions without a TFN.
 
 **Work test (67-74):** 40 hours in 30 consecutive days -- required only to CLAIM A DEDUCTION for personal contributions (s 290-165), not for acceptance. One-off exemption for recent retirees with TSB < $300,000.
 
@@ -204,7 +206,11 @@ Post the 2024 Act (Treasury Laws Amendment (Support for Small Business and Chari
 
 No reduced ("COVID-halved") rates are in force in 2026-27. Round to the nearest $10; pro-rate by days remaining for pensions commenced mid-year (no minimum if commenced 1-30 June). Payment must LEAVE the fund by 30 June -- journal entries are not payments. Transition-to-retirement income streams (not in retirement phase): 10% maximum applies and the fund earns NO ECPI on them.
 
-**Shortfall consequence:** if the minimum is not met, the pension is taken to have ceased at the start of the income year -- the fund loses ECPI for that pension for the WHOLE year, payments made are treated as lump sums, and a new pension (new documents, new TBC credit, TBAR events) must be commenced to resume. **Catch-up exception** (once only, self-assessed): honest mistake or matters outside trustee control, shortfall <= 1/12 of the annual minimum, caught up as soon as practicable (generally within 28 days of becoming aware) -- then ECPI continues as if paid. Larger or repeat shortfalls need the Commissioner's discretion.
+**Shortfall consequence:** if the minimum is not met, the pension is taken to have ceased at the start of the income year -- the fund loses ECPI for that pension for the WHOLE year, payments made are treated as lump sums, and a new pension (new documents, new TBC credit, TBAR events) must be commenced to resume.
+
+**Catch-up exception:** first establish either an honest mistake with an underpayment no greater than one-twelfth of the annual minimum, or a matter outside the trustee's control. The one-twelfth limit belongs to the honest-mistake branch.
+
+All remaining conditions must also hold: ECPI would otherwise have continued; the catch-up is made as soon as practicable after discovery in the following income year (generally within 28 days); it would have met the prior year's minimum; and it is treated for all other purposes as paid in that prior year. A trustee who has previously received this concession must apply to the ATO again. If all conditions hold and there has been no prior use, the trustee can generally self-assess continuation. Otherwise refer for ATO consideration rather than assuming relief. (Library, Superannuation Benefits, minimum payment standards.)
 
 ### 6.2 Transfer balance cap and TBAR
 
@@ -279,7 +285,7 @@ NALI      = 2 x $2,500      = $5,000
 Tax       = 45% x $5,000    = $2,250  (vs $750 at 15% -- a $1,500 penalty effect)
 ```
 
-Cap check: NALC cannot exceed assessable income less deductions excluding contributions -- here $60,000, so not binding. Contrast: if the discount had been a SPECIFIC expense on a rental property, ALL of that property's income AND its eventual capital gain would be NALI at 45%. Unpaid trustee-capacity work with the trustee's own equipment is not NALE (LCR 2021/2).
+Cap check: NALC cannot exceed assessable income less deductions excluding contributions -- here $60,000, so not binding. For a specific property expense, apply the income/expense nexus in Section 4.3. A maintenance discount tied only to an earlier year does not automatically taint a later sale. If a $30,000 gain qualifies for the one-third discount, is in the accumulation phase and has no NALI cause, the $20,000 net gain is taxed at 15% ($3,000), not 45% ($9,000). Unpaid trustee-capacity work with the trustee's own equipment is not NALE (LCR 2021/2).
 
 ### Example 3 -- Excess concessional contributions flow
 
@@ -295,11 +301,13 @@ Member: assessable at marginal 39% (37% + 2% Medicare)  = $2,925
 
 Member may elect to release up to 85% of the excess ($6,375) from the fund; unreleased excess also counts toward the $130,000 NCC cap. Nothing is amended in the fund's SAR.
 
-### Example 4 -- Minimum pension shortfall kills ECPI
+### Example 4 -- Minimum pension shortfall and the exception
 
 Member aged 76 at 1 July 2026; pension balance $480,000. Minimum = 6% x $480,000 = **$28,800**. The fund pays only $22,000 by 30 June 2027 -- shortfall $6,800.
 
-The self-assessed catch-up exception is unavailable: $6,800 exceeds 1/12 of the minimum ($2,400). Result: the pension is taken to have ceased 1 July 2026; the fund claims NO ECPI for that interest all year; the $22,000 paid is treated as lump sums; restarting requires fresh pension documents, a new TBC credit and TBAR events (cessation/commencement). Had the shortfall been <= $2,400 from an honest mistake and topped up within about 28 days of discovery, the trustee could self-assess the exception -- once ever; anything else needs the Commissioner's discretion.
+The $6,800 shortfall exceeds one-twelfth of the minimum ($2,400), so it fails the honest-mistake amount test. It does not by itself rule out the outside-control branch. Establish the cause, otherwise available ECPI, timely catch-up treatment and prior use of the concession under Section 6.1 before deciding whether the trustee can self-assess or must apply to the ATO.
+
+If relief is unavailable, the pension is treated as ceasing on 1 July 2026, ECPI is lost for that interest for the year, and the $22,000 is treated as lump sums. Restarting requires fresh pension documentation and the applicable transfer balance reporting. An honest-mistake shortfall of $2,400 or less still needs every other exception condition; a catch-up alone is insufficient.
 
 ## Section 11 -- Provenance
 

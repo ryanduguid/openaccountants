@@ -4,7 +4,7 @@ description: Use this skill when preparing, reviewing, or advising on annual fin
 version: 1.1
 jurisdiction: AU
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-14
 review_status: pending_review
 depends_on:
   - financial-statements-workflow-base
@@ -34,7 +34,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Financial year | Usually 1 July – 30 June; any 12-month period permitted |
 | Lodgement deadline | 4 months after year-end (general); 3 months (disclosing entities) |
 | Late lodgement penalty | Civil penalty; ASIC may impose up to AUD 1,110 per day |
-| Digital filing | ASIC Regulatory Portal (online Form 388 lodgement) |
+| Digital filing | Form 388 through the ASIC company officeholder, registered agent or auditor portal |
 
 ## Section 2 -- Reporting Framework
 
@@ -77,9 +77,9 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Entity | Must prepare financial report? | Must lodge with ASIC? | Must audit? |
 | --- | --- | --- | --- |
 | Large proprietary | Yes | Yes (Form 388) | Yes |
-| Small proprietary (general) | No (unless directed) | No | No |
-| Small proprietary (foreign-controlled) | Yes | Yes | Yes |
-| Small proprietary (CSF shareholders) | Yes | Yes | Yes (or review) |
+| Small proprietary (general) | No unless directed or another obligation applies | No unless separately required | No unless an audit direction or another obligation applies |
+| Small proprietary (foreign-controlled) | Generally yes; check applicable reporting relief | Generally yes; check applicable reporting relief | Generally yes; check audit/reporting relief |
+| Small proprietary (CSF shareholders during the year) | Yes | Yes | Audit if all CSF offers together raised at least $3 million; below that, check separate audit triggers |
 | Public company | Yes | Yes | Yes |
 | Disclosing entity | Yes | Yes | Yes |
 
@@ -232,21 +232,23 @@ Total equity
 | --- | --- |
 | Filing authority | ASIC |
 | Filing form | Form 388 (Copy of Financial Statements and Reports) |
-| Lodgement method | ASIC Regulatory Portal (online) |
+| Lodgement method | Company officeholder, registered agent or auditor portal (ordinary Form 388) |
 | Deadline — disclosing entities | 3 months after financial year-end |
 | Deadline — all others | 4 months after financial year-end |
-| Documents lodged | Financial report + directors' report + auditor's report |
+| Documents lodged | Financial report + directors' report + auditor's report where required |
 | Fee | No filing fee for Form 388 |
 | Late lodgement | Civil penalty provisions; ASIC may impose administrative penalties |
 | Annual review fee | Separate from lodgement (AUD 310 for proprietary companies, 2024) |
 | Extension | Possible by application to ASIC under s.340 |
 
-### Small proprietary companies — exceptions requiring lodgement
+ASIC's [Form 388 instructions](https://www.asic.gov.au/for-business-and-companies/companies/company-financial-reports/how-to-lodge-a-financial-report) identify these three portals. The Regulatory Portal transaction for AFS licensee financial statements is a separate process described in INFO 31.
 
-- **Foreign-controlled** — Foreign-controlled (s.292(2)(b))  _(s.292(2)(b))_
-- **ASIC direction** — ASIC direction (s.294)  _(s.294)_
-- **Shareholder direction** — Shareholder direction (≥5% vote, s.293)  _(s.293)_
-- **CSF shareholders** — CSF shareholders (s.292(2)(c))  _(s.292(2)(c))_
+### Small proprietary companies: preparation and lodgement
+
+- **Foreign-controlled:** generally prepare and lodge, subject to the parent-consolidated reporting exception and applicable relief. See ASIC's small-company guidance and the relief section below.
+- **ASIC direction:** follow the actual s 294 direction. It can specify preparation, audit, distribution and lodgement; check which requirements it imposes.
+- **Shareholder direction:** a valid s 293 direction from holders of at least 5% of votes can require preparation, distribution and, if requested, audit. For an ordinary small company without foreign control or disclosing status, this does not itself require ASIC lodgement. CSF shareholders during the year or another separate obligation can still require lodgement.
+- **CSF shareholders:** one or more during the year requires preparation and lodgement under s 292(2)(c). Audit is a separate test below. See [ASIC small proprietary companies](https://www.asic.gov.au/regulatory-resources/financial-reporting-and-audit/preparers-of-financial-reports/small-proprietary-companies).
 
 ## Section 10 -- Audit Requirements
 
@@ -255,17 +257,17 @@ Total equity
 | Category | Requirement |
 | --- | --- |
 | Large proprietary company | Mandatory audit |
-| Small proprietary (general) | No audit required |
+| Small proprietary (general) | No audit unless required by a valid shareholder/ASIC direction or another obligation |
 | Small proprietary (foreign-controlled) | Audit required (unless ASIC relief) |
 | Public company | Mandatory audit |
 | Disclosing entity | Mandatory audit |
 | Registered scheme | Mandatory audit |
-| Small proprietary (CSF shareholders) | Audit or review (s.292) |
+| Small proprietary (CSF shareholders) | Audit once aggregate proceeds from all CSF offers reach at least $3 million (s 301(2), RG 261 paragraph 285); a review does not replace that audit. Below the threshold, CSF status alone does not require an audit. |
 
 ### ASIC relief instruments
 
-- **ASIC Corporations (Audit Relief) Instrument 2016/784** — Allows certain large proprietary companies controlled by a foreign parent to obtain audit relief if consolidated accounts of the foreign parent are lodged  _(ASIC Corporations (Audit Relief) Instrument 2016/784)_
-- **ASIC Corporations (Foreign-Controlled Company Reports) Instrument 2017/204** — Relief for certain small foreign-controlled proprietary companies  _(ASIC Corporations (Foreign-Controlled Company Reports) Instrument 2017/204)_
+- **ASIC Corporations (Audit Relief) Instrument 2016/784:** conditional audit relief for eligible proprietary companies. Test the instrument's audit-history and entity exclusions, unanimous director/member resolutions and required notices, quarterly management accounting and sound financial condition, preparation by a prescribed accountant, timely report lodgement, and absence of a proposed modified auditor's report or material auditor disagreement. It does not remove financial-report lodgement. RG 115 paragraphs 7 to 14 summarise these conditions; confirm the full instrument and its applicable period before relying on relief.
+- **ASIC Corporations (Foreign-Controlled Company Reports) Instrument 2017/204:** separate reporting relief for eligible small foreign-controlled companies outside a large group, requiring the directors' resolution and timely notice. Also check the separate parent-consolidated reporting exception: a qualifying Australian company or registered foreign parent must lodge consolidated statements covering the small company for the same year. Lodging any foreign parent's accounts is not a substitute for satisfying either route.
 
 ### Auditor qualification
 

@@ -2,7 +2,7 @@
 name: australia-references
 jurisdiction: AU
 tier: 2
-last_updated: 2026-08-20
+last_updated: 2026-09-14
 version: 1.1
 description: Primary source references and related open-source projects for this jurisdiction.
 ---
@@ -11,7 +11,9 @@ description: Primary source references and related open-source projects for this
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
-OpenAccountants is AGPL-3.0. MIT, Apache-2.0, GPL-3.0, and AGPL-3.0 content can all be incorporated with attribution. Projects below are license-compatible unless noted otherwise.
+OpenAccountants uses different licences for software and guides. [LICENSING.md](../../../LICENSING.md) maps software to AGPL-3.0-only and guides and their exports to the source-available OA Guide License. It preserves the original AGPL/GPL terms for guides containing or derived from third-party copyleft material. Earlier copies already distributed under AGPL retain those rights.
+
+Before incorporating material, check its exact licence, the proposed use and the destination file's terms. Attribution alone does not establish compatibility or satisfy every licence obligation. The projects below are references; their listing is not a blanket permission to incorporate them. This describes repository policy, not a determination of ownership or infringement.
 
 ## PolicyEngine Australia
 
@@ -21,7 +23,7 @@ OpenAccountants is AGPL-3.0. MIT, Apache-2.0, GPL-3.0, and AGPL-3.0 content can 
 - Scope: Full Australian tax-benefit microsimulation model covering personal income tax, Medicare levy, HECS-HELP repayment thresholds, and superannuation rules.
 - Why it matters: Comprehensive, actively maintained microsimulation with detailed modelling of Australian tax and transfer policy. Strong validation source for PIT brackets, offsets, and levy calculations.
 - Integration approach:
-  - AGPL-3.0 is the same license family as OpenAccountants. Content can be incorporated with attribution.
+  - Check the applicable AGPL terms and preserve third-party copyleft rights for any derivative material; the general OA Guide License mapping does not replace them.
   - Use as a validation reference for income tax brackets, Medicare levy surcharge thresholds, HECS-HELP repayment rates, and superannuation contribution caps.
 
 ## Aussie Tax Helper
@@ -31,10 +33,10 @@ OpenAccountants is AGPL-3.0. MIT, Apache-2.0, GPL-3.0, and AGPL-3.0 content can 
 - Stars: 6
 - Language: English
 - Scope: ATO 2024-25 tax calculator with work-from-home deduction comparison (Fixed Rate method vs Actual Cost method).
-- Why it matters: Practical focus on the WFH deduction methods that are a common pain point for individual filers. Apache-2.0 is license-compatible.
+- Why it matters: Practical focus on the WFH deduction methods that are a common pain point for individual filers. Check the Apache-2.0 terms for the proposed reuse.
 - Integration approach:
   - Reference for WFH deduction logic and ATO rate tables.
-  - Apache-2.0 permits incorporation with attribution.
+  - Review the Apache-2.0 obligations and destination terms before incorporating material.
 
 ## Quick Tax Calc
 
@@ -45,7 +47,7 @@ OpenAccountants is AGPL-3.0. MIT, Apache-2.0, GPL-3.0, and AGPL-3.0 content can 
 - Why it matters: Lightweight reference for Australian individual income tax rate schedules.
 - Integration approach:
   - Reference for tax bracket calculations and rate verification against ATO published tables.
-  - Treat as reference-only until the license is confirmed.
+  - Treat as reference-only until the licence is confirmed.
 
 ## AU Tax Legislation Corpus
 
@@ -55,7 +57,7 @@ OpenAccountants is AGPL-3.0. MIT, Apache-2.0, GPL-3.0, and AGPL-3.0 content can 
 - Scope: Builds a provenance-rich corpus of in-force Commonwealth tax legislation (ITAA 1936/1997, GST Act, TAA 1953, FBTAA and related Acts) from the Federal Register of Legislation, with exact compilation identifiers attached to every extract.
 - Why it matters: Guides in this pack cite sections of the ITAA 1997/1936 and TAA 1953. This corpus lets a retrieval system verify each citation against the in-force compilation text rather than trusting secondary summaries.
 - Integration approach:
-  - MIT permits incorporation with attribution.
+  - Check the MIT terms for the relevant software and any separate rights in source data or reproduced content before reuse.
   - Use as the primary-source verification layer when reviewing or updating any Australian guide's legislative citations.
 - Disclosure: maintained by an OpenAccountants contributor (ryanduguid).
 
@@ -67,7 +69,7 @@ OpenAccountants is AGPL-3.0. MIT, Apache-2.0, GPL-3.0, and AGPL-3.0 content can 
 - Scope: Checks Australian super contributions against the payday-super deadlines (7 business days from payday, from 1 July 2026) and estimates SG charge exposure on late contributions.
 - Why it matters: Direct validation companion to `au-super-guarantee`. The payday-super regime change is the highest-stakes AU payroll change of 2026, and deadline arithmetic (business days, fund-receipt basis) is easy to get wrong.
 - Integration approach:
-  - MIT permits incorporation with attribution.
+  - Check the MIT terms for the relevant software and any separate rights in source data or reproduced content before reuse.
   - Use to sanity-check worked examples in `au-super-guarantee` and `australia-payroll`.
 - Disclosure: maintained by an OpenAccountants contributor (ryanduguid).
 
@@ -79,6 +81,6 @@ OpenAccountants is AGPL-3.0. MIT, Apache-2.0, GPL-3.0, and AGPL-3.0 content can 
 - Scope: Compares profit and loss figures against the ATO small business benchmarks locally, with the working shown.
 - Why it matters: The ATO uses industry benchmarks to select small businesses for review; comparing a sole trader's expense ratios before lodgment is a practical risk screen that complements `au-sole-trader-schedule`.
 - Integration approach:
-  - MIT permits incorporation with attribution.
+  - Check the MIT terms for the relevant software and any separate rights in source data or reproduced content before reuse.
   - Reference for adding a benchmark-screen step to sole trader workflows.
 - Disclosure: maintained by an OpenAccountants contributor (ryanduguid).

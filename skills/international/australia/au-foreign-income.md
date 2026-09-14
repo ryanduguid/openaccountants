@@ -1,12 +1,12 @@
 ---
 name: au-foreign-income
 description: >
-  Use this skill whenever asked about how Australian tax residents are taxed on foreign income -- the worldwide assessable income rule, the foreign income tax offset (FITO) and its offset limit, foreign employment income and the narrowed section 23AG exemption, foreign rental/business/investment income, foreign capital gains and Division 775 forex gains, foreign pensions (UK/US), temporary residents under Subdiv 768-R, overseas HELP debtor worldwide income reporting, return labels 20/20M/20O, currency conversion, and record keeping. Trigger on "foreign income", "overseas income", "FITO", "foreign tax credit", "double tax", "UK pension", "Wise income", "foreign rental", or any GL showing offshore receipts.
+  Use this skill whenever asked about how Australian tax residents are taxed on foreign income -- the worldwide assessable income rule, the foreign income tax offset (FITO) and its offset limit, foreign employment income and the narrowed section 23AG exemption, foreign rental/business/investment income, foreign capital gains and Division 775 forex gains, foreign pensions (UK/US), temporary residents under Subdiv 768-R, overseas HELP debtor worldwide income reporting, return labels 20/20T/20U/20O, currency conversion, and record keeping. Trigger on "foreign income", "overseas income", "FITO", "foreign tax credit", "double tax", "UK pension", "Wise income", "foreign rental", or any GL showing offshore receipts.
 version: 1.0
 jurisdiction: AU
 tax_year: 2026
 tax_year_notes: "2026-27"
-last_updated: 2026-08-20
+last_updated: 2026-09-14
 review_status: pending_review
 category: international
 tier: 2
@@ -25,7 +25,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Field | Value |
 |---|---|
 | Country | Australia |
-| Primary legislation | ITAA 1997 ss 6-5, 6-10; Div 770 (FITO); Div 775 (forex); Subdiv 768-R (temporary residents); ITAA 1936 ss 23AF, 23AG; TAA 1953 Sch 1 (overseas HELP assessments) |
+| Primary legislation | ITAA 1997 ss 6-5, 6-10; Div 770 (FITO); Div 775 (forex); Subdiv 768-R (temporary residents); ITAA 1936 ss 23AF, 23AG; Higher Education Support Act 2003; Student Loans (Overseas Debtors Repayment Levy) Act 2015 |
 | Tax authority | Australian Taxation Office (ATO) |
 | Income year | 2026-27 (1 July 2026 -- 30 June 2027) |
 | Core rule | Residents: assessable on worldwide income (s 6-5(2)) -- ordinary + statutory income from ALL sources |
@@ -33,7 +33,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | FITO de minimis | Foreign tax paid <= $1,000: claim the actual amount, no limit computation needed |
 | s 23AG scope (2026-27) | Confined to: delivery of Australian official development assistance (ODA) by non-government employers; developing-country relief funds; public disaster relief funds; certain prescribed charitable/religious institutions; disciplined force deployment -- 91+ continuous days required; NOT available to Australian government agency employees delivering ODA |
 | Temporary residents (Subdiv 768-R) | Most foreign-source income NANE; overseas employment/services income may still be assessable; CGT limited to taxable Australian property; CGT discount apportioned for post-8 May 2012 assets |
-| Individual return labels | Question 20 -- foreign source income (labels incl. 20M net foreign employment income, 20O foreign income tax offset, 20P overseas assets >= $50,000 flag); foreign capital gains at question 18, not 20 |
+| Individual return labels | Question 20 -- foreign source income (2025 labels include 20T other net foreign employment income, 20U employment shown on foreign-employment payment summaries/income statements, 20O FITO and 20P overseas assets >= $50,000; verify the form for 2026-27); foreign capital gains at question 18, not 20 |
 | Medicare levy / MLS | Foreign income counts -- levy is 2% of taxable income (which includes worldwide income); FITO can reduce levy and MLS after tax payable is nil |
 | HELP overseas debtors | Worldwide income reporting from 2016-17; overseas travel notification within 7 days if overseas 183+ days in 12 months; report by 31 October; 2026-27 minimum repayment threshold $69,528 (marginal system) |
 | Currency conversion | RBA rates from 1 Jan 2020; transaction-date rate or average rate per the translation rules (s 960-50); functional currency rules (s 960-70) generally not for individuals |
@@ -64,7 +64,7 @@ Foreign income hides in bank feeds, e-wallet exports and platform statements -- 
 | WISE / REVOLUT / PAYONEER receipts | Mixed: own transfers vs foreign income vs client payments | Characterise per transaction -- client payments are business/employment income; own-account transfers are NOT income |
 | Overseas payroll deposits (foreign employer, no PAYG) | Foreign employment income | Assessable in full; PAYG instalments flag; FITO for foreign tax; s 23AG screen |
 | AIRBNB / BOOKING.COM / VRBO payouts for overseas property | Foreign rental income | Gross rent assessable; deductions at Australian rules (interest, rates, repairs, depreciation); FITO for foreign tax on net rent |
-| Foreign super/pension periodic payments (UK SIPP, US 401k/IRA, NZ KiwiSaver) | Foreign pension income -- assessable | Include gross less any ATO-determined UPP deductible amount; lump sums escalate (R-AU-FI-4) |
+| Foreign super/pension periodic payments (UK SIPP, US 401k/IRA, NZ KiwiSaver) | Foreign pension income -- assessable | Report pensions before UPP at question 20; claim eligible UPP once at D11. Lump sums escalate (R-AU-FI-4) |
 | RSU/ESPP vesting from a foreign employer | ESS discount income (question 12) + foreign tax creditable | Not question 20 income, but FITO at 20O can include foreign tax on ESS discounts |
 | Crypto exchange withdrawals to AUD (foreign exchange) | CGT events, not "foreign income" per se | Route to CGT schedule (question 18); FITO possible for foreign tax on the gain |
 | Regular small foreign transfers labelled "family support" | Possible foreign income vs gifts/loans | Evidence of gift/loan or treat as income; escalate remittance structuring |
@@ -125,10 +125,13 @@ Note: the UK tax was computed on UK taxable rent (GBP 8,000); if UK depreciation
 UK resident-turned-Australian-resident receives UK State Pension GBP 11,500/year + a private UK pension GBP 6,000/year with an ATO-determined UPP deductible amount of A$2,000. Average rate 0.50.
 
 ```
-Gross foreign pensions: GBP 17,500 / 0.50 = A$35,000  (assessable in full -- s 6-5(2))
-Less UPP deductible amount (D11)          = A$ 2,000
-Net foreign pension (label 20)            = A$33,000
+Gross foreign pensions: GBP 17,500 / 0.50 = A$35,000
+Question 20 pension amounts before UPP    = A$35,000
+D11: UPP deductible amount, claimed once  = A$ 2,000
+Contribution to taxable income           = A$33,000
 ```
+
+Using the cited 2025 form as a label illustration and assuming no other deductible pension expenses and that only the private pension has a UPP, report A$23,000 at 20L and A$12,000 at 20D, before UPP; the gross amounts also feed 20E. Claim the A$2,000 once at D11. Confirm the applicable form for the actual return year.
 
 No UK tax withheld (pensions paid gross under the UK/AU DTA article 17 allocation -- treaty mechanics are escalate-only beyond this note: R-AU-FI-5). The A$33,000 is taxed at Australian marginal rates and counts for Medicare levy. No FITO arises because no foreign tax was paid.
 
@@ -158,7 +161,7 @@ Overseas levy (marginal system, 2026-27):
   ($91,111 - $69,528) x 15c = $21,583 x 0.15 = $3,237.45
 ```
 
-The overseas levy is assessed by the ATO after the worldwide income report (TAA 1953 Sch 1 overseas assessment machinery). If Tom's worldwide income were below $69,528 he would lodge a non-lodgment advice instead. Voluntary repayments from overseas do NOT discharge the assessed overseas levy.
+The ATO assesses the overseas levy under the Higher Education Support Act 2003 and the Student Loans (Overseas Debtors Repayment Levy) Act 2015. The 2026-27 reporting threshold is 25% x $69,528 = $17,382. Worldwide income of $30,000 must be reported although it produces no repayment. At $17,382 or less, use non-lodgement advice only after checking that an Australian tax return or other report is not required. Voluntary repayments from overseas do NOT discharge the assessed overseas levy.
 
 ---
 
@@ -211,11 +214,11 @@ Interests in controlled foreign companies (Part X ITAA 1936) and transferor trus
 
 ### Rule 8 -- Foreign pensions and annuities
 
-For a resident, foreign pension/annuity receipts (UK State/private pensions, US 401(k)/IRA distributions, overseas government pensions) are assessable in full under s 6-5(2) -- no general exemption, whatever the foreign treatment. The only reduction is the deductible amount of undeducted purchase price (UPP) where the pension has one (personal contributions): claim at D11 only with an ATO determination of the deductible amount (or a defensible computation). Lump sums from foreign super funds are a separate regime (some taxable, some exempt) -- contact/escalate rather than compute (R-AU-FI-4). FITO applies to foreign tax withheld on pension payments.
+For a resident, foreign pension/annuity receipts (UK State/private pensions, US 401(k)/IRA distributions, overseas government pensions) are assessable in full under s 6-5(2) -- no general exemption, whatever the foreign treatment. A pension may have a deductible amount of undeducted purchase price (UPP) from personal contributions. Claim it once at D11, with an ATO determination or a defensible computation; do not subtract it at question 20. Apply the form's separate treatment of other deductible pension expenses and debt deductions. Lump sums from foreign super funds are a separate regime (some taxable, some exempt) -- contact/escalate rather than compute (R-AU-FI-4). FITO applies to foreign tax withheld on pension payments.
 
 ### Rule 9 -- Return labels and disclosures
 
-Question 20 (supplementary return): assessable foreign income by type -- net foreign employment income (label 20M), net foreign pension/annuity income (with/without UPP), net foreign rent, other net foreign income; Australian franking credits from an NZ franking company; exempt foreign employment income (s 23AG/23AF amounts are still disclosed); FITO at label 20O; label 20P "Yes" if overseas assets total >= A$50,000 (historical cost or market value, whichever greater, at 30 June exchange rate). NOT at question 20: foreign capital gains (question 18), ESS discounts (question 12), foreign ETPs (question 4), pension arrears lump sums (question 24). A schedule of additional information (per country, per income type, foreign tax per type) is required where instructed.
+Under the cited **2025** supplementary return, foreign employment income not shown on a foreign-employment payment summary or income statement goes to 20T and feeds gross assessable foreign income at 20E. Employment shown on those documents goes to its primary questions 1, 3 or 24, with deductions at D1-D5, and the net amount is also disclosed at 20U as instructed. Label 20M covers other net foreign income and relevant super amounts, not employment. Question 20 also includes net foreign pension/annuity income (with/without UPP), net foreign rent, other net foreign income; Australian franking credits from an NZ franking company; exempt foreign employment income (s 23AG/23AF amounts are still disclosed); FITO at label 20O; label 20P "Yes" if overseas assets total >= A$50,000 (historical cost or market value, whichever greater, using the 30 June exchange rate, or the disposal-date rate for assets disposed of during the year). Test assets held at any time during the year; if question 19 covers all overseas assets, answer No at 20P. NOT at question 20: foreign capital gains (question 18), ESS discounts (question 12), foreign ETPs (question 4), pension arrears lump sums (question 24). A schedule of additional information (per country, per income type, foreign tax per type) is required where instructed.
 
 ### Rule 10 -- Medicare levy, MLS and FITO interaction
 
@@ -231,7 +234,7 @@ Temporary residents (temporary visa + not Social Security Act Australian residen
 
 ### Rule 13 -- HELP and overseas debtors
 
-From 2016-17, HELP/VSL/AASL debtors who are (or become) foreign residents must: notify within 7 days via an overseas travel notification if overseas 183+ days in any 12 months; and report WORLDWIDE income (repayment income + non-resident foreign-sourced income) or lodge a non-lodgment advice, by 31 October, through ATO online services or a registered tax agent. Foreign-sourced income is computed by the overseas assessed method (most recent foreign tax authority assessment covering 12 months overlapping the Australian year), the comprehensive tax-based assessment method, or the default rules in the Overseas Debtors Repayment Guidelines 2017. The ATO then assesses an overseas levy on the same marginal thresholds as domestic compulsory repayments (2026-27: nil to $69,528; 15c/$1 over $69,528 to $129,717; $9,028 + 17c/$1 over $129,717 to $186,050; 10% of total repayment income at $186,051+). s 154-19 TAA Sch 1 machinery covers the overseas assessment; deferral/amendment of the levy is possible on hardship-style grounds (R-AU-FI-6 for disputes).
+From 2016-17, HELP/VSL/AASL debtors who are (or become) foreign residents must: notify within 7 days via an overseas travel notification if overseas 183+ days in any 12 months; and report WORLDWIDE income (repayment income + non-resident foreign-sourced income) when it exceeds 25% of the minimum repayment threshold. For 2026-27 that reporting threshold is $17,382; $69,528 is the separate repayment threshold. At or below $17,382, check whether an Australian return or another report is required before using non-lodgement advice. Report by 31 October through ATO online services or a registered tax agent. Foreign-sourced income is computed by the overseas assessed method (most recent foreign tax authority assessment covering 12 months overlapping the Australian year), the comprehensive tax-based assessment method, or the default rules in the Overseas Debtors Repayment Guidelines 2017. The ATO then assesses an overseas levy on the same marginal thresholds as domestic compulsory repayments (2026-27: nil to $69,528; 15c/$1 over $69,528 to $129,717; $9,028 + 17c/$1 over $129,717 to $186,050; 10% of total repayment income at $186,051+). The Higher Education Support Act 2003 governs HELP repayments and the Student Loans (Overseas Debtors Repayment Levy) Act 2015 imposes the overseas levy; deferral/amendment of the levy is possible on hardship-style grounds (R-AU-FI-6 for disputes).
 
 ---
 
@@ -275,7 +278,7 @@ Prepared: [date]
   Gross (FCY) | Rate used (daily/avg annual, source) | Gross AUD
   Deductions AUD (Australian rules) | Net AUD
   Foreign tax paid (FCY) | Rate used | Foreign tax AUD
-  Return label (20M / 20 rent / 20 other / D11 / q18)
+  Return-year form and labels (2025: 20T with 20E / 20U with primary employment labels / 20L or 20D pension before UPP / 20 rent / 20M other / D11 UPP once / q18)
 
 2. FITO LIMIT WORKSHEET (skip if total foreign tax <= $1,000)
   Step 1 tax payable (incl. levy + MLS, before offsets):  A$[____]
@@ -303,7 +306,7 @@ REVIEWER FLAGS: [list Tier 2 flags and escalation items]
 1. Residency first. Worldwide taxation follows from s 6-5(2); nothing else in this skill matters until residency (and temporary-residency) is settled.
 2. Gross, then convert, then offset. Always bring in the gross foreign amount at the correct rate; never net off foreign tax before assessing.
 3. The offset limit is a lesser-of test. Foreign tax above the Australian tax on that income is permanently lost -- compute the limit before promising relief.
-4. Labels matter: foreign capital gains at question 18, employment income at 20M, FITO at 20O, asset disclosure at 20P.
+4. Labels matter: foreign capital gains at question 18, 2025 employment at 20T or 20U with the required primary labels, FITO at 20O, asset disclosure at 20P.
 5. s 23AG is now a narrow gate -- employer type and foreign taxability decide it, not the fact of working overseas.
 6. Medicare levy and HELP follow the income, not the offset: foreign income feeds both bases.
 
@@ -347,7 +350,7 @@ If the client provides only bank/e-wallet statements:
 | Temporary residents | ITAA 1997 Subdiv 768-R; ato.gov.au -- Foreign and temporary resident income (QC72093, 8 June 2026); Foreign and temporary residents (residency) |
 | Forex | ITAA 1997 Div 775; ato.gov.au -- Forex elections ($250,000 balance election, s 775-230) |
 | Conversion | ITAA 1997 s 960-50 (translation), s 960-70 (functional currency); ato.gov.au -- Foreign exchange rates (RBA rates from 1 Jan 2020) |
-| HELP overseas | TAA 1953 Sch 1 (incl. s 154-19 overseas assessments); ato.gov.au -- Overseas obligations when repaying loans (QC47358, 30 June 2026); repayment thresholds (QC16176, 30 June 2026); Overseas Debtors Repayment Guidelines 2017 |
+| HELP overseas | Higher Education Support Act 2003; Student Loans (Overseas Debtors Repayment Levy) Act 2015; ato.gov.au -- Overseas obligations when repaying loans (QC47358, 30 June 2026); repayment thresholds (QC16176, 30 June 2026); Overseas Debtors Repayment Guidelines 2017 |
 | Rates | ato.gov.au -- Tax rates Australian resident (QC73320, 13 August 2026); new tax cuts measure page (13 May 2026) |
 | Treaties | ato.gov.au -- Income tax treaties (DTA list); Treasury treaty texts |
 | CGT horizon | Tax Reform No. 1 Act 2026 (CGT reform from 1 July 2027); FRCGW rate 15% (au-nonresident-cgt) |
@@ -366,7 +369,7 @@ If the client provides only bank/e-wallet statements:
 
 **Test 6:** Private-company employee contracted by DFAT delivering ODA, 180 continuous days. -> s 23AG gate passed subject to non-exemption conditions; escalate claim.
 
-**Test 7:** Foreign pension GBP 17,500 at 0.50 avg, UPP deductible A$2,000. -> Assessable A$35,000 less A$2,000 = A$33,000 net.
+**Test 7:** Foreign pension GBP 17,500 at 0.50 avg, UPP deductible A$2,000. -> Question 20 pension amounts A$35,000 before UPP; D11 deducts A$2,000 once, leaving A$33,000 in taxable income. Verify the applicable return-year labels.
 
 **Test 8:** Foreign capital gain taxed overseas. -> Gain at question 18; foreign tax counts toward FITO at 20O.
 

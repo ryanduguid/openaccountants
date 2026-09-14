@@ -4,7 +4,7 @@ description: "Use this skill for any non-resident selling Australian assets. Tri
 version: 1.2
 jurisdiction: AU
 tax_year: 2025
-last_updated: 2026-09-10
+last_updated: 2026-09-14
 review_status: pending_review
 category: international
 tier: 2
@@ -23,7 +23,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Applies to | Non-residents of Australia disposing of Australian assets |
 | CGT rate (non-resident individual) | Net capital gain enters taxable income; apply graduated non-resident individual rates |
 | Key test | Taxable Australian Property (TAP) test |
-| Withholding | 15% of gross proceeds on all TAP transactions, no minimum value (contracts entered into on or after 1 January 2025). Contracts before that date: 12.5% on property valued at AUD $750,000 or more |
+| Withholding | 15% for covered transactions under contracts from 1 January 2025, subject to asset criteria and exclusions. The former AUD $750,000 real-property threshold is removed; TAP status alone does not require withholding |
 | Primary legislation | ITAA 1997 Div 855; TAA 1953 Sch 1 Subdiv 14-D |
 | Tax authority | ATO (ato.gov.au) |
 | Verified by | Pending — Australian CPA/CA sign-off required |
@@ -65,12 +65,13 @@ The Library's Michael example states a 42.67% discount alongside 50% x 884/1,036
 
 ## Section 5 — Foreign Resident Capital Gains Withholding (FRCGW)
 
-- **FRCGW obligation** — When a non-resident sells TAP, the buyer is required to withhold and remit to the ATO. For contracts entered into on or after 1 January 2025 the rate is 15% of gross proceeds and the AUD $750,000 threshold is removed, so it applies to every disposal regardless of value. For contracts entered into between 1 July 2017 and 31 December 2024, the rate is 12.5% and applies only where the property is valued at AUD $750,000 or more.
+- **FRCGW obligation:** Determine whether the transaction meets the withholding asset and vendor criteria, then check exclusions. Covered assets include Australian real property, qualifying indirect interests and options or rights to acquire them. TAP status alone is insufficient: transactions on an approved stock exchange and certain broker-operated crossing systems are excluded, even where the asset remains subject to Australian CGT. Other exclusions can also apply. For contracts from 1 January 2025, the rate is 15% and the former AUD $750,000 real-property threshold is removed. For contracts from 1 July 2017 to 31 December 2024, the rate was 12.5%, with that threshold applying to real property.
 - **FRCGW nature** — This is a payment on account (not a final tax). Actual tax liability is computed in the non-resident's Australian tax return.
+- [ATO: FRCGW overview and exclusions](https://www.ato.gov.au/individuals-and-families/investments-and-assets/capital-gains-tax/foreign-residents-and-capital-gains-tax/foreign-resident-capital-gains-withholding/foreign-resident-capital-gains-withholding-overview)
 
 **FRCGW threshold table**
 
-| FRCGW threshold | None for contracts from 1 January 2025 (was AUD $750,000 for contracts to 31 December 2024) |
+| Real-property value threshold | None for contracts from 1 January 2025 (was AUD $750,000 for contracts from 1 July 2017 to 31 December 2024); other withholding criteria and exclusions still apply |
 | --- | --- |
 | Withholding rate | 15% of gross proceeds from 1 January 2025 (12.5% for contracts to 31 December 2024) |
 | Who withholds | The buyer (purchaser) |

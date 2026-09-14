@@ -6,7 +6,7 @@ version: 1.0
 jurisdiction: AU
 tax_year: 2026
 tax_year_notes: "2026-27"
-last_updated: 2026-08-20
+last_updated: 2026-09-14
 review_status: pending_review
 category: international
 tier: 2
@@ -177,7 +177,11 @@ Income to which no beneficiary is presently entitled (and no valid streaming app
 
 ### Rule 5 -- Division 6AA minors' rates
 
-Applies to "eligible taxable income" (unearned income, including discretionary trust distributions) of resident minors who are not excepted persons: $0-$416 nil; $417-$1,307 taxed at 66% of the excess over $416; over $1,307 the ENTIRE amount at 45% (cliff, not marginal). Non-resident minors get no tax-free band: $0-$416 at 30% of the entire amount (the non-resident first rate from 2024-25), then 66% of the excess, then 45% of the whole amount (ATO "Tax rates if you're under 18 years old"). The trustee pays under s 98(1) while the minor is under a legal disability; the minor also returns the share with a credit for the trustee's tax if they must lodge. LITO cannot offset Div 6AA tax. Excepted income (employment, testamentary trusts, compensation, inheritances) is taxed at adult rates -- verify character before assuming.
+Applies to "eligible taxable income" (unearned income, including discretionary trust distributions) of resident minors who are not excepted persons: $0-$416 nil; $417-$1,307 taxed at 66% of the excess over $416; over $1,307 the ENTIRE amount at 45% (cliff, not marginal).
+
+For non-resident minors, the verified 2024-25 and 2025-26 table is separate: $0 to $416, 30% of the entire amount; $417 to $713, $124.80 plus 66% of the excess over $416; over $713, 45% of the entire amount. For the middle band, use the greater of that amount and the tax if eligible taxable income were the top slice of total taxable income at general rates. At $500 with no top-slice adjustment, tax is $124.80 + ($500 - $416) x 66% = $180.24. Do not use the resident $1,307 boundary. Verify the applicable published table before a 2026-27 calculation. See [ATO: tax rates for under-18s](https://www.ato.gov.au/tax-rates-and-codes/tax-rates-if-you-re-under-18-years-old).
+
+The trustee pays under s 98(1) while the minor is under a legal disability; the minor also returns the share with a credit for the trustee's tax if they must lodge. LITO cannot offset Div 6AA tax. Excepted income (employment, testamentary trusts, compensation, inheritances) is taxed at adult rates -- verify character before assuming.
 
 ### Rule 6 -- Streaming capital gains (Subdiv 115-C)
 
@@ -208,7 +212,11 @@ s 100A strikes where a beneficiary's present entitlement arises from a "reimburs
 
 ### Rule 11 -- TFN withholding (closely held trusts)
 
-Beneficiaries of closely held trusts (discretionary trusts and trusts with < 20 members holding >= 75%) must quote their TFN before being paid or made presently entitled; otherwise the trustee withholds at 47% from the payment/entitlement (to the extent of the share of net income), registers for PAYG withholding (closely held), lodges an Annual TFN withholding report by 30 September, gives payment summaries by 14 October, and pays via annual activity statement by 28 October. Exclusions: beneficiaries under a legal disability, non-residents, exempt entities, amounts subject to FTDT or a TB statement, s 98 liabilities, and entitlements under $120 for the year. From 1 July 2026 the quarterly TFN report is ABOLISHED (final report for April-June 2026 was due 31 July 2026); beneficiary TFNs are instead reported in the statement of distribution in the trust return (2027 return onward). Withholding obligations themselves are unchanged.
+For TFN withholding, a closely held trust is a resident trust that is discretionary or meets the 20/75 test, unless an exclusion applies. The test includes up to 20 individuals holding, directly or indirectly for their own benefit, fixed entitlements to at least 75% of income or at least 75% of capital. Apply the prescribed grouping of an individual, relatives and nominees, and the discretionary-trustee rule. Excluded trusts include qualifying superannuation trusts, specified deceased estates, listed unit trusts and other statutory exclusions. For example, a resident fixed trust has 30 unrelated beneficial owners: 20 each hold 3.75% and ten each hold 2.5% of both income and capital. The largest 20 hold exactly 75%; the largest 19 hold only 71.25%. With no exclusion, it passes the inclusive 20/75 test. See [ATO: who the rules apply to](https://www.ato.gov.au/businesses-and-organisations/trusts/trusts-registration-and-reporting-obligations/closely-held-trusts/tfn-withholding-for-closely-held-trusts/who-the-rules-apply-to).
+
+Beneficiaries within scope must quote their TFN before being paid or made presently entitled; otherwise the trustee withholds at 47% from the payment/entitlement (to the extent of the share of net income), registers for PAYG withholding (closely held), lodges an Annual TFN withholding report by 30 September, gives payment summaries by 14 October, and pays via annual activity statement by 28 October. Exclusions: beneficiaries under a legal disability, non-residents, exempt entities, amounts subject to FTDT or a TB statement, s 98 liabilities, and amounts below the applicable threshold. The threshold is $120 for the whole income year; for a payment relating to part of the year, use $120 x applicable days / 365. An otherwise taxable $80 payment covering 100 days exceeds $32.88, so without a TFN the 47% withholding is $37.60. See [ATO: trustee requirements](https://www.ato.gov.au/businesses-and-organisations/trusts/trusts-registration-and-reporting-obligations/closely-held-trusts/tfn-withholding-for-closely-held-trusts/what-trustees-need-to-do).
+
+From 1 July 2026 the quarterly TFN report is ABOLISHED (final report for April-June 2026 was due 31 July 2026); beneficiary TFNs are instead reported in the statement of distribution in the trust return (2027 return onward). Withholding obligations themselves are unchanged.
 
 ### Rule 12 -- Trustee beneficiary statements and circular distributions (Div 6D)
 
@@ -346,7 +354,7 @@ If the client provides only financial statements and a trial balance:
 | Streaming recording deadlines | Franked: 30 June. Capital gains via capital appointment: 31 August |
 | FTDT due date | 21 days after distribution (or after election if later) |
 | TFN withholding calendar | Report 30 Sep; payment summaries 14 Oct; pay 28 Oct; quarterly TFN report abolished 1 July 2026 |
-| TFN withholding de minimis | $120 per beneficiary per year |
+| TFN withholding threshold | Below $120 for a whole-year amount; for a part-year payment, below $120 x applicable days / 365 |
 | Franking-credit ceiling without FTE (non-fixed trust) | $5,000 per beneficiary |
 | CGT reform start (LAW) | 1 July 2027 (indexation + 30% minimum rate; trustee statements) |
 | Trustee minimum tax (ANNOUNCED, not law) | 30% from 1 July 2028; testamentary and other carve-outs under consultation |

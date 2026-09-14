@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Australian individual income ta
 version: 2.2
 jurisdiction: AU
 tax_year: 2024
-last_updated: 2026-09-10
+last_updated: 2026-09-14
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -76,7 +76,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | --- | --- |
 | Rate | 16% of income tax on business income |
 | Cap | $1,000 |
-| Eligibility | Aggregated turnover under $5 million (individuals and trusts only) |
+| Eligibility | Eligible individual with net small business income from their sole-trader business or a qualifying partnership/trust share; business aggregated turnover under $5 million. A trustee is not an additional eligible claimant |
 
 The Library establishes the 70c home-office rate for 2025-26 only. For this guide's 2024-25 return, record the fixed rate as unverified and leave that calculation pending until a source for that year is supplied. The separately labelled 2025-26 illustrations do not establish a 2024-25 rate.
 
@@ -223,9 +223,9 @@ The Library establishes the 70c home-office rate for 2025-26 only. For this guid
 
 ### Example 2 -- Instant Asset Write-Off
 
-**Input:** Small business entity (turnover < $10M). Purchases laptop AUD 2,800 and monitor AUD 950. Both under $20,000.
+**Input:** Eligible small business entity using simplified depreciation (turnover < $10M). Laptop cost AUD 2,800 and monitor cost AUD 950, both under $20,000 on the applicable cost basis. Both are first used or installed ready for taxable use in 2024-25 and used wholly for the business.
 
-**Classification:** Both items are immediately deductible under the instant asset write-off. Total deduction: AUD 3,750 in the year of purchase. No depreciation schedule needed.
+**Classification:** Total immediate deduction: AUD 3,750 in 2024-25, the first-use or ready-for-use year, subject to the remaining write-off conditions. Retain asset and first-use records. If instead purchased on 28 June 2025 but first usable on 2 July 2025, purchase alone gives no 2024-25 write-off. Check the 2025-26 rules and remaining conditions before claiming in that first-use year.
 
 ### Example 3 -- Motor Vehicle (Logbook vs Cents/Km)
 
@@ -242,10 +242,10 @@ The Library establishes the 70c home-office rate for 2025-26 only. For this guid
 **Input:** Works from home 1,600 hours/year. Dedicated office in 3-bedroom house (1/4 area). Electricity AUD 2,400, internet AUD 1,200, phone AUD 960 (80% business), depreciation on furniture AUD 400.
 
 **Computation:**
-- Fixed rate: 1,600 x $0.70 = AUD 1,120 (covers electricity, gas, phone, internet, stationery, computer consumables)
+- Fixed rate: 1,600 x $0.70 = AUD 1,120 for the covered running costs, plus eligible furniture depreciation of AUD 400. Total = AUD 1,520.
 - Actual cost: electricity 1/4 x AUD 2,400 = AUD 600. Internet 80% x AUD 1,200 = AUD 960. Phone 80% x AUD 960 = AUD 768. Depreciation AUD 400. Total = AUD 2,728.
-- Actual method is significantly better here.
-- Under fixed rate: only computer/printer depreciation and occupancy expenses (rent, mortgage interest, rates, insurance) can be claimed additionally. Under actual: each item claimed individually.
+- On these assumptions, the actual-cost deduction of AUD 2,728 exceeds the fixed-rate total of AUD 1,520 by AUD 1,208.
+- The fixed rate covers energy, phone, internet, stationery and computer consumables. Eligible furniture and equipment depreciation, repairs to those assets and home-office cleaning can be claimed separately. Occupancy costs require the separate place-of-business conditions. Under actual costs, assess and apportion each expense.
 - [T2] Flag: confirm method choice and occupancy costs if actual.
 
 ## Section 5 -- Tier 1 Rules (When Data Is Clear)
@@ -292,7 +292,7 @@ The Library establishes the 70c home-office rate for 2025-26 only. For this guid
 | --- | --- |
 | Self-lodge deadline | 31 October following the year-end -- 31 October 2025 for the 2024-25 year this guide covers |
 | Tax agent deadline | Varies (typically March-May 2026) |
-| Failure to lodge on time | $313 per 28-day period, up to 5 periods ($1,565 max) |
+| Failure to lodge on time | For the ordinary 31 October 2025 deadline: $330 per 28 days or part, up to five units ($1,650 base maximum). The unit was $313 from 1 July 2023 to 6 November 2024, is $330 from 7 November 2024 to 30 June 2026, and becomes $364 from 1 July 2026 ($1,820 for five units). Determine the applicable date; statutory adjustments and remission can apply. |
 | Shortfall penalty (reasonable care not taken) | 25% of shortfall |
 | Shortfall penalty (recklessness) | 50% of shortfall |
 | General Interest Charge (GIC) | Varies quarterly; 2025 annual rates include 11.42%, 11.17%, 10.78%, and 10.61%; calculated daily and compounded |
@@ -305,7 +305,7 @@ The Library establishes the 70c home-office rate for 2025-26 only. For this guid
 
 | Method | What It Covers | Additional Claims |
 | --- | --- | --- |
-| Fixed rate (verify the return year; 70c/hr for 2025-26) | Electricity, gas, phone, internet, stationery, computer consumables | Separately claim: technology depreciation (computer, monitor), occupancy costs (if dedicated room), cleaning |
+| Fixed rate (verify the return year; 70c/hr for 2025-26) | Electricity, gas, phone, internet, stationery, computer consumables | Eligible furniture and equipment depreciation, repairs to those assets and cleaning; occupancy costs only if the separate place-of-business conditions are met |
 | Actual cost | Each expense claimed individually at actual business % | No fixed rate component |
 
 - **Home office record keeping and occupancy expenses** — Under either method: must have records of hours worked from home. Fixed rate: can use any reasonable record. Actual: need receipts and usage records. Occupancy expenses (rent, mortgage interest, rates, home insurance, land tax) are ONLY deductible if you have a dedicated area set aside exclusively as a place of business. These are separate from running expenses.
