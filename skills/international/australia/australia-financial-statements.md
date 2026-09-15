@@ -4,7 +4,7 @@ description: Use this skill when preparing, reviewing, or advising on annual fin
 version: 1.1
 jurisdiction: AU
 tax_year: 2025
-last_updated: 2026-09-14
+last_updated: 2026-09-15
 review_status: pending_review
 depends_on:
   - financial-statements-workflow-base
@@ -118,6 +118,14 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | 10 | Financial instruments | AASB 9; classification and measurement; hedge accounting |
 | 11 | Foreign currency | AASB 121; monetary items at closing rate |
 | 12 | Government grants | AASB 120; recognised when reasonable assurance of compliance |
+
+### Deferred tax and lease restoration adjustments
+
+For the foundation workflow's tax step, apply [AASB 112 paragraphs 58 and 61A](https://standards.aasb.gov.au/aasb-112-sep-2023): current and deferred tax follow the related item into profit or loss, other comprehensive income (OCI) or directly into equity, including when the item was recognised in a different period. Check the separate business-combination rules. Deferred tax uses temporary differences between carrying amounts and tax bases, subject to the standard's recognition conditions and exceptions.
+
+For restoration obligations, apply [AASB 16 paragraphs 24(d) and 25](https://standards.aasb.gov.au/aasb-16-nov-2022). Determine whether the obligation exists at commencement or arises through later use. Recognise and measure the provision under AASB 137 when the obligation is incurred; include qualifying costs in the right-of-use asset, with inventory-production costs assessed under AASB 102. Depreciation and discount unwinding follow initial recognition rather than postponing the liability.
+
+Hypothetical checks: a $10,000 revaluation recognised in OCI that creates a $10,000 taxable temporary difference at an assumed 30% tax rate gives $3,000 deferred tax in OCI. A restoration obligation incurred at commencement and measured at $10,000 requires that full provision then; a ten-year lease does not justify recording only $1,000 in year one. These assumptions illustrate recognition, not a verified tax rate or a measurement for an actual entity. Sources checked 15 September 2026; confirm the standards applicable to the reporting period.
 
 ## Section 6 -- Statement of Profit or Loss Format
 

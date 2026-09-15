@@ -5,7 +5,7 @@ version: 1.0
 category: foundation
 jurisdiction: GLOBAL
 tier: 2
-last_updated: 2026-06-12
+last_updated: 2026-09-15
 ---
 
 # Financial Statements Workflow Base Skill v1.0
@@ -92,7 +92,7 @@ Review the trial balance and the user's supporting information for year-end adju
 - *Doubtful debts.* Review the trade debtors listing. Apply the country skill's provision policy (specific provision for known bad debts, general provision as a percentage of aged debtors). Debit bad debt expense, credit provision for doubtful debts.
 - *Warranty provisions.* If the entity sells goods with warranties, estimate the provision based on historical claim rates. Debit warranty expense, credit warranty provision.
 - *Legal provisions.* If the entity is party to legal proceedings with a probable adverse outcome and estimable cost, recognize a provision. Debit legal expense, credit legal provision.
-- *Dilapidation provisions.* If the entity has lease obligations to restore premises, recognize a provision over the lease term.
+- *Dilapidation provisions.* Establish when the restoration obligation is incurred and apply the country framework's recognition and measurement rules at that date. Distinguish an obligation existing at lease commencement from one arising through later use. Assess whether the corresponding cost belongs in the right-of-use asset, inventory or expense under that framework. Account for subsequent depreciation and discount unwinding separately; do not spread recognition of an existing obligation merely because the lease lasts several years.
 
 **Inventory adjustments.** If the entity holds inventory: verify the closing inventory value per the count or valuation. Post any write-down from cost to net realizable value. Debit cost of sales, credit inventory.
 
@@ -102,8 +102,8 @@ Review the trial balance and the user's supporting information for year-end adju
 
 - Apply the country skill's corporate tax rate to the taxable profit (which may differ from accounting profit due to disallowable expenses and capital allowances).
 - If a tax skill is loaded, use its computation. If not, apply the country skill's headline rate to accounting profit as an approximation and flag for the reviewer.
-- Post: debit tax expense (P&L), credit tax payable (current liability).
-- If the country skill requires deferred tax: compute the deferred tax asset or liability arising from timing differences between accounting profit and taxable profit. Debit/credit deferred tax expense (P&L), credit/debit deferred tax liability/asset (balance sheet).
+- Determine where the related transaction is recognised under the country framework before assigning current or deferred tax to profit or loss, other comprehensive income or directly to equity. Check separate business-combination rules where applicable. A tax payable or deferred tax balance does not by itself determine the corresponding recognition location.
+- If the country skill requires deferred tax: identify temporary differences between asset or liability carrying amounts and their tax bases, then apply that framework's recognition conditions, exceptions and measurement rules. Differences between accounting profit and taxable profit alone are not a deferred-tax calculation. Record the asset or liability and its corresponding tax entry in the recognition location established above.
 
 For every adjustment, record: the adjustment type, the accounts affected, the debit amount, the credit amount, and the rationale. Present the full list of adjustments to the user before proceeding:
 
