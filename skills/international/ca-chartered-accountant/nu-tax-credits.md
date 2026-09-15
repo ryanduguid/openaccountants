@@ -3,7 +3,7 @@ name: nu-tax-credits
 description: Use this skill for Nunavut provincial tax credits — Nunavut Cost of Living Tax Credit, Nunavut Volunteer Firefighters Tax Credit, Nunavut Carbon Credit, Nunavut Risk Capital Investment Tax Credit (45% — highest in Canada). Triggers "Nunavut tax credits", "Nunavut Cost of Living", "Form NU428", "Nunavut Risk Capital", "NRCITC".
 jurisdiction: CA
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-15
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 This skill consolidates Nunavut's personal and corporate tax credits for tax year 2025. Nunavut is a small jurisdiction (population ~40,000) but uses tax credits aggressively to offset the territory's extreme cost of living and attract risk capital into a remote economy. The headline incentive — the Nunavut Risk Capital Investment Tax Credit (NRCITC) at **45%** — is the most generous angel investor credit in Canada.
 
-This skill MUST be loaded alongside `ca-tax-workflow-base` (workflow scaffolding) and, where personal income is involved, the federal individual return skill. It does not replace federal credits; it layers Nunavut-specific credits on top of the federal computation via Form NU428 (personals) and the Nunavut corporate schedule (T2 SCH 481 equivalent).
+The referenced `ca-tax-workflow-base` is not supplied in this repository. A reviewer must supply the missing Canadian return workflow before using this guide to prepare a return. Where personal income is involved, also load the federal individual return skill. It does not replace federal credits; it layers Nunavut-specific credits on top of the federal computation via Form NU428 (personals) and the Nunavut corporate schedule (T2 SCH 481 equivalent).
 
 ## 1. Quick reference — personal + corporate credit summary
 

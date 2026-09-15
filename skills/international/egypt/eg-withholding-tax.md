@@ -4,7 +4,7 @@ description: Use this skill whenever asked about Egyptian withholding tax (WHT) 
 version: 0.1
 jurisdiction: EG
 tax_year: 2025
-last_updated: 2026-07-22
+last_updated: 2026-09-15
 review_status: pending_review
 depends_on:
   - income-tax-workflow-base
@@ -36,7 +36,7 @@ The AI must reply in the user's language (English or Arabic / Egyptian Arabic) a
 
 ## What this file is
 
-**This file is a content skill that loads on top of a workflow base** (here: `income-tax-workflow-base`). It provides Egypt-specific WHT rates, treaty reduction mechanics, compliance steps, and filing mechanics.
+The declared `income-tax-workflow-base` dependency is not supplied in this repository. This content guide cannot provide that missing workflow; a reviewer must supply and verify it before using the guide to prepare a return. It provides Egypt-specific WHT rates, treaty reduction mechanics, compliance steps, and filing mechanics.
 
 **Tax year coverage.** This skill is current for **tax year 2025** as of its currency date.
 

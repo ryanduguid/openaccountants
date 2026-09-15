@@ -3,7 +3,7 @@ name: nl-tax-credits
 description: Use this skill for Newfoundland and Labrador provincial tax credits + NL Insurance Premium Tax. Includes NL Low-Income Tax Reduction, NL Income Supplement, NL Seniors' Benefit, Volunteer Firefighters Tax Credit, NL Direct Equity Tax Credit (35%), NL Film & Video Industry Tax Credit, plus the NL Insurance Premium Tax (15% on commercial insurance — unique to NL). Triggers "Newfoundland tax credits", "NL Income Supplement", "NL Direct Equity Tax Credit", "Newfoundland Insurance Premium Tax", "NL IPT 15%", "Form NL428".
 jurisdiction: CA
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-15
 review_status: pending_review
 tier: 2
 license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 This skill covers the personal and corporate tax credit toolkit specific to Newfoundland and Labrador (NL), plus the NL Insurance Premium Tax (IPT) — a province-specific indirect tax that is unusually high (15% on commercial insurance) and frequently overlooked by accountants from other provinces.
 
-Load alongside `ca-tax-workflow-base` and (where relevant) `nl-individual-return`. Federal credits stay with the federal skills; this skill is purely the NL-specific layer.
+The referenced `ca-tax-workflow-base` is not supplied in this repository. This guide therefore does not provide the Canadian return workflow or province-selection process; a reviewer must supply those before using it to prepare a return. Load `nl-individual-return` where relevant. Federal credits stay with the federal skills; this guide supplies only the NL-specific layer.
 
 ## 1. Quick reference
 
@@ -263,7 +263,7 @@ Maya's NL personal credits (separate).
 
 - If DETC sector classification is ambiguous → default to 20% (general) until IET letter confirms priority sector.
 - If volunteer hours are between 195 and 205 with no signed letter from Fire Chief → do not claim.
-- If client moved into NL during 2025 → refer to "province of residence on Dec 31" rule and refuse NL428 if they were resident elsewhere on Dec 31; redirect to ca-tax-workflow-base for the correct province skill.
+- If client moved into NL during 2025 → refer to "province of residence on Dec 31" rule and refuse NL428 if they were resident elsewhere on Dec 31; have the reviewer select the correct provincial return guide; the referenced `ca-tax-workflow-base` is unavailable.
 - If unsure whether IPT applies to a non-NL-licensed placement → assume it does and have client self-assess at 4%; safer than missing the remittance.
 - If a client claims the Volunteer Firefighter Credit AND the federal VFA on the same hours → fix it; only one is allowed.
 - Always file the T1 for low-income NL residents — Income Supplement and Seniors' Benefit are refundable and require a filed return.
