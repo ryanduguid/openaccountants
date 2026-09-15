@@ -4,7 +4,7 @@ description: Entry point for the OpenAccountants financial-reporting (US GAAP / 
 version: 0.1
 jurisdiction: GLOBAL
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-15
 review_status: pending_review
 depends_on: []
 category: financial-reporting
@@ -43,6 +43,12 @@ The router **computes nothing** — no recognition, no measurement, no journal e
 Ask ONE question and do not proceed until answered:
 
 > "Which framework do these statements report under — US GAAP, IFRS, or both (e.g. a local statutory set plus a group-reporting set)? It changes the citations and sometimes the answer."
+
+### Australian financial statement adjustments
+
+Before applying the topic map or uncovered-standards gate, check whether the request concerns Australian financial statements under Australian Accounting Standards and either tax recognition location or the timing of a lease restoration obligation. For those decisions, load [australia-financial-statements](../international/australia/australia-financial-statements.md), subsection “Deferred tax and lease restoration adjustments”, with [financial-statements-workflow-base](../foundation/financial-statements-workflow-base.md), and hand off to that workflow's intake. Confirm the applicable reporting period and framework there.
+
+This country workflow covers those recognition decisions, not every income-tax or provisions question. Identify any remaining uncovered issues using Step 2. For other jurisdictions, other frameworks or broader topic questions, continue through Steps 1 to 4. For dual reporters, apply this country handoff only to the Australian statements and route the other reporting set separately. The router still computes nothing.
 
 ## Step 1: Identify the standard(s) the transaction touches
 
@@ -119,7 +125,7 @@ Before handing off, confirm:
 
 ## PROHIBITIONS
 
-- **Prohibition list** — NEVER compute, classify, or book an entry inside the router — route and hand off. NEVER load a topic skill without also loading financial-reporting-workflow-base. NEVER guess the reporting framework — ask if unclear. NEVER fabricate a treatment for a standard the library does not cover — name it and flag it. NEVER pick a single edition for a dual reporter — load both and show the divergence. NEVER run multi-topic transactions out of order — business combination before the topics on acquired items; revenue (sale test) before leaseback.  _(PROHIBITIONS)_
+- **Prohibition list** — NEVER compute, classify, or book an entry inside the router — route and hand off. Load financial-reporting-workflow-base with the Step 1 topic skills; the Australian country handoff above instead requires financial-statements-workflow-base. NEVER guess the reporting framework — ask if unclear. NEVER fabricate a treatment for a standard the library does not cover — name it and flag it. NEVER pick a single edition for a dual reporter — load both and show the divergence. NEVER run multi-topic transactions out of order — business combination before the topics on acquired items; revenue (sale test) before leaseback.  _(PROHIBITIONS)_
 
 ## Disclaimer
 

@@ -5,7 +5,7 @@ version: 1.0
 category: foundation
 jurisdiction: GLOBAL
 tier: 2
-last_updated: 2026-06-12
+last_updated: 2026-09-15
 ---
 
 # Financial Statements Workflow Base Skill v1.0
@@ -92,7 +92,7 @@ Review the trial balance and the user's supporting information for year-end adju
 - *Doubtful debts.* Review the trade debtors listing. Apply the country skill's provision policy (specific provision for known bad debts, general provision as a percentage of aged debtors). Debit bad debt expense, credit provision for doubtful debts.
 - *Warranty provisions.* If the entity sells goods with warranties, estimate the provision based on historical claim rates. Debit warranty expense, credit warranty provision.
 - *Legal provisions.* If the entity is party to legal proceedings with a probable adverse outcome and estimable cost, recognize a provision. Debit legal expense, credit legal provision.
-- *Dilapidation provisions.* If the entity has lease obligations to restore premises, recognize a provision over the lease term.
+- *Dilapidation provisions.* Establish when the restoration obligation is incurred and apply the country framework's recognition and measurement rules at that date. Distinguish an obligation existing at lease commencement from one arising through later use. Assess whether the corresponding cost belongs in the right-of-use asset, inventory or expense under that framework. Account for subsequent depreciation and discount unwinding separately; do not spread recognition of an existing obligation merely because the lease lasts several years.
 
 **Inventory adjustments.** If the entity holds inventory: verify the closing inventory value per the count or valuation. Post any write-down from cost to net realizable value. Debit cost of sales, credit inventory.
 
@@ -102,10 +102,10 @@ Review the trial balance and the user's supporting information for year-end adju
 
 - Apply the country skill's corporate tax rate to the taxable profit (which may differ from accounting profit due to disallowable expenses and capital allowances).
 - If a tax skill is loaded, use its computation. If not, apply the country skill's headline rate to accounting profit as an approximation and flag for the reviewer.
-- Post: debit tax expense (P&L), credit tax payable (current liability).
-- If the country skill requires deferred tax: compute the deferred tax asset or liability arising from timing differences between accounting profit and taxable profit. Debit/credit deferred tax expense (P&L), credit/debit deferred tax liability/asset (balance sheet).
+- Determine where the related transaction is recognised under the country framework before assigning current or deferred tax to profit or loss, other comprehensive income or directly to equity. Check separate business-combination rules where applicable. A tax payable or deferred tax balance does not by itself determine the corresponding recognition location.
+- If the country skill requires deferred tax: identify temporary differences between asset or liability carrying amounts and their tax bases, then apply that framework's recognition conditions, exceptions and measurement rules. Differences between accounting profit and taxable profit alone are not a deferred-tax calculation. Record the asset or liability and its corresponding tax entry in the recognition location established above.
 
-For every adjustment, record: the adjustment type, the accounts affected, the debit amount, the credit amount, and the rationale. Present the full list of adjustments to the user before proceeding:
+For every adjustment, record: the adjustment type, the accounts affected, the debit amount, the credit amount, and the rationale. Record current and deferred tax components separately by recognition location; identify that location in the rationale. Present the full list of adjustments to the user before proceeding:
 
 > "I have identified the following year-end adjustments:
 >
@@ -126,7 +126,7 @@ From the adjusted trial balance (trial balance + year-end adjustments), prepare 
 - Compute operating profit (gross profit − operating expenses).
 - Include other income and expenses (interest, foreign exchange gains/losses, exceptional items) per the country skill's format.
 - Compute profit before tax.
-- Deduct the tax charge (from Step 4).
+- Deduct only the current and deferred tax charge allocated to profit or loss in Step 4. Present tax allocated to other comprehensive income or directly to equity separately under the country framework.
 - Compute profit after tax.
 
 If the country skill specifies a single-step format (all revenue minus all expenses in one step), follow that instead of the multi-step format above.
@@ -149,7 +149,7 @@ From the adjusted trial balance, prepare the balance sheet in the format specifi
 
 **Equity:**
 - Share capital or owner's equity.
-- Retained earnings (brought forward + current year profit − dividends/drawings).
+- Retained earnings (brought forward + current year profit − dividends/drawings, adjusted for any items recognised directly in retained earnings under the country framework).
 - Other reserves per the country skill's requirements.
 
 Verify the accounting equation: Total assets = Total liabilities + Total equity. If it does not balance, stop and find the error. Do not proceed with an unbalanced balance sheet.
@@ -168,7 +168,7 @@ Prepare the notes in the order and format specified by the country skill. Univer
 
 3. **Operating profit.** Disclosure of items charged in arriving at operating profit: depreciation, amortization, auditor remuneration, operating lease charges, staff costs, directors' remuneration.
 
-4. **Tax.** Reconciliation of the tax charge to the expected charge at the headline rate. Deferred tax movements.
+4. **Tax.** Reconcile the profit-or-loss tax charge to the expected charge at the applicable rate. Show deferred tax movements and tax recognised in other comprehensive income or directly in equity separately, as required by the country framework.
 
 5. **Fixed assets / property, plant, and equipment.** Movement schedule: opening cost, additions, disposals, closing cost. Opening accumulated depreciation, charge for the year, disposals, closing accumulated depreciation. Net book value at start and end.
 
@@ -251,7 +251,7 @@ All three conditions must be met. If condition 3 fails but 1 and 2 are met, disc
 
 **Current tax:** Taxable profit × Tax rate = Current tax charge. Taxable profit starts from accounting profit and is adjusted for: disallowable expenses (entertaining, fines, depreciation replaced by capital allowances), non-taxable income (exempt dividends, capital gains taxed separately), and timing differences that create deferred tax.
 
-**Deferred tax:** Arises from timing differences between when items are recognized in accounting profit vs. taxable profit. The most common source is the difference between accounting depreciation and tax capital allowances. Compute using the country skill's approach (full provision method or partial provision, balance sheet liability method or income statement method).
+**Deferred tax:** Apply the temporary-difference calculation, recognition conditions, exceptions and measurement rules in Step 4 using the country framework. Differences between an asset's accounting carrying amount and tax base can arise from depreciation, capital allowances or revaluation. Retain the recognition location of each tax component through the statements, notes and adjustment schedule.
 
 ---
 
@@ -348,11 +348,11 @@ Run these fourteen checks against all outputs. If any fails, fix and re-run. Do 
 
 **Check 2 — Adjustment schedule balances.** Total debits across all year-end adjustments equal total credits. Every adjustment is a valid double entry.
 
-**Check 3 — Income statement foots.** Revenue minus cost of sales equals gross profit (if multi-step). Gross profit minus operating expenses equals operating profit. All subtotals are arithmetically correct. The tax charge deducted matches the tax provision posted in Step 4.
+**Check 3 — Income statement foots.** Revenue minus cost of sales equals gross profit (if multi-step). Gross profit minus operating expenses equals operating profit. All subtotals are arithmetically correct. The tax charge deducted matches only the profit-or-loss component posted in Step 4. Tax allocated to other comprehensive income or directly to equity reconciles separately to the corresponding statements and notes.
 
 **Check 4 — Balance sheet balances.** Total assets equal total liabilities plus total equity. Not approximately — exactly. A difference of even 0.01 means a posting error.
 
-**Check 5 — Retained earnings reconciles.** Retained earnings on the balance sheet equals: opening retained earnings + net profit for the year − dividends declared. If it does not, the P&L and balance sheet are inconsistent.
+**Check 5 — Retained earnings reconciles.** Retained earnings on the balance sheet equals: opening retained earnings + net profit for the year − dividends declared, adjusted for any items recognised directly in retained earnings under the country framework. If it does not, the P&L and balance sheet are inconsistent.
 
 ### Cross-document consistency
 
