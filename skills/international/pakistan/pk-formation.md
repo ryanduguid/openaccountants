@@ -4,7 +4,7 @@ description: "Use this skill whenever asked about forming, incorporating, or reg
 version: 1.0
 jurisdiction: PK
 tax_year: 2025
-last_updated: 2026-09-10
+last_updated: 2026-09-15
 reviewed_by: Ibrar Ali
 review_status: pending_review
 depends_on:
@@ -55,6 +55,8 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ### pk-formation
 
+For a section 42 company, each promoter must undertake to contribute at least PKR 200,000 as a start-up donation, or such other amount as the Commission requires. For a promoter representing or nominated by an entity, Government, or a Federal or Provincial Government institution, authority or other statutory body, the proviso places the donation obligation on that nominating body instead. [Companies Regulations 2024, regulation 100(1)(v)](https://www.secp.gov.pk/wp-content/uploads/2026/04/Companies-Regulations-2024-updated-upto-25.07.2025-Reviewed-14042026.pdf).
+
 - **Company registrar** — SECP (ezfile.secp.gov.pk)  _(Companies Act 2017)_
 - **Formation time** — Sole-prop NTN 1 days; SMC-Pvt/Pvt Ltd 4–10 days; PLC 3–6 weeks; NPO 6–12 weeks  _(SECP eServices FBR IRIS Portal)_
 - **Name reservation validity** — 60 days for Companies; 30 days for Limited Liability Partnerships (LLPs).  _(SECP)_
@@ -63,7 +65,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 - **SMC-Pvt** — 1 shareholder + 1 nominee; commonly PKR 100,000 capital (no statutory floor)  _(Companies Act 2017)_
 - **Private Limited (Pvt Ltd)** — Minimum 2 members & 2 directors; max 50 members; commonly PKR 100,000 (no statutory floor)  _(Companies Act 2017)_
 - **Public Limited (PLC)** — Min 3 members & 3 directors (7 if listed); no statutory minimum paid-up capital for unlisted  _(Companies Act 2017)_
-- **Section 42 NPO** — Minimum 3 members & 3 Trustees; minimum start-up donation of PKR 200,000  _(Companies Act 2017 §42)_
+- **Section 42 NPO** — Minimum 3 members & 3 Trustees; minimum start-up donation of PKR 200,000 per promoter, subject to the nominating-body proviso above  _(Companies Act 2017 §42; Companies Regulations 2024, regulation 100(1)(v))_
 - **Society** — Minimum 7 members  _(Societies Registration Act 1860 §1)_
 - **Trust** — Minimum 2 trustees  _(Trusts Act 1882)_
 - **PSEB-registered export final tax** — 0.25% of qualifying export remittances  _(ITO 2001 §154A / SRO 1359(I)/2022)_
@@ -107,7 +109,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 | Min. founders / members | 1 sole proprietor | 2 partners (max 20 under Partnership Act 1932) | 1 shareholder + 1 nominee | 2 members and 2 directors | 3 members and 3 directors (7 for listed) | 3+ trustees / members |
 | Max. members | n/a | 20 (general partnership); LLP unlimited | 1 (by definition) | 50 (excluding employees / former employees holding shares) | Unlimited | Unlimited |
 | Foreign ownership | Practically restricted (resident NTN holder) | Foreign partners permitted but rare; tax filing complexities | 100% permitted (subject to SBP / BOI permissions) | 100% permitted | 100% permitted | Subject to objects and security vetting |
-| Min. paid-up share capital | None | None (capital agreed in partnership deed) | Flexible under Companies Act 2017 (commonly Rs 100,000); no statutory floor for ordinary cases | Flexible (commonly Rs 100,000); sectoral floors override | No statutory minimum paid-up capital for unlisted PLCs (sectoral floors much higher for listed) | PKR 200,000 minimum start-up donation for Section 42 |
+| Min. paid-up share capital | None | None (capital agreed in partnership deed) | Flexible under Companies Act 2017 (commonly Rs 100,000); no statutory floor for ordinary cases | Flexible (commonly Rs 100,000); sectoral floors override | No statutory minimum paid-up capital for unlisted PLCs (sectoral floors much higher for listed) | PKR 200,000 minimum start-up donation per promoter for Section 42, subject to the nominating-body proviso above |
 | Tax treatment | Personal income tax slabs (individual) | AOP taxed as separate entity at AOP slabs / corporate rate depending on character; share to partners exempt to avoid double tax | CIT 29% (or 20% small company) | CIT 29% (or 20% small company) | CIT 29% (typically large) | Tax-exempt for income applied to objects (clause 58 / 66 of Second Schedule); trading income taxable |
 | Annual filing with SECP | None (FBR only) | None (Registrar of Firms only) | Form A annual return + audited accounts (audit threshold-based) | Form A annual return + audited accounts (audit threshold-based) | Form A + audited accounts + half-yearly accounts if listed | Annual return + audited accounts |
 | Suffix on name | none | "& Co", "& Partners" (no Ltd / Pvt) | "(SMC-Private) Limited" or "(SMC-Pvt) Ltd" | "(Private) Limited" or "(Pvt) Ltd" | "Limited" or "Ltd" | "(Guarantee) Limited" for s.42; "Foundation", "Trust", "Society" for others |
@@ -477,7 +479,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 ### Section 42 Company
 
-- **Section 42 Company** — - Minimum 3 members and 3 Trustees. - Minimum start-up donation: PKR 200,000. - Profits must be applied wholly to the objects; no dividends to members. - SECP licence under section 42 required before incorporation; 6–12 weeks process. - Suffix "(Guarantee) Limited" or other approved designation. - Annual audit and Form A annual return.  _(Companies Act 2017 §42)_
+- **Section 42 Company** — - Minimum 3 members and 3 Trustees. - Minimum start-up donation: PKR 200,000 per promoter, subject to the nominating-body proviso above. - Profits must be applied wholly to the objects; no dividends to members. - SECP licence under section 42 required before incorporation; 6–12 weeks process. - Suffix "(Guarantee) Limited" or other approved designation. - Annual audit and Form A annual return.  _(Companies Act 2017 §42)_
 
 ### Trust
 
