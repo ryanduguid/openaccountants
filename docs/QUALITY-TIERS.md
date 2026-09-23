@@ -87,7 +87,7 @@ The list is derived from each skill's explicit `tier: 1` plus its reviewer name 
 
 ### Source-cited drafts (Tier 2)
 
-Everything else in this repo — 1,783 of the 1,954 indexed guides, covering 189 country directories plus all 50 US states and DC. Each one's frontmatter shows the research date and the authoritative sources cross-checked. (Counts derived from `index.json`; see [COVERAGE.md](COVERAGE.md).)
+Everything else in this repo — 1,782 of the 1,953 indexed guides, covering 189 country directories plus all 50 US states and DC. Each one's frontmatter shows the research date and the authoritative sources cross-checked. (Counts derived from `index.json`; see [COVERAGE.md](COVERAGE.md).)
 
 ---
 
