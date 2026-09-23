@@ -4,7 +4,7 @@ description: Reusable cross-country template for employer payroll obligations. C
 version: 1.0
 category: template
 tier: 2
-last_updated: 2026-06-12
+last_updated: 2026-09-23
 ---
 
 # Employer Payroll Obligations Template v1.0
@@ -156,7 +156,7 @@ If earnings > [COUNTRY-SPECIFIC upper limit]:
 | Aspect | Requirement |
 |---|---|
 | Who must be enrolled | [COUNTRY-SPECIFIC — e.g., UK: age 22–SPA, earning > £10,000/yr] |
-| Minimum employer contribution | [COUNTRY-SPECIFIC — e.g., 3% UK, 9.5% AU super guarantee] |
+| Minimum employer contribution | [COUNTRY-SPECIFIC — e.g., 3% UK, 12% AU super guarantee (ATO, from 1 July 2025); cite the primary source] |
 | Minimum employee contribution | [COUNTRY-SPECIFIC — e.g., 5% UK (of qualifying earnings)] |
 | Qualifying earnings band | [COUNTRY-SPECIFIC — e.g., £6,240–£50,270 UK] |
 | Opt-out window | [COUNTRY-SPECIFIC — e.g., 1 month UK] |

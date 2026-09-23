@@ -22,7 +22,7 @@ Only unarchive this repository when all of these conditions are met:
 
 </details>
 
-Named, licensed accountants put their name, credential and review date on the tax guides in the upstream project. This fork does not publish or sync those guides.
+Named, licensed accountants put their name, credential and review date on the tax guides in the upstream project. This fork holds a point-in-time copy of those guides and does not publish or sync them.
 
 [![License: AGPL-3.0](https://img.shields.io/badge/license-AGPL--3.0-047857)](LICENSE)
 [![PyPI](https://img.shields.io/pypi/v/openaccountants-mcp?label=openaccountants-mcp&color=047857)](https://pypi.org/project/openaccountants-mcp/)

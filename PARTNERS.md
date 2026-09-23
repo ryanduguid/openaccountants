@@ -1,6 +1,6 @@
 # Partners — the named professionals on record
 
-This file is the public roster of licensed accountants who review OpenAccountants Tax Guides. Every Partner here has had their credential verified, and their reviews are public. **This roster is the product.** Agents can do the math; these are the people who stand behind the answers.
+This file is the public roster of licensed accountants who review OpenAccountants Tax Guides. Credentials are verified during onboarding at openaccountants.com, outside this repository, so this fork cannot show that record. Two rows below have no credential recorded here. **This roster is the product.** Agents can do the math; these are the people who stand behind the answers.
 
 **Scoreboard: 11 of 244 jurisdictions have a Partner. The other 233 are open.**
 
