@@ -23,7 +23,7 @@ That's it. If a skill is published, it is one of those two.
 
 ### Accountant-reviewed (Tier 1)
 
-- A real licensed practitioner (CPA, EA, CA, Steuerberater, expert-comptable, commercialista, asesor fiscal, or equivalent for the jurisdiction) has put their name and license number on it.
+- A real licensed practitioner (CPA, EA, CA, Steuerberater, expert-comptable, commercialista, asesor fiscal, or equivalent for the jurisdiction) has reviewed it and is named on it in `reviewed_by`, unless they asked for their name to be withheld. Credentials are checked during Partner onboarding at openaccountants.com, outside this repository, and credential numbers are published only when the practitioner opts in (see [PARTNERS.md](../PARTNERS.md)).
 - The skill has been used against real client data and refined through filing cycles.
 - The contributor is publicly credited on the skill and at [openaccountants.com](https://www.openaccountants.com).
 - The skill is reviewed at least annually for rate / threshold / form changes.
@@ -77,23 +77,13 @@ Key rules:
 
 ### Accountant-reviewed (Tier 1)
 
-| Skill | Jurisdiction | Reviewed by |
-|-------|-------------|-------------|
-| `malta-vat-return` | Malta | Michael Cutajar, CPA |
-| `malta-income-tax` | Malta | Michael Cutajar, CPA |
-| `malta-ssc` | Malta | Michael Cutajar, CPA |
-| `malta-tax-optimization` | Malta | Michael Cutajar, CPA |
-| `mt-estimated-tax` | Malta | Michael Cutajar, CPA |
-| `germany-vat-return` | Germany | Pending publication of practitioner registry |
-| `south-africa-vat` | South Africa | Michael Cutajar, CPA |
-| `za-vat-return` | South Africa | Michael Cutajar, CPA |
-| `za-income-tax` | South Africa | Michael Cutajar, CPA |
-| `za-provisional-tax` | South Africa | Michael Cutajar, CPA |
-| `us-sole-prop-bookkeeping` | US Federal | Pending publication of practitioner registry |
-| `us-schedule-c-and-se-computation` | US Federal | Pending publication of practitioner registry |
-| `us-ca-freelance-intake` | US-CA | Pending publication of practitioner registry |
+171 guides in this tree carry `tier: 1` with a named reviewer, across 23 `reviewed_by` values. One of those values is "A licensed accountant (name withheld at their request)", on 14 guides. List them with:
 
-This list is derived from each skill's explicit `tier: 1` plus its reviewer name (`reviewed_by`, or the legacy `verified_by` — a stored identifier that keeps its spelling). To add a new accountant-reviewed skill, set **both** `tier: 1` and the reviewer's name and credential, then regenerate the canonical inventory with `python3 scripts/build-index.py` — the tier and verifier land in `index.json`. The enforced rule is field-specific: `tier: 2` must not carry a real `verified_by` — that combination is a validation error. A real `reviewed_by` on a `tier: 2` guide is *not* rejected (see `check_quality_metadata` in `scripts/validate-guides.py` and its test), because `reviewed_by` is also used as a plain authorship/attribution field on the hand-authored `packages/us-federal/` guides. Note that 98 guides currently sit in that permitted-but-ambiguous state — a named `reviewed_by` with `tier: 2`, 94 of them also `review_status: current`, which is the exact combination that means `tier: 1` everywhere else. A reader cannot tell from the frontmatter alone whether those were reviewed. Deciding which of the two meanings applies to each of them is a maintainer call. Every accountant-reviewed skill carries the reviewer's name and license number on the skill page at openaccountants.com.
+```
+python3 -c "import json;d=json.load(open('index.json'));print('\n'.join(sorted(g['slug']+'  '+g['reviewed_by'] for g in d['guides'] if str(g.get('tier'))=='1')))"
+```
+
+The list is derived from each skill's explicit `tier: 1` plus its reviewer name (`reviewed_by`, or the legacy `verified_by` — a stored identifier that keeps its spelling). To add a new accountant-reviewed skill, set **both** `tier: 1` and the reviewer's name and credential, then regenerate the canonical inventory with `python3 scripts/build-index.py` — the tier and verifier land in `index.json`. The enforced rule is field-specific: `tier: 2` must not carry a real `verified_by` — that combination is a validation error. A real `reviewed_by` on a `tier: 2` guide is *not* rejected (see `check_quality_metadata` in `scripts/validate-guides.py` and its test), because `reviewed_by` is also used as a plain authorship/attribution field on the hand-authored `packages/us-federal/` guides. Note that 98 guides currently sit in that permitted-but-ambiguous state — a named `reviewed_by` with `tier: 2`, 94 of them also `review_status: current`, which is the exact combination that means `tier: 1` everywhere else. A reader cannot tell from the frontmatter alone whether those were reviewed. Deciding which of the two meanings applies to each of them is a maintainer call. Credential numbers are held at openaccountants.com and appear on a skill page only when the practitioner opts in.
 
 ### Source-cited drafts (Tier 2)
 
@@ -108,7 +98,7 @@ Everything else in this repo — 1,783 of the 1,954 indexed guides, covering 189
 │  Malta VAT Return v1.0                      │
 │  ████████████ ACCOUNTANT-REVIEWED           │
 │                                             │
-│  Reviewed by: [Practitioner name + license] │
+│  Reviewed by: [Practitioner + credential]   │
 │  Tested against: Real client data           │
 │  Last updated: [Date]                       │
 └─────────────────────────────────────────────┘
@@ -132,7 +122,7 @@ Everything else in this repo — 1,783 of the 1,954 indexed guides, covering 189
 2. They review the rates, thresholds, forms, and deadlines against current law.
 3. They run the skill against representative or real client data.
 4. They submit corrections (web form at openaccountants.com or GitHub PR).
-5. A skill maintainer merges the corrections; the skill is tagged with the practitioner's name and license number.
+5. A skill maintainer merges the corrections; the skill is tagged with the practitioner's name and credential.
 6. The skill is bumped to **accountant-reviewed** in the next release.
 
 The practitioner is credited publicly. Their profile lists all the skills they've signed off.

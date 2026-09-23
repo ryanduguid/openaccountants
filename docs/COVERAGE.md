@@ -55,16 +55,10 @@ python3 -c "import json;d=json.load(open('index.json'));print(sorted(g['slug'] f
 Everything else in the corpus is on `tax_year` 2025 (1,737), 2026 (109), or is
 year-agnostic and carries none (100 — mostly workflow bases).
 
-> **Two numbers below are contradicted by this tree, and a maintainer needs to
-> resolve which is right.** The table further down says Tier 1 lives on the
-> "MCP server only (not in this repo)" and counts 85 of them — but this
-> repository contains 171 guides carrying `tier: 1`, a named `reviewed_by` and
-> `review_status: current`, and README.md's "greppable honesty" table says an
-> accountant-reviewed Guide is identified by exactly that frontmatter. Either
-> those 171 are genuinely reviewed and the Tier 1 row is wrong, or they are
-> mislabelled. See also the 98 guides that carry a named `reviewed_by` while
-> marked `tier: 2` — permitted by the enforced contract, but 94 of them also
-> carry `review_status: current`, which means `tier: 1` everywhere else. See
+> **One open maintainer call.** 98 guides carry a named `reviewed_by` while
+> marked `tier: 2`. The enforced contract permits that, but 94 of them also
+> carry `review_status: current`, which means `tier: 1` everywhere else, so a
+> reader cannot tell from the frontmatter whether they were reviewed. See
 > [QUALITY-TIERS.md](QUALITY-TIERS.md).
 
 ## Headline (use these)
@@ -83,10 +77,10 @@ OpenAccountants has two quality tiers (see [QUALITY-TIERS.md](QUALITY-TIERS.md))
 
 | Tier | What it means | Count | Where it lives |
 |---|---|---|---|
-| **Accountant-reviewed** (Tier 1) | A licensed practitioner has reviewed and signed off; name + credential on every output | **85** | **MCP server only** (not in this repo) |
+| **Accountant-reviewed** (Tier 1) | A licensed practitioner has reviewed and signed off; named on the Guide unless they asked for their name to be withheld | **85** | **MCP server**, plus 171 `tier: 1` Guides in this repo (see the derived table above) |
 | **Source-cited draft** (Tier 2) | Every rate/threshold/form drafted from authoritative sources, awaiting a full accountant review | **1,013** | **This repo** |
 
-**Correct headline phrasing:** _"Source-cited drafts in this repo. Accountant-reviewed via the MCP connector."_
+**Correct headline phrasing:** _"Mostly source-cited drafts in this repo, with 171 accountant-reviewed Guides. Accountant-reviewed Guides are also served via the MCP connector."_
 
 ## Jurisdiction breakdown
 
