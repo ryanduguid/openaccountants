@@ -50,9 +50,9 @@ metadata:
 | Item | Value |
 |---|---|
 | Rate | 2% of taxable income |
-| Low-income threshold (single) | $26,000 (no levy below; phase-in to $32,500) |
-| Low-income threshold (family) | $43,846 + $4,027 per dependent child |
-| Surcharge (no private hospital cover) | Additional 1%-1.5% if income over $93,000 (single) |
+| Low-income threshold (single) | $27,222 (no levy below; phase-in to $34,027) |
+| Low-income threshold (family) | $45,907 + $4,216 per dependent child |
+| Surcharge (no private hospital cover) | Additional 1%-1.5% if income over $97,000 (single) |
 
 ### Low Income Tax Offset (LITO) [T1]
 
@@ -323,13 +323,13 @@ Cannot claim both. Parking, tolls, and roadside assistance are separate and dedu
 
 ### 6.3 Private Health Insurance (Medicare Levy Surcharge) [T2]
 
-If income over $93,000 (single) and no appropriate private hospital cover, Medicare levy surcharge applies:
+If income over $97,000 (single) and no appropriate private hospital cover, Medicare levy surcharge applies:
 
 | Income | MLS Rate |
 |---|---|
-| $93,001 -- $108,000 | 1% |
-| $108,001 -- $144,000 | 1.25% |
-| $144,001+ | 1.5% |
+| $97,001 -- $113,000 | 1% |
+| $113,001 -- $151,000 | 1.25% |
+| $151,001+ | 1.5% |
 
 PHI rebate: income-tested offset that reduces PHI premiums. Claimed via reduced premiums or tax offset.
 

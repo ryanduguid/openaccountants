@@ -39,7 +39,7 @@ metadata:
 |---|---|
 | Tax-free threshold | $18,200 |
 | Medicare levy | 2% of taxable income |
-| Medicare levy surcharge (no PHI) | 1% -- 1.5% above $93,000 (single) |
+| Medicare levy surcharge (no PHI) | 1% -- 1.5% above $97,000 (single) |
 | CGT discount (individuals, 12+ months) | 50% |
 | Div 43 rate (post-Sep 1987 residential) | 2.5% of construction cost |
 | Div 43 rate (post-Feb 1992 short-term traveller) | 4% |
