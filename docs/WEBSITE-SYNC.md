@@ -120,8 +120,8 @@ separate controlled process.
 
 The `Sync Integrity` workflow compares pull-request revisions and each push to
 `main`. It flags an aggregate bot-authored commit that rewrites an existing
-source guide, and a `main` push fails if a guide body changes without advancing
-its date or version. Correct accountant attribution remains a private-exporter
+source guide. Both PR checks and `main` pushes fail if a guide body changes
+without advancing its date or version. Correct accountant attribution remains a private-exporter
 responsibility; the public check narrowly identifies the known aggregate
 sync-bot identity. A failed post-push check is an alarm after `main` changed; it
 cannot roll back or prevent the write.
