@@ -3,7 +3,7 @@ name: do-transfer-pricing
 description: Dominican Republic Transfer Pricing — accountant-verified rules from the DGII validation matrix (Miguel Lantigua, CPA Lic. 17839).
 jurisdiction: DO
 tax_year: 2025
-last_updated: 2026-07-13
+last_updated: 2026-09-26
 reviewed_by: Miguel Lantigua
 review_status: current
 tier: 1
