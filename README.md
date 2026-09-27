@@ -1,24 +1,28 @@
 # OpenAccountants
 
 > [!IMPORTANT]
-> **Archived historical fork.** This repository is a point-in-time fork of
-> [`openaccountants/openaccountants`](https://github.com/openaccountants/openaccountants),
-> not an actively maintained or authoritative tax source. The guides, generated
-> packages, badges, counts, hosted-service links, and examples below may be
-> stale. GitHub Actions are disabled and no scheduled sync or publication runs
-> from this fork. Use the upstream repository for current work.
+> **Frozen snapshot of the upstream project.** This fork's `main` is a copy of
+> [`openaccountants/openaccountants`](https://github.com/openaccountants/openaccountants)
+> from before upstream rewrote its history. The two no longer share commits, so
+> GitHub can neither compare nor sync them. It is not a maintained or
+> authoritative tax source: the guides, generated packages, badges, counts,
+> hosted-service links and examples below may be stale. GitHub Actions still run
+> this fork's checks, but nothing here publishes to or syncs with the platform.
+>
+> Contributions go on branches cut from upstream `main`, with pull requests to
+> [`openaccountants/openaccountants`](https://github.com/openaccountants/openaccountants/pulls).
+> This `main` takes no further merges.
 
 <details>
-<summary><strong>Conditions for reactivating this fork</strong></summary>
+<summary><strong>Conditions for merging into this fork's main again</strong></summary>
 
-Only unarchive this repository when all of these conditions are met:
+Only merge into this `main` again when all of these conditions are met:
 
 - a named maintainer owns releases, security response, and ongoing review;
 - the authoritative guide corpus is identified and reconciled with upstream;
 - a real, access-controlled sync destination replaces the retired publication path;
-- unit, MCP, full-guide validation, and sync-integrity checks pass within documented bounds;
-- every publication verifies the expected source commit before writing, so a stale job cannot overwrite newer work; and
-- GitHub Actions are re-enabled only after the first maintenance change is reviewed.
+- unit, MCP, full-guide validation, and sync-integrity checks pass within documented bounds; and
+- every publication verifies the expected source commit before writing, so a stale job cannot overwrite newer work.
 
 </details>
 
