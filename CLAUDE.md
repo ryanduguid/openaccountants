@@ -52,7 +52,7 @@ Read this before writing or committing anywhere in this repository.
 
 ## Checks: what gates and what only advises
 
-Install once: `python3 -m pip install -r scripts/requirements-validation.txt` (PyYAML) and, for the server tests, `python3 -m pip install ./mcp`. Run every script from the repository root: many of the review aids resolve paths relative to the working directory and silently report zero findings from anywhere else.
+Install once: `python3 -m pip install -r scripts/requirements-validation.txt` (PyYAML) and, for the server tests, `python3 -m pip install ./mcp`. The tests run under the standard library's `unittest`; `pytest` also works but is not in any requirements file, so install it yourself if you want it. Run every script from the repository root: many of the review aids resolve paths relative to the working directory and silently report zero findings from anywhere else.
 
 The CI gates, as `.github/workflows/` runs them:
 
@@ -60,11 +60,11 @@ The CI gates, as `.github/workflows/` runs them:
 python3 scripts/validate-guides.py                                  # frontmatter contract + derived-tree freshness
 python3 scripts/validate-guides.py --changed-only --no-index-check  # PR mode; needs origin/main fetched
 python3 scripts/check-sync-integrity.py --base "$(git merge-base origin/main HEAD)" --head HEAD --mode audit --strict-metadata
-python3 -m unittest discover -s tests -p "test_*.py"                # or: python3 -m pytest tests
+python3 -m unittest discover -s tests -p "test_*.py"                # (or `python3 -m pytest tests` once pytest is installed)
 (cd mcp && python3 -m unittest discover -s tests -p "test_*.py")
 ```
 
-`validate.yml` runs the first two (as `guard-derived-trees` and `validate`); `sync-integrity.yml` runs the rest; `no-ai-attribution.yml` enforces the commit policy below; `cla.yml` is upstream's CLA bot; CodeQL scans the workflows. `sync-mcp.yml` is upstream's mirror job and is disabled here.
+`validate.yml` runs the first two (as `guard-derived-trees` and `validate`); `sync-integrity.yml` runs the rest; `no-ai-attribution.yml` enforces the commit policy below; `cla.yml` is upstream's CLA bot; CodeQL scans the workflows. `sync-mcp.yml` is upstream's mirror job: as written it fires on every push to `main` that touches `packages/` and pushes the tree to `openaccountants/openaccountants-mcp` with a deploy key this fork does not hold. Its runs are switched off in this repository's Actions settings (every run before that failed on the missing key), so the file is inert here; do not re-enable it or rely on it.
 
 Review aids: the other `scripts/check-*.py` and `scripts/list-*.py` files (arithmetic, bracket tables, fact conflicts, expired rules, stale futures, citation hosts, reviewer roster, ...) print findings and, except for `check-expired-rules.py`, always exit 0. Run the relevant ones whenever you touch rates or tables and read what they print; a clean exit code proves nothing. `check-cited-hosts.py` and `list-citation-rot.py` need network access.
 
