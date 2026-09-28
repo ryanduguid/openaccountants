@@ -66,7 +66,6 @@ python3 scripts/validate-guides.py
 """
 
 import filecmp
-import importlib.util
 import json
 import os
 import re
@@ -74,13 +73,23 @@ import subprocess
 import sys
 import tempfile
 
-from cta_block import MARKER as CTA_MARKER
-from cta_block import find_markers as cta_markers
-from cta_block import has_cta_link, is_cta_heading
-from cta_block import is_optional as cta_optional
-from frontmatter_yaml import FrontmatterError, load_frontmatter
+_HERE = os.path.dirname(os.path.abspath(__file__))
+if _HERE not in sys.path:  # the tests load this file by path
+    sys.path.insert(0, _HERE)
 
-REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+from cta_block import MARKER as CTA_MARKER  # noqa: E402
+from cta_block import find_markers as cta_markers  # noqa: E402
+from cta_block import has_cta_link, is_cta_heading  # noqa: E402
+from cta_block import is_optional as cta_optional  # noqa: E402
+from oa_tools import guides, paths  # noqa: E402
+from oa_tools.frontmatter import (  # noqa: E402
+    FrontmatterError,
+    extract_frontmatter,
+    load_frontmatter,
+    parse_known_keys,
+)
+
+REPO_ROOT = paths.REPO_ROOT
 BUILD_INDEX = os.path.join(REPO_ROOT, "scripts", "build-index.py")
 BUILD_PACKAGES = os.path.join(REPO_ROOT, "scripts", "build-packages.py")
 BUILD_LLMS_FULL = os.path.join(REPO_ROOT, "scripts", "build-llms-full.py")
@@ -113,19 +122,18 @@ JURISDICTION_OPTIONAL_DIRS = {
 }
 
 
-def load_build_index():
-    spec = importlib.util.spec_from_file_location("build_index", BUILD_INDEX)
-    module = importlib.util.module_from_spec(spec)
-    spec.loader.exec_module(module)
-    return module
+class GuideTrees:
+    """What the check functions receive as `bi`: guide discovery plus the
+    tolerant reader, rooted at this module's REPO_ROOT (the tests patch that,
+    and pass stand-ins carrying the same three attributes). These are the
+    functions build-index.py runs, so the validator and the inventory agree on
+    which files are guides and what their frontmatter says."""
 
+    extract_frontmatter = staticmethod(extract_frontmatter)
+    parse_known_keys = staticmethod(parse_known_keys)
 
-def load_build_packages():
-    """The generator module, for HAND_AUTHORED_PACKAGES (its list, not a copy)."""
-    spec = importlib.util.spec_from_file_location("build_packages", BUILD_PACKAGES)
-    module = importlib.util.module_from_spec(spec)
-    spec.loader.exec_module(module)
-    return module
+    def guide_files(self):
+        return guides.guide_files(REPO_ROOT)
 
 
 # `tax_year` must be a bare integer year, e.g. `tax_year: 2025`. Ranges,
@@ -599,7 +607,7 @@ def check_packages_fresh(errors):
     if not os.path.isdir(committed):
         errors.append("packages/ missing — run: python3 scripts/build-packages.py")
         return
-    skip = load_build_packages().HAND_AUTHORED_PACKAGES
+    skip = paths.HAND_AUTHORED_PACKAGES
     with tempfile.TemporaryDirectory() as tmp:
         fresh = os.path.join(tmp, "packages")
         result = subprocess.run(
@@ -645,7 +653,7 @@ def main():
         sys.exit("error: --derived-only and --no-index-check cancel each other out")
 
     errors, warnings = [], []
-    bi = load_build_index()
+    bi = GuideTrees()
     if not derived_only:
         only = None
         if changed_only:

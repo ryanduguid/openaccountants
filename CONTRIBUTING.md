@@ -87,6 +87,29 @@ After editing, run the three generators (`python3 scripts/build-packages.py && p
 
 If you add a `references.md` to a country's source directory, it will be included in the generated package automatically.
 
+## Reproduce CI locally
+
+Every check CI runs has a `make` target, so a green `make check` means a green pull request:
+
+```
+python3 -m pip install -r requirements-dev.txt   # or: make install
+make check                                       # validate + sync-check + test: everything CI gates
+```
+
+`requirements-dev.txt` installs PyYAML (the only dependency the generators and the validator have), pytest, openpyxl (the workbook tools) and the MCP server in editable mode. CI installs only `scripts/requirements-validation.txt` plus `./mcp`, per job.
+
+| Target | What it runs | CI job |
+|---|---|---|
+| `make build` | the three generators: `scripts/build-packages.py`, `scripts/build-index.py`, `scripts/build-llms-full.py` | none: you commit the output |
+| `make validate` | `scripts/validate-guides.py`: the frontmatter contract and derived-tree freshness | `validate.yml` |
+| `make sync-check` | `scripts/check-sync-integrity.py --mode audit --strict-metadata` from the merge base with `origin/main` (fetch it first, or pass `BASE=<rev>`) | `sync-integrity.yml`, `compare` |
+| `make test` | `unittest discover` over `tests/` and `mcp/tests/` | `sync-integrity.yml`, `unit-tests` |
+| `make check` | `validate`, `sync-check` and `test` | all of the above |
+
+`make help` lists the targets. Without `make` (Windows), run the commands the table names: `make -n <target>` prints them exactly. Run everything from the repository root; the review aids under `scripts/` resolve paths relative to the working directory and report nothing from anywhere else.
+
+Shared code for the scripts lives in `scripts/oa_tools/` (repository paths, guide discovery, the frontmatter reader in tolerant and strict form). A hyphenated script name cannot be imported, so put anything two scripts need there rather than copying it; each script puts its own directory on `sys.path` before importing it, which is what lets the tests load scripts by file path.
+
 ## Review
 
 Pull requests are reviewed here, on GitHub. A guide is a **source-cited draft** (`tier: 2`) until a named, licensed accountant has reviewed the complete guide and signs it off in a pull request that sets `tier: 1` and puts their name and credential in `reviewed_by`; see [docs/QUALITY-TIERS.md](docs/QUALITY-TIERS.md). Maintainers do not set `tier: 1` on anyone's behalf, and a reviewer name on a `tier: 2` guide does not make it reviewed.

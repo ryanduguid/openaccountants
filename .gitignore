@@ -4,3 +4,15 @@ contrib/
 **/.DS_Store
 tools/workbooks/out/
 __pycache__/
+
+# Python tooling: virtualenvs, test caches, and the MCP package's build output.
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+*.egg-info/
+/build/
+/dist/
+/mcp/build/
+/mcp/dist/

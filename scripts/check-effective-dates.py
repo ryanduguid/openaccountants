@@ -49,14 +49,13 @@ Usage: python3 scripts/check-effective-dates.py [skills]
 """
 import os, re, sys, collections
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from frontmatter_yaml import load_frontmatter
+from oa_tools.frontmatter import FrontmatterError, read_frontmatter, split_frontmatter
 
 MONTHS = 'January|February|March|April|May|June|July|August|September|October|November|December'
 DATE = re.compile(r'\b(\d{1,2}\s+(?:%s)\s+20\d{2})\b' % MONTHS)
 PCT = re.compile(r'(\d{1,2}(?:\.\d{1,3})?)\s?%')
 EFFECT = re.compile(r'\b(from|effective|with effect from|as from|commenc\w+|introduced|'
                     r'increased to|reduced to|rose to|fell to|raised to|cut to|applies from)\b', re.I)
-FM = re.compile(r'\A---\n(.*?)\n---\n', re.S)
 YR = re.compile(r'\b(20[2-3]\d)\b')
 
 
@@ -95,17 +94,16 @@ def declared_vs_worked(root):
     rows = []
     for p, _ in walk(root):
         txt = open(p, encoding='utf-8', errors='replace').read()
-        m = FM.match(txt)
-        if not m:
-            continue
         try:
-            fmd = load_frontmatter(m.group(1))
-        except Exception:
+            fmd = read_frontmatter(txt, strict=True)
+        except FrontmatterError:
+            continue
+        if fmd is None:
             continue
         ty = str(fmd.get('tax_year', '')).strip()
         if not re.fullmatch(r'20\d{2}', ty):
             continue
-        head = txt[m.end():][:4000]           # the quick-reference block
+        head = split_frontmatter(txt)[1][:4000]   # the quick-reference block
         c = collections.Counter(YR.findall(head))
         if not c:
             continue

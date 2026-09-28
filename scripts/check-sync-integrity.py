@@ -25,7 +25,11 @@ from datetime import date
 from pathlib import Path, PurePosixPath
 from typing import Any, Iterable
 
-from frontmatter_yaml import load_frontmatter
+_HERE = os.path.dirname(os.path.abspath(__file__))
+if _HERE not in sys.path:  # the tests load this file by path
+    sys.path.insert(0, _HERE)
+
+from oa_tools.frontmatter import load_frontmatter  # noqa: E402
 
 
 SYNC_BOT_NAMES = {"openaccountants-sync[bot]"}

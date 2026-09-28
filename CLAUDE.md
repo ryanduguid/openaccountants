@@ -20,7 +20,7 @@ Read this before writing or committing anywhere in this repository.
 | `agent-skills/` | Hand-maintained third copy, **no generator** | One `SKILL.md` per topic, older and shorter than `skills/`, with quality labels that disagree with `skills/` tiers. Not a source: never cite it as authoritative and never edit it to fix a guide; fix `skills/`. `scripts/check-agent-skills-drift.py` measures the gap. |
 | `workflows/` | Hand-maintained | Guided advisor workflows. |
 | `mcp/` | Hand-maintained | Python MCP server (`openaccountants-mcp`). At runtime it reads frontmatter from `packages/`, not `index.json`, so it serves whatever tiers and text `packages/` holds. |
-| `scripts/` | Hand-maintained | The three generators, the two CI gates, and about forty `check-*` / `list-*` review aids (see Checks). |
+| `scripts/` | Hand-maintained | The three generators, the two CI gates, about forty `check-*` / `list-*` review aids (see Checks), and `oa_tools/`, the shared helper package: repository paths, guide discovery and the one frontmatter reader (tolerant and strict). A hyphenated script name cannot be imported, so anything two scripts need goes in `oa_tools/`, never in a second copy; a script puts its own directory on `sys.path` before importing it (the tests load scripts by file path). |
 | `tests/`, `mcp/tests/` | Hand-maintained | Unit tests for the scripts and the server. |
 | `tools/workbooks/` | Hand-maintained | Verification-workbook generator; needs `openpyxl`; `out/` is gitignored. |
 | `docs/` | Hand-maintained | `REPO-LAYOUT.md` is canonical for layout questions; `skill-template.md` is the frontmatter spec; `QUALITY-TIERS.md` defines the two tiers; `ACCURACY-METHODOLOGY.md` is a long verification journal. `CORRECTION-FEEDBACK-LOOP-SPEC.md`, `TEMPORAL-VERSIONING-SPEC.md` and `TEST-PLAN.md` are proposals with no code behind them; `WEBSITE-SYNC.md` describes upstream's retired sync. |
@@ -36,9 +36,9 @@ Read this before writing or committing anywhere in this repository.
    python3 scripts/build-packages.py && python3 scripts/build-index.py && python3 scripts/build-llms-full.py
    ```
 
-   Nothing else rebuilds them. CI's `guard-derived-trees` job rebuilds all three into a temp dir and fails on any difference; `python3 scripts/validate-guides.py --derived-only` is the same check locally. Expect a large diff: a foundation or federal edit touches every package that bundles it.
+   `make build` runs the same three. Nothing else rebuilds them. CI's `guard-derived-trees` job rebuilds all three into a temp dir and fails on any difference; `python3 scripts/validate-guides.py --derived-only` is the same check locally. Expect a large diff: a foundation or federal edit touches every package that bundles it.
 4. If `index.json`'s `counts` changed, update the figures that `scripts/check-coverage-claims.py` checks (the README headline, the derived table in `docs/COVERAGE.md`, the inventory in `docs/QUALITY-TIERS.md`) and run it until it reports 0 disagreements. It is a review aid, not a CI gate.
-5. Run the checks below before pushing.
+5. Run the checks below before pushing; `make check` runs every gate.
 
 ## Frontmatter and body rules
 
@@ -52,7 +52,7 @@ Read this before writing or committing anywhere in this repository.
 
 ## Checks: what gates and what only advises
 
-Install once: `python3 -m pip install -r scripts/requirements-validation.txt` (PyYAML) and, for the server tests, `python3 -m pip install ./mcp`. The tests run under the standard library's `unittest`; `pytest` also works but is not in any requirements file, so install it yourself if you want it. Run every script from the repository root: many of the review aids resolve paths relative to the working directory and silently report zero findings from anywhere else.
+Install once: `python3 -m pip install -r requirements-dev.txt` (PyYAML, pytest, openpyxl and the MCP server in editable mode; CI installs only `scripts/requirements-validation.txt` plus `./mcp`, per job). `make check` runs everything CI gates (`validate`, `sync-check`, `test`), `make build` runs the three generators, `make help` lists the targets, and `make -n <target>` prints a target's commands for anyone without `make`; `CONTRIBUTING.md` ("Reproduce CI locally") maps each target to its workflow job. The tests run under the standard library's `unittest`; `pytest` runs them too. Run every script from the repository root: many of the review aids resolve paths relative to the working directory and silently report zero findings from anywhere else.
 
 The CI gates, as `.github/workflows/` runs them:
 
