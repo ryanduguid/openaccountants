@@ -1,7 +1,7 @@
 ---
 name: germany-payroll
 description: Use this skill whenever asked about German payroll processing for employees. Trigger on phrases like "German payroll", "Lohnsteuer", "Gehaltsabrechnung", "Brutto Netto Rechner", "Steuerklasse", "Sozialversicherung", "Arbeitnehmeranteil", "Arbeitgeberanteil", "Beitragsbemessungsgrenze", "payslip Germany", "Lohnabrechnung", "Nettolohn", "Solidaritätszuschlag", "Kirchensteuer", "Rentenversicherung", "Krankenversicherung", "Pflegeversicherung", "Arbeitslosenversicherung", "Minijob", "Midijob", "minimum wage Germany", "Mindestlohn", "Entgeltabrechnung", or any question about computing employee pay, withholding tax, or social contributions in Germany. This skill extends de-payroll.md with full payroll lifecycle coverage including mandatory benefits, payslip requirements, filing obligations, and employer cost analysis. ALWAYS read this skill before processing any German employee payroll.
-version: 1.1
+version: 1.0
 jurisdiction: DE
 tax_year: 2025
 last_updated: 2026-09-28
@@ -15,7 +15,7 @@ license: AGPL-3.0-or-later (code) / OpenAccountants Guide License v1.0 (content)
 
 # Germany Payroll
 
-## Germany Payroll Skill v1.1
+## Germany Payroll Skill v1.0
 
 ## Section 1 -- Quick Reference
 
@@ -332,7 +332,7 @@ German employers must provide an itemised payslip (Entgeltabrechnung/Lohnabrechn
 | --- | --- |
 | Employee payroll (Lohnsteuer + SV) | **This skill (germany-payroll.md)** |
 | Detailed PAP formula and worked examples | de-payroll.md |
-| Self-employed income tax (Einkommensteuer) | us-de-income-tax.md |
+| Self-employed income tax (Einkommensteuer) | de-income-tax.md |
 | Self-employed social contributions | de-social-contributions.md |
 | Gewerbesteuer (trade tax) | de-trade-tax.md |
 | Umsatzsteuer / VAT | germany-vat-return.md |

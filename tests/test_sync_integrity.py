@@ -606,6 +606,67 @@ class GitBackedIntegrityTests(unittest.TestCase):
         )
         self.assertIn("unversioned-body-change", codes(findings, "error"))
 
+    def test_an_entry_already_in_the_base_record_authorises_nothing(self) -> None:
+        # The entry was reviewed with an earlier change; a guide recreated at
+        # the same path and removed again needs its own review.
+        self._record_migration(
+            [{"from": self.path, "to": None, "slug": "synthetic-guide", "replacement": "other-guide"}]
+        )
+        self.git("commit", "-m", "record from an earlier migration, guide still present")
+        base = self.git("rev-parse", "HEAD").strip()
+        self.git("rm", "-q", self.path)
+        self.git("commit", "-m", "remove the guide again")
+        head = self.git("rev-parse", "HEAD").strip()
+
+        findings, _ = sync_integrity.run_integrity_check(
+            self.repo, base, head, "audit", strict_metadata=True
+        )
+
+        self.assertIn("source-removal-needs-review", codes(findings, "error"))
+
+    def test_a_move_git_reports_as_delete_and_add_passes_when_the_destination_exists(self) -> None:
+        destination = "skills/foundation/rewritten-synthetic-guide.md"
+        self._record_migration(
+            [{"from": self.path, "to": destination, "slug": "synthetic-guide", "replacement": "rewritten-synthetic-guide"}]
+        )
+        self.git("rm", "-q", self.path)  # git drops the now-empty folder with it
+        (self.repo / destination).parent.mkdir(parents=True, exist_ok=True)
+        # Different enough that git sees a deletion and an addition, not a rename.
+        (self.repo / destination).write_text(
+            guide(body="\n".join(f"Rewritten line {i} about something else entirely." for i in range(40))),
+            encoding="utf-8", newline="\n",
+        )
+        self.git("add", destination)
+        self.git("commit", "-m", "move and rewrite")
+        head = self.git("rev-parse", "HEAD").strip()
+
+        findings, count = sync_integrity.run_integrity_check(
+            self.repo, self.base, head, "audit", strict_metadata=True
+        )
+
+        self.assertEqual(2, count, "a deletion and an addition")
+        self.assertEqual([], [f for f in findings if f.severity == "error"])
+        self.assertIn("source-removal-migrated", codes(findings, "notice"))
+
+    def test_a_deletion_covered_by_a_move_record_needs_the_destination_to_exist(self) -> None:
+        self._record_migration(
+            [{"from": self.path, "to": "skills/foundation/never-written.md", "slug": "synthetic-guide", "replacement": "x"}]
+        )
+        self.git("rm", "-q", self.path)  # git drops the now-empty folder with it
+        (self.repo / "skills/foundation").mkdir(parents=True, exist_ok=True)
+        (self.repo / "skills/foundation/unrelated-guide.md").write_text(
+            guide(body="\n".join(f"Unrelated line {i}." for i in range(40))), encoding="utf-8", newline="\n"
+        )
+        self.git("add", "skills/foundation/unrelated-guide.md")
+        self.git("commit", "-m", "delete one guide, add an unrelated one")
+        head = self.git("rev-parse", "HEAD").strip()
+
+        findings, _ = sync_integrity.run_integrity_check(
+            self.repo, self.base, head, "audit", strict_metadata=True
+        )
+
+        self.assertIn("source-removal-needs-review", codes(findings, "error"))
+
     def test_a_rename_recorded_to_another_path_is_not_authorised(self) -> None:
         renamed = "skills/foundation/renamed-synthetic-guide.md"
         self._record_migration(

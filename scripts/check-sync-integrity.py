@@ -291,19 +291,18 @@ def is_guide_document(text: str | None) -> bool:
     return text is not None and text.startswith("---")
 
 
-def load_migrations(repo: Path, head: str | None) -> tuple[set[str], dict[str, str]]:
-    """The recorded deletions and renames: (removed paths, {from path: to path}).
+def load_migrations(repo: Path, revision: str | None) -> set[tuple[str, str | None]]:
+    """The (from, to) pairs ``docs/guide-migrations.json`` records at a revision.
 
-    Read from the candidate revision (or the working tree), so the record
-    travels with the change it authorises. ``docs/guide-migrations.json``
-    holds one object per migration with an ``entries`` list; an entry's
-    ``from`` is the path that went away and ``to`` its new path, or null for
-    a deletion. ``slug`` and ``replacement`` are for consumers and are not
-    read here. An absent record means nothing is authorised.
+    ``revision`` None reads the working tree. The record holds one object per
+    migration with an ``entries`` list; an entry's ``from`` is the path that
+    went away and ``to`` its new path, or null for a deletion. ``slug`` and
+    ``replacement`` are for consumers and are not read here. An absent record
+    is an empty set.
     """
-    if head is not None:
+    if revision is not None:
         result = subprocess.run(
-            ["git", "show", f"{head}:{MIGRATIONS_PATH}"],
+            ["git", "show", f"{revision}:{MIGRATIONS_PATH}"],
             cwd=repo, stdout=subprocess.PIPE, stderr=subprocess.PIPE, check=False,
         )
         text = result.stdout.decode("utf-8") if result.returncode == 0 else None
@@ -311,22 +310,33 @@ def load_migrations(repo: Path, head: str | None) -> tuple[set[str], dict[str, s
         candidate = repo / MIGRATIONS_PATH
         text = candidate.read_text(encoding="utf-8") if candidate.is_file() else None
     if text is None:
-        return set(), {}
+        return set()
     try:
         document = json.loads(text)
     except json.JSONDecodeError as exc:
         raise IntegrityError(f"{MIGRATIONS_PATH} is not valid JSON: {exc}") from exc
-    removed: set[str] = set()
-    renamed: dict[str, str] = {}
+    entries: set[tuple[str, str | None]] = set()
     for migration in document.get("migrations", []):
         for entry in migration.get("entries", []):
             source = entry.get("from")
             if not isinstance(source, str):
                 continue
-            if isinstance(entry.get("to"), str):
-                renamed[source] = entry["to"]
-            else:
-                removed.add(source)
+            target = entry.get("to")
+            entries.add((source, target if isinstance(target, str) else None))
+    return entries
+
+
+def authorised_migrations(repo: Path, base: str, head: str | None) -> tuple[set[str], dict[str, str]]:
+    """The deletions and renames the change under review may make: (removed paths, {from: to}).
+
+    Only an entry the candidate adds over the base revision's record counts.
+    An entry already present at the base authorised an earlier change; it
+    must not cover a guide recreated at the same path and removed again,
+    so the record travels with the change it authorises and nothing else.
+    """
+    added = load_migrations(repo, head) - load_migrations(repo, base)
+    removed = {source for source, target in added if target is None}
+    renamed = {source: target for source, target in added if target is not None}
     return removed, renamed
 
 
@@ -803,7 +813,7 @@ def run_integrity_check(
     strict_metadata: bool = False,
 ) -> tuple[list[Finding], int]:
     changes = changed_guides(repo, base, head)
-    removed, renamed = load_migrations(repo, head)
+    removed, renamed = authorised_migrations(repo, base, head)
     findings: list[Finding] = []
     guide_changes: list[Change] = []
 
@@ -828,7 +838,8 @@ def run_integrity_check(
         guide_changes.append(change)
         severity = "error" if mode == "sync" or strict_metadata else "warning"
         if change.status == "D" or (before_is_guide and not after_is_guide):
-            if change.before_path in removed or change.before_path in renamed:
+            destination = renamed.get(change.before_path)
+            if change.before_path in removed:
                 findings.append(
                     Finding(
                         "notice",
@@ -837,6 +848,38 @@ def run_integrity_check(
                         f"source-guide removal recorded in {MIGRATIONS_PATH}",
                     )
                 )
+            elif destination is not None:
+                # Git reports a heavily edited move as a deletion and an
+                # addition. The record says where the guide went; the
+                # destination must be a guide in the candidate, or the record
+                # would be covering a removal it does not describe.
+                try:
+                    destination_text = (
+                        read_revision_file(repo, head, destination)
+                        if head is not None
+                        else read_worktree_file(repo, destination)
+                    )
+                except IntegrityError:
+                    destination_text = None
+                if is_guide_document(destination_text):
+                    findings.append(
+                        Finding(
+                            "notice",
+                            "source-removal-migrated",
+                            change.display_path,
+                            f"source-guide move to {destination} recorded in {MIGRATIONS_PATH}",
+                        )
+                    )
+                else:
+                    findings.append(
+                        Finding(
+                            severity,
+                            "source-removal-needs-review",
+                            change.display_path,
+                            f"{MIGRATIONS_PATH} records a move to {destination}, which is not a "
+                            "guide in the candidate",
+                        )
+                    )
             else:
                 findings.append(
                     Finding(
