@@ -1,14 +1,14 @@
 ---
 name: payroll-workflow-base
 description: Universal payroll computation workflow base that defines the gross-to-net calculation, statutory deduction handling, payslip generation, and payroll reporting runbook for all jurisdictions. Contains no jurisdiction-specific content — no tax brackets, no social security rates, no minimum wages, no filing forms. This skill MUST be loaded alongside a country-specific payroll skill that provides the withholding tables, contribution rates, and local payroll rules. This skill alone cannot produce any output.
-version: 1.0
+version: 1.0.1
 category: foundation
 jurisdiction: GLOBAL
 tier: 2
 last_updated: 2026-09-28
 ---
 
-# Payroll Workflow Base Skill v1.0
+# Payroll Workflow Base Skill v1.0.1
 
 > **General reference only.** This skill is general tax/accounting reference material for AI-assisted workflows. It has not been reviewed for any specific person's facts, documents, elections, deadlines, residency, filing status, or local procedures. Do not rely on it to file, pay, amend, or take a tax position without review by a qualified professional in the relevant jurisdiction.
 
@@ -92,15 +92,16 @@ For every employee, compute total gross pay for the period. Gross pay is the sum
 
 For every employee, compute all mandatory deductions from gross pay, in the order specified by the country skill (order matters — some deductions are computed on gross, others on gross-after-prior-deductions):
 
-**Income tax withholding.** Apply the country skill's withholding method:
+**Income tax withholding.** Apply the country skill's withholding method. The country skill's method governs; the shapes below describe the common ones and never replace what the country skill prescribes:
 
 - If cumulative/year-to-date method: compute total tax liability for the year to date based on cumulative gross, subtract tax already withheld in prior periods, the remainder is this period's withholding.
 - If period-based method: annualize the period gross, apply the annual tax table, de-annualize the result to get the period withholding.
+- If effective-rate table method (a rate looked up from the period's gross pay and the employee's status, such as Indonesia's TER): withholding = period gross × the table rate, with no annualization and no cumulative adjustment; the annual true-up against the progressive brackets happens only in the period the country skill names (typically the last month of the year or of employment).
 - If flat-rate supplemental method (for bonuses): apply the flat rate specified by the country skill to the supplemental payment.
 - Apply the employee's tax code or status as provided. If no tax code is available, apply the country skill's default code for a new employee.
 - Apply any tax-free allowance, personal allowance, or threshold per the country skill's tables.
 
-**Social security / national insurance (employee share).** Apply the country skill's employee contribution rate to the applicable earnings base. Observe the annual ceiling — if year-to-date earnings exceed it, no further contributions are due. If multiple programs exist (pension, health, unemployment, disability), compute each separately.
+**Social security / national insurance (employee share).** Apply the country skill's employee contribution rate to the applicable earnings base. Observe the ceiling on the basis the country skill states: an annual ceiling stops contributions once year-to-date earnings exceed it; a per-period ceiling (a maximum monthly wage base) caps each period's earnings base afresh and never stops a later period. If multiple programs exist (pension, health, unemployment, disability), compute each separately.
 
 **Pension / retirement contributions (employee share).** Compute per the country skill's rates. Include voluntary additional contributions if elected. Apply earnings caps. Determine pre-tax vs. post-tax treatment per the country skill.
 
@@ -114,7 +115,7 @@ Record every deduction as a separate line item with: the deduction type, rate, e
 
 Separately from employee deductions, compute all amounts the employer must pay on top of the employee's gross salary. These are NOT deducted from the employee's pay — they are additional costs borne by the employer:
 
-**Social security (employer share).** Apply the country skill's employer contribution rate to the applicable earnings base. Observe the annual ceiling (which may differ from the employee ceiling). Compute each program separately.
+**Social security (employer share).** Apply the country skill's employer contribution rate to the applicable earnings base. Observe the ceiling on the basis the country skill states (annual or per period; it may differ from the employee ceiling). Compute each program separately.
 
 **Workers' compensation / accident insurance.** Apply the rate per the country skill, based on industry classification and payroll amount.
 
@@ -320,7 +321,7 @@ This section defines the universal mechanics of income tax withholding. The coun
 
 ### Progressive vs. flat rate
 
-**Progressive (bracketed) withholding.** Determine taxable pay for the period (gross minus pre-tax deductions per the country skill's ordering). If cumulative method: use year-to-date taxable pay, apply annual brackets, subtract year-to-date tax already withheld. If period-based method: annualize the period taxable pay, apply annual brackets, de-annualize. Apply the tax-free allowance before the first bracket. Compute tax at each bracket rate on the portion falling within that bracket. Sum to get total withholding.
+**Progressive (bracketed) withholding.** Determine taxable pay for the period (gross minus pre-tax deductions per the country skill's ordering). If cumulative method: use year-to-date taxable pay, apply annual brackets, subtract year-to-date tax already withheld. If period-based method: annualize the period taxable pay, apply annual brackets, de-annualize. Apply the tax-free allowance before the first bracket. Compute tax at each bracket rate on the portion falling within that bracket. Sum to get total withholding. Under an effective-rate table method the table already embeds the brackets and the allowance: look the period rate up, apply it to the period gross, and leave the bracket computation to the true-up period.
 
 **Flat rate withholding.** Some jurisdictions or specific payment types (bonuses, supplemental pay) use a flat percentage. Apply the rate to the applicable earnings base as specified by the country skill.
 
@@ -334,11 +335,11 @@ Apply the country skill's rules for secondary employment (often a higher tax rat
 
 ### Year-to-date cumulative vs. period-based
 
-**Cumulative:** Each period considers all prior periods in the tax year, self-correcting over time. Requires year-to-date gross and tax withheld as inputs. **Period-based:** Each period computed independently by annualizing/de-annualizing. Simpler but does not self-correct. The country skill specifies which method is standard. If the user provides year-to-date figures, use the cumulative method regardless of the country default.
+**Cumulative:** Each period considers all prior periods in the tax year, self-correcting over time. Requires year-to-date gross and tax withheld as inputs. **Period-based:** Each period computed independently by annualizing/de-annualizing. Simpler but does not self-correct. The country skill specifies which method is standard, and its method governs. Year-to-date figures switch a run to the cumulative method only where the country skill's standard method is cumulative; under a period-based or effective-rate table method they feed the annual true-up and any annual ceiling check, not the period's withholding.
 
 ### Rounding rules
 
-Apply the country skill's rounding rules for each component. If the country skill is silent, round each deduction to two decimal places and compute net pay as the exact difference (gross minus the sum of rounded deductions). Net pay rounds to the currency's smallest denomination.
+Apply the country skill's rounding rules for each component. If the country skill is silent, round each deduction to the currency's smallest denomination (two decimal places for a currency with a minor unit, whole units for one without, such as the rupiah or the yen) and compute net pay as the exact difference — gross minus the sum of the rounded deductions — with no further rounding, so that Check 1 holds by construction.
 
 ---
 
@@ -352,9 +353,9 @@ Run these twelve checks against all outputs. If any fails, fix and re-run. Do no
 
 **Check 2 — Employer contributions computed separately.** No employer contribution appears as a deduction on any employee's payslip. Employer contributions are additional costs, not deductions from pay. Scan every payslip's deductions section; none should contain employer-share items.
 
-**Check 3 — Tax withholding within valid brackets.** For every employee, the effective tax rate (tax withheld ÷ gross pay) falls within the range of the lowest and highest marginal rates in the country skill's tax table. An effective rate of 0% is valid only if gross pay is below the tax-free threshold. An effective rate above the highest marginal rate is always wrong.
+**Check 3 — Tax withholding within valid brackets.** For every employee, the effective tax rate (tax withheld ÷ gross pay) falls within the range of the lowest and highest marginal rates in the country skill's tax table. An effective rate of 0% is valid only where the country skill's tables give a zero rate for that pay: at or below a tax-free threshold, or inside a zero-rate band of an effective-rate table, with band endpoints read as inclusively as the table states them. An effective rate above the highest marginal rate is always wrong.
 
-**Check 4 — Social security respects annual ceiling.** For every employee, verify that year-to-date social security contributions (employee share) do not exceed the annual ceiling specified by the country skill. If contributions in this period would push the total above the ceiling, the contribution for this period must be reduced to the ceiling remainder.
+**Check 4 — Social security respects its ceiling.** Where the country skill states an annual ceiling, verify for every employee that year-to-date social security contributions (employee share) do not exceed it; if contributions in this period would push the total above the ceiling, the contribution for this period must be reduced to the ceiling remainder. Where the country skill states a per-period ceiling (a maximum monthly wage base), verify that each period's earnings base is capped at that amount and that no later period was stopped.
 
 **Check 5 — Payroll journal entries balance.** Total debits in the payroll journal equal total credits. Not approximately — exactly.
 
@@ -388,9 +389,9 @@ Every country-specific payroll skill loaded alongside this workflow base MUST pr
 
 ### Mandatory slots
 
-1. **Income tax withholding tables** — current tax brackets with rates, personal allowance or tax-free threshold, withholding method (cumulative or period-based), current tax year effective date.
+1. **Income tax withholding tables** — current tax brackets with rates, personal allowance or tax-free threshold, withholding method (cumulative, period-based, or effective-rate table), current tax year effective date.
 
-2. **Social security rates and ceilings** — employee and employer contribution rates, earnings base, annual ceiling for each program. List each program separately (pension, health, unemployment, disability, accident).
+2. **Social security rates and ceilings** — employee and employer contribution rates, earnings base, the ceiling for each program and whether it is annual or per period. List each program separately (pension, health, unemployment, disability, accident).
 
 3. **Minimum wage** — current national minimum wage (and age-based or regional variations), unit (hourly/monthly), effective date.
 
@@ -418,7 +419,7 @@ Every country-specific payroll skill loaded alongside this workflow base MUST pr
 
 ### Validation status
 
-This file is v1.0 of `payroll-workflow-base`, drafted as part of the Open Accountants skill architecture in May 2026. It follows the structural pattern established by `bookkeeping-workflow-base` v1.0.
+This file is v1.0.1 of `payroll-workflow-base`, drafted as part of the Open Accountants skill architecture in May 2026. It follows the structural pattern established by `bookkeeping-workflow-base` v1.0.
 
 ### Design decisions
 
@@ -426,7 +427,7 @@ This file is v1.0 of `payroll-workflow-base`, drafted as part of the Open Accoun
 
 2. **Employer contributions as separate step.** Step 7 exists separately from Step 6 because employer contributions are not deducted from pay, have different rates/ceilings, and appear in different outputs. Mixing them causes the most common payroll error: treating an employer contribution as an employee deduction.
 
-3. **Year-to-date as optional input.** Both cumulative and period-based computation are supported. If the user provides year-to-date data, the cumulative method is used regardless of the country default.
+3. **Year-to-date as optional input.** Cumulative, period-based and effective-rate table computation are supported. Year-to-date data switches a run to the cumulative method only where that is the country skill's standard method; the country skill's method always governs (v1.0.1).
 
 4. **Minimum wage check as self-check, not blocker.** Check 12 flags non-compliance in the reviewer brief rather than refusing to compute — the reviewer decides whether it is a legal issue.
 
@@ -441,6 +442,7 @@ This file is v1.0 of `payroll-workflow-base`, drafted as part of the Open Accoun
 ### Change log
 
 - **v1.0 (May 2026):** Initial release. Establishes the universal payroll workflow, three-tier classification system, five-output specification, 12 self-checks, and country skill contract.
+- **v1.0.1 (September 2026):** The country skill's withholding method governs: the effective-rate table shape (Indonesia's TER) is described, year-to-date figures no longer force the cumulative method, ceilings are observed on the country skill's basis (annual or per period) in Steps 6-7 and Check 4, fallback rounding uses the currency's smallest unit so Check 1 holds by construction, and Check 3 accepts zero withholding wherever the country tables give a zero rate. Prompted by pairing `id-payroll-pph21` with this base.
 
 ---
 
