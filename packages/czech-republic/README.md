@@ -17,6 +17,7 @@
 10. `references.md`
 11. `eu-vat-directive.md`
 12. `company-formation-workflow-base.md`
+13. `income-tax-workflow-base.md`
 
 ## Also known as
 

@@ -26,6 +26,8 @@
 19. `company-formation-workflow-base.md`
 20. `financial-statements-workflow-base.md`
 21. `crypto-tax-workflow-base.md`
+22. `income-tax-workflow-base.md`
+23. `social-contributions-workflow-base.md`
 
 ## How to use
 

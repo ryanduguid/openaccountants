@@ -16,6 +16,7 @@
 9. `cl-vat-return.md`
 10. `references.md`
 11. `company-formation-workflow-base.md`
+12. `vat-workflow-base.md`
 
 ## Also known as
 

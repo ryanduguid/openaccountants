@@ -6,6 +6,9 @@ Each package contains:
 1. foundation.md — Universal execution framework (same for every country)
 2. intake.md — Universal onboarding flow (same for every country)
 3. [country]-[obligation].md — Country-specific content skills
+4. Every workflow base those skills declare in `depends_on` (for example
+   income-tax-workflow-base, social-contributions-workflow-base), plus the
+   keyword-matched domain bases (payroll, bookkeeping, e-invoicing, ...)
 
 US state packages (packages/us-[code]/) additionally include:
 4. us-tax-workflow-base.md — US-specific workflow foundation
@@ -593,6 +596,9 @@ def build_package(country_dir_name, country_dir):
                 shutil.copy2(base_path, os.path.join(pkg_dir, base_file))
                 copied_files.append(base_file)
 
+    # Copy every other base the content skills declare in `depends_on`
+    copy_declared_bases([path for _, path in content_skills], pkg_dir, copied_files)
+
     # Copy orchestrator files if they exist
     intake_file, assembly_file = find_orchestrator_files(country_dir_name)
     if intake_file and os.path.exists(intake_file):
@@ -784,6 +790,15 @@ def build_us_state_package(state_code):
                 copied_files.append(f)
                 state_skill_count += 1
 
+    # 5b. Bases the federal and state skills declare in `depends_on`
+    declared_from = []
+    if os.path.isdir(federal_dir):
+        declared_from += [os.path.join(federal_dir, f) for f in sorted(os.listdir(federal_dir)) if f.endswith(".md")]
+    if os.path.isdir(state_dir):
+        declared_from += [os.path.join(state_dir, f) for f in sorted(os.listdir(state_dir))
+                          if f.endswith(".md") and f != "README.md"]
+    copy_declared_bases(declared_from, pkg_dir, copied_files)
+
     # 6. Generate README
     with open(os.path.join(pkg_dir, "README.md"), "w") as fh:
         fh.write(build_us_state_readme(state_name, state_code, copied_files))
@@ -955,6 +970,16 @@ def build_canada_province_package(province_code):
                 copied_files.append(f)
                 province_skill_count += 1
 
+    # 5b. Bases the federal and province skills declare in `depends_on`
+    declared_from = []
+    if os.path.isdir(canada_root):
+        declared_from += [os.path.join(canada_root, f) for f in sorted(os.listdir(canada_root))
+                          if f.endswith(".md") and os.path.isfile(os.path.join(canada_root, f))]
+    if os.path.isdir(province_source):
+        declared_from += [os.path.join(province_source, f) for f in sorted(os.listdir(province_source))
+                          if f.endswith(".md") and f != "README.md"]
+    copy_declared_bases(declared_from, pkg_dir, copied_files)
+
     # 6. Core orchestrator files (Canada freelance intake + return assembly, global router)
     orch_dir = os.path.join(SKILLS_DIR, "orchestrator")
     for orch_file in ("ca-freelance-intake.md", "ca-return-assembly.md", "global-router.md"):
@@ -1003,6 +1028,52 @@ def _frontmatter_block(text):
     if not end:
         return None
     return text[first_nl + 1: first_nl + 1 + end.start()]
+
+
+_LEGACY_DEPENDS_ON_RE = re.compile(r"^(depends_on):[ \t]+(- .+)$", re.MULTILINE)
+
+
+def declared_foundation_bases(skill_paths):
+    """Foundation bases the given skills name in `depends_on`, as filenames.
+
+    Every content skill declares the workflow base it loads on top of
+    (docs/skill-template.md). The keyword tables in the builders catch the
+    common domains by filename; this catches the rest — income-tax-workflow-
+    base, social-contributions-workflow-base, vat-workflow-base, the universal
+    workflow-base — so a package carries every base its guides ask for, and a
+    user who uploads the folder as the README says is not missing a named
+    dependency. Only slugs that exist under skills/foundation/ qualify: a slug
+    naming another country skill (already in the package) or nothing at all is
+    validate-guides.py's business. The legacy single-line `depends_on: - x`
+    form is folded the way the validator folds it. Sorted, without duplicates.
+    """
+    bases = set()
+    for path in skill_paths:
+        with open(path, encoding="utf-8", errors="replace") as fh:
+            block = _frontmatter_block(fh.read())
+        if block is None:
+            continue
+        folded = _LEGACY_DEPENDS_ON_RE.sub(lambda m: f"{m.group(1)}:\n  {m.group(2)}", block)
+        try:
+            metadata = load_frontmatter(folded)
+        except FrontmatterError:
+            continue
+        for slug in metadata.get("depends_on") or []:
+            slug = slug.strip()
+            if not slug or "/" in slug or slug.startswith("."):
+                continue
+            if os.path.isfile(os.path.join(SKILLS_DIR, "foundation", f"{slug}.md")):
+                bases.add(f"{slug}.md")
+    return sorted(bases)
+
+
+def copy_declared_bases(skill_paths, pkg_dir, copied_files):
+    """Copy the bases `skill_paths` declare into pkg_dir, skipping any already there."""
+    for base_file in declared_foundation_bases(skill_paths):
+        if base_file in copied_files:
+            continue
+        shutil.copy2(os.path.join(SKILLS_DIR, "foundation", base_file), os.path.join(pkg_dir, base_file))
+        copied_files.append(base_file)
 
 
 def validate_generated_frontmatter():
@@ -1155,6 +1226,11 @@ def main():
             if os.path.isfile(xb_base):
                 shutil.copy2(xb_base, os.path.join(xb_pkg, "cross-border-workflow-base.md"))
                 xb_files.append("cross-border-workflow-base.md")
+            declared_from = [os.path.join(xb_dir, f) for f in sorted(os.listdir(xb_dir)) if f.endswith(".md")]
+            if os.path.isdir(corridors_dir):
+                declared_from += [os.path.join(corridors_dir, f) for f in sorted(os.listdir(corridors_dir))
+                                  if f.endswith(".md")]
+            copy_declared_bases(declared_from, xb_pkg, xb_files)
             if xb_files:
                 with open(os.path.join(xb_pkg, "README.md"), "w") as fh:
                     fh.write("# Cross-Border Accounting Skills\n\n"
@@ -1187,6 +1263,7 @@ def main():
                 if f.endswith(".md"):
                     shutil.copy2(os.path.join(vert_dir, f), os.path.join(vert_pkg, f))
                     vert_files.append(f)
+            copy_declared_bases([os.path.join(vert_dir, f) for f in vert_files], vert_pkg, vert_files)
             if vert_files:
                 with open(os.path.join(vert_pkg, "README.md"), "w") as fh:
                     fh.write("# Industry Vertical Skills\n\n"
@@ -1215,6 +1292,7 @@ def main():
                 if f.endswith(".md"):
                     shutil.copy2(os.path.join(integ_dir, f), os.path.join(integ_pkg, f))
                     integ_files.append(f)
+            copy_declared_bases([os.path.join(integ_dir, f) for f in integ_files], integ_pkg, integ_files)
             if integ_files:
                 with open(os.path.join(integ_pkg, "README.md"), "w") as fh:
                     fh.write("# Software & Platform Integration Skills\n\n"

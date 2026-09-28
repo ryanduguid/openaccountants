@@ -15,6 +15,8 @@
 8. `ph-withholding.md`
 9. `philippines-vat.md`
 10. `company-formation-workflow-base.md`
+11. `income-tax-workflow-base.md`
+12. `vat-workflow-base.md`
 
 ## Also known as
 

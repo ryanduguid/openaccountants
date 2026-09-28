@@ -18,6 +18,7 @@
 11. `israel-vat.md`
 12. `references.md`
 13. `crypto-tax-workflow-base.md`
+14. `vat-workflow-base.md`
 
 ## Also known as
 

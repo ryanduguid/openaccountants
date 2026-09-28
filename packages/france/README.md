@@ -34,8 +34,10 @@
 27. `financial-statements-workflow-base.md`
 28. `transfer-pricing-workflow-base.md`
 29. `crypto-tax-workflow-base.md`
-30. `france-guided-intake.md`
-31. `france-return-assembly.md`
+30. `income-tax-workflow-base.md`
+31. `social-contributions-workflow-base.md`
+32. `france-guided-intake.md`
+33. `france-return-assembly.md`
 
 ## Also known as
 

@@ -14,6 +14,7 @@
 7. `hungary-vat-return.md`
 8. `eu-vat-directive.md`
 9. `einvoice-workflow-base.md`
+10. `income-tax-workflow-base.md`
 
 ## Also known as
 

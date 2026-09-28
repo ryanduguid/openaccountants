@@ -62,6 +62,7 @@ This package contains **federal** tax skills (which apply to all US states) plus
 52. `ma-payroll.md`
 53. `ma-sales-tax.md`
 54. `massachusetts-sales-tax.md`
+55. `income-tax-workflow-base.md`
 
 ## How to use
 

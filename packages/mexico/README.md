@@ -20,8 +20,10 @@
 13. `einvoice-workflow-base.md`
 14. `transfer-pricing-workflow-base.md`
 15. `crypto-tax-workflow-base.md`
-16. `mexico-guided-intake.md`
-17. `mexico-return-assembly.md`
+16. `income-tax-workflow-base.md`
+17. `vat-workflow-base.md`
+18. `mexico-guided-intake.md`
+19. `mexico-return-assembly.md`
 
 ## Also known as
 

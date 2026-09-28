@@ -32,8 +32,9 @@
 25. `financial-statements-workflow-base.md`
 26. `transfer-pricing-workflow-base.md`
 27. `crypto-tax-workflow-base.md`
-28. `netherlands-guided-intake.md`
-29. `netherlands-return-assembly.md`
+28. `income-tax-workflow-base.md`
+29. `netherlands-guided-intake.md`
+30. `netherlands-return-assembly.md`
 
 ## Also known as
 

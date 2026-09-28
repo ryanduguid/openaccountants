@@ -22,8 +22,9 @@
 15. `payroll-workflow-base.md`
 16. `transfer-pricing-workflow-base.md`
 17. `crypto-tax-workflow-base.md`
-18. `brazil-guided-intake.md`
-19. `brazil-return-assembly.md`
+18. `income-tax-workflow-base.md`
+19. `brazil-guided-intake.md`
+20. `brazil-return-assembly.md`
 
 ## Also known as
 

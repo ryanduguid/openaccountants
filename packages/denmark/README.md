@@ -13,6 +13,7 @@
 6. `dk-vat-return.md`
 7. `references.md`
 8. `eu-vat-directive.md`
+9. `income-tax-workflow-base.md`
 
 ## Also known as
 

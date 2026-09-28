@@ -21,6 +21,7 @@
 14. `tax-amnesty.md`
 15. `the-burden-of-proof-in-tax-cases.md`
 16. `company-formation-workflow-base.md`
+17. `vat-workflow-base.md`
 
 ## Also known as
 

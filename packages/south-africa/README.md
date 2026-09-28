@@ -16,6 +16,7 @@
 9. `za-tax-residency.md`
 10. `za-vat-return.md`
 11. `transfer-pricing-workflow-base.md`
+12. `vat-workflow-base.md`
 
 ## Also known as
 

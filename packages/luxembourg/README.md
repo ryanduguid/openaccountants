@@ -14,6 +14,8 @@
 7. `luxembourg-vat-return.md`
 8. `eu-vat-directive.md`
 9. `payroll-workflow-base.md`
+10. `income-tax-workflow-base.md`
+11. `social-contributions-workflow-base.md`
 
 ## How to use
 

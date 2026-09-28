@@ -13,6 +13,9 @@
 6. `venezuela-social-contributions.md`
 7. `venezuela-tax-optimization.md`
 8. `payroll-workflow-base.md`
+9. `income-tax-workflow-base.md`
+10. `social-contributions-workflow-base.md`
+11. `vat-workflow-base.md`
 
 ## How to use
 
