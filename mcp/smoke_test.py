@@ -17,7 +17,9 @@ Exits 0 on success, 1 on failure.
 
 import asyncio
 import os
+import re
 import sys
+import tempfile
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -65,11 +67,38 @@ except ImportError as exc:
     sys.exit(0 if (not failures and lenient) else 1)
 
 
+_FRONTMATTER_RE = re.compile(r"^---\s*\n(.*?)\n---", re.DOTALL)
+_NAME_RE = re.compile(r"^name:\s*\S", re.MULTILINE)
+
+
+def _count_skill_files(packages_dir: Path) -> int:
+    """Independent count of markdown files whose frontmatter carries a name."""
+    n = 0
+    for path in packages_dir.rglob("*.md"):
+        m = _FRONTMATTER_RE.match(path.read_text(encoding="utf-8", errors="replace"))
+        if m and _NAME_RE.search(m.group(1)):
+            n += 1
+    return n
+
+
 # --- list_skills ----------------------------------------------------------
 print("list_skills:")
 ls = S.list_skills()
 check("returns skills + total", "skills" in ls and "total" in ls)
-check(">300 skills", ls["total"] > 300, f"got {ls['total']}")
+check("no error field on a populated catalogue", "error" not in ls, str(ls.get("error")))
+report = S._duplicate_report()
+# The catalogue holds every distinct slug except the ones dropped as
+# ambiguous, and it parsed every skill file on disk. These two invariants
+# catch a silently shrinking index; the old "> 300" floor did not (the
+# catalogue is ~1,835 skills, so it could lose 80% and still pass).
+check("total = distinct slugs - ambiguous slugs",
+      ls["total"] == report["slugs"] - report["ambiguous_slugs"],
+      f"total={ls['total']} slugs={report['slugs']} ambiguous={report['ambiguous_slugs']}")
+expected_files = _count_skill_files(S.PACKAGES_DIR)
+check("every skill file on disk was parsed",
+      report["skill_files"] == expected_files,
+      f"catalogue parsed {report['skill_files']}, on disk {expected_files}")
+check(">= 1500 skills (mass-loss tripwire)", ls["total"] >= 1500, f"got {ls['total']}")
 mt = S.list_skills(jurisdiction="MT")
 check("MT filter non-empty", len(mt["skills"]) > 0)
 check("MT filter only MT", all(s["jurisdiction"] == "MT" for s in mt["skills"]),
@@ -78,6 +107,15 @@ check("MT includes malta-vat-return (no own frontmatter jurisdiction)",
       any(s["slug"] == "malta-vat-return" for s in mt["skills"]))
 usca = S.list_skills(jurisdiction="US-CA")
 check("US-CA filter works (sub-national dir)", len(usca["skills"]) > 0, f"got {len(usca['skills'])}")
+usca_slugs = {s["slug"] for s in usca["skills"]}
+check("US-CA includes ca-540-individual-return (packages/us-ca/ca-income-tax.md)",
+      "ca-540-individual-return" in usca_slugs, str(sorted(usca_slugs)))
+us_slugs = {s["slug"] for s in S.list_skills(jurisdiction="US")["skills"]}
+check("federal guides carry jurisdiction US, not US-CA",
+      "us-form-1040-individual-return" in us_slugs
+      and "us-form-1040-individual-return" not in usca_slugs)
+check("Canadian guides are listed under CA (their declared code)",
+      S.list_skills(jurisdiction="CA")["total"] > 0)
 sample = mt["skills"][0]
 check("skill has required fields",
       all(k in sample for k in ("slug", "title", "jurisdiction", "category",
@@ -146,6 +184,31 @@ print("start(intent='gibberish'):")
 gib = S.start(intent="gibberish")
 check("unmatched intent → needs_clarification",
       gib["status"] == "needs_clarification", gib.get("status"))
+
+# --- missing content is reported, not served as an empty corpus -----------
+print("\nno packages/ directory:")
+_real_packages_dir = S.PACKAGES_DIR
+with tempfile.TemporaryDirectory() as _tmp:
+    S.PACKAGES_DIR = Path(_tmp) / "no-such-checkout" / "packages"
+    S._index.cache_clear()
+    try:
+        missing_ls = S.list_skills()
+        check("list_skills reports an error", "error" in missing_ls and missing_ls["total"] == 0,
+              str(missing_ls)[:200])
+        check("error names the directory and OPENACCOUNTANTS_ROOT",
+              str(S.PACKAGES_DIR) in missing_ls.get("error", "")
+              and "OPENACCOUNTANTS_ROOT" in missing_ls.get("error", ""))
+        check("start → status error, no plan",
+              S.start(intent="taxes", jurisdiction="MT").get("status") == "error")
+        check("search_skills reports an error", "error" in S.search_skills("vat"))
+        try:
+            S.get_skill("malta-income-tax")
+            check("get_skill raises", False, "did NOT raise")
+        except ValueError as exc:
+            check("get_skill raises with the content hint", "OPENACCOUNTANTS_ROOT" in str(exc), str(exc))
+    finally:
+        S.PACKAGES_DIR = _real_packages_dir
+        S._index.cache_clear()
 
 # --- submit_feedback ------------------------------------------------------
 print("\nsubmit_feedback (general):")

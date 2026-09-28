@@ -13,6 +13,16 @@
 # container-side MCP_HOST=0.0.0.0; the host-side 127.0.0.1 binding above keeps
 # that published port local. See mcp/README.md before exposing it remotely.
 #
+# FastMCP validates the Host/Origin headers (DNS-rebinding protection) on its
+# own only for loopback binds, so MCP_HOST=0.0.0.0 would otherwise accept a
+# spoofed Host. The image therefore ships MCP_ALLOWED_HOSTS / MCP_ALLOWED_ORIGINS
+# set to the localhost patterns the recipe above needs (other Hosts get 421,
+# other Origins 403). Override both with the real names when exposing the
+# image under a hostname:
+#   docker run --rm -p 8000:8000 -e MCP_HOST=0.0.0.0 \
+#     -e MCP_ALLOWED_HOSTS=mcp.example.com \
+#     -e MCP_ALLOWED_ORIGINS=https://app.example.com openaccountants-mcp
+#
 # Environment knobs (all optional, see mcp/openaccountants_mcp/server.py):
 #   MCP_TRANSPORT             stdio | streamable-http | sse   (default here: streamable-http)
 #   MCP_HOST                  bind host                       (default here: 127.0.0.1)
@@ -20,6 +30,10 @@
 #   MCP_STREAMABLE_HTTP_PATH  mount path                      (default: /mcp;
 #                             set to "/" when fronted by a proxy that strips
 #                             an upstream path prefix)
+#   MCP_ALLOWED_HOSTS         accepted Host header values     (default here: localhost
+#                             and 127.0.0.1 / [::1] on any port; ":*" = any port)
+#   MCP_ALLOWED_ORIGINS       accepted Origin header values   (default here: the http://
+#                             forms of the same; only browser clients send Origin)
 #   OPENACCOUNTANTS_ROOT      skill content root              (set to /app in image)
 
 FROM python:3.11-slim
@@ -36,7 +50,9 @@ COPY packages ./packages
 ENV OPENACCOUNTANTS_ROOT=/app \
     MCP_TRANSPORT=streamable-http \
     MCP_HOST=127.0.0.1 \
-    MCP_PORT=8000
+    MCP_PORT=8000 \
+    MCP_ALLOWED_HOSTS="localhost:*,127.0.0.1:*,[::1]:*" \
+    MCP_ALLOWED_ORIGINS="http://localhost:*,http://127.0.0.1:*,http://[::1]:*"
 
 EXPOSE 8000
 
