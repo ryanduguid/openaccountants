@@ -111,6 +111,14 @@ class _ValidatorCase(unittest.TestCase):
                 validate_guides.check_packages_frontmatter(_Trees(guide_files), errors)
         return errors
 
+    def _check_depends_on(self, files):
+        root = self._tree(files)
+        errors = []
+        with mock.patch.object(validate_guides, "REPO_ROOT", str(root)):
+            with contextlib.redirect_stdout(io.StringIO()):
+                validate_guides.check_depends_on(_Trees(files), errors)
+        return errors
+
 
 class BuildIndexSlugTests(_ValidatorCase):
     def test_index_uses_canonical_names_for_same_named_country_files(self):
@@ -265,6 +273,7 @@ class ValidatorModeTests(unittest.TestCase):
         "check_guides",
         "check_packages_frontmatter",
         "check_us_federal_deletions",
+        "check_depends_on",
         "check_no_deprecated_manifests",
         "check_index_fresh",
         "check_llms_full_fresh",
@@ -292,6 +301,7 @@ class ValidatorModeTests(unittest.TestCase):
         calls = self._run(["--changed-only"], changed=["docs/QUALITY-TIERS.md"])
 
         self.assertNotIn("check_guides", calls)
+        self.assertIn("check_depends_on", calls)  # whole-tree, like freshness
         for name in self.FRESHNESS:
             self.assertIn(name, calls)
 
@@ -354,10 +364,11 @@ def _with_depends_on(text, *slugs):
 class DependsOnTests(_ValidatorCase):
     """`depends_on` is a promise that a guide exists. 238 entries broke it: no
     guide carried `income-tax-workflow-base`, `social-contributions-workflow-
-    base` or `foundation`, and nothing noticed."""
+    base` or `foundation`, and nothing noticed. The check reads the whole
+    tree, never the diff: the slug and the name live in different files."""
 
     def test_dangling_depends_on_is_an_error(self) -> None:
-        errors = self._check_guides(
+        errors = self._check_depends_on(
             {"skills/dependent.md": _with_depends_on(GOOD, "no-such-base")}
         )
 
@@ -371,26 +382,39 @@ class DependsOnTests(_ValidatorCase):
             "packages/us-federal/us-form-1040.md": GOOD.replace("synthetic-guide", "us-form-1040"),
         }
 
-        self.assertEqual(self._check_guides(files), [])
+        self.assertEqual(self._check_depends_on(files), [])
 
-    def test_names_come_from_the_whole_tree_in_changed_only_mode(self) -> None:
-        # PR mode validates only the files in the diff; the base the dependent
-        # names is not in the diff and must still count.
-        files = {
-            "skills/dependent.md": _with_depends_on(GOOD, "workflow-base"),
-            "skills/foundation/workflow-base.md": GOOD.replace("synthetic-guide", "workflow-base"),
-        }
+    def test_a_deleted_base_is_caught_without_touching_its_dependents(self) -> None:
+        # PR mode runs the per-guide checks on the diff only. A pull request
+        # that deletes a base changes nothing in the guides that name it, so
+        # those guides are outside the diff — and the dangling slug must still
+        # be reported. The per-guide loop therefore does not own this check.
+        files = {"skills/dependent.md": _with_depends_on(GOOD, "workflow-base")}
 
-        self.assertEqual(self._check_guides(files, only_files={"skills/dependent.md"}), [])
+        self.assertEqual(self._check_guides(files, only_files=set()), [])
+        errors = self._check_depends_on(files)
+
+        self.assertEqual(len(errors), 1, errors)
+        self.assertIn("workflow-base", errors[0])
 
     def test_a_dependent_cannot_satisfy_itself_with_a_filename(self) -> None:
         # The slug must match a `name`, not a path stem.
         files = {"skills/foundation/other-base.md": _with_depends_on(GOOD, "other-base")}
 
-        errors = self._check_guides(files)
+        errors = self._check_depends_on(files)
 
         self.assertEqual(len(errors), 1, errors)
         self.assertIn("other-base", errors[0])
+
+    def test_a_malformed_block_is_left_to_the_per_guide_checks(self) -> None:
+        # check_guides reports the YAML error; this check must not double up
+        # or crash on the block it cannot read.
+        files = {
+            "skills/bad.md": MALFORMED,
+            "skills/dependent.md": _with_depends_on(GOOD, "synthetic-guide"),
+        }
+
+        self.assertEqual(self._check_depends_on(files), [])
 
 
 class CtaBlockTests(_ValidatorCase):
@@ -447,7 +471,39 @@ class CtaBlockTests(_ValidatorCase):
         errors = self._check_guides({"skills/inverted.md": inverted})
 
         self.assertEqual(len(errors), 1, errors)
-        self.assertIn("must be followed by", errors[0])
+        self.assertIn("must directly introduce", errors[0])
+
+    def test_content_between_the_marker_and_the_section_is_an_error(self) -> None:
+        # A marker above unrelated content, with the section further down, is
+        # not a marked block: only blank lines or a rule may separate them.
+        drifted = (
+            GOOD_WITHOUT_CTA + "\n" + CTA_MARKER + "\n\n## Section 9 — Appendix\n\nText.\n\n"
+            + CANONICAL_BLOCK.replace(CTA_MARKER + "\n\n", "")
+        )
+
+        errors = self._check_guides({"skills/drifted.md": drifted})
+
+        self.assertEqual(len(errors), 1, errors)
+        self.assertIn("must directly introduce", errors[0])
+
+    def test_an_empty_section_under_the_marker_is_an_error(self) -> None:
+        empty = GOOD_WITHOUT_CTA + "\n" + CTA_MARKER + "\n\n## Talk to a verified accountant\n"
+
+        errors = self._check_guides({"skills/empty.md": empty})
+
+        self.assertEqual(len(errors), 1, errors)
+        self.assertIn("no openaccountants.com or calendly.com link", errors[0])
+
+    def test_the_hand_authored_federal_shape_passes(self) -> None:
+        # packages/us-federal/ guides carry the marker, a blank line, the
+        # Calendly text, and then a further marker-introduced section after
+        # the block. Placement is theirs to decide; the block is still one.
+        federal = (
+            GOOD_WITHOUT_CTA + "\n" + CTA_MARKER + "\n\n" + OLD_CTA_SECTION
+            + "\n<!-- openaccountants-mcp-cta -->\n\n## The accountant-verified version lives in the connector\n\nText.\n"
+        )
+
+        self.assertEqual(self._check_guides({"packages/us-federal/us-form-1040.md": federal}), [])
 
     def test_two_markers_are_an_error(self) -> None:
         errors = self._check_guides({"skills/twice.md": GOOD + "\n" + CTA_MARKER + "\n"})

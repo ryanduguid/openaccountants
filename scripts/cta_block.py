@@ -79,3 +79,41 @@ def is_cta_heading(line: str) -> bool:
 
 def is_any_heading(line: str) -> bool:
     return ANY_HEADING_RE.match(line) is not None
+
+
+def has_cta_link(section: str) -> bool:
+    """Whether a CTA section is one this repo stamped (it links the network or Calendly)."""
+    return SECTION_LINK_RE.search(section) is not None
+
+
+def section_end(lines: list[str], start: int) -> int:
+    """Index of the first line after `start` that opens something else: the next
+    ATX heading, the marker, or the end of the file."""
+    end = start + 1
+    while end < len(lines) and not (is_any_heading(lines[end]) or lines[end].strip() == MARKER):
+        end += 1
+    return end
+
+
+def find_markers(lines: list[str]) -> list[tuple[int, int | None, int | None]]:
+    """Every marker in a guide body, as (marker_index, heading_index, end_index).
+
+    `heading_index` is the CTA heading the marker introduces: the first line
+    after the marker once blank lines and `---` rules are skipped, if that line
+    is a "Talk to a verified accountant" heading. `end_index` is where that
+    section stops (see section_end). Both are None for a stray marker — one
+    that introduces anything else. The validator and the normalizer share this
+    reading so a marker means the same thing to both.
+    """
+    found: list[tuple[int, int | None, int | None]] = []
+    for index, line in enumerate(lines):
+        if line.strip() != MARKER:
+            continue
+        cursor = index + 1
+        while cursor < len(lines) and lines[cursor].strip() in ("", "---"):
+            cursor += 1
+        if cursor < len(lines) and is_cta_heading(lines[cursor]):
+            found.append((index, cursor, section_end(lines, cursor)))
+        else:
+            found.append((index, None, None))
+    return found

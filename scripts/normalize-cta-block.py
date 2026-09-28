@@ -13,21 +13,27 @@ verified accountant" section. The corpus drifted from that in two ways:
 
 This script repairs both, and nothing else:
 
-1. Every "Talk to a verified accountant" section that is not introduced by the
-   marker is removed. A section runs from its heading to the next heading, the
-   marker, or the end of the file. Surrounding blank lines collapse to one. A
-   section that mentions neither calendly.com nor openaccountants.com is not a
-   shape this repo ever stamped, so it is left in place and reported.
-2. A guide with no marker gets the canonical block appended (a trailing
+1. Every "Talk to a verified accountant" section that the marker does not
+   introduce is removed. A section runs from its heading to the next heading,
+   the marker, or the end of the file. Surrounding blank lines collapse to
+   one. A section that mentions neither calendly.com nor openaccountants.com
+   is not a shape this repo ever stamped, so it is left in place and reported.
+2. A guide that carries the marker more than once keeps the last block the
+   marker introduces and loses the others; a stray marker (one that introduces
+   no CTA section) is dropped.
+3. A guide left with no marker gets the canonical block appended (a trailing
    horizontal rule is folded into the block's own), unless it lives in one of
    the template directories listed in scripts/cta_block.py.
-3. `last_updated` is set to --date (default: today, UTC) on every guide whose
+4. `last_updated` is set to --date (default: today, UTC) on every guide whose
    body changed, because scripts/check-sync-integrity.py --strict-metadata
    fails a body change that advances neither the date nor the version.
 
-Only files with YAML frontmatter are touched; READMEs and docs are skipped.
-Idempotent: a second run changes nothing. scripts/validate-guides.py enforces
-the resulting invariant.
+The block is not moved: a marker block that other content follows (the
+hand-authored packages/us-federal/ guides carry a further marker-introduced
+section after it) stays where it is. Only files with YAML frontmatter are
+touched; READMEs and docs are skipped. Idempotent: a second run changes
+nothing. scripts/validate-guides.py enforces the resulting invariant with the
+same reading of the marker (cta_block.find_markers).
 
 Usage:
     python3 scripts/normalize-cta-block.py            # dry run over skills/
@@ -46,10 +52,11 @@ import sys
 from cta_block import (
     CANONICAL_BLOCK,
     MARKER,
-    SECTION_LINK_RE,
-    is_any_heading,
+    find_markers,
+    has_cta_link,
     is_cta_heading,
     is_optional,
+    section_end,
 )
 
 REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -76,24 +83,19 @@ def split_frontmatter(text: str) -> tuple[str | None, str]:
     return text[:end], text[end:]
 
 
-def _marker_owned_headings(lines: list[str]) -> set[int]:
-    """Indices of CTA headings that the marker introduces: the first heading
-    after a marker line, separated from it only by blank lines or a rule."""
-    owned: set[int] = set()
-    for index, line in enumerate(lines):
-        if line.strip() != MARKER:
-            continue
-        cursor = index + 1
-        while cursor < len(lines) and lines[cursor].strip() in ("", "---"):
-            cursor += 1
-        if cursor < len(lines) and is_cta_heading(lines[cursor]):
-            owned.add(cursor)
-    return owned
-
-
 def _strip_trailing_blank(lines: list[str]) -> None:
     while lines and lines[-1].strip() == "":
         lines.pop()
+
+
+def _delete(lines: list[str], start: int, end: int) -> list[str]:
+    """Drop lines[start:end] and leave exactly one blank line at the seam."""
+    before = lines[:start]
+    after = lines[end:]
+    _strip_trailing_blank(before)
+    while after and after[0].strip() == "":
+        after.pop(0)
+    return before + ([""] + after if after else [""])
 
 
 def normalize(
@@ -117,32 +119,45 @@ def normalize(
     actions: list[str] = []
     skipped: list[str] = []
     lines = body.split("\n")
-    body_line_offset = frontmatter.count("\n")
+    offset = frontmatter.count("\n")
 
-    owned = _marker_owned_headings(lines)
-    removable = [i for i, line in enumerate(lines) if is_cta_heading(line) and i not in owned]
-    for start in reversed(removable):  # bottom-up keeps earlier indices valid
-        end = start + 1
-        while end < len(lines) and not (is_any_heading(lines[end]) or lines[end].strip() == MARKER):
-            end += 1
-        section = "\n".join(lines[start:end])
-        human_line = body_line_offset + start + 1
-        if not SECTION_LINK_RE.search(section):
-            skipped.append(
-                f"{rel}: line {human_line}: \"Talk to a verified accountant\" section "
-                "has an unexpected shape (no calendly.com / openaccountants.com link); left in place"
-            )
+    def unexpected(index: int) -> None:
+        skipped.append(
+            f"{rel}: line {offset + index + 1}: \"Talk to a verified accountant\" section "
+            "has an unexpected shape (no calendly.com / openaccountants.com link); left in place"
+        )
+
+    markers = find_markers(lines)
+    proper = [entry for entry in markers if entry[1] is not None]
+    keep = proper[-1] if proper else None
+    owned = {heading for _, heading, _ in proper}
+
+    removals: list[tuple[int, int, str]] = []
+    for marker_index, heading, end in markers:
+        if heading is None:
+            removals.append((marker_index, marker_index + 1,
+                             f"removed a stray CTA marker at line {offset + marker_index + 1}"))
+        elif (marker_index, heading, end) != keep:
+            if not has_cta_link("\n".join(lines[heading:end])):
+                unexpected(heading)
+                continue
+            removals.append((marker_index, end,
+                             f"removed a duplicate marker CTA block at line {offset + marker_index + 1}"))
+    for index, line in enumerate(lines):
+        if not is_cta_heading(line) or index in owned:
             continue
-        before = lines[:start]
-        after = lines[end:]
-        _strip_trailing_blank(before)
-        while after and after[0].strip() == "":
-            after.pop(0)
-        lines = before + ([""] + after if after else [""])
-        actions.append(f"removed the duplicate CTA section at line {human_line}")
+        end = section_end(lines, index)
+        if not has_cta_link("\n".join(lines[index:end])):
+            unexpected(index)
+            continue
+        removals.append((index, end, f"removed the duplicate CTA section at line {offset + index + 1}"))
 
-    has_marker = any(line.strip() == MARKER for line in lines)
-    if not has_marker and not optional:
+    for start, end, note in sorted(removals, reverse=True):  # bottom-up keeps indices valid
+        lines = _delete(lines, start, end)
+        actions.append(note)
+    actions.reverse()
+
+    if keep is None and not optional:
         _strip_trailing_blank(lines)
         if lines and lines[-1].strip() == "---":
             lines.pop()  # the canonical block opens with its own rule
@@ -222,7 +237,7 @@ def main(argv: list[str] | None = None) -> int:
         print(f"SKIPPED {note}")
     mode = "APPLIED" if args.apply else "DRY RUN"
     print(f"{mode} — {scanned} guides scanned, {changed} {'changed' if args.apply else 'would change'}: "
-          f"{removed} duplicate CTA section(s) removed, {appended} marker block(s) appended, "
+          f"{removed} duplicate CTA section(s)/marker(s) removed, {appended} marker block(s) appended, "
           f"{len(skipped_all)} section(s) skipped")
     return 0
 

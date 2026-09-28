@@ -173,6 +173,44 @@ class AppendTests(unittest.TestCase):
         self.assertEqual(new_text, NORMAL_BUMPED)
 
 
+class MarkerRepairTests(unittest.TestCase):
+    """A marker means one thing: it introduces the guide's single CTA section.
+    Two marker blocks, or a marker that introduces something else, are
+    repaired rather than trusted."""
+
+    def test_two_marker_blocks_keep_only_the_last(self) -> None:
+        doubled = FRONTMATTER + BODY + "\n" + CANONICAL_BLOCK + "\n## Section 10 — Late addition\n\nMore.\n\n" + CANONICAL_BLOCK
+
+        new_text, actions, skipped = run(doubled)
+
+        self.assertEqual(
+            new_text,
+            BUMPED + BODY + "\n## Section 10 — Late addition\n\nMore.\n\n" + CANONICAL_BLOCK,
+        )
+        self.assertEqual(skipped, [])
+        self.assertTrue(any(a.startswith("removed a duplicate marker CTA block") for a in actions), actions)
+
+    def test_a_stray_marker_is_dropped_and_the_block_appended(self) -> None:
+        # The marker sits above unrelated content and introduces no section.
+        stray = FRONTMATTER + "\n# Synthetic guide\n\n" + MARKER + "\n\n## Section 1 — Scope\n\nBody.\n"
+
+        new_text, actions, _ = run(stray)
+
+        self.assertEqual(
+            new_text,
+            BUMPED + "\n# Synthetic guide\n\n## Section 1 — Scope\n\nBody.\n\n" + CANONICAL_BLOCK,
+        )
+        self.assertTrue(any(a.startswith("removed a stray CTA marker") for a in actions), actions)
+
+    def test_a_marker_block_followed_by_content_is_not_moved(self) -> None:
+        # The hand-authored packages/us-federal/ guides carry a further
+        # marker-introduced section after the CTA block; the validator accepts
+        # that, so the normalizer leaves such a block where it is.
+        trailing = FRONTMATTER + BODY + "\n" + CANONICAL_BLOCK + "\n<!-- openaccountants-mcp-cta -->\n\n## The verified version lives in the connector\n\nText.\n"
+
+        self.assertEqual(run(trailing), (trailing, [], []))
+
+
 class InvariantTests(unittest.TestCase):
     def test_a_normal_guide_is_untouched_and_keeps_its_date(self) -> None:
         new_text, actions, skipped = run(NORMAL)
