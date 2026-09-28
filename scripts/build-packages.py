@@ -613,7 +613,7 @@ Or if you're comfortable with GitHub: fork the repo, fix the source file under `
 ---
 
 *OpenAccountants — open-source accounting skills for AI*
-*134 countries + 51 US states — [openaccountants.com](https://www.openaccountants.com)*
+*Coverage is counted in the repository's `index.json` — [openaccountants.com](https://www.openaccountants.com)*
 *info@openaccountants.com*
 """
 
@@ -885,7 +885,7 @@ Or if you're comfortable with GitHub: fork the repo, fix the source under `skill
 ---
 
 *OpenAccountants — open-source accounting skills for AI*
-*134 countries + 51 US states — [openaccountants.com](https://www.openaccountants.com)*
+*Coverage is counted in the repository's `index.json` — [openaccountants.com](https://www.openaccountants.com)*
 *info@openaccountants.com*
 """
 
@@ -1064,7 +1064,7 @@ Or if you're comfortable with GitHub: fork the repo, fix the source under `skill
 ---
 
 *OpenAccountants — open-source accounting skills for AI*
-*134 countries + 51 US states + 13 Canadian provinces/territories — [openaccountants.com](https://www.openaccountants.com)*
+*Coverage is counted in the repository's `index.json` — [openaccountants.com](https://www.openaccountants.com)*
 *info@openaccountants.com*
 """
 

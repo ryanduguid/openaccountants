@@ -21,12 +21,13 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 CHECKED = sorted(
     {
         *REPO_ROOT.glob("*.md"),
-        *(REPO_ROOT / "docs").glob("*.md"),
+        *(REPO_ROOT / "docs").rglob("*.md"),
         REPO_ROOT / "mcp" / "README.md",
         REPO_ROOT / "workflows" / "README.md",
         REPO_ROOT / ".github" / "PULL_REQUEST_TEMPLATE.md",
     }
 )
+VERIFICATION_LOG = REPO_ROOT / "docs" / "verification-log"
 
 # `[label](target)` and `[label](target "title")`, but not images `![...]()`.
 LINK_RE = re.compile(r'(?<!!)\[[^\]]*\]\(([^)\s]+)(?:\s+"[^"]*")?\)')
@@ -105,6 +106,26 @@ class DocsLinkTests(unittest.TestCase):
         self.assertEqual(slugify("For developers"), "for-developers")
         self.assertEqual(slugify("Legal — Contributor License Agreement (CLA)"), "legal--contributor-license-agreement-cla")
         self.assertEqual(slugify("`index.json` is the only one"), "indexjson-is-the-only-one")
+
+
+class VerificationLogTests(unittest.TestCase):
+    """docs/verification-log/ holds one dated file per entry and a README that
+    indexes them; an entry nobody linked, or a row pointing at nothing, is the
+    drift the split of ACCURACY-METHODOLOGY.md was meant to end."""
+
+    def entries(self) -> set[str]:
+        return {p.name for p in VERIFICATION_LOG.glob("*.md") if p.name != "README.md"}
+
+    def test_index_lists_every_entry_and_nothing_else(self) -> None:
+        text = prose((VERIFICATION_LOG / "README.md").read_text(encoding="utf-8"))
+        listed = {t for t in LINK_RE.findall(text) if "/" not in t and "#" not in t and t.endswith(".md")}
+        self.assertEqual(listed, self.entries())
+
+    def test_entries_are_dated_files_with_a_title(self) -> None:
+        for name in sorted(self.entries()):
+            self.assertRegex(name, r"^\d{4}-\d{2}-\d{2}-[a-z0-9]+(-[a-z0-9]+)*\.md$")
+            first = (VERIFICATION_LOG / name).read_text(encoding="utf-8").splitlines()[0]
+            self.assertRegex(first, r"^# \S", name)
 
 
 if __name__ == "__main__":

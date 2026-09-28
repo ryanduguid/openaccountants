@@ -1,0 +1,46 @@
+{
+  "_comment": "Hand-maintained public-record links for the accountants on PARTNERS.md, keyed by the exact reviewer string the guides carry in reviewed_by or verified_by. scripts/build-partners.py joins them onto the roster it derives from index.json; a key that matches no accountant-reviewed guide is reported and ignored. public_record is a profile or a review diff, label is its link text, note is shown under the roster. Licence numbers do not belong here.",
+  "reviewers": {
+    "James Power": {
+      "public_record": "https://www.openaccountants.com/network/30b2f478-3a97-40c4-b435-0678829b487e",
+      "label": "profile"
+    },
+    "A licensed accountant (name withheld at their request)": {
+      "public_record": "https://www.openaccountants.com/network/752ee18a-3843-434d-8426-457d3fa9706f",
+      "label": "profile",
+      "note": "Identified on upstream's public roster as Amir Pelinkovic, CPA, whose profile the link opens. The guides withhold the name at the reviewer's own request, so the row stands on the profile: do not add the name to their frontmatter."
+    },
+    "Mayur Deokar": {
+      "public_record": "https://www.openaccountants.com/network/f4cb8476-a86d-4fd9-b536-9217e82ccf99",
+      "label": "profile"
+    },
+    "Christopher Aryee, CPA": {
+      "public_record": "https://github.com/openaccountants/openaccountants/pull/45/files",
+      "label": "33 OBBBA corrections, full diff"
+    },
+    "Mehran Habib": {
+      "public_record": "https://www.openaccountants.com/network/f9dbab51-2b89-451b-98f2-414b48fb4599",
+      "label": "profile"
+    },
+    "Ariane Marrocos": {
+      "public_record": "https://www.openaccountants.com/network/366f5c0f-1afb-4332-b87b-9b6f912821aa",
+      "label": "profile"
+    },
+    "RILIA PUTRI": {
+      "public_record": "https://www.openaccountants.com/network/ec70d43e-18c0-4b4e-b92c-4f8a22e10152",
+      "label": "profile"
+    },
+    "Mário Jorge da costa Vale": {
+      "public_record": "https://www.openaccountants.com/network/a26a63b7-343c-451b-8266-bb9d28bd7089",
+      "label": "profile"
+    },
+    "Ashish Bista": {
+      "public_record": "https://www.openaccountants.com/network/78ab67db-8f29-4746-8102-7b52d17309aa",
+      "label": "profile"
+    },
+    "Werner Britz": {
+      "public_record": "https://www.openaccountants.com/network/28a3ec1b-d699-4c5d-bb60-3114eedc59d0",
+      "label": "profile"
+    }
+  }
+}

@@ -1,15 +1,18 @@
 # PR contract:
 #   - Edit skills/** (packages/us-federal/ holds only the hand-authored federal
-#     rates JSONs and their runbook). Then run the three generators and commit
-#     their output in the same change:
+#     rates JSONs and their runbook). Then run the generators (make build) and
+#     commit their output in the same change:
 #         python3 scripts/build-packages.py
 #         python3 scripts/build-index.py
+#         python3 scripts/build-partners.py
 #         python3 scripts/build-llms-full.py
-#   - packages/** (except us-federal), index.json and llms-full.txt are DERIVED.
-#     Nothing outside a pull request regenerates them in this repository, so the
-#     change that edits a source is the change that regenerates them. The
-#     guard-derived-trees job rebuilds all three into a temp dir and fails when
-#     the committed copies differ — on pull requests and on push to main alike.
+#   - packages/** (except us-federal), index.json, PARTNERS.md and llms-full.txt
+#     are DERIVED. Nothing outside a pull request regenerates them in this
+#     repository, so the change that edits a source is the change that
+#     regenerates them. The guard-derived-trees job rebuilds packages/,
+#     index.json and llms-full.txt into a temp dir and fails when the committed
+#     copies differ — on pull requests and on push to main alike; the coverage
+#     gate below re-renders PARTNERS.md the same way.
 #   - The validate job checks guide frontmatter: changed files on a pull
 #     request, the whole tree on push to main.
 #   - The gate-checkers job runs the five gate checkers (arithmetic, bracket

@@ -32,7 +32,7 @@ _HERE = os.path.dirname(os.path.abspath(__file__))
 if _HERE not in sys.path:  # this file is loaded by path (importlib) as well as run
     sys.path.insert(0, _HERE)
 
-from oa_tools import guides, paths  # noqa: E402
+from oa_tools import guides, paths, roster  # noqa: E402
 # Both are used below and re-exported on purpose: the one-off metadata scripts
 # (backfill-metadata.py, normalize-tax-year.py) load this module by path and
 # reach the tolerant reader as `bi.extract_frontmatter` / `bi.parse_known_keys`.
@@ -90,27 +90,18 @@ def build_index():
     guides.sort(key=lambda g: g["path"])
 
     jurisdictions = {g["jurisdiction"] for g in guides if g["jurisdiction"]}
-    unreviewed_markers = {"pending", "none", "no", "false", "-", "n/a", "tbd"}
 
-    def is_reviewed(guide):
-        # Same rule as the MCP server's `_quality_tier`: only an explicit
-        # `tier: 1` plus a named reviewer counts. A reviewer name alone never
-        # implies sign-off, or this inventory reports guides as
-        # accountant-reviewed that the MCP server serves as research-verified.
-        if str(guide["tier"] or "").strip() != "1":
-            return False
-        for key in ("reviewed_by", "verified_by"):
-            value = guide[key]
-            if value and str(value).strip().lower() not in unreviewed_markers:
-                return True
-        return False
-
+    # The one counting rule (scripts/oa_tools/roster.py), which the MCP
+    # server's `_quality_tier` mirrors: only an explicit `tier: 1` plus a
+    # named reviewer counts. A reviewer name alone never implies sign-off, or
+    # this inventory reports guides as accountant-reviewed that the MCP server
+    # serves as research-verified. PARTNERS.md and the headline gate use it too.
     return {
         "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         "counts": {
             "guides": len(guides),
             "jurisdictions": len(jurisdictions),
-            "accountant_reviewed": sum(1 for g in guides if is_reviewed(g)),
+            "accountant_reviewed": sum(1 for g in guides if roster.reviewer_of(g)),
         },
         "guides": guides,
     }

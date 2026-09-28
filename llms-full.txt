@@ -2,6 +2,8 @@
 
 > Open-source Tax Guides ("skills") for AI agents across more than 240 jurisdictions, with accountant-reviewed versions signed off by named licensed practitioners (CPAs/CAs/EAs). Exact counts are in `index.json` (`counts`). This is `ryanduguid/openaccountants`, a maintained fork of `openaccountants/openaccountants`; the hosted platform, bundle API and MCP endpoint referenced below are the upstream project's and are not operated from this fork.
 
+**1,867 Guides** across **243 jurisdictions** · **164 accountant-reviewed** · **22 named accountants** (derived from `index.json`; `scripts/check-coverage-claims.py` fails CI when this line drifts from the tree).
+
 ## What this repo is
 
 OpenAccountants is a library of Tax Guides — tax rules written as plain markdown files ("skills" in technical contexts). Any AI agent that reads markdown can use them. Each Guide covers a specific tax task — income tax, VAT, payroll, deductions, crypto, cross-border — for a specific jurisdiction. Every figure cites a primary source (statute, tax-authority guidance, or official rate table).
@@ -17,22 +19,9 @@ OpenAccountants is a library of Tax Guides — tax rules written as plain markdo
 
 Always tell users to have AI-generated output reviewed by a qualified professional before filing.
 
-## Partner roster — accountant reviewers (as of 2026)
+## Accountant reviewers
 
-These named practitioners have reviewed Guides for their jurisdictions. The accountant-reviewed version of their jurisdictions' Guides is signed under their name:
-
-- **South Africa (ZA):** Werner Britz CA(SA), 7 skills — [openaccountants.com/network/28a3ec1b-d699-4c5d-bb60-3114eedc59d0](https://www.openaccountants.com/network/28a3ec1b-d699-4c5d-bb60-3114eedc59d0)
-- **Malta (MT):** Michael Cutajar CPA (Malta), 5 skills — [openaccountants.com/network](https://www.openaccountants.com/network)
-- **Brazil (BR):** Ariane Marrocos CRC/SP, 9 skills — [openaccountants.com/network/366f5c0f-1afb-4332-b87b-9b6f912821aa](https://www.openaccountants.com/network/366f5c0f-1afb-4332-b87b-9b6f912821aa)
-- **United Kingdom (GB):** James Power, 15 skills — [openaccountants.com/network/30b2f478-3a97-40c4-b435-0678829b487e](https://www.openaccountants.com/network/30b2f478-3a97-40c4-b435-0678829b487e)
-- **India (IN):** Mayur Deokar CA, 13 skills — [openaccountants.com/network/f4cb8476-a86d-4fd9-b536-9217e82ccf99](https://www.openaccountants.com/network/f4cb8476-a86d-4fd9-b536-9217e82ccf99)
-- **Indonesia (ID):** Rilia Putri CA, 10 skills — [openaccountants.com/network/ec70d43e-18c0-4b4e-b92c-4f8a22e10152](https://www.openaccountants.com/network/ec70d43e-18c0-4b4e-b92c-4f8a22e10152)
-- **Nepal (NP):** Ashish Bista CA, 5 skills — [openaccountants.com/network/78ab67db-8f29-4746-8102-7b52d17309aa](https://www.openaccountants.com/network/78ab67db-8f29-4746-8102-7b52d17309aa)
-- **Portugal (PT):** Mário Vale CA, 9 skills — [openaccountants.com/network/a26a63b7-343c-451b-8266-bb9d28bd7089](https://www.openaccountants.com/network/a26a63b7-343c-451b-8266-bb9d28bd7089)
-- **Saudi Arabia (SA):** Mehran Habib, 13 skills — [openaccountants.com/network/f9dbab51-2b89-451b-98f2-414b48fb4599](https://www.openaccountants.com/network/f9dbab51-2b89-451b-98f2-414b48fb4599)
-- **United States (US/US-IL):** Amir Pelinkovic CPA (Citrin Cooperman), 14 skills (attributed in the guides as "a licensed accountant (name withheld at their request)") — [openaccountants.com/network/752ee18a-3843-434d-8426-457d3fa9706f](https://www.openaccountants.com/network/752ee18a-3843-434d-8426-457d3fa9706f)
-- **United States (US federal):** Christopher Aryee, CPA — US federal form guides in `skills/federal/` and the rates JSONs in `packages/us-federal/`, including the OBBBA corrections review (2026)
-- **Germany, Australia, Canada**: Source-cited drafts — accountant review in progress.
+Who reviewed what is recorded in each guide's frontmatter (`tier: 1` plus the reviewer's name in `reviewed_by`), counted in `index.json`, and listed per reviewer and per jurisdiction in `PARTNERS.md`, which `scripts/build-partners.py` generates from the index with one rule: only a `tier: 1` guide with a named reviewer is accountant-reviewed, and a name on a `tier: 2` guide is attribution, not review. `llms-full.txt` embeds the roster, so an agent reading that file has it; do not quote reviewer counts from memory or from older copies of this file. One reviewer asked not to be named and appears as "A licensed accountant (name withheld at their request)". Every jurisdiction not on the roster, Germany, Australia and Malta among them, holds source-cited drafts only.
 
 ## Fastest way to use skills (don't read GitHub folder pages)
 
@@ -40,7 +29,7 @@ GitHub folder pages (github.com/.../tree/...) are JavaScript-rendered and will n
 
 **Machine-readable inventory:** the complete machine-readable inventory of every Guide lives at `index.json` in the repo root: https://raw.githubusercontent.com/ryanduguid/openaccountants/main/index.json
 
-**Expanded index for LLMs:** `llms-full.txt` (repo root) is the long-form companion to this file, listing every Guide.
+**Expanded index for LLMs:** `llms-full.txt` (repo root) is the long-form companion to this file: it embeds this file, one line per Guide from `index.json`, `START-HERE.md`, `docs/QUALITY-TIERS.md` and the `PARTNERS.md` roster.
 
 **Option 1 — Read the checkout (recommended):** every jurisdiction's guides are bundled in `packages/<jurisdiction>/`; the `README.md` in each folder lists its files and the shared files it needs, which live once in `packages/_shared/` (`packages/bundles.json` records the same composition per package). Example: https://raw.githubusercontent.com/ryanduguid/openaccountants/main/packages/malta/README.md
 
@@ -67,6 +56,7 @@ workflows/          # Structured 6-phase advisor workflow definitions (see below
 mcp/                # MCP server source (self-hostable; the PyPI release is upstream's)
 docs/               # Repo documentation — see docs/REPO-LAYOUT.md
 index.json          # Machine-readable inventory of every Guide (generated)
+PARTNERS.md         # Roster of the accountants on record (generated from index.json)
 llms.txt            # This file; llms-full.txt = expanded per-Guide index
 ```
 
@@ -77,6 +67,10 @@ When a user's situation matches one of these workflows, fetch the bundle and fol
 ### Cross-border / multi-jurisdiction → `workflows/cross-border-intake.md`
 Trigger: any situation involving more than one country — relocation, exit, dual residency, foreign trust, company sale while moving.
 Trigger phrases: "I'm moving to [country]", "I'm a US citizen in [country]", "I'm relocating from A to B", "How do I structure my exit?", any mention of two or more countries.
+
+### Australia sole trader / freelancer → `workflows/australia-sole-trader.md`
+Trigger: Australian sole trader, ABN holder, freelancer or contractor asking about income tax, GST/BAS or PAYG instalments.
+Trigger phrases: "I'm a sole trader in Australia", "ABN tax return", "myTax business income", "BAS and income tax", "do I need to register for GST".
 
 ### UK self-employed / sole trader → `workflows/uk-self-employed.md`
 Trigger: UK freelancer, contractor, sole trader, or self-employed person asking about their taxes.
@@ -103,6 +97,10 @@ Trigger phrases: "self-employed in Portugal", "NHR Portugal", "IFICI", "IRS Port
 ### UK capital gains → `workflows/uk-capital-gains.md`
 Trigger: UK taxpayer who has sold shares, crypto, residential property, or other chargeable assets.
 Trigger phrases: "capital gains UK", "sold shares UK", "crypto tax UK", "SA108", "CGT UK".
+
+### Australia small company and trust → `workflows/australia-company-trust.md`
+Trigger: Australian Pty Ltd, family trust or bucket-company structure: base rate entity, franking, trust distributions, Div 7A, small business CGT concessions, PSI.
+Trigger phrases: "my company's tax return Australia", "Pty Ltd tax", "base rate entity", "franking my dividend", "family trust distribution", "Div 7A loan".
 
 ## For accountants
 
@@ -2002,7 +2000,7 @@ Pick the row that matches you. Every link below points at something in this chec
 |---|---|
 | **Someone with a tax question and an AI assistant** | Open the folder for your jurisdiction under `packages/` (for example [`packages/malta/`](packages/malta/) or [`packages/us-ca/`](packages/us-ca/)), upload every file in it plus the shared files its `README.md` lists (those live once in [`packages/_shared/`](packages/_shared/); in a checkout, `make bundle JURISDICTION=<folder>` puts a folder and its shared files together), and follow the `README.md` inside the folder. |
 | **An AI agent** | Read [`index.json`](index.json) to find what exists, then load the guide files from `packages/<jurisdiction>/` together with the shared files its `README.md` lists; [`packages/bundles.json`](packages/bundles.json) records the same composition per package (`files` and `shared`), and the shared files live in [`packages/_shared/`](packages/_shared/). [`llms.txt`](llms.txt) is the short agent-facing entry point and [`llms-full.txt`](llms-full.txt) lists every guide. |
-| **An accountant** | What the two quality states mean and what a review involves: [README → Two states, greppable honesty](README.md#two-states-greppable-honesty) and [docs/QUALITY-TIERS.md](docs/QUALITY-TIERS.md). Who has reviewed what: [README → Accountant roster](README.md#accountant-roster) and [PARTNERS.md](PARTNERS.md). |
+| **An accountant** | What the two quality states mean and what a review involves: [README → Two states, greppable honesty](README.md#two-states-greppable-honesty) and [docs/QUALITY-TIERS.md](docs/QUALITY-TIERS.md). Who has reviewed what: [README → Accountant roster](README.md#accountant-roster) and [PARTNERS.md](PARTNERS.md), generated from the guides' frontmatter. How the guides are checked and what has been found: [docs/ACCURACY-METHODOLOGY.md](docs/ACCURACY-METHODOLOGY.md) and the dated [verification log](docs/verification-log/README.md). |
 | **A contributor** | [CONTRIBUTING.md](CONTRIBUTING.md) for the process, [docs/skill-template.md](docs/skill-template.md) for the file format, and [docs/REPO-LAYOUT.md](docs/REPO-LAYOUT.md) for which file to edit and how to regenerate the derived trees. |
 | **A developer** | [README → For developers](README.md#for-developers), the self-hostable MCP server in [mcp/README.md](mcp/README.md), and the guided workflows in [workflows/README.md](workflows/README.md). |
 | **Checking whether you may reuse the content** | [LICENSING.md](LICENSING.md): the software is AGPL-3.0-only, the guides are under the source-available OA Guide License. |
@@ -2088,15 +2086,19 @@ Key rules:
 
 ## Current inventory
 
+**1,867 Guides** across **243 jurisdictions** · **164 accountant-reviewed** · **22 named accountants**
+
+Derived from `index.json` with the one counting rule in `scripts/oa_tools/roster.py`: a guide is accountant-reviewed when it carries `tier: 1` and a reviewer's name, and a named accountant is such a reviewer who did not ask to be anonymous. `scripts/check-coverage-claims.py` fails CI when this line drifts from the tree; [COVERAGE.md](COVERAGE.md) carries the full derived table.
+
 ### Accountant-reviewed (Tier 1)
 
-164 guides in this tree carry `tier: 1` with a named reviewer, across 23 `reviewed_by` values. One of those values is "A licensed accountant (name withheld at their request)", on 14 guides. List them with:
+164 guides in this tree carry `tier: 1` with a named reviewer, across 23 `reviewed_by` values. One of those values is "A licensed accountant (name withheld at their request)", on 14 guides, which is why 23 reviewers are 22 named accountants. [PARTNERS.md](../PARTNERS.md), generated from the index by `scripts/build-partners.py`, lists them per reviewer and per jurisdiction. List the guides with:
 
 ```
 python3 -c "import json;d=json.load(open('index.json'));print('\n'.join(sorted(g['slug']+'  '+g['reviewed_by'] for g in d['guides'] if str(g.get('tier'))=='1')))"
 ```
 
-The list is derived from each skill's explicit `tier: 1` plus its reviewer name (`reviewed_by`, or the legacy `verified_by` — a stored identifier that keeps its spelling). To add a new accountant-reviewed skill, set **both** `tier: 1` and the reviewer's name and credential, then regenerate the canonical inventory with `python3 scripts/build-index.py` — the tier and verifier land in `index.json`. The enforced rule is field-specific: `tier: 2` must not carry a real `verified_by` — that combination is a validation error. A real `reviewed_by` on a `tier: 2` guide is *not* rejected (see `check_quality_metadata` in `scripts/validate-guides.py` and its test), because `reviewed_by` has also been used as a plain authorship/attribution field (on the hand-authored `packages/us-federal/` guides, until they were retired in favour of `skills/federal/` on 2026-09-28). Note that 98 guides currently sit in that permitted-but-ambiguous state — a named `reviewed_by` with `tier: 2`, 93 of them also `review_status: current`, which is the exact combination that means `tier: 1` everywhere else. A reader cannot tell from the frontmatter alone whether those were reviewed. Deciding which of the two meanings applies to each of them is a maintainer call. Credential numbers are held at openaccountants.com and appear on a skill page only when the practitioner opts in.
+The list is derived from each skill's explicit `tier: 1` plus its reviewer name (`reviewed_by`, or the legacy `verified_by` — a stored identifier that keeps its spelling). To add a new accountant-reviewed skill, set **both** `tier: 1` and the reviewer's name and credential, then regenerate the canonical inventory with `python3 scripts/build-index.py` — the tier and verifier land in `index.json`. The enforced rule is field-specific: `tier: 2` must not carry a real `verified_by` — that combination is a validation error. A real `reviewed_by` on a `tier: 2` guide is *not* rejected (see `check_quality_metadata` in `scripts/validate-guides.py` and its test), because `reviewed_by` has also been used as a plain authorship/attribution field (on the hand-authored `packages/us-federal/` guides, until they were retired in favour of `skills/federal/` on 2026-09-28). Note that 99 guides currently sit in that permitted-but-ambiguous state — a named `reviewed_by` with `tier: 2`, 93 of them also `review_status: current`, which is the exact combination that means `tier: 1` everywhere else. A reader cannot tell from the frontmatter alone whether those were reviewed. Deciding which of the two meanings applies to each of them is a maintainer call; until it is made, none of them counts as reviewed anywhere in this repository. Credential numbers are held at openaccountants.com and appear on a skill page only when the practitioner opts in.
 
 ### Source-cited drafts (Tier 2)
 
@@ -2209,3 +2211,82 @@ Each state has an online portal. Search "[State] department of revenue" for the 
 ## Disclaimer
 
 Quality tiers describe the review status of a skill, not a guarantee that any specific output is correct. LLMs hallucinate, tax law changes, and individual circumstances vary. Every output must be reviewed by a qualified professional before filing.
+
+========================================================================
+
+# Partners: the accountants on record
+
+<!-- Generated by scripts/build-partners.py from `index.json` and `docs/partners.json`; do not edit by hand. Regenerate with `python3 scripts/build-partners.py` (`make build` runs it); `scripts/check-coverage-claims.py` fails CI while this file is stale. -->
+
+Every row is derived from the guides' frontmatter with one rule: a guide is accountant-reviewed when it carries `tier: 1` and a reviewer's name in `reviewed_by` (or the legacy `verified_by`), and a reviewer is on this roster when at least one guide names them that way. A name on a `tier: 2` guide is attribution, not review, and does not count. The rule is `reviewer_of` in `scripts/oa_tools/roster.py`; `index.json`, the README headline and the coverage gate use the same one, so these figures agree with them by construction.
+
+**164 accountant-reviewed guides · 23 reviewers (22 named) · 24 of 243 jurisdictions.**
+
+## Reviewers
+
+| Reviewer (as recorded in the guides) | Jurisdictions | Guides | Latest guide update | Public record |
+|---|---|---|---|---|
+| James Power | GB | 15 | 2026-09-28 | [profile](https://www.openaccountants.com/network/30b2f478-3a97-40c4-b435-0678829b487e) |
+| A licensed accountant (name withheld at their request) | US (10), US-IL (4) | 14 | 2026-09-28 | [profile](https://www.openaccountants.com/network/752ee18a-3843-434d-8426-457d3fa9706f) |
+| Miguel Lantigua | DO | 14 | 2026-09-26 | — |
+| Mayur Deokar | IN | 13 | 2026-09-28 | [profile](https://www.openaccountants.com/network/f4cb8476-a86d-4fd9-b536-9217e82ccf99) |
+| Edgar Lautsyus | CA | 11 | 2026-09-28 | — |
+| Christopher Aryee, CPA | US | 9 | 2026-09-28 | [33 OBBBA corrections, full diff](https://github.com/openaccountants/openaccountants/pull/45/files) |
+| Mehran Habib | SA (5), AE (3), BH (1) | 9 | 2026-09-28 | [profile](https://www.openaccountants.com/network/f9dbab51-2b89-451b-98f2-414b48fb4599) |
+| Ariane Marrocos | BR | 8 | 2026-09-28 | [profile](https://www.openaccountants.com/network/366f5c0f-1afb-4332-b87b-9b6f912821aa) |
+| Lal kumarasiri | LK | 8 | 2026-09-28 | — |
+| Mário Jorge da costa Vale | PT | 8 | 2026-09-28 | [profile](https://www.openaccountants.com/network/a26a63b7-343c-451b-8266-bb9d28bd7089) |
+| RILIA PUTRI | ID | 8 | 2026-09-28 | [profile](https://www.openaccountants.com/network/ec70d43e-18c0-4b4e-b92c-4f8a22e10152) |
+| Baraka Cassian | TZ | 6 | 2026-07-13 | — |
+| Ashish Bista | NP | 5 | 2026-09-28 | [profile](https://www.openaccountants.com/network/78ab67db-8f29-4746-8102-7b52d17309aa) |
+| Christos Thoma | CY | 5 | 2026-09-10 | — |
+| Jose Padilla | VE | 5 | 2026-07-13 | — |
+| Rob Hoffman | US-FL | 5 | 2026-09-28 | — |
+| Ibrar Ali | PK | 4 | 2026-09-28 | — |
+| Maria Clemencia Valverde Rios | PE | 4 | 2026-09-28 | — |
+| Werner Britz | ZA | 4 | 2026-09-28 | [profile](https://www.openaccountants.com/network/28a3ec1b-d699-4c5d-bb60-3114eedc59d0) |
+| Maria Valeria Benvenuti | AR | 3 | 2026-09-28 | — |
+| Yeong Min Lee | KR | 3 | 2026-09-28 | — |
+| Omolola Fasasi | NG | 2 | 2026-09-28 | — |
+| James Wallach | US | 1 | 2026-09-28 | — |
+
+Jurisdiction codes are the guides' `jurisdiction` values: ISO 3166 country codes, `US-XX` for a US state, `CA-XX` for a Canadian province or territory, `US` and `CA` for the federal guides. "Latest guide update" is the newest `last_updated` among the reviewer's accountant-reviewed guides: it dates the content, not the review. A public record is a profile or a review diff recorded in `docs/partners.json`, which is hand-maintained; a reviewer without one is on record in the guides alone. Licence numbers are not published here: they are held by whoever verified the credential and appear only where the practitioner opts in.
+
+## Jurisdictions with an accountant-reviewed guide
+
+| Jurisdiction | Reviewed guides | Reviewers |
+|---|---|---|
+| US | 20 | A licensed accountant (name withheld at their request) (10); Christopher Aryee, CPA (9); James Wallach (1) |
+| GB | 15 | James Power (15) |
+| DO | 14 | Miguel Lantigua (14) |
+| IN | 13 | Mayur Deokar (13) |
+| CA | 11 | Edgar Lautsyus (11) |
+| BR | 8 | Ariane Marrocos (8) |
+| ID | 8 | RILIA PUTRI (8) |
+| LK | 8 | Lal kumarasiri (8) |
+| PT | 8 | Mário Jorge da costa Vale (8) |
+| TZ | 6 | Baraka Cassian (6) |
+| CY | 5 | Christos Thoma (5) |
+| NP | 5 | Ashish Bista (5) |
+| SA | 5 | Mehran Habib (5) |
+| US-FL | 5 | Rob Hoffman (5) |
+| VE | 5 | Jose Padilla (5) |
+| PE | 4 | Maria Clemencia Valverde Rios (4) |
+| PK | 4 | Ibrar Ali (4) |
+| US-IL | 4 | A licensed accountant (name withheld at their request) (4) |
+| ZA | 4 | Werner Britz (4) |
+| AE | 3 | Mehran Habib (3) |
+| AR | 3 | Maria Valeria Benvenuti (3) |
+| KR | 3 | Yeong Min Lee (3) |
+| NG | 2 | Omolola Fasasi (2) |
+| BH | 1 | Mehran Habib (1) |
+
+The other 219 jurisdictions in `index.json` hold source-cited drafts only (`tier: 2`), whatever names their frontmatter carries.
+
+## How a name gets here
+
+A guide becomes accountant-reviewed in this fork only when a named, licensed accountant reviews the complete guide and signs it off in a pull request that sets `tier: 1` and puts their name and credential in `reviewed_by` ([CONTRIBUTING.md → Review](CONTRIBUTING.md#review)). Regenerate this file in the same change, and add a profile or proof link for the reviewer to `docs/partners.json` if there is one. Maintainers do not set `tier: 1` on anyone's behalf, and editing this file by hand changes nothing: the next build rewrites it from the frontmatter.
+
+## Notes recorded in docs/partners.json
+
+- **A licensed accountant (name withheld at their request):** Identified on upstream's public roster as Amir Pelinkovic, CPA, whose profile the link opens. The guides withhold the name at the reviewer's own request, so the row stands on the profile: do not add the name to their frontmatter.

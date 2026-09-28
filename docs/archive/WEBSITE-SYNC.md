@@ -1,6 +1,6 @@
 # Website ↔ repo sync
 
-> **Status:** this document describes the upstream project's platform ↔ repository sync. Nothing in `ryanduguid/openaccountants` runs it: there is no platform, no sync bot and no mirror job here, and the derived trees are regenerated in pull requests (see [REPO-LAYOUT.md](REPO-LAYOUT.md)). It is kept as the record of the contract and its controls.
+> **Archived.** Upstream's platform ↔ repository sync contract. Nothing in this fork runs it: there is no platform, no sync bot and no mirror job here, and the derived trees are regenerated in pull requests ([REPO-LAYOUT.md](../REPO-LAYOUT.md)). Moved to `docs/archive/` on 2026-09-28; kept as the record of the contract and its controls, and not maintained.
 
 The platform database (openaccountants.com) is the operational source for
 website guide content. This repository is its public projection, and merged
@@ -159,7 +159,7 @@ path this contract is intended to close.
 
 ## What this means for contributors
 
-1. Edit `skills/**`, then regenerate `packages/`, `index.json` and `llms-full.txt` with the three build scripts and commit them with the edit (see [REPO-LAYOUT.md](REPO-LAYOUT.md)); CI fails when the committed copies are stale.
+1. Edit `skills/**`, then regenerate `packages/`, `index.json` and `llms-full.txt` with the three build scripts and commit them with the edit (see [REPO-LAYOUT.md](../REPO-LAYOUT.md)); CI fails when the committed copies are stale.
 2. A merge accepts the repository contribution. Platform publication is
    complete only after the maintainer confirms inbound ingestion.
 3. `last_updated` must never move backwards. Bump `version` on substantive

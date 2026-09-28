@@ -8,10 +8,11 @@ Concatenates, in order:
   3. A compact one-line-per-guide inventory from index.json
      ("- <slug> | <jurisdiction> | tier <tier> | reviewed_by <reviewed_by or ->")
   4. A divider
-  5. The full text of START-HERE.md and docs/QUALITY-TIERS.md
+  5. The full text of START-HERE.md, docs/QUALITY-TIERS.md and PARTNERS.md
+     (the roster of accountants on record, itself generated from index.json)
 
-Stdlib only. index.json must be up to date first:
-    python3 scripts/build-index.py && python3 scripts/build-llms-full.py
+Stdlib only. index.json and PARTNERS.md must be up to date first:
+    python3 scripts/build-index.py && python3 scripts/build-partners.py && python3 scripts/build-llms-full.py
 """
 
 import json
@@ -54,6 +55,7 @@ def build_text():
         guide_inventory(),
         read_text("START-HERE.md").rstrip("\n"),
         read_text(os.path.join("docs", "QUALITY-TIERS.md")).rstrip("\n"),
+        read_text("PARTNERS.md").rstrip("\n"),
     ]
     return DIVIDER.join(parts) + "\n"
 

@@ -4,13 +4,14 @@ title: "OpenAccountants"
 type: software
 authors:
   - name: "OpenAccountants contributors"
-repository-code: "https://github.com/openaccountants/openaccountants"
-url: "https://www.openaccountants.com"
+repository-code: "https://github.com/ryanduguid/openaccountants"
+url: "https://github.com/ryanduguid/openaccountants"
 license: AGPL-3.0-only
+license-url: "https://github.com/ryanduguid/openaccountants/blob/main/LICENSING.md"
 keywords:
   - tax
   - mcp
   - ai-agents
   - open-data
   - accounting
-abstract: "An open library of accountant-reviewed tax guides covering 190+ jurisdictions, structured so any AI agent can cite and apply them."
+abstract: "An open library of tax guides, source-cited drafts and accountant-reviewed guides signed by named licensed practitioners, structured so any AI agent can cite and apply them. Counts are in index.json. The software is AGPL-3.0-only; the guides are under the source-available OA Guide License (see LICENSING.md)."

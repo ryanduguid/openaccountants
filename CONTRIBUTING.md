@@ -11,11 +11,11 @@ Anyone. You don't need to be an accountant to write a skill. You need to know yo
 1. Fork this repo
 2. Create your skill in the appropriate **source** directory (`skills/federal/`, `skills/us-states/[code]/`, `skills/international/[country]/`, etc.)
 3. Follow the [skill template](docs/skill-template.md)
-4. Regenerate the derived trees and commit them with your change:
-   `python3 scripts/build-packages.py && python3 scripts/build-index.py && python3 scripts/build-llms-full.py`
+4. Regenerate the derived trees and commit them with your change (`make build`):
+   `python3 scripts/build-packages.py && python3 scripts/build-index.py && python3 scripts/build-partners.py && python3 scripts/build-llms-full.py`
 5. Open a PR with a description of what tax forms/schedules the skill covers
 
-> **Important:** write in `skills/**`, never by hand in `packages/`, `index.json` or `llms-full.txt` — those are generated. But do commit the regenerated copies: nothing else rebuilds them, and CI (`guard-derived-trees`) rebuilds all three and fails when the committed copies are stale. One exception: **`packages/us-federal/`** (the federal rates JSONs and their runbook) is hand-authored and may be edited directly. Renaming or deleting a guide needs an entry in `docs/guide-migrations.json` (`from`, `to` or null, `slug`, `replacement`) in the same change, with every reference repointed to the replacement slug; the sync-integrity gate fails an unrecorded deletion or rename.
+> **Important:** write in `skills/**`, never by hand in `packages/`, `index.json`, `PARTNERS.md` or `llms-full.txt` — those are generated. But do commit the regenerated copies: nothing else rebuilds them, and CI fails when the committed copies are stale (`guard-derived-trees` rebuilds `packages/`, `index.json` and `llms-full.txt`; the coverage gate re-renders `PARTNERS.md`). One exception: **`packages/us-federal/`** (the federal rates JSONs and their runbook) is hand-authored and may be edited directly. Renaming or deleting a guide needs an entry in `docs/guide-migrations.json` (`from`, `to` or null, `slug`, `replacement`) in the same change, with every reference repointed to the replacement slug; the sync-integrity gate fails an unrecorded deletion or rename.
 
 ## Repo layout
 
@@ -23,7 +23,7 @@ Anyone. You don't need to be an accountant to write a skill. You need to know yo
 
 ## No website sync
 
-This fork has no sync with openaccountants.com in either direction: nothing here publishes to the platform, and nothing on the platform writes into this repository. `jurisdiction:` in the frontmatter is still required (the validator checks it). [docs/WEBSITE-SYNC.md](docs/WEBSITE-SYNC.md) is kept only as a record of upstream's retired sync contract.
+This fork has no sync with openaccountants.com in either direction: nothing here publishes to the platform, and nothing on the platform writes into this repository. `jurisdiction:` in the frontmatter is still required (the validator checks it). Upstream's retired sync contract is kept for the record in [docs/archive/WEBSITE-SYNC.md](docs/archive/WEBSITE-SYNC.md).
 
 ## Skill structure and frontmatter
 
@@ -83,7 +83,7 @@ All domain skills for a country live in the same directory (e.g., `skills/intern
 | Platform integration skills | `skills/integrations/` |
 | Orchestrator files (router, intake, assembly) | `skills/orchestrator/` |
 
-After editing, run the three generators (`python3 scripts/build-packages.py && python3 scripts/build-index.py && python3 scripts/build-llms-full.py`) and commit the regenerated `packages/`, `index.json` and `llms-full.txt` together with your source change. CI rebuilds them and fails on any difference; `python3 scripts/validate-guides.py --derived-only` runs the same check locally.
+After editing, run the generators (`make build`, or `python3 scripts/build-packages.py && python3 scripts/build-index.py && python3 scripts/build-partners.py && python3 scripts/build-llms-full.py`) and commit the regenerated `packages/`, `index.json`, `PARTNERS.md` and `llms-full.txt` together with your source change. CI rebuilds them and fails on any difference; `python3 scripts/validate-guides.py --derived-only` and `python3 scripts/check-coverage-claims.py` run the same checks locally.
 
 If you add a `references.md` to a country's source directory, it will be included in the generated package automatically.
 
@@ -100,7 +100,7 @@ make check                                       # validate + sync-check + test:
 
 | Target | What it runs | CI job |
 |---|---|---|
-| `make build` | the three generators: `scripts/build-packages.py`, `scripts/build-index.py`, `scripts/build-llms-full.py` | none: you commit the output |
+| `make build` | the four generators: `scripts/build-packages.py`, `scripts/build-index.py`, `scripts/build-partners.py`, `scripts/build-llms-full.py` | none: you commit the output |
 | `make validate` | `scripts/validate-guides.py`: the frontmatter contract and derived-tree freshness | `validate.yml` |
 | `make sync-check` | `scripts/check-sync-integrity.py --mode audit --strict-metadata` from the merge base with `origin/main` (fetch it first, or pass `BASE=<rev>`) | `sync-integrity.yml`, `compare` |
 | `make checkers` | the five gate checkers (`check-arithmetic.py`, `check-bracket-tables.py`, `check-expired-rules.py`, `check-fact-conflicts.py`, `check-coverage-claims.py`) against `scripts/baselines/`, plus `check-cited-hosts.py --selftest` | `validate.yml`, `gate-checkers` |
@@ -117,6 +117,16 @@ Shared code for the scripts lives in `scripts/oa_tools/` (repository paths, guid
 ## Review
 
 Pull requests are reviewed here, on GitHub. A guide is a **source-cited draft** (`tier: 2`) until a named, licensed accountant has reviewed the complete guide and signs it off in a pull request that sets `tier: 1` and puts their name and credential in `reviewed_by`; see [docs/QUALITY-TIERS.md](docs/QUALITY-TIERS.md). Maintainers do not set `tier: 1` on anyone's behalf, and a reviewer name on a `tier: 2` guide does not make it reviewed.
+
+## Versions and tags
+
+[CHANGELOG.md](CHANGELOG.md) keeps one version line, the repository's; the MCP server package has its own in [mcp/CHANGELOG.md](mcp/CHANGELOG.md). Work lands under `## [Unreleased]`. A release moves those entries under a `## [X.Y.Z] — YYYY-MM-DD` heading, merges, and tags the merge commit on `main`:
+
+```
+git tag -a vX.Y.Z <merge commit> -m "X.Y.Z" && git push origin vX.Y.Z
+```
+
+Bump the major version when a slug, a path under `skills/` or the `packages/` layout changes (consumers pin those), the minor version for new guides or tooling, the patch version for corrections alone. A guide's own `version:` is per file and unrelated.
 
 ## Licensing of contributions
 

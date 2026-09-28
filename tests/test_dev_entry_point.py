@@ -139,9 +139,12 @@ class MakefileTests(unittest.TestCase):
         self.assertIn("BASE=<rev>", result.stderr)
         self.assertNotIn("check-sync-integrity.py", result.stdout)
 
-    def test_build_target_runs_the_three_generators_in_order(self) -> None:
+    def test_build_target_runs_the_four_generators_in_order(self) -> None:
+        """packages, then the index (read by the roster), then the roster
+        (embedded in llms-full.txt), then llms-full.txt."""
         out = _dry_run("build")
-        positions = [out.index(f"scripts/{name}.py") for name in ("build-packages", "build-index", "build-llms-full")]
+        positions = [out.index(f"scripts/{name}.py")
+                     for name in ("build-packages", "build-index", "build-partners", "build-llms-full")]
         self.assertEqual(positions, sorted(positions), out)
 
     def test_recipes_use_tabs(self) -> None:

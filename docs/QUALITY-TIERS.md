@@ -75,15 +75,19 @@ Key rules:
 
 ## Current inventory
 
+**1,867 Guides** across **243 jurisdictions** · **164 accountant-reviewed** · **22 named accountants**
+
+Derived from `index.json` with the one counting rule in `scripts/oa_tools/roster.py`: a guide is accountant-reviewed when it carries `tier: 1` and a reviewer's name, and a named accountant is such a reviewer who did not ask to be anonymous. `scripts/check-coverage-claims.py` fails CI when this line drifts from the tree; [COVERAGE.md](COVERAGE.md) carries the full derived table.
+
 ### Accountant-reviewed (Tier 1)
 
-164 guides in this tree carry `tier: 1` with a named reviewer, across 23 `reviewed_by` values. One of those values is "A licensed accountant (name withheld at their request)", on 14 guides. List them with:
+164 guides in this tree carry `tier: 1` with a named reviewer, across 23 `reviewed_by` values. One of those values is "A licensed accountant (name withheld at their request)", on 14 guides, which is why 23 reviewers are 22 named accountants. [PARTNERS.md](../PARTNERS.md), generated from the index by `scripts/build-partners.py`, lists them per reviewer and per jurisdiction. List the guides with:
 
 ```
 python3 -c "import json;d=json.load(open('index.json'));print('\n'.join(sorted(g['slug']+'  '+g['reviewed_by'] for g in d['guides'] if str(g.get('tier'))=='1')))"
 ```
 
-The list is derived from each skill's explicit `tier: 1` plus its reviewer name (`reviewed_by`, or the legacy `verified_by` — a stored identifier that keeps its spelling). To add a new accountant-reviewed skill, set **both** `tier: 1` and the reviewer's name and credential, then regenerate the canonical inventory with `python3 scripts/build-index.py` — the tier and verifier land in `index.json`. The enforced rule is field-specific: `tier: 2` must not carry a real `verified_by` — that combination is a validation error. A real `reviewed_by` on a `tier: 2` guide is *not* rejected (see `check_quality_metadata` in `scripts/validate-guides.py` and its test), because `reviewed_by` has also been used as a plain authorship/attribution field (on the hand-authored `packages/us-federal/` guides, until they were retired in favour of `skills/federal/` on 2026-09-28). Note that 98 guides currently sit in that permitted-but-ambiguous state — a named `reviewed_by` with `tier: 2`, 93 of them also `review_status: current`, which is the exact combination that means `tier: 1` everywhere else. A reader cannot tell from the frontmatter alone whether those were reviewed. Deciding which of the two meanings applies to each of them is a maintainer call. Credential numbers are held at openaccountants.com and appear on a skill page only when the practitioner opts in.
+The list is derived from each skill's explicit `tier: 1` plus its reviewer name (`reviewed_by`, or the legacy `verified_by` — a stored identifier that keeps its spelling). To add a new accountant-reviewed skill, set **both** `tier: 1` and the reviewer's name and credential, then regenerate the canonical inventory with `python3 scripts/build-index.py` — the tier and verifier land in `index.json`. The enforced rule is field-specific: `tier: 2` must not carry a real `verified_by` — that combination is a validation error. A real `reviewed_by` on a `tier: 2` guide is *not* rejected (see `check_quality_metadata` in `scripts/validate-guides.py` and its test), because `reviewed_by` has also been used as a plain authorship/attribution field (on the hand-authored `packages/us-federal/` guides, until they were retired in favour of `skills/federal/` on 2026-09-28). Note that 99 guides currently sit in that permitted-but-ambiguous state — a named `reviewed_by` with `tier: 2`, 93 of them also `review_status: current`, which is the exact combination that means `tier: 1` everywhere else. A reader cannot tell from the frontmatter alone whether those were reviewed. Deciding which of the two meanings applies to each of them is a maintainer call; until it is made, none of them counts as reviewed anywhere in this repository. Credential numbers are held at openaccountants.com and appear on a skill page only when the practitioner opts in.
 
 ### Source-cited drafts (Tier 2)
 

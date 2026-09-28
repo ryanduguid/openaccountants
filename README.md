@@ -71,9 +71,12 @@ Every Guide is in exactly one state — and the repo greps honestly:
 
 Each guide's frontmatter (`tier: 1` with `reviewed_by`) is the record of who
 reviewed what, and `index.json` derives the counts above from it.
-[PARTNERS.md](PARTNERS.md) is a per-jurisdiction view and
-[VERIFIERS.md](VERIFIERS.md) is upstream's roster as of 2026-08-22; neither is
-regenerated here, so where they disagree with the frontmatter, the frontmatter
+[PARTNERS.md](PARTNERS.md) is generated from the index by
+`scripts/build-partners.py` with the same rule (only `tier: 1` plus a named
+reviewer counts; a name on a `tier: 2` guide is attribution, not review) and
+lists the reviewers per person and per jurisdiction; CI fails when it is stale.
+[VERIFIERS.md](VERIFIERS.md) is upstream's roster as of 2026-08-22 and is not
+regenerated here, so where it disagrees with the frontmatter, the frontmatter
 wins.
 
 ---
@@ -98,7 +101,9 @@ Which file to edit: [docs/REPO-LAYOUT.md](docs/REPO-LAYOUT.md).
 | Machine-readable inventory | [`index.json`](index.json) |
 | LLM entry point | [`llms.txt`](llms.txt) |
 | Python MCP server, self-hostable | [`mcp/`](mcp/) (the [PyPI release](https://pypi.org/project/openaccountants-mcp/) is upstream's) |
-| Repo architecture | [`docs/REPO-LAYOUT.md`](docs/REPO-LAYOUT.md); [`docs/WEBSITE-SYNC.md`](docs/WEBSITE-SYNC.md) is upstream's retired sync contract, kept for reference |
+| Repo architecture | [`docs/REPO-LAYOUT.md`](docs/REPO-LAYOUT.md); retired documents, upstream's sync contract among them, are in [`docs/archive/`](docs/archive/README.md) |
+| How the guides are checked | [`docs/ACCURACY-METHODOLOGY.md`](docs/ACCURACY-METHODOLOGY.md) and the dated [verification log](docs/verification-log/README.md) |
+| Accountant roster (generated) | [`PARTNERS.md`](PARTNERS.md), from `index.json` by `scripts/build-partners.py` |
 | Reproduce CI locally | `python3 -m pip install -r requirements-dev.txt`, then `make check`; the targets are mapped to the CI jobs in [CONTRIBUTING.md](CONTRIBUTING.md#reproduce-ci-locally) |
 
 ---

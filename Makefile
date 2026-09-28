@@ -20,9 +20,10 @@ help:  ## List the targets
 install:  ## Install everything the generators, the gates and the tests need
 	$(PYTHON) -m pip install -r requirements-dev.txt
 
-build:  ## Regenerate packages/, index.json and llms-full.txt from skills/
+build:  ## Regenerate packages/, index.json, PARTNERS.md and llms-full.txt from skills/
 	$(PYTHON) scripts/build-packages.py
 	$(PYTHON) scripts/build-index.py
+	$(PYTHON) scripts/build-partners.py
 	$(PYTHON) scripts/build-llms-full.py
 
 bundle:  ## One package plus its shared files as an upload-ready folder: make bundle JURISDICTION=us-ca

@@ -1,5 +1,7 @@
 # OpenAccountants — Skill Taxonomy
 
+> **Archived.** Upstream's May 2026 blueprint and inventory of skill domains. Its counts (about 439 skills, 134 countries) describe that snapshot, not this tree; today's inventory is derived from `index.json` ([COVERAGE.md](../COVERAGE.md)). Moved to `docs/archive/` on 2026-09-28; kept as a record and not maintained.
+
 This document maps every skill domain and its current coverage. It is the master blueprint for contributors, coordinators, and the build pipeline.
 
 ---
