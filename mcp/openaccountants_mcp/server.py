@@ -14,13 +14,23 @@ This mirrors the tool/prompt surface of the hosted server at
 
 Where the hosted server reads from the OpenAccountants database, this one
 reads the open-source markdown packages on disk, so results reflect whatever
-checkout you point it at.
+checkout you point it at.  The package itself ships no guides: a wheel built
+from this tree contains only the server code, so an install whose code is
+not loaded from a checkout (an editable install) and that is not pointed at
+one with ``OPENACCOUNTANTS_ROOT`` has nothing to serve, whatever the working
+directory.  The server then
+logs a warning when it builds the catalogue and every tool reports the
+problem explicitly (an ``error`` field, ``status: "error"`` from ``start``,
+or a raised error from ``get_skill``) instead of answering with an empty
+catalogue as if that were the corpus.
 
 Environment
 -----------
-OPENACCOUNTANTS_ROOT      Path to the repo checkout.  Defaults to two directories
+OPENACCOUNTANTS_ROOT      Path to the repo checkout (the directory that
+                          contains ``packages/``).  Defaults to two directories
                           above this file (i.e. the repo root when this package
-                          lives at ``mcp/openaccountants_mcp/``).
+                          lives at ``mcp/openaccountants_mcp/``).  An empty
+                          value counts as unset.
 MCP_TRANSPORT             ``stdio`` (default), ``streamable-http``, or ``sse``.
                           HTTP transports let remote MCP clients connect via a
                           reverse proxy (Caddy, nginx, ngrok…).
@@ -32,6 +42,19 @@ MCP_PORT                  Bind port for HTTP transports.  Defaults to ``8000``.
 MCP_STREAMABLE_HTTP_PATH  Path the Streamable-HTTP endpoint is mounted at.
                           Defaults to ``/mcp``.  Set to ``/`` when fronted by a
                           reverse proxy that strips the upstream path prefix.
+MCP_ALLOWED_HOSTS         Comma-separated ``Host`` header values to accept on
+                          HTTP transports, e.g. ``localhost:*,127.0.0.1:*`` or
+                          ``mcp.example.com``.  A trailing ``:*`` accepts any
+                          port.  FastMCP validates Host/Origin (its DNS-rebinding
+                          protection) on its own only for loopback binds; with
+                          any other ``MCP_HOST`` it validates nothing unless
+                          this is set, so a spoofed Host header is served like
+                          a genuine one.  When set, requests with another Host
+                          get HTTP 421 and a disallowed Origin gets 403.
+MCP_ALLOWED_ORIGINS       Comma-separated ``Origin`` header values to accept,
+                          e.g. ``http://localhost:*``.  Only meaningful with
+                          MCP_ALLOWED_HOSTS.  Requests without an Origin header
+                          (non-browser MCP clients) are always accepted.
 """
 
 from __future__ import annotations
@@ -49,6 +72,7 @@ from urllib.parse import urlencode
 
 import yaml
 from mcp.server.fastmcp import FastMCP
+from mcp.server.transport_security import TransportSecuritySettings
 from mcp.types import ToolAnnotations
 
 log = logging.getLogger(__name__)
@@ -58,8 +82,20 @@ log = logging.getLogger(__name__)
 # ---------------------------------------------------------------------------
 
 _DEFAULT_ROOT = Path(__file__).resolve().parents[2]  # mcp/openaccountants_mcp/ -> mcp/ -> repo
-REPO_ROOT = Path(os.environ.get("OPENACCOUNTANTS_ROOT", str(_DEFAULT_ROOT))).resolve()
+# An empty OPENACCOUNTANTS_ROOT counts as unset: Path("") is the working
+# directory, which would silently serve whatever happens to be there.
+REPO_ROOT = Path(os.environ.get("OPENACCOUNTANTS_ROOT") or _DEFAULT_ROOT).resolve()
 PACKAGES_DIR = REPO_ROOT / "packages"
+
+#: How to get guide content in front of the server. Every "no skills" message
+#: ends with this so the fix travels with the diagnosis.
+_CONTENT_HINT = (
+    "The openaccountants-mcp package ships only the server code, not the "
+    "guides: set OPENACCOUNTANTS_ROOT to a checkout of the repository (the "
+    "directory that contains packages/) and restart the server. The working "
+    "directory is not consulted; only an editable install (pip install -e "
+    "./mcp) or `uv run --directory mcp` reads the checkout without it."
+)
 
 MAX_FILE_BYTES = 2 * 1024 * 1024  # 2 MB safety cap
 SEARCH_LIMIT = 25
@@ -249,27 +285,43 @@ def _catalogue() -> tuple[
     dict[str, tuple[str, ...]],
     dict[str, Any],
 ]:
-    """Build the index, unresolved slug map, and duplicate inventory."""
+    """Build the index, unresolved slug map, and duplicate inventory.
+
+    A missing or empty ``packages/`` is logged here, once per build, and
+    recorded in the report so the tools can say so instead of presenting an
+    empty catalogue as the corpus. That is exactly what a non-editable
+    ``pip install ./mcp`` produces: the wheel carries no guides and the
+    default root then resolves under site-packages.
+    """
     out: dict[str, dict[str, Any]] = {}
-    if not PACKAGES_DIR.is_dir():
-        return out, {}, {
-            "skill_files": 0,
-            "slugs": 0,
-            "duplicate_slugs": 0,
-            "identical_aliases": 0,
-            "federal_precedence": 0,
-            "ambiguous_slugs": 0,
-            "rejected_paths": [],
-        }
+    packages_dir = PACKAGES_DIR
+    report: dict[str, Any] = {
+        "packages_dir": str(packages_dir),
+        "packages_dir_exists": packages_dir.is_dir(),
+        "skill_files": 0,
+        "slugs": 0,
+        "duplicate_slugs": 0,
+        "identical_aliases": 0,
+        "federal_precedence": 0,
+        "ambiguous_slugs": 0,
+        "rejected_paths": [],
+    }
+    if not report["packages_dir_exists"]:
+        log.warning(
+            "skill packages directory %s does not exist; the catalogue is "
+            "empty and every tool will report it. %s",
+            packages_dir, _CONTENT_HINT,
+        )
+        return out, {}, report
 
     # Pass 1: parse every skill file; tally each directory's declared codes.
     rows: list[dict[str, Any]] = []
     dir_codes: dict[str, Counter] = defaultdict(Counter)
     rejected_paths: list[str] = []
-    for path in sorted(PACKAGES_DIR.rglob("*.md")):
-        relpath = path.relative_to(PACKAGES_DIR)
+    for path in sorted(packages_dir.rglob("*.md")):
+        relpath = path.relative_to(packages_dir)
         try:
-            safe_path = _safe_resolve(PACKAGES_DIR, relpath.as_posix())
+            safe_path = _safe_resolve(packages_dir, relpath.as_posix())
         except ValueError:
             rejected_paths.append(relpath.as_posix())
             continue
@@ -306,6 +358,13 @@ def _catalogue() -> tuple[
             # dropped as if their content conflicted.
             "content_hash": sha256(body.encode("utf-8")).digest(),
         })
+
+    if not rows:
+        log.warning(
+            "no skill files (markdown with a `name:` frontmatter field) found "
+            "under %s; the catalogue is empty and every tool will report it. %s",
+            packages_dir, _CONTENT_HINT,
+        )
 
     # Pass 2: choose only an authority supported by the repository contract.
     # packages/us-federal is the hand-authored exception. Other byte-identical
@@ -350,7 +409,7 @@ def _catalogue() -> tuple[
             slug, ", ".join(paths), slug,
         )
 
-    report = {
+    report.update({
         "skill_files": len(rows),
         "slugs": len(candidates),
         "duplicate_slugs": duplicate_slugs,
@@ -358,7 +417,7 @@ def _catalogue() -> tuple[
         "federal_precedence": federal_precedence,
         "ambiguous_slugs": len(ambiguous),
         "rejected_paths": rejected_paths,
-    }
+    })
     return out, ambiguous, report
 
 
@@ -396,6 +455,50 @@ def _with_catalogue_warning(result: dict[str, Any]) -> dict[str, Any]:
     return result
 
 
+def _catalogue_problem() -> str | None:
+    """Why the catalogue holds no skills at all, or None when it has some.
+
+    Distinguishes the three ways to end up empty (no ``packages/`` directory,
+    a directory without skill files, every skill file dropped as an ambiguous
+    duplicate) because each points at a different fix.
+    """
+    index, _, report = _catalogue()
+    if index:
+        return None
+    where = report["packages_dir"]
+    if not report["packages_dir_exists"]:
+        what = f"the skill packages directory {where} does not exist"
+    elif not report["skill_files"]:
+        what = (
+            "no skill files (markdown with a `name:` frontmatter field) were "
+            f"found under {where}"
+        )
+    else:
+        what = (
+            f"every skill file under {where} was dropped because packaged "
+            "copies of the same slug carry different guidance"
+        )
+    return f"No skills are available: {what}. {_CONTENT_HINT}"
+
+
+_EMPTY_CATALOGUE_NEXT_ACTION = (
+    "Tell the user the server has no guide content and relay the error "
+    "field, which names the directory it looked in and how to fix it. Do not "
+    "answer the tax question from general knowledge; retry after the server "
+    "has been restarted with content."
+)
+
+
+def _empty_catalogue_result(problem: str, **fields: Any) -> dict[str, Any]:
+    """A tool response that says why it is empty instead of looking like a
+    legitimately small corpus."""
+    return _with_catalogue_warning({
+        **fields,
+        "error": problem,
+        "next_action": _EMPTY_CATALOGUE_NEXT_ACTION,
+    })
+
+
 def _duplicate_report() -> dict[str, Any]:
     """Return a deterministic duplicate inventory for maintainer diagnostics."""
     _, ambiguous, counts = _catalogue()
@@ -411,6 +514,11 @@ def _duplicate_report() -> dict[str, Any]:
 def _read_skill(slug: str) -> tuple[dict[str, Any], str]:
     """Return (index record, body markdown) for a slug or raise ValueError."""
     index, ambiguous, _ = _catalogue()
+    problem = _catalogue_problem()
+    if problem:
+        # "Skill 'x' not found" would blame the slug when nothing at all is
+        # loaded; say what is actually wrong.
+        raise ValueError(problem)
     if slug in ambiguous:
         paths = ", ".join(ambiguous[slug])
         raise ValueError(
@@ -500,6 +608,66 @@ _HTTP_HOST = os.environ.get("MCP_HOST") or "127.0.0.1"
 _HTTP_PORT = int(os.environ.get("MCP_PORT", "8000"))
 _STREAMABLE_HTTP_PATH = os.environ.get("MCP_STREAMABLE_HTTP_PATH", "/mcp")
 
+#: The bind hosts FastMCP itself treats as loopback (and protects by default).
+_LOOPBACK_HOSTS = frozenset({"127.0.0.1", "localhost", "::1"})
+
+
+def _env_list(name: str) -> list[str]:
+    """A comma-separated environment variable as a list of non-empty items."""
+    return [item.strip() for item in os.environ.get(name, "").split(",") if item.strip()]
+
+
+def _transport_security(
+    allowed_hosts: list[str], allowed_origins: list[str]
+) -> TransportSecuritySettings | None:
+    """Host/Origin validation (DNS-rebinding protection) for HTTP transports.
+
+    FastMCP validates the Host and Origin headers on its own only when the
+    bind host is loopback.  For any other bind host it validates nothing
+    unless handed explicit settings, so a spoofed Host or Origin is served
+    like a genuine one.  ``None`` keeps that SDK default; explicit settings
+    are built whenever the operator names the hosts clients use, and they
+    also apply to a loopback bind (a local reverse proxy that forwards its
+    public ``Host`` header needs that name allowed, or every request gets a
+    421).
+    """
+    if allowed_origins and not allowed_hosts:
+        raise ValueError(
+            "MCP_ALLOWED_ORIGINS requires MCP_ALLOWED_HOSTS: with an empty "
+            "allowed-host list every request is rejected with HTTP 421"
+        )
+    if not allowed_hosts:
+        return None
+    return TransportSecuritySettings(
+        enable_dns_rebinding_protection=True,
+        allowed_hosts=list(allowed_hosts),
+        allowed_origins=list(allowed_origins),
+    )
+
+
+def _transport_security_warning(
+    transport: str, host: str, settings: TransportSecuritySettings | None
+) -> str | None:
+    """Operator warning when an HTTP bind beyond loopback validates nothing."""
+    if transport == "stdio" or settings is not None or host in _LOOPBACK_HOSTS:
+        return None
+    return (
+        f"MCP_HOST={host} binds beyond loopback without MCP_ALLOWED_HOSTS: the "
+        "Host and Origin headers are not validated, so the endpoint has no "
+        "DNS-rebinding protection. Set MCP_ALLOWED_HOSTS to the names clients "
+        "use (e.g. localhost:*,127.0.0.1:* behind Docker port publishing, or "
+        "mcp.example.com behind a reverse proxy) and, for browser clients, "
+        "MCP_ALLOWED_ORIGINS."
+    )
+
+
+_ALLOWED_HOSTS = _env_list("MCP_ALLOWED_HOSTS")
+_ALLOWED_ORIGINS = _env_list("MCP_ALLOWED_ORIGINS")
+_TRANSPORT_SECURITY = _transport_security(_ALLOWED_HOSTS, _ALLOWED_ORIGINS)
+_TRANSPORT_SECURITY_WARNING = _transport_security_warning(
+    _TRANSPORT, _HTTP_HOST, _TRANSPORT_SECURITY
+)
+
 mcp = FastMCP(
     "OpenAccountants",
     instructions=(
@@ -527,7 +695,13 @@ mcp = FastMCP(
     host=_HTTP_HOST,
     port=_HTTP_PORT,
     streamable_http_path=_STREAMABLE_HTTP_PATH,
+    transport_security=_TRANSPORT_SECURITY,
 )
+
+# Logged after FastMCP has configured logging so it reaches stderr the same
+# way as every other server message.
+if _TRANSPORT_SECURITY_WARNING:
+    log.warning(_TRANSPORT_SECURITY_WARNING)
 
 _READONLY = ToolAnnotations(readOnlyHint=True, openWorldHint=False)
 
@@ -541,8 +715,12 @@ def list_skills(jurisdiction: str | None = None, category: str | None = None) ->
         category:     Optional category filter, e.g. "international".
 
     Returns:
-        ``{"skills": [...], "total": n}``.
+        ``{"skills": [...], "total": n}``.  When the server has no guide
+        content at all the list is empty and an ``error`` field says why.
     """
+    problem = _catalogue_problem()
+    if problem:
+        return _empty_catalogue_result(problem, skills=[], total=0)
     jx = jurisdiction.upper() if jurisdiction else None
     skills = []
     for rec in _index().values():
@@ -625,11 +803,15 @@ def search_skills(query: str, jurisdiction: str | None = None) -> dict[str, Any]
 
     Returns:
         ``{"results": [...], "total": n}`` — each result has slug, title,
-        jurisdiction, matched_section and snippet.
+        jurisdiction, matched_section and snippet.  When the server has no
+        guide content at all the list is empty and an ``error`` field says why.
     """
     q = (query or "").strip()
     if not q:
         raise ValueError("query is required")
+    problem = _catalogue_problem()
+    if problem:
+        return _empty_catalogue_result(problem, results=[], total=0)
     jx = jurisdiction.upper() if jurisdiction else None
 
     results = []
@@ -915,13 +1097,22 @@ def start(intent: str | None = None, jurisdiction: str | None = None) -> dict[st
         jurisdiction: ISO-style jurisdiction code (e.g. ``"MT"``, ``"GB"``, ``"US-CA"``).
 
     Returns:
-        One of three shapes keyed by ``status``:
+        One of four shapes keyed by ``status``:
 
+        - ``"error"``          — the server has no guide content; ``error`` says
+                                 where it looked and how to fix it.  Nothing can
+                                 be planned until that is resolved.
         - ``"needs_input"``    — missing one or both inputs; ``needs`` lists which.
         - ``"needs_clarification"`` — intent provided but ambiguous; pick from ``candidates``.
         - ``"ready"``          — plan ready: ``skills_to_load``, ``expectations``,
                                  ``next_action``, ``guardrails``.
     """
+    # 0) No content at all.  Checked before anything else: scoping questions
+    #    would only lead to an empty plan presented as "ready".
+    problem = _catalogue_problem()
+    if problem:
+        return _empty_catalogue_result(problem, status="error")
+
     intent_key, candidates = _normalize_intent(intent)
     jx = jurisdiction.upper() if jurisdiction else None
 

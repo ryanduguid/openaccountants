@@ -5,6 +5,9 @@ description = "MCP server giving AI assistants on-demand access to open-source a
 readme = "README.md"
 requires-python = ">=3.10"
 license = "AGPL-3.0-only"
+# The licence text travels with the wheel (dist-info/licenses/LICENSE); a
+# copy of the repository's LICENSE lives next to this file for that purpose.
+license-files = ["LICENSE"]
 # mcp is capped below 2.0: 2.x removes `mcp.server.fastmcp`, which server.py
 # imports, so the server cannot start. Lift the cap only with a reviewed
 # migration to the 2.x HTTP stack.
