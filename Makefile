@@ -12,7 +12,7 @@ PYTHON ?= python3
 # (fetch it first), or pass BASE=<rev>.
 BASE ?= $(shell git merge-base origin/main HEAD 2>/dev/null)
 
-.PHONY: help install build validate sync-check checkers baselines test check
+.PHONY: help install build bundle validate sync-check checkers baselines test check
 
 help:  ## List the targets
 	@awk -F ':.*## ' '/^[a-z-]+:.*## /{printf "  make %-12s %s\n", $$1, $$2}' $(MAKEFILE_LIST)
@@ -24,6 +24,10 @@ build:  ## Regenerate packages/, index.json and llms-full.txt from skills/
 	$(PYTHON) scripts/build-packages.py
 	$(PYTHON) scripts/build-index.py
 	$(PYTHON) scripts/build-llms-full.py
+
+bundle:  ## One package plus its shared files as an upload-ready folder: make bundle JURISDICTION=us-ca
+	@test -n "$(JURISDICTION)" || { echo "make bundle: pass JURISDICTION=<package>, e.g. make bundle JURISDICTION=us-ca (python3 scripts/build-bundle.py --list shows them)" >&2; exit 1; }
+	$(PYTHON) scripts/build-bundle.py "$(JURISDICTION)"
 
 validate:  ## Frontmatter contract and derived-tree freshness (validate.yml)
 	$(PYTHON) scripts/validate-guides.py

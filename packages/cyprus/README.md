@@ -5,22 +5,28 @@
 
 ## What's in this folder
 
-1. `foundation.md`
-2. `intake.md`
-3. `cy-non-dom.md`
-4. `cyprus-income-tax.md`
-5. `cyprus-payroll.md`
-6. `cyprus-social-contributions.md`
-7. `cyprus-tax-optimization.md`
-8. `cyprus-vat-return.md`
-9. `eu-vat-directive.md`
-10. `payroll-workflow-base.md`
-11. `income-tax-workflow-base.md`
-12. `social-contributions-workflow-base.md`
+1. `intake.md`
+2. `cy-non-dom.md`
+3. `cyprus-income-tax.md`
+4. `cyprus-payroll.md`
+5. `cyprus-social-contributions.md`
+6. `cyprus-tax-optimization.md`
+7. `cyprus-vat-return.md`
+
+## Shared files this package needs
+
+These are part of this package and live once in [`../_shared/`](../_shared/):
+
+- [`eu-vat-directive.md`](../_shared/eu-vat-directive.md)
+- [`foundation.md`](../_shared/foundation.md)
+- [`income-tax-workflow-base.md`](../_shared/income-tax-workflow-base.md)
+- [`payroll-workflow-base.md`](../_shared/payroll-workflow-base.md)
+- [`social-contributions-workflow-base.md`](../_shared/social-contributions-workflow-base.md)
+
 
 ## How to use
 
-1. Upload ALL files in this folder to your AI assistant (Claude, ChatGPT, Gemini, etc.)
+1. Upload ALL files in this folder AND the shared files listed above to your AI assistant (Claude, ChatGPT, Gemini, etc.); in a checkout, `make bundle JURISDICTION=<folder>` puts them together in one ready-to-upload folder
 2. Attach your bank statement, invoices, or any financial documents (CSV or PDF)
 3. Tell the AI what you need:
    - **"Help me with my 2025 Cyprus taxes. Here's my bank statement."**

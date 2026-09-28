@@ -5,24 +5,30 @@
 
 ## What's in this folder
 
-1. `foundation.md`
-2. `intake.md`
-3. `am-company-formation.md`
-4. `am-corporate-income-tax.md`
-5. `am-tax-overview.md`
-6. `armenia-income-tax.md`
-7. `armenia-payroll.md`
-8. `armenia-social-contributions.md`
-9. `armenia-tax-optimization.md`
-10. `armenia-vat.md`
-11. `payroll-workflow-base.md`
-12. `company-formation-workflow-base.md`
-13. `income-tax-workflow-base.md`
-14. `social-contributions-workflow-base.md`
+1. `intake.md`
+2. `am-company-formation.md`
+3. `am-corporate-income-tax.md`
+4. `am-tax-overview.md`
+5. `armenia-income-tax.md`
+6. `armenia-payroll.md`
+7. `armenia-social-contributions.md`
+8. `armenia-tax-optimization.md`
+9. `armenia-vat.md`
+
+## Shared files this package needs
+
+These are part of this package and live once in [`../_shared/`](../_shared/):
+
+- [`company-formation-workflow-base.md`](../_shared/company-formation-workflow-base.md)
+- [`foundation.md`](../_shared/foundation.md)
+- [`income-tax-workflow-base.md`](../_shared/income-tax-workflow-base.md)
+- [`payroll-workflow-base.md`](../_shared/payroll-workflow-base.md)
+- [`social-contributions-workflow-base.md`](../_shared/social-contributions-workflow-base.md)
+
 
 ## How to use
 
-1. Upload ALL files in this folder to your AI assistant (Claude, ChatGPT, Gemini, etc.)
+1. Upload ALL files in this folder AND the shared files listed above to your AI assistant (Claude, ChatGPT, Gemini, etc.); in a checkout, `make bundle JURISDICTION=<folder>` puts them together in one ready-to-upload folder
 2. Attach your bank statement, invoices, or any financial documents (CSV or PDF)
 3. Tell the AI what you need:
    - **"Help me with my 2025 Armenia taxes. Here's my bank statement."**

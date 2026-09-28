@@ -5,23 +5,29 @@
 
 ## What's in this folder
 
-1. `foundation.md`
-2. `intake.md`
-3. `audit-quality-assurance-aqa.md`
-4. `export-declaration-requirement-for-imported-goods.md`
-5. `ke-company-formation.md`
-6. `ke-corporate-income-tax.md`
-7. `ke-income-tax-2.md`
-8. `ke-income-tax.md`
-9. `ke-nhif-nssf.md`
-10. `ke-tax-overview.md`
-11. `kenya-vat.md`
-12. `non-resident-rental-income-tax-on-kenyan-property.md`
-13. `set-up-your-company-in-kenya-we-handle-it-from-abroad.md`
-14. `tax-amnesty.md`
-15. `the-burden-of-proof-in-tax-cases.md`
-16. `company-formation-workflow-base.md`
-17. `vat-workflow-base.md`
+1. `intake.md`
+2. `audit-quality-assurance-aqa.md`
+3. `export-declaration-requirement-for-imported-goods.md`
+4. `ke-company-formation.md`
+5. `ke-corporate-income-tax.md`
+6. `ke-income-tax-2.md`
+7. `ke-income-tax.md`
+8. `ke-nhif-nssf.md`
+9. `ke-tax-overview.md`
+10. `kenya-vat.md`
+11. `non-resident-rental-income-tax-on-kenyan-property.md`
+12. `set-up-your-company-in-kenya-we-handle-it-from-abroad.md`
+13. `tax-amnesty.md`
+14. `the-burden-of-proof-in-tax-cases.md`
+
+## Shared files this package needs
+
+These are part of this package and live once in [`../_shared/`](../_shared/):
+
+- [`company-formation-workflow-base.md`](../_shared/company-formation-workflow-base.md)
+- [`foundation.md`](../_shared/foundation.md)
+- [`vat-workflow-base.md`](../_shared/vat-workflow-base.md)
+
 
 ## Also known as
 
@@ -31,7 +37,7 @@ Tax authority: **Kenya Revenue Authority (KRA)**
 
 ## How to use
 
-1. Upload ALL files in this folder to your AI assistant (Claude, ChatGPT, Gemini, etc.)
+1. Upload ALL files in this folder AND the shared files listed above to your AI assistant (Claude, ChatGPT, Gemini, etc.); in a checkout, `make bundle JURISDICTION=<folder>` puts them together in one ready-to-upload folder
 2. Attach your bank statement, invoices, or any financial documents (CSV or PDF)
 3. Tell the AI what you need:
    - **"Help me with my 2025 Kenya taxes. Here's my bank statement."**

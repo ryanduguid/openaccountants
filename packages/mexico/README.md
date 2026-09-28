@@ -5,25 +5,31 @@
 
 ## What's in this folder
 
-1. `foundation.md`
-2. `intake.md`
-3. `mexico-crypto-tax.md`
-4. `mexico-einvoice.md`
-5. `mexico-iva.md`
-6. `mexico-transfer-pricing.md`
-7. `mx-cfdi.md`
-8. `mx-estimated-tax.md`
-9. `mx-imss.md`
-10. `mx-income-tax.md`
-11. `mx-vat-return.md`
-12. `references.md`
-13. `einvoice-workflow-base.md`
-14. `transfer-pricing-workflow-base.md`
-15. `crypto-tax-workflow-base.md`
-16. `income-tax-workflow-base.md`
-17. `vat-workflow-base.md`
-18. `mexico-guided-intake.md`
-19. `mexico-return-assembly.md`
+1. `intake.md`
+2. `mexico-crypto-tax.md`
+3. `mexico-einvoice.md`
+4. `mexico-iva.md`
+5. `mexico-transfer-pricing.md`
+6. `mx-cfdi.md`
+7. `mx-estimated-tax.md`
+8. `mx-imss.md`
+9. `mx-income-tax.md`
+10. `mx-vat-return.md`
+11. `references.md`
+12. `mexico-guided-intake.md`
+13. `mexico-return-assembly.md`
+
+## Shared files this package needs
+
+These are part of this package and live once in [`../_shared/`](../_shared/):
+
+- [`crypto-tax-workflow-base.md`](../_shared/crypto-tax-workflow-base.md)
+- [`einvoice-workflow-base.md`](../_shared/einvoice-workflow-base.md)
+- [`foundation.md`](../_shared/foundation.md)
+- [`income-tax-workflow-base.md`](../_shared/income-tax-workflow-base.md)
+- [`transfer-pricing-workflow-base.md`](../_shared/transfer-pricing-workflow-base.md)
+- [`vat-workflow-base.md`](../_shared/vat-workflow-base.md)
+
 
 ## Also known as
 
@@ -33,7 +39,7 @@ Tax authority: **Servicio de Administración Tributaria (SAT)**
 
 ## How to use
 
-1. Upload ALL files in this folder to your AI assistant (Claude, ChatGPT, Gemini, etc.)
+1. Upload ALL files in this folder AND the shared files listed above to your AI assistant (Claude, ChatGPT, Gemini, etc.); in a checkout, `make bundle JURISDICTION=<folder>` puts them together in one ready-to-upload folder
 2. Attach your bank statement, invoices, or any financial documents (CSV or PDF)
 3. Tell the AI what you need:
    - **"Help me with my 2025 Mexico taxes. Here's my bank statement."**

@@ -30,7 +30,7 @@ This script repairs both, and nothing else:
    fails a body change that advances neither the date nor the version.
 
 The block is not moved: a marker block that other content follows (the
-hand-authored packages/us-federal/ guides carry a further marker-introduced
+retired packages/us-federal/ guides carried a further marker-introduced
 section after it) stays where it is. Only files with YAML frontmatter are
 touched; READMEs and docs are skipped. Idempotent: a second run changes
 nothing. scripts/validate-guides.py enforces the resulting invariant with the

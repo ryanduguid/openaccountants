@@ -5,22 +5,28 @@
 
 ## What's in this folder
 
-1. `foundation.md`
-2. `intake.md`
-3. `references.md`
-4. `sa-corporate-tax.md`
-5. `sa-excise-tax.md`
-6. `sa-formation.md`
-7. `sa-freelance-intake.md`
-8. `sa-gosi-saudization.md`
-9. `sa-rett.md`
-10. `sa-return-assembly.md`
-11. `sa-withholding-tax.md`
-12. `sa-zakat.md`
-13. `saudi-arabia-vat.md`
-14. `saudi-einvoice.md`
-15. `einvoice-workflow-base.md`
-16. `company-formation-workflow-base.md`
+1. `intake.md`
+2. `references.md`
+3. `sa-corporate-tax.md`
+4. `sa-excise-tax.md`
+5. `sa-formation.md`
+6. `sa-freelance-intake.md`
+7. `sa-gosi-saudization.md`
+8. `sa-rett.md`
+9. `sa-return-assembly.md`
+10. `sa-withholding-tax.md`
+11. `sa-zakat.md`
+12. `saudi-arabia-vat.md`
+13. `saudi-einvoice.md`
+
+## Shared files this package needs
+
+These are part of this package and live once in [`../_shared/`](../_shared/):
+
+- [`company-formation-workflow-base.md`](../_shared/company-formation-workflow-base.md)
+- [`einvoice-workflow-base.md`](../_shared/einvoice-workflow-base.md)
+- [`foundation.md`](../_shared/foundation.md)
+
 
 ## Also known as
 
@@ -30,7 +36,7 @@ Tax authority: **Zakat, Tax and Customs Authority (ZATCA)**
 
 ## How to use
 
-1. Upload ALL files in this folder to your AI assistant (Claude, ChatGPT, Gemini, etc.)
+1. Upload ALL files in this folder AND the shared files listed above to your AI assistant (Claude, ChatGPT, Gemini, etc.); in a checkout, `make bundle JURISDICTION=<folder>` puts them together in one ready-to-upload folder
 2. Attach your bank statement, invoices, or any financial documents (CSV or PDF)
 3. Tell the AI what you need:
    - **"Help me with my 2025 Saudi Arabia taxes. Here's my bank statement."**

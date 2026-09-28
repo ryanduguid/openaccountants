@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Validate guide files, the hand-authored us-federal set, and index.json.
+Validate guide files, the generated trees, and index.json.
 
 Checks (ERROR = exit 1, WARN = printed summary only):
   1. Every guide file's frontmatter block is valid, unambiguous YAML (a file
@@ -21,8 +21,9 @@ Checks (ERROR = exit 1, WARN = printed summary only):
      one-time sweep, and calendar/range/qualifier text belongs in
      `tax_year_notes`).
   4. ERROR if any file under packages/us-federal/ was deleted relative to
-     git history (hand-authored, no builder — a deletion is unrecoverable).
-     Skipped when git / origin/main is unavailable.
+     git history (hand-authored, no builder — a deletion is unrecoverable),
+     unless it is a guide retired in favour of a skills/federal/ source of
+     the same filename. Skipped when git / origin/main is unavailable.
   5. ERROR if index.json is stale: regenerated index (ignoring generated_at)
      must match the committed one. Fix with: python3 scripts/build-index.py
   6. ERROR if a deprecated inventory file reappears (skills/manifest.json,
@@ -34,8 +35,8 @@ Checks (ERROR = exit 1, WARN = printed summary only):
      build-packages.py --out) must match the committed tree file for file,
      the hand-authored packages/us-federal/ excepted.
      Fix with: python3 scripts/build-packages.py
-  9. Every `depends_on` entry must be the `name` of a guide under skills/ or
-     packages/us-federal/ — ERROR otherwise. Like the freshness checks, this
+  9. Every `depends_on` entry must be the `name` of a guide under skills/ —
+     ERROR otherwise. Like the freshness checks, this
      describes the whole tree, so it runs over every guide in every mode but
      --derived-only: a pull request that deletes or renames a base breaks the
      unchanged guides that name it. (238 entries once named
@@ -205,10 +206,9 @@ def misplaced_frontmatter(bi, text):
 def packages_files():
     """Repo-relative paths of generated package guides, sorted.
 
-    build-index.py's GUIDE_TREES covers skills/ and the hand-authored
-    packages/us-federal only, so the rest of the generated tree was validated by
-    nothing, even while upstream's mirror job shipped it to the MCP repo on
-    every push to main.
+    build-index.py's GUIDE_TREES covers skills/ only, so the generated tree
+    was validated by nothing, even while upstream's mirror job shipped it to
+    the MCP repo on every push to main.
     """
     paths = []
     base = os.path.join(REPO_ROOT, "packages")
@@ -247,7 +247,7 @@ def check_packages_frontmatter(bi, errors, only_files=None):
     checked = 0
     for rel in packages_files():
         if rel in already_checked:
-            continue  # packages/us-federal gets the full guide contract instead
+            continue  # a listed guide already gets the full guide contract
         if only_files is not None and rel not in only_files:
             continue
         with open(os.path.join(REPO_ROOT, rel), encoding="utf-8", errors="replace") as fh:
@@ -318,9 +318,8 @@ def check_depends_on(bi, errors, known_names=None):
             entries += 1
             if slug.strip() not in known_names:
                 errors.append(
-                    f"{rel}: `depends_on` names `{slug}`, but no guide under skills/ or "
-                    "packages/us-federal/ carries that `name` — fix the slug or add the "
-                    "missing base"
+                    f"{rel}: `depends_on` names `{slug}`, but no guide under skills/ "
+                    "carries that `name` — fix the slug or add the missing base"
                 )
     print(f"checked {entries} depends_on entries against {len(known_names)} guide names")
 
@@ -332,8 +331,8 @@ def check_cta_block(rel, text, errors):
     after the marker, only blank lines or a `---` rule may precede the "Talk
     to a verified accountant" heading, and the section under it must carry
     the network or Calendly link the repo stamps. Placement is not checked:
-    the hand-authored packages/us-federal/ guides carry a further
-    marker-introduced section after the block. Before this check, 591 guides
+    a guide may carry a further marker-introduced section after the block,
+    as the retired packages/us-federal/ guides did. Before this check, 591 guides
     carried the older Calendly section *and* the marker block, and 116
     carried no marker at all.
     """
@@ -432,7 +431,14 @@ def check_guides(bi, errors, warnings, only_files=None):
 
 
 def check_us_federal_deletions(errors):
-    """The hand-authored us-federal package has no builder; a deleted file is gone."""
+    """The hand-authored us-federal package has no builder; a deleted file is gone.
+
+    One deletion is allowed: a guide whose source now lives in skills/federal/
+    under the same filename. That is how the 28 federal twins were retired on
+    2026-09-28, and how any future twin would be, without losing content.
+    The rates JSONs and the runbook have no source elsewhere and stay guarded.
+    """
+    federal_source = os.path.join(REPO_ROOT, "skills", "federal")
     for label, args in (
         ("origin/main...HEAD", ["git", "diff", "--name-status", "origin/main...HEAD", "--", "packages/us-federal"]),
         ("working tree vs HEAD", ["git", "diff", "--name-status", "HEAD", "--", "packages/us-federal"]),
@@ -447,8 +453,11 @@ def check_us_federal_deletions(errors):
             continue
         for line in out.stdout.splitlines():
             status, _, path = line.partition("\t")
-            if status.startswith("D"):
-                errors.append(f"hand-authored file deleted ({label}): {path}")
+            if not status.startswith("D"):
+                continue
+            if path.endswith(".md") and os.path.isfile(os.path.join(federal_source, os.path.basename(path))):
+                continue  # retired in favour of its skills/federal source
+            errors.append(f"hand-authored file deleted ({label}): {path}")
 
 
 def check_index_fresh(errors):

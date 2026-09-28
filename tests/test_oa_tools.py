@@ -13,7 +13,6 @@ from __future__ import annotations
 
 import datetime
 import importlib.util
-import os
 import subprocess
 import sys
 import tempfile
@@ -197,13 +196,14 @@ class GuideDiscoveryTests(unittest.TestCase):
             "skills/a/z-guide.md": GUIDE,
             "skills/a/a-guide.md": GUIDE,
             "skills/a/notes.txt": "not markdown",
-            "packages/us-federal/f1040.md": GUIDE,
+            "packages/us-federal/rates.2026.json": "{}",   # hand-authored data, not a guide tree
             "packages/malta/mt-vat.md": GUIDE,   # generated: not a guide tree
+            "packages/_shared/base.md": GUIDE,   # generated: not a guide tree
             "docs/page.md": GUIDE,
         })
         self.assertEqual(
             guides.guide_files(str(root)),
-            ["packages/us-federal/f1040.md", "skills/a/a-guide.md", "skills/a/z-guide.md"],
+            ["skills/a/a-guide.md", "skills/a/z-guide.md"],
         )
 
     def test_a_missing_tree_is_skipped(self) -> None:
@@ -223,7 +223,7 @@ class GuideDiscoveryTests(unittest.TestCase):
     def test_defaults_point_at_this_repository(self) -> None:
         self.assertEqual(paths.REPO_ROOT, str(REPO_ROOT))
         self.assertEqual(paths.repo_root(), str(REPO_ROOT))
-        self.assertEqual(paths.GUIDE_TREES, ("skills", os.path.join("packages", "us-federal")))
+        self.assertEqual(paths.GUIDE_TREES, ("skills",))
         self.assertEqual(paths.SKILLS_DIR, str(REPO_ROOT / "skills"))
         self.assertEqual(paths.PACKAGES_DIR, str(REPO_ROOT / "packages"))
         self.assertEqual(paths.HAND_AUTHORED_PACKAGES, frozenset({"us-federal"}))

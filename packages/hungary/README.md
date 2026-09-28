@@ -5,16 +5,22 @@
 
 ## What's in this folder
 
-1. `foundation.md`
-2. `intake.md`
-3. `hu-income-tax.md`
-4. `hu-social-contributions.md`
-5. `hu-vat-return.md`
-6. `hungary-einvoice.md`
-7. `hungary-vat-return.md`
-8. `eu-vat-directive.md`
-9. `einvoice-workflow-base.md`
-10. `income-tax-workflow-base.md`
+1. `intake.md`
+2. `hu-income-tax.md`
+3. `hu-social-contributions.md`
+4. `hu-vat-return.md`
+5. `hungary-einvoice.md`
+6. `hungary-vat-return.md`
+
+## Shared files this package needs
+
+These are part of this package and live once in [`../_shared/`](../_shared/):
+
+- [`einvoice-workflow-base.md`](../_shared/einvoice-workflow-base.md)
+- [`eu-vat-directive.md`](../_shared/eu-vat-directive.md)
+- [`foundation.md`](../_shared/foundation.md)
+- [`income-tax-workflow-base.md`](../_shared/income-tax-workflow-base.md)
+
 
 ## Also known as
 
@@ -24,7 +30,7 @@ Tax authority: **Nemzeti Adó- és Vámhivatal (NAV)**
 
 ## How to use
 
-1. Upload ALL files in this folder to your AI assistant (Claude, ChatGPT, Gemini, etc.)
+1. Upload ALL files in this folder AND the shared files listed above to your AI assistant (Claude, ChatGPT, Gemini, etc.); in a checkout, `make bundle JURISDICTION=<folder>` puts them together in one ready-to-upload folder
 2. Attach your bank statement, invoices, or any financial documents (CSV or PDF)
 3. Tell the AI what you need:
    - **"Help me with my 2025 Hungary taxes. Here's my bank statement."**

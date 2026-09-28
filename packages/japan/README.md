@@ -5,35 +5,41 @@
 
 ## What's in this folder
 
-1. `foundation.md`
-2. `intake.md`
-3. `japan-bookkeeping.md`
-4. `japan-consumption-tax.md`
-5. `japan-crypto-tax.md`
-6. `japan-financial-statements.md`
-7. `japan-formation.md`
-8. `japan-payroll.md`
-9. `japan-tax-optimization.md`
-10. `japan-transfer-pricing.md`
-11. `jp-bookkeeping.md`
-12. `jp-consumption-tax.md`
-13. `jp-estimated-tax.md`
-14. `jp-etax-filing.md`
-15. `jp-income-tax.md`
-16. `jp-incorporation.md`
-17. `jp-nonpermanent-resident.md`
-18. `jp-social-insurance.md`
-19. `references.md`
-20. `bookkeeping-workflow-base.md`
-21. `payroll-workflow-base.md`
-22. `company-formation-workflow-base.md`
-23. `financial-statements-workflow-base.md`
-24. `transfer-pricing-workflow-base.md`
-25. `crypto-tax-workflow-base.md`
-26. `income-tax-workflow-base.md`
-27. `vat-workflow-base.md`
-28. `japan-guided-intake.md`
-29. `japan-return-assembly.md`
+1. `intake.md`
+2. `japan-bookkeeping.md`
+3. `japan-consumption-tax.md`
+4. `japan-crypto-tax.md`
+5. `japan-financial-statements.md`
+6. `japan-formation.md`
+7. `japan-payroll.md`
+8. `japan-tax-optimization.md`
+9. `japan-transfer-pricing.md`
+10. `jp-bookkeeping.md`
+11. `jp-consumption-tax.md`
+12. `jp-estimated-tax.md`
+13. `jp-etax-filing.md`
+14. `jp-income-tax.md`
+15. `jp-incorporation.md`
+16. `jp-nonpermanent-resident.md`
+17. `jp-social-insurance.md`
+18. `references.md`
+19. `japan-guided-intake.md`
+20. `japan-return-assembly.md`
+
+## Shared files this package needs
+
+These are part of this package and live once in [`../_shared/`](../_shared/):
+
+- [`bookkeeping-workflow-base.md`](../_shared/bookkeeping-workflow-base.md)
+- [`company-formation-workflow-base.md`](../_shared/company-formation-workflow-base.md)
+- [`crypto-tax-workflow-base.md`](../_shared/crypto-tax-workflow-base.md)
+- [`financial-statements-workflow-base.md`](../_shared/financial-statements-workflow-base.md)
+- [`foundation.md`](../_shared/foundation.md)
+- [`income-tax-workflow-base.md`](../_shared/income-tax-workflow-base.md)
+- [`payroll-workflow-base.md`](../_shared/payroll-workflow-base.md)
+- [`transfer-pricing-workflow-base.md`](../_shared/transfer-pricing-workflow-base.md)
+- [`vat-workflow-base.md`](../_shared/vat-workflow-base.md)
+
 
 ## Also known as
 
@@ -43,7 +49,7 @@ Tax authority: **National Tax Agency (国税庁)**
 
 ## How to use
 
-1. Upload ALL files in this folder to your AI assistant (Claude, ChatGPT, Gemini, etc.)
+1. Upload ALL files in this folder AND the shared files listed above to your AI assistant (Claude, ChatGPT, Gemini, etc.); in a checkout, `make bundle JURISDICTION=<folder>` puts them together in one ready-to-upload folder
 2. Attach your bank statement, invoices, or any financial documents (CSV or PDF)
 3. Tell the AI what you need:
    - **"Help me with my 2025 Japan taxes. Here's my bank statement."**

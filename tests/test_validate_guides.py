@@ -321,8 +321,8 @@ class ValidatorModeTests(unittest.TestCase):
 
 class GeneratedPackagesTreeTests(_ValidatorCase):
     """packages/** was validated by nothing: build-index.py's GUIDE_TREES stops
-    at skills/ plus the hand-authored packages/us-federal, and upstream's
-    mirror job used to ship the rest to the MCP repo on every push to main."""
+    at skills/, and upstream's mirror job used to ship the generated tree to
+    the MCP repo on every push to main."""
 
     def test_malformed_generated_frontmatter_is_an_error(self) -> None:
         errors = self._check_packages({"packages/albania/albania-income-tax.md": MALFORMED})
@@ -343,13 +343,15 @@ class GeneratedPackagesTreeTests(_ValidatorCase):
             self._check_packages({"packages/albania/albania-income-tax.md": GOOD}), []
         )
 
-    def test_readmes_and_us_federal_are_not_double_reported(self) -> None:
+    def test_readmes_and_listed_guides_are_not_double_reported(self) -> None:
+        # A file the guide walker already lists gets the full guide contract
+        # from check_guides; the sweep must not report it a second time.
         errors = self._check_packages(
             {
-                "packages/us-federal/hand-authored.md": MALFORMED,
+                "packages/zz/listed.md": MALFORMED,
                 "packages/albania/README.md": MALFORMED,
             },
-            guide_files=["packages/us-federal/hand-authored.md"],
+            guide_files=["packages/zz/listed.md"],
         )
 
         self.assertEqual(errors, [])
@@ -375,11 +377,11 @@ class DependsOnTests(_ValidatorCase):
         self.assertEqual(len(errors), 1, errors)
         self.assertIn("`depends_on` names `no-such-base`", errors[0])
 
-    def test_depends_on_resolves_against_both_guide_trees(self) -> None:
+    def test_depends_on_resolves_against_every_listed_guide(self) -> None:
         files = {
             "skills/dependent.md": _with_depends_on(GOOD, "workflow-base", "us-form-1040"),
             "skills/foundation/workflow-base.md": GOOD.replace("synthetic-guide", "workflow-base"),
-            "packages/us-federal/us-form-1040.md": GOOD.replace("synthetic-guide", "us-form-1040"),
+            "skills/federal/us-form-1040.md": GOOD.replace("synthetic-guide", "us-form-1040"),
         }
 
         self.assertEqual(self._check_depends_on(files), [])
@@ -497,16 +499,17 @@ class CtaBlockTests(_ValidatorCase):
         self.assertEqual(len(errors), 1, errors)
         self.assertIn("no openaccountants.com or calendly.com link", errors[0])
 
-    def test_the_hand_authored_federal_shape_passes(self) -> None:
-        # packages/us-federal/ guides carry the marker, a blank line, the
-        # Calendly text, and then a further marker-introduced section after
-        # the block. Placement is theirs to decide; the block is still one.
+    def test_a_further_section_after_the_block_passes(self) -> None:
+        # The retired packages/us-federal/ guides carried the marker, a blank
+        # line, the Calendly text, and then a further marker-introduced
+        # section after the block. Placement is the author's to decide; the
+        # block is still one.
         federal = (
             GOOD_WITHOUT_CTA + "\n" + CTA_MARKER + "\n\n" + OLD_CTA_SECTION
             + "\n<!-- openaccountants-mcp-cta -->\n\n## The accountant-verified version lives in the connector\n\nText.\n"
         )
 
-        self.assertEqual(self._check_guides({"packages/us-federal/us-form-1040.md": federal}), [])
+        self.assertEqual(self._check_guides({"skills/federal/us-form-1040.md": federal}), [])
 
     def test_two_markers_are_an_error(self) -> None:
         errors = self._check_guides({"skills/twice.md": GOOD + "\n" + CTA_MARKER + "\n"})

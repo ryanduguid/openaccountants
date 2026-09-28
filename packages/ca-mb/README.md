@@ -5,47 +5,54 @@
 
 ## What's in this folder
 
-This package contains **federal Canadian** tax and accounting skills (T1, T2125,
+This package is the **Manitoba-specific** provincial/territorial tax skills
+in this folder plus the **federal Canadian** tax and accounting skills (T1, T2125,
 CPP/EI, instalments, GST/HST, T1135, crypto, bookkeeping, payroll, formation,
-financial statements, transfer pricing, tax optimization) plus
-**Manitoba-specific** provincial/territorial tax skills. Upload all files together.
+financial statements, transfer pricing, tax optimization), which are shared files
+listed below. Upload all of them together.
 
-1. `foundation.md`
-2. `intake.md`
-3. `ca-capital-gains.md`
-4. `ca-crypto-tax.md`
-5. `ca-fed-cpp-ei.md`
-6. `ca-fed-instalments.md`
-7. `ca-fed-t1-return.md`
-8. `ca-fed-t1135.md`
-9. `ca-fed-t2125.md`
-10. `ca-nonresident-cgt.md`
-11. `ca-tax-residency.md`
-12. `canada-bookkeeping.md`
-13. `canada-financial-statements.md`
-14. `canada-formation.md`
-15. `canada-gst-hst.md`
-16. `canada-payroll.md`
-17. `canada-tax-optimization.md`
-18. `canada-transfer-pricing.md`
-19. `qc-corporate-tax-co17.md`
-20. `references.md`
-21. `bookkeeping-workflow-base.md`
-22. `payroll-workflow-base.md`
-23. `company-formation-workflow-base.md`
-24. `financial-statements-workflow-base.md`
-25. `transfer-pricing-workflow-base.md`
-26. `crypto-tax-workflow-base.md`
-27. `mb-individual-return.md`
-28. `income-tax-workflow-base.md`
-29. `social-contributions-workflow-base.md`
-30. `ca-freelance-intake.md`
-31. `ca-return-assembly.md`
-32. `global-router.md`
+1. `intake.md`
+2. `mb-individual-return.md`
+
+## Shared files this package needs
+
+These are part of this package and live once in [`../_shared/`](../_shared/):
+
+- [`bookkeeping-workflow-base.md`](../_shared/bookkeeping-workflow-base.md)
+- [`ca-capital-gains.md`](../_shared/ca-capital-gains.md)
+- [`ca-crypto-tax.md`](../_shared/ca-crypto-tax.md)
+- [`ca-fed-cpp-ei.md`](../_shared/ca-fed-cpp-ei.md)
+- [`ca-fed-instalments.md`](../_shared/ca-fed-instalments.md)
+- [`ca-fed-t1-return.md`](../_shared/ca-fed-t1-return.md)
+- [`ca-fed-t1135.md`](../_shared/ca-fed-t1135.md)
+- [`ca-fed-t2125.md`](../_shared/ca-fed-t2125.md)
+- [`ca-freelance-intake.md`](../_shared/ca-freelance-intake.md)
+- [`ca-nonresident-cgt.md`](../_shared/ca-nonresident-cgt.md)
+- [`ca-return-assembly.md`](../_shared/ca-return-assembly.md)
+- [`ca-tax-residency.md`](../_shared/ca-tax-residency.md)
+- [`canada-bookkeeping.md`](../_shared/canada-bookkeeping.md)
+- [`canada-financial-statements.md`](../_shared/canada-financial-statements.md)
+- [`canada-formation.md`](../_shared/canada-formation.md)
+- [`canada-gst-hst.md`](../_shared/canada-gst-hst.md)
+- [`canada-payroll.md`](../_shared/canada-payroll.md)
+- [`canada-tax-optimization.md`](../_shared/canada-tax-optimization.md)
+- [`canada-transfer-pricing.md`](../_shared/canada-transfer-pricing.md)
+- [`company-formation-workflow-base.md`](../_shared/company-formation-workflow-base.md)
+- [`crypto-tax-workflow-base.md`](../_shared/crypto-tax-workflow-base.md)
+- [`financial-statements-workflow-base.md`](../_shared/financial-statements-workflow-base.md)
+- [`foundation.md`](../_shared/foundation.md)
+- [`global-router.md`](../_shared/global-router.md)
+- [`income-tax-workflow-base.md`](../_shared/income-tax-workflow-base.md)
+- [`payroll-workflow-base.md`](../_shared/payroll-workflow-base.md)
+- [`qc-corporate-tax-co17.md`](../_shared/qc-corporate-tax-co17.md)
+- [`references.md`](../_shared/references.md)
+- [`social-contributions-workflow-base.md`](../_shared/social-contributions-workflow-base.md)
+- [`transfer-pricing-workflow-base.md`](../_shared/transfer-pricing-workflow-base.md)
+
 
 ## How to use
 
-1. Upload ALL files in this folder to your AI assistant (Claude, ChatGPT, Gemini, etc.)
+1. Upload ALL files in this folder AND the shared files listed above to your AI assistant (Claude, ChatGPT, Gemini, etc.); in a checkout, `make bundle JURISDICTION=<folder>` puts them together in one ready-to-upload folder
 2. Attach your 2025 bank statement (CSV or PDF)
 3. Say: **"Help me with my 2025 taxes. I'm based in Manitoba. Here's my bank statement."**
 

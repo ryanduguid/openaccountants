@@ -61,8 +61,10 @@ def actual():
             len([p for p in glob.glob(os.path.join('skills', 'international', '*')) if os.path.isdir(p)]),
         'US jurisdiction codes (`US` + 50 states + DC + `US-NY-NYC`)':
             len({g['jurisdiction'] for g in guides if (g.get('jurisdiction') or '').startswith('US')}),
+        # packages/_shared/ holds the files the bundles share; it is not a bundle.
         'Generated bundles under `packages/`':
-            len([p for p in glob.glob(os.path.join('packages', '*')) if os.path.isdir(p)]),
+            len([p for p in glob.glob(os.path.join('packages', '*'))
+                 if os.path.isdir(p) and os.path.basename(p) != '_shared']),
     }, {normalise(r) for r in reviewers}
 
 

@@ -5,39 +5,45 @@
 
 ## What's in this folder
 
-1. `foundation.md`
-2. `intake.md`
-3. `do-asset-tax.md`
-4. `do-capital-gains-tax.md`
-5. `do-company-formation.md`
-6. `do-corporate-income-tax.md`
-7. `do-customs.md`
-8. `do-donations-estates.md`
-9. `do-municipal-taxes.md`
-10. `do-real-estate-tax.md`
-11. `do-selective-consumption-tax.md`
-12. `do-simplified-regimes.md`
-13. `do-special-tax-regimes.md`
-14. `do-tax-defense.md`
-15. `do-tax-overview.md`
-16. `do-tax-registration.md`
-17. `do-tax-treaties.md`
-18. `do-transfer-pricing.md`
-19. `do-withholding-tax.md`
-20. `dominican-republic-income-tax.md`
-21. `dominican-republic-itbis.md`
-22. `dominican-republic-payroll.md`
-23. `dominican-republic-social-contributions.md`
-24. `dominican-republic-tax-optimization.md`
-25. `payroll-workflow-base.md`
-26. `company-formation-workflow-base.md`
-27. `transfer-pricing-workflow-base.md`
-28. `income-tax-workflow-base.md`
-29. `social-contributions-workflow-base.md`
+1. `intake.md`
+2. `do-asset-tax.md`
+3. `do-capital-gains-tax.md`
+4. `do-company-formation.md`
+5. `do-corporate-income-tax.md`
+6. `do-customs.md`
+7. `do-donations-estates.md`
+8. `do-municipal-taxes.md`
+9. `do-real-estate-tax.md`
+10. `do-selective-consumption-tax.md`
+11. `do-simplified-regimes.md`
+12. `do-special-tax-regimes.md`
+13. `do-tax-defense.md`
+14. `do-tax-overview.md`
+15. `do-tax-registration.md`
+16. `do-tax-treaties.md`
+17. `do-transfer-pricing.md`
+18. `do-withholding-tax.md`
+19. `dominican-republic-income-tax.md`
+20. `dominican-republic-itbis.md`
+21. `dominican-republic-payroll.md`
+22. `dominican-republic-social-contributions.md`
+23. `dominican-republic-tax-optimization.md`
+
+## Shared files this package needs
+
+These are part of this package and live once in [`../_shared/`](../_shared/):
+
+- [`company-formation-workflow-base.md`](../_shared/company-formation-workflow-base.md)
+- [`foundation.md`](../_shared/foundation.md)
+- [`income-tax-workflow-base.md`](../_shared/income-tax-workflow-base.md)
+- [`payroll-workflow-base.md`](../_shared/payroll-workflow-base.md)
+- [`social-contributions-workflow-base.md`](../_shared/social-contributions-workflow-base.md)
+- [`transfer-pricing-workflow-base.md`](../_shared/transfer-pricing-workflow-base.md)
+
 
 ## How to use
 
-1. Upload ALL files in this folder to your AI assistant (Claude, ChatGPT, Gemini, etc.)
+1. Upload ALL files in this folder AND the shared files listed above to your AI assistant (Claude, ChatGPT, Gemini, etc.); in a checkout, `make bundle JURISDICTION=<folder>` puts them together in one ready-to-upload folder
 2. Attach your bank statement, invoices, or any financial documents (CSV or PDF)
 3. Tell the AI what you need:
    - **"Help me with my 2025 Dominican Republic taxes. Here's my bank statement."**

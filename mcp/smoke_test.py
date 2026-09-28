@@ -116,6 +116,10 @@ check("federal guides carry jurisdiction US, not US-CA",
       and "us-form-1040-individual-return" not in usca_slugs)
 check("Canadian guides are listed under CA (their declared code)",
       S.list_skills(jurisdiction="CA")["total"] > 0)
+shared_router = S._index().get("global-router", {})
+check("packages/_shared guides keep their declared code (global-router is GLOBAL, not US)",
+      shared_router.get("relpath") == "_shared/global-router.md"
+      and shared_router.get("jurisdiction") == "GLOBAL", str(shared_router))
 sample = mt["skills"][0]
 check("skill has required fields",
       all(k in sample for k in ("slug", "title", "jurisdiction", "category",

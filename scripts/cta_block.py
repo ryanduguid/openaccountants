@@ -63,7 +63,7 @@ version (and the professional behind it) is at
 #: published guides; skills/integrations/ holds platform guides (export
 #: formats, column mappings, reconciliation) that are not tax guides and carry
 #: no accountant CTA, by the maintainer's decision after #40 stamped them. Any
-#: other guide under skills/ or packages/us-federal/ must carry the marker.
+#: other guide under skills/ must carry the marker.
 OPTIONAL_DIRS = (
     "skills/templates",
     "skills/cross-border/treaty-corridors/_templates",

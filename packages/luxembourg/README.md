@@ -5,21 +5,27 @@
 
 ## What's in this folder
 
-1. `foundation.md`
-2. `intake.md`
-3. `luxembourg-income-tax.md`
-4. `luxembourg-payroll.md`
-5. `luxembourg-social-contributions.md`
-6. `luxembourg-tax-optimization.md`
-7. `luxembourg-vat-return.md`
-8. `eu-vat-directive.md`
-9. `payroll-workflow-base.md`
-10. `income-tax-workflow-base.md`
-11. `social-contributions-workflow-base.md`
+1. `intake.md`
+2. `luxembourg-income-tax.md`
+3. `luxembourg-payroll.md`
+4. `luxembourg-social-contributions.md`
+5. `luxembourg-tax-optimization.md`
+6. `luxembourg-vat-return.md`
+
+## Shared files this package needs
+
+These are part of this package and live once in [`../_shared/`](../_shared/):
+
+- [`eu-vat-directive.md`](../_shared/eu-vat-directive.md)
+- [`foundation.md`](../_shared/foundation.md)
+- [`income-tax-workflow-base.md`](../_shared/income-tax-workflow-base.md)
+- [`payroll-workflow-base.md`](../_shared/payroll-workflow-base.md)
+- [`social-contributions-workflow-base.md`](../_shared/social-contributions-workflow-base.md)
+
 
 ## How to use
 
-1. Upload ALL files in this folder to your AI assistant (Claude, ChatGPT, Gemini, etc.)
+1. Upload ALL files in this folder AND the shared files listed above to your AI assistant (Claude, ChatGPT, Gemini, etc.); in a checkout, `make bundle JURISDICTION=<folder>` puts them together in one ready-to-upload folder
 2. Attach your bank statement, invoices, or any financial documents (CSV or PDF)
 3. Tell the AI what you need:
    - **"Help me with my 2025 Luxembourg taxes. Here's my bank statement."**

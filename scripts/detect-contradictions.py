@@ -3,11 +3,12 @@
 Detect cross-guide contradictions — places where two Guides state DIFFERENT
 values for the SAME tax concept in the SAME jurisdiction and tax year.
 
-v1 scope: US (skills/federal + packages/us-federal), UK (skills/international/uk),
-DE (skills/international/germany). Where the same basename exists in both
+v1 scope: US (skills/federal), UK (skills/international/uk), DE
+(skills/international/germany). Where the same basename exists in both
 skills/ and packages/, the skills/ copy is canonical and the packages/ copy is
-only compared against it for "copy drift" (packages/us-federal is hand-authored
-and always scanned directly).
+only compared against it for "copy drift". (packages/us-federal held a
+hand-authored twin of the federal set until 2026-09-28; it now holds only the
+rates JSONs this scanner reads for the default tax year.)
 
 How it works:
   1. A hand-curated concept dictionary per jurisdiction maps concept_id →
@@ -58,10 +59,11 @@ from oa_tools.frontmatter import extract_frontmatter, parse_known_keys  # noqa: 
 
 # jurisdiction → (canonical tree, generated-copy tree or None)
 # The generated-copy tree is deduped by basename against the canonical tree and
-# used only for the copy-drift check. packages/us-federal is hand-authored, so
-# for US both trees are scanned directly (no basenames overlap there anyway).
+# used only for the copy-drift check. The federal set's generated copy lives in
+# packages/_shared/ beside files of other jurisdictions, so US has no shadow
+# tree; the derived-tree guard in CI already proves that copy byte-identical.
 JURISDICTION_TREES = {
-    "US": {"scan": ["skills/federal", "packages/us-federal"], "shadow": None},
+    "US": {"scan": ["skills/federal"], "shadow": None},
     "UK": {"scan": ["skills/international/uk"], "shadow": "packages/uk"},
     "DE": {"scan": ["skills/international/germany"], "shadow": "packages/germany"},
     "AU": {"scan": ["skills/international/australia"], "shadow": "packages/australia"},
@@ -641,9 +643,10 @@ def sentence_years(line, binding):
 def content_tax_year(text, default_tax_year, binding):
     """The year an undated guide's claims bind to, read off its own content.
 
-    All 29 packages/us-federal guides carry no frontmatter `tax_year`, so
-    without this the newest rates filename decides their year and relabels
-    2025 prose a year forward. The year the guide cites most often is the one
+    An undated guide (the 29 hand-authored packages/us-federal guides were,
+    before their retirement on 2026-09-28; every skills/federal guide is
+    tagged) would otherwise take its year from the newest rates filename,
+    which relabels 2025 prose a year forward. The year the guide cites most often is the one
     it describes; ties fall back to the newest year it mentions. Either way the
     result is capped at `default_tax_year` — the newest year with a populated
     canonical rates file — so an undated guide is never bound a year ahead of

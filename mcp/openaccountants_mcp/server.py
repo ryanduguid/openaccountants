@@ -264,16 +264,27 @@ def _split_sections(body: str) -> list[dict[str, Any]]:
 # ISO code; country dirs (malta, germany) instead carry the code in frontmatter.
 _SUBNATIONAL_DIR_RE = re.compile(r"^(us|ca)-[a-z]{2}$")
 
+# packages/_shared/ holds, once each, the files several packages list (the
+# workflow bases, the US and Canadian federal sets, the core orchestrators;
+# packages/bundles.json says which package lists which). Every guide there
+# declares its own jurisdiction today. One that did not would belong to no
+# single package, so it is GLOBAL rather than whichever code its neighbours
+# happen to declare most often (US, by the size of the federal set).
+_SHARED_DIR = "_shared"
+
 
 def _dir_jurisdiction(topdir: str, frontmatter_codes: Counter) -> str:
     """Resolve a package directory to a jurisdiction code.
 
     Only ~43% of skill files carry a ``jurisdiction`` field, so files that omit
     it inherit their directory's code: the folder name for us-XX/ca-XX
-    sub-national packages, otherwise the most common code its siblings declare.
+    sub-national packages, GLOBAL for the shared directory, otherwise the
+    most common code its siblings declare.
     """
     if _SUBNATIONAL_DIR_RE.match(topdir):
         return topdir.upper()
+    if topdir == _SHARED_DIR:
+        return "GLOBAL"
     if frontmatter_codes:
         return frontmatter_codes.most_common(1)[0][0]
     return topdir.upper()
@@ -367,9 +378,12 @@ def _catalogue() -> tuple[
         )
 
     # Pass 2: choose only an authority supported by the repository contract.
-    # packages/us-federal is the hand-authored exception. Other byte-identical
-    # package aliases are interchangeable. Divergent generated copies have no
-    # declared precedence, so omit only that slug and fail closed when asked.
+    # A guide under the hand-authored packages/us-federal wins over generated
+    # copies (the tree has carried none since the federal guides moved to
+    # skills/federal and packages/_shared on 2026-09-28; the rule stays for a
+    # checkout that still holds them). Other byte-identical package aliases
+    # are interchangeable. Divergent generated copies have no declared
+    # precedence, so omit only that slug and fail closed when asked.
     candidates: dict[str, list[dict[str, Any]]] = defaultdict(list)
     for row in rows:
         candidates[row["slug"]].append(row)

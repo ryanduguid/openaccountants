@@ -5,37 +5,43 @@
 
 ## What's in this folder
 
-1. `foundation.md`
-2. `intake.md`
-3. `pakistan-sales-tax.md`
-4. `pk-bookkeeping.md`
-5. `pk-cgt.md`
-6. `pk-corporate-tax.md`
-7. `pk-crypto-tax.md`
-8. `pk-einvoice.md`
-9. `pk-financial-statements.md`
-10. `pk-formation.md`
-11. `pk-income-tax.md`
-12. `pk-it-export-tax.md`
-13. `pk-payroll-eobi.md`
-14. `pk-payroll.md`
-15. `pk-sales-tax-federal.md`
-16. `pk-sales-tax-services.md`
-17. `pk-social-contributions.md`
-18. `pk-tax-optimization.md`
-19. `pk-withholding-tax.md`
-20. `bookkeeping-workflow-base.md`
-21. `einvoice-workflow-base.md`
-22. `payroll-workflow-base.md`
-23. `company-formation-workflow-base.md`
-24. `financial-statements-workflow-base.md`
-25. `crypto-tax-workflow-base.md`
-26. `income-tax-workflow-base.md`
-27. `social-contributions-workflow-base.md`
+1. `intake.md`
+2. `pakistan-sales-tax.md`
+3. `pk-bookkeeping.md`
+4. `pk-cgt.md`
+5. `pk-corporate-tax.md`
+6. `pk-crypto-tax.md`
+7. `pk-einvoice.md`
+8. `pk-financial-statements.md`
+9. `pk-formation.md`
+10. `pk-income-tax.md`
+11. `pk-it-export-tax.md`
+12. `pk-payroll-eobi.md`
+13. `pk-payroll.md`
+14. `pk-sales-tax-federal.md`
+15. `pk-sales-tax-services.md`
+16. `pk-social-contributions.md`
+17. `pk-tax-optimization.md`
+18. `pk-withholding-tax.md`
+
+## Shared files this package needs
+
+These are part of this package and live once in [`../_shared/`](../_shared/):
+
+- [`bookkeeping-workflow-base.md`](../_shared/bookkeeping-workflow-base.md)
+- [`company-formation-workflow-base.md`](../_shared/company-formation-workflow-base.md)
+- [`crypto-tax-workflow-base.md`](../_shared/crypto-tax-workflow-base.md)
+- [`einvoice-workflow-base.md`](../_shared/einvoice-workflow-base.md)
+- [`financial-statements-workflow-base.md`](../_shared/financial-statements-workflow-base.md)
+- [`foundation.md`](../_shared/foundation.md)
+- [`income-tax-workflow-base.md`](../_shared/income-tax-workflow-base.md)
+- [`payroll-workflow-base.md`](../_shared/payroll-workflow-base.md)
+- [`social-contributions-workflow-base.md`](../_shared/social-contributions-workflow-base.md)
+
 
 ## How to use
 
-1. Upload ALL files in this folder to your AI assistant (Claude, ChatGPT, Gemini, etc.)
+1. Upload ALL files in this folder AND the shared files listed above to your AI assistant (Claude, ChatGPT, Gemini, etc.); in a checkout, `make bundle JURISDICTION=<folder>` puts them together in one ready-to-upload folder
 2. Attach your bank statement, invoices, or any financial documents (CSV or PDF)
 3. Tell the AI what you need:
    - **"Help me with my 2025 Pakistan taxes. Here's my bank statement."**
