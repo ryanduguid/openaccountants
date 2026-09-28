@@ -157,7 +157,7 @@ path this contract is intended to close.
 
 ## What this means for contributors
 
-1. Edit `skills/**` only; generated files are rebuilt by the platform sync.
+1. Edit `skills/**`, then regenerate `packages/`, `index.json` and `llms-full.txt` with the three build scripts and commit them with the edit (see [REPO-LAYOUT.md](REPO-LAYOUT.md)); CI fails when the committed copies are stale.
 2. A merge accepts the repository contribution. Platform publication is
    complete only after the maintainer confirms inbound ingestion.
 3. `last_updated` must never move backwards. Bump `version` on substantive

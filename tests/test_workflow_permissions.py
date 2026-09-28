@@ -1,13 +1,17 @@
 """Regression tests for CI workflow hardening.
 
-Both properties here were live defects:
+All three properties here were live defects:
 
 * `validate.yml` declared no `permissions:` block, so every job inherited the
   repository default token scope.
-* The contributor-comment step interpolated `steps.guard.outputs.*` — built from
-  filenames in the pull request's own diff — directly into an
+* A contributor-comment step (since removed) interpolated `steps.guard.outputs.*`
+  — built from filenames in the pull request's own diff — directly into an
   `actions/github-script` body, where a crafted filename would be evaluated as
-  JavaScript.
+  JavaScript. The lint that caught it still runs over every workflow.
+* `guard-derived-trees` used to reject any PR touching `packages/`, `index.json`
+  or `llms-full.txt` on the theory that a platform sync regenerated them. No
+  such sync exists in this fork, so the trees went stale with nothing to say so.
+  The job now rebuilds them and fails on a difference; the test pins that.
 """
 
 from __future__ import annotations
@@ -38,17 +42,27 @@ class WorkflowPermissionTests(unittest.TestCase):
             "validate.yml must declare a read-only default token scope",
         )
 
-    def test_only_the_commenting_job_can_write(self) -> None:
+    def test_no_job_escalates_the_read_only_default(self) -> None:
         doc = _load(VALIDATE)
         for name, job in doc["jobs"].items():
             perms = job.get("permissions")
-            if name == "guard-derived-trees":
-                self.assertEqual(perms, {"contents": "read", "issues": "write"})
-            else:
-                self.assertIsNone(
-                    perms,
-                    f"job {name!r} should inherit the read-only default, got {perms!r}",
-                )
+            self.assertIsNone(
+                perms,
+                f"job {name!r} should inherit the read-only default, got {perms!r}",
+            )
+
+    def test_guard_job_rebuilds_the_derived_trees(self) -> None:
+        """The job id is kept for branch-protection rules that name it; what it
+        does changed from 'reject any edit' to 'rebuild and compare'."""
+        doc = _load(VALIDATE)
+        job = doc["jobs"].get("guard-derived-trees")
+        self.assertIsNotNone(job, "validate.yml must keep the guard-derived-trees job")
+        self.assertIsNone(job.get("if"), "the freshness check must run on push to main too")
+        runs = [step.get("run", "") for step in job["steps"]]
+        self.assertTrue(
+            any("validate-guides.py --derived-only" in run for run in runs),
+            "guard-derived-trees must run `validate-guides.py --derived-only`",
+        )
 
     def test_no_workflow_interpolates_untrusted_input_into_a_script_body(self) -> None:
         """`script:` blocks must read from env, never from ${{ ... }} directly."""
